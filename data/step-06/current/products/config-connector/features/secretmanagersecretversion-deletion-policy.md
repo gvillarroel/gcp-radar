@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.194Z"
+generated_at: "2026-04-13T14:23:05.049Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "SecretManagerSecretVersion deletion policy"
@@ -9,18 +9,16 @@ latest_feature_date: "2023-09-29"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+  - "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
 keywords:
   - "secretmanagersecretversion"
+  - "deletionpolicy"
   - "deletion"
   - "policy"
-  - "config"
-  - "connector"
   - "added"
-  - "the"
-  - "deletionpolicy"
+  - "field"
 ---
 
 # SecretManagerSecretVersion deletion policy
@@ -42,42 +40,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
+- [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources](https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster)
 
 ## Supporting Pages
 
-### IAMPolicy | Config Connector | Google Cloud Documentation
+### Ignore unspecified fields \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 150
+- URL: [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields)
+- Source ID: `site-docs-reference`
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
+- Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- If you have already created the resource, but want to change the value of this annotation for a different populating behavior, you must follow these steps: Edit and add annotation cnrm.cloud.google.com/deletion-policy: abandon to the existing Kubernetes resource to make sure deletion in next step won't delete the underlying Google Cloud resource.
+- Note that the only populating behavior CRDs added in version 1.114.0 and later follow is Absent regardless of the cnrm.cloud.google.com/state-into-spec annotation or the stateIntoSpec fields in the ConfigConnector CR or ConfigConnectorContext CR.
+- Both config management tools and Config Connector treat list fields as atomic, thus the added spec.bars[0].br2 is treated as a drift by config management tools and will be removed to correct the drift .
 
-### IAMPolicyMember | Config Connector | Google Cloud Documentation
+### "Managing and deleting resources \_|\_ Config Connector \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember)
-- Source ID: `site-iam-reference`
-- Final score: 130
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources](https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources)
+- Source ID: `site-docs-reference`
+- Final score: 103
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- IAMPolicyMember Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember See the License for the specific language governing permissions and # limitations under the License. # Replace ${PROJECT ID?} and ${ORG ID?} below with your desired project and # organization IDs respectively. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicyMember metadata: name: iampolicymember-sample-orglevel spec: member: serviceAccount:iampolicymember-dep-orglevel@${PROJECT ID?}.iam.gserviceaccount.com role: roles/storage.admin resourceRef: kind: Organization external: &quot;${ORG ID?}&quot; --- # Replace ${PROJECT ID?} below with your desired project ID.
+- The following Config Connector resources correspond to Google Cloud resources which have a service-generated resource ID: AccessContextManagerAccessPolicy ApigeeOrganization BillingBudgetsBudget CloudIdentityGroup CloudIdentityMembership ComputeFirewallPolicy DataCatalogPolicyTag DataCatalogTaxonomy DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType EssentialContactsContact Folder IAPBrand IAPIdentityAwareProxyClient IdentityPlatformTenant MonitoringAlertPolicy MonitoringGroup MonitoringNotificationChannel MonitoringUptimeCheckConfig RecaptchaEnterpriseKey ResourceManagerLien SQLSSLCert SecretManagerSecretVersion StorageNotification StorageTransferJob TagsTagBinding TagsTagKey TagsTagValue VertexAIDataset VertexAIIndex Note: Folder is a special case.
+- For example, the YAML for the BigQuery dataset described earlier including the abandon deletion policy is below: apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigquerydatasetsample annotations : cnrm.cloud.google.com/deletion-policy : abandon spec : defaultTableExpirationMs : 3600000 description : "BigQuery Dataset Sample" friendlyName : bigquerydataset-sample location : US Resources with restrictions around acquisition Some resources can't be acquired following the instructions in the preceding section.
+- To keep the Google Cloud resource, add the following to the Config Connector resource YAML before deleting: ... metadata : annotations : cnrm.cloud.google.com/deletion-policy : abandon ...
+- If you prefer to keep the dataset, set the resource's deletion-policy .
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### AlloyDBCluster \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 128
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster)
+- Source ID: `site-docs-root`
+- Final score: 102
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
+- AlloyDBCluster Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpalloydbcluster gcpalloydbclusters alloydbcluster Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbclusters.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema automatedBackupPolicy : backupWindow : string enabled : boolean encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string labels : string : string location : string quantityBasedRetention : count : integer timeBasedRetention : retentionPeriod : string weeklySchedule : daysOfWeek : - string startTimes : - hours : integer minutes : integer nanos : integer seconds : integer clusterType : string continuousBackupConfig : enabled : boolean encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string recoveryWindowDays : integer databaseVersion : string deletionPolicy : string displayName : string encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string initialUser : password : value : string valueFrom : secretKeyRef : key : string name : string user : string location : string maintenanceUpdatePolicy : maintenanceWindows : - day : string startTime : hours : integer minutes : integer nanos : integer seconds : integer networkConfig : allocatedIpRange : string networkRef : external : string name : string namespace : string networkRef : external : string name : string namespace : string projectRef : external : string kind : string name : string namespace : string resourceID : string restoreBackupSource : backupNameRef : external : string name : string namespace : string restoreContinuousBackupSource : clusterRef : external : string name : string namespace : string pointInTime : string secondaryConfig : primaryClusterNameRef : external : string name : string namespace : string Fields automatedBackupPolicy Optional object The automated backup policy for this cluster.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-dep-secondary spec : location : australia-southeast1 networkConfig : networkRef : name : alloydbcluster-dep-secondary projectRef : external : ${PROJECT ID?} encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep1-secondary initialUser : user : "postgres" password : value : "postgres" --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-sample-secondary spec : location : australia-southeast2 networkConfig : networkRef : name : alloydbcluster-dep-secondary projectRef : external : ${PROJECT ID?} encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep2-secondary clusterType : "SECONDARY" secondaryConfig : primaryClusterNameRef : name : alloydbcluster-dep-secondary deletionPolicy : "FORCE" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbcluster-dep-secondary spec : location : global addressType : INTERNAL networkRef : name : alloydbcluster-dep-secondary prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbcluster-dep-secondary --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : alloydbcluster-dep1-secondary spec : resourceRef : apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey name : alloydbcluster-dep1-secondary bindings : - role : roles/cloudkms.cryptoKeyEncrypterDecrypter members : - memberFrom : serviceIdentityRef : name : alloydbcluster-dep1-secondary --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : alloydbcluster-dep2-secondary spec : resourceRef : apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey name : alloydbcluster-dep2-secondary bindings : - role : roles/cloudkms.cryptoKeyEncrypterDecrypter members : - memberFrom : serviceIdentityRef : name : alloydbcluster-dep2-secondary --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : alloydbcluster-dep1-secondary spec : keyRingRef : name : alloydbcluster-dep1-secondary --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : alloydbcluster-dep2-secondary spec : keyRingRef : name : alloydbcluster-dep2-secondary --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : alloydbcluster-dep1-secondary spec : location : australia-southeast1 --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : alloydbcluster-dep2-secondary spec : location : australia-southeast2 --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbcluster-dep-secondary spec : networkRef : name : alloydbcluster-dep-secondary reservedPeeringRanges : - external : alloydbcluster-dep-secondary service : servicenetworking.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : ServiceIdentity metadata : name : alloydbcluster-dep1-secondary spec : projectRef : external : ${PROJECT ID?} resourceID : alloydb.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : ServiceIdentity metadata : name : alloydbcluster-dep2-secondary spec : projectRef : external : ${PROJECT ID?} resourceID : alloydb.googleapis.com Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- If a database version is not supplied at cluster creation time, then a default database version will be used. deletionPolicy Optional string Policy to determine if the cluster should be deleted forcefully.
+- If this field is left empty, the default of every day of the week is used. automatedBackupPolicy.weeklySchedule.daysOfWeek[] Optional string automatedBackupPolicy.weeklySchedule.startTimes Required list (object) The times during the day to start a backup.
 

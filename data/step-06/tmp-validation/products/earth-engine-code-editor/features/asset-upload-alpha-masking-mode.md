@@ -1,0 +1,90 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T02:44:49.604Z"
+product_name: "Earth Engine Code Editor"
+product_slug: "earth-engine-code-editor"
+feature_name: "Asset upload alpha masking mode"
+feature_slug: "asset-upload-alpha-masking-mode"
+latest_feature_date: "2015-11-13"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://developers.google.com/earth-engine/guides/command_line"
+  - "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff"
+  - "https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model"
+keywords:
+  - "masking"
+  - "alpha"
+  - "mode"
+  - "uploads"
+  - "upload"
+  - "asset"
+---
+
+# Asset upload alpha masking mode
+
+Product: Earth Engine Code Editor
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Asset uploads can use the last band as an alpha masking mode.
+
+## Extended Definition
+
+Asset uploads can use the last band as an alpha masking mode.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://developers.google.com/earth-engine/guides/command_line](https://developers.google.com/earth-engine/guides/command_line)
+- [https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff)
+- [https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model](https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model)
+
+## Supporting Pages
+
+### Command Line Tool \_|\_ Google Earth Engine \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/command_line](https://developers.google.com/earth-engine/guides/command_line)
+- Source ID: `site-docs-reference`
+- Final score: 100
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- This will control how Earth Engine generates the pyramid of lower-resolution versions of your image: earthengine upload image --asset id=projects/my-project/assets/asset id --pyramiding policy=sample gs://bucket/image.tif You can use the --last band alpha to indicate that the mask for the image should be taken from an alpha channel in the last band: earthengine upload image --asset id=projects/my-project/assets/asset id --last band alpha gs://bucket/image.tif You can specify a no-data value using the --nodata value flag.
+- Key actions include: authenticate to sign in; acl to manage asset access; asset to view/edit asset metadata; cp/mv to copy/move assets; create to make folders/collections; ls to list contents; model prepare for TensorFlow model transformation; project config to configure project settings; rm to delete assets; set project to set the default cloud project; task to manage long running tasks; and upload to add images or tables from Google Cloud Storage.\n"]]
+- The cancel sub-command cancels one or more running tasks. upload Uploads images or tables from Google Cloud Storage to Earth Engine, or creates assets backed by external images. image To upload an image asset using default settings: earthengine upload image --asset id=projects/my-project/assets/asset id gs://bucket/image.tif If you specify multiple input image files they will be interpreted as tiles of a single image asset.
+- Various commands are available to manage assets, including acl , asset , cp , create , ls , model , mv , project config , rm , set project , task , and upload .
+
+### "Cloud GeoTiff-Backed Earth Engine Assets \_|\_ Google Earth Engine \_|\_\
+
+- URL: [https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff)
+- Source ID: `site-docs-reference`
+- Final score: 92
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To create a COG-backed asset, you need to place COG files in a specific GCS bucket location, write an image upload manifest, and use the earthengine command-line utility.
+- The band order of the resulting asset is mixed from the input COGs (e.g. output band 0 is from Tileset 0, while output band 1 is from Tileset 1). request = { 'imageManifest' : { 'name' : f 'projects/ { ee project } /assets/cogdemo2' , 'uriPrefix' : 'gs://ee-docs-demos/external image demo/' , 'tilesets' : [ { 'id' : '0' , 'sources' : [ { 'uris' : [ 'b4b3b2.tif' ] } ] }, { 'id' : '1' , 'sources' : [ { 'uris' : [ 'b5b6b7.tif' ] } ] }, ], 'bands' : [ { 'id' : 'red' , 'tilesetId' : '0' , 'tilesetBandIndex' : 0 }, { 'id' : 'rededge3' , 'tilesetId' : '1' , 'tilesetBandIndex' : 2 }, { 'id' : 'rededge2' , 'tilesetId' : '1' , 'tilesetBandIndex' : 1 }, { 'id' : 'green' , 'tilesetId' : '0' , 'tilesetBandIndex' : 1 }, { 'id' : 'blue' , 'tilesetId' : '1' , 'tilesetBandIndex' : 0 }, { 'id' : 'rededge1' , 'tilesetId' : '0' , 'tilesetBandIndex' : 2 }, ], }, } pprint ( request ) Details on COG-backed assets Location The Cloud Storage bucket location must be one of: The US multi-region Any US dual-region that includes US-CENTRAL1 The region US-CENTRAL1 Storage class The storage class of the bucket must be "Standard storage".
+- If no bands are specified, the resulting asset will contain all the bands of the GeoTIFF with the band names encoded in the GeoTIFF (in this case, "vis-red", "vis-green", and "vis-blue"). request = { 'imageManifest' : { 'name' : f 'projects/ { ee project } /assets/cogdemo1' , 'tilesets' : [ { 'id' : '0' , 'sources' : [ { 'uris' : [ 'gs://ee-docs-demos/COG demo.tif' ] } ] } ], 'properties' : { 'version' : '1.1' }, 'startTime' : '2016-01-01T00:00:00.000000000Z' , 'endTime' : '2016-12-31T15:01:23.000000000Z' , }, } pprint ( request ) More than one Tileset It is possible to specify an ImageManifest with more than one Tileset where each band of the resulting asset is backed by one of the bands of a Tileset using the tilesetId and tilesetBandIndex fields.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-05-21 UTC."],[],["This document details how to create Earth Engine assets backed by Cloud Optimized GeoTIFFs (COGs).
+
+### "Hosted Custom Model for Earth Engine \_|\_ Google Earth Engine \_|\_ Google\
+
+- URL: [https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model](https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model)
+- Source ID: `site-docs-root-2`
+- Final score: 70
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Once copied you can either use the Vertex AI's Model Registry to upload your model or use gcloud command line and run something like: gcloud ai models upload \ --artifact-uri = gs:// { your-bucket } /models/model \ --display-name = ${ display -name } \ --container-image-uri = ${ model -container } \ --container-grpc-ports = 8500 TIP: For optimal performance enable gRPC predictions with the container-grpc-ports flag.
+- An example of that is here: torch-model-archiver -f \ --model-name model \ --version 1 .0 \ --serialized-file $model file \ --handler $hander file \ --extra-files $index to name file \ --export-path $model path Model Deployment to Vertex AI Once your model files are saved the next step is to upload your model to Vertex AI.
+- Model Endpoint Management Once a model is uploaded to Vertex AI, create an endpoint and deploy the model through the Online Prediction page by creating a new endpoint or by using the gcloud command line with the commands endpoints create and endpoints deploy-model .
+- Performing inference with a custom trained model using a machine learning framework such as TensorFlow or PyTorch requires saving and uploading the model to Vertex AI, creating a prediction endpoint and deploying the model to serve traffic at the created endpoint.
+

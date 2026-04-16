@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.435Z"
+generated_at: "2026-04-13T13:51:57.823Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "PostgreSQL 10"
@@ -9,18 +9,15 @@ latest_feature_date: "2020-03-27"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/postgres/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+  - "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption"
+  - "https://docs.cloud.google.com/sql/docs/postgres/cmek"
 keywords:
-  - "postgresql"
-  - "10"
-  - "sql"
-  - "for"
-  - "supports"
+  - "offers"
   - "major"
   - "version"
-  - "offers"
+  - "supports"
+  - "beta"
 ---
 
 # PostgreSQL 10
@@ -38,55 +35,53 @@ Cloud SQL for PostgreSQL supports PostgreSQL major version 10; Cloud SQL for Pos
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
+- [https://docs.cloud.google.com/sql/docs/postgres/authorize-networks](https://docs.cloud.google.com/sql/docs/postgres/authorize-networks)
+- [https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption](https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption)
+- [https://docs.cloud.google.com/sql/docs/postgres/cmek](https://docs.cloud.google.com/sql/docs/postgres/cmek)
 
 ## Supporting Pages
 
-### Cloud SQL for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "About client-side encryption \_|\_ Cloud SQL for PostgreSQL \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 252
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- February 01, 2025 Announcement All Cloud SQL for PostgreSQL 9.6, 10, 11, and 12 instances are running community end-of-life (EOL) major versions and are now enrolled in Cloud SQL extended support.
-- April 11, 2022 Feature Cloud SQL for PostgreSQL supports in-place major version upgrades in Preview.
-- September 30, 2022 Feature Cloud SQL for PostgreSQL supports in-place major version upgrades in GA.
-- Please use this table to find the name of the maintenance version to apply, and use that version or the latest version available: PostgreSQL version Maintenance version PostgreSQL 9.6 POSTGRES 9 6 24.R20220710.01 02 PostgreSQL 10 POSTGRES 10 21.R20220710.01 02 PostgreSQL 11 POSTGRES 11 16.R20220710.01 02 PostgreSQL 12 POSTGRES 12 11.R20220710.01 02 PostgreSQL 13 POSTGRES 13 7.R20220710.01 02 After you have identified the name of the maintenance version, please upgrade to the target maintenance version , performing the corresponding update of your instances (to the latest maintenance version).
-
-### SqlDatabaseVersion \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion)
-- Source ID: `site-api-reference`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption](https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption)
+- Source ID: `site-iam-reference`
+- Final score: 28
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- POSTGRES 10 The database version is PostgreSQL 10.
-- Home Documentation Databases Cloud SQL PostgreSQL Reference Send feedback SqlDatabaseVersion Stay organized with collections Save and categorize content based on your preferences.
-- POSTGRES 9 6 The database version is PostgreSQL 9.6.
-- POSTGRES 11 The database version is PostgreSQL 11.
+- Tink supports envelope encryption in C++, Java, Go, and Python using the AEAD API: public interface Aead { byte [] encrypt ( final byte [] plaintext, final byte [] associatedData ) throws… byte [] decrypt ( final byte [] ciphertext, final byte [] associatedData ) throws… } Besides the normal message/ciphertext argument, the encrypt and decrypt methods support optional associated data.
+- Cloud KMS supports many different key types.
 
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
+### "About customer-managed encryption keys (CMEK) \_|\_ Cloud SQL for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 208
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/cmek](https://docs.cloud.google.com/sql/docs/postgres/cmek)
+- Source ID: `site-iam-reference`
+- Final score: 28
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- December 05, 2024 Cloud SQL for MySQL Feature Cloud SQL Enterprise Plus edition now supports the following regions: africa-south1 (Johannesburg) asia-east2 (Hong Kong) europe-west10 (Berlin) Cloud SQL for PostgreSQL Feature Cloud SQL Enterprise Plus edition now supports the following regions: africa-south1 (Johannesburg) asia-east2 (Hong Kong) europe-west10 (Berlin) Cloud SQL for SQL Server Feature Cloud SQL Enterprise Plus edition now supports the following regions: africa-south1 (Johannesburg) asia-east2 (Hong Kong) europe-west10 (Berlin) December 04, 2024 Cloud SQL for MySQL Feature Cloud SQL for MySQL now supports minor version 8.0.40.
-- Cloud SQL for PostgreSQL Announcement All Cloud SQL for PostgreSQL 9.6, 10, 11, and 12 instances are running community end-of-life (EOL) major versions and are now enrolled in Cloud SQL extended support.
-- April 11, 2022 Cloud SQL for PostgreSQL Feature Cloud SQL for PostgreSQL supports in-place major version upgrades in Preview.
-- September 30, 2022 Cloud SQL for PostgreSQL Feature Cloud SQL for PostgreSQL supports in-place major version upgrades in GA.
+- Customer-managed encryption keys use the following format: projects / [ KMS PROJECT ID ] / locations / [ LOCATION ] / keyRings / [ KEY RING ] / cryptoKeys / [ KEY NAME ] If Cloud SQL is unable to access the key (such as if you disable the key version), Cloud SQL suspends the instance.
+- You can't use customer-managed encryption keys to encrypt: External servers (external primary instances and external replicas) Instance metadata, such as the instance ID, database version, machine type, flags, backup schedule, etc.
+- When you rotate keys, instances that are encrypted with that key aren't automatically re-encrypted with the new primary key version.
+- Once you destroy a key version that is associated with a Cloud SQL instance, Google can't get the data back.
+
+### "Authorize with authorized networks \_|\_ Cloud SQL for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/authorize-networks](https://docs.cloud.google.com/sql/docs/postgres/authorize-networks)
+- Source ID: `site-iam-reference`
+- Final score: 28
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id " Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "UPDATE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } Limitations Some IP address ranges can't be added as authorized networks.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id " Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "UPDATE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } REST v1beta4 Configuring authorized networks replaces the existing authorized networks list.
+- Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID network range 1 An authorized ip address or range network range 2 Another authorized ip address or range HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { "settings": { "ipConfiguration": { "authorizedNetworks": [{"value": " network range 1 "}, {"value": " network range 2 "}] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Terraform To configure authorized networks, use a Terraform resource . resource "google sql database instance" "default" { name = "postgres-instance-with-authorized-network" region = "us-central1" database version = "POSTGRES 14" settings { tier = "db-custom-2-7680" ip configuration { authorized networks { name = "Network Name" value = "192.0.2.0/24" expiration time = "3021-11-15T16:19:00.094Z" } } } } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.
 

@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.356Z"
+generated_at: "2026-04-14T13:57:37.640Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Cloud Billing Budget API"
 feature_slug: "cloud-billing-budget-api"
 latest_feature_date: "2019-11-12"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/billing/docs/how-to/budgets"
   - "https://docs.cloud.google.com/billing/docs/how-to/budget-api-setup"
   - "https://docs.cloud.google.com/billing/docs/how-to/budget-api-overview"
-  - "https://docs.cloud.google.com/billing/docs/how-to/budget-api-prereqs"
 keywords:
   - "billing"
   - "budget"
-  - "api"
   - "provides"
   - "beta"
-  - "for"
   - "programmatic"
   - "creation"
+  - "viewing"
+  - "management"
 ---
 
 # Cloud Billing Budget API
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Provides a Beta API for programmatic creation, viewing, and management of budget
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/billing/docs/how-to/budgets](https://docs.cloud.google.com/billing/docs/how-to/budgets)
 - [https://docs.cloud.google.com/billing/docs/how-to/budget-api-setup](https://docs.cloud.google.com/billing/docs/how-to/budget-api-setup)
 - [https://docs.cloud.google.com/billing/docs/how-to/budget-api-overview](https://docs.cloud.google.com/billing/docs/how-to/budget-api-overview)
-- [https://docs.cloud.google.com/billing/docs/how-to/budget-api-prereqs](https://docs.cloud.google.com/billing/docs/how-to/budget-api-prereqs)
 
 ## Supporting Pages
 
@@ -52,38 +52,39 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/budget-api-setup](https://docs.cloud.google.com/billing/docs/how-to/budget-api-setup)
 - Source ID: `site-api-reference`
-- Final score: 206
+- Final score: 190
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Recommendation about projects : We recommend that you create and use a separate Google Cloud project to contain all of your FinOps and billing administration needs for a Cloud Billing account, including your use of the Cloud Billing Budget API.
+- Home Documentation Costs and usage management Cloud Billing APIs & Reference Send feedback Cloud Billing Budget API Setup Stay organized with collections Save and categorize content based on your preferences.
 - That principal must have Identity and Access Management (IAM) roles that contain the required permissions for the Cloud Billing Budget API.
-- Enable billing You need to make sure that billing is enabled on the project you are using for calling the Cloud Billing Budget API.
-- Before you begin You should do the following before reading this guide: Read Cloud Billing Budget API Overview .
+- This guide provides all required setup steps to start using the Cloud Billing Budget API.
+- Recommendation about projects : We recommend that you create and use a separate Google Cloud project to contain all of your FinOps and billing administration needs for a Cloud Billing account, including your use of the Cloud Billing Budget API.
+
+### "Create, edit, or delete budgets and budget alerts \_|\_ Cloud Billing \_\
+
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/budgets](https://docs.cloud.google.com/billing/docs/how-to/budgets)
+- Source ID: `site-docs-root`
+- Final score: 188
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Programmatic notifications You can use programmatic notifications to trigger an action, such as forwarding your budget messages to other mediums (for example, Slack), and to automate cost management tasks (such as disabling billing on a project when it exceeds its budget amount).
+- For more information about Cloud Billing permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding predefined Identity and Access Management roles for Cloud Billing For more information about Google Cloud project permissions, see: Access control for projects with IAM IAM basic and predefined roles reference Create a budget Permissions required for creating a budget If you're creating a budget to monitor costs for your Cloud Billing account (including costs from all linked projects), you need permissions on the Cloud Billing account.
+- In this document, you can learn how to: Create a budget View a list of budgets and their status Modify or delete a budget Create and manage budgets using an API Customize budget alert email recipients Automate cost control responses using programmatic notifications Permissions required to manage budgets Budgets can be configured for a Cloud Billing account (which can include multiple linked projects), or for individual projects.
+- Permissions required for viewing a list of budgets If you're viewing budgets that are configured to monitor costs for your Cloud Billing account (that can include costs incurred in all of the projects linked to the billing account), you need permissions on the Cloud Billing account.
 
 ### Get started with the Cloud Billing Budget API \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/budget-api-overview](https://docs.cloud.google.com/billing/docs/how-to/budget-api-overview)
 - Source ID: `site-api-reference`
-- Final score: 206
-- Re-rank relevance: N/A
+- Final score: 186
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Using the Cloud Billing Budget API, you can view, create, and manage budgets programmatically at scale, up to 50,000 budgets for each Cloud Billing account.
-- Examples for using the Cloud Billing Budget API include the following: Create a separate budget for each of your Google Cloud projects so you know which areas of your Google Cloud environment are spending more than expected.
 - You can also use budgets to automate cost control responses using Pub/Sub topics for programmatic notifications (for example, to forward your budget messages to other mediums such as Slack, or to automate cost management tasks).
 - Home Documentation Costs and usage management Cloud Billing APIs & Reference Send feedback Get started with the Cloud Billing Budget API Stay organized with collections Save and categorize content based on your preferences.
-
-### Cloud Billing Budget API Prerequisites \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/budget-api-prereqs](https://docs.cloud.google.com/billing/docs/how-to/budget-api-prereqs)
-- Source ID: `site-api-reference`
-- Final score: 202
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- If you're not already familiar with concepts like Cloud Billing accounts, Google Cloud projects, Google Cloud products, and Cloud Billing budgets and alerts, read the following before starting to code: Overview of Cloud Billing concepts Manage your Cloud Billing account View the projects linked to a Cloud Billing account Budgets and budget alert rules Access control for the Cloud Billing Budget API After you are familiar with the Cloud Billing features and concepts, try out the Google Cloud console user interface .
-- The specific formats for Cloud Billing Budget API URIs are: https://billingbudgets.googleapis.com/v1/ resourcePath ? parameters The full set of URIs used for each supported operation in the API is summarized in the Cloud Billing Budget API reference documents ( REST , RPC ).
-- Learn JSON basics The Cloud Billing Budget API returns data in JSON format.
-- Previous arrow back Get started with the Budget API Next Setup arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Using the Cloud Billing Budget API, you can view, create, and manage budgets programmatically at scale, up to 50,000 budgets for each Cloud Billing account.
+- Examples for using the Cloud Billing Budget API include the following: Create a separate budget for each of your Google Cloud projects so you know which areas of your Google Cloud environment are spending more than expected.
 

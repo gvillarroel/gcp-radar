@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.705Z"
+generated_at: "2026-04-12T12:12:45.906Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "Cloud Storage FUSE Rocky Linux support"
 feature_slug: "cloud-storage-fuse-rocky-linux-support"
 latest_feature_date: "2024-05-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket"
-  - "https://docs.cloud.google.com/storage/docs/release-notes"
   - "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options"
+  - "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file"
+  - "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
 keywords:
   - "storage"
   - "fuse"
@@ -25,7 +26,7 @@ keywords:
 # Cloud Storage FUSE Rocky Linux support
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,13 +38,14 @@ Cloud Storage FUSE supports Rocky Linux 8.9 and later.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket)
-- [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
 - [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options)
+- [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file)
+- [https://docs.cloud.google.com/storage/docs/gcsfuse-cli](https://docs.cloud.google.com/storage/docs/gcsfuse-cli)
 
 ## Supporting Pages
 
@@ -51,7 +53,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket)
 - Source ID: `site-iam-reference`
-- Final score: 144
+- Final score: 176
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -60,24 +62,37 @@ Evidence snippets:
 - Mount the bucket To mount the bucket to your local file system, complete the following steps: Generate Application Default Credentials using the gcloud auth application-default login command: gcloud auth application-default login Cloud Storage FUSE automatically loads the credentials.
 - Create a directory to mount the storage bucket to: mkdir "$HOME/mount-folder" Mount your storage bucket using the gcsfuse command: gcsfuse BUCKET NAME "$HOME/mount-folder" Replace BUCKET NAME with the name of the bucket you want to mount.
 
-### Cloud Storage release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Cloud Storage FUSE now supports Rocky Linux versions 8.9 or later.
-- Node.js Changes for @google-cloud/storage 7.9.0 (2024-03-18) Features Add ability to configure and utilize soft-delete and restore ( #2425 ) ( 7da5a7d ) Java Changes for google-cloud-storage 2.36.1 (2024-03-20) Dependencies Update dependency com.google.apis:google-api-services-storage to v1-rev20240311-2.0.0 ( #2446 ) ( 27b4780 ) Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 ( #2450 ) ( bf35a9a ) Python Changes for google-cloud-storage 2.16.0 (2024-03-18) Features Add support for soft delete ( #1229 ) ( 3928aa0 ) Support includeFoldersAsPrefixes ( #1223 ) ( 7bb8065 ) March 18, 2024 Feature You can now use the GCS FUSE file cache feature, a client-based read cache that lets repeat file reads to be served from a faster cache storage of your choice.
-- September 15, 2025 Libraries Java 2.57.0 (2025-09-09) Features Add BlobInfo.ObjectContexts ( #3259 ) ( 485aefd ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.62.1 ( 0e348db ) Update BlobAppendableUpload implementation to periodically flush for large writes ( #3278 ) ( d0ffe18 ) Update otel integration to properly activate span context for lazy RPCs such as reads & writes pt.2 ( #3277 ) ( 3240f67 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ( #3280 ) ( d046ea3 ) Update googleapis/sdk-platform-java action to v2.62.1 ( #3281 ) ( c9078bb ) September 10, 2025 Feature Cloud Storage FUSE now supports buffered reads, which can improve sequential read performance for large files by two to five times.
-- Node.js Changes for @google-cloud/storage 7.12.1 (2024-08-07) Bug Fixes deps: Update fast-xml-parser to 4.4.1 due to security vulnerability ( #2505 ) ( b97d474 ) Python Changes for google-cloud-storage 2.18.2 (2024-08-08) Bug Fixes Add regression test for range read retry issue and bump dependency to fix ( #1338 ) ( 0323647 ) 2.18.1 (2024-08-05) Bug Fixes Properly escape URL construction for XML MPU API ( #1333 ) ( bf4d0e0 ) August 05, 2024 Feature You can now use parallel downloads with Cloud Storage FUSE to accelerate read performance of large files over 1 GB in size.
-
 ### Cloud Storage FUSE CLI reference \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options)
 - Source ID: `site-docs-reference`
-- Final score: 125
+- Final score: 153
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Note: Using either the trace or debug severity levels when file caching is enabled can result in performance degradation due to logging overhead and should only be used temporarily such as during troubleshooting. off : disables all logging. error : contains messages about serious issues that prevent Cloud Storage FUSE from completing an operation, or indicate a failure such as mount failures, permission errors, and critical input/output (I/O) errors. warning : contains messages indicating potential issues that aren't critical but can lead to issues if not addressed.
+- For more information, see Automated configuration values for high-performance machine types . gcsfuse CLI command structure The following example shows the structure of the gcsfuse command, including required commands and optional gcsfuse options. gcsfuse GLOBAL OPTIONS BUCKET NAME MOUNT POINT Replace the following: GLOBAL OPTIONS are the gcsfuse options that control how the mount is set up and how Cloud Storage FUSE behaves.
+- This severity level also includes the information provided in the info , warning , and error severity levels. trace : contains granular details about each Cloud Storage FUSE operation and function call, outlining the gcsfuse interaction with the kernel FUSE driver and Cloud Storage.
+- A path, for example: /etc/gcsfuse.yaml . "" --profile Applies a predefined, optimized set of Cloud Storage FUSE configurations for caching, threading, and buffer sizes to help you achieve high performance for a specific workload type, such as training, serving, and checkpointing.
+
+### Cloud Storage FUSE configuration file \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file)
+- Source ID: `site-docs-reference`
+- Final score: 153
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Cloud Storage FUSE configuration file format and fields The following YAML configuration example shows the format and fields available in Cloud Storage FUSE. app-name : "APP NAME" logging : file-path : "FILE PATH" format : FORMAT severity : SEVERITY log-rotate : max-file-size-mb : MAX FILE SIZE backup-file-count : BACKUP FILE COUNT compress : COMPRESS cache-dir : "CACHE DIR" file-cache : max-size-mb : MAX SIZE cache-file-for-range-read : CACHE FILE FOR RANGE READ enable-parallel-downloads : ENABLE PARALLEL DOWNLOADS exclude-regex : EXCLUDE REGEX include-regex : INCLUDE REGEX parallel-downloads-per-file : PARALLEL DOWNLOADS PER FILE max-parallel-downloads : MAX PARALLEL DOWNLOADS download-chunk-size-mb : DOWNLOAD CHUNK SIZE metadata-cache : negative-ttl-secs : ENABLE NEGATIVE TTL SECS stat-cache-max-size-mb : STAT CACHE MAX SIZE ttl-secs : TTL SECS enable-metadata-prefetch : ENABLE METADATA PREFETCH metadata-prefetch-entries-limit : METADATA PREFETCH ENTRIES LIMIT metadata-prefetch-max-workers : METADATA PREFETCH MAX WORKERS only-dir : "ONLY DIR" gcs-auth : anonymous-access : ANONYMOUS ACCESS key-file : "KEY FILE" reuse-token-from-url : REUSE TOKEN FROM URL token-url : "TOKEN URL" gcs-connection : billing-project : "BILLING PROJECT" client-protocol : CLIENT PROTOCOL custom-endpoint : "CUSTOM ENDPOINT" http-client-timeout : HTTP CLIENT TIMEOUT limit-bytes-per-sec : "LIMIT BYTES PER SEC" limit-ops-per-sec : "LIMIT OPS PER SEC" max-conns-per-host : MAX CONNS PER HOST max-idle-conns-per-host : MAX IDLE CONNS PER HOST sequential-read-size-mb : SEQUENTIAL READ SIZE implicit-dirs : IMPLICIT DIRS file-system : kernel-list-cache-ttl-secs : KERNEL LIST CACHE TTL SECS ignore-interrupts : IGNORE INTERRUPTS dir-mode : "DIR MODE" file-mode : "FILE MODE" fuse-options : FUSE OPTIONS gid : GID rename-dir-limit : RENAME DIR LIMIT temp-dir : "TEMP DIR" uid : UID foreground : FOREGROUND gcs-retries : max-retry-attempts : MAX RETRY ATTEMPTS max-retry-sleep : MAX RETRY SLEEP multiplier : "MULTIPLIER" metrics : cloud-metrics-export-interval-secs : CLOUD METRICS EXPORT INTERVAL prometheus-port : PROMETHEUS PORT debug : log-mutex : LOG MUTEX exit-on-invariant-violation : EXIT ON INVARIANT VIOLATION write : enable-streaming-writes : STREAMING WRITES global-max-blocks : MAXIMUM GLOBAL BLOCKS read : enable-buffered-read : ENABLE BUFFERED READ global-max-blocks : MAXIMUM GLOBAL READ BLOCKS profile : PROFILE Cloud Storage FUSE configuration file fields The following table describes the fields you can specify in your Cloud Storage FUSE configuration file.
+- Note: Using either the trace or debug severity levels when file caching is enabled can result in performance degradation due to logging overhead and should only be used temporarily such as during troubleshooting. off : disables all logging. error : contains messages about serious issues that prevent Cloud Storage FUSE from completing an operation, or indicate a failure such as mount failures, permission errors, and critical input/output (I/O) errors. warning : contains messages indicating potential issues that aren't critical but can lead to issues if not addressed.
+- 0s , which specifies no timeout limit-bytes-per-sec Specifies the bandwidth limit at which Cloud Storage FUSE can read data from Cloud Storage, measured over a 30-second window. "-1" , which specifies no limit. limit-ops-per-sec Specifies a limit for operations performed per second, measured over a 30-second window.
+- This severity level also includes the information provided in the info , warning , and error severity levels. trace : contains granular details about each Cloud Storage FUSE operation and function call, outlining the gcsfuse interaction with the kernel FUSE driver and Cloud Storage.
+
+### Cloud Storage FUSE CLI reference \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage/docs/gcsfuse-cli](https://docs.cloud.google.com/storage/docs/gcsfuse-cli)
+- Source ID: `site-docs-reference`
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:

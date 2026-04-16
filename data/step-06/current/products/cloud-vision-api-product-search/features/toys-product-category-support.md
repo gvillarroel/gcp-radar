@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:28:07.836Z"
+generated_at: "2026-04-12T12:12:50.391Z"
 product_name: "Cloud Vision API Product Search"
 product_slug: "cloud-vision-api-product-search"
 feature_name: "toys product category support"
 feature_slug: "toys-product-category-support"
 latest_feature_date: "2018-12-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/vision/product-search/docs/searching"
   - "https://docs.cloud.google.com/vision/product-search/docs/get-list-resources"
+  - "https://docs.cloud.google.com/vision/product-search/docs/product-categories"
   - "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products"
 keywords:
   - "toys"
@@ -26,7 +27,7 @@ keywords:
 # toys product category support
 
 Product: Cloud Vision API Product Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Product Search supports a toys product category in addition to other supported p
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/vision/product-search/docs/searching](https://docs.cloud.google.com/vision/product-search/docs/searching)
 - [https://docs.cloud.google.com/vision/product-search/docs/get-list-resources](https://docs.cloud.google.com/vision/product-search/docs/get-list-resources)
+- [https://docs.cloud.google.com/vision/product-search/docs/product-categories](https://docs.cloud.google.com/vision/product-search/docs/product-categories)
 - [https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products](https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/vision/product-search/docs/searching](https://docs.cloud.google.com/vision/product-search/docs/searching)
 - Source ID: `site-docs-root`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 283
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Response { "responses": [ { "productSearchResults" : { "indexTime": "2019-09-04T21:03:35.662099907Z", "results": [ { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id65 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.38946953, "image": "projects/ project-id /locations/ location-id /products/product id65/referenceImages/ image65 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id35 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.3847863, "image": "projects/ project-id /locations/ location-id /products/product id35/referenceImages/ image35 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id34 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.33896044, "image": "projects/ project-id /locations/ location-id /products/product id34/referenceImages/ image34 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id62 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.32509044, "image": "projects/ project-id /locations/ location-id /products/product id62/referenceImages/ image62 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id32 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.3237155, "image": "projects/ project-id /locations/ location-id /products/product id32/referenceImages/image32" } ], "productGroupedResults" : [ { "boundingPoly": { "normalizedVertices": [ { "x": 0.00458825, "y": 0.11000001 }, { "x": 0.988353, "y": 0.11000001 }, { "x": 0.988353, "y": 0.9290588 }, { "x": 0.00458825, "y": 0.9290588 } ] }, "results": [ { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id65 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.41785678, "image": "projects/ project-id /locations/ location-id /products/product id65/referenceImages/ image65 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id35 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.3803885, "image": "projects/ project-id /locations/ location-id /products/product id35/referenceImages/ image35 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id34 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.36055994, "image": "projects/ project-id /locations/ location-id /products/product id34/referenceImages/ image34 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id93 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "shoe" }, { "key": "kids", "value": "true" } ] }, "score": 0.33286288, "image": "projects/ project-id /locations/ location-id /products/product id93/referenceImages/ image93 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id62 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.32263064, "image": "projects/ project-id /locations/ location-id /products/product id62/referenceImages/ image62 " } ], "objectAnnotations": [ { "mid": "/m/01d40f", "name": "Dress", "score": 0.95488 } ] } ] } } ] } Go To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision/product-search/docs/get-list-resources](https://docs.cloud.google.com/vision/product-search/docs/get-list-resources)
 - Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 242
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - ProductSearchClient (); async function listProducts () { / TODO(developer): Uncomment the following line before running the sample. / // const projectId = 'Your Google Cloud project Id'; // const location = 'A compute region name'; // Resource path that represents Google Cloud Platform location. const locationPath = client . locationPath ( projectId , location ); const [ products ] = await client . listProducts ({ parent : locationPath }); products . forEach ( product = > { console . log ( Product name: ${ product . name } ); console . log ( Product id: ${ product . name . split ( '/' ). pop () } ); console . log ( Product display name: ${ product . displayName } ); console . log ( Product description: ${ product . description } ); console . log ( Product category: ${ product . productCategory } ); if ( product . productLabels . length ) { console . log ( 'Product labels:' ); product . productLabels . forEach ( productLabel = > { console . log ( ${ productLabel . key } : ${ productLabel . value } ); }); } }); } listProducts (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .
@@ -76,13 +78,27 @@ Evidence snippets:
 - String formattedParent = LocationName . format ( projectId , computeRegion ); // List all the products available in the region. for ( Product product : client . listProducts ( formattedParent ). iterateAll ()) { // Display the product information System . out . println ( String . format ( "\nProduct name: %s" , product . getName ())); System . out . println ( String . format ( "Product id: %s" , product . getName (). substring ( product . getName (). lastIndexOf ( '/' ) + 1 ))); System . out . println ( String . format ( "Product display name: %s" , product . getDisplayName ())); System . out . println ( String . format ( "Product category: %s" , product . getProductCategory ())); System . out . println ( "Product labels:" ); System . out . println ( String . format ( "Product labels: %s" , product . getProductLabelsList (). toString ())); } } } Node.js To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .
 - ProductSearchClient () Get the full path of the product set. product set path = client . product set path ( project = project id , location = location , product set = product set id ) List all the products available in the product set. products = client . list products in product set ( name = product set path ) Display the product information. for product in products : print ( f "Product name: { product . name } " ) print ( "Product id: {} " . format ( product . name . split ( "/" )[ - 1 ])) print ( f "Product display name: { product . display name } " ) print ( f "Product description: { product . description } " ) print ( f "Product category: { product . product category } " ) print ( f "Product labels: { product . product labels } " ) Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Vision API Product Search reference documentation for .NET.
 
+### Product Categories \_|\_ Vision API Product Search \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vision/product-search/docs/product-categories](https://docs.cloud.google.com/vision/product-search/docs/product-categories)
+- Source ID: `site-docs-root`
+- Final score: 241
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Vision API Product Search then detects and maps the appropriate product category to the product for you.
+- Product Category productCategory productCategory (legacy/deprecated) Description Home goods homegoods-v2 homegoods Home goods are products you find around the house: appliances, furniture, furnishings, etc.
+- Home Documentation Industry solutions Vision API Product Search Reference Send feedback Product Categories Stay organized with collections Save and categorize content based on your preferences.
+- The Vision API Product Search can recognize the following product categories.
+
 ### "Quickstart: Create a product set and search for products \_|\_ Vision API\
 
 - URL: [https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products](https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products)
 - Source ID: `site-docs-root`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 234
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For more information on using a pageToken , see Getting and listing resources . { "products": [ { "name": "projects/ PROJECT ID /locations/ LOCATION ID /products/product id0", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "shoe" } ] }, { "name": "projects/ PROJECT ID /locations/ LOCATION ID /products/product id1", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "men" }, { "key": "category", "value": "shoe" } ] }, ... { "name": "projects/ PROJECT ID /locations/ LOCATION ID /products/product id21", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] } ], " nextPageToken ": "1LqhSgZfM uWKOxvog" } Search for matching products with Vision API Product Search After indexing is complete, you can search for products that match a sample image.

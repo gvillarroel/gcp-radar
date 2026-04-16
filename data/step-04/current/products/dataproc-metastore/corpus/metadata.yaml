@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-11T03:09:52+00:00'
-updated_at: '2026-04-11T04:06:52+00:00'
+updated_at: '2026-04-14T03:55:57+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -50,20 +50,6 @@ sources:
     compact_output: true
   last_synced_at: '2026-04-11T04:03:34+00:00'
 - type: site
-  id: site-iam-reference
-  title: https://docs.cloud.google.com/dataproc-metastore/docs/create-service
-  created_at: '2026-04-11T03:09:53+00:00'
-  updated_at: '2026-04-11T04:04:36+00:00'
-  update_command: know sync site https://docs.cloud.google.com/dataproc-metastore/docs/create-service
-    --key corpus --compact
-  delete_command: know del --key corpus site-iam-reference
-  config:
-    url: https://docs.cloud.google.com/dataproc-metastore/docs/create-service
-    max_depth: 1
-    max_pages: 20
-    compact_output: true
-  last_synced_at: '2026-04-11T04:04:36+00:00'
-- type: site
   id: site-python-reference
   title: https://docs.cloud.google.com/python/docs/reference/metastore/latest
   created_at: '2026-04-11T03:09:54+00:00'
@@ -91,3 +77,17 @@ sources:
     max_pages: 20
     compact_output: true
   last_synced_at: '2026-04-11T04:06:52+00:00'
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc
+  created_at: '2026-04-14T03:54:52+00:00'
+  updated_at: '2026-04-14T03:55:57+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-14T03:55:57+00:00'

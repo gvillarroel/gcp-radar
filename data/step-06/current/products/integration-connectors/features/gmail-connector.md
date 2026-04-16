@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:38.928Z"
+generated_at: "2026-04-12T12:17:32.209Z"
 product_name: "Integration Connectors"
 product_slug: "integration-connectors"
 feature_name: "Gmail connector"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-03-15"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/integration-connectors/docs/all-integration-connectors"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connector-reference-overview"
   - "https://docs.cloud.google.com/integration-connectors/docs/add-connector-iam-conditions"
-  - "https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/custom-connectors"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure"
 keywords:
   - "gmail"
   - "connector"
@@ -36,45 +37,66 @@ A Gmail connector is available in preview.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/integration-connectors/docs/all-integration-connectors](https://docs.cloud.google.com/integration-connectors/docs/all-integration-connectors)
+- [https://docs.cloud.google.com/integration-connectors/docs/connector-reference-overview](https://docs.cloud.google.com/integration-connectors/docs/connector-reference-overview)
 - [https://docs.cloud.google.com/integration-connectors/docs/add-connector-iam-conditions](https://docs.cloud.google.com/integration-connectors/docs/add-connector-iam-conditions)
-- [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure)
 
 ## Supporting Pages
 
-### IAM Conditions for fine-grained access | Integration Connectors | Google Cloud Documentation
+### All Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/all-integration-connectors](https://docs.cloud.google.com/integration-connectors/docs/all-integration-connectors)
+- Source ID: `site-docs-root-2`
+- Final score: 208
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Connectors for Google services Gcard count = 36, Extra = 2, Dummy = 1 or 0 12 matrix --> AlloyDB BigQuery Bigtable Cloud Search Cloud Spanner Cloud SQL - MySQL Cloud SQL - PostgreSQL Cloud SQL - SQL Server Cloud Storage Cloud Tasks Cloud Translation Enterprise License Manager Firestore Gmail Google Analytics Google Calendar Google Classroom Google Cloud DataCatalog Google Cloud Natural Language Google Contacts Google Dialogflow Google Docs Google Drive Google Forms Google Safe Browsing Google Sheets Google Slides Google Workspace Admin SDK Identity and Access Management Pub/Sub Search Ads 360 Vertex AI Youtube Youtube Analytics Youtube Reporting Connectors for other applications Gcard count = 114, Extra = 1, Dummy = 2 or 0 38 matrix --> Active Directory Acumatica Airtable Amazon S3 Apache Cassandra Apache CouchDB Apache Kafka Asana AuthorizeNet Azure AD (Entra ID) Azure Data Lake Storage Azure DevOps Azure Synapse BigCommerce Box CockroachDB Commercetools Confluence Commercetools Couchbase Dataverse Docusign Dropbox Dynamics 365 Dynamics 365 Business Central Elasticsearch Email EnterpriseDB Excel Online FinancialForce FreshBooks FTP GitHub Greenplum HDFS HL7 HTTP HubSpot IBM DB2 IBM MQ Instagram Jira Cloud Jira Server (Data Center) Jira Service Management Kintone LDAP LinkedIn Magento MailChimp MariaDB Marketo MetaAds Monday MongoDB Microsoft Exchange Microsoft Teams MySQL Netsuite Neo4j Okta Office 365 OneDrive Oracle DB Oracle Eloqua Oracle Sales Cloud PayPal PostgreSQL QuickBooks Online Rabbit MQ Redis Redshift Sage Intacct Salesforce Salesforce Marketing Cloud SAP Ariba Procurement SAP ASE (Sybase) SAP Business One SAP ERP SAP Gateway SAP HANA SAP HANA XS Advanced SAP Hybris C4C SAP SuccessFactors SendGrid ServiceNow SFTP SharePoint Shopify SingleStore Slack Smartsheet Snowflake Solace Splunk SQL Server Square Streak Stripe TaxJar Teradata Tibco EMS Trello Twilio UKG Webhook WooCommerce WordPress Workday Xero Zendesk Zoho Books Zuora Connectors in General Availability (GA) Some of the Integration Connectors are available only in the preview mode, while others are in general availability (GA) .
+- The following connectors are available in GA: Active Directory Acumatica Airtable AlloyDB Amazon S3 Apache Cassandra Apache CouchDB Apache Kafka Asana Azure AD (Entra ID) Azure Data Lake Storage Azure DevOps Azure Synapse BigCommerce BigQuery Bigtable Box Cloud SQL for MySQL Cloud SQL for PostgreSQL Cloud SQL for SQL Server Cloud Storage CockroachDB Confluence Couchbase Dataverse DocuSign Dropbox Dynamics 365 Dynamics 365 Business Central Elasticsearch Email Excel Online Freshbooks FTP GitHub Greenplum HDFS HL7 HTTP HubSpot IBM Db2 IBM MQ Instagram Jira Cloud Jira Server (Data Center) Jira Service Management Kintone LDAP LinkedIn MailChimp MariaDB Marketo Magento MetaAds Monday MongoDB v2 Microsoft Exchange Microsoft Teams MySQL Neo4j NetSuite Office365 Okta OneDrive Oracle DB v2 Oracle Eloqua Oracle Sales Cloud PayPal PostgreSQL Pub/Sub QuickBooks Online Rabbit MQ Redis Redshift Sage Intacct Salesforce SAP Ariba Procurement SAP Business One SAP ERP SAP Gateway SAP HANA SAP HANA XS Advanced SAP Hybris C4C SAP SuccessFactors SAP Sybase Salesforce Marketing Cloud SendGrid ServiceNow SFTP SharePoint Shopify SingleStore Slack Smartsheet Snowflake Splunk SQL Server Square Stripe Teradata TIBCO EMS Trello Twilio UKG WordPress WooCommerce Workday Xero Zendesk Zoho Books Zuora Note: You will be billed for usage of a generally available connector version as per the prices mentioned in the pricing page .
+- Regularly check for the presence of the Preview label next to the connector name in the List connections page .
+- All Integration Connectors This page provides a consolidated list of all the available Integration Connectors.
+
+### All Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connector-reference-overview](https://docs.cloud.google.com/integration-connectors/docs/connector-reference-overview)
+- Source ID: `site-docs-root`
+- Final score: 198
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Connectors for Google services Gcard count = 36, Extra = 2, Dummy = 1 or 0 12 matrix --> AlloyDB BigQuery Bigtable Cloud Search Cloud Spanner Cloud SQL - MySQL Cloud SQL - PostgreSQL Cloud SQL - SQL Server Cloud Storage Cloud Tasks Cloud Translation Enterprise License Manager Firestore Gmail Google Analytics Google Calendar Google Classroom Google Cloud DataCatalog Google Cloud Natural Language Google Contacts Google Dialogflow Google Docs Google Drive Google Forms Google Safe Browsing Google Sheets Google Slides Google Workspace Admin SDK Identity and Access Management Pub/Sub Search Ads 360 Vertex AI Youtube Youtube Analytics Youtube Reporting Connectors for other applications Gcard count = 114, Extra = 1, Dummy = 2 or 0 38 matrix --> Active Directory Acumatica Airtable Amazon S3 Apache Cassandra Apache CouchDB Apache Kafka Asana AuthorizeNet Azure AD (Entra ID) Azure Data Lake Storage Azure DevOps Azure Synapse BigCommerce Box CockroachDB Commercetools Confluence Commercetools Couchbase Dataverse Docusign Dropbox Dynamics 365 Dynamics 365 Business Central Elasticsearch Email EnterpriseDB Excel Online FinancialForce FreshBooks FTP GitHub Greenplum HDFS HL7 HTTP HubSpot IBM DB2 IBM MQ Instagram Jira Cloud Jira Server (Data Center) Jira Service Management Kintone LDAP LinkedIn Magento MailChimp MariaDB Marketo MetaAds Monday MongoDB Microsoft Exchange Microsoft Teams MySQL Netsuite Neo4j Okta Office 365 OneDrive Oracle DB Oracle Eloqua Oracle Sales Cloud PayPal PostgreSQL QuickBooks Online Rabbit MQ Redis Redshift Sage Intacct Salesforce Salesforce Marketing Cloud SAP Ariba Procurement SAP ASE (Sybase) SAP Business One SAP ERP SAP Gateway SAP HANA SAP HANA XS Advanced SAP Hybris C4C SAP SuccessFactors SendGrid ServiceNow SFTP SharePoint Shopify SingleStore Slack Smartsheet Snowflake Solace Splunk SQL Server Square Streak Stripe TaxJar Teradata Tibco EMS Trello Twilio UKG Webhook WooCommerce WordPress Workday Xero Zendesk Zoho Books Zuora Connectors in General Availability (GA) Some of the Integration Connectors are available only in the preview mode, while others are in general availability (GA) .
+- The following connectors are available in GA: Active Directory Acumatica Airtable AlloyDB Amazon S3 Apache Cassandra Apache CouchDB Apache Kafka Asana Azure AD (Entra ID) Azure Data Lake Storage Azure DevOps Azure Synapse BigCommerce BigQuery Bigtable Box Cloud SQL for MySQL Cloud SQL for PostgreSQL Cloud SQL for SQL Server Cloud Storage CockroachDB Confluence Couchbase Dataverse DocuSign Dropbox Dynamics 365 Dynamics 365 Business Central Elasticsearch Email Excel Online Freshbooks FTP GitHub Greenplum HDFS HL7 HTTP HubSpot IBM Db2 IBM MQ Instagram Jira Cloud Jira Server (Data Center) Jira Service Management Kintone LDAP LinkedIn MailChimp MariaDB Marketo Magento MetaAds Monday MongoDB v2 Microsoft Exchange Microsoft Teams MySQL Neo4j NetSuite Office365 Okta OneDrive Oracle DB v2 Oracle Eloqua Oracle Sales Cloud PayPal PostgreSQL Pub/Sub QuickBooks Online Rabbit MQ Redis Redshift Sage Intacct Salesforce SAP Ariba Procurement SAP Business One SAP ERP SAP Gateway SAP HANA SAP HANA XS Advanced SAP Hybris C4C SAP SuccessFactors SAP Sybase Salesforce Marketing Cloud SendGrid ServiceNow SFTP SharePoint Shopify SingleStore Slack Smartsheet Snowflake Splunk SQL Server Square Stripe Teradata TIBCO EMS Trello Twilio UKG WordPress WooCommerce Workday Xero Zendesk Zoho Books Zuora Note: You will be billed for usage of a generally available connector version as per the prices mentioned in the pricing page .
+- Regularly check for the presence of the Preview label next to the connector name in the List connections page .
+- All Integration Connectors This page provides a consolidated list of all the available Integration Connectors.
+
+### "IAM Conditions for fine-grained access \_|\_ Integration Connectors \_|\_\
 
 - URL: [https://docs.cloud.google.com/integration-connectors/docs/add-connector-iam-conditions](https://docs.cloud.google.com/integration-connectors/docs/add-connector-iam-conditions)
-- Source ID: `site-iam-reference`
-- Final score: 132
+- Source ID: `site-docs-root-2`
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- IAM Conditions for fine-grained access Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/add-connector-iam-conditions An IAM condition lets you have granular control over your Integration Connectors resources.
-- By default, an Integration Connectors user or a role can perform all the supported operations on a connection.
+- Preview — BigQuery Connector This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- For the complete list of all the available URIs, see Integration Connectors REST resources .
+- Perform get, create, update, and delete operations on connections whose name starts with marketing- . (resource.name.startsWith ("projects/ PROJECT ID /locations/ CONNECTION LOCATION / connections/marketing-") && resource.type == "connectors.googleapis.com/Connection") (resource.name.startsWith ("projects/ PROJECT ID /locations/ CONNECTION LOCATION / connections/marketing-") && resource.type == "connectors.googleapis.com/ConnectionSchemaMetadata") (resource.type != "connectors.googleapis.com/Connection" && resource.type != "connectors.googleapis.com/ConnectionSchemaMetadata") A user or a role to whom you apply this condition, can only do the following operations: List all connections.
+- Integration Connectors supports conditions for the following resources: Resource name Resource type Connection connectors.googleapis.com/Connection ManagedZone connectors.googleapis.com/ManagedZone EndpointAttachment connectors.googleapis.com/EndpointAttachment EventSubscription connectors.googleapis.com/EventSubscription ConnectionSchemaMetadata connectors.googleapis.com/ConnectionSchemaMetadata Note: Google Cloud's resources have a hierarchical structure, and the permissions that you apply to a parent resource doesn't propagate to the parent's child resource(s), and conversely the permissions that you apply to a child resource(s) don't apply to the child's parent.
 
-### Marketplace connectors overview | Integration Connectors | Google Cloud Documentation
+### Azure DevOps \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- Source ID: `site-docs-root`
-- Final score: 129
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 190
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Marketplace connectors overview Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview As a partner, when you publish a custom connector as a Marketplace connector, it enhances the visibility and reach of the connector.
-- As a Marketplace consumer, you can use the trusted Google Cloud Marketplace platform to discover and purchase connectors required to build integrations in Application ...
-
-### Custom connectors | Integration Connectors | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- Source ID: `site-docs-root`
-- Final score: 123
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Custom connectors Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/custom-connectors This page provides an overview of the custom connectors feature in Integration Connectors, and assumes that you are familiar with the following concepts:
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { "PullRequestId": "23", "ProjectId": "64058663-6419-4b11-8ef0-2ebf985949bc", "RepositoryId": "e848b49e-704f-4df3-94ce-4f23176715b6" } If the action is successful, the GetPullRequestCommits task's connectorOutputPayload response parameter will have a value similar to the following: [ { "CommitId": "ebb720c5b93c52341cb86ccfb42258bb562a8406", "AuthorName": "dani.dana", "AuthorEmail": "baklavainthebalkans@gmail.com", "AuthoredDate": "2024-11-26 11:24:19.0", "CommitterName": "dani.dana", "CommitterEmail": "baklavainthebalkans@gmail.com", "CommittedDate": "2024-11-26 11:24:19.0", "Comment": "Updated sample.txt", "CommentTruncated": null, "Url": "https://dev.azure.com/charliecruz/64058663-6419-4b11-8ef0-2ebf985949bc/ apis/git/repositories/e848b49e-704f-4df3-94ce-4f23176715b6/commits/ebb720c5b93c52341cb86ccfb42258bb562a8406" }, { "CommitId": "353f74b48ada83111449b922f4660a338e058989", "AuthorName": "dani.dana", "AuthorEmail": "baklavainthebalkans@gmail.com", "AuthoredDate": "2024-11-26 11:23:01.0", "CommitterName": "dani.dana", "CommitterEmail": "baklavainthebalkans@gmail.com", "CommittedDate": "2024-11-26 11:23:01.0", "Comment": "Updated bcd", "CommentTruncated": null, "Url": "https://dev.azure.com/charliecruz/64058663-6419-4b11-8ef0-2ebf985949bc/ apis/git/repositories/e848b49e-704f-4df3-94ce-4f23176715b6/commits/353f74b48ada83111449b922f4660a338e058989" }, { "CommitId": "50a74dee46f8bcad4637d730994144f944c7d589", "AuthorName": "dani.dana", "AuthorEmail": "baklavainthebalkans@gmail.com", "AuthoredDate": "2024-11-26 11:21:59.0", "CommitterName": "dani.dana", "CommitterEmail": "baklavainthebalkans@gmail.com", "CommittedDate": "2024-11-26 11:21:59.0", "Comment": "Added bcd", "CommentTruncated": null, "Url": "https://dev.azure.com/charliecruz/64058663-6419-4b11-8ef0-2ebf985949bc/ apis/git/repositories/e848b49e-704f-4df3-94ce-4f23176715b6/commits/50a74dee46f8bcad4637d730994144f944c7d589" }, { "CommitId": "9813f562b0548144006f773314704db274c757c4", "AuthorName": "Alex amal", "AuthorEmail": "cloudysanfrancisco@gmail.com", "AuthoredDate": "2024-11-26 11:19:29.0", "CommitterName": "Alex amal", "CommitterEmail": "cloudysanfrancisco@gmail.com", "CommittedDate": "2024-11-26 11:19:29.0", "Comment": "hello", "CommentTruncated": null, "Url": "https://dev.azure.com/charliecruz/64058663-6419-4b11-8ef0-2ebf985949bc/ apis/git/repositories/e848b49e-704f-4df3-94ce-4f23176715b6/commits/9813f562b0548144006f773314704db274c757c4" } ] Example - Add a build tag In the Configure connector task dialog, click Actions .
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { "RepositoryId": "89f79340-8659-4927-9d9f-e8836c19af55", "BranchRefName": "refs/heads/US Googlecloud Push1", "OldObjectId": "4d66aafb75efda2bbdda7a2b609b152b1b715b7e", "CommitComment": "Googlecloud PUSH Changes", "ChangesAggregate": "{\n \"changeType\": \"edit\",\n \"item\": {\n \"path\": \"/tasks.md\"\n },\n \"newContent\": {\n \"content\": \"# Tasks\\n\\n Item 1\\n Item 2\",\n \"contentType\": \"rawtext\"\n }\n }" } If the action is successful, the PushChanges task's connectorOutputPayload response parameter will have a value similar to the following: [ { "NewObjectId": "949e4710336bc5bdc779ca6b334e029c2f50a029", "CommitId": "949e4710336bc5bdc779ca6b334e029c2f50a029", "CommitTreeId": "7e7394dcfc5b4d4cf2c8c21d70a96fe34f8eaf3e", "AuthorName": "Charlie Cruz", "AuthorEmail": "baklavainthebalkans@gmail.onmicrosoft.com", "AuthoredDate": "2024-11-19 07:04:42.0", "CommitterName": "Charlie Cruz", "CommitterEmail": "baklavainthebalkans@gmail.onmicrosoft.com", "CommittedDate": "2024-11-19 07:04:42.0", "CommitUrl": "https://dev.azure.com/charliecruz/64058663-6419-4b11-8ef0-2ebf985949bc/ apis/git/repositories/89f79340-8659-4927-9d9f-e8836c19af55/commits/949e4710336bc5bdc779ca6b334e029c2f50a029", "RepositoryId": "89f79340-8659-4927-9d9f-e8836c19af55", "RepositoryName": "refs/heads/US Googlecloud Push1", "PushId": "193", "PushDate": "2024-11-19T07:04:42.5793751Z", "PushURL": "https://dev.azure.com/charliecruz/64058663-6419-4b11-8ef0-2ebf985949bc/ apis/git/repositories/89f79340-8659-4927-9d9f-e8836c19af55/pushes/193" } ] Example - Download the logs of a release In the Configure connector task dialog, click Actions .
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { "PullRequestId": "2", "ProjectId": "64058663-6419-4b11-8ef0-2ebf985949bc", "RepositoryId": "e848b49e-704f-4df3-94ce-4f23176715b6" } If the action is successful, the GetPullRequestCommits task's connectorOutputPayload response parameter will have a value similar to the following: [ { "CommitId": "7299b6623d7d146751d8cf280af301f9a345ff05", "AuthorName": "jeffersonloveshi.k", "AuthorEmail": "jeffersonloveshiking@gmail.com", "AuthoredDate": "2024-08-12 11:25:23.0", "CommitterName": "lakshminarayana.k", "CommitterEmail": "jeffersonloveshiking@gmail.com", "CommittedDate": "2024-08-12 11:25:23.0", "Comment": "Added sample.txt", "CommentTruncated": null, "Url": "https://dev.azure.com/charliecruz/64058663-6419-4b11-8ef0-2ebf985949bc/ apis/git/repositories/e848b49e-704f-4df3-94ce-4f23176715b6/commits/7299b6623d7d146751d8cf280af301f9a345ff05" } ] Example - Push changes to a repository In the Configure connector task dialog, click Actions .
+- In the Data Mapper section of the Data Mapping task, click Open Data Mapping Editor and then enter a value similar to the following in the Input Value field and choose the EntityId/ConnectorInputPayload as Local variable. { "UserPrincipalName": "jeffersonloveshiking@gmail.com", "UserSubjectKind": "user", "AccessLevelAccountLicenseType": "Stakeholder", "UserOriginId": "e3d3e130-51dc-48c5-a510-cce7a9df63af" } If the integration is successful, the connector task's connectorOutputPayload response parameter will have a value similar to the following: { "Id": "5e373a81-073d-4d64-a2c5-23d0b6cc287f" } Example - Create a new query in a project In the Configure connector task dialog, click Entities .
 

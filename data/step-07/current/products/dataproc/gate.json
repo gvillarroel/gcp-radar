@@ -1,0 +1,4889 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-14T01:57:07.769Z",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "input_file": "data/step-06/current/products/dataproc/extended-features.json",
+  "feature_count": 241,
+  "passed_feature_count": 241,
+  "failed_feature_count": 0,
+  "warned_feature_count": 25,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "Custom PyPI repository for pip",
+      "feature_slug": "custom-pypi-repository-for-pip",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 3,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "missing_exact_identifier_page",
+          "message": "No supporting page directly names the exact identifier(s): pypi.repository.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/JobScheduling",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/psc-ilb"
+      ]
+    },
+    {
+      "feature_name": "Multi-tenant clusters",
+      "feature_slug": "multi-tenant-clusters",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+      ]
+    },
+    {
+      "feature_name": "Dynamic multi-tenant cluster updates",
+      "feature_slug": "dynamic-multi-tenant-cluster-updates",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Zero-scale clusters",
+      "feature_slug": "zero-scale-clusters",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags",
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview"
+      ]
+    },
+    {
+      "feature_name": "Auto zone placement for clusters",
+      "feature_slug": "auto-zone-placement-for-clusters",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder"
+      ]
+    },
+    {
+      "feature_name": "High availability mode for Component Gateway and Spark History Server UI",
+      "feature_slug": "high-availability-mode-for-component-gateway-and-spark-history-server-ui",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Metastore integration with Trino",
+      "feature_slug": "dataproc-metastore-integration-with-trino",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Metastore beta NetworkConfig support with v1 clusters",
+      "feature_slug": "dataproc-metastore-beta-networkconfig-support-with-v1-clusters",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore"
+      ]
+    },
+    {
+      "feature_name": "Cluster creation failure action",
+      "feature_slug": "cluster-creation-failure-action",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.Builder"
+      ]
+    },
+    {
+      "feature_name": "Balanced persistent disk support",
+      "feature_slug": "balanced-persistent-disk-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest"
+      ]
+    },
+    {
+      "feature_name": "Cooperative multi-tenancy user mapping",
+      "feature_slug": "cooperative-multi-tenancy-user-mapping",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "generic_supporting_pages",
+          "message": "Supporting pages do not mention any informative feature tokens.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/overview",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-cluster"
+      ]
+    },
+    {
+      "feature_name": "Jupyter and JupyterLab login shells",
+      "feature_slug": "jupyter-and-jupyterlab-login-shells",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.pagers.ListSessionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.pagers.ListSessionsPager",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags"
+      ]
+    },
+    {
+      "feature_name": "Jupyter local persistent disk notebook storage",
+      "feature_slug": "jupyter-local-persistent-disk-notebook-storage",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Hub",
+      "feature_slug": "dataproc-hub",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements"
+      ]
+    },
+    {
+      "feature_name": "Jupyter notebook PDF export",
+      "feature_slug": "jupyter-notebook-pdf-export",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Presto job type",
+      "feature_slug": "dataproc-presto-job-type",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "feature_name": "GKE cluster configuration for Dataproc",
+      "feature_slug": "gke-cluster-configuration-for-dataproc",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder"
+      ]
+    },
+    {
+      "feature_name": "Job history persistence to Cloud Storage",
+      "feature_slug": "job-history-persistence-to-cloud-storage",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/submit-sparks-job-template",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+      ]
+    },
+    {
+      "feature_name": "MapReduce job history always-scan-user-dir",
+      "feature_slug": "mapreduce-job-history-always-scan-user-dir",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster"
+      ]
+    },
+    {
+      "feature_name": "GPU support for preemptible workers",
+      "feature_slug": "gpu-support-for-preemptible-workers",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-scale-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements"
+      ]
+    },
+    {
+      "feature_name": "Intel Optane DC Persistent Memory support",
+      "feature_slug": "intel-optane-dc-persistent-memory-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-template",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType"
+      ]
+    },
+    {
+      "feature_name": "SparkR jobs",
+      "feature_slug": "sparkr-jobs",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.Builder"
+      ]
+    },
+    {
+      "feature_name": "Local SSDs on preemptible workers",
+      "feature_slug": "local-ssds-on-preemptible-workers",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "feature_name": "Heterogeneous cluster machine types",
+      "feature_slug": "heterogeneous-cluster-machine-types",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags"
+      ]
+    },
+    {
+      "feature_name": "Dataproc version selection",
+      "feature_slug": "dataproc-version-selection",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "Snapshot diagnostic data sharing",
+      "feature_slug": "snapshot-diagnostic-data-sharing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse"
+      ]
+    },
+    {
+      "feature_name": "Apache Pig on ARM images",
+      "feature_slug": "apache-pig-on-arm-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview"
+      ]
+    },
+    {
+      "feature_name": "Custom PyPI repository for pip",
+      "feature_slug": "custom-pypi-repository-for-pip",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 3,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "missing_exact_identifier_page",
+          "message": "No supporting page directly names the exact identifier(s): pypi.repository.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/JobScheduling",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/psc-ilb"
+      ]
+    },
+    {
+      "feature_name": "Default dataproc-ml in 2.3-ml images",
+      "feature_slug": "default-dataproc-ml-in-2-3-ml-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+      ]
+    },
+    {
+      "feature_name": "Multi-tenant clusters",
+      "feature_slug": "multi-tenant-clusters",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+      ]
+    },
+    {
+      "feature_name": "BigLake Iceberg REST catalog support",
+      "feature_slug": "biglake-iceberg-rest-catalog-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg"
+      ]
+    },
+    {
+      "feature_name": "Checkpoint diagnostic data sharing",
+      "feature_slug": "checkpoint-diagnostic-data-sharing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "feature_name": "Dynamic multi-tenant cluster updates",
+      "feature_slug": "dynamic-multi-tenant-cluster-updates",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Cluster Scheduled Stop",
+      "feature_slug": "cluster-scheduled-stop",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient"
+      ]
+    },
+    {
+      "feature_name": "Zero-scale clusters",
+      "feature_slug": "zero-scale-clusters",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags",
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview"
+      ]
+    },
+    {
+      "feature_name": "Spark UI Event Timeline view",
+      "feature_slug": "spark-ui-event-timeline-view",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "feature_name": "Spark UI Task Quantile view",
+      "feature_slug": "spark-ui-task-quantile-view",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/audit-logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview"
+      ]
+    },
+    {
+      "feature_name": "Enhanced Flexibility Mode with primary worker shuffle",
+      "feature_slug": "enhanced-flexibility-mode-with-primary-worker-shuffle",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "feature_name": "Hadoop Google Secret Manager Credential Provider for Serverless Spark",
+      "feature_slug": "hadoop-google-secret-manager-credential-provider-for-serverless-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/hadoop-google-secret-manager-credential-provider",
+        "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "feature_name": "Dataproc on GKE runtime 2.0",
+      "feature_slug": "dataproc-on-gke-runtime-2-0",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/changelog",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn"
+      ]
+    },
+    {
+      "feature_name": "Cloud Profiler for Serverless Spark",
+      "feature_slug": "cloud-profiler-for-serverless-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements"
+      ]
+    },
+    {
+      "feature_name": "Advanced troubleshooting for Serverless Spark",
+      "feature_slug": "advanced-troubleshooting-for-serverless-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+      ]
+    },
+    {
+      "feature_name": "Autotuning Spark workloads",
+      "feature_slug": "autotuning-spark-workloads",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+      ]
+    },
+    {
+      "feature_name": "Gemini-assisted troubleshooting for Serverless Spark",
+      "feature_slug": "gemini-assisted-troubleshooting-for-serverless-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    },
+    {
+      "feature_name": "Hadoop Google Secret Manager Credential Provider for Compute Engine 2.0 images",
+      "feature_slug": "hadoop-google-secret-manager-credential-provider-for-compute-engine-2-0-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/hadoop-google-secret-manager-credential-provider",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources"
+      ]
+    },
+    {
+      "feature_name": "Hadoop Google Secret Manager Credential Provider for Compute Engine 2.1 images",
+      "feature_slug": "hadoop-google-secret-manager-credential-provider-for-compute-engine-2-1-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/hadoop-google-secret-manager-credential-provider",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources"
+      ]
+    },
+    {
+      "feature_name": "Hadoop Google Secret Manager Credential Provider for Compute Engine 2.2 images",
+      "feature_slug": "hadoop-google-secret-manager-credential-provider-for-compute-engine-2-2-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/hadoop-google-secret-manager-credential-provider",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources"
+      ]
+    },
+    {
+      "feature_name": "Ranger Cloud Storage downscoping",
+      "feature_slug": "ranger-cloud-storage-downscoping",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "feature_name": "Ranger Cloud Storage token caching",
+      "feature_slug": "ranger-cloud-storage-token-caching",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Spark Enhancements in Google Cloud console",
+      "feature_slug": "dataproc-spark-enhancements-in-google-cloud-console",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-partial-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    },
+    {
+      "feature_name": "Confidential Computing option for cluster creation",
+      "feature_slug": "confidential-computing-option-for-cluster-creation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Serverless autoscaling V2",
+      "feature_slug": "dataproc-serverless-autoscaling-v2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListAutoscalingPoliciesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies/create"
+      ]
+    },
+    {
+      "feature_name": "YARN node manager health metric",
+      "feature_slug": "yarn-node-manager-health-metric",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Auto zone placement for clusters",
+      "feature_slug": "auto-zone-placement-for-clusters",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder"
+      ]
+    },
+    {
+      "feature_name": "Serverless interactive sessions pages in console",
+      "feature_slug": "serverless-interactive-sessions-pages-in-console",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.pagers.ListSessionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.pagers.ListSessionsPager",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console"
+      ]
+    },
+    {
+      "feature_name": "Premium disk tier for Serverless node initialization",
+      "feature_slug": "premium-disk-tier-for-serverless-node-initialization",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "feature_name": "Driver node group YARN burst configuration",
+      "feature_slug": "driver-node-group-yarn-burst-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Automatic labels for Serverless batch resources",
+      "feature_slug": "automatic-labels-for-serverless-batch-resources",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Configurable BigQuery connector for Serverless Spark",
+      "feature_slug": "configurable-bigquery-connector-for-serverless-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "feature_name": "Premium compute tier for Serverless Spark",
+      "feature_slug": "premium-compute-tier-for-serverless-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "feature_name": "Premium storage tier for Serverless Spark",
+      "feature_slug": "premium-storage-tier-for-serverless-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "feature_name": "High availability mode for Component Gateway and Spark History Server UI",
+      "feature_slug": "high-availability-mode-for-component-gateway-and-spark-history-server-ui",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType"
+      ]
+    },
+    {
+      "feature_name": "Autoscaler recommendation reasoning details",
+      "feature_slug": "autoscaler-recommendation-reasoning-details",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in me-central1",
+      "feature_slug": "dataproc-regional-availability-in-me-central1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
+      ]
+    },
+    {
+      "feature_name": "pd-extreme disk support for Dataproc cluster creation",
+      "feature_slug": "pd-extreme-disk-support-for-dataproc-cluster-creation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in europe-west12",
+      "feature_slug": "dataproc-regional-availability-in-europe-west12",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "Batch listing filters",
+      "feature_slug": "batch-listing-filters",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.pagers.ListBatchesAsyncPager"
+      ]
+    },
+    {
+      "feature_name": "Large statically sized Dataproc Serverless for Spark batches",
+      "feature_slug": "large-statically-sized-dataproc-serverless-for-spark-batches",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/audit-logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob"
+      ]
+    },
+    {
+      "feature_name": "Unconditional TTL for Dataproc Serverless for Spark batches",
+      "feature_slug": "unconditional-ttl-for-dataproc-serverless-for-spark-batches",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/audit-logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Metastore integration with Trino",
+      "feature_slug": "dataproc-metastore-integration-with-trino",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "feature_name": "Hive Metastore OSS metrics source",
+      "feature_slug": "hive-metastore-oss-metrics-source",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics"
+      ]
+    },
+    {
+      "feature_name": "Dataproc job state metric",
+      "feature_slug": "dataproc-job-state-metric",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Serverless for Spark metrics",
+      "feature_slug": "dataproc-serverless-for-spark-metrics",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command"
+      ]
+    },
+    {
+      "feature_name": "Dataproc images 2.0.50 and 2.1.0-RC3",
+      "feature_slug": "dataproc-images-2-0-50-and-2-1-0-rc3",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Serverless for Spark runtime versions 1.0.22 and 2.0.2",
+      "feature_slug": "dataproc-serverless-for-spark-runtime-versions-1-0-22-and-2-0-2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "feature_name": "Cross-region Dataproc Metastore attachment via gRPC endpoint",
+      "feature_slug": "cross-region-dataproc-metastore-attachment-via-grpc-endpoint",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/grpc-endpoints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "feature_name": "Approximate usage reporting for Dataproc Serverless for Spark",
+      "feature_slug": "approximate-usage-reporting-for-dataproc-serverless-for-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark"
+      ]
+    },
+    {
+      "feature_name": "Driver and executor memory customization for Dataproc Serverless for Spark",
+      "feature_slug": "driver-and-executor-memory-customization-for-dataproc-serverless-for-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/profiling"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in me-west1",
+      "feature_slug": "dataproc-regional-availability-in-me-west1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/overview",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore"
+      ]
+    },
+    {
+      "feature_name": "Artifact Registry image streaming support for Dataproc Serverless for Spark",
+      "feature_slug": "artifact-registry-image-streaming-support-for-dataproc-serverless-for-spark",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn"
+      ]
+    },
+    {
+      "feature_name": "ANY reservation awareness for Dataproc Auto Zone Placement",
+      "feature_slug": "any-reservation-awareness-for-dataproc-auto-zone-placement",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceGrpc.AutoscalingPolicyServiceBlockingStub",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceGrpc.AutoscalingPolicyServiceBlockingV2Stub",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceGrpc.AutoscalingPolicyServiceFutureStub"
+      ]
+    },
+    {
+      "feature_name": "Executor allocation ratio for Dataproc Serverless for Spark dynamic allocation",
+      "feature_slug": "executor-allocation-ratio-for-dataproc-serverless-for-spark-dynamic-allocation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+        "https://docs.cloud.google.com/dataproc/docs/guides/audit-logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics"
+      ]
+    },
+    {
+      "feature_name": "Eager function fetch control for Dataproc Metastore Spark Hive client",
+      "feature_slug": "eager-function-fetch-control-for-dataproc-metastore-spark-hive-client",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/hive-metastore"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in us-south1",
+      "feature_slug": "dataproc-regional-availability-in-us-south1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Serverless for Spark runtime versions 1.0.2",
+      "feature_slug": "dataproc-serverless-for-spark-runtime-versions-1-0-2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/changelog",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in us-east5",
+      "feature_slug": "dataproc-regional-availability-in-us-east5",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in europe-southwest1",
+      "feature_slug": "dataproc-regional-availability-in-europe-southwest1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in europe-west9",
+      "feature_slug": "dataproc-regional-availability-in-europe-west9",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Serverless for Spark runtime version 1.0.1",
+      "feature_slug": "dataproc-serverless-for-spark-runtime-version-1-0-1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Serverless for Spark runtime version 1.0.0",
+      "feature_slug": "dataproc-serverless-for-spark-runtime-version-1-0-0",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in europe-west8",
+      "feature_slug": "dataproc-regional-availability-in-europe-west8",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "Dataproc performance metrics listener",
+      "feature_slug": "dataproc-performance-metrics-listener",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "CentOS-based Dataproc images",
+      "feature_slug": "centos-based-dataproc-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+      ]
+    },
+    {
+      "feature_name": "Enhanced Flexibility Mode with primary worker shuffle mode",
+      "feature_slug": "enhanced-flexibility-mode-with-primary-worker-shuffle-mode",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements"
+      ]
+    },
+    {
+      "feature_name": "Legacy Dataproc image versions before 1.3.95",
+      "feature_slug": "legacy-dataproc-image-versions-before-1-3-95",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "feature_name": "cluster_type field in Dataproc monitoring metrics",
+      "feature_slug": "cluster-type-field-in-dataproc-monitoring-metrics",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Resource Manager UI in HA cluster mode",
+      "feature_slug": "resource-manager-ui-in-ha-cluster-mode",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Metastore beta NetworkConfig support with v1 clusters",
+      "feature_slug": "dataproc-metastore-beta-networkconfig-support-with-v1-clusters",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in southamerica-west1",
+      "feature_slug": "dataproc-regional-availability-in-southamerica-west1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "Spark event log Cloud Storage flush control properties",
+      "feature_slug": "spark-event-log-cloud-storage-flush-control-properties",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "feature_name": "Spark History Server application filtering by Cloud Storage path",
+      "feature_slug": "spark-history-server-application-filtering-by-cloud-storage-path",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "feature_name": "Cluster creation failure action",
+      "feature_slug": "cluster-creation-failure-action",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.Builder"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in northamerica-northeast2",
+      "feature_slug": "dataproc-regional-availability-in-northamerica-northeast2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Dataproc v1beta2 API",
+      "feature_slug": "dataproc-v1beta2-api",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/changelog",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.Builder"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in asia-south2",
+      "feature_slug": "dataproc-regional-availability-in-asia-south2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in australia-southeast2",
+      "feature_slug": "dataproc-regional-availability-in-australia-southeast2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Image 1.5 and 2.0 agent /has_run_before sentinel file",
+      "feature_slug": "image-1-5-and-2-0-agent-has-run-before-sentinel-file",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "feature_name": "Dataproc regional availability in europe-central2",
+      "feature_slug": "dataproc-regional-availability-in-europe-central2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "Cluster label targeting for job submission",
+      "feature_slug": "cluster-label-targeting-for-job-submission",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Shielded VM user configuration",
+      "feature_slug": "shielded-vm-user-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "feature_name": "Balanced persistent disk support",
+      "feature_slug": "balanced-persistent-disk-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest"
+      ]
+    },
+    {
+      "feature_name": "Restartable jobs maximum failure limit",
+      "feature_slug": "restartable-jobs-maximum-failure-limit",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/JobScheduling",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "feature_name": "Cooperative multi-tenancy user mapping",
+      "feature_slug": "cooperative-multi-tenancy-user-mapping",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "generic_supporting_pages",
+          "message": "Supporting pages do not mention any informative feature tokens.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/overview",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-cluster"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Persistent History Server",
+      "feature_slug": "dataproc-persistent-history-server",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Ranger Optional Component",
+      "feature_slug": "dataproc-ranger-optional-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Solr Optional Component",
+      "feature_slug": "dataproc-solr-optional-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Docker Optional Component",
+      "feature_slug": "dataproc-docker-optional-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Flink Optional Component",
+      "feature_slug": "dataproc-flink-optional-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/changelog",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Compute Engine sole-tenant node integration",
+      "feature_slug": "compute-engine-sole-tenant-node-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Metastore integration",
+      "feature_slug": "dataproc-metastore-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/hive-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/overview",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore"
+      ]
+    },
+    {
+      "feature_name": "Workflow timeout",
+      "feature_slug": "workflow-timeout",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "feature_name": "Enhanced Flexibility Mode",
+      "feature_slug": "enhanced-flexibility-mode",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster"
+      ]
+    },
+    {
+      "feature_name": "Personal Cluster Authentication",
+      "feature_slug": "personal-cluster-authentication",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient"
+      ]
+    },
+    {
+      "feature_name": "Kerberos automatic configuration",
+      "feature_slug": "kerberos-automatic-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-kerberos",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos"
+      ]
+    },
+    {
+      "feature_name": "Jupyter and JupyterLab login shells",
+      "feature_slug": "jupyter-and-jupyterlab-login-shells",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.pagers.ListSessionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.pagers.ListSessionsPager",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags"
+      ]
+    },
+    {
+      "feature_name": "Component Gateway Proxy-Authorization support",
+      "feature_slug": "component-gateway-proxy-authorization-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "feature_name": "Default Shielded VMs for Debian 10 and Ubuntu 18.04 images",
+      "feature_slug": "default-shielded-vms-for-debian-10-and-ubuntu-18-04-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop"
+      ]
+    },
+    {
+      "feature_name": "Kerberized Zeppelin interpreter support",
+      "feature_slug": "kerberized-zeppelin-interpreter-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage"
+      ]
+    },
+    {
+      "feature_name": "Jupyter local persistent disk notebook storage",
+      "feature_slug": "jupyter-local-persistent-disk-notebook-storage",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "feature_name": "oauth2l tool in Dataproc images",
+      "feature_slug": "oauth2l-tool-in-dataproc-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication"
+      ]
+    },
+    {
+      "feature_name": "Temporary bucket configuration flag",
+      "feature_slug": "temporary-bucket-configuration-flag",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Component Gateway",
+      "feature_slug": "dataproc-component-gateway",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/grpc-endpoints",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Temporary bucket API configuration",
+      "feature_slug": "temporary-bucket-api-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Hub",
+      "feature_slug": "dataproc-hub",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements"
+      ]
+    },
+    {
+      "feature_name": "Cloud Storage default filesystem",
+      "feature_slug": "cloud-storage-default-filesystem",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-job-output",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager"
+      ]
+    },
+    {
+      "feature_name": "Persistent History Server done directory support",
+      "feature_slug": "persistent-history-server-done-directory-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "feature_name": "Non-preemptible secondary workers",
+      "feature_slug": "non-preemptible-secondary-workers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-partial-cluster",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Delta Lake 0.5.0 support",
+      "feature_slug": "delta-lake-0-5-0-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-federation"
+      ]
+    },
+    {
+      "feature_name": "Delta Lake Hive Connector",
+      "feature_slug": "delta-lake-hive-connector",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-federation",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "feature_name": "Presto Coordinator startup timeout",
+      "feature_slug": "presto-coordinator-startup-timeout",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command"
+      ]
+    },
+    {
+      "feature_name": "Dataproc on Google Kubernetes Engine",
+      "feature_slug": "dataproc-on-google-kubernetes-engine",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+      ]
+    },
+    {
+      "feature_name": "Jupyter notebook PDF export",
+      "feature_slug": "jupyter-notebook-pdf-export",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "feature_name": "Kerberos support in Component Gateway",
+      "feature_slug": "kerberos-support-in-component-gateway",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "feature_name": "Presto default BigQuery catalogs",
+      "feature_slug": "presto-default-bigquery-catalogs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "feature_name": "Presto job support in Dataproc Workflows",
+      "feature_slug": "presto-job-support-in-dataproc-workflows",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "feature_name": "SparkR job support in Dataproc Workflows",
+      "feature_slug": "sparkr-job-support-in-dataproc-workflows",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Presto job type",
+      "feature_slug": "dataproc-presto-job-type",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "feature_name": "Alphabetical sorting for Workflow Templates list methods",
+      "feature_slug": "alphabetical-sorting-for-workflow-templates-list-methods",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_template_controller.pagers.ListSessionTemplatesAsyncPager"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Presto Top-Level Component",
+      "feature_slug": "dataproc-presto-top-level-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Ranger Top-Level Component",
+      "feature_slug": "dataproc-ranger-top-level-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Solr Top-Level Component",
+      "feature_slug": "dataproc-solr-top-level-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command"
+      ]
+    },
+    {
+      "feature_name": "GKE cluster configuration for Dataproc",
+      "feature_slug": "gke-cluster-configuration-for-dataproc",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder"
+      ]
+    },
+    {
+      "feature_name": "Pagination for Clusters list methods",
+      "feature_slug": "pagination-for-clusters-list-methods",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "feature_name": "--num-preemptible-workers flag",
+      "feature_slug": "num-preemptible-workers-flag",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud",
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "feature_name": "Cloud Profiler for Dataproc jobs",
+      "feature_slug": "cloud-profiler-for-dataproc-jobs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.pagers.ListJobsAsyncPager"
+      ]
+    },
+    {
+      "feature_name": "Expanded machine type support for Auto Zone Placement",
+      "feature_slug": "expanded-machine-type-support-for-auto-zone-placement",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceGrpc.AutoscalingPolicyServiceBlockingStub"
+      ]
+    },
+    {
+      "feature_name": "Job history persistence to Cloud Storage",
+      "feature_slug": "job-history-persistence-to-cloud-storage",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/submit-sparks-job-template",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+      ]
+    },
+    {
+      "feature_name": "MapReduce job history always-scan-user-dir",
+      "feature_slug": "mapreduce-job-history-always-scan-user-dir",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster"
+      ]
+    },
+    {
+      "feature_name": "Minimum CPU platform",
+      "feature_slug": "minimum-cpu-platform",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Preemptible worker CLI flags",
+      "feature_slug": "preemptible-worker-cli-flags",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview"
+      ]
+    },
+    {
+      "feature_name": "YARN log aggregation",
+      "feature_slug": "yarn-log-aggregation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-job-output"
+      ]
+    },
+    {
+      "feature_name": "Component Gateway VPC Service Controls support",
+      "feature_slug": "component-gateway-vpc-service-controls-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging"
+      ]
+    },
+    {
+      "feature_name": "GPU support for preemptible workers",
+      "feature_slug": "gpu-support-for-preemptible-workers",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-scale-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements"
+      ]
+    },
+    {
+      "feature_name": "Startup service-binding timeout configuration",
+      "feature_slug": "startup-service-binding-timeout-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.autoscaling_policy_service.AutoscalingPolicyServiceAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Scheduled Deletion",
+      "feature_slug": "scheduled-deletion",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.JobControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Zonal Reservations",
+      "feature_slug": "zonal-reservations",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "feature_name": "Autoscaler recommendations in Cloud Logging",
+      "feature_slug": "autoscaler-recommendations-in-cloud-logging",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy.Builder"
+      ]
+    },
+    {
+      "feature_name": "Presto UI in Component Gateway",
+      "feature_slug": "presto-ui-in-component-gateway",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/changelog",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Cloud Storage connector version override",
+      "feature_slug": "cloud-storage-connector-version-override",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "feature_name": "Intel Optane DC Persistent Memory support",
+      "feature_slug": "intel-optane-dc-persistent-memory-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-template",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType"
+      ]
+    },
+    {
+      "feature_name": "SparkR jobs",
+      "feature_slug": "sparkr-jobs",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.Builder"
+      ]
+    },
+    {
+      "feature_name": "Autoscaling",
+      "feature_slug": "autoscaling",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.autoscaling_policy_service.AutoscalingPolicyServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.autoscaling_policy_service.AutoscalingPolicyServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Compute Engine Accelerator support",
+      "feature_slug": "compute-engine-accelerator-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AcceleratorConfig.Builder",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+      ]
+    },
+    {
+      "feature_name": "Image family URI cluster images",
+      "feature_slug": "image-family-uri-cluster-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+      ]
+    },
+    {
+      "feature_name": "JupyterHub integration",
+      "feature_slug": "jupyterhub-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service"
+      ]
+    },
+    {
+      "feature_name": "Hadoop Secure Mode via Kerberos",
+      "feature_slug": "hadoop-secure-mode-via-kerberos",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "feature_name": "Tez UI in Component Gateway",
+      "feature_slug": "tez-ui-in-component-gateway",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Ubuntu 18.04 LTS-based images",
+      "feature_slug": "ubuntu-18-04-lts-based-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "feature_name": "Job Logs in Cloud Logging",
+      "feature_slug": "job-logs-in-cloud-logging",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    },
+    {
+      "feature_name": "Component Gateway",
+      "feature_slug": "component-gateway",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command"
+      ]
+    },
+    {
+      "feature_name": "Druid optional component",
+      "feature_slug": "druid-optional-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "feature_name": "Image version 1.4",
+      "feature_slug": "image-version-1-4",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "feature_name": "Kerberos component",
+      "feature_slug": "kerberos-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos"
+      ]
+    },
+    {
+      "feature_name": "Zookeeper optional component",
+      "feature_slug": "zookeeper-optional-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command"
+      ]
+    },
+    {
+      "feature_name": "Optional Components",
+      "feature_slug": "optional-components",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Autoscaling logs in Cloud Logging",
+      "feature_slug": "autoscaling-logs-in-cloud-logging",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/audit-logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    },
+    {
+      "feature_name": "Stackdriver Monitoring",
+      "feature_slug": "stackdriver-monitoring",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/monitoring"
+      ]
+    },
+    {
+      "feature_name": "Local SSDs on preemptible workers",
+      "feature_slug": "local-ssds-on-preemptible-workers",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "feature_name": "Presto optional component",
+      "feature_slug": "presto-optional-component",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command"
+      ]
+    },
+    {
+      "feature_name": "Customer-managed encryption keys on Compute Engine",
+      "feature_slug": "customer-managed-encryption-keys-on-compute-engine",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Cluster import/export from YAML",
+      "feature_slug": "cluster-import-export-from-yaml",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster"
+      ]
+    },
+    {
+      "feature_name": "Granular IAM",
+      "feature_slug": "granular-iam",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/grant-access",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/iam-roles"
+      ]
+    },
+    {
+      "feature_name": "InstantiateInline API",
+      "feature_slug": "instantiateinline-api",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/guides/audit-logging",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest"
+      ]
+    },
+    {
+      "feature_name": "Workflow Template Parameterization",
+      "feature_slug": "workflow-template-parameterization",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.workflow_template_service"
+      ]
+    },
+    {
+      "feature_name": "Workflow Templates",
+      "feature_slug": "workflow-templates",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse"
+      ]
+    },
+    {
+      "feature_name": "Beam on Flink initialization action",
+      "feature_slug": "beam-on-flink-initialization-action",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "feature_name": "Customer-managed encryption keys on Cloud Storage",
+      "feature_slug": "customer-managed-encryption-keys-on-cloud-storage",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Debian 9-based images",
+      "feature_slug": "debian-9-based-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+      ]
+    },
+    {
+      "feature_name": "Workflow Templates YAML import/export",
+      "feature_slug": "workflow-templates-yaml-import-export",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/changelog",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse"
+      ]
+    },
+    {
+      "feature_name": "Custom Images",
+      "feature_slug": "custom-images",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn"
+      ]
+    },
+    {
+      "feature_name": "Image version 1.3",
+      "feature_slug": "image-version-1-3",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "feature_name": "Customer-managed encryption keys",
+      "feature_slug": "customer-managed-encryption-keys",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
+      ]
+    },
+    {
+      "feature_name": "Customer-managed encryption keys on BigQuery",
+      "feature_slug": "customer-managed-encryption-keys-on-bigquery",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels"
+      ]
+    },
+    {
+      "feature_name": "PD-SSD boot disks",
+      "feature_slug": "pd-ssd-boot-disks",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop"
+      ]
+    },
+    {
+      "feature_name": "Cluster creation from YAML",
+      "feature_slug": "cluster-creation-from-yaml",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-partial-cluster"
+      ]
+    },
+    {
+      "feature_name": "Workflow Templates YAML instantiation",
+      "feature_slug": "workflow-templates-yaml-instantiation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse"
+      ]
+    },
+    {
+      "feature_name": "Connectors initialization action",
+      "feature_slug": "connectors-initialization-action",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices"
+      ]
+    },
+    {
+      "feature_name": "Console link to Stackdriver logs",
+      "feature_slug": "console-link-to-stackdriver-logs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-job-output",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console"
+      ]
+    },
+    {
+      "feature_name": "Environment property prefixes",
+      "feature_slug": "environment-property-prefixes",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.JobControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.JobControllerClient"
+      ]
+    },
+    {
+      "feature_name": "InstantiateInline workflow execution",
+      "feature_slug": "instantiateinline-workflow-execution",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions"
+      ]
+    },
+    {
+      "feature_name": "Minimum CPU platform selection",
+      "feature_slug": "minimum-cpu-platform-selection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Cluster Scheduled Deletion",
+      "feature_slug": "cluster-scheduled-deletion",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos"
+      ]
+    },
+    {
+      "feature_name": "Graceful decommissioning",
+      "feature_slug": "graceful-decommissioning",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies"
+      ]
+    },
+    {
+      "feature_name": "Auto Zone",
+      "feature_slug": "auto-zone",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "feature_name": "Conscrypt-based Cloud Storage connector SSL provider",
+      "feature_slug": "conscrypt-based-cloud-storage-connector-ssl-provider",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data"
+      ]
+    },
+    {
+      "feature_name": "Regional endpoints",
+      "feature_slug": "regional-endpoints",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.autoscaling_policy_service.AutoscalingPolicyServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.JobControllerClient"
+      ]
+    },
+    {
+      "feature_name": "Cloud Dataproc API v1alpha1 and v1beta1",
+      "feature_slug": "cloud-dataproc-api-v1alpha1-and-v1beta1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/changelog",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.autoscaling_policy_service.AutoscalingPolicyServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy.Builder"
+      ]
+    },
+    {
+      "feature_name": "Dataproc Worker IAM role",
+      "feature_slug": "dataproc-worker-iam-role",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-iam",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient"
+      ]
+    },
+    {
+      "feature_name": "dataproc_cluster audit log resource type",
+      "feature_slug": "dataproc-cluster-audit-log-resource-type",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "GPU attachment",
+      "feature_slug": "gpu-attachment",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "feature_name": "User labels",
+      "feature_slug": "user-labels",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient"
+      ]
+    },
+    {
+      "feature_name": "Restartable jobs",
+      "feature_slug": "restartable-jobs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.JobControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.JobControllerClient"
+      ]
+    },
+    {
+      "feature_name": "Single node clusters",
+      "feature_slug": "single-node-clusters",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "feature_name": "Stackdriver monitoring agent",
+      "feature_slug": "stackdriver-monitoring-agent",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "feature_name": "Custom service account support",
+      "feature_slug": "custom-service-account-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "IndirectBigQueryOutputFormat",
+      "feature_slug": "indirectbigqueryoutputformat",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/load-data"
+      ]
+    },
+    {
+      "feature_name": "Console job stop and delete actions",
+      "feature_slug": "console-job-stop-and-delete-actions",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console"
+      ]
+    },
+    {
+      "feature_name": "Worker local SSD scaling",
+      "feature_slug": "worker-local-ssd-scaling",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy.Builder"
+      ]
+    },
+    {
+      "feature_name": "High availability mode",
+      "feature_slug": "high-availability-mode",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore"
+      ]
+    },
+    {
+      "feature_name": "Preemptible worker boot disk sizing",
+      "feature_slug": "preemptible-worker-boot-disk-sizing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels"
+      ]
+    },
+    {
+      "feature_name": "Identity and Access Management support",
+      "feature_slug": "identity-and-access-management-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient"
+      ]
+    },
+    {
+      "feature_name": "LZO support",
+      "feature_slug": "lzo-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager"
+      ]
+    },
+    {
+      "feature_name": "Stackdriver logging toggle",
+      "feature_slug": "stackdriver-logging-toggle",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging"
+      ]
+    },
+    {
+      "feature_name": "Apache Zeppelin BigQuery support",
+      "feature_slug": "apache-zeppelin-bigquery-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg"
+      ]
+    },
+    {
+      "feature_name": "Cloud Dataproc image versions 0.1 and 0.2",
+      "feature_slug": "cloud-dataproc-image-versions-0-1-and-0-2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "feature_name": "Automatic retries for 429 errors",
+      "feature_slug": "automatic-retries-for-429-errors",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.autoscaling_policy_service.AutoscalingPolicyServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.autoscaling_policy_service.AutoscalingPolicyServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.JobControllerClient"
+      ]
+    },
+    {
+      "feature_name": "gcloud --*-boot-disk-size-gb flags",
+      "feature_slug": "gcloud-boot-disk-size-gb-flags",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "feature_name": "Preemptible worker boot disk size flag",
+      "feature_slug": "preemptible-worker-boot-disk-size-flag",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL initialization action",
+      "feature_slug": "cloud-sql-initialization-action",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Subnetwork support",
+      "feature_slug": "subnetwork-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
+      ]
+    },
+    {
+      "feature_name": "API auto-enable",
+      "feature_slug": "api-auto-enable",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.autoscaling_policy_service.AutoscalingPolicyServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.autoscaling_policy_service.AutoscalingPolicyServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Cloud Dataproc API v1",
+      "feature_slug": "cloud-dataproc-api-v1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview"
+      ]
+    },
+    {
+      "feature_name": "Custom Compute Engine machine types",
+      "feature_slug": "custom-compute-engine-machine-types",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "feature_name": "PySpark --jars support",
+      "feature_slug": "pyspark-jars-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn"
+      ]
+    },
+    {
+      "feature_name": "Preview image version",
+      "feature_slug": "preview-image-version",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions"
+      ]
+    },
+    {
+      "feature_name": "Cluster VM metadata",
+      "feature_slug": "cluster-vm-metadata",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "feature_name": "Cluster VM tags",
+      "feature_slug": "cluster-vm-tags",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-template",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    },
+    {
+      "feature_name": "Heterogeneous cluster machine types",
+      "feature_slug": "heterogeneous-cluster-machine-types",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags"
+      ]
+    },
+    {
+      "feature_name": "Job output line wrapping",
+      "feature_slug": "job-output-line-wrapping",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "feature_name": "Cloud-platform access scope",
+      "feature_slug": "cloud-platform-access-scope",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage"
+      ]
+    },
+    {
+      "feature_name": "Cluster configuration properties",
+      "feature_slug": "cluster-configuration-properties",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    },
+    {
+      "feature_name": "Clickable Cloud Storage error links",
+      "feature_slug": "clickable-cloud-storage-error-links",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/error-messages",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries"
+      ]
+    },
+    {
+      "feature_name": "Cluster image version selection",
+      "feature_slug": "cluster-image-version-selection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/recreate-cluster"
+      ]
+    },
+    {
+      "feature_name": "Dataproc API Java client artifacts",
+      "feature_slug": "dataproc-api-java-client-artifacts",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicyServiceSettings.Builder"
+      ]
+    },
+    {
+      "feature_name": "Default command-line tools",
+      "feature_slug": "default-command-line-tools",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud"
+      ]
+    },
+    {
+      "feature_name": "Initialization actions",
+      "feature_slug": "initialization-actions",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Job cloning",
+      "feature_slug": "job-cloning",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/import-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore"
+      ]
+    },
+    {
+      "feature_name": "Job submission properties",
+      "feature_slug": "job-submission-properties",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.JobControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.JobControllerClient"
+      ]
+    },
+    {
+      "feature_name": "VM instances tab",
+      "feature_slug": "vm-instances-tab",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "BigQuery and Cloud Storage connector updates",
+      "feature_slug": "bigquery-and-cloud-storage-connector-updates",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg"
+      ]
+    },
+    {
+      "feature_name": "Cluster diagnose command",
+      "feature_slug": "cluster-diagnose-command",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud"
+      ]
+    },
+    {
+      "feature_name": "Dataproc 0.2 component upgrades",
+      "feature_slug": "dataproc-0-2-component-upgrades",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore"
+      ]
+    },
+    {
+      "feature_name": "Dataproc version selection",
+      "feature_slug": "dataproc-version-selection",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller"
+      ]
+    },
+    {
+      "feature_name": "Native analytics libraries",
+      "feature_slug": "native-analytics-libraries",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc/docs/reference/libraries"
+      ]
+    },
+    {
+      "feature_name": "Persistent Hive metastore",
+      "feature_slug": "persistent-hive-metastore",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/hive-metastore"
+      ]
+    },
+    {
+      "feature_name": "Preemptible worker management",
+      "feature_slug": "preemptible-worker-management",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    }
+  ]
+}

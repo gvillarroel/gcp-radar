@@ -1,0 +1,85 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T04:07:01.281Z"
+product_name: "Anthos Config Management"
+product_slug: "anthos-config-management"
+feature_name: "NamespaceSelector spec.mode field"
+feature_slug: "namespaceselector-spec-mode-field"
+latest_feature_date: "2023-12-11"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+keywords:
+  - "namespaceselector"
+  - "spec"
+  - "mode"
+  - "field"
+  - "crd"
+  - "adds"
+  - "preview"
+  - "select"
+---
+
+# NamespaceSelector spec.mode field
+
+Product: Anthos Config Management
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+The NamespaceSelector CRD adds the preview spec.mode field to select namespace-scoped resources across declared and dynamically present namespaces.
+
+## Extended Definition
+
+The NamespaceSelector CRD adds the preview spec.mode field to select namespace-scoped resources across declared and dynamically present namespaces.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects)
+
+## Supporting Pages
+
+### "Sync objects to multiple namespaces \_|\_ Config Sync \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects)
+- Source ID: `site-docs-root`
+- Final score: 84
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create a namespace selector called exclude-exempt-namespaces : kind : NamespaceSelector apiVersion : configmanagement.gke.io/v1 metadata : name : excludes-exempt-namespaces spec : selector : matchExpressions : - key : quota-exempt operator : NotIn values : - exempt If another object's configuration references this namespace selector, that configuration is applied to all namespaces except those with the quota-exempt: exempt key-value pair.
+- Create a namespace selector called gamestore-selector . kind : NamespaceSelector apiVersion : configmanagement.gke.io/v1 metadata : name : gamestore-selector spec : selector : matchLabels : app : gamestore If another object's configuration references this namespace selector, that configuration can only be applied to objects in namespaces that have the app: gamestore label.
+- For each object that you want to sync to one or more namespaces, modify the object's configuration to remove the metadata.namespace field and add the configmanagement.gke.io/namespace-selector annotation with a value that matches the metadata.name of your NamespaceSelector .
+- Because you can't add custom fields to existing resource types, you instead define your selector in a NamespaceSelector object.
+
+### Monitor Config Sync with Prometheus \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-config-sync-prometheus](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-config-sync-prometheus)
+- Source ID: `site-docs-root`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create the manifest for the resources necessary to configure a Prometheus server which scrapes metrics from Config Sync. config-sync-monitoring.yaml apiVersion : v1 kind : ServiceAccount metadata : name : prometheus-config-sync namespace : monitoring --- apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : name : prometheus-config-sync rules : - apiGroups : [ "" ] resources : - nodes - services - endpoints - pods verbs : [ "get" , "list" , "watch" ] - apiGroups : [ "" ] resources : - configmaps verbs : [ "get" ] - nonResourceURLs : [ "/metrics" ] verbs : [ "get" ] --- apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRoleBinding metadata : name : prometheus-config-sync roleRef : apiGroup : rbac.authorization.k8s.io kind : ClusterRole name : prometheus-config-sync subjects : - kind : ServiceAccount name : prometheus-config-sync namespace : monitoring --- apiVersion : monitoring.coreos.com/v1 kind : Prometheus metadata : name : config-sync namespace : monitoring labels : prometheus : config-sync spec : replicas : 2 serviceAccountName : prometheus-config-sync serviceMonitorSelector : matchLabels : prometheus : config-management alerting : alertmanagers : - namespace : default name : alertmanager port : web resources : requests : memory : 400Mi --- apiVersion : v1 kind : Service metadata : name : prometheus-config-sync namespace : monitoring labels : prometheus : config-sync spec : type : NodePort ports : - name : web nodePort : 31900 port : 9190 protocol : TCP targetPort : web selector : prometheus : config-sync --- --- Apply the manifest using the following commands: kubectl apply -f config-sync.yaml until kubectl rollout status statefulset/prometheus-config-sync -n monitoring; \ do sleep 1; done The second command blocks until the Pods are running.
+- The PodMonitoring resource uses a Kubernetes label selector to find the otel-collector- Pod. apiVersion : monitoring.googleapis.com/v1 kind : PodMonitoring metadata : name : config-sync-monitoring namespace : config-management-monitoring spec : selector : matchLabels : app : opentelemetry component : otel-collector endpoints : - port : 8675 interval : 10s Apply the manifest to the cluster: kubectl apply -f pod-monitoring-config-sync-monitoring.yaml Verify that your Prometheus data is being exported using the Cloud Monitoring Metrics Explorer page in the Google Cloud console following the instructions on Managed Service for Prometheus data in Cloud Monitoring .
+- Histogram stallreason Time distribution of reconciling a ResourceGroup CR (distributed into buckets by duration) config sync rg reconcile duration seconds count Histogram stallreason Time distribution of reconciling a ResourceGroup CR (ignoring duration) config sync rg reconcile duration seconds sum Histogram stallreason Sum of the all time reconciling a ResourceGroup CR config sync kustomize build latency bucket Histogram Latency distribution of kustomize build execution time (distributed into buckets by duration of each operation) config sync kustomize build latency count Histogram Latency distribution of kustomize build execution time (ignoring duration) config sync kustomize build latency sum Histogram Sum of all kustomize build execution time config sync kustomize ordered top tier metrics Gauge top tier field Usage of Resources, Generators, SecretGenerator, ConfigMapGenerator, Transformers, and Validators config sync kustomize builtin transformers Gauge k8s builtin transformer Usage of built-in transformers related to kubernetes object metadata config sync kustomize resource count Gauge Number of resources outputted by kustomize build config sync kustomize field count Gauge field name Number of times a particular field is used in the kustomization files config sync kustomize patch count Gauge patch field Number of patches in the fields patches , patchesStrategicMerge , and patchesJson6902 config sync kustomize base count Gauge base source Number of remote and local bases kustomize deprecating field count Gauge deprecating field Usage of fields that may become deprecated kustomize simplification adoption count Gauge simplification field Usage of simplification transformers images, replicas, and replacements kustomize helm inflator count Gauge helm inflator Usage of helm in kustomize, whether by the built-in fields or the custom function Example debugging procedures for Prometheus The following examples illustrate some patterns for using Prometheus metrics, object status fields, and object annotations to detect and diagnose problems related to Config Sync.
+- Complete the following steps to set up monitoring Config Sync with Google Cloud Managed Service for Prometheus in the managed collection mode.
+
+### Use the nomos command-line tool \_|\_ Config Sync \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command)
+- Source ID: `site-docs-root`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If the migration process is terminated, it can be recovered manually by running the following commands: kubectl apply -f /tmp/nomos-migrate/my managed cluster-1/cm-multi.yaml && \ kubectl wait --for condition=established crd rootsyncs.configsync.gke.io && \ kubectl apply -f /tmp/nomos-migrate/my managed cluster-1/root-sync.yaml. - Updating the ConfigManagement object .... - Waiting for the RootSync CRD to be established .... - The RootSync CRD has been established. - Creating the RootSync object .... - Waiting for the reconciler-manager Pod to be ready .... - Haven't detected running Pods with the label selector "app=reconciler-manager". - Haven't detected running Pods with the label selector "app=reconciler-manager". - Haven't detected running Pods with the label selector "app=reconciler-manager". - The reconciler-manager Pod is running. - Waiting for the root-reconciler Pod to be ready .... - Haven't detected running Pods with the label selector "configsync.gke.io/reconciler=root-reconciler". - Haven't detected running Pods with the label selector "configsync.gke.io/reconciler=root-reconciler". - Haven't detected running Pods with the label selector "configsync.gke.io/reconciler=root-reconciler". - The root-reconciler Pod is running. - The migration process is done.
+- This is only necessary if you want to migrate clusters beyond the current context. nomos migrate --contexts = KUBECONFIG CONTEXTS --dry-run If the dry-run result looks good, you can migrate your ConfigManagement object by using nomos migrate : nomos migrate --contexts = KUBECONFIG CONTEXTS The output is similar to the following: -------------------- Enabling the multi-repo mode on cluster "my managed cluster-1" ... - A RootSync object is generated and saved in "/tmp/nomos-migrate/my managed cluster-1/root-sync.yaml". - The original ConfigManagement object is saved in "/tmp/nomos-migrate/my managed cluster-1/cm-original.yaml". - The ConfigManagement object is updated and saved in "/tmp/nomos-migrate/my managed cluster-1/cm-multi.yaml". - Resources for the multi-repo mode have been saved in a temp folder.
+- The following table includes the most common causes of large log files and how you can resolve them: Cause Recommended action Increased log verbosity Reduce log verbosity with log level overrides Very large objects Unmanage the large object or reduce their size Many objects Split your repository into multiple repositories Controller fights Resolve the fighting Migrate from a ConfigManagement object to a RootSync object You can run the nomos migrate command to migrate from your ConfigManagement object to a RootSync object to enable the RootSync and RepoSync APIs. nomos migrate supports dry-run for previewing the migration process. nomos migrate modifies your ConfigManagement object on the cluster directly.
+- Managed resource statuses The status of your managed resources can be one of the following values: InProgress : The actual state of the resource has not yet reached the state that you specified in the resource manifest.
+

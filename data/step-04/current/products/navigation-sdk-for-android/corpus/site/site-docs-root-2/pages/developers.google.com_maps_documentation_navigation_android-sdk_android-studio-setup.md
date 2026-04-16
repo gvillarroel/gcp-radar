@@ -5,7 +5,7 @@ url: https://developers.google.com/maps/documentation/navigation/android-sdk/and
 knowledge_key: corpus
 source_id: site-docs-root-2
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/navigation/android-sdk
+entrypoint: https://developers.google.com/maps/documentation/navigation/android-sdk/overview
 source_metadata:
   url: https://developers.google.com/maps/documentation/navigation/android-sdk/android-studio-setup
   title: "Set up your Android Studio project \_|\_ Navigation SDK for Android \_|\_\
@@ -111,8 +111,8 @@ to update the settings to meet the requirements for
 Navigation SDK and consider setting the
 optimization options as well.
 Required settings for Navigation SDK
-Set minSdkVersion to 23 or higher.
-Set targetSdkVersion to 34 or higher.
+Set minSdkVersion to 24 or higher.
+Set targetSdkVersion to 36 or higher.
 Add a dexOptions setting that increases the javaMaxHeapSize .
 Set the location for additional libraries.
 Add the repositories and dependencies for the
@@ -137,10 +137,9 @@ APIs. See Java 8 desugaring
 support
 for more information. See the example build script snippet below for how
 compile and dependency options.
-We recommend using Gradle 8.4, the Android Gradle plugin version
-8.3.0, and the Desugar library
-com.android.tools:desugar_jdk_libs_nio:2.0.3 . This setup is compatible
-with the Navigation SDK for Android version 6.0.0 and higher.
+For Android version 7.3.0 and higher, you must use Gradle 8.11.1, the
+Android Gradle plugin version 8.10.0, and the Desugar library
+com.android.tools:desugar_jdk_libs_nio:2.0.3 .
 The Desugar library needs to be enabled for the app module and any
 module that directly depends on the Navigation SDK.
 Below is an example of the Gradle build script for the application. Check the
@@ -245,8 +244,8 @@ If you use Android Studio, sync your project with Gradle .
 Open the local.properties in your project level directory, and then add
 the following code. Replace YOUR_API_KEY with your API key.
 MAPS_API_KEY= YOUR_API_KEY
-In your AndroidManifest.xml file, go to
-com.google.android.geo.API_KEY and update the android:value attribute as follows:
+You can either add the API key to your AndroidManifest.xml file or provide the API key programmatically.
+Add your API key to AndroidManifest.xml :
 <meta-data
 android:name="com.google.android.geo.API_KEY"
 android:value="${MAPS_API_KEY}" />
@@ -259,6 +258,26 @@ supports the name com.google.android.maps.v2.API_KEY . This legacy
 name allows authentication to the Android Maps API v2 only. An application can
 specify only one of the API key metadata names. If both are specified, the API
 throws an exception.
+Provide the API key programmatically:
+The Secrets Gradle Plugin makes the key available in the BuildConfig class.
+In your app's initialization (for example, in your Application.onCreate() method),
+call the method as follows:
+Kotlin
+Add the following import statements:
+import com.google.android.libraries.navigation.NavigationApi
+Add the following to your Application.onCreate() method:
+NavigationApi . setApiKey ( BuildConfig . MAPS_API_KEY )
+Java
+Add the following import statements:
+import com.google.android.libraries.navigation.NavigationApi ;
+Add the following to your Application.onCreate() method:
+NavigationApi . setApiKey ( BuildConfig . MAPS_API_KEY );
+Note: When using setApiKey() , keep the following in mind:
+Provide a non-null, non-empty API key.
+Call setApiKey() only once during your application's lifetime. The method throws an IllegalStateException if called more than once.
+Call setApiKey() before initializing any other Navigation SDK components, such as Navigator .
+The key you provide with this method overrides any API key in your AndroidManifest.xml .
+Use Navigation SDK version 7.6 or higher.
 Include the required attributions in your app
 If you use the Navigation SDK for Android in your app, you must include
 attribution text and open source licenses as part of your app's legal notices
@@ -279,6 +298,6 @@ Reporting , and
 Record billable transactions (Android) .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-02-18 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-18 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

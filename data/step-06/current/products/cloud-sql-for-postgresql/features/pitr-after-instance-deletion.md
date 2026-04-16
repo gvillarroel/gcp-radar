@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.275Z"
+generated_at: "2026-04-13T13:51:57.742Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "PITR after instance deletion"
 feature_slug: "pitr-after-instance-deletion"
 latest_feature_date: "2025-12-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
   - "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/pitr"
   - "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
 keywords:
+  - "deletion"
+  - "enhanced"
   - "pitr"
   - "after"
-  - "instance"
-  - "deletion"
-  - "lets"
-  - "enhanced"
   - "backups"
   - "point"
+  - "instance"
+  - "lets"
 ---
 
 # PITR after instance deletion
 
 Product: Cloud SQL for PostgreSQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,22 +38,37 @@ PITR after instance deletion lets enhanced backups support point-in-time recover
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore](https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore)
 - [https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/pitr](https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/pitr)
 - [https://docs.cloud.google.com/sql/docs/postgres/create-instance](https://docs.cloud.google.com/sql/docs/postgres/create-instance)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
 
 ## Supporting Pages
+
+### "Restore an instance overview \_|\_ Cloud SQL for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore](https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore)
+- Source ID: `site-iam-reference`
+- Final score: 250
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Since instance names can be reused after an instance is deleted in Cloud SQL, retained PITR logs can be identified in Google Cloud with the following fields: instance deletion time log retention days These fields allow you to identify if a PITR log belongs to a deleted instance.
+- For example, if your Cloud SQL Enterprise Plus edition instance has PITR retention set to 14 days, then the latest PITR log will be deleted 14 days after instance deletion.
+- If your source instance had custom backup configurations or was using enhanced backups, then you'll need to update the backup configurations after restore is complete.
+- MySQL PostgreSQL SQL Server Cloud SQL lets you restore your instances from a backup, or by performing point-in-time recovery (PITR).
 
 ### "Perform point-in-time recovery (PITR) \_|\_ Cloud SQL for PostgreSQL \_\
 
 - URL: [https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/pitr](https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/pitr)
 - Source ID: `site-iam-reference`
-- Final score: 188
-- Re-rank relevance: N/A
+- Final score: 244
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ source-instance-id /clone" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ target-instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "CREATE", "name": " operation-id ", "targetId": " target-instance-id ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } Perform a PITR using the backup vault If your Cloud SQL instance is enabled to use enhanced backups , then you can perform point-in-time-recovery for your instance using the backup vault.
@@ -65,25 +80,13 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/sql/docs/postgres/create-instance](https://docs.cloud.google.com/sql/docs/postgres/create-instance)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: N/A
+- Final score: 234
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Enable retained backups after instance deletion Determines whether automated and on-demand backups are retained after an instance is deleted.
 - Set the password for the postgres user: gcloud sql users set-password postgres \ --instance = INSTANCE NAME \ --password = PASSWORD Terraform To create an instance, use a Terraform resource . resource "google sql database instance" "postgres pvp instance name" { name = "postgres-pvp-instance-name" region = "asia-northeast1" database version = "POSTGRES 14" root password = "abcABC123!" settings { tier = "db-custom-2-7680" password validation policy { min length = 6 reuse interval = 2 complexity = "COMPLEXITY DEFAULT" disallow username substring = true password change interval = "30s" enable password policy = true } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.
 - Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = "false" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 Create the instance This example creates an instance.
 - Note: Cloud SQL generates a write endpoint automatically for your Cloud SQL Enterprise Plus edition instance if you do the following: If you haven't already enabled the Cloud DNS API, enable the Cloud DNS API for your Google Cloud project.
-
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Enhanced backups now also support point-in-time-recovery (PITR) after instance deletion .
-- Enhanced backups now also support point-in-time-recovery (PITR) after instance deletion .
-- Enhanced backups now also support point-in-time-recovery (PITR) after instance deletion .
-- Feature You can now retain point-in-time recovery (PITR) logs for an instance after its deletion for a specified retention period.
 

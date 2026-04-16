@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:30:05.320Z"
+generated_at: "2026-04-14T12:10:45.848Z"
 product_name: "Chrome Enterprise Premium"
 product_slug: "chrome-enterprise-premium"
 feature_name: "Identity-Aware Proxy SAML attribute propagation"
 feature_slug: "identity-aware-proxy-saml-attribute-propagation"
 latest_feature_date: "2022-07-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-app-engine"
-  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
-  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-kubernetes-engine"
+  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection"
+  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources"
+  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
 keywords:
-  - "identity"
-  - "aware"
-  - "proxy"
-  - "saml"
-  - "attribute"
   - "propagation"
-  - "iap"
+  - "attribute"
+  - "saml"
+  - "identity"
+  - "proxy"
   - "enables"
+  - "aware"
 ---
 
 # Identity-Aware Proxy SAML attribute propagation
 
 Product: Chrome Enterprise Premium
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +37,54 @@ IAP SAML attribute propagation enables SAML attributes to be passed through Iden
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-app-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-app-engine)
-- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine)
-- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-kubernetes-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-kubernetes-engine)
+- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection](https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection)
+- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources](https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources)
+- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector](https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector)
 
 ## Supporting Pages
 
-### "Securing App Engine apps with IAP \_|\_ Chrome Enterprise Premium \_|\_\
+### "Chrome Enterprise Premium access protection overview \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-app-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-app-engine)
+- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection](https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection)
 - Source ID: `site-iam-reference`
-- Final score: 92
+- Final score: 88
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- This page walks you through deploying an App Engine standard or flexible environment application and securing it with Identity-Aware Proxy (IAP) .
-- Turning on IAP On the Identity-Aware Proxy page, under Applications , find the application you want to restrict access to.
-- Go to the Identity-Aware Proxy page Select the project you want to secure with IAP.
-- Setting up IAP access Go to the Identity-Aware Proxy page .
+- Chrome Enterprise Premium works by leveraging four Google Cloud offerings: Identity-Aware Proxy (IAP) : A service that enables employees to access corporate apps and resources from untrusted networks without the use of a VPN.
+- Access levels restrict access based on the following attributes: IP subnetworks Regions Principals Device policy When you create a device-based access level, Access Context Manager references the inventory of devices created by Endpoint Verification.
+- When to use Chrome Enterprise Premium Use Chrome Enterprise Premium when you want to establish fine-grained access control based on a wide range of attributes and conditions including what device is being used and from what IP address.
+- Based on the BeyondCorp security model, Chrome Enterprise Premium is an approach that utilizes a variety of Google Cloud offerings to enforce granular access control based on a user's identity and context of the request.
 
-### "Securing Compute Engine apps and resources with IAP \_|\_ Chrome Enterprise\
+### "Quickstart: Apply Chrome Enterprise Premium to cloud resources \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine)
+- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources](https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources)
 - Source ID: `site-iam-reference`
-- Final score: 92
+- Final score: 88
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Turning on IAP On the Identity-Aware Proxy page, under APPLICATIONS , find the load balancer that serves the instance group you want to restrict access to.
-- This page explains how to secure a Compute Engine instance with Identity-Aware Proxy (IAP) .
-- Go to the Identity-Aware Proxy page Select the project you want to secure with IAP.
-- Setting up IAP access Go to the Identity-Aware Proxy page .
+- Securing your apps and resources with IAP Identity-Aware Proxy (IAP) establishes a central identity awareness layer for apps and resources accessed by HTTPS and TCP.
+- Before you begin Before you make your apps and resources context-aware, you'll need to: If you don't already have Cloud Identity user accounts in your organization, create a few Cloud Identity accounts .
+- What's next Learn how to view Context-Aware Access logs in Cloud Audit Logs Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Access levels can limit access based on the following attributes: IP subnetworks Regions Access level dependency Principals Device policy (Note that Endpoint Verification must be set up.) Create an access level by following the Creating an access levels guide.
 
-### "Securing GKE apps and resources with IAP \_|\_ Chrome Enterprise Premium\
+### "Secure non-Google Cloud applications using the app connector \_|\_ Chrome\
 
-- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-kubernetes-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-kubernetes-engine)
+- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector](https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector)
 - Source ID: `site-iam-reference`
-- Final score: 92
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 81
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- This page explains how to secure a Google Kubernetes Engine (GKE) instance with Identity-Aware Proxy (IAP) .
-- Go to the Identity-Aware Proxy page Select the project you want to secure with IAP.
-- Setting up IAP access Go to the Identity-Aware Proxy page .
-- If you are using an earlier GKE version, use cloud.google.com/v1beta1 . apiVersion: cloud.google.com/v1 kind: BackendConfig metadata: name: CONFIG DEFAULT namespace: my-namespace spec: iap: enabled: true Associate a service port with a BackendConfig You also need to associate Service ports with your BackendConfig to trigger turning on IAP.
+- Enabling Identity-Aware Proxy Follow the Identity-Aware Proxy (IAP) documentation for setting up Identity-Aware Proxy .
+- Overview You can use the Chrome Enterprise Premium app connector to provide identity and Context-Aware Access to HTTPS applications running in non-Google Cloud environments.
+- Create an NEG based backend service and connect it to a Private Service Connect service attachment by running the following commands: gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/backendServices \ -d "{ \ 'name': '${LB PREFIX}-backend-service', \ 'service protocol': 'HTTPS', \ 'port name': 'https', \ 'load balancing scheme': 'EXTERNAL MANAGED' \ }" gcurl -X PATCH https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/backendServices/${LB PREFIX}-backend-service \ -d "{ \ 'backends': \ [{ \ 'group': 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/regions/${REGION}/networkEndpointGroups/${LB PREFIX}-neg' \ }] \ }" Create a Google managed certificate for your domain by running the following commands: gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/addresses \ -d "{ \ 'name': '${LB PREFIX}-static-ip', \ 'ip version': 'IPV4' \ }" gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/sslCertificates \ -d "{ \ 'name': '${LB PREFIX}-ssl-cert', \ 'managed': \ { \ 'domains': '${DOMAIN NAME}' \ }, \ 'type': 'MANAGED' \ }" LB IP=$(gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/addresses/${LB PREFIX}-static-ip jq -r '.address') Create an external Application Load Balancer based on the backend from the previous step by running the following commands: gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/urlMaps \ -d "{ \ 'name': '${LB PREFIX}-map-https', \ 'default service': 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/backendServices/${LB PREFIX}-backend-service' \ }" gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/targetHttpsProxies \ -d "{ \ 'name': '${LB PREFIX}-https-lb-proxy', \ 'url map': 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/urlMaps/${LB PREFIX}-map-https', \ 'ssl certificate': 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/sslCertificates/${LB PREFIX}-ssl-cert' \ }" gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/forwardingRules \ -d "{ \ 'name': '${LB PREFIX}-https-lb-forwarding-rule', \ target: 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/targetHttpsProxies/${LB PREFIX}-https-lb-proxy', \ 'ip address': '${LB IP}', \ 'port range': '443-443', \ 'load balancing scheme': 'EXTERNAL MANAGED' \ }" After the external Application Load Balancer is created, your application is accessible over the internet by that IP address.
+- Create an NEG based backend service and connect it to a Private Service Connect service attachment by running the following commands: gcloud beta compute backend-services create $LB PREFIX-backend-service \ --global \ --protocol=HTTPS \ --load-balancing-scheme=EXTERNAL MANAGED gcloud beta compute backend-services add-backend $LB PREFIX-backend-service \ --global \ --network-endpoint-group=$LB PREFIX-neg \ --network-endpoint-group-region=$REGION Create a Google managed certificate for your domain by running the following commands: gcloud compute addresses create $LB PREFIX-static-ip \ --ip-version=IPV4 \ --global gcloud compute ssl-certificates create $LB PREFIX-ssl-cert \ --domains=$DOMAIN NAME \ --global LB IP="$(gcloud compute addresses describe $LB PREFIX-static-ip --global --format='value(address)')" Create an external Application Load Balancer based on the backend from the previous step by running the following commands: gcloud compute url-maps create $LB PREFIX-map-https \ --default-service=$LB PREFIX-backend-service gcloud compute target-https-proxies create $LB PREFIX-https-lb-proxy \ --url-map=$LB PREFIX-map-https \ --ssl-certificates=$LB PREFIX-ssl-cert gcloud beta compute forwarding-rules create "$LB PREFIX-https-lb-forwarding-rule" \ --global \ --target-https-proxy=$LB PREFIX-https-lb-proxy \ --address=$LB IP \ --ports=443 \ --load-balancing-scheme=EXTERNAL MANAGED After the external Application Load Balancer is created, your application is accessible over the internet by that IP address.
 

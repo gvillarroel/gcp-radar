@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.158Z"
+generated_at: "2026-04-15T00:01:14.054Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Metrics Explorer"
 feature_slug: "metrics-explorer"
 latest_feature_date: "2016-12-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus"
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+  - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
 keywords:
   - "metrics"
   - "explorer"
@@ -26,7 +26,7 @@ keywords:
 # Metrics Explorer
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,35 +38,23 @@ Metrics Explorer lets users select monitored resource types and metrics and aggr
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus](https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus)
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
+- [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 184
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The release introduces new monitored resource types and new Kubernetes metrics .
-- July 13, 2021 Change Metrics Explorer, a stand-alone charting tool that lets you quickly chart and explore time-series data, has a new interface and supports enhanced aggregation options.
-- Additionally, a new version of Metrics Explorer is available, and the metric-selection interface has been greatly improved, allowing arbitrary label filtering and group-by functionality.
-- This interface, based on Metrics Explorer, offers fine-grained control over the selection of the metrics used in alerting conditions.
 
 ### Collect Prometheus metrics \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus](https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus)
 - Source ID: `site-iam-reference`
-- Final score: 162
-- Re-rank relevance: N/A
+- Final score: 190
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The simplest way to verify that your Prometheus data is being ingested is to use the Cloud Monitoring Metrics Explorer page in the Google Cloud console: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring .
@@ -78,12 +66,26 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
 - Source ID: `site-iam-reference`
-- Final score: 148
-- Re-rank relevance: N/A
+- Final score: 176
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following tabs show the metric descriptor that each ingestion API creates: Prometheus API { "name": "projects/ PROJECT ID /metricDescriptors/prometheus.googleapis.com/otlp test cumulative/counter", "labels": [ { "key": "instance name" }, { "key": "machine type" } ], "metricKind": "CUMULATIVE", "valueType": "DOUBLE", "type": "prometheus.googleapis.com/otlp test cumulative/counter", "monitoredResourceTypes": [ "prometheus target" ] } Monitoring API { "name": "projects/ PROJECT ID /metricDescriptors/workload.googleapis.com/otlp.test.cumulative", "labels": [ { "key": "instrumentation source" } ], "metricKind": "CUMULATIVE", "valueType": "DOUBLE", "type": "workload.googleapis.com/otlp.test.cumulative", "monitoredResourceTypes": [ "gce instance", ...many other types deleted... ] } The following table summarizes some of the format differences imposed by the APIs used to ingest OTLP metrics: Prometheus API Monitoring API Metric domain prometheus.googleapis.com workload.googleapis.com OTLP metric name Modified during ingestion Used as provided Monitored resource prometheus target gce instance Ingestion formats and queries The metrics mode used in the OTLP receiver affects the way you query the resulting metrics in Cloud Monitoring when you build charts, dashboards, and alerting policies.
 - These metrics are ingested into Cloud Monitoring with the following metric types, which function as names: prometheus.googleapis.com/otlp test gauge/gauge prometheus.googleapis.com/otlp test cumulative/counter Metrics ingested by using the Prometheus API are written against the monitored-resource type prometheus target .
 - These metrics are ingested into Cloud Monitoring with the following metric types, which function as names: workload.googleapis.com/otlp.test.gauge workload.googleapis.com/otlp.test.cumulative Metrics ingested by using the Monitoring API are written against the monitored-resource type gce instance .
 - The Monitoring metric types for the example metrics are mapped to PromQL as follows: workload googleapis com:otlp test gauge workload googleapis com:otlp test cumulative When the metric can be written against only one monitored-resource type, you don't need to specify the resource.
+
+### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
+- Source ID: `site-docs-reference`
+- Final score: 176
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- View the volume of excluded metrics To see the volume of excluded bytes or samples as a chart in Metrics Explorer, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .
+- Find the metric in the table, and then click more vert Actions to do any of the following: To view a chart that displays the current metric, select View in Metrics Explorer .
+- To analyze any of these charts in more detail, click more vert More options and select View in Metrics Explorer .
+- Metrics Explorer opens and is preconfigured to display the selected metric.
 

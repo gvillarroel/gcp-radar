@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.904Z"
+generated_at: "2026-04-14T15:34:54.457Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Go 1.23 runtime"
@@ -9,18 +9,14 @@ latest_feature_date: "2025-03-03"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/container-contract"
-  - "https://docs.cloud.google.com/run/docs/reference/container-contract"
+  - "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-pubsub"
+  - "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+  - "https://docs.cloud.google.com/python/docs/reference/run/latest"
 keywords:
-  - "go"
-  - "23"
-  - "runtime"
-  - "run"
-  - "supports"
-  - "the"
-  - "for"
+  - "workloads"
   - "deployed"
+  - "runtime"
+  - "supports"
 ---
 
 # Go 1.23 runtime
@@ -38,55 +34,43 @@ Cloud Run supports the Go 1.23 runtime for deployed workloads; Cloud Run support
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
+- [https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-pubsub](https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-pubsub)
+- [https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api](https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api)
+- [https://docs.cloud.google.com/python/docs/reference/run/latest](https://docs.cloud.google.com/python/docs/reference/run/latest)
 
 ## Supporting Pages
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### Authenticate to Cloud Run Admin API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 222
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api](https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api)
+- Source ID: `site-docs-reference`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- November 25, 2024 Feature You can now set a task timeout up to 168 hours (7 days) for Cloud Run jobs. (Preview) November 19, 2024 Feature Support for the Go 1.23 runtime is now in Preview.
-- March 03, 2025 Feature Support for the Go 1.23 runtime is now in general availability (GA).
-- June 09, 2023 Feature You can now create and then configure a Serverless VPC Access connector for your service or job directly from the Create form in the Google Cloud console. (Preview) May 17, 2023 Feature Allocating up to 32 GiB of memory and up to 8 CPU to your Cloud Run services is now at general availability (GA).
-- March 07, 2023 Feature You can now authenticate to a Cloud Run service by including a Google-signed OpenID Connect ID token in the X-Serverless-Authorization header if your application already uses the Authorization header for custom authorization.
+### "Python Client for Cloud Run \_|\_ Python client libraries \_|\_ Google Cloud\
 
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest](https://docs.cloud.google.com/python/docs/reference/run/latest)
+- Source ID: `site-python-reference`
+- Final score: 34
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-- URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+### "Autoscale worker pools based on the Pub/Sub queue volume \_|\_ Cloud Run\
 
-Evidence snippets:
-- For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.
-- Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.
-- Cloud Run specifically supports the Linux x86 64 ABI format.
-- The following table lists some of the available metadata server information: Path Description /computeMetadata/v1/project/project-id Project ID of the project the Cloud Run resource belongs to. /computeMetadata/v1/project/numeric-project-id Project number of the project the Cloud Run resource belongs to. /computeMetadata/v1/instance/region Region of this Cloud Run resource, returns projects/ PROJECT-NUMBER /regions/ REGION /computeMetadata/v1/instance/id Unique identifier of the instance (also available in logs ). /computeMetadata/v1/instance/service-accounts/default/email Email for the service identity of this Cloud Run resource. /computeMetadata/v1/instance/service-accounts/default/token Generates an OAuth2 access token for the service account of this Cloud Run resource .
-
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-pubsub](https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-pubsub)
+- Source ID: `site-docs-root-2`
+- Final score: 29
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.
-- Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.
-- Cloud Run specifically supports the Linux x86 64 ABI format.
-- The following table lists some of the available metadata server information: Path Description /computeMetadata/v1/project/project-id Project ID of the project the Cloud Run resource belongs to. /computeMetadata/v1/project/numeric-project-id Project number of the project the Cloud Run resource belongs to. /computeMetadata/v1/instance/region Region of this Cloud Run resource, returns projects/ PROJECT-NUMBER /regions/ REGION /computeMetadata/v1/instance/id Unique identifier of the instance (also available in logs ). /computeMetadata/v1/instance/service-accounts/default/email Email for the service identity of this Cloud Run resource. /computeMetadata/v1/instance/service-accounts/default/token Generates an OAuth2 access token for the service account of this Cloud Run resource .
+- Deploy the service to scale your workloads To deploy the service to scale your worker pool, run the following command with a prebuilt container image: CREMA CONFIG PARAM VERSION = projects/ $PROJECT ID /locations/ $PARAMETER REGION /parameters/ $PARAMETER ID /versions/ $PARAMETER VERSION IMAGE = us-central1-docker.pkg.dev/cloud-run-oss-images/crema-v1/autoscaler:1.0 gcloud beta run deploy $CREMA SERVICE NAME \ --image = ${ IMAGE } \ --region = ${ REGION } \ --service-account = " ${ CREMA SA NAME } " \ --no-allow-unauthenticated \ --no-cpu-throttling \ --base-image = us-central1-docker.pkg.dev/serverless-runtimes/google-24/runtimes/java25 \ --labels = created-by = crema \ --set-env-vars = "CREMA CONFIG= ${ CREMA CONFIG PARAM VERSION } ,OUTPUT SCALER METRICS=True" Test your autoscaling service Test your CREMA service by creating a script that generates 100 messages and pushes them to the Pub/Sub queue: In your root directory, create a file named load-pubsub.sh , and add the following code: #!/bin/bash TOPIC ID = ${ TOPIC ID } PROJECT ID = ${ PROJECT ID } NUM MESSAGES = 100 echo "Publishing $NUM MESSAGES messages to topic $TOPIC ID ..." for i in $( seq 1 $NUM MESSAGES ) ; do gcloud pubsub topics publish $TOPIC ID --message = "job- $i " --project = $PROJECT ID & if (( $i % 10 == 0 )) ; then wait echo "Published $i messages..." fi done wait echo "Done.
+- Clean up To avoid additional charges to your Google Cloud account, delete all the resources you deployed with this tutorial.
+- Delete tutorial resources Delete the Cloud Run service you deployed in this tutorial.
+- New customers also get $300 in free credits to run, test, and deploy workloads.
 

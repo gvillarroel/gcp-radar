@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.350Z"
+generated_at: "2026-04-13T13:51:57.778Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "SSL mode"
 feature_slug: "ssl-mode"
 latest_feature_date: "2023-10-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
-  - "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
-  - "https://docs.cloud.google.com/sql/docs/postgres/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances"
+  - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+  - "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
 keywords:
-  - "ssl"
-  - "mode"
-  - "lets"
-  - "you"
+  - "enforce"
   - "specify"
-  - "the"
-  - "for"
-  - "sql"
+  - "mode"
+  - "instances"
+  - "lets"
 ---
 
 # SSL mode
 
 Product: Cloud SQL for PostgreSQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,52 @@ SSL mode lets you specify the SSL mode for Cloud SQL instances to enforce more p
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy](https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy)
-- [https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy](https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy)
-- [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
+- [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances)
+- [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances)
+- [https://docs.cloud.google.com/sql/docs/postgres/create-instance](https://docs.cloud.google.com/sql/docs/postgres/create-instance)
 
 ## Supporting Pages
 
-### "Connect using the Cloud SQL Auth Proxy \_|\_ Cloud SQL for MySQL \_|\_ Google\
+### "REST Resource: instances \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy](https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy)
-- Source ID: `site-iam-reference`
-- Final score: 236
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Pooling = true ; // Specify additional properties here. return connectionString ; } } } Ruby To see this snippet in the context of a web application, view the README on GitHub . tcp : & tcp adapter : mysql2 Configure additional properties here Note: Saving credentials in environment variables is convenient, but not secure - consider a more secure solution such as Cloud Secret Manager (https://cloud.google.com/secret-manager) to help keep secrets safe. username : < %= ENV["DB USER"] %> # e.g. "my-database-user" password: <%= ENV [ "DB PASS" ] % > # e.g. "my-database-password" database : < %= ENV.fetch("DB NAME") { "vote development" } % > host: "<%= ENV . fetch ( "INSTANCE HOST" ) { "127.0.0.1" } %>" # '172.17.0.1' if deployed to GAE Flex port: <%= ENV.fetch(" DB PORT ") { 3306 }% > PHP To see this snippet in the context of a web application, view the README on GitHub . namespace Google\Cloud\Samples\CloudSQL\MySQL; use PDO; use PDOException; use RuntimeException; use TypeError; class DatabaseTcp { public static function initTcpDatabaseConnection(): PDO { try { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. $username = getenv('DB USER'); // e.g. 'your db user' $password = getenv('DB PASS'); // e.g. 'your db password' $dbName = getenv('DB NAME'); // e.g. 'your db name' $instanceHost = getenv('INSTANCE HOST'); // e.g. '127.0.0.1' ('172.17.0.1' for GAE Flex) // Connect using TCP $dsn = sprintf('mysql:dbname=%s;host=%s', $dbName, $instanceHost); // Connect to the database $conn = new PDO( $dsn, $username, $password, ... ); } catch (TypeError $e) { throw new RuntimeException( sprintf( 'Invalid or missing configuration!
-- For example: ./cloud-sql-proxy --unix-socket /cloudsql \ myProject:us-central1:myInstance myProject:us-central1:myInstance2 & mysql -u myUser -S /cloudsql/myProject:us-central1:myInstance2 TCP sockets When you connect using TCP, you specify a port on your machine for the Cloud SQL Auth Proxy to listen on for each Cloud SQL instance.
-- Make sure you have set ' . '$username, $password, $dbName, ' . 'and $instanceUnixSocket (for UNIX socket mode). ' . 'The PHP error was %s', $e->getMessage() ), (int) $e->getCode(), $e ); } catch (PDOException $e) { throw new RuntimeException( sprintf( 'Could not connect to the Cloud SQL Database.
-- Make sure you have set ' . '$username, $password, $dbName, and $instanceHost (for TCP mode). ' . 'The PHP error was %s', $e->getMessage() ), $e->getCode(), $e ); } catch (PDOException $e) { throw new RuntimeException( sprintf( 'Could not connect to the Cloud SQL Database.
-
-### "Connect using the Cloud SQL Auth Proxy \_|\_ Cloud SQL for PostgreSQL \_\
-
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy](https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy)
-- Source ID: `site-iam-reference`
-- Final score: 230
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances)
+- Source ID: `site-api-reference`
+- Final score: 164
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For example: ./cloud-sql-proxy --unix-socket /cloudsql \ myProject:us-central1:myInstance myProject:us-central1:myInstance2 & psql -U myUser -h /cloudsql/myProject:us-central1:myInstance2 TCP sockets When you connect using TCP, you specify a port on your machine for the Cloud SQL Auth Proxy to listen on for each Cloud SQL instance.
-- Make sure you have set ' . '$username, $password, $dbName, ' . 'and $instanceUnixSocket (for UNIX socket mode). ' . 'The PHP error was %s', $e->getMessage() ), (int) $e->getCode(), $e ); } catch (PDOException $e) { throw new RuntimeException( sprintf( 'Could not connect to the Cloud SQL Database.
-- Make sure you have set ' . '$username, $password, $dbName, and $instanceHost (for TCP mode). ' . 'The PHP error was %s', $e->getMessage() ), $e->getCode(), $e ); } catch (PDOException $e) { throw new RuntimeException( sprintf( 'Could not connect to the Cloud SQL Database.
-- Note: Saving credentials in environment variables is convenient, but not secure - consider a more secure solution such as Cloud Secret Manager (https://cloud.google.com/secret-manager) to help keep secrets safe. username : < %= ENV["DB USER"] %> # e.g. "my-database-user" password: <%= ENV [ "DB PASS" ] % > # e.g. "my-database-password" database : < %= ENV.fetch("DB NAME") { "vote development" } % > host: <%= ENV . fetch ( "INSTANCE HOST" ) { "127.0.0.1" } % > # '172.17.0.1' if deployed to GAE Flex port : < %= ENV . fetch ( "DB PORT" ) { 5432 } % > PHP To see this snippet in the context of a web application, view the README on GitHub . namespace Google\Cloud\Samples\CloudSQL\Postgres; use PDO; use PDOException; use RuntimeException; use TypeError; class DatabaseTcp { public static function initTcpDatabaseConnection(): PDO { try { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. $username = getenv('DB USER'); // e.g. 'your db user' $password = getenv('DB PASS'); // e.g. 'your db password' $dbName = getenv('DB NAME'); // e.g. 'your db name' $instanceHost = getenv('INSTANCE HOST'); // e.g. '127.0.0.1' ('172.17.0.1' for GAE Flex) // Connect using TCP $dsn = sprintf('pgsql:dbname=%s;host=%s', $dbName, $instanceHost); // Connect to the database $conn = new PDO( $dsn, $username, $password, ... ); } catch (TypeError $e) { throw new RuntimeException( sprintf( 'Invalid or missing configuration!
+- Specifically, the name must be 1-63 characters long and match the regular expression a-z?. enablePrivatePathForGoogleCloudServices boolean Controls connectivity to private IP instances from Google services, such as BigQuery. sslMode enum ( SslMode ) Specify how SSL/TLS is enforced in database connections.
+- Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource.
+- If you want to enforce SSL/TLS without enforcing the requirement for valid client certificates, then use the sslMode flag instead of the requireSsl flag. authorizedNetworks[] object ( AclEntry ) The list of external networks that are allowed to connect to the instance using the IP.
+- Custom Subject Alternative Name(SAN)s for a Cloud SQL instance. pscConfig object ( PscConfig ) PSC settings for this instance. serverCaMode enum ( CaMode ) Specify what type of CA is used for the server certificate. serverCaPool string Optional.
 
-### Cloud SQL for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### REST Resource: instances \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances)
+- Source ID: `site-iam-reference`
+- Final score: 164
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Specifically, the name must be 1-63 characters long and match the regular expression a-z?. enablePrivatePathForGoogleCloudServices boolean Controls connectivity to private IP instances from Google services, such as BigQuery. sslMode enum ( SslMode ) Specify how SSL/TLS is enforced in database connections.
+- Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource.
+- If you want to enforce SSL/TLS without enforcing the requirement for valid client certificates, then use the sslMode flag instead of the legacy requireSsl flag. authorizedNetworks[] object ( AclEntry ) The list of external networks that are allowed to connect to the instance using the IP.
+- Custom Subject Alternative Name(SAN)s for a Cloud SQL instance. pscConfig object ( PscConfig ) PSC settings for this instance. serverCaMode enum ( CaMode ) Specify what type of CA is used for the server certificate. serverCaPool string Optional.
+
+### Create instances \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/create-instance](https://docs.cloud.google.com/sql/docs/postgres/create-instance)
 - Source ID: `site-docs-root`
-- Final score: 228
+- Final score: 146
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- October 30, 2023 Feature The rollout of the following items is complete : The oracle fdw extension, version 1.2 The minor versions, extension versions, and plugin versions listed in the September 21 release note October 27, 2023 Feature You can now specify the SSL mode of your Cloud SQL instances, which gives you more accurate SSL encryption.
-- For users of the Cloud SQL Auth Proxy : If the Cloud SQL instance to which you're connecting is using shared certificate authority (CA) for its serverCaMode setting, then on the client side, you must use Cloud SQL Auth Proxy version 2.13.0 or later.
-- May 08, 2025 Change If you create an instance using the Google Cloud Console, then the per-instance CA ( GOOGLE MANAGED INTERNAL CA ) option is now the default server certificate authority (CA) mode for your Cloud SQL instance.
-- If the Cloud SQL instance to which you're connecting is using customer-managed CA for its serverCaMode setting, then on the client side, you must use Cloud SQL Auth Proxy version 2.14.3 or later.
+- HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { "name": " INSTANCE ID ", "region": " REGION ", "databaseVersion": " DATABASE VERSION ", "rootPassword": " PASSWORD ", "settings": { "tier": " MACHINE TYPE ", "edition": " EDITION TYPE ", "enableGoogleMlIntegration": " true " " false " "databaseFlags": [ { "name": "cloudsql.enable google ml integration", "value": " on " " off " } ] "dataCacheConfig": { "dataCacheEnabled": DATA CACHE ENABLED }, "backupConfiguration": { "enabled": true }, "passwordValidationPolicy": { "enablePasswordPolicy": true "minLength": " MIN LENGTH ", "complexity": COMPLEXITY DEFAULT, "reuseInterval": " REUSE INTERVAL ", "disallowUsernameSubstring": " DISALLOW USERNAME SUBSTRING ", "passwordChangeInterval": " PASSWORD CHANGE INTERVAL " }, "ipConfiguration": { "privateNetwork": " PRIVATE NETWORK ", "authorizedNetworks": [ AUTHORIZED NETWORKS ], "ipv4Enabled": false, "enablePrivatePathForGoogleCloudServices": true, "serverCaMode": " CA MODE ", "serverCertificateRotationMode": " SERVER CERTIFICATE ROTATION MODE ", "customSubjectAlternativeNames": " DNS NAMES " }, "dataApiAccess": "ALLOW DATA API" }, "sqlNetworkArchitecture": "NEW NETWORK ARCHITECTURE" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { "name": " INSTANCE ID ", "region": " REGION ", "databaseVersion": " DATABASE VERSION ", "rootPassword": " PASSWORD ", "settings": { "tier": " MACHINE TYPE ", "edition": " EDITION TYPE ", "enableGoogleMlIntegration": " true " " false " "databaseFlags": [ { "name": "cloudsql.enable google ml integration", "value": " on " " off " } ] "dataCacheConfig": { "dataCacheEnabled": DATA CACHE ENABLED }, "backupConfiguration": { "enabled": true }, "passwordValidationPolicy": { "enablePasswordPolicy": true "minLength": " MIN LENGTH ", "complexity": COMPLEXITY DEFAULT, "reuseInterval": " REUSE INTERVAL ", "disallowUsernameSubstring": " DISALLOW USERNAME SUBSTRING ", "passwordChangeInterval": " PASSWORD CHANGE INTERVAL " }, "ipConfiguration": { "privateNetwork": " PRIVATE NETWORK ", "authorizedNetworks": [ AUTHORIZED NETWORKS ], "ipv4Enabled": false, "enablePrivatePathForGoogleCloudServices": true, "serverCaMode": " CA MODE ", "serverCertificateRotationMode": " SERVER CERTIFICATE ROTATION MODE ", "customSubjectAlternativeNames": " DNS NAMES " }, "dataApiAccess": "ALLOW DATA API" }, "sqlNetworkArchitecture": "NEW NETWORK ARCHITECTURE" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Set the following parameters, as required: enableGoogleMlIntegration : when this parameter is set to true , Cloud SQL instances can connect to Vertex AI to pass requests for real-time predictions and insights to the AI cloudsql.enable google ml integration : when this parameter is set to on , Cloud SQL can integrate with Vertex AI You can use the sqlNetworkArchitecture field to enforce the use of the new network architecture for the instance upon creation, even if the project isn't fully upgraded.
+- Set the following parameters, as required: enableGoogleMlIntegration : when this parameter is set to true , Cloud SQL instances can connect to Vertex AI to pass requests for real-time predictions and insights to the AI cloudsql.enable google ml integration : when this parameter is set to on , Cloud SQL can integrate with Vertex AI You can use the sqlNetworkArchitecture field to enforce the use of the new network architecture for the instance upon creation, even if the project isn't fully upgraded.
 

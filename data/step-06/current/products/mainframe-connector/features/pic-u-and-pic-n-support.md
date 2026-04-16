@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.834Z"
+generated_at: "2026-04-12T12:17:49.239Z"
 product_name: "Mainframe Connector"
 product_slug: "mainframe-connector"
 feature_name: "PIC U and PIC N support"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-05-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-connector/docs/release-notes"
-  - "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
-  - "https://docs.cloud.google.com/mainframe-connector/docs/reference"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/data-types"
 keywords:
   - "pic"
   - "and"
@@ -38,47 +39,69 @@ The PIC U and PIC N picture types are supported for national and DBCS fields.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-connector/docs/release-notes](https://docs.cloud.google.com/mainframe-connector/docs/release-notes)
-- [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started)
-- [https://docs.cloud.google.com/mainframe-connector/docs/reference](https://docs.cloud.google.com/mainframe-connector/docs/reference)
+- [https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding](https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding)
+- [https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference)
+- [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference)
+- [https://docs.cloud.google.com/mainframe-connector/docs/data-types](https://docs.cloud.google.com/mainframe-connector/docs/data-types)
 
 ## Supporting Pages
 
-### Mainframe Connector release notes | Google Cloud Documentation
+### "qsam and vsam commands reference \_|\_ Mainframe Connector \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/mainframe-connector/docs/release-notes](https://docs.cloud.google.com/mainframe-connector/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 44
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding](https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding)
+- Source ID: `site-docs-reference`
+- Final score: 252
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Picture symbols Picture attributes Logical type A, B, G, N, U, X, 9 DISPLAY, DISPLAY-1, NATIONAL, UTF-8 String Example 01 REC 02 STR PIC X(10) 02 NATIONAL PIC N(10) 02 UTF8 PIC U(1) USAGE UTF-8 Encoding format Alphanumeric fields are encoded as follows: X fields default to EBCDIC encoding National (N) fields default to Unicode Transformation Format 16-bit (UTF-16 BE) encoding UTF8 fields default to Unicode Transformation Format-8 (UTF-8) encoding Mainframe Connector supports most single byte character set (SBCS), double byte character set (DBCS) encodings.
+- You can use the following example to implement a tagged union: { "field override": [ { "field": "VARIANT-1", "modifier": { "null if": { "target field": "TYPE", "non null value": "VAR1" } } }, { "field": "VARIANT-2", "modifier": { "null if": { "target field": "TYPE", "non null value": "VAR2" } } } ], "transformations": [ { "field": "DATA", "transformation": { "exclude": {}} } ] } Logical Types To transcode data to and from multiple formats, Mainframe Connector converts all data to an intermediate representation (IR) that is based on logical types.
+- Mainframe Connector supports the following types of lists: Fixed lists Dynamic lists Packed dynamic lists Fixed lists Fixed lists are used when the exact number of items (item count) that will be a part of the list is known in advance, and this number always remains the same.
+- Picture symbols Picture attributes Logical type S, 9 COMP, COMPUTATIONAL Long (signed 64-bit integer) Example 01 REC 02 INT PIC S9(8) COMP Hexadecimal floating point fields (COMP-1, COMP-2) Hexadecimal floating point (HFP) fields are fully supported.
+
+### Mainframe Connector command-line reference \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference)
+- Source ID: `site-docs-reference`
+- Final score: 216
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Connector release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-connector/docs/release-notes Supports configuring the maximum time you want Mainframe Connector to wait for a BigQuery job to complete using a new flag max polling interval ms with the bq load command.
-- For more granular control over data transfer, you can now specify chunk sizes below 64MiB using the maxChunkSize flag with the gsutil cp command. ...
-- The default value is 60000 milliseconds (1 minute).
-- Fixed Mainframe file handling leaks.
+- The supported format is [PROJECT]:[DATASET].[TABLE] --project id = ID Specify the project to use to execute this command. --allow jagged rows (Optional) Allow missing trailing optional columns in CSV data. --allow quoted newlines (Optional) Allow quoted newlines within CSV data. --append table (Optional) Append the loaded data to the existing data in the destination table. --autodetect (Optional) Enable automatic schema detection for CSV and JSON data. --clustering fields = FIELDS (Optional) If specified, a comma-separated list of columns is used to cluster the destination table in a query.
+- If time-based partitioning is enabled without this value, then the table is partitioned based on the load time. --time partitioning type = TYPE (Optional) Enable time-based partitioning on a table and set the partition type using the following value: DAY . --use avro logical types = {true false} (Optional) If --source format is set to AVRO , then set this flag to true to convert logical types into their corresponding types (such as TIMESTAMP ) instead of only using their raw types (such as INTEGER ).
+- The supported format is [PROJECT]:[DATASET].[TABLE] . --clustering fields = FIELDS (Optional) Specify a comma-separated list of up to four column names that specify the fields to use for table clustering. --dataset id = ID (Optional) Specify the default dataset to use with the command.
+- TOPIC Flags and arguments The pubsub topics publish command uses the following flags and arguments: TOPIC Specify the name of the topic in the format projects/{project}/topics/{topic} . --attributes = NAME=VALUE (Optional) Specify a comma-separated list of attributes.
 
-### Get started with Mainframe Connector | Google Cloud Documentation
+### Copybook parser reference \_|\_ Mainframe Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 32
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Get started with Mainframe Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-connector/docs/get-started Before you install Mainframe Connector, you must perform the initial setup, including granting the required roles to your service account, setting up security for your assets, and setting up network connectivity between your mainframe and Google Cloud.
-
-### Mainframe Connector reference | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-connector/docs/reference](https://docs.cloud.google.com/mainframe-connector/docs/reference)
-- Source ID: `site-docs-root`
-- Final score: 28
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference)
+- Source ID: `site-docs-reference`
+- Final score: 214
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Mainframe Connector reference Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-connector/docs/reference To configure Mainframe Connector to write to Cloud Logging, set the LOG PROJECT and LOG ID environment variables in the JCL that launches the job.
-- For example, LOG PROJECT=mainframe-connector-proj and LOG ID=my-mfc.
+- The following PICTURE fields are supported: Pic A, Pic, B, Pic G (DBCS), Pic N (national or DBCS), Pic U (UTF8), Pic X, and zoned decimal (max precision 38, max scale 38) IBM Hexadecimal floating point (HFP) is supported.
+- Supported data types and restrictions The following are the data types supported by the Native copybook parser and the restrictions for its use: Level 66 (ALIAS) or 77 (STANDALONE) are not supported.
+- Support for DBCS fields Ensure the following when using DBCS fields: When you use PIC G or Pic N DBCS fields, you must provide one of the following valid multi-byte character set (MBCS) encodings in the encoding option or in the ENCODING environment variable when using the gsutil cp or bq export commands: x-IBM930 x-IBM933 x-IBM935 x-IBM937 x-IBM939 x-IBM942 x-IBM942C x-IBM943 x-IBM943C x-IBM949 x-IBM949C x-IBM950 x-IBM964 x-IBM970 x-IBM1364 When a copybook field only contains DBCS bytes, but these bytes are not surrounded by shift-out (0x0E) and shift-in (0x0F), you must add the suffix DBCS to the field name to ensure that these bytes are decoded as DBCS bytes.
+- If you use these constructs in your copybook, Mainframe Connector shows an error. dataAlignedClause dataBlankWhenZeroClause dataCommonOwnLocalClause dataIntegerStringClause dataJustifiedClause dataOccursClause dataReceivedByClause dataRecordAreaClause dataRenamesClause dataSignClause dataSynchronizedClause dataThreadLocalClause dataTypeClause dataTypeDefClause dataUsingClause Data types COBOL data types like COMP-1 and COMP-2 are supported.
+
+### Mainframe Connector data types \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/data-types](https://docs.cloud.google.com/mainframe-connector/docs/data-types)
+- Source ID: `site-docs-reference`
+- Final score: 212
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If pictures contains the following: N and NSYMBOL == NATIONAL use UTF-16BE N and NSYMBOL == DBCS act as DISPLAY-1 U uses UTF8 Bytes STRING The following character set transformation is performed: First, bytes are decoded into characters, and then those characters are encoded into UTF-8-based bytes stored into the column vector.
+- COBOL usage type Supported flags Condition Optimized Row Columnar (ORC)​​ type Type Decoding behavior ( gsutil cp ) Encoding behavior ( bq export ) COMP1 , COMP2 Double FLOAT64 Encodes the String , Double , and Float data types.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- ZONED EMPTY VALUES ARE NULL FAIL ON INVALID DATA precision Decimal64 NUMERIC Decode as NULL , if all the bytes are: Either spaces, high, or low, and, Not FAIL ON INVALID DATA or, FAIL ON INVALID DATA and, EMPTY VALUES ARE NULL .
 

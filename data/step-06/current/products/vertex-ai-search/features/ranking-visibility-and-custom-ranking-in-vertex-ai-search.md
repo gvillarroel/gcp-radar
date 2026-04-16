@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.848Z"
+generated_at: "2026-04-14T17:29:36.926Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Ranking visibility and custom ranking in Vertex AI Search"
 feature_slug: "ranking-visibility-and-custom-ranking-in-vertex-ai-search"
 latest_feature_date: "2025-03-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
 keywords:
   - "ranking"
   - "visibility"
-  - "and"
   - "custom"
-  - "in"
   - "vertex"
   - "ai"
   - "search"
+  - "private"
+  - "preview"
 ---
 
 # Ranking visibility and custom ranking in Vertex AI Search
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +38,13 @@ Vertex AI Search private preview exposes ranking signals for inspection and allo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking](https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings](https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
 
 ## Supporting Pages
 
@@ -54,55 +52,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking](https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking)
 - Source ID: `site-docs-root`
-- Final score: 284
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 164
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Ranking formula examples Here are a few examples of ranking formula that you can use in the rankingExpression field of your search request: An elementary linear combination: semantic similarity score 0.7 + keyword similarity score 0.3 A complex formula using reciprocal rank and NaN handling: rr(fill nan(semantic similarity score, 0), 40) 0.5 + topicality rank 0.5 A complex formula using reciprocal rank, exponential function, and NaN handling: rr(fill nan(semantic similarity score, 0), 40) 0.2 + exp(keyword similarity score) 0.3 + is nan(keyword similarity score) 0.1 A complex formula using reciprocal rank with the geo distance() function (Private preview): rr(keyword similarity score, 16) 0.8 + rr(geo distance(query loc, c.office location) -1, 16) 0.2 In this formula, the multiplication factor is a negative value so that larger distance correspond to higher expression value and, therefore, the reciprocal rank assigns lower ranks to greater distances.
 - Home Documentation AI and ML Vertex AI Search Send feedback Customize search results ranking Stay organized with collections Save and categorize content based on your preferences.
 - With custom ranking, you can achieve the following: Gain visibility : Understand which signals contribute to the final ranking of your search results.
 - Standard signals Vertex AI Search offers a variety of signals that you can use to formulate custom ranking.
-- Text fields for keyword similarity In structured data stores, to obtain the keywordSimilarityScore signal in your search response, you must update your schema to do the following: Map the text fields essential for keyword matching to the key properties title and description Update the annotation for the text fields as Searchable Customize ranking using ranking formula in search To customize the ranking for your documents in your search results, manually draft a formula and add it to your search API call.
-
-### "Vertex AI APIs for building search and RAG experiences \_|\_ Vertex AI Search\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- Source ID: `site-api-reference`
-- Final score: 264
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Vertex AI Search works as an out-of-the-box semantic & keyword search engine for RAG with the ability to process a variety of document types and with connectors to a variety of source systems including BigQuery and many third party systems.
-- Vertex AI Vector Search is a retrieval engine that can search from billions of semantically similar or semantically related items at scale, with high queries per second (QPS), high recall, low latency, and cost efficiency.
-- Home Documentation AI and ML Vertex AI Search Send feedback Vertex AI APIs for building search and RAG experiences Stay organized with collections Save and categorize content based on your preferences.
-- The grounding sources can be your Vertex AI Search data stores, custom data that you provide, or Google Search.
-
-### "Introduction to custom search \_|\_ Vertex AI Search \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search)
-- Source ID: `site-api-reference`
-- Final score: 252
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Retrieval and ranking: There are several sub-components to retrieval and ranking of results: Query understanding for search: Vertex AI Search analyzes a search query using the following: Natural language processing: To understand the intent.
-- Vertex AI Search for custom apps is a powerful, Google-quality search and content discovery engine that you can integrate into your applications that contain website data and other structured or unstructured data.
-- Home Documentation AI and ML Vertex AI Search Send feedback Introduction to custom search Stay organized with collections Save and categorize content based on your preferences.
-- Ranking: Vertex AI Search ranks the results based on the following factors: Relevance: A combination of keyword and semantic matching during search.
 
 ### Use custom embeddings \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings](https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings)
-- Source ID: `site-api-reference`
-- Final score: 246
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference`
+- Final score: 123
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - However, if you've created your own embeddings for your data, you might prefer to use them instead of those generated by Vertex AI Search, especially if your custom embeddings contain additional context that can enrich your search retrieval and ranking.
 - Home Documentation AI and ML Vertex AI Search Send feedback Use custom embeddings Stay organized with collections Save and categorize content based on your preferences.
 - If you've already created your own custom vector embeddings for your data, you can upload them to Vertex AI Search and use them when querying with Vertex AI Search.
-- If you aren't familiar with creating embeddings, Google recommends letting Vertex AI Search create and use embeddings for you.
+- In the following example, embeddingConfig uses embeddings in the field example embedding field and gives a weight of 0.5 to relevance score . curl -X PATCH \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ -d '{ "name": "projects/ PROJECT ID /locations/ LOCATION /collections/default collection/dataStores/ DATA STORE ID /servingConfigs/default search", "embeddingConfig": { "fieldPath": "example embedding field" }, "ranking expression": "0.5 relevance score" }' \ 'https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/ LOCATION /collections/default collection/dataStores/ DATA STORE ID /servingConfigs/default search?updateMask=embeddingConfig,rankingExpression' fieldPath : The name of the field that you have mapped to the embedding key property. ranking expression : Controls the ranking of results.
+
+### Get search results \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
+- Source ID: `site-iam-reference`
+- Final score: 101
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- AUTO ), Optional: Use fine-tuned model for this request custom fine tuning spec=discoveryengine.CustomFineTuningSpec( enable search adaptor=True ), ) page result = client . search ( request ) Handle the response for response in page result : print ( response ) return page result Ruby For more information, see the Vertex AI Search Ruby API reference documentation .
+- AUTO ), Optional: Use fine-tuned model for this request custom fine tuning spec=discoveryengine.CustomFineTuningSpec( enable search adaptor=True ), ) page result = client . search ( request ) Handle the response for response in page result : print ( response ) return page result Ruby For more information, see the Vertex AI Search Ruby API reference documentation .
+- You have migrated to Vertex AI Search from Custom Search Site Restricted JSON API of Programmable Search Engine.
+- The remaining $100 million was received in the first quarter of 2019.", "pageNumber": "21" } ] } }, "modelScores": { "relevance score": { "values": [ 0.5 ] } } }, ... { "id": "e6bbd0d82dc2a2fc7ccf1bd82ac6334f", "document": { "name": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/e6bbd0d82dc2a2fc7ccf1bd82ac6334f", "id": "e6bbd0d82dc2a2fc7ccf1bd82ac6334f", "derivedStructData": { "title": "2021 Q1 Earnings Transcript", "link": "gs://cloud-samples-data/gen-app-builder/search/alphabet-investor-pdfs/2021 Q1 Earnings Transcript.pdf", "extractive answers": [ { "pageNumber": "2", "content": "Our strength in AI and ML is also helping Financial Services customers improve efficiency of payments, reduce fraud and risk, and deliver faster payment solutions." } ] } }, "modelScores": { "relevance score": { "values": [ 0 ] } } } ], "totalSize": 76, "attributionToken": "8QHw8AoLCIW4 b0GELHd3lgSJDY3YmU1ZGMwLTAwMDAtMmM1OC04NzcyLTc0NzQ0NjNiOGMyNSIHR0VORVJJQyqcAcb77TDHy MX8tntMI6-nRWK4uQwwvCeFYX77TDvifIwq8SKLauR3zCq-LMt0IrIMNSynRWc1rctv 7kML7l3zDZveQwkPeyMMP77TD12e0wpd hMIfi5DCRv9owgvvtMJWSxTCOkckwu-XfMK7Eii3sifIwqJHfMKjf4TCt-LMtlL aMJ Wty23t4wto4CXIs2KyDDcveQwwv7kMDABShIweDU3MGFkYWI4MzQ4NmY0MGE", "nextPageToken": "UjMjhjYzYDN0cDN30iM3cDOtgTNjJTLwADMw0iZiRWNlJ2N2QiGBUd0gWLEG4bjhWICMIBM1IgC", "summary": {}, "queryExpansionInfo": {} } Note: This document-relevance score is different from and more precise than the relevance level used to filter documents returned by a search.
 

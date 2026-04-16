@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.342Z"
+generated_at: "2026-04-14T13:57:37.633Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Cloud Billing documents page for self-serve accounts"
 feature_slug: "cloud-billing-documents-page-for-self-serve-accounts"
 latest_feature_date: "2020-04-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/create-billing-account"
-  - "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsAsyncPager"
-  - "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsPager"
+  - "https://docs.cloud.google.com/billing/docs/how-to/get-invoice"
+  - "https://docs.cloud.google.com/billing/docs/how-to/modify-billing-account"
 keywords:
   - "billing"
   - "documents"
   - "page"
-  - "for"
   - "self"
   - "serve"
   - "accounts"
   - "can"
+  - "now"
 ---
 
 # Cloud Billing documents page for self-serve accounts
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Self-serve Cloud Billing accounts can now access invoices, statements, and tax d
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/billing/docs/how-to/create-billing-account](https://docs.cloud.google.com/billing/docs/how-to/create-billing-account)
-- [https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsAsyncPager](https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsAsyncPager)
-- [https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsPager](https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsPager)
+- [https://docs.cloud.google.com/billing/docs/how-to/get-invoice](https://docs.cloud.google.com/billing/docs/how-to/get-invoice)
+- [https://docs.cloud.google.com/billing/docs/how-to/modify-billing-account](https://docs.cloud.google.com/billing/docs/how-to/modify-billing-account)
 
 ## Supporting Pages
 
@@ -52,41 +52,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/create-billing-account](https://docs.cloud.google.com/billing/docs/how-to/create-billing-account)
 - Source ID: `site-docs-root`
-- Final score: 224
+- Final score: 170
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- You can grant different levels of access to billing accounts to your users, depending on what they need to do (for example: track spend, review cost anomalies, manage budgets, optimize costs, or review and pay invoices).
+- Specifically, Cloud Billing account users with the billing.accounts.updatePaymentInfo permission on their billing account will be able to access and edit the associated Google payments profile and payments account directly from the Cloud Billing console, without needing additional permissions on the payments profile itself.
+- Home Documentation Costs and usage management Cloud Billing Guides Send feedback Create a new self-serve Cloud Billing account Stay organized with collections Save and categorize content based on your preferences.
 - This document describes how to create a self-serve, online Cloud Billing account to automatically pay for your Google Cloud and Google Maps Platform usage costs.
-- Recommended next steps To ensure that you can maintain your Cloud Billing account, pay your bills, and monitor your costs, after you create a new billing account, we recommend you also do the following: Configure access to billing accounts and payments profiles Create a FinOps administration project Set up budgets to track your spend Enable billing data export to BigQuery Configure access to billing accounts and payments profiles After you create a new Cloud Billing account, you might want to grant user permissions to additional users to access your billing account and Google payments profile.
-- You can upload one of the following documents for verification: Certificate of incorporation Certificate of registration on conversion Certificate of provisional registration Amended certificate of registration Registration of society Udyam registration certificate GST registration certificate VAT Certificate Registration certificate (Jammu and Kashmir) A utility or phone bill (with a date in the last 60 days) Information required for individuals If you're using Google Cloud as an individual, you must provide documents that verify your identity and your address.
+- Note: If you're getting started with Google Cloud, you create a self-serve Cloud Billing account as part of the Google Cloud setup process .
 
-### "Class ListBillingAccountsAsyncPager (1.18.0) \_|\_ Python client libraries\
+### "Get a Cloud Billing document such as an invoice, statement, or receipt \_\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsAsyncPager](https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsAsyncPager)
-- Source ID: `site-python-reference`
-- Final score: 198
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/get-invoice](https://docs.cloud.google.com/billing/docs/how-to/get-invoice)
+- Source ID: `site-docs-root`
+- Final score: 140
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.billing v1.types.ListBillingAccountsRequest The initial request object. response google.cloud.billing v1.types.ListBillingAccountsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
-- Union [ str , bytes ]]] = () ) A pager for iterating through list billing accounts requests.
-- Version latest keyboard arrow down 1.18.0 (latest) 1.17.0 1.16.3 1.15.0 1.14.1 1.13.6 1.12.1 1.11.5 1.10.1 1.9.1 1.8.0 1.7.3 1.6.1 1.5.1 1.4.1 1.3.4 1.2.1 1.1.1 1.0.0 0.1.0 ListBillingAccountsAsyncPager ( method : typing .
-- Home Documentation Developer tools Python Client libraries Send feedback Class ListBillingAccountsAsyncPager (1.18.0) Stay organized with collections Save and categorize content based on your preferences.
+- Self-serve account The types of documents available to self-serve (online) Cloud Billing accounts include statements, debit memos, credit memos, and tax invoices, as applicable to your specific Cloud Billing account.
+- Permissions required to access billing documents To access the Invoices page and the Transactions page for your Cloud Billing account, you need a role on your Cloud Billing account that includes the following permission : billing.accounts.getPaymentInfo To gain this permissions using a predefined role , you need to be assigned to one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Viewer Billing Account Administrator For more information about billing permissions, see: Overview of access control Understanding predefined Identity and Access Management roles for Cloud Billing Get your statement or invoice Statements and invoices are available in the Invoices page for each Cloud Billing account.
+- For more information, follow the instructions at Get your payment receipt To find your statement or invoice or other Cloud Billing documents, in the following section, select the tab that represents the type of Cloud Billing account (self-serve account or invoiced account) you're viewing, to see the instructions for finding your documents.
+- Access the Invoices page To get your Google Cloud statement and other documents: Sign in to the Manage billing accounts page in the Google Cloud console.
 
-### "Class ListBillingAccountsPager (1.18.0) \_|\_ Python client libraries \_\
+### Modify your Cloud Billing account \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsPager](https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListBillingAccountsPager)
-- Source ID: `site-python-reference`
-- Final score: 198
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/modify-billing-account](https://docs.cloud.google.com/billing/docs/how-to/modify-billing-account)
+- Source ID: `site-docs-root`
+- Final score: 140
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.billing v1.types.ListBillingAccountsRequest The initial request object. response google.cloud.billing v1.types.ListBillingAccountsResponse The initial response object. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
-- Union [ str , bytes ]]] = () ) A pager for iterating through list billing accounts requests.
-- Version latest keyboard arrow down 1.18.0 (latest) 1.17.0 1.16.3 1.15.0 1.14.1 1.13.6 1.12.1 1.11.5 1.10.1 1.9.1 1.8.0 1.7.3 1.6.1 1.5.1 1.4.1 1.3.4 1.2.1 1.1.1 1.0.0 0.1.0 ListBillingAccountsPager ( method : typing .
-- Home Documentation Developer tools Python Client libraries Send feedback Class ListBillingAccountsPager (1.18.0) Stay organized with collections Save and categorize content based on your preferences.
+- Permissions required for this task To change the Cloud Billing account name, you need a role that includes the following permission on your Cloud Billing account: billing.accounts.update To gain this permission using a predefined role, ask your administrator to grant you the following role on the Cloud Billing account: Billing Account Administrator How to rename the Cloud Billing account In the Google Cloud console, go to the Account management page.
+- Mailing addresses (all values except the Country ) There are one or more mailing addresses associated with your billing account, depending on the type of billing account (self-serve or invoiced) and the type of Google payments account connected to your Cloud Billing account.
+- There are one or more mailing addresses associated with your billing account, depending on the type of billing account (invoiced or self-serve) and the type of Google payments profile (Individual or Organization) connected to your Cloud Billing account.
+- Payment methods for a self-serve billing account Usage costs accrued for a self-serve Cloud Billing account are automatically charged to the payment instrument on file in the associated Google payments profile.
 

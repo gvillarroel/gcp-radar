@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.597Z"
+generated_at: "2026-04-12T12:07:33.843Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "alloydb_scann vector extension"
 feature_slug: "alloydb-scann-vector-extension"
 latest_feature_date: "2024-10-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/ai"
-  - "https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes"
-  - "https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy"
 keywords:
   - "vector index tuning"
   - "vector extension GA"
@@ -25,7 +26,7 @@ keywords:
 # alloydb_scann vector extension
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,52 +38,46 @@ The alloydb_scann (formerly postgres_scann) extension is now generally available
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/ai](https://docs.cloud.google.com/alloydb/docs/ai)
-- [https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes](https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes)
-- [https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index](https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index)
+- [https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann](https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- [https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy](https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy)
 
 ## Supporting Pages
 
-### "Build generative AI applications using AlloyDB AI \_|\_ AlloyDB for PostgreSQL\
+### "Best practices for tuning ScaNN indexes in AlloyDB for PostgreSQL \_|\_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai](https://docs.cloud.google.com/alloydb/docs/ai)
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann](https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann)
 - Source ID: `site-docs-root`
-- Final score: 64
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page explicitly introduces the AlloyDB scann extension and explains its ScaNN-based nearest-neighbor vector indexing use.
+- Final score: 132
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- You can use the alloydb scann extension with PostgreSQL 14, 15, 16, and 17. google columnar engine extension: ScaNN index can be loaded into the columnar engine for further accelerating the vector search. google ml integration extension: the google ml integration extension provides AI functions for generating embeddings, semantic ranking, and implementing AI-based filters, joins and text generation/summarization.
-- You can also create an IVFFlat index or HSNW index that are available with stock pgvector . alloydb scann extension: the alloydb scann extension implements a highly efficient nearest-neighbor index powered by the ScaNN algorithm .
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
 
-### "Maintain vector indexes \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 122
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes](https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes)
-- Source ID: `site-docs-root-2`
-- Final score: 50
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+### "Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \_|\_\
 
-Evidence snippets:
-- CREATE EXTENSION IF NOT EXISTS vector ; CREATE EXTENSION IF NOT EXISTS alloydb scann ; If the vector and alloydb scann extensions are already installed, upgrade the extensions to the latest version.
-- If the vector and alloydb scann extensions aren't installed, install the latest extension versions.
-- Before you begin Install or update the vector and alloydb scann extensions.
-- ALTER EXTENSION vector UPDATE ; ALTER EXTENSION alloydb scann UPDATE ; View vector index metrics If your table is prone to frequent updates or insertions, then we recommend periodically reindexing the existing ScaNN index in order to improve the recall accuracy for your index.
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- Source ID: `site-docs-reference-2`
+- Final score: 116
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-### Create a ScaNN index \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+### "Choose a vector index in AlloyDB AI \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index](https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index)
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy](https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy)
 - Source ID: `site-docs-root`
-- Final score: 50
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The vector extension that is based on pgvector , extended by Google for AlloyDB, and the alloydb scann extension is installed: CREATE EXTENSION IF NOT EXISTS alloydb scann CASCADE ; Note: You can use the alloydb scann extension with PostgreSQL 14, 15, 16, and 17 compatible databases.
-- You cannot run bulk search queries using the alloydb scann extension.
-- AlloyDB alloydb scann , a PostgreSQL extension developed by Google that implements a highly efficient nearest-neighbor index powered by the ScaNN algorithm .
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

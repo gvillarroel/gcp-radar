@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-09T19:48:25+00:00'
-updated_at: '2026-04-11T11:29:18+00:00'
+updated_at: '2026-04-15T14:10:52+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/datastore/docs
   created_at: '2026-04-11T11:21:47+00:00'
-  updated_at: '2026-04-11T11:22:58+00:00'
+  updated_at: '2026-04-15T13:57:25+00:00'
   update_command: know sync site https://docs.cloud.google.com/datastore/docs --key
     corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 1
     max_pages: 36
     compact_output: true
-  last_synced_at: '2026-04-11T11:22:58+00:00'
+  last_synced_at: '2026-04-15T13:57:25+00:00'
 - type: site
   id: site-docs-root-2
   title: https://docs.cloud.google.com/firestore/native/docs
   created_at: '2026-04-11T11:21:47+00:00'
-  updated_at: '2026-04-11T11:23:52+00:00'
+  updated_at: '2026-04-15T13:58:19+00:00'
   update_command: know sync site https://docs.cloud.google.com/firestore/native/docs
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root-2
@@ -34,26 +34,12 @@ sources:
     max_depth: 1
     max_pages: 36
     compact_output: true
-  last_synced_at: '2026-04-11T11:23:52+00:00'
-- type: site
-  id: site-docs-reference
-  title: https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/apis
-  created_at: '2026-04-11T11:21:48+00:00'
-  updated_at: '2026-04-11T11:24:16+00:00'
-  update_command: know sync site https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/apis
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-reference
-  config:
-    url: https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/apis
-    max_depth: 1
-    max_pages: 26
-    compact_output: true
-  last_synced_at: '2026-04-11T11:24:16+00:00'
+  last_synced_at: '2026-04-15T13:58:19+00:00'
 - type: site
   id: site-api-reference
   title: https://docs.cloud.google.com/firestore/docs/reference/rest
   created_at: '2026-04-11T11:21:48+00:00'
-  updated_at: '2026-04-11T11:25:51+00:00'
+  updated_at: '2026-04-15T14:01:54+00:00'
   update_command: know sync site https://docs.cloud.google.com/firestore/docs/reference/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
@@ -62,12 +48,12 @@ sources:
     max_depth: 1
     max_pages: 26
     compact_output: true
-  last_synced_at: '2026-04-11T11:25:51+00:00'
+  last_synced_at: '2026-04-15T14:01:54+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam
   created_at: '2026-04-11T11:21:49+00:00'
-  updated_at: '2026-04-11T11:26:02+00:00'
+  updated_at: '2026-04-15T14:02:05+00:00'
   update_command: know sync site https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -76,12 +62,12 @@ sources:
     max_depth: 1
     max_pages: 26
     compact_output: true
-  last_synced_at: '2026-04-11T11:26:02+00:00'
+  last_synced_at: '2026-04-15T14:02:05+00:00'
 - type: site
   id: site-python-reference
   title: https://docs.cloud.google.com/python/docs/reference/firestore/latest
   created_at: '2026-04-11T11:21:50+00:00'
-  updated_at: '2026-04-11T11:27:39+00:00'
+  updated_at: '2026-04-15T14:03:41+00:00'
   update_command: know sync site https://docs.cloud.google.com/python/docs/reference/firestore/latest
     --key corpus --compact
   delete_command: know del --key corpus site-python-reference
@@ -90,12 +76,12 @@ sources:
     max_depth: 1
     max_pages: 26
     compact_output: true
-  last_synced_at: '2026-04-11T11:27:39+00:00'
+  last_synced_at: '2026-04-15T14:03:41+00:00'
 - type: site
   id: site-java-reference
   title: https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/overview
   created_at: '2026-04-11T11:21:50+00:00'
-  updated_at: '2026-04-11T11:29:18+00:00'
+  updated_at: '2026-04-15T14:05:17+00:00'
   update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/overview
     --key corpus --compact
   delete_command: know del --key corpus site-java-reference
@@ -104,4 +90,88 @@ sources:
     max_depth: 1
     max_pages: 26
     compact_output: true
-  last_synced_at: '2026-04-11T11:29:18+00:00'
+  last_synced_at: '2026-04-15T14:05:17+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/firestore/docs/release-notes
+  created_at: '2026-04-14T04:18:00+00:00'
+  updated_at: '2026-04-15T13:59:58+00:00'
+  update_command: know sync site https://docs.cloud.google.com/firestore/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/firestore/docs/release-notes
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T13:59:58+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/release-notes
+  created_at: '2026-04-14T04:18:00+00:00'
+  updated_at: '2026-04-15T14:00:19+00:00'
+  update_command: know sync site https://docs.cloud.google.com/release-notes --key
+    corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/release-notes
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T14:00:19+00:00'
+- type: site
+  id: site-api-reference-required-2
+  title: https://docs.cloud.google.com/firestore/docs/reference/mcp
+  created_at: '2026-04-15T11:28:34+00:00'
+  updated_at: '2026-04-15T14:10:52+00:00'
+  update_command: know sync site https://docs.cloud.google.com/firestore/docs/reference/mcp
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/firestore/docs/reference/mcp
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T14:10:52+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://docs.cloud.google.com/mcp/control-mcp-use-organization
+  created_at: '2026-04-15T13:18:33+00:00'
+  updated_at: '2026-04-15T14:06:18+00:00'
+  update_command: know sync site https://docs.cloud.google.com/mcp/control-mcp-use-organization
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/mcp/control-mcp-use-organization
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T14:06:18+00:00'
+- type: site
+  id: site-docs-reference-required-4
+  title: https://docs.cloud.google.com/firestore/native/docs/use-firestore-mcp
+  created_at: '2026-04-15T13:18:34+00:00'
+  updated_at: '2026-04-15T14:07:48+00:00'
+  update_command: know sync site https://docs.cloud.google.com/firestore/native/docs/use-firestore-mcp
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/firestore/native/docs/use-firestore-mcp
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T14:07:48+00:00'
+- type: site
+  id: site-docs-reference-required-5
+  title: https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp
+  created_at: '2026-04-15T13:18:34+00:00'
+  updated_at: '2026-04-15T14:09:21+00:00'
+  update_command: know sync site https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
+  config:
+    url: https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T14:09:21+00:00'

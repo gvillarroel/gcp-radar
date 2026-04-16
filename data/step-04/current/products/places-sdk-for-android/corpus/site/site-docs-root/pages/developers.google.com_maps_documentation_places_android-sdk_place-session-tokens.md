@@ -4,7 +4,7 @@ url: https://developers.google.com/maps/documentation/places/android-sdk/place-s
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/places/android-sdk
+entrypoint: https://developers.google.com/maps/documentation/places/android-sdk/overview
 source_metadata:
   url: https://developers.google.com/maps/documentation/places/android-sdk/place-session-tokens
   title: "Places SDK for Android \_|\_ Google for Developers"
@@ -62,6 +62,6 @@ For more information about how Autocomplete (New) requests are billed, see
 Autocomplete (New) and session pricing .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-09 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["Session tokens, unique identifiers, group user autocomplete searches into sessions for billing. These tokens, which must be URL- and filename-safe base64 strings, are created by the user, with UUIDs recommended. A session begins with an Autocomplete (New) call and ends with Place Details (New) or Address Validation. Each session may include several Autocomplete (New) queries. Once terminated, a new token is required. Omitting or reusing a token results in individual billing for each request.\n"]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],["Session tokens, unique identifiers, group user autocomplete searches into sessions for billing. These tokens, which must be URL- and filename-safe base64 strings, are created by the user, with UUIDs recommended. A session begins with an Autocomplete (New) call and ends with Place Details (New) or Address Validation. Each session may include several Autocomplete (New) queries. Once terminated, a new token is required. Omitting or reusing a token results in individual billing for each request.\n"]]

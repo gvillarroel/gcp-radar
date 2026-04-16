@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.414Z"
+generated_at: "2026-04-15T13:43:38.456Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Maria JDBC driver"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-08-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries"
+  - "https://docs.cloud.google.com/bigquery/docs/migration/snowflake-tutorials"
+  - "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact"
 keywords:
   - "maria"
   - "jdbc"
   - "driver"
-  - "the"
   - "was"
   - "updated"
-  - "to"
   - "version"
+  - "mysql"
+  - "mariadb"
 ---
 
 # Maria JDBC driver
@@ -42,42 +42,45 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-database-queries](https://docs.cloud.google.com/looker/docs/admin-panel-database-queries)
+- [https://docs.cloud.google.com/bigquery/docs/migration/snowflake-tutorials](https://docs.cloud.google.com/bigquery/docs/migration/snowflake-tutorials)
+- [https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact](https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact)
 
 ## Supporting Pages
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### Admin settings - Queries \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 50
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-database-queries](https://docs.cloud.google.com/looker/docs/admin-panel-database-queries)
+- Source ID: `site-docs-reference`
+- Final score: 68
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
+- Actian Avalanche Amazon Athena Amazon Aurora MySQL Amazon Redshift Amazon Redshift 2.1+ Amazon Redshift Serverless 2.1+ Apache Druid Apache Druid 0.13.x - 0.17.x Apache Druid 0.18+ Apache Hive 2.3+ Apache Hive 3.1.2+ Apache Spark 3+ ClickHouse Cloudera Impala 3.1+ Cloudera Impala 3.1+ with Native Driver Cloudera Impala with Native Driver DataVirtuality Databricks Denodo 7 Denodo 8 & 9 Dremio Dremio 11+ Exasol Google BigQuery Legacy SQL Google BigQuery Standard SQL Google Cloud AlloyDB for PostgreSQL Google Cloud PostgreSQL Google Cloud SQL Google Spanner Greenplum HyperSQL IBM Netezza MariaDB Microsoft Azure PostgreSQL Microsoft Azure SQL Database Microsoft Azure Synapse Analytics Microsoft SQL Server 2008+ Microsoft SQL Server 2012+ Microsoft SQL Server 2016 Microsoft SQL Server 2017+ MongoBI MySQL MySQL 8.0.12+ Oracle Oracle ADWC PostgreSQL 9.5+ PostgreSQL pre-9.5 PrestoDB PrestoSQL SAP HANA SAP HANA 2+ SingleStore SingleStore 7+ Snowflake Teradata Trino Vector Vertica Query timeouts and queueing Looker kills queries that have been waiting in queue for too long.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
 
-### Getting started with the Looker API | Google Cloud Documentation
+### Snowflake to BigQuery migration tutorials \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
+- URL: [https://docs.cloud.google.com/bigquery/docs/migration/snowflake-tutorials](https://docs.cloud.google.com/bigquery/docs/migration/snowflake-tutorials)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 58
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can then load your data from Cloud Storage to BigQuery using one of the following tools: The BigQuery Data Transfer Service for Cloud Storage connector The LOAD command using the bq command-line tool BigQuery API client libraries Other tools to extract data from Snowflake You can also use the following tools to extract data from Snowflake: Dataflow JDBC to BigQuery template SnowflakeIO connector Cloud Data Fusion JDBC drivers Managed Service for Apache Spark Apache Spark BigQuery connector Snowflake connector for Apache Spark Hadoop BigQuery connector The JDBC driver from Snowflake and Sqoop to extract data from Snowflake into Cloud Storage: Moving data with Apache Sqoop in Managed Service for Apache Spark Other tools to load data to BigQuery You can also use the following tools to load data to BigQuery: Dataflow Read from Cloud Storage Write to BigQuery Cloud Storage Text to BigQuery template Cloud Data Fusion Create a target campaign pipeline Managed Service for Apache Spark Cloud Storage connector with Spark Spark BigQuery connector Hadoop Cloud Storage connector Hadoop BigQuery connector Dataprep by Trifacta Read from Cloud Storage Write to BigQuery Extract, transform, and load If you want to transform your data before loading it into BigQuery, consider the following tools: Dataflow Clone the JDBC to BigQuery template code and modify the template to add Apache Beam transforms .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]
+
+### Get one or more artifacts \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact](https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact)
 - Source ID: `site-api-reference`
-- Final score: 44
-- Re-rank relevance: N/A
+- Final score: 56
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- With the Looker API, you can write applications or automation scripts to provision ...
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-
-### Using the API Explorer | Looker | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 44
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
-- Using the API Explorer Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-explorer There may also be Ruby and Java ... languages.
+- The version must be provided for any updates to an existing artifact. namespace lock string Artifact storage namespace. created at lock string Timestamp when this artifact was created. updated at lock string Timestamp when this artifact was updated. value size lock integer Size (in bytes) of the stored value. created by userid lock string User id of the artifact creator. updated by userid lock string User id of the artifact updater.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-25 UTC."],[],[]]
+- Omit for all fields limit integer Number of results to return. (used with offset) offset integer Number of results to skip before returning any. (used with limit) tally boolean Return the full count of results in the X-Total-Count response header. (Slight performance hit.) Response 200: Created or updated artifacts Datatype Description (array) Artifact [] key string Key of value to store.
+- Needed to set application/json content types, which are analyzed as plain text. version lock integer Version number of the stored value.
 

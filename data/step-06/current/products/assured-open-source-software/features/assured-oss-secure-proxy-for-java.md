@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:59:28.165Z"
+generated_at: "2026-04-14T08:42:06.149Z"
 product_name: "Assured Open Source Software"
 product_slug: "assured-open-source-software"
 feature_name: "Assured OSS secure proxy for Java"
 feature_slug: "assured-oss-secure-proxy-for-java"
 latest_feature_date: "2024-04-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/assured-open-source-software/docs/supported-packages"
-  - "https://docs.cloud.google.com/assured-open-source-software/docs/release-notes"
   - "https://docs.cloud.google.com/assured-open-source-software/docs/overview"
+  - "https://docs.cloud.google.com/assured-open-source-software/docs/download-java-packages"
 keywords:
+  - "provides"
   - "secure"
   - "proxy"
   - "java"
   - "premium"
-  - "for"
-  - "assured"
-  - "now"
-  - "oss"
 ---
 
 # Assured OSS secure proxy for Java
 
 Product: Assured Open Source Software
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ Assured OSS premium now provides a secure proxy server for Java, Python, and Jav
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/assured-open-source-software/docs/supported-packages](https://docs.cloud.google.com/assured-open-source-software/docs/supported-packages)
-- [https://docs.cloud.google.com/assured-open-source-software/docs/release-notes](https://docs.cloud.google.com/assured-open-source-software/docs/release-notes)
 - [https://docs.cloud.google.com/assured-open-source-software/docs/overview](https://docs.cloud.google.com/assured-open-source-software/docs/overview)
+- [https://docs.cloud.google.com/assured-open-source-software/docs/download-java-packages](https://docs.cloud.google.com/assured-open-source-software/docs/download-java-packages)
 
 ## Supporting Pages
 
@@ -52,7 +49,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/assured-open-source-software/docs/supported-packages](https://docs.cloud.google.com/assured-open-source-software/docs/supported-packages)
 - Source ID: `site-docs-reference`
-- Final score: 194
+- Final score: 111
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -62,31 +59,31 @@ Evidence snippets:
 - For a list of packages that are curated for the Assured Open Source Software premium tier, see List of supported Java and Python packages for the Assured Open Source Software premium tier .
 - Home Documentation Security Assured Open Source Software Guides Send feedback List of supported Java and Python packages for the Assured Open Source Software free tier Stay organized with collections Save and categorize content based on your preferences.
 
-### "Assured OSS release notes \_|\_ Assured Open Source Software \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/assured-open-source-software/docs/release-notes](https://docs.cloud.google.com/assured-open-source-software/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 156
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The premium tier includes an expanded package list, a secure proxy server for Java, Python, and Javascript packages, and enriched metadata support.
-- For more information, see Overview of Assured Open Source Software and Integrate with Assured OSS for code security .
-- April 02, 2024 Feature Assured OSS premium tier is available as part of Security Command Center Enterprise.
-- June 30, 2025 Feature You can now verify the signatures on Assured OSS artifacts using checksums.
-
 ### Overview of Assured Open Source Software \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/assured-open-source-software/docs/overview](https://docs.cloud.google.com/assured-open-source-software/docs/overview)
 - Source ID: `site-docs-reference`
-- Final score: 156
+- Final score: 107
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
+- In the Premium tier, two virtual repositories are created automatically: one for Java packages and one for Python packages.
 - You can access and download the open source packages offered by Assured OSS using one of the following methods: Set up a remote (also called a mirror or a proxy ) repository in your environment to act as a proxy for the Google-managed Artifact Registry repository.
 - Assured Open Source Software (Assured OSS) lets you take advantage of the security and experience that Google applies to open source software (OSS) by incorporating the same OSS packages that Google secures and uses into your own developer workflows.
-- You can also use an Assured OSS type repository, which is a wrapper over a virtual repository that has access to both Free tier and Premium tier packages.
-- In the Premium tier, two virtual repositories are created automatically: one for Java packages and one for Python packages.
+- Choose from more than one thousand of the most popular Java, Go, and Python packages, including common machine learning and artificial intelligence projects like TensorFlow, Pandas, and Scikit-learn.
+
+### "Download Java packages using direct repository access for the free tier\
+
+- URL: [https://docs.cloud.google.com/assured-open-source-software/docs/download-java-packages](https://docs.cloud.google.com/assured-open-source-software/docs/download-java-packages)
+- Source ID: `site-docs-reference`
+- Final score: 87
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- For the premium tier, see Download Java packages using direct repository access .
+- Set up your credential helpers Make the following changes based on the build tool to set up authentication using a credential helper: Maven <project> <build> <extensions> <extension> <groupId>com.google.cloud.artifactregistry</groupId> <artifactId>artifactregistry-maven-wagon</artifactId> <version>2.2.0</version> </extension> </extensions> </build> </project> Gradle plugins { id "com.google.cloud.artifactregistry.gradle-plugin" version "2.2.0" } Authenticate using a password Authenticate using a password when your Java application requires authentication with a specified username and password.
+- Maven Declare the packages that you want to download in the pom.xml file for your Maven project. <dependency> <groupId>org.apache.logging.log4j</groupId> <artifactId>log4j-api</artifactId> <version>2.17.1</version> </dependency> Gradle Declare the packages that you want to download in your build.gradle file. dependencies { compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.1' } Access Java packages not available in Assured OSS You can access packages that aren't available in the Artifact Registry repository for Assured OSS.
+- In the build.gradle file, specify the repository settings using the following example: repositories { maven { url "artifactregistry://us-maven.pkg.dev/cloud-aoss/cloud-aoss-java" credentials { username = " json key base64" password = "$artifactRegistryMavenSecret" } authentication { basic(BasicAuthentication) } } } Update the project configuration file to point to the repository Maven Add the following settings to the appropriate section in the pom.xml file for your Maven project.
 

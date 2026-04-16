@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:24.016Z"
+generated_at: "2026-04-14T09:47:34.446Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "View Bare Metal Solution networking resources via gcloud and API"
 feature_slug: "view-bare-metal-solution-networking-resources-via-gcloud-and-api"
 latest_feature_date: "2022-01-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
-  - "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+  - "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+  - "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
 keywords:
   - "networking"
   - "resources"
   - "gcloud"
-  - "via"
-  - "solution"
   - "view"
-  - "metal"
-  - "bare"
 ---
 
 # View Bare Metal Solution networking resources via gcloud and API
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +34,53 @@ Enables listing and inspecting networking resources through gcloud and API comma
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- [https://docs.cloud.google.com/bare-metal/docs/order-bms-resources](https://docs.cloud.google.com/bare-metal/docs/order-bms-resources)
+- [https://docs.cloud.google.com/sap/docs/netweaver-planning-guide](https://docs.cloud.google.com/sap/docs/netweaver-planning-guide)
+- [https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide](https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide)
 
 ## Supporting Pages
 
 ### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- Source ID: `site-docs-root`
-- Final score: 206
+- Source ID: `site-docs-reference`
+- Final score: 116
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - For example, "state" : "RUNNING" Manage resources in your Bare Metal Solution environment Bare Metal Solution management APIs, gcloud commands, and the Google Cloud console enable you to view the status of the resources in your Bare Metal Solution environment, such as servers, networking, and storage.
 - Manage networks You can manage the networks in your Bare Metal Solution environment in the following ways: View networks Organize networks by using labels Rename a network Create a network Attach a network to a server Detach a network from a server Delete a network View advanced networking information for a Bare Metal Solution environment Implement IP address management in a Bare Metal Solution environment View networks Monitoring your network resources in the Bare Metal Solution environment lets you know how your servers connect to other resources.
-- NAME PROJECT REGION MACHINE TYPE IP ADDRESSES STATE SERVER NAME PROJECT ID REGION o2-standard-32-metal 192.168.1.1,192.168.2.1 RUNNING Additional command options include: --region : View devices in a specific Google Cloud region. --limit : Limit the output to show a specific number of devices To get network and storage information for a specific server in your Bare Metal Solution environment, enter your server name, project ID, and region, and issue the gcloud bms instances describe command: gcloud bms instances describe SERVER NAME --project= PROJECT ID --region= REGION The following output example shows an operational server with 12 LUNs, a client network of 192.168.1.1, and a private network of 192.168.2.1. luns: - bootLun: true name: SERVER NAME -lun000-b1 sizeGb: '200' state: READY storageVolume: SERVER NAME -vol000-b1 - name: STORAGE DEVICE NAME -lun001 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun002 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun003 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun004 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun005 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun006 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun007 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun008 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun009 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun010 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun011 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun012 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 machineType: o2-standard-32-metal name: projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME networks: - ipAddress: 192.168.1.1 macAddress: - 34:80:0D:52:AF:28 - 34:80:0D:15:3E:0D network: STORAGE DEVICE NAME -vlan001 - ipAddress: 192.168.2.1 macAddress: - 34:80:0D:52:AF:38 - 34:80:0D:15:3E:1D network: STORAGE DEVICE NAME -vlan002 state: RUNNING API Open a Cloud Shell terminal window in your Google Cloud console.
-- ProjectsClient () bms client = BareMetalSolutionClient () output = [] errors = [] try : for project in get projects ( parent , folders client , projects client ): volumes list request = ListVolumesRequest ( parent = "projects/" + project + "/locations/global" , filter = filter , ) try : for volume in bms client . list volumes ( request = volumes list request ): output . append ( f " - { volume . name } " ) This could happen because BMS API is not enabled in a certain project. except PermissionDenied as e : errors . append ( f "Unable to list bms resources for project { project } : { e } " ) except PermissionDenied as e : errors . append ( f "Unable to access folder or project: { e } " ) return " \n " . join ( output ), " \n " . join ( errors ) def main ( : Sequence [ str ]): if ORGANIZATION ID . value is not None and FOLDER ID . value is not None : raise Exception ( "Only one of organization ID or folder ID must be provided" ) elif ORGANIZATION ID . value is None and FOLDER ID . value is None : raise Exception ( "Either one of organization ID or folder ID must be provided" ) elif ORGANIZATION ID . value is not None : parent = f "organizations/ { ORGANIZATION ID . value } " else : parent = f "folders/ { FOLDER ID . value } " volumes , errors = get volumes list ( parent , filter = FILTER . value ) print ( "=================== Flat list of volumes in the folder or organization" " ===================" ) print ( volumes ) print ( "=================== List of folders or projects with errors" " ===================" ) print ( errors ) if name == " main " : app . run ( main ) Manage servers You can manage the servers in your Bare Metal Solution environment in the following ways: View servers Organize servers by using labels Rename a server Retrieve the initial password for a server View OS details Change the OS for a server Enable hyperthreading on a server View servers To view the details of your Bare Metal Solution servers, follow these steps: Console Go to the Servers page.
+- In the Networks section, you can view the following information: Network name Network type IP address Default gateway Interface name gcloud Run the gcloud bms instances describe command to view advanced networking settings for your server. gcloud bms instances describe SERVER NAME --project= PROJECT ID --region= REGION API To view advanced networking settings for your server, enter your project ID, region, and server name, then issue the following curl command.
+- View IP address reservations To view IP addresses for existing reservations: gcloud Run the gcloud bms networks list-ip-reservations command: gcloud bms networks list-ip-reservations --project= PROJECT ID --region REGION API To view IP address reservations for existing resources, enter your project ID, region, and network name, then issue the following curl command.
 
-### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
+### "SAP NetWeaver planning guide \_|\_ SAP on Google Cloud \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- Source ID: `site-docs-root-2`
-- Final score: 202
+- URL: [https://docs.cloud.google.com/sap/docs/netweaver-planning-guide](https://docs.cloud.google.com/sap/docs/netweaver-planning-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 108
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution Overview To provide resiliency for your Oracle databases inside a Bare Metal Solution environment, you need to have a clear strategy for database backups and disaster recovery.
-- Architecture Figure 1 shows a simplified view of the infrastructure that you need to build when you deploy Backup and DR to protect Oracle databases running in a Bare Metal Solution environment.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
+- You still need to think about computing resources, storage, and networking considerations.
+- While this naming change is backwards compatible, we recommend that you use the updated names for new deployments. x4-960-16t-metal 960 16,384 GB Intel Sapphire Rapids x4-1440-24t-metal 1,440 24,576 GB Intel Sapphire Rapids x4-1920-32t-metal 1,920 32,768 GB Intel Sapphire Rapids N1 high-memory machine types n1-highmem-2 2 13 Intel Skylake Intel Broadwell n1-highmem-4 4 26 Intel Skylake Intel Broadwell n1-highmem-8 8 52 Intel Skylake Intel Broadwell n1-highmem-16 16 104 Intel Skylake Intel Broadwell n1-highmem-32 32 208 Intel Skylake Intel Broadwell n1-highmem-64 64 416 Intel Skylake Intel Broadwell n1-highmem-96 96 624 Intel Skylake N1 standard machine types n1-standard-8 8 30 Intel Skylake Intel Broadwell n1-standard-16 16 60 Intel Skylake Intel Broadwell n1-standard-32 32 120 Intel Skylake Intel Broadwell n1-standard-64 64 240 Intel Skylake Intel Broadwell n1-standard-96 96 360 Intel Skylake N2 high-memory types n2-highmem-2 2 16 Intel Ice Lake Intel Cascade Lake n2-highmem-4 4 32 Intel Ice Lake Intel Cascade Lake n2-highmem-8 8 64 Intel Ice Lake Intel Cascade Lake n2-highmem-16 16 128 Intel Ice Lake Intel Cascade Lake n2-highmem-32 32 256 Intel Ice Lake Intel Cascade Lake n2-highmem-48 48 384 Intel Ice Lake Intel Cascade Lake n2-highmem-64 64 512 Intel Ice Lake Intel Cascade Lake n2-highmem-80 80 640 Intel Ice Lake Intel Cascade Lake n2-highmem-96 96 768 Intel Ice Lake n2-highmem-128 128 838 Intel Ice Lake N2 standard machine types n2-standard-2 2 8 Intel Ice Lake Intel Cascade Lake n2-standard-4 4 16 Intel Ice Lake Intel Cascade Lake n2-standard-8 8 32 Intel Ice Lake Intel Cascade Lake n2-standard-16 16 64 Intel Ice Lake Intel Cascade Lake n2-standard-32 32 128 Intel Ice Lake Intel Cascade Lake n2-standard-48 48 192 Intel Ice Lake Intel Cascade Lake n2-standard-64 64 256 Intel Ice Lake Intel Cascade Lake n2-standard-80 80 320 Intel Ice Lake Intel Cascade Lake n2-standard-96 96 384 Intel Ice Lake n2-standard-128 128 512 Intel Ice Lake N2D high-memory machine types n2d-highmem-2 2 16 AMD EPYC Milan n2d-highmem-4 4 32 AMD EPYC Milan n2d-highmem-8 8 64 AMD EPYC Milan n2d-highmem-16 16 128 AMD EPYC Milan n2d-highmem-32 32 256 AMD EPYC Milan n2d-highmem-48 48 384 AMD EPYC Milan n2d-highmem-64 64 512 AMD EPYC Milan n2d-highmem-80 80 640 AMD EPYC Milan n2d-highmem-96 96 768 AMD EPYC Milan N2D standard machine types n2d-standard-2 2 8 AMD EPYC Milan n2d-standard-4 4 16 AMD EPYC Milan n2d-standard-8 8 32 AMD EPYC Milan n2d-standard-16 16 64 AMD EPYC Milan n2d-standard-32 32 128 AMD EPYC Milan n2d-standard-48 48 192 AMD EPYC Milan n2d-standard-64 64 256 AMD EPYC Milan n2d-standard-80 80 320 AMD EPYC Milan n2d-standard-96 96 384 AMD EPYC Milan n2d-standard-128 128 512 AMD EPYC Milan n2d-standard-224 224 896 AMD EPYC Milan T2D standard machine types t2d-standard-2 2 8 AMD EPYC Milan t2d-standard-4 4 16 AMD EPYC Milan t2d-standard-8 8 32 AMD EPYC Milan t2d-standard-16 16 64 AMD EPYC Milan t2d-standard-32 32 128 AMD EPYC Milan t2d-standard-48 48 192 AMD EPYC Milan t2d-standard-60 60 240 AMD EPYC Milan C4 high-memory machine types c4-highmem-2 2 15 Intel Emerald Rapids c4-highmem-4 4 31 Intel Emerald Rapids c4-highmem-8 8 62 Intel Emerald Rapids c4-highmem-16 16 124 Intel Emerald Rapids c4-highmem-32 32 248 Intel Emerald Rapids c4-highmem-48 48 372 Intel Emerald Rapids c4-highmem-96 96 744 Intel Emerald Rapids c4-highmem-144 144 1,116 Intel Granite Rapids c4-highmem-192 192 1,488 Intel Emerald Rapids c4-highmem-288 288 2,232 Intel Granite Rapids c4-highmem-288-metal 288 2,232 Intel Granite Rapids C4 standard machine types c4-standard-2 2 7 Intel Emerald Rapids c4-standard-4 4 15 Intel Emerald Rapids c4-standard-8 8 30 Intel Emerald Rapids c4-standard-16 16 60 Intel Emerald Rapids c4-standard-32 32 120 Intel Emerald Rapids c4-standard-48 48 180 Intel Emerald Rapids c4-standard-96 96 360 Intel Emerald Rapids c4-standard-144 144 540 Intel Granite Rapids c4-standard-192 192 720 Intel Emerald Rapids c4-standard-288 288 1,080 Intel Granite Rapids c4-standard-288-metal 288 1,080 Intel Granite Rapids C3 high-memory machine types c3-highmem-4 4 32 Intel Sapphire Rapids c3-highmem-8 8 64 Intel Sapphire Rapids c3-highmem-22 22 176 Intel Sapphire Rapids c3-highmem-44 44 352 Intel Sapphire Rapids c3-highmem-88 88 704 Intel Sapphire Rapids c3-highmem-176 176 1408 Intel Sapphire Rapids C3 standard machine types c3-standard-4 4 16 Intel Sapphire Rapids c3-standard-8 8 32 Intel Sapphire Rapids c3-standard-22 22 88 Intel Sapphire Rapids c3-standard-44 44 176 Intel Sapphire Rapids c3-standard-88 88 352 Intel Sapphire Rapids c3-standard-176 176 704 Intel Sapphire Rapids C3 standard bare metal machine types c3-standard-192-metal 192 768 Intel Sapphire Rapids C3 high-memory bare metal machine types c3-highmem-192-metal 192 1,536 Intel Sapphire Rapids C3D high-memory machine types c3d-highmem-4 4 32 AMD EPYC Genoa c3d-highmem-8 8 64 AMD EPYC Genoa c3d-highmem-16 16 128 AMD EPYC Genoa c3d-highmem-30 30 240 AMD EPYC Genoa c3d-highmem-60 60 480 AMD EPYC Genoa c3d-highmem-90 90 720 AMD EPYC Genoa c3d-highmem-180 180 1440 AMD EPYC Genoa C3 standard machine types c3d-standard-4 4 16 AMD EPYC Genoa c3d-standard-8 8 32 AMD EPYC Genoa c3d-standard-16 16 64 AMD EPYC Genoa c3d-standard-30 30 120 AMD EPYC Genoa c3d-standard-60 60 240 AMD EPYC Genoa c3d-standard-90 90 360 AMD EPYC Genoa c3d-standard-180 180 720 AMD EPYC Genoa C4D high-memory machine types c4d-highmem-2 2 15 AMD EPYC Turin c4d-highmem-4 4 31 AMD EPYC Turin c4d-highmem-8 8 63 AMD EPYC Turin c4d-highmem-16 16 126 AMD EPYC Turin c4d-highmem-32 32 252 AMD EPYC Turin c4d-highmem-48 48 378 AMD EPYC Turin c4d-highmem-64 64 504 AMD EPYC Turin c4d-highmem-96 96 756 AMD EPYC Turin c4d-highmem-192 192 1,512 AMD EPYC Turin c4d-highmem-384 384 3,024 AMD EPYC Turin c4d-highmem-384-metal 384 3,072 AMD EPYC Turin C4D standard machine types c4d-standard-2 2 7 AMD EPYC Turin c4d-standard-4 4 15 AMD EPYC Turin c4d-standard-8 8 31 AMD EPYC Turin c4d-standard-16 16 62 AMD EPYC Turin c4d-standard-32 32 124 AMD EPYC Turin c4d-standard-48 48 186 AMD EPYC Turin c4d-standard-64 64 248 AMD EPYC Turin c4d-standard-96 96 372 AMD EPYC Turin c4d-standard-192 192 744 AMD EPYC Turin c4d-standard-384 384 1,488 AMD EPYC Turin c4d-standard-384-metal 384 1,536 AMD EPYC Turin O2 Bare Metal Solution machine types o2-standard-16-metal 16 192 GiB Intel Cascade Lake o2-standard-32-metal 32 384 GiB Intel Xeon Gold o2-standard-48-metal 48 768 GiB Intel Xeon Gold o2-standard-112-metal 112 1,532 GiB Intel Xeon Platinum o2-highmem-224-metal 224 3 TiB Intel Xeon Platinum Note: Because the capacity (SAPS) of an instance of a custom machine type (a custom VM instance ) is not predetermined, SAP cannot guarantee that a configured custom VM instance would be suitable to run Business Suite workloads without first reviewing the configuration.
+- The following guides provide generally useful information about how to deploy VMs: Creating and Starting an Instance Creating Windows Server Instances Creating SQL Server Instances For detailed information and instructions about deploying your SAP NetWeaver system on Compute Engine VMs, see the following: Overview of Linux deployment for SAP NetWeaver Overview of Windows deployment for SAP NetWeaver Automation for SAP NetWeaver deployments Google Cloud provides Terraform configuration files that you can use to automate the deployment of Google Cloud infrastructure for SAP NetWeaver with Linux.
+- For more information about the minimum support requirements for SAP on Google Cloud, see: Getting support for SAP on Google Cloud SAP Note 2456406 - SAP on Google Cloud Platform: Support Prerequisites (An SAP user account is required) What's next To complete the tasks necessary for deployment, see the NetWeaver Deployment Guide for your operating system: SAP NetWeaver on Linux Deployment Guide SAP NetWeaver on Windows Deployment Guide For an overview of high-availability SAP NetWeaver systems on Google Cloud, see High-availability planning guide for SAP NetWeaver on Google Cloud .
 
-### Order Bare Metal Solution resources \_|\_ Google Cloud Documentation
+### SAP HANA planning guide \_|\_ SAP on Google Cloud \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bare-metal/docs/order-bms-resources](https://docs.cloud.google.com/bare-metal/docs/order-bms-resources)
-- Source ID: `site-docs-root-2`
-- Final score: 192
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide](https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 105
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Order Bare Metal Solution resources This document explains how to create, view, and track procurements.
-- You can use procurements to order the following Bare Metal Solution resources: Servers ( available server configurations ) Storage ( available storage choices ) Partner Interconnect bandwidth To procure any other Bare Metal Solution resource, contact Google Cloud sales .
-- As your resources are procured, you can provision them through the following options and start using them: Google Cloud console intake form Create a network UI Create a storage volume UI Create an NFS volume UI What's next Deploy your Bare Metal Solution environment .
-- After you've executed a simplified, one-time Bare Metal Solution Order Form, you can order your Bare Metal Solution resources online by creating procurements through the Google Cloud console.
+- For more information, see the following: Networking overview for VMs Network bandwidth Certified operating systems for SAP HANA The following table shows the Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES) operating systems that are certified by SAP for production use with SAP HANA on Google Cloud.
+- User identification and resource access When planning security for an SAP deployment on Google Cloud, you must identify: The user accounts and applications that need access to the Google Cloud resources in your Google Cloud project The specific Google Cloud resources in your project that each user needs to access You must add each user to your project by adding their Google account ID to the project as a principal.
+- On Google Cloud, an SAP HANA single-host, scale-up architecture can include the following components: One Compute Engine instance for the SAP HANA database with a network bandwidth of up to 32 Gbps, or up to 100 Gbps on selected machine types using high-bandwidth networking .
+- Compute Engine firewall rules or other network access controls that restrict access to your Compute Engine instances while allowing communication between the instances and any other distributed or remote resources that your SAP HANA system requires.
 

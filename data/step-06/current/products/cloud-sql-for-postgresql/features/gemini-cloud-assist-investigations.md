@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.270Z"
+generated_at: "2026-04-13T13:51:57.739Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "Gemini Cloud Assist investigations"
 feature_slug: "gemini-cloud-assist-investigations"
 latest_feature_date: "2026-02-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/postgres/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
   - "https://docs.cloud.google.com/sql/docs/postgres/pricing"
+  - "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli"
+  - "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
 keywords:
-  - "gemini"
-  - "assist"
   - "investigations"
-  - "provide"
-  - "ai"
-  - "assisted"
   - "troubleshooting"
   - "capabilities"
+  - "assisted"
+  - "assist"
+  - "gemini"
+  - "provide"
 ---
 
 # Gemini Cloud Assist investigations
 
 Product: Cloud SQL for PostgreSQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,47 +37,21 @@ Gemini Cloud Assist investigations provide AI-assisted troubleshooting capabilit
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
 - [https://docs.cloud.google.com/sql/docs/postgres/pricing](https://docs.cloud.google.com/sql/docs/postgres/pricing)
+- [https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli](https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli)
+- [https://docs.cloud.google.com/sql/docs/postgres/troubleshooting](https://docs.cloud.google.com/sql/docs/postgres/troubleshooting)
 
 ## Supporting Pages
-
-### Cloud SQL for PostgreSQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- To use AI-assisted troubleshooting, you need Gemini Cloud Assist and query insights for Enterprise Plus edition .
-- To use AI-assisted troubleshooting, you need Gemini Cloud Assist and query insights for Enterprise Plus edition.
-- April 09, 2024 Feature The following Gemini in Databases features are now available in Public Preview: Database Center : an AI-assisted dashboard that gives you one centralized view across your entire database fleet.
-- With AI-assisted troubleshooting, you can resolve complex database performance issues like slow queries and high load for your instances in a guided manner.
-
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- To use AI-assisted troubleshooting, you need Gemini Cloud Assist and query insights for Enterprise Plus edition .
-- To use AI-assisted troubleshooting, you need Gemini Cloud Assist and query insights for Enterprise Plus edition .
-- To use AI-assisted troubleshooting, you need Gemini Cloud Assist and query insights for Enterprise Plus edition .
-- To use AI-assisted troubleshooting, you need Gemini Cloud Assist and query insights for Enterprise Plus edition.
 
 ### Cloud SQL pricing | Google Cloud
 
 - URL: [https://docs.cloud.google.com/sql/docs/postgres/pricing](https://docs.cloud.google.com/sql/docs/postgres/pricing)
 - Source ID: `site-docs-root`
-- Final score: 98
+- Final score: 102
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +59,30 @@ Evidence snippets:
 - Google Cloud with Gemini AI assistants for application development, coding, and more.
 - Gemini Code Assist AI-powered assistant available across Google Cloud and your IDE.
 - Iowa (us-central1) Johannesburg (africa-south1) Taiwan (asia-east1) Hong Kong (asia-east2) Tokyo (asia-northeast1) Osaka (asia-northeast2) Seoul (asia-northeast3) Mumbai (asia-south1) Delhi (asia-south2) Singapore (asia-southeast1) Jakarta (asia-southeast2) Bangkok (asia-southeast3) Sydney (australia-southeast1) Melbourne (australia-southeast2) Warsaw (europe-central2) Finland (europe-north1) Stockholm (europe-north2) Madrid (europe-southwest1) Belgium (europe-west1) Berlin (europe-west10) Turin (europe-west12) London (europe-west2) Frankfurt (europe-west3) Netherlands (europe-west4) Zurich (europe-west6) Milan (europe-west8) Paris (europe-west9) Doha (me-central1) Dammam (me-central2) Tel Aviv (me-west1) Montreal (northamerica-northeast1) Toronto (northamerica-northeast2) Mexico (northamerica-south1) Sao Paulo (southamerica-east1) Santiago (southamerica-west1) Iowa (us-central1) Oklahoma (us-central2) South Carolina (us-east1) Northern Virginia (us-east4) Columbus (us-east5) Alabama (us-east7) Dallas (us-south1) Oregon (us-west1) Los Angeles (us-west2) Salt Lake City (us-west3) Las Vegas (us-west4) Phoenix (us-west8) Hourly Hourly Monthly Monthly Extended support price Year 1 & Year 2 Price (USD) Year 3 Price (USD) vCPUs $0.07 / 1 hour $0.14 / 1 hour HA vCPUs $0.14 / 1 hour $0.28 / 1 hour db-f1-micro $0.018 / 1 hour $0.035 / 1 hour HA db-f1-micro $0.035 / 1 hour $0.07 / 1 hour db-g1-small $0.035 / 1 hour $0.07 / 1 hour HA db-g1-small $0.07 / 1 hour $0.14 / 1 hour Cloud SQL free trial Cloud SQL free trial let you evaluate how Cloud SQL performs in real-world scenarios and try Cloud SQL features and capabilities at no cost for a trial period.
+
+### "Build context sets using Gemini CLI \_|\_ Cloud SQL for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli](https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli)
+- Source ID: `site-iam-reference`
+- Final score: 77
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key.
+- To install the DB Context Enrichment extension, follow these steps: Install the DB Context Enrichment Gemini CLI extension: gemini extensions install https://github.com/GoogleCloudPlatform/db-context-enrichment Note: The extension requires a Gemini API key at installation to authenticate with the Gemini API and enable context generation.
+- Enable required services Enable the following services for your project: Data Analytics API with Gemini Gemini for Google Cloud API Dataplex Universal Catalog API Prepare a Cloud SQL instance Make sure that you have access to an existing Cloud SQL instance or create a new one.
+- Configure Application Default Credentials You must configure Application Default Credentials (ADC) to provide user credentials for two main components: Toolbox MCP server: uses credentials to connect to your database, fetch schemas, and run SQL for validation.
+
+### Troubleshoot \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/troubleshooting](https://docs.cloud.google.com/sql/docs/postgres/troubleshooting)
+- Source ID: `site-docs-root`
+- Final score: 68
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances Flags High availability Import and export Integrate with Vertex AI Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.
+- Network connectivity issues with private IP instances You might experience some of the following issues during integration setup: Slow operations to create Microsoft Entra ID logins Unable to create Microsoft Entra ID logins Unable to connect to the instance using Microsoft Entra ID authentication For more information on how to help address these issues, see Troubleshooting Microsoft Entra ID integration .
+- From a terminal, connect to your database: gcloud sql connect INSTANCE NAME Run this command to create the extension: CREATE EXTENSION pgaudit ; Exit the database, and from a terminal run the following command: gcloud sql instances patch INSTANCE NAME \ --database-flags = cloudsql.enable pgaudit = on,pgaudit.log = all Manage instances Issue Troubleshooting You want to find out what queries are running now.
+- For example, openssl x509 -in server-cert.pem -noout -text grep 'DNS:' . ssl: { rejectUnauthorized: true, ca: fs.readFileSync ( "/path/to/server/CA" ) , servername: 'N-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.us-central1.sql.goog' } Create instances Issue Troubleshooting Error message: The zone or region does not have sufficient resources to handle the request at the moment.
 

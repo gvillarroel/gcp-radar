@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:27.570Z"
+generated_at: "2026-04-14T07:09:07.331Z"
 product_name: "App Engine standard environment PHP"
 product_slug: "app-engine-standard-environment-php"
 feature_name: "App Engine URL Fetch default quota for billed apps"
 feature_slug: "app-engine-url-fetch-default-quota-for-billed-apps"
 latest_feature_date: "2016-03-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
+  - "https://docs.cloud.google.com/appengine/docs/quotas"
+  - "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+  - "https://docs.cloud.google.com/appengine/docs/developers-console"
 keywords:
-  - "billed"
-  - "fetch"
-  - "quota"
-  - "default"
-  - "url"
-  - "engine"
-  - "for"
   - "app"
+  - "engine"
+  - "url"
+  - "fetch"
+  - "default"
+  - "quota"
+  - "billed"
+  - "apps"
 ---
 
 # App Engine URL Fetch default quota for billed apps
 
 Product: App Engine standard environment PHP
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,54 @@ The default URL Fetch quota for billed applications was increased.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
+- [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- [https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref](https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref)
+- [https://docs.cloud.google.com/appengine/docs/developers-console](https://docs.cloud.google.com/appengine/docs/developers-console)
 
 ## Supporting Pages
 
-### "Package google.golang.org/appengine/v2/urlfetch (v2.0.6) \_|\_ App Engine\
+### "Quotas and limits \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch)
-- Source ID: `site-docs-reference`
-- Final score: 244
+- URL: [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- Source ID: `site-docs-reference-4`
+- Final score: 153
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Package urlfetch provides an http.RoundTripper implementation for fetching URLs via App Engine's urlfetch service.
-- Home Documentation Application hosting App Engine Standard environment Reference Send feedback Package google.golang.org/appengine/v2/urlfetch (v2.0.6) Stay organized with collections Save and categorize content based on your preferences.
-- New ( "urlfetch: truncated body" ) ErrTruncatedBody is the error returned after the final Read() from a response's Body if the body has been truncated by App Engine's proxy.
-- AllowInvalidServerCertificate bool } Transport is an implementation of http.RoundTripper for App Engine.
+- Daily quotas protect the integrity of the App Engine system by ensuring that no single app over-consumes a resource to the detriment of other apps.
+- Resource Daily limit Maximum rate UrlFetch API calls 860,000,000 calls 660,000 calls/minute UrlFetch data sent 4.5 TB 3,600 MB/minute UrlFetch data received 4.5 TB 3,600 MB/minute Networking limits The following networking limits apply to App Engine: Outbound connections per second per instance: 500 (cannot be increased) Outbound DNS resolutions per second per instance: 100 (cannot be increased) Maximum packets per second per instance: 80,000 Maximum bits per second per instance: 100,000,000 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The following example illustrates how to catch the OverQuotaError , which may be raised by the SendMessage() method if an email-related quota has been exceeded: try: mail.SendMessage ( to = 'test@example.com' , from = 'admin@example.com' , subject = 'Test Email' , body = 'Testing' ) except apiproxy errors.OverQuotaError, message: Log the error. logging.error(message) Display an informative message to the user. self.response.out.write ( 'The email could not be sent. ' 'Please try again later.' ) Is your app exceeding the default limits?
+- Resource Default limit Default Cloud Storage Bucket Stored Data First 5 GB free; no maximum Default Cloud Storage Bucket Class A Operations First 20,000 ops/day free; no maximum Default Cloud Storage Bucket Class B Operations First 50,000 ops/day free; no maximum Default Cloud Storage Bucket Network Egress First 1 GB free; no maximum Blobstore The following quotas apply specifically to use of the blobstore.
 
-### "appengine-web.xml reference \_|\_ App Engine standard environment \_|\_\
+### "App Engine app.yaml reference \_|\_ App Engine standard environment \_|\_\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- Source ID: `site-docs-reference`
-- Final score: 222
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- This idle timeout configuration isn't the same as the overall request deadline for scaling, or the URL Fetch API deadline that you configure using appengine.api.urlfetch.defaultDeadline . <inbound-services> Optional.
-- Specify the timeout in seconds: < system - properties > < property name = "appengine.api.urlfetch.defaultDeadline" value = "10" / > < / system - properties > Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- By default, the generated entrypoint for a F4 instance class (memory settings are calculated from the instance class) is equivalent to the following configuration: <appengine-web-app xmlns="http://appengine.google.com/ns/1.0"> <entrypoint> java -showversion -Xms32M -Xmx819M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+PrintCommandLineFlags --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED --add-opens java.logging/java.util.logging=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED -Dclasspath.runtimebase=/base/java runtime -Djava.class.path=/base/java runtime/runtime-main.jar -Djava.library.path=/base/java runtime: com/google/apphosting/runtime/JavaRuntimeMainWithDefaults --fixed application path=/workspace /base/java runtime </entrypoint> </appengine-web-app> You can modify the configuration to add extra JVM process flags or define your own process to boot.
-- The appengine-web.xml file can define system properties and environment variables that are set when the application is running. <system-properties> <property name="myapp.maximum-message-length" value="140" /> <property name="myapp.notify-every-n-signups" value="1000" /> <property name="myapp.notify-url" value="http://www.example.com/signupnotify" /> </system-properties> <env-variables> <env-var name="DEFAULT ENCODING" value="UTF-8" /> </env-variables> Optional.
-
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- Source ID: `site-docs-root`
-- Final score: 204
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref](https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref)
+- Source ID: `site-docs-reference-4`
+- Final score: 83
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
-- Create a new folder called go-app for your Go service: mkdir go-app In your go-app/ folder, create a file called app.yaml , and add the following contents: runtime : go126 # or another supported version This is the simplest configuration for an App Engine app.
-- To confirm service creation and version deployment: View your App Engine services in the Google Cloud console: View services You should see one service listed, named default .
-- When your app is running on App Engine, the PORT environment variable is set for you, but when testing your app locally, you can set PORT to any preferred value.
+- Python example handlers : - url : /youraccount/. secure : always script : auto To target a specific version of your app using the REGION ID .r.appspot.com domain, you replace the periods that would usually separate the subdomain components of the URL with the string " -dot- ", for example: https:// VERSION ID -dot-default-dot- PROJECT ID .
+- Tip: To allow everyone access to your assets, you can use the wildcard ' ' , instead of https://mygame.uc.r.appspot.com . login To use this element, app engine apis must be set to true .
+- Note: For new projects you create after March 2025, App Engine sets the maximum instances default for standard environment deployments to 20.
+- Example error handlers : - file : default error.html - error code : over quota file : over quota.html handlers Optional.
+
+### "Setting up your Google Cloud project for App Engine \_|\_ App Engine standard\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/developers-console](https://docs.cloud.google.com/appengine/docs/developers-console)
+- Source ID: `site-docs-reference-4`
+- Final score: 75
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Before you can deploy your apps to the App Engine standard environment, you typically need to create or set up the following: A Google Cloud project An App Engine application A billing account Creating a project and application You can select or create a new Google Cloud project and App Engine application to create and manage a collection of settings, credentials, and your app's metadata.
+- App Engine Locations App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .
+- Tips: If you deploy your apps with the gcloud app deploy command, the gcloud CLI will ensure that your Google Cloud project includes an App Engine application and prompt you to select a region when needed.
+- App Engine requires all projects to enable billing, but you will only be charged if a project exceeds its free quota .
 

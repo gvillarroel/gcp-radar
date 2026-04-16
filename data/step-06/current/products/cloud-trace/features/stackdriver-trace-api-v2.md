@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.840Z"
+generated_at: "2026-04-12T12:12:49.011Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Stackdriver Trace API v2"
 feature_slug: "stackdriver-trace-api-v2"
 latest_feature_date: "2017-10-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/trace/docs/release-notes"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPage"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient"
+  - "https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceClient"
   - "https://docs.cloud.google.com/trace/docs/reference/v2/rest"
 keywords:
   - "stackdriver"
@@ -26,7 +27,7 @@ keywords:
 # Stackdriver Trace API v2
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,48 +39,64 @@ Stackdriver Trace API v2 provides the next version of the Trace API.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPage)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient)
+- [https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceClient](https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceClient)
 - [https://docs.cloud.google.com/trace/docs/reference/v2/rest](https://docs.cloud.google.com/trace/docs/reference/v2/rest)
 
 ## Supporting Pages
 
-### Trace release notes \_|\_ Google Cloud Documentation
+### "Class TraceServiceClient (2.88.0) \_|\_ Java client libraries \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 160
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- January 09, 2018 Feature The Trace viewer now displays span annotations and message events written with the Stackdriver Trace API v2 .
-- February 06, 2020 Change The Stackdriver Trace API v2 is now Generally Available.
-- October 31, 2017 Feature The Stackdriver Trace API v2 is now in Beta release.
-- For a comparison of the v1 and v2 APIs, see Stackdriver Trace API .
-
-### "Class TraceServiceClient.ListTracesPage (2.88.0) \_|\_ Java client libraries\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPage)
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient)
 - Source ID: `site-java-reference`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 191
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- ListTracesPage > Inheritance java.lang.Object > AbstractPage > TraceServiceClient.ListTracesPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListTracesRequest,ListTracesResponse,Trace> context, ListTracesResponse response) protected TraceServiceClient .
-- ListTracesPage > createPageAsync ( PageContext<ListTracesRequest , ListTracesResponse , Trace > context , ApiFuture<ListTracesResponse> futureResponse ) Parameters Name Description context PageContext < ListTracesRequest , ListTracesResponse , Trace > futureResponse ApiFuture < ListTracesResponse > Returns Type Description ApiFuture < ListTracesPage > Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPageAsync(PageContext<RequestT,ResponseT,ResourceT> context, ApiFuture<ResponseT> futureResponse) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- ListTracesPage createPage ( PageContext<ListTracesRequest , ListTracesResponse , Trace > context , ListTracesResponse response ) Parameters Name Description context PageContext < ListTracesRequest , ListTracesResponse , Trace > response ListTracesResponse Returns Type Description TraceServiceClient.ListTracesPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListTracesRequest,ListTracesResponse,Trace> context, ApiFuture<ListTracesResponse> futureResponse) public ApiFuture<TraceServiceClient .
-- 2.88.0 (latest) 2.87.0 2.85.0 2.83.0 2.82.0 2.80.0 2.78.0 2.76.0 2.75.0 2.74.0 2.73.0 2.72.0 2.70.0 2.68.0 2.67.0 2.64.0 2.63.0 2.62.0 2.60.0 2.59.0 2.58.0 2.57.0 2.56.0 2.55.0 2.54.0 2.53.0 2.52.0 2.51.0 2.49.0 2.48.0 2.47.0 2.46.0 2.45.0 2.44.0 2.43.0 2.42.0 2.41.0 2.40.0 2.39.0 2.37.0 2.36.0 2.35.0 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.0 2.28.0 2.27.0 2.24.0 2.23.0 2.22.0 2.21.0 2.20.0 2.19.0 2.18.0 2.17.0 2.16.0 2.15.0 2.14.0 2.13.0 2.12.0 2.11.0 2.9.0 2.8.0 2.7.0 2.6.0 2.5.0 2.4.0 2.3.7 2.2.0 2.1.13 public static class TraceServiceClient .
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( TraceServiceClient traceServiceClient = TraceServiceClient . create ()) { ListTracesRequest request = ListTracesRequest . newBuilder () . setProjectId ( "projectId-894832108" ) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . setStartTime ( Timestamp . newBuilder (). build ()) . setEndTime ( Timestamp . newBuilder (). build ()) . setFilter ( "filter-1274492040" ) . setOrderBy ( "orderBy-1207110587" ) . build (); ApiFuture<Trace> future = traceServiceClient . listTracesPagedCallable (). futureCall ( request ); // Do something. for ( Trace element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListTracesRequest , ListTracesPagedResponse > patchTraces(PatchTracesRequest request) public final void patchTraces ( PatchTracesRequest request ) Sends new traces to Stackdriver Trace or updates existing traces.
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( TraceServiceClient traceServiceClient = TraceServiceClient . create ()) { PatchTracesRequest request = PatchTracesRequest . newBuilder () . setProjectId ( "projectId-894832108" ) . setTraces ( Traces . newBuilder (). build ()) . build (); traceServiceClient . patchTraces ( request ); } Parameter Name Description request PatchTracesRequest The request object containing all of the parameters for the API call. patchTraces(String projectId, Traces traces) public final void patchTraces ( String projectId , Traces traces ) Sends new traces to Stackdriver Trace or updates existing traces.
+- Request object method variants only take one parameter, a request object, which must be constructed before the call. getTrace(GetTraceRequest request) "Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method. getTrace(String projectId, String traceId) Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service. getTraceCallable() PatchTraces Sends new traces to Stackdriver Trace or updates existing traces.
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( TraceServiceClient traceServiceClient = TraceServiceClient . create ()) { PatchTracesRequest request = PatchTracesRequest . newBuilder () . setProjectId ( "projectId-894832108" ) . setTraces ( Traces . newBuilder (). build ()) . build (); ApiFuture<Empty> future = traceServiceClient . patchTracesCallable (). futureCall ( request ); // Do something. future . get (); } Returns Type Description UnaryCallable < PatchTracesRequest , Empty > shutdown() public void shutdown () shutdownNow() public void shutdownNow () Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Class TraceServiceAsyncClient (1.19.0) \_|\_ Python client libraries \_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 187
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import trace v2 async def sample batch write spans(): Create a client client = trace v2.TraceServiceAsyncClient() Initialize request argument(s) spans = trace v2.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import trace v2 async def sample create span(): Create a client client = trace v2.TraceServiceAsyncClient() Initialize request argument(s) request = trace v2.
+- There might be gaps or overlaps between spans in a trace. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- Span ( name="name value", span id="span id value", ) Make the request response = await client. create span (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.trace v2.types.Span , dict]] The request object.
+
+### "Class TraceServiceClient (1.19.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceClient](https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v2.services.trace_service.TraceServiceClient)
+- Source ID: `site-python-reference`
+- Final score: 187
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import trace v2 def sample batch write spans(): Create a client client = trace v2.TraceServiceClient() Initialize request argument(s) spans = trace v2.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import trace v2 def sample create span(): Create a client client = trace v2.TraceServiceClient() Initialize request argument(s) request = trace v2.
+- There might be gaps or overlaps between spans in a trace. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- Span ( name="name value", span id="span id value", ) Make the request response = client. create span (request=request) Handle the response print(response) Parameters Name Description request Union[ google.cloud.trace v2.types.Span , dict] The request object.
 
 ### Cloud Trace API \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/trace/docs/reference/v2/rest](https://docs.cloud.google.com/trace/docs/reference/v2/rest)
 - Source ID: `site-docs-reference`
-- Final score: 150
+- Final score: 187
 - Re-rank relevance: N/A
 
 Evidence snippets:

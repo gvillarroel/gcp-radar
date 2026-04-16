@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:02.345Z"
+generated_at: "2026-04-15T12:00:22.598Z"
 product_name: "Confidential Space"
 product_slug: "confidential-space"
 feature_name: "Linux capabilities configuration"
 feature_slug: "linux-capabilities-configuration"
 latest_feature_date: "2025-03-31"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads"
+  - "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads"
+  - "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
 keywords:
   - "linux"
   - "capabilities"
@@ -24,7 +26,7 @@ keywords:
 # Linux capabilities configuration
 
 Product: Confidential Space
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Confidential Space workloads can add specific Linux capabilities, including CAP_
 
 Confidential Space workloads can add specific Linux capabilities, including CAP_SYS_ADMIN.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads)
+- [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads)
+- [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Create and customize workloads \_|\_ Confidential Space \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads)
+- Source ID: `site-docs-reference`
+- Final score: 91
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- When building your Docker image, take the following things into account: Additional Linux capabilities Disk and memory limits Expired OIDC tokens Resources not managed by Google Cloud IAM Inbound ports Launch policies Multiple workload runs Namespaced cgroups Reproducible container images Signed container images Additional Linux capabilities The Confidential Space workload runs in a Linux container using containerd.
+- Home Documentation Security Confidential Space Guides Send feedback Create and customize workloads Stay organized with collections Save and categorize content based on your preferences.
+- Here's an example signature claim: "image signatures" : [ { "key id" : "hexadecimal-sha256-fingerprint-public-key1" , "signature" : "base64-encoded-signature" , "signature algorithm" : "RSASSA PSS SHA256" }, { "key id" : "hexadecimal-sha256-fingerprint-public-key2" , "signature" : "base64-encoded-signature" , "signature algorithm" : "RSASSA PSS SHA256" , }, { "key id" : "hexadecimal-sha256-fingerprint-public-key3" , "signature" : "base64-encoded-signature" , "signature algorithm" : "RSASSA PSS SHA256" , } ] Note: If a workload author updates a container signature for a running workload, Confidential Space can take up to 1 hour to detect the updated signatures.
+- Boolean (default is false ) Determines if the workload operator can add additional Linux capabilities to the workload container. tee.launch policy.allow cgroups Interacts with: Workload operator : The tee-cgroup-ns metadata variable.
+
+### Deploy workloads \_|\_ Confidential Space \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads)
+- Source ID: `site-docs-reference`
+- Final score: 86
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Here's an example that creates a Confidential VM, and runs a Docker container called WORKLOAD CONTAINER NAME : CPU-based workloads gcloud compute instances create INSTANCE NAME \ --confidential-compute-type = CONFIDENTIAL COMPUTING TECHNOLOGY \ --machine-type = MACHINE TYPE NAME \ --maintenance-policy = MAINTENANCE POLICY \ --shielded-secure-boot \ --image-project = confidential-space-images \ --image-family = IMAGE FAMILY \ --metadata = "^ ^tee-image-reference=us-docker.pkg.dev/ WORKLOAD AUTHOR PROJECT ID / REPOSITORY NAME / WORKLOAD CONTAINER NAME :latest" \ --service-account = WORKLOAD SERVICE ACCOUNT NAME @ WORKLOAD OPERATOR PROJECT ID .iam.gserviceaccount.com \ --scopes = cloud-platform \ --zone = ZONE NAME \ --project = PROJECT ID Provide the following values: INSTANCE NAME : The name of the new VM instance.
+- Example tee-signed-image-repos=us-docker.pkg.dev/projectA/repo/example,us-docker.pkg.dev/projectB/repo/example,us-docker.pkg.dev/projectC/repo/example Scaling For scaling and high availability of production Confidential Space workloads, see Managed Instance Groups .
+- Choose one of the following: confidential-space for production workloads confidential-space-debug for debug workloads WORKLOAD AUTHOR PROJECT : The ID of the project that hosts the Artifact Registry repository that the workload container is stored in.
+- Choose one of the following: confidential-space-preview-cgpu for production workloads confidential-space-debug-preview-cgpu for debug workloads WORKLOAD AUTHOR PROJECT : The project ID that the workload is being run in.
+
+### Confidential Space overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview)
+- Source ID: `site-docs-reference`
+- Final score: 62
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Confidential Space is a trusted execution environment (TEE) that can be used to release your secrets only to authorized workloads.
+- Confidential Space roles The components in a Confidential Space system are managed by people with three distinct roles: Data collaborators : The people or organizations who own the protected resources being operated on by the workload.
+- In general, setting up a Confidential Space might look similar to the following process: Multiple data collaborators store encrypted confidential data in their own isolated Google Cloud projects, often in different organizations.
+- Alternatively, you could use it to offer end customers stronger data privacy, as the operator or owner of a Confidential Space environment can't access the data that is being processed.
 

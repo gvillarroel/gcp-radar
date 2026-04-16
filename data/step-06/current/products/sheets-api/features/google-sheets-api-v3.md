@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:19:49.789Z"
+generated_at: "2026-04-12T12:18:48.304Z"
 product_name: "Sheets API"
 product_slug: "sheets-api"
 feature_name: "Google Sheets API v3"
 feature_slug: "google-sheets-api-v3"
 latest_feature_date: "2021-08-02"
 deprecation_date: "2021-08-02"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/sheets/api/guides/migration"
-  - "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
   - "https://developers.google.com/workspace/sheets/api/guides/connected-sheets"
+  - "https://developers.google.com/workspace/sheets/api/guides/concepts"
+  - "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
 keywords:
   - "sheets"
   - "api"
@@ -26,7 +27,7 @@ keywords:
 # Google Sheets API v3
 
 Product: Sheets API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Google Sheets API v3 was turned down; deprecated on 2021-08-02.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/sheets/api/guides/migration](https://developers.google.com/workspace/sheets/api/guides/migration)
-- [https://developers.google.com/workspace/sheets/api/guides/conditional-format](https://developers.google.com/workspace/sheets/api/guides/conditional-format)
 - [https://developers.google.com/workspace/sheets/api/guides/connected-sheets](https://developers.google.com/workspace/sheets/api/guides/connected-sheets)
+- [https://developers.google.com/workspace/sheets/api/guides/concepts](https://developers.google.com/workspace/sheets/api/guides/concepts)
+- [https://developers.google.com/workspace/sheets/api/guides/conditional-format](https://developers.google.com/workspace/sheets/api/guides/conditional-format)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/sheets/api/guides/migration](https://developers.google.com/workspace/sheets/api/guides/migration)
 - Source ID: `site-docs-root`
-- Final score: 224
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 274
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Important: The Google Sheets API v3 was turned down on August 2, 2021.
@@ -62,11 +64,39 @@ Evidence snippets:
 - Projection The term projection is used by the Sheets API v3 to refer to the set of data that is returned by a given API call—either all of it, or a fixed subset defined within the API.
 - The Sheets API v4 spreadsheets.get method provides access to this information, and much more. v3 API The worksheet feed is accessible from this API endpoint (using an appropriate authorization header): GET https://spreadsheets.google.com/feeds/worksheets/ spreadsheetId /private/full The response to this request has a structure similar to this, with each sheet's data contained in a separate <entry> : < feed xmlns = "http://www.w3.org/2005/Atom" xmlns : openSearch = "http://a9.com/-/spec/opensearch/1.1/" xmlns : gs = "http://schemas.google.com/spreadsheets/2006" xmlns : gd = "http://schemas.google.com/g/2005" gd : etag = ' W / "D0cERnk-eip7ImA9WBBXGEg." ' > < id>https : //spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full</id> < updated>2006 - 11 - 17 T18 : 23 : 45.173 Z < / updated > < title type = "text" > Groceries R Us < / title > < link rel = "alternate" type = "text/html" href = "https://spreadsheets.google.com/ccc?key=spreadsheetId" / > < link rel = "http://schemas.google.com/g/2005#feed" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full" / > < link rel = "self" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full" / > < link rel = "http://schemas.google.com/g/2005#post" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full" / > < author > < name>Fitzwilliam Darcy < / name > < email>fitz @ example . com < / email > < / author > < openSearch : totalResults>1 < / openSearch : totalResults > < openSearch : startIndex>1 < / openSearch : startIndex > < openSearch : itemsPerPage>1 < / openSearch : itemsPerPage > < entry gd : etag = ' "YDwqeyI." ' > < id>https : //spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full/sheetId</id> < updated>2006 - 11 - 17 T18 : 23 : 45.173 Z < / updated > < title type = "text" > Sheet1 < / title > < content type = "text" > Sheet1 < / content > < link rel = "http://schemas.google.com/spreadsheets/2006#listfeed" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/list/spreadsheetId/sheetId/private/full" / > < link rel = "http://schemas.google.com/spreadsheets/2006#cellsfeed" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/cells/spreadsheetId/sheetId/private/full" / > < link rel = "self" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full/sheetId" / > < link rel = "edit" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full/sheetId/version" / > < gs : rowCount>100 < / gs : rowCount > < gs : colCount>20 < / gs : colCount > < / entry > < / feed > v4 API The spreadsheets.get method can be used to acquire sheet properties and other metadata—much more than what is available using the Sheets API v3.
 
+### Connected Sheets \_|\_ Google Sheets \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/sheets/api/guides/connected-sheets](https://developers.google.com/workspace/sheets/api/guides/connected-sheets)
+- Source ID: `site-docs-root`
+- Final score: 191
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Related topics Choose Google Sheets API scopes Get started with BigQuery data in Google Sheets BigQuery documentation BigQuery: Using Connected Sheets Connected Sheets video tutorial Using Connected Sheets for Looker Looker Introduction Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- If your application requests any BigQuery Connected Sheets data, it must provide an OAuth 2.0 token that grants bigquery.readonly scope, in addition to the other scopes required for a regular Google Sheets API request.
+- For more information, see Choose Google Sheets API scopes .
+- After BigQuery data is fetched, the data source chart is rendered as shown: Add a BigQuery data source formula The following code sample shows how to use the spreadsheets.batchUpdate method and an UpdateCellsRequest to create a data source formula to compute the average word count. "updateCells" :{ "rows" :[ { "values" :[ { "userEnteredValue" :{ "formulaValue" : "=AVERAGE(shakespeare!word count)" } } ] } ], "fields" : "userEnteredValue" } After BigQuery data is fetched, the data source formula is populated as shown: Refresh a BigQuery data source object You can refresh a data source object to fetch the latest data from BigQuery based on the current data source specs and object configurations.
+
+### Google Sheets API Overview \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/sheets/api/guides/concepts](https://developers.google.com/workspace/sheets/api/guides/concepts)
+- Source ID: `site-docs-root`
+- Final score: 187
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The Sheets API lets you: Create spreadsheets Read and write spreadsheet cell values Update spreadsheet formatting Manage Connected Sheets The following is a list of common terms used in the Sheets API: Spreadsheet The primary object in Google Sheets.
+- Home Google Workspace Google Sheets Guides Send feedback Google Sheets API Overview Stay organized with collections Save and categorize content based on your preferences.
+- To learn how to configure and run a Sheets API app, try the JavaScript quickstart .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
+
 ### Conditional formatting \_|\_ Google Sheets \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/workspace/sheets/api/guides/conditional-format](https://developers.google.com/workspace/sheets/api/guides/conditional-format)
 - Source ID: `site-docs-root`
-- Final score: 170
+- Final score: 183
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,18 +104,4 @@ Evidence snippets:
 - Apps Script sheets/api/spreadsheet snippets.gs View on GitHub / conditional formatting @param {string} spreadsheetId spreadsheet ID @returns { } spreadsheet / Snippets . prototype . conditionalFormatting = ( spreadsheetId ) = > { try { const myRange = Sheets . newGridRange (); myRange . sheetId = 0 ; myRange . startRowIndex = 0 ; myRange . endRowIndex = 11 ; myRange . startColumnIndex = 0 ; myRange . endColumnIndex = 4 ; // Request 1 const rule1ConditionalValue = Sheets . newConditionValue (); rule1ConditionalValue . userEnteredValue = "=GT($D2,median($D$2:$D$11))" ; const rule1ConditionFormat = Sheets . newCellFormat (); rule1ConditionFormat . textFormat = Sheets . newTextFormat (); rule1ConditionFormat . textFormat . foregroundColor = Sheets . newColor (); rule1ConditionFormat . textFormat . foregroundColor . red = 0.8 ; const rule1Condition = Sheets . newBooleanCondition (); rule1Condition . type = "CUSTOM FORMULA" ; rule1Condition . values = [ rule1ConditionalValue ]; const rule1BooleanRule = Sheets . newBooleanRule (); rule1BooleanRule . condition = rule1Condition ; rule1BooleanRule . format = rule1ConditionFormat ; const rule1 = Sheets . newConditionalFormatRule (); rule1 . ranges = [ myRange ]; rule1 . booleanRule = rule1BooleanRule ; const request1 = Sheets . newRequest (); const addConditionalFormatRuleRequest1 = Sheets . newAddConditionalFormatRuleRequest (); addConditionalFormatRuleRequest1 . rule = rule1 ; addConditionalFormatRuleRequest1 . index = 0 ; request1 . addConditionalFormatRule = addConditionalFormatRuleRequest1 ; // Request 2 const rule2ConditionalValue = Sheets . newConditionValue (); rule2ConditionalValue . userEnteredValue = "=LT($D2,median($D$2:$D$11))" ; const rule2ConditionFormat = Sheets . newCellFormat (); rule2ConditionFormat . textFormat = Sheets . newTextFormat (); rule2ConditionFormat . textFormat . foregroundColor = Sheets . newColor (); rule2ConditionFormat . textFormat . foregroundColor . red = 1 ; rule2ConditionFormat . textFormat . foregroundColor . green = 0.4 ; rule2ConditionFormat . textFormat . foregroundColor . blue = 0.4 ; const rule2Condition = Sheets . newBooleanCondition (); rule2Condition . type = "CUSTOM FORMULA" ; rule2Condition . values = [ rule2ConditionalValue ]; const rule2BooleanRule = Sheets . newBooleanRule (); rule2BooleanRule . condition = rule2Condition ; rule2BooleanRule . format = rule2ConditionFormat ; const rule2 = Sheets . newConditionalFormatRule (); rule2 . ranges = [ myRange ]; rule2 . booleanRule = rule2BooleanRule ; const request2 = Sheets . newRequest (); const addConditionalFormatRuleRequest2 = Sheets . newAddConditionalFormatRuleRequest (); addConditionalFormatRuleRequest2 . rule = rule2 ; addConditionalFormatRuleRequest2 . index = 0 ; request2 . addConditionalFormatRule = addConditionalFormatRuleRequest2 ; // Batch send the requests const requests = [ request1 , request2 ]; const batchUpdate = Sheets . newBatchUpdateSpreadsheetRequest (); batchUpdate . requests = requests ; const response = Sheets .
 - Spreadsheets . batchUpdate ( batchUpdate , spreadsheetId , ); return response ; } catch ( err ) { // TODO (developer) - Handle exception console . log ( "Failed with error %s" , err . message ); } }; Java sheets/snippets/src/main/java/ConditionalFormatting.java View on GitHub import com.google.api.client.googleapis.json.GoogleJsonError ; import com.google.api.client.googleapis.json.GoogleJsonResponseException ; import com.google.api.client.http.HttpRequestInitializer ; import com.google.api.client.http.javanet.NetHttpTransport ; import com.google.api.client.json.gson.GsonFactory ; import com.google.api.services.sheets.v4.Sheets ; import com.google.api.services.sheets.v4.SheetsScopes ; import com.google.api.services.sheets.v4.model.AddConditionalFormatRuleRequest ; import com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetRequest ; import com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetResponse ; import com.google.api.services.sheets.v4.model.BooleanCondition ; import com.google.api.services.sheets.v4.model.BooleanRule ; import com.google.api.services.sheets.v4.model.CellFormat ; import com.google.api.services.sheets.v4.model.Color ; import com.google.api.services.sheets.v4.model.ConditionValue ; import com.google.api.services.sheets.v4.model.ConditionalFormatRule ; import com.google.api.services.sheets.v4.model.GridRange ; import com.google.api.services.sheets.v4.model.Request ; import com.google.api.services.sheets.v4.model.TextFormat ; import com.google.auth.http.HttpCredentialsAdapter ; import com.google.auth.oauth2.GoogleCredentials ; import java.io.IOException ; import java.util.Arrays ; import java.util.Collections ; import java.util.List ; / Class to demonstrate the use of Spreadsheet Conditional Formatting API / public class ConditionalFormatting { / Create conditional formatting. @param spreadsheetId - Id of the spreadsheet. @return updated changes count. @throws IOException - if credentials file not found. / public static BatchUpdateSpreadsheetResponse conditionalFormat ( String spreadsheetId ) throws IOException { / Load pre-authorized user credentials from the environment.
 - TODO(developer) - See https://developers.google.com/identity for guides on implementing OAuth2 for your application. / $client = new Google\Client(); $client->useApplicationDefaultCredentials(); $client->addScope(Google\Service\Drive::DRIVE); $service = new Google Service Sheets($client); try{ $myRange = [ 'sheetId' => 0, 'startRowIndex' => 1, 'endRowIndex' => 11, 'startColumnIndex' => 0, 'endColumnIndex' => 4, ]; //execute the request $requests = [ new Google Service Sheets Request([ 'addConditionalFormatRule' => [ 'rule' => [ 'ranges' => [ $myRange ], 'booleanRule' => [ 'condition' => [ 'type' => 'CUSTOM FORMULA', 'values' => [ [ 'userEnteredValue' => '=GT($D2,median($D$2:$D$11))' ] ] ], 'format' => [ 'textFormat' => [ 'foregroundColor' => [ 'red' => 0.8 ] ] ] ] ], 'index' => 0 ] ]), new Google Service Sheets Request([ 'addConditionalFormatRule' => [ 'rule' => [ 'ranges' => [ $myRange ], 'booleanRule' => [ 'condition' => [ 'type' => 'CUSTOM FORMULA', 'values' => [ [ 'userEnteredValue' => '=LT($D2,median($D$2:$D$11))' ] ] ], 'format' => [ 'backgroundColor' => [ 'red' => 1, 'green' => 0.4, 'blue' => 0.4 ] ] ] ], 'index' => 0 ] ]) ]; $batchUpdateRequest = new Google Service Sheets BatchUpdateSpreadsheetRequest([ 'requests' => $requests ]); $response = $service->spreadsheets->batchUpdate($spreadsheetId, $batchUpdateRequest); printf("%d cells updated.", count($response->getReplies())); return $response; } catch(Exception $e) { // TODO(developer) - handle error appropriately echo 'Message: ' .$e->getMessage(); } } Python sheets/snippets/sheets conditional formatting.py View on GitHub import google.auth from googleapiclient.discovery import build from googleapiclient.errors import HttpError def conditional formatting ( spreadsheet id ): """ Creates the batch update the user has access to.
-
-### Connected Sheets \_|\_ Google Sheets \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/workspace/sheets/api/guides/connected-sheets](https://developers.google.com/workspace/sheets/api/guides/connected-sheets)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Related topics Choose Google Sheets API scopes Get started with BigQuery data in Google Sheets BigQuery documentation BigQuery: Using Connected Sheets Connected Sheets video tutorial Using Connected Sheets for Looker Looker Introduction Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- If your application requests any BigQuery Connected Sheets data, it must provide an OAuth 2.0 token that grants bigquery.readonly scope, in addition to the other scopes required for a regular Google Sheets API request.
-- For more information, see Choose Google Sheets API scopes .
-- After BigQuery data is fetched, the data source chart is rendered as shown: Add a BigQuery data source formula The following code sample shows how to use the spreadsheets.batchUpdate method and an UpdateCellsRequest to create a data source formula to compute the average word count. "updateCells" :{ "rows" :[ { "values" :[ { "userEnteredValue" :{ "formulaValue" : "=AVERAGE(shakespeare!word count)" } } ] } ], "fields" : "userEnteredValue" } After BigQuery data is fetched, the data source formula is populated as shown: Refresh a BigQuery data source object You can refresh a data source object to fetch the latest data from BigQuery based on the current data source specs and object configurations.
 

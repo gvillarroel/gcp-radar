@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:23.948Z"
+generated_at: "2026-04-12T12:16:20.929Z"
 product_name: "Google Cloud Armor"
 product_slug: "google-cloud-armor"
 feature_name: "IP address groups"
 feature_slug: "ip-address-groups"
 latest_feature_date: "2024-10-09"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/armor/docs/address-groups-overview"
+  - "https://docs.cloud.google.com/armor/docs/address-groups-using"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty"
 keywords:
   - "ip"
   - "address"
@@ -24,7 +27,7 @@ keywords:
 # IP address groups
 
 Product: Google Cloud Armor
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Address groups that can be used in Cloud Armor security policies; Cloud Armor se
 
 Address groups that can be used in Cloud Armor security policies; Cloud Armor security policies can use IP address groups in preview.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/armor/docs/address-groups-overview](https://docs.cloud.google.com/armor/docs/address-groups-overview)
+- [https://docs.cloud.google.com/armor/docs/address-groups-using](https://docs.cloud.google.com/armor/docs/address-groups-using)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Address groups overview \_|\_ Google Cloud Armor \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/armor/docs/address-groups-overview](https://docs.cloud.google.com/armor/docs/address-groups-overview)
+- Source ID: `site-iam-reference`
+- Final score: 273
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Organization-scoped address groups Use organization-scoped address groups when you want to define a central list of IP addresses that can be used in high-level rules to provide consistent control for the entire organization and reduce the overhead for individual network and project owners to maintain common lists, such as trusted services and internal IP addresses.
+- Name: The address group name with the following format: A string 1-63 characters long Includes only alphanumeric characters Must not start with a number You can construct a unique URL identifier for an address group in the following format: <containerType>/<containerId>/locations/<location>/addressGroups/<address-group-name> For example, a global address group example-address-group in project myproject has the following unique 4-tuple identifier: projects/myproject/locations/global/addressGroups/example-address-group Each address group has an associated type that can be either IPv4 or IPv6, but not both.
+- Project-scoped address groups Use project-scoped address groups when you want to define your own list of IP addresses to be used within a project or a network to block or allow a list of changing IP addresses.
+- How address groups work with security policies Address groups simplify the configuration and maintenance of security policies because you can share each list of IP addresses across many security policies.
+
+### Configure address groups \_|\_ Google Cloud Armor \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/armor/docs/address-groups-using](https://docs.cloud.google.com/armor/docs/address-groups-using)
+- Source ID: `site-iam-reference`
+- Final score: 273
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Click Create . gcloud The following example uses the gcloud network-security org-address-groups create command to create an organization-scoped address group called GROUP NAME with a capacity of 1,000 IPv4 addresses, which can be used with both Cloud Armor or Cloud NGFW: gcloud network-security org-address-groups create GROUP NAME \ --location global \ --description "org address group description" \ --capacity 1000 \ --type IPv4 \ --purpose DEFAULT,CLOUD ARMOR Alternatively, you can create an organization-scoped address group with a larger capacity by setting the purpose exclusively to CLOUD ARMOR .
+- Click Create . gcloud The following example uses the gcloud network-security address-groups create command to create an address group called GROUP NAME with a capacity of 1,000 IPv4 addresses, which can be used with both Cloud Armor or Cloud NGFW: gcloud network-security address-groups create GROUP NAME \ --location global \ --description "address group description" \ --capacity 1000 \ --type IPv4 \ --purpose DEFAULT,CLOUD ARMOR Alternatively, you can create an address group with a larger capacity by setting the purpose exclusively to CLOUD ARMOR .
+- You can deny all of these IP addresses using a single security policy deny rule with the following match condition: evaluateAddressGroup(' MALICIOUS IPS ', origin.ip) Reuse a group of IP address ranges in multiple security policies For this example, imagine that you have the same list of 10,000 IP addresses as in the previous example, but that some of the IP addresses are known to be web crawlers.
+- Create a hierarchical security policy, then add a deny rule with the following match condition: evaluateOrganizationAddressGroup(' MALICIOUS IPS ', origin.ip) Finally, associate the hierarchical security policy to all of the backend services in your organization, replacing POLICY NAME with the name of your hierarchical security policy and ORGANIZATION ID with the ID of your organization: gcloud compute org-security-policies associations create \ --security-policy= POLICY NAME \ --organization= ORGANIZATION ID Reuse a group of IP address ranges for all backend services within an organization For this example, imagine that you have the same list of 10,000 IP addresses as in the previous example, but that some of the IP addresses are known to be web crawlers.
+
+### "Integrate Amazon EC2 with Google SecOps \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2)
+- Source ID: `site-docs-root-2`
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result "EC2 Instances" : [ { "AmiLaunchIndex" : 0 , "ImageId" : "ami-047a51fa27710816e" , "InstanceId" : "i-044c08c5bfe1a7f98" , "InstanceType" : "t2.micro" , "KeyName" : "\"Key\": \"Test\", \"Value\":\"Test\"" , "LaunchTime" : "2021-1-30" , "Monitoring" :{ "State" : "disabled" }, "Placement" :{ "AvailabilityZone" : "us-east-1d" , "GroupName" : "" , "Tenancy" : "default" }, "PrivateDnsName" : "ip-192-0-2-220.ec2.internal" , "PrivateIpAddress" : "192.0.2.220" , "ProductCodes" :[ ], "PublicDnsName" : "ec2-192-0-2-218.compute-1.amazonaws.com" , "PublicIpAddress" : "192.0.2.218" , "State" :{ "Code" : 16 , "Name" : "running" }, "StateTransitionReason" : "" , "SubnetId" : "subnet-1b1fda3a" , "VpcId" : "vpc- ID " , "Architecture" : "x86 64" , "BlockDeviceMappings" :[ { "DeviceName" : "/dev/xvda" , "Ebs" :{ "AttachTime" : "2021-1-30" , "DeleteOnTermination" : true , "Status" : "attached" , "VolumeId" : "vol-00f70681a43e5d86e" } } ], "ClientToken" : "" , "EbsOptimized" : false , "EnaSupport" : true , "Hypervisor" : "xen" , "NetworkInterfaces" :[ { "Association" :{ "IpOwnerId" : "amazon" , "PublicDnsName" : "ec2-192-0-2-218.compute-1.amazonaws.com" , "PublicIp" : "192.0.2.218" }, "Attachment" :{ "AttachTime" : "" , "AttachmentId" : "eni-attach-06bc5e5901ce99ef2" , "DeleteOnTermination" : true , "DeviceIndex" : 0 , "Status" : "attached" , "NetworkCardIndex" : 0 }, "Description" : "" , "Groups" :[ { "GroupName" : "launch-wizard-2" , "GroupId" : "sg-001700ccddac4189a" } ], "Ipv6Addresses" :[ ], "MacAddress" : "12:34:56:ab:cd:ef" , "NetworkInterfaceId" : "eni-020fa83efd417e32d" , "OwnerId" : " ID " , "PrivateDnsName" : "ip-192-0-2-220.ec2.internal" , "PrivateIpAddress" : "192.0.2.220" , "PrivateIpAddresses" :[ { "Association" :{ "IpOwnerId" : "amazon" , "PublicDnsName" : "ec2-192-0-2-218.compute-1.amazonaws.com" , "PublicIp" : "192.0.2.218" }, "Primary" : true , "PrivateDnsName" : "ip-192-0-2-220.ec2.internal" , "PrivateIpAddress" : "192.0.2.220" } ], "SourceDestCheck" : true , "Status" : "in-use" , "SubnetId" : "subnet-1b1fda3a" , "VpcId" : "vpc- ID " , "InterfaceType" : "interface" } ], "RootDeviceName" : "/dev/xvda" , "RootDeviceType" : "ebs" , "SecurityGroups" :[ { "GroupName" : "launch-wizard-2" , "GroupId" : "sg-001700ccddac4189a" } ], "SourceDestCheck" : true , "Tags" :[ { "Key" : "Owner" , "Value" : "Example" }, { "Key" : "Name" , "Value" : "Example test" } ], "VirtualizationType" : "hvm" , "CpuOptions" :{ "CoreCount" : 1 , "ThreadsPerCore" : 1 }, "CapacityReservationSpecification" :{ "CapacityReservationPreference" : "open" }, "HibernationOptions" :{ "Configured" : false }, "MetadataOptions" :{ "State" : "applied" , "HttpTokens" : "optional" , "HttpPutResponseHopLimit" : 1 , "HttpEndpoint" : "enabled" }, "EnclaveOptions" :{ "Enabled" : false } } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed instances(is success = true): "Successfully described Amazon EC2 instances." If no available values(is success = false): "No instances were found in Amazon EC2" The action should fail and stop a playbook execution: if fatal error, invalid instance ID, SDK error, like wrong credentials, no connection to server, other: "Error executing action "List Instances".
+- Reason: {0}''.format(error.Stacktrace) General Case Wall Table Table Name: Amazon EC2 Instances Table Columns: ID State Type Availability Zone Public IPv4 DNS Public IPv4 address Monitoring Security group name Key name Launch time List Security Groups Describes the specified security groups or all of your security groups.
+- Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result "EC2 Security Groups" : [ { "Description" : "launch-wizard-2 created 2021-01-30T19:37:11.523+02:00" , "GroupName" : "launch-wizard-2" , "IpPermissions" :[ { "FromPort" : 22 , "IpProtocol" : "tcp" , "IpRanges" :[ { "CidrIp" : "192.0.2.0/0" } ], "Ipv6Ranges" :[ ], "PrefixListIds" :[ ], "ToPort" : 22 , "UserIdGroupPairs" :[ ] } ], "OwnerId" : "582302349248" , "GroupId" : "sg-001700ccddac4189a" , "IpPermissionsEgress" :[ { "IpProtocol" : "-1" , "IpRanges" :[ { "CidrIp" : "192.0.2.0/0" } ], "Ipv6Ranges" :[ ], "PrefixListIds" :[ ], "UserIdGroupPairs" :[ ] } ], "Tags" :[ { "Key" : "Team" , "Value" : "A-Team" }, { "Key" : "Owner" , "Value" : "Example" } ], "VpcId" : "vpc- ID " } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed groups(is success = true): "Successfully described Amazon EC2 security groups." If no available values(is success = false): "No security groups were found in Amazon EC2" The action should fail and stop a playbook execution: if fatal error, invalid group ID/Name, SDK error, like wrong credentials, no connection to server, other: "Error executing action "List Security Groups".
+- Action Results Script Result Script result name Value options Example is success True/False is success:False Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successfully added the specified ingress rules to at least one security groups: (if all were successfully updated - is success = true): "Successfully added the specified ingress rule to the following security groups: {group ids}" if failed to add the specified ingress rules because of permissions rule error (invalid port,etc): (is success =false): "Failed to add the specified ingress rule to the following security groups: {group ids}.
+
+### "Integrate Amazon GuardDuty with Google SecOps \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty)
+- Source ID: `site-docs-root-2`
+- Final score: 231
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Brute force attacks are used to gain unauthorized access to your instance by guessing the RDP password." , "Id" : " ID " , "Partition" : "aws" , "Region" : "us-east-1" , "Resource" : { "InstanceDetails" : { "AvailabilityZone" : "us-east-1e" , "ImageId" : "ami- IMAGE ID " , "InstanceId" : "i- INSTANCE ID " , "InstanceState" : "running" , "InstanceType" : "t2.micro" , "LaunchTime" : "2020-05-27T08:54:03Z" , "NetworkInterfaces" : [{ "Ipv6Addresses" : [], "NetworkInterfaceId" : "eni-012d9b8a1a3b4e40a" , "PrivateDnsName" : "ip-192.0.2.1.ec2.internal" , "PrivateIpAddress" : "192.0.2.1" , "PrivateIpAddresses" : [{ "PrivateDnsName" : "ip-192.0.2.1.ec2.internal" , "PrivateIpAddress" : "192.0.2.1" }], "PublicDnsName" : "ec2-54-234-69-236.compute-1.amazonaws.com" , "PublicIp" : "198.51.100.236" , "SecurityGroups" : [{ "GroupId" : "sg-0fa42e04e9cd15407" , "GroupName" : "Windows Server 2016" }], "SubnetId" : "subnet-2edddf10" , "VpcId" : "vpc-48a7ac32" }], "Platform" : "windows" , "ProductCodes" : [], "Tags" : [{ "Key" : "Name" , "Value" : "CiscoAMP-win2012" }]}, "ResourceType" : "Instance" }, "SchemaVersion" : "2.0" , "Service" : { "Action" : { "ActionType" : "NETWORK CONNECTION" , "NetworkConnectionAction" : { "Blocked" : false , "ConnectionDirection" : "INBOUND" , "LocalPortDetails" : { "Port" : 3389 , "PortName" : "RDP" }, "Protocol" : "TCP" , "LocalIpDetails" : { "IpAddressV4" : "192.0.2.1" }, "RemoteIpDetails" : { "IpAddressV4" : "203.0.113.9" , "Organization" : { "Asn" : "24875" , "AsnOrg" : "Example Inc." , "Isp" : "Example Inc." , "Org" : "Example Inc." }}, "RemotePortDetails" : { "Port" : 1549 , "PortName" : "Unknown" }}}, "Archived" : false , "Count" : 5 , "DetectorId" : " DETECTOR ID " , "EventFirstSeen" : "2020-10-06T05:10:58Z" , "EventLastSeen" : "2020-10-06T05:46:59Z" , "ResourceRole" : "TARGET" , "ServiceName" : "guardduty" }, "Severity" : 2 , "Title" : "203.0.113.9 is performing RDP brute force attacks against i- INSTANCE ID ." , "Type" : "UnauthorizedAccess:EC2/RDPBruteForce" , "UpdatedAt" : "2020-10-06T06:01:46.380Z" }] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If "ErrorCode" is reported (is success=false): "Action wasn't able to get Findings details.
+- Detector ID String N/A Yes The unique ID of the detector AWS Region String N/A No Optionally specify the AWS Region to be used in the action that can be different from the default region specified in the integration configuration page.
+- Example: id 1,id 2 AWS Region String N/A No Optionally specify the AWS Region to be used in the action that can be different from the default region specified in the integration configuration page.
+- Parameters Parameter name Type Default value Watermark Is mandatory Description Detector ID String N/A N/A Yes Specify the detector ID that should be used to get threat intelligence sets details.
 

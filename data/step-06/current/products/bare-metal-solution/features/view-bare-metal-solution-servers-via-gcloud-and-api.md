@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:24.017Z"
+generated_at: "2026-04-14T09:47:34.447Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "View Bare Metal Solution servers via gcloud and API"
 feature_slug: "view-bare-metal-solution-servers-via-gcloud-and-api"
 latest_feature_date: "2021-09-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
   - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
   - "https://docs.cloud.google.com/bare-metal/docs/bms-setup"
+  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
 keywords:
   - "gcloud"
-  - "via"
+  - "allows"
   - "servers"
-  - "solution"
   - "view"
-  - "metal"
-  - "bare"
-  - "and"
 ---
 
 # View Bare Metal Solution servers via gcloud and API
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +34,53 @@ Allows users to list Bare Metal Solution servers and view full server details us
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
 - [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
 - [https://docs.cloud.google.com/bare-metal/docs/bms-setup](https://docs.cloud.google.com/bare-metal/docs/bms-setup)
+- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
 
 ## Supporting Pages
-
-### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- Source ID: `site-docs-root-2`
-- Final score: 252
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
-- Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution Overview To provide resiliency for your Oracle databases inside a Bare Metal Solution environment, you need to have a clear strategy for database backups and disaster recovery.
-- Architecture Figure 1 shows a simplified view of the infrastructure that you need to build when you deploy Backup and DR to protect Oracle databases running in a Bare Metal Solution environment.
 
 ### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- Source ID: `site-docs-root`
-- Final score: 212
+- Source ID: `site-docs-reference`
+- Final score: 109
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares" -d \ '{ "name": "projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ", "labels": { "nfsKey1": "some value", "key2": "another value", }, "requestedSizeGib": " SIZE GIB ", "storageType": " STORAGE TYPE ", "allowedClients": [ { "network": "projects/ PROJECT ID /locations/ REGION /networks/ NETWORK NAME ", "allowedClientsCidr": " IP ADDRESS RANGE ", "mountPermissions": " MOUNT PERMISSIONS ", "allowDev": ALLOW DEV , "allowSuid": ALLOW SUID , "noRootSquash": ENABLE ROOT SQUASH , } ], }' Because creating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .
+- Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ?updateMask=allowed clients%2Clabels" -d \ '{ "name": "projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ", "labels": { "newKey": "newVal", }, "allowedClients": [ { "network": "projects/ PROJECT ID /locations/ REGION /networks/ NFS VOLUME NAME ", "allowedClientsCidr": " IP ADDRESS RANGE ", "mountPermissions": " MOUNT PERMISSIONS ", "allowDev": ALLOW DEV , "allowSuid": ALLOW SUID , "noRootSquash": ENABLE ROOT SQUASH , } ], }' Because updating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .
 - Used addresses The IP addresses of the servers connected by the network. gcloud To view all networks in your Bare Metal Solution environment and see their status, enter your project ID and issue the gcloud bms networks list command. gcloud bms networks list --project= PROJECT ID The following output example shows a network name, region, IP address range, network type, and VLAN ID for each network.
-- For example, "state" : "RUNNING" Manage resources in your Bare Metal Solution environment Bare Metal Solution management APIs, gcloud commands, and the Google Cloud console enable you to view the status of the resources in your Bare Metal Solution environment, such as servers, networking, and storage.
-- NAME PROJECT REGION MACHINE TYPE IP ADDRESSES STATE SERVER NAME PROJECT ID REGION o2-standard-32-metal 192.168.1.1,192.168.2.1 RUNNING Additional command options include: --region : View devices in a specific Google Cloud region. --limit : Limit the output to show a specific number of devices To get network and storage information for a specific server in your Bare Metal Solution environment, enter your server name, project ID, and region, and issue the gcloud bms instances describe command: gcloud bms instances describe SERVER NAME --project= PROJECT ID --region= REGION The following output example shows an operational server with 12 LUNs, a client network of 192.168.1.1, and a private network of 192.168.2.1. luns: - bootLun: true name: SERVER NAME -lun000-b1 sizeGb: '200' state: READY storageVolume: SERVER NAME -vol000-b1 - name: STORAGE DEVICE NAME -lun001 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun002 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun003 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun004 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun005 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun006 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun007 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun008 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun009 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun010 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun011 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun012 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 machineType: o2-standard-32-metal name: projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME networks: - ipAddress: 192.168.1.1 macAddress: - 34:80:0D:52:AF:28 - 34:80:0D:15:3E:0D network: STORAGE DEVICE NAME -vlan001 - ipAddress: 192.168.2.1 macAddress: - 34:80:0D:52:AF:38 - 34:80:0D:15:3E:1D network: STORAGE DEVICE NAME -vlan002 state: RUNNING API Open a Cloud Shell terminal window in your Google Cloud console.
-- ProjectsClient () bms client = BareMetalSolutionClient () output = [] errors = [] try : for project in get projects ( parent , folders client , projects client ): volumes list request = ListVolumesRequest ( parent = "projects/" + project + "/locations/global" , filter = filter , ) try : for volume in bms client . list volumes ( request = volumes list request ): output . append ( f " - { volume . name } " ) This could happen because BMS API is not enabled in a certain project. except PermissionDenied as e : errors . append ( f "Unable to list bms resources for project { project } : { e } " ) except PermissionDenied as e : errors . append ( f "Unable to access folder or project: { e } " ) return " \n " . join ( output ), " \n " . join ( errors ) def main ( : Sequence [ str ]): if ORGANIZATION ID . value is not None and FOLDER ID . value is not None : raise Exception ( "Only one of organization ID or folder ID must be provided" ) elif ORGANIZATION ID . value is None and FOLDER ID . value is None : raise Exception ( "Either one of organization ID or folder ID must be provided" ) elif ORGANIZATION ID . value is not None : parent = f "organizations/ { ORGANIZATION ID . value } " else : parent = f "folders/ { FOLDER ID . value } " volumes , errors = get volumes list ( parent , filter = FILTER . value ) print ( "=================== Flat list of volumes in the folder or organization" " ===================" ) print ( volumes ) print ( "=================== List of folders or projects with errors" " ===================" ) print ( errors ) if name == " main " : app . run ( main ) Manage servers You can manage the servers in your Bare Metal Solution environment in the following ways: View servers Organize servers by using labels Rename a server Retrieve the initial password for a server View OS details Change the OS for a server Enable hyperthreading on a server View servers To view the details of your Bare Metal Solution servers, follow these steps: Console Go to the Servers page.
+- For example, to view only servers with the label env:dev , you can enter any of the following: Enter the key: env Enter the value: dev Enter the key-value pair: env:dev To apply the label filter, click anywhere outside the filter bar. gcloud To filter servers by using labels, use the gcloud bms instances list command with the --filter option.
 
 ### "Quickstart: Set up Google Cloud to work with your Bare Metal Solution environment\
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-setup](https://docs.cloud.google.com/bare-metal/docs/bms-setup)
 - Source ID: `site-docs-root`
-- Final score: 208
+- Final score: 105
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Also, add the --admin-enabled flag to pre-activate the attachments and send traffic immediately after Google Cloud completes the Bare Metal Solution configuration. gcloud compute interconnects attachments partner create first-attachment-name \ --region region \ --router first-router-name \ --edge-availability-domain availability-domain-1 \ --admin-enabled gcloud compute interconnects attachments partner create second-attachment-name \ --region region \ --router second-router-name \ --edge-availability-domain availability-domain-2 \ --admin-enabled Google Cloud automatically adds an interface and a BGP peer on the Cloud Router.
+- They are both in the us-central1 region. gcloud compute interconnects attachments partner create my-attachment \ --region us-central1 \ --router my-router-1 \ --edge-availability-domain availability-domain-1 \ --admin-enabled gcloud compute interconnects attachments partner create my-attachment \ --region us-central1 \ --router my-router-2 \ --edge-availability-domain availability-domain-2 \ --admin-enabled Run the gcloud compute interconnects attachments describe command to view the details of the VLAN attachment. gcloud compute interconnects attachments describe my-attachment \ --region us-central1 adminEnabled: false edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 creationTimestamp: '2017-12-01T08:29:09.886-08:00' id: '7976913826166357434' kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: my-attachment region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/my-router selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/interconnectAttachments/my-attachment state: PENDING PARTNER type: PARTNER The state of the VLAN attachment is PENDING PARTNER until Google Cloud completes your VLAN attachment configuration.
 - The following example, adds the 0.0.0.0/0 custom IP to the Cloud Router's advertisements: gcloud compute routers update-bgp-peer router-name \ --peer-name bgp-session-name \ --add-advertisement-ranges 0.0.0.0/0 Optionally, set the VPC Network Dynamic Routing Mode to global If you have Bare Metal Solution servers in two different regions, consider enabling global routing mode on the VPC network to have your Bare Metal Solution regions talk to each other directly over the VPC network.
-- If the VLAN attachments do not come up after Google Cloud completes your Bare Metal Solution order, activate each VLAN attachment: gcloud compute interconnects attachments partner update attachment-name \ --region region \ --admin-enabled You can check the status of the Cloud Routers and your advertised routes in the Cloud console.
-- Access internet using a Compute Engine VM and Cloud NAT The following instructions set up a NAT gateway on a Compute Engine VM to connect the servers in a Bare Metal Solution environment to the internet for purposes such as receiving software updates.
+- PROJECT ID : the ID of the project MTU : the maximum transmission unit (MTU), which is the largest packet size of the network Create a subnet. gcloud compute networks subnets create SUBNET NAME -- project = PROJECT ID -- range = RANGE -- stack - type = IPV4 ONLY -- network = NETWORK -- region = REGION Replace the following: SUBNET NAME : the name for the subnet PROJECT ID : the ID of the project RANGE : the IP space allocated to this subnet in CIDR format NETWORK : the VPC network to which the subnet belongs REGION : the region of the subnet Create two Cloud Routers for the redundancy and advertisements. gcloud compute routers create ROUTER NAME -- project = PROJECT ID -- region = REGION -- network = NETWORK -- advertisement - mode = custom -- set - advertisement - ranges = 0.0.0.0 / 0 Replace the following: ROUTER NAME : the name of the router PROJECT ID : the ID of the project REGION : the region of the router NETWORK : the VPC network for this router Create four VLAN attachments, two for each Cloud Router.
+- Installing http server sudo yum install httpd sudo systemctl restart httpd Testing curl http://127.0.0.1:80 Create an instance group. gcloud compute instance-groups unmanaged create INSTANCE GROUP NAME --project= PROJECT ID --zone= ZONE Replace the following: INSTANCE GROUP NAME : the name of the instance group PROJECT ID : the ID of the project ZONE : the zone in which to create the instance group Add the VM to the instance group. gcloud compute instance-groups unmanaged add-instances INSTANCE GROUP NAME --project= PROJECT ID --zone= ZONE --instances= VM NAME Replace the following: INSTANCE GROUP NAME : the name of the instance group PROJECT ID : the ID of the project ZONE : the zone in which to create the instance group VM NAME : the name of the VM Create an internal passthrough Network Load Balancer: Start your configuration In the Google Cloud console, go to the Load balancing page.
+
+### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
+
+- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
+- Source ID: `site-docs-root-2`
+- Final score: 100
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Log in to Oracle Linux and configure the Oracle environment: TNS ADMIN= TNSNAMES.ORA FILE LOCATION tnsping CLU1 S Review the database user account to ensure a successful connection to the Backup and DR application: sqlplus act rman user/act rman user@act svc dbstd as sysdba In the Application Details and Settings page described in Application Details and Settings for Oracle Databases , enter the service name you created ( CLU1 S ) in the Oracle Service Name field: Error Code 870 says that "ASM backups with ASM on NFS staging disks is not supported." If you receive this error, you do not have the correct setting configured in Details and Settings for the instance that you want to protect.
+- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
+- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
+- Mount an Oracle database In the Backup and DR management console, go to the Backup and Recover > Recover page. https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#recover/selectapp In the Application list, find the database that you want to mount, right-click the database name, and click Next : The Timeline Ramp View appears and displays all the available point-in-time images.
 

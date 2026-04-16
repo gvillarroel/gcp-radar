@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:58.260Z"
+generated_at: "2026-04-12T12:18:47.672Z"
 product_name: "Service Extensions"
 product_slug: "service-extensions"
 feature_name: "Model Armor integration with Service Extensions"
@@ -10,8 +10,9 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services"
-  - "https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.lbTrafficExtensions"
-  - "https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1/projects.locations.authzExtensions/patch"
+  - "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services"
+  - "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview"
+  - "https://docs.cloud.google.com/service-extensions/docs/overview"
 keywords:
   - "model"
   - "armor"
@@ -38,50 +39,69 @@ Model Armor can be configured with Service Extensions to protect AI workloads on
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services](https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services)
-- [https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.lbTrafficExtensions](https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.lbTrafficExtensions)
-- [https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1/projects.locations.authzExtensions/patch](https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1/projects.locations.authzExtensions/patch)
+- [https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services](https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services)
+- [https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview](https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview)
+- [https://docs.cloud.google.com/service-extensions/docs/overview](https://docs.cloud.google.com/service-extensions/docs/overview)
 
 ## Supporting Pages
 
-### Configure an extension to call a Google service | Service Extensions | Google Cloud Documentation
+### "Configure an extension to call a Google service \_|\_ Service Extensions\
 
 - URL: [https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services](https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services)
+- Source ID: `site-docs-reference`
+- Final score: 248
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use the sample values provided. cat >traffic callout service.yaml <<EOF apiVersion : networking.gke.io/v1 kind : GCPTrafficExtension metadata : name : traffic-ext spec : targetRefs : - group : "gateway.networking.k8s.io" kind : Gateway name : inference-gateway extensionChains : - name : "chain1-model-armor" matchCondition : celExpressions : - celMatcher : 'request.path == "/v1/chat/completions"' extensions : - name : extension-chain-1-model-armor googleAPIServiceName : modelarmor.us-central1.rep.googleapis.com failOpen : true supportedEvents : - RequestHeaders - RequestBody - RequestTrailers - ResponseHeaders - ResponseBody - ResponseTrailers timeout : 1s metadata : model armor settings : '[ { "model": " MODEL NAME ", "model response template id": "projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ RESPONSE TEMPLATE ", "user prompt template id": "projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ PROMPT TEMPLATE " } ]' EOF Replace the following: MODEL NAME : the name of the model as configured with the InferenceModel resource —for example, meta-llama/Llama-3.1-8B-Instruct TEMPLATE PROJECT ID : the project ID of the Model Armor templates LOCATION : the location of the Model Armor template—for example, us-central1 RESPONSE TEMPLATE : the response template for the model to use PROMPT TEMPLATE : the prompt template for the model to use In the metadata field, specify the Model Armor settings and templates to be used while screening prompts and responses corresponding to specific models.
+- For Value , specify the templates as a JSON string, such as the following: [{ "model" : " MODEL NAME " , "model response template id" : "projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ RESPONSE TEMPLATE " , "user prompt template id" : "projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ PROMPT TEMPLATE " }] Replace the following: MODEL NAME : the name of the model as configured with the InferenceModel resource —for example, meta-llama/Llama-3.1-8B-Instruct TEMPLATE PROJECT ID : the project ID of the Model Armor templates LOCATION : the location of the Model Armor template—for example, us-central1 RESPONSE TEMPLATE : the response template for the model to use PROMPT TEMPLATE : the prompt template for the model to use A default template can additionally be specified for use when a request doesn't exactly match a model.
+- To verify that the traffic extension works as expected, run the same curl command: curl -v http:// ${ IP } /v1/chat/completions \ -H "Content-Type: application/json" \ -H 'Authorization: Bearer $(gcloud auth print-access-token)' \ -d '{"model": "meta-llama/Llama-3.1-8B-Instruct", "messages": [ { "role": "user", "content": "Can you remember my ITIN: 123-45-6789" } ], "max tokens": 250, "temperature": 0.1}' ``` With the service extension configured, a request with sensitive data generates an HTTP 403 Forbidden status code, logs an error message as configured in the template, and closes the connection.
+- MODEL NAME : the name of the model as configured with the InferenceModel resource —for example, meta-llama/Llama-3.1-8B-Instruct LOCATION : the location of the Model Armor template—for example, us-central1 RESPONSE TEMPLATE : the response template for the model to use PROMPT TEMPLATE : the prompt template for the model to use In the metadata field, specify the Model Armor settings and templates to be used while screening prompts and responses corresponding to specific models.
+
+### "Integration with Google services \_|\_ Service Extensions \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services](https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services)
+- Source ID: `site-docs-reference`
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Integration with Model Armor Model Armor enhances the security of AI applications by enforcing runtime controls on LLM prompts and responses.
+- Supported Application Load Balancers for callouts to Google services Service Extensions supports traffic extensions by using callouts to selected Google services for the following Application Load Balancers : Application Load Balancers Model Armor (traffic extensions by using callouts) Global external Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Cross-region internal Application Load Balancer Classic Application Load Balancer What's next Configure an extension to call a Google service Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- You can configure a traffic extension to call the Model Armor Google service to uniformly apply and enforce security policies to screen LLM prompts and responses for your networking applications.
+- Home Documentation Networking Service Extensions Guides Send feedback Integration with Google services Stay organized with collections Save and categorize content based on your preferences.
+
+### "Cloud Load Balancing and Cloud CDN extensions overview \_|\_ Service Extensions\
+
+- URL: [https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview](https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview)
+- Source ID: `site-docs-reference`
+- Final score: 211
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- After a load balancer calls an edge extension, it does the following: Selects the backend service by evaluating the URL map Applies Google Cloud Armor policies security policies Does a cache lookup and serves from cache if there is a cache hit Applies Cloud Armor policies for the selected backend service Applies CORS policies Applies the stateful session affinity policy Applies Identity-Aware Proxy (IAP) policies for the selected backend service Calls authorization extensions, if any are configured in the processing path of the selected backend service Performs fault injection Calls traffic extensions, if any Performs URL rewrites Performs header manipulation according to the URL map and adds custom request header variables Performs redirects or routing to the selected backend service while applying timeouts and retry policies in the URL map and the load balancing settings for the backend service Performs request mirroring How authorization extensions work On the request path, authorization extensions are called after route extensions are called and a backend for the request has been selected.
+- Before a load balancer calls a traffic extension on the request path for a request, it does the following: Performs fault injection Selects a backend service for the request Applies Cloud Armor policies for the selected backend service Applies IAP policies for the selected backend service Applies Cloud CDN caching policies for the selected backend service in the case of global external Application Load Balancers After a load balancer calls a traffic extension on the request path for a request, it does the following: Performs URL rewrites Performs header manipulation according to the URL map and adds custom request header variables Performs redirects or routing to the selected backend service while applying timeouts and retry policies in the URL map and the load balancing settings for the backend service Performs request mirroring After a load balancer calls a traffic extension on the response path for a request, it does the following: Performs response header transformations and resolves custom response header variables Performs logging by using Cloud Logging Performs Cloud CDN caching in the case of global external Application Load Balancers Custom headers In the traffic path, edge and route extensions run at extensibility points before the stage at which the load balancer adds custom headers .
+- Limitations for extensions A forwarding rule can have only one LbEdgeExtension resource, one LbTrafficExtension resource, and one LbRouteExtension resource.
+- After a load balancer calls a route extension for a request, it does the following: Selects the backend service by evaluating the URL map Applies Cloud Armor policies for the selected backend service Applies IAP policies for the selected backend service Performs fault injection Performs request header transformations and resolves custom request header variables Calls traffic extensions, if they exist in the processing path of the selected backend service Performs URL rewrites Performs redirects or routing to the selected backend service and applies timeouts and retry policies in the URL map and other load balancing settings for the backend service How traffic extensions work Load balancers run traffic extensions last in the request processing path and first in the response processing path.
+
+### Service Extensions overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/service-extensions/docs/overview](https://docs.cloud.google.com/service-extensions/docs/overview)
 - Source ID: `site-docs-root`
-- Final score: 100
+- Final score: 200
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For Programmability type, select Google services and then select a Model Armor service endpoint—for example modelarmor.us-central1.rep.googleapis.com.
-- The name must conform with RFC-1034, use only lowercase letters, numbers, and hyphens, and have a maximum length of 63 characters.
-- Configure an extension to call a Google service Service Extensions Google Cloud Documentation Source URL: https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services For Extension name, specify a unique name.
-- Additionally, the first character must be a letter and the last character must be a letter or a number.
-
-### REST Resource: projects.locations.lbTrafficExtensions | Service Extensions | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.lbTrafficExtensions](https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.lbTrafficExtensions)
-- Source ID: `site-docs-reference`
-- Final score: 100
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- REST Resource: projects.locations.lbTrafficExtensions Service Extensions Google Cloud Documentation Source URL: https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.lbTrafficExtensions Documentation · Networking · Service Extensions · Reference · Send feedback · Resource: LbTrafficExtension · JSON representation ·
-
-### Method: projects.locations.authzExtensions.patch | Service Extensions | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1/projects.locations.authzExtensions/patch](https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1/projects.locations.authzExtensions/patch)
-- Source ID: `site-docs-reference`
-- Final score: 85
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Method: projects.locations.authzExtensions.patch Service Extensions Google Cloud Documentation Source URL: https://docs.cloud.google.com/service-extensions/docs/reference/rest/v1/projects.locations.authzExtensions/patch Documentation · Networking · Service Extensions · Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · IAM Permissions · Updates the parameters of the specified AuthzExtension resource.
-- PATCH https://networkservices.googleapis.com/v1/{authzExtension.name=projects/ /locations/ /authzExtensions/ } The URL uses gRPC Transcoding syntax.
+- You can configure an extension to call Model Armor to uniformly enforce security policies on inference traffic on application load balancers, including GKE Inference Gateway .
+- Types of extensions The data path in networking products, such as Cloud Load Balancing and Media CDN, can be visualized as a pipeline of data processing stages.
+- With callouts, you can get the benefits of fully managed services that are also customizable to meet the unique needs of specific workloads.
+- You can use these extensions to customize routing, modify request or response payloads, and integrate with external services.
 

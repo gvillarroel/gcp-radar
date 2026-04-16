@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.872Z"
+generated_at: "2026-04-13T22:42:27.198Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner managed autoscaler"
@@ -9,18 +9,16 @@ latest_feature_date: "2025-02-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/spanner"
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
+  - "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview"
+  - "https://docs.cloud.google.com/spanner/docs/cmek"
+  - "https://docs.cloud.google.com/spanner/docs/autoscaling-overview"
 keywords:
-  - "spanner"
-  - "managed"
+  - "independent"
   - "autoscaler"
-  - "is"
-  - "now"
+  - "managed"
   - "generally"
   - "available"
-  - "and"
+  - "supports"
 ---
 
 # Spanner managed autoscaler
@@ -38,44 +36,53 @@ Spanner managed autoscaler is now generally available and supports independent a
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/spanner](https://docs.cloud.google.com/iam/docs/roles-permissions/spanner)
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
+- [https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview](https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview)
+- [https://docs.cloud.google.com/spanner/docs/cmek](https://docs.cloud.google.com/spanner/docs/cmek)
+- [https://docs.cloud.google.com/spanner/docs/autoscaling-overview](https://docs.cloud.google.com/spanner/docs/autoscaling-overview)
 
 ## Supporting Pages
 
-### Spanner roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### Autoscaler tool overview \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/spanner](https://docs.cloud.google.com/iam/docs/roles-permissions/spanner)
-- Source ID: `site-iam-reference`
-- Final score: 138
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Spanner roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/spanner This page lists the IAM roles and permissions for Spanner.
-
-### django_spanner.operations — google-cloud-spanner-django documentation
-
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- Source ID: `site-python-reference`
+- URL: [https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview](https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview)
+- Source ID: `site-docs-root`
 - Final score: 92
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
+- Advanced configuration The Autoscaler tool has advanced configuration options that let you more finely control when and how your Spanner instances are managed.
+- Note: This analysis doesn't include incurred charges for the Spanner instances that are managed by the Autoscaler.
+- Custom thresholds The Autoscaler tool determines the number of nodes or processing units to be added or subtracted to an instance using the recommended Spanner thresholds for the following load metrics: High priority CPU 24-hour rolling average CPU Storage utilization We recommend that you use the default thresholds as described in Creating alerts for Spanner metrics .
+- To help you to balance cost control with performance needs, the Autoscaler tool monitors your instances and automatically adds or removes nodes or processing units to help ensure that they stay within the following parameters: The recommended maximums for CPU utilization .
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### "Customer-managed encryption keys (CMEK) overview \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 88
+- URL: [https://docs.cloud.google.com/spanner/docs/cmek](https://docs.cloud.google.com/spanner/docs/cmek)
+- Source ID: `site-docs-root`
+- Final score: 77
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- If an externally-managed key is unavailable, Spanner continues to support full database operations on a best-effort basis for up to one hour.
+- Spanner is able to access the key on your behalf after you grant the Cloud KMS CryptoKey Encrypter/Decrypter ( roles/cloudkms.cryptoKeyEncrypterDecrypter ) role to a Google-managed Spanner service account .
+- If you're using multiple regional keys to protect a Spanner database, only those replicas that are protected by a key residing in the unavailable regional Cloud KMS are affected by the unavailability.
+- Spanner's data access APIs , such as those that are used to manage sessions and execute transactions on data, are exactly the same for both CMEK and Google-owned and Google-managed encryption keys.
+
+### Autoscaling overview \_|\_ Spanner \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/autoscaling-overview](https://docs.cloud.google.com/spanner/docs/autoscaling-overview)
+- Source ID: `site-docs-root`
+- Final score: 70
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- What's next Learn more about Managed autoscaler for Spanner Learn how to create an instance with the managed autoscaler enabled Learn how to modify an instance to add autoscaling or change autoscaling settings Learn how to change an instance from using autoscaling to manual scaling Learn more about the Autoscaler tool for Spanner Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Requirements on this page apply to both the managed autoscaling feature and the open source Autoscaler tool.
+- With managed autoscaling, you don't write an application to do these tasks, because the Spanner service handles them for you.
+- For autoscaling, you have the following options: Configure Spanner managed autoscaling .
 

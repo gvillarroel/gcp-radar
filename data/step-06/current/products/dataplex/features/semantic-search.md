@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.598Z"
+generated_at: "2026-04-12T12:13:48.464Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Semantic search"
 feature_slug: "semantic-search"
 latest_feature_date: "2024-11-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataplex/docs/release-notes"
   - "https://docs.cloud.google.com/dataplex/docs/search-assets"
   - "https://docs.cloud.google.com/dataplex/docs/search-syntax"
+  - "https://docs.cloud.google.com/dataplex/docs/support/getting-support"
+  - "https://docs.cloud.google.com/dataplex/docs/data-insights"
 keywords:
   - "semantic"
   - "search"
@@ -26,7 +27,7 @@ keywords:
 # Semantic search
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +39,24 @@ Dataplex Search supports Gemini-powered natural language semantic search within 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
 - [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets)
 - [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax)
+- [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support)
+- [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights)
 
 ## Supporting Pages
-
-### Knowledge Catalog release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 162
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- December 08, 2025 Feature Natural language search in Dataplex Universal Catalog is generally available ( GA ).
-- Semantic search, powered by Gemini, simplifies the search process without the need for complex search syntax.
-- September 03, 2025 Feature Natural language search in Dataplex Universal Catalog is available in preview .
-- November 04, 2024 Feature Project-based semantic search offered by Dataplex Search is available in Preview .
 
 ### Search for resources in Knowledge Catalog \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets)
 - Source ID: `site-docs-root`
-- Final score: 142
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Knowledge Catalog uses AI-powered natural language search, allowing you to ask questions in plain language to find the data you need.
@@ -79,13 +68,40 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax)
 - Source ID: `site-docs-root`
-- Final score: 134
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 194
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Knowledge Catalog supports the following qualifiers for natural language search: Qualifier Description name:x Matches x as a substring of the resource ID or resource display name. displayname:x Match x as a substring of the resource display name. column:x Matches x as a substring of the column name (or nested column name) in the schema of the resource. description:x Matches x as a token in the resource description. labels:bar Matches BigQuery resources that have a label (with some value) and the label key has bar as a substring. labels=bar Matches BigQuery resources that have a label (with some value) and the label key equals bar as a string. labels.bar:x Matches x as a substring in the value of a label with key bar attached to a BigQuery resource. labels.foo=bar Matches BigQuery resources where the key equals foo and the key value equals bar . type= TYPE Matches resources of a specific entry type or its type alias. projectid:bar Matches resources within Google Cloud projects that match bar as a substring in the ID. parent:x Matches x as a substring of the hierarchical path of a resource. system= SYSTEM Matches resources from a specified system. location= LOCATION Matches resources in a specified location with an exact name.
 - This document describes the syntax for both Knowledge Catalog (formerly Dataplex Universal Catalog) keyword search as well as natural language AI searches.
 - Natural language search leverages AI to understand semantic search queries.
 - Other entries that match on the substring are also returned. aspect:example-project.us-central1.employee-info.is-enrolled=true aspect:example-project.us-central1.employee=true aspect:employee=true Natural language search Qualifier Description has:x Matches x as a substring of the full path to the aspect type of an aspect that is attached to the entry, in the format projectid.location.
+
+### Customer Care | Google Cloud
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support)
+- Source ID: `site-docs-root`
+- Final score: 119
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Google Cloud partners Learn about the ecosystem and resources. close Overview arrow forward Solutions arrow forward Products arrow forward Pricing arrow forward Resources arrow forward Docs Support Console Accelerate your digital transformation Learn more Key benefits Why Google Cloud AI and ML Multicloud Global infrastructure Data Cloud Modern Infrastructure Cloud Security Productivity and collaboration Reports and insights Executive insights Analyst reports Whitepapers Customer stories Industry Solutions Retail Consumer Packaged Goods Financial Services Healthcare and Life Sciences Media and Entertainment Telecommunications Games Manufacturing Supply Chain and Logistics Government Education See all industry solutions See all solutions Application Modernization CAMP Modernize Traditional Applications Migrate from PaaS: Cloud Foundry, Openshift Migrate from Mainframe Modernize Software Delivery DevOps Best Practices SRE Principles Platform Engineering Run Applications at the Edge Architect for Multicloud Go Serverless Artificial Intelligence Customer Engagement Suite with Google AI Document AI Vertex AI Search for commerce Google Cloud with Gemini Generative AI on Google Cloud APIs and Applications New Business Channels Using APIs Unlocking Legacy Applications Using APIs Open Banking APIx Data Analytics Data Migration Data Lakehouse Real-time Analytics Marketing Analytics Datasets Business Intelligence AI for Data Analytics Geospatial Analytics Databases Database Migration Database Modernization Databases for Games Google Cloud Databases Migrate Oracle workloads to Google Cloud Open Source Databases SQL Server on Google Cloud Gemini for Databases Infrastructure Modernization Application Migration SAP on Google Cloud High Performance Computing Windows on Google Cloud Data Center Migration Active Assist Virtual Desktops Rapid Migration and Modernization Program Backup and Disaster Recovery Red Hat on Google Cloud Cross-Cloud Network Observability Productivity and Collaboration Google Workspace Google Workspace Essentials Cloud Identity Chrome Enterprise Security Agentic SOC Web App and API Protection Security and Resilience Framework Risk and compliance as code (RCaC) Software Supply Chain Security Security Foundation Google Cloud Cybershield™ Startups and SMB Startup Program Small and Medium Business Software as a Service Featured Products Compute Engine Cloud Storage BigQuery Cloud Run Google Kubernetes Engine Vertex AI Looker Apigee API Management Cloud SQL Gemini Enterprise Cloud CDN See all products (100+) AI and Machine Learning Vertex AI Platform Vertex AI Studio Vertex AI Agent Builder Conversational Agents Vertex AI Search Speech-to-Text Text-to-Speech Translation AI Gemini Enterprise Vision AI Contact Center as a Service See all AI and machine learning products Business Intelligence Looker Looker Studio Compute Compute Engine App Engine Cloud GPUs Migrate to Virtual Machines Spot VMs Batch Sole-Tenant Nodes Bare Metal Recommender VMware Engine Cloud Run See all compute products Containers Google Kubernetes Engine Cloud Run Cloud Build Artifact Registry Cloud Code Cloud Deploy Migrate to Containers Deep Learning Containers Knative Data Analytics BigQuery Looker Dataflow Pub/Sub Dataproc Google Cloud Serverless for Apache Spark Cloud Composer BigLake Dataplex Universal Catalog BigQuery Migration Services Managed Service for Apache Kafka See all data analytics products Databases AlloyDB for PostgreSQL Cloud SQL Firestore Spanner Bigtable Datastream Database Migration Service Bare Metal Solution Memorystore Developer Tools Artifact Registry Cloud Code Cloud Build Cloud Deploy Cloud Deployment Manager Cloud SDK Cloud Scheduler Cloud Source Repositories Infrastructure Manager Cloud Workstations Gemini Code Assist See all developer tools Distributed Cloud Google Distributed Cloud Connected Google Distributed Cloud Air-gapped Hybrid and Multicloud Google Kubernetes Engine Apigee API Management Migrate to Containers Cloud Build Observability Cloud Service Mesh Google Distributed Cloud Industry Specific Anti Money Laundering AI Cloud Healthcare API Device Connect for Fitbit Telecom Network Automation Telecom Data Fabric Telecom Subscriber Insights Spectrum Access System (SAS) Integration Services Application Integration Workflows Apigee API Management Cloud Tasks Cloud Scheduler Dataproc Cloud Data Fusion Cloud Composer Pub/Sub Eventarc Management Tools Cloud Shell Cloud console Cloud Endpoints Cloud IAM Cloud APIs Service Catalog Cost Management Observability Carbon Footprint Config Connector Active Assist See all management tools Maps and Geospatial Earth Engine Google Maps Platform Media Services Cloud CDN Live Stream API OpenCue Transcoder API Video Stitcher API Migration Migration Center Application Migration Migrate to Virtual Machines Cloud Foundation Toolkit Database Migration Service Migrate to Containers BigQuery Migration Services Rapid Migration and Modernization Program Transfer Appliance Storage Transfer Service VMware Engine Mixed Reality Immersive Stream for XR Networking Cloud Armor Cloud CDN and Media CDN Cloud DNS Cloud Load Balancing Cloud NAT Cloud Connectivity Network Connectivity Center Network Intelligence Center Network Service Tiers Virtual Private Cloud Private Service Connect See all networking products Operations Cloud Logging Cloud Monitoring Error Reporting Managed Service for Prometheus Cloud Trace Cloud Profiler Cloud Quotas Productivity and Collaboration AppSheet Gemini Enterprise Google Workspace Google Workspace Essentials Cloud Identity Chrome Enterprise Security and Identity Cloud IAM Sensitive Data Protection Mandiant Managed Defense Google Threat Intelligence Security Command Center Cloud Key Management Mandiant Incident Response Chrome Enterprise Premium Assured Workloads Google Security Operations Mandiant Consulting See all security and identity products Serverless Cloud Run Cloud Functions App Engine Workflows API Gateway Storage Cloud Storage Block Storage Filestore Persistent Disk Cloud Storage for Firebase Local SSD Storage Transfer Service Google Cloud Managed Lustre Google Cloud NetApp Volumes Backup and DR Service Web3 Blockchain Node Engine Blockchain RPC Save money with our transparent approach to pricing Request a quote Pricing overview and tools Google Cloud pricing Pricing calculator Google Cloud free tier Cost optimization framework Cost management tools Product-specific Pricing Compute Engine Cloud SQL Google Kubernetes Engine Cloud Storage BigQuery See full price list with 100+ products Learn & build Google Cloud Free Program Solution Generator Quickstarts Blog Learning Hub Google Cloud certification Cloud computing basics Cloud Architecture Center Connect Innovators Developer Center Events and webinars Google Cloud Community Consulting and Partners Google Cloud Consulting Google Cloud Marketplace Find a partner Google Cloud partners Why Google Choosing Google Cloud Trust and security Modern Infrastructure Cloud Multicloud Global infrastructure Locations Customers and case studies Analyst reports Whitepapers Blog Products and pricing Google Cloud pricing Google Workspace pricing See all products Solutions Infrastructure modernization Databases Application modernization Smart analytics Artificial Intelligence Security Productivity & work transformation Industry solutions DevOps solutions Small business solutions See all solutions Resources Google Cloud Affiliate Program Google Cloud documentation Google Cloud quickstarts Google Cloud Marketplace Learn about cloud computing Support Code samples Cloud Architecture Center Training Certifications Google for Developers Google Cloud for Startups System status Release Notes Engage Contact sales Find a Partner Become a Partner Events Podcasts Developer Center Press Corner Google Cloud on YouTube Google Cloud Tech on YouTube Follow on X Join User Research We're hiring.
+- Gemini Code Assist AI-powered assistant available across Google Cloud and your IDE.
+- Estimate cost Monthly support charges are calculated as a percentage of each month’s total gross Google Cloud Platform costs as reflected in your monthly bill, as calculated at list prices prior to the application of any discounts, credits, or other adjustments (except for discounts related to BigQuery reservations, and list-price Resource-based Committed Use Discounts) Initial response times P2 cases: 4 hours P3 cases: 8 hours P4 cases: 8 hours P1 cases: 1 hour P2 cases: 4 hours P3 cases: 8 hours P4 cases: 8 hours P1 cases: 15 minutes P2 cases: 2 hours P3 cases: 4 hours P4 cases: 8 hours Service times 8/5 response for high-impact issues 24/7 response for high- and critical-impact issues 24/7 response for high- and critical-impact issues Support languages English English, Japanese, Mandarin Chinese, Korean and French English, Japanese, Mandarin Chinese, Korean and French Unlimited individual access to support Multi-channel billing and technical support Active Assist Recommendations API Cloud Support API Technical Support Escalations Third-Party Technology Support Google Cloud Skills Boost Event Management Service Operational Health Reviews Customer Aware Support Technical Account Manager Available with TAAS Value-Add Services available for additional purchase Technical Account Advisor Service Planned Event Support Assured Support Media CDN Mission Critical Services Technical Account Manager Services Assured Support Media CDN Standard Support Recommended for workloads under development, kickstart your cloud journey with unlimited access to tech support.
+- Estimate cost Monthly support charges are calculated as a percentage of each month’s total gross Google Cloud Platform costs as reflected in your monthly bill, as calculated at list prices prior to the application of any discounts, credits, or other adjustments (except for discounts related to BigQuery reservations, and list-price Resource-based Committed Use Discounts) Initial response times P1 cases: 15 minutes P2 cases: 2 hours P3 cases: 4 hours P4 cases: 8 hours Service times 24/7 response for high- and critical-impact issues Support languages English, Japanese, Mandarin Chinese, Korean and French Unlimited individual access to support Multi-channel billing and technical support Active Assist Recommendations API Cloud Support API Technical Support Escalations Third-Party Technology Support Google Cloud Skills Boost Event Management Service Operational Health Reviews Customer Aware Support Technical Account Manager Value-Add Services available for additional purchase Mission Critical Services Technical Account Manager Services Assured Support Media CDN For SaaS specific product support, such as for Looker (Google Cloud core), Looker (Original), Chronicle SIEM, Chronicle SOAR, Apigee Hybrid, Apigee Edge Cloud, Apigee X, Application Integration, and Integration Connectors, please refer to this page .
+
+### Access data insights in Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights)
+- Source ID: `site-docs-root`
+- Final score: 111
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To see the exact permissions that are required generate insights, expand the Required permissions section: Required permissions dataplex.datascans.get dataplex.datascans.getData Enable APIs To use data insights, enable the following APIs in your project: Dataplex API, BigQuery API, and Gemini for Google Cloud API.
+- About data insights Data insights automatically generates natural language queries and their SQL equivalents based on a table's metadata.
+- SELECT Contract , InternetService , Gender , PaymentMethod , COUNT ( DISTINCT CustomerID ) AS total customers , SUM ( CASE WHEN Churn = TRUE THEN 1 ELSE 0 END ) AS churned customers , ( SUM ( CASE WHEN Churn = TRUE THEN 1 ELSE 0 END ) / COUNT ( DISTINCT CustomerID )) 100 AS churn rate FROM agentville datasets . telco churn WHERE MonthlyCharges > 100 GROUP BY Contract , InternetService , Gender , PaymentMethod ; View insights To view insights for a BigQuery table, use Knowledge Catalog Search.
+- Required roles To get read-only access to the generated insights, ask your administrator to grant you the following IAM role: Dataplex DataScan DataViewer ( roles/dataplex.dataScanDataViewer ) on the project containing the BigQuery tables for which you want to view insights.
 

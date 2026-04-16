@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:49:51.467Z",
+  "generated_at": "2026-04-12T21:38:07.458Z",
   "product_name": "Channel Services",
   "product_slug": "channel-services",
   "step02_source_path": "data/step-02/current/channel-services.md",
@@ -8,6 +8,129 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 19,
+    "source_row_count": 17,
+    "top_phrases": [
+      "unified rebilling bigquery export across multiple partner sales console accounts",
+      "channel services rebilling bigquery export dataset location support",
+      "channel services api billing and voice expense report generation",
+      "rebilling in partner sales console and cloud channel api",
+      "reseller billing account name in offer resource",
+      "entitlementgranularity repricing configuration",
+      "rebilling bigquery export schema enhancements",
+      "channel services bigquery rebilling export",
+      "listprovisionablecloudidentitytypes method",
+      "sku group snapshot csv export",
+      "listskugroupbillableskus api",
+      "listcustomers filtering",
+      "importcustomer method",
+      "lookupoffer method",
+      "listskugroups api",
+      "adds a bigquery export rebilling capability so partners can programmatically access workspace billing data including channel service identifiers and configured crm ids in a bigquery dataset",
+      "introduces the listprovisionablecloudidentitytypes api method which returns available google workspace customer types for a domain and indicates whether they require a transfer",
+      "adds the lookupoffer api method for v1alpha1 to retrieve the offer associated with an entitlement including pricing details for expired offers and special sales proposals",
+      "enables unified channel services rebilling exports from multiple partner sales console accounts into a single bigquery dataset while partitioning by cloud billing account",
+      "adds the importcustomer api method in v1alpha1 as the first step of a transfer replacing createcustomer and allowing customer data import by domain or cloud identity id",
+      "allows channel services rebilling bigquery datasets to be created in all supported bigquery locations with multi region datasets recommended for broader export coverage",
+      "adds support for creating channel services repricing configurations using entitlementgranularity in the channel services api instead of channelpartnergranularity",
+      "introduces rebilling availability in partner sales console and cloud channel api for configuring discounts and exporting billing data to bigquery",
+      "introduces the listskugroups public api to list rebilling supported sku groups that can be configured in customer or channel partner repricing",
+      "adds support for transacting with google workspace billing accounts in different currencies within a single cloud channel account",
+      "adds the option to add one override per sku group in repricing configurations for customer discount or markup customization",
+      "extends rebilling data exports to bigquery with customerrepricingconfigname channelpartnerrepricingname and tags columns",
+      "allows downloading a snapshot of product skus for each sku group as a csv file from partner sales console",
+      "adds filters to the listcustomers method so selected customers can be excluded from search results",
+      "makes the importcustomer method generally available in channel services",
+      "multi currency google workspace billing transactions",
+      "sku group overrides in repricing configurations",
+      "currency google workspace billing transactions",
+      "group overrides in repricing configurations"
+    ],
+    "top_tokens": [
+      "the",
+      "channel",
+      "api",
+      "for",
+      "adds",
+      "cloud",
+      "and",
+      "services",
+      "billing",
+      "google",
+      "rebilling",
+      "bigquery",
+      "data",
+      "export",
+      "method",
+      "available",
+      "console",
+      "customer",
+      "from",
+      "introduces",
+      "partner",
+      "sales",
+      "sku",
+      "with",
+      "account",
+      "availability",
+      "can",
+      "dataset",
+      "group",
+      "repricing",
+      "support",
+      "workspace",
+      "accounts",
+      "all",
+      "allows",
+      "configurations",
+      "configured",
+      "domain",
+      "exports",
+      "general",
+      "generally",
+      "importcustomer",
+      "including",
+      "list",
+      "makes",
+      "multi",
+      "offer",
+      "offers",
+      "public",
+      "single",
+      "skus",
+      "supported",
+      "that",
+      "transfer",
+      "v1alpha1",
+      "ability",
+      "access",
+      "across",
+      "add",
+      "allowing",
+      "associated",
+      "belong",
+      "broader",
+      "capability",
+      "channelpartnergranularity",
+      "channelpartnerrepricingname",
+      "columns",
+      "configuration",
+      "configuring",
+      "coverage",
+      "createcustomer",
+      "created",
+      "creating",
+      "crm",
+      "csv",
+      "currencies",
+      "currency",
+      "customerrepricingconfigname",
+      "customers",
+      "customization"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "channel",
   "dominant_python_slug": "cloudchannel",
   "dominant_java_slug": "google-cloud-channel",
@@ -29,10 +152,24 @@
         {
           "title": "Google Workspace Reseller API | Admin console | Google for Developers",
           "url": "https://developers.google.com/admin-sdk/reseller/reference/rest",
-          "description": "<strong>Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information</strong> ... To call this service, we recommend that you use the Google-provided client libraries.",
+          "description": "Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests. A Discovery Document ...",
           "rank": 1
         }
       ]
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Channel Services\" \"unified rebilling bigquery export across multiple partner sales console accounts\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Channel Services\" \"rebilling in partner sales console and cloud channel api\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 1,
@@ -80,33 +217,33 @@
           "rank": 3
         },
         {
-          "title": "Concepts | Channel Services | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/channel/docs/concepts",
-          "description": "Figure 1. Diagram of the relationship between the Channel Services concepts presented in this document. An account is the top-level entity and maps to your reseller domain. All other resources are rooted under it. You will need your account_id — found in the Settings page of your Partner Sales Console — when making calls to the Cloud ...",
-          "rank": 4
-        },
-        {
           "title": "Channel Services documentation | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/channel/docs",
           "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Learn how to set up your reseller domain and your Google Cloud project to access Cloud Channel API.",
+          "rank": 4
+        },
+        {
+          "title": "Concepts | Channel Services | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/channel/docs/concepts",
+          "description": "Figure 1. Diagram of the relationship between the Channel Services concepts presented in this document. An account is the top-level entity and maps to your reseller domain. All other resources are rooted under it. You will need your account_id — found in the Settings page of your Partner Sales Console — when making calls to the Cloud ...",
           "rank": 5
         },
         {
-          "title": "Codelab: Provisioning Google Workspace | Channel Services | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning",
-          "description": "Read about the Channel Services operations. We recommend using your Test Partner Sales Console for this codelab. Provisioning a customer with a Google Workspace entitlement involves several API calls. The following diagram shows the high-level steps to provision your customer. This codelab assumes you&#x27;re using one of the client libraries for Cloud Channel API.",
+          "title": "APIs and reference | Channel Services | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/channel/docs/reference",
+          "description": "An overview of the Cloud Channel API client libraries.",
           "rank": 6
-        },
-        {
-          "title": "Codelabs | Channel Services | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/channel/docs/codelabs",
-          "description": "Step-by-step instructions to create a Channel Services customer and provision a Google Cloud entitlement.",
-          "rank": 7
         },
         {
           "title": "Codelab: Provisioning Google Cloud entitlements | Channel Services | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/channel/docs/codelabs/google-cloud/provisioning",
           "description": "Read about the Channel Services operations. Provisioning a customer with a Google Cloud entitlement involves several API calls.",
+          "rank": 7
+        },
+        {
+          "title": "Codelab: Provisioning Google Workspace | Channel Services | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning",
+          "description": "Read about the Channel Services operations. We recommend using your Test Partner Sales Console for this codelab. Provisioning a customer with a Google Workspace entitlement involves several API calls. The following diagram shows the high-level steps to provision your customer. This codelab assumes you&#x27;re using one of the client libraries for Cloud Channel API.",
           "rank": 8
         }
       ]
@@ -149,6 +286,20 @@
       "round": 2,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Channel Services\" reference OR site:developers.google.com \"channel services\" reference",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Channel Services\" \"channel services rebilling bigquery export dataset location support\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Channel Services\" \"reseller billing account name in offer resource\"",
       "official_result_count": 0,
       "results": []
     },
@@ -199,39 +350,39 @@
           "rank": 2
         },
         {
-          "title": "Concepts | Channel Services | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/channel/docs/concepts",
-          "description": "Figure 1. Diagram of the relationship between the Channel Services concepts presented in this document. An account is the top-level entity and maps to your reseller domain. All other resources are rooted under it. You will need your account_id — found in the Settings page of your Partner Sales Console — when making calls to the Cloud ...",
-          "rank": 3
-        },
-        {
           "title": "Channel Services documentation | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/channel/docs",
           "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Learn how to set up your reseller domain and your Google Cloud project to access Cloud Channel API.",
-          "rank": 4
+          "rank": 3
         },
         {
-          "title": "Codelab: Provisioning Google Cloud entitlements | Channel Services | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/channel/docs/codelabs/google-cloud/provisioning",
-          "description": "Make sure you complete the API setup codelab to set up a Google Cloud project and create a service account to call the Cloud Channel API. Read about the Channel Services operations.",
-          "rank": 5
+          "title": "Concepts | Channel Services | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/channel/docs/concepts",
+          "description": "Figure 1. Diagram of the relationship between the Channel Services concepts presented in this document. An account is the top-level entity and maps to your reseller domain. All other resources are rooted under it. You will need your account_id — found in the Settings page of your Partner Sales Console — when making calls to the Cloud ...",
+          "rank": 4
         },
         {
           "title": "Getting access to the Cloud Channel API | Channel Services | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/channel/docs/access-api",
           "description": "Learn about the Channel Services Concepts, then head to the codelabs to complete the technical initial setup to start discovering the API.",
-          "rank": 6
+          "rank": 5
         },
         {
-          "title": "google-cloud-channel overview (3.89.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-channel/latest/overview",
-          "description": "Channel Services Description: With ... have <strong>a single unified resale platform, with a unified resale catalog, customer management, order management, billing management, policy and authorization management, and cost management</strong>...",
-          "rank": 7
+          "title": "Codelab: Provisioning Google Cloud entitlements | Channel Services | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/channel/docs/codelabs/google-cloud/provisioning",
+          "description": "Make sure you complete the API setup codelab to set up a Google Cloud project and create a service account to call the Cloud Channel API. Read about the Channel Services operations.",
+          "rank": 6
         },
         {
           "title": "Package google.cloud.channel.v1 | Channel Services | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/channel/docs/reference/rpc/google.cloud.channel.v1",
           "description": "Using this service: 1. Resellers and distributors can manage a customer entity. 2. Distributors can register an authorized reseller in their channel and provide them with delegated admin access. 3. Resellers and distributors can manage customer entitlements. CloudChannelService exposes the following resources: - Customers: An entity-usually an enterprise-managed by a reseller or distributor.",
+          "rank": 7
+        },
+        {
+          "title": "google-cloud-channel overview (3.89.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-channel/latest/overview",
+          "description": "Channel Services Description: With ... have <strong>a single unified resale platform, with a unified resale catalog, customer management, order management, billing management, policy and authorization management, and cost management</strong>...",
           "rank": 8
         }
       ]
@@ -280,6 +431,20 @@
     },
     {
       "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Channel Services\" \"channel services api billing and voice expense report generation\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Channel Services\" \"entitlementgranularity repricing configuration\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Channel Services\" IAM roles permissions",
       "official_result_count": 0,
@@ -311,33 +476,33 @@
           "rank": 2
         },
         {
-          "title": "APIs and reference | Channel Services | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/channel/docs/reference",
-          "description": "RPC reference for the Cloud Channel API.",
-          "rank": 3
-        },
-        {
-          "title": "Concepts | Channel Services | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/channel/docs/concepts",
-          "description": "Figure 1. Diagram of the relationship between the Channel Services concepts presented in this document. An account is the top-level entity and maps to your reseller domain. All other resources are rooted under it. You will need your account_id — found in the Settings page of your Partner Sales Console — when making calls to the Cloud ...",
-          "rank": 4
-        },
-        {
           "title": "Channel Services documentation | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/channel/docs",
           "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Learn how to set up your reseller domain and your Google Cloud project to access Cloud Channel API.",
-          "rank": 5
+          "rank": 3
         },
         {
-          "title": "Sku | Channel Services | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/channel/docs/reference/rest/v1/Sku",
-          "description": "Channel Services · APIs &amp; Reference · Send feedback · JSON representation · <strong>Represents a product&#x27;s purchasable Stock Keeping Unit (SKU).</strong> SKUs represent the different variations of the product.",
-          "rank": 6
+          "title": "APIs and reference | Channel Services | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/channel/docs/reference",
+          "description": "RPC reference for the Cloud Channel API.",
+          "rank": 4
         },
         {
           "title": "Getting access to the Cloud Channel API | Channel Services | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/channel/docs/access-api",
           "description": "Learn about the Channel Services Concepts, then head to the codelabs to complete the technical initial setup to start discovering the API.",
+          "rank": 5
+        },
+        {
+          "title": "Concepts | Channel Services | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/channel/docs/concepts",
+          "description": "Figure 1. Diagram of the relationship between the Channel Services concepts presented in this document. An account is the top-level entity and maps to your reseller domain. All other resources are rooted under it. You will need your account_id — found in the Settings page of your Partner Sales Console — when making calls to the Cloud ...",
+          "rank": 6
+        },
+        {
+          "title": "Sku | Channel Services | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/channel/docs/reference/rest/v1/Sku",
+          "description": "Channel Services · APIs &amp; Reference · Send feedback · JSON representation · <strong>Represents a product&#x27;s purchasable Stock Keeping Unit (SKU).</strong> SKUs represent the different variations of the product.",
           "rank": 7
         },
         {
@@ -361,7 +526,7 @@
       "title": "Channel Services documentation | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/channel/docs",
       "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Learn how to set up your reseller domain and your Google Cloud project to access Cloud Channel API.",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Channel Services\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Channel Services\" Google Cloud docs overview",
@@ -375,9 +540,24 @@
         2,
         3
       ],
-      "best_rank": 4,
+      "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "with",
+          "domain"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -388,6 +568,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "with",
+          "domain"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -415,6 +606,19 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "services",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -425,6 +629,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "services",
+          "google"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -435,7 +648,7 @@
       "title": "Concepts | Channel Services | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/channel/docs/concepts",
       "description": "Figure 1. Diagram of the relationship between the Channel Services concepts presented in this document. An account is the top-level entity and maps to your reseller domain. All other resources are rooted under it. You will need your account_id — found in the Settings page of your Partner Sales Console — when making calls to the Cloud ...",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Channel Services\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Channel Services\" Google Cloud docs overview",
@@ -449,9 +662,24 @@
         2,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "console",
+          "partner"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -461,7 +689,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "console",
+          "partner"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -489,6 +728,21 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "console",
+          "customer"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -499,11 +753,85 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "console",
+          "customer"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
       "keep": false
+    },
+    {
+      "title": "APIs and reference | Channel Services | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/channel/docs/reference",
+      "description": "An overview of the Cloud Channel API client libraries.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Channel Services\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Channel Services\" \"APIs and reference\"",
+        "site:docs.cloud.google.com \"Channel Services\" \"API reference\"",
+        "site:docs.cloud.google.com \"Channel Services\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "api_reference"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "google"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
     },
     {
       "title": "Cloud Channel API | Channel Services | Google Cloud Documentation",
@@ -526,6 +854,21 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "cloud",
+          "and",
+          "services",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -536,6 +879,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "cloud",
+          "and",
+          "services",
+          "google"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -546,7 +900,7 @@
       "title": "Codelab: Provisioning Google Cloud entitlements | Channel Services | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/channel/docs/codelabs/google-cloud/provisioning",
       "description": "Read about the Channel Services operations. Provisioning a customer with a Google Cloud entitlement involves several API calls.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Channel Services\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Channel Services\" Google Cloud docs overview"
@@ -558,9 +912,24 @@
         1,
         2
       ],
-      "best_rank": 5,
+      "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "services",
+          "google",
+          "customer",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -570,7 +939,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "services",
+          "google",
+          "customer",
+          "with"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -578,46 +958,9 @@
       "keep": false
     },
     {
-      "title": "APIs and reference | Channel Services | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/channel/docs/reference",
-      "description": "RPC reference for the Cloud Channel API. An overview of the Cloud Channel API client libraries. ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Channel Services\" \"APIs and reference\"",
-        "site:docs.cloud.google.com \"Channel Services\" \"API reference\"",
-        "site:docs.cloud.google.com \"Channel Services\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "api_reference",
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 67,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 5,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": true
-    },
-    {
       "title": "Google Workspace Reseller API | Admin console | Google for Developers",
       "url": "https://developers.google.com/admin-sdk/overview",
-      "description": "<strong>Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information</strong> ... To call this service, we recommend that you use the Google-provided client libraries.",
+      "description": "Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests. A Discovery Document ...",
       "rank": 1,
       "query_hits": [
         "site:developers.google.com \"Channel Services\" official documentation OR site:developers.google.com \"channel services\" official documentation",
@@ -633,6 +976,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "and",
+          "services",
+          "google",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -643,6 +1001,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "and",
+          "services",
+          "google",
+          "available"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -652,7 +1021,7 @@
     {
       "title": "Google Workspace Reseller API | Admin console | Google for Developers",
       "url": "https://developers.google.com/admin-sdk/reference-overview",
-      "description": "<strong>Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information</strong> ... To call this service, we recommend that you use the Google-provided client libraries.",
+      "description": "Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests. A Discovery Document ...",
       "rank": 1,
       "query_hits": [
         "site:developers.google.com \"Channel Services\" official documentation OR site:developers.google.com \"channel services\" official documentation",
@@ -668,6 +1037,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "and",
+          "services",
+          "google",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -678,6 +1062,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "and",
+          "services",
+          "google",
+          "available"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -687,7 +1082,7 @@
     {
       "title": "Google Workspace Reseller API | Admin console | Google for Developers",
       "url": "https://developers.google.com/admin-sdk/reseller/reference/rest",
-      "description": "<strong>Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information</strong> ... To call this service, we recommend that you use the Google-provided client libraries.",
+      "description": "Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests. A Discovery Document ...",
       "rank": 1,
       "query_hits": [
         "site:developers.google.com \"Channel Services\" official documentation OR site:developers.google.com \"channel services\" official documentation",
@@ -703,6 +1098,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "and",
+          "services",
+          "google",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -713,6 +1123,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "and",
+          "services",
+          "google",
+          "available"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -740,6 +1161,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 82,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "channel",
+          "for",
+          "cloud",
+          "and",
+          "services",
+          "billing",
+          "google",
+          "customer"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -749,7 +1185,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "channel",
+          "for",
+          "cloud",
+          "and",
+          "services",
+          "billing",
+          "google",
+          "customer"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -775,6 +1222,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 82,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "channel",
+          "for",
+          "cloud",
+          "and",
+          "services",
+          "billing",
+          "google",
+          "customer"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -784,44 +1246,22 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "channel",
+          "for",
+          "cloud",
+          "and",
+          "services",
+          "billing",
+          "google",
+          "customer"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Codelabs | Channel Services | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/channel/docs/codelabs",
-      "description": "Step-by-step instructions to create a Channel Services customer and provision a Google Cloud entitlement.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Channel Services\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
       "keep": false
     },
     {
@@ -841,6 +1281,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "for",
+          "cloud",
+          "services",
+          "google",
+          "account",
+          "can"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -850,7 +1305,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "for",
+          "cloud",
+          "services",
+          "google",
+          "account",
+          "can"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -861,7 +1327,7 @@
       "title": "Codelab: Provisioning Google Workspace | Channel Services | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning",
       "description": "Read about the Channel Services operations. We recommend using your Test Partner Sales Console for this codelab. Provisioning a customer with a Google Workspace entitlement involves several API calls. The following diagram shows the high-level steps to provision your customer. This codelab assumes you&#x27;re using one of the client libraries for Cloud Channel API.",
-      "rank": 6,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Channel Services\" Google Cloud documentation"
       ],
@@ -871,9 +1337,24 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "cloud",
+          "services",
+          "google",
+          "console"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -883,7 +1364,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "for",
+          "cloud",
+          "services",
+          "google",
+          "console"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -894,7 +1386,7 @@
       "title": "Sku | Channel Services | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/channel/docs/reference/rest/v1/Sku",
       "description": "Channel Services · APIs &amp; Reference · Send feedback · JSON representation · <strong>Represents a product&#x27;s purchasable Stock Keeping Unit (SKU).</strong> SKUs represent the different variations of the product.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Channel Services\" Google Cloud introduction reference"
       ],
@@ -904,9 +1396,23 @@
       "round_hits": [
         3
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 5,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "services",
+          "google",
+          "sku"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -917,6 +1423,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "services",
+          "google",
+          "sku"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -927,7 +1443,7 @@
       "title": "Package google.cloud.channel.v1 | Channel Services | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/channel/docs/reference/rpc/google.cloud.channel.v1",
       "description": "Using this service: 1. Resellers and distributors can manage a customer entity. 2. Distributors can register an authorized reseller in their channel and provide them with delegated admin access. 3. Resellers and distributors can manage customer entitlements. CloudChannelService exposes the following resources: - Customers: An entity-usually an enterprise-managed by a reseller or distributor.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Channel Services\" Google Cloud docs overview"
       ],
@@ -937,9 +1453,24 @@
       "round_hits": [
         2
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "customer",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -949,7 +1480,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "customer",
+          "with"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -973,6 +1515,21 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "customer",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -982,7 +1539,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "cloud",
+          "and",
+          "services",
+          "google",
+          "customer",
+          "with"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1006,6 +1574,21 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 26,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "billing",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1015,9 +1598,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
-        "coverage_value": 4,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "billing",
+          "google"
+        ],
         "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
       "keep": false
@@ -1039,6 +1633,21 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 26,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "billing",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1049,6 +1658,17 @@
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "channel",
+          "api",
+          "cloud",
+          "and",
+          "services",
+          "billing",
+          "google"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },

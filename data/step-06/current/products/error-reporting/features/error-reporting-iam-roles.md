@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:18.324Z"
+generated_at: "2026-04-15T12:09:42.692Z"
 product_name: "Error Reporting"
 product_slug: "error-reporting"
 feature_name: "Error Reporting IAM roles"
@@ -9,18 +9,18 @@ latest_feature_date: "2017-06-05"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/errorreporting"
-  - "https://googleapis.dev/python/clouderroreporting/latest/usage.html"
-  - "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1"
+  - "https://docs.cloud.google.com/error-reporting/docs/iam"
+  - "https://docs.cloud.google.com/error-reporting/docs/setup/ruby"
+  - "https://docs.cloud.google.com/error-reporting/docs/reference/authentication"
 keywords:
   - "error"
   - "reporting"
   - "iam"
   - "roles"
-  - "for"
   - "stackdriver"
-  - "are"
   - "available"
+  - "access"
+  - "control"
 ---
 
 # Error Reporting IAM roles
@@ -42,43 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/errorreporting](https://docs.cloud.google.com/iam/docs/roles-permissions/errorreporting)
-- [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
-- [https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1](https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1)
+- [https://docs.cloud.google.com/error-reporting/docs/iam](https://docs.cloud.google.com/error-reporting/docs/iam)
+- [https://docs.cloud.google.com/error-reporting/docs/setup/ruby](https://docs.cloud.google.com/error-reporting/docs/setup/ruby)
+- [https://docs.cloud.google.com/error-reporting/docs/reference/authentication](https://docs.cloud.google.com/error-reporting/docs/reference/authentication)
 
 ## Supporting Pages
 
-### Error Reporting roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### Control access with IAM \_|\_ Error Reporting \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/errorreporting](https://docs.cloud.google.com/iam/docs/roles-permissions/errorreporting)
-- Source ID: `site-iam-reference`
-- Final score: 166
+- URL: [https://docs.cloud.google.com/error-reporting/docs/iam](https://docs.cloud.google.com/error-reporting/docs/iam)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 138
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Error Reporting roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/errorreporting This page lists the IAM roles and permissions for Error Reporting.
+- Lowest-level resources where you can grant this role: Project cloudnotifications. activities. list errorreporting. applications. list errorreporting. errorEvents. delete errorreporting. errorEvents. list errorreporting.groupMetadata. errorreporting. groupMetadata. get errorreporting. groupMetadata. update errorreporting.groups.list logging.notificationRules. logging. notificationRules. create logging. notificationRules. delete logging.notificationRules.get logging.notificationRules.list logging. notificationRules. update resourcemanager.projects.get resourcemanager.projects.list stackdriver.projects.get Error Reporting Viewer Beta ( roles/ errorreporting.viewer ) Provides read-only access to Error Reporting data.
+- This page describes how you use Identity and Access Management (IAM) roles and permissions to control access to Error Reporting data in Google Cloud resources.
+- Lowest-level resources where you can grant this role: Project cloudnotifications. activities. list errorreporting. errorreporting. applications. list errorreporting. errorEvents. create errorreporting. errorEvents. delete errorreporting. errorEvents. list errorreporting. groupMetadata. get errorreporting. groupMetadata. update errorreporting.groups.list logging.notificationRules. logging. notificationRules. create logging. notificationRules. delete logging.notificationRules.get logging.notificationRules.list logging. notificationRules. update resourcemanager.projects.get resourcemanager.projects.list stackdriver.projects.get Error Reporting User Beta ( roles/ errorreporting.user ) Provides the permissions to read and write Error Reporting data, except for sending new error events.
+- Lowest-level resources where you can grant this role: Project cloudnotifications. activities. list errorreporting. applications. list errorreporting. errorEvents. list errorreporting. groupMetadata. get errorreporting.groups.list logging.notificationRules.get logging.notificationRules.list resourcemanager.projects.get resourcemanager.projects.list stackdriver.projects.get Error Reporting Writer Beta ( roles/ errorreporting.writer ) Provides the permissions to send error events to Error Reporting.
 
-### Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation
+### Instrument Ruby apps for Error Reporting \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
-- Source ID: `site-python-reference`
-- Final score: 147
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation Source URL: https://googleapis.dev/python/clouderroreporting/latest/usage.html Errors can also be reported to Stackdriver Error Reporting outside the context of an exception.
-- The library will include the file path, function name, and line number of the location where the error was reported. from google.cloud import error reporting client = error reporting.Client() client.report(&quot;Found an error!&quot;)
-
-### Error Reporting API v1beta1 - Package cloud.google.com/go/errorreporting/apiv1beta1 (v0.4.0) | Go client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1](https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1)
-- Source ID: `site-api-reference`
-- Final score: 140
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/error-reporting/docs/setup/ruby](https://docs.cloud.google.com/error-reporting/docs/setup/ruby)
+- Source ID: `site-docs-root`
+- Final score: 92
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Error Reporting API v1beta1 - Package cloud.google.com/go/errorreporting/apiv1beta1 (v0.4.0) Go client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1 Package errorreporting is an auto-generated package for the Error Reporting API.
-- Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors.
-- For information that is relevant for all client libraries please reference https://pkg.go.dev/cloud.google.com/go#pkg-overview.
+- To enable Error Reporting in development mode, add the following: Add this to config/environments/development.rb Rails . application . configure do config config . google cloud . use error reporting = true end Using instrumentation configuration interface To use the Error Reporting library for Ruby in other Rack-based applications, provide the parameters through the configuration interface: require "google/cloud/error reporting" Google :: Cloud . configure do config Stackdriver Error Reporting specific parameters config . error reporting . project id = "YOUR-PROJECT-ID" config . error reporting . keyfile = "/path/to/service-account.json" end You can also set shared configuration for all Google Cloud Observability gems using the following: require "stackdriver" Google :: Cloud . configure do config Stackdriver Shared parameters config . project id = "YOUR-PROJECT-ID" config . keyfile = "/path/to/service-account.json" end App Engine flexible environment App Engine grants the Error Reporting Writer role ( roles/errorreporting.writer ) to your default service account automatically.
+- In the Identity and API access section, select a service account that has the Error Reporting Writer role ( roles/errorreporting.writer ).
+- To enable Error Reporting in development mode, add the following: Add this to config/environments/development.rb Rails . application . configure do config config . google cloud . use error reporting = true end Using instrumentation configuration interface To use the Error Reporting library for Ruby in other Rack-based applications, provide the parameters through the configuration interface: require "google/cloud/error reporting" Google :: Cloud . configure do config Stackdriver Error Reporting specific parameters config . error reporting . project id = "YOUR-PROJECT-ID" config . error reporting . keyfile = "/path/to/service-account.json" end You can also set shared configuration for all Google Cloud Observability gems using the following: require "stackdriver" Google :: Cloud . configure do config Stackdriver Shared parameters config . project id = "YOUR-PROJECT-ID" config . keyfile = "/path/to/service-account.json" end View error groups In the Google Cloud console, go to the Error Reporting page: Go to Error Reporting You can also find this page by using the search bar.
+- Using Ruby on Rails configuration interface To use the Error Reporting library for Ruby with the Ruby on Rails framework, provide the parameters through the Ruby on Rails configuration interface: Add this to config/environments/ .rb Rails . application . configure do config Stackdriver Error Reporting specific parameters config . google cloud . error reporting . project id = "YOUR-PROJECT-ID" config . google cloud . error reporting . keyfile = "/path/to/service-account.json" end You can also set shared configuration for all Stackdriver gems using the following: Add this to config/environments/ .rb Rails . application . configure do config Stackdriver Shared parameters config . google cloud . project id = "YOUR-PROJECT-ID" config . google cloud . keyfile = "/path/to/service-account.json" end Error Reporting is enabled by default when Rails is running in production mode.
+
+### Authenticate to Error Reporting \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/error-reporting/docs/reference/authentication](https://docs.cloud.google.com/error-reporting/docs/reference/authentication)
+- Source ID: `site-iam-reference`
+- Final score: 86
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information about the roles for Error Reporting, see Access control with IAM .
+- Access control for Error Reporting After you authenticate to Error Reporting, you must be authorized to access Google Cloud resources.
+- You can access the API in the following ways: Client libraries REST Client libraries The Error Reporting client libraries provide high-level language support for authenticating to Error Reporting programmatically.
+- How you authenticate to Error Reporting depends on the interface you use to access the API and the environment where your code is running.
 

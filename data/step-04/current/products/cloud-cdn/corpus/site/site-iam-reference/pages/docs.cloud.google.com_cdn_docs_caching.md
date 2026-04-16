@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/cdn/docs/caching
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage
+entrypoint: https://docs.cloud.google.com/cdn/docs/invalidating-cached-content
 source_metadata:
   url: https://docs.cloud.google.com/cdn/docs/caching
   title: "Caching overview \_|\_ Cloud CDN \_|\_ Google Cloud Documentation"
@@ -175,6 +175,52 @@ For example, Dynamic compression ,
 Signed URLs
 and Signed cookies are managed on
 the backend.
+Default values for caching
+For caching parameters, Cloud CDN uses the following default values:
+Parameter
+Default value
+Description
+Cache mode
+CACHE_ALL_STATIC
+Automatically caches successful responses for common static content types.
+Client TTL
+3600s
+Sets a 1-hour max-age for the client's browser cache.
+Default TTL
+3600s
+Sets a 1-hour cache duration if the origin provides no headers.
+Include Host
+true
+The request host is included in the cache key.
+Include Protocol
+true
+HTTP and HTTPS requests are cached as separate objects.
+Include Query String
+true
+The entire query string is part of the cache key.
+Max TTL
+86400s
+The absolute maximum time (24 hours) an object remains in the cache.
+Negative Caching
+false
+Error responses, such as, 404s are not cached by default.
+Serve While Stale
+86400s
+Serves stale content for up to 24 hours if the origin is unreachable.
+GKE controller feature support
+The following table compares the availability of specific Cloud CDN
+features when managed through the GKE Ingress controller versus
+the GKE Gateway controller.
+Feature
+GKE ingress through backend configuration
+GKE gateway using GCPHTTPFilter
+Basic Caching (Modes/TTLs)
+Cache Key Customization
+Negative Caching
+Serve While Stale
+Dynamic Compression
+Signed URLs & Cookies
+Request Coalescing
 Cacheable content
 Cloud CDN caches responses that meet all of the requirements in
 this section. Some of these requirements are specified by RFC
@@ -1028,6 +1074,6 @@ overview .
 To find GFE points of presence, see Cache locations .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

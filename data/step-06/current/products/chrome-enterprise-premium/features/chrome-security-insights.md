@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:30:05.310Z"
+generated_at: "2026-04-14T12:10:45.837Z"
 product_name: "Chrome Enterprise Premium"
 product_slug: "chrome-enterprise-premium"
 feature_name: "Chrome Security Insights"
 feature_slug: "chrome-security-insights"
 latest_feature_date: "2024-04-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes"
-  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview"
   - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
 keywords:
-  - "chrome"
+  - "monitoring"
   - "security"
   - "insights"
-  - "enables"
   - "enhanced"
-  - "monitoring"
-  - "of"
   - "activity"
+  - "help"
+  - "enables"
 ---
 
 # Chrome Security Insights
 
 Product: Chrome Enterprise Premium
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +37,55 @@ Chrome Security Insights enables enhanced monitoring of Chrome activity to help 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes](https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes)
-- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview](https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview)
 - [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps)
+- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps)
+- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway](https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway)
 
 ## Supporting Pages
-
-### Chrome Enterprise Premium release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes](https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- April 08, 2024 Feature You can now enable Chrome Security Insights to monitor insider risk and data loss with enhanced monitoring for Chrome activity if you have Chrome Enterprise Core and Workspace Enterprise Standard or Workspace Enterprise Plus with assigned licenses.
-- December 14, 2023 Feature General Availability : You can now protect against insider risk and data loss with enhanced monitoring of Chrome activity across your organization.
-- Home Documentation Security Chrome Enterprise Premium Resources Send feedback Chrome Enterprise Premium release notes Stay organized with collections Save and categorize content based on your preferences.
-- These messages are shown to end users when their actions are blocked as a result of a rule triggering in Chrome.
-
-### "Overview of Chrome Enterprise Premium integration with Microsoft Intune\
-
-- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview](https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview)
-- Source ID: `site-iam-reference`
-- Final score: 112
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Home Documentation Security Chrome Enterprise Premium Guides Send feedback Overview of Chrome Enterprise Premium integration with Microsoft Intune Stay organized with collections Save and categorize content based on your preferences.
-- Access Context Manager , which is a part of Chrome Enterprise Premium, uses the device information collected by the BCE Intune connector, and provides security-based access control to your resources by using access levels.
-- The following diagram shows how Chrome Enterprise Premium works with Intune: What's next Set up Chrome Enterprise Premium integration with Intune Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Google's Chrome Enterprise Premium integrates with Microsoft Intune to let you ensure that the devices connecting to your organization's web resources and applications are authorized, secured, and managed as per your organization's policies.
 
 ### "Secure access to private web applications \_|\_ Chrome Enterprise Premium\
 
 - URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps)
 - Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: N/A
+- Final score: 61
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
+- To create the application resource, click Create . gcloud To create the application resource using gcloud, run the following command: gcloud beyondcorp security-gateways applications create APPLICATION ID \ --project = PROJECT ID \ --security-gateway = SECURITY GATEWAY ID \ --location = global \ --display-name = " APP DISPLAY NAME " \ --endpoint-matchers = "hostname= HOST NAME ,ports=[ 443 ]" \ --upstreams = network = name = " PRIVATE NETWORK RESOURCE NAME " To specify an egress region (for example, when using static routes), add the --egress-regions flag: gcloud beyondcorp security-gateways applications create APPLICATION ID \ --project = PROJECT ID \ --security-gateway = SECURITY GATEWAY ID \ --location = global \ --display-name = " APP DISPLAY NAME " \ --endpoint-matchers = "hostname= HOST NAME ,ports=[ 443 ]" \ --upstreams = network = name = " PRIVATE NETWORK RESOURCE NAME " ,egressPolicy = regions = us-central1 Replace us-central1 with the Google Cloud region (such as europe-west1 or asia-northeast1 ) that aligns with your regional static routing setup.
 - You can track the progress in the Notifications section of the Google Cloud console. gcloud To create a secure gateway using gcloud, run the following command: gcloud beyondcorp security-gateways create SECURITY GATEWAY ID \ --project = PROJECT ID \ --location = global \ --display-name = " SECURITY GATEWAY DISPLAY NAME " REST To create a secure gateway using the REST API, run the following command: curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -X POST \ -d '{ "display name": " SECURITY GATEWAY DISPLAY NAME " }' \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways?security gateway id= SECURITY GATEWAY ID " Configure a private web application Before you can define specific application resources in the secure gateway, you must configure the necessary permissions and network settings to enable connectivity and proper routing.
 - This command uses the etag from your file to ensure that you update the correct version. jq '{policy: .}' policy.json curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -d @- \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :setIamPolicy" Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource Add a conditional access policy You can also set access policies with conditions.
 - The following command retrieves the policy and saves it to a file named policy.json . curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :getIamPolicy" > policy.json Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource The command creates a policy.json file that contains the current policy.
-- Search for the following extension, and then require it to be installed for all of the users in the organization unit or group: ekajlcmdfcigmdbphhifahdfjbkciflj Click the installed extension, and in the Policy for extensions field, enter the following JSON value: { "securityGateway" : { "Value" : { "authentication" : {}, "context" : { "resource" : "projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID " } } } } Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway To save the configuration, click Save .
+
+### "Secure access to SaaS applications \_|\_ Chrome Enterprise Premium \_|\_\
+
+- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps)
+- Source ID: `site-docs-root`
+- Final score: 57
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To create, save your settings and create the application, click Create . gcloud To create a SaaS application using gcloud, run the following command: gcloud beyondcorp security-gateways applications create APPLICATION ID \ --project = PROJECT ID \ --security-gateway = SECURITY GATEWAY ID \ --location = global \ --display-name = " APPLICATION DISPLAY NAME " \ --endpoint-matchers = "hostname= HOST NAME ,ports= 443 " REST To create a SaaS application using the REST API, run the following command: curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -X POST \ -d "{ \"display name\": \" APPLICATION DISPLAY NAME \", \"endpoint matchers\": [{hostname: \" HOST NAME \", ports: 443 }] }" \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications?application id= APPLICATION ID " Configure Google Chrome proxy mode You can route application traffic through the secure gateway by applying a PAC file in the Chrome settings in the Google Admin console.
+- In the example, hubs are created in the us-central1 and us-east1 regions, and all of the IP addresses returned in the response must be allowed in the SaaS application. { "securityGateways" : [ { "name" : "projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID " , "createTime" : "CREATE TIME" , "updateTime" : "UPDATE TIME" , "displayName" : "My secure gateway" , "state" : "RUNNING" , "hubs" : { "us-central1" : { "internetGateway" : { "assignedIps" : [ "IP ADDRESS 1" , "IP ADDRESS 2" , ] } }, "us-east1" : { "internetGateway" : { "assignedIps" : [ "IP ADDRESS 1" , "IP ADDRESS 2" , ] } } } } ] } Add the IP addresses to the IP allowlist of your SaaS application.
+- This command uses the etag from your file to ensure that you update the correct version. jq '{policy: .}' policy.json curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -d @- \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :setIamPolicy" Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource Add a conditional access policy You can also set access policies with conditions.
+- The following command retrieves the policy and saves it to a file named policy.json . curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :getIamPolicy" > policy.json Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource The command creates a policy.json file that contains the current policy.
+
+### "Manage a secure gateway \_|\_ Chrome Enterprise Premium \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway](https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway)
+- Source ID: `site-iam-reference`
+- Final score: 41
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To update the egress hubs, click Save . gcloud gcloud beyondcorp security-gateways update SECURITY GATEWAY ID \ --project = PROJECT ID \ --location = global \ --hubs = us-central1,us-east1 REST curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -X PATCH \ -d "{ \"hubs\": {\"us-central1\": {}, \"us-east1\": {}} }" \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID ?update mask=hubs" Get a secure gateway's details To get the details for a secure gateway, run the following command. gcloud gcloud beyondcorp security-gateways describe SECURITY GATEWAY ID \ --project = PROJECT ID \ --location = global REST curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID " List secure gateways To list all of the secure gateways in a project, run the following command. gcloud gcloud beyondcorp security-gateways list \ --project = PROJECT ID \ --location = global REST curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways" Delete a secure gateway To delete a secure gateway, run the following command. gcloud gcloud beyondcorp security-gateways delete SECURITY GATEWAY ID \ --project = PROJECT ID \ --location = global REST curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -X DELETE \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID " Enable secure gateway logging To enable secure gateway logging, run the following command.
+- Go to Applications The page displays a table listing all the application resources for the secure gateway, showing details such as Type and Name. gcloud To list all of the applications in a secure gateway, run the following command. gcloud beyondcorp security-gateways applications list \ --project = PROJECT ID \ --security-gateway = SECURITY GATEWAY ID \ --location = global REST To list all the applications in a secure gateway, run the following command. curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications" Delete an application resource console To delete an application resource, do the following: Go to the Applications page.
+- To view the application details, click the application name or go to the More actions menu ( more vert ) and select View Details . gcloud To get the details of an application, run the following command: gcloud beyondcorp security-gateways applications describe APPLICATION ID \ --project = PROJECT ID \ --security-gateway = SECURITY GATEWAY ID \ --location = global REST To get the details of an application, run the following command: curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID " List application resources console To list all the application resources, do the following: Go to the Applications page.
+- To remove the application resource, click Remove . gcloud To delete an application, run the following command. gcloud beyondcorp security-gateways applications delete APPLICATION ID \ --project = PROJECT ID \ --security-gateway = SECURITY GATEWAY ID \ --location = global REST To delete an application, run the following command. curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -X DELETE \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID " Important: Removing the application definition from secure gateway will disrupt user traffic for that application.
 

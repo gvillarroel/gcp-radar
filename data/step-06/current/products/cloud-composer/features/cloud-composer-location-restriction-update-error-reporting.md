@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.926Z"
+generated_at: "2026-04-12T12:11:20.168Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer location restriction update error reporting"
 feature_slug: "cloud-composer-location-restriction-update-error-reporting"
 latest_feature_date: "2020-12-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
   - "https://docs.cloud.google.com/composer/docs/composer-1/configure-resource-location-restrictions"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/patch"
 keywords:
   - "composer"
   - "location"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer location restriction update error reporting
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ Composer now improves error reporting when environment updates fail because of l
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - [https://docs.cloud.google.com/composer/docs/composer-1/configure-resource-location-restrictions](https://docs.cloud.google.com/composer/docs/composer-1/configure-resource-location-restrictions)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/patch](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/patch)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 182
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- New metrics have been added to monitor web server CPU and memory usage: CPU usage time CPU reserved cores Memory bytes used Memory quota During environment creation and updates, Composer will now verify whether you have chosen a region compliant with any location restriction organization policies.
-- Error reporting has also been improved in cases where location restrictions cause environment updates to fail.
-- Change New versions of Cloud Composer images: composer-1.16.10-airflow-1.10.15 (default) composer-1.16.10-airflow-1.10.14 composer-1.16.10-airflow-1.10.12 composer-1.17.0-preview.6-airflow-2.0.1 composer-1.17.0-preview.6-airflow-2.0.2 July 08, 2021 Change New versions of Cloud Composer images: composer-1.17.0-preview.5-airflow-2.0.1 composer-1.16.9-airflow-1.10.15 (default) composer-1.16.9-airflow-1.10.14 composer-1.16.9-airflow-1.10.12 Fixed When PyPI modules installation fails with certain error types in VPC SC environments, an additional attempt to perform the environment update operation is made using an in-cluster build.
-- Change New versions of Cloud Composer images: composer-1.16.1-airflow-1.10.15 composer-1.16.1-airflow-1.10.14 (default) composer-1.16.1-airflow-1.10.12 composer-1.16.1-airflow-1.10.10 Fixed Fixed a bug that caused environment update and upgrade operations to fail with errors related to GKE cluster endpoints, instead of the actual root cause.
 
 ### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - Source ID: `site-iam-reference`
-- Final score: 172
+- Final score: 216
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,13 +67,40 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-resource-location-restrictions](https://docs.cloud.google.com/composer/docs/composer-1/configure-resource-location-restrictions)
 - Source ID: `site-iam-reference`
-- Final score: 164
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 211
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Environment update, for older environments that do not enforce location restrictions on Cloud Composer dependencies.
 - They are always sent to the default storage. gcloud logging sinks update Default \ --add-exclusion name = ENVIRONMENT NAME -exclusion,filter = \ "resource.type=cloud composer environment AND \ resource.labels.environment name= ENVIRONMENT NAME AND \ resource.labels.location= LOCATION " Replace: ENVIRONMENT NAME with the name of the environment.
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Configure resource location restrictions Stay organized with collections Save and categorize content based on your preferences.
 - How location restrictions work Location restrictions for Cloud Composer are determined based on the organizational policy that is applied to the project where the Cloud Composer environment is created.
+
+### "REST Resource: projects.locations.environments \_|\_ Cloud Composer \_|\_\
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- Source ID: `site-docs-reference`
+- Final score: 184
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Methods checkUpgrade Check if an upgrade operation on the environment will succeed. create Create a new environment. databaseFailover Triggers database failover (only for highly resilient environments). delete Delete an environment. executeAirflowCommand Executes Airflow CLI command. fetchDatabaseProperties Fetches database properties. get Get an existing environment. list List environments. loadSnapshot Loads a snapshot of a Cloud Composer environment. patch Update an environment. pollAirflowCommand Polls Airflow CLI command execution and fetches logs. restartWebServer Restart Airflow web server. saveSnapshot Creates a snapshots of a Cloud Composer environment. stopAirflowCommand Stops Airflow CLI command execution.
+- JSON representation { "location" : string , "machineType" : string , "network" : string , "subnetwork" : string , "diskSizeGb" : integer , "oauthScopes" : [ string ] , "serviceAccount" : string , "tags" : [ string ] , "ipAllocationPolicy" : { object ( IPAllocationPolicy ) } , "enableIpMasqAgent" : boolean , "composerNetworkAttachment" : string , "composerInternalIpv4CidrBlock" : string } Fields location string Optional.
+- If both this field and nodeConfig.location are specified, this machineType must belong to the nodeConfig.location ; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields.
+- If both this field and nodeConfig.machineType are specified, nodeConfig.machineType must belong to this location ; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields.
+
+### "Method: projects.locations.environments.patch \_|\_ Cloud Composer \_|\_\
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/patch](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/patch)
+- Source ID: `site-docs-reference`
+- Final score: 175
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Path parameters Parameters name string The relative resource name of the environment to update, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" Authorization requires the following IAM permission on the specified resource name : composer.environments.update Query parameters Parameters updateMask string ( FieldMask format) Required.
+- Home Documentation Data analytics Cloud Composer Reference Send feedback Method: projects.locations.environments.patch Stay organized with collections Save and categorize content based on your preferences.
+- It is an error to provide both this mask and a mask specifying an individual package. config.softwareConfig.pypiPackages. packagename Update the custom PyPI package packagename , preserving other packages.
+- HTTP request PATCH https://composer.googleapis.com/v1/{name=projects/ /locations/ /environments/ } The URL uses gRPC Transcoding syntax.
 

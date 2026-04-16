@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.476Z"
+generated_at: "2026-04-14T07:40:14.480Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Parse XML data transformer function"
 feature_slug: "parse-xml-data-transformer-function"
 latest_feature_date: "2023-10-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
   - "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
+  - "https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference"
 keywords:
   - "parse"
-  - "xml"
+  - "converts"
+  - "input"
   - "transformer"
-  - "function"
-  - "that"
-  - "application"
-  - "integration"
   - "added"
 ---
 
 # Parse XML data transformer function
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,54 @@ Application Integration added a Parse XML data transformer function that convert
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
 - [https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference](https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
+- [https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference](https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference)
 
 ## Supporting Pages
+
+### Data Transformer task \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 107
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Jsonnet script local f = impor t "functions" ; // Import predefined Data Transformer function library local s tr 1 = f .ex t Var( "inputVar1" ); // Access integration input variable "Inputstr1" with value "Hello" local s tr 2 = f .ex t Var( "inputVar2" ); // Access integration input variable "Inputstr2" with value "World" { Ou t pu t Var : s tr 1 + " " + s tr 2 + "!" , // Write to Jsonnet output variable "OutputVar" "output-str-var" : s tr 1 + " Integration " + s tr 2 + "!" , // Write to Jsonnet output variable "output-str-var" } Output Jsonnet usage reference Jsonnet is a purely functional language and its programs are composed of expressions.
+- You can map the newly added constant from the Input section to the field in the Output section.
+- The following image shows the sample layout of the Data Transformer Script editor : Access integration variables To read an existing integration variable from the Data Transformer Script editor use the extVar function from the predefined functions library.
+- The Data Transformer Script editor provides the following features to enrich your scripting experience: Syntax/code highlighting, indentation, and line numbering for easier code readability and structure recognition.
 
 ### "Data Transformer functions \_|\_ Application Integration \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference](https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference)
 - Source ID: `site-api-reference`
-- Final score: 206
+- Final score: 74
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Functions The following table lists the predefined functions available in Application Integration: Functions Description Array functions Functions that operate on arrays.
+- Recommendation Lean how to add and configure a Data Transformer Script task ( Preview ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 - Data Transformer functions This page describes the additional set of predefined Jsonnet functions for Data Transformer Script task available in Application Integration.
-- Application Integration supports Jsonnet functions library v0.20.0.
-- XML functions Functions that perform XML operations.
+- Preview — Data Transformer Script task This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- Importing the functions library lets you use both the standard Jsonnet functions and the predefined Data Transformer functions.
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### "Data Mapping functions \_|\_ Application Integration \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 188
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 20, 2023 Feature Connector Event triggers ( Preview ) Application Integration introduces Connector Event triggers ; specialized triggers that let you invoke an integration based on the event subscriptions created in various business applications using Integration Connectors .
-- May 05, 2025 Change Cloud Function Task adds support for Cloud Functions v2 API The Cloud Function task in Application Integration now lets you create, link, and run the latest generation of serverless functions, called Cloud Run functions, using the Cloud Functions v2 API.
-- Application Integration is an Integration-Platform-as-a-Service (iPaaS) solution in Google Cloud that offers a comprehensive set of core integration tools to connect and manage the multitude of applications and data required to support various business operations.
-- January 23, 2024 Feature The following new data transformer functions are available: getIntegrationVersionId () : Get the integration version ID of the current integration. getIntegrationVersionNumber() : Get the version number of the current integration.
-
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- Source ID: `site-docs-root`
-- Final score: 154
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference](https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference)
+- Source ID: `site-api-reference`
+- Final score: 56
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Connect the elements in the sub-integration Now that you have added and configured the required tasks and triggers in the sub-integration, add a connection (edge) between the elements.
-- In Default Value , enter the following JSON: [{ "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" }, { "orderId" : "2" , "customerName" : "Tim Harvey" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "Los Angeles" , "country" : "USA" , "zipcode" : "210738" }, "items" : [{ "itemid" : "222-333-444" , "itemName" : "Laptop" , "itemPrice" : 5999.0 , "quantity" : 1.0 }], "paymentDetails" : { "mode" : "Online Payment" , "status" : "Success" }, "expectedDelivery" : "21 Feb 2023" }] In this sample JSON object, replace both occurrences of YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- In Default Value , enter the following JSON. { "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" } In this sample JSON object, replace YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- Invoke a sub-integration using a For Each Loop task To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me --> This quickstart shows you how to create an integration that uses a For Each Loop task to invoke a sub-integration.
+- A mapping function can have one or more input parameters, wherein each parameter can further hold a literal value, a variable, or a base function with mapping functions applied.
+- You can use multiple mapping functions for a single input source, forming a mapping transform expression .
+- EPOCH TO HUMAN READABLE TIME Converts Unix epoch time (in milliseconds) to human-readable time format.
+- FLOOR Computes the greatest integer that is less than or equal to the provided input.
 

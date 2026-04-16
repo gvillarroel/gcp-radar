@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.557Z"
+generated_at: "2026-04-14T23:59:44.421Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Log-Based Alerts"
@@ -9,18 +9,18 @@ latest_feature_date: "2021-07-07"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/release-notes"
-  - "https://docs.cloud.google.com/logging/docs/logs-based-metrics"
-  - "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike"
 keywords:
   - "log"
   - "based"
   - "alerts"
   - "logging"
   - "supports"
-  - "that"
   - "trigger"
   - "when"
+  - "contents"
 ---
 
 # Log-Based Alerts
@@ -38,54 +38,55 @@ Cloud Logging supports alerts that trigger when log contents match specified con
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
-- [https://docs.cloud.google.com/logging/docs/logs-based-metrics](https://docs.cloud.google.com/logging/docs/logs-based-metrics)
-- [https://docs.cloud.google.com/logging/docs/logging-gce-quickstart](https://docs.cloud.google.com/logging/docs/logging-gce-quickstart)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike)
 
 ## Supporting Pages
 
-### Logging release notes \_|\_ Google Cloud Documentation
+### "Active Directory Domain Services (AD DS) \_|\_ Cloud Logging \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 222
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- April 06, 2021 Change Cloud Logging now supports 22 regions in which you can create a log bucket so that you can meet compliance and audit requirements when storing your logs.
-- When triggered, a log-based alert notifies you that a match has appeared in your logs and opens an incident in Cloud Monitoring.
-- When triggered, a log-based alert notifies you that a match has appeared in your logs and opens an incident in Cloud Monitoring.
-- Feature Preview : Cloud Logging now supports alerts based on matching the content of your logs.
-
-### Log-based metrics overview \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/logging/docs/logs-based-metrics](https://docs.cloud.google.com/logging/docs/logs-based-metrics)
-- Source ID: `site-docs-root`
-- Final score: 204
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds)
+- Source ID: `site-docs-root-2`
+- Final score: 43
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For each stream, the backend system for log-based metrics uses the following rules to determine what value to write to the time series stored by Monitoring: When the aggregated count for an interval is non-zero, that value is written to the time series.
-- In Cloud Monitoring, log-based metrics use the following naming patterns: System: logging.googleapis.com/ SYSTEM METRIC NAME User-defined: logging.googleapis.com/user/ USER METRIC NAME Note that user-defined log-based metrics include the string user .
-- By default, user-defined log-based metrics are calculated from all logs received by the Logging API for the Google Cloud project, regardless of any inclusion filters or exclusion filters that might apply to the Google Cloud project.
-- Handling of late-arriving and future log entries When log entries arrive with a timestamp for an interval that has been processed, the Logging backend generates historical data.
+- Home Documentation Observability Cloud Logging Guides Send feedback Active Directory Domain Services (AD DS) Stay organized with collections Save and categorize content based on your preferences.
+- The active directory ds logs contain the following fields in the LogEntry : Field Type Description jsonPayload.Channel string The event log channel where the log was logged. jsonPayload.ComputerName string The name of the computer from which this log originates. jsonPayload.Data string Extra event-specific data included with the log. jsonPayload.EventCategory number The category of the event. jsonPayload.EventID number An ID identifying the type of the event. jsonPayload.EventType string The type of event. jsonPayload.Message string The log message. jsonPayload.Qualifiers number A qualifier number that is used for event identification. jsonPayload.RecordNumber number The sequence number of the event log. jsonPayload.Sid string The security identifier identifying a security principal or security group of the process that logged this message. jsonPayload.SourceName string The source component that logged this message. jsonPayload.StringInserts []string Dynamic string data that was used to construct the log message. jsonPayload.TimeGenerated string A timestamp representing when the record was generated. jsonPayload.TimeWritten string A timestamp representing when the record was written to the event log. severity string ( LogSeverity ) Log entry level (translated).
+- Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: Get-Service google-cloud-ops-agent Configure logs collection To ingest logs from AD DS, you must create a receiver for the logs that AD DS produces and then create a pipeline for the new receiver.
+- Add - Content ' C : \ Program Files \ Google \ Cloud Operations \ Ops Agent \ config \ config . yaml ' " logging: receivers: active directory ds: type: active directory ds service: pipelines: active directory ds: receivers: - active directory ds metrics: receivers: active directory ds: type: active directory ds service: pipelines: active directory ds: receivers: - active directory ds " if ( Get - Service google - cloud - ops - agent - ErrorAction SilentlyContinue ) { ( Get - Service google - cloud - ops - agent ).
 
-### "Quickstart: Collect logs from Apache with the Ops Agent \_|\_ Cloud Logging\
+### Aerospike \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/logging-gce-quickstart](https://docs.cloud.google.com/logging/docs/logging-gce-quickstart)
-- Source ID: `site-docs-root`
-- Final score: 196
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike)
+- Source ID: `site-docs-root-2`
+- Final score: 43
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- In this section, you create a log-based alert so that you are notified when a 404 Not Found message appears in your log entries.
-- Enable the APIs Required roles To get the permissions that you need to create a Compute Engine instance, install Apache, and to view metric data, ask your administrator to grant you the following IAM roles on your project: Compute Instance Admin (v1) ( roles/compute.instanceAdmin.v1 ) Logs Viewer ( roles/logging.viewer ) Monitoring Editor ( roles/monitoring.editor ) OSPolicyAssignment Admin ( roles/osconfig.osPolicyAssignmentAdmin ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
-- Restart the Ops Agent: To restart the agent, run the following command on your instance: sudo systemctl restart google-cloud-ops-agent To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: sudo systemctl status "google-cloud-ops-agent " View Apache web server logs To view your logs in the Google Cloud console, use the Logs Explorer: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .
-- Home Documentation Observability Cloud Logging Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Home Documentation Observability Cloud Logging Guides Send feedback Aerospike Stay organized with collections Save and categorize content based on your preferences.
+- You must restart the agent for the configuration to take effect . set - e Check if the file exists if [ ! - f / etc / google - cloud - ops - agent / config . yaml ]; then Create the file if it doesn ' t exist . sudo mkdir - p / etc / google - cloud - ops - agent sudo touch / etc / google - cloud - ops - agent / config . yaml fi Create a back up of the existing file so existing configurations are not lost . sudo cp / etc / google - cloud - ops - agent / config . yaml / etc / google - cloud - ops - agent / config . yaml . bak Configure the Ops Agent . sudo tee / etc / google - cloud - ops - agent / config . yaml > / dev / null << EOF metrics : receivers : aerospike : type : aerospike service : pipelines : aerospike : receivers : - aerospike EOF For these changes to take effect, you must restart the Ops Agent: Linux To restart the agent, run the following command on your instance: sudo systemctl restart google-cloud-ops-agent To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: sudo systemctl status "google-cloud-ops-agent " Windows Connect to your instance using RDP or a similar tool and login to Windows.
+- Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: Get-Service google-cloud-ops-agent Collect logs Aerospike writes logs to syslog , which is captured by the Ops Agent by default.
+- To verify that Aerospike logs are being sent to Cloud Logging, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .
+
+### Apache ActiveMQ \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq)
+- Source ID: `site-docs-root-2`
+- Final score: 43
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Observability Cloud Logging Guides Send feedback Apache ActiveMQ Stay organized with collections Save and categorize content based on your preferences.
+- You must restart the agent for the configuration to take effect . set - e Check if the file exists if [ ! - f / etc / google - cloud - ops - agent / config . yaml ]; then Create the file if it doesn ' t exist . sudo mkdir - p / etc / google - cloud - ops - agent sudo touch / etc / google - cloud - ops - agent / config . yaml fi Create a back up of the existing file so existing configurations are not lost . sudo cp / etc / google - cloud - ops - agent / config . yaml / etc / google - cloud - ops - agent / config . yaml . bak Configure the Ops Agent . sudo tee / etc / google - cloud - ops - agent / config . yaml > / dev / null << EOF metrics : receivers : activemq : type : activemq service : pipelines : activemq : receivers : - activemq EOF For these changes to take effect, you must restart the Ops Agent: Linux To restart the agent, run the following command on your instance: sudo systemctl restart google-cloud-ops-agent To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: sudo systemctl status "google-cloud-ops-agent " Windows Connect to your instance using RDP or a similar tool and login to Windows.
+- Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: Get-Service google-cloud-ops-agent Collect logs ActiveMQ writes logs to syslog , which is captured by the Ops Agent by default.
+- To verify that ActiveMQ logs are being sent to Cloud Logging, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .
 

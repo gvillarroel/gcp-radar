@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.351Z"
+generated_at: "2026-04-14T11:18:28.002Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Cloud Bigtable regional availability in africa-south1"
 feature_slug: "cloud-bigtable-regional-availability-in-africa-south1"
 latest_feature_date: "2024-01-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings.Builder"
+  - "https://docs.cloud.google.com/bigtable/docs/locations"
+  - "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
   - "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
 keywords:
+  - "johannesburg"
   - "africa"
   - "south1"
   - "availability"
   - "regional"
-  - "bigtable"
-  - "now"
-  - "is"
-  - "in"
+  - "available"
 ---
 
 # Cloud Bigtable regional availability in africa-south1
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,47 +36,47 @@ Cloud Bigtable is now available in the africa-south1 (Johannesburg) region.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings.Builder)
+- [https://docs.cloud.google.com/bigtable/docs/locations](https://docs.cloud.google.com/bigtable/docs/locations)
+- [https://docs.cloud.google.com/bigtable/docs/dynamodb-users](https://docs.cloud.google.com/bigtable/docs/dynamodb-users)
 - [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient)
 
 ## Supporting Pages
 
-### "Class BigtableInstanceAdminSettings (2.74.0) \_|\_ Java client libraries\
+### Bigtable locations \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings)
-- Source ID: `site-java-reference`
-- Final score: 194
+- URL: [https://docs.cloud.google.com/bigtable/docs/locations](https://docs.cloud.google.com/bigtable/docs/locations)
+- Source ID: `site-docs-root`
+- Final score: 110
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Returns Type Description BigtableInstanceAdminSettings.Builder toString() public String toString () Returns Type Description String Overrides Object.toString() Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Builder settingsBuilder = BigtableInstanceAdminSettings . newBuilder () . setProjectId ( "my-project" ); settingsBuilder . stubSettings (). createInstanceSettings () . setRetrySettings ( RetrySettings . newBuilder () . setTotalTimeout ( Duration . ofMinutes ( 15 )) . build ()); BigtableInstanceAdminSettings settings = settingsBuilder . build (); Inheritance java.lang.Object > BigtableInstanceAdminSettings Inherited Members Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods newBuilder() public static BigtableInstanceAdminSettings .
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-14 UTC."],[],[]]
-- 2.74.0 (latest) 2.73.0 2.72.0 2.71.0 2.70.0 2.68.0 2.67.1 2.66.0 2.65.1 2.63.0 2.62.0 2.61.0 2.60.0 2.59.0 2.58.2 2.56.0 2.54.0 2.52.0 2.51.2 2.49.0 2.46.0 2.45.1 2.44.1 2.43.0 2.42.0 2.40.0 2.39.5 2.37.0 2.35.1 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.1 2.28.0 public final class BigtableInstanceAdminSettings Settings class to configure an instance of BigtableInstanceAdminClient .
+- Zone name Region name Region description africa-south1-a africa-south1 Johannesburg africa-south1-b africa-south1 Johannesburg africa-south1-c africa-south1 Johannesburg Asia The following table lists the regions in Asia where Bigtable is available.
+- Zone name Region name Region description me-central1-a me-central1 Doha me-central1-b me-central1 Doha me-central1-c me-central1 Doha me-central2-a me-central2 Dammam me-central2-b me-central2 Dammam me-central2-c me-central2 Dammam me-west1-a me-west1 Tel Aviv me-west1-b me-west1 Tel Aviv me-west1-c me-west1 Tel Aviv North America The following table lists the regions in North America where Bigtable is available: Zone name Region name Region description northamerica-northeast1-a northamerica-northeast1 Montréal Low CO 2 northamerica-northeast1-b northamerica-northeast1 Montréal Low CO 2 northamerica-northeast1-c northamerica-northeast1 Montréal Low CO 2 northamerica-northeast2-a northamerica-northeast2 Toronto Low CO 2 northamerica-northeast2-b northamerica-northeast2 Toronto Low CO 2 northamerica-northeast2-c northamerica-northeast2 Toronto Low CO 2 northamerica-south1-a northamerica-south1 Mexico northamerica-south1-b northamerica-south1 Mexico northamerica-south1-c northamerica-south1 Mexico us-central1-a us-central1 Iowa Low CO 2 us-central1-b us-central1 Iowa Low CO 2 us-central1-c us-central1 Iowa Low CO 2 us-central1-f us-central1 Iowa Low CO 2 us-east1-b us-east1 South Carolina us-east1-c us-east1 South Carolina us-east1-d us-east1 South Carolina us-east4-a us-east4 Northern Virginia us-east4-b us-east4 Northern Virginia us-east4-c us-east4 Northern Virginia us-east5-a us-east5 Columbus us-east5-b us-east5 Columbus us-east5-c us-east5 Columbus us-south1-a us-south1 Dallas Low CO 2 us-south1-b us-south1 Dallas Low CO 2 us-south1-c us-south1 Dallas Low CO 2 us-west1-a us-west1 Oregon Low CO 2 us-west1-b us-west1 Oregon Low CO 2 us-west1-c us-west1 Oregon Low CO 2 us-west2-a us-west2 Los Angeles us-west2-b us-west2 Los Angeles us-west2-c us-west2 Los Angeles us-west3-a us-west3 Salt Lake City us-west3-b us-west3 Salt Lake City us-west3-c us-west3 Salt Lake City us-west4-a us-west4 Las Vegas us-west4-b us-west4 Las Vegas us-west4-c us-west4 Las Vegas South America The following table lists the regions in South America where Bigtable is available.
+- Zone name Region name Region description asia-east1-a asia-east1 Taiwan asia-east1-b asia-east1 Taiwan asia-east1-c asia-east1 Taiwan asia-east2-a asia-east2 Hong Kong asia-east2-b asia-east2 Hong Kong asia-east2-c asia-east2 Hong Kong asia-northeast1-a asia-northeast1 Tokyo asia-northeast1-b asia-northeast1 Tokyo asia-northeast1-c asia-northeast1 Tokyo asia-northeast2-a asia-northeast2 Osaka asia-northeast2-b asia-northeast2 Osaka asia-northeast2-c asia-northeast2 Osaka asia-northeast3-a asia-northeast3 Seoul asia-northeast3-b asia-northeast3 Seoul asia-northeast3-c asia-northeast3 Seoul asia-south1-a asia-south1 Mumbai asia-south1-b asia-south1 Mumbai asia-south1-c asia-south1 Mumbai asia-south2-a asia-south2 Delhi asia-south2-b asia-south2 Delhi asia-south2-c asia-south2 Delhi asia-southeast1-a asia-southeast1 Singapore asia-southeast1-b asia-southeast1 Singapore asia-southeast1-c asia-southeast1 Singapore asia-southeast2-a asia-southeast2 Jakarta asia-southeast2-b asia-southeast2 Jakarta asia-southeast2-c asia-southeast2 Jakarta asia-southeast3-a asia-southeast3 Bangkok asia-southeast3-b asia-southeast3 Bangkok asia-southeast3-c asia-southeast3 Bangkok Australia The following table lists the regions in Australia where Bigtable is available.
+- Africa The following table lists the regions in Africa where Bigtable is available.
 
-### "Class BigtableInstanceAdminSettings.Builder (2.74.0) \_|\_ Java client libraries\
+### Migrate from DynamoDB to Bigtable \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings.Builder)
-- Source ID: `site-java-reference`
-- Final score: 194
+- URL: [https://docs.cloud.google.com/bigtable/docs/dynamodb-users](https://docs.cloud.google.com/bigtable/docs/dynamodb-users)
+- Source ID: `site-docs-reference-2`
+- Final score: 63
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Returns Type Description BigtableInstanceAdminStubSettings.Builder Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-14 UTC."],[],[]]
-- Inheritance java.lang.Object > BigtableInstanceAdminSettings.Builder Inherited Members Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods build() public BigtableInstanceAdminSettings build () Builds an instance of the settings.
-- 2.74.0 (latest) 2.73.0 2.72.0 2.71.0 2.70.0 2.68.0 2.67.1 2.66.0 2.65.1 2.63.0 2.62.0 2.61.0 2.60.0 2.59.0 2.58.2 2.56.0 2.54.0 2.52.0 2.51.2 2.49.0 2.46.0 2.45.1 2.44.1 2.43.0 2.42.0 2.40.0 2.39.5 2.37.0 2.35.1 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.1 2.28.0 public static final class BigtableInstanceAdminSettings .
+- Geographic replication Replication is used to support customer requirements for the following: High availability for business continuity in the event of a zonal or regional failure.
+- Replication: A way to increase the availability and durability of your data by automatically propagating data changes across multiple regions or multiple zones within the same region.
+- Global tables: A way to increase availability and durability of your data by automatically propagating data changes across multiple regions.
+- Bigtable supports replicated clusters in as many zones that are available in up to 8 Google Cloud regions where Bigtable is available.
 
 ### "Class BigtableTableAdminAsyncClient (2.35.0) \_|\_ Python client libraries\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 190
+- Final score: 57
 - Re-rank relevance: N/A
 
 Evidence snippets:

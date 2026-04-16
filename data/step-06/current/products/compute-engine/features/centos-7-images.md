@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:01.913Z"
+generated_at: "2026-04-15T13:50:03.142Z"
 product_name: "Compute Engine"
 product_slug: "compute-engine"
 feature_name: "CentOS 7 images"
 feature_slug: "centos-7-images"
 latest_feature_date: "2025-04-04"
 deprecation_date: "2024-06-30"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/compute/docs/gcloud-compute/tips"
+  - "https://docs.cloud.google.com/compute/docs/gcloud-compute/tips"
+  - "https://docs.cloud.google.com/compute/docs/api/using-libraries"
 keywords:
   - "centos"
   - "images"
-  - "are"
   - "deprecated"
   - "following"
-  - "the"
   - "end"
-  - "of"
+  - "2024"
+  - "06"
+  - "30"
 ---
 
 # CentOS 7 images
 
 Product: Compute Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ CentOS 7 images are deprecated following the end of CentOS 7 support; deprecated
 
 CentOS 7 images are deprecated following the end of CentOS 7 support; deprecated on 2024-06-30.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/compute/docs/gcloud-compute/tips](https://developers.google.com/compute/docs/gcloud-compute/tips)
+- [https://docs.cloud.google.com/compute/docs/gcloud-compute/tips](https://docs.cloud.google.com/compute/docs/gcloud-compute/tips)
+- [https://docs.cloud.google.com/compute/docs/api/using-libraries](https://docs.cloud.google.com/compute/docs/api/using-libraries)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### gcloud compute usage tips \_|\_ Compute Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/compute/docs/gcloud-compute/tips](https://docs.cloud.google.com/compute/docs/gcloud-compute/tips)
+- Source ID: `site-api-reference`
+- Final score: 80
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, the following two commands illustrate a scenario when you can list images to get an image name and its associated project so that you can provide these as inputs to a describe command: gcloud compute images list NAME PROJECT FAMILY DEPRECATED STATUS ... centos-7-v20170620 centos-cloud centos-7 READY ... debian-9-stretch-v20170619 debian-cloud debian-9 READY ... gcloud compute images describe debian-9-stretch-v20170619 --project debian-cloud The default output from describe commands is YAML format, but you can use the --format flag to choose between JSON, YAML, and text output formats.
+- The following command gets instance settings in JSON format ( --format json ). gcloud compute instances describe example-instance \ --zone us-central1-a --format json { ... "name": "example-instance", "networkInterfaces": [ { "accessConfigs": [ { "kind": "compute#accessConfig", "name": "external-nat", "natIP": "107.167.187.66", "type": "ONE TO ONE NAT" } ], "name": "nic0", "network": "https://www.googleapis.com/compute/v1/projects/myproject/global/networks/default", "networkIP": "10.240.111.51" } ], ... "status": "RUNNING" ... } Checking which user you are authorized as Use the following command to find out which account you are authorizes as, use: gcloud auth list Revoking a refresh token To revoke the credentials for an account on the machine where you are using the Google Cloud CLI, use: gcloud auth revoke This will force you to use re-authenticate using gcloud init .
+- After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity .
+- To run code or samples from a local development environment, you can authenticate to Compute Engine by selecting one of the following options: Install the Google Cloud CLI.
+
+### gcloud compute usage tips \_|\_ Compute Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://developers.google.com/compute/docs/gcloud-compute/tips](https://developers.google.com/compute/docs/gcloud-compute/tips)
+- Source ID: `site-docs-root-3`
+- Final score: 80
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, the following two commands illustrate a scenario when you can list images to get an image name and its associated project so that you can provide these as inputs to a describe command: gcloud compute images list NAME PROJECT FAMILY DEPRECATED STATUS ... centos-7-v20170620 centos-cloud centos-7 READY ... debian-9-stretch-v20170619 debian-cloud debian-9 READY ... gcloud compute images describe debian-9-stretch-v20170619 --project debian-cloud The default output from describe commands is YAML format, but you can use the --format flag to choose between JSON, YAML, and text output formats.
+- The following command gets instance settings in JSON format ( --format json ). gcloud compute instances describe example-instance \ --zone us-central1-a --format json { ... "name": "example-instance", "networkInterfaces": [ { "accessConfigs": [ { "kind": "compute#accessConfig", "name": "external-nat", "natIP": "107.167.187.66", "type": "ONE TO ONE NAT" } ], "name": "nic0", "network": "https://www.googleapis.com/compute/v1/projects/myproject/global/networks/default", "networkIP": "10.240.111.51" } ], ... "status": "RUNNING" ... } Checking which user you are authorized as Use the following command to find out which account you are authorizes as, use: gcloud auth list Revoking a refresh token To revoke the credentials for an account on the machine where you are using the Google Cloud CLI, use: gcloud auth revoke This will force you to use re-authenticate using gcloud init .
+- After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity .
+- To run code or samples from a local development environment, you can authenticate to Compute Engine by selecting one of the following options: Install the Google Cloud CLI.
+
+### Using client libraries \_|\_ Compute Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/compute/docs/api/using-libraries](https://docs.cloud.google.com/compute/docs/api/using-libraries)
+- Source ID: `site-api-reference`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- It can be either a hash or ::Google::Cloud::Compute::V1::Instance instance. instance = { name : instance name , machine type : "zones/ #{ zone } /machineTypes/ #{ machine type } " , Instance creation requires at least one persistent disk. disks : [ { auto delete : true , boot : true , type : :PERSISTENT , initialize params : { source image : source image , disk size gb : 10 } } ] , network interfaces : [ { name : network name } ] } Prepare a request to create the instance in the specified project and zone. request = { project : project , zone : zone , instance resource : instance } puts "Creating the #{ instance name } instance in #{ zone } ..." begin Send the insert request. operation = client . insert request Wait for the create operation to complete. operation = wait until done operation : operation if operation . error? warn "Error during creation:" , operation . error else compute operation = operation . operation warn "Warning during creation:" , compute operation . warnings unless compute operation . warnings . empty? puts "Instance #{ instance name } created." end rescue :: Google :: Cloud :: Error = > e warn "Exception during creation:" , e end end Rust use google cloud compute v1 :: client :: Instances ; use google cloud compute v1 :: model ::{ AttachedDisk , AttachedDiskInitializeParams , Instance , NetworkInterface , }; use google cloud lro :: Poller ; pub async fn sample ( client : & Instances , project id : & str , name : & str ) - > anyhow :: Result < () > { const ZONE : & str = "us-central1-a" ; let instance = Instance :: new () . set machine type ( format! ( "zones/{ZONE}/machineTypes/f1-micro" )) . set name ( name ) . set description ( "A test VM created by the Rust client library." ) . set labels ([( "source" , "compute instances create" )]) . set disks ([ AttachedDisk :: new () . set initialize params ( AttachedDiskInitializeParams :: new () . set source image ( "projects/cos-cloud/global/images/family/cos-stable" ), ) . set boot ( true ) . set auto delete ( true )]) . set network interfaces ([ NetworkInterface :: new (). set network ( "global/networks/default" )]); let operation = client . insert () . set project ( project id ) . set zone ( ZONE ) . set body ( instance ) . poller () . until done () . await ? . to result () ? ; println! ( "Instance successfully created: {operation:?}" ); Ok (()) } Listing instances The following examples list instances in a project, either in one zone or across all zones: C# using Google.Cloud.Compute.V1 ; using System ; using System.Collections.Generic ; using System.Threading.Tasks ; public class ListZoneInstancesAsyncSample { public async Task<IList<Instance> > ListZoneInstancesAsync ( // TODO(developer): Set your own default values for these parameters or pass different values when calling this method. string projectId = "your-project-id" , string zone = "us-central1-a" ) { // Initialize client that will be used to send requests.
+- Each time you want to access the // next page, the library retrieves that page from the API. const listCallback = ( err , resources , nextPageRequest , response ) = > { if ( err ) { console . error ( err ); return ; } console . log ( Page ${ pageNum } : ); pageNum += 1 ; for ( let i = 0 ; i < resources . length ; i ++ ) { console . log ( resources [ i ]. name ); } if ( response . nextPageToken ) { imagesClient . list ( nextPageRequest , options , listCallback ); } }; imagesClient . list ( listRequest , options , listCallback ); } listImagesByPage (); PHP use Google\Cloud\Compute\V1\Client\ImagesClient; use Google\Cloud\Compute\V1\ListImagesRequest; / Prints a list of all non-deprecated image names available in given project. @param string $projectId Project ID or project number of the Cloud project you want to list images from. @throws \Google\ApiCore\ApiException if the remote call fails. / function list all images(string $projectId) { $imagesClient = new ImagesClient(); // Listing only non-deprecated images to reduce the size of the reply. $optionalArgs = ['maxResults' => 100, 'filter' => 'deprecated.state != DEPRECATED']; / Although the maxResults parameter is specified in the request, the iterateAllElements() method hides the pagination mechanic.
+- The library makes multiple requests to the API for you, so you can simply iterate over all the images. client . list ( request ) . each do image puts " - #{ image . name } " end end You can also use the pages attribute of the returned object to have more granular control of iteration over paginated results from the API. require "google/cloud/compute/v1" Prints a list of all non-deprecated image names available in a given project, divided into pages as returned by the Compute Engine API. @param [String] project ID or project number of the Cloud project you want to list images from. @param [Number] size of the pages you want the API to return on each call. def print images list by page project :, page size : 10 client = :: Google :: Cloud :: Compute :: V1 :: Images :: Rest :: Client . new Make the request to list all non-deprecated images in a project. request = { project : project , max results indicates the maximum number of items that will be returned per page. max results : page size , Listing only non-deprecated images to reduce the size of the reply. filter : "deprecated.state != DEPRECATED" } Call the each page method of the returned enumerable to have more granular control of iteration over paginated results from the API.
+- Each time you want to access the next page, the library retrieves that page from the API. for page num , page in enumerate ( images client . list ( request = images list request ) . pages , start = 1 ): print ( f "Page { page num } : " ) output . append ( f "Page { page num } : " ) for img in page . items : print ( f " - { img . name } " ) output . append ( f " - { img . name } " ) return " \n " . join ( output ) Ruby require "google/cloud/compute/v1" Prints a list of all non-deprecated image names available in given project. @param [String] project project ID or project number of the Cloud project you want to list images from. def print images list project : client = :: Google :: Cloud :: Compute :: V1 :: Images :: Rest :: Client . new Make the request to list all non-deprecated images in a project. request = { project : project , max results indicates the maximum number of items that will be returned per page. max results : 100 , Listing only non-deprecated images to reduce the size of the reply. filter : "deprecated.state != DEPRECATED" } Although the max results parameter is specified in the request, the iterable returned by the list method hides the pagination mechanic.
 

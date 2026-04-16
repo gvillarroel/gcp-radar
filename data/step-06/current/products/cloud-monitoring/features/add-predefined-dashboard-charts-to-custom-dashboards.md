@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.120Z"
+generated_at: "2026-04-15T00:01:13.922Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Add predefined dashboard charts to custom dashboards"
 feature_slug: "add-predefined-dashboard-charts-to-custom-dashboards"
 latest_feature_date: "2022-02-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
   - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
-  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
 keywords:
   - "add"
   - "predefined"
   - "dashboard"
   - "charts"
-  - "to"
   - "custom"
   - "dashboards"
   - "users"
+  - "can"
 ---
 
 # Add predefined dashboard charts to custom dashboards
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ Users can copy charts from predefined dashboards to custom dashboards and option
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
 - [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
-- [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
+- [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 182
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 20, 2023 Change We made improvements to the dashboard building experience: Improved the performance Simplified the layout and expanded the configurable settings Improved the widget drag and drop experience Enhanced the text widget Unified the chart-configuration experience between dashboards and the Metrics Explorer For more information, see Add charts and tables to a custom dashboard .
-- Change The improved dashboard building experience is now GA: Improved the performance Simplified the layout and expanded the configurable settings Improved the widget drag and drop experience Enhanced the text widget Unified the chart-configuration experience between dashboards and the Metrics Explorer For more information, see Add charts and tables to a custom dashboard .
-- For more information, see Manage integrations February 03, 2022 Feature You can now save a copy of a chart on a predefined dashboard to one of your custom dashboards by selecting Add to Custom Dashboard from the More Options menu on the chart.
-- August 21, 2023 Feature You can now add pie charts to your custom dashboards.
 
 ### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 - Source ID: `site-docs-reference`
-- Final score: 168
+- Final score: 144
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For example, to list active metrics that appear in no alerting policies and in no custom dashboards, add the following filters to the filter bar: Status: Active Alert Policies: (Empty) Custom Dashboards: (Empty) By default, when you add multiple filters, the table includes a row when the row meets all filters.
 - Metrics used or not used in a custom dashboard in the current Google Cloud project.These filters don't include metrics that are used in predefined dashboards provided by Cloud Monitoring.
 - Reads from Metrics Explorer or charts on custom dashboards are "console" reads, and API reads from other sources are "other".
+- For example, to list active metrics that appear in no alerting policies and in no custom dashboards, add the following filters to the filter bar: Status: Active Alert Policies: (Empty) Custom Dashboards: (Empty) By default, when you add multiple filters, the table includes a row when the row meets all filters.
 - Note: The Metrics Management page lists only alerting policies and custom dashboards defined in the current project; metrics listed with no alerting policies or custom dashboards might have alerting policies or custom dashboards in another project in your metrics scope.
 
-### "Collect OpenTelemetry Protocol (OTLP) metrics and traces \_|\_ Cloud Monitoring\
+### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
-- Source ID: `site-iam-reference`
-- Final score: 166
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- Source ID: `site-docs-reference-2`
+- Final score: 126
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The following tabs show the metric descriptor that each ingestion API creates: Prometheus API { "name": "projects/ PROJECT ID /metricDescriptors/prometheus.googleapis.com/otlp test cumulative/counter", "labels": [ { "key": "instance name" }, { "key": "machine type" } ], "metricKind": "CUMULATIVE", "valueType": "DOUBLE", "type": "prometheus.googleapis.com/otlp test cumulative/counter", "monitoredResourceTypes": [ "prometheus target" ] } Monitoring API { "name": "projects/ PROJECT ID /metricDescriptors/workload.googleapis.com/otlp.test.cumulative", "labels": [ { "key": "instrumentation source" } ], "metricKind": "CUMULATIVE", "valueType": "DOUBLE", "type": "workload.googleapis.com/otlp.test.cumulative", "monitoredResourceTypes": [ "gce instance", ...many other types deleted... ] } The following table summarizes some of the format differences imposed by the APIs used to ingest OTLP metrics: Prometheus API Monitoring API Metric domain prometheus.googleapis.com workload.googleapis.com OTLP metric name Modified during ingestion Used as provided Monitored resource prometheus target gce instance Ingestion formats and queries The metrics mode used in the OTLP receiver affects the way you query the resulting metrics in Cloud Monitoring when you build charts, dashboards, and alerting policies.
-- After the Ops Agent has collected your metrics, you can use the features of Cloud Monitoring, including charts, dashboards, and alerting policies, to monitor your metrics.
-- You can create charts, dashboards, and alerting policies in Monitoring for metrics of either metric format, but you refer to the metrics differently in queries.
-- The metrics mode choice doesn't affect your ability to create charts, dashboards, and alerting policies in Monitoring.
+- This is the project that you use to view your application's telemetry data: To get the permissions that you need to view log and metric data, and to create alerting policies and customize dashboards, ask your administrator to grant you the following IAM roles: Logs Viewer ( roles/logging.viewer ) on your App Hub host project or management project and any other projects listed in its default log scope.
+- Explore trace data Note: If your dashboards aren't displaying the trace data that you expect, then you might need to configure the default trace scope or you might need additional Identity and Access Management permissions.
+- Explore log data Note: If your dashboards aren't displaying the log data that you expect, then you might need to configure the default log scope or you might need additional Identity and Access Management permissions.
+- The Application Monitoring dashboards display the following: Details about your registered applications, including their location, criticality, and registered services ( ) and workloads ( ).
+
+### Cloud Monitoring overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
+- Source ID: `site-docs-reference`
+- Final score: 111
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Your custom dashboards can display the following.
+- You can also save charts to a custom dashboard.
+- Data visualization As you instantiate Google Cloud resources or register applications with App Hub , the dashboard service automatically creates Google Cloud-managed dashboards .
+- To complete these tasks, you can use the dashboard and charting services: To control what data you view and the display format for that data, create a custom dashboard .
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:39.812Z"
+generated_at: "2026-04-12T12:11:33.003Z"
 product_name: "Cloud Key Management Service"
 product_slug: "cloud-key-management-service"
 feature_name: "Cloud HSM for Google Workspace client-side encryption"
@@ -10,8 +10,9 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kms/docs/client-side-encryption"
-  - "https://docs.cloud.google.com/kms/docs/onboard-hsm-workspace"
-  - "https://docs.cloud.google.com/kms/docs/hsm-for-workspace"
+  - "https://docs.cloud.google.com/kms/docs/key-management-service"
+  - "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+  - "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
 keywords:
   - "hsm"
   - "for"
@@ -38,13 +39,14 @@ Cloud HSM for Google Workspace lets you use Cloud HSM keys for client-side encry
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kms/docs/client-side-encryption](https://docs.cloud.google.com/kms/docs/client-side-encryption)
-- [https://docs.cloud.google.com/kms/docs/onboard-hsm-workspace](https://docs.cloud.google.com/kms/docs/onboard-hsm-workspace)
-- [https://docs.cloud.google.com/kms/docs/hsm-for-workspace](https://docs.cloud.google.com/kms/docs/hsm-for-workspace)
+- [https://docs.cloud.google.com/kms/docs/key-management-service](https://docs.cloud.google.com/kms/docs/key-management-service)
+- [https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx](https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx)
+- [https://docs.cloud.google.com/kms/docs/cmek-best-practices](https://docs.cloud.google.com/kms/docs/cmek-best-practices)
 
 ## Supporting Pages
 
@@ -52,39 +54,54 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kms/docs/client-side-encryption](https://docs.cloud.google.com/kms/docs/client-side-encryption)
 - Source ID: `site-iam-reference`
-- Final score: 218
+- Final score: 230
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Cloud KMS Start free Overview Guides Reference Samples Resources More Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Protection levels Overview Cloud HSM overview Single-tenant Cloud HSM overview Cloud EKM overview Reference architectures for Cloud EKM CMEK overview Cloud KMS with Autokey Compatible services Cloud HSM for Google Workspace Locations Get started Cloud KMS resources Key purposes and algorithms Separation of duties Create and use encryption keys CMEK best practices Create and manage Single-tenant Cloud HSM instances Create keys Automate key creation Autokey overview Enable Autokey Create a resource with Autokey Create a key ring Create a key Import keys About key import Key wrapping Format a key for import Manually wrap a key for import Configure OpenSSL for manual key wrapping Wrap a key using OpenSSL Set up automatic key wrapping Import a key version Verify an imported key version Create external keys Set up Cloud EKM over the internet Create an EKM connection Create an external Key Control access Manage IAM roles Use Organization Policy Contraints Create custom organization policy constraints for Cloud KMS CMEK organization policies Control key destruction Secure data using keys Key APIs Use gRPC Access the API Sort and filter API list results Generate random bytes Use Cloud KMS keys in Google Cloud Encrypt and decrypt data Envelope encryption Additional authenticated data Asymmetric encryption Encrypt and decrypt data with a symmetric key Encrypt and decrypt data with a raw symmetric key Encrypt and decrypt data with an asymmetric key Verify end-to-end data integrity Encrypt application data Set up client-side encryption with Tink Onboard to Cloud HSM for Google Workspace Sign and validate data Digital signatures Create and validate signatures MAC signatures Create and validate MAC signatures Share secrets using key encapsulation mechanisms Key encapsulation mechanisms Encapsulate and decapsulate using KEMs Manage keys Resource consistency Key version states View keys and key details View keys by project View encryption metrics View key usage Get a Cloud KMS resource ID Retrieve a public key Attest a Cloud HSM key Label a key Create and manage tags Enable and disable a key version Destroy and restore a key version Delete Cloud KMS resources Rotate keys About key rotation Rotate a key Re-encrypt data Update external key reference Monitor Using Cloud Audit Logging Cloud KMS Inventory Service audit logging Monitor state changes Monitor and adjust quotas Use Cloud Monitoring Monitor EKM usage Troubleshoot Troubleshoot failed imports Troubleshoot EKM via VPC errors AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Overview Before you begin Required roles Envelope encryption with Tink Connect Tink and Cloud KMS Initialize Tink and encrypt data What's next?
 - When using client-side encryption, you're responsible for creating and managing your encryption keys and encrypting your data before sending it to the cloud.
 - Overview Client-side encryption is any encryption performed prior to sending your data to the cloud.
 - StorageOptions ; import com.google.crypto.tink.Aead ; import com.google.crypto.tink.KmsClient ; import com.google.crypto.tink.aead.AeadConfig ; import com.google.crypto.tink.aead.KmsEnvelopeAead ; import com.google.crypto.tink.aead.PredefinedAeadParameters ; import com.google.crypto.tink.integration.gcpkms.GcpKmsClient ; import java.io.File ; import java.io.FileInputStream ; import java.io.FileOutputStream ; import java.nio.file.Files ; import java.nio.file.Paths ; import java.security.GeneralSecurityException ; import java.util.Arrays ; / A command-line utility for encrypting small files with envelope encryption and uploading the results to GCS. <p>The CLI takes the following required arguments: <ul> <li>mode: "encrypt" or "decrypt" to indicate if you want to encrypt or decrypt. <li>kek-uri: The URI for the Cloud KMS key to be used for envelope encryption. <li>gcp-credential-file: Name of the file with the GCP credentials (in JSON format) that can access the Cloud KMS key and the GCS input/output blobs. <li>gcp-project-id: The ID of the GCP project hosting the GCS blobs that you want to encrypt or decrypt. </ul> <p>When mode is "encrypt", it takes the following additional arguments: <ul> <li>local-input-file: Read the plaintext from this local file. <li>gcs-output-blob: Write the encryption result to this blob in GCS.
+- Home Documentation Security Cloud KMS Guides Send feedback Client-side encryption with Tink and Cloud KMS Stay organized with collections Save and categorize content based on your preferences.
 
-### "Onboard to Cloud HSM for Google Workspace \_|\_ Cloud Key Management Service\
+### Cloud Key Management Service overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/kms/docs/onboard-hsm-workspace](https://docs.cloud.google.com/kms/docs/onboard-hsm-workspace)
+- URL: [https://docs.cloud.google.com/kms/docs/key-management-service](https://docs.cloud.google.com/kms/docs/key-management-service)
+- Source ID: `site-api-reference`
+- Final score: 216
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Multi-tenant Cloud HSM for Google Workspace You can use your Multi-tenant Cloud HSM keys in Cloud HSM for Google Workspace to manage the keys used for client-side encryption (CSE) in Google Workspace.
+- Use Multi-tenant Cloud HSM keys for client-side encryption in Google Workspace You control automatic key rotation schedule; IAM roles and permissions; enable, disable, or destroy key versions.
+- Generate Multi-tenant Cloud HSM keys and use them with Cloud HSM for Google Workspace to enable client-side encryption (CSE) in Google Workspace.
+- For example, you can use the Cloud KMS API or client libraries to use your Cloud KMS keys for client-side encryption .
+
+### "Use a Cloud HSM key for TLS offloading with NGINX \_|\_ Cloud Key Management\
+
+- URL: [https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx](https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx)
+- Source ID: `site-api-reference`
+- Final score: 197
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Prepare library configurations for NGINX Allow NGINX to log its PKCS #11 engine operations with the library with the following: sudo mkdir /var/log/kmsp11 sudo chown www-data /var/log/kmsp11 Create an empty library configuration file with the appropriate permissions for NGINX. sudo touch /etc/nginx/pkcs11-config.yaml sudo chmod 744 /etc/nginx/pkcs11-config.yaml Edit the empty config file and add the needed configuration as shown in the following snippet: cat /etc/nginx/pkcs11-config.yaml --- tokens: - key ring: "projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING " log directory: "/var/log/kmsp11" Test your OpenSSL configuration Run the following command: openssl engine -tt -c -v pkcs11 You should see output similar to the following: (pkcs11) pkcs11 engine [RSA, rsaEncryption, id-ecPublicKey] [ available ] SO PATH, MODULE PATH, PIN, VERBOSE, QUIET, INIT ARGS, FORCE LOGIN Configure NGINX to use Cloud HSM Allow TLS offloading by editing a few NGINX files.
+- Test NGINX uses TLS offloading to your Cloud HSM Use the openssl s client to test connection to your NGINX server by running the following command: openssl s client -connect localhost:443 The client completes the SSL handshake and waits for your input: completes SSL handshake ... ... ...
+- Create a Cloud HSM-hosted signing key Create a Cloud HSM EC-P256-SHA256 signing key in your Google Cloud project, in the key ring that you previously configured for OpenSSL: gcloud kms keys create NGINX KEY \ --keyring " KEY RING " --project " PROJECT ID " \ --location " LOCATION " --purpose "asymmetric-signing" \ --default-algorithm "ec-sign-p256-sha256" --protection-level "hsm" Note: Make sure that your Compute Engine service account has the correct Identity and Access Management (IAM) permissions on the key ring to be able to use it.
+- In the http block add the following attributes: ssl certificate "/etc/ssl/nginx/ CA CERT " ; ssl certificate key "engine:pkcs11: PKCS KEY TYPE = KEY IDENTIFIER " ; ssl protocols TLSv1.2 TLSv1.3 ; # Consider changing the default to only TLS1.2 or newer Consider defining the ssl ciphers to use ciphers approved by your security teams and handle appropriate client compatibility requirements.
+
+### "Best practices for using CMEKs \_|\_ Cloud Key Management Service \_|\_\
+
+- URL: [https://docs.cloud.google.com/kms/docs/cmek-best-practices](https://docs.cloud.google.com/kms/docs/cmek-best-practices)
 - Source ID: `site-iam-reference`
-- Final score: 208
+- Final score: 181
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Cloud KMS Start free Overview Guides Reference Samples Resources More Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Protection levels Overview Cloud HSM overview Single-tenant Cloud HSM overview Cloud EKM overview Reference architectures for Cloud EKM CMEK overview Cloud KMS with Autokey Compatible services Cloud HSM for Google Workspace Locations Get started Cloud KMS resources Key purposes and algorithms Separation of duties Create and use encryption keys CMEK best practices Create and manage Single-tenant Cloud HSM instances Create keys Automate key creation Autokey overview Enable Autokey Create a resource with Autokey Create a key ring Create a key Import keys About key import Key wrapping Format a key for import Manually wrap a key for import Configure OpenSSL for manual key wrapping Wrap a key using OpenSSL Set up automatic key wrapping Import a key version Verify an imported key version Create external keys Set up Cloud EKM over the internet Create an EKM connection Create an external Key Control access Manage IAM roles Use Organization Policy Contraints Create custom organization policy constraints for Cloud KMS CMEK organization policies Control key destruction Secure data using keys Key APIs Use gRPC Access the API Sort and filter API list results Generate random bytes Use Cloud KMS keys in Google Cloud Encrypt and decrypt data Envelope encryption Additional authenticated data Asymmetric encryption Encrypt and decrypt data with a symmetric key Encrypt and decrypt data with a raw symmetric key Encrypt and decrypt data with an asymmetric key Verify end-to-end data integrity Encrypt application data Set up client-side encryption with Tink Onboard to Cloud HSM for Google Workspace Sign and validate data Digital signatures Create and validate signatures MAC signatures Create and validate MAC signatures Share secrets using key encapsulation mechanisms Key encapsulation mechanisms Encapsulate and decapsulate using KEMs Manage keys Resource consistency Key version states View keys and key details View keys by project View encryption metrics View key usage Get a Cloud KMS resource ID Retrieve a public key Attest a Cloud HSM key Label a key Create and manage tags Enable and disable a key version Destroy and restore a key version Delete Cloud KMS resources Rotate keys About key rotation Rotate a key Re-encrypt data Update external key reference Monitor Using Cloud Audit Logging Cloud KMS Inventory Service audit logging Monitor state changes Monitor and adjust quotas Use Cloud Monitoring Monitor EKM usage Troubleshoot Troubleshoot failed imports Troubleshoot EKM via VPC errors AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Before you begin Compatible locations Set up a Google Cloud project for Cloud KMS Manage CHGWS service endpoint Set up Cloud KMS keys Request onboarding and endpoint creation Configure CHGWS endpoint in Google Workspace CSE Migrate Endpoints Delete or disable endpoints Enable endpoints What's next Home Documentation Security Cloud KMS Guides Was this helpful?
-- On this page Before you begin Compatible locations Set up a Google Cloud project for Cloud KMS Manage CHGWS service endpoint Set up Cloud KMS keys Request onboarding and endpoint creation Configure CHGWS endpoint in Google Workspace CSE Migrate Endpoints Delete or disable endpoints Enable endpoints What's next This page describes how to onboard Cloud HSM for Google Workspace (CHGWS), the encryption key service for Google Workspace offered by Cloud Key Management Service (Cloud KMS).
-- Enable Google Workspace Client-side Encryption (CSE) in your Google Workspace.
-- Onboard to Cloud HSM for Google Workspace Cloud Key Management Service Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools More / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-
-### "Cloud HSM for Google Workspace \_|\_ Cloud Key Management Service \_|\_\
-
-- URL: [https://docs.cloud.google.com/kms/docs/hsm-for-workspace](https://docs.cloud.google.com/kms/docs/hsm-for-workspace)
-- Source ID: `site-iam-reference`
-- Final score: 206
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Cloud KMS Start free Overview Guides Reference Samples Resources More Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Protection levels Overview Cloud HSM overview Single-tenant Cloud HSM overview Cloud EKM overview Reference architectures for Cloud EKM CMEK overview Cloud KMS with Autokey Compatible services Cloud HSM for Google Workspace Locations Get started Cloud KMS resources Key purposes and algorithms Separation of duties Create and use encryption keys CMEK best practices Create and manage Single-tenant Cloud HSM instances Create keys Automate key creation Autokey overview Enable Autokey Create a resource with Autokey Create a key ring Create a key Import keys About key import Key wrapping Format a key for import Manually wrap a key for import Configure OpenSSL for manual key wrapping Wrap a key using OpenSSL Set up automatic key wrapping Import a key version Verify an imported key version Create external keys Set up Cloud EKM over the internet Create an EKM connection Create an external Key Control access Manage IAM roles Use Organization Policy Contraints Create custom organization policy constraints for Cloud KMS CMEK organization policies Control key destruction Secure data using keys Key APIs Use gRPC Access the API Sort and filter API list results Generate random bytes Use Cloud KMS keys in Google Cloud Encrypt and decrypt data Envelope encryption Additional authenticated data Asymmetric encryption Encrypt and decrypt data with a symmetric key Encrypt and decrypt data with a raw symmetric key Encrypt and decrypt data with an asymmetric key Verify end-to-end data integrity Encrypt application data Set up client-side encryption with Tink Onboard to Cloud HSM for Google Workspace Sign and validate data Digital signatures Create and validate signatures MAC signatures Create and validate MAC signatures Share secrets using key encapsulation mechanisms Key encapsulation mechanisms Encapsulate and decapsulate using KEMs Manage keys Resource consistency Key version states View keys and key details View keys by project View encryption metrics View key usage Get a Cloud KMS resource ID Retrieve a public key Attest a Cloud HSM key Label a key Create and manage tags Enable and disable a key version Destroy and restore a key version Delete Cloud KMS resources Rotate keys About key rotation Rotate a key Re-encrypt data Update external key reference Monitor Using Cloud Audit Logging Cloud KMS Inventory Service audit logging Monitor state changes Monitor and adjust quotas Use Cloud Monitoring Monitor EKM usage Troubleshoot Troubleshoot failed imports Troubleshoot EKM via VPC errors AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page How Cloud HSM for Google Workspace works Features and benefits What's next Home Documentation Security Cloud KMS Guides Was this helpful?
-- On this page How Cloud HSM for Google Workspace works Features and benefits What's next Cloud HSM for Google Workspace is an encryption key service that provides client-side encryption (CSE) for Google Workspace.
-- Cloud HSM for Google Workspace lets you have greater control over your encryption keys, and can help you meet regulatory and compliance requirements.
-- How Cloud HSM for Google Workspace works Cloud HSM for Google Workspace uses envelope encryption to protect your Google Workspace data such as files and emails.
+- For other use cases such as client-side encryption, review the available key purposes and algorithms to choose the option most appropriate to your use case.
+- If you want to follow a different granularity strategy, consider the following trade-offs of different patterns: High granularity keys —for example, one key for each individual resource More control to safely disable key versions: Disabling or destroying a key version that is used for a narrow scope has lower risk of affecting other resources than disabling or destroying a shared key.
+- When you create a key, you must either allow Cloud KMS to generate the key material for you or manually import key material generated outside of Google Cloud.
+- If you don't require these capabilities, evaluate whether default encryption at rest with Google-owned and managed keys is appropriate for your use case.
 

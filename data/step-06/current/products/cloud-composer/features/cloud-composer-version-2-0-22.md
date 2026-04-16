@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.192Z"
+generated_at: "2026-04-12T12:11:19.394Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer version 2.0.22"
 feature_slug: "cloud-composer-version-2-0-22"
 latest_feature_date: "2023-08-07"
 deprecation_date: "2023-08-07"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
   - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
+  - "https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots"
 keywords:
   - "composer"
   - "version"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer version 2.0.22
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer version 2.0.22 has reached end of full support; deprecated on 202
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- [https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots](https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 196
+- Final score: 244
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +63,24 @@ Evidence snippets:
 - Last patch of the previous Cloud Composer 2 minor version: composer-2.10.2-airflow- Cloud Composer 2 versions with an extended upgrade timeline: composer-2.10.2-airflow- , composer-2.10.1-ariflow- , composer-2.9.7-airflow- , and other versions with an extended upgrade timeline.
 - In Google Cloud CLI, API, or Terraform, you can upgrade an existing environment to the latest supported versions, three previous versions of Cloud Composer 2, the last patch version of the previous minor version, and to versions with an extended upgrade timeline.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 192
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 212
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Change (Airflow 2.1.1) downgraded google-cloud-memcache dependency from 1.1.0 to 1.0.0 Change (Airflow 2.1.1) Downgraded colorlog dependency from 5.0.1 to 4.8.0 Change New versions of Cloud Composer images: composer-1.16.14-airflow-1.10.12 composer-1.16.14-airflow-1.10.14 composer-1.16.14-airflow-1.10.15 (default) composer-1.17.0-preview.10-airflow-2.0.2 composer-1.17.0-preview.10-airflow-2.1.1 Deprecated Cloud Composer 1.11.2 has reached its end of full support period .
-- Changes compared to version 2022.8.26+composer : Fix the Triggerer's async thread was blocked error in the deferrable mode for Composer Operators. ( #25951 ) Fix a delay in Dataproc CreateBatch operator ( #26126 ) Show better log for Datafusion operators when the response is empty ( #26202 ) Deprecated Cloud Composer versions 1.17.0 , and 2.0.0-preview.1 have reached their end of full support period .
-- Change New versions of Cloud Composer images: composer-1.17.2-airflow-2.1.2 composer-1.17.2-airflow-2.0.2 composer-1.17.2-airflow-1.10.15 (default) composer-1.17.2-airflow-1.10.14 composer-1.17.2-airflow-1.10.12 composer-2.0.0-preview.3-airflow-2.1.2 (default) composer-2.0.0-preview.3-airflow-2.0.2 Deprecated Cloud Composer 1.12.1 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.17.1-airflow-2.1.2 composer-1.17.1-airflow-2.0.2 composer-1.17.1-airflow-1.10.15 (default) composer-1.17.1-airflow-1.10.14 composer-1.17.1-airflow-1.10.12 composer-2.0.0-preview.2-airflow-2.1.2 composer-2.0.0-preview.2-airflow-2.0.2 Deprecated Cloud Composer 1.12.0 has reached its end of full support period .
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
+- Cloud Composer shouldn't be impacted by Apache Log4j 2 Vulnerability (CVE-2021-44228) In response to Apache Log4j 2 Vulnerability (CVE-2021-44228) , Cloud Composer has conducted a detailed investigation and we believe that Cloud Composer is not vulnerable to this exploit.
+- Usage of Deployment Manager to manage Google Cloud resources protected by VPC Service Controls Cloud Composer 1 and Cloud Composer 2 versions 2.0.x use Deployment Manager to create components of Cloud Composer environments.
 
 ### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - Source ID: `site-iam-reference`
-- Final score: 172
+- Final score: 209
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.softwareConfig.pypiPackages.EXAMPLE PACKAGE, // config.softwareConfig.pypiPackages.ANOTHER PACKAGE { "config" : { "softwareConfig" : { "pypiPackages" : { "EXAMPLE PACKAGE" : "" , "ANOTHER PACKAGE" : ">=1.10.3" } } } } Terraform The pypi packages block in the software config block specifies packages. resource "google composer environment" "example" { name = " ENVIRONMENT NAME " region = " LOCATION " config { software config { pypi packages = { PACKAGE NAME = " EXTRAS AND VERSION " } } } } Replace: ENVIRONMENT NAME with the name of the environment.
 - Installing one package Update your environment, and specify the package, version, and extras in the --update-pypi-package argument. gcloud composer environments update ENVIRONMENT NAME \ --location LOCATION \ --update-pypi-package PACKAGE NAME EXTRAS AND VERSION Replace: ENVIRONMENT NAME with the name of the environment.
 - Note: Cloud Composer does not support pip customization and does not resolve package dependencies and conflicts outside of the resolution mechanisms that the default pip tool provides.
+
+### "Save and load environment snapshots \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots](https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots)
+- Source ID: `site-docs-root`
+- Final score: 206
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- For example, gs://us-central1-example-916807e1-bucket/snapshots/example-project us-central1 example-environment 2022-01-05T18-59-00 . (Optional) In the request body, in the skipPypiPackagesInstallation field specify if Cloud Composer must skip the installation of custom PyPI packages from the snapshot.
+- Create a snapshot of an existing environment, create a new environment that uses the same or later version of Cloud Composer, then apply the snapshot to this new environment.
+- For example, if a snapshot has example package>=1.0 as a requirement, then a different version of the package can be installed when you load the snapshot.
 

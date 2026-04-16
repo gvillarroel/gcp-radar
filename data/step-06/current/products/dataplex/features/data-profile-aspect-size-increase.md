@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.587Z"
+generated_at: "2026-04-12T12:13:48.454Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Data profile aspect size increase"
 feature_slug: "data-profile-aspect-size-increase"
 latest_feature_date: "2026-02-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
-  - "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+  - "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+  - "https://docs.cloud.google.com/dataplex/docs/audit-logging"
 keywords:
   - "profile"
   - "aspect"
@@ -26,7 +27,7 @@ keywords:
 # Data profile aspect size increase
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Dataplex Universal Catalog supports saving data profile aspects up to 1 MB in si
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata](https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata)
-- [https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints](https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
+- [https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints](https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints)
+- [https://docs.cloud.google.com/dataplex/docs/audit-logging](https://docs.cloud.google.com/dataplex/docs/audit-logging)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata](https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 226
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This client only needs to be created // once, and can be reused for multiple requests. try ( CatalogServiceClient client = CatalogServiceClient . create ()) { Entry entry = Entry . newBuilder () . setName ( EntryName . of ( projectId , location , entryGroupId , entryId ). toString ()) . setEntrySource ( EntrySource . newBuilder () . setDescription ( "updated description of the entry" ) . build ()) . putAllAspects ( Map . of ( "dataplex-types.global.generic" , Aspect . newBuilder () . setAspectType ( "projects/dataplex-types/locations/global/aspectTypes/generic" ) . setData ( Struct . newBuilder () // "Generic" Aspect Type have fields called "type" and "system. // The values below are a sample of possible options. . putFields ( "type" , Value . newBuilder () . setStringValue ( "updated example value" ) . build ()) . putFields ( "system" , Value . newBuilder () . setStringValue ( "updated example system" ) . build ()) . build ()) . build ())) . build (); // Update mask specifies which fields will be updated. // For more information on update masks, see: https://google.aip.dev/161 FieldMask updateMask = FieldMask . newBuilder (). addPaths ( "aspects" ). addPaths ( "entry source.description" ). build (); return client . updateEntry ( entry , updateMask ); } } } Python Python Before trying this sample, follow the Python setup instructions in the Knowledge Catalog quickstart using client libraries .
@@ -62,11 +64,24 @@ Evidence snippets:
 - Required roles To get the permissions that you need to create and manage aspect types and aspects, ask your administrator to grant you the following IAM roles on the resource: Full set of permissions on metadata resources in Knowledge Catalog, including aspect types and data aspects: Dataplex Catalog Admin ( roles/dataplex.catalogAdmin ) Create and manage metadata resources in Knowledge Catalog, including aspect types and data aspects: Dataplex Catalog Editor ( roles/dataplex.catalogEditor ) Full set of permissions on custom aspect types (except for permissions to use aspect types to create or edit entries): Dataplex Aspect Type Owner ( roles/dataplex.aspectTypeOwner ) View aspect types and IAM policies associated with them: Dataplex Catalog Viewer ( roles/dataplex.catalogViewer ) Use aspect types to create and modify entries with the corresponding aspects: Dataplex Aspect Type User ( roles/dataplex.aspectTypeUser ) Add aspects of some of the system aspect types, such as schema , schema-join , overview , contacts : Dataplex Entry and EntryLink Owner ( roles/dataplex.entryOwner ) For more information about granting roles, see Manage access to projects, folders, and organizations .
 - For more information, see Set up authentication for a local development environment . using Google.Api.Gax ; using Google.Api.Gax.ResourceNames ; using Google.Cloud.Dataplex.V1 ; using System ; public sealed partial class GeneratedCatalogServiceClientSnippets { /// <summary>Snippet for ListAspectTypes</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void ListAspectTypesRequestObject () { // Create client CatalogServiceClient catalogServiceClient = CatalogServiceClient .
 
+### "Package com.google.cloud.dataplex.v1 (1.86.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
+- Source ID: `site-java-reference`
+- Final score: 202
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Cmek Service Client Service Description: Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service This class provides the ability to make remote calls to the backing service through method calls that map to API methods.
+- Content Service Grpc ContentService manages Notebook and SQL Scripts for Dataplex Universal Catalog. com. google. cloud. dataplex. v1.
+- Async Service ContentService manages Notebook and SQL Scripts for Dataplex Universal Catalog. com. google. cloud. dataplex. v1.
+- Cmek Service Grpc Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service com. google. cloud. dataplex. v1.
+
 ### "Manage Dataplex Universal Catalog resources using custom constraints \_\
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints](https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints)
 - Source ID: `site-docs-root-2`
-- Final score: 168
+- Final score: 199
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,16 +90,17 @@ Evidence snippets:
 - Home Documentation Data analytics Knowledge Catalog Guides Send feedback Manage Dataplex Universal Catalog resources using custom constraints Stay organized with collections Save and categorize content based on your preferences.
 - As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog.
 
-### "Package com.google.cloud.dataplex.v1 (1.86.0) \_|\_ Java client libraries\
+### "Dataplex Universal Catalog audit logging \_|\_ Knowledge Catalog \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
-- Source ID: `site-java-reference`
-- Final score: 162
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataplex/docs/audit-logging](https://docs.cloud.google.com/dataplex/docs/audit-logging)
+- Source ID: `site-docs-root-2`
+- Final score: 184
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Cmek Service Client Service Description: Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service This class provides the ability to make remote calls to the backing service through method calls that map to API methods.
-- Content Service Grpc ContentService manages Notebook and SQL Scripts for Dataplex Universal Catalog. com. google. cloud. dataplex. v1.
-- Async Service ContentService manages Notebook and SQL Scripts for Dataplex Universal Catalog. com. google. cloud. dataplex. v1.
-- Cmek Service Grpc Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service com. google. cloud. dataplex. v1.
+- Permission type Methods ADMIN READ google.cloud.dataplex.v1.CatalogService.GetAspectType google.cloud.dataplex.v1.CatalogService.GetEntry google.cloud.dataplex.v1.CatalogService.GetEntryGroup google.cloud.dataplex.v1.CatalogService.GetEntryType google.cloud.dataplex.v1.CatalogService.GetMetadataJob google.cloud.dataplex.v1.CatalogService.ListAspectTypes google.cloud.dataplex.v1.CatalogService.ListEntries google.cloud.dataplex.v1.CatalogService.ListEntryGroups google.cloud.dataplex.v1.CatalogService.ListEntryTypes google.cloud.dataplex.v1.CatalogService.ListMetadataJobs google.cloud.dataplex.v1.CatalogService.LookupEntry google.cloud.dataplex.v1.ContentService.GetContent GetIamPolicy google.cloud.dataplex.v1.ContentService.ListContent google.cloud.dataplex.v1.DataScanService.ListDataScanJobs google.cloud.dataplex.v1.DataScanService.ListDataScans google.cloud.dataplex.v1.DataTaxonomyService.GetDataAttribute google.cloud.dataplex.v1.DataTaxonomyService.GetDataAttributeBinding google.cloud.dataplex.v1.DataTaxonomyService.GetDataTaxonomy google.cloud.dataplex.v1.DataTaxonomyService.ListDataAttributeBindings google.cloud.dataplex.v1.DataTaxonomyService.ListDataAttributes google.cloud.dataplex.v1.DataTaxonomyService.ListDataTaxonomies google.cloud.dataplex.v1.DataplexService.GetAsset google.cloud.dataplex.v1.DataplexService.GetEnvironment google.cloud.dataplex.v1.DataplexService.GetJob google.cloud.dataplex.v1.DataplexService.GetLake google.cloud.dataplex.v1.DataplexService.GetTask google.cloud.dataplex.v1.DataplexService.GetZone google.cloud.dataplex.v1.DataplexService.ListAssetActions google.cloud.dataplex.v1.DataplexService.ListAssets google.cloud.dataplex.v1.DataplexService.ListEnvironments google.cloud.dataplex.v1.DataplexService.ListJobs google.cloud.dataplex.v1.DataplexService.ListLakeActions google.cloud.dataplex.v1.DataplexService.ListLakes google.cloud.dataplex.v1.DataplexService.ListTasks google.cloud.dataplex.v1.DataplexService.ListZoneActions google.cloud.dataplex.v1.DataplexService.ListZones GetIamPolicy ADMIN WRITE google.cloud.dataplex.v1.CatalogService.CancelMetadataJob google.cloud.dataplex.v1.CatalogService.CreateAspectType (LRO) google.cloud.dataplex.v1.CatalogService.CreateEntry google.cloud.dataplex.v1.CatalogService.CreateEntryGroup (LRO) google.cloud.dataplex.v1.CatalogService.CreateEntryType (LRO) google.cloud.dataplex.v1.CatalogService.CreateMetadataJob (LRO) google.cloud.dataplex.v1.CatalogService.DeleteAspectType (LRO) google.cloud.dataplex.v1.CatalogService.DeleteEntry google.cloud.dataplex.v1.CatalogService.DeleteEntryGroup (LRO) google.cloud.dataplex.v1.CatalogService.DeleteEntryType (LRO) google.cloud.dataplex.v1.CatalogService.UpdateAspectType (LRO) google.cloud.dataplex.v1.CatalogService.UpdateEntry google.cloud.dataplex.v1.CatalogService.UpdateEntryGroup (LRO) google.cloud.dataplex.v1.CatalogService.UpdateEntryType (LRO) google.cloud.dataplex.v1.ContentService.CreateContent google.cloud.dataplex.v1.ContentService.DeleteContent SetIamPolicy google.cloud.dataplex.v1.ContentService.UpdateContent google.cloud.dataplex.v1.DataScanService.CreateDataScan (LRO) google.cloud.dataplex.v1.DataScanService.DeleteDataScan (LRO) google.cloud.dataplex.v1.DataScanService.RunDataScan google.cloud.dataplex.v1.DataScanService.UpdateDataScan (LRO) google.cloud.dataplex.v1.DataTaxonomyService.CreateDataAttribute (LRO) google.cloud.dataplex.v1.DataTaxonomyService.CreateDataAttributeBinding (LRO) google.cloud.dataplex.v1.DataTaxonomyService.CreateDataTaxonomy (LRO) google.cloud.dataplex.v1.DataTaxonomyService.DeleteDataAttribute (LRO) google.cloud.dataplex.v1.DataTaxonomyService.DeleteDataAttributeBinding (LRO) google.cloud.dataplex.v1.DataTaxonomyService.DeleteDataTaxonomy (LRO) google.cloud.dataplex.v1.DataTaxonomyService.UpdateDataAttribute (LRO) google.cloud.dataplex.v1.DataTaxonomyService.UpdateDataAttributeBinding (LRO) google.cloud.dataplex.v1.DataTaxonomyService.UpdateDataTaxonomy (LRO) google.cloud.dataplex.v1.DataplexService.CancelJob google.cloud.dataplex.v1.DataplexService.CreateAsset (LRO) google.cloud.dataplex.v1.DataplexService.CreateEnvironment google.cloud.dataplex.v1.DataplexService.CreateLake (LRO) google.cloud.dataplex.v1.DataplexService.CreateTask (LRO) google.cloud.dataplex.v1.DataplexService.CreateZone (LRO) google.cloud.dataplex.v1.DataplexService.DeleteAsset (LRO) google.cloud.dataplex.v1.DataplexService.DeleteEnvironment (LRO) google.cloud.dataplex.v1.DataplexService.DeleteLake (LRO) google.cloud.dataplex.v1.DataplexService.DeleteTask (LRO) google.cloud.dataplex.v1.DataplexService.DeleteZone (LRO) google.cloud.dataplex.v1.DataplexService.RunTask google.cloud.dataplex.v1.DataplexService.UpdateAsset (LRO) google.cloud.dataplex.v1.DataplexService.UpdateEnvironment google.cloud.dataplex.v1.DataplexService.UpdateLake (LRO) google.cloud.dataplex.v1.DataplexService.UpdateTask (LRO) google.cloud.dataplex.v1.DataplexService.UpdateZone (LRO) SetIamPolicy DATA READ google.cloud.dataplex.v1.DataScanService.GenerateDataQualityRules google.cloud.dataplex.v1.DataScanService.GetDataScan google.cloud.dataplex.v1.DataScanService.GetDataScanJob API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Dataplex Universal Catalog. google.cloud.dataplex.v1.CatalogService The following audit logs are associated with methods belonging to google.cloud.dataplex.v1.CatalogService .
+- Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.CreateEntry" CreateEntryGroup Method : google.cloud.dataplex.v1.CatalogService.CreateEntryGroup Audit log type : Admin activity Permissions : dataplex.entryGroups.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.CreateEntryGroup" CreateEntryType Method : google.cloud.dataplex.v1.CatalogService.CreateEntryType Audit log type : Admin activity Permissions : dataplex.entryTypes.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.CreateEntryType" CreateMetadataJob Method : google.cloud.dataplex.v1.CatalogService.CreateMetadataJob Audit log type : Admin activity Permissions : dataplex.aspectTypes.use - ADMIN WRITE dataplex.entryTypes.use - ADMIN WRITE dataplex.metadataJobs.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.CreateMetadataJob" DeleteAspectType Method : google.cloud.dataplex.v1.CatalogService.DeleteAspectType Audit log type : Admin activity Permissions : dataplex.aspectTypes.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.DeleteAspectType" DeleteEntry Method : google.cloud.dataplex.v1.CatalogService.DeleteEntry Audit log type : Admin activity Permissions : dataplex.entries.delete - ADMIN WRITE Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.DeleteEntry" DeleteEntryGroup Method : google.cloud.dataplex.v1.CatalogService.DeleteEntryGroup Audit log type : Admin activity Permissions : dataplex.entryGroups.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.DeleteEntryGroup" DeleteEntryType Method : google.cloud.dataplex.v1.CatalogService.DeleteEntryType Audit log type : Admin activity Permissions : dataplex.entryTypes.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.DeleteEntryType" GetAspectType Method : google.cloud.dataplex.v1.CatalogService.GetAspectType Audit log type : Data access Permissions : dataplex.aspectTypes.get - ADMIN READ Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.CancelMetadataJob" CreateAspectType Method : google.cloud.dataplex.v1.CatalogService.CreateAspectType Audit log type : Admin activity Permissions : dataplex.aspectTypes.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataplex.v1.CatalogService.CreateAspectType" CreateEntry Method : google.cloud.dataplex.v1.CatalogService.CreateEntry Audit log type : Admin activity Permissions : See IAM documentation for permissions.
 

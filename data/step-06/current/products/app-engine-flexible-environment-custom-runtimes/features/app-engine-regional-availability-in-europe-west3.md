@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:39:03.559Z"
+generated_at: "2026-04-14T23:21:29.618Z"
 product_name: "App Engine flexible environment custom runtimes"
 product_slug: "app-engine-flexible-environment-custom-runtimes"
 feature_name: "App Engine regional availability in europe-west3"
 feature_slug: "app-engine-regional-availability-in-europe-west3"
 latest_feature_date: "2017-08-01"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/locations"
+  - "https://docs.cloud.google.com/appengine/docs/locations"
 keywords:
-  - "Frankfurt (europe-west3)"
-  - "eu-west3"
-  - "App Engine in europe-west3"
-  - "region availability update"
-  - "europe-west3"
-  - "App Engine regions"
-  - "Frankfurt region"
-  - "App Engine regional availability"
+  - "app"
+  - "engine"
+  - "regional"
+  - "availability"
+  - "europe"
+  - "west3"
+  - "became"
+  - "available"
 ---
 
 # App Engine regional availability in europe-west3
 
 Product: App Engine flexible environment custom runtimes
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ App Engine became available in the europe-west3 (Frankfurt, Germany) region.
 
 App Engine became available in the europe-west3 (Frankfurt, Germany) region.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
+- [https://docs.cloud.google.com/appengine/docs/flexible/locations](https://docs.cloud.google.com/appengine/docs/flexible/locations)
+- [https://docs.cloud.google.com/appengine/docs/locations](https://docs.cloud.google.com/appengine/docs/locations)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "App Engine locations \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/locations](https://docs.cloud.google.com/appengine/docs/flexible/locations)
+- Source ID: `site-docs-reference-2`
+- Final score: 74
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .
+- You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.
+- Note: Two locations, which are called europe-west and us-central in App Engine commands and in the Google Cloud console, are called europe-west1 and us-central1 , respectively, elsewhere in Google documentation.
+- Home Documentation Application hosting App Engine Flexible environment Resources Send feedback App Engine locations Stay organized with collections Save and categorize content based on your preferences.
+
+### "App Engine locations \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/locations](https://docs.cloud.google.com/appengine/docs/locations)
+- Source ID: `site-docs-reference-2`
+- Final score: 74
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .
+- You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.
+- Note: Two locations, which are called europe-west and us-central in App Engine commands and in the Google Cloud console, are called europe-west1 and us-central1 , respectively, elsewhere in Google documentation.
+- Home Documentation Application hosting App Engine Standard environment Resources Send feedback App Engine locations Stay organized with collections Save and categorize content based on your preferences.
+
+### "Quickstart: Create a .NET app in the App Engine flexible environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
+- Source ID: `site-docs-reference`
+- Final score: 74
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- App Engine locations App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .
+- You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.
+- Note: Two locations, which are called europe-west and us-central in App Engine commands and in the Google Cloud console, are called europe-west1 and us-central1 , respectively, elsewhere in Google documentation.
+- By default, App Engine uses the latest available LTS .NET version if you don't specify a runtime version in your app.yaml file.
 

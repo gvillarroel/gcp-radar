@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.149Z"
+generated_at: "2026-04-12T12:11:20.378Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer GKEPodOperator support for GKE pod launches"
 feature_slug: "cloud-composer-gkepodoperator-support-for-gke-pod-launches"
 latest_feature_date: "2018-08-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc"
 keywords:
   - "composer"
   - "gkepodoperator"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer GKEPodOperator support for GKE pod launches
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer backported GKEPodOperator to launch Kubernetes pods in GKE cluste
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
+- [https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip)
+- [https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc](https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 172
+- Final score: 205
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +63,11 @@ Evidence snippets:
 - Make corrections if necessary. terraform plan Apply the Terraform configuration by running the following command and entering yes at the prompt: terraform apply In Google Cloud console of your Monitoring Project , go to the Monitoring Dashboard page: Go to Monitoring Dashboard Find your custom dashboard named Cloud Composer - Monitoring Platform in the Custom tab.
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Cross-project environment monitoring with Terraform Stay organized with collections Save and categorize content based on your preferences.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Backported GKEPodOperator to enable launching Kubernetes pods in GKE clusters that are accessible from Google Cloud connections.
-- Changes compared to version 6.8.0 : Breaking changes: Upgrade to support Google Ads v10 ( #22965 ) Features: [FEATURE] google provider - BigQueryInsertJobOperator log query ( #23648 ) [FEATURE] google provider - split GkeStartPodOperator execute ( #23518 ) Add exportContext.offload flag to CLOUD SQL EXPORT VALIDATION. ( #23614 ) Create links for BiqTable operators ( #23164 ) implements #22859 - Add .sql as templatable extension ( #22920 ) GCSFileTransformOperator : New templated fields 'source object', 'destination object' ( #23328 ) Bug Fixes Fix PostgresToGCSOperator does not allow nested JSON ( #23063 ) Fix GCSToGCSOperator ignores replace parameter when there is no wildcard ( #23340 ) update processor to fix broken download URLs ( #23299 ) LookerStartPdtBuildOperator , LookerCheckPdtBuildSensor : fix empty materialization id handling ( #23025 ) Change ComputeSSH to throw provider import error instead paramiko ( #23035 ) Fix cancel on kill after execution timeout for DataprocSubmitJobOperator ( #22955 ) Fix select query xcom push for BigQueryGetDataOperator ( #22936 ) MSSQLToGCSOperator fails: datetime is not JSON Serializable ( #22882 ) Update credentials when using ADC in Compute Engine #23773 Misc changes Add Stackdriver assets and migrate system tests to AIP-47 ( #23320 ) CloudTasks assets & system tests migration (AIP-47) ( #23282 ) TextToSpeech assets & system tests migration (AIP-47) ( #23247 ) Fix code-snippets in google provider ( #23438 ) BigQuery assets ( #23165 ) Remove redundant docstring in BigQueryUpdateTableSchemaOperator ( #23349 ) Migrate gcs to new system tests design ( #22778 ) add missing docstring in 'BigQueryHook.create empty table' ( #23270 ) Cleanup Google provider CHANGELOG.rst ( #23390 ) migrate system test gcs to bigquery into new design ( #22753 ) Add example DAG for demonstrating usage of GCS sensors ( #22808 ) Change (Airflow 1) The google-cloud-bigquery package is upgraded from 1.28.0 to 2.13.0.
-- Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.9.3-build.5 (default) composer-3-airflow-2.7.3-build.21 Change Cloud Composer 2.9.9 images are available: composer-2.9.9-airflow-2.9.3 (default) composer-2.9.9-airflow-2.7.3 October 22, 2024 Change (Only new Cloud Composer 2 environments, all versions) If a GKE Control Plane IP range is specified for an environment, GKE creates a new subnetwork in this range to provision the IP address for communication with the GKE Control Plane.
-- Change Cloud Composer 2.9.5 images are available: composer-2.9.5-airflow-2.9.3 composer-2.9.5-airflow-2.9.1 (default) composer-2.9.5-airflow-2.7.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.9.3-build.1 composer-3-airflow-2.9.1-build.8 (default) composer-3-airflow-2.7.3-build.17 September 18, 2024 Fixed (Cloud Composer 3) Fixed the issue that caused KubernetesPodOperator tasks to fail if they ran for longer than 15 minutes.
-
 ### "Migrate to Cloud Composer\_3 from Cloud Composer\_1 (Airflow 2) \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
 - Source ID: `site-docs-reference`
-- Final score: 148
+- Final score: 179
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +75,30 @@ Evidence snippets:
 - Cloud Composer loads configuration overrides, environment variables, and PyPI packages from your Cloud Composer 1 environment's snapshot to Cloud Composer 3 without changing or adjusting them for compatibility.
 - Monitor your Cloud Composer 3 environment After you transfer all DAGs and configuration to the Cloud Composer 3 environment, monitor it for potential issues, failed DAG runs, and overall environment health.
 - Note: Cloud Composer loads configuration overrides, environment variables, and PyPI packages from your Cloud Composer 1 environment to Cloud Composer 3 without changing or adjusting them for compatibility.
+
+### "Configure private IP networking \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip)
+- Source ID: `site-iam-reference`
+- Final score: 178
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- TCP 443 Environment's cluster Nodes Egress Allow Environment's subnetwork primary IP address range TCP, UDP all Environment's cluster Pods Egress Allow Secondary IP address range for Pods in the environment's subnetwork TCP, UDP all Environment's cluster Control Plane Egress Allow GKE Control Plane IP range TCP, UDP all Web server Egress Allow Web server network IP range TCP 3306, 3307 Caution: GKE service automatically creates a number of ingress and egress firewall rules so that your environment's cluster functions correctly (such as ingress and egress rules for Google Cloud Health Checks).
+- To create a Private IP environment, you need to have the following information: Your VPC network ID Your VPC subnetwork ID Two secondary IP ranges in your VPC subnetwork: Secondary IP range for pods Secondary IP range for services IP ranges for the components of the environment: GKE Control Plane IP range .
+- To get IP ranges for a subnetwork, go to VPC Networks page and click on the network's name to see details: Go to VPC Networks VPC-native cluster configuration Cloud Composer supports VPC-native GKE clusters in your environment.
+- Each Private IP environment requires two secondary ranges for the Cloud Composer GKE pods and services.
+
+### "Configure Shared VPC networking \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc](https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc)
+- Source ID: `site-iam-reference`
+- Final score: 178
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For each service account, add another role, compute.networkUser using one of the following options: Grant this role at the subnet level to allow a service account to set up the VPC peerings required by Cloud Composer.
+- Service and host projects for Cloud Composer Shared VPC requires that you designate a host project to which networks and subnetworks belong and a service project , which is attached to the host project.
+- If you use the IP Masquerate Agent and the Private IP configuration for your environments, then add the IP ranges of Nodes and Pods to the nonMasqueradeCIDRs section of the ip-masq-agent ConfigMap.
+- To set up Shared VPC, select the following IP ranges in the host project: Primary IP Range of the subnet used by GKE nodes that Cloud Composer uses as its Compute Engine layer.
 

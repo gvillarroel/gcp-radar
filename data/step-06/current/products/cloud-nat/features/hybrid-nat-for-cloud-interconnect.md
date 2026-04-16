@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:57:06.734Z"
+generated_at: "2026-04-12T12:11:52.327Z"
 product_name: "Cloud NAT"
 product_slug: "cloud-nat"
 feature_name: "Hybrid NAT for Cloud Interconnect"
 feature_slug: "hybrid-nat-for-cloud-interconnect"
 latest_feature_date: "2024-07-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/nat/docs/overview"
   - "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation"
   - "https://docs.cloud.google.com/nat/docs/troubleshooting"
+  - "https://docs.cloud.google.com/nat/docs/monitoring"
 keywords:
   - "hybrid"
   - "nat"
@@ -25,7 +26,7 @@ keywords:
 # Hybrid NAT for Cloud Interconnect
 
 Product: Cloud NAT
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,13 +38,14 @@ Hybrid NAT supports traffic over Cloud Interconnect.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/nat/docs/overview](https://docs.cloud.google.com/nat/docs/overview)
 - [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
+- [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
 
 ## Supporting Pages
 
@@ -51,9 +53,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/nat/docs/overview](https://docs.cloud.google.com/nat/docs/overview)
 - Source ID: `site-docs-reference`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 217
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - From a VPC network to a network outside of Google Cloud Private NAT supports the following options for traffic between VPC networks and on-premises or other cloud provider networks: Private-to-private NAT for networks connected through NCC hybrid spokes.
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - Source ID: `site-docs-root`
-- Final score: 110
+- Final score: 141
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 101
+- Final score: 130
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - The following are two example methods to determine a minimum number of ports: Consider the average value of compute.googleapis.com/nat/port usage over a representative time period for a representative number of VMs.
 - Consider the maximum value of compute.googleapis.com/nat/port usage over a representative time period for a representative number of VMs as a starting point for the maximum number of ports.
 - Consider the most frequently occurring value of compute.googleapis.com/nat/port usage over a representative time period for a representative number of VMs.
+
+### Logs and metrics \_|\_ Cloud NAT \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
+- Source ID: `site-docs-root`
+- Final score: 126
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- After sampling, data isn't visible for up to 165 seconds. nat project number : The project number to which the NAT gateway belongs. router id : The Cloud Router ID to which the NAT gateway belongs. nat gateway name : The name of the NAT gateway. nat ip : The NAT IP allocated to the NAT gateway. nat/closed connections count GA Closed connections count DELTA , INT64 , {connection} gce instance Count of connections closed over the NAT gateway.
+- After sampling, data isn't visible for up to 225 seconds. nat ip : NAT IP of the ports. nat/closed connections count GA Closed connections count DELTA , INT64 , {connection} nat gateway Count of connections closed over the NAT gateway.
+- After sampling, data isn't visible for up to 120 seconds. nat/new connections count GA New connections count DELTA , INT64 , {connection} nat gateway Count of new connections created over the NAT gateway.
+- What is logged Cloud NAT log entries contain information useful for monitoring and debugging your NAT traffic.
 

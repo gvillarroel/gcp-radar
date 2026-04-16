@@ -63,12 +63,15 @@ flowchart TD
     D --> E["Step 04: Capture product corpora with know"]
     E --> F["Step 05: Extract IAM inventory with gcloud"]
     E --> G["Step 06: Generate extended feature definitions"]
-    F --> H["Validation and evidence consolidation"]
-    G --> H
-    H --> I["Artifacts by product and feature"]
-    I --> J["Radar reports"]
-    G -. coverage feedback .-> D
-    G -. coverage feedback .-> E
+    G --> H["Step 07: Quality gate and feature-level failure feedback"]
+    F --> I["Validation and evidence consolidation"]
+    H --> I
+    I --> J["Artifacts by product and feature"]
+    J --> K["Radar reports"]
+    H -. gate feedback .-> C
+    H -. gate feedback .-> D
+    H -. gate feedback .-> E
+    H -. gate feedback .-> G
 ```
 
 ## Current Operational Shape
@@ -82,8 +85,9 @@ The most important current operating loop is:
 
 1. improve Step 03 URL discovery and classification
 2. rerun Step 04 corpus capture for targeted products
-3. measure uncovered features in Step 06
-4. push that feedback back into Step 03 and Step 04
+3. rerun Step 06 feature-definition extraction
+4. run Step 07 quality gate
+5. push that feedback back into Step 02, Step 03, Step 04, and Step 06
 
 That loop is what steadily reduces unsupported or duplicate feature
 definitions.

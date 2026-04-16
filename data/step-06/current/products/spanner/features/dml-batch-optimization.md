@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.021Z"
+generated_at: "2026-04-13T22:42:27.310Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "DML batch optimization"
@@ -9,18 +9,16 @@ latest_feature_date: "2022-02-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection.SpannerPool"
+  - "https://docs.cloud.google.com/spanner/docs/batch-write"
+  - "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+  - "https://docs.cloud.google.com/spanner/docs/query-operators-binary"
 keywords:
-  - "dml"
-  - "batch"
-  - "optimization"
-  - "spanner"
   - "optimizes"
-  - "processing"
-  - "of"
+  - "similar"
   - "groups"
+  - "optimization"
+  - "processing"
+  - "batch"
 ---
 
 # DML batch optimization
@@ -38,43 +36,53 @@ Spanner optimizes processing of groups of similar DML statements in batches to i
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection.SpannerPool](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection.SpannerPool)
+- [https://docs.cloud.google.com/spanner/docs/batch-write](https://docs.cloud.google.com/spanner/docs/batch-write)
+- [https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql](https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql)
+- [https://docs.cloud.google.com/spanner/docs/query-operators-binary](https://docs.cloud.google.com/spanner/docs/query-operators-binary)
 
 ## Supporting Pages
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### Modify data using batch write \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 79
+- URL: [https://docs.cloud.google.com/spanner/docs/batch-write](https://docs.cloud.google.com/spanner/docs/batch-write)
+- Source ID: `site-docs-root`
+- Final score: 88
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- BatchWriteResponse ; public class BatchWriteAtLeastOnceSample { / Assume DDL for the underlying database: <pre>{@code CREATE TABLE Singers ( SingerId INT64 NOT NULL, FirstName STRING(1024), LastName STRING(1024), ) PRIMARY KEY (SingerId) CREATE TABLE Albums ( SingerId INT64 NOT NULL, AlbumId INT64 NOT NULL, AlbumTitle STRING(1024), ) PRIMARY KEY (SingerId, AlbumId), INTERLEAVE IN PARENT Singers ON DELETE CASCADE }</pre> / private static final MutationGroup MUTATION GROUP1 = MutationGroup . of ( Mutation . newInsertOrUpdateBuilder ( "Singers" ) . set ( "SingerId" ) . to ( 16 ) . set ( "FirstName" ) . to ( "Scarlet" ) . set ( "LastName" ) . to ( "Terry" ) . build ()); private static final MutationGroup MUTATION GROUP2 = MutationGroup . of ( Mutation . newInsertOrUpdateBuilder ( "Singers" ) . set ( "SingerId" ) . to ( 17 ) . set ( "FirstName" ) . to ( "Marc" ) . build (), Mutation . newInsertOrUpdateBuilder ( "Singers" ) . set ( "SingerId" ) . to ( 18 ) . set ( "FirstName" ) . to ( "Catalina" ) . set ( "LastName" ) . to ( "Smith" ) . build (), Mutation . newInsertOrUpdateBuilder ( "Albums" ) . set ( "SingerId" ) . to ( 17 ) . set ( "AlbumId" ) . to ( 1 ) . set ( "AlbumTitle" ) . to ( "Total Junk" ) . build (), Mutation . newInsertOrUpdateBuilder ( "Albums" ) . set ( "SingerId" ) . to ( 18 ) . set ( "AlbumId" ) . to ( 2 ) . set ( "AlbumTitle" ) . to ( "Go, Go, Go" ) . build ()); static void batchWriteAtLeastOnce () { // TODO(developer): Replace these variables before running the sample. final String projectId = "my-project" ; final String instanceId = "my-instance" ; final String databaseId = "my-database" ; batchWriteAtLeastOnce ( projectId , instanceId , databaseId ); } static void batchWriteAtLeastOnce ( String projectId , String instanceId , String databaseId ) { try ( Spanner spanner = SpannerOptions . newBuilder (). setProjectId ( projectId ). build (). getService ()) { DatabaseId dbId = DatabaseId . of ( projectId , instanceId , databaseId ); final DatabaseClient dbClient = spanner . getDatabaseClient ( dbId ); // Creates and issues a BatchWrite RPC request that will apply the mutation groups // non-atomically and respond back with a stream of BatchWriteResponse.
+- Example: @param string $projectId The Google Cloud project ID. @param string $instanceId The Spanner instance ID. @param string $databaseId The Spanner database ID. / function batch write(string $projectId, string $instanceId, string $databaseId): void { $spanner = new SpannerClient(['projectId' => $projectId]); $database = $spanner->instance($instanceId)->database($databaseId); // Create Mutation Groups // All mutations within a single group are applied atomically. // Mutations across groups are applied non-atomically. // Group 1: Single mutation $mutationGroup1 = $database->mutationGroup(); $mutationGroup1->insertOrUpdate('Singers', [ 'SingerId' => 16, 'FirstName' => 'Scarlet', 'LastName' => 'Terry' ]); // Group 2: Multiple mutations $mutationGroup2 = $database->mutationGroup(); $mutationGroup2->insertOrUpdateBatch('Singers', [ ['SingerId' => 17, 'FirstName' => 'Marc'], ['SingerId' => 18, 'FirstName' => 'Catalina', 'LastName' => 'Smith'] ]); $mutationGroup2->insertOrUpdateBatch('Albums', [ ['SingerId' => 17, 'AlbumId' => 1, 'AlbumTitle' => 'Total Junk'], ['SingerId' => 18, 'AlbumId' => 2, 'AlbumTitle' => 'Go, Go, Go'] ]); // Call batchWrite on the high-level Database client. // Equivalent to batchWriteAtLeastOnce in other languages. $responses = $database->batchWrite([$mutationGroup1, $mutationGroup2], [ 'requestOptions' => ['transactionTag' => 'batch-write-tag'] ]); // Check the response code of each response to determine whether the mutation group(s) were applied successfully. // $responses is a Generator yielding V1\BatchWriteResponse items. // Check the response code of each response to determine whether the mutation group(s) were applied successfully. // $responses is a Generator yielding response arrays. foreach ($responses as $response) { $status = $response['status']; $indexes = implode(', ', $response['indexes']); if ($status['code'] === 0) { $timestamp = $response['commitTimestamp'] ?? 'Unknown'; printf('Mutation group indexes [%s] have been applied with commit timestamp %s' .
+- Please see {@link https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.BatchWriteRequest.MutationGroup} for more details and examples. / const mutationGroup1 = new MutationGroup (); mutationGroup1 . insert ( 'Singers' , { SingerId : 1 , FirstName : 'Scarlet' , LastName : 'Terry' , }); const mutationGroup2 = new MutationGroup (); mutationGroup2 . insert ( 'Singers' , { SingerId : 2 , FirstName : 'Marc' , }); mutationGroup2 . insert ( 'Singers' , { SingerId : 3 , FirstName : 'Catalina' , LastName : 'Smith' , }); mutationGroup2 . insert ( 'Albums' , { AlbumId : 1 , SingerId : 2 , AlbumTitle : 'Total Junk' , }); mutationGroup2 . insert ( 'Albums' , { AlbumId : 2 , SingerId : 3 , AlbumTitle : 'Go, Go, Go' , }); const options = { transactionTag : 'batch-write-tag' , }; try { database . batchWriteAtLeastOnce ([ mutationGroup1 , mutationGroup2 ], options ) . on ( 'error' , console . error ) . on ( 'data' , response = > { // Check the response code of each response to determine whether the mutation group(s) were applied successfully. if ( response . status . code === 0 ) { console . log ( Mutation group indexes ${ response . indexes } , have been applied with commit timestamp ${ Spanner . timestamp ( response . commitTimestamp , ). toJSON () } , ); } // Mutation groups that fail to commit trigger a response with a non-zero status code. else { console . log ( Mutation group indexes ${ response . indexes } , could not be applied with error code ${ response . status . code } , and error message ${ response . status . message } , ); } }) . on ( 'end' , () = > { console . log ( 'Request completed successfully' ); }); } catch ( err ) { console . log ( err ); } PHP < ?php / Copyright 2026 Google Inc.
+- Client () instance = spanner client . instance ( instance id ) database = instance . database ( database id ) with database . mutation groups () as groups : group1 = groups . group () group1 . insert or update ( table = "Singers" , columns = ( "SingerId" , "FirstName" , "LastName" ), values = [ ( 16 , "Scarlet" , "Terry" ), ], ) group2 = groups . group () group2 . insert or update ( table = "Singers" , columns = ( "SingerId" , "FirstName" , "LastName" ), values = [ ( 17 , "Marc" , "" ), ( 18 , "Catalina" , "Smith" ), ], ) group2 . insert or update ( table = "Albums" , columns = ( "SingerId" , "AlbumId" , "AlbumTitle" ), values = [ ( 17 , 1 , "Total Junk" ), ( 18 , 2 , "Go, Go, Go" ), ], ) for response in groups . batch write (): if response . status . code == OK : print ( "Mutation group indexes {} have been applied with commit timestamp {} " . format ( response . indexes , response . commit timestamp ) ) else : print ( "Mutation group indexes {} could not be applied with error {} " . format ( response . indexes , response . status ) ) Ruby require "google/cloud/spanner" This is a snippet for showcasing how to apply a batch of mutations groups.
+
+### Binary operators \_|\_ Spanner \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/query-operators-binary](https://docs.cloud.google.com/spanner/docs/query-operators-binary)
+- Source ID: `site-docs-reference`
+- Final score: 70
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- The following query uses a semi join to find which singers do have an Album: SELECT FirstName , LastName FROM Singers WHERE SingerId IN ( SELECT SingerId FROM Albums ); / -----------+----------+ FirstName LastName +-----------+----------+ Marc Richards Catalina Smith Alice Trentor Lea Martin +-----------+---------- / The plan segment appears as follows: Anti-semi apply An Anti-semi apply operator is similar to a semi apply operator, except that it returns the input table columns only when a match doesn't occur on the map side.
+- Apply join operators execute row-oriented processing, unlike operators that execute set-based processing such as hash join .
+- Similarly, the right scan advances whenever its values are less than the left scan's values.
+- In Batch execution, the operator processes a batch of rows at once.
 
-### Class SpannerClient (3.62.0) | Python client libraries | Google Cloud Documentation
+### "Commit timestamps in PostgreSQL-dialect databases \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
-- Source ID: `site-python-reference`
-- Final score: 79
+- URL: [https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql](https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql)
+- Source ID: `site-docs-root`
+- Final score: 69
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerClient (3.62.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
-
-### Class SpannerPool (6.103.0) | Java client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection.SpannerPool](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection.SpannerPool)
-- Source ID: `site-java-reference`
-- Final score: 78
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Class SpannerPool (6.103.0) Java client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection.SpannerPool The SpannerPool keeps track of which Spanner objects have been opened by connections during the lifetime of the JVM, which connections are still opened and closed, and which Spanner objects could be closed.
+- In addition this update expects the LastUpdateTime column added by applying the DDL statement "ALTER TABLE Albums ADD COLUMN LastUpdateTime TIMESTAMP OPTIONS (allow commit timestamp=true)" Example: @param string $instanceId The Spanner instance ID. @param string $databaseId The Spanner database ID. / function update data with timestamp column(string $instanceId, string $databaseId): void { $spanner = new SpannerClient(); $instance = $spanner->instance($instanceId); $database = $instance->database($databaseId); $operation = $database->transaction(['singleUse' => true]) ->updateBatch('Albums', [ ['SingerId' => 1, 'AlbumId' => 1, 'MarketingBudget' => 1000000, 'LastUpdateTime' => $spanner->commitTimestamp()], ['SingerId' => 2, 'AlbumId' => 2, 'MarketingBudget' => 750000, 'LastUpdateTime' => $spanner->commitTimestamp()], ]) ->commit(); print('Updated data.' .
+- Example: @param string $instanceId The Spanner instance ID. @param string $databaseId The Spanner database ID. / function insert data with timestamp column(string $instanceId, string $databaseId): void { $spanner = new SpannerClient(); $instance = $spanner->instance($instanceId); $database = $instance->database($databaseId); $operation = $database->transaction(['singleUse' => true]) ->insertBatch('Performances', [ ['SingerId' => 1, 'VenueId' => 4, 'EventDate' => '2017-10-05', 'Revenue' => 11000, 'LastUpdateTime' => $spanner->commitTimestamp()], ['SingerId' => 1, 'VenueId' => 19, 'EventDate' => '2017-11-02', 'Revenue' => 15000, 'LastUpdateTime' => $spanner->commitTimestamp()], ['SingerId' => 2, 'VenueId' => 42, 'EventDate' => '2017-12-23', 'Revenue' => 7000, 'LastUpdateTime' => $spanner->commitTimestamp()], ]) ->commit(); print('Inserted data.' .
+- For example, consider the following Performances table, which includes a commit timestamp column: CREATE TABLE Performances ( SingerId bigint NOT NULL , VenueId bigint NOT NULL , EventDate timestamp with time zone NOT NULL , Revenue bigint , LastUpdateTime spanner . commit timestamp , PRIMARY KEY ( SingerId , VenueId , EventDate ) ); This query benefits from the commit-timestamp optimization described earlier, because it has a greater-than-or-equal-to comparison between the table's commit timestamp column and a constant expression—in this case, a literal: SELECT FROM Performances WHERE LastUpdateTime > = '2022-01-01' ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Client () instance = spanner client . instance ( instance id ) database = instance . database ( database id ) with database . batch () as batch : batch . insert ( table = "Performances" , columns = ( "SingerId" , "VenueId" , "EventDate" , "Revenue" , "LastUpdateTime" ), values = [ ( 1 , 4 , "2017-10-05" , 11000 , spanner .
 

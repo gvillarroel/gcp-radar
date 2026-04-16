@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.957Z"
+generated_at: "2026-04-14T17:29:37.109Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Manual webpage recrawl with recrawlUris"
 feature_slug: "manual-webpage-recrawl-with-recrawluris"
 latest_feature_date: "2023-09-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-hc"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-media"
 keywords:
   - "manual"
   - "webpage"
   - "recrawl"
-  - "with"
   - "recrawluris"
   - "vertex"
   - "ai"
   - "search"
+  - "allows"
 ---
 
 # Manual webpage recrawl with recrawlUris
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,35 +38,47 @@ Vertex AI Search allows manual refreshing of specific web pages in a data store 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging](https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata](https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-hc](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-hc)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-media](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-media)
 
 ## Supporting Pages
 
-### "Vertex AI APIs for building search and RAG experiences \_|\_ Vertex AI Search\
+### Create a media data store \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- Source ID: `site-api-reference`
-- Final score: 184
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-media](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-media)
+- Source ID: `site-docs-root`
+- Final score: 68
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Vertex AI Search works as an out-of-the-box semantic & keyword search engine for RAG with the ability to process a variety of document types and with connectors to a variety of source systems including BigQuery and many third party systems.
-- Vertex AI Vector Search is a retrieval engine that can search from billions of semantically similar or semantically related items at scale, with high queries per second (QPS), high recall, low latency, and cost efficiency.
-- Home Documentation AI and ML Vertex AI Search Send feedback Vertex AI APIs for building search and RAG experiences Stay organized with collections Save and categorize content based on your preferences.
-- For more information, see Grounding with Google Search in the Generative AI on Vertex AI documentation.
+- Home Documentation AI and ML Vertex AI Search Send feedback Create a media data store Stay organized with collections Save and categorize content based on your preferences.
+- DATA STORE DISPLAY NAME : the display name of the Vertex AI Search data store that you want to create.
+- DATA STORE ID : the ID of the Vertex AI Search data store that you want to create.
+- What's next Create a media recommendations app or a media search app .
+
+### Discovery Engine API \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest)
+- Source ID: `site-docs-reference-2`
+- Final score: 67
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- REST Resource: v1alpha.projects.locations.collections.dataStores.siteSearchEngine Methods batchVerifyTargetSites POST /v1alpha/{parent=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:batchVerifyTargetSites Verify target sites' ownership and validity. disableAdvancedSiteSearch POST /v1alpha/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:disableAdvancedSiteSearch Downgrade from advanced site search to basic site search. enableAdvancedSiteSearch POST /v1alpha/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:enableAdvancedSiteSearch Upgrade from basic site search to advanced site search. fetchDomainVerificationStatus GET /v1alpha/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:fetchDomainVerificationStatus Returns list of target sites with its domain verification status. getUriPatternDocumentData GET /v1alpha/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:getUriPatternDocumentData Gets the URI Pattern to Document data mapping for an Advanced Site Search DataStore. recrawlUris POST /v1alpha/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:recrawlUris Request on-demand recrawl for a list of URIs. setUriPatternDocumentData POST /v1alpha/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:setUriPatternDocumentData Sets the URI Pattern to Document data mapping for an Advanced Site Search DataStore.
+- REST Resource: v1beta.projects.locations.collections.dataStores.siteSearchEngine Methods batchVerifyTargetSites POST /v1beta/{parent=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:batchVerifyTargetSites Verify target sites' ownership and validity. disableAdvancedSiteSearch POST /v1beta/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:disableAdvancedSiteSearch Downgrade from advanced site search to basic site search. enableAdvancedSiteSearch POST /v1beta/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:enableAdvancedSiteSearch Upgrade from basic site search to advanced site search. fetchDomainVerificationStatus GET /v1beta/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:fetchDomainVerificationStatus Returns list of target sites with its domain verification status. recrawlUris POST /v1beta/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:recrawlUris Request on-demand recrawl for a list of URIs.
+- REST Resource: v1.projects.locations.collections.dataStores.siteSearchEngine Methods batchVerifyTargetSites POST /v1/{parent=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:batchVerifyTargetSites Verify target sites' ownership and validity. disableAdvancedSiteSearch POST /v1/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:disableAdvancedSiteSearch Downgrade from advanced site search to basic site search. enableAdvancedSiteSearch POST /v1/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:enableAdvancedSiteSearch Upgrade from basic site search to advanced site search. fetchDomainVerificationStatus GET /v1/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:fetchDomainVerificationStatus Returns list of target sites with its domain verification status. recrawlUris POST /v1/{siteSearchEngine=projects/ /locations/ /collections/ /dataStores/ /siteSearchEngine}:recrawlUris Request on-demand recrawl for a list of URIs.
+- REST Resource: v1alpha.projects.locations.dataStores.siteSearchEngine Methods disableAdvancedSiteSearch POST /v1alpha/{siteSearchEngine=projects/ /locations/ /dataStores/ /siteSearchEngine}:disableAdvancedSiteSearch Downgrade from advanced site search to basic site search. enableAdvancedSiteSearch POST /v1alpha/{siteSearchEngine=projects/ /locations/ /dataStores/ /siteSearchEngine}:enableAdvancedSiteSearch Upgrade from basic site search to advanced site search. recrawlUris POST /v1alpha/{siteSearchEngine=projects/ /locations/ /dataStores/ /siteSearchEngine}:recrawlUris Request on-demand recrawl for a list of URIs.
 
 ### Vertex AI Search audit logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging](https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging)
-- Source ID: `site-api-reference`
-- Final score: 182
+- Source ID: `site-docs-reference`
+- Final score: 67
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,30 +86,4 @@ Evidence snippets:
 - Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.ListTargetSites" RecrawlUris Method : google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.RecrawlUris Audit log type : Admin activity Permissions : discoveryengine.siteSearchEngines.recrawlUris - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.RecrawlUris" SetUriPatternDocumentData Method : google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.SetUriPatternDocumentData Audit log type : Admin activity Permissions : discoveryengine.siteSearchEngines.setUriPatternDocumentData - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.SetUriPatternDocumentData" UpdateTargetSite Method : google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.UpdateTargetSite Audit log type : Admin activity Permissions : discoveryengine.targetSites.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.UpdateTargetSite" google.cloud.discoveryengine.v1alpha.UserEventService The following audit logs are associated with methods belonging to google.cloud.discoveryengine.v1alpha.UserEventService .
 - Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1beta.SiteSearchEngineService.ListTargetSites" RecrawlUris Method : google.cloud.discoveryengine.v1beta.SiteSearchEngineService.RecrawlUris Audit log type : Admin activity Permissions : discoveryengine.siteSearchEngines.recrawlUris - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1beta.SiteSearchEngineService.RecrawlUris" UpdateTargetSite Method : google.cloud.discoveryengine.v1beta.SiteSearchEngineService.UpdateTargetSite Audit log type : Admin activity Permissions : discoveryengine.targetSites.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1beta.SiteSearchEngineService.UpdateTargetSite" google.cloud.discoveryengine.v1beta.UserEventService The following audit logs are associated with methods belonging to google.cloud.discoveryengine.v1beta.UserEventService .
 - Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1.SiteSearchEngineService.ListTargetSites" RecrawlUris Method : google.cloud.discoveryengine.v1.SiteSearchEngineService.RecrawlUris Audit log type : Admin activity Permissions : discoveryengine.siteSearchEngines.recrawlUris - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1.SiteSearchEngineService.RecrawlUris" UpdateTargetSite Method : google.cloud.discoveryengine.v1.SiteSearchEngineService.UpdateTargetSite Audit log type : Admin activity Permissions : discoveryengine.targetSites.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.discoveryengine.v1.SiteSearchEngineService.UpdateTargetSite" google.cloud.discoveryengine.v1.UserEventService The following audit logs are associated with methods belonging to google.cloud.discoveryengine.v1.UserEventService .
-
-### "Use structured data for advanced website indexing \_|\_ Vertex AI Search\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata](https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata)
-- Source ID: `site-api-reference`
-- Final score: 178
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Such tags can be used with advanced indexing when you add custom structured data attributes to the data store schema . <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Your web page title</title> <!-- Robots instructions for crawlers and for Vertex AI Search. --> <meta name="robots" content="index,follow"> <!-- Vertex AI Search can use custom datetime fields to filter, boost, and order. --> <meta name="lastModified" content="2024-09-06"> <!-- Vertex AI Search can filter by category or tags. --> <meta name="category" content="archived"> <meta name="tags" content="legacy,interesting,faq"> <!-- Vertex AI Search can index these common HTML tags. --> <meta name="description" content="A description of your web page's content."> <meta name="author" content="Your name or organization"> <meta name="keywords" content="relevant,keywords,separated,by,commas"> <link rel="canonical" href="https://www.yourwebsite.com/this-page"> <meta property="og:title" content="Your Webpage Title"> <meta property="og:description" content="A description of your webpage's content."> <meta property="og:image" content="https://www.yourwebsite.com/image.jpg"> <meta property="og:url" content="https://www.yourwebsite.com/this-page"> <meta property="og:type" content="website"> <meta name="twitter:card" content="summary large image"> <meta name="twitter:title" content="Your customized Webpage Title"> <meta name="twitter:description" content="A description of your webpage's content."> <meta name="twitter:image" content="https://www.yourwebsite.com/image.jpg"> </head> <body> ... </body> </html> Example use case for PageMaps Suppose you have several web pages that contain food recipes.
-- Home Documentation AI and ML Vertex AI Search Send feedback Use structured data for advanced website indexing Stay organized with collections Save and categorize content based on your preferences.
-- Vertex AI Search supports meta tags with names that match the pattern [a-zA-Z0-9][a-zA-Z0-9- ] .
-- Here's an example that shows where to add a custom datetime meta tag named lastModified on your web page. <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Your web page title</title> <!-- Vertex AI Search can use this date. --> <meta name="lastModified" content="2022-07-01"> </head> <body> </body> </html> To understand how to include such custom datetime tags in your search requests, such as in filter expressions and boost specifications, see Example use case using a custom datetime attribute .
-
-### "Create a healthcare search data store \_|\_ Vertex AI Search \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-hc](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-hc)
-- Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For clarity, with respect to the use of Vertex AI Search to retrieve and summarize existing medical information, the restriction on the use for clinical purposes means the restriction on the use for direct diagnosis or treatment purposes without review by a licensed professional in compliance with applicable laws and regulations.
-- Home Documentation AI and ML Vertex AI Search Send feedback Create a healthcare search data store Stay organized with collections Save and categorize content based on your preferences.
-- You can create a streaming data store with changes from your Cloud Healthcare API FHIR store continuously streamed to your Vertex AI Search data store.
-- If they're in the same project, go back to the previous step. curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://us-discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/us/dataStores/ DATA STORE ID /branches/0/documents:import" \ -d '{ "reconciliation mode": "FULL", "fhir store source": {"fhir store": "projects/ SOURCE PROJECT ID /locations/ CLOUD HEALTHCARE DATASET LOCATION /datasets/ CLOUD HEALTHCARE DATASET ID /fhirStores/ FHIR STORE ID "} }' Replace the following: PROJECT ID : the ID of the Google Cloud project that contains the Vertex AI Search data store.
 

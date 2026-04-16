@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:20.476Z"
+generated_at: "2026-04-12T12:16:09.664Z"
 product_name: "Gemini"
 product_slug: "gemini"
 feature_name: "Gemini conversion assistant in Database Migration Service"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-07-25"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3"
   - "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
-  - "https://docs.cloud.google.com/gemini/enterprise/docs/access-control"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+  - "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
 keywords:
   - "gemini"
   - "conversion"
@@ -38,49 +39,66 @@ Gemini conversion assistant is available in Database Migration Service conversio
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3)
 - [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
-- [https://docs.cloud.google.com/gemini/enterprise/docs/access-control](https://docs.cloud.google.com/gemini/enterprise/docs/access-control)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
+- [https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini](https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini)
 
 ## Supporting Pages
 
-### Set up Gemini Code Assist Standard and Enterprise | Gemini for Google Cloud | Google Cloud Documentation
+### "Gemini 3 in Gemini Code Assist \_|\_ Gemini for Google Cloud \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3)
 - Source ID: `site-docs-root`
-- Final score: 208
+- Final score: 275
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Set up Gemini Code Assist Standard and Enterprise Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini Before you can use services available to users with Gemini Code Assist Standard or Enterprise licenses, your team needs to perform the setup steps that are described in this document: Note: An administrator typically performs steps 1-4.
-- Purchase a subscription to Gemini Code Assist Standard or Enterprise.
-- Enable the Gemini for Google Cloud API in a Google Cloud project.
-- Assign licenses to users in your organization.
+- Gemini 3 availability License or subscription Gemini 3 availability Google AI Ultra Available to all users in VS Code and IntelliJ Google AI Pro Available to all users in VS Code and IntelliJ Gemini Code Assist Enterprise Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist Standard Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist for individuals Available to select users from the waitlist in VS Code and IntelliJ.
+- Use Gemini 3 in IntelliJ If Gemini 3 is available to you, it will automatically be selected for agent mode, chat and code generation.
+- Use Gemini 3 in VS Code If Gemini 3 is available to you, it will automatically be selected for chat and code generation.
+- Gemini 3.1 Pro and Gemini 3.0 Flash are available to Gemini Code Assist users in VS Code and IntelliJ.
 
-### Gemini Code Assist Standard and Enterprise overview | Gemini for Google Cloud | Google Cloud Documentation
+### "Gemini Code Assist Standard and Enterprise overview \_|\_ Gemini for Google\
 
 - URL: [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
 - Source ID: `site-docs-root`
-- Final score: 186
+- Final score: 273
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini Code Assist Standard and Enterprise overview Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/overview Gemini Code Assist Standard and Enterprise, which are products in the Gemini for Google Cloud portfolio, offer AI-powered assistance to help your development team build, deploy, and operate applications throughout the software development lifecycle.
+- Code assistance and chat The following table shows the types of generative AI assistance that are available in supported IDEs : AI coding assistance Gemini Code Assist Standard Gemini Code Assist Enterprise Code completion and generation in your IDE project in the following IDEs: Cloud Shell Editor Cloud Workstations JetBrains IDEs (such as IntelliJ and PyCharm) VS Code Android Studio Conversational assistant in your IDE using your opened files' context Multi-IDE support (VS Code, JetBrains IDEs such as IntelliJ and PyCharm , Cloud Workstations) Agentic chat Prompt Gemini to complete complex, multi-step tasks that use system tools and Model Context Protocol (MCP) servers.
+- Gemini Cloud Assist The following table shows the types of generative AI assistance in Gemini Cloud Assist in the Google Cloud console: Gemini Cloud Assist assistance Gemini Code Assist Standard Gemini Code Assist Enterprise Gemini Cloud Assist features (including features available to all Google users and available to Gemini Code Assist Enterprise users) Gemini in Apigee The following table shows the types of generative AI assistance with API development in Apigee (IDE and the Google Cloud console): Gemini Code Assist for API management Gemini Code Assist Standard Gemini Code Assist Enterprise Create or edit OpenAPI specification using natural language prompts.
+- Gemini in Colab Enterprise The following table shows the types of generative AI assistance for code in Colab Enterprise : Notebook code assist Gemini Code Assist Standard Gemini Code Assist Enterprise Python code generation and completion in notebook Gemini in databases The following table shows the types of generative AI assistance for coding in databases: Generate SQL queries Gemini Code Assist Standard Gemini Code Assist Enterprise Write in natural language to generate SQL statements.
+- Intellectual property and compliance Source citations in your IDE and the Google Cloud console IP indemnification VPC-SC and Private Google Access Enterprise knowledge Customized code suggestions from your code bases in GitHub, GitLab, and Bitbucket in your IDE Additional features outside the IDE The following sections detail additional features available with the Gemini Code Assist Standard and Enterprise editions that go beyond assistance in your IDE.
 
-### IAM roles and permissions | Gemini Enterprise | Google Cloud Documentation
+### "Set up Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
 
-- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/access-control](https://docs.cloud.google.com/gemini/enterprise/docs/access-control)
-- Source ID: `site-iam-reference`
-- Final score: 164
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
+- Source ID: `site-docs-root`
+- Final score: 247
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- IAM roles and permissions Gemini Enterprise Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/enterprise/docs/access-control Note: This documentation applies to the Standard, Plus, and Frontline editions of Gemini Enterprise.
-- This page describes how you can control API access and permissions for Gemini Enterprise resources using Identity and Access Management (IAM).
-- For information about the Business edition, see the Gemini Enterprise - Business edition Help Center. ...
+- Before you can use services available to users with Gemini Code Assist Standard or Enterprise licenses, your team needs to perform the setup steps that are described in this document: Note: An administrator typically performs steps 1-4.
+- When all available licenses in the subscription are assigned, users who try to access Gemini Code Assist without a license will receive an error message indicating one is required.
+- Gemini is now available in the selected Google Cloud project to all users who have the required IAM roles. gcloud CLI In the Google Cloud console, activate Cloud Shell.
+- Change the Google Cloud project release channel We release Gemini Code Assist features in different release channels, either Generally Available or Preview.
+
+### "Set up Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini](https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini)
+- Source ID: `site-docs-root`
+- Final score: 247
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Before you can use services available to users with Gemini Code Assist Standard or Enterprise licenses, your team needs to perform the setup steps that are described in this document: Note: An administrator typically performs steps 1-4.
+- When all available licenses in the subscription are assigned, users who try to access Gemini Code Assist without a license will receive an error message indicating one is required.
+- Gemini is now available in the selected Google Cloud project to all users who have the required IAM roles. gcloud CLI In the Google Cloud console, activate Cloud Shell.
+- Change the Google Cloud project release channel We release Gemini Code Assist features in different release channels, either Generally Available or Preview.
 

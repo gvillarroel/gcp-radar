@@ -1,30 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:14.539Z"
+generated_at: "2026-04-13T08:22:23.515Z"
 product_name: "Workflows"
 product_slug: "workflows"
 feature_name: "get_type function"
 feature_slug: "get-type-function"
 latest_feature_date: "2023-01-10"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+  - "https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries"
+  - "https://docs.cloud.google.com/workflows/docs/access-execution-results"
 keywords:
-  - "get"
-  - "type"
-  - "function"
-  - "the"
-  - "returns"
-  - "string"
   - "indicating"
-  - "an"
+  - "argument"
+  - "type"
+  - "string"
+  - "returns"
 ---
 
 # get_type function
 
 Product: Workflows
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +33,57 @@ The get_type function returns a string indicating an argument's data type.
 
 The get_type function returns a string indicating an argument's data type.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview](https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview)
+- [https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries](https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries)
+- [https://docs.cloud.google.com/workflows/docs/access-execution-results](https://docs.cloud.google.com/workflows/docs/access-execution-results)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Standard library overview \_|\_ Workflows \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview](https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview)
+- Source ID: `site-api-reference-required-2`
+- Final score: 113
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Functions get type(arg) Returns a string indicating the data type of the argument.
+- Functions double() Accepts an attribute of type string or integer and returns a double. int() Accepts an attribute of type string or double and returns an integer. string() Accepts an attribute of type integer, double, or boolean and returns a string.
+- Functions decode Decodes given data to string, assuming the specified character set. encode Encodes given text to bytes, using the specified character set. find all Finds the index of all instances of a substring in a string. find all regex Finds all matches of a regular expression in a string. match regex Reports whether a string contains a match of a regular expression. replace all Replaces all instances of a substring with a new string. replace all regex Replaces all matches of a regular expression with a new string. split Splits the source string into a list of all substrings between each instance of the separator. substring Extracts the substring between two zero-based indexes of a source string. to lower Returns a string with all Unicode letters mapped to their lowercase. to upper Returns a string with all Unicode letters mapped to their uppercase. url decode Returns a string with pluses and percent-escaped characters converted to UTF-8. url encode Returns a string with percent-encoded reserved characters, including spaces. url encode plus Returns a string with percent-encoded reserved characters, and spaces replaced by pluses ( + ).
+- Functions default(val, defaultVal) Returns a value if it is not null; otherwise returns a default value. if(condition, ifTrue, ifFalse) Evaluates a condition and returns one of two arguments depending on what the condition evaluates to.
+
+### "Quickstart: Execute a workflow using the Cloud Client Libraries \_|\_ Workflows\
+
+- URL: [https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries](https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries)
+- Source ID: `site-docs-root`
+- Final score: 111
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- ACTIVE ; // If we haven't seen the results yet, wait. if ( ! finished ) { System . out . println ( "- Waiting for results" ); Thread . sleep ( backoffDelay ); backoffTime += backoffDelay ; backoffDelay = 2 ; // Double the delay to provide exponential backoff. } else { System . out . println ( "Execution finished with state: " + execution . getState (). name ()); System . out . println ( "Execution results: " + execution . getResult ()); } } } } } Node.js const { ExecutionsClient } = require ( ' @google-cloud/workflows ' ); const client = new ExecutionsClient (); / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'my-project'; // const location = 'us-central1'; // const workflow = 'myFirstWorkflow'; // const searchTerm = ''; / Executes a Workflow and waits for the results with exponential backoff. @param {string} projectId The Google Cloud Project containing the workflow @param {string} location The workflow location @param {string} workflow The workflow name @param {string} searchTerm Optional search term to pass to the Workflow as a runtime argument / async function executeWorkflow ( projectId , location , workflow , searchTerm ) { / Sleeps the process N number of milliseconds. @param {Number} ms The number of milliseconds to sleep. / function sleep ( ms ) { return new Promise ( resolve = > { setTimeout ( resolve , ms ); }); } const runtimeArgs = searchTerm ? { searchTerm : searchTerm } : {}; // Execute workflow try { const createExecutionRes = await client . createExecution ({ parent : client . workflowPath ( projectId , location , workflow ), execution : { // Runtime arguments can be passed as a JSON string argument : JSON . stringify ( runtimeArgs ), }, }); const executionName = createExecutionRes [ 0 ]. name ; console . log ( Created execution: ${ executionName } ); // Wait for execution to finish, then print results. let executionFinished = false ; let backoffDelay = 1000 ; // Start wait with delay of 1,000 ms console . log ( 'Poll every second for result...' ); while ( ! executionFinished ) { const [ execution ] = await client . getExecution ({ name : executionName , }); executionFinished = execution . state !== 'ACTIVE' ; // If we haven't seen the result yet, wait a second. if ( ! executionFinished ) { console . log ( '- Waiting for results...' ); await sleep ( backoffDelay ); backoffDelay = 2 ; // Double the delay to provide exponential backoff. } else { console . log ( Execution finished with state: ${ execution . state } ); console . log ( execution . result ); return execution . result ; } } } catch ( e ) { console . error ( Error executing workflow: ${ e } ); } } executeWorkflow ( projectId , location , workflowName , searchTerm ). catch ( err = > { console . error ( err . message ); process . exitCode = 1 ; }); Python import time from google.cloud import workflows v1 from google.cloud.workflows import executions v1 from google.cloud.workflows.executions v1.types import executions TODO(developer): Update and uncomment the following lines. project id = "YOUR PROJECT ID" location = "YOUR LOCATION" # For example: us-central1 workflow id = "YOUR WORKFLOW ID" # For example: myFirstWorkflow Initialize API clients. execution client = executions v1 .
+- Result ) return nil } Java // Creates the execution object CreateExecutionRequest request = CreateExecutionRequest . newBuilder () . setParent ( parent . toString ()) . setExecution ( Execution . newBuilder (). setArgument ( "{\"searchTerm\":\"Friday\"}" ). build ()) . build (); Node.js // Execute workflow try { const createExecutionRes = await client . createExecution ({ parent : client . workflowPath ( projectId , location , workflow ), execution : { argument : JSON . stringify ({ "searchTerm" : "Friday" }) } }); const executionName = createExecutionRes [ 0 ]. name ; Python import time from google.cloud import workflows v1 from google.cloud.workflows import executions v1 from google.cloud.workflows.executions v1.types import executions TODO(developer): Update and uncomment the following lines. project id = "YOUR PROJECT ID" location = "YOUR LOCATION" # For example: us-central1 workflow id = "YOUR WORKFLOW ID" # For example: myFirstWorkflow Initialize API clients. execution client = executions v1 .
+- For example: C# public class ExecuteWorkflowWithArgumentsSample { /// <summary> /// Execute a workflow with arguments and return the execution operation. /// </summary> /// <param name="projectID">Your Google Cloud Project ID.</param> /// <param name="locationID">The region where your workflow is located.</param> /// <param name="workflowID">Your Workflow ID.</param> /// <returns> /// An Execute object representing the completed workflow execution. /// </returns> public async Task<Execution> ExecuteWorkflowWithArguments ( string projectId = "YOUR-PROJECT-ID" , string locationID = "YOUR-LOCATION-ID" , string workflowID = "YOUR-WORKFLOW-ID" ) { // Initialize the client.
+- WorkflowName ; import java.io.IOException ; import java.util.concurrent.ExecutionException ; public class WorkflowsQuickstart { private static final String PROJECT = System . getenv ( "GOOGLE CLOUD PROJECT" ); private static final String LOCATION = System . getenv (). getOrDefault ( "LOCATION" , "us-central1" ); private static final String WORKFLOW = System . getenv (). getOrDefault ( "WORKFLOW" , "myFirstWorkflow" ); public static void main ( String ... args ) throws IOException , InterruptedException , ExecutionException { if ( PROJECT == null ) { throw new IllegalArgumentException ( "Environment variable 'GOOGLE CLOUD PROJECT' is required to run this quickstart." ); } workflowsQuickstart ( PROJECT , LOCATION , WORKFLOW ); } private static volatile boolean finished ; public static void workflowsQuickstart ( String projectId , String location , String workflow ) throws IOException , InterruptedException , ExecutionException { // Initialize client that will be used to send requests.
+
+### Access workflow execution results \_|\_ Workflows \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/workflows/docs/access-execution-results](https://docs.cloud.google.com/workflows/docs/access-execution-results)
+- Source ID: `site-docs-root-2`
+- Final score: 105
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To view a workflow's execution logs, enter the following command: gcloud workflows executions describe \ --workflow = WORKFLOW NAME \ EXECUTION ID Replace the following: WORKFLOW NAME : the workflow's name EXECUTION ID : the execution's unique ID This command returns output similar to the following: argument: 'null' endTime: '2022-07-19T12:40:07.070039707Z' error: context: - The argument of 'in' must be a dict or an array ; got: null in step "checkSearchTermInInput" , routine "main" , line: 12 payload: "{" message ":" The argument of 'in' must be a dict or an array ; got: null " ," tags ":[" TypeError "]}" stackTrace: elements: - position: column: '26' length: '24' line: '12' routine: main step: checkSearchTermInInput name: projects/1051295516635/locations/us-central1/workflows/myFirstWorkflow/executions/17ffc89c-0a27-4d2f-8356-e681d949a3d3 startTime: '2022-07-19T12:40:07.024823663Z' state: FAILED status: currentSteps: - routine: main step: checkSearchTermInInput workflowRevisionId: 000001 -ac2 The output contains the following information: argument : the runtime arguments passed to the workflow, if any endTime : when the execution ended error : the error message thrown as a part of the exception that resulted in the execution's failure name : the full name of the execution, including the name of the project, the location of the workflow, the name of the workflow, and the execution ID startTime : when the execution began state : indicates the workflow's end state status : the current or final workflow step of the execution workflowRevisionID : the current revision at the time of the execution Execution error maps When a workflow throws an error during execution that isn't caught in a try/except block , the execution fails, and an error map (a JSON dictionary) describing the error is returned.
+- The associated value is a string indicating the type of the operands and the operation.
+- ValueError Raised when an operation or function receives an argument that has the correct type but an incorrect value, and the situation is not described by a more precise exception, such as an IndexError .
+- ResponseTypeError Raised when a long-running operation returns a response of the wrong type.
 

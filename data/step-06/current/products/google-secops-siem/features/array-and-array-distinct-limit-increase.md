@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:56:14.364Z"
+generated_at: "2026-04-15T00:53:15.538Z"
 product_name: "Google SecOps SIEM"
 product_slug: "google-secops-siem"
 feature_name: "array and array_distinct limit increase"
 feature_slug: "array-and-array-distinct-limit-increase"
 latest_feature_date: "2025-08-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
+  - "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
   - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
-  - "https://docs.cloud.google.com/chronicle/docs/detection/detection-limits"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
 keywords:
   - "array"
-  - "and"
   - "distinct"
   - "limit"
   - "increase"
   - "raises"
-  - "the"
   - "aggregation"
+  - "25"
+  - "000"
 ---
 
 # array and array_distinct limit increase
 
 Product: Google SecOps SIEM
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,48 +38,34 @@ Raises the array and array_distinct aggregation limit from 25 to 1,000 elements.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
+- [https://docs.cloud.google.com/chronicle/docs/yara-l/functions](https://docs.cloud.google.com/chronicle/docs/yara-l/functions)
 - [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
-- [https://docs.cloud.google.com/chronicle/docs/detection/detection-limits](https://docs.cloud.google.com/chronicle/docs/detection/detection-limits)
+- [https://docs.cloud.google.com/chronicle/docs/detection/composite-detections](https://docs.cloud.google.com/chronicle/docs/detection/composite-detections)
 
 ## Supporting Pages
 
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
+### Functions \_|\_ Google Security Operations \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 144
+- URL: [https://docs.cloud.google.com/chronicle/docs/yara-l/functions](https://docs.cloud.google.com/chronicle/docs/yara-l/functions)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 106
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Increased limits for array and array distinct The element limit for array and array distinct aggregation functions in YARA-L has increased from 25 to 1,000.
-- September 09, 2024 Feature The following new YARA-L 2.0 functions are available in Rules and Search: arrays.concat arrays.join string arrays.max arrays.min arrays.size arrays.index to int cast.as bool cast.as float math.ceil math.floor math.geo distance math.is increasing math.pow math.random strings.contains strings.count substrings strings.extract domain strings.extract hostname strings.from hex strings.ltrim strings.reverse strings.rtrim strings.trim strings.url decode timestamp.as unix seconds timestamp.now The following new YARA-L 2.0 functions are available in Rules: hash.sha256 window.avg window.first window.last window.median window.mode window.stddev window.variance Details on function signatures and behavior can be found in YARA-L2.0 Function Syntax Reference Documentation September 06, 2024 Change Burst limits will be rolling out over the next 90 days.
-- April 06, 2026 Change Updates to search query limits and error messaging Google SecOps has updated search query limits for programmatic and web interface access: Increased Queries Per Hour (QPH) limits of up to 2,000 for APIs and 1,000 for the web interface.
-- Perform aggregations (sum, count, count distinct, average, stddev, min, and max) on up to to five values within the UDM fields (for example, domains, users, and products).
-
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 136
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Increased limits for array and array distinct The element limit for array and array distinct aggregation functions in YARA-L has increased from 25 to 1,000.
-- April 06, 2026 Change Updates to search query limits and error messaging Google SecOps has updated search query limits for programmatic and web interface access: Increased Queries Per Hour (QPH) limits of up to 2,000 for APIs and 1,000 for the web interface.
-- 1Password Audit Events ( Identity and Access Management ) Advanced Intrusion Detection Environment ( Alert ) Airlock Digital Application Allowlisting ( Application Whitelisting ) Akamai DNS ( DNS ) Amazon VPC Transit Gateway Flow Logs ( Network ) Apache Tomcat ( Web server ) Appian Cloud ( Collaboration log types ) AppOmni ( SAAS Security Application ) Aruba Switch ( Network Infrastructure ) Auth0 ( Authentication log ) AWS Cloudtrail ( Cloud Log Aggregator ) AWS CloudWatch ( Cloud service monitoring ) AWS Elastic Load Balancer ( AWS Specific ) AWS GuardDuty ( IDS/IPS ) AWS Network Firewall ( Firewall ) AWS RDS ( Database ) AWS Route 53 DNS ( AWS Specific ) AWS S3 Server Access ( AWS Specific ) AWS VPC Flow ( AWS Specific ) Azure AD Directory Audit ( Audit ) Azure AD Organizational Context ( LDAP ) Azure API Management ( Schema ) Azure App Service ( SAAS ) Azure Application Gateway ( GATEWAY ) Azure Firewall ( Azure Firewall Application Rule ) Azure Key Vault logging ( Audit ) Azure SQL ( Database ) Barracuda WAF ( Firewall ) Barracuda Web Filter ( Webfilter ) BeyondTrust BeyondInsight ( Privileged Account Activity ) BeyondTrust Endpoint Privilege Management ( Privileged Account Activity ) BIND ( DNS ) BloxOne Threat Defense ( DNS ) Blue Coat Proxy ( Web Proxy ) Cato Networks ( NDR ) Check Point ( Firewall ) Ciena Router logs ( Application server logs ) Cisco ACS ( Authentication ) Cisco APIC ( Software-defined Networking (SDN) ) Cisco Call Manager ( NETWORKING ) Cisco DNA Center Platform ( Network Management and Optimization ) Cisco Email Security ( Email Server ) Cisco EStreamer ( Network Monitoring ) Cisco Firepower NGFW ( Firewall ) Cisco FireSIGHT Management Center ( SaaS Application ) Cisco Internetwork Operating System ( Network Infrastructure ) Cisco ISE ( Identity and Access Management ) Cisco Router ( Switches, Routers ) Cisco Secure Workload ( AV and Endpoint ) Cisco Stealthwatch ( Log Aggregator ) Cisco Switch ( Switches, Routers ) Cisco TACACS+ ( Authentication ) Cisco VPN ( VPN ) Citrix Netscaler ( Load Balancer, Traffic Shaper, ADC ) Claroty Continuous Threat Detection ( IoT ) Cloudflare ( SaaS Application ) Colinet Trotta GAUS SEGUROS ( Alert ) CrowdStrike Detection Monitoring ( EDR ) CrowdStrike Falcon ( EDR ) CrowdStrike Falcon Stream ( Alerts ) CrowdStrike Filevantage ( IT infrastructure ) Cyber 2.0 IDS ( IDS ) Cyberark Privilege Cloud ( Identity & Access Management ) CyberArk Privileged Access Manager (PAM) ( CyberArk Privileged Access Manager ) Cybereason EDR ( EDR ) Darktrace ( NDR ) Dell CyberSense ( Data Security ) Dell EMC PowerStore ( DATA STORAGE ) Druva Backup ( Security ) Duo Administrator Logs ( Authentication ) Duo Auth ( Authentication ) EfficientIP DDI ( Network ) ExtraHop RevealX ( Firewall IDS/IPS ) F5 Advanced Firewall Management ( Firewall ) F5 ASM ( WAF ) F5 BIGIP LTM ( Load Balancer, Traffic Shaper, ADC ) F5 VPN ( VPN ) FingerprintJS ( Vulnerability scanners ) FireEye eMPS ( Email server log types. ) FireEye HX ( EDR ) Forcepoint DLP ( Forcepoint DLP ) Forcepoint NGFW ( Network ) Forcepoint Proxy ( Web Proxy ) Forescout NAC ( NAC ) ForgeRock OpenAM ( Identity and Access Management ) Forgerock OpenIdM ( DATA SECURITY ) FortiGate ( Firewall ) Fortinet FortiAnalyzer ( Fortinet FortiAnalyzer ) Fortinet Switch ( Switches and Routers ) GitHub ( SaaS Application ) Guardicore Centra ( Deception Software ) Hashicorp Vault ( Privileged Account Activity ) HCNET Account Adapter Plus ( DHCP ) IBM MaaS360 ( Security ) IBM Security Access Manager ( WAF ) IBM z/OS ( OS ) Illumio Core ( Policy Management ) Imperva ( WAF ) Imperva Advanced Bot Protection ( Bot Protection ) Imperva Attack Analytics ( WAF ) Ingrian Networks DataSecure Appliance ( System and Audit Logs ) Intel 471 Malware Intelligence (`) ISC DHCP ( DHCP ) Jenkins ( Automation and DevOps ) Journald ( Log Aggregation and SIEM Systems ) Juniper ( Firewall ) Juniper Mist ( Network Management and Optimization software ) Juniper MX Router ( Routers and Switches ) Keeper Enterprise Security ( Security ) Kubernetes Audit Azure ( Log Aggregator ) Lacework Cloud Security ( Cloud Security ) Lenel Onguard Badge Management ( Access Control System ) Linux Auditing System (AuditD) ( OS ) Linux Sysmon ( DNS ) ManageEngine Log360 ( Alert Log ) Maria Database ( Database ) McAfee ePolicy Orchestrator ( Policy Management ) McAfee Web Gateway ( Web Proxy ) Microsoft AD ( LDAP ) Microsoft AD FS ( LDAP ) Microsoft Azure Activity ( Misc Windows Specific ) Microsoft Azure NSG Flow ( Network Flow ) Microsoft Azure Resource ( Log Aggregator ) Microsoft Defender Endpoint for iOS Logs (`) Microsoft Defender for Endpoint ( EDR ) Microsoft PowerShell ( Misc.
-- Abnormal Security ( ABNORMAL SECURITY ) Akamai DNS ( AKAMAI DNS ) Akamai WAF ( AKAMAI WAF ) Apigee ( GCP APIGEE X ) Array Networks SSL VPN ( ARRAYNETWORKS VPN ) AWS CloudFront ( AWS CLOUDFRONT ) AWS Cloudtrail ( AWS CLOUDTRAIL ) Azure AD ( AZURE AD ) Azure AD Directory Audit ( AZURE AD AUDIT ) Azure AD Sign-In ( AZURE AD SIGNIN ) Barracuda Email ( BARRACUDA EMAIL ) Barracuda Firewall ( BARRACUDA FIREWALL ) Blue Coat Proxy ( BLUECOAT WEBPROXY ) BMC AMI Defender ( BMC AMI DEFENDER ) Carbon Black ( CB EDR ) Check Point ( CHECKPOINT FIREWALL ) Check Point Sandblast ( CHECKPOINT EDR ) Checkpoint Audit ( CHECKPOINT AUDIT ) Cisco AMP ( CISCO AMP ) Cisco EStreamer ( CISCO ESTREAMER ) Cisco FireSIGHT Management Center ( CISCO FIRESIGHT ) Cisco ISE ( CISCO ISE ) Cisco Router ( CISCO ROUTER ) Cisco Switch ( CISCO SWITCH ) Cisco Umbrella DNS ( UMBRELLA DNS ) Cisco VPN ( CISCO VPN ) Cisco WLC/WCS ( CISCO WIRELESS ) Citrix Netscaler ( CITRIX NETSCALER ) Cloud Audit Logs ( N/A ) Cloud SQL ( GCP CLOUDSQL ) Cloud Storage Context ( N/A ) Cohesity ( COHESITY ) CrowdStrike Falcon ( CS EDR ) CyberArk Privileged Access Manager (PAM) ( CYBERARK PAM ) ESET AV ( ESET AV ) F5 ASM ( F5 ASM ) F5 BIGIP LTM ( F5 BIGIP LTM ) F5 VPN ( F5 VPN ) Forcepoint DLP ( FORCEPOINT DLP ) FortiGate ( FORTINET FIREWALL ) GMAIL Logs ( GMAIL LOGS ) HID DigitalPersona ( HID DIGITALPERSONA ) Honeyd ( HONEYD ) HP Aruba (ClearPass) ( CLEARPASS ) IBM AS/400 ( IBM AS400 ) IBM DS8000 Storage ( IBM DS8000 ) IBM Security Verify ( IBM SECURITY VERIFY ) Infoblox ( INFOBLOX ) Island Browser logs ( ISLAND BROWSER ) JAMF CMDB ( JAMF ) JumpCloud Directory Insights ( JUMPCLOUD DIRECTORY INSIGHTS ) Juniper Mist ( JUNIPER MIST ) Kubernetes Node ( KUBERNETES NODE ) Linux Auditing System (AuditD) ( AUDITD ) ManageEngine ADAudit Plus ( ADAUDIT PLUS ) Microsoft AD FS ( ADFS ) Microsoft Azure Activity ( AZURE ACTIVITY ) Microsoft Azure Resource ( AZURE RESOURCE LOGS ) Microsoft CyberX ( CYBERX ) Microsoft Defender for Endpoint ( MICROSOFT DEFENDER ENDPOINT ) Microsoft Graph Activity Logs ( MICROSOFT GRAPH ACTIVITY LOGS ) Microsoft Graph API Alerts ( MICROSOFT GRAPH ALERT ) Microsoft SQL Server ( MICROSOFT SQL ) Mikrotik Router ( MIKROTIK ROUTER ) NetDocuments Solutions ( NETDOCUMENTS ) Netwrix ( NETWRIX ) Office 365 ( OFFICE 365 ) Office 365 Message Trace ( OFFICE 365 MESSAGETRACE ) Okta ( OKTA ) OneLogin ( ONELOGIN SSO ) Opengear Remote Management ( OPENGEAR ) Palo Alto Networks Firewall ( PAN FIREWALL ) pfSense ( PFSENSE ) PostFix Mail ( POSTFIX MAIL ) Proofpoint Sendmail Sentrion ( PROOFPOINT SENDMAIL SENTRION ) Proofpoint Tap Alerts ( PROOFPOINT MAIL ) Pulse Secure ( PULSE SECURE VPN ) Qumulo FS ( QUMULO FS ) Rapid7 ( RAPID7 NEXPOSE ) Rapid7 Insight ( RAPID7 INSIGHT ) Rubrik Polaris ( RUBRIK POLARIS ) SailPoint IAM ( SAILPOINT IAM ) SAP SuccessFactors ( SAP SUCCESSFACTORS ) Semperis DSP ( SEMPERIS DSP ) Sentinelone Alerts ( SENTINELONE ALERT ) SentinelOne EDR ( SENTINEL EDR ) Signal Sciences WAF ( SIGNAL SCIENCES WAF ) Snare System Diagnostic Logs ( SNARE SOLUTIONS ) SonicWall ( SONIC FIREWALL ) Sophos Central ( SOPHOS CENTRAL ) Sophos UTM ( SOPHOS UTM ) Spur data feeds ( SPUR FEEDS ) Suricata EVE ( SURICATA EVE ) Symantec DLP ( SYMANTEC DLP ) Symantec Endpoint Protection ( SEP ) Symantec VIP Authentication Hub ( SYMANTEC VIP AUTHHUB ) Tanium Audit ( TANIUM AUDIT ) Thinkst Canary ( THINKST CANARY ) Trend Micro Vision One ( TRENDMICRO VISION ONE ) Twingate ( TWINGATE ) Unix system ( NIX SYSTEM ) Vectra Detect ( VECTRA DETECT ) Veeam ( VEEAM ) Verba Recording System ( VERBA REC ) VeridiumID by Veridium ( VERIDIUM ID ) VMware ESXi ( VMWARE ESX ) Windows Defender ATP ( WINDOWS DEFENDER ATP ) Windows DNS ( WINDOWS DNS ) Windows Event ( WINEVTLOG ) Windows Event (XML) ( WINEVTLOG XML ) Winscp ( WINSCP ) WordPress ( WORDPRESS CMS ) Workspace Activities ( WORKSPACE ACTIVITY ) Zeek TSV ( BRO TSV ) Zix Email Encryption ( ZIX EMAIL ENCRYPTION ) Zscaler ( ZSCALER WEBPROXY ) ZScaler DNS ( ZSCALER DNS ) Zscaler Private Access ( ZSCALER ZPA ) The following log types, without a default parser, were added.
+- Param data types ARRAY STRINGS , STRING Return type STRING Code samples Here are some examples of how to use the function: Example 1 This example joins an array with non-null elements and a delimiter. arrays.join string(["foo", "bar"], ",") = "foo,bar" Example 2 This example joins an array with a null element and a delimiter. arrays.join string(["foo", NULL, "bar"], ",") = "foo,bar" Example 3 This example joins an array with non-null elements and no delimiter. arrays.join string(["foo", "bar"]) = "foobar" arrays.length Supported in: Rules Search arrays.length(repeatedField) Description Returns the number of repeated field elements.
+- Since re.capture all() returns an array, you can use arrays.join string() to merge these matches into a single, readable list. rule CaptureAllIPs { meta: author = "user@example.com" events: $e.network.http.user agent != "" $captured ips = arrays.join string(re.capture all($e.network.http.user agent, \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}), ", ") condition: $e } Known limitations Single capturing group: The regular expression used with re.capture all() must not contain more than one capturing group.
+- The output is in the form of a string. arrays.index to str([1, 3, 2], 2) // "2" arrays.join string Supported in: Rules Search arrays.join string(array of strings, optional delimiter) Description Converts an array of strings into a single string separated by the optional parameter.
+- Param data types INT FLOAT Return type FLOAT Code samples Example 1 This example shows the integer average. // This rule sets the outcome $size mode to the average // file size in the 5 minute match window. events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size) // yields 2.5 if the event file size values in the match window are 1, 2, 3 and 4 Example 2 This example shows the float average. events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size) // yields 1.75 if the event file size values in the match window are 1.1 and 2.4 Example 3 Negative input average events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size) // yields 0.6 if the event file size values in the match window are -1.1, 1.1, 0.0 and 2.4 Example 4 0 returns 0 events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size) // yields 0 if the event file size values in the match window is 0 Example 5 Ignoring 0 values events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size, true) // yields 394 if the event file size values in the match window are 0, 0, 0 and 394 window.first Supported in: Rules window.first(values to sort by, values to return) Description This aggregation function returns a string value derived from an event with the lowest correlated int value in the match window.
 
 ### "Search for events and alerts \_|\_ Google Security Operations \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 - Source ID: `site-api-reference`
-- Final score: 108
+- Final score: 77
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -89,17 +74,16 @@ Evidence snippets:
 - Grouped fields can also be used in combination with regular UDM fields as shown in the following example: ip = "5.6.7.8" AND metadata.event type = "NETWORK CONNECTION" Grouped fields have a separate section in Aggregations .
 - You can summarize by the following options: sum count count distinct average stddev min max Specify a value of Event count to return the number of events identified for this particular search and Pivot Table.
 
-### "Understand detection limits \_|\_ Google Security Operations \_|\_ Google\
+### "Composite detections \_|\_ Google Security Operations \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/detection/detection-limits](https://docs.cloud.google.com/chronicle/docs/detection/detection-limits)
-- Source ID: `site-docs-root`
-- Final score: 102
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/composite-detections](https://docs.cloud.google.com/chronicle/docs/detection/composite-detections)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 71
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Understand detection limits Supported in: Google secops SIEM Google Security Operations has the following limitations with regards to rule detections: Each rule version has a limit of 10,000 detections per day.
-- If the rule version is updated, the limit is reset and the rule can again generate 10,000 detections in that same day.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
-- For example, if a rule version produces 9,900 detections by 3 PM UTC on January 1, and all of these detections have a detection time on January 1, it generates only 100 more detections for that day.
+- Example : rule CheckCuratedDetection with EDR and EG { meta: author = "noone@cymbal.com" events: $d.detection.detection.rule name = /SCC: Custom Modules: Configurable Bad Domain/ $d.detection.collection elements.references.event.network.dns.questions.name = $domain $d.detection.collection elements.references.event.principal.asset.hostname = $hostname $e.metadata.log type = "LIMACHARLIE EDR" $e.metadata.product event type = "NETWORK CONNECTIONS" $domain = re.capture($e.principal.process.command line, "\\s([a-zA-Z0-9.-]+\\.[a-zA-Z0-9.-]+)$") $hostname = re.capture($e.principal.hostname, "([^.] )") $prevalence.graph.metadata.entity type = "DOMAIN NAME" $prevalence.graph.metadata.source type = "DERIVED CONTEXT" $prevalence.graph.entity.hostname = $domain $prevalence.graph.entity.domain.prevalence.day count = 10 $prevalence.graph.entity.domain.prevalence.rolling max <= 5 $prevalence.graph.entity.domain.prevalence.rolling max > 0 match: $hostname over 1h outcome: $risk score = 80 $CL target = array($domain) condition: $e and $d and $prevalence } View composite detection findings You can view composite detection results in the Detections page.
+- Tip: Because the number of outcome variables is limited to 20, we recommend establishing a common taxonomy of outcome variables (such as hostname , ip address , user , and file bytes ) to reuse consistently across a wide range of rules.
+- When designing and implementing composite detections, consider the following limitations: SOAR case data availability : Composite detections don't have access to all SOAR case data.
+- Enhance detections with the function library You can use the YARA-L function library at strategic points within a composite rule to increase signal and add more complex logic.
 

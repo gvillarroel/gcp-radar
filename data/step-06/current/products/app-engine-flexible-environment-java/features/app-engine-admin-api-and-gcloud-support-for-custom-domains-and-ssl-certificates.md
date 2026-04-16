@@ -1,31 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:43:43.862Z"
+generated_at: "2026-04-14T23:21:33.493Z"
 product_name: "App Engine flexible environment Java"
 product_slug: "app-engine-flexible-environment-java"
 feature_name: "App Engine Admin API and gcloud support for custom domains and SSL certificates"
 feature_slug: "app-engine-admin-api-and-gcloud-support-for-custom-domains-and-ssl-certificates"
 latest_feature_date: "2017-06-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started"
-  - "https://docs.cloud.google.com/appengine/docs/admin-api/apis"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/java/mapping-custom-domains"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/java/using-custom-domains-and-ssl"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/java/securing-custom-domains-with-ssl"
 keywords:
-  - "gcloud domain-mapping commands"
-  - "apps.domainMappings.create"
-  - "gcloud app domain-mappings"
-  - "create custom domain"
-  - "manage SSL certificates"
-  - "gcloud app ssl-certificates"
-  - "custom domains API"
-  - "App Engine Admin API"
+  - "app"
+  - "engine"
+  - "admin"
+  - "gcloud"
+  - "custom"
+  - "domains"
+  - "ssl"
+  - "certificates"
 ---
 
 # App Engine Admin API and gcloud support for custom domains and SSL certificates
 
 Product: App Engine flexible environment Java
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,38 +34,59 @@ App Engine added beta-level Admin API and gcloud capabilities to create and mana
 
 ## Extended Definition
 
-The feature is described as using the App Engine Admin API and associated gcloud commands to provision and manage custom domain mappings and SSL certificates for App Engine apps. In the provided sources, this is only indirectly supported at a generic level: the Admin API is documented as a RESTful API for managing App Engine applications, and API/reference documentation exists for it, but the excerpts do not explicitly confirm gcloud domain-mapping or SSL-certificate operations.
+App Engine added beta-level Admin API and gcloud capabilities to create and manage custom domains and SSL certificates.
 
 ## Evidence Summary
 
-The cited pages establish that the App Engine Admin API is an App Engine management API with RESTful access and documented references, but they do not provide explicit evidence in the excerpts for custom domain or SSL certificate management commands.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
-- [https://docs.cloud.google.com/appengine/docs/admin-api/apis](https://docs.cloud.google.com/appengine/docs/admin-api/apis)
+- [https://docs.cloud.google.com/appengine/docs/flexible/java/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/flexible/java/mapping-custom-domains)
+- [https://docs.cloud.google.com/appengine/docs/flexible/java/using-custom-domains-and-ssl](https://docs.cloud.google.com/appengine/docs/flexible/java/using-custom-domains-and-ssl)
+- [https://docs.cloud.google.com/appengine/docs/flexible/java/securing-custom-domains-with-ssl](https://docs.cloud.google.com/appengine/docs/flexible/java/securing-custom-domains-with-ssl)
 
 ## Supporting Pages
 
-### "An Overview of the Admin API \_|\_ App Engine Admin API \_|\_ Google Cloud\
+### "Mapping custom domains \_|\_ App Engine flexible environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
-- Source ID: `site-docs-root`
-- Final score: 38
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.
-- The App Engine Admin API is a RESTful API for managing your App Engine applications regardless of programming language.
-- Tip: You can use client libraries to interact with App Engine Admin API.
-
-### APIs and Reference \_|\_ App Engine Admin API \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/apis](https://docs.cloud.google.com/appengine/docs/admin-api/apis)
-- Source ID: `site-docs-reference`
-- Final score: 28
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/java/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/flexible/java/mapping-custom-domains)
+- Source ID: `site-docs-reference-2`
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Technology areas App Engine Admin API Reference Send feedback APIs and Reference Stay organized with collections Save and categorize content based on your preferences.
+- Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.
+- Alternatively, you can use gcloud commands or the Admin API to delete custom domains.
+- If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer.
+- The regions are as follows: us-west2 us-east4 northamerica-northeast1 southamerica-east1 europe-west2 europe-west3 asia-south1 asia-northeast1 australia-southeast1 App Engine custom domains use a pool of shared IP addresses for all applications.
+
+### "Mapping custom domains \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/java/using-custom-domains-and-ssl](https://docs.cloud.google.com/appengine/docs/flexible/java/using-custom-domains-and-ssl)
+- Source ID: `site-docs-reference-2`
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.
+- Alternatively, you can use gcloud commands or the Admin API to delete custom domains.
+- If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer.
+- The regions are as follows: us-west2 us-east4 northamerica-northeast1 southamerica-east1 europe-west2 europe-west3 asia-south1 asia-northeast1 australia-southeast1 App Engine custom domains use a pool of shared IP addresses for all applications.
+
+### "Secure custom domains with SSL \_|\_ App Engine flexible environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/java/securing-custom-domains-with-ssl](https://docs.cloud.google.com/appengine/docs/flexible/java/securing-custom-domains-with-ssl)
+- Source ID: `site-docs-reference-2`
+- Final score: 186
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To move from your own SSL certificates to Google-managed SSL certificates, or to add managed SSL certificates to an existing app with a custom domain, update your domain mapping: In the Google Cloud console, go to App Engine > Settings > Custom Domains : Go to Custom Domains Select the domain you want to secure, and click Enable managed security .
+- Disable managed SSL certificates To disable managed SSL certificates: In the Google Cloud console, go to App Engine > Settings > Custom Domains : Go to Custom Domains Select the domain and click Disable managed security .
+- If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Secure custom domains with SSL Stay organized with collections Save and categorize content based on your preferences.
 

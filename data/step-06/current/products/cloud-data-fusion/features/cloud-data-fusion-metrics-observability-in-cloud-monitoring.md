@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:04:57.768Z"
+generated_at: "2026-04-15T00:42:45.379Z"
 product_name: "Cloud Data Fusion"
 product_slug: "cloud-data-fusion"
 feature_name: "Cloud Data Fusion metrics observability in Cloud Monitoring"
 feature_slug: "cloud-data-fusion-metrics-observability-in-cloud-monitoring"
 latest_feature_date: "2025-03-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard"
-  - "https://docs.cloud.google.com/data-fusion/docs/how-to/viewing-stackdriver-logs"
-  - "https://docs.cloud.google.com/data-fusion/docs/release-notes"
+  - "https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview"
+  - "https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline"
 keywords:
   - "fusion"
   - "metrics"
   - "observability"
-  - "in"
   - "monitoring"
   - "added"
-  - "for"
   - "viewing"
+  - "instance"
+  - "pipeline"
 ---
 
 # Cloud Data Fusion metrics observability in Cloud Monitoring
 
 Product: Cloud Data Fusion
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Cloud Data Fusion added support for viewing instance and pipeline metrics in Clo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard](https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard)
-- [https://docs.cloud.google.com/data-fusion/docs/how-to/viewing-stackdriver-logs](https://docs.cloud.google.com/data-fusion/docs/how-to/viewing-stackdriver-logs)
-- [https://docs.cloud.google.com/data-fusion/docs/release-notes](https://docs.cloud.google.com/data-fusion/docs/release-notes)
+- [https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview](https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview)
+- [https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline](https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline)
 
 ## Supporting Pages
 
@@ -52,40 +52,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard](https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard)
 - Source ID: `site-iam-reference`
-- Final score: 222
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 178
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-- The dashboard contains the following charts: All pipelines Completed pipelines Failed pipelines All pipeline runs Completed pipeline runs Failed pipeline runs Dataproc clusters for runs After a metric is created, it might take up to 24 hours to start displaying the time series data.
 - Create a Cloud Data Fusion instance with Cloud Logging enabled To use Cloud Logging with your Cloud Data Fusion pipeline, create a Cloud Data Fusion instance with Cloud Logging enabled: Go to the Cloud Data Fusion Instances page and click Create instance .
 - In the Build filter field, enter the following: resource.type="cloud dataproc cluster" log name= "projects/. /logs/datafusion-pipeline-logs" In the Labels section, click Add label and create the following labels.
+- Create a pipeline monitoring dashboard using Cloud Monitoring Learn how to use Cloud Monitoring to create a dashboard to monitor pipelines.
+- Delete the Cloud Data Fusion instance Follow these instructions to delete your Cloud Data Fusion instance .
 
-### "View advanced pipeline logs in Cloud Logging \_|\_ Cloud Data Fusion \_\
+### Introduction to Cloud Data Fusion: Console \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/data-fusion/docs/how-to/viewing-stackdriver-logs](https://docs.cloud.google.com/data-fusion/docs/how-to/viewing-stackdriver-logs)
-- Source ID: `site-docs-root`
-- Final score: 156
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- This page describes how to enable Cloud Logging for your Cloud Data Fusion Dataproc clusters and access advanced pipeline logs.
-- In the Advanced monitoring and logging section, for Dataproc Cloud Logging , click edit Edit .
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-- Home Documentation Data analytics Cloud Data Fusion Guides Send feedback View advanced pipeline logs in Cloud Logging Stay organized with collections Save and categorize content based on your preferences.
-
-### Cloud Data Fusion release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/data-fusion/docs/release-notes](https://docs.cloud.google.com/data-fusion/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 154
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview](https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview)
+- Source ID: `site-iam-reference`
+- Final score: 108
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Change To support the Private Service Connect integration, the following permissions are added to the Cloud Data Fusion API Service Agent role: compute.networkAttachments.get compute.networkAttachments.update compute.networkAttachments.list Fixed Fixed in Cloud Data Fusion 6.10.0: Fixed an issue in the Postgres DB plugin causing macros to be unsupported for database configuration ( PLUGIN-1681 ).
-- March 20, 2023 Change Salesforce plugins version 1.4.4 is available in all supported Cloud Data Fusion versions with the following changes: In the Salesforce Sink , added the Concurrency Mode property to let you configure the plugin for parallel or serial concurrency.
-- This release includes the following feature: InstanceV3 monitored-resource: Introduced datafusion.googleapis.com/InstanceV3 as the default monitored resource for instance-level metrics and system service logs.
-- Fixed Fixed in Cloud Data Fusion 6.9.2: Added a retry for Pub/Sub snapshot creation and deletion in a real-time pipeline with a Pub/Sub source when a retryable internal error is thrown ( PLUGIN-1660 ).
+- Choose the edition based on the following criteria: Cost Concurrency limits for pipeline execution Role-based access control (RBAC) availability The editions are intended for the following use cases: Cloud Data Fusion edition Use case Developer edition For development, testing, or small-scale integrations Basic edition For production with moderate needs Enterprise edition For large-scale, mission-critical data pipelines with RBAC Public or private instance Depending on your requirements, decide if you need a public or a private instance.
+- Each instance is a unique, independent Cloud Data Fusion deployment, which contains a set of services that handle pipeline lifecycle management, orchestration, coordination, and metadata management.
+- Logging and monitoring Cloud Logging and Cloud Monitoring are crucial for gaining insights into the health and performance of your Cloud Data Fusion pipelines.
+- Enabling Logging and Monitoring lets you view Cloud Data Fusion pipeline logs in the Google Cloud console on the Logging viewer page.
+
+### Create a data pipeline by using Cloud Data Fusion \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline](https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline)
+- Source ID: `site-api-reference`
+- Final score: 107
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Enable the API Required roles To get the permissions that you need to create a Cloud Data Fusion instance and manage pipelines, ask your administrator to grant you the Cloud Data Fusion Admin ( roles/datafusion.admin ) IAM role on the project.
+- Create a data pipeline This quickstart shows you how to do the following: Create a Cloud Data Fusion instance.
+- Deploy a sample pipeline that's provided with your Cloud Data Fusion instance.
+- In the Google Cloud console, you can do the following: Create a Google Cloud console project Create and delete Cloud Data Fusion instances View the Cloud Data Fusion instance details In the Cloud Data Fusion web interface, you can use various pages, such as Studio or Wrangler , to use Cloud Data Fusion functionality.
 

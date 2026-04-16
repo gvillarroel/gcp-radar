@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.705Z"
+generated_at: "2026-04-15T13:50:47.074Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Raw data export"
@@ -9,9 +9,9 @@ latest_feature_date: "2024-09-03"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
   - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
 keywords:
   - "raw"
   - "export"
@@ -42,32 +42,19 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
 - [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
 
 ## Supporting Pages
-
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 230
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Feature Raw data export With raw data export, you can export detailed CCAI Platform session data to an external storage bucket.
-- Feature UPDATE: Session data is available in the agent adapter You can configure CCAI Platform so that users can view session data in the agent adapter.
-- Feature Call Handling: Hold music during connection : CCAI Platform has enhanced the call handling experience for end-users by ensuring a smoother transition when connecting with an agent.
-- Feature Virtual Agent pass data parameters updates : CCAI Platform has enhanced the ability to pass session-based contextual data to Virtual Agents (VA).
 
 ### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 144
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference-2`
+- Final score: 169
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
@@ -75,16 +62,29 @@ Evidence snippets:
 - Important: If you configure private access ( Preview ), you restrict public access to your CCAI Platform instance from the internet (end-users can still contact your contact center as they normally would).
 - Instance size and quota The following table shows CCAI Platform instance sizes and the maximum number of concurrent call or chat sessions.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Real-time dashboards and monitoring pages \_|\_ Google Cloud Contact Center\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 102
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- Source ID: `site-docs-reference`
+- Final score: 156
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- What's next Get started with CCAI Platform Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Contact Center AI Platform (CCAI Platform) is an AI-driven Contact Center as a Service platform that is built natively on Google Cloud and uses the other Gemini Enterprise for Customer Experience products at its core.
-- CCAI Platform is a unified contact center platform that accelerates the organization's ability to leverage and deploy Gemini Enterprise for CX without relying on multiple technology providers.
+- Note: If your company has requested a time zone override for all its users, then the requested time zone will be displayed instead Metric definitions Service Level SL / 30min Service Level within the past 30min SL / day Service Level for the current day SL Target Service Level Target set for the queue Live CIQ Consumers in Queue LCW / Sec Longest Call Waiting AQD / Sec Average Queue Duration (Waiting for an Agent) Live Number of calls currently in progress with an agent Productive Agents Number of agents with a productive status Live Agent Status Available Count of all available agents On-hold (Calls only)Count of agents who have placed a consumer on-hold Wrap-up Count of all agents in the wrap-up status Custom Count of all agents in custom statuses that are configured as productive Productive Agents Count of all agents in a productive status as configured in Settings > Queue Groups Today ABN % Abandon rate Volume Total offered interactions including failed/abandoned sessions.
+- Users Repeating/Returning: Total number of consumers who returned to interact with the same Virtual Agent within 24 hours of a previous session "Did not Understand" Rate: The % of Virtual Agent chat messages sent where a Virtual Agent states that they did not understand the consumer (No. of default fallback responses / Total no. of VA responses) 100 Current status Top queues : Top 5 chat queues in order of the highest to lowest total Virtual Agent sessions Top Virtual Agents: Top 5 Virtual Agents in order of the highest success rates Virtual Agent status Online: Enabled and functioning Virtual Agents Offline: Enabled but unreachable.
+- Queues monitoring page Overview The Queues page gives CCAI Platform Admins and Managers an overview of queue configurations, a live view of the queue activity, as well as data calculated for the past 24 hours.
+- Repeat Callers : Shows if the agent has received calls from callers CCAI Platform has marked as repeat callers based on the contact record in your CRM.
+
+### "Call settings \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 153
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Prerequisites In order to enable the Pre-session Deflection, you must have the following: A valid CCAI Platform account with Admin role assigned A valid Legacy, Pro, Enterprise, or Digital License Package A valid subscription for CCAI Platform IVR Support with IVR enabled A valid subscription for CCAI Platform SMS Support enabled with a valid queue structure The SMS must be functional (agent assigned) Basic configuration Do the following procedures, in order: Enable pre-session SMS deflection Enable and save the pre-session SMS deflection offer and opted-in messages Enable and save the pre-session SMS deflection greeting message Configure pre-session SMS deflection for a specific queue Enable pre-session SMS deflection Go Settings > Call.
+- Salesforce-specific configuration options that impact available options If Attach CCAI Platform Sessions directly to the account lookup object option is enabled in Settings > Developer, then the record drop-down is hidden.
+- Configure general deflection settings at the agent level To configure general deflection settings at the agent level, follow these steps: In the CCAI Platform portal, click Settings > Users & Teams .
+- Configure overcapacity deflections at the agent level To configure overcapacity deflections at the agent level, follow these steps: In the CCAI Platform portal, click Settings > Users & Teams .
 

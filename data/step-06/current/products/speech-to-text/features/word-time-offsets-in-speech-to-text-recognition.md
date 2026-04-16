@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.506Z"
+generated_at: "2026-04-12T12:19:12.009Z"
 product_name: "Speech-to-Text"
 product_slug: "speech-to-text"
 feature_name: "Word time offsets in Speech-to-Text recognition"
@@ -9,9 +9,10 @@ latest_feature_date: "2017-08-10"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models"
-  - "https://docs.cloud.google.com/speech-to-text/docs/v1/transcribe-console"
-  - "https://docs.cloud.google.com/speech-to-text/docs/reference/rpc/google.cloud.speech.v2"
+  - "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+  - "https://docs.cloud.google.com/speech-to-text/docs/encoding"
+  - "https://docs.cloud.google.com/speech-to-text/docs/multiple-voices"
+  - "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2"
 keywords:
   - "word"
   - "time"
@@ -38,46 +39,69 @@ Cloud Speech-to-Text now supports returning begin and end timestamps for each re
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models](https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models)
-- [https://docs.cloud.google.com/speech-to-text/docs/v1/transcribe-console](https://docs.cloud.google.com/speech-to-text/docs/v1/transcribe-console)
-- [https://docs.cloud.google.com/speech-to-text/docs/reference/rpc/google.cloud.speech.v2](https://docs.cloud.google.com/speech-to-text/docs/reference/rpc/google.cloud.speech.v2)
+- [https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig](https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig)
+- [https://docs.cloud.google.com/speech-to-text/docs/encoding](https://docs.cloud.google.com/speech-to-text/docs/encoding)
+- [https://docs.cloud.google.com/speech-to-text/docs/multiple-voices](https://docs.cloud.google.com/speech-to-text/docs/multiple-voices)
+- [https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2](https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2)
 
 ## Supporting Pages
 
-### Overview of custom speech models | Cloud Speech-to-Text | Google Cloud Documentation
+### RecognitionConfig \_|\_ Cloud Speech-to-Text \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models](https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models)
-- Source ID: `site-docs-root`
-- Final score: 200
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Overview of custom speech models Cloud Speech-to-Text Google Cloud Documentation Source URL: https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models Accessible in both our Google Cloud console and API, Custom Speech-to-Text models allow to train, evaluate and deploy a dedicated speech model in a no-code integrated environment.
-
-### Quickstart: Transcribe speech to text by using the Google Cloud console | Cloud Speech-to-Text | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/speech-to-text/docs/v1/transcribe-console](https://docs.cloud.google.com/speech-to-text/docs/v1/transcribe-console)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Quickstart: Transcribe speech to text by using the Google Cloud console Cloud Speech-to-Text Google Cloud Documentation Source URL: https://docs.cloud.google.com/speech-to-text/docs/v1/transcribe-console Open the Cloud Speech-to-Text overview.
-
-### Package google.cloud.speech.v2 | Cloud Speech-to-Text | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/speech-to-text/docs/reference/rpc/google.cloud.speech.v2](https://docs.cloud.google.com/speech-to-text/docs/reference/rpc/google.cloud.speech.v2)
-- Source ID: `site-docs-reference`
-- Final score: 182
+- URL: [https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig](https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig)
+- Source ID: `site-api-reference`
+- Final score: 324
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Package google.cloud.speech.v2 Cloud Speech-to-Text Google Cloud Documentation Source URL: https://docs.cloud.google.com/speech-to-text/docs/reference/rpc/google.cloud.speech.v2 A biasing PhraseSet, which can be either a string referencing the name of an existing PhraseSets resource, or an inline definition of a PhraseSet.
-- A speech recognition result corresponding to a portion of the audio.
-- Output configurations SubRip Text ...
+- JSON representation { "encoding" : enum ( AudioEncoding ) , "sampleRateHertz" : integer , "audioChannelCount" : integer , "enableSeparateRecognitionPerChannel" : boolean , "languageCode" : string , "alternativeLanguageCodes" : [ string ] , "maxAlternatives" : integer , "profanityFilter" : boolean , "adaptation" : { object ( SpeechAdaptation ) } , "transcriptNormalization" : { object ( TranscriptNormalization ) } , "speechContexts" : [ { object ( SpeechContext ) } ] , "enableWordTimeOffsets" : boolean , "enableWordConfidence" : boolean , "enableAutomaticPunctuation" : boolean , "enableSpokenPunctuation" : boolean , "enableSpokenEmojis" : boolean , "diarizationConfig" : { object ( SpeakerDiarizationConfig ) } , "metadata" : { object ( RecognitionMetadata ) } , "model" : string , "useEnhanced" : boolean } Fields encoding enum ( AudioEncoding ) Encoding of audio data sent in all RecognitionAudio messages.
+- For more information, see speech adaptation . enableWordTimeOffsets boolean If true , the top result includes a list of words and the start and end time offsets (timestamps) for those words.
+- JSON representation AudioEncoding SpeechAdaptation JSON representation ABNFGrammar JSON representation TranscriptNormalization JSON representation Entry JSON representation SpeechContext JSON representation SpeakerDiarizationConfig JSON representation RecognitionMetadata JSON representation InteractionType MicrophoneDistance OriginalMediaType RecordingDeviceType Provides information to the recognizer that specifies how to process the request.
+- JSON representation { "phrases" : [ string ] , "boost" : number } Fields phrases[] string A list of strings containing words and phrases "hints" so that the speech recognition is more likely to recognize them.
+
+### "Introduction to audio encoding for Cloud Speech-to-Text \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/speech-to-text/docs/encoding](https://docs.cloud.google.com/speech-to-text/docs/encoding)
+- Source ID: `site-docs-root`
+- Final score: 300
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Cloud Speech-to-Text Send feedback Introduction to audio encoding for Cloud Speech-to-Text Stay organized with collections Save and categorize content based on your preferences.
+- Although the removal of such data through lossy compression may not noticeably affect audio as heard by the human ear, loss of such data to a speech recognition engine may significantly degrade accuracy.
+- Linear PCM (which indicates that the amplitude response is linearly uniform across the sample) is the standard used within CDs, and within the LINEAR16 encoding of the Cloud Speech-to-Text API.
+- The Cloud Speech-to-Text API supports several lossy formats, though you should avoid them if you have control over the audio, because data loss may affect recognition accuracy.
+
+### "Detect different speakers in an audio recording \_|\_ Cloud Speech-to-Text\
+
+- URL: [https://docs.cloud.google.com/speech-to-text/docs/multiple-voices](https://docs.cloud.google.com/speech-to-text/docs/multiple-voices)
+- Source ID: `site-docs-root`
+- Final score: 299
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For instructions on installing the gcloud CLI, see the quickstart . curl -s -H "Content-Type: application/json" \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ https://speech.googleapis.com/v2/projects/ { project } /locations/ { location } /recognizers/ { recognizer } :recognize \ --data '{ "config": { "features": { "diarizationConfig": { "minSpeakerCount": 2, "maxSpeakerCount": 2 }, } }, "uri": "gs://cloud-samples-tests/speech/commercial mono.wav" }' > speaker-diarization.txt If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format, saved to a file named speaker-diarization.txt . { "results" : [ { "alternatives" : [ { "transcript" : "hi I'd like to buy a Chromecast and I was wondering whether you could help me with that certainly which color would you like we have blue black and red uh let's go with the black one would you like the new Chromecast Ultra model or the regular Chrome Cast regular Chromecast is fine thank you okay sure we like to ship it regular or Express Express please terrific it's on the way thank you thank you very much bye" , "confidence" : 0 .92142606, "words" : [ { "startOffset" : "0s" , "endOffset" : "1.100s" , "word" : "hi" , "speakerLabel" : "2" } , { "startOffset" : "1.100s" , "endOffset" : "2s" , "word" : "I'd" , "speakerLabel" : "2" } , { "startOffset" : "2s" , "endOffset" : "2s" , "word" : "like" , "speakerLabel" : "2" } , { "startOffset" : "2s" , "endOffset" : "2.100s" , "word" : "to" , "speakerLabel" : "2" } , ... { "startOffset" : "6.500s" , "endOffset" : "6.900s" , "word" : "certainly" , "speakerLabel" : "1" } , { "startOffset" : "6.900s" , "endOffset" : "7.300s" , "word" : "which" , "speakerLabel" : "1" } , { "startOffset" : "7.300s" , "endOffset" : "7.500s" , "word" : "color" , "speakerLabel" : "1" } , ... ] } ] , "languageCode" : "en-us" } ] } Go To learn how to install and use the client library for Cloud STT, see Cloud STT client libraries .
+- Use a local file The following code snippet demonstrates how to enable speaker diarization in a transcription request to Cloud Speech-to-Text using a local file REST Refer to the speech:recognize API endpoint for complete details.
+- Home Documentation AI and ML Cloud Speech-to-Text Send feedback Detect different speakers in an audio recording Stay organized with collections Save and categorize content based on your preferences.
+- When you send an audio transcription request to Cloud Speech-to-Text, you can include a parameter telling Cloud Speech-to-Text to identify the different speakers in the audio sample.
+
+### "Chirp 2: Enhanced multilingual accuracy \_|\_ Cloud Speech-to-Text \_|\_\
+
+- URL: [https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2](https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2)
+- Source ID: `site-docs-root`
+- Final score: 298
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- RecognizeRequest ( recognizer = f "projects/ { PROJECT ID } /locations/us-central1/recognizers/ " , config = config , content = audio content , ) Transcribes the audio into text response = client . recognize ( request = request ) for result in response . results : print ( f "Translated transcript: { result . alternatives [ 0 ] . transcript } " ) return response Enable word-level timestamps import os from google.cloud.speech v2 import SpeechClient from google.cloud.speech v2.types import cloud speech from google.api core.client options import ClientOptions PROJECT ID = os . getenv ( "GOOGLE CLOUD PROJECT" ) def transcribe sync chirp2 with timestamps ( audio file : str ) - > cloud speech .
+- Model Model identifier Chirp 2 chirp 2 API methods As Chirp 2 is exclusively available within the Speech-to-Text API V2, it supports the following recognition methods: Model Model identifier Language support V2 Speech.StreamingRecognize (good for streaming and real-time audio) Limited V2 Speech.Recognize (good for short audio < 1 min) On par with Chirp V2 Speech.BatchRecognize (good for long audio 1 min to 8 hrs) On par with Chirp You can always find the latest list of supported languages and features for each transcription model, using the locations API .
+- RecognizeResponse : """Transcribes an audio file using the Chirp 2 model of Google Cloud Speech-to-Text V2 API, providing word-level timestamps for each transcribed word.
+- RecognizeResponse : """Transcribes an audio file using the Chirp 2 model of Google Cloud Speech-to-Text V2 API, providing word-level timestamps for each transcribed word.
 

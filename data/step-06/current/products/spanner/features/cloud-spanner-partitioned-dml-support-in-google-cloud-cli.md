@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.087Z"
+generated_at: "2026-04-13T22:42:27.353Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Cloud Spanner Partitioned DML support in Google Cloud CLI"
@@ -9,18 +9,14 @@ latest_feature_date: "2018-10-26"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.client.Client"
+  - "https://docs.cloud.google.com/spanner/docs/backfill-embeddings"
+  - "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest"
 keywords:
-  - "spanner"
+  - "inserting"
   - "partitioned"
-  - "dml"
-  - "in"
-  - "cli"
-  - "now"
-  - "includes"
   - "beta"
+  - "includes"
 ---
 
 # Cloud Spanner Partitioned DML support in Google Cloud CLI
@@ -38,44 +34,47 @@ Google Cloud CLI now includes beta support for inserting, updating, and deleting
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.client.Client](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.client.Client)
+- [https://docs.cloud.google.com/spanner/docs/backfill-embeddings](https://docs.cloud.google.com/spanner/docs/backfill-embeddings)
+- [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
+- [https://docs.cloud.google.com/python/docs/reference/spanner/latest](https://docs.cloud.google.com/python/docs/reference/spanner/latest)
 
 ## Supporting Pages
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### "Generate vector embeddings for textual data in bulk using partitioned DML\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 135
+- URL: [https://docs.cloud.google.com/spanner/docs/backfill-embeddings](https://docs.cloud.google.com/spanner/docs/backfill-embeddings)
+- Source ID: `site-docs-root`
+- Final score: 60
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- Home Documentation Databases Spanner Guides Send feedback Generate vector embeddings for textual data in bulk using partitioned DML Stay organized with collections Save and categorize content based on your preferences.
+- If the Vertex AI API requests are throttled due to Vertex AI API quota limits, then Spanner retries these failures under the partitioned DML transaction mode for a maximum of 20 times.
+- Backfill embeddings Finally, execute the following UPDATE statement using partitioned DML to generate embeddings for the textual data column and store the embeddings in your database.
+- Depending on the amount of embeddings you are backfilling, you might need to increase this timeout to ensure that the UPDATE partitioned DML has sufficient time to complete.
 
-### Class SpannerClient (3.62.0) | Python client libraries | Google Cloud Documentation
+### "Best practices for using Spanner as a gaming database \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
-- Source ID: `site-python-reference`
-- Final score: 135
+- URL: [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
+- Source ID: `site-docs-root`
+- Final score: 54
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerClient (3.62.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- Updating the previous query to use this improved index looks like the following: SELECT PlayerID FROM Player @ { force index = idx attribute } WHERE IndexPartition BETWEEN 1 and 6 AND Attribute = 23 LIMIT 10 Because no beta test was run, the studio didn't realize they were testing by using data with incorrect assumptions.
+- Although synthetic load tests are a good way to validate how many queries per second (QPS) your instance can handle, a beta test with real players is necessary to validate your schema and prepare a successful launch.
+- Personally identifiable information (PII) In games, information that typically includes email address and payment account information, such as a credit card number and billing address.
+- Based on the data you gathered during load testing or from any public beta testing, you can estimate the number of nodes required to handle requests at launch.
 
-### Class Client (3.58.0) | Python client library | Google Cloud Documentation
+### "Python Client for Cloud Spanner \_|\_ Python client libraries \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.client.Client](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.client.Client)
+- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest](https://docs.cloud.google.com/python/docs/reference/spanner/latest)
 - Source ID: `site-python-reference`
-- Final score: 121
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Class Client (3.58.0) Python client library Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.client.Client Client for interacting with Cloud Spanner API.
+- Final score: 52
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 

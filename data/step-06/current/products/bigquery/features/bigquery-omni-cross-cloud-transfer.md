@@ -1,74 +1,89 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.747Z"
+generated_at: "2026-04-15T12:48:36.692Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery Omni cross-cloud transfer"
 feature_slug: "bigquery-omni-cross-cloud-transfer"
 latest_feature_date: "2022-04-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/access-control"
-  - "https://docs.cloud.google.com/bigquery/docs/salesforce-quickstart"
+  - "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+  - "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
 keywords:
-  - "workloads across AWS and Azure"
-  - "AWS/Azure transfer"
-  - "cross-cloud transfer"
-  - "multi-cloud transfer"
-  - "AWS integration"
-  - "Omni cross-cloud"
-  - "Azure integration"
-  - "BigQuery Omni"
+  - "bigquery"
+  - "omni"
+  - "cross"
+  - "transfer"
+  - "moves"
+  - "across"
+  - "clouds"
+  - "including"
 ---
 
 # BigQuery Omni cross-cloud transfer
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-BigQuery Omni now supports cross-cloud transfer capabilities for workloads spanning AWS and Azure.
+BigQuery Omni cross-cloud transfer moves data across clouds including AWS and Azure.
 
 ## Extended Definition
 
-BigQuery Omni now supports cross-cloud transfer capabilities for workloads spanning AWS and Azure.
+BigQuery Omni cross-cloud transfer moves data across clouds including AWS and Azure.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/access-control](https://docs.cloud.google.com/bigquery/docs/access-control)
-- [https://docs.cloud.google.com/bigquery/docs/salesforce-quickstart](https://docs.cloud.google.com/bigquery/docs/salesforce-quickstart)
+- [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- [https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners](https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners)
 
 ## Supporting Pages
 
-### BigQuery IAM roles and permissions \_|\_ Google Cloud Documentation
+### "Introduction to BigLake external tables \_|\_ BigQuery \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/access-control](https://docs.cloud.google.com/bigquery/docs/access-control)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- Source ID: `site-docs-reference-5`
+- Final score: 151
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Connected Sheets Service Agent ( roles/ bigquery.connectedSheetsServiceAgent ) BigQuery Omni Service Agent ( roles/ bigqueryomni.serviceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Chronicle Service Agent ( roles/ chronicle.serviceAgent ) Cloud Asset Service Agent ( roles/ cloudasset.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Dialogflow Service Agent ( roles/ dialogflow.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Spectrum SAS Service Agent ( roles/ spectrumsas.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) bigquery.tables.updateIndex Owner ( roles/ owner ) Editor ( roles/ editor ) BigQuery Admin ( roles/ bigquery.admin ) BigQuery Data Editor ( roles/ bigquery.dataEditor ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
-- Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Connected Sheets Service Agent ( roles/ bigquery.connectedSheetsServiceAgent ) BigQuery Data Transfer Service Agent ( roles/ bigquerydatatransfer.serviceAgent ) BigQuery Omni Service Agent ( roles/ bigqueryomni.serviceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Chronicle Service Agent ( roles/ chronicle.serviceAgent ) Cloud Asset Service Agent ( roles/ cloudasset.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Data Studio Service Agent ( roles/ datastudio.serviceAgent ) Dialogflow Service Agent ( roles/ dialogflow.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) DSPM Service Agent ( roles/ dspm.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) FleetEngine Service Agent ( roles/ fleetengine.serviceAgent ) Looker Service Agent ( roles/ looker.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Monitoring Service Agent ( roles/ monitoring.notificationServiceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Spectrum SAS Service Agent ( roles/ spectrumsas.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) bigquery. jobs. createGlobalQuery Owner ( roles/ owner ) Editor ( roles/ editor ) BigQuery Admin ( roles/ bigquery.admin ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Databases Admin ( roles/ iam.databasesAdmin ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
-- Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) bigquerymigration. workflows. create Owner ( roles/ owner ) Editor ( roles/ editor ) Bigquerymigration Admin ( roles/ bigquerymigration.admin ) MigrationWorkflow Editor ( roles/ bigquerymigration.editor ) bigquerymigration. workflows. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Bigquerymigration Admin ( roles/ bigquerymigration.admin ) MigrationWorkflow Editor ( roles/ bigquerymigration.editor ) bigquerymigration. workflows. enableAiOutputTypes Owner ( roles/ owner ) Editor ( roles/ editor ) Bigquerymigration Admin ( roles/ bigquerymigration.admin ) MigrationWorkflow Editor ( roles/ bigquerymigration.editor ) bigquerymigration. workflows. enableLineageOutputTypes Owner ( roles/ owner ) Editor ( roles/ editor ) Bigquerymigration Admin ( roles/ bigquerymigration.admin ) MigrationWorkflow Editor ( roles/ bigquerymigration.editor ) bigquerymigration. workflows. enableOutputTypePermissions Owner ( roles/ owner ) Editor ( roles/ editor ) Bigquerymigration Admin ( roles/ bigquerymigration.admin ) MigrationWorkflow Editor ( roles/ bigquerymigration.editor ) bigquerymigration. workflows. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Bigquerymigration Admin ( roles/ bigquerymigration.admin ) MigrationWorkflow Editor ( roles/ bigquerymigration.editor ) MigrationWorkflow Viewer ( roles/ bigquerymigration.viewer ) Support User ( roles/ iam.supportUser ) bigquerymigration. workflows. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Bigquerymigration Admin ( roles/ bigquerymigration.admin ) MigrationWorkflow Editor ( roles/ bigquerymigration.editor ) MigrationWorkflow Viewer ( roles/ bigquerymigration.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Security Reviewer ( roles/ iam.securityReviewer ) Support User ( roles/ iam.supportUser ) bigquerymigration. workflows. orchestrateTask Owner ( roles/ owner ) Bigquerymigration Admin ( roles/ bigquerymigration.admin ) Task Orchestrator ( roles/ bigquerymigration.orchestrator ) bigquerymigration. workflows. update Owner ( roles/ owner ) Editor ( roles/ editor ) Bigquerymigration Admin ( roles/ bigquerymigration.admin ) MigrationWorkflow Editor ( roles/ bigquerymigration.editor ) BigQuery Omni permissions There are no IAM permissions for this service.
-- Role Permissions Bigquerymigration Admin ( roles/ bigquerymigration.admin ) Admin role for bigquerymigration bigquerymigration. bigquerymigration.subtasks.get bigquerymigration. subtasks. list bigquerymigration. translation. translate bigquerymigration. workflows. create bigquerymigration. workflows. delete bigquerymigration. workflows. enableAiOutputTypes bigquerymigration. workflows. enableLineageOutputTypes bigquerymigration. workflows. enableOutputTypePermissions bigquerymigration. workflows. get bigquerymigration. workflows. list bigquerymigration. workflows. orchestrateTask bigquerymigration. workflows. update resourcemanager.projects.get resourcemanager.projects.list MigrationWorkflow Editor ( roles/ bigquerymigration.editor ) Editor of EDW migration workflows. bigquerymigration.subtasks. bigquerymigration.subtasks.get bigquerymigration. subtasks. list bigquerymigration. workflows. create bigquerymigration. workflows. delete bigquerymigration. workflows. enableAiOutputTypes bigquerymigration. workflows. enableLineageOutputTypes bigquerymigration. workflows. enableOutputTypePermissions bigquerymigration. workflows. get bigquerymigration. workflows. list bigquerymigration. workflows. update Task Orchestrator ( roles/ bigquerymigration.orchestrator ) Orchestrator of EDW migration tasks. bigquerymigration. workflows. orchestrateTask storage.objects.list Migration Translation User ( roles/ bigquerymigration.translationUser ) User of EDW migration interactive SQL translation service. bigquerymigration. translation. translate MigrationWorkflow Viewer ( roles/ bigquerymigration.viewer ) Viewer of EDW migration MigrationWorkflow. bigquerymigration.subtasks. bigquerymigration.subtasks.get bigquerymigration. subtasks. list bigquerymigration. workflows. get bigquerymigration. workflows. list Task Worker ( roles/ bigquerymigration.worker ) Worker that executes EDW migration subtasks. storage.objects.create storage.objects.get storage.objects.list BigQuery Omni roles This table lists the predefined IAM roles and permissions for BigQuery Omni.
+- CREATE OR REPLACE TABLE temp table AS ( SELECT l shipmode , l linenumber , l orderkey FROM aws dataset . lineitem WHERE l shipmode IN ( 'AIR' , 'REG AIR' ) AND l commitdate l receiptdate AND l shipdate l commitdate AND l receiptdate >= DATE '1997-01-01' AND l receiptdate DATE '1997-02-01' ); After the temporary table is created, the JOIN operation completes, and the following query is run: SELECT l shipmode , o orderpriority , count ( l linenumber ) AS num lineitems FROM bigquery dataset . orders JOIN temp table ON orders . o orderkey = lineitem . l orderkey GROUP BY l shipmode , o orderpriority ORDER BY l shipmode , o orderpriority ; As another example, consider the following cross-cloud join: SELECT c mktsegment , c name FROM bigquery dataset . customer WHERE c mktsegment = 'BUILDING' UNION ALL SELECT c mktsegment , c name FROM aws dataset . customer WHERE c mktsegment = 'FURNITURE' LIMIT 10 ; In this query, the LIMIT clause is not pushed down to the BigQuery Omni region.
+- Cross-cloud join examples The following query joins an orders table in a BigQuery region with a lineitem table in a BigQuery Omni region: SELECT l shipmode , o orderpriority , count ( l linenumber ) AS num lineitems FROM bigquery dataset . orders JOIN aws dataset . lineitem ON orders . o orderkey = lineitem . l orderkey WHERE l shipmode IN ( 'AIR' , 'REG AIR' ) AND l commitdate l receiptdate AND l shipdate l commitdate AND l receiptdate >= DATE '1997-01-01' AND l receiptdate DATE '1997-02-01' GROUP BY l shipmode , o orderpriority ORDER BY l shipmode , o orderpriority ; This query is broken into local and remote parts.
+- If a cross-cloud join query references 10 or more datasets from BigQuery Omni regions, it might fail with an error Not found: Dataset <BigQuery dataset> was not found in location <BigQuery Omni region> .
+- Be aware that if you explicitly specify a BigQuery region and your query only contains BigLake tables, then your query is run as a cross-cloud query and incurs data transfer costs.
 
-### Work with Salesforce Data Cloud data in BigQuery \_|\_ Google Cloud Documentation
+### "Data definition language (DDL) statements in GoogleSQL \_|\_ BigQuery \_\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/salesforce-quickstart](https://docs.cloud.google.com/bigquery/docs/salesforce-quickstart)
-- Source ID: `site-docs-root-2`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- Source ID: `site-docs-reference`
+- Final score: 134
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In this example, we retrieve total sales for a customer named john . -- Get combined sales for a customer from both offline and online sales USING ( SELECT total price FROM listing nto john.nto orders dll WHERE customer name = 'john' UNION ALL SELECT total price FROM listing nto john.nto orders dll WHERE customer name = 'john' ) a SELECT SUM ( total price ); Cross Cloud Data Transfer through CTAS You can use Create Table As Select (CTAS) to move data from Data Cloud tables in the BigQuery Omni region to the US region. -- Move all the orders for March to the US region CREATE OR REPLACE TABLE us data . online orders march AS SELECT FROM listing nto john . nto orders dll WHERE EXTRACT ( MONTH FROM order time ) = 3 The destination table is a BigQuery managed table in the US region.
-- This covers the offline sales, and consists of three tables: nto pos.customers nto pos.products nto pos.orders The following datasets store additional objects: aws data us data Run ad-hoc queries Using BigQuery Omni, you can run ad-hoc queries to analyze the Data Cloud data through the subscribed dataset.
-- SELECT name c , age c FROM listing nto john.nto customers dll WHERE age > 40 LIMIT 1000 ; Run cross-cloud queries Cross-cloud queries let you join any of the tables in the BigQuery Omni region and tables in the BigQuery regions.
-- Cross cloud materialized views Cross Cloud Materialized Views ( CCMV ) transfer data from a BigQuery Omni region to a non-BigQuery Omni BigQuery region incrementally.
+- CREATE TEMP TABLE Example ( x INT64 , y STRING ); INSERT INTO Example VALUES ( 5 , 'foo' ); INSERT INTO Example VALUES ( 6 , 'bar' ); SELECT FROM Example ; This script returns the following output: +-----+---+-----+ Row x y +-----+--- -----+ 1 5 foo 2 6 bar +-----+--- -----+ Load data across clouds Example 1 Suppose you have a BigLake table named myawsdataset.orders that references data from Amazon S3 .
+- Examples The following example sets a new description on a table column called price : ALTER TABLE mydataset . mytable ALTER COLUMN price SET OPTIONS ( description = 'Price per unit' ); The following example sets a new description on a view column called total : ALTER VIEW mydataset . myview ALTER COLUMN total SET OPTIONS ( description = 'Total sales of the product' ); ALTER COLUMN DROP NOT NULL statement Removes a NOT NULL constraint from a column in a table in BigQuery.
+- Examples The following example removes the NOT NULL constraint from a column called mycolumn : ALTER TABLE mydataset . mytable ALTER COLUMN mycolumn DROP NOT NULL ALTER COLUMN SET DATA TYPE statement Changes the data type of a column in a table in BigQuery to a less restrictive data type.
+- Examples The following example removes a replica that is located in the us-east4 region from the cross region dataset dataset: ALTER SCHEMA [ IF EXISTS ] cross region dataset DROP REPLICA us-east4 ALTER TABLE SET OPTIONS statement Sets the options on a table.
+
+### Google Cloud Ready - BigQuery Partners \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners](https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners)
+- Source ID: `site-docs-reference-5`
+- Final score: 129
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Partner references SAS/ACCESS BigQuery Interface Guide SAS Google BigQuery Data Connector Partner Advantage page Direct link Segment by Twilio Solution Segment Category BI, ML, & Advanced Analytics Description Twilio Segment provides AI-ready data for personalized customer experiences across channels, including messaging, email, customer service, voice, and video interactions.
+- Partner references Getting started with BigQuery Lytics Solution Lytics Category BI, ML, & Advanced Analytics Description Lytics is a customer data platform (CDP) that helps businesses collect, unify, and activate customer data from across their marketing, sales, and service channels.
+- Partner references Using SQDR with BigQuery Partner Advantage page Direct link StreamNative Solution StreamNative Cloud Category ETL & Data Integration Description StreamNative offers a data streaming platform that allows users to continuously stream data across their organization.
+- The platform offers simple manual rules to support domain knowledge transfer as well as advanced statistical and ML-based tests with auto thresholds to get started quickly and scale across multiple tables.
 

@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.113Z"
+generated_at: "2026-04-14T00:17:30.476Z"
 product_name: "Dialogflow"
 product_slug: "dialogflow"
 feature_name: "Dialogflow CX security settings"
 feature_slug: "dialogflow-cx-security-settings"
 latest_feature_date: "2020-12-15"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+  - "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls"
+  - "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.conversation_profiles.ConversationProfilesAsyncClient"
 keywords:
   - "dialogflow"
   - "cx"
@@ -17,14 +19,13 @@ keywords:
   - "settings"
   - "control"
   - "redaction"
-  - "and"
   - "retention"
 ---
 
 # Dialogflow CX security settings
 
 Product: Dialogflow
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +35,56 @@ Dialogflow CX security settings control data redaction and data retention.
 
 Dialogflow CX security settings control data redaction and data retention.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings)
+- [https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls](https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls)
+- [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.conversation_profiles.ConversationProfilesAsyncClient](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.conversation_profiles.ConversationProfilesAsyncClient)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Agent settings \_|\_ Dialogflow CX \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings)
+- Source ID: `site-docs-root`
+- Final score: 134
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Security See Security settings and Access control .
+- Enable consent-based end-user input redaction If this setting is enabled, it lets you use a special session parameter to control whether end-user input and parameters are redacted from conversation history and Cloud logging , by default the session parameter is true .
+- Enable consent-based end-user input redaction If this setting is enabled, it lets you use a special session parameter to control whether end-user input and parameters are redacted from conversation history and Cloud logging .
+- When enabled, you can provide the following options: Prompt security settings : You can select either Default for default security settings or Customize to clarify what user queries should be considered safe or unsafe.
+
+### Compliance and security controls \_|\_ Dialogflow \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls](https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls)
+- Source ID: `site-docs-root-2`
+- Final score: 126
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Certifications Dialogflow CX is compliant with the following: Compliance Certification Dialogflow CX (including generative features ) Dialogflow ES HIPAA ✔ ✔ ISO 27001 , ISO 27017 , ISO 27018 , and ISO 27701 ✔ ✔ SOC 1 , SOC 2 , SOC 3 ✔ ✔ Security controls Dialogflow CX provides the following security controls: Security controls compliance Dialogflow CX (including generative features ) Dialogflow ES Data Residency Regionalization and location settings Regionalization and data residency Customer-managed encryption keys (CMEK) Customer-managed encryption keys (CMEK) - VPC Service Controls (VPC-SC) Using VPC Service Controls Using VPC Service Controls Access Transparency Access Transparency - Government authorizations Dialogflow CX has received the following authorizations: Authorization Dialogflow CX (including generative features ) Dialogflow ES FedRAMP High Authorization - Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation AI and ML Dialogflow Resources Send feedback Compliance and security controls Stay organized with collections Save and categorize content based on your preferences.
+- This page provides information on compliance certifications and security controls that are supported by Dialogflow CX.
+- Any certifications, security controls, and government authorizations cover Dialogflow in its entirety.
+
+### "Class ConversationProfilesAsyncClient (2.47.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.conversation_profiles.ConversationProfilesAsyncClient](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.conversation_profiles.ConversationProfilesAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Returns Type Description google.cloud.dialogflow v2.types.ConversationProfile Defines the services to connect to incoming Dialogflow conversations. cx security settings path cx security settings path ( project : str , location : str , security settings : str ) - > str Returns a fully-qualified cx security settings string. delete conversation profile delete conversation profile ( request : typing .
+- Dict [ str , str ] Parses a conversation profile path into its component segments. parse cx security settings path parse cx security settings path ( path : str ) - > typing .
+- Dict [ str , str ] Parses a cx security settings path into its component segments. parse document path parse document path ( path : str ) - > typing .
+- The result type for the operation will be ConversationProfile Defines the services to connect to incoming Dialogflow conversations. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. conversation model path conversation model path ( project : str , location : str , conversation model : str ) - > str Returns a fully-qualified conversation model string. conversation profile path conversation profile path ( project : str , conversation profile : str ) - > str Returns a fully-qualified conversation profile string. create conversation profile create conversation profile ( request : typing .
 

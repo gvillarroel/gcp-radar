@@ -1,18 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.987Z"
+generated_at: "2026-04-14T17:29:37.165Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Enterprise Search user feedback collection"
 feature_slug: "enterprise-search-user-feedback-collection"
 latest_feature_date: "2023-06-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-feedback"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-widget-attributes"
 keywords:
   - "enterprise"
   - "search"
@@ -21,13 +20,13 @@ keywords:
   - "collection"
   - "enables"
   - "collecting"
-  - "on"
+  - "widget"
 ---
 
 # Enterprise Search user feedback collection
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,35 +38,35 @@ Enables collecting user feedback on Enterprise Search widget results using thumb
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls](https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-feedback](https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-feedback)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-widget-attributes](https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-widget-attributes)
 
 ## Supporting Pages
 
-### "Configure serving controls for search \_|\_ Vertex AI Search \_|\_ Google\
+### Configure widget feedback \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls](https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls)
-- Source ID: `site-api-reference`
-- Final score: 172
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-feedback](https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-feedback)
+- Source ID: `site-docs-reference`
+- Final score: 143
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- REST Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [" USE CASE "], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": true } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ], "queryRegex": " VALUE REGEX " }, "promoteAction": { "dataStore": " DATA STORE RESOURCE PATH ", "searchLinkPromotion": { "document": " DOCUMENT RESOURCE PATH ", "title": " TITLE ", "uri": " URI ", "description": " DESCRIPTION ", "enabled": ENABLED TRUE FALSE , } } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
-- Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [ " USE CASE " ], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": FULL MATCH } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ] }, "boostAction": { "boost": BOOST VALUE , "filter": " FILTER ", "dataStore": " DATA STORE RESOURCE PATH " } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
-- REST Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [" USE CASE "], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": FULL MATCH } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ] }, "synonymsAction": { "synonyms": [" SYNONYMS 1 "," SYNONYMS 2 "] } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
-- Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [" USE CASE "], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": FULL MATCH } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ] }, "redirectAction": { "redirectURI": " REDIRECT URI " } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
+- Home Documentation AI and ML Vertex AI Search Send feedback Configure widget feedback Stay organized with collections Save and categorize content based on your preferences.
+- What's next Preview search results Add the widget to a web page Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The search widget includes feedback buttons that help assess search quality issues.
+- Turn feedback buttons on or off To turn feedback buttons, thumb up and thumb down , in your widget on or off, follow these steps: In the Google Cloud console, go to the AI Applications page.
 
 ### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- Source ID: `site-api-reference`
-- Final score: 170
+- Source ID: `site-docs-reference`
+- Final score: 136
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -76,30 +75,17 @@ Evidence snippets:
 - They can replicate data from Spanner into BigQuery and perform analytics against local data, or they can use federated queries to retrieve data from Spanner on-demand.\n", "steps": [ { "state": "SUCCEEDED", "description": "Rephrase the query and search.", "actions": [ { "searchAction": { "query": "Compare bigquery with spanner database?" }, "observation": { "searchResults": [ { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/ecc0e7547253f4ca3ff3328ce89995af", "uri": "https://cloud.google.com/blog/topics/developers-practitioners/how-spanner-and-bigquery-work-together-handle-transactional-and-analytical-workloads", "title": "How Spanner and BigQuery work together to handle transactional and analytical workloads Google Cloud Blog", "snippetInfo": [ { "snippet": "Using Cloud \u003cb\u003eSpanner\u003c/b\u003e and \u003cb\u003eBigQuery\u003c/b\u003e also allows customers to build their \u003cb\u003edata\u003c/b\u003e clouds using Google Cloud, a unified, open approach to \u003cb\u003edata\u003c/b\u003e-driven transformation ...", "snippetStatus": "SUCCESS" } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d7e238f73608a860e00b752ef80e2941", "uri": "https://cloud.google.com/blog/products/databases/cloud-spanner-gets-stronger-with-bigquery-federated-queries", "title": "Cloud Spanner gets stronger with BigQuery-federated queries Google Cloud Blog", "snippetInfo": [ { "snippet": "As enterprises compete for market share, their need for real-time insights has given rise to increased demand for transactional \u003cb\u003edatabases\u003c/b\u003e to support \u003cb\u003edata\u003c/b\u003e ...", "snippetStatus": "SUCCESS" } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/e10a5a3c267dc61579e7c00fefe656eb", "uri": "https://cloud.google.com/blog/topics/developers-practitioners/replicating-cloud-spanner-bigquery-scale", "title": "Replicating from Cloud Spanner to BigQuery at scale Google Cloud Blog", "snippetInfo": [ { "snippet": "... \u003cb\u003eSpanner data\u003c/b\u003e into \u003cb\u003eBigQuery\u003c/b\u003e for analytics.
 - BigQuery is really good at working with lots of data, even billions of pieces of information. \n", "steps ": [ { "state": "SUCCEEDED", "description": "Rephrase the query and search.", "actions": [ { "searchAction": { "query": "What is BigQuery?" }, "observation": { "searchResults": [ { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/2d032dc582689e8c0ecea7fc7bfa3189", "uri": "https://cloud.google.com/bigquery", "title": "BigQuery enterprise data warehouse Google Cloud", "snippetInfo": [ { "snippet": "\u003cb\u003eBigQuery\u003c/b\u003e is a fully managed, AI-ready data analytics platform that helps you maximize value from your data and is designed to be multi-engine, multi-format, ...", "snippetStatus": "SUCCESS" } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/4474f4a5a18ecd611dedfe323dfe55d9", "uri": "https://cloud.google.com/bigquery/docs/introduction", "title": "BigQuery overview Google Cloud", "snippetInfo": [ { "snippet": "\u003cb\u003eBigQuery\u003c/b\u003e is a fully managed, AI-ready data platform that helps you manage and analyze your data with built-in features like machine learning, search, ...", "snippetStatus": "SUCCESS" } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/c840fdef90d86328f13bbedbdbf0ac10", "uri": "https://cloud.google.com/bigquery/docs/query-overview", "title": "Overview of BigQuery analytics Google Cloud", "snippetInfo": [ { "snippet": "\u003cb\u003eBigQuery\u003c/b\u003e lets you save queries and share queries with others.
 
-### Configure widget feedback \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
+### "Configure results for the search widget \_|\_ Vertex AI Search \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-feedback](https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-feedback)
-- Source ID: `site-api-reference`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Home Documentation AI and ML Vertex AI Search Send feedback Configure widget feedback Stay organized with collections Save and categorize content based on your preferences.
-- What's next Preview search results Add the widget to a web page Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Regardless, your users shouldn't include Personally Identifiable Information (PII) or sensitive data with feedback.
-- The search widget includes feedback buttons that help assess search quality issues.
-
-### Create a search data store \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es)
-- Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-widget-attributes](https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-widget-attributes)
+- Source ID: `site-docs-reference`
+- Final score: 131
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- REST To use the command line to create a data store and ingest data from Spanner, follow these steps: Create a data store. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores?dataStoreId= DATA STORE ID " \ -d '{ "displayName": " DISPLAY NAME ", "industryVertical": "GENERIC", "solutionTypes": ["SOLUTION TYPE SEARCH"], "contentConfig": "CONTENT REQUIRED", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project.
-- Import data from Bigtable REST To use the command line to create a data store and ingest data from Bigtable, follow these steps: Create a data store. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores?dataStoreId= DATA STORE ID " \ -d '{ "displayName": " DISPLAY NAME ", "industryVertical": "GENERIC", "solutionTypes": ["SOLUTION TYPE SEARCH"], }' Replace the following: PROJECT ID : the ID of your project.
-- REST To use the command line to create a data store and ingest data from AlloyDB for PostgreSQL, follow these steps: Create a data store. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1beta/projects/ PROJECT ID /locations/global/collections/default collection/dataStores?dataStoreId= DATA STORE ID " \ -d '{ "displayName": " DISPLAY NAME ", "industryVertical": "GENERIC", "solutionTypes": ["SOLUTION TYPE SEARCH"], }' Replace the following: PROJECT ID : the ID of your project.
-- REST To use the command line to create a data store and ingest data from Cloud SQL, follow these steps: Create a data store. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores?dataStoreId= DATA STORE ID " \ -d '{ "displayName": " DISPLAY NAME ", "industryVertical": "GENERIC", "solutionTypes": ["SOLUTION TYPE SEARCH"], }' Replace the following: PROJECT ID : the ID of your project.
+- Home Documentation AI and ML Vertex AI Search Send feedback Configure results for the search widget Stay organized with collections Save and categorize content based on your preferences.
+- Next steps Get search results Add the search widget to a web page Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Turning off generative responses : If you turn off generative responses for a search widget, the advanced LLM feature , such as search with follow-ups and search with an answer, stop working for all users of the project.
+- Feedback : Provides buttons thumb up and thumb down so that users can rate the quality of the search results.
 

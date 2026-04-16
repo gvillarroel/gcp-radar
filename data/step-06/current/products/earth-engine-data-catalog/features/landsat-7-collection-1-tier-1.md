@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:59.047Z"
+generated_at: "2026-04-14T15:13:20.282Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Landsat 7 Collection 1 Tier 1"
 feature_slug: "landsat-7-collection-1-tier-1"
 latest_feature_date: "2017-02-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/fire"
   - "https://developers.google.com/earth-engine/datasets/tags/satellite-imagery"
@@ -22,7 +22,7 @@ keywords:
 # Landsat 7 Collection 1 Tier 1
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,7 +34,7 @@ A Landsat 7 Collection 1 Tier 1 dataset.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -48,7 +48,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/fire](https://developers.google.com/earth-engine/datasets/tags/fire)
 - Source ID: `site-docs-root-3`
-- Final score: 110
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,7 +61,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - Source ID: `site-docs-root-3`
-- Final score: 110
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,7 +74,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/surface-ground-water](https://developers.google.com/earth-engine/datasets/tags/surface-ground-water)
 - Source ID: `site-docs-root-3`
-- Final score: 110
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:

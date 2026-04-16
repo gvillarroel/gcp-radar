@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T23:03:42.254Z"
+generated_at: "2026-04-12T12:11:52.999Z"
 product_name: "Cloud NGFW"
 product_slug: "cloud-ngfw"
 feature_name: "Address groups"
 feature_slug: "address-groups"
 latest_feature_date: "2023-06-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
   - "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies"
   - "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups"
+  - "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
 keywords:
   - "address"
   - "groups"
@@ -26,7 +27,7 @@ keywords:
 # Address groups
 
 Product: Cloud NGFW
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Address groups are reusable collections of IPv4 or IPv6 CIDR ranges that can be 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups](https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups)
 - [https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies](https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies)
 - [https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups](https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups)
+- [https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create](https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups](https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups)
 - Source ID: `site-docs-root`
-- Final score: 236
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 302
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To add an item to an address group, run the following command: gcloud network-security address-groups add-items address-group-pc \ --items 192.168.10.0/29 \ --location global Remember, the IP range 192.168.10.0/29 is assigned to the subnet-consumer-allowed subnet of the vpc-consumer VPC network.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies](https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies)
 - Source ID: `site-docs-root`
-- Final score: 210
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 276
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - What's next Use address groups Firewall policy rule components Google Threat Intelligence for firewall policy rules Fully qualified domain name objects Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups](https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups)
 - Source ID: `site-docs-reference`
-- Final score: 196
+- Final score: 250
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,4 +90,17 @@ Evidence snippets:
 - Methods addItems Adds items to an address group. cloneItems Clones items from one address group to another. create Creates a new address group in a given project and location. delete Deletes an address group. get Gets details of a single address group. list Lists address groups in a given project and location. listReferences Lists references of an address group. patch Updates parameters of an address group. removeItems Removes items from an address group.
 - Possible values are "IPv4" or "IPV6". items[] string Optional.
 - List of supported purposes of the Address Group.
+
+### "Method: organizations.locations.addressGroups.create \_|\_ Cloud Next Generation\
+
+- URL: [https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create](https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create)
+- Source ID: `site-docs-reference`
+- Final score: 222
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Networking Cloud NGFW Reference Send feedback Method: organizations.locations.addressGroups.create Stay organized with collections Save and categorize content based on your preferences.
+- Authorization requires the following IAM permission on the specified resource parent : networksecurity.addressGroups.create Query parameters Parameters addressGroupId string Required.
+- HTTP request POST https://networksecurity.googleapis.com/v1/{parent=organizations/ /locations/ }/addressGroups The URL uses gRPC Transcoding syntax.
+- Authorization requires the following IAM permission on the specified resource addressGroupId : networksecurity.addressGroups.create requestId string Optional.
 

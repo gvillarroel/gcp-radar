@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.420Z"
+generated_at: "2026-04-15T13:50:17.869Z"
 product_name: "Firestore"
 product_slug: "firestore"
 feature_name: "Cloud Monitoring dashboard"
@@ -9,18 +9,17 @@ latest_feature_date: "2024-10-31"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html"
-  - "https://docs.cloud.google.com/firestore/native/docs/reference/libraries"
-  - "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
+  - "https://docs.cloud.google.com/firestore/docs/monitor-usage"
+  - "https://docs.cloud.google.com/firestore/docs/manage-databases"
+  - "https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library"
 keywords:
   - "monitoring"
   - "dashboard"
-  - "the"
   - "console"
   - "includes"
-  - "for"
   - "each"
   - "firestore"
+  - "database"
 ---
 
 # Cloud Monitoring dashboard
@@ -42,41 +41,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
-- [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
-- [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
+- [https://docs.cloud.google.com/firestore/docs/monitor-usage](https://docs.cloud.google.com/firestore/docs/monitor-usage)
+- [https://docs.cloud.google.com/firestore/docs/manage-databases](https://docs.cloud.google.com/firestore/docs/manage-databases)
+- [https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library](https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library)
 
 ## Supporting Pages
 
-### google.cloud.firestore_v1.base_client — google-cloud-firestore documentation
+### Monitor usage \_|\_ Firestore in Native mode \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
-- Source ID: `site-python-reference`
-- Final score: 93
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- google.cloud.firestore v1.base client — google-cloud-firestore documentation Source URL: https://googleapis.dev/python/firestore/latest/ modules/google/cloud/firestore v1/base client.html [docs]class BaseClient(ClientWithProject): &quot;&quot;&quot;Client for interacting with Google Cloud Firestore API. .. note:: Since the Cloud Firestore API requires the gRPC transport, no ` http` argument is accepted by this class.
-- Args: project (Optional[str]): The project which the client acts on behalf of.
-
-### Firestore client libraries | Firestore in Native mode | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
+- URL: [https://docs.cloud.google.com/firestore/docs/monitor-usage](https://docs.cloud.google.com/firestore/docs/monitor-usage)
 - Source ID: `site-docs-reference`
-- Final score: 91
-- Re-rank relevance: N/A
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Firestore client libraries Firestore in Native mode Google Cloud Documentation Source URL: https://docs.cloud.google.com/firestore/native/docs/reference/libraries API Reference Documentation · Source Code · GitHub Issue Tracker · Stack Overflow · The Firebase Admin SDKs bundle the Google Cloud client libraries for Firestore alongside client libraries and SDKs for several other Firebase features.
-- Using one of the Admin SDKs, you can initialize access to Firestore and several other services from a single SDK.
+- Aggregated usage dashboard If your project has multiple Firestore databases, you can view aggregated usage metrics in the Google Cloud console or Firebase console.
+- Database usage dashboard To view usage metrics for a Firestore database, open the database Usage page in the Google Cloud console.
+- Go to Google Cloud project project usage The project usage dashboard shows document operations over time as follows: Firebase console Go to the Firestore usage page (Firebase console) Usage dashboard and billing reports The Firestore usage dashboards in the Firebase and Cloud consoles provide an estimate of usage.
+- Cloud Monitoring includes the following Firestore metrics: Metric Name Description Document Reads The number of successful document reads.
 
-### Class FirestoreAdminClient (2.22.0) | Python client libraries | Google Cloud Documentation
+### "Create and manage databases \_|\_ Firestore in Native mode \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- Source ID: `site-python-reference`
-- Final score: 83
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/firestore/docs/manage-databases](https://docs.cloud.google.com/firestore/docs/manage-databases)
+- Source ID: `site-docs-reference`
+- Final score: 121
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Class FirestoreAdminClient (2.22.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore admin v1.services.firestore admin.client.FirestoreAdminClient Project, Database, Namespace, Collection, Collection Group, and Document are used as defined in the Google Cloud Firestore API.
+- Cloud Monitoring Firestore metrics are reported under two monitored resources. firestore.googleapis.com/Database firestore instance (Legacy) You can inspect aggregate metrics at the database level by looking at firestore.googleapis.com/Database .
+- Set up Firestore Security Rules for your databases Use the Firebase CLI to deploy Firestore Security Rules to each of your databases.
+- To delete a database use the Google Cloud CLI . gcloud Use the gcloud firestore databases list command to list all the databases in your project. gcloud firestore databases list Firebase CLI Use the firebase firestore:databases:list command to list all the databases in your project. firebase firestore:databases:list View database details To view details about a single database, use one of the following methods: gcloud Use the gcloud firestore databases describe command: gcloud firestore databases describe --database= DATABASE ID Firebase CLI Use the firebase firestore:databases:get command: firebase firestore:databases:get DATABASE ID Replace DATABASE ID with a database ID.
+- Required roles and permissions To create and manage databases, you'll need the following Identity and Access Management role: Cloud Datastore Owner ( roles/datastore.owner ) That role grants the following permissions that you need to create and manage databases: Create a database: datastore.databases.create Read database configuration: datastore.databases.getMetadata Configure a database: datastore.databases.update Delete a database: datastore.databases.delete Clone a database: datastore.databases.clone Create a database To create a database, use one of the following methods: Console In the Google Cloud console, go to the Databases page.
+
+### "Quickstart: Create a Firestore database by using a server client library\
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library](https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 116
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information, see Set up authentication for a local development environment . const snapshot = await db . collection ( 'users' ). get (); snapshot . forEach (( doc ) = > { console . log ( doc . id , '=>' , doc . data ()); }); Go To authenticate to Firestore, set up Application Default Credentials.
+- For more information, see Set up authentication for a local development environment . doc ref = firestore . doc " #{ collection path } /aturing" doc ref . set ( { first : "Alan" , middle : "Mathison" , last : "Turing" , born : 1912 } ) puts "Added data to the aturing document in the users collection." Read data To quickly verify that you've added data to Firestore, use the data viewer in the Firebase console .
+- Create a Firestore database by using a server client library This quickstart shows you how to set up Firestore, add data, and read data by using the C#, Go, Java, Node.js, PHP, Python, or Ruby server client library.
+- Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
 

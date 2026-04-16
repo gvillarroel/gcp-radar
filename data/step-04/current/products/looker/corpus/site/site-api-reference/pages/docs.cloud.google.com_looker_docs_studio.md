@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Looker Studio \_|\_ Google Cloud Documentation"
+title: "Welcome to Data Studio \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/looker/docs/studio
 knowledge_key: corpus
 source_id: site-api-reference
@@ -7,20 +7,21 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/looker/docs/reference/rest
 source_metadata:
   url: https://docs.cloud.google.com/looker/docs/studio
-  title: "Welcome to Looker Studio \_|\_ Google Cloud Documentation"
+  title: "Welcome to Data Studio \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+Looker Studio is now called Data Studio. For more, see our blog .
 Home
 Documentation
 Data analytics
-Looker
-Looker Studio
+Data Studio
+Guides
 Send feedback
-Welcome to Looker Studio
+Welcome to Data Studio
 Stay organized with collections
 Save and categorize content based on your preferences.
 Tell your story in data
@@ -30,17 +31,15 @@ Share your insights with your team or with the world.
 Collaborate on reports with your team.
 Speed up your report creation process with built-in sample reports.
 Visualize your data
-Looker Studio is a no-cost tool that turns your data into informative, easy to read, easy to share, and fully customizable dashboards and reports. Use the drag and drop report editor to:
+Data Studio is a no-cost tool that turns your data into informative, easy to read, easy to share, and fully customizable dashboards and reports. Use the drag and drop report editor to:
 Tell your data story with charts , including line, bar, and pie charts, geo maps, area and bubble graphs, paginated data tables, pivot tables, and more.
 Make your reports interactive with viewer filters and date range controls. The data control turns any report into a flexible template report that anyone can use to see their own data.
 Include links and clickable images to create product catalogs, video libraries, and other hyperlinked content.
 Annotate and brand your reports with text and images .
 Apply styles and color themes that make your data stories works of data visualization art.
 Learn more about creating reports .
-See your data in seconds
-Get started quickly by using the Looker Studio marketing templates . Templates make it easy to visualize your data in a finished report. Learn more .
 Connect to your data
-With Looker Studio, you can easily report on data from a wide variety of sources, without programming. In just a few moments, you can connect to data sets such as the following:
+With Data Studio, you can easily report on data from a wide variety of sources, without programming. In just a few moments, you can connect to data sets such as the following:
 Databases, including BigQuery, MySQL, and PostgreSQL
 Google Marketing Platform products, including Google Ads, Google Analytics, Display & Video 360, Search Ads 360
 Google consumer products, such as Google Sheets, YouTube, and Search Console
@@ -50,17 +49,17 @@ Blended data from any combination of related sources
 Learn more about connecting to your data .
 Share and collaborate
 It's easy to share your insights with individuals, teams, or the world. Invite others to view or edit your reports, or send them links in scheduled emails. To tell your data stories as broadly as possible, you can embed your reports in other pages, such as Google Sites, blog posts, marketing articles, and annual reports.
-When you share a Looker Studio file with another editor, you can work it together in real time as a team.
+When you share a Data Studio file with another editor, you can work it together in real time as a team.
 Learn more about sharing .
-Use Looker Studio in your organization
-Looker Studio's enterprise features let Cloud Identity and Google Workspace administrators manage users and control access to Looker Studio assets.
+Use Data Studio in your organization
+Data Studio's enterprise features let Cloud Identity and Google Workspace administrators manage users and control access to Data Studio assets.
 Learn more about enterprise administrator features .
-Upgrade to Looker Studio Pro
-Get even more enterprise-grade collaboration and administration features, along with access to Google Cloud Customer Care. Learn more about Looker Studio Pro .
+Upgrade to Data Studio Pro
+Get even more enterprise-grade collaboration and administration features, along with access to Google Cloud Customer Care. Learn more about Data Studio Pro .
 Get started
-Try Looker Studio now
+Try Data Studio now
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

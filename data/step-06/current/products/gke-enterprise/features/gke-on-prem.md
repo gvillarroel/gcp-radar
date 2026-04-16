@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.783Z"
+generated_at: "2026-04-12T12:16:18.958Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "GKE On-Prem"
@@ -10,8 +10,9 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
-  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks"
 keywords:
   - "gke"
   - "on"
@@ -38,13 +39,14 @@ GKE On-Prem lets you run Kubernetes clusters on user-managed on-premises infrast
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
-- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 220
+- Final score: 267
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -62,11 +64,25 @@ Evidence snippets:
 - Action Connected behavior Temporary disconnection behavior Maximum disconnection tolerance Loss of connectivity workaround Cluster creation You use the bmctl or gkectl CLI tools to create clusters.
 - No change Unlimited - Cloud Service Mesh You can use Cloud Service Mesh to manage, observe, and secure communications across your services running in an on-premises cluster.
 
+### "GKE deployment options \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
+- Source ID: `site-docs-reference`
+- Final score: 265
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This page shows the Google Cloud features that are available on each of the following environments: Google Kubernetes Engine (GKE) on Google Cloud Google Distributed Cloud (GKE on-premises): On VMware On bare metal Google Distributed Cloud connected deployments GKE Multi-Cloud: GKE on AWS GKE on Azure GKE attached clusters , which are third-party Kubernetes clusters registered to your fleet .
+- Application deployment Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Knative serving Google Cloud Marketplace Application migration Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Migrate to Containers VM management Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) VM Runtime on Google Distributed Cloud What's next Version and upgrade support Managed Cloud Service Mesh supported features In-cluster Cloud Service Mesh supported features Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback GKE deployment options Stay organized with collections Save and categorize content based on your preferences.
+- Cloud Service Mesh Binary Authorization Multi Cluster Ingress Features available on GKE clusters on Google Cloud To use some features, you must register the cluster to a fleet .
+
 ### "Grant support read-only access to clusters \_|\_ Google Kubernetes Engine\
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 202
+- Final score: 245
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -76,17 +92,17 @@ Evidence snippets:
 - If you need to install the Google Cloud CLI, see the installation guide . kubectl for running commands against Kubernetes clusters.
 - Manage Support access for the cluster To enable Support access for the cluster, you run a gcloud command that propagates a set of read-only Kubernetes role-based access control (RBAC) policies to the target cluster.
 
-### "GKE deployment options \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+### "Common GKE user roles and tasks \_|\_ Google Kubernetes Engine (GKE) \_\
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
-- Source ID: `site-docs-reference`
-- Final score: 198
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
+- Source ID: `site-iam-reference`
+- Final score: 219
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- This page shows the Google Cloud features that are available on each of the following environments: Google Kubernetes Engine (GKE) on Google Cloud Google Distributed Cloud (GKE on-premises): On VMware On bare metal Google Distributed Cloud connected deployments GKE Multi-Cloud: GKE on AWS GKE on Azure GKE attached clusters , which are third-party Kubernetes clusters registered to your fleet .
-- Application deployment Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Knative serving Google Cloud Marketplace Application migration Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Migrate to Containers VM management Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) VM Runtime on Google Distributed Cloud What's next Version and upgrade support Managed Cloud Service Mesh supported features In-cluster Cloud Service Mesh supported features Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback GKE deployment options Stay organized with collections Save and categorize content based on your preferences.
-- Cloud Service Mesh Binary Authorization Multi Cluster Ingress Features available on GKE clusters on Google Cloud To use some features, you must register the cluster to a fleet .
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Guides Send feedback Common GKE user roles and tasks Stay organized with collections Save and categorize content based on your preferences.
+- Autopilot Standard In the GKE documentation, each document is often written for a specific need or to help solve a business problem that you might have.
+- Explore Google Kubernetes Engine Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Cloud architects Cloud architects are responsible for determining the appropriate combination of IaaS, PaaS, SaaS, and on-premises components necessary to serve product and business objectives.
 

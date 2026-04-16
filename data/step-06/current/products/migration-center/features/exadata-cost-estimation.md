@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:46.555Z"
+generated_at: "2026-04-12T12:18:00.108Z"
 product_name: "Migration Center"
 product_slug: "migration-center"
 feature_name: "Exadata cost estimation"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-01-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation"
+  - "https://docs.cloud.google.com/migration-center/docs/generate-estimate"
   - "https://docs.cloud.google.com/migration-center/docs/estimate/overview"
   - "https://docs.cloud.google.com/migration-center/docs/migration-center-overview"
-  - "https://docs.cloud.google.com/migration-center/docs/release-notes"
 keywords:
   - "exadata"
   - "cost"
@@ -38,50 +39,70 @@ Migration Center can estimate the cost of running an Exadata platform as a fully
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation](https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation)
+- [https://docs.cloud.google.com/migration-center/docs/generate-estimate](https://docs.cloud.google.com/migration-center/docs/generate-estimate)
 - [https://docs.cloud.google.com/migration-center/docs/estimate/overview](https://docs.cloud.google.com/migration-center/docs/estimate/overview)
 - [https://docs.cloud.google.com/migration-center/docs/migration-center-overview](https://docs.cloud.google.com/migration-center/docs/migration-center-overview)
-- [https://docs.cloud.google.com/migration-center/docs/release-notes](https://docs.cloud.google.com/migration-center/docs/release-notes)
 
 ## Supporting Pages
 
-### Cost estimation overview | Migration Center | Google Cloud Documentation
+### Start a cost estimation \_|\_ Migration Center \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation](https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation)
+- Source ID: `site-docs-root`
+- Final score: 294
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Start an estimate To skip the Migration Center activation and start your cost estimation, in the Google Cloud console, go to the Migration Center Estimate cost page.
+- Alternatively, you can skip the Migration Center activation and go to rapid cost estimation directly, as shown in this document.
+- To estimate your cloud cost using Migration Center, first you need to gather some data about your current environment.
+- If you access the cost estimation tool from the Migration Center homepage, you need to activate Migration Center .
+
+### "Quickstart: Generate a rapid cost estimate \_|\_ Migration Center \_|\_\
+
+- URL: [https://docs.cloud.google.com/migration-center/docs/generate-estimate](https://docs.cloud.google.com/migration-center/docs/generate-estimate)
+- Source ID: `site-docs-root`
+- Final score: 291
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Start estimation In the Google Cloud console, go to the Migration Center Estimate cost page.
+- In this example, you will estimate the cost of migrating an on-premises environment that has the following specifications: Contains x86 vCPUs only Includes SAP and Oracle vCPUs Includes both Linux and Windows vCPUs Has a migration timeline of 5 years To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin Sign in to your Google Cloud account.
+- Quickstart: Generate a rapid cost estimate Learn how to generate a rapid cost estimate for running your infrastructure on Google Cloud with Migration Center.
+- Your actual cost can be higher or lower than the generated estimate.
+
+### Cost estimation overview \_|\_ Migration Center \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/migration-center/docs/estimate/overview](https://docs.cloud.google.com/migration-center/docs/estimate/overview)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 286
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Migration Center quickly and efficiently estimates the costs of Google Cloud products and services that you need for moving your infrastructure, whether available on-premises or on other cloud providers, to Google Cloud.
-- Cost estimation overview Migration Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/estimate/overview ...
+- Benefits Efficient estimation of your cloud cost Migration Center quickly and efficiently estimates the costs of Google Cloud products and services that you need for moving your infrastructure, whether available on-premises or on other cloud providers, to Google Cloud.
+- The cost estimation functionality in Google Cloud Migration Center lets you generate rapid offline cost estimates for running your workloads in Google Cloud, with default assumptions automatically applied for optimized configuration.
+- Routing data through the cost estimation feature within Migration Center gives a more consistent cost output that can be used to compare migration costs and evaluate different what-if scenarios.
+- Export and share your estimate results Migration Center provides a streamlined interface from which you can enter and modify inputs, generate estimates, and export the cost estimate results.
 
-### Migration Center overview | Google Cloud Documentation
+### Migration Center overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/migration-center/docs/migration-center-overview](https://docs.cloud.google.com/migration-center/docs/migration-center-overview)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Migration Center overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/migration-center-overview With Migration Center, you can dive deep in the analysis and get a holistic view into your environment.
-- Generate total cost of ownership reports based on the migration preferences that you specify according to your business objectives and constraints.
-- Get data-driven suggestions based on a technical fit assessment on the Google Cloud products to migrate your assets to, and know the costs in advance.
-- Identify application and network dependencies to know which components you must migrate together.
-
-### Google Cloud Migration Center release notes | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/migration-center/docs/release-notes](https://docs.cloud.google.com/migration-center/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 122
+- Source ID: `site-api-reference`
+- Final score: 250
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Preview: Migration Center lets you view detailed total cost of ownership (TCO) information directly in the Google Cloud Console for each asset and migration preference set, without the need to export the TCO report.
-- Google Cloud Migration Center release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/release-notes Plan for success: gain insights into testing considerations crucial for a smooth and successful migration to Arm, whether on Google Cloud or other cloud providers like AWS Graviton instances. ...
+- Explore Migration Center The tools within Migration Center let you estimate your cloud costs, scan and assess your infrastructure, and plan your migration without making changes to your applications or workloads.
+- Estimate your cloud costs Migration Center lets you generate a rapid cost estimate of future Google Cloud costs based on the size and configuration of your current on-premises or other cloud environment resources ( Preview ).
+- Get started with Migration Center To get started with the migration tools within Migration Center, see the following topics: Learn how to generate a rapid cost estimate .
+- Assess your infrastructure With Migration Center, you can dive deep in the analysis and get a holistic view into your environment.
 

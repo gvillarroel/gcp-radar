@@ -1,29 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:40.074Z"
+generated_at: "2026-04-14T05:03:12.341Z"
 product_name: "Apigee Integration"
 product_slug: "apigee-integration"
 feature_name: "Suspend task"
 feature_slug: "suspend-task"
 latest_feature_date: "2023-06-13"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/application-integration/docs/configure-approval-task"
+  - "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks"
+  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
 keywords:
-  - "suspend execution"
-  - "flow suspension"
-  - "resume integration"
-  - "pause integration"
-  - "Suspend task"
-  - "Pause task"
-  - "Hold task"
+  - "suspend"
+  - "availability"
+  - "moved"
+  - "task"
 ---
 
 # Suspend task
 
 Product: Apigee Integration
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +32,54 @@ The Suspend task moved to general availability in Apigee Integration.
 
 The Suspend task moved to general availability in Apigee Integration.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/application-integration/docs/configure-approval-task](https://docs.cloud.google.com/application-integration/docs/configure-approval-task)
+- [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
+- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Approval Task \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-approval-task](https://docs.cloud.google.com/application-integration/docs/configure-approval-task)
+- Source ID: `site-docs-root-required-2`
+- Final score: 110
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Compare Approval task, Suspend task, and Timer task All the three ( Approval , Suspend , and Timer ) tasks perform a similar function of pausing and resuming an integration.
+- Approval task Suspend task Timer task Doesn't support automatic resumption of an integration and requires manual intervention to resume the integration.
+- During an integration execution, when the control reaches the Approval task, execution is halted, and all tasks after the Approval task are suspended.
+- An Approval task can be used for the following purposes: To suspend and branch an integration based on user approval or rejection.
+
+### "All triggers and tasks \_|\_ Application Integration \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 90
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Triggers API trigger Private trigger Cloud Pub/Sub trigger Schedule trigger Salesforce trigger Cloud Scheduler trigger Error Catcher trigger Connector Event triggers Apache Kafka trigger HL7 trigger IBM MQ trigger Jira Cloud trigger Jira Server Data Center trigger HubSpot trigger Rabbit MQ trigger SAP Gateway trigger SAP ERP trigger ServiceNow trigger Solace trigger TIBCO EMS trigger Webhook trigger Zendesk trigger Tasks for Google Cloud services AI Platform - Prediction task Apps Script task Cloud Function task Cloud KMS - decrypt Cloud KMS - encrypt Dataflow - Create Job task Drive - List task Doc AI - Batch Process task Doc AI - Operation task Doc AI - Process task Firestore - Batch Get task Firestore - Batch Write task Firestore - Document Get task Language - Annotate Text task Language - Classify Text task Secret Manager - Access task Sheets - Append task Sheets - Batch Get task Sheets - Get task Translate - Document task Translate - Text task Vertex AI - Predict task Workflows - Execute task Integration tasks Data Mapping task Call Integration task For Each Parallel task For Each Loop task While Loop task Approval task Send Email task Suspend task Timer task JavaScript task Return task Connectors task Call REST Endpoint task Data transformer script task Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- All triggers and tasks This page introduces the various configurable triggers and tasks available in Application Integration.
+
+### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 66
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Supported tasks and triggers Gemini can assist you to add the following tasks and triggers: Triggers Tasks API trigger Cloud Pub/Sub trigger Salesforce trigger Jira Cloud ServiceNow Zendesk Cloud Scheduler trigger Data mapper task Approval task Suspend task Javascript task Cloud Run functions Timer task Return task Send email task Connectors task Call REST endpoint task Doc AI - Process task Gemini also assists you to create the following control flow tasks but can't generate sub-integrations: For Each Loop task For Each Parallel task While Loop task Call Integration task Create an integration Gemini assists you to create and build integrations using your natural language statements (or prompts ) as input.
+- In Application Integration, Gemini Code Assist can assist you to do the following: Create integrations Configure connector tasks in an integration Configure Call REST API tasks in an integration Add edge conditions and append additional tasks to an integration Configure JavaScript tasks ( Preview ) Generate integration description For detailed information about Gemini for Google Cloud, see Gemini for Google Cloud overview .
+- Configure Call REST API tasks If you have API Hub enabled in your project, then Gemini in Application Integration can assist you in providing contextually appropriate Call REST Endpoint task and task configuration recommendations based on the logical flow of your existing integration.
+- Note: Gemini suggests one or more integration flows that qualifies your prompt: If you have enabled API Hub and Integration Connectors and met all prerequisites , then recommendations will contain Call REST Endpoint and Connectors tasks.
 

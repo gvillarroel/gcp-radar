@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.591Z"
+generated_at: "2026-04-12T12:07:33.837Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB cross-region replication with up to five secondary regions"
 feature_slug: "alloydb-cross-region-replication-with-up-to-five-secondary-regions"
 latest_feature_date: "2025-02-27"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables"
+  - "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
 keywords:
   - "geographic workload distribution"
   - "multi-region DR"
@@ -24,7 +27,7 @@ keywords:
 # AlloyDB cross-region replication with up to five secondary regions
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,28 +35,46 @@ Cross-region replication in AlloyDB now supports up to five secondary regions fo
 
 ## Extended Definition
 
-AlloyDB cross-region replication is a feature that allows a primary cluster to replicate data and resources to secondary clusters in other regions, and as documented in the AlloyDB release notes, this setup now supports up to five secondary regions. The same release notes also state that cross-region replication supports performing a switchover with zero data loss, which is positioned for disaster-recovery testing and workload migration.
+Cross-region replication in AlloyDB now supports up to five secondary regions for disaster recovery and geographic workload distribution.
 
 ## Evidence Summary
 
-The AlloyDB release notes provide direct evidence for both the five-secondary-region replication limit and the availability of zero-data-loss switchover in cross-region replication for DR or migration use cases.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
+- [https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration](https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \_|\_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 32
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- Source ID: `site-docs-reference-2`
+- Final score: 88
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- February 27, 2025 Feature AlloyDB's cross-region replication supports up to five secondary regions.
-- Feature Performing a switchover with zero data loss in cross-region replication setups, to test disaster recovery (DR) or to perform workload migration, is now generally available ( GA ).
-- December 08, 2022 Feature AlloyDB cross-region replication replicates your primary cluster's data and resources.
-- For more information, see Cross-region replication overview and Work with cross-region replication .
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 82
+- Re-rank relevance: N/A
+
+### "Generate and manage auto vector embeddings for large tables \_|\_ AlloyDB\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
+- Source ID: `site-docs-reference-2`
+- Final score: 78
+- Re-rank relevance: N/A
+
+### "Manage your AlloyDB resources using Knowledge Catalog \_|\_ AlloyDB for\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration](https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration)
+- Source ID: `site-iam-reference`
+- Final score: 78
+- Re-rank relevance: N/A
 

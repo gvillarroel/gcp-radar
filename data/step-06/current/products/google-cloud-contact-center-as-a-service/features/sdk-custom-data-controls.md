@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.685Z"
+generated_at: "2026-04-15T13:50:47.057Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "SDK custom data controls"
@@ -9,9 +9,9 @@ latest_feature_date: "2025-01-07"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
 keywords:
   - "sdk"
   - "custom"
@@ -20,7 +20,7 @@ keywords:
   - "can"
   - "control"
   - "which"
-  - "is"
+  - "sent"
 ---
 
 # SDK custom data controls
@@ -42,48 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Salesforce integration guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 166
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 132
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Agent desktop: dynamically control the custom panel language You can now use the {AGENT LOCATION LANGUAGE} or the {AGENT LANGUAGE} variable in a query parameter in your custom URL to dynamically control the language for a custom panel: Agent location language : Add the {AGENT LOCATION LANGUAGE} variable to your URL to display the custom panel in the language of the agent's assigned location.
-- April 23, 2024 Announcement Mobile SDK 2.6 is released For more information, see the following: Android SDK changelog iOS SDK changelog Feature Deployment schedules With deployment schedules, you can control the timing of Google's automatic updates to your contact center instance.
-- Here's how the ordering controls work: Virtual agents : When you configure session variables, you can use the new display order in adapter property to specify the order that the session variables appear in the agent adapter and in CRM records.
-- Feature Greater control over custom data You have greater control over the types of SDK custom data that is sent to session metadata files and CRM records and that is displayed in the agent adapter.
+- Agents can use these fields to identify which match represents the customer they want.
+- Agent transferred from: agent initiating the session transfer Agent transferred to: agent receiving the session transfer Created at: time transfer was created Fail reason: reason for failure of session transfer Menu transferred from: the originating queue menu from which transfer was initiated Menu transferred to: queue menu the session was transferred to Session: CCAI Platform session ID Status: status of transfer Transfer from materialized path: the materialized path transfer was originated from Transfer to materialized path: the materialized path the session was transferred to CCAI Platform agent experience in Salesforce Lightning Provide expected CCAI Platform behaviour in Salesforce Lightning to Admins and Agents, specifically when connecting to the Activity object rather than the CCAI Platform Session object.
+- No Case: ability to connect the CCAI Platform Custom Session object directly to any Salesforce account object, bypassing the need to create a case This builds on two related features: Option to look-up end users in Person Account object (instead of Contact ( default )) Option to leverage our CCAI Platform Session Object which stores all assets and data related to a single session in optimized CCAI Platform Session object Configuration availability requirements The configuration options for Account Lookup and Session Data are only available if the following conditions are met: Account Lookup configuration To configure custom account lookup settings, the following is required: Logged in Agent - at least one agent needs to be logged into a CCAI Platform adapter in Salesforce.
+- CCAI Platform custom session object for Salesforce configuration The CCAI Platform Custom Session Object provides a convenient, optimized, custom CCAI Platform Session object, in which all session data will be stored in a session object .
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Real-time dashboards and monitoring pages \_|\_ Google Cloud Contact Center\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 114
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- Source ID: `site-docs-reference`
+- Final score: 127
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- Direct queues to a visual message Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Android SDK With the CCAI Platform Android SDK, you can create seamless voice and chat support experiences for users of your Android apps.
-- Recommended headset features Binaural - Audio in both ears cuts down on background noise Noise-canceling microphone Noise-canceling headset USB connection Brands of headsets our customers use Jabra Logitech Plantronics Sennheiser What's next Configure a sample contact center Private Service Connect Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
+- Each row represents one of your Queue Groups - with exception of the Totals row, which displays an aggregate of all Queue Groups.
+- Deflection : Shows if the customer was deflected and to which channel.
+- Customize Columns - Adjust which columns are shown in what order.
+- Note: If your company has requested a time zone override for all its users, then the requested time zone will be displayed instead Metric definitions Service Level SL / 30min Service Level within the past 30min SL / day Service Level for the current day SL Target Service Level Target set for the queue Live CIQ Consumers in Queue LCW / Sec Longest Call Waiting AQD / Sec Average Queue Duration (Waiting for an Agent) Live Number of calls currently in progress with an agent Productive Agents Number of agents with a productive status Live Agent Status Available Count of all available agents On-hold (Calls only)Count of agents who have placed a consumer on-hold Wrap-up Count of all agents in the wrap-up status Custom Count of all agents in custom statuses that are configured as productive Productive Agents Count of all agents in a productive status as configured in Settings > Queue Groups Today ABN % Abandon rate Volume Total offered interactions including failed/abandoned sessions.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Chat Settings and Features \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 46
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
+- Source ID: `site-docs-reference`
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Contact Center AI Platform (CCAI Platform) is an AI-driven Contact Center as a Service platform that is built natively on Google Cloud and uses the other Gemini Enterprise for Customer Experience products at its core.
-- Delivers AI-based omni-channel routing, intelligent Virtual Agent, Agent Assist, and Insights capabilities that enables organizations to streamline customer experiences.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
-- CCAI Platform is a full-stack contact center platform for queuing and routing customer interactions across voice and digital channels.
+- Feature benefits For Managers and Admins Automatically remind agents to respond promptly to conversations For Agents Visually shows which chat needs their attention first For end-users Less waiting time and quicker resolution time Feature details The response timer starts when the agent is assigned and the consumer has sent a message and applies even if an agent has not yet sent a message If the agent responds, the counter will not begin again until the consumer replies.
+- Auto Answer behavior combined with other features Deltacast Deltacast for Cascade / % Allocation Multicast Transferred chats Monitoring and reporting Monitoring Auto Answer can be monitored on the chat page, where admins see in real-time which chats are: Auto Answered Manually picked up Reporting The following reports identify which chats were Auto Answered and which chats were manually picked up: Agent Performance Report Agent Timeline Report Agent Summary Report Individual Chat History Report Please see Report Builder for more information about pulling reports.
+- Allowing agents to proactively prepare for the consumer's incoming queries by performing actions such as retrieving information from the customer's account or checking on the status of an order before the message is sent.
+- Chat Timeout Set the duration (in minutes) of time a customer has to respond to the last chat message sent before the chat is ended automatically.
 

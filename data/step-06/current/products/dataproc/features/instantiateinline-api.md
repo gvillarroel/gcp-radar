@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.105Z"
+generated_at: "2026-04-14T00:23:22.669Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "InstantiateInline API"
 feature_slug: "instantiateinline-api"
 latest_feature_date: "2018-09-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
+  - "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/audit-logging"
   - "https://docs.cloud.google.com/dataproc/docs/reference/rest"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
 keywords:
   - "instantiateinline"
-  - "api"
-  - "the"
   - "lets"
   - "users"
   - "instantiate"
   - "dataproc"
   - "workflow"
+  - "templates"
+  - "inline"
 ---
 
 # InstantiateInline API
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +38,37 @@ The InstantiateInline API lets users instantiate Dataproc workflow templates inl
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
+- [https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview](https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview)
+- [https://docs.cloud.google.com/dataproc/docs/guides/audit-logging](https://docs.cloud.google.com/dataproc/docs/guides/audit-logging)
 - [https://docs.cloud.google.com/dataproc/docs/reference/rest](https://docs.cloud.google.com/dataproc/docs/reference/rest)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1)
 
 ## Supporting Pages
 
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
+### "Overview of Managed Service for Apache Spark Workflow Templates \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
+- URL: [https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview](https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview)
 - Source ID: `site-docs-root`
-- Final score: 162
-- Re-rank relevance: N/A
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- September 25, 2018 Feature Announcing the General Availability (GA) release of Cloud Dataproc Workflow Templates , including Workflow Template Parameterization and the Workflow Templates InstantiateInline API .
-- January 10, 2018 Feature It is now possible to instantiate Dataproc workflows directly without creating a WorkflowTemplate by using the new InstantiateInline method .
-- November 13, 2025 Announcement New Serverless for Apache Spark runtime versions : 1.2.62 2.2.62 2.3.15 Feature Serverless for Apache Spark: Added the dataproc.artifacts.remove property, which lets users remove default artifacts, such as spark-bigquery-connector , iceberg , and delta-lake from a Serverless for Apache Spark runtime.
-- Announcement Announcing the General Availability (GA) release of the Dataproc Workflow Timeout feature, which allows users to set a timeout on their graph of jobs and automatically cancel their workflow after a specified period.
+- Inline Workflows can be instantiated inline using the gcloud command with workflow template YAML files or by calling the Managed Service for Apache Spark InstantiateInline API (see Using inline Dataproc workflows ).
+- Workflow Templates use a per-template workflowTemplates.instantiate permission, and do not depend on cluster or job permissions.
+- Workflow Templates replace the steps involved in a typical flow, which include: creating the cluster submitting jobs polling deleting the cluster Workflow Templates use a single token to track progress from cluster creation to deletion, and automate error handling and recovery.
+- Home Documentation Data analytics Managed Service for Apache Spark Guides Send feedback Overview of Managed Service for Apache Spark Workflow Templates Stay organized with collections Save and categorize content based on your preferences.
 
 ### "Cloud Dataproc API \_|\_ Managed Service for Apache Spark \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest](https://docs.cloud.google.com/dataproc/docs/reference/rest)
 - Source ID: `site-docs-reference`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 134
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - REST Resource: v1.projects.locations.workflowTemplates Methods create POST /v1/{parent=projects/ /locations/ }/workflowTemplates Creates new workflow template. delete DELETE /v1/{name=projects/ /locations/ /workflowTemplates/ } Deletes a workflow template. get GET /v1/{name=projects/ /locations/ /workflowTemplates/ } Retrieves the latest workflow template. getIamPolicy POST /v1/{resource=projects/ /locations/ /workflowTemplates/ }:getIamPolicy Gets the access control policy for a resource. instantiate POST /v1/{name=projects/ /locations/ /workflowTemplates/ }:instantiate Instantiates a template and begins execution. instantiateInline POST /v1/{parent=projects/ /locations/ }/workflowTemplates:instantiateInline Instantiates a template and begins execution. list GET /v1/{parent=projects/ /locations/ }/workflowTemplates Lists workflows that match the specified filter in the request. setIamPolicy POST /v1/{resource=projects/ /locations/ /workflowTemplates/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /workflowTemplates/ }:testIamPermissions Returns permissions that a caller has on the specified resource. update PUT /v1/{template.name=projects/ /locations/ /workflowTemplates/ } Updates (replaces) workflow template.
@@ -75,16 +76,17 @@ Evidence snippets:
 - REST Resource: v1.projects.locations.autoscalingPolicies REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.workflowTemplates REST Resource: v1.projects.regions.autoscalingPolicies REST Resource: v1.projects.regions.clusters REST Resource: v1.projects.regions.clusters.nodeGroups REST Resource: v1.projects.regions.jobs REST Resource: v1.projects.regions.operations REST Resource: v1.projects.regions.workflowTemplates Service: dataproc.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
 - This service has the following service endpoint and all URIs below are relative to this service endpoint: https://dataproc.googleapis.com REST Resource: v1.projects.locations.autoscalingPolicies Methods create POST /v1/{parent=projects/ /locations/ }/autoscalingPolicies Creates new autoscaling policy. delete DELETE /v1/{name=projects/ /locations/ /autoscalingPolicies/ } Deletes an autoscaling policy. get GET /v1/{name=projects/ /locations/ /autoscalingPolicies/ } Retrieves autoscaling policy. getIamPolicy POST /v1/{resource=projects/ /locations/ /autoscalingPolicies/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ }/autoscalingPolicies Lists autoscaling policies in the project. setIamPolicy POST /v1/{resource=projects/ /locations/ /autoscalingPolicies/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /autoscalingPolicies/ }:testIamPermissions Returns permissions that a caller has on the specified resource. update PUT /v1/{policy.name=projects/ /locations/ /autoscalingPolicies/ } Updates (replaces) autoscaling policy.
 
-### "Package com.google.cloud.dataproc.v1 (4.85.0) \_|\_ Java client libraries\
+### Managed Service for Apache Spark \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1)
-- Source ID: `site-java-reference`
-- Final score: 140
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/audit-logging](https://docs.cloud.google.com/dataproc/docs/guides/audit-logging)
+- Source ID: `site-docs-root`
+- Final score: 134
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Workflow Template Service Grpc The API interface for managing Workflow Templates in the Dataproc API. com. google. cloud. dataproc. v1.
-- Workflow Template Service Client Service Description: The API interface for managing Workflow Templates in the Dataproc API.
-- Async Service The API interface for managing Workflow Templates in the Dataproc API. com. google. cloud. dataproc. v1.
-- The API interface for managing Workflow Templates in the com. google. cloud. dataproc. v1.
+- Permission type Methods ADMIN READ google.cloud.dataproc.v1.AutoscalingPolicyService.GetAutoscalingPolicy google.cloud.dataproc.v1.AutoscalingPolicyService.ListAutoscalingPolicies google.cloud.dataproc.v1.BatchController.GetBatch google.cloud.dataproc.v1.BatchController.ListBatches google.cloud.dataproc.v1.ClusterController.GetCluster google.cloud.dataproc.v1.ClusterController.ListClusters google.cloud.dataproc.v1.JobController.GetJob google.cloud.dataproc.v1.JobController.ListJobs google.cloud.dataproc.v1.NodeGroupController.GetNodeGroup google.cloud.dataproc.v1.SessionController.GetSession google.cloud.dataproc.v1.SessionController.ListSessions google.cloud.dataproc.v1.SessionTemplateController.GetSessionTemplate google.cloud.dataproc.v1.SessionTemplateController.ListSessionTemplates google.cloud.dataproc.v1.WorkflowTemplateService.GetWorkflowTemplate google.cloud.dataproc.v1.WorkflowTemplateService.ListWorkflowTemplates google.cloud.dataproc.v1beta2.AutoscalingPolicyService.GetAutoscalingPolicy google.cloud.dataproc.v1beta2.ClusterController.GetCluster google.cloud.dataproc.v1beta2.ClusterController.ListClusters google.cloud.dataproc.v1beta2.JobController.GetJob google.cloud.dataproc.v1beta2.JobController.ListJobs google.cloud.dataproc.v1beta2.WorkflowTemplateService.GetWorkflowTemplate google.iam.v1.IAMPolicy.GetIamPolicy google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations ADMIN WRITE google.cloud.dataproc.v1.AnalysisService.AnalyzeBatch (LRO) google.cloud.dataproc.v1.AutoscalingPolicyService.CreateAutoscalingPolicy google.cloud.dataproc.v1.AutoscalingPolicyService.DeleteAutoscalingPolicy google.cloud.dataproc.v1.AutoscalingPolicyService.UpdateAutoscalingPolicy google.cloud.dataproc.v1.BatchController.CreateBatch (LRO) google.cloud.dataproc.v1.BatchController.DeleteBatch google.cloud.dataproc.v1.ClusterController.CreateCluster (LRO) google.cloud.dataproc.v1.ClusterController.DeleteCluster (LRO) google.cloud.dataproc.v1.ClusterController.DiagnoseCluster (LRO) google.cloud.dataproc.v1.ClusterController.InjectCredentials (LRO) google.cloud.dataproc.v1.ClusterController.RepairCluster (LRO) google.cloud.dataproc.v1.ClusterController.StartCluster (LRO) google.cloud.dataproc.v1.ClusterController.StopCluster (LRO) google.cloud.dataproc.v1.ClusterController.UpdateCluster (LRO) google.cloud.dataproc.v1.JobController.CancelJob google.cloud.dataproc.v1.JobController.DeleteJob google.cloud.dataproc.v1.JobController.SubmitJob (LRO) google.cloud.dataproc.v1.JobController.SubmitJobAsOperation (LRO) google.cloud.dataproc.v1.JobController.UpdateJob google.cloud.dataproc.v1.NodeGroupController.CreateNodeGroup (LRO) google.cloud.dataproc.v1.NodeGroupController.RepairNodeGroup (LRO) google.cloud.dataproc.v1.NodeGroupController.ResizeNodeGroup (LRO) google.cloud.dataproc.v1.SessionController.CreateSession (LRO) google.cloud.dataproc.v1.SessionController.DeleteSession (LRO) google.cloud.dataproc.v1.SessionController.TerminateSession (LRO) google.cloud.dataproc.v1.SessionTemplateController.CreateSessionTemplate google.cloud.dataproc.v1.SessionTemplateController.DeleteSessionTemplate google.cloud.dataproc.v1.SessionTemplateController.UpdateSessionTemplate google.cloud.dataproc.v1.WorkflowTemplateService.CreateWorkflowTemplate google.cloud.dataproc.v1.WorkflowTemplateService.DeleteWorkflowTemplate google.cloud.dataproc.v1.WorkflowTemplateService.InstantiateInlineWorkflowTemplate (LRO) google.cloud.dataproc.v1.WorkflowTemplateService.InstantiateWorkflowTemplate (LRO) google.cloud.dataproc.v1.WorkflowTemplateService.UpdateWorkflowTemplate google.cloud.dataproc.v1beta2.AutoscalingPolicyService.CreateAutoscalingPolicy google.cloud.dataproc.v1beta2.AutoscalingPolicyService.DeleteAutoscalingPolicy google.cloud.dataproc.v1beta2.AutoscalingPolicyService.UpdateAutoscalingPolicy google.cloud.dataproc.v1beta2.ClusterController.CreateCluster (LRO) google.cloud.dataproc.v1beta2.ClusterController.DeleteCluster (LRO) google.cloud.dataproc.v1beta2.ClusterController.DiagnoseCluster (LRO) google.cloud.dataproc.v1beta2.ClusterController.StartCluster (LRO) google.cloud.dataproc.v1beta2.ClusterController.StopCluster (LRO) google.cloud.dataproc.v1beta2.ClusterController.UpdateCluster (LRO) google.cloud.dataproc.v1beta2.JobController.CancelJob google.cloud.dataproc.v1beta2.JobController.SubmitJob google.cloud.dataproc.v1beta2.JobController.SubmitJobAsOperation (LRO) google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateInlineWorkflowTemplate (LRO) google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate (LRO) google.cloud.dataproc.v1beta2.WorkflowTemplateService.UpdateWorkflowTemplate google.iam.v1.IAMPolicy.SetIamPolicy google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation DATA READ google.cloud.dataproc.v1.BatchController.AccessSparkApplication google.cloud.dataproc.v1.BatchController.AccessSparkApplicationEnvironmentInfo google.cloud.dataproc.v1.BatchController.AccessSparkApplicationJob google.cloud.dataproc.v1.BatchController.AccessSparkApplicationSqlQuery google.cloud.dataproc.v1.BatchController.AccessSparkApplicationStageAttempt google.cloud.dataproc.v1.BatchController.SearchSparkApplicationExecutors google.cloud.dataproc.v1.BatchController.SearchSparkApplicationJobs google.cloud.dataproc.v1.BatchController.SearchSparkApplicationSqlQueries google.cloud.dataproc.v1.BatchController.SearchSparkApplicationStageAttemptTasks google.cloud.dataproc.v1.BatchController.SearchSparkApplicationStageAttempts google.cloud.dataproc.v1.BatchController.SearchSparkApplicationStages google.cloud.dataproc.v1.BatchController.SearchSparkApplications google.cloud.dataproc.v1.SessionController.AccessSessionSparkApplication google.cloud.dataproc.v1.SessionController.AccessSessionSparkApplicationEnvironmentInfo google.cloud.dataproc.v1.SessionController.AccessSessionSparkApplicationJob google.cloud.dataproc.v1.SessionController.AccessSessionSparkApplicationSqlQuery google.cloud.dataproc.v1.SessionController.AccessSessionSparkApplicationSqlSparkPlanGraph google.cloud.dataproc.v1.SessionController.AccessSessionSparkApplicationStageAttempt google.cloud.dataproc.v1.SessionController.AccessSessionSparkApplicationStageRddOperationGraph google.cloud.dataproc.v1.SessionController.SearchSessionSparkApplicationExecutorStageSummary google.cloud.dataproc.v1.SessionController.SearchSessionSparkApplicationExecutors google.cloud.dataproc.v1.SessionController.SearchSessionSparkApplicationJobs google.cloud.dataproc.v1.SessionController.SearchSessionSparkApplicationSqlQueries google.cloud.dataproc.v1.SessionController.SearchSessionSparkApplicationStageAttemptTasks google.cloud.dataproc.v1.SessionController.SearchSessionSparkApplicationStageAttempts google.cloud.dataproc.v1.SessionController.SearchSessionSparkApplicationStages google.cloud.dataproc.v1.SessionController.SearchSessionSparkApplications google.cloud.dataproc.v1.SessionController.SummarizeSessionSparkApplicationExecutors google.cloud.dataproc.v1.SessionController.SummarizeSessionSparkApplicationJobs google.cloud.dataproc.v1.SessionController.SummarizeSessionSparkApplicationStageAttemptTasks google.cloud.dataproc.v1.SessionController.SummarizeSessionSparkApplicationStages DATA WRITE google.cloud.dataproc.v1.BatchController.WriteSparkApplicationContext google.cloud.dataproc.v1.SessionController.WriteSessionSparkApplicationContext API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Managed Service for Apache Spark and Managed Service for Apache Spark. google.cloud.dataproc.v1.AnalysisService The following audit logs are associated with methods belonging to google.cloud.dataproc.v1.AnalysisService .
+- Filter for this method : protoPayload.methodName="google.cloud.dataproc.v1beta2.WorkflowTemplateService.GetWorkflowTemplate" InstantiateInlineWorkflowTemplate Method : google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateInlineWorkflowTemplate Audit log type : Admin activity Permissions : dataproc.workflowTemplates.instantiateInline - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateInlineWorkflowTemplate" InstantiateWorkflowTemplate Method : google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate Audit log type : Admin activity Permissions : dataproc.workflowTemplates.instantiate - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate" UpdateWorkflowTemplate Method : google.cloud.dataproc.v1beta2.WorkflowTemplateService.UpdateWorkflowTemplate Audit log type : Admin activity Permissions : dataproc.workflowTemplates.update - ADMIN WRITE Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="google.cloud.dataproc.v1.WorkflowTemplateService.GetWorkflowTemplate" InstantiateInlineWorkflowTemplate Method : google.cloud.dataproc.v1.WorkflowTemplateService.InstantiateInlineWorkflowTemplate Audit log type : Admin activity Permissions : dataproc.workflowTemplates.instantiateInline - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataproc.v1.WorkflowTemplateService.InstantiateInlineWorkflowTemplate" InstantiateWorkflowTemplate Method : google.cloud.dataproc.v1.WorkflowTemplateService.InstantiateWorkflowTemplate Audit log type : Admin activity Permissions : dataproc.workflowTemplates.instantiate - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataproc.v1.WorkflowTemplateService.InstantiateWorkflowTemplate" ListWorkflowTemplates Method : google.cloud.dataproc.v1.WorkflowTemplateService.ListWorkflowTemplates Audit log type : Data access Permissions : dataproc.workflowTemplates.list - ADMIN READ Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="google.cloud.dataproc.v1beta2.JobController.SubmitJob" SubmitJobAsOperation Method : google.cloud.dataproc.v1beta2.JobController.SubmitJobAsOperation Audit log type : Admin activity Permissions : dataproc.clusters.use - ADMIN WRITE dataproc.jobs.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.dataproc.v1beta2.JobController.SubmitJobAsOperation" google.cloud.dataproc.v1beta2.WorkflowTemplateService The following audit logs are associated with methods belonging to google.cloud.dataproc.v1beta2.WorkflowTemplateService .
 

@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T23:08:01+00:00'
-updated_at: '2026-04-10T19:17:19+00:00'
+updated_at: '2026-04-14T02:44:17+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -77,3 +77,31 @@ sources:
     max_pages: 42
     compact_output: true
   last_synced_at: '2026-04-10T19:17:19+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/asset-inventory/docs/release-notes
+  created_at: '2026-04-14T02:39:23+00:00'
+  updated_at: '2026-04-14T02:41:49+00:00'
+  update_command: know sync site https://docs.cloud.google.com/asset-inventory/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/asset-inventory/docs/release-notes
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:41:49+00:00'
+- type: site
+  id: site-docs-reference-3
+  title: https://docs.cloud.google.com/tasks/docs/release-notes
+  created_at: '2026-04-14T02:39:23+00:00'
+  updated_at: '2026-04-14T02:44:17+00:00'
+  update_command: know sync site https://docs.cloud.google.com/tasks/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-3
+  config:
+    url: https://docs.cloud.google.com/tasks/docs/release-notes
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:44:17+00:00'

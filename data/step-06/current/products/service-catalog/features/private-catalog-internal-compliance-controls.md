@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:22:50.097Z"
+generated_at: "2026-04-12T12:18:47.286Z"
 product_name: "Service Catalog"
 product_slug: "service-catalog"
 feature_name: "Private Catalog internal compliance controls"
 feature_slug: "private-catalog-internal-compliance-controls"
 latest_feature_date: "2019-02-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/service-catalog/docs/overview"
   - "https://docs.cloud.google.com/service-catalog/docs/access-control"
+  - "https://docs.cloud.google.com/service-catalog/docs/create-catalog"
   - "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
 keywords:
   - "private"
@@ -26,7 +27,7 @@ keywords:
 # Private Catalog internal compliance controls
 
 Product: Service Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Private Catalog helps cloud admins ensure internal compliance for solution distr
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/service-catalog/docs/overview](https://docs.cloud.google.com/service-catalog/docs/overview)
 - [https://docs.cloud.google.com/service-catalog/docs/access-control](https://docs.cloud.google.com/service-catalog/docs/access-control)
+- [https://docs.cloud.google.com/service-catalog/docs/create-catalog](https://docs.cloud.google.com/service-catalog/docs/create-catalog)
 - [https://docs.cloud.google.com/service-catalog/docs/share-catalog](https://docs.cloud.google.com/service-catalog/docs/share-catalog)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/service-catalog/docs/overview](https://docs.cloud.google.com/service-catalog/docs/overview)
 - Source ID: `site-docs-reference`
-- Final score: 108
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 164
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Features Service Catalog includes the following features: A Service Catalog experience for users and cloud admins Ability to create multiple catalogs and share them at different folder and project levels Ability to add additional Service Catalog cloud admins to create and curate content Support for reference links and Cloud Deployment Manager (Deployment Manager) templates Single point of entry for cloud admins and users Respect for organizational policies and Deployment Manager constraints to complement Service Catalog and provide controls A cloud admin can create a catalog under a Google Cloud organization.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/service-catalog/docs/access-control](https://docs.cloud.google.com/service-catalog/docs/access-control)
 - Source ID: `site-docs-reference`
-- Final score: 86
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Creates and manages Service Catalog resources, such as solutions and catalogs. cloudprivatecatalogproducer.settings. cloudprivatecatalogproducer.catalogs. cloudprivatecatalogproducer.associations. cloudprivatecatalogproducer.targets. cloudprivatecatalogproducer.producerCatalogs. cloudprivatecatalogproducer.catalogAssociations. cloudprivatecatalogproducer.products. cloudprivatecatalog.targets. resourcemanager.projects.get resourcemanager.projects.list resourcemanager.folders.get resourcemanager.folders.list resourcemanager.organizations.get Catalog Admin Role name Description Includes permissions roles/cloudprivatecatalogproducer.admin Creates and manages Service Catalog resources, such as solutions and catalogs. cloudprivatecatalogproducer.catalogs. cloudprivatecatalogproducer.associations. cloudprivatecatalogproducer.targets. cloudprivatecatalogproducer.producerCatalogs. cloudprivatecatalogproducer.catalogAssociations. cloudprivatecatalogproducer.products. cloudprivatecatalog.targets. resourcemanager.projects.get resourcemanager.projects.list resourcemanager.folders.get resourcemanager.folders.list resourcemanager.organizations.get Catalog Manager Role name Description Includes permissions roles/cloudprivatecatalogproducer.manager Views solutions and catalogs, and shares catalogs with Service Catalog users. cloudprivatecatalog.targets.get cloudprivatecatalogproducer.catalogs.get cloudprivatecatalogproducer.catalogs.list cloudprivatecatalogproducer.targets. cloudprivatecatalogproducer.associations. cloudprivatecatalogproducer.producerCatalogs.get cloudprivatecatalogproducer.producerCatalogs.list cloudprivatecatalogproducer.catalogAssociations. resourcemanager.projects.get resourcemanager.projects.list resourcemanager.folders.get resourcemanager.folders.list resourcemanager.organizations.get Catalog Consumer Role name Description Includes permissions roles/cloudprivatecatalog.consumer Browses catalogs.
@@ -76,13 +78,27 @@ Evidence snippets:
 - For example, if your organization would like users granted the Catalog Admin role to also be able to add and remove users and groups from the other Service Catalog IAM roles, then an Organization Administrator can do the following: Create a Google Group for the users ( MyCompanyCatalogAdmins ).
 - In the example, members of the Google Group ( MyCompanyCatalogAdmins ) can assign users and groups to IAM roles in the organization because the group has been granted the setIamPolicy permission when granted the Organization Administrator role.
 
+### Creating a catalog \_|\_ Service Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/service-catalog/docs/create-catalog](https://docs.cloud.google.com/service-catalog/docs/create-catalog)
+- Source ID: `site-docs-reference`
+- Final score: 106
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) role for the Google Cloud organization associated with the Google Cloud project which has Service Catalog enabled.
+- The description is only visible to Service Catalog admins.
+- Next steps Assign solutions to your catalog Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Access and resource management Service Catalog Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+
 ### Sharing a catalog \_|\_ Service Catalog \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/service-catalog/docs/share-catalog](https://docs.cloud.google.com/service-catalog/docs/share-catalog)
 - Source ID: `site-docs-reference`
-- Final score: 82
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 106
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Before you begin You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) OR Catalog Manager ( roles/cloudprivatecatalogproducer.manager ) role for the Google Cloud project where Service Catalog is enabled, and the folder, project, or organization where you're sharing the catalog.

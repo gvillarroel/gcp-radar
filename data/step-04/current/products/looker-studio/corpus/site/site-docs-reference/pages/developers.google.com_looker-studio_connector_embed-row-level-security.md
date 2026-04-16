@@ -5,7 +5,7 @@ url: https://developers.google.com/looker-studio/connector/embed-row-level-secur
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://developers.google.com/looker-studio/connector/advanced-services
+entrypoint: https://developers.google.com/looker-studio/connector
 source_metadata:
   url: https://developers.google.com/looker-studio/connector/embed-row-level-security
   title: "Row-level security for embedded viewers \_|\_ Community Connectors \_|\_\

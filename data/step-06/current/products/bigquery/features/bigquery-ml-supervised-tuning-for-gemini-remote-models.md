@@ -1,25 +1,26 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.513Z"
+generated_at: "2026-04-15T12:48:36.397Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery ML supervised tuning for Gemini remote models"
 feature_slug: "bigquery-ml-supervised-tuning-for-gemini-remote-models"
-latest_feature_date: "2024-06-17"
+latest_feature_date: "2024-11-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/release-notes"
-  - "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+  - "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey"
 keywords:
-  - "BQML supervised tuning"
-  - "Gemini 1.0-pro-002"
-  - "supervised tuning for remote models"
-  - "supervised tuning"
-  - "Gemini remote tuning"
-  - "ML remote tuning"
-  - "CREATE MODEL OPTIONS"
-  - "BigQuery DataFrames"
+  - "bigquery"
+  - "ml"
+  - "supervised"
+  - "tuning"
+  - "gemini"
+  - "remote"
+  - "models"
+  - "supports"
 ---
 
 # BigQuery ML supervised tuning for Gemini remote models
@@ -29,59 +30,60 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-BigQuery ML now supports supervised tuning of remote models based on gemini-1.0-pro-002, including via BigQuery DataFrames APIs.
+BigQuery ML supports supervised tuning for remote models based on Vertex AI Gemini 1.5 Flash and Gemini 1.5 Pro.
 
 ## Extended Definition
 
-BigQuery ML supports supervised tuning for BigQuery ML remote models using Vertex AI Gemini model variants (specifically gemini-2.0-flash-001 and gemini-2.0-flash-lite-001). BigQuery documentation also indicates that Gemini-related capabilities are available via BigQuery SQL and BigQuery DataFrames (including multimodal workflows), so the tuning-capable remote model workflow is part of the broader BigQuery AI/ML integration surface. The provided excerpts do not provide details for `CREATE MODEL ... OPTIONS` syntax or confirm support for gemini-1.0-pro-002 in this context.
+BigQuery ML supports supervised tuning for remote models based on Vertex AI Gemini 1.5 Flash and Gemini 1.5 Pro.
 
 ## Evidence Summary
 
-Release notes provide the direct evidence of supervised tuning support for Gemini-based remote models, while the multimodal DataFrames tutorial corroborates Gemini integration through BigQuery DataFrames methods and AI generation flows.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
-- [https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial](https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create)
+- [https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial](https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey)
 
 ## Supporting Pages
 
-### "Analyze multimodal data with SQL and BigQuery DataFrames \_|\_ Google Cloud\
+### The CREATE MODEL statement \_|\_ BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial](https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial)
-- Source ID: `site-docs-root-2`
-- Final score: 40
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- CREATE OR REPLACE FUNCTION cymbal pets . chunk pdf ( src json STRING , chunk size INT64 , overlap size INT64 ) RETURNS ARRAY<STRING > LANGUAGE python WITH CONNECTION us.cymbal conn OPTIONS ( entry point = 'chunk pdf' , runtime version = 'python-3.11' , packages =[ 'pypdf' ] ) AS " "" import io import json from pypdf import PdfReader # type: ignore from urllib.request import urlopen, Request def chunk pdf(src ref: str, chunk size: int, overlap size: int) -> str: src json = json.loads(src ref) srcUrl = src json[" access urls "][" read url "] req = urlopen(srcUrl) pdf file = io.BytesIO(bytearray(req.read())) reader = PdfReader(pdf file, strict=False) extract and chunk text simultaneously all text chunks = [] curr chunk = "" for page in reader.pages: page text = page.extract text() if page text: curr chunk += page text split the accumulated text into chunks of a specific size with overlaop this loop implements a sliding window approach to create chunks while len(curr chunk) >= chunk size: split idx = curr chunk.rfind(" ", 0, chunk size) if split idx == -1: split idx = chunk size actual chunk = curr chunk[:split idx] all text chunks.append(actual chunk) overlap = curr chunk[split idx + 1 : split idx + 1 + overlap size] curr chunk = overlap + curr chunk[split idx + 1 + overlap size :] if curr chunk: all text chunks.append(curr chunk) return all text chunks "" " ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .
-- Run the following to create the to grayscale UDF: SQL CREATE OR REPLACE FUNCTION cymbal pets . to grayscale ( src json STRING , dst json STRING ) RETURNS STRING LANGUAGE python WITH CONNECTION us.cymbal conn OPTIONS ( entry point = 'to grayscale' , runtime version = 'python-3.11' , packages =[ 'numpy' , 'opencv-python' ] ) AS " "" import cv2 as cv import numpy as np from urllib.request import urlopen, Request import json Transform the image to grayscale. def to grayscale(src ref, dst ref): src json = json.loads(src ref) srcUrl = src json[" access urls "][" read url "] dst json = json.loads(dst ref) dstUrl = dst json[" access urls "][" write url "] req = urlopen(srcUrl) arr = np.asarray(bytearray(req.read()), dtype=np.uint8) img = cv.imdecode(arr, -1) # 'Load it as it is' Convert the image to grayscale gray image = cv.cvtColor(img, cv.COLOR BGR2GRAY) Send POST request to the URL , img encoded = cv.imencode('.png', gray image) req = Request(url=dstUrl, data=img encoded.tobytes(), method='PUT', headers = { " Content - Type ": " image / png ", }) with urlopen(req) as f: pass return dst ref "" " ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .
-- For more information, see Set up ADC for a local development environment . bbq . create external table ( "cymbal pets.product manuals all" , replace = True , connection name = "us.cymbal conn" , options = { "object metadata" : "SIMPLE" , "uris" : [ "gs://cloud-samples-data/bigquery/tutorials/cymbal-pets/documents/ .pdf" , "gs://cloud-samples-data/bigquery/tutorials/cymbal-pets/document chunks/ .pdf" , ], }, ) Run the following to write PDF data to the map manual to chunks table: SQL -- Extract the file and chunks into a single table. -- Store the chunks in the chunks column as array of ObjectRefs (ordered by page number) CREATE OR REPLACE TABLE cymbal pets . map manual to chunks AS SELECT ARRAY AGG ( m1 . ref ) [ 0 ] manual , ARRAY AGG ( m2 . ref ORDER BY m2 . ref . uri ) chunks FROM cymbal pets . product manuals m1 JOIN cymbal pets . product manuals m2 ON REGEXP EXTRACT ( m1 . uri , r '. /([^.] ).[^/]+' ) = REGEXP EXTRACT ( m2 . uri , r '. /([^.] ) page[0-9]+.[^/]+' ) GROUP BY m1 . uri ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .
-- For more information, see Set up ADC for a local development environment . df prompt = bbq . obj . get access url ( df products mm [ "image" ], "R" ) . to frame () df prompt [ "prompt0" ] = "For the image of a pet product, concisely generate the following metadata: 1) animal type and 2) 5 SEO search keywords, and 3) product subcategory." df products mm [ "prompt" ] = bbq . struct ( df prompt [[ "prompt0" , "image" ]]) df products mm = df products mm . drop ( columns = [ "animal type" , "search keywords" , "subcategory" ] ) df products mm = bbq . ai . generate table ( gemini model , df products mm , output schema = "animal type STRING, search keywords ARRAY<STRING>, subcategory STRING" , ) Run the following to view the generated data: SQL SELECT product name , image description , animal type , search keywords , subcategory , FROM cymbal pets . products mm ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .
-
-### BigQuery release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create)
 - Source ID: `site-docs-root`
-- Final score: 34
+- Final score: 137
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature You can now use BigQuery DataFrames version 2.0 , which makes security and performance improvements to the BigQuery DataFrames API, adds new features, and introduces breaking changes.
-- Use generative AI to analyze multimodal data and generate embeddings by using BigQuery ML SQL functions or BigQuery DataFrames methods with Gemini and multimodal embedding models.
-- May 21, 2025 Change You can now perform supervised tuning on a BigQuery ML remote model based on a Vertex AI gemini-2.0-flash-001 or gemini-2.0-flash-lite-001 model.
-- Feature You can now use BigQuery and BigQuery DataFrames to enable multimodal analysis, transformation, and data engineering (ELT) workflows in both SQL and Python.
+- Remote models over Google models in Vertex AI LEARNING RATE MULTIPLIER A multiplier to apply to the recommended learning rate when performing supervised tuning.
+- Remote models over Google models in Vertex AI EVALUATION TASK When performing supervised tuning, the type of task that you want to tune the model to perform.
+- See XGBoost INPUT OUTPUT clause for more details. field type Remote models support the following BigQuery data types for INPUT and OUTPUT clauses: Simple type: BOOL , INT64 , FLOAT64 , NUMERIC , BIGNUMERIC , STRING ARRAY <Simple type> XGBoost models only support numeric types for the INPUT field type and FLOAT64 for the OUTPUT field type. connection name BigQuery uses a CLOUD RESOURCE connection to interact with your Vertex AI endpoint.
+- To create a model, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData bigquery.connections.delegate (for remote models) The following predefined IAM roles grant these permissions: BigQuery Studio Admin BigQuery Admin For more information about IAM roles and permissions in BigQuery, see Introduction to IAM .
 
-### Create an ML model in BigQuery ML by using SQL \_|\_ Google Cloud Documentation
+### "Make predictions with remote models on Vertex AI \_|\_ BigQuery \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model](https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model)
+- URL: [https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial](https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial)
+- Source ID: `site-docs-reference`
+- Final score: 118
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Data analytics BigQuery Guides Send feedback Make predictions with remote models on Vertex AI Stay organized with collections Save and categorize content based on your preferences.
+- You can use remote models when a model is too large to import into BigQuery.
+- Import the model to the Vertex AI Model Registry In this tutorial you use a pretrained TensorFlow model that is available in Cloud Storage at gs://cloud-samples-data/bigquery/ml/remote model tutorial/ .
+- In a BigQuery multi-region ( US , EU ) dataset, you can only create a remote model that connects to an endpoint deployed in a region within the same multi-region location ( US , EU ).
+
+### "End-to-end user journeys for ML models \_|\_ BigQuery \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey)
 - Source ID: `site-docs-root`
-- Final score: 28
+- Final score: 110
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- PREDICT ( MODEL bqml tutorial.sample model , ( SELECT IFNULL ( device . operatingSystem , "" ) AS os , device . isMobile AS is mobile , IFNULL ( totals . pageviews , 0 ) AS pageviews , IFNULL ( geoNetwork . country , "" ) AS country , fullVisitorId FROM bigquery-public-data.google analytics sample.ga sessions WHERE TABLE SUFFIX BETWEEN '20170701' AND '20170801' )) GROUP BY fullVisitorId ORDER BY total predicted purchases DESC LIMIT 10 The results should look like the following: +---------------------+---------------------------+ fullVisitorId total predicted purchases +---------------------+---------------------------+ 9417857471295131045 4 112288330928895942 2 2158257269735455737 2 489038402765684003 2 057693500927581077 2 2969418676126258798 2 5073919761051630191 2 7420300501523012460 2 0456807427403774085 2 2105122376016897629 2 +---------------------+---------------------------+ BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .
-- Create a dataset named bqml tutorial with the data location set to US . bq mk --dataset \ --location=US \ --description "BigQuery ML tutorial dataset." \ bqml tutorial Confirm that the dataset was created: bq ls API Call the datasets.insert method with a defined dataset resource . { "datasetReference" : { "datasetId" : "bqml tutorial" } } BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .
-- To calculate logistic regression specific metrics, you can use the ML.ROC CURVE SQL function or the bigframes.ml.metrics.roc curve BigQuery DataFrames function .
-- BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .
+- Model creation user journeys The following table describes the statements and functions you can use to create and tune models: Model category Model type Model creation Feature preprocessing Hyperparameter tuning 1 Model weights Feature & training info Tutorials Supervised learning Linear & logistic regression CREATE MODEL Automatic preprocessing Manual preprocessing Hyperparameter tuning ML.TRIAL INFO ML.WEIGHTS ML.FEATURE INFO ML.TRAINING INFO Use linear regression to predict penguin weight Perform classification with a logistic regression model Deep neural networks (DNN) CREATE MODEL Automatic preprocessing Manual preprocessing Hyperparameter tuning ML.TRIAL INFO N/A 2 ML.FEATURE INFO ML.TRAINING INFO N/A Wide & Deep networks CREATE MODEL Automatic preprocessing Manual preprocessing Hyperparameter tuning ML.TRIAL INFO N/A 2 ML.FEATURE INFO ML.TRAINING INFO N/A Boosted trees CREATE MODEL Automatic preprocessing Manual preprocessing Hyperparameter tuning ML.TRIAL INFO N/A 2 ML.FEATURE INFO ML.TRAINING INFO Perform classification with a boosted trees model Random forest CREATE MODEL Automatic preprocessing Manual preprocessing Hyperparameter tuning ML.TRIAL INFO N/A 2 ML.FEATURE INFO ML.TRAINING INFO N/A AutoML classification & regression CREATE MODEL AutoML automatically performs feature engineering AutoML automatically performs hyperparameter tuning N/A 2 ML.FEATURE INFO ML.TRAINING INFO N/A Unsupervised learning K-means CREATE MODEL Automatic preprocessing Manual preprocessing Hyperparameter tuning ML.TRIAL INFO ML.CENTROIDS ML.FEATURE INFO ML.TRAINING INFO Find clusters in bike station data Matrix factorization CREATE MODEL N/A Hyperparameter tuning ML.TRIAL INFO ML.WEIGHTS ML.FEATURE INFO ML.TRAINING INFO Generate movie recommendations using explicit feedback Generate content recommendations using implicit feedback Principal component analysis (PCA) CREATE MODEL Automatic preprocessing Manual preprocessing N/A ML.PRINCIPAL COMPONENTS ML.PRINCIPAL COMPONENT INFO ML.FEATURE INFO ML.TRAINING INFO N/A Autoencoder CREATE MODEL Automatic preprocessing Manual preprocessing Hyperparameter tuning ML.TRIAL INFO N/A 2 ML.FEATURE INFO ML.TRAINING INFO N/A Transform-only Transform-only CREATE MODEL Manual preprocessing N/A N/A ML.FEATURE INFO N/A 1 For a step-by-step example of using hyperparameter tuning, see Improve model performance with hyperparameter tuning .
+- BigQuery ML offers the following types of ML models: Supervised learning models: Linear and logistic regression Deep neural network (DNN) Wide & Deep Boosted trees Random forest AutoML Unsupervised learning models: K-means clustering Matrix factorization Autoencoder Principal component analysis (PCA) Transform-only models: Transform-only models aren't typical ML models but are instead artifacts that transform raw data into features.
+- Model use user journeys The following table describes the statements and functions you can use to evaluate, explain, and get predictions from models: Model category Model type Evaluation Inference AI explanation Model monitoring Supervised learning Linear & logistic regression ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.ADVANCED WEIGHTS 5 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Deep neural networks (DNN) ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.ADVANCED WEIGHTS 5 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Wide & Deep networks ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.ADVANCED WEIGHTS 5 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Boosted trees ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.FEATURE IMPORTANCE 4 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Random forest ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.FEATURE IMPORTANCE 4 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE AutoML classification & regression ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.GLOBAL EXPLAIN ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Unsupervised learning K-means ML.EVALUATE ML.PREDICT ML.DETECT ANOMALIES ML.TRANSFORM N/A ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Matrix factorization ML.EVALUATE ML.RECOMMEND ML.GENERATE EMBEDDING N/A N/A Principal component analysis (PCA) ML.EVALUATE ML.PREDICT ML.GENERATE EMBEDDING ML.DETECT ANOMALIES ML.TRANSFORM N/A ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Autoencoder ML.EVALUATE ML.PREDICT ML.GENERATE EMBEDDING ML.DETECT ANOMALIES ML.RECONSTRUCTION LOSS ML.TRANSFORM N/A ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Transform-only Transform-only N/A ML.TRANSFORM N/A N/A 1 ML.CONFUSION MATRIX is only applicable to classification models.
+- To see the weights of the model, you can export the model from BigQuery ML to Cloud Storage and then use the XGBoost library or the TensorFlow library to visualize the tree structure for tree models or the graph structure for neural networks.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.519Z"
+generated_at: "2026-04-15T13:43:38.514Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "IDE file and folder loading indicators"
@@ -9,18 +9,18 @@ latest_feature_date: "2024-07-10"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/looker"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio"
+  - "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro"
+  - "https://docs.cloud.google.com/looker/docs/accessing-project-files"
+  - "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards"
 keywords:
   - "ide"
   - "file"
-  - "and"
   - "folder"
   - "loading"
   - "indicators"
-  - "the"
   - "looker"
+  - "displays"
+  - "indicator"
 ---
 
 # IDE file and folder loading indicators
@@ -42,42 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio](https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio)
+- [https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro](https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro)
+- [https://docs.cloud.google.com/looker/docs/accessing-project-files](https://docs.cloud.google.com/looker/docs/accessing-project-files)
+- [https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards](https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards)
 
 ## Supporting Pages
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### "Introduction to Blob Storage transfers \_|\_ BigQuery \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro](https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 105
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
+- Example: Single file To load a single file from Blob Storage into BigQuery, specify the Blob Storage filename: my-folder/my-file.csv Example: All files To load all files from a Blob Storage container into BigQuery, set the data path to a single wildcard: Example: Files with a common prefix To load all files from Blob Storage that share a common prefix, specify the common prefix with or without a wildcard: my-folder/ or my-folder/ Example: Files with a similar path To load all files from Blob Storage with a similar path, specify the common prefix and suffix: my-folder/ .csv When you only use a single wildcard, it spans directories.
+- Consider the following data path: / .csv Both of the following files are selected: my-folder1/my-file1.csv my-other-folder2/my-file2.csv And neither of the following files are selected: my-folder1/my-subfolder/my-file3.csv my-other-folder2/my-subfolder/my-file4.csv Shared access signature (SAS) The Azure SAS token is used to access Blob Storage data on your behalf.
+- As an example, consider this data path: folder/ /subfolder/ .csv Both of the following files are transferred to Google Cloud, because they have the prefix folder/ : folder/any/subfolder/file1.csv folder/file2.csv However, only the folder/any/subfolder/file1.csv file is loaded into BigQuery, because it matches the full data path.
+- Supported file formats The BigQuery Data Transfer Service supports loading data from Blob Storage in the following formats: Comma-separated values (CSV) JSON (newline delimited) Avro Parquet ORC Supported compression types The BigQuery Data Transfer Service for Blob Storage supports loading compressed data.
 
-### Looker roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### Accessing LookML project files \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- Source ID: `site-iam-reference`
-- Final score: 114
+- URL: [https://docs.cloud.google.com/looker/docs/accessing-project-files](https://docs.cloud.google.com/looker/docs/accessing-project-files)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 96
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Looker roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/looker This page lists the IAM roles and permissions for Looker.
+- The Looker IDE displays project files in the file browser side panel of the Looker IDE .
+- When you open a LookML project from the Develop panel, the Looker IDE opens the project to one of the LookML files in that project: If the project contains a document file named readme.md , the IDE will open that file.
+- Home Documentation Data analytics Looker Guides Send feedback Accessing LookML project files Stay organized with collections Save and categorize content based on your preferences.
+- Searching for and jumping to LookML objects or project files In the Looker IDE, you can do a quick search to navigate directly to LookML objects and project files.
 
-### Looker Studio roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### "Downloading or delivering dashboards in rendered formats \_|\_ Looker \_\
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio](https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio)
-- Source ID: `site-iam-reference`
-- Final score: 92
+- URL: [https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards](https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards)
+- Source ID: `site-docs-reference`
+- Final score: 94
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker Studio roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio This page lists the IAM roles and permissions for Looker Studio.
+- Home Documentation Data analytics Looker Best Practices Send feedback Downloading or delivering dashboards in rendered formats Stay organized with collections Save and categorize content based on your preferences.
+- Important : Starting in Looker 26.4, table charts, scatterplot charts, and Google Maps charts that have increased row limits are subject to the following limitations when you download, send, or schedule dashboards in PDF format: The query results for each table chart on a dashboard will display up to 50,000 rows, to a maximum total limit of 200,000 cells per dashboard.
+- For the most part, PNG files render the same as PDF files, with a few differences: When the Arrange dashboard tiles in a single column setting is selected, each tile renders as an individual PNG file rather than all tiles rendering together as a single file.
+- Here is an example of a PDF download with Looker's default settings: You can change the appearance of the dashboard in the PDF by adjusting several Looker settings.
 

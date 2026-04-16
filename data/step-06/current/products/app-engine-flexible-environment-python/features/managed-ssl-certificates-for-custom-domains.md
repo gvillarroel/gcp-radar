@@ -1,44 +1,92 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:45:54.297Z"
+generated_at: "2026-04-14T06:40:42.104Z"
 product_name: "App Engine flexible environment Python"
 product_slug: "app-engine-flexible-environment-python"
 feature_name: "Managed SSL certificates for custom domains"
 feature_slug: "managed-ssl-certificates-for-custom-domains"
-latest_feature_date: "2017-09-13"
+latest_feature_date: "2017-06-06"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/python/using-custom-domains-and-ssl"
 keywords:
-  - "automatic certificate provisioning"
-  - "certificate revocation"
-  - "certificate renewal"
-  - "upgrade to managed SSL"
-  - "auto-managed SSL"
-  - "managed SSL certificates"
-  - "managed certs"
-  - "App Engine managed SSL"
+  - "managed"
+  - "ssl"
+  - "certificates"
+  - "custom"
+  - "domains"
+  - "automatically"
+  - "provision"
+  - "app"
 ---
 
 # Managed SSL certificates for custom domains
 
 Product: App Engine flexible environment Python
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Managed SSL certificates allow App Engine to automatically provision, renew, and revoke certificates for mapped custom domains; Existing domain mappings and certificates continue to work while enabling an upgrade path to managed SSL certificates.
+Managed SSL certificates automatically provision certificates for App Engine custom domains.
 
 ## Extended Definition
 
-Managed SSL certificates allow App Engine to automatically provision, renew, and revoke certificates for mapped custom domains; Existing domain mappings and certificates continue to work while enabling an upgrade path to managed SSL certificates.
+Managed SSL certificates automatically provision certificates for App Engine custom domains.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl](https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl)
+- [https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains)
+- [https://docs.cloud.google.com/appengine/docs/flexible/python/using-custom-domains-and-ssl](https://docs.cloud.google.com/appengine/docs/flexible/python/using-custom-domains-and-ssl)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Secure custom domains with SSL \_|\_ App Engine flexible environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl](https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl)
+- Source ID: `site-docs-reference-2`
+- Final score: 208
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To move from your own SSL certificates to Google-managed SSL certificates, or to add managed SSL certificates to an existing app with a custom domain, update your domain mapping: In the Google Cloud console, go to App Engine > Settings > Custom Domains : Go to Custom Domains Select the domain you want to secure, and click Enable managed security .
+- Disable managed SSL certificates To disable managed SSL certificates: In the Google Cloud console, go to App Engine > Settings > Custom Domains : Go to Custom Domains Select the domain and click Disable managed security .
+- To verify that the certificate was provisioned: In the Google Cloud console, go to App Engine > Settings > Custom Domains : Go to Custom Domains The SSL security displays as Google-managed .
+- By default, HTTPS connections on your custom domain are enabled automatically using managed SSL certificates.
+
+### "Mapping custom domains \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains)
+- Source ID: `site-docs-reference-2`
+- Final score: 170
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer.
+- For more information on using SSL with your custom domain, including how to use your own SSL certificates, see Securing your custom domains with SSL .
+- For more information, see the following pages: Using Google-managed SSL certificates Using self-managed SSL certificates SSL policies Note the following limitation: We recommend that you use ingress controls so that your app only receives requests sent from the load balancer (and the VPC if you use it).
+- Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.
+
+### "Mapping custom domains \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/python/using-custom-domains-and-ssl](https://docs.cloud.google.com/appengine/docs/flexible/python/using-custom-domains-and-ssl)
+- Source ID: `site-docs-reference-2`
+- Final score: 170
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer.
+- For more information on using SSL with your custom domain, including how to use your own SSL certificates, see Securing your custom domains with SSL .
+- For more information, see the following pages: Using Google-managed SSL certificates Using self-managed SSL certificates SSL policies Note the following limitation: We recommend that you use ingress controls so that your app only receives requests sent from the load balancer (and the VPC if you use it).
+- Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.
 

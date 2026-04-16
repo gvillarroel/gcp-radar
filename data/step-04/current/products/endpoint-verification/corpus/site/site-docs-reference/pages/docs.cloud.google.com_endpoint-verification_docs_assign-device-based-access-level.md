@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/endpoint-verification/docs/assign-device-base
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
 source_metadata:
   url: https://docs.cloud.google.com/endpoint-verification/docs/assign-device-based-access-level
   title: "Assign device-based access levels \_|\_ Endpoint Verification \_|\_ Google\

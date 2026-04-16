@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:23.447Z"
+generated_at: "2026-04-12T15:57:29.230Z"
 product_name: "Access Approval"
 product_slug: "access-approval"
 feature_name: "Access Approval support for Cloud HSM"
 feature_slug: "access-approval-support-for-cloud-hsm"
 latest_feature_date: "2021-06-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details"
+  - "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest"
 keywords:
   - "Cloud Hardware Security Module"
   - "Cloud HSM key access"
@@ -22,7 +25,7 @@ keywords:
 # Access Approval support for Cloud HSM
 
 Product: Access Approval
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,21 +37,44 @@ Access Approval support for Cloud HSM was added in Preview stage.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes](https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform](https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details](https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details)
+- [https://docs.cloud.google.com/python/docs/reference/accessapproval/latest](https://docs.cloud.google.com/python/docs/reference/accessapproval/latest)
 
 ## Supporting Pages
 
-### Release notes \_|\_ Access Approval \_|\_ Google Cloud Documentation
+### Enabling Access Approval using Terraform \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes](https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes)
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform](https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform)
 - Source ID: `site-docs-root`
-- Final score: 24
+- Final score: 74
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- July 26, 2021 v1 Change Access Approval supports the following Google Cloud services in the GA stage: Cloud Data Loss Prevention Cloud External Key Manager Cloud HSM Cloud Logging June 21, 2021 v1 Feature Access Approval supports Cloud External Key Manager in the Preview stage. v1 Feature Access Approval supports Cloud Data Loss Prevention in the Preview stage. v1 Feature Access Approval supports Cloud HSM in the Preview stage.
+### "REST Resource: projects.approvalRequests \_|\_ Access Approval \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests)
+- Source ID: `site-api-reference`
+- Final score: 68
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Anatomy of an Access Approval request \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details](https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details)
+- Source ID: `site-docs-root`
+- Final score: 68
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Python Client for Access Approval \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/accessapproval/latest](https://docs.cloud.google.com/python/docs/reference/accessapproval/latest)
+- Source ID: `site-python-reference`
+- Final score: 66
+- Re-rank relevance: N/A
 

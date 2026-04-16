@@ -1,30 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:05:29.873Z"
+generated_at: "2026-04-14T04:26:55.408Z"
 product_name: "Apigee Advanced API Security"
 product_slug: "apigee-advanced-api-security"
 feature_name: "Risk Assessment V2 custom security profile type field"
 feature_slug: "risk-assessment-v2-custom-security-profile-type-field"
 latest_feature_date: "2025-12-17"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/apigee/docs/api-security/security-scores"
+  - "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api"
+  - "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
 keywords:
-  - "profile scope field"
-  - "Apigee/Hybrid scope"
-  - "update custom profile"
-  - "risk_assessment_type field"
-  - "create custom profile"
-  - "custom profile type"
-  - "custom security profile"
-  - "risk_assessment_type"
+  - "field"
+  - "profile"
+  - "custom"
+  - "type"
+  - "assessment"
+  - "risk"
 ---
 
 # Risk Assessment V2 custom security profile type field
 
 Product: Apigee Advanced API Security
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +34,57 @@ The API for creating and updating Risk Assessment v2 custom security profiles no
 
 The API for creating and updating Risk Assessment v2 custom security profiles now accepts an optional risk_assessment_type field to indicate Apigee/Hybrid or API Hub multi-gateway scope.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/apigee/docs/api-security/security-scores](https://docs.cloud.google.com/apigee/docs/api-security/security-scores)
+- [https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api](https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api)
+- [https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway](https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Risk assessment overview and UI \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-security/security-scores](https://docs.cloud.google.com/apigee/docs/api-security/security-scores)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 200
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Create and edit custom security profiles On the Risk Assessment screen, select the Security Profiles tab.
+- Risk Assessment v2 concepts and scoring methodology Risk assessment security scores assess the security risk of your APIs based on the scoring of security assessments and weights in a security profile.
+- Deleting a custom security profile is effective immediately and removes the ability to assess proxies against that profile or see previous assessments against that custom profile.
+- The potential severity values are high (0-50%), medium (51-90%), low (91-99%), and minimal (100%/no risk found based on the assessments in the assigned security profile).
+
+### Security scores and profiles API \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api](https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api)
+- Source ID: `site-api-reference-required-2`
+- Final score: 182
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Get existing custom security profiles This command retrieves the information for all security profiles for your project: curl "https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2" \ -H "Authorization: Bearer $TOKEN" This command retrieves the metadata for a specific security profile and can be used to retrieve information on the google-default profile as well as custom profiles: curl "https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2/ PROFILE ID " \ -H "Authorization: Bearer $TOKEN" Create a new custom security profile To create a new custom security profile, use a command like this: curl "https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2?security profile v2 id= PROFILE ID " \ -X POST \ -H "Authorization: Bearer $TOKEN" \ -H 'Content-type: application/json' \ -d '{ "description": " PROFILE DESC ", "risk assessment type": "APIGEE", "profile assessment configs": { "auth-policies-check": {"weight": "MINOR"}, "threat-policies-check": {"weight": "MODERATE"} } }' Update an existing custom security profile To update an existing profile, use a command like: curl "https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2/ PROFILE ID ?update mask= UPDATE MASK " \ -X PATCH \ -H "Authorization: Bearer $TOKEN" \ -H 'Content-type: application/json' \ -d '{"description": " PROFILE DESC "}' where UPDATE MASK can be one of these values, if present: description , profile assessment configs , description,profile assessment configs , or (everything).
+- This can be any subset of the following security categories : abuse authorization cors mtls mediation threat Define the profile in the body of an API call To define a custom profile in the body of an API call, enter a command similar to the following: curl "https://apigee.googleapis.com/v1/organizations/ ORG /securityProfiles?security profile id= PROFILE ID " \ -X POST \ -H "Authorization: Bearer $TOKEN" \ -H "Content-Type: application/json" \ -d '{ "description":"test custom profile", "profileConfig" : { "categories":[ {"cors":{}}, {"threat":{}} ] } }' This creates a custom profile that includes the categories cors and threat, and returns a response like this: { "name": " PROFILE ID ", "revisionId": "1", "revisionCreateTime": "2023-07-17T18:47:08Z", "revisionUpdateTime": "2023-07-17T18:47:08Z", "scoringConfigs": [ { "title": "json", "scorePath": "/org@ ORG /envgroup@ ENVGROUP /env@ ENV /proxies/proxy@$proxy/policies/individual/security/threat/json", "description": "Check if JSONThreatProtection policy is configured." }, { "title": "xml", "scorePath": "/org@ ORG /envgroup@ ENVGROUP /env@ ENV /proxies/proxy@$proxy/policies/individual/security/threat/xml", "description": "Check if XMLThreatProtection policy is configured." }, { "title": "cors", "scorePath": "/org@ ORG /envgroup@ ENVGROUP /env@ ENV /proxies/proxy@$proxy/policies/individual/security/cors", "description": "Check if CORS policy is configured." } ], "maxScore": 1200, "minScore": 200, "profileConfig": { "categories": [ { "cors": {} }, { "threat": {} } ] }, "description": "test custom profile" } Define the profile by attaching a JSON file to an API call You can also define a custom security profile by attaching a JSON file that defines the profile to an API call.
+- See securityAssessmentResults.batchCompute in the Apigee Management API reference documentation for more information on this functionality. curl "https://apigee.googleapis.com/v1/organizations/ ORG /securityAssessmentResults:batchCompute" \ -X POST \ -H "Authorization: Bearer $TOKEN" \ -H 'Content-type: application/json' \ -d '{ "profile": " PROFILE ID ", "scope": " ENV ", RESOURCES }' This is a potential response for the request: { "securityAssessmentResults": [ { "resource": { "type": "API PROXY", "name": "my-proxy-1", "resourceRevisionId": "1" }, "createTime": "2023-11-22T04:49:29.418166Z", "scoringResult": { "severity": "HIGH", "failedAssessmentPerWeight": { "MINOR": 1 }, "assessmentRecommendations": { "cors-policies-check": { "displayName": "CORS policies check", "weight": "MAJOR", "recommendations": [ { "description": "Check whether a CORS policy or CORS header in AssignMessage policy are present.", "link": { "text": "Learn more", "uri": "https://cloud.google.com/apigee/docs/api-platform/reference/policies/reference-overview-policy" } } ], "verdict": "FAIL", "scoreImpact": 100 } }, "dataUpdateTime": "2023-11-22T04:49:29.418166Z" } } ], "assessmentTime": "2023-11-22T04:49:29.418166Z" } Manage security profiles This section provides examples for managing security profiles using the APIs and is not exhaustive.
+- Get a custom security profile definition To get the definition of a custom security profile, enter a command similar to the following: curl "https://apigee.googleapis.com/v1/organizations/ ORG /securityProfiles/ PROFILE ID " \ -X GET \ -H "Authorization: Bearer $TOKEN" \ -H "Content-Type: application/json" Detach a custom security profile from an environment To detach a custom security profile from an environment, enter a command similar to the following: curl "https://apigee.googleapis.com/v1/organizations/ ORG /securityProfiles/ PROFILE ID /environments/ ENV " \ -X DELETE \ -H "Authorization: Bearer $TOKEN" \ -H "Content-Type: application/json" Delete a custom security profile To delete a custom security profile, enter a command similar to the following: curl "https://apigee.googleapis.com/v1/organizations/ ORG /securityProfiles/ PROFILE ID " \ -X DELETE \ -H "Authorization: Bearer $TOKEN" \ -H "Content-Type: application/json" Note: If you delete a custom security profile, you will lose all scores related to the profile, and all environments attached to the profile will be automatically detached.
+
+### "Manage monitoring conditions for multiple Apigee organizations and gateways\
+
+- URL: [https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway](https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway)
+- Source ID: `site-iam-reference`
+- Final score: 141
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- REST To view the list of configured monitoring conditions, make a GET request to the securityMonitoringConditions API. curl "https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?risk assessment type=API HUB" \ -X GET \ -H "Authorization: Bearer $TOKEN" To view the list of monitoring conditions for a specific gateway, send a GET request as follows: curl "https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?risk assessment type=API HUB&filter=api hub gateway%3D GATEWAY ID " \ -X GET \ -H "Authorization: Bearer $TOKEN" To view the list of monitoring conditions for a specific security profile, send a GET request as follows: curl "https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?risk assessment type=API HUB&filter=profile%3D PROFILE ID " \ -X GET \ -H "Authorization: Bearer $TOKEN" To see details on a specific monitoring condition, use the following GET request: curl "https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions/ CONDITION ID ?risk assessment type=API HUB" \ -X GET \ -H "Authorization: Bearer $TOKEN" Replace the following: APIGEE ORG : Name of the Apigee organization provisioned in your Google Cloud project.
+- When creating a monitoring condition, you must set risk assessment type to API HUB . curl "https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?security monitoring condition id= CONDITION ID " \ -X POST \ -H "Authorization: Bearer $TOKEN" \ -H "Content-Type: application/json" \ -d '{ "profile": " PROFILE ID ", "risk assessment type": "API HUB", "api hub gateway": " GATEWAY NAME ", "include all resources": {} }' Replace the following: APIGEE ORG : Name of the Apigee organization provisioned in your Google Cloud project.
+- This example uses an update mask to update a monitoring condition so that it includes specific deployments instead of all deployments. curl "https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions/ CONDITION ID ?update mask=include" \ -X PATCH \ -H "Authorization: Bearer $TOKEN" \ -H "Content-Type: application/json" \ -d '{ "risk assessment type": "API HUB", "include": { "resources": [ { "type": "API HUB DEPLOYMENT", "name": " DEPLOYMENT ID 1 " }, { "type": "API HUB DEPLOYMENT", "name": " DEPLOYMENT ID 2 " } ] } }' Replace the following: APIGEE ORG : Name of the Apigee organization provisioned in your Google Cloud project.
+- REST To delete a monitoring condition, make a DELETE request to the securityMonitoringConditions API. curl "https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions/ CONDITION ID ?risk assessment type=API HUB" \ -X DELETE \ -H "Authorization: Bearer $TOKEN" Replace the following: APIGEE ORG : Name of the Apigee organization provisioned in your Google Cloud project.
 

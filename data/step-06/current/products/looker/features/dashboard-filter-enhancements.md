@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.321Z"
+generated_at: "2026-04-15T13:43:38.400Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Dashboard filter enhancements"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-03-05"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
-  - "https://docs.cloud.google.com/looker/docs/api-4-ga"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/looker"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs"
+  - "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores"
+  - "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field"
 keywords:
   - "dashboard"
   - "filter"
   - "enhancements"
-  - "are"
   - "generally"
   - "available"
-  - "and"
   - "improve"
+  - "selection"
+  - "bulk"
 ---
 
 # Dashboard filter enhancements
@@ -42,41 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- [https://docs.cloud.google.com/looker/docs/api-4-ga](https://docs.cloud.google.com/looker/docs/api-4-ga)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-labs](https://docs.cloud.google.com/looker/docs/admin-panel-general-labs)
+- [https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores](https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores)
+- [https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field](https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field)
 
 ## Supporting Pages
 
-### Access control and permission management | Looker | Google Cloud Documentation
+### AND/OR Filters in Explores \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 54
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores](https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores)
+- Source ID: `site-docs-reference`
+- Final score: 100
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- These roles are then applied to users and groups.
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
-- Data access can be further restricted within a model using access filters to limit which rows of data ...
+- AND/OR filters on dashboards AND/OR filters are created in the Explore Filters section and are translated into Looker expressions before the query is run.
+- Things to know The following sections include things to know about AND/OR filters and required filters , and AND/OR filters on dashboards .
+- If a query that uses both AND and OR filters is added to a dashboard, the filters will not appear in the dashboard filters section.
+- As a result, AND/OR filters behave differently from basic filters on dashboards.
 
-### Looker API 4.0 Generally Available | Google Cloud Documentation
+### Update select fields on an alert \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-4-ga](https://docs.cloud.google.com/looker/docs/api-4-ga)
+- URL: [https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field](https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field)
 - Source ID: `site-api-reference`
-- Final score: 52
+- Final score: 97
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Version 4.0.26.6 (latest) Update select alert fields Available fields: owner id , is disabled , disabled reason , is public , threshold , enhancements Request PATCH /alerts/{alert id} Datatype Description Request HTTP Request path HTTP Path Expand HTTP Path definition... alert id string ID of an alert body HTTP Body Expand HTTP Body definition... body AlertPatch Alert Expand AlertPatch definition... owner id string New owner ID of the alert is disabled boolean Set alert enabled or disabled disabled reason string The reason this alert is disabled is public boolean Set alert public or private threshold number New threshold value enhancements string Enum of additional alert properties.
+- Datatype Description (object) Alert applied dashboard filters AlertAppliedDashboardFilter [] Expand AlertAppliedDashboardFilter definition... filter title string Field Title.
+- Refer to DashboardFilter.dimension in DashboardFilter.
+- Refer to DashboardFilter.title in DashboardFilter.
+
+### Admin settings - Preview Features \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-labs](https://docs.cloud.google.com/looker/docs/admin-panel-general-labs)
+- Source ID: `site-docs-reference`
+- Final score: 94
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker API 4.0 Generally Available Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-4-ga We are excited to announce that ... changes and promotes multiple endpoints from Beta to Stable.
-
-### Looker roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- Source ID: `site-iam-reference`
-- Final score: 50
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Looker roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/looker This page lists the IAM roles and permissions for Looker.
+- Granular Dashboard Sizing Note: This feature is temporarily unavailable for some Looker instances.
+- When this preview feature is enabled, you can use the following features for table visualizations : Pagination Show/Hide Table Headers Table Borders Cell Highlighting Conditional formatting for string fields Note: When Cell Highlighting is enabled, conditional formatting is not available.
+- This feature allows admins to set limits on tiles per dashboard and per tab to optimize performance, which is configured on the Content Guardrails page in the Performance Center section of the Admin panel.
+- When this preview feature is enabled, the new Enhanced search experience lets you search for Looker content using filters for specific content types, special characters, and more metadata options.
 

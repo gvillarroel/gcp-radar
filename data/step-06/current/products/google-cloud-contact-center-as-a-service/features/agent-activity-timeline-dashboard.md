@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.646Z"
+generated_at: "2026-04-15T13:50:47.037Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Agent activity timeline dashboard"
@@ -9,18 +9,16 @@ latest_feature_date: "2025-10-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
 keywords:
   - "agent"
   - "activity"
   - "timeline"
   - "dashboard"
-  - "the"
   - "shows"
   - "historical"
-  - "of"
 ---
 
 # Agent activity timeline dashboard
@@ -42,48 +40,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Real-time dashboards and monitoring pages \_|\_ Google Cloud Contact Center\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- Source ID: `site-docs-reference`
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Update to the Virtual agent dashboard for wait-time virtual agent metrics The Virtual agent dashboard includes the following new tiles to measure the activity of wait-time virtual agents while end-users wait in queue: Total VA In-Queue Interactions (calls only): the number of calls where wait-time virtual agents were active while end-users were in a queue Total VA In-Queue Time (calls only): the total time that wait-time virtual agents were active while end-users were in a queue Avg VA In-Queue Time (calls only): the average time that wait-time virtual agents were active while end-users were in a queue For more information, see Virtual agent dashboards .
-- Fixed an issue on the Agent Activity Timeline dashboard where the Agent Name filter wasn't working properly.
-- Fixed an issue that caused the Agent Activity Timeline dashboard to display inaccurate or incomplete data.
-- Fixed an issue where the Voice Inbound (Direct) and Voice Outbound (Direct) values were missing from the Interaction Type filter on the following dashboards: Real-time Calls - Calls Queued Real-time Queue Monitoring - Calls Fixed an issue where the Call Type field on the Agent Productivity Detailed - Calls table of the Agent Performance dashboard displayed Unknown instead of Voice Inbound (Direct) or Voice Outbound (Direct) .
+- Call Volume Count of inbound or outbound interactions offered, regardless of whether they were handled by an agent or not (includes abandons, failed contacts, etc) Handled Count of inbound or outbound interactions touched by an agent (excludes agent <> agent transfers) Transfer % SUM of finished or failed segments that are a transfer / SUM of all finished or failed segments Inbound Count of interactions created by a consumer and offered - regardless of whether it was handled by an agent (includes abandons, failed contacts, etc) Outbound Count of interactions created by an agent or auto-dialing system, regardless of whether the consumer answers the call Calls in Queue Count of inbound interactionscurrentlywaiting in queue AHT (average call duration + average wrap-up status associated with a Call ID) Chat Volume Count of interactions offered, regardless of whether they were handled by an agent or not (includes abandons, failed contacts, etc) Handled Count of interactions touched by an agent (excludes agent <> agent transfers) Transfer % Sum of finished or failed interactions that are a transfer / Sum of all finished or failed interactions Chat Concurrency The average concurrency of all ongoing chats (live metric) Avg Response Time Average time (seconds) that it takes for an agent to respond to a consumer Chats in Queue Count of inbound interactionscurrentlywaiting in queue AHT Average chat duration (no wrap-up status applied) SLA metrics The top of the SLA Metrics shows two charts for Call SLA and Chat SLA respectively.
+- Total Calls (Calls) Count of the number of completed inbound and outbound calls the agent has taken in the Today timeframe Call count on the Agent monitoring page counts sessions not interactions Call sessions are attributed to the last agent who handled the session Outbound and inbound calls are included Due to some date/time matching differences, this column should only be used as a guide - use downloadable reports for specific call interaction counts per agent Total Chats (Chats) Completed chat sessions handled today Last End Time The end time of the last completed session Last time offered Shows the last time the agent was offered a call/chat notification.
+- Dashboard tiles and definitions Virtual agent sessions Consumer Initiated : The total chat sessions initiated by the consumers and handled by Virtual Agents Transferred from Human Agent : The total of chat sessions that are answered by a human agent and then transferred to a Virtual Agent Total Messages Exchanged : The total number of individual messages exchanged between a Virtual Agent and a consumer during a chat session Avg.
+- See Virtual Agent Platform statuses in Virtual Agent configuration Inactive: Virtual Agent is turned off Explorable metrics in real-time call and chat dashboards Overview Drill-down on explorable metrics in the Call and Chat Real time Dashboards to obtain additional insight into performance and details about the metric.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Multicast and deltacast \_|\_ Google Cloud Contact Center as a Service \_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 92
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 120
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Billing depending on which of the following charging models is assigned to your instance: Concurrent agents : the maximum number of concurrent users with the agent role that are signed in during the month period Named agents : the maximum number of users in the instance that have the agent role during the month period Minutes used : the number of minutes that users with the agent role are signed in during the month period Note: Telephony charges are charged according to consumption.
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
-- If agents have customized security or firewalls setup with IP allow-listing (as opposed to deny-listing), configuration of the router and possibly your firewall is needed to allow Contact Center AI Platform (CCAI Platform) IP addresses.
-- Ideally, agents will be using the same laptops that they used in the office which retain control over allow-listing or deny listing and applications the device uses such as AdBlock, mic permissions, etc.
+- The following reports are available: Agent Activity - Summary Report Agent Activity - Timeline Report To download a report, follow these steps: Go to Reports > Agents & Teams .
+- The following reports are available: Agent Activity - Summary Report Agent Activity - Timeline Report To download a report, follow these steps: Go to Reports > Agents & Teams .
+- Monitoring and reporting for chat Admins and managers can see agents in Missed Chat status in the Logged in Agent section of the CCAI Platform Chat Dashboard in the CCAI Platform portal.
+- Monitoring and reporting for calls Admins and managers can see agents in Missed Call status in the Logged in agent section of the call dashboard.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Chat Settings and Features \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 64
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
+- Source ID: `site-docs-reference`
+- Final score: 111
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- What's next Get started with CCAI Platform Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
-- It provides a turnkey implementation of an omni-channel contact center that is built to integrate with Google's other contact center AI products.
+- Example of how to select Agent Activity reports in Reports > Users & Teams: Available in Agent Activity Summary report ( Reports > Users & Teams > Agent Activity - Summary Report) as "Agent exceeded target chat response time." Available in Agent Timeline report ( Reports > Users & Teams > Agent Activity - Timeline Report) as "Agent exceeded target chat response time." When chats are dismissed, chat status will show as Dismissed - inactive end-user .
+- Auto Answer behavior combined with other features Deltacast Deltacast for Cascade / % Allocation Multicast Transferred chats Monitoring and reporting Monitoring Auto Answer can be monitored on the chat page, where admins see in real-time which chats are: Auto Answered Manually picked up Reporting The following reports identify which chats were Auto Answered and which chats were manually picked up: Agent Performance Report Agent Timeline Report Agent Summary Report Individual Chat History Report Please see Report Builder for more information about pulling reports.
+- Feature benefits For Managers and Admins Automatically remind agents to respond promptly to conversations For Agents Visually shows which chat needs their attention first For end-users Less waiting time and quicker resolution time Feature details The response timer starts when the agent is assigned and the consumer has sent a message and applies even if an agent has not yet sent a message If the agent responds, the counter will not begin again until the consumer replies.
+- Image Video Audio Document JPEG, JPG, PNG, GIF, WebP MP4, MOV, AVI, WMV, WebM MP3, WAV, M4A, WEBA PDF, DOC, XLS, PPT, CSV, TXT File size limits The following table shows size limits for files that agents can attach to messages in the chat adapter.
 

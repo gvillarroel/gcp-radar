@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:43.700Z"
+generated_at: "2026-04-12T12:17:51.022Z"
 product_name: "Media CDN"
 product_slug: "media-cdn"
 feature_name: "Dynamic compression"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-03-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product"
+  - "https://docs.cloud.google.com/media-cdn/docs/caching"
+  - "https://docs.cloud.google.com/media-cdn/docs/logging"
+  - "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation"
   - "https://docs.cloud.google.com/media-cdn/docs/routing"
-  - "https://docs.cloud.google.com/media-cdn/docs/configuration"
 keywords:
   - "dynamic"
   - "compression"
@@ -38,48 +39,66 @@ Media CDN can automatically compress content to improve delivery performance and
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product](https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product)
+- [https://docs.cloud.google.com/media-cdn/docs/caching](https://docs.cloud.google.com/media-cdn/docs/caching)
+- [https://docs.cloud.google.com/media-cdn/docs/logging](https://docs.cloud.google.com/media-cdn/docs/logging)
+- [https://docs.cloud.google.com/media-cdn/docs/cache-invalidation](https://docs.cloud.google.com/media-cdn/docs/cache-invalidation)
 - [https://docs.cloud.google.com/media-cdn/docs/routing](https://docs.cloud.google.com/media-cdn/docs/routing)
-- [https://docs.cloud.google.com/media-cdn/docs/configuration](https://docs.cloud.google.com/media-cdn/docs/configuration)
 
 ## Supporting Pages
 
-### Choose a CDN product | Media CDN | Google Cloud Documentation
+### Configure caching behavior \_|\_ Media CDN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product](https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product)
+- URL: [https://docs.cloud.google.com/media-cdn/docs/caching](https://docs.cloud.google.com/media-cdn/docs/caching)
 - Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 220
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Choose a CDN product Media CDN Google Cloud Documentation Source URL: https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product Cloud CDN is optimized for serving a mix of static and dynamic latency-sensitive web assets, such as CSS, JavaScript, HTML, and image files.
-- Media CDN is Google Cloud&#x27;s media delivery CDN platform that complements Cloud CDN.
+- If a Vary header is present in the response, Media CDN doesn't cache it, unless the header specifies either one of the headers that are configured as a cache key setting or one of the following values: Accept: used to indicate which media types the client accepts Accept-Encoding: used to indicate which compression types the client accepts Available-Dictionary: used to provide the hash of an available dictionary for compression Origin/X-Origin: typically used for cross-origin resource sharing X-Goog-Allowed-Resources: supports Google Cloud organization restriction Sec-Fetch-Dest/Sec-Fetch-Mode/Sec-Fetch-Site: used to fetch metadata request headers Media CDN caches responses with a Vary header in the response by using the value of the header as part of the cache key.
+- To maximize client performance and origin offload, Media CDN can serve the requested individual byte ranges from its cache, consolidating them into a single response with an HTTP 206 Partial Response status code to the client with the Content-Type set to multipart/byteranges .
+- Static content MIME types The CACHE ALL STATIC cache mode allows Media CDN to automatically cache common static content such as video, audio, images, and common web assets based on the MIME type returned in the Content-Type HTTP response header.
+- In other cases, such as when interoperability with DASH is not required, the media playlist indicates to the player which bytes represent each chunk: #EXTINF:4.08, fs270.mp4 #EXT-X-PART:DURATION=1.02,URI="fs271.mp4",BYTERANGE=20000@0 #EXT-X-PART:DURATION=1.02,URI="fs271.mp4",BYTERANGE=23000@20000 #EXT-X-PART:DURATION=1.02,URI="fs271.mp4",BYTERANGE=18000@43000 #EXT-X-PRELOAD-HINT:TYPE=PART,URI="fs271.mp4",BYTERANGE-START=61000 You can configure how long Media CDN waits between reads by using the EdgeCacheOrigin.timeouts.readTimeout configuration value.
 
-### Configure service routes | Media CDN | Google Cloud Documentation
+### Request logging overview \_|\_ Media CDN \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/media-cdn/docs/logging](https://docs.cloud.google.com/media-cdn/docs/logging)
+- Source ID: `site-docs-root`
+- Final score: 182
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Media CDN supports data transmitted through HTTP request headers or query parameters and does not log values for the following keys: dl (deadline), nor (next object request), nrr (next range request), ot (object type), rtp (requested maximum throughput), sf (streaming format), su (startup), tb (top bitrate), or v (CMCD version). compressionAlgorithmApplied br The algorithm used to compress the response referred to in this log entry.
+- Example log entry The following provides an example log entry for a response served from cache: { "insertId" : "617fa16e-0000-2ac9-9993-d4f547fe67d4@a1" , "jsonPayload" : { "@type" : "type.googleapis.com/google.cloud.edgecache.v1.EdgeCacheLogEntry" , "tlsVersion" : "TLS 1.3" , "tlsCipherSuite" : "009C" , "cacheId" : "maa-132eed13faa13" , "clientAsn" : "9299" , "origin" : "example origin" , "clientRegionCode" : "IN" , "metroIataCode" : "bom" , "clientCity" : "Mumbai" , "latency" : "0.005105200s" , "proxyStatus" : "Google-Edge-Cache" , "httpTtfb" : "0.005056080s" , "cacheMode" : "FORCE CACHE ALL" , "cacheKeyFingerprint" : "c360ac18849b6336" , "cacheStatus" : "hit,stale" , "compressionAlgorithmApplied" : "br" , "enforcedSecurityPolicy" : { "outcome" : "ACCEPT" , "configuredAction" : "ACCEPT" , "name" : "example policy" , "priority" : 1000 , "configuredAction" : "DENY" , "threatIntelligence" : { "categories" : [ 0 : "iplist-public-clouds" ] } }, "originalRequestId" : "19d92668-3948-49d8-9244-25f8252043e5" , "proxyRegionCode" : "IN" , "requestId" : "4bde6381-cd17-47e1-8c2a-1aaa424a1156" , "originIp" : "74.125.128.128" }, "httpRequest" : { "requestMethod" : "GET" , "requestUrl" : "https://example.com/image.jpg" , "requestSize" : "3545" , "status" : 200 , "responseSize" : "3716" , "userAgent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10 15 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" , "remoteIp" : "62.36.0.43" , "protocol" : "HTTP/2" }, "resource" : { "type" : "edgecache.googleapis.com/EdgeCacheRouteRule" , "labels" : { "matched path" : "/" , "path matcher name" : "routes" , "service name" : "example service" , "resource container" : "projects/123456789" , "location" : "global" , "route destination" : "projects/123456789/locations/global/edgeCacheOrigins/example origin" , "route type" : "ORIGIN" } }, "timestamp" : "2022-11-19T00:24:13.695328200Z" , "logName" : "projects/my-project/logs/edgecache.googleapis.com%2Fedge cache request" , "receiveTimestamp" : "2022-11-19T00:24:16.715871645Z" } You can configure request logging in a few ways.
+- Home Documentation Networking Media CDN Guides Send feedback Request logging overview Stay organized with collections Save and categorize content based on your preferences.
+- Additional metadata about the request within the structPayload, including the following: Client ASN Client location data ID (city) of the caches used to fulfill the response Time to first byte (TTFB) and time to last byte (TTLB), in milliseconds, for the HTTP-level response TLS SNI hostname TLS version used Common Media Client Data (CMCD) information Cache-specific fields The jsonPayload object of a Media CDN log contains metadata specific to how Media CDN serves an object, whether the object was cached, and any error states encountered.
+
+### Invalidate cached content \_|\_ Media CDN \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/media-cdn/docs/cache-invalidation](https://docs.cloud.google.com/media-cdn/docs/cache-invalidation)
+- Source ID: `site-docs-root`
+- Final score: 176
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Media CDN supports multiple ways of selecting content to be invalidated, as follows: Host and URL path URL prefix (wildcard) Cache tags, including built-in tags for status , origin , and content-type You can combine these invalidation parameters to target specific cached responses and minimize origin load on the subsequent cache fill.
+- Cache tag limitations Cache tags have the following restrictions: Must not exceed 120 bytes per tag Must not exceed 4 KiB (4096 bytes) of total tag names per cached object Must not exceed 50 tags per object, not including default tags added by Media CDN Must be a valid HTTP token name, as defined in Section 3.2.6 of HTTP RFC 7230 Must not include the built-in status= , origin= , or content-type= prefixes (which are ignored).
+- Click Invalidate and then click Confirm to indicate that you want Media CDN to invalidate the content matching the host. gcloud gcloud edge-cache services invalidate-cache SERVICE NAME \ --host= HOST Replace the following: SERVICE NAME with the name of the Edge Cache service.
+- For example: gcloud edge-cache services invalidate-cache SERVICE NAME \ --tags="status=404,content-type=text/plain" Invalidation latency Cache invalidation across Media CDN's thousands of locations typically completes within one minute globally.
+
+### Configure service routes \_|\_ Media CDN \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/media-cdn/docs/routing](https://docs.cloud.google.com/media-cdn/docs/routing)
 - Source ID: `site-docs-root`
-- Final score: 98
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 175
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Configure service routes Media CDN Google Cloud Documentation Source URL: https://docs.cloud.google.com/media-cdn/docs/routing Configure a route rule for a Media CDN service.
-- In the Google Cloud console, go to the Media CDN page.
-
-### Configuration overview | Media CDN | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/media-cdn/docs/configuration](https://docs.cloud.google.com/media-cdn/docs/configuration)
-- Source ID: `site-docs-root`
-- Final score: 96
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Configuration overview Media CDN Google Cloud Documentation Source URL: https://docs.cloud.google.com/media-cdn/docs/configuration Media CDN offers content delivery, cache off-load, origin shielding, request authorization and integration with Google Cloud external Application Load Balancers, Logging, and Monitoring platforms.
+- To configure support for a set of methods for a route rule, specify a routeMethods section that has an allowed methods value for each method. routeRules : - priority : 5 description : "Video uploads" routeMethods : allowedMethods : [ "PUT" , "POST" , "OPTIONS" ] matchRules : - pathTemplateMatch : "/uploads/ .ts" origin : prod-video-storage - priority : 10 description : "Video serving" routeMethods : allowedMethods : [ "GET" , "HEAD" ] matchRules : - pathTemplateMatch : "/videos/ .ts" origin : prod-video-storage Path normalization Path normalization describes how Media CDN combines multiple representations of a URL into a single, canonical representation under specific scenarios.
+- Home Documentation Networking Media CDN Guides Send feedback Configure service routes Stay organized with collections Save and categorize content based on your preferences.
+- Method filtering By default, Media CDN proxies only GET , HEAD , and OPTIONS methods to your origin and filters out the methods that can modify your origin.
+- In the following example, you can see that the /live/us/ route would never be matched because the /live/ route is at a higher priority: routeRules : - priority : 1 description : "Live routes" matchRules : - prefixMatch : /live/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 2 description : "U.S based live streams" matchRules : This would never be matched, as the /live/ prefixMatch at priority 1 would always take precedence. - prefixMatch : /live/us/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 999 description : "Catch-all route" matchRules : - prefixMatch : / To address this, you put the more specific (longer) route at a higher priority: routeRules : - priority : 1 description : "U.S based live streams" matchRules : The more specific (longer) match is at a higher priority, and now matches requests as expected. - prefixMatch : /live/us/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 2 description : "Live routes" matchRules : - prefixMatch : /live/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 999 description : "Catch-all route" matchRules : - prefixMatch : / This allows the more specific route to match requests correctly.
 

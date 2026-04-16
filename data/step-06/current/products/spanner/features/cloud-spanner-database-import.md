@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.091Z"
+generated_at: "2026-04-13T22:42:27.355Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Cloud Spanner database import"
 feature_slug: "cloud-spanner-database-import"
 latest_feature_date: "2018-08-17"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient"
-  - "https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.WorkerProxy"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncResultSet"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.CompositeTracer"
 keywords:
-  - "spanner"
-  - "database"
-  - "import"
-  - "supports"
   - "importing"
-  - "databases"
+  - "rest"
+  - "import"
   - "through"
-  - "the"
+  - "databases"
+  - "database"
+  - "supports"
 ---
 
 # Cloud Spanner database import
 
 Product: Spanner
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -38,43 +37,37 @@ Cloud Spanner supports importing databases through the REST API and the gcloud c
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
-- [https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1](https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.WorkerProxy](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.WorkerProxy)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncResultSet](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncResultSet)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.CompositeTracer](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.CompositeTracer)
 
 ## Supporting Pages
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### "Class WorkerProxy (6.111.1) \_|\_ Java client libraries \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 92
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.WorkerProxy](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.WorkerProxy)
+- Source ID: `site-java-reference`
+- Final score: 28
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
-Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+### "Interface AsyncResultSet (6.111.1) \_|\_ Java client libraries \_|\_ Google\
 
-### Class SpannerClient (3.62.0) | Python client libraries | Google Cloud Documentation
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncResultSet](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncResultSet)
+- Source ID: `site-java-reference`
+- Final score: 24
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
-- Source ID: `site-python-reference`
-- Final score: 92
-- Re-rank relevance: N/A
+### "Class CompositeTracer (6.111.1) \_|\_ Java client libraries \_|\_ Google\
 
-Evidence snippets:
-- Class SpannerClient (3.62.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
-
-### Package google.spanner.v1 | Spanner | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1](https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1)
-- Source ID: `site-docs-root`
-- Final score: 86
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Package google.spanner.v1 Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1 The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.CompositeTracer](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.CompositeTracer)
+- Source ID: `site-java-reference`
+- Final score: 20
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 

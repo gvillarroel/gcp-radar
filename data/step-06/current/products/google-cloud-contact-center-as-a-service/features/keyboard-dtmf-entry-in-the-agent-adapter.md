@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.625Z"
+generated_at: "2026-04-15T13:50:47.014Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Keyboard DTMF entry in the agent adapter"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-02-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
 keywords:
   - "keyboard"
   - "dtmf"
   - "entry"
-  - "in"
-  - "the"
   - "agent"
   - "adapter"
   - "agents"
+  - "can"
+  - "type"
 ---
 
 # Keyboard DTMF entry in the agent adapter
@@ -42,48 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Agent Assist \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 158
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist)
+- Source ID: `site-docs-reference`
+- Final score: 144
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Send DTMF tones in the agent adapter using the keyboard An agent can now use their keyboard to type or paste alphanumeric strings directly into the call adapter to play DTMF tones, with the appropriate pauses.
-- Here's how the ordering controls work: Virtual agents : When you configure session variables, you can use the new display order in adapter property to specify the order that the session variables appear in the agent adapter and in CRM records.
-- Administrators : if you use virtual agents to capture session variables and display them in any downstream integrations such as a CRM or the agent adapter, you must use these new post events in your virtual agent custom payloads .
-- Twinning is ideal for support agents who are frequently on the go, since it allows them to forward support calls to their preferred phone number while also allowing them to handle calls at their desk using their web adapter.
+- Spelling and grammar correction : provides spelling and grammar suggestions for messages that agents type into the message field of the chat adapter.
+- A ( -- ) displays when no score is available. last sentiment score for the last consumer response (updates in real-time) session current average sentiment score (updates in real-time) prev. leg average sentiment score of the previous segment There are three sentiments types (neutral, happy, and negative) in the Real-Time Sentiment Analysis and scores displayed fall into the following ranges: Over 63 = Happy Between 38 and 63 = Neutral Below 38 = Negative During the session, the Real-Time Sentiment Analysis scores are sent the to the Agent Adapter.
+- There are three sentiments types (neutral, happy, and negative) in the Real-Time Sentiment Analysis and scores displayed fall into the following ranges: 40-75 = Neutral Over 75 = Happy Below 30 = Negative During the session, the Real-Time Sentiment Analysis scores are sent the to the Agent Adapter.
+- If you select the Spelling and Grammar Check checkbox, then the following two checkboxes appear: Allow agents to turn on/off automatic checks : Select this checkbox to let agents turn on and off spelling and grammar check in the chat adapter.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Queue and menu setup \_|\_ Google Cloud Contact Center as a Service \_|\_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 104
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- Source ID: `site-docs-reference`
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Localized Languages in the Agent Adapter and User Location Entry .
-- Billing depending on which of the following charging models is assigned to your instance: Concurrent agents : the maximum number of concurrent users with the agent role that are signed in during the month period Named agents : the maximum number of users in the instance that have the agent role during the month period Minutes used : the number of minutes that users with the agent role are signed in during the month period Note: Telephony charges are charged according to consumption.
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
-- If agents have customized security or firewalls setup with IP allow-listing (as opposed to deny-listing), configuration of the router and possibly your firewall is needed to allow Contact Center AI Platform (CCAI Platform) IP addresses.
+- Mobile SDK All Mobile SDK functionality is the same as the Web SDK with these notable exceptions: Mobile SDK supports Picture and Video attachments up to 18MB Mobile SDK allows for multiple file types to be uploaded to the same message Mobile SDK supports uploading all file types (Text, Picture, Video) No rich text editor functionality Does not support reCAPTCHA Setting up and assigning agents to channels and queues: IVR, mobile, web Overview Channels are configurable and should be enabled and set up individually.
+- Prevent agents from selecting a queue for an outbound call You can hide a queue in the agent adapter so that agents can't select it for an outbound call.
+- Details and tips Due to the number of digits on a keypad, there's a 9 top-level queue menu limit If you need to more than 9 queues, nest more queues within a top-level queue All numbers assigned to your environment will default to the top of the queue unless otherwise assigned as Direct Access points (DAPs) If you are using multiple languages, numbers will default to the language selection message, then when the language is selected, will route to the top of the menu structure for the selected language If you want to hide a queue from a caller who dials into a number that goes to the top of the queue, toggle the Hide Selection From Menu option to Hide in the menu settings For internal transfers to teams or groups not available to callers, create one queue, hide the option from callers, and create all the necessary sub-queues for agents to pick from for transfers Once your queues are set up, you can see the numbers that the caller needs to select.
+- EWT for calls For calls, EWT is calculated based on the following formula: EWT = ((average duration in channel / active agents in channel) (agents in common / active agents in current queue) (queued calls - available agents)) + {EWT for callbacks, campaign calls, and scheduled calls} EWT for chats For chats, EWT is calculated based on the following formula: EWT = (average duration in channel / active agents in channel) (agents in common / active agents in current queue) (queued chats - available agents) Note: In chat channels, the value for active agents includes a multiplier based on the chat concurrency if the chat concurrency is >1.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Standard Reports Agent and Teams Data Sets \_|\_ Google Cloud Contact Center\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 74
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set)
+- Source ID: `site-docs-reference`
+- Final score: 137
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- It uses the contact center AI building blocks to allow a seamless transition to human agents.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Date and Timestamp Agent Status Summary and Timeline Report Agent statuses, also known as Aux codes, are used to track time spent on different tasks, make agents available for calls or chats, and are used extensively for workforce management.
+- Total Preset SMS Sent: Total number of preset SMS sent by Agents using SMS Blending features like In Call and Wait Time SMS.
+- These emergency calling related event types will be displayed in the column Activity Log (Agent Status Summary Report).
+- Total Auto Answered Calls: Total number of interactions that were assigned to Agents via auto answer.
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.036Z"
+generated_at: "2026-04-12T12:11:20.238Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Default backport providers installation in Composer 1.11.1+"
 feature_slug: "default-backport-providers-installation-in-composer-1-11-1"
 latest_feature_date: "2020-08-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
   - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/backport-packages"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
 keywords:
   - "default"
   - "backport"
@@ -26,7 +27,7 @@ keywords:
 # Default backport providers installation in Composer 1.11.1+
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ Composer 1.11.1+ now installs backport providers by default for Airflow 1.10.6 a
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/backport-packages](https://docs.cloud.google.com/composer/docs/composer-1/backport-packages)
+- [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Cloud Composer 1.11.1+: Backport providers are installed by default for Airflow 1.10.6 and 1.10.9.
-- Change (Airflow 2.10.2 and 2.9.3) Preinstalled packages were changed: logbook was removed from preinstalled packages minimal-snowplow-tracker was removed from preinstalled packages mashumaro was downgraded from 3.15 to 3.14 Change New images are available in Cloud Composer 2: composer-2.11.2-airflow-2.10.2 (default) composer-2.11.2-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.2-build.8 (default) composer-3-airflow-2.9.3-build.15 Deprecated Cloud Composer versions 2.6.0 and 2.6.1 have reached their end of support period .
-- Change New images are available in Cloud Composer 2: composer-2.11.5-airflow-2.10.2 (default) composer-2.11.5-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.2-build.11 (default) composer-3-airflow-2.9.3-build.18 March 05, 2025 Feature You can now specify an order in which Airflow searches for secrets by overriding the [secrets]backends order Airflow configuration option.
-- Change New images are available in Cloud Composer 2: composer-2.10.1-airflow-2.10.2 (default) composer-2.10.1-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.2-build.4 (default) composer-3-airflow-2.9.3-build.11 December 05, 2024 Feature New Cloud Composer 3 environments can now be created in VPC SC .
 
 ### Cloud Composer version list \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 180
+- Final score: 226
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - Source ID: `site-iam-reference`
-- Final score: 150
+- Final score: 176
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +75,30 @@ Evidence snippets:
 - If you encounter this issue in Airflow 1 in a long-running task, increase the value of the [celery broker transport options]visibility timeout Airflow configuration option (the default value is 604800 for Composer 1.17.0, 21600 for older environments).
 - If you experience this issue then in the Airflow tasks logs you will see the following error message: "Can't connect to MySQL server on 'airflow-sqlproxy-service.default.svc.cluster.local' (104)" Cloud Composer team works on resolving this problem.
 - Intermittent issues when communicating to the environment's database This known issue applies only to Cloud Composer 1.
+
+### "Import operators from backport provider packages \_|\_ Cloud Composer \_\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/backport-packages](https://docs.cloud.google.com/composer/docs/composer-1/backport-packages)
+- Source ID: `site-iam-reference`
+- Final score: 170
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following example imports moved operators from the apache-airflow-backport-providers-google package: from airflow.contrib.operators.bigquery operator import ( BigQueryCreateEmptyDatasetOperator , BigQueryOperator , ) What's next Writing DAGs Installing PyPI packages List of preinstalled packages in Cloud Composer images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The following example imports new operators from the apache-airflow-backport-providers-google package: from airflow.providers.google.cloud.operators.bigquery dts import ( BigQueryCreateDataTransferOperator , BigQueryDeleteDataTransferConfigOperator , ) Import moved operators Moved operators are those that already exist in Airflow 1.10. .
+- To use new operators from a backport package, import them from their corresponding airflow.providers. package, as described on the page for this backport package on PyPI.org.
+- Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 This page explains what Airflow backport provider packages are and how you can use them in your DAGs.
+
+### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- Source ID: `site-iam-reference`
+- Final score: 168
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To install custom PyPI packages from an Artifact Registry repository: Create a pip.conf file and include the following information in the file, if applicable: URL of the Artifact Registry repository (in the index-url parameter) Access credentials for the repository Non-default pip installation options For an Artifact Registry repository, append /simple/ to the repository URL: [global] index-url = https://us-central1-python.pkg.dev/example-project/example-repository/simple/ (Optional) In some cases, you might want to fetch packages from multiple repositories, such as when your Artifact Registry repository contains some specific packages that you want to install, and you want to install all other packages from PyPI: Configure an Artifact Registry virtual repository .
+- To install packages from a private repository hosted in your project's network: Create a pip.conf file and include the following information in the file, if applicable: IP address of the repository in your project's network Access credentials for the repository Non-default pip installation options Example: [global] index-url=https://192.0.2.10/ (Optional) In some cases, you might want to fetch packages from multiple repositories, such as when the private repository contains some specific packages that you want to install, and you want to install all other packages from PyPI: Configure an Artifact Registry virtual repository .
+- To install from a package repository that has a public address: Create a pip.conf file and include the following information in the file, if applicable: URL of the repository (in the index-url parameter) Access credentials for the repository Non-default pip installation options Example: [global] index-url=https://example.com/ (Optional) In some cases, you might want to fetch packages from multiple repositories, such as when the public repository contains some specific packages that you want to install, and you want to install all other packages from PyPI: Configure an Artifact Registry virtual repository .
+- Options to manage PyPI packages for Cloud Composer environments Option Use if Install from PyPI The default way to install packages in your environment Install from a repository with a public IP address The package is hosted in a package repository other than PyPI.
 

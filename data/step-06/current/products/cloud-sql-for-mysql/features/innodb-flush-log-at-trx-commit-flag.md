@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.930Z"
+generated_at: "2026-04-15T11:56:51.974Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "innodb_flush_log_at_trx_commit flag"
@@ -9,18 +9,18 @@ latest_feature_date: "2021-06-29"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics"
-  - "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica"
+  - "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication"
+  - "https://docs.cloud.google.com/sql/docs/mysql/charset-collation"
+  - "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups"
 keywords:
   - "innodb"
   - "flush"
   - "log"
-  - "at"
   - "trx"
   - "commit"
   - "flag"
   - "sql"
+  - "mysql"
 ---
 
 # innodb_flush_log_at_trx_commit flag
@@ -38,52 +38,53 @@ Cloud SQL for MySQL supports the innodb_flush_log_at_trx_commit database flag.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- [https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics](https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics)
-- [https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica](https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica)
+- [https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication](https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication)
+- [https://docs.cloud.google.com/sql/docs/mysql/charset-collation](https://docs.cloud.google.com/sql/docs/mysql/charset-collation)
+- [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups)
 
 ## Supporting Pages
 
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
+### "Cloud SQL built-in database authentication \_|\_ Cloud SQL for MySQL \_\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 220
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- May 19, 2023 Feature Cloud SQL for MySQL has launched two database flags that impact the Cloud SQL SLA : innodb flush log at trx commit and sync binlog .
-- June 29, 2021 Feature Cloud SQL for MySQL now supports the innodb flush log at trx commit flag .
-- January 25, 2024 Feature Cloud SQL Enterprise Plus edition now supports the following regions: asia-northeast2 (Osaka) asia-south2 (Delhi) europe-north1 (Finland) europe-southwest1 (Madrid) us-east5 (Columbus) us-south1 (Dallas) January 12, 2024 Feature Cloud SQL for MySQL now supports setting microsecond time periods for the following flag on MySQL 5.7 and MySQL 8.0: innodb flush log at timeout For more information about this flag, see supported flags .
-- Note : The data type for the innodb flush log at timeout flag has changed from an unsigned integer to a double.
-
-### Cloud SQL metrics \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics](https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics)
-- Source ID: `site-api-reference`
-- Final score: 218
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication](https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication)
+- Source ID: `site-docs-reference-3`
+- Final score: 52
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- After sampling, data is not visible for up to 165 seconds. operation type : Kind of operation handler type, one of [delete, read first, read key, read last, read next, read prev, read rnd, read rnd next, update, write]. database/mysql/innodb/active transactions GA (project) InnoDB Active Transactions GAUGE , INT64 , 1 cloudsql database Number of active Transaction details(trx which are in progress), Values in bracket are meant for innodb transaction state (Total/running/lock wait/rolling back/committing).
-- After sampling, data is not visible for up to 165 seconds. state : Values in bracket are meant for innodb transaction state, one of [Total, running, lock wait, rolling back, committing]. database/mysql/innodb/active trx longest time GA (project) InnoDB Active TRX Longest Time GAUGE , INT64 , 1 cloudsql database Largest transaction time from currently active innodb transactions.
-- After sampling, data is not visible for up to 165 seconds. database/mysql/innodb/innodb log waits count GA (project) Transaction waits for Innodb logbuffer flush DELTA , INT64 , 1 cloudsql database Total number of transactions wait for space to become available in the InnoDB log buffer, to help tune innodb log buffer size configuration.
-- After sampling, data is not visible for up to 165 seconds. database/mysql/innodb/lsn GA (project) InnoDB LSN GAUGE , INT64 , By cloudsql database Value of Innodb current/flushed/last checkpoint log sequence number.
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL built-in database authentication Stay organized with collections Save and categorize content based on your preferences.
+- MySQL PostgreSQL SQL Server This page describes how built-in authentication works on Cloud SQL instances and how database administrators can set password policies for local database users.
+- Note: User password policy options are supported on Cloud SQL for MySQL 8.0 and later.
+- The Set password to expire option is also supported on Cloud SQL for MySQL 5.7.
 
-### Create read replicas \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
+### "Update the character set and collation for a database \_|\_ Cloud SQL for\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica](https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica)
-- Source ID: `site-docs-root`
-- Final score: 218
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/charset-collation](https://docs.cloud.google.com/sql/docs/mysql/charset-collation)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 48
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Set the innodb flush log at trx commit flag on the read replica to 2.
-- Create the new replica by specifying your primary replica as the primary instance using the --master-instance-name flag: gcloud sql instances create REPLICA NAME \ --master-instance-name = PARENT REPLICA NAME \ Replace the following: REPLICA NAME : the unique ID for the replica that you are creating PARENT REPLICA NAME : the name of the parent replica After you create the cascading replica, you can see that the changes made to the primary instance are replicated through all the replicas in the cascading replicas chain. curl If you are using MySQL version 5.7 or later, enable binary logging: To enable binary logging, save the following JSON in a file named request.JSON, then invoke the curl command to enable binary logging. { "settings" : { "backupConfiguration" : { "enabled" : false, "binaryLogEnabled" : true } } } To create a replica under the parent replica, edit the following JSON code sample, and save it to a file called request.json : { "masterInstanceName" : " PARENT REPLICA NAME " , "project" : " PROJECT ID " , "name" : " REPLICA NAME " , "region" : " REPLICA REGION " , "settings" : { "tier" : " MACHINE TYPE " , } } Run the following command: curl -X POST -H "Authorization: Bearer " $( gcloud auth print-access-token ) -H "Content-Type: application/json; charset=utf-8" -d @request.json "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances" Troubleshoot Issue Troubleshooting Read replica didn't start replicating on creation.
-- On the primary instance that's displaying the error message, set the parallel replication flags: Modify the binlog transaction dependency tracking and transaction write set extraction flags: binlog transaction dependency tracking=COMMIT ORDER transaction write set extraction=OFF Add the slave pending jobs size max flag: slave pending jobs size max=33554432 Modify the transaction write set extraction flag: transaction write set extraction=XXHASH64 Modify the binlog transaction dependency tracking flag: binlog transaction dependency tracking=WRITESET Replica creation fails with timeout.
-- Enable binary logging on a replica with the same gcloud CLI command, using the replica's instance name instead of the primary's instance name. gcloud sql instances patch REPLICA INSTANCE NAME \ --enable-bin-log \ --enforce-new-sql-network-architecture Binary logging durability on the replica (but not on the primary) instance can be set with the sync binlog flag, which controls how often the MySQL server synchronizes the binary log to disk.
+- Check the configuration of your tables To check the existing values for the tables, use the following statement: SELECT T . table name , T . table schema , CCSA . character set name , CCSA . collation name FROM information schema . tables T , information schema . collation character set applicability CCSA WHERE CCSA . collation name = T . table collation AND T . table schema NOT IN ( 'performance schema' , 'mysql' , 'sys' , 'information schema' ); Example output: + ------------+--------------+--------------------+-------------------+ TABLE NAME TABLE SCHEMA CHARACTER SET NAME COLLATION NAME + ------------+--------------+--------------------+-------------------+ t1 test1 ascii ascii general ci t2 test2 latin1 latin1 swedish ci t3 test3 utf16 utf16 general ci t4 test4 ucs2 ucs2 general ci + ------------+--------------+--------------------+-------------------+ Check the configuration of your table columns To check the values for columns, use the following statement: SELECT table schema , table name , column name , character set name , collation name FROM information schema . columns WHERE table schema NOT IN ( 'information schema' , 'performance schema' , 'sys' , 'mysql' ); Example output: + --------------+------------+-------------+--------------------+------------------+ TABLE SCHEMA TABLE NAME COLUMN NAME CHARACTER SET NAME COLLATION NAME + --------------+------------+-------------+--------------------+------------------+ test1 t1 c ascii ascii general ci test1 t1 i NULL NULL test2 t2 j NULL NULL test2 t2 v ascii ascii general ci test3 t3 k NULL NULL test3 t3 summary utf16 utf16 general ci test4 t4 col ucs2 ucs2 general ci test4 t4 p NULL NULL + --------------+------------+-------------+--------------------+------------------+ Note: Character set and collation configuration applies only to string-based columns (for example, char , varchar , enum , text , mediumtext , longtext , and set ).
+- SCHEMATA WHERE schema name NOT IN ( 'performance schema' , 'mysql' , 'sys' , 'information schema' ); For example, you receive the following output: + --------------+-------------+----------------------------+------------------------+----------+--------------------+ CATALOG NAME SCHEMA NAME DEFAULT CHARACTER SET NAME DEFAULT COLLATION NAME SQL PATH DEFAULT ENCRYPTION + --------------+-------------+----------------------------+------------------------+----------+--------------------+ def test1 utf8mb4 utf8mb4 0900 ai ci NULL NO def test2 utf8mb4 utf8mb4 0900 ai ci NULL NO def test3 utf8mb4 utf8mb4 0900 ai ci NULL NO def test4 utf8mb4 utf8mb4 0900 ai ci NULL NO + --------------+-------------+----------------------------+------------------------+----------+--------------------+ However, you want to change the databases to the following custom character set values: + --------------+-------------+----------------------------+------------------------+----------+--------------------+ CATALOG NAME SCHEMA NAME DEFAULT CHARACTER SET NAME DEFAULT COLLATION NAME SQL PATH DEFAULT ENCRYPTION + --------------+-------------+----------------------------+------------------------+----------+--------------------+ def test1 ascii ascii general ci NULL NO def test2 latin1 latin1 swedish ci NULL NO def test3 utf16 utf16 general ci NULL NO def test4 ucs2 ucs2 general ci NULL NO + --------------+-------------+----------------------------+------------------------+----------+--------------------+ Then, in this case, for each database that has a value that you want to change, you need to update each object that resides in the database.
+- Run the following command so you can use the output to recreate all the stored procedures, functions, and events of a particular database later (when you recreate stored database objects ). $ mysqldump -uDBAuser -p -h IP ADDRESS \ -P 3306 DB NAME --no-data --no-create-db \ --no-create-info --routines --triggers --events \ --set-gtid-purged = OFF --events > dump objects.sql Replace the following: IP ADDRESS : IP address of the Cloud SQL for MySQL instance DB NAME : the name of the MySQL database Perform updates to your databases, and if necessary, tables and columns.
+- Check your instance configuration To check the default global values on the instance (server) level, start a MySQL shell and enter the following command: mysql > SELECT @@ character set server , @@ collation server ; Example output: + ------------------------+--------------------+ @@ character set server @@ collation server + ------------------------+--------------------+ utf8mb4 utf8mb4 0900 ai ci + ------------------------+--------------------+ 1 row in set ( 0 .
+
+### "View audit logs for automated backups \_|\_ Cloud SQL for MySQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups)
+- Source ID: `site-docs-reference-3`
+- Final score: 46
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback View audit logs for automated backups Stay organized with collections Save and categorize content based on your preferences.
+- MySQL PostgreSQL SQL Server This page describes how to view an audit log for an automated backup of your Cloud SQL instance.
 

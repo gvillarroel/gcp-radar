@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T17:49:26.936Z"
+generated_at: "2026-04-14T08:39:49.497Z"
 product_name: "Artifact Registry"
 product_slug: "artifact-registry"
 feature_name: "Artifact Registry Cloud External Key Manager integration"
 feature_slug: "artifact-registry-cloud-external-key-manager-integration"
 latest_feature_date: "2021-07-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+  - "https://docs.cloud.google.com/artifact-registry/docs/access-control"
   - "https://docs.cloud.google.com/artifact-registry/docs/cmek"
-  - "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers"
+  - "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
 keywords:
   - "manager"
   - "integration"
   - "external"
-  - "key"
-  - "registry"
-  - "artifact"
+  - "when"
   - "adds"
-  - "for"
 ---
 
 # Artifact Registry Cloud External Key Manager integration
 
 Product: Artifact Registry
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,55 @@ Artifact Registry adds support for Cloud External Key Manager when using custome
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/artifact-registry/docs/docker/authentication](https://docs.cloud.google.com/artifact-registry/docs/docker/authentication)
+- [https://docs.cloud.google.com/artifact-registry/docs/access-control](https://docs.cloud.google.com/artifact-registry/docs/access-control)
 - [https://docs.cloud.google.com/artifact-registry/docs/cmek](https://docs.cloud.google.com/artifact-registry/docs/cmek)
-- [https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers](https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers)
+- [https://docs.cloud.google.com/artifact-registry/docs/docker/authentication](https://docs.cloud.google.com/artifact-registry/docs/docker/authentication)
 
 ## Supporting Pages
+
+### Access control with IAM \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/access-control](https://docs.cloud.google.com/artifact-registry/docs/access-control)
+- Source ID: `site-docs-root`
+- Final score: 86
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Note: When managing access for users in external identity providers , replace instances of Google Account principal identifiers—like user:kiran@example.com , group:support@example.com , and domain:example.com —with appropriate Workforce Identity Federation principal identifiers .
+- For example, to remove a policy binding for the role roles/artifactregistry.writer for the user write@gmail.com with the repository my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \ --location = us-west1 \ --member = user:write@gmail.com \ --role = roles/artifactregistry.writer To revoke public access to my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \ --location = us-west1 \ --member = allUsers \ --role = roles/artifactregistry.reader Granting conditional access with tags Project administrators can create tags for resources across Google Cloud and manage them in Resource Manager .
+- Container images: Docker , Helm Language packages: Java , Node.js , Python , Go OS packages: Debian , RPM Other: Kubeflow Pipeline templates GitLab on Google Cloud The GitLab on Google Cloud integration uses Workload Identity Federation for authorization and authentication for GitLab workloads on Google Cloud without the need for service accounts or service account keys.
+- To specify access scopes when creating a cluster, run the following command: gcloud container clusters create NAME --scopes = SCOPES To specify access scopes when creating a node pool, run the following command: gcloud container node-pools create NAME --scopes = SCOPES Replace the following values: NAME is the name of the cluster or node pool.
 
 ### "Configure authentication to Artifact Registry for Docker \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/docker/authentication](https://docs.cloud.google.com/artifact-registry/docs/docker/authentication)
 - Source ID: `site-docs-root-2`
-- Final score: 176
-- Re-rank relevance: N/A
+- Final score: 71
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Linux: /.docker/config.json Windows: %USERPROFILE%\.docker\config.json There are separate sections in the file for different authentication methods: credHelpers If you use the Docker credential helper for authentication Artifact Registry stores the credential helper settings in the credHelpers section of the file. auths If you use Docker to sign in with a token or service account key as your password, Docker stores a base64-encoded version of your credentials in the auths section of the file. credStore If you configured a credential store to manage your credentials, the settings for the credential store are in the credStore section of the file.
-- To configure authentication with user credentials, run the following command: gcloud auth login To configure authentication with service account credentials, run the following command: gcloud auth activate-service-account ACCOUNT --key-file = KEY-FILE Where ACCOUNT is the service account that you want to use with Artifact Registry in the format USERNAME @ PROJECT-ID .iam.gserviceaccount.com .
-- To create a new service account and a service account key for use with Artifact Registry repositories only: Create a service account to act on behalf of your application, or choose an existing service account that you use for automation.
+- Use the service account key to configure integration with Docker: Run the following command: Linux / macOS cat KEY-FILE docker login -u KEY-TYPE --password-stdin \ https:// LOCATION -docker.pkg.dev Windows Get-Content KEY-FILE docker login -u KEY-TYPE --password-stdin https:// LOCATION -docker.pkg.dev Replace the following: KEY-TYPE is one of the following: json key if you are using the service account key in JSON format as it was provided when you created the file. json key base64 if you base64-encoded the all contents of the file.
 - ARCH = amd64 # or "386" for 32-bit OSs curl -fsSL "https://github.com/GoogleCloudPlatform/docker-credential-gcr/releases/download/v ${ VERSION } /docker-credential-gcr ${ OS } ${ ARCH } - ${ VERSION } .tar.gz" \ tar xz docker-credential-gcr \ && chmod +x docker-credential-gcr && sudo mv docker-credential-gcr /usr/bin/ Configure Docker to use your Artifact Registry credentials when interacting with Artifact Registry (you are only required to do this once): docker-credential-gcr configure-docker --registries = HOSTNAME-LIST Where HOSTNAME-LIST is a comma-separated list of repository hostnames to add to the credential helper configuration.
+- After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity . (Optional) Configure defaults for gcloud CLI commands .
+- Service account key Note: When possible, use an access token or credential helper to reduce the risk of unauthorized access to your artifacts.
 
 ### "Enabling customer-managed encryption keys \_|\_ Artifact Registry \_|\_\
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/cmek](https://docs.cloud.google.com/artifact-registry/docs/cmek)
 - Source ID: `site-docs-root-2`
-- Final score: 164
+- Final score: 65
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Removing access There are several ways to remove access to a CMEK-encrypted repository: Revoke the Cloud KMS CryptoKey Encrypter/Decrypter role from the Artifact Registry service account using one of the following methods: Revoke access in the Google Cloud console Revoke access by using the gcloud CLI Temporarily disable the Customer-managed encryption key Permanently destroy the CMEK key We recommend that you revoke the permissions from the Artifact Registry service account before disabling or destroying a key.
-- Required roles To get the permissions that you need to use Autokey to create protected repositories, ask your administrator to grant you the following IAM roles on the folder or project: Cloud KMS Autokey User ( roles/cloudkms.autokeyUser ) Artifact Registry Admin ( roles/artifactregistry.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
-- You should see roles on the Role/Member column. gcloud Run the following command to grant access to the Artifact Registry service account: gcloud kms keys add-iam-policy-binding [ --project = PROJECT ] \ KEY --location LOCATION --keyring = KEYRING \ --member serviceAccount:service- PROJECT-NUMBER @gcp-sa-artifactregistry.iam.gserviceaccount.com \ --role roles/cloudkms.cryptoKeyEncrypterDecrypter Where PROJECT is the ID of the project that contains the key.
+- You can use a key created directly in Cloud KMS or an externally-managed key that you make available with Cloud External Key Manager .
 - When you activate the Artifact Registry API in a Google Cloud project, Artifact Registry tries to automatically create a Pub/Sub topic with the topic ID gcr using Google-owned and Google-managed encryption keys.
-
-### "Migrate container images from a third-party registry \_|\_ Artifact Registry\
-
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers](https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers)
-- Source ID: `site-docs-root-2`
-- Final score: 164
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Keep track of new image pulls by running the following query in the BigQuery console: SELECT FORMAT TIMESTAMP ( "%D %R" , timestamp ) as timeOfImagePull , REGEXP EXTRACT ( jsonPayload . message , r '"(. ?)"' ) AS imageName , COUNT ( ) AS numberOfPulls FROM image pull logs . events ` GROUP BY timeOfImagePull , imageName ORDER BY timeOfImagePull DESC , numberOfPulls DESC All new image pulls should be from Artifact Registry and contain the string docker.pkg.dev .
-- Costs This guide uses the following billable components of Google Cloud: GKE Artifact Registry BigQuery Logging Identify images to migrate Search the files you use to build and deploy your container images for references to third-party registries, then check how often you pull the images.
-- Learn how to grant roles . gcloud services enable artifactregistry.googleapis.com If you don't have a Artifact Registry repository, then create a repository and configure authentication for third-party clients that require access to the repository.
-- This page describes how to identify and copy those images to Artifact Registry for consolidated, consistent container image management.
+- When constraints/gcp.restrictCmekCryptoKeyProjects is configured, Artifact Registry creates CMEK-protected repositories that are protected by a CryptoKey from an allowed project, folder, or organization.
+- When Artifact Registry API is in the Deny policy list of services of constraint constraints/gcp.restrictNonCmekServices , Artifact Registry refuses to create new repositories that aren't CMEK-protected.
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.596Z"
+generated_at: "2026-04-12T12:13:48.462Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Data lineage for Dataproc Hive jobs"
 feature_slug: "data-lineage-for-dataproc-hive-jobs"
 latest_feature_date: "2025-02-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataplex/docs/use-lineage"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
-  - "https://docs.cloud.google.com/dataplex/docs/release-notes"
+  - "https://docs.cloud.google.com/dataplex/docs/openlineage-mapping"
+  - "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector"
 keywords:
   - "lineage"
   - "for"
@@ -26,7 +27,7 @@ keywords:
 # Data lineage for Dataproc Hive jobs
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Dataplex provides data lineage capture for Hive jobs running in Dataproc.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataplex/docs/use-lineage](https://docs.cloud.google.com/dataplex/docs/use-lineage)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
-- [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
+- [https://docs.cloud.google.com/dataplex/docs/openlineage-mapping](https://docs.cloud.google.com/dataplex/docs/openlineage-mapping)
+- [https://docs.cloud.google.com/dataplex/docs/develop-custom-connector](https://docs.cloud.google.com/dataplex/docs/develop-custom-connector)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/use-lineage](https://docs.cloud.google.com/dataplex/docs/use-lineage)
 - Source ID: `site-docs-root`
-- Final score: 156
+- Final score: 199
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
 - Source ID: `site-java-reference`
-- Final score: 154
+- Final score: 190
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,30 @@ Evidence snippets:
 - Builder Builder for projects/{project}/locations/{location}/lakes/{lake}/tasks/{task}/jobs/{job}. com. google. cloud. dataplex. v1.
 - Data Scan Represents a user-visible job which provides the insights for the related data source. com. google. cloud. dataplex. v1.
 
-### Knowledge Catalog release notes \_|\_ Google Cloud Documentation
+### OpenLineage mapping \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 138
+- URL: [https://docs.cloud.google.com/dataplex/docs/openlineage-mapping](https://docs.cloud.google.com/dataplex/docs/openlineage-mapping)
+- Source ID: `site-api-reference`
+- Final score: 175
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Attribute mapping The ProcessOpenLineageRunEvent REST API method maps OpenLineage attributes to Data Lineage API attributes as follows: Data Lineage API attributes OpenLineage attributes Process .name projects/ PROJECT NUMBER /locations/ LOCATION /processes/ HASH OF NAMESPACE AND NAME Process .displayName Job.namespace + ":" + Job.name Process .attributes Job.facets (see Stored data ) Run .name projects/ PROJECT NUMBER /locations/ LOCATION /processes/ HASH OF NAMESPACE AND NAME /runs/ HASH OF RUNID Run .displayName Run.runId Run .attributes Run.facets (see Stored data ) Run .startTime eventTime Run .endTime eventTime Run .state eventType LineageEvent .name projects/ PROJECT NUMBER /locations/ LOCATION /processes/ HASH OF NAMESPACE AND NAME /runs/ HASH OF RUNID /lineageEvents/ HASH OF JOB RUN INPUT OUTPUTS OF EVENT (for example, projects/11111111/locations/us/processes/1234/runs/4321/lineageEvents/111-222-333) LineageEvent .EventLinks.source inputs ( fqn is namespace and name concatenation) LineageEvent .EventLinks.target outputs ( fqn is namespace and name concatenation) LineageEvent .startTime eventTime LineageEvent .endTime eventTime requestId Defined by the method user FQN mapping The following table provides examples of OpenLineage namespace and name pairs for various systems, and their equivalent Knowledge Catalog (formerly Dataplex Universal Catalog) fully qualified names (FQN): System OpenLineage namespace OpenLineage name Knowledge Catalog FQN Athena awsathena://athena.{region name}.amazonaws.com {catalog} {catalog}.{database} {catalog}.{database}.{table} athena:{catalogId}.{region} athena:{catalogId}.{region}.{databaseId} athena:{catalogId}.{region}.{databaseId}.{tableId} AWS Glue arn:aws:glue:{region}:{account id} table/{database name}/{table name} aws glue:table:{region}.{account id}.{database name}.{table name} Azure Cosmos DB azurecosmos://{host}/dbs/{database} colls/{table} cosmos-db:{host}.{database} cosmos-db:{host}.{database}.{table} Azure Data Explorer azurekusto://{host}.kusto.windows.net {database}/{table} kusto:{host}.{region}.{database} kusto:{host}.{region}.{database}.{table} Azure Synapse sqlserver://{host}:{port} {database} {database}.{schema} {database}.{schema}.{table} Not supported BigQuery bigquery {project id}.{dataset name} {project id}.{dataset name}.{table name} bigquery:{projectId}.{datasetId} bigquery:{projectId}.{datasetId}.{assetId} Cassandra cassandra://{host}:{port} {keyspace} {keyspace}.{table} cassandra:{hostWithPort}.{keyspaceId} cassandra:{hostWithPort}.{keyspaceId}.{tableId} MySQL mysql://{host}:{port} {database} {database}.{table} mysql:{hostWithPort}.{databaseId} mysql:{hostWithPort}.{databaseId}.{tableId} CrateDB crate://{host}:{port} {database}.{schema}.{table} Not supported DB2 db2://{host}:{port} {database} {database}.{schema} {database}.{schema}.{table} db2:{dns}.{databaseId} db2:{dns}.{databaseId}.{schemaId} db2:{dns}.{databaseId}.{schemaId}.{tableId} Hive hive://{host}:{port} {database}.{table} Not supported MSSQL mssql://{host}:{port} {database}.{schema}.{table} Not supported OceanBase oceanbase://{host}:{port} {database}.{table} Not supported Oracle oracle://{host}:{port} {serviceName}.{schema}.{table} or {sid}.{schema}.{table} oracle:{hostWithPort}.{databaseId} oracle:{hostWithPort}.{databaseId}.{schemaId} oracle:{hostWithPort}.{databaseId}.{schemaId}.{tableId} Postgres postgres://{host}:{port} {database} {database}.{schema} {database}.{schema}.{table} postgresql:{hostWithPort}.{databaseId} postgresql:{hostWithPort}.{databaseId}.{schemaId} postgresql:{hostWithPort}.{databaseId}.{schemaId}.{tableId} Teradata teradata://{host}:{port} {database}.{table} Not supported Redshift redshift://{cluster identifier}.{region name}:{port} {database} {database}.{schema} {database}.{schema}.{table} redshift:{clusterId}.{region}.{port}.{databaseId} redshift:{clusterId}.{region}.{port}.{databaseId}.{schemaId} redshift:{clusterId}.{region}.{port}.{databaseId}.{schemaId}.{tableId} Snowflake snowflake://{organization name}-{account name} or snowflake://{account-locator}(.{compliance})(.{cloud region id})(.{cloud}) {database} {database}.{schema} {database}.{schema}.{table} snowflake:{accountName}.{databaseId} snowflake:{accountName}.{databaseId}.{schemaId} snowflake:{accountName}.{databaseId}.{schemaId}.{tableId} Spanner spanner://{projectId}:{instanceId} {database}.{schema}.{table} Supported in Knowledge Catalog, but not supported in Data lineage Trino trino://{host}:{port} {catalog} {catalog}.{schema} {catalog}.{schema}.{table} trino:{hostWithPort}.{catalogId} trino:{hostWithPort}.{catalogId}.{schemaId} trino:{hostWithPort}.{catalogId}.{schemaId}.{tableId} ABFSS (Azure Data Lake Gen2) abfss://{container name}@{service name}.dfs.core.windows.net {path} abs:{serviceName}.{containerName} abs:{serviceName}.{containerName}.{path} DBFS (Databricks File System) dbfs://{workspace name} {path} dbfs:{workspace} dbfs:{workspace}.{path} Cloud Storage gs://{bucket name} {object key} gcs:{bucketName} gcs:{bucketName}.{virtualPath} HDFS hdfs://{namenode host}:{namenode port} {path} hdfs:{namenodeHostWithPort} hdfs:{namenodeHostWithPort}.{path} Kafka kafka://{bootstrap server host}:{port} {topic} kafka:{serverHostWithPort}.{topicId} Local file system file {path} filesystem:localhost.{path} Remote file system file://{host} {path} filesystem:{hostWithPort}.{path} S3 s3://{bucket name} {object key} s3:{bucketName} s3:{bucketName}.{objectKey} Namespace prefixes s3a and s3n are also accepted and converted to s3 WASBS (Azure Blob Storage) wasbs://{container name}@{service name}.dfs.core.windows.net {object key} abs:{serviceName}.{containerName} abs:{serviceName}.{containerName}.{objectKey} Pub/Sub Topic pubsub topic:{projectId}:{topicId} pubsub:topic:{projectId}.{topicId} Pub/Sub Subscription pubsub subscription:{projectId}:{subscriptionId} pubsub:subscription:{projectId}.{subscriptionId} Additional accepted formats While OpenLineage doesn't define standard namespace / name pairs for the following systems, the Data Lineage API accepts lineage events for them when formatted as described in the following table.
+- System OpenLineage namespace OpenLineage name Knowledge Catalog FQN Custom FQN custom {some reference} custom:{someReference} Dataproc Metastore dataproc metastore dataproc metastore:{projectId}.{location}.{instanceId} dataproc metastore:{projectId}.{location}.{instanceId}.{databaseId} dataproc metastore:{projectId}.{location}.{instanceId}.{databaseId}.{tableId} dataproc metastore:{projectId}.{location}.{instanceId} dataproc metastore:{projectId}.{location}.{instanceId}.{databaseId} dataproc metastore:{projectId}.{location}.{instanceId}.{databaseId}.{tableId} What's next Learn how to integrate with OpenLineage .
+- When you send OpenLineage-formatted events to the Data Lineage API using the ProcessOpenLineageRunEvent method, the Data Lineage API maps attributes from the OpenLineage message to corresponding attributes in the Data Lineage API.
+- The Data Lineage API can ingest lineage information from systems that integrate with OpenLineage , an open standard for lineage collection.
+
+### "Develop a custom connector for metadata import \_|\_ Knowledge Catalog \_\
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/develop-custom-connector](https://docs.cloud.google.com/dataplex/docs/develop-custom-connector)
+- Source ID: `site-docs-root-2`
+- Final score: 166
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 11, 2025 Feature Data lineage for Dataproc Hive jobs is available in preview .
-- August 14, 2023 Feature Data lineage at entry level for spark jobs executed in Dataproc is GA.
-- For more information, see Enable Hive data lineage in Dataproc .
-- This change brings the metadata stored in Dataplex into consistency with metadata from the original source systems such as Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore.
+- The function calls the metadataJobs.create API method to run a metadata import job. - submit import job: call: http.post args: url: ${ "https://dataplex.googleapis.com/v1/projects/" + args.TARGET PROJECT ID + "/locations/" + args.CLOUD REGION + "/metadataJobs?metadata job id=" + WORKFLOW ID } auth: type: OAuth2 scopes: "https://www.googleapis.com/auth/cloud-platform" body: type: IMPORT import spec: source storage uri: ${ "gs://" + args.CLOUD STORAGE BUCKET ID + "/" + WORKFLOW ID + "/" } entry sync mode: FULL aspect sync mode: INCREMENTAL scope: entry groups: - ${ "projects/" + args.TARGET PROJECT ID + "/locations/" + args.CLOUD REGION + "/entryGroups/" +args.TARGET ENTRY GROUP ID } entry types: - "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-instance" - "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-database" - "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-schema" - "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-table" - "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-view" aspect types: - "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-instance" - "projects/dataplex-types/locations/global/aspectTypes/schema" - "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-database" - "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-schema" - "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-table" - "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-view" result: IMPORT JOB RESPONSE Provide the same entry types and aspect types that you included when you called the API method manually.
+- ArgumentParser () Dataplex arguments parser . add argument ( "--target project id" , type = str , required = True , help = "The name of the target Google Cloud project to import the metadata into." ) parser . add argument ( "--target location id" , type = str , required = True , help = "The target Google Cloud location where the metadata will be imported into." ) parser . add argument ( "--target entry group id" , type = str , required = True , help = "The ID of the entry group to import metadata into. " "The metadata will be imported into entry group with the following" "full resource name: projects/$ {target project id} /" "locations/$ {target location id} /entryGroups/$ {target entry group id} ." ) Oracle arguments parser . add argument ( "--host port" , type = str , required = True , help = "Oracle host and port number separated by the colon (:)." ) parser . add argument ( "--user" , type = str , required = True , help = "Oracle User." ) parser . add argument ( "--password-secret" , type = str , required = True , help = "Secret resource name in the Secret Manager for the Oracle password." ) parser . add argument ( "--database" , type = str , required = True , help = "Source Oracle database." ) Google Cloud Storage arguments It is assumed that the bucket is in the same region as the entry group parser . add argument ( "--output bucket" , type = str , required = True , help = "The Cloud Storage bucket to write the generated metadata import file." ) parser . add argument ( "--output folder" , type = str , required = True , help = "A folder in the Cloud Storage bucket, to write the generated metadata import files." ) return vars ( parser . parse known args ()[ 0 ]) In production environments, we recommend that you store the password in Secret Manager .
+- Install PySpark: pip install pyspark Install requirements: pip install -r requirements.txt The following requirements are installed: google-cloud-dataplex==2.2.2 google-cloud-storage google-cloud-secret-manager Update the oracle connector.py file with code to read data from an Oracle data source and return DataFrames. """Reads Oracle using PySpark.""" from typing import Dict from pyspark.sql import SparkSession , DataFrame from src.constants import EntryType SPARK JAR PATH = "/opt/spark/jars/ojdbc11.jar" class OracleConnector : """Reads data from Oracle and returns Spark Dataframes.""" def init ( self , config : Dict [ str , str ]): PySpark entrypoint self . spark = SparkSession . builder . appName ( "OracleIngestor" ) \ . config ( "spark.jars" , SPARK JAR PATH ) \ . getOrCreate () self . config = config self . url = f "jdbc:oracle:thin:@ { config [ 'host port' ] } : { config [ 'database' ] } " def execute ( self , query : str ) - > DataFrame : """A generic method to execute any query.""" return self . spark . read . format ( "jdbc" ) \ . option ( "driver" , "oracle.jdbc.OracleDriver" ) \ . option ( "url" , self . url ) \ . option ( "query" , query ) \ . option ( "user" , self . config [ "user" ]) \ . option ( "password" , self . config [ "password" ]) \ . load () def get db schemas ( self ) - > DataFrame : """In Oracle, schemas are usernames.""" query = "SELECT username FROM dba users" return self . execute ( query ) def get columns ( self , schema name : str , object type : str ) - > str : """Gets a list of columns in tables or views in a batch.""" Every line here is a column that belongs to the table or to the view.
+- PROJECT ID = PROJECT LOCATION ID = LOCATION DATAPLEX API = dataplex.googleapis.com/v1/projects/ $PROJECT ID /locations/ $LOCATION ID alias gcurl = 'curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"' Call the API method, passing the entry types and aspect types that you want to import. gcurl https:// ${ DATAPLEX API } /metadataJobs?metadata job id = " JOB ID " -d " $( cat <<EOF { "type" : "IMPORT" , "import spec" : { "source storage uri" : "gs:// BUCKET / FOLDER /" , "entry sync mode" : "FULL" , "aspect sync mode" : "INCREMENTAL" , "scope" : { "entry groups" : [ "projects/ PROJECT /locations/ LOCATION /entryGroups/ ENTRY GROUP ID " ] , "entry types" : [ "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-instance" , "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-database" , "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-schema" , "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-table" , "projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-view" ] , "aspect types" : [ "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-instance" , "projects/dataplex-types/locations/global/aspectTypes/schema" , "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-database" , "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-schema" , "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-table" , "projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-view" ] , } , } , } EOF ) " The schema aspect type is a global aspect type that is defined by Knowledge Catalog.
 

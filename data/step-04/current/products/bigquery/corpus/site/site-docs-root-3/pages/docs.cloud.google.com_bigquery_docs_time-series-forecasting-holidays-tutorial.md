@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holiday
 knowledge_key: corpus
 source_id: site-docs-root-3
 source_type: site
-entrypoint: https://docs.cloud.google.com/bigquery/docs/introduction?csw=1
+entrypoint: https://docs.cloud.google.com/bigquery/docs/introduction?authuser=3
 source_metadata:
   url: https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial
   title: "Use custom holidays in an ARIMA_PLUS time-series forecasting model \_|\_\
@@ -191,7 +191,7 @@ After you create the model using built-in holidays, join the original data from
 the bqml_tutorial.googleio_page_views table with the forecasted value from the
 ML.EXPLAIN_FORECAST function ,
 and then visualize it by
-using Looker Studio :
+using Data Studio :
 Go to the BigQuery page.
 Go to BigQuery
 In the SQL editor pane, run the following SQL statement:
@@ -217,9 +217,9 @@ TIMESTAMP ( original . date )
 ORDER BY
 original . date ;
 In the Query results pane, click Open in >
-Looker Studio . Looker Studio
+Data Studio . Data Studio
 opens in a new tab.
-In the Looker Studio tab, click Add a chart , and then
+In the Data Studio tab, click Add a chart , and then
 click the time series chart:
 Place the chart on the report.
 On the Setup tab of the Chart pane, click Add metric and select
@@ -284,7 +284,7 @@ After you create the model using custom holidays, join the original data from
 the bqml_tutorial.googleio_page_views table with the forecasted value from the
 ML.EXPLAIN_FORECAST function ,
 and then visualize it by
-using Looker Studio :
+using Data Studio :
 Go to the BigQuery page.
 Go to BigQuery
 In the SQL editor pane, run the following SQL statement:
@@ -311,9 +311,9 @@ TIMESTAMP ( original . date )
 ORDER BY
 original . date ;
 In the Query results pane, click Explore data ,
-and then click Explore with Looker Studio . Looker Studio
+and then click Explore with Data Studio . Data Studio
 opens in a new tab.
-In the Looker Studio tab, click Add a chart , click the
+In the Data Studio tab, click Add a chart , click the
 time series chart, and place the chart on the report.
 On the Setup tab of the Chart pane, click Add metric and select
 adjusted_views_with_custom_holiday .
@@ -424,6 +424,6 @@ In the dialog, type the project ID, and then click
 Shut down to delete the project.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

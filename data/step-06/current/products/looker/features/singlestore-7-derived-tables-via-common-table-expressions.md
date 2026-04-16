@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.526Z"
+generated_at: "2026-04-15T13:43:38.523Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "SingleStore 7+ Derived Tables via Common Table Expressions"
@@ -9,9 +9,9 @@ latest_feature_date: "2024-06-12"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts"
+  - "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+  - "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
 keywords:
   - "singlestore"
   - "derived"
@@ -20,7 +20,7 @@ keywords:
   - "common"
   - "table"
   - "expressions"
-  - "the"
+  - "strategy"
 ---
 
 # SingleStore 7+ Derived Tables via Common Table Expressions
@@ -42,42 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts](https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts)
+- [https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer](https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer)
+- [https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration](https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration)
 
 ## Supporting Pages
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### "Admin settings - Persistent Derived Tables \_|\_ Looker \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 37
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
-
-### Using the API Explorer | Looker | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 37
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts](https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Using the API Explorer Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-explorer There may also be Ruby and Java ... languages.
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
+- These are the persisted tables that have been deployed to production on your instance; these persisted tables provide the data for your users' Explore queries. (If you are in Production Mode or if you don't have develop permissions, the Persistent Derived Tables page will not display any tabs, and the page will show information for production persisted tables only.) The Development tab shows the development persisted tables .
+- The Persistent Derived Tables page shows only the connections that are enabled for PDTs and only the persisted tables that meet the following criteria: The persisted table is defined in a view file that is in production, unless you are in Development Mode , in which case you can use the Development tab to see the development version of persisted tables.
+- To open the Persistent Derived Tables page, follow these steps: Click the Looker Main menu icon menu and select Admin , if the Admin menu isn't already displayed. (If you are in the Explore or Develop section of the Looker Main menu , you may have to click the back arrow to see the Admin menu.) From the Admin menu, select Persistent Derived Tables .
+- Published as Stable View : A Boolean that filters the Persistent Derived Tables page for persisted tables and displays Yes for persisted tables that were published as a stable view, and No for persisted tables that were not published as a stable view, as determined by their publish as db view parameter value.
 
-### Getting started with the Looker API | Google Cloud Documentation
+### "Migrate Apache Hive Metastore tables to Google Cloud \_|\_ BigQuery \_|\_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 33
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer](https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 131
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
+- The service account should belong to the same Google Cloud project where the transfer configuration and destination dataset is created. bq To schedule Hive Metastore transfer, enter the bq mk command and supply the transfer creation flag --transfer config : bq mk --transfer config --data source = hadoop display name = ' TRANSFER NAME ' --service account name = ' SERVICE ACCOUNT ' --project id = ' PROJECT ID ' location = ' REGION ' --params = '{ "transfer strategy":" TRANSFER STRATEGY ", "table name patterns":" LIST OF TABLES ", "table metadata path":"gs:// DUMPER BUCKET /hive-dumper-output.zip", "target gcs file path":"gs:// MIGRATION BUCKET ", "metastore":" METASTORE ", "destination dataproc metastore":" DATAPROC METASTORE URL ", "destination bigquery dataset":" BIGLAKE METASTORE DATASET ", "translation output gcs path":"gs:// TRANSLATION OUTPUT BUCKET /metadata/config/default database/", "storage type":" STORAGE TYPE ", "agent pool name":" AGENT POOL NAME ", "aws access key id":" AWS ACCESS KEY ID ", "aws secret access key":" AWS SECRET ACCESS KEY ", "azure sas token":" AZURE SAS TOKEN ", "partition filter gcs path":" FILTER GCS PATH " }' Replace the following: TRANSFER NAME : the display name for the transfer configuration.
+- The Hive Metastore migration connector supports files stored in the following data sources: Apache Hadoop Distributed File System (HDFS) Amazon Simple Storage Service (Amazon S3) Azure Blob Storage or Azure Data Lake Storage Gen2 With the Hive Metastore migration connector, you can use Cloud Storage as the file storage and register your Hive Metastore tables with one of the following metastores: BigLake metastore Iceberg REST Catalog We recommend using the BigLake metastore Iceberg REST Catalog for all your Iceberg data.
+- Migrate Apache Hive Metastore tables to Google Cloud This document shows you how to migrate your Iceberg and Hive tables managed by Apache Hive Metastore to Google Cloud using the BigQuery Data Transfer Service .
+- For example: db1.. : specifies all tables in the database db1.table1;db2.table2 : a list of tables DUMPER BUCKET : the Cloud Storage bucket containing the hive-dumper-output.zip file.
+
+### Migrating permissions from Hadoop \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration](https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 100
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following example shows how you can run the permissions migration tool to migrate from both HDFS and Apache Ranger, with the tables mapping configuration files and the principals mapping file named principals.yaml , resulting in a principals mapping file named permissions.yaml . ./dwh-permissions-migration build \ --permissions-ruleset gs:// MIGRATION BUCKET /permissions-config.yaml \ --tables gs:// MIGRATION BUCKET /tables/ \ --principals gs:// MIGRATION BUCKET /principals.yaml \ --ranger-dumper-output gs:// MIGRATION BUCKET /ranger-dumper-output.zip \ --hdfs-dumper-output gs:// MIGRATION BUCKET /hdfs-dumper-output.zip \ --output-permissions gs:// MIGRATION BUCKET /permissions.yaml Replace MIGRATION BUCKET with the name of the Cloud Storage bucket that contains your migration files.
+- Ruleset YAML files use Common Expression Language (CEL) for specifying predicates (where the result is boolean) and expressions (where the result is string).
+- The user running the tool has permissions to manage roles for the Cloud Storage managed folders or tables.
+- You have created the Cloud Storage managed folders or tables that will host the migrated data.
 

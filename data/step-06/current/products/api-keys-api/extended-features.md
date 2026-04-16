@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2022-08-22 | API Keys API | HIGH | [source](https://docs.cloud.google.com/api-keys/docs/add-restrictions-api-keys)<br>[source](https://docs.cloud.google.com/api-keys/docs/get-started-api-keys)<br>[source](https://docs.cloud.google.com/api-keys/docs/create-manage-api-keys) | API Keys API provides Google Cloud v2 REST operations to create, read/list, update, and delete (including undelete) API keys for a project under the `apikeys.googleapis.com` service. It also supports applying and modifying key restrictions, such as Android and iOS application restrictions, browser referrer restrictions, server IP/CIDR allowlists, and API target/method allowlists. These APIs return key metadata and operation/status information used to track key lifecycle actions. |
+| 2022-08-22 | API Keys API | MEDIUM | [source](https://docs.cloud.google.com/api-keys/docs/custom-constraints)<br>[source](https://docs.cloud.google.com/api-keys/docs/overview)<br>[source](https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2) | The API Keys API is now available in general availability; The API Keys API was available in preview. |
 

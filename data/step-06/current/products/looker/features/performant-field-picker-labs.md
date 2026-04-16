@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.572Z"
+generated_at: "2026-04-15T13:43:38.550Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Performant Field Picker Labs"
@@ -9,15 +9,15 @@ latest_feature_date: "2023-03-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
 keywords:
   - "performant"
   - "field"
   - "picker"
   - "labs"
-  - "the"
+  - "feature"
   - "adds"
   - "refined"
   - "search"
@@ -42,42 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-labs](https://docs.cloud.google.com/looker/docs/admin-panel-general-labs)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features](https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
 
 ## Supporting Pages
 
-### Using the API Explorer | Looker | Google Cloud Documentation
+### Admin settings - Preview Features \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 44
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-labs](https://docs.cloud.google.com/looker/docs/admin-panel-general-labs)
+- Source ID: `site-docs-reference`
+- Final score: 118
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Using the API Explorer Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-explorer There may also be Ruby and Java ... languages.
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
+- When this preview feature is enabled, you can use the following features for table visualizations : Pagination Show/Hide Table Headers Table Borders Cell Highlighting Conditional formatting for string fields Note: When Cell Highlighting is enabled, conditional formatting is not available.
+- When this preview feature is enabled, the new Enhanced search experience lets you search for Looker content using filters for specific content types, special characters, and more metadata options.
+- This Labs feature enables the Looker reports feature , which lets you create, view, and edit Looker Studio reports in your Looker instance, including both governed and ad hoc data.
+- The Preview Features page lists each feature with a short description underneath it explaining the functionality that it adds to or changes in Looker.
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### Admin settings - Preview Features \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 42
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features](https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features)
+- Source ID: `site-docs-reference`
+- Final score: 118
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
+- When this preview feature is enabled, you can use the following features for table visualizations : Pagination Show/Hide Table Headers Table Borders Cell Highlighting Conditional formatting for string fields Note: When Cell Highlighting is enabled, conditional formatting is not available.
+- When this preview feature is enabled, the new Enhanced search experience lets you search for Looker content using filters for specific content types, special characters, and more metadata options.
+- This Labs feature enables the Looker reports feature , which lets you create, view, and edit Looker Studio reports in your Looker instance, including both governed and ad hoc data.
+- The Preview Features page lists each feature with a short description underneath it explaining the functionality that it adds to or changes in Looker.
 
-### Getting started with the Looker API | Google Cloud Documentation
+### Admin settings - General settings \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 37
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- Source ID: `site-docs-reference`
+- Final score: 96
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
+- A user has the option to exclude content in personal folders by selecting the switch next to the Curated Search feature name in the search dialog modal.
+- See more about how this setting and a user's permissions affect their ability to deliver Looker content and alert notifications in the Permissions overview section on this page. looker internal email domain allowlist user attribute In addition to the email domains that are included in the global Email Domain Allowlist for Scheduled Content field, you can also specify email domains on a per-group level using the looker internal email domain allowlist user attribute .
+- For example: ...&user attributes={"email":"joe@domain.com"} If you define the email user attribute in the embed URL, Looker will allow an embed user who has only the schedule look emails permission to email Looker content to their own email address, even if their email domain isn't in the Email Domain Allowlist for Scheduled Content field, or if the Email Domain Allowlist for Scheduled Content field is blank.
+- Looker Support requires permission from a technical contact to do any of the following: Cause downtime for the instance, which could be due to a non-scheduled version update, performance changes to your Looker server, or other reasons Change something about your Looker license, possibly to enable new features for you.
 

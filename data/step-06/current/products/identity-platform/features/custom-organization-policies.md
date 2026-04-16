@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:37.692Z"
+generated_at: "2026-04-12T12:17:29.942Z"
 product_name: "Identity Platform"
 product_slug: "identity-platform"
 feature_name: "Custom organization policies"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-09-30"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform"
+  - "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims"
   - "https://docs.cloud.google.com/identity-platform/docs/reference/rest"
   - "https://docs.cloud.google.com/identity-platform/docs/how-to"
+  - "https://docs.cloud.google.com/identity-platform/docs/use-rest-api"
 keywords:
   - "custom"
   - "organization"
@@ -38,51 +39,70 @@ Identity Platform supports custom organization policies to allow or deny operati
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform](https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform)
+- [https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims](https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims)
 - [https://docs.cloud.google.com/identity-platform/docs/reference/rest](https://docs.cloud.google.com/identity-platform/docs/reference/rest)
 - [https://docs.cloud.google.com/identity-platform/docs/how-to](https://docs.cloud.google.com/identity-platform/docs/how-to)
+- [https://docs.cloud.google.com/identity-platform/docs/use-rest-api](https://docs.cloud.google.com/identity-platform/docs/use-rest-api)
 
 ## Supporting Pages
 
-### REST Resource: projects.identityPlatform | Identity Platform | Google Cloud Documentation
+### "Configure custom claims on users \_|\_ Identity Platform \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform](https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform)
-- Source ID: `site-docs-reference`
-- Final score: 154
+- URL: [https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims](https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims)
+- Source ID: `site-docs-root`
+- Final score: 246
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- REST Resource: projects.identityPlatform Identity Platform Google Cloud Documentation Source URL: https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform Access and resource management · Identity Platform · Reference · Send feedback · Resource · Methods · There is no persistent data associated with this resource.
+- Configure custom claims on users This document explains how to configure custom claims on users with Identity Platform.
+- Learn more about Identity Platform custom claims in the Admin SDK reference documentation .
+- TryGetValue ( "admin" , out isAdmin )) { if (( bool ) isAdmin ) { // Allow access to requested admin resource. } } FirebaseAuthSnippets . cs To determine what custom claims are present for a user: Node.js // Lookup the user associated with the specified uid. getAuth () . getUser ( uid ) . then (( userRecord ) = > { // The claims can be accessed on the user record. console . log ( userRecord . customClaims [ 'admin' ]); }); custom claims . js Java // Lookup the user associated with the specified uid.
+- FirebaseAuthSnippets.cs Validate the custom claim the next time it's sent to your server: Node.js // Verify the ID token first. getAuth () . verifyIdToken ( idToken ) . then (( claims ) = > { if ( claims . admin === true ) { // Allow access to requested admin resource. } }); custom claims . js Java // Verify the ID token first.
 
-### Identity Toolkit API | Identity Platform | Google Cloud Documentation
+### Identity Toolkit API \_|\_ Identity Platform \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/identity-platform/docs/reference/rest](https://docs.cloud.google.com/identity-platform/docs/reference/rest)
-- Source ID: `site-docs-root`
-- Final score: 142
+- Source ID: `site-api-reference`
+- Final score: 206
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Identity Toolkit API Identity Platform Google Cloud Documentation Source URL: https://docs.cloud.google.com/identity-platform/docs/reference/rest The Google Identity Toolkit API lets you use open standards to verify a user&#x27;s identity. ...
-- If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
-- To call this service, we recommend that you use the Google-provided client libraries.
+- REST Resource: v1.accounts Methods createAuthUri POST /v1/accounts:createAuthUri If an email identifier is specified, checks and returns if any user account is registered with the email. delete POST /v1/accounts:delete Deletes a user's account. issueSamlResponse POST /v1/accounts:issueSamlResponse Experimental lookup POST /v1/accounts:lookup Gets account information for all matched accounts. resetPassword POST /v1/accounts:resetPassword Resets the password of an account either using an out-of-band code generated by sendOobCode or by specifying the email and password of the account to be modified. sendOobCode POST /v1/accounts:sendOobCode Sends an out-of-band confirmation code for an account. sendVerificationCode POST /v1/accounts:sendVerificationCode Sends a SMS verification code for phone number sign-in. signInWithCustomToken POST /v1/accounts:signInWithCustomToken Signs in or signs up a user by exchanging a custom Auth token. signInWithEmailLink POST /v1/accounts:signInWithEmailLink Signs in or signs up a user with a out-of-band code from an email link. signInWithGameCenter POST /v1/accounts:signInWithGameCenter Signs in or signs up a user with iOS Game Center credentials. signInWithIdp POST /v1/accounts:signInWithIdp Signs in or signs up a user using credentials from an Identity Provider (IdP). signInWithPassword POST /v1/accounts:signInWithPassword Signs in a user with email and password. signInWithPhoneNumber POST /v1/accounts:signInWithPhoneNumber Completes a phone number authentication attempt. signUp POST /v1/accounts:signUp Signs up a new email and password user or anonymous user, or upgrades an anonymous user to email and password. update POST /v1/accounts:update Updates account-related information for the specified user by setting specific fields or applying action codes. verifyIosClient POST /v1/accounts:verifyIosClient Verifies an iOS client is a real iOS device.
+- REST Resource: v2 REST Resource: v2.accounts REST Resource: v2.accounts.mfaEnrollment REST Resource: v2.accounts.mfaSignIn REST Resource: v2.defaultSupportedIdps REST Resource: v2.projects REST Resource: v2.projects.defaultSupportedIdpConfigs REST Resource: v2.projects.domain REST Resource: v2.projects.identityPlatform REST Resource: v2.projects.inboundSamlConfigs REST Resource: v2.projects.oauthIdpConfigs REST Resource: v2.projects.tenants REST Resource: v2.projects.tenants.defaultSupportedIdpConfigs REST Resource: v2.projects.tenants.domain REST Resource: v2.projects.tenants.inboundSamlConfigs REST Resource: v2.projects.tenants.oauthIdpConfigs REST Resource: v1 REST Resource: v1.accounts REST Resource: v1.projects REST Resource: v1.projects.accounts REST Resource: v1.projects.tenants REST Resource: v1.projects.tenants.accounts Service: identitytoolkit.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects Methods accounts POST /v1/projects/{targetProjectId}/accounts Signs up a new email and password user or anonymous user, or upgrades an anonymous user to email and password. createSessionCookie POST /v1/projects/{targetProjectId}:createSessionCookie Creates a session cookie for the given Identity Platform ID token. queryAccounts POST /v1/projects/{targetProjectId}:queryAccounts Looks up user accounts within a project or a tenant based on conditions in the request.
+- REST Resource: v1.projects.tenants Methods accounts POST /v1/projects/{targetProjectId}/tenants/{tenantId}/accounts Signs up a new email and password user or anonymous user, or upgrades an anonymous user to email and password. createSessionCookie POST /v1/projects/{targetProjectId}/tenants/{tenantId}:createSessionCookie Creates a session cookie for the given Identity Platform ID token.
 
-### How-to Guides | Identity Platform | Google Cloud Documentation
+### How-to Guides \_|\_ Identity Platform \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/identity-platform/docs/how-to](https://docs.cloud.google.com/identity-platform/docs/how-to)
-- Source ID: `site-docs-root`
-- Final score: 138
+- Source ID: `site-api-reference`
+- Final score: 202
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- How-to Guides Identity Platform Google Cloud Documentation Source URL: https://docs.cloud.google.com/identity-platform/docs/how-to Migrate users from an existing app to Identity Platform.
-- Use the Admin SDK to mint custom JWTs.
-- Set up SMS regions to restrict SMS verification usage, view usage metrics, and detect SMS abuse.
-- Use the Admin SDK to programmatically manage provider configurations.
+- Configuring custom claims on users Configure custom claims on users using Identity Platform to handle authorization in your app or service.
+- Home Documentation Access and resource management Identity Platform Guides Send feedback How-to Guides Stay organized with collections Save and categorize content based on your preferences.
+- Migrating users between projects and tenants Migrate users between tenants or from a non-tenant Identity Platform project to a tenant-enabled one.
+- Managing Identity Platform projects Enable reCAPTCHA Enterprise Configure reCAPTCHA Enterprise to add another layer of security to your apps.
+
+### Using the REST API \_|\_ Identity Platform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/identity-platform/docs/use-rest-api](https://docs.cloud.google.com/identity-platform/docs/use-rest-api)
+- Source ID: `site-docs-root`
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Response Payload ( users array content) Property Name Type Description localId string The uid of the current user. email string The email of the account. emailVerified boolean Whether or not the account's email has been verified. displayName string The display name for the account. providerUserInfo List of JSON objects List of all linked provider objects which contain "providerId" and "federatedId". photoUrl string The photo Url for the account. passwordHash string Hash version of password. passwordUpdatedAt double The timestamp, in milliseconds, that the account password was last changed. validSince string The timestamp, in seconds, which marks a boundary, before which Identity Platform ID tokens are considered revoked. disabled boolean Whether the account is disabled or not. lastLoginAt string The timestamp, in milliseconds, that the account last logged in at. createdAt string The timestamp, in milliseconds, that the account was created at. customAuth boolean Whether the account is authenticated by the developer. tenantId string The tenant ID of the user.
+- Sample request curl 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=[API KEY]' \ -H 'Content-Type: application/json' \ --data-binary '{"token":"[CUSTOM TOKEN]","returnSecureToken":true}' In the example above, you would replace [API KEY] with the Web API Key of your Identity Platform project, [CUSTOM TOKEN] with the generated custom Auth token.
+- Method: POST Content-Type: application/json Endpoint https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key =[ API KEY ] Request Body Payload Property Name Type Description token string An Identity Platform custom token from which to create an ID and refresh token pair. returnSecureToken boolean Whether or not to return an ID and refresh token.
+- Response Payload Property Name Type Description idToken string An Identity Platform ID token generated from the provided custom token. refreshToken string An Identity Platform refresh token generated from the provided custom token. expiresIn string The number of seconds in which the ID token expires.
 

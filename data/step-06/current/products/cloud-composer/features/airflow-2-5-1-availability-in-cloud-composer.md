@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.331Z"
+generated_at: "2026-04-12T12:11:19.538Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Airflow 2.5.1 availability in Cloud Composer"
 feature_slug: "airflow-2-5-1-availability-in-cloud-composer"
 latest_feature_date: "2023-04-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database"
   - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface"
 keywords:
   - "airflow"
   - "availability"
@@ -25,7 +26,7 @@ keywords:
 # Airflow 2.5.1 availability in Cloud Composer
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,34 +38,22 @@ Cloud Composer 2 images now include Airflow 2.5.1.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database](https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database)
 - [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- [https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac](https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac)
+- [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change New images are available in Cloud Composer 2: composer-2.13.1-airflow-2.10.5 (default) composer-2.13.1-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.5-build.3 (default) composer-3-airflow-2.9.3-build.23 Change The following Cloud Composer versions have an extended upgrade timeline: composer-3-airflow-2.10.5-build.3 composer-3-airflow-2.9.3-build.23 composer-2.13.1-airflow-2.10.5 composer-2.13.1-airflow-2.9.3 May 07, 2025 Feature Data lineage in Cloud Composer now uses OpenLineage in all regions supported by Cloud Composer.
-- Change (Airflow 2.10.2 and 2.9.3) Preinstalled packages were changed: logbook was removed from preinstalled packages minimal-snowplow-tracker was removed from preinstalled packages mashumaro was downgraded from 3.15 to 3.14 Change New images are available in Cloud Composer 2: composer-2.11.2-airflow-2.10.2 (default) composer-2.11.2-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.2-build.8 (default) composer-3-airflow-2.9.3-build.15 Deprecated Cloud Composer versions 2.6.0 and 2.6.1 have reached their end of support period .
-- Change New images are available in Cloud Composer 2: composer-2.11.5-airflow-2.10.2 (default) composer-2.11.5-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.2-build.11 (default) composer-3-airflow-2.9.3-build.18 March 05, 2025 Feature You can now specify an order in which Airflow searches for secrets by overriding the [secrets]backends order Airflow configuration option.
-- Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-3.1.7-build.0 composer-3-airflow-2.10.5-build.29 (default) composer-3-airflow-2.9.3-build.49 Change New images are available in Cloud Composer 2: composer-2.16.6-airflow-2.10.5 (default) composer-2.16.6-airflow-2.9.3 February 20, 2026 Feature Cloud Composer API now accepts the new https://www.googleapis.com/auth/cloudcomposer OAuth scope.
 
 ### Clean up the Airflow database \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database](https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database)
 - Source ID: `site-iam-reference`
-- Final score: 166
+- Final score: 206
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -77,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - Source ID: `site-iam-reference`
-- Final score: 160
+- Final score: 200
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -85,4 +74,30 @@ Evidence snippets:
 - Each Cloud Composer image contains PyPI packages that are specific for your version of Cloud Composer and Airflow.
 - Warning: Don't modify or delete the images built by Cloud Composer in Artifact Registry or the repository itself.
 - Preinstalled PyPI packages are packages that are included in the Cloud Composer image of your environment.
+
+### "Using Airflow UI Access Control \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac](https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac)
+- Source ID: `site-iam-reference`
+- Final score: 198
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To preregister a user with a custom role through Google Cloud CLI, run the following Airflow CLI command : gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ users create -- \ -r ROLE \ -e USER EMAIL \ -u USER EMAIL \ -f FIRST NAME \ -l LAST NAME \ --use-random-password # The password value is required, but is not used Replace the following: ENVIRONMENT NAME : the name of the environment LOCATION : the region where the environment is located ROLE : an Airflow role for the user, for example, Op USER EMAIL : the user's email address FIRST NAME and LAST NAME : user's first name and last name Example: gcloud composer environments run example-environment \ --location us-central1 \ users create -- \ -r Op \ -e "example-user@example.com" \ -u "example-user@example.com" \ -f "Name" \ -l "Surname" \ --use-random-password Remove users Deleting a user from Airflow does not revoke access for that user, because they are automatically registered again next time they access the Airflow UI.
+- Overview of Airflow UI access control in Cloud Composer Access to Airflow UI and DAG UI and visibility of data and operations in those UIs is controlled at two levels in Cloud Composer: Access to the Airflow UI and DAG UI in Cloud Composer is controlled by IAM .
+- To assign the Admin role, run the following Airflow CLI command with gcloud CLI: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ users add-role -- -e USER EMAIL -r Admin Replace: ENVIRONMENT NAME with the name of the environment.
+- Section Key Value webserver rbac user registration role User or other non-Admin role Admins can now configure Airflow UI access control for new users, including granting the Admin role to other users.
+
+### "Access the Airflow web interface \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface)
+- Source ID: `site-iam-reference`
+- Final score: 191
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 Apache Airflow includes a web user interface called Airflow UI , which you can use to manage Airflow DAGs, view DAG run logs, monitor Airflow, and perform administrative actions.
+- Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.webServerNetworkAccessControl { "config" : { "webServerNetworkAccessControl" : { "allowedIpRanges" : [ { "value" : "192.0.2.0/24" , "description" : "example range" }, { "value" : "192.0.4.0/24" , "description" : "example range 2" } ] } } } Terraform In the allowed ip range block, in the web server network access control specify IP ranges that can access web server. resource "google composer environment" "example" { provider = google-beta name = " ENVIRONMENT NAME " region = " LOCATION " config { web server network access control { allowed ip range { value = " WS IP RANGE " description = " WS RANGE DESCRIPTION " } } } } Replace the following: WS IP RANGE : the IP range, in the CIDR notation, that can access the Airflow UI.
+- Example: resource "google composer environment" "example" { provider = google-beta name = "example-environment" region = "us-central1" config { web server network access control { allowed ip range { value = "192.0.2.0/24" description = "example range" }, allowed ip range { value = "192.0.4.0/24" description = "example range 2" } } } What's next Airflow UI Access Control Troubleshooting Airflow web server issues Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- To ensure that web server remains accessible regardless of DAG load time, you can configure asynchronous DAG loading to parse and load DAGs in the background at a pre-configured interval (available in composer-1.7.1-airflow-1.10.2 and later versions).
 

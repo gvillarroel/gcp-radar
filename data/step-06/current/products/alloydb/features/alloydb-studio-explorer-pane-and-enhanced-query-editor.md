@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.623Z"
+generated_at: "2026-04-12T12:07:33.864Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB Studio Explorer pane and enhanced query editor"
 feature_slug: "alloydb-studio-explorer-pane-and-enhanced-query-editor"
 latest_feature_date: "2024-04-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent"
-  - "https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent"
-  - "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall"
+  - "https://docs.cloud.google.com/alloydb/docs/query-insights-overview"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
 keywords:
   - "browse and modify databases"
   - "database object explorer"
@@ -26,7 +27,7 @@ keywords:
 # AlloyDB Studio Explorer pane and enhanced query editor
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +39,44 @@ AlloyDB Studio now includes an Explorer pane integrated with an enhanced query e
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
-- [https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent)
-- [https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes](https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- [https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall](https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall)
+- [https://docs.cloud.google.com/alloydb/docs/query-insights-overview](https://docs.cloud.google.com/alloydb/docs/query-insights-overview)
+- [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
 
 ## Supporting Pages
 
-### "Integrate QueryData with an application \_|\_ AlloyDB for PostgreSQL \_\
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
-- Source ID: `site-docs-root-2`
-- Final score: 26
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- To generate SQL queries, perform the following steps: In the Explorer pane, next to your context set, click View actions .
-- In the Explorer pane , next to Context sets , click the Actions ( more vert ) icon.
-- In the Explorer pane , next to your context set, click View actions .
-- In the Explorer pane , next to your context set, click View actions .
-
-### Test QueryData \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent)
-- Source ID: `site-docs-root-2`
-- Final score: 22
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- To download and update a context set, perform the following steps: In the Explorer pane , click View actions .
-- In the Explorer pane , click View actions next to the context set you're using.
-- In the Explorer pane , click View actions next to the context set you're using.
-- In the Explorer pane , click View actions next to the context set you're using.
-
-### "Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \_\
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes](https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes)
-- Source ID: `site-docs-root`
-- Final score: 20
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 100
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- In the Explorer pane of the AlloyDB Studio, click manage accounts Switch user/database .
-- The Explorer pane displays a list of the objects in your database.
-- The Explorer pane displays a list of the objects in your database.
+### "Measure vector query recall \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall](https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall)
+- Source ID: `site-docs-root-2`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### About query insights \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/query-insights-overview](https://docs.cloud.google.com/alloydb/docs/query-insights-overview)
+- Source ID: `site-docs-root`
+- Final score: 90
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- Source ID: `site-docs-reference-2`
+- Final score: 88
+- Re-rank relevance: N/A
 

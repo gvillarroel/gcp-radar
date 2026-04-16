@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:23:14.065Z"
+generated_at: "2026-04-14T09:52:59.650Z"
 product_name: "Batch"
 product_slug: "batch"
 feature_name: "Batch job cancellation"
 feature_slug: "batch-job-cancellation"
 latest_feature_date: "2025-03-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs"
-  - "https://docs.cloud.google.com/batch/docs/release-notes"
-  - "https://docs.cloud.google.com/batch/docs/create-run-basic-job"
+  - "https://docs.cloud.google.com/batch/docs/create-run-job"
+  - "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient"
 keywords:
   - "cancellation"
-  - "general"
+  - "running"
   - "availability"
   - "supports"
-  - "of"
-  - "now"
-  - "job"
-  - "batch"
+  - "jobs"
 ---
 
 # Batch job cancellation
 
 Product: Batch
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ Batch now supports general availability of job cancellation for running jobs; Ca
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs](https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs)
-- [https://docs.cloud.google.com/batch/docs/release-notes](https://docs.cloud.google.com/batch/docs/release-notes)
-- [https://docs.cloud.google.com/batch/docs/create-run-basic-job](https://docs.cloud.google.com/batch/docs/create-run-basic-job)
+- [https://docs.cloud.google.com/batch/docs/create-run-job](https://docs.cloud.google.com/batch/docs/create-run-job)
+- [https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient)
 
 ## Supporting Pages
 
@@ -52,39 +49,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs](https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs)
 - Source ID: `site-api-reference`
-- Final score: 162
+- Final score: 126
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- For more information about configuring Pub/Sub notifications for a job, see https://cloud.google.com/batch/docs/enable-notifications . message object ( Message ) The attribute requirements of messages to be sent to this Pub/Sub topic.
-- Batch automatically applies predefined labels and supports multiple labels fields for each job, which each let you apply custom labels to various resources.
-- Batch automatically applies predefined labels and supports multiple labels fields for each job, which each let you apply custom labels to various resources.
-- Batch API now only supports booting from image. disks[] object ( AttachedDisk ) Non-boot disks to be attached for each VM created by this InstancePolicy.
+- The host file supports up to 1000 VMs. permissiveSsh boolean When true, Batch will configure SSH to allow passwordless login between VMs running the Batch tasks in the same TaskGroup. runAsNonRoot boolean Optional.
+- Resource: Job JSON representation TaskGroup JSON representation TaskSpec JSON representation Runnable JSON representation Container JSON representation Script JSON representation Barrier JSON representation Environment JSON representation KMSEnvMap JSON representation ComputeResource JSON representation LifecyclePolicy JSON representation Action ActionCondition JSON representation Volume JSON representation NFS JSON representation GCS JSON representation SchedulingPolicy AllocationPolicy JSON representation LocationPolicy JSON representation InstancePolicyOrTemplate JSON representation InstancePolicy JSON representation ProvisioningModel Accelerator JSON representation Disk JSON representation AttachedDisk JSON representation ServiceAccount JSON representation NetworkPolicy JSON representation NetworkInterface JSON representation PlacementPolicy JSON representation JobStatus JSON representation State TaskGroupStatus JSON representation InstanceStatus JSON representation LogsPolicy JSON representation Destination CloudLoggingOption JSON representation JobNotification JSON representation Message JSON representation Type Methods Resource: Job The Cloud Batch Job description.
+- JSON representation { "name" : string , "uid" : string , "priority" : string , "taskGroups" : [ { object ( TaskGroup ) } ] , "allocationPolicy" : { object ( AllocationPolicy ) } , "labels" : { string : string , ... } , "status" : { object ( JobStatus ) } , "createTime" : string , "updateTime" : string , "logsPolicy" : { object ( LogsPolicy ) } , "notifications" : [ { object ( JobNotification ) } ] } Fields name string Output only.
+- JSON representation { "type" : enum ( Type ) , "newJobState" : enum ( State ) , "newTaskState" : enum ( State ) } Fields type enum ( Type ) The message type. newJobState enum ( State ) The new job state. newTaskState enum ( State ) The new task state.
 
-### Batch release notes \_|\_ Google Cloud Documentation
+### Job creation and execution overview \_|\_ Batch \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/batch/docs/release-notes](https://docs.cloud.google.com/batch/docs/release-notes)
+- URL: [https://docs.cloud.google.com/batch/docs/create-run-job](https://docs.cloud.google.com/batch/docs/create-run-job)
 - Source ID: `site-docs-root`
-- Final score: 152
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Documentation has been updated to include the following samples: Create a basic container job Create a basic script job Create and run a job that uses storage volumes Define job resources using a VM instance template Delete a job View a list of your jobs View the details of a job View a list of a job's tasks View the details of a task View logs for a job For more information, see All Batch code samples .
-- Information that was previously on that page has been relocated to the following new pages: Batch locations Authenticate to Batch Create and run a job View jobs and tasks Analyze a job using logs Delete a job September 07, 2022 Feature Batch is now available in the following regions: asia-southeast1 and europe-west6 .
-- October 30, 2025 Change Dynamic Workload Scheduler for Batch ( Preview ) has been replaced with the following consumption options: Flex-start VMs ( Preview ) : We recommend Flex-start VMs if your job can withstand best-effort availability in exchange for discounted pricing and up to 7 days to finish running.
-- December 20, 2023 Breaking Logs from Batch jobs created after December 19, 2023 will no longer use the general-purpose generic task monitored resource type and instead use the new batch.googleapis.com/Job monitored resource type.
+- For the example jobs in Batch documentation, which are typically very small and use minimal resources, you might see them finish running in as little as a few minutes.
+- Specifically, the time a job takes to finish queueing and scheduling varies for different jobs and at different times based on the following factors: User-specified job prerequisites: any prerequisites that you require to be met before the job is scheduled.
+- Each VM has dedicated hardware for CPU cores (specifically virtual CPUs (vCPUs) ) and memory—which affect the performance of your job—and a boot disk—which stores an operating system (OS) image and instructions for running your job.
+- Custom status events let you describe important events that happen for runnables and appear when you view a job's history of status events , which can help make jobs easier to analyze and troubleshoot.
 
-### Create and run a basic job \_|\_ Batch \_|\_ Google Cloud Documentation
+### "Class BatchServiceAsyncClient (0.20.0) \_|\_ Python client libraries \_\
 
-- URL: [https://docs.cloud.google.com/batch/docs/create-run-basic-job](https://docs.cloud.google.com/batch/docs/create-run-basic-job)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 62
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- For more information, see Set up authentication for a local development environment . #include "google/cloud/batch/v1/batch client.h" []( std :: string const & project id , std :: string const & location id , std :: string const & job id ) { // Initialize the request; start with the fields that depend on the sample // input. google :: cloud :: batch :: v1 :: CreateJobRequest request ; request . set parent ( "projects/" + project id + "/locations/" + location id ); request . set job id ( job id ); // Most of the job description is fixed in this example; use a string to // initialize it. auto constexpr kText = R " pb( task groups { task count: 4 task spec { compute resource { cpu milli: 500 memory mib: 16 } max retry count: 2 max run duration { seconds: 3600 } runnables { container { image uri: "gcr.io/google-containers/busybox" entrypoint: "/bin/sh" commands: "-c" commands: "echo Hello world!
-- For more information, see Set up authentication for a local development environment . #include "google/cloud/batch/v1/batch client.h" []( std :: string const & project id , std :: string const & location id , std :: string const & job id ) { // Initialize the request; start with the fields that depend on the sample // input. google :: cloud :: batch :: v1 :: CreateJobRequest request ; request . set parent ( "projects/" + project id + "/locations/" + location id ); request . set job id ( job id ); // Most of the job description is fixed in this example; use a string to // initialize it. auto constexpr kText = R " pb( task groups { task count: 4 task spec { compute resource { cpu milli: 500 memory mib: 16 } max retry count: 2 max run duration { seconds: 3600 } runnables { script { text: "echo Hello world!
-- This job has a total of ${BATCH TASK COUNT} tasks." } } } } allocation policy { instances { policy { machine type: "e2-standard-4" provisioning model: STANDARD } } } labels { key: "env" value: "testing" } labels { key: "type" value: "container" } logs policy { destination: CLOUD LOGGING } )pb " ; auto job = request . mutable job (); if ( ! google :: protobuf :: TextFormat :: ParseFromString ( kText , job )) { throw std :: runtime error ( "Error parsing Job description" ); } // Create a client and issue the request. auto client = google :: cloud :: batch v1 :: BatchServiceClient ( google :: cloud :: batch v1 :: MakeBatchServiceConnection ()); auto response = client .
-- This job has a total of ${BATCH TASK COUNT} tasks." } } } } allocation policy { instances { policy { machine type: "e2-standard-4" provisioning model: STANDARD } } } labels { key: "env" value: "testing" } labels { key: "type" value: "script" } logs policy { destination: CLOUD LOGGING } )pb " ; auto job = request . mutable job (); if ( ! google :: protobuf :: TextFormat :: ParseFromString ( kText , job )) { throw std :: runtime error ( "Error parsing Job description" ); } // Create a client and issue the request. auto client = google :: cloud :: batch v1 :: BatchServiceClient ( google :: cloud :: batch v1 :: MakeBatchServiceConnection ()); auto response = client .
+- Union [ str , bytes ]]] = () ) - > None Starts asynchronous cancellation on a long-running operation.
+- Pattern: "projects/{project}/locations/{location}/jobs/{job}/taskGroups/{task group}" This corresponds to the parent field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import batch v1 async def sample list jobs(): Create a client client = batch v1 .
+- ListJobsRequest ( ) Make the request page result = client. list jobs (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.batch v1.types.ListJobsRequest , dict]] The request object.
 

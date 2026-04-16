@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.556Z"
+generated_at: "2026-04-14T23:59:44.415Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "nginx Log and Metric Collection in Ops Agent"
 feature_slug: "nginx-log-and-metric-collection-in-ops-agent"
 latest_feature_date: "2021-08-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
-  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/rotate-logs"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent"
   - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
 keywords:
   - "nginx"
   - "log"
-  - "and"
   - "metric"
   - "collection"
-  - "in"
   - "ops"
   - "agent"
+  - "can"
+  - "collect"
 ---
 
 # nginx Log and Metric Collection in Ops Agent
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +38,54 @@ Ops Agent can collect nginx logs and metrics for Cloud Logging and Monitoring.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation](https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation)
-- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/rotate-logs](https://docs.cloud.google.com/logging/docs/agent/ops-agent/rotate-logs)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration](https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent](https://docs.cloud.google.com/logging/docs/agent/ops-agent)
 - [https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies)
 
 ## Supporting Pages
 
-### "Installing the Ops Agent on individual VMs \_|\_ Cloud Logging \_|\_ Google\
+### Configure the Ops Agent \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation](https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation)
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration](https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration)
 - Source ID: `site-docs-root-2`
-- Final score: 288
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 195
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Documentation Observability Cloud Logging Guides Send feedback Installing the Ops Agent on individual VMs Stay organized with collections Save and categorize content based on your preferences.
-- To verify that the agent is working as expected, run: sudo systemctl status google-cloud-ops-agent" " Verify that the components "Logging Agent" and "Metrics Agent" are running.
-- The Ops Agent collects logs and metrics on Compute Engine instances, sending your logs to Cloud Logging and your metrics to Cloud Monitoring.
-- LINUX Run the following command on your instance: sudo systemctl restart google-cloud-ops-agent Windows Connect to your instance using RDP or a similar tool and login to Windows.
+- For more information about the metrics collected, see Metrics ingested by the receivers . logging : receivers : syslog : type : files include paths : - /var/log/messages - /var/log/syslog service : pipelines : default pipeline : receivers : [ syslog ] metrics : receivers : hostmetrics : type : hostmetrics collection interval : 60s processors : metrics filter : type : exclude metrics metrics pattern : [] service : pipelines : default pipeline : receivers : [ hostmetrics ] processors : [ metrics filter ] Windows By default, the Ops Agent collects Windows event logs from System , Application , and Security channels, as well as host metrics, IIS metrics, and SQL Server metrics.
+- The entire metrics configuration looks like the following: metrics : service : pipelines : default pipeline : receivers : [] The following example shows the built-in service configuration for Windows: metrics : service : pipelines : default pipeline : receivers : - hostmetrics - iis - mssql processors : - metrics filter The following service configuration customizes log verbosity for the metrics submodule to be debug instead: metrics : service : log level : debug Collection of self logs By default, the Ops Agent's Fluent Bit self logs are sent to Cloud Logging.
+- This processor supplies an empty metrics pattern value, so it doesn't exclude any metrics. processors : metrics filter : type : exclude metrics metrics pattern : [] To disable the collection of all process metrics by the Ops Agent, add the following to your config.yaml file: metrics: processors: metrics filter: type: exclude metrics metrics pattern: - agent.googleapis.com/processes/ This excludes process metrics from collection in the metrics filter processor that applies to the default pipeline in the metrics service.
+- To disable self-log collection, add a global section to your user-specified configuration file and set the default self log file collection option to the value false : logging: ... metrics: ... global: default self log file collection: false Log-rotation configuration Starting with Ops Agent version 2.31.0, you can also set up the agent's log-rotation feature by using the configuration files.
 
-### "Use log rotation for Ops Agent self logs \_|\_ Cloud Logging \_|\_ Google\
+### Ops Agent overview \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/rotate-logs](https://docs.cloud.google.com/logging/docs/agent/ops-agent/rotate-logs)
-- Source ID: `site-docs-root-2`
-- Final score: 274
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent](https://docs.cloud.google.com/logging/docs/agent/ops-agent)
+- Source ID: `site-docs-root`
+- Final score: 172
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The result, specifying all options and default values, looks like the following: logging: ... metrics: ... global: default self log file rotation: enabled: true max file size megabytes: 400 backup count: 1 Example configurations To disable log rotation by the Ops Agent, specify the enabled option with the value false : logging: ... metrics: ... global: default self log file rotation: enabled: false To rotate the log when the log file reaches 20 MB and keep 5 backups (6 files total): logging: ... metrics: ... global: default self log file rotation: max file size megabytes: 20 backup count: 5 To rotate the log when the log file reaches 2,000 MB (2 GB) and keep 1 backup (2 files total): logging: ... metrics: ... global: default self log file rotation: max file size megabytes: 2000 To rotate the log when the log file reaches 400 MB and keep 2 backups (3 files total): logging: ... metrics: ... global: default self log file rotation: backup count: 2 If you make frequent changes as you refine your log-rotation configuration, remember to restart the agent to apply your changes.
-- Home Documentation Observability Cloud Logging Guides Send feedback Use log rotation for Ops Agent self logs Stay organized with collections Save and categorize content based on your preferences.
-- Trigger the agent self log file to be larger than 1K by restarting the agent a few times: sudo service google-cloud-ops-agent restart Wait for the crontab or systemd timer to take effect to trigger the logrotate utility, or trigger the logrotate utility manually by running this command: sudo logrotate /etc/logrotate.d/google-cloud-ops-agent.conf Verify that you see rotated log files in the /var/log/google-cloud-ops-agent/subagents/ directory.
-- Install the logrotate utility by running the following command: On Debian and Ubuntu sudo apt install logrotate On CentOS, RHEL and Fedora sudo yum install logrotate Create a logrotate config file at /etc/logrotate.d/google-cloud-ops-agent.conf . sudo tee / etc / logrotate . d / google - cloud - ops - agent . conf > / dev / null << EOF logrotate config to rotate Google Cloud Ops Agent self log file.
+- Combining the collection of logs, metrics, and traces into a single process, the Ops Agent uses Fluent Bit for logs, which supports high-throughput logging, and the OpenTelemetry Collector for metrics and traces.
+- Metrics collected include: cpu metrics disk metrics iis metrics (Windows only) interface metrics gpu metrics (Linux only) memory metrics mssql metrics (Windows only) pagefile metrics (Windows only) swap metrics network metrics processes metrics agent self metrics : Third-party application support Curated integrations for third-party application metrics , which collect common app metrics and offer sample dashboards and alert policies.
+- Home Documentation Observability Cloud Logging Guides Send feedback Ops Agent overview Stay organized with collections Save and categorize content based on your preferences.
+- You can install the Ops Agent on Managed Service for Apache Spark clusters that use image version 2.2 and later to collect syslog logs and host metrics.
 
 ### "Install and manage the Ops Agent by using VM Extension Manager policies\
 
 - URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies)
 - Source ID: `site-docs-root-2`
-- Final score: 272
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 168
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Enable the APIs Grant roles required to use the Ops Agent To get the permissions that you need to use the Ops Agent to write logs and metrics, ask your administrator to grant you the following IAM roles on your service account: To write logs: Logging Logs Writer ( roles/logging.logWriter ) To write metrics: Monitoring Metric Writer ( roles/monitoring.metricWriter ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- For information about verifying collection of metrics, see Agent is running, but data is not ingested .
 - Home Documentation Observability Cloud Logging Guides Send feedback Install and manage the Ops Agent by using VM Extension Manager policies Stay organized with collections Save and categorize content based on your preferences.
 - Verify that the Ops Agent is collecting telemetry If the Ops Agent has been successfully installed and is running correctly, then it sends metrics to Cloud Monitoring and logs to Cloud Logging.
-- Enable the APIs required to use the Ops Agent To use the Ops Agent to write logs and metrics, you must enable the Cloud Logging API and Cloud Monitoring API on your Google Cloud project.
+- When the Ops Agent has been installed on the VM and is collecting logs and metrics, the agent's status is marked with a green checkmark next to the Ops Agent label.
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:26:31.354Z"
+generated_at: "2026-04-12T12:11:54.003Z"
 product_name: "Cloud Quotas"
 product_slug: "cloud-quotas"
 feature_name: "Quota adjuster Terraform support"
 feature_slug: "quota-adjuster-terraform-support"
 latest_feature_date: "2025-02-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/docs/quotas/quota-adjuster"
-  - "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples"
   - "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas"
+  - "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples"
+  - "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
 keywords:
   - "quota"
   - "adjuster"
@@ -25,7 +26,7 @@ keywords:
 # Quota adjuster Terraform support
 
 Product: Cloud Quotas
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,13 +38,14 @@ Quota adjuster can be managed with Terraform.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/docs/quotas/quota-adjuster](https://docs.cloud.google.com/docs/quotas/quota-adjuster)
-- [https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples](https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples)
 - [https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas](https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas)
+- [https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples](https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples)
+- [https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient](https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient)
 
 ## Supporting Pages
 
@@ -51,9 +53,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/docs/quotas/quota-adjuster](https://docs.cloud.google.com/docs/quotas/quota-adjuster)
 - Source ID: `site-docs-reference`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 245
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Service Quotas Artifact Registry API Requests per project in the Asia multi-region per minute Artifact Registry API Requests per project in the Europe multi-region per minute Artifact Registry API Requests per project in the US multi-region per minute Artifact Registry API Requests per project per region per minute per region Cloud Build API Build and Operation Get requests per minute Cloud Build API Build and Operation Get requests per minute per user Cloud Build API Concurrent Build CPUs (Regional Default Pool) Cloud Build API Concurrent Builds (Non-regional Default Pool) Cloud Key Management Service API Cryptographic requests per minute Cloud Key Management Service API HSM cryptographic usage Cloud Key Management Service API Read requests per minute Cloud Key Management Service API Read usage Cloud Key Management Service API Software cryptographic usage Cloud Key Management Service API Write requests per minute Cloud Key Management Service API Write usage Cloud Logging API Log write bytes per minute per region Cloud Monitoring API Time series ingestion requests Cloud Monitoring API Time series queries Cloud Resource Manager API Read requests per minute Cloud Run Admin API Job run requests per minute per region Cloud Run Admin API Read requests per minute per region Cloud Run Admin API Total CPU allocation, in milli vCPU, per project per region Cloud Run Admin API Write requests per minute per region Cloud Trace API Write requests (free) per minute Compute Engine API Affinity groups Compute Engine API Backend buckets Compute Engine API C2 CPUs Compute Engine API C2D CPUs Compute Engine API C3 CPUs Compute Engine API Commitments Compute Engine API Committed A2 CPUs Compute Engine API Committed CPUs Compute Engine API Committed licenses Compute Engine API Committed local SSD disk reserved (GB) Compute Engine API Committed M3 CPUs Compute Engine API Committed Memory Optimized CPUs Compute Engine API Committed N2 CPUs Compute Engine API Committed N2D CPUs Compute Engine API Committed T2D CPUs Compute Engine API CPUs Compute Engine API CPUs per VM family Compute Engine API Cross Project Networking Service projects Compute Engine API External passthrough Network Load Balancer backend services Compute Engine API External passthrough Network Load Balancer forwarding rules Compute Engine API External protocol forwarding rules Compute Engine API External VPN gateways Compute Engine API Firewall rules Compute Engine API Forwarding rules Compute Engine API Global external managed backend services Compute Engine API Global internal managed backend buckets Compute Engine API Global internal managed backend services Compute Engine API Global SSL policies Compute Engine API Global External Managed Forwarding Rules Compute Engine API Global external proxy LB backend services Compute Engine API Global internal traffic director backend services Compute Engine API GPU count per GPU family Compute Engine API GPUs (all regions) Compute Engine API Health checks Compute Engine API Images Compute Engine API Interconnect Attachment Groups Compute Engine API Interconnect attachments Compute Engine API Interconnect attachments per Interconnect Compute Engine API Interconnect attachments total Mbps Compute Engine API Interconnect Groups Compute Engine API Interconnects Compute Engine API In-use IP addresses Compute Engine API In-use regional external IPv4 addresses Compute Engine API In-use snapshot schedules Compute Engine API Instance groups Compute Engine API Instance templates Compute Engine API Instances Per peering group Compute Engine API Instances per VPC Network Compute Engine API Internal protocol forwarding rules per peering group Compute Engine API Internal protocol forwarding rules per VPC network Compute Engine API Internal IP addresses Compute Engine API Internal passthrough Network Load Balancer backend services Compute Engine API Internal passthrough Network Load Balancer forwarding rules per peering group Compute Engine API Internal passthrough Network Load Balancer forwarding rules per VPC network Compute Engine API IP Aliases per peering group Compute Engine API IP Aliases per VPC Network Compute Engine API Local SSD disk per VM family (GB) Compute Engine API M1 CPUs Compute Engine API M2 CPUs Compute Engine API M3 CPUs Compute Engine API Managed instance groups Compute Engine API N2 CPUs Compute Engine API N2D CPUs Compute Engine API Network Attachments Compute Engine API Network endpoint groups Compute Engine API Network firewall policies Compute Engine API Network load balancing security policies Compute Engine API Network load balancing security policy rules Compute Engine API Network load balancing security policy rule attributes Compute Engine API Networks Compute Engine API NVIDIA A2 CPUs Compute Engine API Packet mirrorings Compute Engine API Persistent Disk IOPS Compute Engine API Persistent Disk SSD (GB) Compute Engine API Persistent Disk Standard (GB) Compute Engine API Preemptible CPUs Compute Engine API Preemptible Local SSD (GB) Compute Engine API Preemptible NVIDIA A100 80GB GPUs Compute Engine API Preemptible NVIDIA A100 GPUs Compute Engine API Preemptible NVIDIA H100 GPUs Compute Engine API Preemptible NVIDIA H100 MEGA GPUs Compute Engine API Preemptible NVIDIA K80 GPUs Compute Engine API Preemptible NVIDIA L4 GPUs Compute Engine API Preemptible NVIDIA L4 Virtual Workstation GPUs Compute Engine API Preemptible NVIDIA P100 GPUs Compute Engine API Preemptible NVIDIA P100 Virtual Workstation GPUs Compute Engine API Preemptible NVIDIA P4 GPUs Compute Engine API Preemptible NVIDIA P4 Virtual Workstation GPUs Compute Engine API Preemptible NVIDIA T4 GPUs Compute Engine API Preemptible NVIDIA T4 Virtual Workstation GPUs Compute Engine API Preemptible NVIDIA V100 GPUs Compute Engine API Public advertised prefixes Compute Engine API PSC ILB Consumer Forwarding Rules per Producer VPC Network Compute Engine API PSC Internal LB Forwarding Rules Compute Engine API Regional external managed backend services Compute Engine API Regional External Managed Forwarding Rules per region per VPC Network Compute Engine API Regional Instance templates Compute Engine API Regional Internal Managed Load Balancer Forwarding Rules per region per VPC Network Compute Engine API Regional internal managed backend services Compute Engine API Regional internal traffic director backend services Compute Engine API Regional managed instance groups Compute Engine API Regional Network Firewall Policies Compute Engine API Regional security policies Compute Engine API Regional security policy rules Compute Engine API Regional security policy rules with an advanced match condition Compute Engine API Regional SSL policies Compute Engine API Regional Target TCP proxies Compute Engine API Routers Compute Engine API Rule attributes per global network firewall policy Compute Engine API Rule attributes per regional network firewall policy Compute Engine API Security policies Compute Engine API Security policy rules Compute Engine API Security policy rules language rules Compute Engine API Service Attachments Compute Engine API Snapshots Compute Engine API SSL certificates Compute Engine API Static BYOIP IP addresses Compute Engine API Static IP addresses Compute Engine API Static global internal IPv4 addresses Compute Engine API Subnet ranges Per peering group Compute Engine API Subnetwork ranges per VPC Network Compute Engine API T2A CPUs Compute Engine API T2D CPUs Compute Engine API Target HTTP proxies Compute Engine API Target HTTPS proxies Compute Engine API Target SSL proxies Compute Engine API Target TCP proxies Compute Engine API Target instances Compute Engine API Target pools Compute Engine API Target VPN gateways Compute Engine API Total Local SSD disk reserved (GB) Compute Engine API Traffic director forwarding rules Compute Engine API Unique Cloud Router dynamic route prefixes from other regions per region per VPC Network Compute Engine API Unique Cloud Router dynamic route prefixes from own region per region per VPC Network Compute Engine API URL maps Compute Engine API VM instances Compute Engine API VPN gateways Compute Engine API VPN tunnels Connect gateway API Gateway Connection Requests per minute Dialogflow API All other requests per minute Filestore API Backups per region Filestore API Basic HDD (Standard) capacity (GB) per region Filestore API Basic SSD (Premium) capacity (GB) per region Filestore API Zonal & Regional 1-10 TiB (Enterprise) capacity (GB) per region Filestore API Zonal & Regional 10-100 TiB (High Scale) capacity (GB) per region Google Cloud Memorystore for Redis API Total Redis capacity (GB) per region Google Cloud Memorystore for Redis API Total Redis Cluster units per project per region Google Sheets API Read requests per minute per project Google Sheets API Read requests per minute per user Google Sheets API Write requests per minute per project Google Sheets API Write requests per minute per user Memorystore API Total Memorystore units per project per region Remote Build Execution Number of reserved N2 CPUs (per region) Transcoder API Batch concurrent job count Transcoder API Batch pending job count Transcoder API Concurrent job count Transcoder API Dubbing job count Transcoder API Get requests Transcoder API List requests Transcoder API Mutation requests Vertex AI API Custom model serving CPUs per region Vertex AI API Custom model serving Nvidia T4 GPUs per region Vertex AI API Custom model training Nvidia T4 GPUs per region Vertex AI API Generate content requests per minute per project per base model Vertex AI API Regional online prediction requests per minute per project per base model Note: To see the full list of available dimensions, expand this entry in the Google Cloud console.
@@ -61,13 +63,26 @@ Evidence snippets:
 - Enable quota adjuster on an organization To specify an organization , use the --organization flag: gcloud beta quotas adjuster settings update --organization= ORGANIZATION ID --enablement=enabled Replace ORGANIZATION ID with the organization ID of the organization for which you want to enable the quota adjuster.
 - Disable quota adjuster on a project To specify a project , use the --project flag: gcloud beta quotas adjuster settings update --project= PROJECT ID OR NUMBER --enablement=disabled Replace PROJECT ID OR NUMBER with the project ID or project number of the project for which you want to disable the quota adjuster.
 
+### Terraform support for Cloud Quotas \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas](https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas)
+- Source ID: `site-docs-reference`
+- Final score: 206
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To use Terraform with Cloud Quotas, create a configuration file to describe your infrastructure, and then apply the configuration file to create an execution plan and perform operations to provision your infrastructure.
+- You can use Terraform to do the following with Cloud Quotas: Retrieve the QuotaInfo data source of a quota for a project, folder or organization.
+- Resources Cloud Quotas provides the following Terraform resources: google cloud quotas quota preference google cloud quotas quota adjuster settings ( Preview ) Data sources Cloud Quotas provides the following Terraform data sources: google cloud quotas quota info google cloud quotas quota infos What's next Learn more about Terraform: What is Terraform?
+- Before you begin Before you begin, you need access to Terraform: If you're getting started, note that Cloud Shell has Terraform already integrated, and you can follow this step by step tutorial, Deploy a basic Flask web server using Terraform and Cloud Shell.
+
 ### "Manage quotas using the gcloud beta CLI \_|\_ Cloud Quotas \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples](https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples)
 - Source ID: `site-docs-reference`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 199
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - The output would contain data specific to your configuration and look similar to the following example output: createTime : ' CREATE TIME ' dimensions : gpu family : NVIDIA H100 region : us-east4 etag : ETAG VALUE name : projects/12345/locations/global/quotaPreferences/ PREFERENCE ID quotaConfig : grantedValue : '0' preferredValue : '128' traceId : TRACE ID quotaId : GPUS-PER-GPU-FAMILY-per-project-region reconciling : true service : compute.googleapis.com updateTime : ' UPDATE TIME ' Enable quota adjuster through a client project A client project refers to the project used by an application or user to access and interact with Google Cloud resources, while a resource project is the underlying project where those resources are stored and managed.
@@ -75,17 +90,17 @@ Evidence snippets:
 - Optional: To view the current quota adjuster settings, run the following command: gcloud beta quotas adjuster settings describe --project= RESOURCE PROJECT ID The output is similar to the following example: enablement: ENABLED etag: 8izmJp6EI mOfLyhkQU9 name: projects/ RESOURCE PROJECT ID /locations/global/quotaAdjusterSettings updateTime: '2025-01-10T17:22:37.883221181Z' To enable quota adjuster for multiple client projects, follow the previous steps 5 to 8.
 - Activate the service account using the service account key that you created earlier: gcloud auth activate-service-account --key-file= KEY FILE Enable quota adjuster on your resource project by specifying the project and the enablement setting: gcloud beta quotas adjuster settings update --project= RESOURCE PROJECT ID \ --enablement= enabled The enablement setting is required when using the gcloud CLI and must be set to enabled or disabled .
 
-### Terraform support for Cloud Quotas \_|\_ Google Cloud Documentation
+### "Class CloudQuotasAsyncClient (0.6.0) \_|\_ Python client libraries \_|\_\
 
-- URL: [https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas](https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas)
-- Source ID: `site-docs-reference`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient](https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To use Terraform with Cloud Quotas, create a configuration file to describe your infrastructure, and then apply the configuration file to create an execution plan and perform operations to provision your infrastructure.
-- You can use Terraform to do the following with Cloud Quotas: Retrieve the QuotaInfo data source of a quota for a project, folder or organization.
-- Resources Cloud Quotas provides the following Terraform resources: google cloud quotas quota preference google cloud quotas quota adjuster settings ( Preview ) Data sources Cloud Quotas provides the following Terraform data sources: google cloud quotas quota info google cloud quotas quota infos What's next Learn more about Terraform: What is Terraform?
-- Before you begin Before you begin, you need access to Terraform: If you're getting started, note that Cloud Shell has Terraform already integrated, and you can follow this step by step tutorial, Deploy a basic Flask web server using Terraform and Cloud Shell.
+- An example name: projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- Name of the resource Example name: projects/123/locations/global/quota preferences/my-config-for-us-east1 This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- This corresponds to the quota preference id field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- If a Callable is given, it will be called with the same set of initialization arguments as used in the CloudQuotasTransport constructor.
 

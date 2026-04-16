@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:19:49.788Z"
+generated_at: "2026-04-12T12:18:48.304Z"
 product_name: "Sheets API"
 product_slug: "sheets-api"
 feature_name: "Google Sheets API smart chips support"
 feature_slug: "google-sheets-api-smart-chips-support"
 latest_feature_date: "2025-06-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/sheets/api/guides/chips"
   - "https://developers.google.com/workspace/sheets/api/guides/create"
   - "https://developers.google.com/workspace/sheets/api/guides/migration"
+  - "https://developers.google.com/workspace/sheets/api/guides/concepts"
 keywords:
   - "sheets"
   - "api"
@@ -26,7 +27,7 @@ keywords:
 # Google Sheets API smart chips support
 
 Product: Sheets API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The Google Sheets API now supports creating, updating, and reading Google Drive 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/sheets/api/guides/chips](https://developers.google.com/workspace/sheets/api/guides/chips)
 - [https://developers.google.com/workspace/sheets/api/guides/create](https://developers.google.com/workspace/sheets/api/guides/create)
 - [https://developers.google.com/workspace/sheets/api/guides/migration](https://developers.google.com/workspace/sheets/api/guides/migration)
+- [https://developers.google.com/workspace/sheets/api/guides/concepts](https://developers.google.com/workspace/sheets/api/guides/concepts)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/sheets/api/guides/chips](https://developers.google.com/workspace/sheets/api/guides/chips)
 - Source ID: `site-docs-root`
-- Final score: 170
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,9 +67,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/sheets/api/guides/create](https://developers.google.com/workspace/sheets/api/guides/create)
 - Source ID: `site-docs-root`
-- Final score: 138
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 170
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Builder ( new NetHttpTransport (), GsonFactory . getDefaultInstance (), requestInitializer ) . setApplicationName ( "Sheets samples" ) . build (); // Create new spreadsheet with a title Spreadsheet spreadsheet = new Spreadsheet () . setProperties ( new SpreadsheetProperties () . setTitle ( title )); spreadsheet = service . spreadsheets (). create ( spreadsheet ) . setFields ( "spreadsheetId" ) . execute (); // Prints the new spreadsheet id System . out . println ( "Spreadsheet ID: " + spreadsheet . getSpreadsheetId ()); return spreadsheet . getSpreadsheetId (); } } JavaScript sheets/snippets/sheets create.js View on GitHub function create ( title , callback ) { try { gapi . client . sheets . spreadsheets . create ({ properties : { title : title , }, }). then (( response ) = > { if ( callback ) callback ( response ); console . log ( 'Spreadsheet ID: ' + response . result . spreadsheetId ); }); } catch ( err ) { document . getElementById ( 'content' ). innerText = err . message ; return ; } } Node.js sheets/snippets/sheets create.js View on GitHub import { GoogleAuth } from 'google-auth-library' ; import { google } from 'googleapis' ; / Creates a new Google Spreadsheet. @param {string} title The title of the new spreadsheet. @return {string} The ID of the created spreadsheet. / async function create ( title ) { // Authenticate with Google and get an authorized client. const auth = new GoogleAuth ({ scopes : 'https://www.googleapis.com/auth/spreadsheets' , }); // Create a new Sheets API client. const service = google . sheets ({ version : 'v4' , auth }); // The resource body for creating a new spreadsheet. const resource = { properties : { title , }, }; // Create the new spreadsheet. const spreadsheet = await service . spreadsheets . create ({ resource , fields : 'spreadsheetId' , }); // Log the ID of the new spreadsheet. console . log ( Spreadsheet ID: ${ spreadsheet . data . spreadsheetId } ); return spreadsheet . data . spreadsheetId ; } PHP sheets/snippets/src/SpreadsheetCreate.php View on GitHub < ?php use Google\Client; use Google\Service\Drive; use Google\Service\Sheets\SpreadSheet; / create an empty spreadsheet / function create($title) { / Load pre-authorized user credentials from the environment.
@@ -79,13 +81,27 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/sheets/api/guides/migration](https://developers.google.com/workspace/sheets/api/guides/migration)
 - Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 154
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The Sheets API v4 spreadsheets.get method provides access to this information, and much more. v3 API The worksheet feed is accessible from this API endpoint (using an appropriate authorization header): GET https://spreadsheets.google.com/feeds/worksheets/ spreadsheetId /private/full The response to this request has a structure similar to this, with each sheet's data contained in a separate <entry> : < feed xmlns = "http://www.w3.org/2005/Atom" xmlns : openSearch = "http://a9.com/-/spec/opensearch/1.1/" xmlns : gs = "http://schemas.google.com/spreadsheets/2006" xmlns : gd = "http://schemas.google.com/g/2005" gd : etag = ' W / "D0cERnk-eip7ImA9WBBXGEg." ' > < id>https : //spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full</id> < updated>2006 - 11 - 17 T18 : 23 : 45.173 Z < / updated > < title type = "text" > Groceries R Us < / title > < link rel = "alternate" type = "text/html" href = "https://spreadsheets.google.com/ccc?key=spreadsheetId" / > < link rel = "http://schemas.google.com/g/2005#feed" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full" / > < link rel = "self" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full" / > < link rel = "http://schemas.google.com/g/2005#post" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full" / > < author > < name>Fitzwilliam Darcy < / name > < email>fitz @ example . com < / email > < / author > < openSearch : totalResults>1 < / openSearch : totalResults > < openSearch : startIndex>1 < / openSearch : startIndex > < openSearch : itemsPerPage>1 < / openSearch : itemsPerPage > < entry gd : etag = ' "YDwqeyI." ' > < id>https : //spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full/sheetId</id> < updated>2006 - 11 - 17 T18 : 23 : 45.173 Z < / updated > < title type = "text" > Sheet1 < / title > < content type = "text" > Sheet1 < / content > < link rel = "http://schemas.google.com/spreadsheets/2006#listfeed" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/list/spreadsheetId/sheetId/private/full" / > < link rel = "http://schemas.google.com/spreadsheets/2006#cellsfeed" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/cells/spreadsheetId/sheetId/private/full" / > < link rel = "self" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full/sheetId" / > < link rel = "edit" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full/sheetId/version" / > < gs : rowCount>100 < / gs : rowCount > < gs : colCount>20 < / gs : colCount > < / entry > < / feed > v4 API The spreadsheets.get method can be used to acquire sheet properties and other metadata—much more than what is available using the Sheets API v3.
 - For example: PUT https://spreadsheets.google.com/feeds/worksheets/ spreadsheetId /private/full/ sheetId /version < entry > < id > https : //spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full/sheetId < / id > < updated>2007 - 07 - 30 T18 : 51 : 30.666 Z < / updated > < category scheme = "http://schemas.google.com/spreadsheets/2006" term = "http://schemas.google.com/spreadsheets/2006#worksheet" / > < title type = "text" > Expenses < / title > < content type = "text" > Expenses < / content > < link rel = "http://schemas.google.com/spreadsheets/2006#listfeed" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/list/spreadsheetId/sheetId/private/full" / > < link rel = "http://schemas.google.com/spreadsheets/2006#cellsfeed" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/cells/spreadsheetId/sheetId/private/full" / > < link rel = "self" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full/sheetId" / > < link rel = "edit" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/worksheets/spreadsheetId/private/full/sheetId/version" / > < gs : rowCount>45 < / gs : rowCount > < gs : colCount>15 < / gs : colCount > < / entry > v4 API To update the size, title, and other sheet properties, make an updateSheetProperties request in the spreadsheets.batchUpdate method.
 - For example: PUT https://spreadsheets.google.com/feeds/list/ spreadsheetId / sheetId /private/full/ rowId /version < entry gd : etag = ' "S0wCTlpIIip7ImA0X0QI" ' > < id>rowId < / id > < updated>2006 - 11 - 17 T18 : 23 : 45.173 Z < / updated > < category scheme = "http://schemas.google.com/spreadsheets/2006" term = "http://schemas.google.com/spreadsheets/2006#list" / > < title type = "text" > Bingley < / title > < content type = "text" > Hours : 10 , Items : 2 , IPM : 0.0033 < / content > < link rel = "self" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/list/spreadsheetId/sheetId/private/full/rowId" / > < link rel = "edit" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/list/spreadsheetId/sheetId/private/full/rowId/version" / > < gsx : name>Bingley < / gsx : name > < gsx : hours>20 < / gsx : hours > < gsx : items>4 < / gsx : items > < gsx : ipm>0 .0033 < / gsx : ipm > < / entry > v4 API With Sheets API v4, you can edit a row using the A1 notation of the row you wish to edit and issuing a spreadsheets.values.update request to overwrite that row.
 - For example, a response may include cell entries similar in structure to the following: < entry gd : etag = ' "ImB5CBYSRCp7" ' > < id>https : //spreadsheets.google.com/feeds/cells/spreadsheetId/sheetId/private/full/R9C4</id> < updated>2006 - 11 - 17 T18 : 27 : 32.543 Z < / updated > < category scheme = "http://schemas.google.com/spreadsheets/2006" term = "http://schemas.google.com/spreadsheets/2006#cell" / > < title type = "text" > D4 < / title > < content type = "text" > 5 < / content > < link rel = "self" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/cells/spreadsheetId/sheetId/private/full/R9C4" / > < link rel = "edit" type = "application/atom+xml" href = "https://spreadsheets.google.com/feeds/cells/spreadsheetId/sheetId/private/full/R9C4/srevc" / > < gs : cell row = "4" col = "4" inputValue = "=FLOOR(C4/(B4 60),.0001)" numericValue = "5.0" > 5 < / gs : cell > < / entry > v4 API Retrieve cell data by calling a spreadsheets.values.get or spreadsheets.values.batchGet method for the range or ranges of interest, respectively.
+
+### Google Sheets API Overview \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/sheets/api/guides/concepts](https://developers.google.com/workspace/sheets/api/guides/concepts)
+- Source ID: `site-docs-root`
+- Final score: 147
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The Sheets API lets you: Create spreadsheets Read and write spreadsheet cell values Update spreadsheet formatting Manage Connected Sheets The following is a list of common terms used in the Sheets API: Spreadsheet The primary object in Google Sheets.
+- The Google Sheets API is a RESTful interface that lets you read and modify a spreadsheet's data.
+- To learn how to configure and run a Sheets API app, try the JavaScript quickstart .
+- Spreadsheet IDs are stable, even if the spreadsheet name changes. https://docs.google.com/spreadsheets/d/ SPREADSHEET ID /edit?gid= SHEET ID #gid= SHEET ID Sheet A page or tab within a spreadsheet.
 

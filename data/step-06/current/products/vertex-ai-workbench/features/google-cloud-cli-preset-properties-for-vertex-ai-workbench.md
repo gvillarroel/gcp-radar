@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:49:36.612Z"
+generated_at: "2026-04-14T17:42:01.011Z"
 product_name: "Vertex AI Workbench"
 product_slug: "vertex-ai-workbench"
 feature_name: "Google Cloud CLI preset properties for Vertex AI Workbench"
 feature_slug: "google-cloud-cli-preset-properties-for-vertex-ai-workbench"
 latest_feature_date: "2025-10-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
-  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
-  - "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
-  - "https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks"
+  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom"
+  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl"
+  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup"
 keywords:
   - "cli"
   - "preset"
   - "properties"
-  - "for"
   - "vertex"
   - "ai"
   - "workbench"
   - "prepopulates"
+  - "project"
 ---
 
 # Google Cloud CLI preset properties for Vertex AI Workbench
 
 Product: Vertex AI Workbench
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,66 +38,55 @@ Prepopulates project and region properties when using Google Cloud CLI commands 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials)
-- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks](https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks)
-- [https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref](https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref)
-- [https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks](https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks)
+- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom)
+- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl)
+- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup)
 
 ## Supporting Pages
 
-### "Vertex Explainable AI notebook tutorials \_|\_ Vertex AI \_|\_ Google Cloud\
+### "Hello custom training: Set up your project and environment \_|\_ Vertex\
 
-- URL: [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials)
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom)
 - Source ID: `site-docs-root`
-- Final score: 238
-- Re-rank relevance: N/A
+- Final score: 58
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Tutorial steps Installation of required libraries Reading the dataset from a Cloud Storage bucket Performing exploratory analysis on the dataset Preprocessing the dataset Training a random forest model using scikitlearn Saving the model to a Cloud Storage bucket Creating a Vertex AI model resource and deploying to an endpoint Running the WhatIf Tool on test data Undeploying the model and cleaning up the model resources Colab GitHub Vertex AI Workbench Vertex AI Workbench BigQuery ML Churn prediction for game developers using Google Analytics 4 and BigQuery ML .
-- Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .
-- Tutorial steps Using Python & SQL to query public data in BigQuery Exploring the dataset using BigQuery INFORMATION SCHEMA Creating interactive elements to help explore interesting parts of the data Doing some exploratory correlation and time series analysis Creating static and interactive outputs (data tables and plots) in the notebook Saving some outputs to Cloud Storage Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Workbench Custom training Build a fraud detection model on Vertex AI .
-- List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction .
+- Home Documentation AI and ML Vertex AI Send feedback Hello custom training: Set up your project and environment Stay organized with collections Save and categorize content based on your preferences.
+- This page walks through setting up your Google Cloud project to use Vertex AI and downloading some TensorFlow code for training.
+- Download sample code Download sample code to use for the rest of the tutorial. gcloud storage cp gs://cloud-samples-data/ai-platform/hello-custom/hello-custom-sample-v1.tar.gz - tar -xzv To optionally view the sample code files, run the following command: ls -lpR hello-custom-sample The hello-custom-sample directory has four items: trainer/ : A directory of TensorFlow Keras code for training the flower classification model. setup.py : A configuration file for packaging the trainer/ directory into a Python source distribution that Vertex AI can use. function/ : A directory of Python code for a Cloud Run function that can receive and preprocess prediction requests from a web browser, send them to Vertex AI, process the prediction responses, and send them back to the browser. webapp/ : A directory with code and markup for a web app that gets flower classification predictions from Vertex AI.
+- If Cloud Shell does not display ( PROJECT ID )$ in its prompt (where PROJECT ID is replaced by your Google Cloud project ID), then run the following command to configure Cloud Shell to use your project: gcloud config set project PROJECT ID Create a Cloud Storage bucket Create a regional Cloud Storage bucket in the us-central1 region to use for the rest of this tutorial.
 
-### Custom training notebook tutorials \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+### "Hello image data: Set up your project and environment \_|\_ Vertex AI \_\
 
-- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks](https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks)
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl)
 - Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: N/A
+- Final score: 58
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Tutorial steps Installation of required libraries Reading the dataset from a Cloud Storage bucket Performing exploratory analysis on the dataset Preprocessing the dataset Training a random forest model using scikitlearn Saving the model to a Cloud Storage bucket Creating a Vertex AI model resource and deploying to an endpoint Running the WhatIf Tool on test data Undeploying the model and cleaning up the model resources Colab GitHub Vertex AI Workbench Vertex AI Workbench BigQuery ML Churn prediction for game developers using Google Analytics 4 and BigQuery ML .
-- Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .
-- Tutorial steps Using Python & SQL to query public data in BigQuery Exploring the dataset using BigQuery INFORMATION SCHEMA Creating interactive elements to help explore interesting parts of the data Doing some exploratory correlation and time series analysis Creating static and interactive outputs (data tables and plots) in the notebook Saving some outputs to Cloud Storage Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Workbench Custom training Build a fraud detection model on Vertex AI .
-- List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction .
+- Home Documentation AI and ML Vertex AI Send feedback Hello image data: Set up your project and environment Stay organized with collections Save and categorize content based on your preferences.
+- You'll set up your Google Cloud project to use Vertex AI.
+- Enable the IAM, Compute Engine, Notebooks, Cloud Storage, and Vertex AI APIs: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.
+- Run the following command once for each of the following IAM roles: roles/aiplatform.user, roles/storage.admin gcloud projects add-iam-policy-binding PROJECT ID --member = "user: USER IDENTIFIER " --role = ROLE Replace the following: PROJECT ID : Your project ID.
 
-### Introduction to the Vertex AI SDK for Python \_|\_ Google Cloud Documentation
+### "Hello tabular data: Set up your project and environment \_|\_ Vertex AI\
 
-- URL: [https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref](https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref)
-- Source ID: `site-api-reference`
-- Final score: 180
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- To see an example of using the Vertex AI SDK as part of a more comprehensive workflow, run the "Custom training and online prediction" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Understand the Vertex AI SDK and client library differences When you install the Vertex AI SDK for Python, the Vertex AI Python client library is also installed.
-- Python reference for Vertex AI : contains reference documentation for all of the namespaces, classes, methods, and properties in the google-cloud-aiplatform package, which includes the Vertex AI SDK, the Vertex AI SDK preview, and the Vertex AI Client libraries.
-- Write code with the Vertex AI SDK for Python To use the Vertex AI SDK for Python: Install the google-cloud-aiplatform package, which includes both the Vertex AI SDK for Python and the Vertex AI Python client library, by running the following command in your virtual environment: pip install -- upgrade google - cloud - aiplatform Use the following code to import the google.cloud.aiplatform namespace: from google.cloud import aiplatform Preview: To use features for the Vertex AI SDK for Python that are still in preview , import vertexai.preview : import vertexai.preview If you're using a local shell, then create local authentication credentials for your user account: gcloud auth application-default login You don't need to do this if you're using Cloud Shell.
-- Use Vertex AI Python client library and SDK together If you use the Vertex AI SDK for Python and discover you need greater flexibility or control, or if you need a method not included in the Vertex AI SDK, you can use the Vertex AI Python client library in the same workflow.
-
-### Ray on Vertex AI notebook tutorials \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks](https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks)
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup)
 - Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: N/A
+- Final score: 58
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Tutorial steps Installation of required libraries Reading the dataset from a Cloud Storage bucket Performing exploratory analysis on the dataset Preprocessing the dataset Training a random forest model using scikitlearn Saving the model to a Cloud Storage bucket Creating a Vertex AI model resource and deploying to an endpoint Running the WhatIf Tool on test data Undeploying the model and cleaning up the model resources Colab GitHub Vertex AI Workbench Vertex AI Workbench BigQuery ML Churn prediction for game developers using Google Analytics 4 and BigQuery ML .
-- Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .
-- Tutorial steps Using Python & SQL to query public data in BigQuery Exploring the dataset using BigQuery INFORMATION SCHEMA Creating interactive elements to help explore interesting parts of the data Doing some exploratory correlation and time series analysis Creating static and interactive outputs (data tables and plots) in the notebook Saving some outputs to Cloud Storage Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Workbench Custom training Build a fraud detection model on Vertex AI .
-- List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction .
+- Home Documentation AI and ML Vertex AI Send feedback Hello tabular data: Set up your project and environment Stay organized with collections Save and categorize content based on your preferences.
+- For this part of the tutorial, you set up your Google Cloud project to use Vertex AI and a Cloud Storage bucket that contains the documents for training your AutoML model.
+- Enable the IAM, Compute Engine, Notebooks, Cloud Storage, and Vertex AI APIs: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.
+- Run the following command once for each of the following IAM roles: roles/aiplatform.user, roles/storage.admin gcloud projects add-iam-policy-binding PROJECT ID --member = "user: USER IDENTIFIER " --role = ROLE Replace the following: PROJECT ID : Your project ID.
 

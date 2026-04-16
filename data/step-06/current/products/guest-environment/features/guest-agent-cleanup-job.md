@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:36.762Z"
+generated_at: "2026-04-12T12:17:24.228Z"
 product_name: "Guest Environment"
 product_slug: "guest-environment"
 feature_name: "Guest agent cleanup job"
 feature_slug: "guest-agent-cleanup-job"
 latest_feature_date: "2026-03-02"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/compute/docs/images/guest-agent"
+  - "https://docs.cloud.google.com/compute/docs/images/guest-environment"
+  - "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes"
+  - "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering"
 keywords:
   - "guest"
   - "agent"
@@ -24,7 +27,7 @@ keywords:
 # Guest agent cleanup job
 
 Product: Guest Environment
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ The guest agent runs a daily cleanup job and another at service initialization t
 
 The guest agent runs a daily cleanup job and another at service initialization to remove leftover plugin files and state.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/compute/docs/images/guest-agent](https://docs.cloud.google.com/compute/docs/images/guest-agent)
+- [https://docs.cloud.google.com/compute/docs/images/guest-environment](https://docs.cloud.google.com/compute/docs/images/guest-environment)
+- [https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes](https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes)
+- [https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering](https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### About the guest agent \_|\_ Compute Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/compute/docs/images/guest-agent](https://docs.cloud.google.com/compute/docs/images/guest-agent)
+- Source ID: `site-docs-reference`
+- Final score: 198
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Plugin-based agent binaries This table lists the file paths for the plugin-based guest agent binaries on Linux and Windows instances: Component Path on Linux Path on Windows Guest agent manager /usr/bin/google guest agent manager C:\ProgramData\Google\Compute Engine\agent\GCEWindowsAgentManager.exe Core plugin binary /usr/lib/google/guest agent/core plugin C:\Program Files\Google\Compute Engine\agent\CorePlugin.exe Metadata script runner /usr/bin/gce metadata script runner C:\Program Files\Google\Compute Engine\agent\GCEMetadataScriptRunner.exe Monolithic agent binaries The following table lists the file paths for the monolithic guest agent binaries on Linux and Windows instances: Component Path on Linux Path on Windows Guest agent /usr/bin/google guest agent C:\Program Files\Google\Compute Engine\agent\GCEWindowsAgent.exe Metadata script runner /usr/bin/google metadata script runner C:\Program Files\Google\Compute Engine\metadata scripts\GCEMetadataScripts.exe Authorized keys Not applicable C:\Program Files\Google\Compute Engine\agent\GCEAuthorizedKeys.exe Guest agent daemon services The following tables list the guest agent daemon services installed on Linux and Windows instances.
+- Component Path on Linux Path on Windows Guest agent compatibility manager /usr/bin/google guest compat manager C:\Program Files\Google\Compute Engine\agent\GCEWindowsCompatManager.exe Metadata script runner compatibility manager /usr/bin/metadata script runner compat C:\Program Files\Google\Compute Engine\metadata scripts\GCECompatMetadataScripts.exe Authorized keys compatibility manager Not applicable C:\Program Files\Google\Compute Engine\agent\GCEWindowsAuthorizedKeysCompat.exe What's next For more information about core plugin functions, see Guest agent functionality Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- These components are not part of the plugin-based architecture and activate only if you manually choose to revert to the monolithic agent by setting the metadata attribute enable-guest-agent-core-plugin to false .
+- Lifecycle management for extensions includes the following: Installation and updates: the guest agent manager installs, starts, stops, and configures extensions based on instructions from VM Extension Manager.
+
+### Guest environment \_|\_ Compute Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/compute/docs/images/guest-environment](https://docs.cloud.google.com/compute/docs/images/guest-environment)
+- Source ID: `site-docs-root`
+- Final score: 160
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The guest agent is available for both Linux and Windows operating systems, with the following package names: Linux: google-guest-agent Windows: google-compute-engine-windows For detailed information about the guest agent, including its features, architecture, and how to manage the agent, see Guest agent .
+- Reads data from and writes data to the VM metadata Sends logs to the Windows Application Event Log, serial port, and Cloud Logging guest-agent google-compute-engine-sysprep Contains scripts for generalizing a Windows instance in preparation for creating an OS image.
+- Works with the following packages to configure instances. google-guest-agent google-compute-engine-oslogin guest-configs google-compute-engine-oslogin Contains the necessary binaries, modules, and scripts to manage instance access using OS Login.
+- Reads data from and writes data to the VM metadata Sends logs to the serial port and optionally Cloud Logging guest-agent google-compute-engine Contains the scripts and files required for system initialization and configuration.
+
+### "Setting and querying guest attributes \_|\_ Compute Engine \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes](https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes)
+- Source ID: `site-iam-reference`
+- Final score: 148
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, you can retrieve all of the values for the VM as follows: gcloud compute instances get-guest-attributes VM NAME \ --zone= ZONE To retrieve all of the values under a specific namespace, include the --query-path flag and the namespace that you defined: gcloud compute instances get-guest-attributes VM NAME \ --query-path= NAMESPACE \ --zone= ZONE To retrieve all of the values under a specific namespace, include the --query-path flag, the namespace, and the key for the value that you defined: gcloud compute instances get-guest-attributes VM NAME \ --query-path= NAMESPACE / KEY \ --zone= ZONE Replace the following: VM NAME : the name of the VM from which you want to read the guest attribute metadata value NAMESPACE : the namespace for the guest-attributes key that you want to query KEY : the path within guest-attributes metadata where the value is stored ZONE : the zone where the VM is located REST Use the compute.instances.getguestattributes method : GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instances/ VM NAME /getGuestAttributes?queryPath= NAMESPACE / KEY Replace the following: PROJECT ID : your project ID ZONE : the zone where your VM is located VM NAME : the name of the VM from which you want to read the guest attribute metadata value NAMESPACE : the namespace for the guest-attributes key that you want to query KEY : the path within guest-attributes metadata where the value is stored To retrieve all of the keys for a NAMESPACE , omit the KEY : GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instances/ VM NAME /getGuestAttributes?queryPath= NAMESPACE To retrieve all of the keys in each namespace on the VM, omit the NAMESPACE : GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instances/ VM NAME /getGuestAttributes?queryPath= Alternatively, if you have an OAuth token, you can use curl : curl -H "Authorization: Bearer OAUTH TOKEN " https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instances/ VM NAME /getGuestAttributes?queryPath= NAMESPACE / KEY Replace the following: OAUTH TOKEN : your OAuth token PROJECT ID : your project ID ZONE : the zone where your VM is located VM NAME : the name of the VM from which you want to read the guest attribute metadata value NAMESPACE : the namespace for the guest-attributes key that you want to query KEY : the path within guest-attributes metadata where the value is stored Deleting guest attributes Use the following instructions to remove guest attributes from within a VM.
+- For example, use Invoke-RestMethod to delete a specific key: PS C:\> $value = (Invoke-RestMethod -Method DELETE -Headers @{'Metadata-Flavor' = 'Google'} -Uri "http://metadata.google.internal/computeMetadata/v1/instance/guest-attributes/ NAMESPACE / KEY ") $value Replace the following: NAMESPACE : the namespace for the guest-attributes key that you want to delete KEY : the path within guest-attributes where the value is stored Disabling guest attributes on your organization or folder If you don't want any of the VMs in your organization or folder to enable guest attributes, you can override and disable the feature completely.
+- Replace VM NAME with the name of your VM. gcloud compute instances create VM NAME \ --metadata=enable-guest-attributes=TRUE Set enable-guest-attributes in project-wide metadata so that it applies to all of the VMs in your project: Use the project-info add-metadata command in the Google Cloud CLI and set enable-guest-attributes=TRUE to enable guest attributes: gcloud compute project-info add-metadata \ --metadata=enable-guest-attributes=TRUE Alternatively, you can set enable-guest-attributes to FALSE to disable guest attributes.
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to enable or view guest attributes: To enable guest attributes: compute.instances.setMetadata on the VM or project To view guest attributes: compute.instances.getGuestAttributes on the VM or project Your administrator might also be able to give your user or service account these permissions with custom roles or other predefined roles .
+
+### "Running Windows Server Failover Clustering \_|\_ Compute Engine \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering](https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering)
+- Source ID: `site-docs-root`
+- Final score: 93
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Here's how internal load balancing detects the correct node: Each VM instance runs a Compute Engine agent instance that provides support for Windows failover clustering.
+- The tutorial also relies on the default behavior for wsfc-addrs and wsfc-agent-port , so you don't need to set these values.
+- Accept the default Protocol setting of TCP and change the Port to "59998" for cluster host agent responses.
+- Tip: You can use the gcloud CLI to check which instance is healthy, where [REGION] is your region: gcloud compute backend-services get-health wsfc-lb --region=[REGION] The output looks like the following: backend: https://compute.googleapis.com/compute/v1/projects/exampleproject/zones/us-central1-a/instanceGroups/wsfc-group-1 status: healthStatus: - healthState: HEALTHY instance: https://compute.googleapis.com/compute/v1/projects/exampleproject/zones/us-central1-a/instances/wsfc-1 ipAddress: 10.0.0.4 port: 80 kind: compute#backendServiceGroupHealth --- backend: https://compute.googleapis.com/compute/v1/projects/exampleproject/zones/us-central1-b/instanceGroups/wsfc-group-2 status: healthStatus: - healthState: UNHEALTHY instance: https://compute.googleapis.com/compute/v1/projects/exampleproject/zones/us-central1-b/instances/wsfc-2 ipAddress: 10.0.0.5 port: 80 kind: compute#backendServiceGroupHealth Installing your application Now that you have a cluster, you can set up your application on each node and configure it for running in a clustered environment.
 

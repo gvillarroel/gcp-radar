@@ -1,0 +1,90 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T06:49:48.311Z"
+product_name: "App Engine standard environment Go"
+product_slug: "app-engine-standard-environment-go"
+feature_name: "Channel service"
+feature_slug: "channel-service"
+latest_feature_date: "2016-10-27"
+deprecation_date: "2017-10-31"
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/tools/using-local-server"
+  - "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml"
+keywords:
+  - "messaging"
+  - "channel"
+  - "real"
+  - "time"
+  - "client"
+  - "server"
+  - "provides"
+---
+
+# Channel service
+
+Product: App Engine standard environment Go
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+The Channel service provides real-time server-to-client messaging for App Engine applications; deprecated on 2017-10-31.
+
+## Extended Definition
+
+The Channel service provides real-time server-to-client messaging for App Engine applications; deprecated on 2017-10-31.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/appengine/docs/standard/go/tools/using-local-server](https://docs.cloud.google.com/appengine/docs/standard/go/tools/using-local-server)
+- [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled)
+- [https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml](https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml)
+
+## Supporting Pages
+
+### "How requests are handled \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled)
+- Source ID: `site-docs-reference`
+- Final score: 83
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following limits apply specifically to the use of request handlers: Limit Amount Request size 32 megabytes Response size 32 megabytes Request timeout Depends on the type of scaling your app uses Maximum total number of files (app files and static files) 10,000 total 1,000 per directory Maximum size of an application file 32 megabytes Maximum size of a static file 32 megabytes Maximum total size of all application and static files First 1 gigabyte is free $ 0.026 per gigabyte per month after first 1 gigabyte Pending request timeout 10 seconds Maximum size of a single request header field 8 kilobytes for second-generation runtimes in the standard environment.
+- Depending on a variety of factors, such as which type of response data is cached first, which Vary headers you have specified in the response, and which headers are included in the request, a client could request compressed data but receive uncompressed data, and the other way around.
+- Response caching The Google Front End, and potentially the user's browser and other intermediate caching proxy servers, will cache your app's responses as instructed by standard caching headers that you specify in the response.
+- Cache expiration By default, the caching headers that App Engine static file and directory handlers add to responses instruct clients and web proxies such as the Google Front End to expire the cache after 10 minutes.
+
+### "Using the local development server \_|\_ App Engine standard environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/tools/using-local-server](https://docs.cloud.google.com/appengine/docs/standard/go/tools/using-local-server)
+- Source ID: `site-docs-reference-4`
+- Final score: 83
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Detect application runtime environment To determine whether your code is running in production or in the local development server, you can check the value of the GAE ENV environment variable: if os.getenv('GAE ENV', '').startswith('standard'): Production in the standard environment else: Local development server Use the Mail service The local development server can send email for calls to the App Engine mail service using either an SMTP server or a local installation of Sendmail .
+- Go Java Node.js PHP Python Ruby Note: You can't use the latest version of dev appserver.py to locally run your applications for runtimes that reached end of support .
+- Verify that you have installed the Google Cloud CLI component that includes the App Engine extension for Python 3 ( app-engine-python ): gcloud components list If the app-engine-python component is not installed, run the following command: gcloud components install app-engine-python Locate the installation path of Google Cloud SDK by running the following command: gcloud info The command returns the root directory where you installed Google Cloud SDK, for example: Installation Root: [/Users/myname/google-cloud-sdk] Locate the dev appserver.py tool under the /bin/ folder where you installed Google Cloud CLI, for example: CLOUD SDK ROOT /bin/dev appserver.py Note the path to the dev appserver.py for later.
+- Specify the directory path to your app, for example: python3 CLOUD SDK ROOT / bin / dev appserver . py [ PATH TO YOUR APP ] Alternatively, you can specify the configuration file of a specific service, for example: python3 CLOUD SDK ROOT /bin/dev appserver.py app.yaml To change the port, you include the --port option: python3 CLOUD SDK ROOT / bin / dev appserver . py --port=9999 [PATH TO YOUR APP] The local development server is now running and listening for requests.
+
+### Definizione delle impostazioni di runtime | App Engine standard environment | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml](https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml)
+- Source ID: `site-docs-reference-2-http`
+- Final score: 81
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Definizione delle impostazioni di runtime | App Engine standard environment | Google Cloud Documentation Passa ai contenuti principali Aree tecnologiche close AI e ML Sviluppo di applicazioni Hosting di applicazioni Computing Analisi dei dati e pipeline Database Distribuito, ibrido e multi-cloud Soluzioni di settore Migrazione Networking Osservabilità e monitoraggio Sicurezza Storage Strumenti per più prodotti close Gestione di accessi e risorse Gestione di costi e utilizzo Infrastructure as Code (IaC) SDK, linguaggi, framework e strumenti / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Accedi App Engine Standard environment Inizia gratuitamente Panoramica Guide Riferimento Risorse Ambienti di App Engine Ambiente standard di App Engine Scopri di più sull'ambiente standard Ambiente flessibile di App Engine Scopri di più sull'ambiente flessibile Centro di migrazione di App Engine Scopri come eseguire la migrazione alle ultime versioni supportate Aree tecnologiche Altro Panoramica Guide Riferimento Risorse Ambienti di App Engine Altro Strumenti per più prodotti Altro Console Ambiente standard di App Engine Home page di App Engine Panoramica dell'ambiente standard Scegli una lingua e un ambiente Scopri i runtime dell'ambiente standard Runtime Go Panoramica Creazione di un'app Eseguire l'upgrade di un'app esistente Esegui la migrazione dai runtime di prima generazione a quelli di seconda generazione Runtime Java Panoramica Creazione di un'app Panoramica Creazione di un progetto Scrittura del servizio web Deployment del servizio web Eseguire l'upgrade di un'app esistente Ripacchettizzazione di un file WAR Esegui la migrazione dai runtime di prima generazione a quelli di seconda generazione Runtime Node.js Panoramica Creazione di un'app Panoramica Creazione di un progetto Scrittura del servizio web Deployment del servizio web Aggiornare il servizio web Visualizza i log Runtime PHP Panoramica Creazione di un'app Eseguire l'upgrade di un'app esistente Esegui la migrazione dai runtime di prima generazione a quelli di seconda generazione Runtime di Python Panoramica Creazione di un'app Panoramica Creazione di un progetto Scrittura del servizio web Deployment del servizio web Gestione dei dati Aggiungi Firebase Autenticazione degli utenti Personalizzazione dei dati Esegui la pulizia Eseguire l'upgrade di un'app esistente Panoramica Esegui la migrazione dai runtime di prima generazione a quelli di seconda generazione Esegui la migrazione al runtime Python 3 Esegui la migrazione dei servizi in bundle legacy Preparazione dei file di configurazione per l'ambiente Python 3 Test e deployment dell'app Runtime Ruby Panoramica Crea un'app Per iniziare Configura l'ambiente Configurazione dell'ambiente di sviluppo Configurare strumenti facoltativi per Java Apache Maven Utilizzo di Maven e del plug-in App Engine Obiettivi e parametri del plug-in Maven Gradle Utilizzare il plug-in App Engine Attività e proprietà Configura il progetto Cloud Concedi l'accesso Configurazione del controllo dell'accesso Visualizzare i ruoli che concedono l'accesso ad App Engine Configura account di servizio Agente di servizio gestito da Google Creazione dell'app Strutturare i servizi web Ospitare un sito web statico Comunicazione tra i servizi Gestione delle richieste Routing delle richieste Definizione dei file di configurazione Go Definizione delle impostazioni di runtime Specifica le dipendenze Java Definizione delle impostazioni di runtime Specifica le dipendenze Node.js Definizione delle impostazioni di runtime Specifica le dipendenze Eseguire un passaggio di compilazione personalizzato PHP Definizione delle impostazioni di runtime Specifica le dipendenze Python Definizione delle impostazioni di runtime Specifica le dipendenze Ruby Definizione delle impostazioni di runtime Specifica le dipendenze Test e deployment dell'app Eseguire il test sul server di sviluppo locale Utilizzo del server di sviluppo locale Opzioni di comando Configura la tua app Configurare la rete Mappatura dei domini personalizzati Protezione dei domini personalizzati con SSL Proteggere l'app con TLS minimo Virtual Private Cloud (VPC) Connettiti a una rete VPC Connettiti a una rete VPC condivisa VPC condiviso con connettori nei progetti di servizio VPC condivisa con connettori nel progetto host Configurare un indirizzo IP in uscita statico Archiviazione di file e dati Panoramica Utilizzare Cloud Firestore in modalità Datastore Utilizzare Cloud SQL Utilizzo di Cloud Storage (hosting di file cloud) Archiviazione e pubblicazione di file statici Lettura e scrittura nei file temporanei Memorizzazione nella cache dei dati con Memorystore Creazione di trigger Scrivere e rispondere ai messaggi Pub/Sub Invio di messaggi con servizi di terze parti Proteggi la tua app Panoramica Specifica le impostazioni di traffico in entrata e in uscita Informazioni sui firewall Crea regole firewall Autenticazione degli utenti Funzionamento e manutenzione Gestisci le istanze Etichettare le risorse Gestione del traffico dell'app Esegui migrazione del traffico Suddividi traffico Pianificazione dei cron job Esegui attività asincrone Configurazione delle richieste di warmup Automatizzare le attività Inizia a utilizzare l'API Admin Monitoraggio, logging e debug Accedere ai log di controllo Scrivi e visualizza i log Monitoraggio e avvisi sulla latenza Informazioni sulle prestazioni con Cloud Profiler Accedere ai servizi in bundle legacy Panoramica Go 1.12+ Java 11 e versioni successive PHP 7/8 Python 3 Panoramica Panoramica di Blobstore Panoramica dei pagamenti differiti Panoramica della posta API disponibili Panoramica App Identity Blobstore Funzionalità Datastore Panoramica Concetti della libreria client Panoramica dell'API Operazione asincrona Callback Creazione, recupero, aggiornamento ed eliminazione delle entità Creazione e utilizzo delle chiavi di entità Entità, proprietà e chiavi Riferimento alla proprietà dell'entità Indici Metadata Query di proiezione Query Cursori di query Coerenza dei dati delle query Restrizioni per le query Recupero dei risultati delle query Statistiche Strutturazione dei dati per una coerenza elevata Transazioni Gestione di Datastore dalla console Panoramica Visualizzazione delle statistiche di Datastore Configurazione degli indici Datastore Immagini Posta Panoramica dell'API Mail Linee guida per la posta inviata in blocco Invio di email Ricezione della posta Ricezione di una notifica di mancato recapito Posta con intestazioni o allegati Memcache Panoramica di Memcache Utilizzo di memcache Esempi di Memcache Log di controllo Memcache Moduli API Namespaces Panoramica dell'API Namespaces Multitenancy con Namespaces Libreria client NDB per Cloud Datastore Panoramica Amministrazione Operazione asincrona Memorizzazione nella cache Creazione, recupero, aggiornamento ed eliminazione delle entità Creazione di modelli di entità Creazione e utilizzo delle chiavi di entità Configurazione degli indici Datastore Query di proiezione Query Transazioni Scrittura nelle sottoclassi di proprietà Riferimento alla libreria client NDB Riferimento alle proprietà delle entità Contesto Eccezioni Funzioni Future Chiave Metadata Modello PolyModel Query Cerca Documenti e indici Stringhe di query Opzioni di query e ordinamento Gestione dei risultati di ricerca Ricerca con facet Best practice Utilizzo del server di sviluppo locale Riferimento per Python Cursore Documento Classi Facet FacetOptions FacetRange FacetRefinement FacetResult FacetResultValue Classi dei campi FieldExpression GeoPoint GetResponse Indice MatchScorer Query QueryOptions RescoringMatchScorer ScoredDocument SearchResults SortExpression SortOptions Funzioni Eccezioni Code attività Panoramica delle code di attività Utilizzo delle code in modalità push Utilizzo delle code in modalità push Creazione di code in modalità push Creazione di attività push Creazione dei gestori di attività Eliminazione di attività e code Riesecuzione di attività push non riuscite Test delle code in modalità push nel server di sviluppo Utilizzo delle code in modalità pull Utilizzo delle code in modalità pull Creazione delle code in modalità pull Creazione delle attività pull Lease delle attività di pull Recupero URL Richieste in uscita Invia richieste HTTP(S) Utenti Panoramica Oggetti utente URL di accesso Utenti amministratori Centro di migrazione Risorse per la migrazione Risoluzione dei problemi Presentazione Deployment Pubblicazione Latenza elevata Connettività Risorse della community AI e ML Sviluppo di applicazioni Hosting di applicazioni Computing Analisi dei dati e pipeline Database Distribuito, ibrido e multi-cloud Soluzioni di settore Migrazione Networking Osservabilità e monitoraggio Sicurezza Storage Gestione di accessi e risorse Gestione di costi e utilizzo Infrastructure as Code (IaC) SDK, linguaggi, framework e strumenti Ambiente standard di App Engine Ambiente flessibile di App Engine Centro di migrazione di App Engine Home Documentation Application hosting App Engine Standard environment Guide Invia feedback Definizione delle impostazioni di runtime Mantieni tutto organizzato con le raccolte Salva e classifica i contenuti in base alle tue preferenze.
+- In genere, il file app.yaml richiede solo l'elemento runtime per una semplice app Go 1.12 o versioni successive nell'ambiente standard, ad esempio: runtime : go126 App Engine fornisce valori predefiniti per tutte le altre impostazioni, tra cui la classe di istanze F1 , che determina le risorse di memoria e CPU disponibili per l'app, e il ridimensionamento automatico , che controlla come e quando vengono create nuove istanze dell'app.
+- Un'app App Engine viene configurata utilizzando un file app.yaml che contiene il runtime, i gestori, la scalabilità e altre impostazioni generali, tra cui le variabili di ambiente.
+- Informazioni sui file app.yaml Puoi specificare la configurazione di runtime per la tua app Go 1.12 o versioni successive, incluse le versioni e gli URL, nel file app.yaml .
+

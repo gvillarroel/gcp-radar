@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.976Z"
+generated_at: "2026-04-15T11:56:51.997Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "SSL certificate rotation"
@@ -10,17 +10,17 @@ deprecation_date: ""
 coverage_status: "LOW"
 source_links:
   - "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl"
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
   - "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
 keywords:
   - "ssl"
   - "certificate"
   - "rotation"
   - "sql"
-  - "for"
   - "mysql"
   - "supports"
   - "rotating"
+  - "certificates"
 ---
 
 # SSL certificate rotation
@@ -38,53 +38,53 @@ Cloud SQL for MySQL supports rotating SSL certificates.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl](https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl)
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
+- [https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance](https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance)
 - [https://docs.cloud.google.com/sql/docs/mysql/create-instance](https://docs.cloud.google.com/sql/docs/mysql/create-instance)
 
 ## Supporting Pages
 
+### "Configure SSL/TLS certificates \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance](https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance)
+- Source ID: `site-docs-reference-3`
+- Final score: 45
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you want to use the new server certificate immediately, proceed with server certificate rotation by updating your clients and completing the rotation. gcloud For instances that use self-signed server certificates (per-instance CA) : To get information about the server certificate, use the sql ssl server-ca-certs list command: gcloud sql ssl server-ca-certs list \ --instance = INSTANCE NAME To create a server certificate, use the sql ssl server-ca-certs create command: gcloud sql ssl server-ca-certs create \ --instance = INSTANCE NAME Download the certificate information to a local PEM file: gcloud sql ssl server-ca-certs list \ --format = "value(cert)" \ --instance = INSTANCE NAME > \ FILE PATH / FILE NAME .pem Update all of your clients to use the new information by copying the downloaded file to your client host machines, replacing the existing server-ca.pem files.
+- Terraform To enforce SSL/TLS encryption, use a Terraform resource : resource "google sql database instance" "mysql instance" { name = "mysql-instance" region = "asia-northeast1" database version = "MYSQL 8 0" settings { tier = "db-f1-micro" ip configuration { The following SSL enforcement options only allow connections encrypted with SSL/TLS and with valid client certificates.
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Configure SSL/TLS certificates Stay organized with collections Save and categorize content based on your preferences.
+- To validate client/server identity using SSL/TLS certs, you need to create a client certificate and download the certificates to your MySQL client host machine.
+
 ### "Authorize with SSL/TLS certificates \_|\_ Cloud SQL for MySQL \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl](https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl)
-- Source ID: `site-iam-reference`
-- Final score: 262
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- How server certificate rotation works Cloud SQL provides ways to rotate your server certificate, so the new certificate can be seamlessly swapped in before the old certificate expires.
-- For instances that use the per-instance CA, shared CA, or customer-managed CA hierarchies, about three months before the server certificate expires for a Cloud SQL instance, the project owners receive an email from Cloud SQL, stating that the certificate rotation process has begun for that instance.
-- For connections that use Cloud SQL Auth Proxy or Cloud SQL Language Connectors, the connections are automatically encrypted with SSL/TLS along with client and server identity verification without requiring you to download a server CA certificate and client certificate.
-- Optionally, your SSL/TLS connection can perform server identity verification by validating the server certificate installed on the Cloud SQL instance and client identity verification by validating the client certificate installed on the client.
-
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 236
+- Source ID: `site-docs-reference-3`
+- Final score: 37
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- January 25, 2024 Feature Cloud SQL Enterprise Plus edition now supports the following regions: asia-northeast2 (Osaka) asia-south2 (Delhi) europe-north1 (Finland) europe-southwest1 (Madrid) us-east5 (Columbus) us-south1 (Dallas) January 12, 2024 Feature Cloud SQL for MySQL now supports setting microsecond time periods for the following flag on MySQL 5.7 and MySQL 8.0: innodb flush log at timeout For more information about this flag, see supported flags .
-- December 05, 2024 Feature Cloud SQL Enterprise Plus edition now supports the following regions: africa-south1 (Johannesburg) asia-east2 (Hong Kong) europe-west10 (Berlin) December 04, 2024 Feature Cloud SQL for MySQL now supports minor version 8.0.40.
-- August 18, 2023 Feature Cloud SQL Enterprise Plus edition now supports four new regions: europe-central2 (Warsaw) europe-west9 (Paris) southamerica-east1 (San Paulo) us-west1 (Oregon) Feature Cloud SQL for MySQL now supports minor version 8.0.34.
-- December 18, 2023 Feature Cloud SQL for MySQL now supports the following flags for MySQL 8.0: innodb buffer pool dump now innodb buffer pool load abort innodb buffer pool load now For more information about these flags, see supported flags .
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Authorize with SSL/TLS certificates Stay organized with collections Save and categorize content based on your preferences.
+- If you're using a customer-managed CA ( serverCaMode is set to CUSTOMER MANAGED CAS CA ), then you can perform CA certificate rotation by rotating the CAs in the CA pool that you created.
+- A shorter validity period for the CA might require more frequent CA rotations and a validity period shorter than one year might affect the validity period of your server certificates.
+- Before these certificates expire, perform server CA certificate rotation .
 
 ### Create instances \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sql/docs/mysql/create-instance](https://docs.cloud.google.com/sql/docs/mysql/create-instance)
-- Source ID: `site-docs-root`
-- Final score: 228
+- Source ID: `site-docs-reference-3`
+- Final score: 33
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- CUSTOMER MANAGED CAS CA : with this option, you define the CA hierarchy and manage the rotation of the CA certificates.
 - HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { "name": " INSTANCE ID ", "region": " REGION ", "databaseVersion": " DATABASE VERSION ", "settings": { "tier": " MACHINE TYPE ", "edition": " EDITION TYPE ", "dataCacheConfig" { "dataCacheEnabled": DATA CACHE ENABLED }, "backupConfiguration": { "binaryLogEnabled": true, "enabled": true }, "passwordValidationPolicy": { "enablePasswordPolicy": true "minLength": " MIN LENGTH ", "complexity": COMPLEXITY DEFAULT, "reuseInterval": " REUSE INTERVAL ", "disallowUsernameSubstring": " DISALLOW USERNAME SUBSTRING ", }, "ipConfiguration": { "privateNetwork": " PRIVATE NETWORK ", "authorizedNetworks": [ AUTHORIZED NETWORKS ], "ipv4Enabled": false, "enablePrivatePathForGoogleCloudServices": true, "serverCaMode": " CA MODE ", "serverCertificateRotationMode": " SERVER CERTIFICATE ROTATION MODE ", "customSubjectAlternativeNames": " DNS NAMES " }, "dataApiAccess": "ALLOW DATA API" }, "sqlNetworkArchitecture": "NEW NETWORK ARCHITECTURE" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 - HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { "name": " INSTANCE ID ", "region": " REGION ", "databaseVersion": " DATABASE VERSION ", "settings": { "tier": " MACHINE TYPE ", "edition": " EDITION TYPE ", "dataCacheConfig": { "dataCacheEnabled": DATA CACHE ENABLED }, "backupConfiguration": { "binaryLogEnabled": true, "enabled": true }, "passwordValidationPolicy": { "enablePasswordPolicy": true "minLength": " MIN LENGTH ", "complexity": COMPLEXITY DEFAULT, "reuseInterval": " REUSE INTERVAL ", "disallowUsernameSubstring": " DISALLOW USERNAME SUBSTRING " }, "ipConfiguration": { "privateNetwork": " PRIVATE NETWORK ", "authorizedNetworks": [ AUTHORIZED NETWORKS ], "ipv4Enabled": false, "enablePrivatePathForGoogleCloudServices": true, "serverCaMode": " CA MODE ", "serverCertificateRotationMode": " SERVER CERTIFICATE ROTATION MODE ", "customSubjectAlternativeNames": " DNS NAMES " }, "dataApiAccess": "ALLOW DATA API" }, "sqlNetworkArchitecture": "NEW NETWORK ARCHITECTURE" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 - If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you selected doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead. .
-- If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you specify doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead..
 

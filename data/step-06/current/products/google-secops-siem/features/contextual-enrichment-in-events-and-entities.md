@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:56:14.551Z"
+generated_at: "2026-04-15T00:53:15.681Z"
 product_name: "Google SecOps SIEM"
 product_slug: "google-secops-siem"
 feature_name: "Contextual enrichment in events and entities"
 feature_slug: "contextual-enrichment-in-events-and-entities"
 latest_feature_date: "2022-09-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
-  - "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
   - "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+  - "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+  - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
 keywords:
   - "contextual"
   - "enrichment"
-  - "in"
   - "events"
-  - "and"
   - "entities"
   - "adds"
   - "prevalence"
+  - "statistics"
+  - "safe"
 ---
 
 # Contextual enrichment in events and entities
 
 Product: Google SecOps SIEM
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,35 +38,21 @@ Contextual enrichment adds prevalence statistics and Safe Browsing threat-list d
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
-- [https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines](https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines)
 - [https://docs.cloud.google.com/chronicle/docs/detection/detection-delays](https://docs.cloud.google.com/chronicle/docs/detection/detection-delays)
+- [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security)
+- [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 
 ## Supporting Pages
-
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 160
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Contextual enrichment in events and entities To enable a security investigation, Chronicle provides additional context about artifacts in a customer environment by calculating prevalence statistics and ingesting data from Safe Browsing threat lists related to file hashes.
-- April 02, 2024 Announcement On or after May 1, 2024, in an effort to improve enrichment quality, the enrichment process using telemetry events and entities will prioritize values set by parsers over values from aliases in unenriched events.
-- November 01, 2022 Change The Ingestion API udmevents and createentities methods now accept both uppercase and lowercase characters in the following fields: < Noun >.mac : defined when calling the udmeevents method, where Noun is either principal, src, target, observer, intermediary, or about. entity.asset.mac : defined when calling the createentities method.
-- January 16, 2024 Feature UDM Search for entity investigation UDM Search now includes a feature that lets you investigate entities (for example, an IP address, user, or asset) in addition to the events and alerts that match the search query terms.
 
 ### "Search for events and alerts \_|\_ Google Security Operations \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 - Source ID: `site-api-reference`
-- Final score: 132
+- Final score: 111
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -76,29 +61,29 @@ Evidence snippets:
 - For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = "USER RESOURCE UPDATE CONTENT" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.
 - It then matches those events against the hostnames column and the ip column in the badApps data table. events: $e.metadata.event type = "NETWORK CONNECTION" $e.security result.action = "ALLOW" $e.target.asset.asset id = $assetid // Event hostname matches at least one value in table column hostname. $e.target.hostname in %badApps.hostname // Event IP matches at least one value in table column ip. $e.target.ip in %badApps.ip For more information, see Use data tables .
 
-### "Response integrations community contribution guidelines \_|\_ Google Security\
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines](https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines)
-- Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For example, the following JSON object represents a poor structure as it would be unusable inside playbooks: { "10.10.10.10": { "is malicious": "false" } } Instead, format it like this: [ { "is malicious": "false", "ip": "10.10.10.10" } ] If you're using entities inside the action and return results Per Entity, then the best practice is to structure the JSON Result like this: [ { "Entity": "10.10.10.10", "EntityResult": { "is malicious": "false", } } ] Always consider how the output of the action can be used inside automation.
-- Action outputs (entity enrichment) If actions are executing on entities, then during the action execution you can append additional metadata to them.
-- Ontology Mapping is used to automatically create entities (IOCs and Assets).
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
-
 ### "Understand rule detection delays \_|\_ Google Security Operations \_|\_\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/detection/detection-delays](https://docs.cloud.google.com/chronicle/docs/detection/detection-delays)
 - Source ID: `site-docs-root`
-- Final score: 130
+- Final score: 108
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- Enrichment system Google SecOps enriches UDM events by adding contextual data from other sources.
 - Re-enrichment of UDM events Underlying data changes: If the underlying data changes after an event is ingested, the system reprocesses historical data and updates events for up to 24 hours after ingestion.
 - Aliasing and enrichment Aliasing and enrichment are two steps in the Google SecOps security data enrichment process that correlates and adds context data to event records.
 - High latency in this contextual data can cause re-enrichment processing and rule replays to interact, resulting in a delayed detection.
-- The system performs multiple enrichment runs, and enrichment can update UDM events up to 24 hours after the event has been ingested.
+
+### "Google Unified Security \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security)
+- Source ID: `site-api-reference`
+- Final score: 103
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Curated Detections & Prioritization : Pre-built detection rules (available in rule packs like "Applied Threat Intelligence - Curated Prioritization") contextualize IOC matches using event data and Mandiant intelligence features to generate prioritized alerts (Active Breach, High, Medium, Inbound IP Auth).
+- By applying this frontline intelligence directly within Google SecOps, security teams gain unparalleled visibility and context, ensuring that security events are actively interpreted through the lens of the latest, validated threat intelligence to help you stay ahead of novel and sophisticated attacks.
+- Google SecOps provides Cloud Detection Investigation and Response (CDIR), Case Management, SIEM log searching and investigation, Cloud Asset Inventory collection for Entity Graph Enrichment, and the ability to automate common SOC workflows using the SOAR component of Google SecOps.
+- Since both SIEM and SOAR capabilities are front and center within the platform, there's no need anymore to send Cloud log data and related threat events outside of the platform - everything is included under the umbrella heading of Google Unified Security.
 

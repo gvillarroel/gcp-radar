@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.475Z"
+generated_at: "2026-04-14T07:40:14.478Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "RabbitMQ connector trigger"
 feature_slug: "rabbitmq-connector-trigger"
 latest_feature_date: "2023-11-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
-  - "https://docs.cloud.google.com/application-integration/docs/using-integration-connectors"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger"
 keywords:
   - "rabbitmq"
   - "introduced"
   - "connector"
-  - "application"
-  - "integration"
   - "trigger"
   - "preview"
-  - "in"
 ---
 
 # RabbitMQ connector trigger
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,52 @@ Application Integration introduced a RabbitMQ connector trigger in preview so in
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- [https://docs.cloud.google.com/application-integration/docs/using-integration-connectors](https://docs.cloud.google.com/application-integration/docs/using-integration-connectors)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
+- [https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger](https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger)
+- [https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger](https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger)
+- [https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger](https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger)
 
 ## Supporting Pages
 
-### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
+### Apache Kafka trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 274
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger](https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 100
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In Application Integration, Gemini Code Assist can assist you to do the following: Create integrations Configure connector tasks in an integration Configure Call REST API tasks in an integration Add edge conditions and append additional tasks to an integration Configure JavaScript tasks ( Preview ) Generate integration description For detailed information about Gemini for Google Cloud, see Gemini for Google Cloud overview .
-- Supported tasks and triggers Gemini can assist you to add the following tasks and triggers: Triggers Tasks API trigger Cloud Pub/Sub trigger Salesforce trigger Jira Cloud ServiceNow Zendesk Cloud Scheduler trigger Data mapper task Approval task Suspend task Javascript task Cloud Run functions Timer task Return task Send email task Connectors task Call REST endpoint task Doc AI - Process task Gemini also assists you to create the following control flow tasks but can't generate sub-integrations: For Each Loop task For Each Parallel task While Loop task Call Integration task Create an integration Gemini assists you to create and build integrations using your natural language statements (or prompts ) as input.
-- Limitations Gemini in Application Integration is subject to the following limitations: If the connection in your integration has more than 1000 entities, then that connector isn't included in the recommendations by Gemini.
-- To configure a connector task in your integration using Gemini, perform the following steps: In the Google Cloud console, go to the Application Integration page.
+- Before you begin If you plan to create or configure a new connection for the Apache Kafka trigger , make sure that you have the following Identity and Access Management (IAM) role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access .
+- To configure the Apache Kafka trigger , you can either use an existing Apache Kafka connection available in Integration Connectors, or create a new Apache Kafka connection using the inline connection creation option.
+- The Apache Kafka trigger is a Connector Event trigger that lets you invoke an integration based on the Apache Kafka events that you've subscribed to in your Apache Kafka connection.
+- Note that the Apache Kafka trigger is an Connector Event trigger , therefore you can only use a Apache Kafka connection with event subscription enabled to configure the trigger.
 
-### "Use Integration Connectors \_|\_ Application Integration \_|\_ Google Cloud\
+### Azure AD trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/using-integration-connectors](https://docs.cloud.google.com/application-integration/docs/using-integration-connectors)
-- Source ID: `site-docs-root`
-- Final score: 240
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- These connectors let you quickly and securely connect to the Google Cloud services and other business applications from your integrations.
-- Supported connectors For the list of all the supported connectors for Application Integration, see Integration Connectors reference .
-- By using connectors available in Integration Connectors, you get the following benefits: Standardized interfaces Integration Connectors provide standardized interfaces for entities and actions.
-- Home Documentation Application development Application Integration Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
-
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- Source ID: `site-docs-root`
-- Final score: 234
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger](https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger)
+- Source ID: `site-docs-root-2`
+- Final score: 100
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Connect the elements in the sub-integration Now that you have added and configured the required tasks and triggers in the sub-integration, add a connection (edge) between the elements.
-- Home Documentation Application development Application Integration Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
-- To add and configure the API trigger, perform the following steps: In the integration editor, click Triggers to view the list of available triggers.
-- Add an API trigger in the main integration In the integration editor, click Triggers to view the list of available tasks and triggers.
+- Before you begin If you plan to create or configure a new connection for the Azure AD trigger , make sure that you have the following IAM role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access .
+- To configure the Azure AD trigger , you can either use an existing Azure AD connection available in Integration Connectors, or create a new Azure AD connection using the inline connection creation option.
+- Note that the Azure AD trigger is an Connector Event trigger , therefore you can only use an Azure AD connection with event subscription enabled to configure the trigger.
+- The Azure AD trigger is a Connector Event trigger that lets you invoke an integration based on the Azure AD events that you've subscribed to in your Azure AD connection.
+
+### HubSpot trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger](https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 100
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Before you begin If you plan to create or configure a new connection for the HubSpot trigger , make sure that you have the following Identity and Access Management (IAM) role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access .
+- The following image shows a sample layout of the HubSpot trigger configuration pane: Trigger output variable For each event, the HubSpot trigger generates a ConnectorEventPayload output variable which you can use in your downstream tasks.
+- To configure the HubSpot trigger , you can either use an existing HubSpot connection available in Integration Connectors, or create a new HubSpot connection using the inline connection creation option.
+- HubSpot trigger Preview — HubSpot trigger This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
 

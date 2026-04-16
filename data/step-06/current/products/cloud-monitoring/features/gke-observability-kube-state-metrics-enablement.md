@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.095Z"
+generated_at: "2026-04-15T00:01:13.832Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "GKE Observability kube state metrics enablement"
 feature_slug: "gke-observability-kube-state-metrics-enablement"
 latest_feature_date: "2024-01-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
   - "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services"
-  - "https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview"
+  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
 keywords:
   - "gke"
   - "observability"
@@ -19,14 +19,14 @@ keywords:
   - "state"
   - "metrics"
   - "enablement"
-  - "this"
+  - "feature"
   - "lets"
 ---
 
 # GKE Observability kube state metrics enablement
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ This feature lets GKE deployments enable the kube state metrics package from the
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
 - [https://docs.cloud.google.com/monitoring/docs/application-monitoring-services](https://docs.cloud.google.com/monitoring/docs/application-monitoring-services)
-- [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview](https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview)
+- [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 144
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- December 20, 2023 Feature Observability for Google Kubernetes Engine: The collection of kube state metrics is enabled by default for new GKE Autopilot clusters, starting with version 1.27.4-gke.900.
-- January 16, 2024 Feature Observability for Google Kubernetes Engine: You can now enable the package of kube state metrics from the Observability tab of a GKE deployment.
-- Feature Observability for Google Kubernetes Engine: You can now enable a curated set of kube state metrics from the Observability tab for your GKE cluster.
-- November 07, 2023 Feature Observability for Google Kubernetes Engine: The Observability tab for a GKE deployment now shows application performance metrics if the metrics are available.
 
 ### Application Monitoring supported infrastructure \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring-services](https://docs.cloud.google.com/monitoring/docs/application-monitoring-services)
 - Source ID: `site-docs-reference`
-- Final score: 120
+- Final score: 111
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Golden signals for Kubernetes For Kubernetes DaemonSets, Deployments, and StatefulSets, Google Cloud Observability uses the following metric data to derive values for golden signals, when that metric data is available: Traffic : service/server/request count .
-- For workloads that run on GKE, Google Cloud Observability might derive golden signals from the Prometheus metric http server request duration seconds , which is only available when you instrument your application by using OpenTelemetry.
-- For example, for managed instance groups (MIGs), Cloud Run, and Google Kubernetes Engine deployments, this field shows the CPU utilization.
 - To learn how to use a StatefulSet or deploy a stateful application, see About StatefulSets in Google Kubernetes Engine .
+- For some golden signals, Google Cloud Observability has a prioritized list of source metrics.
+- Kubernetes StatefulSets (Regional and zonal) See Golden signals for Kubernetes .
 
-### "Instrument an application for Application Monitoring \_|\_ Google Cloud\
+### Collect metrics overview \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
+- URL: [https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview](https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview)
 - Source ID: `site-docs-reference`
-- Final score: 104
+- Final score: 100
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Use Google Cloud Managed Service for Prometheus on GKE To have Google Cloud Observability attach application labels to metric data generated by your application's workloads that runs on Google Kubernetes Engine clusters, do the following: Use Google Cloud Managed Service for Prometheus with managed collection .
-- Metric data from instrumentation you added to your applications can include the following metric labels: metric.labels.apphub application {container,id,location} metric.labels.apphub workload {criticality type,environment type,id} Trace spans generated by instrumentation you added to your applications can include the following resource attributes: gcp.apphub.application.{container,id,location} gcp.apphub.{workload,service}.{criticality type,environment type,id} About OpenTelemetry HTTP server metrics There are no system metrics for workloads that run on Google Kubernetes Engine that can report the traffic level, server error rate, or the latency for HTTP requests.
-- Verify metric labels To verify that your application is sending Prometheus metrics, to your project, do the following: Verify that your application is sending Prometheus metrics to your project: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring .
-- For example, if you deploy an OpenTelemetry Collector or the Google-built Collector and are running on Google Kubernetes Engine, then you might do the following: In the Google Cloud console, go to the Workloads page: Go to Workloads If you use the search bar to find this page, then select the result whose subheading is Kubernetes Engine .
+- Metrics from third-party monitoring applications Cloud Monitoring provides integrations that let you collect telemetry from applications such as Apache Web Server, MySQL, Redis, and others for deployments running on Compute Engine and Google Kubernetes Engine: When using Compute Engine, third-party telemetry is collected by the Ops Agent .
+- Home Documentation Observability Cloud Monitoring Guides Send feedback Collect metrics overview Stay organized with collections Save and categorize content based on your preferences.
+- These metrics are a key component of your system's overall observability.
+- However, these automatically collected Compute Engine metrics might not provide you with all the information that you need to monitor your services.
+
+### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- Source ID: `site-docs-reference-2`
+- Final score: 99
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To determine what trace data to analyze, Google Cloud Observability queries the resources listed in the default trace scope for trace data, and then retains only the data that is for projects within your application management boundary.
+- When you use an app-enabled folder, the Google Cloud console automatically resets the resource picker from an app-enabled folder to the folder's management project when you navigate to a Google Cloud Observability page.
+- View topology for your application management boundary Preview This product or feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- Home Documentation Observability Cloud Monitoring Guides Send feedback View application telemetry Stay organized with collections Save and categorize content based on your preferences.
 

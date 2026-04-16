@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:19:31.154Z"
+generated_at: "2026-04-14T11:56:59.876Z"
 product_name: "Channel Services"
 product_slug: "channel-services"
 feature_name: "ImportCustomer Method General Availability"
 feature_slug: "importcustomer-method-general-availability"
 latest_feature_date: "2021-08-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/channel/docs/release-notes"
   - "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements"
-  - "https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers"
+  - "https://docs.cloud.google.com/channel/docs/reference/rpc"
+  - "https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus"
 keywords:
   - "importcustomer"
   - "generally"
-  - "general"
   - "availability"
   - "makes"
   - "available"
   - "method"
-  - "the"
 ---
 
 # ImportCustomer Method General Availability
 
 Product: Channel Services
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +36,21 @@ Makes the ImportCustomer method generally available in Channel Services.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/channel/docs/release-notes](https://docs.cloud.google.com/channel/docs/release-notes)
 - [https://docs.cloud.google.com/channel/docs/guides/manage-entitlements](https://docs.cloud.google.com/channel/docs/guides/manage-entitlements)
-- [https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers](https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers)
+- [https://docs.cloud.google.com/channel/docs/reference/rpc](https://docs.cloud.google.com/channel/docs/reference/rpc)
+- [https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus](https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus)
 
 ## Supporting Pages
-
-### Channel Services release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/channel/docs/release-notes](https://docs.cloud.google.com/channel/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 108
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- August 19, 2021 v1 Feature The ImportCustomer method is now generally available.
-- January 05, 2021 v1 Feature The Google Cloud Channel Services API is now Generally available .
-- June 13, 2023 v1 Feature Two new Public APIs related to SKU groups now generally available: ListSkuGroups - List of all rebilling supported SKU groups that can be configured in customer or channel partner repricing configs.
-- March 08, 2021 v1alpha1 Feature ( v1alpha1 only ) This release includes the new ImportCustomer method.
 
 ### "Manage Google Workspace and Google Chrome entitlements \_|\_ Channel Services\
 
 - URL: [https://docs.cloud.google.com/channel/docs/guides/manage-entitlements](https://docs.cloud.google.com/channel/docs/guides/manage-entitlements)
 - Source ID: `site-docs-reference`
-- Final score: 56
+- Final score: 50
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -75,17 +60,30 @@ Evidence snippets:
 - QueryEligibleBillingAccountsRequest { "customer" : "accounts/123/customers/abc" , "skus" : [ "products/product id/skus/sku id1" ] } QueryEligibleBillingAccountsResponse { "skuPurchaseGroups" : [ { "skus" : [ "products/product id/skus/sku id1" ], "billingAccountPurchaseInfos" : [ { "billingAccount" : { "name" : "accounts/123/billingAccounts/billing account id1" , "displayName" : "Google Workspace USD US 1" , "currencyCode" : "USD" , "regionCode" : "US" } }, { "billingAccount" : { "name" : "accounts/123/billingAccounts/billing account id2" , "displayName" : "Google Workspace CAD CA 1" , "currencyCode" : "CAD" , "regionCode" : "CA" } } ] } ] } With the Entitlement and BillingAccount, use the listPurchasableOffers method to find any PurchasableOffer.
 - To create entitlement, follow these steps: With the Customer name, call listPurchasableSkus to retrieve a list of PurchasableSkus ListPurchasableSkusRequest { "customer": "accounts/123/customers/abc", "createEntitlementPurchase": { "product": "products/-" } } ListPurchasableSkusResponse { "purchasableSkus": [ { "sku": { "name": "products/product id/skus/sku id1", "product": { "name": "products/product id", } } }, { "sku": { "name": "products/product id/skus/sku id2", "product": { "name": "products/product id", }, } } ] } With the selected PurchasableSku, use the queryEligibleBillingAccounts method to find a set of Google Workspace BillingAccount that can be used to pay for the entitlement.
 
-### "Set up a customer filter using the ListCustomers API \_|\_ Channel Services\
+### Cloud Channel API \_|\_ Channel Services \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers](https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers)
+- URL: [https://docs.cloud.google.com/channel/docs/reference/rpc](https://docs.cloud.google.com/channel/docs/reference/rpc)
+- Source ID: `site-docs-root`
+- Final score: 46
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- RunReportJob (deprecated) Begins generation of data for a given report. google.cloud.channel.v1alpha1.CloudChannelService Methods ActivateEntitlement Activates a previously suspended entitlement.
+- RunReportJob (deprecated) Begins generation of data for a given report. google.cloud.channel.v1.CloudChannelService Methods ActivateEntitlement Activates a previously suspended entitlement.
+- UpdateOpportunity Updates an existing Opportunity resource. google.longrunning.Operations Methods CancelOperation Starts asynchronous cancellation on a long-running operation.
+- ImportCustomer Imports a Customer from the Cloud Identity associated with the provided Cloud Identity ID or domain before a TransferEntitlements call.
+
+### "Google Workspace products, SKUs, and plans \_|\_ Channel Services \_|\_\
+
+- URL: [https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus](https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus)
 - Source ID: `site-docs-reference`
-- Final score: 56
+- Final score: 37
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- The following table describes the available fields you can search for, and the methods they support.
-- If you need to find information about a specific customer, you can use the Cloud Channel API filter parameter through the customers.list method .
-- Available filters Strings for the filter parameter support exact match, or exact match plus prefix filtering.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Google Workspace includes the following core SKUs: Business Starter Business Standard Business Plus Enterprise Standard Enterprise Plus Enterprise Essentials (only available as an ANNUAL MONTHLY plan) Google Workspace also includes these add-on SKUs: Enterprise Archived User Google Drive Storage Google Vault Cloud Identity SKUs Cloud Identity is a unified identity, access, app, and endpoint management (IAM/EMM) platform.
+- Plans Several payment plans are available, including: Annual/Monthly: Annual commitment with monthly, post-paid payments Annual/Yearly: Annual commitment with yearly pre-payment Flexible: Non-commitment plan with post-paid monthly payments Perpetual: One-time, non-recurring payment Free trial plan Trial length is variable up to a maximum of 30 days.
+- It isn't possible to upgrade Annual/Yearly subscriptions, but you can switch to Flexible using the entitlements.changeRenewalSettings method, then perform an adjustment after the renewal event.
+- Cloud Identity includes the following SKUs: Cloud Identity Free Cloud Identity Premium Upgrades and Downgrades For new customers, create a new entitlement with the entitlements.create method.
 

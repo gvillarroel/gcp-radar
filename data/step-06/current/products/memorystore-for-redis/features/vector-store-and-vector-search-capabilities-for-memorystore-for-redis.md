@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:44.348Z"
+generated_at: "2026-04-12T12:17:52.270Z"
 product_name: "Memorystore for Redis"
 product_slug: "memorystore-for-redis"
 feature_name: "Vector store and vector search capabilities for Memorystore for Redis"
 feature_slug: "vector-store-and-vector-search-capabilities-for-memorystore-for-redis"
 latest_feature_date: "2024-02-29"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/memorystore/docs/redis/about-vector-search"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/supported-versions"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/supported-commands"
 keywords:
   - "vector"
   - "store"
@@ -24,7 +27,7 @@ keywords:
 # Vector store and vector search capabilities for Memorystore for Redis
 
 Product: Memorystore for Redis
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Vector store and vector search capabilities are available in Preview on Memoryst
 
 Vector store and vector search capabilities are available in Preview on Memorystore for Redis.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/memorystore/docs/redis/about-vector-search](https://docs.cloud.google.com/memorystore/docs/redis/about-vector-search)
+- [https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis](https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis)
+- [https://docs.cloud.google.com/memorystore/docs/redis/supported-versions](https://docs.cloud.google.com/memorystore/docs/redis/supported-versions)
+- [https://docs.cloud.google.com/memorystore/docs/redis/supported-commands](https://docs.cloud.google.com/memorystore/docs/redis/supported-commands)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Vector search for generative AI applications \_|\_ Memorystore for Redis\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/about-vector-search](https://docs.cloud.google.com/memorystore/docs/redis/about-vector-search)
+- Source ID: `site-docs-root-2`
+- Final score: 368
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This page describes how Memorystore for Redis supports storing and querying vector data for generative AI applications, such as Retrieval Augmented Generation (RAG) and LangChain, by using vector search capabilities.
+- Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Vector search for generative AI applications Stay organized with collections Save and categorize content based on your preferences.
+- Approaches to using vector search for generative AI in Memorystore for Redis Memorystore also provides two distinct search approaches to help you find the right balance between speed and accuracy.
+- Using vector search with LangChain lets you build solutions for the following use cases: RAG LLM cache Recommendation engine Semantic search Image similarity search Benefits of vector search for generative AI in Memorystore for Redis The advantage of using Memorystore to store your generative AI data, compared to other Google Cloud databases is its speed.
+
+### High availability for Memorystore for Redis \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis](https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis)
+- Source ID: `site-docs-root`
+- Final score: 321
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback High availability for Memorystore for Redis Stay organized with collections Save and categorize content based on your preferences.
+- For information about the metrics that Cloud Monitoring provides for Memorystore for Redis, see Monitor Redis Instances and Supported monitoring metrics for Memorystore for Redis .
+- After the failover is complete and the new replica is available, Memorystore for Redis redirects connections to the new replica.
+- This page describes high availability (HA) for Memorystore for Redis instances in the Standard Tier.
+
+### Supported versions \_|\_ Memorystore for Redis \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/supported-versions](https://docs.cloud.google.com/memorystore/docs/redis/supported-versions)
+- Source ID: `site-docs-root`
+- Final score: 306
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Current versions This table shows the supported Redis versions, the patch levels for these versions, and when the versions were last updated: Redis major version Patch level Last update 7.2 7.2.0 February 29, 2024 7.0 7.0.12 July 17, 2023 6.x 6.2.13 May 9, 2022 5.0 5.0.14 May 09, 2022 4.0 4.0.14 June 17, 2019 3.2 3.2.13 June 21, 2018 Redis version 7.2 The following table provides information about the vector search feature for Redis version 7.2: Feature Description Supported in Memorystore for Redis Vector search Redis version 7.2 introduces vector data storage and vector data search.
+- Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Supported versions Stay organized with collections Save and categorize content based on your preferences.
+- Feature Description Supported in Memorystore for Redis Redis functions Redis 7.0 introduces Redis functions, which provides improved Lua script capabilities on the Redis server.
+- Memorystore for Redis supports Redis versions 3.2, 4.0, 5.0, 6.x, 7.0, and 7.2.
+
+### "Supported and blocked commands \_|\_ Memorystore for Redis \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/supported-commands](https://docs.cloud.google.com/memorystore/docs/redis/supported-commands)
+- Source ID: `site-docs-root`
+- Final score: 295
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Supported commands Memorystore for Redis supports the following commands: APPEND ASKING AUTH BITCOUNT BITFIELD BITFIELD RO BITOP BITPOS BLMOVE BLMPOP BLPOP BRPOP BRPOPLPUSH BZMPOP BZPOPMAX BZPOPMIN COPY DBSIZE DECR DECRBY DEL DISCARD DUMP ECHO EVAL EVAL RO EVALSHA EVALSHA RO EXEC EXISTS EXPIRE EXPIREAT EXPIRETIME FCALL FCALL RO FLUSHALL FLUSHDB FUNCTION DELETE FUNCTION DUMP FUNCTION FLUSH FUNCTION HELP FUNCTION KILL FUNCTION LIST FUNCTION LOAD FUNCTION RESTORE FUNCTION STATS GEOADD GEODIST GEOHASH GEOPOS GEORADIUS GEORADIUS RO GEORADIUSBYMEMBER GEORADIUSBYMEMBER RO GEOSEARCH GEOSEARCHSTORE GET GETBIT GETDEL GETEX GETRANGE GETSET HDEL HELLO HEXISTS HGET HGETALL HINCRBY HINCRBYFLOAT HKEYS HLEN HMGET HMSET HRANDFIELD HSCAN HSET HSETNX HSTRLEN HVALS INCR INCRBY INCRBYFLOAT INFO KEYS LATENCY DOCTOR LATENCY GRAPH LATENCY HELP LATENCY HISTOGRAM LATENCY HISTORY LATENCY LATEST LATENCY RESET Note : The LATENCY command group isn't blocked.
+- LCS LINDEX LINSERT LLEN LMOVE LMPOP LOLWUT LPOP LPOS LPUSH LPUSHX LRANGE LREM LSET LTRIM MEMORY DOCTOR MEMORY HELP MEMORY MALLOC-STATS MEMORY PURGE MEMORY STATS MEMORY USAGE MGET MODULE HELP MONITOR MSET MSETNX MULTI PERSIST PEXPIRE PEXPIREAT PEXPIRETIME PFADD PFCOUNT PFMERGE PING PSETEX PSUBSCRIBE PTTL PUBLISH PUBSUB CHANNELS PUBSUB HELP PUBSUB NUMPAT PUBSUB NUMSUB PUBSUB SHARDCHANNELS PUBSUB SHARDNUMSUB PUNSUBSCRIBE QUIT RANDOMKEY READONLY READWRITE RENAME RENAMENX RESET RESTORE ROLE RPOP RPOPLPUSH RPUSH RPUSHX SADD SCAN SCARD SCRIPT DEBUG SCRIPT EXISTS SCRIPT FLUSH SCRIPT HELP SCRIPT KILL SCRIPT LOAD SDIFF SDIFFSTORE SELECT SET SETBIT SETEX SETNX SETRANGE SINTER SINTERCARD SINTERSTORE SISMEMBER SLOWLOG GET SLOWLOG HELP SLOWLOG LEN SLOWLOG RESET SMEMBERS SMISMEMBER SMOVE SORT SORT RO SPOP SPUBLISH SRANDMEMBER SREM SSCAN SSUBSCRIBE STRLEN SUBSCRIBE SUBSTR SUNION SUNIONSTORE SUNSUBSCRIBE TIME TOUCH TTL TYPE UNLINK UNSUBSCRIBE UNWATCH WAIT WATCH XACK XADD XAUTOCLAIM XCLAIM XDEL XGROUP CREATE XGROUP CREATECONSUMER XGROUP DELCONSUMER XGROUP DESTROY XGROUP HELP XGROUP SETID XINFO CONSUMERS XINFO GROUPS XINFO HELP XINFO STREAM XLEN XPENDING XRANGE XREAD XREADGROUP XREVRANGE XTRIM ZADD ZCARD ZCOUNT ZDIFF ZDIFFSTORE ZINCRBY ZINTER ZINTERCARD ZINTERSTORE ZLEXCOUNT ZMPOP ZMSCORE ZPOPMAX ZPOPMIN ZRANDMEMBER ZRANGE ZRANGEBYLEX ZRANGEBYSCORE ZRANGESTORE ZRANK ZREM ZREMRANGEBYLEX ZREMRANGEBYRANK ZREMRANGEBYSCORE ZREVRANGE ZREVRANGEBYLEX ZREVRANGEBYSCORE ZREVRANK ZSCAN ZSCORE ZUNION ZUNIONSTORE Blocked commands Memorystore for Redis supports all Redis 7.2 commands, except for the commands that are listed in this section.
+- ACL CAT ACL DELUSER ACL GENPASS ACL GETUSER ACL HELP ACL LIST ACL LOAD ACL LOG ACL SAVE ACL SETUSER ACL USERS ACL WHOAMI ACL CAT ACL GENPASS ACL HELP ACL WHOAMI BGREWRITEAOF BGSAVE CLIENT CLUSTER COMMAND CONFIG Note : Memorystore for Redis blocks the CONFIG command, which stops you from modifying the redis.conf file for your Redis server.
+- Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Supported and blocked commands Stay organized with collections Save and categorize content based on your preferences.
 

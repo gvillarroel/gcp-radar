@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.465Z"
+generated_at: "2026-04-12T12:11:19.685Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer 1.16.12"
 feature_slug: "cloud-composer-1-16-12"
 latest_feature_date: "2022-08-10"
 deprecation_date: "2022-08-10"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/create-environments"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments"
+  - "https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags"
 keywords:
   - "composer"
   - "16"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer 1.16.12
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer version 1.16.12 has reached its end of full support period; depre
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- [https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags](https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 208
+- Final score: 254
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +63,11 @@ Evidence snippets:
 - Last patch of the previous Cloud Composer 2 minor version: composer-2.10.2-airflow- Cloud Composer 2 versions with an extended upgrade timeline: composer-2.10.2-airflow- , composer-2.10.1-ariflow- , composer-2.9.7-airflow- , and other versions with an extended upgrade timeline.
 - In Google Cloud CLI, API, or Terraform, you can upgrade an existing environment to the latest supported versions, three previous versions of Cloud Composer 2, the last patch version of the previous minor version, and to versions with an extended upgrade timeline.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change (Airflow 2.1.1) downgraded google-cloud-memcache dependency from 1.1.0 to 1.0.0 Change (Airflow 2.1.1) Downgraded colorlog dependency from 5.0.1 to 4.8.0 Change New versions of Cloud Composer images: composer-1.16.14-airflow-1.10.12 composer-1.16.14-airflow-1.10.14 composer-1.16.14-airflow-1.10.15 (default) composer-1.17.0-preview.10-airflow-2.0.2 composer-1.17.0-preview.10-airflow-2.1.1 Deprecated Cloud Composer 1.11.2 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.16.15-airflow-1.10.12 composer-1.16.15-airflow-1.10.14 composer-1.16.15-airflow-1.10.15 (default) composer-1.17.0-preview.11-airflow-2.0.2 composer-1.17.0-preview.11-airflow-2.1.1 Deprecated Cloud Composer 1.11.3 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.16.13-airflow-1.10.12 composer-1.16.13-airflow-1.10.14 composer-1.16.13-airflow-1.10.15 (default) composer-1.17.0-preview.9-airflow-2.0.2 composer-1.17.0-preview.9-airflow-2.1.1 Deprecated Cloud Composer 1.11.1 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.17.2-airflow-2.1.2 composer-1.17.2-airflow-2.0.2 composer-1.17.2-airflow-1.10.15 (default) composer-1.17.2-airflow-1.10.14 composer-1.17.2-airflow-1.10.12 composer-2.0.0-preview.3-airflow-2.1.2 (default) composer-2.0.0-preview.3-airflow-2.0.2 Deprecated Cloud Composer 1.12.1 has reached its end of full support period .
-
 ### Create Cloud Composer environments \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
 - Source ID: `site-iam-reference`
-- Final score: 170
+- Final score: 216
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +75,30 @@ Evidence snippets:
 - The 1 January, 2023 date is ignored. gcloud composer environments create example-environment \ --location us-central1 \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " example-account@example-project. iam.gserviceaccount.com " \ --maintenance-window-start '2023-01-01T01:00:00Z' \ --maintenance-window-end '2023-01-01T07:00:00Z' \ --maintenance-window-recurrence 'FREQ=WEEKLY;BYDAY=SU,WE,SA' API When you create an environment, in the Environment > EnvironmentConfig resource, specify maintenance windows parameters: { "name" : "projects/ PROJECT ID /locations/ LOCATION /environments/ ENVIRONMENT NAME " , "config" : { "maintenanceWindow" : { "startTime" : " DATETIME START " , "endTime" : " DATETIME END " , "recurrence" : " MAINTENANCE RECURRENCE " }, "nodeConfig" : { "serviceAccount" : " SERVICE ACCOUNT " } } } Replace: DATETIME START with the start date and time in the date/time input format .
 - For example, a period of 4 hours every Monday, Wednesday, and Friday provides the required amount of time. gcloud The following arguments define maintenance windows parameters: --maintenance-window-start sets the start time of a maintenance window. --maintenance-window-end sets the end time of a maintenance window. --maintenance-window-recurrence sets the maintenance window recurrence . gcloud composer environments create ENVIRONMENT NAME \ --location LOCATION \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " SERVICE ACCOUNT " \ --maintenance-window-start ' DATETIME START ' \ --maintenance-window-end ' DATETIME END ' \ --maintenance-window-recurrence ' MAINTENANCE RECURRENCE ' Replace: ENVIRONMENT NAME with the name of the environment.
 - Variable names may contain upper and lowercase letters, digits, and underscores, but they may not begin with a digit. --airflow-configs specifies a comma-separated list of keys and values for Airflow configuration overrides. gcloud composer environments create ENVIRONMENT NAME \ --location LOCATION \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " SERVICE ACCOUNT " \ --env-variables ENV VARS \ --airflow-configs CONFIG OVERRIDES Replace: ENV VARS with a list of comma-separated NAME=VALUE pairs for environment variables.
+
+### "REST Resource: projects.locations.environments \_|\_ Cloud Composer \_|\_\
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- Source ID: `site-docs-reference`
+- Final score: 210
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- EncryptionConfig The encryption options for the Cloud Composer environment and its dependencies.Supported for Cloud Composer environments in versions composer-1. . -airflow- . . .
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- The encryption options for the Cloud Composer environment and its dependencies.
+- Home Documentation Data analytics Cloud Composer Reference Send feedback REST Resource: projects.locations.environments Stay organized with collections Save and categorize content based on your preferences.
+
+### "Schedule and trigger Airflow DAGs \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags](https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags)
+- Source ID: `site-docs-root`
+- Final score: 208
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- Home Documentation Data analytics Cloud Composer Composer 3 Guides Send feedback Schedule and trigger Airflow DAGs Stay organized with collections Save and categorize content based on your preferences.
+- Instead, the schedule interval ends at 16:35 on 5 April, 2024, so the next DAG run is scheduled for 16:30 on the following day.
+- Cloud Composer 2 versions 2.1.x and later are still supported and are not impacted by this change.
 

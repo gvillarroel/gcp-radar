@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:47.823Z"
+generated_at: "2026-04-12T12:11:19.025Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer 2-to-3 migration script"
 feature_slug: "cloud-composer-2-to-3-migration-script"
 latest_feature_date: "2025-04-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage"
   - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
   - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
 keywords:
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer 2-to-3 migration script
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,11 +39,12 @@ A migration script for moving from Cloud Composer 2 to Cloud Composer 3 is now a
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
+- [https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage](https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage)
 - [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
 - Source ID: `site-docs-reference`
-- Final score: 228
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 289
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Other migration guides From To Method Guide Cloud Composer 2 Cloud Composer 3 Side-by-side, using the migration script Script migration guide Cloud Composer 2 Cloud Composer 3 Side-by-side, using snapshots Snapshots migration guide Cloud Composer 1, Airflow 2 Cloud Composer 3 Side-by-side, using snapshots This guide Cloud Composer 1, Airflow 2 Cloud Composer 2 Side-by-side, using snapshots Snapshots migration guide Cloud Composer 1, Airflow 2 Cloud Composer 2 Side-by-side, manual transfer Manual migration guide Cloud Composer 1, Airflow 1 Cloud Composer 2, Airflow 2 Side-by-side, using snapshots Snapshots migration guide Cloud Composer 1, Airflow 1 Cloud Composer 2, Airflow 2 Side-by-side, manual transfer Manual migration guide Cloud Composer 1, Airflow 1 Cloud Composer 1, Airflow 2 Side-by-side, manual transfer Manual migration guide Before you begin Cloud Composer supports side-by-side migration from Cloud Composer 1 to Cloud Composer 3.
@@ -62,11 +64,25 @@ Evidence snippets:
 - Monitor your Cloud Composer 3 environment After you transfer all DAGs and configuration to the Cloud Composer 3 environment, monitor it for potential issues, failed DAG runs, and overall environment health.
 - Note: Cloud Composer loads configuration overrides, environment variables, and PyPI packages from your Cloud Composer 1 environment to Cloud Composer 3 without changing or adjusting them for compatibility.
 
+### Data stored in Cloud Storage \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage](https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage)
+- Source ID: `site-iam-reference`
+- Final score: 247
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, when Cloud Composer attempts to read a given file for the first time during: DAG parsing: When a file is read for the first time during DAG parsing, Cloud Composer synchronizes it to the scheduler that parses the DAG.
+- DAG execution: When a file is read for the first time during DAG execution, Cloud Composer synchronizes it to the worker running the execution.
+- Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 This page describes what data Cloud Composer stores for your environment in Cloud Storage.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+
 ### "Cross-project environment monitoring with Terraform \_|\_ Cloud Composer\
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 192
+- Final score: 245
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +95,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - Source ID: `site-iam-reference`
-- Final score: 188
+- Final score: 239
 - Re-rank relevance: N/A
 
 Evidence snippets:

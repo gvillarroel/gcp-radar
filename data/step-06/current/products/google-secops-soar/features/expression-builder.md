@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:35.156Z"
+generated_at: "2026-04-12T12:17:22.807Z"
 product_name: "Google SecOps SOAR"
 product_slug: "google-secops-soar"
 feature_name: "Expression Builder"
 feature_slug: "expression-builder"
 latest_feature_date: "2025-08-10"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+  - "https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
 keywords:
   - "expression"
   - "builder"
@@ -24,7 +27,7 @@ keywords:
 # Expression Builder
 
 Product: Google SecOps SOAR
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,68 @@ Expression Builder now includes pre-built filters and clearer filter documentati
 
 Expression Builder now includes pre-built filters and clearer filter documentation to streamline query creation.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api](https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api)
+- [https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc](https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc)
+- [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
+- [https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines](https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Forwarder Management \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api](https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api)
+- Source ID: `site-api-reference`
+- Final score: 121
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Note: This is a global setting that applies to the forwarder and the forwarder's collectors, unless it is overridden at the collector level. metadata.labels.key string Optional The key for a field in the metadata labels list. metadata.labels.value string Optional The value for a field in the metadata labels list. regex filters.description string Optional Describes what is being filtered and why. regex filters.regexp string Optional The regular expression used to match against each incoming line. regex filters.behavior enum Optional Specifies the state of the server functionality.
+- Note: This is a global setting that applies to the forwarder and the forwarder's collectors, unless it is overridden at the collector level. metadata.labels.key string Optional The key for a field in the metadata labels list. metadata.labels.value string Optional The value for a field in the metadata labels list. regex filters.description string Optional Describes what is being filtered and why. regex filters.regexp string Optional The regular expression used to match against each incoming line. regex filters.behavior enum Optional Specifies the state of the server functionality.
+- BLOCK : This state prevents the filtered line from being uploaded. server settings object Optional Settings that configure the forwarder's built-in HTTP server, which can be used to configure load balancing and high availability options for syslog collection on Linux. server settings.state enum Optional Specifies the state of the server functionality.
+- Response fields In addition to the fields specified in the request and the fields for which default values are applied, the response includes the following fields: Field Type Description name string The resource ID of the collector.
+
+### "SOAR table of contents \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc](https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc)
+- Source ID: `site-docs-root-2`
+- Final score: 118
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Google SecOps SOAR Product overview Getting started Release Plan for Google SecOps Onboard Google SecOps SOAR Manage user preferences Your Workdesk Workdesk overview Fill out a request from the workdesk Respond to pending actions from the workdesk View cases from the workdesk Investigating cases and alerts Working with cases Cases overview Explore the cases page layout and options Explore the case queue header Review case-level data in the Overview tab Create custom fields (Admin) Case Wall tab Instant messaging on a case Track tasks in cases Manage tags in cases and alerts Perform a manual action Take actions on a case Create a test case Resolve and close cases Use custom fields in the Close Case dialog Define a default view for cases (Admin) Gemini Summary Add or delete case stages (Admin) Alert Options menu in the Cases screen View the original SIEM data in a case Explore entities and alerts (Investigation) Supported entity types Navigate the Entity Explorer screen Perform a batch action on several cases at once Measure how long security analysts take to close or raise a Case Customize the Close Case dialog (Admin) Name a case (Admin) Create a manual case Move a case to a new environment Add or edit entity properties Apply and save filters Entity selection Working with alerts Alert Overview tab Alert Playbooks tab Change alert priority instead of case priority Alert events tab Alert grouping mechanism overview (Admin) Rerun playbooks How to configure the alert overflow mechanism (Admin) Define the default Alert view (Admin) Handle large alerts Search Use SOAR Search Ingest data Connectors Ingest your data using connectors View connector logs ElasticSearch connector: Map a custom date and time Define environments in connectors Webhooks Set up a Webhook Respond to alerts Work with Playbooks Explore the Playbooks page Use triggers in playbooks Manage actions in playbooks Use flows in playbooks Use the Expression Builder Work with the Playbook Simulator Use the Playbook Navigator Work with playbook blocks Automate tasks with Playbook Loops Increase Playbook resilience with automatic retries Specify an instance in dynamic mode Overview of playbook monitoring Define custom alert views using Playbook Designer Use alert type triggers in a playbook Bulk actions and filters in playbooks Use the HTML widget Expression Builder use cases Assign actions and playbook blocks Configure timeouts for playbook async actions Manage playbook permissions Assign approval links in actions Use parallel actions Use predefined widgets in playbook view Prevent users from changing playbooks Explore playbook use cases Create a fallback playbook Create an enrichment playbook block Create playbooks with Gemini Integrated development environment (IDE) Use the IDE Custom transformation functions and logical operators Create a custom action Develop a new integration (Video) Build a custom integration Write jobs Test integrations in staging mode Integrations Setup Configure integrations Roll back response integration version Upgrade the Python version to 3.11 Support multiple instances Work with an external vault system Create your first custom integration Requirements for publishing integrations Create your first action My first automation (Playbook) Develop your first email connector Develop the connector Configure the connector Test a connector Map and model alerts Create your first use case Google SecOps Marketplace Use the Google SecOps Marketplace Run use cases Power Ups Connectors Email utilities Enrichment File utilities Functions GitSync TemplateEngine Insights Lists Tools Monitor and report Dashboards SOAR Dashboards overview Add SOAR dashboard widgets Explore the SOAR Dashboards page Reports Explore SOAR reports Use Looker Explores in SOAR reports SOAR APIs Google SecOps SOAR APIs Settings Environments Work with environments Create environment groups (SOAR only) Use dynamic parameters in environments Use dynamic parameters (Video) Permissions Manage permission groups Locate your customer ID Manage roles and workloads Manage API keys Let Google Support access your instance Define a landing page Work with users (SOAR only) Manage users and roles Work with a Collaborator user Create a user with view-only permission Disable or delete a user account in SOAR Types of users Create a managed user Work with Collaborator user groups Work with Managed and Managed Plus user groups Email invitation prerequisites Manage password settings Case management federation (SOAR only) SAML overview (SOAR only) Authenticate users using SSO Configure SAML for Google Workspace Configure SAML for Microsoft Azure Configure Okta in Google SecOps SOAR Configure just-in-time provisioning Map IdP groups to SOAR roles Configure multiple SAML providers Troubleshoot SAML issues in Google SecOps SOAR Ontology Ontology overview Visual families Configure mapping and assign visual families Work with entity delimiters Create entities (Mapping & Modeling) Configuration tasks Create a blocklist to exclude entities from alerts Create custom lists Create email HTML templates Create email templates Define domains for MSSPs Manage environment load balancing Create user requests Manage networks Set the service-level agreement (SLA) Use dynamic variables in email HTML templates Advanced tasks Migrate to Google Cloud Open a ticket for Google Support Collect SOAR logs Control access to Google SecOps platform Define system data retention Monitor user activities Rebranding Set the time zone for all users (Admin) Set up your email View and change service limits Manage property metadata Retrieve raw Python logs Clean up after removing SOAR Remote Agents Overview of remote agents Requirements and prerequisites Remote agents architecture Remote agents scaling strategy Manage remote agents Create an agent with Docker Create an agent with the installer for Debian Create an agent with the installer on RHEL Create an agent with the installer on CentOS Upgrade agent Docker image Upgrade agent with installer for RHEL Upgrade agent with installer for CentOS Edit remote agent Redeploy remote agent Installer and Docker agent configuration Data flows and protocols Set up integrations and connectors Test agents Upgrade remote agents Deploy high availability for remote agents Troubleshooting Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Security Google Security Operations Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- Java is a registered trademark of Oracle and/or its affiliates.
+
+### "Cloud Threats category overview \_|\_ Google Security Operations \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
+- Source ID: `site-docs-root-2`
+- Final score: 102
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following export filter exports Google Cloud Cloud Run ( GCP RUN ) logs, in addition to the default logs both through the direct ingestion mechanism as well as through Cloud Storage and Sinks : log id("run.googleapis.com/stdout") OR log id("run.googleapis.com/stderr") OR log id("run.googleapis.com/requests") OR log id("run.googleapis.com/varlog/system) Curated detections for AWS rule sets AWS rule sets in this category help identify threats in AWS environments using event and context data, and includes the following rule sets: AWS - Compute : Detects anomalous activity surrounding AWS compute resources, including EC2 and Lambda.
+- CDIR SCC Enhanced rule sets All rule sets that begin with the name CDIR SCC Enhanced use Security Command Center Premium findings contextualized with several other Google Cloud log sources, including the following: Cloud Audit Logs Cloud DNS logs Identity and Access Management (IAM) analysis Sensitive Data Protection context BigQuery context Compute Engine context To use the CDIR SCC Enhanced rule sets, we recommend that you collect the following Google Cloud data: Log data listed in the All rule sets section.
+- Azure Cloud Services ( AZURE ACTIVITY ) Microsoft Entra ID , previously Azure Active Directory ( AZURE AD ) Microsoft Entra ID audit logs , previously Azure AD audit logs ( AZURE AD AUDIT ) Microsoft Defender for Cloud ( MICROSOFT GRAPH ALERT ) Microsoft Graph API Activity ( MICROSOFT GRAPH ACTIVITY LOGS ) Ingest Azure and Microsoft Entra ID data You must ingest data from every data source to have maximum rule coverage.
+- Curated detections for Office 365 data Office 365 rule sets in this category help identify threats in Office 365 environments using event and context data, and includes the following rule sets: Office 365 - Administrative : Detects malicious, suspicious and high-risk activities in Office 365, including backup policy changes, Microsoft Purview, and ATP detections.
+
+### "Response integrations community contribution guidelines \_|\_ Google Security\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines](https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines)
+- Source ID: `site-docs-root-2`
+- Final score: 102
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The JSON sample is used by the platform inside the Expression Builder during the playbook building process.
+- For example, the following JSON object represents a poor structure as it would be unusable inside playbooks: { "10.10.10.10": { "is malicious": "false" } } Instead, format it like this: [ { "is malicious": "false", "ip": "10.10.10.10" } ] If you're using entities inside the action and return results Per Entity, then the best practice is to structure the JSON Result like this: [ { "Entity": "10.10.10.10", "EntityResult": { "is malicious": "false", } } ] Always consider how the output of the action can be used inside automation.
+- In general, the structure of the name should be like this: {integration display name} - {process} Job For example: ServiceNow - Sync Incidents Job Description The Description of the job should highlight to the user what the job is doing during the iterations; for example, This job will synchronize Security Command Center based cases created by the Urgent Posture Findings connector.
+- Home Documentation Security Google Security Operations Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
 

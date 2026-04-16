@@ -1,0 +1,91 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T12:48:36.626Z"
+product_name: "BigQuery"
+product_slug: "bigquery"
+feature_name: "Additional dynamic data masking types"
+feature_slug: "additional-dynamic-data-masking-types"
+latest_feature_date: "2023-02-09"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types"
+keywords:
+  - "additional"
+  - "dynamic"
+  - "masking"
+  - "types"
+  - "supports"
+  - "mask"
+  - "date"
+  - "year"
+---
+
+# Additional dynamic data masking types
+
+Product: BigQuery
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Dynamic data masking supports additional mask types for date year, email, first four characters, and last four characters.
+
+## Extended Definition
+
+Dynamic data masking supports additional mask types for date year, email, first four characters, and last four characters.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro](https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types)
+
+## Supporting Pages
+
+### Introduction to data masking \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro](https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro)
+- Source ID: `site-docs-reference-5`
+- Final score: 255
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- When this happens, BigQuery chooses which data masking rule to apply based on the following hierarchy: Custom masking routine Random Hash Hash (SHA-256) Email mask Last four characters First four characters Date year mask Default masking value Nullify For example, user A is a member of both the employees and the accounting groups.
+- Custom masking routines Custom masking routines are subject to the following limitations: Custom data masking supports all BigQuery data types except STRUCT , because data masking can only apply to leaf fields of the STRUCT data type.
+- The following table shows the default masking value for each data type: Data type Default masking value STRING "" BYTES b'' INTEGER 0 FLOAT 0.0 NUMERIC 0 BOOLEAN FALSE TIMESTAMP 1970-01-01 00:00:00 UTC DATE 1970-01-01 TIME 00:00:00 DATETIME 1970-01-01T00:00:00 GEOGRAPHY POINT(0 0) BIGNUMERIC 0 ARRAY [] STRUCT NOT APPLICABLE Policy tags can't be applied to columns that use the STRUCT data type, but they can be associated with the leaf fields of such columns.
+- Date year mask Predefined No Moderate: Shows only the year, truncating the rest of the date (for example, 2030-07-17 becomes 2030-01-01 ).
+
+### "Data definition language (DDL) statements in GoogleSQL \_|\_ BigQuery \_\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- Source ID: `site-docs-reference`
+- Final score: 190
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The table schema contains 2 columns: transaction id: An integer transaction date: A date The table option list specifies the: Partition expiration: Three days Description: A table partitioned by transaction date Creating a partitioned table from the result of a query The following example creates a partitioned table named days with rain in mydataset using a DATE column: CREATE TABLE mydataset . days with rain PARTITION BY date OPTIONS ( partition expiration days = 365 , description = "weather stations with precipitation, partitioned by day" ) AS SELECT DATE ( CAST ( year AS INT64 ), CAST ( mo AS INT64 ), CAST ( da AS INT64 )) AS date , ( SELECT ANY VALUE ( name ) FROM bigquery-public-data.noaa gsod.stations AS stations WHERE stations . usaf = stn ) AS station name , -- Stations can have multiple names prcp FROM bigquery-public-data.noaa gsod.gsod2017 AS weather WHERE prcp != 99.9 -- Filter unknown values AND prcp > 0 -- Filter stations/days with no precipitation If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table .
+- Last modified Schema Total Rows Total Bytes Expiration Time Partitioning Clustered Fields Total Logical ----------------- --------------------------- ------------ ------------- ------------ ------------------- ------------------ --------------- 31 Oct 17:34:31 - l orderkey: integer 3086653 210767042 210767042 - l partkey: integer - l suppkey: integer - l commitdate: date - l shipdate: date - l receiptdate: date - l shipinstruct: string - l shipmode: string Now, using the CREATE TABLE AS SELECT statement you can selectively load data to the myotherdataset.orders table in the US multi-region: CREATE OR REPLACE TABLE myotherdataset . orders PARTITION BY DATE TRUNC ( l commitdate , YEAR ) AS SELECT FROM myawsdataset . orders WHERE EXTRACT ( YEAR FROM l commitdate ) = 1992 ; Note: If you get a ResourceExhausted error, retry after some time.
+- When new data is available, append the data of the 1993 year to the destination table using the INSERT INTO SELECT statement: INSERT INTO myotherdataset . orders SELECT FROM myawsdataset . orders WHERE EXTRACT ( YEAR FROM l commitdate ) = 1993 ; Example 2 The following example inserts data into an ingestion-time partitioned table: CREATE TABLE mydataset . orders ( id String , numeric id INT64 ) PARTITION BY PARTITIONDATE ; After creating a partitioned table, you can insert data into the ingestion-time partitioned table: INSERT INTO mydataset . orders ( PARTITIONTIME , id , numeric id ) SELECT TIMESTAMP ( "2023-01-01" ), id , numeric id , FROM mydataset . ordersof23 WHERE numeric id > 4000000 ; CREATE TABLE LIKE statement Creates a new table with all of the same metadata of another table.
+- The table schema contains 2 columns: date: The DATE of data collection station name: The name of the weather station as a STRING prcp: The amount of precipitation in inches as a FLOAT64 The table option list specifies the: Partition expiration: One year Description: Weather stations with precipitation, partitioned by day Creating a clustered table Example 1 The following example creates a clustered table named myclusteredtable in mydataset .
+
+### Data types \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types)
+- Source ID: `site-docs-reference`
+- Final score: 149
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can use one of the following formats with the interval-supported datetime parts : Datetime part string Datetime parts Example Y-M YEAR TO MONTH INTERVAL '2-11' YEAR TO MONTH Y-M D YEAR TO DAY INTERVAL '2-11 28' YEAR TO DAY Y-M D H YEAR TO HOUR INTERVAL '2-11 28 16' YEAR TO HOUR Y-M D H:M YEAR TO MINUTE INTERVAL '2-11 28 16:15' YEAR TO MINUTE Y-M D H:M:S YEAR TO SECOND INTERVAL '2-11 28 16:15:14' YEAR TO SECOND M D MONTH TO DAY INTERVAL '11 28' MONTH TO DAY M D H MONTH TO HOUR INTERVAL '11 28 16' MONTH TO HOUR M D H:M MONTH TO MINUTE INTERVAL '11 28 16:15' MONTH TO MINUTE M D H:M:S MONTH TO SECOND INTERVAL '11 28 16:15:14' MONTH TO SECOND D H DAY TO HOUR INTERVAL '28 16' DAY TO HOUR D H:M DAY TO MINUTE INTERVAL '28 16:15' DAY TO MINUTE D H:M:S DAY TO SECOND INTERVAL '28 16:15:14' DAY TO SECOND H:M HOUR TO MINUTE INTERVAL '16:15' HOUR TO MINUTE H:M:S HOUR TO SECOND INTERVAL '16:15:14' HOUR TO SECOND M:S MINUTE TO SECOND INTERVAL '15:14' MINUTE TO SECOND For example: -- 0 years, 8 months, 20 days, 17 hours, 0 minutes, and 0 seconds (0-8 20 17:0:0) INTERVAL '8 20 17' MONTH TO HOUR -- 0 years, 8 months, -20 days, 17 hours, 0 minutes, and 0 seconds (0-8 -20 17:0:0) INTERVAL '8 -20 17' MONTH TO HOUR For additional examples, see Interval literals .
+- For example: -- 1 year, 0 months, 0 days, 0 hours, 0 minutes, and 0 seconds (1-0 0 0:0:0) INTERVAL 1 YEAR INTERVAL 4 QUARTER INTERVAL 12 MONTH -- 0 years, 3 months, 0 days, 0 hours, 0 minutes, and 0 seconds (0-3 0 0:0:0) INTERVAL 1 QUARTER INTERVAL 3 MONTH -- 0 years, 0 months, 42 days, 0 hours, 0 minutes, and 0 seconds (0-0 42 0:0:0) INTERVAL 6 WEEK INTERVAL 42 DAY -- 0 years, 0 months, 0 days, 25 hours, 0 minutes, and 0 seconds (0-0 0 25:0:0) INTERVAL 25 HOUR INTERVAL 1500 MINUTE INTERVAL 90000 SECOND -- 0 years, 0 months, 0 days, 1 hours, 30 minutes, and 0 seconds (0-0 0 1:30:0) INTERVAL 90 MINUTE -- 0 years, 0 months, 0 days, 0 hours, 1 minutes, and 30 seconds (0-0 0 0:1:30) INTERVAL 90 SECOND -- 0 years, 0 months, -5 days, 0 hours, 0 minutes, and 0 seconds (0-0 -5 0:0:0) INTERVAL - 5 DAY For additional examples, see Interval literals .
+- Constructing an interval You can construct an interval with an interval literal that supports a single datetime part or a datetime part range .
+- Interval-supported date and time parts You can use the following date parts to construct an interval: YEAR : Number of years, Y .
+

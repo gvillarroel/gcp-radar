@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:24.003Z"
+generated_at: "2026-04-14T09:47:34.435Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "Restart running Bare Metal Solution servers"
 feature_slug: "restart-running-bare-metal-solution-servers"
 latest_feature_date: "2022-03-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
   - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
-  - "https://docs.cloud.google.com/bare-metal/docs/bms-security"
+  - "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide"
+  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
 keywords:
   - "restarting"
   - "restart"
   - "running"
   - "enables"
   - "servers"
-  - "solution"
-  - "metal"
-  - "bare"
 ---
 
 # Restart running Bare Metal Solution servers
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +35,21 @@ Enables restarting a Bare Metal Solution server that is currently running.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
 - [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- [https://docs.cloud.google.com/bare-metal/docs/bms-security](https://docs.cloud.google.com/bare-metal/docs/bms-security)
+- [https://docs.cloud.google.com/sap/docs/netweaver-operations-guide](https://docs.cloud.google.com/sap/docs/netweaver-operations-guide)
+- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
 
 ## Supporting Pages
-
-### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- Source ID: `site-docs-root-2`
-- Final score: 216
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
-- Architecture Figure 1 shows a simplified view of the infrastructure that you need to build when you deploy Backup and DR to protect Oracle databases running in a Bare Metal Solution environment.
-- Backup and DR service project– Enables you to host your backup/recovery appliance, and backup Bare Metal Solution and Google Cloud workloads in Cloud Storage buckets.
 
 ### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- Source ID: `site-docs-root`
-- Final score: 208
+- Source ID: `site-docs-reference`
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +58,30 @@ Evidence snippets:
 - Maintain the Bare Metal Solution environment After your Bare Metal Solution environment is up and running, use the information included in this guide to maintain your Bare Metal Solution servers, storage, and networking.
 - Restarting a server requires you to Enable and activate the Bare Metal Solutions API and the gcloud CLI .
 
-### "Provide security for enterprise workloads in a Bare Metal Solution environment\
+### "SAP NetWeaver Operations Guide \_|\_ SAP on Google Cloud \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/bare-metal/docs/bms-security](https://docs.cloud.google.com/bare-metal/docs/bms-security)
+- URL: [https://docs.cloud.google.com/sap/docs/netweaver-operations-guide](https://docs.cloud.google.com/sap/docs/netweaver-operations-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 101
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Database operations This section provides resources for managing the following database servers on Google Cloud: SAP HANA SAP ASE IBM Db2 for Linux, UNIX and Windows (IBM Db2) Microsoft SQL Server SAP HANA operations For more information about running SAP HANA on Google Cloud, see the SAP HANA on Google Cloud Operations Guide .
+- For VM instances in your SAP NetWeaver implementation, it is important that you do not disable the following features: Live migrate , which enables Compute Engine to keep your instance running when responding to an infrastructure maintenance event.
+- Google Cloud is certified for running SAP NetWeaver application servers ABAP and Java, and SAP products based on these application server stacks.
+- Restarting a VM To restart a VM: In the Google Cloud console, navigate to the: VM INSTANCES PAGE Select the instances that you want to restart.
+
+### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
+
+- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
 - Source ID: `site-docs-root-2`
-- Final score: 188
+- Final score: 99
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- As shown in Figure 5 , use VPC peering to enable resources running in a different VPC in the same project or a different project to access the Bare Metal Solution servers.
-- Similarly, resources running in newly added subnets also have access to the Bare Metal Solution servers.
-- Provide security for enterprise workloads in a Bare Metal Solution environment Because Bare Metal Solution enables you to bring traditional enterprise workloads closer to Google Cloud, a common question from enterprise architects and security architects is "How do I secure my workloads?" The goal of this guide is to provide you with the security and compliance design elements that you should consider when planning to bring your enterprise workloads, such as Oracle databases, to Bare Metal Solution.
-- Figure 4 shows an example of Private Google Access: Figure 4: Private Google Access in a Bare Metal Solution environment Data security When planning for data security in a Bare Metal Solution environment, you need to be aware of how encrypted data gets stored and how to secure your applications running on Google Cloud or in an on-premises data center.
+- Please use b010502a8f383cae5a076d4ac9e868777657cebd0000000063abee83 (valid for 2 hrs) to register this host. -- A new secret key can be generated later by running: '/opt/act/bin/udsagent secret --reset --restart If you use the iptables command, open the ports for the backup agent firewall (TCP 5106) and Oracle services (TCP 1521): sudo iptables -A INPUT -p tcp --dport 5106 -j ACCEPT sudo iptables -A INPUT -p tcp --dport 1521 -j ACCEPT sudo firewall-cmd --permanent --add-port=5106/tcp sudo firewall-cmd --permanent --add-port=1521/tcp sudo firewall-cmd --reload Add hosts to Backup and DR In the Backup and DR management console, go to Manage > Hosts . https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#hosts Click +Add Host .
+- The following output example shows that the Backup and DR agent service is running correctly: [root@test2 ]# service udsagent status Redirecting to /bin/systemctl status udsagent.service udsagent.service - Google Cloud Backup and DR service Loaded: loaded (/usr/lib/systemd/system/udsagent.service; enabled; vendor preset: disabled) Active: active (running) since Wed 2022-12-28 05:05:45 UTC; 2 days ago Process: 46753 ExecStop=/act/initscripts/udsagent.init stop (code=exited, status=0/SUCCESS) Process: 46770 ExecStart=/act/initscripts/udsagent.init start (code=exited, status=0/SUCCESS) Main PID: 46789 (udsagent) Tasks: 8 (limit: 48851) Memory: 74.0M CGroup: /system.slice/udsagent.service ├─46789 /opt/act/bin/udsagent start └─60570 /opt/act/bin/udsagent start Dec 30 05:11:30 test2 su[150713]: pam unix(su:session): session closed for user oracle Dec 30 05:11:30 test2 su[150778]: (to oracle) root on none Log messages from your backups can help you diagnose issues.
+- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
+- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
 

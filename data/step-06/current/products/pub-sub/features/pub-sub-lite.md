@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:51.516Z"
+generated_at: "2026-04-12T12:18:10.318Z"
 product_name: "Pub/Sub"
 product_slug: "pub-sub"
 feature_name: "Pub/Sub Lite"
 feature_slug: "pub-sub-lite"
 latest_feature_date: "2020-10-09"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions"
+  - "https://docs.cloud.google.com/pubsub/docs/pubsub-basics"
+  - "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+  - "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
 keywords:
   - "pub"
   - "sub"
@@ -24,7 +27,7 @@ keywords:
 # Pub/Sub Lite
 
 Product: Pub/Sub
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ Pub/Sub Lite is a low-cost, high-throughput messaging service with partitioned t
 
 Pub/Sub Lite is a low-cost, high-throughput messaging service with partitioned topics and subscriptions; Pub/Sub Lite is a low-cost, high-throughput messaging service with partitioned topics and subscriptions.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions)
+- [https://docs.cloud.google.com/pubsub/docs/pubsub-basics](https://docs.cloud.google.com/pubsub/docs/pubsub-basics)
+- [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription)
+- [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "MCP Tools Reference: pubsub.googleapis.com \_|\_ Pub/Sub \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions)
+- Source ID: `site-api-reference`
+- Final score: 246
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- PushConfig JSON representation { "pushEndpoint" : string , "attributes" : { string : string , ... } , // Union field authentication method can be only one of the following: "oidcToken" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: "pubsubWrapper" : { object ( PubsubWrapper ) } , "noWrapper" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional.
+- If true, Pub/Sub provides the following guarantees for the delivery of a message with a given value of message id on this subscription: The message sent to a subscriber is guaranteed not to be resent before the message's acknowledgment deadline expires.
+- This can be used with push endpoints that are private by default to allow requests only from the Pub/Sub system, for example.
+- When unset, PubsubWrapper is used. wrapper can be only one of the following: pubsubWrapper object ( PubsubWrapper ) Optional.
+
+### Overview of the Pub/Sub service \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/pubsub-basics](https://docs.cloud.google.com/pubsub/docs/pubsub-basics)
+- Source ID: `site-docs-root`
+- Final score: 244
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Choose a Pub/Sub configuration option You can configure a Pub/Sub environment by using any one of the following options: Google Cloud console Google Cloud CLI Cloud Client libraries (high-level client library) REST and RPC APIs (low-level client library) Your choice of a Pub/Sub configuration option depends on your use case.
+- The high-level client library is recommended for cases where you require high throughput and low latency with minimal operational overhead and processing cost.
+- The following are the components of a Pub/Sub service: Publisher (also called a producer): creates messages and sends (publishes) them to the messaging service on a specified topic.
+- The following procedure discusses the workflow of the Pub/Sub service: Two publisher applications, Publisher 1 and Publisher 2 , send messages to a single Pub/Sub topic.
+
+### "MCP Tools Reference: pubsub.googleapis.com \_|\_ Pub/Sub \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription)
+- Source ID: `site-api-reference`
+- Final score: 240
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- PushConfig JSON representation { "pushEndpoint" : string , "attributes" : { string : string , ... } , // Union field authentication method can be only one of the following: "oidcToken" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: "pubsubWrapper" : { object ( PubsubWrapper ) } , "noWrapper" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional.
+- PushConfig JSON representation { "pushEndpoint" : string , "attributes" : { string : string , ... } , // Union field authentication method can be only one of the following: "oidcToken" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: "pubsubWrapper" : { object ( PubsubWrapper ) } , "noWrapper" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional.
+- If true, Pub/Sub provides the following guarantees for the delivery of a message with a given value of message id on this subscription: The message sent to a subscriber is guaranteed not to be resent before the message's acknowledgment deadline expires.
+- If true, Pub/Sub provides the following guarantees for the delivery of a message with a given value of message id on this subscription: The message sent to a subscriber is guaranteed not to be resent before the message's acknowledgment deadline expires.
+
+### "MCP Tools Reference: pubsub.googleapis.com \_|\_ Pub/Sub \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription)
+- Source ID: `site-api-reference`
+- Final score: 240
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- PushConfig JSON representation { "pushEndpoint" : string , "attributes" : { string : string , ... } , // Union field authentication method can be only one of the following: "oidcToken" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: "pubsubWrapper" : { object ( PubsubWrapper ) } , "noWrapper" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional.
+- PushConfig JSON representation { "pushEndpoint" : string , "attributes" : { string : string , ... } , // Union field authentication method can be only one of the following: "oidcToken" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: "pubsubWrapper" : { object ( PubsubWrapper ) } , "noWrapper" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional.
+- If true, Pub/Sub provides the following guarantees for the delivery of a message with a given value of message id on this subscription: The message sent to a subscriber is guaranteed not to be resent before the message's acknowledgment deadline expires.
+- If true, Pub/Sub provides the following guarantees for the delivery of a message with a given value of message id on this subscription: The message sent to a subscriber is guaranteed not to be resent before the message's acknowledgment deadline expires.
 

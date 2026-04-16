@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T23:03:42.252Z"
+generated_at: "2026-04-12T12:11:52.997Z"
 product_name: "Cloud NGFW"
 product_slug: "cloud-ngfw"
 feature_name: "Batch update to firewall policy rules"
 feature_slug: "batch-update-to-firewall-policy-rules"
 latest_feature_date: "2025-04-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/firewall/docs/configure-batch-updates"
-  - "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
   - "https://docs.cloud.google.com/firewall/docs/batch-update-overview"
+  - "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+  - "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
 keywords:
   - "batch"
   - "update"
@@ -26,7 +27,7 @@ keywords:
 # Batch update to firewall policy rules
 
 Product: Cloud NGFW
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Batch update to firewall policy rules lets you update all rules for hierarchical
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/firewall/docs/configure-batch-updates](https://docs.cloud.google.com/firewall/docs/configure-batch-updates)
-- [https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation](https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation)
 - [https://docs.cloud.google.com/firewall/docs/batch-update-overview](https://docs.cloud.google.com/firewall/docs/batch-update-overview)
+- [https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation](https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation)
+- [https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress](https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/firewall/docs/configure-batch-updates](https://docs.cloud.google.com/firewall/docs/configure-batch-updates)
 - Source ID: `site-docs-root`
-- Final score: 280
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 384
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - If you are using gcloud CLI to batch update the firewall policy rules, use the following gcloud CLI commands: export-rules : lets you export the firewall policy rules configuration to a YAML file.
@@ -62,25 +64,11 @@ Evidence snippets:
 - Home Documentation Networking Cloud NGFW Guides Send feedback Configure batch updates to firewall policy rules Stay organized with collections Save and categorize content based on your preferences.
 - If you are using REST APIs to batch update the firewall policy rules, use the patch method.
 
-### "Configure global network firewall policy to deny egress connections to specific\
-
-- URL: [https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation](https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation)
-- Source ID: `site-docs-root`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Click Create . gcloud To update the firewall policy, run the following command: gcloud compute network-firewall-policies rules create 500 \ --firewall-policy=fw-policy \ --direction=INGRESS \ --action=ALLOW \ --src-ip-ranges= NAT IP ADDRESS \ --layer4-configs=all \ --global-firewall-policy \ --enable-logging Replace NAT IP ADDRESS with the IP address assigned to your Cloud NAT.
-- Click Create . gcloud To allow IAP access to all VM instances in the vpc-geo-location network, run the following command: To create a firewall policy, run the following command: gcloud compute network-firewall-policies create fw-policy \ --global To create a firewall rule that allows traffic to all destinations and enables logs, run the following command: gcloud compute network-firewall-policies rules create 100 \ --firewall-policy=fw-policy \ --direction=INGRESS \ --action=ALLOW \ --layer4-configs=tcp:22 \ --src-ip-ranges=35.235.240.0/20 \ --global-firewall-policy \ --enable-logging To associate the firewall policy with the VPC network, run the following command: gcloud compute network-firewall-policies associations create \ --firewall-policy=fw-policy \ --network=vpc-geo-location \ --name=pol-association-fw-rules \ --global-firewall-policy Create a firewall rule In this section, you create a firewall rule to allow ingress connection on the instance-2-sg VM.
-- Click Create . gcloud To add a new rule in the fw-policy that you created in the Create a global network firewall policy section, run the following command: gcloud compute network-firewall-policies rules create 200 \ --firewall-policy=fw-policy \ --direction=EGRESS \ --action=DENY \ --dest-region-codes=SG,PL,IT \ --layer4-configs=all \ --global-firewall-policy \ --enable-logging Test the geolocation firewall rule Console After you have added the rule to block egress traffic to Singapore (SG), Poland (PL), and Italy (IT), follow these steps to test the rule: In the Google Cloud console, go to the VM instances page.
-- In the Delete a firewall policy dialog, click Delete . gcloud Remove the association between the firewall policy and VPC network. gcloud compute network-firewall-policies associations delete \ --name=pol-association-fw-rules \ --firewall-policy=fw-policy \ --global-firewall-policy Note: If you set up the association between the firewall policy and the VPC network through Google Cloud console, don't use the gcloud CLI command to remove the association.
-
 ### Overview \_|\_ Cloud Next Generation Firewall \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/firewall/docs/batch-update-overview](https://docs.cloud.google.com/firewall/docs/batch-update-overview)
 - Source ID: `site-docs-root`
-- Final score: 200
+- Final score: 282
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,4 +76,32 @@ Evidence snippets:
 - To configure the batch update to firewall policy rules, do the following: Export your firewall policy rules.
 - Permissions Make sure that you have the following permissions to batch update the firewall policy rules.
 - Using the batch updates, Cloud Next Generation Firewall provides an efficient and manageable way for you to handle firewall policy rule updates in your cloud environments.
+
+### "Configure global network firewall policy to deny egress connections to specific\
+
+- URL: [https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation](https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation)
+- Source ID: `site-docs-root`
+- Final score: 269
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Click Create . gcloud To update the firewall policy, run the following command: gcloud compute network-firewall-policies rules create 500 \ --firewall-policy=fw-policy \ --direction=INGRESS \ --action=ALLOW \ --src-ip-ranges= NAT IP ADDRESS \ --layer4-configs=all \ --global-firewall-policy \ --enable-logging Replace NAT IP ADDRESS with the IP address assigned to your Cloud NAT.
+- Click Create . gcloud To allow IAP access to all VM instances in the vpc-geo-location network, run the following command: To create a firewall policy, run the following command: gcloud compute network-firewall-policies create fw-policy \ --global To create a firewall rule that allows traffic to all destinations and enables logs, run the following command: gcloud compute network-firewall-policies rules create 100 \ --firewall-policy=fw-policy \ --direction=INGRESS \ --action=ALLOW \ --layer4-configs=tcp:22 \ --src-ip-ranges=35.235.240.0/20 \ --global-firewall-policy \ --enable-logging To associate the firewall policy with the VPC network, run the following command: gcloud compute network-firewall-policies associations create \ --firewall-policy=fw-policy \ --network=vpc-geo-location \ --name=pol-association-fw-rules \ --global-firewall-policy Create a firewall rule In this section, you create a firewall rule to allow ingress connection on the instance-2-sg VM.
+- Click Create . gcloud To add a new rule in the fw-policy that you created in the Create a global network firewall policy section, run the following command: gcloud compute network-firewall-policies rules create 200 \ --firewall-policy=fw-policy \ --direction=EGRESS \ --action=DENY \ --dest-region-codes=SG,PL,IT \ --layer4-configs=all \ --global-firewall-policy \ --enable-logging Test the geolocation firewall rule Console After you have added the rule to block egress traffic to Singapore (SG), Poland (PL), and Italy (IT), follow these steps to test the rule: In the Google Cloud console, go to the VM instances page.
+- In the Delete a firewall policy dialog, click Delete . gcloud Remove the association between the firewall policy and VPC network. gcloud compute network-firewall-policies associations delete \ --name=pol-association-fw-rules \ --firewall-policy=fw-policy \ --global-firewall-policy Note: If you set up the association between the firewall policy and the VPC network through Google Cloud console, don't use the gcloud CLI command to remove the association.
+
+### "Configure a global network firewall policy to allow egress traffic to an\
+
+- URL: [https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress](https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress)
+- Source ID: `site-docs-root`
+- Final score: 251
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Required roles To get the permissions that you need to create a custom VPC network, VM, Cloud Router, Cloud NAT, global network firewall policy and its rules, and to view the logs, ask your administrator to grant you the following IAM roles on the project: Compute Network Admin role ( roles/compute.networkAdmin ) Compute Instance Admin (v1) role ( roles/compute.instanceAdmin.v1 ) Compute Security Admin role ( roles/compute.securityAdmin ) Logs Viewer role ( roles/logging.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Home Documentation Networking Cloud NGFW Guides Send feedback Configure a global network firewall policy to allow egress traffic to an FQDN Stay organized with collections Save and categorize content based on your preferences.
+- Create a global network firewall policy to allow IAP TCP tunneling To allow Identity-Aware Proxy tunneling for the VMs in your network, create a global network firewall policy and add a firewall rule to the policy.
+- Test the global network firewall policy After you have configured the global network firewall policy, follow these steps to test the policy: In the Google Cloud console, go to the VM instances page.
 

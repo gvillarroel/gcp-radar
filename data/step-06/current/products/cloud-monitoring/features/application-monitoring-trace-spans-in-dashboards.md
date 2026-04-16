@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.076Z"
+generated_at: "2026-04-15T00:01:13.763Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Application Monitoring trace spans in dashboards"
 feature_slug: "application-monitoring-trace-spans-in-dashboards"
 latest_feature_date: "2026-01-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
   - "https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring"
@@ -17,16 +17,16 @@ keywords:
   - "monitoring"
   - "trace"
   - "spans"
-  - "in"
   - "dashboards"
   - "display"
   - "associated"
+  - "registered"
 ---
 
 # Application Monitoring trace spans in dashboards
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Application Monitoring dashboards display trace spans associated with registered
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -51,24 +51,24 @@ Fallback definition because synthesis failed.
 ### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
-- Source ID: `site-docs-reference`
-- Final score: 258
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-2`
+- Final score: 226
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Use dashboard options to explore telemetry The Application Monitoring dashboards display log, metric, trace, and incident information.
 - The Application Monitoring dashboards display the following: Details about your registered applications, including their location, criticality, and registered services ( ) and workloads ( ).
-- For trace data, the application-level dashboard groups spans by their name and by the service or workload name, and then displays the following information in a tabular format: Span name.
+- Use dashboard options to explore telemetry The Application Monitoring dashboards display log, metric, trace, and incident information.
 - The following screenshot illustrates the dashboard for a workload: The registration status of a service or workload affects what data Application Monitoring displays on the dashboard for the service or workload: Registered : Application Monitoring uses the application-specific labels and attributes that supported infrastructure and instrumented applications attach to the telemetry they generate.
+- For trace data, the application-level dashboard groups spans by their name and by the service or workload name, and then displays the following information in a tabular format: Span name.
 
 ### "Instrument an application for Application Monitoring \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
 - Source ID: `site-docs-reference`
-- Final score: 244
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 176
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The googlemanagedprometheus exporter converts the http.server.request.duration OpenTelemetry metric into a Prometheus metric that has the following properties: Name: prometheus/http server request duration seconds/histogram Metric: prometheus.googleapis.com/http server request duration seconds/histogram Resource types: prometheus target Unit: s Kind: CUMULATIVE Value type: DISTRIBUTION When your Google Cloud project contains the http server request duration seconds metric, then your Application Monitoring dashboards display the traffic level, server error rate and the latency for HTTP requests.
@@ -80,9 +80,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring-services](https://docs.cloud.google.com/monitoring/docs/application-monitoring-services)
 - Source ID: `site-docs-reference`
-- Final score: 224
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The dashboards that Application Monitoring creates display log and metric data, including the following golden signals, when that data includes application-specific labels: Traffic : Incoming request rates on the service or workload over the selected time period.

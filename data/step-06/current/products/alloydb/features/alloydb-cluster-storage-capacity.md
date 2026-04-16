@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.595Z"
+generated_at: "2026-04-12T12:07:33.842Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB cluster storage capacity"
 feature_slug: "alloydb-cluster-storage-capacity"
 latest_feature_date: "2024-11-12"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators"
+  - "https://docs.cloud.google.com/alloydb/docs/locations"
+  - "https://docs.cloud.google.com/alloydb/docs/cluster-create"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions"
 keywords:
   - "maximum storage per cluster"
   - "storage limit per cluster"
@@ -24,7 +27,7 @@ keywords:
 # AlloyDB cluster storage capacity
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,27 +35,49 @@ AlloyDB now supports up to 128 TiB of storage per cluster in every supported reg
 
 ## Extended Definition
 
-AlloyDB cluster storage capacity defines the maximum database storage allowed per AlloyDB cluster, with the documented quota announced in release notes. The documented limits are at least 64 TiB per cluster in all locations (April 29, 2024) and later 128 TiB per cluster in all regions where AlloyDB is available (April 09, 2025).
+AlloyDB now supports up to 128 TiB of storage per cluster in every supported region; AlloyDB now supports up to 64 TiB of storage per cluster across all locations.
 
 ## Evidence Summary
 
-The AlloyDB release notes provide explicit dated feature entries for cluster storage quota increases to 64 TiB and then 128 TiB per cluster.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
+- [https://docs.cloud.google.com/alloydb/docs/locations](https://docs.cloud.google.com/alloydb/docs/locations)
+- [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
+- [https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions](https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Perform intelligent SQL queries using AI functions \_|\_ AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 22
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
+- Source ID: `site-docs-reference-2`
+- Final score: 102
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### AlloyDB locations \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/locations](https://docs.cloud.google.com/alloydb/docs/locations)
+- Source ID: `site-docs-reference-2`
+- Final score: 98
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Create a cluster and its primary instance \_|\_ AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
+- Source ID: `site-docs-reference-2`
+- Final score: 94
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- For more information, see the following pages: Enable backup plans Enable database auditing Enable high availability Enable password policy Enforce SSL/TLS encryption Increase backup retention Increase cluster storage quota Optimize underprovisioned instances April 09, 2025 Feature AlloyDB now supports managed connection pooling in Preview .
-- Feature AlloyDB now supports up to 128 TiB storage per cluster in all regions where AlloyDB is available.
-- April 29, 2024 Feature AlloyDB now supports up to 64 TiB storage per cluster in all locations.
+### "IAM roles and permissions for AlloyDB \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions](https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions)
+- Source ID: `site-api-reference`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

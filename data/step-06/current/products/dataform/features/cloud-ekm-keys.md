@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.382Z"
+generated_at: "2026-04-12T12:13:45.738Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Cloud EKM keys"
 feature_slug: "cloud-ekm-keys"
 latest_feature_date: "2024-08-12"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataform/docs/cmek"
-  - "https://docs.cloud.google.com/dataform/docs/release-notes"
   - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+  - "https://docs.cloud.google.com/dataform/docs/create-repository"
 keywords:
   - "ekm"
   - "keys"
@@ -26,7 +27,7 @@ keywords:
 # Cloud EKM keys
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud EKM keys let Dataform protect data using externally managed encryption key
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataform/docs/cmek](https://docs.cloud.google.com/dataform/docs/cmek)
-- [https://docs.cloud.google.com/dataform/docs/release-notes](https://docs.cloud.google.com/dataform/docs/release-notes)
 - [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient)
+- [https://docs.cloud.google.com/dataform/docs/create-repository](https://docs.cloud.google.com/dataform/docs/create-repository)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataform/docs/cmek](https://docs.cloud.google.com/dataform/docs/cmek)
 - Source ID: `site-docs-root-2`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 285
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - CMEK encryption of repository data When you apply CMEK encryption to a Dataform repository, all Dataform-managed customer data in that repository is encrypted at rest using the CMEK protection key set for the repository.
@@ -62,24 +64,11 @@ Evidence snippets:
 - This data includes the following: Git repository content of the Dataform repository and its workspaces Compiled SQL queries and compilation errors Stored SQL queries of workflow actions Error details of executed workflow actions Dataform uses CMEK protection keys in the following scenarios: During every operation that requires decryption of customer data stored at rest.
 - This integration lets you specify the following encryption compliance requirements for Dataform repositories in your organization: Require CMEKs for all new Dataform repositories Restrict Cloud KMS keys for a Dataform project Considerations when applying organization policies Before applying any CMEK organization policies, you should be aware of the following.
 
-### Dataform release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataform/docs/release-notes](https://docs.cloud.google.com/dataform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- April 02, 2024 Feature You can now use Customer-Managed Encryption Keys (CMEK) to protect repositories in Dataform.
-- Feature You can now use Cloud External Key Manager (Cloud EKM) keys to protect Dataform data.
-- September 09, 2024 Feature You can now set a default Dataform customer-managed encryption keys (CMEK) key for your project to encrypt multiple Dataform repositories with the same CMEK key.
-- For more information about encrypting Dataform repositories with CMEK, see Use customer-managed encryption keys .
-
 ### "Class DataformAsyncClient (0.10.0) \_|\_ Python client libraries \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 134
+- Final score: 158
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +76,30 @@ Evidence snippets:
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 async def sample delete workflow invocation(): Create a client client = dataform v1 .
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 async def sample delete team folder tree(): Create a client client = dataform v1 .
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 async def sample delete workflow config(): Create a client client = dataform v1 .
+
+### "Class DataformClient (0.10.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient)
+- Source ID: `site-python-reference`
+- Final score: 158
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Returns Type Description google.cloud.dataform v1.types.Workspace Represents a Dataform Git workspace. crypto key path crypto key path ( project : str , location : str , key ring : str , crypto key : str ) - > str Returns a fully-qualified crypto key string. crypto key version path crypto key version path ( project : str , location : str , key ring : str , crypto key : str , crypto key version : str ) - > str Returns a fully-qualified crypto key version string. delete folder delete folder ( request : typing .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 def sample delete workflow invocation(): Create a client client = dataform v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 def sample delete team folder tree(): Create a client client = dataform v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 def sample delete workflow config(): Create a client client = dataform v1 .
+
+### Create a repository \_|\_ Dataform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/create-repository](https://docs.cloud.google.com/dataform/docs/create-repository)
+- Source ID: `site-docs-root`
+- Final score: 150
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information about using customer-managed encryption keys (CMEK) in Dataform, see Use customer-managed encryption keys .
+- For more information, see Restrict remote repositories Required roles To get the permissions that you need to create and delete a repository, ask your administrator to grant you the following IAM roles on repositories: Dataform Admin ( roles/dataform.admin ) - the project Service Account User ( roles/iam.serviceAccountUser ) - the custom service account For more information about granting roles, see Manage access to projects, folders, and organizations .
+- To let Dataform use your custom service account, the default Dataform service agent must have the following roles on the custom service account resource: Service Account Token Creator ( roles/iam.serviceAccountTokenCreator ) Service Account User ( roles/iam.serviceAccountUser ) To grant these roles, follow these steps: In the Google Cloud console, go to the IAM page.
+- Delete a repository To delete a repository and all its contents, follow these steps: In the Google Cloud console, go to the Dataform page.
 

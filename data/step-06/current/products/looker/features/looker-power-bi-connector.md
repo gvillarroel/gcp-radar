@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.402Z"
+generated_at: "2026-04-15T13:43:38.448Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Looker Power BI Connector"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-09-10"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/looker"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
+  - "https://docs.cloud.google.com/looker/docs/bi-connectors"
+  - "https://docs.cloud.google.com/looker/docs/best-practices/looker-support-details"
+  - "https://docs.cloud.google.com/looker/docs/action-hub"
 keywords:
   - "looker"
   - "power"
   - "bi"
   - "connector"
-  - "the"
-  - "is"
   - "now"
-  - "supported"
+  - "customer"
+  - "hosted"
+  - "instances"
 ---
 
 # Looker Power BI Connector
@@ -42,42 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
+- [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- [https://docs.cloud.google.com/looker/docs/best-practices/looker-support-details](https://docs.cloud.google.com/looker/docs/best-practices/looker-support-details)
+- [https://docs.cloud.google.com/looker/docs/action-hub](https://docs.cloud.google.com/looker/docs/action-hub)
 
 ## Supporting Pages
 
-### Access control and permission management | Looker | Google Cloud Documentation
+### Admin settings - BI Connectors \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 94
+- URL: [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- Source ID: `site-docs-reference`
+- Final score: 172
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The Power BI connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- The Microsoft Excel connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- The Tableau Desktop connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- For customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections, your network administrator must configure your network so that traffic from Power BI can reach your Looker instance.
+
+### Looker Support details \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/best-practices/looker-support-details](https://docs.cloud.google.com/looker/docs/best-practices/looker-support-details)
+- Source ID: `site-docs-reference`
+- Final score: 86
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Finding logs For customer-hosted instances, you can find the Looker logs in the log subdirectory under the Looker user's home directory (usually /home/looker ).
+- See the Finding logs section for more information on retrieving logs from customer-hosted Looker instances.
+- If your Looker instance is customer-hosted and is running an unsupported Looker version, update your Looker instance to a supported Looker version.
+- Instances that are hosted by Looker automatically update to supported releases.
+
+### Sharing data through an action hub \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/action-hub](https://docs.cloud.google.com/looker/docs/action-hub)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 82
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
-- Data access can be further restricted within a model using access filters to limit which rows of data ...
-- These roles are then applied to users and groups.
-
-### Looker roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- Source ID: `site-iam-reference`
-- Final score: 94
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Looker roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/looker This page lists the IAM roles and permissions for Looker.
-
-### Getting started with the Looker API | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 92
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
+- Admins of customer-hosted instances may need to consider additional factors when choosing to enable Looker integrations from the Looker Action Hub, especially integrations that support streamed results or that use OAuth .
+- Considerations for customer-hosted instances To use Looker integrations , the Looker Action Hub must be able to communicate with the Looker instance and fulfill the Looker Action hub requirements .
+- This is not always possible with customer-hosted Looker instances, for various reasons.
+- The appropriate solution or combination of solutions will depend on the architecture of the Looker instance: If the customer-hosted instance is not resolvable by the Looker Action Hub — that is, the Looker Action Hub cannot receive requests from the Looker instance — Looker admins can contact a Google Cloud sales specialist to enable the public host url license feature.
 

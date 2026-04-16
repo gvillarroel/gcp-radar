@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:04.797Z"
+generated_at: "2026-04-15T12:00:38.900Z"
 product_name: "Cortex"
 product_slug: "cortex"
 feature_name: "Google Analytics 4 (GA4)"
@@ -9,18 +9,18 @@ latest_feature_date: "2024-09-30"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/cortex/docs/resources"
-  - "https://docs.cloud.google.com/cortex/docs/looker-dashboard-dun-and-bradstreet"
-  - "https://docs.cloud.google.com/cortex/docs/deployment-step-one"
+  - "https://docs.cloud.google.com/cortex/docs/marketing-google-analytics"
+  - "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads"
+  - "https://docs.cloud.google.com/cortex/docs/overview"
 keywords:
   - "analytics"
   - "ga4"
-  - "is"
   - "marketing"
   - "source"
-  - "for"
   - "analyzing"
   - "website"
+  - "engagement"
+  - "conversions"
 ---
 
 # Google Analytics 4 (GA4)
@@ -42,42 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/cortex/docs/resources](https://docs.cloud.google.com/cortex/docs/resources)
-- [https://docs.cloud.google.com/cortex/docs/looker-dashboard-dun-and-bradstreet](https://docs.cloud.google.com/cortex/docs/looker-dashboard-dun-and-bradstreet)
-- [https://docs.cloud.google.com/cortex/docs/deployment-step-one](https://docs.cloud.google.com/cortex/docs/deployment-step-one)
+- [https://docs.cloud.google.com/cortex/docs/marketing-google-analytics](https://docs.cloud.google.com/cortex/docs/marketing-google-analytics)
+- [https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads](https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads)
+- [https://docs.cloud.google.com/cortex/docs/overview](https://docs.cloud.google.com/cortex/docs/overview)
 
 ## Supporting Pages
 
-### Resources | Google Cloud Cortex Framework | Google Cloud Documentation
+### Integration with Google Analytics 4 | Google Cloud Cortex Framework | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/cortex/docs/resources](https://docs.cloud.google.com/cortex/docs/resources)
-- Source ID: `site-docs-root`
-- Final score: 62
+- URL: [https://docs.cloud.google.com/cortex/docs/marketing-google-analytics](https://docs.cloud.google.com/cortex/docs/marketing-google-analytics)
+- Source ID: `feature-recovery-http`
+- Final score: 142
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Resources Google Cloud Cortex Framework Google Cloud Documentation Source URL: https://docs.cloud.google.com/cortex/docs/resources Google Cloud Cortex Framework · Start free · Home · Documentation · Data analytics · Google Cloud Cortex Framework · Resources · Send feedback · Stay organized with collections Save and categorize content based on your preferences.
-- The following resources provide more information about external resources for Google Cloud Cortex Framework: Overview ·
+- Integration with Google Analytics 4 | Google Cloud Cortex Framework | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Google Cloud Cortex Framework Start free Overview Guides Resources Technology areas More Overview Guides Resources Cross-product tools More Console Cortex Framework Overview Data sources and workloads Support Deployment Quickstart demo Prerequisites Step 1: Establish workloads Step 2: Clone repository Step 3: Determine integration mechanism Step 4: Set up components Step 5: Configure deployment Step 6: Execute deployment Optional steps Use different projects to segregate access Cloud Build features Configure external datasets Turbo mode Telemetry opt out Configure common dimensions Task dependent DAGs Workloads integration Operational SAP Salesforce Sales Cloud (SFDC) Oracle EBS Marketing Google Ads Campaign Manager 360 TikTok LiveRamp Meta Salesforce Marketing Cloud (SFMC) YouTube (with DV360) Google Analytics 4 Cross Media & Product Connected Insights Sustainability Dun & Bradstreet Cortex for Marketing Mix Modelling (MMM) Cortex for Meridian Cortex for Meridian Quickstart demo Additional guides Data Mesh Concepts User guide Change Data Capture Gathering Cloud Composer settings Upgrade recommedations External DAGs migration from v4.2 to v5.0 Looker Blocks and Dashboards Overview Deploy Looker Blocks Operational Looker Block for SAP Looker Block for Salesforce Sales Cloud (SFDC) Looker Block for Oracle EBS Marketing Looker Block for Salesforce Marketing Cloud (SFMC) Looker Block for Meta Looker Block for YouTube (with DV360) Looker Block for Cross Media & Product Connected Insights Sustainability Looker Studio dashboard for Dun & Bradstreet Customize Looker Blocks AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Data analytics Google Cloud Cortex Framework Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- This file contains the following parameters for GA4: "marketing" : { "deployGA4" : true , "GA4" : { "datasets" : { "cdc" : [ { "property_id" : 0 , "name" : "" } ], "reporting" : "REPORTING_GA4" } } } The following table describes the value for each marketing parameter: Parameter Meaning Default Value Description marketing.deployGA4 Deploy GA4 true Execute the deployment for GA4 data source. marketing.GA4.datasets.cdc BigQuery Export datasets for GA4 [{"property_id": 0, "name": ""}] Array of Google Analytics 4 BigQuery Export datasets.
+- Integration with Google Analytics 4 This page describes the required configurations to bring data from Google Analytics 4 (GA4) as a data source of the marketing workload of Cortex Framework Data Foundation.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]] Products and pricing See all products Google Cloud pricing Google Cloud Marketplace Contact sales Support Community forums Support Release Notes System status Resources GitHub Getting Started with Google Cloud Code samples Cloud Architecture Center Training and Certification Engage Blog Events X (Twitter) Google Cloud on YouTube Google Cloud Tech on YouTube About Google Privacy Site terms Google Cloud terms Manage cookies Our third decade of climate action: join us Sign up for the Google Cloud newsletter Subscribe English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어
 
-### Looker Studio dashboard for Dun & Bradstreet &nbsp;| Google Cloud Cortex Framework | Google Cloud Documentation
+### "Data sources and workloads \_|\_ Google Cloud Cortex Framework \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/cortex/docs/looker-dashboard-dun-and-bradstreet](https://docs.cloud.google.com/cortex/docs/looker-dashboard-dun-and-bradstreet)
-- Source ID: `site-docs-root`
-- Final score: 36
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Looker Studio dashboard for Dun & Bradstreet &nbsp; Google Cloud Cortex Framework Google Cloud Documentation Source URL: https://docs.cloud.google.com/cortex/docs/looker-dashboard-dun-and-bradstreet The Looker Studio dashboard for Dun &amp; Bradstreet data from Cortex Framework offers the following insights.
-- Overview of high-level vendor delivery and ESG performance including:
-
-### Step 1: Establish workloads | Google Cloud Cortex Framework | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/cortex/docs/deployment-step-one](https://docs.cloud.google.com/cortex/docs/deployment-step-one)
-- Source ID: `site-docs-root`
-- Final score: 35
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads](https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads)
+- Source ID: `site-docs-reference`
+- Final score: 103
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Step 1: Establish workloads Google Cloud Cortex Framework Google Cloud Documentation Source URL: https://docs.cloud.google.com/cortex/docs/deployment-step-one This page guides you through the initial step of setting up your data foundation, the core of Cortex Framework.
-- Built on top of BigQuery storage, the data foundation organizes your incoming data from various sources.
+- The following are the marketing related data sources available: Salesforce Marketing Cloud Google Ads Campaign Manager 360 (CM360) TikTok Meta LiveRamp YouTube (with DV360) Google Analytics 4 Cross Media & Product Connected Insights Cortex for Meridian Operational Cortex Framework incorporates operational platforms such as SAP (SAP ECC and SAP S/4 HANA) and Salesforce as valuable data sources to get real-time insights to improve efficiency and productivity in different areas.
+- By integrating data from diverse sources and using Cortex Framework's predefined models, you can make informed decisions, optimize resources, and gain accurate, up-to-date insights into your marketing efforts.
+- The following are the operational related data sources available: SAP (SAP ECC and SAP S/4 HANA) Salesforce Sales Cloud Oracle EBS Sustainability Cortex Framework for Sustainability empowers organizations to proactively address their environmental, social, and governance (ESG) responsibilities.
+- The following is the sustainability related data source available: Dun & Bradstreet with SAP Deployment For more information about deployment, start exploring the prerequisites of the Cortex Framework Data Foundation deployment.
+
+### Overview \_|\_ Google Cloud Cortex Framework \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/cortex/docs/overview](https://docs.cloud.google.com/cortex/docs/overview)
+- Source ID: `site-docs-root`
+- Final score: 75
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following diagram describes how Cortex Framework uses various components to provide a unified platform for storing, managing, and analyzing data from diverse data sources: Figure 1 .
+- Data can come from various data sources such as Salesforce Marketing Cloud, some Google platforms (like Google Ads and CM360), TikTok, Meta, SAP, and more.
+- Cortex Framework focuses on solving specific problems and offers pre built solutions for business areas like Marketing, Sales, Supply Chain, Manufacturing, Finance, and Sustainability.
+- Home Documentation Data analytics Google Cloud Cortex Framework Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
 

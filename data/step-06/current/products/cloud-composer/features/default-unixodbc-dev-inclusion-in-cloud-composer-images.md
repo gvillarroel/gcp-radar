@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.096Z"
+generated_at: "2026-04-12T12:11:20.316Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Default unixodbc-dev inclusion in Cloud Composer images"
 feature_slug: "default-unixodbc-dev-inclusion-in-cloud-composer-images"
 latest_feature_date: "2019-10-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines"
 keywords:
   - "default"
   - "unixodbc"
@@ -26,7 +27,7 @@ keywords:
 # Default unixodbc-dev inclusion in Cloud Composer images
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer images now include the ODBC Linux driver (unixodbc-dev) by defaul
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines](https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 202
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +63,11 @@ Evidence snippets:
 - Maintenance release versions of Cloud Composer 1 Maintenance release versions of Cloud Composer 1 are new Cloud Composer 1 images that provide only bug fixes and small improvements.
 - Cloud Composer 3 images Cloud Composer 2 images Cloud Composer 1 images Cloud Composer 3 images The following table lists the released Cloud Composer images.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 160
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature The ODBC Linux driver ( unixodbc-dev ) is now included by default in the Cloud Composer images. jsonschema is now available as a Python dependency for DAG serialization.
-- Feature The ODBC Linux driver ( unixodbc-dev ) is now included by default in the Cloud Composer images. jsonschema is now available as a Python dependency for DAG serialization.
-- Change New images are available in Cloud Composer 2: composer-2.13.3-airflow-2.10.5 (default) composer-2.13.3-airflow-2.9.3 May 29, 2025 Feature The Composer Local Development CLI tool is now available in Cloud Composer 3.
-- Change New images are available in Cloud Composer 2: composer-2.13.1-airflow-2.10.5 (default) composer-2.13.1-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.5-build.3 (default) composer-3-airflow-2.9.3-build.23 Change The following Cloud Composer versions have an extended upgrade timeline: composer-3-airflow-2.10.5-build.3 composer-3-airflow-2.9.3-build.23 composer-2.13.1-airflow-2.10.5 composer-2.13.1-airflow-2.9.3 May 07, 2025 Feature Data lineage in Cloud Composer now uses OpenLineage in all regions supported by Cloud Composer.
-
 ### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - Source ID: `site-iam-reference`
-- Final score: 154
+- Final score: 192
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +75,30 @@ Evidence snippets:
 - Options to manage PyPI packages for Cloud Composer environments Option Use if Install from PyPI The default way to install packages in your environment Install from a repository with a public IP address The package is hosted in a package repository other than PyPI.
 - Preinstalled and custom PyPI packages in Cloud Composer images Cloud Composer images contains both preinstalled and custom PyPI packages.
 - Warning: Don't modify or delete the images built by Cloud Composer in Artifact Registry or the repository itself.
+
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 187
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If you encounter this issue in Airflow 1 in a long-running task, increase the value of the [celery broker transport options]visibility timeout Airflow configuration option (the default value is 604800 for Composer 1.17.0, 21600 for older environments).
+- If you experience this issue then in the Airflow tasks logs you will see the following error message: "Can't connect to MySQL server on 'airflow-sqlproxy-service.default.svc.cluster.local' (104)" Cloud Composer team works on resolving this problem.
+- Intermittent issues when communicating to the environment's database This known issue applies only to Cloud Composer 1.
+- This option is already disabled by default if an environment is created using Cloud Composer 2.8.0 or later versions.
+
+### Launch Dataflow pipelines with Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines](https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines)
+- Source ID: `site-iam-reference`
+- Final score: 187
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- StorageOptions ; public class CreateBucket { public static void createBucket ( String projectId , String bucketName ) { // The ID of your GCP project // String projectId = "your-project-id"; // The ID to give your GCS bucket // String bucketName = "your-unique-bucket-name"; Storage storage = StorageOptions . newBuilder (). setProjectId ( projectId ). build (). getService (); Bucket bucket = storage . create ( BucketInfo . newBuilder ( bucketName ). build ()); System . out . println ( "Created bucket " + bucket . getName ()); } } Python To authenticate to Cloud Composer, set up Application Default Credentials.
+- If the destination object already exists in your bucket, set instead a generation-match precondition using its generation number. generation match precondition = 0 blob . upload from filename ( source file name , if generation match = generation match precondition ) print ( f "File { source file name } uploaded to { destination blob name } ." ) Ruby To authenticate to Cloud Composer, set up Application Default Credentials.
+- DAG ( The id you will see in the DAG airflow page "composer dataflow dag" , default args = default args , The interval with which to schedule the DAG schedule interval = datetime . timedelta ( days = 1 ), # Override to match your needs ) as dag : start template job = DataflowTemplatedJobStartOperator ( The task id of your job task id = "dataflow operator transform csv to bq" , The name of the template that you're using.
+- DAG ( The id you will see in the DAG airflow page "composer dataflow dag" , default args = default args , The interval with which to schedule the DAG schedule interval = datetime . timedelta ( days = 1 ), # Override to match your needs ) as dag : start template job = DataflowTemplateOperator ( The task id of your job task id = "dataflow operator transform csv to bq" , The name of the template that you're using.
 

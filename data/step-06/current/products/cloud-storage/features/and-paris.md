@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.752Z"
+generated_at: "2026-04-12T12:12:45.923Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "and Paris"
 feature_slug: "and-paris"
 latest_feature_date: "2023-03-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/storage/docs/bandwidth-usage"
-  - "https://docs.cloud.google.com/storage/docs/release-notes"
   - "https://docs.cloud.google.com/storage/docs/locations"
+  - "https://docs.cloud.google.com/storage/docs/storage-classes"
+  - "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
 keywords:
   - "and"
   - "paris"
@@ -26,7 +27,7 @@ keywords:
 # and Paris
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Dual-region storage supports Warsaw, Madrid, Frankfurt, Milan, and Paris as avai
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/storage/docs/bandwidth-usage](https://docs.cloud.google.com/storage/docs/bandwidth-usage)
-- [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
 - [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
+- [https://docs.cloud.google.com/storage/docs/storage-classes](https://docs.cloud.google.com/storage/docs/storage-classes)
+- [https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists](https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/storage/docs/bandwidth-usage](https://docs.cloud.google.com/storage/docs/bandwidth-usage)
 - Source ID: `site-iam-reference`
-- Final score: 166
+- Final score: 185
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +63,11 @@ Evidence snippets:
 - Use storage.googleapis.com/dualregion internet egress bandwidth to increase Internet egress for your buckets located in dual-regions.
 - Use storage.googleapis.com/dualregion google egress bandwidth to increase Google egress for your buckets located in dual-regions.
 
-### Cloud Storage release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- March 20, 2023 Feature The following US regions are now available for dual-region storage: Los Angeles ( us-west2 ) Salt Lake City ( us-west3 ) Feature The following EU regions are now available for dual-region storage: Warsaw ( europe-central2 ) Madrid ( europe-southwest1 ) Frankfurt ( europe-west3 ) Milan ( europe-west8 ) Paris ( europe-west9 ) March 17, 2023 Feature Expanded Cloud Storage monitoring dashboards are now generally available (GA).
-- March 17, 2025 Libraries Go 1.51.0 (2025-03-12) Features storage/append: Support appends in w1r3. ( #11483 ) ( 48bb391 ) storage: Benchmark with experimental MRD. ( #11501 ) ( 7b49152 ) storage: Implement RetryChunkDeadline for grpc writes ( #11476 ) ( 03575d7 ) storage: Specify benchmark integrity check. ( #11465 ) ( da18845 ) storage: Use ReadHandle for faster re-connect ( #11510 ) ( cac52f7 ) storage: Wrap NotFound errors for buckets and objects ( #11519 ) ( 0dd7d3d ) Bug Fixes storage/append: Report progress for appends. ( #11503 ) ( 96dbb6c ) storage: Add a safety check for readhandle ( #11549 ) ( c9edb37 ) storage: Add universe domain to defaultSignBytesFunc ( #11521 ) ( 511608b ) storage: Clone the defaultRetry to avoid modifying it directly ( #11533 ) ( 7f8d69d ) storage: Fix adding multiple range on stream with same read id ( #11584 ) ( 0bb3434 ) storage: Modify the callback of mrd to return length of data read instead of limit. ( #11687 ) ( 9e359f0 ) storage: Propagate ctx from invoke to grpc upload reqs ( #11475 ) ( 9ad9d76 ) storage: Remove duplicate routing header ( #11534 ) ( 8eeb59c ) storage: Return sentinel ErrObjectNotExist for copy and compose ( #11369 ) ( 74d0c10 ), refs #10760 storage: Wait for XML read req to finish to avoid data races ( #11527 ) ( 782e12a ) Java 2.50.0 (2025-03-14) Features Next release from main branch is 2.50.0 ( #2968 ) ( 4a69fcc ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.54.0 ( 22e7e3d ) deps: Update the Java code generator (gapic-generator-java) to 2.55.1 ( 81c8c61 ) Improve 503 handling for json resumable uploads ( #2987 ) ( 9bc2b14 ) Update usages of String.format to explicitly pass Locale.US ( #2974 ) ( 8bcb2de ), closes #2972 Dependencies Update dependency com.google.apis:google-api-services-storage to v1-rev20250224-2.0.0 ( #2969 ) ( 80a40c4 ) Update googleapis/sdk-platform-java action to v2.55.1 ( #2985 ) ( e22a2de ) Update sdk-platform-java dependencies ( #2983 ) ( 9eeb82a ) Update sdk-platform-java dependencies ( #2986 ) ( 10b922a ) Feature Cloud Storage now offers the DE configurable dual-region code, which can be used when creating a dual-region bucket in europe-west3 (Frankfurt) and europe-west10 (Berlin).
-- Java Changes for google-cloud-storage 2.40.1 (2024-06-26) Bug Fixes Add a workaround to make sure grpc clients' hosts always match their universe domain ( #2588 ) ( 87bf737 ) Include x-goog-user-project on resumable upload puts for grpc transport ( #2586 ) ( 6f2f504 ) Update grpc bidi resumable uploads to validate ack'd object size ( #2570 ) ( 5c9cecf ) Update grpc finalize on close resumable uploads to validate ack'd object size ( #2572 ) ( 55a6d15 ) Update grpc single-shot uploads to validate ack'd object size ( #2567 ) ( 65c8808 ) Dependencies Update dependency com.google.apis:google-api-services-storage to v1-rev20240524-2.0.0 ( #2565 ) ( d193243 ) Update dependency com.google.apis:google-api-services-storage to v1-rev20240621-2.0.0 ( #2596 ) ( 73b8753 ) Update dependency com.google.cloud:sdk-platform-java-config to v3.32.0 ( #2597 ) ( 25940a4 ) Documentation Add Hierarchical Namespace Bucket and Folders samples ( #2583 ) ( 3030081 ), closes #2569 Remove allowlist note from Folders RPCs ( #2593 ) ( 82161de ) Update DeleteObject Sample to be clearer on object versioning behavior ( #2595 ) ( 79b7cf0 ) June 28, 2024 Feature You can now specify the Frankfurt, Germany ( europe-west3 ) and Paris, France ( europe-west9 ) regions when using regional endpoints .
-- Node.js Changes for @google-cloud/storage 7.11.2 (2024-06-07) Bug Fixes Support uint8array in file.save ( #2480 ) ( 1477fe1 ) Java Changes for google-cloud-storage 2.40.0 (2024-06-06) Features Promote google-cloud-storage-control to GA ( #2575 ) ( 129f188 ) Bug Fixes Reduce Java 21 Virtual Thread Pinning in IO operations ( #2553 ) ( 498fd0b ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.31.0 ( #2571 ) ( 67ce3d6 ) Update dependency net.jqwik:jqwik to v1.8.5 ( #2563 ) ( 88f7d86 ) Documentation Managed Folders samples ( #2562 ) ( 5ffc1f2 ) Update javadoc for createFrom ( #2522 ) ( dc31e95 ) June 06, 2024 Feature Cloud Storage now offers a new pre-defined dual region, EUROPE-WEST2 (London) and EUROPE-WEST1 (Belgium).
-
 ### Bucket locations \_|\_ Cloud Storage \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - Source ID: `site-docs-root`
-- Final score: 134
+- Final score: 164
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +75,30 @@ Evidence snippets:
 - The following regions are available: Geographic Area Region Name Region Description North America NORTHAMERICA-NORTHEAST1 1 Montréal Low CO 2 NORTHAMERICA-NORTHEAST2 Toronto Low CO 2 NORTHAMERICA-SOUTH1 1 Querétaro US-CENTRAL1 Iowa Low CO 2 US-EAST1 South Carolina US-EAST4 Northern Virginia US-EAST5 Columbus US-SOUTH1 Dallas Low CO 2 US-WEST1 Oregon Low CO 2 US-WEST2 Los Angeles US-WEST3 Salt Lake City US-WEST4 Las Vegas South America SOUTHAMERICA-EAST1 São Paulo Low CO 2 SOUTHAMERICA-WEST1 Santiago Low CO 2 Europe EUROPE-CENTRAL2 Warsaw EUROPE-NORTH1 Finland Low CO 2 EUROPE-NORTH2 Stockholm Low CO 2 EUROPE-SOUTHWEST1 Madrid Low CO 2 EUROPE-WEST1 Belgium Low CO 2 EUROPE-WEST2 London Low CO 2 EUROPE-WEST3 Frankfurt EUROPE-WEST4 Netherlands Low CO 2 EUROPE-WEST6 Zürich Low CO 2 EUROPE-WEST8 Milan EUROPE-WEST9 Paris Low CO 2 EUROPE-WEST10 Berlin EUROPE-WEST12 Turin Asia ASIA-EAST1 Taiwan ASIA-EAST2 Hong Kong ASIA-NORTHEAST1 Tokyo ASIA-NORTHEAST2 1 Osaka ASIA-NORTHEAST3 Seoul ASIA-SOUTHEAST1 Singapore India ASIA-SOUTH1 Mumbai ASIA-SOUTH2 Delhi Indonesia ASIA-SOUTHEAST2 Jakarta Thailand ASIA-SOUTHEAST3 Bangkok Middle East ME-CENTRAL1 Doha ME-CENTRAL2 Dammam, Saudi Arabia ME-WEST1 Tel Aviv Australia AUSTRALIA-SOUTHEAST1 Sydney AUSTRALIA-SOUTHEAST2 Melbourne Africa AFRICA-SOUTH1 Johannesburg 1 Montréal, Osaka, and Querétaro each have three zones housed in one or two physical data centers.
 - Lowest storage price No replication charges No outbound data transfer charges when reading data inside the same region Highest storage price Replication charges apply on write No outbound data transfer charges when reading data within either region Higher storage price than regions, but lower than dual-regions Replication charges apply on write Outbound data transfer charges always apply when reading data Location recommendations Requirements Recommended bucket location Workload examples Ultra-low latency Ultra-high bandwidth and I/O High performance Zone 1 Artificial Intelligence (AI) and Machine Learning (ML) High-performance computing Data-intensive analytics Optimized latency and bandwidth Lowest data storage cost Cross-zone redundancy Region 2 Analytics Backup and archive Optimized latency and bandwidth Cross-region redundancy, with precise control of the locations where copies of data are stored Dual-region 3 Analytics Backup and archive Disaster recovery Cross-geography data access Cross-region redundancy Multi-region Content serving Zonal locations for buckets are only available through Rapid Bucket .
 - Zone Region Dual-region Multi-region Availability Data redundancy within one availability zone Zonal outages might affect availability Data redundancy across availability zones (synchronous) RTO(recovery time objective)=0: automated failover and failback on zonal failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) Turbo replication option for replication within 15 minutes RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Pricing Offers the highest performance in Cloud Storage for demanding workloads at the highest storage price, out of all location types Zonal bucket-specific data transfer charges apply.
+
+### Storage classes \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage/docs/storage-classes](https://docs.cloud.google.com/storage/docs/storage-classes)
+- Source ID: `site-docs-root`
+- Final score: 147
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Storage Class Name for APIs and CLIs Minimum storage duration Retrieval fees Typical monthly availability 1 Rapid storage 2 RAPID None None 99.95% in zones Standard storage STANDARD None None 99.99% in multi-regions and dual-regions 99.99% in regions Nearline storage NEARLINE 30 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions Coldline storage COLDLINE 90 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions Archive storage ARCHIVE 365 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions 1 See the class descriptions for the availability SLA for each storage class.
+- Availability The availability of Standard storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.95% 99.99% dual-region 99.95% 99.99% region 99.9% 99.99% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA .
+- Multi-Regional storage : Equivalent to Standard storage, except Multi-Regional storage can only be used for objects stored in multi-regions or dual-regions .
+- Availability The availability of Nearline storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.9% 99.95% dual-region 99.9% 99.95% region 99.0% 99.9% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA .
+
+### "Create and manage access control lists (ACLs) \_|\_ Cloud Storage \_|\_\
+
+- URL: [https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists](https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists)
+- Source ID: `site-iam-reference`
+- Final score: 146
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example, to return the ACL for the object paris.jpg in the bucket example-travel-maps : curl -X GET -H "Authorization: Bearer $(gcloud auth print-access-token)" \ https://storage.googleapis.com/storage/v1/b/example-travel-maps/o/paris.jpg?projection=full You should see a response that looks like: { "kind": "storage#object", "id": "example-travel-maps/paris.jpg/1412805837131000", "selfLink": "https://www.googleapis.com/storage/v1/b/example-travel-maps/o/paris.jpg", "name": "paris.jpg", "bucket": "example-travel-maps", ... "acl": [ { ... "entity": "project-owners-867489160491", "role": "OWNER", "projectTeam": { "projectNumber": "867489160491", "team": "owners" }, ... }, { ... "entity": "user-jeffersonloveshiking@gmail.com", "role": "OWNER", "email": "jeffersonloveshiking@gmail.com", ... }, { ... "entity": "group-gs-announce@googlegroups.com", "role": "READER", "email": "gs-announce@googlegroups.com", ... } ], "owner": { "entity": "user-jeffersonloveshiking@gmail.com" }, ... } You can also use the objectAccessControls resource GET method to return individual entries in an object's ACL.
+- For example, the following ACLs grant the OWNER permission for the object paris.jpg to the owners of project 867489160491 and the user jeffersonloveshiking@gmail.com , as well as the READER permission for paris.jpg to the members of the gs-announce group: [ { "entity": "project-owners-867489160491", "role": "OWNER", "projectTeam": { "projectNumber": "867489160491", "team": "owners" }, }, { "entity": "user-jeffersonloveshiking@gmail.com", "email": "jeffersonloveshiking@gmail.com", "role": "OWNER" }, { "entity": "group-gs-announce@googlegroups.com", "email": "gs-announce@googlegroups.com", "role": "READER" } ] Use the objects update command with the --acl-file flag: gcloud storage objects update gs:// BUCKET NAME / OBJECT NAME --acl-file= FILE LOCATION Where: BUCKET NAME is the name of the bucket that contains the object that the ACLs apply to.
+- Command line Use the objects update command with the --predefined-acl flag: gcloud storage objects update gs:// BUCKET NAME / OBJECT NAME --predefined-acl= PREDEFINED ACL NAME For example, to apply the predefined ACL private to the object paris.jpg in the bucket example-travel-maps : gcloud storage objects update gs://example-travel-maps/paris.jpg --predefined-acl=private REST APIs JSON API Use the predefinedAcl query string parameter, and specify an empty acl property in a patch request to apply the prefined ACL.
+- Command line Use the gcloud storage cp command with the --predefined-acl flag: gcloud storage cp OBJECT gs:// BUCKET NAME --predefined-acl= PREDEFINED ACL For example, to apply the predefined ACL bucketOwnerRead while uploading an object paris.jpg to a bucket example-travel-maps : gcloud storage cp paris.jpg gs://example-travel-maps --predefined-acl=bucketOwnerRead REST APIs JSON API Use the predefinedAcl query string parameter in an insert request to apply the prefined ACL.
 

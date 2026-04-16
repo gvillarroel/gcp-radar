@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:31.494Z"
+generated_at: "2026-04-15T00:44:19.138Z"
 product_name: "Cloud Healthcare API"
 product_slug: "cloud-healthcare-api"
 feature_name: "Single-region expansion to asia-southeast1 and us-west2"
 feature_slug: "single-region-expansion-to-asia-southeast1-and-us-west2"
 latest_feature_date: "2019-09-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/healthcare-api/docs/concepts/regions"
+  - "https://docs.cloud.google.com/healthcare-api/docs/requirements"
+  - "https://docs.cloud.google.com/healthcare-api/docs/datasets"
 keywords:
   - "single"
   - "region"
   - "expansion"
-  - "to"
   - "asia"
   - "southeast1"
-  - "and"
   - "us"
+  - "west2"
+  - "healthcare"
 ---
 
 # Single-region expansion to asia-southeast1 and us-west2
 
 Product: Cloud Healthcare API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ Cloud Healthcare API added single-region availability in Singapore (asia-southea
 
 Cloud Healthcare API added single-region availability in Singapore (asia-southeast1) and Los Angeles (us-west2).
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/healthcare-api/docs/concepts/regions](https://docs.cloud.google.com/healthcare-api/docs/concepts/regions)
+- [https://docs.cloud.google.com/healthcare-api/docs/requirements](https://docs.cloud.google.com/healthcare-api/docs/requirements)
+- [https://docs.cloud.google.com/healthcare-api/docs/datasets](https://docs.cloud.google.com/healthcare-api/docs/datasets)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Regions \_|\_ Cloud Healthcare API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/concepts/regions](https://docs.cloud.google.com/healthcare-api/docs/concepts/regions)
+- Source ID: `site-docs-root-2`
+- Final score: 140
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The Cloud Healthcare API is available in the following regions: Regional locations Region name Region description Americas northamerica-northeast1 Montréal northamerica-northeast2 Toronto us-central1 Iowa us-east1 South Carolina us-east4 North Virginia us-west1 Oregon us-west2 Los Angeles us-west3 Salt Lake City southamerica-east1 São Paulo Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-south1 Mumbai asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne Europe europe-north1 Finland europe-west2 London europe-west3 Frankfurt europe-west4 Netherlands europe-west6 Zurich Middle East me-west1 Tel Aviv me-central1 Doha me-central2 Dammam Multi-regional locations Multi-region name Multi-region description us Data centers in the United States eu Data centers within member states of the European Union Location quota requests You can request a quota increase for the Cloud Healthcare API in a specific region , or in a multi-region location .
+- Home Documentation Industry solutions Cloud Healthcare API Guides Send feedback Regions Stay organized with collections Save and categorize content based on your preferences.
+- Available regions The Cloud Healthcare API supports a subset of the full list of Google Cloud locations .
+- To request a quota increase in a single region: In your quota increase request, specify the region.
+
+### Requirements \_|\_ Cloud Healthcare API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/requirements](https://docs.cloud.google.com/healthcare-api/docs/requirements)
+- Source ID: `site-docs-reference-2`
+- Final score: 99
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Regions and versions Cloud regions Only these Google Cloud regions are available: Regional locations Region name Region description Americas northamerica-northeast1 Montréal northamerica-northeast2 Toronto us-central1 Iowa us-east1 South Carolina us-east4 North Virginia us-west1 Oregon us-west2 Los Angeles us-west3 Salt Lake City southamerica-east1 São Paulo Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-south1 Mumbai asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne Europe europe-north1 Finland europe-west2 London europe-west3 Frankfurt europe-west4 Netherlands europe-west6 Zurich Middle East me-west1 Tel Aviv me-central1 Doha me-central2 Dammam Multi-regional locations Multi-region name Multi-region description us Data centers in the United States eu Data centers in Europe Google Cloud CLI Cloud Healthcare API requires version 236.0.0 or higher of the Google Cloud CLI .
+- Home Documentation Industry solutions Cloud Healthcare API Resources Send feedback Requirements Stay organized with collections Save and categorize content based on your preferences.
+- Permitted characters and size requirements Resources in the Cloud Healthcare API are limited to certain characters and might be limited to certain lengths.
+- This page lists Cloud Healthcare API requirements and related information.
+
+### "Create and manage datasets \_|\_ Cloud Healthcare API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/datasets](https://docs.cloud.google.com/healthcare-api/docs/datasets)
+- Source ID: `site-docs-root-2`
+- Final score: 63
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const patchDataset = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const timeZone = 'UTC'; const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } ; const request = { name , updateMask : 'timeZone' , resource : { timeZone : timeZone }, }; await healthcare . projects . locations . datasets . patch ( request ); console . log ( Dataset ${ datasetId } patched with time zone ${ timeZone } ); }; patchDataset (); Python Imports the Dict type for runtime type hints. from typing import Dict def patch dataset ( project id : str , location : str , dataset id : str , time zone : str ) - > Dict [ str , str ]: """Updates dataset metadata.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const getDataset = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } ; const request = { name : parent }; const dataset = await healthcare . projects . locations . datasets . get ( request ); console . log ( dataset . data ); }; getDataset (); Python Imports the Dict type for runtime type hints. from typing import Dict def get dataset ( project id : str , location : str , dataset id : str ) - > Dict [ str , str ]: """Gets any metadata associated with a dataset.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const createDataset = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } ; const request = { parent , datasetId }; await healthcare . projects . locations . datasets . create ( request ); console . log ( Created dataset: ${ datasetId } ); }; createDataset (); Python Imports the Dict type for runtime type hints. from typing import Dict def create dataset ( project id : str , location : str , dataset id : str ) - > Dict [ str , str ]: """Creates a Cloud Healthcare API dataset.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const listDatasets = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } ; const request = { parent }; const dataset = await healthcare . projects . locations . datasets . list ( request ); console . log ( dataset . data ); }; listDatasets (); Python Imports the Dict and List types for runtime type hints. from typing import Dict , List def list datasets ( project id : str , location : str ) - > List [ Dict [ str , str ]]: """Lists the datasets in the project.
 

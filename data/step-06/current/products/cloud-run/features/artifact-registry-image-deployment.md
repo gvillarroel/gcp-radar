@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.928Z"
+generated_at: "2026-04-14T15:34:54.610Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Artifact Registry image deployment"
@@ -9,18 +9,17 @@ latest_feature_date: "2020-03-16"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/deploying"
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/deploy-functions"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously"
+  - "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query"
+  - "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build"
 keywords:
-  - "artifact"
   - "registry"
-  - "image"
-  - "deployment"
-  - "run"
-  - "supports"
+  - "artifact"
   - "deploying"
+  - "deployment"
+  - "image"
   - "container"
+  - "supports"
 ---
 
 # Artifact Registry image deployment
@@ -38,53 +37,55 @@ Cloud Run supports deploying container images from Artifact Registry.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/deploying](https://docs.cloud.google.com/run/docs/deploying)
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/deploy-functions](https://docs.cloud.google.com/run/docs/deploy-functions)
+- [https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously](https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously)
+- [https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query](https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query)
+- [https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build](https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build)
 
 ## Supporting Pages
 
-### Deploying container images to Cloud Run \_|\_ Google Cloud Documentation
+### "Continuously deploy from a repository \_|\_ Cloud Run \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/run/docs/deploying](https://docs.cloud.google.com/run/docs/deploying)
+- URL: [https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build](https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build)
 - Source ID: `site-docs-root`
-- Final score: 222
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 40
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Cloud Run does not support container image layers larger than 9.9 GB when deploying from Docker Hub or an Artifact Registry remote repository with an external registry.
-- The container image is imported by Cloud Run when deployed, so after the deployment, you can delete the image from Artifact Registry .
-- Required roles To get the permissions that you need to deploy Cloud Run services, ask your administrator to grant you the following IAM roles: Cloud Run Developer ( roles/run.developer ) on the Cloud Run service Service Account User ( roles/iam.serviceAccountUser ) on the service identity Artifact Registry Reader ( roles/artifactregistry.reader ) on the Artifact Registry repository of the deployed container image If you are using a cross-project service account to deploy a service: Service Account Token Creator ( roles/iam.serviceAccountTokenCreator ) on the service identity For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions .
-- Alternatively, if using an Artifact Registry remote repository is not an option, you can temporarily pull and push container images to Artifact Registry using docker push in order to deploy them to Cloud Run.
+- Enable the API If you select the Developer Connect option, enable the Developer Connect API: Enable the API Required roles To get the permissions that you need to deploy Cloud Run services from Git using Cloud Build or Developer Connect, ask your administrator to grant you the following IAM roles on your project: Artifact Registry Administrator ( roles/artifactregistry.admin ) Cloud Build Editor ( roles/cloudbuild.builds.editor ) Cloud Run Developer ( roles/run.developer ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) The service account running the build must have the following roles: Cloud Build Service Account ( roles/cloudbuild.builds.builder ) Cloud Run Admin ( roles/run.admin ) Service Account User ( roles/iam.serviceAccountUser ) If you select the Developer Connect option: Developer Connect Read Token Accessor ( roles/developerconnect.readTokenAccessor ) If you are connecting to GitLab or Bitbucket repositories: Secret Manager Secret Accessor ( roles/secretmanager.secretAccessor ) For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions .
+- When you are finished configuring your service, click Create to deploy the image to Cloud Run and wait for the deployment to finish.
+- If you have source code or functions in a Git repository and want to automate builds and set up continuous deployments from a repository, you can use either Cloud Build or Developer Connect in the Cloud Run console.
+- Set up continuous deployment from the Cloud Run console The setup procedure varies slightly depending on whether you are setting up continuous deployment on a new service or on an existing service.
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### "Quickstart: Deploy to Cloud Run from a Git repository \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- March 16, 2020 Feature Cloud Run (fully managed) now supports deploying container images from Cloud Artifact Registry February 12, 2020 Feature Cloud Run (fully managed) now supports rollbacks, gradual rollouts (blue/green deployments), and other traffic migration manipulations between revisions.
-- February 04, 2025 Feature When deploying a function in Cloud Run, you can now specify an Artifact Registry image repository to store the container (Preview).
-- May 03, 2023 Feature CPU allocation recommender now automatically recommends CPU allocation changes based on traffic received by your Cloud Run service over the past month. (In Preview) April 26, 2023 Announcement Cloud Run source deployment now supports Ubuntu 22 LTS base images.
-- When using Artifact Registry, ensure the principal has the Artifact Registry Reader ( roles/artifactregistry.reader ) IAM role on the project or repository containing the container image(s) to deploy.
-
-### Deploy a Cloud Run function \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/deploy-functions](https://docs.cloud.google.com/run/docs/deploy-functions)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously](https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously)
+- Source ID: `site-docs-reference-2`
+- Final score: 40
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Specify an image repository Cloud Run function deployments use Artifact Registry to store artifacts and manage container images.
-- Cloud Run function deployments also use Artifact Registry to store artifacts and manage container images.
-- To specify a self-created Artifact Registry repository, use the following command: gcloud gcloud run deploy FUNCTION \ --source . \ --function FUNCTION ENTRYPOINT \ --base-image BASE IMAGE \ --region REGION \ --image IMAGE URL Replace the following: FUNCTION with the name of the function you are deploying.
-- If it is not needed or to increase deployment speed, the deployment health check can be disabled: gcloud To disable the deployment health check, use the --no-deploy-health-check flag: gcloud run deploy --image IMAGE URL --no-deploy-health-check Replace the following: IMAGE URL : a reference to the container image, for example, us-docker.pkg.dev/cloudrun/container/hello:latest .
+- However, you might still be charged for storing the container image in Artifact Registry .
+- What's next Quickstart: Build and deploy Continuous deployment with Cloud Build Building containers using Buildpacks Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- To delete Artifact Registry repositories, follow the steps in Delete repositories in the Artifact Registry documentation.
+- Success: You deployed a container image from a Git repository to Cloud Run.
+
+### "Create a Cloud Run function that uses BigQuery to submit a query and return\
+
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query](https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query)
+- Source ID: `site-docs-root-2`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The sample submits a query for words that occur at least 400 times in the specified dataset, and returns the result. // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); const functions = require ( '@google-cloud/functions-framework' ); / HTTP Cloud Function that returns BigQuery query results @param {Object} req Cloud Function request context. @param {Object} res Cloud Function response context. / functions . http ( 'helloBigQuery' , async ( req , res ) = > { // Define the SQL query // Queries the public Shakespeare dataset using named query parameter const sqlQuery = SELECT word, word count FROM \bigquery-public-data.samples.shakespeare\ WHERE corpus = @corpus AND word count >= @min word count ORDER BY word count DESC ; const options = { query : sqlQuery , // Location must match that of the dataset(s) referenced in the query. location : 'US' , params : { corpus : 'romeoandjuliet' , min word count : 400 }, }; // Execute the query try { const [ rows ] = await bigquery . query ( options ); // Send the results res . status ( 200 ). send ( rows ); } catch ( err ) { console . error ( err ); res . status ( 500 ). send ( Error querying BigQuery: ${ err } ); } }); Deploy the function To deploy the function with an HTTP trigger: Run the following command in the directory that contains the sample code: gcloud run deploy FUNCTION \ --source . \ --function FUNCTION ENTRYPOINT \ --base-image BASE IMAGE \ --region REGION \ --allow-unauthenticated Replace: FUNCTION with the name of the function you are deploying, for example my-bigquery-function .
+- Costs In this document, you use the following billable components of Google Cloud: Artifact Registry Cloud Build Cloud Run To generate a cost estimate based on your projected usage, use the pricing calculator .
+- Enable the Artifact Registry, Cloud Run Admin API, and Cloud Build APIs.
+- For details about base images and the packages included in each image, see Runtimes base images .
 

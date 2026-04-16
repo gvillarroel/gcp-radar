@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:55.324Z"
+generated_at: "2026-04-12T12:18:17.040Z"
 product_name: "Secure Source Manager"
 product_slug: "secure-source-manager"
 feature_name: "Regional endpoints"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-04-15"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/secure-source-manager/docs/resources"
-  - "https://docs.cloud.google.com/secure-source-manager/docs/list-view-instances"
+  - "https://docs.cloud.google.com/secure-source-manager/docs/locations"
+  - "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code"
   - "https://docs.cloud.google.com/secure-source-manager/docs/use-git"
+  - "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
 keywords:
   - "regional"
   - "endpoints"
@@ -38,48 +39,70 @@ Secure Source Manager now supports regional endpoints for data locality.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/secure-source-manager/docs/resources](https://docs.cloud.google.com/secure-source-manager/docs/resources)
-- [https://docs.cloud.google.com/secure-source-manager/docs/list-view-instances](https://docs.cloud.google.com/secure-source-manager/docs/list-view-instances)
+- [https://docs.cloud.google.com/secure-source-manager/docs/locations](https://docs.cloud.google.com/secure-source-manager/docs/locations)
+- [https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code](https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code)
 - [https://docs.cloud.google.com/secure-source-manager/docs/use-git](https://docs.cloud.google.com/secure-source-manager/docs/use-git)
+- [https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance](https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance)
 
 ## Supporting Pages
 
-### Resources | Secure Source Manager | Google Cloud Documentation
+### Secure Source Manager locations \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/secure-source-manager/docs/resources](https://docs.cloud.google.com/secure-source-manager/docs/resources)
+- URL: [https://docs.cloud.google.com/secure-source-manager/docs/locations](https://docs.cloud.google.com/secure-source-manager/docs/locations)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 264
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Resources Secure Source Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/secure-source-manager/docs/resources Quotas and request limits for Secure Source Manager.
+- To access resources, Secure Source Manager provides two types of service endpoints: A global endpoint - The default endpoint for requests: securesourcemanager.googleapis.com Regional endpoints - A regional endpoint only allows requests for resources in the same region.
+- Regional endpoints are in the following format: securesourcemanager. region .rep.googleapis.com For more information about these service endpoints, see Configure data locality by using regional endpoints .
+- Locations for Secure Source Manager You can create Secure Source Manager resources in different locations in Google Cloud, depending on your availability requirements.
+- Home Documentation Application development Secure Source Manager Resources Send feedback Secure Source Manager locations Stay organized with collections Save and categorize content based on your preferences.
 
-### List and view instances | Secure Source Manager | Google Cloud Documentation
+### "Configure CI/CD to store terraform config-as-code \_|\_ Secure Source Manager\
 
-- URL: [https://docs.cloud.google.com/secure-source-manager/docs/list-view-instances](https://docs.cloud.google.com/secure-source-manager/docs/list-view-instances)
-- Source ID: `site-docs-root`
-- Final score: 158
+- URL: [https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code](https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code)
+- Source ID: `site-docs-reference`
+- Final score: 222
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For more information on Secure Source Manager instances, see the [Secure Source Manager overview][ssm-overview].
-- List and view instances Secure Source Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/secure-source-manager/docs/list-view-instances You can use the gcloud CLI to list all Secure Source Manager instances in your project.
+- To re-authenticate after the initial credential setup, run the following gcloud CLI command: gcloud auth login Clone the solutions-terraform-cloudbuild-gitops repository to your local shell or working environment: git clone https://github.com/GoogleCloudPlatform/solutions-terraform-cloudbuild-gitops.git Add your Secure Source Manager repository as an upstream. git remote add google HTTPS REPO URL Where HTTPS REP URL is the HTTPS URL for your Secure Source Manager repository.
+- Home Documentation Application development Secure Source Manager Guides Send feedback Configure CI/CD to store terraform config-as-code Stay organized with collections Save and categorize content based on your preferences.
+- In the Secure Source Manager web interface, navigate to the repository you want to create a webhook for.
+- Add the Secure Source Manager authentication helper to your global git config by running the following command: git config --global credential. 'https:// . .sourcemanager.dev' .helper gcloud.sh The authentication helper uses the gcloud CLI to fetch your Google Cloud credentials when using Git commands with Secure Source Manager.
 
-### Use Git source code management | Secure Source Manager | Google Cloud Documentation
+### "Use Git source code management \_|\_ Secure Source Manager \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/secure-source-manager/docs/use-git](https://docs.cloud.google.com/secure-source-manager/docs/use-git)
 - Source ID: `site-docs-root`
-- Final score: 156
+- Final score: 216
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Use Git source code management Secure Source Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/secure-source-manager/docs/use-git To set the Secure Source Manager repository as a remote run the following command: ...
-- For more information on Git source code management, read the Git documentation.
+- Create the VM: gcloud compute instances create VM NAME \ --project = PROJECT ID \ --zone = ZONE \ --scopes = openid,https://www.googleapis.com/auth/userinfo.profile,https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/cloud-platform \ --service-account = SA NAME @ PROJECT ID .iam.gserviceaccount.com Grant IAM roles to the service account Grant the service account access to the Secure Source Manager instance and repository: Grant instance access: SA EMAIL = $( gcloud compute instances describe VM NAME --project = PROJECT ID --zone = ZONE --format = "get(serviceAccounts[0].email)" ) gcloud projects add-iam-policy-binding PROJECT ID \ --member = "serviceAccount: $SA EMAIL " \ --role = roles/securesourcemanager.instanceAccessor Grant repository read access.
+- Required roles To get the permissions that you need to use Git to interact with a Secure Source Manager repository, ask your administrator to grant you the following IAM roles: Secure Source Manager Instance Accessor ( roles/securesourcemanager.instanceAccessor ) on the Secure Source Manager instance To clone a repository: Secure Source Manager Repo Reader ( roles/securesourcemanager.repoReader ) on the repository To push to a repository: Secure Source Manager Repo Writer ( roles/securesourcemanager.repoWriter ) on the repository For more information about granting roles, see Manage access to projects, folders, and organizations .
+- For example, on Linux: git config --global credential. 'https:// . .sourcemanager.dev' .helper gcloud.sh After you configure the credential helper, Git uses the Application Default Credentials from the VM's service account to authenticate to Secure Source Manager.
+- Set up your credentials If you authenticate to Secure Source Manager using a third-party identity provider and Workforce Identity Federation, you don't need to complete this section—instead, you must create a workforce identity pool login configuration .
+
+### "Create a Private Service Connect instance \_|\_ Secure Source Manager \_\
+
+- URL: [https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance](https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance)
+- Source ID: `site-docs-reference`
+- Final score: 211
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Create a Private Service Connect Secure Source Manager instance You can assign custom domains to your private instance for the HTML, API, Git HTTP, and Git SSH endpoints.
+- The output is similar to the following: Create request issued for [ my-instance ] . done : false metadata: '@type' : type.googleapis.com/google.cloud.securesourcemanager.v1.OperationMetadata apiVersion: v1 createTime: '2023-02-27T20:57:52.315609549Z' requestedCancellation: false target: projects/my-project/locations/us-central1/instances/my-instance verb: create name: projects/my-project/locations/us-central1/operations/operation-1234567894561-5ec69948c0f2b-60dd727f-a9b97a2e where projects/my-project/locations/us-central1/operations/operation-1234567894561-5ec69948c0f2b-60dd727f-a9b97a2e is the OPERATION NAME.
+- For example, the following command passes the CA certificate root-cert.pem to the Secure Source Manager API to list repositories in the private instance my-instance in location us-central1 . curl \ --cacert root-cert.pem \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ https://my-instance-01234567890-api.us-central1.sourcemanager.dev/v1/projects/01234567890/locations/us-central1/repositories What's next Connect Cloud Build to a Private Service Connect Secure Source Manager instance .
+- To get the URIs for your Secure Source Manager instance's HTTP and SSH service attachments, run the following command: gcloud source-manager instances describe INSTANCE ID \ --region = LOCATION Replace the following: INSTANCE ID with the name of your instance.
 

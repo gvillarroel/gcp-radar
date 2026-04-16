@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.137Z"
+generated_at: "2026-04-12T12:11:19.341Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer version 1.19.13"
 feature_slug: "cloud-composer-version-1-19-13"
 latest_feature_date: "2023-11-06"
 deprecation_date: "2023-11-06"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/create-environments"
 keywords:
   - "composer"
   - "version"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer version 1.19.13
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer version 1.19.13 has reached end of full support; deprecated on 20
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 208
+- Final score: 257
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +63,11 @@ Evidence snippets:
 - Last patch of the previous Cloud Composer 2 minor version: composer-2.10.2-airflow- Cloud Composer 2 versions with an extended upgrade timeline: composer-2.10.2-airflow- , composer-2.10.1-ariflow- , composer-2.9.7-airflow- , and other versions with an extended upgrade timeline.
 - In Google Cloud CLI, API, or Terraform, you can upgrade an existing environment to the latest supported versions, three previous versions of Cloud Composer 2, the last patch version of the previous minor version, and to versions with an extended upgrade timeline.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change Cloud Composer 2.9.7 images are available: composer-2.9.7-airflow-2.9.3 (default) composer-2.9.7-airflow-2.7.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.9.3-build.3 (default) composer-3-airflow-2.7.3-build.19 October 08, 2024 Change Cloud Composer 2.9.6 images are available: composer-2.9.6-airflow-2.9.3 composer-2.9.6-airflow-2.9.1 (default) composer-2.9.6-airflow-2.7.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.9.3-build.2 composer-3-airflow-2.9.1-build.9 (default) composer-3-airflow-2.7.3-build.18 Deprecated Cloud Composer version 2.4.5 has reached its end of support period .
-- Change New images are available in Cloud Composer 2: composer-2.13.8-airflow-2.10.5 (default) composer-2.13.8-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.5-build.10 (default) composer-3-airflow-2.9.3-build.30 Deprecated Cloud Composer version 2.8.6 has reached its end of support period .
-- Change New images are available in Cloud Composer 2: composer-2.13.4-airflow-2.10.5 (default) composer-2.13.4-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.5-build.6 (default) composer-3-airflow-2.9.3-build.26 Deprecated Cloud Composer version 2.8.2 has reached its end of support period .
-- Change New versions of Cloud Composer images: composer-1.17.5-airflow-2.1.4 composer-1.17.5-airflow-2.1.2 composer-1.17.5-airflow-2.0.2 composer-1.17.5-airflow-1.10.15 (default) composer-1.17.5-airflow-1.10.12 composer-1.17.5-airflow-1.10.14 Deprecated Cloud Composer 1.13.0 has reached its end of full support period .
-
 ### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - Source ID: `site-iam-reference`
-- Final score: 188
+- Final score: 235
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +75,30 @@ Evidence snippets:
 - Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.softwareConfig.pypiPackages.EXAMPLE PACKAGE, // config.softwareConfig.pypiPackages.ANOTHER PACKAGE { "config" : { "softwareConfig" : { "pypiPackages" : { "EXAMPLE PACKAGE" : "" , "ANOTHER PACKAGE" : ">=1.10.3" } } } } Terraform The pypi packages block in the software config block specifies packages. resource "google composer environment" "example" { name = " ENVIRONMENT NAME " region = " LOCATION " config { software config { pypi packages = { PACKAGE NAME = " EXTRAS AND VERSION " } } } } Replace: ENVIRONMENT NAME with the name of the environment.
 - Example: gcloud composer environments update example-environment \ --location us-central1 \ --update-pypi-package "scipy>=0.13.3" Removing packages Update your environment, and specify the packages that you want to delete in the --remove-pypi-packages argument: gcloud composer environments update ENVIRONMENT NAME \ --location LOCATION \ --remove-pypi-packages PACKAGE NAMES Replace: ENVIRONMENT NAME with the name of the environment.
 - For example: scipy>=0.13.3 scikit-learn nltk[machine learning] Update your environment, and specify the requirements.txt file in the --update-pypi-packages-from-file argument. gcloud composer environments update ENVIRONMENT NAME \ --location LOCATION \ --update-pypi-packages-from-file requirements.txt Replace: ENVIRONMENT NAME with the name of the environment.
+
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 229
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- Support for Google Display and Video 360 Operators Google Display and Video 360 Operators in Cloud Composer versions earlier than 2.1.13 are based on the Display and Video 360 v1.1 API that is deprecated and its sunset date is April 27, 2023.
+- Support for Google Campaign Manager 360 Operators Google Campaign Manager Operators in Cloud Composer versions earlier than 2.1.13 are based on the Campaign Manager 360 v3.5 API that is deprecated and its sunset date is May 1, 2023 .
+
+### Create Cloud Composer environments \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
+- Source ID: `site-iam-reference`
+- Final score: 204
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Example: gcloud composer environments create example-environment \ --location us-central1 \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " example-account@example-project. iam.gserviceaccount.com " \ --env-variables SENDGRID MAIL FROM = user@example.com,SENDGRID API KEY = example-key \ --airflow-configs core-dags are paused at creation = True,webserver-dag orientation = TB API When you create an environment, in the Environment > EnvironmentConfig resource, specify environment variables and Airflow configuration overrides. { "name" : "projects/ PROJECT ID /locations/ LOCATION /environments/ ENVIRONMENT NAME " , "config" : { "softwareConfig" : { "airflowConfigOverrides" : { " SECTION - KEY " : " OVERRIDE VALUE " }, "envVariables" : { " VAR NAME " : " VAR VALUE " , } }, "nodeConfig" : { "serviceAccount" : " SERVICE ACCOUNT " } } } Replace: SECTION with the section in the configuration file where the Airflow configuration option is located.
+- For example, a period of 4 hours every Monday, Wednesday, and Friday provides the required amount of time. gcloud The following arguments define maintenance windows parameters: --maintenance-window-start sets the start time of a maintenance window. --maintenance-window-end sets the end time of a maintenance window. --maintenance-window-recurrence sets the maintenance window recurrence . gcloud composer environments create ENVIRONMENT NAME \ --location LOCATION \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " SERVICE ACCOUNT " \ --maintenance-window-start ' DATETIME START ' \ --maintenance-window-end ' DATETIME END ' \ --maintenance-window-recurrence ' MAINTENANCE RECURRENCE ' Replace: ENVIRONMENT NAME with the name of the environment.
+- Example: gcloud composer environments create example-environment \ --location us-central1 \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " example-account@example-project. iam.gserviceaccount.com " \ --web-server-allow-ip ip range = 192 .0.2.0/24,description = "office net 1" \ --web-server-allow-ip ip range = 192 .0.4.0/24,description = "office net 3" API When you create an environment, in the Environment > EnvironmentConfig resource, specify web server access parameters.
+- What's next Troubleshooting environment creation Configuring Shared VPC Configuring VPC Service Controls Adding and updating DAGs Accessing Airflow UI Updating and deleting environments About Cloud Composer versions Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

@@ -357,16 +357,35 @@ Expected storage location:
 
 - `data/step-06/`
 
-### Step 7: Validation
+### Step 7: Step 06 Quality Gate
 
-Validate extracted facts against source evidence.
+Run a product-level and feature-level quality gate over Step 06 outputs before
+promotion to later stages.
 
-Validation should detect:
+This gate should detect:
 
-- unsupported claims
-- ambiguous mappings
-- stale lifecycle assumptions
-- conflicting documentation
+- unsupported or weakly supported feature definitions
+- features backed only by generic or contaminated pages
+- exact identifiers that never appear in the cited evidence
+- cross-runtime contamination in runtime-specific product families
+- features that require upstream fixes in Step 02, Step 03, Step 04, or Step 06
+
+Current canonical Step 07 inputs:
+
+- `data/step-06/current/products/<product-slug>/extended-features.json`
+
+Current canonical Step 07 output layout:
+
+- `data/step-07/current/index.json`
+- `data/step-07/current/products/<product-slug>/gate.json`
+- `data/step-07/current/products/<product-slug>/gate.md`
+
+Each Step 07 product output should contain:
+
+- product-level pass or fail status
+- per-feature findings with stable rule identifiers
+- explicit failure and warning counts
+- suggested upstream steps to improve for each failure class
 
 Expected storage location:
 

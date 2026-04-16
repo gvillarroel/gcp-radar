@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:41:32.738Z"
+generated_at: "2026-04-12T12:17:10.829Z"
 product_name: "Google Meet"
 product_slug: "google-meet"
 feature_name: "Google Meet smart note event subscriptions"
 feature_slug: "google-meet-smart-note-event-subscriptions"
 latest_feature_date: "2025-12-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
   - "https://developers.google.com/workspace/meet/api/guides/events-overview"
   - "https://developers.google.com/workspace/meet/api/guides/overview"
-  - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+  - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
 keywords:
   - "meet"
   - "smart"
@@ -27,7 +27,7 @@ keywords:
 # Google Meet smart note event subscriptions
 
 Product: Google Meet
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +39,14 @@ Developers can subscribe to Google Meet smart note events through the Google Wor
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
 - [https://developers.google.com/workspace/meet/api/guides/events-overview](https://developers.google.com/workspace/meet/api/guides/events-overview)
 - [https://developers.google.com/workspace/meet/api/guides/overview](https://developers.google.com/workspace/meet/api/guides/overview)
-- [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
+- [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview)
 
 ## Supporting Pages
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
 - Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 235
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - AuthorizedSession ( USER CREDENTIALS ) body = { "targetResource" : f "//cloudidentity.googleapis.com/users/ { user name } " , "eventTypes" : [ "google.workspace.meet.conference.v2.started" , "google.workspace.meet.conference.v2.ended" , "google.workspace.meet.participant.v2.joined" , "google.workspace.meet.participant.v2.left" , "google.workspace.meet.recording.v2.fileGenerated" , "google.workspace.meet.transcript.v2.fileGenerated" , ], "payloadOptions" : { "includeResource" : False , }, "notificationEndpoint" : { "pubsubTopic" : topic name }, "ttl" : "86400s" , } response = session . post ( "https://workspaceevents.googleapis.com/v1/subscriptions" , json = body ) return response service = build ( "people" , "v1" , credentials = USER CREDENTIALS ) response = ( service . people () . get ( resourceName = "people/me" , personFields = "names,emailAddresses" ) . execute () ) resource name = response . get ( "resourceName" ) if resource name . startswith ( "people/" ): resource name = resource name [ len ( "people/" ) :] subscription = subscribe to user ( topic name = TOPIC NAME , user name = resource name ) Make sure to add "https://www.googleapis.com/auth/userinfo.profile" in the authorize method in the credential samples above.
@@ -68,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/events-overview](https://developers.google.com/workspace/meet/api/guides/events-overview)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 211
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Related topics Google Workspace Events API overview Create a Google Workspace subscription Subscribe to Google Meet events Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
@@ -82,9 +82,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/overview](https://developers.google.com/workspace/meet/api/guides/overview)
 - Source ID: `site-docs-root`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For more information, see: Respond to events from Google Meet Subscribe to events using the Google Workspace Events API Subscribe to Google Meet events Use cases Apps can integrate with the Meet REST API to perform the following tasks: Before a conference : Tailor the conference experience as needed by creating the meeting space.
@@ -92,17 +92,17 @@ Evidence snippets:
 - To be notified of changes, you can subscribe to a specified meeting space or to all meeting spaces belonging to a specified user.
 - Note that a meeting organizer can organize the meeting but not be present when it takes place.
 
-### "Configure meeting spaces and members \_|\_ Google Meet \_|\_ Google for\
+### Google Meet meeting spaces overview \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
+- URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview)
 - Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 194
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- When both features are enabled While each feature can be used separately, both transcripts and smart notes can also be used at the same time to create better post-meeting artifacts.
-- Manage auto artifacts Meeting organizers, but not co-hosts, can pre-configure auto-recording, auto-transcripts, and smart notes within the meeting space.
-- Difference between transcripts and smart notes While both meeting transcripts and smart notes (also known as "take notes for me") capture information from your meeting, these features serve different purposes and produce different artifacts.
-- OAuth scopes for settings Setting or accessing meetings settings requires the following OAuth scopes: Use case Scope code Set auto artifact generation for spaces created by other apps. https://www.googleapis.com/auth/meetings.space.settings Get or list artifacts from conferences created by other apps. https://www.googleapis.com/auth/meetings.space.readonly Get or list other pre-meeting settings of a meeting space created by a third-party app. https://www.googleapis.com/auth/meetings.space.created https://www.googleapis.com/auth/meetings.space.readonly Read and edit the settings for all meeting spaces a user can access through any other app, such as Calendar. https://www.googleapis.com/auth/meetings.space.settings For more information on OAuth scopes, see Meet REST API scopes .
+- Instead of polling, you can also subscribe to Meet events to receive push notifications.
+- Instead of polling, you can subscribe to Meet events to receive push notifications.
+- Related topics Create and manage meeting spaces Configure meeting spaces and members Join a meeting Countries where you can use a phone with Meet Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- To manage a meeting space, use the following values for the name field: To get details about a meeting space, you can use either spaces/{space} or the alias spaces/{meetingCode} .
 

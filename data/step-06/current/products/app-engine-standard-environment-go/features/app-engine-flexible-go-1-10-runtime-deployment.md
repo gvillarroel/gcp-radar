@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:52:30.804Z"
+generated_at: "2026-04-12T20:52:24.735Z"
 product_name: "App Engine standard environment Go"
 product_slug: "app-engine-standard-environment-go"
 feature_name: "App Engine flexible Go 1.10 runtime deployment"
 feature_slug: "app-engine-flexible-go-1-10-runtime-deployment"
 latest_feature_date: "2018-03-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/flexible/overview"
-  - "https://docs.cloud.google.com/appengine/docs"
-  - "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine"
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/go111"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/access-control"
 keywords:
-  - "App Engine flexible environment"
-  - "gcloud app deploy"
-  - "flexible deployment"
-  - "runtime: go1.10"
-  - "runtime configuration"
-  - "Go 1.10 runtime"
-  - "go1.10"
-  - "Go 1.10"
+  - "app"
+  - "engine"
+  - "flexible"
+  - "go"
+  - "10"
+  - "runtime"
+  - "deployment"
+  - "applications"
 ---
 
 # App Engine flexible Go 1.10 runtime deployment
 
 Product: App Engine standard environment Go
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,55 +34,58 @@ App Engine flexible applications using runtime: go now deploy using the Go 1.10 
 
 ## Extended Definition
 
-The supplied official documentation excerpts do not provide direct evidence that App Engine flexible environment specifically introduced or used a `runtime: go1.10` deployment setting. They only show that the App Engine flexible environment supports Go (among other languages) and runs on Compute Engine-backed instances with customizable/container-based deployment characteristics that can host Go workloads.
+App Engine flexible applications using runtime: go now deploy using the Go 1.10 runtime.
 
 ## Evidence Summary
 
-These Google Cloud pages confirm flexible environment capabilities and language/runtime context but do not explicitly mention the Go 1.10 runtime or the `runtime: go1.10` deployment syntax.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/flexible/overview](https://docs.cloud.google.com/appengine/docs/flexible/overview)
-- [https://docs.cloud.google.com/appengine/docs](https://docs.cloud.google.com/appengine/docs)
-- [https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine)
+- [https://docs.cloud.google.com/appengine/docs/standard/go/runtime](https://docs.cloud.google.com/appengine/docs/standard/go/runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/go111](https://docs.cloud.google.com/appengine/docs/standard/go111)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/access-control](https://docs.cloud.google.com/appengine/docs/admin-api/access-control)
 
 ## Supporting Pages
 
-### App Engine flexible environment \_|\_ Google Cloud Documentation
+### "Go runtime environment \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/overview](https://docs.cloud.google.com/appengine/docs/flexible/overview)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/runtime](https://docs.cloud.google.com/appengine/docs/standard/go/runtime)
 - Source ID: `site-docs-reference`
-- Final score: 44
+- Final score: 108
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Go runtime environment Stay organized with collections Save and categorize content based on your preferences.
+- The Go runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : go VERSION Where VERSION is the Go MAJOR and MINOR version numbers.
+- Environment variables The following environment variables are set by the runtime: Environment variable Description GAE APPLICATION The ID of your App Engine application.
+- For example, your application might be deployed at the minor version Go 1.13.1 and be automatically updated to version 1.13.2 at a later deployment, but it won't be automatically updated to the major version Go 1.14.
+
+### "Go runtime environment \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go111](https://docs.cloud.google.com/appengine/docs/standard/go111)
+- Source ID: `site-docs-reference-2`
+- Final score: 98
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Go runtime environment Stay organized with collections Save and categorize content based on your preferences.
+- The Go runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : go VERSION Where VERSION is the Go MAJOR and MINOR version numbers.
+- Environment variables The following environment variables are set by the runtime: Environment variable Description GAE APPLICATION The ID of your App Engine application.
+- For example, your application might be deployed at the minor version Go 1.13.1 and be automatically updated to version 1.13.2 at a later deployment, but it won't be automatically updated to the major version Go 1.14.
+
+### "Roles that grant access to App Engine \_|\_ App Engine standard environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/access-control](https://docs.cloud.google.com/appengine/docs/admin-api/access-control)
+- Source ID: `site-docs-reference-2`
+- Final score: 97
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Go Java Node.js PHP Python Ruby .NET Custom runtimes Features Customizable infrastructure - App Engine flexible environment instances are Compute Engine virtual machines, which means that you can take advantage of custom libraries, use SSH for debugging, and deploy your own Docker containers.
-- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback App Engine flexible environment Stay organized with collections Save and categorize content based on your preferences.
-- You can specify how much CPU and memory each instance of your application needs, and the App Engine flexible environment provisions the necessary infrastructure for you.
-- Based on Compute Engine , the App Engine flexible environment automatically scales your app up and down while also balancing the load.
-
-### App Engine documentation \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/appengine/docs](https://docs.cloud.google.com/appengine/docs)
-- Source ID: `site-docs-reference`
-- Final score: 30
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Documentation resources Find quickstarts and guides, review key references, and get help with common issues. format list numbered Guides App Engine standard environment App Engine flexible environment App Engine migration center Admin API find in page Reference App Engine standard environment App Engine flexible environment App Engine legacy bundled services REST API RPC API info Resources Pricing Release notes: standard environment or flexible environment Runtime support schedule: standard environment or flexible environment Locations: standard environment or flexible environment Related resources Training and tutorials Code samples Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services.
-- Training Training and tutorials Create a Java app in the App Engine flexible environment Learn how to create and deploy an app that displays a short message in the App Engine flexible environment.
-- Code sample Code Samples Python sample apps Includes Python samples for the App Engine standard environment and the App Engine flexible environment.
-- Code sample Code Samples Ruby sample apps Includes Ruby samples for the App Engine standard environment and the App Engine flexible environment.
-
-### An overview of App Engine \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine)
-- Source ID: `site-docs-reference`
-- Final score: 24
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Some of the resources used by instances in the App Engine flexible environment, such as disk, CPU, and memory, count towards the Compute Engine API quotas of your project.
-- For more details on how App Engine uses Compute Engine resources, see the App Engine flexible environment overview .
-- In the App Engine flexible environment, instances are backed by Compute Engine resources.
+- Capability App Engine Admin App Engine Service Admin App Engine Deployer App Engine Viewer App Engine Code Viewer List all services, versions and instances Yes Yes Yes Yes Yes View all application, service, version, and instance settings Yes Yes Yes Yes Yes View runtime metrics such as resource usage, load information, and error information Yes Yes Yes Yes Yes View app source code No No No No Yes Deploy a new version of an app Yes, if you also grant the Service Account User role No Yes, if you also grant the Service Account User role No No Split or migrate traffic Yes Yes No No No Start and stop a version Yes Yes No No No Delete a version Yes Yes Yes No No Delete an entire service Yes Yes No No No Use SSH to connect to a VM instance in the flexible environment Yes No No No No Shut down an instance Yes No No No No Disable and re-enable the App Engine application Yes No No No No Access handlers that have a login:admin restriction ( first generation runtimes only) Yes No No No No Update dispatch rules Yes No No No No Update DoS settings Yes No No No No Update cron schedules No No No No No Update default cookie expiration Yes No No No No Update referrers Yes No No No No Update Email API Authorized Senders Yes No No No No Note: The predefined roles are enforced in the Google Cloud console , the Admin API , and other tooling that requires access, including the deployment commands .
+- Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.applications.update appengine.instances. appengine.instances.delete appengine. instances. enableDebug appengine.instances.get appengine.instances.list appengine.memcache.addKey appengine.memcache.flush appengine.memcache.get appengine.memcache.update appengine.operations. appengine.operations.get appengine.operations.list appengine.runtimes.actAsAdmin appengine.services. appengine.services.delete appengine.services.get appengine.services.list appengine.services.update appengine.versions.create appengine.versions.delete appengine. versions. exportAppImage appengine.versions.get appengine.versions.list appengine.versions.update artifactregistry. projectsettings. get artifactregistry. repositories. deleteArtifacts artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. uploadArtifacts recommender.locations. recommender.locations.get recommender.locations.list resourcemanager.projects.get resourcemanager.projects.list App Engine Creator ( roles/ appengine.appCreator ) Ability to create the App Engine resource for the project.
+- Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.create appengine.versions.delete appengine.versions.get appengine.versions.list artifactregistry. projectsettings. get artifactregistry. repositories. deleteArtifacts artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. uploadArtifacts recommender.locations. recommender.locations.get recommender.locations.list resourcemanager.projects.get resourcemanager.projects.list App Engine Memcache Data Admin ( roles/ appengine.memcacheDataAdmin ) Can get, set, delete, and flush App Engine Memcache items. appengine.applications.get appengine.memcache.addKey appengine.memcache.flush appengine.memcache.get appengine.memcache.update resourcemanager.projects.get resourcemanager.projects.list App Engine Service Admin ( roles/ appengine.serviceAdmin ) Read-only access to all application configuration and settings.
+- Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.get appengine. versions. getFileContents appengine.versions.list artifactregistry. projectsettings. get resourcemanager.projects.get resourcemanager.projects.list App Engine Managed VM Debug Access ( roles/ appengine.debugger ) Ability to read or manage v2 instances. appengine.applications.get appengine. applications. listRuntimes appengine.instances. appengine.instances.delete appengine. instances. enableDebug appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.get appengine.versions.list resourcemanager.projects.get resourcemanager.projects.list App Engine Deployer ( roles/ appengine.deployer ) Read-only access to all application configuration and settings.
 

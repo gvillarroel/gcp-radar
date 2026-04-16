@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:20.482Z"
+generated_at: "2026-04-12T12:16:09.668Z"
 product_name: "Gemini"
 product_slug: "gemini"
 feature_name: "Data insights"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-04-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/generativelanguage"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudaicompanion"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
 keywords:
   - "insights"
   - "provides"
@@ -38,46 +39,67 @@ Data insights provides an automated way to explore and understand data in Gemini
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics](https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/generativelanguage](https://docs.cloud.google.com/iam/docs/roles-permissions/generativelanguage)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/cloudaicompanion](https://docs.cloud.google.com/iam/docs/roles-permissions/cloudaicompanion)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans](https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance](https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini)
 
 ## Supporting Pages
 
-### Gemini Data Analytics roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### "Gemini Code Assist Standard and Enterprise overview \_|\_ Gemini for Google\
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics](https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics)
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
+- Source ID: `site-docs-root`
+- Final score: 230
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Gemini Code Assist code explained for Apigee policies. ( Preview ) Gemini in Application Integration The following table shows the types of generative AI assistance in Application Integration in the Google Cloud console: Integration creation assist Gemini Code Assist Standard Gemini Code Assist Enterprise AI-assisted visual editor for automation flow generation Enterprise context embedded AI-assisted automation authoring Generative AI Automation flow documentation generation and refinement Gemini in BigQuery features with Gemini Code Assist The following table shows the types of generative AI assistance for BigQuery in BigQuery Studio : Data insights Gemini Code Assist Standard Gemini Code Assist Enterprise Data insights provides an insightful library of queries generated from the metadata of your tables.
+- Interact with Gemini Code Assist in your IDE After you set up Gemini Code Assist Standard or Enterprise for a Google Cloud project , and install the Gemini Code Assist extension in your IDE ( VS Code or supported JetBrains IDE ), you can ask for assistance in the following ways: Receive code completions or generate code directly in the code editor.
+- Extended integrations: Gemini Code Assist Enterprise provides AI assistance across Google Cloud like Apigee, Application Integration, and Gemini Cloud Assist, empowering cloud teams to build, design and operate, and optimize their applications and infrastructure more effectively on Google Cloud.
+- Gemini Code Assist provides contextualized responses to your prompts, including source citations regarding which documentation and code samples Gemini Code Assist used to generate its responses.
+
+### "Access traces and spans in Trace Explorer \_|\_ Gemini Enterprise \_|\_\
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans](https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans)
 - Source ID: `site-iam-reference`
-- Final score: 144
+- Final score: 210
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Gemini Data Analytics roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics This page lists the IAM roles and permissions for Gemini Data Analytics.
+- Traces and spans provide detailed insights into the performance and execution flow of requests within your application, such as when using the assistant or agents.
+- Access traces and spans To access the traces and spans, follow these steps: In the Google Cloud console, go to the Trace Explorer page.
+- This document describes how to access and view traces and spans generated by your Gemini Enterprise app in the Trace Explorer.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
 
-### Gemini API roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### "Security, privacy, and compliance for Gemini Code Assist Standard and Enterprise\
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/generativelanguage](https://docs.cloud.google.com/iam/docs/roles-permissions/generativelanguage)
-- Source ID: `site-iam-reference`
-- Final score: 138
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Gemini API roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/generativelanguage To search through all roles and permissions, see the role and permission index.
-
-### Gemini for Google Cloud API roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/cloudaicompanion](https://docs.cloud.google.com/iam/docs/roles-permissions/cloudaicompanion)
-- Source ID: `site-iam-reference`
-- Final score: 130
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance](https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance)
+- Source ID: `site-docs-root-2`
+- Final score: 203
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini for Google Cloud API roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/cloudaicompanion This page lists the IAM roles and permissions for Gemini for Google Cloud API.
+- For example, Google secures the infrastructure that Google Cloud services run on, and provides you with tools such as access controls to let you manage who has access to your services and resources.
+- For example, Gemini Code Assist Standard and Enterprise handle the following data as Customer Data: Prompt data, which includes developer queries Response data from Gemini Code Assist Standard and Enterprise Additional context, such as the current conversation history, snippets of files that are open in the IDE, snippets of files that are stored adjacent to the open file, and cursor location in the current file Because Gemini Code Assist Standard and Enterprise are stateless Google Cloud services, they don't store prompts and responses in Google Cloud.
+- Examples of telemetry data include the following: An event indicating that a request was made (but not the contents of the request) An event indicating that a response was received (but not the contents of the response) A user's reaction to the response (for example, whether the user accepted or rejected the response) The character count length of accepted suggestions A user's interaction with various UI elements Gemini Code Assist Standard and Enterprise engineers have access to telemetry data to help with continual product improvements.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+
+### "Chat with Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini)
+- Source ID: `site-docs-root`
+- Final score: 183
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Rules in Gemini let you define your preferences, such as: Coding style Output formats Tech stack Language For example, you can create a rule such as "Always give me concise responses in Kotlin." VS Code In your code file, press Control+I (for Windows and Linux) or Command+I (for macOS) to open the Gemini Code Assist Quick Pick menu.
+- Create custom commands By default, Gemini Code Assist provides commands like /generate for VS Code and Generate Code for IntelliJ and other supported JetBrains IDEs .
+- If you prefer, you can also explore Gemini Code Assist in Cloud Shell Editor , Cloud Workstations , and Android Studio .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
 

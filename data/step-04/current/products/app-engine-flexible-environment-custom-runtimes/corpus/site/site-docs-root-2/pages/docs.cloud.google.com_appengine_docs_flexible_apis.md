@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/flexible/apis
 knowledge_key: corpus
 source_id: site-docs-root-2
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime
+entrypoint: https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/flexible/apis
   title: "APIs & Reference \_|\_ App Engine flexible environment \_|\_ Google Cloud\

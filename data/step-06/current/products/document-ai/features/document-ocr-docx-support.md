@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.475Z"
+generated_at: "2026-04-12T12:14:31.969Z"
 product_name: "Document AI"
 product_slug: "document-ai"
 feature_name: "Document OCR DOCX support"
 feature_slug: "document-ocr-docx-support"
 latest_feature_date: "2023-06-28"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr"
+  - "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+  - "https://docs.cloud.google.com/document-ai/docs/fields"
+  - "https://docs.cloud.google.com/document-ai/docs/languages"
 keywords:
   - "document"
   - "ocr"
@@ -24,7 +27,7 @@ keywords:
 # Document OCR DOCX support
 
 Product: Document AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,68 @@ Document OCR now supports preview processing of DOCX files up to 15 pages synchr
 
 Document OCR now supports preview processing of DOCX files up to 15 pages synchronously or 30 pages asynchronously.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/document-ai/docs/process-documents-ocr](https://docs.cloud.google.com/document-ai/docs/process-documents-ocr)
+- [https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr](https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr)
+- [https://docs.cloud.google.com/document-ai/docs/fields](https://docs.cloud.google.com/document-ai/docs/fields)
+- [https://docs.cloud.google.com/document-ai/docs/languages](https://docs.cloud.google.com/document-ai/docs/languages)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Enterprise Document OCR \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/process-documents-ocr](https://docs.cloud.google.com/document-ai/docs/process-documents-ocr)
+- Source ID: `site-docs-root`
+- Final score: 264
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Here is an example of LaTeX representation: Image detected Conversion to LaTeX Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.enableMathOcr to true in the processing request. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "premiumFeatures" : { "enableMathOcr" : true } } } } Output The Math OCR output appears in Document.pages[].visualElements[] with "type": "math formula" . "visualElements" : [ { "layout" : { "textAnchor" : { "textSegments" : [ { "endIndex" : "46" } ] }, "confidence" : 1 , "boundingPoly" : { "normalizedVertices" : [ { "x" : 0.14662756 , "y" : 0.27891156 }, { "x" : 0.9032258 , "y" : 0.27891156 }, { "x" : 0.9032258 , "y" : 0.8027211 }, { "x" : 0.14662756 , "y" : 0.8027211 } ] }, "orientation" : "PAGE UP" }, "type" : "math formula" } ] You can check the full Document JSON output in this link .
+- This additional feature adds latency comparable to OCR processing to the process call. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "enableImageQualityScores" : true } } } Output The defect detection results appear in Document.pages[].imageQualityScores[] . { "pages" : [ { "imageQualityScores" : { "qualityScore" : 0.7811847 , "detectedDefects" : [ { "type" : "quality/defect document cutoff" , "confidence" : 1.0 }, { "type" : "quality/defect glare" , "confidence" : 0.97849524 }, { "type" : "quality/defect text cutoff" , "confidence" : 0.5 } ] } } ] } Refer to Sample processor output for full output examples.
+- Input Enable by setting ProcessOptions.ocrConfig.enableNativePdfParsing to true in the processing request. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "enableNativePdfParsing" : true } } } Character-in-the-box detection By default, Enterprise Document OCR has a detector enabled to improve text-extraction quality of characters that sit within a box.
+- OCR add ons Enterprise Document OCR offers optional analysis capabilities which can be enabled on individual processing requests as needed.
+
+### Enterprise Document OCR \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr](https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr)
+- Source ID: `site-docs-root-2`
+- Final score: 264
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Here is an example of LaTeX representation: Image detected Conversion to LaTeX Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.enableMathOcr to true in the processing request. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "premiumFeatures" : { "enableMathOcr" : true } } } } Output The Math OCR output appears in Document.pages[].visualElements[] with "type": "math formula" . "visualElements" : [ { "layout" : { "textAnchor" : { "textSegments" : [ { "endIndex" : "46" } ] }, "confidence" : 1 , "boundingPoly" : { "normalizedVertices" : [ { "x" : 0.14662756 , "y" : 0.27891156 }, { "x" : 0.9032258 , "y" : 0.27891156 }, { "x" : 0.9032258 , "y" : 0.8027211 }, { "x" : 0.14662756 , "y" : 0.8027211 } ] }, "orientation" : "PAGE UP" }, "type" : "math formula" } ] You can check the full Document JSON output in this link .
+- This additional feature adds latency comparable to OCR processing to the process call. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "enableImageQualityScores" : true } } } Output The defect detection results appear in Document.pages[].imageQualityScores[] . { "pages" : [ { "imageQualityScores" : { "qualityScore" : 0.7811847 , "detectedDefects" : [ { "type" : "quality/defect document cutoff" , "confidence" : 1.0 }, { "type" : "quality/defect glare" , "confidence" : 0.97849524 }, { "type" : "quality/defect text cutoff" , "confidence" : 0.5 } ] } } ] } Refer to Sample processor output for full output examples.
+- Input Enable by setting ProcessOptions.ocrConfig.enableNativePdfParsing to true in the processing request. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "enableNativePdfParsing" : true } } } Character-in-the-box detection By default, Enterprise Document OCR has a detector enabled to improve text-extraction quality of characters that sit within a box.
+- OCR add ons Enterprise Document OCR offers optional analysis capabilities which can be enabled on individual processing requests as needed.
+
+### Processor list \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/fields](https://docs.cloud.google.com/document-ai/docs/fields)
+- Source ID: `site-docs-reference`
+- Final score: 218
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Category Digitize Functions OCR, Quality Analysis Release stage General availability Access status Public lock open Type in API OCR PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-ocr-v1.2-2022-11-10 Stable GA Frozen model version of v1.0: Model files, configurations, and binaries of a version snapshot frozen in a container image for up to 18 months. pretrained-ocr-v2.0-2023-06-02 Stable GA Production-ready model specialized for document use cases.
+- Includes access to all OCR add-ons. pretrained-ocr-v2.1-2024-08-07 Stable GA The main areas of improvement for v2.1 are: better printed text recognition, more precise checkbox detection and more accurate reading order. pretrained-ocr-v2.1.1-2025-01-31 Release candidate Public Preview v2.1.1 is similar to V2.1, and is available in all regions except: US , EU , and asia-southeast1 .
+- Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API BANK STATEMENT PROCESSOR Notes If a page of a multi-page input file is the correct document type and one of the supported versions, the processor performs entity extraction on the first supported document.
+- Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API FORM W2 PROCESSOR Notes If a page of a multi-page input file is the correct document type and one of the supported versions, the processor performs entity extraction on the first supported document.
+
+### Processor list \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/languages](https://docs.cloud.google.com/document-ai/docs/languages)
+- Source ID: `site-docs-reference`
+- Final score: 218
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Category Digitize Functions OCR, Quality Analysis Release stage General availability Access status Public lock open Type in API OCR PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-ocr-v1.2-2022-11-10 Stable GA Frozen model version of v1.0: Model files, configurations, and binaries of a version snapshot frozen in a container image for up to 18 months. pretrained-ocr-v2.0-2023-06-02 Stable GA Production-ready model specialized for document use cases.
+- Includes access to all OCR add-ons. pretrained-ocr-v2.1-2024-08-07 Stable GA The main areas of improvement for v2.1 are: better printed text recognition, more precise checkbox detection and more accurate reading order. pretrained-ocr-v2.1.1-2025-01-31 Release candidate Public Preview v2.1.1 is similar to V2.1, and is available in all regions except: US , EU , and asia-southeast1 .
+- Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API BANK STATEMENT PROCESSOR Notes If a page of a multi-page input file is the correct document type and one of the supported versions, the processor performs entity extraction on the first supported document.
+- Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API FORM W2 PROCESSOR Notes If a page of a multi-page input file is the correct document type and one of the supported versions, the processor performs entity extraction on the first supported document.
 

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.102Z"
+generated_at: "2026-04-15T00:01:13.851Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "GKE interactive playbook dashboards"
 feature_slug: "gke-interactive-playbook-dashboards"
 latest_feature_date: "2023-08-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
-  - "https://docs.cloud.google.com/monitoring/agent/integrations"
   - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+  - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
 keywords:
   - "gke"
   - "interactive"
@@ -26,7 +26,7 @@ keywords:
 # GKE interactive playbook dashboards
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,47 +38,21 @@ These dashboards provide guided troubleshooting for GKE CPU and memory utilizati
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- [https://docs.cloud.google.com/monitoring/agent/integrations](https://docs.cloud.google.com/monitoring/agent/integrations)
 - [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
+- [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 150
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 07, 2023 Feature You can now troubleshoot common GKE issues like unschedulable pods and crashlooping containers by using the new "interactive playbook" dashboards in Cloud Monitoring.
-- August 16, 2023 Feature You can now troubleshoot GKE issues involving CPU and memory utilization by using the new "interactive playbook" dashboards in Cloud Monitoring.
-- For information about using these dashboards, see the GKE troubleshooting documentation for unschedulable pods and crashlooping .
-- July 30, 2024 Feature You can now troubleshoot Compute Engine issues involving host events, MIG autoscaling and health-check failures, resource-availability errors, and VM performance by using the new "interactive playbook" dashboards in Cloud Monitoring.
-
-### Manage integrations \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/agent/integrations](https://docs.cloud.google.com/monitoring/agent/integrations)
-- Source ID: `site-iam-reference`
-- Final score: 72
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- You can configure these third-party integrations from the Integrations page and see the kinds of telemetry each integration provides.
-- The Dashboards tab provides descriptions and static previews of the dashboards for the integration.
-- An integration might also provide dashboards and Cloud Monitoring alerting policies.
-- The following screenshot shows an example of a Logs tab: Configure third-party integrations If you open the details pane for a third-party integration you haven't installed, then the panel indicates that you have no dashboards or configured resources for the integration.
 
 ### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
-- Source ID: `site-docs-reference`
-- Final score: 72
+- Source ID: `site-docs-reference-2`
+- Final score: 98
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +60,30 @@ Evidence snippets:
 - These charts also display event annotations , which can help you correlate data from different sources when you are troubleshooting an issue.
 - You can explore the data on these dashboards similarly to exploring the data shown on an application's Dashboard tab.
 - These dashboards can help you understand how your application's resources are performing and to diagnose issues.
+
+### Cloud Monitoring overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
+- Source ID: `site-docs-reference`
+- Final score: 83
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- These dashboards show curated information that helps you understand the health of your resources and applications.
+- These dashboards show information like an application's log or metric data, and the number of open alerts.
+- The dashboards created by Google Cloud might provide you enough information to complete an investigation.
+- These metrics provide information about how a service is operating.
+
+### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
+- Source ID: `site-docs-reference`
+- Final score: 83
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Metrics used or not used in a custom dashboard in the current Google Cloud project.These filters don't include metrics that are used in predefined dashboards provided by Cloud Monitoring.
+- For each metric, the table displays that metric's contribution to billable volume and provides links to to the alerting policies and custom dashboards associated with the metric, as shown in the following screenshot.
+- These logs can provide insight into the causes of the metric-write errors.
+- For example, to list active metrics that appear in no alerting policies and in no custom dashboards, add the following filters to the filter bar: Status: Active Alert Policies: (Empty) Custom Dashboards: (Empty) By default, when you add multiple filters, the table includes a row when the row meets all filters.
 

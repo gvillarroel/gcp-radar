@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.928Z"
+generated_at: "2026-04-13T22:42:27.259Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Table and index operations statistics"
@@ -9,18 +9,17 @@ latest_feature_date: "2023-11-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/spanner"
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
-  - "https://googleapis.dev/python/spanner/latest/index.html"
+  - "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+  - "https://docs.cloud.google.com/spanner/docs/information-schema"
+  - "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
 keywords:
-  - "table"
-  - "and"
-  - "index"
+  - "monitoring"
   - "operations"
   - "statistics"
-  - "is"
-  - "now"
   - "generally"
+  - "available"
+  - "index"
+  - "table"
 ---
 
 # Table and index operations statistics
@@ -38,43 +37,52 @@ Table and index operations statistics is now generally available for monitoring 
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/spanner](https://docs.cloud.google.com/iam/docs/roles-permissions/spanner)
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- [https://googleapis.dev/python/spanner/latest/index.html](https://googleapis.dev/python/spanner/latest/index.html)
+- [https://docs.cloud.google.com/spanner/docs/information-schema-pg](https://docs.cloud.google.com/spanner/docs/information-schema-pg)
+- [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
+- [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
 
 ## Supporting Pages
 
-### Spanner roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### "Information schema for PostgreSQL-dialect databases \_|\_ Spanner \_|\_\
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/spanner](https://docs.cloud.google.com/iam/docs/roles-permissions/spanner)
-- Source ID: `site-iam-reference`
-- Final score: 94
+- URL: [https://docs.cloud.google.com/spanner/docs/information-schema-pg](https://docs.cloud.google.com/spanner/docs/information-schema-pg)
+- Source ID: `site-docs-reference`
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Spanner roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/spanner This page lists the IAM roles and permissions for Spanner.
+- Some tables that are available with Spanner but not open source PostgreSQL, such as database options , index columns , indexes , and spanner statistics are available.
+- Examples Return information about each table in the user's schema: SELECT t . table schema , t . table catalog , t . table name , t . parent table name FROM information schema . tables AS t WHERE t . table schema NOT IN ( 'pg catalog' , 'information schema' , 'SPANNER SYS' ) AND t . table type = 'BASE TABLE' ORDER BY t . table catalog , t . table schema , t . table name Return the name of all tables and views in the information schema for PostgreSQL-dialect databases: SELECT table name FROM information schema . tables WHERE table schema = "information schema" Return information about columns in the user table my table in the default schema: SELECT t . ordinal position , t . column name , t . data type , t . spanner type , t . is nullable FROM information schema . columns AS t WHERE t . table schema = 'public' AND t . table name = 'my table' ORDER BY t . ordinal position Return information about each index in the default schema in the current database: ## What's next {: #whats-next} + Learn about available Introspection tools to help you investigate database issues.
+- A table can go through multiple states during creation, if bulk operations are involved, for example, when the table is created with a foreign key that requires backfilling of its referenced index.
+- This value is NULL if not set. spanner statistics This table lists the available query optimizer statistics packages.
 
-### django_spanner.operations — google-cloud-spanner-django documentation
+### "Information schema for GoogleSQL-dialect databases \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- Source ID: `site-python-reference`
-- Final score: 66
+- URL: [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
+- Source ID: `site-docs-reference`
+- Final score: 129
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
+- Returns empty if the default leader is not set: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . option name = 'default leader' Return information about each index in the user's schema: SELECT t . table schema , t . table name , t . index name , t . parent table name FROM information schema . indexes AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND t . index type != 'PRIMARY KEY' ORDER BY t . table catalog , t . table schema , t . table name , t . index name Returns all the columns that use options other than the default: SELECT t . table schema , t . table name , t . column name , t . option type , t . option value , t . option name FROM information schema . column options AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) Returns the current optimizer related database options: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . schema name = '' AND s . option name IN ( 'optimizer version' , 'optimizer statistics package' ) Returns all available statistics packages: SELECT FROM information schema . spanner statistics ; Return all sequences: SELECT FROM information schema . sequences ; Return all sequence options for the sequence named "MySequence" SELECT FROM information schema . sequence options WHERE name = "MySequence" ; Return the names of all property graphs and their definitions: SELECT property graph name , property graph metadata json FROM information schema . property graphs Return the names of all property graphs together with their labels and properties: SELECT property graph name , property graph metadata json . labels , property graph metadata json . propertyDeclarations FROM information schema . property graphs What's next Learn about available Introspection tools to help you investigate database issues.
+- SPANNER STATISTICS This table lists the available query optimizer statistics packages.
+- Usage INFORMATION SCHEMA tables are available only through SQL interfaces, for example: The executeQuery API The gcloud spanner databases execute-sql command The Spanner Studio page of a database in the Google Cloud console) Other single read methods don't support INFORMATION SCHEMA .
+- Any of the SELECT , INSERT , UPDATE , or DELETE fine-grained access control privileges are granted on the table that has the index to the current database role, to roles of which the current database role is a member, or to public .
 
-### Python Client for Cloud Spanner
+### "Best practices for using Spanner as a gaming database \_|\_ Google Cloud\
 
-- URL: [https://googleapis.dev/python/spanner/latest/index.html](https://googleapis.dev/python/spanner/latest/index.html)
-- Source ID: `site-python-reference`
-- Final score: 52
+- URL: [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
+- Source ID: `site-docs-root`
+- Final score: 124
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Python Client for Cloud Spanner Source URL: https://googleapis.dev/python/spanner/latest/index.html Cloud Spanner is the world’s first fully managed relational database service to offer both strong consistency and horizontal scalability for mission-critical online transaction processing (OLTP) applications.
+- CREATE TABLE Player ( PlayerID STRING ( 36 ) NOT NULL , Attribute INT64 NOT NULL ) PRIMARY KEY ( PlayerID ) CREATE INDEX idx attribute ON Player ( Attribute ) And the index was queried to find up to ten players with Attribute=23 , like this: SELECT PlayerID FROM Player @ { force index = idx attribute } WHERE Attribute = 23 LIMIT 10 According to the documentation on optimizing schema design , Spanner stores index data in the same way as tables, with one row per index entry.
+- The updated command for creating the table and index looks like this: CREATE TABLE Player ( PlayerID STRING ( 36 ) NOT NULL , IndexPartition INT64 NOT NULL Attribute INT64 NOT NULL ) PRIMARY KEY ( PlayerID ) CREATE INDEX idx attribute ON Player ( IndexPartition , Attribute ) The IndexPartition value needs to have a limited range for efficient querying, but it should also have range that is at least double the number of splits for efficient distribution.
+- In load tests, this model does an acceptable job of distributing the secondary index read and write load across multiple Spanner splits, as illustrated in the following diagram: Although the synthetic data used in the load test is similar to the eventual steady state of the game where Attribute values are well distributed, the game design dictates that all players start with Attribute=50 .
+- CREATE TABLE GameMode1Ranking ( PlayerID STRING ( 36 ) NOT NULL , Score INT64 NOT NULL ) PRIMARY KEY ( PlayerID ) CREATE INDEX idx score ranking ON Ranking ( Score DESC ) We recommend moving the game mode out of the table schema, and use one table per mode, if possible.
 

@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.347Z"
+generated_at: "2026-04-12T12:19:43.317Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Agent Garden"
 feature_slug: "agent-garden"
 latest_feature_date: "2025-04-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline"
+  - "https://docs.cloud.google.com/agent-builder/overview"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
-  - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
 keywords:
   - "agent"
   - "garden"
@@ -27,7 +27,7 @@ keywords:
 # Agent Garden
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +39,14 @@ Agent Garden is now available in preview in Vertex AI Agent Builder.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline](https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline)
+- [https://docs.cloud.google.com/agent-builder/overview](https://docs.cloud.google.com/agent-builder/overview)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming](https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/quickstart](https://docs.cloud.google.com/agent-builder/agent-engine/quickstart)
-- [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 
 ## Supporting Pages
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline](https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline)
 - Source ID: `site-docs-reference`
-- Final score: 246
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 261
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - NEXT : '3' > : RelatedNodeInfo ( node id = 'f7d2cb7e-fa0c-40bf-b8e7-b888e36b87f9' , node type = '1' , metadata = {}, hash = 'db7cc1a67fa3afd1e5f24c8c61583781ce6a00c444da8f25a5374468c17b7de0' ) }, metadata template = ' {key} : {value} ' , metadata separator = ' \n ' , text = 'So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp...' , mimetype = 'text/plain' , start char idx = 7166 , end char idx = 11549 , metadata separator = ' \n ' , text template = ' {metadata str} \n\n {content} ' ), score = 0.7403571819090398 ) ] To use the retriever inside LlamaIndexQueryPipelineAgent , add it under the retriever builder= argument: from vertexai.preview import reasoning engines agent = reasoning engines .
@@ -64,11 +64,25 @@ Evidence snippets:
 - ChatPromptTemplate ( message templates = message templates ) You can use the full prompt template when you instantiate the agent in the following example: from vertexai.preview import reasoning engines system instruction = "I help to find what is Paul Graham's life in College" agent = reasoning engines .
 - He attended the Accademia, but was disappointed by the lack of instruction." To use the response synthesizer inside LlamaIndexQueryPipelineAgent , add it under the response synthesizer builder= argument: from vertexai.preview import reasoning engines agent = reasoning engines .
 
+### Vertex AI Agent Builder overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/agent-builder/overview](https://docs.cloud.google.com/agent-builder/overview)
+- Source ID: `site-docs-root`
+- Final score: 254
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Detect threats with Security Command Center : Agent Engine Threat Detection (Preview) is a built-in service of Security Command Center that helps you detect and investigate potential attacks on agents that are deployed to Vertex AI Agent Engine Runtime.
+- Agent Garden (Supported in preview ) is a library in the Google Cloud console where you can find and explore sample agents and tools that are designed to accelerate your development.
+- Vertex AI Agent Builder Workflow for building and deploying agents Discover agent samples and tools specific to your use cases in the Agent Garden .
+- Agent Tools are tools that you can equip your ADK agent to use, including: Built-in tools such as Grounding with Google Search , Vertex AI Search , and Code Execution RAG Engine for retrieval-augmented generation (RAG) Google Cloud tools to connect to: Your APIs managed in Apigee API hub 100+ enterprise applications through Integration Connectors Custom integrations with Application Integration Model Context Protocol (MCP) tools Ecosystem tools such as LangChain tools, CrewAI tools, and GenAI Toolbox for Databases Govern : Monitor what your agents are doing with an audit trail for end-to-end observability.
+
 ### "Bidirectional streaming with Vertex AI Agent Engine Runtime \_|\_ Vertex\
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming](https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming)
 - Source ID: `site-docs-root`
-- Final score: 232
+- Final score: 235
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -81,7 +95,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/quickstart](https://docs.cloud.google.com/agent-builder/agent-engine/quickstart)
 - Source ID: `site-docs-root`
-- Final score: 230
+- Final score: 233
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -89,17 +103,4 @@ Evidence snippets:
 - Install and initialize the Vertex AI SDK for Python Run the following command to install the Vertex AI SDK for Python and other required packages: LangGraph pip install --upgrade --quiet google-cloud-aiplatform [ agent engines,langchain ]>= 1 .112 LangChain pip install --upgrade --quiet google-cloud-aiplatform [ agent engines,langchain ]>= 1 .112 AG2 pip install --upgrade --quiet google-cloud-aiplatform [ agent engines,ag2 ]>= 1 .112 LlamaIndex Preview This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
 - Develop and deploy agents on Vertex AI Agent Engine This page demonstrates how to create and deploy an agent to Vertex AI Agent Engine Runtime using the following agent frameworks: LangGraph LangChain AG2 LlamaIndex Query Pipeline (preview) This quickstart guides you through the following steps: Set up your Google Cloud project.
 - For more information, see the launch stage descriptions . remote agent = client . agent engines . create ( agent , config = { "requirements" : [ "google-cloud-aiplatform[agent engines,llama index]" ], }, ) Use an agent Test the deployed agent by sending a query: LangGraph remote agent . query ( input = { "messages" : [ ( "user" , "What is the exchange rate from US dollars to SEK today?" ), ]}) LangChain remote agent . query ( input = "What is the exchange rate from US dollars to SEK today?" ) AG2 remote agent . query ( input = "What is the exchange rate from US dollars to SEK today?" ) LlamaIndex Preview This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
-
-### "Use agent identity with Vertex AI Agent Engine \_|\_ Vertex AI Agent Builder\
-
-- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
-- Source ID: `site-docs-root`
-- Final score: 230
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .
-- Define the agent in your preferred framework: from google.adk.agents import Agent agent = Agent ( model = "gemini-2.5-flash" , name = "minimal agent" , instruction = "You are a helpful assistant." , ) Then, deploy it: import vertexai from vertexai import types from vertexai.agent engines import AdkApp Initialize the Vertex AI client with v1beta1 API for agent identity support client = vertexai .
-- We recommend the following roles: roles/aiplatform.expressUser : Grant access to running inference, sessions, and memory. roles/serviceusage.serviceUsageConsumer : Grant the agent permission to use the project's quota and the Vertex AI SDK. roles/browser : Grant access to basic Google Cloud functionalities.
-- Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag.
 

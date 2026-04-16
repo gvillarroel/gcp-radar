@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:11:59.744Z"
+generated_at: "2026-04-12T12:14:04.320Z"
 product_name: "Datastream"
 product_slug: "datastream"
 feature_name: "Oracle stream recovery"
 feature_slug: "oracle-stream-recovery"
 latest_feature_date: "2024-01-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle"
   - "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle"
   - "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle"
+  - "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream"
 keywords:
   - "oracle"
   - "stream"
@@ -26,7 +27,7 @@ keywords:
 # Oracle stream recovery
 
 Product: Datastream
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Datastream can recover a stream for an Oracle source.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle](https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle)
 - [https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle](https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle)
 - [https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle](https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle)
+- [https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream](https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle](https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle)
 - Source ID: `site-docs-root-2`
-- Final score: 272
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 333
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Define a data retention policy for your database by running these Oracle Recovery Manager (RMAN) commands: TARGET / CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 4 DAYS ; You use the TARGET / command to start an RMAN client and connect to the source database.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle](https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle)
 - Source ID: `site-docs-root-2`
-- Final score: 258
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 319
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To do so, run the following commands: GRANT EXECUTE CATALOG ROLE TO USER NAME ; GRANT CONNECT TO USER NAME ; GRANT CREATE SESSION TO USER NAME ; exec rdsadmin . rdsadmin util . grant sys object ( 'V $DATABASE' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $ARCHIVED LOG' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $LOG' , ' USER NAME ' , 'SELECT' ); -- for primary databases exec rdsadmin . rdsadmin util . grant sys object ( 'V $STANDBY LOG' , ' USER NAME ' , 'SELECT' ); -- for standby databases exec rdsadmin . rdsadmin util . grant sys object ( 'V $LOGFILE' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $LOGMNR LOGS' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $LOGMNR CONTENTS' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $PARAMETER' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'DBMS LOGMNR' , ' USER NAME ' , 'EXECUTE' ); exec rdsadmin . rdsadmin util . grant sys object ( 'DBMS LOGMNR D' , ' USER NAME ' , 'EXECUTE' ); GRANT SELECT ANY TRANSACTION TO USER NAME ; GRANT SELECT ANY TABLE TO USER NAME ; If your database uses Transparent Data Encryption (TDE), grant the following permissions: exec rdsadmin . rdsadmin util . grant sys object ( 'DBA TABLESPACES' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'DBA ENCRYPTED COLUMNS' , ' USER NAME ' , 'SELECT' ); If your organization doesn't permit granting the GRANT SELECT ANY TABLE permission, use the solution described in the Oracle change data capture (CDC) section of the Datastream FAQ page.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle](https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle)
 - Source ID: `site-docs-root-2`
-- Final score: 244
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 305
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This privilege lets you use the ROWID based backfill for your Oracle source: GRANT SELECT ON DBA EXTENTS TO USER NAME ; If your database uses Transparent Data Encryption (TDE), grant the following permissions: GRANT SELECT ON DBA TABLESPACES TO USER NAME ; GRANT SELECT ON DBA ENCRYPTED COLUMNS TO USER NAME ; What's next Learn more about how Datastream works with Oracle sources .
 - Define a data retention policy for your database by running the following Oracle Recovery Manager (RMAN) command from the CDB$ROOT container: CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 4 DAYS ; The command defines the data retention policy for all pluggable databases in your container database.
 - Define a data retention policy for your database by running these Oracle Recovery Manager (RMAN) commands: TARGET / CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 4 DAYS ; You use the TARGET / command to start an RMAN client and connect to the source database.
 - Home Documentation Data analytics Datastream Guides Send feedback Configure a pluggable Oracle database for CDC Stay organized with collections Save and categorize content based on your preferences.
+
+### MCP Tools Reference: datastream \_|\_ Datastream \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream](https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream)
+- Source ID: `site-api-reference`
+- Final score: 289
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Stream JSON representation { "name" : string , "createTime" : string , "updateTime" : string , "labels" : { string : string , ... } , "displayName" : string , "sourceConfig" : { object ( SourceConfig ) } , "destinationConfig" : { object ( DestinationConfig ) } , "state" : enum ( State ) , "errors" : [ { object ( Error ) } ] , "lastRecoveryTime" : string , "ruleSets" : [ { object ( RuleSet ) } ] , // Union field backfill strategy can be only one of the following: "backfillAll" : { object ( BackfillAllStrategy ) } , "backfillNone" : { object ( BackfillNoneStrategy ) } // End of list of possible types for union field backfill strategy . // Union field customer managed encryption key can be only one of the // following: "customerManagedEncryptionKey" : string // End of list of possible types for union field // customer managed encryption key . // Union field satisfies pzs can be only one of the following: "satisfiesPzs" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: "satisfiesPzi" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string Output only.
+- OracleSourceConfig JSON representation { "includeObjects" : { object ( OracleRdbms ) } , "excludeObjects" : { object ( OracleRdbms ) } , "maxConcurrentCdcTasks" : integer , "maxConcurrentBackfillTasks" : integer , // Union field large objects handling can be only one of the following: "dropLargeObjects" : { object ( DropLargeObjects ) } , "streamLargeObjects" : { object ( StreamLargeObjects ) } // End of list of possible types for union field large objects handling . // Union field cdc method can be only one of the following: "logMiner" : { object ( LogMiner ) } , "binaryLogParser" : { object ( BinaryLogParser ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( OracleRdbms ) The Oracle objects to include in the stream. excludeObjects object ( OracleRdbms ) The Oracle objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.
+- LabelsEntry JSON representation { "key" : string , "value" : string } Fields key string value string SourceConfig JSON representation { "sourceConnectionProfile" : string , // Union field source stream config can be only one of the following: "oracleSourceConfig" : { object ( OracleSourceConfig ) } , "mysqlSourceConfig" : { object ( MysqlSourceConfig ) } , "postgresqlSourceConfig" : { object ( PostgresqlSourceConfig ) } , "sqlServerSourceConfig" : { object ( SqlServerSourceConfig ) } , "salesforceSourceConfig" : { object ( SalesforceSourceConfig ) } , "mongodbSourceConfig" : { object ( MongodbSourceConfig ) } , "spannerSourceConfig" : { object ( SpannerSourceConfig ) } // End of list of possible types for union field source stream config . } Fields sourceConnectionProfile string Required.
+- Stream configuration that is specific to the data source type. source stream config can be only one of the following: oracleSourceConfig object ( OracleSourceConfig ) Oracle data source configuration. mysqlSourceConfig object ( MysqlSourceConfig ) MySQL data source configuration. postgresqlSourceConfig object ( PostgresqlSourceConfig ) PostgreSQL data source configuration. sqlServerSourceConfig object ( SqlServerSourceConfig ) SQLServer data source configuration. salesforceSourceConfig object ( SalesforceSourceConfig ) Salesforce data source configuration. mongodbSourceConfig object ( MongodbSourceConfig ) MongoDB data source configuration. spannerSourceConfig object ( SpannerSourceConfig ) Spanner data source configuration.
 

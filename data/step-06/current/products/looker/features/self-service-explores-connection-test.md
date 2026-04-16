@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.339Z"
+generated_at: "2026-04-15T13:43:38.420Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Self-service Explores connection test"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-01-26"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
 keywords:
   - "self"
   - "explores"
   - "connection"
   - "test"
-  - "the"
   - "admin"
   - "page"
   - "includes"
+  - "button"
 ---
 
 # Self-service Explores connection test
@@ -42,42 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore](https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
 
 ## Supporting Pages
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### Admin settings - Self-service Explores \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 52
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore](https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore)
+- Source ID: `site-docs-reference`
+- Final score: 261
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Enabling the APIs to support Google Sheets uploads To support uploading data from Google Sheets, the following APIs must be enabled in the Google Cloud console by an IAM user with the IAM roles/serviceusage.serviceUsageAdmin permission: This API must be enabled in the Google Cloud project that houses the BigQuery connection that is specified in the Default BigQuery connection drop-down menu of the Self-service Explores admin page: BigQuery API: Required for all BigQuery operations These APIs must be enabled in the Google Cloud project that is associated with the service account used to upload data (the service account that is used for PDT processes on your BigQuery connection , which may or may not be the same as the Google Cloud project that is specified in the Default BigQuery connection drop-down menu of the Self-service Explores admin page): BigQuery API: Required for all BigQuery operations Google Sheets API: Required for retrieving the names of each sheet in a Google Sheets document Google Drive API: Required for BigQuery to read files from Drive Perform the following steps to enable the APIs: From the Google Cloud console Open project picker , select the project that houses the BigQuery connection that is specified in the Default BigQuery connection drop-down menu of the Self-service Explores admin page.
+- On the Self-service Explores admin page, from the Default BigQuery connection drop-down menu, select the BigQuery connection to use for storing the data for self-service Explores.
+- Be mindful of changing the settings on the Self-service Explores admin page if your instance has existing self-service Explores: If you disable data uploads, your users will no longer be able to access existing self-service Explores from the Explore menu, and any Looks or dashboards that rely on the data may be affected.
+- To enable Google Drive navigation on your Looker instance, an IAM user with the required roles must create an OAuth client in the Google Cloud console and then enter the OAuth credentials into the Self-service Explores admin page on your Looker instance, as described in the procedure in this section.
+
+### Admin settings - LDAP authentication \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap)
+- Source ID: `site-docs-reference`
+- Final score: 218
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Requirements Looker displays the LDAP page in the Authentication section of the Admin menu only if the following conditions are met: Your Looker instance is not a Looker (Google Cloud core) instance.
+- The LDAP page in the Authentication section of the Admin menu lets you configure Looker to authenticate users with Lightweight Directory Access Protocol (LDAP).
+- This page describes that process and includes instructions for linking LDAP groups to Looker roles and permissions.
+- Test user information Enter a test user's credentials and click the Test User Authentication button.
+
+### Admin settings - Roles \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- Source ID: `site-docs-reference`
+- Final score: 213
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
-
-### Using the API Explorer | Looker | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 48
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
-- Using the API Explorer Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-explorer There may also be Ruby and Java ... languages.
-
-### Getting started with the Looker API | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 34
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
+- This permission is applied to individual models or model sets, rather than across the entire Looker instance or to connections. see system activity None Instance Wide CM Users can access the System Activity Explores and dashboards to view usage, history, and other metadata about a Looker instance. see admin None Instance Wide CM Users can have read-only access to admin resources, including pages in the Admin panel , with the exception of the following pages: Support Access Preview Features Legacy Features Export Content Access Actions (if the page displays only the enabled or disabled states of actions) This permission doesn't provide access to System Activity pages. mobile app access None Instance Wide NN Users can sign in to your instance on a mobile device using the Looker mobile app .
+- If you assign the manage project connections restricted permission to a user, the user will be able to see, edit, and create project-scoped connections for any projects included in the model set. see ci develop Instance Wide NN Added 25.6 Users can view the results of Continuous Integration runs, view the Continuous Integration Suites page, and run test suites. manage ci see ci Instance Wide NN Added 25.6 Users can create Continuous Integration suites, manage Continuous Integration users, and configure the git connection with Continuous Integration.
+- Users who have the save content permission but not the embed save shared space permission will only have the option to save content to their personal embed folder . manage embed settings None Instance Wide CM Users can edit embed settings on the Embed page in the Platform section of the Admin menu. manage themes None Instance Wide CM Users can configure theme settings for embedded dashboards, Looks, and Explores on the Themes page in the Platform section of the Admin menu.
+- If you create a role with the manage project models permission, the role will grant access to all models that share a project with any of the models in the role's model sets. use global connections manage project models Model Specific Users can configure allowed models with any project-scoped connection or any instance-wide connection. manage project connections restricted develop Model Specific CM Users can see the Connections page in the Admin menu.
 

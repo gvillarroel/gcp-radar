@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:58:32.867Z"
+generated_at: "2026-04-15T11:57:14.566Z"
 product_name: "Cloud SQL for SQL Server"
 product_slug: "cloud-sql-for-sql-server"
 feature_name: "Cloud SQL Auth Proxy v2"
 feature_slug: "cloud-sql-auth-proxy-v2"
 latest_feature_date: "2023-02-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview"
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl"
+  - "https://docs.cloud.google.com/sql/docs/debugging-connectivity"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-networks"
 keywords:
   - "sql"
   - "auth"
@@ -20,13 +20,13 @@ keywords:
   - "improves"
   - "secure"
   - "connectivity"
-  - "to"
+  - "instances"
 ---
 
 # Cloud SQL Auth Proxy v2
 
 Product: Cloud SQL for SQL Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,54 @@ Cloud SQL Auth Proxy v2 improves secure connectivity to Cloud SQL instances with
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview](https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview)
-- [https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool](https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl](https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl)
+- [https://docs.cloud.google.com/sql/docs/debugging-connectivity](https://docs.cloud.google.com/sql/docs/debugging-connectivity)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/authorize-networks](https://docs.cloud.google.com/sql/docs/sqlserver/authorize-networks)
 
 ## Supporting Pages
 
-### "Choose how to connect to Cloud SQL \_|\_ Cloud SQL for SQL Server \_|\_\
+### "Authorize with SSL/TLS certificates \_|\_ Cloud SQL for SQL Server \_|\_\
 
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview](https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview)
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl](https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 122
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- MySQL PostgreSQL SQL Server This page describes how you can use Secure Socket Layer (SSL), now Transport Layer Security (TLS), from your application to encrypt connections to Cloud SQL instances.
+- Certificate authority (CA) hierarchies This section describes the three types of server certificate authority (CA) that you can choose for your Cloud SQL instances.
+- Cloud SQL Auth Proxy version support Supports all versions of the Cloud SQL Auth Proxy, v1 and later.
+- Requires the Cloud SQL Auth Proxy version 2.13.0 or later.
+
+### "Authorize with authorized networks \_|\_ Cloud SQL for SQL Server \_|\_\
+
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/authorize-networks](https://docs.cloud.google.com/sql/docs/sqlserver/authorize-networks)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 116
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id " Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "UPDATE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } Limitations Some IP address ranges can't be added as authorized networks.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id " Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "UPDATE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } REST v1beta4 Configuring authorized networks replaces the existing authorized networks list.
+- Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID network range 1 An authorized ip address or range network range 2 Another authorized ip address or range HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { "settings": { "ipConfiguration": { "authorizedNetworks": [{"value": " network range 1 "}, {"value": " network range 2 "}] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID network range 1 An authorized ip address or range network range 2 Another authorized ip address or range HTTP method and URL: PATCH https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id Request JSON body: { "settings": { "ipConfiguration": { "authorizedNetworks": [{"value": " network range 1 "}, {"value": " network range 2 "}] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+
+### Debugging connection issues \_|\_ Cloud SQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/debugging-connectivity](https://docs.cloud.google.com/sql/docs/debugging-connectivity)
 - Source ID: `site-docs-root`
-- Final score: 200
+- Final score: 116
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Cloud Shell Connecting using the Cloud Shell Cloud Code Connecting using Cloud Code in JetBrains IDE Connect using third-party database administration tools SQL Server Management Studio Connecting with SQL Server Management Studio SSMS Object Explorer Connecting with SSMS Object Explorer Visual Studio Visual Studio Code for SQL Server Troubleshoot If you're having problems connecting, then check the following pages for help debugging or finding solutions to known issues: Debugging connection issues Known connectivity errors Troubleshooting Cloud SQL Auth Proxy connection Common connection issues What's next Learn how to connect with the Quickstart for Cloud SQL for sqlserver .
-- Cloud SQL connector Direct connection Description Cloud SQL Auth Proxy, a client-side proxy, and Cloud SQL Language Connectors, client-side libraries, provide simplified and secure access to your Cloud SQL instances, especially when you connect to an instance using a public IP address.
-- Another more secure alternative for connecting to a Cloud SQL instance that uses public IP is to use a Cloud SQL connector (such as the Cloud SQL Auth Proxy or one of the Cloud SQL Language Connectors).
-- Configuration options Cloud SQL Auth Proxy , or Cloud SQL Language Connectors, including Cloud SQL Java connector Cloud SQL Python connector Cloud SQL Go connector Cloud SQL Node.js connector The following Google Cloud services use an embedded Cloud SQL Auth Proxy when you connect to a Cloud SQL instance over public IP address: Cloud Run App Engine flexible environment App Engine standard environment To configure SSL/TLS certificates on the Cloud SQL instance and for your client, do the following: Choose a server CA mode for your instance .
-
-### "Active Directory Diagnosis tool for Cloud SQL \_|\_ Cloud SQL for SQL Server\
-
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool](https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool)
-- Source ID: `site-iam-reference`
-- Final score: 178
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Active Directory Diagnosis tool for Cloud SQL Stay organized with collections Save and categorize content based on your preferences.
-- The Active Directory (AD) Diagnosis tool is a utility PowerShell script that helps you to troubleshoot AD setup issues with your on-premises domain and Cloud SQL for SQL Server instances in Google Cloud.
-- On-premises domain name, such as my-onprem-domain.com Managed AD domain name, such as my-ad-domain.com List of SQL Server Active Directory FQDNs and private IP addresses.
-- This page describes how to use the Active Directory Diagnosis tool for Cloud SQL and explains the checks that the tool performs.
-
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- February 08, 2023 Cloud SQL for MySQL Feature The Cloud SQL Auth proxy is a utility for ensuring secure connections to your Cloud SQL instances.
-- Cloud SQL for PostgreSQL Feature The Cloud SQL Auth proxy is a utility for ensuring secure connections to your Cloud SQL instances.
-- Cloud SQL for SQL Server Feature The Cloud SQL Auth proxy is a utility for ensuring secure connections to your Cloud SQL instances.
-- For users of the Cloud SQL Auth Proxy : If the Cloud SQL instance to which you're connecting is using shared certificate authority (CA) for its serverCaMode setting, then on the client side, you must use Cloud SQL Auth Proxy version 2.13.0 or later.
+- Determine the IP address for your application To determine the IP address of a computer running your application so you can authorize access to your Cloud SQL instance from that address, use one of the following options: If the computer is not behind a proxy or firewall, log in to the computer and use the What is my IP? site to determine its IP address.
+- If you are connecting using UNIX domain sockets, confirm that the sockets were created by listing the directory specified with the -dir when you started the Cloud SQL Auth Proxy.
+- It's highly encouraged to run tcpdump to capture and inspect the packets between your host and the Cloud SQL instances when you are debugging the connectivity problems.
+- For more information, see Connecting the mysql client using IP addresses and Connecting the mysql client using the Cloud SQL Auth Proxy .
 

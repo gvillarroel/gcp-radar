@@ -1,29 +1,27 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.792Z"
+generated_at: "2026-04-15T00:42:40.920Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "gcloudignore support"
 feature_slug: "gcloudignore-support"
 latest_feature_date: "2018-01-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder"
+  - "https://docs.cloud.google.com/docs/buildpacks/python"
+  - "https://docs.cloud.google.com/build/docs/access-github-from-build"
+  - "https://docs.cloud.google.com/appengine/docs/quotas"
 keywords:
   - "gcloudignore"
-  - "build"
-  - "added"
-  - "for"
   - "files"
+  - "added"
 ---
 
 # gcloudignore support
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,52 +33,53 @@ Cloud Build added support for `.gcloudignore` files.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder)
+- [https://docs.cloud.google.com/docs/buildpacks/python](https://docs.cloud.google.com/docs/buildpacks/python)
+- [https://docs.cloud.google.com/build/docs/access-github-from-build](https://docs.cloud.google.com/build/docs/access-github-from-build)
+- [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
 
 ## Supporting Pages
 
-### Create and manage build triggers \_|\_ Cloud Build \_|\_ Google Cloud Documentation
+### "Quotas and limits \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
+- URL: [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- Source ID: `site-docs-reference-2`
+- Final score: 44
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following limits apply to task queues according to their type: Push Queue Limits Maximum task size 100KB Queue execution rate 500 task invocations per second per queue Maximum countdown/ETA for a task 30 days from the current date and time Maximum number of tasks that can be added in a batch 100 tasks Maximum number of tasks that can be added in a transaction 5 tasks Default maximum number of task queues 100 queues.
+- 15,000 Documents added/deleted per minute In addition, there is a limit of 10GB storage per index.
+- Files Maximum Default files per app 10,000 files Contact Support to request an increase.
+- The total stored size of code and static files is listed in the Main Dashboard table.
+
+### Build a Python application \_|\_ Buildpacks \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/docs/buildpacks/python](https://docs.cloud.google.com/docs/buildpacks/python)
+- Source ID: `site-docs-reference`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The Python buildpack sets the default entrypoint based on the following order of precedence, as defined in the requirements.txt file: gunicorn uvicorn fastapi[standard] gradio streamlit google-adk Configure the web server or framework For each common Python configurations in the requirements.txt file, the following table shows the default entrypoints when deploying to Cloud Run from source: Primary configuration Default entrypoint Environment variables gunicorn gunicorn -b :8080 main:app numpy gunicorn -b :8080 main:app fastapi uvicorn uvicorn main:app --host 0.0.0.0 --port 8080 fastapi[standard] uvicorn main:app --host 0.0.0.0 --port 8080 uvicorn gunicorn gunicorn -b :8080 main:app gradio python main.py GRADIO SERVER NAME=0.0.0.0 GRADIO SERVER PORT=8080 streamlit streamlit run main.py --server.address 0.0.0.0 --server.port 8080 google-adk adk api server --host 0.0.0.0 --port 8080 To avoid deployment failures, use a supported Python version in your source files, and specify a web server in your requirements.txt file.
+- When you deploy a Cloud Run service from source using the Python runtime, the buildpack determines the Python version and the default entrypoint in the following ways: If you don't specify a Python version in your source files, the Python buildpack sets the default to the latest supported Python version .
+- To configure the buildpack to use a supported Python version when deploying your app: pack build sample-python --builder=gcr.io/buildpacks/builder \ --env GOOGLE PYTHON VERSION="3.14.x" You can also use a project.toml project descriptor to encode the environment variable alongside your project files.
+- A pyproject.toml file is present and you don't include other high-precedence lock files such as poetry.lock , uv.lock , or configurations such as [tool.poetry] , and you don't set the GOOGLE PYTHON PACKAGE MANAGER environment variable.
+
+### "Accessing GitHub from a build via SSH keys \_|\_ Cloud Build \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/build/docs/access-github-from-build](https://docs.cloud.google.com/build/docs/access-github-from-build)
 - Source ID: `site-docs-root-2`
-- Final score: 114
+- Final score: 30
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Each time you push a change to your source, Cloud Build looks through your changed files for included and ignored files to determine whether a build should be invoked: If you push a change to your repository on an existing branch, Cloud Build looks at the files changed between the commit you just pushed and the commit to which the branch previously pointed.
-- For information on specifying substitution values in build config files, see Substituting variable values .
-- For example, you might not want to invoke a build when you update documentation or configuration files.
-- To create a trigger if your source code is in GitHub : gcloud builds triggers create github \ -- name = TRIGGER NAME \ -- region = REGION \ -- repo - name = REPO NAME \ -- repo - owner = REPO OWNER \ -- branch - pattern = BRANCH PATTERN \ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \ -- service - account = SERVICE ACCOUNT \ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger.
-
-### "Class CloudBuildSettings.Builder (3.90.0) \_|\_ Java client libraries \_\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder)
-- Source ID: `site-java-reference`
-- Final score: 113
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Builder<CreateWorkerPoolRequest , WorkerPool , CreateWorkerPoolOperationMetadata > createWorkerPoolOperationSettings () Returns the builder for the settings used for calls to createWorkerPool.
-- Builder<UpdateWorkerPoolRequest , WorkerPool , UpdateWorkerPoolOperationMetadata > updateWorkerPoolOperationSettings () Returns the builder for the settings used for calls to updateWorkerPool.
-- Builder<DeleteWorkerPoolRequest , Empty , DeleteWorkerPoolOperationMetadata > deleteWorkerPoolOperationSettings () Returns the builder for the settings used for calls to deleteWorkerPool.
-- Builder<GetDefaultServiceAccountRequest , DefaultServiceAccount > getDefaultServiceAccountSettings () Returns the builder for the settings used for calls to getDefaultServiceAccount.
-
-### "Class CloudBuildStubSettings.Builder (3.90.0) \_|\_ Java client libraries\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder)
-- Source ID: `site-java-reference`
-- Final score: 113
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Builder<CreateWorkerPoolRequest , WorkerPool , CreateWorkerPoolOperationMetadata > createWorkerPoolOperationSettings () Returns the builder for the settings used for calls to createWorkerPool.
-- Builder<UpdateWorkerPoolRequest , WorkerPool , UpdateWorkerPoolOperationMetadata > updateWorkerPoolOperationSettings () Returns the builder for the settings used for calls to updateWorkerPool.
-- Builder<DeleteWorkerPoolRequest , Empty , DeleteWorkerPoolOperationMetadata > deleteWorkerPoolOperationSettings () Returns the builder for the settings used for calls to deleteWorkerPool.
-- Builder<GetDefaultServiceAccountRequest , DefaultServiceAccount > getDefaultServiceAccountSettings () Returns the builder for the settings used for calls to getDefaultServiceAccount.
+- Logs are available at [ https://console.cloud.google.com/ cloud - build / builds / 871 b68bc --- ? project = [ PROJECT - ID ]] . ----------------------------- REMOTE BUILD OUTPUT ------------------------------ starting build "871b68bc-cefc-4411-856c-2a2b7c7d2487" FETCHSOURCE Fetching storage object : gs : // [ PROJECT - ID ] cloudbuild / source / 1504288639.02 ---. tgz #1504288640827178 Copying gs : // [ PROJECT - ID ] cloudbuild / source / 1504288639.02 ---. tgz #1504288640827178... / [ 1 files ][ 3.9 KiB / 3.9 KiB ] Operation completed over 1 objects / 3.9 KiB .
+- The keys are often collected from the remote hosts when connecting to them for the first time, but they can also be added manually.
+- Step #2: Warning: Permanently added the RSA host key for IP address 'XXX.XXX.XXX.XXX' to the list of known hosts.
+- The volume is used to persist files across the build steps.
 

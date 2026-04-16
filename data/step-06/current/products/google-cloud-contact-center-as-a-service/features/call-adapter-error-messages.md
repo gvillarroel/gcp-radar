@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.784Z"
+generated_at: "2026-04-15T13:50:47.118Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Call Adapter error messages"
@@ -9,8 +9,9 @@ latest_feature_date: "2023-08-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
 keywords:
   - "call"
   - "adapter"
@@ -37,38 +38,53 @@ Call Adapter error messages now include more detailed error codes and explanatio
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Call settings \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 164
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 186
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- You must enter the following information to enable the NICE QM data export: NICE API Endpoint API Authentication credentials Feature Call Adapter: Improved error codes and messages : We have improved our Call Adapter's error messages with more detailed content, including error codes and explanations.
-- Feature Performance overview dashboard The performance overview dashboard now includes the following tiles: Avg Queue Time : the average time a session (call or chat) spent in a queue until an agent accepted it or the end-user abandoned it Avg Queue Abandon Time : the average time that sessions (calls or chats) waited in a queue before being disconnected without an agent accepting them Sentiment Score : the average sentiment score for sessions (calls or chats) For more information, see Performance overview dashboard .
-- Feature Dial pad improvements The dial pad in the agent adapter now includes the following: Country code selector Outbound number, Language, and Queue selectors If you use a CRM with flexible outbound dialing turned on, the Outbound number and Language selectors appear in the Outbound call details screen.
-- June 30, 2023 Feature ServiceNow is now available as a native, fully integrated CRM, providing a more efficient and streamlined configuration process that includes embedded agent adapters.
+- Agent call messages and notifications You have flexibility based on your individual contact center environment to change how often the agent hears call alerts, what the alert sounds like, and also options for more detailed audible call announcements.
+- Skip the connecting message playback A connecting message is the message that an end-user hears while the system is connecting their call to an agent—for example, "Please wait while we connect your call to the next available agent." For more information about connecting messages, see Configuring IVR messages .
+- See the Agent Call Adapter user guide for more information about the agent experience.
+- For more information, see the Agent Call Adapter user guide .
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Call and Chat Settings \_|\_ Google Cloud Contact Center as a Service \_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 68
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings)
+- Source ID: `site-docs-reference`
+- Final score: 180
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Customize messages and set up other languages Configure IVR messages Customize the messages played to callers and displayed to consumers.
-- Instant web calls: Provide visitors with an estimated wait time and automatically initiate an outbound call to a site visitor when their place in the support queue is reached Scheduled calls: Allow site visitors to schedule a time to talk with your support team Queue deflection: Automatically route end users to a message or page on your site Chat support: Provide live chat support directly from your website Proactive triggers : Display a contact bubble for web calls and chats automatically based on visitor behavior.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
+- Settings recommendations Use a longer ringtone and/or more frequent notification if: Agents are often multitasking and not always waiting to take a call In an open office or louder environment Agents might listen to music from their computer Use a shorter ringtone if: Agents are always alert and waiting for calls Higher call frequency Call whisper: Use this when the queue selection and type of call highly impact the first communication from the agent Increase speed of whisper for decreased wait time impact For very low second count SLAs: Only use whisper and countdown if necessary as the duration of these messages contributes to the wait time for calls Send reserved data properties With reserved data properties, you can send information about an end-user to CCAI Platform when a chat or call session begins, or even after a session has begun.
+- Mark the checkbox Allow transfers to queues outside of operation hours for the following behavior: Agents will be able to see the following queues as options to transfer to in the Agent Adapter: All queues within operating hours All queues that are outside of operation hours with after hour deflection enabled All queues that are outside of hours of operation with no deflection enabled and active, logged-in agents All queues that are after hours with an assigned virtual agent in 24-hour availability mode Agents will not be able to see the following types of queues: All queues that are outside of operating hours with an assigned virtual agent limited to queue hours of operation Select Mobile and Web SDK call deflection options When selected, visual options will be displayed when outside of hours of operation.
+- Custom notification tones You can upload custom tones for the following notification types: Agent call messages & notifications : Incoming call notification Agent chat notifications : New message notification New chat notification Under Settings > Chat > Agent Chat Notifications , you will see Select the tone you would like to use under each notification type.
+- Deflect to Queue: deflects the consumer to another queue OR Deflection Options (select one or more): Scheduled Call : When scheduled calls are enabled in the Channel Settings for this queue, you can select this option to present consumers with timeslots for a scheduled call during operating hours.
+
+### "Android SDK guide \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide)
+- Source ID: `site-docs-reference`
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- AuthToken , new UjetTokenCallback () { @Override public void onSuccess ( @Nullable final String authToken ) { tokenCallback . onToken ( authToken ); } @Override public void onFailure ( @Nullable final String authToken ) { tokenCallback . onError (); } }); } } } For more information, see end user authentication .
+- Add some data from app, and add more sensitive data from server and sign it. / UjetCustomData appCustomData = new UjetCustomData () ; appCustomData.put ( "model" , "Model" , "MODEL1234" ) ; appCustomData.put ( "customer id" , "Customer ID" , 12345 ) ; appCustomData.put ( "temperature" , "Temperature" , 70 .5f ) ; appCustomData.put ( "purchase date" , "Purchase Date" , new Date ()) ; appCustomData.put ( "battery" , "Battery" , "52%" ) ; appCustomData.put ( "location" , "Location" , "San Francisco, CA, United States" ) ; appCustomData.putURL ( "dashboard url" , "Dashboard URL" , "https://internal.dashboard.com/12345" ) ; payload.put ( "custom data" , appCustomData.getData ()) ; tokenCallback.onToken ( APIManager.getHttpManager () .getSignedCustomData ( payload )) ; } // ... } } Using unsigned method to send custom data Caution: This method is not recommended, as it creates a potential vulnerability which could open your application to a man-in-the-middle attack.
+- For more information, see Set up a Firebase Cloud Messaging client app on Android . public class YourFirebaseMessagingService extends FirebaseMessagingService { / There are two scenarios when onNewToken is called: 1 ) When a new token is generated on initial app startup 2 ) Whenever an existing token is changed Under #2, there are three scenarios when the existing token is changed: A ) App is restored to a new device B ) User uninstalls/re-installs the app C ) User clears app data / @Override public void onNewToken ( String token ) { Log.i ( "FCM" , "FCM token updated: " + token ) ; } } Implement UjetRequestListener.onRequestPushToken in your Application class.
+- The Contact Center AI Platform (CCAI Platform) Android SDK uses foreground services to initiate chat and call, so we used FOREGROUND SERVICE REMOTE MESSAGING service type for chat as we are dealing with text messages and FOREGROUND SERVICE MICROPHONE service type for call.
 

@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/vertex-ai/docs/samples
 knowledge_key: corpus
 source_id: site-docs-reference-2
 source_type: site
-entrypoint: https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/libraries
+entrypoint: https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication
 source_metadata:
   url: https://docs.cloud.google.com/vertex-ai/docs/samples
   title: "All Vertex AI code samples \_|\_ Google Cloud Documentation"

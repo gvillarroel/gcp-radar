@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/network-intelligence-center/docs
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/network-intelligence-center/docs/apis
+entrypoint: https://docs.cloud.google.com/network-intelligence-center/docs/reference/enable-api
 source_metadata:
   url: https://docs.cloud.google.com/network-intelligence-center/docs
   title: "Network Intelligence Center \_|\_ Google Cloud Documentation"

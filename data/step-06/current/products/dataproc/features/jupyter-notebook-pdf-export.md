@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.080Z"
+generated_at: "2026-04-14T00:23:22.640Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Jupyter notebook PDF export"
@@ -9,18 +9,18 @@ latest_feature_date: "2020-04-15"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
-  - "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/cmek"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
 keywords:
   - "jupyter"
   - "notebook"
   - "pdf"
   - "export"
-  - "on"
   - "dataproc"
   - "supports"
   - "exporting"
+  - "notebooks"
 ---
 
 # Jupyter notebook PDF export
@@ -38,52 +38,55 @@ Jupyter on Dataproc supports exporting notebooks as PDF files.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata](https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/cmek](https://docs.cloud.google.com/dataproc-metastore/docs/cmek)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/networking](https://docs.cloud.google.com/dataproc-metastore/docs/networking)
 
 ## Supporting Pages
 
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
+### Dataproc Metastore networking overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 160
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- April 15, 2020 Feature Image 1.5 Presto now includes two default catalogs: bigquery pointing to the datasets of the cluster's project bigquery public data pointing to the public datasets Feature Image 1.5 Jupyter on Dataproc now supports exporting notebooks as PDFs.
-- October 28, 2022 Announcement The following preview Dataproc image versions are available: 2.1.0-RC2-debian11 2.1.0-RC2-rocky8 2.1.0-RC2-ubuntu20 The following component versions are available for use with the 2.1.0-RC2 images (the HBase and Druid components are not supported in 2.1 image versions): Apache Atlas 2.2.0 Apache Flink 1.15.0 Apache Hadoop 3.3.3 Apache Hive 3.1.3 Apache Hive WebHCat 3.1.3 Apache Kafka 3.1.0 Apache Pig 0.18.0-SNAPSHOT Apache Spark 3.3.0 Apache Sqoop v1 1.5.0-SNAPSHOT Apache Sqoop v2 1.99.6 Apache Tez 0.10.1 Cloud Storage Connector hadoop3-2.2.8 Conscrypt 2.5.2 Docker 20.10 Hue 4.10.0 Java temurin-11-jdk JupyterLab Notebook 3.4 Oozie 5.2.1 Presto 376 Python 3.10 R 4.1 Ranger 2.2.0 Scala 2.12.14 Solr 9.0.0 Zeppelin Notebook 0.10.1 Zookeeper 3.8.0 Security Dataproc Serverless for Spark runtime version 2.0.1 upgrades Apache Commons Text to 1.10.0 , addressing CVE-2022-42889 Libraries Dataproc Serverless for Spark runtime version 2.0.1 upgrades the following components: Spark to 3.3.1 SLF4J to 2.0.3 Announcement Dataproc Serverless for Spark now now uses runtime version 1.0.21 and 2.0.1 .
-- February 10, 2025 Announcement Dataproc on Compute Engine: To help diagnose Dataproc clusters, you can set the following cluster properties to true when you create a cluster : dataproc:diagnostic.capture.enabled : When set to true , enables the collection of checkpoint data in the cluster temp bucket . dataproc:dataproc.logging.extended.enabled : When set to true , enables the collection of logs for the Knox, Zeppelin, Solr, Trino, Presto, Ranger-usersync, Jupyter notebook components and the Spark History-Server in Cloud Logging . dataproc:dataproc.logging.syslog.enabled : When set to true , enables the collection of VM syslogs in Cloud Logging .
-- December 11, 2023 Announcement Announcing the GA release of Dataproc on Compute Engine image version 2.2 : 2.2.0-debian12, 2.2.0-rocky9, 2.2.0-ubuntu22 The 2.2.0 release includes the following components: Debian-12 / Ubuntu-2204 / RockyLinux 9 Apache Hadoop 3.3.6 Apache Spark 3.5.0 Spark-BigQuery Connector 0.34.0 Cloud Storage Connector 3.0.0 Trino 432 Apache Flink 1.17.0 Apache Ranger 2.4.0 Apache Solr 9.2.1 R 4.2 Hue 4.11.0 JupyterLab Notebook 3.6 Change Monitoring-agent-defaults metrics are not available in Dataproc on Compute Engine image version 2.2 clusters unless the Ops Agent is installed.
-
-### "Class SessionControllerAsyncClient (5.26.0) \_|\_ Python client libraries\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 159
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/networking](https://docs.cloud.google.com/dataproc-metastore/docs/networking)
+- Source ID: `site-docs-root-2`
+- Final score: 31
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- CreateSessionRequest ( parent="parent value", session=session, session id="session id value", ) Make the request operation = client. create session (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.CreateSessionRequest , dict]] The request object.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 async def sample terminate session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 async def sample create session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 async def sample delete session(): Create a client client = dataproc v1 .
+- VM services in the customer's network can access Dataproc Metastore service resources in any region if the Google Cloud service supports it.
+- To explicitly allow Dataproc Metastore traffic, run the following gcloud commands: gcloud compute firewall-rules create dpms-allow-egress- DPMS NETWORK - REGION --allow tcp --destination-ranges DPMS NET PREFIX /17 --network DPMS NETWORK --direction OUT gcloud compute firewall-rules create dpms-allow-ingress- DPMS NETWORK - REGION --allow tcp,udp --source-ranges DPMS NET PREFIX /17 --network DPMS NETWORK For DPMS NET PREFIX , apply a /17 subnet mask to your Dataproc Metastore service IP.
+- What's next VPC Service Controls with Dataproc Metastore Dataproc Metastore Identity and Access Management (IAM) and access control Private Service Connect with Dataproc Metastore Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Dataproc Metastore requires the following per region for each VPC network: 1 peering quota /17 and /20 CIDR VPC Network Peering After the VPC network is created, Dataproc Metastore also automatically configures VPC Network Peering for your service.
 
-### "Class SessionControllerClient (5.26.0) \_|\_ Python client libraries \_\
+### Export metadata from Dataproc Metastore \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient)
-- Source ID: `site-python-reference`
-- Final score: 159
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata](https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata)
+- Source ID: `site-docs-root-2`
+- Final score: 31
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- CreateSessionRequest ( parent="parent value", session=session, session id="session id value", ) Make the request operation = client. create session (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.dataproc v1.types.CreateSessionRequest , dict] The request object.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 def sample terminate session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 def sample create session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 def sample delete session(): Create a client client = dataproc v1 .
+- Export metadata Before exporting your metadata, note the following considerations: While an export is running, you can't update a Dataproc Metastore service — for example changing configuration settings.
+- About exporting metadata When you export metadata from Dataproc Metastore, the service stores the data in one of the following file formats: A set of Avro files stored in a folder.
+- Required roles To get the permissions that you need to export metadata into Dataproc Metastore, ask your administrator to grant you the following IAM roles: To export metadata, either: Dataproc Metastore Editor ( roles/metastore.editor ) on the Dataproc Metastore service Dataproc Metastore Administrator ( roles/metastore.admin ) on the Dataproc Metastore service Dataproc Metastore Metadata Operator ( roles/metastore.metadataOperator ) on the Dataproc Metastore service For MySQL and Avro, to use the Cloud Storage object for export: grant your user account and the Dataproc Metastore service agent the Storage Creator role ( roles/storage.objectCreator ) on the Cloud Storage bucket For more information about granting roles, see Manage access to projects, folders, and organizations .
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to export metadata into Dataproc Metastore: To export metadata: metastore.services.export on the metastore service For MySQL and Avro, to use the Cloud Storage object for export, grant your user account and the Dataproc Metastore service agent: storage.objects.create on the Cloud Storage bucket You might also be able to get these permissions with custom roles or other predefined roles .
+
+### "Encrypt data with customer-managed encryption keys \_|\_ Dataproc Metastore\
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/cmek](https://docs.cloud.google.com/dataproc-metastore/docs/cmek)
+- Source ID: `site-docs-root-2`
+- Final score: 29
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- When exporting, the exported database dump is protected according to the destination storage bucket's CMEK settings.
+- Grant Cloud KMS key permissions Use the following commands to grant Cloud KMS key permissions for Dataproc Metastore: Grant permissions to the Dataproc Metastore Service Agent service account: gcloud kms keys add-iam-policy-binding KEY NAME \ --location LOCATION \ --keyring KEY RING \ --member=serviceAccount:$(gcloud beta services identity create \ --service=metastore.googleapis.com 2>&1 awk '{print $4}') \ --role=roles/cloudkms.cryptoKeyEncrypterDecrypter Grant permissions to the Cloud Storage service account: gcloud storage service-agent --authorize-cmek projects/ KEY PROJECT /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys/ KEY NAME Create a single-region service with a CMEK key Use the following steps to configure CMEK encryption for a single-region Dataproc Metastore service.
+- Note: You must create your CMEK key in the same region where your Dataproc Metastore service is located. gcloud kms keyrings create KEY RING \ --project= PROJECT ID \ --location= LOCATION Replace the following: KEY RING : a name for your key ring.
+- Import and export data from and to a CMEK-enabled service If you want your data to remain encrypted with a customer-managed key during an import, you must set CMEK on the Cloud Storage bucket before importing data from it.
 

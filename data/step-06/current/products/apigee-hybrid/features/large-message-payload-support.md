@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:33:10.243Z"
+generated_at: "2026-04-14T04:54:52.832Z"
 product_name: "Apigee hybrid"
 product_slug: "apigee-hybrid"
 feature_name: "Large message payload support"
@@ -9,18 +9,15 @@ latest_feature_date: "2025-06-04"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
-  - "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
-  - "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-overview"
+  - "https://docs.cloud.google.com/apigee/docs/apihub/quickstart-settings"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote"
 keywords:
-  - "message payload limit"
-  - "max payload size"
-  - "30 MB payload"
-  - "30MB limit"
-  - "API payload size"
-  - "environment payload configuration"
-  - "runtime resource settings"
-  - "large payloads"
+  - "message"
+  - "payloads"
+  - "payload"
+  - "large"
+  - "supports"
 ---
 
 # Large message payload support
@@ -38,41 +35,36 @@ Apigee Hybrid supports API message payloads up to 30 MB and allows configuration
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development)
-- [https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref](https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref)
-- [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-overview](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-overview)
+- [https://docs.cloud.google.com/apigee/docs/apihub/quickstart-settings](https://docs.cloud.google.com/apigee/docs/apihub/quickstart-settings)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote](https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote)
 
 ## Supporting Pages
 
-### "Best practices for API proxy design and development with Apigee \_|\_ Google\
+### Apigee Operator for Kubernetes overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development)
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-overview](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-overview)
 - Source ID: `site-docs-reference`
-- Final score: 26
+- Final score: 90
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
-Evidence snippets:
-- Consider the following recommended strategies for handling large message sizes in Apigee: We highly recommend isolating API proxies that frequently handle large payloads in a dedicated environment to avoid a potential "noisy neighbor" scenario.
-- System CPU and memory resources are consumed in greater quantities by proxies that manage large payloads, especially when used in conjunction with policies that interact with large payloads.
-- If your organization uses Pay-as-you-go billing , we recommend using configurable limits for large payloads only for API proxies deployed in Comprehensive environment.
-- We also recommend limiting the use of policies to interact with large payloads.
+### Create and edit attributes \_|\_ Apigee \_|\_ Google Cloud Documentation
 
-### Configuration property reference \_|\_ Apigee \_|\_ Google Cloud Documentation
+- URL: [https://docs.cloud.google.com/apigee/docs/apihub/quickstart-settings](https://docs.cloud.google.com/apigee/docs/apihub/quickstart-settings)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 68
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
-- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref](https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref)
-- Source ID: `site-docs-reference`
-- Final score: 26
-- Re-rank relevance: N/A
+### "Step 8: Promote an archive to production \_|\_ Apigee \_|\_ Google Cloud\
 
-### Apigee hybrid release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 22
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote](https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 66
 - Re-rank relevance: N/A
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.580Z"
+generated_at: "2026-04-12T12:07:33.829Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "Automatic Private Service Connect endpoint creation for AlloyDB"
@@ -9,7 +9,10 @@ latest_feature_date: "2025-06-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint-sample-template"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-psql"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-iam"
 keywords:
   - "authorized projects for PSC"
   - "auto-create PSC endpoint"
@@ -32,28 +35,50 @@ AlloyDB can automatically create Private Service Connect endpoints for authorize
 
 ## Extended Definition
 
-In AlloyDB, a service connection policy is used to authorize AlloyDB to create a Private Service Connect (PSC) connection to consumer VPC networks. This indicates that, once authorized via policy configuration, AlloyDB can provision the PSC connection path (i.e., endpoint setup) automatically, with the policy defining details such as the consumer VPC network and subnet.
+AlloyDB can automatically create Private Service Connect endpoints for authorized projects based on configured service connection policies.
 
 ## Evidence Summary
 
-The cited AlloyDB PSC overview page explains that service connection policies authorize AlloyDB to create PSC connections to consumer VPC networks and allows subnet/network configuration, which supports the feature’s policy-driven PSC provisioning behavior.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
+- [https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index](https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index)
+- [https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint-sample-template](https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint-sample-template)
+- [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
+- [https://docs.cloud.google.com/alloydb/docs/connect-iam](https://docs.cloud.google.com/alloydb/docs/connect-iam)
 
 ## Supporting Pages
 
-### "Private Service Connect overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+### Create a ScaNN index \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index](https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index)
+- Source ID: `site-docs-reference-2`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Sample templates for registering model endpoints \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint-sample-template](https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint-sample-template)
+- Source ID: `site-api-reference`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Connect from Compute Engine \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
 - Source ID: `site-docs-root`
-- Final score: 46
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page details service connection policies that authorize PSC and automatically provision PSC endpoints with subnet and connection-limit controls.
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- Service connection policy A service connection policy lets you authorize AlloyDB to create a Private Service Connect connection between AlloyDB and consumer VPC networks.
-- For example, you can create a service connection policy in one or more of your (consumer) VPC networks and also specify a subnet.
-- For more information about service connection policy, see About service connection policies .
+### "Connect using an IAM account \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-iam](https://docs.cloud.google.com/alloydb/docs/connect-iam)
+- Source ID: `site-docs-reference-2`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

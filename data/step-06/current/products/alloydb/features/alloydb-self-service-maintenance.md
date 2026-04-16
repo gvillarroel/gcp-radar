@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.569Z"
+generated_at: "2026-04-12T12:07:33.819Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB self-service maintenance"
@@ -9,7 +9,10 @@ latest_feature_date: "2025-11-19"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/maintenance"
+  - "https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum"
+  - "https://docs.cloud.google.com/alloydb/docs/cluster-create"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
 keywords:
   - "self-service patching"
   - "install patches"
@@ -32,28 +35,54 @@ AlloyDB now offers self-service maintenance workflows to apply updates earlier, 
 
 ## Extended Definition
 
-AlloyDB self-service maintenance is a user-triggered maintenance workflow that lets you initiate update application on clusters even when they are behind the latest software due to an existing maintenance window. The feature is intended to apply latest AlloyDB updates as soon as needed, and can be used with maintenance policy/setting changes (such as database flag adjustments) to speed update application, with a cited target of about 1–2 minutes.
+AlloyDB now offers self-service maintenance workflows to apply updates earlier, install patches, and configure deny periods.
 
 ## Evidence Summary
 
-The AlloyDB release notes page explicitly states the feature enables user-initiated earlier updates via self-service maintenance and notes behavior for clusters with unsynced maintenance windows plus faster update execution.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/maintenance](https://docs.cloud.google.com/alloydb/docs/maintenance)
+- [https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum](https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum)
+- [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### Maintenance overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 34
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/alloydb/docs/maintenance](https://docs.cloud.google.com/alloydb/docs/maintenance)
+- Source ID: `site-docs-reference-2`
+- Final score: 78
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Clusters with a maintenance window that may not have received this release can use self-service maintenance to perform a maintenance update.
-- November 19, 2025 Feature You can now perform self-service maintenance if you need to apply the latest AlloyDB updates to your clusters as soon as possible.
-- If you have a maintenance window set for your AlloyDB cluster, you might not have the latest software version.
-- Use this policy to modify database flags and apply updates faster (within 1-2 minutes) to an instance.
+- Non-emergency maintenance for an AlloyDB cluster with no configured maintenance windows can occur any time except for the hours between 6 AM and 10 PM on weekdays, in the local time of the region where the cluster is located.
+- The maintenance window duration depends upon the complexity of the cluster—that is, the number of read pool instances that require updates—and the nature of the update.
+- Self-service maintenance If you need to apply maintenance and update your clusters to the latest version immediately, you can perform self-service maintenance.
+- If you set a maintenance window, then AlloyDB schedules future non-emergency maintenance events to begin no later than one hour after the specified time.
+
+### "Configure adaptive autovacuum \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum](https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum)
+- Source ID: `site-docs-root`
+- Final score: 68
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Create a cluster and its primary instance \_|\_ AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
+- Source ID: `site-docs-reference-2`
+- Final score: 68
+- Re-rank relevance: N/A
+
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 60
+- Re-rank relevance: N/A
 

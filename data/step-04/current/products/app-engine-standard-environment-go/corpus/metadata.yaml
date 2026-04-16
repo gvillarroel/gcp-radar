@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:25:23+00:00'
-updated_at: '2026-04-10T15:47:12+00:00'
+updated_at: '2026-04-13T19:15:11+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -9,43 +9,127 @@ commands:
 sources:
 - type: site
   id: site-docs-root
-  title: https://docs.cloud.google.com/appengine/docs/standard/overview
-  created_at: '2026-04-10T15:40:31+00:00'
-  updated_at: '2026-04-10T15:42:49+00:00'
-  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/overview
+  title: https://docs.cloud.google.com/appengine/docs/standard/go/runtime
+  created_at: '2026-04-13T18:53:39+00:00'
+  updated_at: '2026-04-13T18:56:03+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/go/runtime
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
   config:
-    url: https://docs.cloud.google.com/appengine/docs/standard/overview
-    max_depth: 2
+    url: https://docs.cloud.google.com/appengine/docs/standard/go/runtime
+    max_depth: 1
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-10T15:42:49+00:00'
+  last_synced_at: '2026-04-13T18:56:03+00:00'
 - type: site
   id: site-docs-root-2
-  title: https://docs.cloud.google.com/appengine/docs/standard/go/runtime?authuser=3
-  created_at: '2026-04-10T15:40:31+00:00'
-  updated_at: '2026-04-10T15:45:17+00:00'
-  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/go/runtime?authuser=3
+  title: https://docs.cloud.google.com/appengine/docs/standard/overview
+  created_at: '2026-04-13T18:53:40+00:00'
+  updated_at: '2026-04-13T18:58:31+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/overview
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root-2
   config:
-    url: https://docs.cloud.google.com/appengine/docs/standard/go/runtime?authuser=3
-    max_depth: 2
+    url: https://docs.cloud.google.com/appengine/docs/standard/overview
+    max_depth: 1
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-10T15:45:17+00:00'
+  last_synced_at: '2026-04-13T18:58:31+00:00'
 - type: site
   id: site-docs-reference
-  title: https://docs.cloud.google.com/appengine/docs/standard/apis
-  created_at: '2026-04-10T15:40:32+00:00'
-  updated_at: '2026-04-10T15:47:12+00:00'
-  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/apis
+  title: https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml
+  created_at: '2026-04-13T18:53:41+00:00'
+  updated_at: '2026-04-13T19:00:56+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
   config:
-    url: https://docs.cloud.google.com/appengine/docs/standard/apis
-    max_depth: 2
+    url: https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml
+    max_depth: 1
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-13T19:00:56+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml?tab=go
+  created_at: '2026-04-13T18:53:42+00:00'
+  updated_at: '2026-04-13T19:03:19+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml?tab=go
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/standard/go/configuring-your-app-with-app-yaml?tab=go
+    max_depth: 1
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-13T19:03:19+00:00'
+- type: site
+  id: site-docs-reference-3
+  title: https://docs.cloud.google.com/appengine/docs/standard/go/specifying-dependencies
+  created_at: '2026-04-13T18:53:43+00:00'
+  updated_at: '2026-04-13T19:05:46+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/go/specifying-dependencies
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-3
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/standard/go/specifying-dependencies
+    max_depth: 1
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-13T19:05:46+00:00'
+- type: site
+  id: site-docs-reference-4
+  title: https://docs.cloud.google.com/appengine/docs/standard/go/release-notes
+  created_at: '2026-04-13T18:53:43+00:00'
+  updated_at: '2026-04-13T19:08:21+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/go/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-4
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/standard/go/release-notes
+    max_depth: 1
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-13T19:08:21+00:00'
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/appengine/docs/legacy/standard/go111/access-control
+  created_at: '2026-04-13T18:53:44+00:00'
+  updated_at: '2026-04-13T19:10:14+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/legacy/standard/go111/access-control
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/legacy/standard/go111/access-control
+    max_depth: 1
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-10T15:47:12+00:00'
+  last_synced_at: '2026-04-13T19:10:14+00:00'
+- type: site
+  id: site-docs-reference-required-5
+  title: https://docs.cloud.google.com/appengine/docs/standard/go/building-app
+  created_at: '2026-04-13T18:53:45+00:00'
+  updated_at: '2026-04-13T19:12:40+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/go/building-app
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/standard/go/building-app
+    max_depth: 1
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-13T19:12:40+00:00'
+- type: site
+  id: site-docs-reference-required-6
+  title: https://docs.cloud.google.com/appengine/docs/standard/go/services/access
+  created_at: '2026-04-13T18:53:45+00:00'
+  updated_at: '2026-04-13T19:15:11+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/go/services/access
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-6
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/standard/go/services/access
+    max_depth: 1
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-13T19:15:11+00:00'

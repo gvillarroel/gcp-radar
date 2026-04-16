@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:53.019Z"
+generated_at: "2026-04-15T13:51:00.091Z"
 product_name: "Resource Manager"
 product_slug: "resource-manager"
 feature_name: "Automatic IAM permission grants to new service accounts restriction organization policy constraint"
@@ -9,18 +9,18 @@ latest_feature_date: "2020-07-01"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/resourcemanager"
-  - "https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles"
+  - "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases"
+  - "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints"
+  - "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization"
 keywords:
   - "automatic"
   - "iam"
   - "permission"
   - "grants"
-  - "to"
-  - "new"
   - "accounts"
   - "restriction"
+  - "organization"
+  - "policy"
 ---
 
 # Automatic IAM permission grants to new service accounts restriction organization policy constraint
@@ -42,42 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm](https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/resourcemanager](https://docs.cloud.google.com/iam/docs/roles-permissions/resourcemanager)
-- [https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles](https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles)
+- [https://docs.cloud.google.com/resource-manager/docs/handle-special-cases](https://docs.cloud.google.com/resource-manager/docs/handle-special-cases)
+- [https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints](https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints)
+- [https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
 
 ## Supporting Pages
 
-### Dataproc Resource Manager roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### Handle special cases \_|\_ Resource Manager \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm](https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm)
+- URL: [https://docs.cloud.google.com/resource-manager/docs/handle-special-cases](https://docs.cloud.google.com/resource-manager/docs/handle-special-cases)
 - Source ID: `site-iam-reference`
-- Final score: 89
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Dataproc Resource Manager roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm This page lists the IAM roles and permissions for Dataproc Resource Manager.
-
-### Resource Manager roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/resourcemanager](https://docs.cloud.google.com/iam/docs/roles-permissions/resourcemanager)
-- Source ID: `site-iam-reference`
-- Final score: 89
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Resource Manager roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/resourcemanager This page lists the IAM roles and permissions for Resource Manager.
-
-### Assign Identity and Access Management roles and permissions | Resource Manager | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles](https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles)
-- Source ID: `site-iam-reference`
-- Final score: 72
+- Final score: 152
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Assign Identity and Access Management roles and permissions Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles To gain these permissions, ask your administrator to grant the suggested role at the appropriate level of the resource hierarchy.
-- To migrate a project between organization resources, you need the following roles on the project, its parent resource, and the destination resource: Project IAM Admin (roles/resourcemanager.projectIamAdmin) on the project that you want to migrate between organization resources.
+- However, you will not be able to use that service account on any resources that have a domain restriction organization policy applied to them that restricts them to the source organization resource's domain.
+- You have applied an organization policy with the domain restriction constraint to project-C , which only allows it to access the domain of organizations/12345678901.
+- This means the Privileged Access Manager service agent, which the grant uses, loses the permissions to modify the IAM policy of a resource in the new organization.
+- Repeat steps 3 and 4 for each of the following organization policy constraints: appengine.enforceServiceAccountActAsCheck dataflow.enforceComputeDefaultServiceAccountCheck dataproc.enforceComputeDefaultServiceAccountCheck composer.enforceServiceAccountActAsCheck If any of these organization policy constraints appear, your organization resource uses the legacy behavior.
+
+### "Manage Google Cloud security baseline constraints \_|\_ Resource Manager\
+
+- URL: [https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints](https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints)
+- Source ID: `site-iam-reference`
+- Final score: 148
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage organization policies: orgpolicy.constraints.list orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set You might also be able to get these permissions with custom roles or other predefined roles .
+- Organization policy name Organization policy constraint Description Impact of enforcement Disable service account key creation constraints/iam.managed.disableServiceAccountKeyCreation Prevent users from creating persistent keys for service accounts.
+- Prevent the Editor role from being granted to default service accounts constraints/iam.automaticIamGrantsForDefaultServiceAccounts Prevent default service accounts from receiving the overly permissive IAM Editor role at creation.
+- Required roles To get the permissions that you need to manage organization policies, ask your administrator to grant you the Organization policy administrator ( roles/orgpolicy.policyAdmin ) IAM role on the organization.
+
+### "Set up a Google Cloud organization resource \_|\_ Resource Manager \_|\_\
+
+- URL: [https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
+- Source ID: `site-docs-root`
+- Final score: 143
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If the organization resource is available and you don't have the IAM permissions to view it, you can still create projects and billing accounts.
+- When the organization resource is created, all users in your domain are automatically granted Project Creator ( roles/resourcemanager.projectCreator ) and Billing Account Creator ( roles/billing.creator ) IAM roles at the organization resource level.
+- As the Organization Administrator takes control, they might want to remove these organization-level permissions to start locking down access at a finer granularity (for instance, at the folder or project level).
+- Get your organization resource ID The organization resource ID is a unique identifier for an organization resource and is automatically created when your organization resource is created.
 

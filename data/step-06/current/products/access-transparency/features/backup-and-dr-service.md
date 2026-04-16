@@ -1,16 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:33.555Z"
+generated_at: "2026-04-12T12:07:28.107Z"
 product_name: "Access Transparency"
 product_slug: "access-transparency"
 feature_name: "Backup and DR Service"
 feature_slug: "backup-and-dr-service"
 latest_feature_date: "2025-12-22"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/release-notes"
-  - "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/supported-services"
+  - "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs"
+  - "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+  - "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+  - "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs"
 keywords:
   - "Access Transparency Backup and DR Service"
   - "Disaster recovery service"
@@ -23,7 +25,7 @@ keywords:
 # Backup and DR Service
 
 Product: Access Transparency
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -31,39 +33,55 @@ Backup and DR Service became generally available as an Access Transparency capab
 
 ## Extended Definition
 
-Backup and DR Service is an Access Transparency-supported Google Cloud service, with release lifecycle status shown as Preview on November 17, 2025 and Generally Available on December 22, 2025. The supported-services documentation also lists it as GA in Access Transparency, while noting that workloads depending on a management console and backup/recovery appliances are not supported by Access Transparency.
+Backup and DR Service became generally available as an Access Transparency capability; Backup and DR Service was made available in preview through Access Transparency.
 
 ## Evidence Summary
 
-The cited release notes provide the service’s preview-to-GA dates, and the supported-services page confirms its GA status and documents a specific support limitation.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/assured-workloads/access-transparency/docs/release-notes](https://docs.cloud.google.com/assured-workloads/access-transparency/docs/release-notes)
-- [https://docs.cloud.google.com/assured-workloads/access-transparency/docs/supported-services](https://docs.cloud.google.com/assured-workloads/access-transparency/docs/supported-services)
+- [https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs](https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs)
+- [https://docs.cloud.google.com/iam/docs/federated-identity-supported-services](https://docs.cloud.google.com/iam/docs/federated-identity-supported-services)
+- [https://docs.cloud.google.com/iam/docs/conditions-resource-attributes](https://docs.cloud.google.com/iam/docs/conditions-resource-attributes)
+- [https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs](https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs)
 
 ## Supporting Pages
 
-### Release notes \_|\_ Access Transparency \_|\_ Google Cloud Documentation
+### Understanding and using Access Transparency logs \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/assured-workloads/access-transparency/docs/release-notes](https://docs.cloud.google.com/assured-workloads/access-transparency/docs/release-notes)
+- URL: [https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs](https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs)
 - Source ID: `site-docs-reference`
-- Final score: 44
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page explicitly includes both Preview and GA announcements for Backup and DR Service in Access Transparency.
+- Final score: 86
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Identity federation: products and limitations \_|\_ Identity and Access\
+
+- URL: [https://docs.cloud.google.com/iam/docs/federated-identity-supported-services](https://docs.cloud.google.com/iam/docs/federated-identity-supported-services)
+- Source ID: `site-iam-reference`
+- Final score: 72
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- December 22, 2025 Feature Backup and DR Service is generally available (GA) .
-- November 17, 2025 Feature Backup and DR Service is available in Preview .
+- Assured Workloads GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Backup and DR Service GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Batch GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations BigQuery GA Console (federated): Saving queries isn't supported.
 
-### Supported services \_|\_ Access Transparency \_|\_ Google Cloud Documentation
+### "Resource attributes for IAM Conditions \_|\_ Identity and Access Management\
 
-- URL: [https://docs.cloud.google.com/assured-workloads/access-transparency/docs/supported-services](https://docs.cloud.google.com/assured-workloads/access-transparency/docs/supported-services)
-- Source ID: `site-docs-reference`
-- Final score: 36
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page explicitly includes Backup and DR Service as a supported service, with GA status and service-specific notes.
+- URL: [https://docs.cloud.google.com/iam/docs/conditions-resource-attributes](https://docs.cloud.google.com/iam/docs/conditions-resource-attributes)
+- Source ID: `site-iam-reference`
+- Final score: 72
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- App Hub GA None Application Integration GA None Artifact Analysis GA None Artifact Registry GA None Automotive AI Agent GA None Backup for GKE GA None Backup and DR Service GA Workloads that depend on a management console and backup/recovery appliances are not supported by Access Transparency.
+- Resource reference Resource name format template Apigee API product attributes organizations/ organization-name /apiproducts/ product-id /attributes/ attribute-id Apigee API products organizations/ organization-name /apiproducts/ product-id Apigee API proxies organizations/ organization-name /apis/ proxy-id Apigee API proxy key-value map entries organizations/ organization-name /api/ proxy-id /keyvaluemaps/ keyvaluemap-id /entries/ entry-id Apigee API proxy key-value maps organizations/ organization-name /apis/ proxy-id /keyvaluemaps/ key-value-map-id Apigee API proxy revisions organizations/ organization-name /apis/ proxy-id /revisions/ revision-id Apigee caches organizations/ organization-name /environments/ environment-id /caches/ cache-id Apigee developer app attributes organizations/ organization-name /developers/ developer-id /apps/ app-id /attributes/ attribute-id Apigee developer apps organizations/ organization-name /developers/ developer-id /apps/ app-id Apigee developer attributes organizations/ organization-name /developers/ developer-id /attributes/ attribute-id Apigee developers organizations/ organization-name /developers/ developer-id Apigee environment key-value map entries organizations/ organization-name /environments/ environment-id /keyvaluemaps/ keyvaluemap-id /entries/ entry-id Apigee environment key-value maps organizations/ organization-name /environments/ environment /keyvaluemaps/ key-value-map-id Apigee exports organizations/ organization-name /environments/ environment-id /analytics/exports/ export-id Apigee flow hooks organizations/ organization-name /environments/ environment-id /flowhooks/ flowhook-id Apigee keystore aliases organizations/ organization-name /environments/ environment-id /keystores/ keystore-id /aliases/ alias-id Apigee keystores organizations/ organization-name /environments/ environment-id /keystores/ keystore-id Apigee queries organizations/ organization-name /environments/ environment-id /queries/ query-id Apigee rate plans organizations/ organization-name /apiproducts/ product-id /rateplans/ rate-plan-id Apigee references organizations/ organization-name /environments/ environment-id /references/ reference-id Apigee shared flow revisions organizations/ organization-name /sharedflows/ shared-flow-id /revisions/ revision-id Apigee shared flows organizations/ organization-name /sharedflows/ shared-flow-id Apigee target servers organizations/ organization-name /environments/ environment-id /targetservers/ targetserver-id Apigee trace (debug) sessions organizations/ organization-name /environments/ environment-id /apis/ proxy-id /revisions/ revision-id /debugsessions/ session-id Apigee API Hub apis projects/ project-id /locations/ location-id /apis/ api-id Apigee API Hub deployments projects/ project-id /locations/ location-id /deployments/ deployment-id Apigee API Hub versions projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id Apigee API Hub specs projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id /specs/ spec-id Apigee API Hub operations projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id /operations/ operation-id Apigee API Hub definitions projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id /definitions/ definition-id Backup and DR Service backupVaults science projects/ project-id /locations/ location-id /backupVaults/ backup-vault-id BigQuery datasets projects/ project-id /datasets/ dataset-id BigQuery models projects/ project-id /datasets/ dataset-id /models/ model-id BigQuery routines projects/ project-id /datasets/ dataset-id /routines/ routine-id BigQuery tables projects/ project-id /datasets/ dataset-id /tables/ table-id BigQuery Reservation API assignments projects/ project-id /locations/ location-id /reservations/ reservation-id /assignments/ assignment-id BigQuery Reservation API BI reservations projects/ project-id /locations/ location-id /biReservation BigQuery Reservation API capacity commitments projects/ project-id /locations/ location-id /capacityCommitments/ capacity-commitment-id BigQuery Reservation API locations projects/ project-id /locations/ location-id BigQuery Reservation API reservations projects/ project-id /locations/ location-id /reservations/ reservation-id Binary Authorization attestors projects/ project-number /attestors/ attestor-id Binary Authorization continuous validation configs projects/ project-number /continuousValidationConfig Binary Authorization policies projects/ project-number /policy Customer Experience Agent Studio apps projects/ project-id /locations/ location-id /apps/ app-id Customer Experience Agent Studio operations projects/ project-id /locations/ location-id /operations/ operation-id Bigtable appProfiles projects/ project-id /instances/ instance-id /appProfiles/ appProfile-id Bigtable backups projects/ project-id /instances/ instance-id /clusters/ cluster-id /backups/ backup-id Bigtable clusters projects/ project-id /instances/ instance-id /clusters/ cluster-id Bigtable instances projects/ project-id /instances/ instance-id Bigtable tables projects/ project-id /instances/ instance-id /tables/ table-id Cloud Deploy automation runs projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /automationRuns/ automation-run-id Cloud Deploy automations projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /automations/ automation-id Cloud Deploy custom target types projects/ project-id /locations/ location-id /customTargetTypes/ custom-target-type-id Cloud Deploy delivery pipelines projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id Cloud Deploy job runs projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /releases/ release-id /rollouts/ rollout-id /jobRuns/ job-run-id Cloud Deploy releases projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /releases/ release-id Cloud Deploy rollouts projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /releases/ release-id /rollouts/ rollout-id Cloud Deploy targets projects/ project-id /locations/ location-id /targets/ target-id Firestore databases projects/ project-id /databases/ database-id Cloud NGFW address groups projects/ project-number /locations/ location /addressGroups/ address-group-name organizations/ organization-id /locations/ location /addressGroups/ address-group-name Network Security Integration intercept deployment groups projects/ project-number /locations/ location /interceptDeploymentGroups/ intercept-deployment-group-id Network Security Integration intercept deployments projects/ project-number /locations/ location /interceptDeployments/ intercept-deployment-id Network Security Integration intercept endpoint group associations projects/ project-number /locations/ location /interceptEndpointGroupAssociations/ intercept-endpoint-group-association-id Network Security Integration intercept endpoint groups projects/ project-number /locations/ location /interceptEndpoints/ intercept-endpoint-group-id Network Security Integration mirroring deployment groups projects/ project-number /locations/ location /mirroringDeploymentGroups/ mirroring-deployment-group-id Network Security Integration mirroring deployments projects/ project-number /locations/ location /mirroringDeployments/ mirroring-deployment-id Network Security Integration mirroring endpoint group associations projects/ project-number /locations/ location /mirroringEndpointGroupAssociations/ mirroring-endpoint-group-association-id Network Security Integration mirroring endpoint groups projects/ project-number /locations/ location /mirroringEndpoints/ mirroring-endpoint-group-id Cloud Key Management Service crypto keys projects/ project-id /locations/ location-id /keyRings/ keyring-id /cryptoKeys/ cryptokey-id Cloud Key Management Service crypto key versions projects/ project-id /locations/ location-id /keyRings/ keyring-id /cryptoKeys/ cryptokey-id /cryptoKeyVersions/ cryptokeyversion-id Cloud Key Management Service key rings projects/ project-id /locations/ location-id /keyRings/ keyring-id Cloud Logging log buckets projects/ project-id /locations/ location-id /buckets/ bucket-id Cloud Logging log views projects/ project-id /locations/ location-id /buckets/ bucket-id /views/ view-id Spanner backups projects/ project-id /instances/ instance-id /backups/ backup-id Spanner databases projects/ project-id /instances/ instance-id /databases/ database-id Spanner instances projects/ project-id /instances/ instance-id Cloud SQL backup runs projects/ project-id /instances/ instance-id /backupRuns/ backup-id Cloud SQL instances projects/ project-id /instances/ instance-id Cloud Storage buckets 1 projects/ /buckets/ bucket-name Cloud Storage managed folders 1, 2 projects/ /buckets/ bucket-name /managedFolders/ managed-folder-name Cloud Storage objects 1, 3 projects/ /buckets/ bucket-name /objects/ object-name Compute Engine global backend services projects/ project-id /global/backendServices/ backend-service-id Compute Engine regional backend services projects/ project-id /regions/ region-id /backendServices/ backend-service-id Compute Engine firewalls projects/ project-id /global/firewalls/ firewall-id Compute Engine global forwarding rules projects/ project-id /global/forwardingRules/ forwarding-rule-id Compute Engine regional forwarding rules projects/ project-id /regions/ region-id /forwardingRules/ forwarding-rule-id Compute Engine images projects/ project-id /global/images/ image-id Compute Engine instance templates projects/ project-id /global/instanceTemplates/ instance-template-id Compute Engine instances projects/ project-id /zones/ zone-id /instances/ instance-id Compute Engine regional persistent disks projects/ project-id /regions/ region-id /disks/ disk-id Compute Engine zonal persistent disks projects/ project-id /zones/ zone-id /disks/ disk-id Compute Engine snapshots projects/ project-id /global/snapshots/ snapshot-id Compute Engine global target HTTP proxies projects/ project-id /global/targetHttpProxies/ target-http-proxy-id Compute Engine regional target HTTP proxies projects/ project-id /regions/ region-id /targetHttpProxies/ target-http-proxy-id Compute Engine global target HTTPS proxies projects/ project-id /global/targetHttpsProxies/ target-https-proxy-id Compute Engine regional target HTTPS proxies projects/ project-id /regions/ region-id /targetHttpsProxies/ target-https-proxy-id Compute Engine target SSL proxies projects/ project-id /global/targetSslProxies/ target-ssl-proxy-id Compute Engine target TCP proxies projects/ project-id /global/targetTcpProxies/ target-tcp-proxy-id Google Kubernetes Engine zonal clusters projects/ project-id /zones/ zone /clusters/ cluster-id Google Kubernetes Engine regional clusters projects/ project-id /locations/ location /clusters/ cluster-id Dataform compilation results projects/ project-id /locations/ location /repositories/ repository /compilationResults/ compilation-result Dataform locations projects/ project-id /locations/ location Dataform release configs projects/ project-id /locations/ location /repositories/ repository /releaseConfigs/ release-config Dataform repositories projects/ project-id /locations/ location /repositories/ repository Dataform workflow configs projects/ project-id /locations/ location /repositories/ repository /workflowConfigs/ workflow-config Dataform workflow invocations projects/ project-id /locations/ location /repositories/ repository /workflowInvocations/ workflow-invocation Dataform workspaces projects/ project-id /locations/ location /repositories/ repository /workspaces/ workspace Integration Connectors connections projects/ project-id /locations/ location /connections/ connection-name Integration Connectors connection schema metadata projects/ project-id /locations/ location /connections/ connection-name /connectionSchemaMetadata Integration Connectors endpoint attachments projects/ project-id /locations/ location /endpointAttachments/ endpoint-attachment-name Integration Connectors event subscriptions projects/ project-id /locations/ location /eventSubscriptions/ event-subscription-name Integration Connectors managed zones projects/ project-id /locations/global/managedZones/ managed-zone-name Google Cloud Managed Service for Apache Kafka clusters projects/ project-number /locations/ location /clusters/ cluster-name Google Cloud Managed Service for Apache Kafka consumer groups projects/ project-number /locations/ location /clusters/ cluster-name /consumerGroups/ consumer-group Google Cloud Managed Service for Apache Kafka operations projects/ project-number /locations/ location /operations/ operation Google Cloud Managed Service for Apache Kafka topics projects/ project-number /locations/ location /clusters/ cluster-name /topics/ topic-name Parameter Manager parameters projects/ project-number /locations/ location /parameters/ parameter-id Parameter Manager parameter versions projects/ project-number /locations/ location /parameters/ parameter-id /versions/ version-id Pub/Sub Lite locations projects/ project-number /locations/ location Pub/Sub Lite subscriptions projects/ project-number /locations/ location /subscriptions/ subscription-id Pub/Sub Lite topics projects/ project-number /locations/ location /topics/ topic-id Resource Manager organizations 4 organizations/ organization-name Secret Manager secrets projects/ project-number /secrets/ secret-id Secret Manager secret versions 5 projects/ project-number /secrets/ secret-id /versions/ secret-version 1 For Cloud Storage, resource names contain an underscore ( ) rather than a project ID.
+
+### "Viewing Access Transparency logs for Google Workspace \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs](https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs)
+- Source ID: `site-docs-reference`
+- Final score: 64
+- Re-rank relevance: N/A
 

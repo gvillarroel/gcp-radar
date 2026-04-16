@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-10T00:02:10+00:00'
-updated_at: '2026-04-11T17:31:38+00:00'
+updated_at: '2026-04-14T04:57:19+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://developers.google.com/admin-sdk/overview
   created_at: '2026-04-11T13:46:42+00:00'
-  updated_at: '2026-04-11T17:31:15+00:00'
+  updated_at: '2026-04-12T14:56:25+00:00'
   update_command: know sync site https://developers.google.com/admin-sdk/overview
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 1
     max_pages: 30
     compact_output: true
-  last_synced_at: '2026-04-11T17:31:15+00:00'
+  last_synced_at: '2026-04-12T14:56:25+00:00'
 - type: site
   id: site-docs-reference
   title: https://developers.google.com/admin-sdk/reference-overview
   created_at: '2026-04-11T13:46:43+00:00'
-  updated_at: '2026-04-11T17:31:26+00:00'
+  updated_at: '2026-04-12T14:56:36+00:00'
   update_command: know sync site https://developers.google.com/admin-sdk/reference-overview
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
@@ -34,18 +34,32 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-11T17:31:26+00:00'
+  last_synced_at: '2026-04-12T14:56:36+00:00'
 - type: site
   id: site-api-reference
-  title: https://developers.google.com/admin-sdk/directory/reference/rest
-  created_at: '2026-04-11T13:46:43+00:00'
-  updated_at: '2026-04-11T17:31:38+00:00'
-  update_command: know sync site https://developers.google.com/admin-sdk/directory/reference/rest
+  title: https://developers.google.com/workspace/admin/directory/reference/rest
+  created_at: '2026-04-12T14:34:20+00:00'
+  updated_at: '2026-04-12T14:57:51+00:00'
+  update_command: know sync site https://developers.google.com/workspace/admin/directory/reference/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
   config:
-    url: https://developers.google.com/admin-sdk/directory/reference/rest
+    url: https://developers.google.com/workspace/admin/directory/reference/rest
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-11T17:31:38+00:00'
+  last_synced_at: '2026-04-12T14:57:51+00:00'
+- type: site
+  id: site-docs-reference-required-2
+  title: https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login
+  created_at: '2026-04-12T14:56:23+00:00'
+  updated_at: '2026-04-12T14:58:48+00:00'
+  update_command: know sync site https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-2
+  config:
+    url: https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-12T14:58:48+00:00'

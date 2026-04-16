@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.026Z"
+generated_at: "2026-04-13T22:42:27.315Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Query optimizer statistics package selection"
@@ -9,18 +9,16 @@ latest_feature_date: "2021-10-06"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+  - "https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions"
 keywords:
-  - "query"
+  - "selection"
+  - "package"
   - "optimizer"
   - "statistics"
-  - "package"
-  - "selection"
-  - "spanner"
-  - "now"
   - "supports"
+  - "query"
 ---
 
 # Query optimizer statistics package selection
@@ -38,43 +36,53 @@ Spanner now supports specifying the statistics package used by the query optimiz
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1](https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat)
+- [https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions](https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions)
 
 ## Supporting Pages
 
-### Package google.spanner.v1 | Spanner | Google Cloud Documentation
+### "JDBC session management commands (GoogleSQL) \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1](https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1)
-- Source ID: `site-docs-root`
-- Final score: 94
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
+- Source ID: `site-docs-reference`
+- Final score: 137
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- SET OPTIMIZER STATISTICS PACKAGE = 'auto 20240124 06 47 29UTC' ; SELECT FirstName , LastName FROM Singers ORDER BY LastName ; -- Execute the same query with the default optimizer statistics package.
+- SPANNER STATISTICS ; -- Set the optimizer statistics package and execute a query.
+- Example: Optimizer statistics package (Click to expand) The following example shows how to execute queries using a specific optimizer statistics package with the Spanner JDBC driver. -- Show the available optimizer statistics packages in this database.
+- SET OPTIMIZER STATISTICS PACKAGE = '' ; SELECT FirstName , LastName FROM Singers ORDER BY LastName ; RETURN COMMIT STATS A property of type BOOL indicating whether statistics should be returned for transactions on this connection.
+
+### "JDBC session management commands (PostgreSQL) \_|\_ Spanner \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat)
+- Source ID: `site-docs-reference`
+- Final score: 132
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Package google.spanner.v1 Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1 The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- OPTIMIZER STATISTICS PACKAGE = 'auto 20240124 06 47 29UTC' ; SELECT FirstName , LastName FROM Singers ORDER BY LastName ; -- Execute the same query with the default optimizer statistics package.
+- SPANNER STATISTICS ; -- Set the optimizer statistics package and execute a query.
+- Example: Optimizer statistics package (Click to expand) The following example shows how to execute queries using a specific optimizer statistics package with the Spanner JDBC driver. -- Show the available optimizer statistics packages in this database.
+- OPTIMIZER STATISTICS PACKAGE = '' ; SELECT FirstName , LastName FROM Singers ORDER BY LastName ; SPANNER.RETURN COMMIT STATS A property of type BOOL indicating whether statistics should be returned for transactions on this connection.
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### List query optimizer versions \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 80
+- URL: [https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions](https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions)
+- Source ID: `site-docs-reference`
+- Final score: 132
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
-
-### Class SpannerClient (3.62.0) | Python client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
-- Source ID: `site-python-reference`
-- Final score: 80
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Class SpannerClient (3.62.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- SUPPORTED OPTIMIZER VERSIONS An example result: VERSION RELEASE DATE IS DEFAULT 1 2019-06-18 false 2 2020-03-01 false 3 2021-08-01 true What's next To learn more about the query optimizer, see Query optimizer overview .
+- Home Documentation Databases Spanner Guides Send feedback List query optimizer versions Stay organized with collections Save and categorize content based on your preferences.
+- Spanner provides a built-in SPANNER SYS.SUPPORTED OPTIMIZER VERSIONS table to keep track of query optimizer versions.
+- To learn more about how the query optimizer has evolved, see Query optimizer versions .
 

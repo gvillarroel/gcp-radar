@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/functions/docs/samples
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/functions/docs/apis
+entrypoint: https://docs.cloud.google.com/functions/docs/reference
 source_metadata:
   url: https://docs.cloud.google.com/functions/docs/samples
   title: "All Cloud Run functions code samples \_|\_ Google Cloud Documentation"

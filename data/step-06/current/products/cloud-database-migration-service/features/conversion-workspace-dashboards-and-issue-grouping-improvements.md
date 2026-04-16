@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:10:29.911Z"
+generated_at: "2026-04-12T12:11:22.234Z"
 product_name: "Cloud Database Migration Service"
 product_slug: "cloud-database-migration-service"
 feature_name: "Conversion workspace dashboards and issue grouping improvements"
 feature_slug: "conversion-workspace-dashboards-and-issue-grouping-improvements"
 latest_feature_date: "2025-06-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview"
   - "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview"
-  - "https://docs.cloud.google.com/database-migration/docs/release-notes"
+  - "https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview"
+  - "https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview"
 keywords:
   - "conversion"
   - "workspace"
@@ -26,7 +27,7 @@ keywords:
 # Conversion workspace dashboards and issue grouping improvements
 
 Product: Cloud Database Migration Service
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Heterogeneous Oracle and SQL Server migrations now include improved conversion o
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview)
 - [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview)
-- [https://docs.cloud.google.com/database-migration/docs/release-notes](https://docs.cloud.google.com/database-migration/docs/release-notes)
+- [https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview)
+- [https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview)
 - Source ID: `site-api-reference`
-- Final score: 104
+- Final score: 128
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview)
 - Source ID: `site-api-reference`
-- Final score: 104
+- Final score: 128
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,29 @@ Evidence snippets:
 - Microsoft Azure SQL Managed Instance Microsoft Azure SQL Database tier S3 and above Cloud SQL for SQL Server Self-managed SQL Server versions: Enterprise 2008 and later, Standard 2016 SP1 and later, Developer 2008 and later (on premises or on any cloud VM that you fully control) Unsupported source databases Database Migration Service doesn't support migrating from the following SQL Server versions: SQL Server Standard edition versions from 2008 to 2014 SQL Server Express SQL Server Web Code and schema conversion Database Migration Service conversion workspaces provide an interactive editor experience where you can convert your schemas, tables, and other objects from SQL Server syntax to PostgreSQL syntax.
 - Continuous migrations You use Database Migration Service conversion workspace to convert your schemas, tables, and other objects from SQL Server syntax to PostgreSQL syntax.
 
-### Database Migration Service release notes \_|\_ Google Cloud Documentation
+### "Oracle to AlloyDB for PostgreSQL migration overview \_|\_ Database Migration\
 
-- URL: [https://docs.cloud.google.com/database-migration/docs/release-notes](https://docs.cloud.google.com/database-migration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 100
+- URL: [https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview)
+- Source ID: `site-api-reference`
+- Final score: 116
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For more information, see: Database Migration Service for SQL Server to Cloud SQL for PostgreSQL Database Migration Service for SQL Server to AlloyDB for PostgreSQL June 16, 2025 Feature Heterogeneous Oracle and SQL Server migrations now provide an improved experience with conversion overview dashboards and streamlined conversion issue grouping.
-- With this feature, Database Migration Service conversion workspaces provide an inline editor to help make your schema conversions simple and seamless.
-- Announcement Database Migration Service conversion workspaces for heterogeneous migrations are now generally available (GA).
-- For more information, see the following pages: Source connectivity methods for Oracle to Cloud SQL for PostgreSQL Source connectivity methods for Oracle to AlloyDB for PostgreSQL Source connectivity methods for SQL Server to Cloud SQL for PostgreSQL Source connectivity methods for SQL Server to AlloyDB for PostgreSQL September 15, 2025 Announcement Gemini-powered conversion features for heterogeneous migrations in Database Migration Service are now generally available ( GA ).
+- Continuous data movement during a Database Migration Service heterogeneous migration from Oracle to AlloyDB for PostgreSQL. (click to enlarge) At a high level, your data moves through the migration phases as follows: One-time migrations You use Database Migration Service conversion workspace to convert your schemas, tables, and other objects from Oracle syntax to PostgreSQL syntax.
+- Interactive conversion workspaces also provide support for Gemini-assisted workflows with code explainability and conversion issue fixing.
+- Code and schema conversion Database Migration Service conversion workspaces provide an interactive editor experience where you can convert your schemas, tables, and other objects from Oracle syntax to PostgreSQL syntax.
+- Continuous migrations You use Database Migration Service conversion workspace to convert your schemas, tables, and other objects from Oracle syntax to PostgreSQL syntax.
+
+### "Oracle to Cloud SQL for PostgreSQL migration overview \_|\_ Database Migration\
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview)
+- Source ID: `site-api-reference`
+- Final score: 116
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Continuous data movement during a Database Migration Service heterogeneous migration from Oracle to Cloud SQL for PostgreSQL. (click to enlarge) At a high level, your data moves through the migration phases as follows: One-time migrations You use Database Migration Service conversion workspace to convert your schemas, tables, and other objects from Oracle syntax to PostgreSQL syntax.
+- Interactive conversion workspaces also provide support for Gemini-assisted workflows with code explainability and conversion issue fixing.
+- Code and schema conversion Database Migration Service conversion workspaces provide an interactive editor experience where you can convert your schemas, tables, and other objects from Oracle syntax to PostgreSQL syntax.
+- Continuous migrations You use Database Migration Service conversion workspace to convert your schemas, tables, and other objects from Oracle syntax to PostgreSQL syntax.
 

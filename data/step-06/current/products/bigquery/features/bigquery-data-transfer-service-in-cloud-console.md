@@ -1,58 +1,89 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.854Z"
+generated_at: "2026-04-15T12:48:36.827Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
-feature_name: "BigQuery Data Transfer Service in Cloud Console"
+feature_name: "BigQuery Data Transfer Service in Cloud console"
 feature_slug: "bigquery-data-transfer-service-in-cloud-console"
 latest_feature_date: "2019-04-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+  - "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+  - "https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers"
+  - "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview"
 keywords:
-  - "BQT Console"
-  - "create transfer configuration"
-  - "transfer configurations"
-  - "Cloud Console transfer UI"
-  - "Data Transfer Service UI"
-  - "BigQuery transfer console"
-  - "scheduled transfer"
+  - "bigquery"
+  - "transfer"
+  - "console"
+  - "available"
+  - "through"
+  - "configuring"
+  - "managed"
+  - "transfers"
 ---
 
-# BigQuery Data Transfer Service in Cloud Console
+# BigQuery Data Transfer Service in Cloud console
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-BigQuery Data Transfer Service became available in beta within the Google Cloud Console.
+BigQuery Data Transfer Service is available through the Cloud console for configuring managed data transfers.
 
 ## Extended Definition
 
-BigQuery Data Transfer Service became available in beta within the Google Cloud Console.
+BigQuery Data Transfer Service is available through the Cloud console for configuring managed data transfers.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference](https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference)
+- [https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer](https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer)
+- [https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers](https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers)
+- [https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview](https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview)
 
 ## Supporting Pages
 
-### bq command-line tool reference \_|\_ BigQuery \_|\_ Google Cloud Documentation
+### "Migrate Apache Hive Metastore tables to Google Cloud \_|\_ BigQuery \_|\_\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference](https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference)
-- Source ID: `site-docs-reference`
-- Final score: 22
+- URL: [https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer](https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer)
+- Source ID: `site-api-reference`
+- Final score: 140
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For example: --filter "labels.department:marketing labels.team:sales" For transfer configurations, use dataSourceIds as the key, and one of the following data sources as the value: amazon s3 - Amazon S3 data transfer azure blob storage - Azure Blob Storage data transfer dcm dt - Campaign Manager data transfer google cloud storage - Cloud Storage data transfer cross region copy - Dataset Copy dfp dt - Google Ad Manager data transfer displayvideo - Display & Video 360 data transfer google ads - Google Ads data transfer merchant center - Google Merchant Center data transfer mysql - MySQL data transfer play - Google Play data transfer scheduled query - Scheduled queries data transfer search ads - Search Ads 360 data transfer youtube channel - YouTube Channel data transfer youtube content owner - YouTube Content Owner data transfer redshift - Amazon Redshift migration on premises - Teradata migration For example: --filter labels.dataSourceIds:dcm dt For transfer runs, use states as the key and one or more of the following transfer states as the value: SUCCEEDED FAILED PENDING RUNNING CANCELLED For example: --filter="states:FAILED" For jobs, use states as the key and one or more of the following job states as the value: RUNNING PENDING DONE For example: bq ls --jobs --filter="states:RUNNING" bq ls --jobs --filter="states:RUNNING,PENDING" --jobs={true false} or -j={true false} To list jobs, set to true .
-- The default is LATEST . --transfer config={true false} To list transfer configurations in the specified project and location, set to true .
-- The default value is false . --transfer location= LOCATION List transfer configurations in the specified location.
-- This flag is not needed when listing transfer configurations or transfer runs.
+- Migrate Apache Hive Metastore tables to Google Cloud This document shows you how to migrate your Iceberg and Hive tables managed by Apache Hive Metastore to Google Cloud using the BigQuery Data Transfer Service .
+- To view the progress and status of your resources, select one of the following options: Console In the Google Cloud console, go to the Data transfers page.
+- Schedule a Hive Metastore transfer Select one of the following options: Console Go to the Data transfers page in the Google Cloud console.
+- The service account should belong to the same Google Cloud project where the transfer configuration and destination dataset is created. bq To schedule Hive Metastore transfer, enter the bq mk command and supply the transfer creation flag --transfer config : bq mk --transfer config --data source = hadoop display name = ' TRANSFER NAME ' --service account name = ' SERVICE ACCOUNT ' --project id = ' PROJECT ID ' location = ' REGION ' --params = '{ "transfer strategy":" TRANSFER STRATEGY ", "table name patterns":" LIST OF TABLES ", "table metadata path":"gs:// DUMPER BUCKET /hive-dumper-output.zip", "target gcs file path":"gs:// MIGRATION BUCKET ", "metastore":" METASTORE ", "destination dataproc metastore":" DATAPROC METASTORE URL ", "destination bigquery dataset":" BIGLAKE METASTORE DATASET ", "translation output gcs path":"gs:// TRANSLATION OUTPUT BUCKET /metadata/config/default database/", "storage type":" STORAGE TYPE ", "agent pool name":" AGENT POOL NAME ", "aws access key id":" AWS ACCESS KEY ID ", "aws secret access key":" AWS SECRET ACCESS KEY ", "azure sas token":" AZURE SAS TOKEN ", "partition filter gcs path":" FILTER GCS PATH " }' Replace the following: TRANSFER NAME : the display name for the transfer configuration.
+
+### "Schedule a Comparison Shopping Service Center Transfer \_|\_ BigQuery \_\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers](https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers)
+- Source ID: `site-api-reference`
+- Final score: 140
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create a BigQuery Data Transfer Service data transfer: BigQuery Data Transfer Service permissions: bigquery.transfers.update bigquery.transfers.get BigQuery permissions: bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery.datasets.update bigquery.datasets.setIamPolicy bigquery.jobs.create You might also be able to get these permissions with custom roles or other predefined roles .
+- Note: To get support or provide feedback for Comparison Shopping Service (CSS) Center transfers with BigQuery Data Transfer Service, contact gmc-transfer-preview@google.com .
+- Set up a CSS Center transfer To create a data transfer for CSS Center reporting: Console Go to the Data transfers page in the Google Cloud console.
+- Required BigQuery roles To get the permissions that you need to create a BigQuery Data Transfer Service data transfer, ask your administrator to grant you the BigQuery Admin ( roles/bigquery.admin ) IAM role on your project.
+
+### "Introduction to Cloud Storage transfers \_|\_ BigQuery \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview](https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview)
+- Source ID: `site-api-reference`
+- Final score: 136
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Truncated transfers A transfer configuration with a MIRROR or WRITE TRUNCATE write preference, also called a truncated transfer, overwrites data in the BigQuery destination table during each transfer run with data from all files matching the source URI.
+- If the BigQuery Data Transfer Service finds any files with a "last modified time" that have occurred after the timestamp of the last successful transfer, the BigQuery Data Transfer Service transfers those files in an incremental transfer.
+- Incremental transfers A transfer configuration with an APPEND or WRITE APPEND write preference, also called an incremental transfer, incrementally appends new data since the previous successful transfer to a BigQuery destination table.
+- Data ingestion for Cloud Storage transfers You can specify how data is loaded into BigQuery by selecting a Write Preference in the transfer configuration when you set up a Cloud Storage transfer .
 

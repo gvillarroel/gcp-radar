@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:26:39.379Z"
+generated_at: "2026-04-12T20:57:41.410Z"
 product_name: "App Engine standard environment Ruby"
 product_slug: "app-engine-standard-environment-ruby"
 feature_name: "OverQuota error detail enrichment"
 feature_slug: "overquota-error-detail-enrichment"
 latest_feature_date: "2016-04-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+  - "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+  - "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine"
 keywords:
-  - "enrichment"
   - "overquota"
+  - "error"
+  - "detail"
+  - "enrichment"
   - "exception"
   - "messages"
-  - "detail"
-  - "include"
-  - "error"
   - "now"
+  - "include"
 ---
 
 # OverQuota error detail enrichment
 
 Product: App Engine standard environment Ruby
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ OverQuota exception messages now include error details when such details are ava
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
+- [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled)
+- [https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine)
 
 ## Supporting Pages
 
@@ -52,8 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
 - Source ID: `site-docs-root-2`
-- Final score: 92
-- Re-rank relevance: N/A
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Don't include PII or sensitive data in your constraint ID, because it could be exposed in error messages.
@@ -61,29 +62,30 @@ Evidence snippets:
 - Don't include PII or sensitive data in your description, because it could be exposed in error messages.
 - Don't use personally identifiable information (PII) or sensitive data in display names because this name could be exposed in error messages.
 
-### "The deployment descriptor: web.xml \_|\_ App Engine standard environment\
+### "How requests are handled \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml)
-- Source ID: `site-docs-reference`
-- Final score: 72
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled)
+- Source ID: `site-docs-root-2`
+- Final score: 64
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The <error-page> element contains either an <error-code> element with an HTTP error code value (such as 500 ), or an <exception-type> element with the class name of the expected exception (such as java.io.IOException ).
-- To learn more about your configuration options, see Upgrade an existing application . v21 and later (EE10) This filter class implements the jakarta.servlet.Filter interface with the doFilter() method. package mysite.server ; import java.io.IOException ; import java.util.logging.Logger ; import jakarta.servlet.Filter ; import jakarta.servlet.FilterChain ; import jakarta.servlet.FilterConfig ; import jakarta.servlet.ServletException ; import jakarta.servlet.ServletRequest ; import jakarta.servlet.ServletResponse ; public class LogFilterImpl implements Filter { private FilterConfig filterConfig ; private static final Logger log = Logger . getLogger ( LogFilterImpl . class . getName ()); public void doFilter ( ServletRequest request , ServletResponse response , FilterChain filterChain ) throws IOException , ServletException { log . warning ( "Log filter processed a " + getFilterConfig (). getInitParameter ( "logType" ) + " request" ); filterChain . doFilter ( request , response ); } public FilterConfig getFilterConfig () { return filterConfig ; } public void init ( FilterConfig filterConfig ) { this . filterConfig = filterConfig ; } public void destroy () {} } v21 (EE8) This filter class implements the javax.servlet.Filter interface with the doFilter() method. package mysite.server ; import java.io.IOException ; import java.util.logging.Logger ; import javax.servlet.Filter ; import javax.servlet.FilterChain ; import javax.servlet.FilterConfig ; import javax.servlet.ServletException ; import javax.servlet.ServletRequest ; import javax.servlet.ServletResponse ; public class LogFilterImpl implements Filter { private FilterConfig filterConfig ; private static final Logger log = Logger . getLogger ( LogFilterImpl . class . getName ()); public void doFilter ( ServletRequest request , ServletResponse response , FilterChain filterChain ) throws IOException , ServletException { log . warning ( "Log filter processed a " + getFilterConfig (). getInitParameter ( "logType" ) + " request" ); filterChain . doFilter ( request , response ); } public FilterConfig getFilterConfig () { return filterConfig ; } public void init ( FilterConfig filterConfig ) { this . filterConfig = filterConfig ; } public void destroy () {} } v17 and earlier This filter class implements the javax.servlet.Filter interface with the doFilter() method. package mysite.server ; import java.io.IOException ; import java.util.logging.Logger ; import javax.servlet.Filter ; import javax.servlet.FilterChain ; import javax.servlet.FilterConfig ; import javax.servlet.ServletException ; import javax.servlet.ServletRequest ; import javax.servlet.ServletResponse ; public class LogFilterImpl implements Filter { private FilterConfig filterConfig ; private static final Logger log = Logger . getLogger ( LogFilterImpl . class . getName ()); public void doFilter ( ServletRequest request , ServletResponse response , FilterChain filterChain ) throws IOException , ServletException { log . warning ( "Log filter processed a " + getFilterConfig (). getInitParameter ( "logType" ) + " request" ); filterChain . doFilter ( request , response ); } public FilterConfig getFilterConfig () { return filterConfig ; } public void init ( FilterConfig filterConfig ) { this . filterConfig = filterConfig ; } public void destroy () {} } Similar to servlets, you configure a filter in the deployment descriptor by declaring the filter with the <filter> element, then mapping it to a URL pattern with the <filter-mapping> element.
-- The admin role makes it easy to build administrator-only sections of your site. <security-constraint> <web-resource-collection> <web-resource-name>profile</web-resource-name> <url-pattern>/profile/ </url-pattern> </web-resource-collection> <auth-constraint> <role-name> </role-name> </auth-constraint> </security-constraint> <security-constraint> <web-resource-collection> <web-resource-name>admin</web-resource-name> <url-pattern>/admin/ </url-pattern> </web-resource-collection> <auth-constraint> <role-name>admin</role-name> </auth-constraint> </security-constraint> Note: G Suite domain administrators and App Engine domain administrators are not included in the admin role in this context.
-- It also contains a <location> element containing the URL path of the resource to show when the error occurs. <error-page> <error-code>500</error-code> <location>/errors/servererror.jsp</location> </error-page> You can't configure custom error handlers for the following error conditions: 404 response page when no servlet mapping is defined for a URL.
+- Depending on a variety of factors, such as which type of response data is cached first, which Vary headers you have specified in the response, and which headers are included in the request, a client could request compressed data but receive uncompressed data, and the other way around.
+- Response compression For responses that are returned by your code, App Engine compresses data in the response if both of the following conditions are true: The request contains the Accept-Encoding header that includes gzip as a value.
+- For responses that are returned by an App Engine static file or directory handler , response data is compressed if all of the following conditions are true: The request includes Accept-Encoding with gzip as one of its values.
+- For example: Strict-Transport-Security : max-age = 31536000 ; includeSubDomains To set this header for any static content that is served by your app, add the header to your app's static file and directory handlers .
 
-### "appengine-web.xml reference \_|\_ App Engine standard environment \_|\_\
+### An overview of App Engine \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
+- URL: [https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine)
 - Source ID: `site-docs-reference`
-- Final score: 68
-- Re-rank relevance: N/A
+- Final score: 63
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The following example demonstrates how to designate all png files as static files (except those in the data/ directory and all of its subdirectories): < static - files > < include path = "/ .png" / > < exclude path = "/data/ .png" / > < / static - files > You can also set HTTP headers to use when responding to requests to these static resources. < static - files > < include path = "/my static-files" > < http - header name = "Access-Control-Allow-Origin" value = "http://example.org" / > < / include > < / static - files > Note: If the path string doesn't start with a slash, then the HTTP headers, if any, work on App Engine but do not work on the Development Server.
-- To serve custom error pages, add a <static-error-handlers> section to your appengine-web.xml , as ins this example: <static-error-handlers> <handler file="default error.html" /> <handler file="over quota.html" error-code="over quota" /> </static-error-handlers> Warning : Make sure that the path to the error response file does not overlap with static file handler paths.
-- If for some reason you prefer that your app not use precompilation, you can turn it off by adding the following to your appengine-web.xml file: <precompilation-enabled>false</precompilation-enabled> <module> Note: Modules are now named Services and services are still declared in appengine-web.xml files as modules, for example: <module>service name</module> .
-- This can impact class loading order, so if your app depends on a certain order using the former false default, you can set this to false . delete-jsps false true compile-encoding utf-8 utf-8 Include and exclude syntax Path patterns are specified using zero or more <include> and <exclude> elements.
+- For example, an app that handles your customer requests might include separate services that each handle different tasks, such as: API requests from mobile devices Internal, administration-type requests Backend processing such as billing pipelines and data analysis Each service in App Engine consists of the source code from your app and the corresponding App Engine configuration files.
+- Each App Engine application includes at least one service, the default service, which can hold many versions, depending on your app's billing status.
+- Logging application requests When your application handles a request, it can also write its own logging messages to stdout and stderr .
+- The App Engine application is a top-level container that includes the service, version, and instance resources that make up your app.
 

@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.323Z"
+generated_at: "2026-04-14T13:57:37.613Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Compute Engine committed use discount recommendations"
 feature_slug: "compute-engine-committed-use-discount-recommendations"
 latest_feature_date: "2021-02-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible"
-  - "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis"
+  - "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
   - "https://docs.cloud.google.com/billing/docs/how-to/finops-hub"
 keywords:
   - "compute"
@@ -26,7 +26,7 @@ keywords:
 # Compute Engine committed use discount recommendations
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +38,12 @@ Made Compute Engine committed use discount recommendations generally available, 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible](https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible)
-- [https://docs.cloud.google.com/billing/docs/how-to/cud-analysis](https://docs.cloud.google.com/billing/docs/how-to/cud-analysis)
+- [https://docs.cloud.google.com/billing/docs/how-to/cost-table](https://docs.cloud.google.com/billing/docs/how-to/cost-table)
 - [https://docs.cloud.google.com/billing/docs/how-to/finops-hub](https://docs.cloud.google.com/billing/docs/how-to/finops-hub)
 
 ## Supporting Pages
@@ -52,8 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible](https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible)
 - Source ID: `site-docs-root-2`
-- Final score: 138
-- Re-rank relevance: N/A
+- Final score: 152
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - For example, a credit for a Compute flexible CUD for the usage of N1 CORE running in Americas appears as: Credit type : COMMITTED USAGE DISCOUNT DOLLAR BASE Credit name : Committed use discount - dollar based: GCE Commitments SKU description : N1 CORE running in Americas Analyze commitment costs and credits on your invoice or statement To view and analyze detailed costs and credits for a given invoice or statement, access the Cost table report , a cost management tool that you can use to understand the costs that reconcile to your invoice.
@@ -61,24 +62,24 @@ Evidence snippets:
 - Open Cloud Billing Reports View Compute flexible commitments You can review your Compute flexible commitments in your Cloud Billing report by setting specific report filters : In the Credits filter, select Committed use discounts (spend based) .
 - Compute flexible committed use discounts (CUDs) are the discounts you receive when you purchase a spend-based Compute flexible commitment.
 
-### "Optimize costs with Committed Use Discounts \_|\_ Cloud Billing \_|\_ Google\
+### "View and download the cost details of your invoice or statement \_|\_ Cloud\
 
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/cud-analysis](https://docs.cloud.google.com/billing/docs/how-to/cud-analysis)
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/cost-table](https://docs.cloud.google.com/billing/docs/how-to/cost-table)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Related topics Overview of committed use discounts Purchasing spend-based committed use discounts Purchasing resource-based committed use discounts View your Cloud Billing reports and cost trends Understand your savings with cost breakdown reports Export Cloud Billing data to BigQuery View your cost and payment history Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Depending on the service, you can get a resource-based CUD in exchange for your commitment to use a minimum level of Compute Engine resources in a region, or a spend-based CUD in exchange for your commitment to spend a minimum amount on a product or service.
-- Home Documentation Costs and usage management Cloud Billing Guides Send feedback Optimize costs with Committed Use Discounts Stay organized with collections Save and categorize content based on your preferences.
-- Committed use discounts (CUDs) provide discounted prices in exchange for your commitment to use a minimum level of resources for a one-year or three-year period.
+- COMMITTED USAGE DISCOUNT : Resource-based committed use contracts purchased for Compute Engine in return for deeply discounted prices for VM usage.
+- SUSTAINED USAGE DISCOUNT : The sustained use discounts credit type is an automatic discount that you receive for running eligible Compute Engine resources for a significant portion of the billing month, with no commitment required.
+- COMMITTED USAGE DISCOUNT DOLLAR BASE : For legacy spend-based committed use discounts (CUDs) that aren't part of the new pricing model , this is the credit earned in exchange for your commitment to spend a minimum amount for a service in a particular region.
+- Note : This document discusses some spend-based committed use discounts (CUDs) that automatically migrate to a new consumption model, which leverages discounts rather than credits.
 
 ### Optimize costs with FinOps hub \_|\_ Cloud Billing \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/finops-hub](https://docs.cloud.google.com/billing/docs/how-to/finops-hub)
 - Source ID: `site-docs-root`
-- Final score: 126
+- Final score: 142
 - Re-rank relevance: N/A
 
 Evidence snippets:

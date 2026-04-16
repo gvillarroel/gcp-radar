@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:31.470Z"
+generated_at: "2026-04-15T00:44:19.087Z"
 product_name: "Cloud Healthcare API"
 product_slug: "cloud-healthcare-api"
 feature_name: "PATCH requests in FHIR bundles"
 feature_slug: "patch-requests-in-fhir-bundles"
 latest_feature_date: "2022-04-01"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/healthcare-api/docs/fhir"
+  - "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent"
+  - "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
 keywords:
   - "patch"
   - "requests"
-  - "in"
   - "fhir"
   - "bundles"
-  - "the"
-  - "api"
   - "now"
+  - "supports"
+  - "specifying"
+  - "inside"
 ---
 
 # PATCH requests in FHIR bundles
 
 Product: Cloud Healthcare API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ The API now supports specifying PATCH requests inside a FHIR bundle.
 
 The API now supports specifying PATCH requests inside a FHIR bundle.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/healthcare-api/docs/fhir](https://docs.cloud.google.com/healthcare-api/docs/fhir)
+- [https://docs.cloud.google.com/healthcare-api/docs/fhir-consent](https://docs.cloud.google.com/healthcare-api/docs/fhir-consent)
+- [https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir](https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "FHIR conformance statement \_|\_ Cloud Healthcare API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/fhir](https://docs.cloud.google.com/healthcare-api/docs/fhir)
+- Source ID: `site-api-reference`
+- Final score: 172
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The v1 API supports the following versions: R5 version 5.0.0 (Release 5) R4 version 4.0.1 (Release 4) STU3 version 3.0.1 (Release 3 - Standard for Trial Use) DSTU2 version 1.0.2 (Draft Standard for Trial Use) When you create a FHIR store, you specify the FHIR version as a parameter to the fhirStores.create method.
+- Areas where the API deviates from the FHIR spec to allow for backwards compatibility: null is accepted for required fields An empty code is accepted for required fields urn:uuid references are allowed in batch bundles when referential integrity is disabled.
+- Areas where the API deviates from the FHIR spec to allow for backwards compatibility: null is accepted for required fields An empty code is accepted for required fields urn:uuid references are allowed in batch bundles when referential integrity is disabled.
+- Areas where the API deviates from the FHIR spec to allow for backwards compatibility: null is accepted for required fields An empty code is accepted for required fields urn:uuid references are allowed in batch bundles when referential integrity is disabled.
+
+### "Creating and managing FHIR stores \_|\_ Cloud Healthcare API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir](https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir)
+- Source ID: `site-docs-root`
+- Final score: 143
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Patch request = client . projects () . locations () . datasets () . fhirStores () . patch ( fhirStoreName , store ) . setUpdateMask ( "notificationConfigs" ); // Execute the request and process the results. store = request . execute (); System . out . println ( "FHIR store patched: \n" + store . toPrettyString ()); } private static CloudHealthcare createClient () throws IOException { // Use Application Default Credentials (ADC) to authenticate the requests // For more information see // https://cloud.google.com/docs/authentication/production GoogleCredentials credential = GoogleCredentials . getApplicationDefault () . createScoped ( Collections . singleton ( CloudHealthcareScopes .
+- Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the FHIR store's parent dataset FHIR STORE ID : the FHIR store ID PUBSUB TOPIC ID : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID \ --dataset = DATASET ID \ --location = LOCATION \ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID You should receive a response similar to the following: Response Updated fhirStore [ FHIR STORE ID ]. name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC ID version: FHIR STORE VERSION REST To edit a FHIR store, use the projects.locations.datasets.fhirStores.patch method.
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery api version = "v1" service name = "healthcare" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the dataset's location dataset id = 'my-dataset' # replace with your dataset ID fhir store id = 'my-fhir-store' # replace with the FHIR store's ID pubsub topic = 'projects/{project id}/topics/{topic id}' # replace with your Pub/Sub topic fhir store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) fhir store name = f " { fhir store parent } /fhirStores/ { fhir store id } " patch = { "notificationConfigs" : [{ "pubsubTopic" : pubsub topic }] if pubsub topic else [] } request = ( client . projects () . locations () . datasets () . fhirStores () . patch ( name = fhir store name , updateMask = "notificationConfigs" , body = patch ) ) response = request . execute () print ( f "Patched FHIR store { fhir store id } with Cloud Pub/Sub topic: { pubsub topic or 'None' } " ) return response Getting FHIR store details The following samples show how to get details about a FHIR store.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const patchFhirStore = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const pubsubTopic = 'my-topic' const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } ; const request = { name , updateMask : 'notificationConfigs' , resource : { notificationConfigs : [ { pubsubTopic : projects/ ${ projectId } /topics/ ${ pubsubTopic } , }, ], }, }; await healthcare . projects . locations . datasets . fhirStores . patch ( request ); console . log ( Patched FHIR store ${ fhirStoreId } with Cloud Pub/Sub topic ${ pubsubTopic } ); }; patchFhirStore (); Python def patch fhir store ( project id , location , dataset id , fhir store id , pubsub topic ): """Updates the FHIR store.
+
+### "Control access to FHIR resources in the Cloud Healthcare API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/fhir-consent](https://docs.cloud.google.com/healthcare-api/docs/fhir-consent)
+- Source ID: `site-docs-root-2`
+- Final score: 137
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Supported methods The Cloud Healthcare API supports consent enforcement for the following methods: fhir.read fhir.vread fhir.history fhir.executeBundle with GET operations fhir.search and fhir.search-type fhir.Observation-lastn fhir.Patient-everything fhir.Encounter-everything fhir.Consent-enforement-status fhir.Patient-consent-enforement-status Write methods such as POST , PUT , PATCH , and DELETE are not supported for individual resources or a bundle of resources.
+- Get FHIR resources with consent scope Practitioner Jeffrey Brown (identified by Practitioner/12942879-f89f-41ae-aa80-0b911b649833 ) using application App/123 reads the hemoglobin measurement of the Patient (in this example, Observation/7473784b-46a8-470c-b9a6-fe38a01025aa ). curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "X-Consent-Scope: actor/Practitioner/12942879-f89f-41ae-aa80-0b911b649833 env/App/123" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation/7473784b-46a8-470c-b9a6-fe38a01025aa" Because the requestor was given consent, the response is the content of the Observation resource. { "code": { "coding": [ { "code": "718-7", "display": "Hemoglobin [Mass/volume] in Blood", "system": "http://loinc.org" } ] }, "effectivePeriod": { "start": "2021-12-10T05:30:10+01:00" }, "id": "7473784b-46a8-470c-b9a6-fe38a01025aa", "issued": "2021-12-10T13:30:10+01:00", "meta": { "lastUpdated": "2022-09-01T17:31:40.423469+00:00", "source": "http://example.com/HappyHospital", "versionId": " VERSION ID " }, "resourceType": "Observation", "status": "final", "subject": { "reference": "Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2" }, "valueQuantity": { "code": "g/dL", "system": "http://unitsofmeasure.org", "unit": "g/dl", "value": 7.2 } } Practitioner Jeffrey Brown (identified by Practitioner/12942879-f89f-41ae-aa80-0b911b649833 ) using unknown application App/unknown reads the hemoglobin measurement of the Patient (in this example, Observation/7473784b-46a8-470c-b9a6-fe38a01025aa ). curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "X-Consent-Scope: actor/Practitioner/12942879-f89f-41ae-aa80-0b911b649833 env/App/unknown" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation/7473784b-46a8-470c-b9a6-fe38a01025aa" Because the boundary access of the requestor (App/unknown) is not permitted by the Patient's consent, the request is denied. { "issue": [ { "code": "security", "details": { "text": "permission denied" }, "diagnostics": "Consent access denied or the resource being accessed does not exist", "severity": "error" } ], "resourceType": "OperationOutcome" } Practitioner Jeffrey Brown (identified by Practitioner/12942879-f89f-41ae-aa80-0b911b649833 ) doing biomedical research using application App/golden reads the Darcy's birthDate (in this example, Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2 ). curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "X-Consent-Scope: actor/Practitioner/12942879-f89f-41ae-aa80-0b911b649833 purp/v3/BIORCH env/App/golden" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2" Because the requestor was given consent, the response is the content of the Patient resource. { "active": true, "birthDate": "1990-01-01", "gender": "female", "id": "3c6aa096-c054-4c22-b2b4-1e4a4d203de2", "meta": { "lastUpdated": "2022-09-01T17:31:40.423469+00:00", "versionId": " VERSION ID ", "tag": [{ "system": "http://terminology.hl7.org/CodeSystem/common-tags", "code": "employee" }] }, "name": [ { "family": "Smith", "given": [ "Darcy" ], "use": "official" } ], "resourceType": "Patient" } Practitioner Jeffrey Brown (identified by Practitioner/12942879-f89f-41ae-aa80-0b911b649833 ) requests emergency unauthorized access to a patient's record, using the "break-the-glass" protocol. (in this example, Observation/7473784b-46a8-470c-b9a6-fe38a01025aa ). curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "X-Consent-Scope: btg actor/Practitioner/12942879-f89f-41ae-aa80-0b911b649833" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation/7473784b-46a8-470c-b9a6-fe38a01025aa" Because the consent's authorization method is btg , the server skips consent checks.
+- Set up an existing store for consent access To set up an existing store for consent access, complete these steps: Use UpdateFhirStore to set the ConsentConfig with the consent enforcement version as V1 and set accessEnforced to true . curl -X PATCH \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json" \ --data "{ 'consentConfig': { 'version': 'V1', 'accessEnforced': true } }" "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ?update mask=consentConfig" Process patient consents or admin policies ApplyConsents for patient consents curl -X POST \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json" \ --data "{'validateOnly': false}" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID :applyConsents" ApplyAdminConsents for admin policies and admin cascading policies. curl -X POST \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json" \ --data "{ 'newConsentsList': { 'names': [ 'projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Consent/ RESOURCE ID 1 / history/ VERSION ID 1 ', ... 'projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Consent/ RESOURCE ID N / history/ VERSION ID N ' ] }, 'validateOnly': false }" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID :applyAdminConsents" How often to run ApplyConsents or ApplyAdminConsents When the ConsentConfig field is unset: The ConsentConfig field is unset both when a FHIR store is first created and when the ConsentConfig field is cleared.
+- You should receive a JSON response similar to the following: { "entry": [ { "fullUrl": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Practitioner/12942879-f89f-41ae-aa80-0b911b649833", "resource": { "active": true, "birthDate": "1970-05-23", "gender": "male", "id": "12942879-f89f-41ae-aa80-0b911b649833", "meta": { "lastUpdated": "2022-09-01T17:31:40.423469+00:00", "versionId": " VERSION ID " }, "name": [ { "family": "Brown", "given": [ "Jeffrey" ], "use": "official" } ], "resourceType": "Practitioner" }, "search": { "mode": "match" } } ], "link": [ { "relation": "search", "url": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Practitioner/?" }, { "relation": "first", "url": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Practitioner/?" }, { "relation": "self", "url": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Practitioner/?" } ], "resourceType": "Bundle", "total": 1, "type": "searchset" } Get resource with Consent context The Cloud Healthcare API supports get FHIR resource in a given FHIR store with actor , purpose , and environment as query parameters.
 

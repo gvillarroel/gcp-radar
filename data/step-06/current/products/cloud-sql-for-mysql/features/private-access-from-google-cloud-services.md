@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.893Z"
+generated_at: "2026-04-15T11:56:51.950Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "Private access from Google Cloud services"
@@ -9,18 +9,18 @@ latest_feature_date: "2022-12-15"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
+  - "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect"
+  - "https://docs.cloud.google.com/sql/docs/mysql/connect-functions"
   - "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access"
-  - "https://docs.cloud.google.com/sql/docs/mysql/connect-overview"
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
 keywords:
   - "private"
   - "access"
-  - "from"
-  - "services"
   - "sql"
-  - "for"
   - "mysql"
   - "supports"
+  - "connectivity"
+  - "lets"
+  - "other"
 ---
 
 # Private access from Google Cloud services
@@ -38,54 +38,53 @@ Cloud SQL for MySQL supports private connectivity that lets other Google Cloud s
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect](https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect)
+- [https://docs.cloud.google.com/sql/docs/mysql/connect-functions](https://docs.cloud.google.com/sql/docs/mysql/connect-functions)
 - [https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access](https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access)
-- [https://docs.cloud.google.com/sql/docs/mysql/connect-overview](https://docs.cloud.google.com/sql/docs/mysql/connect-overview)
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
 
 ## Supporting Pages
+
+### "Connect from Cloud Run functions \_|\_ Cloud SQL for MySQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/connect-functions](https://docs.cloud.google.com/sql/docs/mysql/connect-functions)
+- Source ID: `site-docs-reference-3`
+- Final score: 44
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Errorf ( "sql.Open: %w" , err ) } return dbPool , nil } Node.js To see this snippet in the context of a web application, view the README on GitHub . const mysql = require ( 'mysql2/promise' ); const { Connector } = require ( '@google-cloud/cloud-sql-connector' ); // In case the PRIVATE IP environment variable is defined then we set // the ipType=PRIVATE for the new connector instance, otherwise defaults // to public ip type. const getIpType = () = > process . env .
+- URL . create ( drivername = "mysql+pymysql" , username = db user , password = db pass , database = db name , query = { "unix socket" : unix socket path }, ), ... ) return pool Java To see this snippet in the context of a web application, view the README on GitHub . import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import javax.sql.DataSource ; public class ConnectorConnectionPoolFactory extends ConnectionPoolFactory { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. private static final String INSTANCE CONNECTION NAME = System . getenv ( "INSTANCE CONNECTION NAME" ); private static final String INSTANCE UNIX SOCKET = System . getenv ( "INSTANCE UNIX SOCKET" ); private static final String DB USER = System . getenv ( "DB USER" ); private static final String DB PASS = System . getenv ( "DB PASS" ); private static final String DB NAME = System . getenv ( "DB NAME" ); public static DataSource createConnectionPool () { // The configuration object specifies behaviors for the connection pool.
+- Fatalf ( "Fatal Error in connect connector.go: %s environment variable not set." , k ) } return v } // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep passwords and other secrets safe. var ( dbUser = mustGetenv ( "DB USER" ) // e.g. 'my-db-user' dbPwd = mustGetenv ( "DB PASS" ) // e.g. 'my-db-password' dbName = mustGetenv ( "DB NAME" ) // e.g. 'my-database' instanceConnectionName = mustGetenv ( "INSTANCE CONNECTION NAME" ) // e.g. 'project:region:instance' usePrivate = os .
+- PRIVATE IP === 'true' ? 'PRIVATE' : 'PUBLIC' ; // connectWithConnector initializes a connection pool for a Cloud SQL instance // of MySQL using the Cloud SQL Node.js Connector. const connectWithConnector = async config = > { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. const connector = new Connector (); const clientOpts = await connector . getOptions ({ instanceConnectionName : process . env .
+
+### "Configure both private services access and Private Service Connect \_|\_\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect](https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect)
+- Source ID: `site-docs-reference-3`
+- Final score: 40
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Terraform To create an instance with both private services access and Private Service Connect enabled, use the google sql database instance Terraform resource . resource "google compute network" "peering network" { name = "private-network" auto create subnetworks = "false" } resource "google compute global address" "private ip address" { name = "private-ip-address" purpose = "VPC PEERING" address type = "INTERNAL" prefix length = 16 network = google compute network.peering network.id } resource "google service networking connection" "default" { network = google compute network.peering network.id service = "servicenetworking.googleapis.com" reserved peering ranges = [google compute global address.private ip address.name] } resource "google sql database instance" "default" { name = "mysql-instance" region = "us-central1" database version = "MYSQL 8 0" depends on = [google service networking connection.default] settings { tier = "db-f1-micro" ip configuration { psc config { psc enabled = true allowed consumer projects = [] # Add consumer project IDs here. } ipv4 enabled = false private network = google compute network.peering network.id } } } resource "google compute network peering routes config" "peering routes" { peering = google service networking connection.default.peering network = google compute network.peering network.name import custom routes = true export custom routes = true } resource "google compute address" "default" { name = "psc-compute-address-${google sql database instance.default.name}" region = "us-central1" address type = "INTERNAL" subnetwork = "default" # Replace value with the name of the subnet here. address = "192.168.0.43" # Replace value with the IP address to reserve. } data "google sql database instance" "default" { name = resource.google sql database instance.default.name } resource "google compute forwarding rule" "default" { name = "psc-forwarding-rule-${google sql database instance.default.name}" region = "us-central1" network = "default" ip address = google compute address.default.self link load balancing scheme = "" target = data.google sql database instance.default.psc service attachment link } To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.
+- For more information, see Create a Private Service Connect endpoint . gcloud To create an instance that supports both private services access and Private Service Connect, use the gcloud sql instances create command: gcloud sql instances create INSTANCE NAME \ --project = PROJECT ID \ --region = REGION NAME \ --enable-private-service-connect \ --allowed-psc-projects = ALLOWED PROJECTS \ --availability-type = AVAILABILITY TYPE \ --no-assign-ip \ --allocated-ip-range-name = RANGE NAME \ --enable-google-private-path \ --tier = MACHINE TYPE \ --database-version = DATABASE VERSION \ --network = VPC PSA NETWORK PATH \ --enable-bin-log \ --psc-auto-connections = network = VPC PSC NETWORK PATH ,project = SERVICE PROJECT Make the following replacements: INSTANCE NAME : the name of the instance.
+- If you set the optional enablePrivatePathForGoogleCloudServices parameter to true , then you allow other Google Cloud services, such as BigQuery, to access data in Cloud SQL and make queries against this data over an internal IP connection.
+- Create a instance that supports private services access and Private Service Connect By creating a Cloud SQL instance that supports both private services access and Private Service Connect, you get the benefits of both services.
 
 ### "Configure private services access \_|\_ Cloud SQL for MySQL \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access](https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access)
-- Source ID: `site-iam-reference`
-- Final score: 296
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Configure private services access for Cloud SQL Important: When you create a private connection between your VPC network and the Cloud SQL service, it becomes available for use by any Google service that supports private services access.
-- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Configure private services access Stay organized with collections Save and categorize content based on your preferences.
-- Before you begin Cloud SQL requires private services access for each VPC network that's used for private IP connections.
-- MySQL PostgreSQL SQL Server This page describes how to configure private services access in your VPC network.
-
-### "Choose how to connect to Cloud SQL \_|\_ Cloud SQL for MySQL \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/connect-overview](https://docs.cloud.google.com/sql/docs/mysql/connect-overview)
-- Source ID: `site-docs-root`
-- Final score: 258
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Remove networking options from an instance Cloud SQL supports the removal of the following networking options from an instance: Public IP from an instance with both private services access and public IP Public IP from an instance with public IP, private services access, and Private Service Connect Private Service Connect from an instance with both Private Service Connect and private services access Private Service Connect from an instance with Private Service Connect, private services access, and public IP Enable networking options for an instance You can enable Cloud SQL supports enabling the following connection options for instances: Private services access on an instance with public IP only Private Service Connect on an instance with private services access only Private Service Connect on an instance with both private services access and public IP Public IP on an instance with private services access only Limitations You can't create an instance with both a public IP address and Private Service Connect.
-- Summary Recommendation : For improved security, we recommend that you configure your instance with a private IP address type unless you have specific requirements for an internet-accessible Cloud SQL instance, or if you're connecting from a client that doesn't meet the requirements for a VPC.
-- Configuration options The following types of private networking configurations are supported: Private services access : connect to Cloud SQL instances from a single VPC network based on networking peering.
-- Feature Instance with private services access only Instance with Private Service Connect only Instance with both private services access and Private Service Connect Connect from multiple VPCs Not supported.
-
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 256
+- Source ID: `site-docs-reference-3`
+- Final score: 40
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- December 15, 2022 Feature You can now allow other Google Cloud services, such as BigQuery, to access data in Cloud SQL for MySQL and make queries against this data over a private connection.
-- September 02, 2021 Feature Cloud SQL for MySQL now supports using a custom import to set up replication from large external databases.
-- January 25, 2024 Feature Cloud SQL Enterprise Plus edition now supports the following regions: asia-northeast2 (Osaka) asia-south2 (Delhi) europe-north1 (Finland) europe-southwest1 (Madrid) us-east5 (Columbus) us-south1 (Dallas) January 12, 2024 Feature Cloud SQL for MySQL now supports setting microsecond time periods for the following flag on MySQL 5.7 and MySQL 8.0: innodb flush log at timeout For more information about this flag, see supported flags .
-- December 05, 2024 Feature Cloud SQL Enterprise Plus edition now supports the following regions: africa-south1 (Johannesburg) asia-east2 (Hong Kong) europe-west10 (Berlin) December 04, 2024 Feature Cloud SQL for MySQL now supports minor version 8.0.40.
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage a private services access connection: compute.addresses.create compute.addresses.list compute.globalAddresses.create compute.globalAddresses.createInternal compute.globalAddresses.list compute.networks.list compute.networks.use servicenetworking.services.addPeering serviceusage.services.list You might also be able to get these permissions with custom roles or other predefined roles .
+- Configure private services access for Cloud SQL Important: When you create a private connection between your VPC network and the Cloud SQL service, it becomes available for use by any Google service that supports private services access.
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Configure private services access Stay organized with collections Save and categorize content based on your preferences.
+- If you later delete the private connection, you remove private connectivity to your Cloud SQL instances and any other service that is using that connection .
 

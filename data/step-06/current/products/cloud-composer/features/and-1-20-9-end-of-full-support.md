@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.046Z"
+generated_at: "2026-04-12T12:11:19.244Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "and 1.20.9 end of full support"
 feature_slug: "and-1-20-9-end-of-full-support"
 latest_feature_date: "2024-03-19"
 deprecation_date: "2024-03-19"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
+  - "https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots"
   - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags"
 keywords:
   - "and"
   - "20"
@@ -26,7 +27,7 @@ keywords:
 # and 1.20.9 end of full support
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer versions 2.1.10, 2.1.9, 1.20.10, and 1.20.9 have reached the end 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
+- [https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots](https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots)
 - [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags](https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 200
+- Final score: 248
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,11 +63,25 @@ Evidence snippets:
 - On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
 - Versions with disabled upgrades For some versions of Cloud Composer images, it is not possible to upgrade an environment to a later version: composer-1.7.7-airflow-1.10.2 composer-1.7.7-airflow-1.10.1 composer-1.7.7-airflow-1.9.0 If you use a version with disabled upgrades, we recommend to create a new environment side-by-side, then migrate all your DAGs to the new environment.
 
+### "Save and load environment snapshots \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots](https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots)
+- Source ID: `site-docs-root`
+- Final score: 246
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- Example: // POST https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment:loadSnapshot { "snapshotPath" : "gs://us-central1-example-916807e1-bucket/snapshots/example-project us-central1 example-environment 2022-01-05T18-59-00" , "skipPypiPackagesInstallation" : "False" } Terraform It is not possible to save and load environment snapshots using Terraform.
+- For example, gs://us-central1-example-916807e1-bucket/snapshots/example-project us-central1 example-environment 2022-01-05T18-59-00 . (Optional) In the request body, in the skipPypiPackagesInstallation field specify if Cloud Composer must skip the installation of custom PyPI packages from the snapshot.
+- What's next Configure scheduled snapshots Create environments Access control Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
 ### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - Source ID: `site-iam-reference`
-- Final score: 196
+- Final score: 246
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +90,17 @@ Evidence snippets:
 - Note: Cloud Composer does not support pip customization and does not resolve package dependencies and conflicts outside of the resolution mechanisms that the default pip tool provides.
 - To install custom PyPI packages from an Artifact Registry repository: Create a pip.conf file and include the following information in the file, if applicable: URL of the Artifact Registry repository (in the index-url parameter) Access credentials for the repository Non-default pip installation options For an Artifact Registry repository, append /simple/ to the repository URL: [global] index-url = https://us-central1-python.pkg.dev/example-project/example-repository/simple/ (Optional) In some cases, you might want to fetch packages from multiple repositories, such as when your Artifact Registry repository contains some specific packages that you want to install, and you want to install all other packages from PyPI: Configure an Artifact Registry virtual repository .
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### "Schedule and trigger Airflow DAGs \_|\_ Cloud Composer \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- URL: [https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags](https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags)
 - Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: N/A
+- Final score: 242
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Change Cloud Composer 2.1.7 and 1.20.7 images are available: composer-2.1.7-airflow-2.4.3 (default) composer-2.1.7-airflow-2.3.4 composer-2.1.7-airflow-2.2.5 composer-1.20.7-airflow-1.10.15 composer-1.20.7-airflow-2.4.3 composer-1.20.7-airflow-2.3.4 composer-1.20.7-airflow-2.2.5 Deprecated Cloud Composer versions 2.0.4 , 2.0.5 , 1.18.0 , and 1.18.1 have reached their end of full support period .
-- Change Cloud Composer 2.1.6 and 1.20.6 images are available: composer-2.1.6-airflow-2.4.3 (default) composer-2.1.6-airflow-2.3.4 composer-2.1.6-airflow-2.2.5 composer-1.20.6-airflow-1.10.15 (default) composer-1.20.6-airflow-2.4.3 composer-1.20.6-airflow-2.3.4 composer-1.20.6-airflow-2.2.5 Deprecated Cloud Composer versions 2.0.3 and 1.17.10 have reached their end of full support period .
-- Change Cloud Composer 1.20.4 and 2.1.4 images are available: composer-1.20.4-airflow-1.10.15 (default) composer-1.20.4-airflow-2.2.5 composer-1.20.4-airflow-2.3.4 composer-1.20.4-airflow-2.4.3 composer-2.1.4-airflow-2.2.5 composer-2.1.4-airflow-2.3.4 (default) composer-2.1.4-airflow-2.4.3 Deprecated Cloud Composer versions 2.0.2 and 1.17.9 have reached their end of full support period .
-- Announcement The following versions for Cloud Composer 1.20.1 and 2.1.1 are available: composer-1.20.1-airflow-1.10.15 (default) composer-1.20.1-airflow-2.2.5 composer-1.20.1-airflow-2.3.4 composer-2.1.1-airflow-2.2.5 composer-2.1.1-airflow-2.3.4 (default) Deprecated Cloud Composer versions 1.17.7 and 2.0.0-preview.7 have reached their end of full support period .
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- The SQL query for this row uses Airflow templates to write DAG's logical date and name to the row. import datetime from airflow.models.dag import DAG from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator with DAG ( "bq example scheduling dag" , start date = datetime . datetime ( 2024 , 1 , 1 ), schedule = '0 /12 ' , catchup = False ) as dag : insert query job = BigQueryInsertJobOperator ( task id = "insert query job" , retries = 4 , configuration = { "query" : { schema: date (string), description (string) example row: "20240101T120000", "DAG run: <DAG: bq example scheduling dag>" "query" : "INSERT example dataset.example table VALUES ('{{ ts nodash }}', 'DAG run: {{ dag }}' )" , "useLegacySql" : False , "priority" : "BATCH" , } }, location = "us-central1" ) insert query job To test this DAG, you can trigger it manually and then view the task execution logs .
+- In the Airflow web interface, on the DAGs page, click the toggle next to the DAG's name. gcloud Run the dags pause Airflow CLI command: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ dags pause -- DAG ID Replace the following: ENVIRONMENT NAME : the name of your environment.
+- More scheduling parameter examples The following scheduling parameter examples illustrate how scheduling works with different combinations of parameters: If start date is datetime(2024, 4, 4, 16, 25) and schedule is 30 16 , then the first DAG run happens at 16:30 on 5 April, 2024.
 

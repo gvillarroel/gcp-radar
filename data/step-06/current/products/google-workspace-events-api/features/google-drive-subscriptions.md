@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:36.178Z"
+generated_at: "2026-04-12T12:17:23.874Z"
 product_name: "Google Workspace Events API"
 product_slug: "google-workspace-events-api"
 feature_name: "Google Drive subscriptions"
 feature_slug: "google-drive-subscriptions"
 latest_feature_date: "2025-07-07"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/workspace/events"
+  - "https://developers.google.com/workspace/events/guides/events-drive"
+  - "https://developers.google.com/workspace/events/guides/auth"
+  - "https://developers.google.com/workspace/events/guides/events-lifecycle"
 keywords:
   - "drive"
   - "subscriptions"
@@ -24,7 +27,7 @@ keywords:
 # Google Drive subscriptions
 
 Product: Google Workspace Events API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ The Google Workspace Events API supports subscriptions to Google Drive events, i
 
 The Google Workspace Events API supports subscriptions to Google Drive events, including file add, move, edit, trash, and access proposal events.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/workspace/events](https://developers.google.com/workspace/events)
+- [https://developers.google.com/workspace/events/guides/events-drive](https://developers.google.com/workspace/events/guides/events-drive)
+- [https://developers.google.com/workspace/events/guides/auth](https://developers.google.com/workspace/events/guides/auth)
+- [https://developers.google.com/workspace/events/guides/events-lifecycle](https://developers.google.com/workspace/events/guides/events-lifecycle)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Subscribe to events using the Google Workspace Events API \_|\_ Google for\
+
+- URL: [https://developers.google.com/workspace/events](https://developers.google.com/workspace/events)
+- Source ID: `site-docs-root`
+- Final score: 277
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Events as Google Cloud Pub/Sub messages The Google Workspace Events API subscriptions use Google Cloud Pub/Sub topics as the notification endpoint that receives Google Workspace events.
+- How your app receives events To let your app receive Google Workspace events, use the Google Workspace Events API to create subscriptions to Google Workspace resources.
+- To see which Google Workspace resources the Google Workspace Events API supports, see Supported Google Workspace events .
+- The Google Workspace Events API supports Google Cloud Pub/Sub topics as a notification endpoint.
+
+### "Subscribe to Google Drive events \_|\_ Google Workspace \_|\_ Google for\
+
+- URL: [https://developers.google.com/workspace/events/guides/events-drive](https://developers.google.com/workspace/events/guides/events-drive)
+- Source ID: `site-docs-root`
+- Final score: 275
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following table displays which event types are supported for subscriptions to Drive resources: Event type Format Resource data Subscriptions to files and shared drives An access proposal is created on a file. google.workspace.drive.accessproposal.v3.created accessproposal An access proposal is resolved on a file. google.workspace.drive.accessproposal.v3.resolved accessproposal An approval is created on a file. google.workspace.drive.approval.v3.created approval An approval is cancelled on a file. google.workspace.drive.approval.v3.cancelled approval An approval is reset on a file. google.workspace.drive.approval.v3.reset approval An approval is completed on a file. google.workspace.drive.approval.v3.completed approval An approval reviewer is changed on a file. google.workspace.drive.approval.v3.reviewersChanged approval An approval reviewer responded to an approval on a file. google.workspace.drive.approval.v3.responded approval A comment is created on a file or a file within a shared drive. google.workspace.drive.comment.v3.created comment A comment is edited on a file or a file within a shared drive. google.workspace.drive.comment.v3.edited comment A comment is resolved on a file or a file within a shared drive. google.workspace.drive.comment.v3.resolved comment A comment is reopened on a file or a file within a shared drive. google.workspace.drive.comment.v3.reopened comment A comment is deleted on a file or a file within a shared drive. google.workspace.drive.comment.v3.deleted comment A file is added to a folder or shared drive. google.workspace.drive.file.v3.created file A file is moved to a folder or shared drive. google.workspace.drive.file.v3.moved file A file is edited or a new revision is uploaded. google.workspace.drive.file.v3.contentChanged file A file is deleted. google.workspace.drive.file.v3.deleted file A file is trashed. google.workspace.drive.file.v3.trashed file A file is removed from the trash. google.workspace.drive.file.v3.untrashed file A file is renamed. google.workspace.drive.file.v3.renamed file Permissions are created on a file. google.workspace.drive.permission.v3.created permission Permissions are edited on a file. google.workspace.drive.permission.v3.edited permission Permissions are deleted on a file. google.workspace.drive.permission.v3.deleted permission A reply is created on a comment thread in a file or a file within a shared drive. google.workspace.drive.reply.v3.created reply A reply is edited on a comment thread in a file or a file within a shared drive. google.workspace.drive.reply.v3.edited reply A reply is deleted on a comment thread in a file or a file within a shared drive. google.workspace.drive.reply.v3.deleted reply Event data This section describes event data and example payloads for events in Drive.
+- Related topics Google Workspace Events API overview Structure of Google Workspace events Choose Google Workspace Events API scopes Choose Google Drive API scopes Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The Google Workspace Events API supports the following target resources for Drive: Target resource Format Limitations (if applicable) File //drive.googleapis.com/files/ FILE where FILE is the ID in the resource name of the Drive API files resource.
+- This page describes the Google Drive events that your app can subscribe to using the Google Workspace Events API.
+
+### Choose Google Workspace Events API scopes \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/events/guides/auth](https://developers.google.com/workspace/events/guides/auth)
+- Source ID: `site-docs-root`
+- Final score: 255
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following table displays which scopes and types of authentication are required or supported for each Google Workspace Events API method: Method User authentication required or supported App authentication supported (Chat apps only) Authorization scopes supported Create a subscription check — With user authentication, requires a supported scope for each event type : chat.messages chat.messages.readonly chat.messages.reactions chat.messages.reactions.readonly chat.memberships chat.memberships.readonly chat.spaces chat.spaces.readonly drive.file drive drive.readonly drive.metadata drive.metadata.readonly meetings.space.created meetings.space.readonly Developer Preview : With app authentication and administrator approval (Google Chat apps only), requires a supported scope for each event type : chat.app.memberships chat.app.memberships.readonly chat.app.spaces chat.app.spaces.readonly chat.app.messages.readonly Get a subscription check check With user authentication, this method requires a scope that supports at least one event type for the subscription.
+- For subscriptions to Chat events, the Google Workspace Events API supports both user and app authentication to call some of its methods.
+- The following table displays which authorization scopes are supported for each event type: Events Event types Authorization scopes supported Chat A message is posted or updated. google.workspace.chat.message.v1.created google.workspace.chat.message.v1.updated With User authentication : chat.messages chat.messages.readonly With App authentication and administrator approval : chat.app.messages.readonly A reaction is added or deleted, or multiple reactions are changed. google.workspace.chat.reaction.v1.created google.workspace.chat.reaction.v1.deleted google.workspace.chat.reaction.v1.batchChanged chat.messages.reactions chat.messages.reactions.readonly chat.messages chat.messages.readonly A membership is created, updated, or removed, or multiple memberships are changed. google.workspace.chat.membership.v1.created google.workspace.chat.membership.v1.updated google.workspace.chat.membership.v1.deleted google.workspace.chat.membership.v1.batchChanged With User authentication : chat.memberships chat.memberships.readonly With App authentication and administrator approval : chat.app.memberships chat.app.memberships.readonly A space is updated or deleted. google.workspace.chat.space.v1.updated google.workspace.chat.space.v1.deleted With User authentication : chat.spaces chat.spaces.readonly With App authentication and administrator approval : chat.app.spaces chat.app.spaces.readonly Drive A file is created, changed, moved, deleted, renamed, trashed, or removed from the trash. google.workspace.drive.file.v3.added google.workspace.drive.file.v3.moved google.workspace.drive.file.v3.contentChanged google.workspace.drive.file.v3.deleted google.workspace.drive.file.v3.renamed google.workspace.drive.file.v3.trashed google.workspace.drive.file.v3.untrashed drive drive.file drive.readonly drive.metadata An Access Proposal is created or resolved on a file. google.workspace.drive.accessProposal.v3.created google.workspace.drive.accessProposal.v3.resolved drive drive.file drive.readonly drive.metadata drive.metadata drive.metadata.readonly An Approval is cancelled, completed, created, reset, reviewers changed, or reviewers responded on a file. google.workspace.drive.approval.v3.cancelled google.workspace.drive.approval.v3.completed google.workspace.drive.approval.v3.created google.workspace.drive.approval.v3.reset google.workspace.drive.approval.v3.reviewersChanged google.workspace.drive.approval.v3.reviewerResponded drive drive.file drive.readonly drive.metadata drive.metadata drive.metadata.readonly A Comment is created, deleted, edited, reopened, or resolved on a file. google.workspace.drive.comment.v3.created google.workspace.drive.comment.v3.deleted google.workspace.drive.comment.v3.edited google.workspace.drive.comment.v3.reopened google.workspace.drive.comment.v3.resolved drive drive.file drive.readonly drive.metadata drive.metadata drive.metadata.readonly A Reply is created, deleted, or edited on a file. google.workspace.drive.reply.v3.created google.workspace.drive.reply.v3.deleted google.workspace.drive.reply.v3.edited drive drive.file drive.readonly drive.metadata drive.metadata drive.metadata.readonly A Permission is created, deleted, or edited on a file. google.workspace.drive.permission.v3.created google.workspace.drive.permission.v3.deleted google.workspace.drive.permission.v3.edited drive drive.file drive.readonly drive.metadata drive.metadata drive.metadata.readonly Meet A conference starts or ends. google.workspace.meet.conference.v2.started google.workspace.meet.conference.v2.ended meetings.space.created meetings.space.readonly A participant joins or leaves a conference. google.workspace.meet.participant.v2.joined google.workspace.meet.participant.v2.left meetings.space.created meetings.space.readonly A recording was generated. google.workspace.meet.recording.v2.fileGenerated meetings.space.created meetings.space.readonly A transcript was generated. google.workspace.meet.transcript.v2.fileGenerated meetings.space.created meetings.space.readonly Related topics Authentication overview for Chat Authentication overview for Drive Authentication overview for Meet Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],["To use the Google Workspace Events API, configure OAuth 2.0, select appropriate authorization scopes, and possibly undergo app verification.
+
+### "Receive and respond to lifecycle events for Google Workspace subscriptions\
+
+- URL: [https://developers.google.com/workspace/events/guides/events-lifecycle](https://developers.google.com/workspace/events/guides/events-lifecycle)
+- Source ID: `site-docs-root`
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following shows a CloudEvent for a lifecycle event about an expired Google Workspace subscription: { "id": " EVENT UUID ", "source": "//workspaceevents.googleapis.com/subscriptions/ SUBSCRIPTION ID ", "subject": "//workspaceevents.googleapis.com/subscriptions/ SUBSCRIPTION ID ", "type": "google.workspace.events.subscription.v1.expired", "time": "2023-06-08T07:00:00.000000Z", "spec version": '1.0', "datacontenttype": "application/json", "data": { "subscription":{ "name": "subscriptions/ SUBSCRIPTION ID ", "expire time": "2023-06-08T07:00:00.000000Z", ... } } } Related topics Structure of Google Workspace events Resolve errors and reactivate a subscription Update or renew a subscription Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The following shows a CloudEvent for a lifecycle event about a Google Workspace subscription that was suspended due to the error ENDPOINT PERMISSION DENIED : { "id": " EVENT UUID ", "source": "//workspaceevents.googleapis.com/subscriptions/ SUBSCRIPTION ID ", "subject": "//workspaceevents.googleapis.com/subscriptions/ SUBSCRIPTION ID ", "type": "google.workspace.events.subscription.v1.suspended", "time": "2023-06-08T06:50:43.641299Z", "spec version": '1.0', "datacontenttype": "application/json", "data": { "subscription":{ "name": "subscriptions/ SUBSCRIPTION ID ", "suspension reason": "ENDPOINT PERMISSION DENIED", ... } } } Expiration reminder events Note: It's considered best practice to avoid relying exclusively on expiration reminder events for lifecycle management.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],["The Google Workspace Events API sends lifecycle events to manage subscriptions, including suspension, expiration reminders, and expiration notifications.
+- The following shows a CloudEvent for a lifecycle event about an expiring Google Workspace subscription: { "id": " EVENT UUID ", "source": "//workspaceevents.googleapis.com/subscriptions/ SUBSCRIPTION ID ", "subject": "//workspaceevents.googleapis.com/subscriptions/ SUBSCRIPTION ID ", "type": "google.workspace.events.subscription.v1.expirationReminder", "time": "2023-06-08T06:50:43.641299Z", "spec version": '1.0', "datacontenttype": "application/json", "data": { "subscription":{ "name": "subscriptions/ SUBSCRIPTION ID ", "expire time": "2023-06-08T18:50:43.641299Z", ... } } } Subscription expired events The Google Workspace Events API sends you a lifecycle event when the subscription expires.
 

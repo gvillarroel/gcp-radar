@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.734Z"
+generated_at: "2026-04-15T13:50:47.084Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Agent aliases"
@@ -9,18 +9,18 @@ latest_feature_date: "2024-03-26"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-alias"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/add-edit-user"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
 keywords:
   - "agent"
   - "aliases"
   - "agents"
   - "can"
   - "communicate"
-  - "with"
   - "end"
   - "users"
+  - "instead"
 ---
 
 # Agent aliases
@@ -42,48 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-alias](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-alias)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/add-edit-user](https://docs.cloud.google.com/contact-center/ccai-platform/docs/add-edit-user)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Agent aliases \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 176
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-alias](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-alias)
+- Source ID: `site-docs-reference`
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information, see Bulk user management templates Let agents create their own aliases You can grant agents permissions to create their own aliases.
+- Do a bulk import of agent aliases To do a bulk import of agent aliases, follow these steps: Click menu Menu , and then click Settings > Users and teams .
+- Agent aliases are displayed to end-users only with the mobile and web SDKs.
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Agent aliases Stay organized with collections Save and categorize content based on your preferences.
+
+### "Add, view, and edit users \_|\_ Google Cloud Contact Center as a Service\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/add-edit-user](https://docs.cloud.google.com/contact-center/ccai-platform/docs/add-edit-user)
+- Source ID: `site-docs-reference`
+- Final score: 122
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Example: Parent team A (450 users) - all 450 agents are assigned to sub-teams, none are directly assigned to team A - user list will show: 0 users Team A-1 (200 users) - user list will show: 200 users Team A-2 (150 users) - user list will show: 150 users Team A-3 (100 users) - user list will show: 0 users Team A-3.1 (90 users) - user list will show: 90 users Team A-3.2 (10 users) - user list will show: 10 users The filter drop-down can be used to restrict the users that are displayed.
+- Edit users User information can be edited by clicking on the pencil icon next to the user's name: Tip: Best practice is to only edit agent information when the agent is not signed in to the CCAI Platform instance.
+- To avoid confusion and not show an agent or user assigned to a sub-team multiple times in any higher-level teams, users only show in the team they are directly assigned to.
+- For more information, see Agent aliases .
+
+### "Standard Reports Agent and Teams Data Sets \_|\_ Google Cloud Contact Center\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set)
+- Source ID: `site-docs-reference`
+- Final score: 113
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Agent alias Agents can use aliases instead of their real names when communicating with end-users.
-- Feature Direct SMS numbers and configuring SMS chat in the agent adapter You can assign direct SMS numbers to agents, allowing end-users to send SMS chat messages directly to agents without passing through a queue.
-- Feature Configure the ringing timeout for virtual agent transfers to SIP endpoints Twilio users can configure the ringing timeout for outbound calls that virtual agents transfer to SIP endpoints.
-- Feature Custom data-collection forms for chats are available in the web SDK Your human agents and virtual agents can now send custom data-collection forms to end-users using the web SDK.
-
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 140
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Billing depending on which of the following charging models is assigned to your instance: Concurrent agents : the maximum number of concurrent users with the agent role that are signed in during the month period Named agents : the maximum number of users in the instance that have the agent role during the month period Minutes used : the number of minutes that users with the agent role are signed in during the month period Note: Telephony charges are charged according to consumption.
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- Direct queues to a visual message Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Android SDK With the CCAI Platform Android SDK, you can create seamless voice and chat support experiences for users of your Android apps.
-- Instant web calls: Provide visitors with an estimated wait time and automatically initiate an outbound call to a site visitor when their place in the support queue is reached Scheduled calls: Allow site visitors to schedule a time to talk with your support team Queue deflection: Automatically route end users to a message or page on your site Chat support: Provide live chat support directly from your website Proactive triggers : Display a contact bubble for web calls and chats automatically based on visitor behavior.
-
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 68
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- What's next Get started with CCAI Platform Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- Home Documentation AI and ML Google Cloud CCaaS Send feedback CCaaS (CCAI Platform) Stay organized with collections Save and categorize content based on your preferences.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
+- Date and Timestamp Agent Status Summary and Timeline Report Agent statuses, also known as Aux codes, are used to track time spent on different tasks, make agents available for calls or chats, and are used extensively for workforce management.
+- Total Preset SMS Sent: Total number of preset SMS sent by Agents using SMS Blending features like In Call and Wait Time SMS.
+- Total Auto Answered Calls: Total number of interactions that were assigned to Agents via auto answer.
+- Total Custom SMS Sent: Total number of custom SMS sent by Agents using SMS Blending features.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.864Z"
+generated_at: "2026-04-13T22:42:27.189Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "PostgreSQL json_object_keys function"
@@ -9,18 +9,17 @@ latest_feature_date: "2025-03-31"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/spanner"
-  - "https://docs.cloud.google.com/spanner/docs/graph/overview"
+  - "https://docs.cloud.google.com/spanner/docs/information-schema"
+  - "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+  - "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
 keywords:
-  - "postgresql"
-  - "json"
   - "object"
-  - "keys"
-  - "function"
-  - "the"
-  - "is"
+  - "returns"
+  - "postgresql"
   - "generally"
+  - "available"
+  - "keys"
+  - "json"
 ---
 
 # PostgreSQL json_object_keys function
@@ -38,47 +37,52 @@ The PostgreSQL json_object_keys function is generally available in Spanner and r
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions](https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/spanner](https://docs.cloud.google.com/iam/docs/roles-permissions/spanner)
-- [https://docs.cloud.google.com/spanner/docs/graph/overview](https://docs.cloud.google.com/spanner/docs/graph/overview)
+- [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
+- [https://docs.cloud.google.com/spanner/docs/reference/dialect-differences](https://docs.cloud.google.com/spanner/docs/reference/dialect-differences)
+- [https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql](https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql)
 
 ## Supporting Pages
 
-### Supported PostgreSQL functions | Spanner | Google Cloud Documentation
+### "Information schema for GoogleSQL-dialect databases \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions](https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions)
+- URL: [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
 - Source ID: `site-docs-reference`
-- Final score: 122
+- Final score: 151
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Supported PostgreSQL functions Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions Documentation · Databases · Spanner · Reference · Send feedback · This page defines the functions supported for PostgreSQL-dialect databases in Spanner.
-- The content on this page is based on the PostgreSQL documentation, which is available under the PostgreSQL License.
+- Returns empty if the default leader is not set: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . option name = 'default leader' Return information about each index in the user's schema: SELECT t . table schema , t . table name , t . index name , t . parent table name FROM information schema . indexes AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND t . index type != 'PRIMARY KEY' ORDER BY t . table catalog , t . table schema , t . table name , t . index name Returns all the columns that use options other than the default: SELECT t . table schema , t . table name , t . column name , t . option type , t . option value , t . option name FROM information schema . column options AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) Returns the current optimizer related database options: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . schema name = '' AND s . option name IN ( 'optimizer version' , 'optimizer statistics package' ) Returns all available statistics packages: SELECT FROM information schema . spanner statistics ; Return all sequences: SELECT FROM information schema . sequences ; Return all sequence options for the sequence named "MySequence" SELECT FROM information schema . sequence options WHERE name = "MySequence" ; Return the names of all property graphs and their definitions: SELECT property graph name , property graph metadata json FROM information schema . property graphs Return the names of all property graphs together with their labels and properties: SELECT property graph name , property graph metadata json . labels , property graph metadata json . propertyDeclarations FROM information schema . property graphs What's next Learn about available Introspection tools to help you investigate database issues.
+- The PROPERTY GRAPH METADATA JSON column contains a PropertyGraph JSON object defined as the following: JSON object name Field name JSON type Description PropertyGraph catalog string The name of the catalog.
+- GraphElementTable name string The name of the graph element table. kind string Either NODE or EDGE . baseCatalogName string The name of the catalog containing the base table. baseSchemaName string The name of the schema containing the base table. baseTableName string The name of the input table from which elements are created. keyColumns array<string> The column names that constitute the element key. labelNames array<string> The label names attached to this element table. propertyDefinitions array<object> A list of GraphPropertyDefinition objects. dynamicLabelExpr string The name of the column that contains the DYNAMIC LABEL definition. dynamicPropertyExpr string The name of the column that contains the DYNAMIC PROPERTIES definition. sourceNodeTable object A GraphNodeTableReference object.
+- An empty string if unnamed. name string The name of the property graph. nodeTables array<object> A list of GraphElementTable objects for nodes. edgeTables array<object> A list of GraphElementTable objects for edges. labels array<object> A list of GraphElementLabel objects. propertyDeclarations array<object> A list of GraphPropertyDeclaration objects.
 
-### Spanner roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### "Dialect parity between GoogleSQL and PostgreSQL \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/spanner](https://docs.cloud.google.com/iam/docs/roles-permissions/spanner)
-- Source ID: `site-iam-reference`
-- Final score: 58
+- URL: [https://docs.cloud.google.com/spanner/docs/reference/dialect-differences](https://docs.cloud.google.com/spanner/docs/reference/dialect-differences)
+- Source ID: `site-docs-reference`
+- Final score: 141
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Spanner roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/spanner This page lists the IAM roles and permissions for Spanner.
+- SELECT to json(table) FROM table We recommend explicitly mapping each column with the jsonb build object function: WITH singers AS ( SELECT 1::int8 AS id, 'Singer First Name'::text AS first name ) SELECT jsonb build object('id', id, 'first name', first name) FROM singers; ORDER BY … COLLATE … No recommendation available.
+- In the following example, we use CONCAT as our function F : -- Given the following schema CREATE TABLE singers ( singer id BIGINT PRIMARY KEY, first name VARCHAR(1024), last name VARCHAR(1024), singer info BYTEA ); -- Create a hash for each row (using all columns) WITH hashed rows AS ( SELECT , ABS(MOD(spanner.farm fingerprint( CONCAT( singer id::text, first name, last name, singer info::text ) ), 100)) AS hash value FROM singers ) -- Sample data SELECT FROM hashed rows WHERE hash value < 10 -- sample roughly 10% LIMIT 10; / Optional: LIMIT to a max of 10 rows to be returned / VALUE IN UNNEST(ARRAY(...)) Use the equality operator with the ANY function, as shown in the following example: SELECT value = any(array[...]) GoogleSQL dialect function differences GoogleSQL function PostgreSQL dialect recommendation ACOSH Use the formula of the function explicitly, as shown in the following example: SELECT LN(x + SQRT(x x - 1)); APPROX COSINE DISTANCE No recommendation available.
+- WITH amount per year AS ( SELECT 1000 AS amount, 2025 AS year UNION ALL SELECT 10000, 2024 UNION ALL SELECT 500, 2023 UNION ALL SELECT 1500, 2025 UNION ALL SELECT 20000, 2024 ) SELECT SUM(amount) AS max year amount sum FROM amount per year WHERE year = (SELECT MAX(year) FROM amount per year); Informational foreign keys No recommendation available.
+- WITH numbers AS ( SELECT 1::int8 AS a, 9223372036854775807::int8 AS b UNION ALL SELECT 1, 2 ) SELECT CASE WHEN a::numeric - b::numeric > 9223372036854775807 THEN NULL WHEN a::numeric - b::numeric < -9223372036854775808 THEN NULL ELSE a - b END AS result FROM numbers; SAFE.TO JSON No recommendation available.
 
-### Spanner Graph overview | Google Cloud Documentation
+### "Commit timestamps in PostgreSQL-dialect databases \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/graph/overview](https://docs.cloud.google.com/spanner/docs/graph/overview)
+- URL: [https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql](https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql)
 - Source ID: `site-docs-root`
-- Final score: 48
+- Final score: 135
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Spanner Graph overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/graph/overview Documentation · Databases · Spanner · Guides · Send feedback · PostgreSQL interface note: The examples in topics for Spanner Graph are intended for GoogleSQL-dialect databases.
-- Note: This feature is available with the Spanner Enterprise edition and Enterprise Plus edition.
-- Spanner Graph doesn&#x27;t support the PostgreSQL interface.
-- For more information, see the Spanner editions overview.
+- COMMIT TIMESTAMP ) . build ()); } dbClient . write ( mutations ); } Node.js // Imports the Google Cloud client library const { Spanner } = require ( ' @google-cloud/spanner ' ); / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = 'my-project-id'; // const instanceId = 'my-instance'; // const databaseId = 'my-database'; // Creates a client const spanner = new Spanner ({ projectId : projectId , }); // Gets a reference to a Cloud Spanner instance and database const instance = spanner . instance ( instanceId ); const database = instance . database ( databaseId ); // Instantiate Spanner table objects const performancesTable = database . table ( 'Performances' ); const data = [ { SingerId : '1' , VenueId : '4' , EventDate : '2017-10-05' , Revenue : '11000' , LastUpdateTime : 'spanner.commit timestamp()' , }, { SingerId : '1' , VenueId : '19' , EventDate : '2017-11-02' , Revenue : '15000' , LastUpdateTime : 'spanner.commit timestamp()' , }, { SingerId : '2' , VenueId : '42' , EventDate : '2017-12-23' , Revenue : '7000' , LastUpdateTime : 'spanner.commit timestamp()' , }, ]; // Inserts rows into the Singers table // Note: Cloud Spanner interprets Node.js numbers as FLOAT64s, so // they must be converted to strings before being inserted as INT64s try { await performancesTable . insert ( data ); console . log ( 'Inserted data.' ); } catch ( err ) { console . error ( 'ERROR:' , err ); } finally { // Close the database when finished database . close (); } PHP use Google\Cloud\Spanner\SpannerClient; / Inserts sample data into a table with a commit timestamp column.
+- Client () instance = spanner client . instance ( instance id ) database = instance . database ( database id ) with database . snapshot () as snapshot : results = snapshot . execute sql ( "SELECT SingerId, AlbumId, MarketingBudget FROM Albums " "ORDER BY LastUpdateTime DESC" ) for row in results : print ( "SingerId: {} , AlbumId: {} , MarketingBudget: {} " . format ( row )) Ruby project id = "Your Google Cloud project ID" instance id = "Your Spanner instance ID" database id = "Your Spanner database ID" require "google/cloud/spanner" spanner = Google :: Cloud :: Spanner . new project : project id client = spanner . client instance id , database id client . execute ( "SELECT SingerId, AlbumId, MarketingBudget, LastUpdateTime FROM Albums ORDER BY LastUpdateTime DESC" ) . rows . each do row puts " #{ row [ :SingerId ] } #{ row [ :AlbumId ] } #{ row [ :MarketingBudget ] } #{ row [ :LastUpdateTime ] } " end Provide your own value for the commit timestamp column In your code, you can provide your own value for the commit timestamp column instead of passing spanner.commit timestamp() (or the available client library constant) as the column value.
+- ResultSet getters can only be used to retrieve // non null values. resultSet . isNull ( "MarketingBudget" ) ? "NULL" : resultSet . getLong ( "MarketingBudget" ), resultSet . isNull ( "LastUpdateTime" ) ? "NULL" : resultSet . getTimestamp ( "LastUpdateTime" )); } } } Node.js // ... // Imports the Google Cloud client library const { Spanner } = require ( ' @google-cloud/spanner ' ); / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = 'my-project-id'; // const instanceId = 'my-instance'; // const databaseId = 'my-database'; // Creates a client const spanner = new Spanner ({ projectId : projectId , }); // Gets a reference to a Cloud Spanner instance and database const instance = spanner . instance ( instanceId ); const database = instance . database ( databaseId ); const query = { sql : SELECT SingerId, AlbumId, MarketingBudget, LastUpdateTime FROM Albums ORDER BY LastUpdateTime DESC , }; // Queries rows from the Albums table try { const [ rows ] = await database . run ( query ); rows . forEach ( row = > { const json = row . toJSON (); console . log ( SingerId: ${ json .
+- Home Documentation Databases Spanner Guides Send feedback Commit timestamps in PostgreSQL-dialect databases Stay organized with collections Save and categorize content based on your preferences.
 

@@ -1,107 +1,92 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T22:04:50.066Z"
+generated_at: "2026-04-15T13:34:18.672Z"
 product_name: "App Engine standard environment Node.js"
 product_slug: "app-engine-standard-environment-node-js"
 feature_name: "Serverless VPC Access connectors in Shared VPC host projects"
 feature_slug: "serverless-vpc-access-connectors-in-shared-vpc-host-projects"
 latest_feature_date: "2022-03-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/shared-vpc-host-project"
+  - "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc"
   - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc"
-  - "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+  - "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
 keywords:
-  - "host project connectivity"
-  - "Shared VPC host project"
-  - "host project connector"
-  - "App Engine standard connector in shared VPC"
-  - "shared VPC connector"
-  - "Serverless VPC Access connector"
-  - "Shared VPC"
+  - "serverless"
+  - "vpc"
+  - "access"
+  - "connectors"
+  - "shared"
+  - "host"
+  - "projects"
+  - "let"
 ---
 
 # Serverless VPC Access connectors in Shared VPC host projects
 
 Product: App Engine standard environment Node.js
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Serverless VPC Access connectors now support configuration in Shared VPC host projects for App Engine standard environment at general availability.
+Serverless VPC Access connectors in Shared VPC host projects let App Engine use connectors configured in Shared VPC host projects.
 
 ## Extended Definition
 
-Serverless VPC Access connectors now support configuration in Shared VPC host projects for App Engine standard environment at general availability.
+Serverless VPC Access connectors in Shared VPC host projects let App Engine use connectors configured in Shared VPC host projects.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/shared-vpc-host-project](https://docs.cloud.google.com/appengine/docs/standard/nodejs/shared-vpc-host-project)
+- [https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc)
 - [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc)
-- [https://docs.cloud.google.com/appengine/docs/standard/ingress-settings](https://docs.cloud.google.com/appengine/docs/standard/ingress-settings)
+- [https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services](https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services)
 
 ## Supporting Pages
 
-### "Configure connectors in the Shared VPC host project \_|\_ App Engine standard\
+### "Connecting to a Shared VPC network \_|\_ App Engine standard environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/shared-vpc-host-project](https://docs.cloud.google.com/appengine/docs/standard/nodejs/shared-vpc-host-project)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc)
 - Source ID: `site-docs-reference`
-- Final score: 90
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 203
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Go to Google Cloud console dashboard In the menu bar at the top of the dashboard, click the project dropdown menu and select the host project. gcloud Set the default project in the gcloud CLI to the host project by running the following in your terminal: gcloud config set project HOST PROJECT ID Replace the following: HOST PROJECT ID : the ID of the Shared VPC host project Create a Serverless VPC Access connector To send requests to your VPC network and receive the corresponding responses, you must create a Serverless VPC Access connector.
-- Add the vpc access connector to your service's app.yaml file: vpc access connector: name: projects/ HOST PROJECT ID /locations/ REGION /connectors/ CONNECTOR NAME Replace the following: HOST PROJECT ID : the ID of the Shared VPC host project REGION : the region of your connector CONNECTOR NAME : the name of your connector Deploy the service: gcloud app deploy After deploying, your service is able to send requests to your Shared VPC network and receive the corresponding responses.
-- Click Save . gcloud Run the following in your terminal: gcloud projects add-iam-policy-binding HOST PROJECT ID \ --member= PRINCIPAL \ --role=roles/vpcaccess.user Replace the following: HOST PROJECT ID : the ID of the Shared VPC host project PRINCIPAL : the principal that deploys your App Engine service.
-- Click Save . gcloud Run the following in your terminal: gcloud projects add-iam-policy-binding HOST PROJECT ID \ --member= PRINCIPAL \ --role=roles/vpcaccess.viewer Replace the following: HOST PROJECT ID : the ID of the Shared VPC host project PRINCIPAL : the principal who deploys App Engine services.
+- You can either set up connectors in each service project that has standard environment resources that need access to your network, or you can set up shared connectors in the host project.
+- Comparison of configuration methods For Shared VPC, Serverless VPC Access connectors can be configured in two different ways.
+- Host project Advantages of creating connectors in the host project: Centralized network management: Aligns with the Shared VPC model of centralizing network configuration resources in the host project.
+- Security: Allows you to follow the "principle of least privilege." Connectors must be granted access to the resources in your Shared VPC network that they need to reach.
 
 ### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
 - Source ID: `site-docs-reference`
-- Final score: 80
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page provides detailed setup guidance for Serverless VPC Access connectors when used with Shared VPC, including subnet and project placement requirements.
+- Final score: 181
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Terraform You can use a Terraform resource to enable the vpcaccess.googleapis.com API. resource "google project service" "vpcaccess-api" { project = var.project id # Replace this with your project ID in quotes service = "vpcaccess.googleapis.com" } You can use Terraform modules to create a VPC network and subnet and then create the connector. module "test-vpc-module" { source = "terraform-google-modules/network/google" version = " > 16.0" project id = var.project id # Replace this with your project ID in quotes network name = "my-serverless-network" mtu = 1460 subnets = [ { subnet name = "serverless-subnet" subnet ip = "10.10.10.0/28" subnet region = "us-central1" } ] } module "serverless-connector" { source = "terraform-google-modules/network/google//modules/vpc-serverless-connector-beta" version = " > 16.0" project id = var.project id vpc connectors = [{ name = "central-serverless" region = "us-central1" subnet name = module.test-vpc-module.subnets["us-central1/serverless-subnet"].name host project id = var.host project id # Specify a host project id for shared VPC machine type = "e2-standard-4" min instances = 2 max instances = 7 } Uncomment to specify an ip cidr range , { name = "central-serverless2" region = "us-central1" network = module.test-vpc-module.network name ip cidr range = "10.10.11.0/28" subnet name = null machine type = "e2-standard-4" min instances = 2 max instances = 7 } ] depends on = [ google project service.vpcaccess-api ] } Configure your service to use a connector After you have created a Serverless VPC Access connector, you must configure each service in your App Engine app that you want to connect to your VPC network.
 - For Shared VPC users who set up connectors in the Shared VPC host project, you can use the command gcloud compute networks vpc-access connectors describe to list the projects in which there are serverless resources that use a given connector.
-- For more information, see Firewall rules for connectors in standalone VPC networks or Shared VPC host projects .
-- HOST PROJECT ID : the Shared VPC host project ID.
-
-### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc)
-- Source ID: `site-docs-reference`
-- Final score: 58
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
 - Terraform You can use a Terraform resource to enable the vpcaccess.googleapis.com API. resource "google project service" "vpcaccess-api" { project = var.project id # Replace this with your project ID in quotes service = "vpcaccess.googleapis.com" } You can use Terraform modules to create a VPC network and subnet and then create the connector. module "test-vpc-module" { source = "terraform-google-modules/network/google" version = " > 16.0" project id = var.project id # Replace this with your project ID in quotes network name = "my-serverless-network" mtu = 1460 subnets = [ { subnet name = "serverless-subnet" subnet ip = "10.10.10.0/28" subnet region = "us-central1" } ] } module "serverless-connector" { source = "terraform-google-modules/network/google//modules/vpc-serverless-connector-beta" version = " > 16.0" project id = var.project id vpc connectors = [{ name = "central-serverless" region = "us-central1" subnet name = module.test-vpc-module.subnets["us-central1/serverless-subnet"].name host project id = var.host project id # Specify a host project id for shared VPC machine type = "e2-standard-4" min instances = 2 max instances = 7 } Uncomment to specify an ip cidr range , { name = "central-serverless2" region = "us-central1" network = module.test-vpc-module.network name ip cidr range = "10.10.11.0/28" subnet name = null machine type = "e2-standard-4" min instances = 2 max instances = 7 } ] depends on = [ google project service.vpcaccess-api ] } Configure your service to use a connector After you have created a Serverless VPC Access connector, you must configure each service in your App Engine app that you want to connect to your VPC network.
-- For Shared VPC users who set up connectors in the Shared VPC host project, you can use the command gcloud compute networks vpc-access connectors describe to list the projects in which there are serverless resources that use a given connector.
-- For more information, see Firewall rules for connectors in standalone VPC networks or Shared VPC host projects .
-- HOST PROJECT ID : the Shared VPC host project ID.
+- Access to VPC resources Required firewall rules for connectors in service projects If you create a connector in a standalone VPC network or in the host project of a Shared VPC network, Google Cloud creates all necessary firewall rules for the connector's operation.
+- To perform these steps, you must have one of the following roles on the host project: Owner role ( roles/owner ) Compute Security Admin role ( roles/compute.securityAdmin ) Custom Identity and Access Management (IAM) role with the compute.firewalls.create permission enabled For a basic configuration, apply the rules to allow serverless resources in any service project connected to the Shared VPC network to send requests to any resource in the network.
 
-### "Ingress settings \_|\_ App Engine standard environment \_|\_ Google Cloud\
+### "Communicating between your services \_|\_ App Engine standard environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/ingress-settings](https://docs.cloud.google.com/appengine/docs/standard/ingress-settings)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services](https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services)
 - Source ID: `site-docs-reference`
-- Final score: 50
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 146
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Accessing internal services The following considerations apply: For requests from a Shared VPC, traffic is only considered internal if the App Engine app is deployed in the Shared VPC host project.
-- Shared VPC when the App Engine app is deployed in the Shared VPC host project.
-- For requests from other App Engine services or from Cloud Run or Cloud Run functions in the same project, connect the service or function to a VPC network and route all egress through the connector, as described in Connecting to a Shared VPC network .
-- Note that routing all outbound requests to your VPC network increases the amount of egress handled by the Serverless VPC Access connector and can incur charges .
+- Communication between services in different projects You can have private access between Google Cloud projects when apps running in projects belong to a Shared VPC network that is configured to invoke an app running in the Shared VPC network's host project.
+- Route the traffic over a Serverless VPC Access connector : For each App Engine version sending private traffic to other app endpoints, attach the version to a Serverless VPC Access connector belonging to one of the Google Cloud project's own networks, not a Shared VPC network.
+- In the standard environment, attach each client version to a Serverless VPC Access connector on the Shared VPC network.
+- Configure the client app to send all-traffic through the Serverless VPC Access connector, instead of configuring requests to use the private.googleapis.com IP range.
 

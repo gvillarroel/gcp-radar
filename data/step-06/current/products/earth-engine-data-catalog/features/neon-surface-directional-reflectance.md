@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.415Z"
+generated_at: "2026-04-14T15:13:19.444Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "NEON Surface Directional Reflectance"
 feature_slug: "neon-surface-directional-reflectance"
 latest_feature_date: "2024-08-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/satellite-imagery"
   - "https://developers.google.com/earth-engine/datasets/catalog"
-  - "https://developers.google.com/earth-engine/datasets/tags/plant-productivity"
+  - "https://developers.google.com/earth-engine/datasets/tags/highres"
 keywords:
   - "neon"
   - "surface"
@@ -24,7 +24,7 @@ keywords:
 # NEON Surface Directional Reflectance
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,13 +36,13 @@ A NEON hyperspectral surface directional reflectance dataset.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- [https://developers.google.com/earth-engine/datasets/tags/plant-productivity](https://developers.google.com/earth-engine/datasets/tags/plant-productivity)
+- [https://developers.google.com/earth-engine/datasets/tags/highres](https://developers.google.com/earth-engine/datasets/tags/highres)
 
 ## Supporting Pages
 
@@ -50,7 +50,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - Source ID: `site-docs-root-3`
-- Final score: 154
+- Final score: 184
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -63,7 +63,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 138
+- Final score: 168
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -72,16 +72,17 @@ Evidence snippets:
 - The … airborne canopy forest forest-biomass highres lidar NEON Canopy Nitrogen Content (CNC) Modelled canopy nitrogen concentration calibrated with NEON plant foliar chemistry observations and predicted with L1 surface directional reflectance, derived from the NEON Imaging Spectrometer (NIS).
 - This dataset provides a high quality Climate Data Record (CDR) of global infrared measurements from geostationary satellites. … brightness cdr climate infrared noaa reflectance NOAA CDR OISST v02r01: Optimum Interpolation Sea Surface Temperature The NOAA 1/4 degree daily Optimum Interpolation Sea Surface Temperature (OISST) provides complete ocean temperature fields constructed by combining bias-adjusted observations from different platforms (satellite, ships, buoys) on a regular global grid, with gaps filled in by interpolation.
 
-### "Datasets tagged plant-productivity in Earth Engine \_|\_ Earth Engine Data\
+### "Datasets tagged highres in Earth Engine \_|\_ Earth Engine Data Catalog\
 
-- URL: [https://developers.google.com/earth-engine/datasets/tags/plant-productivity](https://developers.google.com/earth-engine/datasets/tags/plant-productivity)
-- Source ID: `site-docs-root-3`
-- Final score: 114
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/earth-engine/datasets/tags/highres](https://developers.google.com/earth-engine/datasets/tags/highres)
+- Source ID: `site-docs-root`
+- Final score: 136
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The PSN value is the difference of … aqua global gpp nasa npp photosynthesis NEON Canopy Nitrogen Content (CNC) Modelled canopy nitrogen concentration calibrated with NEON plant foliar chemistry observations and predicted with L1 surface directional reflectance, derived from the NEON Imaging Spectrometer (NIS).
-- Bands include 1) canopy nitrogen percent, 2) canopy nitrogen model uncertainty, 3) classification result for needle vs. non-needle model and … airborne canopy forest highres hyperspectral neon NOAA CDR AVHRR LAI FAPAR: Leaf Area Index and Fraction of Absorbed Photosynthetically Active Radiation, Version 5 The NOAA Climate Data Record (CDR) of AVHRR Leaf Area Index (LAI) and Fraction of Absorbed Photosynthetically Active Radiation (FAPAR) dataset contains derived values that characterize the canopy and photosynthetic activity of plants.
-- This dataset is derived from the NOAA AVHRR Surface Reflectance product and … avhrr cdr daily fapar lai land NOAA CDR VIIRS LAI FAPAR: Leaf Area Index and Fraction of Absorbed Photosynthetically Active Radiation, Version 1 This Climate Data Record (CDR) combines datasets for Leaf Area Index (LAI) and Fraction of Absorbed Photosynthetically Active Radiation (FAPAR), two biophysical variables that can be used to evaluate vegetation stress, forecast agricultural yields, and other modeling and resource management applications.
-- The PSN value is the difference of … global gpp nasa npp photosynthesis plant-productivity MODIS Gross Primary Production CONUS The MODIS Gross Primary Production (GPP) CONUS dataset estimates GPP using MODIS Surface Reflectance for CONUS.
+- The digital camera is part of a suite of instruments on the NEON Airborne Observation Platform (AOP) that also includes a … airborne forest highres neon neon-prod-earthengine orthophoto NEON Surface Bidirectional Reflectance The NEON AOP Surface Bidirectional Reflectance is a hyperspectral VSWIR (visible to shortwave infrared) data product, containing 426 bands spanning wavelengths from 380 nm to 2510 nm.
+- The … airborne canopy forest forest-biomass highres lidar NEON Canopy Nitrogen Content (CNC) Modelled canopy nitrogen concentration calibrated with NEON plant foliar chemistry observations and predicted with L1 surface directional reflectance, derived from the NEON Imaging Spectrometer (NIS).
+- Bands include 1) canopy nitrogen percent, 2) canopy nitrogen model uncertainty, 3) classification result for needle vs. non-needle model and … airborne canopy forest highres hyperspectral neon NEON Digital Elevation Model (DEM) Digital models of the surface (DSM) and terrain (DTM) derived from NEON LiDAR data.
+- Wavelengths between 1340-1445 nm and 1790-1955 nm are set to … airborne forest highres hyperspectral neon neon-prod-earthengine Planet SkySat Public Ortho Imagery, Multispectral This data from Planet labs Inc.
 

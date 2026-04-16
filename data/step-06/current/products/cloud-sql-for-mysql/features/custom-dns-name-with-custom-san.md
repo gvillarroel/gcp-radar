@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.817Z"
+generated_at: "2026-04-15T11:56:51.892Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "Custom DNS name with custom SAN"
 feature_slug: "custom-dns-name-with-custom-san"
 latest_feature_date: "2025-05-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
   - "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl"
+  - "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
 keywords:
   - "custom"
   - "dns"
   - "name"
-  - "with"
   - "san"
   - "subject"
   - "alternative"
   - "configuration"
+  - "lets"
 ---
 
 # Custom DNS name with custom SAN
 
 Product: Cloud SQL for MySQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ Custom subject alternative name configuration lets instances use custom DNS name
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name](https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name)
 - [https://docs.cloud.google.com/sql/docs/mysql/create-instance](https://docs.cloud.google.com/sql/docs/mysql/create-instance)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- [https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl](https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl)
+- [https://docs.cloud.google.com/sql/docs/mysql/troubleshooting](https://docs.cloud.google.com/sql/docs/mysql/troubleshooting)
 
 ## Supporting Pages
+
+### "Set up a custom DNS name for a Cloud SQL instance \_|\_ Cloud SQL for MySQL\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name](https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name)
+- Source ID: `site-docs-reference-3`
+- Final score: 223
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following sample also creates prerequisite resources for the new instance. resource "google project service identity" "default" { provider = google-beta service = "sqladmin.googleapis.com" } resource "random string" "default" { length = 10 special = false upper = false } resource "google privateca ca pool" "default" { name = "customer-ca-pool-${random string.default.result}" location = "asia-northeast1" tier = "DEVOPS" publishing options { publish ca cert = false publish crl = false } } This is required for setting up customer managed CAS (Certificate Authority Service) instances. resource "google privateca certificate authority" "default" { pool = google privateca ca pool.default.name certificate authority id = "my-certificate-authority" location = "asia-northeast1" lifetime = "86400s" type = "SELF SIGNED" deletion protection = false # set to "true" in production skip grace period = true ignore active certificates on deletion = true config { subject config { subject { organization = "my organization" common name = "my certificate authority name" } } x509 config { ca options { is ca = true } key usage { base key usage { cert sign = true crl sign = true } extended key usage { server auth = false } } } } key spec { algorithm = "RSA PKCS1 4096 SHA256" } } resource "google privateca ca pool iam member" "default" { ca pool = google privateca ca pool.default.id role = "roles/privateca.certificateRequester" member = "serviceAccount:${google project service identity.default.email}" } resource "google sql database instance" "default" { name = "mysql-instance" region = "asia-northeast1" database version = "MYSQL 8 4" settings { edition = "ENTERPRISE" tier = "db-f1-micro" ip configuration { The following server CA mode lets the instance use customer-managed CAS CA to issue server certificates. https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances#ipconfiguration server ca mode = "CUSTOMER MANAGED CAS CA" server ca pool = google privateca ca pool.default.id custom subject alternative names = ["customSan.test.com"] } } } Add or update custom SAN values for an instance To add or update custom SAN values for an existing instance, do the following: gcloud gcloud sql instances patch INSTANCE NAME \ --custom-subject-alternative-names = CUSTOM DNS NAME Caution : If you're updating an instance that already has custom SAN values, then specify the existing custom SAN values or the existing values will be replaced.
+- Terraform To update an instance that already has custom SAN values, use a Terraform resource . resource "google sql database instance" "default" { name = "mysql-instance" region = "asia-northeast1" database version = "MYSQL 8 4" settings { edition = "ENTERPRISE" tier = "db-f1-micro" ip configuration { The following server CA mode lets the instance use customer-managed CAS CA to issue server certificates. https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances#ipconfiguration server ca mode = "CUSTOMER MANAGED CAS CA" server ca pool = google privateca ca pool.default.id custom subject alternative names = ["customSan.test.com"] } } } Caution : If you're updating an instance that already has custom SAN values, then specify the existing custom SAN values or the existing values will be replaced.
+- Create an instance with custom SAN values To create an instance with custom SAN values, use the following gcloud sql instances create command: gcloud gcloud sql instances create " INSTANCE NAME " \ --database-version = DATABASE VERSION \ --project = PROJECT ID \ --region = REGION \ --server-ca-mode = CUSTOMER MANAGED CAS CA \ --server-ca-pool = projects/ PROJECT ID CAS /locations/ REGION /caPools/ CA POOL ID --custom-subject-alternative-names = CUSTOM DNS NAME Make the following replacements: INSTANCE NAME with the name of the Cloud SQL instance that you want to create.
+- Clear all custom SAN values from an instance To clear all custom SAN values from an instance, do the following: gcloud gcloud sql instances patch INSTANCE NAME \ --clear-custom-subject-alternative-names Replace INSTANCE NAME with the name of the Cloud SQL instance that you want to update.
 
 ### Create instances \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sql/docs/mysql/create-instance](https://docs.cloud.google.com/sql/docs/mysql/create-instance)
-- Source ID: `site-docs-root`
-- Final score: 170
+- Source ID: `site-docs-reference-3`
+- Final score: 161
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { "name": " INSTANCE ID ", "region": " REGION ", "databaseVersion": " DATABASE VERSION ", "settings": { "tier": " MACHINE TYPE ", "edition": " EDITION TYPE ", "dataCacheConfig" { "dataCacheEnabled": DATA CACHE ENABLED }, "backupConfiguration": { "binaryLogEnabled": true, "enabled": true }, "passwordValidationPolicy": { "enablePasswordPolicy": true "minLength": " MIN LENGTH ", "complexity": COMPLEXITY DEFAULT, "reuseInterval": " REUSE INTERVAL ", "disallowUsernameSubstring": " DISALLOW USERNAME SUBSTRING ", }, "ipConfiguration": { "privateNetwork": " PRIVATE NETWORK ", "authorizedNetworks": [ AUTHORIZED NETWORKS ], "ipv4Enabled": false, "enablePrivatePathForGoogleCloudServices": true, "serverCaMode": " CA MODE ", "serverCertificateRotationMode": " SERVER CERTIFICATE ROTATION MODE ", "customSubjectAlternativeNames": " DNS NAMES " }, "dataApiAccess": "ALLOW DATA API" }, "sqlNetworkArchitecture": "NEW NETWORK ARCHITECTURE" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 - HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { "name": " INSTANCE ID ", "region": " REGION ", "databaseVersion": " DATABASE VERSION ", "settings": { "tier": " MACHINE TYPE ", "edition": " EDITION TYPE ", "dataCacheConfig": { "dataCacheEnabled": DATA CACHE ENABLED }, "backupConfiguration": { "binaryLogEnabled": true, "enabled": true }, "passwordValidationPolicy": { "enablePasswordPolicy": true "minLength": " MIN LENGTH ", "complexity": COMPLEXITY DEFAULT, "reuseInterval": " REUSE INTERVAL ", "disallowUsernameSubstring": " DISALLOW USERNAME SUBSTRING " }, "ipConfiguration": { "privateNetwork": " PRIVATE NETWORK ", "authorizedNetworks": [ AUTHORIZED NETWORKS ], "ipv4Enabled": false, "enablePrivatePathForGoogleCloudServices": true, "serverCaMode": " CA MODE ", "serverCertificateRotationMode": " SERVER CERTIFICATE ROTATION MODE ", "customSubjectAlternativeNames": " DNS NAMES " }, "dataApiAccess": "ALLOW DATA API" }, "sqlNetworkArchitecture": "NEW NETWORK ARCHITECTURE" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 - Custom SAN Add a custom subject alternative name (SAN) --custom-subject-alternative-names= DNS NAMES If you want to use a custom DNS name to connect to a Cloud SQL instance instead of using an IP address, then configure the custom subject alternative name (SAN) setting while creating the instance.
-- The custom DNS name that you insert into the custom SAN setting is added to the SAN field of the server certificate of the instance.
+- This lets you use the custom DNS name with hostname validation securely.
 
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
+### Troubleshoot \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/troubleshooting](https://docs.cloud.google.com/sql/docs/mysql/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 164
+- Final score: 139
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Cloud SQL for PostgreSQL Feature You can now use a custom DNS name to connect to your Cloud SQL instances by adding a custom subject alternative name (SAN) to your Cloud SQL instances.
-- Cloud SQL for SQL Server Feature You can now use a custom DNS name to connect to your Cloud SQL instances by adding a custom subject alternative name (SAN) to your Cloud SQL instances.
-- Feature You can now use a custom DNS name to connect to your Cloud SQL instances by adding a custom subject alternative name (SAN) to your Cloud SQL instances.
-- May 02, 2025 Cloud SQL for MySQL Feature You can now set up custom DNS names by configuring the custom subject alternative name (SAN) for your instance.
-
-### "Authorize with SSL/TLS certificates \_|\_ Cloud SQL for MySQL \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl](https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl)
-- Source ID: `site-iam-reference`
-- Final score: 148
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Subject Alternative Name (SAN) field in server certificates The SAN field contains the hostname (DNS name of the instance) only for instances enabled with Private Service Connect .
-- The SAN field contains the hostname (DNS name of the instance) for all types of instances.
-- The SAN field contains the hostname (DNS name of the instance) for all types of instances.
-- Feature Per-instance CA Shared CA Customer-managed CA CA structure Separate CA for each instance Root CA and subordinate CAs shared across instances in the same region CA hierarchy that you create and manage Cryptographic attributes RSA 2048-bit key with SHA256 algorithm Elliptic Curve Digital Signature Algorithm (ECDSA) with 384-bit key with SHA384 algorithm Elliptic Curve Digital Signature Algorithm (ECDSA) with 384-bit key with SHA384 algorithm CA validity period 10 years 25 years for root CA and 10 years for subordinate CAs Configurable Server certificate validity period 10 years 1 year 1 year User-initiated rotation of CA?
+- Error message: More than 3 subject alternative names are not allowed.
+- Error message: Subject alternative names %s is too long.
+- Error message: Subject alternative name %s is invalid.
+- You're trying to use a custom SAN to add more than three DNS names to the server certificate of a Cloud SQL instance.
 

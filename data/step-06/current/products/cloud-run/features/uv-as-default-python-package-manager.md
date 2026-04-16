@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.889Z"
+generated_at: "2026-04-14T15:34:54.403Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "uv as default Python package manager"
 feature_slug: "uv-as-default-python-package-manager"
 latest_feature_date: "2025-12-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient"
-  - "https://docs.cloud.google.com/run/docs/release-notes"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-streamlit-service"
 keywords:
-  - "uv"
-  - "as"
-  - "default"
-  - "python"
   - "package"
   - "manager"
-  - "the"
-  - "run"
+  - "uses"
+  - "buildpack"
+  - "default"
+  - "python"
 ---
 
 # uv as default Python package manager
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +36,55 @@ The Cloud Run Python buildpack uses uv as the default package installer for Pyth
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-streamlit-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-streamlit-service)
 
 ## Supporting Pages
 
-### "Class JobsAsyncClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
+### Quickstart: Deploy a Python (Gradio) web app to Google Cloud with Cloud Run | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 208
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample get iam policy(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample set iam policy(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 async def sample create job(): Create a client client = run v2 .
-
-### "Class ServicesAsyncClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 208
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 154
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample get iam policy(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample set iam policy(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 async def sample create service(): Create a client client = run v2 .
+- For more information on how the Python buildpack determines the default entrypoint for Cloud Run source deployments, see Build a Python application .
+- AI use cases in Cloud Run Get started Overview Deploy a sample web service Deploy a sample container Deploy from a git repository Deploy a Hello World service from source code Go Node.js Python Flask FastAPI Gradio LangChain Smolagents Streamlit Agent Development Kit (ADK) for Python Java Kotlin C# C++ PHP Ruby Other Frameworks Overview Angular SSR Next.js Nuxt.js SvelteKit Deploy a sample function Deploy a function using the console Deploy a function using gcloud Execute a sample job Execute a job Execute a job from source code Go Node.js Python Java Shell Deploy a sample worker pool Develop Set up your environment Plan and prepare your service Develop your service Containerize your code Connect to Google Cloud services Install a system package in your container Run gcloud commands within your container Plan and prepare your function Overview Compare Cloud Run functions Write Cloud Run functions Runtimes Overview Node.js Overview Node.js dependencies Python Overview Python dependencies Go Overview Go dependencies Java Overview Java dependencies .NET Ruby PHP Local functions development Function triggers Tutorials Create a function that returns BigQuery results Create a function that returns Spanner results Integrate with Cloud databases Codelabs Build and test Build sources to containers Build functions to containers Local testing Serve HTTP requests Deploy services Deploy container images Continuous deployment from git Deploy from source code Deploy from Compose Deploy functions Serve web traffic Mapping custom domains Serving static assets with CDN Serving traffic from multiple regions Deploy a multi-region app with service health Enable session affinity Frontend proxying using Nginx Manage services View, copy, or delete services View or delete revisions Traffic migration, gradual rollouts, rollbacks Configure services Overview Capacity Memory limits CPU limits GPU GPU configuration GPU performance best practices Request timeout Maximum concurrent requests About maximum concurrent requests per instance Configure maximum concurrent requests Billing Optimize service configurations with Recommender Environment Container port and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes CIFS/SMB Execution environment Container health checks HTTP/2 requests Secrets Service identity Scaling About instance autoscaling for services Maximum instances About maximum instances for services Configure maximum instances Minimum instances Manual scaling Metadata Description Labels Tags Source deploy configurations Supported language runtimes and base images Configure automatic base image updates Build environment variables Build service account Build worker pools Invoke and trigger services Invoke with HTTPS requests Host a webhook target Stream with WebSockets Overview Build a WebSocket Chat service tutorial Invoke asynchronously Invoke services on a schedule Create a workflow Invoke services as part of a Workflow Connect a series of services from Cloud Functions and Cloud Run tutorial Execute asynchronous tasks Call a service from a Pub/Sub push subscription Trigger service from Pub/Sub Integrate image processing into Pub/Sub sample tutorial Trigger from events Create triggers with Eventarc Pub/Sub triggers Create Pub/Sub Eventarc triggers Trigger functions from Pub/Sub using Eventarc Trigger functions from routed log entries Cloud Storage triggers Create triggers with Cloud Storage Trigger services from Cloud Storage using Eventarc Trigger functions from Cloud Storage using Eventarc Firestore triggers Create triggers with Firestore Trigger functions from events in a Firestore database Connect with other services using gRPC Best practices General development tips for services Cost optimization Optimize Java services Optimize Python services Optimize Node.js services Load testing best practices Understand zonal redundancy Functions best practices Overview Configure event-driven function retries Execute job tasks to completion Create jobs Execute jobs Execute jobs Execute scheduled jobs Execute jobs from Workflows Configure jobs Container entrypoint CPU limits Memory limits GPU GPU configuration GPU best practices Environment variables Container health checks Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Labels Maximum retries Parallelism Secrets Service identity Task timeout Tags Manage jobs View or delete jobs View or stop job executions Best practices Jobs retries and checkpoints Cost optimization Perform continuous background work Deploy worker pools Deploy worker pools Deploy worker pools from source code Manage worker pools View or delete worker pools View or delete worker pool revisions Instance splits and rollbacks Configure worker pools Capacity Memory limits CPU limits GPU GPU configuration GPU best practices Environment Container and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Container health checks Secrets Service identity Instance count Metadata Description Labels Scale based on external metrics Autoscale worker pools with external metrics Kafka autoscaler Host GitHub runners with worker pools Autoscale worker pools based on Prometheus metrics Autoscale worker pools with Pub/Sub pull subscriptions Automate scaling with Workflows Cost optimization Configure networking Best practices for Cloud Run networking Configure private networking Send traffic to VPC network Overview Direct VPC Register private IPs for worker pools using Cloud DNS Dual-stack (IPv4 and IPv6) Migrate standard VPC connector to Direct VPC VPC connectors Send traffic to Shared VPC network Overview Direct VPC Migrate Shared VPC connector to Direct VPC Connectors in service projects Connectors in host project Static outbound IP address Network security Restrict endpoint ingress (services) Use VPC Service Controls (VPC SC) Cloud Service Mesh Secure Security design overview Authenticate requests Overview Allow public access Custom audiences Authenticate developers Service-to-service Authenticate users End user authentication tutorial Secure your resources Access control with IAM Configure IAP for Cloud Run Introduction to service identity Protect services with Cloud Armor Use Binary Authorization Use Cloud Run Threat Detection Use customer managed encryption keys Manage custom constraints for projects View software supply chain security insights Secure Cloud Run services tutorial Multi-tenant platforms running untrusted code Monitor and log Monitoring and logging overview View built-in metrics Write Prometheus metrics Write OpenTelemetry metrics Log and view logs Audit logging Error reporting Use distributed tracing for services Run AI solutions Overview Explore resources AI agents Overview Build and deploy A2A agents Overview Deploy A2A agents Build and deploy ADK agents Build and deploy n8n agents MCP servers Overview Build and deploy a remote MCP server Tools Code execution Browser automation Inference with GPUs Overview Services Run LLM inference on Cloud Run GPUs with Ollama Run agents with Gemma 4 models on Cloud Run Run LLM inference on Cloud Run GPUs with vLLM Run OpenCV on Cloud Run with GPU acceleration Run LLM inference on Cloud Run GPUs with Hugging Face Transformers.js Run LLM inference on Cloud Run GPUs with Hugging Face TGI Jobs Fine tune LLMs using GPUs with Cloud Run jobs Run batch inference using GPUs with Cloud Run jobs GPU-accelerated video transcoding with FFmpeg AI-assisted development and vibe coding Introduction to Cloud Run for AI-assisted developers Cookbook Migrate An existing web service From App Engine From Cloud Run functions (1st gen) From AWS Lambda From Heroku From Cloud Foundry Migration overview Choose an OCI-compliant-strategy Migrate to OCI containers Migrate configuration Sample migration: Spring Music From VMWare Tanzu From a VM using Migrate to Containers From Kubernetes To GKE Troubleshoot Introduction Troubleshoot errors Local troubleshooting tutorial Known issues Samples All Cloud Run code samples All Cloud Run functions code samples Code samples for all products AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application hosting Cloud Run Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Grant the Cloud Build service account access to your project Cloud Build automatically uses the Compute Engine default service account as the default Cloud Build service account to build your source code and Cloud Run resource, unless you override this behavior.
+- Quickstart: Deploy a Python (Gradio) web app to Google Cloud with Cloud Run | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Cloud Run Start free Overview Guides Reference Samples Resources Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Cloud Run resource model Container runtime contract Use cases Is my app a good fit for a Cloud Run service?
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### "Quickstart: Deploy a Python (FastAPI) web app to Google Cloud with Cloud\
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service)
+- Source ID: `site-docs-reference-2`
+- Final score: 150
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Starting from Python version 3.14 and later, the Python buildpack uses the uv package manager as the default installer for the dependencies you specify in your requirements.txt file.
-- Starting from Python version 3.14 and later, the Python buildpack uses the uv package manager as the default installer for the dependencies you specify in your requirements.txt file.
-- You can also use pip as the default installer for these versions by setting the GOOGLE PYTHON PACKAGE MANAGER environment variable to pip .
-- You can also use pip as the default installer for these versions by setting the GOOGLE PYTHON PACKAGE MANAGER environment variable to pip .
+- For more information on how the Python buildpack determines the default entrypoint for Cloud Run source deployments, see Build a Python application .
+- Grant the Cloud Build service account access to your project Cloud Build automatically uses the Compute Engine default service account as the default Cloud Build service account to build your source code and Cloud Run resource, unless you override this behavior.
+- Write the sample application To write an application in Python: Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named main.py and paste the following code into it: from fastapi import FastAPI app = FastAPI () @app . get ( "/" ) def hello ( name : str = "World" ): """Return a friendly HTTP greeting.""" return { "message" : f "Hello { name } !" } This code creates a web service that responds to HTTP GET requests.
+- If you're using the Compute Engine default service account as the Cloud Build service account, then use the following format for the service account email address: PROJECT NUMBER -compute@developer.gserviceaccount.com Replace PROJECT NUMBER with your Google Cloud project number.
+
+### "Quickstart: Deploy a Python (Streamlit) web app to Google Cloud with Cloud\
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-streamlit-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-streamlit-service)
+- Source ID: `site-docs-reference-2`
+- Final score: 150
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information on how the Python buildpack determines the default entrypoint for Cloud Run source deployments, see Build a Python application .
+- Grant the Cloud Build service account access to your project Cloud Build automatically uses the Compute Engine default service account as the default Cloud Build service account to build your source code and Cloud Run resource, unless you override this behavior.
+- Write the sample application To write an application in Python: Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named main.py and paste the following code into it: import streamlit as st st . title ( "Hello World! 👋🌎" ) st . markdown ( """ This is a demo Streamlit app.
+- If you're using the Compute Engine default service account as the Cloud Build service account, then use the following format for the service account email address: PROJECT NUMBER -compute@developer.gserviceaccount.com Replace PROJECT NUMBER with your Google Cloud project number.
 

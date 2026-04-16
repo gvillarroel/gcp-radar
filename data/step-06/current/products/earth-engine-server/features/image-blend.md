@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:22:38.431Z"
+generated_at: "2026-04-14T17:27:28.119Z"
 product_name: "Earth Engine Server"
 product_slug: "earth-engine-server"
 feature_name: "Image.blend()"
 feature_slug: "image-blend"
 latest_feature_date: "2017-09-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/docs/release-notes"
   - "https://developers.google.com/earth-engine/guides/best_practices"
-  - "https://developers.google.com/earth-engine/guides/getstarted"
+  - "https://developers.google.com/earth-engine/guides/landsat"
+  - "https://developers.google.com/earth-engine/guides/arrays_array_images"
 keywords:
   - "image"
   - "blend"
@@ -26,7 +26,7 @@ keywords:
 # Image.blend()
 
 Product: Earth Engine Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ Performs simple alpha blending between two images.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
 - [https://developers.google.com/earth-engine/guides/best_practices](https://developers.google.com/earth-engine/guides/best_practices)
-- [https://developers.google.com/earth-engine/guides/getstarted](https://developers.google.com/earth-engine/guides/getstarted)
+- [https://developers.google.com/earth-engine/guides/landsat](https://developers.google.com/earth-engine/guides/landsat)
+- [https://developers.google.com/earth-engine/guides/arrays_array_images](https://developers.google.com/earth-engine/guides/arrays_array_images)
 
 ## Supporting Pages
-
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 124
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- October 10, 2017 Earth Engine Data Catalog Feature Added HYCOM/GLBu0 08/sea surface elevation (no longer available) Added UMD/hansen/global forest change 2016 v1 4 (no longer available) October 03, 2017 Earth Engine Data Catalog Feature Added HYCOM/GLBu0 08/sea temp salinity (no longer available) Added HYCOM/GLBu0 08/sea water velocity (no longer available) Added LANDSAT/LE07/C01/T1 SR (no longer available) Added LANDSAT/LT04/C01/T1 SR (no longer available) Added LANDSAT/LT05/C01/T1 SR (no longer available) September 19, 2017 Earth Engine Data Catalog Feature Added LANDSAT COPY/LC8 (no longer available) Added LANDSAT COPY/LC8 L1T (no longer available) Added LANDSAT COPY/LE7 (no longer available) Added LANDSAT COPY/LE7 L1T (no longer available) Added LANDSAT COPY/LM1 (no longer available) Added LANDSAT COPY/LM1 L1T (no longer available) Added LANDSAT COPY/LM2 (no longer available) Added LANDSAT COPY/LM2 L1T (no longer available) Added LANDSAT COPY/LM3 (no longer available) Added LANDSAT COPY/LM3 L1T (no longer available) Added LANDSAT COPY/LM4 (no longer available) Added LANDSAT COPY/LM4 L1T (no longer available) Added LANDSAT COPY/LM5 (no longer available) Added LANDSAT COPY/LM5 L1T (no longer available) Added LANDSAT COPY/LT4 (no longer available) Added LANDSAT COPY/LT4 L1T (no longer available) Added LANDSAT COPY/LT5 (no longer available) Added LANDSAT COPY/LT5 L1T (no longer available) September 18, 2017 Earth Engine Server Feature Added Image.blend() to do simple alpha blending between two images.
-- Changed the ee.Algorithms.CrossCorrelation algorithm to accept a value of 0 for the maxGap parameter, to allow for a direct computation of correlation scores between two images.
-- Added ee.Array.dotProduct() and ee.Image.arrayDotProduct() algorithms to compute the dot product between two 1-D arrays of equal length.
-- August 08, 2017 Earth Engine Data Catalog Feature Added LANDSAT/LT05/C01/T1 (no longer available) Added LANDSAT/LT05/C01/T1 TOA (no longer available) Added LANDSAT/LT05/C01/T2 (no longer available) Added LANDSAT/LT05/C01/T2 TOA (no longer available) Added USDOS/LSIB SIMPLE/2017 : LSIB 2017: Large Scale International Boundary Polygons, Simplified August 01, 2017 Earth Engine Data Catalog Feature Added NASA/OCEANDATA/SeaWiFS/L3SMI : Ocean Color SMI: Standard Mapped Image SeaWiFS Data Added WCMC/WDPA/current/points : WDPA: World Database on Protected Areas (points) Added WCMC/WDPA/current/polygons : WDPA: World Database on Protected Areas (polygons) July 25, 2017 Earth Engine Data Catalog Feature Added NOAA/CDR/PATMOSX/V53 : NOAA CDR PATMOSX: Cloud Properties, Reflectance, and Brightness Temperatures, Version 5.3 July 18, 2017 Earth Engine Data Catalog Feature Added MODIS/006/MOD08 M3 (no longer available) Added MODIS/006/MYD08 M3 (no longer available) July 06, 2017 Earth Engine Server Feature Added ee.Classifier.gmoLinearRegression() , a regularizing linear regression classifier.
 
 ### Coding Best Practices \_|\_ Google Earth Engine \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/guides/best_practices](https://developers.google.com/earth-engine/guides/best_practices)
 - Source ID: `site-docs-root`
-- Final score: 64
+- Final score: 61
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Image ( 'JAXA/ALOS/AW3D30 V1 1' ); // Make a simple binary layer from a threshold on elevation. var mask = aw3d30 . select ( 'AVE' ). gt ( 300 ); Map . setCenter ( - 122.0703 , 37.3872 , 11 ); Map . addLayer ( mask , {}, 'mask' ); // Distance in pixel units. var distance = mask . fastDistanceTransform (). sqrt (); // Threshold on distance (three pixels) for a dilation. var dilation = distance . lt ( 3 ); Map . addLayer ( dilation , {}, 'dilation' ); // Do the reverse for an erosion. var notDistance = mask . not (). fastDistanceTransform (). sqrt (); var erosion = notDistance . gt ( 3 ); Map . addLayer ( erosion , {}, 'erosion' ); Use the optimizations in reduceNeighborhood() If you need to perform a convolution and can't use fastDistanceTransform() , use the optimizations in reduceNeighborhood() . var l8raw = ee .
 - Filter . lt ( 'CLOUDY PIXEL PERCENTAGE' , 1 )) . aside ( print ) // Useful for debugging. . map ( reduceFunction ) . reduce ( 'mean' ) . rename ( bands ); var viz = { bands : bands , min : 0 , max : 10000 }; Map . addLayer ( reasonableComputation , viz , 'reasonableComputation' ); Use updateMask() instead of mask() The difference between updateMask() and mask() is that the former does a logical and() of the argument (the new mask) and the existing image mask whereas mask() simply replaces the image mask with the argument.
-- ImageCollection ( 'LANDSAT/LC08/C02/T1 L2' ) . map ( prepSrL8 ); // Create two annual cloud-free composites. var composite1 = collection . filterDate ( '2015-01-01' , '2015-12-31' ). median (); var composite2 = collection . filterDate ( '2017-01-01' , '2017-12-31' ). median (); // We want a strtatified sample of this stack. var stack = composite1 . addBands ( composite2 ) . float (); // Export the smallest size possible. // Export the image.
 - FeatureCollection ( "USDOS/LSIB SIMPLE/2017" ); // Time series of images. var mod13a1 = ee .
+- Polygon ( [[[ - 48.86726050085349 , - 3.0475996402515717 ], [ - 48.86726050085349 , - 3.9248707849303295 ], [ - 47.46101050085349 , - 3.9248707849303295 ], [ - 47.46101050085349 , - 3.0475996402515717 ]]], null , false ); // Forest loss in 2016, to stratify a sample. var loss = image . select ( 'lossyear' ); var loss16 = loss . eq ( 16 ). rename ( 'loss16' ); // Scales and masks Landsat 8 surface reflectance images. function prepSrL8 ( image ) { var qaMask = image . select ( 'QA PIXEL' ). bitwiseAnd ( parseInt ( '11111' , 2 )). eq ( 0 ); var opticalBands = image . select ( 'SR B.' ). multiply ( 0.0000275 ). add ( - 0.2 ); var thermalBands = image . select ( 'ST B. ' ). multiply ( 0.00341802 ). add ( 149.0 ); return image . addBands ( opticalBands , null , true ) . addBands ( thermalBands , null , true ) . updateMask ( qaMask ); } var collection = ee .
 
-### "Get Started with Earth Engine \_|\_ Google Earth Engine \_|\_ Google for\
+### Landsat Algorithms \_|\_ Google Earth Engine \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/guides/getstarted](https://developers.google.com/earth-engine/guides/getstarted)
+- URL: [https://developers.google.com/earth-engine/guides/landsat](https://developers.google.com/earth-engine/guides/landsat)
+- Source ID: `site-docs-reference`
+- Final score: 61
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Landsat . simpleCloudScore ( cloudy scene ) Create a mask from the cloud score and combine it with the image mask. mask = scored . select ([ 'cloud' ]) . lte ( 20 ) Apply the mask to the image and display the result. masked = cloudy scene . updateMask ( mask ) m . add layer ( masked , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 0.4 }, 'masked' ) m If you run this example in the Code Editor, try toggling the visibility of the TOA layers to compare the difference between the masked and unmasked imagery. (See the Layer Manager section of the Code Editor docs for instructions on how to do that).
+- Landsat . simpleCloudScore ( cloudy scene ); // Create a mask from the cloud score and combine it with the image mask. var mask = scored . select ([ 'cloud' ]). lte ( 20 ); // Apply the mask to the image and display the result. var masked = cloudy scene . updateMask ( mask ); Map . addLayer ( masked , { bands : [ 'B4' , 'B3' , 'B2' ], max : 0.4 }, 'masked' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a cloudy Landsat scene and display it. cloudy scene = ee .
+- Map () m . set center ( - 122.3578 , 37.7726 , 10 ) m . add layer ( composite , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 128 }, 'TOA composite' ) m . add layer ( custom composite , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 128 }, 'Custom TOA composite' , ) m Note that the input to the simple composite is a collection of raw imagery.
+- ImageCollection ( 'LANDSAT/LC09/C02/T1 L2' ) Simple cloud score For scoring Landsat pixels by their relative cloudiness, Earth Engine provides a rudimentary cloud scoring algorithm in the ee.Algorithms.Landsat.simpleCloudScore() method. (For details on the implementation, see this Code Editor sample script ).
+
+### Arrays and Array Images \_|\_ Google Earth Engine \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/arrays_array_images](https://developers.google.com/earth-engine/guides/arrays_array_images)
 - Source ID: `site-docs-root`
-- Final score: 60
+- Final score: 59
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For example, compute the difference between Normalized Difference Vegetation Index (NDVI) images 20 years apart: Code Editor (JavaScript) // This function gets NDVI from Landsat 5 imagery. var getNDVI = function ( image ) { return image . normalizedDifference ([ 'B4' , 'B3' ]); }; // Load two Landsat 5 images, 20 years apart. var image1 = ee .
-- Continuing the image differencing example, use a mask to display areas of increased and decreased NDVI over the difference interval: // This function gets NDVI from Landsat 5 imagery . var getNDVI = function ( image ) { return image . normalizedDifference ([ 'B4' , 'B3' ]); }; // Load two Landsat 5 images , 20 years apart . var image1 = ee .
-- Landsat . simpleCloudScore ( image ). select ([ 'cloud' ]); return image . updateMask ( clouds . lt ( 10 )); }; // Load a Landsat collection, map the NDVI and cloud masking functions over it. var collection = ee .
-- The two most fundamental geographic data structures in Earth Engine are Image (raster) and Feature (vector), which can be organized into ImageCollection and FeatureCollection respectively.
+- Image ( coefficients ) . matrixMultiply ( arrayImage2D ) // Get rid of the extra dimensions. . arrayProject ([ 0 ]) . arrayFlatten ( [[ 'brightness' , 'greenness' , 'wetness' , 'fourth' , 'fifth' , 'sixth' ]]); // Display the first three bands of the result and the input imagery. var vizParams = { bands : [ 'brightness' , 'greenness' , 'wetness' ], min : - 0.1 , max : [ 0.5 , 0.1 , 0.1 ] }; Map . setCenter ( - 122.3 , 37.562 , 10 ); Map . addLayer ( image , { bands : [ 'B5' , 'B4' , 'B3' ], min : 0 , max : 0.5 }, 'image' ); Map . addLayer ( componentsImage , vizParams , 'components' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Define an Array of Tasseled Cap coefficients. coefficients = ee .
+- Map . setCenter ( - 122.3 , 37.562 , 10 ); Map . addLayer ( image , { bands : [ 'B5' , 'B4' , 'B3' ], min : 0 , max : 0.5 }, 'image' ); Map . addLayer ( greennessImage , { min : - 0.1 , max : 0.13 }, 'greenness' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Get the result from the 1x1 array in each pixel of the 2-D array image. greenness image = greenness array image . arrayGet ([ 0 , 0 ]) Display the input imagery with the greenness result. m = geemap .
+- Image ( 'LANDSAT/LC08/C02/T1 TOA/LC08 044034 20140318' ) . select ([ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ]); // Make an Array Image, with a 1-D Array per pixel. var arrayImage1D = image . toArray (); // Make an Array Image with a 2-D Array per pixel, 6x1. var arrayImage2D = arrayImage1D . toArray ( 1 ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a Landsat 8 image, select the bands of interest. image = ee .
+- Image ( 'LANDSAT/LC08/C02/T1 TOA/LC08 044034 20140318' ) . select ( [ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ] ) Make an Array Image, with a 1-D Array per pixel. array image 1d = image . toArray () Make an Array Image with a 2-D Array per pixel, 6x1. array image 2d = array image 1d . toArray ( 1 ) In this example, note that toArray() converts image to an array image in which each pixel is a 1-D vector, the entries of which correspond to the 6 values at the corresponding positions in the bands of image .
 

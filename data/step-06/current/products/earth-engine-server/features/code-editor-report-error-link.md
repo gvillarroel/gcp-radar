@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:22:38.414Z"
+generated_at: "2026-04-14T17:27:28.050Z"
 product_name: "Earth Engine Server"
 product_slug: "earth-engine-server"
 feature_name: "Code Editor Report error link"
 feature_slug: "code-editor-report-error-link"
 latest_feature_date: "2020-11-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/docs/release-notes"
   - "https://developers.google.com/earth-engine/help"
+  - "https://developers.google.com/earth-engine/guides/debugging"
   - "https://developers.google.com/earth-engine/guides/playground"
 keywords:
   - "code"
@@ -19,14 +19,14 @@ keywords:
   - "error"
   - "link"
   - "adds"
-  - "to"
   - "errors"
+  - "make"
 ---
 
 # Code Editor Report error link
 
 Product: Earth Engine Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,50 +38,51 @@ Adds a Report error link to Code Editor errors to make feedback submission easie
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
 - [https://developers.google.com/earth-engine/help](https://developers.google.com/earth-engine/help)
+- [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
 - [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
 
 ## Supporting Pages
 
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
+### Debugging guide \_|\_ Google Earth Engine \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 160
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
+- Source ID: `site-docs-root`
+- Final score: 167
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Added a "Report error" link to errors in the Code Editor, making it easier to send feedback.
-- October 29, 2020 Earth Engine Code Editor Change Improved error reporting for syntax errors, by highlighting the error line in the editor and positioning the cursor at the location to fix.
-- May 12, 2021 Earth Engine Code Editor Change Replaced the JavaScript sandbox in the Code Editor with JS-Interpreter , to provide improved error reporting and cross-browser consistency.
-- April 07, 2026 Earth Engine Data Catalog Feature Added projects/openet/assets/disalexi/conus/gridmet/monthly/v2 0 : OpenET DisALEXI Monthly Evapotranspiration v2.0 Added projects/openet/assets/disalexi/conus/gridmet/monthly/v2 1 : OpenET DisALEXI Monthly Evapotranspiration v2.1 Added projects/openet/assets/eemetric/conus/gridmet/monthly/v2 0 : OpenET eeMETRIC Monthly Evapotranspiration v2.0 Added projects/openet/assets/eemetric/conus/gridmet/monthly/v2 1 : OpenET eeMETRIC Monthly Evapotranspiration v2.1 Added projects/openet/assets/ensemble/conus/gridmet/monthly/v2 0 : OpenET Ensemble Monthly Evapotranspiration v2.0 Added projects/openet/assets/ensemble/conus/gridmet/monthly/v2 1 : OpenET Ensemble Monthly Evapotranspiration v2.1 Added projects/openet/assets/geesebal/conus/gridmet/monthly/v2 0 : OpenET geeSEBAL Monthly Evapotranspiration v2.0 Added projects/openet/assets/geesebal/conus/gridmet/monthly/v2 1 : OpenET geeSEBAL Monthly Evapotranspiration v2.1 Added projects/openet/assets/ptjpl/conus/gridmet/monthly/v2 0 : OpenET PT-JPL Monthly Evapotranspiration v2.0 Added projects/openet/assets/ptjpl/conus/gridmet/monthly/v2 1 : OpenET PT-JPL Monthly Evapotranspiration v2.1 Added projects/openet/assets/sims/conus/gridmet/monthly/v2 0 : OpenET SIMS Monthly Evapotranspiration v2.0 Added projects/openet/assets/sims/conus/gridmet/monthly/v2 1 : OpenET SIMS Monthly Evapotranspiration v2.1 Added projects/openet/assets/ssebop/conus/gridmet/monthly/v2 0 : OpenET SSEBop Monthly Evapotranspiration v2.0 Added projects/openet/assets/ssebop/conus/gridmet/monthly/v2 1 : OpenET SSEBop Monthly Evapotranspiration v2.1 Added iNaturalist/MULTI SPECIES/LATEST : INaturalist Multispecies Open Range Maps March 31, 2026 Earth Engine Data Catalog Feature Added AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/MS/V1 : SPOT Multispectral Imagery 10-20m, Brazil Added AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/MS NC/V1 : SPOT Multispectral Pseudo Natural Color Imagery 10-20m, Brazil Added AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/PAN/V1 : SPOT Panchromatic Imagery 5-10m, Brazil Added AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/PMS NC/V1 : SPOT Pansharpened Pseudo Natural Color Imagery 5-10m, Brazil Added GOOGLE/BRAZIL FOREST 2008/V1/ANALYTIC : Brazil Forest Imagery Dataset 2008: Analytic Basemap Added GOOGLE/BRAZIL FOREST 2008/V1/VISUAL : Brazil Forest Imagery Dataset 2008: Visual Basemap Added USDA/SOLUS100/V0 : SOLUS: Soil properties of the conterminous United States at 100-m resolution March 30, 2026 Earth Engine Code Editor Announcement Code Editor Share Options Updated To enhance transparency and security, the options to Auto Run and Hide Code when sharing Earth Engine Code Editor script links have been removed.
+- If you get this error, click the "Report error" link which appears in the JavaScript Code Editor console.
+- In the second case, adding nonsense to the map, the cryptic g.eeObject.name is not a function error is displayed in the JavaScript Code Editor because the object being added to the map, nonsense , is a string, not an EE object (in Python a TypeError is thrown).
+- Debugging can be challenging because errors can occur either in the client-side code or the server-side execution of the coded instructions, and result from scaling problems as well as syntactic or logical errors.
+- Avoid mixing client and server functions The following example is less obvious: Error — this code doesn't do what you want Code Editor (JavaScript) // Don't mix EE objects and JavaScript objects. var image = ee .
 
 ### Get help \_|\_ Google Earth Engine \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/help](https://developers.google.com/earth-engine/help)
 - Source ID: `site-docs-root`
-- Final score: 136
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 163
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Report a bug What kind of bug did you find? (click links to learn more or expand for examples) An API bug : script errors or incorrect results Unexpected or incorrect function result Unfamiliar error Internal error messages Errors not resolved by common debugging methods An unchanged, working script from some time ago, now does NOT work API documentation is missing critical information Issues regarding Data Catalog assets A Code Editor interface bug : UI display and functionality issues Scripts not loading Buttons not working Strange layout Missing page elements Map interaction not working Data Catalog search not working A dataset bug Missing assets Projection issues Unclear dataset descriptions Don't expect any response to bug reports .
+- Here is my code; inspect the histogram table to see the results. // Define an image. var img = ee.Image('LANDSAT/LC08/C02/T1 TOA/LC08 038029 20180810'); // Define an area of interest. var aoi = ee.Geometry.Rectangle(-110.5, 44.6, -110.1, 44.8); // Calculate a histogram for the pixels in the API. var reflHistDict = img.select('B[1-7]').multiply(1e4).reduceRegion({ reducer: ee.Reducer.fixedHistogram(0, 5000, 250), geometry: aoi, scale: 30 }); // A dictionary was returned, get the ee.Array results for SWIR1 band. var swir1HistArray = ee.Array(reflHistDict.get('B6')); print(swir1HistArray); Code Editor script Make the code in your question reproducible .
+- Change in script behavior or output Earth Engine API code, architecture, and policies can change, resulting in different behavior or errors that appear now but did not some time ago for the same script.
 - Users can post technical or discussion questions, report bugs (API, Code Editor, Dataset), request registration help, extra quota, new datasets/features, or report script behavior changes.
-- Bug reports can be filed for API issues, Code Editor interface problems, or dataset bugs, but do not expect a direct response to these reports.
-- Code Editor Report a bug related to the Code Editor interface by opening the Code Editor, clicking the button, then Send Code Editor feedback .
 
 ### Earth Engine Code Editor \_|\_ Google Earth Engine \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
 - Source ID: `site-docs-root`
-- Final score: 132
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 148
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - JavaScript editor The JavaScript editor will: Format and highlight code as you type Underline code with problems, offer fixes and other hints for correct syntax Autocomplete pairs of quotes, brackets and parentheses Offer code completion hints for Earth Engine functions Above the code editor are buttons for running the script, saving the script, resetting the output map and console, and getting a link to the script.

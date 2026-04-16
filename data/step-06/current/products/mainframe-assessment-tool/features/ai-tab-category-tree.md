@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.467Z"
+generated_at: "2026-04-15T12:06:50.502Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "AI tab category tree"
@@ -9,9 +9,9 @@ latest_feature_date: "2024-06-19"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance"
 keywords:
   - "ai"
   - "tab"
@@ -20,7 +20,6 @@ keywords:
   - "adds"
   - "top"
   - "level"
-  - "in"
 ---
 
 # AI tab category tree
@@ -42,43 +41,39 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance)
 
 ## Supporting Pages
 
-### Mainframe Assessment Tool overview | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 96
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- Source ID: `site-docs-reference`
+- Final score: 36
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview Mainframe Assessment Tool helps assess your existing mainframe codebase and plan your migration to Google Cloud.
-- Mainframe Assessment Tool automates assessment, saving you time and resources.
+- For COBOL programs and JCL jobs, the Detailed logic page provides granular, paragraph-level, and method-level details about the asset along with test cases.
+- Category - batch/online: number of batch programs compared to online programs.
 
-### Mainframe Assessment Tool release notes | Google Cloud Documentation
+### Configure settings \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 96
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings)
+- Source ID: `site-docs-reference`
+- Final score: 36
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes Mainframe Assessment Tool version 2.8.0 is available with the following new features and improvements: Added an option to export the assessment static analysis data to Neo4j.
-- For more information, see Export assessment data to your Neo4j database.
+- You can configure Mainframe Assessment Tool to use a different model from the following available options: Gemini 3.1 Pro ( Preview ) Gemini 3 Flash ( Preview ) Gemini 2.5 Flash-Lite Gemini 2.5 Flash Gemini 2.5 Pro For models that support Thinking level configuration, Thinking level can be selected on the Thinking level drop-down.
+- Track Vertex AI costs using custom metadata labels Mainframe Assessment Tool automatically adds custom metadata labels to all Vertex AI requests to help you track and analyze costs.
+- To generate paragraph-level summaries for COBOL code, select Detailed summaries .
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
+### Set up and access Mainframe Assessment Tool \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 95
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance)
+- Source ID: `site-docs-reference`
+- Final score: 20
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
 

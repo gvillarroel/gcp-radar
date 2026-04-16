@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.397Z"
+generated_at: "2026-04-14T15:13:19.414Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "IUCN Global Ecosystem Typology Level 3"
 feature_slug: "iucn-global-ecosystem-typology-level-3"
 latest_feature_date: "2024-10-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/ecosystems"
   - "https://developers.google.com/earth-engine/datasets/catalog"
@@ -19,13 +19,12 @@ keywords:
   - "typology"
   - "level"
   - "dataset"
-  - "from"
 ---
 
 # IUCN Global Ecosystem Typology Level 3
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,7 +36,7 @@ A level 3 global ecosystem typology dataset from IUCN.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -51,21 +50,21 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/ecosystems](https://developers.google.com/earth-engine/datasets/tags/ecosystems)
 - Source ID: `site-docs-root-3`
-- Final score: 192
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 221
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - These datasets enable large-scale biodiversity analyses, … biodiversity ecosystems range species IUCN Global Ecosystem Typology Level 3: 1.0 The Global Ecosystem Typology is a taxonomy of ecosystems based on their unique characteristics.
-- Specifically, ecoregions represent distinct assemblages … biodiversity conservation ecoregions ecosystems global table SBTN Natural Lands Map v1 The SBTN Natural Lands Map v1 is a 2020 baseline map of natural and non-natural land covers intended for use by companies setting science-based targets for nature, specifically the SBTN Land target #1: no conversion of natural ecosystems. "Natural" and "non-natural" definitions were adapted from … ecosystems landcover landuse-landcover wri SBTN Natural Lands Map v1.1 The SBTN Natural Lands Map v1.1 is a 2020 baseline map of natural and non-natural land covers intended for use by companies setting science-based targets for nature, specifically the SBTN Land target #1: no conversion of natural ecosystems. "Natural" and "non-natural" definitions were adapted from … ecosystems landcover landuse-landcover wri Species Distribution, Australia Mammals These species distribution model outputs, developed by Google in collaboration with QCIF and EcoCommons, represent estimates of species’ relative occurrence likelihoods (i.e., higher values indicate a higher likelihood that the species would be detected at a location, for a given survey methodology and given survey … biodiversity conservation ecosystems nature-trace pre-review publisher-dataset US EPA Ecoregions (Level III) The U.S.
 - Page Summary outlined flag Multiple datasets provide information on ecosystems and protected areas, including BLM AIM terrestrial data, IUCN Global Ecosystem Typology, and World Database on Protected Areas (WDPA).
-- Key Biodiversity Areas (KBAs) are 'sites contributing significantly to the global persistence of biodiversity’, in terrestrial, freshwater and marine ecosystems. … biodiversity boundaries ecosystems global iucn management WDOECM: Other Effective Area-based Conservation Measures (points) A geographically defined area other than a Protected Area, which is governed and managed in ways that achieve positive and sustained long-term outcomes for the in situ conservation of biodiversity, with associated ecosystem functions and services and where applicable, cultural, spiritual, socio-economic, and other locally … boundaries ecosystems iucn marine mpa protected WDOECM: Other Effective Area-based Conservation Measures (polygons) A geographically defined area other than a Protected Area, which is governed and managed in ways that achieve positive and sustained long-term outcomes for the in situ conservation of biodiversity, with associated ecosystem functions and services and where applicable, cultural, spiritual, socio-economic, and other locally … boundaries ecosystems iucn marine mpa protected WDPA: World Database on Protected Areas (points) The World Database on Protected Areas (WDPA) is the most up-to-date and complete source of information on protected areas, updated monthly with submissions from governments, non-governmental organizations, landowners, and communities.
+- Specifically, ecoregions represent distinct assemblages … biodiversity conservation ecoregions ecosystems global table SBTN Natural Lands Map v1 The SBTN Natural Lands Map v1 is a 2020 baseline map of natural and non-natural land covers intended for use by companies setting science-based targets for nature, specifically the SBTN Land target #1: no conversion of natural ecosystems. "Natural" and "non-natural" definitions were adapted from … ecosystems landcover landuse-landcover wri SBTN Natural Lands Map v1.1 The SBTN Natural Lands Map v1.1 is a 2020 baseline map of natural and non-natural land covers intended for use by companies setting science-based targets for nature, specifically the SBTN Land target #1: no conversion of natural ecosystems. "Natural" and "non-natural" definitions were adapted from … ecosystems landcover landuse-landcover wri Species Distribution, Australia Mammals These species distribution model outputs, developed by Google in collaboration with QCIF and EcoCommons, represent estimates of species’ relative occurrence likelihoods (i.e., higher values indicate a higher likelihood that the species would be detected at a location, for a given survey methodology and given survey … biodiversity conservation ecosystems nature-trace pre-review publisher-dataset US EPA Ecoregions (Level III) The U.S.
+- The top three levels (realms, functional biomes, … ecosystem ecosystems global table OpenLandMap Potential Distribution of Biomes Potential Natural Vegetation biomes global predictions of classes (based on predictions using the BIOMES 6000 dataset's 'current biomes' category.) Potential Natural Vegetation (PNV) is the vegetation cover in equilibrium with climate that would exist at a given location non-impacted by human activities.
 
 ### Earth Engine Data Catalog \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 150
+- Final score: 165
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +77,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/elevation](https://developers.google.com/earth-engine/datasets/tags/elevation)
 - Source ID: `site-docs-root`
-- Final score: 130
+- Final score: 119
 - Re-rank relevance: N/A
 
 Evidence snippets:

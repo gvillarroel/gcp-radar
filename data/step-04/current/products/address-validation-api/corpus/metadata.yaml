@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T20:16:05+00:00'
-updated_at: '2026-04-09T15:46:05+00:00'
+updated_at: '2026-04-13T17:20:55+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://developers.google.com/maps/documentation/address-validation
   created_at: '2026-04-09T15:43:29+00:00'
-  updated_at: '2026-04-09T15:45:07+00:00'
+  updated_at: '2026-04-13T17:15:16+00:00'
   update_command: know sync site https://developers.google.com/maps/documentation/address-validation
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 1
     max_pages: 30
     compact_output: true
-  last_synced_at: '2026-04-09T15:45:07+00:00'
+  last_synced_at: '2026-04-13T17:15:16+00:00'
 - type: site
   id: site-api-reference
   title: https://developers.google.com/maps/documentation/address-validation/reference/rest
   created_at: '2026-04-09T15:43:30+00:00'
-  updated_at: '2026-04-09T15:45:40+00:00'
+  updated_at: '2026-04-13T17:17:01+00:00'
   update_command: know sync site https://developers.google.com/maps/documentation/address-validation/reference/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
@@ -34,12 +34,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-09T15:45:40+00:00'
+  last_synced_at: '2026-04-13T17:17:01+00:00'
 - type: site
   id: site-python-reference
   title: https://googleapis.dev/python/addressvalidation/latest
   created_at: '2026-04-09T15:43:31+00:00'
-  updated_at: '2026-04-09T15:46:05+00:00'
+  updated_at: '2026-04-13T17:17:27+00:00'
   update_command: know sync site https://googleapis.dev/python/addressvalidation/latest
     --key corpus --compact
   delete_command: know del --key corpus site-python-reference
@@ -48,4 +48,74 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-09T15:46:05+00:00'
+  last_synced_at: '2026-04-13T17:17:27+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://developers.google.com/maps/documentation/address-validation/overview
+  created_at: '2026-04-13T17:13:37+00:00'
+  updated_at: '2026-04-13T17:16:25+00:00'
+  update_command: know sync site https://developers.google.com/maps/documentation/address-validation/overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://developers.google.com/maps/documentation/address-validation/overview
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-13T17:16:25+00:00'
+- type: site
+  id: site-docs-root-required-2
+  title: https://developers.google.com/maps/documentation/address-validation/build-validation-logic
+  created_at: '2026-04-13T17:13:37+00:00'
+  updated_at: '2026-04-13T17:18:31+00:00'
+  update_command: know sync site https://developers.google.com/maps/documentation/address-validation/build-validation-logic
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-required-2
+  config:
+    url: https://developers.google.com/maps/documentation/address-validation/build-validation-logic
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-13T17:18:31+00:00'
+- type: site
+  id: site-docs-reference-required-2
+  title: https://developers.google.com/maps/documentation/address-validation/understand-response
+  created_at: '2026-04-13T17:13:37+00:00'
+  updated_at: '2026-04-13T17:19:39+00:00'
+  update_command: know sync site https://developers.google.com/maps/documentation/address-validation/understand-response
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-2
+  config:
+    url: https://developers.google.com/maps/documentation/address-validation/understand-response
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-13T17:19:39+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example
+  created_at: '2026-04-13T17:13:38+00:00'
+  updated_at: '2026-04-13T17:20:41+00:00'
+  update_command: know sync site https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-13T17:20:41+00:00'
+- type: site
+  id: site-api-reference-required-2
+  title: https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress
+  created_at: '2026-04-13T17:13:38+00:00'
+  updated_at: '2026-04-13T17:20:55+00:00'
+  update_command: know sync site https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference-required-2
+  config:
+    url: https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-13T17:20:55+00:00'

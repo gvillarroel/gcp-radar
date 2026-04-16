@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.129Z"
+generated_at: "2026-04-15T00:01:13.952Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Interactive chart navigation"
 feature_slug: "interactive-chart-navigation"
 latest_feature_date: "2021-05-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
+  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
-  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus"
 keywords:
   - "interactive"
   - "chart"
@@ -26,7 +26,7 @@ keywords:
 # Interactive chart navigation
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +38,47 @@ Charts support selecting line ranges, shifting the time axis, and expanding arou
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
+- [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
-- [https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus](https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus)
 
 ## Supporting Pages
 
-### Monitoring release notes \_|\_ Google Cloud Documentation
+### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- Source ID: `site-docs-reference-2`
+- Final score: 103
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Charts displaying distribution data include 50th, 95th, and 99th percentile lines as an optional overlay.
-- July 20, 2023 Change We made improvements to the dashboard building experience: Improved the performance Simplified the layout and expanded the configurable settings Improved the widget drag and drop experience Enhanced the text widget Unified the chart-configuration experience between dashboards and the Metrics Explorer For more information, see Add charts and tables to a custom dashboard .
-- Change The improved dashboard building experience is now GA: Improved the performance Simplified the layout and expanded the configurable settings Improved the widget drag and drop experience Enhanced the text widget Unified the chart-configuration experience between dashboards and the Metrics Explorer For more information, see Add charts and tables to a custom dashboard .
-- For more information, see the following documents: Google Cloud console: Charts with SQL queries API: Charts with SQL queries February 06, 2026 Feature You can use the Cloud Monitoring API MCP server to let agents and AI applications interact with your time series data.
+- Explore metric data The charts and tables on your dashboard display golden signals and other metric data that is relevant for the resources used by your application, service, or workload.
+- For example, if the resource type is determined to be cloud run-revision , then charts might filter the data by the values of the location and service name labels.
+- These charts also display event annotations , which can help you correlate data from different sources when you are troubleshooting an issue.
+- Charts on this tab automatically aggregate metric data for the services and workloads in your application.
+
+### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
+- Source ID: `site-docs-reference`
+- Final score: 81
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- It is possible have charts and alerting policies that refer to metrics with no data (inactive metrics) and to query such metrics; on the Metrics Management page, these metrics are considered used metrics, even though any read operations return no data.
+- Before you begin To view the charts and logs included on the Metrics Management page, to create alerting policies, and to create metric-exclusion rules, you must have the correct authorization .
+- To determine how many of the active billable metrics are being queried or used in charts or alerting policies, refer to the Metric Usage scorecard.
+- Reads from Metrics Explorer or charts on custom dashboards are "console" reads, and API reads from other sources are "other".
 
 ### "Collect OpenTelemetry Protocol (OTLP) metrics and traces \_|\_ Cloud Monitoring\
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
 - Source ID: `site-iam-reference`
-- Final score: 72
+- Final score: 73
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -73,17 +86,4 @@ Evidence snippets:
 - After the Ops Agent has collected your metrics, you can use the features of Cloud Monitoring, including charts, dashboards, and alerting policies, to monitor your metrics.
 - You can create charts, dashboards, and alerting policies in Monitoring for metrics of either metric format, but you refer to the metrics differently in queries.
 - The metrics mode choice doesn't affect your ability to create charts, dashboards, and alerting policies in Monitoring.
-
-### Collect Prometheus metrics \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus](https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus)
-- Source ID: `site-iam-reference`
-- Final score: 68
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- To filter for any metrics with an id label matching this pattern, use the following query: example value count{id= "id. "} For more information about using PromQL in Metrics Explorer and Cloud Monitoring charts, see PromQL in Cloud Monitoring .
-- For information about dashboards and the types of charts you can use, see Dashboards and charts .
-- For information about creating dashboards, see Dashboards and charts .
-- For the JSON Exporter example, use the following procedure: Edit the Ops Agent configuration file, /etc/google-cloud-ops-agent/config.yaml , and add the following Prometheus receiver and pipeline entries: metrics: receivers: prometheus: type: prometheus config: scrape configs: - job name: 'json exporter' scrape interval: 10s metrics path: /probe params: module: [default] target: [http://localhost:8000/examples/data.json] static configs: - targets: ['localhost:7979'] service: pipelines: prometheus pipeline: receivers: - prometheus If you have other configuration entries in this file already, add the Prometheus receiver and pipeline to the existing metrics and service entries.
 

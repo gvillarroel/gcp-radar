@@ -1,18 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.825Z"
+generated_at: "2026-04-15T12:05:13.808Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Cloud Profiler integration"
 feature_slug: "cloud-profiler-integration"
 latest_feature_date: "2022-02-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline"
   - "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-change-streams-to-vector-search"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview"
 keywords:
   - "profiler"
   - "integration"
@@ -21,13 +20,13 @@ keywords:
   - "profile"
   - "dataflow"
   - "pipelines"
-  - "to"
+  - "monitor"
 ---
 
 # Cloud Profiler integration
 
 Product: Dataflow
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,66 +38,54 @@ Cloud Profiler integration lets you profile Dataflow pipelines to monitor perfor
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline](https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline)
 - [https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines](https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines)
-- [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-change-streams-to-vector-search](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-change-streams-to-vector-search)
-- [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings)
-- [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub)
+- [https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview](https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview)
 
 ## Supporting Pages
+
+### "Monitoring pipeline performance using Cloud Profiler \_|\_ Cloud Dataflow\
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline](https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline)
+- Source ID: `site-docs-reference-2`
+- Final score: 156
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To troubleshoot or monitor pipeline performance, use Dataflow integration with Cloud Profiler to identify the parts of the pipeline code consuming the most resources.
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Monitoring pipeline performance using Cloud Profiler Stay organized with collections Save and categorize content based on your preferences.
+- If you deploy your pipelines from Dataflow templates and want to enable Cloud Profiler, specify the enable google cloud profiler and enable google cloud heap sampling flags as additional experiments.
+- Enable Cloud Profiler for Dataflow pipelines Cloud Profiler is available for Dataflow pipelines written in Apache Beam SDK for Java and Python, version 2.33.0 or later.
 
 ### Develop and test Dataflow pipelines \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines](https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines)
-- Source ID: `site-docs-root`
-- Final score: 172
+- Source ID: `site-docs-reference-required-3`
+- Final score: 101
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- Like with integration tests using the Direct Runner, you can use PAssert on PCollection objects when you run pipelines using the Dataflow Runner.
 - If you run the pipeline asynchronously, you can use the returned PipelineResult instance to cancel execution of the pipeline, as shown in the following code example: public interface StreamingIntegrationTestOptions extends DirectOptions , StreamingOptions , MyOtherPipelineOptions { ... } @Rule public final transient TestPipeline p = TestPipeline . create (); @Test @Category ( NeedsRunner . class ) public void testNonBlockingPipeline () { StreamingIntegrationTestOptions options = p . getOptions (). as ( StreamingIntegrationOptions . class ); options . setBlockOnRun ( false ); // Set non - blocking pipeline execution options . setStreaming ( true ); // Set streaming mode p . apply (...); // Apply pipeline transformations PipelineResult result = p . run (); // Run the pipeline // Generate input , verify output , etc ... // Later on , cancel the pipeline using the previously returned result . cancel (); } End-to-end tests End-to-end tests verify the correct operation of your end-to-end pipeline by running it on the Dataflow Runner under conditions that closely resemble production.
+- The end-to-end test uses the Dataflow Runner and a small test dataset to verify that the complete pipeline functions correctly, including its integration with data sources, data sinks, and other external systems.
 - By using the Direct Runner to run system integration tests, you quickly verify the integration between your pipeline and other systems without needing to submit a Dataflow job and wait for it to finish.
-- For streaming pipelines, you can also run end-to-end tests using generated data, for example, using the Dataflow Streaming Data Generator to emulate production-like data characteristics and volumes.
-- For system integration testing of streaming pipelines, you can use the setBlockOnRun method (defined in the DirectOptions interface) to have the Direct Runner run your pipeline asynchronously.
 
-### "Bigtable change streams to Vector Search template \_|\_ Cloud Dataflow \_\
+### Use the Dataflow job monitoring interface \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-change-streams-to-vector-search](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-change-streams-to-vector-search)
-- Source ID: `site-api-reference`
-- Final score: 164
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { "launchParameter" : { "jobName" : " JOB NAME " , "parameters" : { "embeddingColumn" : " EMBEDDING COLUMN " , "embeddingByteSize" : " EMBEDDING BYTE SIZE " , "vectorSearchIndex" : " VECTOR SEARCH INDEX " , "bigtableChangeStreamAppProfile" : " BIGTABLE CHANGE STREAM APP PROFILE " , "bigtableReadInstanceId" : " BIGTABLE READ INSTANCE ID " , "bigtableReadTableId" : " BIGTABLE READ TABLE ID " , }, "containerSpecGcsPath" : "gs://dataflow-templates- LOCATION / VERSION /flex/Bigtable Change Streams to Vector Search" , "environment" : { "maxWorkers" : "10" } } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
-- In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/Bigtable Change Streams to Vector Search \ --project = PROJECT ID \ --region = REGION NAME \ --parameters \ embeddingColumn = EMBEDDING COLUMN , \ embeddingByteSize = EMBEDDING BYTE SIZE , \ vectorSearchIndex = VECTOR SEARCH INDEX , \ bigtableChangeStreamAppProfile = BIGTABLE CHANGE STREAM APP PROFILE , \ bigtableReadInstanceId = BIGTABLE READ INSTANCE ID , \ bigtableReadTableId = BIGTABLE READ TABLE ID , \ Replace the following: JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
-- Streams Bigtable data change records and writes them into Vertex AI Vector Search using Dataflow Runner V2." , optionsClass = BigtableChangeStreamsToVectorSearchOptions . class , optionsOrder = { BigtableChangeStreamsToVectorSearchOptions . class , ReadChangeStreamOptions . class , ReadOptions . class }, skipOptions = { "bigtableReadAppProfile" , "bigtableAdditionalRetryCodes" , "bigtableRpcAttemptTimeoutMs" , "bigtableRpcTimeoutMs" }, documentation = "https://cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-change-streams-to-vector-search" , flexContainerName = "googlecloud-to-googlecloud" , contactInformation = "https://cloud.google.com/support" , streaming = true ) public final class BigtableChangeStreamsToVectorSearch { private static final Logger LOG = LoggerFactory . getLogger ( BigtableChangeStreamsToVectorSearch . class ); private static final String USE RUNNER V2 EXPERIMENT = "use runner v2" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) throws Exception { LOG . info ( "Starting replication from Cloud Bigtable Change Streams to Vector Search" ); BigtableChangeStreamsToVectorSearchOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigtableChangeStreamsToVectorSearchOptions . class ); run ( options ); } public static PipelineResult run ( BigtableChangeStreamsToVectorSearchOptions options ) throws IOException { options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); List<String> experiments = options . getExperiments (); if ( experiments == null ) { experiments = new ArrayList <> (); } boolean hasUseRunnerV2 = false ; for ( String experiment : experiments ) { if ( experiment . equalsIgnoreCase ( USE RUNNER V2 EXPERIMENT )) { hasUseRunnerV2 = true ; break ; } } if ( ! hasUseRunnerV2 ) { experiments . add ( USE RUNNER V2 EXPERIMENT ); } options . setExperiments ( experiments ); Instant startTimestamp = options . getBigtableChangeStreamStartTimestamp (). isEmpty () ?
-- VECTOR SEARCH INDEX : the Vector Search index Path BIGTABLE CHANGE STREAM APP PROFILE : the Bigtable application profile ID BIGTABLE READ INSTANCE ID : the source Bigtable Instance ID BIGTABLE READ TABLE ID : the source Bigtable table ID Template source code Java / Copyright (C) 2024 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
-
-### "Bigtable to Vertex AI Vector Search template \_|\_ Cloud Dataflow \_|\_\
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings)
-- Source ID: `site-api-reference`
-- Final score: 160
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview](https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview)
+- Source ID: `site-docs-reference-2`
+- Final score: 86
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- BATCH , displayName = "Cloud Bigtable to Vector Embeddings" , description = "The Bigtable to Vector Embedding template is a pipeline that reads data from a Bigtable table and writes it to a Cloud Storage bucket in JSON format, for vector embeddings" , optionsClass = Options . class , documentation = "https://cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings" , contactInformation = "https://cloud.google.com/support" , requirements = { "The Bigtable table must exist." , "The output Cloud Storage bucket must exist before running the pipeline." }) public class BigtableToVectorEmbeddings { private static final Logger LOG = LoggerFactory . getLogger ( BigtableToVectorEmbeddings . class ); / Options for the export pipeline. / public interface Options extends PipelineOptions { @TemplateParameter.ProjectId ( order = 1 , groupName = "Source" , description = "Project ID" , helpText = "The ID for the Google Cloud project that contains the Bigtable instance that you want to read data from." ) ValueProvider<String> getBigtableProjectId (); @SuppressWarnings ( "unused" ) void setBigtableProjectId ( ValueProvider<String> projectId ); @TemplateParameter.Text ( order = 2 , groupName = "Source" , regexes = { "[a-z][a-z0-9\\-]+[a-z0-9]" }, description = "Instance ID" , helpText = "The ID of the Bigtable instance that contains the table." ) ValueProvider<String> getBigtableInstanceId (); @SuppressWarnings ( "unused" ) void setBigtableInstanceId ( ValueProvider<String> instanceId ); @TemplateParameter.Text ( order = 3 , groupName = "Source" , regexes = { "[ a-zA-Z0-9][- .a-zA-Z0-9] " }, description = "Table ID" , helpText = "The ID of the Bigtable table to read from." ) ValueProvider<String> getBigtableTableId (); @SuppressWarnings ( "unused" ) void setBigtableTableId ( ValueProvider<String> tableId ); @TemplateParameter.GcsWriteFolder ( order = 4 , groupName = "Target" , description = "Cloud Storage directory for storing JSON files" , helpText = "The Cloud Storage path where the output JSON files are stored." , example = "gs://your-bucket/your-path/" ) @Required ValueProvider<String> getOutputDirectory (); @SuppressWarnings ( "unused" ) void setOutputDirectory ( ValueProvider<String> outputDirectory ); @TemplateParameter.Text ( order = 5 , groupName = "Target" , optional = true , description = "JSON file prefix" , helpText = "The prefix of the JSON filename.
-- In the format cf:col->alias." ) ValueProvider<String> getDoubleNumericRestrictsMappings (); @SuppressWarnings ( "unused" ) void setDoubleNumericRestrictsMappings ( ValueProvider<String> value ); @TemplateParameter.Text ( order = 15 , regexes = { "[ a-zA-Z0-9][- .a-zA-Z0-9] " }, optional = true , description = "App Profile ID" , helpText = "The ID of the Cloud Bigtable app profile to be used for the export" ) @Default.String ( "default" ) ValueProvider<String> getBigtableAppProfileId (); @SuppressWarnings ( "unused" ) void setBigtableAppProfileId ( ValueProvider<String> value ); } / Runs a pipeline to export data from a Cloud Bigtable table to JSON files in GCS in JSON format, for use of Vertex Vector Search. @param args arguments to the pipeline / public static void main ( String [] args ) { Options options = PipelineOptionsFactory . fromArgs ( args ). withValidation (). as ( Options . class ); PipelineResult result = run ( options ); // Wait for pipeline to finish only if it is not constructing a template. if ( options . as ( DataflowPipelineOptions . class ). getTemplateLocation () == null ) { result . waitUntilFinish (); } LOG . info ( "Completed pipeline setup" ); } public static PipelineResult run ( Options options ) { Pipeline pipeline = Pipeline . create ( PipelineUtils . tweakPipelineOptions ( options )); BigtableIO .
-- POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /templates:launch?gcsPath=gs://dataflow-templates- LOCATION / VERSION /Cloud Bigtable to Vector Embeddings { "jobName" : " JOB NAME " , "parameters" : { "bigtableProjectId" : " BIGTABLE PROJECT ID " , "bigtableInstanceId" : " BIGTABLE INSTANCE ID " , "bigtableTableId" : " BIGTABLE TABLE ID " , "filenamePrefix" : " FILENAME PREFIX " , "idColumn" : " ID COLUMN " , "embeddingColumn" : " EMBEDDING COLUMN " , }, "environment" : { "maxWorkers" : "10" } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
-- In your shell or terminal, run the template: gcloud dataflow jobs run JOB NAME \ --gcs-location = gs://dataflow-templates- REGION NAME / VERSION /Cloud Bigtable to Vector Embeddings \ --project = PROJECT ID \ --region = REGION NAME \ --parameters \ bigtableProjectId = BIGTABLE PROJECT ID , \ bigtableInstanceId = BIGTABLE INSTANCE ID , \ bigtableTableId = BIGTABLE TABLE ID , \ filenamePrefix = FILENAME PREFIX , \ idColumn = ID COLUMN , \ embeddingColumn = EMBEDDING COLUMN , \ Replace the following: JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
-
-### "Bigtable change streams to Pub/Sub template \_|\_ Cloud Dataflow \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub)
-- Source ID: `site-api-reference`
-- Final score: 156
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { "launch parameter" : { "jobName" : " JOB NAME " , "containerSpecGcsPath" : "gs://dataflow-templates- REGION NAME / VERSION /flex/Bigtable Change Streams to PubSub" , "parameters" : { "bigtableReadInstanceId" : " BIGTABLE INSTANCE ID " , "bigtableReadTableId" : " BIGTABLE TABLE ID " , "bigtableChangeStreamAppProfile" : " BIGTABLE APPLICATION PROFILE ID " , "pubSubTopic" : " PUBSUB TOPIC " } } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
-- In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \ --region = REGION NAME \ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/Bigtable Change Streams to PubSub \ --parameters \ bigtableReadInstanceId = BIGTABLE INSTANCE ID , \ bigtableReadTableId = BIGTABLE TABLE ID , \ bigtableChangeStreamAppProfile = BIGTABLE APPLICATION PROFILE ID , \ pubSubTopic = PUBSUB TOPIC Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
-- ReadOptions . class }, skipOptions = { "bigtableReadAppProfile" , "bigtableAdditionalRetryCodes" , "bigtableRpcAttemptTimeoutMs" , "bigtableRpcTimeoutMs" }, documentation = "https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub" , flexContainerName = "googlecloud-to-googlecloud" , contactInformation = "https://cloud.google.com/support" , streaming = true , supportsAtLeastOnce = true ) public final class BigtableChangeStreamsToPubSub { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( BigtableChangeStreamsToPubSub . class ); private static final String USE RUNNER V2 EXPERIMENT = "use runner v2" ; private static final TupleTag<FailsafeElement<String , String >> INVALID MODS TAG = new TupleTag<FailsafeElement<String , String >> ( "invalidMods" ) {}; private static final TupleTag<FailsafeElement<String , String >> VALID MODS TAG = new TupleTag<FailsafeElement<String , String >> ( "validMods" ) {}; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { LOG . info ( "Starting to replicate change records from Cloud Bigtable change streams to PubSub" ); BigtableChangeStreamsToPubSubOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigtableChangeStreamsToPubSubOptions . class ); run ( options ); } private static void validateOptions ( BigtableChangeStreamsToPubSubOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( "dlqRetryMinutes must be positive." ); } if ( options . getDlqMaxRetries () < 0 ) { throw new IllegalArgumentException ( "dlqMaxRetries cannot be negative." ); } if ( options . getBigtableReadChangeStreamTimeoutMs () != null && options . getBigtableReadChangeStreamTimeoutMs () < = 0 ) { throw new IllegalArgumentException ( "bigtableReadChangeStreamTimeoutMs must be greater than 0." ); } } private static void setOptions ( BigtableChangeStreamsToPubSubOptions options ) { options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); // Add use runner v2 to the experiments option, since change streams connector is only supported // on Dataflow runner v2.
-- The entry was put into a DLQ directory. " + "Please update your Dataflow template with the latest template version" ); } } } private ModType getModType ( Entry entry ) { if ( entry instanceof SetCell ) { return ModType .
+- What's next Use Cloud Monitoring to create alerts and view Dataflow metrics, including custom metrics Learn more about building production-ready data pipelines Learn how to troubleshoot your pipeline Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The monitoring interface lets you see and interact with your Dataflow jobs.
+- Monitoring interface components The monitoring interface contains the following visualizers and charts: Project monitoring dashboard A dashboard that monitors your Dataflow jobs at the project level.
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use the Dataflow job monitoring interface Stay organized with collections Save and categorize content based on your preferences.
 

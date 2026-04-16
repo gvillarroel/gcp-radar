@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:47.760Z"
+generated_at: "2026-04-12T12:11:18.945Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer release version end-of-support"
 feature_slug: "cloud-composer-release-version-end-of-support"
 latest_feature_date: "2025-10-10"
 deprecation_date: "2025-10-10"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/composer-overview"
+  - "https://docs.cloud.google.com/composer/docs/composer-2/composer-overview"
+  - "https://docs.cloud.google.com/composer/docs/composer-3/composer-overview"
 keywords:
   - "composer"
   - "release"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer release version end-of-support
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ Cloud Composer announced that composer-2.9.6-* and the Composer 3 Airflow 2.7.3-
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- [https://docs.cloud.google.com/composer/docs/composer-1/composer-overview](https://docs.cloud.google.com/composer/docs/composer-1/composer-overview)
+- [https://docs.cloud.google.com/composer/docs/composer-2/composer-overview](https://docs.cloud.google.com/composer/docs/composer-2/composer-overview)
+- [https://docs.cloud.google.com/composer/docs/composer-3/composer-overview](https://docs.cloud.google.com/composer/docs/composer-3/composer-overview)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 218
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- November 24, 2025 Issue We discovered an issue that might impact the reporting of metrics in the following recently released Cloud Composer versions: composer-2.15.4-airflow- composer-3-airflow-2.10.5-build.20 composer-3-airflow-2.9.3-build.40 composer-3-airflow-3.1.0-build.3 To prevent additional environments from being affected, we have disabled the ability to upgrade existing environments to these versions and to create new environments using these versions.
-- Change New versions of Cloud Composer images: composer-1.16.1-airflow-1.10.15 composer-1.16.1-airflow-1.10.14 (default) composer-1.16.1-airflow-1.10.12 composer-1.16.1-airflow-1.10.10 Fixed Fixed a bug that caused environment update and upgrade operations to fail with errors related to GKE cluster endpoints, instead of the actual root cause.
-- Last versions of Cloud Composer that support version 0.22 are composer-3-airflow-2.10.5-build.3, composer-3-airflow-2.9.3-build.23, composer-2.13.1-airflow-2.10.5, and composer-2.13.1-airflow-2.9.3 released on May 14, 2025.
-- The new version of this package will be included in one of the future releases of Cloud Composer and the change will be announced in the Release Notes.
 
 ### Cloud Composer version list \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 212
+- Final score: 267
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +63,45 @@ Evidence snippets:
 - Maintenance release versions of Cloud Composer 1 Maintenance release versions of Cloud Composer 1 are new Cloud Composer 1 images that provide only bug fixes and small improvements.
 - Last patch of the previous Cloud Composer 2 minor version: composer-2.10.2-airflow- Cloud Composer 2 versions with an extended upgrade timeline: composer-2.10.2-airflow- , composer-2.10.1-ariflow- , composer-2.9.7-airflow- , and other versions with an extended upgrade timeline.
 
-### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+### Cloud Composer overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
-- Source ID: `site-iam-reference`
-- Final score: 188
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/composer-overview](https://docs.cloud.google.com/composer/docs/composer-1/composer-overview)
+- Source ID: `site-docs-reference`
+- Final score: 245
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Note: Cloud Composer does not support pip customization and does not resolve package dependencies and conflicts outside of the resolution mechanisms that the default pip tool provides.
 - On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
-- Each Cloud Composer image contains PyPI packages that are specific for your version of Cloud Composer and Airflow.
-- To install custom PyPI packages from an Artifact Registry repository: Create a pip.conf file and include the following information in the file, if applicable: URL of the Artifact Registry repository (in the index-url parameter) Access credentials for the repository Non-default pip installation options For an Artifact Registry repository, append /simple/ to the repository URL: [global] index-url = https://us-central1-python.pkg.dev/example-project/example-repository/simple/ (Optional) In some cases, you might want to fetch packages from multiple repositories, such as when your Artifact Registry repository contains some specific packages that you want to install, and you want to install all other packages from PyPI: Configure an Artifact Registry virtual repository .
+- For more information about networking in Cloud Composer, see pages for individual networking features: Public IP and Private IP environments Shared VPC environments Configuring VPC Service Controls Authorized networks IP Masquerade agent Privately used public IP ranges Frequently Asked Questions What version of Apache Airflow does Cloud Composer use?
+- Relationship between DAGs and tasks A DAG is a collection of tasks that you want to schedule and run, organized in a way that reflects their relationships and dependencies.
+- What's next Security overview Create environments Environment architecture Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Cloud Composer overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-2/composer-overview](https://docs.cloud.google.com/composer/docs/composer-2/composer-overview)
+- Source ID: `site-docs-reference`
+- Final score: 245
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- For more information about networking in Cloud Composer, see pages for individual networking features: Public IP and Private IP environments Private Service Connect environments Shared VPC environments Configuring VPC Service Controls Authorized networks IP Masquerade agent Privately used public IP ranges Other features of Cloud Composer Other Cloud Composer features include: Autoscaling environments Development with local Airflow environments Highly resilient environments Environment snapshots Data lineage integration with Dataplex Universal Catalog Encryption with customer-managed encryption keys (CMEK) Frequently Asked Questions What version of Apache Airflow does Cloud Composer use?
+- Relationship between DAGs and tasks A DAG is a collection of tasks that you want to schedule and run, organized in a way that reflects their relationships and dependencies.
+- What's next Security overview Create environments Environment architecture Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Cloud Composer overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-3/composer-overview](https://docs.cloud.google.com/composer/docs/composer-3/composer-overview)
+- Source ID: `site-docs-reference`
+- Final score: 245
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information about networking in Cloud Composer, see pages for individual networking features: Public IP and Private IP environments Connecting an environment to your VPC network Shared VPC environments Configuring VPC Service Controls Other features of Cloud Composer Other Cloud Composer features include: Autoscaling environments Development with local Airflow environments Highly resilient environments Environment snapshots Data lineage integration with Dataplex Universal Catalog Encryption with customer-managed encryption keys (CMEK) Frequently Asked Questions What version of Apache Airflow does Cloud Composer use?
+- Relationship between DAGs and tasks A DAG is a collection of tasks that you want to schedule and run, organized in a way that reflects their relationships and dependencies.
+- What's next Security overview Create environments Environment architecture Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Logging and monitoring for DAGs, Airflow components, and Cloud Composer environments: You can view Airflow logs that are associated with single DAG tasks in the Airflow web interface and the logs folder in the environment's bucket .
 

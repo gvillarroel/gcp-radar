@@ -5,7 +5,7 @@ url: https://developers.google.com/looker-studio/connector/semantics
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://developers.google.com/looker-studio/connector/advanced-services
+entrypoint: https://developers.google.com/looker-studio/connector
 source_metadata:
   url: https://developers.google.com/looker-studio/connector/semantics
   title: "Data types and semantic types \_|\_ Community Connectors \_|\_ Google for\

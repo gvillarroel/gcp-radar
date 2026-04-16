@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.490Z"
+generated_at: "2026-04-12T12:14:31.994Z"
 product_name: "Document AI"
 product_slug: "document-ai"
 feature_name: "Custom Document Extractor auto-labeling at import"
 feature_slug: "custom-document-extractor-auto-labeling-at-import"
 latest_feature_date: "2022-09-29"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+  - "https://docs.cloud.google.com/document-ai/docs/create-dataset"
+  - "https://docs.cloud.google.com/document-ai/docs/ce-with-genai"
+  - "https://docs.cloud.google.com/document-ai/docs/ce-template-based"
 keywords:
   - "custom"
   - "document"
@@ -24,7 +27,7 @@ keywords:
 # Custom Document Extractor auto-labeling at import
 
 Product: Document AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Custom Document Extractor can auto-label imported data with a trained processor 
 
 Custom Document Extractor can auto-label imported data with a trained processor version.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/document-ai/docs/ce-mechanisms](https://docs.cloud.google.com/document-ai/docs/ce-mechanisms)
+- [https://docs.cloud.google.com/document-ai/docs/create-dataset](https://docs.cloud.google.com/document-ai/docs/create-dataset)
+- [https://docs.cloud.google.com/document-ai/docs/ce-with-genai](https://docs.cloud.google.com/document-ai/docs/ce-with-genai)
+- [https://docs.cloud.google.com/document-ai/docs/ce-template-based](https://docs.cloud.google.com/document-ai/docs/ce-template-based)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Custom extractor mechanisms \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/ce-mechanisms](https://docs.cloud.google.com/document-ai/docs/ce-mechanisms)
+- Source ID: `site-docs-root`
+- Final score: 315
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Custom extractor uses the label names you define and previous annotations to make it quicker and easier to label documents at scale with auto-labeling .
+- Custom extractor mechanisms You can create custom extractors that are specifically suited to your documents, and trained and evaluated with your data.
+- For automated version upgrades, see Previous arrow back Custom extractor overview Next Automated schema extraction arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Use generative AI to auto-label documents The foundation model can accurately extract fields for a variety of document types, but you can also provide additional training data to improve the accuracy of the model for specific document structures.
+
+### Create dataset \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/create-dataset](https://docs.cloud.google.com/document-ai/docs/create-dataset)
+- Source ID: `site-docs-root`
+- Final score: 309
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Train or test dataset If you want to add documents to either training or test dataset: HTTP method POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/importDocuments Request JSON: { "batch documents import configs" : { "dataset split" : DATASET TYPE "batch input config" : { "gcs prefix" : { "gcs uri prefix" : GCS URI } } } } Train & test dataset If you want to autosplit the documents between the training and test dataset: HTTP method POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/importDocuments Request JSON: { "batch documents import configs" : { "auto split config" : { "training split ratio" : TRAINING SPLIT RATIO } , "batch input config" : { "gcs prefix" : { "gcs uri prefix" : "gs://test sbindal/pdfs-1-page/" } } } } Save the request body in a file named request.json , and execute the following command: CURL curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/importDocuments" You should receive a JSON response similar to the following: { "name" : "projects/ PROJECT ID /locations/ LOCATION /operations/ OPERATION ID " } Tip: You can use ImportDocumentsMetadata to get the status of each document import.
+- These can be used for up-training or custom extractors depending on the document type. gs://cloud-samples-data/documentai/Custom/ gs://cloud-samples-data/documentai/Custom/1040/ gs://cloud-samples-data/documentai/Custom/Invoices/ gs://cloud-samples-data/documentai/Custom/Patents/ gs://cloud-samples-data/documentai/Custom/Procurement-Splitter/ gs://cloud-samples-data/documentai/Custom/W2-redacted/ gs://cloud-samples-data/documentai/Custom/W2/ gs://cloud-samples-data/documentai/Custom/W9/ Next Label process arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- If you already have an existing version of your processor, you can select the Import with auto-labeling checkbox in the Import documents dialog.
+- Before using any of the request data, make the following replacements: LOCATION : Your processor location PROJECT ID : Your Google Cloud project ID PROCESSOR ID : The ID of your custom processor DOCUMENT ID : The document ID blob returned by <code>ImportDocuments</code> request Delete documents HTTP method POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/batchDeleteDocuments Request JSON: { "dataset documents" : { "individual document ids" : { "document ids" : DOCUMENT ID } } } Save the request body in a file named request.json , and execute the following command: CURL curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/batchDeleteDocuments" You should receive a JSON response similar to the following: { "name" : "projects/ PROJECT ID /locations/ LOCATION /operations/ OPERATION ID " } Assign documents to training or test set Under Data split , select documents and assign them to either the training set, test set, or unassigned.
+
+### "Custom extractor with generative AI \_|\_ Document AI \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/ce-with-genai](https://docs.cloud.google.com/document-ai/docs/ce-with-genai)
+- Source ID: `site-docs-root`
+- Final score: 301
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Auto-labeling with the foundation model The foundation model can accurately extract fields for a variety of document types, but you can also provide additional training data to improve the accuracy of the model for specific document structures.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json ` -Uri "https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process" Select-Object -Expand Content Custom extractor with signature detection Preview This product is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- Home Documentation AI and ML Document AI Guides Send feedback Custom extractor with generative AI Stay organized with collections Save and categorize content based on your preferences.
+- Document AI uses the label names you define and previous annotations to make it quicker and easier to label documents at scale with auto-labeling.
+
+### Template-based extraction \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/ce-template-based](https://docs.cloud.google.com/document-ai/docs/ce-template-based)
+- Source ID: `site-docs-root`
+- Final score: 295
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Auto-labeling with the foundation model The foundation model can accurately extract fields for a variety of document types, but you can also provide additional training data to improve the accuracy of the model for specific document structures.
+- Navigate to the Build tab and select Import documents with auto-labeling enabled.
+- Before you begin If not already done, enable: Billing Document AI API Template-mode labeling best practices Proper labeling is one of the most important steps to achieving high accuracy.
+- Document AI uses the label names you define and previous annotations to make it quicker and easier to label documents at scale with auto-labeling.
 

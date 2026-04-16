@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:02.353Z"
+generated_at: "2026-04-15T12:00:22.606Z"
 product_name: "Confidential Space"
 product_slug: "confidential-space"
 feature_name: "Ingress port configuration"
 feature_slug: "ingress-port-configuration"
 latest_feature_date: "2023-06-09"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "LOW"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/confidential-computing/confidential-space/docs"
+  - "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+  - "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
 keywords:
   - "ingress"
   - "port"
@@ -24,7 +26,7 @@ keywords:
 # Ingress port configuration
 
 Product: Confidential Space
-Coverage: NONE
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Confidential Space supports opening ports for ingress network traffic.
 
 Confidential Space supports opening ports for ingress network traffic.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/confidential-computing/confidential-space/docs](https://docs.cloud.google.com/confidential-computing/confidential-space/docs)
+- [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview)
+- [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Confidential Space overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview)
+- Source ID: `site-docs-reference`
+- Final score: 36
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For the highest security, Confidential Space supports a trust model where data collaborators, workload authors, and workload operators are separate, mutually distrusting parties.
+- See Supported configurations to learn about hardware configuration options, and what locations Confidential VM instances can be created in.
+- Confidential Space roles The components in a Confidential Space system are managed by people with three distinct roles: Data collaborators : The people or organizations who own the protected resources being operated on by the workload.
+- In general, setting up a Confidential Space might look similar to the following process: Multiple data collaborators store encrypted confidential data in their own isolated Google Cloud projects, often in different organizations.
+
+### Confidential Space overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/confidential-computing/confidential-space/docs](https://docs.cloud.google.com/confidential-computing/confidential-space/docs)
+- Source ID: `site-docs-reference`
+- Final score: 36
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For the highest security, Confidential Space supports a trust model where data collaborators, workload authors, and workload operators are separate, mutually distrusting parties.
+- See Supported configurations to learn about hardware configuration options, and what locations Confidential VM instances can be created in.
+- Confidential Space roles The components in a Confidential Space system are managed by people with three distinct roles: Data collaborators : The people or organizations who own the protected resources being operated on by the workload.
+- In general, setting up a Confidential Space might look similar to the following process: Multiple data collaborators store encrypted confidential data in their own isolated Google Cloud projects, often in different organizations.
+
+### "Access resources not managed by Google Cloud IAM \_|\_ Confidential Space\
+
+- URL: [https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources)
+- Source ID: `site-docs-reference`
+- Final score: 34
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- OIDC attestation tokens package main import ( "context" "crypto/rsa" "encoding/base64" "encoding/json" "errors" "fmt" "io" "math/big" "net" "net/http" "strings" "github.com/golang-jwt/jwt/v4" ) const ( socketPath = "/run/container launcher/teeserver.sock" expectedIssuer = "https://confidentialcomputing.googleapis.com" wellKnownPath = "/.well-known/openid-configuration" ) type jwksFile struct { Keys [] jwk json:"keys" } type jwk struct { N string json:"n" // "nMMTBwJ7H6Id8zUCZd-L7uoNyz9b7lvoyse9izD9l2rtOhWLWbiG-7pKeYJyHeEpilHP4KdQMfUo8JCwhd-OMW0be XtEu3jXEFjuq2YnPSPFk326eTfENtUc6qJohyMnfKkcOcY kTE11jM81-fsqtBKjO KiSkcmAO4wJJb8pHOjue3JCP09ZANL1uN4TuxbM2ibcyf25ODt3WQn54SRQTV0wn098Y5VDU-dzyeKYBNfL14iP0LiXBRfHd4YtEaGV9SBUuVhXdhx1eF0efztCNNz0GSLS2AEPLQduVuFoUImP4s51YdO9TPeeQ3hI8aGpOdC0syxmZ7LsL0rHE1Q", E string json:"e" // "AQAB" or 65537 as an int Kid string json:"kid" // "1f12fa916c3a0ef585894b4b420ad17dc9d6cdf5", // Unused fields: // Alg string json:"alg" // "RS256", // Kty string json:"kty" // "RSA", // Use string json:"use" // "sig", } type wellKnown struct { JwksURI string json:"jwks uri" // "https://www.googleapis.com/service accounts/v1/metadata/jwk/signer@confidentialspace-sign.iam.gserviceaccount.com" // Unused fields: // Iss string json:"issuer" // "https://confidentialcomputing.googleapis.com" // Subject types supported string json:"subject types supported" // [ "public" ] // Response types supported string json:"response types supported" // [ "id token" ] // Claims supported string json:"claims supported" // [ "sub", "aud", "exp", "iat", "iss", "jti", "nbf", "dbgstat", "eat nonce", "google service accounts", "hwmodel", "oemid", "secboot", "submods", "swname", "swversion" ] // Id token signing alg values supported string json:"id token signing alg values supported" // [ "RS256" ] // Scopes supported string json:"scopes supported" // [ "openid" ] } func getWellKnownFile () ( wellKnown , error ) { httpClient := http .
+- You can use https://jwt.io/ to decode it (the signature is redacted). eyJhbGciOiJIUzI1NiIsImtpZCI6IjEyMzQ1IiwidHlwIjoiSldUIn0.eyJhdWQiOiJBVURJRU5DRV9OQU1FIiwiZGJnc3RhdCI6ImRpc2FibGVkLXNpbmNlLWJvb3QiLCJlYXRfbm9uY2UiOlsiTk9OQ0VfMSIsIk5PTkNFXzIiXSwiZWF0X3Byb2ZpbGUiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vY29uZmlkZW50aWFsLWNvbXB1dGluZy9jb25maWRlbnRpYWwtc3BhY2UvZG9jcy9yZWZlcmVuY2UvdG9rZW4tY2xhaW1zIiwiZXhwIjoxNzIxMzMwMDc1LCJnb29nbGVfc2VydmljZV9hY2NvdW50cyI6WyJQUk9KRUNUX0lELWNvbXB1dGVAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iXSwiaHdtb2RlbCI6IkdDUF9BTURfU0VWIiwiaWF0IjoxNzIxMzI2NDc1LCJpc3MiOiJodHRwczovL2NvbmZpZGVudGlhbGNvbXB1dGluZy5nb29nbGVhcGlzLmNvbSIsIm5iZiI6MTcyMTMyNjQ3NSwib2VtaWQiOjExMTI5LCJzZWNib290Ijp0cnVlLCJzdWIiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9jb21wdXRlL3YxL3Byb2plY3RzL1BST0pFQ1RfSUQvem9uZXMvdXMtY2VudHJhbDEtYS9pbnN0YW5jZXMvSU5TVEFOQ0VfTkFNRSIsInN1Ym1vZHMiOnsiY29uZmlkZW50aWFsX3NwYWNlIjp7Im1vbml0b3JpbmdfZW5hYmxlZCI6eyJtZW1vcnkiOmZhbHNlfSwic3VwcG9ydF9hdHRyaWJ1dGVzIjpbIkxBVEVTVCIsIlNUQUJMRSIsIlVTQUJMRSJdfSwiY29udGFpbmVyIjp7ImFyZ3MiOlsiL2N1c3RvbW5vbmNlIiwiL2RvY2tlci1lbnRyeXBvaW50LnNoIiwibmdpbngiLCItZyIsImRhZW1vbiBvZmY7Il0sImVudiI6eyJIT1NUTkFNRSI6IkhPU1RfTkFNRSIsIk5HSU5YX1ZFUlNJT04iOiIxLjI3LjAiLCJOSlNfUkVMRUFTRSI6IjJ-Ym9va3dvcm0iLCJOSlNfVkVSU0lPTiI6IjAuOC40IiwiUEFUSCI6Ii91c3IvbG9jYWwvc2JpbjovdXNyL2xvY2FsL2JpbjovdXNyL3NiaW46L3Vzci9iaW46L3NiaW46L2JpbiIsIlBLR19SRUxFQVNFIjoiMn5ib29rd29ybSJ9LCJpbWFnZV9kaWdlc3QiOiJzaGEyNTY6Njc2ODJiZGE3NjlmYWUxY2NmNTE4MzE5MmI4ZGFmMzdiNjRjYWU5OWM2YzMzMDI2NTBmNmY4YmY1ZjBmOTVkZiIsImltYWdlX2lkIjoic2hhMjU2OmZmZmZmYzkwZDM0M2NiY2IwMWE1MDMyZWRhYzg2ZGI1OTk4YzUzNmNkMGEzNjY1MTQxMjFhNDVjNjcyMzc2NWMiLCJpbWFnZV9yZWZlcmVuY2UiOiJkb2NrZXIuaW8vbGlicmFyeS9uZ2lueDpsYXRlc3QiLCJpbWFnZV9zaWduYXR1cmVzIjpbeyJrZXlfaWQiOiI8aGV4YWRlY2ltYWwtc2hhMjU2LWZpbmdlcnByaW50LXB1YmxpYy1rZXkxPiIsInNpZ25hdHVyZSI6IjxiYXNlNjQtZW5jb2RlZC1zaWduYXR1cmU-Iiwic2lnbmF0dXJlX2FsZ29yaXRobSI6IlJTQVNTQV9QU1NfU0hBMjU2In0seyJrZXlfaWQiOiI8aGV4YWRlY2ltYWwtc2hhMjU2LWZpbmdlcnByaW50LXB1YmxpYy1rZXkyPiIsInNpZ25hdHVyZSI6IjxiYXNlNjQtZW5jb2RlZC1zaWduYXR1cmU-Iiwic2lnbmF0dXJlX2FsZ29yaXRobSI6IlJTQVNTQV9QU1NfU0hBMjU2In0seyJrZXlfaWQiOiI8aGV4YWRlY2ltYWwtc2hhMjU2LWZpbmdlcnByaW50LXB1YmxpYy1rZXkzPiIsInNpZ25hdHVyZSI6IjxiYXNlNjQtZW5jb2RlZC1zaWduYXR1cmU-Iiwic2lnbmF0dXJlX2FsZ29yaXRobSI6IkVDRFNBX1AyNTZfU0hBMjU2In1dLCJyZXN0YXJ0X3BvbGljeSI6Ik5ldmVyIn0sImdjZSI6eyJpbnN0YW5jZV9pZCI6IklOU1RBTkNFX0lEIiwiaW5zdGFuY2VfbmFtZSI6IklOU1RBTkNFX05BTUUiLCJwcm9qZWN0X2lkIjoiUFJPSkVDVF9JRCIsInByb2plY3RfbnVtYmVyIjoiUFJPSkVDVF9OVU1CRVIiLCJ6b25lIjoidXMtY2VudHJhbDEtYSJ9fSwic3duYW1lIjoiQ09ORklERU5USUFMX1NQQUNFIiwic3d2ZXJzaW9uIjpbIjI0MDUwMCJdfQ.29V71ymnt7LY5Ny6OJFb9AClT4XNLPi0TIcddKDp5pk<SIGNATURE> Here is the decoded version of the previous sample: { "alg" : "HS256" , "kid" : "12345" , "typ" : "JWT" } . { "aud" : " AUDIENCE NAME " , "dbgstat" : "disabled-since-boot" , "eat nonce" : [ " NONCE 1 " , " NONCE 2 " ], "eat profile" : "https://cloud.google.com/confidential-computing/confidential-space/docs/reference/token-claims" , "exp" : 1721330075 , "google service accounts" : [ " PROJECT ID -compute@developer.gserviceaccount.com" ], "hwmodel" : "GCP AMD SEV" , "iat" : 1721326475 , "iss" : "https://confidentialcomputing.googleapis.com" , "nbf" : 1721326475 , "oemid" : 11129 , "secboot" : true , "sub" : "https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/us-central1-a/instances/ INSTANCE NAME " , "submods" : { "confidential space" : { "monitoring enabled" : { "memory" : false }, "support attributes" : [ "LATEST" , "STABLE" , "USABLE" ] }, "container" : { "args" : [ "/customnonce" , "/docker-entrypoint.sh" , "nginx" , "-g" , "daemon off;" ], "env" : { "HOSTNAME" : " HOST NAME " , "NGINX VERSION" : "1.27.0" , "NJS RELEASE" : "2 bookworm" , "NJS VERSION" : "0.8.4" , "PATH" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" , "PKG RELEASE" : "2 bookworm" }, "image digest" : "sha256:67682bda769fae1ccf5183192b8daf37b64cae99c6c3302650f6f8bf5f0f95df" , "image id" : "sha256:fffffc90d343cbcb01a5032edac86db5998c536cd0a366514121a45c6723765c" , "image reference" : "docker.io/library/nginx:latest" , "image signatures" : [ { "key id" : "<hexadecimal-sha256-fingerprint-public-key1>" , "signature" : "<base64-encoded-signature>" , "signature algorithm" : "RSASSA PSS SHA256" }, { "key id" : "<hexadecimal-sha256-fingerprint-public-key2>" , "signature" : "<base64-encoded-signature>" , "signature algorithm" : "RSASSA PSS SHA256" }, { "key id" : "<hexadecimal-sha256-fingerprint-public-key3>" , "signature" : "<base64-encoded-signature>" , "signature algorithm" : "ECDSA P256 SHA256" } ], "restart policy" : "Never" }, "gce" : { "instance id" : " INSTANCE ID " , "instance name" : " INSTANCE NAME " , "project id" : " PROJECT ID " , "project number" : " PROJECT NUMBER " , "zone" : "us-central1-a" } }, "swname" : "CONFIDENTIAL SPACE" , "swversion" : [ "240500" ] } For a more detailed explanation of attestation token fields, see Attestation token claims .
+- The following is an example AWS policy that grants access to a workload with a specified digest and audience, CONFIDENTIAL SPACE as the software running on the VM instance, and STABLE as the support attribute: { "Version" : "2012-10-17" , "Statement" : [ { "Effect" : "Allow" , "Principal" : { "Federated" : "arn:aws:iam::232510754029:oidc-provider/confidentialcomputing.googleapis.com" }, "Action" : [ "sts:AssumeRoleWithWebIdentity" , "sts:TagSession" ], "Condition" : { "StringEquals" : { "confidentialcomputing.googleapis.com:aud" : "https://integration.test" , "aws:RequestTag/swname" : "CONFIDENTIAL SPACE" , "aws:RequestTag/container.image digest" : "sha256:ac74cbeca443e36325bad15a7c28f2598b22966aa94681a444553f0b838717cf" }, "StringLike" : { "aws:RequestTag/confidential space.support attributes" : " STABLE " } } } ] } Configure AWS resources After your integration is complete, configure your AWS resources.
+- The following is an example https://aws.amazon.com/tags claim structure: { "https://aws.amazon.com/tags" : { "principal tags" : { "confidential space.support attributes" : [ "LATEST=STABLE=USABLE" ], "container.image digest" : [ "sha256:6eccbcf1a1de8bf50aefbb37e8c3600d5b59f4a12cf7d964b6f8ef964b782eb2" ], "gce.project id" : [ "confidentialcomputing-e2e" ], "gce.zone" : [ "us-west1-a" ], "hwmodel" : [ "GCP AMD SEV" ], "swname" : [ "CONFIDENTIAL SPACE" ], "swversion" : [ "250101" ] } } } AWS policies with container image signature claims AWS tokens also support container image signature claims.
 

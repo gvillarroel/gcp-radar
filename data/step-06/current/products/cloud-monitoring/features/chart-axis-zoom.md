@@ -1,15 +1,15 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.161Z"
+generated_at: "2026-04-15T00:01:14.065Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Chart Axis Zoom"
 feature_slug: "chart-axis-zoom"
 latest_feature_date: "2016-10-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
+  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
   - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
 keywords:
@@ -18,15 +18,15 @@ keywords:
   - "zoom"
   - "charts"
   - "click"
-  - "and"
   - "drag"
   - "zooming"
+  - "both"
 ---
 
 # Chart Axis Zoom
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,47 +38,47 @@ Charts support click-and-drag zooming on both x and y axes.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
+- [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
 - [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
 
 ## Supporting Pages
 
-### Monitoring release notes \_|\_ Google Cloud Documentation
+### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 114
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- Source ID: `site-docs-reference-2`
+- Final score: 122
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Charting : You can use log scales in your charts, and you can zoom both the x- and y-axes by clicking-and-dragging.
-- July 20, 2023 Change We made improvements to the dashboard building experience: Improved the performance Simplified the layout and expanded the configurable settings Improved the widget drag and drop experience Enhanced the text widget Unified the chart-configuration experience between dashboards and the Metrics Explorer For more information, see Add charts and tables to a custom dashboard .
-- Change The improved dashboard building experience is now GA: Improved the performance Simplified the layout and expanded the configurable settings Improved the widget drag and drop experience Enhanced the text widget Unified the chart-configuration experience between dashboards and the Metrics Explorer For more information, see Add charts and tables to a custom dashboard .
-- To view the GPU charts for a VM instance, select Compute Engine > VM instances , click on the name of a VM instance, and then select Observability .
+- To open the flyout that displays both metric and log data, do one of the following: To filter log data only by the resource type and applicable variables, in the chart's toolbar, click more vert More chart options , and then select Inspect related logs .
+- View chart configuration To view details like the metric type and the aggregation options for a chart that displays metric data, go to the toolbar of a chart or table, and then click info Information .
+- Explore metric data The charts and tables on your dashboard display golden signals and other metric data that is relevant for the resources used by your application, service, or workload.
+- From the interactive topology map, you can do the following: Change the visualization by zooming in or out, repositioning nodes, or collapsing an application circle to a point.
 
 ### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 - Source ID: `site-docs-reference`
-- Final score: 104
+- Final score: 107
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - To analyze any of these charts in more detail, click more vert More options and select View in Metrics Explorer .
+- Click View charts on the scorecard for bytes or samples ingested.
+- Click View charts on the scorecard for bytes or samples ingested.
 - It is possible have charts and alerting policies that refer to metrics with no data (inactive metrics) and to query such metrics; on the Metrics Management page, these metrics are considered used metrics, even though any read operations return no data.
-- Before you begin To view the charts and logs included on the Metrics Management page, to create alerting policies, and to create metric-exclusion rules, you must have the correct authorization .
-- Find the metric in the table, and then click more vert Actions to do any of the following: To view a chart that displays the current metric, select View in Metrics Explorer .
 
 ### "Collect OpenTelemetry Protocol (OTLP) metrics and traces \_|\_ Cloud Monitoring\
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
 - Source ID: `site-iam-reference`
-- Final score: 88
+- Final score: 75
 - Re-rank relevance: N/A
 
 Evidence snippets:

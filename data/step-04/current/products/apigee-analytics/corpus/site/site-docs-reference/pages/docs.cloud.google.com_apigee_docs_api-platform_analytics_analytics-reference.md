@@ -385,27 +385,22 @@ revision may currently be deployed. Also, an API may have multiple revisions dep
 long as the revisions have different Base Paths, as described in Deploying proxies .
 Resolved Client IP
 ax_resolved_client_ip
-Originating client IP address. This is either derived using the default client ip
-address resolution or the algorithm configured in
-configured client IP resolution .
-With the default behavior, the value of the ax_resolved_client_ip
-dimension is calculated from the values in the ax_true_client_ip and the
-x_forwarded_for_ip dimensions.
+Originating client IP address. This is either derived using the default client IP
+address resolution (which only uses the X-Forwarded-For header) or the algorithm configured in
+configured client IP resolution (which can resolve the IP address from any header) .
 Note that when using routing products such as Akamai to capture the true IP addresses of clients,
 the client IP is passed to Apigee in the HTTP header True-Client-IP , which is
 then used to set the ax_true_client_ip dimension.
-The value of the ax_resolved_client_ip dimension is calculated as follows:
-If ax_true_client_ip is not null and does not contain a local IP address,
-then set ax_resolved_client_ip to ax_true_client_ip .
-Else, set ax_resolved_client_ip to the first non-local IP address in
+With the default behavior, the value of the ax_resolved_client_ip
+dimension is calculated from the values in the x_forwarded_for_ip dimension in the
+following manner:
+Set ax_resolved_client_ip to the first non-local IP address in
 x_forwarded_for_ip .
-If both ax_true_client_ip and x_forwarded_for_ip contain
-only local IPs, then set ax_resolved_client_ip to the last local IP in
+If x_forwarded_for_ip contains only local IP addresses, then set
+ax_resolved_client_ip to the last local IP address in
 x_forwarded_for_ip .
-If both ax_true_client_ip and x_forwarded_for_ip are null,
-set ax_resolved_client_ip to (not set) .
-If ax_true_client_ip is a local IP and x_forwarded_for_ip
-is null, set ax_resolved_client_ip to (not set) .
+If x_forwarded_for_ip is null, set
+ax_resolved_client_ip to (not set) .
 Response Status Code
 response_status_code
 HTTP response status code forwarded from Apigee to the client, such as 200 , 404 ,
@@ -447,9 +442,6 @@ ax_true_client_ip
 When using routing products such as Akamai to capture the true IP addresses of clients,
 the client IPs are passed to Apigee in the HTTP header True-Client-IP . This
 dimension captures those true client IPs from that header.
-To determine the original client IP Address, accessed through the ax_resolved_client_ip
-dimension, Apigee uses the ax_true_client_ip and the
-x_forwarded_for_ip dimensions.
 Request Path
 request_path
 Resource path (not including the domain) to the target service, excluding query
@@ -568,9 +560,7 @@ chaining , the target_url in the calling proxy is null.
 X-Forwarded-For IP
 x_forwarded_for_ip
 The list of IP addresses in the X-Forwarded-For header.
-To determine the original client IP Address, accessed through the ax_resolved_client_ip
-dimension, Apigee uses the ax_true_client_ip and the
-x_forwarded_for_ip dimensions.
+To determine the original client IP Address, accessed through the ax_resolved_client_ip dimension, Apigee uses the values in the x_forwarded_for_ip dimension.
 X-Forwarded-For Proto
 x_forwarded_proto
 Protocol that the client used to connect to the router. Valid values include http or https .
@@ -719,6 +709,6 @@ Lets you use OR logic to evaluate different possible filter expressions. The fil
 includes data that meets at least one of the conditions.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

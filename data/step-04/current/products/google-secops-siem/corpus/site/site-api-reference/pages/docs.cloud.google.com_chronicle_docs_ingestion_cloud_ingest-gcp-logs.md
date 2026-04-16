@@ -38,6 +38,7 @@ A special Cloud Logging filter can be configured in Google Cloud to send specifi
 Logs are collected starting from the time the filter is configured.
 Logs generated prior to configuration are not included.
 This real-time forwarding applies to Cloud Logging, Cloud Asset Metadata, and Security Command Center Premium findings.
+Use this method for high-volume logs such as VPC Flow and DNS. This path is optimized for speed and doesn't require additional configuration in the Google Cloud console.
 Google Security Operations only ingests supported log types. Available log types include:
 Cloud Audit Logs
 Cloud NAT
@@ -65,6 +66,7 @@ Note: To collect Compute Engine or Google Kubernetes Engine (GKE) application lo
 Additionally, raise a Support ticket with Google SecOps to provide your feedback in support of possibly collecting this type of log using direct ingestion (Option 1) in the future. Note: At this time, the direct ingestion method does not support Namespace or Label assignment.
 Option 2: Google Cloud Storage
 Cloud Logging can route logs to Cloud Storage by Google SecOps on a scheduled basis.
+Use this option if you need to filter logs before they reach Google SecOps. This lets you apply regular expression exclusion filters so only security-relevant logs count against your quota, which can help save on costs.
 Note: This option will generate additional costs in Google Cloud account for the use of Cloud Storage.
 For details about how to configure Cloud Storage for Google SecOps, see
 Feed Management: Cloud Storage .
@@ -420,6 +422,6 @@ Learn more about Google SecOps .
 Need more help? Get answers from Community members and Google SecOps professionals.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.433Z"
+generated_at: "2026-04-15T13:43:38.468Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "BigQuery PDT Override Billing Project ID setting"
@@ -9,10 +9,11 @@ latest_feature_date: "2025-04-29"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/gemini-overview-looker"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/looker"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+  - "https://docs.cloud.google.com/bigquery/docs/default-configuration"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
 keywords:
+  - "bigquery"
   - "pdt"
   - "override"
   - "billing"
@@ -20,7 +21,6 @@ keywords:
   - "id"
   - "setting"
   - "lets"
-  - "looker"
 ---
 
 # BigQuery PDT Override Billing Project ID setting
@@ -42,41 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- [https://docs.cloud.google.com/bigquery/docs/default-configuration](https://docs.cloud.google.com/bigquery/docs/default-configuration)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
 
 ## Supporting Pages
 
-### Gemini in Looker overview | Google Cloud Documentation
+### Admin settings - General settings \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- Source ID: `site-docs-root`
-- Final score: 68
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- Source ID: `site-docs-reference`
+- Final score: 137
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini in Looker overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/gemini-overview-looker Ask questions about and converse with your data by using Conversational Analytics: Gemini in Looker lets you ask questions about your data source by using natural language.
-- Gemini returns Looker charts or data tables that are based on your query.
+- This setting lets Looker admins define the email domains to which your users can deliver Looker content — Looks, dashboards, queries with visualizations — or alert notifications through email.
+- Caution: An admin can override the Closed System setting by editing folder visibility to allow a user to see the personal folder of another user with whom they don't share a group.
+- The Default Visualization Colors setting lets you define a default color collection for visualizations, and also lets you create new color collections for use in your instances.
+- Force BigQuery Readonly Scope usage Enabling this setting signs out users that have OAuth credentials that allow read and write scope on any of BigQuery connections.
 
-### Looker (Google Cloud core) overview | Google Cloud Documentation
+### Manage configuration settings \_|\_ BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 64
+- URL: [https://docs.cloud.google.com/bigquery/docs/default-configuration](https://docs.cloud.google.com/bigquery/docs/default-configuration)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 132
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Required roles To get the permission that you need to retrieve configuration settings, ask your administrator to grant you the BigQuery Job User ( roles/bigquery.jobUser ) IAM role on the specified project.
+- Limitations Global configuration settings are subject to the following limitations: Global organization and project settings are not available in BigQuery Omni locations .
+- Manage configuration settings BigQuery administrators and project owners can manage configuration settings at the organization and project levels.
+- To override this project-level setting for an individual continuous query, assign a job timeout to the continuous query in question.
+
+### Admin settings - Roles \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- Source ID: `site-docs-reference`
+- Final score: 118
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
-
-### Looker roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- Source ID: `site-iam-reference`
-- Final score: 64
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Looker roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/looker This page lists the IAM roles and permissions for Looker.
+- Gemini gemini in looker Conversational Analytics Agent Manager access data , gemini in looker , chat with agent , chat with explore , save agents Conversational Analytics User access data , gemini in looker , chat with agent Customer Engineer Advanced Editor access data , can create forecast , can override vis config , chat with agent , chat with explore , clear cache refresh , create custom fields , create table calculations , deploy , develop , explore , follow alerts , gemini in looker , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , save agents , save content , save dashboards , save looks , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Customer Engineer Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.
+- They can also view and edit that data source's configuration in Looker Studio. create table calculations explore Instance Wide NN Users can view, edit, or add table calculations create custom fields explore Instance Wide NN Users can view, edit, or add custom fields ; users who have only the explore permission can only view custom fields. can create forecast explore Instance Wide NN Users can create and edit forecasts in visualizations; users who don't have this permission can only view existing forecasts in the content to which they have access. can override vis config explore Instance Wide NN Users can access the Chart Config Editor , which lets them modify the Highchart API JSON values of a visualization and customize the visualization appearance and format. save content see looks Instance Wide NN This permission is a parent permission of save dashboards , save looks , and create public looks .
+- This permission grants users the ability to perform the following tasks: Write LookML using Gemini assistance when they also have a Looker role that contains the develop permission for at least one model in a LookML project Create custom Looker visualizations using Gemini assistance when they also have a Looker role that contains the can override vis config permission Use Conversational Analytics with Looker Explore data in Looker Studio, even if they don't have a role that contains the explore permission, when they also have a Looker role that contains the access data permission on the model that they are querying chat with agent gemini in looker Model Specific Added 25.18 Conversational Analytics users can chat with data agents that use one or more Looker Explores.
+- Support Advanced Editor access data , clear cache refresh , create custom fields , create table calculations , develop , explore , follow alerts , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Support Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.
 

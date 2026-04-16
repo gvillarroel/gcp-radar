@@ -1,24 +1,26 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.561Z"
+generated_at: "2026-04-15T12:48:36.371Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "Subqueries in row-level access policies"
 feature_slug: "subqueries-in-row-level-access-policies"
-latest_feature_date: "2024-04-16"
+latest_feature_date: "2025-03-31"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+  - "https://docs.cloud.google.com/bigquery/docs/conditions"
+  - "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+  - "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
 keywords:
-  - "RLS subquery"
-  - "row access policy subquery"
-  - "policy filter subquery"
-  - "subquery in access policy"
-  - "subquery expression"
-  - "row-level security condition"
-  - "CREATE ROW ACCESS POLICY"
-  - "row-level access policies"
+  - "subqueries"
+  - "row"
+  - "level"
+  - "access"
+  - "policies"
+  - "bigquery"
+  - "now"
+  - "supports"
 ---
 
 # Subqueries in row-level access policies
@@ -28,32 +30,60 @@ Coverage: LOW
 
 ## Step 02 Summary
 
-BigQuery now supports using subqueries within row-level access policies.
+BigQuery row-level access policies now support subqueries; BigQuery supports using subqueries in row-level access policies.
 
 ## Extended Definition
 
-BigQuery row-level access policies are managed through DDL, including the `CREATE ROW ACCESS POLICY` statement to create or replace a policy for a table. The same DDL documentation also defines operations and required IAM permissions for listing, deleting, and modifying row-level access policies. Based on the provided excerpts, subquery support inside row-level access policy predicates is not explicitly shown, so that specific capability is not directly evidenced here.
+BigQuery row-level access policies now support subqueries; BigQuery supports using subqueries in row-level access policies.
 
 ## Evidence Summary
 
-The cited BigQuery DDL reference confirms row-level access policy lifecycle commands and permission requirements, but does not explicitly document subquery usage in row-level access policy expressions.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- [https://docs.cloud.google.com/bigquery/docs/conditions](https://docs.cloud.google.com/bigquery/docs/conditions)
+- [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- [https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam](https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam)
 
 ## Supporting Pages
 
-### "Data definition language (DDL) statements in GoogleSQL \_|\_ BigQuery \_\
+### Control access to resources with IAM \_|\_ BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
-- Source ID: `site-docs-reference`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam](https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam)
+- Source ID: `site-docs-reference-5`
+- Final score: 34
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- You can use DDL commands to create, alter, and delete resources, such as the following: Datasets Tables Table schemas Table clones Table snapshots Views Connections User-defined functions (UDFs) Indexes Capacity commitments and reservations Row-level access policies Default configuration settings Required permissions To create a job that runs a DDL statement, you must have the bigquery.jobs.create permission for the project where you are running the job.
-- Required permissions This statement requires the following IAM permissions : Permission Resource bigquery.rowAccessPolicies.delete The row-level access policy to delete. bigquery.rowAccessPolicies.setIamPolicy The row-level access policy to delete. bigquery.rowAccessPolicies.list The table to delete all row-level access policies on.
-- Examples Delete a row-level access policy from a table: DROP ROW ACCESS POLICY my row filter ON project . dataset . my table ; Delete all the row-level access policies from a table: DROP ALL ROW ACCESS POLICIES ON project . dataset . my table ; DROP CAPACITY statement Deletes a capacity commitment.
-- SelectFromTablesAndAppend ( CURRENT DATE (), rows added ); SELECT FORMAT ( 'Added %d rows' , rows added ); CREATE ROW ACCESS POLICY statement Creates or replaces a row-level access policy .
+- This permission is required for creating replica materialized views. bigquery.tables.restoreSnapshot Table Restore a table snapshot. bigquery.tables.setCategory Table Set policy tags in the table's schema. bigquery.tables.setColumnDataPolicy Table Set column-level access policies on a table. bigquery.tables.setIamPolicy Table Set access controls on a table. bigquery.tables.update Table Update table. metadata. bigquery.tables.get is also required to update table metadata in the console. bigquery.tables.updateData Table Update table data. bigquery.tables.updateIndex Table Update a search index on the table.
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to modify IAM policies for resources: To get a dataset's access policy: bigquery.datasets.get To set a dataset's access policy: bigquery.datasets.update To get a dataset's access policy (Google Cloud console only): bigquery.datasets.getIamPolicy To set a dataset's access policy (console only): bigquery.datasets.setIamPolicy To get a table or view's policy: bigquery.tables.getIamPolicy To set a table or view's policy: bigquery.tables.setIamPolicy To get a routine's access policy: bigquery.routines.getIamPolicy To set a routine's access policy: bigquery.routines.setIamPolicy To create bq tool or SQL BigQuery jobs (optional): bigquery.jobs.create You might also be able to get these permissions with custom roles or other predefined roles .
+- Then call the IAM().SetPolicy() function to save changes to the access policy for a table or view. import ( "context" "fmt" "io" "cloud.google.com/go/bigquery" "cloud.google.com/go/iam" ) // revokeTableOrViewAccessPolicies creates a new ACL removing the VIEWER role to group "example-analyst-group@google.com" // For more information on the types of ACLs available see: // https://cloud.google.com/storage/docs/access-control/lists func revokeTableOrViewAccessPolicies ( w io .
+- Then call the Roles() function to get the access policy for a table or view. import ( "context" "fmt" "io" "cloud.google.com/go/bigquery" ) // viewTableOrViewAccessPolicies retrieves the ACL for the given resource // For more information on the types of ACLs available see: // https://cloud.google.com/storage/docs/access-control/lists func viewTableOrViewAccessPolicies ( w io .
+
+### Control access with IAM Conditions \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/conditions](https://docs.cloud.google.com/bigquery/docs/conditions)
+- Source ID: `site-docs-reference-5`
+- Final score: 34
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to apply IAM Conditions to BigQuery resources: Set conditional IAM access at the project level: resourcemanager.projects.setIamPolicy Set conditional IAM access on datasets: bigquery.datasets.setIamPolicy bigquery.datasets.update You might also be able to get these permissions with custom roles or other predefined roles .
+- However, a user with conditional access can grant themselves the BigQuery Admin role ( roles/bigquery.admin ) on the table, and then modify row and column access policies.
+- Add conditions to an organization, folder, or project To add conditional access to an organization, folder, or project in BigQuery, see Allow policies with conditions .
+- Don't use the condition resource.type == 'bigquery.googleapis.com/Dataset' for dataset-level policies, because it has no effect on authorization.
+
+### "Introduction to BigLake external tables \_|\_ BigQuery \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- Source ID: `site-docs-reference-5`
+- Final score: 33
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The BigQuery Storage API enforces row- and column-level governance policies on all data access to BigLake tables, including through connectors.
+- Consider the following query as an example: SELECT FROM bigquery dataset . bigquery table AS clients WHERE clients . sales rep IN ( SELECT id FROM aws dataset . aws table1 AS employees INNER JOIN aws dataset . aws table2 AS active employees ON employees . id = active employees . id WHERE employees . level > 3 ); This example has two transfers: one from an employees table (with a level filter) and one from an active employees table.
+- Cross-cloud join required permissions To get the permissions that you need to run a cross-cloud join, ask your administrator to grant you the following IAM roles on the project where the join is executed: BigQuery Data Viewer ( roles/bigquery.dataViewer ) BigQuery Job User ( roles/bigquery.jobUser ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- For example, the following diagram demonstrates how the BigQuery Storage API lets users access authorized data using open source query engines such as Apache Spark: For more information about connectors supported by BigQuery, see BigQuery connectors .
 

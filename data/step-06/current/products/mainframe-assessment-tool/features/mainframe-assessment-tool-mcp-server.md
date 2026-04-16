@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.404Z"
+generated_at: "2026-04-15T12:06:50.450Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Mainframe Assessment Tool MCP server"
@@ -10,8 +10,8 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction"
 keywords:
   - "mainframe"
   - "assessment"
@@ -19,8 +19,8 @@ keywords:
   - "mcp"
   - "server"
   - "provides"
-  - "an"
-  - "that"
+  - "lets"
+  - "ai"
 ---
 
 # Mainframe Assessment Tool MCP server
@@ -43,45 +43,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 ## Source Links
 
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
 
 ## Supporting Pages
 
-### Mainframe Assessment Tool MCP server | Google Cloud Documentation
+### Mainframe Assessment Tool MCP server \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
-- Source ID: `site-docs-root`
-- Final score: 240
+- Source ID: `site-docs-reference`
+- Final score: 170
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Mainframe Assessment Tool MCP server Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server This page describes how to set up and interact with Mainframe Assessment Tool assessments by using MCP clients such as Gemini CLI or AI agents through the Model Context Protocol (MCP).
-- You can use natural language prompts to get insights into your mainframe assessments.
+- Antigravity IDE To use Antigravity IDE , configure custom MCP server in mcp config.json as follows: { "mcpServers" : { "mainframe-assessment-tool" : { "serverUrl" : "http://localhost: LOCAL PORT /mcp/" } } } MCP server tools The Mainframe Assessment Tool MCP server provides tools that enable AI agents to retrieve data from your assessments.
+- Enable the MCP server To enable the MCP server on your Mainframe Assessment Tool VM instance, add the MAT ENABLE MCP metadata key and set its value to true by running the following gcloud command: gcloud compute instances add-metadata INSTANCE NAME \ --metadata=MAT ENABLE MCP=true \ --zone= ZONE Replace the following: INSTANCE NAME : the name of your VM instance.
+- Gemini CLI To use Gemini CLI , configure the MCP server in the Gemini CLI settings file as follows: { "mcpServers" : { "mainframe-assessment-tool" : { "httpUrl" : "http://localhost: LOCAL PORT /mcp/" } } } For more information, see Configure the MCP server in settings.json .
+- Home Documentation Migration Mainframe Assessment Tool Guides Send feedback Mainframe Assessment Tool MCP server Stay organized with collections Save and categorize content based on your preferences.
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 216
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
-
-### View and understand assessment results | Mainframe Assessment Tool | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- Source ID: `site-docs-root`
-- Final score: 188
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Source ID: `site-docs-reference`
+- Final score: 42
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- View and understand assessment results Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results The Assets page provides a summary, detailed logic, and code suggestions for a program or job in your mainframe application.
-- You can also view the status, type, language, and execution mode (batch or online) for each asset.
+- For scheduler configuration assets, such as BMC Control-M, Mainframe Assessment Tool provides AI-generated insights that help you visualize the scheduler workflow, including a listing of scheduled jobs, timelines for daily, weekly, or monthly schedules, and dependency graphs showing job relationships.
+- Home Documentation Migration Mainframe Assessment Tool Guides Send feedback View and understand assessment results Stay organized with collections Save and categorize content based on your preferences.
+- Before you begin Create an assessment Review application assessment results To open an assessment to review results, follow these steps: Open the Mainframe Assessment Tool in a web browser.
+- Mainframe Assessment Tool uses the Gemini 3 Pro Image Preview for domain image generation.
+
+### "Extract business rules \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- Source ID: `site-docs-reference`
+- Final score: 38
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This page provides instructions on how to use the business rules extraction in Mainframe Assessment Tool to help you validate existing business logic and identify obsolete rules in your mainframe codebase.
+- Benefits of business rules extraction Business rules extraction helps you achieve the following goals: Create a single source of truth: Mainframe Assessment Tool extracts your mainframe application logic into human-readable business rules in Gherkin, a plain-text domain-specific language (DSL) used in behavior-driven development (BDD).
+- During business rule extraction, Mainframe Assessment Tool analyzes your mainframe application codebase to identify the business rules, and presents them in a standardized, human-readable format.
+- Home Documentation Migration Mainframe Assessment Tool Guides Send feedback Extract business rules Stay organized with collections Save and categorize content based on your preferences.
 

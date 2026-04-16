@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.845Z"
+generated_at: "2026-04-12T12:14:02.773Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Location support: southamerica-west1"
 feature_slug: "location-support-southamerica-west1"
 latest_feature_date: "2024-04-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/store-query-data"
   - "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial"
-  - "https://docs.cloud.google.com/datastore/docs/release-notes"
+  - "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+  - "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
 keywords:
   - "location"
   - "southamerica"
@@ -26,7 +27,7 @@ keywords:
 # Location support: southamerica-west1
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Firestore in Datastore mode supports the southamerica-west1 Santiago region.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/store-query-data](https://docs.cloud.google.com/datastore/docs/store-query-data)
 - [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
-- [https://docs.cloud.google.com/datastore/docs/release-notes](https://docs.cloud.google.com/datastore/docs/release-notes)
+- [https://docs.cloud.google.com/datastore/docs/export-import-entities](https://docs.cloud.google.com/datastore/docs/export-import-entities)
+- [https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes](https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/store-query-data](https://docs.cloud.google.com/datastore/docs/store-query-data)
 - Source ID: `site-docs-root`
-- Final score: 198
+- Final score: 224
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
 - Source ID: `site-iam-reference`
-- Final score: 180
+- Final score: 206
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,29 @@ Evidence snippets:
 - Datastore mode supports fast and highly scalable ACID transactions, SQL-like queries, indexes and more.
 - For a deeper look into the Datastore mode capabilities, see What is Firestore in Datastore mode? .
 
-### Datastore release notes \_|\_ Google Cloud Documentation
+### Exporting and Importing Entities \_|\_ Datastore \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/datastore/docs/release-notes](https://docs.cloud.google.com/datastore/docs/release-notes)
+- URL: [https://docs.cloud.google.com/datastore/docs/export-import-entities](https://docs.cloud.google.com/datastore/docs/export-import-entities)
 - Source ID: `site-docs-root`
-- Final score: 178
+- Final score: 186
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Java Changes for google-cloud-datastore 2.19.1 (2024-04-19) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.29.0 ( #1403 ) ( d23dc4c ) April 08, 2024 Feature Firestore in Datastore mode now supports the following additional locations: africa-south1 Johannesburg europe-north1 Finland europe-southwest1 Madrid europe-west10 Berlin europe-west12 Turin europe-west8 Milan southamerica-west1 Santiago us-central1 Iowa us-east5 Columbus For a full list of supported locations, see Locations .
-- Go Changes for datastore/admin/apiv1 1.16.0 (2024-04-29) Features datastore: Adding BeginLater and transaction state ( #8984 ) ( 5f8e21f ) datastore: Adding BeginLater transaction option ( #8972 ) ( 4067f4e ) datastore: Adding reserve IDs support ( #9027 ) ( 2d66de0 ) datastore: Configure both mTLS and TLS endpoints for Datastore client ( #9653 ) ( 38bd793 ) datastore: Respect DATASTORE EMULATOR HOST setting ( #9789 ) ( 7259373 ) Bug Fixes datastore: Add explicit sleep before read time use ( #9080 ) ( 0538be4 ) datastore: Adding tracing to run method ( #9602 ) ( a5e197c ) datastore: Bump x/net to v0.24.0 ( ba31ed5 ) datastore: Enable universe domain resolution options ( fd1d569 ) datastore: Prevent panic on GetMulti failure ( #9656 ) ( 55845ad ) datastore: Update protobuf dep to v1.33.0 ( 30b038d ) April 29, 2024 Feature Firestore in Datastore mode now supports the us-south1 Dallas region.
-- Libraries Java 2.27.1 (2025-03-18) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.55.1 ( ba1ad98 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.45.1 ( #1791 ) ( ab5ac8e ) March 10, 2025 Libraries Java 2.27.0 (2025-03-05) Features Next release from main branch is 2.27.0 ( #1781 ) ( d29f47c ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.54.0 ( b9b302b ) Dependencies Update dependency com.google.cloud:gapic-libraries-bom to v1.53.0 ( #1779 ) ( 8369118 ) March 04, 2025 Feature Firestore in Datastore mode now supports the europe-north2 Stockholm region.
-- March 24, 2025 Feature Firestore in Datastore mode now supports multi-region nam7 United States (Central and East), which consists of regions us-central1 (Iowa) and us-east4 (Northern Virginia).
+- Create a Cloud Storage bucket in the same location as your Firestore in Datastore mode database .
+- Export and import operations contribute to your Google Cloud costs in the following ways: Entity reads and writes performed by export and import operations count towards your Firestore in Datastore mode costs .
+- This page describes how to export and import Firestore in Datastore mode entities using the managed export and import service.
+- Export operations For export operations involving a bucket in another project, modify the permissions of the bucket to assign one of the following Identity and Access Management roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Owner (basic role) You can also create an IAM custom role with slightly different permissions than the ones contained in the roles listed earlier: storage.buckets.get storage.objects.create storage.objects.delete storage.objects.list Import operations For import operations involving a Cloud Storage bucket in another project, modify the permissions of the bucket to assign one of the following Cloud Storage roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Both Storage Object Viewer and Storage Legacy Bucket Reader You can also create an IAM custom role with the following permissions: storage.buckets.get storage.objects.get Starting managed export and import operations This section describes how to start a managed export or import operation.
+
+### Optimizing Indexes \_|\_ Datastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes](https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes)
+- Source ID: `site-iam-reference`
+- Final score: 183
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- By merging different sections of the built-in index for the tag property, Firestore in Datastore mode supports queries that combine multiple tag filters in a logical AND : Python from google.cloud import datastore For help authenticating your client, visit https://cloud.google.com/docs/authentication/getting-started client = datastore .
+- By merging built-in indexes, Firestore in Datastore mode supports queries with equality filters on multiple properties: Python from google.cloud import datastore For help authenticating your client, visit https://cloud.google.com/docs/authentication/getting-started client = datastore .
+- Firestore in Datastore mode supports an index merging feature that lets your database merge built-in indexes to support additional queries.
+- Firestore in Datastore mode databases execute a query using a perfect index using the following steps: Identifies the index corresponding to the query's kind, filter properties, filter operators, and sort orders Scans from the beginning of the index to the first entity that meets all or a subset of the query's filter conditions Continues scanning the index, returning each entity that satisfies all the filter conditions, until it encounters an entity that does not meet the filter conditions, or reaches the end of the index, or has collected the maximum number of results requested by the query For example, consider the following query: SELECT FROM Task WHERE category = 'Personal' AND priority < 3 ORDER BY priority DESC The perfect composite index for this query is an index of keys for entities of kind Task , with columns for the values of the category and priority properties.
 

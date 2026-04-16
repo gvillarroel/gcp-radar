@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:34.400Z"
+generated_at: "2026-04-12T12:17:17.682Z"
 product_name: "Google SecOps Marketplace"
 product_slug: "google-secops-marketplace"
 feature_name: "Sysdig Secure integration"
 feature_slug: "sysdig-secure-integration"
 latest_feature_date: "2025-03-12"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
 keywords:
   - "sysdig"
   - "secure"
@@ -22,7 +25,7 @@ keywords:
 # Sysdig Secure integration
 
 Product: Google SecOps Marketplace
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,11 +35,68 @@ Adds a new integration with Sysdig Secure.
 
 Adds a new integration with Sysdig Secure.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Integrate Amazon EC2 with Google SecOps \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2)
+- Source ID: `site-docs-root`
+- Final score: 126
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Before you begin, ensure the integration is installed from the Content Hub within your Google SecOps instance.
+- Authorize Security Group Egress Adds the specified egress rule to a security group for use with a VPC.
+- When you specify an existing tag key, the value is overwritten with the new value.
+- Action Results Script Result Script result name Value options Example is success True/False is success:False Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: "Successfully connected to the Amazon EC2 with the provided connection parameters!" The action should fail and stop a playbook execution: if not successful: "Failed to connect to the Amazon EC2 server!
+
+### "Integrate Active Directory with Google SecOps \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory)
+- Source ID: `site-docs-root`
+- Final score: 118
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To configure the integration with a CA certificate, complete the following steps: To obtain the CA certificate, enter the cat mycert.crt command: bash-3.2# cat mycert.crt -----BEGIN CERTIFICATE----- CERTIFICATE STRING -----END CERTIFICATE----- bash-3.2# To encode the root CA certificate file to the base64 format with the -----BEGIN CERTIFICATE----- and -----END CERTIFICATE----- strings, enter the cat mycert.crt base64 command: bash-3.2# cat mycert.crt base64 BASE64 ENCODED CERTIFICATE STRING bash-3.2# Copy the BASE64 ENCODED CERTIFICATE STRING value and enter it in the CA Certificate File - parsed into Base64 String parameter value field in Google SecOps Active Directory integration configuration .
+- The integration uses secure LDAPS (port 636) when selected.
+- Action outputs The Enable Computer action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Not available Script result Available Script result The following table lists the value for the script result output when using the Enable Computer action: Script result name Value is success True or False Enrich Entities Use the Enrich Entities action to enrich the Hostname or Username entities with Active Directory properties.
+- Use cases The Active Directory integration can help you solve the following use cases: Activate and deactivate users: use Google SecOps capabilities to deactivate a potentially compromised user account and prevent further unauthorized access.
+
+### "Integrate Amazon GuardDuty with Google SecOps \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty)
+- Source ID: `site-docs-root`
+- Final score: 118
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Reason: {0}''.format(error.Stacktrace) General Create a Trusted IP list Creates a new list of trusted IP addresses (IPSet) that were in the dynamic list for secure communication with the AWS infrastructure and applications.
+- Action results Script result Script result name Value options Example is success True or False is success=False JSON result { "TrustedIPID" : " TRUSTED IP ID " } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successfully created a set (is success=true): "Successfully created new Trusted IP List '{0}' in Amazon GuardDuty.".format(Name)" If unsuccessful to create a set (is success=false): "Action wasn't able to create new Trusted IP List '{0}' in Amazon GuardDuty.".format(name)" The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: "Error executing action "Create Trusted IP List".
+- Action results Script result Script result name Value options Example is success True or False is success=False Case wall Result type Description Type Output message If successful: "Successfully connected to the AWS GuardDuty server with the provided connection parameters!" Else: "Failed to connect to the AWS if successful: "Successfully connected to the AWS GuardDuty server with the provided connection parameters!" Else: "Failed to connect to the AWS GuardDuty server!
+- Possible values: Plaintext Structured Threat Information Expression (STIX) Open Threat Exchange (OTX) CSV FireEye iSIGHT Threat Intelligence CSV Proofpoint ET Intelligence Feed CSV AlienVault Reputation Feed File Location String https://s3.amazonaws.com/{bucket-name}/file.txt Yes Specify the URI location, where the file is located Activate Checkbox Checked Yes If enabled, the newly created Trusted IP List is activated.
+
+### "Integrate APIVoid with Google SecOps \_|\_ Google Security Operations \_\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid)
+- Source ID: `site-docs-root`
+- Final score: 114
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. if data.get("report", {}).get("risk score", {}).get("result") > threshold Enrichment field name Logic - When to apply domain blacklist Returns if it exists in JSON result html forms Returns if it exists in JSON result server details Returns if it exists in JSON result response headers Returns if it exists in JSON result redirection Returns if it exists in JSON result file type Returns if it exists in JSON result risk score Returns if it exists in JSON result security checks Returns if it exists in JSON result geo location Returns if it exists in JSON result url parts Returns if it exists in JSON result site category Returns if it exists in JSON result web page Returns if it exists in JSON result dns records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { "EntityResult" : { "domain blacklist" : { "detections" : 0 , "engines" : [{ "detected" : false , "name" : "SpamhausDBL" , "reference" : "https://www.spamhaus.org/lookup/" }, { "detected" : false , "name" : "ThreatLog" , "reference" : "http://www.threatlog.com/" }, { "detected" : false , "name" : "OpenPhish" , "reference" : "http://www.openphish.com/" }, { "detected" : false , "name" : "PhishTank" , "reference" : "http://www.phishtank.com/" }, { "detected" : false , "name" : "Phishing.Database" , "reference" : "https://github.com/mitchellkrogza/Phishing.Database" }, { "detected" : false , "name" : "PhishStats" , "reference" : "https://phishstats.info/" }, { "detected" : false , "name" : "URLVir" , "reference" : "http://www.urlvir.com/" }, { "detected" : false , "name" : "URLhaus" , "reference" : "https://urlhaus.abuse.ch/" }, { "detected" : false , "name" : "RPiList Not Serious" , "reference" : "https://github.com/RPiList/specials" }, { "detected" : false , "name" : "precisionsec" , "reference" : "https://precisionsec.com/" }, { "detected" : false , "name" : "AntiSocial Blacklist" , "reference" : "https://theantisocialengineer.com/" }, { "detected" : false , "name" : "PhishFeed" , "reference" : "https://phishfeed.com/" }, { "detected" : false , "name" : "Spam404" , "reference" : "https://www.spam404.com/" }]}, "html forms" : { "number of total input fields" : 0 , "email field present" : false , "number of total forms" : 0 , "password field present" : false , "two text inputs in a form" : false , "credit card field present" : false }, "server details" : { "continent name" : "Asia" , "hostname" : "example.com" , "region name" : "Seoul-teukbyeolsi" , "ip" : "192.0.2.141" , "isp" : "Example Corporation" , "continent code" : "AS" , "country name" : "Korea (Republic of)" , "city name" : "Seoul" , "longitude" : 126.97782897949219 , "country code" : "KR" , "latitude" : 37.568260192871094 }, "response headers" : { "status" : "HTTP/1.1 404 Not Found" , "content-length" : "177" , "code" : 404 , "server" : "nginx/1.4.6 (Ubuntu)" , "connection" : "keep-alive" , "date" : "Wed, 15 Jul 2020 08:21:54 GMT" , "content-type" : "text/html" }, "redirection" : { "url" : null , "found" : false , "external" : false }, "file type" : { "headers" : "HTML" , "extension" : "HTML" , "signature" : " " }, "risk score" : { "result" : 10 }, "security checks" : { "is suspended page" : false , "is defaced heuristic" : false , "is windows exe file" : false , "is credit card field" : false , "is windows exe file on free hosting" : false , "is masked linux elf file" : false , "is exe on directory listing" : false , "is php on directory listing" : false , "is masked windows exe file" : false , "is sinkholed domain" : false , "is robots noindex" : false , "is windows exe file on free dynamic dns" : false , "is doc on directory listing" : false , "is non standard port" : false , "is linux elf file on free dynamic dns" : false , "is suspicious domain" : false , "is suspicious url pattern" : false , "is china country" : false , "is risky geo location" : false , "is pdf on directory listing" : false , "is valid https" : false , "is external redirect" : false , "is windows exe file on ipv4" : false , "is phishing heuristic" : false , "is linux elf file on ipv4" : false , "is email address on url query" : false , "is uncommon clickable url" : false , "is most abused tld" : false , "is domain blacklisted" : false , "is host an ipv4" : false , "is linux elf file on free hosting" : false , "is zip on directory listing" : false , "is password field" : false , "is linux elf file" : false , "is empty page title" : false , "is directory listing" : false , "is masked file" : false , "is suspicious file extension" : false , "is suspicious content" : false }, "geo location" : { "countries" : [ "KR" ] }, "url parts" : { "host nowww" : "example.com" , "host" : "www.example.com" , "path" : "/dynamic/example.html" , "query" : null , "scheme" : "http" , "port" : 80 }, "site category" : { "is vpn provider" : false , "is url shortener" : false , "is anonymizer" : false , "is torrent" : false , "is free dynamic dns" : false , "is free hosting" : false }, "web page" : { "keywords" : "" , "description" : "" , "title" : "404 Not Found" }, "dns records" : { "ns" : { "records" : [{ "country name" : "Korea (Republic of)" , "ip" : "192.0.2.95" , "isp" : "Example Corporation" , "target" : "example.com" , "country code" : "KR" }, { "country name" : "Korea (Republic of)" , "ip" : "192.0.2.26" , "isp" : "LX" , "target" : "example.com" , "country code" : "KR" }]}, "mx" : { "records" : [] }}}, "Entity" : "www.example.com:80/dynamic/example.html" } ] Case wall Result type Description Type Output message Successful entities: "APIVoid: Fetched reputation for the following entities: <entities identifer list> Failed entities: "An error occurred on the following entities: <entities identifer list>" Missing entities (no data): 'Can not found reputation for the following entities: <entities identifer list>" Alert without URL entities: "APIVoid: No URLs found." General CSV Case wall If data available create new entity csv table: domain blocklist report: data.get("report",{}).get("domain blacklist",{}).get("engines", []) General Enrichment If data available add the following as entity enrichment: (don't forget to add prefix "APIVoid") geo location: data.get("report",{}).get("geo location",{}).get("countries", []) is suspicious domain: data.get("report",{}).get("security checks",{}).get("is suspicious domain") is domain blacklisted: data.get("report",{}).get("security checks",{}).get("is domain blacklisted") is risky geo location: data.get("report",{}).get("security checks",{}).get("is risky geo location") risk score: data.get("report", {}).get("risk score", {}).get("result") is external redirect: data.get("report",{}).get("security checks",{}).get("is external redirect") Entity Get Screenshot Capture a high-quality screenshot of any website or URL.
+- Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get("score") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { "EntityResult" : { "domain" : "example.com" , "valid tld" : true , "email" : "user@example.co" , "role address" : false , "should block" : false , "risky tld" : false , "dirty words username" : false , "suspicious domain" : false , "score" : 100 , "educational domain" : false , "dirty words domain" : false , "did you mean" : " " , "username" : "user" , "valid format" : true , "is spoofable " : false , "disposable" : false , "government domain" : false , "has spf records" : true , "domain popular" : false , "has mx records" : true , "china free email" : false , "free email" : false , "russian free email" : false , "police domain" : false , "dmarc enforced" : false , "suspicious username" : false }, "Entity" : "USER@EXAMPLE.COM" } ] Case wall Result type Description Type Output message Successful entities: "APIVoid: Added screenshots for the following entities: <entities identifier list>" Failed entities: "An error occurred on the following entities: <entities identifier list>" Missing entities (no data): 'No screenshots found for the following entities: <entities identifier list>" Alert without URL entities: "APIVoid: No URL entities found for capturing screenshots." To big entities (attachment file size > 3MB): "Failed to add screenshots as attachments on the following entities: <<entities identifier list>>" General Attachments If data is available, create a new file object: attachment title: 'Screenshot - {0}'.format(entity.identifier) filename should be the URL without the suffix (https/http) + ' capture.<file format>' screenshot is returned in base64 encoded string --> file content should be b64decode(data.get('base64 file')) Don't forget to add try, except - we have 3MB limitation from the platform.
+- Before you begin Before you configure the APIVoid integration in Google SecOps for v2, verify that you have the following: APIVoid v2 Account : An active account with access to v2 API services.
+- Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get("score") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { "EntityResult" : { "domain" : "example.com" , "valid tld" : true , "email" : "user@example.com" , "role address" : false , "should block" : false , "risky tld" : false , "dirty words username" : false , "suspicious domain" : false , "score" : 100 , "educational domain" : false , "dirty words domain" : false , "did you mean" : " " , "username" : "user" , "valid format" : true , "is spoofable " : false , "disposable" : false , "government domain" : false , "has spf records" : true , "domain popular" : false , "has mx records" : true , "china free email" : false , "free email" : false , "russian free email" : false , "police domain" : false , "dmarc enforced" : false , "suspicious username" : false }, "Entity" : "USER@EXAMPLE.COm" } ] Case wall Result type Description Type Output message successful entities: "APIVoid: Fetched information for the following entities: <entities identifer list> Failed entities: "An error occurred on the following entities: <entities identifer list>" Missing entities (no data): 'Can not found information for the following entities: <entities identifer list>" Alert without URL entities: "APIVoid: No emails found." General CSV Case wall CSV content: entity data(example below) General Enrichment If data available add the following as entity enrichment: (don't forget to add prefix "APIVoid") suspicious domain: data.get("suspicious domain") should block: data.get("should block") score: data.get("score") disposable: data.get("disposable") has mx records: data.get("has mx records") has spf records: data.get("has spf records") Entity Need more help?
 

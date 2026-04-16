@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:27.579Z"
+generated_at: "2026-04-14T07:09:07.337Z"
 product_name: "App Engine standard environment PHP"
 product_slug: "app-engine-standard-environment-php"
 feature_name: "URLFetch oversized payload exception"
 feature_slug: "urlfetch-oversized-payload-exception"
 latest_feature_date: "2015-08-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml"
+  - "https://docs.cloud.google.com/appengine/docs/quotas"
+  - "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access"
+  - "https://docs.cloud.google.com/appengine/docs/standard/php/services/access"
 keywords:
-  - "requestpayloadtoolargeexception"
-  - "oversized"
   - "urlfetch"
-  - "raises"
-  - "exception"
+  - "oversized"
   - "payload"
-  - "when"
+  - "exception"
   - "now"
+  - "raises"
+  - "requestpayloadtoolargeexception"
+  - "when"
 ---
 
 # URLFetch oversized payload exception
 
 Product: App Engine standard environment PHP
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,54 @@ URLFetch now raises RequestPayloadTooLargeException when request payloads exceed
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml)
+- [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- [https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access](https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access)
+- [https://docs.cloud.google.com/appengine/docs/standard/php/services/access](https://docs.cloud.google.com/appengine/docs/standard/php/services/access)
 
 ## Supporting Pages
 
-### "appengine-web.xml reference \_|\_ App Engine standard environment \_|\_\
+### "Quotas and limits \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- Source ID: `site-docs-reference`
-- Final score: 68
+- URL: [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- Source ID: `site-docs-reference-4`
+- Final score: 72
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The following example demonstrates how to designate all png files as static files (except those in the data/ directory and all of its subdirectories): < static - files > < include path = "/ .png" / > < exclude path = "/data/ .png" / > < / static - files > You can also set HTTP headers to use when responding to requests to these static resources. < static - files > < include path = "/my static-files" > < http - header name = "Access-Control-Allow-Origin" value = "http://example.org" / > < / include > < / static - files > Note: If the path string doesn't start with a slash, then the HTTP headers, if any, work on App Engine but do not work on the Development Server.
-- The appengine-web.xml file can define environment variables that are set when the application is running. <env-variables> <env-var name="DEFAULT ENCODING" value="UTF-8" /> </env-variables> To avoid conflicts with your local environment, the development server does not set environment variables based on this file, and requires that the local environment have these variables already set to matching values. export DEFAULT ENCODING = "UTF-8" dev appserver war When deployed to App Engine, the environment is created with these variables already set.
-- The appengine-web.xml file can define system properties and environment variables that are set when the application is running. <system-properties> <property name="myapp.maximum-message-length" value="140" /> <property name="myapp.notify-every-n-signups" value="1000" /> <property name="myapp.notify-url" value="http://www.example.com/signupnotify" /> </system-properties> <env-variables> <env-var name="DEFAULT ENCODING" value="UTF-8" /> </env-variables> Optional.
-- If for some reason you prefer that your app not use precompilation, you can turn it off by adding the following to your appengine-web.xml file: <precompilation-enabled>false</precompilation-enabled> <module> Note: Modules are now named Services and services are still declared in appengine-web.xml files as modules, for example: <module>service name</module> .
+- For all other resources, when the resource is depleted, an attempt in the application to consume the resource results in an exception.
+- Resource Daily limit Maximum rate UrlFetch API calls 860,000,000 calls 660,000 calls/minute UrlFetch data sent 4.5 TB 3,600 MB/minute UrlFetch data received 4.5 TB 3,600 MB/minute Networking limits The following networking limits apply to App Engine: Outbound connections per second per instance: 500 (cannot be increased) Outbound DNS resolutions per second per instance: 100 (cannot be increased) Maximum packets per second per instance: 80,000 Maximum bits per second per instance: 100,000,000 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The Cloud Quotas system does the following: Monitors your consumption of Google Cloud products and services Restricts your consumption of those resources Provides a way to request changes to the quota value and automate quota adjustments In most cases, when you attempt to consume more of a resource than its quota allows, the system blocks access to the resource, and the task that you're trying to perform fails.
+- Resource Free Quota F1 instances 28 free instance hours per day B1 instances 9 free instance hours per day Accrual of instance hours begins when an instance starts and ends as described below, depending on the type of scaling you specify for the instance: Basic or automatic scaling: accrual ends fifteen minutes after an instance finishes processing its last request.
 
-### "Package google.golang.org/appengine/v2/urlfetch (v2.0.6) \_|\_ App Engine\
+### "Access legacy bundled services for PHP \_|\_ App Engine standard environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/urlfetch)
-- Source ID: `site-docs-reference`
-- Final score: 45
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access](https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access)
+- Source ID: `site-docs-reference-3`
+- Final score: 58
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Reference Send feedback Package google.golang.org/appengine/v2/urlfetch (v2.0.6) Stay organized with collections Save and categorize content based on your preferences.
-- New ( "urlfetch: truncated body" ) ErrTruncatedBody is the error returned after the final Read() from a response's Body if the body has been truncated by App Engine's proxy.
-- Package urlfetch provides an http.RoundTripper implementation for fetching URLs via App Engine's urlfetch service.
-- Client Client returns an http.Client using a default urlfetch Transport.
+- Compared to the stream handler option, the UrlFetch class configuration is also simpler, in that it does not require use of various PHP APIs such as: stream context create() stream wrapper unregister() stream wrapper register() file get contents() The following UrlFetch Class example is equivalent to the stream handler example: PHP 7/8 use google\appengine\api\urlfetch\UrlFetch; ... $urlfetch = new UrlFetch(); $result = $urlfetch->fetch($url, 'POST', $headers, http build query($data)); echo $result->getContent(); Users You do not need to make changes to your app's configuration when upgrading to PHP.
+- PHP 5.5 ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using file get contents and the Url Fetch service. $result = file get contents('http://example.com', false, $context); // Print Http Response Headers print r($http response header); PHP 7/8 use google\appengine\api\urlfetch\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); stream wrapper unregister("http"); stream wrapper register("http", "UrlFetchStream"); // Now using fopen and the Url Fetch service. $result = fopen('http://example.com', 'r', false, $context); // Print Http Response Headers $meta data = stream get meta data($result); $headers = $meta data['wrapper data']; print r($headers); stream wrapper unregister("http"); stream wrapper restore("http"); Option 2.
+- No option to use the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; PHP 7/8 use google\appengine\api\urlfetch\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister("http"); stream wrapper register("http", "UrlFetchStream"); // Now using the Url Fetch service. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister("http"); stream wrapper restore("http"); // Now using the native php stream wrapper again.
+- After importing the appengine-php-sdk package from composer, add the folllowing opt-in file path to the files element in the autoload section: PHP 7/8 { "require": { "google/appengine-php-sdk": "^2.1" // Or any later version }, "autoload": { "files": [ "./vendor/google/appengine-php-sdk/src/Api/Memcache/MemcacheOptIn.php" ] } } Modules You do not need to make changes to your app's configuration when upgrading to PHP.
 
-### "The deployment descriptor: web.xml \_|\_ App Engine standard environment\
+### "Access legacy bundled services for PHP \_|\_ App Engine standard environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml)
-- Source ID: `site-docs-reference`
-- Final score: 44
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/php/services/access](https://docs.cloud.google.com/appengine/docs/standard/php/services/access)
+- Source ID: `site-docs-reference-required-7`
+- Final score: 58
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- The server can display an alternate page location when it's about to send a particular HTTP status code, or when a servlet raises a particular Java exception.
-- To learn more about your configuration options, see Upgrade an existing application . v21 and later (EE10) This filter class implements the jakarta.servlet.Filter interface with the doFilter() method. package mysite.server ; import java.io.IOException ; import java.util.logging.Logger ; import jakarta.servlet.Filter ; import jakarta.servlet.FilterChain ; import jakarta.servlet.FilterConfig ; import jakarta.servlet.ServletException ; import jakarta.servlet.ServletRequest ; import jakarta.servlet.ServletResponse ; public class LogFilterImpl implements Filter { private FilterConfig filterConfig ; private static final Logger log = Logger . getLogger ( LogFilterImpl . class . getName ()); public void doFilter ( ServletRequest request , ServletResponse response , FilterChain filterChain ) throws IOException , ServletException { log . warning ( "Log filter processed a " + getFilterConfig (). getInitParameter ( "logType" ) + " request" ); filterChain . doFilter ( request , response ); } public FilterConfig getFilterConfig () { return filterConfig ; } public void init ( FilterConfig filterConfig ) { this . filterConfig = filterConfig ; } public void destroy () {} } v21 (EE8) This filter class implements the javax.servlet.Filter interface with the doFilter() method. package mysite.server ; import java.io.IOException ; import java.util.logging.Logger ; import javax.servlet.Filter ; import javax.servlet.FilterChain ; import javax.servlet.FilterConfig ; import javax.servlet.ServletException ; import javax.servlet.ServletRequest ; import javax.servlet.ServletResponse ; public class LogFilterImpl implements Filter { private FilterConfig filterConfig ; private static final Logger log = Logger . getLogger ( LogFilterImpl . class . getName ()); public void doFilter ( ServletRequest request , ServletResponse response , FilterChain filterChain ) throws IOException , ServletException { log . warning ( "Log filter processed a " + getFilterConfig (). getInitParameter ( "logType" ) + " request" ); filterChain . doFilter ( request , response ); } public FilterConfig getFilterConfig () { return filterConfig ; } public void init ( FilterConfig filterConfig ) { this . filterConfig = filterConfig ; } public void destroy () {} } v17 and earlier This filter class implements the javax.servlet.Filter interface with the doFilter() method. package mysite.server ; import java.io.IOException ; import java.util.logging.Logger ; import javax.servlet.Filter ; import javax.servlet.FilterChain ; import javax.servlet.FilterConfig ; import javax.servlet.ServletException ; import javax.servlet.ServletRequest ; import javax.servlet.ServletResponse ; public class LogFilterImpl implements Filter { private FilterConfig filterConfig ; private static final Logger log = Logger . getLogger ( LogFilterImpl . class . getName ()); public void doFilter ( ServletRequest request , ServletResponse response , FilterChain filterChain ) throws IOException , ServletException { log . warning ( "Log filter processed a " + getFilterConfig (). getInitParameter ( "logType" ) + " request" ); filterChain . doFilter ( request , response ); } public FilterConfig getFilterConfig () { return filterConfig ; } public void init ( FilterConfig filterConfig ) { this . filterConfig = filterConfig ; } public void destroy () {} } Similar to servlets, you configure a filter in the deployment descriptor by declaring the filter with the <filter> element, then mapping it to a URL pattern with the <filter-mapping> element.
-- The <filter> element contains a <filter-name> , <filter-class> , and optional <init-param> elements. <filter> <filter-name>logSpecial</filter-name> <filter-class>mysite.server.LogFilterImpl</filter-class> <init-param> <param-name>logType</param-name> <param-value>special</param-value> </init-param> </filter> The <filter-mapping> element contains a <filter-name> that matches the name of a declared filter, and either a <url-pattern> element for applying the filter to URLs, or a <servlet-name> element that matches the name of a declared servlet for applying the filter whenever the servlet is called. <!-- Log for all URLs ending in ".special" --> <filter-mapping> <filter-name>logSpecial</filter-name> <url-pattern> .special</url-pattern> </filter-mapping> <!-- Log for all URLs that use the "comingsoon" servlet --> <filter-mapping> <filter-name>logSpecial</filter-name> <servlet-name>comingsoon</servlet-name> </filter-mapping> Note: Filters are not invoked on static assets, even if the path matches a filter-mapping pattern.
-- It also contains a <location> element containing the URL path of the resource to show when the error occurs. <error-page> <error-code>500</error-code> <location>/errors/servererror.jsp</location> </error-page> You can't configure custom error handlers for the following error conditions: 404 response page when no servlet mapping is defined for a URL.
+- Compared to the stream handler option, the UrlFetch class configuration is also simpler, in that it does not require use of various PHP APIs such as: stream context create() stream wrapper unregister() stream wrapper register() file get contents() The following UrlFetch Class example is equivalent to the stream handler example: PHP 7/8 use google\appengine\api\urlfetch\UrlFetch; ... $urlfetch = new UrlFetch(); $result = $urlfetch->fetch($url, 'POST', $headers, http build query($data)); echo $result->getContent(); Users You do not need to make changes to your app's configuration when upgrading to PHP.
+- PHP 5.5 ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using file get contents and the Url Fetch service. $result = file get contents('http://example.com', false, $context); // Print Http Response Headers print r($http response header); PHP 7/8 use google\appengine\api\urlfetch\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); stream wrapper unregister("http"); stream wrapper register("http", "UrlFetchStream"); // Now using fopen and the Url Fetch service. $result = fopen('http://example.com', 'r', false, $context); // Print Http Response Headers $meta data = stream get meta data($result); $headers = $meta data['wrapper data']; print r($headers); stream wrapper unregister("http"); stream wrapper restore("http"); Option 2.
+- No option to use the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; PHP 7/8 use google\appengine\api\urlfetch\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister("http"); stream wrapper register("http", "UrlFetchStream"); // Now using the Url Fetch service. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister("http"); stream wrapper restore("http"); // Now using the native php stream wrapper again.
+- After importing the appengine-php-sdk package from composer, add the folllowing opt-in file path to the files element in the autoload section: PHP 7/8 { "require": { "google/appengine-php-sdk": "^2.1" // Or any later version }, "autoload": { "files": [ "./vendor/google/appengine-php-sdk/src/Api/Memcache/MemcacheOptIn.php" ] } } Modules You do not need to make changes to your app's configuration when upgrading to PHP.
 

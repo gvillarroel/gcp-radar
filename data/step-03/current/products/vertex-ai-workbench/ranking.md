@@ -7,12 +7,12 @@ Step 2 feature inventory: 236 features, profile: user facing.
 | ---: | --- | --- | --- | ---: | --- | --- |
 | 100 | yes | product_root | https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction | 7 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/workbench/notebook-solution | 5 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create | 6 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/workbench/notebooks | 4 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create | 5 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/workbench/release-notes | 7 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | yes | iam_reference | https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | yes | product_reference | https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/libraries | 3 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/workbench/notebooks | 3 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/migrate-to-instances | 2 | managed notebooks | Matched Step 2 features: managed notebooks |
 | 95 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create-console-quickstart | 3 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create-custom-container | 3 |  | Fallback heuristic scoring was used because API scoring was unavailable. |

@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.402Z"
+generated_at: "2026-04-13T13:51:57.806Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "pg_cron extension"
 feature_slug: "pg-cron-extension"
 latest_feature_date: "2021-11-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/postgres/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp"
+  - "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+  - "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli"
+  - "https://docs.cloud.google.com/sql/docs/postgres/pricing"
 keywords:
-  - "pg"
   - "cron"
-  - "extension"
-  - "the"
-  - "provides"
-  - "based"
-  - "job"
   - "scheduling"
+  - "within"
+  - "provides"
+  - "extension"
+  - "based"
 ---
 
 # pg_cron extension
 
 Product: Cloud SQL for PostgreSQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +36,52 @@ The pg_cron extension provides cron-based job scheduling from within the databas
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- [https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp](https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp)
+- [https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect](https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect)
+- [https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli](https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli)
+- [https://docs.cloud.google.com/sql/docs/postgres/pricing](https://docs.cloud.google.com/sql/docs/postgres/pricing)
 
 ## Supporting Pages
 
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
+### "Connect to an instance using Private Service Connect \_|\_ Cloud SQL for\
 
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 148
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect](https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect)
+- Source ID: `site-iam-reference`
+- Final score: 85
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- A cron-based job scheduler, this extension enables cron syntax to schedule commands from a database. pg hint plan.
-- Extension and plugin versions pg cron is upgraded from 1.4.1 to 1.5. pg partman is upgraded from 4.7.0 to 4.7.3. postgresql-hll is upgraded from 2.16 to 2.17. pg repack is upgraded from 1.4.7 to 1.4.8. wal2json is upgraded from 2.4 to 2.5. pg hint plan is upgraded, as follows: from 1.3.7 to 1.3.8 (for PostgreSQL versions 11-13) from 1.4.0 to 1.4.1 (for PostgreSQL version 14) from 1.4.0 to 1.5.0 (for PostgreSQL version 15) If you use a maintenance window, then the updates to the minor, extension, and plugin versions happen according to the timeframe that you set in the window.
-- October 27, 2025 Cloud SQL for PostgreSQL Feature The rollout of the following extension versions and plugin versions is underway: Extensions and plugins pg squeeze is upgraded from 1.8 to 1.9 for PostgreSQL version 13 and later. pg cron is upgraded from 1.6.4 to 1.6.7 for PostgreSQL version 10 and later. postgis is upgraded from 3.5.2 to 3.6.0 for PostgreSQL version 13 and later. rdkit is upgraded from 4.6.1 to 4.7.0.
-- Feature Cloud SQL for PostgreSQL now supports the pg similarity extension, which provides support for similarity queries in PostgreSQL.
+- To connect to the Cloud SQL instance, use the internal IP address. psql "sslmode=disable dbname= DATABASE NAME user= USERNAME hostaddr= IP ADDRESS " Make the following replacements: DATABASE NAME : the name of the Cloud SQL for PostgreSQL database that's contained within the instance USERNAME : the name of the user that's connecting to the instance IP ADDRESS : the endpoint's IP address Connect using the Cloud SQL Auth Proxy The Cloud SQL Auth Proxy is a connector that provides secure access to an instance with Private Service Connect enabled without a need for authorized networks or for configuring SSL.
+- After you meet these conditions, use the DNS record to connect to the instance from any VPC network where you created the endpoint. psql "sslmode=disable dbname= DATABASE NAME user= USERNAME host= DNS RECORD " Make the following replacements: DATABASE NAME : the name of the Cloud SQL for PostgreSQL database that's contained within the instance USERNAME : the name of the user that's connecting to the instance DNS RECORD : the endpoint's DNS record Connect directly through an internal IP address Before connecting to a Cloud SQL instance with Private Service Connect enabled, do the following: Create a Private Service Connect endpoint .
+- If you use Private Service Connect to connect to a Cloud SQL instance from multiple VPC networks, then each network has its own administrator. dns.admin Grants full control over Cloud DNS resources, including DNS zones and records. cloudsql.admin Provides full control of a Cloud SQL instance and controls the instance over its lifecycle. cloudsql.instanceUser Provides access to the Cloud SQL instance.
+- When testing connectivity to a Cloud SQL instance with Private Service Connect enabled , you can't set the following items: The instance's internal IP address or DNS name as the destination directly The instance as the source The IP address of the Private Service Connect endpoint as the source IP-based allowlisting by using authorized networks isn't supported.
 
-### Cloud SQL for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Build context sets using Gemini CLI \_|\_ Cloud SQL for PostgreSQL \_|\_\
 
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 144
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli](https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli)
+- Source ID: `site-iam-reference`
+- Final score: 73
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- A cron-based job scheduler, this extension enables cron syntax to schedule commands from a database. pg hint plan.
-- Extension and plugin versions pg cron is upgraded from 1.4.1 to 1.5. pg partman is upgraded from 4.7.0 to 4.7.3. postgresql-hll is upgraded from 2.16 to 2.17. pg repack is upgraded from 1.4.7 to 1.4.8. wal2json is upgraded from 2.4 to 2.5. pg hint plan is upgraded, as follows: from 1.3.7 to 1.3.8 (for PostgreSQL versions 11-13) from 1.4.0 to 1.4.1 (for PostgreSQL version 14) from 1.4.0 to 1.5.0 (for PostgreSQL version 15) If you use a maintenance window, then the updates to the minor, extension, and plugin versions happen according to the timeframe that you set in the window.
-- This feature automates read pool scale in and scale out operations based on one or both of the following conditions: Allowed CPU usage of the read pool Allowed number of client connections to the read pool November 05, 2025 Feature The rollout of the following extension versions, plugin versions, and extension support is underway: Extensions and plugins plpgsql check is upgraded from 2.8.1 to 2.8.3 for PostgreSQL versions 14 and later. pg wait sampling is upgraded from 1.1.6 to 1.1.9 for PostgreSQL versions 13 and later. tds fdw is upgraded from 2.0.4 to 2.0.5.
-- October 27, 2025 Feature The rollout of the following extension versions and plugin versions is underway: Extensions and plugins pg squeeze is upgraded from 1.8 to 1.9 for PostgreSQL version 13 and later. pg cron is upgraded from 1.6.4 to 1.6.7 for PostgreSQL version 10 and later. postgis is upgraded from 3.5.2 to 3.6.0 for PostgreSQL version 13 and later. rdkit is upgraded from 4.6.1 to 4.7.0.
+- Run the following commands in your terminal to authenticate: gcloud auth application-default login Configure the tools.yaml file The extension requires a database connection for context generation, which is supported by the MCP Toolbox and defined within the tools.yaml configuration file.
+- Install the DB Context Enrichment MCP extension The DB Context Enrichment extension provides a guided, interactive workflow to generate structured NL2SQL context from your database schemas.
+- To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key.
+- To install the DB Context Enrichment extension, follow these steps: Install the DB Context Enrichment Gemini CLI extension: gemini extensions install https://github.com/GoogleCloudPlatform/db-context-enrichment Note: The extension requires a Gemini API key at installation to authenticate with the Gemini API and enable context generation.
 
-### "Export and import using pg_dump, pg_dumpall, and pg_restore \_|\_ Cloud\
+### Cloud SQL pricing | Google Cloud
 
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp](https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp)
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/pricing](https://docs.cloud.google.com/sql/docs/postgres/pricing)
 - Source ID: `site-docs-root`
-- Final score: 112
+- Final score: 73
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- This format is not compatible with pg restore , and must be imported using the Google Cloud console import command or psql client. --no-acl This flag is required if your dump would otherwise contain statements to grant or revoke membership in a SUPERUSER role. --clean This optional flag enables you to include the DROP <object> SQL statement that's required to drop (clean) database objects before you import them. --if-exists This optional flag enables you to include the IF EXISTS SQL statement with each DROP statement that's produced by the clean flag.
-- Export data using the custom format from Cloud SQL for PostgreSQL To use the custom format, from a command line, run pg dump : pg dump \ -U USERNAME \ --format = custom \ --no-owner \ --no-acl \ DATABASE NAME > DATABASE NAME .dmp Export data from multiple files in parallel from Cloud SQL for PostgreSQL You can only use the directory output format to export data from multiple files in parallel .
-- Export data from an on-premises PostgreSQL server using pg dump To export a database that is not managed by Cloud SQL, for later import into Cloud SQL, use the pg dump utility with the following flags: --no-owner Ownership change commands must not be included in the dump file. --format The custom and directory formats are allowed if the dump file is intended for use with pg restore .
-- To export all PostgreSQL databases, run the following command: pg dumpall \ -h HOST NAME -l DATABASE NAME --exclude-database = cloudsqladmin \ --exclude-database = template > pg dumpall.sql To view role passwords when dumping roles with pg dumpall , set the cloudsql.pg authid select role flag to a PostgreSQL role name.
+- Iowa (us-central1) Johannesburg (africa-south1) Taiwan (asia-east1) Hong Kong (asia-east2) Tokyo (asia-northeast1) Osaka (asia-northeast2) Seoul (asia-northeast3) Mumbai (asia-south1) Delhi (asia-south2) Singapore (asia-southeast1) Jakarta (asia-southeast2) Bangkok (asia-southeast3) Sydney (australia-southeast1) Melbourne (australia-southeast2) Warsaw (europe-central2) Finland (europe-north1) Stockholm (europe-north2) Madrid (europe-southwest1) Belgium (europe-west1) Berlin (europe-west10) Turin (europe-west12) London (europe-west2) Frankfurt (europe-west3) Netherlands (europe-west4) Zurich (europe-west6) Milan (europe-west8) Paris (europe-west9) Doha (me-central1) Dammam (me-central2) Tel Aviv (me-west1) Montreal (northamerica-northeast1) Toronto (northamerica-northeast2) Mexico (northamerica-south1) Sao Paulo (southamerica-east1) Santiago (southamerica-west1) Iowa (us-central1) South Carolina (us-east1) Northern Virginia (us-east4) Columbus (us-east5) Alabama (us-east7) Dallas (us-south1) Oregon (us-west1) Los Angeles (us-west2) Salt Lake City (us-west3) Las Vegas (us-west4) Phoenix (us-west8) Item Price (USD) Serverless export pricing $0.01 / 1 gibibyte Note: The price per GiB is calculated based on the disk size of the offload instance, which is the same as the disk size of the primary instance.
+- Destination Price (USD) Compute Engine instances and Cloud SQL cross-region replicas Within the same region: free Between regions within North America: $0.12/GiB Between regions outside of North America: $0.12/GiB Google Products (except Compute Engine and traffic to Cloud SQL cross-region replicas) Intra-continental: free Inter-continental: $0.12/GiB Internet egress using Cloud Interconnect $0.05/GiB Internet egress (not using Cloud Interconnect) $0.19/GiB If you pay in a currency other than USD, the prices listed in your currency on Cloud Platform SKUs apply.
+- Destination Price (USD) Compute Engine instances Within the same region: free Between regions within North America: $0.12/GiB Between regions outside of North America: $0.12/GiB Google Products (except Compute Engine) Intra-continental: free Inter-continental: $0.12/GiB Internet egress using Cloud Interconnect $0.05/GiB Internet egress (not using Cloud Interconnect) $0.19/GiB If you pay in a currency other than USD, the prices listed in your currency on Cloud Platform SKUs apply.
+- Blockchain RPC Enterprise-grade RPC for building on the blockchain. close Save money with our transparent approach to pricing Google Cloud's pay-as-you-go pricing offers automatic savings based on monthly usage and discounted rates for prepaid resources.
 

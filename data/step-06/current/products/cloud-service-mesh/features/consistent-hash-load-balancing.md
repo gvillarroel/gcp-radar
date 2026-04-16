@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:56.529Z"
+generated_at: "2026-04-12T12:12:04.793Z"
 product_name: "Cloud Service Mesh"
 product_slug: "cloud-service-mesh"
 feature_name: "Consistent Hash Load Balancing"
 feature_slug: "consistent-hash-load-balancing"
 latest_feature_date: "2021-12-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/service-mesh/docs/service-routing/features"
+  - "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+  - "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+  - "https://docs.cloud.google.com/service-mesh/docs/overview"
 keywords:
   - "consistent"
   - "hash"
@@ -23,7 +26,7 @@ keywords:
 # Consistent Hash Load Balancing
 
 Product: Cloud Service Mesh
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +36,68 @@ Cloud Service Mesh supports consistent hash-based load balancing; Cloud Service 
 
 Cloud Service Mesh supports consistent hash-based load balancing; Cloud Service Mesh supports consistent hash-based load balancing.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/service-mesh/docs/service-routing/features](https://docs.cloud.google.com/service-mesh/docs/service-routing/features)
+- [https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster](https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster)
+- [https://docs.cloud.google.com/service-mesh/docs/supported-features-managed](https://docs.cloud.google.com/service-mesh/docs/supported-features-managed)
+- [https://docs.cloud.google.com/service-mesh/docs/overview](https://docs.cloud.google.com/service-mesh/docs/overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Cloud Service Mesh with Google Cloud APIs supported features \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/service-mesh/docs/service-routing/features](https://docs.cloud.google.com/service-mesh/docs/service-routing/features)
+- Source ID: `site-docs-root`
+- Final score: 175
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Feature Supported Automated deployment of sidecar proxies for Compute Engine VMs ✔ Automated injection of sidecar proxies for GKE Pods ✔ Service discovery based on hostname ✔ Instance autoscaling based on CPU utilization ✔ Instance autoscaling based on traffic load/serving capacity (Compute Engine VMs in managed instance groups, or MIGs, only) ✔ Instance autohealing based on configurable health checks ✔ Automatic endpoint registration for Compute Engine VMs ✔ Automatic endpoint registration for GKE container instances/Pods ✔ API to programmatically add or remove endpoints ✔ Endpoints for your data plane traffic Microservices use the data plane to reach services in your mesh and outside of your mesh.
+- Feature Supported with Envoy proxy configured to handle HTTP(s), TCP, or gRPC traffic Supported with proxyless gRPC Backend (instance group or network endpoint group) selection based on region (prefer nearest region with healthy backend capacity) ✔ ✔ Backend selection using rate-based (requests per second) balancing mode. ✔ Not supported with TCP (non-HTTP(S)) traffic. ✔ Backend selection based on utilization-based balancing mode (VMs in Compute Engine instance groups only) ✔ ✔ Configurable maximum capacity per backend (Compute Engine and GKE only) ✔ ✔ Backend selection based on configurable load-balancing policies.
+- Use a single built-in policy ; choose from the following options: Round robin Least request Ring hash Random Original destination Maglev Use a single built-in policy ; choose from the following options: Round robin Least request Ring hash Use a custom policy Define a list of preferred policies Service resiliency Cloud Service Mesh supports capabilities that help you improve the resiliency of your services.
+- Retries ✔ ✔ Except per retry timeout Redirects ✔ URI rewrites ✔ Request/response header transformations ✔ Traffic splitting ✔ ✔ Traffic mirroring ✔ Outlier detection ✔ ✔ Circuit breaking ✔ ✔ Only maxRequests Max stream duration ✔ ✔ Load balancing You can configure advanced load-balancing methods and algorithms to load balance at the service, backend group (instance groups or network endpoint groups), and individual backend or endpoint levels.
+
+### "In-cluster control plane supported features \_|\_ Cloud Service Mesh \_\
+
+- URL: [https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster](https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster)
+- Source ID: `site-docs-root`
+- Final score: 152
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Load balancing policies Feature GKE clusters on Google Cloud Other GKE Enterprise clusters Round robin Least connections Random Passthrough Consistent hash Locality For more information on load balancing policies, see Destination Rules .
+- For information on configuring load balancers, see the following: Setting up your load balancer for Google Distributed Cloud (software only) for VMware GKE on AWS: Creating a load balancer Expose an ingress gateway using an external load balancer Kubernetes Gateway API (preview) In Cloud Service Mesh v1.20 the Kubernetes Gateway API is available as a public preview.
+- For managed Cloud Service Mesh with an ISTIOD control plane implementation , Google supports the current Cloud Service Mesh versions available in each release channel .
+- Home Documentation Networking Cloud Service Mesh Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+
+### "Supported features using Istio APIs (managed control plane) \_|\_ Cloud\
+
+- URL: [https://docs.cloud.google.com/service-mesh/docs/supported-features-managed](https://docs.cloud.google.com/service-mesh/docs/supported-features-managed)
+- Source ID: `site-docs-root`
+- Final score: 140
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Envoy deployments Feature Managed (TD) Managed (istiod) Sidecars Ingress gateway Egress directly out from sidecars Egress using egress gateways CRD support Feature Managed (TD) Managed (istiod) Sidecar resource Service entry resource Percentage, fault injection, path matching, redirects, retries, rewriting, timeout, retry, mirroring, header manipulation, and CORS routing rules WasmPlugin API Istio Operator Load balancer for the Istio ingress gateway Feature Managed (TD) Managed (istiod) Third-party external load balancer Google Cloud Internal load balancer Service mesh cloud gateway Feature Managed (TD) Managed (istiod) Service mesh cloud gateway Kubernetes Gateway API Feature Managed (TD) Managed (istiod) Kubernetes Gateway API Load balancing policies Feature Managed (TD) Managed (istiod) Round robin Least connections Random Passthrough Consistent hash Locality GCPTrafficDistributionPolicy GCPBackendPolicy Load balancing modes Feature Managed (TD) Managed (istiod) RATE UTILIZATION CUSTOM METRICS IN-FLIGHT (Preview) For more information about balancing modes, see the Backend services overview .
+- Service entry Feature Managed (TD) Managed (istiod) ServiceEntry v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields and values in fields: workloadSelector field endpoints[].network field endpoints[].locality field endpoints[].weight field endpoints[].serviceAccount field DNS ROUND ROBIN value in resolution field MESH INTERNAL value in location field Unix domain socket address in endpoints[].address field subjectAltNames field Two or more endpoints[] entries if resolution field has DNS value Destination rule Feature Managed (TD) Managed (istiod) DestinationRule v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields. trafficPolicy.loadBalancer.localityLbSetting field trafficPolicy.tunnel field trafficPolicy.tls.credentialName field trafficPolicy.portLevelSettings[].tls.credentialName field Additionally, the TRAFFIC DIRECTOR control plane implementation requires that the destination rule defining subsets is in the same namespace and cluster with the Kubernetes service or ServiceEntry.
+- Telemetry Metrics Feature Managed (TD) Managed (istiod) Cloud Monitoring (HTTP in-proxy metrics) Cloud Monitoring (TCP in-proxy metrics) Prometheus metrics export to Grafana (Envoy metrics only) Prometheus metrics export to Kiali Google Cloud Managed Service for Prometheus, not including the Cloud Service Mesh dashboard Istio Telemetry API † Custom adapters/backends, in or out of process Arbitrary telemetry and logging backends † The TRAFFIC DIRECTOR control plane supports a subset of Istio telemetry API used to configure access logs and trace .
+- Base Images Feature Managed (TD) Managed (istiod) Distroless proxy image † † Cloud Service Mesh with a managed (TD) control plane only supports the distroless image type.
+
+### Cloud Service Mesh overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/service-mesh/docs/overview](https://docs.cloud.google.com/service-mesh/docs/overview)
+- Source ID: `site-docs-root`
+- Final score: 133
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Off Google Cloud: With Distributed Cloud or GKE multicloud, Cloud Service Mesh supports the Istio APIs for Kubernetes workloads.
+- Service meshes manage the common requirements of running a service, such as monitoring, networking, and security, with consistent, powerful tools, making it easier for service developers and operators to focus on creating and managing great applications for their users.
+- Home Documentation Networking Cloud Service Mesh Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- If you are updating an existing application, the sidecar-based approach allows for integration into the mesh without changing your application.
 

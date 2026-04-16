@@ -1,92 +1,91 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.832Z"
+generated_at: "2026-04-15T12:48:36.792Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery Storage API"
 feature_slug: "bigquery-storage-api"
 latest_feature_date: "2020-03-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries"
-  - "https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc"
   - "https://docs.cloud.google.com/bigquery/docs/reference/storage"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries"
+  - "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
 keywords:
-  - "CreateReadSession"
-  - "StorageRead API"
-  - "bqstorage API"
-  - "ReadStream"
-  - "ReadRows"
-  - "storage read session"
-  - "Storage Read API"
-  - "BigQuery Storage API"
+  - "bigquery"
+  - "storage"
+  - "provides"
+  - "high"
+  - "throughput"
+  - "access"
+  - "read"
+  - "table"
 ---
 
 # BigQuery Storage API
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The BigQuery Storage API became generally available; The BigQuery Storage API was introduced in beta.
+The BigQuery Storage API provides high-throughput access to read data from BigQuery storage; The BigQuery Storage API provides high-throughput access to BigQuery table data.
 
 ## Extended Definition
 
-The BigQuery Storage API became generally available; The BigQuery Storage API was introduced in beta.
+The BigQuery Storage API provides high-throughput access to read data from BigQuery storage; The BigQuery Storage API provides high-throughput access to BigQuery table data.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries](https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries)
-- [https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc](https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc)
 - [https://docs.cloud.google.com/bigquery/docs/reference/storage](https://docs.cloud.google.com/bigquery/docs/reference/storage)
+- [https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries](https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries)
+- [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
 
 ## Supporting Pages
-
-### BigQuery Storage API Client Libraries \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries](https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries)
-- Source ID: `site-docs-reference`
-- Final score: 112
-- Re-rank relevance: MODERATE
-- Re-rank rationale: The page is directly about installing and using Cloud Client Libraries for the BigQuery Storage API, which provides useful implementation context for that feature but does not define its release status or behavior.
-
-Evidence snippets:
-- ReadRows ( session - > streams ( 0 ). name (), kRowOffset ); std :: int64 t num rows = 0 ; for ( auto const & row : read rows ) { if ( row . ok ()) { num rows += row - > row count (); ProcessRowsInAvroFormat ( session - > avro schema (), row - > avro rows ()); } } std :: cout << num rows << " rows read from table: " << table name << " \n " ; return 0 ; } catch ( google :: cloud :: Status const & status ) { std :: cerr << "google::cloud::Status thrown: " << status << " \n " ; return 1 ; } Go // The bigquery storage quickstart application demonstrates usage of the // BigQuery Storage read API.
-- String streamName = session . getStreams ( 0 ). getName (); ReadRowsRequest readRowsRequest = ReadRowsRequest . newBuilder (). setReadStream ( streamName ). build (); // Process each block of rows as they arrive and decode using our simple row reader.
-- CreateReadSession ( project name , read session , kMaxReadStreams ); if ( ! session ) throw std :: move ( session ). status (); // Read rows from the ReadSession. constexpr int kRowOffset = 0 ; auto read rows = client .
-- ReadRowsRequest { ReadStream : st , Offset : offset , }, rpcOpts ) if err != nil { return fmt .
-
-### BigQuery Storage API \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc](https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc)
-- Source ID: `site-docs-reference`
-- Final score: 94
-- Re-rank relevance: STRONG
-- Re-rank rationale: This page is the official BigQuery Storage API RPC reference and explicitly documents the service and its core BigQueryRead/Write methods.
-
-Evidence snippets:
-- SplitReadStream Splits a given read stream into two Streams. google.cloud.bigquery.storage.v1beta2.BigQueryRead Methods CreateReadSession Creates a new read session.
-- Service: bigquerystorage.googleapis.com The Service name bigquerystorage.googleapis.com is needed to create RPC client stubs. google.cloud.bigquery.storage.v1.BigQueryRead Methods CreateReadSession Creates a new read session.
-- GetWriteStream Gets information about a write stream. google.cloud.bigquery.storage.v1beta1.BigQueryStorage Methods BatchCreateReadSessionStreams Creates additional streams for a ReadSession.
-- Home Documentation Data analytics BigQuery Reference Send feedback BigQuery Storage API Stay organized with collections Save and categorize content based on your preferences.
 
 ### "Use the BigQuery Storage Read API to read table data \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/bigquery/docs/reference/storage](https://docs.cloud.google.com/bigquery/docs/reference/storage)
 - Source ID: `site-docs-reference`
-- Final score: 76
+- Final score: 268
 - Re-rank relevance: MODERATE
-- Re-rank rationale: It references the BigQuery Storage API as a separate service and explains enablement behavior, but provides no lifecycle details such as beta or GA status.
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Use the BigQuery Storage Read API to read table data The BigQuery Storage Read API provides fast access to BigQuery-managed storage by using an rpc-based protocol.
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create and update read sessions: bigquery.readsessions.create on the project bigquery.readsessions.getData on the table or higher bigquery.readsessions.update on the table or higher You might also be able to get these permissions with custom roles or other predefined roles .
 - If you're working in an older version of the Storage Read API, then use the appropriate version of Arrow as follows: v1beta1: Arrow 0.14 and earlier v1: Arrow 0.15 and later Regardless of API version, to access API functions, we recommend that you use the BigQuery Storage API client libraries .
-- Enabling the API The Storage Read API is distinct from the BigQuery API, and shows up separately in the Google Cloud console as the BigQuery Storage API .
-- To support dynamic work rebalancing, the Storage Read API provides an additional method to split a Stream into two child Stream instances whose contents are, together, equal to the contents of the parent Stream .
-- The maximum number of streams, the snapshot time, the set of columns to return, and the predicate filter are all specified as part of the ReadSession message supplied to the CreateReadSession RPC.
+- As a workaround, you can execute a BigQuery query over the view and use the Storage Read API to read from the resulting table.
+
+### BigQuery Storage API Client Libraries \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries](https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries)
+- Source ID: `site-docs-reference`
+- Final score: 218
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- C++ #include "google/cloud/bigquery/storage/v1/bigquery read client.h" #include <iostream> namespace { void ProcessRowsInAvroFormat ( :: google :: cloud :: bigquery :: storage :: v1 :: AvroSchema const & , :: google :: cloud :: bigquery :: storage :: v1 :: AvroRows const & ) { // Code to deserialize avro rows should be added here. } } // namespace int main ( int argc , char argv []) try { if ( argc != 3 ) { std :: cerr << "Usage: " << argv [ 0 ] << " <project-id> <table-name> \n " ; return 1 ; } // project name should be in the format "projects/<your-gcp-project>" std :: string const project name = "projects/" + std :: string ( argv [ 1 ]); // table name should be in the format: // "projects/<project-table-resides-in>/datasets/<dataset-table resides-in>/tables/<table // name>" The project values in project name and table name do not have to be // identical. std :: string const table name = argv [ 2 ]; // Create a namespace alias to make the code easier to read. namespace bigquery storage = :: google :: cloud :: bigquery storage v1 ; constexpr int kMaxReadStreams = 1 ; // Create the ReadSession. auto client = bigquery storage :: BigQueryReadClient ( bigquery storage :: MakeBigQueryReadConnection ()); :: google :: cloud :: bigquery :: storage :: v1 :: ReadSession read session ; read session . set data format ( google :: cloud :: bigquery :: storage :: v1 :: DataFormat :: AVRO ); read session . set table ( table name ); auto session = client .
+- It demonstrates API features such as column // projection (limiting the output to a subset of a table's columns), // column filtering (using simple predicates to filter records on the server // side), establishing the snapshot time (reading data from the table at a // specific point in time), decoding Avro row blocks using the third party // "github.com/linkedin/goavro" library, and decoding Arrow row blocks using // the third party "github.com/apache/arrow/go" library. package main import ( "bytes" "context" "encoding/json" "flag" "fmt" "io" "log" "sort" "strings" "sync" "time" bqStorage "cloud.google.com/go/bigquery/storage/apiv1" "cloud.google.com/go/bigquery/storage/apiv1/storagepb" "github.com/apache/arrow/go/v10/arrow" "github.com/apache/arrow/go/v10/arrow/ipc" "github.com/apache/arrow/go/v10/arrow/memory" gax "github.com/googleapis/gax-go/v2" goavro "github.com/linkedin/goavro/v2" "google.golang.org/genproto/googleapis/rpc/errdetails" "google.golang.org/grpc" "google.golang.org/grpc/codes" "google.golang.org/grpc/status" "google.golang.org/protobuf/types/known/timestamppb" ) // rpcOpts is used to configure the underlying gRPC client to accept large // messages.
+- ReadRows ( session - > streams ( 0 ). name (), kRowOffset ); std :: int64 t num rows = 0 ; for ( auto const & row : read rows ) { if ( row . ok ()) { num rows += row - > row count (); ProcessRowsInAvroFormat ( session - > avro schema (), row - > avro rows ()); } } std :: cout << num rows << " rows read from table: " << table name << " \n " ; return 0 ; } catch ( google :: cloud :: Status const & status ) { std :: cerr << "google::cloud::Status thrown: " << status << " \n " ; return 1 ; } Go // The bigquery storage quickstart application demonstrates usage of the // BigQuery Storage read API.
+- ServerStream<ReadRowsResponse> stream = client . readRowsCallable (). call ( readRowsRequest ); for ( ReadRowsResponse response : stream ) { Preconditions . checkState ( response . hasArrowRecordBatch ()); reader . processRows ( response . getArrowRecordBatch ()); } } } } } Python from google.cloud.bigquery storage import BigQueryReadClient , types TODO(developer): Set the project id variable. project id = 'your-project-id' The read session is created in this project.
+
+### "Introduction to BigLake external tables \_|\_ BigQuery \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- Source ID: `site-docs-reference-5`
+- Final score: 202
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Integrations BigLake tables are accessible from a number of other BigQuery features and gcloud CLI services, including the following, highlighted services.
+- The BigQuery Storage API enforces row- and column-level governance policies on all data access to BigLake tables, including through connectors.
+- Connectors You can access data in BigLake tables based on Cloud Storage from other data processing tools by using BigQuery connectors.
+- Supported data stores You can use BigLake tables with the following data stores: Amazon S3 by using BigQuery Omni Blob Storage by using BigQuery Omni Cloud Storage Temporary table support BigLake tables based on Cloud Storage can be temporary or permanent.
 

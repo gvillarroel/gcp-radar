@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:13.108Z"
+generated_at: "2026-04-12T12:20:09.445Z"
 product_name: "Virtual Private Cloud"
 product_slug: "virtual-private-cloud"
 feature_name: "Private Service Connect support for accessing supported global Google APIs through backends"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-02-28"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/vpc/docs/private-service-connect"
-  - "https://docs.cloud.google.com/vpc/docs/private-services-access"
-  - "https://docs.cloud.google.com/vpc/docs/release-notes"
+  - "https://docs.cloud.google.com/vpc/docs/about-accessing-google-apis-endpoints"
+  - "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints"
+  - "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis"
+  - "https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends"
 keywords:
   - "private"
   - "connect"
@@ -38,52 +39,70 @@ Private Service Connect now supports accessing supported global Google APIs via 
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/vpc/docs/private-service-connect](https://docs.cloud.google.com/vpc/docs/private-service-connect)
-- [https://docs.cloud.google.com/vpc/docs/private-services-access](https://docs.cloud.google.com/vpc/docs/private-services-access)
-- [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
+- [https://docs.cloud.google.com/vpc/docs/about-accessing-google-apis-endpoints](https://docs.cloud.google.com/vpc/docs/about-accessing-google-apis-endpoints)
+- [https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints](https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints)
+- [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis)
+- [https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends](https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends)
 
 ## Supporting Pages
 
-### Private Service Connect \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
+### "About accessing Google APIs through endpoints \_|\_ Virtual Private Cloud\
 
-- URL: [https://docs.cloud.google.com/vpc/docs/private-service-connect](https://docs.cloud.google.com/vpc/docs/private-service-connect)
-- Source ID: `site-docs-root`
-- Final score: 220
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Virtual Private Cloud Start free Overview Guides Reference Resources More Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Virtual Private Cloud overview Get started VPC networks Subnets IPv6 support Create and manage VPC networks Add networking features Add IP addresses Overview Reserve internal IP addresses Reserve external IP addresses Move an external IPv4 address to a different project Add alias IP ranges Overview Configure alias IP ranges Bring your own IP addresses (BYOIP) Overview Planning and architecture Create a public advertised prefix Create public delegated prefixes Create IPv4 sub-prefixes and IP addresses Create and use IPv6 sub-prefixes Manage BGP announcement Deprovision BYOIP Add routes Routes overview Static routes overview Use routes Add policy-based routes Overview Use policy-based-routes Change MTU Overview Change MTU of a VPC network Create and verify a jumbo frame MTU network Access IPv4 destinations from IPv6-only instances Overview Configure IPv6-only subnets and instances with DNS64 and NAT64 Configure VMs Add network tags Add VMs with multiple network interfaces Overview Create VMs with multiple network interfaces Configure Dynamic NICs Add Dynamic NICs Delete Dynamic NICs Configure routing for an additional network interface Troubleshoot Add capabilities Network Connectivity Center VPC Network Peering Overview About peering connections Set up and manage VPC Network Peering Peer two VPC networks Shared VPC Overview Provision Shared VPC Deprovision Shared VPC Hybrid Subnets About migrating to Google Cloud with Hybrid Subnets Prepare for Hybrid Subnets connectivity Migrate to Google Cloud with Hybrid Subnets Disable hybrid subnet routing Internal ranges Overview Create and use internal ranges Network profiles for specific use cases Overview RDMA network profiles Create a VPC network for RDMA NICs View network profiles Access APIs and services Choose a private access option Private Service Connect Overview Compatibility Deployment patterns Architecture Security Create and access your own service Overview Create a load-balanced service Make the service accessible to other VPC networks Access the service from another VPC network Service consumers Endpoints Published services About accessing published services Access published services Manage endpoints that access published services Global Google APIs About accessing global Google APIs Access global Google APIs Regional Google APIs About accessing regional Google APIs Access regional Google APIs About propagated connections Backends About backends Create a backend Access published services Access regional Google APIs Access global Google APIs Network attachments About network attachments Create network attachments Configure security Service connection policies About service connectivity automation About service connection policies Configure connectivity to services Configure service connection policies Deploy service instances Manage consumer security Service producers Published services About published services About controlling access to published services Publish services Manage published services DNS configuration for services Private Service Connect health About Private Service Connect health Configure Private Service Connect health for failover View, update, and delete Private Service Connect health configurations Port mapping About port mapping Create port mapping services Update port mapping services Migrate peering services to Private Service Connect About migrating peering services Migrate peering services Interfaces About interfaces Create interfaces Configure routing Configure security Manage destination overlap Manage producer security Monitor connections Private Google Access Overview Configure Private Google Access Private Google Access for on-premises hosts Overview Configure Private Google Access for on-premises hosts Access APIs from VMs with external IP addresses Private services access Overview Configure private services access Send serverless traffic to a VPC network Overview Configure serverless traffic Monitor VPC Flow Logs Overview About VPC Flow Logs records About traffic flows Configure VPC Flow Logs Configure organization policy constraints Access flow logs Audit logging VPC audit logging Private services access audit logging Serverless VPC Access audit logging Packet Mirroring Overview Use Packet Mirroring Monitor Packet Mirroring Packet Mirroring partner providers Control access Manage resources by using custom constraints Create and manage tags for VPC resources Troubleshoot Troubleshoot internal connectivity between VMs Troubleshoot policy and access problems Advanced topics Advanced VPC concepts Legacy networks Overview Manage legacy networks AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Choosing a Private Service Connect feature Private Service Connect types Endpoints Backends Interfaces Private Service Connect managed services Published services Google APIs Private Service Connect characteristics What's next Home Documentation Networking Virtual Private Cloud Guides Was this helpful?
-- Private Service Connect lets you send traffic to endpoints and backends that forward the traffic to managed services, including Google APIs and published services.
-- Backends Private Service Connect backends let Google Cloud load balancers send traffic through Private Service Connect to reach published services or Google APIs.
-- The backends are deployed through Private Service Connect network endpoint groups (NEGs) that reference a producer service attachment or a supported Google API.
-
-### Private services access \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/vpc/docs/private-services-access](https://docs.cloud.google.com/vpc/docs/private-services-access)
-- Source ID: `site-docs-root`
-- Final score: 204
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/vpc/docs/about-accessing-google-apis-endpoints](https://docs.cloud.google.com/vpc/docs/about-accessing-google-apis-endpoints)
+- Source ID: `site-docs-root-2`
+- Final score: 304
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Virtual Private Cloud Start free Overview Guides Reference Resources More Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Virtual Private Cloud overview Get started VPC networks Subnets IPv6 support Create and manage VPC networks Add networking features Add IP addresses Overview Reserve internal IP addresses Reserve external IP addresses Move an external IPv4 address to a different project Add alias IP ranges Overview Configure alias IP ranges Bring your own IP addresses (BYOIP) Overview Planning and architecture Create a public advertised prefix Create public delegated prefixes Create IPv4 sub-prefixes and IP addresses Create and use IPv6 sub-prefixes Manage BGP announcement Deprovision BYOIP Add routes Routes overview Static routes overview Use routes Add policy-based routes Overview Use policy-based-routes Change MTU Overview Change MTU of a VPC network Create and verify a jumbo frame MTU network Access IPv4 destinations from IPv6-only instances Overview Configure IPv6-only subnets and instances with DNS64 and NAT64 Configure VMs Add network tags Add VMs with multiple network interfaces Overview Create VMs with multiple network interfaces Configure Dynamic NICs Add Dynamic NICs Delete Dynamic NICs Configure routing for an additional network interface Troubleshoot Add capabilities Network Connectivity Center VPC Network Peering Overview About peering connections Set up and manage VPC Network Peering Peer two VPC networks Shared VPC Overview Provision Shared VPC Deprovision Shared VPC Hybrid Subnets About migrating to Google Cloud with Hybrid Subnets Prepare for Hybrid Subnets connectivity Migrate to Google Cloud with Hybrid Subnets Disable hybrid subnet routing Internal ranges Overview Create and use internal ranges Network profiles for specific use cases Overview RDMA network profiles Create a VPC network for RDMA NICs View network profiles Access APIs and services Choose a private access option Private Service Connect Overview Compatibility Deployment patterns Architecture Security Create and access your own service Overview Create a load-balanced service Make the service accessible to other VPC networks Access the service from another VPC network Service consumers Endpoints Published services About accessing published services Access published services Manage endpoints that access published services Global Google APIs About accessing global Google APIs Access global Google APIs Regional Google APIs About accessing regional Google APIs Access regional Google APIs About propagated connections Backends About backends Create a backend Access published services Access regional Google APIs Access global Google APIs Network attachments About network attachments Create network attachments Configure security Service connection policies About service connectivity automation About service connection policies Configure connectivity to services Configure service connection policies Deploy service instances Manage consumer security Service producers Published services About published services About controlling access to published services Publish services Manage published services DNS configuration for services Private Service Connect health About Private Service Connect health Configure Private Service Connect health for failover View, update, and delete Private Service Connect health configurations Port mapping About port mapping Create port mapping services Update port mapping services Migrate peering services to Private Service Connect About migrating peering services Migrate peering services Interfaces About interfaces Create interfaces Configure routing Configure security Manage destination overlap Manage producer security Monitor connections Private Google Access Overview Configure Private Google Access Private Google Access for on-premises hosts Overview Configure Private Google Access for on-premises hosts Access APIs from VMs with external IP addresses Private services access Overview Configure private services access Send serverless traffic to a VPC network Overview Configure serverless traffic Monitor VPC Flow Logs Overview About VPC Flow Logs records About traffic flows Configure VPC Flow Logs Configure organization policy constraints Access flow logs Audit logging VPC audit logging Private services access audit logging Serverless VPC Access audit logging Packet Mirroring Overview Use Packet Mirroring Monitor Packet Mirroring Packet Mirroring partner providers Control access Manage resources by using custom constraints Create and manage tags for VPC resources Troubleshoot Troubleshoot internal connectivity between VMs Troubleshoot policy and access problems Advanced topics Advanced VPC concepts Legacy networks Overview Manage legacy networks AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Supported services Private services access and VPC Network Peering Private services access workflow Example Reachability of service instances Accessing through NCC Accessing through Shared VPC Accessing through hybrid connectivity Service producer network Pricing Limitations What's next Home Documentation Networking Virtual Private Cloud Guides Was this helpful?
-- Send feedback On this page Supported services Private services access and VPC Network Peering Private services access workflow Example Reachability of service instances Accessing through NCC Accessing through Shared VPC Accessing through hybrid connectivity Service producer network Pricing Limitations What's next Private services access Stay organized with collections Save and categorize content based on your preferences.
-- However, there are ways to make the private connection available to resources that are outside of that VPC network: To make the service instances available from other VPC networks, consider the following options: Accessing through NCC .
-- Accessing through NCC For some services that are available through private services access, you can use NCC to make the service reachable by other spokes on a hub by creating a producer VPC spoke .
+- Configuration Details Consumer configuration (endpoint) Global reachability Uses an internal global IP address Cloud Interconnect traffic Cloud VPN traffic Access through VPC Network Peering Connection propagation through NCC Automatic DNS configuration IP version IPv4 Producer Supported services Supported global Google APIs On-premises access Private Service Connect endpoints that you use to access Google APIs can be accessed from supported connected on-premises hosts.
+- Quotas The number of Private Service Connect endpoints that you can create for accessing Google APIs is controlled by the PSC Google APIs Forwarding Rules per VPC Network quota.
+- About accessing Google APIs through endpoints This document provides an overview of Private Service Connect endpoints that are used to access Google APIs.
+- Domain names that match: accounts.google.com (only supports paths needed for OAuth authentication of service accounts; user account authentication is interactive and not supported) .aiplatform-notebook.cloud.google.com .aiplatform-notebook.googleusercontent.com appengine.google.com .appspot.com .backupdr.cloud.google.com backupdr.cloud.google.com .backupdr.googleusercontent.com backupdr.googleusercontent.com .cloudfunctions.net .cloudproxy.app .composer.cloud.google.com .composer.googleusercontent.com .datafusion.cloud.google.com .datafusion.googleusercontent.com .dataproc.cloud.google.com dataproc.cloud.google.com .dataproc.googleusercontent.com dataproc.googleusercontent.com .developerconnect.dev dl.google.com gcr.io or .gcr.io .googleapis.com .gke.goog gstatic.com or .gstatic.com .kernels.googleusercontent.com .ltsapis.goog .notebooks.byoid.googleusercontent.com .notebooks.cloud.google.com notebooks.cloud.google.com .notebooks.googleusercontent.com packages.cloud.google.com pkg.dev or .pkg.dev pki.goog or .pki.goog .run.app source.developers.google.com storage.cloud.google.com Choose all-apis under these circumstances: You don't use VPC Service Controls.
 
-### VPC release notes \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
+### "About accessing regional endpoints through Private Service Connect endpoints\
 
-- URL: [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 182
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints](https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints)
+- Source ID: `site-docs-root-2`
+- Final score: 292
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- February 28, 2025 Feature Accessing supported global Google APIs through Private Service Connect backends is available in General Availability .
-- December 13, 2023 Feature Accessing supported global Google APIs through Private Service Connect backends is available in Preview .
-- November 17, 2022 Feature Preview : Connectivity to Private Service Connect endpoints used to access a managed service is supported over VLAN attachments for Cloud Interconnect November 16, 2022 Feature Preview: Private Service Connect endpoints with consumer HTTP(S) controls now support accessing regional Google APIs and managed services using the following load balancers: Regional internal HTTP(S) load balancer Regional external HTTP(S) load balancer November 08, 2022 Feature Preview : You use the private.googleapis.com and restricted.googleapis.com VIPs to access Google APIs and services using IPv6 addresses.
-- About accessing published services through endpoints About accessing Google APIs through endpoints About published services DNS configuration for published services April 05, 2023 Feature General Availability: Private Service Connect endpoints with consumer HTTP(S) controls support accessing regional Google APIs and published services using the following load balancers : Regional internal HTTP(S) load balancer Regional external HTTP(S) load balancer March 30, 2023 Feature For auto mode VPC networks, added a new subnet 10.212.0.0/20 for the Doha me-central1 region.
+- About accessing regional endpoints through Private Service Connect endpoints This page provides an overview of using Private Service Connect endpoints to access regional endpoints for supported Google APIs in supported regions .
+- Configuration Details Consumer configuration (endpoint) Global reachability If global access is enabled Cloud Interconnect traffic Cloud VPN traffic Access through VPC Network Peering Connection propagation through NCC DNS configuration Manual DNS configuration IP version IPv4 or IPv6 Producer Supported services Supported regional Google APIs Specifications Public hostnames for regional endpoints have the following format: SERVICE .
+- An endpoint lets service consumers send traffic from the consumer's VPC network to regional service endpoints for supported Google APIs through a service attachment that is managed by Google (click to enlarge).
+- Features and compatibility This table summarizes the features that are supported by endpoints that are used to access regional endpoints for Google APIs.
+
+### "Access Google APIs through endpoints \_|\_ Virtual Private Cloud \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis)
+- Source ID: `site-docs-root-2`
+- Final score: 272
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Terraform You can use the following Terraform resources to create an endpoint: Global address Global forwarding rule resource "google compute global address" "default" { project = google compute network.network.project name = "global-psconnect-ip" address type = "INTERNAL" purpose = "PRIVATE SERVICE CONNECT" network = google compute network.network.id address = "10.3.0.5" } resource "google compute global forwarding rule" "default" { project = google compute network.network.project name = "globalrule" target = "all-apis" network = google compute network.network.id ip address = google compute global address.default.id load balancing scheme = "" } Verify that the endpoint is working Create a VM instance in the VPC network where Private Service Connect is configured.
+- Task Roles Create an endpoint All of the following roles: Compute Network Admin ( roles/compute.networkAdmin ), Service Directory Editor ( roles/servicedirectory.editor ), and DNS Administrator ( roles/dns.admin ) Configure Private Google Access (optional) Compute Network Admin ( roles/compute.networkAdmin ) Before you begin Read About connecting to Google APIs by using endpoints for more information, including DNS configuration and limitations.
+- Create a forwarding rule to connect the endpoint to Google APIs and services. gcloud compute forwarding-rules create ENDPOINT NAME \ --global \ --network= NETWORK NAME \ --address= ADDRESS NAME \ --target-google-apis-bundle= API BUNDLE \ [ --service-directory-registration= REGION NAMESPACE URI ] Replace the following: ENDPOINT NAME : the name to assign to the endpoint.
+- POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/addresses { "name": ADDRESS NAME , "address": ENDPOINT IP , "addressType": "INTERNAL", "purpose": PRIVATE SERVICE CONNECT, "network": NETWORK URL } Replace the following: PROJECT ID : your project ID.
+
+### "Access global Google APIs through backends \_|\_ Virtual Private Cloud \_\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends](https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends)
+- Source ID: `site-docs-root-2`
+- Final score: 268
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Access global Google APIs through backends This page describes how to access global Google APIs by using Private Service Connect backends that are based on cross-region internal Application Load Balancers .
+- You can configure custom hostnames, local to your Virtual Private Cloud (VPC) and connected on-premises networks, that route traffic to your chosen global Google APIs.
+- This configuration lets you target one or more individual global Google APIs while applying the visibility and control that Private Service Connect backends provide.
+- For example, say you have created the following configurations: A Private Service Connect NEG that uses target service pubsub.googleapis.com .
 

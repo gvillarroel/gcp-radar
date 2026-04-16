@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:50.455Z"
+generated_at: "2026-04-12T12:18:06.787Z"
 product_name: "Places SDK for Android"
 product_slug: "places-sdk-for-android"
 feature_name: "New place data fields"
 feature_slug: "new-place-data-fields"
 latest_feature_date: "2024-09-18"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/android-sdk/data-fields"
+  - "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy"
+  - "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+  - "https://developers.google.com/maps/documentation/places/android-sdk/place-photos"
 keywords:
   - "new"
   - "place"
@@ -22,7 +25,7 @@ keywords:
 # New place data fields
 
 Product: Places SDK for Android
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,11 +35,70 @@ The SDK adds new place data fields.
 
 The SDK adds new place data fields.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/android-sdk/data-fields](https://developers.google.com/maps/documentation/places/android-sdk/data-fields)
+- [https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy](https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy)
+- [https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy](https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy)
+- [https://developers.google.com/maps/documentation/places/android-sdk/place-photos](https://developers.google.com/maps/documentation/places/android-sdk/place-photos)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Place Data Fields (New) \_|\_ Places SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/data-fields](https://developers.google.com/maps/documentation/places/android-sdk/data-fields)
+- Source ID: `site-docs-root`
+- Final score: 220
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Products Google Maps Platform Documentation Android Places SDK for Android Guides Send feedback Place Data Fields (New) Stay organized with collections Save and categorize content based on your preferences.
+- Select platform: Android iOS JavaScript Web Service Place data fields define the place data to return in the response Place object for Place Details (New) , Text Search (New) , and Nearby Search (New) .
+- Place data fields and SKUs Field description Property field Place Details SKU Text Search SKU Nearby Search SKU Accessibility options ACCESSIBILITY OPTIONS Place Details Pro Text Search Pro Nearby Search Pro Address ( ADR microformat ) ADR FORMAT ADDRESS Place Details Essentials Text Search Pro Nearby Search Pro Address components ADDRESS COMPONENTS Place Details Essentials Text Search Pro Nearby Search Pro Address descriptor ADDRESS DESCRIPTOR Place Details Essentials Text Search Pro Nearby Search Pro Allows dogs ALLOWS DOGS Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Business status BUSINESS STATUS Place Details Pro Text Search Pro Nearby Search Pro Containing places CONTAINING PLACES Place Details Pro Text Search Pro Nearby Search Pro Curbside pickup CURBSIDE PICKUP Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Current opening hours CURRENT OPENING HOURS Place Details Enterprise Text Search Pro Nearby Search Enterprise Current secondary opening hours CURRENT SECONDARY OPENING HOURS Place Details Enterprise Text Search Pro Nearby Search Enterprise Delivery DELIVERY Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Dine in DINE IN Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Display name DISPLAY NAME Place Details Pro Text Search Pro Nearby Search Pro Editorial summary EDITORIAL SUMMARY Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere EV charging options EV CHARGE OPTIONS Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere AI-powered EVCS amenity summary EV CHARGE AMENITY SUMMARY Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Formatted address FORMATTED ADDRESS Place Details Essentials Text Search Pro Nearby Search Pro Fuel options FUEL OPTIONS Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere AI-powered place summary GENERATIVE SUMMARY Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Good for children GOOD FOR CHILDREN Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Good for groups GOOD FOR GROUPS Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Good for watching sports GOOD FOR WATCHING SPORTS Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Google Maps URI GOOGLE MAPS URI Place Details Pro Text Search Pro Nearby Search Pro Icon background color ICON BACKGROUND COLOR Place Details Pro Text Search Pro Nearby Search Pro Icon mask base URI ICON MASK URL Place Details Pro Text Search Pro Nearby Search Pro International phone number INTERNATIONAL PHONE NUMBER Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Live music LIVE MUSIC Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Location LOCATION Place Details Essentials Text Search Pro Nearby Search Pro Menu for children MENU FOR CHILDREN Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Name RESOURCE NAME Place Details Essentials (IDs Only) Text Search Essentials (IDs Only) Nearby Search Pro National phone number NATIONAL PHONE NUMBER Place Details Enterprise Text Search Pro Nearby Search Enterprise AI-powered neighborhood summary NEIGHBORHOOD SUMMARY Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Outdoor seating OUTDOOR SEATING Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Parking options PARKING OPTIONS Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Payment options PAYMENT OPTIONS Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Photos PHOTO METADATAS Place Details Essentials (IDs Only) Text Search Pro Nearby Search Pro Place ID ID Place Details Essentials (IDs Only) Text Search Essentials (IDs Only) Nearby Search Pro Plus code PLUS CODE Place Details Essentials Text Search Pro Nearby Search Pro Postal address POSTAL ADDRESS Place Details Essentials Text Search Pro Nearby Search Pro Price level PRICE LEVEL Place Details Enterprise Text Search Pro Nearby Search Enterprise Price range PRICE RANGE Place Details Enterprise Text Search Enterprise + Atmosphere Nearby Search Enterprise Primary type PRIMARY TYPE Place Details Pro Text Search Pro Nearby Search Pro Primary type display name PRIMARY TYPE DISPLAY NAME Place Details Pro Text Search Pro Nearby Search Pro Rating RATING Place Details Enterprise Text Search Pro Nearby Search Enterprise Regular opening hours OPENING HOURS Place Details Enterprise Text Search Pro Nearby Search Enterprise Regular secondary opening hours SECONDARY OPENING HOURS Place Details Enterprise Text Search Pro Nearby Search Enterprise Reservable RESERVABLE Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Restroom RESTROOM Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Reviews REVIEWS Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere AI-powered review summary REVIEW SUMMARY Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves beer SERVES BEER Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves breakfast SERVES BREAKFAST Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves brunch SERVES BRUNCH Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves cocktails SERVES COCKTAILS Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves coffee SERVES COFFEE Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves dessert SERVES DESSERT Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves dinner SERVES DINNER Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves lunch SERVES LUNCH Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves vegetarian food SERVES VEGETARIAN FOOD Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves wine SERVES WINE Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Short formatted address SHORT FORMATTED ADDRESS Place Details Essentials Text Search Pro Nearby Search Pro Sub-destinations SUB DESTINATIONS Place Details Pro Text Search Pro Nearby Search Pro Takeout TAKEOUT Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Time zone TIME ZONE Place Details Pro Text Search Pro Nearby Search Pro Types TYPES Place Details Essentials Text Search Pro Nearby Search Pro User rating count USER RATINGS COUNT Place Details Enterprise Text Search Pro Nearby Search Enterprise UTC offset (minutes) UTC OFFSET Place Details Pro Text Search Pro Nearby Search Pro Viewport VIEWPORT Place Details Essentials Text Search Pro Nearby Search Pro Website URI WEBSITE URI Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["Place data fields determine the data returned in responses for Place Details, Text Search, and Nearby Search.
+
+### "Places SDK (Legacy) overview \_|\_ Places SDK for Android \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy](https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy)
+- Source ID: `site-docs-reference`
+- Final score: 214
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Feature Places API enabled on API key Initialization method Minimum SDK version Autocomplete (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Details (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Nearby Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Photos (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.4.0 Text Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Place Autocomplete Places API initialize() (Deprecated) Current Place Places API initialize() (Deprecated) Place Details Places API initialize() (Deprecated) Place Photos Places API initialize() (Deprecated) Deprecated: The Places.initialize method is deprecated.
+- New features The Places SDK for Android (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) New Text Search service Text Search (New) returns information about a set of places based on a string — for example "pizza in New York" or "shoe stores near Ottawa" or "123 Main Street".
+- Migrate to the new APIs To migrate to the new APIs, see the following migration guides: Migrate to Place Details (New) Migrate to Place Photo (New) Migrate to Autocomplete (New) Enhancements in Places SDK for Android (New) This section covers key features added to Places SDK for Android (New).
+- This standard design brings a level of consistency across the SDKs that improve the efficiency of development with Places SDK for Android (New).
+
+### "Places SDK (Legacy) overview \_|\_ Places SDK for Android \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy](https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy)
+- Source ID: `site-docs-root-2`
+- Final score: 214
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Feature Places API enabled on API key Initialization method Minimum SDK version Autocomplete (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Details (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Nearby Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Photos (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.4.0 Text Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Place Autocomplete Places API initialize() (Deprecated) Current Place Places API initialize() (Deprecated) Place Details Places API initialize() (Deprecated) Place Photos Places API initialize() (Deprecated) Deprecated: The Places.initialize method is deprecated.
+- New features The Places SDK for Android (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) New Text Search service Text Search (New) returns information about a set of places based on a string — for example "pizza in New York" or "shoe stores near Ottawa" or "123 Main Street".
+- Migrate to the new APIs To migrate to the new APIs, see the following migration guides: Migrate to Place Details (New) Migrate to Place Photo (New) Migrate to Autocomplete (New) Enhancements in Places SDK for Android (New) This section covers key features added to Places SDK for Android (New).
+- This standard design brings a level of consistency across the SDKs that improve the efficiency of development with Places SDK for Android (New).
+
+### Place Photos (New) \_|\_ Places SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/place-photos](https://developers.google.com/maps/documentation/places/android-sdk/place-photos)
+- Source ID: `site-docs-root`
+- Final score: 214
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- PHOTO METADATAS ); // Get a Place object final FetchPlaceRequest placeRequest = FetchPlaceRequest . newInstance ( placeId , fields ); placesClient . fetchPlace ( placeRequest ). addOnSuccessListener (( response ) -> { final Place place = response . getPlace (); // Get the photo metadata. final List<PhotoMetadata> metadata = place . getPhotoMetadatas (); if ( metadata == null metadata . isEmpty ()) { Log . w ( TAG , "No photo metadata." ); return ; } final PhotoMetadata photoMetadata = metadata . get ( 0 ); // Get the attribution text and author attributions. final String attributions = photoMetadata . getAttributions (); final AuthorAttributions authorAttributions = photoMetadata . getAuthorAttributions (); // Create a FetchResolvedPhotoUriRequest. final FetchResolvedPhotoUriRequest photoRequest = FetchResolvedPhotoUriRequest . builder ( photoMetadata ) . setMaxWidth ( 500 ) . setMaxHeight ( 300 ) . build (); // Request the photo URI placesClient . fetchResolvedPhotoUri ( photoRequest ). addOnSuccessListener (( fetchResolvedPhotoUriResponse ) -> { Uri uri = fetchResolvedPhotoUriResponse . getUri (); RequestOptions requestOptions = new RequestOptions (). override ( Target .
+- To retrieve a place photo, you must first fetch a Place object using Place Details (New) with the PHOTO METADATAS field, then use this metadata to request the photo URI via the Places SDK.
+- Home Products Google Maps Platform Documentation Android Places SDK for Android Guides Send feedback Place Photos (New) Stay organized with collections Save and categorize content based on your preferences.
+- Place Photos examples The following example demonstrates getting a place photo URI. // Define a Place ID. final String placeId = "INSERT PLACE ID HERE" ; // Specify fields.
 

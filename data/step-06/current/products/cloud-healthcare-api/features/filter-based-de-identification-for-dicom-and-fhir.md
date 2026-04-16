@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:31.492Z"
+generated_at: "2026-04-15T00:44:19.136Z"
 product_name: "Cloud Healthcare API"
 product_slug: "cloud-healthcare-api"
 feature_name: "Filter-based de-identification for DICOM and FHIR"
 feature_slug: "filter-based-de-identification-for-dicom-and-fhir"
 latest_feature_date: "2019-10-24"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics"
+  - "https://docs.cloud.google.com/healthcare-api/docs/fhir-pitr"
+  - "https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class"
 keywords:
   - "filter"
   - "based"
   - "de"
   - "identification"
-  - "for"
   - "dicom"
-  - "and"
   - "fhir"
+  - "introduced"
+  - "options"
 ---
 
 # Filter-based de-identification for DICOM and FHIR
 
 Product: Cloud Healthcare API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ The API introduced filter-based de-identification options for both DICOM and FHI
 
 The API introduced filter-based de-identification options for both DICOM and FHIR data.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics](https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics)
+- [https://docs.cloud.google.com/healthcare-api/docs/fhir-pitr](https://docs.cloud.google.com/healthcare-api/docs/fhir-pitr)
+- [https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class](https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "View DICOM store, DICOM study, and DICOM series metrics \_|\_ Cloud Healthcare\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics](https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics)
+- Source ID: `site-docs-root-2`
+- Final score: 147
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Before using any of the request data, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the DICOM store's parent dataset DICOM STORE ID : the DICOM store ID STUDY UID : the DICOMweb study unique identifier (UID) SERIES UID : the DICOMweb series unique identifier (UID) To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Before using any of the request data, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the DICOM store's parent dataset DICOM STORE ID : the DICOM store ID STUDY UID : the DICOMweb study unique identifier (UID) To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Before using any of the request data, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the DICOM store's parent dataset DICOM STORE ID : the DICOM store ID To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Home Documentation Industry solutions Cloud Healthcare API Guides Send feedback View DICOM store, DICOM study, and DICOM series metrics Stay organized with collections Save and categorize content based on your preferences.
+
+### "Recover FHIR resources with point-in-time recovery (PITR) \_|\_ Cloud Healthcare\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/fhir-pitr](https://docs.cloud.google.com/healthcare-api/docs/fhir-pitr)
+- Source ID: `site-docs-root-2`
+- Final score: 143
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information, see Using Codes in Resources . extension value ts Details Function syntax extension value ts(" url ") Description Filters FHIR resources based on the url value in an extension element where url is a Unix timestamp.
+- You can combine the custom functions with the rollbackTime field to to apply an additional filter. tag Details Function syntax tag(" system ") = " code " Description Filters FHIR resources based on the resource Meta.tag element.
+- Use filters to recover specific FHIR resources The following sections describe how to use filters to recover FHIR resources based on a filter criteria.
+- Filter by FHIR resource type To filter FHIR resources more broadly based only on the resource type, specify the resource types in the types[] array.
+
+### DICOM storage classes \_|\_ Cloud Healthcare API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class](https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class)
+- Source ID: `site-docs-root-2`
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Response { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID ", "metadata": { "@type": "type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata", "apiMethodName": "google.cloud.healthcare.v1.storageinfo.StorageInfoService.SetBlobStorageSettings", "createTime": " CREATE TIME ", "endTime": " END TIME ", "logsUrl": https://console.cloud.google.com/logs/query/ CLOUD LOGGING URL , "counter": { "success": " SUCCESS COUNT " } }, "done": true, "response": { "@type": "type.googleapis.com/google.protobuf.Empty" } } Change storage class for multiple objects using a filter file The following sections show how to create and use a filter file to change the storage class of DICOM objects based on a filter criteria.
+- Run the following command in the terminal to create or overwrite this file in the current directory: @' { "blobStorageSettings": { "blobStorageClass": " STORAGE CLASS " }, "filterConfig": { "resourcePathsGcsUri": "gs:// CLOUD STORAGE BUCKET / FILTER FILE PATH " } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json" -InFile request.json -Uri "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID :setBlobStorageSettings" Select-Object -Expand Content The output is the following.
+- Consider the following filter file: /studies/1.123.456.789 /studies/1.666.333.111/series/123.456 /studies/1.666.333.111/series/567.890 /studies/1.888.999.222/series/123.456/instances/111 /studies/1.888.999.222/series/123.456/instances/222 /studies/1.888.999.222/series/123.456/instances/333 This example filter file applies to the following: The entire study with the study instance UID as 1.123.456.789 Two separate series with series instance UIDs as 123.456 and 567.890 in the study 1.666.333.111 Three individual instances with instance IDs as 111 , 222 , and 333 in the study 1.888.999.222 and series 123.456 Create a filter file using BigQuery To create a filter file using BigQuery, you must first export the metadata of your DICOM store to BigQuery .
+- Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json STORAGE CLASS " }, "filterConfig": { "resourcePathsGcsUri": "gs:// CLOUD STORAGE BUCKET / FILTER FILE PATH " } } EOF Then execute the following command to send your REST request: curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ -d @request.json \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID :setBlobStorageSettings" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .
 

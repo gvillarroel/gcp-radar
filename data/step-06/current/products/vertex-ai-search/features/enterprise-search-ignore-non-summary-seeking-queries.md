@@ -1,18 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.976Z"
+generated_at: "2026-04-14T17:29:37.145Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Enterprise Search ignore non-summary seeking queries"
 feature_slug: "enterprise-search-ignore-non-summary-seeking-queries"
 latest_feature_date: "2023-07-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
 keywords:
   - "enterprise"
   - "search"
@@ -27,7 +26,7 @@ keywords:
 # Enterprise Search ignore non-summary seeking queries
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,22 +38,21 @@ Enterprise Search adds a preview capability to omit summaries in responses when 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search)
 
 ## Supporting Pages
 
 ### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- Source ID: `site-api-reference`
-- Final score: 172
+- Source ID: `site-docs-reference`
+- Final score: 158
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -67,20 +65,20 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
 - Source ID: `site-docs-reference-2`
-- Final score: 158
+- Final score: 130
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - If this field is set to true , we skip generating summaries for adversarial queries and return fallback messages instead. ignoreNonSummarySeekingQuery boolean Specifies whether to filter out queries that are not summary-seeking.
 - If this field is set to true , we skip generating summaries for non-summary seeking queries and return fallback messages instead. ignoreLowRelevantContent boolean Specifies whether to filter out queries that have low relevance.
+- Google employs search-query classification to detect summary-seeking queries.
 - SummarySpec JSON representation { "summaryResultCount" : integer , "includeCitations" : boolean , "ignoreAdversarialQuery" : boolean , "ignoreNonSummarySeekingQuery" : boolean , "ignoreLowRelevantContent" : boolean , "ignoreJailBreakingQuery" : boolean , "multimodalSpec" : { object ( MultiModalSpec ) } , "modelPromptSpec" : { object ( ModelPromptSpec ) } , "languageCode" : string , "modelSpec" : { object ( ModelSpec ) } , "useSemanticChunks" : boolean } Fields summaryResultCount integer The number of top results to generate the summary from.
-- No summary is returned if the search query is classified as a non-summary seeking query.
 
 ### Create a search data store \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es)
 - Source ID: `site-docs-root`
-- Final score: 156
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,17 +86,4 @@ Evidence snippets:
 - If the data store is not configured as site search (GENERIC vertical and PUBLIC WEBSITE content config), this flag will be ignored. / // const createAdvancedSiteSearch = true / A boolean flag indicating whether to skip the default schema creation for the data store.
 - If the data store is not configured as site search (GENERIC vertical and PUBLIC WEBSITE content config), this flag will be ignored. / // const createAdvancedSiteSearch = true / A boolean flag indicating whether to skip the default schema creation for the data store.
 - Semantic search queries are supported.
-
-### "MCP Tools Reference: discoveryengine.googleapis.com \_|\_ Vertex AI Search\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search)
-- Source ID: `site-docs-reference-2`
-- Final score: 142
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- If this field is set to true , we skip generating answers for adversarial queries and return fallback messages instead. ignoreNonAnswerSeekingQuery boolean Specifies whether to filter out queries that are not answer-seeking.
-- If this field is set to true , we skip generating answers for non-answer seeking queries and return fallback messages instead. ignoreJailBreakingQuery boolean Optional.
-- AnswerGenerationSpec JSON representation { "modelSpec" : { object ( ModelSpec ) } , "promptSpec" : { object ( PromptSpec ) } , "includeCitations" : boolean , "answerLanguageCode" : string , "ignoreAdversarialQuery" : boolean , "ignoreNonAnswerSeekingQuery" : boolean , "ignoreJailBreakingQuery" : boolean , "multimodalSpec" : { object ( MultimodalSpec ) } , // Union field ignore low relevant content can be only one of the following: "ignoreLowRelevantContent" : boolean // End of list of possible types for union field ignore low relevant content . } Fields modelSpec object ( ModelSpec ) Answer generation model specification. promptSpec object ( PromptSpec ) Answer generation prompt specification. includeCitations boolean Specifies whether to include citation metadata in the answer.
-- No answer is returned if the search query is classified as a non-answer seeking query.
 

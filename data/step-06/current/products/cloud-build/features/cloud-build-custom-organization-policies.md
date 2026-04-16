@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.688Z"
+generated_at: "2026-04-15T00:42:40.821Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Cloud Build custom organization policies"
 feature_slug: "cloud-build-custom-organization-policies"
 latest_feature_date: "2024-08-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/build/docs/release-notes"
-  - "https://docs.cloud.google.com/build/docs/create-custom-build-steps"
+  - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+  - "https://docs.cloud.google.com/docs/buildpacks/python"
   - "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
 keywords:
-  - "build"
-  - "custom"
-  - "organization"
   - "policies"
-  - "now"
-  - "supports"
-  - "for"
+  - "grained"
   - "fine"
+  - "organization"
+  - "custom"
+  - "supports"
 ---
 
 # Cloud Build custom organization policies
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +36,54 @@ Cloud Build now supports custom organization policies for fine-grained organizat
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/build/docs/release-notes](https://docs.cloud.google.com/build/docs/release-notes)
-- [https://docs.cloud.google.com/build/docs/create-custom-build-steps](https://docs.cloud.google.com/build/docs/create-custom-build-steps)
+- [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- [https://docs.cloud.google.com/docs/buildpacks/python](https://docs.cloud.google.com/docs/buildpacks/python)
 - [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
 
 ## Supporting Pages
 
-### Cloud Build release notes \_|\_ Google Cloud Documentation
+### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
 
-- URL: [https://docs.cloud.google.com/build/docs/release-notes](https://docs.cloud.google.com/build/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 180
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- August 19, 2024 Feature Cloud Build support for custom organization policies is now generally available .
-- Custom organization policies let you define constraints for programmatic, fine-grained control over your organization's resources.
-- April 20, 2023 Feature The organization policy for allowed regions when creating new Cloud Build resources is now generally available .
-- September 12, 2022 Change Cloud Build now supports Supply chain Levels for Software Artifacts (SLSA) level 3 assurance.
-
-### "Using community-contributed builders and custom builders \_|\_ Cloud Build\
-
-- URL: [https://docs.cloud.google.com/build/docs/create-custom-build-steps](https://docs.cloud.google.com/build/docs/create-custom-build-steps)
-- Source ID: `site-docs-root`
-- Final score: 160
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- Source ID: `site-docs-reference-2`
+- Final score: 153
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The following code shows an example Dockerfile : FROM alpine RUN apk add curl CMD curl https : //httpbin.org/ip -s > myip.txt; echo " My IP is: $(cat myip.txt)" Build and push the custom builder to the Artifact Registry in your project, replacing values for project-id and image-name : gcloud builds submit -- tag gcr . io / project - id / image - name Use the custom builder image in Cloud Build by specifying the builder in the name field of a build step: YAML steps : - name : 'gcr.io/ project-id / image-name ' id : Determine IP of this build worker JSON { "steps" : [ { "name" : "gcr.io/ project-id / image-name " , "id" : "Determine IP of this build worker" } ] } Use the build config file to start the build manually or build using triggers .
-- Creating a custom builder If the task you want to perform requires capabilities that are not provided by a public image, a supported builder, or a community-contributed builder , you can build your own image and use it in a build step.
-- The following steps show how to create and use a custom builder with an example Dockerfile : Create a custom builder image: Create the Dockerfile for the custom builder.
-- If the task you want to perform requires capabilities that are not provided by an existing image, you can build your own custom image and use it in a build step.
+- Test the custom constraint To test the example that restricts ingress settings, deploy a connector in the project with network set to default : gcloud compute networks vpc-access connectors create org-policy-test \ --project = PROJECT ID \ --region = REGION ID \ --network = default The output is the following: Operation denied by custom org policies: ["customConstraints/custom.defaultNetworkConstraint": "Require network to not be set to default."] Example custom organization policies for common use cases The following table provides examples of custom constraints that you might find useful with Serverless VPC Access connectors: Description Constraint syntax Require that Serverless VPC Access connectors can only use a specific network. name : organizations/ ORGANIZATION ID /customConstraints/custom.allowlistNetworks resourceTypes : - vpcaccess.googleapis.com/Connector methodTypes : - CREATE condition : "resource.network == 'allowlisted-network'" actionType : ALLOW displayName : allowlistNetworks description : Require connectors to use a specific network.
+- To verify that the custom constraint exists, use the gcloud org-policies list-custom-constraints command: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID Replace ORGANIZATION ID with the ID of your organization resource.
+- Create a custom constraint A custom constraint is defined in a YAML file by the resources, methods, conditions, and actions that are supported by the service that you are enforcing the organization policy on.
+- However, if you want more granular, customizable control over the specific fields that are restricted in your organization policies, you can also create custom organization policies.
+
+### Build a Python application \_|\_ Buildpacks \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/docs/buildpacks/python](https://docs.cloud.google.com/docs/buildpacks/python)
+- Source ID: `site-docs-reference`
+- Final score: 100
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Example: pack build sample-python \ --builder gcr.io/buildpacks/builder --env "GOOGLE ENTRYPOINT='gunicorn --bind :$PORT main:app'" Environment Variables The Python buildpack supports the following environment variables to customize your container PIP <key> See pip documentation .
+- The Python buildpack sets the default entrypoint based on the following order of precedence, as defined in the requirements.txt file: gunicorn uvicorn fastapi[standard] gradio streamlit google-adk Configure the web server or framework For each common Python configurations in the requirements.txt file, the following table shows the default entrypoints when deploying to Cloud Run from source: Primary configuration Default entrypoint Environment variables gunicorn gunicorn -b :8080 main:app numpy gunicorn -b :8080 main:app fastapi uvicorn uvicorn main:app --host 0.0.0.0 --port 8080 fastapi[standard] uvicorn main:app --host 0.0.0.0 --port 8080 uvicorn gunicorn gunicorn -b :8080 main:app gradio python main.py GRADIO SERVER NAME=0.0.0.0 GRADIO SERVER PORT=8080 streamlit streamlit run main.py --server.address 0.0.0.0 --server.port 8080 google-adk adk api server --host 0.0.0.0 --port 8080 To avoid deployment failures, use a supported Python version in your source files, and specify a web server in your requirements.txt file.
+- Supported buildpacks configurations Python buildpacks supports the following configurations: pip buildpack : Installs dependencies directly from pyproject.toml if it detects all the following conditions: A pyproject.toml file is present in the root directory and you don't configure high-precedence tools such as a poetry.lock file, a [tool.poetry] section, or a uv.lock file.
+- Apps built with the Python buildpack start the gunicorn process with default settings, similar to running: gunicorn --bind :8080 main:app Customize the application entrypoint You can customize the applications start command by using a Procfile or an environment variable.
 
 ### Create and manage build triggers \_|\_ Cloud Build \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
 - Source ID: `site-docs-root-2`
-- Final score: 158
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - To only allow builds from specific sources, set an organization policy for allowed integrations ( constraints/cloudbuild.allowedIntegrations ) to deny interaction with the source defined in your trigger.
-- To learn more, see Gate builds on organization policy for your project.
-- To create a trigger if your source code is in GitHub : gcloud builds triggers create github \ -- name = TRIGGER NAME \ -- region = REGION \ -- repo - name = REPO NAME \ -- repo - owner = REPO OWNER \ -- branch - pattern = BRANCH PATTERN \ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \ -- service - account = SERVICE ACCOUNT \ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger.
-- Each time you push a change to your source, Cloud Build looks through your changed files for included and ignored files to determine whether a build should be invoked: If you push a change to your repository on an existing branch, Cloud Build looks at the files changed between the commit you just pushed and the commit to which the branch previously pointed.
+- Your administrator might also be able to give the required permissions through custom roles or other predefined roles .
+- You can specify that your app is deployed to an environment in your build config file and then use this field to define substitution variables specifying which environment this trigger should deploy to.
+- Substitution variables (optional): If you selected the Cloud Build config file as your build config option, you can choose to define trigger-specific substitution variables using this field.
 

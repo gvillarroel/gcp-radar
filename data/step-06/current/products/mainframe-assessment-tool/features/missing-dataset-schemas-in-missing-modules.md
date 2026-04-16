@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.457Z"
+generated_at: "2026-04-15T12:06:50.493Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Missing dataset schemas in Missing Modules"
@@ -9,17 +9,15 @@ latest_feature_date: "2024-09-18"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results"
 keywords:
   - "missing"
   - "dataset"
   - "schemas"
-  - "in"
   - "modules"
   - "reports"
-  - "the"
   - "tab"
 ---
 
@@ -42,43 +40,45 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results)
 
 ## Supporting Pages
 
-### Mainframe Assessment Tool release notes | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 61
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Mainframe Assessment Tool release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes Mainframe Assessment Tool version 2.8.0 is available with the following new features and improvements: Added an option to export the assessment static analysis data to Neo4j.
-- For more information, see Export assessment data to your Neo4j database.
-
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 60
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
-
-### View and understand assessment results | Mainframe Assessment Tool | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- Source ID: `site-docs-root`
-- Final score: 56
+- Source ID: `site-docs-reference`
+- Final score: 95
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- View and understand assessment results Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results The Assets page provides a summary, detailed logic, and code suggestions for a program or job in your mainframe application.
-- You can also view the status, type, language, and execution mode (batch or online) for each asset.
+- Use this tab to understand what was missing and consider adding these modules before re-running the assessment.
+- Missing Modules Shows modules used in the code but not found during input analysis.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- Missing from file: the specific source file that contains a reference to a module or component that couldn't be found within the uploaded assessment files.
+
+### Mainframe Assessment Tool overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 34
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Languages Mainframe Assessment Tool supports the analysis of the following languages: COBOL programs and copybooks JCL jobs, procedures, includes, and card data HLASM programs PL/I programs ( Preview ) RPG/RPGLE programs and include files Easytrieve programs Natural for z/OS ( Preview ) Fortran ( Preview ) Database schemas Mainframe Assessment Tool supports the following database schemas: DB2: through Embedded SQL IMS DB: through EXEC DLI and CBLTDLI calls Transaction monitors Mainframe Assessment Tool supports the following transaction monitors: CICS: through EXEC CICS statements IMS DC: through CBLTDLI calls Scheduler configurations Mainframe Assessment Tool supports the following scheduler configurations: BMC Control-M Mainframe migration journey The following diagram illustrates the overall migration journey of mainframe applications: The migration journey has the following phases: Discover and assess your existing codebase: Mainframe Assessment Tool helps you perform an assessment of the mainframe application footprint, technology stack, and dependencies.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+
+### "Export assessment results \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results)
+- Source ID: `site-docs-reference`
+- Final score: 32
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For better performance on large datasets, create constraints for all node labels using a query similar to the following: CALL apoc . load . jsonl ( 'file:///<your-data-file>.jsonl' ) YIELD value WHERE value . type = 'node' UNWIND value . labels as label WITH distinct label CALL apoc . cypher . doIt ( "CREATE CONSTRAINT IF NOT EXISTS FOR (n:" + apoc . text . quoteLabel ( label ) + ") REQUIRE n.id IS UNIQUE" , {}) YIELD value RETURN count ( ); This query reads node labels from the file and creates a unique constraint on the id property for each label.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- This file contains nodes and relationships of programs, JCL jobs, datasets, databases, and BMS maps.
 

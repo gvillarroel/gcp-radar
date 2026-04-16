@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:41:32.752Z"
+generated_at: "2026-04-12T12:17:10.838Z"
 product_name: "Google Meet"
 product_slug: "google-meet"
 feature_name: "Live Sharing meeting info builder access"
 feature_slug: "live-sharing-meeting-info-builder-access"
 latest_feature_date: "2022-05-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces"
-  - "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
   - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
-  - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+  - "https://developers.google.com/workspace/meet/api/guides/artifacts"
+  - "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
 keywords:
   - "live"
   - "sharing"
@@ -27,7 +27,7 @@ keywords:
 # Live Sharing meeting info builder access
 
 Product: Google Meet
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +39,14 @@ The SDK exposes LiveSharingMeetingInfo.Builder to API consumers for testing.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/meet/api/guides/meeting-spaces](https://developers.google.com/workspace/meet/api/guides/meeting-spaces)
-- [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
 - [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview)
-- [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
+- [https://developers.google.com/workspace/meet/api/guides/artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts)
+- [https://developers.google.com/workspace/meet/api/guides/authenticate-authorize](https://developers.google.com/workspace/meet/api/guides/authenticate-authorize)
 
 ## Supporting Pages
 
@@ -54,8 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces](https://developers.google.com/workspace/meet/api/guides/meeting-spaces)
 - Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: N/A
+- Final score: 150
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following code sample shows how to update a meeting space: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/spacesservice/updatespace/AsyncUpdateSpace.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.Space ; import com.google.apps.meet.v2.SpacesServiceClient ; import com.google.apps.meet.v2.UpdateSpaceRequest ; import com.google.protobuf.FieldMask ; public class AsyncUpdateSpace { public static void main ( String [] args ) throws Exception { asyncUpdateSpace (); } public static void asyncUpdateSpace () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( SpacesServiceClient spacesServiceClient = SpacesServiceClient . create ()) { UpdateSpaceRequest request = UpdateSpaceRequest . newBuilder () . setSpace ( Space . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . build (); ApiFuture<Space> future = spacesServiceClient . updateSpaceCallable (). futureCall ( request ); // Do something.
@@ -63,24 +64,11 @@ Evidence snippets:
 - The following code sample shows how to create a meeting space: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/spacesservice/createspace/AsyncCreateSpace.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.CreateSpaceRequest ; import com.google.apps.meet.v2.Space ; import com.google.apps.meet.v2.SpacesServiceClient ; public class AsyncCreateSpace { public static void main ( String [] args ) throws Exception { asyncCreateSpace (); } public static void asyncCreateSpace () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( SpacesServiceClient spacesServiceClient = SpacesServiceClient . create ()) { CreateSpaceRequest request = CreateSpaceRequest . newBuilder (). setSpace ( Space . newBuilder (). build ()). build (); ApiFuture<Space> future = spacesServiceClient . createSpaceCallable (). futureCall ( request ); // Do something.
 - For more information, see How Meet identifies a meeting space (https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space). / // const name = 'abc123' // Imports the Meet library const { SpacesServiceClient } = require ( '@google-apps/meet' ). v2 ; // Instantiates a client const meetClient = new SpacesServiceClient (); async function callEndActiveConference () { // Construct request const request = { name , }; // Run request const response = await meetClient . endActiveConference ( request ); console . log ( response ); } callEndActiveConference (); Python packages/google-apps-meet/samples/generated samples/meet v2 generated spaces service end active conference async.py View on GitHub This snippet has been automatically generated and should be regarded as a code template only.
 
-### "Observe meeting events with Python and the Google Meet REST API \_|\_ Google\
-
-- URL: [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
-- Source ID: `site-docs-root`
-- Final score: 116
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Message ): """Display information about a participant when they leave a meeting.""" payload = json . loads ( message . data ) resource name = payload . get ( "participantSession" ) . get ( "name" ) client = meet .
-- Message ): """Display information about a participant when they join a meeting.""" payload = json . loads ( message . data ) resource name = payload . get ( "participantSession" ) . get ( "name" ) client = meet .
-- AuthorizedSession ( USER CREDENTIALS ) body = { "targetResource" : f "//cloudidentity.googleapis.com/users/ { user name } " , "eventTypes" : [ "google.workspace.meet.conference.v2.started" , "google.workspace.meet.conference.v2.ended" , "google.workspace.meet.participant.v2.joined" , "google.workspace.meet.participant.v2.left" , "google.workspace.meet.recording.v2.fileGenerated" , "google.workspace.meet.transcript.v2.fileGenerated" , ], "payloadOptions" : { "includeResource" : False , }, "notificationEndpoint" : { "pubsubTopic" : topic name }, "ttl" : "86400s" , } response = session . post ( "https://workspaceevents.googleapis.com/v1/subscriptions" , json = body ) return response service = build ( "people" , "v1" , credentials = USER CREDENTIALS ) response = ( service . people () . get ( resourceName = "people/me" , personFields = "names,emailAddresses" ) . execute () ) resource name = response . get ( "resourceName" ) if resource name . startswith ( "people/" ): resource name = resource name [ len ( "people/" ) :] subscription = subscribe to user ( topic name = TOPIC NAME , user name = resource name ) Make sure to add "https://www.googleapis.com/auth/userinfo.profile" in the authorize method in the credential samples above.
-- In your working directory, create the file main.py and add the following contents: import os import json from google.auth.transport import requests from google.oauth2.credentials import Credentials from google auth oauthlib.flow import InstalledAppFlow def authorize () - > Credentials : """Ensure valid credentials for calling the Meet REST API.""" CLIENT SECRET FILE = "./client secret.json" credentials = None if os . path . exists ( 'token.json' ): credentials = Credentials . from authorized user file ( 'token.json' ) if credentials is None : flow = InstalledAppFlow . from client secrets file ( CLIENT SECRET FILE , scopes = [ 'https://www.googleapis.com/auth/meetings.space.created' , ]) flow . run local server ( port = 0 ) credentials = flow . credentials if credentials and credentials . expired : credentials . refresh ( requests .
-
 ### Google Meet meeting spaces overview \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview)
 - Source ID: `site-docs-root`
-- Final score: 112
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -89,16 +77,31 @@ Evidence snippets:
 - You can also access this information for up to 30 days after the conference. (Optional) End the conference .
 - The Session Initiation Protocol (SIP) access methods for this meeting space.
 
-### "Configure meeting spaces and members \_|\_ Google Meet \_|\_ Google for\
+### Work with artifacts \_|\_ Google Meet \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
+- URL: [https://developers.google.com/workspace/meet/api/guides/artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts)
 - Source ID: `site-docs-root`
-- Final score: 110
-- Re-rank relevance: N/A
+- Final score: 124
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- OAuth scopes for settings Setting or accessing meetings settings requires the following OAuth scopes: Use case Scope code Set auto artifact generation for spaces created by other apps. https://www.googleapis.com/auth/meetings.space.settings Get or list artifacts from conferences created by other apps. https://www.googleapis.com/auth/meetings.space.readonly Get or list other pre-meeting settings of a meeting space created by a third-party app. https://www.googleapis.com/auth/meetings.space.created https://www.googleapis.com/auth/meetings.space.readonly Read and edit the settings for all meeting spaces a user can access through any other app, such as Calendar. https://www.googleapis.com/auth/meetings.space.settings For more information on OAuth scopes, see Meet REST API scopes .
-- Difference between transcripts and smart notes While both meeting transcripts and smart notes (also known as "take notes for me") capture information from your meeting, these features serve different purposes and produce different artifacts.
-- Set moderation and meeting access You can set how users join a meeting, the moderation modes, the feature restrictions, and the permissions users receive when they join a meeting, through the SpaceConfig object.
-- To define the entry points that can be used to join meetings hosted in a meeting space, set the entryPointAccess field using the EntryPointAccess object.
+- The following code sample shows how to list all transcript entries in a transcript: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listtranscriptentries/AsyncListTranscriptEntries.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListTranscriptEntriesRequest ; import com.google.apps.meet.v2.TranscriptEntry ; import com.google.apps.meet.v2.TranscriptName ; public class AsyncListTranscriptEntries { public static void main ( String [] args ) throws Exception { asyncListTranscriptEntries (); } public static void asyncListTranscriptEntries () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListTranscriptEntriesRequest request = ListTranscriptEntriesRequest . newBuilder () . setParent ( TranscriptName . of ( "[CONFERENCE RECORD]" , "[TRANSCRIPT]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . build (); ApiFuture<TranscriptEntry> future = conferenceRecordsServiceClient . listTranscriptEntriesPagedCallable (). futureCall ( request ); // Do something. for ( TranscriptEntry element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list transcript entries.js View on GitHub / This snippet has been automatically generated and should be regarded as a code template only.
+- The following code sample shows how to list all transcripts in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listtranscripts/AsyncListTranscripts.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordName ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListTranscriptsRequest ; import com.google.apps.meet.v2.Transcript ; public class AsyncListTranscripts { public static void main ( String [] args ) throws Exception { asyncListTranscripts (); } public static void asyncListTranscripts () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListTranscriptsRequest request = ListTranscriptsRequest . newBuilder () . setParent ( ConferenceRecordName . of ( "[CONFERENCE RECORD]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . build (); ApiFuture<Transcript> future = conferenceRecordsServiceClient . listTranscriptsPagedCallable (). futureCall ( request ); // Do something. for ( Transcript element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list transcripts.js View on GitHub / This snippet has been automatically generated and should be regarded as a code template only.
+- The following code sample shows how to list all recordings in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listrecordings/AsyncListRecordings.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordName ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListRecordingsRequest ; import com.google.apps.meet.v2.Recording ; public class AsyncListRecordings { public static void main ( String [] args ) throws Exception { asyncListRecordings (); } public static void asyncListRecordings () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListRecordingsRequest request = ListRecordingsRequest . newBuilder () . setParent ( ConferenceRecordName . of ( "[CONFERENCE RECORD]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . build (); ApiFuture<Recording> future = conferenceRecordsServiceClient . listRecordingsPagedCallable (). futureCall ( request ); // Do something. for ( Recording element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list recordings.js View on GitHub / This snippet has been automatically generated and should be regarded as a code template only.
+- The following code sample shows how to retrieve a specific transcript entry: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/gettranscriptentry/AsyncGetTranscriptEntry.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.GetTranscriptEntryRequest ; import com.google.apps.meet.v2.TranscriptEntry ; import com.google.apps.meet.v2.TranscriptEntryName ; public class AsyncGetTranscriptEntry { public static void main ( String [] args ) throws Exception { asyncGetTranscriptEntry (); } public static void asyncGetTranscriptEntry () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { GetTranscriptEntryRequest request = GetTranscriptEntryRequest . newBuilder () . setName ( TranscriptEntryName . of ( "[CONFERENCE RECORD]" , "[TRANSCRIPT]" , "[ENTRY]" ) . toString ()) . build (); ApiFuture<TranscriptEntry> future = conferenceRecordsServiceClient . getTranscriptEntryCallable (). futureCall ( request ); // Do something.
+
+### "Authenticate and authorize Meet REST API requests \_|\_ Google Meet \_|\_\
+
+- URL: [https://developers.google.com/workspace/meet/api/guides/authenticate-authorize](https://developers.google.com/workspace/meet/api/guides/authenticate-authorize)
+- Source ID: `site-docs-root`
+- Final score: 123
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This code informs the user that the app wishes to act on their behalf and, if allowed, uses your app's unique credentials to obtain an access token from Google to access data or perform operations.
+- Meet REST API scopes Authorization scopes are the permissions that you request users to authorize for your app to access the meeting content.
+- Sensitive https://www.googleapis.com/auth/meetings.space.readonly Allow apps to read metadata about any meeting space the user has access to.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
 

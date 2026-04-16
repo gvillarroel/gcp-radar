@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.315Z"
+generated_at: "2026-04-15T13:43:38.396Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Visualization Assistant"
@@ -9,9 +9,9 @@ latest_feature_date: "2026-03-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
-  - "https://docs.cloud.google.com/looker/docs/gemini-overview-looker"
+  - "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor"
+  - "https://docs.cloud.google.com/looker/docs/chart-config-editor"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil"
 keywords:
   - "visualization"
   - "assistant"
@@ -20,7 +20,7 @@ keywords:
   - "customize"
   - "looker"
   - "formatting"
-  - "with"
+  - "natural"
 ---
 
 # Visualization Assistant
@@ -42,41 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
+- [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil](https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil)
 
 ## Supporting Pages
 
-### Looker (Google Cloud core) access control with IAM | Google Cloud Documentation
+### "Customizing visualizations using the Chart Config Editor \_|\_ Looker \_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- Source ID: `site-iam-reference`
-- Final score: 78
+- URL: [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- Source ID: `site-docs-reference`
+- Final score: 174
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) access control with IAM Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-access-control Looker (Google Cloud core) uses Identity and Access Management (IAM) to provision user and admin access through a set of IAM roles.
+- If Gemini in Looker features are enabled, you can use the Visualization Assistant to generate JSON formatting options from text-based prompts to accelerate the customization of Looker visualizations.
+- You can use the Chart Config Editor to customize formatting options on Looker visualizations that use the HighCharts API .
+- The following HighCharts JSON changes the dashStyle attribute of the Customers series to a dashed line, and the dashStyle attribute of the Sales series to a dotted line. { series : [{ name : 'Customers' , dashStyle : 'Dash' }, { name : 'Sales' , dashStyle : 'Dot' }] } Color the maximum, minimum, and percentile values See the Getting the most out of Looker visualizations cookbook: Conditional formatting customization in Cartesian charts page for an in-depth example about coloring the maximum, minimum, and percentile values of a Cartesian visualization.
+- Similarly, to change the text color of the axes in a visualization, use the following attributes: xAxis.labels.style.color xAxis.title.style.color yAxis.labels.style.color yAxis.title.style.color The following HighCharts JSON changes the background color of the visualization to purple, and the text of the axis titles and labels to white. { chart : { backgroundColor : "purple" }, xAxis : { labels : { style : { color : "white" } }, title : { style : { color : "white" } } }, yAxis : { labels : { style : { color : "white" } }, title : { style : { color : "white" } } } } Customize tooltip color To customize the color of the tooltip, use the following attributes: tooltip.backgroundColor tooltip.style.color The following HighCharts JSON changes the background color of the tooltip to cyan, and changes the color of the tooltip text to black. { tooltip : { backgroundColor : "cyan" , style : { color : "black" } } } Customize tooltip content and styles To customize the content of the tooltip, use the following attributes: tooltip.format tooltip.shared The following HighCharts JSON changes the tooltip format such that the x-axis value appears at the top of the tooltip in larger font, followed by a list of all series values at that point.
 
-### Getting started with the Looker API | Google Cloud Documentation
+### "Customizing visualizations using the Chart Config Editor \_|\_ Looker \_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 76
+- URL: [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 164
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
+- If Gemini in Looker features are enabled, you can use the Visualization Assistant to generate JSON formatting options from text-based prompts to accelerate the customization of Looker visualizations.
+- You can use the Chart Config Editor to customize formatting options on Looker visualizations that use the HighCharts API .
+- The following HighCharts JSON changes the dashStyle attribute of the Customers series to a dashed line, and the dashStyle attribute of the Sales series to a dotted line. { series : [{ name : 'Customers' , dashStyle : 'Dash' }, { name : 'Sales' , dashStyle : 'Dot' }] } Color the maximum, minimum, and percentile values See the Getting the most out of Looker visualizations cookbook: Conditional formatting customization in Cartesian charts page for an in-depth example about coloring the maximum, minimum, and percentile values of a Cartesian visualization.
+- Similarly, to change the text color of the axes in a visualization, use the following attributes: xAxis.labels.style.color xAxis.title.style.color yAxis.labels.style.color yAxis.title.style.color The following HighCharts JSON changes the background color of the visualization to purple, and the text of the axis titles and labels to white. { chart : { backgroundColor : "purple" }, xAxis : { labels : { style : { color : "white" } }, title : { style : { color : "white" } } }, yAxis : { labels : { style : { color : "white" } }, title : { style : { color : "white" } } } } Customize tooltip color To customize the color of the tooltip, use the following attributes: tooltip.backgroundColor tooltip.style.color The following HighCharts JSON changes the background color of the tooltip to cyan, and changes the color of the tooltip text to black. { tooltip : { backgroundColor : "cyan" , style : { color : "black" } } } Customize tooltip content and styles To customize the content of the tooltip, use the following attributes: tooltip.format tooltip.shared The following HighCharts JSON changes the tooltip format such that the x-axis value appears at the top of the tooltip in larger font, followed by a list of all series values at that point.
 
-### Gemini in Looker overview | Google Cloud Documentation
+### Admin settings \u2013 Gemini in Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- Source ID: `site-docs-root`
-- Final score: 74
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil](https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil)
+- Source ID: `site-docs-reference`
+- Final score: 136
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini in Looker overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/gemini-overview-looker Ask questions about and converse with your data by using Conversational Analytics: Gemini in Looker lets you ask questions about your data source by using natural language.
-- Gemini returns Looker charts or data tables that are based on your query.
+- Turn on the following toggles to enable each of their corresponding features: Conversational Analytics — enables Conversational Analytics Looker Assistants — enables the Visualization Assistant Optionally, select Enable Trusted Tester Features to grant users access to the Trusted Tester capabilities of Gemini in Looker features.
+- Expression Assistant — enables the Expression Assistant , which allows users to use natural language to write Looker expressions for table calculations and custom fields .
+- Explore Insight Assistant — enables the Insight Assistant , which allows users to ask natural language questions about an Explore, and create and modify queries based on the Explore.
+- To use the Visualization Assistant to create custom visualizations with Gemini assistance, you must be assigned a Looker role that contains the can override vis config permission.
 

@@ -1,0 +1,88 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T05:27:18.171Z"
+product_name: "Apigee X"
+product_slug: "apigee-x"
+feature_name: "Ingress access logs in Cloud Logging"
+feature_slug: "ingress-access-logs-in-cloud-logging"
+latest_feature_date: "2024-04-26"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model"
+keywords:
+  - "ingress"
+  - "logging"
+  - "logs"
+  - "send"
+  - "instances"
+  - "access"
+---
+
+# Ingress access logs in Cloud Logging
+
+Product: Apigee X
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Apigee instances can send ingress access logs to Cloud Logging for troubleshooting API calls.
+
+## Extended Definition
+
+Apigee instances can send ingress access logs to Cloud Logging for troubleshooting API calls.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub](https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events](https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model](https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model)
+
+## Supporting Pages
+
+### Audit logging for API hub \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub](https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub)
+- Source ID: `site-docs-reference-2`
+- Final score: 129
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name API hub audit logs use the service name apihub.googleapis.com .
+- Permission type Methods ADMIN READ google.cloud.apihub.v1.ApiHubPlugin.GetPlugin google.cloud.apihub.v1.Provisioning.LookupApiHubInstance google.cloud.apihub.v1.RuntimeProjectAttachmentService.ListRuntimeProjectAttachments google.cloud.apihub.v1.RuntimeProjectAttachmentService.LookupRuntimeProjectAttachment ADMIN WRITE google.cloud.apihub.v1.ApiHubPlugin.DisablePlugin google.cloud.apihub.v1.ApiHubPlugin.EnablePlugin google.cloud.apihub.v1.HostProjectRegistrationService.CreateHostProjectRegistration google.cloud.apihub.v1.Provisioning.CreateApiHubInstance (LRO) google.cloud.apihub.v1.RuntimeProjectAttachmentService.CreateRuntimeProjectAttachment DATA READ google.cloud.apihub.v1.ApiHub.GetApi google.cloud.apihub.v1.ApiHub.GetAttribute google.cloud.apihub.v1.ApiHub.GetDeployment google.cloud.apihub.v1.ApiHub.GetExternalApi google.cloud.apihub.v1.ApiHub.GetSpec google.cloud.apihub.v1.ApiHub.GetSpecContents google.cloud.apihub.v1.ApiHub.GetVersion google.cloud.apihub.v1.ApiHub.ListApis google.cloud.apihub.v1.ApiHub.ListAttributes google.cloud.apihub.v1.ApiHub.ListDeployments google.cloud.apihub.v1.ApiHub.ListExternalApis google.cloud.apihub.v1.ApiHub.ListSpecs google.cloud.apihub.v1.ApiHub.ListVersions DATA WRITE google.cloud.apihub.v1.ApiHub.CreateApi google.cloud.apihub.v1.ApiHub.CreateAttribute google.cloud.apihub.v1.ApiHub.CreateDeployment google.cloud.apihub.v1.ApiHub.CreateExternalApi google.cloud.apihub.v1.ApiHub.CreateSpec google.cloud.apihub.v1.ApiHub.CreateVersion google.cloud.apihub.v1.ApiHub.DeleteApi google.cloud.apihub.v1.ApiHub.DeleteAttribute google.cloud.apihub.v1.ApiHub.DeleteDeployment google.cloud.apihub.v1.ApiHub.DeleteExternalApi google.cloud.apihub.v1.ApiHub.DeleteSpec google.cloud.apihub.v1.ApiHub.DeleteVersion google.cloud.apihub.v1.ApiHub.UpdateApi google.cloud.apihub.v1.ApiHub.UpdateAttribute google.cloud.apihub.v1.ApiHub.UpdateDeployment google.cloud.apihub.v1.ApiHub.UpdateExternalApi google.cloud.apihub.v1.ApiHub.UpdateSpec google.cloud.apihub.v1.ApiHub.UpdateVersion API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for API hub. google.cloud.apihub.v1.ApiHub The following audit logs are associated with methods belonging to google.cloud.apihub.v1.ApiHub .
+- CreateApiHubInstance Method : google.cloud.apihub.v1.Provisioning.CreateApiHubInstance Audit log type : Admin activity Permissions : apihub.apiHubInstances.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.apihub.v1.Provisioning.CreateApiHubInstance" LookupApiHubInstance Method : google.cloud.apihub.v1.Provisioning.LookupApiHubInstance Audit log type : Data access Permissions : apihub.apiHubInstances.list - ADMIN READ Method is a long-running or streaming operation : No.
+- Home Documentation Application development Apigee Guides Send feedback Audit logging for API hub Stay organized with collections Save and categorize content based on your preferences.
+
+### JavaScript object model \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model](https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model)
+- Source ID: `site-api-reference`
+- Final score: 101
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The complete URL of the request is composed of the following properties: protocol: The protocol of the URL (for example, HTTP, HTTPS) port: The port (for example, :80, :443) host: The host of the URL (for example, www.example.com) path: The path of the URI (for example, /v1/mocktarget) When getting url , a URL is returned in the following format: protocol://host:port/path?queryParams Examples: context . targetRequest . url = 'http://www.example.com/path?q1=1' context . targetRequest . protocol = 'https' ; headers HTTP request headers as a mapping of String => List Examples: For this HTTP request: POST / v1 / blogs HTTP / 1.1 Host : api . example . com Content - Type : application / json Authorization : Bearer ylSkZIjbdWybfs4fUQe9BqP0LH5Z The following JavaScript: context . proxyRequest . headers [ 'Content-Type' ]; context . proxyRequest . headers [ 'Authorization' ]; will return the following values application / json Bearer ylSkZIjbdWybfs4fUQe9BqP0LH5Z queryParams The request message query parameters as a mapping of String => List .
+- The request body has the following members: context.targetRequest.body.asXML; context.targetRequest.body.asJSON; context.targetRequest.body.asForm; Examples: For an XML body: < customer number = '1' > < name>Fred<name / > < customer / > To access the elements of the XML object as follows: var name = context . targetRequest . body . asXML . name ; To access XML attributes, use the @ notation. var number = context . targetRequest . body . asXML . @ number ; For a JSON request body: { "a" : 1 , "b" : "2" } var a = context . proxyRequest . body . asJSON . a ; // == 1 var b = context . proxyRequest . body . asJSON . b ; // == 2 To read form parameters: "vehicle=Car&vehicle=Truck" v0 = context . proxyRequest . body . asForm [ 'vehicle' ][ 0 ]; v1 = context . proxyRequest . body . asForm [ 'vehicle' ][ 1 ]; context.
+- Instantiate a Request object, assign to it a URL (e.g., to a backend service you wish to call), and call httpClient.send with that request object. var myRequest = new Request (); myRequest . url = "http://www.example.com" ; var exchangeObj = httpClient . send ( myRequest ); httpClient Reference The HTTP Client exposes two methods: get() and send() . httpClient.get() A convenience method for simple HTTP GET requests, with no support for HTTP headers.
+- In that scope, these object references are created: context : An object that provides access to message context request : A shorthand that allows access to the request object response : A shorthand that allows access to the response object crypto : Provides various hash functions print : A function to emit output properties : Allows read access to the configuration properties on the policy The context object The context object has global scope.
+
+### Streaming server-sent events \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events](https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 101
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example: <?xml version="1.0" encoding="UTF-8" standalone="yes"?> <MessageLogging continueOnError="false" enabled="true" name="ML-log-error"> <DisplayName>ML-log-error</DisplayName> <CloudLogging> <LogName>projects/{organization.name}/logs/apigee errors</LogName> <Message contentType="text/plain">Request failed due to {faultReason}.</Message> <ResourceType>api</ResourceType> </CloudLogging> <logLevel>ALERT</logLevel> </MessageLogging> Add the MessageLogging policy to the FaultRules of the target or proxy endpoint: <TargetEndpoint> <?xml version="1.0" encoding="UTF-8" standalone="yes"?> <TargetEndpoint name="TargetEndpoint-1"> <Description/> <FaultRules> <FaultRule name="default-fault"> <Step> <Name>ML-log-error</Name> </Step> </FaultRule> </FaultRules> ... </TargetEndpoint> <ProxyEndpoint> <?xml version="1.0" encoding="UTF-8" standalone="yes"?> <ProxyEndpoint name="ProxyEndpoint-1"> <Description/> <FaultRules> <FaultRule name="default-fault"> <Step> <Name>ML-log-error</Name> </Step> </FaultRule> </FaultRules> ... </ProxyEndpoint> Deploy and test the API proxy.
+- For information on manually logging these kinds of errors, or sending them to the client,see EventFlow use cases and examples .
+- However, if you want to do extra debugging you can send fault information to Cloud Logging as shown in this example.
+- Troubleshooting For real-time traffic issues, check the Apigee access logs to determine the cause.
+

@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:05.287Z"
+generated_at: "2026-04-15T12:02:17.096Z"
 product_name: "Vertex AI"
 product_slug: "vertex-ai"
 feature_name: "Vertex AI code-gecko@002 stable Codey model version"
 feature_slug: "vertex-ai-code-gecko-002-stable-codey-model-version"
 latest_feature_date: "2023-12-06"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model"
+  - "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+  - "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component"
 keywords:
   - "vertex"
   - "ai"
@@ -24,7 +26,7 @@ keywords:
 # Vertex AI code-gecko@002 stable Codey model version
 
 Product: Vertex AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ The code-gecko@002 stable Codey code completion foundation model is now availabl
 
 The code-gecko@002 stable Codey code completion foundation model is now available with improved quality and reduced latency versus code-gecko@001.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model)
+- [https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component)
+- [https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Train and deploy your model \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model)
+- Source ID: `site-docs-reference-2`
+- Final score: 92
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Vertex AI uses the training pipeline and the code in your Python training script to train and create your model.
+- To start training your data and create your model, run the following code in your notebook: MODEL DISPLAY NAME = "penguins model unique" Start the training and create your model model = job.run( dataset=dataset, model display name=MODEL DISPLAY NAME, bigquery destination=f"bq://{project id}", args=CMDARGS, ) Before continuing with the next step, make sure the following appears in the job.run command's output to verify it's done: CustomTrainingJob run completed .
+- CustomTrainingJob ( display name = JOB NAME , script path = "task.py" , container uri = "us-docker.pkg.dev/vertex-ai/training/tf-cpu.2-8:latest" , requirements =[ "google-cloud-bigquery>=2.20.0" , "db-dtypes" , "protobuf<3.20.0" ], model serving container image uri = "us-docker.pkg.dev/vertex-ai/prediction/tf2-cpu.2-8:latest" , ) Create and train your model In the previous step you created a CustomTrainingJob named job .
+- To deploy your model and create an endpoint, run the following code in your notebook: DEPLOYED NAME = "penguins deployed unique" endpoint = model.deploy(deployed model display name=DEPLOYED NAME) Wait until your model deploys before you continue to the next step.
+
+### Model and endpoint components \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component)
+- Source ID: `site-api-reference`
+- Final score: 85
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Model operators The Google Cloud SDK includes the following operators related to the Model resource: ModelDeleteOp ModelExportOp ModelUploadOp Endpoint operators The Google Cloud SDK includes the following operators related to the Endpoint resource: EndpointCreateOp EndpointDeleteOp ModelDeployOp ModelUndeployOp API reference For component reference, see the following Google Cloud SDK reference pages: Model components Endpoint components For Vertex AI API resource reference, see the following API reference pages: model resource reference endpoint resource reference Version history and release notes To learn more about the version history and changes to the Google Cloud Pipeline Components SDK, see the Google Cloud Pipeline Components SDK Release Notes .
+- Home Documentation AI and ML Vertex AI Reference Send feedback Model and endpoint components Stay organized with collections Save and categorize content based on your preferences.
+- Learn more about how to Import models to Vertex AI and Request predictions .
+- Model , this resource is available in Vertex AI.
+
+### Model evaluation components \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component)
+- Source ID: `site-api-reference`
+- Final score: 84
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The default schema includes the following fields: id : string displayNames : string type : enum timeSegmentStart : string timeSegmentEnd : string confidence : float The following is an example CSV file with sale dollars as the target column: date,store name,city,zip code,county,sale dollars 2020-03-17,Thriftway,,,,774.08999999999992 2020-03-10,Thriftway,,,,1160.67 2020-03-03,Thriftway,,,,2247.24 2020-06-08,New Star / Fort Dodge,,,,753.98 2020-06-01,New Star / Fort Dodge,,,,967.73 2020-01-10,Casey's General Store #1280 / Fort Dodge,,,,1040.92 2020-10-30,KUM & GO #76 / ADAIR,Adair,50002,ADAIR,1387.02 The TargetFieldDataRemoverOp component removes the target column before sending the file to the BatchPredictionJob component: date,store name,city,zip code,county 2020-03-17,Thriftway,nan,nan,nan 2020-03-10,Thriftway,nan,nan,nan 2020-03-03,Thriftway,nan,nan,nan 2020-06-08,New Star / Fort Dodge,nan,nan,nan 2020-06-01,New Star / Fort Dodge,nan,nan,nan 2020-01-10,Casey's General Store #1280 / Fort Dodge,nan,nan,nan 2020-10-30,KUM & GO #76 / ADAIR,Adair,50002.0,ADAIR The following is an example of a batch prediction output file without the target column of sale dollars : { "instance": { "content": "gs://kbn-us-central1-test/datasets/text/happy 11556.txt", "mimeType":"text/plain" }, "prediction": { "ids": ["7903916851837534208","3292230833410146304","986387824196452352","2139309328803299328","5598073842623840256","6750995347230687232","4559431178561519616"], "displayNames": ["affection","bonding","achievement","exercise","nature","enjoy the moment","leisure"], "confidences": [0.99483216,0.005162797,4.1117933E-6,3.9997E-7,2.4624453E-7,1.9969502E-7,1.16997434E-7] } } This table describes the required parameters for the ModelEvaluationForecastingOp component with a tabular model: Evaluation component parameter Required target field name Yes prediction label column Not required for forecasting models. prediction score column Not required for default schema.
+- Vertex AI provides the following model evaluation components: ModelEvaluationClassificationOp ModelEvaluationForecastingOp ModelEvaluationRegressionOp Model type support The following table shows supported model types for each model evaluation component: Model evaluation component Supported model types ModelEvaluationClassificationOp AutoML tabular or image Custom tabular ModelEvaluationRegressionOp AutoML tabular Custom tabular ModelEvaluationForecastingOp AutoML tabular Remove the target field For some model types, the BatchPredictionJob component requires you to exclude the target column (ground truth) from your dataset.
+- Home Documentation AI and ML Vertex AI Reference Send feedback Model evaluation components Stay organized with collections Save and categorize content based on your preferences.
+- Model evaluations without Vertex AI-generated batch predictions You can use a model evaluation pipeline component with a batch prediction that you didn't generate in Vertex AI.
 

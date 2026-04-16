@@ -4,7 +4,7 @@ url: https://developers.google.com/earth-engine/guides/charts_style
 knowledge_key: corpus
 source_id: site-docs-root-2
 source_type: site
-entrypoint: https://developers.google.com/earth-engine/guides
+entrypoint: https://developers.google.com/earth-engine/guides/quickstart_javascript
 source_metadata:
   url: https://developers.google.com/earth-engine/guides/charts_style
   title: "Chart Styling \_|\_ Google Earth Engine \_|\_ Google for Developers"

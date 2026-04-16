@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.888Z"
+generated_at: "2026-04-14T12:39:34.596Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "DLP API v2"
@@ -9,18 +9,12 @@ latest_feature_date: "2018-03-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/apis"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/auth"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+  - "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
 keywords:
-  - "dlp"
-  - "api"
-  - "v2"
-  - "the"
-  - "new"
+  - "launched"
   - "version"
-  - "of"
-  - "was"
 ---
 
 # DLP API v2
@@ -42,43 +36,38 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/apis](https://docs.cloud.google.com/sensitive-data-protection/docs/apis)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json)
+- [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview)
 
 ## Supporting Pages
 
-### Sensitive Data Protection (DLP API) | Google Cloud Documentation
+### "Authenticating to the DLP API \_|\_ Sensitive Data Protection \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest)
-- Source ID: `site-api-reference`
-- Final score: 80
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Sensitive Data Protection (DLP API) Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest The Cloud Data Loss Prevention API (DLP API) is part of Sensitive Data Protection. ...
-- If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
-- To call this service, we recommend that you use the Google-provided client libraries.
-
-### Overview of sensitive data discovery | Sensitive Data Protection | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- Source ID: `site-docs-root`
-- Final score: 59
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Overview of sensitive data discovery Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles The Sensitive Data Protection discovery service (sometimes called data profiler) continuously monitors the data resources in your organization, folder, or project.
-- It classifies the data into infoTypes, and assesses the data sensitivity and ...
-
-### APIs & reference &nbsp;| Sensitive Data Protection | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/apis](https://docs.cloud.google.com/sensitive-data-protection/docs/apis)
-- Source ID: `site-api-reference`
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth)
+- Source ID: `site-api-reference-required-2`
 - Final score: 58
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Inspect sensitive text by using the DLP API \_|\_ Sensitive Data Protection\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json)
+- Source ID: `site-docs-reference-3`
+- Final score: 58
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Security Command Center release notes \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview)
+- Source ID: `site-docs-reference-2`
+- Final score: 54
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- APIs & reference &nbsp; Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/apis RPC APIs for using the DLP API.
-- Consult this table of infoTypes for use with Sensitive Data Protection.
+- March 08, 2021 Change Security Health Analytics, a built-in service of Security Command Center, launched new detectors in general availability: Detects resources that are not using customer-managed encryption keys (CMEK) BUCKET CMEK DISABLED DISK CMEK DISABLED NODEPOOL BOOK CMEK DISABLED SQL CMEK DISABLED Detects vulnerabilities in Compute Engine instances DEFAULT SERVICE ACCOUNT USED SHIELDED VM DISABLED Detects publicly accessible Cloud KMS keys KMS PUBLIC KEY Detects out-of-region Compute Engine resources ORG POLICY LOCATION RESTRICTION Detects misconfiguration of SQL instances SQL CROSS DB OWNERSHIP CHAINING SQL CONTAINED DATABASE AUTHENTICATION SQL CROSS DB OWNERSHIP CHAINING SQL LOCAL INFILE SQL LOG CHECKPOINTS DISABLED SQL LOG CONNECTIONS DISABLED SQL LOG DISCONNECTIONS DISABLED SQL LOG LOCK WAITS DISABLED SQL LOG MIN DURATION STATEMENT ENABLED SQL LOG MIN ERROR STATEMENT SQL LOG TEMP FILES For more information on these and other Security Health Analytics detectors, see Vulnerabilities findings .
+- The following detectors are new for v1.3.0: Access transparency disabled Cloud Asset API disabled Dataproc CMEK disabled Essential contacts not configured Flow logs settings not recommended The following detectors have been updated: Audit logging disabled For more information about Security Command Center support for standards and compliance, see the following: Detectors and compliance CIS Google Cloud Computing Platform Benchmarks March 23, 2023 Feature The version 3.0 release of the Google SCC App for QRadar , which lets you send Security Command Center data to QRadar v7.4.1FP2+, is generally available.
+- Between March 31, 2023 and May 4, 2023, the following detectors might have been counted and grouped under the incorrect CIS level on the Compliance tab of Security Command Center: API KEY EXISTS API KEY APIS UNRESTRICTED API KEY NOT ROTATED FIREWALL NOT MONITORED ROUTE NOT MONITORED NETWORK NOT MONITORED BUCKET IAM NOT MONITORED SQL INSTANCE NOT MONITORED VPC FLOW LOGS SETTINGS NOT RECOMMENDED SQL LOG STATEMENT ACCESS TRANSPARENCY DISABLED April 26, 2023 Feature Event Threat Detection, a built-in service of Security Command Center, launched the following new rules to Preview .
+- Feature Detector for Container Threat Detection released to General Availability Container Threat Detection , a built-in service available in Security Command Center Premium and Enterprise, has launched three new detectors to General Availability : Execution: Container Escape : Detects when a process inside a container tries to break out of its isolation and interact with the host system or other containers.
 

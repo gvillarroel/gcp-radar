@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:47.990Z"
+generated_at: "2026-04-12T12:11:19.188Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer Airflow 2.7.3 GKE and Kubernetes operators"
 feature_slug: "cloud-composer-airflow-2-7-3-gke-and-kubernetes-operators"
 latest_feature_date: "2024-06-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/airflow-configurations"
   - "https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/backport-packages"
 keywords:
   - "composer"
   - "airflow"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer Airflow 2.7.3 GKE and Kubernetes operators
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ New Airflow 2.7.3 operators for Google Kubernetes Engine and Kubernetes workload
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/airflow-configurations](https://docs.cloud.google.com/composer/docs/airflow-configurations)
 - [https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations](https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/backport-packages](https://docs.cloud.google.com/composer/docs/composer-1/backport-packages)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/airflow-configurations](https://docs.cloud.google.com/composer/docs/airflow-configurations)
 - Source ID: `site-docs-reference`
-- Final score: 192
+- Final score: 240
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations](https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations)
 - Source ID: `site-docs-reference`
-- Final score: 192
+- Final score: 240
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,30 @@ Evidence snippets:
 - Home Documentation Data analytics Cloud Composer Reference Send feedback Blocked and limited Airflow configuration options Stay organized with collections Save and categorize content based on your preferences.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 190
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 228
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Changes compared to version 6.8.0 : Breaking changes: Upgrade to support Google Ads v10 ( #22965 ) Features: [FEATURE] google provider - BigQueryInsertJobOperator log query ( #23648 ) [FEATURE] google provider - split GkeStartPodOperator execute ( #23518 ) Add exportContext.offload flag to CLOUD SQL EXPORT VALIDATION. ( #23614 ) Create links for BiqTable operators ( #23164 ) implements #22859 - Add .sql as templatable extension ( #22920 ) GCSFileTransformOperator : New templated fields 'source object', 'destination object' ( #23328 ) Bug Fixes Fix PostgresToGCSOperator does not allow nested JSON ( #23063 ) Fix GCSToGCSOperator ignores replace parameter when there is no wildcard ( #23340 ) update processor to fix broken download URLs ( #23299 ) LookerStartPdtBuildOperator , LookerCheckPdtBuildSensor : fix empty materialization id handling ( #23025 ) Change ComputeSSH to throw provider import error instead paramiko ( #23035 ) Fix cancel on kill after execution timeout for DataprocSubmitJobOperator ( #22955 ) Fix select query xcom push for BigQueryGetDataOperator ( #22936 ) MSSQLToGCSOperator fails: datetime is not JSON Serializable ( #22882 ) Update credentials when using ADC in Compute Engine #23773 Misc changes Add Stackdriver assets and migrate system tests to AIP-47 ( #23320 ) CloudTasks assets & system tests migration (AIP-47) ( #23282 ) TextToSpeech assets & system tests migration (AIP-47) ( #23247 ) Fix code-snippets in google provider ( #23438 ) BigQuery assets ( #23165 ) Remove redundant docstring in BigQueryUpdateTableSchemaOperator ( #23349 ) Migrate gcs to new system tests design ( #22778 ) add missing docstring in 'BigQueryHook.create empty table' ( #23270 ) Cleanup Google provider CHANGELOG.rst ( #23390 ) migrate system test gcs to bigquery into new design ( #22753 ) Add example DAG for demonstrating usage of GCS sensors ( #22808 ) Change (Airflow 1) The google-cloud-bigquery package is upgraded from 1.28.0 to 2.13.0.
-- Change The upgraded apache-airflow-providers-google package provides new operators and sensors for triggering DAGs across Cloud Composer environments: CloudComposerRunAirflowCLICommandOperator makes a call to the Airflow REST API of a Cloud Composer environment.
-- Feature (Airflow 2.7.3) New operators for executing jobs in Google Kubernetes Engine and Kubernetes are available.
-- Change (Airflow 2.10.2 and 2.9.3) The following preinstalled provider packages were upgraded to new major versions: apache-airflow-providers-apache-beam upgraded from 5.9.1 to 6.0.0 apache-airflow-providers-dbt-cloud upgraded from 3.11.2 to 4.0.0 apache-airflow-providers-hashicorp upgraded from 3.8.0 to 4.0.0 apache-airflow-providers-http upgraded from 4.13.3 to 5.0.0 apache-airflow-providers-mysql upgraded from 5.7.4 to 6.0.0 apache-airflow-providers-sendgrid upgraded from 3.6.0 to 4.0.0 apache-airflow-providers-sqlite upgraded from 3.9.1 to 4.0.0 apache-airflow-providers-ssh upgraded from 3.14.0 to 4.0.0 Change (Airflow 2.10.2 and 2.9.3) The apache-airflow-providers-cncf-kubernetes package was upgraded to version 10.1.0 in Cloud Composer 2 images and Cloud Composer 3 builds.
+- Airflow 1.9.0 stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06/1.log Airflow 1.10.x stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log As a result, if you upgrade from Airflow 1.9.0 to Airflow 1.10.x and would like to read the log for a task executed with Airflow 1.9.0, the Airflow Web server will show the following error message: Unable to read remote log from BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Workaround: Rename the logs generated by Airflow 1.9.0 in the Cloud Storage bucket using the format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Cannot create Cloud Composer environments with the organization policy constraints/compute.disableSerialPortLogging enforced Cloud Composer environment creation fails if the constraints/compute.disableSerialPortLogging organization policy is enforced on the target project.
+- The command-line interface is the recommended approach for deleting the connection: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ connections delete -- \ CONNECTION ID After deleting the connection, recreate it using the Airflow UI , ensuring that the fields you intend to leave empty are indeed left blank.
+- Logs for Airflow tasks aren't collected if [core]execute tasks new python interpreter is set to True Cloud Composer doesn't collect logs for Airflow tasks if the [core]execute tasks new python interpreter Airflow configuration option is set to True .
+- Support for Google Display and Video 360 Operators Google Display and Video 360 Operators in Cloud Composer versions earlier than 2.1.13 are based on the Display and Video 360 v1.1 API that is deprecated and its sunset date is April 27, 2023.
+
+### "Import operators from backport provider packages \_|\_ Cloud Composer \_\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/backport-packages](https://docs.cloud.google.com/composer/docs/composer-1/backport-packages)
+- Source ID: `site-iam-reference`
+- Final score: 225
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Backport provider packages solve an important problem: you can get new features and security updates for operators, transfers, sensors, and hooks without upgrading your Airflow environment to a later version.
+- The following example imports moved operators from the apache-airflow-backport-providers-google package: from airflow.contrib.operators.bigquery operator import ( BigQueryCreateEmptyDatasetOperator , BigQueryOperator , ) What's next Writing DAGs Installing PyPI packages List of preinstalled packages in Cloud Composer images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- To use new operators from a backport package, import them from their corresponding airflow.providers. package, as described on the page for this backport package on PyPI.org.
+- A provider package for Airflow 2 is a PyPI module that contains operators, transfers, sensors, hooks, and secrets for a specific provider (for example, Google).
 

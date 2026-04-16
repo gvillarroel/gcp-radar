@@ -1,90 +1,89 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.952Z"
+generated_at: "2026-04-15T12:48:36.931Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "Views"
 feature_slug: "views"
 latest_feature_date: "2014-03-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
-  - "https://docs.cloud.google.com/bigquery/docs/analysis-rules"
-  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+  - "https://docs.cloud.google.com/bigquery/docs/tables"
+  - "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+  - "https://docs.cloud.google.com/bigquery/docs/user-defined-functions"
 keywords:
-  - "virtual table"
-  - "CREATE OR REPLACE VIEW"
-  - "persistent view"
-  - "logical table"
-  - "view definition"
-  - "querying a view"
-  - "CREATE VIEW"
-  - "SQL view"
+  - "views"
+  - "provide"
+  - "virtual"
+  - "tables"
+  - "defined"
+  - "sql"
+  - "queries"
+  - "bigquery"
 ---
 
 # Views
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-BigQuery added support for views, which are virtual tables defined by SQL queries.
+Views provide virtual tables defined by SQL queries in BigQuery.
 
 ## Extended Definition
 
-BigQuery added support for views, which are virtual tables defined by SQL queries.
+Views provide virtual tables defined by SQL queries in BigQuery.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
-- [https://docs.cloud.google.com/bigquery/docs/analysis-rules](https://docs.cloud.google.com/bigquery/docs/analysis-rules)
-- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax)
+- [https://docs.cloud.google.com/bigquery/docs/tables](https://docs.cloud.google.com/bigquery/docs/tables)
+- [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- [https://docs.cloud.google.com/bigquery/docs/user-defined-functions](https://docs.cloud.google.com/bigquery/docs/user-defined-functions)
 
 ## Supporting Pages
 
-### "Data definition language (DDL) statements in GoogleSQL \_|\_ BigQuery \_\
+### Create and use tables \_|\_ BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
-- Source ID: `site-docs-reference`
-- Final score: 58
+- URL: [https://docs.cloud.google.com/bigquery/docs/tables](https://docs.cloud.google.com/bigquery/docs/tables)
+- Source ID: `site-docs-root`
+- Final score: 167
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For more information, see Set up authentication for client libraries . // Import the Google Cloud client library and create a client const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function ddlCreateView () { // Creates a view via a DDL query / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = "my project" // const datasetId = "my dataset" // const tableId = "my new view" const query = CREATE VIEW \ ${ projectId } . ${ datasetId } . ${ tableId } \ OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name="new view", description="a view that expires in 2 days", labels=[("org unit", "development")] ) AS SELECT name, state, year, number FROM \bigquery-public-data.usa names.usa 1910 current\ WHERE state LIKE 'W%' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query const options = { query : query , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); job . on ( 'complete' , metadata = > { console . log ( Created new view ${ tableId } via job ${ metadata . id } ); }); } Python Call the Client.query() method to start a query job.
-- For more information, see Set up authentication for client libraries . from google.cloud import bigquery project = 'my-project' dataset id = 'my dataset' table id = 'new view' client = bigquery.Client(project=project) sql = """ CREATE VIEW {} . {} . {} OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name="new view", description="a view that expires in 2 days", labels=[("org unit", "development")] ) AS SELECT name, state, year, number FROM bigquery-public-data.usa names.usa 1910 current WHERE state LIKE 'W%' """ . format ( project , dataset id , table id ) job = client . query ( sql ) # API request. job . result () # Waits for the query to finish. print ( 'Created new view " {} . {} . {} ".' . format ( job . destination . project , job . destination . dataset id , job . destination . table id , ) ) On-demand query size calculation If you use on-demand billing, BigQuery charges for data definition language (DDL) queries based on the number of bytes processed by the query.
-- Examples Creating a new view The following example creates a view named newview in mydataset : CREATE VIEW myproject.mydataset.newview OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 48 HOUR ), friendly name = "newview" , description = "a view that expires in 2 days" , labels =[ ( "org unit" , "development" ) ] ) AS SELECT column 1 , column 2 , column 3 FROM myproject.mydataset.mytable If the view name exists in the dataset, the following error is returned: Already Exists: project id:dataset.table The view is defined using the following GoogleSQL query: SELECT column 1, column 2, column 3 FROM myproject.mydataset.mytable The view option list specifies the: Expiration time: 48 hours from the time the view is created Friendly name: newview Description: A view that expires in 2 days Label: org unit = development Creating a view only if the view doesn't exist The following example creates a view named newview in mydataset only if no view named newview exists in mydataset .
-- CREATE VIEW IF NOT EXISTS myproject.mydataset.newview OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 48 HOUR ), friendly name = "newview" , description = "a view that expires in 2 days" , labels =[ ( "org unit" , "development" ) ] ) AS SELECT column 1 , column 2 , column 3 FROM myproject.mydataset.mytable The view is defined using the following GoogleSQL query: SELECT column 1, column 2, column 3 FROM myproject.mydataset.mytable The view option list specifies the: Expiration time: 48 hours from the time the view is created Friendly name: newview Description: A view that expires in 2 days Label: org unit = development Creating or replacing a view The following example creates a view named newview in mydataset , and if newview exists in mydataset , it is overwritten using the specified query expression.
+- For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function queryDestinationTable () { // Queries the U.S. given names dataset for the state of Texas // and saves results to permanent table. / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = 'my dataset'; // const tableId = 'my table'; // Create destination table reference const dataset = bigquery . dataset ( datasetId ); const destinationTable = dataset . table ( tableId ); const query = SELECT name FROM \bigquery-public-data.usa names.usa 1910 2013\ WHERE state = 'TX' LIMIT 100 ; // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/tables#resource const options = { query : query , // Location must match that of the dataset(s) referenced in the query. location : 'US' , destination : destinationTable , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); console . log ( Job ${ job . id } started. ); console . log ( Query results loaded to table ${ destinationTable . id } ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create a table: bigquery.tables.create on the dataset where you're creating the table. bigquery.tables.getData on all tables and views that your query references if you're saving query results as a table. bigquery.jobs.create on the project if you're creating the table by loading data or by saving query results to a table. bigquery.tables.updateData on the table if you're appending to or overwriting a table with query results.
+- View table properties print ( "Got table ' {} . {} . {} '." . format ( table . project , table . dataset id , table . table id ) ) print ( "Table schema: {} " . format ( table . schema )) print ( "Table description: {} " . format ( table . description )) print ( "Table has {} rows" . format ( table . num rows )) Get table information using INFORMATION SCHEMA INFORMATION SCHEMA is a series of views that provide access to metadata about datasets, routines, tables, views, jobs, reservations, and streaming data.
+- The following predefined IAM roles include bigquery.tables.get permissions: bigquery.metadataViewer bigquery.dataViewer bigquery.dataOwner bigquery.dataEditor bigquery.admin In addition, if a user has bigquery.datasets.create permissions, when that user creates a dataset, they are granted bigquery.dataOwner access to it. bigquery.dataOwner access gives the user the ability to retrieve table metadata.
 
-### "Restrict data access using analysis rules \_|\_ BigQuery \_|\_ Google Cloud\
+### "Introduction to BigLake external tables \_|\_ BigQuery \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/analysis-rules](https://docs.cloud.google.com/bigquery/docs/analysis-rules)
-- Source ID: `site-docs-root-2`
-- Final score: 40
-- Re-rank relevance: WEAK
-- Re-rank rationale: Views are mentioned as targets for enforcement, but the page does not focus on general view functionality.
-
-Evidence snippets:
-- You can define a differential privacy analysis rule for a view in a data clean room or with the CREATE VIEW statement: CREATE OR REPLACE VIEW VIEW NAME OPTIONS ( privacy policy = ' '' { "differential privacy policy": { "privacy unit column": " PRIVACY UNIT COLUMN ", "max epsilon per query": MAX EPSILON PER QUERY , "epsilon budget": EPSILON BUDGET , "delta per query": DELTA PER QUERY , "delta budget": DELTA BUDGET , "max groups contributed": MAX GROUPS CONTRIBUTED }, "join restriction policy": { "join condition": " JOIN CONDITION ", "join allowed columns": JOIN ALLOWED COLUMNS } } '' ' ) AS QUERY ; Definitions: differential privacy policy : The differential privacy policy for the differential privacy analysis rule.
-- Define an aggregation threshold analysis rule for a view You can define an aggregation threshold analysis rule for a view in a data clean room or with the CREATE VIEW statement: CREATE OR REPLACE VIEW VIEW NAME OPTIONS ( privacy policy = ' '' { "aggregation threshold policy": { "threshold" : THRESHOLD , "privacy unit column": " PRIVACY UNIT COLUMN " }, "join restriction policy": { "join condition": " JOIN CONDITION ", "join allowed columns": JOIN ALLOWED COLUMNS } } '' ' ) AS QUERY ; Definitions: aggregation threshold policy : The aggregation threshold policy for the aggregation threshold analysis rule.
-- Define a list overlap analysis rule for a view You can define a list overlap analysis rule for a view in a data clean room or with the CREATE VIEW statement: CREATE OR REPLACE VIEW VIEW NAME OPTIONS ( privacy policy = ' '' { "join restriction policy": { "join condition": " JOIN CONDITION ", "join allowed columns": JOIN ALLOWED COLUMNS } } '' ' ) AS QUERY ; Definitions: join restriction policy : The join restriction policy for the list overlap analysis rule.
-- ExamTable ); To review the privacy policy syntax for CREATE VIEW , see the OPTIONS list in CREATE VIEW .
-
-### Query syntax \_|\_ BigQuery \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax)
-- Source ID: `site-docs-reference`
-- Final score: 40
+- URL: [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- Source ID: `site-docs-reference-5`
+- Final score: 157
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The following example creates a table named new table in mydataset : CREATE OR REPLACE TABLE myproject.mydataset.new table AS WITH RECURSIVE T1 AS ( SELECT 1 AS n UNION ALL SELECT n + 1 FROM T1 WHERE n < 3 ) SELECT FROM T1 Recursive CTEs can be used inside CREATE VIEW AS SELECT statements.
-- CREATE VIEW my dataset . my view AS ( SELECT 1 AS a , 2 AS a ); Ambiguous aliases GoogleSQL provides an error if accessing a name is ambiguous, meaning it can resolve to more than one unique object in the query or in a table schema, including the schema of a destination table.
-- The following example creates a view named new view in mydataset : CREATE OR REPLACE VIEW myproject.mydataset.new view` AS WITH RECURSIVE T1 AS ( SELECT 1 AS n UNION ALL SELECT n + 1 FROM T1 WHERE n < 3 ) SELECT FROM T1 Recursive CTEs can be used inside INSERT statements.
-- Example: SELECT 1 AS a , 2 AS a ; / ---+-----+ a a 1 +---+-----+ 1 2 +---+----- / Duplicate column names in a table or view definition aren't supported.
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to run a cross-cloud join: bigquery.jobs.create bigquery.tables.getData You might also be able to get these permissions with custom roles or other predefined roles .
+- You can reference BigLake tables anywhere in a SELECT statement as if they were standard BigQuery tables, including in data manipulation language (DML) and data definition language (DDL) statements that use subqueries to retrieve data.
+- These materialized views function like materialized views over BigQuery-managed storage tables, including the benefits of automatic refresh and smart tuning .
+- Authorized views and authorized routines referencing BigQuery Omni tables or views are only supported in BigQuery Omni regions.
+
+### User-defined functions \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/user-defined-functions](https://docs.cloud.google.com/bigquery/docs/user-defined-functions)
+- Source ID: `site-docs-reference`
+- Final score: 153
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following example shows a SQL UDF that uses a scalar subquery to count the number of users with a given age in a user table: CREATE TEMP TABLE users AS ( SELECT 1 AS id , 10 AS age UNION ALL SELECT 2 AS id , 30 AS age UNION ALL SELECT 3 AS id , 10 AS age ); CREATE TEMP FUNCTION countUserByAge ( userAge INT64 ) AS ( ( SELECT COUNT ( 1 ) FROM users WHERE age = userAge ) ); SELECT countUserByAge ( 10 ) AS count user age 10 , countUserByAge ( 20 ) AS count user age 20 , countUserByAge ( 30 ) AS count user age 30 ; This example produces the following output: +-------------------+-------------------+-------------------+ count user age 10 count user age 20 count user age 30 +-------------------+-------------------+-------------------+ 2 0 1 +-------------------+-------------------+-------------------+ Default project in SQL expressions In the body of a SQL UDF, any references to BigQuery entities, such as tables or views, must include the project ID, unless the entity resides in the same project that contains the UDF.
+- When you run a query, BigQuery automatically uses the local version of the UDF from the local dataset replica without your specifying the region where the function is defined, making your queries portable across different locations.
+- No other UDFs, subqueries, tables, or views can be referenced in the definition body.
+- This rule must enable the following operations: bigquery.routines.get (for using routines) bigquery.tables.getData (for querying BigQuery tables) The following code shows an example YAML config: - egressFrom : identityType : ANY IDENTITY egressTo : operations : - serviceName : 'bigquery.googleapis.com' methodSelectors : - permission : 'bigquery.routines.get' - permission : 'bigquery.tables.getData' resources : - projects/1057666841514 # bigquery-public-data If you want to contribute to the UDFs in this repository, see Contributing UDFs for instructions.
 

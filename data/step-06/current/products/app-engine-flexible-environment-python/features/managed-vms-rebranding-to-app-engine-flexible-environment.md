@@ -1,31 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:45:54.317Z"
+generated_at: "2026-04-12T20:50:17.328Z"
 product_name: "App Engine flexible environment Python"
 product_slug: "app-engine-flexible-environment-python"
 feature_name: "Managed VMs rebranding to App Engine flexible environment"
 feature_slug: "managed-vms-rebranding-to-app-engine-flexible-environment"
 latest_feature_date: "2016-03-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/flexible/go/create-app"
-  - "https://docs.cloud.google.com/appengine/docs/flexible"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains"
 keywords:
-  - "App Engine Flexible Environment name change"
-  - "App Engine flexible (formerly Managed VMs)"
-  - "Managed VMs rebranding"
-  - "formerly Managed VMs"
-  - "Managed VMs renamed"
-  - "Managed VMs to flexible environment"
-  - "Managed VMs"
-  - "App Engine Flexible"
+  - "managed"
+  - "vms"
+  - "rebranding"
+  - "app"
+  - "engine"
+  - "flexible"
+  - "environment"
+  - "offering"
 ---
 
 # Managed VMs rebranding to App Engine flexible environment
 
 Product: App Engine flexible environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,38 +38,54 @@ The App Engine offering previously named Managed VMs was renamed to App Engine f
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/flexible/go/create-app](https://docs.cloud.google.com/appengine/docs/flexible/go/create-app)
-- [https://docs.cloud.google.com/appengine/docs/flexible](https://docs.cloud.google.com/appengine/docs/flexible)
+- [https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed](https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed)
+- [https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users](https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains)
 
 ## Supporting Pages
 
-### "Quickstart: Create a Go app in the App Engine flexible environment \_|\_\
+### "How instances are managed \_|\_ App Engine flexible environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/go/create-app](https://docs.cloud.google.com/appengine/docs/flexible/go/create-app)
-- Source ID: `site-docs-root`
-- Final score: 44
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed](https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed)
+- Source ID: `site-docs-reference-2`
+- Final score: 53
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Learn about the App Engine flexible environment Here are some topics to help continue your learning about App Engine: An overview of App Engine Request routing Request handling Managing instances Hello World code review Hello World is the simplest possible App Engine app, as it contains only one service, has only one version, and all of the code is located within the app's root directory.
-- See the License for the specific language governing permissions and limitations under the License. runtime : go env : flex runtime config : operating system : 'ubuntu22' runtime version : 1.25 This sample incurs costs to run on the App Engine flexible environment.
-- Deploy and run Hello World on App Engine To deploy your app to the App Engine flexible environment: Deploy the Hello World app by running the following command from the helloworld directory: gcloud app deploy Learn about the optional flags .
-- Fprint ( w , "Hello world!" ) } app.yaml The app.yaml file describes the following configuration for your app: Sets env: flex , indicating your app uses the App Engine flexible environment .
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How instances are managed Stay organized with collections Save and categorize content based on your preferences.
+- NTP with App Engine flexible environment The App Engine flexible environment has network time protocol (NTP) services which use Google NTP servers.
+- However, the NTP services in the flexible environment is not editable.
+- Click the tab for instructions on using the tool of your choice: Console To stop or disable a version for your service: Go to the App Engine Versions page in the Google Cloud console: Go to Versions Select a version from the table, and click Stop . gcloud Run the following: gcloud app versions stop --service= SERVICE VERSION Replace: SERVICE with the name of your service.
 
-### App Engine flexible environment \_|\_ Google Cloud Documentation
+### "Authenticating users \_|\_ App Engine flexible environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible](https://docs.cloud.google.com/appengine/docs/flexible)
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users](https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users)
+- Source ID: `site-docs-reference-2`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- Similar to Identity Platform, Firebase Authentication supports multiple authentication methods (SAML, OIDC, email/password, social, mobile, and custom auth) to provide flexible integration options for any identity solution.
+- Identity Platform supports multiple authentication methods (SAML, OIDC, email/password, social, phone, and custom auth) to provide flexible integration options for any identity solution.
+- Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.
+
+### "Mapping custom domains \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains)
 - Source ID: `site-docs-reference`
-- Final score: 44
+- Final score: 35
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Go Java Node.js PHP Python Ruby .NET Custom runtimes Features Customizable infrastructure - App Engine flexible environment instances are Compute Engine virtual machines, which means that you can take advantage of custom libraries, use SSH for debugging, and deploy your own Docker containers.
-- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback App Engine flexible environment Stay organized with collections Save and categorize content based on your preferences.
-- You can specify how much CPU and memory each instance of your application needs, and the App Engine flexible environment provisions the necessary infrastructure for you.
-- Based on Compute Engine , the App Engine flexible environment automatically scales your app up and down while also balancing the load.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Mapping custom domains Stay organized with collections Save and categorize content based on your preferences.
+- If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer.
+- If you encounter the limit, App Engine keeps trying to issue managed certificates until all requests have been fulfilled.
+- By default, when you map a domain to your app, App Engine issues a managed certificate for SSL for HTTPS connections.
 

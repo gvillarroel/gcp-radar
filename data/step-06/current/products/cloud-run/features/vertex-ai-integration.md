@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.915Z"
+generated_at: "2026-04-14T15:34:54.507Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Vertex AI integration"
 feature_slug: "vertex-ai-integration"
 latest_feature_date: "2024-03-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
-  - "https://docs.cloud.google.com/run/docs/container-contract"
-  - "https://docs.cloud.google.com/run/docs/reference/container-contract"
+  - "https://docs.cloud.google.com/run/docs/ai"
+  - "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+  - "https://docs.cloud.google.com/run/docs/configuring"
 keywords:
+  - "generative"
   - "vertex"
-  - "ai"
   - "integration"
-  - "lets"
-  - "run"
-  - "services"
   - "connect"
-  - "to"
+  - "access"
+  - "lets"
 ---
 
 # Vertex AI integration
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +36,54 @@ Vertex AI integration lets Cloud Run services connect to Vertex AI to access gen
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/mapping-custom-domains](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
-- [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
+- [https://docs.cloud.google.com/run/docs/ai](https://docs.cloud.google.com/run/docs/ai)
+- [https://docs.cloud.google.com/run/docs/tutorials/identity-platform](https://docs.cloud.google.com/run/docs/tutorials/identity-platform)
+- [https://docs.cloud.google.com/run/docs/configuring](https://docs.cloud.google.com/run/docs/configuring)
 
 ## Supporting Pages
 
-### Mapping custom domains \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+### AI/ML orchestration on Cloud Run documentation \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/mapping-custom-domains](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
+- URL: [https://docs.cloud.google.com/run/docs/ai](https://docs.cloud.google.com/run/docs/ai)
 - Source ID: `site-docs-root`
-- Final score: 182
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 87
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- With this option, you configure Firebase Hosting in front of your Cloud Run service and connect a domain to Firebase Hosting.
-- To create a Cloud Run service, add the following to your existing main.tf file: resource "google cloud run v2 service" "default" { name = "custom-domain" # Replace with your service name location = "us-central1" deletion protection = false # set to true to prevent destruction of the resource template { containers { image = "us-docker.pkg.dev/cloudrun/container/hello" # Replace with your container image } } } Replace: custom-domain with your Cloud Run service name. us-docker.pkg.dev/cloudrun/container/hello with a reference to your container image.
-- Map your Cloud Run service to the custom domain: data "google project" "project" {} resource "google cloud run domain mapping" "default" { name = "verified-domain.com" location = google cloud run v2 service.default.location metadata { namespace = data.google project.project.project id } spec { route name = google cloud run v2 service.default.name } } Replace verified-domain.com with your custom verified domain, for example, example.com or subdomain.example.com .
-- Retrieve the DNS record information for your domain mappings using the following: Console Go to the Cloud Run domain mappings page: Domain mappings page Click the three-dot vertical ellipse icon to the right of your service, then click DNS RECORDS to display all the DNS records: gcloud gcloud beta run domain-mappings describe --domain [ DOMAIN ] Replace [DOMAIN] with your custom domain, for example, example.com or subdomain.example.com .
+- Generative AI Vertex AI Flask Deployment Use case Use cases Deploying Gemma directly from AI Studio to Cloud Run Use the Gemma Python code from AI Studio and deploy it directly to a Cloud Run instance, leveraging Secret Manager for secure API key handling.
+- Monitoring MLOps Cost Efficiency Inference Use case Use cases Deploying a Google Cloud generative AI app in a website with Cloud Run Deploy a simple Flask application that calls the Vertex AI Generative AI API onto a scalable Cloud Run service.
+- Documentation resources Find quickstarts and guides, review key references, and get help with common issues. info Run AI solutions Concept Explore AI use cases Concept Host AI agents How-to Host A2A agents How-to Deploy A2A agents How-to Host MCP servers Tutorial Build and deploy a remote MCP server Concept Code execution Concept Browser and OS automation info Inference with GPUs Tutorial Run LLM inference on Cloud Run GPUs with Gemma 3 and Ollama How-to Run Gemma 3 models on Cloud Run Tutorial Run LLM inference on Cloud Run GPUs with Hugging Face Best practice Best practices: Cloud Run services with GPUs Tutorial Fine tune LLMs using GPUs with Cloud Run jobs Tutorial GPU-accelerated video transcoding with FFmpeg on Cloud Run jobs Best practice Best practices: Cloud Run jobs with GPUs Best practice Best practices: Cloud Run worker pools with GPUs info Troubleshoot Concept Cloud Run troubleshooting strategies How-to Troubleshoot all Cloud Run issues How-to Troubleshoot with Gemini Cloud Assist How-to Troubleshoot with Gemini Cloud Assist investigations Related resources Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services.
+- AI applications traffic splitting for A/B testing RAG patterns vector stores connectivity to vector stores Use case Use cases AI deployment made easy: Deploy your app to Cloud Run from AI Studio or MCP-compatible AI agents One-click deployment from Google AI Studio to Cloud Run and the Cloud Run MCP (Model Context Protocol) server to enable AI agents in IDEs or agent SDKs and deploy apps.
 
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+### Configure Cloud Run services \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 176
+- URL: [https://docs.cloud.google.com/run/docs/configuring](https://docs.cloud.google.com/run/docs/configuring)
+- Source ID: `site-docs-reference-2`
+- Final score: 76
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- 1 Environment variables for worker pools Cloud Run sets the following environment variables for worker pools: Name Description Example CLOUD RUN WORKER POOL The name of the running Cloud Run worker pool. hello-world CLOUD RUN WORKER POOL REVISION The name of the running Cloud Run worker pool revision. hello-world.1 Request and response header requirements (services) For services, Cloud Run restricts header names to printable non-whitespace ASCII, and cannot contain colons.
-- For Cloud Run worker pools with Direct VPC ingress, such as database connections or any other custom TCP-based protocol, the container must listen for TCP connections on the port exposed in your container image through the Dockerfile or specified by the PORT environment variable.
-- Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.
-- In services that use the second generation execution environment, we recommend installing a SIGTERM handler on your container to receive a warning when Cloud Run is about to shut down an instance.
+- Cloud Run volume mounts lets you access shared data stored in a local file system, such as a storage bucket or file server content, from your container.
+- The following table explains the features for this section: Section Feature Description A Service account The Cloud Run service identity is the service account that is used as the authenticated account for accessing Google Cloud APIs from your Cloud Run instance container.
+- The following table explains the features for this section: Section Feature Description A Authentication All Cloud Run services are deployed privately by default, which means that they can't be accessed without providing authentication credentials in the request.
+- D Service mesh Cloud Service Mesh lets you enable mesh advanced traffic management capabilities, such as weighted traffic splitting and global load balancing, as well as observability and security policies for traffic from one Cloud Run service to another.
 
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+### End user authentication for Cloud Run tutorial \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/identity-platform](https://docs.cloud.google.com/run/docs/tutorials/identity-platform)
 - Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: N/A
+- Final score: 75
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- 1 Environment variables for worker pools Cloud Run sets the following environment variables for worker pools: Name Description Example CLOUD RUN WORKER POOL The name of the running Cloud Run worker pool. hello-world CLOUD RUN WORKER POOL REVISION The name of the running Cloud Run worker pool revision. hello-world.1 Request and response header requirements (services) For services, Cloud Run restricts header names to printable non-whitespace ASCII, and cannot contain colons.
-- For Cloud Run worker pools with Direct VPC ingress, such as database connections or any other custom TCP-based protocol, the container must listen for TCP connections on the port exposed in your container image through the Dockerfile or specified by the PORT environment variable.
-- Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.
-- In services that use the second generation execution environment, we recommend installing a SIGTERM handler on your container to receive a warning when Cloud Run is about to shut down an instance.
+- Deploying the service Follow the steps to complete infrastructure provisioning and deployment: Create a Cloud SQL instance with postgreSQL database using the console or CLI: gcloud sql instances create CLOUD SQL INSTANCE NAME \ --database-version = POSTGRES 16 \ --region = CLOUD SQL REGION \ --cpu = 2 \ --memory = 7680MB \ --root-password = DB PASSWORD Add your Cloud SQL credential values to postgres-secrets.json : Node.js { "CLOUD SQL CONNECTION NAME" : "PROJECT ID:REGION:INSTANCE" , "DB NAME" : "postgres" , "DB USER" : "postgres" , "DB PASSWORD" : "PASSWORD SECRET" } Python { "CLOUD SQL CONNECTION NAME" : "PROJECT ID:REGION:INSTANCE" , "DB NAME" : "postgres" , "DB USER" : "postgres" , "DB PASSWORD" : "PASSWORD SECRET" } Java { "spring.cloud.gcp.sql.instance-connection-name" : "PROJECT ID:REGION:INSTANCE" , "spring.cloud.gcp.sql.database-name" : "postgres" , "spring.datasource.username" : "postgres" , "spring.datasource.password" : "PASSWORD SECRET" } Create a versioned secret using the console or CLI: gcloud secrets create idp-sql-secrets \ --replication-policy = "automatic" \ --data-file = postgres-secrets.json Create a service account for the server using the console or CLI: gcloud iam service-accounts create idp-sql-identity Grant roles for Secret Manager and Cloud SQL access using the console or CLI: Allow the service account associated with the server to access the created secret: gcloud secrets add-iam-policy-binding idp-sql-secrets \ --member serviceAccount:idp-sql-identity@ PROJECT ID .iam.gserviceaccount.com \ --role roles/secretmanager.secretAccessor Allow the service account associated with the server to access Cloud SQL: gcloud projects add-iam-policy-binding PROJECT ID \ --member serviceAccount:idp-sql-identity@ PROJECT ID .iam.gserviceaccount.com \ --role roles/cloudsql.client Create an Artifact Registry: gcloud artifacts repositories create REPOSITORY \ --repository-format docker \ --location REGION REPOSITORY is the name of the repository.
+- URL . create ( drivername = "postgresql+pg8000" , username = db user , # e.g. "my-database-user" password = db pass , # e.g. "my-database-password" database = db name , # e.g. "my-database-name" query = { "unix sock" : f " { db socket dir } / { cloud sql connection name } /.s.PGSQL.5432" e.g. "/cloudsql", "<PROJECT-NAME>:<INSTANCE-REGION>:<INSTANCE-NAME>" }, ), db config , ) pool . dialect . description encoding = None logger . info ( "Database engine initialized from unix connection" ) return pool Java Use the Spring Cloud Google Cloud PostgreSQL starter integration to interact with your PostgreSQL databases in Cloud SQL using Spring JDBC libraries.
+- Remove the gcloud default region configuration you added during tutorial setup: gcloud config unset run / region Remove the project configuration: gcloud config unset project Delete other Google Cloud resources created in this tutorial: Delete the service container image from Artifact Registry Delete the service account vote-identity@PROJECT ID.iam.gserviceaccount.com Delete the Cloud SQL instance Delete the secret in Secret Manager What's next Dive deeper into Connecting from Cloud Run to Cloud SQL Learn more about sign in methods and managing users with Identity Platform Review other ways to authenticate developers, services, and users of services deployed to Cloud Run Explore other Cloud Run demos, tutorials, and samples Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Enable the APIs Required roles To get the permissions that you need to complete the tutorial, ask your administrator to grant you the following IAM roles on your project: Artifact Registry Repository Administrator ( roles/artifactregistry.repoAdmin ) Cloud Build Editor ( roles/cloudbuild.builds.editor ) Cloud Run Admin ( roles/run.admin ) Cloud SQL Admin ( roles/cloudsql.admin ) Create Service Accounts ( roles/iam.serviceAccountCreator ) Identity Platform Admin ( roles/identityplatform.admin ) OAuth Config Editor ( roles/oauthconfig.editor ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Secret Manager Admin ( roles/secretmanager.admin ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
 

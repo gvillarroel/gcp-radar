@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.558Z"
+generated_at: "2026-04-12T12:07:33.809Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "gcloud beta alloydb connect command"
@@ -9,9 +9,10 @@ latest_feature_date: "2026-04-03"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1alpha"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-gcloud"
+  - "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-psql"
 keywords:
   - "gcloud beta alloydb connect"
   - "psql connection"
@@ -34,56 +35,53 @@ The new gcloud beta AlloyDB connect command provides a simplified, secure way to
 
 ## Extended Definition
 
-`gcloud beta alloydb connect` is a Beta preview command for AlloyDB for PostgreSQL, announced in the AlloyDB release notes on April 3, 2026. The command is tied to AlloyDB connector-based connectivity and is positioned to support more secure instance access by routing connections through AlloyDB connectors such as the AlloyDB Auth Proxy. The provided connector API references also indicate that AlloyDB connectors perform metadata exchange with the server after TLS handshake, which underpins the secure connection flow but do not describe the CLI command behavior in detail.
+The new gcloud beta AlloyDB connect command provides a simplified, secure way to connect to AlloyDB instances using the AlloyDB Auth Proxy and psql.
 
 ## Evidence Summary
 
-The release notes confirm the feature’s preview launch date and its security rationale via AlloyDB connectors/Auth Proxy, while the Java connector references provide supporting details on connector protocol behavior.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1alpha](https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1alpha)
+- [https://docs.cloud.google.com/alloydb/docs/connect-gcloud](https://docs.cloud.google.com/alloydb/docs/connect-gcloud)
+- [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Connect using gcloud CLI \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-gcloud](https://docs.cloud.google.com/alloydb/docs/connect-gcloud)
+- Source ID: `site-docs-reference-2`
+- Final score: 161
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Connect over public IP If your instance has a public IP address enabled, you can connect to it by adding the --public-ip flag: gcloud beta alloydb connect INSTANCE ID \ --cluster = CLUSTER ID \ --region = REGION ID \ --public-ip Authenticate using IAM The gcloud beta alloydb connect command supports automatic IAM authentication.
+- The gcloud beta alloydb connect command lets you establish an authorized, encrypted connection to an AlloyDB instance.
+- Connect over Private Service Connect If you are using Private Service Connect, add the --psc flag: gcloud beta alloydb connect INSTANCE ID \ --cluster = CLUSTER ID \ --region = REGION ID \ --psc Connect with a specific user and database To connect as a specific database user to a specific database, use the --user and --database flags: gcloud beta alloydb connect INSTANCE ID \ --cluster = CLUSTER ID \ --region = REGION ID \ --user = USER NAME \ --database = DATABASE NAME Service account impersonation You can use an impersonated service account to authorize the connection.
+- To connect using an impersonated service account, add the --impersonate-service-account flag: gcloud beta alloydb connect INSTANCE ID \ --cluster = CLUSTER ID \ --region = REGION ID \ --impersonate-service-account = SERVICE ACCOUNT EMAIL The Auth Proxy uses the impersonated service account to retrieve connection information.
+
+### "Create and query an AlloyDB database using the Google Cloud console \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
 - Source ID: `site-docs-root`
-- Final score: 50
+- Final score: 94
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- April 03, 2026 Feature The gcloud beta alloydb connect command is now available in Preview .
-- Feature You can now improve connection security by enforcing applications to connect to AlloyDB instances through AlloyDB connectors , such as the Auth Proxy.
-- January 21, 2026 Issue Automatic IAM authentication is unavailable when you use managed connection pooling with the AlloyDB Auth Proxy and Language Connectors.
-- Version 1.5.0 of the AlloyDB Auth Proxy client might fail to connect to AlloyDB instances created before mid-November, 2023.
+### "Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \_|\_\
 
-### "Package com.google.cloud.alloydb.connectors.v1 (0.66.0) \_|\_ Java client\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1)
-- Source ID: `site-java-reference`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- Source ID: `site-docs-reference-2`
+- Final score: 86
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- Metadata Exchange Request Message used by AlloyDB connectors to exchange client and connection metadata with the server after a successful TLS handshake.
-- Builder Message used by AlloyDB connectors to exchange client and connection metadata with the server after a successful TLS handshake.
-- The sole purpose of this message is for the use of AlloyDB connectors.
-- The sole purpose of this message is for the use of AlloyDB connectors.
+### "Connect from Compute Engine \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
-### "Package com.google.cloud.alloydb.connectors.v1alpha (0.66.0) \_|\_ Java\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1alpha](https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/com.google.cloud.alloydb.connectors.v1alpha)
-- Source ID: `site-java-reference`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
+- Source ID: `site-docs-root`
+- Final score: 84
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- Metadata Exchange Request Message used by AlloyDB connectors to exchange client and connection metadata with the server after a successful TLS handshake.
-- Builder Message used by AlloyDB connectors to exchange client and connection metadata with the server after a successful TLS handshake.
-- The sole purpose of this message is for the use of AlloyDB connectors.
-- The sole purpose of this message is for the use of AlloyDB connectors.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.638Z"
+generated_at: "2026-04-15T13:50:47.028Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Agent extensions"
@@ -9,9 +9,9 @@ latest_feature_date: "2025-11-03"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview"
 keywords:
   - "agent"
   - "extensions"
@@ -20,7 +20,7 @@ keywords:
   - "assign"
   - "extension"
   - "numbers"
-  - "to"
+  - "agents"
 ---
 
 # Agent extensions
@@ -42,48 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Agent extensions guide \_|\_ Google Cloud Contact Center as a Service \_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 188
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide)
+- Source ID: `site-docs-reference`
+- Final score: 258
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Agent extensions allow agents to be assigned a phone number extension for agent to agent and end-user to agent calling.
+- Dial pad and extension directory If you are an agent with an extension assigned, you are able to dial extensions.
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Agent extensions guide Stay organized with collections Save and categorize content based on your preferences.
+- This document walks you through the Call Adapter functions directly impacted by the addition of agent extensions.
+
+### "Call settings \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 200
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Extensions for support numbers You can assign a phone number extension to an agent that an end-user can use to directly call the agent.
-- Fixed Expanded Agent Extensions : You can now use extension numbers up to 10 characters in length.
-- Feature Direct SMS numbers and configuring SMS chat in the agent adapter You can assign direct SMS numbers to agents, allowing end-users to send SMS chat messages directly to agents without passing through a queue.
-- Administrators: A new Extension Input Settings section appears in the Settings > Call > Agent Extensions > Consumer to Agent Calls section.
+- To assign extension numbers to your agents, do one of the following: To automatically generate phone extensions for your agents, select the Enable Auto-generated extension checkbox.
+- The system then automatically generates phone extensions of the length you specified and assigns them to your agents.
+- You must assign extension numbers to agents for both agent to agent calling and end-user to agent calling.
+- Assign extension numbers to agents You can assign your own extension numbers to agents.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Agent desktop \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview)
 - Source ID: `site-docs-root`
-- Final score: 116
-- Re-rank relevance: N/A
+- Final score: 126
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Assigning Agents to queues so they can receive calls/chats.
-- Billing depending on which of the following charging models is assigned to your instance: Concurrent agents : the maximum number of concurrent users with the agent role that are signed in during the month period Named agents : the maximum number of users in the instance that have the agent role during the month period Minutes used : the number of minutes that users with the agent role are signed in during the month period Note: Telephony charges are charged according to consumption.
-- To enable access to your instance for agents, managers, and CCAI Platform administrators, you need to set up Private Service Connect.
-- Importing Users Bulk User Management Create queues and assign agents to queues Setting up queues for IVR calls .
-
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 48
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- Delivers AI-based omni-channel routing, intelligent Virtual Agent, Agent Assist, and Insights capabilities that enables organizations to streamline customer experiences.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
-- CCAI Platform also allows for reporting on contact center agent performance and customer satisfaction.
+- For Extensions , select the Agent desktop checkbox, and then click Save .
+- The following agent desktop permissions for administrators display: Settings > Operation Management > All Settings > Agent Desktop > All Settings > Agent Desktop > Layout and panel Management Settings > Announcement Management To find the permission settings for using the agent desktop, do the following: For Agent , click visibility View .
+- To turn on the agent desktop extension, follow these steps: In the Google Cloud console, go to the project selector dashboard and select the project that contains your instance.
+- The following agent desktop permissions for agents display: Function > Agent > All Function > Agent > Calls, chats, messaging Function > Agent > Agent Desktop Click Cancel .
 

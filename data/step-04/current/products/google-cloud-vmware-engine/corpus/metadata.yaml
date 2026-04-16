@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-10T00:01:08+00:00'
-updated_at: '2026-04-11T13:04:36+00:00'
+updated_at: '2026-04-15T11:38:02+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -63,3 +63,87 @@ sources:
     max_pages: 26
     compact_output: true
   last_synced_at: '2026-04-11T13:04:36+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/vmware-engine/docs/release-notes
+  created_at: '2026-04-14T04:46:20+00:00'
+  updated_at: '2026-04-14T04:47:46+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vmware-engine/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/vmware-engine/docs/release-notes
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-14T04:47:46+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes
+  created_at: '2026-04-14T04:46:20+00:00'
+  updated_at: '2026-04-14T04:49:22+00:00'
+  update_command: know sync site https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-14T04:49:22+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management
+  created_at: '2026-04-15T11:33:18+00:00'
+  updated_at: '2026-04-15T11:33:31+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T11:33:31+00:00'
+- type: site
+  id: site-docs-reference-required-4
+  title: https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege
+  created_at: '2026-04-15T11:33:19+00:00'
+  updated_at: '2026-04-15T11:35:01+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T11:35:01+00:00'
+- type: site
+  id: site-docs-reference-required-5
+  title: https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model
+  created_at: '2026-04-15T11:33:19+00:00'
+  updated_at: '2026-04-15T11:36:30+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
+  config:
+    url: https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T11:36:30+00:00'
+- type: site
+  id: site-docs-reference-required-6
+  title: https://docs.cloud.google.com/vmware-engine/docs/best-practices-security
+  created_at: '2026-04-15T11:33:19+00:00'
+  updated_at: '2026-04-15T11:38:02+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vmware-engine/docs/best-practices-security
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-6
+  config:
+    url: https://docs.cloud.google.com/vmware-engine/docs/best-practices-security
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-15T11:38:02+00:00'

@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-11T01:52:08+00:00'
-updated_at: '2026-04-11T04:00:32+00:00'
+updated_at: '2026-04-14T02:15:52+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/dataproc/docs
   created_at: '2026-04-11T01:52:09+00:00'
-  updated_at: '2026-04-11T03:05:05+00:00'
+  updated_at: '2026-04-14T01:35:37+00:00'
   update_command: know sync site https://docs.cloud.google.com/dataproc/docs --key
     corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,74 +20,228 @@ sources:
     max_depth: 2
     max_pages: 52
     compact_output: true
-  last_synced_at: '2026-04-11T03:05:05+00:00'
+  last_synced_at: '2026-04-14T01:35:37+00:00'
 - type: site
   id: site-docs-root-2
-  title: https://docs.cloud.google.com/dataproc-metastore/docs/overview
-  created_at: '2026-04-11T01:52:09+00:00'
-  updated_at: '2026-04-11T03:07:53+00:00'
-  update_command: know sync site https://docs.cloud.google.com/dataproc-metastore/docs/overview
+  title: https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage
+  created_at: '2026-04-14T01:32:37+00:00'
+  updated_at: '2026-04-14T01:38:44+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root-2
   config:
-    url: https://docs.cloud.google.com/dataproc-metastore/docs/overview
+    url: https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage
     max_depth: 2
     max_pages: 52
     compact_output: true
-  last_synced_at: '2026-04-11T03:07:53+00:00'
+  last_synced_at: '2026-04-14T01:38:44+00:00'
+- type: site
+  id: site-docs-root-3
+  title: https://docs.cloud.google.com/dataproc/docs/guides/use-secure-tags
+  created_at: '2026-04-14T01:32:37+00:00'
+  updated_at: '2026-04-14T01:41:45+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/guides/use-secure-tags
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-3
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/guides/use-secure-tags
+    max_depth: 2
+    max_pages: 52
+    compact_output: true
+  last_synced_at: '2026-04-14T01:41:45+00:00'
 - type: site
   id: site-docs-reference
-  title: https://docs.cloud.google.com/dataproc/docs/reference
-  created_at: '2026-04-11T01:52:09+00:00'
-  updated_at: '2026-04-11T03:10:12+00:00'
-  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/reference
+  title: https://docs.cloud.google.com/dataproc/docs/release-notes
+  created_at: '2026-04-14T01:32:38+00:00'
+  updated_at: '2026-04-14T01:44:16+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/release-notes
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
   config:
-    url: https://docs.cloud.google.com/dataproc/docs/reference
+    url: https://docs.cloud.google.com/dataproc/docs/release-notes
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T03:10:12+00:00'
+  last_synced_at: '2026-04-14T01:44:16+00:00'
+- type: site
+  id: site-api-reference
+  title: https://docs.cloud.google.com/dataproc/docs/reference/rest
+  created_at: '2026-04-14T01:32:38+00:00'
+  updated_at: '2026-04-14T01:46:43+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/reference/rest
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/reference/rest
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T01:46:43+00:00'
+- type: site
+  id: site-api-reference-2
+  title: https://docs.cloud.google.com/dataproc/docs/reference/libraries
+  created_at: '2026-04-14T01:32:38+00:00'
+  updated_at: '2026-04-14T01:49:08+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/reference/libraries
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference-2
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/reference/libraries
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T01:49:08+00:00'
 - type: site
   id: site-iam-reference
-  title: https://docs.cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals
-  created_at: '2026-04-11T01:52:10+00:00'
-  updated_at: '2026-04-11T03:12:27+00:00'
-  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals
+  title: https://docs.cloud.google.com/dataproc/docs/concepts/iam/iam
+  created_at: '2026-04-14T01:32:39+00:00'
+  updated_at: '2026-04-14T01:51:34+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/concepts/iam/iam
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/concepts/iam/iam
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T01:51:34+00:00'
+- type: site
+  id: site-docs-reference-required-2
+  title: https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark
+  created_at: '2026-04-14T01:32:39+00:00'
+  updated_at: '2026-04-14T01:54:00+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T01:54:00+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements
+  created_at: '2026-04-14T01:32:40+00:00'
+  updated_at: '2026-04-14T01:56:26+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T01:56:26+00:00'
+- type: site
+  id: site-docs-reference-required-4
+  title: https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images
+  created_at: '2026-04-14T01:32:40+00:00'
+  updated_at: '2026-04-14T01:58:49+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T01:58:49+00:00'
+- type: site
+  id: site-docs-reference-required-5
+  title: https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics
+  created_at: '2026-04-14T01:32:40+00:00'
+  updated_at: '2026-04-14T02:01:13+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:01:13+00:00'
+- type: site
+  id: site-docs-reference-required-6
+  title: https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions
+  created_at: '2026-04-14T01:32:41+00:00'
+  updated_at: '2026-04-14T02:03:39+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-6
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:03:39+00:00'
+- type: site
+  id: site-docs-reference-required-7
+  title: https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster
+  created_at: '2026-04-14T01:32:41+00:00'
+  updated_at: '2026-04-14T02:06:03+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-7
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:06:03+00:00'
+- type: site
+  id: site-docs-reference-required-8
+  title: https://docs.cloud.google.com/dataproc/docs/guides/create-cluster
+  created_at: '2026-04-14T01:32:41+00:00'
+  updated_at: '2026-04-14T02:08:32+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/guides/create-cluster
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-8
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/guides/create-cluster
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:08:32+00:00'
+- type: site
+  id: site-docs-reference-required-9
+  title: https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud
+  created_at: '2026-04-14T01:32:42+00:00'
+  updated_at: '2026-04-14T02:11:01+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-9
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:11:01+00:00'
+- type: site
+  id: site-docs-reference-required-10
+  title: https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries
+  created_at: '2026-04-14T01:32:42+00:00'
+  updated_at: '2026-04-14T02:13:24+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-10
+  config:
+    url: https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:13:24+00:00'
+- type: site
+  id: site-iam-reference-required-2
+  title: https://docs.cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals
+  created_at: '2026-04-14T01:32:42+00:00'
+  updated_at: '2026-04-14T02:15:52+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference-required-2
   config:
     url: https://docs.cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T03:12:27+00:00'
-- type: site
-  id: site-python-reference
-  title: https://docs.cloud.google.com/python/docs/reference/dataproc/latest
-  created_at: '2026-04-11T01:52:10+00:00'
-  updated_at: '2026-04-11T03:14:52+00:00'
-  update_command: know sync site https://docs.cloud.google.com/python/docs/reference/dataproc/latest
-    --key corpus --compact
-  delete_command: know del --key corpus site-python-reference
-  config:
-    url: https://docs.cloud.google.com/python/docs/reference/dataproc/latest
-    max_depth: 2
-    max_pages: 42
-    compact_output: true
-  last_synced_at: '2026-04-11T03:14:52+00:00'
-- type: site
-  id: site-java-reference
-  title: https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview
-  created_at: '2026-04-11T01:52:11+00:00'
-  updated_at: '2026-04-11T04:00:32+00:00'
-  update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview
-    --key corpus --compact
-  delete_command: know del --key corpus site-java-reference
-  config:
-    url: https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview
-    max_depth: 2
-    max_pages: 42
-    compact_output: true
-  last_synced_at: '2026-04-11T04:00:32+00:00'
+  last_synced_at: '2026-04-14T02:15:52+00:00'

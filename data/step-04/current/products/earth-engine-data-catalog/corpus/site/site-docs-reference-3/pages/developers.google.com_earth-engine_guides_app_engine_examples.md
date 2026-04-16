@@ -4,7 +4,7 @@ url: https://developers.google.com/earth-engine/guides/app_engine_examples
 knowledge_key: corpus
 source_id: site-docs-reference-3
 source_type: site
-entrypoint: https://developers.google.com/earth-engine/guides
+entrypoint: https://developers.google.com/earth-engine/guides/getstarted
 source_metadata:
   url: https://developers.google.com/earth-engine/guides/app_engine_examples
   title: "App Engine Example Apps \_|\_ Google Earth Engine \_|\_ Google for Developers"

@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-09T07:36:39+00:00'
-updated_at: '2026-04-10T23:15:53+00:00'
+updated_at: '2026-04-15T03:52:51+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/sql/docs/sqlserver
   created_at: '2026-04-10T23:07:35+00:00'
-  updated_at: '2026-04-10T23:09:54+00:00'
+  updated_at: '2026-04-15T03:41:14+00:00'
   update_command: know sync site https://docs.cloud.google.com/sql/docs/sqlserver
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-10T23:09:54+00:00'
+  last_synced_at: '2026-04-15T03:41:14+00:00'
 - type: site
   id: site-docs-reference
   title: https://docs.cloud.google.com/sql/docs/sqlserver/admin-api
   created_at: '2026-04-10T23:07:35+00:00'
-  updated_at: '2026-04-10T23:11:50+00:00'
+  updated_at: '2026-04-15T03:43:19+00:00'
   update_command: know sync site https://docs.cloud.google.com/sql/docs/sqlserver/admin-api
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
@@ -34,12 +34,12 @@ sources:
     max_depth: 2
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-10T23:11:50+00:00'
+  last_synced_at: '2026-04-15T03:43:19+00:00'
 - type: site
   id: site-api-reference
   title: https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest
   created_at: '2026-04-10T23:07:36+00:00'
-  updated_at: '2026-04-10T23:13:40+00:00'
+  updated_at: '2026-04-15T03:47:20+00:00'
   update_command: know sync site https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
@@ -48,12 +48,12 @@ sources:
     max_depth: 2
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-10T23:13:40+00:00'
+  last_synced_at: '2026-04-15T03:47:20+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/sql/docs/sqlserver/roles-and-permissions
   created_at: '2026-04-10T23:07:36+00:00'
-  updated_at: '2026-04-10T23:15:53+00:00'
+  updated_at: '2026-04-15T03:49:26+00:00'
   update_command: know sync site https://docs.cloud.google.com/sql/docs/sqlserver/roles-and-permissions
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -62,4 +62,46 @@ sources:
     max_depth: 2
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-10T23:15:53+00:00'
+  last_synced_at: '2026-04-15T03:49:26+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/sql/docs/sqlserver/apis
+  created_at: '2026-04-14T03:24:55+00:00'
+  updated_at: '2026-04-15T03:45:19+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sql/docs/sqlserver/apis
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/sql/docs/sqlserver/apis
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T03:45:19+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://docs.cloud.google.com/mcp/control-mcp-use-organization
+  created_at: '2026-04-15T03:08:38+00:00'
+  updated_at: '2026-04-15T03:50:49+00:00'
+  update_command: know sync site https://docs.cloud.google.com/mcp/control-mcp-use-organization
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/mcp/control-mcp-use-organization
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T03:50:49+00:00'
+- type: site
+  id: site-docs-reference-required-4
+  title: https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp
+  created_at: '2026-04-15T03:08:38+00:00'
+  updated_at: '2026-04-15T03:52:51+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T03:52:51+00:00'

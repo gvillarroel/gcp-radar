@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:46.056Z"
+generated_at: "2026-04-12T12:17:55.000Z"
 product_name: "Migrate to Virtual Machines"
 product_slug: "migrate-to-virtual-machines"
 feature_name: "Seamless OS adaptation"
 feature_slug: "seamless-os-adaptation"
 latest_feature_date: "2021-04-14"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+  - "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices"
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions"
 keywords:
   - "seamless"
   - "os"
@@ -24,7 +27,7 @@ keywords:
 # Seamless OS adaptation
 
 Product: Migrate to Virtual Machines
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ Prepares migrating VMs to run on Compute Engine and deploys Google Cloud agents 
 
 Prepares migrating VMs to run on Compute Engine and deploys Google Cloud agents for day-two integration.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms)
+- [https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms](https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms)
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices)
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Migrate individual VMs \_|\_ Migrate to Virtual Machines \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms)
+- Source ID: `site-docs-root`
+- Final score: 208
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The only allowed operations on a migration in the Finalized state are: Delete the migration Add to or remove from a group Delete a migration Deleting a migration removes: The replication data for the VM stored on Google Cloud The Compute Engine configuration information The monitoring history All other data associated with migrating a VM The VM from the list of onboarded VMs on the Migrations tab The VM from its group, if the VM is a member of a group However, deleting a migration does not remove the source VM from the list of available VMs for the migration source displayed on the Sources tab.
+- If you plan to run an application on the Compute Engine instance that needs access to other gcloud CLI services and APIs, create a service account in the target project with the necessary permissions to access those services and APIs before creating the Compute Engine instance.
+- Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues.
+- Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues.
+
+### "Migrate individual VMs \_|\_ Migrate to Virtual Machines \_|\_ Google Cloud\
+
+- URL: [https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms](https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms)
+- Source ID: `site-docs-root-2`
+- Final score: 208
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The only allowed operations on a migration in the Finalized state are: Delete the migration Add to or remove from a group Delete a migration Deleting a migration removes: The replication data for the VM stored on Google Cloud The Compute Engine configuration information The monitoring history All other data associated with migrating a VM The VM from the list of onboarded VMs on the Migrations tab The VM from its group, if the VM is a member of a group However, deleting a migration does not remove the source VM from the list of available VMs for the migration source displayed on the Sources tab.
+- If you plan to run an application on the Compute Engine instance that needs access to other gcloud CLI services and APIs, create a service account in the target project with the necessary permissions to access those services and APIs before creating the Compute Engine instance.
+- Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues.
+- Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues.
+
+### Migrate to Virtual Machines best practices \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices)
+- Source ID: `site-docs-reference`
+- Final score: 175
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Ensure that the guest OS is correctly configured in VMWare Before migrating your VMs, ensure that VMWare vCenter is not reporting any warnings related to the guest operating system (OS) .
+- For example, after analyzing the migration plan, you might determine values for the following: The expected migration duration The expected number of VMs to migrate for each time unit The total migration cost The migration cost per VM The available network throughput The compatibility of the tools you're using for backup and disaster recovery with the target environment Consider all deployment environments for your applications when you analyze the migration plan.
+- The best practices described in this document cover the following areas: Assessing your source environment Building your foundation Migrating your VMs Troubleshooting migration issues Assessment best practices This section describes best practices to address common issues that might arise during the migration assessment phase .
+- If there's no VMware host in the network, we recommend one of the following options to migrate your VMs to a source environment that Migrate to Virtual Machines supports: Migrate VMware VMs with VMware HCX to Google Cloud VMware Engine .
+
+### "Supported operating systems \_|\_ Migrate to Virtual Machines \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions)
+- Source ID: `site-docs-reference`
+- Final score: 174
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Operating systems with migration support only Migrate to Virtual Machines supports migrating VMs running the following operating systems that have reached end of life (EOL), or are not officially supported on Google Cloud.
+- Operating systems supported by partners Migrate to Virtual Machines supports importing images and migrating VMs running the following operating systems supported by partners.
+- OS Version Default license License option BIOS to UEFI conversion supported Arm supported AlmaLinux 8.3 - 8.10 N/A N/A Yes Yes 9.0 - 9.6 N/A N/A Yes Yes 10.0 N/A N/A No Yes Amazon Linux 2 Not applicable (N/A) N/A No No CentOS Stream 8 N/A N/A Yes No Stream 9 N/A N/A Yes No Debian 11.0 - 11.6 N/A N/A Yes Yes 12 N/A N/A Yes Yes 13.0 - 13.2 N/A N/A Yes Yes RHEL 7.9 PAYG PAYG with ELS (see Append RHEL ELS licenses ) No No 8.0 - 8.10 PAYG PAYG Yes Yes 8.0 - 8.10 SAP PAYG PAYG No No 9.0 - 9.1 PAYG PAYG Yes Yes 9.2 PAYG PAYG No Yes 9.0 - 9.2 SAP PAYG PAYG No No 9.3 - 9.4 PAYG PAYG No No 10.0 PAYG PAYG Yes Yes Rocky Linux 8.4 - 8.5 N/A N/A No Yes 9 N/A N/A No Yes SLES 12 SP5 PAYG PAYG Yes No 15 SP3 PAYG PAYG Yes No 15 SP5 PAYG PAYG No Yes Ubuntu 18.04.6 N/A N/A No No 20.04.0 - 20.04.04 N/A N/A Yes Yes 22.04 N/A N/A Yes Yes 24.04 N/A N/A Yes Yes Windows Server (Essentials, Standard, and Datacenter) 2016 PAYG BYOL 1 Yes N/A 2019 PAYG BYOL 1 Yes N/A 2022 PAYG N/A Yes N/A 2025 PAYG N/A No N/A Azure source You can migrate a VM from an Azure source, if the VM is running an operating system that is listed in the following table.
+- OS Version Default license License option BIOS to UEFI conversion supported Arm supported AlmaLinux 8.3 - 8.10 N/A N/A Yes Yes 9.0 - 9.6 N/A N/A Yes Yes 10.0 N/A N/A No Yes CentOS Stream 8 N/A N/A Yes No Stream 9 N/A N/A Yes No Debian 11.0 - 11.6 N/A N/A Yes Yes 12 N/A N/A Yes Yes 13.0 - 13.2 N/A N/A Yes Yes RHEL 7.9 PAYG PAYG with ELS (see Append RHEL ELS licenses ) Yes No 8.0 - 8.10 PAYG PAYG Yes Yes 8.0 - 8.10 SAP PAYG PAYG No No 9.0 - 9.2 PAYG PAYG Yes Yes 9.0 - 9.2 SAP PAYG PAYG No No 9.3 - 9.4 PAYG PAYG No No 10.0 PAYG PAYG Yes Yes Rocky Linux 8.4 - 8.5 N/A N/A No Yes 9 N/A N/A Yes Yes SLES 12 SP5 PAYG PAYG Yes No 15 SP3 PAYG PAYG Yes No 15 SP5 PAYG PAYG Yes Yes Ubuntu 20.04.0 - 20.04.04 N/A N/A Yes Yes 22.04 N/A N/A Yes Yes 24.04 N/A N/A Yes Yes Windows Server (Essentials, Standard, and Datacenter) 2016 PAYG BYOL 1 Yes N/A 2019 PAYG BYOL 1 Yes N/A 2022 PAYG N/A Yes N/A 2025 PAYG N/A No N/A Image import You can import a virtual disk to Compute Engine using Migrate to Virtual Machines, if the VM is running an operating system that is listed in the following table.
 

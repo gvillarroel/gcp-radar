@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:38:45.383Z"
+generated_at: "2026-04-14T05:36:38.557Z"
 product_name: "App Engine Admin API"
 product_slug: "app-engine-admin-api"
 feature_name: "App Engine SSL certificate management"
 feature_slug: "app-engine-ssl-certificate-management"
 latest_feature_date: "2017-06-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1"
   - "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates"
-  - "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates/list"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
 keywords:
-  - "TLS certificate management"
-  - "App Engine cert manager"
-  - "SSL certificate resource"
-  - "create SSL certificate"
-  - "gcloud app ssl-certificates"
-  - "AuthorizedCertificates"
-  - "certificate management"
-  - "SSL certificates"
+  - "app"
+  - "engine"
+  - "ssl"
+  - "certificate"
+  - "management"
+  - "beta"
+  - "level"
+  - "admin"
 ---
 
 # App Engine SSL certificate management
 
 Product: App Engine Admin API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,54 @@ Beta-level App Engine Admin API and gcloud features can now create and manage SS
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1](https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1)
 - [https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates](https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates)
-- [https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates/list](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates/list)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging](https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging)
 
 ## Supporting Pages
 
-### "REST Resource: apps.authorizedCertificates \_|\_ App Engine Admin API \_\
+### "Package google.appengine.v1 \_|\_ App Engine Admin API \_|\_ Google Cloud\
 
-- URL: [https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates)
-- Source ID: `site-api-reference`
-- Final score: 80
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page documents the `apps.authorizedCertificates` resource, including certificate creation-related fields and update behavior for SSL certificates in App Engine Admin API.
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1](https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1)
+- Source ID: `site-docs-reference-4`
+- Final score: 107
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Methods create Uploads the specified SSL certificate. delete Deletes the specified SSL certificate. get Gets the specified SSL certificate. list Lists all SSL certificates the user is authorized to administer. patch Updates the specified SSL certificate.
-- Home Technology areas App Engine Admin API Reference Send feedback REST Resource: apps.authorizedCertificates Stay organized with collections Save and categorize content based on your preferences.
-- To update the renewal time on this certificate, upload an SSL certificate with a different expiration time using AuthorizedCertificates.UpdateAuthorizedCertificate .
-- Managed certificates are tied to the lifecycle of a DomainMapping and cannot be updated or deleted via the AuthorizedCertificates API.
+- Index Applications (interface) AuthorizedCertificates (interface) AuthorizedDomains (interface) DomainMappings (interface) Firewall (interface) Instances (interface) Services (interface) Versions (interface) ApiConfigHandler (message) ApiEndpointHandler (message) Application (message) Application.DatabaseType (enum) Application.FeatureSettings (message) Application.IdentityAwareProxy (message) Application.ServingStatus (enum) AuthFailAction (enum) AuthorizedCertificate (message) AuthorizedCertificateView (enum) AuthorizedDomain (message) AutomaticScaling (message) BasicScaling (message) BatchUpdateIngressRulesRequest (message) BatchUpdateIngressRulesResponse (message) CertificateRawData (message) CloudBuildOptions (message) ContainerInfo (message) CpuUtilization (message) CreateApplicationRequest (message) CreateAuthorizedCertificateRequest (message) CreateDomainMappingRequest (message) CreateIngressRuleRequest (message) CreateVersionMetadataV1 (message) CreateVersionRequest (message) DebugInstanceRequest (message) DeleteAuthorizedCertificateRequest (message) DeleteDomainMappingRequest (message) DeleteIngressRuleRequest (message) DeleteInstanceRequest (message) DeleteServiceRequest (message) DeleteVersionRequest (message) Deployment (message) DiskUtilization (message) DomainMapping (message) DomainOverrideStrategy (enum) EndpointsApiService (message) EndpointsApiService.RolloutStrategy (enum) Entrypoint (message) ErrorHandler (message) ErrorHandler.ErrorCode (enum) FileInfo (message) FirewallRule (message) FirewallRule.Action (enum) FlexibleRuntimeSettings (message) GetApplicationRequest (message) GetAuthorizedCertificateRequest (message) GetDomainMappingRequest (message) GetIngressRuleRequest (message) GetInstanceRequest (message) GetServiceRequest (message) GetVersionRequest (message) HealthCheck (message) InboundServiceType (enum) Instance (message) Instance.Availability (enum) Instance.Liveness (message) Instance.Liveness.LivenessState (enum) Library (message) ListAuthorizedCertificatesRequest (message) ListAuthorizedCertificatesResponse (message) ListAuthorizedDomainsRequest (message) ListAuthorizedDomainsResponse (message) ListDomainMappingsRequest (message) ListDomainMappingsResponse (message) ListIngressRulesRequest (message) ListIngressRulesResponse (message) ListInstancesRequest (message) ListInstancesResponse (message) ListServicesRequest (message) ListServicesResponse (message) ListVersionsRequest (message) ListVersionsResponse (message) LivenessCheck (message) LocationMetadata (message) LoginRequirement (enum) ManagedCertificate (message) ManagementStatus (enum) ManualScaling (message) Network (message) NetworkSettings (message) NetworkSettings.IngressTrafficAllowed (enum) NetworkUtilization (message) OperationMetadataV1 (message) ReadinessCheck (message) RepairApplicationRequest (message) RequestUtilization (message) ResourceRecord (message) ResourceRecord.RecordType (enum) Resources (message) ScriptHandler (message) SecurityLevel (enum) Service (message) ServingStatus (enum) SslSettings (message) SslSettings.SslManagementType (enum) StandardSchedulerSettings (message) StaticFilesHandler (message) TrafficSplit (message) TrafficSplit.ShardBy (enum) UpdateApplicationRequest (message) UpdateAuthorizedCertificateRequest (message) UpdateDomainMappingRequest (message) UpdateIngressRuleRequest (message) UpdateServiceRequest (message) UpdateVersionRequest (message) UrlDispatchRule (message) UrlMap (message) UrlMap.RedirectHttpResponseCode (enum) Version (message) VersionView (enum) Volume (message) VpcAccessConnector (message) VpcAccessConnector.EgressSetting (enum) ZipInfo (message) Applications Manages App Engine applications.
+- Defaults to the default channel. threadsafe bool Whether multiple requests can be dispatched to this version at once. vm bool Whether to deploy this version in a container on a virtual machine. flexible runtime settings FlexibleRuntimeSettings Settings for App Engine flexible runtimes. app engine apis bool Allows App Engine second generation runtimes to access the legacy bundled services. beta settings map<string, string> Metadata settings that are supplied to this version to enable beta runtime features. env string App Engine execution environment for this version.
+- Authorization requires the following IAM permission on the specified resource parent : appengine.applications.get view AuthorizedCertificateView Controls the set of fields returned in the LIST response. page size int32 Maximum results to return per page. page token string Continuation token for fetching the next page of results.
+- Authorization Scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/appengine.admin https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-platform.read-only For more information, see the Authentication Overview .
 
 ### "REST Resource: apps.authorizedCertificates \_|\_ App Engine Admin API \_\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates](https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates)
-- Source ID: `site-docs-reference`
-- Final score: 80
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is the App Engine Admin API reference for `apps.authorizedCertificates` and defines the `AuthorizedCertificate` resource used to create and manage SSL certificates.
-
-Evidence snippets:
-- Methods create Uploads the specified SSL certificate. delete Deletes the specified SSL certificate. get Gets the specified SSL certificate. list Lists all SSL certificates the user is authorized to administer. patch Updates the specified SSL certificate.
-- Home Technology areas App Engine Admin API Reference Send feedback REST Resource: apps.authorizedCertificates Stay organized with collections Save and categorize content based on your preferences.
-- To update the renewal time on this certificate, upload an SSL certificate with a different expiration time using AuthorizedCertificates.UpdateAuthorizedCertificate .
-- Managed certificates are tied to the lifecycle of a DomainMapping and cannot be updated or deleted via the AuthorizedCertificates API.
-
-### "Method: apps.authorizedCertificates.list \_|\_ App Engine Admin API \_|\_\
-
-- URL: [https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates/list](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates/list)
 - Source ID: `site-api-reference`
-- Final score: 58
-- Re-rank relevance: N/A
+- Final score: 93
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- JSON representation { "certificates" : [ { object ( AuthorizedCertificate ) } ] , "nextPageToken" : string } Fields certificates[] object ( AuthorizedCertificate ) The SSL certificates the user is authorized to administer. nextPageToken string Continuation token for fetching the next page of results.
-- Home Technology areas App Engine Admin API Reference Send feedback Method: apps.authorizedCertificates.list Stay organized with collections Save and categorize content based on your preferences.
-- Response body If successful, the response body contains data with the following structure: Response message for AuthorizedCertificates.ListAuthorizedCertificates .
-- HTTP request GET https://appengine.googleapis.com/v1/{parent=apps/ }/authorizedCertificates The URL uses gRPC Transcoding syntax.
+- Resource: AuthorizedCertificate JSON representation CertificateRawData JSON representation ManagedCertificate JSON representation ManagementStatus Methods Resource: AuthorizedCertificate An SSL certificate that a user has been authorized to administer.
+- Home Technology areas App Engine Admin API Reference Send feedback REST Resource: apps.authorizedCertificates Stay organized with collections Save and categorize content based on your preferences.
+- Methods create Uploads the specified SSL certificate. delete Deletes the specified SSL certificate. get Gets the specified SSL certificate. list Lists all SSL certificates the user is authorized to administer. patch Updates the specified SSL certificate.
+- JSON representation { "lastRenewalTime" : string , "status" : enum ( ManagementStatus ) } Fields lastRenewalTime string ( Timestamp format) Time at which the certificate was last renewed.
+
+### App Engine audit logging \_|\_ App Engine Admin API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging](https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging)
+- Source ID: `site-api-reference`
+- Final score: 70
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Permission type Methods ADMIN READ google.appengine.v1.Applications.GetApplication google.appengine.v1.Services.GetService google.appengine.v1.Services.ListServices google.appengine.v1.Versions.GetVersion google.appengine.v1.Versions.ListVersions google.appengine.v1beta.Applications.GetApplication google.appengine.v1beta.Services.GetService google.appengine.v1beta.Services.ListServices google.appengine.v1beta.Versions.GetVersion google.appengine.v1beta.Versions.ListVersions ADMIN WRITE google.appengine.v1.Applications.CreateApplication (LRO) google.appengine.v1.Applications.RepairApplication (LRO) google.appengine.v1.Applications.UpdateApplication (LRO) google.appengine.v1.AuthorizedCertificates.CreateAuthorizedCertificate google.appengine.v1.AuthorizedCertificates.DeleteAuthorizedCertificate google.appengine.v1.AuthorizedCertificates.UpdateAuthorizedCertificate google.appengine.v1.DomainMappings.CreateDomainMapping (LRO) google.appengine.v1.DomainMappings.DeleteDomainMapping (LRO) google.appengine.v1.DomainMappings.UpdateDomainMapping (LRO) google.appengine.v1.Firewall.BatchUpdateIngressRules google.appengine.v1.Firewall.CreateIngressRule google.appengine.v1.Firewall.DeleteIngressRule google.appengine.v1.Firewall.UpdateIngressRule google.appengine.v1.Instances.DebugInstance (LRO) google.appengine.v1.Instances.DeleteInstance (LRO) google.appengine.v1.Services.DeleteService (LRO) google.appengine.v1.Services.UpdateService (LRO) google.appengine.v1.Versions.CreateVersion (LRO) google.appengine.v1.Versions.DeleteVersion (LRO) google.appengine.v1.Versions.UpdateVersion (LRO) google.appengine.v1alpha.AuthorizedCertificates.DeleteAuthorizedCertificate google.appengine.v1alpha.AuthorizedCertificates.UpdateAuthorizedCertificate google.appengine.v1alpha.DomainMappings.CreateDomainMapping (LRO) google.appengine.v1alpha.DomainMappings.DeleteDomainMapping (LRO) google.appengine.v1alpha.DomainMappings.UpdateDomainMapping (LRO) google.appengine.v1beta.Applications.CreateApplication (LRO) google.appengine.v1beta.Applications.RepairApplication (LRO) google.appengine.v1beta.Applications.UpdateApplication (LRO) google.appengine.v1beta.AuthorizedCertificates.CreateAuthorizedCertificate google.appengine.v1beta.AuthorizedCertificates.DeleteAuthorizedCertificate google.appengine.v1beta.AuthorizedCertificates.UpdateAuthorizedCertificate google.appengine.v1beta.DomainMappings.CreateDomainMapping (LRO) google.appengine.v1beta.DomainMappings.DeleteDomainMapping (LRO) google.appengine.v1beta.DomainMappings.UpdateDomainMapping (LRO) google.appengine.v1beta.Firewall.BatchUpdateIngressRules google.appengine.v1beta.Firewall.CreateIngressRule google.appengine.v1beta.Firewall.DeleteIngressRule google.appengine.v1beta.Firewall.UpdateIngressRule google.appengine.v1beta.Instances.DebugInstance (LRO) google.appengine.v1beta.Instances.DeleteInstance (LRO) google.appengine.v1beta.Services.DeleteService (LRO) google.appengine.v1beta.Services.UpdateService (LRO) google.appengine.v1beta.Versions.CreateVersion (LRO) google.appengine.v1beta.Versions.DeleteVersion (LRO) google.appengine.v1beta.Versions.UpdateVersion (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for App Engine. google.appengine.v1.Applications The following audit logs are associated with methods belonging to google.appengine.v1.Applications .
+- Filter for this method : protoPayload.methodName="google.appengine.v1beta.Applications.GetApplication" RepairApplication Method : google.appengine.v1beta.Applications.RepairApplication Audit log type : Admin activity Permissions : appengine.applications.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.appengine.v1beta.Applications.RepairApplication" UpdateApplication Method : google.appengine.v1beta.Applications.UpdateApplication Audit log type : Admin activity Permissions : appengine.applications.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.appengine.v1beta.Applications.UpdateApplication" google.appengine.v1beta.AuthorizedCertificates The following audit logs are associated with methods belonging to google.appengine.v1beta.AuthorizedCertificates .
+- Filter for this method : protoPayload.methodName="google.appengine.v1beta.AuthorizedCertificates.CreateAuthorizedCertificate" DeleteAuthorizedCertificate Method : google.appengine.v1beta.AuthorizedCertificates.DeleteAuthorizedCertificate Audit log type : Admin activity Permissions : appengine.applications.update - ADMIN WRITE Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="google.appengine.v1beta.AuthorizedCertificates.ListAuthorizedCertificates" UpdateAuthorizedCertificate Method : google.appengine.v1beta.AuthorizedCertificates.UpdateAuthorizedCertificate Audit log type : Admin activity Permissions : appengine.applications.update - ADMIN WRITE Method is a long-running or streaming operation : No.
 

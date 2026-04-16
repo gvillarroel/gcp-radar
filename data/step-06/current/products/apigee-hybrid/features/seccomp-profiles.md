@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:33:10.239Z"
+generated_at: "2026-04-14T04:54:52.829Z"
 product_name: "Apigee hybrid"
 product_slug: "apigee-hybrid"
 feature_name: "Seccomp Profiles"
@@ -9,17 +9,16 @@ latest_feature_date: "2025-12-19"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
-  - "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-change-target-endpoint"
 keywords:
-  - "system call filtering"
-  - "runtime seccomp profile"
-  - "Seccomp Profiles"
-  - "container system calls"
-  - "seccomp profile"
-  - "kubernetes security context"
-  - "runtime component hardening"
+  - "profiles"
   - "seccomp"
+  - "limit"
+  - "components"
+  - "runtime"
+  - "supports"
 ---
 
 # Seccomp Profiles
@@ -37,39 +36,36 @@ Apigee Hybrid supports Seccomp Profiles for runtime components to limit containe
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref](https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref)
-- [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-change-target-endpoint](https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-change-target-endpoint)
 
 ## Supporting Pages
 
-### Configuration property reference \_|\_ Apigee \_|\_ Google Cloud Documentation
+### Options for configuring TLS \_|\_ Apigee \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref](https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref)
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls)
 - Source ID: `site-docs-reference`
-- Final score: 62
+- Final score: 46
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
-Evidence snippets:
-- See Configure Seccomp profiles for pod security . mintTaskScheduler.gsa Advanced Introduced in version: 1.15.1 Default value: None Chart: apigee-org The email address of the apigee-mint-task-scheduler Google IAM service account (GSA) to associate with the corresponding Kubernetes service account when enabling Workload Identity on GKE clusters using Helm charts.
-- See Configure Seccomp profiles for pod security . envs[].serviceAccountPaths.runtime Basic Introduced in version: 1.4.0 Default value: None Chart: apigee-env Path to file on local system to a Google Service Account key with the Cloud Trace Agent role, usually the apigee-runtime service account.
-- See Configure Seccomp profiles for pod security . cassandra.storage.capacity Basic Introduced in version: 1.0.0 Default value: 10Gi Chart: apigee-datastore Required if storage.storageclass is specified Specifies the disk size required, in mebibytes (Mi) or gibibytes (Gi).
-- See Configure Seccomp profiles for pod security . metrics.adapter.image.pullPolicy Advanced Introduced in version: 1.8.1 Default value: IfNotPresent Chart: apigee-telemetry Determines when kubelet pulls the pod's Docker image.
+### Secure an API with OAuth 2.0 \_|\_ Apigee \_|\_ Google Cloud Documentation
 
-### Apigee hybrid release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 52
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 40
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
-Evidence snippets:
-- For information on container image support in Apigee hybrid releases, see Apigee release process . v1.16.0 Feature Seccomp Profiles Apigee Hybrid now offers the capability to apply Seccomp Profiles to your runtime components, significantly enhancing the security posture of your deployment.
-- To enable the feature, see Configure Seccomp profiles for pod security . v1.16.0 Feature apigee-guardrails service account In v1.16.0, Apigee Hybrid introduces an apigee-guardrails Google IAM service account.
-- Seccomp profiles are not enabled by default.
+### Step 5: Change the target endpoint \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-change-target-endpoint](https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-change-target-endpoint)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 34
+- Re-rank relevance: N/A
 

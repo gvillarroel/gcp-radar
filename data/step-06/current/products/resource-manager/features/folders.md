@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:53.029Z"
+generated_at: "2026-04-15T13:51:00.097Z"
 product_name: "Resource Manager"
 product_slug: "resource-manager"
 feature_name: "Folders"
@@ -9,18 +9,18 @@ latest_feature_date: "2017-07-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/resource-manager/docs/access-control-folders"
-  - "https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles"
-  - "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects"
+  - "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder"
+  - "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders"
+  - "https://docs.cloud.google.com/resource-manager/docs/manage-folders"
 keywords:
   - "folders"
   - "let"
   - "you"
   - "organize"
   - "projects"
-  - "and"
   - "nested"
   - "within"
+  - "resource"
 ---
 
 # Folders
@@ -42,44 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/resource-manager/docs/access-control-folders](https://docs.cloud.google.com/resource-manager/docs/access-control-folders)
-- [https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles](https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles)
-- [https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects](https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects)
+- [https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder](https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder)
+- [https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders](https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders)
+- [https://docs.cloud.google.com/resource-manager/docs/manage-folders](https://docs.cloud.google.com/resource-manager/docs/manage-folders)
 
 ## Supporting Pages
 
-### Access control for folders with IAM | Resource Manager | Google Cloud Documentation
+### "Manage projects within folders \_|\_ Resource Manager \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/resource-manager/docs/access-control-folders](https://docs.cloud.google.com/resource-manager/docs/access-control-folders)
+- URL: [https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder](https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder)
 - Source ID: `site-iam-reference`
-- Final score: 66
+- Final score: 183
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Access control for folders with IAM Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/access-control-folders Configure IAM roles and allow policies for Google Cloud folders.
-- Control resource access, apply least privilege, and manage permissions across your organization&#x27;s hierarchy.
+- Home Documentation Security Resource Manager Guides Send feedback Manage projects within folders Stay organized with collections Save and categorize content based on your preferences.
+- DISPLAY NAME : the display name of the folder being moved, for example "My Awesome Folder." The Move Folder response: { "name": "operations/fm.1234567890", "metadata": { "@type": "type.googleapis.com/google.cloud.resourcemanager.v3.FolderOperation", "displayName": " DISPLAY NAME ", "operationType": "MOVE" } } The Get Operation curl request: curl -H "Authorization: Bearer ${bearer token}" \ https://cloudresourcemanager.googleapis.com/v3/operations/fm.1234567890 The Get Operation response: { "name": "operations/fm.1234567890", "metadata": { "@type": "type.googleapis.com/google.cloud.resourcemanager.v3.FolderOperation", "displayName": " DISPLAY NAME ", "operationType": "MOVE" }, "done": true, "response": { "@type": "type.googleapis.com/google.cloud.resourcemanager.v3.Folder", "name": "folders/12345", "parent": "folders/98765", "displayName": " DISPLAY NAME ", "lifecycleState": "ACTIVE", "createTime": "2017-07-19T23:29:26.018Z", "updateTime": "2017-07-20T00:54:44.295Z" } } View or list projects within a folder To view or list projects that are direct children of a folder, you must have the Folder Viewer role ( roles/resourcemanager.folderViewer ) or the Browser role ( roles/browser ) on the folder.
+- This page describes how to organize your Google Cloud hierarchy by nesting projects within folders.
+- HTTP request: GET https://cloudresourcemanager.googleapis.com/v3/projects?parent=folders/ FOLDER ID Example curl command: Bash curl -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://cloudresourcemanager.googleapis.com/v3/projects?parent=folders/ FOLDER ID " Replace FOLDER ID with the unique ID of the folder.
 
-### Assign Identity and Access Management roles and permissions | Resource Manager | Google Cloud Documentation
+### Create folders \_|\_ Resource Manager \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles](https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles)
-- Source ID: `site-iam-reference`
-- Final score: 62
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Assign Identity and Access Management roles and permissions Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles To gain these permissions, ask your administrator to grant the suggested role at the appropriate level of the resource hierarchy.
-- To migrate a project between organization resources, you need the following roles on the project, its parent resource, and the destination resource: Project IAM Admin (roles/resourcemanager.projectIamAdmin) on the project that you want to migrate between organization resources.
-
-### Create projects | Resource Manager | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects](https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects)
-- Source ID: `site-docs-root`
-- Final score: 60
+- URL: [https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders](https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders)
+- Source ID: `site-docs-reference-2`
+- Final score: 157
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Create projects Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects Create and manage Google Cloud projects.
-- Define project IDs, apply tags, and adjust quotas via console, gcloud, or Cloud Resource Manager API.
+- This page describes how to create Google Cloud folders to group and organize projects in a resource hierarchy.
+- POST https://cloudresourcemanager.googleapis.com/v3/projects/ Authorization: Content-Type: application/json { "display name": "our-folder-456", "parent": "organizations/123", "tags": { "key": "123/environment" "value": "production" }, "tags": { "key": "123/costCenter" "value": "marketing" } } Configure access to folders To configure access to folders, you must have the Folder IAM Administrator or Folder Admin role at the parent level.
+- Home Documentation Security Resource Manager Guides Send feedback Create folders Stay organized with collections Save and categorize content based on your preferences.
+- A common situation is to create folders that in turn contain additional folders or projects, as shown in the resource hierarchy earlier.
+
+### "View, update, and delete folders \_|\_ Resource Manager \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/resource-manager/docs/manage-folders](https://docs.cloud.google.com/resource-manager/docs/manage-folders)
+- Source ID: `site-iam-reference`
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Security Resource Manager Guides Send feedback View, update, and delete folders Stay organized with collections Save and categorize content based on your preferences.
+- Undelete : If you accidentally delete a folder, you can restore it within the 30-day window using the gcloud resource-manager folders undelete command or the API.
+- You can't create new projects or sub-folders within a soft-deleted folder.
+- What's next Learn about managing projects within folders .
 

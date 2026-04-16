@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.848Z"
+generated_at: "2026-04-12T12:14:02.775Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Firestore emulator support for Datastore mode"
 feature_slug: "firestore-emulator-support-for-datastore-mode"
 latest_feature_date: "2024-03-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator"
   - "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial"
   - "https://docs.cloud.google.com/datastore/docs/store-query-data"
+  - "https://docs.cloud.google.com/datastore/docs/best-practices"
 keywords:
   - "firestore"
   - "emulator"
@@ -26,7 +27,7 @@ keywords:
 # Firestore emulator support for Datastore mode
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The Firestore emulator can be used to test Firestore in Datastore mode behavior.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator](https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator)
 - [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
 - [https://docs.cloud.google.com/datastore/docs/store-query-data](https://docs.cloud.google.com/datastore/docs/store-query-data)
+- [https://docs.cloud.google.com/datastore/docs/best-practices](https://docs.cloud.google.com/datastore/docs/best-practices)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator](https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator)
 - Source ID: `site-docs-root`
-- Final score: 238
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 302
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Automatically removing the variables If your application and the emulator run on the same machine, you can remove the environment variables automatically: Linux / macOS Run env-unset using command substitution: $(gcloud beta emulators datastore env-unset) Windows Create and run a batch file using output from env-unset : gcloud beta emulators datastore env - unset > remove vars . cmd && remove vars . cmd Your application will now connect to your production Datastore mode database.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
 - Source ID: `site-iam-reference`
-- Final score: 214
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 280
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For more information, see Set up authentication for a local development environment . def delete task task id require "google/cloud/datastore" datastore = Google :: Cloud :: Datastore . new task = datastore . find "Task" , task id datastore . delete task end Running a query In addition to retrieving entities from Datastore mode directly by their keys, an application can perform a query to retrieve them by the values of their properties.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/store-query-data](https://docs.cloud.google.com/datastore/docs/store-query-data)
 - Source ID: `site-docs-root`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 259
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Store and query data in Firestore in Datastore mode This page shows you how to store and query data in Firestore in Datastore mode using the Google Cloud console.
 - For more guidance on selecting a database mode and for a feature-by-feature comparison, see choosing between Native Mode and Datastore Mode .
 - When you create a new Firestore database, you have the option to use Firestore in either Native Mode or Datastore mode.
 - The location applies to both Datastore mode databases and App Engine apps for your Google Cloud project.
+
+### Best Practices \_|\_ Datastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/best-practices](https://docs.cloud.google.com/datastore/docs/best-practices)
+- Source ID: `site-iam-reference`
+- Final score: 251
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can use the best practices listed here as a quick reference of what to keep in mind when building an application that uses Firestore in Datastore mode.
+- You should ramp up traffic to new kinds gradually in order to give Firestore in Datastore mode sufficient time to prepare for the increased traffic.
+- You can use sharding if you need to write to a portion of the key range at a higher rate than Firestore in Datastore mode permits.
+- You can use replication if you need to read a portion of the key range at a higher rate than Firestore in Datastore mode permits.
 

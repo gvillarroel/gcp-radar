@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.102Z"
+generated_at: "2026-04-14T00:23:22.667Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Stackdriver Monitoring"
 feature_slug: "stackdriver-monitoring"
 latest_feature_date: "2018-12-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
-  - "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics"
+  - "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/monitoring"
 keywords:
   - "stackdriver"
   - "monitoring"
-  - "is"
   - "automatically"
   - "enabled"
-  - "on"
   - "dataproc"
   - "clusters"
+  - "collect"
+  - "report"
 ---
 
 # Stackdriver Monitoring
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +38,53 @@ Stackdriver Monitoring is automatically enabled on Dataproc clusters to collect 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient)
+- [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics)
+- [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/monitoring](https://docs.cloud.google.com/dataproc-metastore/docs/monitoring)
 
 ## Supporting Pages
 
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
+### Managed Service for Apache Spark metrics \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics)
 - Source ID: `site-docs-root`
-- Final score: 208
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 115
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Google Stackdriver Monitoring (Beta) is automatically enabled on Cloud Dataproc clusters, and collects and reports HDFS, YARN, and other Cloud Dataproc cluster and job metrics.
-- Stackdriver Monitoring is automatically enabled on Cloud Dataproc clusters, and collects and reports HDFS, YARN, and other Cloud Dataproc cluster and job metrics.
-- January 30, 2025 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.89 1.2.33 2.2.33 Change Dataproc on Compute Engine: Private Google Access is now automatically enabled in the configured subnetwork when creating clusters with internal IP addresses .
-- December 16, 2016 Feature Google Stackdriver Agent Installed – The Stackdriver monitoring agent is now installed by default on Cloud Dataproc clusters.
+- Enable custom metric collection You can use the gcloud CLI or the Dataproc API to enable the collection of custom metrics from one or more metric sources. gcloud CLI Custom metric collection Use the gcloud dataproc clusters create --metric-sources flag to enable the collection of custom metrics from one or more metric sources. gcloud dataproc clusters create cluster-name \ --metric-sources= METRIC SOURCE(s) \ ... other flags Notes: --metric-sources : Required to enable custom metric collection.
+- Managed Service for Apache Spark resource metric collection Cloud Monitoring collects metrics related to the following Managed Service for Apache Spark resources: Cloud Dataproc Cluster Cloud Dataproc Job Cloud Dataproc Batch Cloud Dataproc Session Managed Service for Apache Spark resource metrics are collected in the following format: dataproc.googleapis.com/ RESOURCE / METRIC , and include the collection of several OSS metrics.
+- Google Cloud Observability collects and ingests metrics, events, and metadata from Managed Service for Apache Spark clusters, including per-cluster HDFS, YARN, job, and operation metrics, to generate insights via dashboards and charts (see Cloud Monitoring Managed Service for Apache Spark metrics ).
+- Override metrics file gcloud dataproc clusters create cluster-name \ --metric-sources= METRIC-SOURCE(s) \ --metric-overrides-file= METRIC OVERRIDES FILENAME \ ... other flags Notes: --metric-sources : Required to enable custom metric collection.
 
-### "Class SessionControllerAsyncClient (5.26.0) \_|\_ Python client libraries\
+### "ClusterConfig \_|\_ Managed Service for Apache Spark \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 async def sample terminate session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 async def sample create session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 async def sample delete session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 async def sample list sessions(): Create a client client = dataproc v1 .
-
-### "Class SessionControllerClient (5.26.0) \_|\_ Python client libraries \_\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_controller.SessionControllerClient)
-- Source ID: `site-python-reference`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig)
+- Source ID: `site-docs-reference`
+- Final score: 107
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 def sample terminate session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 def sample create session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 def sample delete session(): Create a client client = dataproc v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataproc v1 def sample list sessions(): Create a client client = dataproc v1 .
+- If this source is enabled, Dataproc enables the monitoring agent in Compute Engine, and collects monitoring agent metrics, which are published with an agent.googleapis.com prefix.
+- SINGLE NODE https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/single-node-clusters ZERO SCALE Clusters that can use only secondary workers and be scaled down to zero secondary worker nodes.
+- For example, if both SPARK and YARN metric sources are enabled, and overrides are provided for Spark metrics only, all YARN metrics are collected.
+- An optional list of Compute Engine zones where the Dataproc cluster will not be located when Auto Zone is enabled.
+
+### Cloud Monitoring \_|\_ Dataproc Metastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/monitoring](https://docs.cloud.google.com/dataproc-metastore/docs/monitoring)
+- Source ID: `site-docs-root-2`
+- Final score: 97
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Access service metrics in Monitoring Dataproc Metastore service resource metrics are automatically enabled on Dataproc Metastore services.
+- Home Documentation Data analytics Dataproc Metastore Guides Send feedback Cloud Monitoring Stay organized with collections Save and categorize content based on your preferences.
+- Console In the Google Cloud console, go to the Cloud Monitoring > Metrics explorer page: Go to the Metrics explorer page From the "Find resource type and metric" drop-down list, select the resource Dataproc Metastore Service .
+- Google Cloud Observability collects and ingests metrics, events, and metadata from Dataproc Metastore services to generate insights using dashboards and charts.
 

@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.132Z"
+generated_at: "2026-04-12T20:57:08.274Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "App Engine standard environment regional expansion to asia-northeast3"
 feature_slug: "app-engine-standard-environment-regional-expansion-to-asia-northeast3"
 latest_feature_date: "2020-03-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api"
+  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started"
+  - "https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime"
 keywords:
-  - "expansion"
-  - "regional"
-  - "environment"
-  - "asia"
-  - "standard"
-  - "engine"
   - "app"
-  - "to"
+  - "engine"
+  - "standard"
+  - "environment"
+  - "regional"
+  - "expansion"
+  - "asia"
+  - "northeast3"
 ---
 
 # App Engine standard environment regional expansion to asia-northeast3
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ App Engine standard environment became available in the asia-northeast3 (Seoul) 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api)
+- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
+- [https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime](https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime)
 
 ## Supporting Pages
 
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
+### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- Source ID: `site-docs-root`
-- Final score: 232
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 30
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Build a Go app on App Engine Stay organized with collections Save and categorize content based on your preferences.
-- When your app is running on App Engine, the PORT environment variable is set for you, but when testing your app locally, you can set PORT to any preferred value.
-- For a deeper dive into how App Engine works, see the Go Runtime Environment .
-- Deploy your web service on App Engine In your go-app directory where your app.yaml file is located, deploy your web service to App Engine using the following command: gcloud app deploy To launch your browser and view your web service at https:// PROJECT ID .
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.
+- The Users API allows an App Engine app to perform the following tasks: Detect whether the current user is signed in using a Google Account.
+- IAP doesn't protect against activity within a project, such as one App Engine service accessing another service in the same project.
 
-### "appengine-web.xml reference \_|\_ App Engine standard environment \_|\_\
+### "An Overview of the Admin API \_|\_ App Engine Admin API \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- Source ID: `site-docs-reference`
-- Final score: 230
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 22
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The appengine-web.xml file can define environment variables that are set when the application is running. <env-variables> <env-var name="DEFAULT ENCODING" value="UTF-8" /> </env-variables> To avoid conflicts with your local environment, the development server does not set environment variables based on this file, and requires that the local environment have these variables already set to matching values. export DEFAULT ENCODING = "UTF-8" dev appserver war When deployed to App Engine, the environment is created with these variables already set.
-- If you want to disallow the use of HTTPS for the application, put the following in the appengine-web.xml file: <ssl-enabled>false</ssl-enabled> There is no way to disallow HTTPS for some URL paths and not others in the Java runtime environment. <static-error-handlers> Optional.
-- Home Documentation Application hosting App Engine Standard environment Reference Send feedback appengine-web.xml reference Stay organized with collections Save and categorize content based on your preferences.
-- App Engine uses a "precompilation" process with the Java bytecode of an app to enhance the performance of the app in the Java runtime environment.
+- With the Admin API, you can manage your App Engine applications in manners that best suit your environment or process.
+- Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.
+- The Admin API provides programmatic access to several of the App Engine administrative operations that are found in the Google Cloud console .
+- The App Engine Admin API is a RESTful API for managing your App Engine applications regardless of programming language.
 
-### "Package com.google.appengine.api (5.0.0) \_|\_ App Engine standard environment\
+### App Engine standard environment \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api)
-- Source ID: `site-docs-reference`
-- Final score: 220
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime](https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 20
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Reference Send feedback Package com.google.appengine.api (5.0.0) Stay organized with collections Save and categorize content based on your preferences.
-- When a namespace aware class (e.g., com.google.appengine.api.datastore.Key , com.google.appengine.api.datastore.Query and com.google.appengine.api.memcache.MemcacheService ) is constructed, it determines which namespace will be used by calling NamespaceManager#get() if it is otherwise unspecified.
-- The Task Queue com.google.appengine.api.taskqueue.Queue#add methods will forward the NamespaceManager settings into the task being added causing the added task to be executed with the same current namespace as the task creator.
-- ThreadManager ThreadManager exposes a ThreadFactory that allows App Engine applications to spawn new threads.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback App Engine standard environment Stay organized with collections Save and categorize content based on your preferences.
+- The App Engine standard environment is based on container instances running on Google's infrastructure.
+- Standard environment languages and runtimes The standard environment supports the following languages: Go Java Node.js PHP Python Ruby Instance classes The instance class determines the amount of memory and CPU available to each instance, the amount of free quota , and the cost per hour after your app exceeds the free quota.
+- Applications run in a secure, sandboxed environment, allowing the standard environment to distribute requests across multiple servers and scale servers to meet traffic demands.
 

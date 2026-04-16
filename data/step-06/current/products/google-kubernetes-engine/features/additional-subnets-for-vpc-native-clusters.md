@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:33.139Z"
+generated_at: "2026-04-14T04:42:56.676Z"
 product_name: "Google Kubernetes Engine"
 product_slug: "google-kubernetes-engine"
 feature_name: "Additional subnets for VPC-native clusters"
 feature_slug: "additional-subnets-for-vpc-native-clusters"
 latest_feature_date: "2025-10-09"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/scaling-rl-verl-gke"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies"
 keywords:
   - "additional"
   - "subnets"
-  - "for"
   - "vpc"
   - "native"
   - "clusters"
   - "let"
   - "create"
+  - "node"
 ---
 
 # Additional subnets for VPC-native clusters
 
 Product: Google Kubernetes Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ Additional subnets let VPC-native clusters create new node pools whose node and 
 
 Additional subnets let VPC-native clusters create new node pools whose node and Pod IPv4 addresses come from the added subnet ranges.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/scaling-rl-verl-gke](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/scaling-rl-verl-gke)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Deploy PostgreSQL to GKE using CloudNativePG \_|\_ Kubernetes Engine \_\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg)
+- Source ID: `site-docs-root-2`
+- Final score: 155
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Deploy Postgres The following manifest describes a PostgreSQL cluster as defined by the CloudNativePG operator's custom resource: apiVersion : postgresql.cnpg.io/v1 kind : Cluster metadata : name : gke-pg-cluster spec : description : "Standard GKE PostgreSQL cluster" imageName : ghcr.io/cloudnative-pg/postgresql:16.2 enableSuperuserAccess : true instances : 3 startDelay : 300 primaryUpdateStrategy : unsupervised postgresql : pg hba : - host all all 10.48.0.0/20 md5 bootstrap : initdb : database : app storage : storageClass : premium-rwo size : 2Gi resources : requests : memory : "1Gi" cpu : "1000m" limits : memory : "1Gi" cpu : "1000m" affinity : enablePodAntiAffinity : true tolerations : - key : cnpg.io/cluster effect : NoSchedule value : gke-pg-cluster operator : Equal additionalPodAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 podAffinityTerm : labelSelector : matchExpressions : - key : app.component operator : In values : - "pg-cluster" topologyKey : topology.kubernetes.io/zone monitoring : enablePodMonitor : true This manifest has the following fields: spec.instances : the number of cluster Pods spec.primaryUpdateStrategy : the rolling update strategy: Unsupervised : autonomously updates the primary cluster node after the replica nodes Supervised : manual switchover is required for the primary cluster node spec.postgresql : postgres.conf file parameter overrides, such as pg-hba rules, LDAP, and requirements for sync replicas to be met. spec.storage : storage-related settings, such as storage class, volume size, and write-ahead log settings. spec.bootstrap : parameters of the initial database created in the cluster, user credentials, and database restore options spec.resources : requests and limits for cluster Pods spec.affinity : affinity and anti-affinity rules of the cluster workloads Create a basic Postgres cluster Create a namespace: kubectl create ns pg-ns Create the PostgreSQL cluster using the custom resource: kubectl apply -n pg-ns -f manifests/01-basic-cluster/postgreSQL cluster.yaml This command might take several minutes to complete.
+- It brings the following features to PostgreSQL deployment: A declarative and Kubernetes-native way to manage and configure and PostgreSQL clusters Backup management using volume snapshots or Cloud Storage In-transit encrypted TLS connection, the ability to use your own certificate authority and integration with Certificate Manager for automated TLS certificate issuance and rotation Rolling updates for minor PostgreSQL releases Use of Kubernetes API server to maintain a PostgreSQL cluster status and failovers for high availability with no additional tools required A built-in Prometheus exporter configuration through user-defined metrics written in SQL Objectives Plan and deploy GKE infrastructure for Postgres Deploy and configure the CloudNativePG Postgres operator with Helm Deploy a PostgreSQL cluster Configure PostgreSQL authentication and observability Deployment architecture PostgreSQL has various deployment options from a standalone database server to a replicated highly-available cluster.
+- Connect to the cluster Configure kubectl to communicate with the cluster: gcloud container clusters get-credentials ${ KUBERNETES CLUSTER PREFIX } -cluster --location ${ REGION } Deploy the CloudNativePG operator Deploy the CloudNativePG to your Kubernetes cluster using a Helm chart: Add the CloudNativePG operator Helm Chart repository: helm repo add cnpg https://cloudnative-pg.github.io/charts Deploy the CloudNativePG operator using the Helm command-line tool: helm upgrade --install cnpg \ --namespace cnpg-system \ --create-namespace \ cnpg/cloudnative-pg The output is similar to the following: Release "cnpg" does not exist.
+- NAME AGE INSTANCES READY STATUS PRIMARY gke-pg-cluster 2m53s 3 3 Cluster in healthy state gke-pg-cluster-1 Inspect the resources Confirm that GKE created the resources for the cluster: kubectl get cluster,pod,svc,pvc,pdb,secret,cm -n pg-ns The output is similar to the following: NAME AGE INSTANCES READY STATUS PRIMARY cluster.postgresql.cnpg.io/gke-pg-cluster 32m 3 3 Cluster in healthy state gke-pg-cluster-1 NAME READY STATUS RESTARTS AGE pod/gke-pg-cluster-1 1/1 Running 0 31m pod/gke-pg-cluster-2 1/1 Running 0 30m pod/gke-pg-cluster-3 1/1 Running 0 29m NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/gke-pg-cluster-r ClusterIP 10.52.11.24 <none> 5432/TCP 32m service/gke-pg-cluster-ro ClusterIP 10.52.9.233 <none> 5432/TCP 32m service/gke-pg-cluster-rw ClusterIP 10.52.1.135 <none> 5432/TCP 32m NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGECLASS AGE persistentvolumeclaim/gke-pg-cluster-1 Bound pvc-bbdd1cdd-bdd9-4e7c-8f8c-1a14a87e5329 2Gi RWO standard 32m persistentvolumeclaim/gke-pg-cluster-2 Bound pvc-e7a8b4df-6a3e-43ce-beb0-b54ec1d24011 2Gi RWO standard 31m persistentvolumeclaim/gke-pg-cluster-3 Bound pvc-dac7f931-6ac5-425f-ac61-0cfc55aae72f 2Gi RWO standard 30m NAME MIN AVAILABLE MAX UNAVAILABLE ALLOWED DISRUPTIONS AGE poddisruptionbudget.policy/gke-pg-cluster 1 N/A 1 32m poddisruptionbudget.policy/gke-pg-cluster-primary 1 N/A 0 32m NAME TYPE DATA AGE secret/gke-pg-cluster-app kubernetes.io/basic-auth 3 32m secret/gke-pg-cluster-ca Opaque 2 32m secret/gke-pg-cluster-replication kubernetes.io/tls 2 32m secret/gke-pg-cluster-server kubernetes.io/tls 2 32m secret/gke-pg-cluster-superuser kubernetes.io/basic-auth 3 32m NAME DATA AGE configmap/cnpg-default-monitoring 1 32m configmap/kube-root-ca.crt 1 135m The operator creates the following resources: A cluster custom resource representing the PostgreSQL cluster which is controlled by the operator PersistentVolumeClaim resources with corresponding Persistent Volumes Secrets with user credentials for accessing the database and replication between Postgres nodes.
+
+### "Fine-tune and scale reinforcement learning with verl on GKE \_|\_ GKE AI/ML\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/scaling-rl-verl-gke](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/scaling-rl-verl-gke)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 148
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- These node pools use Spot VMs instances for cost efficiency: gcloud container node-pools create gpu-pool \ --cluster = ${ CLUSTER NAME } \ --location = ${ NODE LOCATION } \ --machine-type = ${ MACHINE TYPE } \ --accelerator = type = ${ GPU TYPE } ,count = 8 ,gpu-driver-version = DEFAULT \ --spot \ --enable-autoscaling \ --num-nodes = 0 \ --total-max-nodes = 10 \ --additional-node-network = network = ${ GVNIC NETWORK PREFIX } -net,subnetwork = ${ GVNIC NETWORK PREFIX } -sub \ --additional-node-network = network = ${ RDMA NETWORK PREFIX } -net,subnetwork = ${ RDMA NETWORK PREFIX } -sub-0 \ --additional-node-network = network = ${ RDMA NETWORK PREFIX } -net,subnetwork = ${ RDMA NETWORK PREFIX } -sub-1 \ --additional-node-network = network = ${ RDMA NETWORK PREFIX } -net,subnetwork = ${ RDMA NETWORK PREFIX } -sub-2 \ --additional-node-network = network = ${ RDMA NETWORK PREFIX } -net,subnetwork = ${ RDMA NETWORK PREFIX } -sub-3 \ --additional-node-network = network = ${ RDMA NETWORK PREFIX } -net,subnetwork = ${ RDMA NETWORK PREFIX } -sub-4 \ --additional-node-network = network = ${ RDMA NETWORK PREFIX } -net,subnetwork = ${ RDMA NETWORK PREFIX } -sub-5 \ --additional-node-network = network = ${ RDMA NETWORK PREFIX } -net,subnetwork = ${ RDMA NETWORK PREFIX } -sub-6 \ --additional-node-network = network = ${ RDMA NETWORK PREFIX } -net,subnetwork = ${ RDMA NETWORK PREFIX } -sub-7 Install the NCCL RDMA installer used for Standard clusters: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/refs/heads/master/gpudirect-rdma/nccl-rdma-installer.yaml Configure network mappings Inspect the network-mapping.yaml manifest: Copyright 2026 Google LLC.
+- Autopilot Create an Autopilot cluster: gcloud container clusters create-auto ${ CLUSTER NAME } \ --location = ${ CONTROL PLANE LOCATION } \ --enable-multi-networking \ --enable-ray-operator Get credentials for your cluster: gcloud container clusters get-credentials ${ CLUSTER NAME } \ --location = ${ CONTROL PLANE LOCATION } Install the NCCL RDMA installer for Autopilot: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/refs/heads/master/gpudirect-rdma/nccl-rdma-installer-autopilot.yaml Standard Create a Standard cluster: gcloud container clusters create ${ CLUSTER NAME } \ --location = ${ CONTROL PLANE LOCATION } \ --enable-dataplane-v2 \ --enable-ip-alias \ --enable-multi-networking \ --addons = RayOperator,GcsFuseCsiDriver \ --machine-type = c2standard8 \ --num-nodes = 1 \ --min-nodes = 1 \ --max-nodes = 5 \ --enable-autoscaling Get credentials for your cluster: gcloud container clusters get-credentials ${ CLUSTER NAME } --location = ${ ZONE } Create the GPU node pool.
+- Create RDMA network and subnets Create a VPC network for the gVNIC interface: gcloud compute networks create ${ GVNIC NETWORK PREFIX } -net \ --subnet-mode = custom \ --project = ${ PROJECT } gcloud compute networks subnets create ${ GVNIC NETWORK PREFIX } -sub \ --network = ${ GVNIC NETWORK PREFIX } -net \ --location = ${ CONTROL PLANE LOCATION } \ --range = 192 .168.0.0/24 gcloud compute firewall-rules create ${ GVNIC NETWORK PREFIX } -internal \ --network = ${ GVNIC NETWORK PREFIX } -net \ --action = ALLOW \ --rules = tcp:0-65535,udp:0-65535,icmp \ --source-ranges = 192 .168.0.0/16 Create a VPC network and subnets for RDMA with 8 subnets for 8 GPUs: gcloud beta compute networks create ${ RDMA NETWORK PREFIX } -net \ --network-profile = ${ CONTROL PLANE LOCATION } -vpc-roce \ --subnet-mode = custom for N in $( seq 0 7 ) ; do gcloud compute networks subnets create ${ RDMA NETWORK PREFIX } -sub- $N \ --network = ${ RDMA NETWORK PREFIX } -net \ --location = ${ CONTROL PLANE LOCATION } \ --range = 192 .168. $(( N + 1 )) .0/24 & done wait Clone the sample repository: git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples.git cd kubernetes-engine-samples Navigate to the working directory: cd ai-ml/verl-on-gke Create the GKE cluster You can set verl in a GKE Autopilot or Standard cluster.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : gvnic-1 spec : vpc : ${GVNIC NETWORK PREFIX}-net vpcSubnet : ${GVNIC NETWORK PREFIX}-sub deviceMode : NetDevice --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : gvnic-1 spec : type : "Device" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : gvnic-1 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-0 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-0 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-0 spec : type : "Device" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-0 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-1 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-1 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-1 spec : type : "Device" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-1 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-2 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-2 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-2 spec : type : "Device" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-2 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-3 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-3 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-3 spec : type : "Device" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-3 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-4 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-4 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-4 spec : type : "Device" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-4 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-5 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-5 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-5 spec : type : "Device" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-5 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-6 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-6 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-6 spec : type : "Device" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-6 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-7 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-7 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-7 spec : type : "Device" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-7 Apply the manifest: kubectl apply -f network-mapping.yaml Prepare data and storage Create a Cloud Storage bucket: gcloud storage buckets create gs:// ${ GS BUCKET } --location = ${ REGION } --enable-hierarchical-namespace --uniform-bucket-level-access Create a Kubernetes Service Account (KSA) and bind it to the bucket: kubectl create serviceaccount ${ KSA NAME } --namespace ${ NAMESPACE } gcloud storage buckets add-iam-policy-binding gs:// ${ GS BUCKET } \ --member "principal://iam.googleapis.com/projects/ ${ PROJECT NUMBER } /locations/global/workloadIdentityPools/ ${ PROJECT ID } .svc.id.goog/subject/ns/ ${ NAMESPACE } /sa/ ${ KSA NAME } " \ --role "roles/storage.objectUser" Create the Secret for Hugging Face: kubectl create secret generic hf-secret --from-literal = hf api token = ${ HF TOKEN } Inspect the gcsfuse-storage.yaml manifest: Copyright 2026 Google LLC.
+
+### "Node upgrade strategies \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies)
+- Source ID: `site-docs-reference-2`
+- Final score: 146
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Surge upgrade behavior is determined by the maxSurge and maxUnavailable settings, which determine how many nodes are upgraded at the same time in a rolling window with the described steps. maxSurge : GKE creates a new surge node before removing an existing one Set maxSurge to choose the maximum number of additional, surge nodes that can be added to the node pool during an upgrade, per zone, increasing the likelihood that workloads running on the existing node can migrate to a new node immediately.
+- Slow but no surge resources If you can't use any additional resources, you can use maxSurge=0;maxUnavailable=1 to recreate one node at a time.
+- For GKE to create surge nodes, your project must have the resources to temporarily create additional nodes.
+- If enabled, GKE uses blue-green upgrades when the following types of changes occur: Version changes (upgrades) Vertically scaling the nodes by changing the node machine attributes , including machine type, disk type, and disk size Image type changes Add or replace storage pools in a node pool Surge upgrades are used for any other updates requiring the nodes to be recreated.
 

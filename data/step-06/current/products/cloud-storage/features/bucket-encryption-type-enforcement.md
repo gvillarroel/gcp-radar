@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.607Z"
+generated_at: "2026-04-12T12:12:45.867Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "Bucket encryption type enforcement"
 feature_slug: "bucket-encryption-type-enforcement"
 latest_feature_date: "2026-04-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig"
   - "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption"
   - "https://docs.cloud.google.com/storage/docs/creating-buckets"
+  - "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
 keywords:
   - "bucket"
   - "encryption"
@@ -26,7 +27,7 @@ keywords:
 # Bucket encryption type enforcement
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Storage lets you allow or prohibit specific encryption types for new objec
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig)
 - [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption)
 - [https://docs.cloud.google.com/storage/docs/creating-buckets](https://docs.cloud.google.com/storage/docs/creating-buckets)
+- [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig)
 - Source ID: `site-python-reference`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 254
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Returns Type Description EncryptionEnforcementConfig Instance created from resource. fromkeys fromkeys ( value = None , / ) Create a new dictionary with keys from iterable and values set to value. get get ( key , default = None , / ) Return the value for key if key is in the dictionary, else default. items items () API documentation for storage.bucket.EncryptionEnforcementConfig.items method. keys keys () API documentation for storage.bucket.EncryptionEnforcementConfig.keys method. pop pop ( k [, d ]) If the key is not found, return the default if given; otherwise, raise a KeyError. popitem popitem () Remove and return a (key, value) pair as a 2-tuple.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption)
 - Source ID: `site-python-reference`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 240
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Returns Type Description BucketEncryption Instance created from resource. fromkeys fromkeys ( value = None , / ) Create a new dictionary with keys from iterable and values set to value. get get ( key , default = None , / ) Return the value for key if key is in the dictionary, else default. items items () API documentation for storage.bucket.BucketEncryption.items method. keys keys () API documentation for storage.bucket.BucketEncryption.keys method. pop pop ( k [, d ]) If the key is not found, return the default if given; otherwise, raise a KeyError. popitem popitem () Remove and return a (key, value) pair as a 2-tuple.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/storage/docs/creating-buckets](https://docs.cloud.google.com/storage/docs/creating-buckets)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 238
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For more information, see Set up authentication for client libraries . use Google\Cloud\Storage\StorageClient; / Create a new bucket with a custom default storage class and location. @param string $bucketName The name of your Cloud Storage bucket. (e.g. 'my-bucket') / function create bucket class location(string $bucketName): void { $storage = new StorageClient(); $storageClass = 'COLDLINE'; $location = 'ASIA'; $bucket = $storage->createBucket($bucketName, [ 'storageClass' => $storageClass, 'location' => $location, ]); $objects = $bucket->objects([ 'encryption' => [ 'defaultKmsKeyName' => null, ] ]); printf('Created bucket %s in %s with storage class %s', $bucketName, $storageClass, $location); } Python For more information, see the Cloud Storage Python API reference documentation .
 - Create new storage bucket in the US multi-region with coldline storage resource "random id" "bucket prefix" { byte length = 8 } resource "google storage bucket" "static" { name = "${random id.bucket prefix.hex}-new-bucket" location = "US" storage class = "COLDLINE" uniform bucket level access = true } REST APIs JSON API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.
 - For example: gcloud storage buckets create gs:// BUCKET NAME --project= PROJECT ID --default-storage-class= STORAGE CLASS --location= BUCKET LOCATION --uniform-bucket-level-access --soft-delete-duration= RETENTION DURATION --encryption-enforcement-file= ENCRYPTION ENFORCEMENT FILE For a complete list of options for bucket creation using the gcloud CLI, see buckets create options .
 - For example, 10d . --encryption-enforcement-file : Provide a file that defines which encryption methods are restricted or allowed for new objects in the bucket.
+
+### "Module bucket (3.10.0) \_|\_ Python client libraries \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket)
+- Source ID: `site-python-reference`
+- Final score: 210
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- When set to NotRestricted , the bucket will allow objects encrypted with any encryption type. effective time datetime.datetime (Output only) The time when the encryption enforcement configuration became effective.
+- When set to FullyRestricted , the bucket will only allow objects encrypted with the encryption type corresponding to this configuration.
+- Parameters Name Description bucket Bucket Bucket for which this instance is the policy. default kms key name str (Optional) Resource name of KMS key used to encrypt bucket's content. google managed encryption enforcement config EncryptionEnforcementConfig (Optional) Encryption enforcement configuration for Google managed encryption. customer managed encryption enforcement config EncryptionEnforcementConfig (Optional) Encryption enforcement configuration for Customer managed encryption. customer supplied encryption enforcement config EncryptionEnforcementConfig (Optional) Encryption enforcement configuration for Customer supplied encryption.
+- BucketEncryption BucketEncryption ( bucket , default kms key name = None , google managed encryption enforcement config = None , customer managed encryption enforcement config = None , customer supplied encryption enforcement config = None , ) Map a bucket's encryption configuration.
 

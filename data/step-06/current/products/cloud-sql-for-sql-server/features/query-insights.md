@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:58:32.613Z"
+generated_at: "2026-04-15T11:57:14.538Z"
 product_name: "Cloud SQL for SQL Server"
 product_slug: "cloud-sql-for-sql-server"
 feature_name: "Query insights"
 feature_slug: "query-insights"
 latest_feature_date: "2025-04-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/release-notes"
   - "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/how-tos/performance"
 keywords:
   - "query"
   - "insights"
@@ -26,7 +26,7 @@ keywords:
 # Query insights
 
 Product: Cloud SQL for SQL Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,47 +38,49 @@ Query insights provides query performance visibility, including top query detail
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
 - [https://docs.cloud.google.com/sql/docs/sqlserver/pricing](https://docs.cloud.google.com/sql/docs/sqlserver/pricing)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition](https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/how-tos/performance](https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/how-tos/performance)
 
 ## Supporting Pages
 
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
+### Performance tips \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 182
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- When you enable query insights for Enterprise Plus, you can access additional features in query insights such as 30 days of metrics retention, granular query plan details, and a higher query length limit.
-- When you enable query insights for Enterprise Plus, you can access additional features in query insights such as 30 days of metrics retention, granular query plan details, and a higher query length limit.
-- When you enable query insights for Enterprise Plus, you can access additional features in query insights such as 30 days of metrics retention, granular query plan details, and a higher query length limit.
-- You can also now view the query details, query plans, and statistical query execution charts for your top queries.
-
-### Cloud SQL for SQL Server release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/how-tos/performance](https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/how-tos/performance)
+- Source ID: `site-api-reference`
+- Final score: 131
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- When you enable query insights for Enterprise Plus, you can access additional features in query insights such as 30 days of metrics retention, granular query plan details, and a higher query length limit.
-- You can also now view the query details, query plans, and statistical query execution charts for your top queries.
-- This metric provides visibility into the database working set (including buffer cache).
-- For more information, see Use query insights to improve query performance .
+- The request uses the fields parameter to specify which fields to return. https://www.googleapis.com/demo/v1? fields=kind,items(title,characteristics/length) The partial response looks like this: 200 OK { "kind" : "demo" , "items" : [ { "title" : "First title" , "characteristics" : { "length" : "short" } } , { "title" : "Second title" , "characteristics" : { "length" : "long" } } , ... ] } Note: For APIs that support query parameters for data pagination ( maxResults and nextPageToken , for example), use those parameters to reduce the results of each query to a manageable size.
+- Here are some collection-level examples: Examples Effect items Returns all elements in the items array, including all fields in each element, but no other fields. etag,items Returns both the etag field and all elements in the items array. items/title Returns only the title field for all elements in the items array.
+- Here is an example of properly formed HTTP headers for enabling gzip compression: Accept - Encoding : gzip User - Agent : my program ( gzip ) Working with partial resources Another way to improve the performance of your API calls is by sending and receiving only the portion of the data that you're interested in.
+- If the fields query parameter has an error or is otherwise invalid, the server returns an HTTP 400 Bad Request status code, along with an error message telling the user what was wrong with their fields selection (for example, "Invalid field selection a/b" ).
+
+### "Choose a Cloud SQL edition \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition](https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 126
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Cloud SQL key features The following table provides an overview of key feature enhancements available in Cloud SQL Enterprise Plus edition compared to Cloud SQL Enterprise edition: Cloud SQL Enterprise Plus edition Cloud SQL Enterprise edition Database versions SQL Server 2025 Enterprise SQL Server 2022 Enterprise SQL Server 2019 Enterprise SQL Server 2025 (Standard, Enterprise, and Express) SQL Server 2022 (Standard, Enterprise, Express, and Web) SQL Server 2019 (Standard, Enterprise, Express, and Web) SQL Server 2017 (Standard, Enterprise, Express, and Web) Availability SLA 99.99% (includes maintenance) 99.95% (excludes maintenance) Performance Machine series N2 Memory-optimized-N2 General purpose dedicated core N4 Machine configuration limits N2 machine series Up to 128 vCPU Up to 864 GB RAM 1:8 core:memory ratio Memory-optimized-N machine series Up to 16 vCPU Up to 512 GB RAM 1:32 core:memory ratio General purpose dedicated core Up to 96 vCPU Up to 624 GB RAM 1:6.5 core:memory ratio N4 machine series Up to 80 vCPU Up to 624 GB RAM 1:8 core:memory ratio Data cache Yes No Point-in-time log retention Up to 35 days Up to 7 days Availability Maintenance downtime Planned operations downtime Sub-second downtime Few minutes Advanced disaster recovery (DR) Yes No Write endpoint for advanced disaster recovery (DR) Yes No Write endpoint connectivity Yes No Observability AI-assisted troubleshooting Yes No Query insights 30 day metric retention 1 MB query length 200 query plan sample maximum Wait event analysis Index advisor recommendations 7 day metric retention 4500 bytes query length 20 query plan sample maximum Enhanced recommenders Yes No What's next Plan and prepare to create a new instance.
+- Cloud SQL Enterprise edition : provides all core capabilities of Cloud SQL and is suitable for applications with less stringent availability and performance requirements.
+- Cloud SQL offers the following editions: Cloud SQL Enterprise Plus edition : provides enhanced performance, availability, and observability to run applications.
+- Each edition provides different performance, availability, observability, and data protection characteristics to support your business and application needs.
 
 ### Cloud SQL pricing | Google Cloud
 
 - URL: [https://docs.cloud.google.com/sql/docs/sqlserver/pricing](https://docs.cloud.google.com/sql/docs/sqlserver/pricing)
 - Source ID: `site-docs-root`
-- Final score: 116
+- Final score: 122
 - Re-rank relevance: N/A
 
 Evidence snippets:

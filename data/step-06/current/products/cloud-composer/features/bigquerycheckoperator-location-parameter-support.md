@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.024Z"
+generated_at: "2026-04-12T12:11:20.228Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "BigQueryCheckOperator location parameter support"
 feature_slug: "bigquerycheckoperator-location-parameter-support"
 latest_feature_date: "2020-08-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
-  - "https://docs.cloud.google.com/composer/docs/composer-1/create-environments"
   - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/create-environments"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/loadSnapshot"
 keywords:
   - "bigquerycheckoperator"
   - "location"
@@ -26,7 +27,7 @@ keywords:
 # BigQueryCheckOperator location parameter support
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,35 @@ Composer now supports setting a location argument on BigQueryCheckOperator to ru
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
 - [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/loadSnapshot](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/loadSnapshot)
 
 ## Supporting Pages
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Airflow 1.10.6 and 1.10.9: You can now specify a location argument when creating a BigQueryCheckOperator to use it in a different region from the Composer environment.
-- Change Cloud Composer 1.17.7 and 2.0.0-preview.7 images are available: composer-1.17.7-airflow-1.10.15 (default) composer-1.17.7-airflow-2.0.2 composer-1.17.7-airflow-2.1.4 composer-2.0.0-preview.7-airflow-2.0.2 composer-2.0.0-preview.7-airflow-2.1.4 December 01, 2021 Change (Available without upgrading) Web server network access control settings can now be configured in Cloud Composer 2 environments.
-- Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.5-build.13 (default) composer-3-airflow-2.9.3-build.33 Change New images are available in Cloud Composer 2: composer-2.14.1-airflow-2.10.5 (default) composer-2.14.1-airflow-2.9.3 Feature (Available without upgrading) Cloud Composer 3 now supports DNS resolution for regional service endpoints .
-- New metrics have been added to monitor web server CPU and memory usage: CPU usage time CPU reserved cores Memory bytes used Memory quota During environment creation and updates, Composer will now verify whether you have chosen a region compliant with any location restriction organization policies.
+- The command-line interface is the recommended approach for deleting the connection: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ connections delete -- \ CONNECTION ID After deleting the connection, recreate it using the Airflow UI , ensuring that the fields you intend to leave empty are indeed left blank.
+- Run a gcloud command to delete the deployments with the ABANDON policy: gcloud deployment-manager deployments delete addons-<uuid> \ --delete-policy = ABANDON gcloud deployment-manager deployments delete <location>-<env-name-prefix>-<hash>-sd \ --delete-policy = ABANDON Delete your Cloud Composer environment .
+- Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Known issues Stay organized with collections Save and categorize content based on your preferences.
+- Go to Deployment Manager Find all deployments marked with labels: goog-composer-environment:<environment-name> goog-composer-location:<environment-location> .
 
 ### Create Cloud Composer environments \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
 - Source ID: `site-iam-reference`
-- Final score: 156
+- Final score: 189
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,30 @@ Evidence snippets:
 - Example: gcloud composer environments create example-environment \ --location us-central1 \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " example-account@example-project. iam.gserviceaccount.com " \ --zone us-central1-a \ --node-count 6 \ --scheduler-count 1 \ --disk-size 50 \ --machine-type n1-standard-2 \ --cloud-sql-machine-type db-n1-standard-2 \ --web-server-machine-type composer-n1-webserver-2 API When you create an environment, in the Environment > EnvironmentConfig resource, specify environment scale and performance parameters. { "name" : "projects/ PROJECT ID /locations/ LOCATION /environments/ ENVIRONMENT NAME " , "config" : { "nodeCount" : NODE COUNT , "nodeConfig" : { "machineType" : " NODE MACHINE TYPE " , "diskSizeGb" : DISK SIZE , "serviceAccount" : " SERVICE ACCOUNT " }, "softwareConfig" : { "schedulerCount" : SCHEDULER COUNT }, "databaseConfig" : { "machineType" : " SQL MACHINE TYPE " }, "webServerConfig" : { "machineType" : " WS MACHINE TYPE " } } } Replace: NODE COUNT with the number of nodes.
 - The 1 January, 2023 date is ignored. gcloud composer environments create example-environment \ --location us-central1 \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " example-account@example-project. iam.gserviceaccount.com " \ --maintenance-window-start '2023-01-01T01:00:00Z' \ --maintenance-window-end '2023-01-01T07:00:00Z' \ --maintenance-window-recurrence 'FREQ=WEEKLY;BYDAY=SU,WE,SA' API When you create an environment, in the Environment > EnvironmentConfig resource, specify maintenance windows parameters: { "name" : "projects/ PROJECT ID /locations/ LOCATION /environments/ ENVIRONMENT NAME " , "config" : { "maintenanceWindow" : { "startTime" : " DATETIME START " , "endTime" : " DATETIME END " , "recurrence" : " MAINTENANCE RECURRENCE " }, "nodeConfig" : { "serviceAccount" : " SERVICE ACCOUNT " } } } Replace: DATETIME START with the start date and time in the date/time input format .
 
-### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+### "REST Resource: projects.locations.environments \_|\_ Cloud Composer \_|\_\
 
-- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
-- Source ID: `site-iam-reference`
-- Final score: 156
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- Source ID: `site-docs-reference`
+- Final score: 169
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The command-line interface is the recommended approach for deleting the connection: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ connections delete -- \ CONNECTION ID After deleting the connection, recreate it using the Airflow UI , ensuring that the fields you intend to leave empty are indeed left blank.
-- Run a gcloud command to delete the deployments with the ABANDON policy: gcloud deployment-manager deployments delete addons-<uuid> \ --delete-policy = ABANDON gcloud deployment-manager deployments delete <location>-<env-name-prefix>-<hash>-sd \ --delete-policy = ABANDON Delete your Cloud Composer environment .
-- Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Known issues Stay organized with collections Save and categorize content based on your preferences.
-- Go to Deployment Manager Find all deployments marked with labels: goog-composer-environment:<environment-name> goog-composer-location:<environment-location> .
+- JSON representation { "location" : string , "machineType" : string , "network" : string , "subnetwork" : string , "diskSizeGb" : integer , "oauthScopes" : [ string ] , "serviceAccount" : string , "tags" : [ string ] , "ipAllocationPolicy" : { object ( IPAllocationPolicy ) } , "enableIpMasqAgent" : boolean , "composerNetworkAttachment" : string , "composerInternalIpv4CidrBlock" : string } Fields location string Optional.
+- If both this field and nodeConfig.location are specified, this machineType must belong to the nodeConfig.location ; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields.
+- If both this field and nodeConfig.machineType are specified, nodeConfig.machineType must belong to this location ; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields.
+- When enabled, IPs from public (non-RFC1918) ranges can be used for IPAllocationPolicy.cluster ipv4 cidr block and IPAllocationPolicy.service ipv4 cidr block . cloudComposerConnectionSubnetwork string Optional.
+
+### "Method: projects.locations.environments.loadSnapshot \_|\_ Cloud Composer\
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/loadSnapshot](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/loadSnapshot)
+- Source ID: `site-docs-reference`
+- Final score: 165
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Path parameters Parameters environment string The resource name of the target environment in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" Authorization requires the following IAM permission on the specified resource environment : composer.environments.update Request body The request body contains data with the following structure: JSON representation { "snapshotPath" : string , "skipPypiPackagesInstallation" : boolean , "skipEnvironmentVariablesSetting" : boolean , "skipAirflowOverridesSetting" : boolean , "skipGcsDataCopying" : boolean } Fields snapshotPath string A Cloud Storage path to a snapshot to load, e.g.: "gs://my-bucket/snapshots/project location environment timestamp". skipPypiPackagesInstallation boolean Whether or not to skip installing Pypi packages when loading the environment's state. skipEnvironmentVariablesSetting boolean Whether or not to skip setting environment variables when loading the environment's state. skipAirflowOverridesSetting boolean Whether or not to skip setting Airflow overrides when loading the environment's state. skipGcsDataCopying boolean Whether or not to skip copying Cloud Storage data when loading the environment's state.
+- Home Documentation Data analytics Cloud Composer Reference Send feedback Method: projects.locations.environments.loadSnapshot Stay organized with collections Save and categorize content based on your preferences.
+- HTTP request POST https://composer.googleapis.com/v1/{environment=projects/ /locations/ /environments/ }:loadSnapshot The URL uses gRPC Transcoding syntax.
+- Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/cloudcomposer https://www.googleapis.com/auth/cloud-platform For more information, see the Authentication Overview .
 

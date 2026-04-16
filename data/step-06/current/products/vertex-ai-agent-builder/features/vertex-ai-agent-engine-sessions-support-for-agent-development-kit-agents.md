@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.346Z"
+generated_at: "2026-04-12T12:19:43.316Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Vertex AI Agent Engine Sessions support for Agent Development Kit agents"
 feature_slug: "vertex-ai-agent-engine-sessions-support-for-agent-development-kit-agents"
 latest_feature_date: "2025-05-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/agent-builder/agent-development-kit/overview"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
-  - "https://docs.cloud.google.com/agent-builder/agent-development-kit/overview"
 keywords:
   - "vertex"
   - "ai"
@@ -27,7 +27,7 @@ keywords:
 # Vertex AI Agent Engine Sessions support for Agent Development Kit agents
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,24 +39,38 @@ Vertex AI Agent Engine now supports sessions for agents built with the Agent Dev
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/agent-builder/agent-development-kit/overview](https://docs.cloud.google.com/agent-builder/agent-development-kit/overview)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk](https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
-- [https://docs.cloud.google.com/agent-builder/agent-development-kit/overview](https://docs.cloud.google.com/agent-builder/agent-development-kit/overview)
 
 ## Supporting Pages
+
+### "Overview of Agent Development Kit \_|\_ Vertex AI Agent Builder \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/agent-builder/agent-development-kit/overview](https://docs.cloud.google.com/agent-builder/agent-development-kit/overview)
+- Source ID: `site-docs-root`
+- Final score: 330
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can use the following resources to get started with ADK: Quickstart with Vertex AI Agent Engine : This quickstart guides you through setting up your Google Cloud project and Vertex AI SDK for Python, developing your ADK agent, deploying the agent to Vertex AI Agent Engine Runtime, and testing the deployed agent.
+- We recommend deploying your ADK agent to Vertex AI Agent Engine Runtime, a fully managed Google Cloud service specifically designed for deploying, managing, and scaling AI agents built with frameworks such as ADK.
+- Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Overview of Agent Development Kit Stay organized with collections Save and categorize content based on your preferences.
+- Agent Starter Pack : a collection of production-ready generative AI agent templates built for Vertex AI Agent Engine.
 
 ### "Develop an Agent Development Kit agent \_|\_ Vertex AI Agent Builder \_\
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk](https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk)
 - Source ID: `site-docs-reference`
-- Final score: 278
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 316
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This page shows you how to develop an agent using the Agent Development Kit template (the AdkApp class in the Vertex AI SDK for Python).
@@ -68,9 +82,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
 - Source ID: `site-docs-root`
-- Final score: 278
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 316
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Use the Vertex AI Agent Engine SDK if you don't want an agent framework to orchestrate calls for you, or you want to integrate Sessions and Memory Bank with agent frameworks other than Agent Development Kit (ADK).
@@ -82,7 +96,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - Source ID: `site-docs-root`
-- Final score: 274
+- Final score: 300
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -90,18 +104,4 @@ Evidence snippets:
 - Define the agent in your preferred framework: from google.adk.agents import Agent agent = Agent ( model = "gemini-2.5-flash" , name = "minimal agent" , instruction = "You are a helpful assistant." , ) Then, deploy it: import vertexai from vertexai import types from vertexai.agent engines import AdkApp Initialize the Vertex AI client with v1beta1 API for agent identity support client = vertexai .
 - We recommend the following roles: roles/aiplatform.expressUser : Grant access to running inference, sessions, and memory. roles/serviceusage.serviceUsageConsumer : Grant the agent permission to use the project's quota and the Vertex AI SDK. roles/browser : Grant access to basic Google Cloud functionalities.
 - Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag.
-
-### "Overview of Agent Development Kit \_|\_ Vertex AI Agent Builder \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/agent-builder/agent-development-kit/overview](https://docs.cloud.google.com/agent-builder/agent-development-kit/overview)
-- Source ID: `site-docs-root`
-- Final score: 264
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- You can use the following resources to get started with ADK: Quickstart with Vertex AI Agent Engine : This quickstart guides you through setting up your Google Cloud project and Vertex AI SDK for Python, developing your ADK agent, deploying the agent to Vertex AI Agent Engine Runtime, and testing the deployed agent.
-- We recommend deploying your ADK agent to Vertex AI Agent Engine Runtime, a fully managed Google Cloud service specifically designed for deploying, managing, and scaling AI agents built with frameworks such as ADK.
-- Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Overview of Agent Development Kit Stay organized with collections Save and categorize content based on your preferences.
-- Agent Starter Pack : a collection of production-ready generative AI agent templates built for Vertex AI Agent Engine.
 

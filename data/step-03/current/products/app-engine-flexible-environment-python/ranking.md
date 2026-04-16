@@ -13,7 +13,7 @@ Step 2 feature inventory: 79 features, profile: user facing.
 | 90 | no | product_reference | https://docs.cloud.google.com/appengine/docs/flexible/python/specifying-dependencies | 1 | app engine flexible environment | Matched Step 2 features: app engine flexible environment |
 | 90 | no | product_reference | https://docs.cloud.google.com/appengine/docs/flexible/python/customizing-the-python-runtime | 1 | app engine flexible environment | Matched Step 2 features: app engine flexible environment |
 | 90 | no | supporting_page | https://docs.cloud.google.com/appengine/docs/flexible/apis | 2 | app engine flexible environment | Matched Step 2 features: app engine flexible environment |
-| 90 | no | product_root | https://docs.cloud.google.com/appengine/docs | 1 | app engine flexible environment | Matched Step 2 features: app engine flexible environment |
+| 90 | no | supporting_page | https://docs.cloud.google.com/appengine/docs/python?csw=1 | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 87 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml | 2 | app engine flexible environment | Matched Step 2 features: app engine flexible environment |
 | 78 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/go/configuring-your-app-with-app-yaml | 1 | app engine flexible environment | Matched Step 2 features: app engine flexible environment |
 | 73 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/dotnet/configuring-your-app-with-app-yaml | 1 | app engine flexible environment | Matched Step 2 features: app engine flexible environment |

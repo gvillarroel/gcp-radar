@@ -1,31 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.699Z"
+generated_at: "2026-04-15T00:42:40.829Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Cloud Build repositories (2nd generation) general availability"
 feature_slug: "cloud-build-repositories-2nd-generation-general-availability"
 latest_feature_date: "2023-07-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events"
-  - "https://docs.cloud.google.com/build/docs/release-notes"
-  - "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+  - "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server"
+  - "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab"
+  - "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab-enterprise-edition"
 keywords:
-  - "build"
-  - "repositories"
-  - "2nd"
-  - "generation"
-  - "general"
   - "availability"
   - "reached"
+  - "generation"
+  - "repositories"
 ---
 
 # Cloud Build repositories (2nd generation) general availability
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,52 +34,55 @@ Cloud Build repositories (2nd generation) reached general availability.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events](https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events)
-- [https://docs.cloud.google.com/build/docs/release-notes](https://docs.cloud.google.com/build/docs/release-notes)
-- [https://docs.cloud.google.com/build/docs/automate-builds-webhook-events](https://docs.cloud.google.com/build/docs/automate-builds-webhook-events)
+- [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server)
+- [https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab](https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab)
+- [https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab-enterprise-edition](https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab-enterprise-edition)
 
 ## Supporting Pages
 
-### "Automate builds in response to Pub/Sub events \_|\_ Cloud Build \_|\_ Google\
+### Build repositories from Bitbucket Server \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events](https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events)
+- URL: [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server)
 - Source ID: `site-docs-root-2`
-- Final score: 122
-- Re-rank relevance: N/A
+- Final score: 77
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To clone and build repositories through your external source code management system, see Creating and managing build triggers to learn how to specify a build configuration inline.
-- Note: Pub/Sub triggers cannot build GitHub Enterprise, Bitbucket Data Center, and Bitbucket Server repositories through Cloud Build's native integration.
-- 1st gen 2nd gen Cloud Build Pub/Sub triggers enable you to execute builds in response to Google Cloud events published over Pub/Sub.
-- To disable this behavior, we recommend using manual approvals to gate builds when making pull requests on public repositories.
+- Create a Bitbucket Server trigger This sections explains how you can connect your Bitbucket Server repositories to Cloud Build and create a trigger to automatically invoke builds on your connected repositories.
+- Home Documentation Application development Cloud Build Guides Send feedback Build repositories from Bitbucket Server Stay organized with collections Save and categorize content based on your preferences.
+- If you want to use Bitbucket Server triggers in a private network, see Building repositories from Bitbucket Server in a private network for further instructions.
+- 1st gen 2nd gen Developer Connect Cloud Build lets you create triggers to build from repositories hosted on Bitbucket Server .
 
-### Cloud Build release notes \_|\_ Google Cloud Documentation
+### Build repositories from GitLab \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/build/docs/release-notes](https://docs.cloud.google.com/build/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 122
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 20, 2023 Feature Cloud Build repositories (2nd gen) is now generally available .
-- January 23, 2023 Feature Cloud Build repositories (2nd gen) lets you easily create and manage repository connections, not only through Cloud Console but also through gcloud and the Cloud Build API.
-- Cloud Build repositories (2nd gen) integrates directly with GitHub , GitHub Enterprise , GitLab , and GitLab Enterprise Edition and comes with end-to-end Terraform support.
-- February 08, 2023 Feature You can now create and manage repository connections using Terraform when using Cloud Build repositories (2nd gen).
-
-### "Automate builds in response to webhook events \_|\_ Cloud Build \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/build/docs/automate-builds-webhook-events](https://docs.cloud.google.com/build/docs/automate-builds-webhook-events)
+- URL: [https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab](https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab)
 - Source ID: `site-docs-root-2`
-- Final score: 118
-- Re-rank relevance: N/A
+- Final score: 77
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Repository triggers that use Cloud Build repositories (2nd gen) can be configured programmatically and are natively integrated with source providers, including support for GitHub and GitLab.
-- Cloud Build repositories (2nd gen) also manage authentication tokens and information on your behalf using Secret Manager.
+- Terraform For sample Terraform code about creating a build trigger and connecting it to your GitLab installation using Developer Connect, see the following topics in the Terraform documentation: Create a Developer Connect push trigger Create a Developer Connect pull trigger Data sharing The data sent to GitLab from Cloud Build helps you identify triggers by name and see build results on your GitLab repositories.
+- Home Documentation Application development Cloud Build Guides Send feedback Build repositories from GitLab Stay organized with collections Save and categorize content based on your preferences.
 - To disable this behavior, we recommend using manual approvals to gate builds when making pull requests on public repositories.
-- 1st gen 2nd gen Cloud Build lets you define webhook triggers , which can authenticate and accept incoming webhook events.
+- 2nd gen Developer Connect Cloud Build lets you create triggers to build from repositories hosted on GitLab .
+
+### Build repositories from GitLab Enterprise Edition \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab-enterprise-edition](https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab-enterprise-edition)
+- Source ID: `site-docs-root-2`
+- Final score: 77
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Terraform For sample Terraform code about creating a build trigger and connecting it to your GitLab Enterprise Edition installation using Developer Connect, see the following topics in the Terraform documentation: Create a Developer Connect push trigger Create a Developer Connect pull trigger Data sharing The data sent to GitLab Enterprise Edition from Cloud Build helps you identify triggers by name and see build results on your GitLab Enterprise Edition repositories.
+- Home Documentation Application development Cloud Build Guides Send feedback Build repositories from GitLab Enterprise Edition Stay organized with collections Save and categorize content based on your preferences.
+- 2nd gen Developer Connect Cloud Build lets you create triggers to build from repositories hosted on GitLab Enterprise Edition .
+- To disable this behavior, we recommend using manual approvals to gate builds when making pull requests on public repositories.
 

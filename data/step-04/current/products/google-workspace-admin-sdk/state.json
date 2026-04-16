@@ -1,10 +1,10 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-11T17:31:38.439Z",
+  "generated_at": "2026-04-15T11:42:56.049Z",
   "product_name": "Google Workspace Admin SDK",
   "product_slug": "google-workspace-admin-sdk",
-  "selected_sources_signature": "6394743b8230a41b6d23a3428dc834cf39c4d4ded57b0c78abceb94c1f4bbe2e",
-  "selected_source_count": 3,
+  "selected_sources_signature": "9639a08b08b9296dd525b1cd8ff74cf6c86245bb3356f230e7ccdf5b627a2251",
+  "selected_source_count": 4,
   "key_created": false,
   "crawl4ai_available": false,
   "feature_inventory": {
@@ -144,27 +144,44 @@
     ],
     "inventory_profile": "api_heavy"
   },
-  "single_page_fallback_detected": true,
-  "limitation": "know site sync is running without crawl4ai in this environment, so each source currently materializes only its seed page.",
-  "skipped_sync": false,
+  "single_page_fallback_detected": false,
+  "limitation": "",
+  "skipped_sync": true,
   "export_run": false,
-  "reprocess_requested": true,
+  "reprocess_requested": false,
   "actions": {
-    "deleted": [
-      "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_admin_sdk/configure"
-    ],
+    "deleted": [],
     "added": [],
     "changed": [],
     "sync_urls": []
   },
   "source_failures": {},
-  "registered_source_count": 3,
+  "registered_source_count": 4,
   "corpus_page_summaries": [
     {
       "source_id": "site-api-reference",
-      "page_count": 1,
+      "page_count": 20,
       "urls": [
-        "https://developers.google.com/admin-sdk/directory/reference/rest"
+        "https://developers.google.com/workspace/admin/directory/reference/rest",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/CoordinatesSource",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/Projection",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/SubscriptionChannel",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/UserPhoto",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/asps",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/asps/delete",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/asps/get",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/asps/list",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/channels",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/channels/stop",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/action",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/list",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/moveDevicesToOu",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/patch",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/update",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos.commands"
       ],
       "compact_output": true
     },
@@ -173,6 +190,25 @@
       "page_count": 1,
       "urls": [
         "https://developers.google.com/admin-sdk/reference-overview"
+      ],
+      "compact_output": true
+    },
+    {
+      "source_id": "site-docs-reference-required-2",
+      "page_count": 12,
+      "urls": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/batch",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-drive",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-tokens",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/push",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/troubleshoot-authentication-authorization",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html"
       ],
       "compact_output": true
     },
@@ -186,25 +222,25 @@
     }
   ],
   "corpus_health": {
-    "status": "weak",
+    "status": "healthy",
     "checks": {
       "min_page_count": {
-        "actual": 3,
+        "actual": 34,
         "expected": 6,
-        "passed": false
+        "passed": true
       },
       "min_unique_url_count": {
-        "actual": 3,
+        "actual": 34,
         "expected": 5,
-        "passed": false
+        "passed": true
       },
       "source_family_diversity": {
-        "actual": 3,
+        "actual": 4,
         "expected": 2,
         "passed": true
       },
       "lexical_overlap": {
-        "actual": 30,
+        "actual": 34,
         "expected": 6,
         "passed": true,
         "matched_tokens": [
@@ -228,9 +264,9 @@
         "matched_phrases": []
       }
     },
-    "total_corpus_pages": 3,
-    "unique_url_count": 3,
-    "matched_feature_token_count": 30,
+    "total_corpus_pages": 34,
+    "unique_url_count": 34,
+    "matched_feature_token_count": 34,
     "matched_feature_phrase_count": 0
   },
   "corpus_paths": {

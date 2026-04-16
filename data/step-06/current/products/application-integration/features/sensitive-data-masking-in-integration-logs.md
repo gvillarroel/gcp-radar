@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.472Z"
+generated_at: "2026-04-14T07:40:14.476Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Sensitive data masking in integration logs"
 feature_slug: "sensitive-data-masking-in-integration-logs"
 latest_feature_date: "2024-02-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
+  - "https://docs.cloud.google.com/application-integration/docs/audit-logging"
+  - "https://docs.cloud.google.com/application-integration/docs/cancel-executions"
   - "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
 keywords:
   - "sensitive"
   - "masking"
   - "provides"
+  - "execution"
   - "logs"
-  - "application"
-  - "integration"
-  - "now"
-  - "in"
 ---
 
 # Sensitive data masking in integration logs
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,55 @@ Application Integration now provides data masking in integration execution logs 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
+- [https://docs.cloud.google.com/application-integration/docs/audit-logging](https://docs.cloud.google.com/application-integration/docs/audit-logging)
+- [https://docs.cloud.google.com/application-integration/docs/cancel-executions](https://docs.cloud.google.com/application-integration/docs/cancel-executions)
 - [https://docs.cloud.google.com/application-integration/docs/cloud-logging](https://docs.cloud.google.com/application-integration/docs/cloud-logging)
 
 ## Supporting Pages
 
-### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
+### Application Integration audit logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 230
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Generate integration description The integration description feature available in Gemini in Application Integration provides a description summary of the integration that you've created in your integration editor .
-- Supported tasks and triggers Gemini can assist you to add the following tasks and triggers: Triggers Tasks API trigger Cloud Pub/Sub trigger Salesforce trigger Jira Cloud ServiceNow Zendesk Cloud Scheduler trigger Data mapper task Approval task Suspend task Javascript task Cloud Run functions Timer task Return task Send email task Connectors task Call REST endpoint task Doc AI - Process task Gemini also assists you to create the following control flow tasks but can't generate sub-integrations: For Each Loop task For Each Parallel task While Loop task Call Integration task Create an integration Gemini assists you to create and build integrations using your natural language statements (or prompts ) as input.
-- In Application Integration, Gemini Code Assist can assist you to do the following: Create integrations Configure connector tasks in an integration Configure Call REST API tasks in an integration Add edge conditions and append additional tasks to an integration Configure JavaScript tasks ( Preview ) Generate integration description For detailed information about Gemini for Google Cloud, see Gemini for Google Cloud overview .
-- Configure Call REST API tasks If you have API Hub enabled in your project, then Gemini in Application Integration can assist you in providing contextually appropriate Call REST Endpoint task and task configuration recommendations based on the logical flow of your existing integration.
-
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- Source ID: `site-docs-root`
-- Final score: 226
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Connect the elements in the sub-integration Now that you have added and configured the required tasks and triggers in the sub-integration, add a connection (edge) between the elements.
-- Home Documentation Application development Application Integration Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
-- Go to Application Integration Click Integrations from the left navigation menu to open the Integrations page.
-- Create the sub-integration In the Google Cloud console, go to the Application Integration page.
-
-### "View logs in Cloud Logging \_|\_ Application Integration \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/cloud-logging](https://docs.cloud.google.com/application-integration/docs/cloud-logging)
-- Source ID: `site-iam-reference`
-- Final score: 214
+- URL: [https://docs.cloud.google.com/application-integration/docs/audit-logging](https://docs.cloud.google.com/application-integration/docs/audit-logging)
+- Source ID: `site-docs-root-2`
+- Final score: 91
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Logs are displayed for the last three hours for the following default query: resource.type=integrations.googleapis.com/IntegrationVersion To understand the log format of Application Integration logs , see the log entries payload .
+- Permission type Methods ADMIN READ google.cloud.integrations.v1alpha.AuthConfigs.GetAuthConfig google.cloud.integrations.v1alpha.AuthConfigs.ListAuthConfigs google.cloud.integrations.v1alpha.Certificates.GetCertificate google.cloud.integrations.v1alpha.Certificates.ListCertificates google.cloud.integrations.v1alpha.Client.GetClient google.cloud.integrations.v1alpha.Client.GetClientMetadata google.cloud.integrations.v1alpha.SfdcChannels.GetSfdcChannel google.cloud.integrations.v1alpha.SfdcChannels.ListSfdcChannels google.cloud.integrations.v1alpha.SfdcInstances.GetSfdcInstance google.cloud.integrations.v1alpha.SfdcInstances.ListSfdcInstances ADMIN WRITE google.cloud.integrations.v1alpha.AuthConfigs.CreateAuthConfig google.cloud.integrations.v1alpha.AuthConfigs.DeleteAuthConfig google.cloud.integrations.v1alpha.AuthConfigs.UpdateAuthConfig google.cloud.integrations.v1alpha.Certificates.CreateCertificate google.cloud.integrations.v1alpha.Certificates.DeleteCertificate google.cloud.integrations.v1alpha.Certificates.UpdateCertificate google.cloud.integrations.v1alpha.Client.DeprovisionClient google.cloud.integrations.v1alpha.Client.ProvisionClient google.cloud.integrations.v1alpha.Client.ReplaceServiceAccount google.cloud.integrations.v1alpha.Client.SwitchEncryption google.cloud.integrations.v1alpha.Client.SwitchVariableMasking google.cloud.integrations.v1alpha.SfdcChannels.CreateSfdcChannel google.cloud.integrations.v1alpha.SfdcChannels.DeleteSfdcChannel google.cloud.integrations.v1alpha.SfdcChannels.UpdateSfdcChannel google.cloud.integrations.v1alpha.SfdcInstances.CreateSfdcInstance google.cloud.integrations.v1alpha.SfdcInstances.DeleteSfdcInstance google.cloud.integrations.v1alpha.SfdcInstances.UpdateSfdcInstance DATA READ google.cloud.integrations.v1alpha.Condition.ValidateCondition google.cloud.integrations.v1alpha.Executions.DownloadExecution google.cloud.integrations.v1alpha.Executions.GetExecution google.cloud.integrations.v1alpha.Executions.ListExecutions google.cloud.integrations.v1alpha.Experiment.ListExperiments google.cloud.integrations.v1alpha.IntegrationVersions.DownloadIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.DownloadJsonPackage google.cloud.integrations.v1alpha.IntegrationVersions.GetIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.ListIntegrationVersions google.cloud.integrations.v1alpha.Integrations.ListIntegrations google.cloud.integrations.v1alpha.Integrations.ListTaskEntities google.cloud.integrations.v1alpha.JsonSchema.GenerateJsonSchema google.cloud.integrations.v1alpha.Suspensions.ListSuspensions google.cloud.integrations.v1alpha.TemplateService.DownloadTemplate google.cloud.integrations.v1alpha.TemplateService.GetTemplate google.cloud.integrations.v1alpha.TemplateService.ListTemplates google.cloud.integrations.v1alpha.TemplateService.SearchTemplates google.cloud.integrations.v1alpha.TransformFunction.ListTransformFunctionDefinitions google.cloud.integrations.v1alpha.TransformFunction.ListTransformFunctions google.cloud.integrations.v2.Executions.ListExecutions DATA WRITE google.cloud.integrations.v1alpha.CloudFunctions.CreateCloudFunction google.cloud.integrations.v1alpha.Executions.ExecuteEvent google.cloud.integrations.v1alpha.Executions.ExecuteIntegrations google.cloud.integrations.v1alpha.Executions.ScheduleIntegrations google.cloud.integrations.v1alpha.Executions.TestIntegrations google.cloud.integrations.v1alpha.IntegrationVersions.CreateIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.DeleteIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.PublishIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.TakeoverEditLock google.cloud.integrations.v1alpha.IntegrationVersions.UnpublishIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.UpdateIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.UploadIntegrationVersion google.cloud.integrations.v1alpha.Integrations.DeleteIntegration google.cloud.integrations.v1alpha.Suspensions.LiftSuspension google.cloud.integrations.v1alpha.Suspensions.ResolveSuspension google.cloud.integrations.v1alpha.TemplateService.CreateTemplate google.cloud.integrations.v1alpha.TemplateService.DeleteTemplate google.cloud.integrations.v1alpha.TemplateService.ImportTemplate google.cloud.integrations.v1alpha.TemplateService.ShareTemplate google.cloud.integrations.v1alpha.TemplateService.UnshareTemplate google.cloud.integrations.v1alpha.TemplateService.UpdateTemplate google.cloud.integrations.v1alpha.TemplateService.UploadTemplate google.cloud.integrations.v1alpha.TemplateService.UseTemplate google.cloud.integrations.v2.Executions.ExecuteIntegration google.cloud.integrations.v2.Executions.ScheduleIntegration API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Application Integration. google.cloud.integrations.v1alpha.AuthConfigs The following audit logs are associated with methods belonging to google.cloud.integrations.v1alpha.AuthConfigs .
+- Filter for this method : protoPayload.methodName="google.cloud.integrations.v2.Executions.ScheduleIntegration" Methods that don't produce audit logs A method might not produce audit logs for one or more of the following reasons: It is a high volume method involving significant log generation and storage costs.
+- Filter for this method : protoPayload.methodName="google.cloud.integrations.v1alpha.Client.SwitchVariableMasking" google.cloud.integrations.v1alpha.CloudFunctions The following audit logs are associated with methods belonging to google.cloud.integrations.v1alpha.CloudFunctions .
+- Filter for this method : protoPayload.methodName="google.cloud.integrations.v1alpha.TransformFunction.ListTransformFunctions" google.cloud.integrations.v2.Executions The following audit logs are associated with methods belonging to google.cloud.integrations.v2.Executions .
+
+### "View logs in Cloud Logging \_|\_ Application Integration \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/cloud-logging](https://docs.cloud.google.com/application-integration/docs/cloud-logging)
+- Source ID: `site-docs-reference-2`
+- Final score: 79
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Sample queries You can use the following queries to view logs in Cloud Logging: To view all integration execution logs: resource.type="integrations.googleapis.com/IntegrationVersion" You can view integration execution logs for a specific execution ID: Searches only the parents executions with the given execution ID: resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.executionId=" EXECUTION ID " Searches for both parent and child executions launched from the given execution ID: resource.type="integrations.googleapis.com/IntegrationVersion" " EXECUTION ID " To view integration execution logs for a specific integration: resource.type="integrations.googleapis.com/IntegrationVersion" " INTEGRATION NAME " Or resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.integration=" INTEGRATION NAME " To view failed integration executions for a specific integration: resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.integrationExecutionDetails.integrationExecutionState="FAILED" jsonPayload.integration=" INTEGRATION NAME " To view logs with specific request param name.
+- In the Log settings , click the Enable Cloud Logging toggle and then from the Severity list, select the severity type of the logs that you want to store in Cloud Logging: Info : Select this option to capture all execution statuses: SUCCEEDED , FAILED , PROCESSING , PENDING , SUSPENDED , RETRY ON HOLD , and CANCELLED .
+- View logs in Cloud Logging In Cloud Logging, you can view the Integration execution logs containing integration details, such as status, performance, integration version, request and response parameters, and the trigger and task configurations.
 - Go to Application Integration To view the integration execution logs in Cloud Logging, use one of the following methods: In the navigation menu, click Logs , and then, click View Cloud Logs .
-- View logs To view logs in Cloud Logging, you must first enable Cloud Logging and then follow these steps: In the Google Cloud console, go to the Application Integration page.
-- Alternatively, you can also view these logs in Application Integration .
+
+### Cancel executions \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/cancel-executions](https://docs.cloud.google.com/application-integration/docs/cancel-executions)
+- Source ID: `site-docs-reference-2`
+- Final score: 79
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- You can cancel an integration execution if the integration is in one of the following execution states : Suspended On hold Retry on hold Cancel an execution To cancel an execution, select one of the following options: Console In Application Integration , go to the Logs page.
+- You can't cancel an integration execution if the integration is in one of the following states: In process Succeeded Failed Canceled What's next Learn about logs in Application Integration .
+- The Execution Logs page appears.
+- API Call the projects.locations.integrations.executions.cancel method and provide the ID of the execution that you want to cancel: curl -X POST https://integrations.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /integrations/ INTEGRATION NAME /executions/ EXECUTION ID :cancel -H "Authorization: Bearer $TOKEN" Limitations Cancel execution is subject to the following limitations: Canceling an execution that is triggered by a Schedule trigger isn't supported.
 

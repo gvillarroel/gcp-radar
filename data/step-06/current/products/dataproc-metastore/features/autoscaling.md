@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:49:01.296Z"
+generated_at: "2026-04-12T12:14:00.717Z"
 product_name: "Dataproc Metastore"
 product_slug: "dataproc-metastore"
 feature_name: "Autoscaling"
 feature_slug: "autoscaling"
 latest_feature_date: "2024-04-01"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
-  - "https://docs.cloud.google.com/dataproc-metastore/docs/release-notes"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/manage-service"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts"
   - "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
 keywords:
   - "autoscaling"
@@ -26,7 +27,7 @@ keywords:
 # Autoscaling
 
 Product: Dataproc Metastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Autoscaling automatically increases or decreases the scaling factor needed to ru
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
-- [https://docs.cloud.google.com/dataproc-metastore/docs/release-notes](https://docs.cloud.google.com/dataproc-metastore/docs/release-notes)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/manage-service](https://docs.cloud.google.com/dataproc-metastore/docs/manage-service)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts](https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts)
 - [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient)
 
 ## Supporting Pages
@@ -52,9 +54,8 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
 - Source ID: `site-docs-root`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 205
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - After this is set, your service automatically increases or decreases the scaling factor required to run your workloads.
@@ -62,24 +63,39 @@ Evidence snippets:
 - The scaling factor is set to the last autoscaling factor that was configured on the service.
 - The minimum and maximum autoscaling factors are optional.
 
-### Dataproc Metastore release notes \_|\_ Google Cloud Documentation
+### Update a Dataproc Metastore service \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/release-notes](https://docs.cloud.google.com/dataproc-metastore/docs/release-notes)
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/manage-service](https://docs.cloud.google.com/dataproc-metastore/docs/manage-service)
 - Source ID: `site-docs-root`
-- Final score: 128
-- Re-rank relevance: N/A
+- Final score: 161
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Autoscaling automatically increases or decreases the scaling factor required to run your workloads.
-- June 30, 2024 v1 Change Dataproc Metastore managed migrations is generally available ( GA ) v1 Change Dataproc Metastore autoscaling is generally available ( GA ) May 27, 2024 v1 Feature Dataproc Metastore services can now enable deletion-protection to prevent the accidental removal of new or existing services.
-- Managed migration is an automated feature that helps you migrate data from a self-managed Hive Metastore to a Dataproc Metastore service, without any sizable down time. v1beta1 Feature Dataproc Metastore now supports autoscaling .
-- The oldest import is automatically deleted when the 26th import is created. v1 Feature Dataproc Metastore performs a Hive metadata schema validation when importing metadata into a service .
+- You can enable or disable autoscaling and update the minimum or maximum scaling factors.
+- If this flag is set, then -clear-hive-metastore-configs is automatically set as well. [KEY, ...] : Optional: The Hive metastore configs you want to remove. [KEY=VALUE, ...] : Optional: The labels or Hive metastore key-value pair configs you want to update. [KEY, ...] : Optional: The labels or Hive metastore key-value pair configs you want to remove.
+- When the update succeeds, Dataproc Metastore automatically enters an active state.
+- Return to the Dataproc Metastore page, and verify that your service was successfully updated. gcloud CLI To update a service, run the following gcloud metastore services update command: gcloud metastore services update SERVICE \ --location= LOCATION \ --port= PORT \ --tier= TIER \ --kerberos principal= KERBEROS PRINCIPAL \ --keytab= KEYTAB \ --krb5-config= KRB5 CONFIG \ --update-hive-metastore-configs-from-file= [KEY=VALUE, ...] \ --clear-hive-metastore-configs \ --remove-hive-metastore-configs= [KEY, ...] \ --update-labels= [KEY=VALUE, ...] \ --clear-labels \ --remove-labels= [KEY, ...] Replace the following: SERVICE : The name of your Dataproc Metastore service.
+
+### Dataproc Metastore core concepts \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts](https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts)
+- Source ID: `site-iam-reference`
+- Final score: 148
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- After you create a Dataproc Metastore 2, you can scale the service up or down by modifying the scaling factor.
+- Dataproc Metastore 2 Dataproc Metastore 2 uses a scaling factor to determine how many resources your service uses at a given time.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- What's next Create a service Update and delete a service Import metadata into a service Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 
 ### "Class DataprocMetastoreAsyncClient (1.22.0) \_|\_ Python client libraries\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 122
+- Final score: 134
 - Re-rank relevance: N/A
 
 Evidence snippets:

@@ -1,31 +1,27 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.899Z"
+generated_at: "2026-04-14T15:34:54.441Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "GPU for Cloud Run jobs"
 feature_slug: "gpu-for-cloud-run-jobs"
 latest_feature_date: "2025-06-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
-  - "https://docs.cloud.google.com/run/docs/container-contract"
+  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient"
 keywords:
-  - "gpu"
-  - "for"
-  - "run"
-  - "jobs"
-  - "configuration"
-  - "job"
   - "execution"
+  - "configuration"
+  - "jobs"
 ---
 
 # GPU for Cloud Run jobs
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,13 +33,13 @@ Cloud Run jobs support GPU configuration for job execution.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient)
-- [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
+- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient)
 
 ## Supporting Pages
 
@@ -51,40 +47,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 132
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 async def sample list jobs(): Create a client client = run v2 .
-- The result type for the operation will be Job Job represents the configuration of a single job, which references a container image that is run to completion. crypto key path crypto key path ( project : str , location : str , key ring : str , crypto key : str ) - > str Returns a fully-qualified crypto key string. delete job delete job ( request : typing .
-- ListJobsRequest ( parent="parent value", ) Make the request page result = client. list jobs (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.run v2.types.ListJobsRequest , dict]] The request object.
-- The result type for the operation will be Job Job represents the configuration of a single job, which references a container image that is run to completion. delete operation delete operation ( request : typing .
+- The result type for the operation will be Execution Execution represents the configuration of a single execution.
+- Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . execution path execution path ( project : str , location : str , job : str , execution : str ) - > str Returns a fully-qualified execution string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
+- JobsAsyncClient () Initialize request argument(s) request = iam policy pb2.TestIamPermissionsRequest( resource="resource value", permissions=['permissions value1', 'permissions value2'], ) Make the request response = await client. test iam permissions (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.iam.v1.iam policy pb2.TestIamPermissionsRequest , dict]] The request object.
+- A execution an immutable resource that references a container image which is run to completion. secret path secret path ( project : str , secret : str ) - > str Returns a fully-qualified secret string. secret version path secret version path ( project : str , secret : str , version : str ) - > str Returns a fully-qualified secret version string. set iam policy set iam policy ( request : typing .
 
 ### "Class JobsClient (0.16.0) \_|\_ Python client libraries \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient)
 - Source ID: `site-python-reference`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 132
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 def sample list jobs(): Create a client client = run v2 .
-- The result type for the operation will be Job Job represents the configuration of a single job, which references a container image that is run to completion. crypto key path crypto key path ( project : str , location : str , key ring : str , crypto key : str ) - > str Returns a fully-qualified crypto key string. delete job delete job ( request : typing .
-- ListJobsRequest ( parent="parent value", ) Make the request page result = client. list jobs (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.run v2.types.ListJobsRequest , dict] The request object.
-- The result type for the operation will be Job Job represents the configuration of a single job, which references a container image that is run to completion. delete operation delete operation ( request : typing .
+- The result type for the operation will be Execution Execution represents the configuration of a single execution.
+- Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . execution path execution path ( project : str , location : str , job : str , execution : str ) - > str Returns a fully-qualified execution string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
+- JobsClient () Initialize request argument(s) request = iam policy pb2.TestIamPermissionsRequest( resource="resource value", permissions=['permissions value1', 'permissions value2'], ) Make the request response = client. test iam permissions (request=request) Handle the response print(response) Parameters Name Description request Union[ google.iam.v1.iam policy pb2.TestIamPermissionsRequest , dict] The request object.
+- A execution an immutable resource that references a container image which is run to completion. secret path secret path ( project : str , secret : str ) - > str Returns a fully-qualified secret string. secret version path secret version path ( project : str , secret : str , version : str ) - > str Returns a fully-qualified secret version string. set iam policy set iam policy ( request : typing .
 
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+### "Class ExecutionsClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 184
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient)
+- Source ID: `site-python-reference`
+- Final score: 120
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- 8080 K SERVICE The name of the Cloud Run service being run. hello-world K REVISION The name of the Cloud Run revision being run. hello-world.1 K CONFIGURATION The name of the Cloud Run configuration that created the revision. hello-world Environment variables for jobs For Cloud Run jobs, the following environment variables are set: Name Description Example CLOUD RUN JOB The name of the Cloud Run job being run. hello-world CLOUD RUN EXECUTION The name of the Cloud Run execution being run. hello-world-abc CLOUD RUN TASK INDEX The index of this task.
-- Container running in a job execution must exit upon completion For Cloud Run jobs, the container must exit with exit code 0 when the job has successfully completed, and exit with a non-zero exit code when the job has failed.
-- For jobs For Cloud Run jobs, container instances run until the container instance exits, or until the task timeout is reached or until the container crashes.
-- Outbound request timeouts For Cloud Run services and jobs, there is a timeout after 10 minutes of idle time for requests from your container to VPC .
+- Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution} , where {project} can be project id or number.
+- Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution} , where {project} can be project id or number.
+- Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution} , where {project} can be project id or number.
+- Returns Type Description google.cloud.run v2.types.Execution Execution represents the configuration of a single execution.
 

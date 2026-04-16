@@ -1,6 +1,6 @@
 {
   "schema_version": "step-06-extended-feature-definitions-v1",
-  "generated_at": "2026-04-11T19:40:46.175Z",
+  "generated_at": "2026-04-12T12:11:29.262Z",
   "product_name": "Cloud IDS",
   "product_slug": "cloud-ids",
   "inputs": {
@@ -10,8 +10,8 @@
   "thresholds": {
     "min_base_score": 18,
     "min_final_score": 20,
-    "max_candidate_pages": 6,
-    "max_definition_pages": 3
+    "max_candidate_pages": 10,
+    "max_definition_pages": 4
   },
   "corpus_page_count": 27,
   "source_row_count": 2,
@@ -34,11 +34,12 @@
         "specific",
         "noisy"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "IDS Threat Exceptions lets you disable specific noisy or unnecessary threat IDs when creating or updating a Cloud IDS endpoint.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/intrusion-detection-system/docs/configuring-ids",
+        "https://docs.cloud.google.com/intrusion-detection-system/docs/overview",
         "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient",
         "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient"
       ],
@@ -50,7 +51,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_intrusion-detection-system_docs_configuring-ids.md",
           "relative_markdown_path": "products/cloud-ids/corpus/site/site-docs-root/pages/docs.cloud.google.com_intrusion-detection-system_docs_configuring-ids.md",
-          "base_score": 130,
+          "base_score": 173,
           "matched_phrases": [
             {
               "phrase": "ids",
@@ -91,71 +92,13 @@
           ]
         },
         {
-          "page_id": "6bc335fe03e9cff8df4109023ba3bd1501ce2132404fac93e2e3521542baab00",
-          "url": "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient",
-          "title": "\"Class IDSAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
-          "source_id": "site-python-reference",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSAsyncClient.md",
-          "relative_markdown_path": "products/cloud-ids/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSAsyncClient.md",
-          "base_score": 120,
-          "matched_phrases": [
-            {
-              "phrase": "ids",
-              "title_hits": 1,
-              "url_hits": 4,
-              "body_hits": 70
-            },
-            {
-              "phrase": "you",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 6
-            },
-            {
-              "phrase": "exceptions",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 4
-            }
-          ]
-        },
-        {
-          "page_id": "e62ff691714e873c6902f8d62eb687311ba7552324902be309220ddc9b6c9313",
-          "url": "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient",
-          "title": "\"Class IDSClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
-          "source_id": "site-python-reference",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSClient.md",
-          "relative_markdown_path": "products/cloud-ids/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSClient.md",
-          "base_score": 120,
-          "matched_phrases": [
-            {
-              "phrase": "ids",
-              "title_hits": 1,
-              "url_hits": 4,
-              "body_hits": 68
-            },
-            {
-              "phrase": "you",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 6
-            },
-            {
-              "phrase": "exceptions",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 4
-            }
-          ]
-        },
-        {
           "page_id": "723cfb050d534c6cf959dc596ba7044eebd12ac3bd60d61cd71b88f3d80dd0fb",
           "url": "https://docs.cloud.google.com/intrusion-detection-system/docs/overview",
           "title": "\"Cloud IDS overview \\_|\\_ Cloud Intrusion Detection System \\_|\\_ Google Cloud\\",
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_intrusion-detection-system_docs_overview.md",
           "relative_markdown_path": "products/cloud-ids/corpus/site/site-docs-root/pages/docs.cloud.google.com_intrusion-detection-system_docs_overview.md",
-          "base_score": 106,
+          "base_score": 145,
           "matched_phrases": [
             {
               "phrase": "ids",
@@ -196,13 +139,71 @@
           ]
         },
         {
+          "page_id": "6bc335fe03e9cff8df4109023ba3bd1501ce2132404fac93e2e3521542baab00",
+          "url": "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient",
+          "title": "\"Class IDSAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSAsyncClient.md",
+          "relative_markdown_path": "products/cloud-ids/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSAsyncClient.md",
+          "base_score": 142,
+          "matched_phrases": [
+            {
+              "phrase": "ids",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 70
+            },
+            {
+              "phrase": "you",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "exceptions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "e62ff691714e873c6902f8d62eb687311ba7552324902be309220ddc9b6c9313",
+          "url": "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient",
+          "title": "\"Class IDSClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSClient.md",
+          "relative_markdown_path": "products/cloud-ids/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSClient.md",
+          "base_score": 142,
+          "matched_phrases": [
+            {
+              "phrase": "ids",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 68
+            },
+            {
+              "phrase": "you",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "exceptions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
           "page_id": "9f983900139bace6df74d01d762abcc8ab7b25756dea5cb27de3d3be4be09c27",
           "url": "https://docs.cloud.google.com/intrusion-detection-system/docs/investigate",
           "title": "\"Investigate Threat Alerts \\_|\\_ Cloud Intrusion Detection System \\_|\\_ Google\\",
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_intrusion-detection-system_docs_investigate.md",
           "relative_markdown_path": "products/cloud-ids/corpus/site/site-docs-root/pages/docs.cloud.google.com_intrusion-detection-system_docs_investigate.md",
-          "base_score": 102,
+          "base_score": 137,
           "matched_phrases": [
             {
               "phrase": "threat",
@@ -243,7 +244,7 @@
           "source_id": "site-python-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_ids_latest.md",
           "relative_markdown_path": "products/cloud-ids/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_ids_latest.md",
-          "base_score": 98,
+          "base_score": 124,
           "matched_phrases": [
             {
               "phrase": "you",
@@ -270,6 +271,128 @@
               "body_hits": 3
             }
           ]
+        },
+        {
+          "page_id": "03325f082dd6d62ca9fa8af4f4bcff97e652154c87c11af958c9b733242bb267",
+          "url": "https://docs.cloud.google.com/intrusion-detection-system/docs/logging",
+          "title": "\"Cloud IDS logging information \\_|\\_ Cloud Intrusion Detection System \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_intrusion-detection-system_docs_logging.md",
+          "relative_markdown_path": "products/cloud-ids/corpus/site/site-docs-root/pages/docs.cloud.google.com_intrusion-detection-system_docs_logging.md",
+          "base_score": 106,
+          "matched_phrases": [
+            {
+              "phrase": "threat",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 21
+            },
+            {
+              "phrase": "ids",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "you",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ]
+        },
+        {
+          "page_id": "b3e1bbdfab57a1ae65fdd6599554b9c0234aa7f9b5ecd40790a2fdfedeebf407",
+          "url": "https://docs.cloud.google.com/intrusion-detection-system/docs/troubleshooting",
+          "title": "\"Troubleshoot endpoints and inspection \\_|\\_ Cloud Intrusion Detection System\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_intrusion-detection-system_docs_troubleshooting.md",
+          "relative_markdown_path": "products/cloud-ids/corpus/site/site-docs-root/pages/docs.cloud.google.com_intrusion-detection-system_docs_troubleshooting.md",
+          "base_score": 94,
+          "matched_phrases": [
+            {
+              "phrase": "ids",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 24
+            },
+            {
+              "phrase": "you",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 14
+            },
+            {
+              "phrase": "disable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "threat",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "specific",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "b00821b66f6f2fd32ccf8f7079dc587c7e466e70f8a8b04a5cda5d6c5a03c0d5",
+          "url": "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids",
+          "title": "Package ids (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.md",
+          "relative_markdown_path": "products/cloud-ids/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.md",
+          "base_score": 89,
+          "matched_phrases": [
+            {
+              "phrase": "ids",
+              "title_hits": 1,
+              "url_hits": 3,
+              "body_hits": 9
+            },
+            {
+              "phrase": "you",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "6eb6090385a4ae1225d224fcfff1a70177f0da1ab15b864e98385321b939d187",
+          "url": "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.types.Endpoint",
+          "title": "\"Class Endpoint (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-ids\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.types.Endpoint.md",
+          "relative_markdown_path": "products/cloud-ids/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.types.Endpoint.md",
+          "base_score": 82,
+          "matched_phrases": [
+            {
+              "phrase": "ids",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 6
+            },
+            {
+              "phrase": "threat",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "you",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
         }
       ],
       "supporting_pages": [
@@ -278,8 +401,8 @@
           "title": "\"Configure Cloud IDS \\_|\\_ Cloud Intrusion Detection System \\_|\\_ Google\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-ids/corpus/site/site-docs-root/pages/docs.cloud.google.com_intrusion-detection-system_docs_configuring-ids.md",
-          "base_score": 130,
-          "final_score": 130,
+          "base_score": 173,
+          "final_score": 173,
           "rerank_relevance": "",
           "rerank_rationale": "",
           "matched_phrases": [
@@ -328,12 +451,66 @@
           ]
         },
         {
+          "url": "https://docs.cloud.google.com/intrusion-detection-system/docs/overview",
+          "title": "\"Cloud IDS overview \\_|\\_ Cloud Intrusion Detection System \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-ids/corpus/site/site-docs-root/pages/docs.cloud.google.com_intrusion-detection-system_docs_overview.md",
+          "base_score": 145,
+          "final_score": 145,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "ids",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 48
+            },
+            {
+              "phrase": "threat",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 35
+            },
+            {
+              "phrase": "you",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 35
+            },
+            {
+              "phrase": "exceptions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "disable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "noisy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Threat exceptions If you decide that Cloud IDS generates alerts on more threats than is necessary, you can disable noisy or otherwise unnecessary threat IDs by using the --threat-exceptions flag.",
+            "When Cloud IDS detects malicious traffic leaving your network from infected hosts, it generates an alert that is saved in the threat log and shown in the Google Cloud console.",
+            "Go to IDS Threats Default signature set Cloud IDS provides a default set of threat signatures that you can use immediately to protect your network from threats.",
+            "Cloud IDS is an intrusion detection service that provides threat detection for intrusions, malware, spyware, and command-and-control attacks on your network."
+          ]
+        },
+        {
           "url": "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient",
           "title": "\"Class IDSAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
           "source_id": "site-python-reference",
           "markdown_path": "products/cloud-ids/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSAsyncClient.md",
-          "base_score": 120,
-          "final_score": 120,
+          "base_score": 142,
+          "final_score": 142,
           "rerank_relevance": "",
           "rerank_rationale": "",
           "matched_phrases": [
@@ -368,8 +545,8 @@
           "title": "\"Class IDSClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
           "source_id": "site-python-reference",
           "markdown_path": "products/cloud-ids/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_ids_latest_google.cloud.ids_v1.services.ids.IDSClient.md",
-          "base_score": 120,
-          "final_score": 120,
+          "base_score": 142,
+          "final_score": 142,
           "rerank_relevance": "",
           "rerank_rationale": "",
           "matched_phrases": [

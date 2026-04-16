@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:06.466Z"
+generated_at: "2026-04-12T12:13:35.133Z"
 product_name: "Database Center"
 product_slug: "database-center"
 feature_name: "Alerting policy filters"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-09-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/database-center/docs/customize-database-fleet-view"
-  - "https://docs.cloud.google.com/database-center/docs/performance"
-  - "https://docs.cloud.google.com/database-center/docs/dashboard-views"
+  - "https://docs.cloud.google.com/database-center/docs/metrics"
+  - "https://docs.cloud.google.com/database-center/docs/alerts"
+  - "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient"
 keywords:
   - "alerting"
   - "policy"
@@ -38,47 +39,68 @@ Database Center lets you create alerting policies for database resources and sig
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/database-center/docs/customize-database-fleet-view](https://docs.cloud.google.com/database-center/docs/customize-database-fleet-view)
-- [https://docs.cloud.google.com/database-center/docs/performance](https://docs.cloud.google.com/database-center/docs/performance)
-- [https://docs.cloud.google.com/database-center/docs/dashboard-views](https://docs.cloud.google.com/database-center/docs/dashboard-views)
+- [https://docs.cloud.google.com/database-center/docs/metrics](https://docs.cloud.google.com/database-center/docs/metrics)
+- [https://docs.cloud.google.com/database-center/docs/alerts](https://docs.cloud.google.com/database-center/docs/alerts)
+- [https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient](https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient](https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient)
 
 ## Supporting Pages
 
-### Customize your database fleet view | Database Center | Google Cloud Documentation
+### "Metrics and alerting policy filters \_|\_ Database Center \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/database-center/docs/customize-database-fleet-view](https://docs.cloud.google.com/database-center/docs/customize-database-fleet-view)
+- URL: [https://docs.cloud.google.com/database-center/docs/metrics](https://docs.cloud.google.com/database-center/docs/metrics)
 - Source ID: `site-docs-root`
-- Final score: 148
+- Final score: 335
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Customize your database fleet view Database Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/database-center/docs/customize-database-fleet-view When you open Database Center for the first time, the dashboard displays all available databases, database resources, health issues, and database issues for your selected scope.
+- Home Documentation Databases Database Center Guides Send feedback Metrics and alerting policy filters Stay organized with collections Save and categorize content based on your preferences.
+- To help you identify and troubleshoot performance issues for database products such as Cloud SQL, AlloyDB for PostgreSQL, and Spanner, create custom dashboards that display useful metrics and information about your alerting policies.
+- About metric filters When you create charts or alerting policies, you can add filters to restrict the metric data that's charted or monitored.
+- You can add multiple filters to a chart or alerting policy.
 
-### View the performance of your database fleet | Database Center | Google Cloud Documentation
+### "Monitor your database fleet with alerting policies \_|\_ Database Center\
 
-- URL: [https://docs.cloud.google.com/database-center/docs/performance](https://docs.cloud.google.com/database-center/docs/performance)
+- URL: [https://docs.cloud.google.com/database-center/docs/alerts](https://docs.cloud.google.com/database-center/docs/alerts)
 - Source ID: `site-docs-root`
-- Final score: 134
+- Final score: 262
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Create, edit, copy, or delete an alerting policy In Database Center, you can create, edit, copy, or delete an alerting policy.
+- To see the alerting policies configured for your Google Cloud project and the incidents they create, do the following: In the Google Cloud console, go to the Database Center page.
+- This document describes how to use the Database Center to use alerting policies and incidents created by them to monitor your database fleet.
+- The Alerts tab displays all your database-related incidents and policies and includes the following: An Incidents pane that lists all incidents in your database fleet created by the alerting policies that are configured in your Google Cloud project.
+
+### "Class DatabaseCenterAsyncClient (0.7.0) \_|\_ Python client libraries \_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient](https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 210
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- View the performance of your database fleet Database Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/database-center/docs/performance Pre-GA features are available &quot;as is&quot; and might have limited support.
-- Database Center provides performance information about your fleet resources to help you maintain your database fleet.
+- Returns Type Description google.cloud.databasecenter v1beta.types.AggregateIssueStatsResponse The response message containing one of more group of relevant health issues for database resources. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta async def sample query database resource groups(): Create a client client = databasecenter v1beta .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta async def sample aggregate issue stats(): Create a client client = databasecenter v1beta .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta async def sample aggregate fleet(): Create a client client = databasecenter v1beta .
 
-### Create customized dashboard views | Database Center | Google Cloud Documentation
+### "Class DatabaseCenterClient (0.7.0) \_|\_ Python client libraries \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/database-center/docs/dashboard-views](https://docs.cloud.google.com/database-center/docs/dashboard-views)
-- Source ID: `site-docs-root`
-- Final score: 132
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient](https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient)
+- Source ID: `site-python-reference`
+- Final score: 210
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Database Center lets you create a customized dashboard view that shows only the health issues in your database fleet that you want to see.
-- Create customized dashboard views Database Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/database-center/docs/dashboard-views For more information, see the launch stage descriptions.
+- Returns Type Description google.cloud.databasecenter v1beta.types.AggregateIssueStatsResponse The response message containing one of more group of relevant health issues for database resources. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta def sample query database resource groups(): Create a client client = databasecenter v1beta .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta def sample aggregate issue stats(): Create a client client = databasecenter v1beta .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta def sample aggregate fleet(): Create a client client = databasecenter v1beta .
 

@@ -1,0 +1,42 @@
+---
+title: "Using gRPC with Certificate Authority Service \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/certificate-authority-service/docs/using-grpc
+knowledge_key: corpus
+source_id: site-docs-reference-3
+source_type: site
+entrypoint: https://docs.cloud.google.com/certificate-authority-service/docs/release-notes
+source_metadata:
+  url: https://docs.cloud.google.com/certificate-authority-service/docs/using-grpc
+  title: "Using gRPC with Certificate Authority Service \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Security
+Certificate Authority Service
+Reference
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Using gRPC with Certificate Authority Service
+If you are using manually created gRPC libraries to make API calls to Certificate Authority Service, you must add x-goog-request-params: '<request-field>:<resource-name>' as a header. The proper use of x-goog-request-params ensures that the request is routed to the appropriate region for your CA Service resources.
+Given below are a few examples of methods with their respective request field and sample header.
+Method : CreateCertificateAuthority Request field : CreateCertificateAuthority.parent
+x-goog-request-params: 'parent: projects/ PROJECT_ID /locations/ LOCATION_ID '
+Method : GetCertificateAuthority Request field : GetCertificateAuthority.name
+x-goog-request-params: 'name: projects/ PROJECT_ID /locations/ LOCATION_ID /certificateAuthorities/ CA_NAME '
+Method : UpdateCertificateAuthority Request field : UpdateCertificateAuthority.certificate_authority.name
+x-goog-request-params: 'CertificateAuthority.name: projects/ PROJECT_ID /locations/ LOCATION_ID /certificateAuthorities/ CA_NAME '
+For the complete list of RPC methods and their respective request fields, see Package google.cloud.security.privateca.v1beta1 .
+What's next
+Cloud APIs: gRPC APIs
+RPC Reference
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

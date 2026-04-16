@@ -621,7 +621,7 @@ only for failed jobs.
 Total failed jobs. The number of jobs that failed within the
 selected time period.
 Note: In addition to resource charts, you can write your own queries
-or dashboards. For example queries and Looker Studio templates, see
+or dashboards. For example queries and Data Studio templates, see
 INFORMATION_SCHEMA views .
 Group by options
 Based on the type of chart, you can group data in the chart view by
@@ -752,6 +752,6 @@ Learn how to estimate slot capacity requirements .
 Learn how to view slot recommendations and insight .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

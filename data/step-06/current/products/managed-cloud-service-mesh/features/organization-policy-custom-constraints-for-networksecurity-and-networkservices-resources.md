@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:42.436Z"
+generated_at: "2026-04-12T12:17:49.774Z"
 product_name: "Managed Cloud Service Mesh"
 product_slug: "managed-cloud-service-mesh"
 feature_name: "Organization Policy custom constraints for networksecurity and networkservices resources"
 feature_slug: "organization-policy-custom-constraints-for-networksecurity-and-networkservices-resources"
 latest_feature_date: "2025-03-20"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane"
+  - "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+  - "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+  - "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
 keywords:
   - "organization"
   - "policy"
@@ -24,7 +27,7 @@ keywords:
 # Organization Policy custom constraints for networksecurity and networkservices resources
 
 Product: Managed Cloud Service Mesh
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Custom constraints can be used with Organization Policy to control specific fiel
 
 Custom constraints can be used with Organization Policy to control specific fields in some networksecurity and networkservices resources; Custom constraints can be used with Organization Policy to control specific fields in some networksecurity and networkservices resources.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane](https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane)
+- [https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls](https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls)
+- [https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh](https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh)
+- [https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh](https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Provision a managed Cloud Service Mesh control plane on GKE \_|\_ Cloud\
+
+- URL: [https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane](https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane)
+- Source ID: `site-docs-reference`
+- Final score: 174
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, the following configuration customizes a variety of settings, including lowering the CPU requests, adding a volume mount, and adding a preStop hook: apiVersion : v1 kind : Pod metadata : name : example spec : containers : - name : hello image : alpine - name : istio-proxy image : auto resources : requests : cpu : "200m" memory : "256Mi" limits : cpu : "200m" memory : "256Mi" volumeMounts : - mountPath : /etc/certs name : certs lifecycle : preStop : exec : command : [ "sleep" , "10" ] volumes : - name : certs secret : secretName : istio-certs In general, any field in a pod can be set.
+- Yes Warning: Disabling connectgateway.googleapis.com , trafficdirector.googleapis.com , networkservices.googleapis.com , and/or networksecurity.googleapis.com causes managed Cloud Service Mesh control plane to stop working.
+- Customize injection (optional) You can override default values and customize injection settings but this can lead to unforeseen configuration errors and resulting issues with sidecar containers.
+- Before you customize injection, read the information after the sample for notes on particular settings and recommendations.
+
+### "Automate TLS certificate management for Cloud Service Mesh ingress gateway\
+
+- URL: [https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls](https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls)
+- Source ID: `site-docs-root`
+- Final score: 163
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In Cloud Shell, delete the project: gcloud projects delete PROJECT ID Delete the resources If you want to keep the Google Cloud project you used in this tutorial, delete the individual resources: In Cloud Shell, unregister the GKE cluster from GKE Hub: gcloud container hub memberships unregister CLUSTER NAME \ -- gke - cluster ZONE / CLUSTER NAME Delete the GKE cluster: gcloud container clusters delete CLUSTER NAME \ --zone ZONE --async --quiet Delete the IAM policy bindings on the subordinate CA pool: gcloud privateca pools remove - iam - policy - binding SUBORDINATE CA POOL GATEWAYS \ --location CA LOCATION \ --member "serviceAccount: CAS ISSUER GSA @ PROJECT ID .iam.gserviceaccount.com" \ --role roles/privateca.certificateRequester gcloud privateca pools remove - iam - policy - binding SUBORDINATE CA POOL GATEWAYS \ --location CA LOCATION \ --member "serviceAccount: CLIENT VM GSA @ PROJECT ID .iam.gserviceaccount.com" \ --role roles/privateca.certificateRequester Disable and schedule deletion of the subordinate CAs and the root CA: gcloud privateca subordinates disable SUBORDINATE CA GATEWAYS \ --location CA LOCATION \ --pool SUBORDINATE CA POOL GATEWAYS \ --quiet gcloud privateca subordinates delete SUBORDINATE CA GATEWAYS \ --location CA LOCATION \ --pool SUBORDINATE CA POOL GATEWAYS \ --ignore-active-certificates \ --quiet gcloud privateca subordinates disable SUBORDINATE CA SIDECARS \ --location CA LOCATION \ --pool SUBORDINATE CA POOL SIDECARS \ --quiet gcloud privateca subordinates delete SUBORDINATE CA SIDECARS \ --location CA LOCATION \ --pool SUBORDINATE CA POOL SIDECARS \ --ignore-active-certificates \ --quiet gcloud privateca roots disable ROOT CA \ --location CA LOCATION \ --pool ROOT CA POOL \ --quiet gcloud privateca roots delete ROOT CA \ --location CA LOCATION \ --pool ROOT CA POOL \ --ignore-active-certificates \ --quiet Delete the IAM policy binding for the CA Service issuer controller Google service account: gcloud iam service - accounts remove - iam - policy - binding \ CAS ISSUER GSA @ PROJECT ID . iam.gserviceaccount.com \ -- member "serviceAccount: PROJECT ID .svc.id.goog[cert-manager/ksa-google-cas-issuer]" \ -- role roles / iam . workloadIdentityUser Delete the Google service accounts: gcloud iam service - accounts delete --quiet \ CAS ISSUER GSA @ PROJECT ID . iam.gserviceaccount.com gcloud iam service - accounts delete --quiet \ CLIENT VM GSA @ PROJECT ID . iam.gserviceaccount.com Delete the reserved load balancer IP address: gcloud compute addresses delete asm - ingress - gateway - ilb \ -- region REGION -- quiet Delete the Compute Engine VM instance: gcloud compute instances delete cas-tutorial-client \ --zone ZONE --quiet What's next Explore other Certificate Authority Service how-to guides .
+- Install the ca-certificates and coreutils packages, and the curl , openssl , and jq command-line tools: sudo apt-get update --yes sudo apt-get install --yes ca-certificates coreutils curl jq openssl Create a key pair for the client TLS certificate: openssl genrsa -out private-key.pem 2048 openssl rsa -in private-key.pem -pubout -out public-key.pem Query the metadata server to get the email address of the Google service account identity attached to the VM instance: GSA EMAIL=$(curl --silent --header "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email) Create a JSON file that you use as the request body when requesting a client TLS certificate from the Certificate Authority Service API : cat << EOF > request.json { "config": { "publicKey": { "format": "PEM", "key": "$(base64 --wrap 0 public-key.pem)" }, "subjectConfig": { "subject": { "commonName": "$(hostname --short)", "organization": "Example Organization" }, "subjectAltName": { "dnsNames": [ "$(hostname --fqdn)" ], "emailAddresses": [ "$GSA EMAIL" ] } }, "x509Config": { "caOptions": { "isCa": false }, "keyUsage": { "baseKeyUsage": { "digitalSignature": true, "keyEncipherment": true }, "extendedKeyUsage": { "clientAuth": true } } } }, "lifetime": "86400s" } EOF To learn more about the fields in the config section, see the CertificateConfig type in the CA Service API documentation.
+- Create a certificate issuance policy : cat << EOF > policy . yaml baselineValues : keyUsage : baseKeyUsage : digitalSignature : true keyEncipherment : true extendedKeyUsage : serverAuth : true clientAuth : true caOptions : isCa : false identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : subject alt names . all ( san , san . type == URI && san . value . startsWith ( "spiffe:// PROJECT ID .svc.id.goog/ns/" ) ) EOF This issuance policy constrains CAs to only issue certificates for workloads in the mesh.
+- Create and enable the subordinate CA that issues certificates to the sidecar proxies in the mesh: gcloud privateca subordinates create SUBORDINATE CA SIDECARS \ --auto-enable \ --issuer-location CA LOCATION \ --issuer-pool ROOT CA POOL \ --key-algorithm ec-p256-sha256 \ --location CA LOCATION \ --pool SUBORDINATE CA POOL SIDECARS \ --subject "CN=Example Sidecar mTLS CA, O=Example Organization" \ --use-preset-profile subordinate mtls pathlen 0 SUBORDINATE CA GATEWAYS is the name you want to use for the subordinate CA.
+
+### "Install Cloud Service Mesh for Kubernetes workloads off Google Cloud \_\
+
+- URL: [https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh](https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh)
+- Source ID: `site-docs-reference`
+- Final score: 142
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If it is meant to only service certificates for Cloud Service Mesh workloads, set up the following issuance policy for the CA pool: policy.yaml baselineValues: keyUsage: baseKeyUsage: digitalSignature: true keyEncipherment: true extendedKeyUsage: serverAuth: true clientAuth: true caOptions: isCa: false identityConstraints: allowSubjectPassthrough: false allowSubjectAltNamesPassthrough: true celExpression: expression: subject alt names.all(san, san.type == URI && san.value.startsWith("spiffe:// PROJECT ID .svc.id.goog/ns/") ) Note: As a best practice for multi-cluster meshes, set one subordinate CA pool per unique cluster region.
+- To add multiple files, specify --custom overlay and the filename, for example: --custom overlayoverlay file1.yaml --custom overlay overlay file2.yaml --custom overlay overlay file3.yaml ./asmcli install \ --fleet id FLEET PROJECT ID \ --kubeconfig KUBECONFIG FILE \ --output dir DIR PATH \ --platform multicloud \ --enable all \ --ca mesh ca \ --custom overlay OVERLAY FILE --fleet id The project ID of the fleet host project . --kubeconfig The full path to the kubeconfig file .
+- To update the CA pool's issuance policy, use the following command: gcloud privateca pools update CA POOL --location ca region --issuance-policy policy.yaml For information on setting a policy on a pool, see Using a certificate issuance policy .
+- Private Set the current context to your user cluster: kubectl config use-context CLUSTER NAME Save the following YAML to a file called istio-operator-internal-lb.yaml : apiVersion: install.istio.io/v1alpha1 kind: IstioOperator spec: components: ingressGateways: - enabled: true k8s: serviceAnnotations: service.beta.kubernetes.io/aws-load-balancer-internal: "true" name: istio-ingressgateway Run asmcli install : ./asmcli install \ --fleet id FLEET PROJECT ID \ --kubeconfig KUBECONFIG FILE \ --output dir DIR PATH \ --platform multicloud \ --enable all \ --ca citadel \ --ca cert FILE PATH \ --ca key FILE PATH \ --root cert FILE PATH \ --cert chain FILE PATH --custom overlay istio-operator-internal-lb.yaml \ --option stackdriver --fleet id The project ID of the fleet host project . --kubeconfig The full path to the kubeconfig file .
+
+### "Resolving managed Cloud Service Mesh issues \_|\_ Cloud Service Mesh v1.21\
+
+- URL: [https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh](https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh)
+- Source ID: `site-iam-reference`
+- Final score: 134
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Google Cloud CLI In the Google Cloud CLI, run the following command to check if the required IAM role has been granted: gcloud projects get-iam-policy PROJECT ID \ --flatten = "bindings[].members" \ --filter = "bindings.members:serviceAccount:service- PROJECT NUMBER @gcp-sa-servicemesh.iam.gserviceaccount.com AND bindings.role:roles/anthosservicemesh.serviceAgent" \ --format = 'table(bindings.role)' Review the ROLE list.
+- For instructions, see Manage access to projects, folders, and organizations .
+- NodePool Workload Identity Federation for GKE is disabled The following command displays the state of managed Cloud Service Mesh: gcloud container fleet mesh describe You may see the NODEPOOL WORKLOAD IDENTITY FEDERATION REQUIRED error code in the Conditions field of your membership: membershipStates: projects/test-project/locations/us-central1/memberships/my-membership: servicemesh: conditions: - code: NODEPOOL WORKLOAD IDENTITY FEDERATION REQUIRED details: One or more node pools have workload identity federation disabled. documentationLink: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity severity: ERROR controlPlaneManagement: details: - code: REVISION FAILED PRECONDITION details: Required in -cluster components are not ready.
+- Filter this message using the following query: resource.type="istio control plane" resource.labels.project id=[ PROJECT ID ] resource.labels.location=[ REGION ] severity=ERROR jsonPayload.message= "Connect Gateway API has not been used in project" In the meantime, sidecar injection and deploying any Cloud Service Mesh related Kubernetes custom resources will also fail and Cloud Logging will display the following warning message: Error creating: Internal error occurred: failed calling webhook "rev.namespace.sidecar-injector.istio.io": failed to call webhook: an error on the server ("unknown") has prevented the request from succeeding.
 

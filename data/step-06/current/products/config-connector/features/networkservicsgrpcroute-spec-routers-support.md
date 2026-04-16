@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.341Z"
+generated_at: "2026-04-13T14:23:05.152Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "NetworkServicsGRPCRoute spec.routers support"
@@ -9,18 +9,16 @@ latest_feature_date: "2022-09-14"
 deprecation_date: "2022-09-14"
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkservicesgrpcroute"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export"
 keywords:
   - "networkservicsgrpcroute"
-  - "spec"
   - "routers"
-  - "config"
-  - "connector"
   - "previously"
-  - "supported"
-  - "the"
+  - "resources"
+  - "field"
+  - "spec"
 ---
 
 # NetworkServicsGRPCRoute spec.routers support
@@ -42,45 +40,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkservicesgrpcroute](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkservicesgrpcroute)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall](https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### NetworkServicesGRPCRoute | Config Connector | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 132
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
-
-### Creating resource references | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- Source ID: `site-docs-root`
-- Final score: 110
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkservicesgrpcroute](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkservicesgrpcroute)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 229
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Creating resource references Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references You can find out what format the ... documentation.
-- The IAMPolicy, IAMPartialPolicy and IAMPolicyMember pages list the accepted format for all supported resources.
-- The formats are listed in the &quot;External Reference Formats&quot; column of the Supported Resources table.
-- Config Connector allows resources ...
+- NetworkServicesGRPCRoute | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- NetworkServicesGRPCRoute Property Value Google Cloud Service Name Network Services Google Cloud Service Documentation /traffic-director/docs/ Google Cloud REST Resource Name v1/projects.locations.grpcRoutes Google Cloud REST Resource Documentation /traffic-director/docs/reference/network-services/rest/v1/projects.locations.grpcRoutes Config Connector Resource Short Names gcpnetworkservicesgrpcroute gcpnetworkservicesgrpcroutes networkservicesgrpcroute Config Connector Service Name networkservices.googleapis.com Config Connector Resource Fully Qualified Name networkservicesgrpcroutes.networkservices.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema description : string gateways : - external : string name : string namespace : string hostnames : - string location : string meshes : - external : string name : string namespace : string projectRef : external : string name : string namespace : string resourceID : string rules : - action : destinations : - serviceRef : external : string name : string namespace : string weight : integer faultInjectionPolicy : abort : httpStatus : integer percentage : integer delay : fixedDelay : string percentage : integer retryPolicy : numRetries : integer retryConditions : - string timeout : string matches : - headers : - key : string type : string value : string method : caseSensitive : boolean grpcMethod : string grpcService : string type : string Fields description Optional string Optional.
+- Sample YAML(s) Typical Use Case # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : networkservices.cnrm.cloud.google.com/v1beta1 kind : NetworkServicesGRPCRoute metadata : name : networkservicesgrpcroute-sample labels : foo : bar spec : description : "A test GrpcRoute" meshes : - name : "networkservicesgrpcroute-dep" gateways : - name : "networkservicesgrpcroute-dep" location : "global" hostnames : - "test1" - "test2" rules : - matches : - method : type : "EXACT" grpcService : "helloworld.Greeter" grpcMethod : "SayHello" caseSensitive : false headers : - type : "EXACT" key : "foo" value : "bar" action : destinations : - serviceRef : name : "networkservicesgrpcroute-dep" weight : 50 - serviceRef : name : "networkservicesgrpcroute-dep" weight : 50 faultInjectionPolicy : abort : httpStatus : 501 percentage : 1 delay : fixedDelay : "10s" percentage : 2 retryPolicy : numRetries : 3 retryConditions : - "refused-stream" - "cancelled" timeout : "30s" - action : destinations : - serviceRef : name : "networkservicesgrpcroute-dep" projectRef : # Replace "${PROJECT_ID?}" with your project ID external : "projects/${PROJECT_ID?}" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : networkservicesgrpcroute-dep spec : loadBalancingScheme : "INTERNAL_SELF_MANAGED" location : global protocol : GRPC --- apiVersion : networkservices.cnrm.cloud.google.com/v1beta1 kind : NetworkServicesGateway metadata : name : networkservicesgrpcroute-dep spec : location : "global" type : "OPEN_MESH" scope : "networkservicesgrpcroute-sample-scope" ports : - 80 - 443 projectRef : # Replace "${PROJECT_ID?}" with your project ID external : "projects/${PROJECT_ID?}" --- apiVersion : networkservices.cnrm.cloud.google.com/v1beta1 kind : NetworkServicesMesh metadata : name : networkservicesgrpcroute-dep spec : location : "global" projectRef : # Replace "${PROJECT_ID?}" with your project ID external : "projects/${PROJECT_ID?}" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- Possible values: TYPE_UNSPECIFIED, EXACT, REGULAR_EXPRESSION * Field is required when parent field is specified Status Schema conditions : - lastTransitionTime : string message : string reason : string status : string type : string createTime : string observedGeneration : integer selfLink : string updateTime : string Fields conditions list (object) Conditions represent the latest available observation of the resource's current state. conditions[] object conditions[].lastTransitionTime string Last time the condition transitioned from one status to another. conditions[].message string Human-readable message indicating details about last transition. conditions[].reason string Unique, one-word, CamelCase reason for the condition's last transition. conditions[].status string Status is the status of the condition.
 
-### IAMPolicy | Config Connector | Google Cloud Documentation
+### "Bulk importing and exporting existing Google Cloud resources \_|\_ Config\
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 110
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export)
+- Source ID: `site-docs-reference`
+- Final score: 79
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
+- Options are 'continue', 'halt', or 'ignore'. halt : stop execution on any error (default) continue : continue processing resources, print the error to STDERR ignore : continue processing resources and don't print the error --iam-format : Specifies the kind of IAM resources output with your export.
+- Bulk importing and exporting existing Google Cloud resources This page describes the config-connector bulk-export command and how to use it to export Google Cloud resources into Config Connector YAML files which you can subsequently import into Config Connector. config-connector bulk-export uses Cloud Asset Inventory 's Export functionality to discover existing Google Cloud resources.
+- For example, if you want to only import PubSubTopic assets from the file EXPORT FILE , run the following command: cat EXPORT FILE jq '. select( .asset type == "pubsub.googleapis.com/Topic" )' config-connector bulk-export Exporting an inventory with config-connector The config-connector bulk-export tool can export resources from a Google Cloud Resource hierarchy .
+- Cleaning up You can delete your PubSubTopic with config-connector bulk-export and kubectl delete . echo ${ TOPIC ASSET } config-connector bulk-export kubectl delete -f - --namespace CC NAMESPACE Replace CC NAMESPACE with the namespace that Config Connector manages resources from.
+
+### "Installing with the GKE add-on \_|\_ Config Connector \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall](https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall)
+- Source ID: `site-docs-reference`
+- Final score: 79
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Apply the configuration to your cluster with kubectl apply : kubectl apply -f configconnector.yaml Specifying where to create your resources Config Connector can organize resources by project, folder, or organization, which is the same way you would organize resources with Google Cloud.
+- It prevents Config Connector from populating unspecified fields into the spec. stateIntoSpec : Absent Replace the following: SERVICE ACCOUNT NAME with your service account's name.
+- It means setting cnrm.cloud.google.com/state-into-spec annotation to absent for all Config Connector resources created in the cluster in the future.
+- To configure the operator as cluster mode, complete the following steps: Copy the following YAML file into a file named configconnector.yaml : configconnector.yaml apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnector metadata : the name is restricted to ensure that there is only one ConfigConnector resource installed in your cluster name : configconnector.core.cnrm.cloud.google.com spec : mode : cluster googleServiceAccount : " SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com" Setting stateIntoSpec to Absent is recommended.
 

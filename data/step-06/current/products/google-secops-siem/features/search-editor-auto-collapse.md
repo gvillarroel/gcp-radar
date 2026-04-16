@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:56:14.341Z"
+generated_at: "2026-04-15T00:53:15.523Z"
 product_name: "Google SecOps SIEM"
 product_slug: "google-secops-siem"
 feature_name: "Search editor auto-collapse"
 feature_slug: "search-editor-auto-collapse"
 latest_feature_date: "2025-10-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/soar/release-notes"
+  - "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+  - "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
 keywords:
   - "search"
   - "editor"
   - "auto"
   - "collapse"
-  - "the"
   - "automatically"
   - "collapses"
   - "after"
+  - "query"
 ---
 
 # Search editor auto-collapse
 
 Product: Google SecOps SIEM
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +38,13 @@ The search editor automatically collapses after a query runs to provide more spa
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
+- [https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs](https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs)
+- [https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs](https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs)
 
 ## Supporting Pages
 
@@ -54,51 +52,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 - Source ID: `site-api-reference`
-- Final score: 152
+- Final score: 200
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - When you run a query, the search editor panel automatically collapses to provide more space for the results.
-- The search is automatically run again using the same date and time parameters.
-- The following operators are supported: <, > <=, >= =, != nocase -- supported for strings After you enter a valid UDM field and operator, add the log data value you want to search for.
-- For enumerated fields, the editor displays suggestions for all valid values (for example, NETWORK EVENT ) after you type an operator and a double quote ( " ).
+- To control the auto-suggestions shown in the query editor, adjust the following settings: Enable suggestions while typing : Enables auto-suggestion.
+- Use auto-suggestions to build queries When you write a query, the editor provides auto-suggestions to help you build queries efficiently.
+- If your simple query concurrency limit is exhausted, they automatically consume available complex query quota.
 
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
+### "View alerts and IOC matches \_|\_ Google Security Operations \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
+- URL: [https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs](https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs)
 - Source ID: `site-api-reference`
-- Final score: 136
+- Final score: 114
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Optimized results view : The search editor now automatically collapses after a query runs, providing more space for results.
-- January 13, 2026 Announcement Auto extraction general availability As part of the GA release for the auto extraction feature, customers now need to opt-in and choose which fields to extract. (Full auto extraction is no longer supported.) The opt-in functionality does not impact the extracted fields that are already in use (in saved searches and rules), because those fields have been automatically opted-in as part of the GA migration.
-- April 07, 2026 Change Search query editor enhancements Google SecOps has enhanced the search query editor to provide intelligent auto-suggestions and improved error handling.
-- Search summaries : Gemini can automatically summarize search results after every search and subsequent filter action.
+- After this time-limited IOC expires, Google SecOps automatically reverts to using the previous IOC version if it's still active (for example, the indefinite active version).
+- Retroactive matching : when new IOCs are added to any integrated threat intelligence feed (either Google-provided or customer-provided), Google SecOps automatically scans your historical data (up to your full data retention period, typically one year) for any past occurrences of these new indicators.
+- Google Security Operations continuously ingests data from your infrastructure and other security data sources, and automatically correlates suspicious security indicators with your security data.
+- How Google SecOps automatically matches IOCs Google SecOps automatically correlates your ingested security data against known threat indicators from various threat intelligence feeds.
 
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
+### "Ingest Google Cloud data \_|\_ Google Security Operations \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
+- URL: [https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs](https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs)
 - Source ID: `site-api-reference`
-- Final score: 136
+- Final score: 97
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Optimized results view : The search editor now automatically collapses after a query runs, providing more space for results.
-- January 13, 2026 Announcement Auto extraction general availability As part of the GA release for the auto extraction feature, customers now need to opt-in and choose which fields to extract. (Full auto extraction is no longer supported.) The opt-in functionality does not impact the extracted fields that are already in use (in saved searches and rules), because those fields have been automatically opted-in as part of the GA migration.
-- April 21, 2023 Change The Chronicle forwarder for Linux has been enhanced with the following changes: After you make a change to a configuration file, either <FORWARDER NAME>.conf or <FORWARDER NAME> auth.conf , the change is automatically applied within 5 minutes.
-- April 07, 2026 Change Search query editor enhancements Google SecOps has enhanced the search query editor to provide intelligent auto-suggestions and improved error handling.
-
-### Google Security Operations SOAR release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 108
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Fixed Inline CSS removed in Insights (ID #00273271) Fixed SAML login page showing blank (ID #00279230) Fixed Alert Type is empty when trying to add alert grouping rules (ID # 00275434) Fixed Search results distorting the screen (ID #00273643) Fixed Job page loading slowly and needs to be refreshed many times (ID #50253417) Fixed Gitsync power up push content not triggering automatically (ID #00283331) May 09, 2024 Announcement Release 6.3.1 is now in General Availability.
-- Fixed Searching by entities does not return the full results (ID #47644037) Fixed Cases are loading too slowly (ID #00246621) Fixed API endpoint /api/external/v1/logging/python not returning logs (ID #00258483) Fixed Predefined widgets not available after updating playbook block (ID #47667046) November 30, 2023 Announcement Release 6.2.41 is now in General Availability.
-- Fixed Timeout for automatic and manual python-run operations failing after 5 minutes even though it's defined for a longer time in the platform (ID #00243596, #00213817, #45379045, #48348087, #00245583. #00227758, #00250153) Automatic actions/operations now run for up to the time defined in the platform (maximum of 20 minutes).
-- Announcement Email settings: customer configuration change In order to help with safe and secure communication, the Trust Certificate checkbox is scheduled to be deleted in April 2024 as it will be enabled automatically by default.
+- To grant the Chronicle Service Viewer IAM role using gcloud , run the following command: gcloud organizations add-iam-policy-binding ORGANIZATION ID \ --member "user: USER EMAIL " \ --role roles/chroniclesm.viewer To grant the Security Center Admin Editor IAM role using gcloud , run the following command: gcloud organizations add-iam-policy-binding ORGANIZATION ID \ --member "user: USER EMAIL " \ --role roles/securitycenter.adminEditor ` To grant the Organization Role Viewer IAM role using gcloud , run the following command: gcloud organizations add-iam-policy-binding ORGANIZATION ID \ --member "user: USER EMAIL " \ --role roles/iam.organizationRoleViewer Enable direct ingestion from Google Cloud The steps to enable direct ingestion from Google Cloud are different depending on the ownership of the project that your Google SecOps instance is bound to.
+- This asset metadata is drawn from your Cloud Asset Inventory and consists of information about your assets, resources, and identities including the following: Environment Location Zone Hardware models Access control relationships between resources and identities The following types of Google Cloud asset metadata will be exported to your Google SecOps instance: GCP BIGQUERY CONTEXT GCP COMPUTE CONTEXT GCP IAM CONTEXT GCP IAM ANALYSIS GCP STORAGE CONTEXT GCP CLOUD FUNCTIONS CONTEXT GCP SQL CONTEXT GCP NETWORK CONNECTIVITY CONTEXT GCP RESOURCE MANAGER CONTEXT The following are examples of Google Cloud asset metadata: Application name— Google-iamSample/0.1 Project name— projects/my-project Note: You need to have either Security Command Center Standard or Security Command Center Premium enabled to export Google Cloud asset metadata to Google SecOps.
+- If your Google SecOps instance is bound to a project that Google Cloud owns and manages, perform the following steps: Note: After completing these steps, you will need to obtain a new one-time access code from your Google SecOps representative and complete the procedure to enable direct ingestion from Google Cloud to restart Google Cloud log ingestion.
+- For more information about exporting specific context logs and ingesting them into Google SecOps, see Default parser configuration and ingestion and search for 'context' or 'analysis'.
 

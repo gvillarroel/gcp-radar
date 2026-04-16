@@ -1,0 +1,92 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T12:48:36.672Z"
+product_name: "BigQuery"
+product_slug: "bigquery"
+feature_name: "Resizable query result columns"
+feature_slug: "resizable-query-result-columns"
+latest_feature_date: "2022-08-17"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-query-append"
+  - "https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries"
+  - "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+keywords:
+  - "resizable"
+  - "query"
+  - "result"
+  - "columns"
+  - "results"
+  - "can"
+  - "viewed"
+  - "console"
+---
+
+# Resizable query result columns
+
+Product: BigQuery
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Query results can be viewed in resizable columns in the Cloud console.
+
+## Extended Definition
+
+Query results can be viewed in resizable columns in the Cloud console.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-query-append](https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-query-append)
+- [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries)
+- [https://docs.cloud.google.com/bigquery/docs/visualize-jupyter](https://docs.cloud.google.com/bigquery/docs/visualize-jupyter)
+
+## Supporting Pages
+
+### Add a column using a query job \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-query-append](https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-query-append)
+- Source ID: `site-docs-reference-required-15`
+- Final score: 203
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information, see Set up authentication for client libraries . // Import the Google Cloud client libraries const { BigQuery } = require ( ' @google-cloud/bigquery ' ); // Instantiate client const bigquery = new BigQuery (); async function addColumnQueryAppend () { // Adds a new column to a BigQuery table while appending rows via a query job. / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = 'my dataset'; // const tableId = 'my table'; // Retrieve destination table reference const [ table ] = await bigquery . dataset ( datasetId ). table ( tableId ). get (); const destinationTableRef = table . metadata . tableReference ; // In this example, the existing table contains only the 'name' column. // 'REQUIRED' fields cannot be added to an existing schema, // so the additional column must be 'NULLABLE'. const query = SELECT name, year FROM \bigquery-public-data.usa names.usa 1910 2013\ WHERE state = 'TX' LIMIT 10 ; // Set load job options const options = { query : query , schemaUpdateOptions : [ 'ALLOW FIELD ADDITION' ], writeDisposition : 'WRITE APPEND' , destinationTable : destinationTableRef , // Location must match that of the dataset(s) referenced in the query. location : 'US' , }; const [ job ] = await bigquery . createQueryJob ( options ); console . log ( Job ${ job . id } started. ); // Wait for the query to finish const [ rows ] = await job . getQueryResults (); console . log ( Job ${ job . id } completed. ); // Print the results console . log ( 'Rows:' ); rows . forEach ( row = > console . log ( row )); } PHP Before trying this sample, follow the PHP setup instructions in the BigQuery quickstart using client libraries .
+- For more information, see Set up authentication for client libraries . import ( "context" "fmt" "cloud.google.com/go/bigquery" ) // createTableAndWidenQuery demonstrates how the schema of a table can be modified to add columns by appending // query results that include the new columns. func createTableAndWidenQuery ( projectID , datasetID , tableID string ) error { // projectID := "my-project-id" // datasetID := "mydataset" // tableID := "mytable" ctx := context .
+- Client () TODO(developer): Set table id to the ID of the destination table. table id = "your-project.your dataset.your table name" Retrieves the destination table and checks the length of the schema. table = client . get table ( table id ) # Make an API request. print ( "Table {} contains {} columns" . format ( table id , len ( table . schema ))) Configures the query to append the results to a destination table, allowing field addition. job config = bigquery .
+- WRITE APPEND , ) Start the query, passing in the extra configuration. client . query and wait ( In this example, the existing table contains only the 'full name' and 'age' columns, while the results of this query will contain an additional 'favorite color' column. 'SELECT "Timmy" as full name, 85 as age, "Blue" as favorite color;' , job config = job config , ) # Make an API request and wait for job to complete.
+
+### "Query a public dataset with the BigQuery client libraries \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries)
+- Source ID: `site-docs-reference-2`
+- Final score: 178
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To create a query against the bigquery-public-data.stackoverflow dataset that returns the top 10 most viewed Stack Overflow pages and their view counts, copy the following code into the app.js file: // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); async function queryStackOverflow () { // Queries a public Stack Overflow dataset. // Create a client const bigqueryClient = new BigQuery (); // The SQL query to run const sqlQuery = SELECT CONCAT( 'https://stackoverflow.com/questions/', CAST(id as STRING)) as url, view count FROM \bigquery-public-data.stackoverflow.posts questions\ WHERE tags like '%google-bigquery%' ORDER BY view count DESC LIMIT 10 ; const options = { query : sqlQuery , // Location must match that of the dataset(s) referenced in the query. location : 'US' , }; // Run the query const [ rows ] = await bigqueryClient . query ( options ); console . log ( 'Query Results:' ); rows . forEach ( row = > { const url = row [ 'url' ]; const viewCount = row [ 'view count' ]; console . log ( url: ${ url } , ${ viewCount } views ); }); } queryStackOverflow (); Click Open Terminal .
+- To create a query against the bigquery-public-data.stackoverflow dataset that returns the top 10 most viewed Stack Overflow pages and their view counts, copy the following code into the app.php file: < ?php ... require DIR . '/vendor/autoload.php'; use Google\Cloud\BigQuery\BigQueryClient; $bigQuery = new BigQueryClient(); $query = <<<ENDSQL SELECT CONCAT( 'https://stackoverflow.com/questions/', CAST(id as STRING)) as url, view count FROM bigquery-public-data.stackoverflow.posts questions WHERE tags like '%google-bigquery%' ORDER BY view count DESC LIMIT 10; ENDSQL; $queryJobConfig = $bigQuery->query($query); $queryResults = $bigQuery->runQuery($queryJobConfig); if ($queryResults->isComplete()) { $i = 0; $rows = $queryResults->rows(); foreach ($rows as $row) { printf('--- Row %s ---' .
+- To create a query against the bigquery-public-data.stackoverflow dataset that returns the top 10 most viewed Stack Overflow pages and their view counts, copy the following code into the app.rb file: require "google/cloud/bigquery" This uses Application Default Credentials to authenticate. @see https://cloud.google.com/bigquery/docs/authentication/getting-started bigquery = Google :: Cloud :: Bigquery . new sql = "SELECT " \ "CONCAT('https://stackoverflow.com/questions/', CAST(id as STRING)) as url, view count " \ "FROM bigquery-public-data.stackoverflow.posts questions " \ "WHERE tags like '%google-bigquery%' " \ "ORDER BY view count DESC LIMIT 10" results = bigquery . query sql results . each do row puts " #{ row [ :url ] } : #{ row [ :view count ] } views" end Click Open Terminal .
+- TableResult result = queryJob . getQueryResults (); // Print all pages of the results. for ( FieldValueList row : result . iterateAll ()) { // String type String url = row . get ( "url" ). getStringValue (); String viewCount = row . get ( "view count" ). getStringValue (); System . out . printf ( "%s : %s views\n" , url , viewCount ); } } catch ( BigQueryException InterruptedException e ) { System . out . println ( "Simple App failed due to error: \n" + e . toString ()); } } } The query returns the top 10 most viewed Stack Overflow pages and their view counts.
+
+### "Visualize geospatial analytics data using a Colab notebook \_|\_ BigQuery\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/visualize-jupyter](https://docs.cloud.google.com/bigquery/docs/visualize-jupyter)
+- Source ID: `site-docs-root`
+- Final score: 173
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The results should look like the following: <class 'geopandas.geodataframe.GeoDataFrame'> RangeIndex: 117 entries, 0 to 116 Data columns (total 2 columns): Column Non-Null Count Dtype --- ------ -------------- ----- 0 neighborhood 117 non-null object 1 geometry 117 non-null geometry dtypes: geometry(1), object(1) memory usage: 2.0+ KB To preview the first row of the DataFrame, enter the following code: Preview the first row gdf sanfrancisco neighborhoods . head ( 1 ) Click play circle filled Run cell .
+- This code uses the %%bigquery magic function to run the query and return the results in a DataFrame: Query the neighborhood name and geometry from the San Francisco neighborhoods dataset. %% bigquery gdf sanfrancisco neighborhoods -- project { GCP PROJECT ID } -- use geodataframe geometry SELECT neighborhood , neighborhood geom AS geometry FROM bigquery - public - data . san francisco neighborhoods . boundaries Click play circle filled Run cell .
+- This code uses the %%bigquery magic function to run the query and return the results in a DataFrame: Query the incident key and location data from the SFPD reports dataset. %% bigquery gdf incidents -- project { GCP PROJECT ID } -- use geodataframe location geography SELECT unique key , location geography FROM ( SELECT unique key , SAFE .
+- This code uses the %%bigquery magic function to run the query and return the results in a DataFrame: Query the station ID, station name, station short name, and station geometry from the bike share dataset.
+

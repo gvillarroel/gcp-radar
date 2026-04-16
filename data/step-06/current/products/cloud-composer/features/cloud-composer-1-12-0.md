@@ -1,50 +1,49 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.755Z"
+generated_at: "2026-04-14T00:34:19.695Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer 1.12.0"
 feature_slug: "cloud-composer-1-12-0"
 latest_feature_date: "2021-09-23"
 deprecation_date: "2021-09-23"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
-  - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient"
 keywords:
   - "composer"
   - "12"
   - "version"
-  - "has"
-  - "reached"
-  - "its"
-  - "end"
-  - "of"
+  - "deprecated"
+  - "2021"
+  - "09"
+  - "23"
 ---
 
 # Cloud Composer 1.12.0
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Cloud Composer version 1.12.0 has reached its end of full support period; deprecated on 2021-09-23.
+Cloud Composer 1.12.0 is a product version of Cloud Composer; deprecated on 2021-09-23.
 
 ## Extended Definition
 
-Cloud Composer version 1.12.0 has reached its end of full support period; deprecated on 2021-09-23.
+Cloud Composer 1.12.0 is a product version of Cloud Composer; deprecated on 2021-09-23.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient)
 
 ## Supporting Pages
 
@@ -52,7 +51,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 208
+- Final score: 250
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,29 +60,29 @@ Evidence snippets:
 - Last patch of the previous Cloud Composer 2 minor version: composer-2.10.2-airflow- Cloud Composer 2 versions with an extended upgrade timeline: composer-2.10.2-airflow- , composer-2.10.1-ariflow- , composer-2.9.7-airflow- , and other versions with an extended upgrade timeline.
 - In Google Cloud CLI, API, or Terraform, you can upgrade an existing environment to the latest supported versions, three previous versions of Cloud Composer 2, the last patch version of the previous minor version, and to versions with an extended upgrade timeline.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 196
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change (Airflow 2.1.1) downgraded google-cloud-memcache dependency from 1.1.0 to 1.0.0 Change (Airflow 2.1.1) Downgraded colorlog dependency from 5.0.1 to 4.8.0 Change New versions of Cloud Composer images: composer-1.16.14-airflow-1.10.12 composer-1.16.14-airflow-1.10.14 composer-1.16.14-airflow-1.10.15 (default) composer-1.17.0-preview.10-airflow-2.0.2 composer-1.17.0-preview.10-airflow-2.1.1 Deprecated Cloud Composer 1.11.2 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.17.2-airflow-2.1.2 composer-1.17.2-airflow-2.0.2 composer-1.17.2-airflow-1.10.15 (default) composer-1.17.2-airflow-1.10.14 composer-1.17.2-airflow-1.10.12 composer-2.0.0-preview.3-airflow-2.1.2 (default) composer-2.0.0-preview.3-airflow-2.0.2 Deprecated Cloud Composer 1.12.1 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.17.1-airflow-2.1.2 composer-1.17.1-airflow-2.0.2 composer-1.17.1-airflow-1.10.15 (default) composer-1.17.1-airflow-1.10.14 composer-1.17.1-airflow-1.10.12 composer-2.0.0-preview.2-airflow-2.1.2 composer-2.0.0-preview.2-airflow-2.0.2 Deprecated Cloud Composer 1.12.0 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.17.5-airflow-2.1.4 composer-1.17.5-airflow-2.1.2 composer-1.17.5-airflow-2.0.2 composer-1.17.5-airflow-1.10.15 (default) composer-1.17.5-airflow-1.10.12 composer-1.17.5-airflow-1.10.14 Deprecated Cloud Composer 1.13.0 has reached its end of full support period .
-
-### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - Source ID: `site-iam-reference`
-- Final score: 188
+- Final score: 82
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
-- Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.softwareConfig.pypiPackages.EXAMPLE PACKAGE, // config.softwareConfig.pypiPackages.ANOTHER PACKAGE { "config" : { "softwareConfig" : { "pypiPackages" : { "EXAMPLE PACKAGE" : "" , "ANOTHER PACKAGE" : ">=1.10.3" } } } } Terraform The pypi packages block in the software config block specifies packages. resource "google composer environment" "example" { name = " ENVIRONMENT NAME " region = " LOCATION " config { software config { pypi packages = { PACKAGE NAME = " EXTRAS AND VERSION " } } } } Replace: ENVIRONMENT NAME with the name of the environment.
-- Installing one package Update your environment, and specify the package, version, and extras in the --update-pypi-package argument. gcloud composer environments update ENVIRONMENT NAME \ --location LOCATION \ --update-pypi-package PACKAGE NAME EXTRAS AND VERSION Replace: ENVIRONMENT NAME with the name of the environment.
-- Note: Cloud Composer does not support pip customization and does not resolve package dependencies and conflicts outside of the resolution mechanisms that the default pip tool provides.
+- Support for Google Display and Video 360 Operators Google Display and Video 360 Operators in Cloud Composer versions earlier than 2.1.13 are based on the Display and Video 360 v1.1 API that is deprecated and its sunset date is April 27, 2023.
+- Support for Google Campaign Manager 360 Operators Google Campaign Manager Operators in Cloud Composer versions earlier than 2.1.13 are based on the Campaign Manager 360 v3.5 API that is deprecated and its sunset date is May 1, 2023 .
+- Announcements about the removal of support for deprecated Beta APIs from GKE versions Cloud Composer manages underlying Cloud Composer-owned GKE clusters.
+- Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
+
+### "Class ImageVersionsClient (1.19.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient)
+- Source ID: `site-python-reference`
+- Final score: 74
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- List ImageVersions in a project and location. parent str List ImageVersions in the given project and location, in the form: "projects/{projectId}/locations/{locationId}" This corresponds to the parent field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.orchestration.airflow import service v1 def sample list image versions(): Create a client client = service v1.
+- These credentials identify the application to the service; if none are specified, the client will attempt to ascertain the credentials from the environment. transport Optional[Union[str,ImageVersionsTransport,Callable[..., ImageVersionsTransport]]] The transport to use, or a Callable that constructs and returns a new transport.
+- ListImageVersionsRequest ( ) Make the request page result = client. list image versions (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.orchestration.airflow.service v1.types.ListImageVersionsRequest , dict] The request object.
 

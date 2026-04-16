@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:57:06.738Z"
+generated_at: "2026-04-12T12:11:52.331Z"
 product_name: "Cloud NAT"
 product_slug: "cloud-nat"
 feature_name: "NAT IP address draining"
 feature_slug: "nat-ip-address-draining"
 latest_feature_date: "2019-09-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation"
   - "https://docs.cloud.google.com/nat/docs/overview"
   - "https://docs.cloud.google.com/nat/docs/troubleshooting"
+  - "https://docs.cloud.google.com/nat/docs/monitoring"
 keywords:
   - "nat"
   - "ip"
@@ -26,7 +27,7 @@ keywords:
 # NAT IP address draining
 
 Product: Cloud NAT
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud NAT can drain NAT IP addresses to transition traffic away from selected ad
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - [https://docs.cloud.google.com/nat/docs/overview](https://docs.cloud.google.com/nat/docs/overview)
 - [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
+- [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - Source ID: `site-docs-root`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 274
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Drain external IP addresses assigned to NAT Before you remove a manually configured IP address, you can drain it so that existing connections aren't disrupted.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/nat/docs/overview](https://docs.cloud.google.com/nat/docs/overview)
 - Source ID: `site-docs-reference`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 197
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Scalability Cloud NAT can be configured to automatically scale the number of NAT IP addresses that it uses, and it supports VMs that belong to managed instance groups, including the groups with autoscaling enabled.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 195
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - When Cloud NAT can and cannot be used Does Cloud NAT apply to instances, including GKE node VMs, that have external IP addresses?
 - Common issues VMs can reach the internet unexpectedly, without Cloud NAT If your virtual machine (VM) instances or container instances can reach the internet without Cloud NAT, but you don't want them to, check for the following issues: Determine if the VM's network interface has an external IP address.
 - Dropped received packets A Cloud NAT gateway maintains a connection tracking table to store active connection details and IP address and port mappings—how VM IP addresses and ports translate to NAT IP addresses and ports.
 - If you need to rapidly create a series of TCP connections to the same destination 3-tuple, consider reducing the TCP time wait so that Cloud NAT can more quickly re-use NAT source IP address and source port tuples.
+
+### Logs and metrics \_|\_ Cloud NAT \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
+- Source ID: `site-docs-root`
+- Final score: 193
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Sending VM was trying to reach the external IP address of another VM in the same project. { insertId: "1the8juf6vab1l" jsonPayload: { allocation status: "DROPPED" connection: { dest ip : "192.0.2.87" dest port: 80 protocol: "tcp" src ip: "10.0.128.1" src port: 45047 } destination: { instance: { project id: "service-project-1" region: "asia-east1" vm name: "vm-2" zone: "asia-east1-b" } } endpoint: { project id: "service-project-1" region: "europe-west1" vm name: "vm-1" zone: "europe-west1-b" } gateway identifiers: { cloud router: "my-router-1" gateway name: "my-nat-2" region: "europe-west1" } vpc: { project id: "host-project" subnetwork name: "subnetwork-1" vpc name: "network-1" } } logName: "projects/host-project/logs/compute.googleapis.com%2Fnat flows" receiveTimestamp: "2018-06-28T10:46:09.123456789Z" resource: { labels: { gateway name: "my-nat-2" project id: "host-project" region: "europe-west1-d" router id: "987654321123456" } type: "nat gateway" } timestamp: "2018-06-28T10:46:01.602240572Z" } Pricing for Cloud NAT logging See Logging pricing .
+- In each command, replace the following: NAT GATEWAY : the name of the NAT gateway ROUTER NAME : the name of the Cloud Router that hosts the NAT gateway REGION : the region of the Cloud Router To log network address translation events and errors: gcloud compute routers nats update NAT GATEWAY \ --router= ROUTER NAME \ --region= REGION \ --enable-logging To log only network address translation events: gcloud compute routers nats update NAT GATEWAY \ --router= ROUTER NAME \ --region= REGION \ --enable-logging \ --log-filter=TRANSLATIONS ONLY To log only errors: gcloud compute routers nats update NAT GATEWAY \ --router= ROUTER NAME \ --region= REGION \ --enable-logging \ --log-filter=ERRORS ONLY Clear log filters If you have a filter set, you can clear it.
+- VM instance filtering dimensions label key Type Description project id STRING The project ID of the VM instance. instance id STRING The ID of the VM instance. zone STRING The zone of the VM instance. nat project number STRING The project number to which the NAT gateway belongs. router id STRING The Cloud Router ID to which the NAT gateway belongs. nat gateway name STRING The name of the NAT gateway. nat ip STRING The NAT IP address allocated to the NAT gateway.
+- NatIpConnection field format Field Type Description src ip string Source IP address src port int32 Source port nat ip string NAT IP address nat port int32 NAT assigned port dest ip string Destination IP address 1 dest port int32 Destination port protocol int32 IANA protocol number 1 For NAT64, this field is populated with the destination IPv4-embedded IPv6 address.
 

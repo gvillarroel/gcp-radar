@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.839Z"
+generated_at: "2026-04-12T12:12:49.010Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Sub-millisecond span resolution"
 feature_slug: "sub-millisecond-span-resolution"
 latest_feature_date: "2018-01-12"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/trace/docs/trace-alerting"
-  - "https://docs.cloud.google.com/trace/docs/analytics"
-  - "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+  - "https://docs.cloud.google.com/trace/docs/setup/nodejs"
+  - "https://docs.cloud.google.com/trace/docs/setup/go-ot"
+  - "https://docs.cloud.google.com/trace/docs/setup/go"
+  - "https://docs.cloud.google.com/trace/docs/setup/java-ot"
 keywords:
   - "sub"
   - "millisecond"
@@ -26,7 +27,7 @@ keywords:
 # Sub-millisecond span resolution
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +39,68 @@ Trace Viewer displays trace spans with sub-millisecond time resolution.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/trace/docs/trace-alerting](https://docs.cloud.google.com/trace/docs/trace-alerting)
-- [https://docs.cloud.google.com/trace/docs/analytics](https://docs.cloud.google.com/trace/docs/analytics)
-- [https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses](https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses)
+- [https://docs.cloud.google.com/trace/docs/setup/nodejs](https://docs.cloud.google.com/trace/docs/setup/nodejs)
+- [https://docs.cloud.google.com/trace/docs/setup/go-ot](https://docs.cloud.google.com/trace/docs/setup/go-ot)
+- [https://docs.cloud.google.com/trace/docs/setup/go](https://docs.cloud.google.com/trace/docs/setup/go)
+- [https://docs.cloud.google.com/trace/docs/setup/java-ot](https://docs.cloud.google.com/trace/docs/setup/java-ot)
 
 ## Supporting Pages
 
-### "Monitor trace quota usage and spans ingested \_|\_ Cloud Trace \_|\_ Google\
+### Node.js instrumentation sample \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/trace/docs/trace-alerting](https://docs.cloud.google.com/trace/docs/trace-alerting)
+- URL: [https://docs.cloud.google.com/trace/docs/setup/nodejs](https://docs.cloud.google.com/trace/docs/setup/nodejs)
 - Source ID: `site-docs-root-2`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 193
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Filter service = cloudtrace.googleapis.com response code = 429 Across time series Time series aggregation sum Rolling window 1 m Rolling window function sum Configure alert trigger Field Value Condition type Threshold Alert trigger Any time series violates Threshold position Above threshold Threshold value 0 Retest window 1 minute Monitor monthly span ingestion To create an alerting policy that triggers when your monthly Cloud Trace spans ingested exceeds a user-defined limit, use the following settings.
-- Home Documentation Observability Cloud Trace Guides Send feedback Monitor trace quota usage and spans ingested Stay organized with collections Save and categorize content based on your preferences.
-- Monitor over-quota on Cloud Trace API usage To create an alerting policy that triggers when your monthly Cloud Trace spans ingested exceeds your quota, use the following settings.
-- You can create alerting policies in Cloud Monitoring to monitor the number of Cloud Trace spans ingested per month, your quota usage, and your rate of span ingestion.
+- The following code sample illustrates a Pino LoggerOptions object that configures the app to output JSON structured logs: // Expected attributes that OpenTelemetry adds to correlate logs with spans interface LogRecord { trace id ?: string ; span id ?: string ; trace flags ?: string ; [ key : string ] : unknown ; } // https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#logseverity const PinoLevelToSeverityLookup : Record<string , string undefined > = { trace : 'DEBUG' , debug : 'DEBUG' , info : 'INFO' , warn : 'WARNING' , error : 'ERROR' , fatal : 'CRITICAL' , }; export const loggerConfig = { messageKey : 'message' , // Same as pino.stdTimeFunctions.isoTime but uses "timestamp" key instead of "time" timestamp () : string { return ,"timestamp":" ${ new Date ( Date . now ()). toISOString () } " ; }, formatters : { log ( object : LogRecord ) : Record<string , unknown > { // Add trace context attributes following Cloud Logging structured log format described // in https://cloud.google.com/logging/docs/structured-logging#special-payload-fields const { trace id , span id , trace flags , ... rest } = object ; return { 'logging.googleapis.com/trace' : trace id , 'logging.googleapis.com/spanId' : span id , 'logging.googleapis.com/trace sampled' : trace flags ? trace flags === '01' : undefined , ... rest , }; }, // See // https://getpino.io/#/docs/help?id=mapping-pino-log-levels-to-google-cloud-logging-stackdriver-severity-levels level ( label : string ) { return { severity : PinoLevelToSeverityLookup [ label ] ??
+- This configuration ensures that spans have the correct parent-child relationship within a trace.
+- To get the permissions that you need to have the sample application to write log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Writer ( roles/logging.logWriter ) Monitoring Metric Writer ( roles/monitoring.metricWriter ) Cloud Telemetry Traces Writer ( roles/telemetry.tracesWriter ) To get the permissions that you need to view your log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Viewer ( roles/logging.viewer ) Monitoring Viewer ( roles/monitoring.viewer ) Cloud Trace User ( roles/cloudtrace.user ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data, and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure OpenTelemetry Configure your app to preload the OpenTelemetry configuration Configure structured logging Write structured logs Configure OpenTelemetry The default configuration for the OpenTelemetry Node.js SDK exports traces by using the OTLP protocol .
 
-### Query and analyze traces \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
+### Go instrumentation sample \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/trace/docs/analytics](https://docs.cloud.google.com/trace/docs/analytics)
+- URL: [https://docs.cloud.google.com/trace/docs/setup/go-ot](https://docs.cloud.google.com/trace/docs/setup/go-ot)
 - Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The SQL editor displays the fully qualified name for the Trace.Spans.
-- If you want to view or explore individual traces or spans, or view attributes that are attached to spans, then use the Trace Explorer page.
-- AllSpans , then your Google Cloud project doesn't contain a observability bucket named Trace .
-- AllSpans , then your Google Cloud project doesn't contain a observability bucket named Trace .
-
-### "Collect and view multimodal prompts and responses \_|\_ Cloud Trace \_|\_\
-
-- URL: [https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses](https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses)
-- Source ID: `site-docs-root-2`
-- Final score: 148
+- Final score: 189
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- AllLogs > WHERE log name = 'projects/ PROJECT ID /logs/gen ai.client.inference.operation.details' AND timestamp > TIMESTAMP SUB ( CURRENT TIMESTAMP (), INTERVAL 1 DAY ) > SELECT insert id , timestamp , labels , trace , span id , STRING ( labels [ 'gen ai.input.messages ref' ]) AS messages ref uri -- Join completion log entries with the external table. > JOIN PROJECT ID .
-- AllLogs > WHERE log name = 'projects/ PROJECT ID /logs/gen ai.client.inference.operation.details' AND timestamp > TIMESTAMP SUB ( CURRENT TIMESTAMP (), INTERVAL 1 DAY ) > SELECT insert id , timestamp , labels , trace , span id , STRING ( labels [ 'gen ai.input.messages ref' ]) AS messages ref uri -- Join completion log entries with the external table. > JOIN PROJECT ID .
-- Find spans that contain multimodal prompts and responses To find the spans that contain multimodal prompts and responses, do the following: In the Google Cloud console, go to the Trace explorer page: Go to Trace explorer You can also find this page by using the search bar.
-- This tab appears only when spans sent to Trace follow the OpenTelemetry GenAI semantic conventions , version 1.37.0 or higher, which results in messages whose names begin with gen ai .
+- Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data, and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure the main function Configure OpenTelemetry Configure structured logging Add instrumentation to the HTTP server Link trace spans with logs and metrics Add instrumentation to the HTTP client Write structured logs Configure the main function To configure the app to write structured logs and to collect metrics and trace data by using OpenTelemetry, update the main function to configure the Go structured logging package, slog , and to configure OpenTelemetry.
+- Link trace spans with logs and metrics To link server and client spans, and to associate metrics and logs, pass the Go Context instance to the HTTP request and when you write logs.
+- NewTextMapPropagator ()) // Configure Trace Export to send spans as OTLP texporter , err := autoexport .
+- This configuration ensures that spans have the correct parent-child relationship within a trace.
+
+### Go instrumentation sample \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/trace/docs/setup/go](https://docs.cloud.google.com/trace/docs/setup/go)
+- Source ID: `site-docs-root-2`
+- Final score: 189
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data, and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure the main function Configure OpenTelemetry Configure structured logging Add instrumentation to the HTTP server Link trace spans with logs and metrics Add instrumentation to the HTTP client Write structured logs Configure the main function To configure the app to write structured logs and to collect metrics and trace data by using OpenTelemetry, update the main function to configure the Go structured logging package, slog , and to configure OpenTelemetry.
+- Link trace spans with logs and metrics To link server and client spans, and to associate metrics and logs, pass the Go Context instance to the HTTP request and when you write logs.
+- NewTextMapPropagator ()) // Configure Trace Export to send spans as OTLP texporter , err := autoexport .
+- This configuration ensures that spans have the correct parent-child relationship within a trace.
+
+### Java instrumentation sample \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/trace/docs/setup/java-ot](https://docs.cloud.google.com/trace/docs/setup/java-ot)
+- Source ID: `site-docs-root`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following code sample illustrates a log4j2.xml file configured to output JSON structured logs using the JSON Template Layout : <!-- Format JSON logs for the Cloud Logging agent https://cloud.google.com/logging/docs/structured-logging#special-payload-fields --> <!-- Log4j2's JsonTemplateLayout includes a template for Cloud Logging's special JSON fields https://logging.apache.org/log4j/2.x/manual/json-template-layout.html#event-templates --> <JsonTemplateLayout eventTemplateUri="classpath:GcpLayout.json"> <!-- Extend the included GcpLayout to include the trace and span IDs from Mapped Diagnostic Context (MDC) so that Cloud Logging can correlate Logs and Spans Since log4j2 2.24.0, GcpLayout.json already includes trace context logging from MDC and the below additional fields are no longer needed --> <EventTemplateAdditionalField key="logging.googleapis.com/trace" format="JSON" value='{"$resolver": "mdc", "key": "trace id"}' /> <EventTemplateAdditionalField key="logging.googleapis.com/spanId" format="JSON" value='{"$resolver": "mdc", "key": "span id"}' /> <EventTemplateAdditionalField key="logging.googleapis.com/trace sampled" format="JSON" value="true" /> </JsonTemplateLayout> The previous configuration extracts information about the active span from SLF4J's Mapped Diagnostic Context and adds that information as attributes to the log.
+- It will automatically generate a span for the controller body. / @GetMapping ( "/multi" ) public Mono<String> handleMulti () throws Exception { int subRequests = ThreadLocalRandom . current (). nextInt ( 3 , 8 ); // Write a structured log with the request context, which allows the log to // be linked with the trace for this request. logger . info ( "handle /multi request with subRequests={}" , subRequests ); // Make 3-7 http requests to the /single endpoint. return Flux . range ( 0 , subRequests ) . concatMap ( i - > client . get (). uri ( "http://localhost:8080/single" ). retrieve (). bodyToMono ( Void . class )) . then ( Mono . just ( "ok" )); } The /single endpoint is handled by the handleSingle function.
+- This configuration ensures that spans have the correct parent-child relationship within a trace.
+- To get the permissions that you need to have the sample application to write log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Writer ( roles/logging.logWriter ) Monitoring Metric Writer ( roles/monitoring.metricWriter ) Cloud Telemetry Traces Writer ( roles/telemetry.tracesWriter ) To get the permissions that you need to view your log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Viewer ( roles/logging.viewer ) Monitoring Viewer ( roles/monitoring.viewer ) Cloud Trace User ( roles/cloudtrace.user ) For more information about granting roles, see Manage access to projects, folders, and organizations .
 

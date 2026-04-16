@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.410Z"
+generated_at: "2026-04-15T12:06:50.453Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Fortran support"
@@ -9,12 +9,12 @@ latest_feature_date: "2025-10-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/open-source-disclosure"
 keywords:
   - "fortran"
   - "adds"
-  - "for"
   - "source"
   - "analysis"
 ---
@@ -34,34 +34,52 @@ Adds support for Fortran source analysis.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/open-source-disclosure](https://docs.cloud.google.com/mainframe-assessment-tool/docs/open-source-disclosure)
 
 ## Supporting Pages
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
+### "Open source disclosure \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 36
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/open-source-disclosure](https://docs.cloud.google.com/mainframe-assessment-tool/docs/open-source-disclosure)
+- Source ID: `site-docs-reference`
+- Final score: 60
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Migration Mainframe Assessment Tool Resources Send feedback Open source disclosure Stay organized with collections Save and categorize content based on your preferences.
+- For this reason, you can download a list of licenses for the open source projects used in Mainframe Assessment Tool.
+- Mainframe Assessment Tool values the open source community as an essential resource and partner in innovation.
+
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- Source ID: `site-docs-reference`
+- Final score: 52
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
+- Discover and analyze source code The Discovery page provides an overview of analysis of the application source code that you uploaded for assessment.
+- Connected jobs based on a shared data source: shows the connection between two jobs if one job writes data to a shared data source and the other job reads from that same data source.
+- Program name: identifies the program module that has been found within the uploaded source code but does not appear to be called or executed by any other part of the application.
+- You can ask questions about source code and business logic, query assessment data such as line counts or complexity metrics, and generate visualizations like charts.
 
-### Configure your Google Cloud project for Mainframe Assessment Tool | Google Cloud Documentation
+### "Extract business rules \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- Source ID: `site-docs-reference`
+- Final score: 44
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Configure your Google Cloud project for Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project This page describes the process to set up and configure your Google Cloud project to work with Mainframe Assessment Tool.
+- Benefits of business rules extraction Business rules extraction helps you achieve the following goals: Create a single source of truth: Mainframe Assessment Tool extracts your mainframe application logic into human-readable business rules in Gherkin, a plain-text domain-specific language (DSL) used in behavior-driven development (BDD).
+- This page is intended for mainframe developers, enterprise architects, and business analysts who want to understand and modernize legacy mainframe applications by extracting business rules from source code.
+- Exporting business rules lets you use the rules as input with tools such as Gemini CLI for modernization and analysis, share them with stakeholders, or perform offline analysis.
+- This status indicates the number of internal planning steps that the agent has successfully completed out of the total required for that specific analysis.
 

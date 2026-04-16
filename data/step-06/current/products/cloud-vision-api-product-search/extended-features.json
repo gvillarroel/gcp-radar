@@ -1,6 +1,6 @@
 {
   "schema_version": "step-06-extended-feature-definitions-v1",
-  "generated_at": "2026-04-11T00:28:07.832Z",
+  "generated_at": "2026-04-12T12:12:50.383Z",
   "product_name": "Cloud Vision API Product Search",
   "product_slug": "cloud-vision-api-product-search",
   "inputs": {
@@ -10,8 +10,8 @@
   "thresholds": {
     "min_base_score": 18,
     "min_final_score": 20,
-    "max_candidate_pages": 6,
-    "max_definition_pages": 3
+    "max_candidate_pages": 10,
+    "max_definition_pages": 4
   },
   "corpus_page_count": 40,
   "source_row_count": 7,
@@ -34,13 +34,14 @@
         "products",
         "in"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Batch deletion lets users delete all products in a specific product set or all products not in any product set.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/vision/product-search/docs/delete-resources",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images",
         "https://docs.cloud.google.com/vision/product-search/docs/searching",
-        "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images"
+        "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products"
       ],
       "candidate_pages": [
         {
@@ -50,7 +51,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_delete-resources.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_delete-resources.md",
-          "base_score": 170,
+          "base_score": 216,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -91,48 +92,13 @@
           ]
         },
         {
-          "page_id": "ead073cff37243816cdba3b39c74230d5eafa0370c517a4643a07850b3c222b9",
-          "url": "https://docs.cloud.google.com/vision/product-search/docs/searching",
-          "title": "\"Searching for Products \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 128,
-          "matched_phrases": [
-            {
-              "phrase": "in",
-              "title_hits": 1,
-              "url_hits": 1,
-              "body_hits": 320
-            },
-            {
-              "phrase": "products",
-              "title_hits": 1,
-              "url_hits": 0,
-              "body_hits": 157
-            },
-            {
-              "phrase": "all",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 18
-            },
-            {
-              "phrase": "batch",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 6
-            }
-          ]
-        },
-        {
           "page_id": "2ed2f1ab22a54737ae352577466c1ab7f72aaddc0ada593dcd2afd5ce50b8bb3",
           "url": "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images",
           "title": "\"Creating your reference images & indexing \\_|\\_ Vision API Product Search\\",
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
-          "base_score": 124,
+          "base_score": 145,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -167,13 +133,48 @@
           ]
         },
         {
+          "page_id": "ead073cff37243816cdba3b39c74230d5eafa0370c517a4643a07850b3c222b9",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/searching",
+          "title": "\"Searching for Products \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_searching.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
+          "base_score": 145,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 320
+            },
+            {
+              "phrase": "products",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 157
+            },
+            {
+              "phrase": "all",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 18
+            },
+            {
+              "phrase": "batch",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
           "page_id": "926d3072323f1b778056c2c6e678e709a08babc5722e734d2255f50b25aadd60",
           "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
           "title": "\"Quickstart: Create a product set and search for products \\_|\\_ Vision API\\",
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "base_score": 122,
+          "base_score": 143,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -214,7 +215,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
-          "base_score": 112,
+          "base_score": 133,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -255,7 +256,7 @@
           "source_id": "site-api-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_vision_product-search_docs_reference_rest.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-api-reference/pages/docs.cloud.google.com_vision_product-search_docs_reference_rest.md",
-          "base_score": 108,
+          "base_score": 129,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -288,6 +289,152 @@
               "body_hits": 5
             }
           ]
+        },
+        {
+          "page_id": "f456a544cf12e35516ce01d4e1b38866061897c936c8ca62c2d1d721d4a2836e",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/reference/rpc",
+          "title": "Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_reference_rpc.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_reference_rpc.md",
+          "base_score": 129,
+          "matched_phrases": [
+            {
+              "phrase": "products",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 81
+            },
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 52
+            },
+            {
+              "phrase": "delete",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 21
+            },
+            {
+              "phrase": "batch",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 18
+            },
+            {
+              "phrase": "all",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "d842780d3ff3345c90abf37af6a337bed0d648e6a07534585aee00539ad7ebb1",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/get-list-resources",
+          "title": "\"Getting and listing resources \\_|\\_ Vision API Product Search \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
+          "base_score": 110,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 2,
+              "url_hits": 0,
+              "body_hits": 632
+            },
+            {
+              "phrase": "products",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 229
+            },
+            {
+              "phrase": "all",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 59
+            }
+          ]
+        },
+        {
+          "page_id": "43d591743bb5d59943a0413372967b7b96e2ab8dccea939366586ef723ca563e",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/libraries",
+          "title": "Vision API Product Search client libraries \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_libraries.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_libraries.md",
+          "base_score": 105,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 193
+            },
+            {
+              "phrase": "products",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 49
+            },
+            {
+              "phrase": "all",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "batch",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ]
+        },
+        {
+          "page_id": "6f323666f90a2b881dd34998b8176afc97d33be5de23fca36dd62483928619c9",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/general-tips",
+          "title": "General tips \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_general-tips.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_general-tips.md",
+          "base_score": 97,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 68
+            },
+            {
+              "phrase": "all",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "products",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "batch",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "delete",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
         }
       ],
       "supporting_pages": [
@@ -296,10 +443,10 @@
           "title": "Deleting resources \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_delete-resources.md",
-          "base_score": 170,
-          "final_score": 170,
-          "rerank_relevance": "",
-          "rerank_rationale": "",
+          "base_score": 216,
+          "final_score": 224,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",
@@ -346,56 +493,14 @@
           ]
         },
         {
-          "url": "https://docs.cloud.google.com/vision/product-search/docs/searching",
-          "title": "\"Searching for Products \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 128,
-          "final_score": 124,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
-          "matched_phrases": [
-            {
-              "phrase": "in",
-              "title_hits": 1,
-              "url_hits": 1,
-              "body_hits": 320
-            },
-            {
-              "phrase": "products",
-              "title_hits": 1,
-              "url_hits": 0,
-              "body_hits": 157
-            },
-            {
-              "phrase": "all",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 18
-            },
-            {
-              "phrase": "batch",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 6
-            }
-          ],
-          "evidence_snippets": [
-            "ImageAnnotatorClient (); async function getSimilarProductsGcs ( projectId , location , productSetId , productCategory , filePath , filter ) { / TODO(developer): Uncomment the following line before running the sample. / // const projectId = 'Your Google Cloud project Id'; // const location = 'A compute region name'; // const productSetId = 'Id of the product set'; // const productCategory = 'Category of the product'; // const filePath = 'Local file path of the image to be searched'; // const filter = 'Condition to be applied on the labels'; const productSetPath = productSearchClient . productSetPath ( projectId , location , productSetId ); const request = { // The input image can be a GCS link or HTTPS link or Raw image bytes. // Example: // To use GCS link replace with below code // image: {source: {gcsImageUri: filePath}} // To use HTTP link replace with below code // image: {source: {imageUri: filePath}} image : { source : { gcsImageUri : filePath }}, features : [{ type : 'PRODUCT SEARCH' }], imageContext : { productSearchParams : { productSet : productSetPath , productCategories : [ productCategory ], filter : filter , }, }, }; console . log ( request . image ); const [ response ] = await imageAnnotatorClient . batchAnnotateImages ({ requests : [ request ], }); console . log ( 'Search Image:' , filePath ); console . log ( '\\nSimilar product information:' ); const results = response [ 'responses' ][ 0 ][ 'productSearchResults' ][ 'results' ]; results . forEach ( result = > { console . log ( 'Product id:' , result [ 'product' ]. name . split ( '/' ). pop ( - 1 )); console . log ( 'Product display name:' , result [ 'product' ]. displayName ); console . log ( 'Product description:' , result [ 'product' ]. description ); console . log ( 'Product category:' , result [ 'product' ]. productCategory ); }); } getSimilarProductsGcs (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
-            "ImageAnnotatorClient (); async function getSimilarProductsFile () { / TODO(developer): Uncomment the following line before running the sample. / // const projectId = 'nodejs-docs-samples'; // const location = 'us-west1'; // const productSetId = 'indexed product set id for testing'; // const productCategory = 'apparel'; // const filePath = './resources/shoes 1.jpg'; // const filter = ''; const productSetPath = productSearchClient . productSetPath ( projectId , location , productSetId ); const content = fs . readFileSync ( filePath , 'base64' ); const request = { // The input image can be a GCS link or HTTPS link or Raw image bytes. // Example: // To use GCS link replace with below code // image: {source: {gcsImageUri: filePath}} // To use HTTP link replace with below code // image: {source: {imageUri: filePath}} image : { content : content }, features : [{ type : 'PRODUCT SEARCH' }], imageContext : { productSearchParams : { productSet : productSetPath , productCategories : [ productCategory ], filter : filter , }, }, }; const [ response ] = await imageAnnotatorClient . batchAnnotateImages ({ requests : [ request ], }); console . log ( 'Search Image:' , filePath ); const results = response [ 'responses' ][ 0 ][ 'productSearchResults' ][ 'results' ]; console . log ( '\\nSimilar product information:' ); results . forEach ( result = > { console . log ( 'Product id:' , result [ 'product' ]. name . split ( '/' ). pop ( - 1 )); console . log ( 'Product display name:' , result [ 'product' ]. displayName ); console . log ( 'Product description:' , result [ 'product' ]. description ); console . log ( 'Product category:' , result [ 'product' ]. productCategory ); }); } getSimilarProductsFile (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
-            "BatchAnnotateImagesResponse response = queryImageClient . batchAnnotateImages ( requests ); List<Result> similarProducts = response . getResponses ( 0 ). getProductSearchResults (). getResultsList (); System . out . println ( \"Similar Products: \" ); for ( Result product : similarProducts ) { System . out . println ( String . format ( \"\\nProduct name: %s\" , product . getProduct (). getName ())); System . out . println ( String . format ( \"Product display name: %s\" , product . getProduct (). getDisplayName ())); System . out . println ( String . format ( \"Product description: %s\" , product . getProduct (). getDescription ())); System . out . println ( String . format ( \"Score(Confidence): %s\" , product . getScore ())); System . out . println ( String . format ( \"Image name: %s\" , product . getImage ())); } } } Node.js To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
-            "BatchAnnotateImagesResponse response = queryImageClient . batchAnnotateImages ( requests ); List<Result> similarProducts = response . getResponses ( 0 ). getProductSearchResults (). getResultsList (); System . out . println ( \"Similar Products: \" ); for ( Result product : similarProducts ) { System . out . println ( String . format ( \"\\nProduct name: %s\" , product . getProduct (). getName ())); System . out . println ( String . format ( \"Product display name: %s\" , product . getProduct (). getDisplayName ())); System . out . println ( String . format ( \"Product description: %s\" , product . getProduct (). getDescription ())); System . out . println ( String . format ( \"Score(Confidence): %s\" , product . getScore ())); System . out . println ( String . format ( \"Image name: %s\" , product . getImage ())); } } } Node.js To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries ."
-          ]
-        },
-        {
           "url": "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images",
           "title": "\"Creating your reference images & indexing \\_|\\_ Vision API Product Search\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
-          "base_score": 124,
-          "final_score": 120,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 145,
+          "final_score": 153,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",
@@ -434,6 +539,96 @@
             "Target files must be in Product Search CSV format'; // A resource that represents Google Cloud Platform location. const projectLocation = client . locationPath ( projectId , location ); // Set the input configuration along with Google Cloud Storage URI const inputConfig = { gcsSource : { csvFileUri : gcsUri , }, }; // Import the product sets from the input URI. const [ response , operation ] = await client . importProductSets ({ parent : projectLocation , inputConfig : inputConfig , }); console . log ( 'Processing operation name: ' , operation . name ); // synchronous check of operation status const [ result ] = await response . promise (); console . log ( 'Processing done.' ); console . log ( 'Results of the processing:' ); for ( const i in result . statuses ) { console . log ( 'Status of processing ' , i , 'of the csv:' , result . statuses [ i ] ); // Check the status of reference image if ( result . statuses [ i ]. code === 0 ) { console . log ( result . referenceImages [ i ]); } else { console . log ( 'No reference image.' ); } } } importProductSets (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
             "ProductSearchClient (); async function createReferenceImage () { / TODO(developer): Uncomment the following line before running the sample. / // const projectId = 'Your Google Cloud project Id'; // const location = 'A compute region name'; // const productId = 'Id of the product'; // const referenceImageId = 'Id of the reference image'; // const gcsUri = 'Google Cloud Storage path of the input image'; const formattedParent = client . productPath ( projectId , location , productId ); const referenceImage = { uri : gcsUri , }; const request = { parent : formattedParent , referenceImage : referenceImage , referenceImageId : referenceImageId , }; const [ response ] = await client . createReferenceImage ( request ); console . log ( response.name: ${ response . name } ); console . log ( response.uri: ${ response . uri } ); } createReferenceImage (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries ."
           ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/searching",
+          "title": "\"Searching for Products \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
+          "base_score": 145,
+          "final_score": 153,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 320
+            },
+            {
+              "phrase": "products",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 157
+            },
+            {
+              "phrase": "all",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 18
+            },
+            {
+              "phrase": "batch",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "ImageAnnotatorClient (); async function getSimilarProductsGcs ( projectId , location , productSetId , productCategory , filePath , filter ) { / TODO(developer): Uncomment the following line before running the sample. / // const projectId = 'Your Google Cloud project Id'; // const location = 'A compute region name'; // const productSetId = 'Id of the product set'; // const productCategory = 'Category of the product'; // const filePath = 'Local file path of the image to be searched'; // const filter = 'Condition to be applied on the labels'; const productSetPath = productSearchClient . productSetPath ( projectId , location , productSetId ); const request = { // The input image can be a GCS link or HTTPS link or Raw image bytes. // Example: // To use GCS link replace with below code // image: {source: {gcsImageUri: filePath}} // To use HTTP link replace with below code // image: {source: {imageUri: filePath}} image : { source : { gcsImageUri : filePath }}, features : [{ type : 'PRODUCT SEARCH' }], imageContext : { productSearchParams : { productSet : productSetPath , productCategories : [ productCategory ], filter : filter , }, }, }; console . log ( request . image ); const [ response ] = await imageAnnotatorClient . batchAnnotateImages ({ requests : [ request ], }); console . log ( 'Search Image:' , filePath ); console . log ( '\\nSimilar product information:' ); const results = response [ 'responses' ][ 0 ][ 'productSearchResults' ][ 'results' ]; results . forEach ( result = > { console . log ( 'Product id:' , result [ 'product' ]. name . split ( '/' ). pop ( - 1 )); console . log ( 'Product display name:' , result [ 'product' ]. displayName ); console . log ( 'Product description:' , result [ 'product' ]. description ); console . log ( 'Product category:' , result [ 'product' ]. productCategory ); }); } getSimilarProductsGcs (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
+            "ImageAnnotatorClient (); async function getSimilarProductsFile () { / TODO(developer): Uncomment the following line before running the sample. / // const projectId = 'nodejs-docs-samples'; // const location = 'us-west1'; // const productSetId = 'indexed product set id for testing'; // const productCategory = 'apparel'; // const filePath = './resources/shoes 1.jpg'; // const filter = ''; const productSetPath = productSearchClient . productSetPath ( projectId , location , productSetId ); const content = fs . readFileSync ( filePath , 'base64' ); const request = { // The input image can be a GCS link or HTTPS link or Raw image bytes. // Example: // To use GCS link replace with below code // image: {source: {gcsImageUri: filePath}} // To use HTTP link replace with below code // image: {source: {imageUri: filePath}} image : { content : content }, features : [{ type : 'PRODUCT SEARCH' }], imageContext : { productSearchParams : { productSet : productSetPath , productCategories : [ productCategory ], filter : filter , }, }, }; const [ response ] = await imageAnnotatorClient . batchAnnotateImages ({ requests : [ request ], }); console . log ( 'Search Image:' , filePath ); const results = response [ 'responses' ][ 0 ][ 'productSearchResults' ][ 'results' ]; console . log ( '\\nSimilar product information:' ); results . forEach ( result = > { console . log ( 'Product id:' , result [ 'product' ]. name . split ( '/' ). pop ( - 1 )); console . log ( 'Product display name:' , result [ 'product' ]. displayName ); console . log ( 'Product description:' , result [ 'product' ]. description ); console . log ( 'Product category:' , result [ 'product' ]. productCategory ); }); } getSimilarProductsFile (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
+            "BatchAnnotateImagesResponse response = queryImageClient . batchAnnotateImages ( requests ); List<Result> similarProducts = response . getResponses ( 0 ). getProductSearchResults (). getResultsList (); System . out . println ( \"Similar Products: \" ); for ( Result product : similarProducts ) { System . out . println ( String . format ( \"\\nProduct name: %s\" , product . getProduct (). getName ())); System . out . println ( String . format ( \"Product display name: %s\" , product . getProduct (). getDisplayName ())); System . out . println ( String . format ( \"Product description: %s\" , product . getProduct (). getDescription ())); System . out . println ( String . format ( \"Score(Confidence): %s\" , product . getScore ())); System . out . println ( String . format ( \"Image name: %s\" , product . getImage ())); } } } Node.js To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
+            "BatchAnnotateImagesResponse response = queryImageClient . batchAnnotateImages ( requests ); List<Result> similarProducts = response . getResponses ( 0 ). getProductSearchResults (). getResultsList (); System . out . println ( \"Similar Products: \" ); for ( Result product : similarProducts ) { System . out . println ( String . format ( \"\\nProduct name: %s\" , product . getProduct (). getName ())); System . out . println ( String . format ( \"Product display name: %s\" , product . getProduct (). getDisplayName ())); System . out . println ( String . format ( \"Product description: %s\" , product . getProduct (). getDescription ())); System . out . println ( String . format ( \"Score(Confidence): %s\" , product . getScore ())); System . out . println ( String . format ( \"Image name: %s\" , product . getImage ())); } } } Node.js To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
+          "title": "\"Quickstart: Create a product set and search for products \\_|\\_ Vision API\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
+          "base_score": 143,
+          "final_score": 151,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 175
+            },
+            {
+              "phrase": "products",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 51
+            },
+            {
+              "phrase": "delete",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "all",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "batch",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Get import operation status You can use the OPERATION ID returned from the import operation to check the status of the bulk import operation: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ https://vision.googleapis.com/v1/locations/ LOCATION ID /operations/ OPERATION ID A successful response looks like: { \"name\" : \"locations/ LOCATION ID /operations/0a0aec86192599fb\" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.vision.v1.BatchOperationMetadata\" , \"state\" : \"SUCCESSFUL\" , \"submitTime\" : \"2018-11-30T03:11:04.808114024Z\" , \"endTime\" : \"2018-11-30T03:11:38.624444324Z\" }, \"done\" : true , \"response\" : { \"@type\" : \"type.googleapis.com/google.cloud.vision.v1.ImportProductSetsResponse\" , \"referenceImages\" : [ { \"name\" : \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id0/referenceImages/image0\" , \"uri\" : \"gs://cloud-ai-vision-data/product-search-tutorial/images/46a0cbcf70ba11e89399d20059124800.jpg\" }, { \"name\" : \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id1/referenceImages/image1\" , \"uri\" : \"gs://cloud-ai-vision-data/product-search-tutorial/images/46a1aea370ba11e888d4d20059124800.jpg\" }, ... { \"name\" : \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id93/referenceImages/image93\" , \"uri\" : \"gs://cloud-ai-vision-data/product-search-tutorial/images/4697319970ba11e8a7bfd20059124800.jpg\" }, { \"name\" : \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id94/referenceImages/image94\" , \"uri\" : \"gs://cloud-ai-vision-data/product-search-tutorial/images/4698596370ba11e8bf6ad20059124800.jpg\" } ], \"statuses\" : [ {}, {}, [ ... ] {}, {} ] } } Indexing The Product Search index of products is updated approximately every day.",
+            "List product sets and check indexing You can list all your product sets and use the indexTime field to verify that indexing has completed successfully: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ https://vision.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /productSets A successful response lists all your product sets, including a product set ID (for example, product set0 ) as well as the indexTime field indicating when indexing completed: { \"productSets\": [ { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /productSets/ product set0 \", \"displayName\": \" \", \" indexTime \": \"2019-11-30T18:33:40.093508652Z\", \"indexError\": {} } ] } List products You can use the PRODUCT SET ID returned from the list of product sets to list all products in your product set: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ https://vision.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /productSets/ PRODUCT SET ID /products?pageSize=15 A successful response lists product details.",
+            "First create a request JSON file called import request.json and save it in your current working directory: import request.json { \"inputConfig\": { \"gcsSource\": { \"csvFileUri\": \"gs://cloud-samples-data/vision/product search/product catalog.csv\" } } } After creating the request JSON file, send the request: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @import request.json \\ https://vision.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /productSets:import Replace the following: LOCATION ID : The location that will run your tutorial, for example, us-east1 .",
+            "In this quickstart you will create a product set, products, and their reference images in a single step by batch import."
+          ]
         }
       ]
     },
@@ -452,13 +647,14 @@
         "the",
         "for"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Product Search supports the general-v1 product category for general retail use cases.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/vision/product-search/docs/searching",
         "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
-        "https://docs.cloud.google.com/vision/product-search/docs/product-categories"
+        "https://docs.cloud.google.com/vision/product-search/docs/product-categories",
+        "https://docs.cloud.google.com/vision/product-search/docs/csv-format"
       ],
       "candidate_pages": [
         {
@@ -468,7 +664,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_searching.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 238,
+          "base_score": 282,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -515,7 +711,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "base_score": 236,
+          "base_score": 271,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -562,7 +758,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_product-categories.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_product-categories.md",
-          "base_score": 202,
+          "base_score": 246,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -609,7 +805,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_csv-format.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_csv-format.md",
-          "base_score": 198,
+          "base_score": 243,
           "matched_phrases": [
             {
               "phrase": "the",
@@ -650,13 +846,195 @@
           ]
         },
         {
+          "page_id": "43d591743bb5d59943a0413372967b7b96e2ab8dccea939366586ef723ca563e",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/libraries",
+          "title": "Vision API Product Search client libraries \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_libraries.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_libraries.md",
+          "base_score": 218,
+          "matched_phrases": [
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 142
+            },
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 96
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 68
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 46
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            },
+            {
+              "phrase": "v1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ]
+        },
+        {
+          "page_id": "d842780d3ff3345c90abf37af6a337bed0d648e6a07534585aee00539ad7ebb1",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/get-list-resources",
+          "title": "\"Getting and listing resources \\_|\\_ Vision API Product Search \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
+          "base_score": 213,
+          "matched_phrases": [
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 813
+            },
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 467
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 334
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 178
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 60
+            },
+            {
+              "phrase": "v1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 38
+            }
+          ]
+        },
+        {
+          "page_id": "6f323666f90a2b881dd34998b8176afc97d33be5de23fca36dd62483928619c9",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/general-tips",
+          "title": "General tips \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_general-tips.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_general-tips.md",
+          "base_score": 211,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 102
+            },
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 46
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 32
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 18
+            },
+            {
+              "phrase": "general",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "a92401a95b01b9ba12c5b547952ab684b3dd544076a1964dc43bf58d9c203ea5",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/reference/rest/v1/ImageContext",
+          "title": "ImageContext \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_vision_product-search_docs_reference_rest_v1_ImageContext.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-api-reference/pages/docs.cloud.google.com_vision_product-search_docs_reference_rest_v1_ImageContext.md",
+          "base_score": 209,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 43
+            },
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 21
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 13
+            },
+            {
+              "phrase": "v1",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 2
+            },
+            {
+              "phrase": "general",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
           "page_id": "93358a79ec86aa178303345b1753a80651275849af3165b1bd3106605f4c2847",
           "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set",
           "title": "\"Creating a product set \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
-          "base_score": 182,
+          "base_score": 206,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -691,49 +1069,49 @@
           ]
         },
         {
-          "page_id": "ea2d8791932eecda5db8b00ae6f8be95466e8b5e4cb3e69931c92e7677233482",
-          "url": "https://docs.cloud.google.com/vision/product-search/docs/release-notes",
-          "title": "Vision API Product Search release notes \\_|\\_ Google Cloud Documentation",
+          "page_id": "2ed2f1ab22a54737ae352577466c1ab7f72aaddc0ada593dcd2afd5ce50b8bb3",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images",
+          "title": "\"Creating your reference images & indexing \\_|\\_ Vision API Product Search\\",
           "source_id": "site-docs-root",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_release-notes.md",
-          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_release-notes.md",
-          "base_score": 182,
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
+          "base_score": 201,
           "matched_phrases": [
             {
               "phrase": "the",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 43
+              "body_hits": 218
             },
             {
               "phrase": "product",
               "title_hits": 1,
               "url_hits": 1,
-              "body_hits": 33
+              "body_hits": 150
             },
             {
               "phrase": "for",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 23
+              "body_hits": 107
             },
             {
               "phrase": "search",
               "title_hits": 1,
               "url_hits": 1,
-              "body_hits": 15
+              "body_hits": 59
             },
             {
-              "phrase": "general",
+              "phrase": "v1",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 4
+              "body_hits": 12
             },
             {
               "phrase": "category",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 4
+              "body_hits": 2
             }
           ]
         }
@@ -744,10 +1122,10 @@
           "title": "\"Searching for Products \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 238,
-          "final_score": 234,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 282,
+          "final_score": 290,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "product",
@@ -798,10 +1176,10 @@
           "title": "\"Quickstart: Create a product set and search for products \\_|\\_ Vision API\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "base_score": 236,
-          "final_score": 232,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 271,
+          "final_score": 279,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "product",
@@ -852,10 +1230,10 @@
           "title": "Product Categories \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_product-categories.md",
-          "base_score": 202,
-          "final_score": 198,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 246,
+          "final_score": 254,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "product",
@@ -900,6 +1278,60 @@
             "For better scalability and the same functionality as Product Search, use the Vision Warehouse .",
             "Product Category productCategory productCategory (legacy/deprecated) Description Home goods homegoods-v2 homegoods Home goods are products you find around the house: appliances, furniture, furnishings, etc."
           ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/csv-format",
+          "title": "\"Formatting a bulk import CSV \\_|\\_ Vision API Product Search \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_csv-format.md",
+          "base_score": 243,
+          "final_score": 251,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 67
+            },
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 36
+            },
+            {
+              "phrase": "for",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 27
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            },
+            {
+              "phrase": "general",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "If a product-id already exists on bulk import then product-category , product-display , and labels are ignored for that line entry. product-category : Allowed values are homegoods-v2 , apparel-v2 , toys-v2 , packagedgoods-v1 , and general-v1 ; the category for the product identified by the reference image.",
+            "Thus, you could express bounding boxes in 1000 pixel by 1000 pixel images in the following way: gs://example-reference-images/10001-001/10001-001 A.jpg,img001,sample-set-summer,sample-product-123,tan summer bag,apparel-v2,\"style=womens,color=tan\",100,150,450,150,450,550,100,550 gs://example-reference-images/10001-001/10001-001 A.jpg,img001,sample-set-summer,sample-product-456,blue summer bag,apparel-v2,\"style=womens,color=blue\",670,790,980,790,980,920,670,920 gs://example-reference-images/10002-002/10002-002 B.jpg,img002,sample-set-summer,sample-product-123,apparel-v2,,, Note: You can use Vision API's Object Localizer feature to get bounding box coordinates for generalized objects in images.",
+            "Legacy productCategory codes: Legacy categories ( homegoods , apparel , and toys ) are still supported, but the updated -v2 categories should be used for new products. product-display-name : Optional .",
+            "For example: \"category=shoes\" \"color=black,style=formal\" Vision API Product Search also allows you to provide multiple values for a single key."
+          ]
         }
       ]
     },
@@ -918,13 +1350,14 @@
         "the",
         "for"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Product Search supports the packagedgoods-v1 product category for packaged goods use cases; Product Search supports the packagedgoods-v1 product category for packaged goods use cases.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
         "https://docs.cloud.google.com/vision/product-search/docs/searching",
-        "https://docs.cloud.google.com/vision/product-search/docs/csv-format"
+        "https://docs.cloud.google.com/vision/product-search/docs/csv-format",
+        "https://docs.cloud.google.com/vision/product-search/docs/product-categories"
       ],
       "candidate_pages": [
         {
@@ -934,7 +1367,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "base_score": 236,
+          "base_score": 271,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -981,7 +1414,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_searching.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 230,
+          "base_score": 265,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -1028,7 +1461,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_csv-format.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_csv-format.md",
-          "base_score": 194,
+          "base_score": 239,
           "matched_phrases": [
             {
               "phrase": "the",
@@ -1075,7 +1508,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_product-categories.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_product-categories.md",
-          "base_score": 194,
+          "base_score": 238,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -1116,43 +1549,49 @@
           ]
         },
         {
-          "page_id": "93358a79ec86aa178303345b1753a80651275849af3165b1bd3106605f4c2847",
-          "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set",
-          "title": "\"Creating a product set \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
+          "page_id": "43d591743bb5d59943a0413372967b7b96e2ab8dccea939366586ef723ca563e",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/libraries",
+          "title": "Vision API Product Search client libraries \\_|\\_ Google Cloud Documentation",
           "source_id": "site-docs-root",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
-          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
-          "base_score": 182,
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_libraries.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_libraries.md",
+          "base_score": 218,
           "matched_phrases": [
             {
               "phrase": "product",
-              "title_hits": 2,
-              "url_hits": 2,
-              "body_hits": 205
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 142
             },
             {
               "phrase": "the",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 194
+              "body_hits": 96
             },
             {
               "phrase": "for",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 110
+              "body_hits": 68
             },
             {
               "phrase": "search",
               "title_hits": 1,
               "url_hits": 1,
-              "body_hits": 56
+              "body_hits": 46
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
             },
             {
               "phrase": "v1",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 19
+              "body_hits": 9
             }
           ]
         },
@@ -1163,7 +1602,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
-          "base_score": 178,
+          "base_score": 213,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -1202,6 +1641,182 @@
               "body_hits": 38
             }
           ]
+        },
+        {
+          "page_id": "a92401a95b01b9ba12c5b547952ab684b3dd544076a1964dc43bf58d9c203ea5",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/reference/rest/v1/ImageContext",
+          "title": "ImageContext \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_vision_product-search_docs_reference_rest_v1_ImageContext.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-api-reference/pages/docs.cloud.google.com_vision_product-search_docs_reference_rest_v1_ImageContext.md",
+          "base_score": 209,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 43
+            },
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 21
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 13
+            },
+            {
+              "phrase": "v1",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 2
+            },
+            {
+              "phrase": "packagedgoods",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "93358a79ec86aa178303345b1753a80651275849af3165b1bd3106605f4c2847",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set",
+          "title": "\"Creating a product set \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
+          "base_score": 206,
+          "matched_phrases": [
+            {
+              "phrase": "product",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 205
+            },
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 194
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 110
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 56
+            },
+            {
+              "phrase": "v1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            }
+          ]
+        },
+        {
+          "page_id": "2ed2f1ab22a54737ae352577466c1ab7f72aaddc0ada593dcd2afd5ce50b8bb3",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images",
+          "title": "\"Creating your reference images & indexing \\_|\\_ Vision API Product Search\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
+          "base_score": 201,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 218
+            },
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 150
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 107
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 59
+            },
+            {
+              "phrase": "v1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "2c19236c1078df5310ef48501777d14e1a586fbc175073bbf4ee9eaeca20183d",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/searching-response",
+          "title": "\"Understanding search responses & multi-detection \\_|\\_ Vision API Product\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_searching-response.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching-response.md",
+          "base_score": 192,
+          "matched_phrases": [
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 205
+            },
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 74
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 43
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 2,
+              "body_hits": 21
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 22
+            }
+          ]
         }
       ],
       "supporting_pages": [
@@ -1210,10 +1825,10 @@
           "title": "\"Quickstart: Create a product set and search for products \\_|\\_ Vision API\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "base_score": 236,
-          "final_score": 232,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 271,
+          "final_score": 279,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "product",
@@ -1264,10 +1879,10 @@
           "title": "\"Searching for Products \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 230,
-          "final_score": 226,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 265,
+          "final_score": 273,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "product",
@@ -1318,10 +1933,10 @@
           "title": "\"Formatting a bulk import CSV \\_|\\_ Vision API Product Search \\_|\\_ Google\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_csv-format.md",
-          "base_score": 194,
-          "final_score": 190,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 239,
+          "final_score": 247,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "the",
@@ -1366,6 +1981,60 @@
             "For example: \"category=shoes\" \"color=black,style=formal\" Vision API Product Search also allows you to provide multiple values for a single key.",
             "For better scalability and the same functionality as Product Search, use the Vision Warehouse ."
           ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/product-categories",
+          "title": "Product Categories \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_product-categories.md",
+          "base_score": 238,
+          "final_score": 246,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "product",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 16
+            },
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "v1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Vision API Product Search then detects and maps the appropriate product category to the product for you.",
+            "General general-v1 N/A This classification allows you a more generalized category option for products.",
+            "For better scalability and the same functionality as Product Search, use the Vision Warehouse .",
+            "Product Category productCategory productCategory (legacy/deprecated) Description Home goods homegoods-v2 homegoods Home goods are products you find around the house: appliances, furniture, furnishings, etc."
+          ]
         }
       ]
     },
@@ -1384,13 +2053,14 @@
         "an",
         "image"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Multi-detection finds multiple products in an image and returns similar products for each detected item.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/vision/product-search/docs/searching-response",
         "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
-        "https://docs.cloud.google.com/vision/product-search/docs/searching"
+        "https://docs.cloud.google.com/vision/product-search/docs/searching",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images"
       ],
       "candidate_pages": [
         {
@@ -1400,7 +2070,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_searching-response.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching-response.md",
-          "base_score": 226,
+          "base_score": 280,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1447,7 +2117,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "base_score": 172,
+          "base_score": 222,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1494,7 +2164,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_searching.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 172,
+          "base_score": 222,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1541,7 +2211,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
-          "base_score": 170,
+          "base_score": 195,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1588,7 +2258,7 @@
           "source_id": "site-api-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_vision_product-search_docs_reference_rest_v1_AnnotateImageResponse.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-api-reference/pages/docs.cloud.google.com_vision_product-search_docs_reference_rest_v1_AnnotateImageResponse.md",
-          "base_score": 164,
+          "base_score": 194,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1635,7 +2305,7 @@
           "source_id": "site-api-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_vision_product-search_docs_reference_rest.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-api-reference/pages/docs.cloud.google.com_vision_product-search_docs_reference_rest.md",
-          "base_score": 144,
+          "base_score": 174,
           "matched_phrases": [
             {
               "phrase": "an",
@@ -1674,6 +2344,194 @@
               "body_hits": 8
             }
           ]
+        },
+        {
+          "page_id": "f456a544cf12e35516ce01d4e1b38866061897c936c8ca62c2d1d721d4a2836e",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/reference/rpc",
+          "title": "Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_reference_rpc.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_reference_rpc.md",
+          "base_score": 174,
+          "matched_phrases": [
+            {
+              "phrase": "an",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 89
+            },
+            {
+              "phrase": "products",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 81
+            },
+            {
+              "phrase": "image",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 64
+            },
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 52
+            },
+            {
+              "phrase": "detection",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 14
+            },
+            {
+              "phrase": "multi",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "084397f62341983a7090fed1e7e81ecefda2faaa4305db502e27a5aa42155db3",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/csv-format",
+          "title": "\"Formatting a bulk import CSV \\_|\\_ Vision API Product Search \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_csv-format.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_csv-format.md",
+          "base_score": 167,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 81
+            },
+            {
+              "phrase": "image",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 33
+            },
+            {
+              "phrase": "an",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 31
+            },
+            {
+              "phrase": "multi",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "multiple",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "products",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "d842780d3ff3345c90abf37af6a337bed0d648e6a07534585aee00539ad7ebb1",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/get-list-resources",
+          "title": "\"Getting and listing resources \\_|\\_ Vision API Product Search \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
+          "base_score": 165,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 2,
+              "url_hits": 0,
+              "body_hits": 632
+            },
+            {
+              "phrase": "products",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 229
+            },
+            {
+              "phrase": "an",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 173
+            },
+            {
+              "phrase": "image",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 144
+            },
+            {
+              "phrase": "multi",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "multiple",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "8bfaaabf53e772cd230af56755c7f2b20fa02e654ea52ff49a9c9dc56e29ce04",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/delete-resources",
+          "title": "Deleting resources \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_delete-resources.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_delete-resources.md",
+          "base_score": 165,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 382
+            },
+            {
+              "phrase": "products",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 186
+            },
+            {
+              "phrase": "an",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 180
+            },
+            {
+              "phrase": "image",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 64
+            },
+            {
+              "phrase": "multi",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "multiple",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
         }
       ],
       "supporting_pages": [
@@ -1682,10 +2540,10 @@
           "title": "\"Understanding search responses & multi-detection \\_|\\_ Vision API Product\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching-response.md",
-          "base_score": 226,
-          "final_score": 222,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 280,
+          "final_score": 288,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1736,10 +2594,10 @@
           "title": "\"Quickstart: Create a product set and search for products \\_|\\_ Vision API\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "base_score": 172,
-          "final_score": 168,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 222,
+          "final_score": 230,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1790,10 +2648,10 @@
           "title": "\"Searching for Products \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 172,
-          "final_score": 168,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 222,
+          "final_score": 230,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1838,6 +2696,60 @@
             "Currently you can only specify one product category (homegoods, apparel, toys, packaged goods, and general ). imageContext.filter - (Optional) A key-value filtering expression (or multiple expressions) for product label.",
             "Response { \"responses\": [ { \"productSearchResults\" : { \"indexTime\": \"2019-09-04T21:03:35.662099907Z\", \"results\": [ { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id65 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.38946953, \"image\": \"projects/ project-id /locations/ location-id /products/product id65/referenceImages/ image65 \" }, { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id35 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.3847863, \"image\": \"projects/ project-id /locations/ location-id /products/product id35/referenceImages/ image35 \" }, { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id34 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.33896044, \"image\": \"projects/ project-id /locations/ location-id /products/product id34/referenceImages/ image34 \" }, { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id62 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.32509044, \"image\": \"projects/ project-id /locations/ location-id /products/product id62/referenceImages/ image62 \" }, { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id32 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.3237155, \"image\": \"projects/ project-id /locations/ location-id /products/product id32/referenceImages/image32\" } ], \"productGroupedResults\" : [ { \"boundingPoly\": { \"normalizedVertices\": [ { \"x\": 0.00458825, \"y\": 0.11000001 }, { \"x\": 0.988353, \"y\": 0.11000001 }, { \"x\": 0.988353, \"y\": 0.9290588 }, { \"x\": 0.00458825, \"y\": 0.9290588 } ] }, \"results\": [ { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id65 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.41785678, \"image\": \"projects/ project-id /locations/ location-id /products/product id65/referenceImages/ image65 \" }, { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id35 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.3803885, \"image\": \"projects/ project-id /locations/ location-id /products/product id35/referenceImages/ image35 \" }, { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id34 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.36055994, \"image\": \"projects/ project-id /locations/ location-id /products/product id34/referenceImages/ image34 \" }, { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id93 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"shoe\" }, { \"key\": \"kids\", \"value\": \"true\" } ] }, \"score\": 0.33286288, \"image\": \"projects/ project-id /locations/ location-id /products/product id93/referenceImages/ image93 \" }, { \"product\": { \"name\": \"projects/ project-id /locations/ location-id /products/ product id62 \", \"displayName\": \" \", \"productCategory\": \"apparel\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.32263064, \"image\": \"projects/ project-id /locations/ location-id /products/product id62/referenceImages/ image62 \" } ], \"objectAnnotations\": [ { \"mid\": \"/m/01d40f\", \"name\": \"Dress\", \"score\": 0.95488 } ] } ] } } ] } Go To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries ."
           ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images",
+          "title": "\"Creating your reference images & indexing \\_|\\_ Vision API Product Search\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
+          "base_score": 195,
+          "final_score": 203,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 3,
+              "url_hits": 0,
+              "body_hits": 269
+            },
+            {
+              "phrase": "image",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 126
+            },
+            {
+              "phrase": "an",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 73
+            },
+            {
+              "phrase": "products",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 50
+            },
+            {
+              "phrase": "multi",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "multiple",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Creating multiple reference images with bulk import You can also create reference images at the same time you create a product set and multiple products.",
+            "The response should look similar to the following: { \"name\": \"locations/ location-id /operations/f10f34e32c40a710\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.vision.v1.BatchOperationMetadata\", \"state\": \"SUCCESSFUL\", \"submitTime\": \"2019-12-06T21:16:04.476466873Z\", \"endTime\": \"2019-12-06T21:16:40.594258084Z\" }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.vision.v1.ImportProductSetsResponse\", \"referenceImages\": [ { \"name\": \"projects/ project-id /locations/ location-id /products/product id0/referenceImages/image0\", \"uri\": \"gs:// my-storage-bucket /img 039.jpg\" }, { \"name\": \"projects/ project-id /locations/ location-id /products/product id1/referenceImages/image1\", \"uri\": \"gs:// my-storage-bucket /img 105.jpg\" }, { \"name\": \"projects/ project-id /locations/ location-id /products/product id2/referenceImages/image2\", \"uri\": \"gs:// my-storage-bucket /img 224.jpg\" }, { \"name\": \"projects/ project-id /locations/ location-id /products/product id3/referenceImages/image3\", \"uri\": \"gs:// my-storage-bucket /img 385.jpg\" } ], \"statuses\": [ {}, {}, {}, {} ] } } Go To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
+            "Target files must be in Product Search CSV format'; // A resource that represents Google Cloud Platform location. const projectLocation = client . locationPath ( projectId , location ); // Set the input configuration along with Google Cloud Storage URI const inputConfig = { gcsSource : { csvFileUri : gcsUri , }, }; // Import the product sets from the input URI. const [ response , operation ] = await client . importProductSets ({ parent : projectLocation , inputConfig : inputConfig , }); console . log ( 'Processing operation name: ' , operation . name ); // synchronous check of operation status const [ result ] = await response . promise (); console . log ( 'Processing done.' ); console . log ( 'Results of the processing:' ); for ( const i in result . statuses ) { console . log ( 'Status of processing ' , i , 'of the csv:' , result . statuses [ i ] ); // Check the status of reference image if ( result . statuses [ i ]. code === 0 ) { console . log ( result . referenceImages [ i ]); } else { console . log ( 'No reference image.' ); } } } importProductSets (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
+            "OperationFuture<ImportProductSetsResponse , BatchOperationMetadata > response = client . importProductSetsAsync ( formattedParent , inputConfig ); System . out . println ( String . format ( \"Processing operation name: %s\" , response . getName ())); ImportProductSetsResponse results = response . get (); System . out . println ( \"Processing done.\" ); System . out . println ( \"Results of the processing:\" ); for ( int i = 0 ; i < results . getStatusesCount (); i ++ ) { System . out . println ( String . format ( \"Status of processing line %s of the csv: %s\" , i , results . getStatuses ( i ))); // Check the status of reference image. if ( results . getStatuses ( i ). getCode () == 0 ) { ReferenceImage referenceImage = results . getReferenceImages ( i ); System . out . println ( referenceImage ); } else { System . out . println ( \"No reference image.\" ); } } } } Node.js To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries ."
+          ]
         }
       ]
     },
@@ -1856,12 +2768,13 @@
         "addition",
         "to"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Product Search supports a toys product category in addition to other supported product categories.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/vision/product-search/docs/searching",
         "https://docs.cloud.google.com/vision/product-search/docs/get-list-resources",
+        "https://docs.cloud.google.com/vision/product-search/docs/product-categories",
         "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products"
       ],
       "candidate_pages": [
@@ -1872,7 +2785,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_searching.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 236,
+          "base_score": 275,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -1919,7 +2832,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
-          "base_score": 206,
+          "base_score": 234,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -1960,54 +2873,13 @@
           ]
         },
         {
-          "page_id": "926d3072323f1b778056c2c6e678e709a08babc5722e734d2255f50b25aadd60",
-          "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
-          "title": "\"Quickstart: Create a product set and search for products \\_|\\_ Vision API\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "base_score": 202,
-          "matched_phrases": [
-            {
-              "phrase": "in",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 175
-            },
-            {
-              "phrase": "product",
-              "title_hits": 2,
-              "url_hits": 3,
-              "body_hits": 156
-            },
-            {
-              "phrase": "to",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 94
-            },
-            {
-              "phrase": "search",
-              "title_hits": 1,
-              "url_hits": 2,
-              "body_hits": 38
-            },
-            {
-              "phrase": "category",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 22
-            }
-          ]
-        },
-        {
           "page_id": "2a14487502162a4e9f58804412225265054b091f19bda4b7d072ab6326e746fb",
           "url": "https://docs.cloud.google.com/vision/product-search/docs/product-categories",
           "title": "Product Categories \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_product-categories.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_product-categories.md",
-          "base_score": 198,
+          "base_score": 233,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -2048,13 +2920,54 @@
           ]
         },
         {
+          "page_id": "926d3072323f1b778056c2c6e678e709a08babc5722e734d2255f50b25aadd60",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
+          "title": "\"Quickstart: Create a product set and search for products \\_|\\_ Vision API\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
+          "base_score": 226,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 175
+            },
+            {
+              "phrase": "product",
+              "title_hits": 2,
+              "url_hits": 3,
+              "body_hits": 156
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 94
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 2,
+              "body_hits": 38
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 22
+            }
+          ]
+        },
+        {
           "page_id": "2ed2f1ab22a54737ae352577466c1ab7f72aaddc0ada593dcd2afd5ce50b8bb3",
           "url": "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images",
           "title": "\"Creating your reference images & indexing \\_|\\_ Vision API Product Search\\",
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-reference-images.md",
-          "base_score": 196,
+          "base_score": 224,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -2095,13 +3008,60 @@
           ]
         },
         {
+          "page_id": "084397f62341983a7090fed1e7e81ecefda2faaa4305db502e27a5aa42155db3",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/csv-format",
+          "title": "\"Formatting a bulk import CSV \\_|\\_ Vision API Product Search \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_csv-format.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_csv-format.md",
+          "base_score": 220,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 81
+            },
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 36
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            },
+            {
+              "phrase": "toys",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
           "page_id": "2c19236c1078df5310ef48501777d14e1a586fbc175073bbf4ee9eaeca20183d",
           "url": "https://docs.cloud.google.com/vision/product-search/docs/searching-response",
           "title": "\"Understanding search responses & multi-detection \\_|\\_ Vision API Product\\",
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_searching-response.md",
           "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching-response.md",
-          "base_score": 192,
+          "base_score": 216,
           "matched_phrases": [
             {
               "phrase": "product",
@@ -2134,6 +3094,135 @@
               "body_hits": 16
             }
           ]
+        },
+        {
+          "page_id": "93358a79ec86aa178303345b1753a80651275849af3165b1bd3106605f4c2847",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set",
+          "title": "\"Creating a product set \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set.md",
+          "base_score": 211,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 245
+            },
+            {
+              "phrase": "product",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 205
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 89
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 56
+            },
+            {
+              "phrase": "addition",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "43d591743bb5d59943a0413372967b7b96e2ab8dccea939366586ef723ca563e",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/libraries",
+          "title": "Vision API Product Search client libraries \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_libraries.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_libraries.md",
+          "base_score": 201,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 193
+            },
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 142
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 89
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 46
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            },
+            {
+              "phrase": "addition",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "8bfaaabf53e772cd230af56755c7f2b20fa02e654ea52ff49a9c9dc56e29ce04",
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/delete-resources",
+          "title": "Deleting resources \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-vision-api-product-search\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_vision_product-search_docs_delete-resources.md",
+          "relative_markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_delete-resources.md",
+          "base_score": 195,
+          "matched_phrases": [
+            {
+              "phrase": "product",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 444
+            },
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 382
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 179
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 134
+            },
+            {
+              "phrase": "addition",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
         }
       ],
       "supporting_pages": [
@@ -2142,10 +3231,10 @@
           "title": "\"Searching for Products \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_searching.md",
-          "base_score": 236,
-          "final_score": 232,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 275,
+          "final_score": 283,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "product",
@@ -2196,10 +3285,10 @@
           "title": "\"Getting and listing resources \\_|\\_ Vision API Product Search \\_|\\_ Google\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_get-list-resources.md",
-          "base_score": 206,
-          "final_score": 202,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 234,
+          "final_score": 242,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "product",
@@ -2246,14 +3335,68 @@
           ]
         },
         {
+          "url": "https://docs.cloud.google.com/vision/product-search/docs/product-categories",
+          "title": "Product Categories \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_product-categories.md",
+          "base_score": 233,
+          "final_score": 241,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "product",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 16
+            },
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "search",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            },
+            {
+              "phrase": "category",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "toys",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "Vision API Product Search then detects and maps the appropriate product category to the product for you.",
+            "Product Category productCategory productCategory (legacy/deprecated) Description Home goods homegoods-v2 homegoods Home goods are products you find around the house: appliances, furniture, furnishings, etc.",
+            "Home Documentation Industry solutions Vision API Product Search Reference Send feedback Product Categories Stay organized with collections Save and categorize content based on your preferences.",
+            "The Vision API Product Search can recognize the following product categories."
+          ]
+        },
+        {
           "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
           "title": "\"Quickstart: Create a product set and search for products \\_|\\_ Vision API\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/cloud-vision-api-product-search/corpus/site/site-docs-root/pages/docs.cloud.google.com_vision_product-search_docs_create-product-set-search-products.md",
-          "base_score": 202,
-          "final_score": 198,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 226,
+          "final_score": 234,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",

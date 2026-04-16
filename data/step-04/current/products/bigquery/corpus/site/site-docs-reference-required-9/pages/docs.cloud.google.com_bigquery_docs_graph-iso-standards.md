@@ -1,0 +1,135 @@
+---
+title: "BigQuery Graph and ISO standards \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/bigquery/docs/graph-iso-standards
+knowledge_key: corpus
+source_id: site-docs-reference-required-9
+source_type: site
+entrypoint: https://docs.cloud.google.com/bigquery/docs/information-schema-project-options-changes
+source_metadata:
+  url: https://docs.cloud.google.com/bigquery/docs/graph-iso-standards
+  title: "BigQuery Graph and ISO standards \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Data analytics
+BigQuery
+Reference
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+BigQuery Graph and ISO standards
+The document describes how BigQuery Graph supports the ISO international
+standard query language for graph databases.
+BigQuery Graph is based on two ISO standards:
+ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) ,
+Edition 1, 2023
+ISO/IEC 39075:2024 - Information technology — Database languages — GQL ,
+Edition 1, 2024
+The following tables describe the high-level relationship between SQL/PGQ, GQL,
+and how BigQuery Graph supports these standards.
+Standard
+SQL/PGQ
+GQL
+BigQuery Graph
+Query
+Graph pattern matching capabilities
+Shares the core Graph Pattern Matching Language (GPML) functionalities with GQL.
+Shares the core GPML functionalities with SQL/PGQ.
+Both standards are supported. For more information, see BigQuery Graph GQL patterns .
+Query
+Other query language features (for example, LIMIT , ORDER , aggregation)
+SQL-based.
+Similar to SQL, but the GQL query features are linearly composable graph query statements.
+Both standards are supported. For more information, see BigQuery Graph GQL query statements and Query syntax in GoogleSQL .
+Query
+Graph and table interoperability
+Supported.
+Not supported.
+Both standards are supported. For more information, see GRAPH_TABLE operator .
+Types
+Data types, functions and expressions in SQL/PGQ and GQL are similar.
+Data types, functions and expressions in SQL/PGQ and GQL are similar.
+Supports most data types and expressions in SQL/PGQ and GQL. For more information, see Data types in GoogleSQL .
+DML
+SQL/PGQ inherits DML from SQL.
+Graph-based DML is supported.
+Supports SQL table-based DML. For more information, see the GoogleSQL data manipulation language .
+Schema
+Supports using CREATE PROPERTY GRAPH from tables.
+Supports using CREATE PROPERTY GRAPH with open types and closed types.
+Supports the SQL/PGQ method. For more information, see the CREATE PROPERTY GRAPH definition.
+SQL/PGQ support
+Note: G000 is the feature ID from the ISO SQL/PGQ standard.
+Standard
+SQL/PGQ feature ID
+BigQuery Graph
+Query (Graph and table interoperability)
+Feature G900: GRAPH_TABLE
+Supported. For more information, see GRAPH_TABLE operator.
+Schema
+Feature G924: Explicit key clause for element tables. This implies a claim of conformance to Feature G920: DDL-based SQL-property graphs.
+Supported. For more information, see CREATE_PROPERTY_GRAPH statement .
+Schema
+Feature G925: Explicit label and properties clause for element tables. This implies a claim of conformance to Feature G920: DDL-based SQL-property graphs.
+Supported. For more information, see CREATE_PROPERTY_GRAPH statement .
+Query (GPML)
+Feature G001: Repeatable-elements match mode.
+Supported. Repeatable elements match mode is the default semantic. Explicit repeatable elements match mode clause syntax is not supported.
+Query (GPML)
+Feature G008: Graph pattern WHERE clause. This implies a claim of conformance to Feature G000: Graph pattern.
+Supported. For more information, see Graph pattern .
+Query (GPML)
+Feature G034: Path concatenation.
+Supported. For more information, see see Graph pattern .
+Query (GPML)
+Feature G040: Vertex pattern.
+Supported. For more information, see Element pattern .
+Query (GPML)
+Feature G042: Basic full edge patterns.
+Supported. For more information, see Element pattern .
+Query (GPML)
+Feature G070: Label expression: label disjunction.
+Supported. For more information, see Label expression .
+Query (GPML)
+Feature G073: Label expression: individual label name.
+Supported. For more information, see Label expression .
+Query (GPML)
+Feature G090: Property reference.
+Supported.
+GQL support
+Note: GG00 is the feature ID from the ISO GQL standard.
+Standard
+GQL feature ID
+BigQuery Graph
+Schema
+Feature GG02: Graph with a closed graph type. Conformance with at least one of GG20, GG21, GG22, or GG23: Feature GG20: Explicit element type names.
+Feature GG21: Explicit element type key label sets.
+Feature GG22: Element type key label set inference.
+Feature GG22: Element type key label set inference.
+Feature GG23 Optional element type key label sets.
+Supported. GQL support can be chosen from GG01: Graph with an open type or GG02. BigQuery Graph doesn't support the exact same CREATE_GRAPH_TYPE statement as GQL. However, the CREATE_PROPERTY_GRAPH statement supported by BigQuery Graph is closely related to GG02 (with similar support for GG20, GG21, GG22, and GG23).
+Lexical structure
+"A claim of conformance to a specific version of TheUnicode® Standard and the synchronous versions of Unicode Technical Standard #10, Unicode Standard Annex #15, and Unicode Standard Annex #31. The claimed version of The Unicode® Standard shall not be less than 13.0.0."
+BigQuery Graph GQL shares the exact lexical structure with GoogleSQL. For reference to unicode escape values, see Escape sequences for string and bytes literals .
+Data types
+"A claim of conformance to the set of all value types that are supported as the types of property values. At minimum, this set shall include: The character string type specified by STRING or VARCHAR .
+The boolean type specified by BOOLEAN or BOOL .
+The signed regular integer type specified by SIGNED INTEGER , INTEGER , or INT .
+The approximate numeric type specified by FLOAT ."
+Supported. For more information, see a full list of data types supported by BigQuery Graph GQL.
+Additional features
+The features listed in the previous sections are the minimal conformance
+features of the standards. BigQuery Graph supports additional features
+in the ISO standards. To learn more, see
+BigQuery Graph schema overview
+and GQL overview .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-14 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

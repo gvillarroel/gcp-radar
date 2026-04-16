@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:04.407Z"
+generated_at: "2026-04-15T13:37:11.062Z"
 product_name: "Container Optimized OS"
 product_slug: "container-optimized-os"
 feature_name: "cos-gpu-installer ARM64 prepare-build-tools metadata preload"
 feature_slug: "cos-gpu-installer-arm64-prepare-build-tools-metadata-preload"
 latest_feature_date: "2025-02-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
 keywords:
   - "cos"
   - "gpu"
@@ -24,7 +26,7 @@ keywords:
 # cos-gpu-installer ARM64 prepare-build-tools metadata preload
 
 Product: Container Optimized OS
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,22 +38,54 @@ Cos-gpu-installer can use the --prepare-build-tools flag to preload GPU driver m
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm](https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
 
 ## Supporting Pages
 
-### Container-Optimized OS über den Quellcode erstellen | Container-Optimized OS | Google Cloud Documentation
+### Building Container-Optimized OS from source \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source)
+- Source ID: `site-docs-reference`
+- Final score: 120
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Running in hypervisor To boot your image in hypervisor, run the following command: x86 image kvm -m 1024 -nographic -net nic,model = virtio -net user,hostfwd = tcp:127.0.0.1:9222-:22 -hda src/build/images/lakitu/latest/chromiumos test image.bin Arm image sudo apt-get install qemu-system-arm qemu-efi dd if = /dev/zero of = /tmp/flash0.img bs = 1M count = 64 dd if = /usr/share/qemu-efi/QEMU EFI.fd of = /tmp/flash0.img conv = notrunc sudo qemu-system-aarch64 -m 1024 -cpu cortex-a57 -M virt -nographic \ -pflash /tmp/flash0.img \ -device virtio-scsi-pci,id = scsi \ -drive if = none,file = src/build/images/lakitu-arm64/latest/chromiumos test image.bin,id = hd0 \ -device scsi-hd,drive = hd0,bootindex = 0 \ -net nic \ -net user,hostfwd = tcp::9222-:22 Booting in this manner leaves the VM's serial port connected to your console, letting you log in without using SSH.
+- To build Container-Optimized OS, specify lakitu (x86 image) or lakitu-arm64 (Arm image) for the board name as follows: x86 image build packages --board = lakitu build image --board = lakitu test Arm image build packages --board = lakitu-arm64 build image --board = lakitu-arm64 test In addition to test , you can build either a base , or dev image by passing the appropriate parameter to the ./build image script command.
+- To SSH into the image, use the key generated for that image, as follows: x86 image ssh root@localhost -p 9222 -i src/build/images/lakitu/latest/id rsa Arm image ssh root@localhost -p 9222 -i src/build/images/lakitu-arm64/latest/id rsa Running on Compute Engine To import your image to a Compute Engine instance, you must compress the image into a .tar file.
+- You can use the cros sdk tool included in depot tools to create and enter a chroot that's ready for Container-Optimized OS compilation by running the following command in the source directory that you created in the previous step: cd $HOME/cos-src cros sdk --enter Once inside chroot , you can build the disk image.
+
+### Using Arm-based Container-Optimized OS images \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm](https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm)
+- Source ID: `site-docs-reference`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can also see all available releases on command line by running the following command: gcloud compute images list --project cos-cloud --no-standard-images --filter = "name 'cos-arm64- '" The output is similar to the following: NAME PROJECT FAMILY DEPRECATED STATUS cos-arm64-101-17162-40-5 cos-cloud cos-arm64-101-lts READY cos-arm64-beta-101-17162-40-5 cos-cloud cos-arm64-beta READY cos-arm64-dev-105-17228-0-0 cos-cloud cos-arm64-dev READY cos-arm64-stable-101-17162-40-5 cos-cloud cos-arm64-stable READY Arm-based Container-Optimized OS images share the same versioning scheme and LTS milestone lifecycle with x86-based images.
+- The following table describes which containers are compatible with Arm-based images: Container images Compatible with Arm-based images gcr.io/cos-cloud/toolbox Yes gcr.io/cos-cloud/cos-gpu-installer No gcr.io/stackdriver-agents/stackdriver-logging-agent No gcr.io/gce-containers/konlet No Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Differences between Arm and x86 images The Arm-based and x86-based Container-Optimized OS images share the same source code , but the build and compile configurations are different.
+- There are also similar image families cos-arm64-dev , cos-arm64-beta , cos-arm64-stable and cos-arm64-[MILESTONE]-lts for Arm-based Container-Optimized OS images.
+
+### "Running instances with GPU accelerators \_|\_ Container-Optimized OS \_\
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
+- Source ID: `site-docs-reference`
+- Final score: 65
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Container-Optimized OS über den Quellcode erstellen Container-Optimized OS Google Cloud Documentation Source URL: https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de Zum Erstellen eines Container-Optimized ... erstellen.
-- Mit dem in depot tools enthaltenen Tool cros sdk können Sie eine für die Kompilierung des Container-Optimized OS geeignete chroot erstellen und aufrufen....
+- The following flags apply: -no-verify : Downloads and prepares the driver files but skips kernel module loading and installation verification. -target-gpu : Specifies the GPU device to ensure the correct driver is preloaded, preventing compatibility issues when the GPU device is later attached.
+- To preload the GPU driver, run the following command: sudo cos-extensions install gpu -- -no-verify -target-gpu= GPU DEVICE This command is supported starting from cos-gpu-installer:v2.3.0 .
+- For earlier Container-Optimized OS release milestones, use the cos-gpu-installer open source tool to manually install GPU drivers.
+- These containers pre-install the key data science frameworks, the NVIDIA CUDA-X libraries, and tools.
 

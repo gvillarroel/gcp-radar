@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.601Z"
+generated_at: "2026-04-12T12:11:19.879Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Airflow monitoring DAG auto-recreate and unpause"
 feature_slug: "airflow-monitoring-dag-auto-recreate-and-unpause"
 latest_feature_date: "2022-04-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
   - "https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
+  - "https://docs.cloud.google.com/composer/docs/latest/view-dags"
   - "https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3"
 keywords:
   - "airflow"
@@ -26,7 +27,7 @@ keywords:
 # Airflow monitoring DAG auto-recreate and unpause
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +39,35 @@ Cloud Composer automatically recreates and unpauses the Airflow monitoring DAG w
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - [https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags](https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags)
+- [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
+- [https://docs.cloud.google.com/composer/docs/latest/view-dags](https://docs.cloud.google.com/composer/docs/latest/view-dags)
 - [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
 
 ## Supporting Pages
+
+### "Schedule and trigger Airflow DAGs \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags](https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags)
+- Source ID: `site-docs-root`
+- Final score: 229
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- In the Airflow web interface, on the DAGs page, click the toggle next to the DAG's name. gcloud Run the dags pause Airflow CLI command: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ dags pause -- DAG ID Replace the following: ENVIRONMENT NAME : the name of your environment.
+- Run the dags trigger Airflow CLI command: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ dags trigger -- DAG ID Replace the following: ENVIRONMENT NAME : the name of your environment.
+- Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 This page explains how scheduling and DAG triggering works in Airflow, how to define a schedule for a DAG, and how to trigger a DAG manually or pause it.
+- Home Documentation Data analytics Cloud Composer Composer 3 Guides Send feedback Schedule and trigger Airflow DAGs Stay organized with collections Save and categorize content based on your preferences.
 
 ### "Cross-project environment monitoring with Terraform \_|\_ Cloud Composer\
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 188
+- Final score: 225
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,27 +76,26 @@ Evidence snippets:
 - Make corrections if necessary. terraform plan Apply the Terraform configuration by running the following command and entering yes at the prompt: terraform apply In Google Cloud console of your Monitoring Project , go to the Monitoring Dashboard page: Go to Monitoring Dashboard Find your custom dashboard named Cloud Composer - Monitoring Platform in the Custom tab.
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Cross-project environment monitoring with Terraform Stay organized with collections Save and categorize content based on your preferences.
 
-### "Schedule and trigger Airflow DAGs \_|\_ Cloud Composer \_|\_ Google Cloud\
+### View DAGs, DAG runs, and tasks \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags](https://docs.cloud.google.com/composer/docs/latest/schedule-and-trigger-dags)
+- URL: [https://docs.cloud.google.com/composer/docs/latest/view-dags](https://docs.cloud.google.com/composer/docs/latest/view-dags)
 - Source ID: `site-docs-root`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 225
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- In the Airflow web interface, on the DAGs page, click the toggle next to the DAG's name. gcloud Run the dags pause Airflow CLI command: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ dags pause -- DAG ID Replace the following: ENVIRONMENT NAME : the name of your environment.
-- Run the dags trigger Airflow CLI command: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ dags trigger -- DAG ID Replace the following: ENVIRONMENT NAME : the name of your environment.
-- Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 This page explains how scheduling and DAG triggering works in Airflow, how to define a schedule for a DAG, and how to trigger a DAG manually or pause it.
-- Home Documentation Data analytics Cloud Composer Composer 3 Guides Send feedback Schedule and trigger Airflow DAGs Stay organized with collections Save and categorize content based on your preferences.
+- You can follow the link in the Run ID column to get additional information about tasks. gcloud Run the dags list-runs Airflow CLI command: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ dags list-runs -- -d DAG ID Replace: ENVIRONMENT NAME with the name of the environment.
+- In the Airflow UI, on the DAGs page, a list of DAGs for your environment is displayed. gcloud Run the dags list Airflow CLI command: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ dags list -- -o plain Replace: ENVIRONMENT NAME with the name of the environment.
+- Ways to view information about DAGs Cloud Composer provides several ways to get detailed information about DAGs in your environment: DAG UI is a section of Google Cloud console interface for Cloud Composer dedicated to viewing and monitoring DAGs, DAG runs, and individual tasks.
+- About Cloud Composer DAG UI DAG UI is a section of Google Cloud console interface for Cloud Composer dedicated to viewing and monitoring DAGs, DAG runs, and individual tasks.
 
 ### "Migrate to Cloud Composer\_3 from Cloud Composer\_1 (Airflow 2) \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
 - Source ID: `site-docs-reference`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 219
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - COMPOSER 3 LOCATION with the region where the environment is located. (Airflow versions 2.9.1 and later) If there are quota errors while unpausing a large number of DAGs, you can use the following Airflow CLI commands to unpause all DAGs at once: gcloud composer environments run COMPOSER 3 ENV dags unpause \ --project PROJECT ID \ --location COMPOSER 3 LOCATION \ -- -y --treat-dag-id-as-regex ". " (Airflow versions earlier than 2.9.1) If there are quota errors while unpausing a large number of DAGs, it's possible to unpause DAGs using the Airflow REST API .

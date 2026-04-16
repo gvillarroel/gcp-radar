@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:23.992Z"
+generated_at: "2026-04-14T09:47:34.422Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "Bare Metal Solution NFS file storage management"
 feature_slug: "bare-metal-solution-nfs-file-storage-management"
 latest_feature_date: "2022-11-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
   - "https://docs.cloud.google.com/bare-metal/docs/bms-nfs"
   - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
-  - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
 keywords:
   - "file"
   - "management"
-  - "nfs"
   - "storage"
   - "users"
-  - "solution"
-  - "metal"
-  - "bare"
 ---
 
 # Bare Metal Solution NFS file storage management
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +34,35 @@ Users can create, update, and delete NFS storage volumes in Bare Metal Solution.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/sap/docs/netweaver-planning-guide](https://docs.cloud.google.com/sap/docs/netweaver-planning-guide)
 - [https://docs.cloud.google.com/bare-metal/docs/bms-nfs](https://docs.cloud.google.com/bare-metal/docs/bms-nfs)
 - [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
 
 ## Supporting Pages
+
+### "SAP NetWeaver planning guide \_|\_ SAP on Google Cloud \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sap/docs/netweaver-planning-guide](https://docs.cloud.google.com/sap/docs/netweaver-planning-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 108
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- For more information about the different types of block storage offered by Compute Engine, their performance characteristics, and how to work with them, see the Compute Engine documentation: Storage options About Google Cloud Hyperdisk performance Persistent Disk performance Other factors that affect performance Adding or resizing zonal persistent disks Creating persistent disk snapshots Persistent disks deployed by the deployment templates If you deploy the host VM by using the Terraform configuration files that Google Cloud provides for SAP NetWeaver, then the deployment automation scripts attach two or three Persistent Disk or Hyperdisk volumes for the required SAP NetWeaver volumes or drives, depending on whether you are using Windows Server or Linux.
+- Using Cloud Storage for object storage Cloud Storage is an object store for files of any type or format; it has virtually unlimited storage, and you do not have to worry about provisioning it or adding more capacity.
+- After a user with administrative privileges has connected to an instance through SSH or RDP, they can add other system users with standard Linux commands or Windows user-account management.
+- An object in Cloud Storage contains file data and its associated metadata, and can be up to 5 terabytes in size.
 
 ### "Add NFS file storage to a Bare Metal Solution environment \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-nfs](https://docs.cloud.google.com/bare-metal/docs/bms-nfs)
 - Source ID: `site-docs-root-2`
-- Final score: 244
+- Final score: 105
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -66,25 +76,12 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
 - Source ID: `site-docs-root-2`
-- Final score: 236
+- Final score: 96
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
-- When you enable Direct NFS for an Oracle database, configure sufficient source CPU (for example, 8x vCPUs and 8 RMAN channels), and establish a 10GB link between your Bare Metal Solution regional extension and Google Cloud, you can back up a single Oracle database with increased throughput between 700-900+ MB/s.
-- Host project– Lets you create regional subnets in a shared VPC that can connect the Bare Metal Solution regional extension to the Backup and DR Service, the backup/recovery appliance, your Cloud Storage buckets, and your Compute Engine VMs.
-
-### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- Source ID: `site-docs-root`
-- Final score: 208
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- You can use either the NFS share name or ID as the NFS SHARE variable: gcloud bms nfs-shares describe NFS SHARE --project= PROJECT ID --region= REGION The output provides details about the allowed clients, NFS settings, the NFS server and its state, and the storage volume. allowedClients: – allowDev: true allowedClientsCidr: 192.168.1.1/32 mountPermissions: READ WRITE network: projects/ PROJECT ID /locations/ REGION /networks/at-1111111-vlan001 noRootSquash: true shareIp: 192.168.1.240 name: projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS SHARE nfsShareId: at-2222222-nfs001 state: PROVISIONED volume: projects/ PROJECT ID /locations/ REGION /volumes/at-2222222-nfs001-vol000 API To view the status of your NFS file storage within theBare Metal Solution environment, including allowed clients and NFS properties, enter your project ID and region into the following curl command.
-- Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares" To view the status of a specific NFS file storage device, enter your project ID, region, and NFS server name or ID, then issue the following command: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS SHARE " Organize NFS file storage by using labels To help organize your NFS file storage, you can use labels.
-- Click the name to view additional information about the NFS storage volume, such as snapshots. at-2222222-nfs001-vol000 Labels Displays any labels you added to this NFS file storage resource You can use labels to filter the console output by copying the text of a label and pasting it in the Filter box just above the Status field. environment:test gcloud To view the status of your NFS file storage within the Bare Metal Solution environment, issue the gcloud bms nfs-shares list command: gcloud bms nfs-shares list --project= PROJECT ID --region= REGION Additional command options include: --limit: Limit the output to show a specific number of devices. --filter: Limit the output to show devices with a specific label or other filter parameter.
-- Manage NFS file storage You can manage your NFS file storage in the following ways: View NFS volumes Organize NFS volumes by using labels Rename an NFS volume Create an NFS volume Update an NFS volume Delete an NFS volume View NFS volumes After you order and provision NFS for Bare Metal Solution, you can view the status of your NFS file storage and confirm that Google Cloud implemented your configured settings as expected.
+- Verify that block change tracking is now enabled: SQL> select status,filename from v$block change tracking; STATUS FILENAME ---------- ------------------------------------------------------------------ ENABLED +DATADG/ORCL/CHANGETRACKING/ctf.276.1124639617 Protect an Oracle database In the Backup and DR management console, go to the App Manager > Applications page. https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#applications Right-click the Oracle database name you want to protect and select Manage Backup Plan from the menu.
+- Go to the Backup and DR management console. https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/ Select the Manage > Storage Pools menu item. https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#pools Click the far right side option +Add OnVault Pool . https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#addonvaultpool Type a name for the Pool name .
+- Create a profile In the Backup and DR management console, go to the Backup Plans > Profiles page. https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#manageprofiles Two profiles will already be created.
+- When the migration job completes, the system removes and unmaps the Backup and DR-presented backup image copy (ASM diskgroup or file system) from the target, and the database runs from your production storage.
 

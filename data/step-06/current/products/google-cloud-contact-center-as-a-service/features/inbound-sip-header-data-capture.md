@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.700Z"
+generated_at: "2026-04-15T13:50:47.068Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Inbound SIP header data capture"
@@ -9,9 +9,9 @@ latest_feature_date: "2024-10-15"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings"
 keywords:
   - "inbound"
   - "sip"
@@ -20,7 +20,7 @@ keywords:
   - "incoming"
   - "can"
   - "now"
-  - "be"
+  - "passed"
 ---
 
 # Inbound SIP header data capture
@@ -42,48 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities](https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call](https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Call endpoints \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 164
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call](https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call)
+- Source ID: `site-docs-reference-required-7`
+- Final score: 109
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Support for multiple data parameters in API requests to the DAPs for your IVR queues You can capture data in the headers of incoming Session Initiation Protocol (SIP) calls and pass them in API requests to the Direct Access Points (DAPs) for your Interactive Voice Response (IVR) queues.
-- Feature New destinations for incoming SIP header data You can now pass incoming SIP header data to session metadata files and CRM records.
-- Feature DAP: Additional format : Previously limited to E164 formatted numbers, we now support the input of SIP phone numbers in the incoming sip address format: sip:[number]@[domain].
-- For more information, see Capture data parameters from inbound SIP headers .
+- Request Headers: Key Value Description Content-Type application/json Body: { "call type" : "Voice Scheduled (API)" , "lang" : "en" , "call id" : 514 , "end user number" : "+82-10-6861-2345" , "scheduled at" : "2019-09-15T00:19:14.421Z" , "recording permission" : "recording permission granted" } Response: Create an scheduled call with call ID { "id" : 515 , "lang" : "en" , "call type" : "Voice Inbound (API)" , "status" : "queued" , "created at" : "2019-09-10T00:19:14.000Z" , "queued at" : null , "assigned at" : null , "connected at" : null , "ends at" : null , "scheduled at" : "2019-09-15T00:19:14.421Z" , "wait duration" : 0 , "call duration" : 0 , "hold duration" : 0 , "rating" : null , "has feedback" : false , "out ticket id" : null , "out ticket url" : null , "verified" : false , "recording url" : null , "recording permission" : "not asked" , "voicemail reason" : "not voicemail" , "deflection" : "no deflection" , "disconnected by" : "disconnected by unknown" , "fail reason" : "nothing" , "fail details" : null , "support number" : null , "selected menu" : { "id" : 9 , "name" : "Lock Star" , "parent id" : null , "position" : 0 , "deleted" : false , "menu type" : "ivr menu" , "output msg" : "You selected Lock Star." , "hidden" : false }, "menu path" : { "items count" : 1 , "name" : "Lock Star" , "materialized path" : "9" }, "agent info" : null , "end user" : { "id" : 75 , "identifier" : null , "out contact id" : "389391400633" }, "photos" : [], "videos" : [], "transfers" : [], "deflection details" : [], "participants" : [ { "id" : 820 , "type" : "end user" , "status" : "waiting" , "call id" : 515 , "user id" : null , "end user id" : 75 , "call duration" : null , "hold duration" : null , "connected at" : null , "ended at" : null , "fail reason" : "nothing" } ], "offer type" : "cascade" , "offer events" : [ { "casting time" : "2019-09-10T00:19:14.000Z" , "group" : "Group 1" } ], "answer type" : "manual" , "outbound number" : "+1 339-219-5276" } Status Code: 201 Error : Menu is in 'after hours' state, can't accept incoming calls In this example we show the failure scenario where a scheduled call is created but that the provided menu is out of hours and as such cannot receive incoming calls.
+- Request Headers: Key Value Description Content-Type application/json Body: { "call type" : "Voice Inbound (API)" , "lang" : "en" , "menu id" : 9 , "end user number" : "+82-10-6861-2345" , "recording permission" : "recording permission granted" } Response: Create an incoming call with end user number { "id" : 515 , "lang" : "en" , "call type" : "Voice Inbound (API)" , "status" : "queued" , "created at" : "2019-09-10T00:19:14.000Z" , "queued at" : "2019-09-10T00:19:14.421Z" , "assigned at" : null , "connected at" : null , "ends at" : null , "scheduled at" : null , "wait duration" : 0 , "call duration" : 0 , "hold duration" : 0 , "rating" : null , "has feedback" : false , "out ticket id" : null , "out ticket url" : null , "verified" : false , "recording url" : null , "recording permission" : "not asked" , "voicemail reason" : "not voicemail" , "deflection" : "no deflection" , "disconnected by" : "disconnected by unknown" , "fail reason" : "nothing" , "fail details" : null , "support number" : null , "selected menu" : { "id" : 9 , "name" : "Lock Star" , "parent id" : null , "position" : 0 , "deleted" : false , "menu type" : "ivr menu" , "output msg" : "You selected Lock Star." , "hidden" : false }, "menu path" : { "items count" : 1 , "name" : "Lock Star" , "materialized path" : "9" }, "agent info" : null , "end user" : { "id" : 75 , "identifier" : null , "out contact id" : "389391400633" }, "photos" : [], "videos" : [], "transfers" : [], "deflection details" : [], "participants" : [ { "id" : 820 , "type" : "end user" , "status" : "waiting" , "call id" : 515 , "user id" : null , "end user id" : 75 , "call duration" : null , "hold duration" : null , "connected at" : null , "ended at" : null , "fail reason" : "nothing" } ], "offer type" : "cascade" , "offer events" : [ { "casting time" : "2019-09-10T00:19:14.000Z" , "group" : "Group 1" } ], "answer type" : "manual" , "outbound number" : "+1 339-219-5276" } Status Code: 201 Error : Menu is in 'after hours' state, can't accept incoming calls This example demonstrates the failure when the provided menu ID is in after hours state.
+- Request Headers: Key Value Description Content-Type application/json Body: { "call type" : "Voice Inbound (API)" , "lang" : "en" , "menu id" : 9 , "ticket id" : "76517" , "end user number" : "+1 859-657-9625" , "recording permission" : "recording permission granted" } Response: Create an incoming call with ticket id { "id" : 519 , "lang" : "en" , "call type" : "Voice Inbound (API)" , "status" : "queued" , "created at" : "2019-09-10T05:12:26.000Z" , "queued at" : "2019-09-10T05:12:26.295Z" , "assigned at" : null , "connected at" : null , "ends at" : null , "scheduled at" : null , "wait duration" : 0 , "call duration" : 0 , "hold duration" : 0 , "rating" : null , "has feedback" : false , "out ticket id" : "76517" , "out ticket url" : null , "verified" : false , "recording url" : null , "recording permission" : "not asked" , "voicemail reason" : "not voicemail" , "deflection" : "no deflection" , "disconnected by" : "disconnected by unknown" , "fail reason" : "nothing" , "fail details" : null , "support number" : null , "selected menu" : { "id" : 9 , "name" : "Lock Star" , "parent id" : null , "position" : 0 , "deleted" : false , "menu type" : "ivr menu" , "output msg" : "You selected Lock Star." , "hidden" : false }, "menu path" : { "items count" : 1 , "name" : "Lock Star" , "materialized path" : "9" }, "agent info" : null , "end user" : { "id" : 75 , "identifier" : null , "out contact id" : "389391400633" }, "photos" : [], "videos" : [], "transfers" : [], "deflection details" : [], "participants" : [ { "id" : 826 , "type" : "end user" , "status" : "waiting" , "call id" : 519 , "user id" : null , "end user id" : 75 , "call duration" : null , "hold duration" : null , "connected at" : null , "ended at" : null , "fail reason" : "nothing" } ], "offer type" : "cascade" , "offer events" : [ { "casting time" : "2019-09-10T05:12:26.000Z" , "group" : "Group 1" } ], "answer type" : "manual" , "outbound number" : "+1 339-219-5276" } Status Code: 201 Error : Language is not found This example demonstrates the failure when the provided language is not found.
+- Request Headers: Key Value Description Content-Type application/json Body: { "call type" : "Voice Inbound (API)" , "lang" : "en" , "menu id" : 9 , "end user number" : "+1 999-657-12" , "recording permission" : "recording permission granted" } Response: Error : end user number is not well formed { "message" : "end user number is not well formed" } Status Code: 400 Error : Menu is in 'manual redirection' state, can't accept calls In this example we show the failure scenario where a call is routed to a menu ID but that the menu is in manual redirection state and as such cannot receive incoming calls.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Session data feed \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed)
 - Source ID: `site-docs-root`
-- Final score: 52
+- Final score: 105
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Check the version number of your instance You can check the version number of your instance and compare it with the version numbers of the updates and patches that Google announces in the CCAI Platform release notes .
-- Note: Instances of any size or type can only be created after quota has been granted by Google.
-- Firewalls can potentially block incoming support inquiries and other critical capabilities.
-- The name and email address values cannot be changed after you create the instance.
+- Inbound sip headers Data parameters passed: xTwilioAccountSid: AC78449ee33... xInboundVpsip: true xTwilioCallSid: CAe63b...
+- Call started Voice Outbound Contact Center AI Call ID: 6679 Language: English (US) Time: July 2, 2024 at 7:06:15 PM PDT Outbound number: +1 234 567 8910 Chat started Messaging Inbound (Web Chat) Contact Center AI Chat ID: 3034 Language: English (US) Menu: Orders/Returns Time: July 4, 2024 at 2:23:16 PM GMT+7 Device: Browser Call ended Contact Center AI Call ID: 6722 Disconnected By Agent Time of call: July 4, 2024 at 2:41:02 PM GMT+7 Length of call: 00:21 Chat ended Contact Center AI Chat ID: 3036 Disconnected by End User Time of chat: July 4, 2024 at 2:35:34 PM GMT+7 Custom data from the customer has arrived membershipNumber: 21754 model: 1234 purchaseDate: Invalid DateTime temperature: 70.5 osVersion: 17.3.1 lastTransactionId: FEBA4C32-1DD5-4C0A-985C-78FB7A61A166 dashboardUrl: http://internal.dashboard.com/1234 location: Location not available bluetooth: Bluetooth state unknown Callback number Incoming phone number: +1 800 555 0175 Callback number: +1 800 555 0100 Text attachment uploaded Virtual agent transcript CRM link: https://example.com/attachments/token/...
+- Captured VA session variables Chat ID: 3070 Menu: In-App Support (QUEUE qca02)/Support/PN/PN 1 Chatbot Platform: Virtual Agent PN Chatbot Workflow: Post Session Transfer - Chat Virtual Agent: Virtual Agent PN - Chat Intent: Captured At: July 5, 2024 at 3:08:39 PM GMT+7 Captured Variables agentHelpfulness: 4 issueResolution: yes agentComprehension: 5 openFeedback: nothing Co-browse session started Screen Share session was started by Agent Time of start: July 5, 2024 at 3:16:54 PM GMT+7 Co-browse session ended Screen Share session was ended by Agent Time of end: July 5, 2024 at 3:19:31 PM GMT+7 Co-browse remote control requested Screen Share remote control was requested Co-browse remote control accepted Screen Share remote control was accepted Co-browse remote control rejected Screen Share remote control was rejected Co-browse full device control requested Screen Share full device control was requested Co-browse full device control accepted Screen Share full device control was accepted Co-browse full device control rejected Screen Share full device control was rejected Session sentiment score Average sentiment score for the segment: 52 Customer email collected Customer email: 222larabrown@gmail.com Realtime Transcript Call ID: 6800 July 5, 2024 at 4:23:03 PM GMT+7 00:25 ---------------------------------------- [July 5, 2024 at 4:23:05 PM GMT+7 Virtual Agent PN - Voice] Hello, I am CX Agent Number 1.
+- API DAP Response (Loanne: True) API Response key value list key: zulu priority: 1 user type: shopper API Response Json { "key": "zulu", "priority: 1, "user type": "shopper" } Request parameters passed to API DAP Request parameters passed: { "fixed parameter": "abcxyz", "abc": 1 } Verified Verified by Alex B Payment Data Product Name: sample product name Amount Charged: 10.00 USD Payment Status: Success Transaction ID: ch 3PYlfT Agent: Alex B Timestamp: July 4, 2024 at 4:09:32 PM GMT+7 Customer rating received Customer rating feedback received: 5 Customer text feedback received: very good Call Redacted Start: July 5, 2024 at 11:28:48 AM GMT+7 End: July 5, 2024 at 11:35:33 AM GMT+7 Duration: 06:45 Chat transcript uploaded Chat message history CRM link: https://example.com/attachments/token/...
 
-### "Locations \_|\_ Google Cloud Contact Center as a Service \_|\_ Google Cloud\
+### "Call and Chat Settings \_|\_ Google Cloud Contact Center as a Service \_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities](https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities)
-- Source ID: `site-docs-root`
-- Final score: 36
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings)
+- Source ID: `site-docs-reference`
+- Final score: 92
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- CCAI Platform telephony is available in the following locations: Country Google Cloud managed Bring your own carrier (BYOC) Australia ✔ Austria ✔ ✔ Belgium ✔ ✔ Brazil ✔ Canada ✔ ✔ Colombia ✔ ✔ France ✔ ✔ Germany ✔ ✔ Indonesia ✔ Ireland ✔ ✔ Italy ✔ ✔ Japan ✔ ✔ Mexico ✔ ✔ Netherlands ✔ ✔ New Zealand ✔ Portugal ✔ ✔ South Korea ✔ Spain ✔ ✔ Sweden ✔ ✔ Switzerland ✔ ✔ Turkey ✔ United Kingdom ✔ ✔ United States ✔ ✔ Note: Additional regional services terms apply.
-- Bring your own carrier (BYOC) : You can use CCAI Platform with the phone numbers and telephony carrier of your choice.
-- Google Cloud regions CCAI Platform can be deployed in the following Google Cloud regions.
-- Cloud region Location CCaaS Advanced reporting WFM Americas northamerica-northeast1 (Montréal) ✔ ✔ ✔ Americas northamerica-northeast2 (Toronto) ✔ ✔ Americas us-central1 (Iowa) ✔ ✔ ✔ Americas us-east1 (South Carolina) ✔ ✔ ✔ Americas us-east4 (Virginia) ✔ ✔ Americas us-west1 (Oregon) ✔ ✔ ✔ Americas southamerica-east1 (Sao Paulo) ✔ ✔ Europe europe-west1 (Belgium) ✔ ✔ Europe europe-west2 (London) ✔ ✔ ✔ Europe europe-west3 (Frankfurt) ✔ ✔ Europe europe-west4 (Eemshaven) ✔ ✔ Europe europe-west6 (Zurich) ✔ ✔ Middle East me-west1 (Tel Aviv) ✔ ✔ Asia Pacific asia-northeast1 (Tokyo) ✔ ✔ ✔ Asia Pacific asia-northeast3 (Seoul) ✔ ✔ Asia Pacific asia-south1 (Mumbai) ✔ ✔ Asia Pacific asia-southeast1 (Singapore) ✔ ✔ Asia Pacific asia-southeast2 (Jakarta) ✔ ✔ Asia Pacific australia-southeast1 (Sydney) ✔ ✔ ✔ For more information about regions and multi-regions, see Geography and regions .
+- Here is an example reserved data properties in a SIP header: se tt i n g : { redirec t io n : { op t io n : "sip" , sip : { uri : "Destination SIP URI" , da ta parame ters e na bled : true false , da ta parame ters : [ { f ield : "verified customer" , t ype : "dynamic" , source : "ujet metadata" , source f ield : "Incoming Field" }, { f ield : "bad actor" , t ype : "dynamic" , source : "ujet metadata" , source f ield : "Incoming Field" }, { f ield : "repeat customer" , t ype : "dynamic" , source : "ujet metadata" , source f ield : "Incoming Field" } ], da ta records : { i n me ta da ta : true false , i n crm record : true false } } } } Support for virtual agents If you have a virtual agent (a support agent or a virtual task assistant) that performs end-user verification, the virtual agent can pass the end-user verification information to CCAI Platform.
+- You can send reserved data properties to CCAI Platform in the following ways: Send reserved data properties using the SDKs Send reserved data properties using the Apps API Send reserved data properties using SIP headers Send reserved data properties using the SDKs You can send reserved data properties to CCAI Platform using the following SDKs: Web SDK Android SDK iOS SDK Send reserved data properties using the Apps API You can send reserved data properties to CCAI Platform using the Apps API, even after a session has begun.
+- Unauthenticated consumers may include: Prospects contacting your support or sales team via your webpage Current customers who are logged out of your app and contacting support to get help with their login New users in the critical first stage of onboarding before a login has been created Since no identifying information is passed to your CRM without the user logging in, they will be recognized anonymously as a Web User .
+- Custom notification tones You can upload custom tones for the following notification types: Agent call messages & notifications : Incoming call notification Agent chat notifications : New message notification New chat notification Under Settings > Chat > Agent Chat Notifications , you will see Select the tone you would like to use under each notification type.
 

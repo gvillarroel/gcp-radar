@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:50.786Z"
+generated_at: "2026-04-12T12:18:07.470Z"
 product_name: "Places SDK for iOS"
 product_slug: "places-sdk-for-ios"
 feature_name: "Nearby Search API (New)"
 feature_slug: "nearby-search-api-new"
 latest_feature_date: "2024-05-28"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/text-search"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/overview"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/place-types"
 keywords:
   - "nearby"
   - "search"
@@ -24,7 +27,7 @@ keywords:
 # Nearby Search API (New)
 
 Product: Places SDK for iOS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Returns places for a search region defined by a circle using latitude, longitude
 
 Returns places for a search region defined by a circle using latitude, longitude, and radius.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search](https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/text-search](https://developers.google.com/maps/documentation/places/ios-sdk/text-search)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/overview](https://developers.google.com/maps/documentation/places/ios-sdk/overview)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/place-types](https://developers.google.com/maps/documentation/places/ios-sdk/place-types)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Nearby Search (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search](https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search)
+- Source ID: `site-docs-root`
+- Final score: 312
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["The Nearby Search (New) API, available on multiple platforms, finds places within a circular region using a center point and radius.
+- NSArray<NSString > includedTypes = @[ @"restaurant" , @"cafe" ] ; request . includedTypes = [[ NSMutableArray alloc ] initWithArray : includedTypes ]; [ placesClient searchNearbyWithRequest : request callback : ^ ( NSArray<GMSPlace > Nullable places , NSError Nullable error ) { if ( error != nil ) { NSLog ( @"An error occurred %@" , [ error localizedDescription ]); return ; } else { // Get list of places. placeResults = places ; } } ]; Nearby Search responses The Nearby Search API returns an array of matches in the form of GMSPlace objects, with one GMSPlace object per matching place.
+- Places Swift SDK let restriction = CircularCoordinateRegion ( center : CLLocationCoordinate2DMake ( 37.7937 , - 122.3965 ), radius : 500 ) let searchNearbyRequest = SearchNearbyRequest ( locationRestriction : restriction , placeProperties : [ . name , . coordinate ], includedTypes : [ . restaurant , . cafe ], ) switch await placesClient . searchNearby ( with : searchNearbyRequest ) { case . success ( let places ): // Handle places case . failure ( let placesError ): // Handle error } Swift // Array to hold the places in the response var placeResults : [ GMSPlace ] = [] // Define the search area as a 500 meter diameter circle in San Francisco, CA. let circularLocationRestriction = GMSPlaceCircularLocationOption ( CLLocationCoordinate2DMake ( 37.7937 , - 122.3965 ), 500 ) // Specify the fields to return in the GMSPlace object for each place in the response. let placeProperties = [ GMSPlaceProperty . name , GMSPlaceProperty . coordinate ]. map { $0 . rawValue } // Create the GMSPlaceSearchNearbyRequest, specifying the search area and GMSPlace fields to return. var request = GMSPlaceSearchNearbyRequest ( locationRestriction : circularLocationRestriction , placeProperties : placeProperties ) let includedTypes = [ "restaurant" , "cafe" ] request . includedTypes = includedTypes let callback : GMSPlaceSearchNearbyResultCallback = { [ weak self ] results , error in guard let self , error == nil else { if let error { print ( error . localizedDescription ) } return } guard let results = results as ? [ GMSPlace ] else { return } placeResults = results } GMSPlacesClient . shared (). searchNearby ( with : request , callback : callback ) Objective-C // Array to hold the places in the response placeResults = [ NSArray array ]; // Define the search area as a 500 meter diameter circle in San Francisco, CA. id<GMSPlaceLocationRestriction> circularLocation = GMSPlaceCircularLocationOption ( CLLocationCoordinate2DMake ( 37.7937 , -122.3965 ), 500 ); // Create the GMSPlaceSearchNearbyRequest, specifying the search area and GMSPlace fields to return.
+- Page Summary outlined flag The Nearby Search feature in the Google Places API for iOS allows you to find places within a specified radius of a location, filtering by place types and returning detailed information about each place.
+
+### Text Search (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/text-search](https://developers.google.com/maps/documentation/places/ios-sdk/text-search)
+- Source ID: `site-docs-root`
+- Final score: 261
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- GMSPlaceSearchByTextRequest request = [[ GMSPlaceSearchByTextRequest alloc ] initWithTextQuery : @"pizza in New York" placeProperties : @[ GMSPlacePropertyName , GMSPlacePropertyPlaceID ] ]; request . isOpenNow = YES ; request . includedType = @"restaurant" ; request . maxResultCount = 5 ; request . minRating = 3.5 ; request . rankPreference = GMSPlaceSearchByTextRankPreferenceDistance ; request . isStrictTypeFiltering = YES ; request . priceLevels = @[ @( kGMSPlacesPriceLevelFree ) , @( kGMSPlacesPriceLevelCheap ) ] ; request . locationBias = GMSPlaceCircularLocationOption ( CLLocationCoordinate2DMake ( 40.7 , -74.0 ), 200.0 ); // Array to hold the places in the response placeResults = [ NSArray array ]; // Create the GMSPlaceSearchByTextRequest object. [ placesClient searchByTextWithRequest : request callback : ^ ( NSArray<GMSPlace > Nullable placeResults , NSError Nullable error ) { if ( error != nil ) { NSLog ( @"An error occurred %@" , [ error localizedDescription ]); return ; } else { if ( placeResults . count > 0 ) { // Get list of places. placeResults = placeResults ; } } } ]; Text Search responses The Text Search API returns an array of matches in the form of GMSPlace objects, with one GMSPlace object per matching place.
+- Text Search (New) returns information about a set of places based on a string (for example, "pizza in New York" or "shoe stores near Ottawa" or "123 Main Street").
+- Swift public struct PlaceSearchPagination { public var pageSize : Int public var hasNextPage : Bool public func fetchNextPage () async - > SearchByTextResponse } public struct SearchByTextResponse { public var pagination : PlaceSearchPagination ? public var places : [ Place ]? public var error : PlaceError ? } PlacesClient . swift public func searchByText ( with request : SearchByTextRequest ) async - > SearchByTextResponse let searchByTextRequest = SearchByTextRequest ( textQuery : "restaurants" , placeProperties : [ PlaceProperty . displayName ], locationBias : CircularCoordinateRegion ( center : CLLocationCoordinate2D ( latitude : 0 , longitude : 0 ), radius : 100 )) searchByTextRequest . maxResultCount = 10 var searchByTextResponse = await PlacesClient . shared . searchByText ( with : searchByTextRequest ) print ( "Found \( searchByTextResponse . places . count ) places" ) searchByTextResponse . pagination . pageSize = 20 // Continue making requests until no more results are found in pagination object while searchByTextResponse . pagination . hasNextPage { searchByTextResponse = await searchByTextResponse . pagination . fetchNextPage () print ( "Found \( searchByTextResponse . places . count ) places" ) } Objective-C GMSPlaceSearchByTextRequest searchByTextRequest = [[ GMSPlaceSearchByTextRequest alloc ] initWithTextQuery : @"restaurants" placeProperties : @[ GMSPlacePropertyAll ] ]; searchByTextRequest . maxResultCount = 10 ; block void ( ^ recursiveCallback )( GMSPlaceSearchByTextResponse , NSError ); recursiveCallback = ^ ( GMSPlaceSearchByTextResponse response , NSError error ) { NSLog ( @"Found %d places" , response . places . count ); if ( response . pagination . hasNextPage ) { [ response . pagination fetchNextPageWithCompletion : recursiveCallback ]; } }; [ GMSPlacesClient . sharedClient searchByTextWithRequest : searchByTextRequest completion : recursiveCallback ]; Required parameters Use the GMSPlaceSearchByTextRequest object to specify the required parameters for the search.
+- For example: Places Swift SDK let request = SearchByTextRequest () request . shouldIncludePureServiceAreaBusinesses = true Swift let request = SearchByTextRequest () request . shouldIncludePureServiceAreaBusinesses : true Objective-C GMSPlaceSearchByTextRequest request = [[ GMSPlaceSearchByTextRequest alloc ] initWithTextQuery : @"pizza in New York" placeProperties : @[ GMSPlacePropertyAll ] ]; request . shouldIncludePureServiceAreaBusinesses = YES ; Display attributions in your app When your app displays information obtained from GMSPlacesClient , such as photos and reviews, the app must also display the required attributions.
+
+### Overview \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/overview](https://developers.google.com/maps/documentation/places/ios-sdk/overview)
+- Source ID: `site-docs-root`
+- Final score: 244
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Nearby Search (New) Returns information about a set of places by specifying a location as a search area.
+- Places SDK for iOS provides the following APIs: Places SDK for iOS (New) Description Place Details (New) Returns information about places, including the place's name and address, the geographical location, the type of place (such as night club, pet store, museum), and more.
+- Text Search (New) Returns information about a set of places based on a text search.
+- Note: Places API (New) is the current version of the Places SDK for iOS.
+
+### Places Types (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/place-types](https://developers.google.com/maps/documentation/places/ios-sdk/place-types)
+- Source ID: `site-docs-root`
+- Final score: 232
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Automotive Business Culture Education Entertainment and Recreation Facilities Finance Food and Drink Geographical Areas Government Health and Wellness Housing Lodging Natural Features Places of Worship Services Shopping Sports Transportation Automotive car dealer car rental car repair car wash ebike charging station electric vehicle charging station gas station parking parking garage parking lot rest stop tire shop truck dealer Business business center corporate office coworking space farm manufacturer ranch supplier television studio Culture art gallery art museum art studio auditorium castle cultural landmark fountain historical place history museum monument museum performing arts theater sculpture Education academic department educational institution library preschool primary school research institute school secondary school university Entertainment and Recreation adventure sports center amphitheatre amusement center amusement park aquarium banquet hall barbecue area botanical garden bowling alley casino childrens camp city park comedy club community center concert hall convention center cultural center cycling park dance hall dog park event venue ferris wheel garden go karting venue hiking area historical landmark indoor playground internet cafe karaoke live music venue marina miniature golf course movie rental movie theater national park night club observation deck off roading area opera house paintball center park philharmonic hall picnic ground planetarium plaza roller coaster skateboard park state park tourist attraction video arcade vineyard visitor center water park wedding venue wildlife park wildlife refuge zoo Facilities public bath public bathroom stable Finance accounting atm bank Food and Drink acai shop afghani restaurant african restaurant american restaurant argentinian restaurant asian fusion restaurant asian restaurant australian restaurant austrian restaurant bagel shop bakery bangladeshi restaurant bar bar and grill barbecue restaurant basque restaurant bavarian restaurant beer garden belgian restaurant bistro brazilian restaurant breakfast restaurant brewery brewpub british restaurant brunch restaurant buffet restaurant burmese restaurant burrito restaurant cafe cafeteria cajun restaurant cake shop californian restaurant cambodian restaurant candy store cantonese restaurant caribbean restaurant cat cafe chicken restaurant chicken wings restaurant chilean restaurant chinese noodle restaurant chinese restaurant chocolate factory chocolate shop cocktail bar coffee roastery coffee shop coffee stand colombian restaurant confectionery croatian restaurant cuban restaurant czech restaurant danish restaurant deli dessert restaurant dessert shop dim sum restaurant diner dog cafe donut shop dumpling restaurant dutch restaurant eastern european restaurant ethiopian restaurant european restaurant falafel restaurant family restaurant fast food restaurant filipino restaurant fine dining restaurant fish and chips restaurant fondue restaurant food court french restaurant fusion restaurant gastropub german restaurant greek restaurant gyro restaurant halal restaurant hamburger restaurant hawaiian restaurant hookah bar hot dog restaurant hot dog stand hot pot restaurant hungarian restaurant ice cream shop indian restaurant indonesian restaurant irish pub irish restaurant israeli restaurant italian restaurant japanese curry restaurant japanese izakaya restaurant japanese restaurant juice shop kebab shop korean barbecue restaurant korean restaurant latin american restaurant lebanese restaurant lounge bar malaysian restaurant meal delivery meal takeaway mediterranean restaurant mexican restaurant middle eastern restaurant mongolian barbecue restaurant moroccan restaurant noodle shop north indian restaurant oyster bar restaurant pakistani restaurant pastry shop persian restaurant peruvian restaurant pizza delivery pizza restaurant polish restaurant portuguese restaurant pub ramen restaurant restaurant romanian restaurant russian restaurant salad shop sandwich shop scandinavian restaurant seafood restaurant shawarma restaurant snack bar soul food restaurant soup restaurant south american restaurant south indian restaurant southwestern us restaurant spanish restaurant sports bar sri lankan restaurant steak house sushi restaurant swiss restaurant taco restaurant taiwanese restaurant tapas restaurant tea house tex mex restaurant thai restaurant tibetan restaurant tonkatsu restaurant turkish restaurant ukrainian restaurant vegan restaurant vegetarian restaurant vietnamese restaurant western restaurant wine bar winery yakiniku restaurant yakitori restaurant Geographical Areas administrative area level 1 administrative area level 2 country locality postal code school district Government city hall courthouse embassy fire station government office local government office neighborhood police station (Japan only) police post office Health and Wellness chiropractor dental clinic dentist doctor drugstore general hospital hospital massage massage spa medical center medical clinic medical lab pharmacy physiotherapist sauna skin care clinic spa tanning studio wellness center yoga studio Housing apartment building apartment complex condominium complex housing complex Lodging bed and breakfast budget japanese inn campground camping cabin cottage extended stay hotel farmstay guest house hostel hotel inn japanese inn lodging mobile home park motel private guest room resort hotel rv park Natural Features beach island lake mountain peak nature preserve river scenic spot woods Places of Worship buddhist temple church hindu temple mosque shinto shrine synagogue Services aircraft rental service association or organization astrologer barber shop beautician beauty salon body art service catering service cemetery chauffeur service child care agency consultant courier service electrician employment agency florist food delivery foot care funeral home hair care hair salon insurance agency laundry lawyer locksmith makeup artist marketing consultant moving company nail salon non profit organization painter pet boarding service pet care plumber psychic real estate agency roofing contractor service shipping service storage summer camp organizer tailor telecommunications service provider tour agency tourist information center travel agency veterinary care Shopping asian grocery store auto parts store bicycle store book store building materials store butcher shop cell phone store clothing store convenience store cosmetics store department store discount store discount supermarket electronics store farmers market flea market food store furniture store garden center general store gift shop grocery store hardware store health food store home goods store home improvement store hypermarket jewelry store liquor store market pet store shoe store shopping mall sporting goods store sportswear store store supermarket tea store thrift store toy store warehouse store wholesaler womens clothing store Sports arena athletic field fishing charter fishing pier fishing pond fitness center golf course gym ice skating rink indoor golf course playground race course ski resort sports activity location sports club sports coaching sports complex sports school stadium swimming pool tennis court Transportation airport airstrip bike sharing station bridge bus station bus stop ferry service ferry terminal heliport international airport light rail station park and ride subway station taxi service taxi stand toll station train station train ticket office tram stop transit depot transit station transit stop transportation service truck stop Table B The Place type values in Table B may be returned as part of a Place Details (New), Nearby Search (New), Text Search (New), or Autocomplete (New) response.
+- About the type tables Table A lists the types that are used in the following ways: As part of a response from Place Details (New), Nearby Search (New), and Text Search (New), the values in Table A are used to populate the types property of the GMSPlace instance.
+- A place's types are included in the response from a Place Details (New), Nearby Search (New), Text Search (New), and Autocomplete (New) request: A place can have a single primary type from type Table A or type Table B associated with it.
+- Home Products Google Maps Platform Documentation iOS Places SDK for iOS Send feedback Places Types (New) Stay organized with collections Save and categorize content based on your preferences.
 

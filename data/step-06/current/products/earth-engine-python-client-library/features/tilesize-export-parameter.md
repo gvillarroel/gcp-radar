@@ -1,31 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:10:51.816Z"
+generated_at: "2026-04-14T14:11:56.838Z"
 product_name: "Earth Engine Python Client Library"
 product_slug: "earth-engine-python-client-library"
 feature_name: "tileSize export parameter"
 feature_slug: "tilesize-export-parameter"
 latest_feature_date: "2019-11-12"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions"
-  - "https://developers.google.com/earth-engine/docs/release-notes"
-  - "https://developers.google.com/earth-engine/guides/playground"
+  - "https://developers.google.com/earth-engine/guides/auth"
+  - "https://developers.google.com/earth-engine/guides/debugging"
+  - "https://developers.google.com/earth-engine/guides"
 keywords:
   - "tilesize"
-  - "export"
-  - "parameter"
-  - "adds"
-  - "to"
-  - "image"
   - "configuration"
+  - "parameter"
+  - "export"
+  - "image"
+  - "adds"
 ---
 
 # tileSize export parameter
 
 Product: Earth Engine Python Client Library
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,53 +36,54 @@ Adds a tileSize parameter to image export configuration.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions](https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions)
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
+- [https://developers.google.com/earth-engine/guides/auth](https://developers.google.com/earth-engine/guides/auth)
+- [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
+- [https://developers.google.com/earth-engine/guides](https://developers.google.com/earth-engine/guides)
 
 ## Supporting Pages
 
-### Image Predictions \_|\_ Google Earth Engine \_|\_ Google for Developers
+### Authentication and Initialization | Google Earth Engine | Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions](https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions)
-- Source ID: `site-docs-root-2`
-- Final score: 110
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://developers.google.com/earth-engine/guides/auth](https://developers.google.com/earth-engine/guides/auth)
+- Source ID: `site-docs-reference-required-3-http`
+- Final score: 92
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Input options for predictImage() include parameters to specify input bands/properties ( inputProperties , inputTypeOverride , inputShapes ) and control image tiling ( inputTileSize , inputOverlapSize , outputTileSize ). outputBands allows specifying the pixel type and dimensions of the output bands from the prediction.
-- PixelType . float (), 'dimensions' : 1 } } Tile Sizes You control how the image is tiled using the following parameters: inputTileSize inputOverlapSize outputTileSize Input Tile Sizes To set input tile sizes use inputTileSize and inputOverlapSize .
-- If you intend to have a buffer of N pixels around the entire image the overlap would then be [2N, 2N] Output Tile Size To set the output tile size set the outputTileSize argument.
-- Input Options When performing inference using on a ee.Image there are a number of parameters used in the ee.Model connector.
+- Authentication and Initialization | Google Earth Engine | Google for Developers Skip to main content Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Home Guides Reference Support Community Data Catalog Earth Engine Home Guides Reference Support Community Data Catalog Discover Product overview BigQuery integrations Get started Earth Engine access Authentication and initialization Quickstarts Python client JavaScript Code Editor Video tutorials Development environments Earth Engine Code Editor Python installation Concepts Client versus server Processing environments Computation overview Deferred execution Scale Projections Resampling and reducing resolution Analyze data Objects and methods overview Image Image overview Image visualization Image information and metadata Mathematical operations Relational, conditional and boolean operations Convolutions Morphological operations Gradients Edge detection Spectral transformations Texture Object-based methods Cumulative cost mapping Registering images ImageCollection ImageCollection overview ImageCollection visualization ImageCollection information and metadata Filtering an ImageCollection Mapping over an ImageCollection Reducing an ImageCollection Compositing and mosaicking Iterating over an ImageCollection Geometry Geometry overview Geodesic versus planar geometries Geometry visualization and information Geometric operations Feature & FeatureCollection Feature overview FeatureCollection overview Feature and FeatureCollection visualization FeatureCollection information and metadata Filtering a FeatureCollection Mapping over a FeatureCollection Reducing a FeatureCollection Vector to raster interpolation Read tables from BigQuery FeatureView FeatureView overview FeatureView optimization FeatureView styling Reducer Reducer overview ImageCollection reductions Image reductions Statistics of an image region Statistics of image regions Statistics of image neighborhoods Statistics of FeatureCollection columns Raster to vector conversion Vector to raster conversion Grouped reductions and zonal statistics Weighted reductions Linear regression Join Join overview Simple joins Inverted joins Inner joins Save-all joins Save-best joins Save-first joins Spatial joins Array Array overview Array and array images Array transformations Eigen analysis Array sorting and reducing Visualize data Earth Engine Code Editor Charts Chart overview Feature and FeatureCollection charts Image charts ImageCollection charts Array and list charts DataTable charts Chart styling Earth Engine apps About Earth Engine apps User interface API overview Widgets Panels and layouts Events Machine learning Overview of ML in Earth Engine Supervised classification Unsupervised classification Custom Models in Vertex AI Custom models overview Hosting a model in Vertex AI Prediction payload formats Image predictions Property predictions Example workflows notebooks TFRecord data format Cloud AI Platform Migration Guide Import data Importing raster data Image manifest upload Importing table data Table manifest upload Export data Overview Exporting images Exporting table and vector data Exporting video and animations Exporting map tiles Exporting to BigQuery Extracting image data programmatically Manage Control access to resources Managing assets Usage quota and limits Monitoring usage Cost controls Computation benchmarks Service accounts Audit logs Troubleshoot Coding best practices Debugging Archive Custom applications App Engine and Earth Engine overview App Engine example apps NPM installation Samples Overview Introduction to JavaScript for Earth Engine Introduction Earth Engine objects and methods Functional programming concepts The Earth Engine API Introduction Visualizing images and image bands Computations using images Image collections Compositing, masking, and mosaicking NDVI, mapping a function over a collection, quality mosaicking Exporting charts and images Global forest change Introduction Introduction to Hansen global forest change data Quantifying forest change Charting yearly forest loss Introduction to forest monitoring for action (FORMA) data Global Surface Water Introduction Water occurrence (1984-2015) Water occurrence change intensity Water class transition Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone.
+- If you or other users have set up an OAuth client on the project for other reasons, it cannot be removed and you will see an error saying "incompatible OAuth2 client configuration." You will need to use a different project for authentication, or use the colab, localhost or gcloud modes above.
+- You need to either select another Cloud project that has a compatible configuration already set up by the Notebook Authenticator, or select or create a Cloud project with no OAuth2 clients.
+- Most options are controlled by the auth_mode parameter: either as ee.Authenticate(auth_mode=...) , or earthengine authenticate --auth_mode=... on the command line.
 
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
+### Debugging guide | Google Earth Engine | Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 108
+- URL: [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
+- Source ID: `site-docs-reference-required-6-http`
+- Final score: 84
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- January 13, 2026 Earth Engine Data Catalog Feature Added NASA/TEMPO/O3 L3 QA : TEMPO gridded ozone total column V03 (PROVISIONAL) December 30, 2025 Earth Engine Data Catalog Feature Added UCSB-CHC/CHIRPS/V3/DAILY RNL : CHIRPS Precipitation Daily Reanalysis: Climate Hazards Center InfraRed Precipitation With Station Data (Version 3.0, ERA5-based) Added UCSB-CHC/CHIRPS/V3/DAILY SAT : CHIRPS Precipitation Daily Near-Real-Time: Climate Hazards Center InfraRed Precipitation With Station Data (Version 3.0, IMERG-based) December 16, 2025 Earth Engine Data Catalog Feature Added COPERNICUS/MARINE/INSITU MULTI 4KM/ARGO : Copernicus Global In-situ Observations of Ocean Currents - Argo Added COPERNICUS/MARINE/INSITU MULTI 4KM/RADAR RADIAL : Copernicus Global In-situ Observations of Ocean Currents - Radar Radial Added COPERNICUS/MARINE/INSITU MULTI 4KM/RADAR TOTAL : Copernicus Global In-situ Observations of Ocean Currents - Radar Total Added JRC/GFC2020/V3 : EC JRC global map of forest cover 2020, V3 Added projects/mapbiomas-public/assets/brazil/lulc/v1 : MapBiomas Land Use and Land Cover - Brazil V1.0 December 02, 2025 Earth Engine Data Catalog Feature Added JRC/LUCAS/THLOC/V1/2022 : LUCAS THLOC (Points with attributes, 2022) V1 November 30, 2025 Earth Engine JavaScript Client Library 1.7.3 Feature Added support for the overwrite parameter in the Export.image.toAsset() and Export.table.toAsset() methods, which allows for control over overwriting data in preexisting destination images or tables.
-- April 11, 2023 Earth Engine Data Catalog Feature Added MODIS/061/MCD19A2 GRANULES : MCD19A2.061: Terra & Aqua MAIAC Land Aerosol Optical Depth Daily 1km Added NOAA/VIIRS/001/VNP43IA2 : VNP43IA2: BRDF/Albedo Quality Daily L3 Global 500m SIN Grid Added WWF/HydroATLAS/v1/Basins/level03 : WWF HydroATLAS Basins Level 03 Added WWF/HydroATLAS/v1/Basins/level04 : WWF HydroATLAS Basins Level 04 Added WWF/HydroATLAS/v1/Basins/level05 : WWF HydroATLAS Basins Level 05 Added WWF/HydroATLAS/v1/Basins/level06 : WWF HydroATLAS Basins Level 06 Added WWF/HydroATLAS/v1/Basins/level07 : WWF HydroATLAS Basins Level 07 Added WWF/HydroATLAS/v1/Basins/level08 : WWF HydroATLAS Basins Level 08 Added WWF/HydroATLAS/v1/Basins/level09 : WWF HydroATLAS Basins Level 09 Added WWF/HydroATLAS/v1/Basins/level10 : WWF HydroATLAS Basins Level 10 Added WWF/HydroATLAS/v1/Basins/level11 : WWF HydroATLAS Basins Level 11 March 21, 2023 Earth Engine Data Catalog Feature Added NOAA/VIIRS/001/VNP15A2H (no longer available) March 14, 2023 Earth Engine Data Catalog Feature Added NASA/GDDP-CMIP6 : NEX-GDDP-CMIP6: NASA Earth Exchange Global Daily Downscaled Climate Projections March 09, 2023 Earth Engine Server Change Changed the default BIGTIFF parameter in the GeoTIFF image export options from IF SAFER to YES , which always generates a BigTiff unless the BIGTIFF parameter is overridden in the formatOptions dictionary parameter.
-- Note that some parameters needed to be renamed after removing opt since they conflict with Python keywords: ee.Collection.limit() : opt property was converted to prop ee.Image.expression() : opt map was converted to map ee.Filter() : opt filter which was converted to filter Feature Added Export.classifier.toAsset and ee.Classifier.load for exporting and loading saved ee.Classifier.smileCart and ee.Classifier.smileRandomForest classifiers.
-- Earth Engine Python Client Library 1.7.3 Feature Added support for the overwrite parameter in the Export.image.toAsset() and Export.table.toAsset() methods, which allows for control over overwriting data in preexisting destination images or tables.
+- Debugging guide | Google Earth Engine | Google for Developers Skip to main content Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Home Guides Reference Support Community Data Catalog Earth Engine Home Guides Reference Support Community Data Catalog Discover Product overview BigQuery integrations Get started Earth Engine access Authentication and initialization Quickstarts Python client JavaScript Code Editor Video tutorials Development environments Earth Engine Code Editor Python installation Concepts Client versus server Processing environments Computation overview Deferred execution Scale Projections Resampling and reducing resolution Analyze data Objects and methods overview Image Image overview Image visualization Image information and metadata Mathematical operations Relational, conditional and boolean operations Convolutions Morphological operations Gradients Edge detection Spectral transformations Texture Object-based methods Cumulative cost mapping Registering images ImageCollection ImageCollection overview ImageCollection visualization ImageCollection information and metadata Filtering an ImageCollection Mapping over an ImageCollection Reducing an ImageCollection Compositing and mosaicking Iterating over an ImageCollection Geometry Geometry overview Geodesic versus planar geometries Geometry visualization and information Geometric operations Feature & FeatureCollection Feature overview FeatureCollection overview Feature and FeatureCollection visualization FeatureCollection information and metadata Filtering a FeatureCollection Mapping over a FeatureCollection Reducing a FeatureCollection Vector to raster interpolation Read tables from BigQuery FeatureView FeatureView overview FeatureView optimization FeatureView styling Reducer Reducer overview ImageCollection reductions Image reductions Statistics of an image region Statistics of image regions Statistics of image neighborhoods Statistics of FeatureCollection columns Raster to vector conversion Vector to raster conversion Grouped reductions and zonal statistics Weighted reductions Linear regression Join Join overview Simple joins Inverted joins Inner joins Save-all joins Save-best joins Save-first joins Spatial joins Array Array overview Array and array images Array transformations Eigen analysis Array sorting and reducing Visualize data Earth Engine Code Editor Charts Chart overview Feature and FeatureCollection charts Image charts ImageCollection charts Array and list charts DataTable charts Chart styling Earth Engine apps About Earth Engine apps User interface API overview Widgets Panels and layouts Events Machine learning Overview of ML in Earth Engine Supervised classification Unsupervised classification Custom Models in Vertex AI Custom models overview Hosting a model in Vertex AI Prediction payload formats Image predictions Property predictions Example workflows notebooks TFRecord data format Cloud AI Platform Migration Guide Import data Importing raster data Image manifest upload Importing table data Table manifest upload Export data Overview Exporting images Exporting table and vector data Exporting video and animations Exporting map tiles Exporting to BigQuery Extracting image data programmatically Manage Control access to resources Managing assets Usage quota and limits Monitoring usage Cost controls Computation benchmarks Service accounts Audit logs Troubleshoot Coding best practices Debugging Archive Custom applications App Engine and Earth Engine overview App Engine example apps NPM installation Samples Overview Introduction to JavaScript for Earth Engine Introduction Earth Engine objects and methods Functional programming concepts The Earth Engine API Introduction Visualizing images and image bands Computations using images Image collections Compositing, masking, and mosaicking NDVI, mapping a function over a collection, quality mosaicking Exporting charts and images Global forest change Introduction Introduction to Hansen global forest change data Quantifying forest change Charting yearly forest loss Introduction to forest monitoring for action (FORMA) data Global Surface Water Introduction Water occurrence (1984-2015) Water occurrence change intensity Water class transition Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone.
+- Point ([ - 123 , 43 ]) ) def apply_mean_aggregation ( image ): return image . set ( image . reduceRegion ( reducer = 'mean' , geometry = image . geometry (), scale = 30 , maxPixels = int ( 1e9 ), ) ) terrible_aggregations = collection . map ( apply_mean_aggregation ) # EEException: Computation timed out. print ( terrible_aggregations . getInfo ()) Assuming that the purpose of this code is to get image statistics for each image, one possible solution is to Export the result.
+- Number ( dictionary . get ( 'B5' )) . divide ( dictionary . get ( 'B4' )) }); }); // Error in map(ID=2): // Number.divide: Parameter 'left' is required. print ( problem ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) image = ee .
+- For example, using the fact that an ImageCollection is also a FeatureCollection , the metadata associated with the images can be exported as a table: Good — use Export !
 
-### Earth Engine Code Editor \_|\_ Google Earth Engine \_|\_ Google for Developers
+### About Google Earth Engine | Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
-- Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/earth-engine/guides](https://developers.google.com/earth-engine/guides)
+- Source ID: `site-docs-root-required-4-http`
+- Final score: 64
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- If the task is fully specified at creation time (that is, the call to Export has all necessary parameters), hold ctrl or ⌘ while clicking Run to submit the task without showing the dialog.
-- A configuration dialog will appear that allows you to specify a variety of parameters for the task.
-- It also contains a bar object representing the current date. @module Modules/FooModule / / Returns a greeting string. @param {ee.String} arg The name to which the greeting should be addressed @return {ee.String} The complete greeting. / exports . foo = function ( arg ) { return 'Hello, ' + arg + '!
-- Click the Palette radio button and specify a custom palette by adding colors ( add ), removing colors ( remove ) or manually entering a comma separated list of hex strings ( edit ) Click Apply to apply the visualization parameters to the current display.
+- About Google Earth Engine | Google for Developers Skip to main content Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Home Guides Reference Support Community Data Catalog Earth Engine Home Guides Reference Support Community Data Catalog Discover Product overview BigQuery integrations Get started Earth Engine access Authentication and initialization Quickstarts Python client JavaScript Code Editor Video tutorials Development environments Earth Engine Code Editor Python installation Concepts Client versus server Processing environments Computation overview Deferred execution Scale Projections Resampling and reducing resolution Analyze data Objects and methods overview Image Image overview Image visualization Image information and metadata Mathematical operations Relational, conditional and boolean operations Convolutions Morphological operations Gradients Edge detection Spectral transformations Texture Object-based methods Cumulative cost mapping Registering images ImageCollection ImageCollection overview ImageCollection visualization ImageCollection information and metadata Filtering an ImageCollection Mapping over an ImageCollection Reducing an ImageCollection Compositing and mosaicking Iterating over an ImageCollection Geometry Geometry overview Geodesic versus planar geometries Geometry visualization and information Geometric operations Feature & FeatureCollection Feature overview FeatureCollection overview Feature and FeatureCollection visualization FeatureCollection information and metadata Filtering a FeatureCollection Mapping over a FeatureCollection Reducing a FeatureCollection Vector to raster interpolation Read tables from BigQuery FeatureView FeatureView overview FeatureView optimization FeatureView styling Reducer Reducer overview ImageCollection reductions Image reductions Statistics of an image region Statistics of image regions Statistics of image neighborhoods Statistics of FeatureCollection columns Raster to vector conversion Vector to raster conversion Grouped reductions and zonal statistics Weighted reductions Linear regression Join Join overview Simple joins Inverted joins Inner joins Save-all joins Save-best joins Save-first joins Spatial joins Array Array overview Array and array images Array transformations Eigen analysis Array sorting and reducing Visualize data Earth Engine Code Editor Charts Chart overview Feature and FeatureCollection charts Image charts ImageCollection charts Array and list charts DataTable charts Chart styling Earth Engine apps About Earth Engine apps User interface API overview Widgets Panels and layouts Events Machine learning Overview of ML in Earth Engine Supervised classification Unsupervised classification Custom Models in Vertex AI Custom models overview Hosting a model in Vertex AI Prediction payload formats Image predictions Property predictions Example workflows notebooks TFRecord data format Cloud AI Platform Migration Guide Import data Importing raster data Image manifest upload Importing table data Table manifest upload Export data Overview Exporting images Exporting table and vector data Exporting video and animations Exporting map tiles Exporting to BigQuery Extracting image data programmatically Manage Control access to resources Managing assets Usage quota and limits Monitoring usage Cost controls Computation benchmarks Service accounts Audit logs Troubleshoot Coding best practices Debugging Archive Custom applications App Engine and Earth Engine overview App Engine example apps NPM installation Samples Overview Introduction to JavaScript for Earth Engine Introduction Earth Engine objects and methods Functional programming concepts The Earth Engine API Introduction Visualizing images and image bands Computations using images Image collections Compositing, masking, and mosaicking NDVI, mapping a function over a collection, quality mosaicking Exporting charts and images Global forest change Introduction Introduction to Hansen global forest change data Quantifying forest change Charting yearly forest loss Introduction to forest monitoring for action (FORMA) data Global Surface Water Introduction Water occurrence (1984-2015) Water occurrence change intensity Water class transition Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone.
+- When ready, users can export raster and vector results to Google Cloud Storage, BigQuery, or Google Drive, as well as download data locally in formats compatible with pandas, NumPy, and Xarray.
+- It combines a multi-petabyte catalog of satellite imagery and geospatial datasets with planetary-scale computation to accelerate environmental research and applications.
+- The platform simplifies geospatial analysis by automatically handling data projection, scaling, and compositing based on user-specified parameters.
 

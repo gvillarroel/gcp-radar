@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.643Z"
+generated_at: "2026-04-12T12:07:33.885Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB committed use discounts for compute"
 feature_slug: "alloydb-committed-use-discounts-for-compute"
 latest_feature_date: "2023-08-16"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables"
 keywords:
   - "Committed Use Discounts"
   - "Committed Use Discount"
@@ -24,7 +27,7 @@ keywords:
 # AlloyDB committed use discounts for compute
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,25 +35,46 @@ AlloyDB offers committed use discounts on compute resources, with 25% discount f
 
 ## Extended Definition
 
-AlloyDB for PostgreSQL supports Committed Use Discounts (CUDs) for compute resources. Under this feature, users can commit to one- or three-year compute commitments and receive ongoing discounted pricing, specifically 25% for a one-year commitment and 52% for a three-year commitment.
+AlloyDB offers committed use discounts on compute resources, with 25% discount for one-year commitments and 52% for three-year commitments.
 
 ## Evidence Summary
 
-The AlloyDB release notes state that AlloyDB introduced CUDs for compute resources with 25% (1-year) and 52% (3-year) discounts.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \_|\_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 22
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- Source ID: `site-docs-reference-2`
+- Final score: 98
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- August 16, 2023 Feature AlloyDB now offers committed use discounts (CUDs) that provide 25% or 52% discount on AlloyDB's compute resources in exchange for your commitment, and you can continuously use them for one- or three-year terms, respectively.
+### "Use the AlloyDB remote MCP server \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- Source ID: `site-docs-reference-2`
+- Final score: 86
+- Re-rank relevance: N/A
+
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 82
+- Re-rank relevance: N/A
+
+### "Generate and manage auto vector embeddings for large tables \_|\_ AlloyDB\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
+- Source ID: `site-docs-reference-2`
+- Final score: 82
+- Re-rank relevance: N/A
 

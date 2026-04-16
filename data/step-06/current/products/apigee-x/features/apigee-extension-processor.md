@@ -1,46 +1,49 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:42.840Z"
+generated_at: "2026-04-14T05:27:18.150Z"
 product_name: "Apigee X"
 product_slug: "apigee-x"
 feature_name: "Apigee Extension Processor"
 feature_slug: "apigee-extension-processor"
 latest_feature_date: "2025-04-10"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
 keywords:
-  - "third-party service integration"
-  - "AP extension processor"
-  - "Cloud Load Balancing"
-  - "Google Cloud services via extension"
-  - "Extension Processor integration"
-  - "Apigee Extension Processor"
-  - "Extension Processor"
-  - "extension processor"
+  - "exposed"
+  - "adds"
+  - "capabilities"
+  - "extension"
+  - "processor"
+  - "management"
+  - "through"
 ---
 
 # Apigee Extension Processor
 
 Product: Apigee X
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The Apigee Extension Processor is generally available, enabling API management capabilities for Google Cloud and third-party services exposed through Cloud Load Balancing.
+The Apigee Extension Processor adds Apigee API management capabilities to services exposed through Cloud Load Balancing.
 
 ## Extended Definition
 
-The Apigee Extension Processor is a traffic extension (a type of service extension) that uses Cloud Load Balancing to route callouts from the application load balancer’s data-processing path to the processor. It is used to extend API request handling, including authorization and authentication flows, such as injecting Google auth tokens for backend services like Vertex AI.
+The Apigee Extension Processor adds Apigee API management capabilities to services exposed through Cloud Load Balancing.
 
 ## Evidence Summary
 
-The cited Apigee quickstart page defines the feature’s role as a Cloud Load Balancing-linked service extension and gives an integration use case for request auth and token injection to backend APIs.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary](https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy](https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy)
 
 ## Supporting Pages
 
@@ -48,13 +51,39 @@ The cited Apigee quickstart page defines the feature’s role as a Cloud Load Ba
 
 - URL: [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
 - Source ID: `site-docs-reference`
-- Final score: 100
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is a getting-started guide specifically for configuring the Apigee Extension Processor and using it with a Service Extensions-enabled load balancer.
+- Final score: 218
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- The Apigee Extension Processor is a traffic extension (a type of Service Extension) that lets you use Cloud Load Balancing to send callouts from the data processing path of the application load balancer to the Apigee Extension Processor.
-- Go to the VPC Networks page in the Google Cloud console: Go to VPC Networks Required roles To get the permissions that you need to install the Apigee Extension Processor, ask your administrator to grant you the following IAM roles: Create and manage service accounts: Service Account Admin ( roles/iam.serviceAccountAdmin ) on organization Create and manage service extensions: Service Extensions Admin ( roles/networkservices.serviceExtensionsAdmin ) on organization Create and manage network endpoint groups (NEGs): Compute Instance Admin ( roles/compute.instanceAdmin ) on organization Create and manage networking resources: Compute Network Admin ( roles/compute.networkAdmin ) on organization Create and manage backend services: Compute Load Balancer Admin ( roles/compute.loadBalancerAdmin ) on organization Create and manage Apigee resources: Apigee Org Admin ( roles/apigee.admin ) on organization Create and manage traffic extensions: Apigee APIM Service Extension Admin ( roles/apigee.apimServiceExtensionAdmin ) on organization View traffic extensions: Apigee APIM Service Extension Viewer ( roles/apigee.apimServiceExtensionViewer ) on organization Manage long-running operations: Apigee APIM Service Extension Service Agent ( roles/apigee.apimServiceExtensionServiceAgent ) on the service agent in the Google Cloud project For more information about granting roles, see Manage access to projects, folders, and organizations .
-- This scenario would be useful for API providers using the Apigee Extension Processor to authorize and authenticate requests to their Apigee services and seamlessly inject the Google auth tokens required for a backend service like Vertex AI.
-- Home Documentation Application development Apigee Guides Send feedback Get started with the Apigee Extension Processor Stay organized with collections Save and categorize content based on your preferences.
+- Add the AssignMessage policy for Google authentication If you want to use your Extension Processor to provide API management for a Google-authenticated service, you can inject a Google access token or Google ID token into requests sent to the backend service using the AssignMessage policy .
+- The following sections guide you through the steps to configure the key elements of the Apigee Extension Processor: Configure a load balancer for a backend service .
+- Create the Extension Processor proxy The Extension Processor proxy is an Apigee API proxy that is used to apply API management policies to the load balancer traffic.
+- To learn more about the suggested use cases and benefits of using the Apigee Extension Processor for API management, see Apigee Extension Processor overview .
+
+### Glossary \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary](https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary)
+- Source ID: `site-api-reference`
+- Final score: 75
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- An Apigee service in the management plane that processes incoming analytics, debug, and deployment status data and makes it available to you through the Apigee hybrid UI or the Apigee APIs .
+- M management plane The Google-hosted central services that communicate with the runtime plane through service accounts.
+- These services communicate through service accounts with the management plane.
+- For more information, see About the runtime plane . central management infrastructure (or plane) See management plane . container[ized] image See image. control plane See management plane .
+
+### AssignMessage policy \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy](https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy)
+- Source ID: `site-api-reference`
+- Final score: 62
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Optional Type Array of <FormParam> elements Parent Element <Add> Child Elements <FormParam> The <FormParams> element uses the following syntax: Syntax < AssignMessage continueOnError = "[false true]" enabled = "[true false]" name = " POLICY NAME " > < Add > < FormParams > < FormParam name = " FORMPARAM NAME " > FORMPARAM VALUE < / FormParam > ... < / FormParams > < AssignTo createNew = "[true false]" transport = "http" type = "[request response]" > DESTINATION VARIABLE NAME < / AssignTo > < / Add > < / AssignMessage > Example 1 The following example adds a single form parameter ( answer ) and a static value ( 42 ) to the request: <AssignMessage name="AM-add-formparams-1"> <Add> <FormParams> <FormParam name="answer">42</FormParam> </FormParams> </Add> <AssignTo>request</AssignTo> </AssignMessage> Example 2 The following example gets the value of the name query parameter and adds it to the request as a form parameter, and then removes the query parameter: <AssignMessage name="AM-Swap-QueryParam-to-FormParams"> <Add> <FormParam name="name">{request.queryparam.name}</FormParam> </Add> <Remove> <QueryParam name="name"/> </Remove> </AssignMessage> Note that this example does not specify a target with <AssignTo> .
+- Examples The following examples show some of the ways in which you can use the AssignMessage policy: 1: Add header The following example adds a header to the request with the <Add> element: <AssignMessage name="AM-add-headers-1"> <Add> <Headers> <Header name="partner-id">{verifyapikey.VAK-1.developer.app.partner-id}</Header> </Headers> </Add> <AssignTo>request</AssignTo> </AssignMessage> 2: Remove payload The following example deletes the payload from the response with the <Remove> element: < AssignMessage name = "AM-remove-1" > < DisplayName>remove - 1 < / DisplayName > < Remove > < Payload>true < / Payload > < / Remove > < AssignTo>response < / AssignTo > < / AssignMessage > 3: Modify response The following example modifies an existing response object by adding a header to it: <AssignMessage name="AM-modify-response"> <Set> <Headers> <Header name="Cache-Hit">{lookupcache.LookupCache-1.cachehit}</Header> </Headers> </Set> <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables> <AssignTo>response</AssignTo> </AssignMessage> This example does not create a new message.
+- Optional Type Boolean Parent Element <Copy> Child Elements None The <Version> element uses the following syntax: Syntax <AssignMessage continueOnError="[false true]" enabled="[true false]" name=" POLICY NAME " > <Copy source=" VARIABLE NAME "> <Version>[false true]</Version> </Copy> </AssignMessage> Example 1 The following example sets <Version> to true on the request, which copies the version from the default request object to a new, custom request object: < AssignMessage name = "copy-version-1" > < Copy source = "request" > < Version>true < / Version > < / Copy > < AssignTo createNew = "true" transport = "http" type = "request" > MyCustomRequest < / AssignTo > < / AssignMessage > You can use <Copy> / <Version> only when the following criteria are met: The Message type for both source and destination is request <DisplayName> Use in addition to the name attribute to label the policy in the management UI proxy editor with a different, more natural-sounding name.
+- Optional Type Array of <QueryParam> elements Parent Element <Add> Child Elements <QueryParam> The <QueryParams> element uses the following syntax: Syntax <AssignMessage continueOnError="[false true]" enabled="[true false]" name=" POLICY NAME " > <Add> <QueryParams> <QueryParam name=" QUERYPARAM NAME "> QUERYPARAM VALUE </QueryParam> ... </QueryParams> </Add> </AssignMessage> Example 1 The following example adds the query parameter myParam to the request and assigns the value 42 to it: <AssignMessage name="AM-add-queryparams-1"> <Add> <QueryParams> <QueryParam name="myParam">42</QueryParam> </QueryParams> </Add> <AssignTo>request</AssignTo> </AssignMessage> You can use <QueryParams> only when the following criteria are met: HTTP verbs: GET , POST , PATCH , DELETE Message type: Request In addition, you can only set query parameters when the <AssignTo> element's type attribute is a request message.
 

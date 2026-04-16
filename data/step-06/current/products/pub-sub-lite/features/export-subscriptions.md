@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:51.848Z"
+generated_at: "2026-04-12T12:18:10.917Z"
 product_name: "Pub/Sub Lite"
 product_slug: "pub-sub-lite"
 feature_name: "Export subscriptions"
 feature_slug: "export-subscriptions"
 latest_feature_date: "2022-12-19"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub"
+  - "https://docs.cloud.google.com/pubsub/lite/docs/subscriptions"
+  - "https://docs.cloud.google.com/pubsub/lite/docs/subscribing"
+  - "https://docs.cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions"
 keywords:
   - "export"
   - "subscriptions"
@@ -24,7 +27,7 @@ keywords:
 # Export subscriptions
 
 Product: Pub/Sub Lite
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Export subscriptions let you export Pub/Sub Lite messages to a destination Pub/S
 
 Export subscriptions let you export Pub/Sub Lite messages to a destination Pub/Sub topic.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub](https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub)
+- [https://docs.cloud.google.com/pubsub/lite/docs/subscriptions](https://docs.cloud.google.com/pubsub/lite/docs/subscriptions)
+- [https://docs.cloud.google.com/pubsub/lite/docs/subscribing](https://docs.cloud.google.com/pubsub/lite/docs/subscribing)
+- [https://docs.cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions](https://docs.cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Migrate from Pub/Sub Lite to Pub/Sub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub](https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub)
+- Source ID: `site-docs-root`
+- Final score: 390
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- By the end of this phase, your Pub/Sub Lite and Pub/Sub topics both receive the same messages from the point the export subscriptions were created.
+- Instead of individually setting throughput capacity for each export subscription, use a Pub/Sub Lite reservation to efficiently manage throughput for all your export subscriptions collectively.
+- Create Pub/Sub Lite export subscriptions For every topic, create a Pub/Sub Lite export subscription to export messages from the Pub/Sub Lite topic to its corresponding Pub/Sub topic.
+- Most importantly, we strongly recommend you to set up a dead-letter Pub/Sub Lite topic to capture any messages that fail to migrate successfully to Pub/Sub.
+
+### "Create and manage Lite subscriptions \_|\_ Pub/Sub Lite \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/pubsub/lite/docs/subscriptions](https://docs.cloud.google.com/pubsub/lite/docs/subscriptions)
+- Source ID: `site-docs-root`
+- Final score: 348
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- False if using a zonal location. // https://cloud.google.com/pubsub/lite/docs/topics boolean regional = false ; listSubscriptionsInTopicExample ( cloudRegion , zoneId , projectNumber , topicId , regional ); } public static void listSubscriptionsInTopicExample ( String cloudRegion , char zoneId , long projectNumber , String topicId , boolean regional ) throws Exception { CloudRegionOrZone location ; if ( regional ) { location = CloudRegionOrZone . of ( CloudRegion . of ( cloudRegion )); } else { location = CloudRegionOrZone . of ( CloudZone . of ( CloudRegion . of ( cloudRegion ), zoneId )); } TopicPath topicPath = TopicPath . newBuilder () . setProject ( ProjectNumber . of ( projectNumber )) . setLocation ( location ) . setName ( TopicName . of ( topicId )) . build (); AdminClientSettings adminClientSettings = AdminClientSettings . newBuilder (). setRegion ( CloudRegion . of ( cloudRegion )). build (); try ( AdminClient adminClient = AdminClient . create ( adminClientSettings )) { List<SubscriptionPath> subscriptionPaths = adminClient . listTopicSubscriptions ( topicPath ). get (); for ( SubscriptionPath subscription : subscriptionPaths ) { System . out . println ( subscription . toString ()); } if ( regional ) { System . out . println ( subscriptionPaths . size () + " subscription(s) listed in the regional topic " + topicPath ); } else { System . out . println ( subscriptionPaths . size () + " subscription(s) listed in the zonal topic " + topicPath ); } } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.cloud.pubsublite import AdminClient from google.cloud.pubsublite.types import CloudRegion , CloudZone , TopicPath TODO(developer): project number = 1122334455 cloud region = "us-central1" zone id = "a" topic id = "your-topic-id" regional = True if regional : location = CloudRegion ( cloud region ) else : location = CloudZone ( CloudRegion ( cloud region ), zone id ) topic path = TopicPath ( project number , location , topic id ) client = AdminClient ( cloud region ) response = client . list topic subscriptions ( topic path ) for subscription path in response : print ( subscription path ) print ( f " { len ( response ) } subscription(s) listed in your topic." ) Delete a Lite subscription You can delete Lite subscriptions with the Google Cloud console, the Google Cloud CLI, or the Pub/Sub Lite API.
+- In the dialog that appears, click Delete to confirm that you want to delete the Lite subscription. gcloud To delete a Lite subscription, use the gcloud pubsub lite-subscriptions delete command: Run the delete command: gcloud pubsub lite-subscriptions delete SUBSCRIPTION ID \ --location = LOCATION Replace the following: SUBSCRIPTION ID : the ID of the Lite subscription LOCATION : the name of the location that the Lite subscription is in To confirm, type Y .
+- Create an export subscription when you need to export Lite messages to Pub/Sub.
+- False if using a zonal location. // https://cloud.google.com/pubsub/lite/docs/topics boolean regional = false ; getSubscriptionExample ( cloudRegion , zoneId , projectNumber , subscriptionId , regional ); } public static void getSubscriptionExample ( String cloudRegion , char zoneId , long projectNumber , String subscriptionId , boolean regional ) throws Exception { CloudRegionOrZone location ; if ( regional ) { location = CloudRegionOrZone . of ( CloudRegion . of ( cloudRegion )); } else { location = CloudRegionOrZone . of ( CloudZone . of ( CloudRegion . of ( cloudRegion ), zoneId )); } SubscriptionPath subscriptionPath = SubscriptionPath . newBuilder () . setLocation ( location ) . setProject ( ProjectNumber . of ( projectNumber )) . setName ( SubscriptionName . of ( subscriptionId )) . build (); AdminClientSettings adminClientSettings = AdminClientSettings . newBuilder (). setRegion ( CloudRegion . of ( cloudRegion )). build (); try ( AdminClient adminClient = AdminClient . create ( adminClientSettings )) { Subscription subscription = adminClient . getSubscription ( subscriptionPath ). get (); System . out . println ( subscription . getAllFields ()); } catch ( ExecutionException e ) { try { throw e . getCause (); } catch ( NotFoundException notFound ) { System . out . println ( "This subscription is not found." ); } catch ( Throwable throwable ) { throwable . printStackTrace (); } } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.api core.exceptions import NotFound from google.cloud.pubsublite import AdminClient from google.cloud.pubsublite.types import CloudRegion , CloudZone , SubscriptionPath TODO(developer): project number = 1122334455 cloud region = "us-central1" zone id = "a" subscription id = "your-subscription-id" regional = True if regional : location = CloudRegion ( cloud region ) else : location = CloudZone ( CloudRegion ( cloud region ), zone id ) subscription path = SubscriptionPath ( project number , location , subscription id ) client = AdminClient ( cloud region ) try : response = client . get subscription ( subscription path ) print ( f " { response . name } exists." ) except NotFound : print ( f " { subscription path } not found." ) List Lite subscriptions You can list the Lite subscriptions in a project or the Lite subscriptions to a Lite topic .
+
+### "Receiving messages from Lite subscriptions \_|\_ Pub/Sub Lite \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/pubsub/lite/docs/subscribing](https://docs.cloud.google.com/pubsub/lite/docs/subscribing)
+- Source ID: `site-docs-root`
+- Final score: 312
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For MacOS, Linux, and Cloud Shell users, run: sudo pip3 install grpcio export CLOUDSDK PYTHON SITEPACKAGES = 1 To receive messages, use the gcloud pubsub lite-subscriptions subscribe command: gcloud pubsub lite-subscriptions subscribe SUBSCRIPTION ID \ --location = LITE LOCATION \ --auto-ack Replace the following: SUBSCRIPTION ID : the ID of the Lite subscription LITE LOCATION : the location of the Lite subscription Go Before running this sample, follow the Go setup instructions in Pub/Sub Lite Client Libraries . package main import ( "context" "flag" "fmt" "log" "sync/atomic" "time" "cloud.google.com/go/pubsub" "cloud.google.com/go/pubsublite/pscompat" ) func main () { // NOTE: Set these flags for an existing Pub/Sub Lite subscription containing // published messages when running this sample. projectID := flag .
+- Home Documentation Data analytics Pub/Sub Pub/Sub Lite Guides Send feedback Receiving messages from Lite subscriptions Stay organized with collections Save and categorize content based on your preferences.
+- This will change the state of the subscriber to TERMINATED. subscriber . stopAsync (). awaitTerminated (); System . out . println ( "Subscriber is shut down: " + subscriber . state ()); } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from concurrent.futures. base import TimeoutError from google.pubsub v1 import PubsubMessage from google.cloud.pubsublite.cloudpubsub import SubscriberClient from google.cloud.pubsublite.types import ( CloudRegion , CloudZone , FlowControlSettings , MessageMetadata , SubscriptionPath , ) TODO(developer): project number = 1122334455 cloud region = "us-central1" zone id = "a" subscription id = "your-subscription-id" timeout = 90 regional = True if regional : location = CloudRegion ( cloud region ) else : location = CloudZone ( CloudRegion ( cloud region ), zone id ) subscription path = SubscriptionPath ( project number , location , subscription id ) Configure when to pause the message stream for more incoming messages based on the maximum size or number of messages that a single-partition subscriber has received, whichever condition is met first. per partition flow control settings = FlowControlSettings ( 1,000 outstanding messages.
+- The following sample shows you how to receive messages from Lite subscriptions: gcloud This command requires Python 3.6 or greater, and requires the grpcio Python package to be installed.
+
+### "REST Resource: admin.projects.locations.subscriptions \_|\_ Pub/Sub Lite\
+
+- URL: [https://docs.cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions](https://docs.cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions)
+- Source ID: `site-api-reference`
+- Final score: 310
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Structured like: projects/{project number}/locations/{location}/topics/{topicId} deliveryConfig object ( DeliveryConfig ) The settings for this subscription's message delivery. exportConfig object ( ExportConfig ) If present, messages are automatically written from the Pub/Sub Lite topic associated with this subscription to a destination.
+- Home Documentation Data analytics Pub/Sub Pub/Sub Lite Send feedback REST Resource: admin.projects.locations.subscriptions Stay organized with collections Save and categorize content based on your preferences.
+- The name of an optional Pub/Sub Lite topic to publish messages that can not be exported to the destination.
+- ExportConfig Configuration for a Pub/Sub Lite subscription that writes messages to a destination.
 

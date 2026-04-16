@@ -1,30 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.024Z"
+generated_at: "2026-04-15T13:44:17.202Z"
 product_name: "Looker Studio"
 product_slug: "looker-studio"
 feature_name: "NATIVE_DIMENSION function"
 feature_slug: "native-dimension-function"
 latest_feature_date: "2023-11-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker-studio/docs/release-notes"
+  - "https://docs.cloud.google.com/data-studio/nativedimension"
+  - "https://docs.cloud.google.com/looker/docs/studio/nativedimension"
 keywords:
   - "native"
   - "dimension"
-  - "function"
-  - "the"
   - "lets"
   - "users"
   - "create"
+  - "bigquery"
   - "sql"
+  - "expressions"
 ---
 
 # NATIVE_DIMENSION function
 
 Product: Looker Studio
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,24 +37,52 @@ The NATIVE_DIMENSION function lets users create Google BigQuery SQL expressions 
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker-studio/docs/release-notes](https://docs.cloud.google.com/looker-studio/docs/release-notes)
+- [https://docs.cloud.google.com/data-studio/nativedimension](https://docs.cloud.google.com/data-studio/nativedimension)
+- [https://docs.cloud.google.com/looker/docs/studio/nativedimension](https://docs.cloud.google.com/looker/docs/studio/nativedimension)
 
 ## Supporting Pages
 
-### Looker Studio release notes | Google Cloud Documentation
+### Data Studio | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker-studio/docs/release-notes](https://docs.cloud.google.com/looker-studio/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/data-studio/nativedimension](https://docs.cloud.google.com/data-studio/nativedimension)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 291
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- This token allows API users to paginate forwards and backwards through the result set. ...
-- Looker Studio release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker-studio/docs/release-notes The Looker connector can now connect to a private IP (private services access) only Looker (Google Cloud core) instance or to a private IP (Private Service Connect) Looker (Google Cloud core) instance using the Looker instance ID. ...
-- For Looker Studio Pro subscriptions that are created on or after June 3, 2025, Gemini in Looker is enabled automatically.
-- The Assets: search API endpoint now includes a previousPageToken attribute in its response.
+- Think with Data Studio A typical Data Studio workflow Data Studio Qwik Start (Lab) Report tutorials Report tutorials introduction View a Data Studio report Drill into your data Tutorial: Create a new report Tutorial: Add charts to your report Tutorial: View and share your report Data source tutorials Data source tutorials introduction Tutorial: Create a Google Analytics data source Tutorial: Create a Google Sheets data source Tutorial: Create a BigQuery data source Calculated fields tutorials Calculated fields tutorial introduction Tutorial: Create calculated fields in Data Studio Tutorial: Create a ratio field based on filtered metrics How to use the Data Studio mobile app Glossary Aggregation Asset Blended data Chart Component Connector Data credentials Data source Dataset Dimension Edit mode Editor (user type) Field Google Analytics property Join key Metric Owned by me Owner Page Properties panel Recent Report Sandbox Schedule creator (user type) Shared with me Team workspace Toolbar Trash View mode Viewer (user type) Help and support Release notes Data Studio Pro About Data Studio Pro Try Data Studio Pro Data Studio Pro Essentials (Cloud Skills Boost Course) Subscribe to Data Studio Pro Data Studio Pro subscription overview Start a new Pro subscription Step 1: Select a Google Cloud project Step 2: Add people to the subscription Step 3: Buy additional Data Studio Pro licenses Organize and manage Data Studio Pro content About Data Studio Pro content Upgrade Data Studio content to Data Studio Pro Team workspaces About team workspaces Create, edit, and delete team workspaces Organize assets with folders in team workspaces Manage team workspace assets Best practices and tips for using team workspaces Set a default Google Cloud project for Data Studio Pro Manage Data Studio Pro subscriptions Edit a Data Studio Pro subscription Link Data Studio Pro to different projects within your organization Link a Data Studio Pro monthly active user subscription to a Google Cloud project Consolidate multiple Data Studio Pro subscriptions Cancel a Data Studio Pro subscription Change your Data Studio Pro billing account Troubleshoot "Project is a valid Google Cloud project and you have the permissions" error Gemini in Looker Gemini in Looker overview Enable and disable Gemini in Looker for Data Studio Add Data Studio content to your Google Slides presentation using Gemini assistance Create calculated fields with Gemini assistance Conversational Analytics Conversational Analytics overview Set up Conversational Analytics in Data Studio Create and manage data agents Converse with Data Studio data Enable and use the Code Interpreter Troubleshooting Gemini in Looker issues Connect About connectors, data sources, and credentials Available connectors Connector references Connect to Looker Connect to Looker Understand Looker Explore data on a Data Studio report Overview of Looker connector requirements, limits, and feature support Overview of Looker connector permissions Troubleshoot errors from the Looker connector View and interact with Looker data on a Data Studio report Connect to databases and Cloud storage Connect to BigQuery Connect to Google BigQuery Use parameters in a custom query Visualize BigQuery GEOGRAPHY polygons with Data Studio BigQuery integrations Accelerate BigQuery data with BI Engine Set up a Google Cloud service account for Data Studio Connect to Google Cloud SQL for MySQL Connect to Google Cloud Spanner Connect to Google Cloud Storage Connect to Microsoft SQL Server Connect to MySQL Connect to PostgreSQL Connect to Amazon Redshift Connect to spreadsheets, CSV files, and extracted data Connect to Google Sheets Create a report from Google Sheets Connect to Microsoft Excel Upload files & extract data Upload CSV files to Data Studio Create and manage data sets Extract data for faster performance Connect to Google Marketing Platform products Connect to Google Ads Connect to Google Ad Manager 360 Connect to Google Analytics Connect to Google Analytics Google Analytics 4 sampling Connect to Firebase (via BigQuery) Connect to Campaign Manager 360 Connect to Display & Video 360 Connect to the New Search Ads 360 Connect to Search Console Connect to YouTube Analytics Developer connectors Connect to Apigee Connect to Appsheet Community connectors About community connectors Community connector authorization Community connector errors Create and edit data sources About data sources Embedded data sources Add data to a report Edit a data source Refresh data source fields Manage data freshness Manage auto refresh for a report Delete a data source Edit the data source connection Replace the data source for a component, page, or report Copy a data source Manage added reports and data sources Connect Data Studio to different Google accounts Preview your data Control access to your data Data governance in Data Studio: An overview Data credentials Filter by email address Model Model your data Create, rename, copy, hide, and remove fields Dates and times Parameters Query result variables Data types Filter properties About filter properties Configure filter conditions Filter examples Calculated fields About calculated fields Use functions in calculated fields Add, edit, and troubleshoot calculated fields Literals Operators Regular expressions in Data Studio Convert Text and Numbers to Date and Date & Time Create a custom group Create a custom bin Function list Function references Aggregation AVG COUNT MAX MEDIAN MIN PERCENTILE SUM VARIANCE COUNT_DISTINCT APPROX_COUNT_DISTINCT STDDEV Arithmetic ACOS ATAN ABS CEIL COS FLOOR LOG LOG10 ASIN NARY_MAX NARY_MIN POWER ROUND SIN SQRT TAN Conditional CASE (Searched) CASE (simple) COALESCE IF IFNULL NULLIF Date CURRENT_DATE CURRENT_DATETIME DATE DATE_DIFF DATETIME DATETIME_ADD DATETIME_DIFF DATETIME_SUB DATETIME_TRUNC DAY EXTRACT HOUR MINUTE MONTH QUARTER SECOND TODATE TODAY WEEK WEEKDAY YEAR YEARWEEK DATE_FROM_UNIX_DATE UNIX_DATE PARSE_DATE PARSE_DATETIME FORMAT_DATETIME Geo TOCITY TOCONTINENT TOCOUNTRY TOREGION TOSUBCONTINENT Miscellaneous CAST HYPERLINK IMAGE NATIVE_DIMENSION Text CONCAT CONTAINS_TEXT ENDS_WITH LEFT_TEXT LENGTH LOWER REGEXP_CONTAINS REGEXP_EXTRACT REGEXP_MATCH REGEXP_REPLACE REPLACE RIGHT_TEXT STARTS_WITH SUBSTR TRIM UPPER Blend data How blends work in Data Studio Create, edit, and manage blends Blending tips and advanced concepts Use blending to reaggregate data Visualize About reports Create a report Create a report from a template Create a responsive report (Preview) Edit a report Copy a report Rename reports, data sources, and blends Report settings Delete a report Report publishing Pause report updates Set up reports Set up chart data Work with fields in reports Edit fields in your reports Format fields in reports Add comparison metrics and running totals View underlying data Add and configure report components Add charts and controls to your report Modern charts Configure report components Add text, images, lines, and shapes to your reports Types of charts in Data Studio Set report date ranges Report and page layout Add reference lines and reference bands to charts Link to a page or component Create custom bookmark links with report settings Embed external content in reports Add intervals to charts Hide report components for viewers Work with color How to color your reports Color your data The dimension value color map Themes Use conditional formatting rules in Data Studio Copy and paste style Chart references Area chart reference Bar chart and column chart reference Bullet chart reference Community visualizations (Developer Preview) Gauge chart reference Geo chart reference Geo dimension reference Google Maps reference Add a Google Maps API key Line chart and combo chart reference Pie chart reference Pivot table reference Sankey chart reference Scatter chart reference Scorecard reference Table reference Time series reference Treemap reference Waterfall chart reference Boxplot chart reference Candlestick chart reference Timeline chart reference Funnel chart reference Explore Explore your data in Data Studio Add interactive controls About controls Add and edit controls Add a quick filter Date range control Drop-down list and Fixed-size list Input box control Advanced filter control Slider control Checkbox control Data control Dimension control Preset filter control Apply controls to specific charts Add drill actions to charts Metric slider Add buttons Use controls across data sources Use chart interactions to turn charts into filters Chart cross-filtering Optional metrics Zoom and pan on charts Share Ways to share your reports Roles and permissions Invite others to your reports Share reusable data sources Embed a report Download a Data Studio report as PDF Schedule automatic report delivery Share and schedule reports with Slack Create alerts on a chart Export data from a chart Create a thumbnail image of your report Stop sharing your reports and data sources Complete data source ownership transfer Transfer ownership Share reports on social media Get a link to your report Get a personal report link Share reports created with the Data Studio Linking API Manage Enterprise administration See what's changed in reports and data sources Measure report usage Data Studio Pro audit logging Remove or reconnect Data Studio's access to your Google account Change user interface language Delete your Data Studio service Resources Data Studio newsletter The Report Gallery Data Studio ISO 27001 certification Data Studio FedRAMP authorization Report abuse Solutions Troubleshooting guide Report a problem with Data Studio Improve Data Studio performance Hyperlinks in data What does the 'Unable to aggregate ratio metrics' error mean?
+- An example row value of this field might look like the following example: {"name": "Jakob", "age": "26"} Use the NATIVE_DIMENSION function to retrieve the age from users_ages_json , using BigQuery's JSON_VALUE function: NATIVE_DIMENSION("JSON_VALUE(user_ages_json, '$.age')","INT64") For this example row value, the NATIVE_DIMENSION function would return the age 26 as an integer.
+- Limits of NATIVE_DIMENSION Who can use native functions If native functions are enabled, owners and editors of the data source can create fields with native functions on the data source.
+- NATIVE_DIMENSION examples JSON functions in SQL Assume that your data includes a users_ages_json field whose values are formatted as JSON payloads.
+
+### Data Studio \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/studio/nativedimension](https://docs.cloud.google.com/looker/docs/studio/nativedimension)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 87
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- An example row value of this field might look like the following example: {"name": "Jakob", "age": "26"} Use the NATIVE DIMENSION function to retrieve the age from users ages json , using BigQuery's JSON VALUE function: NATIVE DIMENSION("JSON VALUE(user ages json, '$.age')","INT64") For this example row value, the NATIVE DIMENSION function would return the age 26 as an integer.
+- Limits of NATIVE DIMENSION Who can use native functions If native functions are enabled, owners and editors of the data source can create fields with native functions on the data source.
+- NATIVE DIMENSION examples JSON functions in SQL Assume that your data includes a users ages json field whose values are formatted as JSON payloads.
+- NATIVE DIMENSION Returns the result of a BigQuery SQL expression as evaluated by the underlying dataset.
+
+### Linking API \_|\_ Integrate and share \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/looker-studio/integrate/linking-api](https://developers.google.com/looker-studio/integrate/linking-api)
+- Source ID: `site-api-reference`
+- Final score: 67
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Examples A TABLE type configuration where the query is defined with a Table ID: https : //lookerstudio.google.com/reporting/create? c . reportId = 123 abc & ds . ds0 . connector = bigQuery & ds . ds0 . type = TABLE & ds . ds0 . projectId = bigquery - public - data & ds . ds0 . datasetId = samples & ds . ds0 . tableId = shakespeare & ds . ds0 . billingProjectId = myProject A TABLE type configuration to query a date sharded table using the wildcard character suffix: https : //lookerstudio.google.com/reporting/create? c . reportId = 123 abc & ds . ds0 . connector = bigQuery & ds . ds0 . type = TABLE & ds . ds0 . projectId = price - data & ds . ds0 . datasetId = samples & ds . ds0 . tableId = stock A TABLE type configuration to query a date sharded table using the YYYYMMDD suffix: https : //lookerstudio.google.com/reporting/create? c . reportId = 123 abc & ds . ds0 . connector = bigQuery & ds . ds0 . type = TABLE & ds . ds0 . projectId = price - data & ds . ds0 . datasetId = samples & ds . ds0 . tableId = stock YYYYMMDD A TABLE type configuration to query a BigQuery Export for Google Analytics table, using the SESSION fields template: https : //lookerstudio.google.com/reporting/create? c . reportId = 123 abc & ds . ds0 . connector = bigQuery & ds . ds0 . type = TABLE & ds . ds0 . projectId = my - gabq - project & ds . ds0 . datasetId = 1234567 & ds . ds0 . tableId = ga sessions YYYYMMDD & ds . ds0 . gaTemplateLevel = SESSION A TABLE type configuration to query an ingestion time partitioned table and use the partitioning column as a date range dimension: https : //lookerstudio.google.com/reporting/create? c . reportId = 123 abc & ds . ds0 . connector = bigQuery & ds . ds0 . type = TABLE & ds . ds0 . projectId = acme - co - logs & ds . ds0 . datasetId = logs & ds . ds0 . tableId = logs table & ds . ds0 . isPartitioned = true A CUSTOM QUERY type configuration where they query is defined with a SQL statement: https : //lookerstudio.google.com/reporting/create? c . reportId = 123 abc & ds . ds0 . connector = bigQuery & ds . ds0 . type = CUSTOM QUERY & ds . ds0 . projectId = bigquery - public - data & ds . ds0 . sql = SELECT % 20 word % 2 C % 20 word count % 20 FROM % 20 % 60 bigquery - public - data . samples . shakespeare % 60 & ds . ds0 . billingProjectId = myProject A CUSTOM QUERY type configuration where only the SQL statement is updated and the template data source is used for the rest of the configuration: https://lookerstudio.google.com/reporting/create? c.reportId=123abc &ds.ds0.sql=SELECT%20corpus%20FROM%20%60bigquery-public-data.samples.shakespeare%60 A CUSTOM QUERY type configuration where the SQL statement of the template data source is updated using sqlReplace : https://lookerstudio.google.com/reporting/create? c.reportId=123abc &ds.ds0.sqlReplace=bigquery-public-data,new-project,samples,new-dataset The following shows a template query before and after sqlReplace is applied.
+- For example, if you have a template with three BigQuery data sources attached, and you want to replace the projectId and datasetId in each one, but preserve the tableId , you could write it as: https://lookerstudio.google.com/reporting/create? c.reportId=7890 &ds.ds1.projectId=client-project &ds.ds1.datasetId=client-dataset &ds.ds2.projectId=client-project &ds.ds2.datasetId=client-dataset &ds.ds3.projectId=client-project &ds.ds3.datasetId=client-dataset Or, with the ds. wildcard, you can use this equivalent url: https://lookerstudio.google.com/reporting/create? c.reportId=7890 &ds. .projectId=client-project &ds. .datasetId=client-dataset Parameters provided to the Linking API that don't use the ds. wildcard are given precedence over ones that are.
+- The BigQuery data source configuration is replaced in its entirety, while the Google Analytics configuration updates a single parameter and relies on the ds1 template data source for any unspecified connector parameters: https : //lookerstudio.google.com/reporting/create? c . reportId = 7890 & r . reportName = MyNewReportWithMultipleDataSources & ds . ds0 . datasourceName = MyNewDataSource & ds . ds0 . connector = bigQuery & ds . ds0 . type = TABLE & ds . ds0 . projectId = bigquery - public - data & ds . ds0 . datasetId = samples & ds . ds0 . tableId = shakespeare & ds . ds1 . viewId = 92320289 Create vs Add It can sometimes be useful to have the same data source in multiple reports so updates to the data source affect all reports together.
+- The URL above can be simplified to the following: https : //lookerstudio.google.com/reporting/create? c . reportId = 12345 & r . reportName = MyNewReport & ds . datasourceName = MyNewDataSource & ds . connector = bigQuery & ds . type = TABLE & ds . projectId = bigquery - public - data & ds . datasetId = samples & ds . tableId = shakespeare Configures a report with a single BigQuery data source ( ds0 ) and updates only the billing project ID of the data source: https://lookerstudio.google.com/reporting/create? c.reportId=12345 &r.reportName=MyNewReport &ds.ds0.billingProjectId=my-billing-project Configures a report with two data sources, a BigQuery data source ( ds0 ) and a Google Analytics data source ( ds1 ).
 

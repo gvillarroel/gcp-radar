@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.413Z"
+generated_at: "2026-04-13T13:51:57.811Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "Faster maintenance"
 feature_slug: "faster-maintenance"
 latest_feature_date: "2021-08-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/postgres/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
   - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics"
+  - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
 keywords:
-  - "faster"
-  - "maintenance"
-  - "sql"
   - "reduces"
   - "average"
-  - "connectivity"
   - "interruption"
+  - "faster"
+  - "connectivity"
+  - "maintenance"
   - "during"
 ---
 
 # Faster maintenance
 
 Product: Cloud SQL for PostgreSQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,47 +37,47 @@ Cloud SQL reduces average connectivity interruption during maintenance to less t
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
+- [https://docs.cloud.google.com/sql/docs/postgres/troubleshooting](https://docs.cloud.google.com/sql/docs/postgres/troubleshooting)
 - [https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics](https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics)
+- [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances)
 
 ## Supporting Pages
 
-### Cloud SQL for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### Troubleshoot \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/troubleshooting](https://docs.cloud.google.com/sql/docs/postgres/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 180
+- Final score: 83
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 24, 2021 Change Cloud SQL now offers faster maintenance, with average connectivity loss lasting 90 seconds or less on average.
-- August 17, 2021 Feature Cloud SQL now offers faster maintenance , with connectivity dropping for less than 30 seconds on average.
-- June 07, 2021 Feature Cloud SQL now offers faster maintenance , with connectivity dropping for less than 60 seconds on average.
-- February 08, 2022 Feature Cloud SQL supports the max parallel maintenance workers , max parallel workers , max parallel workers per gather , and max pred locks per transaction flags: max parallel maintenance workers sets the maximum number of parallel workers that can be started by a single utility command. max parallel workers sets the maximum number of workers that the system can support for parallel operations. max parallel workers per gather sets the maximum number of workers that can be started by a single Gather or Gather Merge node. max pred locks per transaction controls the average number of object locks allocated for each transaction.
+- Network connectivity issues with private IP instances You might experience some of the following issues during integration setup: Slow operations to create Microsoft Entra ID logins Unable to create Microsoft Entra ID logins Unable to connect to the instance using Microsoft Entra ID authentication For more information on how to help address these issues, see Troubleshooting Microsoft Entra ID integration .
+- MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances Flags High availability Import and export Integrate with Vertex AI Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.
+- Authorized Networks are configured for public IP addresses in the Connectivity section of the Google Cloud console, and cloning is not permitted due to security considerations .
+- The network attachment is unable to accept connections from the Private Service Connect interface when using Private Service Connect outbound connectivity .
 
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
+### "REST Resource: instances \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 176
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances)
+- Source ID: `site-api-reference`
+- Final score: 71
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 24, 2021 Cloud SQL for MySQL Change Cloud SQL now offers faster maintenance, with average connectivity loss lasting 90 seconds or less on average.
-- June 07, 2021 Cloud SQL for MySQL Feature Cloud SQL now offers faster maintenance , with connectivity dropping for less than 60 seconds on average.
-- Cloud SQL for PostgreSQL Change Cloud SQL now offers faster maintenance, with average connectivity loss lasting 90 seconds or less on average.
-- Cloud SQL for SQL Server Feature Cloud SQL now offers faster maintenance , with connectivity dropping for less than 120 seconds on average.
+- When enabled, the server certificate will be automatically rotated during Cloud SQL scheduled maintenance or self-service maintenance updates up to six months before it expires.
+- AUTOMATIC ROTATION DURING MAINTENANCE Automatic server certificate rotation during Cloud SQL scheduled maintenance or self-service maintenance updates.
+- FAILED The creation of the instance failed or a fatal error occurred during maintenance.
+- JSON representation { "kind" : string , "state" : enum ( SqlInstanceState ) , "databaseVersion" : enum ( SqlDatabaseVersion ) , "settings" : { object ( Settings ) } , "etag" : string , "failoverReplica" : { "name" : string , "available" : boolean } , "masterInstanceName" : string , "replicaNames" : [ string ] , "maxDiskSize" : string , "currentDiskSize" : string , "ipAddresses" : [ { object ( IpMapping ) } ] , "serverCaCert" : { object ( SslCert ) } , "instanceType" : enum ( SqlInstanceType ) , "project" : string , "ipv6Address" : string , "serviceAccountEmailAddress" : string , "onPremisesConfiguration" : { object ( OnPremisesConfiguration ) } , "replicaConfiguration" : { object ( ReplicaConfiguration ) } , "backendType" : enum ( SqlBackendType ) , "selfLink" : string , "suspensionReason" : [ enum ( SqlSuspensionReason ) ] , "connectionName" : string , "name" : string , "region" : string , "gceZone" : string , "secondaryGceZone" : string , "diskEncryptionConfiguration" : { object ( DiskEncryptionConfiguration ) } , "diskEncryptionStatus" : { object ( DiskEncryptionStatus ) } , "rootPassword" : string , "scheduledMaintenance" : { object ( SqlScheduledMaintenance ) } , "satisfiesPzs" : boolean , "databaseInstalledVersion" : string , "createTime" : string , "availableMaintenanceVersions" : [ string ] , "maintenanceVersion" : string , "upgradableDatabaseVersions" : [ { object ( AvailableDatabaseVersion ) } ] , "replicationCluster" : { object ( ReplicationCluster ) } , "satisfiesPzi" : boolean , "tags" : { string : string , ... } , "nodes" : [ { object ( PoolNodeConfig ) } ] , "dnsNames" : [ { object ( DnsNameMapping ) } ] , "outOfDiskReport" : { object ( SqlOutOfDiskReport ) } , "sqlNetworkArchitecture" : enum ( SqlNetworkArchitecture ) , "pscServiceAttachmentLink" : string , "dnsName" : string , "primaryDnsName" : string , "writeEndpoint" : string , "geminiConfig" : { object ( GeminiInstanceConfig ) } , "switchTransactionLogsToCloudStorageEnabled" : boolean , "includeReplicasForMajorVersionUpgrade" : boolean , "nodeCount" : integer } Fields kind string This is always sql#instance . state enum ( SqlInstanceState ) The current serving state of the Cloud SQL instance. databaseVersion enum ( SqlDatabaseVersion ) The database engine type and version.
 
 ### Cloud SQL metrics \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics](https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics)
 - Source ID: `site-api-reference`
-- Final score: 130
+- Final score: 71
 - Re-rank relevance: N/A
 
 Evidence snippets:

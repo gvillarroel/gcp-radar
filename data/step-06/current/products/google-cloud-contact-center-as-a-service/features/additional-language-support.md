@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.761Z"
+generated_at: "2026-04-15T13:50:47.103Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Additional language support"
@@ -9,9 +9,9 @@ latest_feature_date: "2023-10-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-announcements"
 keywords:
   - "additional"
   - "language"
@@ -19,8 +19,8 @@ keywords:
   - "czech"
   - "australian"
   - "english"
-  - "and"
   - "hungarian"
+  - "now"
 ---
 
 # Additional language support
@@ -42,48 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-announcements](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-announcements)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Customizing languages, recordings, & messages \_|\_ Google Cloud Contact\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 100
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages)
+- Source ID: `site-docs-reference-2`
+- Final score: 120
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature New language support : Polish, Czech, Australian English, Hungarian is now supported for all channels.
-- May 14, 2025 Announcement Mobile SDK 2.12 is released Mobile SDK 2.12 includes the following updates: Added support for the following languages: Ukrainian English - India Hindi Romanian Croatian Russian Tagalog End-users can receive and download attachments during sessions.
-- Feature Support for additional languages We've added support for seven additional languages, as follows: Agent facing and end-user facing languages: Croatian, Hindi, Romanian, Russian, Ukrainian, and Tagalog .
-- Fixed incorrect labeling and routing of French voicemails to the English-language queue in the agent adapter.
+- Customer-facing languages currently include: Arabic Czech Chinese, Simplified Chinese, Traditional Danish Dutch English (Australian) English (Canada) English (UK) English (US) Finnish French (France) French (Canada) German Hungarian Italian Japanese Korean Norwegian Polish Portuguese (Brazil) Portuguese (Portugal) Spanish (Spain) Spanish (Mexico) Swedish Thai Turkish Vietnamese Note: Text-to-Speech (TTS) is not yet available for these languages.
+- The following agent facing languages are supported: Arabic Chinese English French (France) French (Canada) Japanese German Italian Korean Portuguese Spanish (Mexico) Spanish (Spain) Thai Turkish Vietnamese Consumer facing languages For consumer-facing languages, once a language is added: You can customize queue names.
+- Customize queue settings for the language All languages other than English depend on the setup of the English queues, so as you create new languages you will be editing the English queue structure as a template.
+- In the text field, enter the language selection text that you want to play at the beginning of an IVR call—for example, For English, press 1.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Queue and menu setup \_|\_ Google Cloud Contact Center as a Service \_|\_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 60
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- Source ID: `site-docs-reference`
+- Final score: 64
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If you are using languages other than English, see Enabling Multiple Languages for IVR, Mobile, and Web to adding additional consumer-facing languages (Spanish, French, German, Japanese, etc.).
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- Direct queues to a visual message Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Android SDK With the CCAI Platform Android SDK, you can create seamless voice and chat support experiences for users of your Android apps.
+- Details and tips Due to the number of digits on a keypad, there's a 9 top-level queue menu limit If you need to more than 9 queues, nest more queues within a top-level queue All numbers assigned to your environment will default to the top of the queue unless otherwise assigned as Direct Access points (DAPs) If you are using multiple languages, numbers will default to the language selection message, then when the language is selected, will route to the top of the menu structure for the selected language If you want to hide a queue from a caller who dials into a number that goes to the top of the queue, toggle the Hide Selection From Menu option to Hide in the menu settings For internal transfers to teams or groups not available to callers, create one queue, hide the option from callers, and create all the necessary sub-queues for agents to pick from for transfers Once your queues are set up, you can see the numbers that the caller needs to select.
+- Details At least one agent must be assigned to a call/chat queue for the queue to be enabled Agents can only be assigned to a leaf queue, so if there is a sub-queue associated, agents must be assigned to one of the sub-queues Queue menus are set up and ready to use when the color turns from red to white If enabling multiple languages, see Enabling Multiple Languages Assign agents to the IVR channel Go to Settings > Queue.
+- Example : If the Mobile menu 'Existing Customer Help' is mapped to the IVR menu 'Customer' for PSTN fallback, and an end-user selects 'Existing Customer Help' when PSTN fallback is active, the call would automatically be directed to IVR queue menu 'Customer.' If no PSTN fallback to IVR option is enabled and configured, the PSTN fallback call will be directed to the top of the IVR structure for that language.
+- Optional: Select the Link selected queues from other languages checkbox to include queues for associated languages (for queues with multiple languages).
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Configure announcements \_|\_ Google Cloud Contact Center as a Service \_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-announcements](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-announcements)
+- Source ID: `site-docs-reference`
+- Final score: 62
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Customer Experience Insights : Uses natural language processing to help contact center managers by identifying call drivers, sentiment, popular questions, and other information about customer interactions.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- What's next Get started with CCAI Platform Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Contact Center AI Platform (CCAI Platform) is an AI-driven Contact Center as a Service platform that is built natively on Google Cloud and uses the other Gemini Enterprise for Customer Experience products at its core.
+- If a translation is not available for an agent's specified language, English is displayed by default.
+- To add another translation, click Add Translation and repeat these steps with a different language.
+- In the Title field, enter the title of your message in the translation language.
+- In the Title (English US) field, enter a title for your message in English.
 

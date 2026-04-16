@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:53.001Z"
+generated_at: "2026-04-15T13:51:00.081Z"
 product_name: "Resource Manager"
 product_slug: "resource-manager"
 feature_name: "Disable enabling Identity-Aware Proxy on global resources"
@@ -9,18 +9,18 @@ latest_feature_date: "2022-06-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
-  - "https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm"
+  - "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+  - "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+  - "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs"
 keywords:
   - "disable"
   - "enabling"
   - "identity"
   - "aware"
   - "proxy"
-  - "on"
   - "global"
   - "resources"
+  - "organization"
 ---
 
 # Disable enabling Identity-Aware Proxy on global resources
@@ -42,44 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
-- [https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles](https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm](https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm)
+- [https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview](https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview)
+- [https://docs.cloud.google.com/resource-manager/docs/custom-constraints](https://docs.cloud.google.com/resource-manager/docs/custom-constraints)
+- [https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs](https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs)
 
 ## Supporting Pages
 
-### Access control for organization resources with IAM | Resource Manager | Google Cloud Documentation
+### "Introduction to organization restrictions \_|\_ Resource Manager \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
-- Source ID: `site-iam-reference`
-- Final score: 112
+- URL: [https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview](https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview)
+- Source ID: `site-docs-reference-2`
+- Final score: 125
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Access control for organization resources with IAM Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/access-control-org Control IAM access for organization resources.
-- Manage allow policies, grant roles, apply Organization Policy, and test permissions.
+- This proxy configuration prevents users from accessing any Google Cloud resources in non-authorized Google Cloud organizations.
+- How organization restrictions works In Google Cloud, Identity and Access Management (IAM) governs access to resources.
+- Common use cases Here are some common organization restrictions use cases: Restrict access to employees in your organization so that employees can access resources only in your Google Cloud organization and not other organizations.
+- Google Cloud administrators who administer Google Cloud, and egress proxy administrators, who configure the egress proxy, engage together to set up organization restrictions.
 
-### Assign Identity and Access Management roles and permissions | Resource Manager | Google Cloud Documentation
+### "Manage multiple organization resources \_|\_ Resource Manager \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles](https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles)
+- URL: [https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs](https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs)
 - Source ID: `site-iam-reference`
-- Final score: 90
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 114
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Assign Identity and Access Management roles and permissions Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles To gain these permissions, ask your administrator to grant the suggested role at the appropriate level of the resource hierarchy.
-- To migrate a project between organization resources, you need the following roles on the project, its parent resource, and the destination resource: Project IAM Admin (roles/resourcemanager.projectIamAdmin) on the project that you want to migrate between organization resources.
+- Effects of using multiple organization resources Use multiple organization resources when you don't want users from one Google Cloud, Google Workspace, or Cloud Identity account to access resources created by users from another account.
+- Operating multiple Cloud Identity organization resources therefore requires multiple Google Workspace accounts and the ability to manage identities across them.
+- Console To add an Organization Administrator: Sign in to the Google Cloud console as a Google Workspace or Cloud Identity super administrator and navigate to the IAM & Admin page: Open the IAM & admin page Select the organization resource you want to edit: Click the project drop-down list at the top of the page.
+- Console To add an Organization Administrator: Sign in to the Google Cloud console as a Google Workspace or Cloud Identity super administrator and navigate to the IAM & Admin page: Open the IAM & admin page Select the organization resource you want to edit: Click the project drop-down list at the top of the page.
 
-### Dataproc Resource Manager roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### "Manage resources with custom constraints \_|\_ Resource Manager \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm](https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm)
-- Source ID: `site-iam-reference`
-- Final score: 87
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/resource-manager/docs/custom-constraints](https://docs.cloud.google.com/resource-manager/docs/custom-constraints)
+- Source ID: `site-docs-reference-2`
+- Final score: 113
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Dataproc Resource Manager roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/dataprocrm This page lists the IAM roles and permissions for Dataproc Resource Manager.
+- Disable creation of a folder within another folder to control the depth of the resource hierarchy tree. name : organizations/ ORGANIZATION ID /customConstraints/custom.disableFolderCreation resourceTypes : - cloudresourcemanager.googleapis.com/Folder methodTypes : - CREATE condition : "resource.parent.startsWith(" folders")" actionType : DENY displayName : Disable creation of a folder inside another folder description : Do not allow creation of a folder within another folder when the resource hierarchy is set to a maximum value of 1.
+- Description Constraint syntax Deny creation of new projects in folder 1234 (secure admin folder). name : organizations/ ORGANIZATION ID /customConstraints/custom.disableNewProjectInSecureAdminFolder resourceTypes : - cloudresourcemanager.googleapis.com/Project methodTypes : - CREATE condition : "resource.parent == " organizations/1234"" actionType : DENY displayName : Disable new project creation in the secure admin folder description : Do not allow creation of new projects in the secure folders.
+- This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: cloudresourcemanager.googleapis.com/Project cloudresourcemanager.googleapis.com/Folder To learn more about Organization Policy, see Custom organization policies .
+- As the organization policy administrator , you can define an organization policy, which is a set of restrictions called constraints that apply to Google Cloud resources and descendants of those resources in the Google Cloud resource hierarchy .
 

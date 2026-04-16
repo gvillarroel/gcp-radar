@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.909Z"
+generated_at: "2026-04-14T15:34:54.488Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Service-level minimum instances"
 feature_slug: "service-level-minimum-instances"
 latest_feature_date: "2024-10-01"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
+  - "https://docs.cloud.google.com/run/docs/configuring"
   - "https://docs.cloud.google.com/run/docs/container-contract"
   - "https://docs.cloud.google.com/run/docs/reference/container-contract"
 keywords:
-  - "level"
   - "minimum"
-  - "instances"
-  - "let"
-  - "you"
-  - "keep"
   - "configured"
   - "number"
+  - "keep"
+  - "level"
+  - "instances"
 ---
 
 # Service-level minimum instances
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,39 +36,40 @@ Service-level minimum instances let you keep a configured minimum number of inst
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
+- [https://docs.cloud.google.com/run/docs/configuring](https://docs.cloud.google.com/run/docs/configuring)
 - [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
 
 ## Supporting Pages
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### Configure Cloud Run services \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 156
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/run/docs/configuring](https://docs.cloud.google.com/run/docs/configuring)
+- Source ID: `site-docs-reference-2`
+- Final score: 130
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- October 15, 2020 Feature You can now specify a minimum number of container instances to be kept warm and ready to serve requests, for services requiring reduced latency and fewer cold starts.
-- This feature lets you override the arguments, environment variables, number of tasks, and task timeouts already configured for a job when you execute a job.
-- This feature allows you to edit the machine (instance) type, as well as the minimum and maximum number of instances.
-- This feature allows you to edit the machine (instance) type, as well as the minimum and maximum number of instances.
+- If you need to change the default number of container instances that are kept warm, ready to receive requests, you can set revision-level maximum instances and minimum instances .
+- You can avoid cold starts for your application and reduce application latency by setting a minimum number of instances.
+- Setting a maximum number of instances can help to curb costs and guard against abnormally high request levels .
+- When using autoscaling, each Cloud Run revision is automatically scaled to the number of instances needed to handle all incoming requests, events, or CPU utilization.
 
 ### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 132
+- Final score: 126
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If you have configured a number of minimum instances , you must use instance-based billing so that CPU is allocated outside of requests .
 - Shutdown For Cloud Run services, an idle instance can be shut down at any time, including instances kept warm due to a configured minimum number of instances .
+- If you have configured a number of minimum instances , you must use instance-based billing so that CPU is allocated outside of requests .
 - When a revision does not receive any traffic, it is scaled in to the minimum number of instances configured (zero by default).
 - Unless an instance must be kept idle due to the minimum number of instances configuration setting, it won't be kept idle for longer than 15 minutes.
 
@@ -78,12 +77,12 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 132
+- Final score: 126
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If you have configured a number of minimum instances , you must use instance-based billing so that CPU is allocated outside of requests .
 - Shutdown For Cloud Run services, an idle instance can be shut down at any time, including instances kept warm due to a configured minimum number of instances .
+- If you have configured a number of minimum instances , you must use instance-based billing so that CPU is allocated outside of requests .
 - When a revision does not receive any traffic, it is scaled in to the minimum number of instances configured (zero by default).
 - Unless an instance must be kept idle due to the minimum number of instances configuration setting, it won't be kept idle for longer than 15 minutes.
 

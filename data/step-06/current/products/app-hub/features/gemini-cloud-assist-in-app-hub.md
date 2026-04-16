@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:03:36.817Z"
+generated_at: "2026-04-15T00:05:19.024Z"
 product_name: "App Hub"
 product_slug: "app-hub"
 feature_name: "Gemini Cloud Assist in App Hub"
 feature_slug: "gemini-cloud-assist-in-app-hub"
 latest_feature_date: "2025-04-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/app-hub/docs/release-notes"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsFixedSizeCollection"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPage"
+  - "https://docs.cloud.google.com/app-hub/docs/enabled-apis"
+  - "https://docs.cloud.google.com/app-hub/docs/overview"
+  - "https://docs.cloud.google.com/app-hub/docs/optimize-applications"
 keywords:
+  - "allowing"
   - "gemini"
   - "assist"
   - "supports"
   - "preview"
-  - "now"
-  - "app"
-  - "hub"
-  - "in"
 ---
 
 # Gemini Cloud Assist in App Hub
 
 Product: App Hub
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,53 @@ App Hub now supports Gemini Cloud Assist in Preview, allowing users to retrieve 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/app-hub/docs/release-notes](https://docs.cloud.google.com/app-hub/docs/release-notes)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsFixedSizeCollection)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPage)
+- [https://docs.cloud.google.com/app-hub/docs/enabled-apis](https://docs.cloud.google.com/app-hub/docs/enabled-apis)
+- [https://docs.cloud.google.com/app-hub/docs/overview](https://docs.cloud.google.com/app-hub/docs/overview)
+- [https://docs.cloud.google.com/app-hub/docs/optimize-applications](https://docs.cloud.google.com/app-hub/docs/optimize-applications)
 
 ## Supporting Pages
 
-### App Hub release notes \_|\_ Google Cloud Documentation
+### Enable APIs on the management project \_|\_ App Hub \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/app-hub/docs/release-notes](https://docs.cloud.google.com/app-hub/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 202
+- URL: [https://docs.cloud.google.com/app-hub/docs/enabled-apis](https://docs.cloud.google.com/app-hub/docs/enabled-apis)
+- Source ID: `site-docs-root-2`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- API Required or recommended More information Gemini for Google Cloud API ( cloudaicompanion.googleapis.com ) Recommended Gemini Cloud Assist pricing VPC Service Controls Enable recommended APIs To enable recommended APIs after application management setup, follow these steps: To get the permissions that you need to enable APIs, ask your administrator to grant you the Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) role on the management project.
+- API Required or recommended More information Developer Connect API ( developerconnect.googleapis.com ) Recommended Developer Connect pricing VPC Service Controls Gemini Cloud Assist APIs Gemini Cloud Assist integrates the power of AI into your application-centric experience, offering assistance across the application lifecycle.
+- Use Gemini Cloud Assist to help you with application tasks such as designing an application in App Design Center or troubleshoot issues with your applications.
+- If a product supports VPC Service Controls , review the linked documentation in the provided list for more information, such as limitations or additional configuration requirements.
+
+### App Hub overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/app-hub/docs/overview](https://docs.cloud.google.com/app-hub/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 70
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- August 25, 2025 Feature App Hub supports resources from the following sources in Preview : Vertex AI Pipeline job Custom job Hyperparameter tuning job Index Index endpoint NAS job Model deployment monitoring job Compute Engine Autoscaler Commitment Disk Regional disk Instance template Regional instance template License Node group Image Resource policy Reservation Node template Router Snapshot Route Subnetwork Global public delegated prefix Public delegated prefix Dataflow Job Datastream Stream Cloud DNS Managed zone Policy July 30, 2025 Feature The following Vertex AI supported resources are now generally available ( GA ): Dataset items Featurestore containers MetadataStore instances Model resources July 08, 2025 Feature Dataproc Metastore services are now generally available ( GA ).
-- June 25, 2025 Feature App Hub supports resources from the following sources in Preview : Dataproc Metastore Service Vertex AI Dataset Vertex AI Featurestore Vertex AI MetadataStore Vertex AI Model May 01, 2025 Feature App Hub supported resources are now generally available ( GA ).
-- Feature Gemini Cloud Assist in App Hub is supported in Preview .
-- March 14, 2025 Feature App Hub supports resources from the following sources in Preview : AlloyDB for PostgreSQL Cloud Data Fusion Cloud Deploy Cloud Logging Cloud Run jobs Firestore Google Kubernetes Engine (GKE) workloads GKE single cluster Gateway Managed Service for Microsoft Active Directory Secret Manager Vertex AI February 24, 2025 Feature App Hub supports resources from the following sources in Preview : Bigtable Cloud SQL Cloud Storage Memorystore for Redis Pub/Sub Spanner February 19, 2025 Announcement App Hub supports regional and global infrastructure resources with global applications in ( GA ).
+- AI-powered assistance from Gemini Cloud Assist , which uses App Hub's data model to help you design, operate, and troubleshoot your applications.
+- This approach aligns your application management boundary with your organization's structure by business unit, environment, or team, and automatically includes all projects within that folder. ( Preview ) Single-project boundary : For small applications where all Google Cloud resources reside in one project, you can designate that single project as your boundary.
+- For example, when an AI agent is deployed through a managed platform like Vertex AI Agent Engine , App Hub automatically classifies the resource with the AGENT functional type value to indicate that the workload runs an AI agent. ( Preview ) Extended metadata : an schema-driven property that provides rich, structured information about the service or workload.
+- You can define single-project boundaries by configuring the project as a standalone management project. (Legacy) Multiple-project boundary with a host project : For existing users, App Hub supports a legacy model where you can designate a host project for application management by enabling the App Hub API on a Google Cloud project.
 
-### "Class AppHubClient.ListApplicationsFixedSizeCollection (0.52.0) \_|\_ Java\
+### "Optimize an application with design recommendations \_|\_ App Hub \_|\_\
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsFixedSizeCollection)
-- Source ID: `site-java-reference`
-- Final score: 182
+- URL: [https://docs.cloud.google.com/app-hub/docs/optimize-applications](https://docs.cloud.google.com/app-hub/docs/optimize-applications)
+- Source ID: `site-docs-root-2`
+- Final score: 60
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- ListApplicationsFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > AppHubClient.ListApplicationsFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<AppHubClient.ListApplicationsPage> pages, int collectionSize) protected AppHubClient .
-- ListApplicationsPage > pages , int collectionSize ) Parameters Name Description pages List < ListApplicationsPage > collectionSize int Returns Type Description AppHubClient.ListApplicationsFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- 0.52.0 (latest) 0.51.0 0.49.0 0.47.0 0.46.0 0.45.0 0.44.0 0.42.0 0.40.0 0.39.0 0.38.0 0.37.0 0.36.0 0.34.0 0.32.0 0.31.0 0.28.0 0.27.0 0.26.0 0.24.0 0.23.0 0.22.0 0.21.0 0.20.0 0.19.0 0.18.0 0.17.0 0.16.0 0.15.0 0.13.0 0.12.0 0.11.0 0.10.0 0.9.0 0.8.0 0.7.0 0.6.0 0.5.0 0.4.0 0.3.0 0.1.0 public static class AppHubClient .
-- Home Documentation Developer tools Java Client libraries Send feedback Class AppHubClient.ListApplicationsFixedSizeCollection (0.52.0) Stay organized with collections Save and categorize content based on your preferences.
-
-### "Class AppHubClient.ListApplicationsPage (0.52.0) \_|\_ Java client libraries\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPage)
-- Source ID: `site-java-reference`
-- Final score: 182
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- ListApplicationsPage > Inheritance java.lang.Object > AbstractPage > AppHubClient.ListApplicationsPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListApplicationsRequest,ListApplicationsResponse,Application> context, ListApplicationsResponse response) protected AppHubClient .
-- ListApplicationsPage createPage ( PageContext<ListApplicationsRequest , ListApplicationsResponse , Application > context , ListApplicationsResponse response ) Parameters Name Description context PageContext < ListApplicationsRequest , ListApplicationsResponse , Application > response ListApplicationsResponse Returns Type Description AppHubClient.ListApplicationsPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListApplicationsRequest,ListApplicationsResponse,Application> context, ApiFuture<ListApplicationsResponse> futureResponse) public ApiFuture<AppHubClient .
-- 0.52.0 (latest) 0.51.0 0.49.0 0.47.0 0.46.0 0.45.0 0.44.0 0.42.0 0.40.0 0.39.0 0.38.0 0.37.0 0.36.0 0.34.0 0.32.0 0.31.0 0.28.0 0.27.0 0.26.0 0.24.0 0.23.0 0.22.0 0.21.0 0.20.0 0.19.0 0.18.0 0.17.0 0.16.0 0.15.0 0.13.0 0.12.0 0.11.0 0.10.0 0.9.0 0.8.0 0.7.0 0.6.0 0.5.0 0.4.0 0.3.0 0.1.0 public static class AppHubClient .
-- Home Documentation Developer tools Java Client libraries Send feedback Class AppHubClient.ListApplicationsPage (0.52.0) Stay organized with collections Save and categorize content based on your preferences.
+- Analyze the application for optimization opportunities Use Cloud Hub and Gemini Cloud Assist to get a consolidated view of your application's operational data and receive recommendations: In the Google Cloud console, use the project picker to select your management project.
+- Optionally, use the Gemini Cloud Assist panel to ask for optimization recommendations using natural language prompts, for example: Give me recommendations to optimize my application.
+- Application insights and assistance services, such as Cloud Hub and Gemini Cloud Assist , help you identify optimization opportunities.
+- Gemini Cloud Assist provides recommendations, such as resizing underutilized machine types or enabling a Cloud CDN.
 

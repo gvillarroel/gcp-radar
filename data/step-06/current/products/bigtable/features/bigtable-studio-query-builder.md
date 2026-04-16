@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.351Z"
+generated_at: "2026-04-14T11:18:28.001Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Bigtable Studio query builder"
 feature_slug: "bigtable-studio-query-builder"
 latest_feature_date: "2024-02-01"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigtable/docs/release-notes"
-  - "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+  - "https://docs.cloud.google.com/bigtable/docs/data-boost-overview"
+  - "https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage"
+  - "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
 keywords:
   - "builder"
+  - "running"
   - "studio"
+  - "creating"
   - "query"
   - "generally"
   - "available"
-  - "bigtable"
-  - "the"
-  - "is"
 ---
 
 # Bigtable Studio query builder
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +37,54 @@ The Bigtable Studio query builder is generally available for creating and runnin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigtable/docs/release-notes](https://docs.cloud.google.com/bigtable/docs/release-notes)
-- [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient)
+- [https://docs.cloud.google.com/bigtable/docs/data-boost-overview](https://docs.cloud.google.com/bigtable/docs/data-boost-overview)
+- [https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage](https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage)
+- [https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views](https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views)
 
 ## Supporting Pages
 
-### Bigtable release notes \_|\_ Google Cloud Documentation
+### Bigtable Data Boost overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigtable/docs/release-notes](https://docs.cloud.google.com/bigtable/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 190
+- URL: [https://docs.cloud.google.com/bigtable/docs/data-boost-overview](https://docs.cloud.google.com/bigtable/docs/data-boost-overview)
+- Source ID: `site-docs-reference-2`
+- Final score: 107
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Writes and deletes Traffic that is mostly point reads (single-row reads) More than 1,000 reads per second per cluster Reverse scans Change streams Request priorities Multi-cluster routing Single-row transactions Regional endpoints HDD instances GoogleSQL for Bigtable queries Bigtable Studio query builder queries Instances that use CMEK encryption Incompatible client libraries.
+- The following are ideal use cases for Data Boost: Scheduled or triggered export or ETL pipeline jobs from Bigtable to Cloud Storage for data enrichment, analysis, archiving, offline ML model training, or ingestion by your customers' third-party partners ETL using a tool such as Dataflow for short scan or batch read processes that support in-place aggregations, rule-based transformations for MDM, or ML jobs Spark applications that use the Bigtable Spark connector to read Bigtable data Ad hoc queries and scheduled analytics jobs that use BigQuery external tables to read Bigtable data.
+- You can make sure that the data from a specific write job or time period is readable by Data Boost, before you initiate a Data Boost workload, by creating and using a consistency token .
+- For a list of metrics available by app profile, see System insights charts for Bigtable resources .
+
+### Create and manage authorized views \_|\_ Bigtable \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage](https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage)
+- Source ID: `site-docs-reference-2`
+- Final score: 101
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- For more information on using the query builder, see Build queries in the console .
+- For more information on using the query builder, see Build queries in the console .
+- Click Builder to open the query builder.
+- For more information, see the reference documentation at gcloud bigtable authorized-views create . gcloud bigtable authorized-views create AUTHORIZED VIEW ID \ --instance = INSTANCE ID \ --table = TABLE ID \ --definition-file = DEFINITION FILE PATH Replace the following: AUTHORIZED VIEW ID : a permanent identifier for the authorized view that is not already in use for the table INSTANCE ID : the permanent identifier for the instance that contains the table TABLE ID : the permanent identifier of that table you are creating an authorized view of DEFINITION FILE PATH : the path to a valid JSON formatted representation of an authorized view.
+
+### Continuous materialized views \_|\_ Bigtable \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views](https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views)
+- Source ID: `site-docs-reference-2`
+- Final score: 100
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Python Changes for google-cloud-bigtable 2.23.0 (2024-02-07) Features Add async data client preview ( 7088e39 ) Adding feature flags for routing cookie and retry info ( #905 ) ( 1859e67 ) Bug Fixes Fix ValueError in test validate universe domain ( #929 ) ( aa76a5a ) February 01, 2024 Feature The Bigtable Studio query builder is generally available (GA) .
-- Feature The Bigtable Studio query editor is generally available (GA).
-- Java Changes for google-cloud-bigtable 2.10.3 (2022-08-08) Bug Fixes Declare 2 http libraries as runtime ( #1341 ) ( 8071de6 ) 2.10.2 (2022-08-03) Bug Fixes Add a ReadFirstRow callable to set future in onComplete ( #1326 ) ( cb539b5 ) The metadata could be returned in trailer or header depends on i… ( #1337 ) ( c4b8c03 ) Dependencies Update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ( #1328 ) ( bee0ca0 ) Upgrade shared config to 1.5.3, exclude google-http-client and google-http-client-gson from gax in google-cloud-bigtable-stats ( #1336 ) ( 98b3349 ) Python Changes for google-cloud-bigtable 2.11.1 (2022-08-08) Bug Fixes Retry the RST Stream error in mutate rows and read rows( #624 ) ( d24574a ) August 12, 2022 Feature Cloud Bigtable-BigQuery federation is now generally available (GA) .
-- Feature The Bigtable Studio query editor is available in Preview .
-
-### "MCP Tools Reference: bigtableadmin.googleapis.com \_|\_ Bigtable \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables)
-- Source ID: `site-docs-reference`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Curl Request curl --location 'https://bigtableadmin.googleapis.com/mcp' \ --header 'content-type: application/json' \ --header 'accept: application/json, text/event-stream' \ --data '{ "method": "tools/call", "params": { "name": "list tables", "arguments": { // provide these details according to the tool' s MCP specification } } , "jsonrpc" : "2.0" , "id" : 1 } ' Input Schema Request message for google.bigtable.admin.v2.BigtableTableAdmin.ListTables ListTablesRequest JSON representation { "parent" : string , "view" : enum ( View ) , "pageSize" : integer , "pageToken" : string } Fields parent string Required.
-- Output Schema Response message for google.bigtable.admin.v2.BigtableTableAdmin.ListTables ListTablesResponse JSON representation { "tables" : [ { object ( Table ) } ] , "nextPageToken" : string } Fields tables[] object ( Table ) The tables present in the requested instance. nextPageToken string Set if not all tables could be returned in a single response.
-- Therefore, binary compatibility needs to be preserved on changes to types. (Use versioned type names to manage breaking changes.) Note: this functionality is not currently available in the official protobuf release, and it is not used for type URLs beginning with type.googleapis.com.
-- If it could not be determined whether or not the table has data in a particular cluster (for example, if its zone is unavailable), then there will be an entry for the cluster with UNKNOWN replication status .
-
-### "Class BigtableInstanceAdminClient (2.74.0) \_|\_ Java client libraries \_\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient)
-- Source ID: `site-java-reference`
-- Final score: 172
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Sample code: ApiFuture<Policy> newPolicyFuture = client . setIamPolicyAsync ( "my-instance" , Policy . newBuilder () . addIdentity ( Role . of ( "bigtable.user" ), Identity . user ( "someone@example.com" )) . addIdentity ( Role . of ( "bigtable.admin" ), Identity . group ( "admins@example.com" )) . build ()); ApiFutures . addCallback ( policyFuture , new ApiFutureCallback<Policy> () { public void onSuccess ( Policy policy ) { for ( Entry<Role , Set<Identity> > entry : policy . getBindings (). entrySet ()) { System . out . printf ( "Role: %s Identities: %s " , entry . getKey (), entry . getValue ()); } } public void onFailure ( Throwable t ) { t . printStackTrace (); } }, MoreExecutors . directExecutor ()); See Also: Instance-level IAM management Parameters Name Description instanceId String policy com.google.cloud.Policy Returns Type Description ApiFuture < com.google.cloud.Policy > testIamPermission(String instanceId, String[] permissions) public List<String> testIamPermission ( String instanceId , String [] permissions ) Tests whether the caller has the given permissions for the specified instance.
-- Sample code: ApiFuture<Cluster> clustersFuture = client . listClustersAsync ( "my-instance" ); ApiFutures . addCallback ( clustersFuture , new ApiFutureCallback<List<Cluster> > () { public void onFailure ( Throwable t ) { if ( t instanceof PartialListClustersException ) { PartialListClustersException partialError = ( PartialListClustersException ) t ; System . out . println ( "The following zones are unavailable: " + partialError . getUnavailableZones ()); System . out . println ( "But the following clusters are reachable: " + partialError . getClusters ()); } else { t . printStackTrace (); } } public void onSuccess ( List<Cluster> result ) { System . out . println ( "Found a complete set of instances: " + result ); } }, MoreExecutors . directExecutor ()); Parameter Name Description instanceId String Returns Type Description ApiFuture < List < Cluster >> listInstances() public List<Instance> listInstances () Lists all of the instances in the current project.
-- Sample code: ApiFuture<Instance> instancesFuture = client . listInstancesAsync (); ApiFutures . addCallback ( instancesFuture , new ApiFutureCallback<List<Instance> > () { public void onFailure ( Throwable t ) { if ( t instanceof PartialListInstancesException ) { PartialListInstancesException partialError = ( PartialListInstancesException ) t ; System . out . println ( "The following zones are unavailable: " + partialError . getUnavailableZones ()); System . out . println ( "But the following instances are reachable: " + partialError . getInstances ()); } else { t . printStackTrace (); } } public void onSuccess ( List<Instance> result ) { System . out . println ( "Found a complete set of instances: " + result ); } }, MoreExecutors . directExecutor ()); Returns Type Description ApiFuture < List < Instance >> listLogicalViews(String instanceId) public List<LogicalView> listLogicalViews ( String instanceId ) Lists all logical views of the specified instance.
-- Sample code: List<String> grantedPermissions = client . testIamPermission ( "my-instance" , "bigtable.tables.readRows" , "bigtable.tables.mutateRows" ); System.out.println("Has read access: " + grantedPermissions.contains("bigtable.tables.readRows")); System.out.println("Has write access: " + grantedPermissions.contains("bigtable.tables.mutateRows")); See Also: Cloud Bigtable permissions Parameters Name Description instanceId String permissions String [] Returns Type Description List < String > testIamPermissionAsync(String instanceId, String[] permissions) public ApiFuture<List<String> > testIamPermissionAsync ( String instanceId , String [] permissions ) Asynchronously tests whether the caller has the given permissions for the specified instance.
+- This helps to ensure that enough compute capacity is available during the execution of the continuously running SQL query.
+- You can read from a continuous materialized view by using the following: Bigtable Studio query editor The Bigtable client libraries that support SQL queries ReadRows API call using the Bigtable client libraries for Java and Go For more information, see Reading from a continuous materialized view .
+- You can create a continuous materialized view using the Google Cloud CLI, the Bigtable Studio query editor in the Google Cloud console, or the Bigtable client libraries for Java and Go.
+- During this time, the view is unavailable for querying.
 

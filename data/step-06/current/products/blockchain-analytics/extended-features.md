@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2023-11-30 | Legacy Analytics Hub Listing for Arbitrum One | LOW | [source](https://docs.cloud.google.com/blockchain-analytics/docs/release-notes)<br>[source](https://docs.cloud.google.com/blockchain-analytics/docs/schema)<br>[source](https://docs.cloud.google.com/blockchain-analytics/docs/prerequisites) | The legacy Analytics Hub Listing for Arbitrum One is a discontinued listing capability that has been replaced by a newer Analytics Hub Listing; deprecated on 2023-11-30. |
+| 2023-11-30 | Legacy Analytics Hub Listing for Arbitrum One | MEDIUM | [source](https://docs.cloud.google.com/blockchain-analytics/docs/schema)<br>[source](https://docs.cloud.google.com/blockchain-analytics/docs/prerequisites)<br>[source](https://docs.cloud.google.com/blockchain-analytics/docs/overview) | The legacy Analytics Hub Listing for Arbitrum One is a discontinued listing capability that has been replaced by a newer Analytics Hub Listing; deprecated on 2023-11-30. |
 

@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:54.620Z"
+generated_at: "2026-04-15T12:12:10.644Z"
 product_name: "SAP on Google Cloud"
 product_slug: "sap-on-google-cloud"
 feature_name: "Google Cloud Storage Manager for SAP HANA Standby Nodes"
 feature_slug: "google-cloud-storage-manager-for-sap-hana-standby-nodes"
 latest_feature_date: "2021-02-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+  - "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+  - "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana"
 keywords:
   - "storage"
   - "manager"
-  - "for"
   - "sap"
   - "hana"
   - "standby"
   - "nodes"
   - "version"
+  - "gcestorageclient"
 ---
 
 # Google Cloud Storage Manager for SAP HANA Standby Nodes
 
 Product: SAP on Google Cloud
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Version 2.0 of gceStorageClient for SAP HANA host auto-failover is available as 
 
 Version 2.0 of gceStorageClient for SAP HANA host auto-failover is available as Google Cloud Storage Manager for SAP HANA Standby Nodes and uses RPM Package Manager for installation and updates.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment](https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment)
+- [https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp](https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp)
+- [https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana](https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Deployment Manager: SAP HANA scale-up high-availability cluster configuration\
+
+- URL: [https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment](https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 216
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Cluster Name: hacluster Corosync Nodes: example-rha-vm1 example-rha-vm2 Pacemaker Nodes: example-rha-vm1 example-rha-vm2 Resources: Group: g-primary Resource: rsc healthcheck HA1 (class=service type=haproxy) Operations: monitor interval=10s timeout=20s (rsc healthcheck HA1-monitor-interval-10s) start interval=0s timeout=100 (rsc healthcheck HA1-start-interval-0s) stop interval=0s timeout=100 (rsc healthcheck HA1-stop-interval-0s) Resource: rsc vip HA1 00 (class=ocf provider=heartbeat type=IPaddr2) Attributes: cidr netmask=32 ip=10.128.15.100 nic=eth0 Operations: monitor interval=3600s timeout=60s (rsc vip HA1 00-monitor-interval-3600s) start interval=0s timeout=20s (rsc vip HA1 00-start-interval-0s) stop interval=0s timeout=20s (rsc vip HA1 00-stop-interval-0s) Clone: SAPHanaTopology HA1 00-clone Meta Attrs: clone-max=2 clone-node-max=1 interleave=true Resource: SAPHanaTopology HA1 00 (class=ocf provider=heartbeat type=SAPHanaTopology) Attributes: InstanceNumber=00 SID=HA1 Operations: methods interval=0s timeout=5 (SAPHanaTopology HA1 00-methods-interval-0s) monitor interval=10 timeout=600 (SAPHanaTopology HA1 00-monitor-interval-10) reload interval=0s timeout=5 (SAPHanaTopology HA1 00-reload-interval-0s) start interval=0s timeout=600 (SAPHanaTopology HA1 00-start-interval-0s) stop interval=0s timeout=300 (SAPHanaTopology HA1 00-stop-interval-0s) Clone: SAPHana HA1 00-clone Meta Attrs: promotable=true Resource: SAPHana HA1 00 (class=ocf provider=heartbeat type=SAPHana) Attributes: AUTOMATED REGISTER=true DUPLICATE PRIMARY TIMEOUT=7200 InstanceNumber=00 PREFER SITE TAKEOVER=true SID=HA1 Meta Attrs: clone-max=2 clone-node-max=1 interleave=true notify=true Operations: demote interval=0s timeout=3600 (SAPHana HA1 00-demote-interval-0s) methods interval=0s timeout=5 (SAPHana HA1 00-methods-interval-0s) monitor interval=61 role=Slave timeout=700 (SAPHana HA1 00-monitor-interval-61) monitor interval=59 role=Master timeout=700 (SAPHana HA1 00-monitor-interval-59) promote interval=0s timeout=3600 (SAPHana HA1 00-promote-interval-0s) reload interval=0s timeout=5 (SAPHana HA1 00-reload-interval-0s) start interval=0s timeout=3600 (SAPHana HA1 00-start-interval-0s) stop interval=0s timeout=3600 (SAPHana HA1 00-stop-interval-0s) Stonith Devices: Resource: STONITH-example-rha-vm1 (class=stonith type=fence gce) Attributes: pcmk delay max=30 pcmk monitor retries=4 pcmk reboot timeout=300 port=example-rha-vm1 project=sap-certification-env zone=us-central1-a Operations: monitor interval=300s timeout=120s (STONITH-example-rha-vm1-monitor-interval-300s) start interval=0 timeout=60s (STONITH-example-rha-vm1-start-interval-0) Resource: STONITH-example-rha-vm2 (class=stonith type=fence gce) Attributes: pcmk monitor retries=4 pcmk reboot timeout=300 port=example-rha-vm2 project=sap-certification-env zone=us-central1-c Operations: monitor interval=300s timeout=120s (STONITH-example-rha-vm2-monitor-interval-300s) start interval=0 timeout=60s (STONITH-example-rha-vm2-start-interval-0) Fencing Levels: Location Constraints: Resource: STONITH-example-rha-vm1 Disabled on: example-rha-vm1 (score:-INFINITY) (id:location-STONITH-example-rha-vm1-example-rha-vm1--INFINITY) Resource: STONITH-example-rha-vm2 Disabled on: example-rha-vm2 (score:-INFINITY) (id:location-STONITH-example-rha-vm2-example-rha-vm2--INFINITY) Ordering Constraints: start SAPHanaTopology HA1 00-clone then start SAPHana HA1 00-clone (kind:Mandatory) (non-symmetrical) (id:order-SAPHanaTopology HA1 00-clone-SAPHana HA1 00-clone-mandatory) Colocation Constraints: g-primary with SAPHana HA1 00-clone (score:4000) (rsc-role:Started) (with-rsc-role:Master) (id:colocation-g-primary-SAPHana HA1 00-clone-4000) Ticket Constraints: Alerts: No alerts defined Resources Defaults: migration-threshold=5000 resource-stickiness=1000 Operations Defaults: timeout=600s Cluster Properties: cluster-infrastructure: corosync cluster-name: hacluster dc-version: 2.0.2-3.el8 1.2-744a30d655 have-watchdog: false stonith-enabled: true stonith-timeout: 300s Quorum: Options: Display your cluster configuration file, corosync.conf : cat /etc/corosync/corosync.conf The following example shows the parameters that the automation scripts set for RHEL 8.1 and later.
+- RHEL [root@example-ha-vm1 ]# df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 0 126G 0% /dev tmpfs 126G 54M 126G 1% /dev/shm tmpfs 126G 25M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda2 30G 5.4G 25G 18% / /dev/sda1 200M 6.9M 193M 4% /boot/efi /dev/mapper/vg hana-shared 251G 52G 200G 21% /hana/shared /dev/mapper/vg hana-sap 32G 477M 32G 2% /usr/sap /dev/mapper/vg hana-data 426G 9.8G 417G 3% /hana/data /dev/mapper/vg hana-log 125G 7.0G 118G 6% /hana/log /dev/mapper/vg hanabackup-backup 512G 9.3G 503G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/899 tmpfs 26G 0 26G 0% /run/user/1003 SLES example-ha-vm1: # df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 8.0K 126G 1% /dev tmpfs 189G 54M 189G 1% /dev/shm tmpfs 126G 34M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda3 30G 5.4G 25G 18% / /dev/sda2 20M 2.9M 18M 15% /boot/efi /dev/mapper/vg hana-shared 251G 50G 202G 20% /hana/shared /dev/mapper/vg hana-sap 32G 281M 32G 1% /usr/sap /dev/mapper/vg hana-data 426G 8.0G 418G 2% /hana/data /dev/mapper/vg hana-log 125G 4.3G 121G 4% /hana/log /dev/mapper/vg hanabackup-backup 512G 6.4G 506G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/473 tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/0 tmpfs 26G 0 26G 0% /run/user/1003 Check the status of the new cluster by entering the status command that is specific to your operating system: RHEL pcs status SLES crm status You should see results similar to the following the example, in which both VM instances are started and example-ha-vm1 is the active primary instance: RHEL [root@example-ha-vm1 ]# pcs status Cluster name: hacluster Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.3-5.el8 2.4-4b1f869f0f) - partition with quorum Last updated: Wed Jul 7 23:05:11 2021 Last change: Wed Jul 7 23:04:43 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:fence gce): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:fence gce): Started example-ha-vm1 Resource Group: g-primary: rsc healthcheck HA1 (service:haproxy): Started example-ha-vm2 rsc vip HA1 00 (ocf::heartbeat:IPaddr2): Started example-ha-vm2 Clone Set: SAPHanaTopology HA1 00-clone [SAPHanaTopology HA1 00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: SAPHana HA1 00-clone [SAPHana HA1 00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] Failed Resource Actions: rsc healthcheck HA1 start 0 on example-ha-vm1 'error' (1): call=29, status='complete', exitreason='', last-rc-change='2021-07-07 21:07:35Z', queued=0ms, exec=2097ms SAPHana HA1 00 monitor 61000 on example-ha-vm1 'not running' (7): call=44, status='complete', exitreason='', last-rc-change='2021-07-07 21:09:49Z', queued=0ms, exec=0ms Daemon Status: corosync: active/enabled pacemaker: active/enabled pcsd: active/enabled SLES example-ha-vm1: # crm status Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.4+20200616.2deceaa3a-3.9.1-2.0.4+20200616.2deceaa3a) - partition with quorum Last updated: Wed Jul 7 22:57:59 2021 Last change: Wed Jul 7 22:57:03 2021 by root via crm attribute on example-ha-vm1 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:external/gcpstonith): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:external/gcpstonith): Started example-ha-vm1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started example-ha-vm1 rsc vip hc-primary (ocf::heartbeat:anything): Started example-ha-vm1 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: msl SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ example-ha-vm1 ] Slaves: [ example-ha-vm2 ] Change to the SAP admin user by replacing SID LC in the following command with the SID value that you specified in the configuration file template.
+- RHEL [root@example-ha-vm1 ]# pcs status Cluster name: hacluster Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.3-5.el8 2.3-4b1f869f0f) - partition with quorum Last updated: Fri Mar 19 21:22:07 2021 Last change: Fri Mar 19 21:21:28 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:fence gce): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:fence gce): Started example-ha-vm1 Resource Group: g-primary: rsc healthcheck HA1 (service:haproxy): Started example-ha-vm2 rsc vip HA1 00 (ocf::heartbeat:IPaddr2): Started example-ha-vm2 Clone Set: SAPHanaTopology HA1 00-clone [SAPHanaTopology HA1 00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: SAPHana HA1 00-clone [SAPHana HA1 00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] SLES example-ha-vm2: # Cluster Summary: Stack: corosync Current DC: example-ha-vm2 (version 2.0.4+20200616.2deceaa3a-3.9.1-2.0.4+20200616.2deceaa3a) - partition with quorum Last updated: Thu Jul 8 17:33:44 2021 Last change: Thu Jul 8 17:33:07 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:external/gcpstonith): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:external/gcpstonith): Started example-ha-vm1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started example-ha-vm2 rsc vip hc-primary (ocf::heartbeat:anything): Started example-ha-vm2 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: msl SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] On the Load balancer details page in the console, confirm that the new active primary instance shows "1/1" in the Healthy column.
+- To fix your deployments to a specific release of the scripts, comment out the type property above and uncomment the type property below. type: https://storage.googleapis.com/cloudsapdeploy/deploymentmanager/ yyyymmddhhmm /dm-templates/sap hana ha ilb/sap hana ha.py properties: primaryInstanceName: example-ha-vm1 secondaryInstanceName: example-ha-vm2 primaryZone: us-central1-a secondaryZone: us-central1-c instanceType: n2-highmem-32 network: example-network subnetwork: example-subnet-us-central1 linuxImage: family/sles-15-sp1-sap linuxImageProject: suse-sap-cloud SAP HANA parameters sap hana deployment bucket: my-hana-bucket sap hana sid: HA1 sap hana instance number: 00 sap hana sidadm password: TempPa55word sap hana system password: TempPa55word VIP parameters sap vip: 10.0.0.100 primaryInstanceGroupName: ig-example-ha-vm1 secondaryInstanceGroupName: ig-example-ha-vm2 loadBalancerName: lb-ha1 Additional optional properties networkTag: hana-ha-ntwk-tag serviceAccount: sap-deploy-example@example-project-123456.iam.gserviceaccount.com Create the instances: $ gcloud deployment-manager deployments create deployment-name --config template-name .yaml The above command invokes the Deployment Manager, which sets up the Google Cloud infrastructure and then hands control over to a script that installs and configures SAP HANA and the HA cluster.
+
+### "Reference architecture: SAP Business Suite on SAP HANA on Google Cloud \_\
+
+- URL: [https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana](https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana)
+- Source ID: `site-docs-root`
+- Final score: 200
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Back up to Cloud Storage From version 3.0, Google Cloud's Agent for SAP supports the Backint feature, which allows SAP HANA to back up and recover database backups directly from Cloud Storage.
+- Single points of failure An SAP Business Suite system on SAP HANA, has some common single points of failure that can impact the availability of the system: SAP Central Services such as Message Server and Enqueue Server SAP Application Server SAP HANA database SAP Web Dispatcher, if used as a frontend for HTTP/HTTPS access to the system Shared storage such as NFS There are multiple options for reducing the impact of such single points of failure, and these options involve deploying the system using high-availability solutions, replication services, or using other functionalities that protect the system from failures.
+- The following operating systems are certified by SAP for use with SAP NetWeaver on Google Cloud: Red Hat Enterprise Linux (RHEL) SUSE Linux Enterprise Server (SLES) You can find more information about specific OS versions and their compatibility with both SAP Business Suite and SAP HANA in the following guides: OS support for SAP NetWeaver on Google Cloud OS support for SAP HANA on Google Cloud SAP HANA Fast Restart option For SAP HANA 2.0 SP04 and later, Google strongly recommends the SAP HANA Fast Restart option .
+- Recommended storage options for Linux directory structure on SAP HANA: SAP HANA directory Recommended storage option in Google Cloud /usr/sap Balanced Persistent Disk /hana/data SSD-based Persistent Disk or Hyperdisk /hana/log SSD-based Persistent Disk or Hyperdisk /hana/shared Balanced Persistent Disk /hanabackup Balanced Persistent Disk In distributed deployments, /hana/shared and /hanabackup can also be mounted as a network file system using an NFS solution such as Filestore.
+
+### "Reference architecture: SAP S/4HANA on Google Cloud \_|\_ SAP on Google\
+
+- URL: [https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp](https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp)
+- Source ID: `site-docs-reference`
+- Final score: 200
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Back up to Cloud Storage From version 3.0, Google Cloud's Agent for SAP supports the Backint feature, which allows SAP HANA to back up and recover database backups directly from Cloud Storage.
+- SAP Note 2456432 - SAP Applications on Google Cloud: Supported Products and Google Cloud machine types 2446441 - Linux on Google Cloud Platform (IaaS): Adaption of your SAP License 2456953 - Windows on Google Cloud (IaaS): Adaption of your SAP License 1380654 - SAP support in public cloud environments SAP Note 2456406 - SAP on Google Cloud Platform: Support Prerequisites Deployment automation To install SAP S/4HANA on Google Cloud, you can use the following deployment options: To automate the deployment of a distributed or distributed with high availability (HA) system, you can use the Guided Deployment Automation tool in Workload Manager.
+- Single points of failure An SAP S/4HANA system has some common single points of failure that can impact the availability of the system: SAP Central Services such as Message Server and Enqueue Server SAP Application Server SAP HANA database SAP Web Dispatcher, if used as a frontend for HTTP/HTTPS access to the system Shared storage such as NFS There are multiple options for reducing the impact of such single points of failure, and these options involve deploying the system using high-availability solutions, replication services, or using other functionalities that protect the system from failures.
+- The following operating systems are certified by SAP for use with SAP NetWeaver on Google Cloud: Red Hat Enterprise Linux (RHEL) SUSE Linux Enterprise Server (SLES) You can find more information about specific OS versions and their compatibility with both SAP S/4HANA and SAP HANA in the following guides: OS support for SAP NetWeaver on Google Cloud OS support for SAP HANA on Google Cloud SAP HANA Fast Restart option For SAP HANA 2.0 SP04 and later, Google strongly recommends the SAP HANA Fast Restart option .
 

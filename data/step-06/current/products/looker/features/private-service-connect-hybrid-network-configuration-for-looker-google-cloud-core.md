@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.431Z"
+generated_at: "2026-04-15T13:43:38.467Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Private Service Connect hybrid network configuration for Looker (Google Cloud core)"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-05-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
-  - "https://docs.cloud.google.com/looker/docs/gemini-overview-looker"
+  - "https://docs.cloud.google.com/looker/docs/bi-connectors"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
 keywords:
   - "private"
   - "connect"
   - "hybrid"
   - "network"
   - "configuration"
-  - "for"
   - "looker"
   - "core"
+  - "lets"
 ---
 
 # Private Service Connect hybrid network configuration for Looker (Google Cloud core)
@@ -42,43 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
+- [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-database-connections](https://docs.cloud.google.com/looker/docs/admin-panel-database-connections)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect)
 
 ## Supporting Pages
 
-### Looker (Google Cloud core) overview | Google Cloud Documentation
+### Admin settings - BI Connectors \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 128
+- URL: [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- Source ID: `site-docs-reference`
+- Final score: 192
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The Microsoft Excel connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- The Tableau Desktop connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- For customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections, your network administrator must configure your network so that traffic from Microsoft Excel can reach your Looker instance.
+- For customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections, your network administrator must configure your network so that traffic from Tableau Desktop can reach your Looker instance.
+
+### Admin settings - Connections \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-database-connections](https://docs.cloud.google.com/looker/docs/admin-panel-database-connections)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you are using a Looker (Google Cloud core) instance that is set up for public secure connections or for hybrid connections, use the IP address listed in the Egress Public IP field on the Details tab of the Instances page in the Google Cloud console.
+- Actions available for some connections Depending on the connection dialect, the gear drop-down menu to the right of the connection may offer the following additional options: Option Description Show Tables This option brings you to a Looker Explore page that lets you create Looker Explore queries based on the metadata of your connection.
+- Show Processes This option brings you to a Looker Explore page that lets you create Looker Explore queries based on the processes running on this connection, the state they are in, how long they have been running, and other info.
+- Show PDT Event Log This option brings you to a Looker Explore page that lets you create Looker Explore queries based on the derived table activity for this connection.
+
+### "Admin settings - OpenID Connect authentication \_|\_ Looker \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect)
+- Source ID: `site-docs-reference`
+- Final score: 155
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
-
-### Looker (Google Cloud core) access control with IAM | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- Source ID: `site-iam-reference`
-- Final score: 100
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Looker (Google Cloud core) access control with IAM Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-access-control Looker (Google Cloud core) uses Identity and Access Management (IAM) to provision user and admin access through a set of IAM roles.
-- For a detailed description of Google Cloud IAM, see the IAM documentation.
-
-### Gemini in Looker overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- Source ID: `site-docs-root`
-- Final score: 66
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Gemini in Looker overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/gemini-overview-looker Ask questions about and converse with your data by using Conversational Analytics: Gemini in Looker lets you ask questions about your data source by using natural language.
-- You can learn more about how your response was generated and save your conversation for future reference.
-- Gemini returns Looker charts or data tables that are based on your query.
+- Additionally, Looker (Google Cloud core) customers who are using OIDC with a private connections instance, must ensure that their networks are set up to allow access to the OIDC provider.
+- Your Looker groups will still mirror your OpenID Connect configuration, but you will be able to do additional group and user management within Looker, such as adding OpenID Connect users to Looker-specific groups or assigning Looker roles directly to OpenID Connect users.
+- Enabling mirror OpenID Connect groups If you are using a Looker (Google Cloud core) instance, we recommend that you enable group mirroring for only the primary authentication method and don't enable group mirroring for the backup OAuth authentication .
+- Use the configuration information you obtained from your OP's discovery document, your OP, or your internal authentication team to enter connection settings in the following fields: Identifier : The client identifier unique to your Looker instance.
 

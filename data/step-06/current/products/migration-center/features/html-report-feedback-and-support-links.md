@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:46.521Z"
+generated_at: "2026-04-12T12:18:00.050Z"
 product_name: "Migration Center"
 product_slug: "migration-center"
 feature_name: "HTML report feedback and support links"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-08-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/migration-center/docs/migration-center-overview"
-  - "https://docs.cloud.google.com/migration-center/docs/ramp-overview"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsAsyncPager"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsPager"
 keywords:
   - "html"
   - "report"
@@ -38,48 +39,68 @@ Migration Center HTML reports include feedback and support links to Google Forms
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/migration-center/docs/migration-center-overview](https://docs.cloud.google.com/migration-center/docs/migration-center-overview)
-- [https://docs.cloud.google.com/migration-center/docs/ramp-overview](https://docs.cloud.google.com/migration-center/docs/ramp-overview)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter](https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsAsyncPager](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsAsyncPager)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsPager](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsPager)
 
 ## Supporting Pages
 
-### Migration Center overview | Google Cloud Documentation
+### "Class MigrationCenterAsyncClient (0.4.0) \_|\_ Python client libraries \_\
 
-- URL: [https://docs.cloud.google.com/migration-center/docs/migration-center-overview](https://docs.cloud.google.com/migration-center/docs/migration-center-overview)
-- Source ID: `site-docs-root`
-- Final score: 138
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 287
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Generate total cost of ownership reports based on the migration preferences that you specify according to your business objectives and constraints.
-- Migration Center overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/migration-center-overview With Migration Center, you can dive deep in the analysis and get a holistic view into your environment.
-- Get data-driven suggestions based on a technical fit assessment on the Google Cloud products to migrate your assets to, and know the costs in advance.
-- Identify application and network dependencies to know which components you must migrate together.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 async def sample list reports(): Create a client client = migrationcenter v1 .
+- ListReportsRequest ( parent="parent value", ) Make the request page result = client. list reports (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.ListReportsRequest , dict]] The request object.
+- Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing .
+- CreateReportConfigRequest ( parent="parent value", report config id="report config id value", report config=report config, ) Make the request operation = client. create report config (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict]] The request object.
 
-### Rapid Migration and Modernization Program (RaMP) overview | Migration Center | Google Cloud Documentation
+### "Class MigrationCenterClient (0.4.0) \_|\_ Python client libraries \_|\_\
 
-- URL: [https://docs.cloud.google.com/migration-center/docs/ramp-overview](https://docs.cloud.google.com/migration-center/docs/ramp-overview)
-- Source ID: `site-docs-root`
-- Final score: 132
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient)
+- Source ID: `site-python-reference`
+- Final score: 287
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Rapid Migration and Modernization Program (RaMP) overview Migration Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/ramp-overview The Rapid Migration and Modernization Program (RaMP) is a Google Cloud global program for migration and modernization initiatives.
-- RaMP combines Google Cloud products and best practices into a unified approach to help you achieve business goals ...
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 def sample list reports(): Create a client client = migrationcenter v1 .
+- ListReportsRequest ( parent="parent value", ) Make the request page result = client. list reports (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.ListReportsRequest , dict] The request object.
+- Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing .
+- CreateReportConfigRequest ( parent="parent value", report config id="report config id value", report config=report config, ) Make the request operation = client. create report config (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict] The request object.
 
-### Google Cloud Migration Center roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### "Class ListReportsAsyncPager (0.4.0) \_|\_ Python client libraries \_|\_\
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter](https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter)
-- Source ID: `site-iam-reference`
-- Final score: 129
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsAsyncPager](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsAsyncPager)
+- Source ID: `site-python-reference`
+- Final score: 259
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Google Cloud Migration Center roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter This page lists the IAM roles and permissions for Google Cloud Migration Center.
+- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.migrationcenter v1.types.ListReportsRequest The initial request object. response google.cloud.migrationcenter v1.types.ListReportsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- Home Documentation Developer tools Python Client libraries Send feedback Class ListReportsAsyncPager (0.4.0) Stay organized with collections Save and categorize content based on your preferences.
+- ListReportsResponse ], ], request : google . cloud . migrationcenter v1 . types . migrationcenter .
+- ListReportsResponse ], ], request : google . cloud . migrationcenter v1 . types . migrationcenter .
+
+### "Class ListReportsPager (0.4.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsPager](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListReportsPager)
+- Source ID: `site-python-reference`
+- Final score: 259
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.migrationcenter v1.types.ListReportsRequest The initial request object. response google.cloud.migrationcenter v1.types.ListReportsResponse The initial response object. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- Home Documentation Developer tools Python Client libraries Send feedback Class ListReportsPager (0.4.0) Stay organized with collections Save and categorize content based on your preferences.
+- ListReportsResponse ], request : google . cloud . migrationcenter v1 . types . migrationcenter .
+- ListReportsResponse ], request : google . cloud . migrationcenter v1 . types . migrationcenter .
 

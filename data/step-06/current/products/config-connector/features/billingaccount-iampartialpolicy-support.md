@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.404Z"
+generated_at: "2026-04-13T14:23:05.192Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "BillingAccount IAMPartialPolicy support"
@@ -9,14 +9,13 @@ latest_feature_date: "2022-02-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification"
   - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview"
 keywords:
   - "billingaccount"
   - "iampartialpolicy"
   - "extends"
-  - "to"
   - "resources"
 ---
 
@@ -39,40 +38,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview](https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification)
 - [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview](https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview)
 
 ## Supporting Pages
 
-### Organizing your resources | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview](https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview)
-- Source ID: `site-docs-root`
-- Final score: 96
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Organizing your resources Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview Config Connector · Start free ... on your preferences.
-- Config Connector can create and manage Google Cloud resources at the project-level, folder-level, or organization-level scope....
-
-### StorageNotification | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification)
-- Source ID: `site-docs-reference`
-- Final score: 81
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- StorageNotification Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification Documentation · Access and resource management · Config Connector · API and reference · Send feedback · Stay organized with collections Save and categorize content based on your preferences.
-
-### IAMPartialPolicy | Config Connector | Google Cloud Documentation
+### IAMPartialPolicy \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy)
-- Source ID: `site-iam-reference`
-- Final score: 80
+- Source ID: `site-docs-root-2`
+- Final score: 88
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- IAMPartialPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy You cannot reference BigQueryDataset resources using IAMPolicy, IAMPartialPolicy, and IAMPolicyMember since BigQueryDataset does not support IAM. bindings: - condition: description: string expression: string title: string members: - member: string memberFrom: bigQueryConnectionConnectionRef: name: string namespace: string type: string logSinkRef: name: string namespace: string serviceAccountRef: name: string namespace: string serviceIdentityRef: name: string namespace: string sqlInstanceRef: name: string namespace: string role: string resourceRef: apiVersion: string external: string kind: string name: string namespace: string
+- Kind Supports Conditions AccessContextManagerAccessPolicy ApigeeEnvironment ArtifactRegistryRepository BigQueryTable Y BigtableInstance Y BigtableTable Y BillingAccount Y BinaryAuthorizationPolicy Y CloudFunctionsFunction Y ComputeBackendBucket ComputeDisk ComputeImage Y ComputeInstance Y ComputeSnapshot ComputeSubnetwork Y DNSManagedZone DataprocCluster Y Folder Y IAMServiceAccount Y IAMWorkforcePool Y KMSCryptoKey Y KMSKeyRing Y NetworkSecurityAuthorizationPolicy Y NetworkSecurityClientTLSPolicy Y NetworkSecurityServerTLSPolicy Y Organization Y Project Y PubSubSubscription PubSubTopic RunJob RunService SecretManagerSecret ServiceDirectoryNamespace ServiceDirectoryService SourceRepoRepository SpannerDatabase Y SpannerInstance StorageBucket Y Kind External Reference Formats AccessContextManagerAccessPolicy {{name}} ApigeeEnvironment organizations/{{apigee organization}}/environments/{{name}} ArtifactRegistryRepository projects/{{project}}/locations/{{location}}/repositories/{{repository id}} BigQueryTable projects/{{project}}/datasets/{{dataset id}}/tables/{{table id}} BigtableInstance projects/{{project}}/instances/{{name}} BigtableTable projects/{{project}}/instances/{{instance name}}/tables/{{name}} BillingAccount {{billing account id}} BinaryAuthorizationPolicy projects/{{project}}/policy CloudFunctionsFunction projects/{{project}}/locations/{{region}}/functions/{{name}} ComputeBackendBucket projects/{{project}}/global/backendBuckets/{{name}} ComputeDisk projects/{{project}}/regions/{{region}}/disks/{{name}} projects/{{project}}/zones/{{zone}}/disks/{{name}} ComputeImage projects/{{project}}/global/images/{{name}} ComputeInstance projects/{{project}}/zones/{{zone}}/instances/{{name}} ComputeSnapshot projects/{{project}}/global/snapshots/{{name}} ComputeSubnetwork projects/{{project}}/regions/{{region}}/subnetworks/{{name}} DNSManagedZone projects/{{project}}/managedZones/{{name}} DataprocCluster projects/{{project}}/regions/{{location}}/clusters/{{name}} Folder folders/{{folder id}} IAMServiceAccount projects/{{project}}/serviceAccounts/{{account id}}@{{project}}.iam.gserviceaccount.com IAMWorkforcePool locations/{{location}}/workforcePools/{{name}} KMSCryptoKey projects/{{project}}/locations/{{location}}/keyRings/{{key ring id}}/cryptoKeys/{{name}} KMSKeyRing projects/{{project}}/locations/{{location}}/keyRings/{{name}} NetworkSecurityAuthorizationPolicy projects/{{project}}/locations/{{location}}/authorizationPolicies/{{name}} NetworkSecurityClientTLSPolicy projects/{{project}}/locations/{{location}}/clientTlsPolicies/{{name}} NetworkSecurityServerTLSPolicy projects/{{project}}/locations/{{location}}/serverTlsPolicies/{{name}} Organization {{org id}} Project projects/{{project id}} PubSubSubscription projects/{{project}}/subscriptions/{{name}} PubSubTopic projects/{{project}}/topics/{{name}} RunJob projects/{{project}}/locations/{{location}}/jobs/{{name}} RunService projects/{{project}}/locations/{{location}}/services/{{name}} SecretManagerSecret projects/{{project}}/secrets/{{secret id}} ServiceDirectoryNamespace projects/{{project}}/locations/{{location}}/namespaces/{{namespace id}} ServiceDirectoryService {{namespace}}/services/{{service id}} SourceRepoRepository projects/{{project}}/repos/{{name}} SpannerDatabase projects/{{project}}/instances/{{instance}}/databases/{{name}} SpannerInstance projects/{{project}}/instances/{{name}} StorageBucket {{name}} Custom Resource Definition Properties Spec Schema bindings : - condition : description : string expression : string title : string members : - member : string memberFrom : bigQueryConnectionConnectionRef : name : string namespace : string type : string logSinkRef : name : string namespace : string serviceAccountRef : name : string namespace : string serviceIdentityRef : name : string namespace : string sqlInstanceRef : name : string namespace : string role : string resourceRef : apiVersion : string external : string kind : string name : string namespace : string Fields bindings Optional list (object) Optional.
+- Property Value Google Cloud Service Name IAM Google Cloud Service Documentation /iam/docs/ Google Cloud REST Resource Name v1.iamPolicies Google Cloud REST Resource Documentation /iam/reference/rest/v1/iamPolicies Config Connector Resource Short Names gcpiampartialpolicy gcpiampartialpolicies iampartialpolicy Config Connector Service Name iam.googleapis.com Config Connector Resource Fully Qualified Name iampartialpolicies.iam.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Supported Resources You can use IAMPartialPolicy to configure IAM for the following resources.
+- You cannot reference BigQueryDataset resources using IAMPolicy , IAMPartialPolicy , and IAMPolicyMember since BigQueryDataset does not support IAM.
+- It will merge with the existing bindings on the project. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : iampartialpolicy-sample-project spec : resourceRef : kind : Project name : iampartialpolicy-dep-project bindings : - role : roles/storage.admin members : - member : serviceAccount:iampartialpolicy-dep-project@iampartialpolicy-dep-project.iam.gserviceaccount.com - role : roles/editor members : - memberFrom : serviceAccountRef : name : iampartialpolicy-dep-project --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : iampartialpolicy-dep-project name : iampartialpolicy-dep-project --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : annotations : cnrm.cloud.google.com/auto-create-network : "false" name : iampartialpolicy-dep-project spec : name : Config Connector Sample organizationRef : Replace "${ORG ID?}" with the numeric ID for your organization external : "${ORG ID?}" PubSub Admin IAMPartialPolicy Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+
+### Organizing your resources \_|\_ Config Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview](https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview)
+- Source ID: `site-docs-reference`
+- Final score: 73
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- IAM resources, including IAMPolicy , IAMPartialPolicy , IAMPolicyMember and IAMAuditConfig do not require you to provide a scope.
+- What's next See how to apply the following types of scopes: Project-scoped resources Folder-scoped resources Organization-scoped resources Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- There are three types of scope-defining annotations depending on the resource type: cnrm.cloud.google.com/project-id cnrm.cloud.google.com/folder-id cnrm.cloud.google.com/organization-id Most Config Connector resources support scope-defining fields.
+- Warning: Using the namespace annotation is a convenient way to specify default scope for all resources under the same namespace, but it may cause performance issues when managing a large number of resources under one Kubernetes namespace.
+
+### BillingBudgetsBudget | Config Connector | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget)
+- Source ID: `feature-recovery-http`
+- Final score: 72
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Sample YAML(s) Calendar Budget # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : billingbudgets.cnrm.cloud.google.com/v1beta1 kind : BillingBudgetsBudget metadata : name : billingbudgetsbudget-sample-calendarbudget spec : billingAccountRef : # Replace "${BILLING_ACCOUNT_ID_FOR_BILLING_RESOURCES?}" with the numeric ID for your billing account external : "${BILLING_ACCOUNT_ID_FOR_BILLING_RESOURCES?}" displayName : "sample-budget" budgetFilter : projects : - name : "billingbudgetsbudget-dep-calb" creditTypes : - "DISCOUNT" creditTypesTreatment : "INCLUDE_SPECIFIED_CREDITS" services : # This is the service name for the Geolocation API. - "services/0245-C3C9-3864" labels : label-one : values : - "value-one" calendarPeriod : "MONTH" amount : specifiedAmount : currencyCode : "USD" units : 9000000 nanos : 0 thresholdRules : - thresholdPercent : 0.5 spendBasis : "CURRENT_SPEND" allUpdatesRule : pubsubTopicRef : name : "billingbudgetsbudget-dep-calendarbudget" schemaVersion : "1.0" monitoringNotificationChannels : - name : "billingbudgetsbudget-dep-calendarbudget" disableDefaultIamRecipients : false --- apiVersion : monitoring.cnrm.cloud.google.com/v1beta1 kind : MonitoringNotificationChannel metadata : name : billingbudgetsbudget-dep-calendarbudget spec : labels : email_address : test@example.com type : "email" --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : billingbudgetsbudget-dep-calendarbudget --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : billingbudgetsbudget-dep-calb spec : organizationRef : # Replace "${ORG_ID?}" with the numeric ID for your organization external : "${ORG_ID?}" name : "billingbudgetsbudget-dep-calb" billingAccountRef : # Replace "${BILLING_ACCOUNT_ID_FOR_BILLING_RESOURCES?}" with the numeric ID for your billing account external : "${BILLING_ACCOUNT_ID_FOR_BILLING_RESOURCES?}" Custom Budget # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : billingbudgets.cnrm.cloud.google.com/v1beta1 kind : BillingBudgetsBudget metadata : name : billingbudgetsbudget-sample-custombudget spec : billingAccountRef : # Replace "${BILLING_ACCOUNT_ID_FOR_BILLING_RESOURCES?}" with the numeric ID for your billing account external : "${BILLING_ACCOUNT_ID_FOR_BILLING_RESOURCES?}" budgetFilter : creditTypes : - "DISCOUNT" creditTypesTreatment : "INCLUDE_SPECIFIED_CREDITS" customPeriod : startDate : year : 2140 month : 1 day : 1 endDate : year : 2312 month : 3 day : 14 amount : specifiedAmount : currencyCode : "USD" units : 9000000 nanos : 0 Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- The service names are available through the Catalog API: https://cloud.google.com/billing/v1/how-tos/catalog-api. budgetFilter.services[] Optional string budgetFilter.subaccounts Optional list (object) budgetFilter.subaccounts[] Optional object budgetFilter.subaccounts[].external Optional string budgetFilter.subaccounts[].name Optional string [WARNING] CloudBillingBillingAccount not yet supported in Config Connector, use 'external' field to reference existing resources.
+- For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. billingAccountRef Required object Immutable. billingAccountRef.external Optional string The billing account of the resource Allowed value: The Google Cloud resource name of a Google Cloud Billing Account (format: `billingAccounts/{{name}}`). billingAccountRef.name Optional string [WARNING] BillingAccount not yet supported in Config Connector, use 'external' field to reference existing resources.
+- BillingBudgetsBudget Property Value Google Cloud Service Name Billing Budgets Google Cloud Service Documentation /billing/docs/ Google Cloud REST Resource Name billingAccounts.budgets Google Cloud REST Resource Documentation /billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets Config Connector Resource Short Names gcpbillingbudgetsbudget gcpbillingbudgetsbudgets billingbudgetsbudget Config Connector Service Name billingbudgets.googleapis.com Config Connector Resource Fully Qualified Name billingbudgetsbudgets.billingbudgets.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema allUpdatesRule : disableDefaultIamRecipients : boolean monitoringNotificationChannels : - external : string name : string namespace : string pubsubTopicRef : external : string name : string namespace : string schemaVersion : string amount : lastPeriodAmount : {} specifiedAmount : currencyCode : string nanos : integer units : integer billingAccountRef : external : string name : string namespace : string budgetFilter : calendarPeriod : string creditTypes : - string creditTypesTreatment : string customPeriod : endDate : day : integer month : integer year : integer startDate : day : integer month : integer year : integer labels : string : object projects : - external : string name : string namespace : string services : - string subaccounts : - external : string name : string namespace : string displayName : string resourceID : string thresholdRules : - spendBasis : string thresholdPercent : float Fields allUpdatesRule Optional object Optional.
 

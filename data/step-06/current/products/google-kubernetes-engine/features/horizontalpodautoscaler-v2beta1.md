@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:33.328Z"
+generated_at: "2026-04-14T04:42:56.854Z"
 product_name: "Google Kubernetes Engine"
 product_slug: "google-kubernetes-engine"
 feature_name: "HorizontalPodAutoscaler v2beta1"
 feature_slug: "horizontalpodautoscaler-v2beta1"
 latest_feature_date: "2022-01-21"
 deprecation_date: "2022-01-21"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
 keywords:
   - "horizontalpodautoscaler"
   - "v2beta1"
   - "version"
   - "autoscaling"
-  - "is"
   - "deprecated"
-  - "and"
   - "scheduled"
+  - "removal"
+  - "kubernetes"
 ---
 
 # HorizontalPodAutoscaler v2beta1
 
 Product: Google Kubernetes Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ HorizontalPodAutoscaler version autoscaling/v2beta1 is deprecated and scheduled 
 
 HorizontalPodAutoscaler version autoscaling/v2beta1 is deprecated and scheduled for removal in Kubernetes 1.25; HorizontalPodAutoscaler version autoscaling/v2beta1 is deprecated and scheduled for removal in Kubernetes 1.25; deprecated on 2022-01-21.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Optimize Pod autoscaling based on metrics \_|\_ Kubernetes Engine \_|\_\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 107
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Pub/Sub apiVersion : autoscaling/v2 kind : HorizontalPodAutoscaler metadata : name : pubsub spec : minReplicas : 1 maxReplicas : 5 metrics : - external : metric : name : pubsub.googleapis.com subscription num undelivered messages selector : matchLabels : resource.labels.subscription id : echo-read target : type : AverageValue averageValue : 2 type : External scaleTargetRef : apiVersion : apps/v1 kind : Deployment name : pubsub Custom Metric apiVersion : autoscaling/v2 kind : HorizontalPodAutoscaler metadata : name : custom-metrics-gmp-hpa namespace : default spec : scaleTargetRef : apiVersion : apps/v1 kind : Deployment name : custom-metrics-gmp minReplicas : 1 maxReplicas : 5 metrics : - type : Pods pods : metric : name : prometheus.googleapis.com custom prometheus gauge target : type : AverageValue averageValue : 20 Deploy the HorizontalPodAutoscaler to your cluster: Pub/Sub kubectl apply -f deployment/pubsub-hpa.yaml Custom Metric kubectl apply -f custom-metrics-gmp-hpa.yaml Generating load For some metrics, you might need to generate load to watch the autoscaling: Pub/Sub Publish 200 messages to the Pub/Sub topic: for i in { 1 ..200 } ; do gcloud pubsub topics publish echo --message = "Autoscaling # ${ i } " ; done Custom Metric Not Applicable: The code used in this sample exports a constant value of 40 for the custom metric.
+- Allow this service account to read Cloud Monitoring metrics by assigning the Monitoring Viewer role: gcloud projects add-iam-policy-binding projects/ $PROJECT ID \ --role roles/monitoring.viewer \ --member = principal://iam.googleapis.com/projects/ $PROJECT NUMBER /locations/global/workloadIdentityPools/ $PROJECT ID .svc.id.goog/subject/ns/custom-metrics/sa/custom-metrics-stackdriver-adapter Legacy Authentication Grant your user the ability to create required authorization roles: kubectl create clusterrolebinding cluster-admin-binding \ --clusterrole cluster-admin --user " $( gcloud config get-value account ) " Deploy the custom metrics adapter on your cluster: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-stackdriver/master/custom-metrics-stackdriver-adapter/deploy/production/adapter new resource model.yaml Deploying an application with metrics Download the repository containing the application code for this tutorial: Pub/Sub git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples.git cd kubernetes-engine-samples/databases/cloud-pubsub Custom Metric git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples.git cd kubernetes-engine-samples/observability/custom-metrics-autoscaling/google-managed-prometheus The repository contains code that exports metrics to Cloud Monitoring: Pub/Sub This application polls a Pub/Sub subscription for new messages, acknowledging them as they arrive.
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Documentation Guides Send feedback Optimize Pod autoscaling based on metrics Stay organized with collections Save and categorize content based on your preferences.
+- Workload Identity apiVersion : apps/v1 kind : Deployment metadata : name : pubsub spec : selector : matchLabels : app : pubsub template : metadata : labels : app : pubsub spec : serviceAccountName : pubsub-sa containers : - name : subscriber image : us-docker.pkg.dev/google-samples/containers/gke/pubsub-sample:v2 Legacy authentication apiVersion : apps/v1 kind : Deployment metadata : name : pubsub spec : selector : matchLabels : app : pubsub template : metadata : labels : app : pubsub spec : volumes : - name : google-cloud-key secret : secretName : pubsub-key containers : - name : subscriber image : us-docker.pkg.dev/google-samples/containers/gke/pubsub-sample:v2 volumeMounts : - name : google-cloud-key mountPath : /var/secrets/google env : - name : GOOGLE APPLICATION CREDENTIALS value : /var/secrets/google/key.json Custom Metric apiVersion : apps/v1 kind : Deployment metadata : labels : run : custom-metrics-gmp name : custom-metrics-gmp namespace : default spec : replicas : 1 selector : matchLabels : run : custom-metrics-gmp template : metadata : labels : run : custom-metrics-gmp spec : containers : sample container generating custom metrics - name : prometheus-dummy-exporter image : us-docker.pkg.dev/google-samples/containers/gke/prometheus-dummy-exporter:v0.2.0 command : [ "./prometheus-dummy-exporter" ] args : - --metric-name=custom prometheus - --metric-value=40 - --port=8080 With the PodMonitoring resource , the Google Cloud Managed Service for Prometheus exports the Prometheus metrics to Cloud Monitoring: apiVersion : monitoring.googleapis.com/v1 kind : PodMonitoring metadata : name : "custom-metrics-exporter" spec : selector : matchLabels : run : custom-metrics-gmp endpoints : - port : 8080 path : /metrics interval : 15s Starting in GKE Standard version 1.27 or GKE Autopilot version 1.25, Google Cloud Managed Service for Prometheus is enabled.
+
+### "About GKE cluster autoscaling \_|\_ Google Kubernetes Engine (GKE) \_|\_\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler)
+- Source ID: `site-docs-reference-2`
+- Final score: 104
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Total nodes example The following command, available in GKE version 1.24 or later, creates an autoscaling multi-zonal cluster with six nodes across three zones initially, with a minimum of three nodes and a maximum of twelve nodes in the node pool across all zones: gcloud container clusters create example-cluster \ --num-nodes=2 \ --location=us-central1-a \ --node-locations=us-central1-a,us-central1-b,us-central1-f \ --enable-autoscaling --total-min-nodes=3 --total-max-nodes=12 In this example, the total size of the cluster can be between three and twelve nodes, regardless of spreading between zones.
+- Supported from GKE version 1.28.3-gke.1098000 in Standard clusters and from GKE version 1.30.3-gke.1451000 in Autopilot clusters. check-capacity.autoscaling.x-k8s.io : this open-source class verifies the availability of resources before it attempts to schedule Pods.
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Guides Send feedback About GKE cluster autoscaling Stay organized with collections Save and categorize content based on your preferences.
+- Supported from GKE version 1.30.2-gke.1468000. best-effort-atomic.autoscaling.x-k8s.io : this open-source class attempts to provision resources all Pods in the request together.
+
+### "MCP Tools Reference: container.googleapis.com \_|\_ Google Kubernetes Engine\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster)
+- Source ID: `site-api-reference`
+- Final score: 102
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Cluster JSON representation { "name" : string , "description" : string , "initialNodeCount" : integer , "nodeConfig" : { object ( NodeConfig ) } , "masterAuth" : { object ( MasterAuth ) } , "loggingService" : string , "monitoringService" : string , "network" : string , "clusterIpv4Cidr" : string , "addonsConfig" : { object ( AddonsConfig ) } , "subnetwork" : string , "nodePools" : [ { object ( NodePool ) } ] , "locations" : [ string ] , "enableKubernetesAlpha" : boolean , "alphaClusterFeatureGates" : [ string ] , "resourceLabels" : { string : string , ... } , "labelFingerprint" : string , "legacyAbac" : { object ( LegacyAbac ) } , "networkPolicy" : { object ( NetworkPolicy ) } , "ipAllocationPolicy" : { object ( IPAllocationPolicy ) } , "masterAuthorizedNetworksConfig" : { object ( MasterAuthorizedNetworksConfig ) } , "maintenancePolicy" : { object ( MaintenancePolicy ) } , "binaryAuthorization" : { object ( BinaryAuthorization ) } , "autoscaling" : { object ( ClusterAutoscaling ) } , "networkConfig" : { object ( NetworkConfig ) } , "defaultMaxPodsConstraint" : { object ( MaxPodsConstraint ) } , "resourceUsageExportConfig" : { object ( ResourceUsageExportConfig ) } , "authenticatorGroupsConfig" : { object ( AuthenticatorGroupsConfig ) } , "privateClusterConfig" : { object ( PrivateClusterConfig ) } , "databaseEncryption" : { object ( DatabaseEncryption ) } , "verticalPodAutoscaling" : { object ( VerticalPodAutoscaling ) } , "shieldedNodes" : { object ( ShieldedNodes ) } , "releaseChannel" : { object ( ReleaseChannel ) } , "workloadIdentityConfig" : { object ( WorkloadIdentityConfig ) } , "meshCertificates" : { object ( MeshCertificates ) } , "costManagementConfig" : { object ( CostManagementConfig ) } , "notificationConfig" : { object ( NotificationConfig ) } , "confidentialNodes" : { object ( ConfidentialNodes ) } , "identityServiceConfig" : { object ( IdentityServiceConfig ) } , "selfLink" : string , "zone" : string , "endpoint" : string , "initialClusterVersion" : string , "currentMasterVersion" : string , "currentNodeVersion" : string , "createTime" : string , "status" : enum ( Status ) , "statusMessage" : string , "nodeIpv4CidrSize" : integer , "servicesIpv4Cidr" : string , "instanceGroupUrls" : [ string ] , "currentNodeCount" : integer , "expireTime" : string , "location" : string , "enableTpu" : boolean , "tpuIpv4CidrBlock" : string , "conditions" : [ { object ( StatusCondition ) } ] , "autopilot" : { object ( Autopilot ) } , "id" : string , "loggingConfig" : { object ( LoggingConfig ) } , "monitoringConfig" : { object ( MonitoringConfig ) } , "nodePoolAutoConfig" : { object ( NodePoolAutoConfig ) } , "podAutoscaling" : { object ( PodAutoscaling ) } , "etag" : string , "fleet" : { object ( Fleet ) } , "securityPostureConfig" : { object ( SecurityPostureConfig ) } , "controlPlaneEndpointsConfig" : { object ( ControlPlaneEndpointsConfig ) } , "enableK8sBetaApis" : { object ( K8sBetaAPIConfig ) } , "enterpriseConfig" : { object ( EnterpriseConfig ) } , "secretManagerConfig" : { object ( SecretManagerConfig ) } , "compliancePostureConfig" : { object ( CompliancePostureConfig ) } , "gkeAutoUpgradeConfig" : { object ( GkeAutoUpgradeConfig ) } , "anonymousAuthenticationConfig" : { object ( AnonymousAuthenticationConfig ) } , "scheduleUpgradeConfig" : { object ( ScheduleUpgradeConfig ) } , "managedOpentelemetryConfig" : { object ( ManagedOpenTelemetryConfig ) } , "managedMachineLearningDiagnosticsConfig" : { object ( ManagedMachineLearningDiagnosticsConfig ) } , // Union field node pool defaults can be only one of the following: "nodePoolDefaults" : { object ( NodePoolDefaults ) } // End of list of possible types for union field node pool defaults . // Union field satisfies pzs can be only one of the following: "satisfiesPzs" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: "satisfiesPzi" : boolean // End of list of possible types for union field satisfies pzi . // Union field user managed keys config can be only one of the following: "userManagedKeysConfig" : { object ( UserManagedKeysConfig ) } // End of list of possible types for union field user managed keys config . // Union field rbac binding config can be only one of the following: "rbacBindingConfig" : { object ( RBACBindingConfig ) } // End of list of possible types for union field rbac binding config . } Fields name string The name of this cluster.
+- AddonsConfig JSON representation { "httpLoadBalancing" : { object ( HttpLoadBalancing ) } , "horizontalPodAutoscaling" : { object ( HorizontalPodAutoscaling ) } , "kubernetesDashboard" : { object ( KubernetesDashboard ) } , "networkPolicyConfig" : { object ( NetworkPolicyConfig ) } , "cloudRunConfig" : { object ( CloudRunConfig ) } , "dnsCacheConfig" : { object ( DnsCacheConfig ) } , "configConnectorConfig" : { object ( ConfigConnectorConfig ) } , "gcePersistentDiskCsiDriverConfig" : { object ( GcePersistentDiskCsiDriverConfig ) } , "gcpFilestoreCsiDriverConfig" : { object ( GcpFilestoreCsiDriverConfig ) } , "gkeBackupAgentConfig" : { object ( GkeBackupAgentConfig ) } , "gcsFuseCsiDriverConfig" : { object ( GcsFuseCsiDriverConfig ) } , "statefulHaConfig" : { object ( StatefulHAConfig ) } , "parallelstoreCsiDriverConfig" : { object ( ParallelstoreCsiDriverConfig ) } , "rayOperatorConfig" : { object ( RayOperatorConfig ) } , "highScaleCheckpointingConfig" : { object ( HighScaleCheckpointingConfig ) } , "lustreCsiDriverConfig" : { object ( LustreCsiDriverConfig ) } , "sliceControllerConfig" : { object ( SliceControllerConfig ) } } Fields httpLoadBalancing object ( HttpLoadBalancing ) Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. horizontalPodAutoscaling object ( HorizontalPodAutoscaling ) Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. kubernetesDashboard (deprecated) object ( KubernetesDashboard ) This item is deprecated!
+- NodePool JSON representation { "name" : string , "config" : { object ( NodeConfig ) } , "initialNodeCount" : integer , "locations" : [ string ] , "networkConfig" : { object ( NodeNetworkConfig ) } , "selfLink" : string , "version" : string , "instanceGroupUrls" : [ string ] , "status" : enum ( Status ) , "statusMessage" : string , "autoscaling" : { object ( NodePoolAutoscaling ) } , "management" : { object ( NodeManagement ) } , "maxPodsConstraint" : { object ( MaxPodsConstraint ) } , "conditions" : [ { object ( StatusCondition ) } ] , "podIpv4CidrSize" : integer , "upgradeSettings" : { object ( UpgradeSettings ) } , "placementPolicy" : { object ( PlacementPolicy ) } , "updateInfo" : { object ( UpdateInfo ) } , "etag" : string , "queuedProvisioning" : { object ( QueuedProvisioning ) } , "bestEffortProvisioning" : { object ( BestEffortProvisioning ) } , "nodeDrainConfig" : { object ( NodeDrainConfig ) } } Fields name string The name of the node pool. config object ( NodeConfig ) The node configuration of the pool. initialNodeCount integer The initial node count for the pool.
+- Otherwise, if no release channel configuration and no version is specified, the cluster is enrolled in the REGULAR channel with its default version. workloadIdentityConfig object ( WorkloadIdentityConfig ) Configuration for the use of Kubernetes Service Accounts in IAM policies. meshCertificates object ( MeshCertificates ) Configuration for issuance of mTLS keys and certificates to Kubernetes pods. costManagementConfig object ( CostManagementConfig ) Configuration for the fine-grained cost management feature. notificationConfig object ( NotificationConfig ) Notification configuration of the cluster. confidentialNodes object ( ConfidentialNodes ) Configuration of Confidential Nodes.
 

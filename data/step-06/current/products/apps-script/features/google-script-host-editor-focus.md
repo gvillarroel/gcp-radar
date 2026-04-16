@@ -1,40 +1,40 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:29:46.775Z"
+generated_at: "2026-04-15T11:53:34.611Z"
 product_name: "Apps Script"
 product_slug: "apps-script"
-feature_name: "google.script.host.editor.focus"
+feature_name: "google.script.host.editor.focus()"
 feature_slug: "google-script-host-editor-focus"
 latest_feature_date: "2014-02-25"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://developers.google.com/apps-script/guides/html/reference/host"
+  - "https://developers.google.com/apps-script/guides/html/communication"
   - "https://developers.google.com/apps-script/releases"
-  - "https://developers.google.com/apps-script/guides/sheets/functions"
-  - "https://developers.google.com/apps-script/advanced/admin-sdk-directory"
 keywords:
-  - "focus"
+  - "script"
   - "host"
   - "editor"
+  - "focus"
   - "html"
-  - "script"
-  - "added"
-  - "in"
-  - "to"
+  - "client"
+  - "can"
+  - "move"
 ---
 
-# google.script.host.editor.focus
+# google.script.host.editor.focus()
 
 Product: Apps Script
 Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Added google.script.host.editor.focus() in HTML Service to shift focus from a dialog or sidebar back to the editor.
+The HTML Service client API can move browser focus from a dialog or sidebar back to the editor.
 
 ## Extended Definition
 
-Added google.script.host.editor.focus() in HTML Service to shift focus from a dialog or sidebar back to the editor.
+The HTML Service client API can move browser focus from a dialog or sidebar back to the editor.
 
 ## Evidence Summary
 
@@ -42,48 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
+- [https://developers.google.com/apps-script/guides/html/reference/host](https://developers.google.com/apps-script/guides/html/reference/host)
+- [https://developers.google.com/apps-script/guides/html/communication](https://developers.google.com/apps-script/guides/html/communication)
 - [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
-- [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
-- [https://developers.google.com/apps-script/advanced/admin-sdk-directory](https://developers.google.com/apps-script/advanced/admin-sdk-directory)
 
 ## Supporting Pages
+
+### 클래스 google.script.host (클라이언트 측 API) | Apps Script | Google for Developers
+
+- URL: [https://developers.google.com/apps-script/guides/html/reference/host](https://developers.google.com/apps-script/guides/html/reference/host)
+- Source ID: `feature-recovery-http`
+- Final score: 179
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Code.gs function onOpen(e) { SpreadsheetApp.getUi() // Or DocumentApp or FormApp. .createMenu('Sidebar').addItem('Show', 'showSidebar').addToUi(); } function showSidebar() { var html = HtmlService.createHtmlOutputFromFile('Index'); SpreadsheetApp.getUi() // Or DocumentApp or FormApp. .showSidebar(html); } index.html <input type="button" value="Switch focus" onclick="google.script.host.editor.focus()" /> setHeight(height) 현재 대화상자의 높이를 설정합니다.
+- Google Ads 판매자 센터 AdSense 고급 서비스 애드센스 관리 API Display & Video 360 고급 서비스 DV360 API DoubleClick Bid Manager 고급 서비스 DBM Reporting API DoubleClick 캠페인 고급 서비스 DCM/DFA Reporting API 및 트래피킹 API 쇼핑 콘텐츠 고급 서비스 Merchant API Google Content API for Shopping Google 데이터 스튜디오 개요 데이터 스튜디오 앱 클래스 BigQuery 구성 체크박스 커뮤니티 연결 구성 디버그 오류 필드 필드 GetAuthTypeResponse 데이터 가져오기 응답 GetSchemaResponse 정보 OptionBuilder 여러 항목 선택 Select싱글 SetCredentialsResponse 텍스트 영역 TextInput 사용자 오류 열거형 집계 유형 AuthType BigQuery 매개변수 유형 FieldType Google 표 고급 서비스 Tables API Google Tag Manager 고급 서비스 태그 관리자 API 유틸리티 서비스 API 데이터베이스 연결 BigQuery 고급 서비스 BigQuery API JDBC 개요 JSON 클래스 JdbcArray JdbcBlob JdbcCallableStatement JdbcClob JdbcConnection JdbcDatabaseMetaData JdbcDate JdbcParameterMetaData JdbcPreparedStatement JdbcRef JdbcResultSet JdbcResultSetMetaData JdbcRowId JdbcSQLXML JdbcSavepoint JdbcStatement JdbcStruct 이동 시간 Jdbc타임스탬프 URL 가져오기 개요 URL 가져오기 앱 클래스 HTTPResponse 데이터 사용성 및 최적화 최적화 개요 Linear최적화 서비스 클래스 Linear최적화제약 Linear최적화 엔진 선형최적화 솔루션 열거형 상태 변수 유형 유틸리티 개요 유틸리티 열거형 Charset 다이제스트 알고리즘 맥알고리즘 RSA 알고리즘 XML 개요 XML 서비스 클래스 Attribute 데이터 Comment 문서 유형 문서 요소 항목 참조 형식 네임스페이스 ProcessingInstruction 텍스트 인터페이스 콘텐츠 열거형 ContentType HTML 콘텐츠 차트 개요 차트 클래스 영역 차트 빌더 막대 그래프 빌더 차트 ChartOptions ColumnChartBuilder 데이터 표 데이터 표 빌더 DataViewDefinition DataViewDefinitionBuilder 선 차트 빌더 숫자 범위 필터 빌더 PieChartBuilder 분산형 차트 빌더 문자열 필터 빌더 테이블 차트 빌더 TextStyle 텍스트 스타일 빌더 인터페이스 데이터 표 소스 열거형 차트 히든 측정기준 전략 차트 병합 전략 차트 유형 열 유형 곡선 스타일 MatchType 방향 선택도구 값 레이아웃 포인트 스타일 위치 콘텐츠 개요 콘텐츠 서비스 클래스 텍스트 출력 열거형 MimeType HTML 개요 google.script.history (클라이언트 측) google.script.host (클라이언트 측) google.script.run (클라이언트 측) google.script.url (클라이언트 측) HTML 서비스 클래스 HTML 출력 HTML 출력 메타 태그 HTML 템플릿 열거형 샌드박스 모드 XFrameOptionsMode 메일 개요 MailApp 스크립트 실행 및 정보 기본 개요 브라우저 Logger MimeType 세션 콘솔 클래스 Blob 메뉴 메시지 응답 색상 색상 UI 사용자 인터페이스 BlobSource 클래스의 생성자 열거형 버튼 버튼 세트 색상 유형 월 평일 캐시 개요 캐시 서비스 클래스 캐시 자물쇠 개요 락 서비스 클래스 자물쇠 속성 개요 속성 서비스 스크립트 속성 UserProperties 클래스 속성 스크립트 개요 스크립트 앱 클래스 승인 정보 캘린더 트리거 빌더 시계 트리거 빌더 문서 트리거 빌더 FormTriggerBuilder 서비스 스프레드시트 트리거 빌더 StateTokenBuilder 트리거 TriggerBuilder 열거형 인증 모드 승인 상태 EventType 설치 소스 트리거 소스 프로젝트 리소스 스크립트 자동화 트리거 및 이벤트 간단한 트리거 설치 가능한 트리거 이벤트 객체 매니페스트 개요 도서관 및 고급 서비스 웹 앱 및 API 실행 파일 Sheets 매크로 허용 목록 URL 할당량 및 한도 Google Workspace 부가기능 서비스 부가기능 응답 개요 AddOnsResponseService 클래스 AccessoryWidget 동작 작업 응답 ActionResponseBuilder AddonComposeUiActionResponse AddonComposeUiActionResponseBuilder 첨부파일 캘린더 이벤트 액션 응답 CalendarEventActionResponseBuilder ChatDataActionsResponseBuilder ChatMessage 색상 ComposeActionResponse ComposeActionResponseBuilder CreateMessageAction DataActionsResponse DataType DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder DynamicResourceDefinition 편집자 파일 범위 작업 응답 EditorFileScopeActionResponseBuilder HostAppAction 하이퍼링크 InsertSection InsertWidget 링크 링크 미리보기 ListContainer ListItem ModifyCard 탐색 알림 링크 열기 RemoveSection RemoveWidget RenderAction RenderActionBuilder ResourceData ResourceField ResourceFieldsDefinitionRetrievedAction ResourceRetrievedAction ResourceType ReturnElementErrorAction ReturnOutputVariablesAction SaveWorkflowAction StyledText TextFormatChip TextFormatElement TextFormatIcon 시간기록 범용 액션 응답 범용 작업 응답 빌더 임시 작업 응답 업데이트 UpdateActionActionResponseBuilder UpdateBB수신자s작업 Update본문 액션 초안Cc수신자 작업 UpdateSubjectSubjectAction 임시보관 수신자 업데이트 작업 UpdateInlinePreviewAction UpdateMessageAction UpdateWidget ValueMetadata VariableData WorkflowAction WorkflowTextFormat WorkflowValidationErrorAction 열거형 AddonComposeUiActionType BasicDataType 작성된 이메일 유형 ContentType EndNavigation ErrorActionability ErrorRetryability FontWeight ListType 종료 시 OpenAs 드림 SendStatus TextStyle Update본문 유형 ValidationErrorSeverity 카드 개요 카드 서비스 클래스 동작 작업 응답 ActionResponseBuilder 작업 상태 첨부파일 승인 작업 승인 예외 테두리 스타일 버튼 버튼 세트 캘린더 이벤트 액션 응답 CalendarEventActionResponseBuilder 카드 카드 작업 카드 빌더 카드 헤더 카드 섹션 카드 ID 캐러셀 캐러셀 카드 ChatActionResponse ChatClientDataSource ChatResponse ChatResponseBuilder ChatSpaceDataSource 칩 ChipList CollapseControl 열 열 CommonWidgetAction ComposeActionResponse ComposeActionResponseBuilder 조건 DataSourceConfig DatePicker 날짜 시간 선택 도구 장식 텍스트 대화상자 대화상자 작업 구분선 DriveDataSourceSpec DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder 편집자 파일 범위 작업 응답 EditorFileScopeActionResponseBuilder EventAction ExpressionData ExpressionDataAction ExpressionDataCondition 고정 바닥글 그리드 그리드 항목 HostAppDataSource 아이콘 이미지 이미지 이미지 버튼 ImageComponent 이미지 자르기 스타일 KeyValue 링크 미리보기 MaterialIcon 탐색 알림 링크 열기 OverflowMenu OverflowMenuItem 플랫폼 데이터 소스 선택 입력 Suggestions 추천 응답 추천 응답 작성 도구 전환 텍스트 버튼 TextInput 텍스트 단락 TimePicker 트리거 범용 액션 응답 범용 작업 응답 빌더 임시 작업 응답 업데이트 UpdateActionActionResponseBuilder UpdateBB수신자s작업 Update본문 액션 초안Cc수신자 작업 UpdateSubjectSubjectAction 임시보관 수신자 업데이트 작업 UpdateVisibilityAction UpdatedWidget 확인 위젯 WorkflowDataSource 열거형 테두리 유형 ChipListLayout CommonDataSource 작성된 이메일 유형 ContentType 디스플레이 스타일 DriveItemType ExpressionDataActionType ExpressionDataConditionType 그리드 항목 레이아웃 가로 맞춤 가로 크기 스타일 아이콘 ImageButtonStyle 이미지 자르기 유형 이미지 스타일 입력 유형 상호작용 부하 표시기 종료 시 OpenAs 드림 응답 유형 선택 입력 유형 상태 스위치 제어 유형 텍스트 버튼 스타일 TextInputMode Update본문 유형 VariableButtonSize 세로 정렬 공개 상태 WorkflowDataSourceType WrapStyle 회의 데이터 개요 회의 데이터 서비스 클래스 회의 데이터 ConferenceDataBuilder 회의 오류 컨퍼런스 매개변수 EntryPoint 열거형 회의 오류 유형 진입점 기능 진입점 유형 매니페스트 Addons 리소스 캘린더 리소스 Drive 리소스 Gmail 리소스 편집자 리소스 Meet 리소스 홈페이지 트리거 리소스 부가기능 API Apps Script API v1 개요 REST 리소스 프로세스 개요 list ListScriptProcesses projects 개요 create get getContent getMetrics 업데이트 콘텐츠 projects.deployments 개요 create delete get list update projects.versions 개요 create get list 스크립트 개요 run 유형 ExecuteStreamResponse ExecutionError 실행 응답 파일 LocalizedMessage NullValue 클라이언트 라이브러리 브라우저 Go Java 핵심 라이브러리 API 라이브러리 .NET 핵심 라이브러리 API 라이브러리 Node.js PHP Python 핵심 라이브러리 API 라이브러리 Ruby Google Workspace 앱 관리 콘솔 Cloud Search Gmail Google Calendar Google Chat Google Classroom Google Docs Google Drive Google Forms Google Keep Google Meet Google Sheets Google Sites Google Slides Google Tasks Google Vault 확장, 자동화, 공유 부가기능 Apps Script 채팅 앱 Drive 앱 Marketplace 도구 관리 콘솔 Apps Script 대시보드 Google Cloud 콘솔 API 탐색기 카드 빌더 교육 및 지원 시작하는 방법 Codelabs 개발자 지원 업데이트 출시 노트 개발자 프리뷰 YouTube 뉴스레터 X(트위터) 블로그 홈 Google Workspace Apps Script 참조 의견 보내기 클래스 google.script.host (클라이언트 측 API) 컬렉션을 사용해 정리하기 내 환경설정을 기준으로 콘텐츠를 저장하고 분류하세요. google.script.host 는 상호작용할 수 있는 비동기 클라이언트 측 JavaScript API입니다.
+- Code.gs function onOpen(e) { SpreadsheetApp.getUi() // Or DocumentApp or FormApp. .createMenu('Sidebar').addItem('Show', 'showSidebar').addToUi(); } function showSidebar() { var html = HtmlService.createHtmlOutputFromFile('Index'); SpreadsheetApp.getUi() // Or DocumentApp or FormApp. .showSidebar(html); } index.html <input type="button" value="Close" onclick="google.script.host.close()" /> editor.focus() 브라우저 포커스를 대화상자 또는 사이드바에서 Google Docs, Sheets 또는 Forms 편집기로 전환합니다.
+- Google Docs, Sheets, Forms에서 HTML 서비스 페이지 . 서버 측 함수를 클라이언트 측 코드를 사용하려면 google.script.run 를 사용하세요. 자세한 내용은 서버 함수와의 통신 가이드 할 수 있습니다. 속성 속성 설명 origin 스크립트가 기본 호스트 도메인을 설정할 수 있도록 확인할 수 있습니다 메서드 메서드 반환 유형 간략한 설명 close() void 현재 대화상자 또는 사이드바를 닫습니다. editor.focus() void 브라우저 포커스를 대화상자 또는 사이드바에서 Google Docs, Sheets 또는 Forms 편집기로 전환합니다. setHeight(height) void 현재 대화상자의 높이를 설정합니다. setWidth(width) void 현재 대화상자의 너비를 설정합니다. 자세한 문서 close() 현재 대화상자 또는 사이드바를 닫습니다.
+
+### "HTML Service: Communicate with Server Functions \_|\_ Apps Script \_|\_\
+
+- URL: [https://developers.google.com/apps-script/guides/html/communication](https://developers.google.com/apps-script/guides/html/communication)
+- Source ID: `site-docs-root`
+- Final score: 167
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Move browser focus in Google Workspace To switch focus in the user's browser from a dialog or sidebar back to the Google Docs, Sheets, or Forms editor, call the method google.script.host.editor.focus .
+- Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } function getBankBalance() { var email = Session.getActiveUser().getEmail() return deepSecret (email); } function deepSecret (email) { // Do some secret calculations return email + ' has $1,000,000 in the bank.'; } var obj = { objectMethod: function() { // More secret calculations } }; Index.html <!DOCTYPE html> <html> <head> <base target=" top"> <script> function onSuccess(balance) { var div = document.getElementById('output'); div.innerHTML = balance; } google.script.run.withSuccessHandler(onSuccess) .getBankBalance(); </script> </head> <body> <div id="output">No result yet...</div> </body> </html> Resize dialogs in Google Workspace applications Custom dialog boxes in Google Docs, Google Sheets, or Forms can be resized by calling the google.script.host methods setWidth(width) or setHeight(height) in client-side code. (To set the initial size of a dialog, use the HtmlOutput methods setWidth(width) and setHeight(height) .) Note that dialogs don't re-center in the parent window when resized, and it is not possible to resize sidebars .
+- Private functions in Apps Script (ending with an underscore) cannot be called by google.script.run and are invisible to the client. google.script.run is an asynchronous client-side JavaScript API that allows HTML-service pages to call server-side Apps Script functions.
+- Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } function processForm(formObject) { var formBlob = formObject.myFile; var driveFile = DriveApp.createFile(formBlob); return driveFile.getUrl(); } Index.html <!DOCTYPE html> <html> <head> <base target=" top"> <script> // Prevent forms from submitting. function preventFormSubmit() { var forms = document.querySelectorAll('form'); for (var i = 0; i < forms.length; i++) { forms[i].addEventListener('submit', function(event) { event.preventDefault(); }); } } window.addEventListener('load', preventFormSubmit); function handleFormSubmit(formObject) { google.script.run.withSuccessHandler(updateUrl).processForm(formObject); } function updateUrl(url) { var div = document.getElementById('output'); div.innerHTML = '<a href="' + url + '">Got it!</a>'; } </script> </head> <body> <form id="myForm" onsubmit="handleFormSubmit(this)"> <input name="myFile" type="file" /> <input type="submit" value="Submit" /> </form> <div id="output"></div> </body> </html> Script runners Think of google.script.run as a builder for a "script runner." If you add a success handler, failure handler, or user object to a script runner, you aren't changing the existing runner; instead, you get back a new script runner with new behavior.
 
 ### Google Apps Script release notes \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
 - Source ID: `site-docs-root`
-- Final score: 188
+- Final score: 165
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Added the client-side HTML-service method google.script.host.editor.focus() , which allows scripts to switch browser focus from the dialog or sidebar to the Google Docs, Sheets, or Forms editor.
 - Custom dialogs created with the HTML service can now be resized by calling google.script.host.setWidth(width) and google.script.host.setHeight(height) in client-side code.
-- June 19, 2012 Change Added a scrollbar to the file panel in the Script Editor, June 18, 2012 Change The Script Editor's user interface has been updated.
-- May 27, 2015 Change Added the method getUserAgent() to the HtmlService global object to let scripts get the user-agent string for the current browser.
-
-### Custom Functions in Google Sheets \_|\_ Apps Script \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
-- Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Note: While Apps Script supports standard JSDoc for autocomplete in the editor, the Google Sheets UI has specific limitations regarding which tags and syntax are displayed in the spreadsheet's formula helper. / Multiplies the input value by 2. @param {number} input The value to multiply. @return {number} The input multiplied by 2. @customfunction / function DOUBLE ( input ) { return input 2 ; } Advanced This section covers advanced custom function topics.
-- This means that a custom function written in one spreadsheet can't be used in other spreadsheets unless you use one of the following methods: Click Extensions > Apps Script to open the script editor, then copy the script text from the original spreadsheet and paste it into the script editor of another spreadsheet.
-- Anyone who has access to the spreadsheet can copy the script. (Collaborators who have only view access can't open the script editor in the original spreadsheet.
-- To create a custom function, write JavaScript code in the script editor accessed through the Extensions menu in Google Sheets.
-
-### Admin SDK Directory Service \_|\_ Apps Script \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/apps-script/advanced/admin-sdk-directory](https://developers.google.com/apps-script/advanced/admin-sdk-directory)
-- Source ID: `site-docs-reference`
-- Final score: 146
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Members . insert ( member , groupEmail ); console . log ( "User %s added as a member of group %s." , userEmail , groupEmail , ); } catch ( err ) { // TODO (developer)- Handle exception from the API console . log ( "Failed with error %s" , err . message ); } } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Page Summary outlined flag The Admin SDK Directory service in Apps Script allows administrators of Google Workspace domains to manage devices, groups, users, and other entities.
-- Home Google Workspace Apps Script Reference Send feedback Admin SDK Directory Service Stay organized with collections Save and categorize content based on your preferences.
-- Like all advanced services in Apps Script, the Admin SDK Directory service uses the same objects, methods, and parameters as the public API.
+- Removed the "File -> New -> From Script Template" option in the script editor.
+- The following is a full list of the removed classes and methods: Charts service CategoryFilterBuilder Control DashboardPanel DashboardPanelBuilder Chart.getId() Chart.getType() Charts.newCategoryFilter() Charts.newDashboardPanel() Charts.newNumberRangeFilter() Charts.newStringFilter() NumberRangeFilterBuilder.build() NumberRangeFilterBuilder.setDataTable(tableBuilder) NumberRangeFilterBuilder.setDataTable(table) NumberRangeFilterBuilder.setFilterColumnIndex(columnIndex) NumberRangeFilterBuilder.setFilterColumnLabel(columnLabel) NumberRangeFilterBuilder.setLabel(label) NumberRangeFilterBuilder.setLabelSeparator(labelSeparator) NumberRangeFilterBuilder.setLabelStacking(orientation) StringFilterBuilder.build() StringFilterBuilder.setDataTable(tableBuilder) StringFilterBuilder.setDataTable(table) StringFilterBuilder.setFilterColumnIndex(columnIndex) StringFilterBuilder.setFilterColumnLabel(columnLabel) StringFilterBuilder.setLabel(label) StringFilterBuilder.setLabelSeparator(labelSeparator) StringFilterBuilder.setLabelStacking(orientation) Spreadsheet service EmbeddedChart.getId() EmbeddedChart.getType() EmbeddedChart.setId(id) Change The Slides service class RgbColor and the enumeration ColorType have been moved from the Slides service to the Base script service.
 

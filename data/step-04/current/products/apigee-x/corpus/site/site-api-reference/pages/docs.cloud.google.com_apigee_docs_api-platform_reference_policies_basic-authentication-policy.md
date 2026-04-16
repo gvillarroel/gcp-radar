@@ -1,0 +1,377 @@
+---
+title: "BasicAuthentication policy \_|\_ Apigee \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/basic-authentication-policy
+knowledge_key: corpus
+source_id: site-api-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.apps/list
+source_metadata:
+  url: https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/basic-authentication-policy
+  title: "BasicAuthentication policy \_|\_ Apigee \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Application development
+Apigee
+Reference
+Send feedback
+BasicAuthentication policy
+Stay organized with collections
+Save and categorize content based on your preferences.
+Extensible policy
+This page
+applies to Apigee and Apigee hybrid .
+View
+Apigee Edge documentation.
+The BasicAuthentication policy enables you to use lightweight
+Basic Authentication for
+last-mile security. The policy takes a username and password, Base64 encodes them, and writes the
+resulting value to a variable. The resulting value is in the form Basic
+Base64EncodedString . You typically write this value to an HTTP header, such as
+the Authorization header.
+The policy has two modes of operations:
+Encode : Base64 encodes a username and password stored in
+variables
+Decode : Decodes the username and password from a
+Base64 encoded string
+The username and password are commonly stored in the key/value store and then read from the
+key/value store at runtime. For details on using key/value store, see
+Key Value Map Operations policy .
+This policy does not enforce Basic Authentication on a request
+to an API proxy. Instead, use it to encode/decode credentials as Base64, typically when
+connecting to a backend server or using a service callout policy, such as the
+Service Callout policy , that requires Basic Authentication.
+Warning: Basic authentication does not provide confidentiality.
+Always send credentials over a TLS-enabled (HTTPS) connection to your backend service.
+This policy is an Extensible policy and use of this policy might have cost or
+utilization implications, depending on your Apigee license. For information on policy types
+and usage implications, see
+Policy types .
+Samples
+Outbound encoding
+<BasicAuthentication name="ApplyBasicAuthHeader">
+<DisplayName>ApplyBasicAuthHeader</DisplayName>
+<Operation>Encode</Operation>
+<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+<User ref="BasicAuth.credentials.username" />
+<Password ref="BasicAuth.credentials.password" />
+<AssignTo createNew="false">request.header.Authorization</AssignTo>
+</BasicAuthentication>
+In the sample policy configuration above, the username and password to be encoded are
+derived from the variables specified by the ref attributes on the
+<User> and <Password> elements. The variables must be
+set before this policy executes. Typically, the variables are populated by values that are
+read from a key/value map. See Key Value Map
+Operations policy .
+This configuration results in the HTTP header named Authorization , as specified by the
+<AssignTo> element,
+being added to the outbound request message sent to the backend server:
+Authorization: Basic TXlVc2VybmFtZTpNeVBhc3N3b3Jk
+The <User> and <Password> values are concatenated
+with a colon prior to Base64 encoding.
+Consider that you have a key/value map with the following entry:
+{
+"encrypted" : true,
+"entry" : [ {
+"name" : "username",
+"value" : "MyUsername
+}, {
+"name" : "password",
+"value" : "MyPassword
+} ],
+"name" : "BasicAuthCredentials"
+}
+Attach the following KeyValueMapOperations policies before the BasicAuthentication policy
+to be able to extract the values for your <User> and
+<Password> elements from the key/value store and populate them to the
+variables credentials.username and credentials.password .
+< KeyValueMapOperations name = "getCredentials" mapIdentifier = "BasicAuthCredentials" >
+< Scope>apiproxy < / Scope >
+< Get assignTo = "credentials.username" index = '1' >
+< Key >
+< Parameter>username < / Parameter >
+< / Key >
+< / Get >
+< Get assignTo = "credentials.password" index = '1' >
+< Key >
+< Parameter>password < / Parameter >
+< / Key >
+< / Get >
+< / KeyValueMapOperations >
+Inbound decoding
+<BasicAuthentication name="DecodeBaseAuthHeaders">
+<DisplayName>Decode Basic Authentication Header</DisplayName>
+<Operation>Decode</Operation>
+<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+<User ref="request.header.username" />
+<Password ref="request.header.password" />
+<Source>request.header.Authorization</Source>
+</BasicAuthentication>
+In this policy sample, the policy decodes the username and password from the
+Authorization HTTP header, as specified by the <Source> element. The Base64
+encoded string must be in the form Basic Base64EncodedString.
+The policy writes the decoded username to the request.header.username variable and
+the decoded password to the request.header.password variable.
+Element reference
+The element reference describes the elements and attributes of the BasicAuthentication
+policy.
+<BasicAuthentication async="false" continueOnError="false" enabled="true" name="Basic-Authentication-1">
+<DisplayName>Basic Authentication 1</DisplayName>
+<Operation>Encode</Operation>
+<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+<User ref="request.queryparam.username" />
+<Password ref="request.queryparam.password" />
+<AssignTo createNew="false">request.header.Authorization</AssignTo>
+<Source>request.header.Authorization</Source>
+</BasicAuthentication>
+<BasicAuthentication> attributes
+<BasicAuthentication async="false" continueOnError="false" enabled="true" name="Basic-Authentication-1">
+The following table describes attributes that are common to all policy parent elements:
+Attribute
+Description
+Default
+Presence
+name
+The internal name of the policy. The value of the name attribute can
+contain letters, numbers, spaces, hyphens, underscores, and periods. This value cannot
+exceed 255 characters.
+Optionally, use the <DisplayName> element to label the policy in
+the management UI proxy editor with a different, natural-language name.
+N/A
+Required
+continueOnError
+Set to false to return an error when a policy fails. This is expected
+behavior for most policies.
+Set to true to have flow execution continue even after a policy
+fails. See also:
+Fault rules are triggered ONLY in an error state (about continueOnError)
+Handling faults within the current flow
+false
+Optional
+enabled
+Set to true to enforce the policy.
+Set to false to turn off the policy. The policy will not be
+enforced even if it remains attached to a flow.
+true
+Optional
+async
+This attribute is deprecated.
+false
+Deprecated
+<DisplayName> element
+Use in addition to the name attribute to label the policy in the
+management UI proxy editor with a different, natural-language name.
+<DisplayName>Policy Display Name</DisplayName>
+Default
+N/A
+If you omit this element, the value of the policy's name attribute is
+used.
+Presence
+Optional
+Type
+String
+<Operation> element
+Determines whether the policy Base64 encodes or decodes credentials.
+<Operation>Encode</Operation>
+Default:
+N/A
+Presence:
+Required
+Type:
+String.
+Valid values include:
+Encode
+Decode
+<IgnoreUnresolvedVariables> element
+When set to true , the policy will not throw an error if a variable cannot be
+resolved. When used in the context of a BasicAuthentication policy, this setting is usually set
+to false because it is generally beneficial to throw an error if a username or
+password cannot be found in the variables specified.
+<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+Default:
+true
+Presence:
+Optional
+Type:
+Boolean
+<User> element
+For encoding, use the <User> element to specify the variable
+containing the username. Username and password values are concatenated with a colon prior to
+Base64 encoding.
+For decoding, specify the variable where the decoded username is written.
+<User ref="request.queryparam.username" />
+Default:
+N/A
+Presence:
+Required
+Type:
+N/A
+Attributes
+Attribute
+Description
+Default
+Presence
+ref
+The variable from which the policy dynamically reads the username (encode) or writes
+the username (decode).
+N/A
+Required
+<Password> element
+For encoding, use the <Password> element to specify the variable
+containing the password.
+For decoding, specify the variable where the decoded password is written.
+<Password ref="request.queryparam.password" />
+Default:
+N/A
+Presence:
+Required
+Type:
+N/A
+Attributes
+Attribute
+Description
+Default
+Presence
+ref
+The variable from which the policy dynamically reads the password (encode) or writes
+the password (decode).
+N/A
+Required
+<AssignTo> element
+Specifies the target variable to set with the encoded or decoded value generated by this
+policy.
+The following example indicates that the policy should set the Authorization
+header of the message to the generated value:
+<AssignTo createNew="false">request.header.Authorization</AssignTo>
+Default:
+N/A
+Presence:
+Required
+Type:
+String
+Attributes
+Attribute
+Description
+Default
+Presence
+createNew
+Determines whether the policy should overwrite the variable if the variable is already
+set.
+When "false", the assignment to the variable occurs only if the variable is
+currently unset (null).
+When "true", the assignment to the variable always occurs.
+You typically set this attribute to "false" (the default).
+false
+Optional
+<Source> element
+For decoding, the variable containing the Base64 encoded string, in the
+form Basic Base64EncodedString . For example,
+specify request.header.Authorization , corresponding to the Authorization header.
+<Source>request.header.Authorization</Source>
+Default:
+N/A
+Presence:
+Required for the Decode operation.
+Type:
+N/A
+Flow variables
+The following flow variable is set when the policy fails:
+BasicAuthentication.{policy_name}.failed (with a value of true)
+Note: If you see variables called BasicAuthentication.{policy_name}.fault.cause
+and BasicAuthentication.{policy_name}.fault.name ,
+they are not currently being used by Apigee.
+Error reference
+This section describes the fault codes and error messages that are returned and fault variables that are set by Apigee when this policy triggers an error. This information is important to know if you are developing fault rules to
+handle errors. To learn more, see What you need to know
+about policy errors and Handling
+faults .
+Runtime errors
+These errors can occur when the policy executes.
+Use API Monitoring to investigate fault
+codes and diagnose issues faster. See Set up a policy fault code alert
+for an example. See Fault code reference for a complete
+list of all fault codes that you can handle with API Monitoring.
+-->
+Fault code
+HTTP status
+Cause
+Fix
+steps.basicauthentication.InvalidBasicAuthenticationSource
+500
+On a decode when the incoming Base64 encoded string does not contain a valid value or
+the header is malformed (for example, does not start with Basic ).
+build
+steps.basicauthentication.UnresolvedVariable
+500
+The required source variables for the decode or encode are not present. This error can
+only occur if IgnoreUnresolvedVariables is false.
+build
+Deployment errors
+These errors can occur when you deploy a proxy containing this policy.
+Error name
+Occurs when
+Fix
+UserNameRequired
+The <User> element must be present for the named operation.
+build
+PasswordRequired
+The <Password> element must be present for the named operation.
+build
+AssignToRequired
+The <AssignTo> element must be present for the named operation.
+build
+SourceRequired
+The <Source> element must be present for the named operation.
+build
+Fault variables
+These variables are set when a runtime error occurs. For more information, see What you need to know
+about policy errors .
+Variables
+Where
+Example
+fault.name=" fault_name "
+fault_name is the name of the fault, as listed in the Runtime errors table above. The fault name is the last part of the fault code.
+fault.name Matches "UnresolvedVariable"
+BasicAuthentication. policy_name .failed
+policy_name is the user-specified name of the policy that threw the fault.
+BasicAuthentication.BA-Authenticate.failed = true
+Example error response
+Note: For error handling, the best practice is to trap the
+errorcode part of the error response. Do not rely on the text in the
+faultstring , because it could change.
+{
+"fault" :{
+"detail" :{
+"errorcode" : "steps.basicauthentication.UnresolvedVariable"
+},
+"faultstring" : "Unresolved variable : request.queryparam.password"
+}
+}
+Example fault rule
+<FaultRule name="Basic Authentication Faults">
+<Step>
+<Name>AM-UnresolvedVariable</Name>
+<Condition>(fault.name Matches "UnresolvedVariable") </Condition>
+</Step>
+<Step>
+<Name>AM-AuthFailedResponse</Name>
+<Condition>(fault.name = "InvalidBasicAuthenticationSource")</Condition>
+</Step>
+<Condition>(BasicAuthentication.BA-Authentication.failed = true) </Condition>
+</FaultRule>
+Schemas
+Sample: See our GitHub
+repository samples for the most recent schemas.
+Related topics
+Key Value Map
+Operations policy
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

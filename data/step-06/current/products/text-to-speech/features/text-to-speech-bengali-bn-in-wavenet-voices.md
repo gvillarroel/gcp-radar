@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:03.087Z"
+generated_at: "2026-04-15T11:58:39.688Z"
 product_name: "Text-to-Speech"
 product_slug: "text-to-speech"
 feature_name: "Text-to-Speech Bengali (bn-IN) WaveNet voices"
@@ -9,18 +9,18 @@ latest_feature_date: "2021-01-22"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
-  - "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts"
-  - "https://docs.cloud.google.com/text-to-speech/docs/basics"
+  - "https://docs.cloud.google.com/text-to-speech/docs/wavenet"
+  - "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types"
+  - "https://docs.cloud.google.com/text-to-speech/docs/voices"
 keywords:
   - "text"
-  - "to"
   - "speech"
   - "bengali"
   - "bn"
-  - "in"
   - "wavenet"
   - "voices"
+  - "added"
+  - "two"
 ---
 
 # Text-to-Speech Bengali (bn-IN) WaveNet voices
@@ -42,42 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1](https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1)
-- [https://docs.cloud.google.com/text-to-speech/docs/gemini-tts](https://docs.cloud.google.com/text-to-speech/docs/gemini-tts)
-- [https://docs.cloud.google.com/text-to-speech/docs/basics](https://docs.cloud.google.com/text-to-speech/docs/basics)
+- [https://docs.cloud.google.com/text-to-speech/docs/wavenet](https://docs.cloud.google.com/text-to-speech/docs/wavenet)
+- [https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types](https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types)
+- [https://docs.cloud.google.com/text-to-speech/docs/voices](https://docs.cloud.google.com/text-to-speech/docs/voices)
 
 ## Supporting Pages
 
-### Package google.cloud.texttospeech.v1 | Cloud Text-to-Speech | Google Cloud Documentation
+### "Supported voices and languages \_|\_ Cloud Text-to-Speech \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1](https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1)
+- URL: [https://docs.cloud.google.com/text-to-speech/docs/wavenet](https://docs.cloud.google.com/text-to-speech/docs/wavenet)
+- Source ID: `site-docs-reference-2`
+- Final score: 129
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Replace PROJECT ID with your project ID. curl -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "x-goog-user-project: PROJECT ID " \ -H "Content-Type: application/json; charset=utf-8" \ "https://texttospeech.googleapis.com/v1/voices" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { "voices": [ { "languageCodes": [ "es-ES" ], "name": "es-ES-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, { "languageCodes": [ "ja-JP" ], "name": "ja-JP-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 22050 }, { "languageCodes": [ "pt-BR" ], "name": "pt-BR-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.
+- TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . def list voices (): """Lists the available voices.""" from google.cloud import texttospeech client = texttospeech .
+
+### "Supported voices and languages \_|\_ Cloud Text-to-Speech \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/text-to-speech/docs/voices](https://docs.cloud.google.com/text-to-speech/docs/voices)
 - Source ID: `site-docs-reference`
-- Final score: 213
+- Final score: 121
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Package google.cloud.texttospeech.v1 Cloud Text-to-Speech Google Cloud Documentation Source URL: https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1 Configuration for a multi-speaker text-to-speech setup.
+- Replace PROJECT ID with your project ID. curl -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "x-goog-user-project: PROJECT ID " \ -H "Content-Type: application/json; charset=utf-8" \ "https://texttospeech.googleapis.com/v1/voices" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { "voices": [ { "languageCodes": [ "es-ES" ], "name": "es-ES-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, { "languageCodes": [ "ja-JP" ], "name": "ja-JP-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 22050 }, { "languageCodes": [ "pt-BR" ], "name": "pt-BR-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.
+- TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . def list voices (): """Lists the available voices.""" from google.cloud import texttospeech client = texttospeech .
 
-### Gemini-TTS | Cloud Text-to-Speech | Google Cloud Documentation
+### "Supported voices and languages \_|\_ Cloud Text-to-Speech \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/text-to-speech/docs/gemini-tts](https://docs.cloud.google.com/text-to-speech/docs/gemini-tts)
+- URL: [https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types](https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 121
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini-TTS Cloud Text-to-Speech Google Cloud Documentation Source URL: https://docs.cloud.google.com/text-to-speech/docs/gemini-tts Gemini-TTS is the latest evolution of our Cloud TTS technology that moves beyond natural-sounding speech and provides granular control over generated audio using text-based prompts.
-- Using Gemini-TTS, you can synthesize single or multi-speaker speech from short snippets to long-form narratives, precisely dictating style, accent, pace, tone, and even emotional expression, all steerable through natural-language prompts.
-
-### Cloud Text-to-Speech basics | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/text-to-speech/docs/basics](https://docs.cloud.google.com/text-to-speech/docs/basics)
-- Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Cloud Text-to-Speech basics Google Cloud Documentation Source URL: https://docs.cloud.google.com/text-to-speech/docs/basics Learn the basics of using Cloud Text-to-Speech to convert text or Speech Synthesis Markup Language (SSML) into natural-sounding synthetic human speech.
+- Replace PROJECT ID with your project ID. curl -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "x-goog-user-project: PROJECT ID " \ -H "Content-Type: application/json; charset=utf-8" \ "https://texttospeech.googleapis.com/v1/voices" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { "voices": [ { "languageCodes": [ "es-ES" ], "name": "es-ES-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, { "languageCodes": [ "ja-JP" ], "name": "ja-JP-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 22050 }, { "languageCodes": [ "pt-BR" ], "name": "pt-BR-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.
+- TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . def list voices (): """Lists the available voices.""" from google.cloud import texttospeech client = texttospeech .
 

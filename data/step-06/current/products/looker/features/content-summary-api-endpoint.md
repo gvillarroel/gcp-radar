@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.505Z"
+generated_at: "2026-04-15T13:43:38.505Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "content_summary API endpoint"
@@ -9,18 +9,18 @@ latest_feature_date: "2024-09-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/api-4-ga"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
+  - "https://docs.cloud.google.com/bigquery/docs/google-ads-transformation"
+  - "https://docs.cloud.google.com/looker/docs/reference/available-apis"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
 keywords:
   - "content"
   - "summary"
-  - "api"
   - "endpoint"
-  - "the"
-  - "is"
   - "generally"
   - "available"
+  - "searching"
+  - "recently"
+  - "viewed"
 ---
 
 # content_summary API endpoint
@@ -42,43 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/api-4-ga](https://docs.cloud.google.com/looker/docs/api-4-ga)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
+- [https://docs.cloud.google.com/bigquery/docs/google-ads-transformation](https://docs.cloud.google.com/bigquery/docs/google-ads-transformation)
+- [https://docs.cloud.google.com/looker/docs/reference/available-apis](https://docs.cloud.google.com/looker/docs/reference/available-apis)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect)
 
 ## Supporting Pages
 
-### Looker API 4.0 Generally Available | Google Cloud Documentation
+### Google Ads report transformation \_|\_ BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-4-ga](https://docs.cloud.google.com/looker/docs/api-4-ga)
+- URL: [https://docs.cloud.google.com/bigquery/docs/google-ads-transformation](https://docs.cloud.google.com/bigquery/docs/google-ads-transformation)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 103
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- AdWords reports (deprecated) BigQuery AdWords tables Google Ads tables Google Ads API resources (v22.0.0) BigQuery views Account Performance Report p Customer customer id p HourlyAccountConversionStats customer id p AccountConversionStats customer id p HourlyAccountStats customer id p AccountNonClickStats customer id p AccountBasicStats customer id p AccountStats customer id p ads Customer customer id p ads HourlyAccountConversionStats customer id p ads AccountConversionStats customer id p ads HourlyAccountStats customer id p ads AccountNonClickStats customer id p ads AccountBasicStats customer id p ads AccountStats customer id Customer Customer customer id HourlyAccountConversionStats customer id AccountConversionStats customer id HourlyAccountStats customer id AccountNonClickStats customer id AccountBasicStats customer id AccountStats customer id Ad Performance Report p AdBasicStats customer id p AdCrossDeviceStats customer id p AdConversionStats customer id p AdStats customer id p AdCrossDeviceConversionStats customer id p Ad customer id p ads AdBasicStats customer id p ads AdCrossDeviceStats customer id p ads AdConversionStats customer id p ads AdStats customer id p ads AdCrossDeviceConversionStats customer id p ads Ad customer id Ad Group Ad AdBasicStats customer id AdCrossDeviceStats customer id AdConversionStats customer id AdStats customer id AdCrossDeviceConversionStats customer id Ad customer id Adgroup Performance Report p AdGroupStats customer id p AdGroupBasicStats customer id p AdGroupCrossDeviceStats customer id p HourlyAdGroupConversionStats customer id p HourlyAdGroupStats customer id p AdGroupConversionStats customer id p AdGroupCrossDeviceConversionStats customer id p AdGroup customer id p ads AdGroupStats customer id p ads AdGroupBasicStats customer id p ads AdGroupCrossDeviceStats customer id p ads HourlyAdGroupConversionStats customer id p ads HourlyAdGroupStats customer id p ads AdGroupConversionStats customer id p ads AdGroupCrossDeviceConversionStats customer id p ads AdGroup customer id Ad Group AdGroupStats customer id AdGroupBasicStats customer id AdGroupCrossDeviceStats customer id HourlyAdGroupConversionStats customer id HourlyAdGroupStats customer id AdGroupConversionStats customer id AdGroupCrossDeviceConversionStats customer id AdGroup customer id Age Range Performance Report p AgeRange customer id p AgeRangeBasicStats customer id p AgeRangeStats customer id p AgeRangeConversionStats customer id p AgeRangeNonClickStats customer id p ads AgeRange customer id p ads AgeRangeBasicStats customer id p ads AgeRangeStats customer id p ads AgeRangeConversionStats customer id p ads AgeRangeNonClickStats customer id Age Range View AgeRange customer id AgeRangeBasicStats customer id AgeRangeStats customer id AgeRangeConversionStats customer id AgeRangeNonClickStats customer id Audience Performance Report p Audience customer id p AudienceConversionStats customer id p AudienceNonClickStats customer id p AudienceBasicStats customer id p AudienceStats customer id NULL NULL NULL NULL NULL Ad Group Audience View Campaign Audience View Audience customer id AudienceConversionStats customer id AudienceNonClickStats customer id AudienceBasicStats customer id AudienceStats customer id Bid Goal Performance Report p BidGoal customer id p BidGoalStats customer id p HourlyBidGoalStats customer id p BidGoalConversionStats customer id p ads BidGoal customer id p ads BidGoalStats customer id p ads HourlyBidGoalStats customer id p ads BidGoalConversionStats customer id Bidding Strategy BidGoal customer id BidGoalStats customer id HourlyBidGoalStats customer id BidGoalConversionStats customer id Budget Performance Report p Budget customer id p BudgetStats customer id p ads Budget customer id p ads BudgetStats customer id Campaign Budget Budget customer id BudgetStats customer id Campaign Location Target Report p CampaignLocationTargetStats customer id p LocationBasedCampaignCriterion customer id p ads CampaignLocationTargetStats customer id p ads LocationBasedCampaignCriterion customer id Location View CampaignLocationTargetStats customer id LocationBasedCampaignCriterion customer id Campaign Performance Report p Campaign customer id p CampaignBasicStats customer id p CampaignConversionStats customer id p CampaignCrossDeviceStats customer id p HourlyCampaignConversionStats customer id p CampaignStats customer id p HourlyCampaignStats customer id p CampaignCrossDeviceConversionStats customer id p CampaignCookieStats customer id p ads Campaign customer id p ads CampaignBasicStats customer id p ads CampaignConversionStats customer id p ads CampaignCrossDeviceStats customer id p ads HourlyCampaignConversionStats customer id p ads CampaignStats customer id p ads HourlyCampaignStats customer id p ads CampaignCrossDeviceConversionStats customer id p ads CampaignCookieStats customer id Campaign Campaign customer id CampaignBasicStats customer id CampaignConversionStats customer id CampaignCrossDeviceStats customer id HourlyCampaignConversionStats customer id CampaignStats customer id HourlyCampaignStats customer id CampaignCrossDeviceConversionStats customer id CampaignCookieStats customer id Click Performance Report p ClickStats customer id p ads ClickStats customer id Click View ClickStats customer id Criteria Performance Report p Criteria customer id p CriteriaBasicStats customer id p CriteriaStats customer id p CriteriaConversionStats customer id p CriteriaNonClickStats customer id NULL NULL NULL NULL NULL Criteria customer id CriteriaBasicStats customer id CriteriaStats customer id CriteriaConversionStats customer id CriteriaNonClickStats customer id Gender Performance Report p Gender customer id p GenderBasicStats customer id p GenderStats customer id p GenderConversionStats customer id p GenderNonClickStats customer id p ads Gender customer id p ads GenderBasicStats customer id p ads GenderStats customer id p ads GenderConversionStats customer id p ads GenderNonClickStats customer id Gender View Gender customer id GenderBasicStats customer id GenderStats customer id GenderConversionStats customer id GenderNonClickStats customer id Geo Performance Report p GeoConversionStats customer id p GeoStats customer id p ads GeoConversionStats customer id p ads GeoStats customer id Geographic View GeoConversionStats customer id GeoStats customer id Keywords Performance Report p Keyword customer id p KeywordBasicStats customer id p KeywordCrossDeviceStats customer id p KeywordStats customer id p KeywordCrossDeviceConversionStats customer id p KeywordConversionStats customer id p ads Keyword customer id p ads KeywordBasicStats customer id p ads KeywordCrossDeviceStats customer id p ads KeywordStats customer id p ads KeywordCrossDeviceConversionStats customer id p ads KeywordConversionStats customer id Keyword View Keyword customer id KeywordBasicStats customer id KeywordCrossDeviceStats customer id KeywordStats customer id KeywordCrossDeviceConversionStats customer id KeywordConversionStats customer id Paid Organic Query Report p PaidOrganicStats customer id p ads PaidOrganicStats customer id Paid Organic Search Term View PaidOrganicStats customer id Parental Status Performance Report p ParentalStatus customer id p ParentalStatusBasicStats customer id p ParentalStatusStats customer id p ParentalStatusConversionStats customer id p ParentalStatusNonClickStats customer id p ads ParentalStatus customer id p ads ParentalStatusBasicStats customer id p ads ParentalStatusStats customer id p ads ParentalStatusConversionStats customer id p ads ParentalStatusNonClickStats customer id Parental Status View ParentalStatus customer id ParentalStatusBasicStats customer id ParentalStatusStats customer id ParentalStatusConversionStats customer id ParentalStatusNonClickStats customer id Placement Performance Report p PlacementBasicStats customer id p PlacementNonClickStats customer id p PlacementStats customer id p Placement customer id p PlacementConversionStats customer id p ads PlacementBasicStats customer id p ads PlacementNonClickStats customer id p ads PlacementStats customer id p ads Placement customer id p ads PlacementConversionStats customer id Managed Placement View PlacementBasicStats customer id PlacementNonClickStats customer id PlacementStats customer id Placement customer id PlacementConversionStats customer id Search Query Performance Report p SearchQueryStats customer id p SearchQueryConversionStats customer id p ads SearchQueryStats customer id p ads SearchQueryConversionStats customer id Search Term View SearchQueryStats customer id SearchQueryConversionStats customer id Shopping Performance Report p ShoppingProductConversionStats customer id p ShoppingProductStats customer id p ads ShoppingProductConversionStats customer id p ads ShoppingProductStats customer id Shopping Performance View ShoppingProductConversionStats customer id ShoppingProductStats customer id Video Performance Report p VideoBasicStats customer id p VideoConversionStats customer id p VideoStats customer id p Video customer id p VideoNonClickStats customer id p ads VideoBasicStats customer id p ads VideoConversionStats customer id p ads VideoStats customer id p ads Video customer id p ads VideoNonClickStats customer id Video VideoBasicStats customer id VideoConversionStats customer id VideoStats customer id Video customer id VideoNonClickStats customer id AdGroupBidModifier Ad Group Bid Modifier AdGroupAdLabel Ad Group Ad Label CampaignLabel Campaign Label CampaignCriterion Campaign Criterion AdGroupLabel Ad Group Label AdGroupAudience AdGroupAudienceStats AdGroupAudienceConversionStats AdGroupAudienceNonClickStats AdGroupAudienceBasicStats Ad Group Audience View Assets (available if Pmax data is enabled) Assets AssetGroup (available if Pmax data is enabled) Asset Groups AssetGroupAsset (available if Pmax data is enabled) Asset Group Assets AssetGroupSignal (available if Pmax data is enabled) Asset Group Signal AssetGroupProductGroupStats (available if Pmax data is enabled) AssetGroupProductGroupStats CampaignAssetStats (available if Pmax data is enabled) CampaignAssetStats Column mapping for Google Ads reports The BigQuery tables created by a Google Ads transfer consist of the following columns (fields): Google Ads Table Name: AccountBasicStats Google Ads API Resource: customer Google Ads Field Name Description Adwords Mapped Field Name customer id The ID of the customer.
+- The average CPV is defined by the total cost of all ad views divided by the number of views. metrics clicks The number of clicks. metrics cost micros The sum of your cost-per-click (CPC) and cost-per-thousand impressions (CPM) costs during this period. metrics ctr The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions). metrics impressions Count of how often your ad has appeared on a search results page or website on the Google Network. metrics video trueview view rate The number of views your TrueView video ad receives divided by its number of impressions, including thumbnail impressions for TrueView in-display ads. metrics video trueview views The number of times your video ads were viewed. segments date Date to which metrics apply. yyyy-MM-dd format.
+- Below is a list of Match Tables in Google Ads transfer: Ad AdGroup AdGroupAudience AdGroupBidModifier AdGroupAdLabel AdGroupCriterion AdGroupCriterionLabel AdGroupLabel AgeRange Asset AssetGroup AssetGroupAsset AssetGroupListingGroupFilter AssetGroupSignal Audience BidGoal Budget Campaign CampaignAudience CampaignCriterion CampaignLabel Customer Gender Keyword LocationBasedCampaignCriterion ParentalStatus Placement Video Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For example: HEADLINE, YOUTUBE VIDEO. asset group asset performance label The performance of this asset group asset. asset group asset policy summary approval status The overall approval status, which is calculated based on the status of its individual policy topic entries. asset group asset policy summary policy topic entries The list of policy findings. asset group asset policy summary review status Where in the review process the resource is.
+
+### Looker's Available APIs \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/reference/available-apis](https://docs.cloud.google.com/looker/docs/reference/available-apis)
 - Source ID: `site-api-reference`
-- Final score: 98
+- Final score: 97
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Looker API 4.0 Generally Available Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-4-ga We are excited to announce that ... changes and promotes multiple endpoints from Beta to Stable.
-- Check out our API reference for detailed API 4.0 specs....
+- Home Documentation Data analytics Looker API Reference Send feedback Looker's Available APIs Stay organized with collections Save and categorize content based on your preferences.
+- It includes a diversity of endpoints, from simple running of queries to managing users, content, schedules, instance configurations, and more.
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Please note that the endpoint reference for this API is documented on GitHub and not the Google Cloud documentation pages.
 
-### Getting started with the Looker API | Google Cloud Documentation
+### "Admin settings - OpenID Connect authentication \_|\_ Looker \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 86
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect)
+- Source ID: `site-docs-reference`
+- Final score: 91
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
-
-### Using the API Explorer | Looker | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 82
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
-- Using the API Explorer Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-explorer There may also be Ruby and Java ... languages.
+- The following section is from an example of a discovery document: { "issuer": "https://accounts.google.com", "authorization endpoint": "https://accounts.google.com/o/oauth2/v2/auth", "token endpoint": "https://www.googleapis.com/oauth2/v4/token", "userinfo endpoint": "https://www.googleapis.com/oauth2/v3/userinfo", "revocation endpoint": "https://accounts.google.com/o/oauth2/revoke", "jwks uri": "https://www.googleapis.com/oauth2/v3/certs", "response types supported": [ "code", "token", "id token", "code token" "code id token", "token id token", "code token id token", "none" ], "subject types supported": [ "public" ], "id token signing alg values supported": [ "RS256" ], "scopes supported": [ "openid", "email", "profile" ], "token endpoint auth methods supported": [ "client secret post", "client secret basic" ], "claims supported": [ "aud", "email", "email verified", "exp", "family name", "given name", "iat", "iss", "locale", "name", "picture", "sub" ], Configuring OpenID Connect auth settings To configure OpenID Connect authentication for your Looker instance, select OpenID Connect from the Authentication section of the Admin panel.
+- The tab displays: Whether Looker was able to talk to the various endpoints and validate A trace of the authentication endpoint response The user info Looker gets from the user info endpoint Both decoded and raw versions of the ID token received You can use this test to verify the information received from the various endpoints is correct, and to troubleshoot any errors.
+- You can merge users from the following systems: Looker Email/Password (not available for Looker (Google Cloud core)) Google LDAP (not available for Looker (Google Cloud core)) SAML If you have multiple authentication systems in place, you can specify more than one system to merge by in this field.
+- Home Documentation Data analytics Looker Guides Send feedback Admin settings - OpenID Connect authentication Stay organized with collections Save and categorize content based on your preferences.
 

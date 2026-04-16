@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:26:39.351Z"
+generated_at: "2026-04-12T20:57:41.398Z"
 product_name: "App Engine standard environment Ruby"
 product_slug: "app-engine-standard-environment-ruby"
 feature_name: "App Engine region-based app URLs"
 feature_slug: "app-engine-region-based-app-urls"
 latest_feature_date: "2020-02-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
   - "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed"
+  - "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed"
+  - "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
 keywords:
+  - "app"
+  - "engine"
+  - "region"
+  - "based"
   - "urls"
   - "request"
-  - "based"
-  - "region"
   - "can"
-  - "engine"
   - "now"
-  - "app"
 ---
 
 # App Engine region-based app URLs
 
 Product: App Engine standard environment Ruby
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,55 @@ App Engine app request URLs can now include a region ID to improve request routi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
 - [https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed)
+- [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
+- [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled)
 
 ## Supporting Pages
-
-### "appengine-web.xml reference \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- Source ID: `site-docs-reference`
-- Final score: 244
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following example demonstrates how to designate all png files as static files (except those in the data/ directory and all of its subdirectories): < static - files > < include path = "/ .png" / > < exclude path = "/data/ .png" / > < / static - files > You can also set HTTP headers to use when responding to requests to these static resources. < static - files > < include path = "/my static-files" > < http - header name = "Access-Control-Allow-Origin" value = "http://example.org" / > < / include > < / static - files > Note: If the path string doesn't start with a slash, then the HTTP headers, if any, work on App Engine but do not work on the Development Server.
-- The appengine-web.xml file can define environment variables that are set when the application is running. <env-variables> <env-var name="DEFAULT ENCODING" value="UTF-8" /> </env-variables> To avoid conflicts with your local environment, the development server does not set environment variables based on this file, and requires that the local environment have these variables already set to matching values. export DEFAULT ENCODING = "UTF-8" dev appserver war When deployed to App Engine, the environment is created with these variables already set.
-- If for some reason you prefer that your app not use precompilation, you can turn it off by adding the following to your appengine-web.xml file: <precompilation-enabled>false</precompilation-enabled> <module> Note: Modules are now named Services and services are still declared in appengine-web.xml files as modules, for example: <module>service name</module> .
-- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
-
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- Source ID: `site-docs-root-2`
-- Final score: 222
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
-- You must choose a location, which cannot be changed later. gcloud app create Learn more : Generally, select the region nearest to your app's users, but also consider the location of the other Google Cloud products and services that your app uses.
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Build a Go app on App Engine Stay organized with collections Save and categorize content based on your preferences.
-- When your app is running on App Engine, the PORT environment variable is set for you, but when testing your app locally, you can set PORT to any preferred value.
 
 ### "How requests are routed \_|\_ App Engine flexible environment \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed)
 - Source ID: `site-docs-root`
-- Final score: 218
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 151
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Routing with URLs Once your app is running in App Engine, you can use the following URL to send HTTP requests to the app: https:// PROJECT ID .
 - Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How requests are routed Stay organized with collections Save and categorize content based on your preferences.
-- Example URLs Here are some examples of URLs for App Engine, showing both the appspot.com domain that App Engine assigns to your app and a custom domain, which you can set up for your app .
-- You can use the following tools to see the region ID of your app: Console In the Google Cloud console, you can view the URLs for your app's Instances , Services , and Versions .
+- Understand the Region ID in URLs The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app.
+- Routing with URLs Once your app is running in App Engine, you can use the following URL to send HTTP requests to the app: https:// PROJECT ID .
+- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
+
+### "How requests are routed \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
+- Source ID: `site-docs-root-2`
+- Final score: 151
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback How requests are routed Stay organized with collections Save and categorize content based on your preferences.
+- Understand the Region ID in URLs The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app.
+- Routing with URLs Once your app is running in App Engine, you can use the following URL to send HTTP requests to the app: https:// PROJECT ID .
+- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
+
+### "How requests are handled \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled)
+- Source ID: `site-docs-root-2`
+- Final score: 135
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback How requests are handled Stay organized with collections Save and categorize content based on your preferences.
+- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
+- Vary : To enable the cache to return different responses for a URL based on headers that are sent in the request, set one or more of the following values in the Vary response header: Accept , Accept-Encoding , Origin , or X-Origin Due to the potential for high cardinality, data won't be cached for other Vary values.
+- App Engine pending queue prioritization During periods of heavy traffic, App Engine might place requests in a pending queue while waiting for an available instance with the following prioritization: App Engine prioritizes other queued requests over pending queued requests from Task queue .
 

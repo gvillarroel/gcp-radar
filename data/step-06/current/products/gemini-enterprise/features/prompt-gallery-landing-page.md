@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:21.393Z"
+generated_at: "2026-04-12T12:16:13.710Z"
 product_name: "Gemini Enterprise"
 product_slug: "gemini-enterprise"
 feature_name: "Prompt gallery landing page"
 feature_slug: "prompt-gallery-landing-page"
 latest_feature_date: "2025-07-31"
 deprecation_date: "2025-07-31"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-prompt-chips"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/app-home-page"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/agent-gallery"
 keywords:
   - "prompt"
   - "gallery"
@@ -24,7 +27,7 @@ keywords:
 # Prompt gallery landing page
 
 Product: Gemini Enterprise
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ The prompt gallery landing page is replaced by prompts shown below the chat box;
 
 The prompt gallery landing page is replaced by prompts shown below the chat box; deprecated on 2025-07-31.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-prompt-chips](https://docs.cloud.google.com/gemini/enterprise/docs/configure-prompt-chips)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat](https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/app-home-page](https://docs.cloud.google.com/gemini/enterprise/docs/app-home-page)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/agent-gallery](https://docs.cloud.google.com/gemini/enterprise/docs/agent-gallery)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Configure prompt chips \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-prompt-chips](https://docs.cloud.google.com/gemini/enterprise/docs/configure-prompt-chips)
+- Source ID: `site-docs-root`
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The Prompt chips page displays all of the prompts created by Google and by you.
+- Configure your prompt chips To configure your prompt chips, do the following: In the Google Cloud console, go to the Gemini Enterprise page.
+- This page shows you how to configure your prompt chips for your web app using the Google Cloud console.
+- Create a prompt chip Click + New prompt , and the Create prompt page displays.
+
+### Chat with the assistant \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat](https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat)
+- Source ID: `site-docs-root-2`
+- Final score: 178
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can also provide your own context by uploading files for the assistant to analyze, or by mentioning specific people and documents in your prompt.
+- File formats and size limitations The following table lists the file formats and size limitations for files that you can upload to the assistant: File type Description Images Maximum image size: 30 MB Supported file extensions: .png , .jpeg , .svg Documents Maximum document size: .pdf : 100 MB .xlsx : 50 MB The .xlsx limit applies to the size of the file after it's decompressed. .csv : 7 MB .docx : 3 MB .pptx : 100 MB .txt : 7 MB .md : 2 MB .json : 1 MB .js : 1 MB .html : 0.5 MB .css : 1 MB .java : 1 MB .py : 2 MB Supported file extensions: .pdf , .xlsx , .csv , .docx , .pptx , .txt , .md , .json , .js , .html , .css , .java , .py Video Maximum document size: 200 MB Supported file extensions: .mp4 Audio Maximum document size: 200 MB Supported file extensions: .mp3 Add context with mentions You can mention an agent, person, or uploaded file in your chat with the assistant by typing @ in the chat box.
+- Provide diagnostic information for support If you encounter a problem with the assistant's responses, you can help Support to resolve the problem by providing diagnostic information for troubleshooting.
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Configure the app home page \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/app-home-page](https://docs.cloud.google.com/gemini/enterprise/docs/app-home-page)
+- Source ID: `site-docs-root`
+- Final score: 175
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation AI and ML Gemini Enterprise Send feedback Configure the app home page Stay organized with collections Save and categorize content based on your preferences.
+- Manage shortcuts Organize shortcuts by reordering and removing them as needed to keep the home page streamlined and up-to-date with the most relevant links.
+- Create shortcuts To create shortcuts, do the following: In the Google Cloud console, go to the Gemini Enterprise page.
+
+### "Browse agents with Agent Gallery \_|\_ Gemini Enterprise \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/agent-gallery](https://docs.cloud.google.com/gemini/enterprise/docs/agent-gallery)
+- Source ID: `site-docs-root`
+- Final score: 160
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following image shows the Agent Gallery view: Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The gallery displays all available agents, organized into three categories: Made by Google: ready-to-use agents that serve a specific function, such as Deep Research .
+- Note: In the Gemini Enterprise Frontline edition, access to agents added by your organization is limited to agents that have been provisioned for you by your administrator.
+- To access the gallery, go to your Gemini Enterprise app and click Agents in the app navigation menu.
 

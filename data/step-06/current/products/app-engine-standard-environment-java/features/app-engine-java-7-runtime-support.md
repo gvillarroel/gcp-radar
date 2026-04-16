@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:44:03.361Z"
+generated_at: "2026-04-12T20:53:45.879Z"
 product_name: "App Engine standard environment Java"
 product_slug: "app-engine-standard-environment-java"
 feature_name: "App Engine Java 7 runtime support"
 feature_slug: "app-engine-java-7-runtime-support"
 latest_feature_date: "2019-02-13"
 deprecation_date: "2019-01-25"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java/runtime-java8"
 keywords:
-  - "Java7 deprecation"
-  - "deployments using Java 7 blocked"
-  - "Java 7 apps auto-migrated to Java 8"
-  - "Java 7 end of support"
-  - "Java 7 runtime support removed"
-  - "Java 7 runtime shutdown"
-  - "App Engine Java 7 deprecated"
-  - "Java 7 runtime"
+  - "app"
+  - "engine"
+  - "java"
+  - "runtime"
+  - "building"
+  - "applications"
+  - "no"
+  - "longer"
 ---
 
 # App Engine Java 7 runtime support
 
 Product: App Engine standard environment Java
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,24 +38,52 @@ Building Java 7 applications is no longer supported in the App Engine standard e
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes)
+- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/java/runtime](https://docs.cloud.google.com/appengine/docs/standard/java/runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/java/runtime-java8](https://docs.cloud.google.com/appengine/docs/standard/java/runtime-java8)
 
 ## Supporting Pages
 
-### "App Engine standard environment for Java gen2 release notes \_|\_ Google\
+### "Java runtime environment \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime)
 - Source ID: `site-docs-reference`
-- Final score: 26
+- Final score: 81
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Stop generating a web.xml file for apps that use the Java 7 runtime and include a web.xml that specifies the servlet 3.1 schema.
-- The Java 8 runtime default is to use the native Java HTTP(S) transport, not the URL Fetch transport, as is the case for Java 7 runtime.
-- If your app is currently using the Java 7 runtime, it will be automatically migrated to the Java 8 runtime .
-- January 25, 2019 Deprecated App deployments on the Java 7 runtime are now blocked.
+- See the License for the specific language governing permissions and limitations under the License. / package com.example.appengine ; import com.sun.net.httpserver.HttpServer ; import java.io.IOException ; import java.io.OutputStream ; import java.net.InetSocketAddress ; public class Main { public static void main ( String [] args ) throws IOException { // Create an instance of HttpServer bound to port defined by the // PORT environment variable when present, otherwise on 8080. int port = Integer . parseInt ( System . getenv (). getOrDefault ( "PORT" , "8080" )); HttpServer server = HttpServer . create ( new InetSocketAddress ( port ), 0 ); // Set root URI path. server . createContext ( "/" , ( var t ) - > { byte [] response = "Hello World!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); // Create a second URI path. server . createContext ( "/foo" , ( var t ) - > { byte [] response = "Foo!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); server . start (); } } Compatibility with previous Java versions For differences between Java 8 and the latest supported Java version, see Migrate from Java 8 to the latest Java runtime .
+- The runtime's Open JDK environment App Engine runs Java apps in a container secured by gVisor on an up-to-date Ubuntu Linux distribution and its supported openjdk-17-jdk for Java 17 or openjdk-21-jdk for Java 21 runtime.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Java runtime environment Stay organized with collections Save and categorize content based on your preferences.
+- Using GraalVM executables The App Engine standard environment Java runtime supports GraalVM native image executables.
+
+### "Java runtime environment \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/runtime](https://docs.cloud.google.com/appengine/docs/standard/java/runtime)
+- Source ID: `site-docs-reference`
+- Final score: 81
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- See the License for the specific language governing permissions and limitations under the License. / package com.example.appengine ; import com.sun.net.httpserver.HttpServer ; import java.io.IOException ; import java.io.OutputStream ; import java.net.InetSocketAddress ; public class Main { public static void main ( String [] args ) throws IOException { // Create an instance of HttpServer bound to port defined by the // PORT environment variable when present, otherwise on 8080. int port = Integer . parseInt ( System . getenv (). getOrDefault ( "PORT" , "8080" )); HttpServer server = HttpServer . create ( new InetSocketAddress ( port ), 0 ); // Set root URI path. server . createContext ( "/" , ( var t ) - > { byte [] response = "Hello World!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); // Create a second URI path. server . createContext ( "/foo" , ( var t ) - > { byte [] response = "Foo!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); server . start (); } } Compatibility with previous Java versions For differences between Java 8 and the latest supported Java version, see Migrate from Java 8 to the latest Java runtime .
+- The runtime's Open JDK environment App Engine runs Java apps in a container secured by gVisor on an up-to-date Ubuntu Linux distribution and its supported openjdk-17-jdk for Java 17 or openjdk-21-jdk for Java 21 runtime.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Java runtime environment Stay organized with collections Save and categorize content based on your preferences.
+- Using GraalVM executables The App Engine standard environment Java runtime supports GraalVM native image executables.
+
+### "Java runtime environment \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/runtime-java8](https://docs.cloud.google.com/appengine/docs/standard/java/runtime-java8)
+- Source ID: `site-docs-reference`
+- Final score: 81
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- See the License for the specific language governing permissions and limitations under the License. / package com.example.appengine ; import com.sun.net.httpserver.HttpServer ; import java.io.IOException ; import java.io.OutputStream ; import java.net.InetSocketAddress ; public class Main { public static void main ( String [] args ) throws IOException { // Create an instance of HttpServer bound to port defined by the // PORT environment variable when present, otherwise on 8080. int port = Integer . parseInt ( System . getenv (). getOrDefault ( "PORT" , "8080" )); HttpServer server = HttpServer . create ( new InetSocketAddress ( port ), 0 ); // Set root URI path. server . createContext ( "/" , ( var t ) - > { byte [] response = "Hello World!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); // Create a second URI path. server . createContext ( "/foo" , ( var t ) - > { byte [] response = "Foo!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); server . start (); } } Compatibility with previous Java versions For differences between Java 8 and the latest supported Java version, see Migrate from Java 8 to the latest Java runtime .
+- The runtime's Open JDK environment App Engine runs Java apps in a container secured by gVisor on an up-to-date Ubuntu Linux distribution and its supported openjdk-17-jdk for Java 17 or openjdk-21-jdk for Java 21 runtime.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Java runtime environment Stay organized with collections Save and categorize content based on your preferences.
+- Using GraalVM executables The App Engine standard environment Java runtime supports GraalVM native image executables.
 

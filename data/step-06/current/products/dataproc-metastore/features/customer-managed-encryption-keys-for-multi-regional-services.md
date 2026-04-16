@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:49:01.294Z"
+generated_at: "2026-04-12T12:14:00.716Z"
 product_name: "Dataproc Metastore"
 product_slug: "dataproc-metastore"
 feature_name: "Customer-managed encryption keys for multi-regional services"
 feature_slug: "customer-managed-encryption-keys-for-multi-regional-services"
 latest_feature_date: "2025-04-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataproc-metastore/docs/cmek"
   - "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
-  - "https://docs.cloud.google.com/dataproc-metastore/docs/release-notes"
+  - "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
 keywords:
   - "customer"
   - "managed"
@@ -26,7 +27,7 @@ keywords:
 # Customer-managed encryption keys for multi-regional services
 
 Product: Dataproc Metastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ This capability lets multi-regional Dataproc Metastore services use customer-man
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataproc-metastore/docs/cmek](https://docs.cloud.google.com/dataproc-metastore/docs/cmek)
 - [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
-- [https://docs.cloud.google.com/dataproc-metastore/docs/release-notes](https://docs.cloud.google.com/dataproc-metastore/docs/release-notes)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/cmek](https://docs.cloud.google.com/dataproc-metastore/docs/cmek)
 - Source ID: `site-iam-reference`
-- Final score: 182
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 238
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Dataproc Metastore.
@@ -66,9 +68,8 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
 - Source ID: `site-docs-root`
-- Final score: 136
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 190
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - For more information, see Using customer-managed encryption keys .
@@ -76,16 +77,29 @@ Evidence snippets:
 - After you create your Dataproc Metastore service, you can import metadata and connect to any of the following services: A Managed Service for Apache Spark cluster .
 - Use your Dataproc Metastore service with other Google Cloud services, such as Managed Service for Apache Spark cluster.
 
-### Dataproc Metastore release notes \_|\_ Google Cloud Documentation
+### "Class DataprocMetastoreAsyncClient (1.22.0) \_|\_ Python client libraries\
 
-- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/release-notes](https://docs.cloud.google.com/dataproc-metastore/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 116
+- URL: [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 145
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- April 22, 2025 v1beta1 Feature Dataproc Metastore multi-regional services now support the use of customer-managed encryption keys (CMEKs) -- (in preview ).
-- March 31, 2025 v1 Feature Dataproc Metastore federation now supports multi-regional Dataproc Metastore services.
-- February 11, 2022 v1beta1 Fixed Performing import, export, backup, or restore on Spanner-backed services now returns a 4XX error since these operations aren't supported. v1beta1 Change Added additional mutual exclusion validation for Data Catalog and Spanner-backed services. v1 Fixed Fixed the issue causing request count metric spikes due to a bug in the logic of our metrics reporting pipeline.
-- June 30, 2024 v1 Change Dataproc Metastore managed migrations is generally available ( GA ) v1 Change Dataproc Metastore autoscaling is generally available ( GA ) May 27, 2024 v1 Feature Dataproc Metastore services can now enable deletion-protection to prevent the accidental removal of new or existing services.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 async def sample list services(): Create a client client = metastore v1.
+- Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create backup create backup ( request : typing .
+- The Dataproc Metastore API defines the following resource model: The service works with a collection of Google Cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ (a location must refer to a Google Cloud region ) Each location has a collection of services, named: /services/ Dataproc Metastore services are resources with names of the form: /projects/{project number}/locations/{location id}/services/{service id} .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 async def sample alter metadata resource location(): Create a client client = metastore v1.
+
+### "Class DataprocMetastoreClient (1.22.0) \_|\_ Python client libraries \_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient)
+- Source ID: `site-python-reference`
+- Final score: 145
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 def sample list services(): Create a client client = metastore v1.
+- Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create backup create backup ( request : typing .
+- The Dataproc Metastore API defines the following resource model: The service works with a collection of Google Cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ (a location must refer to a Google Cloud region ) Each location has a collection of services, named: /services/ Dataproc Metastore services are resources with names of the form: /projects/{project number}/locations/{location id}/services/{service id} .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 def sample alter metadata resource location(): Create a client client = metastore v1.
 

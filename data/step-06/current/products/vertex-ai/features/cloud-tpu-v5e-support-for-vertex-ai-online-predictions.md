@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:05.284Z"
+generated_at: "2026-04-15T12:02:17.092Z"
 product_name: "Vertex AI"
 product_slug: "vertex-ai"
 feature_name: "Cloud TPU v5e support for Vertex AI online predictions"
 feature_slug: "cloud-tpu-v5e-support-for-vertex-ai-online-predictions"
 latest_feature_date: "2023-12-14"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving"
+  - "https://docs.cloud.google.com/vertex-ai/docs/pipelines/batchprediction-component"
+  - "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
 keywords:
   - "tpu"
   - "v5e"
-  - "for"
   - "vertex"
   - "ai"
   - "online"
   - "predictions"
   - "prediction"
+  - "now"
 ---
 
 # Cloud TPU v5e support for Vertex AI online predictions
 
 Product: Vertex AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ Vertex AI Prediction now supports using Cloud TPU v5e chips to serve online pred
 
 Vertex AI Prediction now supports using Cloud TPU v5e chips to serve online prediction workloads.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving)
+- [https://docs.cloud.google.com/vertex-ai/docs/pipelines/batchprediction-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/batchprediction-component)
+- [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Hello custom training: Serve predictions from a custom image classification\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving)
+- Source ID: `site-docs-reference-2`
+- Final score: 113
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Activate Cloud Shell In the Cloud Shell session, run the following command: cd hello-custom-sample Create an endpoint To get online predictions from the ML model that you trained when following the previous page of this tutorial, create a Vertex AI endpoint .
+- Home Documentation AI and ML Vertex AI Send feedback Hello custom training: Serve predictions from a custom image classification model Stay organized with collections Save and categorize content based on your preferences.
+- Additionally, functions run using a service account with the Editor role by default , which includes the aiplatform.endpoints.predict permission necessary to get predictions from your Vertex AI endpoint.
+- Deploy a Cloud Run function You can get predictions from the Vertex AI endpoint that you just created by sending requests to the Vertex AI API's REST interface.
+
+### Batch prediction components \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/pipelines/batchprediction-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/batchprediction-component)
+- Source ID: `site-api-reference`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To make a batch prediction, specify an input source and an output location for Vertex AI to store predictions results.
+- For data types that support both batch and online predictions you can use batch predictions.
+- To learn more, run the "Learn how to use prebuilt Pipeline Components to train a custom model" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub The BatchPredictionJob resource lets you run an asynchronous prediction request.
+- Home Documentation AI and ML Vertex AI Reference Send feedback Batch prediction components Stay organized with collections Save and categorize content based on your preferences.
+
+### "Vertex Explainable AI notebook tutorials \_|\_ Vertex AI \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials)
+- Source ID: `site-docs-reference-2`
+- Final score: 96
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Tutorial steps Prepare the training script Submit a Ray job using the Ray Jobs API Download a trained image model from PyTorch Create a custom model handler Package model artifacts in a model archive file Register model in Vertex AI Model Registry Deploy model in Vertex AI Endpoint Make online predictions Colab Colab Enterprise GitHub Vertex AI Workbench Ray on Vertex AI overview Ray on Vertex AI cluster management .
+- Tutorial steps Package training application into a Python source distribution Configure and run training job in a prebuilt container Package model artifacts in a model archive file Upload model for deployment Deploy model using a prebuilt container for prediction Make online predictions Colab Colab Enterprise GitHub Vertex AI Workbench Ray on Vertex AI overview Get started with PyTorch on Ray on Vertex AI .
+- Tutorial steps Download a pretrained image model from PyTorch Create a custom model handler Package model artifacts in a model archive file Upload model for deployment Deploy model for prediction Make online predictions Make batch predictions Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Inference Train and deploy PyTorch models with prebuilt containers on Vertex AI .
+- Tutorial steps Download pretrained model from TensorFlow Hub Upload model for deployment Deploy model for online prediction Make online prediction with explanations Make batch predictions with explanations Colab Colab Enterprise GitHub Vertex AI Workbench Vertex Explainable AI Explaining text classification with Vertex Explainable AI .
 

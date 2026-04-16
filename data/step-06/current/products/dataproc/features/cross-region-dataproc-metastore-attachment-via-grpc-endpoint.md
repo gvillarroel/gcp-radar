@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.039Z"
+generated_at: "2026-04-14T00:23:22.604Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Cross-region Dataproc Metastore attachment via gRPC endpoint"
 feature_slug: "cross-region-dataproc-metastore-attachment-via-grpc-endpoint"
 latest_feature_date: "2022-11-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataproc-metastore/docs/grpc-endpoints"
   - "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
@@ -26,7 +26,7 @@ keywords:
 # Cross-region Dataproc Metastore attachment via gRPC endpoint
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Clusters in any region can attach to a Dataproc Metastore service that uses the 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,9 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/grpc-endpoints](https://docs.cloud.google.com/dataproc-metastore/docs/grpc-endpoints)
 - Source ID: `site-docs-root-2`
-- Final score: 190
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 184
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation Data analytics Dataproc Metastore Guides Send feedback Access gRPC endpoints for Dataproc Metastore Stay organized with collections Save and categorize content based on your preferences.
@@ -66,9 +66,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc](https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc)
 - Source ID: `site-docs-root-2`
-- Final score: 188
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Create a Dataproc Metastore service with the gRPC endpoint To create a Dataproc Metastore that uses the gRPC endpoint, run the following gcloud metastore services create command: gcloud gcloud metastore services create SERVICE \ --instance-size=medium \ --endpoint-protocol=grpc Replace: SERVICE : The name of your Dataproc Metastore service Create a Managed Service for Apache Spark cluster and connect to your service To create a Managed Service for Apache Spark configured with Kerberos, run the following gcloud dataproc clusters create command.
@@ -80,8 +80,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols](https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols)
 - Source ID: `site-docs-root-2`
-- Final score: 170
-- Re-rank relevance: N/A
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - When you create a Dataproc Metastore service, you must choose to use one of the following endpoint protocols: The Apache Thrift protocol The gRPC protocol This protocol defines how your Hive Metastore clients access metadata stored in your Dataproc Metastore service.

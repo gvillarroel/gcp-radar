@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:40.082Z"
+generated_at: "2026-04-14T05:03:12.352Z"
 product_name: "Apigee Integration"
 product_slug: "apigee-integration"
 feature_name: "Data Mapping array transformation functions"
 feature_slug: "data-mapping-array-transformation-functions"
 latest_feature_date: "2022-07-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+  - "https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task"
+  - "https://docs.cloud.google.com/application-integration/docs/reference/data-mapping-reference/filter-function-reference"
 keywords:
-  - "array-type variable functions"
-  - "array transformation function"
-  - "array map function"
-  - "Data Mapping FOR_EACH"
-  - "FOR_EACH function"
-  - "Data Mapping FILTER"
-  - "FOR_EACH"
-  - "FILTER function"
+  - "transformation"
+  - "array"
+  - "each"
+  - "functions"
+  - "including"
+  - "filter"
+  - "mapping"
+  - "adds"
 ---
 
 # Data Mapping array transformation functions
 
 Product: Apigee Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,27 +34,58 @@ Adds new array transformation functions, including FILTER and FOR_EACH, for proc
 
 ## Extended Definition
 
-Available evidence shows Apigee integration supports a **For Each**-style list-processing step that iterates through an array/list field (for example, `apiMetadataList.apiMetadata`) and executes a sub-integration for each element. This demonstrates per-element array processing behavior consistent with a FOR_EACH-style transformation pattern, but the provided excerpt does not explicitly document a Data Mapping `FOR_EACH` or `FILTER` function implementation.
+Adds new array transformation functions, including FILTER and FOR_EACH, for processing array-type variables in Data Mapping.
 
 ## Evidence Summary
 
-The cited Google Cloud Apigee API Hub page documents list iteration in a tutorial (for-each loop task), but it only partially overlaps with the claimed Data Mapping array transformation functions and provides no explicit mention of `FILTER`.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data](https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data)
+- [https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference](https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference)
+- [https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task](https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task)
+- [https://docs.cloud.google.com/application-integration/docs/reference/data-mapping-reference/filter-function-reference](https://docs.cloud.google.com/application-integration/docs/reference/data-mapping-reference/filter-function-reference)
 
 ## Supporting Pages
 
-### "Enrich API data with custom curation in API hub \_|\_ Apigee \_|\_ Google\
+### Data Mapping functions | Application Integration | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data](https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data)
-- Source ID: `site-docs-root`
-- Final score: 20
+- URL: [https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference](https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 341
 - Re-rank relevance: WEAK
-- Re-rank rationale: The page appears focused on end-to-end curation and enrichment setup rather than Data Mapping internals or new array transformation function capabilities like FILTER/FOR_EACH.
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- It also collates the response of each run in curatedAPIMetadataList , where each element of the array has the response from one particular run. /application-integration/docs/configure-private-trigger">Private Trigger (Enrich each API with spec) Trigger ID: private trigger/test-curate-1 Private 1 Invokes the sub-integration for each element in apiMetaData .
-- For Each Loop Task (For Each API) List to iterate: apiData.apiMetadataList.apiMetadata Sub-integration details: Integration name: enrich-with-spec-yaml Trigger ID: private trigger/test-curate-1 Private 1 Iterates over the apiMetadata list and calls the sub-integration for each API resource.
+- Data Mapping functions | Application Integration | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Application Integration Start free Overview Guides Reference Samples Resources Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Quotas and limits reference Quotas and limits Application Integration APIs All APIs and references Authenticate to Application Integration Application Integration REST API REST reference (v1) REST Resources projects.locations Overview generateOpenApiSpec projects.locations.authConfigs Overview create delete get list patch projects.locations.certificates Overview create delete get list patch projects.locations.clients Overview changeConfig provision provisionClientPostProcessor switchVariableMasking toggleHttp projects.locations.integrations Overview delete execute list schedule search test projects.locations.integrations.executions Overview cancel list replay projects.locations.integrations.executions.suspensions Overview lift list resolve projects.locations.integrations.versions Overview create delete download downloadJsonPackage get list patch publish unpublish upload projects.locations.integrations.versions.testCases Overview create delete download execute executeTest get list patch takeoverEditLock upload projects.locations.sfdcInstances Overview create delete get list patch projects.locations.sfdcInstances.sfdcChannels Overview create delete get list patch projects.locations.templates Overview create delete download get import list patch search share unshare upload use Types CloudKmsConfig CloudLoggingDetails Coordinate DatabasePersistencePolicy DownloadIntegrationVersionResponse EventParameter ExecuteIntegrationsResponse ExecuteTestCaseResponse FileFormat IntegrationDetails IntegrationFile IntegrationParameter IntegrationParameterDataType IntegrationState LiftSuspensionResponse ListAuthConfigsResponse ListCertificatesResponse ListExecutionsResponse ListIntegrationVersionsResponse ListIntegrationsResponse ListSfdcChannelsResponse ListSfdcInstancesResponse ListSuspensionsResponse NextTask NextTasksExecutionPolicy PublishIntegrationVersionResponse ResolveSuspensionResponse ScheduleIntegrationsResponse Suspension TaskConfig TestIntegrationsResponse TriggerConfig UploadIntegrationVersionResponse ValueType REST reference (v2) REST Resources projects.locations.integrations Overview execute schedule projects.locations.integrations.executions Overview list troubleshoot projects.locations.integrations.executions.taskExecutions Overview get Types HttpBody Data mapping functions Data transformer functions Introduction Array functions Aggregate functions Hash functions JSON functions Mathematical functions String functions Timestamp functions Utility functions XML functions Miscellaneous functions Data mapping functions Introduction Mapping functions ADD AND APPEND APPEND_ALL APPEND_ELEMENT AVG CEIL CONCAT CONTAINS DECODE_BASE64_STRING DIVIDE EQUALS EQUALS_IGNORE_CASE EPOCH_TO_HUMAN_READABLE_TIME EXPONENT FILTER FLATTEN FLOOR FOR_EACH GET GET_ELEMENT GET_PROPERTY GREATER_THAN GREATER_THAN_EQUAL_TO LENGTH LESS_THAN_EQUAL_TO LESS_THAN MAX MERGE MIN MOD MULTIPLY NAND NOR NOT OR REMOVE REMOVE_AT REMOVE_PROPERTY REPLACE_ALL RESOLVE_TEMPLATE ROUND SET SET_PROPERTY SIZE SPLIT SUBSTRING SUBTRACT SUM TO_BASE_64 TO_BOOLEAN_ARRAY TO_BOOLEAN TO_DOUBLE_ARRAY TO_DOUBLE TO_INT_ARRAY TO_INT TO_JSON TO_LOWERCASE TO_SET TO_STRING_ARRAY TO_STRING TO_UPPERCASE XNOR XOR Base functions GENERATE_UUID GET_EXECUTION_ID GET_INTEGRATION_NAME GET_INTEGRATION_REGION GET_PROJECT_ID INT_LIST NOW_IN_MILLIS AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Application Integration Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Data Mapping functions The Data Mapping task provides various predefined mapping functions to transform and standardize the mapping data in your integration.
+- FOR_EACH Applies one or more transformation functions for each element in an array.
+- A mapping function can have one or more input parameters, wherein each parameter can further hold a literal value, a variable, or a base function with mapping functions applied.
+
+### Data Mapping task \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task](https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 219
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Data type Supported mapping functions Boolean AND , EQUALS , NAND , NOR , NOT , OR , TO JSON , TO STRING , XNOR , XOR Boolean array APPEND , APPEND ALL , CONTAINS , FILTER , FOR EACH , GET , REMOVE , REMOVE AT , SET , SIZE , TO JSON , TO SET Double ADD , DIVIDE , CEIL , EQUALS , EXPONENT , GREATER THAN , GREATER THAN EQUAL TO , FLOOR , LESS THAN , LESS THAN EQUAL TO , MOD , MULTIPLY , ROUND , SUBTRACT , TO JSON , TO STRING Double array APPEND , APPEND ALL , AVG , CONTAINS , FILTER , FOR EACH , GET , MAX , MIN , REMOVE , REMOVE AT , SET , SIZE , SUM , TO JSON , TO SET Integer ADD , DIVIDE , EPOCH TO HUMAN READABLE TIME , EQUALS , EXPONENT , GREATER THAN , GREATER THAN EQUAL TO , LESS THAN , LESS THAN EQUAL TO , MOD , MULTIPLY , SUBTRACT , TO DOUBLE , TO JSON , TO STRING Integer array APPEND , APPEND ALL , AVG , CONTAINS , FILTER , FOR EACH , GET , MAX , MIN , REMOVE , REMOVE AT , SET , SIZE , SUM , TO JSON , TO SET JSON APPEND ELEMENT , FLATTEN , FILTER , FOR EACH , GET ELEMENT , GET PROPERTY , MERGE , REMOVE PROPERTY , RESOLVE TEMPLATE , SET PROPERTY, SIZE , TO BOOLEAN , TO BOOLEAN ARRAY , TO DOUBLE , TO DOUBLE ARRAY , TO INT , TO INT ARRAY , TO STRING , TO STRING ARRAY String CONCAT , CONTAINS , DECODE BASE64 STRING , EQUALS , EQUALS IGNORE CASE , LENGTH , REPLACE ALL , RESOLVE TEMPLATE , SPLIT , SUBSTRING , TO BASE 64 , TO BOOLEAN , TO DOUBLE , TO INT , TO JSON , TO LOWERCASE , TO UPPERCASE String array APPEND , APPEND ALL , CONTAINS , FILTER , FOR EACH , GET , REMOVE , REMOVE AT , SET , SIZE , TO JSON , TO SET For more information about each of the data mapping functions, see Data Mapping Functions Reference .
+- The completed data mapping is available to view from the Data Mapping task configuration pane, as shown in the following image: Supported data types and mapping functions Application Integration supports the following data types for variables in the Data Mapping task: String and String array Integer and Integer array Double and Double array Boolean and Boolean array JSON The following table lists the data mapping functions available for each of the data types.
+- Supported base functions The following table lists the data mapping base functions available: Data type Supported base functions Integer NOW IN MILLIS Integer array INT LIST String GENERATE UUID , GET EXECUTION ID , GET INTEGRATION NAME , GET INTEGRATION REGION , GET PROJECT ID For more information about each of the data mapping base functions, see Data Mapping Functions Reference .
+- The following examples illustrate the various types of property declarations and show how to use the data mapping functions to get the desired type: Example 1 { "type" : "object" , "properties" : { "dbIntegers" : { "type" : "array" , "items" : { "type" : [ "integer" , "null" ] } }, "dbBooleans" : { "type" : [ "array" ], "items" : { "type" : "boolean" } } } } Application Integration interprets dbIntegers as a JSON type, and dbBooleans as a BOOLEAN ARRAY type.
+
+### FILTER function \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/reference/data-mapping-reference/filter-function-reference](https://docs.cloud.google.com/application-integration/docs/reference/data-mapping-reference/filter-function-reference)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 145
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- FILTER( obj n -> Variable or Value) Where obj n indicates the current array element for which you want to apply the transformation functions.
+- A filter condition includes one or more transformation functions applied on the current array iteration element.
+- Sample data : $var1$ = { "products": [ { "PA": "Integrations", "users": [ { "name": "Ariel", "role": [ "editor", "approver" ] }, { "name": "Dana", "role": [ "admin", "deployer" ] }, { "name": "Lee", "role": [ "viewer" ] } ] }, { "PA": "Apigee", "users": [ { "name": "Mahan", "role": [ "editor", "admin", "deployer" ] }, { "name": "Quinn", "role": [ "invoker" ] } ] }, { "PA": "Connectors", "users": [ { "name": "Kiran", "role": [ "invoker", "admin", "deployer" ] }, { "name": "Sasha", "role": [ "admin" ] } ] } ] } Usage : var1 .products .FOR EACH( obj1 -> obj1 .SET PROPERTY( obj1 .GET PROPERTY("users") .FILTER( obj2 -> obj2 .GET PROPERTY("role") .TO STRING() .CONTAINS("admin") ) , "users" ) ) Filter the elements which contain admin in users of var1 .
+- Output : [{ "city": "Aberdeen", "state": "Maryland" }, { "city": "Aberdeen", "state": "Washington" }, { "city": "Aberdeen", "state": "Mississippi" }] Example 3: Filter a nested JSON array.
 

@@ -1,40 +1,40 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:29:46.768Z"
+generated_at: "2026-04-15T11:53:34.659Z"
 product_name: "Apps Script"
 product_slug: "apps-script"
-feature_name: "ScriptDB"
+feature_name: "ScriptDb"
 feature_slug: "scriptdb"
-latest_feature_date: "2014-05-15"
+latest_feature_date: "2012-06-27"
 deprecation_date: "2014-11-20"
 coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/apps-script/releases"
-  - "https://developers.google.com/apps-script/guides/sheets/functions"
-  - "https://developers.google.com/apps-script/samples/custom-functions/fact-check"
+  - "https://developers.google.com/apps-script/guides/v8-runtime"
+  - "https://developers.google.com/apps-script/guides/content"
 keywords:
-  - "turned"
   - "scriptdb"
-  - "scheduled"
-  - "deprecated"
-  - "be"
   - "was"
-  - "and"
-  - "to"
+  - "apps"
+  - "script"
+  - "storage"
+  - "scripts"
+  - "launched"
+  - "javascript"
 ---
 
-# ScriptDB
+# ScriptDb
 
 Product: Apps Script
 Coverage: MEDIUM
 
 ## Step 02 Summary
 
-ScriptDB was deprecated and scheduled to be turned off on November 20, 2014; deprecated on 2014-11-20.
+ScriptDB was an Apps Script data storage service for scripts; ScriptDb was launched as a JavaScript object database for Apps Script; deprecated on 2014-11-20.
 
 ## Extended Definition
 
-ScriptDB was deprecated and scheduled to be turned off on November 20, 2014; deprecated on 2014-11-20.
+ScriptDB was an Apps Script data storage service for scripts; ScriptDb was launched as a JavaScript object database for Apps Script; deprecated on 2014-11-20.
 
 ## Evidence Summary
 
@@ -43,8 +43,8 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 ## Source Links
 
 - [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
-- [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
-- [https://developers.google.com/apps-script/samples/custom-functions/fact-check](https://developers.google.com/apps-script/samples/custom-functions/fact-check)
+- [https://developers.google.com/apps-script/guides/v8-runtime](https://developers.google.com/apps-script/guides/v8-runtime)
+- [https://developers.google.com/apps-script/guides/content](https://developers.google.com/apps-script/guides/content)
 
 ## Supporting Pages
 
@@ -52,38 +52,39 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
 - Source ID: `site-docs-root`
-- Final score: 164
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature The Spreadsheet service has been extended with the following new classes and methods to support text styles and Rich Text cell formatting: RichTextValue RichTextValueBuilder TextStyle TextStyleBuilder Range.getRichTextValue() Range.getRichTextValues() Range.getTextStyle() Range.getTextStyles() Range.setRichTextValue(value) Range.setRichTextValues(values) Range.setTextStyle(style) Range.setTextStyles(styles) SpreadsheetApp.newRichTextValue() SpreadsheetApp.newTextStyle() The Data Studio service has been extended with the following new classes and methods that define and support authentication types for community connectors: GetAuthTypeResponse AuthType CommunityConnector,newAuthTypeResponse() January 04, 2019 Feature The Slides service has been extended with the following new classes and methods that support slide linking and text box insertion: SlideLinkingMode [ Layout.insertTextBox(text) }(https://developers.google.com/apps-script/reference/slides/layout#inserttextboxtext) Layout.insertTextBox(text, left, top, width, height) Master.insertTextBox(text) Master.insertTextBox(text, left, top, width, height) Page.insertTextBox(text) Page.insertTextBox(text, left, top, width, height) Presentation.appendSlide(slide, linkingMode) Presentation.insertSlide(insertionIndex, slide, linkingMode) Slide.getSlideLinkingMode() Slide.getSourcePresentationId() Slide.getSourceSlideObjectId() Slide.insertTextBox(text) Slide.insertTextBox(text, left, top, width, height) Slide.refreshSlide() Slide.unlink() The Data Studio service has been extended with the following new classes and methods that error displays: DebugError UserError CommunityConnector.newDebugError() CommunityConnector.newUserError() December 13, 2018 Deprecated The Fusion Tables advanced service has been deprecated and will shutdown fully on December 3rd, 2019.
-- February 26, 2019 Feature The Spreadsheet service has been extended with the following new classes and methods to support BigQuery data connectors in Sheets : BigQueryDataSourceSpec BigQueryDataSourceSpecBuilder DataExecutionErrorCode DataExecutionState DataExecutionStatus DataSourceParameterType DataSourceParameter DataSourceSpecBuilder DataSourceSpec DataSourceTable DataSourceType DataSource Range.getDataSourceTables() Sheet.getDataSourceTables() SpreadsheetApp.enableAllDataSourcesExecution() SpreadsheetApp.enableBigQueryExecution() SpreadsheetApp.newDataSourceSpec() Spreadsheet.getDataSourceTables() Spreadsheet.insertSheetWithDataSourceTable(spec) The Data Studio service has been extended with the following new methods involving reaggregation settings: Field.getIsReaggregatable() Field.setIsReaggregatable(isReaggregatable) January 22, 2019 Deprecated The deprecated UiApp service will be officially shutdown on July 15th, 2019.
-- In addition, the following ChartTypes have been added: TIMELINE BUBBLE CANDLESTICK GAUGE GEO RADAR ORG SPARKLINE STEPPED AREA TREEMAP WATERFALL March 26, 2018 Feature The Spreadsheet service has been extended with the following new methods: SpreadsheetApp.setActiveSheet(sheet, restoreSelection) Spreadsheet.setActiveSheet(sheet, restoreSelection) Deprecated The deprecated enable(restriction) method of the ScriptApp.Service class has been sunset.
-- August 20, 2018 Feature The Utilities service has been extended with the following methods and classes: Utilities.computeRsaSha1Signature(value, key) Utilities.computeRsaSha1Signature(value, key, charset) Utilities.computeRsaSignature(algorithm, value, key) Utilities.computeRsaSignature(algorithm, value, key, charset) RsaAlgorithm June 19, 2018 Deprecated The quota on total data received by UrlFetch per day per user has been removed.
+- Launched ScriptDb , a JavaScript object database for Apps Script.
+- Launched the Html Service , which you can use to create web apps using HTML, CSS, and JavaScript.
+- We've also updated the Apps Script code samples to use the Advanced Chat Service in the following Chat API developer guides: Authenticate as an app Authenticate as a user Try it - Respond to Incidents September 26, 2023 Change The email address that sends notifications about errors in triggers has been updated from apps-scripts-notifications@google.com to noreply-apps-scripts-notifications@google.com .
+- November 18, 2013 Deprecated The Apps Script methods Utilities.jsonParse() and Utilities.jsonStringify() have been deprecated in favor of the now-standard JavaScript methods JSON.parse() and JSON.stringify() , which now appear in autocomplete.
 
-### Custom Functions in Google Sheets \_|\_ Apps Script \_|\_ Google for Developers
+### V8 runtime overview \_|\_ Apps Script \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
+- URL: [https://developers.google.com/apps-script/guides/v8-runtime](https://developers.google.com/apps-script/guides/v8-runtime)
+- Source ID: `site-docs-root-3`
+- Final score: 60
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- While Rhino provided a convenient way for Apps Script to execute developer scripts, it also tied Apps Script to a specific JavaScript version ( ES5 ).
+- Apps Script developers can't use more modern JavaScript syntax and features in scripts using the Rhino runtime.
+- Unavailable APIs The following standard JavaScript APIs are NOT available in the Apps Script V8 runtime: Timers : setTimeout , setInterval , clearTimeout , clearInterval Streams : ReadableStream , WritableStream , TextEncoder , TextDecoder Web APIs : fetch , FormData , File , Blob , URL , URLSearchParams , DOMException , atob , btoa Crypto : crypto , SubtleCrypto Global Objects : window , navigator , performance , process (Node.js) Use the following Apps Script APIs as alternatives: Timers : Use Utilities.sleep for synchronous pauses.
+- As with template literals, this syntax lets you avoid string concatenations and simplify string definitions. // Rhino runtime var multiline = "This string is sort of \n " + "like a multi-line string, \n " + "but it's not really one." ; // V8 runtime const multiline = This on the other hand , actually is a multi - line string , thanks to JavaScript ES6 ; V8 runtime limitations The Apps Script V8 runtime isn't a standard Node.js or browser environment.
+
+### Content Service \_|\_ Apps Script \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/apps-script/guides/content](https://developers.google.com/apps-script/guides/content)
 - Source ID: `site-docs-root`
-- Final score: 92
-- Re-rank relevance: N/A
+- Final score: 58
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- If each cell required its own function call, the operation would take considerably more time, since the Apps Script server would have to download and parse the XML feed each time. / Show the title and date for the first page of posts on the Developer blog. @return Two columns of data representing posts on the Developer blog. @customfunction / function getBlogPosts () { var array = []; var url = 'https://gsuite-developers.googleblog.com/atom.xml' ; var xml = UrlFetchApp . fetch ( url ). getContentText (); var document = XmlService . parse ( xml ); var root = document . getRootElement (); var atom = XmlService . getNamespace ( 'http://www.w3.org/2005/Atom' ); var entries = document . getRootElement (). getChildren ( 'entry' , atom ); for ( var i = 0 ; i < entries . length ; i ++ ) { var title = entries [ i ]. getChild ( 'title' , atom ). getText (); var date = entries [ i ]. getChild ( 'published' , atom ). getValue (); array . push ([ title , date ]); } return array ; } These techniques can be applied to nearly any custom function that is used repeatedly throughout a spreadsheet, although the implementation details vary depending on the function's behavior.
-- Note: While Apps Script supports standard JSDoc for autocomplete in the editor, the Google Sheets UI has specific limitations regarding which tags and syntax are displayed in the spreadsheet's formula helper. / Multiplies the input value by 2. @param {number} input The value to multiply. @return {number} The input multiplied by 2. @customfunction / function DOUBLE ( input ) { return input 2 ; } Advanced This section covers advanced custom function topics.
-- Here's a custom function, named DOUBLE , which multiplies an input value by 2: / Multiplies an input value by 2. @param {number} input The number to double. @return The input multiplied by 2. @customfunction / function DOUBLE ( input ) { return input 2 ; } If you don't know how to write JavaScript and don't have time to learn, check the Google Workspace add-on store to see whether someone else has already built the custom function you need.
-- This means that a custom function written in one spreadsheet can't be used in other spreadsheets unless you use one of the following methods: Click Extensions > Apps Script to open the script editor, then copy the script text from the original spreadsheet and paste it into the script editor of another spreadsheet.
-
-### "Fact-check statements with an ADK AI agent and Gemini model \_|\_ Apps Script\
-
-- URL: [https://developers.google.com/apps-script/samples/custom-functions/fact-check](https://developers.google.com/apps-script/samples/custom-functions/fact-check)
-- Source ID: `site-docs-root`
-- Final score: 90
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Install and deploy ADK agent from virtual environment. python3 -m venv myenv source myenv/bin/activate poetry install --with deployment python3 deployment/deploy.py --create Retrieve the agent ID, you'll need it later to configure the custom function. python3 deployment/deploy.py --list Review the sample code Optionally, before creating the new spreadsheet, take a moment to review and familiarize yourself with the sample code hosted on GitHub.
-- Coding level : Advanced Duration : 30 minutes Project type : Custom function Overview A fact-check custom function for Google Sheets to be used as a bound Google Apps Script project powered by a Vertex AI agent and Gemini model.
-- To learn more about secure service account implementations and best practices, see Choose when to use service accounts .
-- Download this GitHub repository: Download In your preferred local development environment, extract the downloaded archive file and open the adk-samples/python/agents/llm-auditor directory. unzip adk-samples-main.zip cd adk-samples-main/python/agents/llm-auditor Create a new Cloud Storage bucket dedicated to the ADK agent. gcloud storage buckets create gs:// CLOUD STORAGE BUCKET NAME --project = PROJECT ID --location = PROJECT LOCATION Replace the following: CLOUD STORAGE BUCKET NAME with a unique bucket name you want to use.
+- Page Summary outlined flag Apps Script's Content service allows scripts to act as "services" by responding to GET and POST requests with raw textual content of various MIME types instead of a user interface.
+- The start and end parameters specify a time range in the standard Unix epoch. curl -L URL OF YOUR SCRIPT?start=1325437200&end=1325439000 The service returns JSON that reports if the calendar is open in that range. { "available" : true } Serve JSONP in web pages With a slight change, your JSON service can become JSONP to be called from JavaScript in a browser. function doGet ( request ) { var events = CalendarApp . getEvents ( new Date ( Number ( request . parameters . start ) 1000 ), new Date ( Number ( request . parameters . end ) 1000 )); var result = { available : events . length == 0 }; return ContentService . createTextOutput ( request . parameters . prefix + '(' + JSON . stringify ( result ) + ')' ) . setMimeType ( ContentService .
+- This is the name of the function in your client-side JavaScript that is called with the value returned by the service. <script src="URL OF YOUR SCRIPT?start=1325437200&end=1325439000&prefix=alert"></script> This example shows a message box in the browser with the service output, using the browser's built-in alert function as the prefix.
+- By adding a prefix parameter and setting the MIME type to JAVASCRIPT, JSON services can be transformed into JSONP to be called from JavaScript in a browser, though caution is advised due to security risks. that return raw textual content of various MIME types.
 

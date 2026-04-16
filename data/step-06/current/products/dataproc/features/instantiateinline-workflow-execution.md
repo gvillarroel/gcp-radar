@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.114Z"
+generated_at: "2026-04-14T00:23:22.678Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "InstantiateInline workflow execution"
 feature_slug: "instantiateinline-workflow-execution"
 latest_feature_date: "2018-01-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+  - "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview"
   - "https://docs.cloud.google.com/dataproc/docs/reference/rest"
+  - "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions"
 keywords:
   - "instantiateinline"
   - "workflow"
@@ -26,7 +26,7 @@ keywords:
 # InstantiateInline workflow execution
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,49 +38,50 @@ InstantiateInline lets users run Dataproc workflows directly without first creat
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1)
+- [https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview](https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview)
 - [https://docs.cloud.google.com/dataproc/docs/reference/rest](https://docs.cloud.google.com/dataproc/docs/reference/rest)
+- [https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions](https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions)
 
 ## Supporting Pages
 
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
+### "Workflow scheduling solutions \_|\_ Managed Service for Apache Spark \_\
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
+- URL: [https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions](https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions)
 - Source ID: `site-docs-root`
-- Final score: 158
+- Final score: 107
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Dataproc Workflow Templates Managed Service for Apache Spark Workflow templates provide a flexible and easy-to-use mechanism for managing and executing workflows.
+- Advantages: Supports time- and event-based scheduling Simplified calls to Managed Service for Apache Spark using Operators Dynamically generate workflows and workflow parameters Build data flows that span multiple Google Cloud products Tutorial: Workflow using Cloud Composer Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Minimal coding required using Managed Service for Apache Spark Go , Node.js , or Python client libraries Dynamically generate workflows and workflow parameters Tutorial: Workflow using Cloud Run functions Cloud Composer Cloud Composer is a managed Apache Airflow service you can use to create, schedule, monitor, and manage workflows.
+- You can use Cloud Run functions with Cloud Scheduler for workflows that require the calculation of time-based parameters.
+
+### "Overview of Managed Service for Apache Spark Workflow Templates \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview](https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview)
+- Source ID: `site-docs-root`
+- Final score: 106
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- November 13, 2025 Announcement New Serverless for Apache Spark runtime versions : 1.2.62 2.2.62 2.3.15 Feature Serverless for Apache Spark: Added the dataproc.artifacts.remove property, which lets users remove default artifacts, such as spark-bigquery-connector , iceberg , and delta-lake from a Serverless for Apache Spark runtime.
-- January 10, 2018 Feature It is now possible to instantiate Dataproc workflows directly without creating a WorkflowTemplate by using the new InstantiateInline method .
-- Change New Dataproc on Compute Engine subminor image versions : 2.0.142-debian10, 2.0.142-rocky8, 2.0.142-ubuntu18 2.1.90-debian11, 2.1.90-rocky8, 2.1.90-ubuntu20, 2.1.90-ubuntu20-arm 2.2.58-debian12, 2.2.58-rocky9, 2.2.58-ubuntu22 May 22, 2025 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.104 1.2.48 2.2.48 May 15, 2025 Change New Dataproc on Compute Engine subminor image versions : 2.0.141-debian10, 2.0.141-rocky8, 2.0.141-ubuntu18 2.1.89-debian11, 2.1.89-rocky8, 2.1.89-ubuntu20, 2.1.89-ubuntu20-arm 2.2.57-debian12, 2.2.57-rocky9, 2.2.57-ubuntu22 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.103 1.2.47 2.2.47 May 12, 2025 Feature Dataproc Serverless for Spark: Spark UI for Dataproc Serverless batches and interactive sessions , which lets you monitor and debug your serverless Spark workloads, now features Event Timeline and Task Quantile views for enhanced troubleshooting.
-- April 29, 2024 Announcement New Dataproc on Compute Engine subminor image versions : 2.0.99-debian10, 2.0.99-rocky8, 2.0.99-ubuntu18 2.1.47-debian11, 2.1.47-rocky8, 2.1.47-ubuntu20, 2.1.47-ubuntu20-arm 2.2.13-debian12, 2.2.13-rocky9, 2.2.13-ubuntu22 April 26, 2024 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.59 1.2.3 2.0.67 2.1.46 2.2.3 April 21, 2024 Announcement New Dataproc on Compute Engine subminor image versions : 2.0.98-debian10, 2.0.98-rocky8, 2.0.98-ubuntu18 2.1.46-debian11, 2.1.46-rocky8, 2.1.46-ubuntu20, 2.1.46-ubuntu20-arm 2.2.12-debian12, 2.2.12-rocky9, 2.2.12-ubuntu22 April 20, 2024 Announcement Announcing Dataproc Workflow Templates supports the CMEK organization policy .
-
-### "Package com.google.cloud.dataproc.v1 (4.85.0) \_|\_ Java client libraries\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1)
-- Source ID: `site-java-reference`
-- Final score: 128
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Currently started workflows will remain running. com. google. cloud. dataproc. v1.
-- Currently started workflows will remain running. com. google. cloud. dataproc. v1.
-- Runtime Info Runtime information about workload execution. com. google. cloud. dataproc. v1.
-- Builder Runtime information about workload execution. com. google. cloud. dataproc. v1.
+- Inline Workflows can be instantiated inline using the gcloud command with workflow template YAML files or by calling the Managed Service for Apache Spark InstantiateInline API (see Using inline Dataproc workflows ).
+- The Managed Service for Apache Spark WorkflowTemplates API provides a flexible and easy-to-use mechanism for managing and executing workflows.
+- A workflow can select a specific cluster by matching the goog-dataproc-cluster-name label (see Using Automatically Applied Labels ).
+- Workflows encapsulate frequently used cluster configurations and jobs.
 
 ### "Cloud Dataproc API \_|\_ Managed Service for Apache Spark \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest](https://docs.cloud.google.com/dataproc/docs/reference/rest)
 - Source ID: `site-docs-reference`
-- Final score: 126
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 103
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - REST Resource: v1.projects.locations.workflowTemplates Methods create POST /v1/{parent=projects/ /locations/ }/workflowTemplates Creates new workflow template. delete DELETE /v1/{name=projects/ /locations/ /workflowTemplates/ } Deletes a workflow template. get GET /v1/{name=projects/ /locations/ /workflowTemplates/ } Retrieves the latest workflow template. getIamPolicy POST /v1/{resource=projects/ /locations/ /workflowTemplates/ }:getIamPolicy Gets the access control policy for a resource. instantiate POST /v1/{name=projects/ /locations/ /workflowTemplates/ }:instantiate Instantiates a template and begins execution. instantiateInline POST /v1/{parent=projects/ /locations/ }/workflowTemplates:instantiateInline Instantiates a template and begins execution. list GET /v1/{parent=projects/ /locations/ }/workflowTemplates Lists workflows that match the specified filter in the request. setIamPolicy POST /v1/{resource=projects/ /locations/ /workflowTemplates/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /workflowTemplates/ }:testIamPermissions Returns permissions that a caller has on the specified resource. update PUT /v1/{template.name=projects/ /locations/ /workflowTemplates/ } Updates (replaces) workflow template.

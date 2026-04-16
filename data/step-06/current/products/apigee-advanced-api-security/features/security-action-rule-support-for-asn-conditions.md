@@ -1,29 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:05:29.896Z"
+generated_at: "2026-04-14T04:26:55.422Z"
 product_name: "Apigee Advanced API Security"
 product_slug: "apigee-advanced-api-security"
 feature_name: "Security action rule support for ASN conditions"
 feature_slug: "security-action-rule-support-for-asn-conditions"
 latest_feature_date: "2024-05-14"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+  - "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+  - "https://docs.cloud.google.com/apigee/docs/api-security/security-actions-api"
 keywords:
-  - "Autonomous System Number condition"
-  - "ASN-based rule match"
-  - "security action AS number"
-  - "AS number rule"
-  - "security action rule ASN"
-  - "ASN condition type"
-  - "ASN condition"
+  - "autonomous"
+  - "conditions"
+  - "rule"
+  - "rules"
+  - "action"
 ---
 
 # Security action rule support for ASN conditions
 
 Product: Apigee Advanced API Security
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +33,55 @@ Security action rules now support Autonomous System Number (ASN) as a condition 
 
 Security action rules now support Autonomous System Number (ASN) as a condition type.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/apigee/docs/api-security/security-actions](https://docs.cloud.google.com/apigee/docs/api-security/security-actions)
+- [https://docs.cloud.google.com/apigee/docs/api-security/detection-rules](https://docs.cloud.google.com/apigee/docs/api-security/detection-rules)
+- [https://docs.cloud.google.com/apigee/docs/api-security/security-actions-api](https://docs.cloud.google.com/apigee/docs/api-security/security-actions-api)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Security actions overview and UI \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-security/security-actions](https://docs.cloud.google.com/apigee/docs/api-security/security-actions)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 159
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Values: Enter one of the following: If Condition type is Detection rules , select a set of detection rules that a request must have triggered for the security action to be applied to it.
+- Notes: For the condition types Detection rules and IP addresses/CIDR ranges , you can create at most two conditions that have those types.
+- Top rules Top countries Action details Attributes Select the Attributes tab to display the Attributes page.
+- Under New condition , enter the following: Condition type: Can be either Detection rules or one of the following attributes: IP addresses/CIDR ranges , which can include IP addresses and IPv4 CIDR ranges at the same time.
+
+### Detection rules \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-security/detection-rules](https://docs.cloud.google.com/apigee/docs/api-security/detection-rules)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 125
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Two of the detection rules are based on machine learning models: Advanced API Scraper Advanced Anomaly Detection Note: The data used to train the machine learning models for the rules Advanced API Scraper and Advanced Anomaly Detection contain metadata, including source IP address, source geography, and the values of some HTTP request headers.
+- Note that one incident might be triggered by multiple detection rules, in which case all of the rules that triggered the incident are listed in the Abuse detection Environment details view.
+- Home Documentation Application development Apigee Guides Send feedback Detection rules Stay organized with collections Save and categorize content based on your preferences.
+- Machine learning and detection rules Advanced API Security uses models built with Google's machine learning algorithms to detect security threats to your APIs.
+
+### Security Actions API | Apigee | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-security/security-actions-api](https://docs.cloud.google.com/apigee/docs/api-security/security-actions-api)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 109
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- API MONITORING API Monitoring overview Compare API Monitoring with Apigee Analytics Using the Timeline view Using the Investigate view Using the Recent view Setting up alerts and notifications Examples of alerts Fault codes ADVANCED API SECURITY Overview of Advanced API Security Apigee and Apigee hybrid Overview Getting started Detection rules Best practices Security reports Overview Manage security reports in the UI Manage security reports using the API Risk assessment Risk assessment overview and UI Security scores and profiles API Abuse detection Abuse detection UI Security stats API Incidents API Security feedback API Security alerts Security actions Security actions overview and UI Security actions API Multi-gateway risk assessment Overview API OBSERVATION Overview of API Observation Shadow APIs Shadow API Discovery overview Shadow API Discovery management APIs Shadow API Discovery audit logging Application Integration Use Application Integration Application Integration and Apigee proxy Integration target Subscription entitlements Application Integration policies IntegrationCallout policy SetIntegrationRequest policy Connectors Overview Get started with connectors Release notes API HUB What is Apigee API hub?
+- Provision API hub Provision using Cloud console Provision using Command line Provision using Terraform Get started with API hub Quickstarts Overview Auto-register Apigee proxies Register an API Create an API version Create and edit attributes Create an Eventarc trigger API resources Overview Register an API Register MCP APIs Manage API resources Auto-register APIs View API resource insights View security scores for APIs Manage API resources Versions Overview Manage versions Operations and MCP tools Overview Manage operations Manage MCP tools Specifications Overview Manage specifications Deployments Overview Manage deployments API supply chain Overview Create a dependency Manage dependencies API observations in API hub Overview Configure API observations in API hub Manage API observations in API hub Advanced API security for multiple Apigee organizations and gateways Advanced API security for multi-gateway projects Configure Advanced API security for multi-gateway projects View security scores across all projects and gateways Manage security profiles for multi-gateway assessments Manage monitoring conditions for multi-gateway assessments Advanced API security advisor tool API insights Overview Configure API insights in API hub API insights dashboards Add-on management Manage add-ons Validate OpenAPI specification Search APIs using semantic search Specification boost Settings Overview Manage attributes Manage project associations Plugins Overview Manage Google Cloud plugins and plugin instances Manage third-party plugins and plugin instances Manage custom plugins and plugin instances Create plugin instances Manage plugins instances Curations Overview Create curations Manage curations Actions Overview Manage Agent Registry integration Deprovision API hub Audit logging for API hub Access Control Predefined IAM roles Add IAM conditions Attach and manage tags VPC Service Controls for API hub gcloud CLI for API hub API hub locations Tutorials Enrich API data with custom curation in API hub Ingest Azure API data into API hub Reference Limits REST Reference v1 Overview Resources REST Resources projects.locations Overview collectApiData get list lookupRuntimeProjectAttachment retrieveApiViews searchResources projects.locations.addons Overview get list manageConfig projects.locations.apiHubInstances Overview create delete get lookup projects.locations.apis Overview create delete get list patch projects.locations.apis.versions Overview create delete get list patch projects.locations.apis.versions.definitions Overview get projects.locations.apis.versions.operations Overview create delete get list patch projects.locations.apis.versions.specs Overview create delete fetchAdditionalSpecContent get getContents lint list patch projects.locations.attributes Overview create delete get list patch projects.locations.curations Overview create delete get list patch projects.locations.dependencies Overview create delete get list patch projects.locations.deployments Overview create delete get list patch projects.locations.discoveredApiObservations Overview get list projects.locations.discoveredApiObservations.discoveredApiOperations Overview get list projects.locations.externalApis Overview create delete get list patch projects.locations.hostProjectRegistrations Overview create get list projects.locations.operations Overview cancel delete get list projects.locations.plugins Overview create delete disable enable get getStyleGuide list updateStyleGuide projects.locations.plugins.instances Overview create delete disableAction enableAction executeAction get list manageSourceData patch projects.locations.plugins.styleGuide Overview getContents projects.locations.runtimeProjectAttachments Overview create delete get list Types AggregationFunction AllowedValue AttributeValues AuthType CollectApiDataResponse ConfigValueOption DisablePluginInstanceActionResponse Documentation EnablePluginInstanceActionResponse EnumerateExtendedApisRequest EnumerateExtendedApisResponse ExecutePluginInstanceActionResponse GoogleServiceAccountConfig HttpOperation InitializeSystemOwnedPluginRequest InitializeSystemOwnedPluginResponse InsightsMetric OperationMetadata Owner QueryApiMetricsRequest QueryApiMetricsResponse QueryDependencyMetricsRequest QueryDependencyMetricsResponse RemoveSystemOwnedPluginRequest RemoveSystemOwnedPluginResponse SourceMetadata StyleGuide StyleGuideContents WaitOperationRequest RPC Reference Overview google.cloud.apihub.v1 google.cloud.apihub.v1main google.cloud.common google.cloud.location google.longrunning google.rpc Client libraries Overview C# Go Java Node.js PHP Python Release notes Envoy Adapter v2.0.x Concepts Getting started Native Envoy example for Apigee and hybrid Apigee hybrid example with Kubernetes Operation Reference Troubleshooting v1.4.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.3.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.2.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.1.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.0.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting Release notes HYBRID RUNTIME Supported platforms and versions Kubernetes and custom resources used by Apigee v1.16 What is Apigee hybrid?
+- Managing API products Managing client applications Organizing client app ownership Controlling developer access to your apps App access overview Registering app developers Importing existing consumer keys and secrets Developer portal solutions API design overview Building your integrated portal Introduction How portal users interact with your portal Getting started Tutorial: Building your first portal Overview Step 1: Create a portal Step 2: Customize the color palette Step 3: Customize the logo Step 4: Edit page content Step 5: Set up navigation Step 6: Publish an API Quick tips for customizing the sample portal Best practices for building your portal Building and publishing your portal Steps to build your portal Managing your portals Managing the pages in your portal Developing portal content Customizing your theme Setting up navigation Publishing your APIs Managing access to your APIs using API keys Managing the default visibility Managing your assets Customizing your domain Configuring email Configure a content security policy Configuring analytics tracking Adding custom scripts Publishing your portal content Viewing your live portal Creating a custom search page Managing user account creation and sign-in experience Configuring the user account creation and sign-in experience Configuring identity providers Managing user accounts Managing developer teams Managing audiences Reference Cookies Markdown syntax Building your portal using Drupal Introduction Drupal-based developer portal in Cloud Marketplace Overview Get started Customize your portal Support resources Choosing a hosting provider Support process for Apigee Drupal modules MONETIZE Overview of Apigee monetization Steps to use Apigee monetization Enabling Apigee monetization Enforcing monetization limits in API proxies Enforcing monetization quotas in API products Managing prepaid account balances Managing rate plans for API products Integrating monetization in Drupal portal Purchasing API product subscriptions using API Debugging monetization using the Debug tool Capturing monetization data Generating monetization reports ADMINISTER Users, roles, and access Users and roles Apigee roles Managing users, roles, and permissions using APIs Managing users in the UI Managing access in Google Cloud Access Apigee using Workforce Identity Federation Adding IAM Conditions to policies Apigee Spaces Apigee Spaces overview Apigee Spaces roles and permissions Create and manage Apigee Spaces Manage API resources with Apigee Spaces Move API resources in Apigee Spaces IAM permission hierarchy in Apigee Spaces Network Configuration Peering ranges Using multiple regions Managing instances Changing instance IPs Recreating an Apigee instance with zero downtime Using shared VPC networks Southbound networking patterns Northbound networking with Private Service Connect Migrate northbound routing to Private Service Connect Configure active health check for regional failover with Private Service Connect Client IP resolution Security administration TLS Options for configuring TLS Accessing TLS connection information in an API proxy Working with references SAML Using VPC Service Controls About the encryption keys Provisioning NAT IPs Performance considerations for Apigee Cloud NAT Calculating static NAT IP requirements Preventing DoS attacks Integrate Apigee with your SIEM solution Integrate Apigee with Google SecOps Managing data collectors Backups Switching between organizations Manage maintenance updates Overview Manage instance maintenance windows View maintenance logs ANALYZE Analytics overview Using the analytics dashboards API metrics API proxy performance Error code analysis Latency analysis Cache performance Target performance Developer analysis Developer engagement Traffic composition End user analysis Devices Geomap Custom reports Creating and managing custom reports Analytics metrics, dimensions, and filters reference Operations anomalies Operations anomalies overview View and investigate anomalies Create anomaly alerts Collecting custom data with the DataCapture policy Exporting data from analytics Obfuscate user data for analytics Looker Studio integration Using the API Using the asynchronous custom reports API Using the metrics API Metrics API examples Troubleshooting Troubleshooting with analytics What does an analytics entity named 'not set' mean?
+- Enable a security action To enable a security action, enter a command similar to the following: curl -X POST "https://apigee.googleapis.com/v1/organizations/ ORG /environments/ ENV /securityActions/ ACTION_NAME :enable" -H "Authorization: Bearer $TOKEN" This returns a response like the following: { "name": " ACTION_NAME ", "state": "ENABLED", "createTime": "2022-12-29T18:27:31Z", "updateTime": "2023-01-03T23:19:26.650965481Z", "conditionConfig": { "ipAddressRanges": [ "100.0.220.0", "200.0.0.0" ] }, "allow": {}, "expireTime": "2028-01-01T00:00:00Z" } Disable a security action To disable a security action, enter a command similar to the following: curl -X POST "https://apigee.googleapis.com/v1/organizations/ ORG /environments/ ENV /securityActions/ ACTION_NAME :disable" -H "Authorization: Bearer $TOKEN" This returns a response like the following: { "name": "actionallow", "state": "DISABLED", "createTime": "2022-12-29T18:27:31Z", "updateTime": "2023-01-03T23:13:04.874540001Z", "conditionConfig": { "ipAddressRanges": [ "100.0.220.0", "200.0.0.0" ] }, "allow": {}, "expireTime": "2028-01-01T00:00:00Z" } Get or list security actions The following examples show how to get or list security actions Get a security action To get a security action, enter a command similar to the following: curl -X GET "https://apigee.googleapis.com/v1/organizations/ ORG /environments/ ENV /securityActions/ ACTION_NAME " -H "Authorization: Bearer $TOKEN" This returns a response like the following: { "name": " ACTION_NAME ", "state": "DISABLED", "createTime": "2022-12-29T18:27:31Z", "updateTime": "2023-01-03T23:13:04Z", "conditionConfig": { "ipAddressRanges": [ "100.0.220.0", "200.0.0.0" ] }, "allow": {}, "expireTime": "2028-01-01T00:00:00Z" } List security actions To list all security actions, enter a command similar to the following: curl -X GET "https://apigee.googleapis.com/v1/organizations/ ORG /environments/ ENV /securityActions" -H "Authorization: Bearer $TOKEN" Pause or resume security actions The following examples show how to pause or resume security actions Pause all security actions To Pause all security actions, enter a command similar to the following: curl -X PATCH "https://apigee.googleapis.com/v1/organizations/ ORG /environments/ ENV /securityActionsConfig" \ -H "Authorization: Bearer $TOKEN" \ -H "Content-Type: application/json" \ -d '{"enabled": "false", "name": "organizations/ ORG /environments/ ENV /securityActionsConfig"}' This returns a response like the following: { "name": "organizations/ ORG /environments/ ENV /securityActionsConfig", "enabled": false, "updateTime": "2023-01-23T21:44:58.063807Z" } Resume paused security actions To resume paused security actions, enter a command similar to the following: curl -X PATCH "https://apigee.googleapis.com/v1/organizations/ ORG /environments/ ENV /securityActionsConfig" \ -H "Authorization: Bearer $TOKEN" \ -H "Content-Type: application/json" \ -d '{"enabled": "true", "name": "organizations/ ORG /environments/ ENV /securityActionsConfig"}' This returns a response like the following: { "name": "organizations/ ORG /environments/ ENV /securityActionsConfig", "enabled": true, "updateTime": "2023-01-23T21:44:58.063807Z" } Delete security actions To delete a security action, enter a command similar to the following: curl -X DELETE "https://apigee.googleapis.com/v1/organizations/ ORG /environments/ ENV /securityActions/ ACTION_NAME " -H "Authorization: Bearer $TOKEN" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

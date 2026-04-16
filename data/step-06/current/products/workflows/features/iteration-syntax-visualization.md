@@ -1,30 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:14.549Z"
+generated_at: "2026-04-13T08:22:23.529Z"
 product_name: "Workflows"
 product_slug: "workflows"
 feature_name: "Iteration syntax visualization"
 feature_slug: "iteration-syntax-visualization"
 latest_feature_date: "2021-05-31"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/workflows/docs/overview"
+  - "https://docs.cloud.google.com/workflows/docs/reference/syntax"
+  - "https://docs.cloud.google.com/workflows/docs/tutorials/execute-workflows-from-workflow"
 keywords:
-  - "iteration"
-  - "syntax"
-  - "visualization"
-  - "the"
-  - "console"
-  - "provides"
   - "while"
+  - "visualization"
+  - "iteration"
+  - "provides"
   - "editing"
+  - "syntax"
+  - "console"
 ---
 
 # Iteration syntax visualization
 
 Product: Workflows
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +35,57 @@ The Google Cloud Console provides visualization support while editing Workflows 
 
 The Google Cloud Console provides visualization support while editing Workflows iteration syntax.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/workflows/docs/overview](https://docs.cloud.google.com/workflows/docs/overview)
+- [https://docs.cloud.google.com/workflows/docs/reference/syntax](https://docs.cloud.google.com/workflows/docs/reference/syntax)
+- [https://docs.cloud.google.com/workflows/docs/tutorials/execute-workflows-from-workflow](https://docs.cloud.google.com/workflows/docs/tutorials/execute-workflows-from-workflow)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Workflows overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/workflows/docs/overview](https://docs.cloud.google.com/workflows/docs/overview)
+- Source ID: `site-docs-root`
+- Final score: 113
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Visualization support while editing the Workflows syntax is also available through the Google Cloud console.
+- For example: Provision new tenant projects or infrastructure Turn down resources on a schedule or through event triggers Core concepts A workflow consists of a series of steps described using the Workflows syntax, and can be written in either YAML or JSON.
+- Connecting services When to call a service How do you know when to create steps in YAML or JSON using the Workflows syntax or when to create a service—for example, a Cloud Run service or a Cloud Run function—to do the work instead?
+- You can execute a workflow using the client libraries, in the Google Cloud console, using the Google Cloud CLI, or by sending an HTTP POST request to the workflow's invocation URL using the Workflows REST API.
+
+### Syntax overview \_|\_ Workflows \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/workflows/docs/reference/syntax](https://docs.cloud.google.com/workflows/docs/reference/syntax)
+- Source ID: `site-docs-root`
+- Final score: 88
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Subworkflows main Pass runtime arguments in an execution request Runtime arguments Subworkflows raise Raise custom errors. — except retry try Raise errors result Assign the result from a call to this variable. call steps args Assign responses from a call Store result from a call in a variable retry Define the retry behavior and the number of retry attempts. try — Retry steps return Stop a workflow's execution and return a value or expression. — — Complete the execution of a workflow steps Nest a series of steps. branches for loops Subworkflows try main Iteration Nested steps Subworkflows switch Allow the value of an expression to control the flow of a workflow's execution. — condition Conditions try Define a list of steps to retry if an error is raised, or catch and handle the error. — except retry Catch errors Retry steps Example: args YAML - STEP NAME : call : ... args : ... result : VARIABLE JSON [ { " STEP NAME " : { "call" : ... , " args " : { ... }, "result" : " VARIABLE " } } ] OK Example: assign YAML - STEP NAME : assign : - VARIABLE NAME : VALUE JSON [ { " STEP NAME " : { " assign " : [ { " VARIABLE NAME " : " VALUE " } ] } } ] OK Example: branches YAML - PARALLEL STEP NAME : parallel : ... branches : - BRANCH NAME A : steps : ... - BRANCH NAME B : steps : ...
+- Commented out since anchor links don't work in filtered content. --> Reserved word Description Use with See also Examples args Pass arguments and their values when calling a function that accepts parameters. call steps call result Calls assign Set the value of a variable. — — Assign variables branches Execute parallel branches concurrently and the steps in each branch sequentially. steps parallel Execute parallel steps Parallel steps Replace experimental function with parallel step break Terminate iteration of a for loop. next in for loops continue Use break/continue in a loop call Run a function and return a result. — args result Calls condition Provide an expression to control if a step is executed (the first condition to evaluate as true). switch — Conditions continue Terminate the current iteration of a for loop and continue with the next iteration. next in for loops break Use break/continue in a loop end Stop a workflow's execution without returning a value. next — Complete the execution of a workflow except Catch and handle errors thrown during a workflow execution. try retry Catch errors for Iterate over a sequence of numbers or through a collection of data, such as a list or map. steps — Iteration main Define your main workflow.
+- To see examples of the syntax in action, see the cheat sheet . custom element and add a 'highlight' attribute with comma-separated CSS selectors that target the elements you wish to highlight.
+- Home Documentation Application development Workflows Reference Send feedback Syntax overview Stay organized with collections Save and categorize content based on your preferences.
+
+### "Run a workflow that executes other workflows in parallel \_|\_ Workflows\
+
+- URL: [https://docs.cloud.google.com/workflows/docs/tutorials/execute-workflows-from-workflow](https://docs.cloud.google.com/workflows/docs/tutorials/execute-workflows-from-workflow)
+- Source ID: `site-docs-root-2`
+- Final score: 72
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- In the workflow editor, enter the following definition for your workflow: main : params : [ args ] steps : - init : assign : - iteration : ${args.iteration} - wait : call : sys.sleep args : seconds : 10 - check iteration even or odd : switch : - condition : ${iteration % 2 == 0} next : raise error - return message : return : ${"Hello world"+iteration} - raise error : raise : ${"Error with iteration "+iteration} Click Deploy . gcloud Create a source code file for your workflow: touch workflow-child.yaml Open your source code file in a text editor and copy the following workflow to the file. main : params : [ args ] steps : - init : assign : - iteration : ${args.iteration} - wait : call : sys.sleep args : seconds : 10 - check iteration even or odd : switch : - condition : ${iteration % 2 == 0} next : raise error - return message : return : ${"Hello world"+iteration} - raise error : raise : ${"Error with iteration "+iteration} Deploy the workflow: gcloud workflows deploy workflow-child \ --source = workflow-child.yaml \ --location = us-central1 \ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com Replace SERVICE ACCOUNT NAME with the name of the service account you previously created.
+- The results should be similar to the following, indicating errors with iterations 2 and 4, and success with iterations 1 and 3. "failure" : { "2" : { "message" : "Execution failed or cancelled." , "operation" : { "argument" : "{\"iteration\":2}" , "duration" : "10.157992541s" , "endTime" : "2023-07-11T13:13:13.028424329Z" , "error" : { "context" : "RuntimeError: \"Error with iteration 2\"\nin step \"raise error\", routine \"main\", line: 18" , "payload" : "\"Error with iteration 2\"" , ... "4" : { "message" : "Execution failed or cancelled." , "operation" : { "argument" : "{\"iteration\":4}" , "duration" : "10.157929734s" , "endTime" : "2023-07-11T13:13:13.061289142Z" , "error" : { "context" : "RuntimeError: \"Error with iteration 4\"\nin step \"raise error\", routine \"main\", line: 18" , "payload" : "\"Error with iteration 4\"" , ... "success" : { "1" : "Hello world1" , "3" : "Hello world3" gcloud Execute the workflow: gcloud workflows run workflow-parent \ --location = us-central1 The results should be similar to the following, indicating errors with iterations 2 and 4, and success with iterations 1 and 3.
+- Waiting for execution [ 06c753e4-6947-4c62-ac0b-2a9d53fb1b8f ] to complete...done. argument: 'null' duration: 14 .065415004s endTime: '2023-07-11T12:50:43.929023883Z' name: projects/386837416586/locations/us-central1/workflows/workflow-parent/executions/06c753e4-6947-4c62-ac0b-2a9d53fb1b8f result: '{"failure":{"2":{"message":"Execution failed or cancelled.","operation":{"argument":"{\"iteration\":2}","duration":"10.143718070s","endTime":"2023-07-11T12:50:40.673209821Z","error":{"context":"RuntimeError: ... "Error with iteration 2\"\nin step \"raise error\", routine \"main\", line: 18","payload":"\"Error ... "Error with iteration 4\"\nin step \"raise error\", routine \"main\", line: 18","payload":"\"Error ... "success":{"1":"Hello world1","3":"Hello world3"}}' startTime: '2023-07-11T12:50:29.863608879Z' state: SUCCEEDED You have successfully created and deployed a workflow that invokes a child workflow, executes four iterations of the child workflow in parallel branches, and returns an indicator of success or failure for each child workflow execution.
+- For more information, see Workflows Executions API connector and Runtime arguments . try : steps : - execute child workflow : call : googleapis.workflowexecutions.v1.projects.locations.workflows.executions.run args : workflow id : workflow-child #location: ... #project id: ... argument : iteration : ${iteration} result : execution result - save successful execution : assign : - execution results.success[string(iteration)] : ${execution result} except : as : e steps : - save failed execution : assign : - execution results.failure[string(iteration)] : ${e} The execution results are returned.
 

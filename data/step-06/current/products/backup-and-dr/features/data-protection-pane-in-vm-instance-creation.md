@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.189Z"
+generated_at: "2026-04-14T09:35:01.924Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Data protection pane in VM instance creation"
 feature_slug: "data-protection-pane-in-vm-instance-creation"
 latest_feature_date: "2025-03-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
   - "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-oracle-prerequisites"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
 keywords:
   - "pane"
+  - "page"
   - "instance"
   - "creation"
   - "protection"
   - "console"
-  - "vm"
-  - "the"
-  - "in"
 ---
 
 # Data protection pane in VM instance creation
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +36,55 @@ The Google Cloud console instance creation page now includes a Data protection p
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection](https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection)
 - [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-oracle-prerequisites](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-oracle-prerequisites)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery)
 
 ## Supporting Pages
+
+### "Automate protection of Compute Engine instances \_|\_ Backup and DR \_|\_\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection](https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection)
+- Source ID: `site-docs-reference`
+- Final score: 179
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Your Dynamic Protection Tags can be attached to Compute Engine instances using these instructions: In the Google Cloud console, go to the Compute Engine > VM instances page.
+- You can wait for the scheduled dynamic protection job to run at 4:15 AM or 4:15 PM local time for it to take effect, or you can run a dynamic protection job on-demand by following the steps in Run Manual Auto Protection . variable "project id" { description = "The ID of the existing Google Cloud project" type = string } variable "region" { description = "The Google Cloud region where demo-instance should be created" type = string } variable "zone" { description = "The Google Cloud zone where demo-instance should be created" type = string } provider "google" { project = var.project id region = var.region zone = var.zone } data "google project" "project" { project id = var.project id } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/tags tag key resource "google tags tag key" "key" { parent = "projects/${var.project id}" short name = "backupdr-dynamicprotect" description = "Tag key for Dynamic Protection." } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/tags tag value resource "google tags tag value" "value" { parent = "tagKeys/${google tags tag key.key.name}" short name = "backupdr-gold" # This value should be present in the "Management Console UI" > "Backup Plans" > "Dynamic Protection Tags" description = "Tag value for gold plan." } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute instance Ensure not to define tag in "resource manager tags" block while creating VM instance.
+- For example, https://bmc-PROJECT NUMBER-GENERATED ID-dot-REGION.backupdr.googleusercontent.com #!/bin/bash export MC ENDPOINT = " MC ENDPOINT edited value " Enable migration. curl -H "Authorization: Bearer $BEARER TOKEN " -H "backupdr-management-session: Actifio $SESSION ID " -H "Content-Type: application/json" -XPATCH -d '{ "enableMigrationToTagBasedProtection":"true"}' " $MC ENDPOINT /actifio/dynamicprotection/jobconfig" Appliance management console To enable migration of manually protected Compute Engine instances to tag-based protection, follow these steps: Toggle Enable migration to tag based protection to ON status Confirm the Enable Migration dialog.
+- Create Dynamic Protection Tag values Use these instructions to create Dynamic Protection Tag values that can be used with your Compute Engine instances: In the Backup and DR appliance management console, click the Backup Plans drop-down menu and select Dynamic Protection Tags .
 
 ### "Monitor jobs in the appliance management console \_|\_ Backup and DR \_\
 
 - URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
 - Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- When adding multiple new applications or VMs, try to stagger the initial protection jobs for each new application over time, to prevent all of the new data from being ingested simultaneously.
-- Job status panel The appliance management console Jobs panel provides information about jobs that have run over the past 24 hours (default).
-- For example, instead of snapping all VMs, file systems, and databases at 6:00 PM on weekdays, consider snapping one type of application on the hour, another type at 10 minutes after the hour, and another type at 20 minutes after the hour.
-- If the constraints continue to be present until it is time to run the next instance of the same policy, the job is given notrun status, and a new job instance with the same job ID and a letter appended to it is added in the queued state.
-
-### "Prerequisites for backing up an Oracle database in the appliance management\
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-oracle-prerequisites](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-oracle-prerequisites)
-- Source ID: `site-api-reference`
-- Final score: 160
+- Final score: 154
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Obtain the right Backup and DR agent for your host 2 Management console > Manage Hosts The database server must be added as a host or as a VM.
-- The Oracle DBA guide Backup and DR for Oracle databases Prerequisites for protecting an Oracle database Oracle patches and known issues Prepare Oracle databases for protection Discover and protect an Oracle database Details and settings for Oracle databases Use dNFS with Backup and DR Protect a discovered Oracle database Mount an Oracle database as a standard mount Create an instant virtual copy of an Oracle database Restore and recover an Oracle database Instant recovery of an Oracle database using Mount and Migrate Provision an environment with a Backup and DR workflow Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Storage Backup and DR Reference Send feedback Prerequisites for backing up an Oracle database in the appliance management console Stay organized with collections Save and categorize content based on your preferences.
-- The prerequisites for Oracle database protection with Backup and DR include: Review the concepts in OS authentication versus database authentication and Oracle RMAN backup in a file system or in an ASM disk group .
+- Run an on-demand backup job from the appliance management console To run an on-demand capture of a managed application from the Manage Backup Plan page: Click the App Manager tab and select the Applications option from the drop-down list.
+- Job status panel The appliance management console Jobs panel provides information about jobs that have run over the past 24 hours (default).
+- View job details From the Job Details window, you can review the following: Details about the job Volume information Number of job retries Job statistics When you are done reviewing job details, click Return to Jobs to return to the Jobs page.
+- If the constraints continue to be present until it is time to run the next instance of the same policy, the job is given notrun status, and a new job instance with the same job ID and a letter appended to it is added in the queued state.
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Protect and recover SAP HANA databases in Compute Engine instances \_|\_\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- Source ID: `site-docs-root`
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery)
+- Source ID: `site-docs-reference`
 - Final score: 154
-- Re-rank relevance: N/A
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- March 14, 2025 Feature Generally available : The Create an instance page in the Google Cloud console has a Data protection pane where you can specify how to back up and replicate your data.
-- Identify the backup appliance VM instance with the same name as that shown in the Backup and DR management console.
-- In the Google Cloud console of your workload project, click Compute Engine > VM instances .
-- Security The following CVEs have been addressed in this release: CVE-2024-38286, CVE-2019-9636, CVE-2023-5178, CVE-2020-14343, CVE-2021-29921, CVE-2019-7164, CVE-2020-27619, CVE-2018-20060, CVE-2019-20477, CVE-2019-9948, CVE-2020-1747, CVE-2021-3177, CVE-2022-42919, CVE-2024-0565, CVE-2015-20107, CVE-2023-51042, CVE-2020-10878, CVE-2023-6546, CVE-2022-0391, CVE-2022-45884, CVE-2021-33631, CVE-2020-10543, CVE-2019-20907, CVE-2023-3812, CVE-2019-11324, CVE-2022-45919, CVE-2023-6931, CVE-2024-1086, CVE-2021-43818, CVE-2021-33503, CVE-2020-26116, CVE-2019-20916, CVE-2023-2163, CVE-2021-42771, CVE-2022-45886, CVE-2021-3737, CVE-2023-52425, CVE-2018-18074, CVE-2021-27291, CVE-2021-20270, CVE-2023-24329, CVE-2019-18874, CVE-2019-16056, CVE-2019-7548, CVE-2021-3572, CVE-2019-9740, CVE-2021-23336, CVE-2020-14422, CVE-2021-3426, CVE-2023-1192, CVE-2022-38096, CVE-2023-6135, CVE-2020-8492, CVE-2020-27783, CVE-2020-28493, CVE-2023-46218, CVE-2021-4189, CVE-2020-26137, CVE-2021-3733, CVE-2019-16935, CVE-2021-28957, CVE-2018-20852, CVE-2019-11236, CVE-2019-9947, CVE-2020-28241, CVE-2023-5388, CVE-2023-28322 CVE-2022-48624, CVE-2023-38546, CVE-2021-20095 December 02, 2024 Feature Backup and DR service added integration with the Compute Engine VM creation experience, enabling the application of Backup and DR backup policies when VMs are created.
+- On the Restore page the options are: Restore back to source : All fields are pre-populated with the source value of protected SAP HANA instance and are immutable except application options.
+- On the Mount page: Project name , Region , and Zone : Select the project, region, and Zone of the instance to which you want to mount the HANA database image.
+- To discover and protect the HANA database applications: Select Add Application from the appliance management console's App Manager > Applications page .
+- You will have to use the Google Cloud console to remove this image from the target instance after this operation is finished.
 

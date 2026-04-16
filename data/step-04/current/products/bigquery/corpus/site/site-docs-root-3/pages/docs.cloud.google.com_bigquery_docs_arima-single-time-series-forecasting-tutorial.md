@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-foreca
 knowledge_key: corpus
 source_id: site-docs-root-3
 source_type: site
-entrypoint: https://docs.cloud.google.com/bigquery/docs/introduction?csw=1
+entrypoint: https://docs.cloud.google.com/bigquery/docs/introduction?authuser=3
 source_metadata:
   url: https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial
   title: "Forecast a single time series with an ARIMA_PLUS univariate model \_|\_\
@@ -163,7 +163,7 @@ bqclient = google . cloud . bigquery . Client ()
 bqclient . create_dataset ( "bqml_tutorial" , exists_ok = True )
 Visualize the input data
 Before creating the model, you can optionally visualize your input
-time series data to get a sense of the distribution. You can do this by using Looker Studio.
+time series data to get a sense of the distribution. You can do this by using Data Studio.
 Follow these steps to visualize the time series data:
 SQL
 In the following GoogleSQL query, the
@@ -181,17 +181,17 @@ FROM
 `bigquery-public-data.google_analytics_sample.ga_sessions_*`
 GROUP BY date ;
 When the query completes, click Open in >
-Looker Studio . Looker Studio opens in
+Data Studio . Data Studio opens in
 a new tab. Complete the following steps in the new tab.
-In the Looker Studio, click Insert >
+In Data Studio, click Insert >
 Time series chart .
 In the Chart pane, choose the Setup tab.
 In the Metric section, add the total_visits field, and remove the
 default Record Count metric.
 The resulting chart looks similar to the following:
 Looking at the chart, you can see that the input time series has a weekly seasonal pattern.
-Note: For more information about Looker Studio support, see
-Looker Support integrations with Google Cloud .
+Note: For more information about Data Studio support, see
+Data Studio help and support options .
 BigQuery DataFrames
 Before trying this sample, follow the BigQuery DataFrames
 setup instructions in the BigQuery quickstart
@@ -511,7 +511,7 @@ print ( ex_pred . head ( 4 ))
 # 4 2016-08-05 00:00:00+00:00 history 2702.0 1394.395741 206.939556 <NA> <NA> <NA> 1248.707386 <NA> <NA> <NA> 145.688355 <NA> <NA> <NA> 1205.283526 102.320733
 # 5 2016-08-06 00:00:00+00:00 history 1663.0 437.09243 206.939556 <NA> <NA> <NA> 1188.59004 <NA> <NA> <NA> -751.49761 <NA> <NA> <NA> 1205.283526 20.624044
 If you would like to visualize the results, you can use
-Looker Studio as described in the
+Data Studio as described in the
 Visualize the input data
 section to create a chart, using the following columns as metrics:
 time_series_data
@@ -564,6 +564,6 @@ Learn how to hierarchically forecast multiple time series with a univariate mode
 For an overview of BigQuery ML, see Introduction to AI and ML in BigQuery .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:50.784Z"
+generated_at: "2026-04-12T12:18:07.468Z"
 product_name: "Places SDK for iOS"
 product_slug: "places-sdk-for-ios"
 feature_name: "Place Types (New)"
 feature_slug: "place-types-new"
 latest_feature_date: "2024-11-11"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/place-types"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/details-place"
 keywords:
   - "place"
   - "types"
@@ -24,7 +27,7 @@ keywords:
 # Place Types (New)
 
 Product: Places SDK for iOS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ Adds 104 new place types that can filter Autocomplete (New), Nearby Search (New)
 
 Adds 104 new place types that can filter Autocomplete (New), Nearby Search (New), and Text Search (New) requests and appear in API responses.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/ios-sdk/place-types](https://developers.google.com/maps/documentation/places/ios-sdk/place-types)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete](https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search](https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/details-place](https://developers.google.com/maps/documentation/places/ios-sdk/details-place)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Places Types (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/place-types](https://developers.google.com/maps/documentation/places/ios-sdk/place-types)
+- Source ID: `site-docs-root`
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- About the type tables Table A lists the types that are used in the following ways: As part of a response from Place Details (New), Nearby Search (New), and Text Search (New), the values in Table A are used to populate the types property of the GMSPlace instance.
+- A place's types are included in the response from a Place Details (New), Nearby Search (New), Text Search (New), and Autocomplete (New) request: A place can have a single primary type from type Table A or type Table B associated with it.
+- When specified in the request, the type acts as a filter to restrict the response to only include places that match the specified types.
+- You can use place types in requests to filter results and retrieve only places matching specific types.
+
+### Place Autocomplete (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete](https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete)
+- Source ID: `site-docs-root`
+- Final score: 209
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Places Swift SDK let center = ( 37.3913916 , - 122.0879074 ) let northEast = ( 37.388162 , - 122.088137 ) let southWest = ( 37.395804 , - 122.077023 ) let bias = RectangularCoordinateRegion ( northEast : northEast , southWest : southWest ) let filter = AutocompleteFilter ( types : [ . restaurant ], origin : center , coordinateRegionBias : bias ) let autocompleteRequest = AutocompleteRequest ( query : "Sicilian piz" , filter : filter ) switch await placesClient . fetchAutocompleteSuggestions ( with : autocompleteRequest ) { case . success ( let autocompleteSuggestions ): // Handle suggestions. case . failure ( let placesError ): // Handle error. } Swift let token = GMSAutocompleteSessionToken () let northWestBounds = CLLocationCoordinate2DMake ( 40.921628 , - 73.700051 ) let southEastBounds = CLLocationCoordinate2DMake ( 40.477398 , - 74.259087 ) let filter = GMSAutocompleteFilter () filter . types = [ kGMSPlaceTypeRestaurant ] filter . locationBias = GMSPlaceRectangularLocationOption ( northWestBounds , southEastBounds ) let request = GMSAutocompleteRequest ( query : "Spagh" ) request . filter = filter request . sessionToken = token GMSPlacesClient . shared (). fetchAutocompleteSuggestions ( from : request , callback : { ( results , error ) in if let error = error { print ( "Autocomplete error: \( error ) " ) return } if let autocompleteResults = results { for result in autocompleteResults { print ( "Result \( String ( describing : result . placeSuggestion ?. placeID )) with \( String ( describing : result . placeSuggestion ?. attributedFullText )) " ) } } }) Objective-C CLLocationCoordinate2D northEast = CLLocationCoordinate2DMake ( 37.388162 , -122.088137 ); CLLocationCoordinate2D southWest = CLLocationCoordinate2DMake ( 37.395804 , -122.077023 ); GMSAutocompleteFilter filter = [[ GMSAutocompleteFilter alloc ] init ]; filter . types = @[ kGMSPlaceTypeRestaurant ] ; filter . locationBias = GMSPlaceRectangularLocationOption ( northEast , southWest ); GMSAutocompleteRequest request = [[ GMSAutocompleteRequest alloc ] initWithQuery : @"Sicilian piz" ]; request . sessionToken = token ; request . filter = filter ; [[ GMSPlacesClient sharedClient ] fetchAutocompleteSuggestionsFromRequest : request callback :^ ( NSArray<GMSAutocompleteSuggestion > results , NSError error ){ // Handle response for ( GMSAutocompleteSuggestion suggestion in results ) { if ( suggestion . placeSuggestion ) { // Show place suggestion data. } } }]; Autocomplete (New) responses Autocomplete returns an array of up to five GMSAutocompleteSuggestion instances.
+- You can expose your Places Autocomplete session token in order to pass it to other services that are not a part of the Places SDK for iOS, such as to Address Validation : Places Swift SDK let token = AutocompleteSessionToken () let filter = AutocompleteFilter ( origin : CLLocationCoordinate2DMake ( 39.7 , - 94.5 )) let request = AutocompleteRequest ( query : "Piz" , sessionToken : token , filter : filter ) PlacesClient . shared . fetchAutocompleteSuggestions ( request : request ) { case . success ( let suggestions ): ... case . failure ( let placesError ): print ( placesError ) } // pass token's string format to use with a service that is not a part of iOS SDK. print ( "token: \( token ) " ) Objective-C GMSAutocompleteRequest request = [[ GMSAutocompleteRequest alloc ] initWithQuery : @"Piz" ]; GMSAutocompleteSessionToken token = [[ GMSAutocompleteSessionToken alloc ] init ]; request . sessionToken = token ; GMSAutocompleteFilter filter = [[ GMSAutocompleteFilter alloc ] init ]; filter . origin = [[ CLLocation alloc ] initWithLatitude : 39.7 longitude : -94.5 ]; filter . locationBias = GMSPlaceRectangularLocationOption ( topLocation , bottomLocation ); request . filter = filter ; [[ GMSPlacesClient sharedClient ] fetchAutocompleteSuggestionsFromRequest : request callback : ^ ( NSArray<GMSAutocompleteSuggestion > Nullable results , NSError Nullable error ) { ... }]; // pass token's string format to use with a service that is not a part of iOS SDK.
+- For example, to limit results to sporting goods stores, specify that type in your AutocompleteFilter : Places Swift SDK let filter = AutocompleteFilter ( types : [ PlaceType ( rawValue : "sporting goods store" ) ]) Swift let filter = GMSAutocompleteFilter () filter . types = [ "sporting goods store" ] Objective-C GMSAutocompleteFilter filter = [[ GMSAutocompleteFilter alloc ] init ]; filter . types = @[ "sporting goods store" ] ; countries Only include results from the list of specified regions, specified as an array of up to 15 ccTLD ("top-level domain") two-character values.
+- When requesting Place Details (New) about the selected prediction, include the following parameters: The place ID from the Autocomplete (New) response The session token used in the Autocomplete (New) request The fields parameter specifying fields such as address and geometry Consider delaying Autocomplete (New) requests You can employ strategies such as delaying a Autocomplete (New) request until the user has typed in the first three or four characters so that your application makes fewer requests.
+
+### Nearby Search (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search](https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search)
+- Source ID: `site-docs-root`
+- Final score: 193
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Developers can customize their search requests to define the search area, specify the data fields to return (impacting billing), and filter results based on place types and other criteria.
+- You can optionally filter the response by specifying a list of place types to explicitly include in or exclude from the response.
+- Specify one or more of the following fields: The following fields trigger the Nearby Search Pro SKU : GMSPlacePropertyAddressComponents GMSPlacePropertyBusinessStatus GMSPlacePropertyCoordinate GMSPlacePropertyFormattedAddress GMSPlacePropertyName GMSPlacePropertyIconBackgroundColor GMSPlacePropertyIconImageURL GMSPlacePropertyPhotos GMSPlacePropertyPlaceID GMSPlacePropertyPlusCode GMSPlacePropertyTypes GMSPlacePropertyUTCOffsetMinutes GMSPlacePropertyViewport GMSPlacePropertyWheelchairAccessibleEntrance The following fields trigger the Nearby Search Enterprise SKU : GMSPlacePropertyCurrentOpeningHours GMSPlacePropertySecondaryOpeningHours GMSPlacePropertyPhoneNumber GMSPlacePropertyPriceLevel GMSPlacePropertyRating GMSPlacePropertyOpeningHours GMSPlacePropertyUserRatingsTotal GMSPlacePropertyWebsite The following fields trigger the Nearby Search Enterprise Plus SKU : GMSPlacePropertyCurbsidePickup GMSPlacePropertyDelivery GMSPlacePropertyDineIn GMSPlacePropertyEditorialSummary GMSPlacePropertyReservable GMSPlacePropertyReviews GMSPlacePropertyServesBeer GMSPlacePropertyServesBreakfast GMSPlacePropertyServesBrunch GMSPlacePropertyServesDinner GMSPlacePropertyServesLunch GMSPlacePropertyServesVegetarianFood GMSPlacePropertyServesWine GMSPlacePropertyTakeout The following example passes a list of two field values to specify that the GMSPlace object returned by a request contains the name and placeID fields: Places Swift SDK // Specify the place data types to return. let fields : [ PlaceProperty ] = [. placeID , . displayName ] Swift // Specify the place data types to return. let fields : [ GMSPlaceProperty ] = [. placeID , . name ] Objective-C // Specify the place data types to return.
+- Nearby Search (New) requests Make a Nearby Search request by calling GMSPlacesClient searchNearbyWithRequest: , passing a GMSPlaceSearchNearbyRequest object that defines the request parameters and a callback method, of type GMSPlaceSearchNearbyResultCallback , to handle the response.
+
+### Place Details (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/details-place](https://developers.google.com/maps/documentation/places/ios-sdk/details-place)
+- Source ID: `site-docs-root`
+- Final score: 189
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The parameter can affect results based on applicable law. sessionToken Session tokens are user-generated strings that track Autocomplete (New) calls as "sessions." Autocomplete (New) uses session tokens to group the query and place selection phases of a user autocomplete search into a discrete session for billing purposes.
+- Specify one or more of the following fields: The following fields trigger the Place Details Essentials ID Only SKU : GMSPlacePropertyPlaceID GMSPlacePropertyPhotos The following fields trigger the Place Details Essentials SKU : GMSPlacePropertyAddressComponents GMSPlacePropertyFormattedAddress GMSPlacePropertyCoordinate GMSPlacePropertyPlusCode GMSPlacePropertyTypes GMSPlacePropertyViewport The following fields trigger the Place Details Pro SKU : GMSPlacePropertyBusinessStatus GMSPlacePropertyIconBackgroundColor GMSPlacePropertyIconImageURL GMSPlacePropertyName GMSPlacePropertyUTCOffsetMinutes GMSPlacePropertyWheelchairAccessibleEntrance The following fields trigger the Place Details Pro SKU : GMSPlacePropertyCurrentOpeningHours GMSPlacePropertySecondaryOpeningHours GMSPlacePropertyPhoneNumber GMSPlacePropertyPriceLevel GMSPlacePropertyRating GMSPlacePropertyOpeningHours GMSPlacePropertyUserRatingsTotal GMSPlacePropertyWebsite The following fields trigger the Place Details Enterprise SKU : GMSPlacePropertyCurbsidePickup GMSPlacePropertyDelivery GMSPlacePropertyDineIn GMSPlacePropertyEditorialSummary GMSPlacePropertyReservable GMSPlacePropertyReviews GMSPlacePropertyServesBeer GMSPlacePropertyServesBreakfast GMSPlacePropertyServesBrunch GMSPlacePropertyServesDinner GMSPlacePropertyServesLunch GMSPlacePropertyServesVegetarianFood GMSPlacePropertyServesWine GMSPlacePropertyTakeout The following example passes a list of two field values to specify that the GMSPlace object returned by a request contains the name and placeID fields: Places Swift SDK // Specify the place data types to return. let fields : [ PlaceProperty ] = [. placeID , . displayName ] Swift // Specify the place data types to return. let fields : [ GMSPlaceProperty ] = [. placeID , . name ] Objective-C // Specify the place data types to return.
+- When you request a place by specifying a place ID, you can be confident that you will always receive the same place in the response (if the place still exists).
+- To access this information for a specific place, you can use the place ID, a stable identifier that uniquely identifies a place.
 

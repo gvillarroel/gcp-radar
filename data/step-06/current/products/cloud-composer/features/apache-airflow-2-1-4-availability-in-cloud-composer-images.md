@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.721Z"
+generated_at: "2026-04-12T12:11:20.009Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Apache Airflow 2.1.4 availability in Cloud Composer images"
 feature_slug: "apache-airflow-2-1-4-availability-in-cloud-composer-images"
 latest_feature_date: "2021-11-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag"
   - "https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac"
   - "https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
 keywords:
   - "apache"
   - "airflow"
@@ -26,7 +27,7 @@ keywords:
 # Apache Airflow 2.1.4 availability in Cloud Composer images
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Apache Airflow 2.1.4 became available in Cloud Composer images.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag](https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag)
 - [https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac](https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac)
 - [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli)
+- [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag](https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag)
 - Source ID: `site-docs-root`
-- Final score: 188
+- Final score: 227
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac](https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac)
 - Source ID: `site-iam-reference`
-- Final score: 178
+- Final score: 217
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli)
 - Source ID: `site-iam-reference`
-- Final score: 176
+- Final score: 215
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 Apache Airflow has a command-line interface (CLI) that you can use to perform tasks such as triggering and managing DAGs, getting information about DAG runs and tasks, adding and deleting connections and users.
 - Supported Airflow CLI commands Airflow in Cloud Composer 1 provides two different syntaxes for CLI commands: Airflow 1.10 CLI syntax , available in Cloud Composer environments with Airflow 1.10.
 - Run Airflow CLI commands with gcloud CLI To run Airflow CLI commands in your environments, use gcloud CLI: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ SUBCOMMAND \ -- SUBCOMMAND ARGUMENTS Replace the following: ENVIRONMENT NAME : the name of your environment.
+
+### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- Source ID: `site-iam-reference`
+- Final score: 208
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Preinstalled and custom PyPI packages in Cloud Composer images Cloud Composer images contains both preinstalled and custom PyPI packages.
+- Each Cloud Composer image contains PyPI packages that are specific for your version of Cloud Composer and Airflow.
+- Warning: Don't modify or delete the images built by Cloud Composer in Artifact Registry or the repository itself.
+- Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.softwareConfig.pypiPackages.EXAMPLE PACKAGE, // config.softwareConfig.pypiPackages.ANOTHER PACKAGE { "config" : { "softwareConfig" : { "pypiPackages" : { "EXAMPLE PACKAGE" : "" , "ANOTHER PACKAGE" : ">=1.10.3" } } } } Terraform The pypi packages block in the software config block specifies packages. resource "google composer environment" "example" { name = " ENVIRONMENT NAME " region = " LOCATION " config { software config { pypi packages = { PACKAGE NAME = " EXTRAS AND VERSION " } } } } Replace: ENVIRONMENT NAME with the name of the environment.
 

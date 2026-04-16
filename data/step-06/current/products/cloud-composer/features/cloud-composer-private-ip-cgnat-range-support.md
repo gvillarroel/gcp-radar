@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.024Z"
+generated_at: "2026-04-12T12:11:20.228Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer private IP CGNAT range support"
 feature_slug: "cloud-composer-private-ip-cgnat-range-support"
 latest_feature_date: "2020-08-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip"
   - "https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip"
   - "https://docs.cloud.google.com/composer/docs/composer-1/create-environments"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent"
 keywords:
   - "composer"
   - "private"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer private IP CGNAT range support
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Private IP environments can use non-RFC-1918 CGN ranges, including 100.64.0.0/10
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip)
 - [https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip)
 - [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
+- [https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent](https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip)
 - Source ID: `site-iam-reference`
-- Final score: 266
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 330
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Example: resource "google composer environment" "example environment" { provider = google-beta name = "example-environment" region = "us-central1" config { node config { // Specify your network and subnetwork network = google compute network.example network.id subnetwork = google compute subnetwork.example subnet.id ip allocation policy = [{ use ip aliases = true cluster ipv4 cidr block = null services ipv4 cidr block = null // Specify existing ranges cluster secondary range name = "public-1" services secondary range name = "public-2" }] } private environment config { enable privately used public ips = true // Other private environment parameters } } } What's next Configuring Private IP environments Creating environments About Private IP environments Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip)
 - Source ID: `site-iam-reference`
-- Final score: 226
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 290
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For Private IP environments, Cloud Composer assigns only private IP ( RFC 1918 ) addresses to the managed Google Kubernetes Engine and Cloud SQL VMs in your environment.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
 - Source ID: `site-iam-reference`
-- Final score: 200
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 260
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Cloud Composer 2 environments can use both VPC peerings and Private Service Connect for connectivity in Private IP.
 - Example: // POST https://composer.googleapis.com/v1/{parent=projects/ /locations/ }/environments { "name" : "projects/example-project/locations/us-central1/environments/example-environment" , "config" : { "webServerNetworkAccessControl" : { "allowedIpRanges" : [ { "value" : "192.0.2.0/24" , "description" : "office net 1" }, { "value" : "192.0.4.0/24" , "description" : "office net 3" } ] }, "nodeConfig" : { "serviceAccount" : " example-account@example-project. iam.gserviceaccount.com " } } } Terraform When you create an environment, the allowed ip range block in the web server network access control block contains IP ranges that can access web server.
 - Example (Private IP environment ) gcloud composer environments create ENVIRONMENT NAME \ --location LOCATION \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " SERVICE ACCOUNT " \ --enable-private-environment \ --enable-ip-alias \ --network NETWORK ID \ --subnetwork SUBNETWORK ID \ --cluster-ipv4-cidr PODS RANGE \ --services-ipv4-cidr SERVICES RANGE \ --master-ipv4-cidr CONTROL PLANE RANGE \ --web-server-ipv4-cidr WEB SERVER RANGE \ --cloud-sql-ipv4-cidr SQL RANGE Replace: NETWORK ID with your VPC network ID.
 - Note: The Airflow web server of your environment is always protected by IAM, regardless of the IP ranges that are allowed to access it. gcloud composer environments create ENVIRONMENT NAME \ --location LOCATION \ --image-version composer-1.20.12-airflow-1.10.15 \ --web-server-allow-ip ip range = WS IP RANGE ,description = WS RANGE DESCRIPTION Replace: WS IP RANGE with the IP range, in the CIDR notation, that can access Airflow UI.
+
+### "Enable the IP Masquerade agent in Cloud Composer environments \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent](https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent)
+- Source ID: `site-iam-reference`
+- Final score: 258
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Example: // POST https://composer.googleapis.com/v1/{parent=projects/ /locations/ }/environments { "name" : "projects/example-project/locations/us-central1/environments/example-environment" , "config" : { "softwareConfig" : { "imageVersion" : "composer-1.20.12-airflow-1.10.15" }, "nodeConfig" : { "ipAllocationPolicy" : { "useIpAliases" : true , }, "enableIpMasqAgent" : true } } } Terraform When you create an environment, the enable ip masq agent field in the node config block enables the IP Masqerade agent.
+- Specify the configuration in the Environment resource. { "name" : "projects/ PROJECT ID /locations/ LOCATION /environments/ ENVIRONMENT NAME " , "config" : { "softwareConfig" : { "imageVersion" : "composer-1.20.12-airflow-1.10.15" }, "nodeConfig" : { "ipAllocationPolicy" : { "useIpAliases" : true , }, "enableIpMasqAgent" : true } } } Replace: PROJECT ID with the Project ID .
+- For example, you can use a separate network range for Pods inside your environment's cluster and masquerade this traffic as coming from the node IP address range.
+- This is useful in environments that expect to only receive packets from node IP addresses or where Pod IP ranges are not routable outside of the cluster.
 

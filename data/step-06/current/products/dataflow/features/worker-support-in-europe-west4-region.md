@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.860Z"
+generated_at: "2026-04-15T12:05:13.860Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Worker support in europe-west4 region"
 feature_slug: "worker-support-in-europe-west4-region"
 latest_feature_date: "2018-01-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
-  - "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go"
-  - "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python"
+  - "https://docs.cloud.google.com/dataflow/docs/resources/locations"
+  - "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/flexrs"
 keywords:
   - "worker"
-  - "in"
   - "europe"
   - "west4"
   - "region"
   - "dataflow"
   - "can"
   - "run"
+  - "vms"
 ---
 
 # Worker support in europe-west4 region
 
 Product: Dataflow
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,69 +38,53 @@ Dataflow can run worker VMs in zones within the europe-west4 region.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template)
-- [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go)
-- [https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go](https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go)
-- [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python)
+- [https://docs.cloud.google.com/dataflow/docs/resources/locations](https://docs.cloud.google.com/dataflow/docs/resources/locations)
+- [https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints](https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints)
+- [https://docs.cloud.google.com/dataflow/docs/guides/flexrs](https://docs.cloud.google.com/dataflow/docs/guides/flexrs)
 
 ## Supporting Pages
 
-### "Quickstart: Create a streaming pipeline using a Dataflow template \_|\_\
+### Use Flexible Resource Scheduling in Cloud Dataflow \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template)
-- Source ID: `site-docs-root`
-- Final score: 198
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/flexrs](https://docs.cloud.google.com/dataflow/docs/guides/flexrs)
+- Source ID: `site-docs-reference-2`
+- Final score: 89
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following example shows how to add parameters to your regular pipeline parameters in order to use FlexRS: --flexRSGoal = COST OPTIMIZED \ --region = europe-west1 \ --maxNumWorkers = 10 \ --workerMachineType = n1-highmem-16 If you omit region , maxNumWorkers , and workerMachineType , the Dataflow service determines the default value.
+- The following example shows how to add parameters to your regular pipeline parameters in order to use FlexRS: --flexrs goal = COST OPTIMIZED \ --region = europe-west1 \ --max num workers = 10 \ --machine type = n1-highmem-16 If you omit region , max num workers , and machine type , the Dataflow service determines the default value.
+- The following example shows how to add parameters to your regular pipeline parameters in order to use FlexRS: --flexrs goal = COST OPTIMIZED \ --region = europe-west1 \ --max num workers = 10 \ --machine type = n1-highmem-16 If you omit region , max num workers , and machine type , the Dataflow service determines the default value.
+- Pricing FlexRS jobs are billed for the following resources: Regular and preemptible CPUs Memory resources Dataflow Shuffle resources 25 GB per worker of Persistent Disk resources While Dataflow uses both preemptible and regular workers to execute your FlexRS job, you are billed a uniform discounted rate compared to regular Dataflow prices regardless of the worker type.
+
+### Dataflow locations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/resources/locations](https://docs.cloud.google.com/dataflow/docs/resources/locations)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 88
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- To ensure that the Compute Engine default service account has the necessary permissions to run the Dataflow job, ask your administrator to grant the following IAM roles to the Compute Engine default service account on your project: Important: You must grant these roles to the Compute Engine default service account, not to your user account.
-- What's next Dataflow templates overview Creating classic templates Running classic templates Google-provided templates Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- BigQuery Data Editor ( roles/bigquery.dataEditor ) Dataflow Worker ( roles/dataflow.worker ) Pub/Sub Editor ( roles/pubsub.editor ) Storage Object Admin ( roles/storage.objectAdmin ) Viewer ( roles/viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .
-- Note: Unless specified through the network option, the Dataflow runner runs jobs in the default Virtual Private Cloud network.
+- Region description Region name Warsaw europe-central2 Finland europe-north1 Stockholm europe-north2 Madrid europe-southwest1 Belgium europe-west1 London europe-west2 Frankfurt europe-west3 Netherlands europe-west4 Zurich europe-west6 Milan europe-west8 Paris europe-west9 Berlin europe-west10 Turin europe-west12 Middle East The following table lists the regions in the Middle East where Dataflow is available.
+- Region description Region name Montréal northamerica-northeast1 Toronto northamerica-northeast2 Queretaro, Mexico northamerica-south1 São Paulo southamerica-east1 Santiago southamerica-west1 Iowa us-central1 South Carolina us-east1 Northern Virginia us-east4 Columbus, Ohio us-east5 Oregon us-west1 Los Angeles, California us-west2 Salt Lake City, Utah us-west3 Las Vegas, Nevada us-west4 Dallas, Texas us-south1 Asia Pacific The following table lists the regions in Asia Pacific where Dataflow is available.
+- Region description Region name Taiwan asia-east1 Hong Kong asia-east2 Tokyo asia-northeast1 Osaka asia-northeast2 Seoul asia-northeast3 Mumbai asia-south1 Delhi asia-south2 Singapore asia-southeast1 Jakarta asia-southeast2 Bangkok asia-southeast3 Sydney australia-southeast1 Melbourne australia-southeast2 Europe The following table lists the regions in Europe where Dataflow is available.
+- Regional availability You can use Dataflow workers, endpoints, Streaming Engine, Shuffle, and FlexRS in supported regions.
 
-### Create a Dataflow pipeline using Go \_|\_ Google Cloud Documentation
+### Dataflow regions \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects remove-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \ --role = SERVICE ACCOUNT ROLE Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Programming model for Apache Beam Setting pipeline options Pipeline options reference Deploying a pipeline Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Run the pipeline on the Dataflow service To run the updated wordcount example on the Dataflow service, use the following command: go run wordcount.go --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output gs:// BUCKET NAME /results/outputs \ --runner dataflow \ --project PROJECT ID \ --region DATAFLOW REGION \ --staging location gs:// BUCKET NAME /binaries/ Replace the following: BUCKET NAME : the Cloud Storage bucket name.
-- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects add-iam-policy-binding PROJECT ID --member = "serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com" --role = SERVICE ACCOUNT ROLE Replace PROJECT ID with your project ID.
-- To run the latest version of the Beam wordcount example on your local machine, perform the following steps: Use the git clone command to clone the apache/beam GitHub repository: git clone https://github.com/apache/beam.git Switch to the beam/sdks/go directory: cd beam/sdks/go Use the following command to run the pipeline: go run examples/wordcount/wordcount.go \ --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output outputs The input flag specifies the file to read, and the output flag specifies the filename for the frequency count output.
-
-### Create a Dataflow pipeline using Go \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go](https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints](https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 84
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects remove-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \ --role = SERVICE ACCOUNT ROLE Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Programming model for Apache Beam Setting pipeline options Pipeline options reference Deploying a pipeline Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Run the pipeline on the Dataflow service To run the updated wordcount example on the Dataflow service, use the following command: go run wordcount.go --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output gs:// BUCKET NAME /results/outputs \ --runner dataflow \ --project PROJECT ID \ --region DATAFLOW REGION \ --staging location gs:// BUCKET NAME /binaries/ Replace the following: BUCKET NAME : the Cloud Storage bucket name.
-- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects add-iam-policy-binding PROJECT ID --member = "serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com" --role = SERVICE ACCOUNT ROLE Replace PROJECT ID with your project ID.
-- To run the latest version of the Beam wordcount example on your local machine, perform the following steps: Use the git clone command to clone the apache/beam GitHub repository: git clone https://github.com/apache/beam.git Switch to the beam/sdks/go directory: cd beam/sdks/go Use the following command to run the pipeline: go run examples/wordcount/wordcount.go \ --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output outputs The input flag specifies the file to read, and the output flag specifies the filename for the frequency count output.
-
-### Create a Dataflow pipeline using Python \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Run the pipeline: python -m apache beam.examples.wordcount \ --region DATAFLOW REGION \ --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output gs:// BUCKET NAME /results/outputs \ --runner DataflowRunner \ --project PROJECT ID \ --temp location gs:// BUCKET NAME /tmp/ Replace the following: DATAFLOW REGION : the region where you want to deploy the Dataflow job—for example, europe-west1 The --region flag overrides the default region that is set in the metadata server, your local client, or environment variables.
-- Run the modified pipeline on the Dataflow service: python wordcount.py \ --region DATAFLOW REGION \ --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output gs:// BUCKET NAME /results/outputs \ --runner DataflowRunner \ --project PROJECT ID \ --temp location gs:// BUCKET NAME /tmp/ Replace the following: DATAFLOW REGION : the region where you want to deploy the Dataflow job BUCKET NAME : your Cloud Storage bucket name PROJECT ID : you Google Cloud project ID Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the Google Cloud project with the resources.
-- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects remove-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \ --role = SERVICE ACCOUNT ROLE Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Read about the Apache Beam programming model .
-- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects add-iam-policy-binding PROJECT ID --member = "serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com" --role = SERVICE ACCOUNT ROLE Replace PROJECT ID with your project ID.
+- Regional placement offers benefits such as: Improved resource availability: Dataflow jobs are more resilient to zonal resource availability errors, because workers can continue to be created in other zones with remaining availability.
+- Although user data is strictly handled by Dataflow workers in their assigned geographic region, pipeline log messages are stored in Cloud Logging , which has a single global presence in Google Cloud.
+- Note: Starting with Beam SDK version 2.44.0, Dataflow does not support running jobs with workers in a region that is different from the job region.
+- Regional placement By default, the region that you select configures the Dataflow worker pool to utilize all available zones within the region.
 

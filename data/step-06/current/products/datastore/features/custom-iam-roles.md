@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.867Z"
+generated_at: "2026-04-12T12:14:02.787Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Custom IAM roles"
 feature_slug: "custom-iam-roles"
 latest_feature_date: "2021-06-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/access/iam"
   - "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
   - "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+  - "https://docs.cloud.google.com/datastore/docs/activate"
 keywords:
   - "custom"
   - "iam"
@@ -26,7 +27,7 @@ keywords:
 # Custom IAM roles
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Custom IAM roles let you define Datastore access using user-defined role composi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/access/iam](https://docs.cloud.google.com/datastore/docs/access/iam)
 - [https://docs.cloud.google.com/datastore/docs/app-engine-requirement](https://docs.cloud.google.com/datastore/docs/app-engine-requirement)
 - [https://docs.cloud.google.com/datastore/docs/export-import-entities](https://docs.cloud.google.com/datastore/docs/export-import-entities)
+- [https://docs.cloud.google.com/datastore/docs/activate](https://docs.cloud.google.com/datastore/docs/activate)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/access/iam](https://docs.cloud.google.com/datastore/docs/access/iam)
 - Source ID: `site-iam-reference`
-- Final score: 238
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 297
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For example, the following condition assigns a principal the datastore.user role up until a specified date: { "role" : "roles/datastore.user" , "members" : [ "user:travis@example.com" ], "condition" : { "title" : "Expires December 1 2023" , "description" : "Expires on December 1, 2023" , "expression" : "request.time < timestamp('2023-12-01T00:00:00.000Z')" } } To learn how to define IAM Conditions for temporary access, see Configure temporary access .
@@ -66,8 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/app-engine-requirement](https://docs.cloud.google.com/datastore/docs/app-engine-requirement)
 - Source ID: `site-iam-reference`
-- Final score: 166
-- Re-rank relevance: N/A
+- Final score: 241
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Ensure continued access by updating your custom roles with datastore.databases.getMetadata or by using a predefined role .
@@ -79,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/export-import-entities](https://docs.cloud.google.com/datastore/docs/export-import-entities)
 - Source ID: `site-docs-root`
-- Final score: 166
+- Final score: 207
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +90,18 @@ Evidence snippets:
 - Otherwise, the following IAM roles grant the necessary permissions: Datastore Owner Datastore Import Export Admin You can also assign these permissions with a custom role .
 - Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method GET -Headers $headers -Uri "https://datastore.googleapis.com/v1/projects/ project-id /operations/ operation-name " Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ project-id /operations/ASA3ODAwMzQxNjIyChp0bHVhZmVkBxJsYXJ0bmVjc3Utc2Jvai1uaW1kYRQKLRI", "metadata": { "@type": "type.googleapis.com/google.datastore.admin.v1.ExportEntitiesMetadata", "common": { "startTime": "2019-10-08T20:07:28.105236Z", "endTime": "2019-10-08T20:07:36.310653Z", "operationType": "EXPORT ENTITIES", "state": "SUCCESSFUL" }, "progressEntities": { "workCompleted": "21", "workEstimated": "21" }, "progressBytes": { "workCompleted": "2272", "workEstimated": "2065" }, "entityFilter": {}, "outputUrlPrefix": "gs:// bucket-name /2019-10-08T20:07:28 28481" }, "done": true, "response": { "@type": "type.googleapis.com/google.datastore.admin.v1.ExportEntitiesResponse", "outputUrl": "gs:// bucket-name /2019-10-08T20:07:28 28481/2019-10-08T20:07:28 28481.overall export metadata" } } Estimating the completion time As your operation runs, see the value of the state field for the overall status of the operation.
 - Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://datastore.googleapis.com/v1/projects/ project-id :import" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ project-id /operations/ operation-id ", "metadata": { "@type": "type.googleapis.com/google.datastore.admin.v1.ImportEntitiesMetadata", "common": { "startTime": "2019-09-18T21:51:02.830608Z", "operationType": "IMPORT ENTITIES", "state": "PROCESSING" }, "entityFilter": { "kinds": [ "Task" ], "namespaceIds": [ "" ] }, "inputUrl": "gs:// bucket-name /2019-09-18T21:49:25 96833/2019-09-18T21:49:25 96833.overall export metadata" } } The response is a long-running operation , which you can check for completion.
+
+### Access your database \_|\_ Datastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/activate](https://docs.cloud.google.com/datastore/docs/activate)
+- Source ID: `site-docs-root`
+- Final score: 206
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you disable or delete your App Engine default service account, your App Engine app will lose access to your Datastore mode database.
+- The Datastore Owner and Datastore User IAM roles, for example, grant read and write access to Firestore in Datastore mode.
+- Under All roles , select a role that grants access to your database, such as Datastore > Cloud Datastore User .
+- Access your database from App Engine To get started with Datastore mode and App Engine, see one of the following language-specific pages: App Engine Standard Environment App Engine Flexible Environment Python Java Go Node.js Python Java Node.js Go Ruby PHP Datastore mode permissions for App Engine App Engine apps can access a Datastore mode database in the same project by default.
 

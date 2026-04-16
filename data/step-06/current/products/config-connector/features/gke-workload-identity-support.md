@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.579Z"
+generated_at: "2026-04-13T14:23:05.290Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "GKE Workload Identity support"
 feature_slug: "gke-workload-identity-support"
 latest_feature_date: "2019-09-30"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubmembership"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall"
   - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/getting-started"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
 keywords:
-  - "gke"
+  - "integration"
   - "workload"
   - "identity"
-  - "config"
-  - "connector"
   - "supports"
-  - "integration"
-  - "with"
 ---
 
 # GKE Workload Identity support
 
 Product: Config Connector
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,44 +38,47 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubmembership](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubmembership)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall](https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall)
 - [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### "Installing with the GKE add-on \_|\_ Config Connector \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall](https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall)
+- Source ID: `site-docs-reference`
+- Final score: 35
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To enable Workload Identity Federation for GKE for a node pool, use the gcloud command-line tool: gcloud container node-pools update NODE POOL \ --workload-metadata = GKE METADATA \ --cluster CLUSTER NAME Replace the following: NODE POOL with your node pool's name CLUSTER NAME with your cluster's name Enabling the Config Connector add-on You can enable the Config Connector add-on in an existing GKE cluster with the Google Cloud CLI or the Google Cloud console. gcloud To enable the Config Connector add-on in an existing GKE cluster use the Google Cloud CLI: gcloud container clusters update CLUSTER NAME \ --update-addons ConfigConnector = ENABLED Replace CLUSTER NAME with the name of your GKE cluster.
+- Requirements The Config Connector add-on has the following requirements: You must use a GKE version of: 1.15.11-gke.5 and later 1.16.8-gke.8 and later 1.17.4-gke.5 and later You must enable a workload identity pool and Kubernetes Engine Monitoring on the clusters where you enable Config Connector.
+- Create an identity Config Connector creates and manages Google Cloud resources by authenticating with an Identity and Access Management (IAM) service account and using Workload Identity Federation for GKE to bind IAM service accounts with Kubernetes service accounts.
+- Note: Enabling Workload Identity Federation for GKE on an existing cluster does not automatically enable Workload Identity Federation for GKE on the cluster's existing node pools.
+
+### GKEHubMembership | Config Connector | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubmembership](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubmembership)
+- Source ID: `feature-recovery-http`
+- Final score: 35
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To use it, replace ${PROJECT_ID?} with your project ID. issuer : https://container.googleapis.com/v1/projects/${PROJECT_ID?}/locations/us-central1-a/clusters/gkehubmembership-dep description : A sample GKE Hub membership endpoint : gkeCluster : resourceRef : name : gkehubmembership-dep --- apiVersion : container.cnrm.cloud.google.com/v1beta1 kind : ContainerCluster metadata : name : gkehubmembership-dep spec : location : us-central1-a initialNodeCount : 1 workloadIdentityConfig : # Workload Identity supports only a single namespace based on your project name. # Replace ${PROJECT_ID?} below with your project ID. workloadPool : ${PROJECT_ID?}.svc.id.goog Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- GKEHubMembership | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Property Value Google Cloud Service Name GKE Hub Google Cloud Service Documentation /kubernetes-engine/fleet-management/docs/manage-features Google Cloud REST Resource Name v1beta1.projects.locations.memberships Google Cloud REST Resource Documentation https://gkehub.googleapis.com/$discovery/rest?version=v1beta1 Config Connector Resource Short Names gcpgkehubmembership gcpgkehubmemberships gkehubmembership Config Connector Service Name gkehub.googleapis.com Config Connector Resource Fully Qualified Name gkehubmemberships.gkehub.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id Spec Schema authority : issuer : string description : string endpoint : gkeCluster : resourceRef : external : string name : string namespace : string kubernetesResource : membershipCrManifest : string resourceOptions : connectVersion : string v1beta1Crd : boolean externalId : string infrastructureType : string location : string resourceID : string Fields authority Optional object Optional.
+- Sample YAML(s) Typical Use Case # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : gkehub.cnrm.cloud.google.com/v1beta1 kind : GKEHubMembership metadata : labels : label-one : value-one name : gkehubmembership-sample spec : location : global authority : # Issuer must contain a link to a valid JWT issuer.
+
+### Access control with IAM \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 146
+- Source ID: `site-docs-reference`
+- Final score: 33
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
-
-### Getting started with Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
-- Source ID: `site-docs-root`
-- Final score: 103
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Getting started with Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/getting-started PROJECT ID: your Google Cloud project ID.
-- By default, Config Connector deletes the PubSubTopic resource.
-- For example, to delete the PubSubTopic you created earlier, run kubectl delete with your pubsub-topic.yaml file: ...
-
-### IAMPolicy | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 95
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
+- To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
+- Single service account When you install Config Connector with the GKE add-on or manual installation, you can set cluster mode in your ConfigConnector CustomResource .
+- Access control with IAM This document describes how to use Identity and Access Management to control how Config Connector can create and manage Google Cloud resources.
 

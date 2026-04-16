@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 367
-Unique features: 1407
+Unique features: 928
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -79,7 +79,6 @@ Unique features: 1407
 | 2025-08-26 | Global Ocean Colour Biogeochemical L4 Transparency Multi-Sensor 4 km |  | Transparency observations in a global ocean colour biogeochemical Level 4 multi-sensor product at 4 km resolution. |
 | 2025-08-26 | Global Ocean Colour Biogeochemical L4 Transparency OLCI 4 km |  | Transparency observations in a global ocean colour biogeochemical Level 4 OLCI product at 4 km resolution. |
 | 2025-08-26 | Global Pasture Watch Annual Uncalibrated Gross Primary Productivity v1 |  | Annual uncalibrated gross primary productivity estimates from Global Pasture Watch. |
-| 2025-08-26 | JRC Global River Flood Hazard Maps v2 | 2025-08-26 | Global river flood hazard maps version 2 are no longer available; deprecated on 2025-08-26. |
 | 2025-08-26 | Malaria Atlas Project Gap-Filled Daytime Land Surface Temperature (Annual 1 km) |  | Gap-filled daytime land surface temperature at 1 km resolution on an 8-daily cadence; Gap-filled daytime land surface temperature at 1 km resolution on an annual cadence. |
 | 2025-08-26 | Malaria Atlas Project Gap-Filled Enhanced Vegetation Index (Annual 1 km) |  | Gap-filled enhanced vegetation index at 1 km resolution on an 8-daily cadence; Gap-filled enhanced vegetation index at 1 km resolution on an annual cadence. |
 | 2025-08-26 | Malaria Atlas Project Gap-Filled Nighttime Land Surface Temperature (Annual 1 km) |  | Gap-filled nighttime land surface temperature at 1 km resolution on an 8-daily cadence; Gap-filled nighttime land surface temperature at 1 km resolution on an annual cadence. |
@@ -95,7 +94,6 @@ Unique features: 1407
 | 2025-07-29 | USFS TreeMap v2022 |  | This dataset provides USFS TreeMap land cover and forest attribute data for version 2022. |
 | 2025-07-22 | Copernicus Satellite Ocean Color Daily Data V6 |  | This dataset provides daily Copernicus satellite ocean color observations. |
 | 2025-07-15 | WAPOR Daily Reference Evapotranspiration 3.0 |  | This dataset provides daily reference evapotranspiration from WAPOR version 3.0. |
-| 2025-07-08 | FAO WAPOR L1_RET-E | 2025-07-08 | This legacy WAPOR reference evapotranspiration asset is no longer available; deprecated on 2025-07-08. |
 | 2025-07-08 | WAPOR Actual Evapotranspiration and Interception 3.0 |  | This dataset provides actual evapotranspiration and interception from WAPOR version 3.0. |
 | 2025-07-08 | WAPOR Dekadal Evaporation 3.0 |  | This dataset provides dekadal evaporation from WAPOR version 3.0. |
 | 2025-07-08 | WAPOR Dekadal Interception 3.0 |  | This dataset provides dekadal interception from WAPOR version 3.0. |
@@ -154,32 +152,23 @@ Unique features: 1407
 | 2024-12-17 | GPW Annual Probabilities of Cultivated Grasslands v1 |  | An annual dataset of cultivated grassland probabilities. |
 | 2024-12-17 | GPW Annual Probabilities of Natural/Semi-natural Grasslands v1 |  | An annual dataset of natural and semi-natural grassland probabilities. |
 | 2024-12-10 | WeatherNext Graph Forecasts |  | A graph forecast dataset for WeatherNext weather predictions. |
-| 2024-12-03 | Forest Data Partnership Cocoa model 2024a | 2024-12-03 | A Cocoa crop model dataset from the Forest Data Partnership; deprecated on 2024-12-03. |
 | 2024-12-03 | Forest Data Partnership Forest Persistence v0 |  | A forest persistence dataset from the Forest Data Partnership. |
-| 2024-12-03 | Forest Data Partnership Palm model 2024a | 2024-12-03 | A Palm crop model dataset from the Forest Data Partnership; deprecated on 2024-12-03. |
-| 2024-12-03 | Forest Data Partnership Rubber model 2024a | 2024-12-03 | A Rubber crop model dataset from the Forest Data Partnership; deprecated on 2024-12-03. |
-| 2024-12-03 | JRC Global Forest Cover 2020 V2 | 2024-12-03 | A global forest cover dataset for 2020 from JRC version 2; deprecated on 2024-12-03. |
 | 2024-11-12 | CHIRTS Temperature Daily |  | A daily climate hazards temperature dataset from the Climate Hazards Center. |
 | 2024-11-12 | CPC Global Unified Gauge-Based Analysis of Daily Precipitation |  | A global gauge-based analysis dataset for daily precipitation. |
 | 2024-11-12 | CPC Global Unified Temperature |  | A global temperature analysis dataset from CPC. |
-| 2024-11-12 | ga_ls8cls9c_gm_cyear_3 | 2024-11-12 | A Geoscience Australia Earth Engine asset identified by its dataset ID; deprecated on 2024-11-12. |
 | 2024-11-05 | Global 2020 Forest Classification for IPCC Aboveground Biomass Tier 1 Estimates |  | A global forest classification dataset for IPCC aboveground biomass Tier 1 estimates. |
 | 2024-11-05 | V1 |  | A global forest classification dataset for IPCC aboveground biomass Tier 1 estimates. |
-| 2024-10-29 | JRC GFC2020 subtypes V0 | 2024-10-29 | A JRC dataset of Global Forest Cover 2020 subtypes; deprecated on 2024-10-29. |
 | 2024-10-29 | UN Geospatial Data BNDA_simplified |  | A simplified United Nations geospatial boundary dataset. |
 | 2024-10-22 | IUCN Global Ecosystem Typology Level 3 |  | A level 3 global ecosystem typology dataset from IUCN. |
 | 2024-10-22 | LARSE GEDI Gridded Vegetation Structure Metrics and Biomass Density COUNTS 12KM |  | A GEDI gridded vegetation structure and biomass density dataset with COUNTS metrics at 12 km resolution. |
 | 2024-10-22 | LARSE GEDI Gridded Vegetation Structure Metrics and Biomass Density COUNTS 1KM |  | A GEDI gridded vegetation structure and biomass density dataset with COUNTS metrics at 1 km resolution. |
 | 2024-10-22 | LARSE GEDI Gridded Vegetation Structure Metrics and Biomass Density COUNTS 6KM |  | A GEDI gridded vegetation structure and biomass density dataset with COUNTS metrics at 6 km resolution. |
 | 2024-10-15 | GHSL Degree of Urbanization 1975-2030 V2-0 (P2023A) |  | A global degree of urbanization dataset spanning 1975 to 2030. |
-| 2024-10-08 | UK NHM BII V1 | 2024-10-08 | A Biodiversity Intactness Index dataset from the UK Natural History Museum; deprecated on 2024-10-08. |
 | 2024-09-24 | Cote d'Ivoire BNETD 2020 Land Cover Map |  | A 2020 land cover map for Cote d'Ivoire from BNETD. |
-| 2024-09-24 | JRC CEMS GLOFAS Flood Hazard v1 | 2024-09-24 | A global flood hazard dataset from JRC CEMS GLOFAS; deprecated on 2024-09-24. |
 | 2024-09-24 | Open Buildings Temporal V1 |  | A temporal building footprint dataset from Google Research. |
 | 2024-09-03 | EMIT L2A Estimated Surface Reflectance and Uncertainty and Masks 60 m |  | An EMIT Level 2A surface reflectance dataset with uncertainty and mask layers at 60 m resolution. |
 | 2024-09-03 | MethaneAIR L3 Concentration v1 |  | An atmospheric methane concentration dataset from MethaneAIR. |
 | 2024-09-03 | OGIM Oil and Gas Infrastructure Mapping Database v2.5.1 |  | A global oil and gas infrastructure mapping database. |
-| 2024-09-03 | WRI SBTN Natural Lands v1 | 2024-09-03 | A natural lands dataset from the WRI SBTN program; deprecated on 2024-09-03. |
 | 2024-08-27 | LARSE GEDI Gridded Vegetation Structure Metrics and Biomass Density 12KM |  | A GEDI gridded vegetation structure and biomass density dataset at 12 km resolution. |
 | 2024-08-27 | LARSE GEDI Gridded Vegetation Structure Metrics and Biomass Density 1KM |  | A GEDI gridded vegetation structure and biomass density dataset at 1 km resolution. |
 | 2024-08-27 | LARSE GEDI Gridded Vegetation Structure Metrics and Biomass Density 6KM |  | A GEDI gridded vegetation structure and biomass density dataset at 6 km resolution. |
@@ -195,7 +184,6 @@ Unique features: 1407
 | 2024-08-20 | NEON RGB Camera Imagery |  | A NEON RGB camera imagery dataset. |
 | 2024-08-20 | NEON Surface Bidirectional Reflectance |  | A NEON hyperspectral surface bidirectional reflectance dataset. |
 | 2024-08-20 | NEON Surface Directional Reflectance |  | A NEON hyperspectral surface directional reflectance dataset. |
-| 2024-08-13 | CAS/IGSNRR/PML v2 v018 | 2024-08-13 | A CAS/IGSNRR/PML dataset version v018; deprecated on 2024-08-13. |
 | 2024-08-13 | WDOECM Points |  | A point dataset of Other Effective Area-based Conservation Measures. |
 | 2024-08-13 | WDOECM Polygons |  | A polygon dataset of Other Effective Area-based Conservation Measures. |
 | 2024-08-06 | GPM IMERG Version 07 |  | A GPM IMERG precipitation dataset release 07. |
@@ -227,16 +215,11 @@ Unique features: 1407
 | 2024-06-04 | MYD09CMG.061 |  | An Aqua surface reflectance daily global CMG dataset at 0.05 degrees. |
 | 2024-05-28 | GPM IMERG Monthly Version 07 |  | A monthly GPM IMERG precipitation dataset version 07. |
 | 2024-05-28 | IPCC AR6 Sea Level Projections Regional |  | A regional sea level projections dataset from IPCC AR6 with medium confidence. |
-| 2024-05-14 | Community Palm | 2024-05-14 | A community palm dataset from the Forest Data Partnership; deprecated on 2024-05-14. |
 | 2024-05-14 | GRACE Monthly Mass Grids Release 06 Version 04 Ocean |  | A GRACE monthly mass grids dataset for the ocean component in release 06 version 04. |
 | 2024-05-07 | Google Global Landsat-based CCDC Segments |  | A global Landsat-based CCDC segments dataset covering 1999 to 2019. |
-| 2024-04-30 | GRACE Monthly Mass Grids Release 06 Version 03 Mascon | 2024-04-30 | A GRACE monthly mass grids Mascon dataset in release 06 version 03; deprecated on 2024-04-30. |
-| 2024-04-30 | GRACE Monthly Mass Grids Release 06 Version 03 Mascon CRI | 2024-04-30 | A GRACE monthly mass grids Mascon CRI dataset in release 06 version 03; deprecated on 2024-04-30. |
 | 2024-04-23 | GHSL Global Built-up Surface 10 m P2023A |  | A global built-up surface dataset at 10 m resolution from GHSL P2023A. |
 | 2024-04-23 | GRACE Monthly Mass Grids Release 06 Version 04 Land |  | A GRACE monthly mass grids dataset for the land component in release 06 version 04. |
-| 2024-04-16 | USFS/GTAC LCMS v2023-9 | 2024-04-16 | Land Change Monitoring, Assessment, and Projection data for USFS GTAC; deprecated on 2024-04-16. |
 | 2024-04-09 | WRI Aqueduct Flood Hazard Maps v2 |  | Flood hazard maps from the World Resources Institute Aqueduct project. |
-| 2024-03-26 | UMD Global Forest Change 2023 v1.11 | 2024-03-26 | Global forest change dataset from the University of Maryland for 2023; deprecated on 2024-03-26. |
 | 2024-03-19 | geoBoundaries ADM0 v6.0.0 |  | Country-level political administrative boundaries. |
 | 2024-03-19 | geoBoundaries ADM1 v6.0.0 |  | District-level political administrative boundaries. |
 | 2024-03-19 | geoBoundaries ADM2 v6.0.0 |  | Municipality-level political administrative boundaries. |
@@ -251,12 +234,6 @@ Unique features: 1407
 | 2024-02-20 | NASA LANCE S-NPP VIIRS C2 |  | Daily 375 m active fire raster from S-NPP VIIRS. |
 | 2024-02-20 | NASA SMAP SPL3SMP_E v006 |  | Global daily 9 km soil moisture from the SMAP L3 radiometer product. |
 | 2024-02-20 | NOAA VIIRS DNB Annual V2.2 |  | Annual day/night band composites from VIIRS. |
-| 2024-02-13 | EDF MethaneAIR L4 Area 2021 | 2024-02-13 | Area-based methane emissions product from MethaneAIR for 2021; deprecated on 2024-02-13. |
-| 2024-02-13 | EDF MethaneAIR L4 Point 2021 | 2024-02-13 | Point-based methane emissions product from MethaneAIR for 2021; deprecated on 2024-02-13. |
-| 2024-02-13 | EDF OGIM v2.4 RF06/RF08 | 2024-02-13 | Oil and gas infrastructure methane emissions dataset for RF06 and RF08 regions; deprecated on 2024-02-13. |
-| 2024-01-30 | geoBoundaries ADM0 v5.0.0 | 2024-01-30 | Country-level political administrative boundaries; deprecated on 2024-01-30. |
-| 2024-01-30 | geoBoundaries ADM1 v5.0.0 | 2024-01-30 | District-level political administrative boundaries; deprecated on 2024-01-30. |
-| 2024-01-30 | geoBoundaries ADM2 v5.0.0 | 2024-01-30 | Municipality-level political administrative boundaries; deprecated on 2024-01-30. |
 | 2024-01-30 | NOAA CDR AVHRR AOT v04 |  | Daily aerosol optical thickness over global oceans from AVHRR. |
 | 2024-01-30 | USGS GMTED2010 Full |  | Global multi-resolution terrain elevation data from 2010. |
 | 2024-01-23 | USGS LIMA SR_METADATA |  | Metadata for processed Landsat scenes in the Landsat Image Mosaic of Antarctica. |
@@ -264,29 +241,14 @@ Unique features: 1407
 | 2024-01-09 | JAXA/ALOS/PALSAR-2/Level2_1/StripMap_202401 |  | ALOS-2 PALSAR-2 StripMap Level 2.1 provides ALOS-2 PALSAR-2 StripMap imagery. |
 | 2024-01-09 | MODIS/061/MOD13C1 |  | MOD13C1.061 provides Terra vegetation indices on a 16-day global 0.05-degree climate modeling grid. |
 | 2024-01-09 | MODIS/061/MYD13C1 |  | MYD13C1.061 provides Aqua vegetation indices on a 16-day global 0.05-degree climate modeling grid. |
-| 2024-01-09 | USGS/NLCD_RELEASES/2021_REL/TCC/v2021-4 | 2024-01-09 | USGS NLCD_RELEASES/2021_REL/TCC/v2021-4 is a tree canopy cover dataset; deprecated on 2024-01-09. |
-| 2024-01-02 | CSIC/SPEI/2_9 | 2024-01-02 | CSIC SPEI 2.9 provides the Standardized Precipitation Evapotranspiration Index; deprecated on 2024-01-02. |
 | 2023-12-26 | USFS/GTAC/TreeMap/v2016 |  | USFS TreeMap v2016 maps forest attributes in the conterminous United States. |
-| 2023-12-12 | JRC/GFC2020/V1 | 2023-12-12 | JRC GFC2020 V1 provides global forest cover data; deprecated on 2023-12-12. |
 | 2023-12-05 | NASA/GSFC/MERRA/aer_nv/2 |  | MERRA-2 M2I3NVAER provides aerosol mixing ratio data in version 5.12.4. |
 | 2023-11-28 | MODIS/061/MCD12C1 |  | MCD12C1.061 provides yearly global MODIS land cover types on a 0.05-degree climate modeling grid. |
 | 2023-11-28 | RUB/RUBCLIM/LCZ/global_lcz_map/latest |  | Global map of Local Climate Zones, latest version, provides global local climate zone classification. |
 | 2023-11-14 | MODIS/061/MOD16A2GF |  | MOD16A2GF.061 provides Terra net evapotranspiration in an 8-day global 500-meter gap-filled product. |
-| 2023-11-07 | MODIS/061/MCD18A1 | 2023-11-07 | MODIS/061/MCD18A1 is a MODIS Collection 6.1 Earth Engine catalog dataset; deprecated on 2023-11-07. |
-| 2023-11-07 | projects/geoscience-aus-cat/assets/ga_ls_landcover_class_cyear_2 | 2023-11-07 | Ga_ls_landcover_class_cyear_2 is a Geoscience Australia land cover catalog asset; deprecated on 2023-11-07. |
-| 2023-11-07 | projects/geoscience-aus-cat/assets/ga_ls_wo_fq_cyear_3 | 2023-11-07 | Ga_ls_wo_fq_cyear_3 is a Geoscience Australia catalog asset; deprecated on 2023-11-07. |
-| 2023-11-07 | projects/geoscience-aus-cat/assets/ga_ls5t_nbart_gm_cyear_3 | 2023-11-07 | Ga_ls5t_nbart_gm_cyear_3 is a Geoscience Australia Landsat catalog asset; deprecated on 2023-11-07. |
-| 2023-11-07 | projects/geoscience-aus-cat/assets/ga_ls7e_nbart_gm_cyear_3 | 2023-11-07 | Ga_ls7e_nbart_gm_cyear_3 is a Geoscience Australia Landsat catalog asset; deprecated on 2023-11-07. |
-| 2023-11-07 | projects/geoscience-aus-cat/assets/ga_ls8c_nbart_gm_cyear_3 | 2023-11-07 | Ga_ls8c_nbart_gm_cyear_3 is a Geoscience Australia Landsat catalog asset; deprecated on 2023-11-07. |
 | 2023-10-17 | NASA/HLS/HLSL30/v002 |  | HLSL30 v002 provides HLS-2 Landsat Operational Land Imager surface reflectance and TOA brightness at 30 meters. |
 | 2023-10-10 | JAXA/GPM_L3/GSMaP/v7/operational |  | GSMaP Operational V7 provides global satellite precipitation estimates. |
 | 2023-10-10 | JAXA/GPM_L3/GSMaP/v8/operational |  | GSMaP Operational V8 provides global satellite precipitation estimates. |
-| 2023-10-10 | projects/geoscience-aus-cat/assets/annual-water-obs | 2023-10-10 | Annual-water-obs is a Geoscience Australia catalog asset; deprecated on 2023-10-10. |
-| 2023-10-10 | projects/geoscience-aus-cat/assets/ga_landcover | 2023-10-10 | Ga_landcover is a Geoscience Australia land cover catalog asset; deprecated on 2023-10-10. |
-| 2023-10-10 | projects/geoscience-aus-cat/assets/geomedians_LS5 | 2023-10-10 | Geomedians_LS5 is a Geoscience Australia Landsat geomedian catalog asset; deprecated on 2023-10-10. |
-| 2023-10-10 | projects/geoscience-aus-cat/assets/geomedians_LS7 | 2023-10-10 | Geomedians_LS7 is a Geoscience Australia Landsat geomedian catalog asset; deprecated on 2023-10-10. |
-| 2023-10-10 | projects/geoscience-aus-cat/assets/geomedians_LS8 | 2023-10-10 | Geomedians_LS8 is a Geoscience Australia Landsat geomedian catalog asset; deprecated on 2023-10-10. |
-| 2023-10-10 | projects/geoscience-aus-cat/assets/NIDEM | 2023-10-10 | NIDEM is a Geoscience Australia catalog asset; deprecated on 2023-10-10. |
 | 2023-10-03 | GOOGLE/CLOUD_SCORE_PLUS/V1/S2_HARMONIZED |  | Cloud Score+ S2_HARMONIZED V1 provides cloud quality scoring for Sentinel-2 harmonized imagery. |
 | 2023-10-03 | MODIS/061/MYD13A3 |  | MYD13A3.061 provides Aqua vegetation indices on a monthly global 1-kilometer sinusoidal grid. |
 | 2023-10-03 | projects/sat-io/open-datasets/GLOBathy/GLOBathy_bathymetry |  | GLOBathy provides a global lakes bathymetry dataset. |
@@ -297,14 +259,10 @@ Unique features: 1407
 | 2023-09-05 | MCD19A1.061 Land Surface BRF Daily L2G Global 500m and 1km |  | MCD19A1.061 provides daily global land surface BRF at 500 m and 1 km resolution. |
 | 2023-08-22 | GHSL Global building volume (GHS_BUILT_V) |  | GHSL Global building volume estimates building volume globally for the 1975 to 2030 period. |
 | 2023-08-22 | GHSL Global settlement characteristics (GHS_BUILT_C) |  | GHSL Global settlement characteristics describe settlement-related built-environment characteristics for 2018. |
-| 2023-08-22 | RCMAP V5 TRENDS | 2023-08-22 | RCMAP V5 TRENDS provides rangeland condition trend data; deprecated on 2023-08-22. |
-| 2023-08-22 | RCMAP V5 TRENDS_YEAR | 2023-08-22 | RCMAP V5 TRENDS_YEAR provides yearly rangeland condition trend data; deprecated on 2023-08-22. |
 | 2023-08-15 | GHSL Global building height (GHS_BUILT_H) |  | GHSL Global building height maps building heights globally for 2018. |
 | 2023-08-15 | GHSL Global built-up surface (GHS_BUILT_S) |  | GHSL Global built-up surface maps built-up area globally from 1975 to 2030. |
-| 2023-08-15 | IrrMapper RF v1.1 | 2023-08-15 | IrrMapper RF v1.1 maps irrigated agriculture using a random forest model; deprecated on 2023-08-15. |
 | 2023-08-15 | Netherlands orthophotos |  | Netherlands orthophotos provide aerial imagery for the Netherlands. |
 | 2023-08-08 | GEOS-CF Forecast tavg1hr v1 |  | GEOS-CF Forecast tavg1hr v1 provides hourly forecast composition fields. |
-| 2023-08-01 | GHSL Settlement Model (GHS_SMOD) | 2023-08-01 | GHSL Settlement Model classifies settlement types globally; deprecated on 2023-08-01. |
 | 2023-07-25 | WorldCereal 10 m v100 Models |  | WorldCereal 10 m v100 Models provides the model products used by WorldCereal at 10 m resolution. |
 | 2023-07-25 | WorldCereal Active Cropland 10 m v100 |  | WorldCereal Active Cropland 10 m v100 identifies active cropland at 10 m resolution. |
 | 2023-07-25 | WorldCereal AEZ v100 |  | WorldCereal AEZ v100 provides agro-ecological zone information used by WorldCereal. |
@@ -318,12 +276,9 @@ Unique features: 1407
 | 2023-06-13 | MOD16A2.061 Terra Net Evapotranspiration 8-Day Global 500m |  | MOD16A2.061 provides Terra net evapotranspiration every 8 days at 500 m resolution. |
 | 2023-06-13 | MYD10A1.061 Aqua Snow Cover Daily Global 500m |  | MYD10A1.061 provides Aqua snow cover daily at 500 m resolution. |
 | 2023-06-13 | North American Land Cover 2020 (NALCMS) |  | North American Land Cover 2020 (NALCMS) provides 30-meter land cover data for North America. |
-| 2023-06-06 | CSIC SPEI 2.8 | 2023-06-06 | A CSIC Standardized Precipitation-Evapotranspiration Index dataset; deprecated on 2023-06-06. |
-| 2023-05-23 | Global Forest Change 2022 v1.10 | 2023-05-23 | A global forest change dataset for 2022 release v1.10; deprecated on 2023-05-23. |
 | 2023-05-23 | NOAA VIIRS VNP43IA1 |  | The BRDF/Albedo Model Parameters Daily L3 global 500 m product. |
 | 2023-05-16 | Latvia CIR orthophotos |  | Color infrared orthophotos for Latvia. |
 | 2023-05-16 | Latvia RGB orthophotos |  | RGB orthophotos for Latvia. |
-| 2023-05-16 | USFS GTAC LCMS v2022-8 | 2023-05-16 | A US Forest Service LCMS release for version 2022-8; deprecated on 2023-05-16. |
 | 2023-05-02 | NOAA VIIRS VNP46A1 |  | The VIIRS Daily Gridded Day Night Band 500 m night product. |
 | 2023-05-02 | OpenET DisALEXI Monthly Evapotranspiration v2.0 |  | A monthly evapotranspiration product based on OpenET DisALEXI for version 2.0. |
 | 2023-05-02 | OpenET eeMETRIC Monthly Evapotranspiration v2.0 |  | A monthly evapotranspiration product based on OpenET eeMETRIC for version 2.0. |
@@ -345,24 +300,15 @@ Unique features: 1407
 | 2023-04-11 | WWF HydroATLAS Basins Level 09 |  | HydroATLAS basin boundaries at level 09. |
 | 2023-04-11 | WWF HydroATLAS Basins Level 10 |  | HydroATLAS basin boundaries at level 10. |
 | 2023-04-11 | WWF HydroATLAS Basins Level 11 |  | HydroATLAS basin boundaries at level 11. |
-| 2023-03-21 | NOAA VIIRS VNP15A2H | 2023-03-21 | The VIIRS vegetation and land surface product VNP15A2H; deprecated on 2023-03-21. |
 | 2023-03-14 | NEX-GDDP-CMIP6 |  | NASA Earth Exchange global daily downscaled climate projections based on CMIP6. |
-| 2023-03-07 | NOAA VIIRS VNP46A2 | 2023-03-07 | The VIIRS day/night band product VNP46A2; deprecated on 2023-03-07. |
-| 2023-02-21 | NOAA VIIRS VNP09H1 | 2023-02-21 | The VIIRS surface reflectance product VNP09H1; deprecated on 2023-02-21. |
 | 2023-02-21 | Spain PNOA10 RGB orthophotos |  | High-resolution 10 cm RGB orthophotos for Spain. |
 | 2023-02-07 | Allen Coral Atlas Geomorphic Zonation and Benthic Habitat v2.0 |  | This dataset provides Allen Coral Atlas coral reef geomorphic zonation and benthic habitat classification at v2.0. |
 | 2023-02-07 | Brandenburg (Germany) RGBN Orthophotos 20 cm |  | This dataset provides 20 cm RGBN orthophotos for Brandenburg, Germany. |
 | 2023-02-07 | Copernicus DEM GLO-30 |  | This dataset provides a global 30 m Copernicus digital elevation model. |
-| 2023-02-07 | ECMWF ERA5-Land Daily Raw | 2023-02-07 | This dataset provides raw daily ERA5-Land reanalysis outputs from ECMWF; deprecated on 2023-02-07. |
 | 2023-02-07 | GEOS-CF Forecast HTF v1 |  | This dataset provides GEOS-CF forecast high-temporal-frequency outputs from NASA's composition forecast system. |
-| 2023-02-07 | USGS RCMAP Cover V5 | 2023-02-07 | This dataset provides USGS RCMAP cover data for rangeland vegetation analysis; deprecated on 2023-02-07. |
 | 2023-01-31 | NOAA VIIRS VNP64A1 Burned Area Monthly L4 |  | This product provides monthly global burned area mapping from VIIRS at 500 m resolution. |
-| 2023-01-24 | Brandenburg (Germany) Orthophotos 20 cm | 2023-01-24 | This dataset provides 20 cm orthophotos for Brandenburg, Germany; deprecated on 2023-01-24. |
 | 2023-01-24 | ECMWF ERA5-Land Monthly Aggregated |  | This dataset provides monthly aggregated ERA5-Land reanalysis data from ECMWF. |
-| 2023-01-24 | NOAA VIIRS VNP21A1D Daytime Land Surface Temperature and Emissivity | 2023-01-24 | This product provides VIIRS daytime land surface temperature and emissivity data; deprecated on 2023-01-24. |
-| 2023-01-24 | NOAA VIIRS VNP21A1N Nighttime Land Surface Temperature and Emissivity | 2023-01-24 | This product provides VIIRS nighttime land surface temperature and emissivity data; deprecated on 2023-01-24. |
 | 2023-01-17 | NASA SMAP SPL3SMP_E v005 |  | This product provides SMAP L3 radiometer-derived global daily soil moisture at 9 km. |
-| 2023-01-17 | NASA SMAP SPL4SMGP v007 | 2023-01-17 | This product provides SMAP soil moisture profile retrievals and related geophysical fields; deprecated on 2023-01-17. |
 | 2023-01-10 | Finland NRG NLS Orthophotos 50 cm by Mavi |  | This dataset provides 50 cm NLS orthophotos for Finland published by Mavi. |
 | 2023-01-10 | Finland NRG NLS Orthophotos 50 cm by SMK |  | This dataset provides 50 cm NRG NLS orthophotos for Finland published by SMK. |
 | 2023-01-10 | Finland RGB NLS Orthophotos 50 cm by SMK |  | This dataset provides 50 cm RGB NLS orthophotos for Finland published by SMK. |
@@ -380,14 +326,12 @@ Unique features: 1407
 | 2023-01-03 | MODIS MOD21A1N Terra Nighttime Land Surface Temperature and Emissivity |  | This product provides MODIS Terra nighttime land surface temperature and emissivity data at 1 km resolution. |
 | 2023-01-03 | MODIS MYD21A1D Aqua Daytime Land Surface Temperature and Emissivity |  | This product provides MODIS Aqua daytime land surface temperature and emissivity data at 1 km resolution. |
 | 2023-01-03 | MODIS MYD21A1N Aqua Nighttime Land Surface Temperature and Emissivity |  | This product provides MODIS Aqua nighttime land surface temperature and emissivity data at 1 km resolution. |
-| 2022-12-27 | MODIS MCD18C2 BRDF/Albedo | 2022-12-27 | This product provides MODIS BRDF/albedo data in the MCD18C2 format; deprecated on 2022-12-27. |
 | 2022-12-27 | MODIS MCD43C3 BRDF/Albedo Daily L3 0.05° CMG |  | This product provides MODIS BRDF/albedo data in daily 0.05° CMG form. |
 | 2022-12-20 | MODIS MCD12Q1 Land Cover Type Yearly 500m |  | This product provides yearly MODIS land cover type classification at 500 m resolution. |
 | 2022-12-20 | MODIS MCD12Q2 Land Cover Dynamics Yearly 500m |  | This product provides yearly MODIS land cover dynamics at 500 m resolution. |
 | 2022-12-20 | MODIS MCD43A2 BRDF-Albedo Quality Daily 500m |  | This product provides MODIS BRDF-albedo quality information at 500 m resolution. |
 | 2022-12-20 | MODIS MCD43A3 Albedo Daily 500m |  | This product provides daily MODIS albedo at 500 m resolution. |
 | 2022-12-20 | MODIS MCD43A4 Nadir BRDF-Adjusted Reflectance Daily 500m |  | This product provides daily MODIS nadir BRDF-adjusted reflectance at 500 m resolution. |
-| 2022-12-20 | NOAA VIIRS VNP14A1 Active Fire | 2022-12-20 | This product provides NOAA VIIRS active fire detections; deprecated on 2022-12-20. |
 | 2022-12-13 | GEDI L4A Aboveground Biomass Density v2.1 |  | This dataset provides GEDI L4A aboveground biomass density estimates in version 2.1. |
 | 2022-12-13 | GEDI L4A Raster Aboveground Biomass Density v2.1 |  | This dataset provides GEDI L4A rasterized aboveground biomass density estimates in version 2.1. |
 | 2022-12-13 | GEDI L4A Table Index |  | This dataset provides the index table for GEDI L4A assets. |
@@ -399,16 +343,13 @@ Unique features: 1407
 | 2022-11-01 | TIGER US Census Block Groups 2010 |  | This dataset provides US Census block groups from the 2010 TIGER release. |
 | 2022-10-25 | GLDAS-2.2 Global Land Data Assimilation System |  | This dataset provides the GLDAS 2.2 global land data assimilation system. |
 | 2022-10-25 | JAXA ALOS PALSAR-2 ScanSAR Level 2.2 |  | This dataset provides JAXA ALOS PALSAR-2 ScanSAR Level 2.2 data. |
-| 2022-10-25 | RUBCLIM Global LCZ Map v1 | 2022-10-25 | This dataset provides a global local climate zone map from RUBCLIM v1; deprecated on 2022-10-25. |
 | 2022-10-18 | JRC Global Surface Water mapping layers v1.4 |  | Global surface water mapping layers from JRC version 1.4. |
 | 2022-10-18 | JRC Global Surface Water metadata v1.4 |  | Metadata for the JRC Global Surface Water version 1.4 products. |
 | 2022-10-18 | JRC Monthly Water History v1.4 |  | Monthly history of surface water occurrence from JRC version 1.4. |
 | 2022-10-18 | JRC Monthly Water Recurrence v1.4 |  | Monthly surface water recurrence from JRC version 1.4. |
 | 2022-10-18 | JRC Yearly Water Classification History v1.4 |  | Yearly water classification history from JRC version 1.4. |
 | 2022-10-18 | PALSAR-2/PALSAR 4-class forest/non-forest map |  | A global four-class forest/non-forest map derived from PALSAR-2/PALSAR data. |
-| 2022-10-18 | SwissIMAGE 10 cm orthophoto | 2022-10-18 | A 10 cm Swiss orthophoto dataset that is no longer available in Earth Engine; deprecated on 2022-10-18. |
 | 2022-10-11 | Forest Proximate People 1.0 |  | A dataset estimating the number of people living near forests. |
-| 2022-10-11 | Open Buildings v2 polygons | 2022-10-11 | Polygon footprints from the Open Buildings v2 dataset that are no longer available in Earth Engine; deprecated on 2022-10-11. |
 | 2022-10-11 | PALSAR-2/PALSAR Yearly Mosaic v2.5.0 |  | A yearly global mosaic built from PALSAR-2/PALSAR radar imagery. |
 | 2022-10-11 | Tree Proximate People 1.0 |  | A dataset estimating the number of people living near trees. |
 | 2022-09-27 | IGN RGE ALTI 1 m elevation model |  | A 1 m digital elevation model from IGN RGE ALTI. |
@@ -449,7 +390,6 @@ Unique features: 1407
 | 2022-06-14 | Landsat 4 TM Collection 2 Tier 2 raw scenes |  | Raw Landsat 4 TM scenes in Collection 2 Tier 2. |
 | 2022-06-14 | Landsat 4 TM Collection 2 Tier 2 TOA reflectance |  | Top-of-atmosphere reflectance scenes for Landsat 4 TM in Collection 2 Tier 2. |
 | 2022-06-14 | Landsat 5 MSS Collection 2 Tier 1 raw scenes |  | Raw Landsat 5 MSS scenes in Collection 2 Tier 1. |
-| 2022-06-07 | CAS/IGSNRR/PML V2 v017 | 2022-06-07 | A CAS/IGSNRR/PML dataset version identified as v017; deprecated on 2022-06-07. |
 | 2022-06-07 | TIGER: 2020 Tabulation (Census) Block |  | US Census tabulation blocks for 2020 from the TIGER dataset. |
 | 2022-06-07 | TIGER: US Census Block Groups (BG) 2020 |  | US Census Block Groups for 2020 from the TIGER dataset. |
 | 2022-06-07 | TIGER: US Census Tracts |  | US Census tracts from the TIGER dataset. |
@@ -459,7 +399,6 @@ Unique features: 1407
 | 2022-05-10 | USGS Landsat 9 Collection 2 Tier 2 Raw Scenes |  | Raw Landsat 9 scenes in Collection 2, Tier 2. |
 | 2022-05-10 | USGS Landsat 9 Collection 2 Tier 2 TOA Reflectance |  | Top-of-atmosphere reflectance for Landsat 9 Collection 2, Tier 2. |
 | 2022-05-03 | GEOS-CF rpl htf v1 |  | A GEOS-CF composition forecast dataset for rpl htf v1. |
-| 2022-05-03 | UMD/hansen/global_forest_change_2021_v1_9 | 2022-05-03 | A global forest change dataset for 2021, version 1.9; deprecated on 2022-05-03. |
 | 2022-04-26 | MOD13Q1.061 Terra Vegetation Indices 16-Day Global 250m |  | Terra vegetation indices on a 16-day, 250 m global grid. |
 | 2022-04-26 | MYD09Q1.061 Aqua Surface Reflectance 8-Day Global 250m |  | Aqua surface reflectance on an 8-day, 250 m global grid. |
 | 2022-04-26 | MYD11A2.061 Aqua Land Surface Temperature and Emissivity 8-Day Global 1km |  | Aqua land surface temperature and emissivity on an 8-day, 1 km global grid. |
@@ -468,7 +407,6 @@ Unique features: 1407
 | 2022-04-26 | MYD13Q1.061 Aqua Vegetation Indices 16-Day Global 250m |  | Aqua vegetation indices on a 16-day, 250 m global grid. |
 | 2022-04-26 | MYD14A2.061 Aqua Thermal Anomalies & Fire 8-Day Global 1km |  | Aqua thermal anomalies and fire on an 8-day, 1 km global grid. |
 | 2022-04-26 | MYD15A2H.061 Aqua Leaf Area Index/FPAR 8-Day Global 500m |  | Aqua leaf area index and FPAR on an 8-day, 500 m global grid. |
-| 2022-04-26 | USFS/GTAC/LCMS/v2021-7 | 2022-04-26 | A USFS GTAC LCMS land cover dataset for version 2021-7; deprecated on 2022-04-26. |
 | 2022-04-19 | Dynamic World V1 |  | A global land cover classification dataset from Dynamic World. |
 | 2022-04-19 | GEDI L4B Gridded Aboveground Biomass Density (Version 2) |  | Gridded aboveground biomass density from GEDI L4B version 2. |
 | 2022-04-19 | MCD15A3H.061 MODIS Leaf Area Index/FPAR 4-Day Global 500m |  | MODIS leaf area index and FPAR on a 4-day, 500 m global grid. |
@@ -480,16 +418,12 @@ Unique features: 1407
 | 2022-04-19 | MOD14A2.061 Terra Thermal Anomalies & Fire 8-Day Global 1km |  | Terra thermal anomalies and fire on an 8-day, 1 km global grid. |
 | 2022-04-19 | MOD15A2H.061 Terra Leaf Area Index/FPAR 8-Day Global 500m |  | Terra leaf area index and FPAR on an 8-day, 500 m global grid. |
 | 2022-04-19 | MYD09A1.061 Aqua Surface Reflectance 8-Day Global 500m |  | Aqua surface reflectance on an 8-day, 500 m global grid. |
-| 2022-04-12 | GLIMS 20210914 | 2022-04-12 | A GLIMS glacier inventory release dated 2021-09-14; deprecated on 2022-04-12. |
 | 2022-04-12 | MYD11A1.061 Aqua Land Surface Temperature and Emissivity Daily Global 1km |  | Aqua land surface temperature and emissivity on a daily, 1 km global grid. |
 | 2022-03-29 | MYD09GA.061 Aqua Surface Reflectance Daily Global 1km and 500m |  | Aqua surface reflectance on a daily global grid at 1 km and 500 m resolution. |
 | 2022-03-29 | MYD09GQ.061 Aqua Surface Reflectance Daily Global 250m |  | Aqua surface reflectance on a daily, 250 m global grid. |
-| 2022-03-29 | USGS/NLCD_RELEASES/2019_REL/RCMAP/V4/COVER | 2022-03-29 | A USGS RCMAP v4 cover dataset; deprecated on 2022-03-29. |
 | 2022-03-22 | GEDI L2A Vector Canopy Top Height (Version 2) |  | Vector canopy top height from GEDI L2A version 2. |
 | 2022-03-08 | Collection 2 |  | Level 2 Landsat 9 data in Collection 2, Tier 1; Level 2 Landsat 9 data in Collection 2, Tier 2. |
 | 2022-03-08 | GEDI L2A Raster Canopy Top Height (Version 2) |  | Raster canopy top height from GEDI L2A version 2. |
-| 2022-03-08 | LANDSAT/LC09/C02/T1_RT | 2022-03-08 | A Landsat 9 real-time Tier 1 dataset that was later removed; deprecated on 2022-03-08. |
-| 2022-03-08 | LANDSAT/LC09/C02/T1_RT_TOA | 2022-03-08 | A Landsat 9 real-time Tier 1 TOA dataset that was later removed; deprecated on 2022-03-08. |
 | 2022-03-08 | MOD09GA.061 Terra Surface Reflectance Daily Global 1km and 500m |  | Terra surface reflectance on a daily global grid at 1 km and 500 m resolution. |
 | 2022-03-08 | MOD09GQ.061 Terra Surface Reflectance Daily Global 250m |  | Terra surface reflectance on a daily, 250 m global grid. |
 | 2022-03-08 | MOD11A1.061 Terra Land Surface Temperature and Emissivity Daily Global 1km |  | Terra land surface temperature and emissivity on a daily, 1 km global grid. |
@@ -524,12 +458,9 @@ Unique features: 1407
 | 2021-12-14 | Landsat 8 Collection 2 Tier 1 and Real-Time TOA Reflectance |  | Provides Landsat 8 Collection 2 Tier 1 and real-time TOA reflectance scenes. |
 | 2021-12-14 | Landsat 8 Collection 2 Tier 1 TOA Reflectance |  | Provides Landsat 8 Collection 2 Tier 1 TOA reflectance scenes. |
 | 2021-12-14 | Landsat 8 Collection 2 Tier 2 TOA Reflectance |  | Provides Landsat 8 Collection 2 Tier 2 TOA reflectance scenes. |
-| 2021-12-14 | USFS GTAC LCMS v2020-6 | 2021-12-14 | Provides the USFS GTAC Landscape Change Monitoring System v2020-6 dataset; deprecated on 2021-12-14. |
 | 2021-11-23 | World Settlement Footprint 2015 |  | Provides the World Settlement Footprint 2015 dataset. |
 | 2021-11-16 | BESS Radiation v1 |  | Provides Breathing Earth System Simulator radiation data version 1. |
-| 2021-11-02 | ACA Reef Habitat v1.0 | 2021-11-02 | Provides the ACA reef habitat v1.0 dataset; deprecated on 2021-11-02. |
 | 2021-10-26 | ESA WorldCover 10 m v100 |  | Provides ESA WorldCover 10 m global land cover data version 100. |
-| 2021-10-12 | USGS 3DEP 10 m | 2021-10-12 | Provides the USGS 3D Elevation Program 10 m dataset; deprecated on 2021-10-12. |
 | 2021-10-12 | USGS 3DEP National Map Spatial Metadata 10 m |  | Provides USGS 3DEP National Map spatial metadata at 10 m resolution. |
 | 2021-09-14 | DESS China Terrace Map v1 |  | Provides the DESS China Terrace Map version 1 dataset. |
 | 2021-09-07 | Landsat 4 Collection 2 Tier 2 Level 2 |  | Provides Landsat 4 Collection 2 Tier 2 Level 2 imagery. |
@@ -561,33 +492,19 @@ Unique features: 1407
 | 2021-08-31 | iSDAsoil Africa v1 Total Nitrogen |  | An iSDAsoil Africa v1 layer for total nitrogen. |
 | 2021-08-31 | iSDAsoil Africa v1 USDA Texture Class |  | An iSDAsoil Africa v1 layer for USDA texture class. |
 | 2021-08-24 | USGS Landsat 4 Level 2 |  | A USGS Landsat 4 Level 2 image collection in Collection 2, Tier 1. |
-| 2021-08-17 | TERN CMRSET Landsat v2.1 | 2021-08-17 | A TERN AET CMRSET Landsat v2.1 dataset; deprecated on 2021-08-17. |
 | 2021-08-10 | USGS Landsat 5 Level 2 |  | A USGS Landsat 5 Level 2 image collection in Collection 2, Tier 1. |
-| 2021-08-03 | iSDAsoil Africa Extractable Aluminium | 2021-08-03 | An iSDAsoil Africa layer for extractable aluminium; deprecated on 2021-08-03. |
 | 2021-07-27 | 2006-2018) V1 |  | A harmonized LUCAS dataset with theoretical locations for 2006-2018. |
 | 2021-07-27 | LUCAS Harmonized (Theoretical Location |  | A harmonized LUCAS dataset with theoretical locations for 2006-2018. |
-| 2021-07-27 | Open Buildings v1 Polygons | 2021-07-27 | A polygon footprint dataset from Open Buildings v1; deprecated on 2021-07-27. |
 | 2021-07-13 | Global Flood Database v1 (2000-2018) |  | A global flood event database covering 2000-2018. |
-| 2021-06-29 | Global Flood Database MODIS Events v1.0 | 2021-06-29 | A global flood event database based on MODIS events; deprecated on 2021-06-29. |
 | 2021-06-29 | USGS Landsat 7 Level 2 |  | A USGS Landsat 7 Level 2 image collection in Collection 2, Tier 1. |
 | 2021-06-08 | GlobFire Daily Fire Event Detection Based on MCD64A1 |  | A daily fire event detection layer based on MCD64A1. |
-| 2021-05-25 | JRC GSW1_3 Global Surface Water | 2021-05-25 | A global surface water dataset in the JRC GSW1_3 collection; deprecated on 2021-05-25. |
-| 2021-05-25 | JRC GSW1_3 Metadata | 2021-05-25 | Metadata for the JRC GSW1_3 collection; deprecated on 2021-05-25. |
-| 2021-05-25 | JRC GSW1_3 Monthly History | 2021-05-25 | Monthly history for the JRC GSW1_3 global surface water dataset; deprecated on 2021-05-25. |
-| 2021-05-25 | JRC GSW1_3 Monthly Recurrence | 2021-05-25 | Monthly recurrence for the JRC GSW1_3 global surface water dataset; deprecated on 2021-05-25. |
-| 2021-05-25 | JRC GSW1_3 Yearly History | 2021-05-25 | Yearly history for the JRC GSW1_3 global surface water dataset; deprecated on 2021-05-25. |
 | 2021-04-13 | Global Map of Oil Palm Plantations |  | A global map of oil palm plantations. |
 | 2021-04-13 | GlobFire Final Fire Event Detection Based on MCD64A1 |  | A final fire event detection layer based on MCD64A1. |
-| 2021-04-06 | Global Forest Change 2020 v1.8 | 2021-04-06 | A dataset describing global forest change in 2020; deprecated on 2021-04-06. |
 | 2021-03-30 | WorldPop Global Project Population Data: Constrained Estimated Age and Sex Structures of Residential Population per 100x100m Grid Square |  | Constrained estimated age and sex structures of residential population at 100 m grid resolution. |
 | 2021-03-23 | Daymet V4 |  | Daily surface weather and climatological summaries from Daymet V4. |
 | 2021-03-23 | USGS Landsat 8 Level 2 |  | USGS Landsat 8 Level 2 Collection 2 Tier 1 imagery. |
-| 2021-03-16 | USFS GTAC LCMS v2020-5 | 2021-03-16 | USFS GTAC LCMS v2020-5 land cover monitoring data; deprecated on 2021-03-16. |
 | 2021-03-09 | NCEP-DOE Reanalysis 2 Total Cloud Coverage |  | Total cloud coverage from the NCEP-DOE Reanalysis 2 Gaussian grid. |
-| 2021-02-23 | ALOS AW3D30 v3.2 | 2021-02-23 | 30 m global digital surface model from JAXA ALOS AW3D30 v3.2; deprecated on 2021-02-23. |
-| 2021-02-23 | USGS NLCD Releases 2016 | 2021-02-23 | USGS National Land Cover Database 2016 release; deprecated on 2021-02-23. |
 | 2021-02-09 | WorldPop Global Project Population Data: Estimated Age and Sex Structures of Residential Population per 100x100m Grid Square |  | Estimated age and sex structures of residential population at 100 m grid resolution. |
-| 2021-01-26 | NASA-USDA HSL SMAP10KM Soil Moisture | 2021-01-26 | Soil moisture estimates derived from NASA-USDA HSL SMAP data at 10 km resolution; deprecated on 2021-01-26. |
 | 2021-01-12 | NASADEM |  | NASA's 30 m digital elevation model derived from SRTM and auxiliary datasets. |
 | 2020-12-01 | GCOM-C/SGLI L3 Land Surface Temperature |  | Land surface temperature from GCOM-C/SGLI L3 land observations; Land surface temperature from GCOM-C/SGLI L3 land observations. |
 | 2020-12-01 | GCOM-C/SGLI L3 Leaf Area Index |  | Leaf area index from GCOM-C/SGLI L3 land observations; Leaf area index from GCOM-C/SGLI L3 land observations. |
@@ -595,9 +512,7 @@ Unique features: 1407
 | 2020-12-01 | Version 2 |  | Leaf area index from GCOM-C/SGLI L3 land observations; Land surface temperature from GCOM-C/SGLI L3 land observations. |
 | 2020-11-24 | GCOM-C/SGLI L3 Sea Surface Temperature |  | Sea surface temperature from GCOM-C/SGLI L3 ocean observations; Sea surface temperature from GCOM-C/SGLI L3 ocean observations. |
 | 2020-11-17 | ERA5-Land Hourly |  | Hourly ECMWF ERA5-Land climate reanalysis data. |
-| 2020-11-17 | ERA5-Land Monthly | 2020-11-17 | Monthly ECMWF ERA5-Land climate reanalysis data; deprecated on 2020-11-17. |
 | 2020-11-17 | ERA5-Land Monthly Averaged by Hour of Day |  | Monthly ERA5-Land values averaged by hour of day. |
-| 2020-11-17 | IrrMapper RF v1.0 | 2020-11-17 | Raster-based irrigation mapping model output for climate applications; deprecated on 2020-11-17. |
 | 2020-11-10 | GCOM-C/SGLI L3 Chlorophyll-a Concentration |  | Chlorophyll-a concentration from GCOM-C/SGLI L3 ocean observations; Chlorophyll-a concentration from GCOM-C/SGLI L3 ocean observations. |
 | 2020-11-10 | GOES-16 MCMIPM |  | ABI Level 2 cloud and moisture imagery from GOES-16 mesoscale sectors. |
 | 2020-11-10 | GOES-17 MCMIPM |  | ABI Level 2 cloud and moisture imagery from GOES-17 mesoscale sectors. |
@@ -607,8 +522,6 @@ Unique features: 1407
 | 2020-10-06 | MERIT Hydro Supplementary Visualization Layers |  | Provides supplementary visualization layers for the MERIT Hydro dataset. |
 | 2020-09-29 | MERIT DEM |  | Provides the Multi-Error-Removed Improved-Terrain digital elevation model. |
 | 2020-09-29 | MERIT Hydro |  | Provides a global hydrography dataset from the MERIT project. |
-| 2020-09-29 | Oxford MAP Accessibility to Healthcare 2019 | 2020-09-29 | Provided global accessibility-to-healthcare surfaces for 2019; deprecated on 2020-09-29. |
-| 2020-09-29 | Oxford MAP Friction Surface 2019 | 2020-09-29 | Provided global friction surface data for 2019; deprecated on 2020-09-29. |
 | 2020-09-29 | YCEO Surface Urban Heat Islands All Averaged |  | Provides spatially averaged daytime and nighttime urban heat intensity for annual, summer, and winter periods. |
 | 2020-09-29 | YCEO Surface Urban Heat Islands Monthly Averaged |  | Provides spatially averaged monthly composites of daytime and nighttime urban heat intensity. |
 | 2020-09-29 | YCEO Surface Urban Heat Islands Summer Yearly Pixel |  | Provides pixel-level yearly composites of summertime daytime and nighttime urban heat intensity. |
@@ -640,19 +553,10 @@ Unique features: 1407
 | 2020-07-21 | LANDFIRE Vegetation Condition Class |  | Provides LANDFIRE vegetation condition class values. |
 | 2020-07-21 | LANDFIRE Vegetation Departure |  | Provides LANDFIRE vegetation departure values. |
 | 2020-07-14 | FireCCI51 Burned Area Pixel Product |  | Provides a MODIS-based burned area pixel product for FireCCI version 5.1. |
-| 2020-07-14 | JRC Global Surface Water Mapping Layers | 2020-07-14 | Provided global surface water mapping layers from the Joint Research Centre; deprecated on 2020-07-14. |
-| 2020-07-14 | JRC Global Surface Water Metadata | 2020-07-14 | Provided metadata for the JRC Global Surface Water dataset; deprecated on 2020-07-14. |
-| 2020-07-14 | JRC Global Surface Water Monthly History | 2020-07-14 | Provided monthly history layers for the JRC Global Surface Water dataset; deprecated on 2020-07-14. |
-| 2020-07-14 | JRC Global Surface Water Monthly Recurrence | 2020-07-14 | Provided monthly recurrence layers for the JRC Global Surface Water dataset; deprecated on 2020-07-14. |
-| 2020-07-14 | JRC Global Surface Water Yearly History | 2020-07-14 | Provided yearly history layers for the JRC Global Surface Water dataset; deprecated on 2020-07-14. |
 | 2020-06-30 | GFCC Tree Cover Multi-Year Global 30m |  | Provides global tree cover change data at 30-meter resolution across multiple years. |
 | 2020-06-23 | Sentinel-2 Cloud Probability |  | Provides cloud probability estimates for Sentinel-2 imagery. |
 | 2020-06-16 | GPM Monthly Global Precipitation Measurement v6 |  | Provides monthly global precipitation measurement data from GPM version 6. |
-| 2020-06-16 | MODIS MCD43C3 | 2020-06-16 | Provided MODIS bidirectional reflectance distribution function and albedo data; deprecated on 2020-06-16. |
 | 2020-06-16 | NOAA CDR OISST v02r01 |  | Provides optimum interpolation sea surface temperature from the NOAA climate data record. |
-| 2020-06-09 | MODIS MOD17A3HGF | 2020-06-09 | Provided MODIS annual gross primary productivity and net photosynthesis products; deprecated on 2020-06-09. |
-| 2020-06-09 | MODIS MYD17A3HGF | 2020-06-09 | Provided Aqua-based MODIS annual gross primary productivity and net photosynthesis products; deprecated on 2020-06-09. |
-| 2020-06-02 | Hansen Global Forest Change 2019 v1.7 | 2020-06-02 | Provided global forest change data for 2019 at version 1.7; deprecated on 2020-06-02. |
 | 2020-05-26 | CAMS Global Near-Real-Time |  | Provides near-real-time global atmospheric composition data from the Copernicus Atmosphere Monitoring Service. |
 | 2020-05-26 | Sentinel-5P OFFL O3 TCL |  | Provides offline tropospheric ozone data from Sentinel-5P. |
 | 2020-05-19 | WCMC Above and Below Ground Biomass Carbon Density |  | Provides global biomass carbon density estimates above and below ground. |
@@ -675,8 +579,6 @@ Unique features: 1407
 | 2020-02-04 | BLM AIM TerrADat Terrestrial AIM Point v1 |  | Provides point-based terrestrial ecological monitoring data from the BLM AIM TerrADat program. |
 | 2019-12-31 | GOES-16 FDCC ABI Level 2 Fire/Hot Spot Characterization CONUS |  | Provides ABI Level 2 fire and hot spot characterization for the contiguous United States from GOES-16. |
 | 2019-12-31 | GOES-17 FDCC ABI Level 2 Fire/Hot Spot Characterization CONUS |  | Provides ABI Level 2 fire and hot spot characterization for the contiguous United States from GOES-17. |
-| 2019-12-31 | JAXA ALOS AW3D30 v2.1 | 2019-12-31 | Provides a global 30 m digital surface model derived from ALOS PRISM imagery; deprecated on 2019-12-31. |
-| 2019-12-31 | JAXA ALOS AW3D30 v2.2 | 2019-12-31 | Provides a global 30 m digital surface model derived from ALOS PRISM imagery; deprecated on 2019-12-31. |
 | 2019-12-31 | NOAA CDR AVHRR LAI FAPAR v5 |  | Provides leaf area index and absorbed photosynthetically active radiation climate data record from AVHRR. |
 | 2019-12-31 | NOAA CDR AVHRR NDVI v5 |  | Provides normalized difference vegetation index climate data record from AVHRR. |
 | 2019-12-31 | NOAA CDR AVHRR Surface Reflectance v5 |  | Provides surface reflectance climate data record from AVHRR. |
@@ -695,18 +597,8 @@ Unique features: 1407
 | 2019-12-24 | WWF HydroSHEDS Basins Level 8 |  | Provides global watershed basin boundaries at level 8. |
 | 2019-12-24 | WWF HydroSHEDS Basins Level 9 |  | Provides global watershed basin boundaries at level 9. |
 | 2019-12-24 | WWF HydroSHEDS Free Flowing Rivers Network v1 |  | Provides a global river network classified by flow continuity. |
-| 2019-12-10 | MODIS MOD15A2H | 2019-12-10 | Provides 8-day MODIS Terra vegetation biophysical measurements; deprecated on 2019-12-10. |
-| 2019-12-10 | MODIS MYD15A2H | 2019-12-10 | Provides 8-day MODIS Aqua vegetation biophysical measurements; deprecated on 2019-12-10. |
-| 2019-12-03 | Copernicus Global Land Cover 100m Proba-V | 2019-12-03 | Provides a global 100 m land cover map derived from Proba-V imagery; deprecated on 2019-12-03. |
-| 2019-11-26 | LANDSAT/LO08/C01/T1 | 2019-11-26 | Landsat 8 Collection 1 Tier 1 image collection; deprecated on 2019-11-26. |
-| 2019-11-26 | LANDSAT/LO08/C01/T1_RT | 2019-11-26 | Landsat 8 Collection 1 Tier 1 real-time image collection; deprecated on 2019-11-26. |
-| 2019-11-26 | LANDSAT/LO08/C01/T2 | 2019-11-26 | Landsat 8 Collection 1 Tier 2 image collection; deprecated on 2019-11-26. |
-| 2019-11-26 | LANDSAT/LT08/C01/T2 | 2019-11-26 | Landsat Collection 1 Tier 2 image collection; deprecated on 2019-11-26. |
-| 2019-11-05 | MODIS/006/MCD19A2_GRANULES | 2019-11-05 | MODIS Collection 6 MCD19A2 granule data; deprecated on 2019-11-05. |
 | 2019-10-29 | NOAA/NHC/HURDAT2/atlantic |  | NOAA NHC HURDAT2 Atlantic Hurricane Catalog. |
 | 2019-10-29 | NOAA/NHC/HURDAT2/pacific |  | NOAA NHC HURDAT2 Pacific Hurricane Catalog. |
-| 2019-10-22 | NOAA/NHC/HURDAT2/atlantic_v2019 | 2019-10-22 | NOAA NHC HURDAT2 Atlantic Hurricane Catalog v2019; deprecated on 2019-10-22. |
-| 2019-10-15 | MODIS/006/MOD44B | 2019-10-15 | MODIS vegetation continuous fields data; deprecated on 2019-10-15. |
 | 2019-10-15 | NOAA/GOES/16/FDCF |  | GOES-16 ABI Level 2 Fire/Hot Spot Characterization Full Disk. |
 | 2019-10-15 | NOAA/GOES/17/FDCF |  | GOES-17 ABI Level 2 Fire/Hot Spot Characterization Full Disk. |
 | 2019-10-08 | ECMWF/ERA5/DAILY |  | ERA5 daily climate reanalysis aggregates. |
@@ -726,16 +618,11 @@ Unique features: 1407
 | 2019-09-17 | OpenLandMap/SOL/SOL_SAND-WFRACTION_USDA-3A1A1A_M/v02 |  | OpenLandMap soil sand content. |
 | 2019-09-17 | OpenLandMap/SOL/SOL_TEXTURE-CLASS_USDA-TT_M/v02 |  | OpenLandMap USDA soil texture class. |
 | 2019-09-17 | OpenLandMap/SOL/SOL_WATERCONTENT-33KPA_USDA-4B1C_M/v01 |  | OpenLandMap soil water content at 33 kPa. |
-| 2019-09-10 | NASA/GPM_L3/IMERG_V06 | 2019-09-10 | NASA GPM IMERG v06 precipitation data; deprecated on 2019-09-10. |
-| 2019-09-03 | OpenLandMap/CLM/CLM_LST_MOD11A2-DAY_SD/v1 | 2019-09-03 | OpenLandMap long-term land surface temperature daytime monthly standard deviation; deprecated on 2019-09-03. |
-| 2019-09-03 | OpenLandMap/PNV/PNV_BIOME-TYPE_BIOME00K_C/v1 | 2019-09-03 | OpenLandMap potential distribution of biomes; deprecated on 2019-09-03. |
-| 2019-09-03 | OpenLandMap/SOL/SOL_GRTGROUP_USDA-SOILTAX_C/v1 | 2019-09-03 | OpenLandMap USDA soil taxonomy great groups; deprecated on 2019-09-03. |
 | 2019-09-03 | UMN/PGC/REMA/V1_1/8m |  | REMA Mosaic 8 m elevation data. |
 | 2019-09-03 | UMN/PGC/REMA/V1/2m |  | REMA Strips 2 m elevation data. |
 | 2019-09-03 | UMN/PGC/REMA/V1/8m |  | REMA Strips 8 m elevation data. |
 | 2019-09-03 | WorldPop/GP/100m/pop |  | WorldPop global estimated residential population at 100 m. |
 | 2019-08-20 | UMN/PGC/ArcticDEM/V3/2m |  | ArcticDEM Strips 2 m elevation data. |
-| 2019-08-20 | UMN/PGC/ArcticDEM/V3/2m_mosaic | 2019-08-20 | ArcticDEM 2 m mosaic elevation data; deprecated on 2019-08-20. |
 | 2019-08-06 | CIESIN/GPWv411/GPW_Basic_Demographic_Characteristics |  | GPWv411 basic demographic characteristics. |
 | 2019-08-06 | CIESIN/GPWv411/GPW_Data_Context |  | GPWv411 data context. |
 | 2019-08-06 | CIESIN/GPWv411/GPW_Land_Area |  | GPWv411 land area. |
@@ -747,12 +634,6 @@ Unique features: 1407
 | 2019-08-06 | CIESIN/GPWv411/GPW_UNWPP-Adjusted_Population_Density |  | GPWv411 population density adjusted to UN World Population Prospects totals. |
 | 2019-08-06 | CIESIN/GPWv411/GPW_Water_Area |  | GPWv411 water area. |
 | 2019-08-06 | CIESIN/GPWv411/GPW_Water_Mask |  | GPWv411 water mask. |
-| 2019-08-06 | MODIS/006/MCD12Q2 | 2019-08-06 | MODIS Collection 6 land cover phenology data; deprecated on 2019-08-06. |
-| 2019-07-30 | JRC/GSW1_1/GlobalSurfaceWater | 2019-07-30 | JRC Global Surface Water dataset; deprecated on 2019-07-30. |
-| 2019-07-30 | JRC/GSW1_1/Metadata | 2019-07-30 | JRC Global Surface Water metadata; deprecated on 2019-07-30. |
-| 2019-07-30 | JRC/GSW1_1/MonthlyHistory | 2019-07-30 | JRC Global Surface Water monthly history; deprecated on 2019-07-30. |
-| 2019-07-30 | JRC/GSW1_1/MonthlyRecurrence | 2019-07-30 | JRC Global Surface Water monthly recurrence; deprecated on 2019-07-30. |
-| 2019-07-30 | JRC/GSW1_1/YearlyHistory | 2019-07-30 | JRC Global Surface Water yearly history; deprecated on 2019-07-30. |
 | 2019-07-09 | USGS GAP Alaska 2001 |  | A USGS GAP land cover dataset for Alaska from 2001. |
 | 2019-07-09 | USGS GAP CONUS 2011 |  | A USGS GAP land cover dataset for the conterminous United States from 2011. |
 | 2019-07-09 | USGS GAP Hawaii 2001 |  | A USGS GAP land cover dataset for Hawaii from 2001. |
@@ -789,9 +670,7 @@ Unique features: 1407
 | 2018-11-13 | Sentinel-5P OFFL Carbon Monoxide |  | Offline Sentinel-5P carbon monoxide atmospheric data. |
 | 2018-11-13 | Sentinel-5P OFFL UV Aerosol Index |  | Offline Sentinel-5P UV aerosol index data. |
 | 2018-11-06 | Sentinel-5P OFFL Nitrogen Dioxide |  | Offline Sentinel-5P nitrogen dioxide atmospheric data. |
-| 2018-10-02 | NOAA VIIRS VNP13A1 | 2018-10-02 | A NOAA VIIRS vegetation index product; deprecated on 2018-10-02. |
 | 2018-08-21 | GLIMS Current |  | The current GLIMS glacier inventory for global land ice measurements. |
-| 2018-08-14 | GLIMS 2017-10-27 | 2018-08-14 | A GLIMS glacier inventory snapshot from 2017-10-27; deprecated on 2018-08-14. |
 | 2018-07-17 | CryoSat-2 Antarctica 1km DEM |  | A 1 km digital elevation model for Antarctica derived from CryoSat-2. |
 | 2018-07-17 | GIMP 2000 Greenland Mosaic |  | A 2000 Greenland mosaic from the Greenland Ice Mapping Project. |
 | 2018-07-17 | GIMP Greenland DEM |  | A Greenland digital elevation model from the Greenland Mapping Project. |
@@ -802,8 +681,6 @@ Unique features: 1407
 | 2018-07-17 | TIGER US Census Counties 2016 |  | A 2016 TIGER counties boundary dataset from the US Census. |
 | 2018-07-17 | TIGER US Census States 2016 |  | A 2016 TIGER states boundary dataset from the US Census. |
 | 2018-07-10 | TRMM 3B43 Monthly Precipitation Estimates |  | Monthly precipitation estimates from the TRMM 3B43 product. |
-| 2018-07-03 | ArcticDEM V2 2m | 2018-07-03 | A deprecated ArcticDEM elevation model at 2-meter resolution; deprecated on 2018-07-03. |
-| 2018-07-03 | ArcticDEM V2 5m | 2018-07-03 | A deprecated ArcticDEM elevation model at 5-meter resolution; deprecated on 2018-07-03. |
 | 2018-07-03 | Global ALOS CHILI |  | A global continuous heat-insolation load index derived from ALOS data. |
 | 2018-07-03 | Global ALOS Landforms |  | A global landforms layer derived from ALOS data. |
 | 2018-07-03 | Global ALOS mTPI |  | A global multi-scale topographic position index derived from ALOS data. |
@@ -812,10 +689,6 @@ Unique features: 1407
 | 2018-07-03 | Global SRTM Landforms |  | A global landforms layer derived from SRTM data. |
 | 2018-07-03 | Global SRTM mTPI |  | A global multi-scale topographic position index derived from SRTM data. |
 | 2018-07-03 | Global SRTM Topographic Diversity |  | A global topographic diversity layer derived from SRTM data. |
-| 2018-07-03 | JRC GHSL P2016 Built LDS Globe V1 | 2018-07-03 | A deprecated GHSL built-up surface dataset; deprecated on 2018-07-03. |
-| 2018-07-03 | JRC GHSL P2016 Built LDSMT Globe V1 | 2018-07-03 | A deprecated GHSL built-up dataset; deprecated on 2018-07-03. |
-| 2018-07-03 | JRC GHSL P2016 Population GPW Globe V1 | 2018-07-03 | A deprecated GHSL population dataset; deprecated on 2018-07-03. |
-| 2018-07-03 | JRC GHSL P2016 SMOD Population Globe V1 | 2018-07-03 | A deprecated GHSL settlement model dataset; deprecated on 2018-07-03. |
 | 2018-07-03 | US NED CHILI |  | A US NED continuous heat-insolation load index. |
 | 2018-07-03 | US NED Landforms |  | A US NED landforms layer. |
 | 2018-07-03 | US NED Lithology |  | A US NED lithology layer. |
@@ -823,16 +696,6 @@ Unique features: 1407
 | 2018-07-03 | US NED Physiographic Diversity |  | A US NED physiographic diversity layer. |
 | 2018-07-03 | US NED Physiography |  | A US NED physiography layer. |
 | 2018-07-03 | US NED Topographic Diversity |  | A US NED topographic diversity layer. |
-| 2018-06-26 | LANDSAT/LM01/C01/T1 |  | A Landsat 1 MSS Collection 1 Tier 1 dataset. |
-| 2018-06-26 | LANDSAT/LM01/C01/T2 |  | A Landsat 1 MSS Collection 1 Tier 2 dataset. |
-| 2018-06-26 | LANDSAT/LM02/C01/T1 |  | A Landsat 2 MSS Collection 1 Tier 1 dataset. |
-| 2018-06-26 | LANDSAT/LM02/C01/T2 |  | A Landsat 2 MSS Collection 1 Tier 2 dataset. |
-| 2018-06-26 | LANDSAT/LM03/C01/T1 |  | A Landsat 3 MSS Collection 1 Tier 1 dataset. |
-| 2018-06-26 | LANDSAT/LM03/C01/T2 |  | A Landsat 3 MSS Collection 1 Tier 2 dataset. |
-| 2018-06-26 | LANDSAT/LM04/C01/T1 |  | A Landsat 4 MSS Collection 1 Tier 1 dataset. |
-| 2018-06-26 | LANDSAT/LM04/C01/T2 |  | A Landsat 4 MSS Collection 1 Tier 2 dataset. |
-| 2018-06-26 | LANDSAT/LM05/C01/T1 |  | A Landsat 5 MSS Collection 1 Tier 1 dataset. |
-| 2018-06-26 | LANDSAT/LM05/C01/T2 |  | A Landsat 5 MSS Collection 1 Tier 2 dataset. |
 | 2018-06-19 | COPERNICUS/CORINE/V18_5_1/100m |  | The Copernicus CORINE land cover dataset at 100-meter resolution. |
 | 2018-06-19 | JAXA/ALOS/PALSAR/YEARLY/SAR |  | The global PALSAR-2/PALSAR Yearly Mosaic version 1 SAR dataset. |
 | 2018-06-19 | MODIS/006/MCD12Q1 |  | A MODIS land cover type dataset. |
@@ -874,53 +737,6 @@ Unique features: 1407
 | 2018-04-24 | WRI/GFW/FORMA/thresholds |  | FORMA alert thresholds. |
 | 2018-04-24 | WRI/GFW/FORMA/vegetation_tstats |  | FORMA vegetation T-statistics. |
 | 2018-04-24 | WRI/GPPD/power_plants |  | The Global Power Plant Database. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_32DAY_BAI |  | A 32-day burned area index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_32DAY_EVI |  | A 32-day enhanced vegetation index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_32DAY_NBRT |  | A 32-day NBRT composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_32DAY_NDSI |  | A 32-day normalized difference snow index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_32DAY_NDVI |  | A 32-day normalized difference vegetation index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_32DAY_NDWI |  | A 32-day normalized difference water index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_32DAY_RAW |  | A 32-day raw composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_32DAY_TOA |  | A 32-day top-of-atmosphere composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_8DAY_BAI |  | An 8-day burned area index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_8DAY_EVI |  | An 8-day enhanced vegetation index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_8DAY_NBRT |  | An 8-day NBRT composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_8DAY_NDSI |  | An 8-day normalized difference snow index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_8DAY_NDVI |  | An 8-day normalized difference vegetation index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_8DAY_NDWI |  | An 8-day normalized difference water index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_8DAY_RAW |  | An 8-day raw composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_8DAY_TOA |  | An 8-day top-of-atmosphere composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_ANNUAL_BAI |  | An annual burned area index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_ANNUAL_EVI |  | An annual enhanced vegetation index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_ANNUAL_NBRT |  | An annual NBRT composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_ANNUAL_NDSI |  | An annual normalized difference snow index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_ANNUAL_NDVI |  | An annual normalized difference vegetation index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_ANNUAL_NDWI |  | An annual normalized difference water index composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_ANNUAL_RAW |  | An annual raw composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LC08/C01/T1_ANNUAL_TOA |  | An annual top-of-atmosphere composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LE07/C01/T1_32DAY_BAI |  | A 32-day burned area index composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LE07/C01/T1_32DAY_EVI |  | A 32-day enhanced vegetation index composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LE07/C01/T1_32DAY_NBRT |  | A 32-day NBRT composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LE07/C01/T1_32DAY_NDSI |  | A 32-day normalized difference snow index composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LE07/C01/T1_32DAY_NDVI |  | A 32-day normalized difference vegetation index composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LE07/C01/T1_32DAY_NDWI |  | A 32-day normalized difference water index composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LE07/C01/T1_32DAY_RAW |  | A 32-day raw composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LE07/C01/T1_32DAY_TOA |  | A 32-day top-of-atmosphere composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-04-03 | LANDSAT/LE07/C01/T1_8DAY_BAI |  | An 8-day burned area index composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-03-13 | LANDSAT/LC08/C01/T2_SR |  | A Landsat 8 Collection 1 Tier 2 surface reflectance dataset. |
-| 2018-03-13 | LANDSAT/LE07/C01/T2_SR |  | A Landsat 7 Collection 1 Tier 2 surface reflectance dataset. |
-| 2018-03-13 | LANDSAT/LT04/C01/T2_SR |  | A Landsat 4 Collection 1 Tier 2 surface reflectance dataset. |
-| 2018-03-13 | LANDSAT/LT05/C01/T2_SR |  | A Landsat 5 Collection 1 Tier 2 surface reflectance dataset. |
-| 2018-02-06 | LANDSAT/LC08/C01/T1_ANNUAL_GREENEST_TOA |  | An annual greenest top-of-atmosphere composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-02-06 | LANDSAT/LC08/C01/T1_RT_ANNUAL_GREENEST_TOA |  | A real-time annual greenest top-of-atmosphere composite from Landsat 8 Collection 1 Tier 1. |
-| 2018-02-06 | LANDSAT/LE07/C01/T1_ANNUAL_GREENEST_TOA |  | An annual greenest top-of-atmosphere composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-02-06 | LANDSAT/LE07/C01/T1_RT_ANNUAL_GREENEST_TOA |  | A real-time annual greenest top-of-atmosphere composite from Landsat 7 Collection 1 Tier 1. |
-| 2018-02-06 | LANDSAT/LT04/C01/T1_ANNUAL_GREENEST_TOA |  | An annual greenest top-of-atmosphere composite from Landsat 4 Collection 1 Tier 1. |
-| 2018-02-06 | LANDSAT/LT05/C01/T1_ANNUAL_GREENEST_TOA |  | An annual greenest top-of-atmosphere composite from Landsat 5 Collection 1 Tier 1. |
-| 2018-01-09 | LANDSAT/LT04/C01/T1 |  | A Landsat 4 Collection 1 Tier 1 dataset. |
-| 2018-01-09 | LANDSAT/LT04/C01/T1_TOA |  | A Landsat 4 Collection 1 Tier 1 top-of-atmosphere dataset. |
-| 2018-01-09 | LANDSAT/LT04/C01/T2 |  | A Landsat 4 Collection 1 Tier 2 dataset. |
-| 2018-01-09 | LANDSAT/LT04/C01/T2_TOA |  | A Landsat 4 Collection 1 Tier 2 top-of-atmosphere dataset. |
 | 2018-01-09 | MODIS/MCD43A4_006_BAI |  | A MODIS combined 16-day burned area index dataset. |
 | 2018-01-09 | MODIS/MCD43A4_006_EVI |  | A MODIS combined 16-day enhanced vegetation index dataset. |
 | 2018-01-09 | MODIS/MCD43A4_006_NDSI |  | A MODIS combined 16-day normalized difference snow index dataset. |
@@ -928,13 +744,11 @@ Unique features: 1407
 | 2018-01-09 | MODIS/MCD43A4_006_NDWI |  | A MODIS combined 16-day normalized difference water index dataset. |
 | 2017-12-26 | NASA/GPM_L3/IMERG_V05 |  | A NASA GPM IMERG Version 5 precipitation dataset. |
 | 2017-12-26 | UCSB-CHG/CHIRPS/DAILY |  | A daily CHIRPS precipitation dataset. |
-| 2017-12-12 | JAXA ALOS AW3D30 v1.1 | 2019-12-31 | Provides a global 30 m digital surface model derived from ALOS PRISM imagery; A global 30-meter digital surface model; deprecated on 2019-12-31. |
 | 2017-12-12 | OREGONSTATE/PRISM/AN81d |  | A daily PRISM climate dataset. |
 | 2017-12-12 | OREGONSTATE/PRISM/AN81m |  | A monthly PRISM climate dataset. |
 | 2017-12-12 | OREGONSTATE/PRISM/Norm81m |  | A normalized monthly PRISM climate dataset. |
 | 2017-12-05 | LSIB 2017 Detailed |  | A detailed polygon dataset of large-scale international boundaries. |
 | 2017-12-05 | MODIS/006/MCD43A4 |  | A MODIS BRDF/albedo surface reflectance product. |
-| 2017-11-14 | LANDSAT/LC08/C01/T1_SR |  | A Landsat 8 Collection 1 Tier 1 surface reflectance collection. |
 | 2017-11-07 | AU/GA/DEM_1SEC/v10/DEM-H |  | A hydrologically enforced Australian SRTM digital elevation model at 1-arc-second resolution. |
 | 2017-11-07 | AU/GA/DEM_1SEC/v10/DEM-S |  | A smoothed Australian digital elevation model at 1-arc-second resolution. |
 | 2017-11-07 | COPERNICUS/S3/OLCI |  | A Sentinel-3 OLCI full-resolution ocean and land color dataset. |
@@ -944,31 +758,6 @@ Unique features: 1407
 | 2017-10-10 | UMD/hansen/global_forest_change_2016_v1_4 |  | A global forest change dataset for 2016. |
 | 2017-10-03 | HYCOM/GLBu0_08/sea_temp_salinity |  | A HYCOM sea temperature and salinity dataset for the GLBu0.08 grid. |
 | 2017-10-03 | HYCOM/GLBu0_08/sea_water_velocity |  | A HYCOM sea water velocity dataset for the GLBu0.08 grid. |
-| 2017-10-03 | LANDSAT/LE07/C01/T1_SR |  | A Landsat 7 Collection 1 Tier 1 surface reflectance collection. |
-| 2017-10-03 | LANDSAT/LT04/C01/T1_SR |  | A Landsat 4 Collection 1 Tier 1 surface reflectance collection. |
-| 2017-10-03 | LANDSAT/LT05/C01/T1_SR |  | A Landsat 5 Collection 1 Tier 1 surface reflectance collection. |
-| 2017-09-19 | LANDSAT_COPY/LC8 |  | A copied Landsat 8 collection. |
-| 2017-09-19 | LANDSAT_COPY/LC8_L1T |  | A copied Landsat 8 L1T collection. |
-| 2017-09-19 | LANDSAT_COPY/LE7 |  | A copied Landsat 7 collection. |
-| 2017-09-19 | LANDSAT_COPY/LE7_L1T |  | A copied Landsat 7 L1T collection. |
-| 2017-09-19 | LANDSAT_COPY/LM1 |  | A copied Landsat 1 collection. |
-| 2017-09-19 | LANDSAT_COPY/LM1_L1T |  | A copied Landsat 1 L1T collection. |
-| 2017-09-19 | LANDSAT_COPY/LM2 |  | A copied Landsat 2 collection. |
-| 2017-09-19 | LANDSAT_COPY/LM2_L1T |  | A copied Landsat 2 L1T collection. |
-| 2017-09-19 | LANDSAT_COPY/LM3 |  | A copied Landsat 3 collection. |
-| 2017-09-19 | LANDSAT_COPY/LM3_L1T |  | A copied Landsat 3 L1T collection. |
-| 2017-09-19 | LANDSAT_COPY/LM4 |  | A copied Landsat 4 collection. |
-| 2017-09-19 | LANDSAT_COPY/LM4_L1T |  | A copied Landsat 4 L1T collection. |
-| 2017-09-19 | LANDSAT_COPY/LM5 |  | A copied Landsat 5 collection. |
-| 2017-09-19 | LANDSAT_COPY/LM5_L1T |  | A copied Landsat 5 L1T collection. |
-| 2017-09-19 | LANDSAT_COPY/LT4 |  | A copied Landsat 4 collection. |
-| 2017-09-19 | LANDSAT_COPY/LT4_L1T |  | A copied Landsat 4 L1T collection. |
-| 2017-09-19 | LANDSAT_COPY/LT5 |  | A copied Landsat 5 collection. |
-| 2017-09-19 | LANDSAT_COPY/LT5_L1T |  | A copied Landsat 5 L1T collection. |
-| 2017-08-08 | LANDSAT/LT05/C01/T1 |  | A Landsat 5 Collection 1 Tier 1 collection. |
-| 2017-08-08 | LANDSAT/LT05/C01/T1_TOA |  | A Landsat 5 Collection 1 Tier 1 top-of-atmosphere collection. |
-| 2017-08-08 | LANDSAT/LT05/C01/T2 |  | A Landsat 5 Collection 1 Tier 2 collection. |
-| 2017-08-08 | LANDSAT/LT05/C01/T2_TOA |  | A Landsat 5 Collection 1 Tier 2 top-of-atmosphere collection. |
 | 2017-08-08 | LSIB 2017 Simplified |  | A simplified polygon dataset of large-scale international boundaries. |
 | 2017-08-01 | NASA/OCEANDATA/SeaWiFS/L3SMI |  | A standard mapped image SeaWiFS ocean color dataset. |
 | 2017-08-01 | WCMC/WDPA/current/points |  | A point-layer version of the World Database on Protected Areas. |
@@ -983,25 +772,14 @@ Unique features: 1407
 | 2017-06-20 | MODIS/006/MYD09Q1 |  | A MODIS Aqua 8-day surface reflectance composite product. |
 | 2017-06-20 | MODIS/006/MYD11A2 |  | A MODIS Aqua 8-day land surface temperature product. |
 | 2017-06-20 | NASA/OCEANDATA/MODIS-Terra/L3SMI |  | A standard mapped image MODIS Terra ocean color dataset. |
-| 2017-06-13 | NASA/GPM_L3/IMERG_V04 |  | NASA GPM IMERG Version 4 global precipitation estimates. |
 | 2017-06-13 | NASA/OCEANDATA |  | NASA OceanData ocean data collections. |
 | 2017-06-13 | NASA/OCEANDATA/MODIS-Aqua/L3SMI |  | MODIS Aqua Level 3 standard mapped ocean color imagery. |
 | 2017-06-13 | UMD/hansen/global_forest_change_2015_v1_3 |  | Global forest change data for 2015 version 1.3. |
-| 2017-05-30 | LANDSAT/LC08/C01/T2 |  | Landsat 8 Collection 1 Tier 2 surface reflectance imagery. |
-| 2017-05-30 | LANDSAT/LC08/C01/T2_TOA |  | Landsat 8 Collection 1 Tier 2 top-of-atmosphere reflectance imagery. |
-| 2017-05-30 | LANDSAT/LE07/C01/T2 |  | Landsat 7 Collection 1 Tier 2 surface reflectance imagery. |
-| 2017-05-30 | LANDSAT/LE07/C01/T2_TOA |  | Landsat 7 Collection 1 Tier 2 top-of-atmosphere reflectance imagery. |
 | 2017-05-23 | MODIS/006/MCD43A1 |  | MODIS BRDF/albedo model parameters daily global 500 m product. |
 | 2017-05-23 | MODIS/006/MCD43A2 |  | MODIS BRDF/albedo quality daily global 500 m product. |
 | 2017-05-23 | MODIS/006/MCD43A3 |  | MODIS daily albedo global 500 m product. |
 | 2017-05-23 | MODIS/006/MOD14A1 |  | MODIS Terra daily thermal anomalies and fire product. |
 | 2017-05-23 | MODIS/006/MYD14A1 |  | MODIS Aqua daily thermal anomalies and fire product. |
-| 2017-05-09 | LANDSAT/LC08/C01/T1 |  | Landsat 8 Collection 1 Tier 1 surface reflectance imagery. |
-| 2017-05-09 | LANDSAT/LC08/C01/T1_RT |  | Landsat 8 Collection 1 Tier 1 real-time surface reflectance imagery. |
-| 2017-05-09 | LANDSAT/LC08/C01/T1_RT_TOA |  | Landsat 8 Collection 1 Tier 1 real-time top-of-atmosphere reflectance imagery. |
-| 2017-05-09 | LANDSAT/LC08/C01/T1_TOA |  | Landsat 8 Collection 1 Tier 1 top-of-atmosphere reflectance imagery. |
-| 2017-05-09 | LANDSAT/LE07/C01/T1_RT |  | Landsat 7 Collection 1 Tier 1 real-time surface reflectance imagery. |
-| 2017-05-09 | LANDSAT/LE07/C01/T1_RT_TOA |  | Landsat 7 Collection 1 Tier 1 real-time top-of-atmosphere reflectance imagery. |
 | 2017-05-09 | MODIS/006/MOD09GA |  | MODIS Terra daily surface reflectance at 500 m. |
 | 2017-05-09 | MODIS/006/MOD09GQ |  | MODIS Terra daily surface reflectance at 250 m. |
 | 2017-05-09 | MODIS/006/MOD11A1 |  | MODIS Terra daily land surface temperature and emissivity product. |
@@ -1079,68 +857,22 @@ Unique features: 1407
 | 2016-11-15 | ASTER L1T Radiance |  | An ASTER level 1T radiance dataset. |
 | 2016-08-23 | PROBA-V S1 TOC 100m |  | A PROBA-V top-of-canopy daily synthesis dataset at 100 m resolution. |
 | 2016-08-23 | PROBA-V S1 TOC 333m |  | A PROBA-V top-of-canopy daily synthesis dataset at 333 m resolution. |
-| 2016-08-02 | NASA/GPM_L3/IMERG | 2016-08-02 | Global precipitation estimates from the GPM IMERG Level 3 product; deprecated on 2016-08-02. |
-| 2016-07-12 | EEA/CORINE/CLC | 2016-07-12 | CORINE land cover classification for Europe; deprecated on 2016-07-12. |
-| 2016-06-28 | MODIS/006/MCD15A3H | 2016-06-28 | MODIS leaf area index and vegetation fraction product generated every four days; deprecated on 2016-06-28. |
-| 2016-06-28 | MODIS/006/MOD14A2 | 2016-06-28 | MODIS thermal anomalies and fire product aggregated over eight days; deprecated on 2016-06-28. |
-| 2016-06-28 | MODIS/006/MYD14A2 | 2016-06-28 | Aqua MODIS thermal anomalies and fire product aggregated over eight days; deprecated on 2016-06-28. |
-| 2016-06-28 | MODIS/051/MOD44B | 2016-06-28 | MODIS vegetation continuous fields product derived from yearly composites; deprecated on 2016-06-28. |
 | 2016-06-14 | NASA/GLDAS/V20/NOAH/G025/T3H |  | Reprocessed GLDAS-2.0 Noah land surface model data at 0.25° and 3-hour intervals. |
-| 2016-06-07 | LANDSAT/LC8_L1T_TOA_FMASK | 2016-06-07 | Landsat 8 Level-1T top-of-atmosphere imagery with Fmask cloud masking; deprecated on 2016-06-07. |
-| 2016-06-07 | LANDSAT/LE7_L1T_TOA_FMASK | 2016-06-07 | Landsat 7 Level-1T top-of-atmosphere imagery with Fmask cloud masking; deprecated on 2016-06-07. |
-| 2016-06-07 | LANDSAT/LT4_L1T_TOA_FMASK | 2016-06-07 | Landsat 4 Level-1T top-of-atmosphere imagery with Fmask cloud masking; deprecated on 2016-06-07. |
-| 2016-06-07 | LANDSAT/LT5_L1T_TOA_FMASK | 2016-06-07 | Landsat 5 Level-1T top-of-atmosphere imagery with Fmask cloud masking; deprecated on 2016-06-07. |
-| 2016-06-07 | MODIS/006/MOD17A2H | 2016-06-07 | MODIS gross primary productivity and photosynthesis product at 8-day intervals; deprecated on 2016-06-07. |
-| 2016-06-07 | MODIS/006/MOD17A3H | 2016-06-07 | MODIS annual net primary productivity product; deprecated on 2016-06-07. |
-| 2016-06-07 | MODIS/006/MYD17A2H | 2016-06-07 | Aqua MODIS gross primary productivity and photosynthesis product at 8-day intervals; deprecated on 2016-06-07. |
-| 2016-06-07 | MODIS/006/MYD17A3H | 2016-06-07 | Aqua MODIS annual net primary productivity product; deprecated on 2016-06-07. |
-| 2016-06-07 | MODIS/MCD12Q2 | 2016-06-07 | MODIS annual phenology metrics derived from land cover time series; deprecated on 2016-06-07. |
-| 2016-04-26 | GLCF/GLS_TCC | 2016-04-26 | Global Land Survey tree canopy cover data from Landsat imagery; deprecated on 2016-04-26. |
 | 2016-04-26 | GLCF/GLS_WATER |  | Global Land Survey inland water data derived from Landsat imagery. |
 | 2016-04-12 | SKYSAT/GEN-A/PUBLIC/ORTHO/MULTISPECTRAL |  | Planet SkySat public orthorectified multispectral imagery. |
 | 2016-04-12 | SKYSAT/GEN-A/PUBLIC/ORTHO/RGB |  | Planet SkySat public orthorectified RGB imagery. |
-| 2016-03-22 | COPERNICUS/S2 | 2016-03-22 | Sentinel-2 multispectral optical imagery; deprecated on 2016-03-22. |
 | 2016-03-15 | NASA/GIMMS/3GV0 |  | GIMMS NDVI vegetation index data from AVHRR sensors. |
-| 2016-03-08 | NASA/GLDAS/V001/NOAH/G025/T3H | 2016-03-08 | GLDAS-1 Noah land surface model data at 0.25° and 3-hour intervals; deprecated on 2016-03-08. |
 | 2016-02-02 | COPERNICUS/S1_GRD |  | Sentinel-1 SAR ground range detected imagery with log scaling. |
-| 2016-02-02 | NASA/GLDAS/V020/NOAH/G025/T3H | 2016-02-02 | GLDAS-2.0 Noah land surface model data at 0.25° and 3-hour intervals; deprecated on 2016-02-02. |
 | 2016-01-19 | EO1/HYPERION |  | EO-1 Hyperion hyperspectral imagery. |
-| 2015-12-15 | LANDSAT/LC8_SR | 2015-12-15 | Landsat 8 surface reflectance image collection; deprecated on 2015-12-15. |
-| 2015-12-15 | LANDSAT/LE7_SR | 2015-12-15 | Landsat 7 surface reflectance image collection; deprecated on 2015-12-15. |
-| 2015-12-15 | LANDSAT/LT4_SR | 2015-12-15 | Landsat 4 surface reflectance image collection; deprecated on 2015-12-15. |
-| 2015-12-15 | LANDSAT/LT5_SR | 2015-12-15 | Landsat 5 surface reflectance image collection; deprecated on 2015-12-15. |
 | 2015-12-08 | AU/GA/AUSTRALIA_5M_DEM |  | Australian 5-meter digital elevation model. |
 | 2015-11-24 | NOAA/PERSIANN-CDR |  | Precipitation Estimation From Remotely Sensed Information Using Artificial Neural Networks Climate Data Record. |
-| 2015-10-20 | UMD/hansen/global_forest_change_2015 | 2015-10-20 | Global forest change dataset for 2015; deprecated on 2015-10-20. |
 | 2015-10-06 | IDAHO_EPSCOR/MACAv2_METDATA_MONTHLY |  | Monthly MACAv2 meteorological summaries for climate model output. |
 | 2015-08-11 | AHN/AHN2_05M_INT |  | Interpolated Netherlands AHN2 0.5-meter digital elevation model. |
 | 2015-08-11 | AHN/AHN2_05M_NON |  | Non-interpolated Netherlands AHN2 0.5-meter digital elevation model. |
 | 2015-08-11 | AHN/AHN2_05M_RUW |  | Raw-sample Netherlands AHN2 0.5-meter digital elevation model. |
-| 2015-08-11 | FORMA/FORMA_500m | 2015-08-11 | FORMA forest monitoring dataset at 500-meter resolution; deprecated on 2015-08-11. |
 | 2015-08-11 | NASA/JPL/global_forest_canopy_height_2005 |  | Global forest canopy height dataset for 2005. |
 | 2015-08-11 | NOAA/GFS0P25 |  | Global Forecast System 384-hour predicted atmosphere data at 0.25-degree resolution. |
-| 2015-08-04 | IDAHO_EPSCOR/MACAv2_METDATA | 2015-08-04 | MACAv2 meteorological data for climate model output; MACAv2 meteorological data for climate model output; deprecated on 2015-08-04. |
-| 2015-08-04 | LANDSAT/LE7_TOA_1YEAR | 2015-08-04 | Landsat 7 top-of-atmosphere annual composite; deprecated on 2015-08-04. |
-| 2015-08-04 | LANDSAT/LE7_TOA_3YEAR | 2015-08-04 | Landsat 7 top-of-atmosphere 3-year composite; deprecated on 2015-08-04. |
-| 2015-08-04 | LANDSAT/LE7_TOA_5YEAR | 2015-08-04 | Landsat 7 top-of-atmosphere 5-year composite; deprecated on 2015-08-04. |
-| 2015-07-28 | COPERNICUS/S1 | 2015-07-28 | Copernicus Sentinel-1 radar image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM1 | 2015-07-28 | Landsat 1 image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM1_L1T | 2015-07-28 | Landsat 1 Level-1T image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM2 | 2015-07-28 | Landsat 2 image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM2_L1T | 2015-07-28 | Landsat 2 Level-1T image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM3 | 2015-07-28 | Landsat 3 image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM3_L1T | 2015-07-28 | Landsat 3 Level-1T image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM4 | 2015-07-28 | Landsat 4 image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM4_L1T | 2015-07-28 | Landsat 4 Level-1T image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM5 | 2015-07-28 | Landsat 5 image collection; deprecated on 2015-07-28. |
-| 2015-07-28 | LANDSAT/LM5_L1T | 2015-07-28 | Landsat 5 Level-1T image collection; deprecated on 2015-07-28. |
-| 2015-07-14 | Oxford/MAP/EVI_5km_Monthly | 2015-07-14 | Monthly 5-kilometer EVI dataset for the Malaria Atlas Project; deprecated on 2015-07-14. |
 | 2015-07-14 | Oxford/MAP/IGBP_Fractional_Landcover_5km_Annual |  | Annual 5-kilometer fractional land cover dataset for the Malaria Atlas Project. |
-| 2015-07-14 | Oxford/MAP/LST_Day_5km_Monthly | 2015-07-14 | Monthly 5-kilometer daytime land surface temperature dataset for the Malaria Atlas Project; deprecated on 2015-07-14. |
-| 2015-07-14 | Oxford/MAP/LST_Night_5km_Monthly | 2015-07-14 | Monthly 5-kilometer nighttime land surface temperature dataset for the Malaria Atlas Project; deprecated on 2015-07-14. |
-| 2015-07-14 | Oxford/MAP/TCB_5km_Monthly | 2015-07-14 | Monthly 5-kilometer tasseled cap brightness dataset for the Malaria Atlas Project; deprecated on 2015-07-14. |
-| 2015-07-14 | Oxford/MAP/TCW_5km_Monthly | 2015-07-14 | Monthly 5-kilometer tasseled cap wetness dataset for the Malaria Atlas Project; deprecated on 2015-07-14. |
-| 2015-07-14 | WorldPop/POP | 2015-07-14 | Global population dataset from WorldPop; deprecated on 2015-07-14. |
 | 2015-06-30 | NOAA/NWS/RTMA |  | Real-Time Mesoscale Analysis weather dataset. |
 | 2015-06-30 | WWF/HydroSHEDS/03CONDEM |  | HydroSHEDS hydrologically conditioned DEM at 3 arc-seconds. |
 | 2015-06-30 | WWF/HydroSHEDS/03DIR |  | HydroSHEDS drainage direction dataset at 3 arc-seconds. |
@@ -1148,43 +880,22 @@ Unique features: 1407
 | 2015-06-30 | WWF/HydroSHEDS/30ACC |  | HydroSHEDS flow accumulation dataset at 30 arc-seconds. |
 | 2015-06-30 | WWF/HydroSHEDS/30CONDEM |  | HydroSHEDS hydrologically conditioned DEM at 30 arc-seconds. |
 | 2015-06-30 | WWF/HydroSHEDS/30DIR |  | HydroSHEDS drainage direction dataset at 30 arc-seconds. |
-| 2015-05-26 | MODIS/051/MCD45A1 | 2015-05-26 | MODIS Collection 5.1 burned area product; deprecated on 2015-05-26. |
-| 2015-04-14 | USGS/GMTED2010 | 2015-04-14 | Global Multi-resolution Terrain Elevation Data 2010 dataset; deprecated on 2015-04-14. |
 | 2015-03-24 | ASTER Global Emissivity Dataset 100-meter V003 |  | ASTER Global Emissivity Dataset at 100-meter resolution. |
-| 2015-03-24 | NASA/ASTER_GED/AGNS100_003 | 2015-03-24 | A deprecated ASTER GED catalog item; deprecated on 2015-03-24. |
-| 2015-03-24 | NASA/ASTER_GED/AGNW100_002 | 2015-03-24 | A deprecated ASTER GED catalog item; deprecated on 2015-03-24. |
 | 2015-03-17 | Fire Information for Resource Management System |  | Fire information for resource management from the FIRMS system. |
-| 2015-03-17 | MODIS/MCD12Q1 | 2015-03-17 | A deprecated Earth Engine catalog item; This dataset provides MODIS land cover type data and is no longer available; deprecated on 2015-03-17. |
-| 2015-03-17 | MODIS/MOD10A1 | 2015-03-17 | A deprecated Earth Engine catalog item; deprecated on 2015-03-17. |
-| 2015-03-17 | MODIS/MYD10A1 | 2015-03-17 | A deprecated Earth Engine catalog item; deprecated on 2015-03-17. |
 | 2015-03-17 | NCEP/NCAR Reanalysis Data |  | NCEP/NCAR reanalysis data for sea-level pressure; NCEP/NCAR reanalysis data for surface temperature. |
 | 2015-03-17 | Sea-Level Pressure |  | NCEP/NCAR reanalysis data for sea-level pressure. |
 | 2015-03-17 | Surface Temperature |  | NCEP/NCAR reanalysis data for surface temperature. |
 | 2015-03-17 | TOMS and OMI Merged Ozone Data |  | Merged ozone data from TOMS and OMI. |
 | 2015-03-17 | Water Vapor |  | NCEP/NCAR reanalysis data for water vapor. |
-| 2015-02-24 | MODIS/MOD09Q1 | 2015-02-24 | A deprecated Earth Engine catalog item; deprecated on 2015-02-24. |
-| 2015-02-24 | MODIS/MYD09Q1 | 2015-02-24 | A deprecated Earth Engine catalog item; deprecated on 2015-02-24. |
-| 2015-02-17 | IDAHO_EPSCOR/PDSI | 2015-02-17 | A deprecated Earth Engine catalog item; deprecated on 2015-02-17. |
-| 2015-02-10 | NOAA/CFSV2/FOR6H | 2015-02-10 | A deprecated Earth Engine catalog item; deprecated on 2015-02-10. |
 | 2015-01-27 | NEX-DCP30: Ensemble Stats for NASA Earth Exchange Downscaled Climate Projections |  | Ensemble statistics for NASA Earth Exchange downscaled climate projections. |
 | 2015-01-27 | NEX-DCP30: NASA Earth Exchange Downscaled Climate Projections |  | NASA Earth Exchange downscaled climate projections. |
-| 2015-01-27 | UMD/hansen/global_forest_change_2014 | 2015-01-27 | A deprecated Earth Engine catalog item for global forest change in 2014; deprecated on 2015-01-27. |
-| 2014-11-25 | MODIS/MOD13A1 | 2014-11-25 | A deprecated Earth Engine catalog item; deprecated on 2014-11-25. |
-| 2014-11-25 | MODIS/MYD13A1 | 2014-11-25 | A deprecated Earth Engine catalog item; deprecated on 2014-11-25. |
-| 2014-11-11 | NOAA/AVHRR_Pathfinder_V52_L3 | 2014-11-11 | A deprecated Earth Engine catalog item; deprecated on 2014-11-11. |
 | 2014-10-21 | GFSAD1000: Cropland Extent 1km Multi-Study Crop Mask |  | Global cropland extent data at 1 km resolution. |
 | 2014-10-21 | Global Food-Support Analysis Data |  | Global cropland extent data at 1 km resolution. |
 | 2014-10-21 | NASA SRTM Digital Elevation 30m |  | NASA SRTM digital elevation data at 30 m resolution. |
-| 2014-10-21 | USGS/GFSAD1000_V0 | 2014-10-21 | A deprecated Earth Engine catalog item; deprecated on 2014-10-21. |
-| 2014-09-30 | MODIS/MCD43A1 | 2014-09-30 | A deprecated Earth Engine catalog item; deprecated on 2014-09-30. |
 | 2014-09-23 | USDA NASS Cropland Data Layers |  | USDA NASS cropland data layers. |
-| 2014-09-09 | USGS/NLCD | 2014-09-09 | This dataset provides USGS National Land Cover Database land cover data and is no longer available; deprecated on 2014-09-09. |
 | 2014-08-05 | WHRC/biomass/tropical |  | This dataset provides WHRC pantropical national-level carbon stock data. |
 | 2014-07-29 | ESA/GLOBCOVER_L4_200901_200912_V2_3 |  | This dataset provides the GlobCover global land cover map. |
 | 2014-07-29 | USDA/NAIP/DOQQ |  | This dataset provides NAIP orthorectified aerial imagery. |
-| 2014-07-22 | MODIS/MYD09A1 | 2014-07-22 | This dataset provides MODIS Aqua surface reflectance data and is no longer available; deprecated on 2014-07-22. |
-| 2014-07-22 | MODIS/MYD11A2 | 2014-07-22 | This dataset provides MODIS Aqua land surface temperature data and is no longer available; deprecated on 2014-07-22. |
-| 2014-07-22 | NASA/ORNL/DAYMET | 2014-07-22 | This dataset provides DAYMET daily surface weather data and is no longer available; deprecated on 2014-07-22. |
 | 2014-06-03 | IDAHO_EPSCOR/GRIDMET |  | This dataset provides GRIDMET gridded surface meteorological data. |
 | 2014-06-03 | NOAA/NGDC/ETOPO1 |  | This dataset provides the ETOPO1 global 1 arc-minute elevation model. |
 | 2014-05-20 | WWF/HydroSHEDS/15ACC |  | This dataset provides HydroSHEDS flow accumulation data at 15 arc-seconds. |
@@ -1194,48 +905,8 @@ Unique features: 1407
 | 2014-03-25 | LANDSAT/GLS2005 |  | This dataset provides Landsat Global Land Survey 2005 scenes from Landsat 5 and 7. |
 | 2014-03-25 | LANDSAT/GLS2005_L5 |  | This dataset provides Landsat Global Land Survey 2005 scenes from Landsat 5. |
 | 2014-03-25 | LANDSAT/GLS2005_L7 |  | This dataset provides Landsat Global Land Survey 2005 scenes from Landsat 7. |
-| 2014-03-11 | LANDSAT/LE7 | 2014-03-11 | This dataset provides Landsat 7 imagery and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T | 2014-03-11 | This dataset provides Landsat 7 Level-1T imagery and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_32DAY_BAI | 2014-03-11 | This dataset provides a 32-day Landsat 7 Level-1T Burned Area Index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_32DAY_EVI | 2014-03-11 | This dataset provides a 32-day Landsat 7 Level-1T Enhanced Vegetation Index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_32DAY_NBRT | 2014-03-11 | This dataset provides a 32-day Landsat 7 Level-1T normalized burn ratio composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_32DAY_NDSI | 2014-03-11 | This dataset provides a 32-day Landsat 7 Level-1T normalized difference snow index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_32DAY_NDVI | 2014-03-11 | This dataset provides a 32-day Landsat 7 Level-1T normalized difference vegetation index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_32DAY_NDWI | 2014-03-11 | This dataset provides a 32-day Landsat 7 Level-1T normalized difference water index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_32DAY_RAW | 2014-03-11 | This dataset provides a 32-day Landsat 7 Level-1T raw composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_32DAY_TOA | 2014-03-11 | This dataset provides a 32-day Landsat 7 Level-1T top-of-atmosphere composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_8DAY_BAI | 2014-03-11 | This dataset provides an 8-day Landsat 7 Level-1T Burned Area Index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_8DAY_EVI | 2014-03-11 | This dataset provides an 8-day Landsat 7 Level-1T Enhanced Vegetation Index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_8DAY_NBRT | 2014-03-11 | This dataset provides an 8-day Landsat 7 Level-1T normalized burn ratio composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_8DAY_NDSI | 2014-03-11 | This dataset provides an 8-day Landsat 7 Level-1T normalized difference snow index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_8DAY_NDVI | 2014-03-11 | This dataset provides an 8-day Landsat 7 Level-1T normalized difference vegetation index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_8DAY_NDWI | 2014-03-11 | This dataset provides an 8-day Landsat 7 Level-1T normalized difference water index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_8DAY_RAW | 2014-03-11 | This dataset provides an 8-day Landsat 7 Level-1T raw composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_8DAY_TOA | 2014-03-11 | This dataset provides an 8-day Landsat 7 Level-1T top-of-atmosphere composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_ANNUAL_BAI | 2014-03-11 | This dataset provides an annual Landsat 7 Level-1T Burned Area Index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_ANNUAL_EVI | 2014-03-11 | This dataset provides an annual Landsat 7 Level-1T Enhanced Vegetation Index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_ANNUAL_GREENEST_TOA | 2014-03-11 | This dataset provides an annual greenest Landsat 7 Level-1T top-of-atmosphere composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_ANNUAL_NBRT | 2014-03-11 | This dataset provides an annual Landsat 7 Level-1T normalized burn ratio composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_ANNUAL_NDSI | 2014-03-11 | This dataset provides an annual Landsat 7 Level-1T normalized difference snow index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_ANNUAL_NDVI | 2014-03-11 | This dataset provides an annual Landsat 7 Level-1T normalized difference vegetation index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_ANNUAL_NDWI | 2014-03-11 | This dataset provides an annual Landsat 7 Level-1T normalized difference water index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_ANNUAL_RAW | 2014-03-11 | This dataset provides an annual Landsat 7 Level-1T raw composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LE7_L1T_ANNUAL_TOA | 2014-03-11 | This dataset provides an annual Landsat 7 Level-1T top-of-atmosphere composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LT5 | 2014-03-11 | This dataset provides Landsat 5 imagery and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LT5_L1T | 2014-03-11 | This dataset provides Landsat 5 Level-1T imagery and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LT5_L1T_32DAY_BAI | 2014-03-11 | This dataset provides a 32-day Landsat 5 Level-1T Burned Area Index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LT5_L1T_32DAY_EVI | 2014-03-11 | This dataset provides a 32-day Landsat 5 Level-1T Enhanced Vegetation Index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LT5_L1T_32DAY_NBRT | 2014-03-11 | This dataset provides a 32-day Landsat 5 Level-1T normalized burn ratio composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LT5_L1T_32DAY_NDSI | 2014-03-11 | This dataset provides a 32-day Landsat 5 Level-1T normalized difference snow index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LT5_L1T_32DAY_NDVI | 2014-03-11 | This dataset provides a 32-day Landsat 5 Level-1T normalized difference vegetation index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LT5_L1T_32DAY_NDWI | 2014-03-11 | This dataset provides a 32-day Landsat 5 Level-1T normalized difference water index composite and is no longer available; deprecated on 2014-03-11. |
-| 2014-03-11 | LANDSAT/LT5_L1T_32DAY_RAW | 2014-03-11 | This dataset provides a 32-day Landsat 5 Level-1T raw composite and is no longer available; deprecated on 2014-03-11. |
 | 2014-03-04 | NOAA/DMSP-OLS/NIGHTTIME_LIGHTS |  | This dataset provides DMSP OLS nighttime lights time series data. |
-| 2014-02-25 | MODIS/MOD08_M3_051_SHORT | 2014-02-25 | This dataset provides MODIS Terra atmosphere monthly global data and is no longer available; deprecated on 2014-02-25. |
-| 2014-02-25 | MODIS/MYD08_M3_051_SHORT | 2014-02-25 | This dataset provides MODIS Aqua atmosphere monthly global data and is no longer available; deprecated on 2014-02-25. |
-| 2014-02-25 | UMD/hansen/global_forest_change_2013 | 2014-02-25 | This dataset provides Hansen global forest change 2013 data and is no longer available; deprecated on 2014-02-25. |
 | 2014-02-11 | TRMM/3B42 |  | This dataset provides TRMM 3B42 3-hourly precipitation estimates. |
-| 2014-02-04 | MODIS/MOD08_M3_051 |  | A MODIS monthly atmospheric data product. |
 | 2014-01-21 | MODIS/MOD11A1 |  | A MODIS daily land surface temperature and emissivity product. |
 | 2014-01-21 | MODIS/MYD11A1 |  | A MODIS Aqua daily land surface temperature and emissivity product. |
 | 2013-08-13 | MODIS/MCD43B3 |  | A MODIS albedo product derived from BRDF-adjusted reflectance. |
@@ -1250,172 +921,22 @@ Unique features: 1407
 | 2013-08-13 | MODIS/MYD09GA_NDWI |  | A MODIS Aqua normalized difference water index layer derived from daily surface reflectance. |
 | 2013-08-13 | MODIS/MYD09GQ |  | A MODIS Aqua daily surface reflectance product for bands 1 and 2. |
 | 2013-08-13 | MODIS/MYD13Q1 |  | A MODIS Aqua vegetation index product. |
-| 2013-07-23 | LEDAPS/L5_L1T_SR |  | A Landsat 5 LEDAPS surface reflectance product. |
-| 2013-07-23 | LEDAPS/L7_L1T_SR |  | A Landsat 7 LEDAPS surface reflectance product. |
 | 2013-07-16 | LANDSAT/LC8 |  | A Landsat 8 image collection. |
-| 2013-07-16 | LANDSAT/LC8_L1T |  | A Landsat 8 Level-1 terrain-corrected image collection. |
-| 2013-07-16 | LANDSAT/LC8_L1T_32DAY_BAI |  | A Landsat 8 32-day burn area index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_32DAY_EVI |  | A Landsat 8 32-day enhanced vegetation index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_32DAY_NBRT |  | A Landsat 8 32-day normalized burn ratio. |
-| 2013-07-16 | LANDSAT/LC8_L1T_32DAY_NDSI |  | A Landsat 8 32-day normalized difference snow index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_32DAY_NDVI |  | A Landsat 8 32-day normalized difference vegetation index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_32DAY_NDWI |  | A Landsat 8 32-day normalized difference water index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_32DAY_RAW |  | A Landsat 8 32-day raw composite. |
-| 2013-07-16 | LANDSAT/LC8_L1T_32DAY_TOA |  | A Landsat 8 32-day top-of-atmosphere reflectance composite. |
-| 2013-07-16 | LANDSAT/LC8_L1T_8DAY_BAI |  | A Landsat 8 8-day burn area index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_8DAY_EVI |  | A Landsat 8 8-day enhanced vegetation index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_8DAY_NBRT |  | A Landsat 8 8-day normalized burn ratio. |
-| 2013-07-16 | LANDSAT/LC8_L1T_8DAY_NDSI |  | A Landsat 8 8-day normalized difference snow index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_8DAY_NDVI |  | A Landsat 8 8-day normalized difference vegetation index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_8DAY_NDWI |  | A Landsat 8 8-day normalized difference water index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_8DAY_RAW |  | A Landsat 8 8-day raw composite. |
-| 2013-07-16 | LANDSAT/LC8_L1T_8DAY_TOA |  | A Landsat 8 8-day top-of-atmosphere reflectance composite. |
-| 2013-07-16 | LANDSAT/LC8_L1T_ANNUAL_BAI |  | A Landsat 8 annual burn area index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_ANNUAL_EVI |  | A Landsat 8 annual enhanced vegetation index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_ANNUAL_GREENEST_TOA |  | A Landsat 8 annual greenest-pixel top-of-atmosphere composite. |
-| 2013-07-16 | LANDSAT/LC8_L1T_ANNUAL_NBRT |  | A Landsat 8 annual normalized burn ratio. |
-| 2013-07-16 | LANDSAT/LC8_L1T_ANNUAL_NDSI |  | A Landsat 8 annual normalized difference snow index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_ANNUAL_NDVI |  | A Landsat 8 annual normalized difference vegetation index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_ANNUAL_NDWI |  | A Landsat 8 annual normalized difference water index. |
-| 2013-07-16 | LANDSAT/LC8_L1T_ANNUAL_RAW |  | A Landsat 8 annual raw composite. |
-| 2013-07-16 | LANDSAT/LC8_L1T_ANNUAL_TOA |  | A Landsat 8 annual top-of-atmosphere reflectance composite. |
-| 2013-07-16 | LANDSAT/LC8_L1T_TOA |  | A Landsat 8 Level-1 terrain-corrected top-of-atmosphere reflectance composite. |
 | 2013-07-02 | USGS/GTOPO30 |  | A global 30 arc-second elevation dataset. |
 | 2013-04-09 | USGS/NLCD/NLCD2001 |  | The 2001 National Land Cover Database land cover dataset. |
 | 2013-04-09 | USGS/NLCD/NLCD2006 |  | The 2006 National Land Cover Database land cover dataset. |
 | 2013-04-09 | USGS/NLCD1992 |  | The 1992 National Land Cover Database land cover dataset. |
 | 2013-02-26 | LANDSAT/L4 |  | A Landsat 4 image collection. |
-| 2013-02-26 | LANDSAT/L4_L1T |  | A Landsat 4 Level-1 terrain-corrected image collection. |
-| 2013-02-26 | LANDSAT/L4_L1T_32DAY_BAI |  | A Landsat 4 32-day burn area index. |
-| 2013-02-26 | LANDSAT/L4_L1T_32DAY_EVI |  | A Landsat 4 32-day enhanced vegetation index. |
-| 2013-02-26 | LANDSAT/L4_L1T_32DAY_NBRT |  | A Landsat 4 32-day normalized burn ratio. |
-| 2013-02-26 | LANDSAT/L4_L1T_32DAY_NDSI |  | A Landsat 4 32-day normalized difference snow index. |
-| 2013-02-26 | LANDSAT/L4_L1T_32DAY_NDVI |  | A Landsat 4 32-day normalized difference vegetation index. |
-| 2013-02-26 | LANDSAT/L4_L1T_32DAY_NDWI |  | A Landsat 4 32-day normalized difference water index. |
-| 2013-02-26 | LANDSAT/L4_L1T_32DAY_RAW |  | A Landsat 4 32-day raw composite. |
-| 2013-02-26 | LANDSAT/L4_L1T_32DAY_TOA |  | A Landsat 4 32-day top-of-atmosphere reflectance composite. |
-| 2013-02-26 | LANDSAT/L4_L1T_8DAY_BAI |  | A Landsat 4 8-day burn area index. |
-| 2013-02-26 | LANDSAT/L4_L1T_8DAY_EVI |  | A Landsat 4 8-day enhanced vegetation index. |
-| 2013-02-26 | LANDSAT/L4_L1T_8DAY_NBRT |  | A Landsat 4 8-day normalized burn ratio. |
-| 2013-02-26 | LANDSAT/L4_L1T_8DAY_NDSI |  | A Landsat 4 8-day normalized difference snow index. |
-| 2013-02-26 | LANDSAT/L4_L1T_8DAY_NDVI |  | A Landsat 4 8-day normalized difference vegetation index. |
-| 2013-02-26 | LANDSAT/L4_L1T_8DAY_NDWI |  | A Landsat 4 8-day normalized difference water index. |
-| 2013-02-26 | LANDSAT/L4_L1T_8DAY_RAW |  | A Landsat 4 8-day raw composite. |
-| 2013-02-26 | LANDSAT/L4_L1T_8DAY_TOA |  | A Landsat 4 8-day top-of-atmosphere reflectance composite. |
-| 2013-02-26 | LANDSAT/L4_L1T_ANNUAL_BAI |  | A Landsat 4 annual burn area index. |
-| 2013-02-26 | LANDSAT/L4_L1T_ANNUAL_EVI |  | A Landsat 4 annual enhanced vegetation index. |
-| 2013-02-26 | LANDSAT/L4_L1T_ANNUAL_GREENEST_TOA |  | A Landsat 4 annual greenest-pixel top-of-atmosphere composite. |
-| 2013-02-26 | LANDSAT/L4_L1T_ANNUAL_NBRT |  | A Landsat 4 annual normalized burn ratio. |
-| 2013-02-26 | LANDSAT/L4_L1T_ANNUAL_NDSI |  | A Landsat 4 annual normalized difference snow index. |
-| 2013-02-26 | LANDSAT/L4_L1T_ANNUAL_NDVI |  | A Landsat 4 annual normalized difference vegetation index. |
-| 2013-02-26 | LANDSAT/L4_L1T_ANNUAL_NDWI |  | A Landsat 4 annual normalized difference water index. |
-| 2013-02-26 | LANDSAT/L4_L1T_ANNUAL_RAW |  | A Landsat 4 annual raw composite. |
-| 2013-02-26 | LANDSAT/L4_L1T_ANNUAL_TOA |  | A Landsat 4 annual top-of-atmosphere reflectance composite. |
-| 2013-02-26 | LANDSAT/L4_L1T_TOA |  | A Landsat 4 Level-1 terrain-corrected top-of-atmosphere reflectance composite. |
 | 2013-02-12 | LANDSAT/LT4 |  | A Landsat 4 image collection. |
-| 2013-02-12 | LANDSAT/LT4_L1T |  | A Landsat 4 Level-1 terrain-corrected image collection. |
-| 2013-02-12 | LANDSAT/LT4_L1T_32DAY_BAI |  | A Landsat 4 32-day burn area index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_32DAY_EVI |  | A Landsat 4 32-day enhanced vegetation index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_32DAY_NBRT |  | A Landsat 4 32-day normalized burn ratio. |
-| 2013-02-12 | LANDSAT/LT4_L1T_32DAY_NDSI |  | A Landsat 4 32-day normalized difference snow index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_32DAY_NDVI |  | A Landsat 4 32-day normalized difference vegetation index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_32DAY_NDWI |  | A Landsat 4 32-day normalized difference water index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_32DAY_RAW |  | A Landsat 4 32-day raw composite. |
-| 2013-02-12 | LANDSAT/LT4_L1T_32DAY_TOA |  | A Landsat 4 32-day top-of-atmosphere reflectance composite. |
-| 2013-02-12 | LANDSAT/LT4_L1T_8DAY_BAI |  | A Landsat 4 8-day burn area index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_8DAY_EVI |  | A Landsat 4 8-day enhanced vegetation index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_8DAY_NBRT |  | A Landsat 4 8-day normalized burn ratio. |
-| 2013-02-12 | LANDSAT/LT4_L1T_8DAY_NDSI |  | A Landsat 4 8-day normalized difference snow index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_8DAY_NDVI |  | A Landsat 4 8-day normalized difference vegetation index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_8DAY_NDWI |  | A Landsat 4 8-day normalized difference water index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_8DAY_RAW |  | A Landsat 4 8-day raw composite. |
-| 2013-02-12 | LANDSAT/LT4_L1T_8DAY_TOA |  | A Landsat 4 8-day top-of-atmosphere reflectance composite. |
-| 2013-02-12 | LANDSAT/LT4_L1T_ANNUAL_BAI |  | A Landsat 4 annual burn area index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_ANNUAL_EVI |  | A Landsat 4 annual enhanced vegetation index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_ANNUAL_GREENEST_TOA |  | A Landsat 4 annual greenest-pixel top-of-atmosphere composite. |
-| 2013-02-12 | LANDSAT/LT4_L1T_ANNUAL_NBRT |  | A Landsat 4 annual normalized burn ratio. |
-| 2013-02-12 | LANDSAT/LT4_L1T_ANNUAL_NDSI |  | A Landsat 4 annual normalized difference snow index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_ANNUAL_NDVI |  | A Landsat 4 annual normalized difference vegetation index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_ANNUAL_NDWI |  | A Landsat 4 annual normalized difference water index. |
-| 2013-02-12 | LANDSAT/LT4_L1T_ANNUAL_RAW |  | A Landsat 4 annual raw composite. |
-| 2013-02-12 | LANDSAT/LT4_L1T_ANNUAL_TOA |  | A Landsat 4 annual top-of-atmosphere reflectance composite. |
-| 2013-02-12 | LANDSAT/LT4_L1T_TOA |  | A Landsat 4 Level-1 terrain-corrected top-of-atmosphere reflectance composite. |
 | 2013-01-22 | MODIS/MOD44B |  | A MODIS vegetation continuous fields product. |
-| 2012-12-04 | LANDSAT/L5_L1T_TOA |  | A Landsat 5 Level-1 terrain-corrected top-of-atmosphere reflectance collection. |
-| 2012-12-04 | LANDSAT/L7_L1T_TOA |  | A Landsat 7 Level-1 terrain-corrected top-of-atmosphere reflectance collection. |
 | 2012-11-27 | USGS/NED |  | A USGS national elevation dataset. |
 | 2012-11-20 | CGIAR/SRTM90_V4 |  | SRTM Digital Elevation Data Version 4 provides global elevation data. |
 | 2012-03-27 | LANDSAT/MANGROVE_FORESTS |  | Global Mangrove Forests Distribution, v1 (2000) provides mangrove forest distribution data. |
 | 2012-03-13 | LANDSAT/GLS1975 |  | Landsat Global Land Survey 1975 provides Landsat imagery from 1975. |
 | 2012-03-13 | LANDSAT/GLS1975_MOSAIC |  | Landsat Global Land Survey 1975 Mosaic provides a mosaic of 1975 Landsat imagery. |
-| 2011-12-20 | DG_GG_2002 | 2011-12-20 | DG_GG_2002 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_2003 | 2011-12-20 | DG_GG_2003 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_2004 | 2011-12-20 | DG_GG_2004 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_2005 | 2011-12-20 | DG_GG_2005 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_2006 | 2011-12-20 | DG_GG_2006 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_2007 | 2011-12-20 | DG_GG_2007 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_2008 | 2011-12-20 | DG_GG_2008 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_2009 | 2011-12-20 | DG_GG_2009 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_2010 | 2011-12-20 | DG_GG_2010 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_2011 | 2011-12-20 | DG_GG_2011 was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
-| 2011-12-20 | DG_GG_ANNUAL | 2011-12-20 | DG_GG_ANNUAL was a dataset in the DG_GG collection; deprecated on 2011-12-20. |
 | 2011-07-26 | WHBU/NBAR_1YEAR |  | MODIS 1-year Nadir BRDF-Adjusted Reflectance (NBAR) Mosaic provides a one-year mosaic. |
 | 2011-07-26 | WHBU/NBAR_2YEAR |  | MODIS 2-year Nadir BRDF-Adjusted Reflectance (NBAR) Mosaic provides a two-year mosaic. |
 | 2011-07-26 | WHBU/NBAR_3YEAR |  | MODIS 3-year Nadir BRDF-Adjusted Reflectance (NBAR) Mosaic provides a three-year mosaic. |
-| 2011-05-17 | LANDSAT/L5_L1T_ANNUAL_GREENEST_TOA | 2011-05-17 | Landsat 5 annual greenest TOA imagery provides annual top-of-atmosphere composites; deprecated on 2011-05-17. |
-| 2011-05-17 | LANDSAT/L7_L1T_ANNUAL_GREENEST_TOA | 2011-05-17 | Landsat 7 annual greenest TOA imagery provides annual top-of-atmosphere composites; deprecated on 2011-05-17. |
-| 2011-03-22 | LANDSAT/L5 | 2011-03-22 | Landsat 5 is a Landsat image collection; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T | 2011-03-22 | Landsat 5 L1T is a Level-1 terrain-corrected Landsat 5 image collection; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_32DAY_BAI | 2011-03-22 | Landsat 5 32-day BAI composite provides Burned Area Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_32DAY_EVI | 2011-03-22 | Landsat 5 32-day EVI composite provides Enhanced Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_32DAY_NBRT | 2011-03-22 | Landsat 5 32-day NBRT composite provides Normalized Burn Ratio imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_32DAY_NDSI | 2011-03-22 | Landsat 5 32-day NDSI composite provides Normalized Difference Snow Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_32DAY_NDVI | 2011-03-22 | Landsat 5 32-day NDVI composite provides Normalized Difference Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_32DAY_NDWI | 2011-03-22 | Landsat 5 32-day NDWI composite provides Normalized Difference Water Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_32DAY_RAW | 2011-03-22 | Landsat 5 32-day RAW composite provides raw imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_32DAY_TOA | 2011-03-22 | Landsat 5 32-day TOA composite provides top-of-atmosphere imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_8DAY_BAI | 2011-03-22 | Landsat 5 8-day BAI composite provides Burned Area Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_8DAY_EVI | 2011-03-22 | Landsat 5 8-day EVI composite provides Enhanced Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_8DAY_NBRT | 2011-03-22 | Landsat 5 8-day NBRT composite provides Normalized Burn Ratio imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_8DAY_NDSI | 2011-03-22 | Landsat 5 8-day NDSI composite provides Normalized Difference Snow Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_8DAY_NDVI | 2011-03-22 | Landsat 5 8-day NDVI composite provides Normalized Difference Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_8DAY_NDWI | 2011-03-22 | Landsat 5 8-day NDWI composite provides Normalized Difference Water Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_8DAY_RAW | 2011-03-22 | Landsat 5 8-day RAW composite provides raw imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_8DAY_TOA | 2011-03-22 | Landsat 5 8-day TOA composite provides top-of-atmosphere imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_ANNUAL_BAI | 2011-03-22 | Landsat 5 annual BAI composite provides Burned Area Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_ANNUAL_EVI | 2011-03-22 | Landsat 5 annual EVI composite provides Enhanced Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_ANNUAL_NBRT | 2011-03-22 | Landsat 5 annual NBRT composite provides Normalized Burn Ratio imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_ANNUAL_NDSI | 2011-03-22 | Landsat 5 annual NDSI composite provides Normalized Difference Snow Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_ANNUAL_NDVI | 2011-03-22 | Landsat 5 annual NDVI composite provides Normalized Difference Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_ANNUAL_NDWI | 2011-03-22 | Landsat 5 annual NDWI composite provides Normalized Difference Water Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_ANNUAL_RAW | 2011-03-22 | Landsat 5 annual RAW composite provides raw imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L5_L1T_ANNUAL_TOA | 2011-03-22 | Landsat 5 annual TOA composite provides top-of-atmosphere imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7 | 2011-03-22 | Landsat 7 is a Landsat image collection; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T | 2011-03-22 | Landsat 7 L1T is a Level-1 terrain-corrected Landsat 7 image collection; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_32DAY_BAI | 2011-03-22 | Landsat 7 32-day BAI composite provides Burned Area Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_32DAY_EVI | 2011-03-22 | Landsat 7 32-day EVI composite provides Enhanced Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_32DAY_NBRT | 2011-03-22 | Landsat 7 32-day NBRT composite provides Normalized Burn Ratio imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_32DAY_NDSI | 2011-03-22 | Landsat 7 32-day NDSI composite provides Normalized Difference Snow Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_32DAY_NDVI | 2011-03-22 | Landsat 7 32-day NDVI composite provides Normalized Difference Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_32DAY_NDWI | 2011-03-22 | Landsat 7 32-day NDWI composite provides Normalized Difference Water Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_32DAY_RAW | 2011-03-22 | Landsat 7 32-day RAW composite provides raw imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_32DAY_TOA | 2011-03-22 | Landsat 7 32-day TOA composite provides top-of-atmosphere imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_8DAY_BAI | 2011-03-22 | Landsat 7 8-day BAI composite provides Burned Area Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_8DAY_EVI | 2011-03-22 | Landsat 7 8-day EVI composite provides Enhanced Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_8DAY_NBRT | 2011-03-22 | Landsat 7 8-day NBRT composite provides Normalized Burn Ratio imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_8DAY_NDSI | 2011-03-22 | Landsat 7 8-day NDSI composite provides Normalized Difference Snow Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_8DAY_NDVI | 2011-03-22 | Landsat 7 8-day NDVI composite provides Normalized Difference Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_8DAY_NDWI | 2011-03-22 | Landsat 7 8-day NDWI composite provides Normalized Difference Water Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_8DAY_RAW | 2011-03-22 | Landsat 7 8-day RAW composite provides raw imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_8DAY_TOA | 2011-03-22 | Landsat 7 8-day TOA composite provides top-of-atmosphere imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_ANNUAL_BAI | 2011-03-22 | Landsat 7 annual BAI composite provides Burned Area Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_ANNUAL_EVI | 2011-03-22 | Landsat 7 annual EVI composite provides Enhanced Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_ANNUAL_NBRT | 2011-03-22 | Landsat 7 annual NBRT composite provides Normalized Burn Ratio imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_ANNUAL_NDSI | 2011-03-22 | Landsat 7 annual NDSI composite provides Normalized Difference Snow Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_ANNUAL_NDVI | 2011-03-22 | Landsat 7 annual NDVI composite provides Normalized Difference Vegetation Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_ANNUAL_NDWI | 2011-03-22 | Landsat 7 annual NDWI composite provides Normalized Difference Water Index imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_ANNUAL_RAW | 2011-03-22 | Landsat 7 annual RAW composite provides raw imagery; deprecated on 2011-03-22. |
-| 2011-03-22 | LANDSAT/L7_L1T_ANNUAL_TOA | 2011-03-22 | Landsat 7 annual TOA composite provides top-of-atmosphere imagery; deprecated on 2011-03-22. |
 
 Source file slug: `earth-engine-data-catalog.md`
 

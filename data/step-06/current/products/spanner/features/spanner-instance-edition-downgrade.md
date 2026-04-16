@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.876Z"
+generated_at: "2026-04-13T22:42:27.202Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner instance edition downgrade"
@@ -9,18 +9,16 @@ latest_feature_date: "2025-01-28"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store"
-  - "https://docs.cloud.google.com/spanner/docs/editions-overview"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
+  - "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+  - "https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview"
+  - "https://docs.cloud.google.com/spanner/docs/backup"
 keywords:
-  - "spanner"
-  - "instance"
-  - "edition"
-  - "downgrade"
-  - "now"
-  - "supports"
   - "downgrading"
-  - "to"
+  - "downgrade"
+  - "lower"
+  - "edition"
+  - "instance"
+  - "supports"
 ---
 
 # Spanner instance edition downgrade
@@ -38,45 +36,52 @@ Spanner now supports downgrading a Spanner instance to a lower edition tier.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- [https://docs.cloud.google.com/spanner/docs/editions-overview](https://docs.cloud.google.com/spanner/docs/editions-overview)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
+- [https://docs.cloud.google.com/spanner/docs/free-trial-quickstart](https://docs.cloud.google.com/spanner/docs/free-trial-quickstart)
+- [https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview](https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview)
+- [https://docs.cloud.google.com/spanner/docs/backup](https://docs.cloud.google.com/spanner/docs/backup)
 
 ## Supporting Pages
 
-### Module vector_store (0.9.0) | Python client libraries | Google Cloud Documentation
+### "Create a Spanner free trial instance and sample application \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- Source ID: `site-python-reference`
-- Final score: 118
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Module vector store (0.9.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain google spanner.vector store SpannerVectorStore(instance id: str, database id: str, table name: str, embedding service: langchain core.embeddings.embeddings.Embeddings, id column: str = &#x27;langchain id&#x27;, content column: str = &#x27;content&#x27;, embedding column: typing.Optional[typing.Union[str, langchain google spanner.vector store.TableColumn]] = None, client: typing.Optional[google.cloud.spanner v1.client.Client] = None, metadata columns: typing.Optional[typing.List[str]] = None, ignore metadata columns: typing.Optional[typing.List[str]] = None, metadata json column: typing.Optional[str] = None, vector index name: typing.Optional[str] = None, query parameters: langchain google spanner.vector store.QueryParameters = &lt;langchain google spanner.vector store.QueryParameters object&gt;)
-
-### Spanner editions overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/editions-overview](https://docs.cloud.google.com/spanner/docs/editions-overview)
+- URL: [https://docs.cloud.google.com/spanner/docs/free-trial-quickstart](https://docs.cloud.google.com/spanner/docs/free-trial-quickstart)
 - Source ID: `site-docs-root`
-- Final score: 96
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Spanner editions overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/editions-overview Spanner · Start free · Home · ... and its key features.
-- Spanner editions is a tier-based pricing model that provides different capabilities at different price points....
-
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 89
+- Final score: 98
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- Note: A Spanner free trial instance supports Standard edition features, and Enterprise edition features, such as KNN vector distance functions , full-text search , and Spanner Graph .
+- Click Save to upgrade your free trial instance. gcloud To upgrade your free trial instance to a paid Enterprise edition instance with the same instance configuration, run the following gcloud spanner instances update command: gcloud spanner instances update INSTANCE ID -- instance - type = provisioned Delete the instance Warning: Deleting an instance permanently removes the instance and all its databases.
+- You can select one of the following: Upgrade now Automatically upgrade to the full version of the Enterprise edition after my trial expires Remind me later The Summary section provides a description of compute and storage costs for the upgraded paid instance that you selected.
+- For example, to create a free trial instance named trial-instance with the display name Trial Instance using the regional instance configuration regional-us-east5 , run the following: gcloud spanner instances create trial - instance -- config = regional - us - east5 \ -- instance - type = free - instance -- description = "Trial Instance" Note: Use the instance ID, not the display name, when referring to an instance in gcloud CLI commands.
+
+### Restore overview \_|\_ Spanner \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview](https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview)
+- Source ID: `site-docs-root`
+- Final score: 76
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example, if a backup is in an instance configured us-west3 and uses the Enterprise edition, it can be restored to any instance in the project that is also configured us-west3 and uses the Enterprise edition.
+- The newly restored database must be in the same project as the backup and be in an instance with the same instance configuration and same (or higher-tier) Spanner edition as the backup.
+- If you restore a backup in an Enterprise edition instance into a Standard edition instance, the restore might fail if the database uses Enterprise edition features.
+- Alternatively, you can restore it to any instance with the same instance configuration and an edition that is the same or higher-tier than the source instance.
+
+### Backups overview \_|\_ Spanner \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/backup](https://docs.cloud.google.com/spanner/docs/backup)
+- Source ID: `site-docs-root`
+- Final score: 66
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example, if you copy your database from the source multi-region instance configuration nam7 to the destination multi-region instance configuration nam-eur-asia3 , the following charges apply: No charge for overlapping us-central1 region No charge for witness us-central2 region Inter-continental data transfer charge apply twice: once for each new continent (Europe and Asia) Data transfer between regions within the same continent charge apply once for us-east1 Data transfer between regions within the same continent charge apply once in Europe Spanner optimizes the copying process to minimize the number of cross-region transfers.
+- The total retention duration for the full backup is at most the lower of the following values: retention duration + 28 days retention duration + ( creation interval 14) Backup copy : When you copy an incremental backup, Spanner also copies all the older backups in the chain required to restore the copied backup.
+- Each backup resource is organized under the same instance as its source database in the resource hierarchy and has a resource path that uses the following format: projects/ PROJECT ID /instances/ INSTANCE ID /backups/ BACKUP NAME Replace the following: PROJECT ID : the project ID.
+- How backup copying works Spanner lets you copy a backup of your Spanner database from one instance to another instance in a different region or project, to provide additional data protection and compliance capabilities.
 

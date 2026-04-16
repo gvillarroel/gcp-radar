@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.105Z"
+generated_at: "2026-04-12T12:11:20.327Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Improved Cloud Storage permission error messaging"
 feature_slug: "improved-cloud-storage-permission-error-messaging"
 latest_feature_date: "2019-08-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3"
   - "https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage"
+  - "https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots"
 keywords:
   - "improved"
   - "storage"
@@ -26,7 +27,7 @@ keywords:
 # Improved Cloud Storage permission error messaging
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ Cloud Composer improved error messages when corrupted Cloud Storage bucket permi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
 - [https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage](https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage)
+- [https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots](https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Improved error messages when corrupted Cloud Storage bucket permissions prevent operations from succeeding.
-- Improved error messages when corrupted Cloud Storage bucket permissions prevent operations from succeeding.
-- Feature (Cloud Composer 3) New metrics are available for Cloud Composer 3 environments: CPU quota limit for Cloud Composer workloads CPU quota usage for Cloud Composer workloads Change (Available without upgrading) Improved the error message generated when the Cloud Composer Service Agent service account is missing permissions on the project or on the environment's service account.
-- Change New versions of Cloud Composer images: composer-1.17.0-preview.0-airflow-2.0.1 composer-1.16.4-airflow-1.10.15 composer-1.16.4-airflow-1.10.14 (default) composer-1.16.4-airflow-1.10.12 Change Improved the error message that is generated when the specified service account does not have enough permissions to run Airflow workloads.
 
 ### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - Source ID: `site-iam-reference`
-- Final score: 138
+- Final score: 174
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +63,24 @@ Evidence snippets:
 - Add the cloud-airflow-prod@system.gserviceaccount.com service account as the member of your security perimeter by using the following configuration in the YAML conditions file: - members : - serviceAccount:cloud-airflow-prod@ system.gserviceaccount.com Cloud Composer 1 environment creation fails when the compute.requireOsLogin policy is enabled If compute.requireOsLogin policy is set to true in your project, then Cloud Composer 1 v1 environment creation operations fails.
 - Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
 
+### "Migrate to Cloud Composer\_3 from Cloud Composer\_1 (Airflow 2) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
+- Source ID: `site-docs-reference`
+- Final score: 156
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- COMPOSER 3 LOCATION with the region where the environment is located. (Airflow versions 2.9.1 and later) If there are quota errors while unpausing a large number of DAGs, you can use the following Airflow CLI commands to unpause all DAGs at once: gcloud composer environments run COMPOSER 3 ENV dags unpause \ --project PROJECT ID \ --location COMPOSER 3 LOCATION \ -- -y --treat-dag-id-as-regex ". " (Airflow versions earlier than 2.9.1) If there are quota errors while unpausing a large number of DAGs, it's possible to unpause DAGs using the Airflow REST API .
+- COMPOSER 1 LOCATION with the region where the environment is located. (Airflow versions 2.9.1 and later) If there are quota errors while pausing a large number of DAGs, you can use the following Airflow CLI commands to pause all DAGs at once: gcloud composer environments run COMPOSER 1 ENV dags pause \ --project PROJECT ID \ --location COMPOSER 1 LOCATION \ -- -y --treat-dag-id-as-regex ". " (Airflow versions earlier than 2.9.1) If there are quota errors while pausing a large number of DAGs, it's possible to pause DAGs using the Airflow REST API .
+- Save the snapshot of your Cloud Composer 1 environment Caution: If any changes or DAG runs happen in your Cloud Composer 1 environment after you save its snapshot, information about these changes isn't transferred when you load the snapshot later.
+- You don't need to specify configuration overrides and environment variables because you replace them later when you load the snapshot of your Cloud Composer 1 environment.
+
 ### Data stored in Cloud Storage \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage](https://docs.cloud.google.com/composer/docs/composer-1/cloud-storage)
 - Source ID: `site-iam-reference`
-- Final score: 132
+- Final score: 154
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - For example, when Cloud Composer attempts to read a given file for the first time during: DAG parsing: When a file is read for the first time during DAG parsing, Cloud Composer synchronizes it to the scheduler that parses the DAG.
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Data stored in Cloud Storage Stay organized with collections Save and categorize content based on your preferences.
 - DAG execution: When a file is read for the first time during DAG execution, Cloud Composer synchronizes it to the worker running the execution.
+
+### "Save and load environment snapshots \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots](https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots)
+- Source ID: `site-docs-root`
+- Final score: 152
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- When assigning permissions, make sure that environment's service account has enough permissions to save and load snapshots from the bucket.
+- Although Cloud Composer stores some information about the environment's configuration in snapshots, it is not used when loading snapshots.
+- Any settings that you applied in Cloud Composer infrastructure without using Cloud Composer API might be lost when you load a snapshot.
+- Cloud Composer does not delete snapshots when you delete your environment.
 

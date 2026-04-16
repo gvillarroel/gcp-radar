@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.931Z"
+generated_at: "2026-04-14T15:34:54.624Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "HIPAA compliance coverage"
 feature_slug: "hipaa-compliance-coverage"
 latest_feature_date: "2019-10-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsAsyncPager"
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsPager"
-  - "https://docs.cloud.google.com/run/docs/release-notes"
+  - "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+  - "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
 keywords:
-  - "hipaa"
   - "compliance"
   - "coverage"
-  - "run"
-  - "is"
-  - "covered"
-  - "by"
+  - "hipaa"
   - "requirements"
+  - "covered"
 ---
 
 # HIPAA compliance coverage
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +35,52 @@ Cloud Run is covered by HIPAA compliance requirements.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsAsyncPager](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsAsyncPager)
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsPager](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsPager)
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
+- [https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting](https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting)
+- [https://docs.cloud.google.com/run/docs/reference/rest/v1/Container](https://docs.cloud.google.com/run/docs/reference/rest/v1/Container)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2)
 
 ## Supporting Pages
 
-### "Class ListRevisionsAsyncPager (0.16.0) \_|\_ Python client libraries \_\
+### "Tutorial: Local troubleshooting of a Cloud Run service \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsAsyncPager](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsAsyncPager)
-- Source ID: `site-python-reference`
-- Final score: 135
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.run v2.types.ListRevisionsRequest The initial request object. response google.cloud.run v2.types.ListRevisionsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
-- Union [ str , bytes ]]] = () ) A pager for iterating through list revisions requests.
-- ListRevisionsResponse ], ], request : google . cloud . run v2 . types . revision .
-- ListRevisionsResponse ], ], request : google . cloud . run v2 . types . revision .
-
-### "Class ListRevisionsPager (0.16.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsPager](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.pagers.ListRevisionsPager)
-- Source ID: `site-python-reference`
-- Final score: 135
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.run v2.types.ListRevisionsRequest The initial request object. response google.cloud.run v2.types.ListRevisionsResponse The initial response object. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
-- Union [ str , bytes ]]] = () ) A pager for iterating through list revisions requests.
-- ListRevisionsResponse ], request : google . cloud . run v2 . types . revision .
-- ListRevisionsResponse ], request : google . cloud . run v2 . types . revision .
-
-### Cloud Run release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting](https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 134
+- Final score: 39
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- October 21, 2019 Feature Cloud Run is now covered by HIPAA Compliance .
-- July 20, 2021 Feature Cloud Run is now covered by FedRAMP Moderate June 30, 2021 Feature Cloud Run is now available in the following region: asia-south2 (Delhi, India) June 25, 2021 Feature Cloud Run is now available in the following region: australia-southeast2 (Melbourne) June 22, 2021 Feature Cloud Run support for WebSockets , HTTP/2 , and gRPC streaming are now at general availability (GA).
-- May 17, 2024 Feature Cloud Run is now covered by FedRAMP High .
-- May 12, 2021 Feature Cloud Run now provides UI, command line, and YAML support for referencing Secret Manager Secrets . (Available in public preview.) Feature Customer managed encryption keys are now available for use with Cloud Run. (Available in public preview.) Feature Recommender now provides recommendations for securing Cloud Run services by creating dedicated service accounts. (Available in public preview.) Feature Committed use discounts are now available for Cloud Run . (Available in public preview.) Feature You can now use Binary authorization with Cloud Run to enforce policy-based deployment of Cloud Run services. (Available in public preview.) May 03, 2021 Feature You can now use Identity-aware Proxy with Cloud Run to use identity and context to guard access to your applications. (Available in public preview.) Change By default, the memory allocated to each container instance of a new service is 512MiB.
+- System . err . println ( "Environment validation failed." ); String msg = "Missing required server parameter" ; logger . error ( msg , new Exception ( msg )); res . status ( 500 ); return "Internal Server Error" ; } Examining this code, the following actions are taken when the NAME environment variable is not set: An error is logged to Google Cloud Observability An HTTP error response is sent The problem is caused by a missing variable, but the root cause is more specific: the code change adding the hard dependency on an environment variable did not include related changes to deployment scripts and runtime requirements documentation.
+- Python Create a new hello-service directory: mkdir hello-service cd hello-service Create a requirements.txt file and copy your dependencies into it: Flask == 3.0.3 pytest == 8.2.0 ; python version > "3.0" pin pytest to 4.6.11 for Python2. pytest == 4.6.11 ; python version < "3.0" gunicorn == 23.0.0 Werkzeug == 3.0.3 Go Create a new hello-service directory: mkdir hello-service cd hello-service Create a Go project by initializing a new go module : go mod init example . com / hello - service You can update the specific name as you wish: you should update the name if the code is published to a web-reachable code repository.
+- To clear the environment variables set earlier: gcloud run services update hello-service --clear-env-vars Add the new functionality for the default value to automated test coverage for the service.
+- Meeting your latency, availability, or durability requirements are primary factors for selecting the region where your Cloud Run services are run.
+
+### Container \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/reference/rest/v1/Container](https://docs.cloud.google.com/run/docs/reference/rest/v1/Container)
+- Source ID: `site-api-reference`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON representation { "name" : string , "image" : string , "command" : [ string ] , "args" : [ string ] , "env" : [ { object ( EnvVar ) } ] , "resources" : { object ( ResourceRequirements ) } , "workingDir" : string , "ports" : [ { object ( ContainerPort ) } ] , "envFrom" : [ { object ( EnvFromSource ) } ] , "volumeMounts" : [ { object ( VolumeMount ) } ] , "livenessProbe" : { object ( Probe ) } , "readinessProbe" : { object ( Probe ) } , "startupProbe" : { object ( Probe ) } , "terminationMessagePath" : string , "terminationMessagePolicy" : string , "imagePullPolicy" : string , "securityContext" : { object ( SecurityContext ) } } Fields name string Name of the container specified as a DNS LABEL (RFC 1123). image string Required.
+- JSON representation EnvVar JSON representation EnvVarSource JSON representation ConfigMapKeySelector JSON representation SecretKeySelector JSON representation ResourceRequirements JSON representation ContainerPort JSON representation EnvFromSource JSON representation ConfigMapEnvSource JSON representation SecretEnvSource JSON representation VolumeMount JSON representation Probe JSON representation ExecAction JSON representation HTTPGetAction JSON representation HTTPHeader JSON representation TCPSocketAction JSON representation GRPCAction JSON representation SecurityContext JSON representation A single application container.
+- For non-secret EnvVar names, the Container will only get the last-declared one. resources object ( ResourceRequirements ) Compute Resources required by this container. workingDir string Container's working directory.
+- ResourceRequirements ResourceRequirements describes the compute resource requirements.
+
+### "Package com.google.cloud.run.v2 (0.88.0) \_|\_ Java client libraries \_\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2)
+- Source ID: `site-java-reference`
+- Final score: 30
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Resource Requirements ResourceRequirements describes the compute resource requirements. com. google. cloud. run. v2.
+- Builder ResourceRequirements describes the compute resource requirements. com. google. cloud. run. v2.
+- Resource Requirements Or Builder com. google. cloud. run. v2.
 

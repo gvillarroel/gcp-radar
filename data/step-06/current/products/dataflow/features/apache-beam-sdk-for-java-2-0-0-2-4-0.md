@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.857Z"
+generated_at: "2026-04-15T12:05:13.854Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Apache Beam SDK for Java 2.0.0-2.4.0"
 feature_slug: "apache-beam-sdk-for-java-2-0-0-2-4-0"
 latest_feature_date: "2018-12-17"
 deprecation_date: "March 25"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk"
-  - "https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status"
   - "https://docs.cloud.google.com/dataflow/docs/guides/common-errors"
   - "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-java"
 keywords:
   - "apache"
   - "beam"
   - "sdk"
-  - "for"
   - "java"
   - "versions"
   - "through"
-  - "are"
+  - "used"
+  - "dataflow"
 ---
 
 # Apache Beam SDK for Java 2.0.0-2.4.0
 
 Product: Dataflow
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,67 +38,55 @@ Apache Beam SDK for Java versions 2.0.0 through 2.4.0 are SDK versions used with
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk](https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk)
-- [https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status](https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status)
 - [https://docs.cloud.google.com/dataflow/docs/guides/common-errors](https://docs.cloud.google.com/dataflow/docs/guides/common-errors)
 - [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
+- [https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-java](https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-java)
 
 ## Supporting Pages
-
-### Install the Apache Beam SDK \_|\_ Cloud Dataflow \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk](https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk)
-- Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- To install the latest version of the Apache Beam SDK for Go, run the the following command: go get -u github.com/apache/beam/sdks/v2/go/pkg/beam Note: Version numbers have the form major.minor.patch and are incremented as follows: major version for incompatible API changes, minor version for new functionality added in a backward-compatible manner, and patch version for forward-compatible bug fixes.
-- For more information about Apache Beam SDK for Java dependencies, see Apache Beam SDK for Java dependencies and Managing Beam dependencies in Java in the Apache Beam documentation.
-- To get the Apache Beam SDK for Java using Maven, use one of the released artifacts from the Maven Central Repository .
-- Java The latest released version for the Apache Beam SDK for Java is 2.72.0 .
-
-### SDK version support status \_|\_ Cloud Dataflow \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status](https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following tables contain the support status for the Apache Beam 2.x SDKs, including the Apache Beam Python SDK, Apache Beam Java SDK, and the Apache Beam Go SDK: Java SDK version Status Supported components Details 2.72.0 Supported org.apache.beam:beam-sdks-java-core org.apache.beam:beam-sdks-java-io-google-cloud-platform org.apache.beam:beam-sdks-java-extensions-google-cloud-platform-core org.apache.beam:beam-sdks-java-extensions-protobuf org.apache.beam:beam-runners-direct-java Google Cloud I/O connectors under module org.apache.beam:beam-runners-google-cloud-dataflow-java: bigquery, bigtable, datastore, healthcare, pubsub, spanner org.apache.beam:beam-model-pipeline org.apache.beam:beam-model-job-management org.apache.beam:beam-sdks-java-io-iceberg org.apache.beam:beam-sdks-java-io-jdbc org.apache.beam:beam-sdks-java-io-kafka org.apache.beam:beam-sdks-java-extensions-sql org.apache.beam:beam-sdks-java-managed This version will be deprecated on March 30, 2027.
-- To mitigate the problem, downgrade to 2.66.0 (or before), or upgrade to 2.69 (or later) when available". org.apache.beam:beam-sdks-java-core org.apache.beam:beam-sdks-java-io-google-cloud-platform org.apache.beam:beam-sdks-java-extensions-google-cloud-platform-core org.apache.beam:beam-sdks-java-extensions-protobuf org.apache.beam:beam-runners-direct-java Google Cloud I/O connectors under module org.apache.beam:beam-runners-google-cloud-dataflow-java: bigquery, bigtable, datastore, healthcare, pubsub, spanner org.apache.beam:beam-model-pipeline org.apache.beam:beam-model-job-management org.apache.beam:beam-sdks-java-io-iceberg org.apache.beam:beam-sdks-java-io-jdbc org.apache.beam:beam-sdks-java-io-kafka org.apache.beam:beam-sdks-java-extensions-sql org.apache.beam:beam-sdks-java-managed This version will be deprecated on September 22, 2026.
-- To mitigate the problem, downgrade to 2.66.0 (or before), or upgrade to 2.69 (or later) when available". org.apache.beam:beam-sdks-java-core org.apache.beam:beam-sdks-java-io-google-cloud-platform org.apache.beam:beam-sdks-java-extensions-google-cloud-platform-core org.apache.beam:beam-sdks-java-extensions-protobuf org.apache.beam:beam-runners-direct-java Google Cloud I/O connectors under module org.apache.beam:beam-runners-google-cloud-dataflow-java: bigquery, bigtable, datastore, healthcare, pubsub, spanner org.apache.beam:beam-model-pipeline org.apache.beam:beam-model-job-management org.apache.beam:beam-sdks-java-io-iceberg org.apache.beam:beam-sdks-java-io-jdbc org.apache.beam:beam-sdks-java-io-kafka org.apache.beam:beam-sdks-java-extensions-sql org.apache.beam:beam-sdks-java-managed This version will be deprecated on August 12, 2026.
-- This issue has been seen in SpannerIO in particular and manifests as a NoClassDefFoundError. org.apache.beam:beam-sdks-java-core org.apache.beam:beam-sdks-java-io-google-cloud-platform org.apache.beam:beam-sdks-java-extensions-google-cloud-platform-core org.apache.beam:beam-sdks-java-extensions-protobuf org.apache.beam:beam-runners-direct-java Google Cloud I/O connectors under module org.apache.beam:beam-runners-google-cloud-dataflow-java: bigquery, bigtable, datastore, healthcare, pubsub, spanner org.apache.beam:beam-model-pipeline org.apache.beam:beam-model-job-management org.apache.beam:beam-sdks-java-io-iceberg org.apache.beam:beam-sdks-java-io-jdbc org.apache.beam:beam-sdks-java-io-kafka org.apache.beam:beam-sdks-java-extensions-sql org.apache.beam:beam-sdks-java-managed Deprecated on March 31, 2026.
 
 ### Troubleshoot Dataflow errors \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataflow/docs/guides/common-errors](https://docs.cloud.google.com/dataflow/docs/guides/common-errors)
-- Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference-2`
+- Final score: 175
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For configurations available in the Apache Beam SDK for Java, see BigQueryPipelineOptions , and for configurations available in the Apache Beam SDK for Python, see the WriteToBigQuery transform . rateLimitExceeded When using the BigQuery connector, the following error occurs: rateLimitExceeded This error occurs if too many BigQuery API requests are sent during a short duration.
 - To resolve this issue, if you use Apache Beam SDK version 2.56.0 or later, enable the disable global windowed args caching experiment flag: --experiments = disable global windowed args caching Total number of BoundedSource objects ... is larger than the allowable limit One of the following errors might occur when running jobs with Java: Total number of BoundedSource objects generated by splitIntoBundles() operation is larger than the allowable limit Or: Total size of the BoundedSource objects generated by splitIntoBundles() operation is larger than the allowable limit Java This error might occur if you're reading from a very large number of files by using TextIO , AvroIO , BigQueryIO through EXPORT, or some other file-based source.
 - If you're using the Apache Beam SDK, to import the correct libraries BOM, use beam-sdks-java-io-google-cloud-platform-bom : Maven <dependencyManagement> <dependencies> <dependency> <groupId>org.apache.beam</groupId> <artifactId>beam-sdks-java-google-cloud-platform-bom</artifactId> <version> BEAM VERSION </version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> Gradle dependencies { implementation ( platform ( "org.apache.beam:beam-sdks-java-google-cloud-platform-bom: BEAM VERSION " )) } For more information, see Manage pipeline dependencies in Dataflow .
+- After you select the relevant logs, the query result might look like the following example: resource.type="dataflow step" resource.labels.job id="2022-06-29 08 02 54- JOB ID " labels."compute.googleapis.com/resource name"="testpipeline-jenkins-0629- DATE -cyhg-harness-8crw" logName=("projects/apache-beam-testing/logs/dataflow.googleapis.com%2Fdocker" OR "projects/apache-beam-testing/logs/dataflow.googleapis.com%2Fworker-startup" OR "projects/apache-beam-testing/logs/dataflow.googleapis.com%2Fworker") Because the logs reporting the symptom of the container failure are sometimes reported as INFO , include INFO logs in your analysis.
 - For example: --expansion service https://maven-central.storage-download.googleapis.com/maven2/org/apache/beam/beam-sdks-java-extensions-schemaio-expansion-service/ BEAM VERSION /beam-sdks-java-extensions-schemaio-expansion-service- BEAM VERSION .jar Stage JARs in Cloud Storage : Download the required JARs, stage them in a Cloud Storage bucket, and then provide the Cloud Storage path of the JAR to the --expansion service pipeline option.
 
 ### "Develop Apache Beam notebooks with the interactive runner \_|\_ Cloud Dataflow\
 
 - URL: [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
-- Source ID: `site-docs-root`
-- Final score: 162
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference-2`
+- Final score: 165
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This location is used to store temporary files or intermediate results before outputting to the sink. options . view as ( GoogleCloudOptions ) . temp location = ' %s /temp' % dataflow gcs location If and only if you are using Apache Beam SDK built from source code, set the SDK location.
-- These Apache Beam notebooks are made available through Vertex AI Workbench , a service that hosts notebook virtual machines pre-installed with the latest data science and machine learning frameworks.
-- Apache Beam notebooks are built against the master branch of the Apache Beam SDK.
 - The following notebooks are available: Word Count Streaming Word Count Streaming NYC Taxi Ride Data Apache Beam SQL in notebooks with comparisons to pipelines Apache Beam SQL in notebooks with the Dataflow Runner Apache Beam SQL in notebooks Dataflow Word Count Interactive Flink at Scale RunInference Use GPUs with Apache Beam Visualize Data The Tutorials folder contains additional tutorials that explain the fundamentals of Apache Beam.
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Develop Apache Beam notebooks with the interactive runner Stay organized with collections Save and categorize content based on your preferences.
+- These Apache Beam notebooks are made available through Vertex AI Workbench , a service that hosts notebook virtual machines pre-installed with the latest data science and machine learning frameworks.
+
+### Create a Dataflow pipeline using Java \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-java](https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-java)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 163
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Verify that your word-count-beam directory contains the pom.xml file: Linux or macOS cd word-count-beam/ ls The output is the following: pom.xml src Windows cd word-count-beam/ dir The output is the following: pom.xml src Verify that your Maven project contains the example pipelines: Linux or macOS ls src/main/java/org/apache/beam/examples/ The output is the following: DebuggingWordCount.java WindowedWordCount.java common MinimalWordCount.java WordCount.java Windows dir src/main/java/org/apache/beam/examples/ The output is the following: DebuggingWordCount.java WindowedWordCount.java common MinimalWordCount.java WordCount.java For a detailed introduction to the Apache Beam concepts that are used in these examples, see the Apache Beam WordCount Example .
+- Run the pipeline on the Dataflow service In your shell or terminal, build and run the WordCount pipeline on the Dataflow service from your word-count-beam directory: mvn -Pdataflow-runner compile exec:java \ -Dexec.mainClass=org.apache.beam.examples.WordCount \ -Dexec.args="--project= PROJECT ID \ --gcpTempLocation=gs:// BUCKET NAME /temp/ \ --output=gs:// BUCKET NAME /output \ --runner=DataflowRunner \ --region= REGION " Replace the following: PROJECT ID : your Google Cloud project ID BUCKET NAME : the name of your Cloud Storage bucket REGION : a Dataflow region , like us-central1 Note: To specify a user-managed worker service account , include the --serviceAccount pipeline option .
+- Create a Dataflow pipeline using Java This document shows you how to set up your Google Cloud project, create an example pipeline built with the Apache Beam SDK for Java, and run the example pipeline on the Dataflow service.
+- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects remove-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \ --role = SERVICE ACCOUNT ROLE Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Learn about the Apache Beam programming model .
 

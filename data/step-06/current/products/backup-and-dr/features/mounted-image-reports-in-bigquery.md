@@ -1,31 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.198Z"
+generated_at: "2026-04-14T09:35:01.929Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Mounted image reports in BigQuery"
 feature_slug: "mounted-image-reports-in-bigquery"
 latest_feature_date: "2024-09-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
 keywords:
   - "mounted"
   - "image"
   - "reports"
   - "view"
   - "added"
-  - "in"
-  - "to"
 ---
 
 # Mounted image reports in BigQuery
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,13 +35,13 @@ Added support to view mounted image reports in BigQuery.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances](https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery)
 
 ## Supporting Pages
 
@@ -51,38 +49,39 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
 - Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Unmount Delete unmount delete Unmounts an image previously mounted to a host and discards all changes made in that mount.
-- Unmount unmount Unmounts an image previously mounted to a host, but keeps the image available for later mounting.
-- Job Types Backup and DR protects and accesses data through these types of jobs: Job type Monitor label Description Clean Up Mirroring cleanupmirroring Removes a StreamSnap image from a remote appliance when a backup plan is removed from an application or changed to one that does not include the same type of replication.
-- Reprovision reprovision Takes an existing mount of a database application and refreshes it to a different point in time by performing an unmount delete and subsequent mount of the new image, defaulting to all the same options used in the previous mount.
-
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 02, 2024 Feature Backup and DR Service added support to view mounted image reports in BigQuery.
-- Feature Backup and DR Service added support to view mounted image logs in Cloud Logging.
-- June 11, 2024 Feature Backup and DR Service added support to view storage resource utilization reports in BigQuery.
-- March 25, 2024 Feature Backup and DR Service added support to view daily scheduled compliance reports in BigQuery.
-
-### "Backup and DR Service for Compute Engine for self-managed storage \_|\_\
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
-- Source ID: `site-api-reference`
 - Final score: 110
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The Backup and DR Compute Engine guide Check for the cloud credentials Discover and protect Compute Engine instances Mount backup images of Compute Engine instances Restore a Compute Engine instance Import Persistent Disk snapshot images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- After Backup and DR creates a snapshot to back up the current state of some or all Persistent Disks attached to an instance, you can use the backup image to either: Mount the image to create a new instance .
-- Note that snapshots are different from custom images and machine images , which are useful for creating instance boot disks.
-- If an additional disk is added to the instance, this disk is automatically included in the next snapshot of the instance.
+- Migrate (Cancel) Migrate (Cancel) Cancels an in-progress migration, disables future migration jobs for the mounted image, and cleans up any partially migrated/copied data.
+- Unmount Delete unmount delete Unmounts an image previously mounted to a host and discards all changes made in that mount.
+- Unmount unmount Unmounts an image previously mounted to a host, but keeps the image available for later mounting.
+- Delete delete Deletes an image that was already unmounted from the host.
+
+### "Mount backup images of Compute Engine instances in the appliance management\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances](https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances)
+- Source ID: `site-docs-reference`
+- Final score: 106
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- From the Instance Name drop-down, select the Compute Engine instance where you want the instance backup image to be mounted for accessing the data.
+- View key version To determine which key version is in use by a snapshot image, follow these steps: Go to Back up & Recover > Recover .
+- Once the mount job is complete, the image becomes active and the data from the backup image is accessible on the mounted instance.
+- You can validate this by matching the snapshot by reviewing the snapshot label which should contain the image name.
+
+### "Protect and recover SAP HANA databases in Compute Engine instances \_|\_\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery)
+- Source ID: `site-docs-reference`
+- Final score: 98
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Discover and protect SAP HANA databases Note: If you are protecting a HANA database that has already been added and that already has LVM backup images, then you must change the capture method from LVM to Persistent Disk.
+- Mount a backup for an integrity check This tool runs the SAP HANA persistence checking tool, hdbpersdiag , with the 'check all' option to verify the healthy state of data volumes from the mounted snapshot image.
+- Unmount the mounted backup snapshot image To remove or keep the disk after a successful mount: Go to Application > Access page and select the image used for mount.
+- Restore SAP HANA databases Before you can restore an SAP HANA database from a backup image, review these license requirements.
 

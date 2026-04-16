@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.349Z"
+generated_at: "2026-04-12T12:19:43.318Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Vertex AI Agent Engine agent monitoring"
 feature_slug: "vertex-ai-agent-engine-agent-monitoring"
 latest_feature_date: "2025-04-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
@@ -27,7 +27,7 @@ keywords:
 # Vertex AI Agent Engine agent monitoring
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,7 +39,7 @@ Agent monitoring is now generally available for Vertex AI Agent Engine.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -54,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - Source ID: `site-docs-root`
-- Final score: 270
+- Final score: 294
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -67,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
 - Source ID: `site-docs-root`
-- Final score: 246
+- Final score: 269
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -80,9 +80,8 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview](https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview)
 - Source ID: `site-docs-root`
-- Final score: 234
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 262
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Code Execution is part of the Vertex AI Agent Engine suite.
@@ -94,9 +93,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring](https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring)
 - Source ID: `site-docs-root`
-- Final score: 226
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 262
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Query metrics with Cloud Monitoring API You can use the Cloud Monitoring API to do the following: Get the Vertex AI Agent Engine monitored resource definition List available agent metric definitions Query time-series data for request count All Agent metrics are associated with the Agent Engine monitored resource aiplatform.googleapis.com/ReasoningEngine .

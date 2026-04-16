@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:44.372Z"
+generated_at: "2026-04-12T12:17:52.286Z"
 product_name: "Memorystore for Redis"
 product_slug: "memorystore-for-redis"
 feature_name: "Memorystore for Redis region europe-west6"
 feature_slug: "memorystore-for-redis-region-europe-west6"
 latest_feature_date: "2019-10-07"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/memorystore/docs/redis/pricing"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/export-data"
 keywords:
   - "memorystore"
   - "for"
@@ -24,7 +27,7 @@ keywords:
 # Memorystore for Redis region europe-west6
 
 Product: Memorystore for Redis
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ Adds the Memorystore for Redis region europe-west6 in Zurich.
 
 Adds the Memorystore for Redis region europe-west6 in Zurich.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/memorystore/docs/redis/pricing](https://docs.cloud.google.com/memorystore/docs/redis/pricing)
+- [https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance](https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance)
+- [https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis](https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis)
+- [https://docs.cloud.google.com/memorystore/docs/redis/export-data](https://docs.cloud.google.com/memorystore/docs/redis/export-data)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Memorystore for Redis | Google Cloud
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/pricing](https://docs.cloud.google.com/memorystore/docs/redis/pricing)
+- Source ID: `site-docs-root`
+- Final score: 250
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To see Basic Tier and Standard Tier pricing, select a region from the drop-down list above the following table: Iowa (us-central1) Johannesburg (africa-south1) Taiwan (asia-east1) Hong Kong (asia-east2) Tokyo (asia-northeast1) Osaka (asia-northeast2) Seoul (asia-northeast3) Mumbai (asia-south1) Delhi (asia-south2) Singapore (asia-southeast1) Jakarta (asia-southeast2) Bangkok (asia-southeast3) Sydney (australia-southeast1) Melbourne (australia-southeast2) Warsaw (europe-central2) Finland (europe-north1) Stockholm (europe-north2) Madrid (europe-southwest1) Belgium (europe-west1) Berlin (europe-west10) Turin (europe-west12) London (europe-west2) Frankfurt (europe-west3) Netherlands (europe-west4) Zurich (europe-west6) Milan (europe-west8) Paris (europe-west9) Doha (me-central1) Dammam (me-central2) Tel Aviv (me-west1) Montreal (northamerica-northeast1) Toronto (northamerica-northeast2) Mexico (northamerica-south1) Sao Paulo (southamerica-east1) Santiago (southamerica-west1) Iowa (us-central1) Oklahoma (us-central2) South Carolina (us-east1) Northern Virginia (us-east4) Columbus (us-east5) Alabama (us-east7) Dallas (us-south1) Oregon (us-west1) Los Angeles (us-west2) Salt Lake City (us-west3) Las Vegas (us-west4) Phoenix (us-west8) Show discount options Hourly Hourly Monthly Monthly Service tier Capacity tier Minimum network performance Default (USD) info Consumption model ID: 7754-699E-0EBF Memorystore for Redis CUD - 1 Year (USD) info Consumption model ID: DD5B-8EB3-C48D Memorystore for Redis CUD - 3 Year (USD) info Consumption model ID: 8E4B-B283-45D8 Basic M1 (1 to 4 GiB) 10 Gbps $0.049 / 1 gibibyte hour - - M2 (5 to 10 GiB) 10 Gbps $0.027 / 1 gibibyte hour $0.0216 / 1 gibibyte hour $0.0162 / 1 gibibyte hour M3 (11 to 35 GiB) 10 Gbps $0.023 / 1 gibibyte hour $0.0184 / 1 gibibyte hour $0.0138 / 1 gibibyte hour M4 (36 to 100 GiB) 16 Gbps $0.019 / 1 gibibyte hour $0.0152 / 1 gibibyte hour $0.0114 / 1 gibibyte hour M5 (> 100 GiB) 16 Gbps $0.016 / 1 gibibyte hour $0.0128 / 1 gibibyte hour $0.0096 / 1 gibibyte hour Standard M1 (1 to 4 GiB) 10 Gbps $0.064 / 1 gibibyte hour - - M2 (5 to 10 GiB) 10 Gbps $0.054 / 1 gibibyte hour $0.0432 / 1 gibibyte hour $0.0324 / 1 gibibyte hour M3 (11 to 35 GiB) 10 Gbps $0.046 / 1 gibibyte hour $0.0368 / 1 gibibyte hour $0.0276 / 1 gibibyte hour M4 (36 to 100 GiB) 16 Gbps $0.035 / 1 gibibyte hour $0.028 / 1 gibibyte hour $0.021 / 1 gibibyte hour M5 (> 100 GiB) 16 Gbps $0.03 / 1 gibibyte hour $0.024 / 1 gibibyte hour $0.018 / 1 gibibyte hour Each consumption model has a unique ID.
+- The following table lists the prices for nodes when read replicas are enabled for your instance: Iowa (us-central1) Johannesburg (africa-south1) Taiwan (asia-east1) Hong Kong (asia-east2) Tokyo (asia-northeast1) Osaka (asia-northeast2) Seoul (asia-northeast3) Mumbai (asia-south1) Delhi (asia-south2) Singapore (asia-southeast1) Jakarta (asia-southeast2) Bangkok (asia-southeast3) Sydney (australia-southeast1) Melbourne (australia-southeast2) Warsaw (europe-central2) Finland (europe-north1) Stockholm (europe-north2) Madrid (europe-southwest1) Belgium (europe-west1) Berlin (europe-west10) Turin (europe-west12) London (europe-west2) Frankfurt (europe-west3) Netherlands (europe-west4) Zurich (europe-west6) Milan (europe-west8) Paris (europe-west9) Doha (me-central1) Dammam (me-central2) Tel Aviv (me-west1) Montreal (northamerica-northeast1) Toronto (northamerica-northeast2) Mexico (northamerica-south1) Sao Paulo (southamerica-east1) Santiago (southamerica-west1) Iowa (us-central1) Oklahoma (us-central2) South Carolina (us-east1) Northern Virginia (us-east4) Columbus (us-east5) Alabama (us-east7) Dallas (us-south1) Oregon (us-west1) Los Angeles (us-west2) Salt Lake City (us-west3) Las Vegas (us-west4) Phoenix (us-west8) Show discount options Hourly Hourly Monthly Monthly Service tier Capacity tier 1 Minimum network performance Default (USD) info Consumption model ID: 7754-699E-0EBF Memorystore for Redis CUD - 1 Year (USD) info Consumption model ID: DD5B-8EB3-C48D Memorystore for Redis CUD - 3 Year (USD) info Consumption model ID: 8E4B-B283-45D8 Standard M2 (5 to 10 GiB) 10 Gbps $0.027 / 1 gibibyte hour $0.0216 / 1 gibibyte hour $0.0162 / 1 gibibyte hour M3 (11 to 35 GiB) 10 Gbps $0.023 / 1 gibibyte hour $0.0184 / 1 gibibyte hour $0.0138 / 1 gibibyte hour M4 (36 to 100 GiB) 16 Gbps $0.019 / 1 gibibyte hour $0.0152 / 1 gibibyte hour $0.0114 / 1 gibibyte hour M5 (> 100 GiB) 2 16 Gbps $0.016 / 1 gibibyte hour $0.0128 / 1 gibibyte hour $0.0096 / 1 gibibyte hour Each consumption model has a unique ID.
+- To view a list of prices for network egress for Memorystore, see the following table: Traffic type Price Egress between Google Cloud regions within North America (per GiB) $0.02 Egress between Google Cloud regions within Europe (per GiB) $0.02 Egress between Google Cloud regions within Asia (per GiB) $0.08 Egress between Google Cloud regions within and Oceania (per GiB) $0.08 Egress to a Google Cloud region on another continent (excludes Indonesia and Oceania) (per GiB) $0.08 Indonesia and Oceania 1 to/from any Google Cloud region (per GiB) $0.15 If you pay in a currency other than USD, the prices listed in your currency on Cloud Platform SKUs apply.
+- When accessing a Memorystore instance from a client in a different region, Memorystore charges you for network egress traffic from Redis instances to your client application.
+
+### "Connect to a Redis instance \_|\_ Memorystore for Redis \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance](https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance)
+- Source ID: `site-docs-root`
+- Final score: 232
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If your cluster is version 1.7 or lower, or your version 1.8 or higher cluster doesn't have IP aliases enabled, follow these workaround steps before trying to connect to your instance: Workaround Run the following commands, replacing RESERVED IP RANGE with the reserved IP range of your instance: git clone https://github.com/bowei/k8s-custom-iptables.git cd k8s-custom-iptables/ TARGETS=" RESERVED IP RANGE " ./install.sh If you don't know the reserved IP range of your instance, you can find out by entering this command: gcloud redis instances describe INSTANCE ID --region [REGION] For more information about IP aliases, including how to create a cluster with this setting enabled, see Creating a VPC-native cluster .
+- If your cluster is version 1.7 or lower, or your version 1.8 or higher cluster doesn't have IP aliases enabled, follow these workaround steps before trying to connect to your instance: Workaround Run the following commands, replacing RESERVED IP RANGE with the reserved IP range of your instance: git clone https://github.com/bowei/k8s-custom-iptables.git cd k8s-custom-iptables/ TARGETS=" RESERVED IP RANGE " ./install.sh If you don't know the reserved IP range of your instance, you can find out by entering this command: gcloud redis instances describe INSTANCE ID --region= REGION For more information about IP aliases, including how to create a cluster with this setting enabled, see Creating a VPC-native cluster .
+- Configure your Compute Engine VM for use with Stunnel: Make a new file in which to put your Certificate Authority (CA) by running the following command: sudo vim /tmp/server ca.pem View your Redis instance's Certificate Authority(s) by running the following command in the standard terminal you use to manage Google Cloud resources (not the Compute Engine terminal): gcloud redis instances describe instance-id --region= region There may be up to three CAs.
+- Connect to a Redis instance from a Compute Engine VM using telnet You can connect to the Memorystore for Redis instance from any Compute Engine VM that uses the instance's authorized network with a supported RFC 1918 IP address .
+
+### High availability for Memorystore for Redis \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis](https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis)
+- Source ID: `site-docs-root`
+- Final score: 231
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- How a failover affects your application When the primary instance fails over to the replica, Memorystore for Redis drops existing connections to the primary endpoint of the instance.
+- For information about the metrics that Cloud Monitoring provides for Memorystore for Redis, see Monitor Redis Instances and Supported monitoring metrics for Memorystore for Redis .
+- During a failover, if there are connections to the read endpoint, then Memorystore for Redis drops the connections to the replica that's being promoted to the primary instance.
+- Memorystore for Redis uses the asynchronous replication protocol to copy any changes that you make to the data on the primary instance to the replicas.
+
+### "Export data from a Redis instance \_|\_ Memorystore for Redis \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/export-data](https://docs.cloud.google.com/memorystore/docs/redis/export-data)
+- Source ID: `site-docs-root`
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Gcloud Export an RDB file to the Cloud Storage bucket referred to in step one of Before you begin by executing the following command: gcloud redis instances export gs://[BUCKET NAME]/[FILE NAME].rdb [INSTANCE ID] --region=[REGION] --project=[PROJECT ID] Stop an ongoing export operation Console Go to the Memorystore for Redis page in the Google Cloud console.
+- Export an RDB backup file to a Cloud Storage bucket Console Go to the Memorystore for Redis page in the Google Cloud console.
+- Follow the instructions on this page to export an RDB backup of your Memorystore for Redis instance.
+- Memorystore for Redis Click your instance ID to view the instance details page.
 

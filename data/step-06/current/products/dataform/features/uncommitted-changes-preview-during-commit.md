@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.388Z"
+generated_at: "2026-04-12T12:13:45.743Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Uncommitted changes preview during commit"
 feature_slug: "uncommitted-changes-preview-during-commit"
 latest_feature_date: "2023-12-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle"
+  - "https://docs.cloud.google.com/dataform/docs/access-control"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest.Builder"
-  - "https://docs.cloud.google.com/dataform/docs/access-control"
 keywords:
   - "uncommitted"
   - "changes"
@@ -26,7 +27,7 @@ keywords:
 # Uncommitted changes preview during commit
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,23 +39,51 @@ This feature lets users preview uncommitted changes while creating a commit in D
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle](https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle)
+- [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest.Builder)
-- [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 
 ## Supporting Pages
+
+### "Best practices for the workflow lifecycle \_|\_ Dataform \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle](https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle)
+- Source ID: `site-docs-root-2`
+- Final score: 151
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To create a standardized lifecycle of Dataform workflows that maintains data hygiene and optimizes development processes, we recommend that you: Create execution environments to isolate tables created during development from tables available to end users.
+- This ensures that end users can navigate to production tables and eliminates the risk of end users accessing incorrect data by accident.
+- This approach lets you customize Identity and Access Management permissions at each stage of your code lifecycle.
+- In Dataform, developers commit and push their changes to their custom branches of the remote repository.
+
+### Control access with IAM \_|\_ Dataform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
+- Source ID: `site-docs-root-2`
+- Final score: 143
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Workforce Identity Federation in Dataform Workforce Identity Federation lets you use an external identity provider (IdP) to authenticate and authorize users to Google Cloud services with IAM.
+- Implement enhanced scheduling permissions Preview This product or feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- This role grants the iam.serviceAccounts.actAs permission, which lets scheduled runs, initiated by the default Dataform service agent, impersonate the custom service account.
+- Enable private workspaces Preview This product or feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
 
 ### "Class CommitRepositoryChangesRequest (0.87.0) \_|\_ Java client libraries\
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest)
 - Source ID: `site-java-reference`
-- Final score: 112
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 142
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Builder toBuilder () Returns Type Description CommitRepositoryChangesRequest.Builder writeTo(CodedOutputStream output) public void writeTo ( CodedOutputStream output ) Parameter Name Description output CodedOutputStream Overrides GeneratedMessage.writeTo(CodedOutputStream output) Exceptions Type Description IOException Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
@@ -66,26 +95,13 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.CommitRepositoryChangesRequest.Builder)
 - Source ID: `site-java-reference`
-- Final score: 112
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 142
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - If unset, no validation on the current HEAD commit SHA is performed. string required head commit sha = 4 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description CommitRepositoryChangesRequest.Builder This builder for chaining. containsFileOperations(String key) public boolean containsFileOperations ( String key ) Optional.
 - The repository's name. string name = 1 [(.google.api.field behavior) = REQUIRED, (.google.api.resource reference) = { ... } Returns Type Description CommitRepositoryChangesRequest.Builder This builder for chaining. clearRequiredHeadCommitSha() public CommitRepositoryChangesRequest .
 - Returns Type Description CommitRepositoryChangesRequest.Builder This builder for chaining. setRequiredHeadCommitShaBytes(ByteString value) public CommitRepositoryChangesRequest .
 - Returns Type Description CommitRepositoryChangesRequest.Builder This builder for chaining. setRequiredHeadCommitSha(String value) public CommitRepositoryChangesRequest .
-
-### Control access with IAM \_|\_ Dataform \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
-- Source ID: `site-docs-root-2`
-- Final score: 110
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Workforce Identity Federation in Dataform Workforce Identity Federation lets you use an external identity provider (IdP) to authenticate and authorize users to Google Cloud services with IAM.
-- Implement enhanced scheduling permissions Preview This product or feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
-- This role grants the iam.serviceAccounts.actAs permission, which lets scheduled runs, initiated by the default Dataform service agent, impersonate the custom service account.
-- Enable private workspaces Preview This product or feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
 

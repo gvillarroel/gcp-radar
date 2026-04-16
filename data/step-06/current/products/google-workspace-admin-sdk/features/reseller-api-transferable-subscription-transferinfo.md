@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:57:36.646Z"
+generated_at: "2026-04-15T11:51:47.724Z"
 product_name: "Google Workspace Admin SDK"
 product_slug: "google-workspace-admin-sdk"
 feature_name: "Reseller API transferable subscription transferInfo"
 feature_slug: "reseller-api-transferable-subscription-transferinfo"
 latest_feature_date: "2013-09-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/admin-sdk/overview"
-  - "https://developers.google.com/admin-sdk/reference-overview"
-  - "https://developers.google.com/admin-sdk/directory/reference/rest"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/push"
+  - "https://developers.google.com/workspace/admin/directory/reference/rest/v1/SubscriptionChannel"
+  - "https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos.commands"
 keywords:
   - "reseller"
-  - "api"
   - "transferable"
   - "subscription"
   - "transferinfo"
   - "subscriptions"
   - "include"
   - "property"
+  - "transferability"
 ---
 
 # Reseller API transferable subscription transferInfo
 
 Product: Google Workspace Admin SDK
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,45 @@ Transferable subscriptions include a transferInfo property with transferability 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
-- [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/push](https://developers.google.com/workspace/admin/reports/v1/guides/push)
+- [https://developers.google.com/workspace/admin/directory/reference/rest/v1/SubscriptionChannel](https://developers.google.com/workspace/admin/directory/reference/rest/v1/SubscriptionChannel)
+- [https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos.commands](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos.commands)
 
 ## Supporting Pages
 
-### Admin SDK API overview \_|\_ Admin console \_|\_ Google for Developers
+### Push notifications \_|\_ Admin console \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- Source ID: `site-docs-root`
-- Final score: 44
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/push](https://developers.google.com/workspace/admin/reports/v1/guides/push)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 45
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- What's included Chrome Printer Management API — Manage CUPS printers and print servers for your organization.
-- Home Google Workspace Admin console Guides Send feedback Admin SDK API overview Stay organized with collections Save and categorize content based on your preferences.
-- The Admin SDK API is a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale.
-- Directory API — Manage your organization's users, connected devices, and third-party applications.
+- Watch for all admin activities: POST https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/admin/watch Watch for all docs activities: POST https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/docs/watch Watch for a specific user's admin activity: POST https://admin.googleapis.com/admin/reports/v1/activity/users/liz@example.com/applications/admin/watch Watch for a specific event, such as changing a user's password: POST https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/admin/watch?eventName=CHANGE PASSWORD Watch for changes to a specific document: POST https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/docs/watch?eventName=EDIT&filters==doc id=123456abcdef Required properties With each watch request, you must provide these fields: An id property string that uniquely identifies this new notification channel within your project.
+- The message body of the watch response provides information about the notification channel you just created, as shown in the example below. { "kind": "api#channel", "id": "reportsApiId", "resourceId": "o3hgv1538sdjfh", "resourceUri": "https://admin.googleapis.com/admin/reports/v1/activity/ userKey /applications/ applicationName ", "token": "target=myApp-myFilesChannelDest", "expiration": 3600 } In addition to the properties you sent as part of your request, the returned information also includes the resourceId and resourceUri to identify the resource being watched on this notification channel.
+- The value for this field must be web hook . address : The URL where notifications are sent. token : An arbitrary string delivered to the target address with each notification, for the purpose of verifying that the notification comes from a trusted source. payload : A boolean flag indicating whether the payload should be included in the notification. expiration : The time-to-live in seconds for the notification channel.
+- The possible values include: admin calendar drive groups groups enterprise login mobile saml token user accounts id. customerId The unique identifier for a Google Workspace account. actor User doing the action. actor. callerType The type of author who performed the activity listed in the report.
 
-### Admin SDK API reference \_|\_ Admin console \_|\_ Google for Developers
+### SubscriptionChannel \_|\_ Admin console \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
-- Source ID: `site-docs-reference`
-- Final score: 37
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Home Google Workspace Admin console Reference Send feedback Admin SDK API reference Stay organized with collections Save and categorize content based on your preferences.
-- The Admin SDK API is a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale.
-- Admin SDK API v1 Chrome Printer Management API — Manage CUPS printers and print servers for your organization.
-- Admin SDK API v1.1beta1 Chrome Enterprise Core API — Manage Chrome browser devices for your account.
-
-### Admin SDK: Directory API \_|\_ Admin console \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
+- URL: [https://developers.google.com/workspace/admin/directory/reference/rest/v1/SubscriptionChannel](https://developers.google.com/workspace/admin/directory/reference/rest/v1/SubscriptionChannel)
 - Source ID: `site-api-reference`
-- Final score: 36
-- Re-rank relevance: N/A
+- Final score: 44
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://admin.googleapis.com REST Resource: asps Methods delete DELETE /admin/directory/v1/users/{userKey}/asps/{codeId} Deletes an ASP issued by a user. get GET /admin/directory/v1/users/{userKey}/asps/{codeId} Gets information about an ASP issued by a user. list GET /admin/directory/v1/users/{userKey}/asps Lists the ASPs issued by a user.
-- This service provides the following discovery document: https://admin.googleapis.com/$discovery/rest?version=directory v1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.
-- Home Google Workspace Admin console Reference Send feedback Admin SDK: Directory API Stay organized with collections Save and categorize content based on your preferences.
-- The Admin SDK Directory API lets administrators of enterprise domains view and manage their organization's users, groups, devices, and related resources.
+- Home Google Workspace Admin console Reference Send feedback SubscriptionChannel Stay organized with collections Save and categorize content based on your preferences.
+
+### "REST Resource: customer.devices.chromeos.commands \_|\_ Admin console \_\
+
+- URL: [https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos.commands](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos.commands)
+- Source ID: `site-api-reference`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

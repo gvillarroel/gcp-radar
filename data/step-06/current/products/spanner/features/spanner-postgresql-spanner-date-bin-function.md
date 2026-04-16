@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.922Z"
+generated_at: "2026-04-13T22:42:27.253Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner PostgreSQL spanner.date_bin function"
 feature_slug: "spanner-postgresql-spanner-date-bin-function"
 latest_feature_date: "2023-12-05"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions"
-  - "https://docs.cloud.google.com/spanner/docs/graph/overview"
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
+  - "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+  - "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli"
+  - "https://docs.cloud.google.com/spanner/docs/information-schema"
 keywords:
-  - "spanner"
-  - "postgresql"
   - "date"
-  - "bin"
-  - "function"
+  - "postgresql"
   - "supports"
-  - "the"
-  - "in"
+  - "dialect"
 ---
 
 # Spanner PostgreSQL spanner.date_bin function
 
 Product: Spanner
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -38,48 +34,52 @@ Spanner supports the PostgreSQL spanner.date_bin function in the PostgreSQL dial
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions](https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions)
-- [https://docs.cloud.google.com/spanner/docs/graph/overview](https://docs.cloud.google.com/spanner/docs/graph/overview)
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
+- [https://docs.cloud.google.com/spanner/docs/information-schema-pg](https://docs.cloud.google.com/spanner/docs/information-schema-pg)
+- [https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli](https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli)
+- [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
 
 ## Supporting Pages
 
-### Supported PostgreSQL functions | Spanner | Google Cloud Documentation
+### "Information schema for PostgreSQL-dialect databases \_|\_ Spanner \_|\_\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions](https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions)
+- URL: [https://docs.cloud.google.com/spanner/docs/information-schema-pg](https://docs.cloud.google.com/spanner/docs/information-schema-pg)
 - Source ID: `site-docs-reference`
-- Final score: 162
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 36
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Supported PostgreSQL functions Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions Documentation · Databases · Spanner · Reference · Send feedback · This page defines the functions supported for PostgreSQL-dialect databases in Spanner.
-- The content on this page is based on the PostgreSQL documentation, which is available under the PostgreSQL License.
+- The default is public for PostgreSQL-dialect databases. table name character varying The name of the table or view that contains the column. column name character varying The name of the column. privilege type character varying The type of the privilege ( SELECT , INSERT , or UPDATE ). is grantable character varying Not used.
+- The default is public for PostgreSQL-dialect databases. table name character varying The name of the table or view that contains the column. column name character varying The name of the column. privilege type character varying The type of the privilege ( SELECT , INSERT , or UPDATE ). is grantable character varying Not used.
+- The default is public for PostgreSQL-dialect databases. table name character varying The name of the table or view. privilege type character varying The type of the privilege ( SELECT , INSERT , UPDATE , or DELETE ). is grantable character varying Not used.
+- The default is public for PostgreSQL-dialect databases. table name character varying The name of the table or view. privilege type character varying The type of the privilege ( SELECT , INSERT , UPDATE , or DELETE ). is grantable character varying Not used.
 
-### Spanner Graph overview | Google Cloud Documentation
+### "Information schema for GoogleSQL-dialect databases \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/graph/overview](https://docs.cloud.google.com/spanner/docs/graph/overview)
+- URL: [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
+- Source ID: `site-docs-reference`
+- Final score: 34
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If you are using a PostgreSQL-dialect database, see Information schema for PostgreSQL-dialect databases .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- All other principals can see only indexes that meet either of the following requirements: Any of the SELECT , INSERT , or UPDATE fine-grained access control privileges are granted at the column level on all columns in the index to the current database role, to roles of which the current database role is a member, or to public .
+- All other principals can see only indexes that meet either of the following requirements: Any of the SELECT , INSERT , or UPDATE fine-grained access control privileges are granted at the column level on all columns in the index to the current database role, to roles of which the current database role is a member, or to public .
+
+### Build context sets using Gemini CLI \_|\_ Spanner \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli](https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli)
 - Source ID: `site-docs-root`
-- Final score: 98
+- Final score: 34
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Spanner Graph overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/graph/overview Documentation · Databases · Spanner · Guides · Send feedback · PostgreSQL interface note: The examples in topics for Spanner Graph are intended for GoogleSQL-dialect databases.
-- Spanner Graph doesn&#x27;t support the PostgreSQL interface.
-- For more information, see the Spanner editions overview.
-- Note: This feature is available with the Spanner Enterprise edition and Enterprise Plus edition.
-
-### django_spanner.operations — google-cloud-spanner-django documentation
-
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- Source ID: `site-python-reference`
-- Final score: 96
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
+- PostgreSQL interface note: The examples in this topic are intended for GoogleSQL-dialect databases.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],[]]
+- To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key.
+- For more information about how to find your API key, see Using Gemini API keys . (Optional) Update the DB Context Enrichment extension.
 

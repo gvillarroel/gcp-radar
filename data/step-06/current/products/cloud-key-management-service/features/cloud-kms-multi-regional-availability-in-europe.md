@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:39.871Z"
+generated_at: "2026-04-12T12:11:33.069Z"
 product_name: "Cloud Key Management Service"
 product_slug: "cloud-key-management-service"
 feature_name: "Cloud KMS multi-regional availability in europe"
@@ -9,9 +9,10 @@ latest_feature_date: "2018-02-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/kms/docs/locations"
-  - "https://docs.cloud.google.com/kms/docs/release-notes"
-  - "https://docs.cloud.google.com/kms/docs/delete-kms-resources"
+  - "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+  - "https://docs.cloud.google.com/kms/docs/reference/rest"
+  - "https://docs.cloud.google.com/kms/docs/ekm"
+  - "https://docs.cloud.google.com/kms/docs/importing-a-key"
 keywords:
   - "kms"
   - "multi"
@@ -38,54 +39,66 @@ Cloud KMS resources can be created in the europe multi-regional location.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/kms/docs/locations](https://docs.cloud.google.com/kms/docs/locations)
-- [https://docs.cloud.google.com/kms/docs/release-notes](https://docs.cloud.google.com/kms/docs/release-notes)
-- [https://docs.cloud.google.com/kms/docs/delete-kms-resources](https://docs.cloud.google.com/kms/docs/delete-kms-resources)
+- [https://docs.cloud.google.com/kms/docs/cmek-best-practices](https://docs.cloud.google.com/kms/docs/cmek-best-practices)
+- [https://docs.cloud.google.com/kms/docs/reference/rest](https://docs.cloud.google.com/kms/docs/reference/rest)
+- [https://docs.cloud.google.com/kms/docs/ekm](https://docs.cloud.google.com/kms/docs/ekm)
+- [https://docs.cloud.google.com/kms/docs/importing-a-key](https://docs.cloud.google.com/kms/docs/importing-a-key)
 
 ## Supporting Pages
 
-### "Cloud KMS locations \_|\_ Cloud Key Management Service \_|\_ Google Cloud\
+### "Best practices for using CMEKs \_|\_ Cloud Key Management Service \_|\_\
 
-- URL: [https://docs.cloud.google.com/kms/docs/locations](https://docs.cloud.google.com/kms/docs/locations)
+- URL: [https://docs.cloud.google.com/kms/docs/cmek-best-practices](https://docs.cloud.google.com/kms/docs/cmek-best-practices)
 - Source ID: `site-iam-reference`
-- Final score: 192
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 204
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Location name Location type Location description Cloud HSM available Cloud EKM available global Multi-region Global Multi-tenant only No nam-eur-asia1 Multi-region North America, Europe, and Asia (Iowa, Oklahoma, Belgium, and Taiwan) Multi-tenant only No Types of locations for Cloud KMS You can create Cloud KMS, Cloud HSM, and Cloud EKM resources in different types of locations in Google Cloud, depending on your availability requirements.
-- You can filter these locations by location type , Cloud HSM support, and Cloud EKM support: Filter by: Location type Show all Region Multi-region Select an option Show all Show all Region Multi-region HSM support Show all Supports multi-tenant HSM Supports single-tenant HSM Select an option Show all Show all Supports multi-tenant HSM Supports single-tenant HSM EKM support Show all Supports EKM EKM by internet EKM by VPC Select an option Show all Show all Supports EKM EKM by internet EKM by VPC Clear all Americas Asia-Pacific Europe, Middle East, and Africa Worldwide More Location name Location type Location description Cloud HSM available Cloud EKM available ca Multi-region All regions in Canada Multi-tenant only Yes nam10 Multi-region Iowa, Salt Lake City, and Oklahoma Multi-tenant only Yes nam11 Multi-region Iowa, South Carolina, and Oklahoma Multi-tenant only Yes nam12 Multi-region Iowa, Northern Virginia, Oklahoma, and Oregon Multi-tenant only Yes nam3 Multi-region Northern Virginia and South Carolina Multi-tenant only Yes nam4 Multi-region Iowa, South Carolina, and Oklahoma Multi-tenant only Yes nam6 Multi-region Iowa and South Carolina Multi-tenant only Yes nam7 Multi-region Iowa, Northern Virginia, and Oklahoma Multi-tenant only Yes nam8 Multi-region Los Angeles, Oregon, and Salt Lake City Multi-tenant only Yes nam9 Multi-region Northern Virginia and Iowa Multi-tenant only Yes northamerica-northeast1 Region Montréal Multi-tenant only Yes northamerica-northeast2 Region Toronto Multi-tenant only Yes northamerica-south1 Region Mexico Multi-tenant only No southamerica-east1 Region São Paulo Multi-tenant only Yes southamerica-west1 Region Santiago Multi-tenant only Yes us Multi-region Multiple regions in the United States Multi-tenant only Yes us-central1 Region Iowa Yes Yes us-east1 Region South Carolina Multi-tenant only Yes us-east4 Region Northern Virginia Yes Yes us-east5 Region Columbus Multi-tenant only Yes us-south1 Region Dallas Multi-tenant only Yes us-west1 Region Oregon Multi-tenant only Yes us-west2 Region Los Angeles Multi-tenant only Yes us-west3 Region Salt Lake City Multi-tenant only Yes us-west4 Region Las Vegas Multi-tenant only Yes Location name Location type Location description Cloud HSM available Cloud EKM available asia Multi-region Taiwan, Mumbai, and Singapore Multi-tenant only Yes asia-east1 Region Taiwan Multi-tenant only Yes asia-east2 Region Hong Kong Multi-tenant only Yes asia-northeast1 Region Tokyo Multi-tenant only Yes asia-northeast2 Region Osaka Multi-tenant only Yes asia-northeast3 Region Seoul Multi-tenant only Yes asia-south1 Region Mumbai Multi-tenant only Yes asia-south2 Region Delhi Multi-tenant only Yes asia-southeast1 Region Singapore Multi-tenant only Yes asia-southeast2 Region Jakarta Multi-tenant only Yes asia-southeast3 Region Bangkok Multi-tenant only No asia1 Multi-region Tokyo, Osaka, and Seoul Multi-tenant only Yes au Multi-region All regions in Australia Multi-tenant only Yes australia-southeast1 Region Sydney Multi-tenant only Yes australia-southeast2 Region Melbourne Multi-tenant only Yes in Multi-region All regions in India Multi-tenant only Yes Location name Location type Location description Cloud HSM available Cloud EKM available africa-south1 Region Johannesburg Multi-tenant only Yes de Multi-region All regions in Germany Multi-tenant only Yes eur3 Multi-region Belgium and Netherlands Multi-tenant only Yes eur4 Multi-region Finland, Netherlands, and Belgium Multi-tenant only Yes eur5 Multi-region London, Netherlands, and Belgium Multi-tenant only Yes eur6 Multi-region Netherlands, Frankfurt, and Zürich Multi-tenant only Yes eur7 Multi-region London, Frankfurt, and Berlin No Yes eur8 Multi-region Zürich, Frankfurt, and Berlin No Yes europe Multi-region All regions in the European Union 1 Multi-tenant only Yes europe-central2 Region Warsaw Multi-tenant only Yes europe-north1 Region Finland Multi-tenant only Yes europe-north2 Region Stockholm Multi-tenant only Yes europe-southwest1 Region Madrid Multi-tenant only Yes europe-west1 Region Belgium Yes Yes europe-west10 Region Berlin Multi-tenant only Yes europe-west12 Region Turin Multi-tenant only Yes europe-west2 Region London Multi-tenant only Yes europe-west3 Region Frankfurt Multi-tenant only Yes europe-west4 Region Netherlands Yes Yes europe-west6 Region Zürich Multi-tenant only Yes europe-west8 Region Milan Multi-tenant only Yes europe-west9 Region Paris Multi-tenant only Yes it Multi-region All regions in Italy Multi-tenant only Yes me-central1 Region Doha Multi-tenant only Yes me-central2 Region Dammam Multi-tenant only Yes me-west1 Region Tel Aviv Multi-tenant only Yes 1 Resources created in the europe multi-region are not stored in the europe-west2 (London) or europe-west6 (Zürich) data centers.
-- On this page Types of locations for Cloud KMS Choosing the best type of location Reading from and writing to multi-region locations Determining available regions What's next Within a project, Cloud Key Management Service resources can be created in one of many locations .
-- When using a multi-regional location, such as the europe multi-region, resources persist in multiple datacenters spread across the multi-region.
+- Multi-region resources can't use a regional key ring.
+- Operational overhead: Using highly granular keys might require administrative effort or additional tooling for automation to provision a large number of Cloud KMS resources and to manage access controls for service agents so they can only use the appropriate keys.
+- For workloads that require high availability or disaster recovery capabilities across multiple locations, it's your responsibility to assess whether your workload is resilient in the event that Cloud KMS becomes unavailable in a certain region.
+- Monitor key usage You can view key usage with the Cloud KMS inventory API to help you identify Google Cloud resources in your organization that are dependent on and protected by Cloud KMS keys.
 
-### "Cloud KMS release notes \_|\_ Cloud Key Management Service \_|\_ Google\
+### Cloud Key Management Service (KMS) API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/kms/docs/release-notes](https://docs.cloud.google.com/kms/docs/release-notes)
+- URL: [https://docs.cloud.google.com/kms/docs/reference/rest](https://docs.cloud.google.com/kms/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 198
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Select a location to see its regional service endpoint for this service. global europe-west3 europe-west8 europe-west9 me-central2 us-east1 us-east4 us-west2 us-west1 us-east7 us-central1 us-west3 us-central2 us-west4 us-west8 us-east5 us-south1 us in ca https://cloudkms.googleapis.com REST Resource: v1.folders Methods getAutokeyConfig GET /v1/{name=folders/ /autokeyConfig} Returns the AutokeyConfig for a folder or project. getKajPolicyConfig GET /v1/{name=folders/ /kajPolicyConfig} Gets the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project. updateAutokeyConfig PATCH /v1/{autokeyConfig.name=folders/ /autokeyConfig} Updates the AutokeyConfig for a folder or a project. updateKajPolicyConfig PATCH /v1/{keyAccessJustificationsPolicyConfig.name=folders/ /kajPolicyConfig} Updates the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project.
+- REST Resource: v1.projects.locations.ekmConnections Methods create POST /v1/{parent=projects/ /locations/ }/ekmConnections Creates a new EkmConnection in a given Project and Location. get GET /v1/{name=projects/ /locations/ /ekmConnections/ } Returns metadata for a given EkmConnection . getIamPolicy GET /v1/{resource=projects/ /locations/ /ekmConnections/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ }/ekmConnections Lists EkmConnections . patch PATCH /v1/{ekmConnection.name=projects/ /locations/ /ekmConnections/ } Updates an EkmConnection 's metadata. setIamPolicy POST /v1/{resource=projects/ /locations/ /ekmConnections/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /ekmConnections/ }:testIamPermissions Returns permissions that a caller has on the specified resource. verifyConnectivity GET /v1/{name=projects/ /locations/ /ekmConnections/ }:verifyConnectivity Verifies that Cloud KMS can successfully connect to the external key manager specified by an EkmConnection .
+- REST Resource: v1.folders REST Resource: v1.organizations REST Resource: v1.projects REST Resource: v1.projects.locations REST Resource: v1.projects.locations.ekmConfig REST Resource: v1.projects.locations.ekmConnections REST Resource: v1.projects.locations.keyHandles REST Resource: v1.projects.locations.keyRings REST Resource: v1.projects.locations.keyRings.cryptoKeys REST Resource: v1.projects.locations.keyRings.cryptoKeys.cryptoKeyVersions REST Resource: v1.projects.locations.keyRings.importJobs REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.retiredResources REST Resource: v1.projects.locations.singleTenantHsmInstances REST Resource: v1.projects.locations.singleTenantHsmInstances.proposals Service: cloudkms.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://cloudkms.googleapis.com Regional service endpoint A regional service endpoint is a base URL that specifies the network address of an API service in a single region.
+
+### "Cloud External Key Manager \_|\_ Cloud Key Management Service \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kms/docs/ekm](https://docs.cloud.google.com/kms/docs/ekm)
+- Source ID: `site-docs-root`
+- Final score: 188
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Cloud EKM over the internet: available in most Google Cloud locations where Cloud KMS is available, including regional and multi-regional locations.
+- Compatibility Supported key managers You can store external keys in the following external key management partner systems: Supported today: Fortanix Futurex Thales Services that support CMEK with Cloud EKM The following services support integration with Cloud KMS for external (Cloud EKM) keys: Agent Assist AlloyDB for PostgreSQL Apigee API hub Application Integration Artifact Registry Backup and DR Service: Backup Vault Container and Backups at rest Backup for GKE BigQuery Bigtable Cloud Composer Cloud Data Fusion Cloud Healthcare API Cloud Logging: Data in the Log Router and Data in Logging storage Cloud Run Cloud Run functions Cloud SQL Cloud Storage Cloud Tasks Cloud Workstations Compute Engine: Persistent disks , Snapshots , Custom images , and Machine images Customer Experience Insights Database Migration Service: MySQL migrations - data written to databases , PostgreSQL migrations - Data written to databases , PostgreSQL to AlloyDB migrations - Data written to databases , SQL Server migrations - Data written to databases , and Oracle to PostgreSQL data at rest Dataflow Dataform Dataplex Universal Catalog Dataproc Metastore Datastream Dialogflow CX Document AI Eventarc Advanced ( Preview ) Eventarc Standard Filestore Firestore Google Cloud Managed Lustre Google Cloud Managed Service for Apache Kafka Google Cloud NetApp Volumes Google Distributed Cloud Google Kubernetes Engine: Data on VM disks and Application-layer secrets Integration Connectors Looker (Google Cloud core) Managed Service for Apache Spark: Dataproc clusters data on VM disks and Dataproc serverless data on VM disks Memorystore for Redis Memorystore for Redis Cluster Memorystore for Valkey Migrate to Virtual Machines: Data migrated from VMware, AWS, and Azure VM sources and Data migrated from disk and machine image sources Parameter Manager Pub/Sub Secret Manager Secure Source Manager Security Command Center Spanner Speech-to-Text Vertex AI Vertex AI Workbench instances Workflows Workload Manager Important: All other services are not compatible with Cloud External Key Manager for CMEK.
+- EKM key management from Cloud KMS When using Cloud EKM through a VPC with an external key management partner that supports the Cloud EKM control plane, you can use the Cloud KMS EKM management mode to simplify the process of maintaining external keys in your external key management partner and in Cloud EKM.
+- With EKM key management from Cloud KMS enabled, Cloud EKM can request the following changes in your EKM: Create a key: When you create an externally managed key in Cloud KMS using a compatible EKM connection, Cloud EKM sends your key creation request to your EKM.
+
+### "Import a key version into Cloud KMS \_|\_ Cloud Key Management Service \_\
+
+- URL: [https://docs.cloud.google.com/kms/docs/importing-a-key](https://docs.cloud.google.com/kms/docs/importing-a-key)
 - Source ID: `site-docs-root`
 - Final score: 186
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 08, 2018 Feature Cloud KMS resources can now be created in the asia , europe , and us multi-regional locations.
-- April 12, 2018 Feature Cloud KMS resources can now be created in the following regions: asia-south1 australia-southeast1 europe-west2 europe-west3 northamerica-northeast1 southamerica-east1 us-east4 Learn more about Cloud Locations .
-- January 19, 2023 Feature Cloud KMS and Cloud EKM resources are available in the in (India) multi-regional location.
-- January 10, 2018 Feature Cloud KMS resources can now be created in the europe-west4 region.
-
-### "Delete Cloud KMS resources \_|\_ Cloud Key Management Service \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/kms/docs/delete-kms-resources](https://docs.cloud.google.com/kms/docs/delete-kms-resources)
-- Source ID: `site-iam-reference`
-- Final score: 174
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Cloud KMS Start free Overview Guides Reference Samples Resources More Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Protection levels Overview Cloud HSM overview Single-tenant Cloud HSM overview Cloud EKM overview Reference architectures for Cloud EKM CMEK overview Cloud KMS with Autokey Compatible services Cloud HSM for Google Workspace Locations Get started Cloud KMS resources Key purposes and algorithms Separation of duties Create and use encryption keys CMEK best practices Create and manage Single-tenant Cloud HSM instances Create keys Automate key creation Autokey overview Enable Autokey Create a resource with Autokey Create a key ring Create a key Import keys About key import Key wrapping Format a key for import Manually wrap a key for import Configure OpenSSL for manual key wrapping Wrap a key using OpenSSL Set up automatic key wrapping Import a key version Verify an imported key version Create external keys Set up Cloud EKM over the internet Create an EKM connection Create an external Key Control access Manage IAM roles Use Organization Policy Contraints Create custom organization policy constraints for Cloud KMS CMEK organization policies Control key destruction Secure data using keys Key APIs Use gRPC Access the API Sort and filter API list results Generate random bytes Use Cloud KMS keys in Google Cloud Encrypt and decrypt data Envelope encryption Additional authenticated data Asymmetric encryption Encrypt and decrypt data with a symmetric key Encrypt and decrypt data with a raw symmetric key Encrypt and decrypt data with an asymmetric key Verify end-to-end data integrity Encrypt application data Set up client-side encryption with Tink Onboard to Cloud HSM for Google Workspace Sign and validate data Digital signatures Create and validate signatures MAC signatures Create and validate MAC signatures Share secrets using key encapsulation mechanisms Key encapsulation mechanisms Encapsulate and decapsulate using KEMs Manage keys Resource consistency Key version states View keys and key details View keys by project View encryption metrics View key usage Get a Cloud KMS resource ID Retrieve a public key Attest a Cloud HSM key Label a key Create and manage tags Enable and disable a key version Destroy and restore a key version Delete Cloud KMS resources Rotate keys About key rotation Rotate a key Re-encrypt data Update external key reference Monitor Using Cloud Audit Logging Cloud KMS Inventory Service audit logging Monitor state changes Monitor and adjust quotas Use Cloud Monitoring Monitor EKM usage Troubleshoot Troubleshoot failed imports Troubleshoot EKM via VPC errors AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Before you begin Delete a key version Delete a key View names of retired resources What's next Home Documentation Security Cloud KMS Guides Was this helpful?
-- Delete Cloud KMS resources Cloud Key Management Service Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools More / Console English Deutsch Español – América Latina Français Indonesia Italiano Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]] Products and pricing See all products Google Cloud pricing Google Cloud Marketplace Contact sales Support Community forums Support Release Notes System status Resources GitHub Getting Started with Google Cloud Code samples Cloud Architecture Center Training and Certification Engage Blog Events X (Twitter) Google Cloud on YouTube Google Cloud Tech on YouTube About Google Privacy Site terms Google Cloud terms Manage cookies Our third decade of climate action: join us Sign up for the Google Cloud newsletter Subscribe English Deutsch Español – América Latina Français Indonesia Italiano Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 close Welcome to Cloud Shell Cloud Shell is a development environment that you can use in the browser: Activate Cloud Shell to explore Google Cloud with a terminal and an editor Start a free trial to get $300 in free credits Activate Cloud Shell Start a free trial
-- The name is like projects/{project}/locations/{location}/retiredResources/{id} name = client . retired resource path ( project id , location id , retired resource id ) Call the API. response = client . get retired resource ( request = { "name" : name }) print ( f "Got retired resource: { response . name } " ) return response Use the retiredResources.get method: curl "https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /retiredResources/ RETIRED RESOURCE " \ --request "GET" \ --header "authorization: Bearer TOKEN " Replace the following: PROJECT ID : the identifier of the project where you want to view a retired resource.
+- KeyManagementServiceClient () Retrieve the fully-qualified key ring string. key ring name = client . key ring path ( project id , location id , key ring id ) Set paramaters for the import job, allowed values for ImportMethod and ProtectionLevel found here: https://googleapis.dev/python/cloudkms/latest/ modules/google/cloud/kms v1/types/resources.html import method = kms .
+- To check the state of an import job, use the ImportJobs.get method: curl "https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /importJobs/ IMPORT JOB ID " \ --request "GET" \ --header "authorization: Bearer TOKEN " As soon as the import job is active, you can make a request to import a key .
+- If the user is not the project owner, you can assign both of the following two predefined roles to the user: roles/editor roles/cloudkms.importer For more information about available IAM roles and permissions for Cloud KMS, refer to Permissions and roles .
+- The following can't be changed for a key version after it is created or imported: The protection level indicates whether the key persists in software, in a multi-tenant HSM, in a single-tenant HSM, or in an external key management system.
 

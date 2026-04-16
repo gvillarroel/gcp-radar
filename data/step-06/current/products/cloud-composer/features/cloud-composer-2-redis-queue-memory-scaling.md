@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.567Z"
+generated_at: "2026-04-12T12:11:19.782Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer 2 Redis queue memory scaling"
 feature_slug: "cloud-composer-2-redis-queue-memory-scaling"
 latest_feature_date: "2022-05-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/latest/create-environments"
   - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
   - "https://docs.cloud.google.com/composer/docs/composer-1/environment-scaling"
+  - "https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard"
 keywords:
   - "composer"
   - "redis"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer 2 Redis queue memory scaling
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,35 @@ Cloud Composer 2 increases Redis queue memory limits and scales them based on en
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/latest/create-environments](https://docs.cloud.google.com/composer/docs/latest/create-environments)
 - [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - [https://docs.cloud.google.com/composer/docs/composer-1/environment-scaling](https://docs.cloud.google.com/composer/docs/composer-1/environment-scaling)
+- [https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard](https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard)
 
 ## Supporting Pages
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Create Cloud Composer environments \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- URL: [https://docs.cloud.google.com/composer/docs/latest/create-environments](https://docs.cloud.google.com/composer/docs/latest/create-environments)
 - Source ID: `site-docs-root`
-- Final score: 184
+- Final score: 169
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature (Cloud Composer 2) Increased the memory limit for the Redis queue and made it scale with the environment's size.
-- Change Cloud Composer 1.19.10 and 2.0.27 images are available: composer-1.19.10-airflow-1.10.15 (default) composer-1.19.10-airflow-2.1.4 composer-1.19.10-airflow-2.2.5 composer-2.0.27-airflow-2.1.4 composer-2.0.27-airflow-2.2.5 September 12, 2022 Feature (New environments only) Encryption with customer-managed encryption keys (CMEK) now applies to the persistent disk of the environment's Redis queue.
-- Fixed (Cloud Composer 2) The amount of memory available to Redis queue now scales with the environment's size.
-- July 11, 2022 Fixed Set memory and CPU limits for the Composer Agent pod.
+- Example: gcloud composer environments create example-environment \ --location us-central1 \ --image-version composer-3-airflow-2.10.5-build.33 \ --service-account " example-account@example-project. iam.gserviceaccount.com " \ --environment-size small \ --scheduler-count 1 \ --scheduler-cpu 0 .5 \ --scheduler-memory 2 .5GB \ --scheduler-storage 2GB \ --triggerer-count 1 \ --triggerer-cpu 0 .5 \ --triggerer-memory 0 .5GB \ --dag-processor-count 1 \ --dag-processor-cpu 0 .5 \ --dag-processor-memory 2GB \ --dag-processor-storage 1GB \ --web-server-cpu 1 \ --web-server-memory 2 .5GB \ --web-server-storage 2GB \ --worker-cpu 1 \ --worker-memory 2GB \ --worker-storage 2GB \ --min-workers 2 \ --max-workers 4 API When you create an environment, in the Environment > EnvironmentConfig > WorkloadsConfig resource, specify environment scale and performance parameters. { "name" : "projects/ PROJECT ID /locations/ LOCATION /environments/ ENVIRONMENT NAME " , "config" : { "workloadsConfig" : { "scheduler" : { "cpu" : SCHEDULER CPU , "memoryGb" : SCHEDULER MEMORY , "storageGb" : SCHEDULER STORAGE , "count" : SCHEDULER COUNT }, "triggerer" : { "count" : TRIGGERER COUNT , "cpu" : TRIGGERER CPU , "memoryGb" : TRIGGERER MEMORY }, "dagProcessor" : { "count" : DAG PROCESSOR COUNT , "cpu" : DAG PROCESSOR CPU , "memoryGb" : DAG PROCESSOR MEMORY , "storageGb" : DAG PROCESSOR STORAGE }, "webServer" : { "cpu" : WEB SERVER CPU , "memoryGb" : WEB SERVER MEMORY , "storageGb" : WEB SERVER STORAGE }, "worker" : { "cpu" : WORKER CPU , "memoryGb" : WORKER MEMORY , "storageGb" : WORKER STORAGE , "minCount" : WORKERS MIN , "maxCount" : WORKERS MAX } }, "environmentSize" : " ENVIRONMENT SIZE " , "nodeConfig" : { "serviceAccount" : " SERVICE ACCOUNT " } } } Replace: SCHEDULER CPU with the number of CPUs for a scheduler, in vCPU units.
+- For more information about --triggerer-count , --triggerer-cpu , and --triggerer-memory flags, see Configure environment scale and performance parameters . --min-workers to 2 or more gcloud composer environments create ENVIRONMENT NAME \ --location LOCATION \ --image-version composer-3-airflow-2.10.5-build.33 \ --service-account " SERVICE ACCOUNT " \ --enable-high-resilience \ --enable-private-environment \ --scheduler-count 2 \ --triggerer-count 2 \ --triggerer-cpu 0 .5 \ --triggerer-memory 0 .5 \ --min-workers 2 API When you create an environment, in the Environment > EnvironmentConfig resource, enable the high resilience mode. { "name" : "projects/ PROJECT ID /locations/ LOCATION /environments/ ENVIRONMENT NAME " , "config" : { "resilience mode" : "HIGH RESILIENCE" , "nodeConfig" : { "serviceAccount" : " SERVICE ACCOUNT " } } } Example: // POST https://composer.googleapis.com/v1/{parent=projects/ /locations/ }/environments { "name" : "projects/example-project/locations/us-central1/environments/example-environment" , "config" : { "resilience mode" : "HIGH RESILIENCE" , "nodeConfig" : { "serviceAccount" : " example-account@example-project. iam.gserviceaccount.com " } } } Terraform Note: An update to the resilience mode field causes a failure instead of leading to recreating the Cloud Composer environment.
+- Example: resource "google composer environment" "example" { provider = google-beta name = "example-environment" region = "us-central1" config { workloads config { scheduler { cpu = 2.5 memory gb = 2.5 storage gb = 2 count = 1 } triggerer { count = 1 cpu = 0.5 memory gb = 0.5 } dag processor { cpu = 1 memory gb = 2 storage gb = 1 count = 1 } web server { cpu = 1 memory gb = 2.5 storage gb = 2 } worker { cpu = 1 memory gb = 2 storage gb = 2 min count = 2 max count = 4 } } environment size = "ENVIRONMENT SIZE SMALL" node config { service account = " example-account@example-project . iam.gserviceaccount.com " } } } Step 4. (Optional) Enable high resilience mode Highly resilient (Highly Available) Cloud Composer environments are environments that use built-in redundancy and failover mechanisms that reduce the environment's susceptibility to zonal failures and single point of failure outages.
+- Example: // POST https://composer.googleapis.com/v1/{parent=projects/ /locations/ }/environments { "name" : "projects/example-project/locations/us-central1/environments/example-environment" , "config" : { "workloadsConfig" : { "scheduler" : { "cpu" : 2.5 , "memoryGb" : 2.5 , "storageGb" : 2 , "count" : 1 }, "triggerer" : { "cpu" : 0.5 , "memoryGb" : 0.5 , "count" : 1 }, "dagProcessor" : { "count" : 1 , "cpu" : 0.5 , "memoryGb" : 2 , "storageGb" : 1 }, "webServer" : { "cpu" : 1 , "memoryGb" : 2.5 , "storageGb" : 2 }, "worker" : { "cpu" : 1 , "memoryGb" : 2 , "storageGb" : 2 , "minCount" : 2 , "maxCount" : 4 } }, "environmentSize" : "ENVIRONMENT SIZE SMALL" , "nodeConfig" : { "serviceAccount" : " example-account@example-project. iam.gserviceaccount.com " } } } Terraform When you create an environment, following arguments control the scale and performance parameters of your environment.
 
 ### "Cross-project environment monitoring with Terraform \_|\_ Cloud Composer\
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 128
+- Final score: 167
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,13 +80,25 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/environment-scaling](https://docs.cloud.google.com/composer/docs/composer-1/environment-scaling)
 - Source ID: `site-iam-reference`
-- Final score: 128
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 157
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback About environment scaling Stay organized with collections Save and categorize content based on your preferences.
 - What's next Scale environments Cloud Composer pricing Create environments Environment architecture Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 - On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
 - Database disk space Disk space for the Airflow database automatically increases to accommodate the demand.
+
+### Use the monitoring dashboard \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard](https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard)
+- Source ID: `site-docs-root`
+- Final score: 154
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- What's next Monitor Cloud Composer environments Troubleshooting scheduling Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Difference between DAG parse time and DAG execution time The monitoring dashboard of an environment displays the total time required to parse all DAGs in your Cloud Composer environment and the average time it takes to execute a DAG.
+- Access the monitoring dashboard The monitoring dashboard contains metrics and charts for monitoring trends in the DAG runs in your environment, and identifing issues with Airflow components and Cloud Composer resources.
+- Home Documentation Data analytics Cloud Composer Composer 3 Guides Send feedback Use the monitoring dashboard Stay organized with collections Save and categorize content based on your preferences.
 

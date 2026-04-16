@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:30.790Z"
+generated_at: "2026-04-12T12:11:24.695Z"
 product_name: "Cloud DNS"
 product_slug: "cloud-dns"
 feature_name: "Cloud DNS forwarding"
 feature_slug: "cloud-dns-forwarding"
 latest_feature_date: "2019-09-24"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/dns/docs/troubleshooting"
+  - "https://docs.cloud.google.com/dns/docs/overview"
+  - "https://docs.cloud.google.com/dns/docs/key-terms"
+  - "https://docs.cloud.google.com/dns/docs/cnamechasing"
 keywords:
   - "dns"
   - "forwarding"
@@ -24,7 +27,7 @@ keywords:
 # Cloud DNS forwarding
 
 Product: Cloud DNS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Cloud DNS supports DNS forwarding as a managed feature; Cloud DNS forwarding all
 
 Cloud DNS supports DNS forwarding as a managed feature; Cloud DNS forwarding allows DNS queries to be routed from Cloud DNS to other DNS resolvers.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/dns/docs/troubleshooting](https://docs.cloud.google.com/dns/docs/troubleshooting)
+- [https://docs.cloud.google.com/dns/docs/overview](https://docs.cloud.google.com/dns/docs/overview)
+- [https://docs.cloud.google.com/dns/docs/key-terms](https://docs.cloud.google.com/dns/docs/key-terms)
+- [https://docs.cloud.google.com/dns/docs/cnamechasing](https://docs.cloud.google.com/dns/docs/cnamechasing)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Troubleshoot Cloud DNS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dns/docs/troubleshooting](https://docs.cloud.google.com/dns/docs/troubleshooting)
+- Source ID: `site-docs-root`
+- Final score: 237
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Forwarding queries from VMs in a consumer VPC network to a producer VPC network not working If you are using DNS peering and you want to forward queries from VMs in a consumer VPC network to a producer VPC network, and then to one or more on-premises name servers, make sure that one of the following prerequisites is met: The producer VPC network has its dynamic routing mode set to GLOBAL The VM in the consumer VPC network is in the same region as the VPN tunnel or Cloud Interconnect in the producer VPC ( Classic VPN only ) The producer VPC network has a static route configured to send traffic destined for the on-premise name servers through the Classic VPN tunnel.
+- Outbound forwarding to a name server that uses a non-RFC 1918 IP address fails By default, Cloud DNS uses standard routing, which routes queries through the public internet when the target name server has a non-RFC 1918 IP address.
+- Additionally, if the forwarding target is an on-premises system, be aware that the routes configured for that path can be custom dynamic routes or custom static routes, with the important exception that custom static routes with network tags are not valid for forwarding DNS queries .
+- Make sure the authorized network is a VPC network DNS forwarding requires subnets, which are only available to VPC networks , not legacy networks . gcloud compute networks list \ --format="csvno-heading" Legacy networks are identified in the output as LEGACY .
+
+### Cloud DNS overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dns/docs/overview](https://docs.cloud.google.com/dns/docs/overview)
+- Source ID: `site-docs-root`
+- Final score: 235
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Try Cloud DNS free Shared VPC considerations To use a Cloud DNS managed private zone, Cloud DNS forwarding zone, or Cloud DNS peering zone with Shared VPC, you must create the zone in the host project , and then add one or more Shared VPC networks to the list of authorized networks for that zone.
+- Per resource permission access To configure a policy on a DNS resource such as a managed zone, you must have Owner access to the project that owns that resource.
+- Performance and timing Cloud DNS uses anycast to serve your managed zones from multiple locations around the world for high availability.
+- When using an alternative name server, VMs in your VPC network are no longer able to resolve records in Cloud DNS private zones, forwarding zones, peering zones, or Compute Engine internal DNS zones.
+
+### Key terms \_|\_ Cloud DNS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dns/docs/key-terms](https://docs.cloud.google.com/dns/docs/key-terms)
+- Source ID: `site-iam-reference`
+- Final score: 227
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, in the following SOA record, you can change the serial number directly from the Google Cloud console by entering the desired value into the third space-delimited field of the record: ns-gcp-private.googledomains.com. cloud-dns-hostmaster.google.com. [serial number] 21600 3600 259200 300` DNS server policy A DNS server policy lets you access name resolution services provided by Google Cloud in a VPC network with inbound forwarding, or supersede the VPC name resolution order with an outbound server policy.
+- When you create a forwarding zone , you cannot add records to the forwarding zone directly; the data comes from one or more configured target name servers or resolvers. peering zone A peering zone is a type of Cloud DNS managed private zone that follows the name resolution order of another VPC network.
+- SOA serial number format The serial numbers of SOA records created in Cloud DNS managed zones monotonically increase with each transactional change to a zone's record sets made by using the gcloud dns record-sets transaction command.
+- For details, see Forwarding targets and routing methods . forwarding zone A forwarding zone is a type of Cloud DNS managed private zone that forwards requests for that zone to the IP addresses of its forwarding targets.
+
+### CNAME chasing \_|\_ Cloud DNS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dns/docs/cnamechasing](https://docs.cloud.google.com/dns/docs/cnamechasing)
+- Source ID: `site-docs-root`
+- Final score: 225
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Source of CNAME answer Cloud DNS resolver behavior Cloud DNS private zone with local records (not a forwarding zone) Cloud DNS systems perform queries for the CNAME answer in Cloud DNS private zones that are authorized for the VPC network.
+- Cloud DNS systems don't perform queries for the CNAME answer in any Cloud DNS private zones (including any forwarding, peering, or response policy zones).
+- Cloud DNS forwarding zone Cloud DNS systems don't perform queries for any CNAME answers received from forwarding target name servers.
+- CNAME chasing refers to a subsequent lookup of a DNS name returned from a CNAME record answer to an initial query.
 

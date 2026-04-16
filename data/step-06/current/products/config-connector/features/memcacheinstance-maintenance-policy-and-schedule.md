@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.364Z"
+generated_at: "2026-04-13T14:23:05.166Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "MemcacheInstance maintenance policy and schedule"
 feature_slug: "memcacheinstance-maintenance-policy-and-schedule"
 latest_feature_date: "2022-06-09"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources"
+  - "https://docs.cloud.google.com/config-connector/docs/resources"
 keywords:
   - "memcacheinstance"
-  - "maintenance"
-  - "policy"
-  - "and"
+  - "maintenancepolicy"
   - "schedule"
-  - "config"
-  - "connector"
+  - "maintenance"
   - "supports"
+  - "policy"
 ---
 
 # MemcacheInstance maintenance policy and schedule
 
 Product: Config Connector
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,40 +40,30 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources](https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources](https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources)
+- [https://docs.cloud.google.com/config-connector/docs/resources](https://docs.cloud.google.com/config-connector/docs/resources)
 
 ## Supporting Pages
 
-### IAMPolicy | Config Connector | Google Cloud Documentation
+### "Configure container resources and replicas \_|\_ Config Connector \_|\_\
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 134
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources](https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources)
+- Source ID: `site-docs-reference`
+- Final score: 48
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
+### Monitoring your resources \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-### IAMPolicyMember | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember)
-- Source ID: `site-iam-reference`
-- Final score: 128
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources](https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources)
+- Source ID: `site-docs-reference`
+- Final score: 38
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- IAMPolicyMember Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember See the License for the specific language governing permissions and # limitations under the License. # Replace ${PROJECT ID?} and ${ORG ID?} below with your desired project and # organization IDs respectively. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicyMember metadata: name: iampolicymember-sample-orglevel spec: member: serviceAccount:iampolicymember-dep-orglevel@${PROJECT ID?}.iam.gserviceaccount.com role: roles/storage.admin resourceRef: kind: Organization external: &quot;${ORG ID?}&quot; --- # Replace ${PROJECT ID?} below with your desired project ID.
+### Resources \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-### IAMPartialPolicy | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy)
-- Source ID: `site-iam-reference`
-- Final score: 120
+- URL: [https://docs.cloud.google.com/config-connector/docs/resources](https://docs.cloud.google.com/config-connector/docs/resources)
+- Source ID: `site-docs-reference`
+- Final score: 38
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- IAMPartialPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy You cannot reference BigQueryDataset resources using IAMPolicy, IAMPartialPolicy, and IAMPolicyMember since BigQueryDataset does not support IAM. bindings: - condition: description: string expression: string title: string members: - member: string memberFrom: bigQueryConnectionConnectionRef: name: string namespace: string type: string logSinkRef: name: string namespace: string serviceAccountRef: name: string namespace: string serviceIdentityRef: name: string namespace: string sqlInstanceRef: name: string namespace: string role: string resourceRef: apiVersion: string external: string kind: string name: string namespace: string
 

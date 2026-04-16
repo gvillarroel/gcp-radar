@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:10:29.909Z"
+generated_at: "2026-04-12T12:11:22.233Z"
 product_name: "Cloud Database Migration Service"
 product_slug: "cloud-database-migration-service"
 feature_name: "Private Service Connect network connectivity for homogeneous migrations"
 feature_slug: "private-service-connect-network-connectivity-for-homogeneous-migrations"
 latest_feature_date: "2025-08-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job"
   - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs"
   - "https://docs.cloud.google.com/database-migration/docs/custom-constraints"
+  - "https://docs.cloud.google.com/database-migration/docs/security-and-encryption"
 keywords:
   - "private"
   - "connect"
@@ -26,7 +27,7 @@ keywords:
 # Private Service Connect network connectivity for homogeneous migrations
 
 Product: Cloud Database Migration Service
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Homogeneous migrations to Cloud SQL for MySQL, Cloud SQL for PostgreSQL, and All
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
 - [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
 - [https://docs.cloud.google.com/database-migration/docs/custom-constraints](https://docs.cloud.google.com/database-migration/docs/custom-constraints)
+- [https://docs.cloud.google.com/database-migration/docs/security-and-encryption](https://docs.cloud.google.com/database-migration/docs/security-and-encryption)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
 - Source ID: `site-api-reference`
-- Final score: 188
+- Final score: 240
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
 - Source ID: `site-api-reference`
-- Final score: 188
+- Final score: 240
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/custom-constraints](https://docs.cloud.google.com/database-migration/docs/custom-constraints)
 - Source ID: `site-docs-root-2`
-- Final score: 172
+- Final score: 219
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - For example, you can restrict the types of migration jobs, the engine types for connection profiles, or the networks used for private connections.
 - Note: The exact condition depends on the structure of the generated CEL proto for ConnectionProfile. name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictDmsToPostgres resourceTypes : - datamigration.googleapis.com/ConnectionProfile methodTypes : - CREATE Example condition, validate against actual CEL proto fields. condition : "!has(resource.postgresql)" actionType : DENY displayName : Restrict connection profiles to PostgreSQL description : Only PostgreSQL connection profiles can be created.
 - This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: datamigration.googleapis.com/ConnectionProfile datamigration.googleapis.com/ConversionWorkspace datamigration.googleapis.com/MigrationJob datamigration.googleapis.com/PrivateConnection To learn more about Organization Policy, see Custom organization policies .
+
+### "Security and encryption \_|\_ Database Migration Service \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/security-and-encryption](https://docs.cloud.google.com/database-migration/docs/security-and-encryption)
+- Source ID: `site-docs-root-2`
+- Final score: 200
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Learn more in the sections that follow: Secure homogeneous migrations Select your homogeneous migration scenario to view security and encryption options that your migration supports: MySQL to Cloud SQL for MySQL CMEK You can migrate to Cloud SQL destinations where you configure CMEK to secure your data.
+- Connectivity encryption Database Migration Service supports SSL/TLS connectivity for your migration as well as other methods that accommodate differences in network access, such as IP allowlisting or using a forward SSH tunnel.
+- Connectivity encryption Database Migration Service supports SSL/TLS connectivity for your migration as well as other methods that accommodate differences in network access, such as IP allowlisting or using a forward SSH tunnel.
+- Connectivity encryption Database Migration Service supports SSL/TLS connectivity for your migration as well as other methods that accommodate differences in network access, such as IP allowlisting or using a forward SSH tunnel.
 

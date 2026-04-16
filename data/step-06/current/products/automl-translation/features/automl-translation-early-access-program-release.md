@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:52:53.933Z"
+generated_at: "2026-04-14T09:23:11.941Z"
 product_name: "AutoML Translation"
 product_slug: "automl-translation"
 feature_name: "AutoML Translation Early Access Program release"
 feature_slug: "automl-translation-early-access-program-release"
 latest_feature_date: "2018-01-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/translate/docs/access-control"
-  - "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade"
-  - "https://docs.cloud.google.com/translate/docs/advanced/batch-translation"
+  - "https://docs.cloud.google.com/translate/docs/overview"
+  - "https://docs.cloud.google.com/translate/docs/api-overview"
 keywords:
   - "released"
   - "program"
@@ -19,14 +19,12 @@ keywords:
   - "through"
   - "access"
   - "early"
-  - "translation"
-  - "automl"
 ---
 
 # AutoML Translation Early Access Program release
 
 Product: AutoML Translation
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +36,13 @@ AutoML Translation released through an Early Access Program (EAP).
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/translate/docs/access-control](https://docs.cloud.google.com/translate/docs/access-control)
-- [https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade](https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade)
-- [https://docs.cloud.google.com/translate/docs/advanced/batch-translation](https://docs.cloud.google.com/translate/docs/advanced/batch-translation)
+- [https://docs.cloud.google.com/translate/docs/overview](https://docs.cloud.google.com/translate/docs/overview)
+- [https://docs.cloud.google.com/translate/docs/api-overview](https://docs.cloud.google.com/translate/docs/api-overview)
 
 ## Supporting Pages
 
@@ -52,7 +50,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/translate/docs/access-control](https://docs.cloud.google.com/translate/docs/access-control)
 - Source ID: `site-docs-root`
-- Final score: 108
+- Final score: 65
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -62,30 +60,29 @@ Evidence snippets:
 - Role Permissions Cloud Translation API Service Agent ( roles/ cloudtranslate.serviceAgent ) Gives Cloud Translation Service Account access to consumer resources.
 - Control access with IAM The Cloud Translation - Advanced API (v3) uses Identity and Access Management (IAM) to control access.
 
-### Upgrade AutoML resources \_|\_ Cloud Translation \_|\_ Google Cloud Documentation
+### Overview of the Cloud Translation API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade](https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade)
+- URL: [https://docs.cloud.google.com/translate/docs/api-overview](https://docs.cloud.google.com/translate/docs/api-overview)
 - Source ID: `site-docs-root`
-- Final score: 104
+- Final score: 51
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Upgrade AutoML resources If you have existing resources that were created by using the deprecated AutoML API, you can upgrade those resources to manage them through the Cloud Translation - Advanced API without any service interruptions or additional costs.
-- During the upgrade, Cloud Translation copies your AutoML (legacy) resources, such as datasets and models, and creates new Cloud Translation (native) resources through the Cloud Translation API.
-- To access and manage the upgraded resources, you must use the Cloud Translation API, not the deprecated AutoML API.
-- Model evaluation Supports running evaluations against a new test set or from an existing dataset Supports running evaluations against a new test set only Cancel operations Supports canceling dataset import and model creation operations You cannot cancel long-running operations Google Cloud console behavior post upgrade If you upgrade at least one resource, the Google Cloud console switches to using the Cloud Translation API instead of the deprecated AutoML API.
+- Cloud Translation - Basic API The Basic edition is accessed through v2 client libraries , and requires minimal configuration, accepting API keys for authenticatation as well as service accounts.
+- Cloud Translation - Advanced API The Advanced edition is accessed through v3 client libraries and requires service account authentication that's integrated with IAM roles.
+- IAM roles : IAM roles let you secure your translation requests through Identity and Access Management.
+- Advanced API features Using Cloud Translation - Advanced API rather than Cloud Translation - Basic API gives you access to the following features that can make your translation solution more robust and better suited to your specific use case: Model selection and customization Cloud Translation - Advanced API model selection lets you dynamically select different models, including models that you customize to suit your particular application.
 
-### Batch requests (Advanced) \_|\_ Cloud Translation \_|\_ Google Cloud Documentation
+### "Google translation offerings \_|\_ Cloud Translation \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/translate/docs/advanced/batch-translation](https://docs.cloud.google.com/translate/docs/advanced/batch-translation)
-- Source ID: `site-docs-root`
-- Final score: 96
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/translate/docs/overview](https://docs.cloud.google.com/translate/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 50
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- TranslationServiceClient () Supported file types: https://cloud.google.com/translate/docs/supported-formats gcs source = { "input uri" : input uri } location = "us-central1" input configs element = { "gcs source" : gcs source , "mime type" : "text/plain" , # Can be "text/plain" or "text/html". } gcs destination = { "output uri prefix" : output uri } output config = { "gcs destination" : gcs destination } parent = f "projects/ { project id } /locations/ { location } " model path = "projects/ {} /locations/ {} /models/ {} " . format ( project id , location , model id # The location of AutoML model. ) Supported language codes: https://cloud.google.com/translate/docs/languages models = { "ja" : model path } # takes a target lang as key. operation = client . batch translate text ( request = { "parent" : parent , "source language code" : "en" , "target language codes" : [ "ja" ], # Up to 10 language codes here. "input configs" : [ input configs element ], "output config" : output config , "models" : models , } ) print ( "Waiting for operation to complete..." ) response = operation . result () Display the translation for each input text provided. print ( f "Total Characters: { response . total characters } " ) print ( f "Translated Characters: { response . translated characters } " ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/us-central1:batchTranslateText" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ project-number /locations/us-central1/operations/ operation-id ", "metadata": { "@type": "type.googleapis.com/google.cloud.translation.v3.BatchTranslateMetadata", "state": "RUNNING" } } Go Before trying this sample, follow the Go setup instructions in the Cloud Translation quickstart using client libraries .
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/us-central1:batchTranslateText" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ project-number /locations/us-central1/operations/ operation-id ", "metadata": { "@type": "type.googleapis.com/google.cloud.translation.v3.BatchTranslateMetadata", "state": "RUNNING" } } Go Before trying this sample, follow the Go setup instructions in the Cloud Translation quickstart using client libraries .
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/us-central1:batchTranslateText" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ project-number /locations/us-central1/operations/20191107-08251564068323-5d3895ce-0000-2067-864c-001a1136fb06", "metadata": { "@type": "type.googleapis.com/google.cloud.translation.v3.BatchTranslateMetadata", "state": "RUNNING" } } The response contains the ID for a long-running operation .
+- Depending on your use case, you can use the Cloud Translation API to apply those models programmatically, or access them through Vertex AI.
+- Here is a summary of the different translation options: Cloud Translation - Basic API provides quick, plug-and-play access to the standard Neural Machine Translation (NMT) model.
+- Cloud Translation - Advanced API provides access to an advanced Translation LLM (TLLM) model and the standard Neural Machine Translation (NMT) model.
+- You can use it to work with foundation models for translation-adjacent tasks, and customize them through Vertex fine tuning and embeddings.
 

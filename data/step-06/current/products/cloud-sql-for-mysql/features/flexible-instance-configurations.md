@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.937Z"
+generated_at: "2026-04-15T11:56:51.977Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "Flexible instance configurations"
@@ -9,18 +9,18 @@ latest_feature_date: "2021-03-05"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
-  - "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture"
+  - "https://docs.cloud.google.com/sql/docs/mysql/connect-overview"
+  - "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+  - "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore"
 keywords:
   - "flexible"
   - "instance"
   - "configurations"
   - "sql"
-  - "for"
   - "mysql"
   - "supports"
-  - "with"
+  - "custom"
+  - "vcpu"
 ---
 
 # Flexible instance configurations
@@ -38,53 +38,52 @@ Cloud SQL for MySQL supports flexible instance configurations with custom vCPU a
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- [https://docs.cloud.google.com/sql/docs/mysql/create-instance](https://docs.cloud.google.com/sql/docs/mysql/create-instance)
-- [https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture](https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture)
+- [https://docs.cloud.google.com/sql/docs/mysql/connect-overview](https://docs.cloud.google.com/sql/docs/mysql/connect-overview)
+- [https://docs.cloud.google.com/sql/docs/mysql/quotas](https://docs.cloud.google.com/sql/docs/mysql/quotas)
+- [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore)
 
 ## Supporting Pages
 
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
+### "Choose how to connect to Cloud SQL \_|\_ Cloud SQL for MySQL \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/connect-overview](https://docs.cloud.google.com/sql/docs/mysql/connect-overview)
 - Source ID: `site-docs-root`
-- Final score: 252
+- Final score: 33
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- March 05, 2021 Feature The following MySQL minor versions have been upgraded: MySQL 5.6.47 is upgraded to 5.6.50 MySQL 5.7.25 is upgraded to 5.7.32 Feature Cloud SQL for MySQL now supports flexible instance configurations.
-- By integrating your Cloud SQL for MySQL instance with Vertex AI, you can invoke online predictions and generate vector embeddings from models hosted in Vertex AI directly from your Cloud SQL instance.
-- Change In the new maintenance version [MySQL version].R20240207.00 00, the default value of the performance schema flag for all MySQL 8.0 instances with more than 15 GB of RAM will be set to on .
-- July 07, 2023 Feature Cloud SQL for MySQL now supports up to 500,000 tables for instances that meet the minimum hardware requirements of 32+ cores and 200G+ memory.
+- Remove networking options from an instance Cloud SQL supports the removal of the following networking options from an instance: Public IP from an instance with both private services access and public IP Public IP from an instance with public IP, private services access, and Private Service Connect Private Service Connect from an instance with both Private Service Connect and private services access Private Service Connect from an instance with Private Service Connect, private services access, and public IP Enable networking options for an instance You can enable Cloud SQL supports enabling the following connection options for instances: Private services access on an instance with public IP only Private Service Connect on an instance with private services access only Private Service Connect on an instance with both private services access and public IP Public IP on an instance with private services access only Limitations You can't create an instance with both a public IP address and Private Service Connect.
+- Configuration options Cloud SQL Auth Proxy , or Cloud SQL Language Connectors, including Cloud SQL Java connector Cloud SQL Python connector Cloud SQL Go connector Cloud SQL Node.js connector The following Google Cloud services use an embedded Cloud SQL Auth Proxy when you connect to a Cloud SQL instance over public IP address: Cloud Run App Engine flexible environment App Engine standard environment To configure SSL/TLS certificates on the Cloud SQL instance and for your client, do the following: Choose a server CA mode for your instance .
+- Configuration options The following types of private networking configurations are supported: Private services access : connect to Cloud SQL instances from a single VPC network based on networking peering.
+- Supported features The following table lists the features that Cloud SQL supports when you connect to an instance that's configured with one or both of the private networking options.
 
-### Create instances \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
+### Quotas and limits \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/create-instance](https://docs.cloud.google.com/sql/docs/mysql/create-instance)
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/quotas](https://docs.cloud.google.com/sql/docs/mysql/quotas)
 - Source ID: `site-docs-root`
-- Final score: 240
+- Final score: 33
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Memory must be: 0.9 to 6.5 GB per vCPU A multiple of 256 MB At least 3.75 GB (3840 MB) For example, the following command creates a Cloud SQL Enterprise edition instance with two vCPUs and 7,680 MB of memory: gcloud sql instances create myinstance \ --database-version = MYSQL 8 0 \ --cpu = 2 \ --memory = 7680MB \ --region = us-central1 The following command creates a Cloud SQL Enterprise Plus edition instance with four cores: gcloud sql instances create myinstance \ --database-version = MYSQL 8 0 31 \ --tier = db-perf-optimized-N-4 \ --edition = ENTERPRISE PLUS \ --region = us-central1 The default value for REGION is us-central1 .
-- If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you selected doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead. .
-- If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you specify doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead..
-- If you specify MySQL 8.4 for the database version, but the region you specify doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead.
+- For Cloud SQL, quotas are part of a system that do the following: Monitor your use or consumption of Cloud SQL instances Restrict your consumption of these instances for reasons including ensuring fairness and reducing spikes in usage Maintain configurations that enforce prescribed restrictions automatically Provide a means to make or request changes to the quota When a quota is exceeded, in most cases, the system blocks access to the relevant instance immediately, and the task that you're trying to perform fails.
+- If the number of active tables is significantly larger than both the Cloud SQL table defaults and the open tables recommendation by MySQL, then Cloud SQL recommends configuring the table open cache and table definition cache database flags with your instance's active table count.
+- Table limit Cloud SQL for MySQL has a limit of 50,000 tables by default, or 500,000 tables for an instance if you meet the minimum hardware requirements of at least 32 cores and a minimum of 200G of memory.
+- Update Operation: We allow customers to switch the network of instances, so we need new forwarding rules in the new network.
 
-### "Configure performance capture \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
+### "Restore an instance overview \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture](https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture)
-- Source ID: `site-iam-reference`
-- Final score: 236
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore)
+- Source ID: `site-docs-reference-3`
+- Final score: 32
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you specify doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead.
-- If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you specify doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead.
-- If you specify MYSQL 8 4 for the database version, but the region you specify doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead.
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID " Select-Object -Expand Content You should receive a JSON response similar to the following: { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID ", "status": "PENDING", "user": "user@example.com", "insertTime": " INSERT TIME ", "operationType": "UPDATE", "name": " OPERATION ID ", "targetId": " INSTANCE ID ", "selfLink": "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID ", "targetProject": " PROJECT ID " } REST v1beta4 HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { "performanceCaptureConfig": { "enabled": false } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- If your source instance had custom backup configurations or was using enhanced backups, then you'll need to update the backup configurations after restore is complete.
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Restore an instance overview Stay organized with collections Save and categorize content based on your preferences.
+- MySQL PostgreSQL SQL Server Cloud SQL lets you restore your instances from a backup, or by performing point-in-time recovery (PITR).
+- For customer-managed encryption key (CMEK)-enabled instances , binary logs are encrypted using the latest version of the CMEK.
 

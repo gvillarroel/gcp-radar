@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.517Z"
+generated_at: "2026-04-14T23:59:44.289Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Crashlytics export to Cloud Logging"
 feature_slug: "crashlytics-export-to-cloud-logging"
 latest_feature_date: "2026-01-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.handlers.handlers.CloudLoggingHandler"
   - "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
-  - "https://docs.cloud.google.com/logging/docs/release-notes"
+  - "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client"
+  - "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
 keywords:
   - "crashlytics"
   - "export"
-  - "to"
   - "logging"
-  - "and"
   - "optional"
   - "firebase"
   - "sessions"
+  - "can"
+  - "exported"
 ---
 
 # Crashlytics export to Cloud Logging
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,35 +38,21 @@ Crashlytics data and optional Firebase sessions data can be exported to Cloud Lo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.handlers.handlers.CloudLoggingHandler](https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.handlers.handlers.CloudLoggingHandler)
 - [https://docs.cloud.google.com/logging/docs/api/v2/resource-list](https://docs.cloud.google.com/logging/docs/api/v2/resource-list)
-- [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
+- [https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client](https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client)
+- [https://docs.cloud.google.com/logging/docs/write-query-log-entries-python](https://docs.cloud.google.com/logging/docs/write-query-log-entries-python)
 
 ## Supporting Pages
-
-### "Class CloudLoggingHandler (3.15.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.handlers.handlers.CloudLoggingHandler](https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.handlers.handlers.CloudLoggingHandler)
-- Source ID: `site-python-reference`
-- Final score: 172
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- If not given, will be inferred from the environment. labels Optional[dict] Additional labels to attach to logs. stream Optional[IO] Stream to be used by the handler. close close () Closes the log handler and cleans up all Transport objects used. emit emit ( record ) Actually log the specified logging record.
-- See https://docs.python.org/2/library/logging.html#handler-objects Parameter Name Description record logging.LogRecord The record to be logged. flush flush () Forces the Transport object to submit any pending log records.
-- IO ] = None , kwargs ) Parameters Name Description client logging v2.client.Client The authenticated Google Cloud Logging client for this handler to use. name str the name of the custom log in Cloud Logging.
-- Home Documentation Developer tools Python Client libraries Send feedback Class CloudLoggingHandler (3.15.0) Stay organized with collections Save and categorize content based on your preferences.
 
 ### "Monitored resources and services \_|\_ Cloud Logging \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/logging/docs/api/v2/resource-list](https://docs.cloud.google.com/logging/docs/api/v2/resource-list)
 - Source ID: `site-docs-reference`
-- Final score: 166
+- Final score: 68
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,16 +61,30 @@ Evidence snippets:
 - Can be 'UNKNOWN' if the backend wasn't assigned. backend scope type : The type of the scope of the backend group, one of ['ZONE'; 'REGION'; 'UNKNOWN' - in case the backend wasn't assigned]. livestream.googleapis.com/Channel Live Stream API Channel A Live Stream API Channel. resource container : The identifier of the GCP project associated with this channel resource. location : The GCP location where the channel resource resides. channel id : ID of the channel resource. loadbalancing.googleapis.com/ExternalNetworkLoadBalancerRule External Passthrough Network Load Balancer Rule A set of definitions for multi protocol network load balancing behavior. project id : The identifier of the GCP project associated with this resource, such as "my-project". region : The Google Cloud Platform region of the backend instance that connected to network load balancing forwarding rule. backend network name : The network name of the NIC of the instance that received the Net LB flow. backend target type : The type of the backend target that handled the connection. backend service name : The name of the backend service that handled the connection. primary target pool : The name of the primary target pool. target pool : The name of the target pool. forwarding rule name : The name of the forwarding rule. backend group name : The name of the backend group that handled the connection. backend group type : The type of the backend group that handled the connection. backend group scope : The scope (zone or region) of the backend group that handled the connection. backend subnetwork name : The name of the subnetwork of the instance that handled the connection. backend zone : The zone of the endpoint (VM instance) that handled the connection. loadbalancing.googleapis.com/InternalNetworkLoadBalancerRule Internal Passthrough Network Load Balancer Rule A set of definitions for multi protocol internal load balancing behavior. project id : The identifier of the GCP project associated with this resource, such as "my-project". region : The Google Cloud Platform region of the backend instance that connected to network load balancing forwarding rule. backend network name : The network name of the NIC of the instance that received the Net LB flow. backend service name : The name of the backend service that handled the connection. forwarding rule name : The name of the forwarding rule. backend group name : The name of the backend group that handled the connection. backend group type : The type of the backend group that handled the connection. backend group scope : The scope (zone or region) of the backend group that handled the connection. backend subnetwork name : The name of the subnetwork of the instance that handled the connection. logging bucket Logging Bucket An export bucket in Cloud Logging. project id : The identifier of the GCP project associated with this resource, such as "my-project". bucket id : The name of the log bucket. location : The location of the log bucket. source resource container : The source resource container (e.g. project, folder, organization) of the log entry that is destined for the log bucket.
 - Any labels in the Cloud Logging monitored-resource type are not available in the corresponding log-based metric. bigquery resource billing account client auth config brand client auth config client cloud debugger resource cloudkms cryptokey cloudkms cryptokeyversion cloudkms keyring datastore database datastore index deployment deployment manager manifest deployment manager operation deployment manager resource deployment manager type folder gce autoscaler gce backend bucket gce backend service gce client ssl policy gce commitment gce firewall rule gce forwarding rule gce health check gce image gce instance group gce instance group manager gce instance template gce license gce network gce operation gce packet mirroring gce project gce reserved address gce route gce router gce snapshot gce ssl certificate gce target http instance gce target http proxy gce target https proxy gce target pool gce target ssl proxy gce url map genomics dataset genomics operation gke cluster gke nodepool iam role logging log managed service ml job organization project reported errors service account service config service rollout serviceusage service serviceuser service testservice matrix vpn tunnel firebaserules ruleset firebaserules release Mappings to other Cloud Monitoring resource types The following monitored-resource types in Logging map to a resource type other than global in Monitoring: Logging monitored-resource type Monitoring monitored-resource type Label mappings dataflow step dataflow job project id maps to project id . job id does not exist in Monitoring. step id does not exist in Monitoring. job name maps to job name . region maps to region . container Note: Both container and its Cloud Monitoring monitored-resource type gke container are deprecated.
 
-### Logging release notes \_|\_ Google Cloud Documentation
+### "Quickstart: Write and query log entries using a Python script \_|\_ Cloud\
 
-- URL: [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
+- URL: [https://docs.cloud.google.com/logging/docs/write-query-log-entries-python](https://docs.cloud.google.com/logging/docs/write-query-log-entries-python)
 - Source ID: `site-docs-root`
-- Final score: 142
+- Final score: 63
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 02, 2026 Libraries Java 3.24.0 (2026-01-26) Features Bump minor version ( #1923 ) ( ad7958c ) January 29, 2026 Feature You can now export your Crashlytics data and (optionally) Firebase sessions data to Cloud Logging.
-- For information about how to export your Crashlytics data, see Export Crashlytics data to Cloud Logging , and for information about how you can use this data, see What can you do with Crashlytics data in Cloud Logging .
-- Feature Exporting logs from organizations, folders, and billing accounts : The gcloud logging command-line tool now supports creating log sinks to export audit logs from organizations, folders, and billing accounts.
-- Feature Cloud Logging is now available in Beta release, allowing you to configure, visualize, analyze and export your Google Compute Engine and Google App Engine logs.
+- The contents are similar to: { "insertId" : "yf1cshfoivz48" , "logName" : "projects/loggingproject-222616/logs/my-log" , "receiveTimestamp" : "2018-11-15T23:06:14.738729911Z" , "resource" :{ "labels" :{ "project id" : "loggingproject-222616" }, "type" : "global" }, "severity" : "ERROR" , "textPayload" : "Goodbye, world!" , "timestamp" : "2018-11-15T23:06:14.738729911Z" } Because the severity level of ERROR is greater than the severity level of INFO , the log entry containing the string '"Goodbye, world!"' is exported to the sink destination.
+- To create the sink mysink that exports all log entries with a severity of at least INFO to the Cloud Storage bucket myloggingproject-1 , run the following command: python export . py create mysink myloggingproject - 1 "severity>=INFO" The script returns the following: Created sink mysink To view your sinks, run the export.py script with the list option: python export . py list The script returns the following: mysink: severity>=INFO -> storage.googleapis.com/myloggingproject-1 Update destination permissions The permissions of the destination, in this case, your Cloud Storage bucket, aren't modified when you create a sink by using the export.py script.
+- Clone source To configure your Cloud Shell for this quickstart, do the following: Clone the GitHub project python-logging : git clone https : // github . com / GoogleCloudPlatform / python - docs - samples The directory samples/snippets contains the two scripts used in this quickstart: snippets.py lets you manage entries in a log. export.py lets you manage log exports.
+- To view the data that was exported by your sink, click the folder name my-log , and then continue clicking through the year, month, and day subfolders until you reach a file that ends with json : The JSON file contains the log entries that were exported to your Cloud Storage bucket.
+
+### Class Client (3.15.0) \_|\_ Python client libraries \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client](https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client)
+- Source ID: `site-python-reference`
+- Final score: 61
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Parameters Name Description name str the name of the sink to be constructed. filter Optional[str] the advanced logs filter expression defining the entries exported by the sink.
+- See https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.sinks Methods Client Client ( , project = None , credentials = None , http = None , use grpc = None , client info = None , client options = None ) Parameters Name Description project Optional[str] the project which the client acts on behalf of.
+- See https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.sinks/list Parameters Name Description parent Optional[str] The parent resource whose sinks are to be listed: :: "projects/[PROJECT ID]" "organizations/[ORGANIZATION ID]" "billingAccounts/[BILLING ACCOUNT ID]" "folders/[FOLDER ID]".
+- Parameters Name Description name str The name of the logger to be constructed. resource Optional[ logging v2.Resource ] a monitored resource object representing the resource the code was run on.
 

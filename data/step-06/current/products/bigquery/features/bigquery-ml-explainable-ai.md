@@ -1,58 +1,89 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.755Z"
+generated_at: "2026-04-15T12:48:36.701Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery ML Explainable AI"
 feature_slug: "bigquery-ml-explainable-ai"
 latest_feature_date: "2022-01-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey"
+  - "https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial"
+  - "https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial"
+  - "https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial"
 keywords:
-  - "feature attribution score"
-  - "explainable predictions"
-  - "feature attributions"
-  - "feature attribution"
-  - "prediction explanation"
-  - "AI explainability"
-  - "ML.EXPLAIN_PREDICT"
-  - "Explainable AI"
+  - "bigquery"
+  - "ml"
+  - "explainable"
+  - "ai"
+  - "helps"
+  - "interpret"
+  - "prediction"
+  - "forecasting"
 ---
 
 # BigQuery ML Explainable AI
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Explainable AI in BigQuery ML provides large-scale interpretation of prediction and forecasting outputs; BigQuery ML added explainable AI capabilities that attribute prediction results to individual input features for classification and regression models.
+Explainable AI in BigQuery ML helps interpret prediction and forecasting results at scale; Explainable AI in BigQuery ML shows how input features contribute to classification and regression predictions.
 
 ## Extended Definition
 
-Explainable AI in BigQuery ML provides large-scale interpretation of prediction and forecasting outputs; BigQuery ML added explainable AI capabilities that attribute prediction results to individual input features for classification and regression models.
+Explainable AI in BigQuery ML helps interpret prediction and forecasting results at scale; Explainable AI in BigQuery ML shows how input features contribute to classification and regression predictions.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey)
+- [https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial](https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial)
+- [https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial](https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial)
+- [https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial](https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial)
 
 ## Supporting Pages
 
-### "End-to-end user journeys for ML models \_|\_ BigQuery \_|\_ Google Cloud\
+### Use BigQuery ML to predict penguin weight \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey)
-- Source ID: `site-docs-root`
-- Final score: 34
+- URL: [https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial](https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial)
+- Source ID: `site-docs-reference-2`
+- Final score: 81
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Model use user journeys The following table describes the statements and functions you can use to evaluate, explain, and get predictions from models: Model category Model type Evaluation Inference AI explanation Model monitoring Supervised learning Linear & logistic regression ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.ADVANCED WEIGHTS 5 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Deep neural networks (DNN) ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.ADVANCED WEIGHTS 5 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Wide & Deep networks ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.ADVANCED WEIGHTS 5 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Boosted trees ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.FEATURE IMPORTANCE 4 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Random forest ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.TRANSFORM ML.EXPLAIN PREDICT 3 ML.GLOBAL EXPLAIN ML.FEATURE IMPORTANCE 4 ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE AutoML classification & regression ML.EVALUATE ML.CONFUSION MATRIX 1 ML.ROC CURVE 2 ML.PREDICT ML.GLOBAL EXPLAIN ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Unsupervised learning K-means ML.EVALUATE ML.PREDICT ML.DETECT ANOMALIES ML.TRANSFORM N/A ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Matrix factorization ML.EVALUATE ML.RECOMMEND ML.GENERATE EMBEDDING N/A N/A Principal component analysis (PCA) ML.EVALUATE ML.PREDICT ML.GENERATE EMBEDDING ML.DETECT ANOMALIES ML.TRANSFORM N/A ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Autoencoder ML.EVALUATE ML.PREDICT ML.GENERATE EMBEDDING ML.DETECT ANOMALIES ML.RECONSTRUCTION LOSS ML.TRANSFORM N/A ML.DESCRIBE DATA ML.VALIDATE DATA DRIFT ML.VALIDATE DATA SKEW ML.TFDV DESCRIBE ML.TFDV VALIDATE Transform-only Transform-only N/A ML.TRANSFORM N/A N/A 1 ML.CONFUSION MATRIX is only applicable to classification models.
-- 3 The ML.EXPLAIN PREDICT function encompasses the ML.PREDICT function because its output is a superset of the results of ML.PREDICT .
-- 4 To understand the difference between ML.GLOBAL EXPLAIN and ML.FEATURE IMPORTANCE , see the Explainable AI overview .
+- Select the model you'll use for predictions. read gbq model loads model data from BigQuery, but you could also use the model object object from previous steps. model = bpd . read gbq model ( your model id , For example: "bqml tutorial.penguins model", ) Load data from BigQuery bq df = bpd . read gbq ( "bigquery-public-data.ml datasets.penguins" ) Use 'contains' function to filter by island containing the string "Biscoe". biscoe data = bq df . loc [ bq df [ "island" ] . str . contains ( "Biscoe" )] result = model . predict ( biscoe data ) Expected output results: predicted body mass g species island culmen length mm culmen depth mm body mass g flipper length mm sex 23 4681.782896 Gentoo penguin (Pygoscelis papua) Biscoe <NA> <NA> <NA> <NA> <NA> 332 4740.7907 Gentoo penguin (Pygoscelis papua) Biscoe 46.2 14.4 214.0 4650.0 <NA> 160 4731.310452 Gentoo penguin (Pygoscelis papua) Biscoe 44.5 14.3 216.0 4100.0 <NA> The results should look similar to the following: Explain the prediction results SQL To understand why the model is generating these prediction results, you can use the ML.EXPLAIN PREDICT function .
+- For more information, see Set up ADC for a local development environment . import bigframes.pandas as bpd Select the model you will be evaluating. read gbq model loads model data from BigQuery, but you could also use the model object from the previous steps. model = bpd . read gbq model ( your model id , # For example: "bqml tutorial.penguins model" ) Score the model with input data defined in an earlier step to compare model predictions on feature columns to true labels in label columns. score = model . score ( feature columns , label columns ) Expected output results: index mean absolute error mean squared error mean squared log error median absolute error r2 score explained variance 0 227.012237 81838.159892 0.00507 173.080816 0.872377 0.872377 1 rows x 6 columns The results should look similar to the following: Because you performed a linear regression, the results include the following columns: mean absolute error mean squared error mean squared log error median absolute error r2 score explained variance An important metric in the evaluation results is the R 2 score .
+- For more information, see BigQuery ML explainable AI overview .
+- Using the trained model and utilizing data specific to Biscoe Island, explain the predictions of the top 3 features explained = model . predict explain ( biscoe data , top k features = 3 ) Expected results: predicted body mass g top feature attributions baseline prediction value prediction value approximation error species island culmen length mm culmen depth mm flipper length mm body mass g sex 0 5413.510134 [{'feature': 'island', 'attribution': 7348.877... -5320.222128 5413.510134 0.0 Gentoo penguin (Pygoscelis papua) Biscoe 45.2 16.4 223.0 5950.0 MALE 1 4768.351092 [{'feature': 'island', 'attribution': 7348.877... -5320.222128 4768.351092 0.0 Gentoo penguin (Pygoscelis papua) Biscoe 46.5 14.5 213.0 4400.0 FEMALE 2 3235.896372 [{'feature': 'island', 'attribution': 7348.877... -5320.222128 3235.896372 0.0 Adelie Penguin (Pygoscelis adeliae) Biscoe 37.7 16.0 183.0 3075.0 FEMALE 3 5349.603734 [{'feature': 'island', 'attribution': 7348.877... -5320.222128 5349.603734 0.0 Gentoo penguin (Pygoscelis papua) Biscoe 46.4 15.6 221.0 5000.0 MALE 4 4637.165037 [{'feature': 'island', 'attribution': 7348.877... -5320.222128 4637.165037 0.0 Gentoo penguin (Pygoscelis papua) Biscoe 46.1 13.2 211.0 4500.0 FEMALE For linear regression models, Shapley values are used to generate feature attribution values for each feature in the model.
+
+### "Forecast a single time series with a multivariate model \_|\_ BigQuery \_\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial](https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial)
+- Source ID: `site-docs-reference`
+- Final score: 68
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Go to BigQuery In the query editor, paste in the following query and click Run : CREATE OR REPLACE MODEL bqml tutorial.seattle pm25 xreg model OPTIONS ( MODEL TYPE = 'ARIMA PLUS XREG' , time series timestamp col = 'date' , # Identifies the column that contains time points time series data col = 'pm25' ) # Identifies the column to forecast AS SELECT date , # The column that contains time points pm25 , # The column to forecast temperature , # Temperature input to use in forecasting wind speed # Wind speed input to use in forecasting FROM bqml tutorial.seattle air quality daily WHERE date BETWEEN DATE ( '2012-01-01' ) AND DATE ( '2020-12-31' ); The query takes about 20 seconds to complete, after which you can access the seattle pm25 xreg model model.
+- In time series forecasting, the prediction interval, as represented by the prediction interval lower bound and prediction interval upper bound column values, is as important as the forecast value column value.
+- Go to BigQuery In the query editor, paste in the following query and click Run : CREATE TABLE bqml tutorial.seattle air quality daily AS WITH pm25 daily AS ( SELECT avg ( arithmetic mean ) AS pm25 , date local AS date FROM bigquery-public-data.epa historical air quality.pm25 nonfrm daily summary WHERE city name = 'Seattle' AND parameter name = 'Acceptable PM2.5 AQI & Speciation Mass' GROUP BY date local ), wind speed daily AS ( SELECT avg ( arithmetic mean ) AS wind speed , date local AS date FROM bigquery-public-data.epa historical air quality.wind daily summary WHERE city name = 'Seattle' AND parameter name = 'Wind Speed - Resultant' GROUP BY date local ), temperature daily AS ( SELECT avg ( first max value ) AS temperature , date local AS date FROM bigquery-public-data.epa historical air quality.temperature daily summary WHERE city name = 'Seattle' AND parameter name = 'Outdoor Temperature' GROUP BY date local ) SELECT pm25 daily . date AS date , pm25 , wind speed , temperature FROM pm25 daily JOIN wind speed daily USING ( date ) JOIN temperature daily USING ( date ); Visualize the input data Before creating the model, you can optionally visualize your input time series data to get a sense of the distribution.
+- You also create the following columns to use as input variables for the model: date : the date of the observation pm25 the average PM2.5 value for each day wind speed : the average wind speed for each day temperature : the highest temperature for each day In the following GoogleSQL query, the FROM bigquery-public-data.epa historical air quality. daily summary clause indicates that you are querying the daily summary tables in the epa historical air quality dataset.
+
+### "Forecast a single time series with an ARIMA_PLUS univariate model \_|\_\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial](https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial)
+- Source ID: `site-docs-reference`
+- Final score: 68
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- In time series forecasting, the prediction interval, as represented by the prediction interval lower bound and prediction interval upper bound column values, is as important as the forecast value column value.
+- For more information, see Set up ADC for a local development environment . ex pred = model . predict explain ( horizon = 30 , confidence level = 0.8 ) print ( ex pred . head ( 4 )) Expected output: time series timestamp time series type time series data time series adjusted data standard error confidence level prediction interval lower bound prediction interval upper bound trend seasonal period yearly seasonal period quarterly seasonal period monthly seasonal period weekly seasonal period daily holiday effect spikes and dips step changes residual 0 2016-08-01 00:00:00+00:00 history 1711.0 505.716474 206.939556 <NA> <NA> <NA> 0.0 <NA> <NA> <NA> 169.611938 <NA> <NA> <NA> 1205.283526 336.104536 1 2016-08-02 00:00:00+00:00 history 2140.0 623.137701 206.939556 <NA> <NA> <NA> 336.104428 <NA> <NA> <NA> 287.033273 <NA> <NA> <NA> 1205.283526 311.578773 2 2016-08-03 00:00:00+00:00 history 2890.0 1008.655091 206.939556 <NA> <NA> <NA> 563.514213 <NA> <NA> <NA> 445.140878 <NA> <NA> <NA> 1205.283526 676.061383 3 2016-08-04 00:00:00+00:00 history 3161.0 1389.40959 206.939556 <NA> <NA> <NA> 986.317236 <NA> <NA> <NA> 403.092354 <NA> <NA> <NA> 1205.283526 566.306884 4 2016-08-05 00:00:00+00:00 history 2702.0 1394.395741 206.939556 <NA> <NA> <NA> 1248.707386 <NA> <NA> <NA> 145.688355 <NA> <NA> <NA> 1205.283526 102.320733 5 2016-08-06 00:00:00+00:00 history 1663.0 437.09243 206.939556 <NA> <NA> <NA> 1188.59004 <NA> <NA> <NA> -751.49761 <NA> <NA> <NA> 1205.283526 20.624044 If you would like to visualize the results, you can use Data Studio as described in the Visualize the input data section to create a chart, using the following columns as metrics: time series data prediction interval lower bound prediction interval upper bound trend seasonal period weekly step changes Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources.
+- For more information, see Set up ADC for a local development environment . prediction = model . predict ( horizon = 30 , confidence level = 0.8 ) print ( prediction . peek ()) Expected output: forecast timestamp forecast value standard error confidence level prediction interval lower bound prediction interval upper bound confidence interval lower bound confidence interval upper bound 11 2017-08-13 00:00:00+00:00 1845.439732 328.060405 0.8 1424.772257 2266.107208 1424.772257 2266.107208 29 2017-08-31 00:00:00+00:00 2615.993932 431.286628 0.8 2062.960849 3169.027015 2062.960849 3169.027015 7 2017-08-09 00:00:00+00:00 2639.285993 300.301186 0.8 2254.213792 3024.358193 2254.213792 3024.358193 25 2017-08-27 00:00:00+00:00 1853.735689 410.596551 0.8 1327.233216 2380.238162 1327.233216 2380.238162 1 2017-08-03 00:00:00+00:00 2621.33159 241.093355 0.8 2312.180802 2930.482379 2312.180802 2930.482379 The output rows are in chronological order by the forecast timestamp column value.
+- Read and visualize the time series you want to forecast. df = bpd . read gbq ( "bigquery-public-data.google analytics sample.ga sessions " ) parsed date = bpd . to datetime ( df . date , format = "%Y%m %d " , utc = True ) parsed date . name = "parsed date" visits = df [ "totals" ] . struct . field ( "visits" ) visits . name = "total visits" total visits = visits . groupby ( parsed date ) . sum () Expected output: total visits.head() parsed date 2016-08-01 00:00:00+00:00 1711 2016-08-02 00:00:00+00:00 2140 2016-08-03 00:00:00+00:00 2890 2016-08-04 00:00:00+00:00 3161 2016-08-05 00:00:00+00:00 2702 Name: total visits, dtype: Int64 total visits . plot . line () The result is similar to the following: Create the time series model Create a time series model to forecast total site visits as represented by totals.visits column, and train it on the Google Analytics 360 data.
 

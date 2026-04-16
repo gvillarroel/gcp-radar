@@ -1,49 +1,50 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:06:37.224Z"
+generated_at: "2026-04-14T04:07:01.291Z"
 product_name: "Anthos Config Management"
 product_slug: "anthos-config-management"
 feature_name: "ConfigManagement spec.git fields"
 feature_slug: "configmanagement-spec-git-fields"
 latest_feature_date: "2023-05-05"
 deprecation_date: "2024-05-15"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo"
-  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes"
-  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
 keywords:
-  - "ConfigManagement object spec.git"
-  - "ConfigManagement git config"
-  - "ConfigManagement spec.git"
-  - "spec.git shutdown"
-  - "spec.git fields"
-  - "spec.git deprecated"
-  - "spec.git"
+  - "configmanagement"
+  - "spec"
+  - "git"
+  - "fields"
+  - "object"
+  - "provide"
+  - "based"
+  - "sync"
 ---
 
 # ConfigManagement spec.git fields
 
 Product: Anthos Config Management
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The `spec.git` fields on the ConfigManagement object were deprecated and are scheduled for shutdown on or after May 15, 2024; deprecated on 2024-05-15.
+The ConfigManagement object's spec.git fields provide Git-based sync configuration that is being replaced by the RootSync API; deprecated on 2024-05-15.
 
 ## Extended Definition
 
-The `spec.git` fields on the ConfigManagement object were deprecated and are scheduled for shutdown on or after May 15, 2024; deprecated on 2024-05-15.
+The ConfigManagement object's spec.git fields provide Git-based sync configuration that is being replaced by the RootSync API; deprecated on 2024-05-15.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo)
-- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes)
-- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync)
 
 ## Supporting Pages
 
@@ -51,40 +52,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo)
 - Source ID: `site-docs-root`
-- Final score: 46
+- Final score: 358
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Your ConfigManagement object should resemble the following: config-management.yaml apiVersion : configmanagement.gke.io/v1 kind : ConfigManagement metadata : name : config-management spec : enableMultiRepo : true Apply the changes: kubectl apply -f config-management.yaml Legacy fields are now disabled without affecting the RootSync object generated from the spec.git fields of your ConfigManagement object.
-- If you are still using the spec.git fields, this page can be used to migrate your Git configuration to a RootSync .
-- You can't create new configurations that use the spec.git fields to manage a Git repository.
-- In the ConfigManagement object, remove the spec.enableLegacyFields and spec.git fields.
+- ConfigManagement field RootSync field spec.git.gcpServiceAccountEmail spec.git.gcpServiceAccountEmail spec.git.syncRepo spec.git.repo spec.git.syncBranch spec.git.branch spec.git.policyDir spec.git.dir spec.git.syncWait spec.git.period spec.git.syncRev spec.git.revision spec.git.secretType spec.git.auth git-creds (this is a fixed value in ConfigManagement objects) spec.git.secretRef.name spec.sourceFormat spec.sourceFormat spec.git.proxy.httpProxy or spec.git.proxy.httpsProxy spec.git.proxy What's next Configure syncing from multiple repositories Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Migrate to RootSync If your ConfigManagement object is using spec.git but spec.enableMultiRepo is set to false, follow this guide to enable the RootSync and RepoSync APIs.
+- If your ConfigManagement object is using spec.git but spec.enableMultiRepo is set to false, follow the instructions to Migrate to RootSync .
 
-### Config Sync release notes \_|\_ Google Cloud Documentation
+### "Configure syncing from more than one source of truth \_|\_ Config Sync \_\
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes)
-- Source ID: `site-docs-root-2`
-- Final score: 34
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- May 05, 2023 1.15.0 Deprecated The spec.git fields of the ConfigManagement object are deprecated and are scheduled for shut down on or after May 15, 2024.
-- 1.17.3 Fixed Fixed a regression introduced in 1.16.0 that limits the length of the Secret name referenced in the spec.git.secretRef.name field of the RootSync object.
-- November 16, 2020 1.5.2 Issue A leading forward slash "/" in spec.git.policyDir will not match anything in Config Sync versions 1.5.2 and 1.6.0.
-- January 08, 2021 1.6.0 Issue Config Sync unintentionally started using the absolute path in the file system with spec.git.policyDir .
-
-### RootSync and RepoSync fields \_|\_ Config Sync \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields)
-- Source ID: `site-docs-root-2`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories)
+- Source ID: `site-docs-root`
+- Final score: 237
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Unmanaged root-sync fields The following fields of the RootSync named root-sync are not managed by the Fleet (Hub) service and can be edited with any Kubernetes client: Key Description spec.helm All fields for Helm repository configuration. spec.override All fields for overriding default configurations. spec.git.noSSLVerify Specifies whether to enable or disable SSL certificate verification for Git.
-- The default is false . spec.git.caCertSecretRef.name The name of the Secret containing the certificate authority (CA) certificate for a Git repository. spec.oci.caCertSecretRef.name The name of the Secret containing the certificate authority (CA) certificate for an OCI repository.
-- When using a hash, it must be a full hash, and not an abbreviated form. spec.git.secretRef.name The name of the Secret used to connect to the Git source of truth. spec.git.noSSLVerify 1 noSSLVerify specifies whether to enable or disable the SSL certificate verification.
-- If both fields are used, spec.git.revision field takes precedence over spec.git.branch . spec.git.dir The absolute path in the Git repository to the root directory that contains the configuration that you want to sync.
+- The Secret's name must match the spec.git.secretRef name you defined in repo-sync.yaml .
+- The Secret's name must match the spec.git.secretRef name you defined in repo-sync.yaml .
+- The Secret's name must match the spec.git.secretRef name you defined in root-sync.yaml .
+- To learn more about how to configure the Secret object for the CA certificate, see Configure Certificate Authority For an explanation of the fields and a complete list of fields that you can add to the spec field, see RootSync fields .
+
+### Safe rollouts with Config Sync \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync)
+- Source ID: `site-docs-root`
+- Final score: 233
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- For non-production clusters, create the RootSync or RepoSync object with the spec.git.branch field set to staging .
+- For production clusters, create the RootSync or RepoSync object with the spec.git.branch parameter set to main .
+- You implement this method by specifying the commit, tag, or hash in the spec.git.revision field of the RootSync or RepoSync custom resource .
+- If you need to roll back a change, change the spec.git.revision field back to its former value.
 

@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:14.543Z"
+generated_at: "2026-04-13T08:22:23.524Z"
 product_name: "Workflows"
 product_slug: "workflows"
 feature_name: "Callback endpoints"
 feature_slug: "callback-endpoints"
 latest_feature_date: "2022-01-24"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/workflows/docs/tutorials/create-wait-for-events-callbacks"
+  - "https://docs.cloud.google.com/workflows/docs/tutorials/callbacks-firestore"
+  - "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
 keywords:
-  - "callback"
-  - "endpoints"
-  - "provide"
-  - "workflow"
   - "accessible"
-  - "for"
   - "receiving"
+  - "callback"
   - "external"
+  - "provide"
+  - "calls"
+  - "endpoints"
+  - "workflow"
 ---
 
 # Callback endpoints
 
 Product: Workflows
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Callback endpoints provide workflow-accessible endpoints for receiving external 
 
 Callback endpoints provide workflow-accessible endpoints for receiving external calls during execution.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/workflows/docs/tutorials/create-wait-for-events-callbacks](https://docs.cloud.google.com/workflows/docs/tutorials/create-wait-for-events-callbacks)
+- [https://docs.cloud.google.com/workflows/docs/tutorials/callbacks-firestore](https://docs.cloud.google.com/workflows/docs/tutorials/callbacks-firestore)
+- [https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets](https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Wait for events using callbacks and Eventarc triggers \_|\_ Workflows \_\
+
+- URL: [https://docs.cloud.google.com/workflows/docs/tutorials/create-wait-for-events-callbacks](https://docs.cloud.google.com/workflows/docs/tutorials/create-wait-for-events-callbacks)
+- Source ID: `site-docs-root-2`
+- Final score: 206
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- This is an overview of the entire process: Primary workflow: A callback-event-sample workflow creates callback endpoints for two event sources: a Pub/Sub topic and a Cloud Storage bucket.
+- Primary workflow: The callback-event-sample workflow receives the events at the callback endpoints and resumes its execution.
+- This workflow halts its execution and waits for HTTP requests to arrive at the callback endpoints.
+- This workflow executes the callbacks to the appropriate endpoints in the sample workflow.
+
+### "Create a human-in-the-loop workflow using callbacks \_|\_ Workflows \_|\_\
+
+- URL: [https://docs.cloud.google.com/workflows/docs/tutorials/callbacks-firestore](https://docs.cloud.google.com/workflows/docs/tutorials/callbacks-firestore)
+- Source ID: `site-docs-root`
+- Final score: 173
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Create a text file with the filename translation-validation.yaml and with the following content: main : params : [ translation request ] steps : - log request : call : sys.log args : text : ${translation request} - vars : assign : - exec id : ${sys.get env("GOOGLE CLOUD WORKFLOW EXECUTION ID")} - text to translate : ${translation request.text} - database root : ${"projects/" + sys.get env("GOOGLE CLOUD PROJECT ID") + "/databases/(default)/documents/translations/"} - log translation request : call : sys.log args : text : ${text to translate} - store translation request : call : googleapis.firestore.v1.projects.databases.documents.patch args : name : ${database root + exec id} updateMask : fieldPaths : [ 'text' ] body : fields : text : stringValue : ${text to translate} result : store translation request result - translate : call : googleapis.translate.v2.translations.translate args : query : q : ${text to translate} target : "FR" format : "text" source : "EN" result : translation result - assign translation : assign : - translation : ${translation result.data.translations[0].translatedText} - log translation result : call : sys.log args : text : ${translation} - store translated text : call : googleapis.firestore.v1.projects.databases.documents.patch args : name : ${database root + exec id} updateMask : fieldPaths : [ 'translation' ] body : fields : translation : stringValue : ${translation} result : store translation request result - create callback : call : events.create callback endpoint args : http callback method : "POST" result : callback details - log callback details : call : sys.log args : text : ${callback details} - store callback details : call : googleapis.firestore.v1.projects.databases.documents.patch args : name : ${database root + exec id} updateMask : fieldPaths : [ 'callback' ] body : fields : callback : stringValue : ${callback details.url} result : store callback details result - await callback : call : events.await callback args : callback : ${callback details} timeout : 3600 result : callback request - assign approval : assign : - approved : ${callback request.http request.body.approved} - store approval : call : googleapis.firestore.v1.projects.databases.documents.patch args : name : ${database root + exec id} updateMask : fieldPaths : [ 'approved' ] body : fields : approved : booleanValue : ${approved} result : store approval result - return outcome : return : text : ${text to translate} translation : ${translation} approved : ${approved} After creating the workflow, you can deploy it, but do not execute the workflow: gcloud workflows deploy translation validation --source = translation-validation.yaml Create your web app Create a web app that calls a Cloud Function which launches the execution of the workflow.
+- Clicking a button calls a second Cloud Run function which in turn calls the callback endpoint created by the workflow, passing along the approval status.
+- We'll do better next time! </sl-alert> <p></p> <sl-button id="newBtn" style="display: none;" type="primary">New translation</sl-button> </sl-form> <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script> <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script> <script> var firebaseConfig = { apiKey: "XXXX", authDomain: "XXXX", projectId: "XXXX", storageBucket: "XXXX", messagingSenderId: "XXXX", appId: "XXXX", measurementId: "XXXX" }; // Initialize Firebase firebase.initializeApp(firebaseConfig); </script> <script src="./script.js" type="module"></script> </body> </html> Create a text file with the filename script.js that contains the following JavaScript code: document . addEventListener ( "DOMContentLoaded" , async function ( event ) { const textArea = document . getElementById ( "text" ); textArea . focus (); const newBtn = document . getElementById ( "newBtn" ); newBtn . addEventListener ( "sl-focus" , event = > { event . target . blur (); window . location . reload (); }); const translationAlert = document . getElementById ( "translation" ); const buttonRow = document . getElementById ( "buttonRow" ); var callbackUrl = "" ; const validationAlert = document . getElementById ( "validationAlert" ); const rejectionAlert = document . getElementById ( "rejectionAlert" ); const validateBtn = document . getElementById ( "validateBtn" ); const rejectBtn = document . getElementById ( "rejectBtn" ); const translateBtn = document . getElementById ( "translateBtn" ); translateBtn . addEventListener ( "sl-focus" , async event = > { event . target . disabled = true ; event . target . loading = true ; textArea . disabled = true ; console . log ( "Text to translate = " , textArea . value ); const fnUrl = UPDATE ME ; try { console . log ( "Calling workflow executor function..." ); const resp = await fetch ( fnUrl , { method : "POST" , headers : { "accept" : "application/json" , "content-type" : "application/json" }, body : JSON . stringify ({ text : textArea . value }) }); const executionResp = await resp . json (); const executionId = executionResp . executionId . slice ( - 36 ); console . log ( "Execution ID = " , executionId ); const db = firebase . firestore (); const translationDoc = db . collection ( "translations" ). doc ( executionId ); var translationReceived = false ; var callbackReceived = false ; var approvalReceived = false ; translationDoc . onSnapshot (( doc ) = > { console . log ( "Firestore update" , doc . data ()); if ( doc . data ()) { if ( "translation" in doc . data ()) { if ( ! translationReceived ) { console . log ( "Translation = " , doc . data (). translation ); translationReceived = true ; translationAlert . innerText = doc . data (). translation ; translationAlert . open = true ; } } if ( "callback" in doc . data ()) { if ( ! callbackReceived ) { console . log ( "Callback URL = " , doc . data (). callback ); callbackReceived = true ; callbackUrl = doc . data (). callback ; buttonRow . style . display = "block" ; } } if ( "approved" in doc . data ()) { if ( ! approvalReceived ) { const approved = doc . data (). approved ; console . log ( "Approval received = " , approved ); if ( approved ) { validationAlert . open = true ; buttonRow . style . display = "none" ; newBtn . style . display = "inline-block" ; } else { rejectionAlert . open = true ; buttonRow . style . display = "none" ; newBtn . style . display = "inline-block" ; } approvalReceived = true ; } } } }); } catch ( e ) { console . log ( e ); } event . target . loading = false ; }); validateBtn . addEventListener ( "sl-focus" , async event = > { validateBtn . disabled = true ; rejectBtn . disabled = true ; validateBtn . loading = true ; validateBtn . blur (); // call callback await callCallbackUrl ( callbackUrl , true ); }); rejectBtn . addEventListener ( "sl-focus" , async event = > { rejectBtn . disabled = true ; validateBtn . disabled = true ; rejectBtn . loading = true ; rejectBtn . blur (); // call callback await callCallbackUrl ( callbackUrl , false ); }); }); async function callCallbackUrl ( url , approved ) { console . log ( "Calling callback URL with status = " , approved ); const fnUrl = UPDATE ME ; try { const resp = await fetch ( fnUrl , { method : "POST" , headers : { "accept" : "application/json" , "content-type" : "application/json" }, body : JSON . stringify ({ url , approved }) }); const result = await resp . json (); console . log ( "Callback answer = " , result ); } catch ( e ) { console . log ( e ); } } Edit the script.js file, replacing the UPDATE ME placeholders with the Cloud Run function URLs you noted previously.
+- Change to the translationCallbackCall directory: cd ../translationCallbackCall Create a text file with the filename index.js that contains the following Node.js code: const cors = require ( 'cors' )({ origin : true }); const fetch = require ( 'node-fetch' ); exports . translationCallbackCall = async ( req , res ) = > { cors ( req , res , async () = > { res . set ( 'Access-Control-Allow-Origin' , ' ' ); const { url , approved } = req . body ; console . log ( "Approved? " , approved ); console . log ( "URL = " , url ); const { GoogleAuth } = require ( ' google-auth-library ' ); const auth = new GoogleAuth (); const token = await auth . getAccessToken (); console . log ( "Token" , token ); try { const resp = await fetch ( url , { method : 'POST' , headers : { 'accept' : 'application/json' , 'content-type' : 'application/json' , 'authorization' : Bearer ${ token } }, body : JSON . stringify ({ approved }) }); console . log ( "Response = " , JSON . stringify ( resp )); const result = await resp . json (); console . log ( "Outcome = " , JSON . stringify ( result )); res . status ( 200 ). json ({ status : 'OK' }); } catch ( e ) { console . error ( e ); res . status ( 200 ). json ({ status : 'error' }); } }); }; Create a text file with the filename package.json that contains the following npm metadata: { "name" : "approve-translation-workflow" , "version" : "0.0.1" , "dependencies" : { "cors" : "^2.8.5" , "node-fetch" : "^2.6.1" , "google-auth-library" : "^7.1.1" } } Deploy the function with an HTTP trigger and allow unauthenticated access: gcloud functions deploy translationCallbackCall \ --region = ${ REGION } \ --runtime nodejs14 \ --entry-point = translationCallbackCall \ --trigger-http \ --allow-unauthenticated The function might take a few minutes to deploy.
+
+### "Pause and resume a workflow using callbacks and Google Sheets \_|\_ Workflows\
+
+- URL: [https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets](https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets)
+- Source ID: `site-docs-root-2`
+- Final score: 171
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Click Deploy . gcloud Create a source code file for your workflow: touch workflows-awaits-callback-sheets.yaml In a text editor, copy the following workflow to your source code file: main : steps : - init : assign : Replace with your sheetId and make sure the service account for the workflow has write permissions to the sheet - sheetId : "10hieAH6b-oMeIVT AerSLNxQck14IGhgi8ign-x2x8g" - before sheets callback : call : sys.log args : severity : INFO data : ${"Execute steps here before waiting for callback from sheets"} - wait for sheets callback : call : await callback sheets args : sheetId : ${sheetId} result : await callback result - after sheets callback : call : sys.log args : severity : INFO data : ${"Execute steps here after receiving callback from sheets"} - returnResult : return : ${await callback result} await callback sheets : params : [ sheetId ] steps : - init : assign : - project id : ${sys.get env("GOOGLE CLOUD PROJECT ID")} - location : ${sys.get env("GOOGLE CLOUD LOCATION")} - workflow id : ${sys.get env("GOOGLE CLOUD WORKFLOW ID")} - execution id : ${sys.get env("GOOGLE CLOUD WORKFLOW EXECUTION ID")} - create callback : call : events.create callback endpoint args : http callback method : POST result : callback details - save callback to sheets : call : googleapis.sheets.v4.spreadsheets.values.append args : range : ${"Sheet1!A1:G1"} spreadsheetId : ${sheetId} valueInputOption : RAW body : majorDimension : "ROWS" values : - [ "${project id}" , "${location}" , "${workflow id}" , "${execution id}" , "${callback details.url}" , "" , "FALSE" ] - log and await callback : try : steps : - log await start : call : sys.log args : severity : INFO data : ${"Started waiting for callback from sheet " + sheetId} - await callback : call : events.await callback args : callback : ${callback details} timeout : 3600 result : callback request - log await stop : call : sys.log args : severity : INFO data : ${"Stopped waiting for callback from sheet " + sheetId} except : as : e steps : - log error : call : sys.log args : severity : "ERROR" text : ${"Received error " + e.message} - check null await result : switch : - condition : ${callback request == null} return : null - log await result : call : sys.log args : severity : INFO data : ${"Approved by " + callback request.http request.body.approver} - return await result : return : ${callback request.http request.body} Make sure to replace the placeholder sheetId value with your spreadsheetId .
+- In the workflow editor, enter the following definition for your workflow: main : steps : - init : assign : Replace with your sheetId and make sure the service account for the workflow has write permissions to the sheet - sheetId : "10hieAH6b-oMeIVT AerSLNxQck14IGhgi8ign-x2x8g" - before sheets callback : call : sys.log args : severity : INFO data : ${"Execute steps here before waiting for callback from sheets"} - wait for sheets callback : call : await callback sheets args : sheetId : ${sheetId} result : await callback result - after sheets callback : call : sys.log args : severity : INFO data : ${"Execute steps here after receiving callback from sheets"} - returnResult : return : ${await callback result} await callback sheets : params : [ sheetId ] steps : - init : assign : - project id : ${sys.get env("GOOGLE CLOUD PROJECT ID")} - location : ${sys.get env("GOOGLE CLOUD LOCATION")} - workflow id : ${sys.get env("GOOGLE CLOUD WORKFLOW ID")} - execution id : ${sys.get env("GOOGLE CLOUD WORKFLOW EXECUTION ID")} - create callback : call : events.create callback endpoint args : http callback method : POST result : callback details - save callback to sheets : call : googleapis.sheets.v4.spreadsheets.values.append args : range : ${"Sheet1!A1:G1"} spreadsheetId : ${sheetId} valueInputOption : RAW body : majorDimension : "ROWS" values : - [ "${project id}" , "${location}" , "${workflow id}" , "${execution id}" , "${callback details.url}" , "" , "FALSE" ] - log and await callback : try : steps : - log await start : call : sys.log args : severity : INFO data : ${"Started waiting for callback from sheet " + sheetId} - await callback : call : events.await callback args : callback : ${callback details} timeout : 3600 result : callback request - log await stop : call : sys.log args : severity : INFO data : ${"Stopped waiting for callback from sheet " + sheetId} except : as : e steps : - log error : call : sys.log args : severity : "ERROR" text : ${"Received error " + e.message} - check null await result : switch : - condition : ${callback request == null} return : null - log await result : call : sys.log args : severity : INFO data : ${"Approved by " + callback request.http request.body.approver} - return await result : return : ${callback request.http request.body} Make sure to replace the placeholder sheetId value with your spreadsheetId .
+- Replace any code in the script editor with the following code which reads the data in your spreadsheet and passes it along as input to a workflow execution: function handleEdit ( e ) { var range = e . range . getA1Notation (); var sheet = e . source ; if ( range . length > 1 && range [ 0 ] === ' G ' ) { if ( e . value == "TRUE" ) { Logger . log ( "Approved: TRUE" ); var row = range . slice ( 1 ); var url = sheet . getRange ( ' E ' + row ). getCell ( 1 , 1 ). getValue (); var approver = sheet . getRange ( ' F ' + row ). getCell ( 1 , 1 ). getValue (); callback ( url , approver ); } else { Logger . log ( "Approved: FALSE" ); } } } function callback ( url , approver ) { const headers = { "Authorization" : "Bearer " + ScriptApp . getOAuthToken () }; var payload = { ' approver ' : approver }; const params = { "method" : ' POST ' , "contentType" : ' application / json ' , "headers" : headers , "payload" : JSON . stringify ( payload ) }; Logger . log ( "Workflow callback request to " + url ); var response = UrlFetchApp . fetch ( url , params ); Logger . log ( response ); } Click Save save .
+- Deploy the workflow by entering the following command: gcloud workflows deploy workflows-awaits-callback-sheets \ --source = workflows-awaits-callback-sheets.yaml \ --location = us-central1 \ --service-account = PROJECT NUMBER -compute@developer.gserviceaccount.com Replace PROJECT NUMBER with your Google Cloud project number.
 

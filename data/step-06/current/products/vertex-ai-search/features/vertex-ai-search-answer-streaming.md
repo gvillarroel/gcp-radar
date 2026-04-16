@@ -1,18 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.861Z"
+generated_at: "2026-04-14T17:29:36.947Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Vertex AI Search answer streaming"
 feature_slug: "vertex-ai-search-answer-streaming"
 latest_feature_date: "2024-10-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/advanced-llm"
 keywords:
   - "vertex"
   - "ai"
@@ -27,7 +26,7 @@ keywords:
 # Vertex AI Search answer streaming
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,66 +38,54 @@ Vertex AI Search answer streaming returns generated responses in sequential part
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding](https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/advanced-llm](https://docs.cloud.google.com/generative-ai-app-builder/docs/advanced-llm)
 
 ## Supporting Pages
 
 ### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- Source ID: `site-api-reference`
-- Final score: 226
+- Source ID: `site-docs-reference`
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Search and answer (specify maximum steps) The following command shows how to call the answer method and return a generated answer and a list of search results.
 - Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Specify a custom preamble The following command shows how to set a preamble for the generated answer.
+- For the nine months ended September 30, 2019, the net cash used in investing activities totaled $(24,788).\n\nHere's a breakdown of the specific cash flows for investing activities (in millions):\n\n Purchases of property and equipment: $(16,802) in 2020 and $(17,496) in 2019\n Purchases of marketable securities: $(104,932) in 2020 and $(80,968) in 2019\n Maturities and sales of marketable securities: $97,751 in 2020 and $74,783 in 2019\n Purchases of non-marketable investments: $(1,864) in 2020 and $(1,499) in 2019\n Maturities and sales of non-marketable investments: $598 in 2020 and $297 in 2019\n Acquisitions, net of cash acquired, and purchases of intangible assets: $(368) in 2020 and $(373) in 2019\n Other investing activities: $125 in 2020 and $468 in 2019", "steps": [ { "state": "SUCCEEDED", "description": "Rephrase the query and search.", "actions": [ { "searchAction": { "query": "Plot composition of net cash used in investing activities" }, "observation": { "searchResults": [ { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/b3133a895e0404984959736488992b53", "uri": "gs://yipeiw multimodal 0827/rzilleruelo multimodal datasets/20240806/Document Understanding Evaluation Dataset/boa-tabular/Testing 20201030-alphabet-cash flow statement.pdf", "title": "Testing 20201030-alphabet-cash flow statement", "snippetInfo": [ { "snippet": "... \u003cb\u003eNet cash provided by operating activities\u003c/b\u003e 42,447 40,093 \u003cb\u003eInvesting activities\u003c/b\u003e (16,802) Purchases of property and equipment (17,496) ...", "snippetStatus": "SUCCESS" } ] } ] } } ] } ], "blobAttachments": [ { "data": { "mimeType": "image/png", "data": "iVBORw0KGgoAAAANSUhEUgAACvAAZd8AEZFKHDp0CE5OTgCAZcuWYfr06QonIqIMXIGXiIhUITY2Vq4tLCxyNdbMzEyuk5OTtZaJiEgfZd5aMj4+Xq4zr1rztm3SMs/fXIGXiOjDGRgYyLWpqalcJyUlyfW/V7rJULVqVbl++PChDtIREemXr7766oPHPnr0CK1bt9ZeGCIiPXXlypWPGr9lyxYtJSEi0k9ly5bFzZs30bNnT0iSBEmS8PLlS1y6dAlHjhzBpUuX8PLlS/lcjx49cOPGDZQtW1bp6EREquHv7w9JkgAALVq0UDgNEWXGBl4iIlIFc3NzuY6MjMzV2ICAALkuVqyY1jIREemjzDdVb926JdeWlpZynXlr98z8/f3lunDhwtoPR0SkJzLPuYGBgXKd+bOun5/fG8dmXjE9PT1dB+mIiPTL8uXLP2hVm19++QV169aFt7e3DlIREemXDh06wMfHJ9fjwsLC0K1bN4wePVoHqYiI9EuRIkXwxx9/4MSJE3BycoKFhYXcsCtJEiwsLNC/f38cP34chw4dyrJQBBERfbxChQrJde...PrTn86//Mu/5Jhjjql1NACAAeP/AX0CwI314+qiAAAAAElFTkSuQmCC" }, "attributionType": "GENERATED" } ] }, "answerQueryToken": "NMwKDAjEjOe-BhD-meX6ARIkNjdkNjBhM2QtMDAwMC0yYzU4LTgxYjctMDg5ZTA4MmNhZDgw" In this example, a generated chart is included in the answer because the query requested a plot and there was enough data to generate the chart.
 - Example command and result curl -X GET -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json" "https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/sessions?filter=userPseudoId=test user%20AND%20state=IN PROGRESS" { "sessions": [ { "name": "projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943", "state": "IN PROGRESS", "userPseudoId": "test user", "turns": [ { "query": { "queryId": "projects/123456/locations/global/questions/741830", "text": "Compare bigquery with spanner database?" }, "answer": "projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943/answers/4861507376861383072" } ], "startTime": "2024-09-13T18:47:10.465311Z", "endTime": "2024-09-13T18:49:41.579151Z" } ] } Python For more information, see the Vertex AI Search Python API reference documentation .
-- Example command and partial result curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ "https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer" \ -d '{ "query": { "text": "what kinds of data can I import into Vertex AI Search?"}, "session": "projects/123456/locations/global/collections/default collection/engines/my-app/sessions/10291252835232308789", "searchSpec":{ "searchParams": {"filter": ""} }, "relatedQuestionsSpec": { "enable": true } }' { "answer": { "state": "SUCCEEDED", "answerText": "You can import various kinds of data into Vertex AI Search, depending on the type of data store you create.
-
-### Get search results \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
-- Source ID: `site-iam-reference`
-- Final score: 210
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'YOUR LOCATION'; // Options: 'global', 'us', 'eu' // const collectionId = 'default collection'; // Options: 'default collection' // const dataStoreId = 'YOUR DATA STORE ID' // Create in Cloud Console // const servingConfigId = 'default config'; // Options: 'default config' // const searchQuery = 'Google'; const { SearchServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1beta ; // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store const apiEndpoint = location === 'global' ? 'discoveryengine.googleapis.com' : ${ location } -discoveryengine.googleapis.com ; // Instantiates a client const client = new SearchServiceClient ({ apiEndpoint : apiEndpoint }); async function search () { // The full resource name of the search engine serving configuration. // Example: projects/{projectId}/locations/{location}/collections/{collectionId}/dataStores/{dataStoreId}/servingConfigs/{servingConfigId} // You must create a search engine in the Cloud Console first. const name = client . projectLocationCollectionDataStoreServingConfigPath ( projectId , location , collectionId , dataStoreId , servingConfigId ); const request = { pageSize : 10 , query : searchQuery , servingConfig : name , }; const IResponseParams = { ISearchResult : 0 , ISearchRequest : 1 , ISearchResponse : 2 , }; // Perform search request const response = await client . search ( request , { // Warning: Should always disable autoPaginate to avoid iterate through all pages. // // By default NodeJS SDK returns an iterable where you can iterate through all // search results instead of only the limited number of results requested on // pageSize, by sending multiple sequential search requests page-by-page while // iterating, until it exhausts all the search results.
-- For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'YOUR LOCATION'; // Options: 'global', 'us', 'eu' // const collectionId = 'default collection'; // Options: 'default collection' // const dataStoreId = 'YOUR DATA STORE ID' // Create in Cloud Console // const servingConfigId = 'default config'; // Options: 'default config' // const searchQuery = 'Google'; const { SearchServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1beta ; // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store const apiEndpoint = location === 'global' ? 'discoveryengine.googleapis.com' : ${ location } -discoveryengine.googleapis.com ; // Instantiates a client const client = new SearchServiceClient ({ apiEndpoint : apiEndpoint }); async function search () { // The full resource name of the search engine serving configuration. // Example: projects/{projectId}/locations/{location}/collections/{collectionId}/dataStores/{dataStoreId}/servingConfigs/{servingConfigId} // You must create a search engine in the Cloud Console first. const name = client . projectLocationCollectionDataStoreServingConfigPath ( projectId , location , collectionId , dataStoreId , servingConfigId ); const request = { pageSize : 10 , query : searchQuery , servingConfig : name , }; const IResponseParams = { ISearchResult : 0 , ISearchRequest : 1 , ISearchResponse : 2 , }; // Perform search request const response = await client . search ( request , { // Warning: Should always disable autoPaginate to avoid iterate through all pages. // // By default NodeJS SDK returns an iterable where you can iterate through all // search results instead of only the limited number of results requested on // pageSize, by sending multiple sequential search requests page-by-page while // iterating, until it exhausts all the search results.
-- The remaining $100 million was received in the first quarter of 2019.", "pageNumber": "21" } ] } }, "modelScores": { "relevance score": { "values": [ 0.5 ] } } }, ... { "id": "e6bbd0d82dc2a2fc7ccf1bd82ac6334f", "document": { "name": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/e6bbd0d82dc2a2fc7ccf1bd82ac6334f", "id": "e6bbd0d82dc2a2fc7ccf1bd82ac6334f", "derivedStructData": { "title": "2021 Q1 Earnings Transcript", "link": "gs://cloud-samples-data/gen-app-builder/search/alphabet-investor-pdfs/2021 Q1 Earnings Transcript.pdf", "extractive answers": [ { "pageNumber": "2", "content": "Our strength in AI and ML is also helping Financial Services customers improve efficiency of payments, reduce fraud and risk, and deliver faster payment solutions." } ] } }, "modelScores": { "relevance score": { "values": [ 0 ] } } } ], "totalSize": 76, "attributionToken": "8QHw8AoLCIW4 b0GELHd3lgSJDY3YmU1ZGMwLTAwMDAtMmM1OC04NzcyLTc0NzQ0NjNiOGMyNSIHR0VORVJJQyqcAcb77TDHy MX8tntMI6-nRWK4uQwwvCeFYX77TDvifIwq8SKLauR3zCq-LMt0IrIMNSynRWc1rctv 7kML7l3zDZveQwkPeyMMP77TD12e0wpd hMIfi5DCRv9owgvvtMJWSxTCOkckwu-XfMK7Eii3sifIwqJHfMKjf4TCt-LMtlL aMJ Wty23t4wto4CXIs2KyDDcveQwwv7kMDABShIweDU3MGFkYWI4MzQ4NmY0MGE", "nextPageToken": "UjMjhjYzYDN0cDN30iM3cDOtgTNjJTLwADMw0iZiRWNlJ2N2QiGBUd0gWLEG4bjhWICMIBM1IgC", "summary": {}, "queryExpansionInfo": {} } Note: This document-relevance score is different from and more precise than the relevance level used to filter documents returned by a search.
-- Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:search" \ -d '{ "servingConfig": "projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search", "query": " QUERY ", "pageSize": " PAGE SIZE ", "offset": " OFFSET ", "orderBy": " ORDER BY ", "params": {"user country code": " USER COUNTRY CODE ", "searchType": " SEARCH TYPE "}, "filter": " FILTER ", "boostSpec": " BOOST SPEC ", "contentSearchSpec": { "searchResultMode": " RESULT MODE " }, "userPseudoId": " USER PSEUDO ID ", "dataStoreSpecs": [{" DATA STORE SPEC "}] }' Replace the following: PROJECT ID : the ID of your Google Cloud project.
-
-### "Vertex AI APIs for building search and RAG experiences \_|\_ Vertex AI Search\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- Source ID: `site-api-reference`
-- Final score: 208
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- You can also ground responses to your Vertex AI Search data using Generative AI on Vertex AI.
-- Vertex AI Search works as an out-of-the-box semantic & keyword search engine for RAG with the ability to process a variety of document types and with connectors to a variety of source systems including BigQuery and many third party systems.
-- Retrieval Choose the best retrieval method for your needs: Vertex AI Search: Vertex AI Search is a Google Search-quality information retrieval engine that can be a component of any generative AI application that uses your enterprise data.
-- Vertex AI Vector Search is a retrieval engine that can search from billions of semantically similar or semantically related items at scale, with high queries per second (QPS), high recall, low latency, and cost efficiency.
 
 ### Check grounding with RAG \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding](https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding)
-- Source ID: `site-api-reference`
-- Final score: 198
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference`
+- Final score: 111
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For example, in the context of Vertex AI Search, the answer candidate might be the generated search summary that answers a query.
 - As part of your Retrieval Augmented Generation (RAG) experience in Vertex AI Search, you can check grounding to determine how grounded a piece of text (called an answer candidate ) is in a given set of reference texts (called facts ).
-- Example of responses with claim-level scores The following table shows an example answer candidate and its response when you send the example request , based on the example facts .
-- Home Documentation AI and ML Vertex AI Search Send feedback Check grounding with RAG Stay organized with collections Save and categorize content based on your preferences.
+- Output data The check grounding API returns the following for an answer candidate: Support score: The support score is a number from 0 to 1 that indicates how grounded an answer candidate is in the provided set of facts.
+- Examples of answer candidates and grounding responses The following table shows examples of different answer candidates and responses when you send the example request , based on the example facts .
+
+### "Turn generative responses on or off \_|\_ Vertex AI Search \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/advanced-llm](https://docs.cloud.google.com/generative-ai-app-builder/docs/advanced-llm)
+- Source ID: `site-docs-reference`
+- Final score: 93
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For structured, unstructured, and advanced website search, generative responses include the following advanced LLM features: Search summaries using the search method Search answers using the answer method Search with follow-ups using the answer or the converse method This page describes how to turn generative responses on or off for an app.
+- Home Documentation AI and ML Vertex AI Search Send feedback Turn generative responses on or off Stay organized with collections Save and categorize content based on your preferences.
+- However, answers are generated by the answer method and summaries are generated by the search method.
+- For example, if you have deployed a search widget that uses search with follow-ups, Google recommends that you change the search type to "single-turn without summarization" before turning off generative responses.
 

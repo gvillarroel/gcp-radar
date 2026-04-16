@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:44:03.395Z"
+generated_at: "2026-04-12T20:53:45.904Z"
 product_name: "App Engine standard environment Java"
 product_slug: "app-engine-standard-environment-java"
 feature_name: "App Engine Maven plugin version 1.2.1"
 feature_slug: "app-engine-maven-plugin-version-1-2-1"
 latest_feature_date: "2017-03-06"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/using-gradle"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java/runtime"
 keywords:
-  - "com.google.cloud.tools:appengine-maven-plugin"
-  - "GAE Java Maven plugin"
-  - "GAE Maven plugin"
-  - "appengine-maven-plugin 1.2.1"
-  - "Maven plugin version 1.2.1"
-  - "appengine-maven-plugin"
-  - "App Engine Maven plugin"
-  - "Maven plugin 1.2.1"
+  - "app"
+  - "engine"
+  - "maven"
+  - "plugin"
+  - "version"
+  - "updated"
+  - "com"
+  - "tools"
 ---
 
 # App Engine Maven plugin version 1.2.1
 
 Product: App Engine standard environment Java
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Updated the com.google.cloud.tools:appengine-maven-plugin dependency to version 
 
 Updated the com.google.cloud.tools:appengine-maven-plugin dependency to version 1.2.1.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/using-gradle](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/using-gradle)
+- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/java/runtime](https://docs.cloud.google.com/appengine/docs/standard/java/runtime)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Use Gradle and the App Engine plugin | App Engine standard environment | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/using-gradle](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/using-gradle)
+- Source ID: `feature-recovery-http`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use Gradle and the App Engine plugin | App Engine standard environment | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in App Engine Standard environment Start free Overview Guides Reference Resources App Engine environments App Engine standard environment Learn about the standard environment App Engine flexible environment Learn about the flexible environment App Engine Migration Center Learn how to migrate to the latest supported versions Technology areas More Overview Guides Reference Resources App Engine environments More Cross-product tools More Console App Engine standard environment App Engine home Standard environment overview Choose a language and environment Discover standard environment runtimes Go runtime Overview Build an app Upgrade an existing app Migrate from the first-generation to the second-generation runtimes Java runtime Overview Build an app Overview Create your project Write your web service Deploy your web service Upgrade an existing app Re-package a WAR file Migrate from the first-generation to the second-generation runtimes Node.js runtime Overview Build an app Overview Create your project Write your web service Deploy your web service Update your web service View logs PHP runtime Overview Build an app Upgrade an existing app Migrate from the first-generation to the second-generation runtimes Python runtime Overview Build an app Overview Create your project Write your web service Deploy your web service Handle data Add Firebase Authenticate users Personalize data Clean up Upgrade an existing app Overview Migrate from the first-generation to the second-generation runtimes Migrate to Python 3 runtime Migrate legacy bundled services Prepare configuration files for the Python 3 environment Test and deploy your app Ruby runtime Overview Create an app Get started Set up your environment Set up your development environment Set up optional tools for Java Apache Maven Using Maven and the App Engine plugin Maven Plugin goals and parameters Gradle Use the App Engine plugin Tasks and properties Set up your Cloud project Grant access Set up access control View roles that grant access to App Engine Configure service accounts Google-managed service agent Design your app Structure web services Host a static website Communicate between your services Handle requests Route requests Define configuration files Go Define runtime settings Specify dependencies Java Define runtime settings Specify dependencies Node.js Define runtime settings Specify dependencies Run a custom build step PHP Define runtime settings Specify dependencies Python Define runtime settings Specify dependencies Ruby Define runtime settings Specify dependencies Test and deploy your app Test on the local development server Using the local development server Command options Configure your app Set up networking Map custom domains Secure custom domains with SSL Secure your app with minimum TLS Virtual private cloud (VPC) Connect to a VPC network Connect to a Shared VPC network Shared VPC with connectors in service projects Shared VPC with connectors in the host project Set up a static outbound IP address Store data and files Overview Use Cloud Firestore in Datastore mode Use Cloud SQL Use Cloud Storage (cloud file hosting) Store and serve static files Read and write temporary files Cache data with Memorystore Create triggers Write and respond to Pub/Sub messages Send messages with third-party services Secure your app Overview Specify Ingress and Egress settings Understand firewalls Create firewall rules Authenticate users Operate and maintain Manage instances Label resources Manage your app's traffic Migrate traffic Split traffic Schedule cron jobs Run asynchronous tasks Configure warmup requests Automate tasks Get started with the Admin API Monitor, log, and debug Access audit logs Write and view logs Monitor and alerts latency Understand Performance with Cloud Profiler Access legacy bundled services Overview Go 1.12+ Java 11+ PHP 7/8 Python 3 Overview Blobstore overview Deferred overview Mail overview Available APIs Overview App Identity Blobstore Capabilities Datastore Overview Client library concepts API overview Asynchronous operation Callbacks Creating, retrieving, updating, and deleting entities Creating and using entity keys Entity, properties and keys Entity property reference Indexes Metadata Projection queries Queries Query cursors Query data consistency Query restrictions Retrieving query results Statistics Structuring data for strong consistency Transactions Managing Datastore from the Console Overview Viewing Datastore Statistics Configuring Datastore indexes Images Mail Mail API Overview Bulk mail guidelines Sending mail Receiving mail Receiving bounce notification Mail with headers or attachments Memcache Memcache Overview Using Memcache Memcache Examples Memcache Audit Logs Modules Namespaces API Namespaces API Overview Multitenancy with Namespaces NDB Client Library for Cloud Datastore Overview Administration Asynchronous operation Caching Creating, retrieving, updating, and deleting entities Creating entity models Creating and using entity keys Configuring Datastore indexes Projection queries Queries Transactions Writing property subclasses NDB Client Library Reference Entity Property Reference Context Exceptions Functions Future Key Metadata Model PolyModel Query Search Documents and indexes Query strings Query and sorting options Handling search results Faceted search Best practices Using the local development server Reference for Python Cursor Document Facet Classes FacetOptions FacetRange FacetRefinement FacetResult FacetResultValue Field Classes FieldExpression GeoPoint GetResponse Index MatchScorer Query QueryOptions RescoringMatchScorer ScoredDocument SearchResults SortExpression SortOptions Functions Exceptions Task Queues Task Queue Overview Using Push Queues Using Push Queues Creating Push Queues Creating Push Tasks Creating Task Handlers Deleting Tasks and Queues Retrying Failed Push Tasks Testing Push Queues in the Development Server Using Pull Queues Using Pull Queues Creating Pull Queues Creating Pull Tasks Leasing Pull Tasks URL Fetch Outbound requests Issue HTTP(S) requests Users Overview User objects Login URLs Admin users Migration center Migration resources Troubleshoot Introduction Deployment Serving Elevated latency Connectivity Community resources AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools App Engine standard environment App Engine flexible environment App Engine Migration Center Home Documentation Application hosting App Engine Standard environment Guides Send feedback Use Gradle and the App Engine plugin Stay organized with collections Save and categorize content based on your preferences.
+- To initialize a new project: Run gradle init : gradle init -- type java - application You'll be asked to answer questions: Enter target Java version (min: 7, default: 21): 21 Select application structure: 1 for Single application project Select build script DSL: 2 (for Groovy) Select test framework: 1 (for JUnit 4) Generate build using new APIs and behavior: no Create the WEB-INF folder: mkdir - p app / src / main / webapp / WEB - INF Create the appengine folder: mkdir - p app / src / main / appengine Remove the stub files generated by gradle init : rm . / app / src / main / java / org / example / App . java . / app / src / test / java / org / example / AppTest . java Add the following to your app/build.gradle file to add App Engine Gradle tasks, Maven repositories, the App Engine Gradle plugin, dependencies, and task configuration: apply plugin: 'java' apply plugin: 'war' buildscript { repositories { // gretty plugin is in Maven Central mavenCentral () } dependencies { classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.8.1' classpath 'org.gretty:gretty:4.1.5' } } apply plugin: 'org.gretty' apply plugin: 'com.google.cloud.tools.appengine' repositories { mavenCentral () } appengine { deploy { // deploy configuration stopPreviousVersion = true // default - stop the current version promote = true // default - & make this the current version projectId = 'GCLOUD_CONFIG' version = 'GCLOUD_CONFIG' } } sourceSets { // In Gradle 8, the default location is app/src/java, which does not match // Maven's directory structure. main . java . srcDirs = [ 'src/main/java' ] main . resources . srcDirs = [ 'src/main/resources' , 'src/main/webapp' ] test . java . srcDirs = [ 'src/test/java' ] } dependencies { implementation 'com.google.appengine:appengine-api-1.0-sdk:2.0.30' implementation 'jakarta.servlet:jakarta.servlet-api:6.1.0' // Test Dependencies testImplementation 'com.google.appengine:appengine-testing:2.0.30' testImplementation 'com.google.appengine:appengine-api-stubs:2.0.30' testImplementation 'com.google.appengine:appengine-tools-sdk:2.0.30' testImplementation 'com.google.truth:truth:1.1.5' testImplementation 'junit:junit:4.13.2' testImplementation 'org.mockito:mockito-core:4.11.0' } You also need to add the following files to your project, using a text editor or integrated development environment (IDE): app/src/main/appengine/app.yaml app/src/main/docker/Dockerfile (optional for custom runtimes ) Java classes Java testing classes See Set up your development environment for an overview of a Java App Engine project.
+- App Engine provides a Gradle plugin that you can use to build and deploy your app to App Engine.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]] Products and pricing See all products Google Cloud pricing Google Cloud Marketplace Contact sales Support Community forums Support Release Notes System status Resources GitHub Getting Started with Google Cloud Code samples Cloud Architecture Center Training and Certification Engage Blog Events X (Twitter) Google Cloud on YouTube Google Cloud Tech on YouTube About Google Privacy Site terms Google Cloud terms Manage cookies Our third decade of climate action: join us Sign up for the Google Cloud newsletter Subscribe English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어
+
+### "Java runtime environment \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime)
+- Source ID: `site-docs-reference`
+- Final score: 147
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Before you begin Download the latest version of the Google Cloud CLI or update your gcloud CLI to the current version: gcloud components update To deploy using Maven, you will need to add the App Engine Maven Plugin to your pom.xml file: <plugin> <groupId>com.google.cloud.tools</groupId> <artifactId>appengine-maven-plugin</artifactId> <version>2.8.1</version> </plugin> Other options for deploying include using the gcloud app deploy command or the App Engine Gradle plugin .
+- See the License for the specific language governing permissions and limitations under the License. / package com.example.appengine ; import com.sun.net.httpserver.HttpServer ; import java.io.IOException ; import java.io.OutputStream ; import java.net.InetSocketAddress ; public class Main { public static void main ( String [] args ) throws IOException { // Create an instance of HttpServer bound to port defined by the // PORT environment variable when present, otherwise on 8080. int port = Integer . parseInt ( System . getenv (). getOrDefault ( "PORT" , "8080" )); HttpServer server = HttpServer . create ( new InetSocketAddress ( port ), 0 ); // Set root URI path. server . createContext ( "/" , ( var t ) - > { byte [] response = "Hello World!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); // Create a second URI path. server . createContext ( "/foo" , ( var t ) - > { byte [] response = "Foo!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); server . start (); } } Compatibility with previous Java versions For differences between Java 8 and the latest supported Java version, see Migrate from Java 8 to the latest Java runtime .
+- For example, your application might be deployed at Java 21.0.4 and automatically updated to version Java 21.0.5 at a later deployment of the managed platform, but it won't be automatically updated to Java 22.
+- When deploying your application, the App Engine plugin will only upload the files that changed, rather than the entire uber JAR package.
+
+### "Java runtime environment \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/runtime](https://docs.cloud.google.com/appengine/docs/standard/java/runtime)
+- Source ID: `site-docs-reference`
+- Final score: 147
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Before you begin Download the latest version of the Google Cloud CLI or update your gcloud CLI to the current version: gcloud components update To deploy using Maven, you will need to add the App Engine Maven Plugin to your pom.xml file: <plugin> <groupId>com.google.cloud.tools</groupId> <artifactId>appengine-maven-plugin</artifactId> <version>2.8.1</version> </plugin> Other options for deploying include using the gcloud app deploy command or the App Engine Gradle plugin .
+- See the License for the specific language governing permissions and limitations under the License. / package com.example.appengine ; import com.sun.net.httpserver.HttpServer ; import java.io.IOException ; import java.io.OutputStream ; import java.net.InetSocketAddress ; public class Main { public static void main ( String [] args ) throws IOException { // Create an instance of HttpServer bound to port defined by the // PORT environment variable when present, otherwise on 8080. int port = Integer . parseInt ( System . getenv (). getOrDefault ( "PORT" , "8080" )); HttpServer server = HttpServer . create ( new InetSocketAddress ( port ), 0 ); // Set root URI path. server . createContext ( "/" , ( var t ) - > { byte [] response = "Hello World!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); // Create a second URI path. server . createContext ( "/foo" , ( var t ) - > { byte [] response = "Foo!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); server . start (); } } Compatibility with previous Java versions For differences between Java 8 and the latest supported Java version, see Migrate from Java 8 to the latest Java runtime .
+- For example, your application might be deployed at Java 21.0.4 and automatically updated to version Java 21.0.5 at a later deployment of the managed platform, but it won't be automatically updated to Java 22.
+- When deploying your application, the App Engine plugin will only upload the files that changed, rather than the entire uber JAR package.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.507Z"
+generated_at: "2026-04-15T13:43:38.507Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Looker IDE editor preferences"
@@ -9,18 +9,18 @@ latest_feature_date: "2024-09-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/looker"
-  - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+  - "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor"
+  - "https://docs.cloud.google.com/looker/docs/chart-config-editor"
+  - "https://docs.cloud.google.com/looker/docs/best-practices/treemap"
 keywords:
   - "looker"
   - "ide"
   - "editor"
   - "preferences"
-  - "the"
   - "supports"
   - "vim"
-  - "and"
+  - "emacs"
+  - "editors"
 ---
 
 # Looker IDE editor preferences
@@ -42,44 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
+- [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
+- [https://docs.cloud.google.com/looker/docs/best-practices/treemap](https://docs.cloud.google.com/looker/docs/best-practices/treemap)
 
 ## Supporting Pages
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### "Customizing visualizations using the Chart Config Editor \_|\_ Looker \_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
-
-### Looker roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- Source ID: `site-iam-reference`
-- Final score: 116
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Looker roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/looker This page lists the IAM roles and permissions for Looker.
-
-### Access control and permission management | Looker | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 94
+- URL: [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- Source ID: `site-docs-reference`
+- Final score: 93
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
-- These roles are then applied to users and groups.
-- Data access can be further restricted within a model using access filters to limit which rows of data ...
+- Home Documentation Data analytics Looker Guides Send feedback Customizing visualizations using the Chart Config Editor Stay organized with collections Save and categorize content based on your preferences.
+- Compare series values to the mean or median value The formatters.select parameter supports the mean keyword in Looker 25.0+ and the median keyword in Looker 25.2+.
+- Creating new visualization types You can use the Chart Config Editor to create visualization types that aren't included in Looker's default visualization types .
+- You can use the Chart Config Editor to customize formatting options on Looker visualizations that use the HighCharts API .
+
+### "Customizing visualizations using the Chart Config Editor \_|\_ Looker \_\
+
+- URL: [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 93
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Data analytics Looker Guides Send feedback Customizing visualizations using the Chart Config Editor Stay organized with collections Save and categorize content based on your preferences.
+- Compare series values to the mean or median value The formatters.select parameter supports the mean keyword in Looker 25.0+ and the median keyword in Looker 25.2+.
+- Creating new visualization types You can use the Chart Config Editor to create visualization types that aren't included in Looker's default visualization types .
+- You can use the Chart Config Editor to customize formatting options on Looker visualizations that use the HighCharts API .
+
+### "Creating a treemap chart with the Chart Config Editor \_|\_ Looker \_|\_\
+
+- URL: [https://docs.cloud.google.com/looker/docs/best-practices/treemap](https://docs.cloud.google.com/looker/docs/best-practices/treemap)
+- Source ID: `site-docs-reference`
+- Final score: 75
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Data analytics Looker Guides Send feedback Creating a treemap chart with the Chart Config Editor Stay organized with collections Save and categorize content based on your preferences.
+- Note: Starting in Looker 24.10, the Chart Config Editor supports the creation of treemap charts.
+- Using the Chart Config Editor , you can create treemap charts by starting from a column chart in Looker.
+- Prerequisites To access the Chart Config Editor, you must have the can override vis config permission .
 

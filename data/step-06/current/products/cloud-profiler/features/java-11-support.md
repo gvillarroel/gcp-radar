@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:24:06.820Z"
+generated_at: "2026-04-12T12:11:53.475Z"
 product_name: "Cloud Profiler"
 product_slug: "cloud-profiler"
 feature_name: "Java 11 support"
 feature_slug: "java-11-support"
 latest_feature_date: "2019-05-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/profiler/docs/profiling-java"
   - "https://docs.cloud.google.com/profiler/docs/profiling-python"
+  - "https://docs.cloud.google.com/profiler/docs/profiling-go"
   - "https://docs.cloud.google.com/profiler/docs/profiling-external"
 keywords:
   - "java"
@@ -26,7 +27,7 @@ keywords:
 # Java 11 support
 
 Product: Cloud Profiler
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Cloud Profiler supports profiling applications that run on Java 11.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/profiler/docs/profiling-java](https://docs.cloud.google.com/profiler/docs/profiling-java)
 - [https://docs.cloud.google.com/profiler/docs/profiling-python](https://docs.cloud.google.com/profiler/docs/profiling-python)
+- [https://docs.cloud.google.com/profiler/docs/profiling-go](https://docs.cloud.google.com/profiler/docs/profiling-go)
 - [https://docs.cloud.google.com/profiler/docs/profiling-external](https://docs.cloud.google.com/profiler/docs/profiling-external)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/profiler/docs/profiling-java](https://docs.cloud.google.com/profiler/docs/profiling-java)
 - Source ID: `site-docs-root`
-- Final score: 236
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 295
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires App Engine SDK version 1.9.64 or later) Managed Service for Apache Spark (For information, see Configuring Cloud Profiler for Managed Service for Apache Spark Spark and Hadoop jobs .) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/profiler/docs/profiling-python](https://docs.cloud.google.com/profiler/docs/profiling-python)
 - Source ID: `site-docs-root`
-- Final score: 188
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 241
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires Python 3 runtime environment ) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.
@@ -76,13 +78,27 @@ Evidence snippets:
 - Standard Environment For App Engine standard environment, which requires that you use the Python 3 runtime environment, do the following: Add google-cloud-profiler to your requirements.txt file.
 - Note: If you plan to profile applications that are running outside of Google Cloud, then you need to perform some configuration steps that aren't discussed in this document.
 
+### Profiling Go applications \_|\_ Cloud Profiler \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/profiler/docs/profiling-go](https://docs.cloud.google.com/profiler/docs/profiling-go)
+- Source ID: `site-docs-root`
+- Final score: 233
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires Go 1.11 or higher) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.
+- To enable agent logging, set the DebugLogging option to true when starting the agent: profiler.Start(profiler.Config{..., DebugLogging: true}); Troubleshooting This section lists issues that are specific to profiling Go applications.
+- Note: If you plan to profile applications that are running outside of Google Cloud, then you need to perform some configuration steps that aren't discussed in this document.
+- For example, if you have a service with two versions running across replicas in three zones, the profiler will create an average of 6 profiles per minute for that service.
+
 ### "Profiling applications running outside Google Cloud \_|\_ Cloud Profiler\
 
 - URL: [https://docs.cloud.google.com/profiler/docs/profiling-external](https://docs.cloud.google.com/profiler/docs/profiling-external)
 - Source ID: `site-docs-root`
-- Final score: 182
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 219
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Node.js Specify an additional parameter, projectID , in the serviceContext object described in Profiling Node.js applications : projectId : ' GCP PROJECT ID ' , serviceContext : { ... } Python Specify an additional parameter, project id , in the start method call described in Profiling Python applications : googlecloudprofiler . start ( ... , project id = ' GCP PROJECT ID ' ) What's next Select the profiles to analyze Interact with the flame graph Filter the flame graph Focus the flame graph Compare profiles Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .

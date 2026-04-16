@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.428Z"
+generated_at: "2026-04-15T13:43:38.465Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "JDBC driver version selection for connections"
@@ -9,17 +9,18 @@ latest_feature_date: "2025-05-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/data-modeling"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+  - "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
 keywords:
   - "jdbc"
   - "driver"
   - "version"
   - "selection"
-  - "for"
   - "connections"
   - "users"
   - "can"
+  - "now"
 ---
 
 # JDBC driver version selection for connections
@@ -37,34 +38,53 @@ Users can now select the JDBC driver version when creating or editing a connecti
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/data-modeling](https://docs.cloud.google.com/looker/docs/data-modeling)
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- [https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only](https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
 
 ## Supporting Pages
 
-### Get ready for development | Looker | Google Cloud Documentation
+### Admin settings - Users \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/data-modeling](https://docs.cloud.google.com/looker/docs/data-modeling)
-- Source ID: `site-docs-root`
-- Final score: 27
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- Source ID: `site-docs-reference`
+- Final score: 107
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Get ready for development Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/data-modeling To unlock the magic of Looker, data experts at each organization describe their data in a lightweight modeling language called LookML.
-- LookML tells Looker how to query data so everyone in the organization can create Looks and dashboards without needing to understand the behind-the-scenes details.
+- This information includes metadata about users, roles, database connections, server settings, features used, API usage, and Platform version.
+- The Filter List replaces the search function on the previous version of the Users page.
+- Differences between disabling and deleting an account are described in the following table: Description Disabled Deleted The user can sign in to the Looker instance No No The user's personal folder Still exists Deleted Looks and dashboards in the user's personal folder Still exist Moved to the Trash folder Looks and dashboards the user saved to a Shared folder Still exist in the Shared folder Still exist in the Shared folder Schedules created by the user Schedules are disabled Schedules are deleted Schedules based on the user's content, but created by another user Schedules continue to run User's content is deleted; schedules based on that content are deleted Schedules that list the user as a recipient and are created by another user with the ability to deliver content to external email accounts Schedules will continue to run and deliver normally (user will be treated as an external user) Schedules continue to run and deliver normally (user will be treated as an external user) Schedules that have Run schedule as recipient enabled and list the user as a recipient Schedules will continue to run but will fail to deliver to the disabled user upon next run Schedules continue to run but will fail to deliver to all users with error run as recipient was specified on ScheduledPlan but recipient is not a Looker user Boards created by the user Still exist Still exist Alerts created by the user Remain active, but are not visible or editable from the dashboard on which the alert is set unless self-assigned by an admin.
+- Language Locale Code and Strings Filename English en Czech cs CZ German de DE Spanish (Spain) es ES Finnish fi FI French (Canada) fr CA French (France) fr FR Hindi hi IN Italian it IT Japanese ja JP Korean ko KR Lithuanian lt LT Norwegian (Bokmål) nb NO Dutch nl NL Polish pl PL Brazilian Portuguese pt BR Portuguese pt PT Russian ru RU Swedish sv SE Thai th TH Turkish tr TR Ukrainian uk UA Simplified Chinese zh CN Traditional Chinese zh TW For users with no Locale set, Looker uses the locale chosen on the Localization page of the Admin panel as the default locale; and, if no locale is set there, Looker defaults to en .
 
-### Looker (Google Cloud core) overview | Google Cloud Documentation
+### "Restricting OAuth scope to read-only for Google BigQuery connections \_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only](https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only)
+- Source ID: `site-docs-reference`
+- Final score: 93
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- INSTANCE NAME /explore/system activity/scheduled plan oauth events?fields=user.name,count,query.model&f[query.model]=-NULL&f[count]=0&sorts=user.name&limit=500&column limit=50&query timezone=America%2FLos Angeles&vis=%7B%22show view names%22%3Afalse%2C%22show row numbers%22%3Atrue%2C%22transpose%22%3Afalse%2C%22truncate text%22%3Atrue%2C%22hide totals%22%3Afalse%2C%22hide row totals%22%3Afalse%2C%22size to fit%22%3Atrue%2C%22table theme%22%3A%22white%22%2C%22limit displayed rows%22%3Afalse%2C%22enable conditional formatting%22%3Afalse%2C%22header text alignment%22%3A%22left%22%2C%22header font size%22%3A12%2C%22rows font size%22%3A12%2C%22conditional formatting include totals%22%3Afalse%2C%22conditional formatting include nulls%22%3Afalse%2C%22x axis gridlines%22%3Afalse%2C%22y axis gridlines%22%3Atrue%2C%22show y axis labels%22%3Atrue%2C%22show y axis ticks%22%3Atrue%2C%22y axis tick density%22%3A%22default%22%2C%22y axis tick density custom%22%3A5%2C%22show x axis label%22%3Atrue%2C%22show x axis ticks%22%3Atrue%2C%22y axis scale mode%22%3A%22linear%22%2C%22x axis reversed%22%3Afalse%2C%22y axis reversed%22%3Afalse%2C%22plot size by field%22%3Afalse%2C%22trellis%22%3A%22%22%2C%22stacking%22%3A%22%22%2C%22legend position%22%3A%22center%22%2C%22point style%22%3A%22none%22%2C%22show value labels%22%3Afalse%2C%22label density%22%3A25%2C%22x axis scale%22%3A%22auto%22%2C%22y axis combined%22%3Atrue%2C%22ordering%22%3A%22none%22%2C%22show null labels%22%3Afalse%2C%22show totals labels%22%3Afalse%2C%22show silhouette%22%3Afalse%2C%22totals color%22%3A%22%23808080%22%2C%22type%22%3A%22looker grid%22%2C%22defaults version%22%3A1%2C%22series types%22%3A%7B%7D%2C%22hidden fields%22%3A%5B%22count%22%5D%7D&filter config=%7B%22query.model%22%3A%5B%7B%22type%22%3A%22%21null%22%2C%22values%22%3A%5B%7B%7D%2C%7B%7D%5D%2C%22id%22%3A0%7D%5D%2C%22count%22%3A%5B%7B%22type%22%3A%22%3D%22%2C%22values%22%3A%5B%7B%22constant%22%3A%220%22%7D%2C%7B%7D%5D%2C%22id%22%3A1%7D%5D%2C%22 %21internal%21 %22%3A%5B%22OR%22%2C%5B%5B%22AND%22%2C%5B%5B%22FILTER%22%2C%7B%22field%22%3A%22query.model%22%2C%22value%22%3A%22-NULL%22%2C%22type%22%3A%22%21null%22%7D%5D%2C%5B%22FILTER%22%2C%7B%22field%22%3A%22count%22%2C%22value%22%3A%220%22%7D%5D%5D%5D%5D%5D%7D&dynamic fields=%5B%7B%22category%22%3A%22measure%22%2C%22expression%22%3Anull%2C%22label%22%3A%22Count%22%2C%22value format%22%3Anull%2C%22value format name%22%3Anull%2C%22based on%22%3A%22event attribute.value%22%2C%22 kind hint%22%3A%22measure%22%2C%22measure%22%3A%22count%22%2C%22type%22%3A%22count distinct%22%2C%22 type hint%22%3A%22number%22%2C%22filters%22%3A%7B%22event attribute.value%22%3A%22%25%2Fauth%2Fbigquery.readonly%25%22%7D%7D%5D&origin=share-expanded Each of these users will need to reauthorize their OAuth connection credentials to ensure uninterrupted schedule delivery. (Optional) Force read-only scope usage across your Looker instance To sign out all your users who have OAuth credentials that allow read and write scope from any of your BigQuery connections, follow these steps: Navigate to the Admin settings - General settings page.
+- Generate a list of all users with potentially affected schedules To generate a list of all users without read-only OAuth credentials who have created schedules on your BigQuery connections, visit the following System Activity Explore, replacing INSTANCE NAME with the address of your Looker instance (such as https://example.cloud.looker.com ).
+- Starting on March 1, 2025, Looker will sign out any users who have not re-authorized with OAuth read-only scopes from all corresponding BigQuery connections.
+- Note the following for Google BigQuery connections with read-only scopes: Users can't execute write operations in SQL Runner .
+
+### Admin settings - Roles \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- Source ID: `site-docs-reference`
+- Final score: 73
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
+- Gemini gemini in looker Conversational Analytics Agent Manager access data , gemini in looker , chat with agent , chat with explore , save agents Conversational Analytics User access data , gemini in looker , chat with agent Customer Engineer Advanced Editor access data , can create forecast , can override vis config , chat with agent , chat with explore , clear cache refresh , create custom fields , create table calculations , deploy , develop , explore , follow alerts , gemini in looker , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , save agents , save content , save dashboards , save looks , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Customer Engineer Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.
+- This permission is applied to individual models or model sets, rather than across the entire Looker instance or to connections. see system activity None Instance Wide CM Users can access the System Activity Explores and dashboards to view usage, history, and other metadata about a Looker instance. see admin None Instance Wide CM Users can have read-only access to admin resources, including pages in the Admin panel , with the exception of the following pages: Support Access Preview Features Legacy Features Export Content Access Actions (if the page displays only the enabled or disabled states of actions) This permission doesn't provide access to System Activity pages. mobile app access None Instance Wide NN Users can sign in to your instance on a mobile device using the Looker mobile app .
+- Support Advanced Editor access data , clear cache refresh , create custom fields , create table calculations , develop , explore , follow alerts , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Support Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.
+- If you assign the manage project connections restricted permission to a user, the user will be able to see, edit, and create project-scoped connections for any projects included in the model set. see ci develop Instance Wide NN Added 25.6 Users can view the results of Continuous Integration runs, view the Continuous Integration Suites page, and run test suites. manage ci see ci Instance Wide NN Added 25.6 Users can create Continuous Integration suites, manage Continuous Integration users, and configure the git connection with Continuous Integration.
 

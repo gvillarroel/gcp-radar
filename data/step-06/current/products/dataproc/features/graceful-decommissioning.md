@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.116Z"
+generated_at: "2026-04-14T00:23:22.679Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Graceful decommissioning"
 feature_slug: "graceful-decommissioning"
 latest_feature_date: "2017-08-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
-  - "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/manage-cluster"
+  - "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies"
 keywords:
   - "graceful"
   - "decommissioning"
@@ -26,7 +26,7 @@ keywords:
 # Graceful decommissioning
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +38,21 @@ Graceful decommissioning lets Dataproc remove cluster nodes without interrupting
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups](https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups)
-- [https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster](https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster)
+- [https://docs.cloud.google.com/dataproc/docs/guides/manage-cluster](https://docs.cloud.google.com/dataproc/docs/guides/manage-cluster)
+- [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies)
 
 ## Supporting Pages
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 194
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- January 27, 2016 Fixed Fixed two issues which would sometimes cause virtual machines to remain active after a cluster deletion request was submitted The Spark maxExecutors setting is now set to 10000 to avoid the AppMaster failing on jobs with many tasks Improved handling for aggressive job submission by making several changes to the Cloud Dataproc agent, including: Limiting the number of concurrent jobs so they are proportional to the memory of the master node Checking free memory before scheduling new jobs Rate limiting how many jobs can be scheduled per cycle Improved how HDFS capacity is calculated before commissioning or decommissioning nodes to prevent excessively long updates Feature Two new options have been added to the Cloud Dataproc gcloud command-line tool for adding tags and metadata to virtual machines used in Cloud Dataproc clusters.
-- When using graceful decommissioning to remove secondary (preemptible) workers soon after scaling the secondary worker group, an error would occasionally occur with a error message similar to the following: "Secondary worker group cannot be modified outside of Cloud Dataproc.
-- August 04, 2017 Change Apache Hadoop on Cloud Dataproc 1.2 has been updated to version 2.8.1 Feature Graceful decomissioning – Cloud Dataproc clusters running Cloud Dataproc 1.2 or later now support graceful YARN decommissioning .
-- Fixed an uncommon issue in which a Cloud Dataproc agent restart during a small window of a cluster downscale operation could cause problems decommissioning data nodes.
 
 ### Managed Service for Apache Spark driver node groups \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups](https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups)
 - Source ID: `site-iam-reference`
-- Final score: 130
+- Final score: 136
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,17 +61,31 @@ Evidence snippets:
 - Example: { "size": SIZE , "gracefulDecommissionTimeout": " TIMEOUT DURATION " } HTTP method and URL: POST https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME /nodeGroups/ Node GROUP ID :resize Request JSON body: { "size": SIZE , } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 - Example: gcloud CLI NodeGroup scale up command: gcloud dataproc node-groups resize NODE GROUP ID \ --cluster= CLUSTER NAME \ --region= REGION \ --size=4 Example: gcloud CLI NodeGroup scale down command: gcloud dataproc node-groups resize NODE GROUP ID \ --cluster= CLUSTER NAME \ --region= REGION \ --size=1 \ --graceful-decommission-timeout="100s" REST Before using any of the request data, make the following replacements: PROJECT ID : Required.
 
-### "Recreate and update a Google Kubernetes Engine virtual cluster \_|\_ Managed\
+### "Manage a cluster \_|\_ Managed Service for Apache Spark \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster](https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster)
-- Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/manage-cluster](https://docs.cloud.google.com/dataproc/docs/guides/manage-cluster)
+- Source ID: `site-iam-reference`
+- Final score: 116
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Delete the existing Managed Service for Apache Spark on GKE virtual cluster if you will create a cluster that has the same name as the cluster it is updating (if you are replacing the original cluster). curl -X DELETE -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://dataproc.googleapis.com/v1/projects/${PROJECT}/regions/${REGION}/clusters/${CLUSTER}" Wait for the previous delete operation to finish, and then import the updated cluster configuration to create a new Managed Service for Apache Spark on GKE virtual cluster with the updated settings. curl -i -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json; charset=utf-8" -d "@${CLUSTER}-config.json" "https://dataproc.googleapis.com/v1/projects/${PROJECT}/regions/${REGION}/clusters?alt=json" Console The Google Cloud console does not support recreating a Managed Service for Apache Spark on GKE virtual cluster by importing an existing cluster's configuration.
-- Wait for the previous delete operation to finish, and then import the updated cluster configuration to create a new Managed Service for Apache Spark on GKE virtual cluster with the updated config settings. gcloud dataproc clusters import $CLUSTER \ --region=$REGION \ --source="${CLUSTER}-config.yaml" API Set environment variables: CLUSTER= existing Managed Service for Apache Spark on GKE cluster name \ REGION= region Export the existing Managed Service for Apache Spark on GKE cluster configuration to a YAML file. curl -X GET -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://dataproc.googleapis.com/v1/projects/${PROJECT}/regions/${REGION}/clusters/${CLUSTER}?alt=json" > "${CLUSTER}-config.json" Update the configuration.
-- Recreate and update a Managed Service for Apache Spark on GKE cluster gcloud Set environment variables: CLUSTER= existing Managed Service for Apache Spark on GKE cluster name \ REGION= region Export the existing Managed Service for Apache Spark on GKE cluster configuration to a YAML file. gcloud dataproc clusters export $CLUSTER \ --region=$REGION > "${CLUSTER}-config.yaml" Update the configuration.
-- Sample jq command to remove kubernetesNamespace field: jq 'del(.virtualClusterConfig.kubernetesClusterConfig.kubernetesNamespace)' Make additional changes to update Managed Service for Apache Spark on GKE virtual cluster configuration settings, such as changing the Spark componentVersion .
+- The following cluster parameters can be updated: the number of standard worker nodes in a cluster—see Scaling clusters the number of secondary worker nodes in a cluster— see Managed Service for Apache Spark secondary workers whether to use graceful decommissioning to control shutting down a worker after its jobs are completed adding or deleting cluster labels Cluster update error Managed Service for Apache Spark issues an ERROR DUE TO UPDATE error when a cluster update operation fails.
+- Google Cloud CLI To delete a Managed Service for Apache Spark cluster, use the gcloud CLI gcloud dataproc clusters delete command locally in a terminal window or in Cloud Shell . gcloud dataproc clusters delete cluster-name \ --region= region REST API Use the Managed Service for Apache Spark clusters.delete API to delete a cluster.
+- Update a cluster You can update a cluster by issuing a Dataproc API clusters.patch request, running a gcloud dataproc clusters update command in a local terminal window or in Cloud Shell , or by editing cluster parameters from the Configuration tab of the Cluster details page for the cluster in the Google Cloud console .
+- Delete a cluster You can delete a cluster via a Dataproc API clusters.delete HTTP or programmatic request, using the Google Cloud CLI gcloud command-line tool locally in a terminal window or in Cloud Shell , or from the Google Cloud console .
+
+### "REST Resource: projects.locations.autoscalingPolicies \_|\_ Managed Service\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies)
+- Source ID: `site-docs-reference`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Resource: AutoscalingPolicy JSON representation BasicAutoscalingAlgorithm JSON representation BasicYarnAutoscalingConfig JSON representation InstanceGroupAutoscalingPolicyConfig JSON representation ClusterType Methods Resource: AutoscalingPolicy Describes an autoscaling policy for Dataproc cluster autoscaler.
+- "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
+- ZERO SCALE Clusters that can use only secondary workers and be scaled down to zero secondary worker nodes.
+- STANDARD Standard dataproc cluster with a minimum of two primary workers.
 

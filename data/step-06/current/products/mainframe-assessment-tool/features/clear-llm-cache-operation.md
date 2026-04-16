@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.448Z"
+generated_at: "2026-04-15T12:06:50.486Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Clear LLM cache operation"
@@ -9,18 +9,16 @@ latest_feature_date: "2024-11-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings"
 keywords:
   - "clear"
   - "llm"
   - "cache"
   - "operation"
   - "adds"
-  - "an"
-  - "to"
   - "purge"
+  - "cached"
+  - "responses"
 ---
 
 # Clear LLM cache operation
@@ -38,47 +36,24 @@ Adds an operation to purge cached LLM responses from settings.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings)
 
 ## Supporting Pages
 
-### View and understand assessment results | Mainframe Assessment Tool | Google Cloud Documentation
+### Configure settings \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- Source ID: `site-docs-root`
-- Final score: 86
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings)
+- Source ID: `site-docs-reference`
+- Final score: 66
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- View and understand assessment results Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results The Assets page provides a summary, detailed logic, and code suggestions for a program or job in your mainframe application.
-- You can also view the status, type, language, and execution mode (batch or online) for each asset.
-
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 85
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-
-### Mainframe Assessment Tool overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 62
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Mainframe Assessment Tool overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview Mainframe Assessment Tool helps assess your existing mainframe codebase and plan your migration to Google Cloud.
-- Mainframe Assessment Tool automates assessment, saving you time and resources.
+- Optional: Perform actions This section describes how to perform actions, such as clearing the Gemini cache and verifying connectivity to Gemini.
+- Note: To improve performance and accuracy for subsequent assessments on the same files, don't clear the cache.
+- To clear the Gemini cache, click Clear model cache .
+- Track Vertex AI costs using custom metadata labels Mainframe Assessment Tool automatically adds custom metadata labels to all Vertex AI requests to help you track and analyze costs.
 

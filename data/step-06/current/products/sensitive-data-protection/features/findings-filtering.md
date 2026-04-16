@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.906Z"
+generated_at: "2026-04-14T12:39:34.632Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "Findings filtering"
@@ -9,17 +9,18 @@ latest_feature_date: "2017-05-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes"
 keywords:
-  - "findings"
   - "filtering"
-  - "allows"
-  - "inspection"
-  - "to"
-  - "be"
   - "filtered"
-  - "by"
+  - "likelihood"
+  - "inspection"
+  - "allows"
+  - "when"
+  - "findings"
+  - "infotype"
 ---
 
 # Findings filtering
@@ -37,33 +38,55 @@ Allows inspection findings to be filtered by infoType and likelihood when listin
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions](https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood](https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes)
 
 ## Supporting Pages
 
-### Learn about your data through discovery and inspection | Sensitive Data Protection | Google Cloud Documentation
+### "InfoTypes and infoType detectors \_|\_ Sensitive Data Protection \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
-- Source ID: `site-docs-root`
-- Final score: 33
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Learn about your data through discovery and inspection Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data This page describes and compares two Sensitive Data Protection services that help you understand your data and enable data governance workflows: the discovery service and the inspection service.
-
-### Sensitive Data Protection IAM permissions | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions](https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 24
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes)
+- Source ID: `site-api-reference-required-2`
+- Final score: 185
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Note: If you are using Sensitive Data Protection to scan critical resources, such as those protected by additional custom Identity and Access Management roles, you must assign those additional IAM roles to the Cloud Data Loss Prevention Service Agent.
-- Sensitive Data Protection IAM permissions Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions The Cloud Data Loss Prevention Service Agent is automatically granted common permissions on the project that are needed for inspecting resources and is listed in the IAM section of the Google Cloud console.
+- DlpServiceClient () Prepare info types by converting the list of strings into a list of dictionaries (protos are also accepted). info types = [{ "name" : "PHONE NUMBER" }] Construct the configuration dictionary. inspect config = { "info types" : info types , "include quote" : True , } Construct the item. item = { "value" : content string } Convert the project id into a full resource id. parent = f "projects/ { project } " Call the API. response = dlp . inspect content ( request = { "parent" : parent , "inspect config" : inspect config , "item" : item } ) Print out the results. if response . result . findings : for finding in response . result . findings : print ( f "Quote: { finding . quote } " ) print ( f "Info type: { finding . info type . name } " ) print ( f "Likelihood: { finding . likelihood } " ) else : print ( "No findings." ) REST JSON input: POST https://dlp.googleapis.com/v2/projects/[PROJECT-ID]/content:inspect?key={YOUR API KEY} { "item":{ "value":"My phone number is (415) 555-0890" }, "inspectConfig":{ "includeQuote":true, "minLikelihood":"POSSIBLE", "infoTypes":{ "name":"PHONE NUMBER" } } } When you send the preceding request the specified endpoint, Sensitive Data Protection returns the following: JSON output: { "result":{ "findings":[ { "quote":"(415) 555-0890", "infoType":{ "name":"PHONE NUMBER" }, "likelihood":"VERY LIKELY", "location":{ "byteRange":{ "start":"19", "end":"33" }, "codepointRange":{ "start":"19", "end":"33" } }, "createTime":"2018-10-29T23:46:34.535Z" } ] } } You must specify particular infoTypes listed in the reference in your inspection configuration.
+- DlpServiceClient (); // The project ID to run the API call under // const projectId = 'my-project'; // The string to inspect // const string = 'My email is gary@example.com and my phone number is (223) 456-7890.'; // The minimum likelihood required before returning a match // const minLikelihood = 'LIKELIHOOD UNSPECIFIED'; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; // The infoTypes of information to match // See https://cloud.google.com/dlp/docs/concepts-infotypes for more information // about supported infoTypes. // const infoTypes = [{ name: 'PHONE NUMBER' }]; // The customInfoTypes of information to match // const customInfoTypes = [{ infoType: { name: 'DICT TYPE' }, dictionary: { wordList: { words: ['foo', 'bar', 'baz']}}}, // { infoType: { name: 'REGEX TYPE' }, regex: {pattern: '\\(\\d{3}\\) \\d{3}-\\d{4}'}}]; // Whether to include the matching string // const includeQuote = true; async function inspectPhoneNumber () { // Construct item to inspect const item = { value : string }; // Construct request const request = { parent : projects/ ${ projectId } /locations/global , inspectConfig : { infoTypes : infoTypes , customInfoTypes : customInfoTypes , minLikelihood : minLikelihood , includeQuote : includeQuote , limits : { maxFindingsPerRequest : maxFindings , }, }, item : item , }; // Run request const [ response ] = await dlp . inspectContent ( request ); const findings = response . result . findings ; if ( findings . length > 0 ) { console . log ( 'Findings:' ); findings . forEach ( finding = > { if ( includeQuote ) { console . log ( \tQuote: ${ finding . quote } ); } console . log ( \tInfo type: ${ finding . infoType . name } ); console . log ( \tLikelihood: ${ finding . likelihood } ); }); } else { console . log ( 'No findings.' ); } } inspectPhoneNumber (); PHP To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+- Notice that the PHONE NUMBER detector is specified in inspectConfig, which instructs Cloud DLP to scan the given string for a phone number. @param string $projectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to inspect. / function inspect phone number( // TODO(developer): Replace sample parameters before running the code. string $projectId, string $textToInspect = 'My name is Gary and my phone number is (415) 555-0890' ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = "projects/$projectId/locations/global"; // Specify what content you want the service to Inspect. $item = (new ContentItem()) ->setValue($textToInspect); $inspectConfig = (new InspectConfig()) // The infoTypes of information to match ->setInfoTypes([ (new InfoType())->setName('PHONE NUMBER'), ]) // Whether to include the matching string ->setIncludeQuote(true) ->setMinLikelihood(Likelihood::POSSIBLE); // Run request $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' .
+- InspectContentResponse response = dlp . inspectContent ( request ); // Parse the response and process results System . out . println ( "Findings: " + response . getResult (). getFindingsCount ()); for ( Finding f : response . getResult (). getFindingsList ()) { System . out . println ( "\tQuote: " + f . getQuote ()); System . out . println ( "\tInfo type: " + f . getInfoType (). getName ()); System . out . println ( "\tLikelihood: " + f . getLikelihood ()); } } } } Node.js To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+
+### "Customizing match likelihood \_|\_ Sensitive Data Protection \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood](https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood)
+- Source ID: `site-api-reference-required-2`
+- Final score: 167
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information, see Set up authentication for a local development environment . use Google\Cloud\Dlp\V2\Client\DlpServiceClient; use Google\Cloud\Dlp\V2\ContentItem; use Google\Cloud\Dlp\V2\CustomInfoType; use Google\Cloud\Dlp\V2\CustomInfoType\DetectionRule\HotwordRule; use Google\Cloud\Dlp\V2\CustomInfoType\DetectionRule\LikelihoodAdjustment; use Google\Cloud\Dlp\V2\CustomInfoType\DetectionRule\Proximity; use Google\Cloud\Dlp\V2\CustomInfoType\Regex; use Google\Cloud\Dlp\V2\InfoType; use Google\Cloud\Dlp\V2\InspectConfig; use Google\Cloud\Dlp\V2\InspectContentRequest; use Google\Cloud\Dlp\V2\InspectionRule; use Google\Cloud\Dlp\V2\InspectionRuleSet; use Google\Cloud\Dlp\V2\Likelihood; / Inspect data with a hotword rule This sample uses a custom regex with a hotword rule to increase the likelihood of match. @param string $projectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to inspect. / function inspect hotword rule( // TODO(developer): Replace sample parameters before running the code. string $projectId, string $textToInspect = "Patient's MRN 444-5-22222 and just a number 333-2-33333" ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = "projects/$projectId/locations/global"; // Specify what content you want the service to Inspect. $item = (new ContentItem()) ->setValue($textToInspect); // Specify the regex pattern the inspection will look for. $customRegexPattern = '[1-9]{3}-[1-9]{1}-[1-9]{5}'; $hotwordRegexPattern = '(?i)(mrn medical)(?-i)'; // Construct the custom regex detector. $cMrnDetector = (new InfoType()) ->setName('C MRN'); $customInfoType = (new CustomInfoType()) ->setInfoType($cMrnDetector) ->setLikelihood(Likelihood::POSSIBLE) ->setRegex((new Regex()) ->setPattern($customRegexPattern)); // Specify hotword likelihood adjustment. $likelihoodAdjustment = (new LikelihoodAdjustment()) ->setFixedLikelihood(Likelihood::VERY LIKELY); // Specify a window around a finding to apply a detection rule. $proximity = (new Proximity()) ->setWindowBefore(10); $hotwordRule = (new HotwordRule()) ->setHotwordRegex((new Regex()) ->setPattern($hotwordRegexPattern)) ->setLikelihoodAdjustment($likelihoodAdjustment) ->setProximity($proximity); // Construct rule set for the inspect config. $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$cMrnDetector]) ->setRules([ (new InspectionRule()) ->setHotwordRule($hotwordRule) ]); // Construct the configuration for the Inspect request. $inspectConfig = (new InspectConfig()) ->setCustomInfoTypes([$customInfoType]) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]); // Run request $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' .
+- This approach is helpful, for example, if you want to exclude a column of data from inspection results. @param string $projectId The Google Cloud project id to use as a parent resource. / function inspect column values w custom hotwords(string $projectId): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = "projects/$projectId/locations/global"; // Specify the table to be inspected. $tableToDeIdentify = (new Table()) ->setHeaders([ (new FieldId()) ->setName('Fake Social Security Number'), (new FieldId()) ->setName('Real Social Security Number'), ]) ->setRows([ (new Row())->setValues([ (new Value()) ->setStringValue('111-11-1111'), (new Value()) ->setStringValue('222-22-2222') ]) ]); $item = (new ContentItem()) ->setTable($tableToDeIdentify); // Specify the regex pattern the inspection will look for. $hotwordRegexPattern = 'Fake Social Security Number'; // Specify hotword likelihood adjustment. $likelihoodAdjustment = (new LikelihoodAdjustment()) ->setFixedLikelihood(Likelihood::VERY UNLIKELY); // Specify a window around a finding to apply a detection rule. $proximity = (new Proximity()) ->setWindowBefore(1); // Construct the hotword rule. $hotwordRule = (new HotwordRule()) ->setHotwordRegex((new Regex()) ->setPattern($hotwordRegexPattern)) ->setLikelihoodAdjustment($likelihoodAdjustment) ->setProximity($proximity); // Construct rule set for the inspect config. $infotype = (new InfoType()) ->setName('US SOCIAL SECURITY NUMBER'); $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$infotype]) ->setRules([ (new InspectionRule()) ->setHotwordRule($hotwordRule) ]); // Construct the configuration for the Inspect request. $inspectConfig = (new InspectConfig()) ->setInfoTypes([$infotype]) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]) ->setMinLikelihood(Likelihood::POSSIBLE); // Run request. $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results. $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' .
+- POSSIBLE , "include quote" : True , } Convert the project id into a full resource id. parent = f "projects/ { project } /locations/global" Call the API response = dlp . inspect content ( request = { "parent" : parent , "inspect config" : inspect config , "item" : item , } ) Print out the results. if response . result . findings : for finding in response . result . findings : try : if finding . quote : print ( f "Quote: { finding . quote } " ) except AttributeError : pass print ( f "Info type: { finding . info type . name } " ) print ( f "Likelihood: { finding . likelihood } " ) else : print ( "No findings." ) REST JSON input: { "item" : { "table" : { "headers" : [ { "name" : "Fake Social Security Number" }, { "name" : "Real Social Security Number" } ], "rows" : [ { "values" : [ { "stringValue" : "111-11-1111" }, { "stringValue" : "222-22-2222" } ] } ] } }, "inspectConfig" : { "infoTypes" : [ { "name" : "US SOCIAL SECURITY NUMBER" } ], "includeQuote" : true , "ruleSet" : [ { "infoTypes" : [ { "name" : "US SOCIAL SECURITY NUMBER" } ], "rules" : [ { "hotwordRule" : { "hotwordRegex" : { "pattern" : "(Fake Social Security Number)" }, "likelihoodAdjustment" : { "fixedLikelihood" : "VERY UNLIKELY" }, "proximity" : { "windowBefore" : 1 } } } ] } ], "minLikelihood" : "POSSIBLE" } } JSON output: { "result": { "findings": [ { "quote": "222-22-2222", "infoType": { "name": "US SOCIAL SECURITY NUMBER" }, "likelihood": "VERY LIKELY", "location": { "byteRange": { "end": "11" }, "codepointRange": { "end": "11" }, "contentLocations": [ { "recordLocation": { "fieldId": { "name": "Real Social Security Number" }, "tableLocation": {} } } ] }, "createTime": " TIMESTAMP ", "findingId": " TIMESTAMP " } ] } } The value 111-11-1111, which is in the Fake Social Security Number column, matched the hotword rule, so Sensitive Data Protection assigned to it the VERY UNLIKELY likelihood level .
+- DlpServiceClient (); // The project ID to run the API call under // const projectId = 'my-project'; // The string to inspect // const string = 'Patients MRN 444-5-22222'; // The minimum likelihood required before returning a match // const minLikelihood = DLP.protos.google.privacy.dlp.v2.Likelihood.POSSIBLE; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; // The infoTypes of information to match // See https://cloud.google.com/dlp/docs/concepts-infotypes for more information // about supported infoTypes. // const infoTypes = [{ name: 'EMAIL ADDRESS' }]; // The customInfoTypes of information to match // const customInfoTypes = [{ infoType: { name: 'DICT TYPE' }, dictionary: { wordList: { words: ['foo', 'bar', 'baz']}}}, // { infoType: { name: 'REGEX TYPE' }, regex: {pattern: '\\(\\d{3}\\) \\d{3}-\\d{4}'}}]; // Whether to include the matching string // const includeQuote = true; // Custom hotword regex patten // const hotwordRegexPattern = '(?i)(mrn medical)(?-i)'; async function inspectWithHotwordRule () { // Construct item to inspect const item = { byteItem : { type : DLP . protos . google . privacy . dlp . v2 .
+
+### "Custom infoType detectors \_|\_ Sensitive Data Protection \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes)
+- Source ID: `site-api-reference-required-2`
+- Final score: 161
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information about likelihood, see the Likelihood concept page. "detectionRules" : A set of DetectionRule objects to additionally apply to all findings of this custom infoType detector.
+- You specify a CustomInfoType in the InspectConfig object when configuring the following: Inspection using projects.content.inspect .
+- The CustomInfoType object is comprised of the following fields, which are set as described: "infotype" : The name of the custom infoType detector, contained in an InfoType object. "likelihood" : The default Likelihood value to return for this custom infoType detector.
+- Next steps Learn more about creating custom infoTypes from the following topics: Creating a regular custom dictionary detector : Learn how to create a custom infoType detector to match findings on a list of words and phrases.
 

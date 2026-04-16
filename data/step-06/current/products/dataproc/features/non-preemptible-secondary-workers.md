@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.078Z"
+generated_at: "2026-04-14T00:23:22.636Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Non-preemptible secondary workers"
 feature_slug: "non-preemptible-secondary-workers"
 latest_feature_date: "2020-05-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/create-partial-cluster"
   - "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
 keywords:
   - "non"
@@ -20,13 +20,12 @@ keywords:
   - "dataproc"
   - "clusters"
   - "creation"
-  - "with"
 ---
 
 # Non-preemptible secondary workers
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +37,23 @@ Dataproc clusters support creation with non-preemptible secondary workers.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels](https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels)
+- [https://docs.cloud.google.com/dataproc/docs/guides/create-partial-cluster](https://docs.cloud.google.com/dataproc/docs/guides/create-partial-cluster)
 - [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient)
 
 ## Supporting Pages
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 182
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Fixed Fixed the ability to delete jobs that fast-failed before some cluster and staging directories were created Fixed some remaining errors with vmem settings when using the distcp command Fixed a rare bug in which underlying Compute Engine issues could lead to VM instances failing to be deleted after the Cloud Dataproc cluster had been successfully deleted Hive command has been fixed Fixed error reporting when updating the number of workers (standard and preemptible) in a cluster Fixed some cases when Rate Limit Exceeded errors occurred The maximum cluster name length is now correctly 55 instead of 56 characters GCP Console Cluster list now includes a Created column, and the cluster configuration tab now includes a Created field, telling the creation time of the cluster In the cluster-create screen, cluster memory sizes greater than 999 GB are now displayed in TB Fields that were missing from the PySpark and Hive job configuration tab ( Additional Python Files and Jar Files ) have been added The option to add preemptible nodes when creating a cluster is now in the "expander" at the bottom of the form Machine types with insufficient memory (less than 3.5 GB) are no longer displayed in the list of machine types (previously, selecting one of these small machine types would lead to an error from the backend The placeholder text in the Arguments field of the submit-job form has been corrected October 23, 2015 Feature GCP Console: Added support for adding, editing, and removing preemptible instances in clusters.
-- May 05, 2020 Feature Clusters can now be created with non-preemptible secondary workers.
-- March 10, 2020 Change Added the following flags to gcloud dataproc clusters create and gcloud dataproc workflow-templates set-managed-cluster commands: --num-secondary-workers --num-secondary-worker-local-ssds --secondary-worker-boot-disk-size --secondary-worker-boot-disk-type --secondary-worker-accelerator Deprecated The following flags to gcloud dataproc clusters create and gcloud dataproc workflow-templates set-managed-cluster commands have been deprecated: --num-preemptible-workers --num-preemptible-worker-local-ssds --preemptible-worker-boot-disk-size --preemptible-worker-boot-disk-type --preemptible-worker-accelerator See the related change, above, for the new flags to use in place of these deprecated flags.
-- October 18, 2024 Announcement New Dataproc on Compute Engine subminor image versions : 2.0.123-debian10, 2.0.123-rocky8, 2.0.123-ubuntu18 2.1.71-debian11, 2.1.71-rocky8, 2.1.71-ubuntu20, 2.1.71-ubuntu20-arm 2.2.37-debian12, 2.2.37-rocky9, 2.2.37-ubuntu22 October 17, 2024 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.84 1.2.28 2.2.28 October 14, 2024 Change Dataproc Clusters created with image versions 2.0.57+, 2.1.5+, or 2.2+ : Secondary workers' control plane operations are made by the Dataproc Service Agent service account ( service-<project-number>@dataproc-accounts.iam.gserviceaccount.com ).
 
 ### "Create and manage Labels \_|\_ Managed Service for Apache Spark \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels](https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels)
 - Source ID: `site-docs-root`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 174
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For example, if you scale up the cluster, all new primary and secondary workers will have the new labels. gcloud Command You can specify one or more labels to be applied to a Managed Service for Apache Spark cluster or job at creation or submit time using the Google Cloud CLI. gcloud dataproc clusters create args --labels environment=production,customer=acme gcloud dataproc jobs submit args --labels environment=production,customer=acme Once a Managed Service for Apache Spark cluster or job has been created, you can update the labels associated with that resource using the Google Cloud CLI. gcloud dataproc clusters update args --update-labels environment=production,customer=acme gcloud dataproc jobs update args --update-labels environment=production,customer=acme Similarly, you can use the Google Cloud CLI to filter Managed Service for Apache Spark resources by label using a filter expression of the following format: labels.<key=value> . gcloud dataproc clusters list \ --region= region \ --filter="status.state=ACTIVE AND labels.environment=production" gcloud dataproc jobs list \ --region= region \ --filter="status.state=ACTIVE AND labels.customer=acme" See the clusters.list and jobs.list Dataproc API documentation for more information on writing a filter expression.
@@ -75,11 +61,25 @@ Evidence snippets:
 - A cluster can contain either preemptible workers or non-preemptible secondary workers, but not both.
 - Label updates propagate to all preemptible secondary workers within 24 hours.
 
+### "Create a Managed Service for Apache Spark partial cluster \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/create-partial-cluster](https://docs.cloud.google.com/dataproc/docs/guides/create-partial-cluster)
+- Source ID: `site-docs-root`
+- Final score: 102
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Display the number of provisioned workers After creating a cluster, you can run the following gcloud CLI command to list the number of workers, including any secondary workers, provisioned in your cluster. gcloud dataproc clusters list \ --project= PROJECT \ --region= REGION \ --filter=clusterName= CLUSTER NAME Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Note: Managed Service for Apache Spark partial cluster creation is not available in the Google Cloud console. gcloud To create a Managed Service for Apache Spark partial cluster on the command line, run the following gcloud dataproc clusters create command locally in a terminal window or in Cloud Shell . gcloud dataproc clusters create CLUSTER NAME \ --project= PROJECT \ --region= REGION \ --num-workers= NUM WORKERS \ --min-num-workers= MIN NUM WORKERS \ other args ...
+- REST To create a Dataproc partial cluster, specify the minimum number of primary workers in the workerConfig.minNumInstances field as part of a clusters.create request.
+- Setting the scaleDownFactor to 0 prevents the cluster from scaling down from 10 to 8, and will help keep the number of workers at the maximum 10-worker limit. workerConfig: minInstances: 8 maxInstances: 10 basicAlgorithm: cooldownPeriod: 2m yarnConfig: scaleUpFactor: 1 scaleDownFactor: 0 gracefulDecommissionTimeout: 1h Create a partial cluster You can use the Google Cloud CLI or the Dataproc API to create a Managed Service for Apache Spark partial cluster.
+
 ### "Class ClusterControllerAsyncClient (5.26.0) \_|\_ Python client libraries\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 140
+- Final score: 94
 - Re-rank relevance: N/A
 
 Evidence snippets:

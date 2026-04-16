@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:06.175Z"
+generated_at: "2026-04-12T12:13:34.800Z"
 product_name: "Data Catalog"
 product_slug: "data-catalog"
 feature_name: "Required tag template attributes"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates"
   - "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.policy_tag_manager.PolicyTagManagerAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient"
 keywords:
   - "required"
   - "tag"
@@ -38,13 +39,14 @@ Tag templates can mark attributes as required so tags cannot be created without 
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)
 - [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.policy_tag_manager.PolicyTagManagerAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.policy_tag_manager.PolicyTagManagerAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)
 - Source ID: `site-docs-root`
-- Final score: 246
+- Final score: 296
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 200
+- Final score: 246
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -80,12 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.policy_tag_manager.PolicyTagManagerAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.policy_tag_manager.PolicyTagManagerAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 192
-- Re-rank relevance: N/A
+- Final score: 244
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Union [ str , bytes ]]] = () ) - > None Deletes a policy tag together with the following: All of its descendant policy tags, if any Policies associated with the policy tag and its descendants References from BigQuery table schema of the policy tag and its descendants This snippet has been automatically generated and should be regarded as a code template only.
 - A condition can add constraints based on attributes of the request, the resource, or both.
 - A condition can add constraints based on attributes of the request, the resource, or both.
 - For example, a "data sensitivity" taxonomy might contain the following policy tags: :literal: + PII + Account number + Age + SSN + Zipcode + Financials + Revenue \ \ A "data origin" taxonomy might contain the following policy tags: :literal: + User data + Employee data + Partner data + Public data \ \ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Class DataCatalogClient (3.29.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient)
+- Source ID: `site-python-reference`
+- Final score: 222
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Supported resources are: Tag templates Entry groups Note: This method sets policies only within Data Catalog and can't be used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources synced with the Data Catalog.
+- Supported resources are: Tag templates Entry groups Note: This method gets policies only within Data Catalog and can't be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 def sample rename tag template field enum value(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 def sample create tag template field(): Create a client client = datacatalog v1 .
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:44:56.283Z"
+generated_at: "2026-04-12T12:17:23.937Z"
 product_name: "Google Workspace Marketplace API"
 product_slug: "google-workspace-marketplace-api"
 feature_name: "License notifications"
 feature_slug: "license-notifications"
 latest_feature_date: "2026-01-08"
 deprecation_date: "2026-01-08"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/marketplace/about-app-review"
   - "https://developers.google.com/workspace/marketplace/example-calls-marketplace-api"
   - "https://developers.google.com/workspace/marketplace/list-multiple-app-integrations"
+  - "https://developers.google.com/workspace/marketplace/reference/rest/v2/customerLicense"
 keywords:
   - "license"
   - "notifications"
@@ -26,7 +27,7 @@ keywords:
 # License notifications
 
 Product: Google Workspace Marketplace API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The License notifications feature provided the licenseNotification resource and 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/marketplace/about-app-review](https://developers.google.com/workspace/marketplace/about-app-review)
 - [https://developers.google.com/workspace/marketplace/example-calls-marketplace-api](https://developers.google.com/workspace/marketplace/example-calls-marketplace-api)
 - [https://developers.google.com/workspace/marketplace/list-multiple-app-integrations](https://developers.google.com/workspace/marketplace/list-multiple-app-integrations)
+- [https://developers.google.com/workspace/marketplace/reference/rest/v2/customerLicense](https://developers.google.com/workspace/marketplace/reference/rest/v2/customerLicense)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/marketplace/about-app-review](https://developers.google.com/workspace/marketplace/about-app-review)
 - Source ID: `site-iam-reference`
-- Final score: 150
+- Final score: 152
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/marketplace/example-calls-marketplace-api](https://developers.google.com/workspace/marketplace/example-calls-marketplace-api)
 - Source ID: `site-docs-root`
-- Final score: 136
+- Final score: 138
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/marketplace/list-multiple-app-integrations](https://developers.google.com/workspace/marketplace/list-multiple-app-integrations)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 129
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - For example, if your app offers a specific integration with Google Sheets and is available as a web app, instead of creating two app listings for a Sheets add-on and a web app, you can list them together as one app.
 - Doing so lets users install and authorize them at the same time, provides a more seamless user experience, and lets you grow your user count faster because all integrations are installed from one listing.
 - Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "REST Resource: customerLicense \_|\_ Google Workspace Marketplace \_|\_\
+
+- URL: [https://developers.google.com/workspace/marketplace/reference/rest/v2/customerLicense](https://developers.google.com/workspace/marketplace/reference/rest/v2/customerLicense)
+- Source ID: `site-api-reference`
+- Final score: 129
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-03 UTC."],[],["The CustomerLicense resource represents a customer's license for an application.
+- Resource: CustomerLicense JSON representation { "kind" : string , "state" : string , "applicationId" : string , "editions" : [ { object ( Editions ) } ] , "id" : string , "customerId" : string } Fields kind string The type of API resource.
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Google Workspace Marketplace Reference Send feedback REST Resource: customerLicense Stay organized with collections Save and categorize content based on your preferences.
 

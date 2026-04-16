@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.285Z"
+generated_at: "2026-04-13T13:51:57.748Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "plpgsql_check extension support"
 feature_slug: "plpgsql-check-extension-support"
 latest_feature_date: "2025-09-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
-  - "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
-  - "https://docs.cloud.google.com/sql/docs/postgres/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+  - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics"
+  - "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
 keywords:
   - "plpgsql"
   - "check"
-  - "extension"
   - "makes"
-  - "the"
   - "available"
-  - "in"
-  - "sql"
+  - "extension"
 ---
 
 # plpgsql_check extension support
 
 Product: Cloud SQL for PostgreSQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,52 @@ Plpgsql_check extension support makes the plpgsql_check extension available in C
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy](https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy)
-- [https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy](https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy)
-- [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
+- [https://docs.cloud.google.com/sql/docs/postgres/troubleshooting](https://docs.cloud.google.com/sql/docs/postgres/troubleshooting)
+- [https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics](https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics)
+- [https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect](https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect)
 
 ## Supporting Pages
 
-### "Connect using the Cloud SQL Auth Proxy \_|\_ Cloud SQL for MySQL \_|\_ Google\
+### Troubleshoot \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy](https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy)
-- Source ID: `site-iam-reference`
-- Final score: 200
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- On Linux, the length is usually defined as 108, and you can use the following command to check: cat /usr/include/linux/un.h grep "define UNIX PATH MAX" Docker To run the Cloud SQL Auth Proxy in a Docker container, use the Cloud SQL Auth Proxy Docker image available from the Google Container Registry .
-- Linux On Linux or macOS, use a trailing & on the command line to launch the Cloud SQL Auth Proxy in a separate process: . / cloud - sql - proxy INSTANCE CONNECTION NAME --credentials-file PATH TO KEY FILE & Windows In Windows PowerShell, use the Start-Process command to launch the Cloud SQL Auth Proxy in a separate process: Start - Process --filepath "cloud-sql-proxy.exe" --ArgumentList " --credentials-file PATH TO KEY FILE INSTANCE CONNECTION NAME " Run the Cloud SQL Auth Proxy in a Docker container To run the Cloud SQL Auth Proxy in a Docker container, use the Cloud SQL Auth Proxy Docker image available from the Google Container Registry .
-- On Linux, the length is usually defined as 108, and you can use the following command to check: cat /usr/include/linux/un.h grep "define UNIX PATH MAX" Use the Cloud SQL Auth Proxy to connect to multiple instances You can use one local Cloud SQL Auth Proxy client to connect to multiple Cloud SQL instances.
-- The Cloud SQL Auth Proxy checks for each of the following items, in the following order, using the first one it finds to attempt to authenticate: Credentials supplied by the credentials-file flag.
-
-### "Connect using the Cloud SQL Auth Proxy \_|\_ Cloud SQL for PostgreSQL \_\
-
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy](https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy)
-- Source ID: `site-iam-reference`
-- Final score: 190
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- On Linux, the length is usually defined as 108, and you can use the following command to check: cat /usr/include/linux/un.h grep "define UNIX PATH MAX" Docker To run the Cloud SQL Auth Proxy in a Docker container, use the Cloud SQL Auth Proxy Docker image available from the Google Container Registry .
-- Linux On Linux or macOS, use a trailing & on the command line to launch the Cloud SQL Auth Proxy in a separate process: . / cloud - sql - proxy INSTANCE CONNECTION NAME --credentials-file PATH TO KEY FILE & Windows In Windows PowerShell, use the Start-Process command to launch the Cloud SQL Auth Proxy in a separate process: Start - Process --filepath "cloud-sql-proxy.exe" --ArgumentList " --credentials-file PATH TO KEY FILE INSTANCE CONNECTION NAME " Run the Cloud SQL Auth Proxy in a Docker container To run the Cloud SQL Auth Proxy in a Docker container, use the Cloud SQL Auth Proxy Docker image available from the Google Container Registry .
-- On Linux, the length is usually defined as 108, and you can use the following command to check: cat /usr/include/linux/un.h grep "define UNIX PATH MAX" Use the Cloud SQL Auth Proxy to connect to multiple instances You can use one local Cloud SQL Auth Proxy client to connect to multiple Cloud SQL instances.
-- The Cloud SQL Auth Proxy checks for each of the following items, in the following order, using the first one it finds to attempt to authenticate: Credentials supplied by the credentials-file flag.
-
-### Cloud SQL for PostgreSQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/troubleshooting](https://docs.cloud.google.com/sql/docs/postgres/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 188
+- Final score: 86
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The following extensions are available for PostgreSQL 18: anon pg hint plan pg wait sampling plpgsql check tds fdw To use these versions of the extensions and plugins, update your instance to [PostgreSQL version].R20251004.01 14 .
-- The following extensions are also now available for PostgreSQL 18: pg hint plan pgrouting anonymizer pg wait sampling tds fdw plpgsql check For more information about these extensions, see Configure PostgreSQL extensions .
-- Extensions The following extensions aren't available for PostgreSQL 18: pgRouting plpgsql check pg hint plan pgrouting anonymizer pg wait sampling tds fdw For more information, see Configure PostgreSQL extensions .
-- Cloud SQL for PostgreSQL adds support for the following extensions: Extensions plpgsql check 2.8 is available for PostgreSQL version 14 and later. roaringbitmap 0.5 is available for PostgreSQL version 12 and later.
+- Check the CPU and memory usage of your Cloud SQL instance to make sure there are plenty of resources available.
+- Check the endpoint's status. gcloud To check the status, use the gcloud compute forwarding-rules describe command. gcloud compute forwarding-rules describe ENDPOINT NAME \ --project = PROJECT ID \ --region = REGION NAME \ grep pscConnectionStatus Make the following replacements: ENDPOINT NAME : the name of the endpoint PROJECT ID : the ID or project number of the Google Cloud project that contains the endpoint REGION NAME : the region name for the endpoint REST Before using any of the request data, make the following replacements: PROJECT ID : the ID or project number of the Google Cloud project that contains the Private Service Connect endpoint REGION NAME : the name of the region ENDPOINT NAME : the name of the endpoint HTTP method and URL: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances Flags High availability Import and export Integrate with Vertex AI Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.
+- From a terminal, connect to your database: gcloud sql connect INSTANCE NAME Run this command to create the extension: CREATE EXTENSION pgaudit ; Exit the database, and from a terminal run the following command: gcloud sql instances patch INSTANCE NAME \ --database-flags = cloudsql.enable pgaudit = on,pgaudit.log = all Manage instances Issue Troubleshooting You want to find out what queries are running now.
+
+### Cloud SQL metrics \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics](https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics)
+- Source ID: `site-api-reference`
+- Final score: 82
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- After sampling, data is not visible for up to 165 seconds. backend type : Type of the backend, one of [autovacuum launcher, autovacuum worker, logical replication launcher, logical replication worker, parallel worker, background writer, client backend, checkpointer, archiver, startup, walreceiver, walsender, walwriter]. wait event : Name of the wait event, such as AutoVacuumMain, ClientRead. wait event type : Type of wait event, one of [Activity, BufferPin, Extension, IO, IPC, Lock, LWLock, Timeout]. database/postgresql/blocks read count GA (project) Number of disk blocks read.
+- The lazy writer is a system process that flushes out batches of dirty, aged buffers (buffers that contain changes that must be written back to disk before the buffer can be reused for a different page) and makes them available to user processes.
+- After sampling, data is not visible for up to 165 seconds. database/mysql/innodb/innodb log waits count GA (project) Transaction waits for Innodb logbuffer flush DELTA , INT64 , 1 cloudsql database Total number of transactions wait for space to become available in the InnoDB log buffer, to help tune innodb log buffer size configuration.
+- After sampling, data is not visible for up to 165 seconds. checkpoint type : Type of checkpoint, can be one of [scheduled, requested]. database/postgresql/data cache/hit count GA (project) PostgreSQL data cache hit count DELTA , INT64 , 1 cloudsql database Total number of data cache hit read operations for this instance.
+
+### "Connect to an instance using Private Service Connect \_|\_ Cloud SQL for\
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect](https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect)
+- Source ID: `site-iam-reference`
+- Final score: 74
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Check the endpoint's status. gcloud To check the status, use the gcloud compute forwarding-rules describe command. gcloud compute forwarding-rules describe ENDPOINT NAME \ --project = PROJECT ID \ --region = REGION NAME \ grep pscConnectionStatus Make the following replacements: ENDPOINT NAME : the name of the endpoint PROJECT ID : the ID or project number of the Google Cloud project that contains the endpoint REGION NAME : the region name for the endpoint REST Before using any of the request data, make the following replacements: PROJECT ID : the ID or project number of the Google Cloud project that contains the Private Service Connect endpoint REGION NAME : the name of the region ENDPOINT NAME : the name of the endpoint HTTP method and URL: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- However, the endpoint might not be created because of reasons such as the specified network doesn't exist, there's no valid service connection policy, or there aren't any available IP addresses.
+- For more information or to check the network architecture of the Cloud SQL instances in your project and perform any necessary upgrades, see Upgrade an instance to the new network architecture .
+- If you don't want to specify the IP address because you want Google Cloud to reserve an available IP address in the subnet, then omit this flag.
 

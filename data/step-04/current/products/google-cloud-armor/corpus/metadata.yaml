@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-09T21:37:59+00:00'
-updated_at: '2026-04-11T12:35:03+00:00'
+updated_at: '2026-04-14T04:35:45+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -63,3 +63,17 @@ sources:
     max_pages: 26
     compact_output: true
   last_synced_at: '2026-04-11T12:35:03+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/armor/docs/release-notes
+  created_at: '2026-04-14T04:34:21+00:00'
+  updated_at: '2026-04-14T04:35:45+00:00'
+  update_command: know sync site https://docs.cloud.google.com/armor/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/armor/docs/release-notes
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-14T04:35:45+00:00'

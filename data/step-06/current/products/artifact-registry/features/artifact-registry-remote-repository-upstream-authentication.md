@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T17:49:26.914Z"
+generated_at: "2026-04-14T08:39:49.485Z"
 product_name: "Artifact Registry"
 product_slug: "artifact-registry"
 feature_name: "Artifact Registry remote repository upstream authentication"
 feature_slug: "artifact-registry-remote-repository-upstream-authentication"
 latest_feature_date: "2024-03-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub"
   - "https://docs.cloud.google.com/artifact-registry/docs/repositories"
@@ -19,14 +19,12 @@ keywords:
   - "repositories"
   - "repository"
   - "remote"
-  - "registry"
-  - "artifact"
 ---
 
 # Artifact Registry remote repository upstream authentication
 
 Product: Artifact Registry
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +36,7 @@ Artifact Registry remote repositories support basic authentication to user-defin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
@@ -52,7 +50,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub](https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub)
 - Source ID: `site-docs-root-2`
-- Final score: 220
+- Final score: 186
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -66,21 +64,23 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/repositories](https://docs.cloud.google.com/artifact-registry/docs/repositories)
 - Source ID: `site-docs-root`
-- Final score: 204
-- Re-rank relevance: N/A
+- Final score: 139
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Remote repository Remote repositories are read-only repositories that act as proxies to store artifacts from the following upstream sources: Standard Artifact Registry repositories.
-- Artifact Registry enables you to store different artifact types, create multiple repositories in a single project, and associate a specific regional or multi-regional location with each repository.
 - You can also mitigate dependency confusion attacks by configuring your upstream policy to prioritize repositories with your private artifacts over remote repositories that cache public artifacts.
-- Your repository administrator must explicitly grant these services access to repositories if: Artifact Registry is in a different project than the service that is interacting with it.
+- Virtual repository A read-only repository that acts as a single access point to download, install, or deploy artifacts of the same format from one or more upstream repositories .
+- The upstream remote repository provides images that GKE requests from Docker Hub.
 
 ### "REST Resource: projects.locations.repositories \_|\_ Artifact Registry \_\
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories)
 - Source ID: `site-api-reference`
-- Final score: 202
-- Re-rank relevance: N/A
+- Final score: 135
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Address of the remote repository. upstream can be only one of the following: publicRepository enum ( PublicRepository ) One of the publicly available Docker repositories supported by Artifact Registry. customRepository object ( CustomRepository ) Customer-specified remote repository.

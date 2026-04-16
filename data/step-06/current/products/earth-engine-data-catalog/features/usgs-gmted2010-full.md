@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.471Z"
+generated_at: "2026-04-14T15:13:19.511Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "USGS GMTED2010 Full"
 feature_slug: "usgs-gmted2010-full"
 latest_feature_date: "2024-01-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/elevation"
   - "https://developers.google.com/earth-engine/datasets/tags/elevation-topography"
@@ -26,7 +26,7 @@ keywords:
 # USGS GMTED2010 Full
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Global multi-resolution terrain elevation data from 2010.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,8 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/elevation](https://developers.google.com/earth-engine/datasets/tags/elevation)
 - Source ID: `site-docs-root`
-- Final score: 172
-- Re-rank relevance: N/A
+- Final score: 193
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The GEDI L4A Footprint Biomass product converts … elevation forest-biomass gedi larse nasa tree-cover GMTED2010: Global Multi-resolution Terrain Elevation Data 2010 The Global Multi-resolution Terrain Elevation Data 2010 (GMTED2010) dataset contains elevation data for the globe collected from various sources at 7.5 arc-seconds resolution.
@@ -65,8 +66,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/elevation-topography](https://developers.google.com/earth-engine/datasets/tags/elevation-topography)
 - Source ID: `site-docs-root-3`
-- Final score: 168
-- Re-rank relevance: N/A
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The model contains 3 bands of terrain data: a Digital Terrain Model (DTM), a first return Digital Surface Model (DSM), … dem elevation elevation-topography lidar GMTED2010: Global Multi-resolution Terrain Elevation Data 2010 The Global Multi-resolution Terrain Elevation Data 2010 (GMTED2010) dataset contains elevation data for the globe collected from various sources at 7.5 arc-seconds resolution.
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 158
+- Final score: 171
 - Re-rank relevance: N/A
 
 Evidence snippets:

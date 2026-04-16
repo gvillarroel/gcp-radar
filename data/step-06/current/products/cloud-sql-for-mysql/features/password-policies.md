@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.900Z"
+generated_at: "2026-04-15T11:56:51.956Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "Password policies"
@@ -9,18 +9,18 @@ latest_feature_date: "2022-07-14"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication"
-  - "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
-  - "https://docs.cloud.google.com/sql/docs/mysql/authentication"
+  - "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy"
+  - "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups"
+  - "https://docs.cloud.google.com/sql/docs/editions-intro"
 keywords:
   - "password"
   - "policies"
   - "sql"
-  - "for"
   - "mysql"
   - "supports"
-  - "at"
-  - "the"
+  - "instance"
+  - "user"
+  - "levels"
 ---
 
 # Password policies
@@ -38,55 +38,52 @@ Cloud SQL for MySQL supports password policies at the instance and user levels f
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication](https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication)
-- [https://docs.cloud.google.com/sql/docs/mysql/create-manage-users](https://docs.cloud.google.com/sql/docs/mysql/create-manage-users)
-- [https://docs.cloud.google.com/sql/docs/mysql/authentication](https://docs.cloud.google.com/sql/docs/mysql/authentication)
+- [https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy](https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy)
+- [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups)
+- [https://docs.cloud.google.com/sql/docs/editions-intro](https://docs.cloud.google.com/sql/docs/editions-intro)
 
 ## Supporting Pages
 
-### "Cloud SQL built-in database authentication \_|\_ Cloud SQL for MySQL \_\
+### "Cloud SQL backups overview \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication](https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication)
-- Source ID: `site-iam-reference`
-- Final score: 328
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups)
+- Source ID: `site-docs-reference-3`
+- Final score: 23
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- MySQL PostgreSQL SQL Server This page describes how built-in authentication works on Cloud SQL instances and how database administrators can set password policies for local database users.
-- Cloud SQL built-in authentication for read replicas You manage password policies for replicas on the primary instance.
-- Cloud SQL uses the following types of authentication for database users: The database's built-in authentication uses a username and a password to authenticate local database users.
-- Note: User password policy options are supported on Cloud SQL for MySQL 8.0 and later.
+- Backups versus exports Backups are managed by Cloud SQL according to retention policies, and are stored separately from the Cloud SQL instance.
+- MySQL PostgreSQL SQL Server Cloud SQL lets you back up your instances on-demand, or automatically using a backup schedule.
+- Backup options Cloud SQL offers two backup service options to manage your instance's backups: Enhanced backups : backups are managed and stored in a centralized backup management project that leverages the Backup and DR Service, and provides enforced retention, granular scheduling, and monitoring.
+- Relevant log files include: cloudsql.googlapis.com/mysql-general.log cloudsql.googleapis.com/mysql.err If Cloud Audit Logs is enabled and you have the required permissions to view them, cloudaudit.googleapis.com/activity may also be available.
 
-### "Manage users with built-in authentication \_|\_ Cloud SQL for MySQL \_|\_\
+### "Cloud SQL editions overview \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/create-manage-users](https://docs.cloud.google.com/sql/docs/mysql/create-manage-users)
+- URL: [https://docs.cloud.google.com/sql/docs/editions-intro](https://docs.cloud.google.com/sql/docs/editions-intro)
+- Source ID: `site-docs-reference-3`
+- Final score: 23
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Cloud SQL editions features The following table provides an overview of key features enhancements available for Cloud SQL Enterprise Plus edition when compared to Cloud SQL Enterprise edition: Cloud SQL Enterprise Plus edition Cloud SQL Enterprise edition Database versions MySQL 8.0, 8.4 Note: If the database version for your instance is MySQL 8.4, then the default Cloud SQL edition is Enterprise Plus.
+- MySQL 5.6, 5.7, 8.0, 8.4 Availability SLA 99.99% (includes maintenance) 99.95% (excludes maintenance) Performance Machine series N2 C4A General purpose shared core General purpose dedicated core N4 Machine configuration limits N2 machine series Up to 128 vCPU Up to 864 GB RAM 1:8 core:memory ratio C4A machine series Up to 72 vCPU Up to 576 GB RAM 1:8 core:memory ratio General purpose shared core 1 vCPU Up to 1.7 GB RAM 1:6.5 core:memory ratio General purpose dedicated core Up to 96 vCPU Up to 624 GB RAM 1:6.5 core:memory ratio N4 machine series Up to 80 vCPU Up to 624 GB RAM 1:8 core:memory ratio Data cache Yes No Optimized writes Yes No Point-in-time log retention Up to 35 days Up to 7 days Read pools Yes No Availability Maintenance downtime Planned operations downtime Sub-second downtime Few minutes Advanced disaster recovery (DR) Yes No Write endpoint for advanced disaster recovery (DR) Yes No Write endpoint connectivity Yes No Managed Connection Pooling Yes No Observability AI-assisted troubleshooting Yes No Query insights 30 day metric retention 1 MB query length 200 query plan sample maximum Wait event analysis Index advisor recommendations 7 day metric retention 4500 bytes query length 20 query plan sample maximum Enhanced recommenders Yes No Cloud SQL Enterprise Plus edition enhancements Cloud SQL Enterprise Plus edition is ideal for applications that require the best performance, availability, and observability.
+- MySQL PostgreSQL SQL Server Cloud SQL for MySQL editions is a tier-based pricing model where each edition provides different performance, availability, observability, and data protection characteristics to support your various business and application needs.
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL editions overview Stay organized with collections Save and categorize content based on your preferences.
+
+### "Cloud SQL organization policies \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy](https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy)
 - Source ID: `site-docs-root`
-- Final score: 294
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 23
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /users?name= user-id " Select-Object -Expand Content You should receive a JSON response similar to the following: { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ", "status": "DONE", "user": "user@example.com", "insertTime": "2020-02-07T22:38:41.217Z", "startTime": "2020-02-07T22:38:41.217Z", "endTime": "2020-02-07T22:38:44.801Z", "operationType": "UPDATE USER", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } mysql Client To change the password, at the mysql prompt, use the following SET PASSWORD statement: SET PASSWORD FOR USER NAME = PASSWORD ( 'auth string' ); Flush the mysql.user table to ensure that the change persists: FLUSH TABLES mysql . user ; If a user is locked out due to password policy settings, change the password to unlock them.
-- Before using any of the request data, make the following replacements: PROJECT ID : your project ID INSTANCE ID : the instance ID USER ID : the ID of the user PASSWORD : the password of the user FAILED ATTEMPTS CHECK : set to true to enable a check for the number of failed attempts to log in after which the account is locked NUMBER OF ATTEMPTS : the number of failed attempts to log in after which the account is locked PASSWORD EXPIRATION DURATION : the number of days after which the password expires and the user needs to create a new one VERIFY PASSWORD : set to true to make it mandatory for users to enter their existing password when attempting to change the password User password policy options are supported on Cloud SQL for MySQL 8.0.
-- Before using any of the request data, make the following replacements: PROJECT ID : your project ID INSTANCE ID : the instance ID USER ID : the ID of the user PASSWORD : the password of the user FAILED ATTEMPTS CHECK : set to true to enable a check for the number of failed attempts to log in after which the account is locked NUMBER OF ATTEMPTS : the number of failed attempts to log in after which the account is locked PASSWORD EXPIRATION DURATION : the number of days after which the password expires and the user needs to create a new one VERIFY PASSWORD : set to true to make it mandatory for users to enter their existing password when attempting to change the password User password policy options are supported on Cloud SQL for MySQL 8.0.
-- The --password-policy-password-expiration-duration option is also supported on Cloud SQL for MySQL 5.7. gcloud sql users set-password-policy USER NAME \ --instance = INSTANCE NAME \ --host = HOST \ --password-policy-enable-failed-attempts-check \ --password-policy-allowed-failed-attempts = PASSWORD POLICY ALLOWED FAILED ATTEMPTS \ --password-policy-password-expiration-duration = PASSWORD POLICY PASSWORD EXPIRATION DURATION \ --password-policy-enable-password-verification To remove a user password policy, use the --clear-password-policy parameter. gcloud sql users set-password-policy USER NAME \ --instance = INSTANCE NAME \ --host = HOST \ --clear-password-policy To view the user password policy, see List users .
-
-### IAM authentication \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/authentication](https://docs.cloud.google.com/sql/docs/mysql/authentication)
-- Source ID: `site-docs-root`
-- Final score: 290
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- In Cloud SQL, you can use the following types of database authentication for database users: The database's built-in authentication uses a username and password to authenticate a database user.
-- Note: If you're using Workforce Identity Federation , database authentication for user logins isn't supported for Cloud SQL for MySQL databases.
-- Automatic versus manual IAM database authentication Cloud SQL for MySQL has two options for IAM database authentication: automatic and manual.
-- IAM database authentication is not supported for instances that use MySQL 5.6.
+- By default, you can add Authorized Networks to Cloud SQL instances. constraints/sql.restrictAuthorizedNetworks Allowed Restrictions for connection organization policies When you set the organization policy for each project, you need to determine if any one of the following apply to your project: Read replicas public IP conflicts Incompatibility using gcloud CLI sql connect Google Cloud hosted services access MySQL failover replica public IP conflicts Non-RFC 1918 private IP addresses Read replicas public IP address conflicts Cloud SQL read replicas connect to the primary instance over the non-proxied database connection.
+- Overview Organization policies let organization administrators set restrictions on how users can configure instances under that organization.
+- The types of organization policies specific to Cloud SQL are as follows: Predefined organization policies Connection organization policies Customer-managed encryption keys (CMEK) organization policies Custom organization policies Predefined organization policies You can use the predefined constraints to control the public IP settings and Customer Managed Encryption Key (CMEK) settings of Cloud SQL instances.
+- Customer-managed encryption keys (CMEK) organization policies Cloud SQL supports two organization policy constraints that help ensure CMEK protection across an organization: constraints/gcp.restrictNonCmekServices and constraints/gcp.restrictCmekCryptoKeyProjects .
 

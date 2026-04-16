@@ -1,18 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.857Z"
+generated_at: "2026-04-14T17:29:36.941Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "gemini-1.5-flash-002-high-fidelity model"
 feature_slug: "gemini-1-5-flash-002-high-fidelity-model"
 latest_feature_date: "2024-12-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
 keywords:
   - "gemini"
   - "flash"
@@ -21,13 +20,13 @@ keywords:
   - "fidelity"
   - "model"
   - "introduces"
-  - "the"
+  - "public"
 ---
 
 # gemini-1.5-flash-002-high-fidelity model
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,22 +38,21 @@ Introduces the gemini-1.5-flash-002-high-fidelity model in Public Preview for gr
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
 
 ## Supporting Pages
 
 ### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- Source ID: `site-api-reference`
-- Final score: 130
+- Source ID: `site-docs-reference`
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -66,8 +64,8 @@ Evidence snippets:
 ### "Answer generation model versions and lifecycle \_|\_ Vertex AI Search \_\
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models)
-- Source ID: `site-api-reference`
-- Final score: 114
+- Source ID: `site-docs-reference`
+- Final score: 111
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,26 +77,13 @@ Evidence snippets:
 ### "Vertex AI APIs for building search and RAG experiences \_|\_ Vertex AI Search\
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- Source ID: `site-api-reference`
-- Final score: 94
+- Source ID: `site-docs-reference`
+- Final score: 101
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - The grounded generation API uses specialized, fine-tuned Gemini models and is an effective way to reduce hallucinations and provide responses grounded to your sources or third-party sources including references to grounding support content.
 - Google Search : When you use Grounding with Google Search for your Gemini model, then Gemini uses Google Search and generates output that is grounded to the relevant search results.
 - Ground with Google Search: Gemini is Google's most capable model and offers out-of-the-box grounding with Google Search.
-- Using these lower-level APIs gives you full flexibility on the design of your retriever while at the same time offering accelerated time to market and high quality by relying on lower-level Vertex AI APIs.
-
-### "MCP Tools Reference: discoveryengine.googleapis.com \_|\_ Vertex AI Search\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
-- Source ID: `site-docs-reference-2`
-- Final score: 72
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- SummarySpec JSON representation { "summaryResultCount" : integer , "includeCitations" : boolean , "ignoreAdversarialQuery" : boolean , "ignoreNonSummarySeekingQuery" : boolean , "ignoreLowRelevantContent" : boolean , "ignoreJailBreakingQuery" : boolean , "multimodalSpec" : { object ( MultiModalSpec ) } , "modelPromptSpec" : { object ( ModelPromptSpec ) } , "languageCode" : string , "modelSpec" : { object ( ModelSpec ) } , "useSemanticChunks" : boolean } Fields summaryResultCount integer The number of top results to generate the summary from.
-- This score is calculated using a probabilistic model to estimate the probability that a document is relevant to a given query. relevance score : semantic relevance adjustment that uses a proprietary Google model to determine the meaning and intent behind a user's query in context with the content in the documents. pctr rank : predicted conversion rate adjustment as a rank use predicted Click-through rate (pCTR) to gauge the relevance and attractiveness of a search result from a user's perspective.
-- A higher pCTR suggests that the result is more likely to satisfy the user's query and intent, making it a valuable signal for ranking. freshness rank : freshness adjustment as a rank document age : The time in hours elapsed since the document was last updated, a floating-point number (e.g., 0.25 means 15 minutes). topicality rank : topicality adjustment as a rank.
-- SearchResult JSON representation { "id" : string , "document" : { object ( Document ) } , "chunk" : { object ( Chunk ) } , "modelScores" : { string : { object ( DoubleList ) } , ... } , "rankSignals" : { object ( RankSignals ) } } Fields id string Document.id of the searched Document . document object ( Document ) The document data snippet in the search response.
+- Vertex AI Vector Search is a retrieval engine that can search from billions of semantically similar or semantically related items at scale, with high queries per second (QPS), high recall, low latency, and cost efficiency.
 

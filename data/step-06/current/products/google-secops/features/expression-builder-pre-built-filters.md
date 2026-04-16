@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.934Z"
+generated_at: "2026-04-14T16:02:18.757Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "Expression Builder pre-built filters"
 feature_slug: "expression-builder-pre-built-filters"
 latest_feature_date: "2025-08-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/soar/release-notes"
+  - "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+  - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+  - "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
 keywords:
   - "expression"
   - "builder"
@@ -20,13 +20,13 @@ keywords:
   - "filters"
   - "now"
   - "includes"
-  - "and"
+  - "clearer"
 ---
 
 # Expression Builder pre-built filters
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ Expression Builder now includes pre-built filters and clearer transformer guidan
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
+- [https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api](https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api)
+- [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
+- [https://docs.cloud.google.com/chronicle/docs/administration/audit-logging](https://docs.cloud.google.com/chronicle/docs/administration/audit-logging)
 
 ## Supporting Pages
 
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
+### "Search for events and alerts \_|\_ Google Security Operations \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
+- URL: [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 - Source ID: `site-docs-reference-2`
-- Final score: 156
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Expression Builder enhancements The Expression Builder has been enhanced with a new set of pre-built filters to help streamline query creation.
-- Absolute Secure Endpoint ( ABSOLUTE SECURE ENDPOINT ) Airbus Security Logging (ACD AISD) ( AIRBUS SECURITY LOG ) Azure Recovery Services Vaults ( AZURE RECOVERY SERVICES VAULTS ) Boeing Onboard Network System Logging ( BOEING ONS ) Cisco Firepower Threat Defense ( CISCO FIREPOWER THREAT DEFENSE ) Cisco Security Cloud Control ( CISCO SECURITY CLOUD CONTROL ) Pico Corvilnet Engine ( CORVILNET ENGINE ) CrowdStrike Falcon Shield ( CROWDSTRIKE FALCON SHIELD ) Easy NAC ( EASY NAC ) FairXchange Horizon ( FAIRXCHANGE HORIZON ) Google Threat Intelligence ( GCP THREATINTEL ) HPE Alletra ( HPE ALLETRA ) Huawei Cloud Trace Service Audit ( HUAWEI CTS AUDIT ) Huawei SecMaster ( HUAWEI SECMASTER ) IBM ILO ( IBM ILO ) Infisical ( INFISICAL ) JSCAPE SFTP ( JSCAPE SFTP ) Juniper Edge ( JUNIPER EDGE ) Kaspersky for Microsoft Office 365 ( KASPERSKY O365 EVENTS ) Microsoft Defender for Cloud Apps ( MICROSOFT DEFENDER CLOUD APPS ) Oracle Cloud Infrastructure Network Firewall ( OCI FIREWALL ) Okta Workflows ( OKTA WORKFLOWS ) Phosphorus ( PHOSPHORUS ) Rapid7 Cloud Security ( RAPID7 CLOUDSEC ) Research and Education Networks Information Sharing and Analysis Center ( REN ISAC ) Risk Resecurity ( RISK RESECURITY ) Sangfor Network Detection and Response ( SANGFOR NDR ) SAP Enterprise Threat Detection ( SAP ETD ) SAP IAS Context ( SAP IAS CONTEXT ) Sectigo SCM ( SECTIGO SCM ) ServiceNow Node ( SERVICENOW NODE ) ServiceNow Outbound HTTP ( SERVICENOW OUTBOUNDHTTP ) ServiceNow System log ( SERVICENOW SYSLOG ) ServiceNow Transaction ( SERVICENOW TRANSACTION ) Seti S4 ( SETI S4 ) ThousandEyes ( THOUSAND EYES ) Transmit Security Mosaic CIAM ( TRANSMIT MOSAIC CIAM ) Transmit Security Mosaic Fraud Prevention ( TRANSMIT MOSAIC FRAUD PREVENTION ) Transmit Security Mosaic Identity Verification ( TRANSMIT MOSAIC IDENTITY VERIFICATION ) Transmit Security Mosaic Management ( TRANSMIT MOSAIC MANAGEMENT ) Tripwire Security Configuration Management ( TRIPWIRE SCM ) Valimail ( VALIMAIL ) WSO2 IS AM ( WSO2 IS AM ) XDR.Net Digital Twin ( XDRNET DIGITALTWIN ) Zimbra Mail ( ZIMBRA MAIL ) Zscaler Email DLP ( ZSCALER EMAIL DLP ) November 13, 2025 Feature Raw log search enhancements Google SecOps now includes enhancements to raw log search to boost usability, performance, and data analysis: New filtering options : Filter raw log results by their parsing status or by one or more log sources.
-- August 13, 2025 Announcement New parser documentation now available New parser documentation is available to help you ingest and normalize logs from the following sources: Collect Anomali ThreatStream IOC logs Collect Cisco Application Control Engine (ACE) Collect Cisco Firepower NGFW logs Collect Cisco Firewall Service Module (FWSM) Collect Cisco IronPort logs Collect Cisco PIX logs Collect Cisco Prime logs Collect Cisco Wireless Intrusion Prevention System (WIPS) logs Collect Cisco Wireless LAN Controller (WLC) logs Collect Cisco Wireless Security Management (WiSM) logs Collect Cloudian HyperStore logs Collect CrushFTP logs Collect Delinea Distributed Engine logs Collect Duo User context logs Collect ExtraHop DNS logs Collect ExtraHop RevealX logs Collect Extreme Networks switch logs Collect Extreme Networks Wireless logs Collect MuleSoft Anypoint logs Collect Palo Alto Prisma SD-WAN logs Collect Recorded Future IOC logs Collect Veeam logs Collect Veridium ID logs Collect VMware Tanzu logs Collect VMware vCenter logs Collect VMware vRealize logs Collect VMware vSphere logs Collect VSFTPD logs Collect VyOS logs Collect Workday audit logs Collect Yamaha router logs August 12, 2025 Change Data RBAC self-service enablement Data RBAC now includes a self-service option for direct enablement.
-- June 04, 2025 Announcement The following parser documentation is now available: Collect Abnormal Security logs Collect Apache Cassandra logs Collect Darktrace logs Collect Nix Systems Ubuntu Server (Unix System) logs Collect 1Password logs Collect 1Password audit logs Collect Symantec Endpoint Protection logs Collect Symantec VIP Authentication Hub logs Collect Symantec VIP Enterprise Gateway logs Collect Symantec Web Isolation logs Collect Varonis logs Collect Oracle DB logs Collect Akeyless Vault logs Collect Attivo Networks BOTsink logs Collect Avaya Aura logs Collect BeyondTrust Endpoint Privilege Management logs Collect BeyondTrust Privileged Identity logs Collect Blue Coat ProxySG logs Collect Microsoft Exchange logs Collect MYSQL logs Collect Signal Sciences WAF logs Collect Symantec CloudSOC CASB logs June 03, 2025 Fixed User interface fixes There was an issue with highlighting regular expressions in Search and Rules Editor .
+- The following are examples: metadata.log type = "PCAP DNS" network.dns.answers.name = "dns-A901F3j.hat.example.com" If the result includes the text Possible value match , the name-value pair contains the UDM field name and a regular expression containing the search term.
+- The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = "USER LOGIN" and target.hostname = "finance-svr" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = "NETWORK CONNECTION" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = "PROCESS LAUNCH" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields.
+- For example: additional.fields["key"]="value" Examples of searches using specific key-value pairs in the additional and labels fields: Search for events containing specified key-value pairs: additional.fields["pod name"] = "kube-scheduler" metadata.ingestion labels["MetadataKeyDeletion"] = "startup-script" Use the AND operator with key-value pair searches: additional.fields["pod name"] = "kube-scheduler" AND additional.fields["pod name1"] = "kube-scheduler1" Search for all events that contain the specified key, regardless of the value: additional.fields["pod name"] != "" Search for events that contain a specific key, using a regular expression: additional.fields.value.string value = "mystring" Note: You can also use value.bool value or value.number value for boolean and numeric matches.
+- Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.
 
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
+### "Forwarder Management \_|\_ Google Security Operations \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 144
+- URL: [https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api](https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api)
+- Source ID: `site-api-reference`
+- Final score: 86
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Absolute Secure Endpoint ( ABSOLUTE SECURE ENDPOINT ) Airbus Security Logging (ACD AISD) ( AIRBUS SECURITY LOG ) Azure Recovery Services Vaults ( AZURE RECOVERY SERVICES VAULTS ) Boeing Onboard Network System Logging ( BOEING ONS ) Cisco Firepower Threat Defense ( CISCO FIREPOWER THREAT DEFENSE ) Cisco Security Cloud Control ( CISCO SECURITY CLOUD CONTROL ) Pico Corvilnet Engine ( CORVILNET ENGINE ) CrowdStrike Falcon Shield ( CROWDSTRIKE FALCON SHIELD ) Easy NAC ( EASY NAC ) FairXchange Horizon ( FAIRXCHANGE HORIZON ) Google Threat Intelligence ( GCP THREATINTEL ) HPE Alletra ( HPE ALLETRA ) Huawei Cloud Trace Service Audit ( HUAWEI CTS AUDIT ) Huawei SecMaster ( HUAWEI SECMASTER ) IBM ILO ( IBM ILO ) Infisical ( INFISICAL ) JSCAPE SFTP ( JSCAPE SFTP ) Juniper Edge ( JUNIPER EDGE ) Kaspersky for Microsoft Office 365 ( KASPERSKY O365 EVENTS ) Microsoft Defender for Cloud Apps ( MICROSOFT DEFENDER CLOUD APPS ) Oracle Cloud Infrastructure Network Firewall ( OCI FIREWALL ) Okta Workflows ( OKTA WORKFLOWS ) Phosphorus ( PHOSPHORUS ) Rapid7 Cloud Security ( RAPID7 CLOUDSEC ) Research and Education Networks Information Sharing and Analysis Center ( REN ISAC ) Risk Resecurity ( RISK RESECURITY ) Sangfor Network Detection and Response ( SANGFOR NDR ) SAP Enterprise Threat Detection ( SAP ETD ) SAP IAS Context ( SAP IAS CONTEXT ) Sectigo SCM ( SECTIGO SCM ) ServiceNow Node ( SERVICENOW NODE ) ServiceNow Outbound HTTP ( SERVICENOW OUTBOUNDHTTP ) ServiceNow System log ( SERVICENOW SYSLOG ) ServiceNow Transaction ( SERVICENOW TRANSACTION ) Seti S4 ( SETI S4 ) ThousandEyes ( THOUSAND EYES ) Transmit Security Mosaic CIAM ( TRANSMIT MOSAIC CIAM ) Transmit Security Mosaic Fraud Prevention ( TRANSMIT MOSAIC FRAUD PREVENTION ) Transmit Security Mosaic Identity Verification ( TRANSMIT MOSAIC IDENTITY VERIFICATION ) Transmit Security Mosaic Management ( TRANSMIT MOSAIC MANAGEMENT ) Tripwire Security Configuration Management ( TRIPWIRE SCM ) Valimail ( VALIMAIL ) WSO2 IS AM ( WSO2 IS AM ) XDR.Net Digital Twin ( XDRNET DIGITALTWIN ) Zimbra Mail ( ZIMBRA MAIL ) Zscaler Email DLP ( ZSCALER EMAIL DLP ) November 13, 2025 Feature Raw log search enhancements Google SecOps now includes enhancements to raw log search to boost usability, performance, and data analysis: New filtering options : Filter raw log results by their parsing status or by one or more log sources.
-- August 13, 2025 Announcement New parser documentation now available New parser documentation is available to help you ingest and normalize logs from the following sources: Collect Anomali ThreatStream IOC logs Collect Cisco Application Control Engine (ACE) Collect Cisco Firepower NGFW logs Collect Cisco Firewall Service Module (FWSM) Collect Cisco IronPort logs Collect Cisco PIX logs Collect Cisco Prime logs Collect Cisco Wireless Intrusion Prevention System (WIPS) logs Collect Cisco Wireless LAN Controller (WLC) logs Collect Cisco Wireless Security Management (WiSM) logs Collect Cloudian HyperStore logs Collect CrushFTP logs Collect Delinea Distributed Engine logs Collect Duo User context logs Collect ExtraHop DNS logs Collect ExtraHop RevealX logs Collect Extreme Networks switch logs Collect Extreme Networks Wireless logs Collect MuleSoft Anypoint logs Collect Palo Alto Prisma SD-WAN logs Collect Recorded Future IOC logs Collect Veeam logs Collect Veridium ID logs Collect VMware Tanzu logs Collect VMware vCenter logs Collect VMware vRealize logs Collect VMware vSphere logs Collect VSFTPD logs Collect VyOS logs Collect Workday audit logs Collect Yamaha router logs August 12, 2025 Change Data RBAC self-service enablement Data RBAC now includes a self-service option for direct enablement.
-- June 04, 2025 Announcement The following parser documentation is now available: Collect Abnormal Security logs Collect Apache Cassandra logs Collect Darktrace logs Collect Nix Systems Ubuntu Server (Unix System) logs Collect 1Password logs Collect 1Password audit logs Collect Symantec Endpoint Protection logs Collect Symantec VIP Authentication Hub logs Collect Symantec VIP Enterprise Gateway logs Collect Symantec Web Isolation logs Collect Varonis logs Collect Oracle DB logs Collect Akeyless Vault logs Collect Attivo Networks BOTsink logs Collect Avaya Aura logs Collect BeyondTrust Endpoint Privilege Management logs Collect BeyondTrust Privileged Identity logs Collect Blue Coat ProxySG logs Collect Microsoft Exchange logs Collect MYSQL logs Collect Signal Sciences WAF logs Collect Symantec CloudSOC CASB logs June 03, 2025 Fixed User interface fixes There was an issue with highlighting regular expressions in Search and Rules Editor .
-- An improved integration for Chrome Enterprise Premium is now available that includes: Streamlined connection to Google SecOps, using recommended security defaults Enhanced log events with Google Safe Browsing context Updated parser and integration documentation: Collect Google Chrome logs Curated dashboards for Chrome Enterprise Premium Google Workspace SOAR actions to manage Chrome extension blocklist policies ( Block Extension and Delete Extension ) October 28, 2025 Feature Risk-based alerting with entity-only rules With the new ENTITY RISK CHANGE UDM event type, you can now write YARA-L detection rules that trigger independently of ingested events.
+- Note: This is a global setting that applies to the forwarder and the forwarder's collectors, unless it is overridden at the collector level. metadata.labels.key string Optional The key for a field in the metadata labels list. metadata.labels.value string Optional The value for a field in the metadata labels list. regex filters.description string Optional Describes what is being filtered and why. regex filters.regexp string Optional The regular expression used to match against each incoming line. regex filters.behavior enum Optional Specifies the state of the server functionality.
+- Note: This is a global setting that applies to the forwarder and the forwarder's collectors, unless it is overridden at the collector level. metadata.labels.key string Optional The key for a field in the metadata labels list. metadata.labels.value string Optional The value for a field in the metadata labels list. regex filters.description string Optional Describes what is being filtered and why. regex filters.regexp string Optional The regular expression used to match against each incoming line. regex filters.behavior enum Optional Specifies the state of the server functionality.
+- BLOCK : This state prevents the filtered line from being uploaded. server settings object Optional Settings that configure the forwarder's built-in HTTP server, which can be used to configure load balancing and high availability options for syslog collection on Linux. server settings.state enum Optional Specifies the state of the server functionality.
+- Response fields In addition to the fields specified in the request and the fields for which default values are applied, the response includes the following fields: Field Type Description name string The resource ID of the collector.
 
-### Google Security Operations SOAR release notes \_|\_ Google Cloud Documentation
+### "Google SecOps audit logs \_|\_ Google Security Operations \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 140
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/chronicle/docs/administration/audit-logging](https://docs.cloud.google.com/chronicle/docs/administration/audit-logging)
+- Source ID: `site-docs-reference`
+- Final score: 65
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- August 10, 2025 Feature Expression Builder enhancements The Expression Builder has been enhanced with a new set of pre-built filters to help streamline query creation.
-- Fixed Playbooks and their folders within a specific environment are deleted without a corresponding entry in the audit logs. (ID #48557086) Announcement The following API endpoints will be deprecated in July 2024. api/external/v1/settings/AddOrUpdateSamlSettings api/external/v1/accounts/DisableJitAndAutoRedirect api/external/v1/settings/GetSamlSettingsTemplate December 08, 2023 Announcement Release 6.2.42 is now in General Availability.
-- Fixed Case filters are removed when refreshing the browser (ID #50834432) Fixed Custom Actions, and the parameter types multi-select and password cause errors when trying to save a playbook (ID #51582854) June 06, 2024 Announcement Release 6.3.5 is now in General Availability.
-- April 05, 2025 Feature Create a quick action (Preview) Administrators can now predefine quick actions for analysts to execute directly within cases and alerts.
+- Actions in Google SecOps that generate this type of log include creating a Google Cloud Association and updating Google Cloud log filters. chronicleservicemanager.googleapis.com/gcpAssociations.create chronicleservicemanager.googleapis.com/gcpAssociations.delete chronicleservicemanager.googleapis.com/gcpSettings.delete Data Access audit logs Includes admin read operations that read metadata or configuration information.
+- Actions in Google SecOps that generate this type of log include updating feeds and creating rules. chronicle.googleapis.com/feeds.update chronicle.googleapis.com/rules.create chronicle.googleapis.com/parsers.activate Data Access audit logs Includes admin read operations that read metadata or configuration information.
+- Audit log type Google SecOps operations Admin Activity audit logs Includes update-related activity, such as UpdateRole and UpdateSubject .
+- Audit log type Description Admin Activity audit logs Includes admin write operations that write metadata or configuration information.
 

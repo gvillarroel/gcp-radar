@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:47.384Z"
+generated_at: "2026-04-12T12:18:01.312Z"
 product_name: "Navigation SDK for iOS"
 product_slug: "navigation-sdk-for-ios"
 feature_name: "CarPlay support"
 feature_slug: "carplay-support"
 latest_feature_date: "2024-05-28"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/carplay"
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls"
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/overview"
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView"
 keywords:
   - "carplay"
   - "the"
@@ -24,7 +27,7 @@ keywords:
 # CarPlay support
 
 Product: Navigation SDK for iOS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ The Navigation SDK for iOS can display navigation on Apple's CarPlay in-dash hea
 
 The Navigation SDK for iOS can display navigation on Apple's CarPlay in-dash head units and route voice guidance through the car's speakers.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/carplay](https://developers.google.com/maps/documentation/navigation/ios-sdk/carplay)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/controls](https://developers.google.com/maps/documentation/navigation/ios-sdk/controls)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView](https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Enable navigation for CarPlay \_|\_ Navigation SDK for iOS \_|\_ Google\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/carplay](https://developers.google.com/maps/documentation/navigation/ios-sdk/carplay)
+- Source ID: `site-docs-root`
+- Final score: 308
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This section describes how you can use the Navigation SDK with the Apple CarPlay library to display your app's navigation experience on in-dash head units .
+- Page Summary outlined flag The Google Maps Navigation SDK can be integrated with Apple CarPlay to provide turn-by-turn navigation on a vehicle's display.
+- CPManeuverDisplayStyleSymbolOnly : CPManeuverDisplayStyleDefault ; } // Get a CPManeuver with instructionVariants and symbolImage from GMSNavigationStepInfo - ( nonnull CPManeuver ) maneuverForStep : ( nonnull GMSNavigationStepInfo ) stepInfo { CPManeuver maneuver = [[ CPManeuver alloc ] init ]; maneuver . userInfo = [[ ManeuverUserInfo alloc ] initWithStepInfo : stepInfo isLaneGuidance : NO ]; switch ( stepInfo . maneuver ) { case GMSNavigationManeuverDestination : maneuver . instructionVariants = @[ @"Your destination is ahead." ] ; break ; case GMSNavigationManeuverDestinationLeft : maneuver . instructionVariants = @[ @"Your destination is ahead on your left." ] ; break ; case GMSNavigationManeuverDestinationRight : maneuver . instructionVariants = @[ @"Your destination is ahead on your right." ] ; break ; default : { maneuver . attributedInstructionVariants = [ currentNavInfo instructionsForStep : stepInfo options : instructionOptions ]; break ; } } maneuver . symbolImage = [ stepInfo maneuverImageWithOptions : instructionOptions . imageOptions ]; return maneuver ; } // Get the lane image for a CPManeuver from GMSNavigationStepInfo - ( nullable CPManeuver ) laneGuidanceManeuverForStep : ( nonnull GMSNavigationStepInfo ) stepInfo { CPManeuver maneuver = [[ CPManeuver alloc ] init ]; maneuver . userInfo = [[ ManeuverUserInfo alloc ] initWithStepInfo : stepInfo isLaneGuidance : YES ]; UIImage lanesImage = [ stepInfo lanesImageWithOptions : imageOptions ]; if ( ! lanesImage ) { return nil ; } maneuver . symbolImage = lanesImage ; return maneuver ; } Maneuvers CarPlay uses the CPManeuver class to provide turn-by-turn guidance.
+- Home Products Google Maps Platform Documentation iOS Navigation SDK for iOS Send feedback Enable navigation for CarPlay Stay organized with collections Save and categorize content based on your preferences.
+
+### Modify the navigation UI \_|\_ Navigation SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/controls](https://developers.google.com/maps/documentation/navigation/ios-sdk/controls)
+- Source ID: `site-docs-root`
+- Final score: 287
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Swift mapView . settings . showsTrafficLights = true mapView . settings . showsStopSigns = true Objective-C mapView . settings . showsTrafficLights = YES ; mapView . settings . showsStopSigns = YES ; Speedometer control When navigation is enabled and the travel mode is set to driving, the Navigation SDK for iOS displays a speed limit control in the lower corner of the map that shows the current speed limit.
+- Using the Navigation SDK for iOS, you can modify the user experience with your map by determining which of the built-in UI controls and elements appear on the map, and which gestures you allow.
+- For indoor maps without navigation, use the indoorEnabled and indoorDisplay methods of the Maps SDK for iOS GMSMapView class.
+- Swift mapView . settings . isRecenterButtonEnabled = true Objective-C mapView . settings . recenterButtonEnabled = YES ; Map UI accessories The Navigation SDK provides UI accessories that appear during navigation similar to those found in the Google Maps for iOS application.
+
+### Navigation SDK overview \_|\_ Navigation SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview)
+- Source ID: `site-docs-root`
+- Final score: 281
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If your app uses the Maps SDK for its map layer, you can add the Navigation SDK to your app to enable the navigation experience.
+- How to use the Navigation SDK The steps below cover a typical use case scenario for using the Navigation SDK: 1 Get set up Create a Google Cloud project, add the Maps and Navigation SDKs to your API, and set up your Xcode project.
+- The Navigation SDK requires the Maps SDK and allows for either the Google Navigation experience or building a custom navigation experience using its two main components: Map Layer and Navigation Experience.
+- Home Products Google Maps Platform Documentation iOS Navigation SDK for iOS Send feedback Navigation SDK overview Stay organized with collections Save and categorize content based on your preferences.
+
+### "GoogleNavigation Framework Reference \_|\_ Navigation SDK for iOS \_|\_\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView](https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView)
+- Source ID: `site-docs-reference`
+- Final score: 280
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Page Summary outlined flag GMSMapView is the central class in Google Maps SDK for iOS, managing map display, interactions, and properties like camera, markers, and UI settings.
+- Declaration Swift func setHeaderAccessory ( headerAccessoryView : ( any UIView & GMSNavigationAccessoryView )?) Objective-C - ( void ) setHeaderAccessoryView : ( nullable UIView < GMSNavigationAccessoryView > ) headerAccessoryView ; CarPlay -didBeginPanGesture Preview feature This method should be called from the application’s implementation of the CPMapTemplateDelegate method -mapTemplateDidBeginPanGesture: in order to implement pan gestures for CarPlay map templates.
+- Home Products Google Maps Platform Documentation iOS Navigation SDK for iOS Reference Send feedback GoogleNavigation Framework Reference Stay organized with collections Save and categorize content based on your preferences.
+- GMSMapView @interface GMSMapView : UIView This is the main class of the Google Maps SDK for iOS and is the entry point for all methods related to the map.
 

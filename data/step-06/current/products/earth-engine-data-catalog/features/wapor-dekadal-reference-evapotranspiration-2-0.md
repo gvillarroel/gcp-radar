@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.744Z"
+generated_at: "2026-04-14T15:13:19.944Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "WAPOR Dekadal Reference Evapotranspiration 2.0"
 feature_slug: "wapor-dekadal-reference-evapotranspiration-2-0"
 latest_feature_date: "2020-04-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/datasets/tags/agriculture"
   - "https://developers.google.com/earth-engine/datasets/catalog"
+  - "https://developers.google.com/earth-engine/datasets/tags/agriculture"
   - "https://developers.google.com/earth-engine/datasets/tags/water-vapor"
 keywords:
   - "wapor"
@@ -24,7 +24,7 @@ keywords:
 # WAPOR Dekadal Reference Evapotranspiration 2.0
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,12 +36,12 @@ Provides dekadal reference evapotranspiration estimates.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/datasets/tags/agriculture](https://developers.google.com/earth-engine/datasets/tags/agriculture)
 - [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
+- [https://developers.google.com/earth-engine/datasets/tags/agriculture](https://developers.google.com/earth-engine/datasets/tags/agriculture)
 - [https://developers.google.com/earth-engine/datasets/tags/water-vapor](https://developers.google.com/earth-engine/datasets/tags/water-vapor)
 
 ## Supporting Pages
@@ -50,7 +50,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/agriculture](https://developers.google.com/earth-engine/datasets/tags/agriculture)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 168
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -63,7 +63,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 168
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -76,7 +76,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/water-vapor](https://developers.google.com/earth-engine/datasets/tags/water-vapor)
 - Source ID: `site-docs-root-3`
-- Final score: 112
+- Final score: 152
 - Re-rank relevance: N/A
 
 Evidence snippets:

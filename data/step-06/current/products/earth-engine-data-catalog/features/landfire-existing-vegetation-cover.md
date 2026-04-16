@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.729Z"
+generated_at: "2026-04-14T15:13:19.904Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "LANDFIRE Existing Vegetation Cover"
 feature_slug: "landfire-existing-vegetation-cover"
 latest_feature_date: "2020-07-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/datasets/tags/landcover"
-  - "https://developers.google.com/earth-engine/datasets/tags/vegetation-indices"
   - "https://developers.google.com/earth-engine/datasets/catalog"
+  - "https://developers.google.com/earth-engine/datasets/tags/vegetation-indices"
+  - "https://developers.google.com/earth-engine/datasets/tags/landcover"
 keywords:
   - "landfire"
   - "existing"
@@ -23,7 +23,7 @@ keywords:
 # LANDFIRE Existing Vegetation Cover
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,13 +35,13 @@ Provides LANDFIRE existing vegetation cover data.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
-- [https://developers.google.com/earth-engine/datasets/tags/vegetation-indices](https://developers.google.com/earth-engine/datasets/tags/vegetation-indices)
 - [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
+- [https://developers.google.com/earth-engine/datasets/tags/vegetation-indices](https://developers.google.com/earth-engine/datasets/tags/vegetation-indices)
+- [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 
 ## Supporting Pages
 
@@ -49,7 +49,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 - Source ID: `site-docs-root`
-- Final score: 112
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -62,7 +62,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/vegetation-indices](https://developers.google.com/earth-engine/datasets/tags/vegetation-indices)
 - Source ID: `site-docs-root-3`
-- Final score: 112
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,7 +75,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 106
+- Final score: 120
 - Re-rank relevance: N/A
 
 Evidence snippets:

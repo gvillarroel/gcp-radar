@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.727Z"
+generated_at: "2026-04-14T15:13:19.899Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "LANDFIRE Biophysical Settings"
 feature_slug: "landfire-biophysical-settings"
 latest_feature_date: "2020-07-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/catalog"
   - "https://developers.google.com/earth-engine/datasets/tags/forest-biomass"
@@ -22,7 +22,7 @@ keywords:
 # LANDFIRE Biophysical Settings
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,7 +34,7 @@ Provides LANDFIRE biophysical settings.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -48,7 +48,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 68
+- Final score: 81
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,7 +61,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/forest-biomass](https://developers.google.com/earth-engine/datasets/tags/forest-biomass)
 - Source ID: `site-docs-root-3`
-- Final score: 60
+- Final score: 73
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,7 +74,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/fire](https://developers.google.com/earth-engine/datasets/tags/fire)
 - Source ID: `site-docs-root-3`
-- Final score: 52
+- Final score: 65
 - Re-rank relevance: N/A
 
 Evidence snippets:

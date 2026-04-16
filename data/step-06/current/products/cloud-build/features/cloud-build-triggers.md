@@ -1,30 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.806Z"
+generated_at: "2026-04-15T00:42:40.934Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Cloud Build triggers"
 feature_slug: "cloud-build-triggers"
 latest_feature_date: "2017-03-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPage"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder"
+  - "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts"
+  - "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run"
+  - "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
 keywords:
-  - "build"
-  - "triggers"
-  - "were"
   - "released"
-  - "in"
+  - "were"
   - "beta"
+  - "triggers"
 ---
 
 # Cloud Build triggers
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,52 +34,54 @@ Cloud Build triggers were released in beta.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPage)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder)
+- [https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts](https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts)
+- [https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run](https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run)
+- [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
 
 ## Supporting Pages
 
-### "Class CloudBuildClient.ListBuildTriggersPage (3.90.0) \_|\_ Java client\
+### Create and manage build triggers \_|\_ Cloud Build \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPage)
-- Source ID: `site-java-reference`
-- Final score: 159
+- URL: [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
+- Source ID: `site-docs-root-2`
+- Final score: 71
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- ListBuildTriggersPage > Inheritance java.lang.Object > AbstractPage > CloudBuildClient.ListBuildTriggersPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListBuildTriggersRequest,ListBuildTriggersResponse,BuildTrigger> context, ListBuildTriggersResponse response) protected CloudBuildClient .
-- ListBuildTriggersPage > createPageAsync ( PageContext<ListBuildTriggersRequest , ListBuildTriggersResponse , BuildTrigger > context , ApiFuture<ListBuildTriggersResponse> futureResponse ) Parameters Name Description context PageContext < ListBuildTriggersRequest , ListBuildTriggersResponse , BuildTrigger > futureResponse ApiFuture < ListBuildTriggersResponse > Returns Type Description ApiFuture < ListBuildTriggersPage > Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPageAsync(PageContext<RequestT,ResponseT,ResourceT> context, ApiFuture<ResponseT> futureResponse) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- ListBuildTriggersPage createPage ( PageContext<ListBuildTriggersRequest , ListBuildTriggersResponse , BuildTrigger > context , ListBuildTriggersResponse response ) Parameters Name Description context PageContext < ListBuildTriggersRequest , ListBuildTriggersResponse , BuildTrigger > response ListBuildTriggersResponse Returns Type Description CloudBuildClient.ListBuildTriggersPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListBuildTriggersRequest,ListBuildTriggersResponse,BuildTrigger> context, ApiFuture<ListBuildTriggersResponse> futureResponse) public ApiFuture<CloudBuildClient .
-- Home Documentation Developer tools Java Client libraries Send feedback Class CloudBuildClient.ListBuildTriggersPage (3.90.0) Stay organized with collections Save and categorize content based on your preferences.
+- See the gcloud instructions for how to update a build trigger to show or hide build logs for GitHub or GitHub Enterprise triggers. gcloud To update a trigger: Export the trigger you would like to update: gcloud beta builds triggers export TRIGGER NAME -- destination = EXPORT PATH Where: TRIGGER NAME is the name of your trigger.
+- Select Disable . gcloud To disable a trigger: Export the trigger you would like to disable: gcloud beta builds triggers export TRIGGER NAME -- destination = EXPORT PATH Where: TRIGGER NAME is the name of your trigger.
+- To create a trigger if your source code is in GitHub : gcloud builds triggers create github \ -- name = TRIGGER NAME \ -- region = REGION \ -- repo - name = REPO NAME \ -- repo - owner = REPO OWNER \ -- branch - pattern = BRANCH PATTERN \ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \ -- service - account = SERVICE ACCOUNT \ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger.
+- Click Create to save your build trigger. gcloud To create a trigger if your source code is in Cloud Source Repositories : gcloud builds triggers create cloud-source-repositories \ --repo= REPO NAME \ --branch-pattern= BRANCH PATTERN \ # or --tag-pattern= TAG PATTERN --build-config= BUILD CONFIG FILE \ --service-account= SERVICE ACCOUNT \ --require-approval Where: REPO NAME is the name of your repository.
 
-### "Class CloudBuildSettings.Builder (3.90.0) \_|\_ Java client libraries \_\
+### Deploying to Cloud Run using Cloud Build \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildSettings.Builder)
-- Source ID: `site-java-reference`
-- Final score: 159
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Returns Type Description Builder < ListBuildTriggersRequest , ListBuildTriggersResponse , ListBuildTriggersPagedResponse > listBuildsSettings() public PagedCallSettings .
-- Builder<CreateBuildTriggerRequest , BuildTrigger > createBuildTriggerSettings () Returns the builder for the settings used for calls to createBuildTrigger.
-- Builder<UpdateBuildTriggerRequest , BuildTrigger > updateBuildTriggerSettings () Returns the builder for the settings used for calls to updateBuildTrigger.
-- Builder<DeleteBuildTriggerRequest , Empty > deleteBuildTriggerSettings () Returns the builder for the settings used for calls to deleteBuildTrigger.
-
-### "Class CloudBuildStubSettings.Builder (3.90.0) \_|\_ Java client libraries\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings.Builder)
-- Source ID: `site-java-reference`
-- Final score: 159
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts](https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts)
+- Source ID: `site-docs-root`
+- Final score: 70
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Builder < ? , ? >> unaryMethodSettingsBuilders () Returns Type Description com.google.common.collect.ImmutableList < Builder < ? , ? >> updateBuildTriggerSettings() public UnaryCallSettings .
-- Returns Type Description Builder < ListBuildTriggersRequest , ListBuildTriggersResponse , ListBuildTriggersPagedResponse > listBuildsSettings() public PagedCallSettings .
-- Builder<CreateBuildTriggerRequest , BuildTrigger > createBuildTriggerSettings () Returns the builder for the settings used for calls to createBuildTrigger.
-- Builder<UpdateBuildTriggerRequest , BuildTrigger > updateBuildTriggerSettings () Returns the builder for the settings used for calls to updateBuildTrigger.
+- Create a build trigger with the config file created in the previous step: Open the Triggers page: Go to the Triggers page Click Create Trigger .
+- Continuous deployment You can automate the deployment of your software to Cloud Run by creating Cloud Build triggers.
+- For more information on creating Cloud Build triggers, see Creating and managing build triggers .
+- You can configure your triggers to build and deploy images whenever you update your source code.
+
+### Deploying to Cloud Run using Cloud Build \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run](https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run)
+- Source ID: `site-docs-root`
+- Final score: 70
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Create a build trigger with the config file created in the previous step: Open the Triggers page: Go to the Triggers page Click Create Trigger .
+- Continuous deployment You can automate the deployment of your software to Cloud Run by creating Cloud Build triggers.
+- For more information on creating Cloud Build triggers, see Creating and managing build triggers .
+- You can configure your triggers to build and deploy images whenever you update your source code.
 

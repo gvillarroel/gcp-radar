@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:37.690Z"
+generated_at: "2026-04-12T12:17:29.941Z"
 product_name: "Identity Platform"
 product_slug: "identity-platform"
 feature_name: "Bring your own reCAPTCHA keys"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-10-31"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform"
   - "https://docs.cloud.google.com/identity-platform/docs/reference/rest"
-  - "https://docs.cloud.google.com/identity-platform/docs/access-control"
+  - "https://docs.cloud.google.com/identity-platform/docs/web/mfa"
+  - "https://docs.cloud.google.com/identity-platform/docs/how-to"
+  - "https://docs.cloud.google.com/identity-platform/docs/audit-logging"
 keywords:
   - "bring"
   - "your"
@@ -38,47 +39,70 @@ Identity Platform's reCAPTCHA Enterprise integration supports using your own reC
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform](https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform)
 - [https://docs.cloud.google.com/identity-platform/docs/reference/rest](https://docs.cloud.google.com/identity-platform/docs/reference/rest)
-- [https://docs.cloud.google.com/identity-platform/docs/access-control](https://docs.cloud.google.com/identity-platform/docs/access-control)
+- [https://docs.cloud.google.com/identity-platform/docs/web/mfa](https://docs.cloud.google.com/identity-platform/docs/web/mfa)
+- [https://docs.cloud.google.com/identity-platform/docs/how-to](https://docs.cloud.google.com/identity-platform/docs/how-to)
+- [https://docs.cloud.google.com/identity-platform/docs/audit-logging](https://docs.cloud.google.com/identity-platform/docs/audit-logging)
 
 ## Supporting Pages
 
-### REST Resource: projects.identityPlatform | Identity Platform | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform](https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform)
-- Source ID: `site-docs-reference`
-- Final score: 150
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- REST Resource: projects.identityPlatform Identity Platform Google Cloud Documentation Source URL: https://docs.cloud.google.com/identity-platform/docs/reference/rest/v2/projects.identityPlatform Access and resource management · Identity Platform · Reference · Send feedback · Resource · Methods · There is no persistent data associated with this resource.
-
-### Identity Toolkit API | Identity Platform | Google Cloud Documentation
+### Identity Toolkit API \_|\_ Identity Platform \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/identity-platform/docs/reference/rest](https://docs.cloud.google.com/identity-platform/docs/reference/rest)
-- Source ID: `site-docs-root`
-- Final score: 118
+- Source ID: `site-api-reference`
+- Final score: 228
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Identity Toolkit API Identity Platform Google Cloud Documentation Source URL: https://docs.cloud.google.com/identity-platform/docs/reference/rest The Google Identity Toolkit API lets you use open standards to verify a user&#x27;s identity. ...
-- If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
+- REST Resource: v1 Methods getProjects GET /v1/projects Gets a project's public Identity Toolkit configuration. getPublicKeys GET /v1/publicKeys Retrieves public keys of the legacy Identity Toolkit token signer to enable third parties to verify the legacy ID token. getRecaptchaParams GET /v1/recaptchaParams Gets parameters needed for generating a reCAPTCHA challenge. getSessionCookiePublicKeys GET /v1/sessionCookiePublicKeys Retrieves the set of public keys of the session cookie JSON Web Token (JWT) signer that can be used to validate the session cookie created through createSessionCookie .
+- Home Documentation Access and resource management Identity Platform Reference Send feedback Identity Toolkit API Stay organized with collections Save and categorize content based on your preferences.
+- REST Resource: v2 REST Resource: v2.accounts REST Resource: v2.accounts.mfaEnrollment REST Resource: v2.accounts.mfaSignIn REST Resource: v2.defaultSupportedIdps REST Resource: v2.projects REST Resource: v2.projects.defaultSupportedIdpConfigs REST Resource: v2.projects.domain REST Resource: v2.projects.identityPlatform REST Resource: v2.projects.inboundSamlConfigs REST Resource: v2.projects.oauthIdpConfigs REST Resource: v2.projects.tenants REST Resource: v2.projects.tenants.defaultSupportedIdpConfigs REST Resource: v2.projects.tenants.domain REST Resource: v2.projects.tenants.inboundSamlConfigs REST Resource: v2.projects.tenants.oauthIdpConfigs REST Resource: v1 REST Resource: v1.accounts REST Resource: v1.projects REST Resource: v1.projects.accounts REST Resource: v1.projects.tenants REST Resource: v1.projects.tenants.accounts Service: identitytoolkit.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects Methods accounts POST /v1/projects/{targetProjectId}/accounts Signs up a new email and password user or anonymous user, or upgrades an anonymous user to email and password. createSessionCookie POST /v1/projects/{targetProjectId}:createSessionCookie Creates a session cookie for the given Identity Platform ID token. queryAccounts POST /v1/projects/{targetProjectId}:queryAccounts Looks up user accounts within a project or a tenant based on conditions in the request.
 
-### Access control with IAM | Identity Platform | Google Cloud Documentation
+### "Adding multi-factor authentication to your web app \_|\_ Identity Platform\
 
-- URL: [https://docs.cloud.google.com/identity-platform/docs/access-control](https://docs.cloud.google.com/identity-platform/docs/access-control)
-- Source ID: `site-iam-reference`
-- Final score: 104
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/identity-platform/docs/web/mfa](https://docs.cloud.google.com/identity-platform/docs/web/mfa)
+- Source ID: `site-docs-root`
+- Final score: 224
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Access control with IAM Identity Platform Google Cloud Documentation Source URL: https://docs.cloud.google.com/identity-platform/docs/access-control Identity Platform provides Admin APIs to manage your users and authentication tokens.
-- To prevent unwanted access to your users and tokens through these APIs, Identity Platform leverages IAM to manage permission to specific Identity Platform APIs.
+- Identity Platform uses reCAPTCHA to prevent abuse by ensuring that phone number verification requests come from one of your app's allowed domains.
+- Home Documentation Access and resource management Identity Platform Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Identity Platform uses a fully blocking SMS region policy, which helps to create your projects in a more secure state by default.
+- Ensure you obtain appropriate consent from your users before sending their phone numbers to Identity Platform.
+
+### How-to Guides \_|\_ Identity Platform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/identity-platform/docs/how-to](https://docs.cloud.google.com/identity-platform/docs/how-to)
+- Source ID: `site-api-reference`
+- Final score: 193
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Managing Identity Platform projects Enable reCAPTCHA Enterprise Configure reCAPTCHA Enterprise to add another layer of security to your apps.
+- Home Documentation Access and resource management Identity Platform Guides Send feedback How-to Guides Stay organized with collections Save and categorize content based on your preferences.
+- Configuring custom claims on users Configure custom claims on users using Identity Platform to handle authorization in your app or service.
+- Migrating users between projects and tenants Migrate users between tenants or from a non-tenant Identity Platform project to a tenant-enabled one.
+
+### Identity Platform audit logging \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/identity-platform/docs/audit-logging](https://docs.cloud.google.com/identity-platform/docs/audit-logging)
+- Source ID: `site-api-reference`
+- Final score: 188
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Permission type Methods ADMIN READ google.cloud.identitytoolkit.admin.v2.ProjectConfigService.GetConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.GetDefaultSupportedIdpConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.GetIamPolicy google.cloud.identitytoolkit.admin.v2.ProjectConfigService.GetInboundSamlConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.GetOAuthIdpConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.ListDefaultSupportedIdpConfigs google.cloud.identitytoolkit.admin.v2.ProjectConfigService.ListInboundSamlConfigs google.cloud.identitytoolkit.admin.v2.ProjectConfigService.ListOAuthIdpConfigs google.cloud.identitytoolkit.admin.v2.TenantManagementService.GetTenant google.cloud.identitytoolkit.admin.v2.TenantManagementService.ListTenants google.cloud.identitytoolkit.v1.AccountManagementService.DownloadAccount google.cloud.identitytoolkit.v2beta1.ProjectConfigService.GetConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.GetDefaultSupportedIdpConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.GetInboundSamlConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.GetOAuthIdpConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.ListDefaultSupportedIdpConfigs google.cloud.identitytoolkit.v2beta1.ProjectConfigService.ListInboundSamlConfigs google.cloud.identitytoolkit.v2beta1.ProjectConfigService.ListOAuthIdpConfigs google.cloud.identitytoolkit.v2beta1.TenantManagementService.GetTenant google.cloud.identitytoolkit.v2beta1.TenantManagementService.ListTenants ADMIN WRITE google.cloud.identitytoolkit.admin.v2.ProjectConfigService.CreateDefaultSupportedIdpConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.CreateInboundSamlConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.CreateOAuthIdpConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.DeleteDefaultSupportedIdpConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.DeleteInboundSamlConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.DeleteOAuthIdpConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.InitializeIdentityPlatform google.cloud.identitytoolkit.admin.v2.ProjectConfigService.SetIamPolicy google.cloud.identitytoolkit.admin.v2.ProjectConfigService.UpdateConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.UpdateDefaultSupportedIdpConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.UpdateInboundSamlConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.UpdateOAuthIdpConfig google.cloud.identitytoolkit.admin.v2.ProjectConfigService.VerifyDomain google.cloud.identitytoolkit.admin.v2.TenantManagementService.CreateTenant google.cloud.identitytoolkit.admin.v2.TenantManagementService.DeleteTenant google.cloud.identitytoolkit.admin.v2.TenantManagementService.UpdateTenant google.cloud.identitytoolkit.v2beta1.ProjectConfigService.CreateDefaultSupportedIdpConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.CreateInboundSamlConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.CreateOAuthIdpConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.DeleteDefaultSupportedIdpConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.DeleteInboundSamlConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.DeleteOAuthIdpConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.EnableCicp google.cloud.identitytoolkit.v2beta1.ProjectConfigService.UpdateConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.UpdateDefaultSupportedIdpConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.UpdateInboundSamlConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.UpdateOAuthIdpConfig google.cloud.identitytoolkit.v2beta1.ProjectConfigService.VerifyDomain google.cloud.identitytoolkit.v2beta1.TenantManagementService.CreateTenant google.cloud.identitytoolkit.v2beta1.TenantManagementService.DeleteTenant google.cloud.identitytoolkit.v2beta1.TenantManagementService.UpdateTenant DATA READ google.cloud.identitytoolkit.v1.AccountManagementService.DownloadAccount google.cloud.identitytoolkit.v1.AccountManagementService.GetAccountInfo google.cloud.identitytoolkit.v1.AccountManagementService.QueryUserInfo DATA WRITE google.cloud.identitytoolkit.v1.AccountManagementService.BatchDeleteAccounts google.cloud.identitytoolkit.v1.AccountManagementService.DeleteAccount google.cloud.identitytoolkit.v1.AccountManagementService.GetOobCode google.cloud.identitytoolkit.v1.AccountManagementService.SetAccountInfo google.cloud.identitytoolkit.v1.AccountManagementService.UploadAccount google.cloud.identitytoolkit.v1.AuthenticationService.SignUp google.cloud.identitytoolkit.v1.SessionManagementService.CreateSessionCookie API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Identity Platform. google.cloud.identitytoolkit.admin.v2.ProjectConfigService The following audit logs are associated with methods belonging to google.cloud.identitytoolkit.admin.v2.ProjectConfigService .
+- The following methods don't produce audit logs: google.cloud.identitytoolkit.admin.v2.ProjectConfigService.TestIamPermissions google.cloud.identitytoolkit.v1.AuthenticationService.CreateAuthUri google.cloud.identitytoolkit.v1.AuthenticationService.GetPublicKeys google.cloud.identitytoolkit.v1.AuthenticationService.GetRecaptchaParam google.cloud.identitytoolkit.v1.AuthenticationService.IssueSamlResponse google.cloud.identitytoolkit.v1.AuthenticationService.SendVerificationCode google.cloud.identitytoolkit.v1.AuthenticationService.SignInWithCustomToken google.cloud.identitytoolkit.v1.AuthenticationService.SignInWithEmailLink google.cloud.identitytoolkit.v1.AuthenticationService.SignInWithGameCenter google.cloud.identitytoolkit.v1.AuthenticationService.SignInWithIdp google.cloud.identitytoolkit.v1.AuthenticationService.SignInWithPassword google.cloud.identitytoolkit.v1.AuthenticationService.SignInWithPhoneNumber google.cloud.identitytoolkit.v1.AuthenticationService.VerifyIosClient google.cloud.identitytoolkit.v1.SessionManagementService.GetSessionCookiePublicKeys google.cloud.identitytoolkit.v2.AuthenticationService.FinalizeMfaSignIn google.cloud.identitytoolkit.v2.AuthenticationService.GetPasswordPolicy google.cloud.identitytoolkit.v2.AuthenticationService.GetRecaptchaConfig google.cloud.identitytoolkit.v2.AuthenticationService.RevokeToken google.cloud.identitytoolkit.v2.AuthenticationService.StartMfaSignIn google.cloud.identitytoolkit.v2alpha1.AccountManagementService.FinalizeMfaEnrollment google.cloud.identitytoolkit.v2alpha1.AccountManagementService.StartMfaEnrollment google.cloud.identitytoolkit.v2alpha1.AccountManagementService.WithdrawMfa google.cloud.identitytoolkit.v2alpha1.AuthenticationV2Alpha1Service.FinalizeMfaSignIn google.cloud.identitytoolkit.v2alpha1.AuthenticationV2Alpha1Service.StartMfaSignIn Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Access and resource management Identity Platform Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Filter for this method : protoPayload.methodName="google.cloud.identitytoolkit.admin.v2.ProjectConfigService.InitializeIdentityPlatform" ListDefaultSupportedIdpConfigs Method : google.cloud.identitytoolkit.admin.v2.ProjectConfigService.ListDefaultSupportedIdpConfigs Audit log type : Data access Permissions : firebaseauth.configs.get - ADMIN READ firebaseauth.configs.getSecret - ADMIN READ identitytoolkit.tenants.get - ADMIN READ Method is a long-running or streaming operation : No.
 

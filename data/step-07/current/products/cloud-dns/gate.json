@@ -1,0 +1,555 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-14T01:57:00.306Z",
+  "product_name": "Cloud DNS",
+  "product_slug": "cloud-dns",
+  "input_file": "data/step-06/current/products/cloud-dns/extended-features.json",
+  "feature_count": 29,
+  "passed_feature_count": 29,
+  "failed_feature_count": 0,
+  "warned_feature_count": 1,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "Cloud DNS scopes",
+      "feature_slug": "cloud-dns-scopes",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "Cloud DNS resourceRecordSets.list filter",
+      "feature_slug": "cloud-dns-resourcerecordsets-list-filter",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.ChangeRequestListOption"
+      ]
+    },
+    {
+      "feature_name": "DNS Armor internet-bound query monitoring",
+      "feature_slug": "dns-armor-internet-bound-query-monitoring",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS alias records",
+      "feature_slug": "cloud-dns-alias-records",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/set-up-dns-records-domain-name",
+        "https://docs.cloud.google.com/dns/docs/records",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption",
+        "https://docs.cloud.google.com/dns/docs/reference/json-record"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS DNS64",
+      "feature_slug": "cloud-dns-dns64",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/configure-dns64",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/set-up-dns-records-domain-name"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS outbound FQDN forwarding target",
+      "feature_slug": "cloud-dns-outbound-fqdn-forwarding-target",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/key-terms"
+      ]
+    },
+    {
+      "feature_name": "External endpoint health checks in DNS routing policies",
+      "feature_slug": "external-endpoint-health-checks-in-dns-routing-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/audit-logging"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS routing policy health checks for internal proxy Network Load Balancer targets",
+      "feature_slug": "cloud-dns-routing-policy-health-checks-for-internal-proxy-network-load-balancer-targets",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS routing policy health checks for cross-region internal Application Load Balancers",
+      "feature_slug": "cloud-dns-routing-policy-health-checks-for-cross-region-internal-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS routing policy internal Application Load Balancer health-check targets",
+      "feature_slug": "cloud-dns-routing-policy-internal-application-load-balancer-health-check-targets",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/key-terms"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS internal load balancer health checks in routing policies",
+      "feature_slug": "cloud-dns-internal-load-balancer-health-checks-in-routing-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS routing policy automatic failover",
+      "feature_slug": "cloud-dns-routing-policy-automatic-failover",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/key-terms"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS scope configuration",
+      "feature_slug": "cloud-dns-scope-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "feature_name": "Zonal private Cloud DNS zones",
+      "feature_slug": "zonal-private-cloud-dns-zones",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS per-resource IAM permissions",
+      "feature_slug": "cloud-dns-per-resource-iam-permissions",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS routing policy management",
+      "feature_slug": "cloud-dns-routing-policy-management",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Cloud Logging for managed public zones",
+      "feature_slug": "cloud-logging-for-managed-public-zones",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS response policy and rules management",
+      "feature_slug": "cloud-dns-response-policy-and-rules-management",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/key-terms"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS routing policies",
+      "feature_slug": "cloud-dns-routing-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS monitoring dashboard",
+      "feature_slug": "cloud-dns-monitoring-dashboard",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS scopes",
+      "feature_slug": "cloud-dns-scopes",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS ResourceRecordSets update API",
+      "feature_slug": "cloud-dns-resourcerecordsets-update-api",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/records",
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/audit-logging"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS response policies and rules",
+      "feature_slug": "cloud-dns-response-policies-and-rules",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS forwarding to non-RFC 1918 addresses",
+      "feature_slug": "cloud-dns-forwarding-to-non-rfc-1918-addresses",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS peering",
+      "feature_slug": "cloud-dns-peering",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS private query logging and monitoring",
+      "feature_slug": "cloud-dns-private-query-logging-and-monitoring",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS forwarding",
+      "feature_slug": "cloud-dns-forwarding",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/cnamechasing"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS private DNS logging and monitoring",
+      "feature_slug": "cloud-dns-private-dns-logging-and-monitoring",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS private zones",
+      "feature_slug": "cloud-dns-private-zones",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms"
+      ]
+    },
+    {
+      "feature_name": "Cloud DNS DNSSEC",
+      "feature_slug": "cloud-dns-dnssec",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    }
+  ]
+}

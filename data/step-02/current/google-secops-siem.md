@@ -25,7 +25,7 @@ Unique features: 219
 | 2026-02-20 | Feed search filtering |  | The Feeds page now supports filtering by feed attributes. |
 | 2026-02-12 | Joins without a match section |  | Join operations can correlate data from multiple sources without requiring a match section. |
 | 2026-02-12 | Outer joins |  | Left and right outer joins return unmatched records from the primary source with null values for missing fields. |
-| 2026-02-04 | re.capture_all function |  | The re.capture_all function returns every non-overlapping regular expression match in a string. |
+| 2026-02-04 | re.capture_all() |  | The re.capture_all function returns every non-overlapping regular expression match in a string. |
 | 2026-02-03 | Mute an IoC | 2026-02-03 | The Mute an IoC capability was removed from the IoC details page; deprecated on 2026-02-03. |
 | 2026-02-03 | Shared custom column sets |  | Users can share custom column sets in the Events table for consistent analysis across teams; Users can create, save, and share custom column sets in the Events table. |
 | 2026-01-29 | Detection timing details |  | Detection records now distinguish primary rule runs from rule replays in dashboards and the Alerts lister. |
@@ -121,8 +121,8 @@ Unique features: 219
 | 2024-07-29 | Microsoft Entra ID rule pack |  | Curated Detections added a Cloud Threats rule pack for Microsoft Entra ID. |
 | 2024-07-26 | CBN alerts | 2024-07-26 | CBN alerts will no longer be available; deprecated on 2024-07-26. |
 | 2024-07-26 | Enterprise Insights page | 2024-07-26 | The Enterprise Insights page will no longer be available; deprecated on 2024-07-26. |
-| 2024-07-25 | idm.is_alert alert metadata field | 2024-07-25 | The idm.is_alert alert metadata field has been deprecated in favor of YARA-L detection rule alerts; deprecated on 2024-07-25. |
-| 2024-07-25 | idm.is_significant alert metadata field | 2024-07-25 | The idm.is_significant alert metadata field has been deprecated in favor of YARA-L detection rule alerts; deprecated on 2024-07-25. |
+| 2024-07-25 | idm.is_alert | 2024-07-25 | The idm.is_alert alert metadata field has been deprecated in favor of YARA-L detection rule alerts; deprecated on 2024-07-25. |
+| 2024-07-25 | idm.is_significant | 2024-07-25 | The idm.is_significant alert metadata field has been deprecated in favor of YARA-L detection rule alerts; deprecated on 2024-07-25. |
 | 2024-07-17 | BigQuery telemetry data export to a self-managed project |  | Customers can export telemetry data to their own BigQuery instance in preview. |
 | 2024-07-17 | Managed BigQuery data lake export | 2024-12-31 | The managed BigQuery data lake for export will no longer be accessible to most Google SecOps customers; deprecated on 2024-12-31. |
 | 2024-07-15 | Symantec Event Export feed | 2024-07-15 | The Symantec Event Export feed has been discontinued; deprecated on 2024-07-15. |
@@ -171,8 +171,8 @@ Unique features: 219
 | 2023-06-23 | Chronicle Data in BigQuery |  | Chronicle Data in BigQuery now stores the events table as Parquet files in Google Cloud Storage to improve export flexibility. |
 | 2023-06-22 | Chronicle dashboard file sharing |  | Chronicle dashboards can be shared between instances or between users within the same instance without creating copies. |
 | 2023-05-25 | Chronicle-managed BigQuery udm_events table | 2023-07-01 | The Chronicle-managed BigQuery udm_events table is deprecated and replaced by the events table; deprecated on 2023-07-01. |
+| 2023-05-24 | arrays.length() |  | YARA-L 2.0 now includes arrays.length() to return the number of elements in a repeated field. |
 | 2023-05-24 | YARA-L 2.0 array indexing on repeated fields |  | YARA-L 2.0 now supports bracket notation to access elements in repeated fields by index. |
-| 2023-05-24 | YARA-L 2.0 arrays.length() function |  | YARA-L 2.0 now includes arrays.length() to return the number of elements in a repeated field. |
 | 2023-05-01 | UDM Search Pivot Table |  | The UDM Search Pivot Table lets users group search results and run aggregations across UDM fields. |
 | 2023-04-25 | Chronicle forwarder automatic buffering |  | Chronicle forwarder automatic buffering absorbs incoming traffic spikes using available host memory. |
 | 2023-04-25 | Chronicle forwarder data compression |  | Chronicle forwarder data compression is enabled by default to reduce network bandwidth use. |

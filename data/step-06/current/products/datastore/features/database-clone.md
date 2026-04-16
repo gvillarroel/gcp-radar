@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.833Z"
+generated_at: "2026-04-12T12:14:02.766Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Database clone"
 feature_slug: "database-clone"
 latest_feature_date: "2025-10-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/access/iam"
-  - "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore"
   - "https://docs.cloud.google.com/datastore/docs/cmek"
+  - "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore"
+  - "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
 keywords:
   - "database"
   - "clone"
@@ -26,7 +27,7 @@ keywords:
 # Database clone
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Database clone lets you create a new database from an existing database state; D
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/access/iam](https://docs.cloud.google.com/datastore/docs/access/iam)
-- [https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore](https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore)
 - [https://docs.cloud.google.com/datastore/docs/cmek](https://docs.cloud.google.com/datastore/docs/cmek)
+- [https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore](https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore)
+- [https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore](https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/access/iam](https://docs.cloud.google.com/datastore/docs/access/iam)
 - Source ID: `site-iam-reference`
-- Final score: 194
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 240
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Method Required Permission(s) lookup of entities with kind names matching Stat datastore.statistics.get runQuery using kinds with names matching Stat datastore.statistics.get datastore.statistics.list runQuery using the kind namespace datastore.namespaces.get datastore.namespaces.list Required roles to create a Datastore mode database instance To create a new Datastore mode database instance, you require either the Owner role or the Datastore Owner role .
@@ -62,11 +64,25 @@ Evidence snippets:
 - Intended for application developers and service accounts. roles/datastore.viewer appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities.get datastore.entities.list datastore.schemas.get datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list datastore.insights.get Read access to all Datastore mode database resources. roles/datastore.importExportAdmin appengine.applications.get datastore.databases.export datastore.databases.getMetadata datastore.databases.import datastore.operations.cancel datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage imports and exports. roles/datastore.bulkAdmin resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.databases.bulkDelete datastore.operations.cancel datastore.operations.get datastore.operations.list Full access to manage bulk operations. roles/datastore.indexAdmin appengine.applications.get datastore.databases.getMetadata datastore.schemas. datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage index definitions. roles/datastore.keyVisualizerViewer datastore.databases.getMetadata datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list resourcemanager.projects.get resourcemanager.projects.list Full access to Key Visualizer scans. roles/datastore.backupSchedulesViewer datastore.backupSchedules.get datastore.backupSchedules.list Read access to backup schedules in a Datastore mode database. roles/datastore.backupSchedulesAdmin datastore.backupSchedules.get datastore.backupSchedules.list datastore.backupSchedules.create datastore.backupSchedules.update datastore.backupSchedules.delete datastore.databases.list datastore.databases.getMetadata Full access to backup schedules in a Datastore mode database. roles/datastore.backupsViewer datastore.backups.get datastore.backups.list Read access to backup information in a Datastore mode location. roles/datastore.backupsAdmin datastore.backups.get datastore.backups.list datastore.backups.delete Full access to backups in a Datastore mode location. roles/datastore.restoreAdmin datastore.backups.get datastore.backups.list datastore.backups.restoreDatabase datastore.databases.list datastore.databases.create datastore.databases.getMetadata datastore.operations.list datastore.operations.get Ability to restore a Datastore mode backup into a new database.
 - View tags datastore.databases.listTagBindings datastore.databases.listEffectiveTags Manage tags on resources The following permission is required for the database resource you're attaching the tag value. datastore.databases.createTagBinding Required Permissions for API methods The following table lists the permissions that the caller must have to call each method: Method Required Permission(s) allocateIds datastore.entities.allocateIds beginTransaction datastore.databases.get commit with empty mutations datastore.databases.get commit for an insert datastore.entities.create commit for an upsert datastore.entities.create datastore.entities.update commit for an update datastore.entities.update commit for a delete datastore.entities.delete commit for a lookup datastore.entities.get For a lookup related to metadata or statistics, see Required Permissions for Metadata and Statistics . commit for a query datastore.entities.list datastore.entities.get (if the query is not a keys-only query ) For a query related to metadata or statistics, see Required Permissions for Metadata and Statistics . lookup datastore.entities.get For a lookup related to metadata or statistics, see Required Permissions for Metadata and Statistics . rollback datastore.databases.get runQuery datastore.entities.list datastore.entities.get (if the query is not a keys-only query ) For a query related to metadata or statistics, see Required Permissions for Metadata and Statistics . runQuery with a kindless query datastore.entities.get datastore.entities.list datastore.statistics.get datastore.statistics.list Required Permissions for Metadata and Statistics The following table lists permissions that the caller must have to call methods on Metadata and Statistics .
 
+### "Customer-managed encryption keys (CMEK) \_|\_ Datastore \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/datastore/docs/cmek](https://docs.cloud.google.com/datastore/docs/cmek)
+- Source ID: `site-iam-reference`
+- Final score: 234
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- When you clone a database, you can specify a different encryption type in one of the following ways: Clone to a CMEK database with a newly specified key.
+- Backup and restore A backup uses the same encryption mechanism as the database from which you created it.
+- You can enable CMEK only on new databases, and you must enable it when you create the database.
+- You can also restore or clone data from a non-CMEK database to a CMEK database.
+
 ### "Balancing Strong and Eventual Consistency with Datastore \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore](https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore)
 - Source ID: `site-iam-reference`
-- Final score: 178
+- Final score: 203
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,17 +91,16 @@ Evidence snippets:
 - This strategy allows for a gradual migration from an existing data model to a new data model based on entity groups that minimizes the risk of issues caused by eventual consistency.
 - For example, suppose you update an existing entity, Player, with a new Score property value of 0, and executed the same query immediately afterwards.
 
-### "Customer-managed encryption keys (CMEK) \_|\_ Datastore \_|\_ Google Cloud\
+### Fast and Reliable Ranking in Google Datastore \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/datastore/docs/cmek](https://docs.cloud.google.com/datastore/docs/cmek)
+- URL: [https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore](https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore)
 - Source ID: `site-iam-reference`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 191
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- When you clone a database, you can specify a different encryption type in one of the following ways: Clone to a CMEK database with a newly specified key.
-- Backup and restore A backup uses the same encryption mechanism as the database from which you created it.
-- You can enable CMEK only on new databases, and you must enable it when you create the database.
-- You can also restore or clone data from a non-CMEK database to a CMEK database.
+- The Lossy Counting Method and Frugal Streaming are so-called online algorithms and streaming algorithms where you could use very small in-memory storage to calculate a stochastic estimation of top-rankers from a stream of player-score pairs.
+- For example, you could execute the following query: SELECT count(key) FROM Players WHERE Score > YourScore This query counts all the players who have a higher score than yours (Figure 4).
+- Home Documentation Databases Datastore Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- You would create multiple implementations of the above system—a set of queues each driving a backend module that updates its own ranking tree.
 

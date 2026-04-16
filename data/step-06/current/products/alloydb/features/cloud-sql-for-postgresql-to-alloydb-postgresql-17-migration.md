@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.573Z"
+generated_at: "2026-04-12T12:07:33.823Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "Cloud SQL for PostgreSQL to AlloyDB PostgreSQL 17 migration"
 feature_slug: "cloud-sql-for-postgresql-to-alloydb-postgresql-17-migration"
 latest_feature_date: "2025-11-10"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-psql"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
 keywords:
   - "up to 15 TB backups"
   - "AlloyDB PostgreSQL 17 migration"
@@ -23,7 +26,7 @@ keywords:
 # Cloud SQL for PostgreSQL to AlloyDB PostgreSQL 17 migration
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -31,28 +34,50 @@ AlloyDB now supports migrating from Cloud SQL for PostgreSQL to AlloyDB for Post
 
 ## Extended Definition
 
-This feature enables migration from Cloud SQL for PostgreSQL to AlloyDB for PostgreSQL by using a Cloud SQL for PostgreSQL backup as the source. The AlloyDB for PostgreSQL release notes state that AlloyDB now supports PostgreSQL 17 for this migration workflow using a Cloud SQL backup (Nov 10, 2025), building on the earlier GA-capability to migrate via Cloud SQL backups (May 7, 2025).
+AlloyDB now supports migrating from Cloud SQL for PostgreSQL to AlloyDB for PostgreSQL 17 using Cloud SQL backups up to 15 TB.
 
 ## Evidence Summary
 
-The referenced AlloyDB release notes provide direct, dated entries showing the backup-based Cloud SQL-to-AlloyDB migration capability and its extension to PostgreSQL 17.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://cloud.google.com/alloydb/docs/release-notes](https://cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups](https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups)
+- [https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb](https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb)
+- [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Manage enhanced backups \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups](https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups)
+- Source ID: `site-docs-reference-2`
+- Final score: 110
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Migrate data from a vector database to AlloyDB \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb](https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb)
+- Source ID: `site-docs-root-2`
+- Final score: 106
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Connect from Compute Engine \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
 - Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: N/A
+- Final score: 102
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- November 10, 2025 Feature AlloyDB now supports PostgreSQL 17 for migrating from Cloud SQL for PostgreSQL to AlloyDB for PostgreSQL using your Cloud SQL for PostgreSQL backup.
-- May 07, 2025 Feature You can migrate from Cloud SQL for PostgreSQL to AlloyDB for PostgreSQL using your Cloud SQL for PostgreSQL backup ( GA ).
-- September 25, 2024 Feature You can now set up AlloyDB free trial clusters using a copy of your Cloud SQL for PostgreSQL backup.
-- November 21, 2024 Feature You can set up AlloyDB clusters using a copy of your Cloud SQL for PostgreSQL backup.
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- Source ID: `site-api-reference`
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:23:14.070Z"
+generated_at: "2026-04-14T09:52:59.652Z"
 product_name: "Batch"
 product_slug: "batch"
 feature_name: "Automatic Ops Agent installation for Batch jobs"
 feature_slug: "automatic-ops-agent-installation-for-batch-jobs"
 latest_feature_date: "2024-06-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs"
-  - "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceClient"
+  - "https://docs.cloud.google.com/batch/docs/troubleshooting"
+  - "https://docs.cloud.google.com/batch/docs/get-started"
 keywords:
   - "installation"
+  - "configured"
   - "automatic"
   - "agent"
-  - "ops"
-  - "can"
   - "jobs"
-  - "batch"
-  - "for"
 ---
 
 # Automatic Ops Agent installation for Batch jobs
 
 Product: Batch
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ Batch jobs can be configured to automatically install the Ops Agent to provide a
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs](https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs)
-- [https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceClient](https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceClient)
+- [https://docs.cloud.google.com/batch/docs/troubleshooting](https://docs.cloud.google.com/batch/docs/troubleshooting)
+- [https://docs.cloud.google.com/batch/docs/get-started](https://docs.cloud.google.com/batch/docs/get-started)
 
 ## Supporting Pages
 
@@ -52,41 +49,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs](https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs)
 - Source ID: `site-api-reference`
-- Final score: 190
+- Final score: 140
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- JSON representation { "installGpuDrivers" : boolean , "installOpsAgent" : boolean , "blockProjectSshKeys" : boolean , // Union field policy template can be only one of the following: "policy" : { object ( InstancePolicy ) } , "instanceTemplate" : string // End of list of possible types for union field policy template . } Fields installGpuDrivers boolean Set this field true if you want Batch to help fetch drivers from a third party location and install them for GPUs specified in policy.accelerators or instanceTemplate on your behalf.
-- For non Container-Optimized Image cases, following https://github.com/GoogleCloudPlatform/compute-gpu-installation/blob/main/linux/install gpu driver.py . installOpsAgent boolean Optional.
 - Logs include information that is automatically written by the Batch service agent and any information that you configured the job's runnables to write to the stdout or stderr streams.
-- Tasks get a BATCH TASK INDEX and BATCH TASK COUNT environment variable, in addition to any environment variables set in taskEnvironments, specifying the number of Tasks in the Task's parent TaskGroup, and the specific Task's index in the TaskGroup (0 through BATCH TASK COUNT - 1). taskCountPerNode string ( int64 format) Max number of tasks that can be run on a VM at the same time.
+- For non Container-Optimized Image cases, following https://github.com/GoogleCloudPlatform/compute-gpu-installation/blob/main/linux/install gpu driver.py . installOpsAgent boolean Optional.
+- Resource: Job JSON representation TaskGroup JSON representation TaskSpec JSON representation Runnable JSON representation Container JSON representation Script JSON representation Barrier JSON representation Environment JSON representation KMSEnvMap JSON representation ComputeResource JSON representation LifecyclePolicy JSON representation Action ActionCondition JSON representation Volume JSON representation NFS JSON representation GCS JSON representation SchedulingPolicy AllocationPolicy JSON representation LocationPolicy JSON representation InstancePolicyOrTemplate JSON representation InstancePolicy JSON representation ProvisioningModel Accelerator JSON representation Disk JSON representation AttachedDisk JSON representation ServiceAccount JSON representation NetworkPolicy JSON representation NetworkInterface JSON representation PlacementPolicy JSON representation JobStatus JSON representation State TaskGroupStatus JSON representation InstanceStatus JSON representation LogsPolicy JSON representation Destination CloudLoggingOption JSON representation JobNotification JSON representation Message JSON representation Type Methods Resource: Job The Cloud Batch Job description.
+- JSON representation { "installGpuDrivers" : boolean , "installOpsAgent" : boolean , "blockProjectSshKeys" : boolean , // Union field policy template can be only one of the following: "policy" : { object ( InstancePolicy ) } , "instanceTemplate" : string // End of list of possible types for union field policy template . } Fields installGpuDrivers boolean Set this field true if you want Batch to help fetch drivers from a third party location and install them for GPUs specified in policy.accelerators or instanceTemplate on your behalf.
 
-### "Class BatchServiceAsyncClient (0.20.0) \_|\_ Python client libraries \_\
+### Troubleshooting \_|\_ Batch \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 160
+- URL: [https://docs.cloud.google.com/batch/docs/troubleshooting](https://docs.cloud.google.com/batch/docs/troubleshooting)
+- Source ID: `site-docs-root`
+- Final score: 101
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import batch v1 async def sample cancel job(): Create a client client = batch v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import batch v1 async def sample list jobs(): Create a client client = batch v1 .
-- CancelJobRequest ( name="name value", ) Make the request operation = client. cancel job (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.batch v1.types.CancelJobRequest , dict]] The request object.
-- ListJobsRequest ( ) Make the request page result = client. list jobs (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.batch v1.types.ListJobsRequest , dict]] The request object.
+- Although it's possible to install the Ops Agent manually in a runnable, the recommended method is to automatically install the Ops Agent by setting the installOpsAgent field to true .
+- Logs from Batch jobs can't appear if you have configured exclusion filters for Cloud Logging that cause logs from Batch jobs to be excluded.
+- Cloud Logging was configured to automatically exclude the job's logs.
+- Solution To resolve the issue, recreate the job and specify the network by using one of the following options: VM instance template: If you want to use a VM instance template while creating this job , you must specify the network in the VM instance template. network and subnetwork fields : These fields can be used in the request body when you create a job using the Batch API or in the JSON configuration file when you create a job using the gcloud CLI. --network and --subnetwork flags : These flags can be used with the gcloud batch jobs submit command when you create a job using the gcloud CLI.
 
-### "Class BatchServiceClient (0.20.0) \_|\_ Python client libraries \_|\_ Google\
+### Get started with Batch \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceClient](https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceClient)
-- Source ID: `site-python-reference`
-- Final score: 160
+- URL: [https://docs.cloud.google.com/batch/docs/get-started](https://docs.cloud.google.com/batch/docs/get-started)
+- Source ID: `site-api-reference`
+- Final score: 97
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import batch v1 def sample cancel job(): Create a client client = batch v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import batch v1 def sample list jobs(): Create a client client = batch v1 .
-- CancelJobRequest ( name="name value", ) Make the request operation = client. cancel job (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.batch v1.types.CancelJobRequest , dict] The request object.
-- ListJobsRequest ( ) Make the request page result = client. list jobs (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.batch v1.types.ListJobsRequest , dict] The request object.
+- Make sure you are familiar with your project's Batch service agent: After you create a Batch job, the Batch service agent is automatically created for your project with the following name: service- PROJECT NUMBER @gcp-sa-cloudbatch.iam.gserviceaccount.com Replace PROJECT NUMBER with the project number of your project.
+- Batch Agent Reporter ( roles/batch.agentReporter ) on the project To let jobs generate logs in Cloud Logging: Logs Writer ( roles/logging.logWriter ) on the project The service account that you use for a job might also require additional roles based on the configuration options that you want to use for your jobs.
+- Consequently, any permissions that are granted to your Batch service agent can be used by any principal (user or service account) in the project that has permissions to create Batch jobs whenever the principal is creating a Batch job.
+- In summary, Batch lets you create and run jobs that each automatically provision and utilize the resources required to execute its tasks.
 

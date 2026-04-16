@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.634Z"
+generated_at: "2026-04-12T12:07:33.875Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB Auth Proxy IAM-based login automation"
@@ -9,8 +9,10 @@ latest_feature_date: "2023-11-15"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions"
   - "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
 keywords:
   - "IAM-based login automation"
   - "Auth Proxy IAM login"
@@ -32,26 +34,41 @@ The AlloyDB Auth Proxy can be configured to automatically authenticate IAM-based
 
 ## Extended Definition
 
-The AlloyDB Auth Proxy authenticates client connections using IAM principals: the proxy authenticates to Google Cloud with the caller’s IAM credentials and validates required IAM roles before authorizing the connection. This provides IAM-based database access through the proxy and is documented as automatic IAM authentication behavior in release notes, with a stated limitation when combined with managed connection pooling and Language Connectors.
+The AlloyDB Auth Proxy can be configured to automatically authenticate IAM-based database logins.
 
 ## Evidence Summary
 
-The overview page defines the Auth Proxy’s IAM credential-based authorization flow, and the release notes confirm the existence of an automatic IAM authentication mode while noting a specific availability issue.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- [https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions](https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions)
 - [https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview](https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
 
 ## Supporting Pages
+
+### "Create and query an AlloyDB database using the Google Cloud console \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- Source ID: `site-docs-root`
+- Final score: 78
+- Re-rank relevance: N/A
+
+### "IAM roles and permissions for AlloyDB \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions](https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions)
+- Source ID: `site-api-reference`
+- Final score: 76
+- Re-rank relevance: N/A
 
 ### "About the AlloyDB Auth Proxy \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview](https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview)
 - Source ID: `site-docs-root`
-- Final score: 62
-- Re-rank relevance: STRONG
-- Re-rank rationale: It explicitly states that the Auth Proxy provides IAM-based authorization and can automatically authenticate database users from the IAM principal running the proxy.
+- Final score: 72
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - How the AlloyDB Auth Proxy authorizes IAM principals To authorize a client's connection to an AlloyDB instance, the Auth Proxy client authenticates to Google Cloud using IAM principal credentials on the client, and then validates that the IAM principal has the Cloud AlloyDB Client ( roles/alloydb.client ) and Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) IAM roles.
@@ -59,16 +76,10 @@ Evidence snippets:
 - Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback About the AlloyDB Auth Proxy Stay organized with collections Save and categorize content based on your preferences.
 - When an application connects to the AlloyDB Auth Proxy, it checks whether an existing connection between it and the target AlloyDB instance is available.
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Optimize database performance by comparing performance snapshots \_|\_ AlloyDB\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- Source ID: `site-docs-reference-2`
+- Final score: 72
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- January 21, 2026 Issue Automatic IAM authentication is unavailable when you use managed connection pooling with the AlloyDB Auth Proxy and Language Connectors.
-- Version 1.5.0 of the AlloyDB Auth Proxy client might fail to connect to AlloyDB instances created before mid-November, 2023.
-- This command provides a simplified way to connect securely to AlloyDB instances by using the AlloyDB Auth Proxy and psql .
-- To mitigate this issue, take either one of the following steps: Use version 1.4.1 of the AlloyDB Auth Proxy client.
 

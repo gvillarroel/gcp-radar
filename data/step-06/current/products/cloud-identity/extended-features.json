@@ -1,6 +1,6 @@
 {
   "schema_version": "step-06-extended-feature-definitions-v1",
-  "generated_at": "2026-04-11T19:40:14.296Z",
+  "generated_at": "2026-04-12T12:11:29.214Z",
   "product_name": "Cloud Identity",
   "product_slug": "cloud-identity",
   "inputs": {
@@ -10,8 +10,8 @@
   "thresholds": {
     "min_base_score": 18,
     "min_final_score": 20,
-    "max_candidate_pages": 6,
-    "max_definition_pages": 3
+    "max_candidate_pages": 10,
+    "max_definition_pages": 4
   },
   "corpus_page_count": 51,
   "source_row_count": 2,
@@ -34,13 +34,14 @@
         "for",
         "unix"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "POSIX groups let Cloud Identity groups use POSIX attributes for Unix-style identity and access integration; deprecated on 2024-09-26.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
-        "https://docs.cloud.google.com/identity/docs/reference/rest/v1/customers.userinvitations/isInvitableUser",
-        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamscim"
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation",
+        "https://docs.cloud.google.com/identity/docs/how-to/setup",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
       ],
       "candidate_pages": [
         {
@@ -50,7 +51,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_audit-logging_examples-workforce-identity.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_audit-logging_examples-workforce-identity.md",
-          "base_score": 186,
+          "base_score": 207,
           "matched_phrases": [
             {
               "phrase": "for",
@@ -91,7 +92,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_tutorial-cloud-run-workload-id-federation.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_tutorial-cloud-run-workload-id-federation.md",
-          "base_score": 142,
+          "base_score": 167,
           "matched_phrases": [
             {
               "phrase": "for",
@@ -132,42 +133,13 @@
           ]
         },
         {
-          "page_id": "8c38ad0cf3f0163853c99ae0721eb1aa724b74f6476bd94542f759e068a21fe5",
-          "url": "https://docs.cloud.google.com/identity/docs/reference/rest/v1/customers.userinvitations/isInvitableUser",
-          "title": "\"Method: customers.userinvitations.isInvitableUser \\_|\\_ Cloud Identity \\_\\",
-          "source_id": "site-api-reference",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_identity_docs_reference_rest_v1_customers.userinvitations_isInvitableUser.md",
-          "relative_markdown_path": "products/cloud-identity/corpus/site/site-api-reference/pages/docs.cloud.google.com_identity_docs_reference_rest_v1_customers.userinvitations_isInvitableUser.md",
-          "base_score": 142,
-          "matched_phrases": [
-            {
-              "phrase": "use",
-              "title_hits": 2,
-              "url_hits": 2,
-              "body_hits": 17
-            },
-            {
-              "phrase": "for",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 10
-            },
-            {
-              "phrase": "identity",
-              "title_hits": 1,
-              "url_hits": 1,
-              "body_hits": 5
-            }
-          ]
-        },
-        {
           "page_id": "dad401872f97459461a890d242899c98a751e3e634f313ac52745e4b43f2b6fb",
           "url": "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamscim",
           "title": "\"System for Cross-domain Identity Management (SCIM) audit logging \\_|\\_ Identity\\",
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_audit-logging_audit-logging-iamscim.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_audit-logging_audit-logging-iamscim.md",
-          "base_score": 140,
+          "base_score": 161,
           "matched_phrases": [
             {
               "phrase": "use",
@@ -208,7 +180,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_identity_docs_how-to_test-query-dynamic-groups.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-docs-root/pages/docs.cloud.google.com_identity_docs_how-to_test-query-dynamic-groups.md",
-          "base_score": 138,
+          "base_score": 159,
           "matched_phrases": [
             {
               "phrase": "use",
@@ -243,13 +215,54 @@
           ]
         },
         {
+          "page_id": "feef1cca475b4f1acfdeecdf273dc48c183939cbef6f8c665ebb5a3824af538d",
+          "url": "https://docs.cloud.google.com/identity/docs/how-to/setup",
+          "title": "Setting up the Groups API \\_|\\_ Cloud Identity \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_identity_docs_how-to_setup.md",
+          "relative_markdown_path": "products/cloud-identity/corpus/site/site-docs-root/pages/docs.cloud.google.com_identity_docs_how-to_setup.md",
+          "base_score": 159,
+          "matched_phrases": [
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 34
+            },
+            {
+              "phrase": "groups",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 24
+            },
+            {
+              "phrase": "use",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "identity",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 10
+            },
+            {
+              "phrase": "let",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
           "page_id": "fec7bfd67bb6ea8d9bcf862dc29c24ff74477cec0031d113b59d7a0fed564ed2",
           "url": "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
           "title": "\"Best practices for managing service account keys \\_|\\_ Identity and Access\\",
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_best-practices-for-managing-service-account-keys.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_best-practices-for-managing-service-account-keys.md",
-          "base_score": 136,
+          "base_score": 156,
           "matched_phrases": [
             {
               "phrase": "use",
@@ -282,6 +295,158 @@
               "body_hits": 2
             }
           ]
+        },
+        {
+          "page_id": "20b2da2e93f37344167e9fd2438a06df976d2115056b2cbbb01868b8d7cf92cb",
+          "url": "https://docs.cloud.google.com/identity/docs/reference/rest",
+          "title": "Cloud Identity API \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_identity_docs_reference_rest.md",
+          "relative_markdown_path": "products/cloud-identity/corpus/site/site-api-reference/pages/docs.cloud.google.com_identity_docs_reference_rest.md",
+          "base_score": 155,
+          "matched_phrases": [
+            {
+              "phrase": "use",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 79
+            },
+            {
+              "phrase": "groups",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 56
+            },
+            {
+              "phrase": "let",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 51
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 31
+            },
+            {
+              "phrase": "identity",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 9
+            }
+          ]
+        },
+        {
+          "page_id": "8c38ad0cf3f0163853c99ae0721eb1aa724b74f6476bd94542f759e068a21fe5",
+          "url": "https://docs.cloud.google.com/identity/docs/reference/rest/v1/customers.userinvitations/isInvitableUser",
+          "title": "\"Method: customers.userinvitations.isInvitableUser \\_|\\_ Cloud Identity \\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_identity_docs_reference_rest_v1_customers.userinvitations_isInvitableUser.md",
+          "relative_markdown_path": "products/cloud-identity/corpus/site/site-api-reference/pages/docs.cloud.google.com_identity_docs_reference_rest_v1_customers.userinvitations_isInvitableUser.md",
+          "base_score": 154,
+          "matched_phrases": [
+            {
+              "phrase": "use",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 17
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "identity",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "45a2c728dbd83bf3afe2a39b9d6a65f709638e89ab128bf33d5965c71d8b132c",
+          "url": "https://docs.cloud.google.com/iam/docs/allow-policies",
+          "title": "\"Understanding allow policies \\_|\\_ Identity and Access Management (IAM)\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_allow-policies.md",
+          "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_allow-policies.md",
+          "base_score": 153,
+          "matched_phrases": [
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 86
+            },
+            {
+              "phrase": "use",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 60
+            },
+            {
+              "phrase": "let",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 26
+            },
+            {
+              "phrase": "groups",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "identity",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "attributes",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "1ada96c2ef3bb22db4e85aca94b0142bbf387024c8c84258c21c52bd888487a4",
+          "url": "https://docs.cloud.google.com/iam/docs/google-identities",
+          "title": "\"Identity management for Google Cloud \\_|\\_ Identity and Access Management\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_google-identities.md",
+          "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_google-identities.md",
+          "base_score": 148,
+          "matched_phrases": [
+            {
+              "phrase": "use",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 30
+            },
+            {
+              "phrase": "identity",
+              "title_hits": 2,
+              "url_hits": 0,
+              "body_hits": 25
+            },
+            {
+              "phrase": "for",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 26
+            },
+            {
+              "phrase": "let",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
         }
       ],
       "supporting_pages": [
@@ -290,10 +455,10 @@
           "title": "\"Example logs for Workforce Identity Federation \\_|\\_ Identity and Access\\",
           "source_id": "site-iam-reference",
           "markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_audit-logging_examples-workforce-identity.md",
-          "base_score": 186,
-          "final_score": 182,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 207,
+          "final_score": 215,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "for",
@@ -334,87 +499,153 @@
           ]
         },
         {
-          "url": "https://docs.cloud.google.com/identity/docs/reference/rest/v1/customers.userinvitations/isInvitableUser",
-          "title": "\"Method: customers.userinvitations.isInvitableUser \\_|\\_ Cloud Identity \\_\\",
-          "source_id": "site-api-reference",
-          "markdown_path": "products/cloud-identity/corpus/site/site-api-reference/pages/docs.cloud.google.com_identity_docs_reference_rest_v1_customers.userinvitations_isInvitableUser.md",
-          "base_score": 142,
-          "final_score": 142,
-          "rerank_relevance": "",
-          "rerank_rationale": "",
+          "url": "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation",
+          "title": "\"Integrate Cloud Run and Workload Identity Federation \\_|\\_ Identity and\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_tutorial-cloud-run-workload-id-federation.md",
+          "base_score": 167,
+          "final_score": 175,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
-            {
-              "phrase": "use",
-              "title_hits": 2,
-              "url_hits": 2,
-              "body_hits": 17
-            },
             {
               "phrase": "for",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 10
+              "body_hits": 66
+            },
+            {
+              "phrase": "use",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 58
             },
             {
               "phrase": "identity",
-              "title_hits": 1,
-              "url_hits": 1,
-              "body_hits": 5
-            }
-          ],
-          "evidence_snippets": [
-            "Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/cloud-identity.userinvitations.readonly https://www.googleapis.com/auth/cloud-identity.userinvitations For more information, see the Authorization guide .",
-            "Eligibility is based on the following criteria: the email address is a consumer account and it's the primary email address of the account, and the domain of the email address matches an existing verified Google Workspace or Cloud Identity domain If both conditions are met, the user is eligible.",
-            "Home Documentation Access and resource management Cloud Identity Reference Send feedback Method: customers.userinvitations.isInvitableUser Stay organized with collections Save and categorize content based on your preferences.",
-            "HTTP request GET https://cloudidentity.googleapis.com/v1/{name=customers/ /userinvitations/ }:isInvitableUser The URL uses gRPC Transcoding syntax."
-          ]
-        },
-        {
-          "url": "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamscim",
-          "title": "\"System for Cross-domain Identity Management (SCIM) audit logging \\_|\\_ Identity\\",
-          "source_id": "site-iam-reference",
-          "markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_audit-logging_audit-logging-iamscim.md",
-          "base_score": 140,
-          "final_score": 140,
-          "rerank_relevance": "",
-          "rerank_rationale": "",
-          "matched_phrases": [
-            {
-              "phrase": "use",
-              "title_hits": 0,
+              "title_hits": 2,
               "url_hits": 0,
-              "body_hits": 43
-            },
-            {
-              "phrase": "for",
-              "title_hits": 1,
-              "url_hits": 0,
-              "body_hits": 36
-            },
-            {
-              "phrase": "groups",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 14
+              "body_hits": 31
             },
             {
               "phrase": "let",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 10
+              "body_hits": 24
+            },
+            {
+              "phrase": "groups",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "unix",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Create a role binding for the user to impersonate the service account: gcloud iam service-accounts add-iam-policy-binding SERVICE ACCOUNT \\ --role roles/iam.workloadIdentityUser \\ --member \"principal://iam.googleapis.com/projects/ $PROJECT NUMBER /locations/global/workloadIdentityPools/cloudrun-oidc-pool/subject/ USER EMAIL Replace the following: SERVICE ACCOUNT with the email address of the service account that you created in Configure your Google Cloud environment .",
+            "On the VM, set the sts.creds.json file as a variable for ADC: export GOOGLE APPLICATION CREDENTIALS =/ Users / USERNAME / sts - creds . json Replace USERNAME with your UNIX username.",
+            "If you used an existing project for the tasks in this document, when you delete it, you also delete any other work you've done in the project.",
+            "Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, you can delete your project."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/identity/docs/how-to/setup",
+          "title": "Setting up the Groups API \\_|\\_ Cloud Identity \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-identity/corpus/site/site-docs-root/pages/docs.cloud.google.com_identity_docs_how-to_setup.md",
+          "base_score": 159,
+          "final_score": 167,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 34
+            },
+            {
+              "phrase": "groups",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 24
+            },
+            {
+              "phrase": "use",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 20
             },
             {
               "phrase": "identity",
-              "title_hits": 2,
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 10
+            },
+            {
+              "phrase": "let",
+              "title_hits": 0,
               "url_hits": 0,
               "body_hits": 2
             }
           ],
           "evidence_snippets": [
-            "Permission type Methods ADMIN READ google.cloud.iamscim.v1alpha1.Users.ListUsers ADMIN WRITE google.cloud.iamscim.v1alpha1.Groups.CreateGroup google.cloud.iamscim.v1alpha1.Groups.DeleteGroup google.cloud.iamscim.v1alpha1.Groups.PatchGroup google.cloud.iamscim.v1alpha1.Users.CreateUser google.cloud.iamscim.v1alpha1.Users.DeleteUser google.cloud.iamscim.v1alpha1.Users.PatchUser google.cloud.iamscim.v1alpha1.Users.PutUser API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for IAM SCIM Service. google.cloud.iamscim.v1alpha1.Groups The following audit logs are associated with methods belonging to google.cloud.iamscim.v1alpha1.Groups .",
-            "Filter for this method : protoPayload.methodName=\"google.cloud.iamscim.v1alpha1.Groups.CreateGroup\" DeleteGroup Method : google.cloud.iamscim.v1alpha1.Groups.DeleteGroup Audit log type : Admin activity Permissions : iam.workforcePoolProviderScimGroups.delete - ADMIN WRITE Method is a long-running or streaming operation : No.",
-            "Filter for this method : protoPayload.methodName=\"google.cloud.iamscim.v1alpha1.Groups.DeleteGroup\" PatchGroup Method : google.cloud.iamscim.v1alpha1.Groups.PatchGroup Audit log type : Admin activity Permissions : iam.workforcePoolProviderScimGroups.patch - ADMIN WRITE Method is a long-running or streaming operation : No.",
-            "Filter for this method : protoPayload.methodName=\"google.cloud.iamscim.v1alpha1.Users.CreateUser\" DeleteUser Method : google.cloud.iamscim.v1alpha1.Users.DeleteUser Audit log type : Admin activity Permissions : iam.workforcePoolProviderScimUsers.delete - ADMIN WRITE Method is a long-running or streaming operation : No."
+            "GsonFactory ; import com.google.common.collect.ImmutableList ; import java.io.FileInputStream ; / Command line tool to generate Oauth2 token for a given service account / without domain wide delegation. / public final class GenerateServiceAccountOauth2Token { private static final ImmutableList<String> API SCOPES = ImmutableList . of ( \"https://www.googleapis.com/auth/cloud-identity.groups\" , \"https://www.googleapis.com/auth/admin.directory.group\" , \"https://www.googleapis.com/auth/admin.directory.group.member\" , \"https://www.googleapis.com/auth/apps.groups.settings\" ); public static void main ( final String [] args ) throws Exception { String accessToken = getTokenFromJsonKey (); System . out . println ( \"Token: \" + accessToken ); } private static String getTokenFromJsonKey () throws Exception { GoogleCredential credential = GoogleCredential . fromStream ( new FileInputStream ( \"<path for json file>\" ), new NetHttpTransport (), GsonFactory . getDefaultInstance ()); System . out . println ( \"ServiceAccountId=\" + credential . getServiceAccountId ()); HttpTransport httpTransport = new NetHttpTransport (); JsonFactory jsonFactory = GsonFactory . getDefaultInstance (); GoogleCredential .",
+            "Enable the API Installing the client libraries To install the client libraries, run the following command: Python For more on setting up your Python development environment, refer to the Python Development Environment Setup Guide . pip install -- upgrade google - api - python - client google - auth \\ google - auth - oauthlib google - auth - httplib2 Authenticating with the Groups API You can authenticate with the Groups API as an end user, as a service account group admin without domain-wide delegation, or as a service account with domain-wide delegation.",
+            "Credentials . from service account file ( SERVICE ACCOUNT FILE , scopes = SCOPES ) delegated credentials = credentials . with subject ( 'user@example.org' ) service name = 'cloudidentity' api version = 'v1' service = googleapiclient . discovery . build ( service name , api version , credentials = delegated credentials ) return service You can now begin making calls to the Groups API.",
+            "Authenticating as a service account without domain-wide delegation If you're using a service account and want to use it to manage groups as a group admin, complete the steps below."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+          "title": "\"Best practices for managing service account keys \\_|\\_ Identity and Access\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_best-practices-for-managing-service-account-keys.md",
+          "base_score": 156,
+          "final_score": 164,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "use",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 129
+            },
+            {
+              "phrase": "for",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 90
+            },
+            {
+              "phrase": "let",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 27
+            },
+            {
+              "phrase": "identity",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "attributes",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Use a dedicated key for each machine that runs an application If you run multiple copies of the same application across multiple machines, then the principalEmail field might let you identify the application, but not the machine where a particular activity originated from.",
+            "When using domain-wide delegation, avoid service account keys and use the signJwt API instead: Authenticate a service account by using an attached service account , Workload Identity Federation for GKE , or Workload Identity Federation first.",
+            "Instead of letting Google Cloud generate a key pair, you can use a hardware security module (HSM) or Trusted Platform Module (TPM) to create and manage keys: Use a HSM or TPM to generate a RSA key pair.",
+            "Avoid using service account keys for domain-wide delegation Domain-wide delegation lets you impersonate a user so that you can access a user's data without any manual authorization on their part ."
           ]
         }
       ]
@@ -434,13 +665,14 @@
         "be",
         "created"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Identity groups can be created to map to external identity providers.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation",
         "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
-        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workload-identity"
       ],
       "candidate_pages": [
         {
@@ -450,7 +682,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_tutorial-cloud-run-workload-id-federation.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_tutorial-cloud-run-workload-id-federation.md",
-          "base_score": 176,
+          "base_score": 223,
           "matched_phrases": [
             {
               "phrase": "identity",
@@ -497,7 +729,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_audit-logging_examples-workforce-identity.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_audit-logging_examples-workforce-identity.md",
-          "base_score": 170,
+          "base_score": 217,
           "matched_phrases": [
             {
               "phrase": "provider",
@@ -544,7 +776,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_best-practices-for-managing-service-account-keys.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_best-practices-for-managing-service-account-keys.md",
-          "base_score": 152,
+          "base_score": 190,
           "matched_phrases": [
             {
               "phrase": "be",
@@ -591,7 +823,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_audit-logging_examples-workload-identity.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_audit-logging_examples-workload-identity.md",
-          "base_score": 146,
+          "base_score": 184,
           "matched_phrases": [
             {
               "phrase": "identity",
@@ -638,7 +870,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_identity_docs_how-to_setup.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-docs-root/pages/docs.cloud.google.com_identity_docs_how-to_setup.md",
-          "base_score": 136,
+          "base_score": 165,
           "matched_phrases": [
             {
               "phrase": "groups",
@@ -679,7 +911,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_authenticate-with-auth-libraries.md",
           "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_authenticate-with-auth-libraries.md",
-          "base_score": 126,
+          "base_score": 164,
           "matched_phrases": [
             {
               "phrase": "provider",
@@ -718,6 +950,182 @@
               "body_hits": 1
             }
           ]
+        },
+        {
+          "page_id": "1ada96c2ef3bb22db4e85aca94b0142bbf387024c8c84258c21c52bd888487a4",
+          "url": "https://docs.cloud.google.com/iam/docs/google-identities",
+          "title": "\"Identity management for Google Cloud \\_|\\_ Identity and Access Management\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_google-identities.md",
+          "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_google-identities.md",
+          "base_score": 158,
+          "matched_phrases": [
+            {
+              "phrase": "identity",
+              "title_hits": 2,
+              "url_hits": 0,
+              "body_hits": 25
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 15
+            },
+            {
+              "phrase": "external",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "be",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "provider",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "4d5109dda38432682725448323a5101ee7268bc321b9b509db6ff71929bc5535",
+          "url": "https://docs.cloud.google.com/identity/docs/how-to/setup-devices",
+          "title": "Set up the Devices API \\_|\\_ Cloud Identity \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_identity_docs_how-to_setup-devices.md",
+          "relative_markdown_path": "products/cloud-identity/corpus/site/site-docs-root/pages/docs.cloud.google.com_identity_docs_how-to_setup-devices.md",
+          "base_score": 158,
+          "matched_phrases": [
+            {
+              "phrase": "be",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "identity",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 6
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "created",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "external",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "groups",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "40df1e78121fd67dd4dfbdcd963823857475fe6e3884aebd177b8fb51119beeb",
+          "url": "https://docs.cloud.google.com/identity/docs/reference/rest/v1/EntityKey",
+          "title": "EntityKey \\_|\\_ Cloud Identity \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_identity_docs_reference_rest_v1_EntityKey.md",
+          "relative_markdown_path": "products/cloud-identity/corpus/site/site-api-reference/pages/docs.cloud.google.com_identity_docs_reference_rest_v1_EntityKey.md",
+          "base_score": 155,
+          "matched_phrases": [
+            {
+              "phrase": "identity",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 8
+            },
+            {
+              "phrase": "be",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "external",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "mapped",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "groups",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "ca428c35c13ca47656421a42b38ebcee45963ed884f644344556f2f9fefe80fd",
+          "url": "https://docs.cloud.google.com/iam/docs/audit-logging",
+          "title": "\"Identity and Access Management audit logging \\_|\\_ Identity and Access Management\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-identity\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_audit-logging.md",
+          "relative_markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_audit-logging.md",
+          "base_score": 151,
+          "matched_phrases": [
+            {
+              "phrase": "identity",
+              "title_hits": 2,
+              "url_hits": 0,
+              "body_hits": 389
+            },
+            {
+              "phrase": "provider",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 140
+            },
+            {
+              "phrase": "be",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 116
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "created",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
         }
       ],
       "supporting_pages": [
@@ -726,10 +1134,10 @@
           "title": "\"Integrate Cloud Run and Workload Identity Federation \\_|\\_ Identity and\\",
           "source_id": "site-iam-reference",
           "markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_tutorial-cloud-run-workload-id-federation.md",
-          "base_score": 176,
-          "final_score": 172,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 223,
+          "final_score": 231,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "identity",
@@ -780,10 +1188,10 @@
           "title": "\"Example logs for Workforce Identity Federation \\_|\\_ Identity and Access\\",
           "source_id": "site-iam-reference",
           "markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_audit-logging_examples-workforce-identity.md",
-          "base_score": 170,
-          "final_score": 166,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 217,
+          "final_score": 225,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "provider",
@@ -834,10 +1242,10 @@
           "title": "\"Best practices for managing service account keys \\_|\\_ Identity and Access\\",
           "source_id": "site-iam-reference",
           "markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_best-practices-for-managing-service-account-keys.md",
-          "base_score": 152,
-          "final_score": 148,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 190,
+          "final_score": 198,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "be",
@@ -881,6 +1289,60 @@
             "The resulting access token reflects the service account's identity and you can use it to interact with Google Cloud APIs on the service account's behalf.",
             "This is because, to access Secret Manager secrets, your application needs an identity that Google Cloud can recognize.",
             "Provide alternatives to creating service account keys Make sure that users in your organization are aware of alternatives and can justify the additional risk and management overhead of using a service account key: Educate your developers on more secure alternatives to service account keys Establish a process to help developers decide on the appropriate authentication method for their use case before creating a new service account key."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workload-identity",
+          "title": "\"Example logs for Workload Identity Federation \\_|\\_ Identity and Access\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/cloud-identity/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_audit-logging_examples-workload-identity.md",
+          "base_score": 184,
+          "final_score": 184,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "identity",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 26
+            },
+            {
+              "phrase": "be",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "provider",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "created",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "mapped",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "In this example, the request was authenticated with federated credentials, and the short-lived credentials were created for the service account my-service-account@my-project.iam.gserviceaccount.com : { \"logName\" : \"projects/my-project/logs/cloudaudit.googleapis.com%2Fdata access\" , \"protoPayload\" : { \"@type\" : \"type.googleapis.com/google.cloud.audit.AuditLog\" , \"authenticationInfo\" : { \"principalSubject\" : \"principal://iam.googleapis.com/projects/1234567890123/locations/global/workloadIdentityPools/aws-pool/subject/012345678901\" }, \"methodName\" : \"GenerateAccessToken\" , \"request\" : { \"@type\" : \"type.googleapis.com/google.iam.credentials.v1.GenerateAccessTokenRequest\" , \"name\" : \"projects/-/serviceAccounts/my-service-account@my-project.iam.gserviceaccount.com\" }, \"resourceName\" : \"projects/-/serviceAccounts/123456789012345678901\" }, \"resource\" : { \"labels\" : { \"email id\" : \"my-service-account@my-project.iam.gserviceaccount.com\" , \"project id\" : \"my-project\" , \"unique id\" : \"123456789012345678901\" }, \"type\" : \"service account\" } } Logs for authenticating with credentials for the impersonated service account After you create short-lived credentials for a service account, you can use the credentials to impersonate the service account when you call Google Cloud APIs.",
+            "In this example, a Microsoft Azure token was exchanged for a federated token: { \"logName\" : \"projects/my-project/logs/cloudaudit.googleapis.com%2Fdata access\" , \"protoPayload\" : { \"@type\" : \"type.googleapis.com/google.cloud.audit.AuditLog\" , \"authenticationInfo\" : { \"principalSubject\" : \"b6112abb-5791-4507-adb5-7e8cc306eb2e\" }, \"metadata\" : { \"mapped principal\" : \"principal://iam.googleapis.com/projects/1234567890123/locations/global/workloadIdentityPools/azure-pool/subject/a1234bcd-5678-9012-efa3-4b5cd678ef9a\" }, \"methodName\" : \"google.identity.sts.v1.SecurityTokenService.ExchangeToken\" , \"resourceName\" : \"projects/1234567890123/locations/global/workloadIdentityPools/azure-pool/providers/azure\" , \"request\" : { \"@type\" : \"type.googleapis.com/google.identity.sts.v1.ExchangeTokenRequest\" , \"grantType\" : \"urn:ietf:params:oauth:grant-type:token-exchange\" } }, \"resource\" : { \"type\" : \"audited resource\" } } Logs for signed and encrypted SAML assertions This section describes the Cloud Audit Logs log entries that Security Token Service creates when it attempts to verify signed SAML assertions or decrypt encrypted assertions that are sent from your IdP.",
+            "For other OIDC IdPs, this field contains the value of the sub , or subject, claim from the OIDC token. protoPayload.metadata.mapped principal : The subject of the token, using IAM syntax to identify the principal: principal://iam.googleapis.com/projects/ project-number /locations/global/workloadIdentityPools/ pool-id /subject/ identifier protoPayload.resourceName : The workload identity pool provider that the token is associated with.",
+            "For Workload Identity Federation, the pertinent log entry looks similar to the following: \"keyInfo\": [ { \"certificateType\": \"trust anchor\" \"timeUntilExpiration\": 3333405600s \"fingerprintSha256\": \"e33f612a0e426692f29db2c7b17b9e3810ce13f09ad117c67e7227a84fd25ea5\" \"use\": \"verify\" } This output includes the following values: certificateType : the type of certificate involved in the client certificate verification, which can be either trust anchor or intermediate ca timeUntilExpiration : the remaining time in seconds until certificate expiration when it's used in the certificate chain verification fingerprintSha256 : the hexadecimal representation of the SHA-256 hash of the X.509 certificate Logs for creating short-lived credentials for a service account After you exchange the IdP token for a federated token, you can use the federated token to create short-lived credentials for a service account."
           ]
         }
       ]

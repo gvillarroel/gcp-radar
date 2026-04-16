@@ -1,31 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:45:54.306Z"
+generated_at: "2026-04-12T20:50:17.324Z"
 product_name: "App Engine flexible environment Python"
 product_slug: "app-engine-flexible-environment-python"
 feature_name: ".NET Core runtime for App Engine flexible environment (Beta)"
 feature_slug: "net-core-runtime-for-app-engine-flexible-environment-beta"
 latest_feature_date: "2017-03-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
   - "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/dotnet"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes"
 keywords:
-  - "ASP.NET Core"
-  - "App Engine flexible environment .NET Core"
-  - "flexible environment .NET workloads"
-  - ".NET Core runtime"
-  - ".NET Core"
-  - "beta dotnet runtime"
-  - "App Engine flexible .NET"
-  - "dotnet"
+  - "net"
+  - "core"
+  - "runtime"
+  - "app"
+  - "engine"
+  - "flexible"
+  - "environment"
+  - "beta"
 ---
 
 # .NET Core runtime for App Engine flexible environment (Beta)
 
 Product: App Engine flexible environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,37 +38,55 @@ The .NET Core runtime was introduced for the App Engine flexible environment in 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
 - [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime)
+- [https://docs.cloud.google.com/appengine/docs/flexible/dotnet](https://docs.cloud.google.com/appengine/docs/flexible/dotnet)
+- [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
 
 ## Supporting Pages
-
-### "Quickstart: Create a .NET app in the App Engine flexible environment \_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
-- Source ID: `site-docs-root`
-- Final score: 72
-- Re-rank relevance: MODERATE
-- Re-rank rationale: The page provides practical instructions for deploying a .NET app on App Engine flexible environment and discusses .NET runtime configuration in app.yaml, but it does not state that the runtime was introduced in Beta.
-
-Evidence snippets:
-- The Hello World app is similar to the app created by Visual Studio when an empty ASP.NET core app is created.
-- Images are available for ASP.NET Core apps written for .NET Core 1.0, 1.1, 2.0 and 2.1.
-- Change to the directory that contains the sample code. cd dotnet-docs-samples/appengine/flexible/HelloWorld Run Hello World on your local machine Run the following commands from the dotnet-docs-samples/appengine/flexible/HelloWorld/HelloWorld.Sample directory: dotnet restore dotnet run In your web browser, go to http://localhost:5000 .
-- For more information, see: https://cloud.google.com/appengine/docs/flexible/dotnet/configuring-your-app-with-app-yaml manual scaling : instances : 1 resources : cpu : 1 memory gb : 0.5 disk size gb : 10 env variables : The in My Greeting will be translated to a : by ASP.NET.
 
 ### "The .NET runtime \_|\_ App Engine flexible environment \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime)
-- Source ID: `site-docs-root`
-- Final score: 36
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference-2`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For more information, see Migrate from ASP.NET Core 3.1 to 6.0 .
-- To deploy your .NET app, run the following commands from the root directory where your app resides: dotnet restore dotnet publish -c Release gcloud app deploy Support for other .NET runtimes If you need to use a .NET version that isn't supported , you can create a custom runtime and select a valid base image with the .NET version you need.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The .NET runtime Stay organized with collections Save and categorize content based on your preferences.
+- The .NET runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment. .NET versions .NET 10 is built using buildpacks .
+- Extending the runtime The flexible environment .NET runtime can be used to create a custom runtime.
+- For example, the app.yaml file looks as follows when specifying .NET 10 on Ubuntu 24: runtime : aspnetcore env : flex runtime config : runtime version : "10" operating system : "ubuntu24" Previous runtime versions Warning: .NET version 3 and earlier have reached end of support.
+
+### "The .NET runtime \_|\_ App Engine flexible environment \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/dotnet](https://docs.cloud.google.com/appengine/docs/flexible/dotnet)
+- Source ID: `site-docs-reference`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The .NET runtime Stay organized with collections Save and categorize content based on your preferences.
+- The .NET runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment. .NET versions .NET 10 is built using buildpacks .
+- Extending the runtime The flexible environment .NET runtime can be used to create a custom runtime.
+- For example, the app.yaml file looks as follows when specifying .NET 10 on Ubuntu 24: runtime : aspnetcore env : flex runtime config : runtime version : "10" operating system : "ubuntu24" Previous runtime versions Warning: .NET version 3 and earlier have reached end of support.
+
+### "About Custom runtimes \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
+- Source ID: `site-docs-reference-2`
+- Final score: 87
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback About Custom runtimes Stay organized with collections Save and categorize content based on your preferences.
+- Use the following table to understand how a custom runtime compares to the existing set of App Engine runtimes: Feature Flexible runtime Custom runtime Dockerfile Default file supplied automatically by the SDK Hand-written by the developer Dockerfile modifications permitted Yes Yes Languages Python, Java, Node.js, Go, Ruby, PHP, .NET Any software that can service HTTP requests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- When you use a custom runtime, you must write your application code to handle certain flexible environment life-cycle and health checking requests.
+- Applications that use custom runtimes take advantage of all the various Google Cloud services by using the public REST APIs or client libraries, such as the App Engine Admin API and the Google Client Libraries .
 

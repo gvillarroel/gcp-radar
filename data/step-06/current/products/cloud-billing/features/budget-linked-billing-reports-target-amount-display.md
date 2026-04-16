@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.320Z"
+generated_at: "2026-04-14T13:57:37.610Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Budget-linked Billing Reports target amount display"
 feature_slug: "budget-linked-billing-reports-target-amount-display"
 latest_feature_date: "2021-05-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/budgets"
   - "https://docs.cloud.google.com/billing/docs/how-to/reports"
@@ -26,7 +26,7 @@ keywords:
 # Budget-linked Billing Reports target amount display
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Adds display of the selected budget's target amount as a visual marker when open
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
@@ -52,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/budgets](https://docs.cloud.google.com/billing/docs/how-to/budgets)
 - Source ID: `site-docs-root`
-- Final score: 208
+- Final score: 206
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -66,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
 - Source ID: `site-docs-root`
-- Final score: 206
+- Final score: 190
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +79,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetAmount.BudgetAmountCase](https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetAmount.BudgetAmountCase)
 - Source ID: `site-java-reference`
-- Final score: 186
+- Final score: 180
 - Re-rank relevance: N/A
 
 Evidence snippets:

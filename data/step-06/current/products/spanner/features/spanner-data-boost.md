@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.935Z"
+generated_at: "2026-04-13T22:42:27.271Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner Data Boost"
@@ -9,18 +9,15 @@ latest_feature_date: "2023-08-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
-  - "https://docs.cloud.google.com/spanner/docs/instances"
-  - "https://googleapis.dev/python/django-google-spanner/latest/introspection-api.html"
+  - "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
 keywords:
-  - "spanner"
   - "boost"
-  - "is"
-  - "now"
-  - "available"
-  - "in"
-  - "all"
   - "regions"
+  - "enables"
+  - "available"
+  - "running"
 ---
 
 # Spanner Data Boost
@@ -38,45 +35,52 @@ Spanner Data Boost is now available in all Google Cloud regions; Spanner Data Bo
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
-- [https://googleapis.dev/python/django-google-spanner/latest/introspection-api.html](https://googleapis.dev/python/django-google-spanner/latest/introspection-api.html)
+- [https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview](https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat)
 
 ## Supporting Pages
 
-### django_spanner.operations — google-cloud-spanner-django documentation
+### "JDBC session management commands (GoogleSQL) \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- Source ID: `site-python-reference`
-- Final score: 108
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
+- Source ID: `site-docs-reference`
+- Final score: 96
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
+- Example: Savepoint support (Click to expand) The following example shows how to enable and disable savepoints support in the Spanner JDBC driver. try ( Connection connection = DriverManager . getConnection ( String . format ( "jdbc:cloudspanner:/projects/%s/instances/%s/databases/%s" , "my-project" , "my-instance" , "my-database" ))) { // Savepoints can only be used when AutoCommit=false. connection . setAutoCommit ( false ); // Disables setting a savepoint. connection . createStatement (). execute ( "SET SAVEPOINT SUPPORT='DISABLED'" ); // The following statement fails because savepoints have been disabled. connection . setSavepoint ( "my savepoint1" ); // Enables setting a savepoint and releasing a savepoint. // Rolling back to a savepoint is disabled. connection . createStatement (). execute ( "SET SAVEPOINT SUPPORT='FAIL AFTER ROLLBACK'" ); Savepoint mySavepoint2 = connection . setSavepoint ( "my savepoint2" ); connection . createStatement (). execute ( "insert into my table (id, value) values (1, 'One')" ); connection . releaseSavepoint ( mySavepoint2 ); connection . commit (); // Enables setting, releasing and rolling back to a savepoint. connection . createStatement (). execute ( "SET SAVEPOINT SUPPORT='ENABLED'" ); Savepoint mySavepoint3 = connection . setSavepoint ( "my savepoint3" ); connection . createStatement (). execute ( "insert into my table (id, value) values (2, 'Two')" ); connection . rollback ( mySavepoint3 ); } What's next Learn how to connect JDBC to a GoogleSQL-dialect database .
+- Example: Execute (Click to expand) This example executes two queries with the Spanner JDBC driver using Data Boost SET AUTO PARTITION MODE = true SET DATA BOOST ENABLED = true SELECT FirstName , LastName FROM Singers SELECT SingerId , Title FROM Albums For a full example, see AutoPartitionModeExample.
+- Ensure that DATA BOOST ENABLED is set to true to execute the query with Data Boost : SET DATA BOOST ENABLED = true RUN PARTITIONED QUERY SELECT FirstName , LastName FROM Singers The Spanner JDBC driver internally partitions the query and executes partitions in parallel.
+- SHOW VARIABLE DATA BOOST ENABLED SET DATA BOOST ENABLED = { true false } Example: Execute a query using Data Boost (Click to expand) The following example shows how to a query using Data Boost with the Spanner JDBC driver. -- Enable Data Boost on this connection.
 
-### Instances overview | Spanner | Google Cloud Documentation
+### "JDBC session management commands (PostgreSQL) \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat)
+- Source ID: `site-docs-reference`
+- Final score: 96
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Example: Savepoint support (Click to expand) The following example shows how to enable and disable savepoints support in the Spanner JDBC driver. try ( Connection connection = DriverManager . getConnection ( String . format ( "jdbc:cloudspanner:/projects/%s/instances/%s/databases/%s" , "my-project" , "my-instance" , "my-database" ))) { // Savepoints can only be used when AutoCommit=false. connection . setAutoCommit ( false ); // Disables setting a savepoint. connection . createStatement (). execute ( "SET SPANNER.SAVEPOINT SUPPORT='DISABLED'" ); // The following statement fails because savepoints have been disabled. connection . setSavepoint ( "my savepoint1" ); // Enables setting a savepoint and releasing a savepoint. // Rolling back to a savepoint is disabled. connection . createStatement (). execute ( "SET SPANNER.SAVEPOINT SUPPORT='FAIL AFTER ROLLBACK'" ); Savepoint mySavepoint2 = connection . setSavepoint ( "my savepoint2" ); connection . createStatement (). execute ( "insert into my table (id, value) values (1, 'One')" ); connection . releaseSavepoint ( mySavepoint2 ); connection . commit (); // Enables setting, releasing and rolling back to a savepoint. connection . createStatement (). execute ( "SET SPANNER.SAVEPOINT SUPPORT='ENABLED'" ); Savepoint mySavepoint3 = connection . setSavepoint ( "my savepoint3" ); connection . createStatement (). execute ( "insert into my table (id, value) values (2, 'Two')" ); connection . rollback ( mySavepoint3 ); } What's next Learn how to connect JDBC to a PostgreSQL-dialect database .
+- Example: Optimizer statistics package (Click to expand) The following example shows how to execute queries using a specific optimizer statistics package with the Spanner JDBC driver. -- Show the available optimizer statistics packages in this database.
+- ROLLBACK ; Data Boost and partitioned query statements The partitionQuery API divides a query into smaller pieces, or partitions, and uses multiple machines to fetch the partitions in parallel.
+- Example: Execute a query using Data Boost (Click to expand) The following example shows how to a query using Data Boost with the Spanner JDBC driver. -- Enable Data Boost on this connection.
+
+### Disaster recovery overview \_|\_ Spanner \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview](https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview)
 - Source ID: `site-docs-root`
-- Final score: 104
+- Final score: 88
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Instances overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/instances Once an instance is created, you can list, edit, or delete it.
-- Spanner is a fully managed database service which oversees its own underlying tasks and resources, including monitoring and restarting processes when necessary with zero downtime.
-
-### Introspection API — google-cloud-spanner-django documentation
-
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/introspection-api.html](https://googleapis.dev/python/django-google-spanner/latest/introspection-api.html)
-- Source ID: `site-python-reference`
-- Final score: 104
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Introspection API — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/introspection-api.html A Spanner-specific version of Django introspection utilities.
+- Major geographical disasters : Use Spanner cross-region backup copy to make backups available in different regions.
+- Spanner offers the following features to help ensure high data availability: Multi-regional configurations : Spanner can maintain replicas of your data in separate zones within a single region or multiple regions to ensure data availability even if a zone or region fails.
+- Large data exports : Consider using Spanner Data Boost for Spanner for large data exports to offload compute resources from your instance and avoid negative impact on your transaction performance.
+- Cross-region copy : You can copy backups to different geographic regions to protect your data against regional failures or to meet your organization's compliance requirements.
 

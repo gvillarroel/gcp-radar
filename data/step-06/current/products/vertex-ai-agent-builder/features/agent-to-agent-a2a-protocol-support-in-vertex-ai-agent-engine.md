@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.338Z"
+generated_at: "2026-04-12T12:19:43.314Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Agent-to-Agent (A2A) protocol support in Vertex AI Agent Engine"
 feature_slug: "agent-to-agent-a2a-protocol-support-in-vertex-ai-agent-engine"
 latest_feature_date: "2025-09-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline"
@@ -27,7 +27,7 @@ keywords:
 # Agent-to-Agent (A2A) protocol support in Vertex AI Agent Engine
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,7 +39,7 @@ Agent Engine now supports developing, deploying, and using agents that follow th
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - Source ID: `site-docs-root`
-- Final score: 308
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 346
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This also includes access to other agents hosted on Vertex AI Agent Engine using Agent2Agent (A2A) Protocol .
@@ -68,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline](https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline)
 - Source ID: `site-docs-reference`
-- Final score: 280
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 318
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - NEXT : '3' > : RelatedNodeInfo ( node id = 'f7d2cb7e-fa0c-40bf-b8e7-b888e36b87f9' , node type = '1' , metadata = {}, hash = 'db7cc1a67fa3afd1e5f24c8c61583781ce6a00c444da8f25a5374468c17b7de0' ) }, metadata template = ' {key} : {value} ' , metadata separator = ' \n ' , text = 'So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp...' , mimetype = 'text/plain' , start char idx = 7166 , end char idx = 11549 , metadata separator = ' \n ' , text template = ' {metadata str} \n\n {content} ' ), score = 0.7403571819090398 ) ] To use the retriever inside LlamaIndexQueryPipelineAgent , add it under the retriever builder= argument: from vertexai.preview import reasoning engines agent = reasoning engines .
@@ -82,9 +82,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/evaluate](https://docs.cloud.google.com/agent-builder/agent-engine/evaluate)
 - Source ID: `site-docs-root`
-- Final score: 278
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 316
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For more information on developing an agent, see Develop an Agent Development Kit agent . from google.adk import Agent Define Agent Tools def search products ( query : str ): """Searches for products based on a query.""" Mock response for demonstration if "headphones" in query . lower (): return { "products" : [{ "name" : "Wireless Headphones" , "id" : "B08H8H8H8H" }]} else : return { "products" : []} def get product details ( product id : str ): """Gets the details for a given product ID.""" if product id == "B08H8H8H8H" : return { "details" : "Noise-cancelling, 20-hour battery life." } else : return { "error" : "Product not found." } def add to cart ( product id : str , quantity : int ): """Adds a specified quantity of a product to the cart.""" return { "status" : f "Added { quantity } of { product id } to cart." } Define Agent my agent = Agent ( model = "gemini-2.5-flash" , name = 'ecommerce agent' , instruction = 'You are an ecommerce expert' , tools = [ search products , get product details , add to cart ], ) Deploy agent Deploy your agent to Vertex AI Agent Engine Runtime.
@@ -96,9 +96,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/develop/a2a](https://docs.cloud.google.com/agent-builder/agent-engine/develop/a2a)
 - Source ID: `site-docs-reference`
-- Final score: 276
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 314
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Define an AgentCard The following code sample defines an AgentCard for a currency exchange rate agent: from a2a.types import AgentCard , AgentSkill from vertexai.preview.reasoning engines.templates.a2a import create agent card Define the skill for the CurrencyAgent currency skill = AgentSkill ( id = 'get exchange rate' , name = 'Get Currency Exchange Rate' , description = 'Retrieves the exchange rate between two currencies on a specified date.' , tags = [ 'Finance' , 'Currency' , 'Exchange Rate' ], examples = [ 'What is the exchange rate from USD to EUR?' , 'How many Japanese Yen is 1 US dollar worth today?' , ], ) Create the agent card using the utility function agent card = create agent card ( agent name = 'Currency Exchange Agent' , description = 'An agent that can provide currency exchange rates' , skills = [ currency skill ] ) Define an AgentExecutor The following code example defines an AgentExecutor that responds with the currency exchange rate.

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:22:04.475Z"
+generated_at: "2026-04-12T12:18:15.513Z"
 product_name: "Routes API"
 product_slug: "routes-api"
 feature_name: "Transit routing"
 feature_slug: "transit-routing"
 latest_feature_date: "2023-06-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes"
-  - "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix"
   - "https://developers.google.com/maps/documentation/routes/compute-route-over"
+  - "https://developers.google.com/maps/documentation/routes/overview"
+  - "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix"
 keywords:
   - "transit"
   - "routing"
@@ -26,7 +27,7 @@ keywords:
 # Transit routing
 
 Product: Routes API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The Routes API can compute routes for transit travel modes.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes)
-- [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix)
 - [https://developers.google.com/maps/documentation/routes/compute-route-over](https://developers.google.com/maps/documentation/routes/compute-route-over)
+- [https://developers.google.com/maps/documentation/routes/overview](https://developers.google.com/maps/documentation/routes/overview)
+- [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes)
 - Source ID: `site-api-reference`
-- Final score: 262
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 276
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Request body The request body contains data with the following structure: JSON representation { "origin" : { object ( Waypoint ) } , "destination" : { object ( Waypoint ) } , "intermediates" : [ { object ( Waypoint ) } ] , "travelMode" : enum ( RouteTravelMode ) , "routingPreference" : enum ( RoutingPreference ) , "polylineQuality" : enum ( PolylineQuality ) , "polylineEncoding" : enum ( PolylineEncoding ) , "departureTime" : string , "arrivalTime" : string , "computeAlternativeRoutes" : boolean , "routeModifiers" : { object ( RouteModifiers ) } , "languageCode" : string , "regionCode" : string , "units" : enum ( Units ) , "optimizeWaypointOrder" : boolean , "requestedReferenceRoutes" : [ enum ( ReferenceRoute ) ] , "extraComputations" : [ enum ( ExtraComputation ) ] , "trafficModel" : enum ( TrafficModel ) , "transitPreferences" : { object ( TransitPreferences ) } } Fields origin object ( Waypoint ) Required.
@@ -62,31 +64,45 @@ Evidence snippets:
 - JSON representation { "name" : { object ( LocalizedText ) } , "type" : enum ( TransitVehicleType ) , "iconUri" : string , "localIconUri" : string } Fields name object ( LocalizedText ) The name of this vehicle, capitalized. type enum ( TransitVehicleType ) The type of vehicle used. iconUri string The URI for an icon associated with this vehicle type. localIconUri string The URI for the icon associated with this vehicle type, based on the local transport signage.
 - The index starts with 0 for the first intermediate waypoint provided in the input. localizedValues object ( RouteLocalizedValues ) Text representations of properties of the Route . routeToken string An opaque token that can be passed to Navigation SDK to reconstruct the route during navigation, and, in the event of rerouting, honor the original intention when the route was created.
 
-### Method: computeRouteMatrix \_|\_ Routes API \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix)
-- Source ID: `site-api-reference`
-- Final score: 234
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-10-21 UTC."],[],["This API computes route information for combinations of origins and destinations.
-- Home Products Google Maps Platform Documentation Web Services Routes API Reference Send feedback Method: computeRouteMatrix Stay organized with collections Save and categorize content based on your preferences.
-- HTTP request POST https://routes.googleapis.com/distanceMatrix/v2:computeRouteMatrix The URL uses gRPC Transcoding syntax.
-- Response body Contains route information computed for an origin/destination pair in the v2.computeRouteMatrix API.
-
 ### Compute Routes Overview \_|\_ Routes API \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/maps/documentation/routes/compute-route-over](https://developers.google.com/maps/documentation/routes/compute-route-over)
 - Source ID: `site-docs-reference`
-- Final score: 222
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 263
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - With the Routes API Compute Routes method, you can do the following things: Get directions for different ways to travel , and for a single or multiple destinations: Modes of transportation: transit, driving, two-wheel vehicles, walking, or bicycling.
 - Example curl - X POST - d ' { "origin" : { "address" : "1800 Amphitheatre Parkway, Mountain View, CA 94043" }, "destination" : { "address" : "Sloat Blvd &, Upper Great Hwy, San Francisco, CA 94132" }, "travelMode" : "DRIVE" } ' \ - H 'Co ntent - Type : applica t io n /jso n ' - H 'X - Goog - Api - Key : YOUR API KEY ' \ - H 'X - Goog - FieldMask : rou tes .dura t io n , rou tes .dis tan ceMe ters ' \ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The service then calculates the requested route, and returns the fields you've requested.
 - What's next Get a route Available route options Choose what information to return Migrate from Directions API (Legacy) Migrate from the Routes API preview to GA Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 - Home Products Google Maps Platform Documentation Web Services Routes API Send feedback Compute Routes Overview Stay organized with collections Save and categorize content based on your preferences.
+
+### Compute Routes Overview \_|\_ Routes API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/routes/overview](https://developers.google.com/maps/documentation/routes/overview)
+- Source ID: `site-docs-root`
+- Final score: 253
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- With the Routes API Compute Routes method, you can do the following things: Get directions for different ways to travel , and for a single or multiple destinations: Modes of transportation: transit, driving, two-wheel vehicles, walking, or bicycling.
+- Example curl - X POST - d ' { "origin" : { "address" : "1800 Amphitheatre Parkway, Mountain View, CA 94043" }, "destination" : { "address" : "Sloat Blvd &, Upper Great Hwy, San Francisco, CA 94132" }, "travelMode" : "DRIVE" } ' \ - H 'Co ntent - Type : applica t io n /jso n ' - H 'X - Goog - Api - Key : YOUR API KEY ' \ - H 'X - Goog - FieldMask : rou tes .dura t io n , rou tes .dis tan ceMe ters ' \ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The service then calculates the requested route, and returns the fields you've requested.
+- What's next Get a route Available route options Choose what information to return Migrate from Directions API (Legacy) Migrate from the Routes API preview to GA Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Products Google Maps Platform Documentation Web Services Routes API Send feedback Compute Routes Overview Stay organized with collections Save and categorize content based on your preferences.
+
+### Method: computeRouteMatrix \_|\_ Routes API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix)
+- Source ID: `site-api-reference`
+- Final score: 248
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-10-21 UTC."],[],["This API computes route information for combinations of origins and destinations.
+- Home Products Google Maps Platform Documentation Web Services Routes API Reference Send feedback Method: computeRouteMatrix Stay organized with collections Save and categorize content based on your preferences.
+- HTTP request POST https://routes.googleapis.com/distanceMatrix/v2:computeRouteMatrix The URL uses gRPC Transcoding syntax.
+- Response body Contains route information computed for an origin/destination pair in the v2.computeRouteMatrix API.
 

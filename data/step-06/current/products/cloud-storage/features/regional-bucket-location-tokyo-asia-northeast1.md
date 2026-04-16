@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.879Z"
+generated_at: "2026-04-12T12:12:45.973Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "Regional bucket location: Tokyo (asia-northeast1)"
 feature_slug: "regional-bucket-location-tokyo-asia-northeast1"
 latest_feature_date: "2016-11-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/storage/docs/locations"
   - "https://docs.cloud.google.com/storage/docs/creating-buckets"
-  - "https://docs.cloud.google.com/storage/docs/release-notes"
+  - "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+  - "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket"
 keywords:
   - "regional"
   - "bucket"
@@ -26,7 +27,7 @@ keywords:
 # Regional bucket location: Tokyo (asia-northeast1)
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Storage added the asia-northeast1 region as a location for storing data.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - [https://docs.cloud.google.com/storage/docs/creating-buckets](https://docs.cloud.google.com/storage/docs/creating-buckets)
-- [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
+- [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket)
+- [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 254
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Zone Region Dual-region Multi-region Availability Data redundancy within one availability zone Zonal outages might affect availability Data redundancy across availability zones (synchronous) RTO(recovery time objective)=0: automated failover and failback on zonal failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) Turbo replication option for replication within 15 minutes RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Pricing Offers the highest performance in Cloud Storage for demanding workloads at the highest storage price, out of all location types Zonal bucket-specific data transfer charges apply.
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/storage/docs/creating-buckets](https://docs.cloud.google.com/storage/docs/creating-buckets)
 - Source ID: `site-docs-root`
-- Final score: 154
+- Final score: 186
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,16 +77,29 @@ Evidence snippets:
 - COLDLINE ; // See this documentation for other valid locations: // http://g.co/cloud/storage/docs/bucket-locations#location-mr String location = "ASIA" ; Bucket bucket = storage . create ( BucketInfo . newBuilder ( bucketName ) . setStorageClass ( storageClass ) . setLocation ( location ) . build ()); System . out . println ( "Created bucket " + bucket . getName () + " in " + bucket . getLocation () + " with storage class " + bucket . getStorageClass ()); } } Node.js For more information, see the Cloud Storage Node.js API reference documentation .
 - For more information, see Set up authentication for client libraries . def create bucket class location bucket name : The ID to give your GCS bucket bucket name = "your-unique-bucket-name" require "google/cloud/storage" storage = Google :: Cloud :: Storage . new bucket = storage . create bucket bucket name , location : "ASIA" , storage class : "COLDLINE" puts "Created bucket #{ bucket . name } in #{ bucket . location } with #{ bucket . storage class } class" end Terraform You can use a Terraform resource to create a storage bucket .
 
-### Cloud Storage release notes \_|\_ Google Cloud Documentation
+### Class Bucket (3.10.0) \_|\_ Python client libraries \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 148
+- URL: [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket)
+- Source ID: `site-python-reference`
+- Final score: 161
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Features Add Storage.BlobListOption#includeTrailingDelimiter ( #3038 ) ( 0b7a0df ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.56.2 ( 74c46dd ) Dependencies Update dependency com.google.apis:google-api-services-storage to v1-rev20250416-2.0.0 ( #3063 ) ( d496d5b ) Update dependency com.google.apis:google-api-services-storage to v1-rev20250420-2.0.0 ( #3070 ) ( 1ef50f2 ) Update dependency com.google.cloud:sdk-platform-java-config to v3.46.2 ( #3061 ) ( cb43a6c ) Update googleapis/sdk-platform-java action to v2.56.2 ( #3055 ) ( 7025ad7 ) Java 2.52.1 (2025-05-01) Bug Fixes Fix grpc ReadObject memory leak introduced in 2.51.0 ( #3080 ) ( 7057629 ) Go 1.53.0 (2025-05-02) Features storage/control: Add Anywhere cache control APIs ( 83ae06c ) Bug Fixes storage: Fix append edge cases ( #12074 ) ( 0eee1f9 ) storage: Fix retries for redirection errors. ( #12093 ) ( 3e177e7 ) storage: Handle gRPC deadlines in tests. ( #12092 ) ( 30b7cd2 ) storage: Update offset on resumable upload retry ( #12086 ) ( 6ce8fe5 ) storage: Validate Bidi option for MRD ( #12033 ) ( d9018cf ) Documentation storage/control: Added comments for Anywhere cache messages ( 83ae06c ) April 28, 2025 Libraries Go 1.52.0 (2025-04-22) Features storage/control: Add Anywhere cache control APIs ( #11807 ) ( 12bfa98 ) storage: Add CurrentState function to determine state of stream in MRD ( #11688 ) ( 14e8e13 ) storage: Add OwnerEntity to bucketAttrs ( #11857 ) ( 4cd4a0c ) storage: Takeover appendable object ( #11977 ) ( 513b937 ) storage: Unfinalized appendable objects. ( #11647 ) ( 52c0218 ) Bug Fixes storage: Fix Attrs for append takeover ( #11989 ) ( 6db35b1 ) storage: Fix panic when Flush called early ( #11934 ) ( 7d0b8a7 ) storage: Fix unfinalized write size ( #12016 ) ( 6217f8f ) storage: Force first message on next sendBuffer when nothing sent on current ( #11871 ) ( a1a2292 ) storage: Populate Writer.Attrs after Flush() ( #12021 ) ( 8e56f74 ) storage: Remove check for FinalizeOnClose ( #11992 ) ( 2664b8c ) storage: Wrap read response parsing errors ( #11951 ) ( d2e6583 ) Java 2.51.0 (2025-04-23) [!IMPORTANT] This release has a direct memory leak when using a StorageOptions.grpc() instance and performing downloads.
-- Java Changes for google-cloud-storage 2.40.1 (2024-06-26) Bug Fixes Add a workaround to make sure grpc clients' hosts always match their universe domain ( #2588 ) ( 87bf737 ) Include x-goog-user-project on resumable upload puts for grpc transport ( #2586 ) ( 6f2f504 ) Update grpc bidi resumable uploads to validate ack'd object size ( #2570 ) ( 5c9cecf ) Update grpc finalize on close resumable uploads to validate ack'd object size ( #2572 ) ( 55a6d15 ) Update grpc single-shot uploads to validate ack'd object size ( #2567 ) ( 65c8808 ) Dependencies Update dependency com.google.apis:google-api-services-storage to v1-rev20240524-2.0.0 ( #2565 ) ( d193243 ) Update dependency com.google.apis:google-api-services-storage to v1-rev20240621-2.0.0 ( #2596 ) ( 73b8753 ) Update dependency com.google.cloud:sdk-platform-java-config to v3.32.0 ( #2597 ) ( 25940a4 ) Documentation Add Hierarchical Namespace Bucket and Folders samples ( #2583 ) ( 3030081 ), closes #2569 Remove allowlist note from Folders RPCs ( #2593 ) ( 82161de ) Update DeleteObject Sample to be clearer on object versioning behavior ( #2595 ) ( 79b7cf0 ) June 28, 2024 Feature You can now specify the Frankfurt, Germany ( europe-west3 ) and Paris, France ( europe-west9 ) regions when using regional endpoints .
-- March 03, 2025 Libraries Java 2.49.0 (2025-02-26) Features Add new Options to allow per method header values ( #2941 ) ( 297802d ) transfer-manager: Add ParallelUploadConfig.Builder#setUploadBlobInfoFactory ( #2936 ) ( 86e9ae8 ), closes #2638 Bug Fixes Categorize a WatchdogTimeoutException as retriable for grpc ReadObject ( #2954 ) ( b53bd53 ) deps: Update the Java code generator (gapic-generator-java) to 2.53.0 ( 9946d6b ) Update grpc based Storage to defer project id validation ( #2930 ) ( cc03784 ) Update kms key handling when opening a resumable upload to clear the value in the json to be null rather than empty string ( #2939 ) ( 43553de ) Dependencies Update sdk-platform-java dependencies ( #2957 ) ( 40cfda6 ) Documentation Add note about HNS support to moveBlob ( #2929 ) ( c461546 ) Python 3.1.0 (2025-02-27) Features Add api key argument to Client constructor ( #1441 ) ( c869e15 ) Add Bucket.move blob() for HNS-enabled buckets ( #1431 ) ( 24c000f ) February 26, 2025 Feature Bucket relocation for Cloud Storage is generally available ( GA ).
-- August 25, 2025 Libraries Go 1.56.1 (2025-08-19) Bug Fixes storage: Fix redirect logic in MRD ( #12733 ) ( 9f369f9 ) storage: Pass all user options to NewService ( #12615 ) ( 77cdb83 ) storage: ZB Reader redirect support ( #12703 ) ( 3c7ea5c ) August 18, 2025 Libraries Python 3.3.0 (2025-08-05) Features Add support for bucket IP filter ( #1516 ) ( a29073c ) Bug Fixes Add logs on AssertionError for issue #1512 ( #1518 ) ( 6a9923e ) Documentation Update the documentation of move blob function ( #1507 ) ( 72252e9 ) August 12, 2025 Feature You can now use Anywhere Cache in the asia-south1-b and asia-south1-c zones.
+- See https://cloud.google.com/storage/docs/json api/v1/buckets and https://cloud.google.com/storage/docs/locations Returns None if the property has not been set before creation, if the bucket's resource has not been loaded from the server, or if the bucket is not a dual-regions bucket. default event based hold Scalar property getter. default kms key name Retrieve / set default KMS encryption key for objects in the bucket.
+- E.g.: >> policies = bucket.cors >> policies.append({'origin': '/foo', ...}) >> policies[1]['maxAgeSeconds'] = 3600 >> del policies[0] >> bucket.cors = policies >> bucket.update() Returns Type Description list of dictionaries A sequence of mappings describing each CORS policy. data locations Retrieve the list of regional locations for custom dual-region buckets.
+- Returns Type Description str or NoneType If set, one of NEARLINE STORAGE CLASS , COLDLINE STORAGE CLASS , ARCHIVE STORAGE CLASS , STANDARD STORAGE CLASS , MULTI REGIONAL LEGACY STORAGE CLASS , REGIONAL LEGACY STORAGE CLASS , or DURABLE REDUCED AVAILABILITY LEGACY STORAGE CLASS , else None . time created Retrieve the timestamp at which the bucket was created.
+- See https://cloud.google.com/storage/docs/json api/v1/buckets and https://cloud.google.com/storage/docs/locations Returns None if the property has not been set before creation, or if the bucket's resource has not been loaded from the server. location type Retrieve the location type for the bucket.
+
+### "Mount a Cloud Storage bucket using Cloud Storage FUSE \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket)
+- Source ID: `site-iam-reference`
+- Final score: 138
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Copy the image from its saved location to the folder where your bucket is mounted, using the cp command: cp kitten.png "$HOME/mount-folder/kitten.png" Verify that the image was copied to your local file system and uploaded to the bucket successfully by following the steps: To check that kitten.png was copied to your local file system, run ls on the folder where your bucket is mounted: ls "$HOME/mount-folder" If the copy operation was successful, kitten.png is returned in the output.
+- Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the resources by completing the following steps: Unmount the storage bucket from your Linux machine by using the fusermount tool: fusermount -u "$HOME/mount-folder" To delete the bucket and everything inside of it, use the gcloud storage rm command with the --recursive flag: gcloud storage rm gs:// BUCKET NAME --recursive Replace BUCKET NAME with the name of your bucket.
+- In this quickstart, you'll complete the following tasks: Install Cloud Storage FUSE on Debian or Ubuntu Mount the bucket as a folder on the machine Upload an object to the bucket You'll use the Google Cloud CLI to create and manage the object in your storage bucket, and you'll use the Cloud Storage FUSE CLI to mount your bucket to your machine.
+- Mount the bucket To mount the bucket to your local file system, complete the following steps: Generate Application Default Credentials using the gcloud auth application-default login command: gcloud auth application-default login Cloud Storage FUSE automatically loads the credentials.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.262Z"
+generated_at: "2026-04-14T13:57:37.571Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Cloud Billing detailed export Memorystore for Redis granularity"
@@ -9,18 +9,18 @@ latest_feature_date: "2024-03-13"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage"
-  - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage"
-  - "https://docs.cloud.google.com/billing/docs/how-to/reports"
+  - "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+  - "https://docs.cloud.google.com/iam/docs/resource-types-with-policies"
+  - "https://docs.cloud.google.com/billing/docs/how-to/data-transfer-waiver"
 keywords:
   - "billing"
   - "detailed"
   - "export"
   - "memorystore"
-  - "for"
   - "redis"
   - "granularity"
   - "now"
+  - "provides"
 ---
 
 # Cloud Billing detailed export Memorystore for Redis granularity
@@ -38,52 +38,44 @@ Cloud Billing detailed export now provides granular Memorystore for Redis cost d
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
-- [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage)
-- [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
+- [https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities](https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities)
+- [https://docs.cloud.google.com/iam/docs/resource-types-with-policies](https://docs.cloud.google.com/iam/docs/resource-types-with-policies)
+- [https://docs.cloud.google.com/billing/docs/how-to/data-transfer-waiver](https://docs.cloud.google.com/billing/docs/how-to/data-transfer-waiver)
 
 ## Supporting Pages
 
-### "Structure of Detailed data export \_|\_ Cloud Billing \_|\_ Google Cloud\
+### "Resource types with built-in identities \_|\_ Identity and Access Management\
 
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
+- URL: [https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities](https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities)
+- Source ID: `site-iam-reference`
+- Final score: 74
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+### "Resource types that accept allow policies \_|\_ Identity and Access Management\
+
+- URL: [https://docs.cloud.google.com/iam/docs/resource-types-with-policies](https://docs.cloud.google.com/iam/docs/resource-types-with-policies)
+- Source ID: `site-iam-reference`
+- Final score: 64
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Select a service to see which of its resource types support allow policies: All services BigQuery Identity-Aware Proxy Access Context Manager Vertex AI BigQuery sharing API Gateway Apigee Apigee Registry App Hub Artifact Registry AutoML Backup and Disaster Recovery Chrome Enterprise Premium BigLake BigQuery Connection API BigQuery Data Policy BigQuery Reservation API Cloud Bigtable Admin API Binary Authorization Cloud Billing Cloud Build Cloud Deploy Cloud Run functions Cloud Key Management Service Resource Manager Cloud Tasks Compute Engine Cloud Config Manager API Customer Experience Insights Artifact Analysis Data Catalog Dataform Cloud Data Fusion Database Migration Service Dataplex Universal Catalog Managed Service for Apache Spark Cloud Deployment Manager Discovery Engine Cloud DNS Cloud Domains Eventarc Backup for GKE GKE Hub Google Distributed Cloud Cloud Healthcare API Identity and Access Management Cloud Logging Managed Service for Microsoft Active Directory Dataproc Metastore AI Platform Network Connectivity Center Network Management API Network Security Network Services Notebooks Certificate Authority Service Pub/Sub Cloud Run Secret Manager Secure Source Manager Security Command Center Service Directory Service Management Spanner Cloud Storage Google Cloud VMware Engine Cloud Workstations Service Resources that accept allow policies BigQuery Datasets Routines Tables Identity-Aware Proxy All web services Individual web services Tunnel Tunnel instances Tunnel zones Web service types Web service versions Access Context Manager Access policies Vertex AI Datasets Entity types Feature groups Feature online stores Feature views Featurestores Models Notebook runtime templates Reasoning engines BigQuery sharing Data exchanges Listings Subscriptions API Gateway APIs Configs Gateways Apigee Deployments Environments Spaces Apigee Registry APIs Artifacts Deployments Documents Instances Runtime Specs Versions App Hub Applications Artifact Registry Repositories AutoML Datasets Locations Models Backup and Disaster Recovery Management servers Chrome Enterprise Premium App connections App connectors App gateways Applications Security gateways BigLake Catalogs Namespaces Tables BigQuery Connection API Connections BigQuery Data Policy Data policies BigQuery Reservation API Assignments Reservations Cloud Bigtable Admin API Authorized views Backups Instances Logical views Materialized views Schema bundles Tables Binary Authorization Attestors Policy Cloud Billing Billing accounts Cloud Build Connections Cloud Deploy Custom target types Delivery pipelines Deploy policies Targets Cloud Run functions Functions Cloud Key Management Service Crypto keys EKM config EKM connections Import jobs Key rings Resource Manager Folders Organizations Projects Tag keys Tag values Cloud Tasks Queues Compute Engine Backend buckets Backend services Disks Firewall policies Images Instance templates Instances Instant snapshot groups Instant snapshots Interconnect attachment groups Interconnect groups Licenses Machine images Network attachments Network firewall policies Node groups Node templates Region backend buckets Region backend services Region disks Region instant snapshot groups Region instant snapshots Region network firewall policies Region snapshots Reservation blocks Reservation sub-blocks Reservations Resource policies Service attachments Snapshots Storage pools Subnetworks Cloud Config Manager API Deployments Customer Experience Insights Authorized views Artifact Analysis Notes Occurrences Data Catalog Entry groups Policy tags Tag templates Taxonomies Dataform Folders Repositories Team folders Workspaces Cloud Data Fusion Instances Database Migration Service Connection profiles Conversion workspaces Migration jobs Objects Private connections Dataplex Universal Catalog Aspect types Assets Attributes Categories Change requests Data attribute bindings Data domains Data products Data scans Data taxonomies Encryption configs Entry groups Entry link types Entry types Glossaries Governance rules Lakes Policy intents Tasks Terms Zones Managed Service for Apache Spark Autoscaling policies Clusters Jobs Operations Workflow templates Cloud Deployment Manager Deployments Discovery Engine Engines Cloud DNS Managed zones Cloud Domains Registrations Eventarc Channel connections Channels Enrollments Google API sources Message buses Pipelines Triggers Backup for GKE Backup plans Backups Restore plans Restores Volume backups Volume restores GKE Hub Features Memberships Scopes Google Distributed Cloud Bare metal admin clusters Bare metal clusters Bare metal node pools VMware admin clusters VMware clusters VMware node pools Cloud Healthcare API Consent stores Data mapper workspaces Datasets DICOM stores FHIR stores HL7v2 stores Identity and Access Management Service accounts Workforce identity pools Workload identity pools Cloud Logging Views Managed Service for Microsoft Active Directory Backups Domains Peerings Dataproc Metastore Backups Databases Federations Services Tables AI Platform Jobs Models Network Connectivity Center Groups Hubs Internal ranges Policy-based routes Spokes Network Management API Connectivity tests Network Security Address groups Authorization policies Authz policies Client TLS policies Server TLS policies Network Services Edge cache keysets Edge cache origins Edge cache services Notebooks Instances Runtimes Certificate Authority Service CA pools Certificate revocation lists Certificate templates Pub/Sub Schemas Snapshots Subscriptions Topics Cloud Run Jobs Services Worker pools Secret Manager Secrets Secure Source Manager Instances Repositories Security Command Center Sources Service Directory Namespaces Services Service Management Consumers Services Spanner Backup schedules Backups Databases Instances Cloud Storage Buckets Managed folders Google Cloud VMware Engine Clusters HCX activation keys Private clouds Cloud Workstations Workstation configs Workstations Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Get a data transfer discount for research and education \_|\_ Cloud Billing\
+
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/data-transfer-waiver](https://docs.cloud.google.com/billing/docs/how-to/data-transfer-waiver)
 - Source ID: `site-docs-root-2`
-- Final score: 198
-- Re-rank relevance: N/A
+- Final score: 62
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Resource-level tags in the Cloud Billing data export are available for the following resources: AlloyDB for PostgreSQL clusters, instances, and backups Artifact Registry repositories Bigtable instances Cloud Run services and jobs Cloud Storage buckets Compute Engine instances Memorystore for Redis instances Secret Manager global and regional secrets Spanner instances Firestore databases Tags limitations Tags might take up to an hour to propagate to BigQuery exports.
-- Managed Microsoft AD Memorystore for Redis Secret Manager Spanner Identify granular cost data by service To analyze granular cost information in a detailed export, use the following table to identify the column that contains information about specific resources.
-- Common values used in the example detailed cost queries The query examples in this section use the following value for Table name : project.dataset.gcp billing export resource v1 XXXXXX XXXXXX XXXXXX Return the resource-level costs on an invoice The following queries demonstrate two ways of viewing resource-level cost and credit values on an invoice using exported billing data.
-- When you enable the detailed usage cost data export for the first time in Cloud Billing, if you select a dataset configured to use a multi-region location (EU or US), Cloud Billing data will be available retroactively from the start of the previous month.
-
-### "Structure of Standard data export \_|\_ Cloud Billing \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage)
-- Source ID: `site-docs-root-2`
-- Final score: 154
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Resource-level tags in the Cloud Billing data export are available for the following resources: AlloyDB for PostgreSQL clusters, instances, and backups Artifact Registry repositories Bigtable instances Cloud Run services and jobs Cloud Storage buckets Compute Engine instances Memorystore for Redis instances Secret Manager global and regional secrets Spanner instances Firestore databases Tags limitations Tags might take up to an hour to propagate to BigQuery exports.
-- Row name project labels total cost total credits 1 CTG - Dev [{"key":"ctg p env","value":"dev"}] 79.140979 -4.763796 2 CTG - Prod [{"key":"ctg p env","value":"prod"},{"key":"ctg team","value":"eng"}] 32.466272 -3.073356 3 CTG - Sandbox [{"key":"ctg p env","value":"dev"}] 0 0 4 CTG - Storage [{"key":"ctg p env","value":"prod"},{"key":"ctg team","value":"data"}] 7.645793 -0.003761 Related topics Topics related to exported Cloud Billing data Set up Cloud Billing data export to BigQuery Example queries for Cloud Billing data export to BigQuery Visualize spend over time with Looker Studio Cost and pricing reports available in the Google Cloud console View your Cloud Billing reports and cost trends View and download the cost details of your invoice or statement View and download prices for Google's cloud services Understand your savings with cost breakdown reports Analyze the effectiveness of your committed use discounts View your cost and payment history Previous arrow back Understand the billing data tables in BigQuery Next Structure of Detailed data export arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- SELECT invoice . month AS invoice month , ROUND (( SUM ( CAST ( cost AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS NUMERIC )) FROM UNNEST ( credits ) AS c ), 0 ))), 2 ) AS net cost FROM project - ID . dataset . gcp billing export v1 XXXXXX - XXXXXX - XXXXXX WHERE "color" NOT IN ( SELECT key FROM UNNEST ( tags )) GROUP BY invoice month ORDER BY invoice month ; For example, the result of the preceding query might be: Row invoice month net cost 1 202202 0 2 202203 16.81 3 202204 54.09 4 202205 55.82 5 202206 54.09 6 202207 55.83 7 202208 31.49 Additional query examples Query costs and credits by project for a specified invoice month Note: See Google Cloud usage cost data in BigQuery for a detailed schema.
-- Common values used in the example standard cost queries The query examples in this section use the following value for Table name : project.dataset.gcp billing export v1 XXXXXX XXXXXX XXXXXX These query examples also work with the detailed usage cost data exported to BigQuery, although they aren't written to retrieve any of the resource-level information that's provided with the detailed usage cost export option.
-
-### "Analyze billing data and cost trends with Reports \_|\_ Cloud Billing \_\
-
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
-- Source ID: `site-docs-root`
-- Final score: 144
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Prerequisites to generate and run a query To generate a query from a Cloud Billing Report , ensure you and your Cloud Billing account meet the following requirements: On your Cloud Billing account, Cloud Billing data export to BigQuery must be enabled, for either the standard usage cost data or detailed usage cost data .
-- To ensure you have a complete set of Cloud Billing data for your custom analysis needs, we recommend you enable billing data export to BigQuery when you first set up a Cloud Billing account.
-- A new browser window opens for BigQuery Studio, and a SQL query is generated, configured to query your exported billing data with the equivalent parameters in use on your Billing Report.
-- Note: If both standard and detailed cost data exports are enabled, when you generate a query, the query is created for the detailed usage cost data.
+- Home Documentation Costs and usage management Cloud Billing Guides Send feedback Get a data transfer discount for research and education Stay organized with collections Save and categorize content based on your preferences.
+- If a new SKU is added, you automatically receive the SKU discount on your next billing cycle.
 

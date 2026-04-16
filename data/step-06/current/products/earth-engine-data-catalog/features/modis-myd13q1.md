@@ -1,30 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:59.164Z"
+generated_at: "2026-04-14T15:13:20.406Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "MODIS/MYD13Q1"
 feature_slug: "modis-myd13q1"
 latest_feature_date: "2013-08-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://developers.google.com/earth-engine/datasets/catalog/MODIS_MYD13Q1"
   - "https://developers.google.com/earth-engine/datasets/catalog/modis"
   - "https://developers.google.com/earth-engine/datasets/tags/vegetation-indices"
-  - "https://developers.google.com/earth-engine/datasets/tags/plant-productivity"
 keywords:
   - "modis"
   - "myd13q1"
   - "aqua"
   - "vegetation"
   - "index"
-  - "product"
 ---
 
 # MODIS/MYD13Q1
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,21 +35,34 @@ A MODIS Aqua vegetation index product.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://developers.google.com/earth-engine/datasets/catalog/MODIS_MYD13Q1](https://developers.google.com/earth-engine/datasets/catalog/MODIS_MYD13Q1)
 - [https://developers.google.com/earth-engine/datasets/catalog/modis](https://developers.google.com/earth-engine/datasets/catalog/modis)
 - [https://developers.google.com/earth-engine/datasets/tags/vegetation-indices](https://developers.google.com/earth-engine/datasets/tags/vegetation-indices)
-- [https://developers.google.com/earth-engine/datasets/tags/plant-productivity](https://developers.google.com/earth-engine/datasets/tags/plant-productivity)
 
 ## Supporting Pages
+
+### MYD13Q1.005 Vegetation Indices 16-Day Global 250m [deprecated] | Earth Engine Data Catalog | Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/datasets/catalog/MODIS_MYD13Q1](https://developers.google.com/earth-engine/datasets/catalog/MODIS_MYD13Q1)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 244
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- EVI korzysta też z … MODIS/MYD13Q1, 16-dniowe,aqua,evi,globalne,modis,ndvi,roślinność,wskaźniki-roślinności 2002-07-04T00:00:00Z/2017-03-14T00:00:00Z –90 –180 90 180 Google Earth Engine https://developers.google.com/earth-engine/datasets Chcesz przekazać coś jeszcze? [[["Łatwo zrozumieć","easyToUnderstand","thumb-up"],["Rozwiązało to mój problem","solvedMyProblem","thumb-up"],["Inne","otherUp","thumb-up"]],[["Brak potrzebnych mi informacji","missingTheInformationINeed","thumb-down"],["Zbyt skomplikowane / zbyt wiele czynności do wykonania","tooComplicatedTooManySteps","thumb-down"],["Nieaktualne treści","outOfDate","thumb-down"],["Problem z tłumaczeniem","translationIssue","thumb-down"],["Problem z przykładami/kodem","samplesCodeIssue","thumb-down"],["Inne","otherDown","thumb-down"]],[],[],["This dataset, available from 2002-07-04 to 2017-03-14, offers 16-day cadence MODIS vegetation indices, including NDVI and EVI.
+- Dostępność zbioru danych 2002-07-04T00:00:00Z–2017-03-14T00:00:00Z Dostawca zbioru danych NASA LP DAAC at the USGS EROS Center Fragment kodu Earth Engine ee.ImageCollection("MODIS/MYD13Q1") open_in_new Cykl 16 dni Tagi 16-dniowy aqua evi globalny modis myd13q1 ndvi roślinność, vegetation-indices Opis Znormalizowany różnicowy wskaźnik wegetacji (NDVI) MODIS uzupełnia produkty NDVI NOAA oparte na radiometrze AVHRR i zapewnia ciągłość w przypadku zastosowań historycznych w zakresie szeregów czasowych.
+- MYD13Q1.005 Vegetation Indices 16-Day Global 250m [deprecated] | Earth Engine Data Catalog | Google for Developers Przejdź do głównej treści Earth Engine Data Catalog / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Zaloguj się Strona główna Kategorie Wszystkie zbiory danych Wszystkie tagi Landsat MODIS Sentinel Wydawca Społeczność Dokumentacja interfejsu API Stan zbioru danych Historia zmian Earth Engine Data Catalog Strona główna Kategorie Wszystkie zbiory danych Wszystkie tagi Landsat MODIS Sentinel Wydawca Społeczność Dokumentacja interfejsu API Stan zbioru danych Historia zmian Strona główna Earth Engine Data Catalog Kategorie Prześlij opinię MYD13Q1.005 Vegetation Indices 16-Day Global 250m [deprecated] Zadbaj o dobrą organizację dzięki kolekcji Zapisuj i kategoryzuj treści zgodnie ze swoimi preferencjami.
+- The dataset is deprecated and replaced by `MODIS/061/MYD13Q1`.\n"]] GitHub Earth Engine on GitHub Medium Follow our blog on Medium GIS Stack Exchange Ask questions using the google-earth-engine tag Twitter Follow @googleearth on Twitter Videos Earth Engine on YouTube Społeczność Blog Bluesky Instagram LinkedIn X (Twitter) YouTube Programy Google Developer Program Google Developer Groups Google Developer Experts Accelerators Google Cloud & NVIDIA Konsole programisty Google API Console Google Cloud Platform Console Konsola Google Play Firebase Console Actions on Google Console Cast SDK Developer Console Chrome Web Store Dashboard Google Home Developer Console Android Chrome Firebase Google Cloud Platform Google AI Wszystkie usługi Warunki Prywatność Manage cookies English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어
 
 ### "MODIS Collections in Earth Engine \_|\_ Earth Engine Data Catalog \_|\_\
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/modis](https://developers.google.com/earth-engine/datasets/catalog/modis)
 - Source ID: `site-docs-root`
-- Final score: 142
+- Final score: 126
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -63,7 +75,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/vegetation-indices](https://developers.google.com/earth-engine/datasets/tags/vegetation-indices)
 - Source ID: `site-docs-root-3`
-- Final score: 138
+- Final score: 120
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -71,17 +83,4 @@ Evidence snippets:
 - The first is the Normalized Difference Vegetation Index (NDVI) which is referred to as the continuity index to the existing National Oceanic and Atmospheric … 16-day aqua evi global modis nasa NOAA CDR AVHRR NDVI: Normalized Difference Vegetation Index, Version 5 The NOAA Climate Data Record (CDR) of AVHRR Normalized Difference Vegetation Index (NDVI) contains gridded daily NDVI derived from the NOAA AVHRR Surface Reflectance product.
 - The first is the Normalized Difference Vegetation Index (NDVI) which is referred to as the continuity index to the existing National Oceanic and Atmospheric … 16-day aqua evi global modis nasa MYD13A2.061 Aqua Vegetation Indices 16-Day Global 1km The MYD13A2 V6.1 product provides two Vegetation Indices (VI): the Normalized Difference Vegetation Index (NDVI) and the Enhanced Vegetation Index (EVI).
 - In generating this monthly product, the algorithm ingests all the MYD13A2 products that … aqua evi global modis monthly nasa MYD13C1.061: Aqua Vegetation Indices 16-Day L3 Global 0.05 Deg CMG The Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) Vegetation Indices 16-Day (MYD13C1) Version 6.1 product provides a Vegetation Index (VI) value at a per pixel basis.
-
-### "Datasets tagged plant-productivity in Earth Engine \_|\_ Earth Engine Data\
-
-- URL: [https://developers.google.com/earth-engine/datasets/tags/plant-productivity](https://developers.google.com/earth-engine/datasets/tags/plant-productivity)
-- Source ID: `site-docs-root-3`
-- Final score: 130
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- NPP is calculated using the MOD17 algorithm (see MOD17 User … conus gridmet-derived mod09q1 mod17 modis nlcd-derived MYD15A2H.061: Aqua Leaf Area Index/FPAR 8-Day Global 500m The MYD15A2H V6.1 MODIS combined Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) product is an 8-day composite dataset at 500m resolution.
-- This dataset is derived from the NOAA AVHRR Surface Reflectance product and … avhrr cdr daily fapar lai land NOAA CDR VIIRS LAI FAPAR: Leaf Area Index and Fraction of Absorbed Photosynthetically Active Radiation, Version 1 This Climate Data Record (CDR) combines datasets for Leaf Area Index (LAI) and Fraction of Absorbed Photosynthetically Active Radiation (FAPAR), two biophysical variables that can be used to evaluate vegetation stress, forecast agricultural yields, and other modeling and resource management applications.
-- The product is based on the radiation-use efficiency concept and can be potentially used as inputs to data models to calculate terrestrial energy, carbon, water cycle processes, and … 8-day aqua global gpp modis nasa MYD17A3HGF.061: Aqua Net Primary Production Gap-Filled Yearly Global 500m The MYD17A3HGF V6.1 product provides information about annual Gross and Net Primary Productivity (GPP and NPP) at 500m pixel resolution.
-- NPP is calculated using the MOD17 algorithm (see MOD17 User … conus gridmet-derived landsat mod17 nlcd-derived npp MCD15A3H.061 MODIS Leaf Area Index/FPAR 4-Day Global 500m The MCD15A3H Version 6.1 Moderate Resolution Imaging Spectroradiometer (MODIS) Level 4, Combined Fraction of Photosynthetically Active Radiation (FPAR), and Leaf Area Index (LAI) product is a 4-day composite data set with 500 meter pixel size.
 

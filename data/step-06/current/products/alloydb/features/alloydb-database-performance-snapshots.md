@@ -1,16 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.594Z"
+generated_at: "2026-04-12T12:07:33.840Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB database performance snapshots"
 feature_slug: "alloydb-database-performance-snapshots"
 latest_feature_date: "2024-12-05"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
   - "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/database-flags"
 keywords:
   - "compare two snapshots"
   - "snapshot point-in-time report"
@@ -25,7 +27,7 @@ keywords:
 # AlloyDB database performance snapshots
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,24 +35,40 @@ AlloyDB now offers database performance snapshot reports that compare system met
 
 ## Extended Definition
 
-AlloyDB database performance snapshot reports is a feature (GA as of December 5, 2024) that provides performance reports comparing system metrics between two snapshots taken at different points in time. These reports include metric-based analysis such as wait events and a SQL report section that lists the top 50 queries by total elapsed time, read I/O, and standard deviation of elapsed time to help identify performance issues. Coverage for specific wait events is documented in the report reference, indicating what can be analyzed in the snapshots.
+AlloyDB now offers database performance snapshot reports that compare system metrics between two points in time.
 
 ## Evidence Summary
 
-The release notes confirm GA availability, scope, and SQL-report details for AlloyDB performance snapshot reports, while the reference page documents the supported wait-event metrics within those reports.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
 - [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting](https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting)
+- [https://docs.cloud.google.com/alloydb/docs/reference/database-flags](https://docs.cloud.google.com/alloydb/docs/reference/database-flags)
 
 ## Supporting Pages
+
+### "Optimize database performance by comparing performance snapshots \_|\_ AlloyDB\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- Source ID: `site-docs-reference-2`
+- Final score: 116
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To identify and mitigate AlloyDB for PostgreSQL database performance issues, you can compare snapshots of system metrics between two points in time by manually generating performance snapshot reports.
+- How performance snapshot reports work Performance snapshot reports are a built-in AlloyDB tool that captures and analyzes performance data to help you identify the cause of performance issues.
+- For more information about wait events in performance snapshot reports, see Database performance snapshot report reference .
+- Performance snapshot reports display database metrics between two timestamps in a single report.
 
 ### "Database performance snapshot report reference \_|\_ AlloyDB for PostgreSQL\
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
 - Source ID: `site-api-reference`
-- Final score: 48
+- Final score: 78
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -58,15 +76,17 @@ Evidence snippets:
 - This document describes wait events in AlloyDB for PostgreSQL performance snapshot reports.
 - Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback Database performance snapshot report reference Stay organized with collections Save and categorize content based on your preferences.
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Perform time-series forecasting \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting](https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting)
+- Source ID: `site-docs-reference-2`
+- Final score: 76
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- December 05, 2024 Feature The AlloyDB database performance snapshot reports feature is generally available (GA).This feature lets you improve your database performance by using a report that compares snapshots of system metrics between two different points in time.
-- Feature AlloyDB database performance snapshot reports now include a SQL Report section, which lists the top 50 queries by total elapsed time, read I/O, and standard deviation of elapsed time.
-- For more information, see Optimize database performance by comparing performance snapshots .
+### "Supported database flags \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/database-flags](https://docs.cloud.google.com/alloydb/docs/reference/database-flags)
+- Source ID: `site-api-reference`
+- Final score: 72
+- Re-rank relevance: N/A
 

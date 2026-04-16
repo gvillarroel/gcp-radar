@@ -1,23 +1,22 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.898Z"
+generated_at: "2026-04-14T15:13:20.153Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "WRI/GFW/FORMA/alerts"
 feature_slug: "wri-gfw-forma-alerts"
 latest_feature_date: "2018-04-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://developers.google.com/earth-engine/datasets/catalog/WRI_GFW_FORMA_alerts"
   - "https://developers.google.com/earth-engine/datasets/tags/forest-biomass"
   - "https://developers.google.com/earth-engine/datasets/catalog"
-  - "https://developers.google.com/earth-engine/docs/release-notes"
 keywords:
   - "wri"
   - "gfw"
   - "forma"
   - "alerts"
-  - "for"
   - "forest"
   - "monitoring"
 ---
@@ -25,7 +24,7 @@ keywords:
 # WRI/GFW/FORMA/alerts
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,34 +36,47 @@ FORMA alerts for forest monitoring.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://developers.google.com/earth-engine/datasets/catalog/WRI_GFW_FORMA_alerts](https://developers.google.com/earth-engine/datasets/catalog/WRI_GFW_FORMA_alerts)
 - [https://developers.google.com/earth-engine/datasets/tags/forest-biomass](https://developers.google.com/earth-engine/datasets/tags/forest-biomass)
 - [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
 
 ## Supporting Pages
+
+### FORMA Alerts | Earth Engine Data Catalog | Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/datasets/catalog/WRI_GFW_FORMA_alerts](https://developers.google.com/earth-engine/datasets/catalog/WRI_GFW_FORMA_alerts)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 262
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- FORMA Alerts | Earth Engine Data Catalog | Google for Developers 跳至主要內容 Earth Engine Data Catalog / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 登入 首頁 類別 所有資料集 所有標記 Landsat MODIS Sentinel 發佈商 Community API 說明文件 資料集狀態 變更記錄 Earth Engine Data Catalog 首頁 類別 所有資料集 所有標記 Landsat MODIS Sentinel 發佈商 Community API 說明文件 資料集狀態 變更記錄 首頁 Earth Engine Data Catalog 所有資料集 提供意見 FORMA Alerts 透過集合功能整理內容 你可以依據偏好儲存及分類內容。 資料集開放期間 2012-01-01T00:00:00Z–2019-05-18T00:00:00Z 資料集產生者 世界資源研究所 / 全球森林監測 Earth Engine 程式碼片段 ee.Image("WRI/GFW/FORMA/alerts") open_in_new 標記 daily deforestation fire forest forma gfw modis monitoring wri 說明 世界資源研究所的注意事項 ：世界資源研究所決定停止更新 FORMA 快訊。目標是簡化 Global Forest Watch 使用者體驗，並減少多餘功能。我們發現 Terra-i 和 GLAD 的使用頻率較高。此外，以 GLAD 為標準進行比較後，發現 Terra-i 的全球表現優於 FORMA。 FORMA 警報是透過結合兩種 MODIS 產品偵測而得：NDVI (常態化差異植被指數) 和 FIRMS (資源管理系統火災資訊)。NDVI 更新每 16 天處理一次，火災更新則每天處理。我們會為每個生態群組分別開發模型，並使用 Hansen 年度樹木覆蓋損失資料訓練模型，將這兩項輸入內容與清除區域建立關聯。警報的最低門檻為 25% 的像素清除率，但各生態群組的門檻不同，以盡量減少誤報。以下是 範例指令碼 ，可快速瞭解 FORMA 資料集。 清除百分比的值為 0 (未偵測到清除作業)，或介於 [ecogroup_bound:100) 之間，其中 ecogroup_bound 由 WRI/GFW/FORMA/thresholds 提供。 資料收集的時間範圍會因 N 天而異，其中 N 是 alert_date 與上次 MODIS NDVI 更新之間的天數。 頻帶 波段 像素大小：250 公尺 (所有頻段) 名稱 單位 最小值 最大值 像素大小 說明 alert_delta % 0 100 250 公尺 在像素的相應 alert_date 值之前 6 個 MODIS 週期 (96 + N 天) 內，清除的百分比 alert_date 毫秒 250 公尺 自 1970 年 1 月 1 日起算的時間戳記 (毫秒) 圖片屬性 影像屬性 名稱 類型 說明 日期 STRING 這個資料集中最後可用的資料日期，格式為「YYYY-MM-DD」 last_firms_date STRING 以「YYYY-MM-DD」格式表示此資料集中包含的最後一筆 FIRMS 資料日期 last_modis_date STRING 以「YYYY-MM-DD」格式顯示的日期，代表這個資料集包含的最後一個可用 MODIS NDVI 資料 nday INT 自上次更新 MODIS NDVI 後經過的天數 年 INT 資料集中包含的最新資料年份 使用條款 使用條款 FORMA 資料集為公開，且使用或散布均不受任何限制。WRI 要求使用者適當註明出處，並在適用情況下將 WRI 和 GFW 標示為資料來源。 使用 Earth Engine 探索 重要事項： Earth Engine 平台可對地理空間資料集進行 PB 等級的科學分析和圖表/影像作業，適合用於促進公共福祉，或供企業和政府使用。 Earth Engine 可免費用於研究、教育和非營利用途。如有意使用，請 申請 Earth Engine 權限 。 程式碼編輯器 (JavaScript) var dataset = ee .
+- Image ( 'WRI/GFW/FORMA/alerts' ); var formaAlerts = dataset . select ( 'alert_delta' ); var formaAlertsVis = { min : 25 , max : 75 , palette : [ 'd65898' , 'da68a2' ], }; Map . setCenter ( 6.746 , 46.529 , 6 ); Map . addLayer ( formaAlerts , formaAlertsVis , 'FORMA Alerts' ); 在程式碼編輯器開啟 FORMA 快訊 世界資源研究所 (WRI) 注意事項：WRI 決定停止更新 FORMA 快訊。目標是簡化 Global Forest Watch 的使用者體驗，並減少多餘功能。我們發現 Terra-i 和 GLAD 的使用頻率較高。此外，以 GLAD 為標準進行比較後，發現 Terra-i 的全球表現優於 FORMA。偵測到 FORMA 警報… WRI/GFW/FORMA/alerts, daily,deforestation,fire,forest,forma,gfw,modis,monitoring,wri 2012-01-01T00:00:00Z/2019-05-18T00:00:00Z -50 -120 40 180 Google Earth Engine https://developers.google.com/earth-engine/datasets 想進一步說明嗎？ [[["容易理解","easyToUnderstand","thumb-up"],["確實解決了我的問題","solvedMyProblem","thumb-up"],["其他","otherUp","thumb-up"]],[["缺少我需要的資訊","missingTheInformationINeed","thumb-down"],["過於複雜/步驟過多","tooComplicatedTooManySteps","thumb-down"],["過時","outOfDate","thumb-down"],["翻譯問題","translationIssue","thumb-down"],["示例/程式碼問題","samplesCodeIssue","thumb-down"],["其他","otherDown","thumb-down"]],[],[],["The WRI/GFW FORMA dataset, provided by the World Resources Institute/Global Forest Watch, offered daily deforestation alerts from 2012 to 2019.
+- WRI stopped updating FORMA alerts because other tools were more often used.
+- Using MODIS data (NDVI and FIRMS), the dataset detected forest clearing, with a minimum threshold of 25% pixel clearing.
 
 ### "Datasets tagged forest-biomass in Earth Engine \_|\_ Earth Engine Data Catalog\
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/forest-biomass](https://developers.google.com/earth-engine/datasets/tags/forest-biomass)
 - Source ID: `site-docs-root-3`
-- Final score: 160
+- Final score: 102
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Moreover, using GLAD as a standard, found that Terra-i outperformed FORMA … daily deforestation forest forest-biomass forma gfw FORMA Vegetation T-Statistics NOTE from WRI: WRI decided to stop updating FORMA alerts.
 - It includes includes mainly old-growth, late-successional forests, but also some early seral stages and young forests that originated after natural disturbances … europe forest forest-biomass table FORMA Raw Output NDVI NOTE from WRI: WRI decided to stop updating FORMA alerts.
+- Moreover, using GLAD as a standard, found that Terra-i outperformed FORMA … daily deforestation forest forest-biomass forma gfw FORMA Vegetation T-Statistics NOTE from WRI: WRI decided to stop updating FORMA alerts.
 - Produced by the World Resources Institute (WRI) and Google DeepMind, the data were developed using a global neural network model (ResNet) trained on a set of samples collected … agriculture deforestation forest forest-biomass google landandcarbon Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
-- Moreover, using GLAD as a standard, found that Terra-i outperformed FORMA … daily deforestation forest forest-biomass forma gfw Forest Persistence v0 Note: This dataset is not yet peer-reviewed.
+- It provides detailed spatial information on forest characteristics including number of live and dead trees, biomass, and carbon across the entire forested extent of the continental United States in 2016.
 
 ### Earth Engine Data Catalog \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 160
+- Final score: 100
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -72,17 +84,4 @@ Evidence snippets:
 - Moreover, using GLAD as a standard, found that Terra-i outperformed FORMA … daily deforestation fire forest forma gfw FORMA Raw Output FIRMS NOTE from WRI: WRI decided to stop updating FORMA alerts.
 - Moreover, using GLAD as a standard, found that Terra-i outperformed FORMA … daily deforestation fire forest forma gfw FORMA Raw Output NDVI NOTE from WRI: WRI decided to stop updating FORMA alerts.
 - Moreover, using GLAD as a standard, found that Terra-i outperformed FORMA … daily deforestation fire forest forma gfw FORMA Alerts NOTE from WRI: WRI decided to stop updating FORMA alerts.
-
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 152
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- May 01, 2018 Earth Engine Data Catalog Feature Added FAO/GAUL/2015/level0 : FAO GAUL: Global Administrative Unit Layers 2015, Country Boundaries Added FAO/GAUL/2015/level1 : FAO GAUL: Global Administrative Unit Layers 2015, First-Level Administrative Units Added FAO/GAUL/2015/level2 : FAO GAUL: Global Administrative Unit Layers 2015, Second-Level Administrative Units April 24, 2018 Earth Engine Data Catalog Feature Added AAFC/ACI : Canada AAFC Annual Crop Inventory Added GFW/GFF/V1/fishing hours : GFW (Global Fishing Watch) Daily Fishing Hours Added GFW/GFF/V1/vessel hours : GFW (Global Fishing Watch) Daily Vessel Hours Added IDAHO EPSCOR/TERRACLIMATE : TerraClimate: Monthly Climate and Climatic Water Balance for Global Terrestrial Surfaces, University of Idaho Added JAXA/ALOS/AVNIR-2/ORI : ALOS/AVNIR-2 ORI Added JAXA/ALOS/PALSAR/YEARLY/FNF : Global 3-class PALSAR-2/PALSAR Forest/Non-Forest Map Added MODIS/006/MCD64A1 (no longer available) Added MODIS/006/MOD13A1 (no longer available) Added MODIS/006/MOD16A2 (no longer available) Added MODIS/006/MOD44W : MOD44W.006 Terra Land Water Mask Derived From MODIS and SRTM Yearly Global 250m Added MODIS/006/MYD13A1 (no longer available) Added NASA/GRACE/MASS GRIDS/LAND (no longer available) Added NASA/GRACE/MASS GRIDS/MASCON (no longer available) Added NASA/GRACE/MASS GRIDS/MASCON CRI (no longer available) Added NASA/GRACE/MASS GRIDS/OCEAN (no longer available) Added NASA/GRACE/MASS GRIDS/OCEAN EOFR : GRACE Monthly Mass Grids - Ocean EOFR Added NASA USDA/HSL/SMAP soil moisture (no longer available) Added NASA USDA/HSL/soil moisture (no longer available) Added Oxford/MAP/accessibility to cities 2015 v1 0 (no longer available) Added Oxford/MAP/friction surface 2015 v1 0 (no longer available) Added RESOLVE/ECOREGIONS/2017 : RESOLVE Ecoregions 2017 Added WRI/GFW/FORMA/alerts : FORMA Alerts Added WRI/GFW/FORMA/raw output firms : FORMA Raw Output FIRMS Added WRI/GFW/FORMA/raw output ndvi : FORMA Raw Output NDVI Added WRI/GFW/FORMA/thresholds : FORMA Alert Thresholds Added WRI/GFW/FORMA/vegetation tstats : FORMA Vegetation T-Statistics Added WRI/GPPD/power plants : Global Power Plant Database April 13, 2018 Earth Engine Code Editor Fixed Fixed Cannot read property 'undefined' of undefined error.
-- June 24, 2025 Earth Engine Data Catalog Feature Added ECMWF/NRT FORECAST/IFS/SCWV : ECMWF Near-Realtime IFS Wave (Short-Cutoff) Forecasts Added ECMWF/NRT FORECAST/IFS/WAVE : ECMWF Near-Realtime IFS Wave Forecasts Added NASA/TEMPO/HCHO L3 : TEMPO gridded HCHO vertical columns V03 Added NASA/TEMPO/HCHO L3 QA : TEMPO gridded HCHO (QA filtered) vertical columns V03 June 17, 2025 Earth Engine Data Catalog Feature Added GOOGLE/SATELLITE EMBEDDING/V1/ANNUAL : Satellite Embedding V1 Added projects/forestdatapartnership/assets/cocoa/model 2025a : Cocoa Probability model 2025a Added projects/forestdatapartnership/assets/coffee/model 2025a : Coffee Probability model 2025a Added projects/forestdatapartnership/assets/palm/model 2025a : Palm Probability model 2025a Added projects/forestdatapartnership/assets/rubber/model 2025a : Rubber Tree Probability model 2025a June 10, 2025 Earth Engine Data Catalog Feature Added projects/edf-methanesat-ee/assets/public-preview/L4area v2 : MethaneSAT L4 Area Sources Public Preview V2.0.0 June 03, 2025 Earth Engine Data Catalog Feature Added JAXA/ALOS/AW3D30/V4 1 : ALOS DSM: Global 30m v4.1 Added UCSB/CHC/CMIP6/v1 : The Climate Hazards Center (CHC) Coupled Model Intercomparison Project Phase 6 (CHC-CMIP6) Added UMD/hansen/global forest change 2024 v1 12 : Hansen Global Forest Change v1.12 (2000-2024) Added projects/landandcarbon/assets/wri gdm drivers forest loss 1km/v1 1 2001 2023 : WRI/Google DeepMind Global Drivers of Forest Loss 2001-2023 v1.1 Added projects/landandcarbon/assets/wri gdm drivers forest loss 1km/v1 2001 2022 : WRI/Google DeepMind Global Drivers of Forest Loss 2001-2022 v1.0 Added projects/landandcarbon/assets/wri gdm drivers forest loss 1km/v1 2 2001 2024 : WRI/Google DeepMind Global Drivers of Forest Loss 2001-2024 v1.2 May 27, 2025 Earth Engine Data Catalog Feature Added NASA/TEMPO/NO2 L3 QA : TEMPO gridded NO2 (QA filtered) tropospheric and stratospheric columns V03 May 13, 2025 Earth Engine Data Catalog Feature Added USGS/NLCD RELEASES/2023 REL/TCC/v2023-5 : USFS Tree Canopy Cover v2023-5 (CONUS and OCONUS) May 06, 2025 Earth Engine Data Catalog Feature Added USFS/GTAC/LCMS/v2024-10 : USFS Landscape Change Monitoring System v2024.10 (CONUS and OCONUS) April 29, 2025 Earth Engine Data Catalog Feature Added ISRIC/SoilGrids250m/v2 0 : SoilGrids250m 2.0 - Volumetric Water Content Added NASA/TEMPO/NO2 L3 : TEMPO gridded NO2 tropospheric and stratospheric columns V03 Added UMN/PGC/ArcticDEM/V4/2m mosaic : ArcticDEM Mosaic V4.1 April 22, 2025 Earth Engine JavaScript Client Library 1.5.12 Change Added the Google Drive main OAuth scope , https://www.googleapis.com/auth/drive , to the default list of scopes to use for authorization.
-- March 24, 2026 Earth Engine Data Catalog Feature Added overture-maps/places place : Overture Maps - Places: Place March 17, 2026 Earth Engine Data Catalog Feature Added NASA/VIIRS/002/VNP64A1 : VNP64A1.002: Burned Area Monthly L4 Global 500m SIN Grid Added projects/neon-prod-earthengine/assets/CNC/002 : NEON Canopy Nitrogen Content (CNC) February 24, 2026 Earth Engine Data Catalog Feature Added OPERA/DSWX/L3 V1/HLS : Dynamic Surface Water Extent from Harmonized Landsat Sentinel-2 (DSWx-HLS) V1 Added OPERA/DSWX/L3 V1/S1 : Dynamic Surface Water Extent from Sentinel-1 (DSWx-S1) V1 Added projects/ee-kbas-in-gee/assets/current : WDKBA: World Database of Key Biodiversity Areas (KBAs) - September 2025 February 10, 2026 Earth Engine Data Catalog Feature Added JRC/GFC2020 subtypes/V1 : EC JRC global map of forest types 2020, V1 Added projects/pml evapotranspiration/PML/OUTPUT/PML V22a : PML V2.2a: Coupled Evapotranspiration and Gross Primary Product (GPP) February 03, 2026 Earth Engine Data Catalog Feature Added Earth Big Data/GLOBAL SEASONAL S1/V2019/BACKSCATTER : Global Seasonal Sentinel-1 Interferometric Coherence and Backscatter V2019 Backscatter Added Earth Big Data/GLOBAL SEASONAL S1/V2019/COHERENCE : Global Seasonal Sentinel-1 Interferometric Coherence and Backscatter V2019 Coherence Added Earth Big Data/GLOBAL SEASONAL S1/V2019/DECAY MODEL PARAMETERS : Global Seasonal Sentinel-1 Interferometric Coherence and Backscatter V2019 Decay Model Parameters Added Earth Big Data/GLOBAL SEASONAL S1/V2019/INCIDENCE LAYOVER SHADOW : Global Seasonal Sentinel-1 Interferometric Coherence and Backscatter V2019 Incidence Layover Shadow Added NOAA/CFSV2/FOR6H HARMONIZED : CFSV2: NCEP Climate Forecast System Version 2, 6-Hourly Products Harmonized Added projects/malariaatlasproject/assets/accessibility/accessibility to cities/2015 v1 0 : Malaria Atlas Project Accessibility to Cities 2015 Added projects/malariaatlasproject/assets/accessibility/accessibility to healthcare/2019 : Malaria Atlas Project Accessibility to Healthcare 2019 Added projects/malariaatlasproject/assets/accessibility/accessibility to healthcare/2019 walking only : Malaria Atlas Project Accessibility to Healthcare 2019 (Walking Only) Added projects/malariaatlasproject/assets/accessibility/friction surface/2015 v1 0 : Malaria Atlas Project Global Friction Surface 2015 Added projects/malariaatlasproject/assets/accessibility/friction surface/2019 v5 1 : Malaria Atlas Project Global Friction Surface 2019 Added projects/malariaatlasproject/assets/accessibility/friction surface/2019 v5 1 walking only : Malaria Atlas Project Global Friction Surface 2019 (Walking Only) January 27, 2026 Earth Engine Data Catalog Feature Added IAHS/GFPLAIN250/v0 : GFPLAIN250m: Global 250m Floodplain Dataset January 20, 2026 Earth Engine Code Editor Announcement Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone.
-- June 30, 2020 Earth Engine Data Catalog Feature Added NASA/MEASURES/GFCC/TC/v3 : Global Forest Cover Change (GFCC) Tree Cover Multi-Year Global 30m June 23, 2020 Earth Engine Data Catalog Feature Added COPERNICUS/S2 CLOUD PROBABILITY : Sentinel-2: Cloud Probability June 16, 2020 Earth Engine Data Catalog Feature Added MODIS/006/MCD43C3 (no longer available) Added NASA/GPM L3/IMERG MONTHLY V06 : GPM: Monthly Global Precipitation Measurement (GPM) v6 Added NOAA/CDR/OISST/V2 1 : NOAA CDR OISST v02r01: Optimum Interpolation Sea Surface Temperature June 09, 2020 Earth Engine Data Catalog Feature Added MODIS/006/MOD17A3HGF (no longer available) Added MODIS/006/MYD17A3HGF (no longer available) June 02, 2020 Earth Engine Data Catalog Feature Added UMD/hansen/global forest change 2019 v1 7 (no longer available) May 26, 2020 Earth Engine Data Catalog Feature Added COPERNICUS/S5P/OFFL/L3 O3 TCL : Sentinel-5P OFFL O3 TCL: Offline Tropospheric Ozone Added ECMWF/CAMS/NRT : Copernicus Atmosphere Monitoring Service (CAMS) Global Near-Real-Time May 19, 2020 Earth Engine Data Catalog Feature Added WCMC/biomass carbon density/v1 0 : WCMC Above and Below Ground Biomass Carbon Density April 28, 2020 Earth Engine Data Catalog Feature Added Tsinghua/FROM-GLC/GAIA/v10 : Tsinghua FROM-GLC Year of Change to Impervious Surface April 14, 2020 Earth Engine Data Catalog Feature Added FAO/WAPOR/2/L1 AETI D : WAPOR Actual Evapotranspiration and Interception 2.0 Added FAO/WAPOR/2/L1 E D : WAPOR Dekadal Evaporation 2.0 Added FAO/WAPOR/2/L1 I D : WAPOR Dekadal Interception 2.0 Added FAO/WAPOR/2/L1 NPP D : WAPOR Dekadal Net Primary Production 2.0 Added FAO/WAPOR/2/L1 RET D : WAPOR Dekadal Reference Evapotranspiration 2.0 Added FAO/WAPOR/2/L1 RET E : WAPOR Daily Reference Evapotranspiration 2.0 Added FAO/WAPOR/2/L1 T D : WAPOR Dekadal Transpiration 2.0 Added USGS/GAP/PAD-US/v20/designation : Designation: USGS GAP PAD-US v2.0 Added USGS/GAP/PAD-US/v20/easement : Easement: USGS GAP PAD-US v2.0 Added USGS/GAP/PAD-US/v20/fee : Fee: USGS GAP PAD-US v2.0 Added USGS/GAP/PAD-US/v20/proclamation : Proclamation: USGS GAP PAD-US v2.0 March 31, 2020 Earth Engine Data Catalog Feature Added FAO/GAUL SIMPLIFIED 500m/2015/level0 : FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, Country Boundaries Added FAO/GAUL SIMPLIFIED 500m/2015/level1 : FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, First-Level Administrative Units Added FAO/GAUL SIMPLIFIED 500m/2015/level2 : FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, Second-Level Administrative Units March 12, 2020 Earth Engine Python Client Library 0.1.215 Fixed Fixed bug with getVideoThumbURL() and getFilmstripThumbURL().
 

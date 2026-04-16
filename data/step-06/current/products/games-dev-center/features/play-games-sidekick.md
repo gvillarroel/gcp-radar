@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:20.047Z"
+generated_at: "2026-04-12T12:16:03.761Z"
 product_name: "Games Dev Center"
 product_slug: "games-dev-center"
 feature_name: "Play Games Sidekick"
 feature_slug: "play-games-sidekick"
 latest_feature_date: "2026-03-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generatePlayGroupingApiToken"
+  - "https://developers.google.com/games/services/cpp/api"
+  - "https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generateRecallPlayGroupingApiToken"
+  - "https://developers.google.com/games/services/reference"
 keywords:
   - "play"
   - "games"
@@ -24,7 +27,7 @@ keywords:
 # Play Games Sidekick
 
 Product: Games Dev Center
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Play Games Sidekick is generally available; Play Games Sidekick is available in 
 
 Play Games Sidekick is generally available; Play Games Sidekick is available in beta for testing.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generatePlayGroupingApiToken](https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generatePlayGroupingApiToken)
+- [https://developers.google.com/games/services/cpp/api](https://developers.google.com/games/services/cpp/api)
+- [https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generateRecallPlayGroupingApiToken](https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generateRecallPlayGroupingApiToken)
+- [https://developers.google.com/games/services/reference](https://developers.google.com/games/services/reference)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Method: accesstokens.generatePlayGroupingApiToken \_|\_ API reference \_\
+
+- URL: [https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generatePlayGroupingApiToken](https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generatePlayGroupingApiToken)
+- Source ID: `site-api-reference`
+- Final score: 162
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- HTTP request POST https://games.googleapis.com/games/v1/accesstokens/generatePlayGroupingApiToken Query parameters Parameters packageName string Required.
+- Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/games https://www.googleapis.com/auth/games lite For more information, see the OAuth 2.0 Overview .
+- Last updated 2024-10-28 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2024-10-28 UTC."],[],[]]
+- If successful, the response body contains data with the following structure: JSON representation { "token" : { object ( PlayGroupingApiToken ) } } Fields token object ( PlayGroupingApiToken ) Token for accessing the Play Grouping API.
+
+### Google Play Games C++ API Reference \_|\_ API reference \_|\_ Android Developers
+
+- URL: [https://developers.google.com/games/services/cpp/api](https://developers.google.com/games/services/cpp/api)
+- Source ID: `site-docs-reference`
+- Final score: 160
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Classes gpg::Achievement A single data structure which allows you to access data about the status of a specific achievement. gpg::AchievementManager Gets and sets various achievement-related data. gpg::AndroidPlatformConfiguration The platform configuration used when creating an instance of the GameServices class on Android. gpg::CaptureOverlayStateListenerHelper Defines a helper which can be used to provide ICaptureOverlayStateListener callbacks to the SDK without defining the full ICaptureOverlayStateListener interface. gpg::EndpointDiscoveryListenerHelper Defines a helper which can be used to provide IEndpointDiscoveryListener callbacks to the SDK without defining the full IEndpointDiscoveryListener interface. gpg::Event A single data structure containing data about the status of a specific event. gpg::EventManager Gets and sets various event-related data. gpg::GameServices The starting point for interacting with Google Play Games. gpg::GameServices::Builder Used for creating and configuring an instance of the GameServices class. gpg::ICaptureOverlayStateListener Defines an interface that can deliver events relating to changes in video capture state. gpg::ICrossAppEndpointDiscoveryListener Defines an interface which can be delivered events relating to cross-app remote endpoint discovery. gpg::IEndpointDiscoveryListener Defines an interface which can be delivered events relating to remote endpoint discovery. gpg::IMessageListener Defines an interface which can be delivered messages from remote endpoints. gpg::IRealTimeEventListener Defines an interface that can deliver events relating to real-time multiplayer. gpg::Leaderboard A single data structure allowing you to access data about the status of a specific leaderboard, such as its name and validity. gpg::LeaderboardManager Gets and sets various leaderboard-related data. gpg::MessageListenerHelper Defines a helper which can be used to provide IMessageListener callbacks to the SDK without defining the full IMessageListener interface. gpg::MultiplayerInvitation A data structure containing data about the current state of an invitation to a turn-based match. gpg::MultiplayerParticipant A data structure containing data about a participant in a multiplayer match. gpg::NearbyConnections An API used for creating connections and communicating between apps on the same local network. gpg::NearbyConnections::Builder Builder class used to construct NearbyConnections objects. gpg::ParticipantResults A data structure containing data about the per-participant results for a TurnBasedMatch . gpg::Player A data structure that allows you to access data about a specific player. gpg::PlayerLevel A single data structure containing data about player's level. gpg::PlayerManager Gets and sets various player-related data. gpg::PlayerStats A data structure that allows you to access data about a specific player. gpg::RealTimeEventListenerHelper Defines a helper which can be used to provide IRealTimeEventListener callbacks to the SDK without defining the full IRealTimeEventListener interface. gpg::RealTimeMultiplayerManager Fetches, modifies, handles messaging for, and creates RealTimeRoom objects. gpg::RealTimeRoom A data structure containing the current state of a real-time multiplayer room. gpg::RealTimeRoomConfig A data structure containing the data needed to create a RealTimeRoom object. gpg::RealTimeRoomConfig::Builder Builds one or more RealTimeRoomConfig objects. gpg::Score Single data structure which allows you to access data about a player's score. gpg::ScorePage A single data structure which allows you to access score data. gpg::ScorePage::Entry A class that creates an entry on a score page. gpg::ScorePage::ScorePageToken A data structure that is a nearly-opaque type representing a query for a ScorePage (or is empty). gpg::ScoreSummary A single data structure which allows you to access a summary of score information. gpg::SnapshotManager Gets and sets various snapshot-related data. gpg::SnapshotMetadata A single data structure that allows you to access data about the status of a specific snapshot metadata. gpg::SnapshotMetadataChange A single data structure which allows you to access data about the status of a specific snapshot. gpg::SnapshotMetadataChange::Builder Builds one or more SnapshotMetadataChange objects. gpg::SnapshotMetadataChange::CoverImage A single data structure which allows you to access data about the status of a specific cover image. gpg::StatsManager Gets and sets various stats-related data. gpg::TurnBasedMatch A data structure containing data about the current state of a TurnBasedMatch . gpg::TurnBasedMatchConfig A data structure containing the data needed to create a TurnBasedMatch . gpg::TurnBasedMatchConfig::Builder Builds one or more TurnBasedMatchConfig objects. gpg::TurnBasedMultiplayerManager Fetches, modifies and creates TurnBasedMatch objects. gpg::VideoCapabilities A data structure which allows access to information on what capabilities the current device has for video recording. gpg::VideoCaptureState A data structure which allows access to the current state of video capture. gpg::VideoManager Gets and sets various video-related data.
+- Structs gpg::AchievementManager::FetchAllResponse Holds all data for all achievements, along with a response status. gpg::AchievementManager::FetchResponse Contains data and response status for a single achievement. gpg::AndroidInitialization AndroidInitialization includes three initialization functions, exactly one of which must be called. gpg::AndroidSupport Functions which enable pre- Android 4.0 support. gpg::AppIdentifier An identifier for an application. gpg::BaseStatus A struct containing all possible status codes that can be returned by our APIs. gpg::ConnectionRequest A request to establish a connection. gpg::ConnectionResponse A response to a connection request. gpg::EndpointDetails Details about a remote endpoint that the app has discovered. gpg::EventManager::FetchAllResponse Data and ResponseStatus for all events. gpg::EventManager::FetchResponse Contains data and response status for a single event. gpg::LeaderboardManager::FetchAllResponse Contains data and response statuses for all leaderboards. gpg::LeaderboardManager::FetchAllScoreSummariesResponse Contains all data and response statuses for all leaderboard score summaries. gpg::LeaderboardManager::FetchResponse Holds data for a leaderboard, along with a response status. gpg::LeaderboardManager::FetchScorePageResponse Returns response status and data from the accessed score page. gpg::LeaderboardManager::FetchScoreSummaryResponse Data and response status for a specified leaderboard score summary. gpg::PlayerManager::FetchListResponse A response which contains a vector of players. gpg::PlayerManager::FetchResponse data and ResponseStatus for a specific Player . gpg::PlayerManager::FetchSelfResponse Holds all player data, along with a response status. gpg::RealTimeMultiplayerManager::FetchInvitationsResponse Data and ResponseStatus for the FetchInvitations operation. gpg::RealTimeMultiplayerManager::RealTimeRoomResponse Data and ResponseStatus for a specific RealTimeRoom object. gpg::RealTimeMultiplayerManager::RoomInboxUIResponse Data and ResponseStatus for the ShowRoomInboxUI operation. gpg::RealTimeMultiplayerManager::WaitingRoomUIResponse Data and ResponseStatus for the ShowWaitingRoomUI operation. gpg::SnapshotManager::CommitResponse Holds the data for an updated snapshot, along with a response status. gpg::SnapshotManager::FetchAllResponse Holds all data for all snapshots, along with a response status. gpg::SnapshotManager::MaxSizeResponse Holds max size for snapshot data and for snapshot cover image. gpg::SnapshotManager::OpenResponse Holds the data for a particular requested snapshot along with a response status. gpg::SnapshotManager::ReadResponse Reads response status and snapshot data returned from a snapshot read operation. gpg::SnapshotManager::SnapshotSelectUIResponse Data and ResponseStatus for the ShowSelectUIOperation operation. gpg::StartAdvertisingResult The ID and name of an instance registered on this device. gpg::StatsManager::FetchForPlayerResponse Holds all PlayerStats data, along with a response status. gpg::TurnBasedMultiplayerManager::MatchInboxUIResponse Data and ResponseStatus for the ShowMatchInboxUI operation. gpg::TurnBasedMultiplayerManager::PlayerSelectUIResponse Data and ResponseStatus for the ShowPlayerSelectUI operation. gpg::TurnBasedMultiplayerManager::TurnBasedMatchResponse Data and ResponseStatus for a specific TurnBasedMatch . gpg::TurnBasedMultiplayerManager::TurnBasedMatchesResponse Data and ResponseStatus for TurnBasedMatches and invitations . gpg::VideoManager::GetCaptureCapabilitiesResponse Holds data for video capabilities, along with a response status. gpg::VideoManager::GetCaptureStateResponse Holds data for video capture state, along with a response status. gpg::VideoManager::IsCaptureAvailableResponse Holds whether or not a capture mode (specified in IsCaptureAvailable ) is available, along with a response status.
+- Google Play Games C++ API Reference These are the reference pages for the Play Games services C++ APIs.
+- Last updated 2024-10-28 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2024-10-28 UTC."],[],[]]
+
+### "Method: accesstokens.generateRecallPlayGroupingApiToken \_|\_ API reference\
+
+- URL: [https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generateRecallPlayGroupingApiToken](https://developers.google.com/games/services/web/api/rest/v1/accesstokens/generateRecallPlayGroupingApiToken)
+- Source ID: `site-api-reference`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- HTTP request POST https://games.googleapis.com/games/v1/accesstokens/generateRecallPlayGroupingApiToken Query parameters Parameters packageName string Required.
+- Last updated 2024-10-28 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2024-10-28 UTC."],[],[]]
+- If successful, the response body contains data with the following structure: JSON representation { "token" : { object ( PlayGroupingApiToken ) } } Fields token object ( PlayGroupingApiToken ) Token for accessing the Play Grouping API.
+- Must be deterministically generated (e.g. as a one-way hash) from the user account ID and user profile ID (if the app has the concept), according to the developer's own user identity system. recallSessionId string Required.
+
+### Android game development \_|\_ Android Developers
+
+- URL: [https://developers.google.com/games/services/reference](https://developers.google.com/games/services/reference)
+- Source ID: `site-docs-reference`
+- Final score: 143
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Play Games Sidekick (Beta): Provides an overlay with utilities, real-time Gemini tips, and engagement tools.
+- By using the vast Android player base and participating in the LevelUp program, titles gain increased discoverability and visibility across multiple Play Games surfaces through these diverse engagement systems.
+- In-game account identity (Managed by the Developer): It is important to note that Play Games Services does not serve as a primary system for inventory management or game-state preservation.
+- Because Play Games Services has implemented version 2, you must distinguish between the platform identity and the proprietary in-game Account (IGA) architecture.
 

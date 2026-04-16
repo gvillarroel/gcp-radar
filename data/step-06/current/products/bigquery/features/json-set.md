@@ -1,0 +1,81 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T12:48:36.576Z"
+product_name: "BigQuery"
+product_slug: "bigquery"
+feature_name: "JSON_SET"
+feature_slug: "json-set"
+latest_feature_date: "2023-08-07"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+keywords:
+  - "json"
+  - "set"
+  - "inserts"
+  - "replaces"
+---
+
+# JSON_SET
+
+Product: BigQuery
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+JSON_SET inserts or replaces JSON data.
+
+## Extended Definition
+
+JSON_SET inserts or replaces JSON data.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions)
+
+## Supporting Pages
+
+### JSON functions \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 72
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- JSON SET Inserts or replaces JSON data.
+- SELECT JSON SET ( JSON '["a", ["b", "c"], "d"]' , '$[1]' , "foo" ) AS json data / -----------------+ json data +-----------------+ ["a","foo","d"] +----------------- / In the following example, the path $[1][0] is matched and replaces the array element value with foo .
+- SELECT JSON ARRAY INSERT ( JSON '["a", ["b", "c"], "d"]' , '$[1]' , 1 ) AS json data / -----------------------+ json data +-----------------------+ ["a",1,["b","c"],"d"] +----------------------- / In the following example, path $[1][0] is matched and inserts 1 .
+- SELECT JSON SET ( JSON '{"a": 1}' , '$.a[2]' , 100 , '$.b' , 2 ) AS json data / ---------------+ json data +---------------+ {"a":1,"b":2} +--------------- / In the following example, the path $[1] is matched and replaces the array element value with foo .
+
+### "Data definition language (DDL) statements in GoogleSQL \_|\_ BigQuery \_\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- Source ID: `site-docs-reference`
+- Final score: 68
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Syntax: '{ "differential privacy policy": { "privacy unit column": value, "max epsilon per query": value, "epsilon budget": value, "delta per query": value, "delta budget": value, "max groups contributed": value } }' Parameters: differential privacy policy : The differential privacy policy for the view. privacy unit column : The column that represents the privacy unit column for differentially private queries on the view. value is a JSON string. max epsilon per query : The maximum amount of epsilon that can be specified for a differentially private query on the view. value is a JSON number from 0.001 to 1e+15. epsilon budget : The amount of epsilon that can be used in totality for all differentially private queries on the view. value is JSON number from 0.001 to 1e+15. delta per query : The maximum amount of delta that can be specified for a differentially private query on the view. value is a JSON number from 1e-15 to 1. delta budget : The amount of delta that can be used in totality for all differentially private queries on the view.
+- Syntax To create a GoogleSQL stored procedure , use the following syntax: CREATE [ OR REPLACE ] PROCEDURE [ IF NOT EXISTS ] [[ project name . ] dataset name . ] procedure name ( procedure argument [ , ... ] ) [ OPTIONS ( procedure option list ) ] BEGIN multi statement query END ; procedure argument : [ procedure argument mode ] argument name argument type procedure argument mode : IN OUT INOUT To create a stored procedure for Apache Spark , use the following syntax: CREATE [ OR REPLACE ] PROCEDURE [ IF NOT EXISTS ] [[ project name . ] dataset name . ] procedure name ( procedure argument [ , ... ] ) [ EXTERNAL SECURITY external security ] WITH CONNECTION connection project id . connection region . connection id [ OPTIONS ( procedure option list ) ] LANGUAGE language [ AS pyspark code ] procedure argument : [ procedure argument mode ] argument name argument type procedure argument mode : IN OUT INOUT external security : INVOKER Arguments OR REPLACE : Replaces any procedure with the same name if it exists.
+- When new data is available, append the data of the 1993 year to the destination table using the INSERT INTO SELECT statement: INSERT INTO myotherdataset . orders SELECT FROM myawsdataset . orders WHERE EXTRACT ( YEAR FROM l commitdate ) = 1993 ; Example 2 The following example inserts data into an ingestion-time partitioned table: CREATE TABLE mydataset . orders ( id String , numeric id INT64 ) PARTITION BY PARTITIONDATE ; After creating a partitioned table, you can insert data into the ingestion-time partitioned table: INSERT INTO mydataset . orders ( PARTITIONTIME , id , numeric id ) SELECT TIMESTAMP ( "2023-01-01" ), id , numeric id , FROM mydataset . ordersof23 WHERE numeric id > 4000000 ; CREATE TABLE LIKE statement Creates a new table with all of the same metadata of another table.
+- Syntax CREATE [ OR REPLACE ] [ TEMP TEMPORARY ] TABLE [ IF NOT EXISTS ] table name [ ( column constraint definition [ , ... ] ) ] [ DEFAULT COLLATE collate specification ] [ PARTITION BY partition expression ] [ CLUSTER BY clustering column list ] [ WITH CONNECTION connection name ] [ OPTIONS ( table option list ) ] [ AS query statement ] column := column definition constraint definition := [ primary key ] [[ CONSTRAINT constraint name ] foreign key , ... ] primary key := PRIMARY KEY ( column name [ , ... ] ) NOT ENFORCED foreign key := FOREIGN KEY ( column name [ , ... ] ) foreign reference foreign reference := REFERENCES primary key table ( column name [ , ... ] ) NOT ENFORCED Arguments OR REPLACE : Replaces any table with the same name if it exists.
+
+### "Legacy SQL Syntax, Functions and Operators \_|\_ BigQuery \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql](https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql)
+- Source ID: `site-docs-reference`
+- Final score: 68
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Examples: PARSE PACKED IP('48.49.50.51') returns 'MDEyMw==' PARSE PACKED IP('3031:3233:3435:3637:3839:4041:4243:4445') returns 'MDEyMzQ1Njc4OUBBQkNERQ==' JSON functions BigQuery's JSON functions give you the ability to find values within your stored JSON data, by using JSONPath -like expressions.
+- When you select data from a JSON string, you are charged for scanning the entire string, which is more expensive than if each field is in a separate column.
+- JSON EXTRACT SCALAR( json , json path ) Selects a value in json according to the JSONPath expression json path . json path must be a string constant.
+- JSON EXTRACT( json , json path ) Selects a value in json according to the JSONPath expression json path . json path must be a string constant.
+

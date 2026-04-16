@@ -1,6 +1,6 @@
 ---
-title: "Add Dataplex Universal Catalog aspects based on insights from data profiles\
-  \ \_|\_ Sensitive Data Protection \_|\_ Google Cloud Documentation"
+title: "Add Knowledge Catalog aspects based on insights from data profiles \_|\_ Sensitive\
+  \ Data Protection \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects
 knowledge_key: corpus
 source_id: site-docs-root
@@ -8,8 +8,8 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/sensitive-data-protection/docs
 source_metadata:
   url: https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects
-  title: "Add Dataplex Universal Catalog aspects based on insights from data profiles\
-    \ \_|\_ Sensitive Data Protection \_|\_ Google Cloud Documentation"
+  title: "Add Knowledge Catalog aspects based on insights from data profiles \_|\_\
+    \ Sensitive Data Protection \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
@@ -23,22 +23,22 @@ Security
 Sensitive Data Protection
 Guides
 Send feedback
-Add Dataplex Universal Catalog aspects based on insights from data profiles
+Add Knowledge Catalog aspects based on insights from data profiles
 Stay organized with collections
 Save and categorize content based on your preferences.
-This page describes how to automatically add Dataplex Universal Catalog aspects to your
+This page describes how to automatically add Knowledge Catalog aspects to your
 data after Sensitive Data Protection profiles your resources. This page also
 provides example queries that you can use to find data across your organization
 and projects with specific aspect values.
 This feature is useful if you want to enrich your metadata in
-Dataplex Universal Catalog with insights gathered from Sensitive Data Protection
+Knowledge Catalog with insights gathered from Sensitive Data Protection
 data profiles. The generated aspects include the following insights:
 Calculated sensitivity level of the table or dataset
 Calculated data risk level of the table or dataset
 Information types ( infoTypes )
 that were detected in the table or dataset
 Insights from Sensitive Data Protection data profiles can help you use
-Dataplex Universal Catalog to discover sensitive and high-risk data in your
+Knowledge Catalog to discover sensitive and high-risk data in your
 organization. Use these insights to help you make informed decisions about how
 to manage and govern your data.
 About data profiles
@@ -49,43 +49,43 @@ your data and help you determine where sensitive and high-risk
 data reside.
 Sensitive Data Protection reports these metrics at various levels of detail.
 You can send data profiles to other Google Cloud services like
-Dataplex Universal Catalog,
+Knowledge Catalog,
 Pub/Sub ,
 Security Command Center , and
 Google Security Operations
 to enrich your data governance, alerting, and security workflows.
-About Dataplex Universal Catalog
-Dataplex Universal Catalog
+About Knowledge Catalog
+Knowledge Catalog
 provides a unified inventory of Google Cloud resources.
-Dataplex Universal Catalog lets you use aspects to add business and
+Knowledge Catalog lets you use aspects to add business and
 technical metadata to your data to capture context and knowledge about your
 resources. You can then search and discover data across your organization and
 enable data governance over your data assets. For more information, see
 Aspects .
-Important: Dataplex Universal Catalog, which uses aspects , is not the
+Important: Knowledge Catalog, which uses aspects , is not the
 same as Data Catalog, which uses tags . Data Catalog is
 deprecated . The
 Sensitive Data Protection feature that lets you tag tables in
-Dataplex Universal Catalog is also
+Knowledge Catalog is also
 deprecated because it uses Data Catalog. To migrate existing
 discovery configurations, see Migrate to the Send to Dataplex Catalog as
 aspects action in this document.
 Supported resources
 Sensitive Data Protection can automatically attach aspects to
-Dataplex Universal Catalog entries for the following resources:
+Knowledge Catalog entries for the following resources:
 BigQuery tables
 Cloud SQL tables
-Note: You must enable the integration of Dataplex Universal Catalog on your
+Note: You must enable the integration of Knowledge Catalog on your
 Cloud SQL
 instance
 for this feature to work.
 Vertex AI datasets created from BigQuery tables
-Dataplex Universal Catalog doesn't ingest Cloud Storage
+Knowledge Catalog doesn't ingest Cloud Storage
 buckets and so this this feature is unavailable when you profile
 Cloud Storage data.
 How it works
 The high-level workflow for automatically creating
-Dataplex Universal Catalog aspects based on data profiles is as follows:
+Knowledge Catalog aspects based on data profiles is as follows:
 Create or
 edit a scan
 configuration for a supported resource type .
@@ -95,15 +95,15 @@ If you're creating a scan configuration, this action is enabled
 by default.
 If you're editing a scan configuration, then enable this action.
 Sensitive Data Protection adds or updates the
-Sensitive Data Protection profile aspect of the Dataplex Universal Catalog
+Sensitive Data Protection profile aspect of the Knowledge Catalog
 entry for each supported
 resource that you profile. You can then search
-Dataplex Universal Catalog for all data in your organization or project
+Knowledge Catalog for all data in your organization or project
 with specific aspect values.
 When you enable the Send to Dataplex Catalog as aspects action,
 Sensitive Data Protection applies this action to new and updated profiles
 only. Existing profiles that aren't updated aren't sent to
-Dataplex Universal Catalog.
+Knowledge Catalog.
 Top-level fields
 The resulting aspect for a profiled table can have the following top-level
 fields:
@@ -268,7 +268,7 @@ the permissions required to search for aspects associated with your resources. T
 required, expand the Required permissions section:
 Required permissions
 The following permissions are required to search for aspects associated with your resources:
-View Dataplex Universal Catalog entries:
+View Knowledge Catalog entries:
 dataplex.entries.list
 dataplex.entries.get
 View BigQuery datasets and tables:
@@ -280,11 +280,11 @@ You might also be able to get
 these permissions
 with custom roles or
 other predefined roles .
-For more information on permissions required to use Dataplex Universal Catalog, see
-Dataplex Universal Catalog IAM
+For more information on permissions required to use Knowledge Catalog, see
+Knowledge Catalog IAM
 permissions .
 Find the generated aspect for a given table data profile
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Search page.
 Go to Search
 Select your organization or project.
@@ -299,19 +299,19 @@ BigQuery table appear. Any Sensitive Data Protection profile
 aspects associated with it are shown in the Optional tags & aspects
 section.
 For more information about how to search for resources, see
-Search for resources in Dataplex Universal Catalog .
+Search for resources in Knowledge Catalog .
 Example search queries
 This section provides example search queries that you can use in
-Dataplex Universal Catalog to find data in your organization or project with
+Knowledge Catalog to find data in your organization or project with
 specific aspect values.
 You can find only the data that you have access to. Data access is controlled
 through IAM permissions. For more information, see Roles and
 permissions for viewing aspects on this page.
 You can enter these example queries in the Search field on the
-Dataplex Universal Catalog Search page.
+Knowledge Catalog Search page.
 Go to Search
 For information about how to form the queries, see
-Search syntax for Dataplex Universal Catalog .
+Search syntax for Knowledge Catalog .
 Find all resources that have the Sensitive Data Protection profile aspect
 aspect:sensitive-data-protection-profile
 Find all resources with a given sensitivity score
@@ -342,6 +342,6 @@ Enable Send to Dataplex Catalog as aspects .
 Click Save .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

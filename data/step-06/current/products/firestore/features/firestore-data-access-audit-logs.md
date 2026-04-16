@@ -1,17 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.433Z"
+generated_at: "2026-04-15T13:50:17.894Z"
 product_name: "Firestore"
 product_slug: "firestore"
 feature_name: "Firestore Data Access audit logs"
 feature_slug: "firestore-data-access-audit-logs"
 latest_feature_date: "2021-11-04"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore"
-  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam"
+  - "https://docs.cloud.google.com/firestore/docs/audit-logging"
+  - "https://docs.cloud.google.com/firestore/native/docs/audit-logging"
 keywords:
   - "firestore"
   - "access"
@@ -19,14 +18,14 @@ keywords:
   - "logs"
   - "supports"
   - "read"
-  - "and"
   - "write"
+  - "preview"
 ---
 
 # Firestore Data Access audit logs
 
 Product: Firestore
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,41 +41,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/firestore](https://docs.cloud.google.com/iam/docs/roles-permissions/firestore)
-- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam)
+- [https://docs.cloud.google.com/firestore/docs/audit-logging](https://docs.cloud.google.com/firestore/docs/audit-logging)
+- [https://docs.cloud.google.com/firestore/native/docs/audit-logging](https://docs.cloud.google.com/firestore/native/docs/audit-logging)
 
 ## Supporting Pages
 
-### Class FirestoreAdminClient (2.22.0) | Python client libraries | Google Cloud Documentation
+### "Firestore audit logging information \_|\_ Firestore in Native mode \_|\_\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- Source ID: `site-python-reference`
-- Final score: 120
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Class FirestoreAdminClient (2.22.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore admin v1.services.firestore admin.client.FirestoreAdminClient Project, Database, Namespace, Collection, Collection Group, and Document are used as defined in the Google Cloud Firestore API.
-
-### Firestore roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/firestore](https://docs.cloud.google.com/iam/docs/roles-permissions/firestore)
-- Source ID: `site-iam-reference`
-- Final score: 112
+- URL: [https://docs.cloud.google.com/firestore/docs/audit-logging](https://docs.cloud.google.com/firestore/docs/audit-logging)
+- Source ID: `site-docs-reference`
+- Final score: 44
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Firestore roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/firestore This page lists the IAM roles and permissions for Firestore.
+- Permission type Methods ADMIN READ google.cloud.location.Locations.GetLocation google.cloud.location.Locations.ListLocations google.firestore.admin.v1.FirestoreAdmin.GetBackup google.firestore.admin.v1.FirestoreAdmin.GetBackupSchedule google.firestore.admin.v1.FirestoreAdmin.GetDatabase google.firestore.admin.v1.FirestoreAdmin.GetField google.firestore.admin.v1.FirestoreAdmin.GetIndex google.firestore.admin.v1.FirestoreAdmin.GetUserCreds google.firestore.admin.v1.FirestoreAdmin.ListBackupSchedules google.firestore.admin.v1.FirestoreAdmin.ListBackups google.firestore.admin.v1.FirestoreAdmin.ListDatabases google.firestore.admin.v1.FirestoreAdmin.ListFields google.firestore.admin.v1.FirestoreAdmin.ListIndexes google.firestore.admin.v1.FirestoreAdmin.ListUserCreds google.firestore.admin.v1beta1.FirestoreAdmin.GetIndex google.firestore.admin.v1beta1.FirestoreAdmin.ListIndexes google.firestore.admin.v1beta2.FirestoreAdmin.GetField google.firestore.admin.v1beta2.FirestoreAdmin.GetIndex google.firestore.admin.v1beta2.FirestoreAdmin.ListFields google.firestore.admin.v1beta2.FirestoreAdmin.ListIndexes google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations ADMIN WRITE google.firestore.admin.v1.FirestoreAdmin.BulkDeleteDocuments (LRO) google.firestore.admin.v1.FirestoreAdmin.CloneDatabase google.firestore.admin.v1.FirestoreAdmin.CreateBackupSchedule google.firestore.admin.v1.FirestoreAdmin.CreateDatabase google.firestore.admin.v1.FirestoreAdmin.CreateIndex (LRO) google.firestore.admin.v1.FirestoreAdmin.CreateUserCreds google.firestore.admin.v1.FirestoreAdmin.DeleteBackup google.firestore.admin.v1.FirestoreAdmin.DeleteBackupSchedule google.firestore.admin.v1.FirestoreAdmin.DeleteDatabase google.firestore.admin.v1.FirestoreAdmin.DeleteIndex google.firestore.admin.v1.FirestoreAdmin.DeleteUserCreds google.firestore.admin.v1.FirestoreAdmin.DisableUserCreds google.firestore.admin.v1.FirestoreAdmin.EnableUserCreds google.firestore.admin.v1.FirestoreAdmin.ExportDocuments (LRO) google.firestore.admin.v1.FirestoreAdmin.ImportDocuments (LRO) google.firestore.admin.v1.FirestoreAdmin.ResetUserPassword google.firestore.admin.v1.FirestoreAdmin.RestoreDatabase google.firestore.admin.v1.FirestoreAdmin.UpdateBackupSchedule google.firestore.admin.v1.FirestoreAdmin.UpdateDatabase google.firestore.admin.v1.FirestoreAdmin.UpdateField (LRO) google.firestore.admin.v1beta1.FirestoreAdmin.CreateIndex (LRO) google.firestore.admin.v1beta1.FirestoreAdmin.DeleteIndex google.firestore.admin.v1beta1.FirestoreAdmin.ExportDocuments (LRO) google.firestore.admin.v1beta1.FirestoreAdmin.ImportDocuments (LRO) google.firestore.admin.v1beta2.FirestoreAdmin.CreateIndex (LRO) google.firestore.admin.v1beta2.FirestoreAdmin.DeleteIndex google.firestore.admin.v1beta2.FirestoreAdmin.ExportDocuments (LRO) google.firestore.admin.v1beta2.FirestoreAdmin.ImportDocuments (LRO) google.firestore.admin.v1beta2.FirestoreAdmin.UpdateField (LRO) google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation DATA READ google.firestore.v1.Firestore.BatchGetDocuments google.firestore.v1.Firestore.BeginTransaction google.firestore.v1.Firestore.ExecutePipeline google.firestore.v1.Firestore.GetDocument google.firestore.v1.Firestore.ListCollectionIds google.firestore.v1.Firestore.ListDocuments google.firestore.v1.Firestore.Listen google.firestore.v1.Firestore.PartitionQuery google.firestore.v1.Firestore.Rollback google.firestore.v1.Firestore.RunAggregationQuery google.firestore.v1.Firestore.RunQuery google.firestore.v1beta1.Firestore.BatchGetDocuments google.firestore.v1beta1.Firestore.BatchWrite google.firestore.v1beta1.Firestore.BeginTransaction google.firestore.v1beta1.Firestore.GetDocument google.firestore.v1beta1.Firestore.ListCollectionIds google.firestore.v1beta1.Firestore.ListDocuments google.firestore.v1beta1.Firestore.Listen google.firestore.v1beta1.Firestore.PartitionQuery google.firestore.v1beta1.Firestore.Rollback google.firestore.v1beta1.Firestore.RunAggregationQuery google.firestore.v1beta1.Firestore.RunQuery DATA WRITE google.firestore.v1.Firestore.BatchWrite google.firestore.v1.Firestore.Commit google.firestore.v1.Firestore.CreateDocument google.firestore.v1.Firestore.DeleteDocument google.firestore.v1.Firestore.UpdateDocument google.firestore.v1.Firestore.Write google.firestore.v1beta1.Firestore.Commit google.firestore.v1beta1.Firestore.CreateDocument google.firestore.v1beta1.Firestore.DeleteDocument google.firestore.v1beta1.Firestore.UpdateDocument google.firestore.v1beta1.Firestore.Write API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Firestore. google.cloud.location.Locations The following audit logs are associated with methods belonging to google.cloud.location.Locations .
+- Filter for this method : protoPayload.methodName="google.firestore.admin.v1.FirestoreAdmin.GetUserCreds" ImportDocuments Method : google.firestore.admin.v1.FirestoreAdmin.ImportDocuments Audit log type : Admin activity Permissions : datastore.databases.import - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.firestore.admin.v1.FirestoreAdmin.ImportDocuments" ListBackupSchedules Method : google.firestore.admin.v1.FirestoreAdmin.ListBackupSchedules Audit log type : Data access Permissions : datastore.backupSchedules.list - ADMIN READ Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="google.firestore.admin.v1beta1.FirestoreAdmin.GetIndex" ImportDocuments Method : google.firestore.admin.v1beta1.FirestoreAdmin.ImportDocuments Audit log type : Admin activity Permissions : datastore.databases.import - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.firestore.admin.v1beta1.FirestoreAdmin.ImportDocuments" ListIndexes Method : google.firestore.admin.v1beta1.FirestoreAdmin.ListIndexes Audit log type : Data access Permissions : datastore.indexes.list - ADMIN READ Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="google.firestore.admin.v1beta2.FirestoreAdmin.GetIndex" ImportDocuments Method : google.firestore.admin.v1beta2.FirestoreAdmin.ImportDocuments Audit log type : Admin activity Permissions : datastore.databases.import - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.firestore.admin.v1beta2.FirestoreAdmin.ImportDocuments" ListFields Method : google.firestore.admin.v1beta2.FirestoreAdmin.ListFields Audit log type : Data access Permissions : datastore.indexes.list - ADMIN READ Method is a long-running or streaming operation : No.
 
-### Identity and Access Management (IAM) | Firestore with MongoDB compatibility | Google Cloud Documentation
+### "Firestore audit logging information \_|\_ Firestore in Native mode \_|\_\
 
-- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam)
-- Source ID: `site-iam-reference`
-- Final score: 90
+- URL: [https://docs.cloud.google.com/firestore/native/docs/audit-logging](https://docs.cloud.google.com/firestore/native/docs/audit-logging)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 44
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Identity and Access Management (IAM) Firestore with MongoDB compatibility Google Cloud Documentation Source URL: https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam With IAM, every API method in Firestore requires that the account making the API request has the appropriate permissions to use the resource.
+- Permission type Methods ADMIN READ google.cloud.location.Locations.GetLocation google.cloud.location.Locations.ListLocations google.firestore.admin.v1.FirestoreAdmin.GetBackup google.firestore.admin.v1.FirestoreAdmin.GetBackupSchedule google.firestore.admin.v1.FirestoreAdmin.GetDatabase google.firestore.admin.v1.FirestoreAdmin.GetField google.firestore.admin.v1.FirestoreAdmin.GetIndex google.firestore.admin.v1.FirestoreAdmin.GetUserCreds google.firestore.admin.v1.FirestoreAdmin.ListBackupSchedules google.firestore.admin.v1.FirestoreAdmin.ListBackups google.firestore.admin.v1.FirestoreAdmin.ListDatabases google.firestore.admin.v1.FirestoreAdmin.ListFields google.firestore.admin.v1.FirestoreAdmin.ListIndexes google.firestore.admin.v1.FirestoreAdmin.ListUserCreds google.firestore.admin.v1beta1.FirestoreAdmin.GetIndex google.firestore.admin.v1beta1.FirestoreAdmin.ListIndexes google.firestore.admin.v1beta2.FirestoreAdmin.GetField google.firestore.admin.v1beta2.FirestoreAdmin.GetIndex google.firestore.admin.v1beta2.FirestoreAdmin.ListFields google.firestore.admin.v1beta2.FirestoreAdmin.ListIndexes google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations ADMIN WRITE google.firestore.admin.v1.FirestoreAdmin.BulkDeleteDocuments (LRO) google.firestore.admin.v1.FirestoreAdmin.CloneDatabase google.firestore.admin.v1.FirestoreAdmin.CreateBackupSchedule google.firestore.admin.v1.FirestoreAdmin.CreateDatabase google.firestore.admin.v1.FirestoreAdmin.CreateIndex (LRO) google.firestore.admin.v1.FirestoreAdmin.CreateUserCreds google.firestore.admin.v1.FirestoreAdmin.DeleteBackup google.firestore.admin.v1.FirestoreAdmin.DeleteBackupSchedule google.firestore.admin.v1.FirestoreAdmin.DeleteDatabase google.firestore.admin.v1.FirestoreAdmin.DeleteIndex google.firestore.admin.v1.FirestoreAdmin.DeleteUserCreds google.firestore.admin.v1.FirestoreAdmin.DisableUserCreds google.firestore.admin.v1.FirestoreAdmin.EnableUserCreds google.firestore.admin.v1.FirestoreAdmin.ExportDocuments (LRO) google.firestore.admin.v1.FirestoreAdmin.ImportDocuments (LRO) google.firestore.admin.v1.FirestoreAdmin.ResetUserPassword google.firestore.admin.v1.FirestoreAdmin.RestoreDatabase google.firestore.admin.v1.FirestoreAdmin.UpdateBackupSchedule google.firestore.admin.v1.FirestoreAdmin.UpdateDatabase google.firestore.admin.v1.FirestoreAdmin.UpdateField (LRO) google.firestore.admin.v1beta1.FirestoreAdmin.CreateIndex (LRO) google.firestore.admin.v1beta1.FirestoreAdmin.DeleteIndex google.firestore.admin.v1beta1.FirestoreAdmin.ExportDocuments (LRO) google.firestore.admin.v1beta1.FirestoreAdmin.ImportDocuments (LRO) google.firestore.admin.v1beta2.FirestoreAdmin.CreateIndex (LRO) google.firestore.admin.v1beta2.FirestoreAdmin.DeleteIndex google.firestore.admin.v1beta2.FirestoreAdmin.ExportDocuments (LRO) google.firestore.admin.v1beta2.FirestoreAdmin.ImportDocuments (LRO) google.firestore.admin.v1beta2.FirestoreAdmin.UpdateField (LRO) google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation DATA READ google.firestore.v1.Firestore.BatchGetDocuments google.firestore.v1.Firestore.BeginTransaction google.firestore.v1.Firestore.ExecutePipeline google.firestore.v1.Firestore.GetDocument google.firestore.v1.Firestore.ListCollectionIds google.firestore.v1.Firestore.ListDocuments google.firestore.v1.Firestore.Listen google.firestore.v1.Firestore.PartitionQuery google.firestore.v1.Firestore.Rollback google.firestore.v1.Firestore.RunAggregationQuery google.firestore.v1.Firestore.RunQuery google.firestore.v1beta1.Firestore.BatchGetDocuments google.firestore.v1beta1.Firestore.BatchWrite google.firestore.v1beta1.Firestore.BeginTransaction google.firestore.v1beta1.Firestore.GetDocument google.firestore.v1beta1.Firestore.ListCollectionIds google.firestore.v1beta1.Firestore.ListDocuments google.firestore.v1beta1.Firestore.Listen google.firestore.v1beta1.Firestore.PartitionQuery google.firestore.v1beta1.Firestore.Rollback google.firestore.v1beta1.Firestore.RunAggregationQuery google.firestore.v1beta1.Firestore.RunQuery DATA WRITE google.firestore.v1.Firestore.BatchWrite google.firestore.v1.Firestore.Commit google.firestore.v1.Firestore.CreateDocument google.firestore.v1.Firestore.DeleteDocument google.firestore.v1.Firestore.UpdateDocument google.firestore.v1.Firestore.Write google.firestore.v1beta1.Firestore.Commit google.firestore.v1beta1.Firestore.CreateDocument google.firestore.v1beta1.Firestore.DeleteDocument google.firestore.v1beta1.Firestore.UpdateDocument google.firestore.v1beta1.Firestore.Write API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Firestore. google.cloud.location.Locations The following audit logs are associated with methods belonging to google.cloud.location.Locations .
+- Filter for this method : protoPayload.methodName="google.firestore.admin.v1.FirestoreAdmin.GetUserCreds" ImportDocuments Method : google.firestore.admin.v1.FirestoreAdmin.ImportDocuments Audit log type : Admin activity Permissions : datastore.databases.import - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.firestore.admin.v1.FirestoreAdmin.ImportDocuments" ListBackupSchedules Method : google.firestore.admin.v1.FirestoreAdmin.ListBackupSchedules Audit log type : Data access Permissions : datastore.backupSchedules.list - ADMIN READ Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="google.firestore.admin.v1beta1.FirestoreAdmin.GetIndex" ImportDocuments Method : google.firestore.admin.v1beta1.FirestoreAdmin.ImportDocuments Audit log type : Admin activity Permissions : datastore.databases.import - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.firestore.admin.v1beta1.FirestoreAdmin.ImportDocuments" ListIndexes Method : google.firestore.admin.v1beta1.FirestoreAdmin.ListIndexes Audit log type : Data access Permissions : datastore.indexes.list - ADMIN READ Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="google.firestore.admin.v1beta2.FirestoreAdmin.GetIndex" ImportDocuments Method : google.firestore.admin.v1beta2.FirestoreAdmin.ImportDocuments Audit log type : Admin activity Permissions : datastore.databases.import - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.firestore.admin.v1beta2.FirestoreAdmin.ImportDocuments" ListFields Method : google.firestore.admin.v1beta2.FirestoreAdmin.ListFields Audit log type : Data access Permissions : datastore.indexes.list - ADMIN READ Method is a long-running or streaming operation : No.
+
+### "Manage Firestore resources using custom constraints \_|\_ Firestore in Native\
+
+- URL: [https://docs.cloud.google.com/firestore/docs/custom-constraints](https://docs.cloud.google.com/firestore/docs/custom-constraints)
+- Source ID: `site-docs-reference`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Any operation including constraint modifications and constraint checks will generate corresponding Cloud Audit Logs.
+- Note that the format of a database name in custom organization policies is projects/ project-id /databases/ database-id while only database-id is specified in database management operations. name : organizations/ ORGANIZATION ID /customConstraints/custom.nameSuffixMobile resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE condition : "resource.name.endsWith('-mobile')" actionType : ALLOW displayName : Firestore database names end with "-mobile" description : Only allow the creation of database names ending with suffix "-mobile" Databases can only be created in specified locations . name : organizations/ ORGANIZATION ID /customConstraints/custom.locationUsCentral1 resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE condition : "resource.locationId == 'us-central1'" actionType : ALLOW displayName : Firestore database location id us-central1 description : Only allow the creation of databases in region us-central1 Databases must be of the specified type . name : organizations/ ORGANIZATION ID /customConstraints/custom.typeFirestore resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE - UPDATE condition : "resource.type==" FIRESTORE NATIVE"" actionType : ALLOW displayName : Firestore database type Firestore Native description : Only allow creation and updating of databases if the type is Firestore in native mode.
+- Set up the custom constraint at the organization level: gcloud org-policies set-custom-constraint deleteProtectionRequired.yaml Test the policy Try to create a database without setting the --delete-protection flag in a project in the organization: gcloud firestore database create \ --project = PROJECT ID \ --database = DATABASE ID \ The output is the following: Operation denied by custom org policies: ["customConstraints/custom.deleteProtectionRequired": "To ensure the data security, Delete Protection is required to be enabled for Firestore databases"] Test and analyze organization policy changes We recommend that you test and dry-run all changes to your organization policies, to better understand the state of your environment and how changes affect it.
+- Test the custom organization policy Before you begin, you must know the following: Your organization ID Create the deleteProtectionRequired.yaml file as follows: name : organizations/ ORGANIZATION ID /customConstraints/custom.deleteProtectionRequired resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE - UPDATE condition : "resource.deleteProtectionState == \"DELETE PROTECTION ENABLED\"" actionType : ALLOW displayName : Firestore Delete Protection Required description : To ensure the data security, Delete Protection is required to be enabled for Firestore databases.
 

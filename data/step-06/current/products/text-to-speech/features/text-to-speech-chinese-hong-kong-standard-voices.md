@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:03.087Z"
+generated_at: "2026-04-15T11:58:39.689Z"
 product_name: "Text-to-Speech"
 product_slug: "text-to-speech"
 feature_name: "Text-to-Speech Chinese (Hong Kong) Standard voices"
@@ -9,18 +9,18 @@ latest_feature_date: "2020-08-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
-  - "https://docs.cloud.google.com/text-to-speech/docs/basics"
-  - "https://docs.cloud.google.com/text-to-speech/docs/reference/rest/Shared.Types/MultiSpeakerVoiceConfig"
+  - "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types"
+  - "https://docs.cloud.google.com/text-to-speech/docs/voices"
+  - "https://docs.cloud.google.com/text-to-speech/docs/voice-types"
 keywords:
   - "text"
-  - "to"
   - "speech"
   - "chinese"
   - "hong"
   - "kong"
   - "standard"
   - "voices"
+  - "added"
 ---
 
 # Text-to-Speech Chinese (Hong Kong) Standard voices
@@ -42,40 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1](https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1)
-- [https://docs.cloud.google.com/text-to-speech/docs/basics](https://docs.cloud.google.com/text-to-speech/docs/basics)
-- [https://docs.cloud.google.com/text-to-speech/docs/reference/rest/Shared.Types/MultiSpeakerVoiceConfig](https://docs.cloud.google.com/text-to-speech/docs/reference/rest/Shared.Types/MultiSpeakerVoiceConfig)
+- [https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types](https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types)
+- [https://docs.cloud.google.com/text-to-speech/docs/voices](https://docs.cloud.google.com/text-to-speech/docs/voices)
+- [https://docs.cloud.google.com/text-to-speech/docs/voice-types](https://docs.cloud.google.com/text-to-speech/docs/voice-types)
 
 ## Supporting Pages
 
-### Package google.cloud.texttospeech.v1 | Cloud Text-to-Speech | Google Cloud Documentation
+### "Supported voices and languages \_|\_ Cloud Text-to-Speech \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1](https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1)
+- URL: [https://docs.cloud.google.com/text-to-speech/docs/voices](https://docs.cloud.google.com/text-to-speech/docs/voices)
 - Source ID: `site-docs-reference`
-- Final score: 214
-- Re-rank relevance: N/A
+- Final score: 179
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Package google.cloud.texttospeech.v1 Cloud Text-to-Speech Google Cloud Documentation Source URL: https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1 Configuration for a multi-speaker text-to-speech setup.
+- Replace PROJECT ID with your project ID. curl -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "x-goog-user-project: PROJECT ID " \ -H "Content-Type: application/json; charset=utf-8" \ "https://texttospeech.googleapis.com/v1/voices" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { "voices": [ { "languageCodes": [ "es-ES" ], "name": "es-ES-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, { "languageCodes": [ "ja-JP" ], "name": "ja-JP-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 22050 }, { "languageCodes": [ "pt-BR" ], "name": "pt-BR-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- Chinese (Hong Kong) Standard yue-HK yue-HK-Standard-A FEMALE Your browser doesn't support the audio element.
+- Chinese (Hong Kong) Standard yue-HK yue-HK-Standard-C FEMALE Your browser doesn't support the audio element.
+- Chinese (Hong Kong) Standard yue-HK yue-HK-Standard-B MALE Your browser doesn't support the audio element.
 
-### Cloud Text-to-Speech basics | Google Cloud Documentation
+### "Supported voices and languages \_|\_ Cloud Text-to-Speech \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/text-to-speech/docs/basics](https://docs.cloud.google.com/text-to-speech/docs/basics)
+- URL: [https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types](https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types)
 - Source ID: `site-docs-root`
-- Final score: 138
-- Re-rank relevance: N/A
+- Final score: 179
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Cloud Text-to-Speech basics Google Cloud Documentation Source URL: https://docs.cloud.google.com/text-to-speech/docs/basics Learn the basics of using Cloud Text-to-Speech to convert text or Speech Synthesis Markup Language (SSML) into natural-sounding synthetic human speech.
+- Replace PROJECT ID with your project ID. curl -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "x-goog-user-project: PROJECT ID " \ -H "Content-Type: application/json; charset=utf-8" \ "https://texttospeech.googleapis.com/v1/voices" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { "voices": [ { "languageCodes": [ "es-ES" ], "name": "es-ES-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, { "languageCodes": [ "ja-JP" ], "name": "ja-JP-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 22050 }, { "languageCodes": [ "pt-BR" ], "name": "pt-BR-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- Chinese (Hong Kong) Standard yue-HK yue-HK-Standard-A FEMALE Your browser doesn't support the audio element.
+- Chinese (Hong Kong) Standard yue-HK yue-HK-Standard-C FEMALE Your browser doesn't support the audio element.
+- Chinese (Hong Kong) Standard yue-HK yue-HK-Standard-B MALE Your browser doesn't support the audio element.
 
-### MultiSpeakerVoiceConfig | Cloud Text-to-Speech | Google Cloud Documentation
+### "Supported voices and languages \_|\_ Cloud Text-to-Speech \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/text-to-speech/docs/reference/rest/Shared.Types/MultiSpeakerVoiceConfig](https://docs.cloud.google.com/text-to-speech/docs/reference/rest/Shared.Types/MultiSpeakerVoiceConfig)
-- Source ID: `site-docs-reference`
-- Final score: 138
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/text-to-speech/docs/voice-types](https://docs.cloud.google.com/text-to-speech/docs/voice-types)
+- Source ID: `site-docs-reference-2`
+- Final score: 169
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- MultiSpeakerVoiceConfig Cloud Text-to-Speech Google Cloud Documentation Source URL: https://docs.cloud.google.com/text-to-speech/docs/reference/rest/Shared.Types/MultiSpeakerVoiceConfig Documentation · AI and ML · Cloud Text-to-Speech · Reference · Send feedback · JSON representation · MultispeakerPrebuiltVoice · JSON representation · Configuration for a multi-speaker text-to-speech setup.
-- Enables the use of up to two distinct voices in a single synthesis request.
+- Replace PROJECT ID with your project ID. curl -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "x-goog-user-project: PROJECT ID " \ -H "Content-Type: application/json; charset=utf-8" \ "https://texttospeech.googleapis.com/v1/voices" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { "voices": [ { "languageCodes": [ "es-ES" ], "name": "es-ES-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, { "languageCodes": [ "ja-JP" ], "name": "ja-JP-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 22050 }, { "languageCodes": [ "pt-BR" ], "name": "pt-BR-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- Chinese (Hong Kong) Standard yue-HK yue-HK-Standard-A FEMALE Your browser doesn't support the audio element.
+- Chinese (Hong Kong) Standard yue-HK yue-HK-Standard-C FEMALE Your browser doesn't support the audio element.
+- Chinese (Hong Kong) Standard yue-HK yue-HK-Standard-B MALE Your browser doesn't support the audio element.
 

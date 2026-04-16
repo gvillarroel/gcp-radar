@@ -1,29 +1,27 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:33:10.242Z"
+generated_at: "2026-04-14T04:54:52.832Z"
 product_name: "Apigee hybrid"
 product_slug: "apigee-hybrid"
 feature_name: "top-up"
 feature_slug: "top-up"
 latest_feature_date: "2025-10-12"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes"
+  - "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+  - "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+  - "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/dns-quickstart"
 keywords:
-  - "top-up charge model"
-  - "top-up fee type"
-  - "topup fee"
-  - "top up billing"
-  - "prepaid top-up"
-  - "top-up fees"
-  - "top-up"
+  - "monetization"
+  - "recurring"
+  - "supports"
 ---
 
 # top-up
 
 Product: Apigee hybrid
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,23 +33,35 @@ Apigee Hybrid monetization now supports recurring fees, top-up fees, and setup f
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
+- [https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale](https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale)
+- [https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide](https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide)
+- [https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/dns-quickstart](https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/dns-quickstart)
 
 ## Supporting Pages
 
-### Apigee hybrid release notes \_|\_ Google Cloud Documentation
+### "New Apigee hybrid installation and administration Preview \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
+- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide](https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide)
 - Source ID: `site-docs-reference`
-- Final score: 30
+- Final score: 34
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- The procedures are included in Step 11: Install Apigee hybrid Using Helm: WIF for GKE October 07, 2025 v1.14.3 Announcement hybrid v1.14.3 On October 7, 2025 we released an enhancement to Apigee hybrid version 1.14.3, recurring, top-up, and setup fees for Apigee hybrid monetization.
-- For complete information on the contents of the v1.14.3 release, see Apigee hybrid v1.14.3 release notes . v1.14.3 Feature Recurring, top-up, and setup fees for Apigee hybrid monetization Apigee hybrid now supports recurring, top-up, and setup fees for monetization.
-- For information on container image support in Apigee hybrid releases, see Apigee release process . v1.15.1 Feature Recurring, top-up, and setup fees for Apigee hybrid monetization Apigee hybrid now supports recurring, top-up, and setup fees for monetization.
+### Scale and autoscale runtime services \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale](https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale)
+- Source ID: `site-docs-reference`
+- Final score: 34
+- Re-rank relevance: N/A
+
+### DNS setup quickstart \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/dns-quickstart](https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/dns-quickstart)
+- Source ID: `site-docs-root`
+- Final score: 30
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 

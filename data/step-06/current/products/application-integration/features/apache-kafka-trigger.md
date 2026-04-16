@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.470Z"
+generated_at: "2026-04-14T07:40:14.475Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Apache Kafka trigger"
 feature_slug: "apache-kafka-trigger"
 latest_feature_date: "2024-04-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
-  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger"
+  - "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger"
 keywords:
   - "apache"
   - "kafka"
   - "offers"
-  - "application"
-  - "integration"
   - "trigger"
-  - "now"
-  - "in"
+  - "preview"
 ---
 
 # Apache Kafka trigger
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,52 @@ Application Integration now offers Apache Kafka trigger support in preview.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
+- [https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger](https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger)
+- [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
+- [https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger](https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger)
 
 ## Supporting Pages
 
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
+### Apache Kafka trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger](https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 233
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Apache Kafka trigger Preview — Apache Kafka trigger This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- The Apache Kafka trigger indicates the status of an event subscription using the following states: restart alt Creating : Indicates that the trigger is subscribing to the event subscription. check circle Active : Indicates that the trigger is successfully subscribed to an event subscription. error Error : Indicates that the there is an issue with the configured event subscription.
+- For information about how to configure a Apache Kafka trigger using a new Apache Kafka connection, see Configure Apache Kafka trigger using a new connection To configure a Apache Kafka trigger using an existing Apache Kafka connection, perform the following steps: Click the Apache Kafka trigger element in the integration editor to open the trigger configuration pane.
+- Before you begin If you plan to create or configure a new connection for the Apache Kafka trigger , make sure that you have the following Identity and Access Management (IAM) role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access .
+
+### "All triggers and tasks \_|\_ Application Integration \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
 - Source ID: `site-docs-root`
-- Final score: 250
+- Final score: 115
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Triggers API trigger Private trigger Cloud Pub/Sub trigger Schedule trigger Salesforce trigger Cloud Scheduler trigger Error Catcher trigger Connector Event triggers Apache Kafka trigger HL7 trigger IBM MQ trigger Jira Cloud trigger Jira Server Data Center trigger HubSpot trigger Rabbit MQ trigger SAP Gateway trigger SAP ERP trigger ServiceNow trigger Solace trigger TIBCO EMS trigger Webhook trigger Zendesk trigger Tasks for Google Cloud services AI Platform - Prediction task Apps Script task Cloud Function task Cloud KMS - decrypt Cloud KMS - encrypt Dataflow - Create Job task Drive - List task Doc AI - Batch Process task Doc AI - Operation task Doc AI - Process task Firestore - Batch Get task Firestore - Batch Write task Firestore - Document Get task Language - Annotate Text task Language - Classify Text task Secret Manager - Access task Sheets - Append task Sheets - Batch Get task Sheets - Get task Translate - Document task Translate - Text task Vertex AI - Predict task Workflows - Execute task Integration tasks Data Mapping task Call Integration task For Each Parallel task For Each Loop task While Loop task Approval task Send Email task Suspend task Timer task JavaScript task Return task Connectors task Call REST Endpoint task Data transformer script task Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- All triggers and tasks This page introduces the various configurable triggers and tasks available in Application Integration.
+
+### Azure AD trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger](https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger)
+- Source ID: `site-docs-root-2`
+- Final score: 84
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Connect the elements in the sub-integration Now that you have added and configured the required tasks and triggers in the sub-integration, add a connection (edge) between the elements.
-- Home Documentation Application development Application Integration Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
-- To add and configure the API trigger, perform the following steps: In the integration editor, click Triggers to view the list of available triggers.
-- Add an API trigger in the main integration In the integration editor, click Triggers to view the list of available tasks and triggers.
-
-### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 242
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Supported tasks and triggers Gemini can assist you to add the following tasks and triggers: Triggers Tasks API trigger Cloud Pub/Sub trigger Salesforce trigger Jira Cloud ServiceNow Zendesk Cloud Scheduler trigger Data mapper task Approval task Suspend task Javascript task Cloud Run functions Timer task Return task Send email task Connectors task Call REST endpoint task Doc AI - Process task Gemini also assists you to create the following control flow tasks but can't generate sub-integrations: For Each Loop task For Each Parallel task While Loop task Call Integration task Create an integration Gemini assists you to create and build integrations using your natural language statements (or prompts ) as input.
-- In Application Integration, Gemini Code Assist can assist you to do the following: Create integrations Configure connector tasks in an integration Configure Call REST API tasks in an integration Add edge conditions and append additional tasks to an integration Configure JavaScript tasks ( Preview ) Generate integration description For detailed information about Gemini for Google Cloud, see Gemini for Google Cloud overview .
-- Configure Call REST API tasks If you have API Hub enabled in your project, then Gemini in Application Integration can assist you in providing contextually appropriate Call REST Endpoint task and task configuration recommendations based on the logical flow of your existing integration.
-- If you plan to create an integration using Apigee API Hub APIs that are in a host project, ensure that you have provisioned the API Hub in your project and that the Application Integration service account has the required role to access the APIs in the other project.
-
-### Application Integration release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 210
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The canvas view offers the following benefits: Improved responsiveness of the canvas interaction Clearer view of your integration Minimap view Easier to build integrations August 18, 2024 Feature In the Application Integration editor, you can now search, browse, and select tasks and connectors in the Tasks list.
-- Issue Known issues Integration fails to publish when duplicate Connector Event triggers are configured Event subscription error when an integration containing Connector Event triggers is uploaded For more information, see Application Integration known issues .
-- Change Control HTTP call access by region in Application Integration Application Integration now offers a new control within the Regions page to enable or disable HTTP calls for integrations on a per-region basis.
-- February 23, 2024 Feature Application Integration now supports private triggers that enable you to break large flows into various subflows.
+- Azure AD trigger Preview — Azure AD trigger This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- The Azure AD trigger indicates the status of an event subscription using the following states: restart alt Creating : Indicates that the trigger is subscribing to the event subscription. check circle Active : Indicates that the trigger is successfully subscribed to an event subscription. error Error : Indicates that the there is an issue with the configured event subscription.
+- For information about how to configure a Azure AD trigger using a new Azure AD connection, See Configure Azure AD trigger using a new connection To configure a Azure AD trigger using an existing Azure AD connection, perform the following steps: Click the Azure AD trigger element in the integration editor to open the trigger configuration pane.
+- Grant the following IAM roles to the service account that you want to use for the Azure AD trigger : Application Integration Invoker ( roles/integrations.integrationInvoker ) For information about granting roles to a service account, see Manage access to service accounts .
 

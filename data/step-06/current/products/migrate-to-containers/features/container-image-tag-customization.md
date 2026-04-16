@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:45.646Z"
+generated_at: "2026-04-14T15:21:10.864Z"
 product_name: "Migrate to Containers"
 product_slug: "migrate-to-containers"
 feature_name: "Container image tag customization"
 feature_slug: "container-image-tag-customization"
 latest_feature_date: "2020-10-08"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/migrate/containers/docs/deploy-run"
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+  - "https://docs.cloud.google.com/migrate/containers/docs/post-migration-image-updates"
 keywords:
   - "container"
   - "image"
@@ -24,7 +26,7 @@ keywords:
 # Container image tag customization
 
 Product: Migrate to Containers
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ GenerateArtifactsFlow now uses timestamp-based container image tags and lets you
 
 GenerateArtifactsFlow now uses timestamp-based container image tags and lets you set a custom tag value.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/migrate/containers/docs/deploy-run](https://docs.cloud.google.com/migrate/containers/docs/deploy-run)
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan)
+- [https://docs.cloud.google.com/migrate/containers/docs/post-migration-image-updates](https://docs.cloud.google.com/migrate/containers/docs/post-migration-image-updates)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Deploy containers to Cloud Run \_|\_ Migrate to Containers \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/deploy-run](https://docs.cloud.google.com/migrate/containers/docs/deploy-run)
+- Source ID: `site-docs-reference`
+- Final score: 127
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, you should see something similar to the following: spec : containers : - image : gcr.io/ PROJECT NAME /quickstart-instance: LABEL In the Deploying the migrated workload section, deploy the container image to Cloud Run by using the command: gcloud run deploy my-runtime --image gcr.io/ PROJECT NAME /quickstart-instance: LABEL --region REGION --platform managed --set-env-vars=HC V2K SERVICE MANAGER=true --port 80 The web server in the migrated container listens for requests on port 80 so make sure to specify that port when deploying the container.
+- Use the following command to deploy the container on Cloud Run: gcloud run deploy my-runtime --image gcr.io/ PROJECT NAME / IMAGE NAME : LABEL --region REGION --platform managed --set-env-vars=HC V2K SERVICE MANAGER=true --port PORT The --set-env-vars property sets the HC V2K SERVICE MANAGER environment variable to true to enable the enhanced Linux service manager.
+- For example, you should see something similar to the following: spec : containers : - image : gcr.io/ PROJECT NAME / IMAGE NAME : LABEL Where gcr.io/ PROJECT NAME / IMAGE NAME : LABEL specifies the location of the container image.
+- After you generate the migration artifacts, open the deployment spec.yaml file in an editor to determine the location of the container image.
+
+### "Post-migration image updates \_|\_ Migrate to Containers \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/post-migration-image-updates](https://docs.cloud.google.com/migrate/containers/docs/post-migration-image-updates)
+- Source ID: `site-docs-root-2`
+- Final score: 125
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Using the previous example, you can update the version from 1.0.3 to the hypothetical version 1.0.4 by editing the FROM directive to the following: FROM us-docker.pkg.dev/migrate-modernize-public/modernize-plugins-prod/service-manager-runtime:1.0.4 as service-manager-runtime After updating the Dockerfile, you will need to build a new workload container image version and apply it to existing deployments to get it updated.
+- For example: RUN apt-get update RUN apt-get install -y \ package1=version \ package2=version \ package3=version RUN yum update RUN wget http://github.com ENTRYPOINT [ "/ko-app/service-manager-runtime" , "start" , "-c" , "/.m4a/" ] For more information on building container images with Cloud Build, see Building container images .
+- The generated container artifacts are created with CI/CD pipeline build phase integration in mind, as described in the following diagram: The Dockerfile is structured as a multi-stage build , for easier maintenance and manipulation, while keeping the image from inflating.
+- Update the Migrate to Containers layer version When new versions of Migrate to Containers software are released, you can update that software version in deployed workload images.
+
+### "Customize migration plan for Tomcat servers \_|\_ Migrate to Containers\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 120
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To turn off the probes, remove the probes section from the YAML file. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : tcpSocket : port : 8080 readinessProbe : tcpSocket : port : 8080 You can change this migration plan to use an existing Tomcat HTTP endpoint. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : httpGet : path : /healthz port : 8080 httpHeaders : - name : Custom-Header value : Awesome initialDelaySeconds : 3 periodSeconds : 3 readinessProbe : httpGet : tcpSocket : port : 8080 There are four predefined ways to check a container using a probe.
+- If includeSensitiveData is set to true the sensitive data will be mounted on the container. includeSensitiveData : true tomcatServers : - name : latest catalinaBase : /opt/tomcat/latest catalinaHome : /opt/tomcat/latest Exclude files from migration. excludeFiles : - /usr/local/ssl/server.pem - /usr/home/tomcat/keystore - /usr/home/tomcat/truststore images : - name : tomcat-latest ...
+- If you want to change the Docker community image, or provide your own Docker image, you can modify the baseImage.name in your migration plan using the following format: tomcatServers : - name : latest . . . images : - name : tomcat-latest . . . baseImage : name : BASE IMAGE NAME Replace BASE IMAGE NAME with the Docker image that you want to use as the base of the container image.
+- The following example shows an updated catalinaOpts field: tomcatServers : - name : latest . . . images : - name : tomcat-latest . . . resources : . . . catalinaOpts : "-Xss10M" Migrate to Containers parses your catalinaOpts data to your Dockerfile.
 

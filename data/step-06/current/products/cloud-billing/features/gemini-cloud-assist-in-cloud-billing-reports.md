@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.229Z"
+generated_at: "2026-04-14T13:57:37.552Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Gemini Cloud Assist in Cloud Billing Reports"
 feature_slug: "gemini-cloud-assist-in-cloud-billing-reports"
 latest_feature_date: "2024-09-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini"
   - "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview"
@@ -15,18 +15,18 @@ source_links:
 keywords:
   - "gemini"
   - "assist"
-  - "in"
   - "billing"
   - "reports"
   - "now"
   - "includes"
-  - "to"
+  - "help"
+  - "users"
 ---
 
 # Gemini Cloud Assist in Cloud Billing Reports
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Cloud Billing Reports now includes Gemini Cloud Assist support to help users acc
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
@@ -52,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini](https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini)
 - Source ID: `site-docs-root-2`
-- Final score: 292
+- Final score: 221
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -60,29 +60,28 @@ Evidence snippets:
 - Any custom roles for project permissions that you create need the following permissions to access Gemini Cloud Assist: geminicloudassist.companions.generateChat geminicloudassist.companions.generateCode serviceusage.services.use Grant IAM roles in a Cloud Billing account For users who need access to Cloud Billing cost data, you need to grant permissions on the Cloud Billing account that are adequate to access the Reports page and the FinOps hub .
 - If the project users also have access to view Cloud Billing data , they can use Gemini Cloud Assist in Cloud Billing Reports and the FinOps hub to get AI assistance to create cost reports and to summarize key insights about cloud costs and optimization recommendations.
 - For users who need access to Cloud Billing data and Gemini Cloud Assist in Cloud Billing, grant IAM roles in the Cloud Billing account that's linked to the project where the Gemini Cloud Assist API is enabled.
-- After you enable the Gemini Cloud Assist API in the specified Google Cloud project, Gemini Cloud Assist is now available to all users who have the required IAM roles on the specified project.
+- To use Gemini Cloud Assist in Cloud Billing, grant users access to the Cloud Billing account that is linked to the project where the Gemini Cloud Assist API is enabled.
 
 ### Gemini Cloud Assist in Cloud Billing \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/gemini/overview](https://docs.cloud.google.com/billing/docs/how-to/gemini/overview)
 - Source ID: `site-docs-root-2`
-- Final score: 276
+- Final score: 203
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
+- Compute Engine — sets the Services filter US regions — sets the Locations filter Save custom reports to use again In billing reports, Gemini Cloud Assist is focused on helping you to create the cost reports that you need to analyze your Google Cloud costs.
+- Gemini Cloud Assist in Cloud Billing Cost Reports provides AI assistance to help you in the following ways: Using saved reports .
 - You might be able to enable Gemini Cloud Assist from the billing report Consider the following when you view the Cloud Billing Reports page: If you haven't enabled the Gemini for Google Cloud API in a Google Cloud project but you have adequate project permissions to do so, you can select Enable Gemini API to use Gemini Cloud Assist in Cloud Billing: If you haven't enabled the Gemini for Google Cloud API in a Google Cloud project, and you don't have adequate project permissions to enable the API in any of the projects associated with the Cloud Billing account, the Enable Gemini API button is greyed out: Ask an administrator or project owner to set you up to use Gemini Cloud Assist in Cloud Billing .
 - How to interact with Gemini Cloud Assist in Cloud Billing After you enable Gemini Cloud Assist in a Google Cloud project, in Cloud Billing you can find Gemini-provided assistance in the following places: Cloud Billing: Reports page and FinOps hub page Google Cloud console, including Cloud Billing pages: Gemini Cloud Assist chat panel Cloud Billing: Reports page and FinOps hub Cost Reports To access the new AI features in your Cloud Billing reports, log into the Google Cloud console, select the Gemini project, then open your Cloud Billing account and view the Reports page.
-- DevOps and FinOps practitioners who want to use Gemini Cloud Assist to understand cloud costs, identify opportunities for cost savings, and get AI insights to maximize cloud resource utilization and performance can use the Gemini-assisted Cloud Billing tools available in the following Billing pages: Cost Reports : For assistance in finding or creating a billing report to gain insights into your Google Cloud spending, identify key trends, and uncover what's driving your Cloud Billing costs, use the Gemini Cloud Assist prompt available on the Cloud Billing Reports page .
-- When you're viewing the Reports page, if the Gemini Cloud Assist API is already enabled in a Google Cloud project where you have adequate project permissions to use Gemini assistants, you see the Gemini Cloud Assist in Cloud Billing features on the Reports page: What you can do if Gemini is not enabled in billing reports If Gemini Cloud Assist in Cloud Billing is not yet enabled, you can still access the preconfigured and saved reports in the See all reports tab.
 
 ### "Analyze billing data and cost trends with Reports \_|\_ Cloud Billing \_\
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
 - Source ID: `site-docs-root`
-- Final score: 268
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 185
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Also, for customers who have enabled Gemini Cloud Assist in Cloud Billing , the preset reports and your custom saved reports are accessible in a carousel that displays below the Ask Gemini Cloud Assist prompt field.

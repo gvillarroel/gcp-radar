@@ -1,31 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:33:10.243Z"
+generated_at: "2026-04-14T04:54:52.835Z"
 product_name: "Apigee hybrid"
 product_slug: "apigee-hybrid"
 feature_name: "Data residency support for Apigee data collectors"
 feature_slug: "data-residency-support-for-apigee-data-collectors"
 latest_feature_date: "2025-04-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid"
+  - "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms"
   - "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
-  - "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes"
-  - "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview"
 keywords:
-  - "subscription and pay-as-you-go organizations"
-  - "residency location control"
-  - "data residency (DRZ)"
-  - "residency compliance"
-  - "data collectors"
-  - "data residency"
-  - "DRZ"
+  - "subscription"
+  - "collectors"
+  - "compliance"
+  - "residency"
 ---
 
 # Data residency support for Apigee data collectors
 
 Product: Apigee hybrid
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,50 +34,55 @@ Apigee and Apigee Hybrid data collectors now support data residency (DRZ) compli
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid](https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid)
+- [https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms](https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms)
 - [https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts](https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts)
-- [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
-- [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview)
 
 ## Supporting Pages
+
+### Using data residency with Apigee hybrid | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid](https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 248
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Apigee technical feature overview Apigee terminology API development lifecycle Key points of API proxy development Apigee architecture overview Apigee locations GET STARTED Introduction to provisioning Compare eval and paid organizations Provisioning options Prerequisites About Apigee provisioning permissions Networking options Introduction to data residency Introduction to CMEK Best practices for Apigee CMEK Using organization policy constraints Understand Apigee observability Provision paid orgs Before you begin Subscription Cloud console Select your project Provision Apigee with one click Configure and customize Step 1: Enable required APIs Step 2: Set up networking Step 3: Configure hosting and encryption Step 4: Customize access routing Recommended next steps Command line With VPC peering Without VPC peering Pay-as-you-go Cloud console Select your project Provision Apigee with one click Configure and customize Step 1: Enable required APIs Step 2: Set up networking Step 3: Configure hosting and encryption Step 4: Customize access routing Recommended next steps Command line With VPC peering Without VPC peering Provision eval orgs Before you begin Wizard Command line With VPC peering Without VPC peering Next steps Calling a proxy with internal-only access Accessing Apigee Using the UI Using the API Get information about calls to your APIs Using gcloud Troubleshooting DEVELOP Tutorial: Building your first API proxy Overview Step 1: Create an API proxy Step 2: Deploy an API proxy Step 3: Call an API proxy Step 4: Change the target endpoint Step 5: Add a policy Next steps: Go deeper Tutorial: Creating an API proxy from an OpenAPI Specification Building API proxies Understanding APIs and API proxies Programmable proxy basics Introduction to API proxy building Creating an API proxy Editing an API proxy (create a revision) Downloading and uploading an API proxy configuration bundle Deleting an API proxy Environments and organizations Understanding organizations Overview of environments and environment groups Working with environments Working with environment groups Best practices Routes and flows Understanding routes Controlling API proxies with flows Conditional flows Flow variables Flow variable overview Request and response flow variables Message flow variable Conditions with flow variables Shared flows and flow hooks Creating reusable shared flows Attaching a shared flow using flow hooks Chaining API proxies together Handling faults Adding features to a programmable API proxy Using policies Tutorial: Adding the SpikeArrest policy What's a policy?
+- Version 1.14 keyboard_arrow_down Supported versions: v1.16 (latest) v1.15 v1.14 List of supported versions Unsupported versions: v1.13 v1.12 v1.11 v1.10 v1.9 v1.8 v1.7 v1.6 v1.5 v1.4 v1.3 v1.2 v1.1 This topic explains how to configure a new Apigee hybrid installation for data residency compliance.
+- Data residency meets compliance and regulatory requirements by allowing you to specify the geographic locations (regions) where Apigee data is stored.
+- Billing type : You can only use data residency with paid subscription orgs.
+
+### Apigee hybrid supported platforms and versions | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms](https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 218
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Apigee technical feature overview Apigee terminology API development lifecycle Key points of API proxy development Apigee architecture overview Apigee locations GET STARTED Introduction to provisioning Compare eval and paid organizations Provisioning options Prerequisites About Apigee provisioning permissions Networking options Introduction to data residency Introduction to CMEK Best practices for Apigee CMEK Using organization policy constraints Understand Apigee observability Provision paid orgs Before you begin Subscription Cloud console Select your project Provision Apigee with one click Configure and customize Step 1: Enable required APIs Step 2: Set up networking Step 3: Configure hosting and encryption Step 4: Customize access routing Recommended next steps Command line With VPC peering Without VPC peering Pay-as-you-go Cloud console Select your project Provision Apigee with one click Configure and customize Step 1: Enable required APIs Step 2: Set up networking Step 3: Configure hosting and encryption Step 4: Customize access routing Recommended next steps Command line With VPC peering Without VPC peering Provision eval orgs Before you begin Wizard Command line With VPC peering Without VPC peering Next steps Calling a proxy with internal-only access Accessing Apigee Using the UI Using the API Get information about calls to your APIs Using gcloud Troubleshooting DEVELOP Tutorial: Building your first API proxy Overview Step 1: Create an API proxy Step 2: Deploy an API proxy Step 3: Call an API proxy Step 4: Change the target endpoint Step 5: Add a policy Next steps: Go deeper Tutorial: Creating an API proxy from an OpenAPI Specification Building API proxies Understanding APIs and API proxies Programmable proxy basics Introduction to API proxy building Creating an API proxy Editing an API proxy (create a revision) Downloading and uploading an API proxy configuration bundle Deleting an API proxy Environments and organizations Understanding organizations Overview of environments and environment groups Working with environments Working with environment groups Best practices Routes and flows Understanding routes Controlling API proxies with flows Conditional flows Flow variables Flow variable overview Request and response flow variables Message flow variable Conditions with flow variables Shared flows and flow hooks Creating reusable shared flows Attaching a shared flow using flow hooks Chaining API proxies together Handling faults Adding features to a programmable API proxy Using policies Tutorial: Adding the SpikeArrest policy What's a policy?
+- Install Big picture Prerequisites Permissions and roles to install and manage Apigee hybrid Plan and prepare Minimal cluster configurations Configuring dedicated node pools Configuring Cassandra for production Configuring stateless components for production Configuring authentication for Cassandra StorageClass configuration Service account authentication methods in Apigee hybrid Configuring ports and setting up firewalls Using data residency with Apigee hybrid GCP URLs to allow for hybrid Part 1: Project and org setup Overview Step 1: Enable APIs Step 2: Create an organization Step 3: Create an environment group Part 2: Hybrid runtime setup Before you begin Step 1: Create a cluster Step 2: Download the Helm charts Step 3: Create the apigee namespace Step 4: Set up service accounts Step 5: Set up service account authentication Step 6: Create TLS certificates Step 7: Create the overrides Step 8: Enable Control Plane access Step 9: Install cert-manager Step 10: Install the CRDs Step 11: Install Apigee hybrid using Helm Part 3: Expose ingress and deploy proxy Step 1: Expose Apigee ingress Step 2: Deploy an API proxy Uninstall hybrid runtime Administer Administration overview Troubleshooting Automated issue surfacing Diagnosing issues with guardrails Data collection Data collection overview Where is your data stored?
+- Install Big picture Prerequisites Permissions and roles to install and manage Apigee hybrid Plan and prepare Minimal cluster configurations Configuring dedicated node pools Configuring Cassandra for production Configuring authentication for Cassandra StorageClass configuration Service account authentication methods in Apigee hybrid Configuring ports and setting up firewalls Using data residency with Apigee hybrid GCP URLs to allow for hybrid Part 1: Project and org setup Overview Step 1: Enable APIs Step 2: Create an organization Step 3: Create an environment group Part 2: Hybrid runtime setup Before you begin Step 1: Create a cluster Step 2: Download the Helm charts Step 3: Create the apigee namespace Step 4: Set up service accounts Step 5: Set up service account authentication Step 6: Create TLS certificates Step 7: Create the overrides Step 8: Enable Control Plane access Step 9: Install cert-manager Step 10: Install the CRDs Step 11: Install Apigee hybrid using Helm Part 3: Expose ingress and deploy proxy Step 1: Expose Apigee ingress Step 2: Deploy an API proxy Uninstall hybrid runtime Administer Administration overview Troubleshooting Automated issue surfacing Diagnosing issues with guardrails Data collection Data collection overview Where is your data stored?
+- Install Big picture Prerequisites Permissions and roles to install and manage Apigee hybrid Plan and prepare Minimal cluster configurations Configuring dedicated node pools Configuring Cassandra for production Configuring authentication for Cassandra StorageClass configuration Configuring ports and setting up firewalls Using data residency with Apigee hybrid GCP URLs to allow for hybrid Part 1: Project and org setup Overview Step 1: Enable APIs Step 2: Create an organization Step 3: Create an environment group Part 2: Hybrid runtime setup Before you begin Step 1: Create a cluster Step 2: Download the Helm charts Step 3: Create the apigee namespace Step 4: Set up service accounts Step 5: Create TLS certificates Step 6: Create the overrides Step 7: Enable Synchronizer access Step 8: Install cert-manager Step 9: Install the CRDs Step 10: Check cluster readiness Step 11: Install Apigee hybrid using Helm Step 12: Configure Workload Identity on GKE Part 3: Expose ingress and deploy proxy Step 1: Expose Apigee ingress Step 2: Deploy an API proxy Uninstall hybrid runtime Administer Administration overview Troubleshooting Automated issue surfacing Diagnosing issues with guardrails Data collection Data collection overview Where is your data stored?
 
 ### Introduction to data residency \_|\_ Apigee \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts](https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts)
 - Source ID: `site-docs-reference`
-- Final score: 68
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Data collectors are supported for Subscription and Pay-as-you-go organizations and hybrid versions 1.14.0 and later.
-- If you have a Google Cloud organization policy that uses a resource location constraint ( constraints/gcp.resourceLocations ), the constraint will apply to the following Apigee resources that are created when Apigee is provisioned: Control plane Consumer data Runtime Endpoints attachment Analytics If you are provisioning a new Apigee organization within a Google Cloud project with a resource location constraint applied, you must ensure that the location constraint is compatible with the control plane location specified for your Apigee organization: If you provision an Apigee organization without data residency, the resource location constraint in your Google Cloud organization policy must be set to global .
-- How to view the region If you have already provisioned your org ( PROJECT ID ) for use with data residency, you can use the getProjectMapping API to display the regions associated with a project: Authorize gcloud to access the Cloud Platform with your Google user credentials: gcloud auth login Call the API: curl -X GET https://apigee.googleapis.com/v1/organizations/ PROJECT ID :getProjectMapping \ -H "Authorization: Bearer $(gcloud auth print-access-token)" Where PROJECT ID is your Apigee organization name or Google Cloud project ID.
-- The admin who provisions Apigee must: Inform Apigee users, such as API developers and other admins, about the data residency configuration Set the location org policy as described in Restricting Resource Locations API developers, admins, or other users of Apigee management APIs must use the new data residency API service endpoint .
-
-### Apigee hybrid release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 66
+- Final score: 158
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- For information on container image support in Apigee hybrid releases, see the Apigee release process . v1.14.0 Announcement On April 14, 2025 we released an updated version of Apigee. v1.14.0 Feature Announcing data collectors data residency (DRZ) compliance for Apigee and Apigee hybrid.
-- March 25, 2025 v1.14.0 Announcement On March 25, 2025 we released an updated version of Advanced API Security. v1.14.0 Change New Advanced API Security support when using data residency (DRZ) with Apigee hybrid Advanced API Security is now available for Apigee hybrid orgs using DRZ, for hybrid versions 1.14.0 and later.
-- Data collectors can be used with data residency for Subscription and Pay-as-you-go organizations and hybrid versions 1.14.0 and later.
-- See Introduction to data residency for information on DRZ and Advanced API Security support across organization types.
-
-### UI overview \_|\_ Apigee \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview)
-- Source ID: `site-docs-reference`
-- Final score: 24
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following table maps each Apigee UI feature page to its current location in the Apigee UI: Feature Apigee UI Proxies Proxy development > API proxies Go to API proxies Sharedflows Proxy development > Sharedflows Go to Sharedflows Offline debug Proxy development > Offline debug Go to Offline debug API products Distribution > API products Go to API products Portals Distribution > Portals Go to Portals Monetization Distribution > Monetization Go to Monetization Developers Distribution > Developers Go to Developers Apps Distribution > Apps Go to Apps API monitoring Proxy development > API monitoring Go to API monitoring API metrics Analytics > API metrics Go to API metrics Developer Engagement Analytics > Developer analysis Go to Developer analysis Traffic Composition Analytics > Developer analysis Go to Developer analysis Devices Analytics > End user analysis Go to End user analysis Geomap Analytics > End user analysis Go to End user analysis Custom reports Analytics > Custom reports Go to Custom reports Instances Management > Instances Go to Instances Data collectors Management > Data collectors Go to Data collectors Environments Management > Environments Go to Environments Endpoint attachments Management > Endpoint attachments Go to Endpoint attachments Roles Identity and Access Management (IAM) > Roles Go to Roles Users IAM Go to IAM Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- If you choose to enable data residency when provisioning an Apigee Subscription or Pay-as-you-go organization, the following services are in scope under Apigee's FedRAMP Authority To Operate (ATO): The regionalized Apigee organization's control plane, runtime plane, and analytics .
+- Data residency for Apigee meets compliance and regulatory requirements by allowing you to specify the geographic locations (regions) where Apigee data is stored.
+- Data residency compatibility Data residency can be used with the following: Apigee organizations (Subscription or Pay-as-you-go) Apigee hybrid .
+- Data residency and FedRAMP compliance Apigee is authorized as a FedRAMP High service for organizations where data residency is enabled.
 

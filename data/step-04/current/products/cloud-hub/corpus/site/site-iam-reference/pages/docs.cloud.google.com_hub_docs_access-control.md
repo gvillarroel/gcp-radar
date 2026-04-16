@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/hub/docs/access-control
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/hub/docs/maintenance
+entrypoint: https://docs.cloud.google.com/hub/docs/security
 source_metadata:
   url: https://docs.cloud.google.com/hub/docs/access-control
   title: "Access control with IAM \_|\_ Cloud Hub \_|\_ Google Cloud Documentation"

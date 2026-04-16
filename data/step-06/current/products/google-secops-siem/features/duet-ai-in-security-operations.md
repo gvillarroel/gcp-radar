@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:56:14.479Z"
+generated_at: "2026-04-15T00:53:15.626Z"
 product_name: "Google SecOps SIEM"
 product_slug: "google-secops-siem"
 feature_name: "Duet AI in Security Operations"
 feature_slug: "duet-ai-in-security-operations"
 latest_feature_date: "2023-12-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini"
+  - "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+  - "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended"
+  - "https://docs.cloud.google.com/chronicle/docs/security-bulletins"
 keywords:
   - "duet"
   - "ai"
-  - "in"
   - "security"
   - "operations"
   - "can"
   - "translate"
   - "natural"
+  - "language"
 ---
 
 # Duet AI in Security Operations
 
 Product: Google SecOps SIEM
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,68 +38,53 @@ Duet AI in Security Operations can translate natural language into Chronicle's u
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs](https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini](https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini)
+- [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security)
+- [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended)
+- [https://docs.cloud.google.com/chronicle/docs/security-bulletins](https://docs.cloud.google.com/chronicle/docs/security-bulletins)
 
 ## Supporting Pages
 
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
+### "Google Unified Security \_|\_ Google Security Operations \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
+- URL: [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security)
 - Source ID: `site-api-reference`
-- Final score: 176
+- Final score: 138
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- December 13, 2023 Feature Duet AI in Security Operations The following Duet AI features are now available to Chronicle Security Operations customers: You can now use Duet AI to search your event data using natural language .
-- Duet AI can translate natural language into Chronicle's unified data model, letting you search your event data without having to know YARA-L to craft custom queries.
-- December 23, 2024 Announcement The following parser documentation is now available: Collect CrowdStrike Detection logs Collect Microsoft Azure AD Audit logs Collect Microsoft Azure AD Context logs Ingest Chrome Enterprise Premium data to Google Security Operations Collect Ansible AWX logs Collect Atlassian Bitbucket logs Collect Atlassian Jira logs Collect Auth0 logs Collect Azion firewall logs Collect Azure DevOps audit logs Collect GitHub audit logs Collect GitLab logs Collect Microsoft Defender for Cloud alert logs Collect Microsoft Graph activity logs Collect Microsoft Sentinel logs Collect Twingate VPN logs Collect Wordpress CMS logs Collect CrowdStrike IOC logs Collect Jenkins logs Collect Wazuh logs Collect OpenCanary logs Collect Synology logs Collect Palo Alto Networks IOC logs Collect Fastly WAF logs Collect MISP IOC logs Collect ntopng logs Collect Cloudflare logs Collect Palo Alto Prisma Cloud alert logs Collect ServiceNow Security logs Collect Akamai WAF logs Collect Aqua Security logs Collect Cohesity logs Collect Datadog logs Collect Lacework Cloud Security logs Collect Netskope alert logs v1 Collect Netskope alert logs v2 Collect Nutanix Prism logs Collect Salesforce logs Collect Trend Micro Cloud One logs Collect VMware ESXi logs Collect WatchGuard Fireware logs December 22, 2024 Change This release note has been updated.
-- March 26, 2024 Announcement Gemini in Security Operations Duet AI in Google Cloud is now Gemini for Google Cloud.
+- Real-time insights from Gemini AI enhances threat detection and streamlines security operations, empowering organizations to shift from reactive to preemptive security and stay two steps ahead of increasingly sophisticated attackers The key components of Google Unified Security are: Modern Security Operations : Detect, investigate, and respond to threats at Google speed and scale Threat intelligence and exposure management : Know who is targeting you and where you are exposed.
+- SIEM Log Searching and Investigation : During a CDIR investigation, or on an ad-hoc basis, analysts can use either natural language syntax, Yara-L syntax, or raw log searching to surface information in various logs ingested into Google SecOps related to cloud infrastructure and services.
+- By integrating Google's leading threat intelligence, security operations, cloud security, secure enterprise browsing, and Mandiant expertise, Google Unified Security creates a scalable security solution running on a planet-scale security fabric to secure your organization.
+- Streamline SOC Operations with Security Command Center and Google SecOps Google Unified Security includes Google Security Command Center Enterprise with the latest AI Protection suite.
 
-### "Ingest Google Cloud data \_|\_ Google Security Operations \_|\_ Google Cloud\
+### "Google Unified Security Recommended \_|\_ Google Security Operations \_\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs](https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs)
+- URL: [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended)
 - Source ID: `site-api-reference`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 122
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Control the rate of ingestion When the data ingestion rate for a tenant reaches a certain threshold, Google Security Operations restricts the rate of ingestion for new data feeds to prevent a source with a high ingestion rate from affecting the ingestion rate of another data source.
-- To learn how to filter out logs that are generated by routine activities, see Tune Cloud Audit Logs filters . log id("cloudaudit.googleapis.com/activity") (exported by the default filter) log id("cloudaudit.googleapis.com/system event") (exported by the default filter) log id("cloudaudit.googleapis.com/policy") log id("cloudaudit.googleapis.com/access transparency") Cloud NAT logs ( GCP CLOUD NAT ): log id("compute.googleapis.com/nat flows") Cloud DNS logs ( GCP DNS ): log id("dns.googleapis.com/dns queries") (exported by the default filter) Firewall policy rules logging ( GCP FIREWALL ): log id("compute.googleapis.com/firewall") GCP IDS : log id("ids.googleapis.com/threat") log id("ids.googleapis.com/traffic") GCP LOADBALANCING : This includes logs from Google Cloud Armor and Cloud Load Balancing (both External and Internal). log id("requests") log id("loadbalancing.googleapis.com/requests") GCP CLOUDSQL : log id("cloudsql.googleapis.com/mysql-general.log") log id("cloudsql.googleapis.com/mysql.err") log id("cloudsql.googleapis.com/postgres.log") log id("cloudsql.googleapis.com/sqlagent.out") log id("cloudsql.googleapis.com/sqlserver.err") GCP VPC FLOW : log id("compute.googleapis.com/vpc flows") (for US and EU regions only) NIX SYSTEM : log id("syslog") log id("authlog") log id("securelog") log id("osconfig.googleapis.com/patch job") LINUX SYSMON : log id("sysmon.raw") WINEVTLOG : log id("winevt.raw") log id("windows event log") BRO JSON : log id("zeek json streaming conn") log id("zeek json streaming dhcp") log id("zeek json streaming dns") log id("zeek json streaming http") log id("zeek json streaming ssh") log id("zeek json streaming ssl") KUBERNETES NODE : log id("events") log id("stdout") log id("stderr") AUDITD : log id("audit log") GCP APIGEE X : log id("apigee.googleapis.com/ingress instance") log id("apigee.googleapis.com") log id("apigee-logs") log id("apigee") logName = "^projects/[\w\-]+/logs/apigee[\w\-\.] $" GCP RECAPTCHA ENTERPRISE : log id("recaptchaenterprise.googleapis.com/assessment") log id("recaptchaenterprise.googleapis.com/annotation") GCP RUN : log id("run.googleapis.com/stderr") log id("run.googleapis.com/stdout") log id("run.googleapis.com/requests") log id("run.googleapis.com/varlog/system") GCP NGFW ENTERPRISE : log id("networksecurity.googleapis.com/firewall threat") GCP ABUSE EVENTS : log id("abuseevent.googleapis.com/abuse events") GCP DNS ATD log id("networksecurity.googleapis.com/dns threat events") Model Armor logs ( GCP MODEL ARMOR ): This includes logs for sanitization operations (screening prompts and responses) and template operations (creation, updates). log id("modelarmor.googleapis.com/sanitize operations") log id("modelarmor.googleapis.com/templates") Customize export filter settings By default, your Cloud Audit Logs (Admin Activity and System Event) and Cloud DNS logs are sent to your Google SecOps instance.
-- To grant the Chronicle Service Viewer IAM role using gcloud , run the following command: gcloud organizations add-iam-policy-binding ORGANIZATION ID \ --member "user: USER EMAIL " \ --role roles/chroniclesm.viewer To grant the Security Center Admin Editor IAM role using gcloud , run the following command: gcloud organizations add-iam-policy-binding ORGANIZATION ID \ --member "user: USER EMAIL " \ --role roles/securitycenter.adminEditor ` To grant the Organization Role Viewer IAM role using gcloud , run the following command: gcloud organizations add-iam-policy-binding ORGANIZATION ID \ --member "user: USER EMAIL " \ --role roles/iam.organizationRoleViewer Enable direct ingestion from Google Cloud The steps to enable direct ingestion from Google Cloud are different depending on the ownership of the project that your Google SecOps instance is bound to.
-- Export filter examples The following export filter examples illustrate how you can include or exclude certain types of logs from the export to your Google SecOps instance.
+- Google Unified Security Recommended Solution Overview with Wiz Foundational requirements Each Google Unified Security Recommended product must demonstrate comprehensive integrations with the following specified Google Cloud security products to ensure seamless data flow, enhanced threat detection, and effective response mechanisms: Google SecOps requirements Chrome Enterprise Premium requirements Security Command Center requirements Google Threat Intelligence requirements Mandiant services collaboration requirements Google SecOps requirements The following table describes the Google Unified Security Recommended requirements for Google-partner products to integrate with Google SecOps to facilitate mature security operations and incident response.
+- This document is intended both for Google Security Operations customers who want to learn about Google Unified Security Recommended products and for security technology providers interested in joining the Google Unified Security Recommended program.
+- Home Documentation Security Google Security Operations Resources Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Chrome Enterprise Premium requirements To enable enhanced security for enterprise browsing and devices, when applicable, the partner product must offer at least one integration from the following Chrome Enterprise Premium (CEP) categories: Chrome Enterprise Premium integration category Description ZTA integrations Zero Trust Access (ZTA) integrations to enforce granular access policies.
 
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
+### Security bulletins \_|\_ Google Security Operations \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
+- URL: [https://docs.cloud.google.com/chronicle/docs/security-bulletins](https://docs.cloud.google.com/chronicle/docs/security-bulletins)
 - Source ID: `site-api-reference`
-- Final score: 168
+- Final score: 118
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- December 13, 2023 Feature Duet AI in Security Operations You can now use Duet AI to search your event data using natural language .
-- Duet AI can translate natural language into Chronicle's unified data model, letting you search your event data without having to know YARA-L to craft custom queries.
-- December 23, 2024 Announcement The following parser documentation is now available: Collect CrowdStrike Detection logs Collect Microsoft Azure AD Audit logs Collect Microsoft Azure AD Context logs Ingest Chrome Enterprise Premium data to Google Security Operations Collect Ansible AWX logs Collect Atlassian Bitbucket logs Collect Atlassian Jira logs Collect Auth0 logs Collect Azion firewall logs Collect Azure DevOps audit logs Collect GitHub audit logs Collect GitLab logs Collect Microsoft Defender for Cloud alert logs Collect Microsoft Graph activity logs Collect Microsoft Sentinel logs Collect Twingate VPN logs Collect Wordpress CMS logs Collect CrowdStrike IOC logs Collect Jenkins logs Collect Wazuh logs Collect OpenCanary logs Collect Synology logs Collect Palo Alto Networks IOC logs Collect Fastly WAF logs Collect MISP IOC logs Collect ntopng logs Collect Cloudflare logs Collect Palo Alto Prisma Cloud alert logs Collect ServiceNow Security logs Collect Akamai WAF logs Collect Aqua Security logs Collect Cohesity logs Collect Datadog logs Collect Lacework Cloud Security logs Collect Netskope alert logs v1 Collect Netskope alert logs v2 Collect Nutanix Prism logs Collect Salesforce logs Collect Trend Micro Cloud One logs Collect VMware ESXi logs Collect WatchGuard Fireware logs December 22, 2024 Change This release note has been updated.
-- A10 Load Balancer ( A10 LOAD BALANCER ) AIX system ( AIX SYSTEM ) Akamai Cloud Monitor ( AKAMAI CLOUD MONITOR ) AlgoSec Security Management ( ALGOSEC ) Amazon API Gateway ( AWS API GATEWAY ) Apache ( APACHE ) Apple macOS ( MACOS ) AppOmni ( APPOMNI ) Arcsight CEF ( ARCSIGHT CEF ) Arista Switch ( ARISTA SWITCH ) Aruba ( ARUBA WIRELESS ) Aruba Airwave ( ARUBA AIRWAVE ) Aruba EdgeConnect SD-WAN ( ARUBA EDGECONNECT SDWAN ) Aruba Switch ( ARUBA SWITCH ) Attivo Networks ( ATTIVO ) Auth0 ( AUTH ZERO ) Automation Anywhere ( AUTOMATION ANYWHERE ) Avanan Email Security ( AVANAN EMAIL ) AWS Aurora ( AWS AURORA ) AWS Cloudtrail ( AWS CLOUDTRAIL ) AWS CloudWatch ( AWS CLOUDWATCH ) AWS Elastic Load Balancer ( AWS ELB ) AWS GuardDuty ( GUARDDUTY ) AWS RDS ( AWS RDS ) AWS Security Hub ( AWS SECURITY HUB ) AWS WAF ( AWS WAF ) Azure AD ( AZURE AD ) Azure AD Directory Audit ( AZURE AD AUDIT ) Azure AD Sign-In ( AZURE AD SIGNIN ) Azure Front Door ( AZURE FRONT DOOR ) Barracuda Email ( BARRACUDA EMAIL ) Barracuda WAF ( BARRACUDA WAF ) BeyondTrust ( BOMGAR ) BeyondTrust BeyondInsight ( BEYONDTRUST BEYONDINSIGHT ) BeyondTrust Endpoint Privilege Management ( BEYONDTRUST ENDPOINT ) BeyondTrust Secure Remote Access ( BEYONDTRUST REMOTE ACCESS ) BIND ( BIND DNS ) Bindplane Agent ( BINDPLANE AGENT ) Blue Coat Proxy ( BLUECOAT WEBPROXY ) Box ( BOX ) Carbon Black ( CB EDR ) Cato Networks ( CATO NETWORKS ) Check Point ( CHECKPOINT FIREWALL ) CipherTrust Manager ( CIPHERTRUST MANAGER ) Cisco Application Centric Infrastructure ( CISCO ACI ) Cisco ASA ( CISCO ASA FIREWALL ) Cisco Email Security ( CISCO EMAIL SECURITY ) Cisco Firepower NGFW ( CISCO FIREPOWER FIREWALL ) Cisco Internetwork Operating System ( CISCO IOS ) Cisco ISE ( CISCO ISE ) Cisco Meraki ( CISCO MERAKI ) Cisco PIX Firewall ( CISCO PIX FIREWALL ) Cisco Router ( CISCO ROUTER ) Cisco Stealthwatch ( CISCO STEALTHWATCH ) Cisco Switch ( CISCO SWITCH ) Cisco Umbrella Audit ( CISCO UMBRELLA AUDIT ) Cisco Umbrella DNS ( UMBRELLA DNS ) Cisco vManage SD-WAN ( CISCO SDWAN ) Cisco WLC/WCS ( CISCO WIRELESS ) Cisco WSA ( CISCO WSA ) Citrix Netscaler ( CITRIX NETSCALER ) Claroty Continuous Threat Detection ( CLAROTY CTD ) Claroty Xdome ( CLAROTY XDOME ) Cloud SQL ( GCP CLOUDSQL ) Cloudflare ( CLOUDFLARE ) Cloudflare Audit ( CLOUDFLARE AUDIT ) Compute Engine ( GCP COMPUTE ) Corelight ( CORELIGHT ) CrowdStrike Alerts API ( CS ALERTS ) CrowdStrike Detection Monitoring ( CS DETECTS ) CrowdStrike Falcon ( CS EDR ) CrowdStrike Falcon Stream ( CS STREAM ) CyberArk ( CYBERARK ) CyberArk Endpoint Privilege Manager (EPM) ( CYBERARK EPM ) CyberArk Privileged Access Manager (PAM) ( CYBERARK PAM ) Cyolo Secure Remote Access for OT ( CYOLO OT ) Darktrace ( DARKTRACE ) Delinea Secret Server ( DELINEA SECRET SERVER ) Dell ECS Enterprise Object Storage ( DELL ECS ) Dell Switch ( DELL SWITCH ) Duo Auth ( DUO AUTH ) ExtraHop RevealX ( EXTRAHOP ) Extreme Wireless ( EXTREME WIRELESS ) F5 Advanced Firewall Management ( F5 AFM ) F5 ASM ( F5 ASM ) F5 BIGIP Access Policy Manager ( F5 BIGIP APM ) F5 BIGIP LTM ( F5 BIGIP LTM ) F5 Distributed Cloud Services ( F5 DCS ) Fastly CDN ( FASTLY CDN ) FireEye ETP ( FIREEYE ETP ) FireEye NX ( FIREEYE NX ) Forcepoint Email Security ( FORCEPOINT EMAILSECURITY ) Forescout eyeInspect ( FORESCOUT EYEINSPECT ) FortiGate ( FORTINET FIREWALL ) Fortinet FortiAnalyzer ( FORTINET FORTIANALYZER ) Fortinet Fortimanager ( FORTINET FORTIMANAGER ) Fortinet Web Application Firewall ( FORTINET FORTIWEB ) GCP APP ENGINE ( GCP APP ENGINE ) GCP MODEL ARMOR ( GCP MODEL ARMOR ) GitHub ( GITHUB ) GitHub Dependabot ( GITHUB DEPENDABOT ) Google Cloud Audit ( GCP CLOUDAUDIT ) Google Threat Intelligence ( GCP THREATINTEL ) H3C Comware Platform Switch ( H3C SWITCH ) Hashicorp Vault ( HASHICORP ) HP Aruba (ClearPass) ( CLEARPASS ) Huawei Switches ( HUAWEI SWITCH ) IBM DataPower Gateway ( IBM DATAPOWER ) IBM DB2 ( DB2 DB ) Illumio Core ( ILLUMIO CORE ) Imperva ( IMPERVA WAF ) Imperva DRA ( IMPERVA DRA ) Island Browser logs ( ISLAND BROWSER ) Jamf pro context ( JAMF PRO CONTEXT ) JumpCloud Directory Insights ( JUMPCLOUD DIRECTORY INSIGHTS ) Juniper MX Router ( JUNIPER MX ) Keycloak ( KEYCLOAK ) KnowBe4 PhishER ( KNOWBE4 PHISHER ) Kolide Endpoint Security ( KOLIDE ) Kubernetes Node ( KUBERNETES NODE ) Linux Auditing System (AuditD) ( AUDITD ) McAfee DLP ( MCAFEE DLP ) McAfee ePolicy Orchestrator ( MCAFEE EPO ) McAfee Web Gateway ( MCAFEE WEBPROXY ) Microsoft AD FS ( ADFS ) Microsoft Defender For Cloud ( MICROSOFT DEFENDER CLOUD ALERTS ) Microsoft Defender for Endpoint ( MICROSOFT DEFENDER ENDPOINT ) Microsoft Graph API Alerts ( MICROSOFT GRAPH ALERT ) Microsoft IIS ( IIS ) Microsoft Intune ( AZURE MDM INTUNE ) Microsoft PowerShell ( POWERSHELL ) Microsoft SQL Server ( MICROSOFT SQL ) Mimecast Mail V2 ( MIMECAST MAIL V2 ) MISP Threat Intelligence ( MISP IOC ) Mobileiron ( MOBILEIRON ) MySQL ( MYSQL ) NetApp ONTAP ( NETAPP ONTAP ) Netfilter IPtables ( NETFILTER IPTABLES ) NetIQ Access Manager ( NETIQ ACCESS MANAGER ) Netskope V2 ( NETSKOPE ALERT V2 ) Netskope Web Proxy ( NETSKOPE WEBPROXY ) Network Policy Server ( MICROSOFT NPS ) NGINX ( NGINX ) Nozomi Networks Scada Guardian ( NOZOMI GUARDIAN ) Nutanix Prism ( NUTANIX PRISM ) Obsidian ( OBSIDIAN ) Office 365 ( OFFICE 365 ) Okta ( OKTA ) Onapsis ( ONAPSIS ) One Identity TPAM ( ONEIDENTITY TPAM ) OneLogin ( ONELOGIN SSO ) Open Cybersecurity Schema Framework (OCSF) ( OCSF ) Oracle ( ORACLE DB ) Palo Alto Networks Firewall ( PAN FIREWALL ) Palo Alto Panorama ( PAN PANORAMA ) Ping Identity ( PING ) PostFix Mail ( POSTFIX MAIL ) PostgreSQL ( POSTGRESQL ) Proofpoint CASB ( PROOFPOINT CASB ) Proofpoint Email Filter ( PROOFPOINT MAIL FILTER ) Proofpoint On Demand ( PROOFPOINT ON DEMAND ) Proofpoint Tap Alerts ( PROOFPOINT MAIL ) Pulse Secure ( PULSE SECURE VPN ) QNAP Systems NAS ( QNAP NAS ) Radware Web Application Firewall ( RADWARE FIREWALL ) Recorded Future ( RECORDED FUTURE IOC ) Red Hat OpenShift ( REDHAT OPENSHIFT ) Salesforce ( SALESFORCE ) SAP Sybase Adaptive Server Enterprise Database ( SAP ASE ) Security Command Center Chokepoint ( GCP SECURITYCENTER CHOKEPOINT ) Security Command Center Posture Violation ( GCP SECURITYCENTER POSTURE VIOLATION ) Security Command Center Threat ( GCP SECURITYCENTER THREAT ) Security Command Center Toxic Combination ( GCP SECURITYCENTER TOXIC COMBINATION ) ServiceNow Audit ( SERVICENOW AUDIT ) Snare System Diagnostic Logs ( SNARE SOLUTIONS ) Snyk Group level audit/issues logs ( SNYK ISSUES ) Solaris system ( SOLARIS SYSTEM ) Sophos Central ( SOPHOS CENTRAL ) STIX Threat Intelligence ( STIX ) Stormshield Firewall ( STORMSHIELD FIREWALL ) Sublime Security ( SUBLIMESECURITY ) Suricata EVE ( SURICATA EVE ) Swift Alliance Messaging Hub ( SWIFT AMH ) Symantec DLP ( SYMANTEC DLP ) Symantec Endpoint Protection ( SEP ) Symantec Messaging Gateway ( SYMANTEC MAIL ) Tableau ( TABLEAU ) TCPWave DDI ( TCPWAVE DDI ) TeamViewer ( TEAMVIEWER ) Tenable Active Directory Security ( TENABLE ADS ) Tenable OT ( TENABLE OT ) Tenable.io ( TENABLE IO ) Thinkst Canary ( THINKST CANARY ) ThreatConnect IOC V3 ( THREATCONNECT IOC V3 ) Trellix HX Event Streamer ( TRELLIX HX ES ) Trend Micro ( TIPPING POINT ) Trend Micro Vision One ( TRENDMICRO VISION ONE ) Trend Micro Vision One Workbench ( TRENDMICRO VISION ONE WORKBENCH ) TrendMicro Deep Discovery Inspector ( TRENDMICRO DDI ) TXOne Stellar ( TRENDMICRO STELLAR ) Unifi AP ( UNIFI AP ) Unix system ( NIX SYSTEM ) Vectra Detect ( VECTRA DETECT ) Vectra XDR ( VECTRA XDR ) Veritas NetBackup ( VERITAS NETBACKUP ) Versa Firewall ( VERSA FIREWALL ) VMware ESXi ( VMWARE ESX ) VMware NSX ( VMWARE NSX ) VMware vCenter ( VMWARE VCENTER ) WatchGuard ( WATCHGUARD ) Windows DNS ( WINDOWS DNS ) Windows Event ( WINEVTLOG ) Windows Event (XML) ( WINEVTLOG XML ) Wiz.io ( WIZ IO ) Workday Audit Logs ( WORKDAY AUDIT ) Workspace Activities ( WORKSPACE ACTIVITY ) Workspace Alerts ( WORKSPACE ALERTS ) Zimperium ( ZIMPERIUM ) Zscaler ( ZSCALER WEBPROXY ) Zscaler CASB ( ZSCALER CASB ) Zscaler DLP ( ZSCALER DLP ) ZScaler DNS ( ZSCALER DNS ) Zscaler Internet Access Audit Logs ( ZSCALER INTERNET ACCESS ) ZScaler NGFW ( ZSCALER FIREWALL ) Zscaler Private Access ( ZSCALER ZPA ) Zscaler Secure Private Access Audit Logs ( ZSCALER ZPA AUDIT ) Zscaler Tunnel ( ZSCALER TUNNEL ) Zywall ( ZYWALL ) The following log types were added without a default parser.
-
-### "Answer Threat Intelligence questions with Gemini \_|\_ Google Security Operations\
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini](https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini)
-- Source ID: `site-docs-root`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- You can ask Gemini questions about MITRE tactics, techniques, and procedures (TTPs), and receive contextually relevant answers that include the following MITRE details: Tactic Technique Sub-technique Detection suggestions Procedures Mitigations Gemini returns a link to the curated detections Google SecOps makes available for each TTP.
-- Links are provided to any rule sets that might be available for monitoring the type of security issue you entered into Gemini.
-- You can also ask Gemini follow up questions to gain additional insight on a MITRE TTP and how it might impact your enterprise.
-- Provide feedback You can provide feedback to responses generated by the Gemini AI investigation assistance.
+- GCP-2025-075 Published: 2025-12-07 Description Description Severity Notes A vulnerability in the custom integrations feature of Google Security Operations SOAR could let an authenticated user with an IDE role to achieve Remote Code Execution (RCE) on the server.
+- High CVE-2025-13428 GCP-2025-049 Published: 2025-09-04 Description Description Severity Notes A critical vulnerability was found in Google Security Operations SOAR versions 6.3.54.0 and 6.3.53.2.
+- Home Documentation Security Google Security Operations Resources Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- This page provides all security bulletins related to Google Security Operations.
 

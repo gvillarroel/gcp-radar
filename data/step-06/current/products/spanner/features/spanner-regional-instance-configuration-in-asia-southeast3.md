@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.835Z"
+generated_at: "2026-04-13T22:42:27.161Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner regional instance configuration in asia-southeast3"
@@ -9,18 +9,16 @@ latest_feature_date: "2026-01-20"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/instances"
-  - "https://docs.cloud.google.com/spanner/docs/rpc-endpoints"
-  - "https://docs.cloud.google.com/spanner/docs/reference/libraries"
+  - "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+  - "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum"
+  - "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview"
 keywords:
-  - "spanner"
+  - "southeast3"
+  - "configuration"
+  - "asia"
   - "regional"
   - "instance"
-  - "configuration"
-  - "in"
-  - "asia"
-  - "southeast3"
-  - "now"
+  - "supports"
 ---
 
 # Spanner regional instance configuration in asia-southeast3
@@ -38,44 +36,52 @@ Spanner now supports creating regional instance configurations in the Bangkok, T
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
-- [https://docs.cloud.google.com/spanner/docs/rpc-endpoints](https://docs.cloud.google.com/spanner/docs/rpc-endpoints)
-- [https://docs.cloud.google.com/spanner/docs/reference/libraries](https://docs.cloud.google.com/spanner/docs/reference/libraries)
+- [https://docs.cloud.google.com/spanner/docs/free-trial-quickstart](https://docs.cloud.google.com/spanner/docs/free-trial-quickstart)
+- [https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum](https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum)
+- [https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview](https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview)
 
 ## Supporting Pages
 
-### Instances overview | Spanner | Google Cloud Documentation
+### "Create a Spanner free trial instance and sample application \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
+- URL: [https://docs.cloud.google.com/spanner/docs/free-trial-quickstart](https://docs.cloud.google.com/spanner/docs/free-trial-quickstart)
 - Source ID: `site-docs-root`
-- Final score: 127
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Instances overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/instances Once an instance is created, you can list, edit, or delete it.
-- Spanner is a fully managed database service which oversees its own underlying tasks and resources, including monitoring and restarting processes when necessary with zero downtime.
+- For example, to create a free trial instance named trial-instance with the display name Trial Instance using the regional instance configuration regional-us-east5 , run the following: gcloud spanner instances create trial - instance -- config = regional - us - east5 \ -- instance - type = free - instance -- description = "Trial Instance" Note: Use the instance ID, not the display name, when referring to an instance in gcloud CLI commands.
+- You can create a free trial instance in any of the Spanner regional instance configurations : INSTANCE DESCRIPTION : the name to display for the instance in the Google Cloud console.
+- For a full list of all available instance configurations, see Regional, dual-region, and multi-region configurations .
+- You can create a free trial instance in any of the Spanner regional instance configurations .
 
-### Global and regional service endpoints | Spanner | Google Cloud Documentation
+### Disaster recovery overview \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/spanner/docs/rpc-endpoints](https://docs.cloud.google.com/spanner/docs/rpc-endpoints)
+- URL: [https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview](https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview)
 - Source ID: `site-docs-root`
-- Final score: 103
+- Final score: 101
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Global and regional service endpoints Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/rpc-endpoints This page describes Spanner RPC global and regional endpoints.
+- Disaster recovery techniques Spanner offers disaster recovery techniques to protect your data against the following disasters: Zonal failure : Spanner regional configuration provides automatic protection against zonal failures, ensuring that if one zone within a region fails, your application remains operational.
+- Spanner offers the following features to help ensure high data availability: Multi-regional configurations : Spanner can maintain replicas of your data in separate zones within a single region or multiple regions to ensure data availability even if a zone or region fails.
+- Regional failure : If your application requires even higher data availability and protection against regional failures, use multi-region configurations that offer 99.999% availability.
+- The instance that you are restoring to should have the same instance configuration as the instance where the backup is stored.
 
-### Spanner client libraries | Google Cloud Documentation
+### Change dual-region quorum \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/libraries](https://docs.cloud.google.com/spanner/docs/reference/libraries)
-- Source ID: `site-docs-reference`
-- Final score: 90
+- URL: [https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum](https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum)
+- Source ID: `site-docs-root`
+- Final score: 100
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Spanner client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/libraries Imports the Google Cloud client library require &quot;google/cloud/spanner&quot; # Your Google Cloud Platform project ID project id = &quot;YOUR PROJECT ID&quot; # Instantiates a client spanner = Google::Cloud::Spanner.new project: project id # Your Cloud Spanner instance ID instance id = &quot;my-instance&quot; # Your Cloud Spanner database ID database id = &quot;my-database&quot; # Gets a reference to a Cloud Spanner instance database database client = spanner.client instance id, database id # Execute a simple SQL statement results = database client.execute query &quot;SELECT 1&quot; results.rows.each do row puts row end
+- SERVING LOCATION : The regional instance configuration to which you want to failover.
+- Change the dual-region quorum from dual-region to single region (failover) To failover manually if there is a regional outage or a network partitioning issue: Google Cloud console Go to the Spanner Instances page in the Google Cloud console.
+- The quorumInfo field provides information about the operation. gcloud spanner databases describe DATABASE ID --instance= INSTANCE ID What's next Learn more about Dual-region instance configurations .
+- Use the System insights dashboard After you create a dual-region configuration, you can view the Dual-region quorum health timeline metric on the Instance-level System insights dashboard.
 

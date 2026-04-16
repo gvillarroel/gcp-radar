@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:47.760Z"
+generated_at: "2026-04-12T12:11:18.945Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Gemini Cloud Assist investigations for failed Airflow tasks"
 feature_slug: "gemini-cloud-assist-investigations-for-failed-airflow-tasks"
 latest_feature_date: "2025-11-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/group-tasks-inside-dags"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/latest/view-dags"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
 keywords:
   - "gemini"
   - "assist"
@@ -26,7 +27,7 @@ keywords:
 # Gemini Cloud Assist investigations for failed Airflow tasks
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +39,62 @@ Cloud Composer now supports starting Gemini Cloud Assist investigations for fail
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/group-tasks-inside-dags](https://docs.cloud.google.com/composer/docs/composer-1/group-tasks-inside-dags)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/latest/view-dags](https://docs.cloud.google.com/composer/docs/latest/view-dags)
+- [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 
 ## Supporting Pages
+
+### Group tasks inside DAGs \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/group-tasks-inside-dags](https://docs.cloud.google.com/composer/docs/composer-1/group-tasks-inside-dags)
+- Source ID: `site-iam-reference`
+- Final score: 178
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The implementation of the child DAG, which is triggered by the controlling DAG, looks like the following: Airflow 2 from airflow import DAG from airflow.operators.dummy import DummyOperator from airflow.utils.dates import days ago DAG NAME = "dag-to-trigger" args = { "owner" : "airflow" , "start date" : days ago ( 1 ), "schedule interval" : "None" } with DAG ( dag id = DAG NAME , default args = args ) as dag : dag task = DummyOperator ( task id = "dag-task" ) Airflow 1 from airflow import DAG from airflow.operators.dummy operator import DummyOperator from airflow.utils.dates import days ago DAG NAME = "dag-to-trigger" args = { "owner" : "airflow" , "start date" : days ago ( 1 ), "schedule interval" : "None" } with DAG ( dag id = DAG NAME , default args = args ) as dag : dag task = DummyOperator ( task id = "dag-task" ) You must upload both DAG files in your Cloud Composer environment for the DAG to work.
+- Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 This page describes how you can group tasks in your Airflow pipelines using the following design patterns: Grouping tasks in the DAG graph.
+- Despite being a common design pattern for grouping tasks together, SubDAGs often cause performance and functional issues, and is deprecated in Airflow.
+- The controlling DAG file looks like the following: Airflow 2 from airflow import DAG from airflow.operators.dummy import DummyOperator from airflow.operators.trigger dagrun import TriggerDagRunOperator from airflow.utils.dates import days ago with DAG ( dag id = "controller dag to trigger other dags" , default args = { "owner" : "airflow" }, start date = days ago ( 1 ), schedule interval = "@once" , ) as dag : start = DummyOperator ( task id = "start" ) trigger 1 = TriggerDagRunOperator ( task id = "dag 1" , trigger dag id = "dag-to-trigger" , # Ensure this equals the dag id of the DAG to trigger conf = { "message" : "Hello World" }, ) trigger 2 = TriggerDagRunOperator ( task id = "dag 2" , trigger dag id = "dag-to-trigger" , # Ensure this equals the dag id of the DAG to trigger conf = { "message" : "Hello World" }, ) some other task = DummyOperator ( task id = "some-other-task" ) end = DummyOperator ( task id = "end" ) start >> trigger 1 >> some other task >> trigger 2 >> end Airflow 1 from airflow import DAG from airflow.operators.dagrun operator import TriggerDagRunOperator from airflow.operators.dummy operator import DummyOperator from airflow.utils.dates import days ago with DAG ( dag id = "controller dag to trigger other dags" , default args = { "owner" : "airflow" }, start date = days ago ( 1 ), schedule interval = "@once" , ) as dag : start = DummyOperator ( task id = "start" ) trigger 1 = TriggerDagRunOperator ( task id = "dag 1" , trigger dag id = "dag-to-trigger" , # Ensure this equals the dag id of the DAG to trigger conf = { "message" : "Hello World" }, ) trigger 2 = TriggerDagRunOperator ( task id = "dag 2" , trigger dag id = "dag-to-trigger" , # Ensure this equals the dag id of the DAG to trigger conf = { "message" : "Hello World" }, ) some other task = DummyOperator ( task id = "some-other-task" ) end = DummyOperator ( task id = "end" ) start >> trigger 1 >> some other task >> trigger 2 >> end Note: The value for trigger dag id inside TriggerDagRunOperator must match the dag id value of the DAG you want to trigger.
+
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 175
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Logs for Airflow tasks aren't collected if [core]execute tasks new python interpreter is set to True Cloud Composer doesn't collect logs for Airflow tasks if the [core]execute tasks new python interpreter Airflow configuration option is set to True .
+- Airflow 1.9.0 stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06/1.log Airflow 1.10.x stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log As a result, if you upgrade from Airflow 1.9.0 to Airflow 1.10.x and would like to read the log for a task executed with Airflow 1.9.0, the Airflow Web server will show the following error message: Unable to read remote log from BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Workaround: Rename the logs generated by Airflow 1.9.0 in the Cloud Storage bucket using the format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Cannot create Cloud Composer environments with the organization policy constraints/compute.disableSerialPortLogging enforced Cloud Composer environment creation fails if the constraints/compute.disableSerialPortLogging organization policy is enforced on the target project.
+- Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
+- The command-line interface is the recommended approach for deleting the connection: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ connections delete -- \ CONNECTION ID After deleting the connection, recreate it using the Airflow UI , ensuring that the fields you intend to leave empty are indeed left blank.
+
+### View DAGs, DAG runs, and tasks \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/view-dags](https://docs.cloud.google.com/composer/docs/latest/view-dags)
+- Source ID: `site-docs-root`
+- Final score: 173
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can follow the link in the Run ID column to get additional information about tasks. gcloud Run the dags list-runs Airflow CLI command: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ dags list-runs -- -d DAG ID Replace: ENVIRONMENT NAME with the name of the environment.
+- In the Airflow UI, on the DAGs page, a list of DAGs for your environment is displayed. gcloud Run the dags list Airflow CLI command: gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ dags list -- -o plain Replace: ENVIRONMENT NAME with the name of the environment.
+- Ways to view information about DAGs Cloud Composer provides several ways to get detailed information about DAGs in your environment: DAG UI is a section of Google Cloud console interface for Cloud Composer dedicated to viewing and monitoring DAGs, DAG runs, and individual tasks.
+- About Cloud Composer DAG UI DAG UI is a section of Google Cloud console interface for Cloud Composer dedicated to viewing and monitoring DAGs, DAG runs, and individual tasks.
 
 ### "Cross-project environment monitoring with Terraform \_|\_ Cloud Composer\
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 146
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -60,31 +102,4 @@ Evidence snippets:
 - The dashboard then displays a project name and resource: In case a metric exceeds a predefined threshold, an incident is raised and a respective alert is shown in a chart corresponding to this metric: List of monitored metrics A complete list of monitored metrics: Cloud Composer environment health (based on Monitoring DAG) Database health Web Server Health Scheduler Heartbeats CPU and Memory utilization for all Workers CPU and Memory utilization for the Airflow database CPU and Memory utilization for the Web Server (only available in Cloud Composer 2) CPU and Memory utilization for Airflow Schedulers Proportion of Queued, Scheduled, Queued or Scheduled tasks in an environment (useful to spot Airflow concurrency configuration issues) DAG Parsing time Current versus minimal number of Workers - useful to understand Worker stability issues or scaling problems Worker Pod evictions Number of errors thrown in Logs by Workers, Schedulers, Web Server or other components (individual charts) Note: You don't need to modify the dashboard when Cloud Composer environments are added or removed as long as the list of monitored projects stays the same.
 - Make corrections if necessary. terraform plan Apply the Terraform configuration by running the following command and entering yes at the prompt: terraform apply In Google Cloud console of your Monitoring Project , go to the Monitoring Dashboard page: Go to Monitoring Dashboard Find your custom dashboard named Cloud Composer - Monitoring Platform in the Custom tab.
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Cross-project environment monitoring with Terraform Stay organized with collections Save and categorize content based on your preferences.
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- November 14, 2025 Feature You can now start Gemini Cloud Assist investigations for failed Airflow tasks.
-- Change Cloud Composer 2.9.5 images are available: composer-2.9.5-airflow-2.9.3 composer-2.9.5-airflow-2.9.1 (default) composer-2.9.5-airflow-2.7.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.9.3-build.1 composer-3-airflow-2.9.1-build.8 (default) composer-3-airflow-2.7.3-build.17 September 18, 2024 Fixed (Cloud Composer 3) Fixed the issue that caused KubernetesPodOperator tasks to fail if they ran for longer than 15 minutes.
-- Fixed (Cloud Composer 2) Fixed a problem that caused Airflow tasks to fail in some cases because a worker scheduled for deletion started a new task before it was deleted.
-- Fixed Fixed the "First DAG run for an uploaded DAG file has several failed tasks" known issue for Airflow 2 environments.
-
-### Group tasks inside DAGs \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/composer-1/group-tasks-inside-dags](https://docs.cloud.google.com/composer/docs/composer-1/group-tasks-inside-dags)
-- Source ID: `site-iam-reference`
-- Final score: 142
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The implementation of the child DAG, which is triggered by the controlling DAG, looks like the following: Airflow 2 from airflow import DAG from airflow.operators.dummy import DummyOperator from airflow.utils.dates import days ago DAG NAME = "dag-to-trigger" args = { "owner" : "airflow" , "start date" : days ago ( 1 ), "schedule interval" : "None" } with DAG ( dag id = DAG NAME , default args = args ) as dag : dag task = DummyOperator ( task id = "dag-task" ) Airflow 1 from airflow import DAG from airflow.operators.dummy operator import DummyOperator from airflow.utils.dates import days ago DAG NAME = "dag-to-trigger" args = { "owner" : "airflow" , "start date" : days ago ( 1 ), "schedule interval" : "None" } with DAG ( dag id = DAG NAME , default args = args ) as dag : dag task = DummyOperator ( task id = "dag-task" ) You must upload both DAG files in your Cloud Composer environment for the DAG to work.
-- Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 This page describes how you can group tasks in your Airflow pipelines using the following design patterns: Grouping tasks in the DAG graph.
-- Despite being a common design pattern for grouping tasks together, SubDAGs often cause performance and functional issues, and is deprecated in Airflow.
-- The controlling DAG file looks like the following: Airflow 2 from airflow import DAG from airflow.operators.dummy import DummyOperator from airflow.operators.trigger dagrun import TriggerDagRunOperator from airflow.utils.dates import days ago with DAG ( dag id = "controller dag to trigger other dags" , default args = { "owner" : "airflow" }, start date = days ago ( 1 ), schedule interval = "@once" , ) as dag : start = DummyOperator ( task id = "start" ) trigger 1 = TriggerDagRunOperator ( task id = "dag 1" , trigger dag id = "dag-to-trigger" , # Ensure this equals the dag id of the DAG to trigger conf = { "message" : "Hello World" }, ) trigger 2 = TriggerDagRunOperator ( task id = "dag 2" , trigger dag id = "dag-to-trigger" , # Ensure this equals the dag id of the DAG to trigger conf = { "message" : "Hello World" }, ) some other task = DummyOperator ( task id = "some-other-task" ) end = DummyOperator ( task id = "end" ) start >> trigger 1 >> some other task >> trigger 2 >> end Airflow 1 from airflow import DAG from airflow.operators.dagrun operator import TriggerDagRunOperator from airflow.operators.dummy operator import DummyOperator from airflow.utils.dates import days ago with DAG ( dag id = "controller dag to trigger other dags" , default args = { "owner" : "airflow" }, start date = days ago ( 1 ), schedule interval = "@once" , ) as dag : start = DummyOperator ( task id = "start" ) trigger 1 = TriggerDagRunOperator ( task id = "dag 1" , trigger dag id = "dag-to-trigger" , # Ensure this equals the dag id of the DAG to trigger conf = { "message" : "Hello World" }, ) trigger 2 = TriggerDagRunOperator ( task id = "dag 2" , trigger dag id = "dag-to-trigger" , # Ensure this equals the dag id of the DAG to trigger conf = { "message" : "Hello World" }, ) some other task = DummyOperator ( task id = "some-other-task" ) end = DummyOperator ( task id = "end" ) start >> trigger 1 >> some other task >> trigger 2 >> end Note: The value for trigger dag id inside TriggerDagRunOperator must match the dag id value of the DAG you want to trigger.
 

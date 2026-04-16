@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/standard/configure-service-acc
 knowledge_key: corpus
 source_id: site-docs-reference-4
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/writing-web-service
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts
   title: "Configure App Engine service accounts \_|\_ App Engine standard environment\

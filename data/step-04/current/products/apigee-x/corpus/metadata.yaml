@@ -1,45 +1,17 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:23:30+00:00'
-updated_at: '2026-04-10T15:02:09+00:00'
+updated_at: '2026-04-13T18:53:37+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
   export: know export --key corpus
 sources:
 - type: site
-  id: site-docs-root
-  title: https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee
-  created_at: '2026-04-10T14:55:56+00:00'
-  updated_at: '2026-04-10T14:58:16+00:00'
-  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-root
-  config:
-    url: https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee
-    max_depth: 2
-    max_pages: 42
-    compact_output: true
-  last_synced_at: '2026-04-10T14:58:16+00:00'
-- type: site
-  id: site-docs-reference
-  title: https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure
-  created_at: '2026-04-10T14:55:57+00:00'
-  updated_at: '2026-04-10T15:00:12+00:00'
-  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-reference
-  config:
-    url: https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure
-    max_depth: 2
-    max_pages: 32
-    compact_output: true
-  last_synced_at: '2026-04-10T15:00:12+00:00'
-- type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership
   created_at: '2026-04-10T14:55:57+00:00'
-  updated_at: '2026-04-10T15:02:09+00:00'
+  updated_at: '2026-04-13T18:45:05+00:00'
   update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -48,4 +20,130 @@ sources:
     max_depth: 2
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-10T15:02:09+00:00'
+  last_synced_at: '2026-04-13T18:45:05+00:00'
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/apigee/docs/locations
+  created_at: '2026-04-13T18:32:09+00:00'
+  updated_at: '2026-04-13T18:34:35+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/locations
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/locations
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-13T18:34:35+00:00'
+- type: site
+  id: site-docs-root-2
+  title: https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts
+  created_at: '2026-04-13T18:32:09+00:00'
+  updated_at: '2026-04-13T18:37:11+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-13T18:37:11+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure
+  created_at: '2026-04-13T18:32:10+00:00'
+  updated_at: '2026-04-13T18:39:09+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-13T18:39:09+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/apigee/docs/apihub/release-notes
+  created_at: '2026-04-13T18:32:10+00:00'
+  updated_at: '2026-04-13T18:41:11+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/apihub/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/apihub/release-notes
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-13T18:41:11+00:00'
+- type: site
+  id: site-api-reference
+  title: https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.apps/list
+  created_at: '2026-04-13T18:32:11+00:00'
+  updated_at: '2026-04-13T18:43:06+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.apps/list
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.apps/list
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-13T18:43:06+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference
+  created_at: '2026-04-13T18:32:11+00:00'
+  updated_at: '2026-04-13T18:47:03+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-13T18:47:03+00:00'
+- type: site
+  id: site-docs-root-required-3
+  title: https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview
+  created_at: '2026-04-13T18:32:11+00:00'
+  updated_at: '2026-04-13T18:49:41+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-required-3
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-13T18:49:41+00:00'
+- type: site
+  id: site-api-reference-required-2
+  title: https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.apps
+  created_at: '2026-04-13T18:32:11+00:00'
+  updated_at: '2026-04-13T18:51:40+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.apps
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.apps
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-13T18:51:39+00:00'
+- type: site
+  id: site-docs-reference-required-4
+  title: https://docs.cloud.google.com/apigee/docs/deprecations/apigee-classic-ui
+  created_at: '2026-04-13T18:32:12+00:00'
+  updated_at: '2026-04-13T18:53:37+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/deprecations/apigee-classic-ui
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/deprecations/apigee-classic-ui
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-13T18:53:37+00:00'

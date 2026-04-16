@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.877Z"
+generated_at: "2026-04-15T11:56:51.940Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "000 table limit support"
@@ -10,17 +10,17 @@ deprecation_date: ""
 coverage_status: "LOW"
 source_links:
   - "https://docs.cloud.google.com/sql/docs/mysql/quotas"
-  - "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication"
+  - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/demote"
 keywords:
   - "000"
   - "table"
   - "limit"
   - "sql"
-  - "for"
   - "mysql"
   - "supports"
   - "up"
+  - "500"
 ---
 
 # 000 table limit support
@@ -38,53 +38,51 @@ Cloud SQL for MySQL supports up to 500,000 tables on instances meeting the minim
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/sql/docs/mysql/quotas](https://docs.cloud.google.com/sql/docs/mysql/quotas)
-- [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr)
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
+- [https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication](https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication)
+- [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/demote](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/demote)
 
 ## Supporting Pages
+
+### "Cloud SQL built-in database authentication \_|\_ Cloud SQL for MySQL \_\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication](https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication)
+- Source ID: `site-docs-reference-3`
+- Final score: 46
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL built-in database authentication Stay organized with collections Save and categorize content based on your preferences.
+- MySQL PostgreSQL SQL Server This page describes how built-in authentication works on Cloud SQL instances and how database administrators can set password policies for local database users.
+- Note: User password policy options are supported on Cloud SQL for MySQL 8.0 and later.
+- The Set password to expire option is also supported on Cloud SQL for MySQL 5.7.
+
+### Method: instances.demote \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/demote](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/demote)
+- Source ID: `site-docs-reference-3`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Databases Cloud SQL MySQL Reference Send feedback Method: instances.demote Stay organized with collections Save and categorize content based on your preferences.
 
 ### Quotas and limits \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sql/docs/mysql/quotas](https://docs.cloud.google.com/sql/docs/mysql/quotas)
 - Source ID: `site-docs-root`
-- Final score: 250
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 35
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Table limit Cloud SQL for MySQL has a limit of 50,000 tables by default, or 500,000 tables for an instance if you meet the minimum hardware requirements of at least 32 cores and a minimum of 200G of memory.
-- Value Limit Maximum number of saved queries per project (including saved queries for other Google Cloud products) 10,000 Maximum size for each query 1 MiB Cloud SQL storage limits Dedicated core: Up to 64 TB.
+- If the number of active tables is significantly larger than both the Cloud SQL table defaults and the open tables recommendation by MySQL, then Cloud SQL recommends configuring the table open cache and table definition cache database flags with your instance's active table count.
 - The following table provides information about the metric, APIs, and default limit for each category: Category Metric APIs Default limit Connect sqladmin.googleapis.com/connect The number of requests that are made per minute per user per region to use the APIs in this category.
-- Configurable limits Instances per project The maximum number of instances you can have in a single project depends on the network architecture of those instances: New SQL network architecture: You can have up to 1000 instances per project.
-
-### "Perform point-in-time recovery (PITR) \_|\_ Cloud SQL for MySQL \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr)
-- Source ID: `site-iam-reference`
-- Final score: 248
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following is a sample output from the SHOW BINLOG EVENTS command: +------------------+-----+-------------+-----------+-------------+-----------------------------------------------------+ Log name Pos Event type Server id End log pos Info +------------------+-----+-------------+-----------+-------------+-----------------------------------------------------+ mysql-bin.000011 4 Format desc 88955285 120 Server ver: 5.6.30-log, Binlog ver: 4 mysql-bin.000011 120 Query 88955285 211 create database db1 mysql-bin.000011 211 Query 88955285 310 use db1; CREATE TABLE t (c CHAR(20)) mysql-bin.000011 310 Query 88955285 381 BEGIN mysql-bin.000011 381 Table map 88955285 426 table id: 18 (db1.t) mysql-bin.000011 310 Query 88955285 381 BEGIN mysql-bin.000011 426 Write rows 88955285 464 table id: 18 flags: STMT END F mysql-bin.000011 464 Xid 88955285 495 COMMIT / xid=56 / mysql-bin.000011 495 Query 88955285 566 BEGIN mysql-bin.000011 566 Table map 88955285 611 table id: 18 (db1.t) mysql-bin.000011 611 Write rows 88955285 649 table id: 18 flags: STMT END F mysql-bin.000011 649 Xid 88955285 680 COMMIT / xid=57 / mysql-bin.000011 680 Query 88955285 751 BEGIN mysql-bin.000011 751 Table map 88955285 796 table id: 18 (db1.t) mysql-bin.000011 796 Write rows 88955285 834 table id: 18 flags: STMT END F mysql-bin.000011 834 Xid 88955285 865 COMMIT / xid=58 / mysql-bin.000011 865 Query 88955285 977 use db1; DROP TABLE t / generated by server / +------------------+-----+-------------+-----------+-------------+-----------------------------------------------------+ 16 rows in set (0.04 sec) To restore up to the DROP TABLE statement, bolded in the previous sample, you would use 865 in mysql-bin.000011 as the recovery position.
-- POSITION : The position in the binary log to restore up to, such as 50001356 . gcloud sql instances clone SOURCE INSTANCE NAME \ NEW INSTANCE NAME \ --bin-log-file-name = " BINLOG FILE NAME " \ --bin-log-position = POSITION For example, a gcloud sql instances clone command might look similar to the following: gcloud sql instances clone instance1 \ instance1-clone \ --bin-log-file-name = mysql-bin.0000031 \ --bin-log-position = 107 \ Use the operation ID returned from the clone command to check the status of the restore operation. gcloud sql operations describe OPERATION ID When the operation is in progress, a state of RUNNING is returned.
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ source-instance-id /clone" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ target-instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "CREATE", "name": " operation-id ", "targetId": " target-instance-id ", "selfLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } REST v1beta4 Before using any of the request data, make the following replacements: project-id : The project ID target-instance-id : The target instance ID source-instance-id : The source instance ID restore-timestamp The point-in-time to restore up to HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ source-instance-id /clone Request JSON body: { "cloneContext": { "kind": "sql#cloneContext", "destinationInstanceName": " target-instance-id ", "pointInTime": " restore-timestamp " } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ source-instance-id /clone" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ target-instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "CREATE", "name": " operation-id ", "targetId": " target-instance-id ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } Perform a PITR using the backup vault If your Cloud SQL instance is enabled to use enhanced backups , then you can perform point-in-time-recovery for your instance using the backup vault.
-
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 240
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 07, 2023 Feature Cloud SQL for MySQL now supports up to 500,000 tables for instances that meet the minimum hardware requirements of 32+ cores and 200G+ memory.
-- October 11, 2022 Feature Cloud SQL supports the preview version of the following recommenders that help you optimize your instance's performance: High number of open tables recommender : Optimize the performance of your instance by increasing the size of table open cache for the Cloud SQL instances that have the number of open tables equal to the table open cache and keep opening too many tables concurrently High number of tables recommender : Optimize the performance of your instance by reducing the number of tables for the Cloud SQL instances whose table count is too high and close to the SLA limit.
-- December 20, 2022 Feature Cloud SQL for MySQL now supports using the lower case table names flag for MySQL 8.0.
-- January 17, 2023 Feature Cloud SQL for MySQL now supports using the lower case table names flag for MySQL 8.0.
+- Home Documentation Databases Cloud SQL MySQL Resources Send feedback Quotas and limits Stay organized with collections Save and categorize content based on your preferences.
 

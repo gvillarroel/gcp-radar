@@ -458,27 +458,24 @@ Automatic failover to healthy backends in other regions
 (Only global and classic 1 modes)
 (Only cross-region mode)
 (Only global and classic 1 modes)
-Support for active-active high availability configuration
+Support for active-active high availability configuration across
+load balancers
 info
 (Only in
 regional mode)
-Support for active-passive failover configuration
-Only in global mode
-Behavior when all backends are unhealthy
-info
-info
-info
-info
+Support for active-passive failover configuration across load balancers
+(Only in global mode)
+Configurable behavior when all backends are unhealthy
 info
 (configurable)
 info
 (configurable 2 )
-Configurable standby backends
+Configurable failover backends
 info
 (configurable)
 info
 (configurable 3 )
-Connection draining on failover and failback
+Connection draining on failover
 info
 (configurable)
 info
@@ -926,6 +923,6 @@ Regional external passthrough Network Load Balancer overview
 Internal passthrough Network Load Balancer overview
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-15 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-15 UTC."],[],[]]

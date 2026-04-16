@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:37.364Z"
+generated_at: "2026-04-12T12:17:29.776Z"
 product_name: "Identity-Aware Proxy"
 product_slug: "identity-aware-proxy"
 feature_name: "Cloud IAP OAuth client API"
 feature_slug: "cloud-iap-oauth-client-api"
 latest_feature_date: "2020-02-12"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+  - "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui"
+  - "https://docs.cloud.google.com/iap/docs/reference/compute-engine-apis"
+  - "https://docs.cloud.google.com/iap/docs/reference/rest"
 keywords:
   - "iap"
   - "oauth"
@@ -24,7 +27,7 @@ keywords:
 # Cloud IAP OAuth client API
 
 Product: Identity-Aware Proxy
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Cloud IAP lets you programmatically create OAuth clients through the REST API or
 
 Cloud IAP lets you programmatically create OAuth clients through the REST API or gcloud.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/iap/docs/custom-oauth-configuration](https://docs.cloud.google.com/iap/docs/custom-oauth-configuration)
+- [https://docs.cloud.google.com/iap/docs/create-custom-auth-ui](https://docs.cloud.google.com/iap/docs/create-custom-auth-ui)
+- [https://docs.cloud.google.com/iap/docs/reference/compute-engine-apis](https://docs.cloud.google.com/iap/docs/reference/compute-engine-apis)
+- [https://docs.cloud.google.com/iap/docs/reference/rest](https://docs.cloud.google.com/iap/docs/reference/rest)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Use custom OAuth clients with IAP \_|\_ Identity-Aware Proxy \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/iap/docs/custom-oauth-configuration](https://docs.cloud.google.com/iap/docs/custom-oauth-configuration)
+- Source ID: `site-docs-root`
+- Final score: 257
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Terraform To apply the custom OAuth client using Terraform, do the following: resource "google iap settings" "iap settings" { name = IAP RESOURCE NAME access settings { oauth settings { oauth client id = CLIENT ID oauth client secret = CLIENT SECRET } } } Replace the following: IAP RESOURCE NAME : the resource name of the iap settings resource for the service, which has the following format: projects/ PROJECT NUMBER /iap web/ REGION /services/ SERVICE NAME CLIENT ID : the client ID from the OAuth credentials that you generated earlier CLIENT SECRET : the client secret from the OAuth credentials that you generated earlier REST API Create a settings JSON file. cat iap-oauth.json { "accessSettings": { "oauthSettings": { "clientId": " CLIENT ID ", "clientSecret": " CLIENT SECRET " } } } EOF Replace the following: CLIENT ID : The client ID from the OAuth credentials that you generated earlier.
+- Create a Kubernetes Secret to wrap the OAuth client. kubectl create secret generic MY SECRET --from-literal=client id= CLIENT ID \ --from-literal=client secret= CLIENT SECRET Replace the following: MY SECRET : The name of the secret to create CLIENT ID : The OAuth client ID CLIENT SECRET : The OAuth client secret You should receive confirmation, like the following output, that the Secret was successfully created: secret " MY SECRET " created Add the OAuth credentials to the BackendConfig. apiVersion: cloud.google.com/v1 kind: BackendConfig metadata: name: CONFIG DEFAULT namespace: my-namespace spec: iap: enabled: true oauthclientCredentials: secretName: MY SECRET Enable IAP by associating Service ports with your BackendConfig.
+- Run the following command to prepare a settings.json file. cat << EOF > settings.json { "iap": { "enabled": true, "oauth2ClientId": " CLIENT ID ", "oauth2ClientSecret": " CLIENT SECRET " } } EOF Run the following command to enable IAP. curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \ -H "Accept: application/json" \ -H "Content-Type: application/json" \ -d @settings.json \ "https://compute.googleapis.com/compute/v1/projects/ PROJECT ID / REGION /backendServices/ BACKEND SERVICE NAME " After you enable IAP, you can use the gcloud CLI to modify the IAP access policy using the IAM role roles/iap.httpsResourceAccessor .
+- Run the following command to prepare a settings.json file. cat << EOF > settings.json { "iap": { "enabled": true, "oauth2ClientId": " CLIENT ID ", "oauth2ClientSecret":" CLIENT SECRET " } } EOF Run the following command to enable IAP. curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \ -H "Accept: application/json" \ -H "Content-Type: application/json" \ -d @settings.json \ "https://appengine.googleapis.com/v1/apps/ PROJECT ID ?updateMask=iap" After you enable IAP, you can use the Google Cloud CLI to modify the IAP access policy using the IAM role roles/iap.httpsResourceAccessor .
+
+### "Creating a custom sign-in page \_|\_ Identity-Aware Proxy \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/iap/docs/create-custom-auth-ui](https://docs.cloud.google.com/iap/docs/create-custom-auth-ui)
+- Source ID: `site-docs-root`
+- Final score: 220
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following is an example of implementing processUser() : gcip-iap v1.0.0 processUser ( user ) { return lastAuthUsed . getRedirectResult (). then ( function ( result ) { // Save additional data, or ask the user for additional profile information // to store in database, etc. if ( result ) { // Save result.additionalUserInfo. // Save result.credential.accessToken for OAuth provider, etc. } // Return the user. return user ; }); } gcip-iap v2.0.0 import { getRedirectResult } from 'firebase/auth' ; processUser ( user ) { return getRedirectResult ( lastAuthUsed ). then ( function ( result ) { // Save additional data, or ask the user for additional profile information // to store in database, etc. if ( result ) { // Save result.additionalUserInfo. // Save result.credential.accessToken for OAuth provider, etc. } // Return the user. return user ; }); } If you want any changes to a user reflected in the ID token claims propagated by IAP to your app, you must force the token to refresh: gcip-iap v1.0.0 processUser ( user ) { return user . updateProfile ({ photoURL : 'https://example.com/profile/1234/photo.png' , }). then ( function () { // To reflect updated photoURL in the ID token, force token // refresh. return user . getIdToken ( true ); }). then ( function () { return user ; }); } gcip-iap v2.0.0 import { updateProfile } from 'firebase/auth' ; processUser ( user ) { return updateProfile ( user , { photoURL : 'https://example.com/profile/1234/photo.png' , }). then ( function () { // To reflect updated photoURL in the ID token, force token // refresh. return user . getIdToken ( true ); }). then ( function () { return user ; }); } Testing the UI After you've created a class that implements AuthenticationHandler , you can use it to create a new Authentication instance, and start it: // Implement interface AuthenticationHandler . // const authHandlerImplementation = .... const ciapInstance = new ciap .
+- Specified resource is not found. aborted Concurrency conflict, such as read-modify-write conflict. already-exists The resource that a client tried to create already exists. resource-exhausted Either out of resource quota or reaching rate limiting. cancelled Request cancelled by the client. data-loss Unrecoverable data loss or data corruption. unknown Unknown server error. internal Internal server error. not-implemented API method not implemented by the server. unavailable Service unavailable. restart-process Revisit the URL that redirected you to this page to restart the authentication process. deadline-exceeded Request deadline exceeded. authentication-uri-fail Failed to generate authentication URI. gcip-token-invalid Invalid GCIP ID token provided. gcip-redirect-invalid Invalid redirect URL. get-project-mapping-fail Failed to get project ID. gcip-id-token-encryption-error GCIP ID token encryption error. gcip-id-token-decryption-error GCIP ID token decryption error. gcip-id-token-unescape-error Web safe base64 unescape failed. resource-missing-gcip-sign-in-url Missing GCIP authentication URL for the specified IAP resource.
+- Use this to locate a match from a list of associated tenants: // Select provider programmatically. selectTenant ( projectConfig , tenantIds ) { return new Promise (( resolve , reject ) = > { // Show UI to select the tenant. auth . getOriginalURL () . then (( originalUrl ) = > { resolve ({ tenantId : getMatchingTenantBasedOnVisitedUrl ( originalUrl ), // If associated provider IDs can also be determined, // populate this list. providerIds : [], }); }) . catch ( reject ); }); } Allowing users to select tenants To allow the user to select a tenant, display a list of tenants and have the user choose one, or ask them to enter their email address and then locate a match based on the domain: // Select provider by showing UI. selectTenant ( projectConfig , tenantIds ) { return new Promise (( resolve , reject ) = > { // Show UI to select the tenant. renderSelectTenant ( tenantIds , // On tenant selection. ( selectedTenantId ) = > { resolve ({ tenantId : selectedTenantId , // If associated provider IDs can also be determined, // populate this list. providerIds : [], // If email is available, populate this field too. email : undefined , }); }); }); } Authenticating users After you have a provider, implement getAuth() to return an Auth instance, corresponding to the API key and tenant ID provided.
+- Update the firebase import statements as follows: // Import Firebase modules. import { initializeApp } from 'firebase/app' ; import { getAuth , GoogleAuthProvider } 'firebase/auth' ; // Import the gcip-iap module. import as ciap from 'gcip-iap' ; Configuring the UI To configure the UI, create a custom class that implements the AuthenticationHandler interface: interface AuthenticationHandler { languageCode ?: string null ; getAuth ( apiKey : string , tenantId : string null ) : FirebaseAuth ; startSignIn ( auth : FirebaseAuth , match ?: SelectedTenantInfo ) : Promise<UserCredential> ; selectTenant ? ( projectConfig : ProjectConfig , tenantIds : string []) : Promise<SelectedTenantInfo> ; completeSignOut () : Promise<void> ; processUser ? ( user : User ) : Promise<User> ; showProgressBar ? () : void ; hideProgressBar ? () : void ; handleError ? ( error : Error CIAPError ) : void ; } During authentication, the library automatically calls AuthenticationHandler 's methods.
+
+### "Using the API to manage Identity-Aware Proxy for Compute Engine apps \_\
+
+- URL: [https://docs.cloud.google.com/iap/docs/reference/compute-engine-apis](https://docs.cloud.google.com/iap/docs/reference/compute-engine-apis)
+- Source ID: `site-api-reference`
+- Final score: 205
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can temporarily disable IAP without unsetting those properties. iap.oauth2ClientId string Specifies the client ID for use with OAuth 2.0. iap.oauth2ClientSecret (Requests only) string Specifies the client secret for use with OAuth 2.0.
+- Setting IAP properties when creating a backend service When you create a backend service, you can enable IAP and set the client ID and secret.
+- If iap.enabled is true but you didn't set or supply new oauth2ClientId and oauth2ClientSecret properties, a BAD REQUEST response is returned.
+- Global scope POST https://compute.googleapis.com/compute/v1/projects/ project /global/backendServices Regional scope POST https://compute.googleapis.com/compute/v1/projects/ project /regions/ region /backendServices/ resourceId Path parameters Name Value Description project string Project ID for this request. region string Name of the region scoping this request. resourceId string Name of the BackendService where you're enabling IAP.
+
+### Cloud Identity-Aware Proxy API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/iap/docs/reference/rest](https://docs.cloud.google.com/iap/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 201
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- REST Resource: v1.projects.brands.identityAwareProxyClients Methods create POST /v1/{parent=projects/ /brands/ }/identityAwareProxyClients Creates an Identity Aware Proxy (IAP) OAuth client. delete DELETE /v1/{name=projects/ /brands/ /identityAwareProxyClients/ } Deletes an Identity Aware Proxy (IAP) OAuth client. get GET /v1/{name=projects/ /brands/ /identityAwareProxyClients/ } Retrieves an Identity Aware Proxy (IAP) OAuth client. list GET /v1/{parent=projects/ /brands/ }/identityAwareProxyClients Lists the existing clients for the brand. resetSecret POST /v1/{name=projects/ /brands/ /identityAwareProxyClients/ }:resetSecret Resets an Identity Aware Proxy (IAP) OAuth client secret.
+- REST Resource: v1beta1 REST Resource: v1 REST Resource: v1.projects.brands REST Resource: v1.projects.brands.identityAwareProxyClients REST Resource: v1.projects.iap tunnel.locations.destGroups Service: iap.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects.iap tunnel.locations.destGroups Methods create POST /v1/{parent=projects/ /iap tunnel/locations/ }/destGroups Creates a new TunnelDestGroup. delete DELETE /v1/{name=projects/ /iap tunnel/locations/ /destGroups/ } Deletes a TunnelDestGroup. get GET /v1/{name=projects/ /iap tunnel/locations/ /destGroups/ } Retrieves an existing TunnelDestGroup. list GET /v1/{parent=projects/ /iap tunnel/locations/ }/destGroups Lists the existing TunnelDestGroups. patch PATCH /v1/{tunnelDestGroup.name=projects/ /iap tunnel/locations/ /destGroups/ } Updates a TunnelDestGroup.
+- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://iap.googleapis.com REST Resource: v1beta1 Methods getIamPolicy POST /v1beta1/{resource= }:getIamPolicy Gets the access control policy for an Identity-Aware Proxy protected resource. setIamPolicy POST /v1beta1/{resource= }:setIamPolicy Sets the access control policy for an Identity-Aware Proxy protected resource. testIamPermissions POST /v1beta1/{resource= }:testIamPermissions Returns permissions that a caller has on the Identity-Aware Proxy protected resource.
 

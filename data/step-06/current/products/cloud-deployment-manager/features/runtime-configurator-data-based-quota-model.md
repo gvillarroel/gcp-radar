@@ -1,0 +1,87 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T18:41:05.984Z"
+product_name: "Cloud Deployment Manager"
+product_slug: "cloud-deployment-manager"
+feature_name: "Runtime Configurator data-based quota model"
+feature_slug: "runtime-configurator-data-based-quota-model"
+latest_feature_date: "2016-08-25"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/deployment-manager/docs/access-control"
+  - "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment"
+  - "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types"
+keywords:
+  - "runtime"
+  - "configurator"
+  - "based"
+  - "quota"
+  - "model"
+  - "quotas"
+  - "volume"
+  - "per"
+---
+
+# Runtime Configurator data-based quota model
+
+Product: Cloud Deployment Manager
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Runtime Configurator quotas are based on data volume per user instead of resource count, with updated API request quotas.
+
+## Extended Definition
+
+Runtime Configurator quotas are based on data volume per user instead of resource count, with updated API request quotas.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/deployment-manager/docs/access-control](https://docs.cloud.google.com/deployment-manager/docs/access-control)
+- [https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment](https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment)
+- [https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types](https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types)
+
+## Supporting Pages
+
+### "Access control with IAM \_|\_ Cloud Deployment Manager \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/deployment-manager/docs/access-control](https://docs.cloud.google.com/deployment-manager/docs/access-control)
+- Source ID: `site-docs-reference`
+- Final score: 90
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Lowest-level resources where you can grant this role: Project deploymentmanager. compositeTypes. deploymentmanager. compositeTypes. create deploymentmanager. compositeTypes. delete deploymentmanager. compositeTypes. get deploymentmanager. compositeTypes. list deploymentmanager. compositeTypes. update deploymentmanager. deployments. cancelPreview deploymentmanager. deployments. create deploymentmanager. deployments. delete deploymentmanager. deployments. get deploymentmanager. deployments. list deploymentmanager. deployments. stop deploymentmanager. deployments. update deploymentmanager.manifests. deploymentmanager. manifests. get deploymentmanager. manifests. list deploymentmanager.operations. deploymentmanager. operations. get deploymentmanager. operations. list deploymentmanager.resources. deploymentmanager. resources. get deploymentmanager. resources. list deploymentmanager. typeProviders. deploymentmanager. typeProviders. create deploymentmanager. typeProviders. delete deploymentmanager. typeProviders. get deploymentmanager. typeProviders. getType deploymentmanager. typeProviders. list deploymentmanager. typeProviders. listTypes deploymentmanager. typeProviders. update deploymentmanager.types. deploymentmanager.types.create deploymentmanager.types.delete deploymentmanager.types.get deploymentmanager.types.list deploymentmanager.types.update resourcemanager.projects.get resourcemanager.projects.list serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Deployment Manager Viewer ( roles/ deploymentmanager.viewer ) Provides read-only access to all Deployment Manager-related resources.
+- Lowest-level resources where you can grant this role: Project deploymentmanager. compositeTypes. deploymentmanager. compositeTypes. create deploymentmanager. compositeTypes. delete deploymentmanager. compositeTypes. get deploymentmanager. compositeTypes. list deploymentmanager. compositeTypes. update deploymentmanager. operations. get deploymentmanager. typeProviders. deploymentmanager. typeProviders. create deploymentmanager. typeProviders. delete deploymentmanager. typeProviders. get deploymentmanager. typeProviders. getType deploymentmanager. typeProviders. list deploymentmanager. typeProviders. listTypes deploymentmanager. typeProviders. update deploymentmanager.types. deploymentmanager.types.create deploymentmanager.types.delete deploymentmanager.types.get deploymentmanager.types.list deploymentmanager.types.update resourcemanager.projects.get resourcemanager.projects.list serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.values.test Deployment Manager Type Viewer ( roles/ deploymentmanager.typeViewer ) Provides read-only access to all Type Registry resources.
+- Lowest-level resources where you can grant this role: Project deploymentmanager. compositeTypes. get deploymentmanager. compositeTypes. list deploymentmanager. deployments. get deploymentmanager. deployments. list deploymentmanager.manifests. deploymentmanager. manifests. get deploymentmanager. manifests. list deploymentmanager.operations. deploymentmanager. operations. get deploymentmanager. operations. list deploymentmanager.resources. deploymentmanager. resources. get deploymentmanager. resources. list deploymentmanager. typeProviders. get deploymentmanager. typeProviders. getType deploymentmanager. typeProviders. list deploymentmanager. typeProviders. listTypes deploymentmanager.types.get deploymentmanager.types.list resourcemanager.projects.get resourcemanager.projects.list serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Deployment Manager Type Editor ( roles/ deploymentmanager.typeEditor ) Provides read and write access to all Type Registry resources.
+- Lowest-level resources where you can grant this role: Project deploymentmanager. compositeTypes. get deploymentmanager. compositeTypes. list deploymentmanager. typeProviders. get deploymentmanager. typeProviders. getType deploymentmanager. typeProviders. list deploymentmanager. typeProviders. listTypes deploymentmanager.types.get deploymentmanager.types.list resourcemanager.projects.get resourcemanager.projects.list serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.values.test Service agent roles Service agent roles should only be granted to service agents .
+
+### Quickstart: Manage Google Cloud resources as a deployment | Cloud Deployment Manager | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment](https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Quickstart: Manage Google Cloud resources as a deployment | Cloud Deployment Manager | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Cloud Deployment Manager Start free Overview Guides Reference Support Resources Technology areas More Overview Guides Reference Support Resources Cross-product tools More Console Cloud Deployment Manager Product overview Getting started Deprecation Cloud Deployment Manager deprecation Composite types deprecation How-to guides All how-to guides Walkthrough: explore best practices Overview Installation and setup Understanding configurations Deploying your resources Understanding references Understanding reusable templates Using multiple templates Understanding template properties and using environment variables Exploring helper scripts Updating deployments Building a configuration Configurations overview Creating a basic configuration Previewing a configuration Setting access control in a configuration Creating reusable templates Creating a basic template Defining template properties Using deployment-specific environment variables Creating helper scripts Importing Python libraries Adding a template as a composite type Describing, listing, and deleting types Defining schemas for templates Storing templates on an external host Migrating templates to Python 3 Using references Exposing information using outputs Creating explicit dependencies Creating deployments Creating a deployment using gcloud or the API Creating deployments with Google Cloud Marketplace Updating a deployment Adding labels to a deployment Deleting a deployment Viewing a manifest Sharing resources across projects Using images from other projects Sharing types across projects (Advanced) Adding a new API as a type provider One-page guide to integrating with deployment manager API requirements for integrating an API Adding an API as a type provider Setting advanced API options Using a type provider in a configuration Best practices for adding a type provider Storing and retrieving data at runtime Creating and deleting runtimeconfig resources Setting and getting data Deleting a variable Watching a variable for changes Creating a waiter Migration guides Replacing usage of Actions Replacing the setIamPolicy Action with a supported resource type Creating custom type providers with custom backends Converting composite types to supported templates Using DM Convert to transition to Terraform or KRM Using DM Convert to transition to Terraform or Kubernetes Resource Model (KRM) Converting your Deployment Manager configurations with DM Convert Troubleshooting DM Convert Best practices for using DM Convert Concepts All concepts Deployment Manager fundamentals Deployment Manager audit logging Access control with IAM Best practices for using Deployment Manager Overview of Runtime Configurator Runtime Configurator fundamentals Access control options for Runtime Configurator Tutorials All tutorials Create a network load-balanced logbook application (Python) Create a HTTP load-balanced logbook application Create a container-optimized deployment Structure Deployment Manager for use at scale Deploy an SAP HANA cluster using Deployment Manager Solutions that use Deployment Manager AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Cloud Deployment Manager will reach end of support on March 31, 2026 .
+- Home Documentation Infrastructure as code Cloud Deployment Manager Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+
+### Provedores de tipo Google Cloud compatíveis | Cloud Deployment Manager | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types](https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 68
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Provedores de tipo Google Cloud compatíveis | Cloud Deployment Manager | Google Cloud Documentation Ir para o conteúdo principal Áreas de tecnologia close IA e ML Desenvolvimento de aplicativos Hospedagem de aplicativos Computação Pipelines e análises de dados Bancos de dados Distribuído, híbrido e multicloud Soluções por setor Migração Rede Observabilidade e monitoramento Segurança Storage Ferramentas de vários produtos close Gerenciamento de recursos e acesso Gerenciamento de custos e uso Infraestrutura como código SDK, linguagens, frameworks e ferramentas / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Fazer login Cloud Deployment Manager Comece sem custos financeiros Visão geral Guias Referência Suporte Recursos Áreas de tecnologia Mais Visão geral Guias Referência Suporte Recursos Ferramentas de vários produtos Mais Console Cloud Deployment Manager Todas as APIs e referências Referência de sintaxe Configurações e modelos Tipos de recursos compatíveis Snippets de recurso para provedores de tipo do Google Cloud Exemplos de modelos de recursos Referência da gcloud Gerenciar operações de longa duração com a API API v2 Visão geral Implantações Visão geral cancelPreview delete get getIamPolicy insert list patch setIamPolicy parar testIamPermissions update Manifestos Visão geral get list Operações Visão geral get list Recursos Visão geral get list Tipos Visão geral list API v2beta Visão geral CompositeTypes Visão geral delete get insert list patch update Implantações Visão geral cancelPreview delete get getIamPolicy insert list patch setIamPolicy parar testIamPermissions update Manifestos Visão geral get list Operações Visão geral get list Recursos Visão geral get list TypeProviders Visão geral delete get getType insert list listTypes patch update Tipos Visão geral list API Runtime Configurator v1beta1 Visão geral Recursos REST projects.configs Visão geral create delete get getIamPolicy list setIamPolicy testIamPermissions update projects.configs.operations Visão geral get testIamPermissions projects.configs.variables Visão geral create delete get list testIamPermissions update assistir projects.configs.waiters Visão geral create delete get list testIamPermissions Tipos Política TestIamPermissionsResponse Recursos REST operações Visão geral cancel delete list Tipos Operação WaitOperationRequest APIs obsoletas v2beta2 Visão geral Implantações Visão geral delete get insert list patch update Manifestos Visão geral get list Operações Visão geral get list Recursos Visão geral get list Tipos Visão geral list v2beta1 Visão geral Implantações Visão geral delete get insert list Manifestos Visão geral get list Operações Visão geral get list Recursos Visão geral get list Tipos Visão geral list Modelos Autorização Parâmetros de consulta padrão Melhorar o desempenho Solicitações em lote Bibliotecas IA e ML Desenvolvimento de aplicativos Hospedagem de aplicativos Computação Pipelines e análises de dados Bancos de dados Distribuído, híbrido e multicloud Soluções por setor Migração Rede Observabilidade e monitoramento Segurança Storage Gerenciamento de recursos e acesso Gerenciamento de custos e uso Infraestrutura como código SDK, linguagens, frameworks e ferramentas O suporte ao Cloud Deployment Manager vai chegar ao fim em 31 de março de 2026 .
+- Snippets de recursos Google Kubernetes Engine (v1 Beta 1) gcp-types/container-v1beta1 Snippets de recursos Managed Service for Apache Spark gcp-types/dataproc-v1 Snippets de recursos Cloud DNS gcp-types/dns-v1 Snippets de recursos Filestore gcp-types/file-v1beta1 Snippets de recursos Gerenciamento de identidade e acesso gcp-types/iam-v1 Snippets de recursos Cloud Logging gcp-types/logging-v2 Snippets de recursos Cloud Monitoring gcp-types/monitoring-v3 Snippets de recursos Pub/Sub gcp-types/pubsub-v1 Snippets de recursos Memorystore gcp-types/redis-v1 Snippets de recursos Memorystore (v1 Beta 1) gcp-types/redis-v1beta1 Snippets de recursos API Cloud Runtime Configuration gcp-types/runtimeconfig-v1beta1 Snippets de recursos Service Management gcp-types/servicemanagement-v1 Snippets de recursos Spanner gcp-types/spanner-v1 Snippets de recursos Cloud SQL (v1 Beta 4) gcp-types/sqladmin-v1beta4 Snippets de recursos Cloud Storage gcp-types/storage-v1 Snippets de recursos Envie comentários Exceto em caso de indicação contrária, o conteúdo desta página é licenciado de acordo com a Licença de atribuição 4.0 do Creative Commons , e as amostras de código são licenciadas de acordo com a Licença Apache 2.0 .
+- Para agilizar a criação de seus modelos, considere o uso de modelos prontos para produção do Projeto do Cloud Foundation Toolkit do repositório do GitHub do Deployment Manager.
+

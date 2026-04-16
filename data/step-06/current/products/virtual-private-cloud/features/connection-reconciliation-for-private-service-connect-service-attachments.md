@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:13.131Z"
+generated_at: "2026-04-12T12:20:09.463Z"
 product_name: "Virtual Private Cloud"
 product_slug: "virtual-private-cloud"
 feature_name: "Connection reconciliation for Private Service Connect service attachments"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-08-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/vpc/docs/private-service-connect"
-  - "https://docs.cloud.google.com/vpc/docs/release-notes"
-  - "https://docs.cloud.google.com/vpc/docs/apis"
+  - "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+  - "https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services"
+  - "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping"
+  - "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
 keywords:
   - "connection"
   - "reconciliation"
@@ -38,53 +39,68 @@ Connection reconciliation is now available for Private Service Connect service a
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/vpc/docs/private-service-connect](https://docs.cloud.google.com/vpc/docs/private-service-connect)
-- [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
-- [https://docs.cloud.google.com/vpc/docs/apis](https://docs.cloud.google.com/vpc/docs/apis)
+- [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer)
+- [https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services](https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services)
+- [https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping](https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping)
+- [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services)
 
 ## Supporting Pages
 
-### Private Service Connect \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
+### "Publish services by using Private Service Connect \_|\_ Virtual Private\
 
-- URL: [https://docs.cloud.google.com/vpc/docs/private-service-connect](https://docs.cloud.google.com/vpc/docs/private-service-connect)
-- Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Virtual Private Cloud Start free Overview Guides Reference Resources More Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Virtual Private Cloud overview Get started VPC networks Subnets IPv6 support Create and manage VPC networks Add networking features Add IP addresses Overview Reserve internal IP addresses Reserve external IP addresses Move an external IPv4 address to a different project Add alias IP ranges Overview Configure alias IP ranges Bring your own IP addresses (BYOIP) Overview Planning and architecture Create a public advertised prefix Create public delegated prefixes Create IPv4 sub-prefixes and IP addresses Create and use IPv6 sub-prefixes Manage BGP announcement Deprovision BYOIP Add routes Routes overview Static routes overview Use routes Add policy-based routes Overview Use policy-based-routes Change MTU Overview Change MTU of a VPC network Create and verify a jumbo frame MTU network Access IPv4 destinations from IPv6-only instances Overview Configure IPv6-only subnets and instances with DNS64 and NAT64 Configure VMs Add network tags Add VMs with multiple network interfaces Overview Create VMs with multiple network interfaces Configure Dynamic NICs Add Dynamic NICs Delete Dynamic NICs Configure routing for an additional network interface Troubleshoot Add capabilities Network Connectivity Center VPC Network Peering Overview About peering connections Set up and manage VPC Network Peering Peer two VPC networks Shared VPC Overview Provision Shared VPC Deprovision Shared VPC Hybrid Subnets About migrating to Google Cloud with Hybrid Subnets Prepare for Hybrid Subnets connectivity Migrate to Google Cloud with Hybrid Subnets Disable hybrid subnet routing Internal ranges Overview Create and use internal ranges Network profiles for specific use cases Overview RDMA network profiles Create a VPC network for RDMA NICs View network profiles Access APIs and services Choose a private access option Private Service Connect Overview Compatibility Deployment patterns Architecture Security Create and access your own service Overview Create a load-balanced service Make the service accessible to other VPC networks Access the service from another VPC network Service consumers Endpoints Published services About accessing published services Access published services Manage endpoints that access published services Global Google APIs About accessing global Google APIs Access global Google APIs Regional Google APIs About accessing regional Google APIs Access regional Google APIs About propagated connections Backends About backends Create a backend Access published services Access regional Google APIs Access global Google APIs Network attachments About network attachments Create network attachments Configure security Service connection policies About service connectivity automation About service connection policies Configure connectivity to services Configure service connection policies Deploy service instances Manage consumer security Service producers Published services About published services About controlling access to published services Publish services Manage published services DNS configuration for services Private Service Connect health About Private Service Connect health Configure Private Service Connect health for failover View, update, and delete Private Service Connect health configurations Port mapping About port mapping Create port mapping services Update port mapping services Migrate peering services to Private Service Connect About migrating peering services Migrate peering services Interfaces About interfaces Create interfaces Configure routing Configure security Manage destination overlap Manage producer security Monitor connections Private Google Access Overview Configure Private Google Access Private Google Access for on-premises hosts Overview Configure Private Google Access for on-premises hosts Access APIs from VMs with external IP addresses Private services access Overview Configure private services access Send serverless traffic to a VPC network Overview Configure serverless traffic Monitor VPC Flow Logs Overview About VPC Flow Logs records About traffic flows Configure VPC Flow Logs Configure organization policy constraints Access flow logs Audit logging VPC audit logging Private services access audit logging Serverless VPC Access audit logging Packet Mirroring Overview Use Packet Mirroring Monitor Packet Mirroring Packet Mirroring partner providers Control access Manage resources by using custom constraints Create and manage tags for VPC resources Troubleshoot Troubleshoot internal connectivity between VMs Troubleshoot policy and access problems Advanced topics Advanced VPC concepts Legacy networks Overview Manage legacy networks AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Choosing a Private Service Connect feature Private Service Connect types Endpoints Backends Interfaces Private Service Connect managed services Published services Google APIs Private Service Connect characteristics What's next Home Documentation Networking Virtual Private Cloud Guides Was this helpful?
-- Backends let you create configurations such as the following: Customer-owned domains and certificates in front of managed services Consumer-controlled failover between managed services in different regions Centralized security configuration and access control for managed services The following diagram shows an internal Application Load Balancer deployed with Private Service Connect backends that reference a published service.
-- A connection between a Private Service Connect interface and a network attachment is similar to the connection between a Private Service Connect endpoint and a service attachment , but it has two key differences: A Private Service Connect interface lets a producer VPC network initiate connections to a consumer VPC network (managed service egress).
-- Private Service Connect lets you send traffic to endpoints and backends that forward the traffic to managed services, including Google APIs and published services.
-
-### VPC release notes \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- November 17, 2022 Feature Preview : Connectivity to Private Service Connect endpoints used to access a managed service is supported over VLAN attachments for Cloud Interconnect November 16, 2022 Feature Preview: Private Service Connect endpoints with consumer HTTP(S) controls now support accessing regional Google APIs and managed services using the following load balancers: Regional internal HTTP(S) load balancer Regional external HTTP(S) load balancer November 08, 2022 Feature Preview : You use the private.googleapis.com and restricted.googleapis.com VIPs to access Google APIs and services using IPv6 addresses.
-- July 24, 2024 Feature The following producer load balancers now support all Private Service Connect monitoring metrics : Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Feature Predefined dashboards for monitoring Private Service Connect connections have been enhanced: The dashboard for monitoring published services now includes more metrics.
-- When connection reconciliation is enabled for a service attachment, updating the service attachment's consumer accept or reject lists affects existing Private Service Connect connections in addition to new and pending connections.
-- October 21, 2021 Fixed This issue is now fixed: Connectivity from on-premises hosts to a Private Service Connect endpoint that is used to access published services might not establish for some existing Cloud VPN connections.
-
-### APIs and reference \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/vpc/docs/apis](https://docs.cloud.google.com/vpc/docs/apis)
-- Source ID: `site-docs-reference`
-- Final score: 164
+- URL: [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer)
+- Source ID: `site-docs-root-2`
+- Final score: 304
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Network attachments: Use to let service producer VPC networks initiate connections to consumer networks. gcloud , API Service connection policies: Use to automate deployment and connectivity for eligible managed service instances. gcloud , API Resources for service producers: Use to host managed services in their own separate VPC networks and offer a private connection to their consumers.
-- Service attachments: Use to publish services. gcloud , API Interfaces: Use to let service producer VPC networks initiate connections to consumer VPC networks. gcloud , API Routes : Use to create and modify VPC network routes.
-- Manage VPC Flow Logs configurations for subnets: gcloud , API Manage VPC Flow Logs configurations for VLAN attachments for Cloud Interconnect and Cloud VPN tunnels: gcloud , API Was this helpful?
-- Virtual Private Cloud Start free Overview Guides Reference Resources More Technology areas More Overview Guides Reference Resources Cross-product tools More Console Virtual Private Cloud (VPC) All APIs and references Serverless VPC Access API Overview v1 REST Resources projects.locations Overview list projects.locations.connectors Overview create delete get list patch projects.locations.operations Overview get list v1beta1 REST Resources projects.locations Overview list projects.locations.connectors Overview create delete get list patch projects.locations.operations Overview get list Types Types GetOperationRequest ListLocationsRequest ListLocationsResponse ListOperationsRequest ListOperationsResponse Regional service endpoints AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page gcloud CLI and API references Home Documentation Networking Virtual Private Cloud Reference Was this helpful?
+- For each endpoint in the list of connected endpoints, the endpointWithId field contains the endpoint's ID-based URI that you can use to accept or reject connections from individual Private Service Connect endpoints. gcloud compute service-attachments describe \ ATTACHMENT NAME --region= REGION Replace the following: ATTACHMENT NAME : the name of the service attachment.
+- Details are displayed for each endpoint, including the Endpoint ID that you can use to accept or reject connections from individual Private Service Connect endpoints. gcloud To view details for a published service, use the gcloud compute service-attachments describe command .
+- When you run terraform apply after upgrading to versions 4.76.0 through 4.81.x, Terraform might unintentionally delete and recreate the service attachments and close existing Private Service Connect connections.
+- To publish a service and explicitly approve consumers based on project, send the following request: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ ATTACHMENT REGION /serviceAttachments { "name": " ATTACHMENT NAME ", "region": " ATTACHMENT REGION ", "connectionPreference": "ACCEPT MANUAL", "targetService": " TARGET SERVICE ", "enableProxyProtocol": false, "natSubnets": [ " PSC SUBNET 1 URI ", " PSC SUBNET 2 URI " ], "consumerRejectLists": [ " REJECTED PROJECT 1 ", " REJECTED PROJECT 2 " ], "consumerAcceptLists": [ { "projectIdOrNum": " ACCEPTED PROJECT 1 ", "connectionLimit": " LIMIT 1 " }, { "projectIdOrNum": " ACCEPTED PROJECT 2 ", "connectionLimit": " LIMIT 2 " } ], "propagatedConnectionLimit": " PROPAGATED CONNECTION LIMIT ", "domainNames": [ " DOMAIN NAME " ] } Replace the following: PROJECT ID : the project for the service attachment.
+
+### "About controlling access to published services \_|\_ Virtual Private Cloud\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services](https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services)
+- Source ID: `site-docs-root-2`
+- Final score: 256
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For information about configuring connection reconciliation for new service attachments, see Publish a service with explicit approval .
+- For information about configuring connection reconciliation for existing service attachments, see Configure connection reconciliation .
+- Prevention of quota exhaustion The total number of Private Service Connect endpoints and propagated connections, from any consumer, that can access your producer VPC network is controlled by the PSC ILB consumer forwarding rules per producer VPC network quota .
+- Connection reconciliation Connection reconciliation determines whether updates to a service attachment's accept or reject lists can affect existing Private Service Connect connections.
+
+### "About Private Service Connect port mapping \_|\_ Virtual Private Cloud \_\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping](https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping)
+- Source ID: `site-docs-root-2`
+- Final score: 237
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Deployment Deploying a Private Service Connect port mapping connection differs from deploying a regular Private Service Connect endpoint connection for published services in the following ways: The service producer creates a port mapping service.
+- A consumer's on-premises workload can reach producer VMs by accessing the Private Service Connect endpoint through VLAN attachments for Cloud Interconnect or Cloud VPN .
+- A regular (load balanced) connection between a Private Service Connect endpoint and a service attachment is not ideal for this situation.
+- Private Service Connect port mapping forwards traffic from client destination ports of an endpoint to service ports of producer VMs based on mapping that is configured for a port mapping NEG (click to enlarge).
+
+### "Access published services through endpoints \_|\_ Virtual Private Cloud\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services)
+- Source ID: `site-docs-root-2`
+- Final score: 237
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Dropped packets from published services The private service connect/consumer/dropped received packets count metric tracks packets sent from a published service to a Private Service Connect consumer such as an endpoint that are dropped because Private Service Connect can't find a matching connection for response packets.
+- Private Service Connect might not find a match for a response packet if a published service sends response packets after a connection has timed out.
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to access published services through endpoints: To create, view, and delete endpoints in your project: compute.networks.use on your project compute.subnetworks.use on your project compute.addresses.createInternal on your project compute.addresses.deleteInternal on your project compute.addresses.get on your project compute.addresses.list on your project compute.addresses.use on your project compute.forwardingRules.create on your project compute.forwardingRules.delete on your project compute.forwardingRules.get on your project compute.forwardingRules.list on your project compute.forwardingRules.pscCreate on your project compute.forwardingRules.pscDelete on your project compute.regionOperations.get on your project servicedirectory.namespaces.create on your project servicedirectory.namespaces.delete on your project servicedirectory.services.create on your project servicedirectory.services.delete on your project To create, view, and delete endpoints in a service project that is attached to a Shared VPC network: compute.addresses.createInternal on the service project compute.addresses.deleteInternal on the service project compute.addresses.get on the service project compute.addresses.list on the service project compute.addresses.use on the service project compute.forwardingRules.create on the service project compute.forwardingRules.delete on the service project compute.forwardingRules.get on the service project compute.forwardingRules.list on the service project compute.forwardingRules.pscCreate on the service project compute.forwardingRules.pscDelete on the service project compute.regionOperations.get on the service project servicedirectory.namespaces.create on the service project servicedirectory.namespaces.delete on the service project servicedirectory.services.create on the service project servicedirectory.services.delete on the service project compute.networks.use on the host project compute.subnetworks.use on the host project To automatically or manually configure DNS entries for an endpoint in your project: dns.managedZones.create on your project dns.managedZones.delete on your project dns.networks.bindPrivateDNSZone on your project servicedirectory.namespaces.associatePrivateZone on your project To automatically or manually configure DNS entries for an endpoint in a Shared VPC network: dns.managedZones.create on the service project dns.managedZones.delete on the service project dns.networks.bindPrivateDNSZone on the service project servicedirectory.namespaces.associatePrivateZone on the service project To access the Private Service Connect page in the Google Cloud console: compute.forwardingRules.list on your project compute.globalForwardingRules.list on your project compute.networkEndpointGroups.list on your project compute.regionNetworkEndpointGroups.list on your project compute.urlMaps.list on your project compute.backendService.list on your project compute.regionBackendService.list on your project compute.backendBucket.list on your project compute.targetHttpProxy.list on your project compute.targetHttpsProxy.list on your project compute.regionTargetTcpProxy.list on your project compute.targetTcpProxy.list on your project compute.targetSslProxy.list on your project compute.sslCertificate.list on your project compute.sslPolicy.list on your project compute.regionHealthCheck.list on your project compute.healthCheck.list on your project compute.httpHealthCheck.list on your project compute.httpsHealthCheck.list on your project You might also be able to get these permissions with custom roles or other predefined roles .
+- Dropped packets to published service The private service connect/consumer/dropped sent packets count metric tracks packets from a Private Service Connect consumer such as an endpoint to a published service that are dropped because the endpoint exceeded its maximum connections to the service.
 

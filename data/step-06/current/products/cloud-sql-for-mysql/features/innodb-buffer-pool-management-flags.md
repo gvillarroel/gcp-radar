@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.863Z"
+generated_at: "2026-04-15T11:56:51.927Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "InnoDB buffer pool management flags"
@@ -9,9 +9,9 @@ latest_feature_date: "2023-12-18"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics"
   - "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+  - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries"
+  - "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication"
 keywords:
   - "innodb"
   - "buffer"
@@ -19,8 +19,8 @@ keywords:
   - "management"
   - "flags"
   - "sql"
-  - "for"
   - "mysql"
+  - "supports"
 ---
 
 # InnoDB buffer pool management flags
@@ -38,53 +38,53 @@ Cloud SQL for MySQL supports the innodb_buffer_pool_dump_now, innodb_buffer_pool
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- [https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics](https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics)
 - [https://docs.cloud.google.com/sql/docs/mysql/troubleshooting](https://docs.cloud.google.com/sql/docs/mysql/troubleshooting)
+- [https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries](https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries)
+- [https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication](https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication)
 
 ## Supporting Pages
 
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
+### "Client libraries and sample code for Cloud SQL \_|\_ Cloud SQL for MySQL\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 256
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- December 18, 2023 Feature Cloud SQL for MySQL now supports the following flags for MySQL 8.0: innodb buffer pool dump now innodb buffer pool load abort innodb buffer pool load now For more information about these flags, see supported flags .
-- March 12, 2021 Feature Cloud SQL for MySQL now supports the innodb buffer pool size flag.
-- January 25, 2024 Feature Cloud SQL Enterprise Plus edition now supports the following regions: asia-northeast2 (Osaka) asia-south2 (Delhi) europe-north1 (Finland) europe-southwest1 (Madrid) us-east5 (Columbus) us-south1 (Dallas) January 12, 2024 Feature Cloud SQL for MySQL now supports setting microsecond time periods for the following flag on MySQL 5.7 and MySQL 8.0: innodb flush log at timeout For more information about this flag, see supported flags .
-- November 21, 2025 Feature To help prevent out-of-memory (OOM) events, you can enable managed buffer pool for Cloud SQL for MySQL 8.0 and later instances.
-
-### Cloud SQL metrics \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics](https://docs.cloud.google.com/sql/docs/mysql/admin-api/metrics)
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries](https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries)
 - Source ID: `site-api-reference`
-- Final score: 230
-- Re-rank relevance: N/A
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- After sampling, data is not visible for up to 165 seconds. innodb page type : Kind of InnoDB page, one of [dirty, free, Total] database/mysql/innodb/buffer pool read requests count GA (project) Innodb Buffer Pool Read Requests Count DELTA , INT64 , 1 cloudsql database Logical read requests from InnoDB buffer pool, since the last sample.
-- After sampling, data is not visible for up to 165 seconds. operation type : Kind of InnoDB row operations, one of [delete, insert, read, update] database/mysql/innodb buffer pool pages dirty GA (project) InnoDB dirty pages GAUGE , INT64 , 1 cloudsql database Number of unflushed pages in the InnoDB buffer pool.
-- After sampling, data is not visible for up to 165 seconds. database/mysql/innodb/buffer pool reads count GA (project) Innodb Buffer Pool Reads Count DELTA , INT64 , 1 cloudsql database Logical reads that InnoDB could not satisfy from the buffer pool, and had to read directly from disk, since the last sample.
-- After sampling, data is not visible for up to 165 seconds. database/mysql/innodb/buffer pool pages GA (project) InnoDB Buffer Pool Pages GAUGE , INT64 , 1 cloudsql database Number of InnoDB buffer pool pages, innodb page type field stores count of InnoDB pages in each state.
+- Libraries and sample code Language Documentation C++ Google API Client Library Dart Google API Client Library Go Google API Client Library Sample code: Cloud SQL Auth Proxy Java Google API Client Library Google Client Developer's Guide Sample code: Cloud SQL Java Connector JavaScript Google API Client Library .NET Google API Client Library Google Client Developer's Guide Node.js Google API Client Library Objective-C Google API Client Library PHP Google API Client Library Python Google API Client Library Google Client Developer's Guide Cloud SQL Python Connector Sample code: MySQL, PostgreSQL, SQL Server Ruby Google API Client Library Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Databases Cloud SQL MySQL Reference Send feedback Client libraries and sample code for Cloud SQL Stay organized with collections Save and categorize content based on your preferences.
+- MySQL PostgreSQL SQL Server The Cloud SQL Admin API is built on HTTP and JSON, so any standard HTTP client can send requests to it and parse the responses.
+
+### "Cloud SQL built-in database authentication \_|\_ Cloud SQL for MySQL \_\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication](https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication)
+- Source ID: `site-docs-reference-3`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL built-in database authentication Stay organized with collections Save and categorize content based on your preferences.
+- MySQL PostgreSQL SQL Server This page describes how built-in authentication works on Cloud SQL instances and how database administrators can set password policies for local database users.
+- Note: User password policy options are supported on Cloud SQL for MySQL 8.0 and later.
+- The Set password to expire option is also supported on Cloud SQL for MySQL 5.7.
 
 ### Troubleshoot \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sql/docs/mysql/troubleshooting](https://docs.cloud.google.com/sql/docs/mysql/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 228
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 35
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Connect to the database and run these commands for details on each type: SHOW VARIABLES LIKE 'innodb log file%' ; SELECT ROUND ( SUM ( LENGTH ( argument ) / POW ( 1024 , 2 ), 2 ) AS GB from mysql . general log ; SHOW BINARY LOGS ; Log files are hard to read.
-- To learn more about using mysqldump flags for managed import migration, see Allowed and default initial sync flags The initial data migration was successful, but no data is being replicated.
 - Cloud SQL allows caching of data in the InnoDB buffer pool.
-- To download the logs as JSON: gcloud logging read \ "resource.type=cloudsql database \ AND logName=projects/ PROJECT ID \ /logs/cloudsql.googleapis.com%2F LOG NAME " \ --format json \ --project = PROJECT ID \ --freshness = "1d" \ downloaded-log.json To download the logs as TEXT: gcloud logging read \ "resource.type=cloudsql database \ AND logName=projects/ PROJECT ID \ /logs/cloudsql.googleapis.com%2F LOG NAME " \ --format json \ --project = PROJECT ID \ --freshness = "1d" jq -rnc --stream 'fromstream(1 truncate stream(inputs)) \ .textPayload' \ --order = asc downloaded-log.txt Manage instances Issue Troubleshooting Slow performance after restarting MySQL.
+- MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Orphan tables Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances External primary External replica Flags High availability Import and export Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.
+- The following command lets you check the redo log size: SHOW VARIABLES LIKE 'innodb log file%'; You can check the size of general log , if it is enabled, with the help of this command: SELECT ROUND(SUM(LENGTH(argument)/POW(1024,2)),2) AS GB from mysql.general log; If needed, you can truncate your log tables by using the API.
+- Connect to the database and run these commands for details on each type: SHOW VARIABLES LIKE 'innodb log file%' ; SELECT ROUND ( SUM ( LENGTH ( argument ) / POW ( 1024 , 2 ), 2 ) AS GB from mysql . general log ; SHOW BINARY LOGS ; Log files are hard to read.
 

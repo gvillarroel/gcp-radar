@@ -11,6 +11,7 @@ $.quote = quote;
 const execFileAsync = promisify(execFile);
 
 const promptVersion = "step-02-v2";
+const derivationVersion = "step-02-v27";
 const inputParquet = path.resolve("data/step-01/raw/google_cloud_release_notes/current/release_notes.parquet");
 const outputRoot = path.resolve(process.env.GCP_RADAR_STEP02_OUTPUT_ROOT || "data/step-02/current");
 const outputName = path.basename(outputRoot);
@@ -399,6 +400,528 @@ function cloneEvent(event, overrides = {}) {
   };
 }
 
+function isGenericAvailabilitySummary(featureName, summary) {
+  const escapedName = String(featureName || "").trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  if (!escapedName) {
+    return false;
+  }
+  return new RegExp(`^${escapedName}\\s+(?:is|became|was|entered)\\b`, "i").test(String(summary || "").trim())
+    || /\bis available in preview\b/i.test(String(summary || ""))
+    || /\bis generally available\b/i.test(String(summary || ""))
+    || /\bbecame generally available\b/i.test(String(summary || ""));
+}
+
+function isObviousSplitFragmentFeature(featureName) {
+  const name = String(featureName || "").trim();
+  if (!name) {
+    return true;
+  }
+
+  if (/^and\s+/i.test(name)) {
+    return true;
+  }
+
+  if (/^(?:v)?\d+(?:\.\d+){1,5}(?:[-+][A-Za-z0-9.]+)?$/i.test(name)) {
+    return true;
+  }
+
+  if (/^\d+\s+[A-Za-z]+$/i.test(name)) {
+    return true;
+  }
+
+  return false;
+}
+
+function isTutorialOrGuidanceFeature(featureName, featureSummary) {
+  const text = String(featureName || "").trim();
+  return /\bquick start\b/i.test(text)
+    || /\bquickstart\b/i.test(text)
+    || /\btutorial\b/i.test(text)
+    || /\bguidance\b/i.test(text)
+    || /\bsetup guidance\b/i.test(text)
+    || /\breference architecture\b/i.test(text);
+}
+
+function isAccessTransparencySupportRelationship(featureName, featureSummary) {
+  const name = String(featureName || "").trim();
+  const summary = String(featureSummary || "").trim();
+  if (!name) {
+    return false;
+  }
+
+  return /\baccess transparency\b.*\b(?:supports?|supported|supporting|available for use in|available in|available as)\b/i.test(summary)
+    || /\baccess transparency\b.*\b(?:supports?|supported|supporting|available for use in|available in|available as)\b/i.test(name);
+}
+
+function refineFeatureForProduct(productName, feature) {
+  if (productName !== "Access Approval") {
+    const name = String(feature.feature_name || "").trim();
+    const summary = String(feature.feature_summary || "").trim();
+
+    if (isObviousSplitFragmentFeature(name)) {
+      return null;
+    }
+
+    if (isTutorialOrGuidanceFeature(name, summary)) {
+      return null;
+    }
+
+    if (productName === "Anthos Config Management") {
+      if (/hidden git metadata directory ignore list/i.test(name)
+        || (/\.github\b/i.test(summary) && /\.gitlab\b/i.test(summary) && /\.gitlab-ci\.yml\b/i.test(summary))) {
+        return null;
+      }
+    }
+    if (productName === "Apigee X") {
+      if (/^Apigee APIM Operator for Kubernetes$/i.test(name)) {
+        return null;
+      }
+    }
+    if (productName === "Apigee UI") {
+      if ([
+        "Apps table Display Name column",
+        "API Products table Name column",
+        "Apigee UI Overview page",
+        "Apigee UI in Google Cloud console (GA)",
+        "Apigee instance IP range prefix selection",
+        "Apigee instance private connection project allowlist",
+        "Apigee API Product legacy format warning",
+        "Debug v1",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Spanner") {
+      if (/^Cloud Spanner API general availability$/i.test(name)) {
+        return null;
+      }
+    }
+    if (productName === "Access Transparency" && isAccessTransparencySupportRelationship(name, summary)) {
+      return null;
+    }
+    if (productName === "Google SecOps") {
+      if (
+        name === "MCP use control via organization policies"
+        || /^Alert metadata fields idm\.is_significant and idm\.is_alert$/i.test(name)
+      ) {
+        return null;
+      }
+      if (name === "re.capture_all function") {
+        feature.feature_name = "re.capture_all()";
+      }
+      if (name === "timestamp.get_date() function") {
+        feature.feature_name = "timestamp.get_date()";
+      }
+    }
+    if (productName === "Google SecOps SIEM") {
+      if (name === "re.capture_all function") {
+        feature.feature_name = "re.capture_all()";
+      }
+      if (name === "idm.is_alert alert metadata field") {
+        feature.feature_name = "idm.is_alert";
+      }
+      if (name === "idm.is_significant alert metadata field") {
+        feature.feature_name = "idm.is_significant";
+      }
+      if (name === "YARA-L 2.0 arrays.length() function") {
+        feature.feature_name = "arrays.length()";
+      }
+    }
+    if (productName === "Cloud Deployment Manager") {
+      if ([
+        "Deployment Manager Cloud Scheduler type support",
+        "Deployment Manager appengine.v1beta4 resource type support",
+        "Deployment Manager appengine.v1beta5 resource type support",
+        "App Engine v1beta4 and v1beta5 resource types",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Apps Script") {
+      if (name === "UrlShortener Service") {
+        return null;
+      }
+    }
+    if (productName === "Migrate to Containers") {
+      if ([
+        "Tomcat artifact packaging",
+        "Migrate for Compute Engine v5 integration",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Cloud Run") {
+      if (name === "Java function execution ID logging") {
+        return null;
+      }
+    }
+    if (productName === "Cloud Run functions") {
+      if ([
+        "Java execution ID logging",
+        "Deterministic URLs",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Cloud Deploy") {
+      if (name === "promoteRelease API") {
+        return null;
+      }
+    }
+    if (productName === "Cloud Monitoring") {
+      if (name === "Cloud Monitoring agent Linux installation scripts") {
+        return null;
+      }
+    }
+    if (productName === "Anthos clusters on AWS") {
+      if ([
+        "Storage driver upgrades",
+        "Google Cloud Managed Service for Prometheus availability",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Anthos clusters on Azure") {
+      if ([
+        "Kubernetes Resource Metrics Prefix Update",
+        "Private clusters with private IPs for Anthos on Azure",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Google Distributed Cloud Software Only for VMware") {
+      if (name === "populate_registry.sh script") {
+        return null;
+      }
+    }
+    if (productName === "Apigee Analytics") {
+      if (name === "Apigee Analytics regional expansion to Hong Kong and São Paulo") {
+        return null;
+      }
+    }
+    if (productName === "Deep Learning VM Images") {
+      if ([
+        "BigQuery magic plugin",
+        "DooD support",
+        "Conda-independent R Notebooks",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Apigee Adapter for Envoy") {
+      if (name === "CLI samples command supported Envoy and Istio versions") {
+        return null;
+      }
+    }
+    if (productName === "App Engine flexible environment custom runtimes") {
+      if ([
+        "App Engine flexible environment modern networking stack",
+        "Modern networking stack",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "App Engine flexible environment Java") {
+      if ([
+        "App Engine flexible environment general availability",
+        "General availability",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "SAP on Google Cloud") {
+      if (name === "gceStorageClient for SAP HANA host auto-failover v1.n") {
+        return null;
+      }
+    }
+    if (productName === "Vertex AI Workbench") {
+      if ([
+        "GOOGLE_CLOUD_REGION environment variable defaulting",
+        "Preinstalled libraries in Vertex AI Workbench user-managed notebook image",
+        "Vertex AI Workbench Notebooks API allowed domains",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Container Optimized OS") {
+      if (
+        [
+          "NVIDIA RTX PRO 6000 driver 590.44.01 and 590.48.01 support",
+          "AMD IOMMU and INET_DIAG_DESTROY kernel configs",
+          "INET_DIAG_DESTROY kernel configuration",
+          "Hardware-optimized SHA256 algorithms",
+          "cloud-final.service dependency removal from multi-user.target",
+          "cloud-final.service startup dependency removal",
+          "systemd named service sequencing",
+          "named service ordering before nss-lookup.target",
+          "Trusted IMA certificate loading",
+          "Restricted /etc/resolv.conf bind mount options",
+        ].includes(name)
+      ) {
+        return null;
+      }
+    }
+    if (productName === "App Engine flexible environment Ruby") {
+      if (
+        [
+          "TLS 1.1 and earlier protocol support in App Engine flexible environment",
+          "App Engine availability in us-west3",
+          "App Engine region-ID request URLs",
+          "App Engine availability in asia-east2",
+          "App Engine availability in us-west2",
+        ].includes(name)
+      ) {
+        return null;
+      }
+    }
+    if (productName === "App Engine flexible environment Python") {
+      if (
+        [
+          "App Engine regional app URL format",
+          "App Engine flexible environment availability in us-east4",
+          "App Engine flexible environment general availability",
+          "Modern networking stack with improved throughput in App Engine flexible environment",
+        ].includes(name)
+      ) {
+        return null;
+      }
+    }
+    if (productName === "App Engine flexible environment Go") {
+      if ([
+        "App Engine flexible environment Go regional expansion to asia-east2",
+        "App Engine flexible environment Go regional expansion to us-west2",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "App Engine flexible environment Node.js") {
+      if ([
+        "App Engine flexible environment modern networking stack",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "App Engine flexible environment PHP") {
+      if ([
+        "App Engine availability in us-west4 (Las Vegas)",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "App Engine standard environment Node.js") {
+      if (
+        [
+          "App Engine standard environment regional availability",
+          "AppCfg tooling and legacy standalone App Engine SDK",
+          "App Engine Channel and XMPP services",
+        ].includes(name)
+      ) {
+        return null;
+      }
+    }
+    if (productName === "Cloud TPU") {
+      if (name === "Native torch wheels on Colab and Kaggle") {
+        return null;
+      }
+    }
+    if (productName === "Cortex") {
+      if (name === "CATGAP") {
+        return null;
+      }
+    }
+    if (productName === "Carbon Footprint") {
+      if (name === "Unattended project recommender carbon impact reporting") {
+        return null;
+      }
+    }
+    if (productName === "Looker Studio") {
+      if (name === "G2") {
+        return null;
+      }
+    }
+    if (productName === "Mainframe Assessment Tool") {
+      if (name === "Parsing performance improvements") {
+        return null;
+      }
+    }
+    if (productName === "Document AI Warehouse") {
+      if (name === "Operation service") {
+        return null;
+      }
+    }
+    if (productName === "Google Distributed Cloud Software Only for Bare Metal") {
+      if (name === "NodePoolClaim taint mutability") {
+        return null;
+      }
+    }
+    if ([
+      "App Engine standard environment Python",
+      "App Engine standard environment Go",
+      "App Engine standard environment Java",
+    ].includes(productName)) {
+      if (name === "and asia-east1" || name === "asia-southeast1") {
+        return null;
+      }
+      if (productName === "App Engine standard environment Go" && name === "Elastic provisioning metrics") {
+        return null;
+      }
+      if (productName === "App Engine standard environment Java" && ["JDK 9 modular JAR support", "dev_appserver.out logging"].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "App Engine standard environment Ruby") {
+      if (name === "and Taiwan" || name === "Singapore") {
+        return null;
+      }
+    }
+    if (productName === "Google Kubernetes Engine") {
+      if (
+        name === "000 nodes"
+        || name === "GKE cluster scaling to 65"
+        || [
+          "Organization policy control for MCP use",
+          "FlowSchema v1beta3 API",
+          "PriorityLevelConfiguration v1beta3 API",
+          "CephFS in-tree volume plugin",
+          "RBD in-tree volume plugin",
+          "flowcontrol.apiserver.k8s.io/v1beta3 FlowSchema and PriorityLevelConfiguration APIs",
+          "ValidatingAdmissionPolicy",
+          "FlowSchema API v1beta3",
+          "PriorityLevelConfiguration API v1beta3",
+          "v1beta2 FlowSchema and PriorityLevelConfiguration APIs",
+          "FlowSchema",
+          "PriorityLevelConfiguration",
+        ].includes(name)
+      ) {
+        return null;
+      }
+    }
+    if (productName === "Dataproc") {
+      if ([
+        "1.0.3",
+        "and 1.0.4",
+        "1.4.77",
+        "1.5.53",
+        "and 2.0.27",
+        "Serverless Spark conscrypt removal",
+        "Serverless Spark default artifact removal",
+        "Autoscaling version selection for Serverless Spark",
+        "Dataproc Agent high availability mode",
+        "Auto diagnostics for Dataproc Serverless for Spark batch failures",
+        "gcloud_dataproc_personal_cluster.py tool",
+        "dataproc:alpha.state.shuffle.hcfs.enabled property",
+        "Application master primary-only placement",
+        "dataproc.localssd.mount.enable",
+        "Appendable output streams",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "AlloyDB") {
+      if ([
+        "Gemini 3.0 Flash for AlloyDB AI functions",
+        "AlloyDB SSL/TLS encryption enforcement recommender",
+        "Cross-data center replication for automated disaster recovery",
+        "AlloyDB Omni 15.2.0 Preview",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Dialogflow") {
+      if ([
+        "US multi-region for Dialogflow CX",
+        "$request.user-utterance request-scoped parameter",
+        "sys.long-utterance built-in event",
+        "Amazon Alexa exporter",
+        "Amazon Alexa importer",
+        "Kik integration",
+        "Skype integration",
+        "and Dutch",
+        "and Norwegian",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Cloud Composer") {
+      if ([
+        "Cloud Composer regional availability in me-central2 (Dammam)",
+        "Cloud Composer image version aliases",
+        "Worker ID filtering for Cloud Monitoring logs",
+        "Cloud Composer minimum supported version",
+        "Worker-specific Cloud Monitoring log filter",
+        "Minimum supported Composer version 1.6.0",
+        "Reversible store_serialized_dags setting",
+        "One-way store_serialized_dags enforcement",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Sensitive Data Protection") {
+      if ([
+        "SCOTLAND_COMMUNITY_HEALTH_NUMBER infoType detector",
+        "Data profile finding fields in Security Command Center",
+        "BigQuery inspection support",
+      ].includes(name)) {
+        return null;
+      }
+    }
+    if (productName === "Earth Engine Data Catalog") {
+      if (feature.deprecation_date) {
+        return null;
+      }
+      if (/^DG_GG_(?:2002|2003|2004|2005|2006|2007|2008|2009|2010|2011|ANNUAL)$/i.test(name)) {
+        return null;
+      }
+      if (/^(?:NASA\/GPM_L3\/IMERG_V04|MODIS\/MOD08_M3_051|LEDAPS\/L5_L1T_SR|LEDAPS\/L7_L1T_SR)$/i.test(name)) {
+        return null;
+      }
+      if (/^LANDSAT_COPY\//i.test(name)) {
+        return null;
+      }
+      if (/^LANDSAT\/.*(?:\/C01\/|_L1T(?:_|$)|_RT(?:_|$))/i.test(name)) {
+        return null;
+      }
+    }
+    if (productName === "Earth Engine JavaScript Client Library") {
+      if (/^ee\.layers\.BinaryOverlay$/i.test(name)) {
+        return null;
+      }
+    }
+    return feature;
+  }
+
+  const name = String(feature.feature_name || "").trim();
+  const summary = String(feature.feature_summary || "").trim();
+  const isSupportRelationship = /\baccess approval supports\b/i.test(summary)
+    || /\bavailable for use in access approval\b/i.test(summary)
+    || /\baccess approval can be used with\b/i.test(summary)
+    || /\baccess approval now supports\b/i.test(summary)
+    || /\baccess approval support for\b/i.test(name);
+  const isAccessApprovalNative = /\baccess approval\b/i.test(name)
+    || /^access\b/i.test(name)
+    || /\b(accessapprovalsettings|deleteaccessapprovalsettings|listapprovalrequests|dismissdecision)\b/i.test(name);
+
+  if (isAccessApprovalNative || (!isSupportRelationship && !isGenericAvailabilitySummary(name, summary))) {
+    return feature;
+  }
+
+  let lifecycle = "supported by Access Approval.";
+  if (/\bgenerally available\b|\bga\b/i.test(summary) && /\bpreview\b/i.test(summary)) {
+    lifecycle = "supported by Access Approval in GA and Preview.";
+  } else if (/\bgenerally available\b|\bga\b/i.test(summary)) {
+    lifecycle = "supported by Access Approval in GA.";
+  } else if (/\bpreview\b/i.test(summary)) {
+    lifecycle = "supported by Access Approval in Preview.";
+  }
+
+  return {
+    ...feature,
+    feature_name: `Access Approval support for ${name}`,
+    feature_summary: `${name} is ${lifecycle}`.replace(/\s+/g, " ").trim(),
+    aliases: [...new Set([...(feature.aliases || []), name])],
+  };
+}
+
 function splitCompoundModelFeatureNames(name) {
   const trimmed = String(name || "").trim();
   if (!trimmed) {
@@ -716,7 +1239,7 @@ function combineFeatureSummaries(feature) {
   return summary.charAt(0).toUpperCase() + summary.slice(1);
 }
 
-function consolidateFeatureList(features) {
+function consolidateFeatureList(productName, features) {
   const groups = new Map();
 
   for (const feature of features) {
@@ -753,8 +1276,9 @@ function consolidateFeatureList(features) {
       feature.aliases = [...new Set(feature.aliases)];
       feature.feature_name = chooseCanonicalFeatureName(feature);
       feature.feature_summary = combineFeatureSummaries(feature);
-      return feature;
+      return refineFeatureForProduct(productName, feature);
     })
+    .filter(Boolean)
     .sort((a, b) => {
       const dateA = a.latest_feature_date || a.latest_event_date;
       const dateB = b.latest_feature_date || b.latest_event_date;
@@ -764,6 +1288,14 @@ function consolidateFeatureList(features) {
 
       return a.feature_name.localeCompare(b.feature_name);
     });
+}
+
+function refineOutputFeatures(productName, features) {
+  return features.map((feature) => refineFeatureForProduct(productName, {
+    ...feature,
+    aliases: [...(feature.aliases || [])],
+    event_summaries: [...(feature.event_summaries || [])],
+  })).filter(Boolean);
 }
 
 function slugify(text) {
@@ -780,6 +1312,7 @@ function sanitizeTableCell(text) {
 
 function buildProductStateEntry(productRows, features, rowIds, markdown) {
   return {
+    derivation_version: derivationVersion,
     row_count: productRows.length,
     row_ids: rowIds,
     row_signature: signatureForRowIds(rowIds),
@@ -795,7 +1328,8 @@ function hasCurrentProductState(productState, productName, rowIds) {
     return false;
   }
 
-  return current.row_signature === signatureForRowIds(rowIds);
+  return current.row_signature === signatureForRowIds(rowIds)
+    && current.derivation_version === derivationVersion;
 }
 
 function buildProductMarkdown(productName, productRows, features, slug) {
@@ -885,7 +1419,7 @@ async function main() {
     await extractEventsForProduct(productName, productRows, cache);
     extractedRowCount += uncachedCount;
     const rawFeatures = buildFeatureList(productRows, cache);
-    const features = consolidateFeatureList(rawFeatures);
+    const features = refineOutputFeatures(productName, consolidateFeatureList(productName, rawFeatures));
     const markdown = buildProductMarkdown(productName, productRows, features, slug);
     const previousEntry = productState.products[productName];
     const currentMarkdownHash = hashInput(markdown);

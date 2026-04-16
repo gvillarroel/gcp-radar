@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.942Z"
+generated_at: "2026-04-13T22:42:27.278Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Sampled query plans"
@@ -9,18 +9,16 @@ latest_feature_date: "2023-05-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store"
-  - "https://docs.cloud.google.com/spanner/docs/instances"
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
+  - "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+  - "https://docs.cloud.google.com/spanner/docs/query-execution-operators"
+  - "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview"
 keywords:
   - "sampled"
-  - "query"
+  - "enabling"
   - "plans"
-  - "spanner"
-  - "now"
   - "offers"
-  - "in"
   - "preview"
+  - "query"
 ---
 
 # Sampled query plans
@@ -38,44 +36,46 @@ Spanner now offers sampled query plans in Preview, enabling users to view histor
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
+- [https://docs.cloud.google.com/spanner/docs/create-query-database-console](https://docs.cloud.google.com/spanner/docs/create-query-database-console)
+- [https://docs.cloud.google.com/spanner/docs/query-execution-operators](https://docs.cloud.google.com/spanner/docs/query-execution-operators)
+- [https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview](https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview)
 
 ## Supporting Pages
 
-### Module vector_store (0.9.0) | Python client libraries | Google Cloud Documentation
+### "Create and query a database in the Google Cloud console \_|\_ Spanner \_\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- Source ID: `site-python-reference`
-- Final score: 98
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Module vector store (0.9.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain google spanner.vector store SpannerVectorStore(instance id: str, database id: str, table name: str, embedding service: langchain core.embeddings.embeddings.Embeddings, id column: str = &#x27;langchain id&#x27;, content column: str = &#x27;content&#x27;, embedding column: typing.Optional[typing.Union[str, langchain google spanner.vector store.TableColumn]] = None, client: typing.Optional[google.cloud.spanner v1.client.Client] = None, metadata columns: typing.Optional[typing.List[str]] = None, ignore metadata columns: typing.Optional[typing.List[str]] = None, metadata json column: typing.Optional[str] = None, vector index name: typing.Optional[str] = None, query parameters: langchain google spanner.vector store.QueryParameters = &lt;langchain google spanner.vector store.QueryParameters object&gt;)
-
-### Instances overview | Spanner | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
-- Source ID: `site-docs-root`
+- URL: [https://docs.cloud.google.com/spanner/docs/create-query-database-console](https://docs.cloud.google.com/spanner/docs/create-query-database-console)
+- Source ID: `site-docs-reference`
 - Final score: 92
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Instances overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/instances Once an instance is created, you can list, edit, or delete it.
-- Spanner is a fully managed database service which oversees its own underlying tasks and resources, including monitoring and restarting processes when necessary with zero downtime.
+- Learn more about Query Execution Plans .
+- The Google Cloud console displays the Singers table's Spanner Studio page with a new query tab that contains the INSERT statement that you edit to insert a row in the Singers table and view the result of that insertion: GoogleSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.
+- Home Documentation Databases Spanner Guides Send feedback Create and query a database in the Google Cloud console Stay organized with collections Save and categorize content based on your preferences.
+- The Singers table now has two rows: GoogleSQL PostgreSQL Run a query in the Google Cloud console On the database Overview page, click Spanner Studio in the navigation menu.
 
-### django_spanner.operations — google-cloud-spanner-django documentation
+### Query execution operators \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- Source ID: `site-python-reference`
-- Final score: 88
+- URL: [https://docs.cloud.google.com/spanner/docs/query-execution-operators](https://docs.cloud.google.com/spanner/docs/query-execution-operators)
+- Source ID: `site-docs-reference`
+- Final score: 80
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
+- This page describes the operators used in Spanner query execution plans .
+- The following table shows some common mappings: SQL Query execution operator Table reference Table Scan, Index Scan WHERE Filter Scan , Filter GROUP BY Aggregate Scalar function (such as ISNULL ) Compute Aggregate function (such as SUM ) Aggregate JOIN Any join operator; see Joins Subquery Scalar or Array subquery LIMIT Limit , Sort Limit ORDER BY Sort, Sort Limit Query execution operators This section lists all query execution operators that can make up a query execution plan in Spanner.
+- Name Summary Distributed union Conceptually divides one or more tables into multiple splits, remotely evaluates a subquery independently on each split, and then unions all results.
+- Home Documentation Databases Spanner Reference Send feedback Query execution operators Stay organized with collections Save and categorize content based on your preferences.
+
+### Autoscaler tool overview \_|\_ Spanner \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview](https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview)
+- Source ID: `site-docs-root`
+- Final score: 76
+- Re-rank relevance: N/A
 

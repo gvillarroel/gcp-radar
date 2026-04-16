@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.603Z"
+generated_at: "2026-04-12T12:07:33.847Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB Omni support for Red Hat OpenShift"
 feature_slug: "alloydb-omni-support-for-red-hat-openshift"
 latest_feature_date: "2024-08-05"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/invoke-predictions"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/filtered-vector-search-overview"
 keywords:
   - "OpenShift Container Platform 4.14"
   - "Red Hat OpenShift"
@@ -23,7 +26,7 @@ keywords:
 # AlloyDB Omni support for Red Hat OpenShift
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -31,28 +34,48 @@ AlloyDB Omni adds support for Red Hat OpenShift Container Platform 4.14 and late
 
 ## Extended Definition
 
-AlloyDB Omni supports integration with Red Hat OpenShift Container Platform, specifically versions 4.14 and later. The AlloyDB release notes list this as a Preview capability, so the feature is available on a preview basis rather than generally available.
+AlloyDB Omni adds support for Red Hat OpenShift Container Platform 4.14 and later in preview.
 
 ## Evidence Summary
 
-The official AlloyDB release notes explicitly state that support for Red Hat OpenShift Container Platform 4.14+ is provided and that this support is in Preview.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex](https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex)
+- [https://docs.cloud.google.com/alloydb/docs/ai/invoke-predictions](https://docs.cloud.google.com/alloydb/docs/ai/invoke-predictions)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- [https://docs.cloud.google.com/alloydb/docs/ai/filtered-vector-search-overview](https://docs.cloud.google.com/alloydb/docs/ai/filtered-vector-search-overview)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Build LLM-powered applications using LlamaIndex \_|\_ AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex](https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex)
 - Source ID: `site-docs-root`
-- Final score: 28
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Invoke predictions \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/invoke-predictions](https://docs.cloud.google.com/alloydb/docs/ai/invoke-predictions)
+- Source ID: `site-docs-root-2`
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 78
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- Support for the Red Hat OpenShift container platform version 4.14 and later in Preview .
-- AlloyDB Omni supports the pg ivm extension, which provides incremental view maintenance for materialized views.
-- Version 15.7.0 includes the following features and changes: AlloyDB Omni supports PostgreSQL version 15.7 .
-- AlloyDB Omni supports the Podman container tool on Red Hat Enterprise Linux (RHEL).
+### "Filtered vector search in AlloyDB overview \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/filtered-vector-search-overview](https://docs.cloud.google.com/alloydb/docs/ai/filtered-vector-search-overview)
+- Source ID: `site-docs-root-2`
+- Final score: 74
+- Re-rank relevance: N/A
 

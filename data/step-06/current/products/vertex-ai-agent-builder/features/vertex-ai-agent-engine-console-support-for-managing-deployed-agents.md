@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.344Z"
+generated_at: "2026-04-12T12:19:43.316Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Vertex AI Agent Engine Console support for managing deployed agents"
 feature_slug: "vertex-ai-agent-engine-console-support-for-managing-deployed-agents"
 latest_feature_date: "2025-05-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
@@ -27,7 +27,7 @@ keywords:
 # Vertex AI Agent Engine Console support for managing deployed agents
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,7 +39,7 @@ Vertex AI Agent Engine now adds console-based management capabilities for deploy
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/manage/access](https://docs.cloud.google.com/agent-builder/agent-engine/manage/access)
 - Source ID: `site-docs-root`
-- Final score: 286
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 324
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Then run the following command: gcloud projects get-iam-policy PROJECT ID OR NUMBER \ --flatten = "bindings[].members" \ --filter = "bindings.members:serviceAccount: PRINCIPAL " \ --format = "value(bindings.role)" where PROJECT ID OR NUMBER is the ID or number for your project, and PRINCIPAL is based on the service account that was used when the agent is deployed on Vertex AI Agent Engine.
@@ -68,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - Source ID: `site-docs-root`
-- Final score: 282
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 320
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .
@@ -82,9 +82,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/manage/overview](https://docs.cloud.google.com/agent-builder/agent-engine/manage/overview)
 - Source ID: `site-iam-reference`
-- Final score: 250
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 288
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - View metrics for your deployed agent For deployed agents, you can use the console to view metrics for your agent: In the Google Cloud console, go to the Vertex AI Agent Engine page.
@@ -96,9 +96,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/evaluate](https://docs.cloud.google.com/agent-builder/agent-engine/evaluate)
 - Source ID: `site-docs-root`
-- Final score: 244
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 282
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - AdkApp ( agent = root agent , ) remote app = client . agent engines . create ( agent = app , config = { "staging bucket" : gs : // BUCKET NAME , "requirements" : [ 'google-cloud-aiplatform[adk,agent engines]' ], "env vars" : { "GOOGLE CLOUD AGENT ENGINE ENABLE TELEMETRY" : "true" } } ) return remote app agent engine = deploy adk agent ( my agent ) agent engine resource name = agent engine . api resource . name To get the list of agents that are deployed to Vertex AI Agent Engine, see Manage deployed agents .

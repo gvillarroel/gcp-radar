@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/gemini/enterprise/docs/apis
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/gemini/enterprise/docs/apis
+entrypoint: https://docs.cloud.google.com/gemini/enterprise/docs/release-notes
 source_metadata:
   url: https://docs.cloud.google.com/gemini/enterprise/docs/apis
   title: "APIs and reference \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation"

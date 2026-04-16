@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.389Z"
+generated_at: "2026-04-12T12:13:45.743Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Batch workspace deletion"
 feature_slug: "batch-workspace-deletion"
 latest_feature_date: "2023-10-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataform/docs/access-control"
   - "https://docs.cloud.google.com/dataform/docs/create-workspace"
-  - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+  - "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform"
+  - "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
 keywords:
   - "batch"
   - "workspace"
@@ -26,7 +27,7 @@ keywords:
 # Batch workspace deletion
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Batch workspace deletion lets users delete multiple Dataform workspaces together
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 - [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
-- [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
+- [https://docs.cloud.google.com/dataform/docs/javascript-in-dataform](https://docs.cloud.google.com/dataform/docs/javascript-in-dataform)
+- [https://docs.cloud.google.com/dataform/docs/reference/sample-scripts](https://docs.cloud.google.com/dataform/docs/reference/sample-scripts)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 - Source ID: `site-docs-root-2`
-- Final score: 130
+- Final score: 151
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,9 +67,8 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
 - Source ID: `site-docs-root-2`
-- Final score: 124
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 151
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Required roles To get the permissions that you need to create, initialize, and delete a development workspace, ask your administrator to grant you the Dataform Editor ( roles/dataform.editor ) IAM role on workspaces.
@@ -75,16 +76,31 @@ Evidence snippets:
 - Delete a Dataform workspace There are no costs associated with creating Dataform development workspaces.
 - Go to Dataform Select the repository that contains the workspace that you want to delete.
 
-### "Class DataformAsyncClient (0.10.0) \_|\_ Python client libraries \_|\_ Google\
+### Use JavaScript in Dataform \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 120
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataform/docs/javascript-in-dataform](https://docs.cloud.google.com/dataform/docs/javascript-in-dataform)
+- Source ID: `site-docs-root-2`
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Returns Type Description google.cloud.dataform v1.types.Workspace Represents a Dataform Git workspace. crypto key path crypto key path ( project : str , location : str , key ring : str , crypto key : str ) - > str Returns a fully-qualified crypto key string. crypto key version path crypto key version path ( project : str , location : str , key ring : str , crypto key : str , crypto key version : str ) - > str Returns a fully-qualified crypto key version string. delete folder delete folder ( request : typing .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 async def sample delete workspace(): Create a client client = dataform v1 .
-- DeleteWorkspaceRequest ( name="name value", ) Make the request await client. delete workspace (request=request) Parameters Name Description request Optional[Union[ google.cloud.dataform v1.types.DeleteWorkspaceRequest , dict]] The request object.
-- Returns Type Description google.cloud.dataform v1.types.CommitWorkspaceChangesResponse CommitWorkspaceChanges response message. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. compilation result path compilation result path ( project : str , location : str , repository : str , compilation result : str ) - > str Returns a fully-qualified compilation result string. compute repository access token status compute repository access token status ( request : typing .
+- The following code sample shows the self Dataform core built-in JavaScript function added inline to the post operations block in a SQLX file: config {type: "table"} SELECT FROM ... post operations { GRANT roles/bigquery.dataViewer ON TABLE ${self()} TO "group:allusers@example.com", "user:otheruser@example.com" } The following code sample shows a constant defined in a JavaScript block and used inline inside a query in a SQLX file: js { const columnName = "foo" ; } SELECT 1 AS $ { columnName } FROM "..." Reuse code across a single SQLX file with JavaScript encapsulation You can reuse JavaScript code to streamline development in Dataform.
+- Additionally, you must be familiar with JavaScript syntax and the following JavaScript concepts: Variables Arrays Conditional statements For loops Maps Functions Objects Exporting and importing modules Required roles To get the permissions that you need to develop a workflow with JavaScript and reuse code with JavaScript includes, ask your administrator to grant you the Dataform Editor ( roles/dataform.editor ) IAM role on workspaces.
+- PROJECT ID }. my schema name . my table name The following code sample shows the previous Dataform core table definition query compiled into SQL: SELECT FROM my project name . my schema name . my table name Create a custom JavaScript function To create a custom JavaScript function that you can reuse across your project, follow these steps: Go to your development workspace.
+- The following code sample shows the ref query function wrapped inside a contextable argument of the publish method: publish ( "example" ). query ( ctx = > SELECT FROM ${ ctx . ref ( "other table" ) } ` ); Declare a workflow data source with JavaScript You can declare multiple data sources in one JavaScript declaration file with the Dataform declare JavaScript method.
+
+### Dataform core sample scripts \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/reference/sample-scripts](https://docs.cloud.google.com/dataform/docs/reference/sample-scripts)
+- Source ID: `site-docs-root`
+- Final score: 139
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Adding a custom assertion with Dataform core The following code sample shows a custom assertion in a table definition file that validates if columns a , or b , or c from source data are null : config { type: "assertion" } SELECT FROM ${ref("source data")} WHERE a is null or b is null or c is null Developing with JavaScript Using inline variables and functions with JavaScript The following code sample shows the foo variable defined in a js block and then used inline in a SQLX file: js { const foo = 1; function bar(number){ return number+1; } } SELECT ${foo} AS one, ${bar(foo)} AS two Generating one table per country with JavaScript The following code sample shows the use of the forEach function to generate one table per each country defined in countries in the definitions/one table per country.js file: const countries = [ "GB" , "US" , "FR" , "TH" , "NG" ]; countries . forEach ( country = > { publish ( "reporting " + country ) . dependencies ([ "source table" ]) . query ( ctx = > SELECT ' ${ country } ' AS country ); }); Declaring multiple sources within one file with JavaScript The following code sample shows declaration of multiple data sources in the definitions/external dependencies.js file: declare ({ schema : "stripe" , name : "charges" }); declare ({ schema : "shopify" , name : "orders" }); declare ({ schema : "salesforce" , name : "accounts" }); Declaring multiple sources within one file using forEach The following code sample shows declaration of multiple data sources with the forEach function in the definitions/external dependencies.js file: ["charges", "subscriptions", "line items", "invoices"] .forEach(source => declare({ schema: "stripe", name: source }) ); Deleting sensitive information in all tables containing PII with JavaScript The following code sample shows a function in the definitions/delete pii.js file that deletes selected information in all tables that contain personal identifiable information (PII): const pii tables = [ "users" , "customers" , "leads" ]; pii tables . forEach ( table = > operate ( gdpr cleanup: ${ table } , ctx = > DELETE FROM raw data. ${ table } WHERE user id in (SELECT FROM users who requested deletion) ) . tags ([ "gdpr deletion" ])) ); Adding preOps and postOps with JavaScript The following code sample shows the publish function used to create a query with preOps and postOps in the definitions/pre and post ops example.js table: publish("example") .preOps(ctx => GRANT \roles/bigquery.dataViewer\ ON TABLE ${ctx.ref("other table")} TO "group:automation@example.com") .query(ctx => SELECT FROM ${ctx.ref("other table")}) .postOps(ctx => REVOKE \roles/bigquery.dataViewer\ ON TABLE ${ctx.ref("other table")} TO "group:automation@example.com") Creating incremental tables with JavaScript The following code sample shows the publish function used to create an incremental table in the definitions/incremental example.js file: publish ( "incremental example" , { type : "incremental" }). query ( ctx = > SELECT FROM ${ ctx . ref ( "other table" ) } ${ ctx . when ( ctx . incremental (), WHERE timestamp > (SELECT MAX(date) FROM ${ ctx . self () } ) } ) Backfilling a daily table with JavaScript The following code sample shows backfilling a table that updates daily in the definitions/backfill daily data.js file: var getDateArray = function ( start , end ) { var startDate = new Date ( start ); //YYYY-MM-DD var endDate = new Date ( end ); //YYYY-MM-DD var arr = new Array (); var dt = new Date ( startDate ); while ( dt < = endDate ) { arr . push ( new Date ( dt ). toISOString (). split ( "T" )[ 0 ]); dt . setDate ( dt . getDate () + 1 ); } return arr ; }; var dateArr = getDateArray ( "2020-03-01" , "2020-04-01" ); // step 1: create table operate ( create table , 'create table if not exists backfill table (fields) ); // step 2: insert into the table dateArr.forEach((day, i) = > operate(backfill ${day} insert into backfill table select fields where day = ' $ { day } ' ) ); Reusing code with includes Using global variables with JavaScript The following code sample shows definition of project id and first date constants in the includes/constants.js : const project id = "project id" ; const first date = "'1970-01-01'" ; module . exports = { project id , first date }; The following code sample shows the first date constant referenced in the definitions/new table.sqlx file: config {type: "table"} SELECT FROM source table WHERE date > ${constants.first date} Creating a country mapping with JavaScript The following code sample shows the country group custom function defined in the includes/mapping.js file: function country group ( country ){ return case when ${ country } in ('US', 'CA') then 'NA' when ${ country } in ('GB', 'FR', 'DE', 'IT', 'PL', 'SE') then 'EU' when ${ country } in ('AU') then ${ country } else 'Other' end ; } module . exports = { country group }; The following code sample shows a table definition that uses the country group function in the definitions/new table.sqlx table definition file: config { type: "table"} SELECT country AS country, ${mapping.country group("country")} AS country group, device type AS device type, sum(revenue) AS revenue, sum(pageviews) AS pageviews, sum(sessions) AS sessions FROM ${ref("source table")} GROUP BY 1, 2, 3 The following code sample shows the query defined in definitions/new table.sqlx compiled to SQL: SELECT country AS country, case when country in ('US', 'CA') then 'NA' when country in ('GB', 'FR', 'DE', 'IT', 'PL', 'SE') then 'EU' when country in ('AU') then country else 'Other' end AS country group, device type AS device type, sum(revenue) AS revenue, sum(pageviews) AS pageviews, sum(sessions) AS sessions FROM "dataform"."source table" GROUP BY 1, 2, 3 Generating a SQL script with a custom JavaScript function The following code sample shows the render script custom function defined in includes/script builder.js : function render script ( table , dimensions , metrics ) { return SELECT ${ dimensions . map ( field = > ${ field } AS ${ field } ). join ( "," ) } , ${ metrics . map ( field = > sum( ${ field } ) AS ${ field } ). join ( ",\n" ) } FROM ${ table } GROUP BY ${ dimensions . map (( field , i ) = > ${ i + 1 } ). join ( ", " ) } ` ; } module . exports = { render script }; The following code sample shows a table definition that uses the render script function in the definitions/new table.sqlx table definition file: config { type: "table", tags: ["advanced", "hourly"], disabled: true } ${script builder.render script(ref("source table"), ["country", "device type"], ["revenue", "pageviews", "sessions"] )} The following code sample shows the query defined in definitions/new table.sqlx compiled to SQL: SELECT country AS country, device type AS device type, sum(revenue) AS revenue, sum(pageviews) AS pageviews, sum(sessions) AS sessions FROM "dataform"."source table" GROUP BY 1, 2 Actions configs Loading SQL files with action configs Action configs facilitate loading pure SQL files.
+- In this configuration, Dataform creates a temporary incremental example that updates incrementally, and deletes the table after 30 days from its creation: config {type: "incremental"} post operations { delete FROM ${self()} WHERE date < (date add(Day, -30, CURRENT DATE)) } SELECT date(timestamp) AS date, order id, FROM source table ${ when(incremental(), WHERE timestamp > (SELECT max(date) FROM ${self()})) } Creating custom SQL operations Running several SQL operations in a SQLX file with Dataform core The following code sample shows ; used to separate multiple SQL operations defined in definitions/operations.sqlx : config { type: "operations" } DELETE FROM datatable where country = 'GB'; DELETE FROM datatable where country = 'FR'; Running custom SQL before creating a table with Dataform core The following code sample shows a custom SQL operation defined in the pre operations block of the definitions/table with preops.sqlx table definition file: config {type: "table"} SELECT FROM ... pre operations { INSERT INTO table ... } Running custom SQL after creating a table with Dataform core The following code sample shows a custom SQL operation defined in the post operations block of the definitions/table with postops.sqlx table definition file: config {type: "table"} SELECT FROM ... post operations { GRANT roles/bigquery.dataViewer ON TABLE ${self()} TO "group:allusers@example.com", "user:otheruser@example.com" } Validating tables Adding assertions to a table, view, or declaration with Dataform core The following code sample shows uniqueKey , nonNull , and rowConditions assertions added to the definitions/tested table.sqlx table definition file: config { type: "table", assertions: { uniqueKey: ["user id"], nonNull: ["user id", "customer id"], rowConditions: [ 'signup date is null or signup date > "2022-01-01"', 'email like "%@%.%"' ] } } SELECT ...
+- Creating tables Creating a view with Dataform core The following code sample shows definition of a view called new view in the definitions/new view.sqlx file: config { type: "view" } SELECT FROM source data Creating a materialized view with Dataform core The following code sample shows definition of a materialized view called new materialized view in the definitions/new materialized view.sqlx file: config { type: "view", materialized: true } SELECT FROM source data Creating a table with Dataform core The following code sample shows definition of a table called new table in the definitions/new table.sqlx file: config { type: "table" } SELECT FROM source data Creating an incremental table with Dataform core The following code sample shows an incremental table that incrementally processes rows of the productiondb.logs table: config { type: "incremental" } SELECT timestamp, message FROM ${ref("productiondb", "logs")} ${when(incremental(), WHERE timestamp > (SELECT MAX(timestamp) FROM ${self()})) } Using the ref function to reference tables with Dataform core The following code sample shows the ref function used to reference the source data table in the definitions/new table with ref.sqlx table definition file: config { type: "table" } SELECT FROM ${ref("source data")} Adding documentation to a table, view, or declaration with Dataform core The following code sample shows table and columns descriptions in the definitions/documented table.sqlx table definition file: config { type: "table", description: "This table is an example", columns:{ user name: "Name of the user", user id: "ID of the user" } } SELECT user name, user id FROM ${ref("source data")} Configuring incremental tables Adding new table rows for new dates in source data with Dataform core The following code sample shows a configuration of an incremental table in the definitions/incremental table.sqlx file.
+- In this configuration, Dataform creates snapshots table with a snapshot of productiondb.customers at the specified date: config { type: "incremental" } SELECT current date() AS snapshot date, customer id, name, account settings FROM productiondb.customers ${ when(incremental(), WHERE snapshot date > (SELECT max(snapshot date) FROM ${self()})) } Building a rolling 30-days table that updates incrementally with Dataform core The following code sample shows a configuration of an incremental table in the definitions/incremental example.sqlx file.
 

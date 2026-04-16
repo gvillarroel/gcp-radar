@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.464Z"
+generated_at: "2026-04-14T07:40:14.469Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Integration test cases"
 feature_slug: "integration-test-cases"
 latest_feature_date: "2024-10-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+  - "https://docs.cloud.google.com/application-integration/docs/reference/rest"
+  - "https://docs.cloud.google.com/application-integration/docs/reference/rest/v1"
 keywords:
   - "cases"
   - "case"
   - "complex"
   - "test"
+  - "creating"
   - "enables"
   - "integrations"
-  - "integration"
-  - "for"
 ---
 
 # Integration test cases
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +37,13 @@ Test case support for complex integrations enables creating, configuring, managi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
+- [https://docs.cloud.google.com/application-integration/docs/reference/rest](https://docs.cloud.google.com/application-integration/docs/reference/rest)
+- [https://docs.cloud.google.com/application-integration/docs/reference/rest/v1](https://docs.cloud.google.com/application-integration/docs/reference/rest/v1)
 
 ## Supporting Pages
 
@@ -52,38 +51,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing)
 - Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
+- Final score: 119
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Test case 2: To check if a ServiceNow incident is created for a sales case Test the integration by logging in to the Salesforce instance and creating a new case.
 - Test case 1: To check if a Jira issue is created for an enginnering case Test the integration by logging in to the Salesforce instance and creating a new case.
-- The following edge condition controls the flow of the integration based on the type of the Salesforce case: Add an edge connection from the Get case type task to the Mapping for issue creation task with the following edge condition: $sf case type$ = "Engineering" Add another edge connection from the Get case type task to the Mapping for incident creation task with the following edge condition: $sf case type$ = "Sales" Sample integration flow The following figure shows a sample layout of the integration created using this tutorial.
-- Connect to the Salesforce account Perform the following steps to add and configure a Connectors task to retrieve the case details using the Salesforce connection: In the integration editor, click Tasks to display a list of available tasks.
+- You must enter Engineering in the Type field while creating the case.
+- You must enter Sales in the Type field while creating the case.
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### Application Integration API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
+- URL: [https://docs.cloud.google.com/application-integration/docs/reference/rest](https://docs.cloud.google.com/application-integration/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 100
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- REST Resource: v1.projects.locations.integrations.versions.testCases Methods create POST /v1/{parent=projects/ /locations/ /integrations/ /versions/ }/testCases Creates a new test case delete DELETE /v1/{name=projects/ /locations/ /integrations/ /versions/ /testCases/ } Deletes a test case download GET /v1/{name=projects/ /locations/ /integrations/ /versions/ /testCases/ }:download Downloads a test case. execute POST /v1/{parent=projects/ /locations/ /integrations/ /versions/ }/testCases:execute Executes all test cases in an integration version. executeTest POST /v1/{testCaseName=projects/ /locations/ /integrations/ /versions/ /testCases/ }:executeTest Executes functional test get GET /v1/{name=projects/ /locations/ /integrations/ /versions/ /testCases/ } Get a test case list GET /v1/{parent=projects/ /locations/ /integrations/ /versions/ }/testCases Lists all the test cases that satisfy the filters. patch PATCH /v1/{testCase.name=projects/ /locations/ /integrations/ /versions/ /testCases/ } Updates a test case takeoverEditLock POST /v1/{name=projects/ /locations/ /integrations/ /versions/ /testCases/ }:takeoverEditLock Clear the lock fields and assign them to current user upload POST /v1/{parent=projects/ /locations/ /integrations/ /versions/ }/testCases:upload Uploads a test case.
+- REST Resource: v2.projects.locations.integrations REST Resource: v2.projects.locations.integrations.executions REST Resource: v2.projects.locations.integrations.executions.taskExecutions REST Resource: v1.projects.locations.authConfigs REST Resource: v1.projects.locations.certificates REST Resource: v1.projects.locations.clients REST Resource: v1.projects.locations.integrations REST Resource: v1.projects.locations.integrations.executions REST Resource: v1.projects.locations.integrations.executions.suspensions REST Resource: v1.projects.locations.integrations.versions REST Resource: v1.projects.locations.integrations.versions.testCases REST Resource: v1.projects.locations.sfdcInstances REST Resource: v1.projects.locations.sfdcInstances.sfdcChannels REST Resource: v1.projects.locations.templates Service: integrations.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects.locations.clients Methods changeConfig POST /v1/{parent=projects/ /locations/ }/clients:changeConfig Updates the client customer configuration for the given project and location resource name provision POST /v1/{parent=projects/ /locations/ }/clients:provision Perform the provisioning steps to enable a user GCP project to use IP. provisionClientPostProcessor POST /v1/{parent=projects/ /locations/ }/clients:provisionClientPostProcessor Perform post provisioning steps after client is provisioned. switchVariableMasking POST /v1/{parent=projects/ /locations/ }/clients:switchVariableMasking Update variable masking for provisioned client toggleHttp POST /v1/{parent=projects/ /locations/ }/clients:toggleHttp Enable/Disable http call for provisioned client REST Resource: v1.projects.locations.integrations Methods execute POST /v1/{name=projects/ /locations/ /integrations/ }:execute Executes integrations synchronously by passing the trigger id in the request body. list GET /v1/{parent=projects/ /locations/ }/integrations Returns the list of all integrations in the specified project. schedule POST /v1/{name=projects/ /locations/ /integrations/ }:schedule Schedules an integration for execution by passing the trigger id and the scheduled time in the request body. search GET /v1/{parent=projects/ /locations/ }/integrations:search Searches and returns the list of integrations in the specified project. test POST /v1/{integrationVersion.name=projects/ /locations/ /integrations/ }:test Execute the integration in draft state REST Resource: v1.projects.locations.integrations.executions Methods cancel POST /v1/{name=projects/ /locations/ /integrations/ /executions/ }:cancel Cancellation of an execution and associated sub-executions. list GET /v1/{parent=projects/ /locations/ /integrations/ }/executions Lists the results of all the integration executions. replay POST /v1/{name=projects/ /locations/ /integrations/ /executions/ }:replay Re-execute an existing execution, with same request parameters and execution strategy.
+- REST Resource: v1.projects.locations.integrations.versions Methods create POST /v1/{parent=projects/ /locations/ /integrations/ }/versions Create a integration with a draft version in the specified project. delete DELETE /v1/{name=projects/ /locations/ /integrations/ /versions/ } Soft-deletes the integration. download GET /v1/{name=projects/ /locations/ /integrations/ /versions/ }:download Downloads an integration. downloadJsonPackage GET /v1/{name=projects/ /locations/ /integrations/ /versions/ }:downloadJsonPackage Downloads an Integration version package like IntegrationVersion,Integration Config etc. get GET /v1/{name=projects/ /locations/ /integrations/ /versions/ } Get a integration in the specified project. list GET /v1/{parent=projects/ /locations/ /integrations/ }/versions Returns the list of all integration versions in the specified project. patch PATCH /v1/{integrationVersion.name=projects/ /locations/ /integrations/ /versions/ } Update a integration with a draft version in the specified project. publish POST /v1/{name=projects/ /locations/ /integrations/ /versions/ }:publish This RPC throws an exception if the integration is in ARCHIVED or ACTIVE state. unpublish POST /v1/{name=projects/ /locations/ /integrations/ /versions/ }:unpublish Sets the status of the ACTIVE integration to SNAPSHOT with a new tag "PREVIOUSLY PUBLISHED" after validating it. upload POST /v1/{parent=projects/ /locations/ /integrations/ }/versions:upload Uploads an integration.
+
+### Application Integration API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/reference/rest/v1](https://docs.cloud.google.com/application-integration/docs/reference/rest/v1)
 - Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
+- Final score: 100
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Learn how to do the following: Create test cases Configure test cases Manage test cases Run test cases Upload and download test cases Feature Local logging in async mode ( Generally available (GA) ) By default, local logging for new integrations is now enabled in async mode.
-- Feature Test cases ( Preview ) You can now test if your integration is working as intended by creating and running test cases on your complex integrations.
-- For information about test case, see Introduction to test cases .
-- For more information, see Test and publish integrations .
-
-### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 156
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Supported tasks and triggers Gemini can assist you to add the following tasks and triggers: Triggers Tasks API trigger Cloud Pub/Sub trigger Salesforce trigger Jira Cloud ServiceNow Zendesk Cloud Scheduler trigger Data mapper task Approval task Suspend task Javascript task Cloud Run functions Timer task Return task Send email task Connectors task Call REST endpoint task Doc AI - Process task Gemini also assists you to create the following control flow tasks but can't generate sub-integrations: For Each Loop task For Each Parallel task While Loop task Call Integration task Create an integration Gemini assists you to create and build integrations using your natural language statements (or prompts ) as input.
-- In Application Integration, Gemini Code Assist can assist you to do the following: Create integrations Configure connector tasks in an integration Configure Call REST API tasks in an integration Add edge conditions and append additional tasks to an integration Configure JavaScript tasks ( Preview ) Generate integration description For detailed information about Gemini for Google Cloud, see Gemini for Google Cloud overview .
-- The integration description summary is generated in plain language and can help you in understanding the overall integration use case, underlying orchestration, and business context which might be difficult to assess due to the structure or complexity of an integration.
-- Note: Gemini provides connector- and API Hub-based recommendations or suggestions for your integrations using the configured connections in Integration Connectors and APIs in Apigee API Hub .
+- REST Resource: v1.projects.locations.integrations.versions.testCases Methods create POST /v1/{parent=projects/ /locations/ /integrations/ /versions/ }/testCases Creates a new test case delete DELETE /v1/{name=projects/ /locations/ /integrations/ /versions/ /testCases/ } Deletes a test case download GET /v1/{name=projects/ /locations/ /integrations/ /versions/ /testCases/ }:download Downloads a test case. execute POST /v1/{parent=projects/ /locations/ /integrations/ /versions/ }/testCases:execute Executes all test cases in an integration version. executeTest POST /v1/{testCaseName=projects/ /locations/ /integrations/ /versions/ /testCases/ }:executeTest Executes functional test get GET /v1/{name=projects/ /locations/ /integrations/ /versions/ /testCases/ } Get a test case list GET /v1/{parent=projects/ /locations/ /integrations/ /versions/ }/testCases Lists all the test cases that satisfy the filters. patch PATCH /v1/{testCase.name=projects/ /locations/ /integrations/ /versions/ /testCases/ } Updates a test case takeoverEditLock POST /v1/{name=projects/ /locations/ /integrations/ /versions/ /testCases/ }:takeoverEditLock Clear the lock fields and assign them to current user upload POST /v1/{parent=projects/ /locations/ /integrations/ /versions/ }/testCases:upload Uploads a test case.
+- REST Resource: v2.projects.locations.integrations REST Resource: v2.projects.locations.integrations.executions REST Resource: v2.projects.locations.integrations.executions.taskExecutions REST Resource: v1.projects.locations.authConfigs REST Resource: v1.projects.locations.certificates REST Resource: v1.projects.locations.clients REST Resource: v1.projects.locations.integrations REST Resource: v1.projects.locations.integrations.executions REST Resource: v1.projects.locations.integrations.executions.suspensions REST Resource: v1.projects.locations.integrations.versions REST Resource: v1.projects.locations.integrations.versions.testCases REST Resource: v1.projects.locations.sfdcInstances REST Resource: v1.projects.locations.sfdcInstances.sfdcChannels REST Resource: v1.projects.locations.templates Service: integrations.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects.locations.clients Methods changeConfig POST /v1/{parent=projects/ /locations/ }/clients:changeConfig Updates the client customer configuration for the given project and location resource name provision POST /v1/{parent=projects/ /locations/ }/clients:provision Perform the provisioning steps to enable a user GCP project to use IP. provisionClientPostProcessor POST /v1/{parent=projects/ /locations/ }/clients:provisionClientPostProcessor Perform post provisioning steps after client is provisioned. switchVariableMasking POST /v1/{parent=projects/ /locations/ }/clients:switchVariableMasking Update variable masking for provisioned client toggleHttp POST /v1/{parent=projects/ /locations/ }/clients:toggleHttp Enable/Disable http call for provisioned client REST Resource: v1.projects.locations.integrations Methods execute POST /v1/{name=projects/ /locations/ /integrations/ }:execute Executes integrations synchronously by passing the trigger id in the request body. list GET /v1/{parent=projects/ /locations/ }/integrations Returns the list of all integrations in the specified project. schedule POST /v1/{name=projects/ /locations/ /integrations/ }:schedule Schedules an integration for execution by passing the trigger id and the scheduled time in the request body. search GET /v1/{parent=projects/ /locations/ }/integrations:search Searches and returns the list of integrations in the specified project. test POST /v1/{integrationVersion.name=projects/ /locations/ /integrations/ }:test Execute the integration in draft state REST Resource: v1.projects.locations.integrations.executions Methods cancel POST /v1/{name=projects/ /locations/ /integrations/ /executions/ }:cancel Cancellation of an execution and associated sub-executions. list GET /v1/{parent=projects/ /locations/ /integrations/ }/executions Lists the results of all the integration executions. replay POST /v1/{name=projects/ /locations/ /integrations/ /executions/ }:replay Re-execute an existing execution, with same request parameters and execution strategy.
+- REST Resource: v1.projects.locations.integrations.versions Methods create POST /v1/{parent=projects/ /locations/ /integrations/ }/versions Create a integration with a draft version in the specified project. delete DELETE /v1/{name=projects/ /locations/ /integrations/ /versions/ } Soft-deletes the integration. download GET /v1/{name=projects/ /locations/ /integrations/ /versions/ }:download Downloads an integration. downloadJsonPackage GET /v1/{name=projects/ /locations/ /integrations/ /versions/ }:downloadJsonPackage Downloads an Integration version package like IntegrationVersion,Integration Config etc. get GET /v1/{name=projects/ /locations/ /integrations/ /versions/ } Get a integration in the specified project. list GET /v1/{parent=projects/ /locations/ /integrations/ }/versions Returns the list of all integration versions in the specified project. patch PATCH /v1/{integrationVersion.name=projects/ /locations/ /integrations/ /versions/ } Update a integration with a draft version in the specified project. publish POST /v1/{name=projects/ /locations/ /integrations/ /versions/ }:publish This RPC throws an exception if the integration is in ARCHIVED or ACTIVE state. unpublish POST /v1/{name=projects/ /locations/ /integrations/ /versions/ }:unpublish Sets the status of the ACTIVE integration to SNAPSHOT with a new tag "PREVIOUSLY PUBLISHED" after validating it. upload POST /v1/{parent=projects/ /locations/ /integrations/ }/versions:upload Uploads an integration.
 

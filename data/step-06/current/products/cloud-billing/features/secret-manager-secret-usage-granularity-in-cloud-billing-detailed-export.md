@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.231Z"
+generated_at: "2026-04-14T13:57:37.554Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Secret Manager secret usage granularity in Cloud Billing detailed export"
 feature_slug: "secret-manager-secret-usage-granularity-in-cloud-billing-detailed-export"
 latest_feature_date: "2024-08-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage"
   - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage"
-  - "https://docs.cloud.google.com/billing/docs/how-to/reports"
+  - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup"
 keywords:
   - "secret"
   - "manager"
   - "usage"
   - "granularity"
-  - "in"
   - "billing"
   - "detailed"
   - "export"
+  - "bigquery"
 ---
 
 # Secret Manager secret usage granularity in Cloud Billing detailed export
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Cloud Billing detailed export to BigQuery now includes granular Secret Manager s
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
 - [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage)
-- [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
+- [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup)
 
 ## Supporting Pages
 
@@ -52,21 +52,20 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
 - Source ID: `site-docs-root-2`
-- Final score: 252
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 212
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Resource-level tags in the Cloud Billing data export are available for the following resources: AlloyDB for PostgreSQL clusters, instances, and backups Artifact Registry repositories Bigtable instances Cloud Run services and jobs Cloud Storage buckets Compute Engine instances Memorystore for Redis instances Secret Manager global and regional secrets Spanner instances Firestore databases Tags limitations Tags might take up to an hour to propagate to BigQuery exports.
-- Managed Microsoft AD Memorystore for Redis Secret Manager Spanner Identify granular cost data by service To analyze granular cost information in a detailed export, use the following table to identify the column that contains information about specific resources.
-- When you enable the detailed usage cost data export for the first time in Cloud Billing, if you select a dataset configured to use a multi-region location (EU or US), Cloud Billing data will be available retroactively from the start of the previous month.
-- If you enable the detailed usage cost data export and select a dataset that's configured to use a supported region location , your Cloud Billing data will be available starting from the date when you enabled the export.
+- When you use the detailed usage cost data in BigQuery, note the following: The table schema for the detailed Cloud Billing data export can change over time, such as when new fields are added to the detailed export.
+- Detailed usage cost data schema In your BigQuery dataset, your detailed Google Cloud usage cost data is loaded into a data table named gcp billing export resource v1 <BILLING ACCOUNT ID> .
+- Before you begin To query using system labels, you must have Cloud Billing export to BigQuery enabled, specifically the Detailed usage cost data export.
 
 ### "Structure of Standard data export \_|\_ Cloud Billing \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage)
 - Source ID: `site-docs-root-2`
-- Final score: 208
+- Final score: 162
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -76,16 +75,17 @@ Evidence snippets:
 - Common values used in the example standard cost queries The query examples in this section use the following value for Table name : project.dataset.gcp billing export v1 XXXXXX XXXXXX XXXXXX These query examples also work with the detailed usage cost data exported to BigQuery, although they aren't written to retrieve any of the resource-level information that's provided with the detailed usage cost export option.
 - Detailed usage cost table : In your BigQuery dataset, this table is named gcp billing export resource v1 <BILLING ACCOUNT ID> .
 
-### "Analyze billing data and cost trends with Reports \_|\_ Cloud Billing \_\
+### Set up Cloud Billing data export to BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
-- Source ID: `site-docs-root`
-- Final score: 204
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup)
+- Source ID: `site-docs-root-2`
+- Final score: 138
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Prerequisites to generate and run a query To generate a query from a Cloud Billing Report , ensure you and your Cloud Billing account meet the following requirements: On your Cloud Billing account, Cloud Billing data export to BigQuery must be enabled, for either the standard usage cost data or detailed usage cost data .
-- To view the cost reports for your Cloud Billing account, including viewing the cost information for all of the Google Cloud projects that are linked to the billing account, you need a role on your Cloud Billing account that includes the following permissions : billing.accounts.get billing.accounts.getSpendingInformation To gain these permissions using a predefined role , ask your administrator to grant you one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Viewer Billing Account Costs Manager Billing Account Administrator For more information about Cloud Billing permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding predefined Identity and Access Management roles for Cloud Billing To view all costs for an individual Google Cloud project, you need billing-specific permissions on the Google Cloud project .
-- To view the Cloud Billing reports for a project, you need a role on the Google Cloud project that includes the following permissions : billing.resourceCosts.get resourcemanager.projects.get To gain these permissions using a predefined role , ask your administrator to grant you one of the following basic IAM roles on your Google Cloud projects: Project Viewer Project Editor Project Owner Note : If you are viewing Cloud Billing reports using project-level permissions only, some of the billing-account-level report features aren't available.
-- Related topics Export Cloud Billing data to BigQuery Understand your savings with cost breakdown reports View your cost and payment history Create, modify, or close your Cloud Billing account Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For your BigQuery datasets containing standard usage cost data or detailed usage cost data , the type of location you configure on the dataset impacts the timing of when your Google Cloud billing data is exported to the dataset: If you configure the dataset to use a multi-region location (EU or US), the dataset includes Google Cloud billing data incurred from the start of the previous month from when you first enabled the export.
+- The service accounts look like this: For the Standard and Detailed usage cost datasets: billing-export-bigquery@system.gserviceaccount.com For the Pricing dataset: cloud-account-pricing@cloud-account-pricing.iam.gserviceaccount.com The service accounts are owned and managed by Google and provide the permissions that are necessary for our offline process to create a table and write Cloud Billing records to it.
+- Permissions required for this task To enable and configure the export of Google Cloud billing usage cost data to a BigQuery dataset, you need the following permissions: For Cloud Billing, you need either the Billing Account Costs Manager role or the Billing Account Administrator role on the target Cloud Billing account.
+- Specifically, to create a new project, you need the following permissions: resourcemanager.organizations.get resourcemanager.projects.create For more information about Google Cloud permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding Predefined Identity and Access Management Roles Enable Cloud Billing data export to BigQuery Interactive tutorial: Analyze billing data with BigQuery (20 minutes) Get started with billing data exports using this interactive tutorial.
 

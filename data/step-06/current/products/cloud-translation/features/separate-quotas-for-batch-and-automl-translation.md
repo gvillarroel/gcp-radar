@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:22:34.605Z"
+generated_at: "2026-04-12T12:12:49.612Z"
 product_name: "Cloud Translation"
 product_slug: "cloud-translation"
 feature_name: "Separate quotas for batch and AutoML translation"
 feature_slug: "separate-quotas-for-batch-and-automl-translation"
 latest_feature_date: "2019-11-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/translate/docs/advanced/batch-translation"
-  - "https://docs.cloud.google.com/translate/docs/release-notes"
   - "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade"
+  - "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation"
+  - "https://docs.cloud.google.com/translate/docs/access-control"
 keywords:
   - "separate"
   - "quotas"
@@ -26,7 +27,7 @@ keywords:
 # Separate quotas for batch and AutoML translation
 
 Product: Cloud Translation
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Translation API - Advanced provides separate quotas for batch translation and tr
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/translate/docs/advanced/batch-translation](https://docs.cloud.google.com/translate/docs/advanced/batch-translation)
-- [https://docs.cloud.google.com/translate/docs/release-notes](https://docs.cloud.google.com/translate/docs/release-notes)
 - [https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade](https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade)
+- [https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation](https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation)
+- [https://docs.cloud.google.com/translate/docs/access-control](https://docs.cloud.google.com/translate/docs/access-control)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/translate/docs/advanced/batch-translation](https://docs.cloud.google.com/translate/docs/advanced/batch-translation)
 - Source ID: `site-iam-reference`
-- Final score: 174
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 225
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - After completing all of your requests, call // the "close" method on the client to safely clean up any remaining background resources. try ( TranslationServiceClient client = TranslationServiceClient . create ()) { // Supported Locations: global, [glossary location], or [model location] // Glossaries must be hosted in us-central1 // Custom Models must use the same location as your model. (us-central1) String location = "us-central1" ; LocationName parent = LocationName . of ( projectId , location ); // Configure the source of the file from a GCS bucket GcsSource gcsSource = GcsSource . newBuilder (). setInputUri ( inputUri ). build (); // Supported Mime Types: https://cloud.google.com/translate/docs/supported-formats InputConfig inputConfig = InputConfig . newBuilder (). setGcsSource ( gcsSource ). setMimeType ( "text/plain" ). build (); // Configure where to store the output in a GCS bucket GcsDestination gcsDestination = GcsDestination . newBuilder (). setOutputUriPrefix ( outputUri ). build (); OutputConfig outputConfig = OutputConfig . newBuilder (). setGcsDestination ( gcsDestination ). build (); // Configure the glossary used in the request GlossaryName glossaryName = GlossaryName . of ( projectId , location , glossaryId ); TranslateTextGlossaryConfig glossaryConfig = TranslateTextGlossaryConfig . newBuilder (). setGlossary ( glossaryName . toString ()). build (); // Configure the model used in the request String modelPath = String . format ( "projects/%s/locations/%s/models/%s" , projectId , location , modelId ); // Build the request that will be sent to the API BatchTranslateTextRequest request = BatchTranslateTextRequest . newBuilder () . setParent ( parent . toString ()) . setSourceLanguageCode ( sourceLanguage ) . addTargetLanguageCodes ( targetLanguage ) . addInputConfigs ( inputConfig ) . setOutputConfig ( outputConfig ) . putGlossaries ( targetLanguage , glossaryConfig ) . putModels ( targetLanguage , modelPath ) . build (); // Start an asynchronous request OperationFuture<BatchTranslateResponse , BatchTranslateMetadata > future = client . batchTranslateTextAsync ( request ); System . out . println ( "Waiting for operation to complete..." ); // random number between 300 - 450 (maximum allowed seconds) long randomNumber = ThreadLocalRandom . current (). nextInt ( 450 , 600 ); BatchTranslateResponse response = future . get ( randomNumber , TimeUnit .
@@ -62,30 +64,45 @@ Evidence snippets:
 - After completing all of your requests, call // the "close" method on the client to safely clean up any remaining background resources. try ( TranslationServiceClient client = TranslationServiceClient . create ()) { // Supported Locations: global, [glossary location], or [model location] // Glossaries must be hosted in us-central1 // Custom Models must use the same location as your model. (us-central1) String location = "us-central1" ; LocationName parent = LocationName . of ( projectId , location ); // Configure the source of the file from a GCS bucket GcsSource gcsSource = GcsSource . newBuilder (). setInputUri ( inputUri ). build (); // Supported Mime Types: https://cloud.google.com/translate/docs/supported-formats InputConfig inputConfig = InputConfig . newBuilder (). setGcsSource ( gcsSource ). setMimeType ( "text/plain" ). build (); // Configure where to store the output in a GCS bucket GcsDestination gcsDestination = GcsDestination . newBuilder (). setOutputUriPrefix ( outputUri ). build (); OutputConfig outputConfig = OutputConfig . newBuilder (). setGcsDestination ( gcsDestination ). build (); // Configure the model used in the request String modelPath = String . format ( "projects/%s/locations/%s/models/%s" , projectId , location , modelId ); // Build the request that will be sent to the API BatchTranslateTextRequest request = BatchTranslateTextRequest . newBuilder () . setParent ( parent . toString ()) . setSourceLanguageCode ( sourceLanguage ) . addTargetLanguageCodes ( targetLanguage ) . addInputConfigs ( inputConfig ) . setOutputConfig ( outputConfig ) . putModels ( targetLanguage , modelPath ) . build (); // Start an asynchronous request OperationFuture<BatchTranslateResponse , BatchTranslateMetadata > future = client . batchTranslateTextAsync ( request ); System . out . println ( "Waiting for operation to complete..." ); // random number between 300 - 450 (maximum allowed seconds) long randomNumber = ThreadLocalRandom . current (). nextInt ( 450 , 600 ); BatchTranslateResponse response = future . get ( randomNumber , TimeUnit .
 - TranslationServiceClient () Supported file types: https://cloud.google.com/translate/docs/supported-formats gcs source = { "input uri" : input uri } location = "us-central1" input configs element = { "gcs source" : gcs source , "mime type" : "text/plain" , # Can be "text/plain" or "text/html". } gcs destination = { "output uri prefix" : output uri } output config = { "gcs destination" : gcs destination } parent = f "projects/ { project id } /locations/ { location } " model path = "projects/ {} /locations/ {} /models/ {} " . format ( project id , location , model id # The location of AutoML model. ) Supported language codes: https://cloud.google.com/translate/docs/languages models = { "ja" : model path } # takes a target lang as key. operation = client . batch translate text ( request = { "parent" : parent , "source language code" : "en" , "target language codes" : [ "ja" ], # Up to 10 language codes here. "input configs" : [ input configs element ], "output config" : output config , "models" : models , } ) print ( "Waiting for operation to complete..." ) response = operation . result () Display the translation for each input text provided. print ( f "Total Characters: { response . total characters } " ) print ( f "Translated Characters: { response . translated characters } " ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
 
-### Cloud Translation release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/translate/docs/release-notes](https://docs.cloud.google.com/translate/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 160
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- In addition to the features of Cloud Translation API v3beta1, Translation API - Advanced supports: User labels Audit logging Separate quotas for batch translation and for translation using AutoML models Client libraries for additional languages PHP, GO, C#, and Ruby Note: Existing users should pay careful attention to client library versions before updating.
-- In addition, the release includes the following new features: custom glossaries for customer-specific terminology, batch translation for asynchronous translation of .txt, .tsv, and .html files saved in Google Cloud Storage. v3 API offers monthly free tier , and guarded by new Quotas and Limit .
-- November 01, 2021 Feature Document Translation for Cloud Translation - Advanced (v3) is now Generally Available ( GA ) and includes the following enhancements: Right to left language support for PDFs Preserves font size, font color, font style, and hyperlinks for native PDFs only Batch document translation requests support PDF to DOCX conversions for native PDFs only August 02, 2021 Change Removed the Phrase-Based Machine Translation (PBMT) model.
-- February 14, 2024 Feature Adaptive translation is Generally Available and adds Portuguese support, raises the limit for input and output characters, and decreases latency in the API and console.
-
 ### Upgrade AutoML resources \_|\_ Cloud Translation \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade](https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade)
 - Source ID: `site-iam-reference`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 203
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For example, if you have commands that call the deprecated AutoML API and reference legacy resource IDs, you need to update those commands to call the Cloud Translation API and reference the native resource IDs.
 - Model evaluation Supports running evaluations against a new test set or from an existing dataset Supports running evaluations against a new test set only Cancel operations Supports canceling dataset import and model creation operations You cannot cancel long-running operations Google Cloud console behavior post upgrade If you upgrade at least one resource, the Google Cloud console switches to using the Cloud Translation API instead of the deprecated AutoML API.
 - During the upgrade, Cloud Translation copies your AutoML (legacy) resources, such as datasets and models, and creates new Cloud Translation (native) resources through the Cloud Translation API.
 - For more information about the Cloud Translation API, see the projects.locations.datasets and projects.locations.models resources.
+
+### "Translate text by using adaptive translation \_|\_ Cloud Translation \_\
+
+- URL: [https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation](https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation)
+- Source ID: `site-iam-reference`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets/ DATASET ID ", "displayName": " DISPLAY NAME ", "sourceLanguageCode": " SOURCE LANGUAGE ", "targetLanguageCode": " TARGET LANGUAGE " } Java Before trying this sample, follow the Java setup instructions in the Cloud Translation quickstart using client libraries .
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets/ DATASET ID :importAdaptiveMtFile" Select-Object -Expand Content You should receive a JSON response similar to the following: { "adaptiveMtFile": { "name": " DATASET NAME ", "displayName": " FILE NAME ", "entryCount": TOTAL ENTRIES } } Java Before trying this sample, follow the Java setup instructions in the Cloud Translation quickstart using client libraries .
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :adaptiveMtTranslate" Select-Object -Expand Content You should receive a JSON response similar to the following: { "translations": [ { "translatedText": " TRANSLATED TEXT " } ], "languageCode": " TARGET LANGUAGE " } Java Before trying this sample, follow the Java setup instructions in the Cloud Translation quickstart using client libraries .
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :adaptiveMtTranslate" Select-Object -Expand Content You should receive a JSON response similar to the following: { "translations": [ { "translatedText": " TRANSLATED TEXT " } ], "languageCode": " TARGET LANGUAGE " } Java Before trying this sample, follow the Java setup instructions in the Cloud Translation quickstart using client libraries .
+
+### Control access with IAM \_|\_ Cloud Translation \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/translate/docs/access-control](https://docs.cloud.google.com/translate/docs/access-control)
+- Source ID: `site-iam-reference`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Predefined Cloud Translation roles for v3 The following table lists the predefined roles that give you access to Cloud Translation resources: Role Permissions Cloud Translation API Admin ( roles/ cloudtranslate.admin ) Full access to all Cloud Translation resources automl.models.get automl.models.predict cloudtranslate. cloudtranslate. adaptiveMtDatasets. create cloudtranslate. adaptiveMtDatasets. delete cloudtranslate. adaptiveMtDatasets. get cloudtranslate. adaptiveMtDatasets. import cloudtranslate. adaptiveMtDatasets. list cloudtranslate. adaptiveMtDatasets. predict cloudtranslate. adaptiveMtFiles. delete cloudtranslate. adaptiveMtFiles. get cloudtranslate. adaptiveMtFiles. list cloudtranslate. adaptiveMtSentences. list cloudtranslate. customModels. create cloudtranslate. customModels. delete cloudtranslate. customModels. get cloudtranslate. customModels. list cloudtranslate. customModels. predict cloudtranslate.datasets.create cloudtranslate.datasets.delete cloudtranslate.datasets.export cloudtranslate.datasets.get cloudtranslate.datasets.import cloudtranslate.datasets.list cloudtranslate. generalModels. batchDocPredict cloudtranslate. generalModels. batchPredict cloudtranslate. generalModels. docPredict cloudtranslate. generalModels. get cloudtranslate. generalModels. predict cloudtranslate. glossaries. batchDocPredict cloudtranslate. glossaries. batchPredict cloudtranslate. glossaries. create cloudtranslate. glossaries. delete cloudtranslate. glossaries. docPredict cloudtranslate.glossaries.get cloudtranslate.glossaries.list cloudtranslate. glossaries. predict cloudtranslate. glossaries. update cloudtranslate. glossaryentries. create cloudtranslate. glossaryentries. delete cloudtranslate. glossaryentries. get cloudtranslate. glossaryentries. list cloudtranslate. glossaryentries. update cloudtranslate. languageDetectionModels. predict cloudtranslate.locations.get cloudtranslate.locations.list cloudtranslate. operations. cancel cloudtranslate. operations. delete cloudtranslate.operations.get cloudtranslate.operations.list cloudtranslate.operations.wait resourcemanager.projects.get resourcemanager.projects.list Cloud Translation API Editor ( roles/ cloudtranslate.editor ) Editor of all Cloud Translation resources automl.models.get automl.models.predict cloudtranslate. cloudtranslate. adaptiveMtDatasets. create cloudtranslate. adaptiveMtDatasets. delete cloudtranslate. adaptiveMtDatasets. get cloudtranslate. adaptiveMtDatasets. import cloudtranslate. adaptiveMtDatasets. list cloudtranslate. adaptiveMtDatasets. predict cloudtranslate. adaptiveMtFiles. delete cloudtranslate. adaptiveMtFiles. get cloudtranslate. adaptiveMtFiles. list cloudtranslate. adaptiveMtSentences. list cloudtranslate. customModels. create cloudtranslate. customModels. delete cloudtranslate. customModels. get cloudtranslate. customModels. list cloudtranslate. customModels. predict cloudtranslate.datasets.create cloudtranslate.datasets.delete cloudtranslate.datasets.export cloudtranslate.datasets.get cloudtranslate.datasets.import cloudtranslate.datasets.list cloudtranslate. generalModels. batchDocPredict cloudtranslate. generalModels. batchPredict cloudtranslate. generalModels. docPredict cloudtranslate. generalModels. get cloudtranslate. generalModels. predict cloudtranslate. glossaries. batchDocPredict cloudtranslate. glossaries. batchPredict cloudtranslate. glossaries. create cloudtranslate. glossaries. delete cloudtranslate. glossaries. docPredict cloudtranslate.glossaries.get cloudtranslate.glossaries.list cloudtranslate. glossaries. predict cloudtranslate. glossaries. update cloudtranslate. glossaryentries. create cloudtranslate. glossaryentries. delete cloudtranslate. glossaryentries. get cloudtranslate. glossaryentries. list cloudtranslate. glossaryentries. update cloudtranslate. languageDetectionModels. predict cloudtranslate.locations.get cloudtranslate.locations.list cloudtranslate. operations. cancel cloudtranslate. operations. delete cloudtranslate.operations.get cloudtranslate.operations.list cloudtranslate.operations.wait resourcemanager.projects.get resourcemanager.projects.list Cloud Translation API User ( roles/ cloudtranslate.user ) User of Cloud Translation and AutoML models automl.models.get automl.models.predict cloudtranslate. adaptiveMtDatasets. get cloudtranslate. adaptiveMtDatasets. list cloudtranslate. adaptiveMtDatasets. predict cloudtranslate. adaptiveMtFiles. get cloudtranslate. adaptiveMtFiles. list cloudtranslate. adaptiveMtSentences. list cloudtranslate. customModels. get cloudtranslate. customModels. list cloudtranslate. customModels. predict cloudtranslate.datasets.get cloudtranslate.datasets.list cloudtranslate.generalModels. cloudtranslate. generalModels. batchDocPredict cloudtranslate. generalModels. batchPredict cloudtranslate. generalModels. docPredict cloudtranslate. generalModels. get cloudtranslate. generalModels. predict cloudtranslate. glossaries. batchDocPredict cloudtranslate. glossaries. batchPredict cloudtranslate. glossaries. docPredict cloudtranslate.glossaries.get cloudtranslate.glossaries.list cloudtranslate. glossaries. predict cloudtranslate. glossaryentries. get cloudtranslate. glossaryentries. list cloudtranslate. languageDetectionModels. predict cloudtranslate.locations. cloudtranslate.locations.get cloudtranslate.locations.list cloudtranslate.operations.get cloudtranslate.operations.list cloudtranslate.operations.wait resourcemanager.projects.get resourcemanager.projects.list Cloud Translation API Viewer ( roles/ cloudtranslate.viewer ) Viewer of all Translation resources automl.models.get cloudtranslate. adaptiveMtDatasets. get cloudtranslate. adaptiveMtDatasets. list cloudtranslate. adaptiveMtFiles. get cloudtranslate. adaptiveMtFiles. list cloudtranslate. adaptiveMtSentences. list cloudtranslate. customModels. get cloudtranslate. customModels. list cloudtranslate.datasets.get cloudtranslate.datasets.list cloudtranslate. generalModels. get cloudtranslate.glossaries.get cloudtranslate.glossaries.list cloudtranslate. glossaryentries. get cloudtranslate. glossaryentries. list cloudtranslate.locations. cloudtranslate.locations.get cloudtranslate.locations.list cloudtranslate.operations.get cloudtranslate.operations.list cloudtranslate.operations.wait resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents .
+- Control access with IAM The Cloud Translation - Advanced API (v3) uses Identity and Access Management (IAM) to control access.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- Warning: Do not grant service agent roles to any principals except service agents . automl.datasets.export automl.datasets.get automl.datasets.list automl.models.get automl.models.list automl.operations.get storage.buckets.get storage.objects.create storage.objects.get storage.objects.list Custom roles If a predefined role doesn't offer the right set of permissions for your use case, create a custom role.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:20.445Z"
+generated_at: "2026-04-12T12:16:09.636Z"
 product_name: "Gemini"
 product_slug: "gemini"
 feature_name: "Gemini Code Assist usage dashboard"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-09-04"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/gemini/docs/codeassist/code-overview"
-  - "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
   - "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
 keywords:
   - "gemini"
   - "code"
@@ -38,45 +39,68 @@ Organizations can view aggregated Gemini Code Assist usage metrics in an automat
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/gemini/docs/codeassist/code-overview](https://docs.cloud.google.com/gemini/docs/codeassist/code-overview)
-- [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist](https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics](https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics)
 - [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses](https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses)
 
 ## Supporting Pages
 
-### Gemini Code Assist code features overview | Gemini for Google Cloud | Google Cloud Documentation
+### "Monitor Gemini Code Assist usage \_|\_ Gemini for Google Cloud \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/code-overview](https://docs.cloud.google.com/gemini/docs/codeassist/code-overview)
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist](https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist)
 - Source ID: `site-docs-root`
-- Final score: 206
+- Final score: 311
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini Code Assist code features overview Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/code-overview An overview of the coding features that Gemini Code Assist supports in the IDE.
+- This dashboard is automatically available when you enable and use the Gemini Code Assist, and includes some of the most important metrics, giving you a quick way to view aggregated usage data.
+- Metric Name Timeframe code assist/code lines accepted count Daily lines of code accepted Past 24 hours View Gemini Code Assist metrics in your project To view aggregated metrics for Gemini Code Assist, do the following: Go to the Gemini Code Assist Overview page.
+- You can use the data visualization and analysis tools in Cloud Monitoring to help you answer important questions, such as how many daily active users in your organization are using Gemini Code Assist.
+- Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Monitor Gemini Code Assist usage Stay organized with collections Save and categorize content based on your preferences.
 
-### Gemini Code Assist Standard and Enterprise overview | Gemini for Google Cloud | Google Cloud Documentation
+### "Generate Gemini Code Assist metrics \_|\_ Gemini for Google Cloud \_|\_\
 
-- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics](https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: N/A
+- Final score: 289
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Gemini Code Assist Standard and Enterprise overview Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/overview Gemini Code Assist Standard and Enterprise, which are products in the Gemini for Google Cloud portfolio, offer AI-powered assistance to help your development team build, deploy, and operate applications throughout the software development lifecycle.
+- List the number of unique users The following instructions describe how to use the gcloud CLI to list the number of unique users of Gemini Code Assist in the most recent 28-day period: In a shell environment, ensure that you have updated all installed components of the gcloud CLI to the latest version: gcloud components update Read the log entries for Gemini Code Assist users and usage: gcloud logging read 'resource.type=cloudaicompanion.googleapis.com/Instance labels.product= "code assist"' \ --freshness 28d \ --project PROJECT ID \ --format "csv(timestamp.date('%Y-%m-%d'),labels.user id)" Replace PROJECT ID with your Google Cloud project ID.
+- The output is similar to the following: 2024-10-30,user1@company.com 2024-10-29,user2@company.com 2024-10-29,user2@company.com 2024-10-29,user2@company.com 2024-10-29,user1@company.com 2024-10-28,user1@company.com Create a chart that displays daily usage The following steps show how to use Monitoring to create daily use graphs that show the aggregate total of daily active Gemini Code Assist users and the number of their requests per day.
+- In the query pane, enter the following query, and then click Run query : resource.type="cloudaicompanion.googleapis.com/Instance" AND labels.product="code assist" AND jsonPayload.@type="type.googleapis.com/google.cloud.cloudaicompanion.logging.v1.ResponseLog" Note: The default time period value is Last 1 hour , but you can set it to a longer time period (such as Last 7 days ).
+- Create a Monitoring metric from your log data that records the number of Gemini Code Assist users: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .
 
-### Set up Gemini Code Assist Standard and Enterprise | Gemini for Google Cloud | Google Cloud Documentation
+### "Set up Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
 
 - URL: [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 282
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Set up Gemini Code Assist Standard and Enterprise Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini Before you can use services available to users with Gemini Code Assist Standard or Enterprise licenses, your team needs to perform the setup steps that are described in this document: Note: An administrator typically performs steps 1-4.
-- Purchase a subscription to Gemini Code Assist Standard or Enterprise.
-- Enable the Gemini for Google Cloud API in a Google Cloud project.
+- After you set up Gemini Code Assist, you can view license assignments by navigating to the Admin for Gemini page, selecting your billing account, clicking Manage Gemini Code Assist Subscription , and then selecting the License management tab.
+- You can change the Gemini Code Assist release channel to the Preview channel or back to the Generally Available channel at any time.
+- Learn more about the supported features: Code features overview Chat features overview Get started with the following guides: Code with Gemini Code Assist Chat with Gemini Code Assist List of directories where Gemini Code Assist caches information The following table provides a list of directories where Gemini Code Assist stores extension information such as auth tokens: Windows %LOCALAPPDATA%/cloud-code %LOCALAPPDATA%/google-vscode-extension macOS /Library/Application Support/cloud-code /Library/Application Support/google-vscode-extension Linux /.cache/cloud-code /.cache/google-vscode-extension Sign into Google and select a Google Cloud project Once users have installed Gemini Code Assist in their IDEs, they need to sign in to their Google Accounts, and if it's their first time using Gemini Code Assist Standard or Enterprise in their IDE, they select a Google Cloud project.
+- Configure the firewall for API traffic between your IDE and Google In addition to enabling the Gemini for Google Cloud API, users behind firewalls also need to allow traffic to pass through for the following APIs: oauth2.googleapis.com : used to sign in to Google Cloud. serviceusage.googleapis.com : used for checking that the user's Gemini Code Assist project is properly configured. cloudaicompanion.googleapis.com : the primary Gemini for Google Cloud API endpoint. cloudcode-pa.googleapis.com : an internal API that provides IDE-related features. cloudresourcemanager.googleapis.com : used in the IDEs for project pickers.
+
+### "Manage Gemini Code Assist Standard and Enterprise licenses \_|\_ Gemini\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses](https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses)
+- Source ID: `site-docs-root`
+- Final score: 280
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Prevent cross-organization license usage Gemini Code Assist Standard and Enterprise licenses are assigned to individual users, not organizations or projects, allowing individual users to use Gemini Code Assist Standard and Enterprise across multiple organizations.
+- To further prevent cross-organization usage of Gemini Code Assist Standard and Enterprise in a project, you can do one of the following: Disable the Gemini for Google Cloud API in the project.
+- If the command succeeds, it returns licensedUsers output in the following format: { "licensedUsers": [ { "username": "dana@example.com", "assignTime": "2024-09-26T16:24:40.559222Z" }, { "username": "lee@example.com", "assignTime": "2024-09-26T16:24:40.559222Z" }, { "username": "taylor@example.com", "assignTime": "2024-09-26T16:24:40.559222Z" }, { "username": "bola@example.com", "assignTime": "2024-09-26T16:24:14.610828Z" } ] } If there are no Gemini Code Assist Standard or Enterprise license assignments or the ORDER ID is invalid, it returns licensedUsers output in the following format: {} Automatically assign Gemini Code Assist Standard and Enterprise licenses You can enable automatic license assignment for a subscription.
+- View Gemini Code Assist Standard and Enterprise license assignments Select one of the following options: Console Verify that you have the following IAM permissions on the billing account that owns the subscription: billing.accounts.get consumerprocurement.orders.get consumerprocurement.licensePools.get consumerprocurement.licensePools.enumerateLicensedUsers resourcemanager.projects.get Go to the Admin for Gemini page and select the project attached to your billing account with the Gemini Code Assist Standard or Enterprise subscription.
 

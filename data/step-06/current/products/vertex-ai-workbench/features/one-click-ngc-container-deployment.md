@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:49:36.728Z"
+generated_at: "2026-04-14T17:42:01.396Z"
 product_name: "Vertex AI Workbench"
 product_slug: "vertex-ai-workbench"
 feature_name: "One-click NGC container deployment"
@@ -9,10 +9,9 @@ latest_feature_date: "2022-04-06"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
-  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
-  - "https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks"
-  - "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+  - "https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component"
+  - "https://docs.cloud.google.com/vertex-ai/docs/pipelines/dataproc-component"
+  - "https://docs.cloud.google.com/vertex-ai/docs/pipelines/vertex-automl-component"
 keywords:
   - "one"
   - "click"
@@ -39,66 +38,50 @@ Vertex AI Workbench supports one-click deployment for NGC containers.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials)
-- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks](https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks)
-- [https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks](https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks)
-- [https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials)
+- [https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component)
+- [https://docs.cloud.google.com/vertex-ai/docs/pipelines/dataproc-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/dataproc-component)
+- [https://docs.cloud.google.com/vertex-ai/docs/pipelines/vertex-automl-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/vertex-automl-component)
 
 ## Supporting Pages
 
-### "Vertex Explainable AI notebook tutorials \_|\_ Vertex AI \_|\_ Google Cloud\
+### Forecasting components \_|\_ Vertex AI \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials)
-- Source ID: `site-docs-root`
-- Final score: 278
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component)
+- Source ID: `site-api-reference`
+- Final score: 60
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- VertexNotificationEmailOp Version history and release notes To learn more about the version history and changes to the Google Cloud Pipeline Components SDK, see the Google Cloud Pipeline Components SDK Release Notes .
+- Home Documentation AI and ML Vertex AI Reference Send feedback Forecasting components Stay organized with collections Save and categorize content based on your preferences.
+
+### "Managed Service for Apache Spark components \_|\_ Vertex AI \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/pipelines/dataproc-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/dataproc-component)
+- Source ID: `site-api-reference`
+- Final score: 52
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Vertex AI Reference Send feedback Managed Service for Apache Spark components Stay organized with collections Save and categorize content based on your preferences.
+- The Managed Service for Apache Spark components let you run Apache Spark batch workloads from a pipeline within Vertex AI Pipelines.
+
+### Vertex AI AutoML components \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/pipelines/vertex-automl-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/vertex-automl-component)
+- Source ID: `site-api-reference`
+- Final score: 38
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Tutorial steps Package training application into a Python source distribution Configure and run training job in a prebuilt container Package model artifacts in a model archive file Upload model for deployment Deploy model using a prebuilt container for prediction Make online predictions Colab Colab Enterprise GitHub Vertex AI Workbench Ray on Vertex AI overview Get started with PyTorch on Ray on Vertex AI .
-- Tutorial steps Download a pretrained image model from PyTorch Create a custom model handler Package model artifacts in a model archive file Upload model for deployment Deploy model for prediction Make online predictions Make batch predictions Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Inference Train and deploy PyTorch models with prebuilt containers on Vertex AI .
-- Tutorial steps Create KFP components Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Pipelines Multicontender vs Champion methodology for model deployment into production .
-- Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .
-
-### Custom training notebook tutorials \_|\_ Vertex AI \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks](https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks)
-- Source ID: `site-docs-root`
-- Final score: 230
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Tutorial steps Package training application into a Python source distribution Configure and run training job in a prebuilt container Package model artifacts in a model archive file Upload model for deployment Deploy model using a prebuilt container for prediction Make online predictions Colab Colab Enterprise GitHub Vertex AI Workbench Ray on Vertex AI overview Get started with PyTorch on Ray on Vertex AI .
-- Tutorial steps Download a pretrained image model from PyTorch Create a custom model handler Package model artifacts in a model archive file Upload model for deployment Deploy model for prediction Make online predictions Make batch predictions Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Inference Train and deploy PyTorch models with prebuilt containers on Vertex AI .
-- Tutorial steps Create KFP components Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Pipelines Multicontender vs Champion methodology for model deployment into production .
-- Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .
-
-### Ray on Vertex AI notebook tutorials \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks](https://docs.cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/tutorials/jupyter-notebooks)
-- Source ID: `site-docs-root`
-- Final score: 216
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Tutorial steps Package training application into a Python source distribution Configure and run training job in a prebuilt container Package model artifacts in a model archive file Upload model for deployment Deploy model using a prebuilt container for prediction Make online predictions Colab Colab Enterprise GitHub Vertex AI Workbench Ray on Vertex AI overview Get started with PyTorch on Ray on Vertex AI .
-- Tutorial steps Download a pretrained image model from PyTorch Create a custom model handler Package model artifacts in a model archive file Upload model for deployment Deploy model for prediction Make online predictions Make batch predictions Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Inference Train and deploy PyTorch models with prebuilt containers on Vertex AI .
-- Tutorial steps Create KFP components Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Pipelines Multicontender vs Champion methodology for model deployment into production .
-- Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .
-
-### "Vertex ML Metadata notebook tutorials \_|\_ Vertex AI \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials)
-- Source ID: `site-docs-root`
-- Final score: 210
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Tutorial steps Package training application into a Python source distribution Configure and run training job in a prebuilt container Package model artifacts in a model archive file Upload model for deployment Deploy model using a prebuilt container for prediction Make online predictions Colab Colab Enterprise GitHub Vertex AI Workbench Ray on Vertex AI overview Get started with PyTorch on Ray on Vertex AI .
-- Tutorial steps Download a pretrained image model from PyTorch Create a custom model handler Package model artifacts in a model archive file Upload model for deployment Deploy model for prediction Make online predictions Make batch predictions Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Inference Train and deploy PyTorch models with prebuilt containers on Vertex AI .
-- Tutorial steps Create KFP components Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Pipelines Multicontender vs Champion methodology for model deployment into production .
-- Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .
+- For Vertex AI API reference, see the following API reference pages: Dataset resource TrainingPipeline resource Tutorials Learn how to use the Google Cloud pipeline components to train an image classification model using Vertex AI AutoML.
+- This resource always executes the training task, and optionally may also export data from a Vertex AI Dataset which becomes the training input, upload the Model to Vertex AI, and evaluate the Model.
+- Home Documentation AI and ML Vertex AI Reference Send feedback Vertex AI AutoML components Stay organized with collections Save and categorize content based on your preferences.
+- Learn how to use the Google Cloud pipeline components to train a linear regression model using tabular data and Vertex AI AutoML.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.876Z"
+generated_at: "2026-04-14T15:34:54.384Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Ruby 4.0 runtime"
@@ -9,17 +9,13 @@ latest_feature_date: "2026-03-17"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/container-contract"
-  - "https://docs.cloud.google.com/run/docs/reference/container-contract"
+  - "https://docs.cloud.google.com/run/docs/authenticating/overview"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-adk-service"
+  - "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
 keywords:
   - "ruby"
   - "runtime"
-  - "run"
   - "supports"
-  - "the"
-  - "for"
-  - "services"
 ---
 
 # Ruby 4.0 runtime
@@ -37,52 +33,36 @@ Cloud Run supports the Ruby 4.0 runtime for services; Cloud Run supports the Rub
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
+- [https://docs.cloud.google.com/run/docs/authenticating/overview](https://docs.cloud.google.com/run/docs/authenticating/overview)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-adk-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-adk-service)
+- [https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api](https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api)
 
 ## Supporting Pages
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### Authentication overview \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 176
+- URL: [https://docs.cloud.google.com/run/docs/authenticating/overview](https://docs.cloud.google.com/run/docs/authenticating/overview)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Quickstart: Build and deploy an AI agent to Cloud Run using the Agent Development\
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-adk-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-adk-service)
+- Source ID: `site-docs-reference-2`
+- Final score: 34
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Authenticate to Cloud Run Admin API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api](https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api)
+- Source ID: `site-docs-reference`
+- Final score: 34
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- August 21, 2024 Feature Cloud Run now provides security updates for services that are deployed from source when you specify the runtime base image (Preview).
-- Feature Support for the Ruby 3.4 runtime is in General Availability (GA) .
-- May 05, 2025 Feature Support for the Ruby 3.4 runtime is in Preview .
-- May 12, 2021 Feature Cloud Run now provides UI, command line, and YAML support for referencing Secret Manager Secrets . (Available in public preview.) Feature Customer managed encryption keys are now available for use with Cloud Run. (Available in public preview.) Feature Recommender now provides recommendations for securing Cloud Run services by creating dedicated service accounts. (Available in public preview.) Feature Committed use discounts are now available for Cloud Run . (Available in public preview.) Feature You can now use Binary authorization with Cloud Run to enforce policy-based deployment of Cloud Run services. (Available in public preview.) May 03, 2021 Feature You can now use Identity-aware Proxy with Cloud Run to use identity and context to guard access to your applications. (Available in public preview.) Change By default, the memory allocated to each container instance of a new service is 512MiB.
-
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- 1 Environment variables for worker pools Cloud Run sets the following environment variables for worker pools: Name Description Example CLOUD RUN WORKER POOL The name of the running Cloud Run worker pool. hello-world CLOUD RUN WORKER POOL REVISION The name of the running Cloud Run worker pool revision. hello-world.1 Request and response header requirements (services) For services, Cloud Run restricts header names to printable non-whitespace ASCII, and cannot contain colons.
-- Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.
-- Responses (services) For Cloud Run services, your container must send a response within the time specified in the request timeout setting after it receives a request, including the container startup time.
-- For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.
-
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- 1 Environment variables for worker pools Cloud Run sets the following environment variables for worker pools: Name Description Example CLOUD RUN WORKER POOL The name of the running Cloud Run worker pool. hello-world CLOUD RUN WORKER POOL REVISION The name of the running Cloud Run worker pool revision. hello-world.1 Request and response header requirements (services) For services, Cloud Run restricts header names to printable non-whitespace ASCII, and cannot contain colons.
-- Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.
-- Responses (services) For Cloud Run services, your container must send a response within the time specified in the request timeout setting after it receives a request, including the container startup time.
-- For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.
 

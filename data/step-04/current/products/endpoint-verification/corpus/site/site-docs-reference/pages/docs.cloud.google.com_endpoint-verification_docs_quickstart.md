@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/endpoint-verification/docs/quickstart
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
 source_metadata:
   url: https://docs.cloud.google.com/endpoint-verification/docs/quickstart
   title: "Set up Endpoint Verification on your devices \_|\_ Google Cloud Documentation"

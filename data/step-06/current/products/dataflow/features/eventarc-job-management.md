@@ -1,18 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.814Z"
+generated_at: "2026-04-15T12:05:13.780Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Eventarc job management"
 feature_slug: "eventarc-job-management"
 latest_feature_date: "2023-04-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc"
-  - "https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3Client"
-  - "https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3AsyncClient"
-  - "https://docs.cloud.google.com/dataflow/docs/release-notes"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
 keywords:
   - "eventarc"
   - "job"
@@ -27,7 +26,7 @@ keywords:
 # Eventarc job management
 
 Product: Dataflow
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,68 +38,54 @@ Eventarc job management lets you manage Dataflow jobs by using Eventarc.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc](https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc)
-- [https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3Client](https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3Client)
-- [https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3AsyncClient](https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3AsyncClient)
-- [https://docs.cloud.google.com/dataflow/docs/release-notes](https://docs.cloud.google.com/dataflow/docs/release-notes)
+- [https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies](https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies)
+- [https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys](https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys)
 
 ## Supporting Pages
 
 ### Use Eventarc to manage Dataflow jobs \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc](https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc)
-- Source ID: `site-docs-root-2`
-- Final score: 226
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference-2`
+- Final score: 154
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use Eventarc to manage Dataflow jobs Stay organized with collections Save and categorize content based on your preferences.
 - Dataflow integration with Eventarc lets you trigger an action when a job changes state.
+- The following shows an example payload: { "id" : "2023-04-13 16 28 37-12345678" , "projectId" : "my-project" , "name" : "job1" , "currentState" : "JOB STATE QUEUED" , "currentStateTime" : "2023-04-13T23:28:37.437622Z" , "createTime" : "2023-04-13T23:28:37.437622Z" , "location" : "us-central1" , "startTime" : "2023-04-13T23:28:37.437622Z" } For more information about job states, see the following topics: JobState Life of a Dataflow job What's next Design Dataflow pipeline workflows .
 - Create a trigger To create an Eventarc trigger for Dataflow job state changes, refer to one of the following documents: Route Dataflow events to Cloud Run Route Dataflow events to Google Kubernetes Engine Route Dataflow events to Workflows Create a trigger for Cloud Run functions Optionally, you can filter events by Dataflow job ID.
-- This document describes how to create event-driven workflows triggered by state changes in your Dataflow jobs.
 
-### "Class JobsV1Beta3Client (0.13.0) \_|\_ Python client libraries \_|\_ Google\
+### Manage pipeline dependencies in Dataflow \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3Client](https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3Client)
-- Source ID: `site-python-reference`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Returns Type Description google.cloud.dataflow v1beta3.types.CheckActiveJobsResponse Response for CheckActiveJobsRequest. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create job create job ( request : typing .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 def sample aggregated list jobs(): Create a client client = dataflow v1beta3 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 def sample check active jobs(): Create a client client = dataflow v1beta3 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 def sample list jobs(): Create a client client = dataflow v1beta3 .
-
-### "Class JobsV1Beta3AsyncClient (0.13.0) \_|\_ Python client libraries \_|\_\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3AsyncClient](https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3AsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 172
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies](https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies)
+- Source ID: `site-docs-root-2`
+- Final score: 116
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Returns Type Description google.cloud.dataflow v1beta3.types.CheckActiveJobsResponse Response for CheckActiveJobsRequest. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create job create job ( request : typing .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 async def sample aggregated list jobs(): Create a client client = dataflow v1beta3 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 async def sample check active jobs(): Create a client client = dataflow v1beta3 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 async def sample list jobs(): Create a client client = dataflow v1beta3 .
+- Python When you run Dataflow jobs by using the Apache Beam Python SDK, dependency management is useful in the following scenarios: Your pipeline uses public packages from the Python Package Index (PiPy), and you want to make these packages available remotely.
+- Go When you run Dataflow jobs by using the Apache Beam Go SDK, Go Modules are used to manage dependencies.
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Manage pipeline dependencies in Dataflow Stay organized with collections Save and categorize content based on your preferences.
+- Dependency management To simplify dependency management for Java pipelines, Apache Beam uses Bill of Materials (BOM) artifacts.
 
-### Dataflow release notes \_|\_ Google Cloud Documentation
+### "Use customer-managed encryption keys \_|\_ Cloud Dataflow \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/release-notes](https://docs.cloud.google.com/dataflow/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 170
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys](https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys)
+- Source ID: `site-docs-reference-2`
+- Final score: 108
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- April 19, 2023 Feature You can now manage Dataflow jobs by using Eventarc.
-- Cloud Dataflow SQL lets you use SQL queries to develop and run Cloud Dataflow jobs from the BigQuery web UI.
-- For more information, see Use Eventarc to manage Dataflow jobs .
-- Feature Added new autoscaling metrics : Autoscaling rationale chart : explains the factors driving autoscaling decisions Worker CPU utilization chart : shows current user worker CPU utilization and customer autoscaling hint value Timer backlog per stage : shows an estimate of time needed to materialize the output for windows whose timer has expired Parallel processing : the number of keys available for parallel processing March 11, 2024 Feature You can now use committed use discounts (CUDs) with Dataflow streaming jobs.
+- For Encryption type: "Google-Managed key" For Encryption type: "Customer-Managed key" CLI Run the describe command using the gcloud CLI: gcloud dataflow jobs describe JOB ID Search for the line that contains serviceKmsKeyName .
+- Encryption of pipeline state artifacts Data that a Dataflow pipeline reads from user-specified data sources is encrypted, except for the data keys that you specify for key-based transforms in streaming jobs.
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use customer-managed encryption keys Stay organized with collections Save and categorize content based on your preferences.
+- Service agents that use the keys for encrypt and decrypt operations are created if they don't already exist and are granted the required Identity and Access Management (IAM) roles.
 

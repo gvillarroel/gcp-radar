@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:20.477Z"
+generated_at: "2026-04-12T12:16:09.665Z"
 product_name: "Gemini"
 product_slug: "gemini"
 feature_name: "Database Center additional resource metadata"
 feature_slug: "database-center-additional-resource-metadata"
 latest_feature_date: "2024-07-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/MonitoredResourceMetadata"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/ListOperationsResponse"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/cmek"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls"
 keywords:
   - "database"
   - "center"
@@ -22,7 +25,7 @@ keywords:
 # Database Center additional resource metadata
 
 Product: Gemini
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,11 +35,72 @@ Database Center adds additional resource metadata.
 
 Database Center adds additional resource metadata.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/MonitoredResourceMetadata](https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/MonitoredResourceMetadata)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/ListOperationsResponse](https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/ListOperationsResponse)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/cmek](https://docs.cloud.google.com/gemini/enterprise/docs/cmek)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls](https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### MonitoredResourceMetadata \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/MonitoredResourceMetadata](https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/MonitoredResourceMetadata)
+- Source ID: `site-docs-reference`
+- Final score: 132
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Gemini Enterprise Reference Send feedback MonitoredResourceMetadata Stay organized with collections Save and categorize content based on your preferences.
+- Monitoring and Logging use an ingestion pipeline to extract metadata for cloud resources of all types, and store the metadata in this message.
+- JSON representation Auxiliary metadata for a MonitoredResource object.
+- System labels are a kind of metadata extracted by Google, including "machine image", "vpc", "subnet id", "security group", "name", etc.
+
+### ListOperationsResponse \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/ListOperationsResponse](https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/Shared.Types/ListOperationsResponse)
+- Source ID: `site-docs-reference`
+- Final score: 98
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you use the default HTTP mapping, the name should be a resource name ending with operations/{uniqueId} . metadata object Service-specific metadata associated with the operation.
+- JSON representation { "name" : string , "metadata" : { "@type" : string , field1 : ... , ... } , "done" : boolean , // Union field result can be only one of the following: "error" : { object ( Status ) } , "response" : { "@type" : string , field1 : ... , ... } // End of list of possible types for union field result . } Fields name string The server-assigned name, which is only unique within the same service that originally returns it.
+- For information about the Business edition, see the Gemini Enterprise - Business edition Help Center .
+- Operation This resource represents a long-running operation that is the result of a network API call.
+
+### "Customer-managed encryption keys \_|\_ Gemini Enterprise \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/cmek](https://docs.cloud.google.com/gemini/enterprise/docs/cmek)
+- Source ID: `site-iam-reference`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Example command and result $ curl -X PATCH -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json -d '{ "kmsKey":"projects/key-project-456/locations/us/keyRings/my-key-ring/cryptoKeys/my-key", "singleRegionKeys": [ {"kms key": "projects/key-project-456/locations/us-east1/keyRings/my-key-ring/cryptoKeys/my-key"}, {"kms key": "projects/key-project-456/locations/us-central1/keyRings/my-key-ring/cryptoKeys/my-key"}, {"kms key": "projects/key-project-456/locations/us-west1/keyRings/my-key-ring/cryptoKeys/my-key"} ] }' "https://us-discoveryengine.googleapis.com/v1/projects/my-ai-app-project-123/locations/us/cmekConfigs/default cmek config?set default=true" { "name": "projects/my-ai-app-project-123/locations/us/operations/update-cmek-config-56789", "metadata": { "@type": "type.googleapis.com/google.cloud.discoveryengine.v1.UpdateCmekConfigMetadata" } } Console Note: When you use the console to register the keys, you cannot modify or remove keys from a location using the console.
+- If you use third-party connectors and want to protect your third-party data with your own key, then create three additional single-region keys as follows: curl -X PATCH \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -d '{ "kmsKey":"projects/KMS PROJECT ID/locations/KMS LOCATION/keyRings/KEY RING/cryptoKeys/KEY NAME", "singleRegionKeys": [ \ {"kmsKey": "projects/ KMS PROJECT ID /locations/ REGION 1 /keyRings/ KEY RING 1 /cryptoKeys/ KEY NAME 1 "}, \ {"kmsKey": "projects/ KMS PROJECT ID /locations/ REGION 2 /keyRings/ KEY RING 2 /cryptoKeys/ KEY NAME 2 "}, \ {"kmsKey": "projects/ KMS PROJECT ID /locations/ REGION 3 /keyRings/ KEY RING 3 /cryptoKeys/ KEY NAME 3 "} \ ] \ }' \ "https:// LOCATION -discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cmekConfigs/ CMEK CONFIG ID ?set default= SET DEFAULT " Replace the following: KMS PROJECT ID : the ID of your project that contains the key.
+- An example curl call and response looks like this: $ curl -X GET -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://us-discoveryengine.googleapis.com/v1/projects/my-ai-app-project-123/locations/us/cmekConfigs" { "cmek configs": [ { "name": "projects/my-ai-app-project-123/locations/us/cmekConfigs/default cmek config", "kmsKey": "projects/key-project-456/locations/us/keyRings/my-key-ring/cryptoKeys/my-key" "state": "ACTIVE" "isDefault": true } ] } Unregister your Cloud KMS key To unregister your key from Gemini Enterprise, follow these steps: Call the DeleteCmekConfig method with the CmekConfig resource name that you want to unregister. curl -X DELETE \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ "https:// LOCATION -discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cmekConfigs/ CMEK CONFIG ID " Replace the following: LOCATION : the multi-region of your data store: us or eu .
+- An example curl call and response looks like this: $ curl -X GET -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://us-discoveryengine.googleapis.com/v1/projects/my-ai-app-project-123/locations/us/cmekConfigs/default cmek config" { "name": "projects/my-ai-app-project-123/locations/us/cmekConfigs/default cmek config", "kmsKey": "projects/key-project-456/locations/us/keyRings/my-key-ring/cryptoKeys/my-key" "state": "ACTIVE" "isDefault": true } If you don't have the CmekConfig resource name, call the ListCmekConfigs method: curl -X GET \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ "https:// LOCATION -discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cmekConfigs" Replace the following: LOCATION : the multi-region of your data store: us or eu .
+
+### Configure serving controls \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls](https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls)
+- Source ID: `site-iam-reference`
+- Final score: 90
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [" USE CASE "], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": FULL MATCH } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ] }, "promoteAction": { "dataStore": " DATA STORE RESOURCE PATH ", "searchLinkPromotion": { "document": " DOCUMENT RESOURCE PATH ", "title": " TITLE ", "uri": " URI ", "description": " URI DESCRIPTION " } } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
+- Serving control types The following types of serving controls are available: Control Description Available for Boost control Changes the returned order of results Search apps with data stores that support a schema, such as data stores that contain structured data or unstructured data with metadata Filter control Removes entries from returned results Search apps with data stores that support a schema, such as data stores that contain structured data or unstructured data with metadata Synonyms control Associates queries with each other Search apps with structured or unstructured data stores Redirect control Redirects to a specified URI All search apps Promote control Promotes a specified link for a query Search apps with structured or unstructured data stores About conditions When creating a control, you can optionally define a condition that determines when the control is applied.
+- Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [ " USE CASE " ], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": FULL MATCH } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ] }, "boostAction": { "boost": BOOST VALUE , "filter": " FILTER ", "dataStore": " DATA STORE RESOURCE PATH " } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
+- The format of the full resource path is: projects/ PROJECT NUMBER /locations/ LOCATION ID /collections/default collection/dataStores/ DATA STORE ID /branches/0/documents/ DOCUMENT ID .
 

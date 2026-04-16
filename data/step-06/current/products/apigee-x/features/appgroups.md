@@ -1,0 +1,89 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T05:27:18.169Z"
+product_name: "Apigee X"
+product_slug: "apigee-x"
+feature_name: "AppGroups"
+feature_slug: "appgroups"
+latest_feature_date: "2024-05-08"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+keywords:
+  - "organize"
+  - "appgroups"
+  - "under"
+  - "more"
+  - "apps"
+---
+
+# AppGroups
+
+Product: Apigee X
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+AppGroups let Apigee organize one or more apps under a shared ownership relationship; AppGroups let Apigee organize one or more apps under a shared ownership relationship.
+
+## Extended Definition
+
+AppGroups let Apigee organize one or more apps under a shared ownership relationship; AppGroups let Apigee organize one or more apps under a shared ownership relationship.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference](https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership](https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy](https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy)
+
+## Supporting Pages
+
+### "Analytics metrics, dimensions, and filters reference \_|\_ Apigee \_|\_\
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference](https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 133
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- In order to get this dimension, app developers or AppGroups must have apps associated with one or more API products that contain the API proxies being called, and the proxies must check for an API key or OAuth token sent with the API call.
+- In order to get this dimension, app developers and AppGroups must have apps associated with one or more API products containing the API proxies being called, and the proxies must check for an API key or OAuth token sent with the API calls.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- In order to get this dimension, developer apps making the calls must be associated with one or more API products that contain the API proxies, and the proxies being called must check for an API key or OAuth token sent with the API call.
+
+### Organizing client app ownership \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership](https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership)
+- Source ID: `site-iam-reference`
+- Final score: 127
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The expected syntax to store this is: [{ "developer":"<developer email>", "roles":[ "<role(s)>" ] }, ... ] Using developer-app association to organize app ownership A less comprehensive and flexible method of tracking app ownership than AppGroups is tracking apps by developer association.
+- Description Permissions Manage AppGroups and associated apps and keys. apigee.appgroups.list apigee.appgroups.get apigee.appgroups.create apigee.appgroups.update apigee.appgroups.delete Manage AppGroup apps. apigee.appgroupapps.list apigee.appgroupapps.get apigee.appgroupapps.create apigee.appgroupapps.manage apigee.appgroupapps.delete Manage app keys for AppGroups: apigee.appkeys.get apigee.appkeys.create apigee.appkeys.manage apigee.appkeys.delete Manage AppGroup subscriptions and monetization configurations. apigee.appgroupbalances.adjust apigee.appgroupbalances.get apigee.appgroupbalances.update apigee.appgroupmonetizationconfigs.get apigee.appgroupmonetizationconfigs.update apigee.appgroupsubscriptions.create apigee.appgroupsubscriptions.get apigee.appgroupsubscriptions.list apigee.appgroupsubscriptions.update Viewing and managing AppGroups This section shows how to view and manage AppGroups.
+- Managing AppGroups using the Apigee APIs Use these APIs to manage AppGroups in your orgs: Activities Link View and manage AppGroups https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups View and manage the apps that belong to AppGroups https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups.apps View and manage the app keys associated to AppGroups https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups.apps.keys View and manage AppGroup subscriptions to API products https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups.subscriptions See also AppGroup subscription management .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+
+### AccessEntity policy \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy](https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy)
+- Source ID: `site-api-reference`
+- Final score: 121
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- For information about AppGroups and supported functionality, see Using AppGroups to organize app ownership .
+- Sample XPath, retrieves the second API resource (URI) from the API product named weather free : / ApiProduct [ '@name=weather free' ]/ ApiResources / ApiResource [ 1 ]/ text () Sample profile returned as XML: < ? xml version = "1.0" encoding = "UTF-8" standalone = "yes" ? > < ApiProduct name = "weather free" > < ApiResources > < ApiResource > / forecastrss , / reports < / ApiResource > < / ApiResources > < ApprovalType>auto < / ApprovalType > < Attributes > < Attribute > < Name>description < / Name > < Value>Introductory API Product < / Value > < / Attribute > < Attribute > < Name>developer . quota . interval < / Name > < Value>1 < / Value > < / Attribute > < Attribute > < Name>developer . quota . limit < / Name > < Value>1 < / Value > < / Attribute > < Attribute > < Name>developer . quota . timeunit < / Name > < Value>minute < / Value > < / Attribute > < Attribute > < Name>servicePlan < / Name > < Value>Introductory < / Value > < / Attribute > < / Attributes > < CreatedAt>1355847839224 < / CreatedAt > < CreatedBy>andrew @apigee . com < / CreatedBy > < Description>Free API Product < / Description > < DisplayName>Free API Product < / DisplayName > < Environments / > < LastModifiedAt>1355847839224 < / LastModifiedAt > < LastModifiedBy>andrew @apigee . com < / LastModifiedBy > < Proxies / > < Scopes / > < / ApiProduct > Consumer key curl https://apigee.googleapis.com/v1/organizations/ $ORG developers/ $DEVELOPER EMAIL /apps/ $APP /keys/ $KEY \ -X GET \ -H "Accept:text/xml" \ -H "Authorization: Bearer $TOKEN" See also Get key details for a developer app in the Apigee API reference.
+- Sample XPath: /Developer/Attributes/Attribute[Name='my custom attribute']/Value/text() /Developer/Email/text() Sample profile: < ? xml version = "1.0" encoding = "UTF-8" standalone = "yes" ? > < Developer > < Apps > < App>weatherappx < / App > < App>weatherapp < / App > < / Apps > < Email>ntesla @ theramin . com < / Email > < DeveloperId>4Y4xd0KRZ1wmHJqu < / DeveloperId > < FirstName>Nikola < / FirstName > < LastName>Tesla < / LastName > < UserName>theramin < / UserName > < OrganizationName>apigee - pm < / OrganizationName > < Status>active < / Status > < Attributes > < Attribute > < Name>project type < / Name > < Value>public < / Value > < / Attribute > < / Attributes > < CreatedAt>1349797040634 < / CreatedAt > < CreatedBy>rsaha @ apigee . com < / CreatedBy > < LastModifiedAt>1349797040634 < / LastModifiedAt > < LastModifiedBy>rsaha @ apigee . com < / LastModifiedBy > < / Developer > Flow variables When the entity profile specified in the AccessEntity policy is retrieved, the profile object is added to the message context as a variable.
+

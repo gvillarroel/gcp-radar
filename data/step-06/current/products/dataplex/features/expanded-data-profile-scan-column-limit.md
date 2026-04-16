@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.592Z"
+generated_at: "2026-04-12T12:13:48.458Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Expanded data profile scan column limit"
 feature_slug: "expanded-data-profile-scan-column-limit"
 latest_feature_date: "2025-05-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+  - "https://docs.cloud.google.com/dataplex/docs/data-profiling-overview"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
   - "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
 keywords:
@@ -26,7 +27,7 @@ keywords:
 # Expanded data profile scan column limit
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,11 +39,12 @@ Dataplex data profile scans can profile up to 10,000 columns in a BigQuery table
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataplex/docs/use-data-profiling](https://docs.cloud.google.com/dataplex/docs/use-data-profiling)
+- [https://docs.cloud.google.com/dataplex/docs/data-profiling-overview](https://docs.cloud.google.com/dataplex/docs/data-profiling-overview)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
 - [https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints](https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints)
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/use-data-profiling](https://docs.cloud.google.com/dataplex/docs/use-data-profiling)
 - Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 244
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Export table schema If you want to export the data profile scan results to an existing BigQuery table, make sure that it is compatible with the following table schema: Column name Column data type Sub field name (if applicable) Sub field data type Mode Example data profile scan struct/record resource name string nullable //dataplex.googleapis.com/projects/test-project/locations/europe-west2/datascans/test-datascan project id string nullable test-project location string nullable us-central1 data scan id string nullable test-datascan data source struct/record resource name string nullable Entity case: //dataplex.googleapis.com/projects/test-project/locations/europe-west2/lakes/test-lake/zones/test-zone/entities/test-entity Table case: //bigquery.googleapis.com/projects/test-project/datasets/test-dataset/tables/test-table dataplex entity project id string nullable test-project dataplex entity project number integer nullable 123456789012 dataplex lake id string nullable (Valid only if source is entity) test-lake dataplex zone id string nullable (Valid only if source is entity) test-zone dataplex entity id string nullable (Valid only if source is entity) test-entity table project id string nullable dataplex-table table project number int64 nullable 345678901234 dataset id string nullable (Valid only if source is table) test-dataset table id string nullable (Valid only if source is table) test-table data profile job id string nullable caeba234-cfde-4fca-9e5b-fe02a9812e38 data profile job configuration json trigger string nullable ondemand / schedule incremental boolean nullable true / false sampling percent float nullable (0-100) 20.0 (indicates 20%) row filter string nullable col1 >= 0 AND col2 column filter json nullable {"include fields":["col1","col2"], "exclude fields":["col3"]} job labels json nullable {"key1":value1} job start time timestamp nullable 2023-01-01 00:00:00 UTC job end time timestamp nullable 2023-01-01 00:00:00 UTC job rows scanned integer nullable 7500 column name string nullable column-1 column type string nullable string column mode string nullable repeated percent null float nullable (0.0-100.0) 20.0 (indicates 20%) percent unique float nullable (0.0-100.0) 92.5 min string length integer nullable (Valid only if column type is string) 10 max string length integer nullable (Valid only if column type is string) 4 average string length float nullable (Valid only if column type is string) 7.2 min value float nullable (Valid only if column type is numeric - integer/float) max value float nullable (Valid only if column type is numeric - integer/float) average value float nullable (Valid only if column type is numeric - integer/float) standard deviation float nullable (Valid only if column type is numeric - integer/float) quartile lower integer nullable (Valid only if column type is numeric - integer/float) quartile median integer nullable (Valid only if column type is numeric - integer/float) quartile upper integer nullable (Valid only if column type is numeric - integer/float) top n struct/record - repeated value string nullable "4009" count integer nullable 20 percent float nullable 10 (indicates 10%) Export table setup When you export to BigQueryExport tables, follow these guidelines: For the field resultsTable , use the format: //bigquery.googleapis.com/projects/{project-id}/datasets/{dataset-id}/tables/{table-id} .
@@ -62,11 +64,25 @@ Evidence snippets:
 - To view detailed information about a job, click any of the jobs in the Job ID column. gcloud To view historical data profile scan jobs, use the gcloud dataplex datascans jobs list command : gcloud dataplex datascans jobs list \ --location= LOCATION \ --datascan= DATASCAN Replace the following variables: LOCATION : The Google Cloud region in which the data profile scan was created.
 - To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create and manage data profile scans: Create, run, update, and delete data profile scans: dataplex.datascans.create on project dataplex.datascans.update on data scan dataplex.datascans.delete on data scan dataplex.datascans.run on data scan dataplex.datascans.get on data scan dataplex.datascans.list on project dataplex.dataScanJobs.get on data scan job dataplex.dataScanJobs.list on data scan View data profile scan results, jobs, and history: dataplex.datascans.getData on data scan dataplex.datascans.list on project dataplex.dataScanJobs.get on data scan job dataplex.dataScanJobs.list on data scan Publish data profile scan results to Knowledge Catalog: dataplex.entryGroups.useDataProfileAspect on entry group bigquery.tables.update on table dataplex.entries.update on entry View published data profile results for a table in BigQuery or Knowledge Catalog: bigquery.tables.get on table bigquery.tables.getData on table You might also be able to get these permissions with custom roles or other predefined roles .
 
+### About data profiling \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/data-profiling-overview](https://docs.cloud.google.com/dataplex/docs/data-profiling-overview)
+- Source ID: `site-docs-root`
+- Final score: 199
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- It is optimized for speed and cost-efficiency to support use cases such as the following: Grounding AI agent responses with immediate data characteristics Cost-effectively pre-generating profiles at scale for global data discovery Providing rapid health reports during interactive data exploration The lightweight mode has the following limitations: Unlike the standard profiling mode, you can't modify the scope, filters, or sampling size on lightweight scans.
+- Execution identity By default, Knowledge Catalog uses a centralized service agent ( service-PROJECT NUMBER@gcp-sa-dataplex.iam.gserviceaccount.com ) to run data profile scans.
+- For more information about the available Terraform resources for creating data profile scans, see the following: Dataplex data scan resource in the Terraform registry.
+- Analysis tab On the Data profiling & quality > Data profile scan page in Knowledge Catalog and BigQuery, you can use the Analysis tab to view the trends for a given statistic of a column over multiple profile jobs.
+
 ### "Package com.google.cloud.dataplex.v1 (1.86.0) \_|\_ Java client libraries\
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
 - Source ID: `site-java-reference`
-- Final score: 162
+- Final score: 198
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +95,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints](https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints)
 - Source ID: `site-docs-root-2`
-- Final score: 152
+- Final score: 197
 - Re-rank relevance: N/A
 
 Evidence snippets:

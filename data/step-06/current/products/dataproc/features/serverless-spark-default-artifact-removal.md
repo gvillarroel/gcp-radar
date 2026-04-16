@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.015Z"
+generated_at: "2026-04-14T00:07:05.478Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Serverless Spark default artifact removal"
 feature_slug: "serverless-spark-default-artifact-removal"
 latest_feature_date: "2025-11-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
-  - "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements"
-  - "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage"
+  - "https://docs.cloud.google.com/dataproc/docs/reference/libraries"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/profiling"
 keywords:
   - "serverless"
   - "spark"
   - "default"
   - "artifact"
   - "removal"
-  - "for"
   - "apache"
   - "supports"
+  - "removing"
 ---
 
 # Serverless Spark default artifact removal
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,54 @@ Serverless for Apache Spark supports removing default runtime artifacts with the
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- [https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements](https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements)
-- [https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage](https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage)
+- [https://docs.cloud.google.com/dataproc/docs/reference/libraries](https://docs.cloud.google.com/dataproc/docs/reference/libraries)
+- [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn)
+- [https://docs.cloud.google.com/dataproc/docs/guides/profiling](https://docs.cloud.google.com/dataproc/docs/guides/profiling)
 
 ## Supporting Pages
 
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
+### Managed Service for Apache Spark client libraries \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
+- URL: [https://docs.cloud.google.com/dataproc/docs/reference/libraries](https://docs.cloud.google.com/dataproc/docs/reference/libraries)
+- Source ID: `site-docs-reference`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
+- Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback Managed Service for Apache Spark client libraries Stay organized with collections Save and categorize content based on your preferences.
+- Managed Service for Apache Spark Cloud Client Libraries may be in alpha or beta stage.
+- ClusterControllerClient ( client options = { "api endpoint" : f " { region } -dataproc.googleapis.com:443" } ) Create the cluster config. cluster = { "project id" : project id , "cluster name" : cluster name , "config" : { "master config" : { "num instances" : 1 , "machine type uri" : "n1-standard-2" }, "worker config" : { "num instances" : 2 , "machine type uri" : "n1-standard-2" }, }, } Create the cluster. operation = cluster client . create cluster ( request = { "project id" : project id , "region" : region , "cluster" : cluster } ) result = operation . result () Output a success message. print ( f "Cluster created successfully: { result . cluster name } " ) Additional resources C++ The following list contains links to more resources related to the client library for C++: API reference Client libraries best practices Issue tracker google-data-dataproc on Stack Overflow Source code C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-data-dataproc on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-data-dataproc on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-data-dataproc on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-data-dataproc on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-data-dataproc on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-data-dataproc on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-data-dataproc on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Cloud Profiler \_|\_ Managed Service for Apache Spark \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/profiling](https://docs.cloud.google.com/dataproc/docs/guides/profiling)
+- Source ID: `site-iam-reference`
+- Final score: 89
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Submit a Managed Service for Apache Spark job with Profiler options Submit a Managed Service for Apache Spark Spark or Hadoop job with one or more of the following Profiler options: Option Description Value Required/Optional Default Notes cloud.profiler.enable Enable profiling of the job true or false Required false cloud.profiler.name Name used to create profile on the Profiler Service profile-name Optional Managed Service for Apache Spark job UUID cloud.profiler.service.version A user-supplied string to identify and distinguish profiler results.
+- "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
+- Requirements: Profiler supports only Managed Service for Apache Spark Hadoop and Spark job types (Spark, PySpark, SparkSql, and SparkR).
+- Profiler Service Version Optional Managed Service for Apache Spark job UUID mapreduce.task.profile.maps Numeric range of map tasks to profile (example: for up to 100, specify "0-100") number range Optional 0-10000 Applies to Hadoop mapreduce jobs only mapreduce.task.profile.reduces Numeric range of reducer tasks to profile (example: for up to 100, specify "0-100") number range Optional 0-10000 Applies to Hadoop mapreduce jobs only PySpark Example Google Cloud CLI PySpark job submit with profiling example: gcloud dataproc jobs submit pyspark python-job-file \ --cluster= cluster-name \ --region= region \ --properties=cloud.profiler.enable=true,cloud.profiler.name= profiler name ,cloud.profiler.service.version= version \ -- job args Two profiles will be created: profiler name -driver to profile spark driver tasks profiler name -executor to profile spark executor tasks For example, if the profiler name is "spark word count job", spark word count job-driver and spark word count job-executor profiles are created.
+
+### "Customize your Spark job runtime environment with Docker on YARN \_|\_ Managed\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn)
 - Source ID: `site-docs-root`
-- Final score: 204
+- Final score: 86
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- November 13, 2025 Announcement New Serverless for Apache Spark runtime versions : 1.2.62 2.2.62 2.3.15 Feature Serverless for Apache Spark: Added the dataproc.artifacts.remove property, which lets users remove default artifacts, such as spark-bigquery-connector , iceberg , and delta-lake from a Serverless for Apache Spark runtime.
-- February 20, 2026 Announcement New Serverless for Apache Spark runtime versions : 1.2.71 2.2.71 2.3.24 3.0.8 February 15, 2026 Announcement New Dataproc on Compute Engine subminor image versions : 2.0.159-debian10, 2.0.159-rocky8, 2.0.159-ubuntu18 2.1.108-debian11, 2.1.108-rocky8, 2.1.108-ubuntu20, 2.1.108-ubuntu20-arm 2.2.76-debian12, 2.2.76-rocky9, 2.2.76-ubuntu22, 2.2.76-ubuntu22-arm 2.3.23-debian12, 2.3.23-ml-ubuntu22, 2.3.23-rocky9, 2.3.23-ubuntu22, 2.3.23-ubuntu22-arm February 13, 2026 Announcement New Serverless for Apache Spark runtime versions : 1.2.70 2.2.70 2.3.23 3.0.7 February 06, 2026 Announcement New Serverless for Apache Spark runtime versions : 1.2.69 2.2.69 2.3.22 3.0.5 Feature Serverless for Apache Spark: Added support for removing conscrypt from Serverless for Apache Spark 2.3 + runtimes using the dataproc.artifacts.remove property .
-- October 16, 2025 Announcement New Serverless for Apache Spark runtime versions : 3.0.0-RC6 Change Dataproc on Compute Engine : The default image version of premium tier clusters is now 2.3 .
-- Announcement New Dataproc Serverless for Spark runtime versions : 1.1.101 1.2.45 2.2.45 Change Native Query Execution now supports reading Apache ORC complex types.
-
-### "Managed Service for Apache Spark Spark performance enhancements \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements](https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements)
-- Source ID: `site-iam-reference`
-- Final score: 170
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- You can enable Spark performance enhancements on a cluster or on a Spark job: Spark performance enhancements enabled on a cluster apply, by default, to all Spark jobs run on the cluster, whether submitted to the Managed Service for Apache Spark service or submitted directly to the cluster .
-- If you omit this flag, Managed Service for Apache Spark will select the latest subminor version of the default Managed Service for Apache Spark image for the cluster (see Default Managed Service for Apache Spark image version ).
+- Example: dataproc:yarn.docker.image=gcr.io/project-id/image:1.0.1 Requirement: You must host your Docker image on Container Registry or Artifact Registry . (Managed Service for Apache Spark cannot fetch containers from other registries).
 - "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
-- PROPERTIES : To enable Spark optimization enhancements, specify: spark.dataproc.enhanced.optimizer.enabled = true To enable Spark execution enhancements, specify: spark.dataproc.enhanced.execution.enabled = true To enable Spark optimization and execution enhancements, specify: spark.dataproc.enhanced.optimizer.enabled = true,spark.dataproc.enhanced.execution.enabled = true API Specify the following properties for a SparkJob , PySparkJob , SparkSqlJob , or SparkRJob as part of a jobs.submit request: To enable Spark optimization enhancements, specify: "spark.dataproc.enhanced.optimizer.enabled=true" To enable Spark execution enhancements, specify: "spark.dataproc.enhanced.execution.enabled=true" To enable Spark optimization and execution enhancements, specify: "spark.dataproc.enhanced.execution.enabled=true,spark.dataproc.enhanced.optimizer.enabled=true" Note: You can click Equivalent Command Line or Equivalent REST at the bottom of the left panel of the Create a Managed Service for Apache Spark cluster page in the Google Cloud console to have the console construct an equivalent gcloud tool command or API REST request that you can use from the command line or in your code to create a cluster.
-
-### "Using Spark data lineage \_|\_ Managed Service for Apache Spark \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage](https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage)
-- Source ID: `site-iam-reference`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- If you don't add these properties, Managed Service for Apache Spark uses the following default values: Default value for spark.openlineage.namespace : PROJECT ID Default value for spark.openlineage.appName : spark.app.name View lineage in Knowledge Catalog A lineage graph displays relationships between your project resources and the processes that created them.
-- "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
-- Required roles If you create a Managed Service for Apache Spark cluster using the default VM service account , it has the Managed Service for Apache Spark Worker role, which enables data lineage.
-- Data lineage is available for all Managed Service for Apache Spark Spark jobs except SparkR and Spark streaming jobs, and supports BigQuery and Cloud Storage data sources.
+- Download the Miniconda3 installer. wget https://repo.anaconda.com/miniconda/Miniconda3-py39 4.10.3-Linux-x86 64.sh Python module example: cat >test util.py <<EOF def hello ( name ) : print ( "hello {}" .format ( name )) def read lines ( path ) : with open ( path ) as f: return f.readlines () EOF Build and push the image. docker build -t " ${ IMAGE } " . docker push " ${ IMAGE } " Create a Managed Service for Apache Spark cluster After creating a Docker image that customizes your Spark environment, create a Managed Service for Apache Spark cluster that will use your Docker image when running Spark jobs. gcloud gcloud dataproc clusters create CLUSTER NAME \ --region= REGION \ --image-version= DP IMAGE \ --optional-components=DOCKER \ --properties=dataproc:yarn.docker.enable=true,dataproc:yarn.docker.image= DOCKER IMAGE \ other flags Replace the following; CLUSTER NAME : The cluster name.
+- DP IMAGE : Managed Service for Apache Spark image version must be 2.0.49 or later ( --image-version=2.0 will use a qualified minor version later than 2.0.49 ). --optional-components=DOCKER : Enables the Docker component on the cluster. --properties flag: dataproc:yarn.docker.enable=true : Required property to enable the Managed Service for Apache Spark Docker on YARN feature. dataproc:yarn.docker.image : Optional property that you can add to specify your DOCKER IMAGE using the following Container Registry image naming format: {hostname}/{project-id}/{image}:{tag} .
 

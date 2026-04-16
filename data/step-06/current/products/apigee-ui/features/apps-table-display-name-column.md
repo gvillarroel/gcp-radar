@@ -1,44 +1,91 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:41.789Z"
+generated_at: "2026-04-14T05:10:02.158Z"
 product_name: "Apigee UI"
 product_slug: "apigee-ui"
-feature_name: "Apps table Display Name column"
+feature_name: "Apps table display name column"
 feature_slug: "apps-table-display-name-column"
 latest_feature_date: "2025-08-26"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy-apigee"
 keywords:
-  - "open app details page"
-  - "App name filter"
-  - "sort by Display Name"
-  - "app list filtering"
-  - "Display name filter"
-  - "Apps table"
-  - "Display Name column"
-  - "Display Name"
+  - "apps"
+  - "table"
+  - "display"
+  - "name"
+  - "column"
+  - "includes"
+  - "separate"
+  - "independent"
 ---
 
-# Apps table Display Name column
+# Apps table display name column
 
 Product: Apigee UI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The Apigee UI now adds a Display Name column to the Apps table with independent filtering by App name and Display name.
+The Apps table includes a separate Display name column and independent filtering for app name and display name.
 
 ## Extended Definition
 
-The Apigee UI now adds a Display Name column to the Apps table with independent filtering by App name and Display name.
+The Apps table includes a separate Display name column and independent filtering for app name and display name.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy-apigee](https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy-apigee)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Secure an API with OAuth 2.0 \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials)
+- Source ID: `site-docs-reference`
+- Final score: 138
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Enter the following in the New App window: In this field do this Name and Display Name Enter: nigel app Developer Click Developer and select: Nigel Tufnel (nigel@example.com) Callback URL and Notes Leave blank Click + Add Credentials .
+- The display name is used in the UI and you can edit it at any time.
+- The display name can include special characters.
+- Display name Display name for the API product.
+
+### Get started with the Apigee Extension Processor \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
+- Source ID: `site-docs-reference`
+- Final score: 124
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- On the Apps page, click + Create On the Create App page, complete the required fields in the App Details section using the following values: App name : Enter a name for the App.
+- In the Assign Message pane, complete the required fields in the Name and Display name sections using the following values: Name : Enter a policy name.
+- In the VerifyAPIKey pane, complete the required fields in the Name and Display name sections using the following values: Name : Enter a policy name.
+- Display name : Enter a policy name to display in the UI.
+
+### Step 7: Deploy to an Apigee environment \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy-apigee](https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy-apigee)
+- Source ID: `site-docs-reference`
+- Final score: 118
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Enter the following information in the fields: Field Setting Name: myproduct Display name: myproduct Environment: dev Access: Public Quota: Leave blank Allowed OAuth scope: Leave blank In the Operations section, click + Add an Operation .
+- Enter the following information in the fields: Field Setting Name: myapp Display name: myapp Developer: ahamilton@example.com Callback URL: Leave blank Notes: Leave blank Expiry: Never Product: Click Add product .
+- In the Google Cloud console, go to the Distribution > Apps page.
+- In the Google Cloud console, go to the Distribution > Apps page.
 

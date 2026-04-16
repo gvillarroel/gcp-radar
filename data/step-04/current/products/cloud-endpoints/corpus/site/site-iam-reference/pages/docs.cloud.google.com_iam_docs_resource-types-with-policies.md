@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/iam/docs/resource-types-with-policies
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/iam/docs/roles-permissions/endpoints
+entrypoint: https://docs.cloud.google.com/iam/docs/roles-permissions/endpointsportal
 source_metadata:
   url: https://docs.cloud.google.com/iam/docs/resource-types-with-policies
   title: "Resource types that accept allow policies \_|\_ Identity and Access Management\
@@ -69,7 +69,7 @@ Data Catalog
 Dataform
 Cloud Data Fusion
 Database Migration Service
-Dataplex Universal Catalog
+Knowledge Catalog
 Managed Service for Apache Spark
 Cloud Deployment Manager
 Discovery Engine
@@ -270,7 +270,7 @@ Conversion workspaces
 Migration jobs
 Objects
 Private connections
-Dataplex Universal Catalog
+Knowledge Catalog
 Aspect types
 Assets
 Attributes
@@ -422,6 +422,6 @@ Workstation configs
 Workstations
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

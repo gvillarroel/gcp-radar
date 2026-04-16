@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/iam/docs/resources
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/iam/docs/roles-permissions/endpoints
+entrypoint: https://docs.cloud.google.com/iam/docs/roles-permissions/endpointsportal
 source_metadata:
   url: https://docs.cloud.google.com/iam/docs/resources
   title: "Resources \_|\_ Identity and Access Management (IAM) \_|\_ Google Cloud\

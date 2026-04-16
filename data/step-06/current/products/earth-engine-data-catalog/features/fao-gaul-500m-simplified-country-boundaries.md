@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.745Z"
+generated_at: "2026-04-14T15:13:19.947Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "FAO GAUL 500m Simplified Country Boundaries"
 feature_slug: "fao-gaul-500m-simplified-country-boundaries"
 latest_feature_date: "2020-03-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries"
   - "https://developers.google.com/earth-engine/datasets/catalog"
-  - "https://developers.google.com/earth-engine/docs/release-notes"
+  - "https://developers.google.com/earth-engine/datasets/tags/water-vapor"
 keywords:
   - "fao"
   - "gaul"
@@ -26,7 +26,7 @@ keywords:
 # FAO GAUL 500m Simplified Country Boundaries
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Provides simplified global country boundaries from the 2015 GAUL release.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries](https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries)
 - [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
+- [https://developers.google.com/earth-engine/datasets/tags/water-vapor](https://developers.google.com/earth-engine/datasets/tags/water-vapor)
 
 ## Supporting Pages
 
@@ -52,9 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries](https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries)
 - Source ID: `site-docs-root-3`
-- Final score: 182
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 192
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This database is separated into … conservation-easements designation infrastructure-boundaries management ownership protected-areas FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, Country Boundaries This version of GAUL dataset is simplified at 500m.
@@ -66,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 164
+- Final score: 160
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,16 +75,16 @@ Evidence snippets:
 - The Global Administrative Unit Layers (GAUL) compiles and disseminates the best available information on administrative units for all the countries in the world, providing a contribution to the standardization of the spatial dataset representing administrative units. … borders countries fao gaul infrastructure-boundaries table FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, First-Level Administrative Units This version of GAUL dataset is simplified at 500m.
 - The Global Administrative Unit Layers (GAUL) compiles and disseminates the best available information on administrative units for all the countries in the world, providing a contribution to the standardization of the spatial dataset representing administrative units. … borders county districts fao gaul infrastructure-boundaries FAO GAUL: Global Administrative Unit Layers 2015, Country Boundaries The Global Administrative Unit Layers (GAUL) compiles and disseminates the best available information on administrative units for all the countries in the world, providing a contribution to the standardization of the spatial dataset representing administrative units.
 
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
+### "Datasets tagged water-vapor in Earth Engine \_|\_ Earth Engine Data Catalog\
 
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 146
+- URL: [https://developers.google.com/earth-engine/datasets/tags/water-vapor](https://developers.google.com/earth-engine/datasets/tags/water-vapor)
+- Source ID: `site-docs-root-3`
+- Final score: 94
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- June 30, 2020 Earth Engine Data Catalog Feature Added NASA/MEASURES/GFCC/TC/v3 : Global Forest Cover Change (GFCC) Tree Cover Multi-Year Global 30m June 23, 2020 Earth Engine Data Catalog Feature Added COPERNICUS/S2 CLOUD PROBABILITY : Sentinel-2: Cloud Probability June 16, 2020 Earth Engine Data Catalog Feature Added MODIS/006/MCD43C3 (no longer available) Added NASA/GPM L3/IMERG MONTHLY V06 : GPM: Monthly Global Precipitation Measurement (GPM) v6 Added NOAA/CDR/OISST/V2 1 : NOAA CDR OISST v02r01: Optimum Interpolation Sea Surface Temperature June 09, 2020 Earth Engine Data Catalog Feature Added MODIS/006/MOD17A3HGF (no longer available) Added MODIS/006/MYD17A3HGF (no longer available) June 02, 2020 Earth Engine Data Catalog Feature Added UMD/hansen/global forest change 2019 v1 7 (no longer available) May 26, 2020 Earth Engine Data Catalog Feature Added COPERNICUS/S5P/OFFL/L3 O3 TCL : Sentinel-5P OFFL O3 TCL: Offline Tropospheric Ozone Added ECMWF/CAMS/NRT : Copernicus Atmosphere Monitoring Service (CAMS) Global Near-Real-Time May 19, 2020 Earth Engine Data Catalog Feature Added WCMC/biomass carbon density/v1 0 : WCMC Above and Below Ground Biomass Carbon Density April 28, 2020 Earth Engine Data Catalog Feature Added Tsinghua/FROM-GLC/GAIA/v10 : Tsinghua FROM-GLC Year of Change to Impervious Surface April 14, 2020 Earth Engine Data Catalog Feature Added FAO/WAPOR/2/L1 AETI D : WAPOR Actual Evapotranspiration and Interception 2.0 Added FAO/WAPOR/2/L1 E D : WAPOR Dekadal Evaporation 2.0 Added FAO/WAPOR/2/L1 I D : WAPOR Dekadal Interception 2.0 Added FAO/WAPOR/2/L1 NPP D : WAPOR Dekadal Net Primary Production 2.0 Added FAO/WAPOR/2/L1 RET D : WAPOR Dekadal Reference Evapotranspiration 2.0 Added FAO/WAPOR/2/L1 RET E : WAPOR Daily Reference Evapotranspiration 2.0 Added FAO/WAPOR/2/L1 T D : WAPOR Dekadal Transpiration 2.0 Added USGS/GAP/PAD-US/v20/designation : Designation: USGS GAP PAD-US v2.0 Added USGS/GAP/PAD-US/v20/easement : Easement: USGS GAP PAD-US v2.0 Added USGS/GAP/PAD-US/v20/fee : Fee: USGS GAP PAD-US v2.0 Added USGS/GAP/PAD-US/v20/proclamation : Proclamation: USGS GAP PAD-US v2.0 March 31, 2020 Earth Engine Data Catalog Feature Added FAO/GAUL SIMPLIFIED 500m/2015/level0 : FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, Country Boundaries Added FAO/GAUL SIMPLIFIED 500m/2015/level1 : FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, First-Level Administrative Units Added FAO/GAUL SIMPLIFIED 500m/2015/level2 : FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, Second-Level Administrative Units March 12, 2020 Earth Engine Python Client Library 0.1.215 Fixed Fixed bug with getVideoThumbURL() and getFilmstripThumbURL().
-- May 01, 2018 Earth Engine Data Catalog Feature Added FAO/GAUL/2015/level0 : FAO GAUL: Global Administrative Unit Layers 2015, Country Boundaries Added FAO/GAUL/2015/level1 : FAO GAUL: Global Administrative Unit Layers 2015, First-Level Administrative Units Added FAO/GAUL/2015/level2 : FAO GAUL: Global Administrative Unit Layers 2015, Second-Level Administrative Units April 24, 2018 Earth Engine Data Catalog Feature Added AAFC/ACI : Canada AAFC Annual Crop Inventory Added GFW/GFF/V1/fishing hours : GFW (Global Fishing Watch) Daily Fishing Hours Added GFW/GFF/V1/vessel hours : GFW (Global Fishing Watch) Daily Vessel Hours Added IDAHO EPSCOR/TERRACLIMATE : TerraClimate: Monthly Climate and Climatic Water Balance for Global Terrestrial Surfaces, University of Idaho Added JAXA/ALOS/AVNIR-2/ORI : ALOS/AVNIR-2 ORI Added JAXA/ALOS/PALSAR/YEARLY/FNF : Global 3-class PALSAR-2/PALSAR Forest/Non-Forest Map Added MODIS/006/MCD64A1 (no longer available) Added MODIS/006/MOD13A1 (no longer available) Added MODIS/006/MOD16A2 (no longer available) Added MODIS/006/MOD44W : MOD44W.006 Terra Land Water Mask Derived From MODIS and SRTM Yearly Global 250m Added MODIS/006/MYD13A1 (no longer available) Added NASA/GRACE/MASS GRIDS/LAND (no longer available) Added NASA/GRACE/MASS GRIDS/MASCON (no longer available) Added NASA/GRACE/MASS GRIDS/MASCON CRI (no longer available) Added NASA/GRACE/MASS GRIDS/OCEAN (no longer available) Added NASA/GRACE/MASS GRIDS/OCEAN EOFR : GRACE Monthly Mass Grids - Ocean EOFR Added NASA USDA/HSL/SMAP soil moisture (no longer available) Added NASA USDA/HSL/soil moisture (no longer available) Added Oxford/MAP/accessibility to cities 2015 v1 0 (no longer available) Added Oxford/MAP/friction surface 2015 v1 0 (no longer available) Added RESOLVE/ECOREGIONS/2017 : RESOLVE Ecoregions 2017 Added WRI/GFW/FORMA/alerts : FORMA Alerts Added WRI/GFW/FORMA/raw output firms : FORMA Raw Output FIRMS Added WRI/GFW/FORMA/raw output ndvi : FORMA Raw Output NDVI Added WRI/GFW/FORMA/thresholds : FORMA Alert Thresholds Added WRI/GFW/FORMA/vegetation tstats : FORMA Vegetation T-Statistics Added WRI/GPPD/power plants : Global Power Plant Database April 13, 2018 Earth Engine Code Editor Fixed Fixed Cannot read property 'undefined' of undefined error.
-- July 12, 2022 Earth Engine Data Catalog Feature Added JRC/D5/EUCROPMAP/V1 : EUCROPMAP Added JRC/LUCAS HARMO/COPERNICUS POLYGONS/V1/2018 : LUCAS Copernicus (Polygons with attributes, 2018) V1 Added LANDSAT/LM05/C02/T2 : USGS Landsat 5 MSS Collection 2 Tier 2 Raw Scenes Added MODIS/061/MCD43A1 : MCD43A1.061 MODIS BRDF-Albedo Model Parameters Daily 500m Added MODIS/061/MCD64A1 : MCD64A1.061 MODIS Burned Area Monthly Global 500m Added USGS/3DEP/1m : USGS 3DEP 1m National Map July 05, 2022 Earth Engine Data Catalog Feature Added USFS/GTAC/MTBS/burned area boundaries/v1 : MTBS Burned Area Boundaries June 27, 2022 Earth Engine Code Editor Breaking Changed Export logic in the Code Editor to no longer use the map bounds as a default region for the output.
-- October 07, 2025 Earth Engine Data Catalog Feature Added projects/gcpm041u-lemur/assets/scanfi v12/SCANFI v1 2 : SCANFI: the Spatialized CAnadian National Forest Inventory data product1.2 Added projects/global-pasture-watch/assets/gsvh-30m/v1/short-veg-height m : GPW Annual short vegetation height v1 September 30, 2025 Earth Engine Data Catalog Feature Added COPERNICUS/MARINE/GLOBAL ANALYSISFORECAST BGC 001 028/BIO : Copernicus Global Ocean Bio-Geo-Chemical Forecast - BIO Added COPERNICUS/MARINE/GLOBAL SEA SURFACE/NRT DAILY : Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density : Daily, Near Real Time Added COPERNICUS/MARINE/GLOBAL SEA SURFACE/REP DAILY : Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density : Daily, Multi-Year Reprocessed Added NASA/ECOSTRESS/L2T STARS/V2 : ECOSTRESS Tiled Ancillary NDVI and Albedo L2 Global 70 m V002 September 16, 2025 Earth Engine Data Catalog Feature Added COPERNICUS/MARINE/GLOBAL ANALYSISFORECAST PHY DAILY : Global Ocean Physics Analysis and Forecast Daily September 09, 2025 Earth Engine Data Catalog Feature Added ECMWF/ERA5/HOURLY : ERA5 Hourly - ECMWF Climate Reanalysis September 02, 2025 Earth Engine Data Catalog Feature Added JRC/CEMS GLOFAS/FloodHazard/v2 1 : JRC Global River Flood Hazard Maps Version 2.1 August 26, 2025 Earth Engine Data Catalog Feature Added COPERNICUS/MARINE/OC GLO BGC/PLANKTON MULTI 4KM : Global Ocean Colour: Bio-Geo-Chemical, L4, from Satellite Observations, Plankton, Multi-Sensor, 4KM Added COPERNICUS/MARINE/OC GLO BGC/PLANKTON OLCI 300M : Global Ocean Colour: Bio-Geo-Chemical, L4, from Satellite Observations, Plankton, OLCI, 300M Added COPERNICUS/MARINE/OC GLO BGC/REFLECTANCE OLCI 300M : Global Ocean Colour: Bio-Geo-Chemical, L4, from Satellite Observations, Reflectance, OLCI 300M Added COPERNICUS/MARINE/OC GLO BGC/TRANSPARENCY MULTI 4KM : Global Ocean Colour: Bio-Geo-Chemical, L4, from Satellite Observations, Transparency, Multi-Sensor, 4KM Added COPERNICUS/MARINE/OC GLO BGC/TRANSPARENCY OLCI 4KM : Global Ocean Colour: Bio-Geo-Chemical, L4, from Satellite Observations, Transparency, OLCI, 4KM Added JRC/CEMS GLOFAS/FloodHazard/v2 (no longer available) Added projects/global-pasture-watch/assets/ggpp-30m/v1/ugpp m : GPW Annual uncalibrated Gross Primary Productivity (uGPP) v1 Added projects/malariaatlasproject/assets/EVI v061/1km/8-Daily : EVI: Malaria Atlas Project Gap-Filled Enhanced Vegetation Index (8-Daily 1km) Added projects/malariaatlasproject/assets/EVI v061/1km/Annual : EVI: Malaria Atlas Project Gap-Filled Enhanced Vegetation Index (Annual 1km) Added projects/malariaatlasproject/assets/EVI v061/1km/Monthly : EVI: Malaria Atlas Project Gap-Filled Enhanced Vegetation Index (Monthly 1km) Added projects/malariaatlasproject/assets/LST Day v061/1km/8-Daily : LST Day: Malaria Atlas Project Gap-Filled Daytime Land Surface Temperature (8-Daily 1km) Added projects/malariaatlasproject/assets/LST Day v061/1km/Annual : LST Day: Malaria Atlas Project Gap-Filled Daytime Land Surface Temperature (Annual 1km) Added projects/malariaatlasproject/assets/LST Day v061/1km/Monthly : LST Day: Malaria Atlas Project Gap-Filled Daytime Land Surface Temperature (Monthly 1km) Added projects/malariaatlasproject/assets/LST Night v061/1km/8-Daily : LST Night: Malaria Atlas Project Gap-Filled Nighttime Land Surface Temperature (8-Daily 1km) Added projects/malariaatlasproject/assets/LST Night v061/1km/Annual : LST Night: Malaria Atlas Project Gap-Filled Nighttime Land Surface Temperature (Annual 1km) Added projects/malariaatlasproject/assets/LST Night v061/1km/Monthly : LST Night: Malaria Atlas Project Gap-Filled Nighttime Land Surface Temperature (Monthly 1km) Added projects/malariaatlasproject/assets/TCB v061/1km/8-Daily : TCB: Malaria Atlas Project Gap-Filled Tasseled Cap Brightness (8-Daily 1km) Added projects/malariaatlasproject/assets/TCB v061/1km/Annual : TCB: Malaria Atlas Project Gap-Filled Tasseled Cap Brightness (Annual 1km) Added projects/malariaatlasproject/assets/TCB v061/1km/Monthly : TCB: Malaria Atlas Project Gap-Filled Tasseled Cap Brightness (Monthly 1km) Added projects/malariaatlasproject/assets/TCW v061/1km/8-Daily : TCW: Malaria Atlas Project Gap-Filled Tasseled Cap Wetness (8-Daily 1km) Added projects/malariaatlasproject/assets/TCW v061/1km/Annual : TCW: Malaria Atlas Project Gap-Filled Tasseled Cap Wetness (Annual 1km) Added projects/malariaatlasproject/assets/TCW v061/1km/Monthly : TCW: Malaria Atlas Project Gap-Filled Tasseled Cap Wetness (Monthly 1km) August 19, 2025 Earth Engine Data Catalog Feature Added COPERNICUS/MARINE/OC GLO BGC/OPTICS MULTI 4KM : Global Ocean Colour: Bio-Geo-Chemical, L4, from Satellite Observations, Optics, Multi-Sensor 4KM Added COPERNICUS/MARINE/OC GLO BGC/PRIMARY PRODUCTION MULTI 4KM : Global Ocean Colour: Bio-Geo-Chemical, L4, from Satellite Observations, Primary Production, Multi-Sensor 4KM Added COPERNICUS/MARINE/OC GLO BGC/REFLECTANCE MULTI 4KM : Global Ocean Colour: Bio-Geo-Chemical, L4, from Satellite Observations, Reflectance, Multi-Sensor 4KM Added USGS/3DEP/10m collection : USGS 3DEP 10m National Map Seamless (1/3 Arc-Second) August 05, 2025 Earth Engine Data Catalog Feature Added MODIS/061/MYD16A2 : MYD16A2.061: Aqua Net Evapotranspiration 8-Day L4 Global 500m SIN Grid V061 Added NASA/SMAP/SPL4SMGP/008 : SPL4SMGP.008 SMAP L4 Global 3-hourly 9-km Surface and Root Zone Soil Moisture July 29, 2025 Earth Engine Data Catalog Feature Added USFS/GTAC/TreeMap/v2020 : USFS TreeMap v2020 Added USFS/GTAC/TreeMap/v2022 : USFS TreeMap v2022 Added projects/nature-trace/assets/farmscapes/england v1 0 : Farmscapes 2020 Added projects/nature-trace/assets/forest typology/natural forest 2020 v1 0 collection : Natural Forests of the World 2020 July 22, 2025 Earth Engine Data Catalog Feature Added COPERNICUS/MARINE/SATELLITE OCEAN COLOR/V6 : Copernicus Satellite Ocean Color Daily Data July 21, 2025 Earth Engine Server Breaking BACKWARD INCOMPATIBLE The Google Drive main OAuth scope , https://www.googleapis.com/auth/drive has to be requested explicitly for Earth Engine requests that interact with Google Drive.
+- The PML-V2.2a product provides 500m 8-day resolution global terrestrial evapotranspiration (ET) and gross primary production (GPP) from … evapotranspiration gpp plant-productivity publisher-dataset water-vapor Reprocessed GLDAS-2.0: Global Land Data Assimilation System NASA Global Land Data Assimilation System Version 2 (GLDAS-2) has three components: GLDAS-2.0, GLDAS-2.1, and GLDAS-2.2.
+- With long-term ET data, the effects of changes in climate, land use, and … 8-day evapotranspiration global mod16a2 modis water-vapor MOD16A2GF.061: Terra Net Evapotranspiration Gap-Filled 8-Day Global 500m The Terra Moderate Resolution Imaging Spectroradiometer (MODIS) MOD16A2GF Version 6.1 Evapotranspiration/Latent Heat Flux (ET/LE) product is a year-end gap-filled 8-day composite dataset produced at 500 meter (m) pixel resolution.
+- The algorithm used for the MOD16 data product collection is based on the logic of the Penman-Monteith equation, which includes inputs of daily meteorological reanalysis data … 8-day evapotranspiration global mod16a2 modis nasa MOD16A2: MODIS Global Terrestrial Evapotranspiration 8-Day Global 1km The MOD16A2 V105 product provides information about 8-day global terrestrial evapotranspiration at 1km pixel resolution.
+- This collection consists of meteorology diagnostics at popularly used vertical levels, such as air temperature at 2-meter (or at 10-meter, 850hPa, 500 hPa, 250hPa), … atmosphere climate humidity merra nasa pressure MOD16A2.061: Terra Net Evapotranspiration 8-Day Global 500m The MOD16A2 Version 6.1 Evapotranspiration/Latent Heat Flux product is an 8-day composite product produced at 500 meter pixel resolution.
 

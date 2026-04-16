@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:39.851Z"
+generated_at: "2026-04-12T12:11:33.049Z"
 product_name: "Cloud Key Management Service"
 product_slug: "cloud-key-management-service"
 feature_name: "gcloud kms import-jobs command group"
@@ -10,8 +10,9 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kms/docs/importing-a-key"
-  - "https://docs.cloud.google.com/kms/docs/release-notes"
-  - "https://docs.cloud.google.com/kms/docs/delete-kms-resources"
+  - "https://docs.cloud.google.com/kms/docs/reference/libraries"
+  - "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey"
+  - "https://docs.cloud.google.com/kms/docs/creating-managing-labels"
 keywords:
   - "gcloud"
   - "kms"
@@ -38,13 +39,14 @@ The gcloud CLI includes a beta command group for managing Cloud KMS import jobs.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kms/docs/importing-a-key](https://docs.cloud.google.com/kms/docs/importing-a-key)
-- [https://docs.cloud.google.com/kms/docs/release-notes](https://docs.cloud.google.com/kms/docs/release-notes)
-- [https://docs.cloud.google.com/kms/docs/delete-kms-resources](https://docs.cloud.google.com/kms/docs/delete-kms-resources)
+- [https://docs.cloud.google.com/kms/docs/reference/libraries](https://docs.cloud.google.com/kms/docs/reference/libraries)
+- [https://docs.cloud.google.com/kms/docs/create-resource-with-autokey](https://docs.cloud.google.com/kms/docs/create-resource-with-autokey)
+- [https://docs.cloud.google.com/kms/docs/creating-managing-labels](https://docs.cloud.google.com/kms/docs/creating-managing-labels)
 
 ## Supporting Pages
 
@@ -52,40 +54,53 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kms/docs/importing-a-key](https://docs.cloud.google.com/kms/docs/importing-a-key)
 - Source ID: `site-docs-root`
-- Final score: 204
+- Final score: 251
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Use a command like the following to create an import job. gcloud kms import-jobs create IMPORT JOB \ --location LOCATION \ --keyring KEY RING \ --import-method IMPORT METHOD \ --protection-level PROTECTION LEVEL Use the same key ring and location as the target key.
-- To initialize the gcloud CLI, run the following command: gcloud init The user performing the import needs the following IAM permissions to create key rings, keys, and import jobs.
-- Cloud KMS Start free Overview Guides Reference Samples Resources More Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Protection levels Overview Cloud HSM overview Single-tenant Cloud HSM overview Cloud EKM overview Reference architectures for Cloud EKM CMEK overview Cloud KMS with Autokey Compatible services Cloud HSM for Google Workspace Locations Get started Cloud KMS resources Key purposes and algorithms Separation of duties Create and use encryption keys CMEK best practices Create and manage Single-tenant Cloud HSM instances Create keys Automate key creation Autokey overview Enable Autokey Create a resource with Autokey Create a key ring Create a key Import keys About key import Key wrapping Format a key for import Manually wrap a key for import Configure OpenSSL for manual key wrapping Wrap a key using OpenSSL Set up automatic key wrapping Import a key version Verify an imported key version Create external keys Set up Cloud EKM over the internet Create an EKM connection Create an external Key Control access Manage IAM roles Use Organization Policy Contraints Create custom organization policy constraints for Cloud KMS CMEK organization policies Control key destruction Secure data using keys Key APIs Use gRPC Access the API Sort and filter API list results Generate random bytes Use Cloud KMS keys in Google Cloud Encrypt and decrypt data Envelope encryption Additional authenticated data Asymmetric encryption Encrypt and decrypt data with a symmetric key Encrypt and decrypt data with a raw symmetric key Encrypt and decrypt data with an asymmetric key Verify end-to-end data integrity Encrypt application data Set up client-side encryption with Tink Onboard to Cloud HSM for Google Workspace Sign and validate data Digital signatures Create and validate signatures MAC signatures Create and validate MAC signatures Share secrets using key encapsulation mechanisms Key encapsulation mechanisms Encapsulate and decapsulate using KEMs Manage keys Resource consistency Key version states View keys and key details View keys by project View encryption metrics View key usage Get a Cloud KMS resource ID Retrieve a public key Attest a Cloud HSM key Label a key Create and manage tags Enable and disable a key version Destroy and restore a key version Delete Cloud KMS resources Rotate keys About key rotation Rotate a key Re-encrypt data Update external key reference Monitor Using Cloud Audit Logging Cloud KMS Inventory Service audit logging Monitor state changes Monitor and adjust quotas Use Cloud Monitoring Monitor EKM usage Troubleshoot Troubleshoot failed imports Troubleshoot EKM via VPC errors AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Before you begin Preparing the project Preparing the local system Preparing the key Create the target key and key ring Create the import job Checking the state of the import job Preventing modification of import jobs Import the key Automatically wrapping and importing a key Importing a manually-wrapped key Check the state of the imported key version Re-import a previously destroyed key Restrictions Re-importing a destroyed key What's next Home Documentation Security Cloud KMS Guides Was this helpful?
-- Use the location and keyring where you created the import job. gcloud kms import-jobs describe IMPORT JOB \ --location LOCATION \ --keyring KEY RING \ --format="value(state)" The output is similar to the following: state: ACTIVE To run this code, first set up a Go development environment and install the Cloud KMS Go SDK . import ( "context" "fmt" "io" kms "cloud.google.com/go/kms/apiv1" "cloud.google.com/go/kms/apiv1/kmspb" ) // checkStateImportJob checks the state of an ImportJob in KMS. func checkStateImportJob ( w io .
+- The state will be visible under Status next to your import job's name. gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI .
+- The state will be visible under Status next to your import job's name. gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI .
+- Your Import key version page should look similar to: Click Import . gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI .
 
-### "Cloud KMS release notes \_|\_ Cloud Key Management Service \_|\_ Google\
+### "Cloud KMS client libraries \_|\_ Cloud Key Management Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/kms/docs/release-notes](https://docs.cloud.google.com/kms/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 186
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 02, 2019 Feature The gcloud beta kms import-jobs command group was released as part of gcloud 253.0.0 .
-- Promoted the following flags in gcloud kms keys command group to GA. --attestation-file . --default-algorithm . --purpose . --protection-level .
-- June 11, 2019 Change The gcloud kms command group was updated as part of gcloud 250.0.0 .
-- The ImportJob resource contains the following methods: ImportJobs.create ImportJobs.get ImportJobs.getIamPolicy ImportJobs.list ImportJobs.setIamPolicy ImportJobs.testIamPermissions The ImportJob resource contains the following enums: ImportJobState ImportMethod The ImportJob resource contains the following type: WrappingPublicKey New methods CryptoKeyVersions.import New fields CreateCryptoKeyRequest.skip initial version creation CryptoKeyVersions.import failure reason CryptoKeyVersions.import job CryptoKeyVersions.import time New enums CryptoKeyVersionState.PENDING IMPORT CryptoKeyVersionState.IMPORT FAILED New permissions cloudkms.cryptoKeyVersions.useToImport cloudkms.importJobs.create cloudkms.importJobs.get cloudkms.importJobs.getIamPolicy cloudkms.importJobs.list cloudkms.importJobs.setIamPolicy For more information about Cloud KMS permissions, see Permissions and roles .
-
-### "Delete Cloud KMS resources \_|\_ Cloud Key Management Service \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/kms/docs/delete-kms-resources](https://docs.cloud.google.com/kms/docs/delete-kms-resources)
-- Source ID: `site-iam-reference`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/kms/docs/reference/libraries](https://docs.cloud.google.com/kms/docs/reference/libraries)
+- Source ID: `site-api-reference`
+- Final score: 215
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Cloud KMS Start free Overview Guides Reference Samples Resources More Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Protection levels Overview Cloud HSM overview Single-tenant Cloud HSM overview Cloud EKM overview Reference architectures for Cloud EKM CMEK overview Cloud KMS with Autokey Compatible services Cloud HSM for Google Workspace Locations Get started Cloud KMS resources Key purposes and algorithms Separation of duties Create and use encryption keys CMEK best practices Create and manage Single-tenant Cloud HSM instances Create keys Automate key creation Autokey overview Enable Autokey Create a resource with Autokey Create a key ring Create a key Import keys About key import Key wrapping Format a key for import Manually wrap a key for import Configure OpenSSL for manual key wrapping Wrap a key using OpenSSL Set up automatic key wrapping Import a key version Verify an imported key version Create external keys Set up Cloud EKM over the internet Create an EKM connection Create an external Key Control access Manage IAM roles Use Organization Policy Contraints Create custom organization policy constraints for Cloud KMS CMEK organization policies Control key destruction Secure data using keys Key APIs Use gRPC Access the API Sort and filter API list results Generate random bytes Use Cloud KMS keys in Google Cloud Encrypt and decrypt data Envelope encryption Additional authenticated data Asymmetric encryption Encrypt and decrypt data with a symmetric key Encrypt and decrypt data with a raw symmetric key Encrypt and decrypt data with an asymmetric key Verify end-to-end data integrity Encrypt application data Set up client-side encryption with Tink Onboard to Cloud HSM for Google Workspace Sign and validate data Digital signatures Create and validate signatures MAC signatures Create and validate MAC signatures Share secrets using key encapsulation mechanisms Key encapsulation mechanisms Encapsulate and decapsulate using KEMs Manage keys Resource consistency Key version states View keys and key details View keys by project View encryption metrics View key usage Get a Cloud KMS resource ID Retrieve a public key Attest a Cloud HSM key Label a key Create and manage tags Enable and disable a key version Destroy and restore a key version Delete Cloud KMS resources Rotate keys About key rotation Rotate a key Re-encrypt data Update external key reference Monitor Using Cloud Audit Logging Cloud KMS Inventory Service audit logging Monitor state changes Monitor and adjust quotas Use Cloud Monitoring Monitor EKM usage Troubleshoot Troubleshoot failed imports Troubleshoot EKM via VPC errors AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Before you begin Delete a key version Delete a key View names of retired resources What's next Home Documentation Security Cloud KMS Guides Was this helpful?
-- To view metadata for an individual retired resource, follow these steps: gcloud Go Java Python API More Run the following command: gcloud kms retired-resources describe RETIRED RESOURCE \ --location= LOCATION Replace the following: RETIRED RESOURCE : the name of the resource that you want to view.
-- To view a list of all retired resources, follow these steps: gcloud Go Java Python API More Run the following command: gcloud kms retired-resources list \ --location= LOCATION Replace the following: LOCATION : the location where you want to view retired resources.
-- To delete a key version, run the following command: gcloud kms keys versions delete KEY VERSION \ --location= LOCATION \ --keyring= KEY RING \ --key= KEY NAME Replace the following: KEY VERSION : the number of the key version that you want to permanently delete.
+- For more information about BOMs, see The Google Cloud Platform Libraries BOM . < dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>libraries - bom < / artifactId > < version>26 .79.0 < / version > < type>pom < / type > < scope>import < / scope > < / dependency > < / dependencies > < / dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>google - cloud - kms < / artifactId > < / dependency > < / dependencies > If you are using Gradle , add the following to your dependencies: implementation ' com . google . cloud : google - cloud - kms : 2.91.0 ' If you are using sbt , add the following to your dependencies: libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "2.91.0" If you're using Visual Studio Code or IntelliJ, you can add client libraries to your project using the following IDE plugins: Cloud Code for VS Code Cloud Code for IntelliJ The plugins provide additional functionality, such as key management for service accounts.
+- System . out . println ( "key rings:" ); for ( KeyRing keyRing : response . iterateAll ()) { System . out . printf ( "%s%n" , keyRing . getName ()); } } } } Node.js // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the location name const locationName = client . locationPath ( projectId , locationId ); async function listKeyRings () { const [ keyRings ] = await client . listKeyRings ({ parent : locationName , }); for ( const keyRing of keyRings ) { console . log ( keyRing . name ); } return keyRings ; } return listKeyRings (); PHP use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient; use Google\Cloud\Kms\V1\ListKeyRingsRequest; function quickstart( string $projectId = 'my-project', string $locationId = 'us-east1' ) { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the parent location name. $locationName = $client->locationName($projectId, $locationId); // Call the API. $listKeyRingsRequest = (new ListKeyRingsRequest()) ->setParent($locationName); $keyRings = $client->listKeyRings($listKeyRingsRequest); // Example of iterating over key rings. printf('Key rings in %s:' .
+- ListKeyRings ( locationName )) { // ... (e.g. keyRing.Name) } } } Go // Sample quickstart is a basic program that uses Cloud KMS. package main import ( "context" "fmt" "log" kms "cloud.google.com/go/kms/apiv1" "cloud.google.com/go/kms/apiv1/kmspb" "google.golang.org/api/iterator" ) func main () { // GCP project with which to communicate. projectID := "your-project-id" // Location in which to list key rings. locationID := "global" // Create the client. ctx := context .
+- After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity .
+
+### "Create protected resources using Cloud KMS Autokey \_|\_ Cloud Key Management\
+
+- URL: [https://docs.cloud.google.com/kms/docs/create-resource-with-autokey](https://docs.cloud.google.com/kms/docs/create-resource-with-autokey)
+- Source ID: `site-iam-reference`
+- Final score: 186
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create an encrypted secret with automatic replication by using the gcloud secrets create command , with the --kms-key-name flag. gcloud secrets create " SECRET ID " \ --replication-policy "automatic" \ --kms-key-name "projects/ KEY PROJECT ID /locations/global/keyRings/autokey/cryptoKeys/ KEY NAME " \ --project " RESOURCE PROJECT ID " Replace the following: SECRET ID : the ID to use for the new secret.
+- Create an encrypted disk by using the gcloud compute disks create command , with the --kms-key flag: gcloud compute disks create DISK NAME \ --kms-key projects/ KEY PROJECT ID /locations/ LOCATION /keyRings/autokey/cryptoKeys/ KEY NAME Replace the following: DISK NAME : the name of the new disk.
+- Create an encrypted dataset by using the bq mk command , with the --destination kms key flag. bq --location = LOCATION mk \ --dataset \ --default kms key = projects/ KEY PROJECT ID /locations/ LOCATION /keyRings/autokey/cryptoKeys/ KEY NAME \ --default table expiration = TABLE EXPIRATION \ --description = " DATASET DESCRIPTION " \ RESOURCE PROJECT ID : DATASET ID Replace the following: LOCATION : the location where you want to create the dataset.
+- Create an encrypted bucket by using the gcloud storage buckets create command , with the --default-encryption-key flag: gcloud storage buckets create gs:// BUCKET NAME \ --location = LOCATION \ --default-encryption-key = projects/ KEY PROJECT ID /locations/ LOCATION /keyRings/autokey/cryptoKeys/ KEY NAME Replace the following: BUCKET NAME : the name of the new bucket.
+
+### Labeling keys \_|\_ Cloud Key Management Service \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kms/docs/creating-managing-labels](https://docs.cloud.google.com/kms/docs/creating-managing-labels)
+- Source ID: `site-iam-reference`
+- Final score: 185
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- In the panel, choose the Labels tab. gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI . gcloud kms keys describe KEY NAME \ --keyring KEY RING \ --location LOCATION Replace the following: KEY NAME : the name of the key for which you want to view labels.
+- Click Save . gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI . gcloud kms keys update KEY NAME \ --keyring KEY RING \ --location LOCATION \ --update-labels " LABEL LIST " KEY NAME : the name of the key.
+- Click Save . gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI . gcloud kms keys update KEY NAME \ --keyring KEY RING \ --location LOCATION \ --remove-labels " LABEL KEYS " KEY NAME : the name of the key.
+- Click Create . gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI .
 

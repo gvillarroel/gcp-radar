@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.315Z"
+generated_at: "2026-04-15T13:43:38.395Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Self-service Explores"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-03-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/gemini-overview-looker"
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
 keywords:
   - "self"
   - "explores"
   - "lets"
   - "users"
   - "upload"
-  - "and"
   - "analyze"
-  - "in"
+  - "including"
+  - "sheets"
 ---
 
 # Self-service Explores
@@ -42,44 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore](https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
 
 ## Supporting Pages
 
-### Gemini in Looker overview | Google Cloud Documentation
+### Admin settings - Self-service Explores \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- Source ID: `site-docs-root`
-- Final score: 78
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore](https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore)
+- Source ID: `site-docs-reference`
+- Final score: 267
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Enabling OAuth for Google Sheets uploads After you have enabled self-service Explores and enabled the APIs to support Google Sheets uploads , you can also enable your users to use Google Drive navigation to select Google Sheets documents for data uploads .
+- Enabling the APIs to support Google Sheets uploads To support uploading data from Google Sheets, the following APIs must be enabled in the Google Cloud console by an IAM user with the IAM roles/serviceusage.serviceUsageAdmin permission: This API must be enabled in the Google Cloud project that houses the BigQuery connection that is specified in the Default BigQuery connection drop-down menu of the Self-service Explores admin page: BigQuery API: Required for all BigQuery operations These APIs must be enabled in the Google Cloud project that is associated with the service account used to upload data (the service account that is used for PDT processes on your BigQuery connection , which may or may not be the same as the Google Cloud project that is specified in the Default BigQuery connection drop-down menu of the Self-service Explores admin page): BigQuery API: Required for all BigQuery operations Google Sheets API: Required for retrieving the names of each sheet in a Google Sheets document Google Drive API: Required for BigQuery to read files from Drive Perform the following steps to enable the APIs: From the Google Cloud console Open project picker , select the project that houses the BigQuery connection that is specified in the Default BigQuery connection drop-down menu of the Self-service Explores admin page.
+- Be mindful of changing the settings on the Self-service Explores admin page if your instance has existing self-service Explores: If you disable data uploads, your users will no longer be able to access existing self-service Explores from the Explore menu, and any Looks or dashboards that rely on the data may be affected.
+- Enabling self-service Explores Important: To support the Self-service Explore feature, upon upgrade to Looker 25.20, your Looker instance adds the upload data permission to any role or permission set that contains the explore permission, including custom permission sets.
+
+### Admin settings - Roles \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- Source ID: `site-docs-reference`
+- Final score: 155
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini in Looker overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/gemini-overview-looker Ask questions about and converse with your data by using Conversational Analytics: Gemini in Looker lets you ask questions about your data source by using natural language.
-- You can learn more about how your response was generated and save your conversation for future reference.
-- Gemini returns Looker charts or data tables that are based on your query.
+- If you assign the manage modelsets restricted permission to a user, and you've allowed that user to access any model that is a part of a project, they will be able to assign all models in that project to model sets that they have access to. upload data None Instance Wide NN Added 25.20 Users can upload files to your instance to create self-service Explores . gemini in looker None Model Specific This permission is the only permission that is included in the Gemini default role .
+- This permission is applied to individual models or model sets, rather than across the entire Looker instance or to connections. see system activity None Instance Wide CM Users can access the System Activity Explores and dashboards to view usage, history, and other metadata about a Looker instance. see admin None Instance Wide CM Users can have read-only access to admin resources, including pages in the Admin panel , with the exception of the following pages: Support Access Preview Features Legacy Features Export Content Access Actions (if the page displays only the enabled or disabled states of actions) This permission doesn't provide access to System Activity pages. mobile app access None Instance Wide NN Users can sign in to your instance on a mobile device using the Looker mobile app .
+- Users will also be able to download results using the Download option in the SQL Runner gear menu, regardless of whether the user has the download with limit or download without limit permissions. certify content access data Model Specific Added 25.20 Users can certify dashboards, Looks, and self-service Explores.
+- They can also view and edit that data source's configuration in Looker Studio. create table calculations explore Instance Wide NN Users can view, edit, or add table calculations create custom fields explore Instance Wide NN Users can view, edit, or add custom fields ; users who have only the explore permission can only view custom fields. can create forecast explore Instance Wide NN Users can create and edit forecasts in visualizations; users who don't have this permission can only view existing forecasts in the content to which they have access. can override vis config explore Instance Wide NN Users can access the Chart Config Editor , which lets them modify the Highchart API JSON values of a visualization and customize the visualization appearance and format. save content see looks Instance Wide NN This permission is a parent permission of save dashboards , save looks , and create public looks .
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### Admin settings - Users \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 72
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- Source ID: `site-docs-reference`
+- Final score: 106
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
-
-### Access control and permission management | Looker | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 58
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
-- These roles are then applied to users and groups.
-- Data access can be further restricted within a model using access filters to limit which rows of data ...
+- Differences between disabling and deleting an account are described in the following table: Description Disabled Deleted The user can sign in to the Looker instance No No The user's personal folder Still exists Deleted Looks and dashboards in the user's personal folder Still exist Moved to the Trash folder Looks and dashboards the user saved to a Shared folder Still exist in the Shared folder Still exist in the Shared folder Schedules created by the user Schedules are disabled Schedules are deleted Schedules based on the user's content, but created by another user Schedules continue to run User's content is deleted; schedules based on that content are deleted Schedules that list the user as a recipient and are created by another user with the ability to deliver content to external email accounts Schedules will continue to run and deliver normally (user will be treated as an external user) Schedules continue to run and deliver normally (user will be treated as an external user) Schedules that have Run schedule as recipient enabled and list the user as a recipient Schedules will continue to run but will fail to deliver to the disabled user upon next run Schedules continue to run but will fail to deliver to all users with error run as recipient was specified on ScheduledPlan but recipient is not a Looker user Boards created by the user Still exist Still exist Alerts created by the user Remain active, but are not visible or editable from the dashboard on which the alert is set unless self-assigned by an admin.
+- Impersonating (sudoing) users Sudoing lets you navigate Looker as if you were a different user, with all of their privileges and abilities.
+- Language Locale Code and Strings Filename English en Czech cs CZ German de DE Spanish (Spain) es ES Finnish fi FI French (Canada) fr CA French (France) fr FR Hindi hi IN Italian it IT Japanese ja JP Korean ko KR Lithuanian lt LT Norwegian (Bokmål) nb NO Dutch nl NL Polish pl PL Brazilian Portuguese pt BR Portuguese pt PT Russian ru RU Swedish sv SE Thai th TH Turkish tr TR Ukrainian uk UA Simplified Chinese zh CN Traditional Chinese zh TW For users with no Locale set, Looker uses the locale chosen on the Localization page of the Admin panel as the default locale; and, if no locale is set there, Looker defaults to en .
+- From the Edit User page you can do the following: Enable or disable the service account Edit the service account name Manage the service account API keys Assign different groups and Roles Edit the user attributes that are associated with the service account Migrating user accounts to service accounts Important: Starting with the Looker 26.8 release, the following changes will occur: Looker (original) admins will no longer be able to access or manage the API credentials of their standard users.
 

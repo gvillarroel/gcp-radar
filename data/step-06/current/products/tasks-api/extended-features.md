@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2024-07-23 | Tasks API access to tasks assigned in Google Docs and Google Chat | LOW | [source](https://developers.google.com/workspace/tasks/oauth-and-tasks-on-android)<br>[source](https://developers.google.com/workspace/tasks/reference/rest/v1/tasks/insert)<br>[source](https://developers.google.com/workspace/tasks/reference/rest/v1/tasks) | The Tasks API now supports getting, editing, and deleting tasks assigned from Google Docs documents or Google Chat spaces. |
+| 2024-07-23 | Tasks API access to tasks assigned in Google Docs and Google Chat | MEDIUM | [source](https://developers.google.com/workspace/tasks/oauth-and-tasks-on-android)<br>[source](https://developers.google.com/workspace/tasks/reference/rest/v1/tasks/insert)<br>[source](https://developers.google.com/workspace/tasks/reference/rest/v1/tasks)<br>[source](https://developers.google.com/workspace/tasks/oauth-authorization-callback-handler) | The Tasks API now supports getting, editing, and deleting tasks assigned from Google Docs documents or Google Chat spaces. |
 

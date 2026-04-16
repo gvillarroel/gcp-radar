@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.629Z"
+generated_at: "2026-04-12T12:07:33.869Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "Public IP support for AlloyDB Language Connectors"
 feature_slug: "public-ip-support-for-alloydb-language-connectors"
 latest_feature_date: "2024-02-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+  - "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
 keywords:
   - "connector public networking"
   - "Language Connector networking"
@@ -24,7 +27,7 @@ keywords:
 # Public IP support for AlloyDB Language Connectors
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,28 +35,47 @@ AlloyDB Language Connectors in preview now support use of public IP for cluster 
 
 ## Extended Definition
 
-AlloyDB Language Connectors are client libraries for connecting to AlloyDB instances that provide automated mutual TLS, IAM-based authorization, and Automated IAM Authentication. The release notes confirm a February 09, 2026 update announcing support for AlloyDB language connectors (and Auth Proxy) with Auto IAM Authentication and managed connection pooling, but the provided excerpts do not explicitly state that this is specifically support for cluster connections over public IP.
+AlloyDB Language Connectors in preview now support use of public IP for cluster connections.
 
 ## Evidence Summary
 
-The cited release notes page provides evidence for connector security/authentication features and a Feb 2026 rollout, but does not directly document public IP cluster-connection capability in the provided snippets.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language](https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language)
+- [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- [https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create](https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Generate SQL queries using natural language questions \_|\_ AlloyDB for\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language](https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language)
+- Source ID: `site-docs-root-2`
+- Final score: 78
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- These language connectors are libraries that provide automated mutual TLS connections, IAM-based authorization, and Automated IAM Authentication when connecting to an AlloyDB instance.
-- These language connectors are libraries that provide automated mutual TLS connections, IAM-based authorization, and Automated IAM Authentication when connecting to an AlloyDB instance.
-- February 09, 2026 Fixed We are announcing the release of support for the AlloyDB language connectors and Auth Proxy with Auto IAM Authentication and managed connection pooling.
-- January 21, 2026 Issue Automatic IAM authentication is unavailable when you use managed connection pooling with the AlloyDB Auth Proxy and Language Connectors.
+### "Use the AlloyDB remote MCP server \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- Source ID: `site-docs-reference-2`
+- Final score: 78
+- Re-rank relevance: N/A
+
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- Source ID: `site-api-reference`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Create a read pool instance in a cluster \_|\_ AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create](https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create)
+- Source ID: `site-docs-root`
+- Final score: 74
+- Re-rank relevance: N/A
 

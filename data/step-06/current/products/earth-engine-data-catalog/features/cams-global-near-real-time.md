@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.739Z"
+generated_at: "2026-04-14T15:13:19.924Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "CAMS Global Near-Real-Time"
 feature_slug: "cams-global-near-real-time"
 latest_feature_date: "2020-05-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/atmosphere"
   - "https://developers.google.com/earth-engine/datasets/catalog"
@@ -26,7 +26,7 @@ keywords:
 # CAMS Global Near-Real-Time
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Provides near-real-time global atmospheric composition data from the Copernicus 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,8 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/atmosphere](https://developers.google.com/earth-engine/datasets/tags/atmosphere)
 - Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: N/A
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Copernicus Atmosphere Monitoring Service (CAMS) Global Near-Real-Time The Copernicus Atmosphere Monitoring Service provides the capacity to continuously monitor the composition of the Earth's atmosphere at global and regional scales.
@@ -65,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 154
+- Final score: 189
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +79,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
 - Source ID: `site-docs-root`
-- Final score: 146
+- Final score: 181
 - Re-rank relevance: N/A
 
 Evidence snippets:

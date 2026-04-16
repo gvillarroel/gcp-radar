@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:57:36.631Z"
+generated_at: "2026-04-15T11:51:47.713Z"
 product_name: "Google Workspace Admin SDK"
 product_slug: "google-workspace-admin-sdk"
 feature_name: "Reseller API readonly scope"
 feature_slug: "reseller-api-readonly-scope"
 latest_feature_date: "2014-08-04"
 deprecation_date: "2014-08-04"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/admin-sdk/directory/reference/rest"
-  - "https://developers.google.com/admin-sdk/overview"
-  - "https://developers.google.com/admin-sdk/reference-overview"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html"
+  - "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices"
+  - "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get"
 keywords:
   - "reseller"
-  - "api"
   - "readonly"
   - "scope"
   - "read"
   - "only"
   - "oauth"
-  - "for"
+  - "deprecated"
+  - "2014"
 ---
 
 # Reseller API readonly scope
 
 Product: Google Workspace Admin SDK
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,53 @@ A read-only OAuth scope for the Reseller API; deprecated on 2014-08-04.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
-- [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html](https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html)
+- [https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices](https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices)
+- [https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get](https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get)
 
 ## Supporting Pages
 
-### Admin SDK: Directory API \_|\_ Admin console \_|\_ Google for Developers
+### "Configure the OAuth consent screen and choose scopes \_|\_ Google Workspace\
 
-- URL: [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html](https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- All apps require an OAuth consent screen, but explicitly listing scopes is necessary only for apps used outside your organization, and certain scope categories necessitate additional reviews by Google.
+- All apps using OAuth 2.0 require a consent screen configuration, but you only need to list scopes for apps used by people outside your Google Workspace organization.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],["OAuth 2.0 requires configuring a consent screen, defining the app's project details, policies, and authorization scopes.
+- Consider the following types of scopes: Basic app verification required Additional app verification required Security assessment required Non-sensitive scopes (recommended) Grant access only to limited data that's immediately relevant to a specific action. check — — Sensitive scopes Grant access to personal user data, resources, or actions. check check — Restricted scopes Grant access to highly-sensitive or extensive user data or actions. check check check Next step Create access credentials for your app.
+
+### REST Resource: chromeosdevices \_|\_ Admin console \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices](https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices)
 - Source ID: `site-api-reference`
-- Final score: 82
+- Final score: 69
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Discovery document A Discovery Document is a machine-readable specification for describing and consuming REST APIs.
-- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://admin.googleapis.com REST Resource: asps Methods delete DELETE /admin/directory/v1/users/{userKey}/asps/{codeId} Deletes an ASP issued by a user. get GET /admin/directory/v1/users/{userKey}/asps/{codeId} Gets information about an ASP issued by a user. list GET /admin/directory/v1/users/{userKey}/asps Lists the ASPs issued by a user.
-- If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
-- REST Resource: users Methods delete DELETE /admin/directory/v1/users/{userKey} Deletes a user. get GET /admin/directory/v1/users/{userKey} Retrieves a user. insert POST /admin/directory/v1/users Creates a user. list GET /admin/directory/v1/users Retrieves a paginated list of either deleted users or all users in a domain. makeAdmin POST /admin/directory/v1/users/{userKey}/makeAdmin Makes a user a super administrator. patch PATCH /admin/directory/v1/users/{userKey} Updates a user using patch semantics. signOut POST /admin/directory/v1/users/{userKey}/signOut Signs a user out of all web and device sessions and reset their sign-in cookies. undelete POST /admin/directory/v1/users/{userKey}/undelete Undeletes a deleted user. update PUT /admin/directory/v1/users/{userKey} Updates a user. watch POST /admin/directory/v1/users/watch Watches for changes in users list.
+- Example: "3.5s" . deviceFiles[] object A list of device files to download (Read-only) deviceFiles[].name string File name deviceFiles[].type string File type deviceFiles[].downloadUrl string File download URL deviceFiles[].createTime string Date and time the file was created systemRamFreeReports[] object Reports of amounts of available RAM memory (Read-only) systemRamFreeReports[].reportTime string Date and time the report was received. systemRamFreeReports[].systemRamFreeInfo[] string ( int64 format) lastKnownNetwork[] object Contains last known network (Read-only) lastKnownNetwork[].ipAddress string The IP address. lastKnownNetwork[].wanIpAddress string The WAN IP address. autoUpdateExpiration (deprecated) string ( int64 format) This item is deprecated! (Read-only) The timestamp after which the device will stop receiving Chrome updates or support.
+- This is only present if the user type is USER TYPE MANAGED . activeTimeRanges[] object A list of active time ranges (Read-only). activeTimeRanges[].activeTime integer Duration of usage in milliseconds. activeTimeRanges[].date string Date of usage. ethernetMacAddress string The device's MAC address on the ethernet network interface. annotatedAssetId string The asset identifier as noted by an administrator or specified during enrollment. etag string ETag of the resource. diskVolumeReports[] object Reports of disk space and other info about mounted/connected volumes. diskVolumeReports[].volumeInfo[] object Disk volumes diskVolumeReports[].volumeInfo[].volumeId string Volume id diskVolumeReports[].volumeInfo[].storageTotal string ( int64 format) Total disk space [in bytes] diskVolumeReports[].volumeInfo[].storageFree string ( int64 format) Free disk space [in bytes] systemRamTotal string ( int64 format) Total RAM on the device in bytes cpuStatusReports[] object Reports of CPU utilization and temperature (Read-only) cpuStatusReports[].reportTime string Date and time the report was received. cpuStatusReports[].cpuUtilizationPercentageInfo[] integer cpuStatusReports[].cpuTemperatureInfo[] object A list of CPU temperature samples. cpuStatusReports[].cpuTemperatureInfo[].temperature integer Temperature in Celsius degrees. cpuStatusReports[].cpuTemperatureInfo[].label string CPU label cpuInfo[] object Information regarding CPU specs in the device. cpuInfo[].model string The CPU model name. cpuInfo[].architecture string The CPU architecture. cpuInfo[].maxClockSpeedKhz integer The max CPU clock speed in kHz. cpuInfo[].logicalCpus[] object Information for the Logical CPUs cpuInfo[].logicalCpus[].maxScalingFrequencyKhz integer Maximum frequency the CPU is allowed to run at, by policy. cpuInfo[].logicalCpus[].currentScalingFrequencyKhz integer Current frequency the CPU is running at. cpuInfo[].logicalCpus[].idleDuration string ( Duration format) Idle time since last boot.
+- For more information about how to create an organizational structure for your device, see the administration help center . osUpdateStatus object ( OsUpdateStatus ) The status of the OS updates for the device. firstEnrollmentTime string Date and time for the first time the device was enrolled. lastDeprovisionTimestamp string (Read-only) Date and time for the last deprovision of the device. deprovisionReason enum ( DeprovisionReason ) (Read-only) Deprovision reason. deviceLicenseType enum ( DeviceLicenseType ) Output only.
+- Type is always "SCREENSHOT FILE". (Read-only) screenshotFiles[].name string File name screenshotFiles[].type string File type screenshotFiles[].downloadUrl string File download URL screenshotFiles[].createTime string Date and time the file was created orgUnitId string The unique ID of the organizational unit. orgUnitPath is the human readable version of orgUnitId.
 
-### Admin SDK API overview \_|\_ Admin console \_|\_ Google for Developers
+### Method: chromeosdevices.get \_|\_ Admin console \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- Source ID: `site-docs-root`
-- Final score: 76
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- What's included Chrome Printer Management API — Manage CUPS printers and print servers for your organization.
-- Chrome Browser Enrollment Token API — Manage Chrome browser enrollment tokens for your account.
-- Beta APIs Chrome Enterprise Core API — Manage Chrome browser devices for your account.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
-
-### Admin SDK API reference \_|\_ Admin console \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
-- Source ID: `site-docs-reference`
-- Final score: 74
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get](https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get)
+- Source ID: `site-api-reference`
+- Final score: 57
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Admin SDK API v1 Chrome Printer Management API — Manage CUPS printers and print servers for your organization.
-- Admin SDK API v1.1beta1 Chrome Enterprise Core API — Manage Chrome browser devices for your account.
-- Chrome Browser Enrollment Token API — Manage Chrome browser enrollment tokens for your account.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
+- Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/admin.directory.device.chromeos https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly For more information, see the Authorization guide .
+- Enums BASIC Includes only the basic metadata fields (e.g., deviceId, serialNumber, status, and user) FULL Includes all metadata fields Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Query parameters Parameters projection enum ( Projection ) Determines whether the response contains the full list of properties or only a subset.
 

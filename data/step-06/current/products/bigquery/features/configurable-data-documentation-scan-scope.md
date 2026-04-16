@@ -1,0 +1,91 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T12:48:36.219Z"
+product_name: "BigQuery"
+product_slug: "bigquery"
+feature_name: "Configurable data documentation scan scope"
+feature_slug: "configurable-data-documentation-scan-scope"
+latest_feature_date: "2026-02-09"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+  - "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp"
+  - "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-auth-drive-scope"
+keywords:
+  - "configurable"
+  - "documentation"
+  - "scan"
+  - "scope"
+  - "bigquery"
+  - "scans"
+  - "can"
+  - "limited"
+---
+
+# Configurable data documentation scan scope
+
+Product: BigQuery
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+BigQuery data documentation scans can be limited to generating SQL queries, descriptions, or all insights.
+
+## Extended Definition
+
+BigQuery data documentation scans can be limited to generating SQL queries, descriptions, or all insights.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference](https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference)
+- [https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp](https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp)
+- [https://docs.cloud.google.com/bigquery/docs/samples/bigquery-auth-drive-scope](https://docs.cloud.google.com/bigquery/docs/samples/bigquery-auth-drive-scope)
+
+## Supporting Pages
+
+### bq command-line tool reference \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference](https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference)
+- Source ID: `site-docs-reference`
+- Final score: 114
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences. bq command-line tool reference This document describes the syntax, commands, flags, and arguments for bq , the Python-based command-line tool for BigQuery.
+- Use one of the following values: amazon s3 - Amazon S3 data transfer azure blob storage - Azure Blob Storage data transfer dcm dt - Campaign Manager data transfer google cloud storage - Cloud Storage data transfer cross region copy - Dataset Copy dfp dt - Google Ad Manager data transfer displayvideo - Display & Video 360 data transfer google ads - Google Ads data transfer merchant center - Google Merchant Center data transfer mysql - MySQL data transfer play - Google Play data transfer scheduled query - Scheduled queries data transfer search ads - Search Ads 360 data transfer youtube channel - YouTube Channel data transfer youtube content owner - YouTube Content Owner data transfer redshift - Amazon Redshift migration on premises - Teradata migration Note: The redshift and on premises values are for data migrations; before you use the bq mk --transfer config command with these values, consult the linked documentation from the preceding list. --display name= DISPLAY NAME Specifies the display name for the transfer configuration. --no auto scheduling={true false} Disables automatic scheduling of data transfer runs for this configuration.
+- If you create a Spanner connection and want to use Data Boost , include the "useParallelism":true and "useDataBoost":true pairs. --connection credential= CONNECTION CREDENTIAL The credentials of the connection in JSON format. username and password must be specified. --project id= PROJECT ID Specifies the ID of the project that the connection belongs to. --location= LOCATION Specifies the location that the connection will be stored. --display name= DISPLAY NAME Specifies an optional friendly name for the connection. --description= DESCRIPTION Specifies an optional description of the connection. --iam role id= ROLE ID For BigQuery Omni on AWS, specifies an IAM role that allows access to the resource.
+- For information about using the bq mk command with the BigQuery Data Transfer Service, see the following: Set up an Amazon S3 transfer Set up a Campaign Manager transfer Set up a Cloud Storage transfer Set up a Google Ad Manager transfer Set up a Google Ads transfer Set up a Google Merchant Center transfer (beta) Set up a Google Play transfer Set up a Search Ads 360 transfer (beta) Set up a YouTube Channel transfer Set up a YouTube Content Owner transfer Migrate data from Amazon Redshift Migrate data from Teradata bq mk --transfer run Creates a data transfer run at the specified time or time range using the specified data transfer configuration.
+
+### Use the BigQuery MCP server \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp](https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp)
+- Source ID: `site-docs-reference-required-12`
+- Final score: 108
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- BigQuery has the following MCP tool OAuth scopes: Scope URI for gcloud CLI Description https://www.googleapis.com/auth/bigquery View and manage your data in BigQuery and see the email address for your Google Account.
+- BigQuery MCP OAuth scopes OAuth 2.0 uses scopes and credentials to determine if an authenticated principal is authorized to take a specific action on a resource.
+- Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- To view a list of scopes required for BigQuery, see OAuth 2.0 scopes for BigQuery API v2 .
+
+### Create credentials with scopes \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/samples/bigquery-auth-drive-scope](https://docs.cloud.google.com/bigquery/docs/samples/bigquery-auth-drive-scope)
+- Source ID: `site-docs-reference-required-15`
+- Final score: 105
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Data analytics BigQuery Samples Create credentials with scopes Stay organized with collections Save and categorize content based on your preferences.
+- If you are using credentials from gcloud, you must authorize the application first with the following command: gcloud auth application-default login \ --scopes=https://www.googleapis.com/auth/drive,https://www.googleapis.com/auth/cloud-platform credentials , project = google . auth . default ( scopes = [ "https://www.googleapis.com/auth/drive" , "https://www.googleapis.com/auth/cloud-platform" , ] ) Construct a BigQuery client object. client = bigquery .
+- GoogleCredentials credentials = ServiceAccountCredentials . getApplicationDefault () . createScoped ( ImmutableSet . of ( "https://www.googleapis.com/auth/bigquery" , "https://www.googleapis.com/auth/drive" )); // Initialize client that will be used to send requests.
+- For more information, see Set up authentication for client libraries . from google.cloud import bigquery import google.auth Create credentials with Drive & BigQuery API scopes.
+

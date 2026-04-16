@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.924Z"
+generated_at: "2026-04-14T15:34:54.594Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Ingress restriction"
 feature_slug: "ingress-restriction"
 latest_feature_date: "2020-12-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/run/docs/container-contract"
   - "https://docs.cloud.google.com/run/docs/reference/container-contract"
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient"
+  - "https://docs.cloud.google.com/run/docs/deploying"
 keywords:
-  - "ingress"
   - "restriction"
-  - "run"
-  - "services"
-  - "can"
   - "restrict"
-  - "which"
   - "inbound"
+  - "which"
+  - "ingress"
+  - "traffic"
 ---
 
 # Ingress restriction
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +36,13 @@ Cloud Run services can restrict which inbound traffic is allowed to reach them.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
+- [https://docs.cloud.google.com/run/docs/deploying](https://docs.cloud.google.com/run/docs/deploying)
 
 ## Supporting Pages
 
@@ -52,38 +50,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 180
+- Final score: 112
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- 1 Environment variables for worker pools Cloud Run sets the following environment variables for worker pools: Name Description Example CLOUD RUN WORKER POOL The name of the running Cloud Run worker pool. hello-world CLOUD RUN WORKER POOL REVISION The name of the running Cloud Run worker pool revision. hello-world.1 Request and response header requirements (services) For services, Cloud Run restricts header names to printable non-whitespace ASCII, and cannot contain colons.
-- Concurrency (services) For Cloud Run services, each Cloud Run instance by default is set to multiple concurrency , where the ingress container can receive more than one request at the same time.
-- For a Cloud Run service consisting of multi-container instances, you can specify the sequence in which the containers are started within the instance by configuring the container startup order .
-- Shutdown For Cloud Run services, an idle instance can be shut down at any time, including instances kept warm due to a configured minimum number of instances .
+- Process and system call restrictions Basic security profiles, similar to seccomp security profiles for Docker , are applied around each of your containers.
+- The ingress container within an instance must listen for requests on 0.0.0.0 on the port to which requests are sent.
+- Container security restrictions The following restrictions apply to containers that run in Cloud Run.
+- Note that there's no restriction on the character encoding you use within a file.
 
 ### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 180
+- Final score: 112
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- 1 Environment variables for worker pools Cloud Run sets the following environment variables for worker pools: Name Description Example CLOUD RUN WORKER POOL The name of the running Cloud Run worker pool. hello-world CLOUD RUN WORKER POOL REVISION The name of the running Cloud Run worker pool revision. hello-world.1 Request and response header requirements (services) For services, Cloud Run restricts header names to printable non-whitespace ASCII, and cannot contain colons.
-- Concurrency (services) For Cloud Run services, each Cloud Run instance by default is set to multiple concurrency , where the ingress container can receive more than one request at the same time.
-- For a Cloud Run service consisting of multi-container instances, you can specify the sequence in which the containers are started within the instance by configuring the container startup order .
-- Shutdown For Cloud Run services, an idle instance can be shut down at any time, including instances kept warm due to a configured minimum number of instances .
+- Process and system call restrictions Basic security profiles, similar to seccomp security profiles for Docker , are applied around each of your containers.
+- The ingress container within an instance must listen for requests on 0.0.0.0 on the port to which requests are sent.
+- Container security restrictions The following restrictions apply to containers that run in Cloud Run.
+- Note that there's no restriction on the character encoding you use within a file.
 
-### "Class ServicesAsyncClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
+### Deploying container images to Cloud Run \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 150
+- URL: [https://docs.cloud.google.com/run/docs/deploying](https://docs.cloud.google.com/run/docs/deploying)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 98
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates software lifecycle decisions such as rollout policy and team resource ownership. crypto key path crypto key path ( project : str , location : str , key ring : str , crypto key : str ) - > str Returns a fully-qualified crypto key string. delete operation delete operation ( request : typing .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 async def sample list services(): Create a client client = run v2 .
-- Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates software lifecycle decisions such as rollout policy and team resource ownership. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
-- ListServicesRequest ( parent="parent value", ) Make the request page result = client. list services (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.run v2.types.ListServicesRequest , dict]] The request object.
+- Add the following to a google cloud run v2 service resource in your Terraform configuration: resource "google cloud run v2 service" "default" { name = " SERVICE " location = " REGION " ingress = "INGRESS TRAFFIC ALL" template { containers { name = " INGRESS CONTAINER NAME " ports { container port = CONTAINER PORT } image = " INGRESS IMAGE " depends on = [ " SIDECAR CONTAINER NAME " ] } containers { name = " SIDECAR CONTAINER NAME " image = " SIDECAR IMAGE " } } } The CONTAINER PORT represents the port where the ingress container listens for incoming requests.
+- Before you start If you are under a domain restriction organization policy restricting unauthenticated invocations for your project, you will need to access your deployed service as described under Testing private services .
+- In a service with multiple containers, only one container can be configured as the ingress container that handles all incoming requests, and this must be the container for which a containerPort is configured.
+- YAML To disable the deployment health check, add the run.googleapis.com/health-check-disabled annotation with value 'true' to spec.template.metadata.annotations . apiVersion : serving.knative.dev/v1 kind : Service metadata : name : SERVICE spec : template : metadata : annotations : run.googleapis.com/health-check-disabled : 'true' Terraform To disable the deployment health check, set the health check disabled argument to true in the template block. resource "google cloud run v2 service" "default" { name = "SERVICE" ... template { health check disabled = true ... } } What's next After you deploy a new service, you can do the following: Gradual rollouts, rollback revisions, traffic migration View service logs Monitor service performances Set memory limits Set environment variables Change service concurrency Manage the service Manage service revisions Cloud Run OpenTelemetry sidecar example Deploy only trusted images with Binary Authorization ( Preview ) You can automate the builds and deployments of your Cloud Run services using Cloud Build Triggers: Set up Continuous Deployment You can also use Cloud Deploy to set up a continuous-delivery pipeline to deploy Cloud Run services to multiple environments: Deploy an app to Cloud Run using Cloud Deploy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

@@ -1,0 +1,91 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T15:27:57.188Z"
+product_name: "Chat API"
+product_slug: "chat-api"
+feature_name: "Quick commands"
+feature_slug: "quick-commands"
+latest_feature_date: "2025-03-05"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://developers.google.com/workspace/chat/commands"
+  - "https://developers.google.com/workspace/chat/quickstart/gcf-app"
+  - "https://developers.google.com/workspace/chat/quickstart/apps-script-app"
+keywords:
+  - "quick"
+  - "commands"
+  - "chat"
+  - "apps"
+  - "can"
+  - "respond"
+  - "selected"
+  - "users"
+---
+
+# Quick commands
+
+Product: Chat API
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Chat apps can respond to quick commands selected by users from the message reply area; Quick commands let users invoke and interact with a Chat app directly without typing a slash command.
+
+## Extended Definition
+
+Chat apps can respond to quick commands selected by users from the message reply area; Quick commands let users invoke and interact with a Chat app directly without typing a slash command.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://developers.google.com/workspace/chat/commands](https://developers.google.com/workspace/chat/commands)
+- [https://developers.google.com/workspace/chat/quickstart/gcf-app](https://developers.google.com/workspace/chat/quickstart/gcf-app)
+- [https://developers.google.com/workspace/chat/quickstart/apps-script-app](https://developers.google.com/workspace/chat/quickstart/apps-script-app)
+
+## Supporting Pages
+
+### Respond to Google Chat app commands \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/chat/commands](https://developers.google.com/workspace/chat/commands)
+- Source ID: `site-docs-root`
+- Final score: 188
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The Chat app handles MESSAGE interaction events, detects whether the interaction event contains the matching command ID, and returns a private message: Node.js node/avatar-app/index.js View on GitHub / Handles slash and quick commands. @param {Object} event - The Google Chat event. @param {Object} res - The HTTP response object. / function handleAppCommands ( event , res ) { const { appCommandId , appCommandType } = event . appCommandMetadata ; switch ( appCommandId ) { case ABOUT COMMAND ID : return res . send ({ privateMessageViewer : event . user , text : 'The Avatar app replies to Google Chat messages.' }); case HELP COMMAND ID : return res . send ({ privateMessageViewer : event . user , text : 'The Avatar app replies to Google Chat messages.' }); } } Apps Script apps-script/avatar-app/avatar-app.gs View on GitHub // Checks for the presence of a slash command in the message. if ( event . message . slashCommand ) { // Executes the slash command logic based on its ID. // Slash command IDs are set in the Google Chat API configuration. switch ( event . message . slashCommand . commandId ) { case ABOUT COMMAND ID : return { privateMessageViewer : event . user , text : 'The Avatar app replies to Google Chat messages.' }; } } Python python/avatar-app/main.py View on GitHub def handle app commands ( event : Mapping [ str , Any ]) - > Mapping [ str , Any ]: """Handles slash and quick commands.
+- The Chat app handles APP COMMAND interaction events, detects whether the interaction event contains the matching command ID, and returns a private message: Node.js node/avatar-app/index.js View on GitHub / Handles slash and quick commands. @param {Object} event - The Google Chat event. @param {Object} res - The HTTP response object. / function handleAppCommands ( event , res ) { const { appCommandId , appCommandType } = event . appCommandMetadata ; switch ( appCommandId ) { case ABOUT COMMAND ID : return res . send ({ privateMessageViewer : event . user , text : 'The Avatar app replies to Google Chat messages.' }); case HELP COMMAND ID : return res . send ({ privateMessageViewer : event . user , text : 'The Avatar app replies to Google Chat messages.' }); } } Apps Script apps-script/avatar-app/avatar-app.gs View on GitHub / Handles the APP COMMAND event type.
+- Quick commands: Users use commands by opening the menu from the reply area of a Chat message.
+- Returns: Mapping[str, Any]: the response """ app command id = event [ "appCommandMetadata" ][ "appCommandId" ] if app command id == ABOUT COMMAND ID : return { "privateMessageViewer" : event [ "user" ], "text" : "The Avatar app replies to Google Chat messages." , } elif app command id == HELP COMMAND ID : return { "privateMessageViewer" : event [ "user" ], "text" : "The Avatar app replies to Google Chat messages." , } return {} Java java/avatar-app/src/main/java/AvatarApp.java View on GitHub / Handles slash and quick commands. @param event The Google Chat event. @param response The HTTP response object. / private void handleAppCommands ( JsonObject event , HttpResponse response ) throws Exception { int appCommandId = event . getAsJsonObject ( "appCommandMetadata" ). get ( "appCommandId" ). getAsInt (); switch ( appCommandId ) { case ABOUT COMMAND ID : Message aboutMessage = new Message (); aboutMessage . setText ( "The Avatar app replies to Google Chat messages." ); aboutMessage . setPrivateMessageViewer ( new User () . setName ( event . getAsJsonObject ( "user" ). get ( "name" ). getAsString ())); response . getWriter (). write ( gson . toJson ( aboutMessage )); return ; case HELP COMMAND ID : Message helpMessage = new Message (); helpMessage . setText ( "The Avatar app replies to Google Chat messages." ); helpMessage . setPrivateMessageViewer ( new User () . setName ( event . getAsJsonObject ( "user" ). get ( "name" ). getAsString ())); response . getWriter (). write ( gson . toJson ( helpMessage )); return ; } } Replace ABOUT COMMAND ID with the command ID that you specified when you configured the command in the Google Cloud console.
+
+### Build an HTTP Google Chat app \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/chat/quickstart/gcf-app](https://developers.google.com/workspace/chat/quickstart/gcf-app)
+- Source ID: `site-docs-root`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Replace the contents of AvatarApp.java with the following code: java/avatar-app/src/main/java/AvatarApp.java View on GitHub import com.google.api.services.chat.v1.model.CardWithId ; import com.google.api.services.chat.v1.model.GoogleAppsCardV1Card ; import com.google.api.services.chat.v1.model.GoogleAppsCardV1CardHeader ; import com.google.api.services.chat.v1.model.GoogleAppsCardV1Image ; import com.google.api.services.chat.v1.model.GoogleAppsCardV1Section ; import com.google.api.services.chat.v1.model.GoogleAppsCardV1TextParagraph ; import com.google.api.services.chat.v1.model.GoogleAppsCardV1Widget ; import com.google.api.services.chat.v1.model.Message ; import com.google.api.services.chat.v1.model.User ; import com.google.cloud.functions.HttpFunction ; import com.google.cloud.functions.HttpRequest ; import com.google.cloud.functions.HttpResponse ; import com.google.gson.Gson ; import com.google.gson.JsonObject ; import java.util.List ; public class AvatarApp implements HttpFunction { private static final Gson gson = new Gson (); // Command IDs (configure these in Google Chat API) private static final int ABOUT COMMAND ID = 1 ; // ID for the "/about" slash command private static final int HELP COMMAND ID = 2 ; // ID for the "Help" quick command @Override public void service ( HttpRequest request , HttpResponse response ) throws Exception { JsonObject event = gson . fromJson ( request . getReader (), JsonObject . class ); if ( event . has ( "appCommandMetadata" )) { handleAppCommands ( event , response ); } else { handleRegularMessage ( event , response ); } } / Handles slash and quick commands. @param event The Google Chat event. @param response The HTTP response object. / private void handleAppCommands ( JsonObject event , HttpResponse response ) throws Exception { int appCommandId = event . getAsJsonObject ( "appCommandMetadata" ). get ( "appCommandId" ). getAsInt (); switch ( appCommandId ) { case ABOUT COMMAND ID : Message aboutMessage = new Message (); aboutMessage . setText ( "The Avatar app replies to Google Chat messages." ); aboutMessage . setPrivateMessageViewer ( new User () . setName ( event . getAsJsonObject ( "user" ). get ( "name" ). getAsString ())); response . getWriter (). write ( gson . toJson ( aboutMessage )); return ; case HELP COMMAND ID : Message helpMessage = new Message (); helpMessage . setText ( "The Avatar app replies to Google Chat messages." ); helpMessage . setPrivateMessageViewer ( new User () . setName ( event . getAsJsonObject ( "user" ). get ( "name" ). getAsString ())); response . getWriter (). write ( gson . toJson ( helpMessage )); return ; } } / Handles regular messages (not commands). @param event The Google Chat event. @param response The HTTP response object. / private void handleRegularMessage ( JsonObject event , HttpResponse response ) throws Exception { if ( ! event . has ( "user" )) { response . getWriter (). write ( "Invalid request." ); return ; } JsonObject user = event . getAsJsonObject ( "user" ); String displayName = user . has ( "displayName" ) ? user . get ( "displayName" ). getAsString () : "" ; String avatarUrl = user . has ( "avatarUrl" ) ? user . get ( "avatarUrl" ). getAsString () : "" ; Message message = createMessage ( displayName , avatarUrl ); response . getWriter (). write ( gson . toJson ( message )); } / Creates a card message with the user's avatar. @param displayName The user's display name. @param avatarUrl The URL of the user's avatar. @return The card message object. / private Message createMessage ( String displayName , String avatarUrl ) { return new Message () . setText ( "Here's your avatar" ) . setCardsV2 ( List . of ( new CardWithId () . setCardId ( "avatarCard" ) . setCard ( new GoogleAppsCardV1Card () . setName ( "Avatar Card" ) . setHeader ( new GoogleAppsCardV1CardHeader () . setTitle ( String . format ( "Hello %s!" , displayName ))) . setSections ( List . of ( new GoogleAppsCardV1Section (). setWidgets ( List . of ( new GoogleAppsCardV1Widget () . setTextParagraph ( new GoogleAppsCardV1TextParagraph () . setText ( "Your avatar picture:" )), new GoogleAppsCardV1Widget () . setImage ( new GoogleAppsCardV1Image (). setImageUrl ( avatarUrl ))))))))); } } Replace the contents of pom.xml with the following code: java/avatar-app/pom.xml View on GitHub <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4 0 0.xsd"> <modelVersion>4.0.0</modelVersion> <groupId>gcfv2</groupId> <artifactId>avatar-app</artifactId> <version>0.0.1</version> <name>Avatar App</name> <properties> <maven.compiler.release>21</maven.compiler.release> </properties> <dependencies> <dependency> <groupId>com.google.cloud.functions</groupId> <artifactId>functions-framework-api</artifactId> <version>1.1.4</version> </dependency> <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson --> <dependency> <groupId>com.google.code.gson</groupId> <artifactId>gson</artifactId> <version>2.12.1</version> </dependency> <!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-chat --> <dependency> <groupId>com.google.apis</groupId> <artifactId>google-api-services-chat</artifactId> <version>v1-rev20250116-2.0.0</version> </dependency> </dependencies> </project> Click Save and redeploy .
+- Replace the contents of index.js with the following code: node/avatar-app/index.js View on GitHub const functions = require ( '@google-cloud/functions-framework' ); // Command IDs (configure these in Google Chat API) const ABOUT COMMAND ID = 1 ; // ID for the "/about" slash command const HELP COMMAND ID = 2 ; // ID for the "Help" quick command / Google Cloud Function that handles HTTP requests from Google Chat. @param {Object} req - The HTTP request object sent from Google Chat. @param {Object} res - The HTTP response object. / functions . http ( 'avatarApp' , ( req , res ) = > { const event = req . body ; if ( event . appCommandMetadata ) { handleAppCommands ( event , res ); } else { handleRegularMessage ( event , res ); } }); / Handles slash and quick commands. @param {Object} event - The Google Chat event. @param {Object} res - The HTTP response object. / function handleAppCommands ( event , res ) { const { appCommandId , appCommandType } = event . appCommandMetadata ; switch ( appCommandId ) { case ABOUT COMMAND ID : return res . send ({ privateMessageViewer : event . user , text : 'The Avatar app replies to Google Chat messages.' }); case HELP COMMAND ID : return res . send ({ privateMessageViewer : event . user , text : 'The Avatar app replies to Google Chat messages.' }); } } / Handles regular messages (not commands). @param {Object} event - The Google Chat event. @param {Object} res - The HTTP response object. / function handleRegularMessage ( event , res ) { const messageData = createMessage ( event . user ); res . send ( messageData ); } / Creates a card message with the user's avatar. @param {Object} user - The user who sent the message. @param {string} user.displayName - The user's display name. @param {string} user.avatarUrl - The URL of the user's avatar. @return {Object} - The card message object. / function createMessage ({ displayName , avatarUrl }) { return { text : 'Here\'s your avatar' , cardsV2 : [{ cardId : 'avatarCard' , card : { name : 'Avatar Card' , header : { title : Hello ${ displayName } ! , }, sections : [{ widgets : [ { textParagraph : { text : 'Your avatar picture:' }}, { image : { imageUrl : avatarUrl }}, ], }], }, }], }; } Click Save and redeploy .
+- Related topics To add more features to your Chat app, see the following: Create interactive card messages Respond to slash commands Open and respond to dialogs Choose a Chat app architecture Verify requests from Google Chat Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- In this quickstart, you write and deploy a Cloud Run function that the Chat app uses to respond to a user's message.
+
+### Build a Google Chat app with Google Apps Script \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/chat/quickstart/apps-script-app](https://developers.google.com/workspace/chat/quickstart/apps-script-app)
+- Source ID: `site-docs-root`
+- Final score: 138
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Respond to commands –Commands help users discover and use key features of your Chat app.
+- Key actions include: setting up a Google Cloud environment and enabling the Chat API; configuring the OAuth consent screen; creating an Apps Script project from a template and linking it to the Cloud project; publishing the app with a deployment ID; and testing the app by sending a direct message.
+- The following diagram shows the architecture and messaging pattern: In the preceding diagram, a user interacting with an Apps Script Chat app has the following flow of information: A user sends a message to a Chat app, either in a direct message or in a Chat space.
+- Home Google Workspace Google Chat Guides Send feedback Build a Google Chat app with Google Apps Script Stay organized with collections Save and categorize content based on your preferences.
+

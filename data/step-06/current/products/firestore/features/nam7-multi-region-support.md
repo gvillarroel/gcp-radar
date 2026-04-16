@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.417Z"
+generated_at: "2026-04-15T13:50:17.865Z"
 product_name: "Firestore"
 product_slug: "firestore"
 feature_name: "nam7 multi-region support"
 feature_slug: "nam7-multi-region-support"
 latest_feature_date: "2025-03-24"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html"
-  - "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
-  - "https://docs.cloud.google.com/firestore/native/docs/reference/libraries"
+  - "https://docs.cloud.google.com/firestore/docs/concepts/index-overview"
+  - "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+  - "https://docs.cloud.google.com/mcp/authenticate-mcp"
 keywords:
   - "nam7"
   - "multi"
   - "region"
   - "firestore"
   - "supports"
-  - "the"
   - "united"
   - "states"
+  - "central"
 ---
 
 # nam7 multi-region support
 
 Product: Firestore
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,41 +42,43 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
-- [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
+- [https://docs.cloud.google.com/firestore/docs/concepts/index-overview](https://docs.cloud.google.com/firestore/docs/concepts/index-overview)
+- [https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox)
+- [https://docs.cloud.google.com/mcp/authenticate-mcp](https://docs.cloud.google.com/mcp/authenticate-mcp)
 
 ## Supporting Pages
 
-### google.cloud.firestore_v1.base_client — google-cloud-firestore documentation
+### "Use Firestore with MCP, Gemini CLI, and other agents \_|\_ Firestore in\
 
-- URL: [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
-- Source ID: `site-python-reference`
-- Final score: 89
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- google.cloud.firestore v1.base client — google-cloud-firestore documentation Source URL: https://googleapis.dev/python/firestore/latest/ modules/google/cloud/firestore v1/base client.html [docs]class BaseClient(ClientWithProject): &quot;&quot;&quot;Client for interacting with Google Cloud Firestore API. .. note:: Since the Cloud Firestore API requires the gRPC transport, no ` http` argument is accepted by this class.
-- Args: project (Optional[str]): The project which the client acts on behalf of.
-
-### Class FirestoreAdminClient (2.22.0) | Python client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- Source ID: `site-python-reference`
-- Final score: 84
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 44
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Class FirestoreAdminClient (2.22.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore admin v1.services.firestore admin.client.FirestoreAdminClient Project, Database, Namespace, Collection, Collection Group, and Document are used as defined in the Google Cloud Firestore API.
+- Before you begin To use the tools in the Gemini CLI extension for Firestore, you must have one of the following Identity and Access Management (IAM) roles, or a custom role with equivalent permissions: Task Role name Required Identity and Access Management (IAM) role Read and write data in Firestore database Cloud Datastore User roles/datastore.user View and test security rules Firebase Rules Viewer roles/firebaserules.viewer Set up Firestore Create a new Google Cloud project or select an existing one .
+- This page describes how to use the MCP Toolbox for Databases to expose your developer assistance tools to a Firestore instance using the following IDEs: Gemini CLI Gemini Code Assist Cursor Windsurf (Codium) Visual Studio Code (Copilot) Cline (VS Code extension) Claude desktop Claude code About Gemini CLI and extensions Gemini CLI is an open-source AI agent designed to assist with development workflows by assisting with coding, debugging, data exploration, and content creation.
+- The FIRESTORE DATABASE variable is optional and defaults to (default) . { "mcpServers": { "firestore": { "command": "./PATH/TO/toolbox", "args": ["--prebuilt","firestore","--stdio"], "env": { "FIRESTORE PROJECT": " PROJECT ID ", "FIRESTORE DATABASE": " DATABASE NAME " } } } } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Category Tools Example natural language prompt Document and data retrieval get documents Show me the Firestore data for the test users qa user 123 and qa user 456 from the users-staging collection. list collections List all subcollections under the users-staging collection. query collection Find all users in the users-staging collection whose wishlist contains product-glasses.
 
-### Firestore client libraries | Firestore in Native mode | Google Cloud Documentation
+### Authenticate to Google and Google Cloud MCP servers \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
+- URL: [https://docs.cloud.google.com/mcp/authenticate-mcp](https://docs.cloud.google.com/mcp/authenticate-mcp)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 36
+- Re-rank relevance: N/A
+
+### "Standard edition index overview \_|\_ Firestore in Native mode \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/firestore/docs/concepts/index-overview](https://docs.cloud.google.com/firestore/docs/concepts/index-overview)
 - Source ID: `site-docs-reference`
-- Final score: 84
+- Final score: 30
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Firestore client libraries Firestore in Native mode Google Cloud Documentation Source URL: https://docs.cloud.google.com/firestore/native/docs/reference/libraries API Reference Documentation · Source Code · GitHub Issue Tracker · Stack Overflow · The Firebase Admin SDKs bundle the Google Cloud client libraries for Firestore alongside client libraries and SDKs for several other Firebase features.
-- Using one of the Admin SDKs, you can initialize access to Firestore and several other services from a single SDK.
+- The app uses combinations of equality clauses for category , city , and editors pick while always sorting by ascending star rating : Web db.collection("restaurants").where("category", "==", "burgers") .orderBy("star rating") db.collection("restaurants").where("city", "==", "San Francisco") .orderBy("star rating") db.collection("restaurants").where("category", "==", "burgers") .where("city", "==", "San Francisco") .orderBy("star rating") db.collection("restaurants").where("category", "==", "burgers") .where("city", "==" "San Francisco") .where("editors pick", "==", true ) .orderBy("star rating") You could create an index for each query: Collection Fields indexed Query scope restaurants arrow upward category, arrow upward star rating Collection restaurants arrow upward city, arrow upward star rating Collection restaurants arrow upward category, arrow upward city, arrow upward star rating Collection restaurants arrow upward category, arrow upward city, arrow upward editors pick, arrow upward star rating Collection As a better solution, you can reduce the number of indexes by taking advantage of Firestore Standard edition's ability to merge indexes for equality clauses: Collection Fields indexed Query scope restaurants arrow upward category, arrow upward star rating Collection restaurants arrow upward city, arrow upward star rating Collection restaurants arrow upward editors pick, arrow upward star rating Collection Not only is this set of indexes smaller, it also supports an additional query: Web db.collection("restaurants").where("editors pick", "==", true) .orderBy("star rating") Indexing limits The following limits apply to indexes.
+- Each row in the following table represents an entry in a single-field index: Collection Field indexed Query scope cities arrow upward name Collection cities arrow upward state Collection cities arrow upward country Collection cities arrow upward capital Collection cities arrow upward population Collection cities arrow upward regions Collection cities arrow downward name Collection cities arrow downward state Collection cities arrow downward country Collection cities arrow downward capital Collection cities arrow downward population Collection cities arrow downward regions Collection cities array-contains regions Collection Queries supported by single-field indexes Using these automatically created single-field indexes, you can run simple queries like the following: Web const stateQuery = citiesRef . where ( "state" , "==" , "CA" ); const populationQuery = citiesRef . where ( "population" , "<" , 100000 ); const nameQuery = citiesRef . where ( "name" , ">=" , "San Francisco" ); test . firestore . js You can also create in and compound equality ( == ) queries: Web citiesRef.where('country', 'in', ["USA", "Japan", "China"]) // Compound equality queries citiesRef.where("state", "==", "CO").where("name", "==", "Denver") citiesRef.where("country", "==", "USA") .where("capital", "==", false) .where("state", "==", "CA") .where("population", "==", 860000) If you need to run a compound query that uses a range comparison ( < , <= , , or >= ) or if you need to sort by a different field, you must create a manual index for that query.
+- The following snippet creates a few city documents in a cities collection and sets name , state , country , capital , population , and tags fields for each document: Web var citiesRef = db . collection ( "cities" ); citiesRef . doc ( "SF" ). set ({ name : "San Francisco" , state : "CA" , country : "USA" , capital : false , population : 860000 , regions : [ "west coast" , "norcal" ] }); citiesRef . doc ( "LA" ). set ({ name : "Los Angeles" , state : "CA" , country : "USA" , capital : false , population : 3900000 , regions : [ "west coast" , "socal" ] }); citiesRef . doc ( "DC" ). set ({ name : "Washington, D.C." , state : null , country : "USA" , capital : true , population : 680000 , regions : [ "east coast" ] }); citiesRef . doc ( "TOK" ). set ({ name : "Tokyo" , state : null , country : "Japan" , capital : true , population : 9000000 , regions : [ "kanto" , "honshu" ] }); citiesRef . doc ( "BJ" ). set ({ name : "Beijing" , state : null , country : "China" , capital : true , population : 21500000 , regions : [ "jingjinji" , "hebei" ] }); test . firestore . js Assuming the default automatic indexing settings, Firestore Standard edition updates one ascending single-field index per field, one descending single- field index per field, and one array-contains single-field index for the array field.
+- If you are using queries with range and inequality operators on multiple fields, see the indexing considerations that you should consider to optimize the performance and cost of Firestore Standard edition queries For more information about how to resolve indexing issues (index fanout, INVALID ARGUMENT errors) see the troubleshooting page .
 

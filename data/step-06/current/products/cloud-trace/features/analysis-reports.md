@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.842Z"
+generated_at: "2026-04-12T12:12:49.014Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Analysis reports"
 feature_slug: "analysis-reports"
 latest_feature_date: "2016-10-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/trace/docs/release-notes"
-  - "https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring"
   - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+  - "https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring"
+  - "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+  - "https://docs.cloud.google.com/trace/docs/create-and-manage-analytics-views"
 keywords:
   - "analysis"
   - "reports"
@@ -26,7 +27,7 @@ keywords:
 # Analysis reports
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +39,38 @@ Analysis reports compare an application's latency profile across time and versio
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
-- [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
 - [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
+- [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
+- [https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses](https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses)
+- [https://docs.cloud.google.com/trace/docs/create-and-manage-analytics-views](https://docs.cloud.google.com/trace/docs/create-and-manage-analytics-views)
 
 ## Supporting Pages
 
-### Trace release notes \_|\_ Google Cloud Documentation
+### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 120
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
+- Source ID: `site-iam-reference`
+- Final score: 143
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- October 20, 2016 Feature Analysis Reports : Compare your application's latency profile across time and versions.
-- To learn more, see the following: Find and explore traces Application Monitoring overview View application telemetry Telemetry (OTLP) API overview June 13, 2025 Change The Analysis reports page has been removed.
-- Feature You can now filter traces for analysis reports by the full URI, by the URI prefix, or by using trace filter.
-- Feature Announcing new Open Telemetry samples that show how to instrument your Python and Node.js applications to collect metrics, logs, and traces: Python example Node.js example For general instrumentation information and recommendations, and for links to other samples, see: Instrumentation and observability overview Choose an instrumentation approach February 20, 2024 Change For information and recommendations about how to instrument your applications to collect metrics, logs, and traces, see the following documents: Instrumentation and observability overview Choose an instrumentation approach Go instrumentation example Java instrumentation example January 16, 2024 Change Announcing a common navigation pane in the Google Cloud console for Logging, Monitoring, Trace, and Error Reporting.
+- What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For example, if you set the time window to a week and you see a constant but unexpected increase in the data ingested over time, then you might look to see if the increase is coming from one specific metric or as a general trend across a group of metrics.
+- For example, a change in the configuration of a metric might result in a cardinality problem, which can affect both the volume of data ingested and query latency, and might also result in metric-write errors.
+- Note: If an exclusion rule uses a regular expression that causes a time series without an existing metric descriptor to be excluded, the Metric exclusion table reports "undefined metric" as the metric type.
 
 ### "Instrument an application for Application Monitoring \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
 - Source ID: `site-iam-reference`
-- Final score: 112
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 136
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Metric data from instrumentation you added to your applications can include the following metric labels: metric.labels.apphub application {container,id,location} metric.labels.apphub workload {criticality type,environment type,id} Trace spans generated by instrumentation you added to your applications can include the following resource attributes: gcp.apphub.application.{container,id,location} gcp.apphub.{workload,service}.{criticality type,environment type,id} About OpenTelemetry HTTP server metrics There are no system metrics for workloads that run on Google Kubernetes Engine that can report the traffic level, server error rate, or the latency for HTTP requests.
@@ -75,17 +78,30 @@ Evidence snippets:
 - If you run workloads on Google Kubernetes Engine, then this approach exports the HTTP server metric that Application Monitoring uses to generate values for the traffic level, server error rate, and the latency for HTTP requests.
 - Use Google Cloud Managed Service for Prometheus on GKE To have Google Cloud Observability attach application labels to metric data generated by your application's workloads that runs on Google Kubernetes Engine clusters, do the following: Use Google Cloud Managed Service for Prometheus with managed collection .
 
-### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+### "Collect and view multimodal prompts and responses \_|\_ Cloud Trace \_|\_\
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
-- Source ID: `site-iam-reference`
+- URL: [https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses](https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses)
+- Source ID: `site-docs-root-2`
 - Final score: 110
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- For example, if you set the time window to a week and you see a constant but unexpected increase in the data ingested over time, then you might look to see if the increase is coming from one specific metric or as a general trend across a group of metrics.
-- For example, a change in the configuration of a metric might result in a cardinality problem, which can affect both the volume of data ingested and query latency, and might also result in metric-write errors.
-- Note: If an exclusion rule uses a regular expression that causes a time series without an existing metric descriptor to be excluded, the Metric exclusion table reports "undefined metric" as the metric type.
+- If you are using ADK, then update your application's invocation to turn on the otel to cloud flag: If you are using the CLI for ADK, then run the following command: adk web --otel to cloud [ other options ] Otherwise, pass the flag when creating the FastAPI app: get fast api app ( ... , otel to cloud = True ) Set the following environment variables: Instruct OpenTelemetry to format Cloud Storage objects as JSON Lines.
+- Collect multimodal prompts and responses The SDK your application uses automatically invokes OpenTelemetry to store your prompts and responses, and to send log and trace data to your Google Cloud project.
+- Where your prompts and responses are stored When your agentic application creates or receives either prompts or responses, the SDK your application uses invokes OpenTelemetry instrumentation.
+- To collect and view your multimodal prompts and responses from an application, do the following: Configure your project: Verify that billing is enabled for your Google Cloud project .
+
+### "Create, query, and manage analytics views \_|\_ Cloud Trace \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/trace/docs/create-and-manage-analytics-views](https://docs.cloud.google.com/trace/docs/create-and-manage-analytics-views)
+- Source ID: `site-docs-root-2`
+- Final score: 110
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- List analytics views To list the analytics views in your Google Cloud project, do the following: In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging .
+- Enable the API To get the permissions that you need to create, manage, and use analytics views, ask your administrator to grant you the following IAM roles: Observability View Accessor ( roles/observability.viewAccessor ) on the observability views that you want to query.
+- Modify an analytics view To modify an analytics view, do the following: In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging .
 

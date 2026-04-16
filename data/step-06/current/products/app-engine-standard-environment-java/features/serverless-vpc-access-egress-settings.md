@@ -1,105 +1,91 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:44:03.345Z"
+generated_at: "2026-04-14T06:50:21.221Z"
 product_name: "App Engine standard environment Java"
 product_slug: "app-engine-standard-environment-java"
 feature_name: "Serverless VPC Access egress settings"
 feature_slug: "serverless-vpc-access-egress-settings"
 latest_feature_date: "2021-11-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/java11/application-security"
-  - "https://docs.cloud.google.com/appengine/docs/standard/application-security"
+  - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
   - "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
 keywords:
-  - "outbound traffic rules"
-  - "route traffic through connector"
-  - "external destination traffic"
-  - "egress settings"
-  - "Serverless VPC Access egress"
-  - "egress control"
-  - "egress routing"
-  - "connector egress"
+  - "settings"
+  - "whether"
+  - "egress"
+  - "control"
+  - "traffic"
+  - "serverless"
+  - "access"
 ---
 
 # Serverless VPC Access egress settings
 
 Product: App Engine standard environment Java
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Serverless VPC Access egress settings became generally available, allowing control of outbound traffic routing for external destinations; Serverless VPC Access egress settings became available, enabling control of whether external destination traffic uses the connector.
+Serverless VPC Access egress settings control whether traffic to external destinations is sent through the connector; Serverless VPC Access egress settings control whether traffic to external destinations is sent through the connector.
 
 ## Extended Definition
 
-Serverless VPC Access egress settings became generally available, allowing control of outbound traffic routing for external destinations; Serverless VPC Access egress settings became available, enabling control of whether external destination traffic uses the connector.
+Serverless VPC Access egress settings control whether traffic to external destinations is sent through the connector; Serverless VPC Access egress settings control whether traffic to external destinations is sent through the connector.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/java11/application-security](https://docs.cloud.google.com/appengine/docs/standard/java11/application-security)
-- [https://docs.cloud.google.com/appengine/docs/standard/application-security](https://docs.cloud.google.com/appengine/docs/standard/application-security)
+- [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
 - [https://docs.cloud.google.com/appengine/docs/standard/ingress-settings](https://docs.cloud.google.com/appengine/docs/standard/ingress-settings)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes)
+- [https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref)
 
 ## Supporting Pages
 
-### "Overview of app security \_|\_ App Engine standard environment \_|\_ Google\
+### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java11/application-security](https://docs.cloud.google.com/appengine/docs/standard/java11/application-security)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
 - Source ID: `site-docs-reference`
-- Final score: 26
+- Final score: 183
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- With Egress control settings, you can require all traffic from your App Engine services to be routed through the attached VPC Connector.
-- Egress controls Egress controls determine what traffic is sent over Serverless VPC connectors .
-- To specify Egress settings for your app, see Egress settings .
-
-### "Overview of app security \_|\_ App Engine standard environment \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/application-security](https://docs.cloud.google.com/appengine/docs/standard/application-security)
-- Source ID: `site-docs-reference-2`
-- Final score: 26
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- With Egress control settings, you can require all traffic from your App Engine services to be routed through the attached VPC Connector.
-- Egress controls Egress controls determine what traffic is sent over Serverless VPC connectors .
-- To specify Egress settings for your app, see Egress settings .
+- Manage your connector Controlling egress traffic from a service By default, only requests to internal IP addresses and internal DNS names are routed through a Serverless VPC Access connector.
+- Create an egress firewall rule on your Serverless VPC Access connector to prevent it from sending outgoing traffic, with the exception of established responses, to any destination. gcloud compute firewall-rules create RULE NAME \ --action = DENY \ --rules = PROTOCOL \ --direction = EGRESS \ --target-tags = VPC CONNECTOR NETWORK TAG \ --network = VPC NETWORK \ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule.
+- Using the urlfetch library ignores egress settings, and requests will not route through a Serverless VPC Access connector.
+- Test the custom constraint To test the example that restricts ingress settings, deploy a connector in the project with network set to default : gcloud compute networks vpc-access connectors create org-policy-test \ --project = PROJECT ID \ --region = REGION ID \ --network = default The output is the following: Operation denied by custom org policies: ["customConstraints/custom.defaultNetworkConstraint": "Require network to not be set to default."] Example custom organization policies for common use cases The following table provides examples of custom constraints that you might find useful with Serverless VPC Access connectors: Description Constraint syntax Require that Serverless VPC Access connectors can only use a specific network. name : organizations/ ORGANIZATION ID /customConstraints/custom.allowlistNetworks resourceTypes : - vpcaccess.googleapis.com/Connector methodTypes : - CREATE condition : "resource.network == 'allowlisted-network'" actionType : ALLOW displayName : allowlistNetworks description : Require connectors to use a specific network.
 
 ### "Ingress settings \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/ingress-settings](https://docs.cloud.google.com/appengine/docs/standard/ingress-settings)
 - Source ID: `site-docs-reference`
-- Final score: 24
+- Final score: 173
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- For example: To update the default service of an App Engine app to accept traffic only from Cloud Load Balancing and VPC networks that are in the same project: gcloud app services update default --ingress = internal-and-cloud-load-balancing To update a service named "internal-requests" to accept traffic only from VPC networks that are in the same project: gcloud app services update internal-requests --ingress = internal-only Egress settings Note: Egress settings are not available for the PHP runtimes.
-- To configure the egress behavior of your App Engine service: Add the egress setting attribute to the vpc access connector field of your service's app.yaml file: vpc access connector : name : projects/ PROJECT ID /locations/ REGION /connectors/ CONNECTOR NAME egress setting : EGRESS SETTING Replace: PROJECT ID with your Google Cloud project ID REGION with the region your connector is in CONNECTOR NAME with the name of your connector EGRESS SETTING with one of the following: private-ranges-only Default.
 - Using the urlfetch library ignores egress settings, and requests will not route through a Serverless VPC Access connector.
-- Egress settings are not compatible with the URL Fetch service.
+- For example: To update the default service of an App Engine app to accept traffic only from Cloud Load Balancing and VPC networks that are in the same project: gcloud app services update default --ingress = internal-and-cloud-load-balancing To update a service named "internal-requests" to accept traffic only from VPC networks that are in the same project: gcloud app services update internal-requests --ingress = internal-only Egress settings Note: Egress settings are not available for the PHP runtimes.
+- Note that routing all outbound requests to your VPC network increases the amount of egress handled by the Serverless VPC Access connector and can incur charges .
+- If you use Serverless VPC Access , you can specify the egress setting for your App Engine service.
 
-### "App Engine standard environment for Java gen2 release notes \_|\_ Google\
+### "App Engine app.yaml reference \_|\_ App Engine standard environment \_|\_\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 22
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref)
+- Source ID: `site-docs-reference-4`
+- Final score: 163
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Egress settings allow you to specify whether or not to send traffic with external destinations through your Serverless VPC Access connector, which is necessary if you want to set up a static outbound IP address for your App Engine service.
-- Egress settings allow you to specify whether or not to send traffic with external destinations through your Serverless VPC Access connector, which is necessary if you want to set up a static outbound IP address for your App Engine service.
-- November 03, 2021 Feature Egress settings for Serverless VPC Access are now generally available.
-- July 21, 2021 Feature Egress settings are now available for Serverless VPC Access.
+- Example vpc access connector : name : "projects/ PROJECT ID /locations/ REGION /connectors/ CONNECTOR NAME " egress setting : all-traffic Handlers element The handlers element provides a list of URL patterns and descriptions of how they should be handled.
+- Specify the fully-qualified name of your Serverless VPC Access connector in quotes: "projects/ PROJECT ID /locations/ REGION /connectors/ CONNECTOR NAME " egress setting Optional.
+- Requests to external IP addresses are sent to the public internet. all-traffic All requests are sent through the Serverless VPC Access connector into the connected VPC network.
+- However, if mygame attempts to make a JavaScript XMLHttpRequest to myassets , it will not succeed unless the handler for myassets returns an Access-Control-Allow-Origin: response header containing the value http://mygame.uc.r.appspot.com .
 

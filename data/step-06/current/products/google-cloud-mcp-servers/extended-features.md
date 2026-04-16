@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2026-03-17 | MCP organization policy control | LOW | [source](https://docs.cloud.google.com/mcp/control-mcp-use-iam)<br>[source](https://docs.cloud.google.com/mcp/prevent-read-write-tool-use)<br>[source](https://docs.cloud.google.com/mcp/monitor-mcp-tool-use-with-cloud-trace) | Organization policy control for MCP use via the gcp.managed.allowedMCPServices custom constraint; Organization policy control for MCP use via the gcp.managed.allowedMCPServices custom constraint; deprecated on 2026-03-17. |
+| 2026-03-17 | MCP organization policy control | MEDIUM | [source](https://docs.cloud.google.com/mcp/access-control)<br>[source](https://docs.cloud.google.com/mcp/control-mcp-use-iam)<br>[source](https://docs.cloud.google.com/mcp/control-mcp-use-organization) | Organization policy control for MCP use via the gcp.managed.allowedMCPServices custom constraint; Organization policy control for MCP use via the gcp.managed.allowedMCPServices custom constraint; deprecated on 2026-03-17. |
 

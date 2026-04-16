@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.896Z"
+generated_at: "2026-04-14T15:34:54.432Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Manual scaling"
@@ -9,18 +9,17 @@ latest_feature_date: "2025-08-05"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run"
+  - "https://docs.cloud.google.com/run/docs/configuring"
   - "https://docs.cloud.google.com/run/docs/container-contract"
-  - "https://docs.cloud.google.com/run/docs/reference/container-contract"
+  - "https://docs.cloud.google.com/run/docs/securing/service-identity"
 keywords:
-  - "manual"
-  - "scaling"
-  - "run"
-  - "supports"
   - "manually"
+  - "scaling"
   - "instead"
-  - "of"
   - "relying"
+  - "manual"
+  - "only"
+  - "supports"
 ---
 
 # Manual scaling
@@ -38,53 +37,53 @@ Cloud Run supports manually scaling a service instead of relying only on autosca
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run](https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run)
+- [https://docs.cloud.google.com/run/docs/configuring](https://docs.cloud.google.com/run/docs/configuring)
 - [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
+- [https://docs.cloud.google.com/run/docs/securing/service-identity](https://docs.cloud.google.com/run/docs/securing/service-identity)
 
 ## Supporting Pages
 
-### What is Cloud Run \_|\_ Google Cloud Documentation
+### Introduction to service identity \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run](https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run)
-- Source ID: `site-api-reference`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/securing/service-identity](https://docs.cloud.google.com/run/docs/securing/service-identity)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 31
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To change this behavior, use one of the following methods: Configure Cloud Run to keep a minimum amount of instances active so that your service doesn't scale to zero instances Use manual scaling for more control over scaling.
-- Manually scale the number of instances that your Cloud Run worker pool requires to handle its workload.
-- Built-in traffic management To reduce the risk of deploying a new revision, Cloud Run supports performing a gradual rollout , including routing incoming traffic to the latest revision, rolling back to a previous revision, and splitting traffic to multiple revisions at the same time.
-- Optional manual scaling By default, Cloud Run automatically scales to more instances to handle more traffic, but you can override this behavior by using manual scaling to control scaling behavior.
+- To assign a service account as the service identity, see the following guides: Configure service identity for services Configure service identity for jobs However, if you use your own custom code or need to make requests programmatically, you can use the metadata server directly to manually fetch identity tokens and access token described in the next section.
+- The two types of service accounts that can be used as the service identity are as follows: User-managed service account (recommended) : You manually create this service account and determine the most minimal set of permissions that the service account needs to access specific Google Cloud resources.
+- A service account that is used as the deployer account will only be used as the service identity if you configure the same service account in your Cloud Run configuration.
+- Note that you cannot query this server directly from your local machine as the metadata server is only available for workloads running on Google Cloud.
+
+### Configure Cloud Run services \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/configuring](https://docs.cloud.google.com/run/docs/configuring)
+- Source ID: `site-docs-reference-2`
+- Final score: 22
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- C Service scaling You can set your service to autoscaling or manual scaling, depending on how much control you need over your scaling behavior.
+- Manual scaling lets you set a specific instance count, regardless of traffic or utilization, and without requiring redeployment.
+- B Billing Use billing settings to control how you are charged, either per request and only when the instance processes a request, or for the entire lifecycle of the instance.
+- When using autoscaling, each Cloud Run revision is automatically scaled to the number of instances needed to handle all incoming requests, events, or CPU utilization.
 
 ### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 140
+- Final score: 22
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- Another option is to manually install the NVIDIA forward compatibility packages and add them to LD LIBRARY PATH .
 - Manually scale the number of instances that your Cloud Run worker pool requires to handle its workload.
+- You can optionally use manual scaling if you need more control over your scaling behavior.
 - Service scaling By default, a Cloud Run service is automatically scaled to the number of instances needed to handle all incoming requests, events, or CPU utilization.
-- The following table lists some of the available metadata server information: Path Description /computeMetadata/v1/project/project-id Project ID of the project the Cloud Run resource belongs to. /computeMetadata/v1/project/numeric-project-id Project number of the project the Cloud Run resource belongs to. /computeMetadata/v1/instance/region Region of this Cloud Run resource, returns projects/ PROJECT-NUMBER /regions/ REGION /computeMetadata/v1/instance/id Unique identifier of the instance (also available in logs ). /computeMetadata/v1/instance/service-accounts/default/email Email for the service identity of this Cloud Run resource. /computeMetadata/v1/instance/service-accounts/default/token Generates an OAuth2 access token for the service account of this Cloud Run resource .
-- 8080 K SERVICE The name of the Cloud Run service being run. hello-world K REVISION The name of the Cloud Run revision being run. hello-world.1 K CONFIGURATION The name of the Cloud Run configuration that created the revision. hello-world Environment variables for jobs For Cloud Run jobs, the following environment variables are set: Name Description Example CLOUD RUN JOB The name of the Cloud Run job being run. hello-world CLOUD RUN EXECUTION The name of the Cloud Run execution being run. hello-world-abc CLOUD RUN TASK INDEX The index of this task.
-
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 140
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Manually scale the number of instances that your Cloud Run worker pool requires to handle its workload.
-- Service scaling By default, a Cloud Run service is automatically scaled to the number of instances needed to handle all incoming requests, events, or CPU utilization.
-- The following table lists some of the available metadata server information: Path Description /computeMetadata/v1/project/project-id Project ID of the project the Cloud Run resource belongs to. /computeMetadata/v1/project/numeric-project-id Project number of the project the Cloud Run resource belongs to. /computeMetadata/v1/instance/region Region of this Cloud Run resource, returns projects/ PROJECT-NUMBER /regions/ REGION /computeMetadata/v1/instance/id Unique identifier of the instance (also available in logs ). /computeMetadata/v1/instance/service-accounts/default/email Email for the service identity of this Cloud Run resource. /computeMetadata/v1/instance/service-accounts/default/token Generates an OAuth2 access token for the service account of this Cloud Run resource .
-- 8080 K SERVICE The name of the Cloud Run service being run. hello-world K REVISION The name of the Cloud Run revision being run. hello-world.1 K CONFIGURATION The name of the Cloud Run configuration that created the revision. hello-world Environment variables for jobs For Cloud Run jobs, the following environment variables are set: Name Description Example CLOUD RUN JOB The name of the Cloud Run job being run. hello-world CLOUD RUN EXECUTION The name of the Cloud Run execution being run. hello-world-abc CLOUD RUN TASK INDEX The index of this task.
 

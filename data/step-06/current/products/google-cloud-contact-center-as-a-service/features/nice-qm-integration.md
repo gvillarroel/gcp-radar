@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.776Z"
+generated_at: "2026-04-15T13:50:47.111Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "NICE QM integration"
@@ -9,18 +9,18 @@ latest_feature_date: "2023-09-25"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide"
   - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
 keywords:
   - "nice"
   - "qm"
   - "integration"
-  - "the"
   - "platform"
   - "provides"
-  - "an"
   - "out"
+  - "box"
+  - "export"
 ---
 
 # NICE QM integration
@@ -42,49 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide)
 - [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Salesforce integration guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 202
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature NICE QM integration : CCAI Platform now supports an out-of-the-box data export for NICE QM.
-- The following information is required to enable the NICE QM data export: NICE API Endpoint API Authentication credentials After the integration is enabled, you can enable session data related to IVR call events and agent login/logout events in your NICE integration.
-- Feature NICE QM integration : CCAIP now supports an out-of-the-box data export for NICE QM.
-- Feature New session events for quality management The following session events are now available for quality management (QM) integration: Hold Mute Redaction Recording indication Queue information Feature New custom data types for events The following custom data types for events are now available using the Web SDK: custom data secured custom data not secured For more information, see Data for events .
+- CCAI Platform custom session object for Salesforce configuration The CCAI Platform Custom Session Object provides a convenient, optimized, custom CCAI Platform Session object, in which all session data will be stored in a session object .
+- CCAI Platform custom session object for Salesforce The CCAI Platform Custom Session Object provides a convenient, optimized, custom CCAI Platform Session object, in which all session data will be stored in a session object .
+- Salesforce: CCAI Platform session object technical details The CCAI Platform Custom Session Object provides a convenient, optimized, custom CCAI Platform Session object, in which all call or chat session data will be stored.
+- Salesforce: CCAI Platform session object installation & configuration The CCAI Platform session object provides a convenient, optimized, custom object, in which all session data will be stored.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Kustomer CRM integration guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 142
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 101
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- CCAI Platform is a unified contact center platform that accelerates the organization's ability to leverage and deploy Gemini Enterprise for CX without relying on multiple technology providers.
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- CCAI Platform: Provides organizations with modern, embeddable APIs that are optimized for the smartphone era.
-- What's next Get started with CCAI Platform Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- This integration enables agents to access the Contact Center AI Platform (CCAI Platform) adapters directly from Kustomer.
+- After the Contact Center AI Platform app is configured, your team can go to Widgets on the navigation bar and select the appropriate voice or chat widget to login and access their Contact Center AI Platform adapters in Kustomer.
+- Enter the Kustomer subdomain and access token in developer settings To add a Kustomer subdomain and access token in developer settings, follow these steps: In the CCAI Platform portal, click Settings > Developer Settings .
+- Specifying a domain The format for specifying a domain for a Contact Center AI Platform instance can be any valid domain name, and it can include a wildcard ( ) to match an arbitrary number of subdomains.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 132
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- Source ID: `site-docs-reference`
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- If agents have customized security or firewalls setup with IP allow-listing (as opposed to deny-listing), configuration of the router and possibly your firewall is needed to allow Contact Center AI Platform (CCAI Platform) IP addresses.
-- About the CCAI Platform SDKs CCAI Platform SDKs let you provide voice and chat support to your customers on your website or inside your app on iOS and Android.
-- Configure your operation management settings Go through items such as the following: Timeout on Contact Center AI Platform (CCAI Platform) .
-- Instant web calls: Provide visitors with an estimated wait time and automatically initiate an outbound call to a site visitor when their place in the support queue is reached Scheduled calls: Allow site visitors to schedule a time to talk with your support team Queue deflection: Automatically route end users to a message or page on your site Chat support: Provide live chat support directly from your website Proactive triggers : Display a contact bubble for web calls and chats automatically based on visitor behavior.
+- CCAI Platform: Provides organizations with modern, embeddable APIs that are optimized for the smartphone era.
+- What's next Get started with CCAI Platform Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Contact Center AI Platform (CCAI Platform) is an AI-driven Contact Center as a Service platform that is built natively on Google Cloud and uses the other Gemini Enterprise for Customer Experience products at its core.
+- CCAI Platform is a unified contact center platform that accelerates the organization's ability to leverage and deploy Gemini Enterprise for CX without relying on multiple technology providers.
 

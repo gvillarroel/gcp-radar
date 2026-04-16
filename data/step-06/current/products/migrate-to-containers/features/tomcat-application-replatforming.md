@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:45.642Z"
+generated_at: "2026-04-14T15:21:10.848Z"
 product_name: "Migrate to Containers"
 product_slug: "migrate-to-containers"
 feature_name: "Tomcat application replatforming"
 feature_slug: "tomcat-application-replatforming"
 latest_feature_date: "2021-12-08"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+  - "https://docs.cloud.google.com/migrate/containers/docs/getting-started"
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
 keywords:
   - "tomcat"
   - "application"
@@ -17,14 +19,14 @@ keywords:
   - "supports"
   - "discovering"
   - "applications"
-  - "on"
   - "vms"
+  - "them"
 ---
 
 # Tomcat application replatforming
 
 Product: Migrate to Containers
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ Supports discovering Tomcat applications on VMs and replatforming them into cont
 
 Supports discovering Tomcat applications on VMs and replatforming them into containers using Apache Tomcat community images.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan)
+- [https://docs.cloud.google.com/migrate/containers/docs/getting-started](https://docs.cloud.google.com/migrate/containers/docs/getting-started)
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Customize migration plan for Tomcat servers \_|\_ Migrate to Containers\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 138
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Edit the user and group directly in your migration plan: tomcatServers : - name : latest . . . images : - name : tomcat-latest . . . userName : USERNAME groupName : GROUP NAME Replace the following: USERNAME : the username that you want to use GROUP NAME : the group name that you want to use Configure SSL When you create a new Tomcat migration, a discovery process scans the server against the different applications that are discovered.
+- To run a functional containerized Tomcat application, choose one of the following configuration changes to the reverse proxy configuration: Disable proxy configuration: If the migrated application no longer runs behind a reverse proxy, you can disable proxy configuration by removing proxyName and proxyPort from the connector configuration.
+- Verify Tomcat clustering configuration Tomcat clustering is used to replicate session information across all Tomcat nodes, which lets you to call any of the backend application servers and not lose client session information.
+- Configure Ingress to replace the reverse proxy: If no custom or sophisticated logic has been implemented for your reverse proxy, you can configure an Ingress resource to expose your migrated Tomcat application.
+
+### Migrate to Containers overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/getting-started](https://docs.cloud.google.com/migrate/containers/docs/getting-started)
+- Source ID: `site-docs-reference`
+- Final score: 103
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Migrate to Containers supports modernization of IBM WebSphere, JBoss, Apache, Tomcat, WordPress, Windows IIS applications, as well as containerisation of Linux-based applications.
+- It provides a guided replatforming journey, technical fit assessment, and automated artifact generation, which let you run existing applications on GKE.
+- You can migrate applications from supported source platforms to the following: Google Kubernetes Engine (GKE) and Autopilot clusters Cloud Run About Migrate to Containers integration with Cloud Code The Migrate to Containers integration with the Cloud Code gives you the ability to migrate applications from VMs to containers running on GKE, directly in Visual Studio, using a Linux machine.
+- Migrate to Containers overview Use Migrate to Containers to modernize traditional applications away from virtual machine (VM) instances and into native containers that run on Google Kubernetes Engine (GKE) or Cloud Run platform.
+
+### "Customize migration plan for Windows IIS services \_|\_ Migrate to Containers\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 93
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The next sections discuss this structure, explain what each part is, and how to modify it. globalSettings : globalIis : enablegmsa : string apppools : - enable32bitapponwin64 : bool identitytype : string managedruntimeversion : string name : string connectionStrings : add : - connectionstring : string name : string providername : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string image : extraFeatures : - string target : baseVersion : string requirements : - string warnings : - string msvcRuntimes : - string pathEnvVarAdditionalEntries : - string images : - name : string probes : enabled : bool livenessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] readinessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] useractions : files : - source : string target : string registry : currentcontrolset : - path : string software : - path : string workloads : sites : site : - applications : - applicationpool : string path : string virtualdirectories : - path : string physicalpath : string bindings : - port : int protocol : string sslflags : int connectionstrings : - connectionstring : string name : string providername : string name : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string serverautostart : bool version : string The globalSettings section The globalSettings section describes basic requirements for pods running IIS sites from this VM.
+- To run additional services in the migrated container, add entries to the windowsServices section, and copy the necessary binaries in the useractions section . version: v1 globalSettings: target: … globalIIS: … images: - name: migrated-image-zgwb2 workloads: sites: site: - applications: ... bindings: - port: 80 protocol: http name: Default Web Site … windowsServices: - MyService useractions: files: - source: C:\Program Files\MyService target: C:\Program Files\MyService registry: currentcontrolset: - key: services\MyService The useractions section The useractions section specifies additional files and registry keys that you might want to migrate.
+- The following is an example migration plan containing identitytype : migrationPlan : applications : iis : applicationhost : apppools : - name : DefaultAppPool Allowed values include: ApplicationPoolIdentity (default), NetworkService, LocalSystem, LocalService identitytype="NetworkService" - managedruntimeversion : v4.0 name : .NET v4.5 Classic - managedruntimeversion : v4.0 name : .NET v4.5 When you execute the migration plan to generate the container artifacts, Migrate to Containers automatically adds the necessary Dockerfile directives according to the identitytype field setting.
+- You can modify the list of runtimes in the migration plan by adding or removing members of msvcRuntimes : The complete list of possible values are: (The 2015 runtime also includes support for 2017, 2019, and 2022) msvcRuntimes : - MSVC2012 x64 - MSVC2013 x64 - MSVC2015 x64 - MSVC2012 x86 - MSVC2013 x86 - MSVC2015 x86 The pathEnvVarAdditionalEntries section Windows IIS applications might have non-default PATH environment variable entries, which are automatically detected on the source VM and included in the migration plan.
 

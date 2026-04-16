@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.136Z"
+generated_at: "2026-04-13T14:23:05.013Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "KCC workload GOMEMLIMIT"
@@ -9,18 +9,14 @@ latest_feature_date: "2026-01-23"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references"
-  - "https://docs.cloud.google.com/config-connector/docs/overview"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
 keywords:
-  - "kcc"
-  - "workload"
-  - "gomemlimit"
-  - "config"
-  - "connector"
-  - "set"
-  - "for"
   - "workloads"
+  - "improve"
+  - "gomemlimit"
+  - "workload"
 ---
 
 # KCC workload GOMEMLIMIT
@@ -42,45 +38,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### ContainerAttachedCluster | Config Connector | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 120
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster)
+- Source ID: `feature-recovery-http`
+- Final score: 66
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To prepare the cluster, follow the steps to deploy an install-agent into the target cluster: Get the manifest yaml file for the install-agent: gcloud container attached clusters generate-install-manifest my-cluster --location=GOOGLE_CLOUD_REGION --platform-version=PLATFORM_VERSION --output-file=manifest.yaml Example command: gcloud container attached clusters generate-install-manifest kcc-attached-cluster --location=us-west1 --platform-version=1.25.0-gke.5 --output-file=manifest.yaml Check out the target cluster and get the kubeconfig context: Amazon Elastic Kubernetes Service cluster: aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER Azure Kubernetes Service cluster: az aks get-credentials -n $CLUSTER -g $AZURE_RESOURCE_GROUP export KUBECONFIG_CONTEXT=$(kubectl config current-context) Apply the manifest.yaml file to the target cluster: (Optional if you used the previous command to switch context) kubectl use-context $KUBECONFIG_CONTEXT kubectl apply -f manifest.yaml You should see the following logs: namespace/gke-install created serviceaccount/gke-install-agent created clusterrolebinding.rbac.authorization.k8s.io/multicloud-install-agent-admin created deployment.apps/gke-multicloud-agent created Switch back to the Google Kubernetes Engine(GKE) cluster with Config Connector installed: Run kubectl config get-contexts to see all configured contexts.
+- Sample YAML(s) Container Attached Cluster Basic # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : containerattached.cnrm.cloud.google.com/v1beta1 kind : ContainerAttachedCluster metadata : name : containerattachedcluster-sample-basic spec : # Replace ${ATTACHED_CLUSTER_NAME?} with the name of the underlying attached cluster resourceID : ${ATTACHED_CLUSTER_NAME?} location : us-west1 projectRef : # Replace ${PROJECT_ID?} with your Google Cloud project id external : ${PROJECT_ID?} description : "Test attached cluster basic sample" # Replace ${DISTRIBUTION?} with the Kubernetes distribution of the underlying attached cluster # Supported values: "eks", "aks". distribution : ${DISTRIBUTION?} oidcConfig : # Replace ${ISSUER_URL?} with the OIDC issuer URL of the underlying attached cluster issuerUrl : ${ISSUER_URL?} # Replace ${ATTACHED_CLUSTER_PLATFORM_VERSION?} with the platform version of the underlying attached cluster platformVersion : ${ATTACHED_CLUSTER_PLATFORM_VERSION?} fleet : projectRef : name : containerattachedcluster-dep-basic --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : containerattachedcluster-dep-basic annotations : cnrm.cloud.google.com/deletion-policy : abandon spec : # Replace ${PROJECT_ID?} with your Google Cloud project id resourceID : ${PROJECT_ID?} organizationRef : # Replace ${ORG_ID?} with your Google Cloud ord id your project associates to external : "${ORG_ID?}" # Replace ${PROJECT_ID?} with your Google Cloud project id name : ${PROJECT_ID?} Container Attached Cluster Full # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : containerattached.cnrm.cloud.google.com/v1beta1 kind : ContainerAttachedCluster metadata : name : containerattachedcluster-sample-full spec : # Replace ${ATTACHED_CLUSTER_NAME?} with the name of the underlying attached cluster resourceID : ${ATTACHED_CLUSTER_NAME?} location : us-west1 projectRef : # Replace ${PROJECT_ID?} with your Google Cloud project id external : ${PROJECT_ID?} description : "Test attached cluster full sample" # Replace ${DISTRIBUTION?} with the Kubernetes distribution of the underlying attached cluster # Supported values: "eks", "aks". distribution : ${DISTRIBUTION?} annotations : label-one : "value-one" authorization : admin_users : [ "user1@example.com" , "user2@example.com" ] oidcConfig : # Replace ${ISSUER_URL?} with the OIDC issuer URL of the underlying attached cluster issuerUrl : ${ISSUER_URL?} # Replace ${ATTACHED_CLUSTER_PLATFORM_VERSION?} with the platform version of the underlying attached cluster platformVersion : ${ATTACHED_CLUSTER_PLATFORM_VERSION?} fleet : projectRef : name : containerattachedcluster-dep-full loggingConfig : componentConfig : enableComponents : [ "SYSTEM_COMPONENTS" , "WORKLOADS" ] monitoringConfig : managedPrometheusConfig : enabled : true --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : containerattachedcluster-dep-full annotations : cnrm.cloud.google.com/deletion-policy : abandon spec : # Replace ${PROJECT_ID?} with your Google Cloud project id resourceID : ${PROJECT_ID?} organizationRef : # Replace ${ORG_ID?} with your Google Cloud ord id your project associates to external : "${ORG_ID?}" # Replace ${PROJECT_ID?} with your Google Cloud project id name : ${PROJECT_ID?} Container Attached Cluster Ignore Errors # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : containerattached.cnrm.cloud.google.com/v1beta1 kind : ContainerAttachedCluster metadata : name : containerattachedcluster-sample-ignore-errors spec : # Replace ${ATTACHED_CLUSTER_NAME?} with the name of the underlying attached cluster resourceID : ${ATTACHED_CLUSTER_NAME?} location : us-west1 projectRef : # Replace ${PROJECT_ID?} with your Google Cloud project id external : ${PROJECT_ID?} description : "Test attached cluster ignore errors sample" # Replace ${DISTRIBUTION?} with the Kubernetes distribution of the underlying attached cluster # Supported values: "eks", "aks". distribution : ${DISTRIBUTION?} oidcConfig : # Replace ${ISSUER_URL?} with the OIDC issuer URL of the underlying attached cluster issuerUrl : ${ISSUER_URL?} # Replace ${ATTACHED_CLUSTER_PLATFORM_VERSION?} with the platform version of the underlying attached cluster platformVersion : ${ATTACHED_CLUSTER_PLATFORM_VERSION?} fleet : projectRef : name : containerattachedcluster-dep-ignore-errors deletionPolicy : "DELETE_IGNORE_ERRORS" --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : containerattachedcluster-dep-ignore-errors annotations : cnrm.cloud.google.com/deletion-policy : abandon spec : # Replace ${PROJECT_ID?} with your Google Cloud project id resourceID : ${PROJECT_ID?} organizationRef : # Replace ${ORG_ID?} with your Google Cloud ord id your project associates to external : "${ORG_ID?}" # Replace ${PROJECT_ID?} with your Google Cloud project id name : ${PROJECT_ID?} Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- This field indicates how GCP services validate KSA tokens in order to allow system workloads (such as GKE Connect and telemetry agents) to authenticate back to GCP.
+- Possible values: ["SYSTEM_COMPONENTS", "WORKLOADS"]. loggingConfig.componentConfig.enableComponents[] Optional string monitoringConfig Optional object Optional.
+
+### ContainerCluster \_|\_ Config Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster)
+- Source ID: `site-docs-reference`
+- Final score: 59
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : container.cnrm.cloud.google.com/v1beta1 kind : ContainerCluster metadata : labels : availability : dev target-audience : development name : containercluster-sample-routesbased spec : description : A routes-based cluster confined to one zone configured for development. location : us-central1-a initialNodeCount : 1 networkingMode : ROUTES clusterIpv4Cidr : 10.96.0.0/14 masterAuthorizedNetworksConfig : cidrBlocks : - displayName : Trusted external network cidrBlock : 10.2.0.0/16 addonsConfig : gcePersistentDiskCsiDriverConfig : enabled : true kalmConfig : enabled : true horizontalPodAutoscaling : disabled : true httpLoadBalancing : disabled : false loggingConfig : enableComponents : - "SYSTEM COMPONENTS" - "WORKLOADS" monitoringConfig : enableComponents : - "SYSTEM COMPONENTS" workloadIdentityConfig : Replace ${PROJECT ID?} with your project ID. workloadPool : "${PROJECT ID?}.svc.id.goog" Vpc Native Container Cluster Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+- Valid values include SYSTEM COMPONENTS, APISERVER, SCHEDULER, CONTROLLER MANAGER, STORAGE, HPA, POD, DAEMONSET, DEPLOYMENT, STATEFULSET and WORKLOADS. monitoringConfig.enableComponents[] Optional string monitoringConfig.managedPrometheus Optional object Configuration for Google Cloud Managed Services for Prometheus. monitoringConfig.managedPrometheus.enabled Required boolean Whether or not the managed collection is enabled. monitoringService Optional string The monitoring service that the cluster should write metrics to.
+- By default, no private IPv6 access to or from Google Services (all access will be via IPv4). protectConfig Optional object Enable/Disable Protect API features for the cluster. protectConfig.workloadConfig Optional object WorkloadConfig defines which actions are enabled for a cluster's workload configurations. protectConfig.workloadConfig.auditMode Required string Sets which mode of auditing should be used for the cluster's workloads.
+- The workload metadata configuration for this node. nodeConfig.workloadMetadataConfig.mode Optional string Mode is the configuration for how to expose metadata to workloads running on the node. nodeConfig.workloadMetadataConfig.nodeMetadata Optional string DEPRECATED.
 
-### Creating resource references | Config Connector | Google Cloud Documentation
+### ContainerNodePool \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- Source ID: `site-docs-root`
-- Final score: 102
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool)
+- Source ID: `site-docs-root-2`
+- Final score: 51
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Creating resource references Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references You can find out what format the ... documentation.
-- Config Connector allows resources ...
-- You can also go to an individual resource&#x27;s reference page (for example, PubSubTopic) and look at the value listed in the &quot;IAM External Reference Format&quot; row of the resource&#x27;s summary table.
-- The IAMPolicy, IAMPartialPolicy and IAMPolicyMember pages list the accepted format for all supported resources.
-
-### Config Connector overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 96
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Config Connector overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/overview Config Connector provides a collection of Kubernetes Custom Resource Definitions (CRDs) and controllers.
-- The Config Connector CRDs allow Kubernetes to create and manage Google Cloud resources when you configure and apply Objects to your cluster.
+- Whether the nodes are created as spot VM instances. nodeConfig.tags Optional list (string) The list of instance tags applied to all nodes. nodeConfig.tags[] Optional string nodeConfig.taint Optional list (object) List of Kubernetes taints to be applied to each node. nodeConfig.taint[] Optional object nodeConfig.taint[].effect Required string Effect for taint. nodeConfig.taint[].key Required string Key for taint. nodeConfig.taint[].value Required string Value for taint. nodeConfig.workloadMetadataConfig Optional object The workload metadata configuration for this node. nodeConfig.workloadMetadataConfig.mode Optional string Mode is the configuration for how to expose metadata to workloads running on the node. nodeConfig.workloadMetadataConfig.nodeMetadata Optional string DEPRECATED.
+- This is useful for running workloads on sole tenant nodes. nodeConfig.nodeGroupRef.external Optional string Allowed value: The name field of a ComputeNodeGroup resource. nodeConfig.nodeGroupRef.name Optional string Name of the referent.
+- NodeMetadata is the configuration for how to expose metadata to the workloads running on the node. nodeCount Optional integer The number of nodes per instance group.
+- ContainerNodePool Property Value Google Cloud Service Name Kubernetes Engine Google Cloud Service Documentation /kubernetes-engine/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters.nodePools Google Cloud REST Resource Documentation /kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools Config Connector Resource Short Names gcpcontainernodepool gcpcontainernodepools containernodepool Config Connector Service Name container.googleapis.com Config Connector Resource Fully Qualified Name containernodepools.container.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id Spec Schema autoscaling : locationPolicy : string maxNodeCount : integer minNodeCount : integer totalMaxNodeCount : integer totalMinNodeCount : integer clusterRef : external : string name : string namespace : string initialNodeCount : integer location : string management : autoRepair : boolean autoUpgrade : boolean maxPodsPerNode : integer namePrefix : string networkConfig : additionalNodeNetworkConfigs : - networkRef : external : string name : string namespace : string subnetworkRef : external : string name : string namespace : string additionalPodNetworkConfigs : - maxPodsPerNode : integer secondaryPodRange : string subnetworkRef : external : string name : string namespace : string createPodRange : boolean enablePrivateNodes : boolean podCidrOverprovisionConfig : disabled : boolean podIpv4CidrBlock : string podRange : string nodeConfig : advancedMachineFeatures : threadsPerCore : integer bootDiskKMSCryptoKeyRef : external : string name : string namespace : string confidentialNodes : enabled : boolean diskSizeGb : integer diskType : string ephemeralStorageConfig : localSsdCount : integer ephemeralStorageLocalSsdConfig : localSsdCount : integer fastSocket : enabled : boolean gcfsConfig : enabled : boolean guestAccelerator : - count : integer gpuDriverInstallationConfig : gpuDriverVersion : string gpuPartitionSize : string gpuSharingConfig : gpuSharingStrategy : string maxSharedClientsPerGpu : integer type : string gvnic : enabled : boolean hostMaintenancePolicy : maintenanceInterval : string imageType : string kubeletConfig : cpuCfsQuota : boolean cpuCfsQuotaPeriod : string cpuManagerPolicy : string podPidsLimit : integer labels : string : string linuxNodeConfig : cgroupMode : string sysctls : string : string localNvmeSsdBlockConfig : localSsdCount : integer localSsdCount : integer loggingVariant : string machineType : string metadata : string : string minCpuPlatform : string nodeGroupRef : external : string name : string namespace : string oauthScopes : - string preemptible : boolean reservationAffinity : consumeReservationType : string key : string values : - string resourceLabels : string : string sandboxConfig : sandboxType : string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean soleTenantConfig : nodeAffinity : - key : string operator : string values : - string spot : boolean tags : - string taint : - effect : string key : string value : string workloadMetadataConfig : mode : string nodeMetadata : string nodeCount : integer nodeLocations : - string placementPolicy : policyNameRef : external : string name : string namespace : string tpuTopology : string type : string resourceID : string upgradeSettings : blueGreenSettings : nodePoolSoakDuration : string standardRolloutPolicy : batchNodeCount : integer batchPercentage : float batchSoakDuration : string maxSurge : integer maxUnavailable : integer strategy : string version : string Fields autoscaling Optional object Configuration required by cluster autoscaler to adjust the size of the node pool to the current cluster usage.
 

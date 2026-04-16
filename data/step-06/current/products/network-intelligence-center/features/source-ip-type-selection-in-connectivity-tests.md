@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:48.429Z"
+generated_at: "2026-04-12T12:18:03.476Z"
 product_name: "Network Intelligence Center"
 product_slug: "network-intelligence-center"
 feature_name: "Source IP type selection in Connectivity Tests"
@@ -9,9 +9,10 @@ latest_feature_date: "2026-02-25"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk"
 keywords:
   - "source"
   - "ip"
@@ -38,50 +39,67 @@ Connectivity Tests lets you choose a specific source IP type when creating a tes
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview](https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk)
 
 ## Supporting Pages
 
-### Method: projects.locations.global.connectivityTests.create | Network Intelligence Center | Google Cloud Documentation
+### "Connectivity Tests overview \_|\_ Network Intelligence Center - Connectivity\
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create)
-- Source ID: `site-docs-reference`
-- Final score: 134
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Method: projects.locations.global.connectivityTests.create Network Intelligence Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create Documentation · Networking · Network Intelligence Center · Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it!
-- After you create a test, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes.
-- Creates a new Connectivity Test.
-
-### Method: projects.locations.global.connectivityTests.list | Network Intelligence Center | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list)
-- Source ID: `site-docs-reference`
-- Final score: 134
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Method: projects.locations.global.connectivityTests.list Network Intelligence Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list Documentation · Networking · Network Intelligence Center · Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · JSON representation · Authorization scopes · Try it!
-- Lists all Connectivity Tests owned by a project.
-
-### Method: projects.locations.global.connectivityTests.rerun | Network Intelligence Center | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun)
-- Source ID: `site-docs-reference`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview)
+- Source ID: `site-docs-root`
+- Final score: 264
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Method: projects.locations.global.connectivityTests.rerun Network Intelligence Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun Documentation · Networking · Network Intelligence Center · Reference · Send feedback · HTTP request · Path parameters · Request body · Response body · Authorization scopes · Try it!
-- Rerun an existing ConnectivityTest.
-- After the user triggers the rerun, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes.
+- Source endpoints Connectivity Tests configuration analysis supports the following source endpoints: Compute Engine instance Cloud Run revision Cloud Run functions (1st gen) App Engine standard environment Cloud SQL instance GKE control plane GKE Pod Internet IP address IP address from an on-premises network IP address of a Compute Engine instance IP address of a Cloud SQL instance IP address of a GKE control plane IP address of a GKE Pod Unassigned IP address in a Virtual Private Cloud network Destination endpoints Connectivity Tests configuration analysis supports the following destination endpoints: Compute Engine instance Cloud SQL instance GKE control plane GKE Pod External and internal Application Load Balancer External and internal Proxy Network Load Balancer External and internal Passthrough Network Load Balancer Private Service Connect endpoint Memorystore for Redis Cluster Memorystore for Redis instance Internet IP address IP address from an on-premises network IP address of a forwarding rule IP address of a Compute Engine instance IP address of a Cloud SQL instance IP address of a GKE control plane IP address of a GKE Pod IP address of a Memorystore for Redis Cluster IP address of a Memorystore for Redis instance Google Cloud networking features You can test connectivity between resources that use the following features (both IPv4 and IPv6 are supported whenever applicable): VPC networks VPC Network Peering Shared VPC Private Google Access Cloud Load Balancing Alias IP ranges Privately used public IPv4 addresses Compute Engine instances with multiple network interfaces VPC routing VPC firewall rules Regional network firewall policies Hierarchical firewall policies and global network firewall policies Resource Manager tags for firewalls , including when attached to Compute Engine instances with multiple network interfaces Policy-based routes Private Service Connect Instances with IPv6 addresses , including instances with multiple network interfaces VPC spokes and hybrid spokes for NCC Public NAT and Private NAT Cloud VPN Cloud Interconnect Cloud Router , including dynamic routes that use BGP and static routes Considerations for Cloud Load Balancing For Cloud Load Balancing, Connectivity Tests configuration analysis supports the following features: Testing connectivity to the load balancer IP addresses Verifying connectivity of Cloud Load Balancing health checks to backends Internal TCP/UDP load balancers can be used as next hops For Cloud Load Balancing features that are unsupported, see the Unsupported configurations section .
+- Google Cloud networking features Live data plane analysis supports the following features: VPC networks VPC Network Peering Shared VPC VPC spokes and hybrid spokes in NCC Alias IP ranges External IP addresses Internal IP addresses , including privately used public IPv4 addresses Compute Engine instances with multiple network interfaces VPC routing Public NAT and Private NAT , except for NAT64 VPC firewall rules Hierarchical firewall policies , global network firewall policies , and regional network firewall policies Secure tags for firewalls , including when attached to Compute Engine instances with multiple network interfaces Policy-based routes Instances with IPv6 addresses , including instances with multiple network interfaces Unsupported configurations Live data plane analysis doesn't support and isn't executed for the following network configurations: Non-Google Cloud resources as source endpoints: Internet IP addresses Inbound traffic to Google Cloud through Cloud Interconnect , Cloud VPN , and NCC hybrid spokes Unassigned IP addresses in a VPC network as source endpoints Source and destination endpoints are the same Compute Engine instance Non-running Compute Engine instances GKE Pods Google API and services External and internal Application Load Balancer External and internal Proxy Network Load Balancer External passthrough Network Load Balancer Cloud VPN NAT64 Considerations and constraints Evaluate the following considerations when deciding whether to use Connectivity Tests.
+- How Connectivity Tests analyzes the live data plane The live data plane analysis feature tests connectivity by sending multiple probe packets from the source endpoint to the destination.
+- Connectivity Tests can help you troubleshoot the following network connectivity issues: Unintended inconsistent configurations Obsolete configurations caused by network configuration changes or migrations Configuration errors for a variety of network services and functions When testing Google-managed services, Connectivity Tests can also help you determine whether there is an issue in your VPC network or in the Google-owned VPC network used for the service resources.
+
+### "Add Monitoring Points \_|\_ Network Intelligence Center - Cloud Network\
+
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points)
+- Source ID: `site-iam-reference`
+- Final score: 197
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Move the installation bundle to the target host. gcloud Use this method if your target host has Google Cloud CLI installed. gcloud alpha network-management network-monitoring-providers \ monitoring-points download-install-script \ --network-monitoring-provider= PROVIDER NAME --location=global \ --monitoring-point-type= MP TYPE \ --hostname= HOST NAME \ --output-file=compose.
+- Get image and configuration You can download a zip file locally with the Monitoring Point images and configuration files or generate a command to download the installation bundle on the machine you're installing the Monitoring Point on.
+- DNS 2 (optional): A backup name server to ensure connectivity if the primary fails (for example, 1.1.1.1) Domain name : The default DNS search domain for the Monitoring Point.
+- You need these credentials if you need to sign in to the Monitoring Point's Web Administration interface to troubleshoot connectivity issues.
+
+### "Flow Analyzer overview \_|\_ Network Intelligence Center - Flow Analyzer\
+
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview](https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview)
+- Source ID: `site-docs-root`
+- Final score: 195
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Flow Analyzer lets you perform opinionated network traffic analysis with 5-tuple granularity (source IP, destination IP, source port, destination port, and protocol).
+- What's next Metrics and alignment period Analyze traffic flows Enable Observability Analytics Configure a central bucket Run Connectivity Tests from Flow Analyzer Monitor your traffic flows Troubleshoot data issues in Flow Analyzer Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- You can select filters for the following: Source and Destination (if Traffic aggregation is set to Source - Destination ) Client and Server (if Traffic aggregation is set to Client - Server ) Flow parameters In each Filter list, you can add multiple filter expressions.
+- For example, if a flow includes generic details about 1,000 GiB traffic from Google Cloud zone X to zone Y, you can drill down using another field such as the source IP address.
+
+### "Using the gcloud CLI for Connectivity Tests \_|\_ Network Intelligence Center\
+
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk)
+- Source ID: `site-docs-reference`
+- Final score: 186
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Command Task gcloud network-management connectivity-tests list Lists Connectivity Tests for a project gcloud network-management connectivity-tests create Creates and runs a Connectivity Test gcloud network-management connectivity-tests rerun Reruns a Connectivity Test gcloud network-management connectivity-tests describe Lists test results for a running or completed Connectivity Test gcloud network-management connectivity-tests update Updates options for an existing Connectivity Test gcloud network-management connectivity-tests delete Deletes a Connectivity Test For command-line examples, see the following pages: Running Connectivity Tests Updating or deleting Connectivity Tests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Networking Network Intelligence Center Connectivity Tests Reference Send feedback Using the gcloud CLI for Connectivity Tests Stay organized with collections Save and categorize content based on your preferences. gcloud is a unified command-line tool that is part of the Google Cloud CLI .
+- When you run gcloud commands for Connectivity Tests, you perform operations on the ConnectivityTest resource that is part of the Network Management API.
+- You can use gcloud to run the following commands for Connectivity Tests.
 

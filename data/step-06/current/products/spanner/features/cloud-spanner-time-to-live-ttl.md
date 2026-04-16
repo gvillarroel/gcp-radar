@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.024Z"
+generated_at: "2026-04-13T22:42:27.313Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Cloud Spanner Time to Live (TTL)"
@@ -9,18 +9,16 @@ latest_feature_date: "2021-11-04"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient"
+  - "https://docs.cloud.google.com/spanner/docs/change-streams"
+  - "https://docs.cloud.google.com/spanner/docs/backup"
+  - "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
 keywords:
-  - "spanner"
-  - "time"
-  - "to"
-  - "live"
-  - "ttl"
+  - "automatically"
   - "introduces"
+  - "live"
   - "generally"
   - "available"
+  - "time"
 ---
 
 # Cloud Spanner Time to Live (TTL)
@@ -38,43 +36,52 @@ Introduces generally available TTL support in Spanner to automatically remove da
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
+- [https://docs.cloud.google.com/spanner/docs/change-streams](https://docs.cloud.google.com/spanner/docs/change-streams)
+- [https://docs.cloud.google.com/spanner/docs/backup](https://docs.cloud.google.com/spanner/docs/backup)
+- [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
 
 ## Supporting Pages
 
-### Module vector_store (0.9.0) | Python client libraries | Google Cloud Documentation
+### Backups overview \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- Source ID: `site-python-reference`
-- Final score: 116
+- URL: [https://docs.cloud.google.com/spanner/docs/backup](https://docs.cloud.google.com/spanner/docs/backup)
+- Source ID: `site-docs-root`
+- Final score: 102
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Module vector store (0.9.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain google spanner.vector store SpannerVectorStore(instance id: str, database id: str, table name: str, embedding service: langchain core.embeddings.embeddings.Embeddings, id column: str = &#x27;langchain id&#x27;, content column: str = &#x27;content&#x27;, embedding column: typing.Optional[typing.Union[str, langchain google spanner.vector store.TableColumn]] = None, client: typing.Optional[google.cloud.spanner v1.client.Client] = None, metadata columns: typing.Optional[typing.List[str]] = None, ignore metadata columns: typing.Optional[typing.List[str]] = None, metadata json column: typing.Optional[str] = None, vector index name: typing.Optional[str] = None, query parameters: langchain google spanner.vector store.QueryParameters = &lt;langchain google spanner.vector store.QueryParameters object&gt;)
+- Backups are highly available, encrypted, and can be retained for up to a year from the time they are created.
+- This size represents the billable size of the backup. freeableSizeBytes : shows the number of bytes that are released if you delete the backup. oldestVersionTime : shows the versionTime of the oldest full backup in the chain, even if that backup has expired.
+- A backup's storage can be smaller than the database's storage because the backup contains only one version of the data, whereas the live database can contain multiple versions of data due to ongoing operations.
+- Performance when copying a backup The time it takes to copy a backup depends on factors such as the size of the source backup and the destination region chosen for the copied backup.
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### Change streams overview \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 90
+- URL: [https://docs.cloud.google.com/spanner/docs/change-streams](https://docs.cloud.google.com/spanner/docs/change-streams)
+- Source ID: `site-docs-root`
+- Final score: 99
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- These changes can come from: DML statements Mutations Cascading deletes on interleaved child tables Deletes resulting from time to live rules Change streams can watch data changes only in user-created columns and tables.
+- Exclude time-to-live based deletes In Spanner, time-to-live (TTL) lets you set policies to periodically delete data from Spanner tables.
+- You can filter one or more of these table modifications from your change stream's scope using the following available filter options: exclude insert : exclude all INSERT table modifications exclude update : exclude all UPDATE table modifications exclude delete : exclude all DELETE table modifications The default value for these filters is false .
+- After you configure the connector with details about a particular change stream, it automatically outputs new data change records into a single, unbounded PCollection data set, ready for further processing by subsequent transforms in the Dataflow pipeline.
 
-### Class SpannerClient (3.62.0) | Python client libraries | Google Cloud Documentation
+### "Best practices for using Spanner as a gaming database \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
-- Source ID: `site-python-reference`
-- Final score: 90
+- URL: [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
+- Source ID: `site-docs-root`
+- Final score: 94
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerClient (3.62.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- Evaluate Spanner needs for production When you move from development to testing, and then into production, it's important that you reevaluate your Spanner needs to insure your game can handle live player traffic.
+- In the following diagram, adding an IndexPartition column to the schema after the launch resolves the hotspot issue, and players are evenly distributed across the available Spanner splits.
+- All queries against the old schema are returned (although they might return less quickly than usual), and queries against the new schema are returned as they become available.
+- Schema changes are common with the release of new game features in live service games, and isolation of tenants at a database level can simplify schema updates.
 

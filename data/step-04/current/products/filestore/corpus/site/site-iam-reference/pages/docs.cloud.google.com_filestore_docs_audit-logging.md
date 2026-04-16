@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/filestore/docs/audit-logging
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/filestore/docs/create-instance-console
+entrypoint: https://docs.cloud.google.com/filestore/docs/access-control
 source_metadata:
   url: https://docs.cloud.google.com/filestore/docs/audit-logging
   title: "Filestore API audit logging \_|\_ Google Cloud Documentation"

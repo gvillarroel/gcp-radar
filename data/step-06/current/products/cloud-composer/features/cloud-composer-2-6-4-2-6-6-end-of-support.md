@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:47.825Z"
+generated_at: "2026-04-12T12:11:19.029Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer 2.6.4-2.6.6 end of support"
 feature_slug: "cloud-composer-2-6-4-2-6-6-end-of-support"
 latest_feature_date: "2025-03-26"
 deprecation_date: "2025-03-26"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
   - "https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/configure-secret-manager"
 keywords:
   - "composer"
   - "end"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer 2.6.4-2.6.6 end of support
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Support has ended for Cloud Composer versions 2.6.4, 2.6.5, and 2.6.6; deprecate
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - [https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service](https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service)
+- [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- [https://docs.cloud.google.com/composer/docs/composer-1/configure-secret-manager](https://docs.cloud.google.com/composer/docs/composer-1/configure-secret-manager)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 212
+- Final score: 263
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,13 +63,26 @@ Evidence snippets:
 - Last patch of the previous Cloud Composer 2 minor version: composer-2.10.2-airflow- Cloud Composer 2 versions with an extended upgrade timeline: composer-2.10.2-airflow- , composer-2.10.1-ariflow- , composer-2.9.7-airflow- , and other versions with an extended upgrade timeline.
 - Versions with disabled upgrades For some versions of Cloud Composer images, it is not possible to upgrade an environment to a later version: composer-1.7.7-airflow-1.10.2 composer-1.7.7-airflow-1.10.1 composer-1.7.7-airflow-1.9.0 If you use a version with disabled upgrades, we recommend to create a new environment side-by-side, then migrate all your DAGs to the new environment.
 
+### Enable and disable the Cloud Composer service \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service](https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service)
+- Source ID: `site-iam-reference`
+- Final score: 255
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- What's next Create environments Access control Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Upcoming deprecation of services that aren't required by Cloud Composer 3 We're planning to phase out the APIs that aren't required by Cloud Composer 3: Starting February 27, 2026 , the following APIs will become fully detachable .
+- Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Enable and disable the Cloud Composer service Stay organized with collections Save and categorize content based on your preferences.
+
 ### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - Source ID: `site-iam-reference`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 255
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
@@ -75,17 +90,17 @@ Evidence snippets:
 - Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.softwareConfig.pypiPackages.EXAMPLE PACKAGE, // config.softwareConfig.pypiPackages.ANOTHER PACKAGE { "config" : { "softwareConfig" : { "pypiPackages" : { "EXAMPLE PACKAGE" : "" , "ANOTHER PACKAGE" : ">=1.10.3" } } } } Terraform The pypi packages block in the software config block specifies packages. resource "google composer environment" "example" { name = " ENVIRONMENT NAME " region = " LOCATION " config { software config { pypi packages = { PACKAGE NAME = " EXTRAS AND VERSION " } } } } Replace: ENVIRONMENT NAME with the name of the environment.
 - To install from a package repository that has a public address: Create a pip.conf file and include the following information in the file, if applicable: URL of the repository (in the index-url parameter) Access credentials for the repository Non-default pip installation options Example: [global] index-url=https://example.com/ (Optional) In some cases, you might want to fetch packages from multiple repositories, such as when the public repository contains some specific packages that you want to install, and you want to install all other packages from PyPI: Configure an Artifact Registry virtual repository .
 
-### Enable and disable the Cloud Composer service \_|\_ Google Cloud Documentation
+### "Configure Secret Manager for your environment \_|\_ Cloud Composer \_|\_\
 
-- URL: [https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service](https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service)
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-secret-manager](https://docs.cloud.google.com/composer/docs/composer-1/configure-secret-manager)
 - Source ID: `site-iam-reference`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 249
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
-- What's next Create environments Access control Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Upcoming deprecation of services that aren't required by Cloud Composer 3 We're planning to phase out the APIs that aren't required by Cloud Composer 3: Starting February 27, 2026 , the following APIs will become fully detachable .
-- Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Enable and disable the Cloud Composer service Stay organized with collections Save and categorize content based on your preferences.
+- Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Configure Secret Manager for your environment Stay organized with collections Save and categorize content based on your preferences.
+- It is possible to get the URI string representation of a connection like this: exampleConnectionUri = BaseHook . get connection ( 'exampleConnection' ) . get uri () What's next Override Airflow configuration options Access the Airflow REST API Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Note: If you want to use different values for [variables prefix] , [connection prefix] or [sep] , use the optional settings as described further in the Enable and configure Secret Manager backend section.
 

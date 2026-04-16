@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.214Z"
+generated_at: "2026-04-14T09:35:01.943Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Hotfix management on backup/recovery appliances"
 feature_slug: "hotfix-management-on-backup-recovery-appliances"
 latest_feature_date: "2023-07-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance"
   - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/onboarding-wizard"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
 keywords:
+  - "managing"
+  - "gained"
   - "hotfix"
   - "appliances"
   - "management"
   - "recovery"
-  - "on"
-  - "backup"
-  - "and"
-  - "dr"
 ---
 
 # Hotfix management on backup/recovery appliances
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +36,55 @@ Backup and DR Service gained support for managing hotfixes on backup/recovery ap
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance)
 - [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/onboarding-wizard](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/onboarding-wizard)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan)
 
 ## Supporting Pages
 
-### "Monitor jobs in the appliance management console \_|\_ Backup and DR \_\
+### "Update backup/recovery appliances \_|\_ Backup and DR \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
-- Source ID: `site-docs-root`
-- Final score: 262
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance)
+- Source ID: `site-docs-reference`
+- Final score: 146
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- From the Monitor tab, you can view and manage jobs (cancel active jobs or change the job priority of a queued job) from backup/recovery appliances managed by the appliance management console.
-- Run an on-demand backup job from the appliance management console To run an on-demand capture of a managed application from the Manage Backup Plan page: Click the App Manager tab and select the Applications option from the drop-down list.
-- Home Documentation Storage Backup and DR Guides Send feedback Monitor jobs in the appliance management console Stay organized with collections Save and categorize content based on your preferences.
-- To manually initiate database logs replication to the remote backup/recovery appliance: Click the App Manager tab and select the Applications option from the drop-down list.
+- Navigate to the Manage > Appliances page and check the appliance management console and backup/recovery appliance connection status in the Connectivity Status column.
+- For example, if N (11.0.17) is the latest version available, and a backup/recovery appliance is on unsupported version N-2 (11.0.15), then auto patch upgrades only move the appliances to N-1 (11.0.16), and not to the latest version (11.0.17).
+- Home Documentation Storage Backup and DR Guides Send feedback Update backup/recovery appliances Stay organized with collections Save and categorize content based on your preferences.
+- You cannot schedule updates for backup/recovery appliances that protect agent-based workloads such as file systems and databases.
 
 ### "Set up and plan a backup/recovery appliance deployment \_|\_ Backup and\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan)
-- Source ID: `site-docs-root`
-- Final score: 256
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan)
+- Source ID: `site-docs-reference`
+- Final score: 121
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Each Backup and DR deployment includes a single appliance management console managing any number of backup/recovery appliances.
+- Supported regions The following section lists the appliance management console and backup/recovery appliances supported regions.
+- Appliance management console : The management console serves as the management plane for your backup/recovery appliances.
 - These backups require a Backup and DR management console and one or more backup/recovery appliances.
-- Components of the backup/recovery appliance architecture The Backup and DR Service architecture is delivered through the following components: Google Cloud console : The Google Cloud console includes the Backup and DR product for central management of your Persistent Disk vaulted backups, backup plans for Compute Engine instances, and enhanced backup for Cloud SQL in those products.
-- The flow for this setup involves creating a management server, deploying appliances, and the using the Backup and DR management console to configure backup schedules and to define what is backed up and where.
 
-### "Discover applications on your hosts \_|\_ Backup and DR \_|\_ Google Cloud\
+### "Set up and plan a backup/recovery appliance deployment \_|\_ Backup and\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/onboarding-wizard](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/onboarding-wizard)
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan)
 - Source ID: `site-docs-root`
-- Final score: 242
-- Re-rank relevance: N/A
+- Final score: 121
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Use these instructions to open the Add Application wizard: From the Backup and DR Service appliance management console, click App Manager and select Applications from the drop-down menu.
-- Once you discover one or more applications, VMs, or cloud instances, you can protect them all at once by applying a backup template and profile or you can add them to the appliance management console as unmanaged or ignored.
-- Home Documentation Storage Backup and DR Guides Send feedback Discover applications on your hosts Stay organized with collections Save and categorize content based on your preferences.
-- To manage your application, the appliance management console must discover the applications, VMs, and Cloud instances managed through its appliances.
+- Each Backup and DR deployment includes a single appliance management console managing any number of backup/recovery appliances.
+- Supported regions The following section lists the appliance management console and backup/recovery appliances supported regions.
+- Appliance management console : The management console serves as the management plane for your backup/recovery appliances.
+- These backups require a Backup and DR management console and one or more backup/recovery appliances.
 

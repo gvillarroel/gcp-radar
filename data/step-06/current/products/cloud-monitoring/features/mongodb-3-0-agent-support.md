@@ -1,21 +1,20 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.163Z"
+generated_at: "2026-04-15T00:01:14.068Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "MongoDB 3.0 Agent Support"
 feature_slug: "mongodb-3-0-agent-support"
 latest_feature_date: "2016-10-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview"
+  - "https://docs.cloud.google.com/monitoring/agent/ops-agent"
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/configuration"
-  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation"
 keywords:
   - "mongodb"
   - "agent"
-  - "the"
   - "monitoring"
   - "supports"
 ---
@@ -23,7 +22,7 @@ keywords:
 # MongoDB 3.0 Agent Support
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,13 +34,13 @@ The Monitoring agent supports MongoDB 3.0.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview)
+- [https://docs.cloud.google.com/monitoring/agent/ops-agent](https://docs.cloud.google.com/monitoring/agent/ops-agent)
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/configuration](https://docs.cloud.google.com/monitoring/agent/ops-agent/configuration)
-- [https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation](https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation)
 
 ## Supporting Pages
 
@@ -49,7 +48,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview)
 - Source ID: `site-iam-reference`
-- Final score: 167
+- Final score: 96
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -58,11 +57,24 @@ Evidence snippets:
 - The ops-agent-policy Terraform module Support for the legacy Monitoring agent and Logging agent Beta agent policies can manage the legacy Monitoring agent and Logging agent as well as the Ops Agent.
 - Monitoring agent maps to agent type metrics . ‡ The Monitoring agent is not supported on rhel-7-9-sap-ha , rhel-8-2-sap-ha , or rhel-8-4-sap-ha .
 
+### Ops Agent overview \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent](https://docs.cloud.google.com/monitoring/agent/ops-agent)
+- Source ID: `site-iam-reference`
+- Final score: 95
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Rocky Linux 8 Rocky Linux 9 Rocky Linux 10 RHEL 8: rhel-8, rhel-8-6-sap-ha, rhel-8-8-sap-ha, rhel-8-10-sap-ha RHEL 9: rhel-9 RHEL 10: rhel-10 CentOS Stream 10 Debian 11 (Bullseye) Debian 12 (Bookworm) Debian 13 (Trixie) Deep Learning VM Images based on Debian 11 (Bullseye) Ubuntu 22.04 LTS (Jammy Jellyfish): ubuntu-2204-lts, ubuntu-minimal-2204-lts Ubuntu 24.04 LTS (Noble Numbat): ubuntu-2404-lts-amd64, ubuntu-minimal-2404-lts-amd64 Ubuntu 25.10 (Questing Quokka): ubuntu-2510-amd64, ubuntu-minimal-2510-amd64 SLES 12: sles-12, sles-12-sp5-sap SLES 15: sles-15, sles-15-sp3-sap, sles-15-sp4-sap, sles-15-sp5-sap, sles-15-sp6-sap Support for Compute Engine Arm VMs The Ops Agent supports Compute Engine C4A and Tau T2A Arm VM instances.
+- The agent supports the following Windows operating systems: Windows Server: windows-2016, windows-2019, windows-2022, windows-2025 Windows Server Core: windows-2016-core, windows-2019-core, windows-20h2-core, windows-2022-core, windows-2025-core Agent access requirements Installing the agent requires access to the following DNS names: Google Cloud package repository: packages.cloud.google.com Google downloads subdomain: dl.google.com Running the agent requires access to the following DNS names: OAuth2 token server: oauth2.googleapis.com Earlier versions of the agent may require access to www.googleapis.com (full URL: https://www.googleapis.com/oauth2/v3/token ).
+- Combining the collection of logs, metrics, and traces into a single process, the Ops Agent uses Fluent Bit for logs, which supports high-throughput logging, and the OpenTelemetry Collector for metrics and traces.
+- Linux operating systems The agent supports the following Linux operating systems: Note: To use Cloud Logging on VMs with Container-Optimized OS, follow Using Cloud Logging with Container-Optimized OS instead.
+
 ### Configure the Ops Agent \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/configuration](https://docs.cloud.google.com/monitoring/agent/ops-agent/configuration)
 - Source ID: `site-iam-reference`
-- Final score: 158
+- Final score: 84
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -70,17 +82,4 @@ Evidence snippets:
 - Home Documentation Observability Cloud Monitoring Guides Send feedback Configure the Ops Agent Stay organized with collections Save and categorize content based on your preferences.
 - This configuration does not stop the agent's logging subcomponent, because the agent must be able to collect logs for the monitoring subcomponent.
 - You can't configure the Ops Agent to export logs or metrics to services other than Cloud Logging and Cloud Monitoring.
-
-### "Install the Ops Agent during VM creation \_|\_ Cloud Monitoring \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation](https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation)
-- Source ID: `site-iam-reference`
-- Final score: 151
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The Ops Agent OS policies then cover the following VMs based on the Ops Agent OS policy assignment IDs: OS Policy Assignment ID Covers VMs In: Covered VMs goog-ops-agent-v2-x86-template- 1-0-0 -us-central1-a us-central1-a instance-1 , instance-2 goog-ops-agent-v2-x86-template- 1-0-0 -us-east1-b us-east1-b instance-3 By default, instance-4 isn't covered because you didn't select Install Ops Agent for Monitoring and Logging , so it doesn't have the goog-ops-agent-policy:v2-x86-template- 1-0-0 label.
-- Before you click Create , select the Install Ops Agent for Monitoring and Logging checkbox: Note: When you select the Install Ops Agent for Monitoring and Logging checkbox during VM creation, the examples on the tabs in the Equivalent code flyout are updated to include the steps for creating the Ops Agent OS policy.
-- This label identifies the policy, template, and version: Label key, the identifier for the policy: goog-ops-agent-policy Label value, the policy template and version: v2-x86-template- 1-0-0 When you create a VM in the Google Cloud console, you can select the Install Ops Agent for Monitoring and Logging checkbox.
-- Home Documentation Observability Cloud Monitoring Guides Send feedback Install the Ops Agent during VM creation Stay organized with collections Save and categorize content based on your preferences.
 

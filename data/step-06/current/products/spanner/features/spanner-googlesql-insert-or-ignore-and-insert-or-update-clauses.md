@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.919Z"
+generated_at: "2026-04-13T22:42:27.246Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner GoogleSQL INSERT OR IGNORE and INSERT OR UPDATE clauses"
@@ -9,18 +9,16 @@ latest_feature_date: "2024-01-23"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures"
-  - "https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+  - "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+  - "https://docs.cloud.google.com/spanner/docs/commit-timestamp"
 keywords:
-  - "spanner"
-  - "googlesql"
-  - "insert"
-  - "or"
-  - "ignore"
-  - "and"
-  - "update"
   - "clauses"
+  - "ignore"
+  - "insert"
+  - "update"
+  - "googlesql"
+  - "supports"
 ---
 
 # Spanner GoogleSQL INSERT OR IGNORE and INSERT OR UPDATE clauses
@@ -38,45 +36,52 @@ Spanner now supports the GoogleSQL INSERT OR IGNORE and INSERT OR UPDATE clauses
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures](https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures)
-- [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
+- [https://docs.cloud.google.com/spanner/docs/create-query-database-console](https://docs.cloud.google.com/spanner/docs/create-query-database-console)
+- [https://docs.cloud.google.com/spanner/docs/commit-timestamp](https://docs.cloud.google.com/spanner/docs/commit-timestamp)
 
 ## Supporting Pages
 
-### Stored system procedures for GoogleSQL | Spanner | Google Cloud Documentation
+### "JDBC session management commands (GoogleSQL) \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures](https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures)
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
 - Source ID: `site-docs-reference`
-- Final score: 148
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Stored system procedures for GoogleSQL Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures Documentation · Databases · Spanner · Reference · Send feedback · This section describes stored system procedures for Spanner.
-- A stored system procedure contains SQL code that you can reuse.
-
-### Module vector_store (0.9.0) | Python client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- Source ID: `site-python-reference`
-- Final score: 120
+- Final score: 118
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Module vector store (0.9.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain google spanner.vector store SpannerVectorStore(instance id: str, database id: str, table name: str, embedding service: langchain core.embeddings.embeddings.Embeddings, id column: str = &#x27;langchain id&#x27;, content column: str = &#x27;content&#x27;, embedding column: typing.Optional[typing.Union[str, langchain google spanner.vector store.TableColumn]] = None, client: typing.Optional[google.cloud.spanner v1.client.Client] = None, metadata columns: typing.Optional[typing.List[str]] = None, ignore metadata columns: typing.Optional[typing.List[str]] = None, metadata json column: typing.Optional[str] = None, vector index name: typing.Optional[str] = None, query parameters: langchain google spanner.vector store.QueryParameters = &lt;langchain google spanner.vector store.QueryParameters object&gt;)
+- Example: Savepoint support (Click to expand) The following example shows how to enable and disable savepoints support in the Spanner JDBC driver. try ( Connection connection = DriverManager . getConnection ( String . format ( "jdbc:cloudspanner:/projects/%s/instances/%s/databases/%s" , "my-project" , "my-instance" , "my-database" ))) { // Savepoints can only be used when AutoCommit=false. connection . setAutoCommit ( false ); // Disables setting a savepoint. connection . createStatement (). execute ( "SET SAVEPOINT SUPPORT='DISABLED'" ); // The following statement fails because savepoints have been disabled. connection . setSavepoint ( "my savepoint1" ); // Enables setting a savepoint and releasing a savepoint. // Rolling back to a savepoint is disabled. connection . createStatement (). execute ( "SET SAVEPOINT SUPPORT='FAIL AFTER ROLLBACK'" ); Savepoint mySavepoint2 = connection . setSavepoint ( "my savepoint2" ); connection . createStatement (). execute ( "insert into my table (id, value) values (1, 'One')" ); connection . releaseSavepoint ( mySavepoint2 ); connection . commit (); // Enables setting, releasing and rolling back to a savepoint. connection . createStatement (). execute ( "SET SAVEPOINT SUPPORT='ENABLED'" ); Savepoint mySavepoint3 = connection . setSavepoint ( "my savepoint3" ); connection . createStatement (). execute ( "insert into my table (id, value) values (2, 'Two')" ); connection . rollback ( mySavepoint3 ); } What's next Learn how to connect JDBC to a GoogleSQL-dialect database .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- START BATCH DML ; INSERT INTO MYTABLE ( ID , NAME ) VALUES ( 1 , 'ONE' ); INSERT INTO MYTABLE ( ID , NAME ) VALUES ( 2 , 'TWO' ); RUN BATCH ; Example: DML batch (Click to expand) The following example shows how to execute a DML batch with the Spanner JDBC driver. -- Start a DML batch.
+- The Spanner JDBC driver supports three alternatives for executing partitioned queries: SET AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### "Create and query a database in the Google Cloud console \_|\_ Spanner \_\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 88
+- URL: [https://docs.cloud.google.com/spanner/docs/create-query-database-console](https://docs.cloud.google.com/spanner/docs/create-query-database-console)
+- Source ID: `site-docs-reference`
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- The Google Cloud console displays the Singers table's Spanner Studio page with a new query tab that contains the INSERT statement that you edit to insert a row in the Singers table and view the result of that insertion: GoogleSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.
+- UPDATE singers SET birthdate = NULL , firstname = 'Kena' , lastname = '' , singerinfo = NULL WHERE singerid = '3' ; SELECT FROM singers WHERE singerid = '3' ; Edit the UPDATE statement's SET clause to update only the birth date: GoogleSQL -- Change values in the SET clause to update the row where the WHERE condition is true.
+- Edit the template INSERT statement's VALUES clause and SELECT statement's WHERE clause: GoogleSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.
+- Edit the INSERT statement's VALUES clause and the SELECT statement's WHERE clause: GoogleSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.
+
+### "Commit timestamps in GoogleSQL-dialect databases \_|\_ Spanner \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/commit-timestamp](https://docs.cloud.google.com/spanner/docs/commit-timestamp)
+- Source ID: `site-docs-root`
+- Final score: 102
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You could build a changelog that stores the history of changes to a given document using a schema like the following example: CREATE TABLE Documents ( UserId INT64 NOT NULL , DocumentId INT64 NOT NULL , Contents STRING ( MAX ) NOT NULL , ) PRIMARY KEY ( UserId , DocumentId ); CREATE TABLE DocumentHistory ( UserId INT64 NOT NULL , DocumentId INT64 NOT NULL , Ts TIMESTAMP NOT NULL OPTIONS ( allow commit timestamp = true ), Delta STRING ( MAX ), ) PRIMARY KEY ( UserId , DocumentId , Ts ), INTERLEAVE IN PARENT Documents ON DELETE NO ACTION ; To create a changelog, insert a new row in DocumentHistory in the same transaction in which you insert or update a row in Document .
+- CREATE TABLE Performances ( SingerId INT64 NOT NULL , VenueId INT64 NOT NULL , EventDate Date , Revenue INT64 , LastUpdateTime TIMESTAMP NOT NULL OPTIONS ( allow commit timestamp = true ) ) PRIMARY KEY ( SingerId , VenueId , EventDate ), INTERLEAVE IN PARENT Singers ON DELETE CASCADE Adding the option changes the timestamp column as follows: You can use the spanner.commit timestamp() placeholder string (or a constant provided by the client library) for inserts and updates.
+- LastUpdateTime TIMESTAMP NOT NULL OPTIONS ( allow commit timestamp = true ) ... ) PRIMARY KEY (...); If you are performing inserts or updates with DML, use the PENDING COMMIT TIMESTAMP function to write the commit timestamp.
+- If you are performing inserts or updates with mutations, use the placeholder string spanner.commit timestamp() on insertions or updates to your commit timestamp column.
 

@@ -1,23 +1,24 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.348Z"
+generated_at: "2026-04-15T12:48:36.388Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery Data Transfer Service MySQL connector"
 feature_slug: "bigquery-data-transfer-service-mysql-connector"
-latest_feature_date: "2025-12-19"
+latest_feature_date: "2025-01-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+  - "https://docs.cloud.google.com/bigquery/docs/display-video-transfer"
+  - "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer"
+  - "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
 keywords:
-  - "MySQL DTS"
-  - "DTS MySQL"
-  - "Data Transfer Service MySQL"
-  - "MySQL data source"
-  - "MySQL to BigQuery"
-  - "MySQL connector"
-  - "transfer configuration"
+  - "bigquery"
+  - "transfer"
+  - "mysql"
+  - "connector"
+  - "can"
+  - "into"
 ---
 
 # BigQuery Data Transfer Service MySQL connector
@@ -27,32 +28,60 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-BigQuery Data Transfer Service now supports transferring data from MySQL to BigQuery.
+BigQuery Data Transfer Service can transfer data from MySQL into BigQuery.
 
 ## Extended Definition
 
-BigQuery Data Transfer Service supports MySQL as a built-in transfer data source, exposed via the `bq` CLI as `mysql - MySQL data transfer` in `dataSourceIds`. In practice, MySQL is selectable when creating transfer configurations (for example with `bq mk --transfer config`), indicating a supported path for moving data from MySQL into BigQuery through Data Transfer Service.
+BigQuery Data Transfer Service can transfer data from MySQL into BigQuery.
 
 ## Evidence Summary
 
-The page provides the official Data Transfer Service CLI catalog of supported transfer sources and explicitly lists `mysql - MySQL data transfer` as a valid `dataSourceIds` value for transfer configurations.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference](https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference)
+- [https://docs.cloud.google.com/bigquery/docs/display-video-transfer](https://docs.cloud.google.com/bigquery/docs/display-video-transfer)
+- [https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer](https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer)
+- [https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer](https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer)
 
 ## Supporting Pages
 
-### bq command-line tool reference \_|\_ BigQuery \_|\_ Google Cloud Documentation
+### Load Campaign Manager data into BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference](https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference)
-- Source ID: `site-docs-reference`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer](https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer)
+- Source ID: `site-api-reference`
+- Final score: 122
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For example: --filter "labels.department:marketing labels.team:sales" For transfer configurations, use dataSourceIds as the key, and one of the following data sources as the value: amazon s3 - Amazon S3 data transfer azure blob storage - Azure Blob Storage data transfer dcm dt - Campaign Manager data transfer google cloud storage - Cloud Storage data transfer cross region copy - Dataset Copy dfp dt - Google Ad Manager data transfer displayvideo - Display & Video 360 data transfer google ads - Google Ads data transfer merchant center - Google Merchant Center data transfer mysql - MySQL data transfer play - Google Play data transfer scheduled query - Scheduled queries data transfer search ads - Search Ads 360 data transfer youtube channel - YouTube Channel data transfer youtube content owner - YouTube Content Owner data transfer redshift - Amazon Redshift migration on premises - Teradata migration For example: --filter labels.dataSourceIds:dcm dt For transfer runs, use states as the key and one or more of the following transfer states as the value: SUCCEEDED FAILED PENDING RUNNING CANCELLED For example: --filter="states:FAILED" For jobs, use states as the key and one or more of the following job states as the value: RUNNING PENDING DONE For example: bq ls --jobs --filter="states:RUNNING" bq ls --jobs --filter="states:RUNNING,PENDING" --jobs={true false} or -j={true false} To list jobs, set to true .
-- Use one of the following values: amazon s3 - Amazon S3 data transfer azure blob storage - Azure Blob Storage data transfer dcm dt - Campaign Manager data transfer google cloud storage - Cloud Storage data transfer cross region copy - Dataset Copy dfp dt - Google Ad Manager data transfer displayvideo - Display & Video 360 data transfer google ads - Google Ads data transfer merchant center - Google Merchant Center data transfer mysql - MySQL data transfer play - Google Play data transfer scheduled query - Scheduled queries data transfer search ads - Search Ads 360 data transfer youtube channel - YouTube Channel data transfer youtube content owner - YouTube Content Owner data transfer redshift - Amazon Redshift migration on premises - Teradata migration Note: The redshift and on premises values are for data migrations; before you use the bq mk --transfer config command with these values, consult the linked documentation from the preceding list. --display name= DISPLAY NAME Specifies the display name for the transfer configuration. --no auto scheduling={true false} Disables automatic scheduling of data transfer runs for this configuration.
-- For information about using the bq mk command with the BigQuery Data Transfer Service, see the following: Set up an Amazon S3 transfer Set up a Campaign Manager transfer Set up a Cloud Storage transfer Set up a Google Ad Manager transfer Set up a Google Ads transfer Set up a Google Merchant Center transfer (beta) Set up a Google Play transfer Set up a Search Ads 360 transfer (beta) Set up a YouTube Channel transfer Set up a YouTube Content Owner transfer Migrate data from Amazon Redshift Migrate data from Teradata bq mk --transfer run Creates a data transfer run at the specified time or time range using the specified data transfer configuration.
-- For more information, see Move an assignment to a different reservation . --display name= DISPLAY NAME Updates the display name for a transfer configuration. --etag= ETAG Acts as a filter; updates the resource only if the resource has an ETag that matches the string specified in the ETAG argument. --expiration SECONDS To update the expiration for the table, model, table snapshot, or view, include this flag.
+- Data transfer options Support Supported reports The Campaign Manager connector supports the transfer of data from the following reports: Data Transfer v2 (Campaign Manager DTv2) files Data Transfer v2 (Campaign Manager DTv2) match tables For information on how Campaign Manager reports are transformed into BigQuery tables and views, see Campaign Manager report transformations .
+- Load Campaign Manager data into BigQuery You can load data from Campaign Manager to BigQuery using the BigQuery Data Transfer Service for Campaign Manager connector.
+- The automatically triggered backfill runs will either overwrite or incrementally update your BigQuery destination table, depending on whether or not incremental updates are supported in the BigQuery Data Transfer Service connector.
+- Data ingestion from Campaign Manager transfers When you transfer data from Campaign Manager into BigQuery, the data is loaded into BigQuery tables that are partitioned by date.
+
+### Load Display & Video 360 data into BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/display-video-transfer](https://docs.cloud.google.com/bigquery/docs/display-video-transfer)
+- Source ID: `site-api-reference`
+- Final score: 122
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Load Display & Video 360 data into BigQuery You can load data from Display & Video 360 to BigQuery using the BigQuery Data Transfer Service for Display & Video 360 connector.
+- Partner Advertiser LineItem LineItemTargeting Campaign CampaignTargeting InsertionOrder InsertionOrderTargeting AdGroup AdGroupTargeting AdGroupAd Creative For more information about each type of configuration data, see the following links: About Partners Create an advertiser Create a line item Create a campaign Create an insertion order About YouTube & partners line items Manage creatives Data ingestion from Display & Video 360 transfers When you transfer data from Display & Video 360 into BigQuery, the data is loaded into BigQuery tables that are partitioned by date.
+- The automatically triggered backfill runs will either overwrite or incrementally update your BigQuery destination table, depending on whether or not incremental updates are supported in the BigQuery Data Transfer Service connector.
+- Connector overview The BigQuery Data Transfer Service for the Display & Video 360 connector supports the following options for your data transfer.
+
+### Load Facebook Ads data into BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer](https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer)
+- Source ID: `site-api-reference`
+- Final score: 122
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Load Facebook Ads data into BigQuery You can load data from Facebook Ads to BigQuery using the BigQuery Data Transfer Service for Facebook Ads connector.
+- With every transfer run, the Facebook Ads connector transfers all available data from Facebook Ads into BigQuery.
+- Data transfer options Support Supported reports The BigQuery Data Transfer Service for Facebook Ads supports the transfer of the following Facebook Ads reports: AdAccounts AdInsights AdInsightsActions For information about how Facebook Ads reports are transformed into BigQuery tables and views, see Facebook Ads report transformation .
+- The automatically triggered backfill runs will either overwrite or incrementally update your BigQuery destination table, depending on whether or not incremental updates are supported in the BigQuery Data Transfer Service connector.
 

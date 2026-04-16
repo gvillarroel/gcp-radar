@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.955Z"
+generated_at: "2026-04-15T11:56:51.992Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "30 TB storage capacity"
 feature_slug: "30-tb-storage-capacity"
 latest_feature_date: "2019-06-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+  - "https://docs.cloud.google.com/sql/docs/mysql/about-storage-shrink"
+  - "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+  - "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
 keywords:
   - "30"
   - "tb"
@@ -19,14 +19,14 @@ keywords:
   - "capacity"
   - "sql"
   - "increased"
-  - "the"
   - "maximum"
+  - "mysql"
 ---
 
 # 30 TB storage capacity
 
 Product: Cloud SQL for MySQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ Cloud SQL increased the maximum data storage for MySQL instances from 10,230 GB 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances)
+- [https://docs.cloud.google.com/sql/docs/mysql/about-storage-shrink](https://docs.cloud.google.com/sql/docs/mysql/about-storage-shrink)
+- [https://docs.cloud.google.com/sql/docs/mysql/quotas](https://docs.cloud.google.com/sql/docs/mysql/quotas)
+- [https://docs.cloud.google.com/sql/docs/mysql/troubleshooting](https://docs.cloud.google.com/sql/docs/mysql/troubleshooting)
 
 ## Supporting Pages
 
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
+### About storage shrink \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/about-storage-shrink](https://docs.cloud.google.com/sql/docs/mysql/about-storage-shrink)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- MySQL PostgreSQL SQL Server If the storage capacity of a Cloud SQL instance is larger than your application needs, then you can manually reduce, or shrink, your storage capacity to a smaller size.
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback About storage shrink Stay organized with collections Save and categorize content based on your preferences.
+- Requirements for storage capacity The target storage size must be larger than the minimum allowed storage capacity that is determined to be safe for the instance.
+- If you want to shrink the storage capacity of a replica, then you must complete a storage shrink operation on its associated primary instance first.
+
+### Quotas and limits \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/quotas](https://docs.cloud.google.com/sql/docs/mysql/quotas)
 - Source ID: `site-docs-root`
-- Final score: 202
+- Final score: 76
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- June 23, 2021 Feature The following MySQL minor versions have been upgraded: MySQL 5.6.50 is upgraded to 5.6.51 MySQL 5.7.32 is upgraded to 5.7.33 Feature Cloud SQL storage limits are now increased to support up to 64 TB.
-- The maximum data storage is increased from 10,230 GB to 30,720 GB.
-- July 30, 2024 Feature You can now use the gcloud CLI or the Cloud SQL Admin API to switch the storage location of transaction logs used for point-in-time recovery (PITR) on your instance from disk to Cloud Storage.
-- Feature If the storage capacity of a Cloud SQL instance is larger than your application needs, then you can manually reduce, or shrink, your storage capacity to a smaller size.
+- Value Limit Maximum number of saved queries per project (including saved queries for other Google Cloud products) 10,000 Maximum size for each query 1 MiB Cloud SQL storage limits Dedicated core: Up to 64 TB.
+- Note: Creating or increasing storage capacity to 64 TB might increase latency of common operations, such as backups, dependent on your workload.
+- If the number of active tables is significantly larger than both the Cloud SQL table defaults and the open tables recommendation by MySQL, then Cloud SQL recommends configuring the table open cache and table definition cache database flags with your instance's active table count.
+- Configurable limits Instances per project The maximum number of instances you can have in a single project depends on the network architecture of those instances: New SQL network architecture: You can have up to 1000 instances per project.
 
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
+### Troubleshoot \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/troubleshooting](https://docs.cloud.google.com/sql/docs/mysql/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 190
+- Final score: 76
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- June 23, 2021 Cloud SQL for MySQL Feature The following MySQL minor versions have been upgraded: MySQL 5.6.50 is upgraded to 5.6.51 MySQL 5.7.32 is upgraded to 5.7.33 Feature Cloud SQL storage limits are now increased to support up to 64 TB.
-- The maximum data storage is increased from 10,230 GB to 30,720 GB.
-- The maximum data storage is increased from 10,230 GB to 30,720 GB.
-- July 30, 2024 Cloud SQL for MySQL Feature You can now use the gcloud CLI or the Cloud SQL Admin API to switch the storage location of transaction logs used for point-in-time recovery (PITR) on your instance from disk to Cloud Storage.
-
-### REST Resource: instances \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances)
-- Source ID: `site-iam-reference`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- This can be either ASYNCHRONOUS or SYNCHRONOUS . (Deprecated) This property was only applicable to First Generation instances. storageAutoResizeLimit string ( Int64Value format) The maximum size to which storage capacity can be automatically increased.
-- JSON representation { "dumpFilePath" : string , "username" : string , "password" : string , "connectRetryInterval" : integer , "masterHeartbeatPeriod" : string , "caCertificate" : string , "clientCertificate" : string , "clientKey" : string , "sslCipher" : string , "verifyServerCertificate" : boolean , "kind" : string } Fields dumpFilePath string Path to a SQL dump file in Google Cloud Storage from which the replica instance is to be created.
-- RotateServerCertificate Rotates the server certificate version to one previously added with the addServerCertificate method. addServerCa Adds a new trusted Certificate Authority (CA) version for the specified instance. addServerCertificate Add a new trusted server certificate version for the specified instance using Certificate Authority Service (CAS) server CA. clone Creates a Cloud SQL instance as a clone of the source instance. delete Deletes a Cloud SQL instance. demote Demotes an existing standalone instance to be a Cloud SQL read replica for an external database server. demoteMaster Demotes the stand-alone instance to be a Cloud SQL read replica for an external database server. export Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL dump or CSV file. failover Initiates a manual failover of a high availability (HA) primary instance to a standby instance, which becomes the primary instance. get Retrieves a resource containing information about a Cloud SQL instance. import Imports data into a Cloud SQL instance from a SQL dump or CSV file in Cloud Storage. insert Creates a new Cloud SQL instance. list Lists instances under a given project. listServerCas Lists all of the trusted Certificate Authorities (CAs) for the specified instance. patch Partially updates settings of a Cloud SQL instance by merging the request with the current configuration. pointInTimeRestore Point in time restore for an instance managed by Google Cloud Backup and Disaster Recovery. promoteReplica Promotes the read replica instance to be an independent Cloud SQL primary instance. reencrypt Reencrypt CMEK instance with latest key version. resetSslConfig Deletes all client certificates and generates a new server SSL certificate for the instance. restart Restarts a Cloud SQL instance. restoreBackup Restores a backup of a Cloud SQL instance. rotateServerCa Rotates the server certificate to one signed by the Certificate Authority (CA) version previously added with the addServerCA method. startReplica Starts the replication in the read replica instance. stopReplica Stops the replication in the read replica instance. switchover Switches over from the primary instance to the DR replica instance. truncateLog Truncate MySQL general and slow query log tables MySQL only. update Updates settings of a Cloud SQL instance.
-- JSON representation { "kind" : string , "state" : enum ( SqlInstanceState ) , "databaseVersion" : enum ( SqlDatabaseVersion ) , "settings" : { object ( Settings ) } , "etag" : string , "failoverReplica" : { "name" : string , "available" : boolean } , "masterInstanceName" : string , "replicaNames" : [ string ] , "maxDiskSize" : string , "currentDiskSize" : string , "ipAddresses" : [ { object ( IpMapping ) } ] , "serverCaCert" : { object ( SslCert ) } , "instanceType" : enum ( SqlInstanceType ) , "project" : string , "ipv6Address" : string , "serviceAccountEmailAddress" : string , "onPremisesConfiguration" : { object ( OnPremisesConfiguration ) } , "replicaConfiguration" : { object ( ReplicaConfiguration ) } , "backendType" : enum ( SqlBackendType ) , "selfLink" : string , "suspensionReason" : [ enum ( SqlSuspensionReason ) ] , "connectionName" : string , "name" : string , "region" : string , "gceZone" : string , "secondaryGceZone" : string , "diskEncryptionConfiguration" : { object ( DiskEncryptionConfiguration ) } , "diskEncryptionStatus" : { object ( DiskEncryptionStatus ) } , "rootPassword" : string , "scheduledMaintenance" : { object ( SqlScheduledMaintenance ) } , "satisfiesPzs" : boolean , "databaseInstalledVersion" : string , "createTime" : string , "availableMaintenanceVersions" : [ string ] , "maintenanceVersion" : string , "upgradableDatabaseVersions" : [ { object ( AvailableDatabaseVersion ) } ] , "replicationCluster" : { object ( ReplicationCluster ) } , "satisfiesPzi" : boolean , "tags" : { string : string , ... } , "nodes" : [ { object ( PoolNodeConfig ) } ] , "dnsNames" : [ { object ( DnsNameMapping ) } ] , "outOfDiskReport" : { object ( SqlOutOfDiskReport ) } , "sqlNetworkArchitecture" : enum ( SqlNetworkArchitecture ) , "pscServiceAttachmentLink" : string , "dnsName" : string , "primaryDnsName" : string , "writeEndpoint" : string , "geminiConfig" : { object ( GeminiInstanceConfig ) } , "switchTransactionLogsToCloudStorageEnabled" : boolean , "includeReplicasForMajorVersionUpgrade" : boolean , "nodeCount" : integer } Fields kind string This is always sql#instance . state enum ( SqlInstanceState ) The current serving state of the Cloud SQL instance. databaseVersion enum ( SqlDatabaseVersion ) The database engine type and version.
+- MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Orphan tables Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances External primary External replica Flags High availability Import and export Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.
+- Things to try: You can check the storage occupied by binary logs using the following command in the MySQL command line interface: SHOW BINARY LOGS; Temporary tables may also be occupying a significant amount of storage space.
+- You can find out the size of the general logs by connecting to the database and running this query: SELECT ROUND(SUM(LENGTH(argument)/POW(1024,2)),2) from mysql.general log; You want to find out what is using up storage.
+- The maximum storage limit was reached and automatic storage increase isn't enabled.
 

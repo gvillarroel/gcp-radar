@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.890Z"
+generated_at: "2026-04-14T15:34:54.406Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "HTTP and gRPC readiness probes"
 feature_slug: "http-and-grpc-readiness-probes"
 latest_feature_date: "2025-11-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient"
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient"
+  - "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container"
+  - "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
 keywords:
-  - "http"
-  - "and"
-  - "grpc"
+  - "configurable"
   - "readiness"
   - "probes"
-  - "run"
-  - "services"
-  - "configurable"
+  - "http"
+  - "grpc"
 ---
 
 # HTTP and gRPC readiness probes
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,54 @@ Cloud Run services support configurable HTTP and gRPC readiness probes.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient)
+- [https://docs.cloud.google.com/run/docs/reference/rest/v1/Container](https://docs.cloud.google.com/run/docs/reference/rest/v1/Container)
+- [https://docs.cloud.google.com/run/docs/tutorials/configure-service-health](https://docs.cloud.google.com/run/docs/tutorials/configure-service-health)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2)
 
 ## Supporting Pages
 
-### "Class ServicesAsyncClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
+### Container \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/run/docs/reference/rest/v1/Container](https://docs.cloud.google.com/run/docs/reference/rest/v1/Container)
+- Source ID: `site-api-reference`
+- Final score: 115
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON representation EnvVar JSON representation EnvVarSource JSON representation ConfigMapKeySelector JSON representation SecretKeySelector JSON representation ResourceRequirements JSON representation ContainerPort JSON representation EnvFromSource JSON representation ConfigMapEnvSource JSON representation SecretEnvSource JSON representation VolumeMount JSON representation Probe JSON representation ExecAction JSON representation HTTPGetAction JSON representation HTTPHeader JSON representation TCPSocketAction JSON representation GRPCAction JSON representation SecurityContext JSON representation A single application container.
+- JSON representation { "initialDelaySeconds" : integer , "timeoutSeconds" : integer , "periodSeconds" : integer , "successThreshold" : integer , "failureThreshold" : integer , "exec" : { object ( ExecAction ) } , "httpGet" : { object ( HTTPGetAction ) } , "tcpSocket" : { object ( TCPSocketAction ) } , "grpc" : { object ( GRPCAction ) } } Fields initialDelaySeconds integer Number of seconds after the container has started before the probe is initiated.
+- Minimum value is 1. exec object ( ExecAction ) Not supported by Cloud Run. httpGet object ( HTTPGetAction ) HTTPGet specifies the http request to perform. tcpSocket object ( TCPSocketAction ) TCPSocket specifies an action involving a TCP port. grpc object ( GRPCAction ) GRPCAction specifies an action involving a GRPC port.
+- HTTPHeader HTTPHeader describes a custom header to be used in HTTP probes JSON representation { "name" : string , "value" : string } Fields name string Required.
+
+### "Automate cross-regional failover with service health \_|\_ Cloud Run \_\
+
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/configure-service-health](https://docs.cloud.google.com/run/docs/tutorials/configure-service-health)
+- Source ID: `site-docs-root-2`
+- Final score: 106
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You need at least one minimum instance to configure service health with readiness probes: gcloud beta run deploy $SERVICE \ --source = . \ --regions = $REGION A , $REGION B \ --min = 10 \ --readiness-probe httpGet.path = "/are you ready" Respond to any prompts to install required APIs by responding y when prompted.
+- Objectives In this tutorial, you will: Prepare the sample application Deploy Cloud Run services in two regions with readiness probes Set up a global external Application Load Balancer Add your services through the serverless NEG Test failover Before you begin Sign in to your Google Cloud account.
+- To deploy your services from source in two different regions with readiness probes, run the following commands: Deploy your service health-example in us-west1 and europe-west1 from the source directory.
+- Deploy the Cloud Run service in two regions with readiness probes Failovers require at least two services from different regions.
+
+### "Package com.google.cloud.run.v2 (0.88.0) \_|\_ Java client libraries \_\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2)
+- Source ID: `site-java-reference`
+- Final score: 90
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 async def sample list services(): Create a client client = run v2 .
-- ListServicesRequest ( parent="parent value", ) Make the request page result = client. list services (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.run v2.types.ListServicesRequest , dict]] The request object.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = run v2 .
-- ServicesAsyncClient () Initialize request argument(s) request = iam policy pb2.TestIamPermissionsRequest( resource="resource value", permissions=['permissions value1', 'permissions value2'], ) Make the request response = await client. test iam permissions (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.iam.v1.iam policy pb2.TestIamPermissionsRequest , dict]] The request object.
-
-### Cloud Run release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Configure HTTP and gRPC readiness probes for your Cloud Run services (Preview).
-- Feature Cloud Run support for network file systems such as NFS, NDB, 9P, CIFS/Samba, and Ceph , as well as Cloud Filestore and Cloud Storage FUSE , is now at general availability (GA.) November 17, 2022 Feature Logs from Cloud Run services can now be tailed or viewed in a command-line friendly format using gcloud beta run services logs tail and gcloud beta run services logs read October 07, 2022 Feature Cloud Run services can now use the Global External HTTP(S) Load Balancer to map Custom Domains using integrations (Preview).
-- July 20, 2021 Feature Cloud Run is now covered by FedRAMP Moderate June 30, 2021 Feature Cloud Run is now available in the following region: asia-south2 (Delhi, India) June 25, 2021 Feature Cloud Run is now available in the following region: australia-southeast2 (Melbourne) June 22, 2021 Feature Cloud Run support for WebSockets , HTTP/2 , and gRPC streaming are now at general availability (GA).
-- March 01, 2021 Feature Cloud Run is now available in the following regions: us-west2 (Los Angeles) us-west3 (Salt Lake city) us-west4 (Las Vegas) January 20, 2021 Feature Cloud Run now supports WebSockets , HTTP/2 and gRPC streaming .
-
-### "Class ServicesClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient)
-- Source ID: `site-python-reference`
-- Final score: 160
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 def sample list services(): Create a client client = run v2 .
-- ListServicesRequest ( parent="parent value", ) Make the request page result = client. list services (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.run v2.types.ListServicesRequest , dict] The request object.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample test iam permissions(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample get iam policy(): Create a client client = run v2 .
+- Builder HTTPGetAction describes an action based on HTTP Get requests. com. google. cloud. run. v2.HTTP Header HTTPHeader describes a custom header to be used in HTTP probes com. google. cloud. run. v2.HTTP Header.
+- Builder HTTPHeader describes a custom header to be used in HTTP probes com. google. cloud. run. v2.
+- Builder Represents a volume backed by a Cloud Storage bucket using Cloud Storage FUSE. com. google. cloud. run. v2.GRPC Action GRPCAction describes an action involving a GRPC port. com. google. cloud. run. v2.GRPC Action.
+- Builder Request message for obtaining a WorkerPool by its full name. com. google. cloud. run. v2.HTTP Get Action HTTPGetAction describes an action based on HTTP Get requests. com. google. cloud. run. v2.HTTP Get Action.
 

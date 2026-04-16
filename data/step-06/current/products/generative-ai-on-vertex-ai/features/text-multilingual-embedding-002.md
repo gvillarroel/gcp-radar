@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:21.876Z"
+generated_at: "2026-04-12T12:16:18.726Z"
 product_name: "Generative AI on Vertex AI"
 product_slug: "generative-ai-on-vertex-ai"
 feature_name: "text-multilingual-embedding-002"
 feature_slug: "text-multilingual-embedding-002"
 latest_feature_date: "2024-05-14"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings"
+  - "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types"
+  - "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+  - "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
 keywords:
   - "text"
   - "multilingual"
@@ -24,7 +27,7 @@ keywords:
 # text-multilingual-embedding-002
 
 Product: Generative AI on Vertex AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ Text-multilingual-embedding-002 is a stable multilingual text embedding model av
 
 Text-multilingual-embedding-002 is a stable multilingual text embedding model available in GA.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings)
+- [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types)
+- [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings)
+- [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Get text embeddings \_|\_ Generative AI on Vertex AI \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings)
+- Source ID: `site-docs-root`
+- Final score: 274
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Read our Tech Report for more detail. up to 3072 2048 tokens Supported text languages text-embedding-005 Specialized in English and code tasks. up to 768 2048 tokens English text-multilingual-embedding-002 Specialized in multilingual tasks. up to 768 2048 tokens Supported text languages For superior embedding quality, gemini-embedding-001 is our large model designed to provide the highest performance.
+- To get batch predictions for embeddings, see Get batch text embeddings predictions To learn more about multimodal embeddings, see Get multimodal embeddings To tune an embedding, see Tune text embeddings To learn more about the research behind text-embedding-005 and text-multilingual-embedding-002 , see the research paper Gecko: Versatile Text Embeddings Distilled from Large Language Models .
+- Response { "predictions": [ { "embeddings": { "statistics": { "truncated": false, "token count": 6 }, "values": [ ... ] } } ] } Example curl command MODEL ID= "gemini-embedding-001" PROJECT ID= PROJECT ID curl \ - X POST \ - H "Authorization: Bearer $(gcloud auth print-access-token)" \ - H "Content-Type: application/json" \ h tt ps : //us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/publishers/google/models/${MODEL ID}:predict -d \ $' { "instances" : [ { "content" : "What is life?" } ], } ' Supported models The following tables show the available Google and open text embedding models.
+- Google models You can get text embeddings by using the following models: Model name Description Output Dimensions Max sequence length Supported text languages gemini-embedding-001 State-of-the-art performance across English, multilingual and code tasks.
+
+### "Choose an embeddings task type \_|\_ Generative AI on Vertex AI \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types)
+- Source ID: `site-docs-root`
+- Final score: 206
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Supported models Task types are supported by the following models: text-embedding-005 text-multilingual-embedding-002 gemini-embedding-001 Benefits of task types Task types can improve the quality of embeddings generated by an embeddings model.
+- For more information, see the Python API reference documentation . from vertexai.language models import TextEmbeddingInput , TextEmbeddingModel MODEL NAME = "gemini-embedding-001" DIMENSIONALITY = 3072 def embed text ( texts : list [ str ] = [ "Retrieve a function that adds two numbers" ], task : str = "CODE RETRIEVAL QUERY" , model name : str = "gemini-embedding-001" , dimensionality : int None = 3072 , ) - > list [ list [ float ]]: """Embeds texts with a pre-trained, foundational model.""" model = TextEmbeddingModel . from pretrained ( model name ) kwargs = dict ( output dimensionality = dimensionality ) if dimensionality else {} embeddings = [] gemini-embedding-001 takes one input at a time for text in texts : text input = TextEmbeddingInput ( text , task ) embedding = model . get embeddings ([ text input ], kwargs ) print ( embedding ) Example response: [[0.006135190837085247, -0.01462465338408947, 0.004978656303137541, ...]] embeddings . append ( embedding [ 0 ] . values ) return embeddings if name == " main " : Embeds code block with a pre-trained, foundational model.
+- Supported task types Embeddings models that use task types support the following task types: Task type Description CLASSIFICATION Used to generate embeddings that are optimized to classify texts according to preset labels CLUSTERING Used to generate embeddings that are optimized to cluster texts based on their similarities RETRIEVAL DOCUMENT , RETRIEVAL QUERY , QUESTION ANSWERING , and FACT VERIFICATION Used to generate embeddings that are optimized for document search or information retrieval CODE RETRIEVAL QUERY Used to retrieve a code block based on a natural language query, such as sort an array or reverse a linked list .
+- Here is an example: REST PROJECT ID= PROJECT ID curl \ - X POST \ - H "Authorization: Bearer $(gcloud auth print-access-token)" \ - H "Content-Type: application/json" \ h tt ps : //us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/publishers/google/models/text-embedding-005:predict -d \ $' { "instances" : [ { "task type" : "CODE RETRIEVAL QUERY" , "content" : "Function to add two numbers" } ], } ' Python To learn how to install or update the Vertex AI SDK for Python, see Install the Vertex AI SDK for Python .
+
+### "Get multimodal embeddings \_|\_ Generative AI on Vertex AI \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings)
+- Source ID: `site-docs-root`
+- Final score: 199
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information, see the Python API reference documentation . import vertexai from vertexai.vision models import Image , MultiModalEmbeddingModel , Video from vertexai.vision models import VideoSegmentConfig TODO(developer): Update & uncomment line below PROJECT ID = "your-project-id" vertexai . init ( project = PROJECT ID , location = "us-central1" ) model = MultiModalEmbeddingModel . from pretrained ( "multimodalembedding@001" ) image = Image . load from file ( "gs://cloud-samples-data/vertex-ai/llm/prompts/landmark1.png" ) video = Video . load from file ( "gs://cloud-samples-data/vertex-ai-vision/highway vehicles.mp4" ) embeddings = model . get embeddings ( image = image , video = video , video segment config = VideoSegmentConfig ( end offset sec = 1 ), contextual text = "Cars on Highway" , ) print ( f "Image Embedding: { embeddings . image embedding } " ) Video Embeddings are segmented based on the video segment config. print ( "Video Embeddings:" ) for video embedding in embeddings . video embeddings : print ( f "Video Segment: { video embedding . start offset sec } - { video embedding . end offset sec } " ) print ( f "Embedding: { video embedding . embedding } " ) print ( f "Text Embedding: { embeddings . text embedding } " ) Example response: Image Embedding: [-0.0123144267, 0.0727186054, 0.000201397663, ...] Video Embeddings: Video Segment: 0.0 - 1.0 Embedding: [-0.0206376351, 0.0345234685, ...] Text Embedding: [-0.0207006838, -0.00251058186, ...] Go Before trying this sample, follow the Go setup instructions in the Vertex AI quickstart using client libraries .
+- For more information, see the Python API reference documentation . import vertexai from vertexai.vision models import Image , MultiModalEmbeddingModel TODO(developer): Update & uncomment line below PROJECT ID = "your-project-id" vertexai . init ( project = PROJECT ID , location = "us-central1" ) model = MultiModalEmbeddingModel . from pretrained ( "multimodalembedding@001" ) image = Image . load from file ( "gs://cloud-samples-data/vertex-ai/llm/prompts/landmark1.png" ) embeddings = model . get embeddings ( image = image , contextual text = "Colosseum" , dimension = 1408 , ) print ( f "Image Embedding: { embeddings . image embedding } " ) print ( f "Text Embedding: { embeddings . text embedding } " ) Example response: Image Embedding: [-0.0123147098, 0.0727171078, ...] Text Embedding: [0.00230263756, 0.0278981831, ...] Node.js Before trying this sample, follow the Node.js setup instructions in the Vertex AI quickstart using client libraries .
+- The following sample response is shortened for space. { "predictions": [ { "textEmbedding": [ 0.0105433334, -0.00302835181, 0.00656806398, 0.00603460241, [...] 0.00445805816, 0.0139605571, -0.00170318608, -0.00490092579 ], "videoEmbeddings": [ { "startOffsetSec": 0, "endOffsetSec": 7, "embedding": [ -0.00673126569, 0.0248149596, 0.0128901172, 0.0107588246, [...] -0.00180952181, -0.0054573305, 0.0117037306, 0.0169312079 ] } ], "imageEmbedding": [ -0.00728622358, 0.031021487, -0.00206603738, 0.0273937676, [...] -0.00204976718, 0.00321615417, 0.0121978866, 0.0193375275 ] } ], "deployedModelId": " DEPLOYED MODEL ID " } Python To learn how to install or update the Vertex AI SDK for Python, see Install the Vertex AI SDK for Python .
+- The following sample response is shortened for space. { "predictions": [ { "textEmbedding": [ 0.010477379, -0.00399621, 0.00576670747, [...] -0.00823613815, -0.0169572588, -0.00472954148 ], "imageEmbedding": [ 0.00262696808, -0.00198890246, 0.0152047109, -0.0103145819, [...] 0.0324628279, 0.0284924973, 0.011650892, -0.00452344026 ] } ], "deployedModelId": " DEPLOYED MODEL ID " } Python To learn how to install or update the Vertex AI SDK for Python, see Install the Vertex AI SDK for Python .
+
+### "Get batch text embeddings inferences \_|\_ Generative AI on Vertex AI \_\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings)
+- Source ID: `site-docs-root`
+- Final score: 172
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/batchPredictionJobs" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/123456789012/locations/us-central1/batchPredictionJobs/1234567890123456789", "displayName": "BP sample publisher BQ 20230712 134650", "model": "projects/{PROJECT ID}/locations/us-central1/models/textembedding-gecko", "inputConfig": { "instancesFormat": "bigquery", "bigquerySource": { "inputUri": "bq://project name.dataset name.text input" } }, "modelParameters": {}, "outputConfig": { "predictionsFormat": "bigquery", "bigqueryDestination": { "outputUri": "bq://project name.llm dataset.embedding out BP sample publisher BQ 20230712 134650" } }, "state": "JOB STATE PENDING", "createTime": "2023-07-12T20:46:52.148717Z", "updateTime": "2023-07-12T20:46:52.148717Z", "labels": { "owner": "sample owner", "product": "llm" }, "modelVersionId": "1", "modelMonitoringStatus": {} } The response includes a unique identifier for the batch job.
+- Batches . html let job = await client . batches . create ({ model : 'text-embedding-005' , // Source link : https : // storage . cloud . google . com / cloud - samples - data / batch / prompt for batch gemini predict . jsonl src : 'gs://cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl' , config : { dest : outputUri , }, }); console . log ( Job name : $ { job . name } ); console . log ( Job state : $ { job . state } ); // Example response : // Job name : projects /% PROJECT ID %/ locations / us - central1 / batchPredictionJobs / 9876453210000000000 // Job state : JOB STATE PENDING const completedStates = new Set ([ 'JOB STATE SUCCEEDED' , 'JOB STATE FAILED' , 'JOB STATE CANCELLED' , 'JOB STATE PAUSED' , ]); while ( ! completedStates . has ( job . state )) { await new Promise ( resolve = > setTimeout ( resolve , 30000 )); job = await client . batches . get ({ name : job . name }); console . log ( Job state : $ { job . state } ); } // Example response : // Job state : JOB STATE PENDING // Job state : JOB STATE RUNNING // Job state : JOB STATE RUNNING // ... // Job state : JOB STATE SUCCEEDED return job . state ; } Java Learn how to install or update the Java .
+- Client ( http options = HttpOptions ( api version = "v1" )) TODO(developer): Update and un-comment below line output uri = "gs://your-bucket/your-prefix" See the documentation: https://googleapis.github.io/python-genai/genai.html#genai.batches.Batches.create job = client . batches . create ( model = "text-embedding-005" , Source link: https://storage.cloud.google.com/cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl src = "gs://cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl" , config = CreateBatchJobConfig ( dest = output uri ), ) print ( f "Job name: { job . name } " ) print ( f "Job state: { job . state } " ) Example response: Job name: projects/.../locations/.../batchPredictionJobs/9876453210000000000 Job state: JOB STATE PENDING See the documentation: https://googleapis.github.io/python-genai/genai.html#genai.types.BatchJob completed states = { JobState .
+- HTTP method and URL: POST https://us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/batchPredictionJobs Request JSON body: { "name": " BP JOB NAME ", "displayName": " BP JOB NAME ", "model": " publishers/google/models/textembedding-gecko ", "inputConfig": { "instancesFormat":"bigquery", "bigquerySource":{ "inputUri" : " INPUT URI " } }, "outputConfig": { "predictionsFormat":"bigquery", "bigqueryDestination":{ "outputUri": " OUTPUT URI " } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 

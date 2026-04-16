@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:33.382Z"
+generated_at: "2026-04-14T04:42:56.941Z"
 product_name: "Google Kubernetes Engine"
 product_slug: "google-kubernetes-engine"
 feature_name: "Internal TCP/UDP load balancer subsetting"
 feature_slug: "internal-tcp-udp-load-balancer-subsetting"
 latest_feature_date: "2021-03-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
 keywords:
   - "internal"
   - "tcp"
@@ -24,7 +26,7 @@ keywords:
 # Internal TCP/UDP load balancer subsetting
 
 Product: Google Kubernetes Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ Subsetting lets GKE clusters using internal load balancer Services scale beyond 
 
 Subsetting lets GKE clusters using internal load balancer Services scale beyond 250 nodes.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform](https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins](https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Set up an external Application Load Balancer with Ingress \_|\_ GKE networking\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer)
+- Source ID: `site-docs-root`
+- Final score: 131
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Inspect the Ingress resource to find an event with an error message similar to the following: Error during GC: error running load balancer garbage collection routine: googleapi: Error 400: The url map resource 'projects/ project-id /global/urlMaps/k8s2-um-tlw9rhgp-default-my-ingress-9ifnni82' is already being used by 'projects/ project-id /global/targetHttpsProxies/k8s2-um-tlw9rhgp-default-my82-target-proxy', resourceInUseByAnotherResource In the preceding error message, k8s2-um-tlw9rhgp-default-my82-target-proxy is a manually created target https proxy that is still referencing the URL map k8s2-um-tlw9rhgp-default-my-ingress-9ifnni82 which was created and managed by an Ingress controller.
+- Then visit the IP address to see that both applications are reachable on the same load balancer: Visit http://<IP ADDRESS>/ and note that the response contains Version: 1.0.0 (as the request is routed to the web Service) Visit http://<IP ADDRESS>/v2/ and note that the response contains Version: 2.0.0 (as the request is routed to the web2 Service) The only supported wildcard character for the path field of an Ingress is the character.
+- Visiting your application Find out the external IP address of the load balancer serving your application by running: kubectl get ingress basic-ingress Output: NAME HOSTS ADDRESS PORTS AGE basic-ingress 203.0.113.12 80 2m Note: It might take a few minutes for GKE to allocate an external IP address and set up forwarding rules before the load balancer is ready to serve your application.
+- For more information about path limitations and pattern matching, see the URL Maps documentation . (Optional) Monitoring the availability and latency of your service Google Cloud Uptime checks perform blackbox monitoring of applications from the viewpoint of the user, determining latency and availability from multiple external IPs to the IP address of the load balancer.
+
+### "Quickstart: Create a GKE cluster and deploy a workload using Terraform \_\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform](https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform)
+- Source ID: `site-docs-root`
+- Final score: 124
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Review the cluster.tf file: cat cluster.tf The output is similar to the following resource "google compute network" "default" { name = "example-network" auto create subnetworks = false enable ula internal ipv6 = true } resource "google compute subnetwork" "default" { name = "example-subnetwork" ip cidr range = "10.0.0.0/16" region = "us-central1" stack type = "IPV4 IPV6" ipv6 access type = "INTERNAL" # Change to "EXTERNAL" if creating an external loadbalancer network = google compute network.default.id secondary ip range { range name = "services-range" ip cidr range = "192.168.0.0/24" } secondary ip range { range name = "pod-ranges" ip cidr range = "192.168.1.0/24" } } resource "google container cluster" "default" { name = "example-autopilot-cluster" location = "us-central1" enable autopilot = true enable l4 ilb subsetting = true network = google compute network.default.id subnetwork = google compute subnetwork.default.id ip allocation policy { stack type = "IPV4 IPV6" services secondary range name = google compute subnetwork.default.secondary ip range[0].range name cluster secondary range name = google compute subnetwork.default.secondary ip range[1].range name } Set deletion protection to true will ensure that one cannot accidentally delete this instance by use of Terraform. deletion protection = false } This file describes the following resources: google compute network : a VPC network with internal IPv6 enabled. google compute subnetwork : a dual-stack subnetwork . google container cluster : a dual-stack Autopilot mode cluster located in us-central1 .
+- Review the app.tf file: cat app.tf The output is similar to the following: data "google client config" "default" {} provider "kubernetes" { host = "https://${google container cluster.default.endpoint}" token = data.google client config.default.access token cluster ca certificate = base64decode ( google container cluster.default.master auth[0].cluster ca certificate ) ignore annotations = [ "^autopilot\\.gke\\.io\\/. " , "^cloud\\.google\\.com\\/. " ] } resource "kubernetes deployment v1" "default" { metadata { name = "example-hello-app-deployment" } spec { selector { match labels = { app = "hello-app" } } template { metadata { labels = { app = "hello-app" } } spec { container { image = "us-docker.pkg.dev/google-samples/containers/gke/hello-app:2.0" name = "hello-app-container" port { container port = 8080 name = "hello-app-svc" } security context { allow privilege escalation = false privileged = false read only root filesystem = false capabilities { add = [] drop = [ "NET RAW" ] } } liveness probe { http get { path = "/" port = "hello-app-svc" http header { name = "X-Custom-Header" value = "Awesome" } } initial delay seconds = 3 period seconds = 3 } } security context { run as non root = true seccomp profile { type = "RuntimeDefault" } } Toleration is currently required to prevent perpetual diff: https://github.com/hashicorp/terraform-provider-kubernetes/pull/2380 toleration { effect = "NoSchedule" key = "kubernetes.io/arch" operator = "Equal" value = "amd64" } } } } } resource "kubernetes service v1" "default" { metadata { name = "example-hello-app-loadbalancer" annotations = { "networking.gke.io/load-balancer-type" = "Internal" # Remove to create an external loadbalancer } } spec { selector = { app = kubernetes deployment v1.default.spec[0].selector[0].match labels.app } ip family policy = "RequireDualStack" port { port = 80 target port = kubernetes deployment v1.default.spec[0].template[0].spec[0].container[0].port[0].name } type = "LoadBalancer" } depends on = [ time sleep.wait service cleanup ] } Provide time for Service cleanup resource "time sleep" "wait service cleanup" { depends on = [ google container cluster.default ] destroy duration = "180s" } This file describes the following resources: A Deployment with a sample container image.
+- To expose the demo application to the internet: In cluster.tf , change ipv6 access type from INTERNAL to EXTERNAL . ipv6 access type = "EXTERNAL" In app.tf , configure an external load balancer by removing the networking.gke.io/load-balancer-type annotation. annotations = { "networking.gke.io/load-balancer-type" = "Internal" # Remove this line } Create a cluster and deploy an application In Cloud Shell, run this command to verify that Terraform is available: terraform The output should be similar to the following: Usage: terraform [global options] <subcommand> [args] The available commands for execution are listed below.
+- Go to the Services & Ingress page in the Google Cloud console: Go to Services & Ingress Click the example-hello-app-loadbalancer LoadBalancer Service.
+
+### "Security bulletins \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins](https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins)
+- Source ID: `site-docs-reference-2`
+- Final score: 117
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- As mentioned in the Kubernetes announcement , no mitigation is provided for Services of type LoadBalancer because, by default, only highly privileged users and system components are granted the container.services.updateStatus permission which is required to leverage this vulnerability.
+- As mentioned in the Kubernetes announcement , no mitigation is provided for Services of type LoadBalancer because, by default, only highly privileged users and system components are granted the container.services.updateStatus permission which is required to leverage this vulnerability.
+- As mentioned in the Kubernetes announcement , no mitigation is provided for Services of type LoadBalancer because, by default, only highly privileged users and system components are granted the container.services.updateStatus permission which is required to leverage this vulnerability.
+- The Kubernetes project recently discovered a new security vulnerability, CVE-2020-8554 , that might allow an attacker who has obtained permissions to create a Kubernetes Service of type LoadBalancer or ClusterIP to intercept network traffic originating from other Pods in the cluster.
 

@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/standard/apis
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/apis
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/ruby/configuring-your-app-with-app-yaml
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/standard/apis
   title: "APIs & Reference \_|\_ App Engine standard environment \_|\_ Google Cloud\

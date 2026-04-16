@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.112Z"
+generated_at: "2026-04-12T12:11:20.334Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer VPC Native support"
 feature_slug: "cloud-composer-vpc-native-support"
 latest_feature_date: "2019-05-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip"
+  - "https://docs.cloud.google.com/composer/docs/composer-3/composer-overview"
 keywords:
   - "composer"
   - "vpc"
@@ -22,7 +23,7 @@ keywords:
 # Cloud Composer VPC Native support
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,13 +35,14 @@ Cloud Composer introduced VPC Native support.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc](https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc](https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc)
+- [https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip)
+- [https://docs.cloud.google.com/composer/docs/composer-3/composer-overview](https://docs.cloud.google.com/composer/docs/composer-3/composer-overview)
 
 ## Supporting Pages
 
@@ -48,7 +50,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc](https://docs.cloud.google.com/composer/docs/composer-1/configure-shared-vpc)
 - Source ID: `site-iam-reference`
-- Final score: 110
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -57,24 +59,11 @@ Evidence snippets:
 - Service and host projects for Cloud Composer Shared VPC requires that you designate a host project to which networks and subnetworks belong and a service project , which is attached to the host project.
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Configure Shared VPC networking Stay organized with collections Save and categorize content based on your preferences.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 110
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Added new health metrics in Stackdriver to monitor your environment: composer.googleapis.com/environment/healthy and composer.googleapis.com/environment/database health VPC Native support is now in beta.
-- Change Before creating or updating an environment, Cloud Composer checks that required APIs are enabled in a project and that CIDR blocks specified for VPC Native and Private IP are valid.
-- Change New versions of Cloud Composer images: composer-1.16.10-airflow-1.10.15 (default) composer-1.16.10-airflow-1.10.14 composer-1.16.10-airflow-1.10.12 composer-1.17.0-preview.6-airflow-2.0.1 composer-1.17.0-preview.6-airflow-2.0.2 July 08, 2021 Change New versions of Cloud Composer images: composer-1.17.0-preview.5-airflow-2.0.1 composer-1.16.9-airflow-1.10.15 (default) composer-1.16.9-airflow-1.10.14 composer-1.16.9-airflow-1.10.12 Fixed When PyPI modules installation fails with certain error types in VPC SC environments, an additional attempt to perform the environment update operation is made using an in-cluster build.
-- Change Cloud Composer 1.20.3 and 2.1.3 images are available: composer-1.20.3-airflow-1.10.15 (default) composer-1.20.3-airflow-2.2.5 composer-1.20.3-airflow-2.3.4 composer-2.1.3-airflow-2.2.5 composer-2.1.3-airflow-2.3.4 (default) December 20, 2022 Fixed (Available without upgrading) Fixed an issue where upgrading a Private IP environment with VPC peerings to Cloud Composer 2.0.31 and later versions resulted in intermittent issues with database connections.
-
 ### Configure VPC Service Controls \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc](https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc)
 - Source ID: `site-iam-reference`
-- Final score: 105
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -82,4 +71,30 @@ Evidence snippets:
 - Install PyPI packages in VPC Service Controls In the default VPC Service Controls configuration, Cloud Composer only supports installing PyPI packages from private repositories that are reachable from the internal IP address space of the VPC network.
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Configure VPC Service Controls Stay organized with collections Save and categorize content based on your preferences.
 - By configuring your environment with VPC Service Controls, you can keep sensitive data private while taking advantage of the fully-managed workflow orchestration capabilities of Cloud Composer.
+
+### "Configure private IP networking \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip)
+- Source ID: `site-iam-reference`
+- Final score: 131
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To get IP ranges for a subnetwork, go to VPC Networks page and click on the network's name to see details: Go to VPC Networks VPC-native cluster configuration Cloud Composer supports VPC-native GKE clusters in your environment.
+- Because a VPC native cluster is required for Airflow tasks to communicate with other VMs that are reachable through private IPs, you must also enable VPC Native to configure a private IP environment.
+- If your VPC network and its established VPC peers have overlapping IP blocks with the VPC network in the Google-managed tenant project , Cloud Composer cannot create your environment.
+- During environment creation , you can enable VPC Native (using alias IP) and configure networking, such as IP allocation, without enabling private IP .
+
+### Cloud Composer overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-3/composer-overview](https://docs.cloud.google.com/composer/docs/composer-3/composer-overview)
+- Source ID: `site-docs-reference`
+- Final score: 131
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information about networking in Cloud Composer, see pages for individual networking features: Public IP and Private IP environments Connecting an environment to your VPC network Shared VPC environments Configuring VPC Service Controls Other features of Cloud Composer Other Cloud Composer features include: Autoscaling environments Development with local Airflow environments Highly resilient environments Environment snapshots Data lineage integration with Dataplex Universal Catalog Encryption with customer-managed encryption keys (CMEK) Frequently Asked Questions What version of Apache Airflow does Cloud Composer use?
+- Airflow features in Cloud Composer When using Cloud Composer, you can manage and use Airflow features such as: Airflow DAGs : You can add, update, remove, or trigger Airflow DAGs in Google Cloud console or using the native Airflow UI.
+- Cloud Composer helps you create managed Airflow environments quickly and use Airflow-native tools, such as the powerful Airflow web interface and command-line tools, so you can focus on your workflows and not your infrastructure.
+- The cluster also hosts other Cloud Composer components like Composer Agent and Airflow Monitoring, which help manage the Cloud Composer environment, gather logs to store in Cloud Logging, and gather metrics to upload to Cloud Monitoring.
 

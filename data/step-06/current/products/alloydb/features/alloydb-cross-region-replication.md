@@ -1,16 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.648Z"
+generated_at: "2026-04-12T12:07:33.891Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB cross-region replication"
 feature_slug: "alloydb-cross-region-replication"
 latest_feature_date: "2023-06-21"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
-  - "https://docs.cloud.google.com/alloydb/docs/overview"
+  - "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
+  - "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/database-flags"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent"
 keywords:
   - "regional replication setup"
   - "disaster recovery readiness"
@@ -25,7 +27,7 @@ keywords:
 # AlloyDB cross-region replication
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,40 +35,48 @@ AlloyDB cross-region replication reached general availability; AlloyDB Cross-Reg
 
 ## Extended Definition
 
-AlloyDB cross-region replication is an AlloyDB feature that replicates a primary cluster's data and resources to secondary clusters in separate Google Cloud regions for disaster recovery readiness. It reached general availability on June 21, 2023, and includes support for cross-region switchover with zero data loss for DR testing or workload migration scenarios.
+AlloyDB cross-region replication reached general availability; AlloyDB Cross-Region Replication replicates primary cluster data and resources to other regions for disaster recovery readiness.
 
 ## Evidence Summary
 
-The release notes confirm feature availability milestones and GA status for cross-region replication, while the overview page describes it as a disaster-recovery approach using secondary clusters in another region.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+- [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- [https://docs.cloud.google.com/alloydb/docs/reference/database-flags](https://docs.cloud.google.com/alloydb/docs/reference/database-flags)
+- [https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Monitor the health of your clusters and instances \_|\_ AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 38
+- URL: [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- Source ID: `site-docs-reference-2`
+- Final score: 96
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- December 08, 2022 Feature AlloyDB cross-region replication replicates your primary cluster's data and resources.
-- June 21, 2023 Feature AlloyDB cross-region replication is generally available ( GA ).
-- Feature Performing a switchover with zero data loss in cross-region replication setups, to test disaster recovery (DR) or to perform workload migration, is now generally available ( GA ).
-- For more information, see Cross-region replication overview and Work with cross-region replication .
+### "Optimize database performance by comparing performance snapshots \_|\_ AlloyDB\
 
-### AlloyDB overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+- URL: [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- Source ID: `site-docs-reference-2`
+- Final score: 94
+- Re-rank relevance: N/A
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+### "Supported database flags \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/database-flags](https://docs.cloud.google.com/alloydb/docs/reference/database-flags)
 - Source ID: `site-api-reference`
-- Final score: 20
-- Re-rank relevance: N/A
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- As a further method of disaster recovery, you can achieve cross-region replication by creating secondary clusters in separate Google Cloud regions.
-- For more information, see About cross-region replication .
+### Test QueryData \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent)
+- Source ID: `site-docs-root-2`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

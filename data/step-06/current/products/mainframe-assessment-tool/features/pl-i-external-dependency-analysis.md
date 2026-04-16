@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.410Z"
+generated_at: "2026-04-15T12:06:50.453Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "PL/I external dependency analysis"
@@ -9,9 +9,9 @@ latest_feature_date: "2025-11-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes"
 keywords:
   - "pl"
   - "external"
@@ -19,8 +19,8 @@ keywords:
   - "analysis"
   - "detects"
   - "calls"
-  - "to"
   - "ibm"
+  - "mq"
 ---
 
 # PL/I external dependency analysis
@@ -42,43 +42,46 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
 
 ## Supporting Pages
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- Source ID: `site-docs-reference`
+- Final score: 84
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For scheduler configuration assets, such as BMC Control-M, Mainframe Assessment Tool provides AI-generated insights that help you visualize the scheduler workflow, including a listing of scheduled jobs, timelines for daily, weekly, or monthly schedules, and dependency graphs showing job relationships.
+- The assessment results provide you with details such as the lines of code and number of calls found in the application, which help you plan your migration.
+- Discover and analyze source code The Discovery page provides an overview of analysis of the application source code that you uploaded for assessment.
+- The Summary page appears; this page provides an AI-generated summary of the asset, along with the business case, and the user interaction analysis.
+
+### "Create and update assessments \_|\_ Mainframe Assessment Tool \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 67
+- Source ID: `site-docs-reference`
+- Final score: 44
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
+- If the applications contain references to external artifacts such as programs or tables, we recommend that you include these dependencies as well.
+- If you replace files, they are fully reassessed, and any existing analysis for these files might change.
+- After you update the settings, Mainframe Assessment Tool starts the analysis again.
+- After you upload the files, Mainframe Assessment Tool starts the analysis again.
 
-### Mainframe Assessment Tool overview | Google Cloud Documentation
+### Mainframe Assessment Tool overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 55
+- Source ID: `site-docs-reference`
+- Final score: 33
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview Mainframe Assessment Tool helps assess your existing mainframe codebase and plan your migration to Google Cloud.
-- Mainframe Assessment Tool automates assessment, saving you time and resources.
-
-### Mainframe Assessment Tool release notes | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 52
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Mainframe Assessment Tool release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes Mainframe Assessment Tool version 2.8.0 is available with the following new features and improvements: Added an option to export the assessment static analysis data to Neo4j.
-- For more information, see Export assessment data to your Neo4j database.
+- Languages Mainframe Assessment Tool supports the analysis of the following languages: COBOL programs and copybooks JCL jobs, procedures, includes, and card data HLASM programs PL/I programs ( Preview ) RPG/RPGLE programs and include files Easytrieve programs Natural for z/OS ( Preview ) Fortran ( Preview ) Database schemas Mainframe Assessment Tool supports the following database schemas: DB2: through Embedded SQL IMS DB: through EXEC DLI and CBLTDLI calls Transaction monitors Mainframe Assessment Tool supports the following transaction monitors: CICS: through EXEC CICS statements IMS DC: through CBLTDLI calls Scheduler configurations Mainframe Assessment Tool supports the following scheduler configurations: BMC Control-M Mainframe migration journey The following diagram illustrates the overall migration journey of mainframe applications: The migration journey has the following phases: Discover and assess your existing codebase: Mainframe Assessment Tool helps you perform an assessment of the mainframe application footprint, technology stack, and dependencies.
+- The extension integrates mainframe-specific generative AI code analysis capabilities—such as specification, code, and test generation—within an Integrated Development Environment (IDE).
 

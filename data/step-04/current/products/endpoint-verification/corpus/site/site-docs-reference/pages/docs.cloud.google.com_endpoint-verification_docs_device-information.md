@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/endpoint-verification/docs/device-information
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
 source_metadata:
   url: https://docs.cloud.google.com/endpoint-verification/docs/device-information
   title: "Device attributes collected by Endpoint Verification \_|\_ Google Cloud\

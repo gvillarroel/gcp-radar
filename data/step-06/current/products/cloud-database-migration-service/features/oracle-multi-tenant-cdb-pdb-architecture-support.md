@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:10:29.984Z"
+generated_at: "2026-04-12T12:11:22.258Z"
 product_name: "Cloud Database Migration Service"
 product_slug: "cloud-database-migration-service"
 feature_name: "Oracle multi-tenant (CDB/PDB) architecture support"
 feature_slug: "oracle-multi-tenant-cdb-pdb-architecture-support"
 latest_feature_date: "2023-04-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview"
   - "https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview"
-  - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job"
+  - "https://docs.cloud.google.com/database-migration/docs/use-database-migration-service-mcp"
+  - "https://docs.cloud.google.com/database-migration/docs/overview"
 keywords:
   - "oracle"
   - "multi"
@@ -26,7 +27,7 @@ keywords:
 # Oracle multi-tenant (CDB/PDB) architecture support
 
 Product: Cloud Database Migration Service
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Database Migration Service added support for Oracle multi-tenant (CDB/PDB)
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview)
 - [https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview)
-- [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
+- [https://docs.cloud.google.com/database-migration/docs/use-database-migration-service-mcp](https://docs.cloud.google.com/database-migration/docs/use-database-migration-service-mcp)
+- [https://docs.cloud.google.com/database-migration/docs/overview](https://docs.cloud.google.com/database-migration/docs/overview)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview)
 - Source ID: `site-api-reference`
-- Final score: 174
+- Final score: 195
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview)
 - Source ID: `site-api-reference`
-- Final score: 174
+- Final score: 195
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,30 @@ Evidence snippets:
 - Supported source and destination databases Database Migration Service supports the following Oracle databases as migration sources: Amazon RDS for Oracle Self-hosted deployments, including: Oracle Single Instance Database Deployment Oracle Exadata Oracle Active Data Guard Oracle Real Application Clusters (RAC) Full support also depends on your source Oracle version.
 - This page provides an overview of the key Database Migration Service features for heterogeneous Oracle to Cloud SQL for PostgreSQL migrations: Supported source and destination lists all Oracle versions supported by Database Migration Service.
 
-### "MCP Tools Reference: datamigration \_|\_ Database Migration Service \_|\_\
+### "Use the Database Migration Service remote MCP server \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
+- URL: [https://docs.cloud.google.com/database-migration/docs/use-database-migration-service-mcp](https://docs.cloud.google.com/database-migration/docs/use-database-migration-service-mcp)
+- Source ID: `site-docs-root-2`
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to to use the Database Migration Service remote MCP server: Make MCP tool calls: mcp.tools.call Database Migration Service resources: datamigration.migrationjobs.create datamigration.migrationjobs.delete datamigration.migrationjobs.get datamigration.migrationjobs.list datamigration.migrationjobs.resume datamigration.migrationjobs.start datamigration.migrationjobs.stop datamigration.operations.get You might also be able to get these permissions with custom roles or other predefined roles .
+- Required roles To get the permissions that you need to to use the Database Migration Service remote MCP server, ask your administrator to grant you the following IAM roles on your Google Cloud project: Make MCP tool calls: MCP Tool User ( roles/mcp.toolUser ) Database Migration Service resources: Database Migration Service Admin ( roles/datamigration.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- For the Database Migration Service MCP server, enter the following as required: Server name : Database Migration Service MCP server Server URL or Endpoint : datamigration.googleapis.com/mcp Transport : HTTP Authentication details : Depending on how you want to authenticate, you can enter your Google Cloud credentials, your OAuth Client ID and secret, or an agent identity and credentials.
+- Database Migration Service has the following MCP tool OAuth scopes: Scope URI for gcloud CLI Description https://www.googleapis.com/auth/cloud-platform Allows access to all Google Cloud resources, including Database Migration Service. https://www.googleapis.com/auth/cloud-datamigration Allows viewing and managing data in Database Migration Service.
+
+### Database Migration Service overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/overview](https://docs.cloud.google.com/database-migration/docs/overview)
 - Source ID: `site-api-reference`
-- Final score: 142
+- Final score: 160
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- MigrationJob JSON representation { "name" : string , "createTime" : string , "updateTime" : string , "labels" : { string : string , ... } , "displayName" : string , "state" : enum ( State ) , "phase" : enum ( Phase ) , "type" : enum ( Type ) , "dumpPath" : string , "dumpFlags" : { object ( DumpFlags ) } , "source" : string , "destination" : string , "duration" : string , "error" : { object ( Status ) } , "sourceDatabase" : { object ( DatabaseType ) } , "destinationDatabase" : { object ( DatabaseType ) } , "endTime" : string , "conversionWorkspace" : { object ( ConversionWorkspaceInfo ) } , "filter" : string , "cmekKeyName" : string , "performanceConfig" : { object ( PerformanceConfig ) } , "postgresHomogeneousConfig" : { object ( PostgresHomogeneousConfig ) } , "sqlserverHomogeneousMigrationJobConfig" : { object ( SqlServerHomogeneousMigrationJobConfig ) } , "dumpType" : enum ( DumpType ) , "objectsConfig" : { object ( MigrationJobObjectsConfig ) } , "purpose" : enum ( Purpose ) , "originalMigrationName" : string , // Union field connectivity can be only one of the following: "reverseSshConnectivity" : { object ( ReverseSshConnectivity ) } , "vpcPeeringConnectivity" : { object ( VpcPeeringConnectivity ) } , "staticIpConnectivity" : { object ( StaticIpConnectivity ) } // End of list of possible types for union field connectivity . // Union field config can be only one of the following: "oracleToPostgresConfig" : { object ( OracleToPostgresConfig ) } , "sqlserverToPostgresConfig" : { object ( SqlServerToPostgresConfig ) } , "postgresToSqlserverConfig" : { object ( PostgresToSqlServerConfig ) } // End of list of possible types for union field config . // Union field satisfies pzs can be only one of the following: "satisfiesPzs" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: "satisfiesPzi" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}. createTime string ( Timestamp format) Output only.
-- Configuration for migration. config can be only one of the following: oracleToPostgresConfig object ( OracleToPostgresConfig ) Configuration for heterogeneous Oracle to Cloud SQL for PostgreSQL and Oracle to AlloyDB for PostgreSQL migrations. sqlserverToPostgresConfig object ( SqlServerToPostgresConfig ) Configuration for heterogeneous SQL Server to Cloud SQL for PostgreSQL migrations. postgresToSqlserverConfig object ( PostgresToSqlServerConfig ) Configuration for heterogeneous failback migrations from PostgreSQL to SQL Server .
-- SqlServerHomogeneousMigrationJobConfig JSON representation { "backupFilePattern" : string , "databaseBackups" : [ { object ( SqlServerDatabaseBackup ) } ] , "useDiffBackup" : boolean , "promoteWhenReady" : boolean , "dagConfig" : { object ( SqlServerDagConfig ) } } Fields backupFilePattern string Required.
-- Home Documentation Databases Database Migration Service APIs and reference Send feedback MCP Tools Reference: datamigration Stay organized with collections Save and categorize content based on your preferences.
+- Multi-cloud continuous replication Much like the read replicas across regions, if data exists in another cloud provider, a migration job can continuously replicate the database into Google Cloud for multi-cloud read-availability.
+- Heterogeneous migrations Unlike homogeneous migrations, in heterogeneous migrations, such as Oracle to Cloud SQL for PostgreSQL, the database technology of the source and destination are different.
+- The serverless architecture of Database Migration Service takes an initial snapshot of the source database to capture the current state of the data.
+- The following diagram shows the key features of Database Migration Service in the context of Google Cloud architecture: Figure 1.
 

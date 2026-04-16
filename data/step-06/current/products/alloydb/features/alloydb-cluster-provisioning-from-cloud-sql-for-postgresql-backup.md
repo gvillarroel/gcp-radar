@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.594Z"
+generated_at: "2026-04-12T12:07:33.841Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB cluster provisioning from Cloud SQL for PostgreSQL backup"
 feature_slug: "alloydb-cluster-provisioning-from-cloud-sql-for-postgresql-backup"
 latest_feature_date: "2024-11-21"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/ai/scann-index-reference"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-psql"
 keywords:
   - "provision cluster from Cloud SQL backup"
   - "cluster provisioning from backup copy"
@@ -23,7 +26,7 @@ keywords:
 # AlloyDB cluster provisioning from Cloud SQL for PostgreSQL backup
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -31,28 +34,50 @@ AlloyDB clusters can be set up using a copy of an existing Cloud SQL for Postgre
 
 ## Extended Definition
 
-AlloyDB for PostgreSQL supports provisioning a new AlloyDB cluster from a backup of Cloud SQL for PostgreSQL. The AlloyDB release notes state that clusters can be set up using a copy of a Cloud SQL for PostgreSQL backup, including free-trial cluster setup, and later describe migration from Cloud SQL for PostgreSQL to AlloyDB using that backup as GA. This is a backup-based cluster provisioning path from an external source backup into AlloyDB.
+AlloyDB clusters can be set up using a copy of an existing Cloud SQL for PostgreSQL backup.
 
 ## Evidence Summary
 
-The release notes provide direct dated announcements that AlloyDB cluster creation/provisioning from Cloud SQL for PostgreSQL backups was introduced and later available as GA migration support.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- [https://docs.cloud.google.com/alloydb/docs/reference/ai/scann-index-reference](https://docs.cloud.google.com/alloydb/docs/reference/ai/scann-index-reference)
+- [https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann](https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann)
+- [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Monitor the health of your clusters and instances \_|\_ AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- Source ID: `site-docs-reference-2`
+- Final score: 132
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "AlloyDB ScaNN Index reference \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/ai/scann-index-reference](https://docs.cloud.google.com/alloydb/docs/reference/ai/scann-index-reference)
+- Source ID: `site-api-reference`
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Best practices for tuning ScaNN indexes in AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann](https://docs.cloud.google.com/alloydb/docs/ai/best-practices-tuning-scann)
 - Source ID: `site-docs-root`
-- Final score: 26
-- Re-rank relevance: N/A
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- November 10, 2025 Feature AlloyDB now supports PostgreSQL 17 for migrating from Cloud SQL for PostgreSQL to AlloyDB for PostgreSQL using your Cloud SQL for PostgreSQL backup.
-- May 07, 2025 Feature You can migrate from Cloud SQL for PostgreSQL to AlloyDB for PostgreSQL using your Cloud SQL for PostgreSQL backup ( GA ).
-- September 25, 2024 Feature You can now set up AlloyDB free trial clusters using a copy of your Cloud SQL for PostgreSQL backup.
-- November 21, 2024 Feature You can set up AlloyDB clusters using a copy of your Cloud SQL for PostgreSQL backup.
+### "Connect from Compute Engine \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
+- Source ID: `site-docs-root`
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

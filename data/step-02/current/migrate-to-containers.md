@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 97
-Unique features: 101
+Unique features: 99
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -49,11 +49,9 @@ Unique features: 101
 | 2022-05-17 | Migration API v1beta2 | 2022-05-17 | The v1beta2 Migration API is deprecated after the v1 API graduation and remains supported until May 2023; deprecated on 2022-05-17. |
 | 2022-05-17 | Sensitive data upload for Tomcat migrations |  | The Tomcat migration plan can include certificates in the repository when the includeSensitiveData parameter is set to true. |
 | 2022-05-17 | Skaffold build and deploy support for Windows containers |  | Generated Skaffold YAML files help accelerate image build and deployment for Windows migration artifacts on GKE and Anthos clusters. |
-| 2022-05-17 | Tomcat artifact packaging |  | Tomcat migration artifacts are renamed to tomcatServer.tar.gz and exclude the bin and lib directories. |
 | 2022-05-17 | Tomcat server version override |  | Users can manually provide the Tomcat server version in the migration plan when automatic discovery does not find it. |
 | 2022-03-28 | Anthos Bare Metal processing clusters |  | Anthos clusters on Bare Metal can be used as processing clusters to run container migrations on-premises. |
 | 2022-03-28 | IIS site splitting |  | Automatically breaks a discovered IIS VM into one container per site during migration planning. |
-| 2022-03-28 | Migrate for Compute Engine v5 integration |  | Migrate for GKE and Anthos can use the Migrate for Compute Engine v5.x managed service for migrations from VMware, AWS EC2, and Azure VM environments. |
 | 2022-03-28 | Skaffold build and deploy support for containers |  | Generated Skaffold YAML files help accelerate container image builds and deployments to GKE and Anthos clusters for multiple migration flows. |
 | 2022-03-28 | Tomcat server installation directory override |  | The Tomcat application replatforming flow lets users manually specify the Tomcat server installation directory before migration. |
 | 2022-03-28 | WebSphere application replatforming |  | WebSphere-based VMs can be replatformed into containers using tWAS or Open Liberty images, with discovery, app splitting, and deployment artifact generation support. |

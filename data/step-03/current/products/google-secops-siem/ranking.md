@@ -19,14 +19,14 @@ Step 2 feature inventory: 219 features, profile: user facing.
 | 95 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/ingestion/setup-siem-webhook | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/log-in-to-ui | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/reports/import-export-dashboards | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/administration/feed-management | 2 |  | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/release-notes?authuser=1 | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent | 3 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/secops/content_hub | 2 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/secops/release-notes | 2 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/secops/secops-ingestion | 2 |  | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/gcp-firewall | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/secops/gemini-chronicle | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | yes | iam_reference | https://docs.cloud.google.com/chronicle/docs/onboard/configure-cloud-authentication | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/release-notes | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/release-notes?authuser=1 | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/administration/feed-management | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/gitguardian-enterprise | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/secops/adding_siem_or_soar_roles | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |

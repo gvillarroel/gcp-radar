@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.435Z"
+generated_at: "2026-04-15T13:43:38.469Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Self-service restore for Looker (Google Cloud core)"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-04-29"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
   - "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
-  - "https://docs.cloud.google.com/looker/docs/gemini-overview-looker"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
 keywords:
   - "self"
   - "restore"
-  - "for"
   - "looker"
   - "core"
   - "lets"
   - "users"
   - "instances"
+  - "through"
 ---
 
 # Self-service restore for Looker (Google Cloud core)
@@ -42,43 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
 - [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
 
 ## Supporting Pages
 
-### Looker (Google Cloud core) overview | Google Cloud Documentation
+### Admin settings - Users \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- Source ID: `site-docs-reference`
+- Final score: 160
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
+- Differences between disabling and deleting an account are described in the following table: Description Disabled Deleted The user can sign in to the Looker instance No No The user's personal folder Still exists Deleted Looks and dashboards in the user's personal folder Still exist Moved to the Trash folder Looks and dashboards the user saved to a Shared folder Still exist in the Shared folder Still exist in the Shared folder Schedules created by the user Schedules are disabled Schedules are deleted Schedules based on the user's content, but created by another user Schedules continue to run User's content is deleted; schedules based on that content are deleted Schedules that list the user as a recipient and are created by another user with the ability to deliver content to external email accounts Schedules will continue to run and deliver normally (user will be treated as an external user) Schedules continue to run and deliver normally (user will be treated as an external user) Schedules that have Run schedule as recipient enabled and list the user as a recipient Schedules will continue to run but will fail to deliver to the disabled user upon next run Schedules continue to run but will fail to deliver to all users with error run as recipient was specified on ScheduledPlan but recipient is not a Looker user Boards created by the user Still exist Still exist Alerts created by the user Remain active, but are not visible or editable from the dashboard on which the alert is set unless self-assigned by an admin.
+- Viewing and searching users The Users page shows the following information: Tabs group your users by type: The Standard Users tab shows users who sign in to Looker directly, through either the regular authentication process or through the Looker API.
+- Therefore, we recommend any Looker (Google Cloud core) users who have API keys that were created prior to Looker 25.18 delete those existing API keys and create new API keys.
+- Impersonating (sudoing) users Sudoing lets you navigate Looker as if you were a different user, with all of their privileges and abilities.
 
-### Looker (Google Cloud core) access control with IAM | Google Cloud Documentation
+### Looker (Google Cloud core) access control with IAM \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
 - Source ID: `site-iam-reference`
-- Final score: 97
+- Final score: 155
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, the looker.instances.login permission lets a principal log in to Looker (Google Cloud core) instances.
+- Role Name Permissions Looker Viewer (roles/looker.viewer) Read-only access to all Looker (Google Cloud core) resources in the Google Cloud console. looker.backups.get looker.backups.list looker.instances.get looker.instances.list looker.instances.login looker.locations.get looker.locations.list looker.operations.get looker.operations.list resourcemanager.projects.get resourcemanager.projects.list Looker Instance User roles/looker.instanceUser Access to sign in to a Looker (Google Cloud core) instance. looker.instances.get looker.instances.login resourcemanager.projects.get resourcemanager.projects.list Looker Schema Viewer roles/looker.schemaViewer Access to Looker (Google Cloud core) schema data in Knowledge Catalog. looker.schemas.view Looker Admin roles/looker.admin Full access to all Looker (Google Cloud core) resources. looker.backups.create looker.backups.delete looker.backups.get looker.backups.list looker.instances.create looker.instances.delete looker.instances.export looker.instances.get looker.instances.import looker.instances.list looker.instances.login looker.instances.update looker.locations.get looker.locations.list looker.operations.cancel looker.operations.delete looker.operations.get looker.operations.list looker.schemas.view resourcemanager.projects.get resourcemanager.projects.list At least one principal must have the Looker Admin ( roles/looker.admin ) IAM role.
+- What's next Use Google OAuth for Looker (Google Cloud core) user authentication Manage users within Looker (Google Cloud core) Configure a Looker (Google Cloud core) instance Looker (Google Cloud core) admin settings Administer a Looker (Google Cloud core) instance from the Google Cloud console Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Looker IAM roles: These kinds of roles govern the following abilities: Users' capabilities within the Google Cloud console with regard to Looker (Google Cloud core) When used together with OAuth , they also govern the following abilities: Users' abilities to sign in to a Looker (Google Cloud core) instance Whether or not users are automatically assigned the Admin via IAM Looker role once they sign in to a Looker (Google Cloud core) instance.
+
+### Admin settings - General settings \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- Source ID: `site-docs-reference`
+- Final score: 148
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) access control with IAM Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-access-control Looker (Google Cloud core) uses Identity and Access Management (IAM) to provision user and admin access through a set of IAM roles.
-- For a detailed description of Google Cloud IAM, see the IAM documentation.
-
-### Gemini in Looker overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- Source ID: `site-docs-root`
-- Final score: 68
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Gemini in Looker overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/gemini-overview-looker Ask questions about and converse with your data by using Conversational Analytics: Gemini in Looker lets you ask questions about your data source by using natural language.
-- You can learn more about how your response was generated and save your conversation for future reference.
-- Gemini returns Looker charts or data tables that are based on your query.
+- This setting lets Looker admins define the email domains to which your users can deliver Looker content — Looks, dashboards, queries with visualizations — or alert notifications through email.
+- For an overview of how user permissions affect the domains to which users can send Looker content deliveries or alert notifications, see the following table: User type Permissions Email Domain Allowlist for Scheduled Content contains the domain friendly domain.org Email Domain Allowlist for Scheduled Content contains no domains Non-embed schedule look emails only Can email content deliveries to their own email address, to the email address of another Looker user on the same instance, or to an email address with the friendly domain.org domain Can email content deliveries to any email address schedule look emails and create alerts Can email content deliveries and alert notifications to their own email address, to the email address of another Looker user on the same instance, or to an email address with the friendly domain.org domain Can email content deliveries and alert notifications to any email address schedule external look emails only Can email content deliveries to any email address Can email content deliveries to any email address schedule external look emails and create alerts Can email content deliveries and alert notifications to any email address Can email content deliveries and alert notifications to any email address Signed embed schedule look emails only Can email content deliveries to an email address with the friendly domain.org domain Cannot email any Looker content schedule look emails and create alerts Can email content deliveries and alert notifications to an email address with the friendly domain.org domain Cannot email any Looker content or alert notifications schedule external look emails Can email content deliveries to any email address Can email content deliveries to any email address schedule external look emails and create alerts Can email content deliveries and alert notifications to any email address Can email content deliveries and alert notifications to any email address Embedded Looker content is accessed through a dedicated embed user account, not by individual user accounts.
+- Onboarding When enabled, Looker admins and developers who log in to a new Looker instance will see the Looker onboarding walkthrough, which guides users through the four major steps to make use of a Looker instance: Adding a connection Creating a project Editing project files as needed Exploring data Once any combination of admins or developers completes the full guide, it stops being displayed.
+- Email Domain Allowlist for Scheduled Content Note: In Looker (Google Cloud core) instances, you set the email domain allowlist for an instance within the Google Cloud console .
 

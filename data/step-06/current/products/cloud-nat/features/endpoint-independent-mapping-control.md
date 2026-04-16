@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:57:06.737Z"
+generated_at: "2026-04-12T12:11:52.330Z"
 product_name: "Cloud NAT"
 product_slug: "cloud-nat"
 feature_name: "Endpoint-Independent Mapping control"
 feature_slug: "endpoint-independent-mapping-control"
 latest_feature_date: "2020-12-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/nat/docs/troubleshooting"
   - "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation"
   - "https://docs.cloud.google.com/nat/docs/monitoring"
+  - "https://docs.cloud.google.com/nat/docs/gke-example"
 keywords:
   - "endpoint"
   - "independent"
@@ -26,7 +27,7 @@ keywords:
 # Endpoint-Independent Mapping control
 
 Product: Cloud NAT
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud NAT gateways can enable or disable Endpoint-Independent Mapping; Cloud NAT
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
 - [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
+- [https://docs.cloud.google.com/nat/docs/gke-example](https://docs.cloud.google.com/nat/docs/gke-example)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 217
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - If you see packet loss from VMs that use Public NAT, and you have Endpoint-Independent Mapping turned on, the packet loss might be caused by an endpoint independent conflict .
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 199
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,13 +81,25 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
 - Source ID: `site-docs-root`
-- Final score: 132
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 173
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - In each command, replace the following: NAT GATEWAY : the name of the NAT gateway ROUTER NAME : the name of the Cloud Router that hosts the NAT gateway REGION : the region of the Cloud Router To log network address translation events and errors: gcloud compute routers nats update NAT GATEWAY \ --router= ROUTER NAME \ --region= REGION \ --enable-logging To log only network address translation events: gcloud compute routers nats update NAT GATEWAY \ --router= ROUTER NAME \ --region= REGION \ --enable-logging \ --log-filter=TRANSLATIONS ONLY To log only errors: gcloud compute routers nats update NAT GATEWAY \ --router= ROUTER NAME \ --region= REGION \ --enable-logging \ --log-filter=ERRORS ONLY Clear log filters If you have a filter set, you can clear it.
 - Alternatively, enter the following expression into the query editor: resource.type="nat gateway" logName="projects/{#project id}/logs/compute.googleapis.com%2Fnat flows" gcloud gcloud logging read 'resource.type=nat gateway' \ --limit=10 \ --format=json Where: resource.type=nat gateway : limits the output to your NAT gateways --limit=10 : limits the output to 10 entries; you can input a different value to see more or fewer entries, or omit it entirely to see a continuous scroll of logs --format=json : displays the output in JSON format For more options, see Reading log entries .
 - Can be TCP, UDP or ICMP. nat/port usage GA Port usage GAUGE , INT64 , {port} gce instance Maximum number of connections from a VM to a single destination endpoint (IP:port).
 - Can be TCP, UDP or ICMP. nat/port usage GA Port usage GAUGE , INT64 , {port} nat gateway Maximum number of connections from a VM to a single destination endpoint (IP:port).
+
+### Use Public NAT with GKE \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/nat/docs/gke-example](https://docs.cloud.google.com/nat/docs/gke-example)
+- Source ID: `site-docs-root`
+- Final score: 138
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To create and start the cluster, click Create . gcloud gcloud container clusters create "nat-test-cluster" \ --zone "us-east4-c" \ --cluster-version "latest" \ --machine-type "e2-medium" \ --disk-type "pd-standard" \ --disk-size "100" \ --scopes "https://www.googleapis.com/auth/compute","https://www.googleapis.com/auth/devstorage.read only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" \ --num-nodes "3" \ --enable-private-nodes \ --enable-private-endpoint \ --master-ipv4-cidr "172.16.0.0/28" \ --enable-ip-alias \ --network "projects/ PROJECT ID /global/networks/custom-network1" \ --subnetwork "projects/ PROJECT ID /regions/us-east4/subnetworks/subnet-us-east-192" \ --max-nodes-per-pool "110" \ --enable-master-authorized-networks \ --addons HorizontalPodAutoscaling,HttpLoadBalancing \ --enable-autoupgrade \ --enable-autorepair Terraform You can use a Terraform resource to create a private cluster. resource "google container cluster" "primary" { project = var.project id name = "nat-test-cluster" location = "us-east4-c" initial node count = 3 network = var.network # Replace with a reference or self link to your network, in quotes subnetwork = var.subnet # Replace with a reference or self link to your subnet, in quotes private cluster config { master ipv4 cidr block = "172.16.0.0/28" enable private endpoint = true enable private nodes = true } ip allocation policy { } master authorized networks config { } } Step 3: Create a firewall rule that allows SSH connections Console In the Google Cloud console, go to the Firewall policies page.
+- Click Create . gcloud Create a Cloud Router: gcloud compute routers create nat-router \ --network custom-network1 \ --region us-east4 Add a configuration to the router: gcloud compute routers nats create nat-config \ --router-region us-east4 \ --router nat-router \ --nat-all-subnet-ip-ranges \ --auto-allocate-nat-external-ips Terraform You can use a Terraform resource to create a Cloud Router. resource "google compute router" "router" { project = var.project id name = "nat-router" network = var.network region = "us-east4" } You can use a Terraform module to create a NAT configuration. module "cloud-nat" { source = "terraform-google-modules/cloud-nat/google" version = " > 5.0" project id = var.project id region = "us-east4" router = google compute router.router.name name = "nat-config" source subnetwork ip ranges to nat = "ALL SUBNETWORKS ALL IP RANGES" } Step 7: Attempt to connect to the internet again It might take up to three minutes for the NAT configuration to propagate, so wait at least a minute before trying to access the internet again.
+- You can set a project ID with the following command: gcloud config set project PROJECT ID You can also view a project ID that is already set: gcloud config list --format='text(core.project)' Setting up the GKE example Use this example if you want to see a simple Public NAT configuration working with GKE.
+- You can use this domain in examples without prior coordination or asking for permission.</p> <p><a href="http://www.iana.org/domains/example">More information...</a></p> </div> </body> </html> What's next Set up a Public NAT gateway.
 

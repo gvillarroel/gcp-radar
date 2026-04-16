@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.600Z"
+generated_at: "2026-04-12T12:11:19.878Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Airflow component pod-eviction error logging"
 feature_slug: "airflow-component-pod-eviction-error-logging"
 latest_feature_date: "2022-04-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
   - "https://docs.cloud.google.com/composer/docs/airflow-configurations"
 keywords:
   - "airflow"
@@ -26,7 +27,7 @@ keywords:
 # Airflow component pod-eviction error logging
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Airflow schedulers and workers now generate error logs when their pods are evict
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard](https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - [https://docs.cloud.google.com/composer/docs/airflow-configurations](https://docs.cloud.google.com/composer/docs/airflow-configurations)
 
 ## Supporting Pages
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 148
+- Final score: 196
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +63,37 @@ Evidence snippets:
 - Implementation steps On your local computer where you run Terraform, set the GOOGLE CLOUD PROJECT environment variable to the ID of your Monitoring Project : export GOOGLE CLOUD PROJECT = MONITORING PROJECT ID Make sure that your Terraform Google provider is authenticated and has access to the following permissions: roles/monitoring.editor permission in Monitoring Project roles/monitoring.viewer , roles/logging.viewer in all Monitored Projects Copy the following main.tf file to the local computer where you run Terraform.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Use the monitoring dashboard \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- URL: [https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard](https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard)
 - Source ID: `site-docs-root`
-- Final score: 148
+- Final score: 187
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- April 22, 2022 Feature Airflow schedulers and workers generate error log messages if pods for these components are evicted.
-- Changes compared to version 6.8.0 : Breaking changes: Upgrade to support Google Ads v10 ( #22965 ) Features: [FEATURE] google provider - BigQueryInsertJobOperator log query ( #23648 ) [FEATURE] google provider - split GkeStartPodOperator execute ( #23518 ) Add exportContext.offload flag to CLOUD SQL EXPORT VALIDATION. ( #23614 ) Create links for BiqTable operators ( #23164 ) implements #22859 - Add .sql as templatable extension ( #22920 ) GCSFileTransformOperator : New templated fields 'source object', 'destination object' ( #23328 ) Bug Fixes Fix PostgresToGCSOperator does not allow nested JSON ( #23063 ) Fix GCSToGCSOperator ignores replace parameter when there is no wildcard ( #23340 ) update processor to fix broken download URLs ( #23299 ) LookerStartPdtBuildOperator , LookerCheckPdtBuildSensor : fix empty materialization id handling ( #23025 ) Change ComputeSSH to throw provider import error instead paramiko ( #23035 ) Fix cancel on kill after execution timeout for DataprocSubmitJobOperator ( #22955 ) Fix select query xcom push for BigQueryGetDataOperator ( #22936 ) MSSQLToGCSOperator fails: datetime is not JSON Serializable ( #22882 ) Update credentials when using ADC in Compute Engine #23773 Misc changes Add Stackdriver assets and migrate system tests to AIP-47 ( #23320 ) CloudTasks assets & system tests migration (AIP-47) ( #23282 ) TextToSpeech assets & system tests migration (AIP-47) ( #23247 ) Fix code-snippets in google provider ( #23438 ) BigQuery assets ( #23165 ) Remove redundant docstring in BigQueryUpdateTableSchemaOperator ( #23349 ) Migrate gcs to new system tests design ( #22778 ) add missing docstring in 'BigQueryHook.create empty table' ( #23270 ) Cleanup Google provider CHANGELOG.rst ( #23390 ) migrate system test gcs to bigquery into new design ( #22753 ) Add example DAG for demonstrating usage of GCS sensors ( #22808 ) Change (Airflow 1) The google-cloud-bigquery package is upgraded from 1.28.0 to 2.13.0.
-- It comes with a number of new features and characteristics: All infrastructure hidden in a tenant project Evergreen versioning Simplified networking configuration Improved performance More reliable DAG parsing and scheduling as DAG Processor and Schedulers are now separate components 10 times bigger storage for Airflow workers As well as most functionalities already known from the previous Composer versions.
-- You can observe a few skipped data points in the reported metrics and see error messages about the airflow-monitoring pod restarts in the environment logs.
+- Total scheduler disk usage The total usage of disk space by containers running in all Airflow scheduler pods, and the combined disk space limit for all schedulers.
+- Total scheduler CPU usage The total usage of vCPU cores by containers running in all Airflow scheduler pods, and the combined vCPU limit for all schedulers.
+- Total scheduler memory usage The total usage of memory by containers running in all Airflow scheduler pods, and the combined vCPU limit for all schedulers.
+- Access the monitoring dashboard The monitoring dashboard contains metrics and charts for monitoring trends in the DAG runs in your environment, and identifing issues with Airflow components and Cloud Composer resources.
+
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 182
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Airflow 1.9.0 stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06/1.log Airflow 1.10.x stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log As a result, if you upgrade from Airflow 1.9.0 to Airflow 1.10.x and would like to read the log for a task executed with Airflow 1.9.0, the Airflow Web server will show the following error message: Unable to read remote log from BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Workaround: Rename the logs generated by Airflow 1.9.0 in the Cloud Storage bucket using the format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Cannot create Cloud Composer environments with the organization policy constraints/compute.disableSerialPortLogging enforced Cloud Composer environment creation fails if the constraints/compute.disableSerialPortLogging organization policy is enforced on the target project.
+- Such entities are eventually removed from local storages of Airflow schedulers and workers when these components are restarted (for example, as a result of scaling down or maintenance operations in your environment's cluster).
+- Warnings about duplicate entries of 'echo' task belonging to the 'echo-airflow monitoring' DAG You might see the following entry in the Airflow logs: in query db.query(q) File "/opt/python3.6/lib/python3.6/site-packages/MySQLdb/ connections.py", line 280, in query mysql.connection.query(self, query) mysql exceptions.IntegrityError: (1062, "Duplicate entry 'echo-airflow monitoring-2020-10-20 15:59:40.000000' for key 'PRIMARY'") You can ignore these log entries, because this error doesn't impact Airflow DAG and task processing.
+- Airflow workers or schedulers might experience issues when accessing the environment's Cloud Storage bucket Cloud Composer uses gcsfuse to access the /data folder in the environment's bucket and to save Airflow task logs to the /logs directory (if enabled).
 
 ### "Blocked and limited Airflow configuration options \_|\_ Cloud Composer \_\
 
 - URL: [https://docs.cloud.google.com/composer/docs/airflow-configurations](https://docs.cloud.google.com/composer/docs/airflow-configurations)
 - Source ID: `site-docs-reference`
-- Final score: 146
+- Final score: 178
 - Re-rank relevance: N/A
 
 Evidence snippets:

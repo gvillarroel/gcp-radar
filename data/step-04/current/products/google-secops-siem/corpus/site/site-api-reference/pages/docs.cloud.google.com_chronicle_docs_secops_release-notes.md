@@ -283,15 +283,14 @@ from the extension policy
 ExtensionInstallBlocklist .
 March 31, 2026
 Feature
-Multi-stage queries in YARA-L
-The Multi-stage queries feature is now GA. This feature lets you feed the output of one query stage into the input of another, providing more granular data transformation than a single, monolithic query.
-You can use multi-stage queries in both Dashboards and Search to build sophisticated detection and visualization logic. No action is required to enable this feature.
-Learn more about how to create multi-stage queries with YARA-L 2.0 .
+[Spotlight Feature] Multi-stage queries in YARA-L
+The Multi-stage queries feature is now GA. This feature lets you feed the output of one query stage into the input of another, providing more granular data transformation than a single, monolithic query. You can use multi-stage queries in both Dashboards and Search to build sophisticated detection and visualization logic. No action is required to enable this feature.
+For more information, see create multi-stage queries with YARA-L 2.0 .
 March 25, 2026
 Feature
-Credential validation for third-party API feed types
-Credential validation is now available for all 49 third-party API connectors.
-When you create a feed using a third-party API feed type, Google SecOps now automatically validates the provided credentials. This ensures that if credentials are incorrect:
+[Spotlight Feature] Credential validation for third-party API feed types
+Credential validation is now available for all 49 third-party API connectors. When you create a feed using a third-party API feed type, Google SecOps now automatically validates the provided credentials.
+This ensures that if credentials are incorrect, the following happens:
 Immediate feedback : The web interface displays an error message explaining the configuration failure.
 Prevention of broken feeds : The system blocks the creation of the feed until valid credentials are provided, preventing the creation of broken feeds that fail to ingest data later.
 March 23, 2026
@@ -364,22 +363,22 @@ Collect Trellix Endpoint Security (HX) audit event logs
 Collect Trellix Endpoint Security (HX) host inventory logs
 March 20, 2026
 Feature
-View Triage and Investigation Agent (TIN) results in the Case Summary
-This feature is currently in Preview and is part of a gradual rollout.
-You can now view TIN results and verdict summaries directly within the Case Summary view. This integration provides real-time progress updates and automated verdicts for true or false positives without leaving the case.
+[Spotlight Feature] View Triage and Investigation Agent (TIN) results in the Case Summary
+The TIN feature is currently in Preview and is part of a gradual rollout. You can now view TIN results and verdict summaries directly within the Case Summary view. This integration provides real-time progress updates and automated verdicts for true or false positives without leaving the case.
 For more information, see Use Triage and Investigation Agent (TIN) to investigate alerts .
 Feature
-Agentic Automation
-This feature is in Public Preview.
-You can now use Agentic Automation to embed AI Agents directly into your workflows. This feature lets you integrate AI-driven capabilities into your existing playbooks while staying in charge of critical actions by combining agents with deterministic automation steps.
+[Spotlight Feature] Agentic Automation
+The Agentic Automation feature is in Public Preview. You can now use Agentic Automation to embed AI Agents directly into your workflows. This feature lets you integrate AI-driven capabilities into your existing playbooks while staying in charge of critical actions by combining agents with deterministic automation steps.
 For more information, see Agentic Automation .
 March 18, 2026
 Feature
-Bindplane features for Google SecOps general availability
-The following Bindplane features that relate to Google SecOps are now in General Availability (GA):
+[Spotlight Feature] Bindplane features for Google SecOps
+The following Bindplane features that relate to Google SecOps are now in General Availability (GA): Single sign-on with custom claims role mapping, SecOps parser validator and Forwarder migration tool.
+Some of the main enhancements include:
 Single sign-on with custom claims role mapping : gives a production-ready way to manage Bindplane access through your identity provider. For more information, see Single Sign-On (Cloud) .
 SecOps parser validator : validates that your logs will be parsed correctly by Google SecOps directly from the snapshot view. Get immediate feedback on parsed events or validation errors without waiting for data to appear in Google SecOps. For more information, see Validate SecOps Parser .
 Forwarder migration tool : provides production-ready paths to migrate existing forwarder configurations into Bindplane-managed pipelines. For more information, see Migrate Configurations .
+For more information, see Bindplane
 March 17, 2026
 Announcement
 Unified Feature Role-based Access Control (RBAC) is now in General Availability (GA). This enables administrators to manage feature access control for Google SecOps including SOAR by leveraging Google Cloud IAM instead of managing it separately for SIEM and SOAR.
@@ -394,14 +393,13 @@ Manage parser versions
 The Manage parser versions feature is in Public Preview for all customers.
 March 10, 2026
 Feature
-Set up and manage data processing pipelines
-This feature is currently in Preview.
-You can now use the Data Processing pipelines to filter, transform, and redact
+[Spotlight Feature] Set up and manage data processing pipelines
+The Data Processing feature is currently in Preview. You can now use the Data Processing pipelines to filter, transform, and redact
 Google SecOps data before ingestion. This feature provides more
 control over ingested data, letting you reduce costs by filtering out
 unwanted events, transform data for better compatibility, and protect
-sensitive information by redacting or masking values before storage.
-You can configure data processing pipelines using the Bindplane console or the
+sensitive information by redacting or masking values before storage. You can configure data
+processing pipelines using the Bindplane console or the
 Google SecOps Data Pipeline APIs.
 For more information, see Set up and manage data processing pipelines .
 March 05, 2026
@@ -599,15 +597,13 @@ Automatically convert your SOAR Permission Groups to custom roles in IAM through
 Pre-defined roles: Utilize the enhanced Google SecOps pre-defined roles now available in Cloud IAM.
 Custom Roles: Create tailored roles with specific permissions to meet your organization's unique security requirements.
 Feature
-New Unified rules interface
-This feature is currently in Preview.
-Google Secops has launched a unified rules interface that
+[Spotlight Feature] New Unified rules interface
+This feature is currently in Preview. Google Secops has launched a unified rules interface that
 brings custom and curated rule management into a single, cohesive workflow.
 This update optimizes detection engineering with a redesigned dashboard, an
 advanced rule editor, and expanded API capabilities to streamline rule
 deployment and troubleshooting.
-Key enhancements
-Developer and IDE enhancements :
+Some of the main enhancements include:
 Centralized management: A unified, single dashboard lets you browse, filter, and
 manage both custom and curated rules from one location. You can also update
 configurations for multiple rules simultaneously.
@@ -630,7 +626,7 @@ Advanced resource views: The rules.list method introduces CONFIG_ONLY
 and TRENDS views. These views provide expanded deployment information, access
 to curated rule resources, and larger page sizes (up to 5000 results) for
 efficient querying.
-For details, see Manage unified rules .
+For more information, see Manage unified rules .
 February 25, 2026
 Feature
 Added support for Google Cloud VPC Service Controls
@@ -6684,6 +6680,6 @@ Investigation : Threats are investigated through case management, search, collab
 Response : Security analysts can respond quickly and provide resolutions using automated playbooks, incident management, and closed-loop feedback.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

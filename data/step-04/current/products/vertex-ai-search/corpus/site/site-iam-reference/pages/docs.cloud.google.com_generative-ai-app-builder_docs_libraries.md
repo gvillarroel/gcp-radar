@@ -60,10 +60,10 @@ BOMs, see The Google Cloud Platform Libraries BOM .
 < / dependencies >
 If you are using Gradle ,
 add the following to your dependencies:
-implementation ' com . google . cloud : google - cloud - discoveryengine : 0.84.0 '
+implementation ' com . google . cloud : google - cloud - discoveryengine : 0.86.0 '
 If you are using sbt , add
 the following to your dependencies:
-libraryDependencies += "com.google.cloud" % "google-cloud-discoveryengine" % "0.84.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-discoveryengine" % "0.86.0"
 If you're using Visual Studio Code or IntelliJ, you can add client libraries to your
 project using the following IDE plugins:
 Cloud Code for VS Code
@@ -529,6 +529,6 @@ vertex-ai-search on Stack Overflow
 Source code
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

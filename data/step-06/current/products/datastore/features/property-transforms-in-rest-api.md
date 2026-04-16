@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.838Z"
+generated_at: "2026-04-12T12:14:02.768Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Property transforms in REST API"
 feature_slug: "property-transforms-in-rest-api"
 latest_feature_date: "2024-10-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial"
   - "https://docs.cloud.google.com/datastore/docs/concepts/entities"
   - "https://docs.cloud.google.com/datastore/docs/concepts/indexes"
+  - "https://docs.cloud.google.com/datastore/docs/concepts/queries"
 keywords:
   - "property"
   - "transforms"
@@ -26,7 +27,7 @@ keywords:
 # Property transforms in REST API
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The REST API supports property transforms such as increment operations.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
 - [https://docs.cloud.google.com/datastore/docs/concepts/entities](https://docs.cloud.google.com/datastore/docs/concepts/entities)
 - [https://docs.cloud.google.com/datastore/docs/concepts/indexes](https://docs.cloud.google.com/datastore/docs/concepts/indexes)
+- [https://docs.cloud.google.com/datastore/docs/concepts/queries](https://docs.cloud.google.com/datastore/docs/concepts/queries)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
 - Source ID: `site-iam-reference`
-- Final score: 174
+- Final score: 218
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,9 +67,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/concepts/entities](https://docs.cloud.google.com/datastore/docs/concepts/entities)
 - Source ID: `site-iam-reference`
-- Final score: 154
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 213
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For example, starting with the following entity: REST entity: { "key" : { "path": [ { "kind": "Kind 1", "name": "entity 1" } ] } "properties" : { "a": 1, "b": 2, "c": 3 } } The following request updates both a and b and then applies a property transform to property b : POST https://datastore.googleapis.com/v1/projects/ { projectId }: commit { "mode" : "NON TRANSACTIONAL" , "mutations" : [ { "propertyMask" : { "a" , "b" }, // update property a , b "update" : { "key" : { "path" : [ { "kind" : "Kind 1" , "name" : "entity 1" } ] } "properties" : { "a" : "new value" , "b" : -2 } }, "propertyTransforms" : [ { "property" : "b" , "increment" : { "integerValue" : 2 } } ] } ] } The result is the following: REST entity: { "key" : { "path": [ { "kind": "Kind 1", "name": "entity 1" } ] } "properties" : { "a": "new value", "b": 0, "c": 3 } } Kinds and identifiers Each entity is of a particular kind , which categorizes the entity for the purpose of queries.
@@ -79,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/concepts/indexes](https://docs.cloud.google.com/datastore/docs/concepts/indexes)
 - Source ID: `site-iam-reference`
-- Final score: 154
+- Final score: 198
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +89,17 @@ Evidence snippets:
 - This will require 9 index entries, one for each possible combination of property values: ( 'fun' , 'alice' , NOW() ) ( 'fun' , 'bob' , NOW() ) ( 'fun' , 'charlie' , NOW() ) ( 'programming' , 'alice' , NOW() ) ( 'programming' , 'bob' , NOW() ) ( 'programming' , 'charlie' , NOW() ) ( 'learn' , 'alice' , NOW() ) ( 'learn' , 'bob' , NOW() ) ( 'learn' , 'charlie' , NOW() ) When the same property is repeated multiple times, Firestore in Datastore mode can detect exploding indexes and suggest an alternative index.
 - Multiple databases You can use gcloud firestore to manage a single index for Datastore mode or use gcloud datastore with an index.yaml file to manage all the indexes under a database. gcloud firestore gcloud firestore indexes composite create --api-scope=datastore-mode-api --query-scope= QUERY SCOPE --database= DATABASE ID gcloud datastore gcloud alpha datastore indexes create index.yaml --database= DATABASE ID Replace the following: DATABASE ID : a database ID.
 - Similarly, an entity that can have multiple values for the same property requires a separate index entry for each value; again, if the number of possible values is large, such an entity can exceed the entry limit.
+
+### Datastore queries \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/concepts/queries](https://docs.cloud.google.com/datastore/docs/concepts/queries)
+- Source ID: `site-iam-reference`
+- Final score: 184
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Note that if a set of inequality filters on a property translate into an equality filter, such as WHERE tag >= 'math' AND tag <= 'math' any sort order on that property is ignored, as the filters evaluate the same as the equality filter WHERE tag = 'math' Projections and array-valued properties Projecting a property with array values won't populate all values for that property.
+- Java Query<Entity> query = Query . newEntityQueryBuilder () . setKind ( "Task" ) . setFilter ( CompositeFilter . or ( PropertyFilter . eq ( "starred" , true )), PropertyFilter . ge ( "priority" , 4 )) . build (); The earlier query includes an implied order-by on the inequality such as the following.
+- Restrictions Sort orders have the following restrictions: Because of the way Datastore mode executes queries, if a query specifies inequality filters on a property and sort orders on other properties, the property used in the inequality filters must be ordered before the other properties .
+- Additionally, the following restrictions apply: Entities lacking a property named in the query are ignored Entities of the same kind need not have the same properties.
 

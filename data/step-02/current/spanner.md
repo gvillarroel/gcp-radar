@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 384
-Unique features: 461
+Unique features: 460
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -463,7 +463,6 @@ Unique features: 461
 | 2018-01-18 | Regional instance location availability |  | Spanner added support for creating regional instances in the us-east4 (Northern Virginia) and asia-south1 (Mumbai) regions. |
 | 2017-11-14 | Multi-region instance configurations |  | Spanner introduced multi-region instance configurations, including one-continent (nam3) and three-continent (nam-eur-asia1) deployment options. |
 | 2017-06-15 | Cloud Spanner regional instances in asia-northeast1 |  | Cloud Spanner now supports creating regional instances in the Tokyo region (asia-northeast1). |
-| 2017-05-16 | Cloud Spanner API general availability |  | The Cloud Spanner API reached general availability. |
 | 2017-05-16 | Cloud Spanner IAM role assignments |  | Cloud Spanner supports applying IAM roles to databases, instances, and projects. |
 | 2017-05-16 | Cloud Spanner integration with Cloud Run functions |  | Cloud Spanner can be used in conjunction with Cloud Run functions. |
 | 2017-05-16 | Cloud Spanner integration with Google Cloud services |  | Cloud Spanner can integrate with additional Google Cloud services. |

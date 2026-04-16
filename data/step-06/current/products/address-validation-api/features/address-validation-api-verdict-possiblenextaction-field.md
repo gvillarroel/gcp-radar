@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:33.671Z"
+generated_at: "2026-04-14T03:44:24.362Z"
 product_name: "Address Validation API"
 product_slug: "address-validation-api"
 feature_name: "Address Validation API verdict possibleNextAction field"
 feature_slug: "address-validation-api-verdict-possiblenextaction-field"
 latest_feature_date: "2025-06-18"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/maps/documentation/address-validation/build-validation-logic"
-  - "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1"
   - "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress"
+  - "https://developers.google.com/maps/documentation/address-validation/build-validation-logic"
+  - "https://developers.google.com/maps/documentation/address-validation/understand-response"
 keywords:
-  - "next action recommendation"
-  - "recommended next action"
-  - "next action suggestion"
-  - "possible_next_action"
-  - "possible next action"
-  - "post-validation action"
-  - "verdict.possibleNextAction"
-  - "possibleNextAction field"
+  - "possiblenextaction"
+  - "includes"
+  - "indicate"
+  - "verdict"
+  - "field"
 ---
 
 # Address Validation API verdict possibleNextAction field
 
 Product: Address Validation API
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,56 +31,59 @@ The Address Validation API now includes a `possibleNextAction` field in the verd
 
 ## Extended Definition
 
-The `verdict.possibleNextAction` feature in Address Validation API exposes an enum (`PossibleNextAction`) in the validation verdict that indicates the recommended next step after a validation attempt, such as prompting to fix an address, add sub-premises, confirm it, or continue with the returned address. It is intended to be used by client-side validation logic to determine post-validation flow for end users. The API reference also labels this field as a Preview (pre-GA) feature.
+The Address Validation API now includes a `possibleNextAction` field in the verdict to indicate recommended next steps after receiving a validation response.
 
 ## Evidence Summary
 
-The cited Pages define `verdict.possibleNextAction` as an enum-based action recommendation in the verdict, show sample decision logic that consumes it, and explicitly mark the feature as Preview in the API reference.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://developers.google.com/maps/documentation/address-validation/build-validation-logic](https://developers.google.com/maps/documentation/address-validation/build-validation-logic)
-- [https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1](https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1)
 - [https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress](https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress)
+- [https://developers.google.com/maps/documentation/address-validation/build-validation-logic](https://developers.google.com/maps/documentation/address-validation/build-validation-logic)
+- [https://developers.google.com/maps/documentation/address-validation/understand-response](https://developers.google.com/maps/documentation/address-validation/understand-response)
 
 ## Supporting Pages
+
+### Method: validateAddress | Address Validation API | Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress](https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 249
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Method: validateAddress | Address Validation API | Google for Developers Skip to main content Maps Platform Overview Products Pricing Documentation Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users Blog Community GitHub YouTube LinkedIn Discord Innovators Issue Tracker / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Web Services Address Validation API Get Started Contact sales Guides Reference Resources Maps Platform Overview Products Pricing Documentation More Guides Reference Resources Blog Community More REST reference Overview v1 TopLevel provideValidationFeedback validateAddress RPC Reference Overview google.geo.type google.maps.addressvalidation.v1 google.type Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users GitHub YouTube LinkedIn Discord Innovators Issue Tracker Home Products Google Maps Platform Documentation Web Services Address Validation API Reference Send feedback Method: validateAddress Stay organized with collections Save and categorize content based on your preferences.
+- JSON representation { "verdict" : { object ( Verdict ) } , "address" : { object ( Address ) } , "geocode" : { object ( Geocode ) } , "metadata" : { object ( AddressMetadata ) } , "uspsData" : { object ( UspsData ) } , "englishLatinAddress" : { object ( Address ) } } Fields verdict object ( Verdict ) Overall verdict flags address object ( Address ) Information about the address itself as opposed to the geocode. geocode object ( Geocode ) Information about the location and place that the address geocoded to. metadata object ( AddressMetadata ) Other information relevant to deliverability. metadata is not guaranteed to be fully populated for every address sent to the Address Validation API. uspsData object ( UspsData ) Extra deliverability flags provided by USPS.
+- See missingComponentTypes , unresolvedTokens or unexpected fields for more details. hasUnconfirmedComponents boolean At least one address component cannot be categorized or validated, see google.maps.addressvalidation.v1.Address.address_components for details. hasInferredComponents boolean At least one address component was inferred (added) that wasn't in the input, see google.maps.addressvalidation.v1.Address.address_components for details. hasReplacedComponents boolean At least one address component was replaced, see google.maps.addressvalidation.v1.Address.address_components for details. possibleNextAction enum ( PossibleNextAction ) Preview: This feature is in Preview (pre-GA).
+- HTTP request Request body JSON representation Response body JSON representation PostalAddress JSON representation LanguageOptions JSON representation ValidationResult JSON representation Verdict JSON representation Granularity PossibleNextAction Address JSON representation AddressComponent JSON representation ComponentName JSON representation ConfirmationLevel Geocode JSON representation LatLng JSON representation PlusCode JSON representation Viewport JSON representation AddressMetadata JSON representation UspsData JSON representation UspsAddress JSON representation Validates an address.
 
 ### "Build your validation logic \_|\_ Address Validation API \_|\_ Google for\
 
 - URL: [https://developers.google.com/maps/documentation/address-validation/build-validation-logic](https://developers.google.com/maps/documentation/address-validation/build-validation-logic)
-- Source ID: `site-docs-root`
-- Final score: 52
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page explicitly centers on using `verdict.possibleNextAction` to decide Fix, Confirm, or Accept handling logic in address validation workflows.
+- Source ID: `site-docs-reference`
+- Final score: 189
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Customize your validation logic While you can use the results from the verdict.possibleNextAction field to determine how your system proceeds with the API response, you might also consider building custom logic, such as to handle business-specific needs.
-- For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX or verdict.validationGranularity == OTHER or verdict.validationGranularity == ROUTE) Prompt customer to fix their address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt customer to add a unit number. else if (verdict.possibleNextAction == CONFIRM or verdict.validationGranularity == PREMISE PROXIMITY or verdict.hasSpellCorrectedComponents or verdict.hasReplacedComponents or verdict.hasInferredComponents) Prompt customer to confirm their address. else Proceed with the returned address.
-- The following pseudocode illustrates a possible flow. if (verdict.possibleNextAction == FIX) Prompt the user to fix the address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt the user to add a unit number. else if (verdict.possibleNextAction == CONFIRM) Confirm with the user that the address is correct. else Continue with the address returned by the API.
-- For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX) Prompt customer to fix their address. else if (verdict.hasReplacedComponents) Prompt customer to confirm their address. else Proceed with the returned address.
+- The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address has major issues, and what those issues are.
+- The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address has minor issues, and what those issues are.
+- The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address is likely missing a subpremises.
+- The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address is of acceptable quality.
 
-### "Package google.maps.addressvalidation.v1 \_|\_ Address Validation API \_\
+### "Understand a basic address validation response \_|\_ Address Validation\
 
-- URL: [https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1](https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1)
-- Source ID: `site-api-reference`
-- Final score: 26
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- See missing component types , unresolved tokens or unexpected fields for more details. has unconfirmed components bool At least one address component cannot be categorized or validated, see google.maps.addressvalidation.v1.Address.address components for details. has inferred components bool At least one address component was inferred (added) that wasn't in the input, see google.maps.addressvalidation.v1.Address.address components for details. has replaced components bool At least one address component was replaced, see google.maps.addressvalidation.v1.Address.address components for details. possible next action PossibleNextAction Preview: This feature is in Preview (pre-GA).
-- Possible next actions that could be taken, based on the API response.
-- Enums POSSIBLE NEXT ACTION UNSPECIFIED Default value.
-- Index AddressValidation (interface) Address (message) AddressComponent (message) AddressComponent.ConfirmationLevel (enum) AddressMetadata (message) ComponentName (message) Geocode (message) LanguageOptions (message) PlusCode (message) ProvideValidationFeedbackRequest (message) ProvideValidationFeedbackRequest.ValidationConclusion (enum) ProvideValidationFeedbackResponse (message) UspsAddress (message) UspsData (message) ValidateAddressRequest (message) ValidateAddressResponse (message) ValidationResult (message) Verdict (message) Verdict.Granularity (enum) Verdict.PossibleNextAction (enum) AddressValidation The service for validating addresses.
-
-### Method: validateAddress \_|\_ Address Validation API \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress](https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress)
-- Source ID: `site-api-reference`
-- Final score: 26
-- Re-rank relevance: MODERATE
-- Re-rank rationale: The page is the authoritative response schema reference and explicitly references `PossibleNextAction` as part of the validation result structures, supporting documentation for this feature.
+- URL: [https://developers.google.com/maps/documentation/address-validation/understand-response](https://developers.google.com/maps/documentation/address-validation/understand-response)
+- Source ID: `site-docs-reference`
+- Final score: 181
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Possible next actions that could be taken, based on the API response.
-- Enums POSSIBLE NEXT ACTION UNSPECIFIED Default value.
+- Completeness of the address The verdict returns the addressComplete property as a signal for a high-quality address, which means specifically that it has no missing, unresolved, or unexpected components: "verdict" : { "inputGranularity" : "PREMISE" , "validationGranularity" : "PREMISE" , "geocodeGranularity" : "PREMISE" , "addressComplete" : true , "possibleNextAction" : "ACCEPT" } When the address has missing, unresolved, or unexpected components, the field is set to false .
+- For example, the following shows the verdict property of an address of good quality, which returns 4 fields for this particular request: "verdict" : { "inputGranularity" : "PREMISE" , "validationGranularity" : "PREMISE" , "geocodeGranularity" : "PREMISE" , "addressComplete" : true , "possibleNextAction" : "ACCEPT" } The following sections summarize all fields in the verdict property.
+- The Address Validation API provides a response body as a JSON object that contains two top-level properties: result , an object of type ValidationResult responseID { "result" : { // Validation verdict. "verdict" : {}, // Address details determined by the API. "address" : {}, // The geocode generated for the input address. "geocode" : {}, // Information indicating if the address is a business, residence, etc. "metadata" : {}, // Information about the address from the US Postal Service // ("US" and "PR" addresses only). "uspsData" : {}, }, // A unique identifier generated for every request to the API. "responseId" : "ID" } This document focuses on the result object.
+- Possible next action The possibleNextAction property offers an interpretive summary of the rest of the API response, with the goal of helping you determine whether or not you should prompt your customer to review or make edits to their address.
 

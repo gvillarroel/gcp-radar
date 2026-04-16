@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/filestore/docs/backups-before-you-start
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/filestore/docs/create-instance-console
+entrypoint: https://docs.cloud.google.com/filestore/docs/access-control
 source_metadata:
   url: https://docs.cloud.google.com/filestore/docs/backups-before-you-start
   title: "Before you start creating backups \_|\_ Filestore \_|\_ Google Cloud Documentation"

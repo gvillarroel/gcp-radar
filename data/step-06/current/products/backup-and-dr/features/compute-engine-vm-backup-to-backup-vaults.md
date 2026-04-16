@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.191Z"
+generated_at: "2026-04-14T09:35:01.925Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Compute Engine VM backup to backup vaults"
 feature_slug: "compute-engine-vm-backup-to-backup-vaults"
 latest_feature_date: "2024-12-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup"
+  - "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+  - "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions"
 keywords:
+  - "adds"
   - "vaults"
+  - "backing"
   - "compute"
   - "engine"
-  - "vm"
-  - "backup"
-  - "and"
-  - "to"
-  - "dr"
 ---
 
 # Compute Engine VM backup to backup vaults
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +35,55 @@ Backup and DR adds support for backing up Compute Engine VMs directly to backup 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup](https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup)
+- [https://docs.cloud.google.com/compute/docs/compute-optimized-machines](https://docs.cloud.google.com/compute/docs/compute-optimized-machines)
+- [https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions](https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions)
 
 ## Supporting Pages
 
-### "Backup and DR Service for Compute Engine for self-managed storage \_|\_\
+### "Back up Compute Engine instances \_|\_ Backup and DR \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
-- Source ID: `site-api-reference`
-- Final score: 272
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup](https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup)
+- Source ID: `site-docs-reference`
+- Final score: 155
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- The Backup and DR Compute Engine guide Check for the cloud credentials Discover and protect Compute Engine instances Mount backup images of Compute Engine instances Restore a Compute Engine instance Import Persistent Disk snapshot images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for Compute Engine for self-managed storage Stay organized with collections Save and categorize content based on your preferences.
-- Backup and DR requests Compute Engine to create new disks from the snapshots When these disks are created they are attached to the new or existing instance.
-- Note: If you create application consistent snapshots of Windows Compute Engine instances then on mount to existing VM or mount as new VM, you need to mark your disk as available for read and write to make them usable.
+- The following table lists the permissions required for each API call: Resource Action to be Performed on the Resource Permissions required for each API call Project where it needs to be assigned Backup vault Create BackupVault backupdr.backupVaults.create Admin project Delete BackupVault backupdr.backupVaults.delete Admin project Update BackupVault backupdr.backupVaults.update Admin project List BackupVaults backupdr.backupVaults.list Admin project Get BackupVault backupdr.backupVaults.get Admin project Backup plan Create BackupPlan backupdr.backupPlans.create Admin project Delete BackupPlan backupdr.backupPlans.delete Admin project Get BackupPlan backupdr.backupPlans.get Admin project List Backup Plans backupdr.backupPlans.list Admin project Backup Plan Associations Create Backup Plan Association Workload project backupdr.backupPlanAssociations.createForComputeInstance Workload project backupdr.backupPlans.useForComputeInstance Admin project Delete Backup Plan Association backupdr.backupPlanAssociations.deleteForComputeInstance Workload project Trigger an on-demand backup on Backup Plan Association backupdr.backupPlanAssociations.triggerBackupForComputeInstance Workload project Get Backup Plan Association backupdr.backupPlanAssociations.getForComputeInstance Workload project List Backup Plan Associations backupdr.backupPlanAssociations.list Workload project Fetch Backup Plan Associations backupdr.backupPlanAssociations.fetchForComputeInstance Workload project Data Source Get DataSource backupdr.bvdataSources.get Admin project List DataSources backupdr.backupPlanAssociations.list Admin project Backups Get Backup backupdr.bvbackups.get Admin project List Backups backupdr.bvbackups.list Admin project Delete Backup backupdr.bvbackups.delete Admin project Restore Backup backupdr.bvbackups.restore Admin project Operations List Operations backupdr.operations.list Respective project Get Operations backupdr.operations.get Respective project Grant backup vault access in the Compute Engine project To back up a Compute Engine VM instance in a project different from where the backup vault is created, you must grant the Backup and DR Compute Engine Operator ( roles/backupdr.computeEngineOperator ) IAM role to the backup vault service agent within the Compute Engine project.
+- Use the management console to back up Compute Engine instances : if you have any of the following backup requirements, you can use the management console to back up Compute Engine instances: Cross-region backups Backups of specific disks attached to a virtual machine (VM) Automated protection of Compute Engine VMs based on tags If the Google Cloud console-based backup plans and backup vaults are not in a location that is compatible with the region where your source VMs are running.
+- There are two main methods for backing up Compute Engine instances: Use the Google Cloud console to back up Compute Engine instances : in the Google Cloud console, you can back up Compute Engine instances to a backup vault by applying backup plans.
+- Limitations Backup and DR Service doesn't support backing up Compute Engine instances to a backup vault if the instance uses any of the following configurations: VM instances with extreme persistent disks attached.
 
-### Backup and DR Service for VMware Engine \_|\_ Google Cloud Documentation
+### Compute-optimized machine family for Compute Engine \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms)
-- Source ID: `site-api-reference`
-- Final score: 246
+- URL: [https://docs.cloud.google.com/compute/docs/compute-optimized-machines](https://docs.cloud.google.com/compute/docs/compute-optimized-machines)
+- Source ID: `site-docs-reference-2`
+- Final score: 128
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- The VMware administrator's guide Backup and DR for VMware VMs Configure Google Cloud VMware Engine for Backup and DR protection Add vCenter and ESX server hosts to the appliance management console Discover and protect VMware VMs Apply a backup template to protect a VM Configure application settings for VMware VMs Restore a VMware VM Mount a VMware image Clone an image of a VMware VM Create LiveClone workflows Move VM management between two backup/recovery appliances Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for VMware Engine Stay organized with collections Save and categorize content based on your preferences.
-- Backup and DR Service uses VMware vSphere Storage APIs - Data Protection to create backups of VMware VMs, placing these backups either in the snapshot pool of the backup/recovery appliance or in OnVault pools, or in both.
-- After Backup and DR Service creates a backup of the current state of all VMDKs attached to an VM, you can use it to either: Mount that data to create a new VMware VM.
+- Machine Workloads H4D machine series HPC workloads and multi-node workloads Manufacturing Weather forecasting Electronic design automation (EDA) Healthcare and life sciences Scientific computing H3 machine series HPC workloads Computational fluid dynamics Crash safety Genomics Financial modeling General scientific and engineering computing C2D machine series Memory-bound workloads Gaming (AAA game servers) High performance computing (HPC) High performance databases Electronic Design Automation (EDA) Media transcoding C2 machine series Compute-bound workloads High-performance web serving Gaming (AAA game servers) Ad serving High performance computing (HPC) Media transcoding AI/ML The following machine series are available in this machine family: H4D instances are powered by Titanium and fifth generation AMD EPYC Turin processors which have a base frequency of 2.7 GHz and a maximum frequency of 4.1 GHz.
+- Home Documentation Compute Compute Engine Guides Send feedback Compute-optimized machine family for Compute Engine Stay organized with collections Save and categorize content based on your preferences.
+- Maintenance experience for H4D instances During the lifecycle of a Compute Engine instance , the host machine that your instance runs on undergoes multiple host events .
+- Maintenance experience for C2D instances During the lifecycle of a Compute Engine instance , the host machine that your instance runs on undergoes multiple host events .
 
-### Product overview \_|\_ Backup and DR \_|\_ Google Cloud Documentation
+### "Understand autoscaler decisions \_|\_ Compute Engine \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr)
-- Source ID: `site-api-reference`
-- Final score: 240
+- URL: [https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions](https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions)
+- Source ID: `site-docs-reference-2`
+- Final score: 124
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Back up self-managed Oracle and SQL Server databases Self-managed Oracle and SQL Server databases are the following databases running inside a VM or Bare Metal Solution in your project: Oracle databases running on Bare Metal Solution, Compute Engine VMs, or Google Cloud VMware Engine VMs SQL Server databases running on Compute Engine or Google Cloud VMware Engine VMs These self-managed databases can be backed up from the appliance management console into backup vaults or into self-managed storage.
-- Backup vault provides the following features: Immutability : your data cannot be changed Indelibility : your data cannot be deleted Backup vault storage is supported for Compute Engine instances, Cloud SQL, Google Cloud VMware Engine VMs, and self-managed Oracle and Microsoft SQL Server databases running inside VMs or Bare Metal Solution.
-- Back up Compute Engine instances using the appliance management console Compute Engine instances can be backed up using the appliance management console into self-managed storage, and using the Google Cloud console into backup vaults.
-- Note: You can also back up Compute Engine instances and disks into backup vaults directly from the Google Cloud console, which is better in most cases.
+- You are autoscaling using a Cloud Monitoring metric but the metric you provided does not exist, lacks the necessary labels, or is not accessible to the Compute Engine Service Agent .
+- Home Documentation Compute Compute Engine Guides Send feedback Understand autoscaler decisions Stay organized with collections Save and categorize content based on your preferences.
+- Monitor autoscaling charts and logs Compute Engine provides several charts and logs that let you monitor your managed instance group's behavior at any point in time.
+- The MIG sets its target size to the recommended size, and then Compute Engine automatically scales out the MIG to meet its target size.
 

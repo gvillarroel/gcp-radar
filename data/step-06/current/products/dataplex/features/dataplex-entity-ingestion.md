@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.597Z"
+generated_at: "2026-04-12T12:13:48.463Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Dataplex entity ingestion"
 feature_slug: "dataplex-entity-ingestion"
 latest_feature_date: "2025-02-03"
 deprecation_date: "2025-09-30"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
   - "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality"
+  - "https://docs.cloud.google.com/dataplex/docs/catalog-overview"
   - "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
 keywords:
   - "dataplex"
@@ -26,7 +27,7 @@ keywords:
 # Dataplex entity ingestion
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Dataplex entity ingestion imports Dataplex entities, including entities created 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
 - [https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality](https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality)
+- [https://docs.cloud.google.com/dataplex/docs/catalog-overview](https://docs.cloud.google.com/dataplex/docs/catalog-overview)
 - [https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints](https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints)
 
 ## Supporting Pages
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
 - Source ID: `site-java-reference`
-- Final score: 152
+- Final score: 186
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality](https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality)
 - Source ID: `site-docs-root`
-- Final score: 142
+- Final score: 178
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +76,24 @@ Evidence snippets:
 - The default is false. / // const validateOnly = true // Imports the Dataplex library const { DataScanServiceClient } = require ( ' @google-cloud/dataplex ' ). v1 ; // Instantiates a client const dataplexClient = new DataScanServiceClient (); async function callCreateDataScan () { // Construct request const request = { parent , dataScan , dataScanId , }; // Run request const [ operation ] = await dataplexClient . createDataScan ( request ); const [ response ] = await operation . promise (); console . log ( response ); } callCreateDataScan (); } process . on ( 'unhandledRejection' , err = > { console . error ( err . message ); process . exitCode = 1 ; }); main (... process . argv . slice ( 2 )); Python Python Before trying this sample, follow the Python setup instructions in the Knowledge Catalog quickstart using client libraries .
 - After the scan is created, you can run it at any time by clicking Run now . gcloud To create a data quality scan, use the gcloud dataplex datascans create data-quality command .
 
+### About metadata management in Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/catalog-overview](https://docs.cloud.google.com/dataplex/docs/catalog-overview)
+- Source ID: `site-docs-root`
+- Final score: 171
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Search is performed over the following: All Google Cloud sources described in Entries and entry groups Custom entries that are created in Data Catalog Tags that are created in Data Catalog Data lineage Data lineage retrieves entry details for asset nodes by using the Dataplex API.
+- Data Catalog API method Dataplex API method projects.locations.tagTemplates.fields.create (REST) CreateTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.fields.patch (REST) UpdateTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.fields.rename (REST) RenameTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.fields.delete (REST) DeleteTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) Tag template field enum values Similar to tag template fields, you can edit enum values in the Dataplex API by modifying the metadata template field in the corresponding aspect type.
+- You can enforce minimal metadata standards by defining the required metadata content for custom entries User-configurable metamodel for custom entries, which helps to make custom ingestion more robust and improves custom metadata consistency and comprehensiveness.
+- In addition, when using Knowledge Catalog search, searching for zones and entities isn't supported, and filtering by lakes and zones isn't supported.
+
 ### "Manage Dataplex Universal Catalog resources using custom constraints \_\
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints](https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints)
 - Source ID: `site-docs-root-2`
-- Final score: 136
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:

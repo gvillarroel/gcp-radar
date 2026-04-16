@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.776Z"
+generated_at: "2026-04-12T12:16:18.953Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Anthos 1.7.0"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot"
 keywords:
   - "anthos"
   - "is"
@@ -38,13 +39,14 @@ Anthos 1.7.0 is a GKE Enterprise release that updated Anthos clusters on VMware,
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 168
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 152
+- Final score: 177
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - Source ID: `site-docs-reference`
-- Final score: 142
+- Final score: 162
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - This page shows the Google Cloud features that are available on each of the following environments: Google Kubernetes Engine (GKE) on Google Cloud Google Distributed Cloud (GKE on-premises): On VMware On bare metal Google Distributed Cloud connected deployments GKE Multi-Cloud: GKE on AWS GKE on Azure GKE attached clusters , which are third-party Kubernetes clusters registered to your fleet .
 - Application deployment Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Knative serving Google Cloud Marketplace Application migration Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Migrate to Containers VM management Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) VM Runtime on Google Distributed Cloud What's next Version and upgrade support Managed Cloud Service Mesh supported features In-cluster Cloud Service Mesh supported features Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 - Cloud Service Mesh Binary Authorization Multi Cluster Ingress Features available on GKE clusters on Google Cloud To use some features, you must register the cluster to a fleet .
+
+### "Share snapshots with Google Support \_|\_ Google Kubernetes Engine (GKE)\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot)
+- Source ID: `site-docs-reference`
+- Final score: 161
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You do this by running the following command: Google Distributed Cloud on bare metal release 1.15.0 and higher To share access with Google Support, use the following command: gcloud storage buckets add-iam-policy-binding gs:// BUCKET NAME \ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-anthossupport.iam.gserviceaccount.com \ --role = roles/storage.objectViewer Replace BUCKET NAME with the name of the bucket into which your snapshot was uploaded.
+- To revoke access to your bucket: gcloud storage buckets remove-iam-policy-binding gs:// BUCKET NAME \ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-anthossupport.iam.gserviceaccount.com \ --role = roles/storage.objectViewer Google Distributed Cloud on VMware release 1.15.0 and higher As described in Upload snapshots to a Cloud Storage bucket , when you create a snapshot with the --share-with flag, it is automatically shared with Google Support.
+- If you have a problem with registered clusters outside Google Cloud that you can't resolve yourself, you may be asked to create a snapshot of your cluster and share it with the team.
+- If you want to revoke Google's permission to access your Cloud Storage bucket, run the following command: gcloud storage buckets remove-iam-policy-binding gs:// BUCKET NAME/CLUSTER NAME/SNAPSHOT FILE NAME \ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-anthossupport.iam.gserviceaccount.com \ --role = roles/storage.legacyObjectReader Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

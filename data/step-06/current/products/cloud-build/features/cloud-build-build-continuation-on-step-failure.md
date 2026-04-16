@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.711Z"
+generated_at: "2026-04-15T00:42:40.844Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Cloud Build build continuation on step failure"
 feature_slug: "cloud-build-build-continuation-on-step-failure"
 latest_feature_date: "2023-04-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/build/docs/building/build-containerize-python"
-  - "https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration"
+  - "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build"
   - "https://docs.cloud.google.com/build/docs/build-config"
+  - "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build.FailureInfo.FailureType"
 keywords:
-  - "build"
   - "continuation"
-  - "on"
-  - "step"
-  - "failure"
-  - "can"
   - "continue"
+  - "failure"
   - "execution"
+  - "step"
+  - "when"
 ---
 
 # Cloud Build build continuation on step failure
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +36,54 @@ Cloud Build can continue a build execution when specified steps fail by using al
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/build/docs/building/build-containerize-python](https://docs.cloud.google.com/build/docs/building/build-containerize-python)
-- [https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration](https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration)
+- [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build)
 - [https://docs.cloud.google.com/build/docs/build-config](https://docs.cloud.google.com/build/docs/build-config)
+- [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build.FailureInfo.FailureType](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build.FailureInfo.FailureType)
 
 ## Supporting Pages
 
-### Build, test, and containerize Python applications \_|\_ Google Cloud Documentation
+### Class Build (3.35.0) \_|\_ Python client libraries \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/build/docs/building/build-containerize-python](https://docs.cloud.google.com/build/docs/building/build-containerize-python)
-- Source ID: `site-docs-root-2`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The following build step adds arguments to install requirements from the requirements.txt file: steps : Install dependencies - name : python entrypoint : pip args : [ "install" , "-r" , "requirements.txt" , "--user" ] Add unit tests : If you've defined unit tests in your application using a testing framework such as pytest , you can configure Cloud Build to run the tests by adding the following fields in a build step: name : Set the value of this field to python to use the python image from Docker Hub for your task. entrypoint : Set the value of this field to python to run python commands. args : Add the arguments for running the python pytest command.
-- The following build step deploys the previously built image to Cloud Run: Deploy to Cloud Run - name : google/cloud-sdk args : [ 'gcloud' , 'run' , 'deploy' , 'helloworld-${SHORT SHA}' , '--image=us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' , '--region' , 'us-central1' , '--platform' , 'managed' , '--allow-unauthenticated' ] Save test logs to Cloud Storage : You can configure Cloud Build to store any test logs in Cloud Storage by specifying an existing bucket location and path to the test logs.
-- Run unit tests - name : python entrypoint : python args : [ "-m" , "pytest" , "--junitxml=${SHORT SHA} test log.xml" ] Containerize the app : After adding the build step to ensure that the tests have passed, you can build the application.
-- The following build step stores the test logs that you saved in the JUNIT XML file to a Cloud Storage bucket: Save test logs to Google Cloud Storage artifacts : objects : location : gs://${ BUCKET NAME}/ paths : - ${SHORT SHA} test log.xml The following snippet shows the complete build config file for the all the steps described above: steps : Install dependencies - name : python entrypoint : pip args : [ "install" , "-r" , "requirements.txt" , "--user" ] Run unit tests - name : python entrypoint : python args : [ "-m" , "pytest" , "--junitxml=${SHORT SHA} test log.xml" ] Docker Build - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' , '.' ] Docker push to Google Artifact Registry - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , 'us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' ] Deploy to Cloud Run - name : google/cloud-sdk args : [ 'gcloud' , 'run' , 'deploy' , 'helloworld-${SHORT SHA}' , '--image=us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' , '--region' , 'us-central1' , '--platform' , 'managed' , '--allow-unauthenticated' ] Save test logs to Google Cloud Storage artifacts : objects : location : gs://${ BUCKET NAME}/ paths : - ${SHORT SHA} test log.xml Store images in Google Artifact Registry images : - us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA} Start your build : manually or using build triggers .
-
-### Create a build configuration file \_|\_ Cloud Build \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration](https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration)
-- Source ID: `site-docs-root`
-- Final score: 204
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build)
+- Source ID: `site-python-reference`
+- Final score: 108
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- You can add any number of build steps to your build config file by including additional name fields and pointing them to cloud builders .
-- You can add any number of build steps to your build config file by including additional name fields and pointing them to cloud builders .
-- For information on different types of container images you can use in a build step, see Cloud Builders .
-- For information on different types of container images you can use in a build step, see Cloud Builders .
+- Classes FailureInfo FailureInfo ( mapping = None , , ignore unknown fields = False , kwargs ) A fatal problem encountered during the execution of the build.
+- Contains information about the build when status=FAILURE. dependencies MutableSequence[ google.cloud.devtools.cloudbuild v1.types.Dependency ] Optional.
+- Fields can include the following variables, which will be expanded when the build is created: $PROJECT ID: the project ID of the build. $PROJECT NUMBER: the project number of the build. $LOCATION: the location/region of the build. $BUILD ID: the autogenerated ID of the build. $REPO NAME: the source repository name specified by RepoSource. $BRANCH NAME: the branch name specified by RepoSource. $TAG NAME: the tag name specified by RepoSource. $REVISION ID or $COMMIT SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. $SHORT SHA: first 7 characters of $REVISION ID or $COMMIT SHA.
+- The TTL starts ticking from create time. artifacts google.cloud.devtools.cloudbuild v1.types.Artifacts Artifacts produced by the build that should be uploaded upon successful completion of all build steps. logs bucket str Cloud Storage bucket where logs should be written (see `Bucket Name Requirements source provenance google.cloud.devtools.cloudbuild v1.types.SourceProvenance Output only.
+
+### "Class FailureType (3.35.0) \_|\_ Python client libraries \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build.FailureInfo.FailureType](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build.FailureInfo.FailureType)
+- Source ID: `site-python-reference`
+- Final score: 102
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Version latest keyboard arrow down 3.35.0 (latest) 3.34.0 3.33.0 3.32.0 3.31.3 3.30.0 3.29.0 3.28.0 3.27.1 3.26.0 3.25.0 3.24.2 3.23.3 3.22.0 3.21.0 3.20.1 3.19.0 3.18.0 3.17.1 3.16.0 3.15.0 3.14.0 3.13.0 3.12.0 3.11.1 3.10.0 3.9.3 3.8.3 3.7.1 3.6.0 3.5.2 3.4.0 3.3.2 3.2.1 3.1.1 3.0.2 2.0.2 1.1.2 1.0.0 0.1.0 FailureType ( value ) The name of a fatal problem encountered during the execution of the build.
+- Home Documentation Developer tools Python Client libraries Send feedback Class FailureType (3.35.0) Stay organized with collections Save and categorize content based on your preferences.
+- Enums Name Description FAILURE TYPE UNSPECIFIED Type unspecified PUSH FAILED Unable to push the image to the repository.
+- LOGGING FAILURE Backend logging failures.
 
 ### Build configuration file schema \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/build/docs/build-config](https://docs.cloud.google.com/build/docs/build-config)
 - Source ID: `site-docs-root-2`
-- Final score: 194
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 96
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - The following code snippet allows the build to succeed when the first step fails: YAML steps : - name : 'ubuntu' args : [ '-c' , 'exit 1' ] allowFailure : true - name : 'ubuntu' args : [ 'echo' , 'Hello World' ] JSON { "steps" : [ { "name" : "ubuntu" , "args" : [ "-c" , "exit -1" ], "allowFailure" : true , }, { "name" : "ubuntu" , "args" : [ "echo" , "Hello World" ] } ] } allowExitCodes Use the allowExitCodes field to specify that a build step failure can be ignored when that step returns a particular exit code.
 - A build config file has the following structure: YAML steps : - name : string args : [ string , string , ... ] env : [ string , string , ... ] allowFailure : boolean allowExitCodes : [ string (int64 format) , string (int64 format) , ... ] dir : string id : string waitFor : [ string , string , ... ] entrypoint : string secretEnv : string volumes : object(Volume) timeout : string (Duration format) script : string automapSubstitutions : boolean - name : string ... - name : string ... timeout : string (Duration format) queueTtl : string (Duration format) logsBucket : string options : env : [ string , string , ... ] secretEnv : string volumes : object(Volume) sourceProvenanceHash : enum(HashType) machineType : enum(MachineType) diskSizeGb : string (int64 format) substitutionOption : enum(SubstitutionOption) dynamicSubstitutions : boolean automapSubstitutions : boolean logStreamingOption : enum(LogStreamingOption) logging : enum(LoggingMode) defaultLogsBucketBehavior : enum(DefaultLogsBucketBehavior) pool : object(PoolOption) pubsubTopic : string requestedVerifyOption : enum(RequestedVerifyOption) substitutions: map (key : string, value : string) tags : [ string , string , ... ] serviceAccount : string secrets : object(Secret) availableSecrets : object(Secrets) artifacts : object(Artifacts) goModules : [ object(GoModules) , ... ] mavenArtifacts : [ object(MavenArtifact) , ... ] pythonPackages : [ object(PythonPackage) , ... ] npmPackages : [ object(npmPackage) , ... ] images : - [ string , string , ... ] JSON { "steps" : [ { "name" : "string" , "args" : [ "string" , "string" , "..." ], "env" : [ "string" , "string" , "..." ], "allowFailure" : "boolean" , "allowExitCodes: [ " s tr i n g (i nt 64 f orma t ) ", " s tr i n g (i nt 64 f orma t ) ", " ... " ], " dir ": " s tr i n g ", " id ": " s tr i n g ", " wai t For ": [ " s tr i n g ", " s tr i n g ", " ... " ], " e ntr ypoi nt ": " s tr i n g ", " secre t E n v ": " s tr i n g ", " volumes ": " objec t (Volume) ", " t imeou t ": " s tr i n g (Dura t io n f orma t ) ", " scrip t " : " s tr i n g ", " au t omapSubs t i tut io ns " : " boolea n " }, { " na me ": " s tr i n g " ... }, { " na me ": " s tr i n g " ... } ], " t imeou t ": " s tr i n g (Dura t io n f orma t ) ", " queueT tl ": " s tr i n g (Dura t io n f orma t ) ", " logsBucke t ": " s tr i n g ", " op t io ns ": { " sourceProve nan ceHash ": " e nu m(HashType) ", " machi ne Type ": " e nu m(Machi ne Type) ", " diskSizeGb ": " s tr i n g (i nt 64 f orma t ) ", " subs t i tut io n Op t io n ": " e nu m(Subs t i tut io n Op t io n ) ", " dy na micSubs t i tut io ns ": " boolea n ", " au t omapSubs t i tut io ns ": " boolea n ", " logS trea mi n gOp t io n ": " e nu m(LogS trea mi n gOp t io n ) ", " loggi n g ": " e nu m(Loggi n gMode) " " de fault LogsBucke t Behavior ": " e nu m(De fault LogsBucke t Behavior) " " e n v ": [ " s tr i n g ", " s tr i n g ", " ... " ], " secre t E n v ": " s tr i n g ", " volumes ": " objec t (Volume) ", " pool ": " objec t (PoolOp t io n ) " " reques te dVeri f yOp t io n ": " e nu m(Reques te dVeri f yOp t io n ) " }, " subs t i tut io ns ": " map (key : s tr i n g , value : s tr i n g) ", " ta gs ": [ " s tr i n g ", " s tr i n g ", " ... " ], " serviceAccou nt ": " s tr i n g ", " secre ts ": " objec t (Secre t ) ", " availableSecre ts ": " objec t (Secre ts ) ", " ar t i fa c ts ": " objec t (Ar t i fa c ts ) ", " goModules ": [object(GoModules), ...], " mave n Ar t i fa c ts ": [" objec t (Mave n Ar t i fa c t ) ", ...], " py t ho n Packages ": [" objec t (Py t ho n Package) ", ...], " n pmPackages ": [" objec t ( n pmPackage) ", ...], " images ": [ " s tr i n g ", " s tr i n g ", " ..." ] } Each of the sections of the build config file defines a part of the task you want Cloud Build to execute: Build steps A build step specifies an action that you want Cloud Build to perform.
 - In the following build config the env field of the build step sets the Compute Engine zone and the GKE cluster prior to executing kubectl : YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/myproject/myimage' , '.' ] - name : 'gcr.io/cloud-builders/kubectl' args : [ 'set' , 'image' , 'deployment/myimage' , 'frontend=gcr.io/myproject/myimage' ] env : - 'CLOUDSDK COMPUTE ZONE=us-east1-b' - 'CLOUDSDK CONTAINER CLUSTER=node-example-cluster' JSON { "steps" : [ { "name" : "gcr.io/cloud-builders/docker" , "args" : [ "build" , "-t" , "gcr.io/myproject/myimage" , "." ] }, { "name" : "gcr.io/cloud-builders/kubectl" , "args" : [ "set" , "image" , "deployment/myimage" , "frontend=gcr.io/myproject/myimage" ], "env" : [ "CLOUDSDK COMPUTE ZONE=us-east1-b" , "CLOUDSDK CONTAINER CLUSTER=node-example-cluster" ] } ] } allowFailure In a build step, if you set the value of the allowFailure field to true , and the build step fails, then the build succeeds as long as all other build steps in that build succeed.
-- If this value is absolute, it may be outside the build's working directory, in which case the contents of the path may not be persisted across build step executions (unless a volume for that path is specified).
+- The following snippet invokes the docker build command and installs Maven dependencies: YAML steps : - name : 'gcr.io/cloud-builders/mvn' args : [ 'install' ] - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/my-project-id/myimage' , '.' ] JSON { "steps" : [ { "name" : "gcr.io/cloud-builders/mvn" , "args" : [ "install" ] }, { "name" : "gcr.io/cloud-builders/docker" , "args" : [ "build" , "-t" , "gcr.io/my-project-id/myimage" , "." ] } ] } env The env field of a build step takes a list of environment variables to be used when running the step.
 

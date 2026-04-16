@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:57:06.735Z"
+generated_at: "2026-04-12T12:11:52.328Z"
 product_name: "Cloud NAT"
 product_slug: "cloud-nat"
 feature_name: "Standard Tier egress support"
 feature_slug: "standard-tier-egress-support"
 latest_feature_date: "2023-08-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation"
   - "https://docs.cloud.google.com/nat/docs/overview"
-  - "https://docs.cloud.google.com/nat/docs/release-notes"
+  - "https://docs.cloud.google.com/nat/docs/troubleshooting"
+  - "https://docs.cloud.google.com/nat/docs/monitoring"
 keywords:
   - "standard"
   - "tier"
@@ -24,7 +25,7 @@ keywords:
 # Standard Tier egress support
 
 Product: Cloud NAT
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,13 +37,14 @@ Cloud NAT supports Standard Tier egress traffic; Cloud NAT supports Standard Tie
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - [https://docs.cloud.google.com/nat/docs/overview](https://docs.cloud.google.com/nat/docs/overview)
-- [https://docs.cloud.google.com/nat/docs/release-notes](https://docs.cloud.google.com/nat/docs/release-notes)
+- [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
+- [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
 
 ## Supporting Pages
 
@@ -50,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - Source ID: `site-docs-root`
-- Final score: 124
+- Final score: 153
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -63,7 +65,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/nat/docs/overview](https://docs.cloud.google.com/nat/docs/overview)
 - Source ID: `site-docs-reference`
-- Final score: 110
+- Final score: 139
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -72,16 +74,29 @@ Evidence snippets:
 - Traffic Description From a VPC network to another VPC network Private NAT supports private-to-private NAT for VPC networks attached as VPC spokes to a Network Connectivity Center hub.
 - Cloud NAT translates addresses for the following resources: Compute Engine virtual machine (VM) instances Google Kubernetes Engine (GKE) clusters Cloud Run instances Cloud Run functions instances App Engine standard environment instances Regional internet network endpoint groups (NEGs) NAT is automatically applied to the resources that match your Cloud NAT configuration after you create a Cloud NAT gateway and configure it to serve the subnets where those resources run.
 
-### Cloud NAT release notes \_|\_ Google Cloud Documentation
+### Troubleshoot configuration \_|\_ Cloud NAT \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/nat/docs/release-notes](https://docs.cloud.google.com/nat/docs/release-notes)
+- URL: [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 88
+- Final score: 98
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- August 06, 2023 Feature Cloud NAT support for Standard Tier egress is in General Availability .
-- May 30, 2023 Feature Cloud NAT support for Standard Tier egress is available in Preview .
-- Gateway type Default timeout (before June 30) Default timeout (June 30—September 29) Default timeout (on or after September 30) New 120 seconds 30 or 120 seconds 30 seconds October 21, 2025 Feature General Availability : Private NAT supports Cloud Run.
-- July 22, 2024 Feature Hybrid NAT supports Cloud Interconnect in Preview .
+- Firewall rules that block egress (outbound) traffic are applied before the traffic would have been sent to the NAT gateway.
+- During periods of heavy egress traffic, NAT logging is throttled, proportional to the machine type of the VM.
+- Increase the value for TCP Transitory Connection Idle Timeout, so that external endpoints that receive traffic (initiated by Google Cloud resources) through a Cloud NAT gateway get more time to respond and to establish the connection.
+- Does Public NAT let a source VM whose network interface lacks an external IP address send traffic to a destination VM or load balancer that has an external IP address, even when the source and destination are in the same VPC network?
+
+### Logs and metrics \_|\_ Cloud NAT \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
+- Source ID: `site-docs-root`
+- Final score: 81
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- View predefined dashboards Cloud NAT provides a set of predefined dashboards that display activity across your gateway: Open connections Egress data processed by NAT (rate) Ingress data processed by NAT (rate) Port usage NAT allocation errors Dropped sent packets rate Dropped received packets rate To view predefined dashboards from the details page of a particular gateway, follow these steps: Console In the Google Cloud console, go to the Cloud NAT page.
+- Specifications The following specifications apply to Cloud NAT logging: Cloud NAT logging handles TCP and UDP traffic only.
+- What is logged Cloud NAT log entries contain information useful for monitoring and debugging your NAT traffic.
+- Cloud NAT logging only logs dropped packets if they are egress (outbound) TCP and UDP packets.
 

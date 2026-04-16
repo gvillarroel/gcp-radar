@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:01:35.385Z"
+generated_at: "2026-04-14T11:24:06.279Z"
 product_name: "Blockchain Node Engine"
 product_slug: "blockchain-node-engine"
 feature_name: "Mainnet and Testnet selection for node creation"
 feature_slug: "mainnet-and-testnet-selection-for-node-creation"
 latest_feature_date: "2023-01-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
-  - "https://docs.cloud.google.com/blockchain-node-engine/docs/release-notes"
   - "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes"
+  - "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
 keywords:
   - "selection"
-  - "now"
+  - "selecting"
+  - "allows"
   - "creation"
   - "mainnet"
   - "testnet"
-  - "for"
-  - "and"
-  - "node"
 ---
 
 # Mainnet and Testnet selection for node creation
 
 Product: Blockchain Node Engine
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,17 +31,16 @@ Node creation now allows selecting either Ethereum Mainnet or Testnet deployment
 
 ## Extended Definition
 
-Node creation now allows selecting either Ethereum Mainnet or Testnet deployment.
+In Blockchain Node Engine, the node API/REST resource model includes explicit Ethereum network constants for testnet environments, including TESTNET SEPOLIA, TESTNET GOERLI PRATER, and TESTNET HOLESKY. This indicates that node creation supports selecting a testnet deployment option for those listed networks, while the provided excerpts do not show an explicit mainnet selection value.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+The cited RPC and REST documentation pages enumerate supported Ethereum TESTNET values for blockchain node resources, but the snippets do not document a corresponding mainnet option.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1)
-- [https://docs.cloud.google.com/blockchain-node-engine/docs/release-notes](https://docs.cloud.google.com/blockchain-node-engine/docs/release-notes)
 - [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes)
+- [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1)
 
 ## Supporting Pages
 
@@ -52,39 +48,31 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1)
 - Source ID: `site-api-reference`
-- Final score: 154
+- Final score: 52
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Index BlockchainNodeEngine (interface) BlockchainNode (message) BlockchainNode.BlockchainType (enum) BlockchainNode.ConnectionInfo (message) BlockchainNode.ConnectionInfo.EndpointInfo (message) BlockchainNode.EthereumDetails (message) BlockchainNode.EthereumDetails.ConsensusClient (enum) BlockchainNode.EthereumDetails.EthereumEndpoints (message) BlockchainNode.EthereumDetails.ExecutionClient (enum) BlockchainNode.EthereumDetails.GethDetails (message) BlockchainNode.EthereumDetails.GethDetails.GarbageCollectionMode (enum) BlockchainNode.EthereumDetails.Network (enum) BlockchainNode.EthereumDetails.NodeType (enum) BlockchainNode.EthereumDetails.ValidatorConfig (message) BlockchainNode.State (enum) CreateBlockchainNodeRequest (message) DeleteBlockchainNodeRequest (message) GetBlockchainNodeRequest (message) ListBlockchainNodesRequest (message) ListBlockchainNodesResponse (message) OperationMetadata (message) UpdateBlockchainNodeRequest (message) BlockchainNodeEngine This service is the control plane API for Blockchain Node Engine, and can be used to create, read, and delete blockchain nodes.
-- A service attachment that exposes a node, and has the following format: projects/{project}/regions/{region}/serviceAttachments/{service attachment name} EndpointInfo Contains endpoint information through which to interact with a blockchain node.
-- See What are nodes and clients? for more details.
-- See What are nodes and clients? for more details.
-
-### Blockchain Node Engine release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/blockchain-node-engine/docs/release-notes](https://docs.cloud.google.com/blockchain-node-engine/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Feature The following features are now available: Sepolia Testnet (supported for Geth/Lighthouse Full nodes) Archive nodes (supported for Erigon nodes on Mainnet) Sepolia Testnet is one of the preferred testnets for dApp developers.
-- Feature You can now select either Ethereum Mainnet or Testnet as options when creating blockchain nodes.
-- With a single operation, Blockchain Node Engine provisions a new node with the specified configuration (network, region, client, node type), bootstrap it from a known-good snapshot, sync it with the blockchain, and ensure its availability.
-- Feature Blockchain nodes created with the execution client GETH and consensus client LIGHTHOUSE now expose the JSON-RPC endpoint of the lighthouse client (consensus layer).
+- TESTNET SEPOLIA The Ethereum Testnet based on Sepolia/Bepolia protocol.
+- TESTNET GOERLI PRATER The Ethereum Testnet based on Goerli protocol.
+- TESTNET HOLESKY The Ethereum Testnet based on Holesky specification.
 
 ### "REST Resource: projects.locations.blockchainNodes \_|\_ Blockchain Node\
 
 - URL: [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes)
 - Source ID: `site-api-reference`
-- Final score: 142
+- Final score: 52
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- A service attachment that exposes a node, and has the following format: projects/{project}/regions/{region}/serviceAttachments/{service attachment name} EndpointInfo Contains endpoint information through which to interact with a blockchain node.
-- See What are nodes and clients? for more details.
-- See What are nodes and clients? for more details.
-- RUNNING The node is running and ready for use.
+- TESTNET SEPOLIA The Ethereum Testnet based on Sepolia/Bepolia protocol.
+- TESTNET GOERLI PRATER The Ethereum Testnet based on Goerli protocol.
+- TESTNET HOLESKY The Ethereum Testnet based on Holesky specification.
+
+### "Resource attributes for IAM Conditions \_|\_ Identity and Access Management\
+
+- URL: [https://docs.cloud.google.com/iam/docs/conditions-resource-attributes](https://docs.cloud.google.com/iam/docs/conditions-resource-attributes)
+- Source ID: `site-iam-reference`
+- Final score: 36
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 

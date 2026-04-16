@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:26:39.373Z"
+generated_at: "2026-04-12T20:57:41.408Z"
 product_name: "App Engine standard environment Ruby"
 product_slug: "app-engine-standard-environment-ruby"
 feature_name: "App Engine dashboard per-URL error reporting"
 feature_slug: "app-engine-dashboard-per-url-error-reporting"
 latest_feature_date: "2016-07-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest"
+  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+  - "https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler"
 keywords:
+  - "app"
+  - "engine"
   - "dashboard"
-  - "reporting"
-  - "server"
-  - "error"
   - "per"
   - "url"
-  - "engine"
-  - "app"
+  - "error"
+  - "reporting"
+  - "server"
 ---
 
 # App Engine dashboard per-URL error reporting
 
 Product: App Engine standard environment Ruby
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,51 @@ Server Error and Client Error metrics in the App Engine dashboard were updated t
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest)
+- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- [https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler](https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler)
 
 ## Supporting Pages
 
-### "appengine-web.xml reference \_|\_ App Engine standard environment \_|\_\
+### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- Source ID: `site-docs-reference`
-- Final score: 216
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The appengine-web.xml file can define system properties and environment variables that are set when the application is running. <system-properties> <property name="myapp.maximum-message-length" value="140" /> <property name="myapp.notify-every-n-signups" value="1000" /> <property name="myapp.notify-url" value="http://www.example.com/signupnotify" /> </system-properties> <env-variables> <env-var name="DEFAULT ENCODING" value="UTF-8" /> </env-variables> Optional.
-- Specify the timeout in seconds: < system - properties > < property name = "appengine.api.urlfetch.defaultDeadline" value = "10" / > < / system - properties > Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- For more information regarding EE support, see Upgrade Java on a compatible Enterprise Edition (EE) version . <system-properties> <property name="appengine.use.EE11" value="true"/><!--only for Java 25--> </system-properties> Starting in Java 21, you can configure your Java web server to use virtual threads.
-- If you want to disallow the use of HTTPS for the application, put the following in the appengine-web.xml file: <ssl-enabled>false</ssl-enabled> There is no way to disallow HTTPS for some URL paths and not others in the Java runtime environment. <static-error-handlers> Optional.
-
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
 - Source ID: `site-docs-root-2`
-- Final score: 194
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.
+- The Users API allows an App Engine app to perform the following tasks: Detect whether the current user is signed in using a Google Account.
+- IAP doesn't protect against activity within a project, such as one App Engine service accessing another service in the same project.
+
+### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- Source ID: `site-docs-root-2`
+- Final score: 67
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
-- For a deeper dive into how App Engine works, see the Go Runtime Environment .
-- Create a new folder called go-app for your Go service: mkdir go-app In your go-app/ folder, create a file called app.yaml , and add the following contents: runtime : go126 # or another supported version This is the simplest configuration for an App Engine app.
-- Deploy your web service on App Engine In your go-app directory where your app.yaml file is located, deploy your web service to App Engine using the following command: gcloud app deploy To launch your browser and view your web service at https:// PROJECT ID .
+- Terraform You can use a Terraform resource to enable the vpcaccess.googleapis.com API. resource "google project service" "vpcaccess-api" { project = var.project id # Replace this with your project ID in quotes service = "vpcaccess.googleapis.com" } You can use Terraform modules to create a VPC network and subnet and then create the connector. module "test-vpc-module" { source = "terraform-google-modules/network/google" version = " > 16.0" project id = var.project id # Replace this with your project ID in quotes network name = "my-serverless-network" mtu = 1460 subnets = [ { subnet name = "serverless-subnet" subnet ip = "10.10.10.0/28" subnet region = "us-central1" } ] } module "serverless-connector" { source = "terraform-google-modules/network/google//modules/vpc-serverless-connector-beta" version = " > 16.0" project id = var.project id vpc connectors = [{ name = "central-serverless" region = "us-central1" subnet name = module.test-vpc-module.subnets["us-central1/serverless-subnet"].name host project id = var.host project id # Specify a host project id for shared VPC machine type = "e2-standard-4" min instances = 2 max instances = 7 } Uncomment to specify an ip cidr range , { name = "central-serverless2" region = "us-central1" network = module.test-vpc-module.network name ip cidr range = "10.10.11.0/28" subnet name = null machine type = "e2-standard-4" min instances = 2 max instances = 7 } ] depends on = [ google project service.vpcaccess-api ] } Configure your service to use a connector After you have created a Serverless VPC Access connector, you must configure each service in your App Engine app that you want to connect to your VPC network.
+- However, if you create a connector in a service project and the connector targets a Shared VPC network in the host project, you must add firewall rules to allow necessary traffic for the connector's operation from the following ranges: Serverless infrastructure IP range : 35.199.224.0/19 Health check probe IP ranges : 35.191.0.0/16 , 35.191.192.0/18 , and 130.211.0.0/22 These ranges are used by the Google infrastructure underlying Cloud Run, Cloud Run functions, and App Engine standard environment.
+- Errors Service account needs Service Agent role error If you use the Restrict Resource Service Usage organization policy constraint to block Cloud Deployment Manager ( deploymentmanager.googleapis.com ), you might see the following error message: Serverless VPC Access service account (service-<PROJECT NUMBER>@gcp-sa-vpcaccess.iam.gserviceaccount.com) needs Serverless VPC Access Service Agent role in the project.
+- This page shows how to use Serverless VPC Access to connect your App Engine services in the standard environment directly to your VPC network, allowing access to Compute Engine VM instances, Memorystore instances, and any other resources with an internal IP address.
 
-### "Package google.golang.org/appengine/v2 (v2.0.6) \_|\_ App Engine standard\
+### "Understand performance with Cloud Profiler \_|\_ App Engine standard environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest)
-- Source ID: `site-docs-reference`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler](https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler)
+- Source ID: `site-docs-root-2`
+- Final score: 64
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- This is suitable for use in constructing URLs. func InstanceID func InstanceID () string InstanceID returns a mostly-unique identifier for this instance. func IsAppEngine func IsAppEngine () bool IsAppEngine reports whether the App Engine app is running on App Engine, in either the standard or flexible environment. func IsDevAppServer func IsDevAppServer () bool IsDevAppServer reports whether the App Engine app is running in the development App Server. func IsFlex func IsFlex () bool IsFlex reports whether the App Engine app is running in the flexible environment. func IsOverQuota func IsOverQuota ( err error ) bool IsOverQuota reports whether err represents an API call failure due to insufficient available quota. func IsSecondGen func IsSecondGen () bool IsSecondGen reports whether the App Engine app is running on the second generation runtimes (>= Go 1.11). func IsStandard func IsStandard () bool IsStandard reports whether the App Engine app is running in the standard environment.
-- This includes both the first generation runtimes (<= Go 1.9) and the second generation runtimes (>= Go 1.11). func IsTimeoutError func IsTimeoutError ( err error ) bool IsTimeoutError reports whether err is a timeout error. func Main func Main () Main is the principal entry point for an app running in App Engine.
-- Context ) string RequestID returns a string that uniquely identifies the request. func ServerSoftware func ServerSoftware () string ServerSoftware returns the App Engine release version.
-- On App Engine Standard it ensures the server has started and is prepared to receive requests.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Understand performance with Cloud Profiler Stay organized with collections Save and categorize content based on your preferences.
 

@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.393Z"
+generated_at: "2026-04-14T11:18:28.041Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Cloud Bigtable in southamerica-east1 region"
 feature_slug: "cloud-bigtable-in-southamerica-east1-region"
 latest_feature_date: "2019-02-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/bigtable/docs/locations"
+  - "https://docs.cloud.google.com/bigtable/docs/creating-instance"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
-  - "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient"
 keywords:
+  - "paulo"
   - "southamerica"
   - "east1"
   - "available"
-  - "bigtable"
   - "region"
-  - "the"
-  - "is"
-  - "in"
 ---
 
 # Cloud Bigtable in southamerica-east1 region
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,53 @@ Cloud Bigtable is available in the southamerica-east1 (São Paulo) region.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/bigtable/docs/locations](https://docs.cloud.google.com/bigtable/docs/locations)
+- [https://docs.cloud.google.com/bigtable/docs/creating-instance](https://docs.cloud.google.com/bigtable/docs/creating-instance)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient)
-- [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient)
 
 ## Supporting Pages
+
+### Bigtable locations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigtable/docs/locations](https://docs.cloud.google.com/bigtable/docs/locations)
+- Source ID: `site-docs-root`
+- Final score: 127
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Zone name Region name Region description southamerica-east1-a southamerica-east1 São Paulo Low CO 2 southamerica-east1-b southamerica-east1 São Paulo Low CO 2 southamerica-east1-c southamerica-east1 São Paulo Low CO 2 southamerica-west1-a southamerica-west1 Santiago Low CO 2 southamerica-west1-b southamerica-west1 Santiago Low CO 2 southamerica-west1-c southamerica-west1 Santiago Low CO 2 What's next Create a Bigtable instance .
+- Zone name Region name Region description me-central1-a me-central1 Doha me-central1-b me-central1 Doha me-central1-c me-central1 Doha me-central2-a me-central2 Dammam me-central2-b me-central2 Dammam me-central2-c me-central2 Dammam me-west1-a me-west1 Tel Aviv me-west1-b me-west1 Tel Aviv me-west1-c me-west1 Tel Aviv North America The following table lists the regions in North America where Bigtable is available: Zone name Region name Region description northamerica-northeast1-a northamerica-northeast1 Montréal Low CO 2 northamerica-northeast1-b northamerica-northeast1 Montréal Low CO 2 northamerica-northeast1-c northamerica-northeast1 Montréal Low CO 2 northamerica-northeast2-a northamerica-northeast2 Toronto Low CO 2 northamerica-northeast2-b northamerica-northeast2 Toronto Low CO 2 northamerica-northeast2-c northamerica-northeast2 Toronto Low CO 2 northamerica-south1-a northamerica-south1 Mexico northamerica-south1-b northamerica-south1 Mexico northamerica-south1-c northamerica-south1 Mexico us-central1-a us-central1 Iowa Low CO 2 us-central1-b us-central1 Iowa Low CO 2 us-central1-c us-central1 Iowa Low CO 2 us-central1-f us-central1 Iowa Low CO 2 us-east1-b us-east1 South Carolina us-east1-c us-east1 South Carolina us-east1-d us-east1 South Carolina us-east4-a us-east4 Northern Virginia us-east4-b us-east4 Northern Virginia us-east4-c us-east4 Northern Virginia us-east5-a us-east5 Columbus us-east5-b us-east5 Columbus us-east5-c us-east5 Columbus us-south1-a us-south1 Dallas Low CO 2 us-south1-b us-south1 Dallas Low CO 2 us-south1-c us-south1 Dallas Low CO 2 us-west1-a us-west1 Oregon Low CO 2 us-west1-b us-west1 Oregon Low CO 2 us-west1-c us-west1 Oregon Low CO 2 us-west2-a us-west2 Los Angeles us-west2-b us-west2 Los Angeles us-west2-c us-west2 Los Angeles us-west3-a us-west3 Salt Lake City us-west3-b us-west3 Salt Lake City us-west3-c us-west3 Salt Lake City us-west4-a us-west4 Las Vegas us-west4-b us-west4 Las Vegas us-west4-c us-west4 Las Vegas South America The following table lists the regions in South America where Bigtable is available.
+- Zone name Region name Region description asia-east1-a asia-east1 Taiwan asia-east1-b asia-east1 Taiwan asia-east1-c asia-east1 Taiwan asia-east2-a asia-east2 Hong Kong asia-east2-b asia-east2 Hong Kong asia-east2-c asia-east2 Hong Kong asia-northeast1-a asia-northeast1 Tokyo asia-northeast1-b asia-northeast1 Tokyo asia-northeast1-c asia-northeast1 Tokyo asia-northeast2-a asia-northeast2 Osaka asia-northeast2-b asia-northeast2 Osaka asia-northeast2-c asia-northeast2 Osaka asia-northeast3-a asia-northeast3 Seoul asia-northeast3-b asia-northeast3 Seoul asia-northeast3-c asia-northeast3 Seoul asia-south1-a asia-south1 Mumbai asia-south1-b asia-south1 Mumbai asia-south1-c asia-south1 Mumbai asia-south2-a asia-south2 Delhi asia-south2-b asia-south2 Delhi asia-south2-c asia-south2 Delhi asia-southeast1-a asia-southeast1 Singapore asia-southeast1-b asia-southeast1 Singapore asia-southeast1-c asia-southeast1 Singapore asia-southeast2-a asia-southeast2 Jakarta asia-southeast2-b asia-southeast2 Jakarta asia-southeast2-c asia-southeast2 Jakarta asia-southeast3-a asia-southeast3 Bangkok asia-southeast3-b asia-southeast3 Bangkok asia-southeast3-c asia-southeast3 Bangkok Australia The following table lists the regions in Australia where Bigtable is available.
+- Zone name Region name Region description australia-southeast1-a australia-southeast1 Sydney australia-southeast1-b australia-southeast1 Sydney australia-southeast1-c australia-southeast1 Sydney australia-southeast2-a australia-southeast2 Melbourne australia-southeast2-b australia-southeast2 Melbourne australia-southeast2-c australia-southeast2 Melbourne Europe The following table lists the regions in Europe where Bigtable is available.
+
+### Create an instance \_|\_ Bigtable \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigtable/docs/creating-instance](https://docs.cloud.google.com/bigtable/docs/creating-instance)
+- Source ID: `site-docs-reference-2`
+- Final score: 80
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information, see Set up authentication for a local development environment . use Exception; use Google\ApiCore\ApiException; use Google\Cloud\Bigtable\Admin\V2\Client\BigtableInstanceAdminClient; use Google\Cloud\Bigtable\Admin\V2\Cluster; use Google\Cloud\Bigtable\Admin\V2\CreateInstanceRequest; use Google\Cloud\Bigtable\Admin\V2\GetInstanceRequest; use Google\Cloud\Bigtable\Admin\V2\Instance; use Google\Cloud\Bigtable\Admin\V2\Instance\Type as InstanceType; use Google\Cloud\Bigtable\Admin\V2\StorageType; / Create a production Bigtable instance @param string $projectId The Google Cloud project ID @param string $instanceId The ID of the Bigtable instance to be generated @param string $clusterId The ID of the cluster to be generated @param string $locationId The Bigtable region ID where you want your instance to reside / function create production instance( string $projectId, string $instanceId, string $clusterId, string $locationId = 'us-east1-b' ): void { $instanceAdminClient = new BigtableInstanceAdminClient(); $projectName = $instanceAdminClient->projectName($projectId); $instanceName = $instanceAdminClient->instanceName($projectId, $instanceId); $serveNodes = 3; $storageType = StorageType::SSD; $production = InstanceType::PRODUCTION; $labels = ['prod-label' => 'prod-label']; $instance = new Instance(); $instance->setDisplayName($instanceId); $instance->setLabels($labels); $instance->setType($production); $cluster = new Cluster(); $cluster->setDefaultStorageType($storageType); $locationName = $instanceAdminClient->locationName($projectId, $locationId); $cluster->setLocation($locationName); $cluster->setServeNodes($serveNodes); $clusters = [ $clusterId => $cluster ]; try { $getInstanceRequest = (new GetInstanceRequest()) ->setName($instanceName); $instanceAdminClient->getInstance($getInstanceRequest); printf('Instance %s already exists.' .
+- The KMS KEY value must be set in the following format: projects/ PROJECT /locations/ LOCATION /keyRings/ KEYRING /cryptoKeys/ KEY Replace the following: PROJECT : the permanent identifier for the project LOCATION : the location of your cluster KEYRING : the name of the key ring that contains the key KEY : the name of the key The following is an example: projects/examplestore.com:dev/locations/us-east1/keyRings/devt-cmek-2/cryptoKeys/key2 If the instance is CMEK-protected, each cluster must be in the same region as its CMEK key.
+- For example, if an instance has a cluster in us-east1-b , you can add a cluster in a different zone in the same region, such as us-east1-c , or a zone in a separate region, such as europe-west2-a .
+- ToLower (); // Please refer to the link below for the full list of available locations: // https://cloud.google.com/bigtable/docs/locations string zone1 = "us-east1-b" ; // The instance to create.
 
 ### "Class BigtableInstanceAdminClient (2.74.0) \_|\_ Java client libraries \_\
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient)
 - Source ID: `site-java-reference`
-- Final score: 226
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 57
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Sample code: ApiFuture<Policy> newPolicyFuture = client . setIamPolicyAsync ( "my-instance" , Policy . newBuilder () . addIdentity ( Role . of ( "bigtable.user" ), Identity . user ( "someone@example.com" )) . addIdentity ( Role . of ( "bigtable.admin" ), Identity . group ( "admins@example.com" )) . build ()); ApiFutures . addCallback ( policyFuture , new ApiFutureCallback<Policy> () { public void onSuccess ( Policy policy ) { for ( Entry<Role , Set<Identity> > entry : policy . getBindings (). entrySet ()) { System . out . printf ( "Role: %s Identities: %s " , entry . getKey (), entry . getValue ()); } } public void onFailure ( Throwable t ) { t . printStackTrace (); } }, MoreExecutors . directExecutor ()); See Also: Instance-level IAM management Parameters Name Description instanceId String policy com.google.cloud.Policy Returns Type Description ApiFuture < com.google.cloud.Policy > testIamPermission(String instanceId, String[] permissions) public List<String> testIamPermission ( String instanceId , String [] permissions ) Tests whether the caller has the given permissions for the specified instance.
 - Sample code: ApiFuture<Cluster> clustersFuture = client . listClustersAsync ( "my-instance" ); ApiFutures . addCallback ( clustersFuture , new ApiFutureCallback<List<Cluster> > () { public void onFailure ( Throwable t ) { if ( t instanceof PartialListClustersException ) { PartialListClustersException partialError = ( PartialListClustersException ) t ; System . out . println ( "The following zones are unavailable: " + partialError . getUnavailableZones ()); System . out . println ( "But the following clusters are reachable: " + partialError . getClusters ()); } else { t . printStackTrace (); } } public void onSuccess ( List<Cluster> result ) { System . out . println ( "Found a complete set of instances: " + result ); } }, MoreExecutors . directExecutor ()); Parameter Name Description instanceId String Returns Type Description ApiFuture < List < Cluster >> listInstances() public List<Instance> listInstances () Lists all of the instances in the current project.
 - Sample code: ApiFuture<Instance> instancesFuture = client . listInstancesAsync (); ApiFutures . addCallback ( instancesFuture , new ApiFutureCallback<List<Instance> > () { public void onFailure ( Throwable t ) { if ( t instanceof PartialListInstancesException ) { PartialListInstancesException partialError = ( PartialListInstancesException ) t ; System . out . println ( "The following zones are unavailable: " + partialError . getUnavailableZones ()); System . out . println ( "But the following instances are reachable: " + partialError . getInstances ()); } else { t . printStackTrace (); } } public void onSuccess ( List<Instance> result ) { System . out . println ( "Found a complete set of instances: " + result ); } }, MoreExecutors . directExecutor ()); Returns Type Description ApiFuture < List < Instance >> listLogicalViews(String instanceId) public List<LogicalView> listLogicalViews ( String instanceId ) Lists all logical views of the specified instance.
-- Sample code: List<String> grantedPermissions = client . testIamPermission ( "my-instance" , "bigtable.tables.readRows" , "bigtable.tables.mutateRows" ); System.out.println("Has read access: " + grantedPermissions.contains("bigtable.tables.readRows")); System.out.println("Has write access: " + grantedPermissions.contains("bigtable.tables.mutateRows")); See Also: Cloud Bigtable permissions Parameters Name Description instanceId String permissions String [] Returns Type Description List < String > testIamPermissionAsync(String instanceId, String[] permissions) public ApiFuture<List<String> > testIamPermissionAsync ( String instanceId , String [] permissions ) Asynchronously tests whether the caller has the given permissions for the specified instance.
-
-### "Class BigtableTableAdminAsyncClient (2.35.0) \_|\_ Python client libraries\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 226
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.bigtable import admin v2 async def sample restore table(): Create a client client = admin v2.BigtableTableAdminAsyncClient() Initialize request argument(s) request = admin v2.RestoreTableRequest( backup="backup value", parent="parent value", table id="table id value", ) Make the request operation = await client.restore table(request=request) print("Waiting for operation to complete...") response = await operation.result() Handle the response print(response) Handle LRO2 optimize operation = await operation.optimize restore table operation() if optimize operation: print("Waiting for table optimization to complete...") response = await optimize operation.result() Parameters Name Description request Union[ google.cloud.bigtable admin v2.types.RestoreTableRequest , dict] The request object.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.bigtable import admin v2 async def sample wait for consistency(): Create a client client = admin v2.BigtableTableAdminAsyncClient() Initialize request argument(s) request = admin v2.WaitForConsistencyRequest( name="name value", ) Make the request print("Waiting for operation to complete...") response = await client.wait for replication(request=request) Handle the response print(response) Parameters Name Description request Union[ google.cloud.bigtable admin v2.overlay.types.WaitForConsistencyRequest , dict] The request object. name str Required.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import bigtable admin v2 from google.iam.v1 import iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = bigtable admin v2.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import bigtable admin v2 from google.iam.v1 import iam policy pb2 # type: ignore async def sample get iam policy(): Create a client client = bigtable admin v2.
-
-### "Class BigtableTableAdminClient (2.35.0) \_|\_ Python client libraries \_\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient)
-- Source ID: `site-python-reference`
-- Final score: 226
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.bigtable import admin v2 def sample restore table(): Create a client client = admin v2.BigtableTableAdminClient() Initialize request argument(s) request = admin v2.RestoreTableRequest( backup="backup value", parent="parent value", table id="table id value", ) Make the request operation = client.restore table(request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Handle LRO2 optimize operation = operation.optimize restore table operation() if optimize operation: print("Waiting for table optimization to complete...") response = optimize operation.result() Parameters Name Description request Union[ google.cloud.bigtable admin v2.types.RestoreTableRequest , dict] The request object.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.bigtable import admin v2 def sample wait for consistency(): Create a client client = admin v2.BigtableTableAdminClient() Initialize request argument(s) request = admin v2.WaitForConsistencyRequest( name="name value", ) Make the request print("Waiting for operation to complete...") response = client.wait for replication(request=request) Handle the response print(response) Parameters Name Description request Union[ google.cloud.bigtable admin v2.overlay.types.WaitForConsistencyRequest , dict] The request object. name str Required.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import bigtable admin v2 from google.iam.v1 import iam policy pb2 # type: ignore def sample test iam permissions(): Create a client client = bigtable admin v2.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import bigtable admin v2 from google.iam.v1 import iam policy pb2 # type: ignore def sample get iam policy(): Create a client client = bigtable admin v2.
+- Sample code: try { List<Cluster> clusters = client . listClusters ( "my-instance" ); } catch ( PartialListClustersException e ) { System . out . println ( "The following zones are unavailable: " + e . getUnavailableZones ()); System . out . println ( "But the following clusters are reachable: " + e . getClusters ()) } Parameter Name Description instanceId String Returns Type Description List < Cluster > listClustersAsync(String instanceId) public ApiFuture<List<Cluster> > listClustersAsync ( String instanceId ) Asynchronously lists all clusters in the specified instance.
+- Sample code: try { List<Instance> instances = client . listInstances (); } catch ( PartialListInstancesException e ) { System . out . println ( "The following zones are unavailable: " + e . getUnavailableZones ()); System . out . println ( "But the following instances are reachable: " + e . getInstances ()); } Returns Type Description List < Instance > listInstancesAsync() public ApiFuture<List<Instance> > listInstancesAsync () Asynchronously lists all of the instances in the current project.
 

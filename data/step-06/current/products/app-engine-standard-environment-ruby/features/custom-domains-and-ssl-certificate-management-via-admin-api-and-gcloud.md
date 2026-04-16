@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:26:39.368Z"
+generated_at: "2026-04-12T20:57:41.405Z"
 product_name: "App Engine standard environment Ruby"
 product_slug: "app-engine-standard-environment-ruby"
 feature_name: "Custom domains and SSL certificate management via Admin API and gcloud"
 feature_slug: "custom-domains-and-ssl-certificate-management-via-admin-api-and-gcloud"
 latest_feature_date: "2017-06-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml"
   - "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed"
   - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed"
 keywords:
+  - "custom"
+  - "domains"
+  - "ssl"
   - "certificate"
   - "management"
-  - "ssl"
-  - "domains"
   - "via"
-  - "custom"
   - "admin"
-  - "and"
+  - "gcloud"
 ---
 
 # Custom domains and SSL certificate management via Admin API and gcloud
 
 Product: App Engine standard environment Ruby
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,55 @@ The Admin API and gcloud CLI now support beta-level creation and management of c
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml)
 - [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
 - [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- [https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed)
 
 ## Supporting Pages
-
-### "The deployment descriptor: web.xml \_|\_ App Engine standard environment\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml)
-- Source ID: `site-docs-reference`
-- Final score: 138
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Note: To use G Suite domains with HTTPS, you must first activate and configure SSL for App Engine with your domain .
-- Google does not issue SSL certificates for double-wildcard domains hosted at appspot.com .
-- The admin role makes it easy to build administrator-only sections of your site. <security-constraint> <web-resource-collection> <web-resource-name>profile</web-resource-name> <url-pattern>/profile/ </url-pattern> </web-resource-collection> <auth-constraint> <role-name> </role-name> </auth-constraint> </security-constraint> <security-constraint> <web-resource-collection> <web-resource-name>admin</web-resource-name> <url-pattern>/admin/ </url-pattern> </web-resource-collection> <auth-constraint> <role-name>admin</role-name> </auth-constraint> </security-constraint> Note: G Suite domain administrators and App Engine domain administrators are not included in the admin role in this context.
-- It also contains a <location> element containing the URL path of the resource to show when the error occurs. <error-page> <error-code>500</error-code> <location>/errors/servererror.jsp</location> </error-page> You can't configure custom error handlers for the following error conditions: 404 response page when no servlet mapping is defined for a URL.
 
 ### "How requests are routed \_|\_ App Engine standard environment \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
 - Source ID: `site-docs-root-2`
-- Final score: 118
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 130
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Otherwise, users can use your app's App Engine URL to bypass the load balancer, Cloud Armor security policies, SSL certificates, and private keys that are passed through the load balancer.
-- Reuse the same SSL certificates and private keys that you use for Compute Engine, Google Kubernetes Engine, and Cloud Storage.
+- Soft routing does not apply to custom domains; requests to them will return a HTTP 404 status code if the hostname is invalid.
 - You can use the simple " . " URL notation with your own custom domains and with HTTP requests.
-- Example URLs Here are some examples of URLs for App Engine, showing both the appspot.com domain that App Engine assigns to your app and a custom domain, which you can set up for your app .
+- For example, you can create a dispatch file to route mobile requests like https://simple-sample.uc.r.appspot.com/mobile/ to a mobile frontend, and route worker requests like https://simple-sample.uc.r.appspot.com/work/ to a static backend: dispatch: Send all mobile traffic to the mobile frontend. - url: " /mobile/ " service: mobile-frontend Send all work to the one static backend. - url: " /work/ " service: static-backend Deploying the dispatch file To deploy the dispatch file using gcloud, run the following command: gcloud app deploy dispatch.yaml Routing with Cloud Load Balancing Cloud Load Balancing is a separate product that enables advanced network configurations for all of your applications running on Google Cloud.
+- To retrieve the IDs of your app's services and versions, you can use any of the following tools: Console In the Google Cloud console, you can view the corresponding Instances , Services , and Versions pages. gcloud Run the gcloud app instances list command to list the resource IDs within a specific Google Cloud project.
 
 ### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
 - Source ID: `site-docs-root-2`
-- Final score: 114
-- Re-rank relevance: N/A
+- Final score: 128
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To perform these steps, you must have one of the following roles on the host project: Owner role ( roles/owner ) Compute Security Admin role ( roles/compute.securityAdmin ) Custom Identity and Access Management (IAM) role with the compute.firewalls.create permission enabled For a basic configuration, apply the rules to allow serverless resources in any service project connected to the Shared VPC network to send requests to any resource in the network.
 - You must have one of the following Identity and Access Management (IAM) roles: Compute Security Admin role Custom IAM role with the compute.firewalls.create permission enabled Deny connector traffic across your VPC network.
 - You must have one of the following Identity and Access Management (IAM) roles: Compute Security Admin role Custom IAM role with the compute.firewalls.create permission enabled Deny connector traffic across your VPC network.
 - You must have one of the following Identity and Access Management (IAM) roles: Compute Security Admin role Custom IAM role with the compute.firewalls.create permission enabled Deny egress traffic from your connector.
+
+### "How requests are routed \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed)
+- Source ID: `site-docs-root`
+- Final score: 126
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Soft routing does not apply to custom domains; requests to them will return a HTTP 404 status code if the hostname is invalid.
+- You can use the simple " . " URL notation with your own custom domains and with HTTP requests.
+- For example, you can create a dispatch file to route mobile requests like https://simple-sample.uc.r.appspot.com/mobile/ to a mobile frontend, and route worker requests like https://simple-sample.uc.r.appspot.com/work/ to a static backend: dispatch: Send all mobile traffic to the mobile frontend. - url: " /mobile/ " service: mobile-frontend Send all work to the one static backend. - url: " /work/ " service: static-backend Deploying the dispatch file To deploy the dispatch file using gcloud , run the following command: gcloud app deploy dispatch.yaml Routing with Cloud Load Balancing Cloud Load Balancing is a separate product that enables advanced network configurations for all of your applications running on Google Cloud.
+- To retrieve the IDs of your app's services and versions, you can use any of the following tools: Console In the Google Cloud console, you can view the corresponding Instances , Services , and Versions pages. gcloud Run the gcloud app instances list command to list the resource IDs within a specific Google Cloud project.
 

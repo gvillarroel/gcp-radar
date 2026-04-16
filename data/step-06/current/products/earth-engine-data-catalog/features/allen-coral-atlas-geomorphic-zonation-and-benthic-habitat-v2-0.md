@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.542Z"
+generated_at: "2026-04-14T15:13:19.592Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Allen Coral Atlas Geomorphic Zonation and Benthic Habitat v2.0"
 feature_slug: "allen-coral-atlas-geomorphic-zonation-and-benthic-habitat-v2-0"
 latest_feature_date: "2023-02-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/catalog/ACA_reef_habitat_v2_0"
   - "https://developers.google.com/earth-engine/datasets/catalog"
@@ -18,15 +18,15 @@ keywords:
   - "atlas"
   - "geomorphic"
   - "zonation"
-  - "and"
   - "benthic"
   - "habitat"
+  - "v2"
 ---
 
 # Allen Coral Atlas Geomorphic Zonation and Benthic Habitat v2.0
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ This dataset provides Allen Coral Atlas coral reef geomorphic zonation and benth
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,9 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/ACA_reef_habitat_v2_0](https://developers.google.com/earth-engine/datasets/catalog/ACA_reef_habitat_v2_0)
 - Source ID: `site-docs-root-2`
-- Final score: 288
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 292
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Map . setCenter ( - 149.56194 , - 17.00872 , 13 ); Map . setOptions ( 'SATELLITE' ); // The visualizations are baked into the image properties. // Example mask application. var reefExtent = dataset . select ( 'reef mask' ). selfMask (); Map . addLayer ( reefExtent , {}, 'Global reef extent' ); // Geomorphic zonation classification. var geomorphicZonation = dataset . select ( 'geomorphic' ). selfMask (); Map . addLayer ( geomorphicZonation , {}, 'Geomorphic zonation' ); // Benthic habitat classification. var benthicHabitat = dataset . select ( 'benthic' ). selfMask (); Map . addLayer ( benthicHabitat , {}, 'Benthic habitat' ); Open in Code Editor Allen Coral Atlas (ACA) - Geomorphic Zonation and Benthic Habitat - v2.0 The Allen Coral Atlas dataset maps the geomorphic zonation and benthic habitat for the world's shallow coral reefs at 5 m pixel resolution.
@@ -66,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 130
+- Final score: 128
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +79,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/oceans](https://developers.google.com/earth-engine/datasets/tags/oceans)
 - Source ID: `site-docs-root-3`
-- Final score: 128
+- Final score: 126
 - Re-rank relevance: N/A
 
 Evidence snippets:

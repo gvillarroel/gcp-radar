@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:41:32.744Z"
+generated_at: "2026-04-12T12:17:10.833Z"
 product_name: "Google Meet"
 product_slug: "google-meet"
 feature_name: "AddonMeetingInfo recording info field"
 feature_slug: "addonmeetinginfo-recording-info-field"
 latest_feature_date: "2023-10-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
+  - "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings/list"
   - "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings"
-  - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
   - "https://developers.google.com/workspace/meet/api/guides/artifacts"
 keywords:
   - "addonmeetinginfo"
@@ -27,7 +27,7 @@ keywords:
 # AddonMeetingInfo recording info field
 
 Product: Google Meet
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,13 +39,13 @@ The RecordingInfo field indicates whether the current Google Meet call is being 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
+- [https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings/list](https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings/list)
 - [https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings](https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings)
-- [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
 - [https://developers.google.com/workspace/meet/api/guides/artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts)
 
 ## Supporting Pages
@@ -54,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
 - Source ID: `site-docs-root`
-- Final score: 104
+- Final score: 113
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -63,11 +63,25 @@ Evidence snippets:
 - AuthorizedSession ( USER CREDENTIALS ) body = { 'targetResource' : f "//meet.googleapis.com/ { space name } " , "eventTypes" : [ "google.workspace.meet.conference.v2.started" , "google.workspace.meet.conference.v2.ended" , "google.workspace.meet.participant.v2.joined" , "google.workspace.meet.participant.v2.left" , "google.workspace.meet.recording.v2.fileGenerated" , "google.workspace.meet.transcript.v2.fileGenerated" , ], "payloadOptions" : { "includeResource" : False , }, "notificationEndpoint" : { "pubsubTopic" : topic name }, "ttl" : "86400s" , } response = session . post ( "https://workspaceevents.googleapis.com/v1/subscriptions" , json = body ) return response Next, add the corresponding code to pull and process the events.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
 
+### "Method: conferenceRecords.recordings.list \_|\_ Google Meet \_|\_ Google\
+
+- URL: [https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings/list](https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings/list)
+- Source ID: `site-docs-reference`
+- Final score: 107
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If successful, the response body contains data with the following structure: JSON representation { "recordings" : [ { object ( Recording ) } ] , "nextPageToken" : string } Fields recordings[] object ( Recording ) List of recordings in one page. nextPageToken string Token to be circulated back for further List call if current List doesn't include all the recordings.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-04-02 UTC."],[],[]]
+- Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created https://www.googleapis.com/auth/meetings.space.readonly For more information, see the Authorization guide .
+- HTTP request GET https://meet.googleapis.com/v2/{parent=conferenceRecords/ }/recordings The URL uses gRPC Transcoding syntax.
+
 ### "REST Resource: conferenceRecords.recordings \_|\_ Google Meet \_|\_ Google\
 
 - URL: [https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings](https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings)
 - Source ID: `site-docs-reference`
-- Final score: 94
+- Final score: 105
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -76,25 +90,13 @@ Evidence snippets:
 - Union field destination . destination can be only one of the following: driveDestination object ( DriveDestination ) Output only.
 - Methods get Gets a recording by recording ID. list Lists the recording resources from the conference record.
 
-### "Configure meeting spaces and members \_|\_ Google Meet \_|\_ Google for\
-
-- URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
-- Source ID: `site-docs-root`
-- Final score: 86
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- ArtifactConfig is made up of the recordingConfig , transcriptionConfig , and smartNotesConfig fields.
-- OAuth scopes for settings Setting or accessing meetings settings requires the following OAuth scopes: Use case Scope code Set auto artifact generation for spaces created by other apps. https://www.googleapis.com/auth/meetings.space.settings Get or list artifacts from conferences created by other apps. https://www.googleapis.com/auth/meetings.space.readonly Get or list other pre-meeting settings of a meeting space created by a third-party app. https://www.googleapis.com/auth/meetings.space.created https://www.googleapis.com/auth/meetings.space.readonly Read and edit the settings for all meeting spaces a user can access through any other app, such as Calendar. https://www.googleapis.com/auth/meetings.space.settings For more information on OAuth scopes, see Meet REST API scopes .
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
-- Difference between transcripts and smart notes While both meeting transcripts and smart notes (also known as "take notes for me") capture information from your meeting, these features serve different purposes and produce different artifacts.
-
 ### Work with artifacts \_|\_ Google Meet \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts)
 - Source ID: `site-docs-root`
-- Final score: 86
-- Re-rank relevance: N/A
+- Final score: 103
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Recordings The following sections detail how to get information about recordings in a conference record.

@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.123Z"
+generated_at: "2026-04-14T00:17:02.587Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "dataproc.localssd.mount.enable"
 feature_slug: "dataproc-localssd-mount-enable"
 latest_feature_date: "2016-10-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos"
   - "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn"
 keywords:
   - "dataproc"
   - "localssd"
   - "mount"
   - "enable"
-  - "the"
   - "property"
   - "lets"
   - "users"
+  - "prevent"
 ---
 
 # dataproc.localssd.mount.enable
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +38,23 @@ The dataproc.localssd.mount.enable property lets users prevent Dataproc from mou
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos](https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos)
 - [https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups](https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups)
+- [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn)
 
 ## Supporting Pages
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 180
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For more information, review the Cloud Storage or BigQuery change notes in the GitHub repository. dataproc.localssd.mount.enable – Added the new property dataproc.localssd.mount.enable that can be set at cluster deployment time to make Cloud Dataproc ignore local SSDs.
-- This property can be set by using the argument --properties dataproc:dataproc.localssd.mount.enable=false when creating a Cloud Dataproc cluster.
-- Users can overwrite the locations of job history file persistence through the following properties: mapreduce.jobhistory.done-dir mapreduce.jobhistory.intermediate-done-dir spark.eventLog.dir spark.history.fs.logDirectory Feature Customers can now enable the Cloud Profiler when submitting a Dataproc job by setting the cloud.profiler.enable property.
-- November 13, 2025 Announcement New Serverless for Apache Spark runtime versions : 1.2.62 2.2.62 2.3.15 Feature Serverless for Apache Spark: Added the dataproc.artifacts.remove property, which lets users remove default artifacts, such as spark-bigquery-connector , iceberg , and delta-lake from a Serverless for Apache Spark runtime.
 
 ### "Configure Kerberos for Dataproc Metastore Thrift endpoints \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos](https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos)
 - Source ID: `site-docs-root-2`
-- Final score: 118
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 79
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - In the SSH session, open the /etc/hive/conf/hive-site.xml file. sudo vim /etc/hive/conf/hive-site.xml Modify /etc/hive/conf/hive-site.xml on the Managed Service for Apache Spark cluster. < property > < name>hive . metastore . uris < / name > < ! -- Update this value . -- > < value> ENDPOINT URI < / value > < / property > < ! -- Add this property entry . -- > < property > < name>hive . metastore . warehouse . dir < / name > < value> WAREHOUSE DIR < / value > < / property > Restart HiveServer2: sudo systemctl restart hive-server2.service Configure Managed Service for Apache Spark before submitting jobs To run your Managed Service for Apache Spark jobs , you must add the hive user to the allowed.system.users property in the Hadoop container-executor.cfg file.
@@ -79,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups](https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups)
 - Source ID: `site-iam-reference`
-- Final score: 118
+- Final score: 74
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +74,17 @@ Evidence snippets:
 - Run the following gcloud CLI command to list the location of driver logs in Cloud Storage: gcloud dataproc jobs describe JOB ID \ --region= REGION The Cloud Storage location of driver logs is listed as the driverOutputResourceUri in the command output in the following format: driverOutputResourceUri: gs:// CLUSTER STAGING BUCKET /google-cloud-dataproc-metainfo/ CLUSTER UUID /jobs/ JOB ID Console To view node group cluster logs: Enable Logging .
 - Driver node group metric Description yarn:ResourceManager:DriverPoolsQueueMetrics:AvailableMB The amount available memory in Mebibytes in dataproc-driverpool-driver-queue under the dataproc-driverpool partition. yarn:ResourceManager:DriverPoolsQueueMetrics:PendingContainers The number of pending (queued) containers in dataproc-driverpool-driver-queue under the dataproc-driverpool partition.
 - Set the EndpointConfig.enableHttpPortAccess property to true to enable the Managed Service for Apache Spark Component Gateway , which provides access to the YARN web interface.
+
+### "Customize your Spark job runtime environment with Docker on YARN \_|\_ Managed\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn)
+- Source ID: `site-docs-root`
+- Final score: 72
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- DP IMAGE : Managed Service for Apache Spark image version must be 2.0.49 or later ( --image-version=2.0 will use a qualified minor version later than 2.0.49 ). --optional-components=DOCKER : Enables the Docker component on the cluster. --properties flag: dataproc:yarn.docker.enable=true : Required property to enable the Managed Service for Apache Spark Docker on YARN feature. dataproc:yarn.docker.image : Optional property that you can add to specify your DOCKER IMAGE using the following Container Registry image naming format: {hostname}/{project-id}/{image}:{tag} .
+- Download the Miniconda3 installer. wget https://repo.anaconda.com/miniconda/Miniconda3-py39 4.10.3-Linux-x86 64.sh Python module example: cat >test util.py <<EOF def hello ( name ) : print ( "hello {}" .format ( name )) def read lines ( path ) : with open ( path ) as f: return f.readlines () EOF Build and push the image. docker build -t " ${ IMAGE } " . docker push " ${ IMAGE } " Create a Managed Service for Apache Spark cluster After creating a Docker image that customizes your Spark environment, create a Managed Service for Apache Spark cluster that will use your Docker image when running Spark jobs. gcloud gcloud dataproc clusters create CLUSTER NAME \ --region= REGION \ --image-version= DP IMAGE \ --optional-components=DOCKER \ --properties=dataproc:yarn.docker.enable=true,dataproc:yarn.docker.image= DOCKER IMAGE \ other flags Replace the following; CLUSTER NAME : The cluster name.
+- When dataproc:yarn.docker.enable is set to true , Dataproc updates Hadoop and Spark configurations to enable the Docker on YARN feature in the cluster.
+- RUN ${ CONDA HOME } /bin/conda install mamba -n base -c conda-forge \ && ${ CONDA HOME } /bin/mamba install \ conda \ cython \ fastavro \ fastparquet \ gcsfs \ google-cloud-bigquery-storage \ google-cloud-bigquery [ pandas ] \ google-cloud-bigtable \ google-cloud-container \ google-cloud-datacatalog \ google-cloud-dataproc \ google-cloud-datastore \ google-cloud-language \ google-cloud-logging \ google-cloud-monitoring \ google-cloud-pubsub \ google-cloud-redis \ google-cloud-spanner \ google-cloud-speech \ google-cloud-storage \ google-cloud-texttospeech \ google-cloud-translate \ google-cloud-vision \ koalas \ matplotlib \ nltk \ numba \ numpy \ openblas \ orc \ pandas \ pyarrow \ pysal \ pytables \ python \ regex \ requests \ rtree \ scikit-image \ scikit-learn \ scipy \ seaborn \ sqlalchemy \ sympy \ virtualenv Optional: Add extra Python modules.
 

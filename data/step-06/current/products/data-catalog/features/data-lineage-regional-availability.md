@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:06.139Z"
+generated_at: "2026-04-12T12:13:34.756Z"
 product_name: "Data Catalog"
 product_slug: "data-catalog"
 feature_name: "Data lineage regional availability"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support"
   - "https://docs.cloud.google.com/iam/docs/deny-permissions-support"
   - "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+  - "https://docs.cloud.google.com/iam/docs/roles-overview"
 keywords:
   - "lineage"
   - "regional"
@@ -38,13 +39,14 @@ Data lineage is available in additional Google Cloud and BigQuery Omni regions.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)
 - [https://docs.cloud.google.com/iam/docs/deny-permissions-support](https://docs.cloud.google.com/iam/docs/deny-permissions-support)
 - [https://docs.cloud.google.com/iam/docs/pab-blocked-permissions](https://docs.cloud.google.com/iam/docs/pab-blocked-permissions)
+- [https://docs.cloud.google.com/iam/docs/roles-overview](https://docs.cloud.google.com/iam/docs/roles-overview)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)
 - Source ID: `site-iam-reference`
-- Final score: 194
+- Final score: 231
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/iam/docs/deny-permissions-support](https://docs.cloud.google.com/iam/docs/deny-permissions-support)
 - Source ID: `site-iam-reference`
-- Final score: 190
+- Final score: 223
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/iam/docs/pab-blocked-permissions](https://docs.cloud.google.com/iam/docs/pab-blocked-permissions)
 - Source ID: `site-iam-reference`
-- Final score: 154
+- Final score: 187
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -89,4 +91,18 @@ Evidence snippets:
 - None Secure Source Manager securesourcemanager.googleapis.com/ branchRules. securesourcemanager.googleapis.com/ hooks. securesourcemanager.googleapis.com/ instances. access securesourcemanager.googleapis.com/ instances. create securesourcemanager.googleapis.com/ instances. delete securesourcemanager.googleapis.com/ instances. get securesourcemanager.googleapis.com/ instances. getIamPolicy securesourcemanager.googleapis.com/ instances. linkDeveloperConnect securesourcemanager.googleapis.com/ instances. list securesourcemanager.googleapis.com/ instances. setIamPolicy securesourcemanager.googleapis.com/ issuecomments. securesourcemanager.googleapis.com/ issues. securesourcemanager.googleapis.com/ locations. securesourcemanager.googleapis.com/ operations. securesourcemanager.googleapis.com/ prcomments. securesourcemanager.googleapis.com/ pullRequests. securesourcemanager.googleapis.com/ repositories. create securesourcemanager.googleapis.com/ repositories. delete securesourcemanager.googleapis.com/ repositories. fetch securesourcemanager.googleapis.com/ repositories. get securesourcemanager.googleapis.com/ repositories. getIamPolicy securesourcemanager.googleapis.com/ repositories. list securesourcemanager.googleapis.com/ repositories. setIamPolicy securesourcemanager.googleapis.com/ repositories. update None Connectors connectors.googleapis.com/ . connectors.googleapis.com/ connections. executeSqlQuery connectors.googleapis.com/ connections. generateOpenAPISpec connectors.googleapis.com/ connections. listenEvent Dataproc Metastore metastore.googleapis.com/ backups. metastore.googleapis.com/ databases. delete metastore.googleapis.com/ databases. getIamPolicy metastore.googleapis.com/ databases. setIamPolicy metastore.googleapis.com/ databases. update metastore.googleapis.com/ federations. metastore.googleapis.com/ imports. metastore.googleapis.com/ locations. metastore.googleapis.com/ operations. metastore.googleapis.com/ services. metastore.googleapis.com/ tables. delete metastore.googleapis.com/ tables. getIamPolicy metastore.googleapis.com/ tables. setIamPolicy metastore.googleapis.com/ tables. update metastore.googleapis.com/ federations. use metastore.googleapis.com/ services. use Enforcement version 3 Policies with enforcement version 3 can block all of the permissions listed in the following enforcement versions: Enforcement version 1 Enforcement version 2 Additionally, policies with the enforcement version 3 can also block all of the permissions listed in the following table.
 - None Cloud Key Management Service cloudkms.googleapis.com/ autokeyConfigs. cloudkms.googleapis.com/ cryptoKeyVersions. create cloudkms.googleapis.com/ cryptoKeyVersions. destroy cloudkms.googleapis.com/ cryptoKeyVersions. get cloudkms.googleapis.com/ cryptoKeyVersions. list cloudkms.googleapis.com/ cryptoKeyVersions. restore cloudkms.googleapis.com/ cryptoKeyVersions. update cloudkms.googleapis.com/ cryptoKeyVersions. useToDecrypt cloudkms.googleapis.com/ cryptoKeyVersions. useToEncrypt cloudkms.googleapis.com/ cryptoKeyVersions. useToSign cloudkms.googleapis.com/ cryptoKeyVersions. useToVerify cloudkms.googleapis.com/ cryptoKeyVersions. viewPublicKey cloudkms.googleapis.com/ ekmConfigs. cloudkms.googleapis.com/ importJobs. cloudkms.googleapis.com/ keyHandles. cloudkms.googleapis.com/ keyRings. cloudkms.googleapis.com/ importJobs. useToImport Organization Policy Service orgpolicy.googleapis.com/ .
 - None Identity and Access Management iam.googleapis.com/ denypolicies. iam.googleapis.com/ roles. iam.googleapis.com/ serviceAccountKeys. iam.googleapis.com/ serviceAccounts. iam.googleapis.com/ serviceAccounts. createTagBinding iam.googleapis.com/ serviceAccounts. deleteTagBinding iam.googleapis.com/ serviceAccounts. getCertificateAs iam.googleapis.com/ serviceAccounts. listEffectiveTags iam.googleapis.com/ serviceAccounts. listTagBindings Managed Service for Apache Spark dataproc.googleapis.com/ autoscalingPolicies. dataproc.googleapis.com/ batches. dataproc.googleapis.com/ clusters. dataproc.googleapis.com/ jobs. dataproc.googleapis.com/ operations. dataproc.googleapis.com/ sessionTemplates. dataproc.googleapis.com/ sessions. dataproc.googleapis.com/ workflowTemplates.
+
+### "Roles and permissions \_|\_ Identity and Access Management (IAM) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/iam/docs/roles-overview](https://docs.cloud.google.com/iam/docs/roles-overview)
+- Source ID: `site-iam-reference`
+- Final score: 171
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To make permissions available to principals, including users, groups, and service accounts, you grant roles to the principals.
+- For a list of permissions in the Writer role, see the role details in the Google Cloud console: Go to Writer role Admin ( roles/admin ) All of the permissions in the Writer role, plus permissions for actions like the following: Completing sensitive tasks, like managing tag bindings for Compute Engine resources Managing roles and permissions for a project and all resources within the project Setting up billing for a project The Admin role doesn't contain all permissions for all Google Cloud resources.
+- For a list of permissions in the Editor role, see the role details in the Google Cloud console: Go to Editor role Owner ( roles/owner ) All Editor permissions, plus permissions for actions like the following: Completing sensitive tasks, like managing tag bindings for Compute Engine resources Managing roles and permissions for a project and all resources within the project Setting up billing for a project The Owner role doesn't contain all permissions for all Google Cloud resources.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 

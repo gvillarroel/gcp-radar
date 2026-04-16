@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/certificate-manager/docs/apis
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/certificate-manager/docs/certificates
+entrypoint: https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-regional
 source_metadata:
   url: https://docs.cloud.google.com/certificate-manager/docs/apis
   title: "All reference \_|\_ Certificate Manager \_|\_ Google Cloud Documentation"

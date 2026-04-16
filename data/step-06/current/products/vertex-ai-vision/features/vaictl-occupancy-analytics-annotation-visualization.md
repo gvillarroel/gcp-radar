@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:22:59.245Z"
+generated_at: "2026-04-12T12:19:53.515Z"
 product_name: "Vertex AI Vision"
 product_slug: "vertex-ai-vision"
 feature_name: "vaictl Occupancy Analytics annotation visualization"
 feature_slug: "vaictl-occupancy-analytics-annotation-visualization"
 latest_feature_date: "2024-07-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial"
   - "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial"
-  - "https://docs.cloud.google.com/vision-ai/docs/release-notes"
+  - "https://docs.cloud.google.com/vision-ai/docs/build-app"
   - "https://docs.cloud.google.com/vision-ai/docs/audit-logging"
 keywords:
   - "vaictl"
@@ -27,7 +27,7 @@ keywords:
 # vaictl Occupancy Analytics annotation visualization
 
 Product: Vertex AI Vision
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,13 +39,13 @@ Visualization in vaictl now supports rendering Occupancy Analytics model annotat
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial](https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial)
 - [https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial](https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial)
-- [https://docs.cloud.google.com/vision-ai/docs/release-notes](https://docs.cloud.google.com/vision-ai/docs/release-notes)
+- [https://docs.cloud.google.com/vision-ai/docs/build-app](https://docs.cloud.google.com/vision-ai/docs/build-app)
 - [https://docs.cloud.google.com/vision-ai/docs/audit-logging](https://docs.cloud.google.com/vision-ai/docs/audit-logging)
 
 ## Supporting Pages
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial](https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial)
 - Source ID: `site-docs-reference`
-- Final score: 174
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 233
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Enter the following Google Standard SQL query in the Query editor text area: CREATE VIEW PROJECT ID . occupancy dataset . forecast training data AS ( WITH raw counts AS ( SELECT FROM ( SELECT TIMESTAMP TRUNC ( PARSE TIMESTAMP ( '"%Y-%m-%dT%H:%M:%E SZ"' , JSON QUERY ( annotation , "$.currentTime" )), MINUTE ) AS currentTime , CAST ( JSON QUERY ( annotation , '$.stats.fullFrameCount[0].count' ) AS INT64 ) AS count , JSON QUERY ( annotation , '$.stats.fullFrameCount[0].entity.labelString' ) AS type FROM PROJECT ID . occupancy dataset . occupancy dataset table ) WHERE count IS NOT NULL ) SELECT currentTime , SUM ( count ) AS total count , type FROM raw counts GROUP BY currentTime , type ) Click Run .
@@ -68,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial](https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial)
 - Source ID: `site-docs-reference`
-- Final score: 144
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Download the vaictl command-line tool In the SSH-in-browser window, download the Vertex AI Vision ( vaictl ) command-line tool using the following command: wget https://github.com/google/visionai/releases/download/v0.0.5/visionai 0.0-5 amd64.deb Install the command-line tool by running the following command: sudo apt install ./visionai 0.0-5 amd64.deb You can test the installation by running the following command: vaictl --help Ingest a video file into your app After you set up your VM environment, you can copy a sample video file and then use vaictl to stream the video data to your occupancy count app.
@@ -78,27 +78,27 @@ Evidence snippets:
 - Costs In this document, you use the following billable components of Google Cloud: Vertex AI Vision (Streams - Data ingested, Streams - Data consumed, Models - Occupancy analytics suite, Warehouse - Video storage) Compute Engine To generate a cost estimate based on your projected usage, use the pricing calculator .
 - Search video content in the storage warehouse After you ingest video data into your processing app, you can view analyzed video data, and search the data based on occupancy analytics information.
 
-### Vertex AI Vision release notes \_|\_ Google Cloud Documentation
+### Build an application \_|\_ Vertex AI Vision \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/vision-ai/docs/release-notes](https://docs.cloud.google.com/vision-ai/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 88
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/vision-ai/docs/build-app](https://docs.cloud.google.com/vision-ai/docs/build-app)
+- Source ID: `site-docs-reference`
+- Final score: 117
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- July 14, 2024 Feature Model output visualization tool in vaictl You can now visualize model output using the vaictl command line tool available through the Vertex AI Vision SDK .
-- GA event management is available for the following models: Occupancy analytics pre-trained model Vertex AI custom-trained models imported into a Vertex AI Vision application For more information, see the Enable model event notification with Cloud Functions and Pub/Sub .
-- This visualization combines real-time video streams with annotations and statistics generated by Vertex AI Vision models.
-- Support added to visualize Occupancy Analytics model annotations.
+- Supported models The following models offer Cloud Run functions event generation and Pub/Sub event notification integrations: Occupancy analytics model Vertex AI custom-trained models Configure Cloud Run functions to process model output To trigger event-based notifications, you must first set up Cloud Run functions to process model output and generate events.
+- Console The following sample adds available annotations ( STREAM ANNOTATION TYPE ACTIVE ZONE and STREAM ANNOTATION TYPE CROSSING LINE ) to an occupancy count model .
+- HTTP method and URL: POST https://visionai.googleapis.com/v1/projects/ PROJECT /locations/ LOCATION ID /applications/ APPLICATION ID :addStreamInput Request JSON body: { "applicationStreamInputs": [ { "streamWithAnnotation": { "stream": "projects/ PROJECT /locations/ LOCATION ID /clusters/application-cluster-0/streams/ STREAM ID ", "nodeAnnotations": [ { "node": " NODE NAME ", "annotations": [ { "id": " ANNOTATION ID ", "displayName": " ANNOTATION DISPLAYNAME ", "sourceStream": "projects/ PROJECT /locations/ LOCATION ID /clusters/application-cluster-0/streams/ STREAM ID ", "type": ANNOTATION TYPE , "activeZone": { "normalizedVertices": { "x": 0.07434944 , "y": 0.18061674 }, "normalizedVertices": { "x": 0.64684016 , "y": 0.16079295 }, "normalizedVertices": { "x": 0.6047088 , "y": 0.92070484 }, "normalizedVertices": { "x": 0.1251549 , "y": 0.76651984 } } } ] } ] } } ] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- For example, the following classification 1.0.0.yaml file describes model output information for an image classification model: title : Classification type : object description : > The predicted AnnotationSpecs . properties : ids : type : array description : > The resource IDs of the AnnotationSpecs that had been identified . items : type : integer format : int64 enum : [ 0 ] # As values of this enum all AnnotationSpec IDs the Model was trained on will be populated. displayNames : type : array description : > The display names of the AnnotationSpecs that had been identified , order matches the IDs . items : type : string enum : [ "" ] # As values of this enum all AnnotationSpec display names the Model was trained on will be populated. confidences : type : array description : > The Model 's confidences in correctness of the predicted IDs, higher value means higher confidence .
 
 ### Vertex AI Vision audit logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/audit-logging](https://docs.cloud.google.com/vision-ai/docs/audit-logging)
 - Source ID: `site-docs-reference`
-- Final score: 85
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 111
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Permission type Methods ADMIN READ google.cloud.visionai.v1.AppPlatform.GetApplication google.cloud.visionai.v1.AppPlatform.GetDraft google.cloud.visionai.v1.AppPlatform.ListApplications google.cloud.visionai.v1.AppPlatform.ListDrafts google.cloud.visionai.v1.AppPlatform.ListInstances google.cloud.visionai.v1.AppPlatform.ListPrebuiltProcessors google.cloud.visionai.v1.AppPlatform.ListProcessors google.cloud.visionai.v1.LiveVideoAnalytics.ResolveOperatorInfo google.cloud.visionai.v1.StreamingService.ReceiveEvents google.cloud.visionai.v1.StreamsService.GenerateStreamHlsToken google.cloud.visionai.v1.StreamsService.GetCluster google.cloud.visionai.v1.StreamsService.GetEvent google.cloud.visionai.v1.StreamsService.GetSeries google.cloud.visionai.v1.StreamsService.GetStream google.cloud.visionai.v1.StreamsService.GetStreamThumbnail google.cloud.visionai.v1.StreamsService.ListClusters google.cloud.visionai.v1.StreamsService.ListSeries google.cloud.visionai.v1.StreamsService.ListStreams google.cloud.visionai.v1.Warehouse.GetAsset google.cloud.visionai.v1.Warehouse.GetCollection google.cloud.visionai.v1.Warehouse.GetCorpus google.cloud.visionai.v1.Warehouse.GetDataSchema google.cloud.visionai.v1.Warehouse.GetIndex google.cloud.visionai.v1.Warehouse.GetIndexEndpoint google.cloud.visionai.v1.Warehouse.GetSearchConfig google.cloud.visionai.v1.Warehouse.GetSearchHypernym google.cloud.visionai.v1.Warehouse.ListAssets google.cloud.visionai.v1.Warehouse.ListCollections google.cloud.visionai.v1.Warehouse.ListCorpora google.cloud.visionai.v1.Warehouse.ListDataSchemas google.cloud.visionai.v1.Warehouse.ListIndexEndpoints google.cloud.visionai.v1.Warehouse.ListIndexes google.cloud.visionai.v1.Warehouse.ListSearchHypernyms google.cloud.visionai.v1.Warehouse.ViewCollectionItems google.cloud.visionai.v1.Warehouse.ViewIndexedAssets google.cloud.visionai.v1alpha1.AppPlatform.GetApplication google.cloud.visionai.v1alpha1.AppPlatform.GetDraft google.cloud.visionai.v1alpha1.AppPlatform.GetInstance google.cloud.visionai.v1alpha1.AppPlatform.ListApplications google.cloud.visionai.v1alpha1.AppPlatform.ListDrafts google.cloud.visionai.v1alpha1.AppPlatform.ListInstances google.cloud.visionai.v1alpha1.AppPlatform.ListPrebuiltProcessors google.cloud.visionai.v1alpha1.AppPlatform.ListProcessors google.cloud.visionai.v1alpha1.LiveVideoAnalytics.ListAnalyses google.cloud.visionai.v1alpha1.StreamsService.ListEvents google.cloud.visionai.v1alpha1.StreamsService.ListSeries google.cloud.visionai.v1alpha1.StreamsService.ListStreams google.cloud.visionai.v1alpha1.Warehouse.GetAsset google.cloud.visionai.v1alpha1.Warehouse.GetCorpus google.cloud.visionai.v1alpha1.Warehouse.GetDataSchema google.cloud.visionai.v1alpha1.Warehouse.GetSearchConfig google.cloud.visionai.v1alpha1.Warehouse.ListAssets google.cloud.visionai.v1alpha1.Warehouse.ListCorpora google.cloud.visionai.v1alpha1.Warehouse.ListDataSchemas google.cloud.visionai.v1alpha1.Warehouse.ListSearchConfigs ADMIN WRITE google.cloud.visionai.v1.AppPlatform.AddApplicationStreamInput google.cloud.visionai.v1.AppPlatform.CreateApplication google.cloud.visionai.v1.AppPlatform.CreateApplicationInstances google.cloud.visionai.v1.AppPlatform.CreateDraft google.cloud.visionai.v1.AppPlatform.CreateProcessor google.cloud.visionai.v1.AppPlatform.DeleteApplication google.cloud.visionai.v1.AppPlatform.DeleteApplicationInstances google.cloud.visionai.v1.AppPlatform.DeleteDraft google.cloud.visionai.v1.AppPlatform.DeleteProcessor google.cloud.visionai.v1.AppPlatform.DeployApplication google.cloud.visionai.v1.AppPlatform.RemoveApplicationStreamInput google.cloud.visionai.v1.AppPlatform.UndeployApplication google.cloud.visionai.v1.AppPlatform.UpdateApplication google.cloud.visionai.v1.AppPlatform.UpdateApplicationInstances google.cloud.visionai.v1.AppPlatform.UpdateDraft google.cloud.visionai.v1.AppPlatform.UpdateProcessor google.cloud.visionai.v1.LiveVideoAnalytics.CreateAnalysis google.cloud.visionai.v1.LiveVideoAnalytics.CreateOperator google.cloud.visionai.v1.LiveVideoAnalytics.CreateProcess google.cloud.visionai.v1.LiveVideoAnalytics.DeleteAnalysis google.cloud.visionai.v1.LiveVideoAnalytics.DeleteOperator google.cloud.visionai.v1.LiveVideoAnalytics.DeleteProcess google.cloud.visionai.v1.LiveVideoAnalytics.UpdateAnalysis google.cloud.visionai.v1.LiveVideoAnalytics.UpdateOperator google.cloud.visionai.v1.LiveVideoAnalytics.UpdateProcess google.cloud.visionai.v1.StreamsService.CreateCluster google.cloud.visionai.v1.StreamsService.CreateEvent google.cloud.visionai.v1.StreamsService.CreateSeries google.cloud.visionai.v1.StreamsService.CreateStream google.cloud.visionai.v1.StreamsService.DeleteCluster google.cloud.visionai.v1.StreamsService.DeleteEvent google.cloud.visionai.v1.StreamsService.DeleteSeries google.cloud.visionai.v1.StreamsService.DeleteStream google.cloud.visionai.v1.StreamsService.UpdateCluster google.cloud.visionai.v1.StreamsService.UpdateEvent google.cloud.visionai.v1.StreamsService.UpdateSeries google.cloud.visionai.v1.StreamsService.UpdateStream google.cloud.visionai.v1.Warehouse.AddCollectionItem google.cloud.visionai.v1.Warehouse.AnalyzeAsset google.cloud.visionai.v1.Warehouse.AnalyzeCorpus google.cloud.visionai.v1.Warehouse.CreateAsset google.cloud.visionai.v1.Warehouse.CreateCollection google.cloud.visionai.v1.Warehouse.CreateCorpus google.cloud.visionai.v1.Warehouse.CreateDataSchema google.cloud.visionai.v1.Warehouse.CreateIndex google.cloud.visionai.v1.Warehouse.CreateIndexEndpoint google.cloud.visionai.v1.Warehouse.CreateSearchConfig google.cloud.visionai.v1.Warehouse.CreateSearchHypernym google.cloud.visionai.v1.Warehouse.DeleteAsset google.cloud.visionai.v1.Warehouse.DeleteCollection google.cloud.visionai.v1.Warehouse.DeleteCorpus google.cloud.visionai.v1.Warehouse.DeleteDataSchema google.cloud.visionai.v1.Warehouse.DeleteIndex google.cloud.visionai.v1.Warehouse.DeleteIndexEndpoint google.cloud.visionai.v1.Warehouse.DeleteSearchConfig google.cloud.visionai.v1.Warehouse.DeleteSearchHypernym google.cloud.visionai.v1.Warehouse.DeployIndex google.cloud.visionai.v1.Warehouse.ImportAssets google.cloud.visionai.v1.Warehouse.IndexAsset google.cloud.visionai.v1.Warehouse.RemoveCollectionItem google.cloud.visionai.v1.Warehouse.RemoveIndexAsset google.cloud.visionai.v1.Warehouse.UndeployIndex google.cloud.visionai.v1.Warehouse.UpdateAsset google.cloud.visionai.v1.Warehouse.UpdateCollection google.cloud.visionai.v1.Warehouse.UpdateCorpus google.cloud.visionai.v1.Warehouse.UpdateDataSchema google.cloud.visionai.v1.Warehouse.UpdateIndex google.cloud.visionai.v1.Warehouse.UpdateIndexEndpoint google.cloud.visionai.v1.Warehouse.UpdateSearchConfig google.cloud.visionai.v1.Warehouse.UpdateSearchHypernym google.cloud.visionai.v1alpha1.AppPlatform.AddApplicationStreamInput google.cloud.visionai.v1alpha1.AppPlatform.CreateApplication google.cloud.visionai.v1alpha1.AppPlatform.CreateApplicationInstances google.cloud.visionai.v1alpha1.AppPlatform.CreateDraft google.cloud.visionai.v1alpha1.AppPlatform.CreateProcessor google.cloud.visionai.v1alpha1.AppPlatform.DeleteApplication google.cloud.visionai.v1alpha1.AppPlatform.DeleteApplicationInstances google.cloud.visionai.v1alpha1.AppPlatform.DeleteDraft google.cloud.visionai.v1alpha1.AppPlatform.DeployApplication google.cloud.visionai.v1alpha1.AppPlatform.RemoveApplicationStreamInput google.cloud.visionai.v1alpha1.AppPlatform.UndeployApplication google.cloud.visionai.v1alpha1.AppPlatform.UpdateApplication google.cloud.visionai.v1alpha1.AppPlatform.UpdateDraft google.cloud.visionai.v1alpha1.LiveVideoAnalytics.CreateAnalysis google.cloud.visionai.v1alpha1.LiveVideoAnalytics.DeleteAnalysis google.cloud.visionai.v1alpha1.StreamsService.CreateEvent google.cloud.visionai.v1alpha1.StreamsService.CreateSeries google.cloud.visionai.v1alpha1.StreamsService.CreateStream google.cloud.visionai.v1alpha1.StreamsService.DeleteCluster google.cloud.visionai.v1alpha1.StreamsService.DeleteEvent google.cloud.visionai.v1alpha1.StreamsService.DeleteSeries google.cloud.visionai.v1alpha1.StreamsService.DeleteStream google.cloud.visionai.v1alpha1.Warehouse.CreateAsset google.cloud.visionai.v1alpha1.Warehouse.CreateCorpus google.cloud.visionai.v1alpha1.Warehouse.CreateDataSchema google.cloud.visionai.v1alpha1.Warehouse.CreateSearchConfig google.cloud.visionai.v1alpha1.Warehouse.DeleteAsset google.cloud.visionai.v1alpha1.Warehouse.DeleteCorpus google.cloud.visionai.v1alpha1.Warehouse.DeleteDataSchema google.cloud.visionai.v1alpha1.Warehouse.DeleteSearchConfig google.cloud.visionai.v1alpha1.Warehouse.UpdateAsset google.cloud.visionai.v1alpha1.Warehouse.UpdateCorpus google.cloud.visionai.v1alpha1.Warehouse.UpdateDataSchema google.cloud.visionai.v1alpha1.Warehouse.UpdateSearchConfig DATA READ google.cloud.visionai.v1.StreamingService.ReceivePackets google.cloud.visionai.v1.Warehouse.ClipAsset google.cloud.visionai.v1.Warehouse.GenerateHlsUri google.cloud.visionai.v1.Warehouse.GenerateRetrievalUrl google.cloud.visionai.v1.Warehouse.GetAnnotation google.cloud.visionai.v1.Warehouse.ListAnnotations google.cloud.visionai.v1.Warehouse.SearchAssets google.cloud.visionai.v1.Warehouse.SearchIndexEndpoint google.cloud.visionai.v1alpha1.Warehouse.GetAnnotation google.cloud.visionai.v1alpha1.Warehouse.ListAnnotations google.cloud.visionai.v1alpha1.Warehouse.SearchAssets DATA WRITE google.cloud.visionai.v1.StreamingService.SendPackets google.cloud.visionai.v1.Warehouse.CreateAnnotation google.cloud.visionai.v1.Warehouse.DeleteAnnotation google.cloud.visionai.v1.Warehouse.IngestAsset google.cloud.visionai.v1.Warehouse.UpdateAnnotation google.cloud.visionai.v1.Warehouse.UploadAsset google.cloud.visionai.v1alpha1.Warehouse.CreateAnnotation google.cloud.visionai.v1alpha1.Warehouse.DeleteAnnotation google.cloud.visionai.v1alpha1.Warehouse.UpdateAnnotation API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Vertex AI Vision. google.cloud.visionai.v1.AppPlatform The following audit logs are associated with methods belonging to google.cloud.visionai.v1.AppPlatform .

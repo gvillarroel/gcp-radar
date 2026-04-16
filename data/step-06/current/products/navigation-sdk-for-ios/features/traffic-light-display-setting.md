@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:47.380Z"
+generated_at: "2026-04-12T12:18:01.310Z"
 product_name: "Navigation SDK for iOS"
 product_slug: "navigation-sdk-for-ios"
 feature_name: "Traffic light display setting"
 feature_slug: "traffic-light-display-setting"
 latest_feature_date: "2025-05-19"
 deprecation_date: "2025-05-19"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls"
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView"
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/events"
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info"
 keywords:
   - "traffic"
   - "light"
@@ -24,7 +27,7 @@ keywords:
 # Traffic light display setting
 
 Product: Navigation SDK for iOS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ The GMSUISettings property for showing traffic lights is deprecated because traf
 
 The GMSUISettings property for showing traffic lights is deprecated because traffic lights now appear during navigation by default when data is available; deprecated on 2025-05-19.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/controls](https://developers.google.com/maps/documentation/navigation/ios-sdk/controls)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView](https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/events](https://developers.google.com/maps/documentation/navigation/ios-sdk/events)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info](https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Modify the navigation UI \_|\_ Navigation SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/controls](https://developers.google.com/maps/documentation/navigation/ios-sdk/controls)
+- Source ID: `site-docs-root`
+- Final score: 234
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Swift mapView . settings . showsTrafficLights = true mapView . settings . showsStopSigns = true Objective-C mapView . settings . showsTrafficLights = YES ; mapView . settings . showsStopSigns = YES ; Speedometer control When navigation is enabled and the travel mode is set to driving, the Navigation SDK for iOS displays a speed limit control in the lower corner of the map that shows the current speed limit.
+- Traffic lights and stop signs You can enable the display of traffic lights and stop signs during active navigation in the mapView , which provides additional context for routes and trip maneuvers.
+- Destination markers You can show or hide the destination markers for a given route by setting the showsDestinationMarkers property of GMSUISettings .
+- To enable this feature, call the GMSMapView settings for each option independently: showsTrafficLights and showsStopSigns .
+
+### "GoogleNavigation Framework Reference \_|\_ Navigation SDK for iOS \_|\_\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView](https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView)
+- Source ID: `site-docs-reference`
+- Final score: 198
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Declaration Swift var indoorDisplay : GMSIndoorDisplay { get } Objective-C @property ( nonatomic , readonly ) GMSIndoorDisplay Nonnull indoorDisplay ; settings Gets the GMSUISettings object, which controls user interface settings for the map.
+- Declaration Swift var lightingMode : GMSNavigationLightingMode { get set } Objective-C @property ( nonatomic ) GMSNavigationLightingMode lightingMode ; shouldDisplaySpeedLimit Determines whether the speed limit should be displayed when guidance is active and speed limit data is available.
+- Declaration Swift var travelMode : GMSNavigationTravelMode { get set } Objective-C @property ( nonatomic ) GMSNavigationTravelMode travelMode ; lightingMode The lighting mode determines which color scheme should be used for rendering the map.
+- Declaration Swift var settings : GMSUISettings { get } Objective-C @property ( nonatomic , readonly ) GMSUISettings Nonnull settings ; padding Controls the ‘visible’ region of the view.
+
+### "Listen for navigation events \_|\_ Navigation SDK for iOS \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/events](https://developers.google.com/maps/documentation/navigation/ios-sdk/events)
+- Source ID: `site-docs-root`
+- Final score: 173
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- NSString companyName = @"Ride Sharing Co." ; [ GMSNavigationServices showTermsAndConditionsDialogIfNeededWithCompanyName : companyName callback : ^ ( BOOL termsAccepted ) { if ( termsAccepted ) { // Enable navigation if the user accepts the terms. mapView . navigationEnabled = YES ; // Request authorization to use location services. [ locationManager requestAlwaysAuthorization ]; } else { // Handle the case when the user rejects the terms and conditions. } }]; self . view = mapView ; [ self makeButton ]; } // Create a route and initiate navigation. - ( void ) startNav { NSArray<GMSNavigationWaypoint > destinations = @[ [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @"ChIJnUYTpNASkFQR gSty5kyoUk" title : @"PCC Natural Market" ], [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @"ChIJJ326ROcSkFQRBfUzOL2DSbo" title : @"Marina Park" ] ] ; [ mapView . navigator setDestinations : destinations callback : ^ ( GMSRouteStatus routeStatus ){ mapView . navigator . guidanceActive = YES ; mapView . navigator . sendsBackgroundNotifications = YES ; mapView . cameraMode = GMSNavigationCameraModeFollowing ; [ mapView . locationSimulator simulateLocationsAlongExistingRoute ]; }]; [ mapView . roadSnappedLocationProvider startUpdatingLocation ]; } #pragma mark - GMSNavigatorListener // Listener for continuous location updates. - ( void ) locationProvider: ( GMSRoadSnappedLocationProvider ) locationProvider didUpdateLocation :( CLLocation ) location { NSLog ( @"Location: %@" , location . description ); } // Listener to handle speeding events. - ( void ) navigator: ( GMSNavigator ) navigator didUpdateSpeedingPercentage :( CGFloat ) percentageAboveLimit { NSLog ( @"Speed is %f percent above the limit." , percentageAboveLimit ); } // Listener to handle arrival events. - ( void ) navigator: ( GMSNavigator ) navigator didArriveAtWaypoint: ( GMSNavigationWaypoint ) waypoint { NSLog ( @"You have arrived at: %@" , waypoint . title ); [ mapView . navigator continueToNextDestination ]; mapView . navigator . guidanceActive = YES ; } // Listener for route change events. - ( void ) navigatorDidChangeRoute: ( GMSNavigator ) navigator { NSLog ( @"The route has changed." ); } // Listener for time to next destination. - ( void ) navigator: ( GMSNavigator ) navigator didUpdateRemainingTime: ( NSTimeInterval ) time { NSLog ( @"Time to next destination: %f" , time ); } // Listener for distance to next destination. - ( void ) navigator: ( GMSNavigator ) navigator didUpdateRemainingDistance :( CLLocationDistance ) distance { double miles = distance 0.00062137 ; NSLog ( @"%@" , [ NSString stringWithFormat : @"Distance to next destination: %.2f." , miles ]); } // Listener for traffic updates for next destination - ( void ) navigator: ( GMSNavigator ) navigator didUpdateDelayCategory :( GMSNavigationDelayCategory ) delayCategory { NSLog ( @"Delay category to next destination: %ld." , delayCategory ); } // Listener for suggested lighting mode changes. -( void ) navigator: ( GMSNavigator ) navigator didChangeSuggestedLightingMode :( GMSNavigationLightingMode ) lightingMode { NSLog ( @"Suggested lighting mode has changed: %ld" , ( long ) lightingMode ); // Change to the suggested lighting mode. mapView . lightingMode = lightingMode ; } #pragma mark - Programmatic UI elements // Add a button to the view. - ( void ) makeButton { // Start navigation.
+- OK else { print ( "Handle route statuses that are not OK." ) return } self . mapView . navigator ? . isGuidanceActive = true self . mapView . cameraMode = . following self . mapView . locationSimulator ? . simulateLocationsAlongExistingRoute () } mapView . roadSnappedLocationProvider ? . startUpdatingLocation () } // Listener to handle continuous location updates . func locationProvider ( locationProvider : GMSRoadSnappedLocationProvider , didUpdate location : CLLocation ) { print ( "Location: \(location.description)" ) } // Listener to handle speeding events . func navigator ( navigator : GMSNavigator , didUpdateSpeedingPercentage percentageAboveLimit : CGFloat ) { print ( "Speed is \(percentageAboveLimit) above the limit." ) } // Listener to handle arrival events . func navigator ( navigator : GMSNavigator , didArriveAt waypoint : GMSNavigationWaypoint ) { print ( "You have arrived at: \(waypoint.title)" ) mapView . navigator ? . continueToNextDestination () mapView . navigator ? . isGuidanceActive = true } // Listener for route change events . func navigatorDidChangeRoute ( navigator : GMSNavigator ) { print ( "The route has changed." ) } // Listener for time to next destination . func navigator ( navigator : GMSNavigator , didUpdateRemainingTime time : TimeInterval ) { print ( "Time to next destination: \(time)" ) } // Delegate for distance to next destination . func navigator ( navigator : GMSNavigator , didUpdateRemainingDistance distance : CLLocationDistance ) { let miles = distance 0.00062137 print ( "Distance to next destination: \(miles) miles." ) } // Delegate for traffic updates to next destination func navigator ( navigator : GMSNavigator , didUpdate delayCategory : GMSNavigationDelayCategory ) { print ( "Delay category to next destination: \(String(describing: delayCategory))." ) } // Delegate for suggested lighting mode changes . func navigator ( navigator : GMSNavigator , didChangeSuggestedLightingMode lightingMode : GMSNavigationLightingMode ) { print ( "Suggested lighting mode has changed: \(String(describing: lightingMode))" ) // Change to the suggested lighting mode . mapView . lightingMode = lightingMode } // Add a button to the view . func makeButton () { // Start navigation . let navButton = UIButton ( frame : CGRect ( x : 5 , y : 150 , width : 200 , height : 35 )) navButton . backgroundColor = . blue navButton . alpha = 0.5 navButton . setTitle ( "Start navigation" , for : . normal ) navButton . addTarget ( self , action : #selector(startNav), for: .touchUpInside) self . mapView . addSubview ( navButton ) } } Show/Hide the Objective-C code for an event listener. / Copyright 2020 Google Inc.
+- Swift func navigator ( navigator : GMSNavigator , didUpdate delayCategory : GMSNavigationDelayCategory ) { print ( "Traffic flow to next destination: \( delayCategory ) " ) } Objective-C - ( void ) navigator: ( GMSNavigator ) navigator didUpdateDelayCategory :( GMSNavigationDelayCategory ) delayCategory { NSLog ( @"Traffic flow to next destination: %ld" , ( long ) delayCategory ); } The GMSNavigationDelayCategory property exposes the following delay levels: Delay category Description GMSNavigationDelayCategoryNoData 0 - Unavailable, no data for traffic or : the route.
+- Swift // Define a listener for suggested changes to lighting mode. func navigator( navigator : GMSNavigator , didChangeSuggestedLightingMode lightingMode : GMSNavigationLightingMode ) { print ( "Suggested lighting mode has changed: \( String ( describing : lightingMode )) " ) // Make the suggested change. mapView.lightingMode = lightingMode } Objective-C // Define a listener for suggested changes to lighting mode. -( void ) navigator: ( GMSNavigator ) navigator didChangeSuggestedLightingMode: ( GMSNavigationLightingMode ) lightingMode { NSLog ( @"Suggested lighting mode has changed : % ld ", (long)lightingMode); // Make the suggested change. mapView.lightingMode = lightingMode; } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Get route information \_|\_ Navigation SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info](https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info)
+- Source ID: `site-docs-root`
+- Final score: 146
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following example shows evaluating the result and logging a traffic message: Swift if let navigator = mapView . navigator { // insert sample for evaluating traffic value let delay = navigator . delayCategoryToNextDestination let traffic = "unavailable" switch delay { case . noData : traffic = "unavailable" case . heavy : traffic = "heavy" case . medium : traffic = "moderate" case . light : traffic = "light" default : traffic = "unavailable" } print ( "Traffic is \( traffic ) ." ) } Objective-C GMSNavigationDelayCategory delay = mapView . navigator . delayCategoryToNextDestination ; NSString traffic = @"" ; switch ( delayCategory ) { case GMSNavigationDelayCategoryNoData : traffic = @"No Data" ; break ; case GMSNavigationDelayCategoryHeavy : traffic = @"Heavy" ; break ; case GMSNavigationDelayCategoryMedium : traffic = @"Medium" ; break ; case GMSNavigationDelayCategoryLight : traffic = @"Light" ; break ; default : NSLog ( @"Invalid delay category: %zd" , delayCategory ); } NSLog ( @"%@" , [ NSString stringWithFormat : @"Traffic is %@." , traffic ]); Getting information about the current leg To get information about the current route leg, call currentRouteLeg .
+- Swift if let navigator = mapView . navigator { let distance = navigator . distanceToNextDestination let miles = distance 0.00062137 NSLog ( "Distance to next destination: %.2f miles." , miles ) } Objective-C CLLocationDistance distance = mapView . navigator . distanceToNextDestination ; double miles = distance 0.00062137 ; NSLog ( @"%@" , [ NSString stringWithFormat : @"Distance to next destination: %.2f." , miles ]); Getting traffic conditions to the next destination To get a value indicating the flow of traffic to the next destination, call delayCategoryToNextDestination .
+- Overview To get information about the current route, get the appropriate property from the navigator instance: GMSNavigator.timeToNextDestination to get the predicted time to the next destination on the current route, in seconds.
+- GMSNavigationDelayCategory to get the delay category for the traffic flow.
 

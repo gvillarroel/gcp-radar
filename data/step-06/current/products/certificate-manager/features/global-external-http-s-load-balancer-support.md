@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:16:01.494Z"
+generated_at: "2026-04-14T11:53:06.942Z"
 product_name: "Certificate Manager"
 product_slug: "certificate-manager"
 feature_name: "Global external HTTP(S) Load Balancer support"
 feature_slug: "global-external-http-s-load-balancer-support"
 latest_feature_date: "2022-04-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-lb-auth"
-  - "https://docs.cloud.google.com/certificate-manager/docs/deploy-self-managed"
   - "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas"
+  - "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth"
 keywords:
-  - "global"
-  - "http"
-  - "external"
-  - "balancer"
-  - "load"
-  - "adds"
-  - "certificate"
-  - "manager"
+  - "global external LB integration"
+  - "Certificate Manager and global external LB"
+  - "global external HTTP(S) Load Balancer"
+  - "global external HTTPS load balancer"
+  - "global HTTPS LB"
+  - "global external ALB"
+  - "HTTP(S) LB support"
 ---
 
 # Global external HTTP(S) Load Balancer support
 
 Product: Certificate Manager
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,17 +33,17 @@ Certificate Manager adds support for the global external HTTP(S) load balancer.
 
 ## Extended Definition
 
-Certificate Manager adds support for the global external HTTP(S) load balancer.
+Certificate Manager provides deployment for **global Google-managed certificates** on Google Cloud global load balancers. The guides state that a global Google-managed certificate is deployed via a certificate map/entry and attached to a supported load balancer using a target HTTPS proxy, with the supported global targets including global external Application Load Balancer and global external proxy Network Load Balancer, indicating HTTPS-capable global external LB integration. In the load balancer authorization method, certificate issuance is tied to traffic served by the load balancer and does not require additional DNS records.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+These three official Google Cloud Certificate Manager deployment pages document global Google-managed certificate deployment workflows and explicitly list supported global external LB types, along with certificate map/target HTTPS proxy attachment guidance.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-lb-auth](https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-lb-auth)
-- [https://docs.cloud.google.com/certificate-manager/docs/deploy-self-managed](https://docs.cloud.google.com/certificate-manager/docs/deploy-self-managed)
 - [https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas](https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas)
+- [https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth](https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth)
 
 ## Supporting Pages
 
@@ -52,41 +51,23 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-lb-auth](https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-lb-auth)
 - Source ID: `site-docs-root`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The following load balancers support Google-managed certificates with load balancer authorization: Global external Application Load Balancer Classic Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer Objectives This tutorial shows you how to complete the following tasks: Create a Google-managed certificate issued by a publicly trusted Certificate Authority (CA) with load balancer authorization by using Certificate Manager.
-- The new certificate appears in the list of certificates. gcloud To create a global Google-managed certificate with load balancer authorization, use the certificate-manager certificates create command : gcloud certificate-manager certificates create CERTIFICATE NAME \ --domains=" DOMAIN NAMES " Replace the following: CERTIFICATE NAME : the name of the certificate.
-- Home Documentation Security Certificate Manager Guides Send feedback Deploy a global Google-managed certificate with load balancer authorization Stay organized with collections Save and categorize content based on your preferences.
-- This tutorial shows you how to use Certificate Manager to deploy a global Google-managed certificate with load balancer authorization .
-
-### "Deploy a global self-managed certificate \_|\_ Certificate Manager \_|\_\
-
-- URL: [https://docs.cloud.google.com/certificate-manager/docs/deploy-self-managed](https://docs.cloud.google.com/certificate-manager/docs/deploy-self-managed)
-- Source ID: `site-docs-root`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The following load balancers support global self-managed certificates: Global external Application Load Balancer Classic Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer If you want to deploy to regional or cross-region load balancers, see the following: Deploy a regional self-managed certificate Deploy a cross-region self-managed certificate Objectives This tutorial shows you how to complete the following tasks: Upload a self-managed certificate to Certificate Manager.
-- If you haven't created the load balancer, see the following pages to create one: To create a global external Application Load Balancer, see Set up a global external Application Load Balancer with VM instance group backends .
-- To create a Global external proxy Network Load Balancer (SSL proxy), see Set up a global external proxy Network Load Balancer (SSL proxy) with VM instance group backends .
-- Deploy the self-managed certificate to a load balancer To deploy the global self-managed certificate, use a certificate map.
+- Final score: 92
+- Re-rank relevance: STRONG
+- Re-rank rationale: The page is explicitly about deploying a global Google-managed certificate and deploying it to supported load balancers, including global external Application/Network Load Balancer variants.
 
 ### "Deploy a global Google-managed certificate with Certificate Authority Service\
 
 - URL: [https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas](https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas)
 - Source ID: `site-docs-root`
-- Final score: 216
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 72
+- Re-rank relevance: STRONG
+- Re-rank rationale: The page is a tutorial for deploying a global Google-managed certificate and explicitly identifies supported global load balancer types, including global external Application Load Balancer variants.
 
-Evidence snippets:
-- The following global load balancers support Google-managed certificates with Certificate Authority Service: Global external Application Load Balancer Classic Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer If you want to deploy to cross-region load balancers or regional load balancers, see the following: Deploy a cross-region Google-managed certificate with Certificate Authority Service Deploy a regional Google-managed certificate with Certificate Authority Service Objectives This tutorial shows you how to complete the following tasks: Create a Google-managed certificate with CA Service by using Certificate Manager.
-- If you haven't created the load balancer, see the following pages to create one: To create a global external Application Load Balancer, see Set up a global external Application Load Balancer with VM instance group backends .
-- To create a Global external proxy Network Load Balancer (SSL proxy), see Set up a global external proxy Network Load Balancer (SSL proxy) with VM instance group backends .
-- Deploy the certificate to a load balancer To deploy the global Google-managed certificate, use a certificate map.
+### "Deploy a global Google-managed certificate with DNS authorization \_|\_\
+
+- URL: [https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth](https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth)
+- Source ID: `site-docs-root`
+- Final score: 72
+- Re-rank relevance: STRONG
+- Re-rank rationale: It explicitly documents deploying global Google-managed certificates with DNS authorization to supported global load balancers, including global external Application Load Balancer and target HTTPS proxy.
 

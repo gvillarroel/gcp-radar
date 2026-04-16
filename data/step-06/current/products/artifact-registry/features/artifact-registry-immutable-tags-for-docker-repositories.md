@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T17:49:26.912Z"
+generated_at: "2026-04-14T08:39:49.484Z"
 product_name: "Artifact Registry"
 product_slug: "artifact-registry"
 feature_name: "Artifact Registry immutable tags for Docker repositories"
 feature_slug: "artifact-registry-immutable-tags-for-docker-repositories"
 latest_feature_date: "2024-04-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages"
   - "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories"
-  - "https://docs.cloud.google.com/artifact-registry/docs/reference/docker-api"
-  - "https://docs.cloud.google.com/artifact-registry/docs/release-notes"
+  - "https://docs.cloud.google.com/artifact-registry/docs/repositories"
 keywords:
+  - "enforce"
   - "immutable"
   - "tags"
   - "repositories"
   - "docker"
-  - "can"
-  - "registry"
-  - "artifact"
-  - "for"
 ---
 
 # Artifact Registry immutable tags for Docker repositories
 
 Product: Artifact Registry
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ Docker repositories can enforce immutable tags so that a tag’s referenced imag
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages)
 - [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories)
-- [https://docs.cloud.google.com/artifact-registry/docs/reference/docker-api](https://docs.cloud.google.com/artifact-registry/docs/reference/docker-api)
-- [https://docs.cloud.google.com/artifact-registry/docs/release-notes](https://docs.cloud.google.com/artifact-registry/docs/release-notes)
+- [https://docs.cloud.google.com/artifact-registry/docs/repositories](https://docs.cloud.google.com/artifact-registry/docs/repositories)
 
 ## Supporting Pages
 
@@ -52,40 +49,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories)
 - Source ID: `site-api-reference`
-- Final score: 224
+- Final score: 129
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Resource: Repository JSON representation MavenRepositoryConfig JSON representation VersionPolicy DockerRepositoryConfig JSON representation VirtualRepositoryConfig JSON representation UpstreamPolicy JSON representation RemoteRepositoryConfig JSON representation DockerRepository JSON representation PublicRepository CustomRepository JSON representation MavenRepository JSON representation PublicRepository CustomRepository JSON representation NpmRepository JSON representation PublicRepository CustomRepository JSON representation PythonRepository JSON representation PublicRepository CustomRepository JSON representation AptRepository JSON representation PublicRepository JSON representation RepositoryBase CustomRepository JSON representation YumRepository JSON representation PublicRepository JSON representation RepositoryBase CustomRepository JSON representation CommonRemoteRepository JSON representation UpstreamCredentials JSON representation UsernamePasswordCredentials JSON representation Format Mode CleanupPolicy JSON representation CleanupPolicyCondition JSON representation TagState CleanupPolicyMostRecentVersions JSON representation Action VulnerabilityScanningConfig JSON representation EnablementConfig EnablementState Methods Resource: Repository A Repository for storing artifacts with a specific format.
 - JSON representation { "name" : string , "format" : enum ( Format ) , "description" : string , "labels" : { string : string , ... } , "createTime" : string , "updateTime" : string , "kmsKeyName" : string , "mode" : enum ( Mode ) , "cleanupPolicies" : { string : { object ( CleanupPolicy ) } , ... } , "sizeBytes" : string , "satisfiesPzs" : boolean , "cleanupPolicyDryRun" : boolean , "vulnerabilityScanningConfig" : { object ( VulnerabilityScanningConfig ) } , "disallowUnspecifiedMode" : boolean , "satisfiesPzi" : boolean , "registryUri" : string , // Union field format config can be only one of the following: "mavenConfig" : { object ( MavenRepositoryConfig ) } , "dockerConfig" : { object ( DockerRepositoryConfig ) } // End of list of possible types for union field format config . // Union field mode config can be only one of the following: "virtualRepositoryConfig" : { object ( VirtualRepositoryConfig ) } , "remoteRepositoryConfig" : { object ( RemoteRepositoryConfig ) } // End of list of possible types for union field mode config . } Fields name string The name of the repository, for example: projects/p1/locations/us-central1/repositories/repo1 .
-- Address of the remote repository. upstream can be only one of the following: publicRepository enum ( PublicRepository ) One of the publicly available Docker repositories supported by Artifact Registry. customRepository object ( CustomRepository ) Customer-specified remote repository.
 - Repository-specific configurations. format config can be only one of the following: mavenConfig object ( MavenRepositoryConfig ) Maven repository config contains repository level configuration for the repositories of maven type. dockerConfig object ( DockerRepositoryConfig ) Docker repository config contains repository level configuration for the repositories of docker type.
+- Address of the remote repository. upstream can be only one of the following: publicRepository enum ( PublicRepository ) One of the publicly available Docker repositories supported by Artifact Registry. customRepository object ( CustomRepository ) Customer-specified remote repository.
 
-### "Support for the Docker Registry API \_|\_ Artifact Registry \_|\_ Google\
+### "REST Resource: projects.locations.repositories.dockerImages \_|\_ Artifact\
 
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/reference/docker-api](https://docs.cloud.google.com/artifact-registry/docs/reference/docker-api)
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages)
 - Source ID: `site-api-reference`
-- Final score: 214
+- Final score: 128
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Artifact Registry implements version 1.1 of the Open Container Initiative (OCI) Distribution Specification so that you can push and pull images directly with Docker clients, including the Docker command-line tool .
-- Home Documentation Application development Artifact Registry Reference Send feedback Support for the Docker Registry API Stay organized with collections Save and categorize content based on your preferences.
-- Commands for Artifact Registry tasks that don't have an equivalent command in the Google Cloud CLI or the Docker command-line tool, such as listing untagged images or copying images across registry hosts.
-- Make requests to Artifact Registry using the OCI Distribution Specification If using Docker or the gcrane tool isn't an option, then you can use the OCI Distribution Specification.
+- The following fields are returned as untyped metadata in the Version resource, using camelcase keys (i.e. metadata.imageSizeBytes): imageSizeBytes mediaType buildTime JSON representation { "name" : string , "uri" : string , "tags" : [ string ] , "imageSizeBytes" : string , "uploadTime" : string , "mediaType" : string , "buildTime" : string , "updateTime" : string , "artifactType" : string , "imageManifests" : [ { object ( ImageManifest ) } ] } Fields name string Required. registry location, projectId, repository name and image id forms a unique image name: projects/<projectId>/locations/<location>/repositories/<repository name>/dockerImages/<docker image> .
+- For example, "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/ nginx@sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf" , where "us-west4" is the registry location, "test-project" is the projectId, "test-repo" is the repository name and "nginx@sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf" is the image's digest. uri string Required.
+- Example: us-west4-docker.pkg.dev/test-project/test-repo/nginx@sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf tags[] string Tags attached to this image. imageSizeBytes string ( int64 format) Calculated size of the image.
+- Home Documentation Application development Artifact Registry Reference Send feedback REST Resource: projects.locations.repositories.dockerImages Stay organized with collections Save and categorize content based on your preferences.
 
-### Artifact Registry release notes \_|\_ Google Cloud Documentation
+### Repository overview \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/release-notes](https://docs.cloud.google.com/artifact-registry/docs/release-notes)
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/repositories](https://docs.cloud.google.com/artifact-registry/docs/repositories)
 - Source ID: `site-docs-root`
-- Final score: 212
+- Final score: 119
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature You can now view attachments for non-Docker Artifact Registry repositories in the Google Cloud console.
-- August 21, 2024 v1 Change The following Artifact Registry Cloud Audit Log method names have changed: Docker-EmptyTarBlob is renamed Docker-ServeBlob Docker-GetEmptyTags is renamed Docker-GetTags Docker-HeadEmptyTarBlob is renamed Docker-HeadBlob Kfp-UploadPackage-Redirect is renamed Kfp-UploadPackage Apt-ViewRemoteIndexFile is renamed to indicate the type of file requested: Apt-ViewIndexFile : when a repository metadata file is requested Apt-Contents : when the Contents index file for a specific repository component and architecture type is requested Apt-ViewArchIndexFile : when the Packages index file for a specific repository component and architecture type is requested Apt-ViewRemotePackageFile is renamed Apt-ViewPackageFile Yum-ViewUpstreamFile is renamed to indicate the type of file requested: Yum-ViewIndexKey : when the public key for signing Yum packages is requested Yum-ViewIndexFile : when one of a repository's index files is requested Yum-ViewPackageFile : when a Yum package file is requested For more information on Artifact Registry logs, see Audit Logging .
-- March 15, 2024 v1 Feature Artifact Registry remote repositories support basic authentication to user-defined and preset upstream sources for Docker, Maven, npm, and Python formats.
-- These repositories can host your existing Container Registry images and automatically redirect requests for gcr.io hosts to corresponding Artifact Registry repositories.
+- Tagged artifacts in repositories with immutable tags enabled cannot be deleted.
+- For example, given a repository containing the following artifacts: IMAGE: us-west1-docker.pkg.dev/my-project/release-xyz-v1 DIGEST: sha256:1b0a26bd07a3d17473d8d8468bea84015e27f87124b2831234581bce13f61370 TAGS: CREATE TIME: 2023 -06-19T18:59:09 UPDATE TIME: 2023 -06-19T18:59:10 IMAGE: us-west1-docker.pkg.dev/my-project/release-xyz-v2 DIGEST: sha256:6e494387c901caf429c1bf77bd92fb82b33a68c0e19f123456a3ac8d27a7049d TAGS: latest CREATE TIME: 2023 -06-19T18:59:09 UPDATE TIME: 2023 -06-19T18:59:09 IMAGE: us-west1-docker.pkg.dev/my-project/release-v2 DIGEST: sha256:6e494387c901caf429c1bf77bd92fb82b33a68c0e19f123456a3ac8d27a7049d TAGS: latest CREATE TIME: 2023 -06-19T18:59:09 UPDATE TIME: 2023 -06-19T18:59:09 If your Keep most recent versions policy is set to keep 3 versions of packages matching the Package prefixes : {release-xyz} , only release-xyz-v1 , and release-xyz-v2 are kept.
+- For more on Docker tags, see Container concepts .
+- You can also apply tags to repositories.
 

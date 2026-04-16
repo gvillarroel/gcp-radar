@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.024Z"
+generated_at: "2026-04-12T12:11:19.221Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer 2.1.13"
 feature_slug: "cloud-composer-2-1-13"
 latest_feature_date: "2024-04-18"
 deprecation_date: "2024-04-18"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
   - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines"
 keywords:
   - "composer"
   - "13"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer 2.1.13
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer version 2.1.13 has reached its end of full support period; deprec
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines](https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 208
+- Final score: 253
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,9 +67,8 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - Source ID: `site-iam-reference`
-- Final score: 200
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 249
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
@@ -75,16 +76,29 @@ Evidence snippets:
 - Example: gcloud composer environments update example-environment \ --location us-central1 \ --update-pypi-package "scipy>=0.13.3" Removing packages Update your environment, and specify the packages that you want to delete in the --remove-pypi-packages argument: gcloud composer environments update ENVIRONMENT NAME \ --location LOCATION \ --remove-pypi-packages PACKAGE NAMES Replace: ENVIRONMENT NAME with the name of the environment.
 - For example: scipy>=0.13.3 scikit-learn nltk[machine learning] Update your environment, and specify the requirements.txt file in the --update-pypi-packages-from-file argument. gcloud composer environments update ENVIRONMENT NAME \ --location LOCATION \ --update-pypi-packages-from-file requirements.txt Replace: ENVIRONMENT NAME with the name of the environment.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 196
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 227
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Change New images are available in Cloud Composer 2: composer-2.13.8-airflow-2.10.5 (default) composer-2.13.8-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.5-build.10 (default) composer-3-airflow-2.9.3-build.30 Deprecated Cloud Composer version 2.8.6 has reached its end of support period .
-- Change New images are available in Cloud Composer 2: composer-2.13.4-airflow-2.10.5 (default) composer-2.13.4-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.5-build.6 (default) composer-3-airflow-2.9.3-build.26 Deprecated Cloud Composer version 2.8.2 has reached its end of support period .
-- Change New versions of Cloud Composer images: composer-1.17.5-airflow-2.1.4 composer-1.17.5-airflow-2.1.2 composer-1.17.5-airflow-2.0.2 composer-1.17.5-airflow-1.10.15 (default) composer-1.17.5-airflow-1.10.12 composer-1.17.5-airflow-1.10.14 Deprecated Cloud Composer 1.13.0 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.16.13-airflow-1.10.12 composer-1.16.13-airflow-1.10.14 composer-1.16.13-airflow-1.10.15 (default) composer-1.17.0-preview.9-airflow-2.0.2 composer-1.17.0-preview.9-airflow-2.1.1 Deprecated Cloud Composer 1.11.1 has reached its end of full support period .
+- Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
+- Support for Google Display and Video 360 Operators Google Display and Video 360 Operators in Cloud Composer versions earlier than 2.1.13 are based on the Display and Video 360 v1.1 API that is deprecated and its sunset date is April 27, 2023.
+- Support for Google Campaign Manager 360 Operators Google Campaign Manager Operators in Cloud Composer versions earlier than 2.1.13 are based on the Campaign Manager 360 v3.5 API that is deprecated and its sunset date is May 1, 2023 .
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+
+### Launch Dataflow pipelines with Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines](https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines)
+- Source ID: `site-iam-reference`
+- Final score: 203
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
+- POINT(40.7128 74.006),45,'July',null,true,2020-02-16 POINT(41.8781 87.6298),23,'October',13,false,2015-02-13 POINT(48.8566 2.3522),80,'December',null,true,null POINT(6.5244 3.3792),15,'March',14,true,null Caution: Make sure that there are no blank lines at the end of your inputFile.txt file to avoid a Dataflow error.
+- You can use any version of Cloud Composer with this guide.
+- For more information, see Set up authentication for a local development environment . def upload file bucket name :, local file path :, file name : nil The ID of your GCS bucket bucket name = "your-unique-bucket-name" The path to your file to upload local file path = "/local/path/to/file.txt" The ID of your GCS object file name = "your-file-name" require "google/cloud/storage" storage = Google :: Cloud :: Storage . new bucket = storage . bucket bucket name , skip lookup : true file = bucket . create file local file path , file name puts "Uploaded #{ local file path } as #{ file . name } in bucket #{ bucket name } " end Configure DataflowTemplateOperator Before running the DAG, set the following Airflow variables .
 

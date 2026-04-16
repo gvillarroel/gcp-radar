@@ -1,28 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T22:04:50.064Z"
+generated_at: "2026-04-12T20:56:05.574Z"
 product_name: "App Engine standard environment Node.js"
 product_slug: "app-engine-standard-environment-node-js"
 feature_name: "Node.js 18 runtime for App Engine standard environment"
 feature_slug: "node-js-18-runtime-for-app-engine-standard-environment"
 latest_feature_date: "2023-01-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes"
+  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml"
+  - "https://docs.cloud.google.com/appengine/docs/standard/bundled-services-overview"
 keywords:
-  - "App Engine Node.js 18"
-  - "Node.js 18 runtime"
-  - "public preview"
-  - "Node 18"
-  - "nodejs18"
-  - "generally available"
+  - "node"
+  - "js"
+  - "18"
+  - "runtime"
+  - "app"
+  - "engine"
+  - "standard"
+  - "environment"
 ---
 
 # Node.js 18 runtime for App Engine standard environment
 
 Product: App Engine standard environment Node.js
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,25 +38,52 @@ The Node.js 18 runtime for App Engine standard environment became generally avai
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes](https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes)
+- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime](https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml](https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml)
+- [https://docs.cloud.google.com/appengine/docs/standard/bundled-services-overview](https://docs.cloud.google.com/appengine/docs/standard/bundled-services-overview)
 
 ## Supporting Pages
 
-### "App Engine standard environment for Node.js release notes \_|\_ Google Cloud\
+### "Node.js Runtime Environment \_|\_ App Engine standard environment \_|\_\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes](https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 46
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime](https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime)
+- Source ID: `site-docs-root`
+- Final score: 62
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- January 17, 2023 Feature The Node.js 18 runtime for App Engine standard environment is now generally available .
-- December 09, 2024 Feature Custom organization policies for Serverless VPC Access connectors are now generally available , and can be applied to projects, folders, or organizations.
-- May 18, 2022 Feature Specifying a user-managed service account for each App Engine version during deployment is now generally available .
-- September 13, 2017 Feature The gcloud commands and Admin API methods used to map custom domains are now generally available.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Node.js Runtime Environment Stay organized with collections Save and categorize content based on your preferences.
+- The Node.js runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : nodejs VERSION Where VERSION is the Node.js MAJOR version number.
+- Environment variables The following environment variables are set by the runtime: Environment variable Description GAE APPLICATION The ID of your App Engine application.
+- NPM build script By default, when you deploy the app in App Engine, the Node.js runtime executes npm run build if a build script is detected in package.json .
+
+### "Defining runtime settings \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml](https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml)
+- Source ID: `site-docs-reference-3`
+- Final score: 52
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Generally, your app.yaml file requires only the runtime element for a simple Node.js app in the standard environment, for example: runtime : nodejs24 App Engine provides default values for all other settings, including the F1 instance class , which determines the memory and CPU resources that are available to your app, and automatic scaling , which controls how and when new instances of your app are created.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Defining runtime settings Stay organized with collections Save and categorize content based on your preferences.
+- An App Engine app is configured using an app.yaml file, that contains the runtime, handlers, scaling, and other general settings including environment variables.
+- About app.yaml files You can specify the runtime configuration for your Node.js app, including versions and URLs, in the app.yaml file.
+
+### "Overview of legacy bundled services \_|\_ App Engine standard environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/bundled-services-overview](https://docs.cloud.google.com/appengine/docs/standard/bundled-services-overview)
+- Source ID: `site-docs-reference`
+- Final score: 38
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Overview of legacy bundled services Stay organized with collections Save and categorize content based on your preferences.
+- Historically, the App Engine standard environment provided several scalable, proprietary services for app development.
+- Because several of the legacy runtimes are no longer maintained by their respective open-source communities, as an App Engine developer, you may face hard choices on whether to invest time and effort in migrating to a newer runtime or else incur growing costs to retain your app on a legacy runtime.
+- To reduce runtime migration complexity, Google Cloud now supports a set of App Engine legacy bundled services and their associated APIs on second-generation runtimes, which include Python 3 , Java 11+ , Go 1.12+ , and PHP 7+ .
 

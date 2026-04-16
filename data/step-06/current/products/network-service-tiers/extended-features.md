@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2019-03-28 | Network Service Tiers | LOW | [source](https://docs.cloud.google.com/network-tiers/docs/overview)<br>[source](https://docs.cloud.google.com/network-tiers/docs/set-network-tier)<br>[source](https://docs.cloud.google.com/network-tiers/docs/apis) | Network Service Tiers lets you choose between Standard and Premium tiers for Google Cloud network traffic pricing and routing; Network Service Tiers lets you choose between Standard and Premium tiers for Google Cloud network traffic pricing and routing. |
+| 2019-03-28 | Network Service Tiers | MEDIUM | [source](https://docs.cloud.google.com/network-tiers/docs/overview)<br>[source](https://docs.cloud.google.com/network-tiers/docs/set-network-tier)<br>[source](https://docs.cloud.google.com/network-tiers/docs/apis)<br>[source](https://docs.cloud.google.com/network-tiers/docs/getting-support) | Network Service Tiers lets you choose between Standard and Premium tiers for Google Cloud network traffic pricing and routing; Network Service Tiers lets you choose between Standard and Premium tiers for Google Cloud network traffic pricing and routing. |
 

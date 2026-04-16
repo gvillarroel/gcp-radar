@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime
   title: "Java runtime environment \_|\_ App Engine standard environment \_|\_ Google\

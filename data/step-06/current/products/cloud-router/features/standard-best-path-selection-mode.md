@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:28:55.737Z"
+generated_at: "2026-04-12T12:11:54.313Z"
 product_name: "Cloud Router"
 product_slug: "cloud-router"
 feature_name: "Standard best path selection mode"
 feature_slug: "standard-best-path-selection-mode"
 latest_feature_date: "2024-12-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes"
-  - "https://docs.cloud.google.com/network-connectivity/docs/router/release-notes"
   - "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes"
+  - "https://docs.cloud.google.com/network-connectivity/docs/router/pricing"
+  - "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview"
 keywords:
   - "standard"
   - "best"
@@ -26,7 +27,7 @@ keywords:
 # Standard best path selection mode
 
 Product: Cloud Router
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Standard best path selection mode provides AS path-based route ranking behavior 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes)
-- [https://docs.cloud.google.com/network-connectivity/docs/router/release-notes](https://docs.cloud.google.com/network-connectivity/docs/router/release-notes)
 - [https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes](https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes)
+- [https://docs.cloud.google.com/network-connectivity/docs/router/pricing](https://docs.cloud.google.com/network-connectivity/docs/router/pricing)
+- [https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview](https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes)
 - Source ID: `site-docs-root`
-- Final score: 204
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 297
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - If you select standard best path selection mode, then you can do the following: Choose if Always compare MED is enabled: If selected, always compares MED values without considering ASN values.
@@ -62,31 +64,44 @@ Evidence snippets:
 - In the Best path selection mode section, the value indicates the type of best path selection mode, either Standard or Legacy . gcloud Run the gcloud compute networks describe command : gcloud compute networks describe NETWORK NAME \ --format = "get(routingConfig)" \ --project = PROJECT ID Replace the following: NETWORK NAME : the name of the VPC network PROJECT ID : the ID of the project that contains the VPC network In the output, see the following: The routingMode is the dynamic routing mode of the VPC network.
 - In the following example, you specify either create or update : gcloud compute networks { create update } NETWORK NAME \ --bgp-routing-mode = DYNAMIC ROUTING MODE \ --bgp-best-path-selection-mode = STANDARD \ -- [ no- ] bgp-bps-always-compare-med \ --bgp-bps-inter-region-cost = COST MODE \ --project = PROJECT ID Replace the following: NETWORK NAME : the name of the VPC network to modify DYNAMIC ROUTING MODE : the dynamic routing mode to use—specify REGIONAL or GLOBAL .
 
-### Cloud Router release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/network-connectivity/docs/router/release-notes](https://docs.cloud.google.com/network-connectivity/docs/router/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- August 27, 2024 Feature Cloud Router supports standard best path selection mode in Preview , which offers support for consistent AS path-based routing and more control over how BGP prefixes are ranked in your VPC networks.
-- December 17, 2024 Feature Standard best path selection mode is now generally available .
-- For more information, see Best path selection modes .
-- For more information, see Best path selection modes .
-
 ### "Route exchange with VPC spokes \_|\_ Network Connectivity Center \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes](https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes)
 - Source ID: `site-iam-reference`
-- Final score: 112
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To establish connectivity between hybrid spokes and VPC spokes: Network administrators for the routing VPC networks must first review the Cloud Router path selection and dynamic routing mode: NCC hybrid spokes only support the Cloud Router legacy best path selection mode.
 - The dynamic routing mode and best path selection mode of the workload VPC network aren't relevant because the workload VPC network doesn't contain the Cloud Router resources that manage the BGP sessions for the VLAN attachments.
 - This example shows how the multi-exit discriminator (MED) value, dynamic routing mode, and Cloud Router best path selection algorithm control the creation of dynamic routes in both the routing VPC network and in VPC spokes.
 - For detailed information about Cloud Router path selection, see Best path selection modes in the Cloud Router documentation.
+
+### Network Connectivity pricing | Google Cloud
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/router/pricing](https://docs.cloud.google.com/network-connectivity/docs/router/pricing)
+- Source ID: `site-docs-root`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Google Cloud partners Learn about the ecosystem and resources. close Overview arrow forward Solutions arrow forward Products arrow forward Pricing arrow forward Resources arrow forward Docs Support Console Accelerate your digital transformation Learn more Key benefits Why Google Cloud AI and ML Multicloud Global infrastructure Data Cloud Modern Infrastructure Cloud Security Productivity and collaboration Reports and insights Executive insights Analyst reports Whitepapers Customer stories Industry Solutions Retail Consumer Packaged Goods Financial Services Healthcare and Life Sciences Media and Entertainment Telecommunications Games Manufacturing Supply Chain and Logistics Government Education See all industry solutions See all solutions Application Modernization CAMP Modernize Traditional Applications Migrate from PaaS: Cloud Foundry, Openshift Migrate from Mainframe Modernize Software Delivery DevOps Best Practices SRE Principles Platform Engineering Run Applications at the Edge Architect for Multicloud Go Serverless Artificial Intelligence Customer Engagement Suite with Google AI Document AI Vertex AI Search for commerce Google Cloud with Gemini Generative AI on Google Cloud APIs and Applications New Business Channels Using APIs Unlocking Legacy Applications Using APIs Open Banking APIx Data Analytics Data Migration Data Lakehouse Real-time Analytics Marketing Analytics Datasets Business Intelligence AI for Data Analytics Geospatial Analytics Databases Database Migration Database Modernization Databases for Games Google Cloud Databases Migrate Oracle workloads to Google Cloud Open Source Databases SQL Server on Google Cloud Gemini for Databases Infrastructure Modernization Application Migration SAP on Google Cloud High Performance Computing Windows on Google Cloud Data Center Migration Active Assist Virtual Desktops Rapid Migration and Modernization Program Backup and Disaster Recovery Red Hat on Google Cloud Cross-Cloud Network Observability Productivity and Collaboration Google Workspace Google Workspace Essentials Cloud Identity Chrome Enterprise Security Agentic SOC Web App and API Protection Security and Resilience Framework Risk and compliance as code (RCaC) Software Supply Chain Security Security Foundation Google Cloud Cybershield™ Startups and SMB Startup Program Small and Medium Business Software as a Service Featured Products Compute Engine Cloud Storage BigQuery Cloud Run Google Kubernetes Engine Vertex AI Looker Apigee API Management Cloud SQL Gemini Enterprise Cloud CDN See all products (100+) AI and Machine Learning Vertex AI Platform Vertex AI Studio Vertex AI Agent Builder Conversational Agents Vertex AI Search Speech-to-Text Text-to-Speech Translation AI Gemini Enterprise Vision AI Contact Center as a Service See all AI and machine learning products Business Intelligence Looker Looker Studio Compute Compute Engine App Engine Cloud GPUs Migrate to Virtual Machines Spot VMs Batch Sole-Tenant Nodes Bare Metal Recommender VMware Engine Cloud Run See all compute products Containers Google Kubernetes Engine Cloud Run Cloud Build Artifact Registry Cloud Code Cloud Deploy Migrate to Containers Deep Learning Containers Knative Data Analytics BigQuery Looker Dataflow Pub/Sub Dataproc Google Cloud Serverless for Apache Spark Cloud Composer BigLake Dataplex Universal Catalog BigQuery Migration Services Managed Service for Apache Kafka See all data analytics products Databases AlloyDB for PostgreSQL Cloud SQL Firestore Spanner Bigtable Datastream Database Migration Service Bare Metal Solution Memorystore Developer Tools Artifact Registry Cloud Code Cloud Build Cloud Deploy Cloud Deployment Manager Cloud SDK Cloud Scheduler Cloud Source Repositories Infrastructure Manager Cloud Workstations Gemini Code Assist See all developer tools Distributed Cloud Google Distributed Cloud Connected Google Distributed Cloud Air-gapped Hybrid and Multicloud Google Kubernetes Engine Apigee API Management Migrate to Containers Cloud Build Observability Cloud Service Mesh Google Distributed Cloud Industry Specific Anti Money Laundering AI Cloud Healthcare API Device Connect for Fitbit Telecom Network Automation Telecom Data Fabric Telecom Subscriber Insights Spectrum Access System (SAS) Integration Services Application Integration Workflows Apigee API Management Cloud Tasks Cloud Scheduler Dataproc Cloud Data Fusion Cloud Composer Pub/Sub Eventarc Management Tools Cloud Shell Cloud console Cloud Endpoints Cloud IAM Cloud APIs Service Catalog Cost Management Observability Carbon Footprint Config Connector Active Assist See all management tools Maps and Geospatial Earth Engine Google Maps Platform Media Services Cloud CDN Live Stream API OpenCue Transcoder API Video Stitcher API Migration Migration Center Application Migration Migrate to Virtual Machines Cloud Foundation Toolkit Database Migration Service Migrate to Containers BigQuery Migration Services Rapid Migration and Modernization Program Transfer Appliance Storage Transfer Service VMware Engine Mixed Reality Immersive Stream for XR Networking Cloud Armor Cloud CDN and Media CDN Cloud DNS Cloud Load Balancing Cloud NAT Cloud Connectivity Network Connectivity Center Network Intelligence Center Network Service Tiers Virtual Private Cloud Private Service Connect See all networking products Operations Cloud Logging Cloud Monitoring Error Reporting Managed Service for Prometheus Cloud Trace Cloud Profiler Cloud Quotas Productivity and Collaboration AppSheet Gemini Enterprise Google Workspace Google Workspace Essentials Cloud Identity Chrome Enterprise Security and Identity Cloud IAM Sensitive Data Protection Mandiant Managed Defense Google Threat Intelligence Security Command Center Cloud Key Management Mandiant Incident Response Chrome Enterprise Premium Assured Workloads Google Security Operations Mandiant Consulting See all security and identity products Serverless Cloud Run Cloud Functions App Engine Workflows API Gateway Storage Cloud Storage Block Storage Filestore Persistent Disk Cloud Storage for Firebase Local SSD Storage Transfer Service Google Cloud Managed Lustre Google Cloud NetApp Volumes Backup and DR Service Web3 Blockchain Node Engine Blockchain RPC Save money with our transparent approach to pricing Request a quote Pricing overview and tools Google Cloud pricing Pricing calculator Google Cloud free tier Cost optimization framework Cost management tools Product-specific Pricing Compute Engine Cloud SQL Google Kubernetes Engine Cloud Storage BigQuery See full price list with 100+ products Learn & build Google Cloud Free Program Solution Generator Quickstarts Blog Learning Hub Google Cloud certification Cloud computing basics Cloud Architecture Center Connect Innovators Developer Center Events and webinars Google Cloud Community Consulting and Partners Google Cloud Consulting Google Cloud Marketplace Find a partner Google Cloud partners Why Google Choosing Google Cloud Trust and security Modern Infrastructure Cloud Multicloud Global infrastructure Locations Customers and case studies Analyst reports Whitepapers Blog Products and pricing Google Cloud pricing Google Workspace pricing See all products Solutions Infrastructure modernization Databases Application modernization Smart analytics Artificial Intelligence Security Productivity & work transformation Industry solutions DevOps solutions Small business solutions See all solutions Resources Google Cloud Affiliate Program Google Cloud documentation Google Cloud quickstarts Google Cloud Marketplace Learn about cloud computing Support Code samples Cloud Architecture Center Training Certifications Google for Developers Google Cloud for Startups System status Release Notes Engage Contact sales Find a Partner Become a Partner Events Podcasts Developer Center Press Corner Google Cloud on YouTube Google Cloud Tech on YouTube Follow on X Join User Research We're hiring.
+- Pricing scenarios This section describes different pricing scenarios for how Google Cloud calculates pricing for Cloud Interconnect outbound data transfer; that is, when a virtual machine (VM) instance or a non-VM Google Cloud product or service sends traffic to your on-premises location over a VLAN attachment located in the same or different geographical location: A VM in the same region as a VLAN attachment, using either regional or global VPC dynamic routing A VM in the same continent but different region than a VLAN attachment, using global VPC dynamic routing A VM in a different continent than a VLAN attachment, using global VPC dynamic routing A VM in a different continent than a VLAN attachment, using VPC Network Peering A non-VM Google Cloud product or service in a different location than a VLAN attachment, using global VPC dynamic routing Note: You have to pay standard inter-region charges for traffic between the region of the VM and the region of the VLAN attachment, which is more if they are in different continents.
+- Customer stories Explore case studies and videos. close Industry Solutions Application Modernization Artificial Intelligence APIs and Applications Data Analytics Databases Infrastructure Modernization Productivity and Collaboration Security Startups and SMB See all solutions Industry Solutions Reduce cost, increase operational agility, and capture new market opportunities.
+- Blockchain RPC Enterprise-grade RPC for building on the blockchain. close Save money with our transparent approach to pricing Google Cloud's pay-as-you-go pricing offers automatic savings based on monthly usage and discounted rates for prepaid resources.
+
+### "NCC Gateway overview \_|\_ Network Connectivity Center \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview](https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview)
+- Source ID: `site-iam-reference`
+- Final score: 151
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Gateway advertised routes are programmed using the standard best path selection mode .
+- Use cases for Google Cloud users include the following: Branch users to the internet Branch users to private applications Private applications to the internet Some supported partners offer one or more of the following use cases: Mobile users to the internet Mobile users to private applications Branch users to partner applications Private applications to partner applications Traffic flows This section describes the traffic flow paths in NCC Gateway depending on each use case.
+- Home Documentation Networking Network Connectivity Network Connectivity Center Guides Send feedback NCC Gateway overview Stay organized with collections Save and categorize content based on your preferences.
+- Regional deployment: you can deploy NCC Gateway in various regions based on physical proximity to data centers or other cloud providers.
 

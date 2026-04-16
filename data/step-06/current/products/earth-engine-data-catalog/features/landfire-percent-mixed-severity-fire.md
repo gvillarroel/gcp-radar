@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.732Z"
+generated_at: "2026-04-14T15:13:19.912Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "LANDFIRE Percent Mixed-severity Fire"
 feature_slug: "landfire-percent-mixed-severity-fire"
 latest_feature_date: "2020-07-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/fire"
   - "https://developers.google.com/earth-engine/datasets/catalog"
@@ -19,14 +19,13 @@ keywords:
   - "severity"
   - "fire"
   - "provides"
-  - "the"
   - "percentage"
 ---
 
 # LANDFIRE Percent Mixed-severity Fire
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +37,7 @@ Provides the percentage of mixed-severity fire in LANDFIRE.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,7 +51,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/fire](https://developers.google.com/earth-engine/datasets/tags/fire)
 - Source ID: `site-docs-root-3`
-- Final score: 148
+- Final score: 145
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +64,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 138
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +77,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 - Source ID: `site-docs-root`
-- Final score: 118
+- Final score: 112
 - Re-rank relevance: N/A
 
 Evidence snippets:

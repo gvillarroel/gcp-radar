@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:49.746Z"
+generated_at: "2026-04-12T12:18:06.043Z"
 product_name: "Places API"
 product_slug: "places-api"
 feature_name: "AI-powered summaries"
 feature_slug: "ai-powered-summaries"
 latest_feature_date: "2025-05-08"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/web-service/place-summaries"
+  - "https://developers.google.com/maps/documentation/places/web-service/review-summaries"
+  - "https://developers.google.com/maps/documentation/places/web-service/area-summaries"
+  - "https://developers.google.com/maps/documentation/places/web-service/op-overview"
 keywords:
   - "ai"
   - "powered"
@@ -24,7 +27,7 @@ keywords:
 # AI-powered summaries
 
 Product: Places API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ A generative summaries feature that provides place summaries, review summaries, 
 
 A generative summaries feature that provides place summaries, review summaries, and area summaries; A generative summaries feature that provides place summaries, review summaries, and area summaries in Preview.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/web-service/place-summaries](https://developers.google.com/maps/documentation/places/web-service/place-summaries)
+- [https://developers.google.com/maps/documentation/places/web-service/review-summaries](https://developers.google.com/maps/documentation/places/web-service/review-summaries)
+- [https://developers.google.com/maps/documentation/places/web-service/area-summaries](https://developers.google.com/maps/documentation/places/web-service/area-summaries)
+- [https://developers.google.com/maps/documentation/places/web-service/op-overview](https://developers.google.com/maps/documentation/places/web-service/op-overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### AI-powered place summaries \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/place-summaries](https://developers.google.com/maps/documentation/places/web-service/place-summaries)
+- Source ID: `site-docs-root`
+- Final score: 269
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Place Details (New) request The following Place Details (New) request returns an overview summary for a sushi restaurant in Chicago, IL: curl -X GET https://places.googleapis.com/v1/places/ChIJ1eOF7HLTD4gRry3xPjk8DkU \ -H 'Content-Type: application/json' \ -H "X-Goog-Api-Key: API KEY " \ -H "X-Goog-FieldMask: displayName, generativeSummary " The response is in the form: { "displayName" : { "text" : "Sushi Nova - Lincoln Park" , "languageCode" : "en" }, "generativeSummary" : { "overview" : { "text" : "Casual eatery with all-you-can-eat sushi and other Japanese fare, plus beer and sake." , "languageCode" : "en-US" }, "overviewFlagContentUri" : "https://www.google.com/local/review/rap/report?postId=CiUweDg4MGZkMzcyZWM4NWUzZDU6MHg0NTBlM2MzOTNlZjEyZGFmMAI&d=17924085&t=12" , "disclaimerText" : { "text" : "Summarized with Gemini" , "languageCode" : "en-US" } } } Text Search (New) request The following Text Search (New) request returns an overview summary for spicy vegetarian restaurants in Mountain View, CA: curl -X POST -d '{ "textQuery": "Spicy Vegetarian Food", "location bias": { "rectangle": { "low": { "latitude": 37.415, "longitude": -122.091 }, "high": { "latitude": 37.429, "longitude": -122.065 } } }, "maxResultCount": 5 }' \ -H 'Content-Type: application/json' -H "X-Goog-Api-Key: API KEY " \ -H "X-Goog-FieldMask: places.id,places.displayName, places.generativeSummary " \ 'https://places.googleapis.com/v1/places:searchText' The response is in the form: { "places" : [ { "id" : "ChIJ8wN5kzm3j4AR dRdUHoqrPI" , "displayName" : { "text" : "Plant-Based Vegan Vietnamese" , "languageCode" : "en" } }, { "id" : "ChIJw4RuczO3j4ARC7RByZ5K9nI" , "displayName" : { "text" : "sweetgreen" , "languageCode" : "en" }, "generativeSummary" : { "overview" : { "text" : "Casual eatery offering healthy, made-to-order salads, plates, and grain bowls with vegan options." , "languageCode" : "en-US" }, "overviewFlagContentUri" : "https://www.google.com/local/review/rap/report?postId=CiUweDgwOGZiNzMzNzM2ZTg0YzM6MHg3MmY2NGE5ZWM5NDFiNDBiMAI&d=17924085&t=12" , "disclosureText" : { "text" : "Summarized with Gemini" , "languageCode" : "en-US" } } }, /.../ ] } Nearby Search (New) request The following Nearby Search (New) request returns an overview summary for restaurants and cafes in Portland, OR: curl -X POST -d '{ "maxResultCount": 5, "locationRestriction": { "circle": { "center": { "latitude": 45.553360, "longitude": -122.674934 }, "radius": 1000 } }, "includedTypes": ["restaurant", "cafe"], "excludedTypes": [], "rankPreference":"POPULARITY" }' \ -H 'Content-Type: application/json' -H "X-Goog-Api-Key: API KEY " \ -H "X-Goog-FieldMask: places.id, places.generativeSummary " \ 'https://places.googleapis.com/v1/places:searchNearby' The response is in the form: { "places" : [ { "id" : "ChIJOa08KlqnlVQR ZZx1jEcTYY" , "generativeSummary" : { "overview" : { "text" : "BBQ and Thai street fare, plus imaginative tropical cocktails, served in a vibrant space." , "languageCode" : "en-US" }, "disclosureText" : { "text" : "Summarized with Gemini" , "languageCode" : "en-US" } } }, { "id" : "ChIJU4OzoWynlVQRxlQMpGenSvA" , "generativeSummary" : { "overview" : { "text" : "Beer hall with a big selection of German brews, plus a central courtyard with food trucks." , "languageCode" : "en-US" }, "disclosureText" : { "text" : "Summarized with Gemini" , "languageCode" : "en-US" } } }, /.../ ] } Attributions All AI-powered summaries displayed in your app must be accompanied by the appropriate attribution in accordance with Google's policies and standards.
+- Try the AI-powered summaries demo open in new Request a generative place summary To return a place summary in the response, include the following field in the field mask of the request: Place Details (New): generativeSummary Text Search (New) and Nearby Search (New): places.generativeSummary The generativeSummary field contains the following fields: generativeSummary : The place summary. overviewFlagContentUri : A link where users can flag a problem with the place summary. disclosureText : A localized text string with the disclosure text "Summarized with Gemini" that must be incorporated in attributions.
+- Home Products Google Maps Platform Documentation Web Services Places API Guides Send feedback AI-powered place summaries Stay organized with collections Save and categorize content based on your preferences.
+- AI-powered place summaries are brief, 100-character overviews specific to a given place ID.
+
+### AI-powered review summaries \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/review-summaries](https://developers.google.com/maps/documentation/places/web-service/review-summaries)
+- Source ID: `site-docs-root`
+- Final score: 265
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- They also highlight the friendly and attentive staff, the comfortable beds and pillows, and the convenient amenities such as a Starbucks in the lobby and a club lounge.\n\nSome reviews mention the rooms can be noisy." , "languageCode" : "en-US" }, "flagContentUri" : "https://www.google.com/local/review/rap/report?postId=5%401:CAIQACodChtyc19oOldJVUlodGhTUTJOdUdTSmFxQWw2Nnc%7CCAIQACorChtyc19oOldJVUlodGhTUTJOdUdTSmFxQWw2NncSDAikt7HDBhDopLLxAg&d=17924085&t=8" , "disclosureText" : { "text" : "Summarized with Gemini" , "languageCode" : "en-US" }, "reviewsUri" : "https://www.google.com/maps/place//data=!4m4!3m3!1s0x54906ab45f555241:0xd56f6e55dd269b72!9m1!1b1" } }, ... ] } Attributions All AI-powered summaries displayed in your app must be accompanied by the appropriate attribution in accordance with Google's policies and standards.
+- Try the AI-powered summaries demo open in new Request a review summary To request a review summary, include reviewSummary in the field mask of the request: Place Details (New): reviewSummary Text Search (New) and Nearby Search (New): places.reviewSummary Attributions for a review summary must include a link to the place's reviews on Google Maps.
+- Home Products Google Maps Platform Documentation Web Services Places API Guides Send feedback AI-powered review summaries Stay organized with collections Save and categorize content based on your preferences.
+- AI-powered review summaries are AI-generated summaries of places based solely on user reviews.
+
+### AI-powered area summaries \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/area-summaries](https://developers.google.com/maps/documentation/places/web-service/area-summaries)
+- Source ID: `site-docs-root`
+- Final score: 245
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following example requests an EV charging station amenity summary for a charging station in Mountain View: curl -X GET -H 'Content-Type: application/json' \ -H "X-Goog-Api-Key: API KEY " \ -H "X-Goog-FieldMask: id,displayName, evChargeAmenitySummary " \ 'https://places.googleapis.com/v1/places/ChIJtwHgNNa2j4ARlC8vbI9lLZA' The response is in the form: { "id" : "ChIJf8j-4z23j4AR MQ2-bgMmrY" , "displayName" : { "text" : "EVgo Charging Station" , "languageCode" : "en" }, "evChargeAmenitySummary" : { "overview" : { "content" : { "text" : "Within a short walk, there are several coffee and restaurant options, including Clocktower Coffee Roasting Company, Khao Kang Thai Kitchen, and Roger's Deli & Donuts." , "languageCode" : "en-US" }, "referencedPlaces" : [ "places/ChIJZZR2-j23j4ARi5CXEIAc57Q" , /.../ ] }, "coffee" : { "content" : { "text" : "Clocktower Coffee Roasting Company has Wi-Fi and a variety of coffee and pastries in a laid-back atmosphere." , "languageCode" : "en-US" }, "referencedPlaces" : [ "places/ChIJZZR2-j23j4ARi5CXEIAc57Q" ] }, "restaurant" : { "content" : { "text" : "Roger's Deli & Donuts is a bustling deli with sandwiches and breakfast items.\nJoy Sushi serves classic Japanese dishes, including vegetarian and healthy options.\nSubway is a chain sandwich shop offering its usual subs, wraps, and salads." , "languageCode" : "en-US" }, "referencedPlaces" : [ "places/ChIJQ4F3PBa3j4ARf7 QjN1Cklo" , /.../ ] }, "store" : { "content" : { "text" : "Rotten Robbie is a chain gas station with a convenience store and a restroom." , "languageCode" : "en-US" }, "referencedPlaces" : [ "places/ChIJA6deFBa3j4AREY0EyTEGhN8" , /.../ ] }, "flagContentUri" : "https://www.google.com/local/review/rap/report?postId=ABCDEFG=1234567&t=12" , "disclosureText" : { "text" : "Summarized with Gemini" , "languageCode" : "en-US" } } } Attributions All AI-powered summaries displayed in your app must be accompanied by the appropriate attribution in accordance with Google's policies and standards.
+- Places API (New) provides two types of AI-powered area summaries: Neighborhood summaries , which provide high-level overviews of nearby attractions for places with types premise , street address , and all types in the Housing and Lodging categories.
+- Try the AI-powered summaries demo open in new Request a neighborhood summary Neighborhood summaries can be generated for places with types premise , street address , and all types in the Housing and Lodging categories.
+- Home Products Google Maps Platform Documentation Web Services Places API Guides Send feedback AI-powered area summaries Stay organized with collections Save and categorize content based on your preferences.
+
+### About the Places API (New) \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/op-overview](https://developers.google.com/maps/documentation/places/web-service/op-overview)
+- Source ID: `site-docs-root`
+- Final score: 221
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- AI-powered summaries Places API (New) AI-powered summaries use Gemini model capabilities to return summaries about places and areas that can help users decide where to go.
+- Try the AI-powered summaries demo open in new Migrate to the New Places APIs If you are an existing Places API (New) customer and want to migrate your app to use the new APIs, see the following migration documentation: Migrate to Place Details (New) Migrate to Nearby Search (New) Migrate to Text Search (New) Migrate to Place Photos (New) Migrate to Autocomplete (New) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Place Details (New) provides detailed information about a place using its Place ID, including address, ratings, and reviews, and is more efficient than search APIs when you have the Place ID.
+- The following AI-powered summaries are available in Places API (New) responses: Place summaries , which are short overview summaries related to a specific place.
 

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:41:32.746Z"
+generated_at: "2026-04-12T12:17:10.835Z"
 product_name: "Google Meet"
 product_slug: "google-meet"
 feature_name: "LiveSharingSessionDelegate"
 feature_slug: "livesharingsessiondelegate"
 latest_feature_date: "2023-02-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://developers.google.com/workspace/meet/api/guides/events-overview"
   - "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
   - "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
-  - "https://developers.google.com/workspace/meet/api/guides/events-overview"
   - "https://developers.google.com/workspace/meet/api/guides/overview"
 keywords:
   - "livesharingsessiondelegate"
@@ -27,7 +27,7 @@ keywords:
 # LiveSharingSessionDelegate
 
 Product: Google Meet
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,16 +39,30 @@ LiveSharingSessionDelegate was added to the Live Sharing SDK API.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://developers.google.com/workspace/meet/api/guides/events-overview](https://developers.google.com/workspace/meet/api/guides/events-overview)
 - [https://developers.google.com/workspace/meet/api/guides/authenticate-authorize](https://developers.google.com/workspace/meet/api/guides/authenticate-authorize)
 - [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
-- [https://developers.google.com/workspace/meet/api/guides/events-overview](https://developers.google.com/workspace/meet/api/guides/events-overview)
 - [https://developers.google.com/workspace/meet/api/guides/overview](https://developers.google.com/workspace/meet/api/guides/overview)
 
 ## Supporting Pages
+
+### Respond to events from Google Meet \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/meet/api/guides/events-overview](https://developers.google.com/workspace/meet/api/guides/events-overview)
+- Source ID: `site-docs-root`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Meet uses events to deliver information to your app about the type of activity that occurred, and the Meet REST API resource that was affected.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
+- Related topics Google Workspace Events API overview Create a Google Workspace subscription Subscribe to Google Meet events Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Limitations Calendar invitees and other participants invited to a conference can only receive the following events: google.workspace.meet.conference.v2.started and google.workspace.meet.transcript.v2.fileGenerated .
 
 ### "Authenticate and authorize Meet REST API requests \_|\_ Google Meet \_|\_\
 
@@ -76,25 +90,11 @@ Evidence snippets:
 - In your working directory, create the file main.py and add the following contents: import os import json from google.auth.transport import requests from google.oauth2.credentials import Credentials from google auth oauthlib.flow import InstalledAppFlow def authorize () - > Credentials : """Ensure valid credentials for calling the Meet REST API.""" CLIENT SECRET FILE = "./client secret.json" credentials = None if os . path . exists ( 'token.json' ): credentials = Credentials . from authorized user file ( 'token.json' ) if credentials is None : flow = InstalledAppFlow . from client secrets file ( CLIENT SECRET FILE , scopes = [ 'https://www.googleapis.com/auth/meetings.space.created' , ]) flow . run local server ( port = 0 ) credentials = flow . credentials if credentials and credentials . expired : credentials . refresh ( requests .
 - AuthorizedSession ( USER CREDENTIALS ) body = { 'targetResource' : f "//meet.googleapis.com/ { space name } " , "eventTypes" : [ "google.workspace.meet.conference.v2.started" , "google.workspace.meet.conference.v2.ended" , "google.workspace.meet.participant.v2.joined" , "google.workspace.meet.participant.v2.left" , "google.workspace.meet.recording.v2.fileGenerated" , "google.workspace.meet.transcript.v2.fileGenerated" , ], "payloadOptions" : { "includeResource" : False , }, "notificationEndpoint" : { "pubsubTopic" : topic name }, "ttl" : "86400s" , } response = session . post ( "https://workspaceevents.googleapis.com/v1/subscriptions" , json = body ) return response Next, add the corresponding code to pull and process the events.
 
-### Respond to events from Google Meet \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/workspace/meet/api/guides/events-overview](https://developers.google.com/workspace/meet/api/guides/events-overview)
-- Source ID: `site-docs-root`
-- Final score: 64
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Meet uses events to deliver information to your app about the type of activity that occurred, and the Meet REST API resource that was affected.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
-- Related topics Google Workspace Events API overview Create a Google Workspace subscription Subscribe to Google Meet events Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Limitations Calendar invitees and other participants invited to a conference can only receive the following events: google.workspace.meet.conference.v2.started and google.workspace.meet.transcript.v2.fileGenerated .
-
 ### Google Meet REST API overview \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/overview](https://developers.google.com/workspace/meet/api/guides/overview)
 - Source ID: `site-docs-root`
-- Final score: 52
+- Final score: 64
 - Re-rank relevance: N/A
 
 Evidence snippets:

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.456Z"
+generated_at: "2026-04-13T14:23:05.225Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "Timestamped log messages"
@@ -9,18 +9,14 @@ latest_feature_date: "2021-07-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references"
+  - "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+  - "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
 keywords:
   - "timestamped"
-  - "log"
-  - "messages"
-  - "config"
-  - "connector"
-  - "includes"
   - "timestamps"
-  - "in"
+  - "messages"
+  - "includes"
 ---
 
 # Timestamped log messages
@@ -42,44 +38,42 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
+- [https://docs.cloud.google.com/config-connector/docs/concepts/resources](https://docs.cloud.google.com/config-connector/docs/concepts/resources)
+- [https://docs.cloud.google.com/config-connector/docs/troubleshooting](https://docs.cloud.google.com/config-connector/docs/troubleshooting)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget)
 
 ## Supporting Pages
 
-### EdgeContainerNodePool | Config Connector | Google Cloud Documentation
+### About Config Connector CRDs \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool)
+- URL: [https://docs.cloud.google.com/config-connector/docs/concepts/resources](https://docs.cloud.google.com/config-connector/docs/concepts/resources)
 - Source ID: `site-docs-reference`
-- Final score: 127
+- Final score: 29
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- EdgeContainerNodePool Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool Documentation · Access and resource management · Config Connector · API and reference · Send feedback · Stay organized with collections Save and categorize content based on your preferences.
+- About Config Connector CRDs Config Connector includes a collection of Custom Resource Definitions (CRDs).
+- You can check a resource's error messages or readiness by looking at the Status.Condition .
+- Object metadata Each Config Connector resource includes a metadata field.
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### Troubleshoot Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 125
+- URL: [https://docs.cloud.google.com/config-connector/docs/troubleshooting](https://docs.cloud.google.com/config-connector/docs/troubleshooting)
+- Source ID: `site-docs-reference`
+- Final score: 28
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
+- For example, if you are using Config Connector, you may notice delete requests from Config Connector controller manager against certain resources from either container log messages or Kubernetes cluster audit logs.
+- You can query for logs for specific resources by filtering for the following fields in the log messages: logger : contains the resource's kind in lower-case .
 
-### Creating resource references | Config Connector | Google Cloud Documentation
+### BillingBudgetsBudget \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- Source ID: `site-docs-root`
-- Final score: 125
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget)
+- Source ID: `site-docs-root-2`
+- Final score: 26
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Creating resource references Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references You can find out what format the ... documentation.
-- Config Connector allows resources ...
-- You can also go to an individual resource&#x27;s reference page (for example, PubSubTopic) and look at the value listed in the &quot;IAM External Reference Format&quot; row of the resource&#x27;s summary table.
-- The formats are listed in the &quot;External Reference Formats&quot; column of the Supported Resources table.
+- The name of the Pub/Sub topic where budget related messages will be published, in the form projects/{project id}/topics/{topic id}.
 

@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:49.427Z"
+generated_at: "2026-04-12T12:18:05.004Z"
 product_name: "Oracle Database@Google Cloud"
 product_slug: "oracle-database-google-cloud"
 feature_name: "Autonomous Database public network access"
 feature_slug: "autonomous-database-public-network-access"
 latest_feature_date: "2025-04-07"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases"
+  - "https://docs.cloud.google.com/oracle/database/docs/create-databases"
+  - "https://docs.cloud.google.com/oracle/database/docs/delete-databases"
+  - "https://docs.cloud.google.com/oracle/database/docs/backup-database"
 keywords:
   - "autonomous"
   - "database"
@@ -24,7 +27,7 @@ keywords:
 # Autonomous Database public network access
 
 Product: Oracle Database@Google Cloud
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Autonomous Databases can be configured with public network access in Google Clou
 
 Autonomous Databases can be configured with public network access in Google Cloud.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases](https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases)
+- [https://docs.cloud.google.com/oracle/database/docs/create-databases](https://docs.cloud.google.com/oracle/database/docs/create-databases)
+- [https://docs.cloud.google.com/oracle/database/docs/delete-databases](https://docs.cloud.google.com/oracle/database/docs/delete-databases)
+- [https://docs.cloud.google.com/oracle/database/docs/backup-database](https://docs.cloud.google.com/oracle/database/docs/backup-database)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "REST Resource: projects.locations.autonomousDatabases \_|\_ Oracle Database\
+
+- URL: [https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases](https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases)
+- Source ID: `site-api-reference`
+- Final score: 298
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Resource: AutonomousDatabase JSON representation AutonomousDatabaseProperties JSON representation DatabaseEdition LicenseType MaintenanceScheduleType AutonomousDatabaseApex JSON representation State AutonomousDatabaseConnectionStrings JSON representation AllConnectionStrings JSON representation DatabaseConnectionStringProfile JSON representation ConsumerGroup HostFormat Protocol SessionMode SyntaxFormat TLSAuthentication AutonomousDatabaseConnectionUrls JSON representation AutonomousDatabaseStandbySummary JSON representation LocalDisasterRecoveryType DataSafeState DatabaseManagementState OpenMode OperationsInsightsState PermissionLevel RefreshableMode RefreshableState Role ScheduledOperationDetails JSON representation TimeOfDay JSON representation EncryptionKey JSON representation Provider EncryptionKeyHistoryEntry JSON representation SourceConfig JSON representation Methods Resource: AutonomousDatabase Details of the Autonomous Database resource. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/ JSON representation { "name" : string , "database" : string , "displayName" : string , "entitlementId" : string , "adminPassword" : string , "properties" : { object ( AutonomousDatabaseProperties ) } , "labels" : { string : string , ... } , "network" : string , "cidr" : string , "odbNetwork" : string , "odbSubnet" : string , "sourceConfig" : { object ( SourceConfig ) } , "peerAutonomousDatabases" : [ string ] , "createTime" : string , "disasterRecoverySupportedLocations" : [ string ] } Fields name string Identifier.
+- The source Autonomous Database is configured while creating the Peer Autonomous Database and can't be updated after creation. peerAutonomousDatabases[] string Output only.
+- JSON representation { "ocid" : string , "computeCount" : number , "cpuCoreCount" : integer , "dataStorageSizeTb" : integer , "dataStorageSizeGb" : integer , "dbWorkload" : enum ( DBWorkload ) , "dbEdition" : enum ( DatabaseEdition ) , "characterSet" : string , "nCharacterSet" : string , "privateEndpointIp" : string , "privateEndpointLabel" : string , "dbVersion" : string , "isAutoScalingEnabled" : boolean , "isStorageAutoScalingEnabled" : boolean , "licenseType" : enum ( LicenseType ) , "customerContacts" : [ { object ( CustomerContact ) } ] , "secretId" : string , "vaultId" : string , "maintenanceScheduleType" : enum ( MaintenanceScheduleType ) , "mtlsConnectionRequired" : boolean , "backupRetentionPeriodDays" : integer , "actualUsedDataStorageSizeTb" : number , "allocatedStorageSizeTb" : number , "apexDetails" : { object ( AutonomousDatabaseApex ) } , "lifecycleDetails" : string , "state" : enum ( State ) , "autonomousContainerDatabaseId" : string , "availableUpgradeVersions" : [ string ] , "connectionStrings" : { object ( AutonomousDatabaseConnectionStrings ) } , "connectionUrls" : { object ( AutonomousDatabaseConnectionUrls ) } , "failedDataRecoveryDuration" : string , "memoryTableGbs" : integer , "isLocalDataGuardEnabled" : boolean , "localAdgAutoFailoverMaxDataLossLimit" : integer , "localStandbyDb" : { object ( AutonomousDatabaseStandbySummary ) } , "memoryPerOracleComputeUnitGbs" : integer , "localDisasterRecoveryType" : enum ( LocalDisasterRecoveryType ) , "dataSafeState" : enum ( DataSafeState ) , "databaseManagementState" : enum ( DatabaseManagementState ) , "openMode" : enum ( OpenMode ) , "operationsInsightsState" : enum ( OperationsInsightsState ) , "peerDbIds" : [ string ] , "permissionLevel" : enum ( PermissionLevel ) , "privateEndpoint" : string , "refreshableMode" : enum ( RefreshableMode ) , "refreshableState" : enum ( RefreshableState ) , "role" : enum ( Role ) , "scheduledOperationDetails" : [ { object ( ScheduledOperationDetails ) } ] , "sqlWebDeveloperUrl" : string , "supportedCloneRegions" : [ string ] , "usedDataStorageSizeTbs" : integer , "ociUrl" : string , "totalAutoBackupStorageSizeGbs" : number , "nextLongTermBackupTime" : string , "dataGuardRoleChangedTime" : string , "disasterRecoveryRoleChangedTime" : string , "maintenanceBeginTime" : string , "maintenanceEndTime" : string , "allowlistedIps" : [ string ] , "encryptionKey" : { object ( EncryptionKey ) } , "encryptionKeyHistoryEntries" : [ { object ( EncryptionKeyHistoryEntry ) } ] , "serviceAgentEmail" : string , "arePrimaryAllowlistedIpsUsed" : boolean } Fields ocid string Output only.
+- The list of available regions that can be used to create a clone for the Autonomous Database. usedDataStorageSizeTbs integer Output only.
+
+### "Create databases \_|\_ Oracle Database at Google Cloud \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/oracle/database/docs/create-databases](https://docs.cloud.google.com/oracle/database/docs/create-databases)
+- Source ID: `site-docs-reference`
+- Final score: 295
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- API To create an Autonomous AI Database, run the following curl command: curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ "https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /autonomousDatabases/ DATABASE ID " -d \ '{ "database": " DATABASE NAME ", "displayName": " DISPLAY NAME ", "admin password": " PASSWORD ", "odb subnet": "projects/ ODB NETWORK PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID /odbSubnets/ ODB SUBNET ID ", "properties": { "licenseType": " LICENSE TYPE ", "computeCount": COMPUTE COUNT , "dbVersion": " DATABASE VERSION ", "dbWorkload": " WORKLOAD TYPE ", "dataStorageSizeTb": STORAGE SIZE } }' Replace the following: PROJECT ID : the ID of your Google Cloud project in which to create the database.
+- In the Networking section, choose an access type to connect to the Autonomous AI Database: Secure access from everywhere : Selecting this access type allows public network access using database credentials and a connection wallet.
+- Operation ; public class AsyncCreateAutonomousDatabase { public static void main ( String [] args ) throws Exception { asyncCreateAutonomousDatabase (); } public static void asyncCreateAutonomousDatabase () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { CreateAutonomousDatabaseRequest request = CreateAutonomousDatabaseRequest . newBuilder () . setParent ( LocationName . of ( "[PROJECT]" , "[LOCATION]" ). toString ()) . setAutonomousDatabaseId ( "autonomousDatabaseId-1972693114" ) . setAutonomousDatabase ( AutonomousDatabase . newBuilder (). build ()) . setRequestId ( "requestId693933066" ) . build (); ApiFuture<Operation> future = oracleDatabaseClient . createAutonomousDatabaseCallable (). futureCall ( request ); // Do something.
+- The value must start with a letter and end with a letter or a number. / function create autonomous database sample( string $formattedParent, string $autonomousDatabaseId ): void { // Create a client. $oracleDatabaseClient = new OracleDatabaseClient(); // Prepare the request message. $autonomousDatabase = new AutonomousDatabase(); $request = (new CreateAutonomousDatabaseRequest()) ->setParent($formattedParent) ->setAutonomousDatabaseId($autonomousDatabaseId) ->setAutonomousDatabase($autonomousDatabase); // Call the API and handle any network failures. try { / @var OperationResponse $response / $response = $oracleDatabaseClient->createAutonomousDatabase($request); $response->pollUntilComplete(); if ($response->operationSucceeded()) { / @var AutonomousDatabase $result / $result = $response->getResult(); printf('Operation successful with response data: %s' .
+
+### "Delete databases \_|\_ Oracle Database at Google Cloud \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/oracle/database/docs/delete-databases](https://docs.cloud.google.com/oracle/database/docs/delete-databases)
+- Source ID: `site-docs-reference`
+- Final score: 267
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Operation ; public class AsyncDeleteAutonomousDatabase { public static void main ( String [] args ) throws Exception { asyncDeleteAutonomousDatabase (); } public static void asyncDeleteAutonomousDatabase () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { DeleteAutonomousDatabaseRequest request = DeleteAutonomousDatabaseRequest . newBuilder () . setName ( AutonomousDatabaseName . of ( "[PROJECT]" , "[LOCATION]" , "[AUTONOMOUS DATABASE]" ) . toString ()) . setRequestId ( "requestId693933066" ) . build (); ApiFuture<Operation> future = oracleDatabaseClient . deleteAutonomousDatabaseCallable (). futureCall ( request ); // Do something. future . get (); } } } Node.js / This snippet has been automatically generated and should be regarded as a code template only.
+- The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000). / // const requestId = 'abc123' // Imports the Oracledatabase library const { OracleDatabaseClient } = require ( ' @google-cloud/oracledatabase ' ). v1 ; // Instantiates a client const oracledatabaseClient = new OracleDatabaseClient (); async function callDeleteAutonomousDatabase () { // Construct request const request = { name , }; // Run request const [ operation ] = await oracledatabaseClient . deleteAutonomousDatabase ( request ); const [ response ] = await operation . promise (); console . log ( response ); } callDeleteAutonomousDatabase (); PHP use Google\ApiCore\ApiException; use Google\ApiCore\OperationResponse; use Google\Cloud\OracleDatabase\V1\Client\OracleDatabaseClient; use Google\Cloud\OracleDatabase\V1\DeleteAutonomousDatabaseRequest; use Google\Rpc\Status; / Deletes a single Autonomous Database. @param string $formattedName The name of the resource in the following format: projects/{project}/locations/{location}/autonomousDatabases/{autonomous database}.
+- C# using Google.Cloud.OracleDatabase.V1 ; using Google.LongRunning ; using Google.Protobuf.WellKnownTypes ; using System.Threading.Tasks ; public sealed partial class GeneratedOracleDatabaseClientSnippets { /// <summary>Snippet for DeleteAutonomousDatabaseAsync</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public async Task DeleteAutonomousDatabaseAsync () { // Create client OracleDatabaseClient oracleDatabaseClient = await OracleDatabaseClient .
+- Your database is deleted. gcloud You can use the gcloud oracle-database autonomous-databases delete command to delete a database. gcloud oracle-database autonomous-databases delete DATABASE ID --location= REGION ID Replace the following: DATABASE ID : the identifier for the database that you want to delete.
+
+### "View backups for an Autonomous AI Database \_|\_ Oracle Database at Google\
+
+- URL: [https://docs.cloud.google.com/oracle/database/docs/backup-database](https://docs.cloud.google.com/oracle/database/docs/backup-database)
+- Source ID: `site-docs-reference`
+- Final score: 247
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- OracleDatabaseClient ; public class AsyncListAutonomousDatabaseBackups { public static void main ( String [] args ) throws Exception { asyncListAutonomousDatabaseBackups (); } public static void asyncListAutonomousDatabaseBackups () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { ListAutonomousDatabaseBackupsRequest request = ListAutonomousDatabaseBackupsRequest . newBuilder () . setParent ( LocationName . of ( "[PROJECT]" , "[LOCATION]" ). toString ()) . setFilter ( "filter-1274492040" ) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . build (); ApiFuture<AutonomousDatabaseBackup> future = oracleDatabaseClient . listAutonomousDatabaseBackupsPagedCallable (). futureCall ( request ); // Do something. for ( AutonomousDatabaseBackup element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js / This snippet has been automatically generated and should be regarded as a code template only.
+- C# using Google.Api.Gax ; using Google.Cloud.OracleDatabase.V1 ; using System ; using System.Threading.Tasks ; public sealed partial class GeneratedOracleDatabaseClientSnippets { /// <summary>Snippet for ListAutonomousDatabaseBackupsAsync</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public async Task ListAutonomousDatabaseBackupsAsync () { // Create client OracleDatabaseClient oracleDatabaseClient = await OracleDatabaseClient .
+- You can iterate over elements, and API calls will be issued to fetch pages as needed. result . each do item Each element is of type ::Google::Cloud::OracleDatabase::V1::AutonomousDatabaseBackup. p item end end What's next Restore an Autonomous AI Database from backup Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- API To list backups of an Autonomous AI Database, run the following curl command. curl -X GET -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json" "https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /autonomousDatabaseBackups?autonomous database id=" DATABASE ID "" Replace the following: PROJECT ID : the ID of your Google Cloud project.
 

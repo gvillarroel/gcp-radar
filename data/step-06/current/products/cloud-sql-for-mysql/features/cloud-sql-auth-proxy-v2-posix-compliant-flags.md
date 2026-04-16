@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.887Z"
+generated_at: "2026-04-15T11:56:51.945Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "Cloud SQL Auth proxy v2 POSIX-compliant flags"
 feature_slug: "cloud-sql-auth-proxy-v2-posix-compliant-flags"
 latest_feature_date: "2023-02-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl"
+  - "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+  - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/flags/list"
+  - "https://docs.cloud.google.com/sql/docs/mysql/connect-proxy-operator"
 keywords:
   - "sql"
   - "auth"
@@ -26,7 +26,7 @@ keywords:
 # Cloud SQL Auth proxy v2 POSIX-compliant flags
 
 Product: Cloud SQL for MySQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,54 @@ Cloud SQL Auth proxy v2 introduces fully POSIX-compliant flags.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- [https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl](https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl)
+- [https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users](https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users)
+- [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/flags/list](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/flags/list)
+- [https://docs.cloud.google.com/sql/docs/mysql/connect-proxy-operator](https://docs.cloud.google.com/sql/docs/mysql/connect-proxy-operator)
 
 ## Supporting Pages
 
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
+### "Connect using the Cloud SQL Proxy Operator \_|\_ Cloud SQL for MySQL \_\
 
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 166
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/connect-proxy-operator](https://docs.cloud.google.com/sql/docs/mysql/connect-proxy-operator)
+- Source ID: `site-docs-reference-3`
+- Final score: 91
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You will need to use the version and cli arguments specified here to use cert-manager on your GKE cluster. helm repo add jetstack https://charts.jetstack.io helm repo update helm install \ cert-manager jetstack/cert-manager \ --namespace cert-manager \ --version "v1.9.1" \ --create-namespace \ --set global.leaderElection.namespace = cert-manager \ --set installCRDs = true Install the Cloud SQL Proxy Operator to your kubernetes cluster: kubectl apply -f https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy-operator/v1.7.6/cloud-sql-proxy-operator.yaml Wait for the Cloud SQL Proxy Operator to start. kubectl rollout status deployment -n cloud-sql-proxy-operator-system cloud-sql-proxy-operator-controller-manager --timeout = 90s Confirm that the Cloud SQL Proxy Operator is installed and running: kubectl get pods -n cloud-sql-proxy-operator-system What's next Learn more about the Cloud SQL Auth Proxy .
+- Overview The Cloud SQL Proxy Operator configures applications deployed on Google Kubernetes Engine (GKE) to connect to Cloud SQL database instances using the Cloud SQL Auth Proxy.
+- Using the Cloud SQL Auth Proxy is the recommended method for connecting to a Cloud SQL instance.
+- To learn more about the Cloud SQL Auth Proxy, see About the Cloud SQL Auth Proxy .
+
+### Method: flags.list \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/flags/list](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/flags/list)
+- Source ID: `site-api-reference`
+- Final score: 91
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If successful, the response body contains data with the following structure: JSON representation { "kind" : string , "items" : [ { object ( Flag ) } ] } Fields kind string This is always sql#flagsList . items[] object ( Flag ) flags.list of flags.
+- Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/sqlservice.admin For more information, see the Authentication Overview .
+- Home Documentation Databases Cloud SQL MySQL Reference Send feedback Method: flags.list Stay organized with collections Save and categorize content based on your preferences.
+- By default, this method returns flags for all database types and versions. flagScope enum ( SqlFlagScope ) Optional.
+
+### "Manage users with IAM database authentication \_|\_ Cloud SQL for MySQL\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users](https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users)
+- Source ID: `site-docs-reference-3`
+- Final score: 89
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Among the new features, there's support for: Metrics and tracing with Cloud Monitoring and Cloud Trace Support for Prometheus Service account impersonation Separate Dialer functionality released as the Cloud SQL Go Connector Configuration with environment variables Fully POSIX-compliant flags We recommend all customers upgrade to v2 and have released a migration guide .
-- Among the new features, there's support for: Metrics and tracing with Cloud Monitoring and Cloud Trace Support for Prometheus Service account impersonation Separate Dialer functionality released as the Cloud SQL Go Connector Configuration with environment variables Fully POSIX-compliant flags We recommend all customers upgrade to v2 and have released a migration guide .
-- Among the new features, there's support for: Metrics and tracing with Cloud Monitoring and Cloud Trace Support for Prometheus Service account impersonation Separate Dialer functionality released as the Cloud SQL Go Connector Configuration with environment variables Fully POSIX-compliant flags We recommend all customers upgrade to v2 and have released a migration guide .
-- For users of the Cloud SQL Auth Proxy : If the Cloud SQL instance to which you're connecting is using shared certificate authority (CA) for its serverCaMode setting, then on the client side, you must use Cloud SQL Auth Proxy version 2.13.0 or later.
-
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 154
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Among the new features, there's support for: Metrics and tracing with Cloud Monitoring and Cloud Trace Support for Prometheus Service account impersonation Separate Dialer functionality released as the Cloud SQL Go Connector Configuration with environment variables Fully POSIX-compliant flags We recommend all customers upgrade to v2 and have released a migration guide .
-- For users of the Cloud SQL Auth Proxy : If the Cloud SQL instance to which you're connecting is using shared certificate authority (CA) for its serverCaMode setting, then on the client side, you must use Cloud SQL Auth Proxy version 2.13.0 or later.
-- If the Cloud SQL instance to which you're connecting is using customer-managed CA for its serverCaMode setting, then on the client side, you must use Cloud SQL Auth Proxy version 2.14.3 or later.
-- February 08, 2023 Feature The Cloud SQL Auth proxy is a utility for ensuring secure connections to your Cloud SQL instances.
-
-### "Authorize with SSL/TLS certificates \_|\_ Cloud SQL for MySQL \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl](https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl)
-- Source ID: `site-iam-reference`
-- Final score: 139
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For connections that use Cloud SQL Auth Proxy or Cloud SQL Language Connectors, the connections are automatically encrypted with SSL/TLS along with client and server identity verification without requiring you to download a server CA certificate and client certificate.
-- Connect using SSL/TLS When connecting to a Cloud SQL instance from clients, you can use SSL/TLS for direct connections as well as for connections that use Cloud SQL Auth Proxy or Cloud SQL Language Connectors .
-- Cloud SQL Auth Proxy version support Supports all versions of the Cloud SQL Auth Proxy, v1 and later.
-- Requires the Cloud SQL Auth Proxy version 2.13.0 or later.
+- Terraform To add IAM user and service accounts on an instance with IAM database authentication enabled, use a Terraform resource . resource "google sql database instance" "default" { name = "mysql-db-auth-instance-name-test" region = "us-west4" database version = "MYSQL 8 0" settings { tier = "db-f1-micro" database flags { name = "cloudsql iam authentication" value = "on" } } } Specify the email address of the IAM user to add to the instance This resource does not create a new IAM user account; this account must already exist resource "google sql user" "iam user" { name = "test-user@example.com" instance = google sql database instance.default.name type = "CLOUD IAM USER" } Create a new IAM service account resource "google service account" "default" { account id = "cloud-sql-mysql-sa" display name = "Cloud SQL for MySQL Service Account" } Specify the email address of the IAM service account to add to the instance resource "google sql user" "iam service account user" { name = google service account.default.email instance = google sql database instance.default.name type = "CLOUD IAM SERVICE ACCOUNT" } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.
+- Terraform To add IAM user and service accounts on an instance with IAM database authentication enabled, use a Terraform resource . resource "google sql database instance" "default" { name = "mysql-iam-group-auth-instance-name" region = "us-west4" database version = "MYSQL 8 0" settings { tier = "db-f1-micro" database flags { name = "cloudsql iam authentication" value = "on" } } } Specify the email address of the Cloud Identity group to add to the instance This resource does not create a Cloud Identity group; the group must already exist resource "google sql user" "iam group" { name = "example-group@example.com" instance = google sql database instance.default.name type = "CLOUD IAM GROUP" } data "google project" "project" { } resource "google project iam binding" "cloud sql user" { project = data.google project.project.project id role = "roles/cloudsql.instanceUser" members = [ "group:example-group@example.com" ] } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.
+- SERVICE ACCT : the email address for the service account. gcloud projects add-iam-policy-binding PROJECT ID \ --member = serviceAccount: SERVICE ACCT \ --role = roles/cloudsql.instanceUser If you want to connect using the Cloud SQL Auth Proxy or Cloud SQL Language Connectors, then run gcloud projects add-iam-policy-binding again with the --role=roles/cloudsql.client flag.
+- USERNAME : the email address for the user. gcloud projects add-iam-policy-binding PROJECT ID \ --member = user: USERNAME \ --role = roles/cloudsql.instanceUser If you want to connect using the Cloud SQL Auth Proxy or Cloud SQL Language Connectors, then run gcloud projects add-iam-policy-binding again with the --role=roles/cloudsql.client flag.
 

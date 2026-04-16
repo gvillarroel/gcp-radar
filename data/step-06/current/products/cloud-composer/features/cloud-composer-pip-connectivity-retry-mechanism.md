@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.592Z"
+generated_at: "2026-04-12T12:11:19.815Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer pip connectivity retry mechanism"
 feature_slug: "cloud-composer-pip-connectivity-retry-mechanism"
 latest_feature_date: "2022-05-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
   - "https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines"
 keywords:
   - "composer"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer pip connectivity retry mechanism
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ Cloud Composer performs multiple retry attempts when checking pip connectivity.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - [https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines](https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Cloud Composer performs several retries when checking pip connectivity.
-- July 09, 2024 Change A new Airflow build is available in Cloud Composer 3: composer-3-airflow-2.7.3-build.8 Change Cloud Composer 2.8.5 images are available: composer-2.8.5-airflow-2.7.3 (default) composer-2.8.5-airflow-2.6.3 July 03, 2024 Change New Cloud Composer 2 environments are gradually switched to using GKE 1.29 and PSC as a connectivity channel to the GKE control plane.
-- Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.5-build.19 (default) composer-3-airflow-2.9.3-build.39 October 30, 2025 Fixed Fixed an error where Airflow components failed to start up when multiple objects with the same name were present in the /dags or /plugins folder in the environment's bucket.
-- Change Source code for the apache-airflow-providers-google package versions 2022.6.22+composer and 2022.5.18+composer is available on GitHub: 2022.6.22+composer 2022.5.18+composer Fixed (Cloud Composer 2) Improved the reliability of web server proxy connectivity.
 
 ### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - Source ID: `site-iam-reference`
-- Final score: 112
+- Final score: 151
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +63,37 @@ Evidence snippets:
 - Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.softwareConfig.pypiPackages.EXAMPLE PACKAGE, // config.softwareConfig.pypiPackages.ANOTHER PACKAGE { "config" : { "softwareConfig" : { "pypiPackages" : { "EXAMPLE PACKAGE" : "" , "ANOTHER PACKAGE" : ">=1.10.3" } } } } Terraform The pypi packages block in the software config block specifies packages. resource "google composer environment" "example" { name = " ENVIRONMENT NAME " region = " LOCATION " config { software config { pypi packages = { PACKAGE NAME = " EXTRAS AND VERSION " } } } } Replace: ENVIRONMENT NAME with the name of the environment.
 - To install packages from a private repository hosted in your project's network: Create a pip.conf file and include the following information in the file, if applicable: IP address of the repository in your project's network Access credentials for the repository Non-default pip installation options Example: [global] index-url=https://192.0.2.10/ (Optional) In some cases, you might want to fetch packages from multiple repositories, such as when the private repository contains some specific packages that you want to install, and you want to install all other packages from PyPI: Configure an Artifact Registry virtual repository .
 
+### "REST Resource: projects.locations.environments \_|\_ Cloud Composer \_|\_\
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- Source ID: `site-docs-reference`
+- Final score: 137
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If true , builds performed during operations that install Python packages have only private connectivity to Google services (including Artifact Registry) and VPC network (if either NodeConfig.network and NodeConfig.subnetwork fields or NodeConfig.composer network attachment field are specified).
+- Network Attachment that Cloud Composer environment is connected to, which provides connectivity with a user's VPC network.
+- IP addresses are not reserved - and the same range can be used by multiple Cloud Composer environments.
+- Methods checkUpgrade Check if an upgrade operation on the environment will succeed. create Create a new environment. databaseFailover Triggers database failover (only for highly resilient environments). delete Delete an environment. executeAirflowCommand Executes Airflow CLI command. fetchDatabaseProperties Fetches database properties. get Get an existing environment. list List environments. loadSnapshot Loads a snapshot of a Cloud Composer environment. patch Update an environment. pollAirflowCommand Polls Airflow CLI command execution and fetches logs. restartWebServer Restart Airflow web server. saveSnapshot Creates a snapshots of a Cloud Composer environment. stopAirflowCommand Stops Airflow CLI command execution.
+
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 135
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If Airflow UI is permanently unavailable, and timeout or 504 errors are generated, make sure that your environment can access .composer.googleusercontent.com . (Cloud Composer 2 only) Connectivity issue.
+- Cloud Composer-owned GKE clusters configured in the Public IP mode require external connectivity for their VMs.
+- You can also restart the Airflow web server . (Cloud Composer 3 only) Connectivity issue.
+- Airflow 1.9.0 stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06/1.log Airflow 1.10.x stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log As a result, if you upgrade from Airflow 1.9.0 to Airflow 1.10.x and would like to read the log for a task executed with Airflow 1.9.0, the Airflow Web server will show the following error message: Unable to read remote log from BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Workaround: Rename the logs generated by Airflow 1.9.0 in the Cloud Storage bucket using the format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Cannot create Cloud Composer environments with the organization policy constraints/compute.disableSerialPortLogging enforced Cloud Composer environment creation fails if the constraints/compute.disableSerialPortLogging organization policy is enforced on the target project.
+
 ### Launch Dataflow pipelines with Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines](https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines)
 - Source ID: `site-iam-reference`
-- Final score: 105
+- Final score: 122
 - Re-rank relevance: N/A
 
 Evidence snippets:

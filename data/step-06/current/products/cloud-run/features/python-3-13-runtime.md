@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.901Z"
+generated_at: "2026-04-14T15:34:54.447Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Python 3.13 runtime"
@@ -9,18 +9,15 @@ latest_feature_date: "2025-05-05"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service"
+  - "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
 keywords:
   - "python"
-  - "13"
-  - "runtime"
-  - "run"
-  - "supports"
-  - "the"
-  - "for"
+  - "workloads"
   - "deployed"
+  - "runtime"
+  - "supports"
 ---
 
 # Python 3.13 runtime
@@ -38,54 +35,48 @@ Cloud Run supports the Python 3.13 runtime for deployed workloads; Cloud Run sup
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/tutorials/identity-platform](https://docs.cloud.google.com/run/docs/tutorials/identity-platform)
-- [https://docs.cloud.google.com/python/docs/reference/run/latest](https://docs.cloud.google.com/python/docs/reference/run/latest)
+- [https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python](https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service)
+- [https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api](https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api)
 
 ## Supporting Pages
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### Authenticate to Cloud Run Admin API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 200
+- URL: [https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api](https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api)
+- Source ID: `site-docs-reference`
+- Final score: 34
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- April 21, 2025 Feature Support for the Python 3.13 runtime is now in Preview .
-- Feature Support for the Python 3.13 runtime is in General Availability (GA) .
-- For Python version 3.13 and later, the Python buildpack sets the default entrypoint for Cloud Run source deployments based on the web server or framework configuration in your requirements.txt file.
-- August 21, 2024 Feature Cloud Run now provides security updates for services that are deployed from source when you specify the runtime base image (Preview).
+### "Quickstart: build and create a Python job in Cloud Run \_|\_ Google Cloud\
 
-### End user authentication for Cloud Run tutorial \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/tutorials/identity-platform](https://docs.cloud.google.com/run/docs/tutorials/identity-platform)
-- Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python](https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python)
+- Source ID: `site-docs-reference-2`
+- Final score: 32
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Remove the gcloud default region configuration you added during tutorial setup: gcloud config unset run / region Remove the project configuration: gcloud config unset project Delete other Google Cloud resources created in this tutorial: Delete the service container image from Artifact Registry Delete the service account vote-identity@PROJECT ID.iam.gserviceaccount.com Delete the Cloud SQL instance Delete the secret in Secret Manager What's next Dive deeper into Connecting from Cloud Run to Cloud SQL Learn more about sign in methods and managing users with Identity Platform Review other ways to authenticate developers, services, and users of services deployed to Cloud Run Explore other Cloud Run demos, tutorials, and samples Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Change to the directory that contains the Cloud Run sample code: Node.js cd nodejs-docs-samples/run/idp-sql/ Python cd python-docs-samples/run/idp-sql/ Java cd java-docs-samples/run/idp-sql/ Visualizing the architecture Diagram shows an end-user logging-in through a Google sign-in dialog provided by Identity Platform, and then being redirected back to Cloud Run with the user's identity.
-- It should look like this: Success: You deployed a Cloud Run service that authenticates end-users with Identity Platform and securely manages sensitive data using Secret Manager.
-- Deploying the service Follow the steps to complete infrastructure provisioning and deployment: Create a Cloud SQL instance with postgreSQL database using the console or CLI: gcloud sql instances create CLOUD SQL INSTANCE NAME \ --database-version = POSTGRES 16 \ --region = CLOUD SQL REGION \ --cpu = 2 \ --memory = 7680MB \ --root-password = DB PASSWORD Add your Cloud SQL credential values to postgres-secrets.json : Node.js { "CLOUD SQL CONNECTION NAME" : "PROJECT ID:REGION:INSTANCE" , "DB NAME" : "postgres" , "DB USER" : "postgres" , "DB PASSWORD" : "PASSWORD SECRET" } Python { "CLOUD SQL CONNECTION NAME" : "PROJECT ID:REGION:INSTANCE" , "DB NAME" : "postgres" , "DB USER" : "postgres" , "DB PASSWORD" : "PASSWORD SECRET" } Java { "spring.cloud.gcp.sql.instance-connection-name" : "PROJECT ID:REGION:INSTANCE" , "spring.cloud.gcp.sql.database-name" : "postgres" , "spring.datasource.username" : "postgres" , "spring.datasource.password" : "PASSWORD SECRET" } Create a versioned secret using the console or CLI: gcloud secrets create idp-sql-secrets \ --replication-policy = "automatic" \ --data-file = postgres-secrets.json Create a service account for the server using the console or CLI: gcloud iam service-accounts create idp-sql-identity Grant roles for Secret Manager and Cloud SQL access using the console or CLI: Allow the service account associated with the server to access the created secret: gcloud secrets add-iam-policy-binding idp-sql-secrets \ --member serviceAccount:idp-sql-identity@ PROJECT ID .iam.gserviceaccount.com \ --role roles/secretmanager.secretAccessor Allow the service account associated with the server to access Cloud SQL: gcloud projects add-iam-policy-binding PROJECT ID \ --member serviceAccount:idp-sql-identity@ PROJECT ID .iam.gserviceaccount.com \ --role roles/cloudsql.client Create an Artifact Registry: gcloud artifacts repositories create REPOSITORY \ --repository-format docker \ --location REGION REPOSITORY is the name of the repository.
+- Success: You created and executed a job using the Python runtime in Cloud Run.
+- Build and create a Python job in Cloud Run Learn how to create a simple Cloud Run job, then deploy from source, which automatically packages your code into a container image, uploads the container image to Artifact Registry, and then deploys to Cloud Run.
+- Execute a job in Cloud Run To execute the job you just created: gcloud run jobs execute job-quickstart --region REGION Replace REGION with the region you used when you created and deployed the job, for example europe-west1 .
+- Writing the sample job To write a job in Python: Create a new directory named jobs and change directory into it: mkdir jobs cd jobs Create a main.py file for the actual job code.
 
-### "Python Client for Cloud Run \_|\_ Python client libraries \_|\_ Google Cloud\
+### "Quickstart: Build and deploy a Python (LangChain) web app to Cloud Run \_\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest](https://docs.cloud.google.com/python/docs/reference/run/latest)
-- Source ID: `site-python-reference`
-- Final score: 166
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service)
+- Source ID: `site-docs-reference-2`
+- Final score: 31
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Mac/Linux python3 -m venv <your-env> source <your-env>/bin/activate pip install google-cloud-run Windows py -m venv <your-env> .\<your-env>\Scripts\activate pip install google-cloud-run Next Steps Read the Client Library Documentation for Cloud Run to see other available methods on the client.
-- Environment-Based Examples Enabling the default handler for all Google-based loggers export GOOGLE SDK PYTHON LOGGING SCOPE=google Enabling the default handler for a specific Google module (for a client library called library v1 ): export GOOGLE SDK PYTHON LOGGING SCOPE=google.cloud.library v1 Advanced, code-based configuration You can also configure a valid logging scope using Python’s standard logging mechanism.
-- 0.16.0 (latest) 0.15.0 0.14.0 0.13.0 0.12.0 0.11.0 0.10.19 0.9.1 0.8.1 0.7.1 0.6.0 0.5.0 0.4.2 0.3.0 0.2.1 0.1.0 Cloud Run : is a managed compute platform that enables you to run containers that are invocable via requests or events.
-- Simple, environment-based configuration To enable logging for this library without any changes in your code, set the GOOGLE SDK PYTHON LOGGING SCOPE environment variable to a valid Google logging scope.
+- Write the sample application To write an application in Python: Create a new directory named langchain-gemini-fastapi-app and change directory into it: mkdir langchain-gemini-fastapi-app cd langchain-gemini-fastapi-app Create a file named main.py and paste the following code into it: import os import uvicorn from fastapi import FastAPI , HTTPException from pydantic import BaseModel from langchain google genai import ChatGoogleGenerativeAI from langchain core.prompts import ChatPromptTemplate from langchain core.output parsers import StrOutputParser Initialize FastAPI app = FastAPI ( title = "LangChain Gemini Cloud Run App" ) 1.
+- Define Endpoint @app . post ( "/chat" ) async def chat ( request : QueryRequest ): try : response = await chain . ainvoke ({ "topic" : request . topic }) return { "response" : response } except Exception as e : raise HTTPException ( status code = 500 , detail = str ( e )) @app . get ( "/" ) def health check (): return { "status" : "ok" , "service" : "Gemini-FastAPI" } Create a file named requirements.txt and paste the following code into it: fastapi uvicorn langchain langchain-google-genai python-dotenv Deploy to Cloud Run from source Deploy from source automatically builds a container image from source code and deploys it.
+- If you are under a domain restriction organization policy restricting unauthenticated invocations for your project, you will need to access your deployed service as described under Testing private services .
+- Quickstart: Build and deploy a Python (LangChain) web app to Cloud Run Learn how to build and deploy a LangChain application using Cloud Run and Gemini to respond to queries about city capitals.
 

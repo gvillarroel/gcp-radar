@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.527Z"
+generated_at: "2026-04-14T23:59:44.328Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Copy log entries"
@@ -9,9 +9,9 @@ latest_feature_date: "2024-02-13"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/samples/logging-list-log-entries"
-  - "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart"
-  - "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+  - "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud"
+  - "https://docs.cloud.google.com/logging/docs/routing/overview"
+  - "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
 keywords:
   - "copy"
   - "log"
@@ -36,53 +36,52 @@ Cloud Logging supports copying log entries.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/samples/logging-list-log-entries](https://docs.cloud.google.com/logging/docs/samples/logging-list-log-entries)
-- [https://docs.cloud.google.com/logging/docs/logging-gce-quickstart](https://docs.cloud.google.com/logging/docs/logging-gce-quickstart)
-- [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
+- [https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud](https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud)
+- [https://docs.cloud.google.com/logging/docs/routing/overview](https://docs.cloud.google.com/logging/docs/routing/overview)
+- [https://docs.cloud.google.com/logging/docs/write-query-log-entries-python](https://docs.cloud.google.com/logging/docs/write-query-log-entries-python)
 
 ## Supporting Pages
 
-### List log entries \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
+### Route log entries \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/samples/logging-list-log-entries](https://docs.cloud.google.com/logging/docs/samples/logging-list-log-entries)
+- URL: [https://docs.cloud.google.com/logging/docs/routing/overview](https://docs.cloud.google.com/logging/docs/routing/overview)
 - Source ID: `site-docs-root`
-- Final score: 181
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- For more information, see Set up authentication for a local development environment . use Google\Cloud\Logging\LoggingClient; / Print the timestamp and entry for the project and logger. @param string $projectId The Google project ID. @param string $loggerName The name of the logger. / function list entries($projectId, $loggerName) { $logging = new LoggingClient(['projectId' => $projectId]); $loggerFullName = sprintf('projects/%s/logs/%s', $projectId, $loggerName); $oneDayAgo = date(\DateTime::RFC3339, strtotime('-24 hours')); $filter = sprintf( 'logName = "%s" AND timestamp >= "%s"', $loggerFullName, $oneDayAgo ); $options = [ 'filter' => $filter, ]; $entries = $logging->entries($options); // Print the entries foreach ($entries as $entry) { / @var $entry \Google\Cloud\Logging\Entry / $entryInfo = $entry->info(); if (isset($entryInfo['textPayload'])) { $entryText = $entryInfo['textPayload']; } else { $entryPayload = []; foreach ($entryInfo['jsonPayload'] as $key => $value) { $entryPayload[] = "$key: $value"; } $entryText = '{' . implode(', ', $entryPayload) . '}'; } printf('%s : %s' .
-- For more information, see Set up authentication for a local development environment . // Imports the Google Cloud client library const { Logging } = require ( ' @google-cloud/logging ' ); // Creates a client const logging = new Logging (); / TODO(developer): Uncomment the following line to run the code. / // const logName = 'Name of the log from which to list entries, e.g. my-log'; const log = logging . log ( logName ); async function printEntryMetadata () { // List the most recent entries for a given log // See https://googleapis.dev/nodejs/logging/latest/Logging.html#getEntries const [ entries ] = await log . getEntries (); console . log ( 'Logs:' ); entries . forEach ( entry = > { const metadata = entry . metadata ; console . log ( ${ metadata . timestamp } : , metadata [ metadata . payload ]); }); } printEntryMetadata (); PHP To learn how to install and use the client library for Logging, see Logging client libraries .
-- MINUTE , - 1 ); DateFormat rfc3339 = new SimpleDateFormat ( "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" ); String logFilter = "logName=projects/" + logging . getOptions (). getProjectId () + "/logs/" + logName + " AND timestamp>=\"" + rfc3339 . format ( calendar . getTime ()) + "\"" ; // List all log entries Page<LogEntry> entries = logging . listLogEntries ( EntryListOption . filter ( logFilter )); while ( entries != null ) { for ( LogEntry logEntry : entries . iterateAll ()) { System . out . println ( logEntry ); } entries = entries . getNextPage (); } } } } Node.js To learn how to install and use the client library for Logging, see Logging client libraries .
-- For more information, see Set up authentication for a local development environment . require "google/cloud/logging" log name = "my log name" logging = Google :: Cloud :: Logging . new entries = logging . entries filter : "logName: #{ log name } " , max : 1000 , order : "timestamp desc" entries . each do entry puts "[ #{ entry . timestamp } ] #{ entry . log name } #{ entry . payload . inspect } " end What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .
-
-### "Quickstart: Collect logs from Apache with the Ops Agent \_|\_ Cloud Logging\
-
-- URL: [https://docs.cloud.google.com/logging/docs/logging-gce-quickstart](https://docs.cloud.google.com/logging/docs/logging-gce-quickstart)
-- Source ID: `site-docs-root`
-- Final score: 174
+- Final score: 36
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In the following expression, paste the copied ID into the PROJECT ID field, and then copy the expression into the query editor: resource.type = "gce instance" logName =( "projects/ PROJECT ID /logs/apache access" OR "projects/ PROJECT ID /logs/apache error" ) When the previous query is run, only apache access and apache error log entries are shown.
-- The email notification you receive looks similar to the following: To view the new log entries, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .
-- Copy the following query and paste it into the log filter field: severity > = DEFAULT /help httpRequest.status = 404 The previous log filter searches for log entries with a severity level of at least DEFAULT , that contain the text /help , and that contain an httpRequest status of 404 .
-- You must restart the agent for the configuration to take effect . set - e Check if the file exists if [ ! - f / etc / google - cloud - ops - agent / config . yaml ]; then Create the file if it doesn ' t exist . sudo mkdir - p / etc / google - cloud - ops - agent sudo touch / etc / google - cloud - ops - agent / config . yaml fi Create a back up of the existing file so existing configurations are not lost . sudo cp / etc / google - cloud - ops - agent / config . yaml / etc / google - cloud - ops - agent / config . yaml . bak Configure the Ops Agent . sudo tee / etc / google - cloud - ops - agent / config . yaml > / dev / null << EOF metrics : receivers : apache : type : apache service : pipelines : apache : receivers : - apache logging : receivers : apache access : type : apache access apache error : type : apache error service : pipelines : apache : receivers : - apache access - apache error EOF The previous command creates the configuration to collect and ingest logs and metrics from the Apache web server.
+- At a high level, this is how Cloud Logging routes and stores log entries: About Log Routers Each Google Cloud project, billing account, folder, and organization has a Log Router, which manages the flow of log entries through resource-level sinks.
+- What's next To help you route and store Cloud Logging data, see the following documents: To create sinks to route log entries to supported destinations, see Route logs to supported destinations .
+- Home Documentation Observability Cloud Logging Guides Send feedback Route log entries Stay organized with collections Save and categorize content based on your preferences.
+- Sink destinations Note: To use the visualization and analysis tools of Cloud Logging or to use Error Reporting, you must store your log entries in log buckets.
 
-### View and analyze logs \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
+### "Quickstart: Write and query log entries with the gcloud CLI \_|\_ Cloud\
 
-- URL: [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
+- URL: [https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud](https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud)
 - Source ID: `site-docs-root`
-- Final score: 168
+- Final score: 35
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Before you begin To get the permissions that you need to use the Logs Explorer to view log entries, ask your administrator to grant you the following IAM roles: To view log entries in the Required bucket and those in the Default view on the Default bucket, or to select a log scope: Logs Viewer ( roles/logging.viewer ) on your project, folder, or organization.
-- Query returns an error If you issue a query over a resource without specifying a bucket, then Cloud Logging uses the history of the sinks in the Google Cloud project to determine where entries might have been written for that resource.
-- To view and download log entries stored in a log view on a log bucket: Logs View Accessor ( roles/logging.viewAccessor ) on the project, folder, or organization that contains the log bucket.
-- To view all log entries in the Required and Default buckets: Private Logs Viewer ( roles/logging.privateLogViewer ) on your project, folder, or organization.
+- To read a list of log entries from Logging, do the following: Go to the API reference page for the entries.list API method: Go to entries.list API page Configure and run the API command: Replace PROJECT ID in the following text: "resourceNames": [ "projects/ PROJECT ID " ], "filter": "resource.type=global", "orderBy": "timestamp desc" Copy the updated text from the previous step, and paste it into the Request body field of APIs Explorer.
+- Write log entries by using the gcloud CLI Logging supports log entries with structured and unstructured data.
+- For example, to retrieve and display the log entries with a resource type of global , run the following command: gcloud logging read "resource.type=global" The command returns a result similar to the following: --- insertId : jpj9zjf73t1mn jsonPayload : message : My second entry weather : partly cloudy logName : projects / myloggingproject / logs / my - test - log receiveTimestamp : '2018-11-01T18:39:31.114507977Z' resource : labels : project id : myloggingproject type : global timestamp : '2018-11-01T18:39:31.114507977Z' --- insertId : vd4m1if7h7u1a logName : projects / myloggingproject / logs / my - test - log receiveTimestamp : '2018-11-01T18:39:19.718100792Z' resource : labels : project id : myloggingproject type : global textPayload : A simple entry timestamp : '2018-11-01T18:39:19.718100792Z' For information about reading logs, see the gcloud logging read reference documentation.
+- The method returns a response similar to the following: { "entries": [ { "textPayload": "A simple entry", "insertId": "vd4m1if7h7u1a", "resource": { "type": "global", "labels": { "project id": "myloggingproject" } }, "timestamp": "2018-11-01T18:39:19.718100792Z", "logName": "projects/myloggingproject/logs/my-test-log", "receiveTimestamp": "2018-11-01T18:39:19.718100792Z" }, { "insertId": "jpj9zjf73t1mn", "jsonPayload": { "message": "My second entry", "weather": "partly cloudy" }, "resource": { "type": "global", "labels": { "project id": "myloggingproject" } }, "timestamp": "2018-11-01T18:39:31.114507977Z", "logName": "projects/myloggingproject/logs/my-test-log", "receiveTimestamp": "2018-11-01T18:39:31.114507977Z" } ] } View log entries in the Logs Explorer To view log entries in the Google Cloud console, you can use the Logs Explorer.
+
+### "Quickstart: Write and query log entries using a Python script \_|\_ Cloud\
+
+- URL: [https://docs.cloud.google.com/logging/docs/write-query-log-entries-python](https://docs.cloud.google.com/logging/docs/write-query-log-entries-python)
+- Source ID: `site-docs-root`
+- Final score: 34
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To create the sink mysink that exports all log entries with a severity of at least INFO to the Cloud Storage bucket myloggingproject-1 , run the following command: python export . py create mysink myloggingproject - 1 "severity>=INFO" The script returns the following: Created sink mysink To view your sinks, run the export.py script with the list option: python export . py list The script returns the following: mysink: severity>=INFO -> storage.googleapis.com/myloggingproject-1 Update destination permissions The permissions of the destination, in this case, your Cloud Storage bucket, aren't modified when you create a sink by using the export.py script.
+- Required roles To get the permissions that you need to create, list, and delete log entries and Cloud Storage buckets, ask your administrator to grant you the following IAM roles on your project: Create, list, and delete log entries: Logging Admin ( roles/logging.admin ) Create, list, and delete Cloud Storage buckets: Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Clone source To configure your Cloud Shell for this quickstart, do the following: Clone the GitHub project python-logging : git clone https : // github . com / GoogleCloudPlatform / python - docs - samples The directory samples/snippets contains the two scripts used in this quickstart: snippets.py lets you manage entries in a log. export.py lets you manage log exports.
+- Logging can route log entries to the following destinations: Cloud Storage buckets BigQuery datasets Pub/Sub Logging buckets Google Cloud projects Before you begin You must have a Google Cloud project with billing enabled to complete this quickstart.
 

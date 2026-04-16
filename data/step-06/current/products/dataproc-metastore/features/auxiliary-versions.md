@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:49:01.300Z"
+generated_at: "2026-04-12T12:14:00.721Z"
 product_name: "Dataproc Metastore"
 product_slug: "dataproc-metastore"
 feature_name: "Auxiliary versions"
 feature_slug: "auxiliary-versions"
 latest_feature_date: "2023-03-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
   - "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
-  - "https://docs.cloud.google.com/dataproc-metastore/docs/release-notes"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/manage-service"
 keywords:
   - "auxiliary"
   - "versions"
@@ -26,7 +27,7 @@ keywords:
 # Auxiliary versions
 
 Product: Dataproc Metastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Auxiliary versions let a Dataproc Metastore service use additional Hive Metastor
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions](https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions)
 - [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
-- [https://docs.cloud.google.com/dataproc-metastore/docs/release-notes](https://docs.cloud.google.com/dataproc-metastore/docs/release-notes)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts](https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/manage-service](https://docs.cloud.google.com/dataproc-metastore/docs/manage-service)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions](https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions)
 - Source ID: `site-iam-reference`
-- Final score: 276
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 342
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Auxiliary versions let you connect two different versions of a Hive metastore to a single Dataproc Metastore service.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
 - Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 268
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Provisioning the service might take a few minutes. gcloud CLI To create a metastore, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \ --location= LOCATION \ --instance-size= INSTANCE SIZE \ --scaling-factor= SCALING FACTOR \ --port= PORT \ --tier= TIER \ --endpoint-protocol= ENDPOINT PROTOCOL \ --database-type= DATABASE TYPE \ --hive-metastore-version= HIVE METASTORE VERSION \ --data-catalog-sync= DATA CATALOG SYNC \ --release-channel= RELEASE CHANNEL \ --hive-metastore-configs= METADATA OVERRIDE \ --labels= LABELS \ --auxiliary-versions= AUXILIARY VERSION \ --network= NETWORK \ --consumer-subnetworks="projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET1 , projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET2 " \ --kerberos-principal= KERBEROS PRINCIPAL \ --krb5-config= KRB5 CONFIG \ --keytab= CLOUD SECRET \ --encryption-kms-key= KMS KEY Replace the following: Service settings : SERVICE : The name of your new Dataproc Metastore service.
@@ -76,17 +78,31 @@ Evidence snippets:
 - Note: If your Hive warehouse directory is already on Cloud Storage, then you should set a metastore configuration override when you create your Dataproc Metastore service.
 - Set a Hive metastore config override for Dataproc Metastore If your Apache Hive warehouse directory is on Cloud Storage, you should set a metastore config override.
 
-### Dataproc Metastore release notes \_|\_ Google Cloud Documentation
+### Dataproc Metastore core concepts \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/release-notes](https://docs.cloud.google.com/dataproc-metastore/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts](https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts)
+- Source ID: `site-iam-reference`
+- Final score: 232
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The oldest import is automatically deleted when the 26th import is created. v1 Feature Dataproc Metastore performs a Hive metadata schema validation when importing metadata into a service .
-- January 26, 2022 v1beta1 Feature Spanner database type is available in Preview . v1beta1 Feature Dataproc Metastore Auxiliary versions are available in Preview .
-- June 06, 2022 v1beta1 Change Updated Dataproc Metastore auxiliary versions to support the Spanner database type.
-- February 03, 2021 v1beta1 Feature You can create Dataproc Metastore services in cross-product networks (shared VPC) . v1beta1 Feature New Cloud Monitoring service metric is available: metastore.googleapis.com/service/request count v1beta1 Feature Dataproc Metastore suppports the use of non-RFC 1918 private IP address ranges in metastore services. v1beta1 Feature You can update the description of metadata imports under a Dataproc Metastore service. v1beta1 Fixed Fixed an issue in which a service could get stuck in the UPDATING state. v1beta1 Fixed Fixed an issue where Cloud Storage buckets with single character directories would fail request validation.
+- A feature that lets you connect multiple Hive client versions to the same Dataproc Metastore service.
+- Dataproc Metastore versions When you create a Dataproc Metastore service, you can choose to use a Dataproc Metastore 2 service or a Dataproc Metastore 1 service .
+- You can also use Dataproc Metastore with various other clusters, such as self-managed Apache Hive, Apache Spark, or Presto clusters.
+- The over-the-wire network protocol used for communication between Dataproc Metastore and Hive Metastore clients.
+
+### Update a Dataproc Metastore service \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/manage-service](https://docs.cloud.google.com/dataproc-metastore/docs/manage-service)
+- Source ID: `site-docs-root`
+- Final score: 224
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Return to the Dataproc Metastore page, and verify that your service was successfully updated. gcloud To update a service, run the following gcloud metastore services update command: gcloud metastore services update SERVICE \ --location= LOCATION \ --update-hive-metastore-configs="hive.metastore.warehouse.dir= CUSTOMER DIR " Replace the following: SERVICE : The name of your Dataproc Metastore service.
+- Return to the Dataproc Metastore page, and verify that your service was successfully updated. gcloud CLI To update a service, run the following gcloud metastore services update command: gcloud metastore services update SERVICE \ --location= LOCATION \ --port= PORT \ --tier= TIER \ --kerberos principal= KERBEROS PRINCIPAL \ --keytab= KEYTAB \ --krb5-config= KRB5 CONFIG \ --update-hive-metastore-configs-from-file= [KEY=VALUE, ...] \ --clear-hive-metastore-configs \ --remove-hive-metastore-configs= [KEY, ...] \ --update-labels= [KEY=VALUE, ...] \ --clear-labels \ --remove-labels= [KEY, ...] Replace the following: SERVICE : The name of your Dataproc Metastore service.
+- This override sets your specific data warehouse as the default warehouse directory for Dataproc Metastore Before you set this override, make sure that your Dataproc Metastore service has object read and write permissions to access the warehouse directory.
+- Note: To update other Dataproc Metastore parameters that aren't included in the previous list, you must delete your service and create a new one.
 

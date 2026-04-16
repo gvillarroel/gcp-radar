@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:33.310Z"
+generated_at: "2026-04-14T04:42:56.814Z"
 product_name: "Google Kubernetes Engine"
 product_slug: "google-kubernetes-engine"
 feature_name: "Cloud DNS for GKE (cluster scope)"
 feature_slug: "cloud-dns-for-gke-cluster-scope"
 latest_feature_date: "2022-12-14"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-scopes"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
 keywords:
   - "dns"
-  - "for"
   - "gke"
   - "cluster"
   - "scope"
   - "clusters"
   - "can"
   - "use"
+  - "name"
 ---
 
 # Cloud DNS for GKE (cluster scope)
 
 Product: Google Kubernetes Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ GKE clusters can use Cloud DNS for in-cluster name resolution instead of kube-dn
 
 GKE clusters can use Cloud DNS for in-cluster name resolution instead of kube-dns.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-scopes](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-scopes)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Access scopes in GKE \_|\_ GKE security \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-scopes](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-scopes)
+- Source ID: `site-iam-reference`
+- Final score: 146
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create a cluster or node pool with the custom service account To create a cluster that uses the custom service account, run the following command: gcloud container clusters create --service-account = $NODE SA EMAIL To create a node pool in an existing cluster: gcloud container node-pools create --service-account = $NODE SA EMAIL Note: You can also find the service account's email address by running the following command: gcloud iam service-accounts list --format='value(email)' \ --filter='displayName:Node Service Account' Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Access scopes that GKE adds Compute Engine default service account No https://www.googleapis.com/auth/devstorage.read only https://www.googleapis.com/auth/service.management.readonly https://www.googleapis.com/auth/servicecontrol https://www.googleapis.com/auth/trace.append https://www.googleapis.com/auth/logging.write : added if Cloud Logging is enabled https://www.googleapis.com/auth/monitoring : added if Cloud Monitoring is enabled Yes Manually specified scopes Custom service account No https://www.googleapis.com/auth/cloud-platform Yes Manually specified scopes Standard clusters Service account Manually-specified access scopes?
+- By reading this page, you learn about the default access scopes that are granted to clusters, and how you can configure custom access scopes, if required.
+- You can also set access scopes manually using the --scopes flag when you create Standard clusters , Autopilot clusters , or node pools .
+
+### "Run workloads in Autopilot mode in Standard clusters \_|\_ Google Kubernetes\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters)
+- Source ID: `site-docs-reference-2`
+- Final score: 141
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If the workload uses Autopilot mode, this value is Autopilot-managed . kubectl CLI Check the names of the nodes that run your Pods: kubectl get pods -l = app = hello -o wide The output is similar to the following: NAME READY STATUS RESTARTS AGE IP NODE NOMINATED NODE READINESS GATES helloweb-79b9f6f75-5wwc9 1/1 Running 0 152m 10.102.1.135 gk3-cluster-1-nap-10abc8ya1-f66c6cef-wg5g <none> <none> helloweb-79b9f6f75-9skb9 1/1 Running 0 4d3h 10.102.0.140 gk3-cluster-1-nap-10abc8ya1-632bac02-hjl6 <none> <none> helloweb-79b9f6f75-h7bdv 1/1 Running 0 152m 10.102.1.137 gk3-cluster-1-nap-10abc8ya1-f66c6cef-wg5g <none> <none> In this output, the gk3- prefix in the Node column indicates that the node is managed by Autopilot.
+- You should already be familiar with the following concepts: GKE Autopilot mode GKE ComputeClasses Kubernetes node selectors About Autopilot ComputeClasses GKE provides Kubernetes custom resources named ComputeClasses that can be deployed in your cluster like any other Kubernetes resources.
+- For more information about the implications of running an Autopilot workload in your Standard clusters, including differences that you might notice when you deploy those workloads, see About Autopilot mode workloads in GKE Standard .
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Guides Send feedback Run workloads in Autopilot mode in Standard clusters Stay organized with collections Save and categorize content based on your preferences.
+
+### "MCP Tools Reference: container.googleapis.com \_|\_ Google Kubernetes Engine\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters)
+- Source ID: `site-api-reference`
+- Final score: 139
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- IPAllocationPolicy JSON representation { "useIpAliases" : boolean , "createSubnetwork" : boolean , "subnetworkName" : string , "clusterIpv4Cidr" : string , "nodeIpv4Cidr" : string , "servicesIpv4Cidr" : string , "clusterSecondaryRangeName" : string , "servicesSecondaryRangeName" : string , "clusterIpv4CidrBlock" : string , "nodeIpv4CidrBlock" : string , "servicesIpv4CidrBlock" : string , "tpuIpv4CidrBlock" : string , "useRoutes" : boolean , "stackType" : enum ( StackType ) , "ipv6AccessType" : enum ( IPv6AccessType ) , "podCidrOverprovisionConfig" : { object ( PodCIDROverprovisionConfig ) } , "subnetIpv6CidrBlock" : string , "servicesIpv6CidrBlock" : string , "additionalPodRangesConfig" : { object ( AdditionalPodRangesConfig ) } , "defaultPodIpv4RangeUtilization" : number , "additionalIpRangesConfigs" : [ { object ( AdditionalIPRangesConfig ) } ] , "autoIpamConfig" : { object ( AutoIpamConfig ) } , "networkTierConfig" : { object ( NetworkTierConfig ) } } Fields useIpAliases boolean Whether alias IPs will be used for pod IPs in the cluster.
+- ClusterPolicyConfig JSON representation { // Union field no system mutation can be only one of the following: "noSystemMutation" : boolean // End of list of possible types for union field no system mutation . // Union field no system impersonation can be only one of the following: "noSystemImpersonation" : boolean // End of list of possible types for union field no system impersonation . // Union field no unsafe webhooks can be only one of the following: "noUnsafeWebhooks" : boolean // End of list of possible types for union field no unsafe webhooks . // Union field no standard node pools can be only one of the following: "noStandardNodePools" : boolean // End of list of possible types for union field no standard node pools . } Fields Union field no system mutation . no system mutation can be only one of the following: noSystemMutation boolean Denotes that preventing creation and mutation of resources in GKE managed namespaces and cluster-scoped GKE managed resources .
+- Curl Request curl --location 'https://container.googleapis.com/mcp' \ --header 'content-type: application/json' \ --header 'accept: application/json, text/event-stream' \ --data '{ "method": "tools/call", "params": { "name": "list clusters", "arguments": { // provide these details according to the tool' s MCP specification } } , "jsonrpc" : "2.0" , "id" : 1 } ' Input Schema MCPListClustersRequest lists clusters.
+- Default: clusters.autopilot,clusters.createTime,clusters.currentMasterVersion,clusters.currentNodeCount,clusters.currentNodeVersion,clusters.description,clusters.endpoint,clusters.fleet,clusters.location,clusters.name,clusters.network,clusters.nodePools.name,clusters.releaseChannel,clusters.resourceLabels,clusters.selfLink,clusters.status,clusters.statusMessage,clusters.subnetwork,missingZones.
 

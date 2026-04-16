@@ -1,0 +1,142 @@
+---
+title: "IP address utilization insights \_|\_ Network Intelligence Center - Network\
+  \ Analyzer \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/insights/vpc-network/ip-utilization
+knowledge_key: corpus
+source_id: site-docs-reference-2
+source_type: site
+entrypoint: https://docs.cloud.google.com/network-intelligence-center/docs/release-notes
+source_metadata:
+  url: https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/insights/vpc-network/ip-utilization
+  title: "IP address utilization insights \_|\_ Network Intelligence Center - Network\
+    \ Analyzer \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Networking
+Network Intelligence Center
+Network Analyzer
+Guides
+Send feedback
+IP address utilization insights
+Stay organized with collections
+Save and categorize content based on your preferences.
+This page describes the Network Analyzer insights for IP address
+utilization. For information about all the insight types, see
+Insight groups and types .
+IP address utilization insights show the IP address allocation percentage of
+subnet ranges, which are calculated based on configurations that use IP
+addresses, such as VMs and load balancers. In the case of Shared VPC,
+Network Analyzer provides the IP address utilization insights of the host
+project, and the information from service projects is automatically aggregated
+to derive the insight information.
+View insights in the Recommender API
+To view these insights in the gcloud CLI or the Recommender API, use
+the following insight type:
+google.networkanalyzer.vpcnetwork.ipAddressInsight
+You need the following permissions:
+recommender.networkAnalyzerIpAddressInsights.list
+recommender.networkAnalyzerIpAddressInsights.get
+For more information about using the Recommender API for
+Network Analyzer insights, see
+Use the Recommender CLI and API .
+High IP address utilization of a subnet
+This insight indicates that the IP address utilization of a subnet is too high
+(the allocation ratio is higher than 75 percent). Such an issue can prevent
+automation from creating new VMs or upgrading a GKE cluster. This
+insight includes the following information:
+Subnetwork: The name of the subnetwork.
+Secondary range name: If the insight shows the primary range of the
+subnet, this field is not displayed.
+IP address range: The IP address range of the subnetwork range.
+Allocation ratio: The percentage of IP addresses from the range of the
+subnet that are allocated.
+Resources using this range: The count of the number of
+resources of this type that have allocated IP addresses within the IP
+address range of the subnet. This attribute gives a summary of the number of
+IP addresses used by resources such as VMs and load balancers.
+The allocation ratio of the primary range includes the
+four unusable IP addresses .
+Recommendations
+You have two options:
+Expand the subnet primary ranges .
+Add more secondary ranges .
+IP address utilization summary
+This insight gives a summary of the IP address utilization of subnet ranges in the
+analyzed project. In the case of Shared VPC, Network Analyzer gives a
+summary of the IP address utilization of all relevant subnet ranges of the host
+project, and also provides the insights of the service projects. It includes the
+following information:
+All subnet ranges that have an allocation ratio more than zero.
+Secondary range name: The secondary range name of a subnet. This field is not displayed
+for the primary range of a subnet.
+Subnet range prefix: The IP address range of the subnetwork range in CIDR format.
+Allocation ratio: The ratio (between 0 and 1, 1 being 100%) of IP addresses allocated
+from the range of the subnet compared to the total number of IP addresses in the subnet.
+The allocation ratio of the primary range includes the
+four unusable IP addresses .
+Related topics
+For more information, see
+High IP address utilization insight .
+Private services access IP address utilization summary
+This insight gives a summary of the utilization of IP address ranges used for
+private services access in the analyzed
+projects. Private services access IP address ranges are used by Google Cloud
+managed services such as Cloud SQL.
+When you use private services access, you create an allocated
+range that is
+used when you create a private
+connection to
+the service. In Network Analyzer, allocated IP address ranges are referred
+to as PSA ranges .
+The managed service producer creates a subnet in a service-managed
+Virtual Private Cloud (VPC) that is peered to your VPC network.
+The service producer chooses an available IP address range for the subnet that
+falls within the allocated IP address range. In Network Analyzer, the
+service producer subnets are referred to as PSA subnets .
+This insight includes the following information:
+PSA range prefix : The prefix of the allocated IP address range (PSA
+range) reserved in your VPC network for managed services.
+PSA subnet prefix : The prefix of the subnet that was created from the
+PSA range.
+PSA subnet region : The region used by the managed service for this
+subnet.
+PSA subnet service : The name of the managed service that uses this
+subnet. For more information about the services that support this field, see
+Managed services supporting the name
+field .
+Allocation ratio :
+The allocation ratio of the PSA range corresponds to how much of the
+range is allocated to managed services. Each managed service you use
+reserves one or multiple ranges of varying size, depending on the
+service.
+The allocation ratio of the PSA subnet corresponds to the number of
+IP addresses that are allocated from the range of the PSA subnet
+in the service-managed VPC network compared to the total
+number of IP addresses in the range.
+In the case of Shared VPC, Network Analyzer provides this insight
+in the host project.
+Managed services supporting the name field
+The name field is populated for the following services:
+AlloyDB for PostgreSQL
+Apigee
+Cloud Build
+Cloud SQL
+Memorystore for Memcached
+Memorystore for Redis
+Vertex AI managed notebooks
+Recommendations
+Review the allocation ratio for your PSA ranges and consider adding new
+allocated IP address
+ranges as
+soon as the allocation ratio is greater than 50%.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

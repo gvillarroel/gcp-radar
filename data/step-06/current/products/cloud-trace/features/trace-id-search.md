@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.834Z"
+generated_at: "2026-04-12T12:12:49.004Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Trace ID search"
 feature_slug: "trace-id-search"
 latest_feature_date: "2020-08-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/trace/docs/release-notes"
-  - "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
-  - "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints"
+  - "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+  - "https://docs.cloud.google.com/trace/docs/analytics"
+  - "https://docs.cloud.google.com/trace/docs/setup/java-ot"
+  - "https://docs.cloud.google.com/trace/docs/setup/java"
 keywords:
   - "trace"
   - "id"
@@ -26,7 +27,7 @@ keywords:
 # Trace ID search
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +39,70 @@ The Cloud Trace viewer supports searching by trace ID.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
-- [https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses](https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses)
-- [https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints](https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints)
+- [https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset](https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset)
+- [https://docs.cloud.google.com/trace/docs/analytics](https://docs.cloud.google.com/trace/docs/analytics)
+- [https://docs.cloud.google.com/trace/docs/setup/java-ot](https://docs.cloud.google.com/trace/docs/setup/java-ot)
+- [https://docs.cloud.google.com/trace/docs/setup/java](https://docs.cloud.google.com/trace/docs/setup/java)
 
 ## Supporting Pages
 
-### Trace release notes \_|\_ Google Cloud Documentation
+### Analyze trace data with BigQuery \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
+- URL: [https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset](https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset)
+- Source ID: `site-docs-root-2`
+- Final score: 209
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use BigQuery Studio To open BigQuery from the Observability Analytics page and then query your trace data, do the following: In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging .
+- The value of the name field has the following format: projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /dataset/ DATASET ID /links/ LINK ID The value you provide for the name field must match the linked BigQuery dataset referenced by the query parameter.
+- Execute the gcloud beta observability buckets datasets links create command: Linux, macOS, or Cloud Shell gcloud beta observability buckets datasets links create \ projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /datasets/ DATASET ID /links/ LINK ID \ --dataset = DATASET ID \ --bucket = BUCKET ID \ --location = LOCATION \ --project = PROJECT ID Windows (PowerShell) gcloud beta observability buckets datasets links create projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /datasets/ DATASET ID /links/ LINK ID --dataset = DATASET ID --bucket = BUCKET ID --location = LOCATION ` --project = PROJECT ID Windows (cmd.exe) gcloud beta observability buckets datasets links create ^ projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /datasets/ DATASET ID /links/ LINK ID ^ --dataset = DATASET ID ^ --bucket = BUCKET ID ^ --location = LOCATION ^ --project = PROJECT ID The create command initiates a long-running operation.
+- To get the permissions that you need to create a link on an observability dataset, ask your administrator to grant you the following IAM roles on your project: Observability Editor ( roles/observability.editor ) BigQuery User ( roles/bigquery.user ) Logs Viewer ( roles/logging.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+
+### Query and analyze traces \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/trace/docs/analytics](https://docs.cloud.google.com/trace/docs/analytics)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 209
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- August 17, 2020 Feature The Cloud Trace viewer now supports search by the trace ID.
-- If you open the Trace Details flyout page by using options provided in a log entry, then the resources listed in the default trace scope are searched for the trace data.
-- You can view generative AI events by using the Trace Explorer : Instrument generative AI applications Instrument a LangGraph ReAct Agent with OpenTelemetry View generative AI events March 25, 2025 Feature To send trace data to your Google Cloud project, we recommend that you use the new Telemetry API, which implements the OpenTelemetry OTLP API and provides compatibility and support for the open source ecosystem.
-- February 27, 2018 Feature The Trace Viewer now associates logs entries with trace spans when the LogEntry span id field is specified.
+- To identify the schema, do the following: In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging .
+- This document describes how to query and analyze your trace data by using Observability Analytics, which provides a SQL -based query interface.
+- If you want to view or explore individual traces or spans, or view attributes that are attached to spans, then use the Trace Explorer page.
+- Enable the API To get the permissions that you need to load the Observability Analytics page, write, run, and save private queries on your trace data, ask your administrator to grant you the following IAM roles: Observability View Accessor ( roles/observability.viewAccessor ) on the observability views that you want to query.
 
-### "Collect and view multimodal prompts and responses \_|\_ Cloud Trace \_|\_\
+### Java instrumentation sample \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses](https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses)
+- URL: [https://docs.cloud.google.com/trace/docs/setup/java-ot](https://docs.cloud.google.com/trace/docs/setup/java-ot)
+- Source ID: `site-docs-root`
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you encounter an error when viewing trace data either by searching for a trace by ID or by following the steps in this task, then wait a minute or two and retry the action.
+- It will automatically generate a span for the controller body. / @GetMapping ( "/multi" ) public Mono<String> handleMulti () throws Exception { int subRequests = ThreadLocalRandom . current (). nextInt ( 3 , 8 ); // Write a structured log with the request context, which allows the log to // be linked with the trace for this request. logger . info ( "handle /multi request with subRequests={}" , subRequests ); // Make 3-7 http requests to the /single endpoint. return Flux . range ( 0 , subRequests ) . concatMap ( i - > client . get (). uri ( "http://localhost:8080/single" ). retrieve (). bodyToMono ( Void . class )) . then ( Mono . just ( "ok" )); } The /single endpoint is handled by the handleSingle function.
+- To view your trace data, do the following: In the Google Cloud console, go to the Trace explorer page: Go to Trace explorer You can also find this page by using the search bar.
+- The following code sample illustrates a log4j2.xml file configured to output JSON structured logs using the JSON Template Layout : <!-- Format JSON logs for the Cloud Logging agent https://cloud.google.com/logging/docs/structured-logging#special-payload-fields --> <!-- Log4j2's JsonTemplateLayout includes a template for Cloud Logging's special JSON fields https://logging.apache.org/log4j/2.x/manual/json-template-layout.html#event-templates --> <JsonTemplateLayout eventTemplateUri="classpath:GcpLayout.json"> <!-- Extend the included GcpLayout to include the trace and span IDs from Mapped Diagnostic Context (MDC) so that Cloud Logging can correlate Logs and Spans Since log4j2 2.24.0, GcpLayout.json already includes trace context logging from MDC and the below additional fields are no longer needed --> <EventTemplateAdditionalField key="logging.googleapis.com/trace" format="JSON" value='{"$resolver": "mdc", "key": "trace id"}' /> <EventTemplateAdditionalField key="logging.googleapis.com/spanId" format="JSON" value='{"$resolver": "mdc", "key": "span id"}' /> <EventTemplateAdditionalField key="logging.googleapis.com/trace sampled" format="JSON" value="true" /> </JsonTemplateLayout> The previous configuration extracts information about the active span from SLF4J's Mapped Diagnostic Context and adds that information as attributes to the log.
+
+### Java instrumentation sample \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/trace/docs/setup/java](https://docs.cloud.google.com/trace/docs/setup/java)
 - Source ID: `site-docs-root-2`
-- Final score: 156
-- Re-rank relevance: N/A
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- EXT TABLE NAME ON messages ref uri = FILE NAME > RENAME index AS message idx -- Flatten. > CROSS JOIN UNNEST ( parts ) AS part WITH OFFSET AS part idx -- Print fields. > SELECT insert id , labels , timestamp , trace , span id , role , part . content , part . uri , part . mime type , TO HEX ( MD5 ( part . data )) AS data md5 hex , part . id AS tool id , part . name AS tool name , part . arguments AS tool args , part . response AS tool response , message idx , part idx , > ORDER BY timestamp , message idx , part idx ; > LIMIT 10 ; Replace the following before you run the query: PROJECT ID : The identifier of the project.
-- CONNECTION ID ' , endpoint = > ' gemini-2.5-flash-lite ' , output schema = > 'description STRING, is match BOOLEAN' ) AS gemini summary > SELECT insert id , trace , span id , timestamp , part idx , part . uri , part . mime type , gemini summary > WHERE gemini summary . is match = TRUE > ORDER BY timestamp DESC Replace the following before you run the query: PROJECT ID : The identifier of the project.
-- Find spans that contain multimodal prompts and responses To find the spans that contain multimodal prompts and responses, do the following: In the Google Cloud console, go to the Trace explorer page: Go to Trace explorer You can also find this page by using the search bar.
-- If you want to also filter by a specific trace ID, then add the following statement to the WHERE clause: AND trace = 'projects/ PROJECT ID /traces/ TRACE ID ' In the previous expression, replace TRACE ID with the 16-byte hexadecimal string that contains a trace ID.
-
-### "Migrate from the Trace exporter to the OTLP endpoint \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints](https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints)
-- Source ID: `site-docs-root-2`
-- Final score: 154
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Migration guide for manual instrumentation This section describes how to modify your application so that it sends your trace data to your Google Cloud project by using the Telemetry API .
-- For a Python application that uses gRPC for export, add the following imports: from opentelemetry import trace from opentelemetry.exporter.otlp.proto.grpc.trace exporter import ( OTLPSpanExporter , ) Also, update the initialization code to configure the TraceProvider with the gRPC exporter: Initialize OpenTelemetry with OTLP exporters channel creds: configure Application Default Credentials trace provider = TracerProvider ( resource = resource ) processor = BatchSpanProcessor ( OTLPSpanExporter ( credentials = channel creds , endpoint = "https://telemetry.googleapis.com:443/v1/traces" , ) ) trace provider . add span processor ( processor ) trace . set tracer provider ( trace provider ) tracer = trace . get tracer ( "my.tracer.name" ) Node.js This section illustrates changes that you need to make when using gRPC for export.
-- The sample application defines the system properties in the build.gradle script: // You can switch the desired protocol here by changing otel.exporter.otlp.protocol. def autoconf config = [ ' - Dotel . exporter . otlp . endpoint = https : //telemetry.googleapis.com', ' - Dotel . traces . exporter = otlp ' , ' - Dotel . logs . exporter = none ' , ' - Dotel . metrics . exporter = none ' , ' - Dotel . service . name = otlptrace - example ' , ' - Dotel . exporter . otlp . protocol = http / protobuf ' , ' - Dotel . java . global - autoconfigure . enabled = true ' , ] Also, pass the configuration as JVM arguments: application { mainClassName = ' com . google . cloud . opentelemetry . example . otlptrace .
-- For a Node.js application that uses gRPC for export, add the following imports: import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-grpc' ; Also, update the initialization code to configure the TraceProvider with the gRPC exporter: const sdk = new NodeSDK ({ traceExporter : new OTLPTraceExporter ({ credentials : credentials . combineChannelCredentials ( credentials . createSsl (), credentials . createFromGoogleCredential ( authenticatedClient ), ), }), }); sdk . start (); Configure authentication With the previous changes to the OpenTelemetry SDK configuration, your application is configured to export traces using the OpenTelemetry OTLP exporters using either gRPC or HTTP.
+- If you encounter an error when viewing trace data either by searching for a trace by ID or by following the steps in this task, then wait a minute or two and retry the action.
+- It will automatically generate a span for the controller body. / @GetMapping ( "/multi" ) public Mono<String> handleMulti () throws Exception { int subRequests = ThreadLocalRandom . current (). nextInt ( 3 , 8 ); // Write a structured log with the request context, which allows the log to // be linked with the trace for this request. logger . info ( "handle /multi request with subRequests={}" , subRequests ); // Make 3-7 http requests to the /single endpoint. return Flux . range ( 0 , subRequests ) . concatMap ( i - > client . get (). uri ( "http://localhost:8080/single" ). retrieve (). bodyToMono ( Void . class )) . then ( Mono . just ( "ok" )); } The /single endpoint is handled by the handleSingle function.
+- To view your trace data, do the following: In the Google Cloud console, go to the Trace explorer page: Go to Trace explorer You can also find this page by using the search bar.
+- The following code sample illustrates a log4j2.xml file configured to output JSON structured logs using the JSON Template Layout : <!-- Format JSON logs for the Cloud Logging agent https://cloud.google.com/logging/docs/structured-logging#special-payload-fields --> <!-- Log4j2's JsonTemplateLayout includes a template for Cloud Logging's special JSON fields https://logging.apache.org/log4j/2.x/manual/json-template-layout.html#event-templates --> <JsonTemplateLayout eventTemplateUri="classpath:GcpLayout.json"> <!-- Extend the included GcpLayout to include the trace and span IDs from Mapped Diagnostic Context (MDC) so that Cloud Logging can correlate Logs and Spans Since log4j2 2.24.0, GcpLayout.json already includes trace context logging from MDC and the below additional fields are no longer needed --> <EventTemplateAdditionalField key="logging.googleapis.com/trace" format="JSON" value='{"$resolver": "mdc", "key": "trace id"}' /> <EventTemplateAdditionalField key="logging.googleapis.com/spanId" format="JSON" value='{"$resolver": "mdc", "key": "span id"}' /> <EventTemplateAdditionalField key="logging.googleapis.com/trace sampled" format="JSON" value="true" /> </JsonTemplateLayout> The previous configuration extracts information about the active span from SLF4J's Mapped Diagnostic Context and adds that information as attributes to the log.
 

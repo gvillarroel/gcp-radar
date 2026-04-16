@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.129Z"
+generated_at: "2026-04-14T00:23:22.694Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "gcloud --*-boot-disk-size-gb flags"
 feature_slug: "gcloud-boot-disk-size-gb-flags"
 latest_feature_date: "2016-07-01"
 deprecation_date: "2016-07-01"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
   - "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
 keywords:
   - "gcloud"
   - "boot"
@@ -19,14 +19,14 @@ keywords:
   - "size"
   - "gb"
   - "flags"
-  - "the"
   - "were"
+  - "deprecated"
 ---
 
 # gcloud --*-boot-disk-size-gb flags
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +38,21 @@ The gcloud --*-boot-disk-size-gb flags were deprecated and replaced by --*-boot-
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups](https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups)
 - [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics)
+- [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images)
 
 ## Supporting Pages
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- March 10, 2020 Change Added the following flags to gcloud dataproc clusters create and gcloud dataproc workflow-templates set-managed-cluster commands: --num-secondary-workers --num-secondary-worker-local-ssds --secondary-worker-boot-disk-size --secondary-worker-boot-disk-type --secondary-worker-accelerator Deprecated The following flags to gcloud dataproc clusters create and gcloud dataproc workflow-templates set-managed-cluster commands have been deprecated: --num-preemptible-workers --num-preemptible-worker-local-ssds --preemptible-worker-boot-disk-size --preemptible-worker-boot-disk-type --preemptible-worker-accelerator See the related change, above, for the new flags to use in place of these deprecated flags.
-- Change Minimum boot disk sizes for Dataproc images: Image 2.0: 30GB Image 1.5: 20GB Image 1.4: 15GB Image 1.3: 15GB Fixed Fixed stdout/stderr links on Spark History Server Web UI of the Persistent History Server in the following images: Image 1.4 Image 1.5 Fixed Fixed a bug where personal auth credentials would not propagate to every VM in the cluster if VPC service controls were enabled.
-- Decreased job startup time for SparkSQL jobs with partitioned/nested directories by applying a patch for Spark ( SPARK-9926 ) Further optimized job startup time for any job with a lot of file inputs by applying a patch for Hadoop ( HADOOP-12810 ) Feature gcloud command-line tool Added the flag --preemptible-worker-boot-disk-size which can be used to adjust the boot disk size of preemptible workers.
-- Feature Preemptible boot disk sizes - The disk size for preemptible workers can now be set via the gcloud command-line tool at cluster creation, even when preemptibles are not added to a cluster using the commend --preemptible-worker-boot-disk-size .
 
 ### Managed Service for Apache Spark driver node groups \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups](https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups)
 - Source ID: `site-iam-reference`
-- Final score: 138
+- Final score: 141
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +65,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics)
 - Source ID: `site-docs-root`
-- Final score: 110
+- Final score: 104
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +73,17 @@ Evidence snippets:
 - Enable custom metric collection You can use the gcloud CLI or the Dataproc API to enable the collection of custom metrics from one or more metric sources. gcloud CLI Custom metric collection Use the gcloud dataproc clusters create --metric-sources flag to enable the collection of custom metrics from one or more metric sources. gcloud dataproc clusters create cluster-name \ --metric-sources= METRIC SOURCE(s) \ ... other flags Notes: --metric-sources : Required to enable custom metric collection.
 - Override metrics file gcloud dataproc clusters create cluster-name \ --metric-sources= METRIC-SOURCE(s) \ --metric-overrides-file= METRIC OVERRIDES FILENAME \ ... other flags Notes: --metric-sources : Required to enable custom metric collection.
 - Override metrics list gcloud dataproc clusters create cluster-name \ --metric-sources= METRIC SOURCE(s) \ --metric-overrides= LIST OF METRIC OVERRIDES \ ... other flags Notes: --metric-sources : Required to enable custom metric collection.
+
+### "Create a Managed Service for Apache Spark custom image \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images)
+- Source ID: `site-docs-root`
+- Final score: 102
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The REST response lists additional information about the image, including the selfLink , which is the image URI. { ... "name": "my-custom-image", "selfLink": "projects/ PROJECT ID /global/images/ CUSTOM IMAGE NAME " , "sourceDisk": ..., ... } Create a cluster with a custom image create a cluster with using the gcloud CLI, the Managed Service for Apache Spark API, or the Google Cloud console. gcloud CLI Create a Managed Service for Apache Spark cluster with a custom image using the dataproc clusters create command with the --image flag.
+- Attempt to create a Managed Service for Apache Spark cluster with an expired custom image or a custom image that will expire within 10 days. gcloud dataproc clusters create CLUSTER-NAME \ --image= CUSTOM-IMAGE-NAME \ --region= REGION \ ... other flags The gcloud CLI will issue an error message that includes the cluster dataproc:dataproc.custom.image.expiration.token property name and token value. dataproc:dataproc.custom.image.expiration.token= TOKEN VALUE Copy the TOKEN VALUE string to the clipboard.
+- Use the gcloud CLI to create the Managed Service for Apache Spark cluster again, adding the copied TOKEN VALUE as a cluster property. gcloud dataproc clusters create CLUSTER-NAME \ --image= CUSTOM-IMAGE-NAME \ --properties=dataproc:dataproc.custom.image.expiration.token= TOKEN VALUE \ --region= REGION \ ... other flags Cluster creation with the custom image should succeed.
+- Example: gcloud dataproc clusters create CLUSTER-NAME \ --image= CUSTOM IMAGE URI \ --region= REGION \ ... other flags REST API Create a cluster with a custom image by specifying custom image URI in the InstanceGroupConfig.imageUri field in the masterConfig , workerConfig , and, if applicable, secondaryWorkerConfig object included in a cluster.create API request.
 

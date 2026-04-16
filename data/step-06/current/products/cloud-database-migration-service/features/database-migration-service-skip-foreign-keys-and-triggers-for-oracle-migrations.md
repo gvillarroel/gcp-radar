@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:10:29.965Z"
+generated_at: "2026-04-12T12:11:22.248Z"
 product_name: "Cloud Database Migration Service"
 product_slug: "cloud-database-migration-service"
 feature_name: "Database Migration Service skip foreign keys and triggers for Oracle migrations"
 feature_slug: "database-migration-service-skip-foreign-keys-and-triggers-for-oracle-migrations"
 latest_feature_date: "2024-06-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job"
   - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs"
+  - "https://docs.cloud.google.com/database-migration/docs/security-and-encryption"
   - "https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest"
 keywords:
   - "database"
@@ -26,7 +27,7 @@ keywords:
 # Database Migration Service skip foreign keys and triggers for Oracle migrations
 
 Product: Cloud Database Migration Service
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Heterogeneous Oracle migrations in Database Migration Service now can skip forei
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
 - [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
+- [https://docs.cloud.google.com/database-migration/docs/security-and-encryption](https://docs.cloud.google.com/database-migration/docs/security-and-encryption)
 - [https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest](https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest)
 
 ## Supporting Pages
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
 - Source ID: `site-api-reference`
-- Final score: 186
+- Final score: 234
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
 - Source ID: `site-api-reference`
-- Final score: 186
+- Final score: 234
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +76,24 @@ Evidence snippets:
 - For example: { create time after: 2025-10-02T10:15:33Z create time before: 2025-10-03T00:00:00Z display name: hr running: true page size: 80 } will return up to 80 migration jobs that were created on or after 2025-10-02T10:15:33 UTC and before 2025-10-03T00:00:00 UTC and have hr in their display name and are currently running.
 - The error details in case of state FAILED. sourceDatabase object ( DatabaseType ) The database engine type and provider of the source. destinationDatabase object ( DatabaseType ) The database engine type and provider of the destination. endTime string ( Timestamp format) Output only.
 
+### "Security and encryption \_|\_ Database Migration Service \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/security-and-encryption](https://docs.cloud.google.com/database-migration/docs/security-and-encryption)
+- Source ID: `site-docs-root-2`
+- Final score: 224
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information, see IAM authentication Secure heterogeneous migrations Select your heterogeneous migration scenario to view security and encryption options that your migration supports: Oracle to Cloud SQL for PostgreSQL CMEK Database Migration Service supports CMEK in the migration job to secure the data at rest.
+- Learn more in the sections that follow: Secure homogeneous migrations Select your homogeneous migration scenario to view security and encryption options that your migration supports: MySQL to Cloud SQL for MySQL CMEK You can migrate to Cloud SQL destinations where you configure CMEK to secure your data.
+- Connectivity encryption Database Migration Service supports SSL/TLS connectivity for your migration as well as other methods that accommodate differences in network access, such as IP allowlisting or using a forward SSH tunnel.
+- Connectivity encryption Database Migration Service supports SSL/TLS connectivity for your migration as well as other methods that accommodate differences in network access, such as IP allowlisting or using a forward SSH tunnel.
+
 ### "Supported source and destination databases \_|\_ Database Migration Service\
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest](https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest)
 - Source ID: `site-api-reference`
-- Final score: 186
+- Final score: 223
 - Re-rank relevance: N/A
 
 Evidence snippets:

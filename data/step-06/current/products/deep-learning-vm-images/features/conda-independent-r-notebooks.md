@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:13.458Z"
+generated_at: "2026-04-14T17:40:12.002Z"
 product_name: "Deep Learning VM Images"
 product_slug: "deep-learning-vm-images"
 feature_name: "Conda-independent R Notebooks"
@@ -14,11 +14,11 @@ keywords:
   - "conda"
   - "independent"
   - "notebooks"
-  - "in"
   - "deep"
   - "learning"
   - "vm"
   - "images"
+  - "no"
 ---
 
 # Conda-independent R Notebooks

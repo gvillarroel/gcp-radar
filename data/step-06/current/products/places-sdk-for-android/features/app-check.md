@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:50.454Z"
+generated_at: "2026-04-12T12:18:06.786Z"
 product_name: "Places SDK for Android"
 product_slug: "places-sdk-for-android"
 feature_name: "App Check"
 feature_slug: "app-check"
 latest_feature_date: "2024-12-06"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/PlacesAppCheckTokenProvider"
+  - "https://developers.google.com/maps/documentation/places/android-sdk/app-check"
+  - "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/package-summary"
+  - "https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial"
 keywords:
   - "app"
   - "check"
@@ -24,7 +27,7 @@ keywords:
 # App Check
 
 Product: Places SDK for Android
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ App Check adds an extra layer of security for Google Maps Platform credentials i
 
 App Check adds an extra layer of security for Google Maps Platform credentials in the Places SDK for Android.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/PlacesAppCheckTokenProvider](https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/PlacesAppCheckTokenProvider)
+- [https://developers.google.com/maps/documentation/places/android-sdk/app-check](https://developers.google.com/maps/documentation/places/android-sdk/app-check)
+- [https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/package-summary](https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/package-summary)
+- [https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial](https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "PlacesAppCheckTokenProvider \_|\_ Places SDK for Android \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/PlacesAppCheckTokenProvider](https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/PlacesAppCheckTokenProvider)
+- Source ID: `site-docs-reference`
+- Final score: 222
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Public methods fetchAppCheckToken abstract ListenableFuture < String > fetchAppCheckToken () Fetches the App Check token of current device and application.
+- Summary Public methods abstract ListenableFuture < String > fetchAppCheckToken () Fetches the App Check token of current device and application.
+- PlacesAppCheckTokenProvider public interface PlacesAppCheckTokenProvider An interface for fetching the App Check token.
+- The App Check token is used to authenticate the client device and application to the Places API.
+
+### Places SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/app-check](https://developers.google.com/maps/documentation/places/android-sdk/app-check)
+- Source ID: `site-docs-root`
+- Final score: 172
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Here is a sample implementation of the token fetcher interface: / Sample client implementation of App Check token fetcher interface. / static class TokenProvider implements PlacesAppCheckTokenProvider { @Override public ListenableFuture<String> fetchAppCheckToken () { SettableFuture<String> future = SettableFuture . create (); FirebaseAppCheck . getInstance () . getAppCheckToken ( false ) . addOnSuccessListener ( appCheckToken - > { future . set ( appCheckToken . getToken ()); }) . addOnFailureListener ( ex - > { future . setException ( ex ); }); return future ; } } Step 4: Enable debugging (optional) If you'd like to develop and test your app locally, or run it in a continuous integration (CI) environment, you can create a debug build of your app that uses a debug secret to obtain valid App Check tokens.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["App Check protects Google Maps Platform API keys by verifying requests originate from legitimate apps.
+- When you're sure that most requests are from legitimate sources and that users have updated to the latest version of your app that includes your implementation of App Check, you can turn on enforcement.
+- These metrics provide breakdown of requests by whether they are accompanied by a valid App Check token.
+
+### "com.google.android.libraries.places.api.auth \_|\_ Places SDK for Android\
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/package-summary](https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/auth/package-summary)
+- Source ID: `site-docs-reference`
+- Final score: 160
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],["The core content defines PlacesAppCheckTokenProvider, an interface within the com.google.android.libraries.places.api.auth package.
+- Home Products Google Maps Platform Documentation Android Places SDK for Android Reference Send feedback Stay organized with collections Save and categorize content based on your preferences. com.google.android.libraries.places.api.auth Interfaces PlacesAppCheckTokenProvider An interface for fetching the App Check token.
+- This interface's primary function is to provide a mechanism for retrieving the App Check token.
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Add Place Autocomplete to an address form \_|\_ Places SDK for Android \_\
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial](https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial)
+- Source ID: `site-docs-root`
+- Final score: 142
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Error: " , e ); } map . moveCamera ( CameraUpdateFactory . newLatLngZoom ( coordinates , 15 f )); marker = map . addMarker ( new MarkerOptions () . position ( coordinates )); } private void fillInAddress ( Place place ) { AddressComponents components = place . getAddressComponents (); StringBuilder address1 = new StringBuilder (); StringBuilder postcode = new StringBuilder (); // Get each component of the address from the place details , // and then fill - in the corresponding field on the form . // Possible AddressComponent types are documented at https : // goo . gle / 32 SJPM1 if ( components != null ) { for ( AddressComponent component : components . asList ()) { String type = component . getTypes () . get ( 0 ); switch ( type ) { case "street number" : { address1 . insert ( 0 , component . getName ()); break ; } case "route" : { address1 . append ( " " ); address1 . append ( component . getShortName ()); break ; } case "postal code" : { postcode . insert ( 0 , component . getName ()); break ; } case "postal code suffix" : { postcode . append ( "-" ) . append ( component . getName ()); break ; } case "locality" : binding . autocompleteCity . setText ( component . getName ()); break ; case "administrative area level 1" : { binding . autocompleteState . setText ( component . getShortName ()); break ; } case "country" : binding . autocompleteCountry . setText ( component . getName ()); break ; } } } binding . autocompleteAddress1 . setText ( address1 . toString ()); binding . autocompletePostal . setText ( postcode . toString ()); // After filling the form with address components from the Autocomplete // prediction , set cursor focus on the second address line to encourage // entry of sub - premise information such as apartment , unit , or floor number . binding . autocompleteAddress2 . requestFocus (); // Add a map for visual confirmation of the address showMap ( place ); } private void showMap ( Place place ) { coordinates = place . getLocation (); // It isn 't possible to set a fragment' s id programmatically so we set a tag instead and // search for it using that . mapFragment = ( SupportMapFragment ) getSupportFragmentManager () . findFragmentByTag ( MAP FRAGMENT TAG ); // We only create a fragment if it doesn 't already exist. if ( mapFragment == null ) { mapPanel = (( ViewStub ) findViewById ( R . id . stub map )) . inflate (); GoogleMapOptions mapOptions = new GoogleMapOptions (); mapOptions . mapToolbarEnabled ( false ); // To programmatically add the map , we first create a SupportMapFragment . mapFragment = SupportMapFragment . newInstance ( mapOptions ); // Then we add it using a FragmentTransaction . getSupportFragmentManager () . beginTransaction () . add ( R . id . confirmation map , mapFragment , MAP FRAGMENT TAG ) . commit (); mapFragment . getMapAsync ( this ); } else { updateMap ( coordinates ); } } private void updateMap ( LatLng latLng ) { marker . setPosition ( latLng ); map . moveCamera ( CameraUpdateFactory . newLatLngZoom ( latLng , 15 f )); if ( mapPanel . getVisibility () == View .
+- See the License for the specific language governing permissions and limitations under the License . / package com . example . placesdemo ; import android.annotation.SuppressLint ; import android.app.Activity ; import android.content.Intent ; import android.content.pm.PackageManager ; import android.content.res.Resources ; import android.os.Bundle ; import android.util.Log ; import android.view.View ; import android.view.ViewStub ; import android.widget.Button ; import android.widget.CheckBox ; import android.widget.Toast ; import androidx.activity.result.ActivityResultLauncher ; import androidx.activity.result.contract.ActivityResultContracts ; import androidx.annotation.NonNull ; import androidx.annotation.Nullable ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.content.ContextCompat ; import com.example.placesdemo.databinding.AutocompleteAddressActivityBinding ; import com.google.android.gms.location.FusedLocationProviderClient ; import com.google.android.gms.location.LocationServices ; import com.google.android.gms.maps.CameraUpdateFactory ; import com.google.android.gms.maps.GoogleMap ; import com.google.android.gms.maps.GoogleMapOptions ; import com.google.android.gms.maps.OnMapReadyCallback ; import com.google.android.gms.maps.SupportMapFragment ; import com.google.android.gms.maps.model.LatLng ; import com.google.android.gms.maps.model.MapStyleOptions ; import com.google.android.gms.maps.model.Marker ; import com.google.android.gms.maps.model.MarkerOptions ; import com.google.android.libraries.places.api.Places ; import com.google.android.libraries.places.api.model.AddressComponent ; import com.google.android.libraries.places.api.model.AddressComponents ; import com.google.android.libraries.places.api.model.Place ; import com.google.android.libraries.places.api.model.PlaceTypes ; import com.google.android.libraries.places.api.net.PlacesClient ; import com.google.android.libraries.places.widget.Autocomplete ; import com.google.android.libraries.places.widget.model.AutocompleteActivityMode ; import java.util.Arrays ; import java.util.List ; import static android .
+- Adding SupportMapFragment (in this case, adding a fragment dynamically) Getting a handle to the fragment and registering the callback Styling and adding a marker to the map Disabling map controls Adding SupportMapFragment First, add a SupportMapFragment fragment to the layout XML file . <fragment android:name="com.google.android.gms.maps.SupportMapFragment" android:id="@+id/confirmation map" android:layout width="match parent" android:layout height="match parent"/> Then, programmatically add the fragment if it doesn't exist yet. private void showMap(Place place) { coordinates = place.getLocation(); // It isn't possible to set a fragment's id programmatically so we set a tag instead and // search for it using that. mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentByTag(MAP FRAGMENT TAG); // We only create a fragment if it doesn't already exist. if (mapFragment == null) { mapPanel = ((ViewStub) findViewById(R.id.stub map)).inflate(); GoogleMapOptions mapOptions = new GoogleMapOptions(); mapOptions.mapToolbarEnabled(false); // To programmatically add the map, we first create a SupportMapFragment. mapFragment = SupportMapFragment.newInstance(mapOptions); // Then we add it using a FragmentTransaction. getSupportFragmentManager() .beginTransaction() .add(R.id.confirmation map, mapFragment, MAP FRAGMENT TAG) .commit(); mapFragment.getMapAsync(this); } else { updateMap(coordinates); } } Getting a handle to the fragment and registering the callback To get a handle to the fragment, call the FragmentManager.findFragmentById method and pass it the resource ID of the fragment in your layout file.
+- EdgeToEdge . enable ( this ); super . onCreate ( savedInstanceState ); binding = AutocompleteAddressActivityBinding . inflate ( getLayoutInflater ()); setContentView ( binding . getRoot ()); // Retrieve a PlacesClient ( previously initialized - see MainActivity ) placesClient = Places . createClient ( this ); // Attach an Autocomplete intent to the Address 1 EditText field binding . autocompleteAddress1 . setOnClickListener ( startAutocompleteIntentListener ); // Update checkProximity when user checks the checkbox CheckBox checkProximityBox = findViewById ( R . id . checkbox proximity ); checkProximityBox . setOnCheckedChangeListener (( view , isChecked ) - > { // Set the boolean to match user preference for when the Submit button is clicked checkProximity = isChecked ; }); // Submit and optionally check proximity Button saveButton = findViewById ( R . id . autocomplete save button ); saveButton . setOnClickListener ( v - > saveForm ()); // Reset the form Button resetButton = findViewById ( R . id . autocomplete reset button ); resetButton . setOnClickListener ( v - > clearForm ()); } private void startAutocompleteIntent () { // Set the fields to specify which types of place data to // return after the user has made a selection .
 

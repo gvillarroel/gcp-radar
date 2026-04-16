@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.562Z"
+generated_at: "2026-04-12T12:07:33.814Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "Gemini Cloud Assist investigation in AlloyDB"
 feature_slug: "gemini-cloud-assist-investigation-in-alloydb"
 latest_feature_date: "2026-02-23"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+  - "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent"
 keywords:
   - "AI investigation assistant"
   - "Cloud Assist investigation"
@@ -24,7 +27,7 @@ keywords:
 # Gemini Cloud Assist investigation in AlloyDB
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,27 +35,46 @@ Gemini Cloud Assist investigation capabilities are now supported in AlloyDB to a
 
 ## Extended Definition
 
-Gemini Cloud Assist investigation in AlloyDB is an AI-powered assistance feature introduced in preview that adds investigation capabilities to AlloyDB. It is intended to help users monitor and troubleshoot AlloyDB resources, with the release note stating it supports troubleshooting-oriented use through Gemini assistance.
+Gemini Cloud Assist investigation capabilities are now supported in AlloyDB to assist with troubleshooting and query investigation.
 
 ## Evidence Summary
 
-The cited AlloyDB release notes entry dated February 23, 2026 announces the feature as supported in preview and describes it as Gemini-based assistance for monitoring and troubleshooting AlloyDB.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \_|\_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- Source ID: `site-docs-reference-2`
+- Final score: 88
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- February 23, 2026 Feature Gemini Cloud Assist investigation capabilities are now supported in AlloyDB ( Preview ).
-- You can use Gemini assistance to help you monitor and troubleshoot your AlloyDB resources.
-- For more information, see Monitor and troubleshoot with Gemini assistance .
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 86
+- Re-rank relevance: N/A
+
+### "Create and query an AlloyDB database using the Google Cloud console \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- Source ID: `site-docs-root`
+- Final score: 78
+- Re-rank relevance: N/A
+
+### "Integrate QueryData with an application \_|\_ AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
+- Source ID: `site-docs-root-2`
+- Final score: 78
+- Re-rank relevance: N/A
 

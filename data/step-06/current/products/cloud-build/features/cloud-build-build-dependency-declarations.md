@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.682Z"
+generated_at: "2026-04-15T00:42:40.818Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Cloud Build build dependency declarations"
 feature_slug: "cloud-build-build-dependency-declarations"
 latest_feature_date: "2025-04-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/build/docs/release-notes"
-  - "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build"
+  - "https://docs.cloud.google.com/docs/buildpacks/python"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/specifying-dependencies"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/overview"
 keywords:
-  - "build"
-  - "dependency"
   - "declarations"
-  - "now"
-  - "supports"
+  - "dependency"
   - "declaring"
   - "dependencies"
   - "directly"
+  - "supports"
 ---
 
 # Cloud Build build dependency declarations
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,48 +36,50 @@ Cloud Build now supports declaring build dependencies directly in the build conf
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/build/docs/release-notes](https://docs.cloud.google.com/build/docs/release-notes)
-- [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build)
+- [https://docs.cloud.google.com/docs/buildpacks/python](https://docs.cloud.google.com/docs/buildpacks/python)
+- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/specifying-dependencies](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/specifying-dependencies)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/overview)
 
 ## Supporting Pages
 
-### Cloud Build release notes \_|\_ Google Cloud Documentation
+### Build a Python application \_|\_ Buildpacks \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/build/docs/release-notes](https://docs.cloud.google.com/build/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 122
+- URL: [https://docs.cloud.google.com/docs/buildpacks/python](https://docs.cloud.google.com/docs/buildpacks/python)
+- Source ID: `site-docs-reference`
+- Final score: 99
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Supported buildpacks configurations Python buildpacks supports the following configurations: pip buildpack : Installs dependencies directly from pyproject.toml if it detects all the following conditions: A pyproject.toml file is present in the root directory and you don't configure high-precedence tools such as a poetry.lock file, a [tool.poetry] section, or a uv.lock file.
+- The following is an example pyproject.toml file: [project] name = "demo-app" version = "0.1.0" description = "" requires-python = ">=3.10" dependencies = [ "flask>=3.1.1" , "gunicorn>=23.0.0" , ] [build-system] requires = [ "setuptools>=61.0" ] build-backend = "setuptools.build meta" Package manager If you manage your dependencies using a requirements.txt file , the default package manager varies based on the Python version you configure.
+- Configure pip It is possible to configure the behavior of pip using environment variables : pack build sample-python --builder=gcr.io/buildpacks/builder \ --env PIP DEFAULT TIMEOUT='60' Private dependencies from Artifact Registry An Artifact Registry Python repository can host private dependencies for your Python function.
+- Example: pack build sample-python \ --builder gcr.io/buildpacks/builder --env "GOOGLE ENTRYPOINT='gunicorn --bind :$PORT main:app'" Environment Variables The Python buildpack supports the following environment variables to customize your container PIP <key> See pip documentation .
+
+### "Specifying dependencies \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/specifying-dependencies](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/specifying-dependencies)
+- Source ID: `site-docs-reference-2`
+- Final score: 81
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- March 30, 2026 Feature Cloud Build now supports uploading generic artifacts to generic repositories, and also downloading generic repositories as build dependencies.
-- May 05, 2022 Feature Cloud Build now supports a script field, which allows users to specify shell scripts to execute in a build step.
-- March 07, 2024 Feature Cloud Build repositories (2nd gen) now supports integration with Bitbucket Cloud and Bitbucket Data Center .
-- September 12, 2022 Change Cloud Build now supports Supply chain Levels for Software Artifacts (SLSA) level 3 assurance.
-
-### Class Build (3.35.0) \_|\_ Python client libraries \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.types.Build)
-- Source ID: `site-python-reference`
-- Final score: 106
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Contains information about the build when status=FAILURE. dependencies MutableSequence[ google.cloud.devtools.cloudbuild v1.types.Dependency ] Optional.
-- Version latest keyboard arrow down 3.35.0 (latest) 3.34.0 3.33.0 3.32.0 3.31.3 3.30.0 3.29.0 3.28.0 3.27.1 3.26.0 3.25.0 3.24.2 3.23.3 3.22.0 3.21.0 3.20.1 3.19.0 3.18.0 3.17.1 3.16.0 3.15.0 3.14.0 3.13.0 3.12.0 3.11.1 3.10.0 3.9.3 3.8.3 3.7.1 3.6.0 3.5.2 3.4.0 3.3.2 3.2.1 3.1.1 3.0.2 2.0.2 1.1.2 1.0.0 0.1.0 Build ( mapping = None , , ignore unknown fields = False , kwargs ) A build resource in the Cloud Build API.
-- Classes FailureInfo FailureInfo ( mapping = None , , ignore unknown fields = False , kwargs ) A fatal problem encountered during the execution of the build.
-- Warning Warning ( mapping = None , , ignore unknown fields = False , kwargs ) A non-fatal problem encountered during the execution of the build.
+- See https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM --> <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.28.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-storage</artifactId> </dependency> </dependencies> You can configure the Cloud Client Libraries for Java to handle authentication automatically .
+- Specify it in your pom.xml file's <dependencies> entry: <dependencies> <dependency> <groupId>javax.servlet</groupId> <artifactId>javax.servlet-api</artifactId> <version>3.1.0</version> <type>jar</type> <scope>provided</scope> </dependency> </dependencies> Note that frameworks such as SparkJava or Spring Boot won't require the servlet library.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Specifying dependencies Stay organized with collections Save and categorize content based on your preferences.
+- Declare and manage dependencies To manage dependencies using Maven, you need to specify the dependencies in the <dependencies> section inside the pom.xml file of your project.
 
 ### "google-cloud-build overview (3.90.0) \_|\_ Java client libraries \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/overview)
 - Source ID: `site-java-reference`
-- Final score: 100
-- Re-rank relevance: N/A
+- Final score: 78
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The example below demonstrates how you would import the BOM and include the google-cloud-build artifact. <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.79.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-build</artifactId> </dependency> </dependencies> Gradle BOMs are supported by default in Gradle 5.x or later.

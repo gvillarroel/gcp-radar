@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.428Z"
+generated_at: "2026-04-15T13:50:17.883Z"
 product_name: "Firestore"
 product_slug: "firestore"
 feature_name: "Firestore multiple databases"
 feature_slug: "firestore-multiple-databases"
 latest_feature_date: "2023-07-07"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html"
-  - "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
-  - "https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html"
+  - "https://docs.cloud.google.com/firestore/docs/pitr"
+  - "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields"
+  - "https://docs.cloud.google.com/firestore/native/docs/overview"
 keywords:
   - "firestore"
   - "multiple"
@@ -24,7 +24,7 @@ keywords:
 # Firestore multiple databases
 
 Product: Firestore
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -40,40 +40,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
-- [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html)
+- [https://docs.cloud.google.com/firestore/docs/pitr](https://docs.cloud.google.com/firestore/docs/pitr)
+- [https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields](https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields)
+- [https://docs.cloud.google.com/firestore/native/docs/overview](https://docs.cloud.google.com/firestore/native/docs/overview)
 
 ## Supporting Pages
 
-### google.cloud.firestore_v1.base_client — google-cloud-firestore documentation
+### "Query with range and inequality filters on multiple fields overview \_|\_\
 
-- URL: [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
-- Source ID: `site-python-reference`
-- Final score: 84
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- google.cloud.firestore v1.base client — google-cloud-firestore documentation Source URL: https://googleapis.dev/python/firestore/latest/ modules/google/cloud/firestore v1/base client.html [docs]class BaseClient(ClientWithProject): &quot;&quot;&quot;Client for interacting with Google Cloud Firestore API. .. note:: Since the Cloud Firestore API requires the gRPC transport, no ` http` argument is accepted by this class.
-- Args: project (Optional[str]): The project which the client acts on behalf of.
-
-### Class FirestoreAdminClient (2.22.0) | Python client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- Source ID: `site-python-reference`
-- Final score: 82
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields](https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields)
+- Source ID: `site-docs-reference`
+- Final score: 30
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Class FirestoreAdminClient (2.22.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore admin v1.services.firestore admin.client.FirestoreAdminClient Project, Database, Namespace, Collection, Collection Group, and Document are used as defined in the Google Cloud Firestore API.
+- Query with range and inequality filters on multiple fields overview Firestore supports using range and inequality filters on multiple fields in a single query.
+- You can have range and inequality conditions on multiple fields and simplify your application development by delegating implementation of post-filtering logic to Firestore.
+- Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- WhereLessThan ( "density" , 10000 ); Dart final citiesRef = FirebaseFirestore . instance . collection ( 'cities' ) final query = citiesRef . where ( "population" , isGreaterThan: 1000000 ) . where ( "density" , isLessThan: 10000 ); Indexing considerations Before you run your queries, read about queries and the Firestore data model .
 
-### google.cloud.firestore_v1.proto.query_pb2 — google-cloud-firestore documentation
+### "Point-in-time recovery (PITR) overview \_|\_ Firestore in Native mode \_\
 
-- URL: [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html)
-- Source ID: `site-python-reference`
-- Final score: 71
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/firestore/docs/pitr](https://docs.cloud.google.com/firestore/docs/pitr)
+- Source ID: `site-docs-reference`
+- Final score: 28
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- google.cloud.firestore v1.proto.query pb2 — google-cloud-firestore documentation Source URL: https://googleapis.dev/python/firestore/latest/ modules/google/cloud/firestore v1/proto/query pb2.html source: google/cloud/firestore v1/proto/query.proto &quot;&quot;&quot;Generated protocol buffer code.&quot;&quot;&quot; from google.protobuf import descriptor as descriptor from google.protobuf import message as message from google.protobuf import reflection as reflection from google.protobuf import symbol database ...
+- Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- You can read data for a timestamp based on when PITR was enabled: PITR enablement status Earliest PITR data available Disabled 1 hour before the time of read request enabled within 7 days 1 hour before PITR was enabled enabled more than 7 days ago 7 days before the time of read request Note: You can't start reading from 7 days in the past immediately after you enable PITR.
+- For example, if a document had multiple writes ranging from v1, v2, ... vk between 2023-05-30 09:00:00AM (exclusive) and 2023-05-30 09:01:00AM (inclusive) timestamp, a read request at timestamp 2023-05-30 09:01:00AM returns the vk version of the document.
+- Regardless of whether PITR is enabled or not, you can read (but not export) documents at any microsecond-granularity timestamp within the past hour, but not before the earliestVersionTime .
+
+### Firestore overview \_|\_ Firestore in Native mode \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/overview](https://docs.cloud.google.com/firestore/native/docs/overview)
+- Source ID: `site-docs-root-2`
+- Final score: 28
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Key capabilities Flexibility The Firestore in Native Mode data model supports flexible, hierarchical data structures.
+- The Firestore in Native Mode data model supports whatever data structure works best for your app.
+- Firestore keeps your data in sync across client apps through realtime listeners and offers offline support for mobile and web so you can build responsive apps that work regardless of network latency or Internet connectivity.
 

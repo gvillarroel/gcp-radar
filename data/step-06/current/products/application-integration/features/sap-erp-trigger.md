@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.468Z"
+generated_at: "2026-04-14T07:40:14.472Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "SAP ERP trigger"
 feature_slug: "sap-erp-trigger"
 latest_feature_date: "2024-07-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/known-issue"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger"
 keywords:
-  - "erp"
-  - "sap"
   - "generally"
   - "connector"
+  - "available"
   - "event"
   - "trigger"
-  - "is"
-  - "the"
 ---
 
 # SAP ERP trigger
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,55 @@ The SAP ERP connector event trigger is generally available for Application Integ
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/known-issue](https://docs.cloud.google.com/application-integration/docs/known-issue)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event](https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event)
+- [https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger](https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger)
+- [https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger](https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger)
+- [https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger](https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger)
 
 ## Supporting Pages
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### SAP ERP trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 11, 2024 Feature The following Connector Event triggers are generally available : SAP ERP trigger SAP Gateway trigger May 26, 2024 Feature The TIBCO EMS trigger is now available in preview .
-- November 21, 2023 Feature The following Connector Event triggers are available in preview : IBM MQ trigger Rabbit MQ trigger October 19, 2023 Announcement The maximum memory available for script evaluation in the Data Transformer Script task is 300 MB.
-- July 20, 2023 Feature Connector Event triggers ( Preview ) Application Integration introduces Connector Event triggers ; specialized triggers that let you invoke an integration based on the event subscriptions created in various business applications using Integration Connectors .
-- Issue Known issues Integration fails to publish when duplicate Connector Event triggers are configured Event subscription error when an integration containing Connector Event triggers is uploaded For more information, see Application Integration known issues .
-
-### Application Integration known issues \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/known-issue](https://docs.cloud.google.com/application-integration/docs/known-issue)
-- Source ID: `site-docs-root`
-- Final score: 130
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger](https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 201
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Event subscription error when an integration containing Connector Event triggers is uploaded Status OPEN Issue Upon uploading an integration JSON file containing Connector Event triggers, the event subscription status is in an Error state with the following error: "Subscription does not exist, you can recreate the subscription by re-configuring the trigger." Workaround To work around this issue, we recommend you to do the following steps: Go to the uploaded integration.
-- Integration fails to publish when duplicate Connector Event triggers are configured Status OPEN Issue When two or more Connector Event triggers are configured in the same integration, the integration fails to publish and throws the following error: " Failed to publish integration.
-- Please change trigger Id to make it unique." This issue is observed when the Connector Event triggers are configured with the same connection and event subscription type.
-- Workaround To work around this issue, we recommend that you delete the duplicate Connector Event trigger(s) in your integration.
+- Configure SAP ERP trigger using an existing connection The SAP ERP trigger is an Connector Event trigger , therefore you can only use a SAP ERP connection with event subscription enabled to configure the trigger.
+- To configure the SAP ERP trigger , you can either use an existing SAP ERP connection available in Integration Connectors, or create a new SAP ERP connection using the inline connection creation option.
+- SAP ERP trigger The SAP ERP trigger is a Connector Event trigger SAP ERP connector lets you perform insert, delete, update, and read operations on SAP ERP data.
+- Provide the following configuration details in the Connector Event Trigger Editor page: Region: Select the region of your SAP ERP connection.
 
-### "Invoke an integration for a Salesforce Change Data Capture (CDC) event \_\
+### Apache Kafka trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event](https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger](https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 144
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Click + Add new variable and create the following output variables: Output variable name Data type OpportunityIsClosed Boolean OpportunityId String PubSubMessage String Create the following mapping between the SalesforceTriggerCdcPayload variable and the Connector input payload variables as shown in the following table: Input Output SalesforceTriggerCdcPayload.GET PROPERTY("IsClosed").TO BOOLEAN() OpportunityIsClosed SalesforceTriggerCdcPayload.GET PROPERTY("Id").TO STRING() OpportunityId OpportunityId.TO DOUBLE() connectorInputPayload.ID(Insert row to Cloud SQL) SalesforceTriggerCdcPayload.GET PROPERTY("Name").TO STRING() connectorInputPayload.NAME(Insert row to Cloud SQL) SalesforceTriggerCdcSnapshot.GET PROPERTY("Amount").TO DOUBLE() connectorInputPayload.AMOUNT(Insert row to Cloud SQL) SalesforceTriggerCdcSnapshot.GET PROPERTY("CloseDate").TO STRING() connectorInputPayload.DT CLOSE(Insert row to Cloud SQL) OpportunityId.CONCAT(" is still open") PubSubMessage PubSubMessage connectorInputPayload.message(Publish to cloud pub/sub) Once your mapping is complete, close the pane.
-- Add an edge connection from the Data Mapping element to the Insert row to Cloud SQL Connector element with the following edge condition: $OpportunityIsClosed$ = TRUE Add another edge connection from the Data Mapping element to the Cloud Pub/Sub Connector element with the following edge condition: $OpportunityIsClosed$ = FALSE Test the integration To test the new integration: Click Test in the integration designer toolbar, and then select the Salesforce Trigger .
-- Configure a Connectors task with a Cloud SQL for MySQL connection Perform the following steps to configure a Connectors task to insert records into an existing Cloud SQL table using the Cloud SQL for MySQL connection : Select +Add a task/trigger > Tasks in the integration designer to display the list of available tasks.
-- Configure a Connectors task with a Cloud Pub/Sub connection Perform the following steps to configure a Connectors task to publish a Pub/Sub message using the Cloud Pub/Sub connection : Select +Add a task/trigger > Tasks in the integration designer to display the list of available tasks.
+- To configure the Apache Kafka trigger , you can either use an existing Apache Kafka connection available in Integration Connectors, or create a new Apache Kafka connection using the inline connection creation option.
+- The Apache Kafka trigger is a Connector Event trigger that lets you invoke an integration based on the Apache Kafka events that you've subscribed to in your Apache Kafka connection.
+- Note that the Apache Kafka trigger is an Connector Event trigger , therefore you can only use a Apache Kafka connection with event subscription enabled to configure the trigger.
+- Trigger output variable For each event, the Apache Kafka trigger generates a ConnectorEventPayload output variable (in JSON format) which you can use in your downstream tasks.
+
+### Azure AD trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger](https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger)
+- Source ID: `site-docs-root-2`
+- Final score: 136
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To configure the Azure AD trigger , you can either use an existing Azure AD connection available in Integration Connectors, or create a new Azure AD connection using the inline connection creation option.
+- Note that the Azure AD trigger is an Connector Event trigger , therefore you can only use an Azure AD connection with event subscription enabled to configure the trigger.
+- The Azure AD trigger is a Connector Event trigger that lets you invoke an integration based on the Azure AD events that you've subscribed to in your Azure AD connection.
+- Trigger output variable For each event, the Azure AD trigger generates a ConnectorEventPayload output variable which you can use in your downstream tasks.
 

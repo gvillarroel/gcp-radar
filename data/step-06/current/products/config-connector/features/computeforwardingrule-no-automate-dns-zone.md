@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.222Z"
+generated_at: "2026-04-13T14:23:05.067Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "ComputeForwardingRule no-automate DNS zone"
 feature_slug: "computeforwardingrule-no-automate-dns-zone"
 latest_feature_date: "2023-08-21"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources"
 keywords:
-  - "computeforwardingrule"
-  - "no"
   - "automate"
-  - "dns"
+  - "computeforwardingrule"
   - "zone"
-  - "config"
-  - "connector"
   - "supports"
 ---
 
 # ComputeForwardingRule no-automate DNS zone
 
 Product: Config Connector
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,41 +38,30 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources](https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources](https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources](https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources)
 
 ## Supporting Pages
 
-### EdgeContainerNodePool | Config Connector | Google Cloud Documentation
+### "Configure container resources and replicas \_|\_ Config Connector \_|\_\
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool)
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources](https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources)
 - Source ID: `site-docs-reference`
-- Final score: 113
+- Final score: 34
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- EdgeContainerNodePool Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/edgecontainer/edgecontainernodepool Documentation · Access and resource management · Config Connector · API and reference · Send feedback · Stay organized with collections Save and categorize content based on your preferences.
+### "Managing and deleting resources \_|\_ Config Connector \_|\_ Google Cloud\
 
-### StorageNotification | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification)
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources](https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources)
 - Source ID: `site-docs-reference`
-- Final score: 113
+- Final score: 30
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- StorageNotification Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification Documentation · Access and resource management · Config Connector · API and reference · Send feedback · Stay organized with collections Save and categorize content based on your preferences.
+### "Securing access to resources with IAM \_|\_ Config Connector \_|\_ Google\
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 108
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources](https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources)
+- Source ID: `site-docs-reference`
+- Final score: 30
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
 

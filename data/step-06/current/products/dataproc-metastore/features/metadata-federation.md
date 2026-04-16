@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:49:01.295Z"
+generated_at: "2026-04-12T12:14:00.716Z"
 product_name: "Dataproc Metastore"
 product_slug: "dataproc-metastore"
 feature_name: "Metadata federation"
 feature_slug: "metadata-federation"
 latest_feature_date: "2025-03-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataproc-metastore/docs/create-federation"
   - "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts"
 keywords:
   - "metadata"
   - "federation"
@@ -26,7 +27,7 @@ keywords:
 # Metadata federation
 
 Product: Dataproc Metastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Metadata federation provides a unified endpoint across multiple Dataproc Metasto
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataproc-metastore/docs/create-federation](https://docs.cloud.google.com/dataproc-metastore/docs/create-federation)
 - [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts](https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/create-federation](https://docs.cloud.google.com/dataproc-metastore/docs/create-federation)
 - Source ID: `site-iam-reference`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - A federation service lets you access metadata that is stored in multiple sources from a single gRPC endpoint.
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 170
+- Final score: 194
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient)
 - Source ID: `site-python-reference`
-- Final score: 170
+- Final score: 194
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +89,18 @@ Evidence snippets:
 - Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . federation path federation path ( project : str , location : str , federation : str ) - > str Returns a fully-qualified federation string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 def sample create federation(): Create a client client = metastore v1.
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 def sample delete federation(): Create a client client = metastore v1.
+
+### Dataproc Metastore core concepts \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts](https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts)
+- Source ID: `site-iam-reference`
+- Final score: 180
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- A Dataproc Metastore service provides clients access to the stored Hive Metastore metadata through one or more network endpoints.
+- Private Service Connect lets you set up a private connection to Dataproc Metastore metadata across VPC networks.
+- A feature that lets you access metadata that is stored in multiple Dataproc Metastore instances.
+- Dataproc Metastore provides URIs for these endpoints.
 

@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:44:02.769Z"
+generated_at: "2026-04-14T06:14:55.688Z"
 product_name: "App Engine flexible environment .NET"
 product_slug: "app-engine-flexible-environment-net"
 feature_name: "PHP 7 runtime for App Engine flexible environment"
 feature_slug: "php-7-runtime-for-app-engine-flexible-environment"
 latest_feature_date: "2017-03-09"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes"
 keywords:
-  - "PHP applications"
-  - "PHP 7 support"
-  - "PHP 7 runtime"
-  - "runtime: php"
-  - "PHP 7"
-  - "App Engine flexible environment runtime"
-  - "PHP7"
+  - "php"
+  - "runtime"
+  - "app"
+  - "engine"
+  - "flexible"
+  - "environment"
+  - "entered"
   - "beta"
 ---
 
 # PHP 7 runtime for App Engine flexible environment
 
 Product: App Engine flexible environment .NET
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ The PHP 7 runtime entered beta in the App Engine flexible environment.
 
 The PHP 7 runtime entered beta in the App Engine flexible environment.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
+- [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
+- [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "About Custom runtimes \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
+- Source ID: `site-docs-reference`
+- Final score: 79
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback About Custom runtimes Stay organized with collections Save and categorize content based on your preferences.
+- Use the following table to understand how a custom runtime compares to the existing set of App Engine runtimes: Feature Flexible runtime Custom runtime Dockerfile Default file supplied automatically by the SDK Hand-written by the developer Dockerfile modifications permitted Yes Yes Languages Python, Java, Node.js, Go, Ruby, PHP, .NET Any software that can service HTTP requests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- When you use a custom runtime, you must write your application code to handle certain flexible environment life-cycle and health checking requests.
+- Applications that use custom runtimes take advantage of all the various Google Cloud services by using the public REST APIs or client libraries, such as the App Engine Admin API and the Google Client Libraries .
+
+### "About Custom runtimes \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
+- Source ID: `site-docs-root`
+- Final score: 79
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback About Custom runtimes Stay organized with collections Save and categorize content based on your preferences.
+- Use the following table to understand how a custom runtime compares to the existing set of App Engine runtimes: Feature Flexible runtime Custom runtime Dockerfile Default file supplied automatically by the SDK Hand-written by the developer Dockerfile modifications permitted Yes Yes Languages Python, Java, Node.js, Go, Ruby, PHP, .NET Any software that can service HTTP requests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- When you use a custom runtime, you must write your application code to handle certain flexible environment life-cycle and health checking requests.
+- Applications that use custom runtimes take advantage of all the various Google Cloud services by using the public REST APIs or client libraries, such as the App Engine Admin API and the Google Client Libraries .
+
+### "About Custom runtimes \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes)
+- Source ID: `site-docs-root-2`
+- Final score: 69
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback About Custom runtimes Stay organized with collections Save and categorize content based on your preferences.
+- Use the following table to understand how a custom runtime compares to the existing set of App Engine runtimes: Feature Flexible runtime Custom runtime Dockerfile Default file supplied automatically by the SDK Hand-written by the developer Dockerfile modifications permitted Yes Yes Languages Python, Java, Node.js, Go, Ruby, PHP, .NET Any software that can service HTTP requests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- When you use a custom runtime, you must write your application code to handle certain flexible environment life-cycle and health checking requests.
+- Applications that use custom runtimes take advantage of all the various Google Cloud services by using the public REST APIs or client libraries, such as the App Engine Admin API and the Google Client Libraries .
 

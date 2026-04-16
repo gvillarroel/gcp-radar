@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:41.793Z"
+generated_at: "2026-04-12T12:07:41.758Z"
 product_name: "Apigee UI"
 product_slug: "apigee-ui"
 feature_name: "Apigee UI Overview page"
 feature_slug: "apigee-ui-overview-page"
 latest_feature_date: "2023-09-25"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
 keywords:
   - "feature discovery"
   - "onboarding card"
@@ -24,7 +27,7 @@ keywords:
 # Apigee UI Overview page
 
 Product: Apigee UI
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,27 +35,50 @@ Adds a new Apigee API Management Overview page in the Google Cloud console with 
 
 ## Extended Definition
 
-The Apigee UI Overview page is an Apigee API management page in the Google Cloud console that centralizes onboarding, runtime testing, and operational visibility actions for an Apigee organization. From this page, users can start onboarding for new users, test the Apigee runtime, view key resource usage metrics via the Proxy Usage and Environment Usage cards, and explore Apigee API management features.
+Adds a new Apigee API Management Overview page in the Google Cloud console with onboarding, runtime testing, key resource metrics, and feature discovery surfaces.
 
 ## Evidence Summary
 
-The cited Apigee UI Overview documentation page explicitly lists the Overview page capabilities, including onboarding, runtime testing, key resource usage metrics, and feature exploration for API management.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
 
 ## Supporting Pages
 
-### UI overview \_|\_ Apigee \_|\_ Google Cloud Documentation
+### View message data with the Debug view \_|\_ Apigee \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview)
-- Source ID: `site-docs-root`
-- Final score: 42
-- Re-rank relevance: STRONG
-- Re-rank rationale: This is the Apigee UI overview documentation page and it explicitly defines what users can do on the Apigee API Management Overview page.
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace)
+- Source ID: `site-docs-reference`
+- Final score: 108
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- Apigee API management From the Overview page, you can: Get started as a new Apigee user Test your Apigee runtime View key resource usage metrics Explore Apigee API management features Get started as a new Apigee user If you just are new to Apigee, you can begin your API management journey with quickstart learning options launched from the Overview page: Begin by deploying your first proxy : Watch a video tutorial that walks you through the steps required to create and deploy an API proxy.
-- View key resource usage metrics You can view key usage metrics for your organization at a glance using the Proxy Usage and Environment Usage cards on the Overview page.
+### "Manage users, roles, and permissions using the API \_|\_ Apigee \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles)
+- Source ID: `site-iam-reference`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Get started with Apigee and MCP \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart)
+- Source ID: `site-docs-reference`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Get started with the Apigee Extension Processor \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
+- Source ID: `site-docs-reference`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

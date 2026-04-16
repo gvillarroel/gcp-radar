@@ -1,5 +1,5 @@
 ---
-title: "Use open source a Python libraries \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+title: "Use open source Python libraries \_|\_ BigQuery \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration
 knowledge_key: corpus
 source_id: site-docs-reference
@@ -7,7 +7,7 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/bigquery/docs/reference
 source_metadata:
   url: https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration
-  title: "Use open source a Python libraries \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+  title: "Use open source Python libraries \_|\_ BigQuery \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
@@ -22,7 +22,7 @@ Guides
 Send feedback
 Stay organized with collections
 Save and categorize content based on your preferences.
-Use open source a Python libraries
+Use open source Python libraries
 You can choose from among three Python libraries in BigQuery,
 based on your use case.
 Use case
@@ -31,7 +31,7 @@ Description
 BigQuery DataFrames
 Python based data processing and ML operations with server-side processing (for example, using slots)
 Google
-Pandas and Scikit learn APIs implemented with server-side pushdown. For more information, see Introduction to BigQuery DataFrames .
+Pandas and scikit-learn APIs implemented with server-side pushdown. For more information, see Introduction to BigQuery DataFrames .
 pandas-gbq
 Python based data processing using client side data copy
 Open source library maintained by PyData and volunteer contributors
@@ -42,7 +42,7 @@ Open source library maintained by Google
 Python package that wraps all the BigQuery APIs. For more information, see the documentation and source code .
 Using pandas-gbq and google-cloud-bigquery
 The pandas-gbq library provides a simple interface for running queries and
-uploading pandas dataframes to BigQuery. It is a thin wrapper
+uploading pandas DataFrames to BigQuery. It is a thin wrapper
 around the BigQuery client library ,
 google-cloud-bigquery . Both of these libraries focus on helping you perform
 data analysis using SQL.
@@ -125,7 +125,7 @@ LIMIT 100
 query_config = bigquery . QueryJobConfig ( use_legacy_sql = True )
 df = client . query ( sql , job_config = query_config ) . to_dataframe ()
 Using the BigQuery Storage API to download large results
-Use the BigQuery Storage API to speed-up
+Use the BigQuery Storage API to speed up
 downloads of large results by 15 to 31
 times .
 pandas-gbq :
@@ -202,7 +202,7 @@ Type support
 Converts the DataFrame to CSV format before sending to the API, which does not support nested or array values.
 Converts the DataFrame to Parquet or CSV format before sending to the API, which supports nested and array values. Choose Parquet for struct and array values and CSV for date and time serialization flexibility. Parquet is the default choice. Note that pyarrow , which is the parquet engine used to send the DataFrame data to the BigQuery API, must be installed to load the DataFrame to a table.
 Load configurations
-You can optionally specify a table schema ).
+You can optionally specify a table schema .
 Use the LoadJobConfig class, which contains properties for the various API configuration options.
 pandas-gbq :
 import pandas
@@ -283,6 +283,6 @@ client._http._auth_request.session.mount ( "https://" ,adapter )
 query_job = client.query ( QUERY )
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-15 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-15 UTC."],[],[]]

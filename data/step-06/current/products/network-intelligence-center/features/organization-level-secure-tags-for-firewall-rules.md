@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:48.434Z"
+generated_at: "2026-04-12T12:18:03.480Z"
 product_name: "Network Intelligence Center"
 product_slug: "network-intelligence-center"
 feature_name: "Organization-level secure tags for firewall rules"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-06-30"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk"
 keywords:
   - "organization"
   - "level"
@@ -38,47 +39,66 @@ Connectivity Tests can analyze firewall configurations that use organization-lev
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/overview](https://docs.cloud.google.com/network-intelligence-center/docs/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk)
 
 ## Supporting Pages
 
-### Performance Dashboard overview | Network Intelligence Center - Performance Dashboard | Google Cloud Documentation
+### "Connectivity Tests overview \_|\_ Network Intelligence Center - Connectivity\
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview)
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview)
 - Source ID: `site-docs-root`
-- Final score: 60
+- Final score: 175
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Performance Dashboard overview Network Intelligence Center - Performance Dashboard Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview Performance Dashboard shows packet loss and latency metrics (in summary charts and heatmap views) for zones where you have Compute Engine virtual machine (VM) instances.
-- For example, your project has a Virtual Private Cloud (VPC) network with VMs in zones A and B.
-- It provides current data and metrics for the past six weeks.
+- Google Cloud networking features Live data plane analysis supports the following features: VPC networks VPC Network Peering Shared VPC VPC spokes and hybrid spokes in NCC Alias IP ranges External IP addresses Internal IP addresses , including privately used public IPv4 addresses Compute Engine instances with multiple network interfaces VPC routing Public NAT and Private NAT , except for NAT64 VPC firewall rules Hierarchical firewall policies , global network firewall policies , and regional network firewall policies Secure tags for firewalls , including when attached to Compute Engine instances with multiple network interfaces Policy-based routes Instances with IPv6 addresses , including instances with multiple network interfaces Unsupported configurations Live data plane analysis doesn't support and isn't executed for the following network configurations: Non-Google Cloud resources as source endpoints: Internet IP addresses Inbound traffic to Google Cloud through Cloud Interconnect , Cloud VPN , and NCC hybrid spokes Unassigned IP addresses in a VPC network as source endpoints Source and destination endpoints are the same Compute Engine instance Non-running Compute Engine instances GKE Pods Google API and services External and internal Application Load Balancer External and internal Proxy Network Load Balancer External passthrough Network Load Balancer Cloud VPN NAT64 Considerations and constraints Evaluate the following considerations when deciding whether to use Connectivity Tests.
+- Source endpoints Connectivity Tests configuration analysis supports the following source endpoints: Compute Engine instance Cloud Run revision Cloud Run functions (1st gen) App Engine standard environment Cloud SQL instance GKE control plane GKE Pod Internet IP address IP address from an on-premises network IP address of a Compute Engine instance IP address of a Cloud SQL instance IP address of a GKE control plane IP address of a GKE Pod Unassigned IP address in a Virtual Private Cloud network Destination endpoints Connectivity Tests configuration analysis supports the following destination endpoints: Compute Engine instance Cloud SQL instance GKE control plane GKE Pod External and internal Application Load Balancer External and internal Proxy Network Load Balancer External and internal Passthrough Network Load Balancer Private Service Connect endpoint Memorystore for Redis Cluster Memorystore for Redis instance Internet IP address IP address from an on-premises network IP address of a forwarding rule IP address of a Compute Engine instance IP address of a Cloud SQL instance IP address of a GKE control plane IP address of a GKE Pod IP address of a Memorystore for Redis Cluster IP address of a Memorystore for Redis instance Google Cloud networking features You can test connectivity between resources that use the following features (both IPv4 and IPv6 are supported whenever applicable): VPC networks VPC Network Peering Shared VPC Private Google Access Cloud Load Balancing Alias IP ranges Privately used public IPv4 addresses Compute Engine instances with multiple network interfaces VPC routing VPC firewall rules Regional network firewall policies Hierarchical firewall policies and global network firewall policies Resource Manager tags for firewalls , including when attached to Compute Engine instances with multiple network interfaces Policy-based routes Private Service Connect Instances with IPv6 addresses , including instances with multiple network interfaces VPC spokes and hybrid spokes for NCC Public NAT and Private NAT Cloud VPN Cloud Interconnect Cloud Router , including dynamic routes that use BGP and static routes Considerations for Cloud Load Balancing For Cloud Load Balancing, Connectivity Tests configuration analysis supports the following features: Testing connectivity to the load balancer IP addresses Verifying connectivity of Cloud Load Balancing health checks to backends Internal TCP/UDP load balancers can be used as next hops For Cloud Load Balancing features that are unsupported, see the Unsupported configurations section .
+- Connectivity Tests can't test Compute Engine instances configured to modify forwarding behavior Connectivity Tests can't test Compute Engine instances that have been configured to act in the data plane as routers, firewalls, NAT gateways, or VPNs.
+- Connectivity Tests doesn't perform firewall connection tracking Connection tracking for VPC firewalls stores information about new and established connections and enables allowing or restricting subsequent traffic based on that information.
 
-### Roles and permissions | Network Intelligence Center - Connectivity Tests | Google Cloud Documentation
+### "Firewall Insights overview \_|\_ Network Intelligence Center - Firewall\
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control)
-- Source ID: `site-iam-reference`
-- Final score: 48
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview)
+- Source ID: `site-docs-root`
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Roles and permissions Network Intelligence Center - Connectivity Tests Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control This page describes the Identity and Access Management (IAM) roles and permissions needed for running Connectivity Tests.
+- Note: For firewall rules in hierarchical firewall policies and global network firewall policies, insights are generated based on firewall logging data gathered only after February 27, 2023.
+- With these insights, you can perform the following tasks: Identify firewall misconfigurations for firewall rules containing IPv4 or IPv6 address ranges.
+- Note: For firewall rules containing IPv6 address ranges, insights are generated based on firewall logging data gathered only after June 17, 2022.
+- With Firewall Insights metrics, you can perform the following tasks: Verify that firewall rules are used in an intended way.
 
-### Method: projects.locations.global.connectivityTests.rerun | Network Intelligence Center | Google Cloud Documentation
+### Network Intelligence Center overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun)
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/overview](https://docs.cloud.google.com/network-intelligence-center/docs/overview)
 - Source ID: `site-docs-reference`
-- Final score: 47
+- Final score: 105
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Method: projects.locations.global.connectivityTests.rerun Network Intelligence Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun Documentation · Networking · Network Intelligence Center · Reference · Send feedback · HTTP request · Path parameters · Request body · Response body · Authorization scopes · Try it!
-- After the user triggers the rerun, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes.
-- Rerun an existing ConnectivityTest.
+- It provides insights about network topology, firewall rules, routes, configuration dependencies, and connectivity to services and applications.
+- For example, Firewall Insights identifies rules that it classifies as overly permissive.
+- To analyze network configurations, Connectivity Tests simulates the expected forwarding path of a packet through your Virtual Private Cloud (VPC) network, Cloud VPN tunnels, or VLAN attachments.
+- Connectivity Tests can also simulate the expected inbound forwarding path to resources in your VPC network.
+
+### "Using the gcloud CLI for Connectivity Tests \_|\_ Network Intelligence Center\
+
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk)
+- Source ID: `site-docs-reference`
+- Final score: 97
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Command Task gcloud network-management connectivity-tests list Lists Connectivity Tests for a project gcloud network-management connectivity-tests create Creates and runs a Connectivity Test gcloud network-management connectivity-tests rerun Reruns a Connectivity Test gcloud network-management connectivity-tests describe Lists test results for a running or completed Connectivity Test gcloud network-management connectivity-tests update Updates options for an existing Connectivity Test gcloud network-management connectivity-tests delete Deletes a Connectivity Test For command-line examples, see the following pages: Running Connectivity Tests Updating or deleting Connectivity Tests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Networking Network Intelligence Center Connectivity Tests Reference Send feedback Using the gcloud CLI for Connectivity Tests Stay organized with collections Save and categorize content based on your preferences. gcloud is a unified command-line tool that is part of the Google Cloud CLI .
+- When you run gcloud commands for Connectivity Tests, you perform operations on the ConnectivityTest resource that is part of the Network Management API.
+- You can use gcloud to run the following commands for Connectivity Tests.
 

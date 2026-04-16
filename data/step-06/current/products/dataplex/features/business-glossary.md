@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.611Z"
+generated_at: "2026-04-12T12:13:48.472Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Business glossary"
 feature_slug: "business-glossary"
 latest_feature_date: "2023-01-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceClient"
   - "https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service"
+  - "https://docs.cloud.google.com/dataplex/docs/manage-glossaries"
 keywords:
   - "business"
   - "glossary"
@@ -26,7 +27,7 @@ keywords:
 # Business glossary
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Business glossary manages business terminology and definitions for describing an
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceClient](https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceClient)
 - [https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service](https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service)
+- [https://docs.cloud.google.com/dataplex/docs/manage-glossaries](https://docs.cloud.google.com/dataplex/docs/manage-glossaries)
 
 ## Supporting Pages
 
@@ -52,8 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 188
-- Re-rank relevance: N/A
+- Final score: 238
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - CreateGlossaryRequest ( parent="parent value", glossary id="glossary id value", ) Make the request operation = client. create glossary (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataplex v1.types.CreateGlossaryRequest , dict]] The request object.
@@ -65,8 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceClient](https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service.BusinessGlossaryServiceClient)
 - Source ID: `site-python-reference`
-- Final score: 188
-- Re-rank relevance: N/A
+- Final score: 238
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - CreateGlossaryRequest ( parent="parent value", glossary id="glossary id value", ) Make the request operation = client. create glossary (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.dataplex v1.types.CreateGlossaryRequest , dict] The request object.
@@ -78,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service](https://docs.cloud.google.com/python/docs/reference/dataplex/latest/google.cloud.dataplex_v1.services.business_glossary_service)
 - Source ID: `site-python-reference`
-- Final score: 182
+- Final score: 224
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +90,18 @@ Evidence snippets:
 - The resources currently supported in Business Glossary are: Glossary GlossaryCategory GlossaryTerm BusinessGlossaryServiceClient BusinessGlossaryService provides APIs for managing business glossary resources for enterprise customers.
 - Home Documentation Developer tools Python Client libraries Send feedback Package business glossary service (2.16.0) Stay organized with collections Save and categorize content based on your preferences.
 - The resources currently supported in Business Glossary are: Glossary GlossaryCategory GlossaryTerm Modules pagers API documentation for dataplex v1.services.business glossary service.pagers module.
+
+### Manage a business glossary \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/manage-glossaries](https://docs.cloud.google.com/dataplex/docs/manage-glossaries)
+- Source ID: `site-docs-root`
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Knowledge Catalog business glossary use cases By creating a common language for data using Knowledge Catalog business glossary, you can achieve the following: Define a clear hierarchy of business categories and terms.
+- For example, you can create a related term to link the terms "revenue" and "profit." Limitations Knowledge Catalog business glossary isn't supported for Assured Workload projects.
+- Use a business glossary to establish a standardized vocabulary for your data assets, which reduces ambiguity and improves data discovery and governance across your organization.
+- On the Create business glossary page, specify a name and location for the business glossary.
 

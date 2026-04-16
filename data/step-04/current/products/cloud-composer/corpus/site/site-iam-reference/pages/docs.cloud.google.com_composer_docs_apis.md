@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/composer/docs/apis
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/composer/docs/composer-1/security-practices
+entrypoint: https://docs.cloud.google.com/composer/docs/composer-3/access-control
 source_metadata:
   url: https://docs.cloud.google.com/composer/docs/apis
   title: "APIs & reference \_|\_ Cloud Composer \_|\_ Google Cloud Documentation"

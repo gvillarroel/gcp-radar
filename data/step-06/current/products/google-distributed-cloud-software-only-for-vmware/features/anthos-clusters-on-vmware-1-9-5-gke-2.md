@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:32.704Z"
+generated_at: "2026-04-14T16:48:38.169Z"
 product_name: "Google Distributed Cloud (software only) for VMware"
 product_slug: "google-distributed-cloud-software-only-for-vmware"
 feature_name: "Anthos clusters on VMware 1.9.5-gke.2"
 feature_slug: "anthos-clusters-on-vmware-1-9-5-gke-2"
 latest_feature_date: "2022-03-24"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/user-guide-for-windows-server-os-node-pools"
 keywords:
   - "anthos"
   - "clusters"
-  - "on"
   - "vmware"
   - "gke"
   - "maintenance"
   - "release"
-  - "of"
+  - "runs"
+  - "kubernetes"
 ---
 
 # Anthos clusters on VMware 1.9.5-gke.2
 
 Product: Google Distributed Cloud (software only) for VMware
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,13 +34,56 @@ A maintenance release of Anthos clusters on VMware that runs on Kubernetes 1.21.
 
 ## Extended Definition
 
-A maintenance release of Anthos clusters on VMware that runs on Kubernetes 1.21.5-gke.1200.
+Anthos clusters on VMware 1.9.5-gke.2 is a maintenance-release stream for Anthos clusters on VMware. The available documentation indicates maintenance and security updates are handled via Anthos patch releases, and for Windows node pools urgent security patching can be applied by creating a new VM template and rolling updated pools. It also states that Anthos clusters on VMware do not support the EventRateLimit admission controller because that feature is still Kubernetes alpha.
+
+## Evidence Summary
+
+The CIS benchmarks page provides support/compatibility details for specific Kubernetes security controls in Anthos on VMware, and the Windows node-pool guide provides the documented patch and update approach (including rolling updates and VM-template replacement).
 
 ## Source Links
 
-No supporting official source links were selected.
+- [https://cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks](https://cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/user-guide-for-windows-server-os-node-pools](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/user-guide-for-windows-server-os-node-pools)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "CIS Kubernetes Benchmark \_|\_ Google Distributed Cloud (software only)\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks)
+- Source ID: `site-docs-reference-2`
+- Final score: 167
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- 1.2.3 Ensure that the -- DenyServiceExternalIPs is set (Manual) L1 Warn 1.2.9 Ensure that the admission control plugin EventRateLimit is set (Manual) L1 Warn not set Anthos clusters on VMware does not support the Event Rate Limit admission controller as it is a Kubernetes Alpha feature.
+- 4.1.9 If the kubelet config . yaml configuration file is being used validate permissions set to 600 or more restrictive (Manual) L1 Warn not set Anthos clusters on VMware does not support the Event Rate Limit admission controller as it is a Kubernetes Alpha feature.
+- 4.1.9 If the kubelet config . yaml configuration file is being used validate permissions set to 600 or more restrictive (Manual) L1 Warn not set Anthos clusters on VMware does not support the Event Rate Limit admission controller as it is a Kubernetes Alpha feature.
+- 4.1.9 If the kubelet config . yaml configuration file is being used validate permissions set to 600 or more restrictive (Manual) L1 Warn not set Anthos clusters on VMware does not support the Event Rate Limit admission controller as it is a Kubernetes Alpha feature.
+
+### "CIS Kubernetes Benchmark \_|\_ Google Distributed Cloud (software only)\
+
+- URL: [https://cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks](https://cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/cis-benchmarks)
+- Source ID: `site-docs-reference-3`
+- Final score: 167
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- 1.2.3 Ensure that the -- DenyServiceExternalIPs is set (Manual) L1 Warn 1.2.9 Ensure that the admission control plugin EventRateLimit is set (Manual) L1 Warn not set Anthos clusters on VMware does not support the Event Rate Limit admission controller as it is a Kubernetes Alpha feature.
+- 4.1.9 If the kubelet config . yaml configuration file is being used validate permissions set to 600 or more restrictive (Manual) L1 Warn not set Anthos clusters on VMware does not support the Event Rate Limit admission controller as it is a Kubernetes Alpha feature.
+- 4.1.9 If the kubelet config . yaml configuration file is being used validate permissions set to 600 or more restrictive (Manual) L1 Warn not set Anthos clusters on VMware does not support the Event Rate Limit admission controller as it is a Kubernetes Alpha feature.
+- 4.1.9 If the kubelet config . yaml configuration file is being used validate permissions set to 600 or more restrictive (Manual) L1 Warn not set Anthos clusters on VMware does not support the Event Rate Limit admission controller as it is a Kubernetes Alpha feature.
+
+### "User guide for Windows Server OS node pools \_|\_ Google Distributed Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/user-guide-for-windows-server-os-node-pools](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/user-guide-for-windows-server-os-node-pools)
+- Source ID: `site-docs-reference`
+- Final score: 147
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Update the Windows node pools to use the new template by running: gkectl update cluster --kubeconfig ADMIN CLUSTER KUBECONFIG --config USER CLUSTER CONFIG If the new version requires changes from Anthos's side, you must wait for the next monthly Anthos patch release and upgrade the clusters .
+- Security patch process Besides the regular patch releases for the supported Anthos versions, the Anthos team also continuously qualifies newer Windows patch updates during non-release time periods, and publishes the results for your reference.
+- If an urgent security patch update is needed between Anthos patch releases, you can build a new VM template using the latest version, and then perform a rolling update for the existing Windows node pools to use the new template.
+- Make sure you are using the latest qualified patch version for Windows Server 2019, check our release notes to find out the latest qualified Windows OS image version for a given Anthos release version.
 

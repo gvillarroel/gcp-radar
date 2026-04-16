@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:09:51.617Z"
+generated_at: "2026-04-14T07:28:23.685Z"
 product_name: "Application Design Center"
 product_slug: "application-design-center"
 feature_name: "Cloud Load Balancing component support"
@@ -9,18 +9,15 @@ latest_feature_date: "2025-03-28"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud"
-  - "https://docs.cloud.google.com/application-design-center/docs/design-application-templates"
-  - "https://docs.cloud.google.com/application-design-center/docs/audit-logging"
+  - "https://docs.cloud.google.com/application-design-center/docs/quotas"
+  - "https://docs.cloud.google.com/application-design-center/docs/overview"
+  - "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
 keywords:
   - "balancing"
   - "including"
   - "load"
-  - "application"
   - "component"
   - "supports"
-  - "design"
-  - "center"
 ---
 
 # Cloud Load Balancing component support
@@ -38,54 +35,53 @@ Application Design Center supports Cloud Load Balancing, including global and re
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud](https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud)
-- [https://docs.cloud.google.com/application-design-center/docs/design-application-templates](https://docs.cloud.google.com/application-design-center/docs/design-application-templates)
-- [https://docs.cloud.google.com/application-design-center/docs/audit-logging](https://docs.cloud.google.com/application-design-center/docs/audit-logging)
+- [https://docs.cloud.google.com/application-design-center/docs/quotas](https://docs.cloud.google.com/application-design-center/docs/quotas)
+- [https://docs.cloud.google.com/application-design-center/docs/overview](https://docs.cloud.google.com/application-design-center/docs/overview)
+- [https://docs.cloud.google.com/iam/docs/federated-identity-supported-services](https://docs.cloud.google.com/iam/docs/federated-identity-supported-services)
 
 ## Supporting Pages
 
-### "Application-centric Google Cloud \_|\_ Application Design Center \_|\_ Google\
+### "Quotas and system limits \_|\_ Application Design Center \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud](https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud)
-- Source ID: `site-iam-reference`
-- Final score: 218
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- An application acts as a logical grouping of components, including services and workloads, which collectively provide a specific business functionality.
-- Data handling in resource organization The management project stores not just high-level application attributes but the entire application model, including the following: App Hub data : The complete logical model of your applications, including the definitions of and relationships between applications, services, and workloads.
-- Application insights: Use Cloud Hub to get a centralized view of operational data and insights for your applications and their components, including alerts, incidents, and maintenance activities, to manage your applications proactively.
-- Whether you use Application Design Center to build a new application or App Hub to organize your existing resources, the result is a defined application that is cataloged in App Hub and serves as the basis for unified operations.
-
-### "Design application templates \_|\_ Application Design Center \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/application-design-center/docs/design-application-templates](https://docs.cloud.google.com/application-design-center/docs/design-application-templates)
+- URL: [https://docs.cloud.google.com/application-design-center/docs/quotas](https://docs.cloud.google.com/application-design-center/docs/quotas)
 - Source ID: `site-docs-root`
-- Final score: 218
+- Final score: 28
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For example, you might create the following file for a Cloud Run component: [ { "key" : "service name" , "value" : "frontend-service" }, { "key" : "project id" , "value" : " DEPLOYMENT PROJECT " } ] Update each component in the application template to configure the required parameters. gcloud design-center spaces application-templates components update COMPONENT \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --parameters = PARAMETERS FILE PATH 1 \ --application-template = APPLICATION TEMPLATE Replace the following: COMPONENT : The component ID for the component that you want to update.
-- Create a connection between the two components. gcloud design-center spaces application-templates components connections create CONNECTION \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --application-template = APPLICATION TEMPLATE \ --component = COMPONENT \ --destination-component-uri = COMPONENT 2 Replace the following: CONNECTION : The connection ID for the connection that you want to add to the template.
-- Add a second component to your template. gcloud design-center spaces application-templates components create COMPONENT 2 \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --application-template = APPLICATION TEMPLATE \ --shared-template-revision-uri = SHARED TEMPLATE URI 2 Replace the following: COMPONENT 2 : The component ID for the second component that you want to add to the template.
-- Edit component connection parameters. gcloud design-center spaces application-templates components connections update CONNECTION \ --component = COMPONENT \ --application-template = APPLICATION TEMPLATE \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --source-component-parameters = '[{"key": SOURCE KEY , "value": SOURCE VALUE }]' Replace the following: CONNECTION : The connection ID.
+- Quotas apply to a range of resource types, including hardware, software, and network components.
+- For example, quotas can restrict the number of API calls to a service, the number of load balancers used concurrently by your project, or the number of projects that you can create.
+- Quotas protect the community of Google Cloud users by preventing the overloading of services.
 
-### "App Design Center audit logging \_|\_ Application Design Center \_|\_ Google\
+### Application Design Center overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-design-center/docs/audit-logging](https://docs.cloud.google.com/application-design-center/docs/audit-logging)
-- Source ID: `site-iam-reference`
-- Final score: 206
+- URL: [https://docs.cloud.google.com/application-design-center/docs/overview](https://docs.cloud.google.com/application-design-center/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 26
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Filter for this method : protoPayload.methodName="google.cloud.designcenter.v1alpha.DesignCenter.DeleteApplicationTemplate" DeleteCatalogTemplate Method : google.cloud.designcenter.v1alpha.DesignCenter.DeleteCatalogTemplate Audit log type : Admin activity Permissions : designcenter.catalogTemplates.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.designcenter.v1alpha.DesignCenter.DeleteCatalogTemplate" DeleteComponent Method : google.cloud.designcenter.v1alpha.DesignCenter.DeleteComponent Audit log type : Admin activity Permissions : designcenter.components.delete - ADMIN WRITE Method is a long-running or streaming operation : No.
-- Filter for this method : protoPayload.methodName="google.cloud.designcenter.v1alpha.DesignCenter.UpdateApplication" UpdateComponent Method : google.cloud.designcenter.v1alpha.DesignCenter.UpdateComponent Audit log type : Admin activity Permissions : designcenter.components.update - ADMIN WRITE Method is a long-running or streaming operation : No.
-- Permission type Methods ADMIN READ google.cloud.designcenter.v1alpha.DesignCenter.DeployApplication (LRO) google.cloud.designcenter.v1alpha.DesignCenter.GenerateApplicationIaC google.cloud.designcenter.v1alpha.DesignCenter.GenerateApplicationTemplateIaC google.cloud.designcenter.v1alpha.DesignCenter.GetApplication google.cloud.designcenter.v1alpha.DesignCenter.GetApplicationTemplate google.cloud.designcenter.v1alpha.DesignCenter.GetApplicationTemplateRevision google.cloud.designcenter.v1alpha.DesignCenter.GetCatalog google.cloud.designcenter.v1alpha.DesignCenter.GetCatalogTemplate google.cloud.designcenter.v1alpha.DesignCenter.GetCatalogTemplateRevision google.cloud.designcenter.v1alpha.DesignCenter.GetSpace google.cloud.designcenter.v1alpha.DesignCenter.ListApplicationTemplates google.cloud.designcenter.v1alpha.DesignCenter.ListApplications google.cloud.designcenter.v1alpha.DesignCenter.ListCatalogs google.cloud.designcenter.v1alpha.DesignCenter.PreviewApplication (LRO) ADMIN WRITE google.cloud.designcenter.v1alpha.DesignCenter.CommitApplicationTemplate google.cloud.designcenter.v1alpha.DesignCenter.CreateApplication google.cloud.designcenter.v1alpha.DesignCenter.CreateApplicationTemplate google.cloud.designcenter.v1alpha.DesignCenter.CreateCatalogTemplate google.cloud.designcenter.v1alpha.DesignCenter.CreateCatalogTemplateRevision (LRO) google.cloud.designcenter.v1alpha.DesignCenter.CreateComponent google.cloud.designcenter.v1alpha.DesignCenter.CreateConnection google.cloud.designcenter.v1alpha.DesignCenter.DeleteApplication (LRO) google.cloud.designcenter.v1alpha.DesignCenter.DeleteApplicationTemplate google.cloud.designcenter.v1alpha.DesignCenter.DeleteCatalogTemplate (LRO) google.cloud.designcenter.v1alpha.DesignCenter.DeleteComponent google.cloud.designcenter.v1alpha.DesignCenter.DeleteConnection google.cloud.designcenter.v1alpha.DesignCenter.ImportApplicationTemplate google.cloud.designcenter.v1alpha.DesignCenter.UpdateApplication google.cloud.designcenter.v1alpha.DesignCenter.UpdateComponent API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Design Center. google.cloud.designcenter.v1alpha.DesignCenter The following audit logs are associated with methods belonging to google.cloud.designcenter.v1alpha.DesignCenter .
-- The following methods don't produce audit logs: google.cloud.designcenter.v1alpha.DesignCenter.CreateCatalog google.cloud.designcenter.v1alpha.DesignCenter.CreateSpace google.cloud.designcenter.v1alpha.DesignCenter.DeleteCatalog google.cloud.designcenter.v1alpha.DesignCenter.DeleteCatalogTemplateRevision google.cloud.designcenter.v1alpha.DesignCenter.DeleteShare google.cloud.designcenter.v1alpha.DesignCenter.DeleteSpace google.cloud.designcenter.v1alpha.DesignCenter.GetComponent google.cloud.designcenter.v1alpha.DesignCenter.GetConnection google.cloud.designcenter.v1alpha.DesignCenter.GetShare google.cloud.designcenter.v1alpha.DesignCenter.GetSharedTemplate google.cloud.designcenter.v1alpha.DesignCenter.ListApplicationTemplateRevisions google.cloud.designcenter.v1alpha.DesignCenter.ListCatalogTemplateRevisions google.cloud.designcenter.v1alpha.DesignCenter.ListCatalogTemplates google.cloud.designcenter.v1alpha.DesignCenter.ListComponents google.cloud.designcenter.v1alpha.DesignCenter.ListConnections google.cloud.designcenter.v1alpha.DesignCenter.ListSharedTemplates google.cloud.designcenter.v1alpha.DesignCenter.ListShares google.cloud.designcenter.v1alpha.DesignCenter.ListSpaces google.cloud.designcenter.v1alpha.DesignCenter.SyncShare google.cloud.designcenter.v1alpha.DesignCenter.UpdateApplicationTemplate google.cloud.designcenter.v1alpha.DesignCenter.UpdateCatalog google.cloud.designcenter.v1alpha.DesignCenter.UpdateCatalogTemplate google.cloud.designcenter.v1alpha.DesignCenter.UpdateConnection google.cloud.designcenter.v1alpha.DesignCenter.UpdateSpace google.cloud.designcenter.v1alpha.DesignCenterInternal.ImportSerializedApplicationTemplate google.longrunning.Operations.WaitOperation Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- You can select from the following types of components: Google components : components designed by Google that incorporate Google Cloud best practices and default security configurations.
+- Components can include: Assets : supporting resources that help you control other resources, such as service accounts or secrets.
+- By using these components, you ensure that every part of your application follows security and performance standards.
+- Services : network or API interfaces, such as load balancers or databases, that expose functionality to your clients.
+
+### "Identity federation: products and limitations \_|\_ Identity and Access\
+
+- URL: [https://docs.cloud.google.com/iam/docs/federated-identity-supported-services](https://docs.cloud.google.com/iam/docs/federated-identity-supported-services)
+- Source ID: `site-iam-reference`
+- Final score: 25
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Other: No known limitations Cloud Domains GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Endpoints Unsupported Alternatives: No alternatives available Cloud Fleet Routing GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Healthcare API GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud HSM GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Intrusion Detection System GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Key Management Service GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Load Balancing GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Logging GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Mobile App Unsupported Alternatives: No alternatives available Cloud Monitoring GA Console (federated): No known limitations Google Cloud API: No known limitations Other: The legacy Cloud Monitoring agent doesn't support sending metrics with identity federation.
+- VPC Service Controls supports only specific Workforce Identity Federation and Workload Identity Federation principal identifiers .
+- Google Cloud API: No known limitations Other: The following features don't support Workforce Identity Federation with BigQuery: Connected Sheets Google Drive Recommendations Slot estimator The following operations don't support Workforce Identity Federation: Loading data from Amazon S3 , Apache Spark , or Azure Blob Storage through the Connection API Loading data from Google Drive Bigtable GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Binary Authorization GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Blockchain Analytics GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Blockchain Node Engine GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Carbon Footprint GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Certificate Authority Service GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Certificate Manager GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Channel Services GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Asset Inventory GA Console (federated): In the IAM policy tab, the Analyze Full Access button is unavailable for Workforce Identity Federation users.
+- Other: No known limitations Cloud Trace GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Translation GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Vision API GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Workstations GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cluster Director GA Console (federated): Cluster Director doesn't support Workload Identity Federation in the console (federated).
 

@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.864Z"
+generated_at: "2026-04-12T12:12:45.965Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "Requester Pays"
 feature_slug: "requester-pays"
 latest_feature_date: "2017-11-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
-  - "https://docs.cloud.google.com/storage/docs/release-notes"
+  - "https://docs.cloud.google.com/storage/docs/access-control/iam-gsutil"
+  - "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file"
   - "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
 keywords:
   - "requester"
@@ -26,7 +27,7 @@ keywords:
 # Requester Pays
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Requester Pays requires requests to a bucket to specify a billing project for ch
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket)
-- [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
+- [https://docs.cloud.google.com/storage/docs/access-control/iam-gsutil](https://docs.cloud.google.com/storage/docs/access-control/iam-gsutil)
+- [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file)
 - [https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud](https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket)
 - Source ID: `site-python-reference`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 246
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - See https://cloud.google.com/storage/docs/json api/v1/buckets Returns Type Description int or NoneType The project number that owns the bucket or None if the bucket's resource has not been loaded from the server. requester pays Does the requester pay for API requests for this bucket?
@@ -62,24 +64,38 @@ Evidence snippets:
 - Returns Type Description bool True if requester pays for API requests for the bucket, else False. retention period Retrieve or set the retention period for items in the bucket.
 - See https://cloud.google.com/storage/docs/requester-pays#requirements for details. versioning enabled Is versioning enabled for this bucket?
 
-### Cloud Storage release notes \_|\_ Google Cloud Documentation
+### "IAM permissions for gsutil commands \_|\_ Cloud Storage \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 172
+- URL: [https://docs.cloud.google.com/storage/docs/access-control/iam-gsutil](https://docs.cloud.google.com/storage/docs/access-control/iam-gsutil)
+- Source ID: `site-docs-reference`
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- On this page, you can also find information about the following: Using additional commands that only apply to buckets with uniform bucket-level access disabled Using wildcards and recursive flags Using the -u flag to specify projects for billing Using the -m flag to run operations in parallel Command Sub-command Required IAM Permissions autoclass get storage.buckets.get autoclass set storage.buckets.update cat storage.objects.get compose storage.objects.get storage.objects.create storage.objects.delete 1 config None cors get storage.buckets.get cors set storage.buckets.update cp storage.objects.list 2 (for the destination bucket) storage.objects.get (for the source objects) storage.objects.create (for the destination bucket) storage.objects.delete 3 (for the destination bucket) defstorageclass get storage.buckets.get defstorageclass set storage.buckets.update du storage.objects.get hash storage.objects.get help None hmacKeys create storage.hmacKeys.create hmacKeys delete storage.hmacKeys.delete hmacKeys get storage.hmacKeys.get hmacKeys list storage.hmacKeys.list hmacKeys update storage.hmacKeys.update iam get storage.buckets.get storage.buckets.getIamPolicy iam set or ch storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update kms authorize resourceManager.projects.get iam.serviceAccounts.create 4 cloudkms.cryptoKeys.setIamPolicy (for the Cloud KMS key being authorized) kms encryption storage.buckets.get kms encryption -d storage.buckets.get storage.buckets.update kms encryption -k storage.buckets.get storage.buckets.update resourceManager.projects.get 5 cloudkms.cryptoKeys.setIamPolicy 5 kms serviceaccount resourceManager.projects.get label get storage.buckets.get label set/ch storage.buckets.update lifecycle get storage.buckets.get lifecycle set/ch storage.buckets.update logging get storage.buckets.get logging set storage.buckets.update ls (listing buckets) storage.buckets.list storage.buckets.getIamPolicy 6 ls (listing objects) storage.objects.list storage.objects.getIamPolicy 7 ls -b storage.buckets.get storage.buckets.getIamPolicy 6 mb storage.buckets.create mv storage.objects.list 2 (for the destination bucket) storage.objects.get (for the source objects) storage.objects.create (for the destination bucket) storage.objects.delete (for the source bucket) storage.objects.delete 3 (for the destination bucket) notification create storage.buckets.update pubsub.topics.get (for the project containing the Pub/Sub topic) pubsub.topics.create 8 (for the project containing the Pub/Sub topic) pubsub.topics.getIamPolicy (for Pub/Sub topic receiving notifications) pubsub.topics.setIamPolicy 8 (for Pub/Sub topic receiving notifications) notification create -s storage.buckets.update notification delete storage.buckets.get storage.buckets.update notification list storage.buckets.get pap get storage.buckets.get pap set storage.buckets.get storage.buckets.update storage.buckets.setIamPolicy 10 perfdiag storage.buckets.get storage.objects.create storage.objects.delete storage.objects.list storage.objects.get rb storage.buckets.delete requesterpays get storage.buckets.get requesterpays set on storage.buckets.update requesterpays set off storage.buckets.update resourcemanager.projects.createBillingAssignment 9 retention clear , event-default , lock , or set storage.buckets.update retention event or temp storage.objects.get storage.objects.list storage.objects.update retention get storage.buckets.get rewrite -k storage.objects.list storage.objects.get storage.objects.create storage.objects.delete rewrite -s storage.objects.list storage.objects.get storage.objects.create storage.objects.delete storage.objects.update rm storage.objects.delete rm -a storage.objects.delete storage.objects.list rm -r (deleting a bucket) storage.buckets.delete storage.objects.delete storage.objects.list rpo get storage.buckets.get rpo set storage.buckets.get storage.buckets.update rsync storage.objects.get (for the source objects and destination bucket) storage.objects.create (for the destination bucket) storage.objects.delete 11 (for the destination bucket) storage.objects.list (for the source and destination buckets) rsync -n storage.objects.list (for the source and destination buckets) setmeta storage.objects.get storage.objects.list storage.objects.update signurl None; however, the service account whose key is used as part of this command must have permission to perform the request being encoded into the signed URL. stat storage.objects.get test None ubla set storage.buckets.get storage.buckets.update ubla get storage.buckets.get update None version None versioning get storage.buckets.get versioning set storage.buckets.update web get storage.buckets.get web set storage.buckets.update 1 This permission is only required if the composed object has the same name as an object that already exists in the bucket.
+- For example, gsutil notification create requires only storage.buckets.update to use, but you must have additional permissions for the feature to work properly.
+- The -u flag is used, for example, when accessing a bucket with Requester Pays enabled.
+- Command Subcommand Resource Acted On Required IAM Permissions acl get Buckets storage.buckets.get storage.buckets.getIamPolicy acl set or ch Buckets storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update acl get Objects storage.objects.get storage.objects.getIamPolicy acl set or ch Objects storage.objects.get storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update cp -a or cp -p Objects storage.objects.list a (for the destination bucket) storage.objects.get (for the source objects) storage.objects.create (for the destination bucket) storage.objects.delete b (for the destination bucket) storage.objects.getIamPolicy (for the source objects) storage.objects.setIamPolicy (for the destination bucket) defacl get Buckets storage.buckets.get storage.buckets.getIamPolicy defacl set or ch Buckets storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update iam get Objects storage.objects.get storage.objects.getIamPolicy iam set or ch Objects storage.objects.get storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update mv -a or mv -p Objects storage.objects.list a (for the destination bucket) storage.objects.get (for the source objects) storage.objects.create (for the destination bucket) storage.objects.delete (for the source bucket) storage.objects.delete b (for the destination bucket) storage.objects.getIamPolicy (for the source objects) storage.objects.setIamPolicy (for the destination bucket) rsync -a or rsync -p Objects storage.objects.get (for the source objects and destination bucket) storage.objects.create (for the destination bucket) storage.objects.delete c (for the destination bucket) storage.objects.list (for the source and destination buckets) storage.objects.getIamPolicy (for the source objects) storage.objects.setIamPolicy (for the destination bucket) a This permission is only required when the destination in the command contains an object path. b This permission is only required if you use parallel composite uploads or if you don't use the -n flag but insert an object that has the same name as an object that already exists in the bucket. c This permission is only required if you use the -d flag or if you insert an object that has the same name as, but different data than, an object that already exists in the bucket.
+
+### Cloud Storage FUSE configuration file \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file)
+- Source ID: `site-docs-reference`
+- Final score: 208
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Callers can specify a billing project on requests to buckets both with and without Requester Pays enabled.
-- September 18, 2017 Issue Bucket metadata PATCH requests to the JSON API require the storage.buckets.setIamPolicy permission if the requester has storage.buckets.getIamPolicy permission.
-- March 17, 2025 Libraries Go 1.51.0 (2025-03-12) Features storage/append: Support appends in w1r3. ( #11483 ) ( 48bb391 ) storage: Benchmark with experimental MRD. ( #11501 ) ( 7b49152 ) storage: Implement RetryChunkDeadline for grpc writes ( #11476 ) ( 03575d7 ) storage: Specify benchmark integrity check. ( #11465 ) ( da18845 ) storage: Use ReadHandle for faster re-connect ( #11510 ) ( cac52f7 ) storage: Wrap NotFound errors for buckets and objects ( #11519 ) ( 0dd7d3d ) Bug Fixes storage/append: Report progress for appends. ( #11503 ) ( 96dbb6c ) storage: Add a safety check for readhandle ( #11549 ) ( c9edb37 ) storage: Add universe domain to defaultSignBytesFunc ( #11521 ) ( 511608b ) storage: Clone the defaultRetry to avoid modifying it directly ( #11533 ) ( 7f8d69d ) storage: Fix adding multiple range on stream with same read id ( #11584 ) ( 0bb3434 ) storage: Modify the callback of mrd to return length of data read instead of limit. ( #11687 ) ( 9e359f0 ) storage: Propagate ctx from invoke to grpc upload reqs ( #11475 ) ( 9ad9d76 ) storage: Remove duplicate routing header ( #11534 ) ( 8eeb59c ) storage: Return sentinel ErrObjectNotExist for copy and compose ( #11369 ) ( 74d0c10 ), refs #10760 storage: Wait for XML read req to finish to avoid data races ( #11527 ) ( 782e12a ) Java 2.50.0 (2025-03-14) Features Next release from main branch is 2.50.0 ( #2968 ) ( 4a69fcc ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.54.0 ( 22e7e3d ) deps: Update the Java code generator (gapic-generator-java) to 2.55.1 ( 81c8c61 ) Improve 503 handling for json resumable uploads ( #2987 ) ( 9bc2b14 ) Update usages of String.format to explicitly pass Locale.US ( #2974 ) ( 8bcb2de ), closes #2972 Dependencies Update dependency com.google.apis:google-api-services-storage to v1-rev20250224-2.0.0 ( #2969 ) ( 80a40c4 ) Update googleapis/sdk-platform-java action to v2.55.1 ( #2985 ) ( e22a2de ) Update sdk-platform-java dependencies ( #2983 ) ( 9eeb82a ) Update sdk-platform-java dependencies ( #2986 ) ( 10b922a ) Feature Cloud Storage now offers the DE configurable dual-region code, which can be used when creating a dual-region bucket in europe-west3 (Frankfurt) and europe-west10 (Berlin).
-- Java Changes for google-cloud-storage 2.40.1 (2024-06-26) Bug Fixes Add a workaround to make sure grpc clients' hosts always match their universe domain ( #2588 ) ( 87bf737 ) Include x-goog-user-project on resumable upload puts for grpc transport ( #2586 ) ( 6f2f504 ) Update grpc bidi resumable uploads to validate ack'd object size ( #2570 ) ( 5c9cecf ) Update grpc finalize on close resumable uploads to validate ack'd object size ( #2572 ) ( 55a6d15 ) Update grpc single-shot uploads to validate ack'd object size ( #2567 ) ( 65c8808 ) Dependencies Update dependency com.google.apis:google-api-services-storage to v1-rev20240524-2.0.0 ( #2565 ) ( d193243 ) Update dependency com.google.apis:google-api-services-storage to v1-rev20240621-2.0.0 ( #2596 ) ( 73b8753 ) Update dependency com.google.cloud:sdk-platform-java-config to v3.32.0 ( #2597 ) ( 25940a4 ) Documentation Add Hierarchical Namespace Bucket and Folders samples ( #2583 ) ( 3030081 ), closes #2569 Remove allowlist note from Folders RPCs ( #2593 ) ( 82161de ) Update DeleteObject Sample to be clearer on object versioning behavior ( #2595 ) ( 79b7cf0 ) June 28, 2024 Feature You can now specify the Frankfurt, Germany ( europe-west3 ) and Paris, France ( europe-west9 ) regions when using regional endpoints .
+- Cloud Storage FUSE configuration file format and fields The following YAML configuration example shows the format and fields available in Cloud Storage FUSE. app-name : "APP NAME" logging : file-path : "FILE PATH" format : FORMAT severity : SEVERITY log-rotate : max-file-size-mb : MAX FILE SIZE backup-file-count : BACKUP FILE COUNT compress : COMPRESS cache-dir : "CACHE DIR" file-cache : max-size-mb : MAX SIZE cache-file-for-range-read : CACHE FILE FOR RANGE READ enable-parallel-downloads : ENABLE PARALLEL DOWNLOADS exclude-regex : EXCLUDE REGEX include-regex : INCLUDE REGEX parallel-downloads-per-file : PARALLEL DOWNLOADS PER FILE max-parallel-downloads : MAX PARALLEL DOWNLOADS download-chunk-size-mb : DOWNLOAD CHUNK SIZE metadata-cache : negative-ttl-secs : ENABLE NEGATIVE TTL SECS stat-cache-max-size-mb : STAT CACHE MAX SIZE ttl-secs : TTL SECS enable-metadata-prefetch : ENABLE METADATA PREFETCH metadata-prefetch-entries-limit : METADATA PREFETCH ENTRIES LIMIT metadata-prefetch-max-workers : METADATA PREFETCH MAX WORKERS only-dir : "ONLY DIR" gcs-auth : anonymous-access : ANONYMOUS ACCESS key-file : "KEY FILE" reuse-token-from-url : REUSE TOKEN FROM URL token-url : "TOKEN URL" gcs-connection : billing-project : "BILLING PROJECT" client-protocol : CLIENT PROTOCOL custom-endpoint : "CUSTOM ENDPOINT" http-client-timeout : HTTP CLIENT TIMEOUT limit-bytes-per-sec : "LIMIT BYTES PER SEC" limit-ops-per-sec : "LIMIT OPS PER SEC" max-conns-per-host : MAX CONNS PER HOST max-idle-conns-per-host : MAX IDLE CONNS PER HOST sequential-read-size-mb : SEQUENTIAL READ SIZE implicit-dirs : IMPLICIT DIRS file-system : kernel-list-cache-ttl-secs : KERNEL LIST CACHE TTL SECS ignore-interrupts : IGNORE INTERRUPTS dir-mode : "DIR MODE" file-mode : "FILE MODE" fuse-options : FUSE OPTIONS gid : GID rename-dir-limit : RENAME DIR LIMIT temp-dir : "TEMP DIR" uid : UID foreground : FOREGROUND gcs-retries : max-retry-attempts : MAX RETRY ATTEMPTS max-retry-sleep : MAX RETRY SLEEP multiplier : "MULTIPLIER" metrics : cloud-metrics-export-interval-secs : CLOUD METRICS EXPORT INTERVAL prometheus-port : PROMETHEUS PORT debug : log-mutex : LOG MUTEX exit-on-invariant-violation : EXIT ON INVARIANT VIOLATION write : enable-streaming-writes : STREAMING WRITES global-max-blocks : MAXIMUM GLOBAL BLOCKS read : enable-buffered-read : ENABLE BUFFERED READ global-max-blocks : MAXIMUM GLOBAL READ BLOCKS profile : PROFILE Cloud Storage FUSE configuration file fields The following table describes the fields you can specify in your Cloud Storage FUSE configuration file.
+- A URL. billing-project Specifies a project to use for billing when the mounted bucket is accessed.
+- This field is often required when mounting a bucket enabled with Requester Pays .
+- Values specifying more than 5000 metadata entries results in multiple sequential Cloud Storage Objects: list calls, as each individual call is limited to 5000 results.
 
 ### "IAM permissions for gcloud storage commands \_|\_ Cloud Storage \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud](https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud)
 - Source ID: `site-docs-reference`
-- Final score: 156
+- Final score: 206
 - Re-rank relevance: N/A
 
 Evidence snippets:

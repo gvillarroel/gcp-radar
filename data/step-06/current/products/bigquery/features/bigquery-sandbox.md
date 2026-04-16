@@ -1,92 +1,90 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.859Z"
+generated_at: "2026-04-15T12:48:36.834Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
-feature_name: "BigQuery Sandbox"
+feature_name: "BigQuery sandbox"
 feature_slug: "bigquery-sandbox"
 latest_feature_date: "2019-01-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console"
   - "https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui"
-  - "https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries"
+  - "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui"
+  - "https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console"
 keywords:
-  - "free BigQuery trial"
-  - "no credit card"
-  - "free BigQuery usage"
-  - "sandbox quotas"
-  - "no billing account"
-  - "sandbox project"
-  - "BigQuery Sandbox"
-  - "BQ Sandbox"
+  - "bigquery"
+  - "sandbox"
+  - "lets"
+  - "users"
+  - "try"
+  - "without"
+  - "credit"
+  - "card"
 ---
 
-# BigQuery Sandbox
+# BigQuery sandbox
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-BigQuery Sandbox became available so users can try BigQuery without a credit card or billing account.
+BigQuery sandbox lets users try BigQuery without a credit card or billing account.
 
 ## Extended Definition
 
-BigQuery Sandbox became available so users can try BigQuery without a credit card or billing account.
+BigQuery sandbox lets users try BigQuery without a credit card or billing account.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console](https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console)
 - [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui)
-- [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries)
+- [https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui](https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui)
+- [https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console](https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console)
 
 ## Supporting Pages
 
-### Try BigQuery using the sandbox \_|\_ Google Cloud Documentation
+### Explore BigQuery in the Google Cloud console \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console](https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console)
-- Source ID: `site-docs-root`
-- Final score: 46
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is specifically a BigQuery sandbox quickstart, including how to enable it and its no-cost trial limitations.
+- URL: [https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui](https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui)
+- Source ID: `site-docs-reference-5`
+- Final score: 143
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- The BigQuery sandbox does not support several BigQuery features, including the following: Streaming data Data manipulation language (DML) statements BigQuery Data Transfer Service View a public dataset BigQuery public datasets are available by default in BigQuery Studio in a project named bigquery-public-data .
-- To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin Enable the BigQuery sandbox In the Google Cloud console, go to the BigQuery page.
-- A BigQuery sandbox notice is now displayed on the BigQuery page: Limitations The BigQuery sandbox is subject to the following limits: All BigQuery quotas and limits apply.
-- Delete the project If you used the BigQuery sandbox to query the public dataset, then billing is not enabled for your project, and you don't need to delete the project.
+- After you select a data source, you can do the following based on the capabilities available for your data source: Set up BigQuery table over external data ( federation ) : enables BigQuery to access external data without ingesting it into BigQuery.
+- The Search page The Search page ( Preview ) lets you search for Google Cloud resources from BigQuery by using natural language queries.
+- Note: If your project has a billing account and you want to use the BigQuery sandbox, then disable billing for your project .
+- Agents ( Preview ): lets you create and chat with data agents that are designed to answer questions about BigQuery resources.
 
 ### Try BigQuery using the sandbox \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui)
 - Source ID: `site-docs-root-2`
-- Final score: 46
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is a feature-specific quickstart describing how to enable and use the BigQuery sandbox, including limitations and free usage context.
-
-Evidence snippets:
-- The BigQuery sandbox does not support several BigQuery features, including the following: Streaming data Data manipulation language (DML) statements BigQuery Data Transfer Service View a public dataset BigQuery public datasets are available by default in BigQuery Studio in a project named bigquery-public-data .
-- To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin Enable the BigQuery sandbox In the Google Cloud console, go to the BigQuery page.
-- A BigQuery sandbox notice is now displayed on the BigQuery page: Limitations The BigQuery sandbox is subject to the following limits: All BigQuery quotas and limits apply.
-- Delete the project If you used the BigQuery sandbox to query the public dataset, then billing is not enabled for your project, and you don't need to delete the project.
-
-### "Query a public dataset with the BigQuery client libraries \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries)
-- Source ID: `site-docs-root`
-- Final score: 28
+- Final score: 141
 - Re-rank relevance: MODERATE
-- Re-rank rationale: The guide explains how to choose and use BigQuery Sandbox for this workflow, including its billing-free learning context.
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Choose whether to use the BigQuery sandbox at no charge , or to enable billing for your Google Cloud project .
-- If you do not plan to use your project beyond this document, we recommend that you use the BigQuery sandbox.
+- The BigQuery sandbox lets you experience BigQuery without providing a credit card or creating a billing account for your project.
+- Try BigQuery using the sandbox The BigQuery sandbox lets you explore limited BigQuery capabilities at no cost to confirm whether BigQuery fits your needs.
+- Upgrade from the BigQuery sandbox The BigQuery sandbox lets you explore limited BigQuery capabilities at no cost.
 - The BigQuery sandbox lets you learn BigQuery with a limited set of BigQuery features at no charge.
-- If you do not enable billing for a project, you automatically work in the BigQuery sandbox.
+
+### Try BigQuery using the sandbox \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console](https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console)
+- Source ID: `site-docs-root`
+- Final score: 133
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The BigQuery sandbox lets you experience BigQuery without providing a credit card or creating a billing account for your project.
+- Try BigQuery using the sandbox The BigQuery sandbox lets you explore limited BigQuery capabilities at no cost to confirm whether BigQuery fits your needs.
+- Upgrade from the BigQuery sandbox The BigQuery sandbox lets you explore limited BigQuery capabilities at no cost.
+- The BigQuery sandbox lets you learn BigQuery with a limited set of BigQuery features at no charge.
 

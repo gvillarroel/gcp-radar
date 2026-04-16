@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-11T20:09:00.053Z",
+  "generated_at": "2026-04-12T21:48:56.701Z",
   "product_name": "VPC Service Controls",
   "product_slug": "vpc-service-controls",
   "step02_source_path": "data/step-02/current/vpc-service-controls.md",
@@ -194,21 +194,21 @@
           "rank": 5
         },
         {
-          "title": "Troubleshoot common issues | VPC Service Controls | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
-          "description": "This example demonstrates how sometimes a single user operation results in multiple internal operations that must pass <strong>VPC Service Controls</strong> enforcement. In this example, a VM in project 927005422713 (perimeter-network) tries to copy a BigQuery dataset from project corp-resources-private to corp-resources-public (117961063178). perimeter-network and corp-resources-private share a perimeter, while corp-resources-public exists outside the perimeter. ... BigQuery error in cp operation: <strong>VPC Service Controls</strong>: Request is prohibited by organization&#x27;s policy.",
-          "rank": 6
-        },
-        {
           "title": "VPC accessible services | VPC Service Controls | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
           "description": "When configuring VPC accessible services for a perimeter, you can specify a list of individual services, as well as include the RESTRICTED-SERVICES value, which automatically includes all of the services protected by the perimeter.",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "Design and architect service perimeters | VPC Service Controls | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters",
           "description": "This document describes recommended <strong>VPC Service Controls</strong> deployment architectures.",
+          "rank": 7
+        },
+        {
+          "title": "Ingress and egress rules | VPC Service Controls | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+          "description": "VPC Service Controls <strong>uses ingress and egress rules to allow access to and from the resources and clients protected by service perimeters</strong>.",
           "rank": 8
         }
       ]
@@ -234,7 +234,7 @@
         {
           "title": "Configure VPC Service Controls for Gemini | Gemini Code Assist | Google for Developers",
           "url": "https://developers.google.com/gemini-code-assist/docs/configure-vpc-service-controls",
-          "description": "Consider additional configurations ... using VPC Service Controls with Gemini. <strong>This document shows how to configure VPC Service Controls to support Gemini, an AI-powered collaborator</strong> ......",
+          "description": "Learn how to configure VPC Service Controls with Gemini and guard against data exfiltration.",
           "rank": 3
         },
         {
@@ -262,9 +262,9 @@
           "rank": 7
         },
         {
-          "title": "ServiceNetworking.Services.EnableVpcServiceControls (Service Networking API v1 (Rev. 105) 1.25.0)",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/servicenetworking/v1/java/latest/com/google/api/services/servicenetworking/v1/ServiceNetworking.Services.EnableVpcServiceControls.html",
-          "description": "<strong>Enables VPC service controls for a connection</strong>. Create a request for the method &quot;services.enableVpcServiceControls&quot;. This request holds the parameters needed by the the servicenetworking server.",
+          "title": "Enhance security with VPC Service Controls | Cloud Search",
+          "url": "https://developers.google.com/cloud-search/docs/guides/implement-vpc-service-controls",
+          "description": "VPC Service Controls <strong>allows you to define a service perimeter around Google Cloud Platform resources to constrain data and help mitigate data exfiltration risks</strong>.",
           "rank": 8
         }
       ]
@@ -383,21 +383,21 @@
           "rank": 5
         },
         {
-          "title": "VPC Service Controls for Cloud Service Mesh (Managed) | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-mesh/v1.25/docs/managed/vpc-sc",
-          "description": "Having a service mesh spread across multiple VPC Service Controls perimeters is not supported. Add restricted services to the service perimeter. You must add specific services to the allowed and restricted services lists in the service perimeter, so that your Cloud Service Mesh cluster can ...",
-          "rank": 6
-        },
-        {
           "title": "Set up VPC Service Controls for Application Integration | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-integration/docs/vpc-service-controls",
           "description": "VPC Service Controls <strong>lets you define a security perimeter around the Application Integration Google Cloud service</strong>. With the security perimeter around your service, you can constrain data within a VPC and mitigate data exfiltration risks.",
+          "rank": 6
+        },
+        {
+          "title": "VPC Service Controls for Cloud Service Mesh (Managed) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-mesh/v1.25/docs/managed/vpc-sc",
+          "description": "Having a service mesh spread across multiple VPC Service Controls perimeters is not supported. Add restricted services to the service perimeter. You must add specific services to the allowed and restricted services lists in the service perimeter, so that your Cloud Service Mesh cluster can ...",
           "rank": 7
         },
         {
-          "title": "Use VPC Service Controls with App Hub | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/app-hub/docs/using-vpc-service-controls",
-          "description": "VPC Service Controls is <strong>a Google Cloud feature that lets you set up a service perimeter that creates a data transfer boundary around Google Cloud resources</strong>. VPC Service Controls provides more security for your App Hub resources such as mitigating ...",
+          "title": "Best practices for enabling VPC Service Controls | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+          "description": "This document <strong>describes the recommended process to configure and enforce VPC Service Controls protection in your Google Cloud organization</strong>.",
           "rank": 8
         }
       ]
@@ -498,15 +498,15 @@
           "rank": 2
         },
         {
-          "title": "Design and architect service perimeters | VPC Service Controls | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters",
-          "description": "A common unified perimeter also provides the benefit of lower management overhead for the teams responsible for perimeter creation and maintenance. Since services and network resources within a perimeter can communicate freely with the necessary IAM and network controls permissions, the teams responsible for perimeter management will primarily be concerned with north-south access, which is access from the internet to resources inside the perimeter.",
-          "rank": 3
-        },
-        {
           "title": "Manage service perimeters | VPC Service Controls | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
           "description": "This page describes how you can manage service perimeters in VPC Service Controls. For details on creating new service perimeters, see Creating service perimeters. ... Read Overview of VPC Service Controls.",
+          "rank": 3
+        },
+        {
+          "title": "Design and architect service perimeters | VPC Service Controls | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters",
+          "description": "A common unified perimeter also provides the benefit of lower management overhead for the teams responsible for perimeter creation and maintenance. Since services and network resources within a perimeter can communicate freely with the necessary IAM and network controls permissions, the teams responsible for perimeter management will primarily be concerned with north-south access, which is access from the internet to resources inside the perimeter.",
           "rank": 4
         },
         {
@@ -516,15 +516,15 @@
           "rank": 5
         },
         {
-          "title": "VPC Service Controls documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/vpc-service-controls/docs",
-          "description": "Service perimeters overview · Dry run mode for testing the effect of perimeters · Ingress and egress rules overview · Scoped policies overview · VPC networks management in perimeters · Rules for including VPC networks in perimeters · Private Google Access with VPC Service Controls ·",
-          "rank": 6
-        },
-        {
           "title": "Set up a service perimeter by using VPC Service Controls | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter",
           "description": "Click Add selected services. Click Create. You just created a perimeter! You can see your perimeter listed on the VPC Service Controls page. The perimeter might take up to 30 minutes to propagate and take effect.",
+          "rank": 6
+        },
+        {
+          "title": "VPC Service Controls documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs",
+          "description": "Service perimeters overview · Dry run mode for testing the effect of perimeters · Ingress and egress rules overview · Scoped policies overview · VPC networks management in perimeters · Rules for including VPC networks in perimeters · Private Google Access with VPC Service Controls ·",
           "rank": 7
         },
         {
@@ -584,9 +584,9 @@
           "rank": 7
         },
         {
-          "title": "Service",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/servicenetworking/v1/python/latest/servicenetworking_v1.services.html",
-          "description": "<strong>Enables VPC service controls for a connection</strong>. Args: parent: string, The service that is managing peering connectivity for a service producer&#x27;s organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`. (required) body: object, ...",
+          "title": "Enhance security with VPC Service Controls | Cloud Search",
+          "url": "https://developers.google.com/cloud-search/docs/guides/implement-vpc-service-controls",
+          "description": "<strong>The VPC Service Controls project acts as a virtual project container for all your Cloud Search resources</strong>. Without building this mapping, VPC Service Controls won&#x27;t work for the Cloud Search API.",
           "rank": 8
         }
       ]
@@ -618,15 +618,15 @@
           "rank": 1
         },
         {
-          "title": "VPC Service Controls documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/vpc-service-controls/docs",
-          "description": "VPC Service Controls lets you mitigate ... Service Controls, you can <strong>enforce adaptive access control based on IP range or device trust for accessing Google Cloud resources from outside privileged networks</strong>....",
-          "rank": 2
-        },
-        {
           "title": "Access control with IAM | VPC Service Controls | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/vpc-service-controls/docs/access-control",
           "description": "Note: Any Access Context Manager permissions granted on folders or projects have no effect on scoped policies as permissions can only be granted at the organization-level or on individual policies. The access control for scoped policies is independent of the projects or folders in their scopes. The following predefined IAM roles provide the necessary permissions to view or configure service perimeters and access levels:",
+          "rank": 2
+        },
+        {
+          "title": "VPC Service Controls documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs",
+          "description": "VPC Service Controls lets you mitigate ... Service Controls, you can <strong>enforce adaptive access control based on IP range or device trust for accessing Google Cloud resources from outside privileged networks</strong>....",
           "rank": 3
         },
         {
@@ -636,27 +636,27 @@
           "rank": 4
         },
         {
-          "title": "Access control for projects with IAM | Resource Manager | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-proj?WT.mc_id=ravikirans",
-          "description": "For instructions, see Granting, Changing, and Revoking Access. When you create a project, you receive the roles/owner role, which gives you full control over the project. You can change this default role in an allow policy. VPC Service Controls can provide additional security when using the ...",
-          "rank": 5
-        },
-        {
           "title": "Configure VPC Service Controls for Assured Workloads | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/assured-workloads/docs/configure-vpc-sc",
           "description": "While Identity and Access Management ... VPC Service Controls are <strong>a logical boundary around Google Cloud APIs that are managed at the organization level and applied and enforced at the project level</strong>....",
-          "rank": 6
+          "rank": 5
         },
         {
           "title": "Set up VPC Service Controls for Application Integration | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-integration/docs/vpc-service-controls",
           "description": "To allow any IP addresses, service ... egress rules. VPC Service Controls <strong>uses ingress and egress rules to allow access to and from the resources and clients protected by service perimeters</strong>....",
+          "rank": 6
+        },
+        {
+          "title": "VPC Service Controls for API hub | Apigee | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/vpc-service-control",
+          "description": "VPC Service Controls <strong>enables you to establish a service perimeter around your API hub resources, constraining ingress and egress traffic</strong>. This perimeter helps to: Limit unauthorised access: Control which Google Cloud services and VPC networks ...",
           "rank": 7
         },
         {
-          "title": "Set up VPC Service Controls for Integration Connectors | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/integration-connectors/docs/vpcsc-connectors",
-          "description": "Create an access.yaml file having the details of the user who is allowed to access the perimeter. For example: ... This command lists all the policies for the organization. From the list, select the policy for which you want to create the VPC Service Controls perimeter.",
+          "title": "Design and architect service perimeters | VPC Service Controls | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters",
+          "description": "If you allow a network route to private.googleapis.com, you negate VPC Service Controls protection from insider data exfiltration. If you must allow access to a non-supported service, try to isolate the use of unsupported services into a separate project, or move the entire workload outside the perimeter.",
           "rank": 8
         }
       ]
@@ -712,15 +712,15 @@
           "rank": 5
         },
         {
-          "title": "Service perimeter details and configuration | VPC Service Controls | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters",
-          "description": "You can use the Google Cloud console, the gcloud command-line tool, or the Access Context Manager APIs to create an access policy. To learn more about Access Context Manager and access policies, read the overview of Access Context Manager. Service perimeters are used to protect services used by projects in your organization. After identifying the projects and services you want to protect, create one or more service perimeters. Note: If you&#x27;re using Shared VPC, you must include the host project in a service perimeter along with any projects that belong to the Shared VPC.",
-          "rank": 6
-        },
-        {
           "title": "Use VPC Service Controls with App Hub | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/app-hub/docs/using-vpc-service-controls",
           "description": "VPC Service Controls is <strong>a Google Cloud feature that lets you set up a service perimeter that creates a data transfer boundary around Google Cloud resources</strong>. VPC Service Controls provides more security for your App Hub resources such as mitigating ...",
+          "rank": 6
+        },
+        {
+          "title": "Service perimeter details and configuration | VPC Service Controls | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters",
+          "description": "You can use the Google Cloud console, the gcloud command-line tool, or the Access Context Manager APIs to create an access policy. To learn more about Access Context Manager and access policies, read the overview of Access Context Manager. Service perimeters are used to protect services used by projects in your organization. After identifying the projects and services you want to protect, create one or more service perimeters. Note: If you&#x27;re using Shared VPC, you must include the host project in a service perimeter along with any projects that belong to the Shared VPC.",
           "rank": 7
         },
         {
@@ -881,7 +881,7 @@
         },
         {
           "title": "Access control for projects with IAM | Resource Manager | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-proj?WT.mc_id=ravikirans",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
           "description": "Be aware that the setIamPolicy permission for organization, folder, and project resources allows the user to grant all other permissions, and so should be assigned with care. You can grant roles to users at the project level using the Google Cloud console, the Cloud Resource Manager API, and the Google Cloud CLI. For instructions, see Granting, Changing, and Revoking Access. When you create a project, you receive the roles/owner role, which gives you full control over the project. You can change this default role in an allow policy. VPC Service Controls can provide additional security when using the Cloud Resource Manager API.",
           "rank": 3
         },
@@ -961,21 +961,21 @@
           "rank": 5
         },
         {
-          "title": "Set up a VPC Service Controls perimeter for a Virtual Private Cloud network | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
-          "description": "Learn about which services are supported on VPC Service Controls. Learn how to enable VPC accessible services. Read about the configuration of Private Service Connect to access Google APIs. For more reference architectures, diagrams, tutorials, and best practices, explore the Cloud Architecture ...",
-          "rank": 6
-        },
-        {
           "title": "Use VPC Service Controls with App Hub | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/app-hub/docs/using-vpc-service-controls",
           "description": "VPC Service Controls is <strong>a Google Cloud feature that lets you set up a service perimeter that creates a data transfer boundary around Google Cloud resources</strong>. VPC Service Controls provides more security for your App Hub resources such as mitigating ...",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "VPC Service Controls release notes | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/vpc-service-controls/docs/release-notes",
           "description": "For more information, refer to the VPC Service Controls page and the documentation. ... Public beta release of VPC Service Controls. As of this release, VPC Service Controls supports the following services: ... Note: We recommend you protect these services for testing purposes only. ... Legacy Cloud Storage buckets can in certain cases be written to out of a service perimeter even when access is denied.",
+          "rank": 7
+        },
+        {
+          "title": "Set up a VPC Service Controls perimeter for a Virtual Private Cloud network | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+          "description": "Learn about which services are supported on VPC Service Controls. Learn how to enable VPC accessible services. Read about the configuration of Private Service Connect to access Google APIs. For more reference architectures, diagrams, tutorials, and best practices, explore the Cloud Architecture ...",
           "rank": 8
         }
       ]
@@ -984,19 +984,13 @@
       "round": 3,
       "intent": "python_client",
       "query": "site:googleapis.dev/python \"VPC Service Controls\"",
-      "official_result_count": 2,
+      "official_result_count": 1,
       "results": [
-        {
-          "title": "Changelog — google-cloud-storage 0.1.0 documentation",
-          "url": "https://googleapis.dev/python/storage/1.24.0/changelog.html",
-          "description": "Normalize VPCSC configuration in system tests. (#9616) ... Add UBLA attrs to IAMConfiguration. (#9475) ... Add user_project param to HMAC-related methods. (#9237) Add Blob.from_string and Bucket.from_string factories. (#9143) Fix intersphinx reference to requests. (#9294) Fix deep / broken URL for service account setup.",
-          "rank": 1
-        },
         {
           "title": "Changelog — google-cloud-storage documentation",
           "url": "https://googleapis.dev/python/storage/1.29.0/changelog.html",
           "description": "Normalize VPCSC configuration in system tests. (#9616) ... Add UBLA attrs to IAMConfiguration. (#9475) ... Add user_project param to HMAC-related methods. (#9237) Add Blob.from_string and Bucket.from_string factories. (#9143) Fix intersphinx reference to requests. (#9294) Fix deep / broken URL for service account setup.",
-          "rank": 2
+          "rank": 1
         }
       ]
     },
@@ -1004,19 +998,25 @@
       "round": 3,
       "intent": "release_notes_focus",
       "query": "site:docs.cloud.google.com \"VPC Service Controls\" \"preview\" \"general availability\"",
-      "official_result_count": 2,
+      "official_result_count": 3,
       "results": [
+        {
+          "title": "Cloud Run release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/release-notes",
+          "description": "<strong>The ability to specify a minimum number of container instances to be kept warm and ready to serve requests</strong> is now at general availability (GA). ... You can now use VPC Service Controls with Cloud Run to set up a secure perimeter to guard against ...",
+          "rank": 1
+        },
         {
           "title": "Cloud Tasks release notes | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/tasks/docs/release-notes",
           "description": "Support for internal ingress from Cloud Tasks to Cloud Run and Cloud Functions is now at General Availability. ... Support for VPC Service Controls is in Preview.",
-          "rank": 1
+          "rank": 2
         },
         {
           "title": "IAM release notes | Identity and Access Management (IAM) | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/iam/docs/release-notes",
           "description": "Privileged Access Manager (PAM) is now released to General Availability. The following features have been added: Alerting on any external modifications to access grants outside of PAM. VPC Service Controls integration for PAM, which allows customers to enforce authorized network access or require specific access context while using PAM.",
-          "rank": 2
+          "rank": 3
         }
       ]
     }
@@ -1405,37 +1405,37 @@
       "keep": false
     },
     {
-      "title": "Use VPC Service Controls with App Hub | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/app-hub/docs/using-vpc-service-controls",
-      "description": "VPC Service Controls is <strong>a Google Cloud feature that lets you set up a service perimeter that creates a data transfer boundary around Google Cloud resources</strong>. VPC Service Controls provides more security for your App Hub resources such as mitigating ...",
+      "title": "Enhance security with VPC Service Controls | Cloud Search",
+      "url": "https://developers.google.com/cloud-search/docs/guides/implement-vpc-service-controls",
+      "description": "VPC Service Controls <strong>allows you to define a service perimeter around Google Cloud Platform resources to constrain data and help mitigate data exfiltration risks</strong>.",
       "rank": 8,
       "query_hits": [
-        "site:docs.cloud.google.com \"VPC Service Controls\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"VPC Service Controls\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"VPC Service Controls\" Google Cloud introduction reference"
+        "site:developers.google.com \"VPC Service Controls\" official documentation OR site:developers.google.com \"vpc service controls\" official documentation",
+        "site:developers.google.com \"VPC Service Controls\" reference OR site:developers.google.com \"vpc service controls\" reference",
+        "site:developers.google.com \"VPC Service Controls\" overview OR site:developers.google.com \"vpc service controls\" overview"
       ],
       "intent_hits": [
-        "product_docs"
+        "developers_docs"
       ],
       "round_hits": [
         1,
         2,
         3
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 100,
       "product_fit_score": 80,
       "feature_coverage": {
-        "score": 24,
+        "score": 36,
         "matched_phrases": [],
         "matched_tokens": [
           "cloud",
           "for",
           "resources",
-          "that",
+          "and",
           "google",
-          "provides",
           "you",
+          "platform",
           "security"
         ],
         "user_facing_alignment": 0
@@ -1455,10 +1455,10 @@
           "cloud",
           "for",
           "resources",
-          "that",
+          "and",
           "google",
-          "provides",
           "you",
+          "platform",
           "security"
         ],
         "keep": false,
@@ -1470,7 +1470,7 @@
     {
       "title": "Configure VPC Service Controls for Gemini | Gemini Code Assist | Google for Developers",
       "url": "https://developers.google.com/gemini-code-assist/docs/configure-vpc-service-controls",
-      "description": "Consider additional configurations ... using VPC Service Controls with Gemini. <strong>This document shows how to configure VPC Service Controls to support Gemini, an AI-powered collaborator</strong> ......",
+      "description": "Learn how to configure VPC Service Controls with Gemini and guard against data exfiltration.",
       "rank": 3,
       "query_hits": [
         "site:developers.google.com \"VPC Service Controls\" official documentation OR site:developers.google.com \"vpc service controls\" official documentation",
@@ -1492,10 +1492,10 @@
         "score": 12,
         "matched_phrases": [],
         "matched_tokens": [
-          "this",
-          "support",
           "for",
-          "google"
+          "and",
+          "google",
+          "data"
         ],
         "user_facing_alignment": 0
       },
@@ -1511,10 +1511,10 @@
         "coverage_value": 2,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
-          "this",
-          "support",
           "for",
-          "google"
+          "and",
+          "google",
+          "data"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1590,7 +1590,7 @@
       "title": "Access control with IAM | VPC Service Controls | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/vpc-service-controls/docs/access-control",
       "description": "Note: Any Access Context Manager permissions granted on folders or projects have no effect on scoped policies as permissions can only be granted at the organization-level or on individual policies. The access control for scoped policies is independent of the projects or folders in their scopes. The following predefined IAM roles provide the necessary permissions to view or configure service perimeters and access levels:",
-      "rank": 3,
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"VPC Service Controls\" \"access control\"",
         "site:docs.cloud.google.com \"VPC Service Controls\" IAM roles permissions"
@@ -1651,19 +1651,21 @@
       "title": "Design and architect service perimeters | VPC Service Controls | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters",
       "description": "This document describes recommended <strong>VPC Service Controls</strong> deployment architectures.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com/vpc-service-controls/docs \"VPC Service Controls\"",
-        "site:docs.cloud.google.com/vpc-service-controls/docs overview \"service perimeter\""
+        "site:docs.cloud.google.com/vpc-service-controls/docs overview \"service perimeter\"",
+        "site:docs.cloud.google.com \"VPC Service Controls\" \"access control\""
       ],
       "intent_hits": [
-        "canonical_docs"
+        "canonical_docs",
+        "iam_permissions"
       ],
       "round_hits": [
         1,
         2
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 200,
       "feature_coverage": {
@@ -1695,6 +1697,68 @@
           "and",
           "google",
           "perimeters"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Ingress and egress rules | VPC Service Controls | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+      "description": "VPC Service Controls <strong>uses ingress and egress rules to allow access to and from the resources and clients protected by service perimeters</strong>.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/vpc-service-controls/docs \"VPC Service Controls\"",
+        "site:docs.cloud.google.com \"VPC Service Controls\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 200,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "protect",
+          "access",
+          "the",
+          "resources",
+          "and",
+          "google",
+          "rules"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "protect",
+          "access",
+          "the",
+          "resources",
+          "and",
+          "google",
+          "rules"
         ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
@@ -1770,7 +1834,7 @@
       "title": "Set up a service perimeter by using VPC Service Controls | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter",
       "description": "Click Add selected services. Click Create. You just created a perimeter! You can see your perimeter listed on the VPC Service Controls page. The perimeter might take up to 30 minutes to propagate and take effect.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com/vpc-service-controls/docs overview \"service perimeter\"",
         "site:docs.cloud.google.com \"VPC Service Controls\" IAM roles permissions"
@@ -1783,7 +1847,7 @@
         2,
         3
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 200,
       "feature_coverage": {
@@ -1943,36 +2007,36 @@
       "keep": false
     },
     {
-      "title": "Access control for projects with IAM | Resource Manager | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-proj?WT.mc_id=ravikirans",
-      "description": "For instructions, see Granting, Changing, and Revoking Access. When you create a project, you receive the roles/owner role, which gives you full control over the project. You can change this default role in an allow policy. VPC Service Controls can provide additional security when using the ...",
-      "rank": 5,
+      "title": "Use VPC Service Controls with App Hub | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/app-hub/docs/using-vpc-service-controls",
+      "description": "VPC Service Controls is <strong>a Google Cloud feature that lets you set up a service perimeter that creates a data transfer boundary around Google Cloud resources</strong>. VPC Service Controls provides more security for your App Hub resources such as mitigating ...",
+      "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com \"VPC Service Controls\" \"access control\"",
-        "site:docs.cloud.google.com \"VPC Service Controls\" IAM roles permissions"
+        "site:docs.cloud.google.com \"VPC Service Controls\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"VPC Service Controls\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "iam_permissions"
+        "product_docs"
       ],
       "round_hits": [
         2,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 50,
+      "product_fit_score": 80,
       "feature_coverage": {
         "score": 24,
         "matched_phrases": [],
         "matched_tokens": [
           "cloud",
-          "this",
           "for",
-          "access",
-          "the",
-          "and",
+          "resources",
+          "that",
           "google",
-          "manager"
+          "provides",
+          "you",
+          "security"
         ],
         "user_facing_alignment": 0
       },
@@ -1984,18 +2048,73 @@
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 3,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "cloud",
-          "this",
           "for",
-          "access",
-          "the",
-          "and",
+          "resources",
+          "that",
           "google",
-          "manager"
+          "provides",
+          "you",
+          "security"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Cloud Run release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/release-notes",
+      "description": "<strong>You can now use VPC Service Controls with Cloud Run to set up a secure perimeter to guard against data exfiltration</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"VPC Service Controls\" \"release notes\"",
+        "site:docs.cloud.google.com \"VPC Service Controls\" \"preview\" \"general availability\""
+      ],
+      "intent_hits": [
+        "release_notes_focus"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 56,
+      "feature_coverage": {
+        "score": 35,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "google",
+          "you",
+          "use",
+          "data"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "google",
+          "you",
+          "use",
+          "data"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2238,69 +2357,10 @@
       "keep": false
     },
     {
-      "title": "Ingress and egress rules | VPC Service Controls | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
-      "description": "If you configure multiple ingress rules in a service perimeter, VPC Service Controls allows a request if it satisfies the conditions of any one of the ingress rules. Egress rules can be configured using the Google Cloud console, a JSON file, or a YAML file. The following sample uses the .yaml format: - egressTo: operations: - serviceName: SERVICE_NAME methodSelectors: - method: METHOD *OR* - permission: PERMISSION *OR* roles: - ROLE_NAME resources: - projects/PROJECT *OR* externalResources: - EXTERNAL_RESOURCE_PATH egressFrom: identityType: ANY_IDENTITY | ANY_USER_ACCOUNT | ANY_SERVICE_ACCOUNT *OR* identities: - PRINCIPAL_IDENTIFIER sources: - resource: RESOURCE *OR* - accessLevel: ACCESS_LEVEL sourceRestriction: RESTRICTION_STATUS title: TITLE",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"VPC Service Controls\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 200,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "cloud",
-          "for",
-          "access",
-          "the",
-          "resources",
-          "and",
-          "google",
-          "rules"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 42,
-        "family_preferred": true,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "cloud",
-          "for",
-          "access",
-          "the",
-          "resources",
-          "and",
-          "google",
-          "rules"
-        ],
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
       "title": "Manage service perimeters | VPC Service Controls | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
       "description": "This page describes how you can manage service perimeters in VPC Service Controls. For details on creating new service perimeters, see Creating service perimeters. ... Read Overview of VPC Service Controls.",
-      "rank": 4,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/vpc-service-controls/docs overview \"service perimeter\""
       ],
@@ -2310,7 +2370,7 @@
       "round_hits": [
         2
       ],
-      "best_rank": 4,
+      "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 200,
       "feature_coverage": {
@@ -2355,7 +2415,7 @@
       "title": "Set up a VPC Service Controls perimeter for a Virtual Private Cloud network | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
       "description": "Learn about which services are supported on VPC Service Controls. Learn how to enable VPC accessible services. Read about the configuration of Private Service Connect to access Google APIs. For more reference architectures, diagrams, tutorials, and best practices, explore the Cloud Architecture ...",
-      "rank": 6,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"VPC Service Controls\" Google Cloud introduction reference"
       ],
@@ -2365,7 +2425,7 @@
       "round_hits": [
         3
       ],
-      "best_rank": 6,
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 200,
       "feature_coverage": {
@@ -2411,9 +2471,9 @@
       "keep": false
     },
     {
-      "title": "Troubleshoot common issues | VPC Service Controls | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
-      "description": "This example demonstrates how sometimes a single user operation results in multiple internal operations that must pass <strong>VPC Service Controls</strong> enforcement. In this example, a VM in project 927005422713 (perimeter-network) tries to copy a BigQuery dataset from project corp-resources-private to corp-resources-public (117961063178). perimeter-network and corp-resources-private share a perimeter, while corp-resources-public exists outside the perimeter. ... BigQuery error in cp operation: <strong>VPC Service Controls</strong>: Request is prohibited by organization&#x27;s policy.",
+      "title": "VPC accessible services | VPC Service Controls | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+      "description": "When configuring VPC accessible services for a perimeter, you can specify a list of individual services, as well as include the RESTRICTED-SERVICES value, which automatically includes all of the services protected by the perimeter.",
       "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com/vpc-service-controls/docs \"VPC Service Controls\""
@@ -2425,65 +2485,6 @@
         1
       ],
       "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 176,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "cloud",
-          "this",
-          "for",
-          "the",
-          "resources",
-          "and",
-          "that",
-          "google"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 42,
-        "family_preferred": true,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "cloud",
-          "this",
-          "for",
-          "the",
-          "resources",
-          "and",
-          "that",
-          "google"
-        ],
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "VPC accessible services | VPC Service Controls | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
-      "description": "When configuring VPC accessible services for a perimeter, you can specify a list of individual services, as well as include the RESTRICTED-SERVICES value, which automatically includes all of the services protected by the perimeter.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com/vpc-service-controls/docs \"VPC Service Controls\""
-      ],
-      "intent_hits": [
-        "canonical_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 176,
       "feature_coverage": {
@@ -2588,6 +2589,65 @@
       "keep": true
     },
     {
+      "title": "Best practices for enabling VPC Service Controls | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+      "description": "This document <strong>describes the recommended process to configure and enforce VPC Service Controls protection in your Google Cloud organization</strong>.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"VPC Service Controls\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 170,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "this",
+          "protect",
+          "for",
+          "the",
+          "and",
+          "google",
+          "you"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "this",
+          "protect",
+          "for",
+          "the",
+          "and",
+          "google",
+          "you"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Secure your app with VPC Service Controls | Gemini Enterprise | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/gemini/enterprise/docs/use-vpc-service-controls",
       "description": "Using Access Context Manager, you can define fine-grained, attribute-based access control for projects and resources in Google Cloud. To do this, you must define an access policy, which is an organization-wide container for access levels and service perimeters. Access levels describe the requirements that must be met in order for a request to be honored. For example, you can restrict requests based on the following: Device type and operating system (requires a Chrome Enterprise Premium license) ... Reference architecture using VPC Service Controls to protect Gemini Enterprise.",
@@ -2650,7 +2710,7 @@
       "title": "VPC Service Controls for Cloud Service Mesh (Managed) | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/service-mesh/v1.25/docs/managed/vpc-sc",
       "description": "Having a service mesh spread across multiple VPC Service Controls perimeters is not supported. Add restricted services to the service perimeter. You must add specific services to the allowed and restricted services lists in the service perimeter, so that your Cloud Service Mesh cluster can ...",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"VPC Service Controls\" Google Cloud documentation"
       ],
@@ -2660,7 +2720,7 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 108,
       "feature_coverage": {
@@ -2706,34 +2766,34 @@
       "keep": false
     },
     {
-      "title": "Enhance security with VPC Service Controls | Cloud Search",
-      "url": "https://developers.google.com/cloud-search/docs/guides/implement-vpc-service-controls",
-      "description": "VPC Service Controls <strong>allows you to define a service perimeter around Google Cloud Platform resources to constrain data and help mitigate data exfiltration risks</strong>.",
-      "rank": 8,
+      "title": "VPC Service Controls for API hub | Apigee | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/apihub/vpc-service-control",
+      "description": "VPC Service Controls <strong>enables you to establish a service perimeter around your API hub resources, constraining ingress and egress traffic</strong>. This perimeter helps to: Limit unauthorised access: Control which Google Cloud services and VPC networks ...",
+      "rank": 7,
       "query_hits": [
-        "site:developers.google.com \"VPC Service Controls\" overview OR site:developers.google.com \"vpc service controls\" overview"
+        "site:docs.cloud.google.com \"VPC Service Controls\" \"access control\""
       ],
       "intent_hits": [
-        "developers_docs"
+        "iam_permissions"
       ],
       "round_hits": [
-        3
+        2
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 80,
       "feature_coverage": {
-        "score": 36,
+        "score": 24,
         "matched_phrases": [],
         "matched_tokens": [
           "cloud",
+          "this",
           "for",
+          "access",
+          "api",
           "resources",
           "and",
-          "google",
-          "you",
-          "platform",
-          "security"
+          "google"
         ],
         "user_facing_alignment": 0
       },
@@ -2750,13 +2810,13 @@
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "cloud",
+          "this",
           "for",
+          "access",
+          "api",
           "resources",
           "and",
-          "google",
-          "you",
-          "platform",
-          "security"
+          "google"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2934,120 +2994,6 @@
           "google",
           "protected",
           "you"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "ServiceNetworking.Services.EnableVpcServiceControls (Service Networking API v1 (Rev. 105) 1.25.0)",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/servicenetworking/v1/java/latest/com/google/api/services/servicenetworking/v1/ServiceNetworking.Services.EnableVpcServiceControls.html",
-      "description": "<strong>Enables VPC service controls for a connection</strong>. Create a request for the method &quot;services.enableVpcServiceControls&quot;. This request holds the parameters needed by the the servicenetworking server.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"VPC Service Controls\" official documentation OR site:developers.google.com \"vpc service controls\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 78,
-      "feature_coverage": {
-        "score": 18,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "this",
-          "for",
-          "api",
-          "the",
-          "resources",
-          "google"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "this",
-          "for",
-          "api",
-          "the",
-          "resources",
-          "google"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Service",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/servicenetworking/v1/python/latest/servicenetworking_v1.services.html",
-      "description": "<strong>Enables VPC service controls for a connection</strong>. Args: parent: string, The service that is managing peering connectivity for a service producer&#x27;s organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`. (required) body: object, ...",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"VPC Service Controls\" reference OR site:developers.google.com \"vpc service controls\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 78,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "this",
-          "support",
-          "for",
-          "api",
-          "the",
-          "resources",
-          "that",
-          "google"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "this",
-          "support",
-          "for",
-          "api",
-          "the",
-          "resources",
-          "that",
-          "google"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3284,65 +3230,6 @@
       "keep": false
     },
     {
-      "title": "Set up VPC Service Controls for Integration Connectors | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/integration-connectors/docs/vpcsc-connectors",
-      "description": "Create an access.yaml file having the details of the user who is allowed to access the perimeter. For example: ... This command lists all the policies for the organization. From the list, select the policy for which you want to create the VPC Service Controls perimeter.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"VPC Service Controls\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 56,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "cloud",
-          "this",
-          "for",
-          "access",
-          "the",
-          "and",
-          "google",
-          "you"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "cloud",
-          "this",
-          "for",
-          "access",
-          "the",
-          "and",
-          "google",
-          "you"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
       "title": "Set build worker pools (source deploy) | Cloud Run | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/run/docs/configuring/services/build-worker-pools",
       "description": "For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions. If your Cloud Run service interfaces with Google Cloud APIs, such as Cloud Client Libraries, see the service identity configuration guide. For more information about granting roles, see deployment permissions and manage access. By default, Cloud Build has unlimited internet access during the build process. If you have set up a VPC Service Controls (VPC SC) perimeter and want to limit the build&#x27;s access only to dependencies stored inside the perimeter (for example, npm packages), you can use the Cloud Build private worker pools feature.",
@@ -3394,59 +3281,6 @@
           "and",
           "that",
           "google"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Cloud Run release notes | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/release-notes",
-      "description": "<strong>You can now use VPC Service Controls with Cloud Run to set up a secure perimeter to guard against data exfiltration</strong>.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"VPC Service Controls\" \"release notes\""
-      ],
-      "intent_hits": [
-        "release_notes_focus"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 56,
-      "feature_coverage": {
-        "score": 35,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "cloud",
-          "google",
-          "you",
-          "use",
-          "data"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "cloud",
-          "google",
-          "you",
-          "use",
-          "data"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3517,7 +3351,7 @@
       "title": "Configure VPC Service Controls for Assured Workloads | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/assured-workloads/docs/configure-vpc-sc",
       "description": "While Identity and Access Management ... VPC Service Controls are <strong>a logical boundary around Google Cloud APIs that are managed at the organization level and applied and enforced at the project level</strong>....",
-      "rank": 6,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"VPC Service Controls\" \"access control\""
       ],
@@ -3527,7 +3361,7 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 50,
       "feature_coverage": {
@@ -3576,7 +3410,7 @@
       "title": "IAM release notes | Identity and Access Management (IAM) | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/iam/docs/release-notes",
       "description": "Privileged Access Manager (PAM) is now released to General Availability. The following features have been added: Alerting on any external modifications to access grants outside of PAM. VPC Service Controls integration for PAM, which allows customers to enforce authorized network access or require specific access context while using PAM.",
-      "rank": 2,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"VPC Service Controls\" \"preview\" \"general availability\""
       ],
@@ -3586,7 +3420,7 @@
       "round_hits": [
         3
       ],
-      "best_rank": 2,
+      "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 50,
       "feature_coverage": {
@@ -3624,6 +3458,65 @@
           "google",
           "manager",
           "allow"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Access control for projects with IAM | Resource Manager | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+      "description": "Be aware that the setIamPolicy permission for organization, folder, and project resources allows the user to grant all other permissions, and so should be assigned with care. You can grant roles to users at the project level using the Google Cloud console, the Cloud Resource Manager API, and the Google Cloud CLI. For instructions, see Granting, Changing, and Revoking Access. When you create a project, you receive the roles/owner role, which gives you full control over the project. You can change this default role in an allow policy. VPC Service Controls can provide additional security when using the Cloud Resource Manager API.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"VPC Service Controls\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 50,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "this",
+          "for",
+          "access",
+          "api",
+          "the",
+          "resources",
+          "and"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 4,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "this",
+          "for",
+          "access",
+          "api",
+          "the",
+          "resources",
+          "and"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3863,7 +3756,7 @@
       "title": "Cloud Tasks release notes | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/tasks/docs/release-notes",
       "description": "Support for internal ingress from Cloud Tasks to Cloud Run and Cloud Functions is now at General Availability. ... Support for VPC Service Controls is in Preview.",
-      "rank": 1,
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"VPC Service Controls\" \"preview\" \"general availability\""
       ],
@@ -3873,7 +3766,7 @@
       "round_hits": [
         3
       ],
-      "best_rank": 1,
+      "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 50,
       "feature_coverage": {
@@ -3915,8 +3808,8 @@
       "keep": false
     },
     {
-      "title": "Changelog — google-cloud-storage 0.1.0 documentation",
-      "url": "https://googleapis.dev/python/storage/1.24.0/changelog.html",
+      "title": "Changelog — google-cloud-storage documentation",
+      "url": "https://googleapis.dev/python/storage/1.29.0/changelog.html",
       "description": "Normalize VPCSC configuration in system tests. (#9616) ... Add UBLA attrs to IAMConfiguration. (#9475) ... Add user_project param to HMAC-related methods. (#9237) Add Blob.from_string and Bucket.from_string factories. (#9143) Fix intersphinx reference to requests. (#9294) Fix deep / broken URL for service account setup.",
       "rank": 1,
       "query_hits": [
@@ -3969,63 +3862,6 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 86,
-      "keep": false
-    },
-    {
-      "title": "Changelog — google-cloud-storage documentation",
-      "url": "https://googleapis.dev/python/storage/1.29.0/changelog.html",
-      "description": "Normalize VPCSC configuration in system tests. (#9616) ... Add UBLA attrs to IAMConfiguration. (#9475) ... Add user_project param to HMAC-related methods. (#9237) Add Blob.from_string and Bucket.from_string factories. (#9143) Fix intersphinx reference to requests. (#9294) Fix deep / broken URL for service account setup.",
-      "rank": 2,
-      "query_hits": [
-        "site:googleapis.dev/python \"VPC Service Controls\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": -30,
-      "feature_coverage": {
-        "score": 21,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "cloud",
-          "for",
-          "api",
-          "and",
-          "google",
-          "storage",
-          "use"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 92,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 92,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 0,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "cloud",
-          "for",
-          "api",
-          "and",
-          "google",
-          "storage",
-          "use"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 83,
       "keep": false
     },
     {
@@ -4149,6 +3985,65 @@
       "keep": false
     },
     {
+      "title": "Vertex AI release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/vertex-ai/docs/core-release-notes",
+      "description": "You can now deploy your agents in a private VPC environment, configuring a Private Service Connect interface, to ensure data privacy and meet security and compliance requirements. For more information, see Configure Private Service Connect interface. You can now use your own customer-managed encryption keys (CMEK) to protect data at rest. You can now specify customized resource controls, such as the minimum and maximum number of application instances, resource limits for each container, and concurrency for each container.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"VPC Service Controls\" \"release notes\""
+      ],
+      "intent_hits": [
+        "release_notes_focus"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": -44,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "protect",
+          "for",
+          "the",
+          "and",
+          "google",
+          "you",
+          "agent"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 73,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 73,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 0,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "protect",
+          "for",
+          "the",
+          "and",
+          "google",
+          "you",
+          "agent"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 67,
+      "keep": false
+    },
+    {
       "title": "Roles and permissions | Cloud SQL for MySQL | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/sql/docs/mysql/roles-and-permissions",
       "description": "To provide access to Cloud SQL metadata on Dataplex Universal Catalog, you can grant a user the roles/cloudsql.schemaViewer role or add the cloudsql.schemas.view permission to a custom role. For more information, see Manage Cloud SQL resources with Dataplex Universal Catalog. When another Google Cloud service, such as BigQuery, needs to communicate with your Cloud SQL instance to access data and make queries against this data over a private connection, the service uses an internal path instead of the private IP addresses inside of the Virtual Private Cloud (VPC). Traffic can&#x27;t be controlled or restricted with any VPC-level configurations, firewall rules, route policies, or cutting of the peering.",
@@ -4267,65 +4162,6 @@
       "keep": false
     },
     {
-      "title": "Vertex AI release notes | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/vertex-ai/docs/core-release-notes",
-      "description": "You can now deploy your agents in a private VPC environment, configuring a Private Service Connect interface, to ensure data privacy and meet security and compliance requirements. For more information, see Configure Private Service Connect interface. You can now use your own customer-managed encryption keys (CMEK) to protect data at rest. You can now specify customized resource controls, such as the minimum and maximum number of application instances, resource limits for each container, and concurrency for each container.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"VPC Service Controls\" \"release notes\""
-      ],
-      "intent_hits": [
-        "release_notes_focus"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": -44,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "cloud",
-          "protect",
-          "for",
-          "the",
-          "and",
-          "google",
-          "you",
-          "agent"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 39,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 39,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 2,
-        "product_match": 0,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "cloud",
-          "protect",
-          "for",
-          "the",
-          "and",
-          "google",
-          "you",
-          "agent"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 38,
-      "keep": false
-    },
-    {
       "title": "Control access to resources | Google Earth Engine | Google for Developers",
       "url": "https://developers.google.com/earth-engine/guides/access_control",
       "description": "<strong>Access and permissions for Earth Engine resources are controlled through Identity and Access Management (IAM) roles, including predefined Earth Engine roles and general Google Cloud roles</strong>.",
@@ -4386,7 +4222,7 @@
       "title": "Set up VPC Service Controls for Application Integration | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/application-integration/docs/vpc-service-controls",
       "description": "VPC Service Controls <strong>lets you define a security perimeter around the Application Integration Google Cloud service</strong>. With the security perimeter around your service, you can constrain data within a VPC and mitigate data exfiltration risks.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"VPC Service Controls\" Google Cloud documentation",
         "site:docs.cloud.google.com \"VPC Service Controls\" \"access control\""
@@ -4399,7 +4235,7 @@
         1,
         2
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": -64,
       "feature_coverage": {
@@ -4417,10 +4253,10 @@
         ],
         "user_facing_alignment": 0
       },
-      "deterministic_score": 20,
+      "deterministic_score": 23,
       "api_score": {
         "classification": "irrelevant",
-        "score": 20,
+        "score": 23,
         "family_score": -148,
         "family_preferred": false,
         "family_forbidden": true,
@@ -4441,7 +4277,7 @@
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 27,
+      "final_score": 30,
       "keep": false
     },
     {

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.377Z"
+generated_at: "2026-04-15T13:43:38.447Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Full Screen Visualizations"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-09-10"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/looker"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
 keywords:
   - "full"
   - "screen"
   - "visualizations"
-  - "the"
   - "labs"
-  - "is"
+  - "feature"
   - "now"
   - "generally"
+  - "available"
 ---
 
 # Full Screen Visualizations
@@ -42,41 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio](https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-labs](https://docs.cloud.google.com/looker/docs/admin-panel-general-labs)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features](https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features)
 
 ## Supporting Pages
 
-### Access control and permission management | Looker | Google Cloud Documentation
+### Admin settings - General settings \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 56
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- Source ID: `site-docs-reference`
+- Final score: 159
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
-- Data access can be further restricted within a model using access filters to limit which rows of data ...
-- These roles are then applied to users and groups.
+- Full Screen Visualizations When enabled, this feature enables full-screen and expanded views for visualizations within dashboard tiles.
+- Smart Single Value Text Size Enabling the Smart Single Value Text Size feature automatically resizes the fonts on single value visualizations displayed within dashboard tiles.
+- Data history playback When enabled, this feature allows users to explore data changes over time for visualizations within dashboards.
+- Full-screen and expanded functionality can be turned off on a dashboard in the dashboard's Settings menu .
 
-### Looker roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### Admin settings - Preview Features \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- Source ID: `site-iam-reference`
-- Final score: 56
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-labs](https://docs.cloud.google.com/looker/docs/admin-panel-general-labs)
+- Source ID: `site-docs-reference`
+- Final score: 128
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/looker This page lists the IAM roles and permissions for Looker.
+- When this preview feature is enabled, you can use the following features for table visualizations : Pagination Show/Hide Table Headers Table Borders Cell Highlighting Conditional formatting for string fields Note: When Cell Highlighting is enabled, conditional formatting is not available.
+- Labs features (Looker (original) only) The following features are available only on Looker (original) instances.
+- Labs features are available only in Looker (original).
+- This Labs feature enables the Looker reports feature , which lets you create, view, and edit Looker Studio reports in your Looker instance, including both governed and ad hoc data.
 
-### Looker Studio roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### Admin settings - Preview Features \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio](https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio)
-- Source ID: `site-iam-reference`
-- Final score: 56
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features](https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features)
+- Source ID: `site-docs-reference`
+- Final score: 128
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker Studio roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio This page lists the IAM roles and permissions for Looker Studio.
+- When this preview feature is enabled, you can use the following features for table visualizations : Pagination Show/Hide Table Headers Table Borders Cell Highlighting Conditional formatting for string fields Note: When Cell Highlighting is enabled, conditional formatting is not available.
+- Labs features (Looker (original) only) The following features are available only on Looker (original) instances.
+- Labs features are available only in Looker (original).
+- This Labs feature enables the Looker reports feature , which lets you create, view, and edit Looker Studio reports in your Looker instance, including both governed and ad hoc data.
 

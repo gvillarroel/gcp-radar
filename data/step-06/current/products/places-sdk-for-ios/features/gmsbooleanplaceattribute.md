@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:50.793Z"
+generated_at: "2026-04-12T12:18:07.477Z"
 product_name: "Places SDK for iOS"
 product_slug: "places-sdk-for-ios"
 feature_name: "GMSBooleanPlaceAttribute"
 feature_slug: "gmsbooleanplaceattribute"
 latest_feature_date: "2023-01-12"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/text-search"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlaceAccessibilityOptions"
 keywords:
   - "gmsbooleanplaceattribute"
   - "the"
@@ -24,7 +27,7 @@ keywords:
 # GMSBooleanPlaceAttribute
 
 Product: Places SDK for iOS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ The enumeration defines boolean values used by place attribute fields.
 
 The enumeration defines boolean values used by place attribute fields.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search](https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/text-search](https://developers.google.com/maps/documentation/places/ios-sdk/text-search)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlaceAccessibilityOptions](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlaceAccessibilityOptions)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Nearby Search (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search](https://developers.google.com/maps/documentation/places/ios-sdk/nearby-search)
+- Source ID: `site-docs-root`
+- Final score: 120
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Specify one or more of the following fields: The following fields trigger the Nearby Search Pro SKU : GMSPlacePropertyAddressComponents GMSPlacePropertyBusinessStatus GMSPlacePropertyCoordinate GMSPlacePropertyFormattedAddress GMSPlacePropertyName GMSPlacePropertyIconBackgroundColor GMSPlacePropertyIconImageURL GMSPlacePropertyPhotos GMSPlacePropertyPlaceID GMSPlacePropertyPlusCode GMSPlacePropertyTypes GMSPlacePropertyUTCOffsetMinutes GMSPlacePropertyViewport GMSPlacePropertyWheelchairAccessibleEntrance The following fields trigger the Nearby Search Enterprise SKU : GMSPlacePropertyCurrentOpeningHours GMSPlacePropertySecondaryOpeningHours GMSPlacePropertyPhoneNumber GMSPlacePropertyPriceLevel GMSPlacePropertyRating GMSPlacePropertyOpeningHours GMSPlacePropertyUserRatingsTotal GMSPlacePropertyWebsite The following fields trigger the Nearby Search Enterprise Plus SKU : GMSPlacePropertyCurbsidePickup GMSPlacePropertyDelivery GMSPlacePropertyDineIn GMSPlacePropertyEditorialSummary GMSPlacePropertyReservable GMSPlacePropertyReviews GMSPlacePropertyServesBeer GMSPlacePropertyServesBreakfast GMSPlacePropertyServesBrunch GMSPlacePropertyServesDinner GMSPlacePropertyServesLunch GMSPlacePropertyServesVegetarianFood GMSPlacePropertyServesWine GMSPlacePropertyTakeout The following example passes a list of two field values to specify that the GMSPlace object returned by a request contains the name and placeID fields: Places Swift SDK // Specify the place data types to return. let fields : [ PlaceProperty ] = [. placeID , . displayName ] Swift // Specify the place data types to return. let fields : [ GMSPlaceProperty ] = [. placeID , . name ] Objective-C // Specify the place data types to return.
+- Nearby Search (New) requests Make a Nearby Search request by calling GMSPlacesClient searchNearbyWithRequest: , passing a GMSPlaceSearchNearbyRequest object that defines the request parameters and a callback method, of type GMSPlaceSearchNearbyResultCallback , to handle the response.
+- May be one of the following: .popularity (default) Sorts results based on their popularity. .distance Sorts results in ascending order by their distance from the specified location. regionCode The region code used to format the response, specified as a two-character CLDR code value.
+- Optional parameters Use the GMSPlaceSearchNearbyRequest object to specify the optional parameters for the search. includedTypes/excludedTypes, includedPrimaryTypes/excludedPrimaryTypes Lets you specify a list of types from types Table A used to filter the search results.
+
+### Text Search (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/text-search](https://developers.google.com/maps/documentation/places/ios-sdk/text-search)
+- Source ID: `site-docs-root`
+- Final score: 94
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Get a list of places by text search Make a Text Search request by calling GMSPlacesClient searchByTextWithRequest: , passing a GMSPlaceSearchByTextRequest object that defines the request parameters and a callback method, of type GMSPlaceSearchByTextResultCallback , to handle the response.
+- For example: let request = SearchByTextRequest() request.includedType = "bar" let request = SearchByTextRequest() request.includedType = "pharmacy" Note: The values in Table B are only returned in the response.
+- Swift public struct PlaceSearchPagination { public var pageSize : Int public var hasNextPage : Bool public func fetchNextPage () async - > SearchByTextResponse } public struct SearchByTextResponse { public var pagination : PlaceSearchPagination ? public var places : [ Place ]? public var error : PlaceError ? } PlacesClient . swift public func searchByText ( with request : SearchByTextRequest ) async - > SearchByTextResponse let searchByTextRequest = SearchByTextRequest ( textQuery : "restaurants" , placeProperties : [ PlaceProperty . displayName ], locationBias : CircularCoordinateRegion ( center : CLLocationCoordinate2D ( latitude : 0 , longitude : 0 ), radius : 100 )) searchByTextRequest . maxResultCount = 10 var searchByTextResponse = await PlacesClient . shared . searchByText ( with : searchByTextRequest ) print ( "Found \( searchByTextResponse . places . count ) places" ) searchByTextResponse . pagination . pageSize = 20 // Continue making requests until no more results are found in pagination object while searchByTextResponse . pagination . hasNextPage { searchByTextResponse = await searchByTextResponse . pagination . fetchNextPage () print ( "Found \( searchByTextResponse . places . count ) places" ) } Objective-C GMSPlaceSearchByTextRequest searchByTextRequest = [[ GMSPlaceSearchByTextRequest alloc ] initWithTextQuery : @"restaurants" placeProperties : @[ GMSPlacePropertyAll ] ]; searchByTextRequest . maxResultCount = 10 ; block void ( ^ recursiveCallback )( GMSPlaceSearchByTextResponse , NSError ); recursiveCallback = ^ ( GMSPlaceSearchByTextResponse response , NSError error ) { NSLog ( @"Found %d places" , response . places . count ); if ( response . pagination . hasNextPage ) { [ response . pagination fetchNextPageWithCompletion : recursiveCallback ]; } }; [ GMSPlacesClient . sharedClient searchByTextWithRequest : searchByTextRequest completion : recursiveCallback ]; Required parameters Use the GMSPlaceSearchByTextRequest object to specify the required parameters for the search.
+- Places Swift SDK let restriction = GMSPlaceRectangularLocationOption ( northEast : CLLocationCoordinate2D ( latitude : 20 , longitude : 30 ), southWest : CLLocationCoordinate2D ( latitude : 40 , longitude : 50 ) ) let searchByTextRequest = SearchByTextRequest ( textQuery : "pizza in New York" , placeProperties : [ . name , . placeID ], locationRestriction : restriction , includedType : . restaurant , maxResultCount : 5 , minRating : 3.5 , priceLevels : [ . moderate , . inexpensive ], isStrictTypeFiltering : true ) switch await placesClient . searchByText ( with : searchByTextRequest ) { case . success ( let places ): // Handle places case . failure ( let placesError ): // Handle error } Swift // Create the GMSPlaceSearchByTextRequest object. let myProperties = [ GMSPlaceProperty . name , GMSPlaceProperty . placeID ]. map { $0 . rawValue } let request = GMSPlaceSearchByTextRequest ( textQuery : "pizza in New York" , placeProperties : myProperties ) request . isOpenNow = true request . includedType = "restaurant" request . maxResultCount = 5 request . minRating = 3.5 request . rankPreference = . distance request . isStrictTypeFiltering = true request . locationBias = GMSPlaceCircularLocationOption ( CLLocationCoordinate2DMake ( 40.7 , - 74.0 ), 200.0 ) // Array to hold the places in the response var placeResults : [ GMSPlace ] = [] let callback : GMSPlaceSearchByTextResultCallback = { [ weak self ] results , error in guard let self , error == nil else { if let error { print ( error . localizedDescription ) } return } guard let results = results as ? [ GMSPlace ] else { return } placeResults = results } GMSPlacesClient . shared (). searchByText ( with : request , callback : callback ) Objective-C // Create the GMSPlaceSearchByTextRequest object.
+
+### "GooglePlaces Framework Reference \_|\_ Places SDK for iOS \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace)
+- Source ID: `site-docs-reference`
+- Final score: 91
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Declaration Swift var goodForWatchingSports : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute goodForWatchingSports ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Declaration Swift var servesVegetarianFood : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute servesVegetarianFood ; wheelchairAccessibleEntrance Place Attribute indicating place is wheelchair accessible at the entrance.
+- Declaration Swift var wheelchairAccessibleEntrance : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute wheelchairAccessibleEntrance ; pureServiceAreaBusiness Place Attribute indicating place is a pure service area business.
+- Declaration Swift var pureServiceAreaBusiness : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute pureServiceAreaBusiness ; outdoorSeating Place Attribute indicating place has outdoor seating services.
+
+### "GooglePlaces Framework Reference \_|\_ Places SDK for iOS \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlaceAccessibilityOptions](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlaceAccessibilityOptions)
+- Source ID: `site-docs-reference`
+- Final score: 91
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Declaration Swift var wheelchairAccessibleSeating : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute wheelchairAccessibleSeating ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Declaration Swift var wheelchairAccessibleEntrance : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute wheelchairAccessibleEntrance ; wheelchairAccessibleRestroom Returns the GMSBooleanPlaceAttribute for a wheelchair accessible restroom.
+- Declaration Swift var wheelchairAccessibleParking : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute wheelchairAccessibleParking ; wheelchairAccessibleEntrance Returns the GMSBooleanPlaceAttribute for a wheelchair accessible entrance.
+- Declaration Swift var wheelchairAccessibleRestroom : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute wheelchairAccessibleRestroom ; wheelchairAccessibleSeating Returns the GMSBooleanPlaceAttribute for a wheelchair accessible seating.
 

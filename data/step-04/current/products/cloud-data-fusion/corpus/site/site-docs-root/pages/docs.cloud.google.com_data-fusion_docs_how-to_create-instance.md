@@ -33,8 +33,8 @@ Cloud Data Fusion instances run as the Compute Engine
 default service account . For information about the
 types and roles available, see Service accounts .
 By default, Cloud Data Fusion executes pipelines using a
-Dataproc cluster in your project. Ensure that your project meets
-the Dataproc networking requirements .
+Managed Service for Apache Spark cluster in your project. Ensure that your project meets
+the Managed Service for Apache Spark networking requirements .
 New projects start with a default network .
 The default network is pre-populated with a firewall rule default-allow-ssh ,
 that allows incoming connections on TCP port 22 from any source to any instance
@@ -60,9 +60,9 @@ Select an Edition .
 The default is Basic .
 Optional: Click Add accelerators to select accelerators to use in
 your instance.
-Specify the Dataproc service account
+Specify the Managed Service for Apache Spark service account
 to use for running your Cloud Data Fusion pipeline in
-Dataproc. The default is the
+Managed Service for Apache Spark. The default is the
 Compute Engine account. Regardless of version, make sure that a
 service account has appropriate Identity and Access Management roles for your needs. For
 more information, see
@@ -79,17 +79,17 @@ Create the
 Cloud Data Fusion instance with an internal IP address.
 Disabled
 Advanced monitoring and logging
-Enable Dataproc Cloud Logging
-Enable Dataproc Cloud Monitoring
+Enable Managed Service for Apache Spark Cloud Logging
+Enable Managed Service for Apache Spark Cloud Monitoring
 View
 advanced pipeline logs in Cloud Logging .
 Disabled
-Dataplex Universal Catalog data lineage
+Knowledge Catalog data lineage
 integration
-Enable or disable integration with Dataplex Universal Catalog
+Enable or disable integration with Knowledge Catalog
 data lineage
 View
-lineage in Dataplex Universal Catalog .
+lineage in Knowledge Catalog .
 Disabled
 Encryption
 Use a customer-managed encryption key (CMEK)
@@ -135,6 +135,6 @@ Learn more about Cloud Data Fusion .
 Work through a tutorial .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

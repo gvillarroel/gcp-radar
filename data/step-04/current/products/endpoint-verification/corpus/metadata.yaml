@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-09T19:13:24+00:00'
-updated_at: '2026-04-11T10:49:21+00:00'
+updated_at: '2026-04-14T04:13:00+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -23,29 +23,15 @@ sources:
   last_synced_at: '2026-04-11T10:24:11+00:00'
 - type: site
   id: site-docs-reference
-  title: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
-  created_at: '2026-04-11T10:23:49+00:00'
-  updated_at: '2026-04-11T10:48:08+00:00'
-  update_command: know sync site https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+  title: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
+  created_at: '2026-04-14T04:12:00+00:00'
+  updated_at: '2026-04-14T04:13:00+00:00'
+  update_command: know sync site https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
   config:
-    url: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+    url: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-11T10:48:08+00:00'
-- type: site
-  id: site-iam-reference
-  title: https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user
-  created_at: '2026-04-11T10:23:50+00:00'
-  updated_at: '2026-04-11T10:49:21+00:00'
-  update_command: know sync site https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user
-    --key corpus --compact
-  delete_command: know del --key corpus site-iam-reference
-  config:
-    url: https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user
-    max_depth: 1
-    max_pages: 20
-    compact_output: true
-  last_synced_at: '2026-04-11T10:49:21+00:00'
+  last_synced_at: '2026-04-14T04:13:00+00:00'

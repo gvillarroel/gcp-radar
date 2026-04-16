@@ -1,30 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.155Z"
+generated_at: "2026-04-15T00:01:14.044Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Cloud Dataflow Integration"
 feature_slug: "cloud-dataflow-integration"
 latest_feature_date: "2017-03-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
   - "https://docs.cloud.google.com/monitoring/agent/integrations"
-  - "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+  - "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus"
 keywords:
   - "dataflow"
   - "integration"
-  - "is"
   - "integrated"
-  - "with"
   - "monitoring"
 ---
 
 # Cloud Dataflow Integration
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,52 +34,52 @@ Cloud Dataflow is integrated with Monitoring.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
 - [https://docs.cloud.google.com/monitoring/agent/integrations](https://docs.cloud.google.com/monitoring/agent/integrations)
-- [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
+- [https://docs.cloud.google.com/monitoring/agent/ops-agent](https://docs.cloud.google.com/monitoring/agent/ops-agent)
+- [https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus](https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 142
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Cloud Dataflow : Cloud Dataflow is now integrated with Monitoring.
-- February 17, 2023 Feature You can now install pre-defined alerting policies for services integrated with Cloud Monitoring from the Monitoring Integrations page and from the Observability tab on the pages for Kubernetes Engine clusters and workloads.
-- August 21, 2025 Feature The following infrastructure is now integrated with Application Monitoring, which is in public preview.
-- For more information, see the following documents: Display the most recent data in tabular form API Example: Dashboard with a TimeSeriesTable widget September 06, 2024 Feature The Metrics management page in Cloud Monitoring now shows you the sources of metric reads and lets you exclude unneeded metrics entirely, eliminating the cost of ingesting them.
 
 ### Manage integrations \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/integrations](https://docs.cloud.google.com/monitoring/agent/integrations)
 - Source ID: `site-iam-reference`
-- Final score: 133
+- Final score: 52
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- This document describes the Cloud Monitoring Integrations page, a central location from which you can manage and review the status of Monitoring integrations with Google services and with your third-party applications.
 - The following screenshot shows an example of the Monitoring Integrations page: The Integrations page displays the following: A listing of how many Compute Engine VMs have the Ops Agent installed and how many GKE clusters have Managed Service for Prometheus enabled.
-- To limit the list of integrations by the type of application, click one of the following options: 3rd party services : shows all third-party services that have integrations with the Ops Agent or Managed Service for Prometheus.
+- This document describes the Cloud Monitoring Integrations page, a central location from which you can manage and review the status of Monitoring integrations with Google services and with your third-party applications.
 - Get started In the Google Cloud console, go to the Integrations page: Go to Integrations If you use the search bar to find this page, then select the result whose subheading is Monitoring .
+- Home Documentation Observability Cloud Monitoring Guides Send feedback Manage integrations Stay organized with collections Save and categorize content based on your preferences.
 
-### Cloud Monitoring overview \_|\_ Google Cloud Documentation
+### Ops Agent overview \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
-- Source ID: `site-docs-reference`
-- Final score: 110
+- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent](https://docs.cloud.google.com/monitoring/agent/ops-agent)
+- Source ID: `site-iam-reference`
+- Final score: 38
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The following screenshot illustrates a chart with this configuration: Pricing To learn about pricing for Cloud Monitoring, see the Google Cloud Observability pricing page.
-- The Cloud Monitoring API reference pages, such as the page alertPolicies.list , let you experiment with API calls directly from the reference page.
-- The alerting service is integrated with many Google Cloud services.
-- The following is an example of a points array with two values: "points": [ { "interval": { "startTime": "2020-07-27T20:20:21.597143Z", "endTime": "2020-07-27T20:20:21.597143Z" }, "value": { "doubleValue": 0.473005 } }, { "interval": { "startTime": "2020-07-27T20:19:21.597239Z", "endTime": "2020-07-27T20:19:21.597239Z" }, "value": { "doubleValue": 0.473025 } }, ], To understand the meaning of a value, you need to refer to the other data included in the time series and to the definitions of that data.
+- Google Distributed Cloud instances have an integrated logging and monitoring solution that collects status about system components.
+- Dataflow instances have pre-installed legacy Monitoring agents with service-specific configurations.
+- Metrics collected include: cpu metrics disk metrics iis metrics (Windows only) interface metrics gpu metrics (Linux only) memory metrics mssql metrics (Windows only) pagefile metrics (Windows only) swap metrics network metrics processes metrics agent self metrics : Third-party application support Curated integrations for third-party application metrics , which collect common app metrics and offer sample dashboards and alert policies.
+- Home Documentation Observability Cloud Monitoring Guides Send feedback Ops Agent overview Stay organized with collections Save and categorize content based on your preferences.
+
+### Collect Prometheus metrics \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus](https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus)
+- Source ID: `site-iam-reference`
+- Final score: 26
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For information on the existing integrations with the Ops Agent, see Monitoring third-party applications .
+- The software you are monitoring isn't already part of the set of existing Ops Agent integrations .
+- To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: Get-Service google-cloud-ops-agent Prometheus metrics in Cloud Monitoring You can use the tools provided by Cloud Monitoring with the data collected by the Prometheus receiver.
+- The simplest way to verify that your Prometheus data is being ingested is to use the Cloud Monitoring Metrics Explorer page in the Google Cloud console: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring .
 

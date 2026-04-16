@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/dataproc-metastore/docs/create-federation
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/dataproc-metastore/docs/create-service
+entrypoint: https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc
 source_metadata:
   url: https://docs.cloud.google.com/dataproc-metastore/docs/create-federation
   title: "Create a metadata federation service \_|\_ Dataproc Metastore \_|\_ Google\
@@ -39,10 +39,10 @@ complete the following:
 Enable the BigQuery API in the project that contains
 the BigQuery source.
 Enable the Resource Manager API .
-Optional: If you're using a Dataplex Universal Catalog Lake as a source for
+Optional: If you're using a Knowledge Catalog Lake as a source for
 federation ( Preview ), complete the following:
 Enable the Dataplex API in the project that contains
-a Dataplex Universal Catalog Lake as a source.
+a Knowledge Catalog Lake as a source.
 Required Roles
 To get the permissions that
 you need to create a federation service and attach a Managed Service for Apache Spark cluster, following the principle of least privilege,
@@ -63,8 +63,8 @@ on on the Managed Service for Apache Spark VM service account
 (Optional) To access BigQuery datasets:
 Use an appropriate BigQuery predefined role applicable for your use case
 on the user account or service account
-(Optional) To access Dataplex Universal Catalog Lakes ( Preview ):
-Use an appropriate Dataplex Universal Catalog predefined role applicable for your use case
+(Optional) To access Knowledge Catalog Lakes ( Preview ):
+Use an appropriate Knowledge Catalog predefined role applicable for your use case
 on the user account or service account
 For more information about granting roles, see Manage access to projects, folders, and organizations .
 These predefined roles contain
@@ -84,8 +84,8 @@ on the user account or service account
 (Optional) To access BigQuery datasets:
 For more information, see BigQuery permissions
 on the user account or service account
-(Optional) To access Dataplex Universal Catalog Lakes ( Preview ):
-For more information, see Dataplex Universal Catalog permissions
+(Optional) To access Knowledge Catalog Lakes ( Preview ):
+For more information, see Knowledge Catalog permissions
 on the user account or service account
 You might also be able to get
 these permissions
@@ -118,7 +118,7 @@ source ordering after creation.
 For the Source type , select your federation source.
 You can choose a Dataproc Metastore instance, a
 project that contains one or more BigQuery datasets,
-or a Dataplex Universal Catalog lake ( Preview) ).
+or a Knowledge Catalog lake ( Preview) ).
 In the Source field, enter the following information:
 For a Dataproc Metastore service .
 In the Selected project field, click Browse and select
@@ -136,9 +136,9 @@ service from other regions.
 For BigQuery.
 In the Selected project field, click Browse and select
 the project ID of the project that contains the BigQuery Dataset.
-For Dataplex Universal Catalog ( Preview ).
+For Knowledge Catalog ( Preview ).
 In the Selected project field, click Browse and select
-the project ID of the project that contains the Dataplex Universal Catalog Lake.
+the project ID of the project that contains the Knowledge Catalog Lake.
 Click Done .
 To create and start the service, click Submit .
 You can now attach your federation service to a Managed Service for Apache Spark cluster .
@@ -259,6 +259,6 @@ Update and delete a service
 Version policy
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

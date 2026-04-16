@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.528Z"
+generated_at: "2026-04-13T14:23:05.266Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "config-connector CLI export subcommand"
@@ -9,18 +9,15 @@ latest_feature_date: "2020-10-15"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview"
 keywords:
-  - "config"
-  - "connector"
-  - "cli"
-  - "export"
   - "subcommand"
-  - "the"
+  - "exporting"
+  - "export"
   - "includes"
-  - "an"
+  - "resources"
 ---
 
 # config-connector CLI export subcommand
@@ -42,45 +39,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview](https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### "Bulk importing and exporting existing Google Cloud resources \_|\_ Config\
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 138
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
-
-### Organizing your resources | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview](https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview)
-- Source ID: `site-docs-root`
-- Final score: 138
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export)
+- Source ID: `site-docs-reference`
+- Final score: 162
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Config Connector can create and manage Google Cloud resources at the project-level, folder-level, or organization-level scope....
-- Organizing your resources Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview Config Connector · Start free ... on your preferences.
+- Bulk importing and exporting existing Google Cloud resources This page describes the config-connector bulk-export command and how to use it to export Google Cloud resources into Config Connector YAML files which you can subsequently import into Config Connector. config-connector bulk-export uses Cloud Asset Inventory 's Export functionality to discover existing Google Cloud resources.
+- For example, if you want to only import PubSubTopic assets from the file EXPORT FILE , run the following command: cat EXPORT FILE jq '. select( .asset type == "pubsub.googleapis.com/Topic" )' config-connector bulk-export Exporting an inventory with config-connector The config-connector bulk-export tool can export resources from a Google Cloud Resource hierarchy .
+- Exporting your organization To export all resources from your organization, use the --organization parameter. config-connector bulk-export --organization ORGANIZATION ID Replace ORGANIZATION ID with your Google Cloud organization ID.
+- Exporting your folder To export all resources from a folder, use the --folder parameter. config-connector bulk-export --folder FOLDER NUMBER Replace FOLDER NUMBER with your Google Cloud folder number.
 
-### Creating resource references | Config Connector | Google Cloud Documentation
+### Export and import resources to Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- Source ID: `site-docs-root`
-- Final score: 120
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export)
+- Source ID: `site-docs-reference`
+- Final score: 124
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Creating resource references Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references You can find out what format the ... documentation.
-- You can also go to an individual resource&#x27;s reference page (for example, PubSubTopic) and look at the value listed in the &quot;IAM External Reference Format&quot; row of the resource&#x27;s summary table.
-- The IAMPolicy, IAMPartialPolicy and IAMPolicyMember pages list the accepted format for all supported resources.
-- Config Connector allows resources ...
+- The output should resemble the following example: apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : annotations : cnrm.cloud.google.com/project-id : my-example-project name : sample-topic Import a resource into Config Connector After you have the YAML file for the resource that you want Config Connector to acquire, complete the following steps: Pass your resource into Config Connector by running the following command: config-connector export RESOURCE ID kubectl apply -f - --namespace NAMESPACE Replace NAMESPACE with the namespace that Config Connector manages resources from.
+- After Config Connector acquires the resource, you can manage that resource by following the steps in Managing and deleting resources . config-connector CLI tool optional fields When running the config-connector export command, you can pass the following optional fields: config-connector export RESOURCE NAME \ --output FILENAME \ --oauth2-token TOKEN \ --iam-format [policy policymember none] \ --filter-deleted-iam-members [true false] \ --verbose --output : An optional output path that disables standard output.
+- Export and import resources to Config Connector This page describes the config-connector export command and how to use it to export Google Cloud resources into YAML files, which you can subsequently import into Config Connector.
+- By default, config-connector uses the Google Cloud CLI default credentials . --iam-format : Specifies the kind of IAM resources output with your export.
+
+### "Install the config-connector CLI tool \_|\_ Config Connector \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview)
+- Source ID: `site-docs-reference`
+- Final score: 90
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- With the config-connector CLI tool, you can export existing Google Cloud resources into YAML files, which are required for Config Connector to acquire those resources.
+- Perform a bulk export for all resources in your project, folder, or organization .
+- What's next Perform an export on individual resources .
+- For example, on Linux and macOS, you might use mv to place it into /usr/local/bin . mv linux/amd64/config-connector /usr/local/bin If you want to use the config-connector CLI tool to export directly from Cloud Asset Inventory, enable the Cloud Asset Inventory API on your Google Cloud Identity's project with gcloud . gcloud services enable cloudasset.googleapis.com Upgrade config-connector To upgrade the config-connector CLI tool to the latest version, repeat the installation steps and overwrite the executable.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:58.964Z"
+generated_at: "2026-04-12T12:18:48.041Z"
 product_name: "Service Infrastructure"
 product_slug: "service-infrastructure"
 feature_name: "Service Control API v1"
@@ -9,9 +9,10 @@ latest_feature_date: "2016-12-01"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started"
   - "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control"
   - "https://docs.cloud.google.com/service-infrastructure/docs/service-control/reference/rest"
-  - "https://docs.cloud.google.com/service-infrastructure/docs/apis"
+  - "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
 keywords:
   - "control"
   - "api"
@@ -38,55 +39,70 @@ The Service Control API version 1 was released as generally available.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started](https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started)
 - [https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control](https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control)
 - [https://docs.cloud.google.com/service-infrastructure/docs/service-control/reference/rest](https://docs.cloud.google.com/service-infrastructure/docs/service-control/reference/rest)
-- [https://docs.cloud.google.com/service-infrastructure/docs/apis](https://docs.cloud.google.com/service-infrastructure/docs/apis)
+- [https://docs.cloud.google.com/service-infrastructure/docs/admission-control](https://docs.cloud.google.com/service-infrastructure/docs/admission-control)
 
 ## Supporting Pages
 
-### Service Control API Access Control | Service Infrastructure | Google Cloud Documentation
+### "Getting Started with the Service Control API \_|\_ Service Infrastructure\
+
+- URL: [https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started](https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started)
+- Source ID: `site-docs-root`
+- Final score: 234
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For security and privacy reasons, the permission check typically happens before other checks. $ gcurl -d '{}' https://servicecontrol.googleapis.com/v1/services/invalid.com:check { "error": { "code": 403, "message": "Permission 'servicemanagement.services.check' denied on service 'invalid.com'.", "status": "PERMISSION DENIED" } } Call without proper permission on a service. $ gcurl -d '{}' https://servicecontrol.googleapis.com/v1/services/servicecontrol.googleapis.com:check { "error": { "code": 403, "message": "Permission 'servicemanagement.services.check' denied on service 'servicecontrol.googleapis.com'.", "status": "PERMISSION DENIED" } } Call with invalid request. $ gcurl -d '{}' https://servicecontrol.googleapis.com/v1/services/endpointsapis.appspot.com:check { "error": { "code": 400, "message": "Request contains an invalid argument.", "status": "INVALID ARGUMENT" } } This and following call assume that the service, operation name and project being checked are "endpointsapis.appspot.com", "google.example.hello.v1.HelloService.GetHello" and "endpointsapis-consumer" correspondingly.
+- Call with invalid request. $ gcurl -d '{ "operation": { "operationId": "123e4567-e89b-12d3-a456-426655440000", "consumerId": "project:endpointsapis-consumer", "startTime": "2016-06-12T22:00:15Z", "operationName": "google.example.hello.v1.HelloService.GetHello" } }' https://servicecontrol.googleapis.com/v1/services/endpointsapis.appspot.com:check { "checkErrors": [ { "code": "SERVICE NOT ACTIVATED", "detail": "Service 'endpointsapis.appspot.com' is not enabled for consumer 'project:endpointsapis-consumer'." } ] } Successful call to "services.check" method after the API is enabled for the project. $ gcurl -d '{ "operation": { "operationId": "123e4567-e89b-12d3-a456-426655440000", "consumerId": "project:endpointsapis-consumer", "startTime":"2016-07-31T05:20:00Z", "operationName":"google.example.hello.v1.HelloService.GetHello" } }' https://servicecontrol.googleapis.com/v1/services/endpointsapis.appspot.com:check { "operationId": "123e4567-e89b-12d3-a456-426655440000" } After you have completed the preceding steps: You have a functional local test setup that you can use to call any Google Cloud Platform APIs.
+- Test with curl First, define a convenient shell alias for calling Google REST APIs: alias gcurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json" ' The following shell command sequence demonstrates the incremental steps to call the Service Control API.
+- Home Documentation Application development Service Infrastructure Guides Send feedback Getting Started with the Service Control API Stay organized with collections Save and categorize content based on your preferences.
+
+### "Service Control API Access Control \_|\_ Service Infrastructure \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control](https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control)
 - Source ID: `site-iam-reference`
-- Final score: 164
+- Final score: 232
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Service Control API Access Control Service Infrastructure Google Cloud Documentation Source URL: https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control The Service Control API uses the following resources to provide its functionality: Service producer project: A service producer project may own zero or more managed services.
-- Service consumer: A service consumer refers to a Google Cloud project that has enabled the service.
-- The IAM access control is applied to the resource model.
-- The service producer project is the parent of services in this hierarchy.
+- The following example uses the gcurl alias defined in the Test with curl section of the Getting started guide: gcurl -d "{ 'policy': { 'bindings': [ { role: 'roles/servicemanagement.serviceController', members: 'serviceAccount: SERVICE ACCOUNT ' } ] } }" https://servicemanagement.googleapis.com/v1/services/ YOUR SERVICE NAME /consumers/ CONSUMER PROJECT NUMBER :setIamPolicy Please note the above example will replace all existing consumer project level IAM policies.
+- The following example uses the gcurl alias defined in the Test with curl section of the Getting started guide: gcurl -d "{ 'policy': { 'bindings': [ { role: 'roles/servicemanagement.serviceController', members: 'serviceAccount: SERVICE ACCOUNT ' } ] } }" https://servicemanagement.googleapis.com/v1/services/ YOUR SERVICE NAME :setIamPolicy Please note the above example will replace all existing service level IAM policies.
+- Service consumer level permissions require that the request to the Service Control API must contain at least one valid service consumer project ID.
+- For example, you can grant the roles to a service account, such as foo@developer.gserviceaccount.com : gcloud projects add-iam-policy-binding PRODUCER PROJECT ID --member serviceAccount: SERVICE ACCOUNT --role roles/servicemanagement.serviceController Similarly, you can grant the roles to a user account, such as bar@gmail.com : gcloud projects add-iam-policy-binding PRODUCER PROJECT ID --member user: USER ACCOUNT --role roles/servicemanagement.serviceController Grant a role at the service level You can grant the role roles/servicemanagement.serviceController at the service level using curl .
 
-### Service Control API | Service Infrastructure | Google Cloud Documentation
+### Service Control API \_|\_ Service Infrastructure \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/service-infrastructure/docs/service-control/reference/rest](https://docs.cloud.google.com/service-infrastructure/docs/service-control/reference/rest)
-- Source ID: `site-docs-reference`
-- Final score: 128
+- Source ID: `site-docs-root`
+- Final score: 232
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Service Control API Service Infrastructure Google Cloud Documentation Source URL: https://docs.cloud.google.com/service-infrastructure/docs/service-control/reference/rest Provides admission control and telemetry reporting for services integrated with Service Infrastructure. ...
-- If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
-- A Discovery Document is a machine-readable specification for describing and consuming REST APIs.
-- To call this service, we recommend that you use the Google-provided client libraries.
+- This service provides the following discovery documents: https://servicecontrol.googleapis.com/$discovery/rest?version=v2 https://servicecontrol.googleapis.com/$discovery/rest?version=v1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.
+- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://servicecontrol.googleapis.com REST Resource: v2.services Methods check POST /v2/services/{serviceName}:check This method provides admission control for services that are integrated with Service Infrastructure . report POST /v2/services/{serviceName}:report This method provides telemetry reporting for services that are integrated with Service Infrastructure .
+- REST Resource: v1.services Methods allocateQuota POST /v1/services/{serviceName}:allocateQuota Attempts to allocate quota for the specified consumer. check POST /v1/services/{serviceName}:check Checks whether an operation on a service should be allowed to proceed based on the configuration of the service and related policies. report POST /v1/services/{serviceName}:report Reports operation results to Google Service Control, such as logs and metrics.
+- REST Resource: v3 REST Resource: v2.services REST Resource: v1.services Service: servicecontrol.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
 
-### APIs and Reference | Service Infrastructure | Google Cloud Documentation
+### Admission Control \_|\_ Service Infrastructure \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/service-infrastructure/docs/apis](https://docs.cloud.google.com/service-infrastructure/docs/apis)
-- Source ID: `site-api-reference`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/service-infrastructure/docs/admission-control](https://docs.cloud.google.com/service-infrastructure/docs/admission-control)
+- Source ID: `site-iam-reference`
+- Final score: 220
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- APIs and Reference Service Infrastructure Google Cloud Documentation Source URL: https://docs.cloud.google.com/service-infrastructure/docs/apis Service Infrastructure · Reference · Send feedback · Summary of the Service Consumer Management REST API.
-- Summary of the Service Control REST API.
-- Summary of the Service Control RPC API.
-- Summary of the Service Networking REST API.
+- The following example shows you how to use gcurl command to call services.check over HTTP. gcurl -d '{ "service config id": "latest", "attributes": { "origin": { "ip": "1.2.3.4" }, "api": { "service": "endpointsapis.appspot.com", "operation": "google.example.hello.v1.HelloService.GetHello", "version": "v1", "protocol": "https" } }, "request": { "id": "123e4567-e89b-12d3-a456-426655440000", "time": "2019-07-31T05:20:00Z", "scheme": "https", "host": "endpointsapis.appspot.com" "headers": { "authorization": "Bearer xxx", "user-agent": "curl/1.0" } }, "resources": [ ] }' https://servicecontrol.googleapis.com/v2/services/endpointsapis.appspot.com:check { } The response from the services.check method indicates whether the admission control has passed.
+- Attibute Description Example origin.ip The IP address of the caller. "1.2.3.4" api.service The API service name. "endpointsapis.appspot.com" api.operation The API method name. "google.example.hello.v1.HelloService.GetHello" api.version The API version string. "v1" api.protocol The API protocol name. "https" request.id A unique request id. "123e4567-e89b-12d3-a456-426655440000" request.time The time of the request. "2019-07-31T05:20:00Z" request.method The HTTP method name. "POST" request.scheme The URL scheme. "https" request.host The HTTP host header. "endpointsapis.appspot.com" request.path The URL path. "/v1/hello" request.headers The HTTP request headers.
+- In other cases, the access can be complicated data import jobs or SQL queries, and the service needs to model the access in terms of a set of virtual API requests and perform admission control on each request.
+- Service Control API v2 The Service Control API v2 provides a simple services.check method that provides admission control to all services integrated with Service Infrastructure.
 

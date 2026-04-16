@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.173Z"
+generated_at: "2026-04-12T20:57:08.292Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "Remote API OAuth2 authentication"
 feature_slug: "remote-api-oauth2-authentication"
 latest_feature_date: "2015-08-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started"
-  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml"
+  - "https://docs.cloud.google.com/appengine/docs/legacy/standard/python/apis"
+  - "https://docs.cloud.google.com/appengine/docs/standard/apis"
+  - "https://docs.cloud.google.com/appengine/docs/standard/access-control"
 keywords:
-  - "authentication"
-  - "oauth2"
   - "remote"
+  - "oauth2"
+  - "authentication"
   - "can"
-  - "be"
-  - "api"
   - "now"
-  - "the"
+  - "accessed"
+  - "credentials"
+  - "via"
 ---
 
 # Remote API OAuth2 authentication
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,42 @@ The Remote API can now be accessed using OAuth2 credentials via application defa
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
-- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml)
+- [https://docs.cloud.google.com/appengine/docs/legacy/standard/python/apis](https://docs.cloud.google.com/appengine/docs/legacy/standard/python/apis)
+- [https://docs.cloud.google.com/appengine/docs/standard/apis](https://docs.cloud.google.com/appengine/docs/standard/apis)
+- [https://docs.cloud.google.com/appengine/docs/standard/access-control](https://docs.cloud.google.com/appengine/docs/standard/access-control)
 
 ## Supporting Pages
 
-### "An Overview of the Admin API \_|\_ App Engine Admin API \_|\_ Google Cloud\
+### "APIs & Reference \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- After configuring authentication, you can begin managing your apps, including deploying versions of applications and managing the amount of traffic to those versions.
-- With the Admin API, you can manage your App Engine applications in manners that best suit your environment or process.
-- Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.
-- Tighter control around deploying new versions, including the ability to automate traffic migration between two versions or traffic splitting across one or more versions.
-
-### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Go Java Node.js PHP Python Ruby To authenticate users in Google Cloud applications, Google offers the following user authentication methods: Authentication Service Summary Identity Platform (recommended) Authenticate users using passwords, phone numbers, popular federated identity providers like Google, Facebook, Twitter, and any provider that supports SAML or OpenID Connect protocol.
-- The recommended method when starting a new project, so you can use the capabilities of Identity Platform as well as the legacy features from Firebase Authentication .
-- This solution is best for most users who want flexible authentication options based on reliable, enterprise-grade features and SLAs.
-- This solution is best if you want the most lightweight way to set up user authentication for an App Engine app.
-
-### "The deployment descriptor: web.xml \_|\_ App Engine standard environment\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/webxml)
+- URL: [https://docs.cloud.google.com/appengine/docs/legacy/standard/python/apis](https://docs.cloud.google.com/appengine/docs/legacy/standard/python/apis)
 - Source ID: `site-docs-reference`
-- Final score: 120
+- Final score: 50
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "APIs & Reference \_|\_ App Engine standard environment \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/apis](https://docs.cloud.google.com/appengine/docs/standard/apis)
+- Source ID: `site-docs-reference`
+- Final score: 50
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Setting up access control \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/access-control](https://docs.cloud.google.com/appengine/docs/standard/access-control)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 46
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For example, if the user accesses the URL path /help/accounts/ , the following <welcome-file-list> element in the deployment descriptor tells the server to check for help/accounts/index.jsp and help/accounts/index.html before reporting that the URL does not exist: <welcome-file-list> <welcome-file>index.jsp</welcome-file> <welcome-file>index.html</welcome-file> </welcome-file-list> Filters A filter is a class that acts on a request like a servlet, but can allow the handling of the request to continue with other filters or servlets.
-- If you are migrating from Java 8 and need to use the legacy bundled services with the latest supported Java version, you must add the <app-engine-apis> element and set it to true in your web.xml file: < app - engine - apis>true < / app - engine - apis > Deployment descriptors A web application's deployment descriptor describes the classes, resources and configuration of the application and how the web server uses them to serve web requests.
-- Note that App Engine provides the JavaServer Pages Standard Tag Library (JSTL), and you don't need to install it. <taglib> <taglib-uri>/escape</taglib-uri> <taglib-location>/WEB-INF/escape-tags.tld</taglib-location> </taglib> Security and authentication An App Engine application can use Google Accounts for user authentication.
-- To declare that HTTPS should be used for a URL, you set up a security constraint in the deployment descriptor (as described in Security and authentication ) with a <user-data-constraint> whose <transport-guarantee> is CONFIDENTIAL .
+- If you don't specify credentials when constructing // the client, the client library will look for credentials in the // environment. const storage = new Storage (); // Makes an authenticated API request. async function listBuckets () { try { const results = await storage . getBuckets (); const [ buckets ] = results ; console . log ( 'Buckets:' ); buckets . forEach ( bucket = > { console . log ( bucket . name ); }); } catch ( err ) { console . error ( 'ERROR:' , err ); } } listBuckets (); PHP // Imports the Cloud Storage client library. use Google\Cloud\Storage\StorageClient; / Authenticate to a cloud client library using a service account implicitly. @param string $projectId The Google project ID. / function auth cloud implicit($projectId) { $config = [ 'projectId' => $projectId, ]; If you don't specify credentials when constructing the client, the client library will look for credentials in the environment. $storage = new StorageClient($config); Make an authenticated API request (listing storage buckets) foreach ($storage->buckets() as $bucket) { printf('Bucket: %s' .
+- Client () Make an authenticated API request buckets = list ( storage client . list buckets ()) print ( buckets ) Ruby project id = "Your Google Cloud project ID" require "google/cloud/storage" If you don't specify credentials when constructing the client, the client library will look for credentials in the environment. storage = Google :: Cloud :: Storage . new project : project id Make an authenticated API request storage . buckets . each do bucket puts bucket . name end By default, the app's environment contains credentials from the default App Engine service account .
+- If you set the GOOGLE APPLICATION CREDENTIALS environment variable or pass credentials in your code, we recommend that you store your credentials in one of the following ways: Store your credentials in a secure location such as Firestore in Datastore mode (Datastore) and retrieve them at runtime.
+- Background () // For API packages whose import path is starting with "cloud.google.com/go", // such as cloud.google.com/go/storage in this case, if there are no credentials // provided, the client library will look for credentials in the environment. storageClient , err := storage .
 

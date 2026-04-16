@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.018Z"
+generated_at: "2026-04-13T22:42:27.307Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner table DEFAULT values for non-key columns"
@@ -9,18 +9,14 @@ latest_feature_date: "2022-04-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient"
+  - "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+  - "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+  - "https://docs.cloud.google.com/spanner/docs/information-schema"
 keywords:
-  - "spanner"
-  - "table"
+  - "columns"
   - "default"
   - "values"
-  - "for"
-  - "non"
-  - "key"
-  - "columns"
+  - "table"
 ---
 
 # Spanner table DEFAULT values for non-key columns
@@ -38,43 +34,52 @@ Spanner now supports DEFAULT values for non-key columns when creating or alterin
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
+- [https://docs.cloud.google.com/spanner/docs/information-schema-pg](https://docs.cloud.google.com/spanner/docs/information-schema-pg)
+- [https://docs.cloud.google.com/spanner/docs/change-streams/details](https://docs.cloud.google.com/spanner/docs/change-streams/details)
+- [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
 
 ## Supporting Pages
 
-### Module vector_store (0.9.0) | Python client libraries | Google Cloud Documentation
+### "Information schema for GoogleSQL-dialect databases \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store](https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain_google_spanner.vector_store)
-- Source ID: `site-python-reference`
-- Final score: 86
+- URL: [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
+- Source ID: `site-docs-reference`
+- Final score: 125
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Module vector store (0.9.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest/langchain google spanner.vector store SpannerVectorStore(instance id: str, database id: str, table name: str, embedding service: langchain core.embeddings.embeddings.Embeddings, id column: str = &#x27;langchain id&#x27;, content column: str = &#x27;content&#x27;, embedding column: typing.Optional[typing.Union[str, langchain google spanner.vector store.TableColumn]] = None, client: typing.Optional[google.cloud.spanner v1.client.Client] = None, metadata columns: typing.Optional[typing.List[str]] = None, ignore metadata columns: typing.Optional[typing.List[str]] = None, metadata json column: typing.Optional[str] = None, vector index name: typing.Optional[str] = None, query parameters: langchain google spanner.vector store.QueryParameters = &lt;langchain google spanner.vector store.QueryParameters object&gt;)
+- Returns empty if the default leader is not set: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . option name = 'default leader' Return information about each index in the user's schema: SELECT t . table schema , t . table name , t . index name , t . parent table name FROM information schema . indexes AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND t . index type != 'PRIMARY KEY' ORDER BY t . table catalog , t . table schema , t . table name , t . index name Returns all the columns that use options other than the default: SELECT t . table schema , t . table name , t . column name , t . option type , t . option value , t . option name FROM information schema . column options AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) Returns the current optimizer related database options: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . schema name = '' AND s . option name IN ( 'optimizer version' , 'optimizer statistics package' ) Returns all available statistics packages: SELECT FROM information schema . spanner statistics ; Return all sequences: SELECT FROM information schema . sequences ; Return all sequence options for the sequence named "MySequence" SELECT FROM information schema . sequence options WHERE name = "MySequence" ; Return the names of all property graphs and their definitions: SELECT property graph name , property graph metadata json FROM information schema . property graphs Return the names of all property graphs together with their labels and properties: SELECT property graph name , property graph metadata json . labels , property graph metadata json . propertyDeclarations FROM information schema . property graphs What's next Learn about available Introspection tools to help you investigate database issues.
+- Examples Return information about each table in the user's schema: SELECT t . table schema , t . table name , t . parent table name FROM information schema . tables AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND t . table type = 'BASE TABLE' ORDER BY t . table catalog , t . table schema , t . table name Return the name of all tables in the INFORMATION SCHEMA: SELECT t . table name FROM information schema . tables AS t WHERE t . table schema = "SPANNER SYS" Return information about the columns in the user table MyTable in default schema: SELECT t . column name , t . spanner type , t . is nullable FROM information schema . columns AS t WHERE t . table catalog = '' AND t . table schema = '' AND t . table name = 'MyTable' ORDER BY t . table catalog , t . table schema , t . table name , t . ordinal position Return information on what the default leader region for the database is.
+- GraphElementTable name string The name of the graph element table. kind string Either NODE or EDGE . baseCatalogName string The name of the catalog containing the base table. baseSchemaName string The name of the schema containing the base table. baseTableName string The name of the input table from which elements are created. keyColumns array<string> The column names that constitute the element key. labelNames array<string> The label names attached to this element table. propertyDefinitions array<object> A list of GraphPropertyDefinition objects. dynamicLabelExpr string The name of the column that contains the DYNAMIC LABEL definition. dynamicPropertyExpr string The name of the column that contains the DYNAMIC PROPERTIES definition. sourceNodeTable object A GraphNodeTableReference object.
+- GraphNodeTableReference nodeTableName string The name of the graph element table. edgeTableColumns array<string> The name of the columns that are associated with the source and destination keys for the edges. nodeTableColumns array<string> The name of the columns that are associated with the source and destination keys for the nodes.
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### "Information schema for PostgreSQL-dialect databases \_|\_ Spanner \_|\_\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 80
+- URL: [https://docs.cloud.google.com/spanner/docs/information-schema-pg](https://docs.cloud.google.com/spanner/docs/information-schema-pg)
+- Source ID: `site-docs-reference`
+- Final score: 125
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- Examples Return information about each table in the user's schema: SELECT t . table schema , t . table catalog , t . table name , t . parent table name FROM information schema . tables AS t WHERE t . table schema NOT IN ( 'pg catalog' , 'information schema' , 'SPANNER SYS' ) AND t . table type = 'BASE TABLE' ORDER BY t . table catalog , t . table schema , t . table name Return the name of all tables and views in the information schema for PostgreSQL-dialect databases: SELECT table name FROM information schema . tables WHERE table schema = "information schema" Return information about columns in the user table my table in the default schema: SELECT t . ordinal position , t . column name , t . data type , t . spanner type , t . is nullable FROM information schema . columns AS t WHERE t . table schema = 'public' AND t . table name = 'my table' ORDER BY t . ordinal position Return information about each index in the default schema in the current database: ## What's next {: #whats-next} + Learn about available Introspection tools to help you investigate database issues.
+- For PostgreSQL-dialect databases, the default is public . table name character varying The name of the table that this row refers to. all columns character varying YES if this row's change stream tracks the entirety of the table this row refers to.
+- Possible values include 'BASE TABLE', 'VIEW', or 'SYNONYM'. self referencing column name character varying Not used. reference generation character varying Not used. user defined type catalog character varying Not used. user defined type schema character varying Not used. user defined type name character varying Not used. is insertable into character varying Not used. is typed character varying Not used. commit action character varying Not used. parent table name character varying The name of the parent table if this table is interleaved, or NULL . on delete action character varying This is set to CASCADE or NO ACTION for interleaved tables, and NULL otherwise.
+- The default value is public . table name character varying The name of the view. view definition character varying The SQL text of the query that defines the view. check option character varying Not used. is updatable character varying Not used. is insertable into character varying Not used. is trigger updatable character varying Not used. is trigger deletable character varying Not used. is trigger insertable into character varying Not used. security type character varying The security type of the view.
 
-### Class SpannerClient (3.62.0) | Python client libraries | Google Cloud Documentation
+### "Change stream partitions, records, and queries \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient)
-- Source ID: `site-python-reference`
-- Final score: 80
+- URL: [https://docs.cloud.google.com/spanner/docs/change-streams/details](https://docs.cloud.google.com/spanner/docs/change-streams/details)
+- Source ID: `site-docs-root`
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerClient (3.62.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- Only the LastUpdate column was modified, but all tracked columns are returned. "data change record" : { "commit timestamp" : "2022-09-27T12:30:00.123456Z" , // record sequence is unique and monotonically increasing within a // transaction, across all partitions. "record sequence" : "00000000" , "server transaction id" : "6329047911" , "is last record in transaction in partition" : true , "table name" : "AccountBalance" , "column types" : [ { "name" : "AccountId" , "type" : { "code" : "STRING" }, "is primary key" : true , "ordinal position" : 1 }, { "name" : "LastUpdate" , "type" : { "code" : "TIMESTAMP" }, "is primary key" : false , "ordinal position" : 2 }, { "name" : "Balance" , "type" : { "code" : "INT" }, "is primary key" : false , "ordinal position" : 3 } ], "mods" : [ { "keys" : { "AccountId" : "Id1" }, "new values" : { "LastUpdate" : "2022-09-27T12:30:00.123456Z" , "Balance" : 1000 }, "old values" : {} } ], "mod type" : "UPDATE" , // options are INSERT, UPDATE, DELETE "value capture type" : "NEW ROW" , "number of records in transaction" : 1 , "number of partitions in transaction" : 1 , "transaction tag" : "app=banking,env=prod,action=update" , "is system transaction" : false } The following data change record is an example of a record with the value capture type NEW ROW AND OLD VALUES .
+- The two accounts are in separate change stream partitions. "data change record" : { "commit timestamp" : "2022-09-27T12:30:00.123456Z" , // record sequence is unique and monotonically increasing within a // transaction, across all partitions. "record sequence" : "00000000" , "server transaction id" : "6329047911" , "is last record in transaction in partition" : true , "table name" : "AccountBalance" , "column types" : [ { "name" : "AccountId" , "type" : { "code" : "STRING" }, "is primary key" : true , "ordinal position" : 1 }, { "name" : "LastUpdate" , "type" : { "code" : "TIMESTAMP" }, "is primary key" : false , "ordinal position" : 2 }, { "name" : "Balance" , "type" : { "code" : "INT" }, "is primary key" : false , "ordinal position" : 3 } ], "mods" : [ { "keys" : { "AccountId" : "Id1" }, "new values" : { "LastUpdate" : "2022-09-27T12:30:00.123456Z" , "Balance" : 1000 }, "old values" : { "LastUpdate" : "2022-09-26T11:28:00.189413Z" , "Balance" : 1500 }, } ], "mod type" : "UPDATE" , // options are INSERT, UPDATE, DELETE "value capture type" : "OLD AND NEW VALUES" , "number of records in transaction" : 2 , "number of partitions in transaction" : 2 , "transaction tag" : "app=banking,env=prod,action=update" , "is system transaction" : false , } "data change record" : { "commit timestamp" : "2022-09-27T12:30:00.123456Z" , "record sequence" : "00000001" , "server transaction id" : "6329047911" , "is last record in transaction in partition" : true , "table name" : "AccountBalance" , "column types" : [ { "name" : "AccountId" , "type" : { "code" : "STRING" }, "is primary key" : true , "ordinal position" : 1 }, { "name" : "LastUpdate" , "type" : { "code" : "TIMESTAMP" }, "is primary key" : false , "ordinal position" : 2 }, { "name" : "Balance" , "type" : { "code" : "INT" }, "is primary key" : false , "ordinal position" : 3 } ], "mods" : [ { "keys" : { "AccountId" : "Id2" }, "new values" : { "LastUpdate" : "2022-09-27T12:30:00.123456Z" , "Balance" : 2000 }, "old values" : { "LastUpdate" : "2022-01-20T11:25:00.199915Z" , "Balance" : 1500 }, }, ... ], "mod type" : "UPDATE" , // options are INSERT, UPDATE, DELETE "value capture type" : "OLD AND NEW VALUES" , "number of records in transaction" : 2 , "number of partitions in transaction" : 2 , "transaction tag" : "app=banking,env=prod,action=update" , "is system transaction" : false , } The following data change record is an example of a record with the value capture type NEW VALUES .
+- This value capture type captures the new value and old value of LastUpdate . "data change record" : { "commit timestamp" : "2022-09-27T12:30:00.123456Z" , // record sequence is unique and monotonically increasing within a // transaction, across all partitions. "record sequence" : "00000000" , "server transaction id" : "6329047911" , "is last record in transaction in partition" : true , "table name" : "AccountBalance" , "column types" : [ { "name" : "AccountId" , "type" : { "code" : "STRING" }, "is primary key" : true , "ordinal position" : 1 }, { "name" : "LastUpdate" , "type" : { "code" : "TIMESTAMP" }, "is primary key" : false , "ordinal position" : 2 }, { "name" : "Balance" , "type" : { "code" : "INT" }, "is primary key" : false , "ordinal position" : 3 } ], "mods" : [ { "keys" : { "AccountId" : "Id1" }, "new values" : { "LastUpdate" : "2022-09-27T12:30:00.123456Z" , "Balance" : 1000 }, "old values" : { "LastUpdate" : "2022-09-26T11:28:00.189413Z" } } ], "mod type" : "UPDATE" , // options are INSERT, UPDATE, DELETE "value capture type" : "NEW ROW AND OLD VALUES" , "number of records in transaction" : 1 , "number of partitions in transaction" : 1 , "transaction tag" : "app=banking,env=prod,action=update" , "is system transaction" : false } Heartbeat records When a heartbeat record is returned, it indicates that all changes with commit timestamp less than or equal to the heartbeat record's timestamp have been returned, and future data records in this partition must have higher commit timestamps than that returned by the heartbeat record.
+- Only the LastUpdate column was modified, so only that column was returned. "data change record" : { "commit timestamp" : "2022-09-27T12:30:00.123456Z" , // record sequence is unique and monotonically increasing within a // transaction, across all partitions. "record sequence" : "00000000" , "server transaction id" : "6329047911" , "is last record in transaction in partition" : true , "table name" : "AccountBalance" , "column types" : [ { "name" : "AccountId" , "type" : { "code" : "STRING" }, "is primary key" : true , "ordinal position" : 1 }, { "name" : "LastUpdate" , "type" : { "code" : "TIMESTAMP" }, "is primary key" : false , "ordinal position" : 2 } ], "mods" : [ { "keys" : { "AccountId" : "Id1" }, "new values" : { "LastUpdate" : "2022-09-27T12:30:00.123456Z" }, "old values" : {} } ], "mod type" : "UPDATE" , // options are INSERT, UPDATE, DELETE "value capture type" : "NEW VALUES" , "number of records in transaction" : 1 , "number of partitions in transaction" : 1 , "transaction tag" : "app=banking,env=prod,action=update" , "is system transaction" : false } The following data change record is an example of a record with the value capture type NEW ROW .
 

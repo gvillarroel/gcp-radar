@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-11T18:28:02.626Z",
+  "generated_at": "2026-04-12T21:44:09.440Z",
   "product_name": "Google SecOps",
   "product_slug": "google-secops",
   "step02_source_path": "data/step-02/current/google-secops.md",
@@ -225,7 +225,7 @@
         {
           "title": "Configure a Google Cloud identity provider | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/onboard/configure-cloud-authentication",
-          "description": "Important: The following examples don&#x27;t configure authorization to Google SecOps features. This is done using IAM for feature access control. The following example grants the Chronicle API Viewer role to to a specific group: gcloud projects add-iam-policy-binding PROJECT_ID \\ --role roles/chronicle.viewer \\ --member &quot;group:GROUP_EMAIL&quot; ... PROJECT_ID: with the project ID of the Google Security Operations-bound project you configured in Configure a Google Cloud project for Google Security Operations. See Creating and managing projects for a description of fields that identify a project.",
+          "description": "You create IAM policies that define which users and groups have access to Google SecOps features. These IAM policies are defined using predefined roles and permissions provided by Google SecOps or custom roles that you create.",
           "rank": 5
         },
         {
@@ -298,15 +298,15 @@
           "rank": 6
         },
         {
-          "title": "Sign in to Google SecOps | Google Security Operations | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/chronicle/docs/log-in-to-ui",
-          "description": "Note: Google SecOps converts all recorded event timestamps to UTC to maintain consistency across all security data.",
-          "rank": 7
-        },
-        {
           "title": "Link a Google SecOps instance to Google Cloud services | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/onboard/link-chronicle-cloud",
           "description": "This document describes how to link a Google SecOps instance to a new subscription.",
+          "rank": 7
+        },
+        {
+          "title": "Sign in to Google SecOps | Google Security Operations | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/chronicle/docs/log-in-to-ui",
+          "description": "Note: Google SecOps converts all recorded event timestamps to UTC to maintain consistency across all security data.",
           "rank": 8
         }
       ]
@@ -369,7 +369,7 @@
         {
           "title": "Gemini in Google SecOps | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/secops/gemini-secops",
-          "description": "You can also see the Gemini documentation and release notes. Availability: Gemini in Google Security Operations is available globally. Gemini data is processed with global endpoints on Vertex AI. Customer requests might be routed to the nearest available region for processing, but depending on system availability, latency, and other operational factors, Gemini might process data in any available global region. Pricing: For information about pricing, see Google SecOps pricing.",
+          "description": "You can also see the Gemini documentation and release notes. Availability: Gemini in Google Security Operations is available globally. Gemini data is processed with global endpoints on Vertex AI. Customer requests might be routed to the nearest available region for processing, but depending on system availability, latency, and other operational factors, Gemini might process data in any available global region. Pricing: For information about pricing, see Google SecOps ...",
           "rank": 8
         }
       ]
@@ -485,7 +485,7 @@
         {
           "title": "Configure feature access control using IAM | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/onboard/configure-feature-access",
-          "description": "If the user sent an API request, ... is returned. Google SecOps <strong>provides a set of predefined roles with a defined set of permissions that control whether a user can access the feature</strong>....",
+          "description": "Google SecOps integrates with Google ... administrators can control access to features by <strong>creating IAM policies that bind users or groups to predefined roles or can create custom IAM roles</strong>....",
           "rank": 4
         },
         {
@@ -503,7 +503,7 @@
         {
           "title": "Use Gemini and other experiments in Google SecOps | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/secops/google-secops-labs",
-          "description": "This document explains how you can configure and run Google SecOps Gemini and other intelligence experiments without disrupting your existing production systems—and benefit from their output. The experiments comply with the Role-Based Access Control (RBAC) configuration of your environment, ...",
+          "description": "This document explains how you can configure and run Google SecOps Gemini and other intelligence experiments without disrupting your existing production systems—and benefit from their output. The experiments comply with the Role-Based Access Control (RBAC) configuration of your environment, and they have streamlined configurations with clear actionable results and output.",
           "rank": 7
         },
         {
@@ -558,21 +558,21 @@
           "rank": 5
         },
         {
+          "title": "Google SecOps Content Hub overview | Google Security Operations | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/chronicle/docs/secops/content_hub",
+          "description": "On the Curated Detections page, you can view all supported detection rule definitions in Google SecOps, including rule logic and code. To view and modify curated detections (rules), do the following: Find the required rule set you want to update and click View &amp; Manage. In the side bar that opens on the Overview tab, click Manage Rule.",
+          "rank": 6
+        },
+        {
           "title": "Google SecOps APIs and libraries overview | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview",
           "description": "For a more general overview of client libraries within Google Cloud, see Client libraries explained. To use the APIs, you must authenticate your client&#x27;s identity. You can learn more about per API authentication in the respective API documentation. The Chronicle API is the new-generation, unified API for Google SecOps...",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "Google Security Operations SIEM overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/overview",
           "description": "<strong>Collector: A software component</strong>, ... Google SecOps. Ingestion APIs: APIs that enable logs to be sent directly to the Google Security Operations platform, eliminating the need for additional hardware or software in customer environments.",
-          "rank": 7
-        },
-        {
-          "title": "Google SecOps features in Security Command Center Enterprise | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/security-command-center/docs/secops-limits",
-          "description": "For information about investigating alerts, see the following in Google Security Operations documentation: Investigating a GCTI alert generated by curated detections. Investigating an alert. In the Security Operations console, you use cases to obtain details about findings, attach playbooks to finding alerts, apply automatic threat responses, and track the remediation of security issues. For information, see Cases overview. This Security Operations console page lets you manage playbooks included in the SCC Enterprise - Cloud Orchestration and Remediation use case.",
           "rank": 8
         }
       ]
@@ -654,9 +654,9 @@
           "rank": 7
         },
         {
-          "title": "Google SecOps APIs and libraries overview | Google Security Operations | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview",
-          "description": "This page provides an overview of the APIs available for Google Security Operations.",
+          "title": "Google SecOps Content Hub overview | Google Security Operations | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/chronicle/docs/secops/content_hub",
+          "description": "In the side bar that opens on the Overview tab, click Manage Rule.",
           "rank": 8
         }
       ]
@@ -707,15 +707,15 @@
           "rank": 3
         },
         {
-          "title": "Control access to the platform using SOAR permissions | Google Security Operations | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/control-access-to-platform",
-          "description": "This document explains how these mechanisms—SOC roles, environments, and either permission groups or IAM roles—work together to control user access to different parts of the platform. It also describes how these mechanisms determine who can view cases. You can assign different access rights to SOC roles to control the scope of responsibility for each user group in Google Security Operations. Google SecOps includes predefined SOC roles, but you can also add custom roles.",
-          "rank": 4
-        },
-        {
           "title": "Migrate SOAR permissions to Google Cloud IAM | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-soar-permissions-iam",
           "description": "<strong>Generates custom IAM roles that replicate the existing permissions groups</strong>. Maps existing users and groups to newly created IAM roles to make sure all access privileges are retained.",
+          "rank": 4
+        },
+        {
+          "title": "Control access to the platform using SOAR permissions | Google Security Operations | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/control-access-to-platform",
+          "description": "This document explains how these mechanisms—SOC roles, environments, and either permission groups or IAM roles—work together to control user access to different parts of the platform. It also describes how these mechanisms determine who can view cases. You can assign different access rights to SOC roles to control the scope of responsibility for each user group in Google Security Operations. Google SecOps includes predefined SOC roles, but you can also add custom roles.",
           "rank": 5
         },
         {
@@ -1536,7 +1536,7 @@
       "title": "Google Security Operations SIEM overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/overview",
       "description": "<strong>Collector: A software component</strong>, ... Google SecOps. Ingestion APIs: APIs that enable logs to be sent directly to the Google Security Operations platform, eliminating the need for additional hardware or software in customer environments.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview",
         "site:docs.cloud.google.com/chronicle/docs \"Google Security Operations\" overview",
@@ -1587,69 +1587,6 @@
           "log",
           "custom",
           "are",
-          "chronicle"
-        ],
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": true
-    },
-    {
-      "title": "Google SecOps APIs and libraries overview | Google Security Operations | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview",
-      "description": "It includes the Feed Management, Detection Engine, Search, Forwarder Management, Data Export and Customer Management APIs. <strong>You can authenticate to this API through a Google Developer Service Account Credential</strong>.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com/chronicle/docs/reference \"Google SecOps APIs and libraries overview\" OR authentication",
-        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview",
-        "site:docs.cloud.google.com/chronicle/docs \"Google Security Operations\" overview"
-      ],
-      "intent_hits": [
-        "canonical_docs",
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 67,
-      "product_fit_score": 164,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "google",
-          "search",
-          "secops",
-          "data",
-          "cloud",
-          "custom",
-          "detection",
-          "chronicle"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "api_reference",
-        "score": 100,
-        "family_score": 42,
-        "family_preferred": true,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "google",
-          "search",
-          "secops",
-          "data",
-          "cloud",
-          "custom",
-          "detection",
           "chronicle"
         ],
         "keep": true,
@@ -1710,6 +1647,68 @@
           "intelligence"
         ],
         "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Google SecOps Content Hub overview | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/secops/content_hub",
+      "description": "On the Curated Detections page, you can view all supported detection rule definitions in Google SecOps, including rule logic and code. To view and modify curated detections (rules), do the following: Find the required rule set you want to update and click View &amp; Manage. In the side bar that opens on the Overview tab, click Manage Rule.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/chronicle/docs \"Google Security Operations\" overview"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 164,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "google",
+          "secops",
+          "cloud",
+          "that",
+          "curated",
+          "detections",
+          "log",
+          "detection"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "google",
+          "secops",
+          "cloud",
+          "that",
+          "curated",
+          "detections",
+          "log",
+          "detection"
+        ],
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
@@ -1831,7 +1830,7 @@
       "title": "Sign in to Google SecOps | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/log-in-to-ui",
       "description": "Note: Google SecOps converts all recorded event timestamps to UTC to maintain consistency across all security data.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Google SecOps\" Google Cloud documentation"
       ],
@@ -1841,7 +1840,7 @@
       "round_hits": [
         1
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 164,
       "feature_coverage": {
@@ -1887,7 +1886,7 @@
     {
       "title": "Configure a Google Cloud identity provider | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/onboard/configure-cloud-authentication",
-      "description": "Important: The following examples don&#x27;t configure authorization to Google SecOps features. This is done using IAM for feature access control. The following example grants the Chronicle API Viewer role to to a specific group: gcloud projects add-iam-policy-binding PROJECT_ID \\ --role roles/chronicle.viewer \\ --member &quot;group:GROUP_EMAIL&quot; ... PROJECT_ID: with the project ID of the Google Security Operations-bound project you configured in Configure a Google Cloud project for Google Security Operations. See Creating and managing projects for a description of fields that identify a project.",
+      "description": "You create IAM policies that define which users and groups have access to Google SecOps features. These IAM policies are defined using predefined roles and permissions provided by Google SecOps or custom roles that you create.",
       "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Google SecOps\" \"roles and permissions\""
@@ -1907,12 +1906,12 @@
         "matched_tokens": [
           "google",
           "secops",
-          "with",
+          "users",
           "cloud",
           "that",
-          "chronicle",
-          "api",
-          "fields"
+          "custom",
+          "are",
+          "chronicle"
         ],
         "user_facing_alignment": 0
       },
@@ -1930,12 +1929,12 @@
         "matched_feature_tokens": [
           "google",
           "secops",
-          "with",
+          "users",
           "cloud",
           "that",
-          "chronicle",
-          "api",
-          "fields"
+          "custom",
+          "are",
+          "chronicle"
         ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
@@ -2113,6 +2112,67 @@
       "keep": false
     },
     {
+      "title": "Google SecOps APIs and libraries overview | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview",
+      "description": "It includes the Feed Management, Detection Engine, Search, Forwarder Management, Data Export and Customer Management APIs. <strong>You can authenticate to this API through a Google Developer Service Account Credential</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/chronicle/docs/reference \"Google SecOps APIs and libraries overview\" OR authentication",
+        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 164,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "google",
+          "search",
+          "secops",
+          "data",
+          "cloud",
+          "custom",
+          "detection",
+          "chronicle"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "google",
+          "search",
+          "secops",
+          "data",
+          "cloud",
+          "custom",
+          "detection",
+          "chronicle"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
       "title": "Chronicle RBAC API | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/reference/rbac-api",
       "description": "This capability enables you to ... currently stored in Google SecOps. <strong>This document describes how the Chronicle API uses the OAuth 2.0 protocol for authentication and authorization</strong>....",
@@ -2213,7 +2273,7 @@
           "chronicle"
         ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -2276,7 +2336,7 @@
     {
       "title": "Gemini in Google SecOps | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/secops/gemini-secops",
-      "description": "You can also see the Gemini documentation and release notes. Availability: Gemini in Google Security Operations is available globally. Gemini data is processed with global endpoints on Vertex AI. Customer requests might be routed to the nearest available region for processing, but depending on system availability, latency, and other operational factors, Gemini might process data in any available global region. Pricing: For information about pricing, see Google SecOps pricing.",
+      "description": "You can also see the Gemini documentation and release notes. Availability: Gemini in Google Security Operations is available globally. Gemini data is processed with global endpoints on Vertex AI. Customer requests might be routed to the nearest available region for processing, but depending on system availability, latency, and other operational factors, Gemini might process data in any available global region. Pricing: For information about pricing, see Google SecOps ...",
       "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Google SecOps\" \"release notes\""
@@ -2335,7 +2395,7 @@
     {
       "title": "Use Gemini and other experiments in Google SecOps | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/secops/google-secops-labs",
-      "description": "This document explains how you can configure and run Google SecOps Gemini and other intelligence experiments without disrupting your existing production systems—and benefit from their output. The experiments comply with the Role-Based Access Control (RBAC) configuration of your environment, ...",
+      "description": "This document explains how you can configure and run Google SecOps Gemini and other intelligence experiments without disrupting your existing production systems—and benefit from their output. The experiments comply with the Role-Based Access Control (RBAC) configuration of your environment, and they have streamlined configurations with clear actionable results and output.",
       "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Google SecOps\" \"access control\""
@@ -2886,7 +2946,7 @@
       "title": "Control access to the platform using SOAR permissions | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/control-access-to-platform",
       "description": "This document explains how these mechanisms—SOC roles, environments, and either permission groups or IAM roles—work together to control user access to different parts of the platform. It also describes how these mechanisms determine who can view cases. You can assign different access rights to SOC roles to control the scope of responsibility for each user group in Google Security Operations. Google SecOps includes predefined SOC roles, but you can also add custom roles.",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Google SecOps\" IAM roles permissions"
       ],
@@ -2896,7 +2956,7 @@
       "round_hits": [
         3
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 44,
       "feature_coverage": {
@@ -3150,65 +3210,6 @@
           "users",
           "cloud",
           "chronicle"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Google SecOps features in Security Command Center Enterprise | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/security-command-center/docs/secops-limits",
-      "description": "For information about investigating alerts, see the following in Google Security Operations documentation: Investigating a GCTI alert generated by curated detections. Investigating an alert. In the Security Operations console, you use cases to obtain details about findings, attach playbooks to finding alerts, apply automatic threat responses, and track the remediation of security issues. For information, see Cases overview. This Security Operations console page lets you manage playbooks included in the SCC Enterprise - Cloud Orchestration and Remediation use case.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "google",
-          "secops",
-          "cloud",
-          "curated",
-          "detections",
-          "threat",
-          "lets",
-          "detection"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "google",
-          "secops",
-          "cloud",
-          "curated",
-          "detections",
-          "threat",
-          "lets",
-          "detection"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."

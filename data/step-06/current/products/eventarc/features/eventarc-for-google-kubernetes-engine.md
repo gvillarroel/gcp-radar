@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:18.697Z"
+generated_at: "2026-04-12T12:15:58.544Z"
 product_name: "Eventarc"
 product_slug: "eventarc"
 feature_name: "Eventarc for Google Kubernetes Engine"
@@ -9,9 +9,10 @@ latest_feature_date: "2022-05-12"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal"
-  - "https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions"
-  - "https://docs.cloud.google.com/eventarc/docs/roles-permissions"
+  - "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke"
+  - "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb"
+  - "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+  - "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub"
 keywords:
   - "eventarc"
   - "for"
@@ -38,46 +39,70 @@ Eventarc can receive and route events for Google Kubernetes Engine.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal](https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal)
-- [https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions](https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions)
-- [https://docs.cloud.google.com/eventarc/docs/roles-permissions](https://docs.cloud.google.com/eventarc/docs/roles-permissions)
+- [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke)
+- [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb)
+- [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway)
+- [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub)
 
 ## Supporting Pages
 
-### Roles and permissions for an internal HTTP endpoint in a VPC network | Eventarc Standard | Google Cloud Documentation
+### "Route backup for GKE events to GKE \_|\_ Eventarc Standard \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal](https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal)
+- URL: [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke)
 - Source ID: `site-iam-reference`
-- Final score: 130
+- Final score: 351
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Roles and permissions for an internal HTTP endpoint in a VPC network Eventarc Standard Google Cloud Documentation Source URL: https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal This document shows you how to grant Identity and Access Management (IAM) roles and permissions to support routing events from Google Cloud to an internal HTTP endpoint in a Virtual Private Cloud (VPC) network using Eventarc.
+- You can configure event routing by specifying filters for the trigger, including the event source, and the target Google Kubernetes Engine (GKE) service running in a GKE cluster.
+- For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \ --location = LOCATION \ --destination-gke-cluster = DESTINATION GKE CLUSTER \ --destination-gke-location = DESTINATION GKE LOCATION \ --destination-gke-namespace = DESTINATION GKE NAMESPACE \ --destination-gke-service = DESTINATION GKE SERVICE \ --destination-gke-path = DESTINATION GKE PATH \ --event-filters = "type= EVENT FILTER TYPE " \ --event-filters = " COLLECTION ID = RESOURCE ID " \ --event-filters-path-pattern = " COLLECTION ID = PATH PATTERN " \ --event-data-content-type = " EVENT DATA CONTENT TYPE " \ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com " Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.
+- Enable the Eventarc, Eventarc Publishing, Google Kubernetes Engine, and Resource Manager APIs. gcloud services enable eventarc.googleapis.com \ eventarcpublishing.googleapis.com \ container.googleapis.com \ cloudresourcemanager.googleapis.com If applicable, enable the API related to the direct events.
+- Home Documentation Application development Eventarc Standard Guides Send feedback Route backup for GKE events to GKE Stay organized with collections Save and categorize content based on your preferences.
 
-### Roles and permissions for Workflows targets | Eventarc Standard | Google Cloud Documentation
+### "Route AlloyDB for PostgreSQL events to GKE \_|\_ Eventarc Standard \_|\_\
 
-- URL: [https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions](https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions)
+- URL: [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb)
 - Source ID: `site-iam-reference`
-- Final score: 130
+- Final score: 349
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Roles and permissions for Workflows targets Eventarc Standard Google Cloud Documentation Source URL: https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions This document shows you how to grant Identity and Access Management (IAM) roles and permissions to support routing events from Google Cloud and other sources to target workflows using Eventarc.
+- You can configure event routing by specifying filters for the trigger, including the event source, and the target Google Kubernetes Engine (GKE) service running in a GKE cluster.
+- For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \ --location = LOCATION \ --destination-gke-cluster = DESTINATION GKE CLUSTER \ --destination-gke-location = DESTINATION GKE LOCATION \ --destination-gke-namespace = DESTINATION GKE NAMESPACE \ --destination-gke-service = DESTINATION GKE SERVICE \ --destination-gke-path = DESTINATION GKE PATH \ --event-filters = "type= EVENT FILTER TYPE " \ --event-filters = " COLLECTION ID = RESOURCE ID " \ --event-filters-path-pattern = " COLLECTION ID = PATH PATTERN " \ --event-data-content-type = " EVENT DATA CONTENT TYPE " \ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com " Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.
+- Enable the Eventarc, Eventarc Publishing, Google Kubernetes Engine, and Resource Manager APIs. gcloud services enable eventarc.googleapis.com \ eventarcpublishing.googleapis.com \ container.googleapis.com \ cloudresourcemanager.googleapis.com If applicable, enable the API related to the direct events.
+- Home Documentation Application development Eventarc Standard Guides Send feedback Route AlloyDB for PostgreSQL events to GKE Stay organized with collections Save and categorize content based on your preferences.
 
-### Roles and permissions for Cloud Run targets | Eventarc Standard | Google Cloud Documentation
+### "Route API Gateway events to GKE \_|\_ Eventarc Standard \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/eventarc/docs/roles-permissions](https://docs.cloud.google.com/eventarc/docs/roles-permissions)
+- URL: [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway)
 - Source ID: `site-iam-reference`
-- Final score: 120
+- Final score: 335
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Roles and permissions for Cloud Run targets Eventarc Standard Google Cloud Documentation Source URL: https://docs.cloud.google.com/eventarc/docs/roles-permissions This document shows you how to grant Identity and Access Management (IAM) roles and permissions to support routing events from Google Cloud and other sources to Cloud Run services using Eventarc.
+- You can configure event routing by specifying filters for the trigger, including the event source, and the target Google Kubernetes Engine (GKE) service running in a GKE cluster.
+- For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \ --location = LOCATION \ --destination-gke-cluster = DESTINATION GKE CLUSTER \ --destination-gke-location = DESTINATION GKE LOCATION \ --destination-gke-namespace = DESTINATION GKE NAMESPACE \ --destination-gke-service = DESTINATION GKE SERVICE \ --destination-gke-path = DESTINATION GKE PATH \ --event-filters = "type= EVENT FILTER TYPE " \ --event-filters = " COLLECTION ID = RESOURCE ID " \ --event-filters-path-pattern = " COLLECTION ID = PATH PATTERN " \ --event-data-content-type = " EVENT DATA CONTENT TYPE " \ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com " Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.
+- Enable the Eventarc, Eventarc Publishing, Google Kubernetes Engine, and Resource Manager APIs. gcloud services enable eventarc.googleapis.com \ eventarcpublishing.googleapis.com \ container.googleapis.com \ cloudresourcemanager.googleapis.com If applicable, enable the API related to the direct events.
+- If you don't already have one, create a user-managed service account, then grant it the roles and permissions necessary so that Eventarc can manage events for your target GKE destination.
+
+### "Route Apigee API hub events to GKE \_|\_ Eventarc Standard \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub)
+- Source ID: `site-iam-reference`
+- Final score: 335
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can configure event routing by specifying filters for the trigger, including the event source, and the target Google Kubernetes Engine (GKE) service running in a GKE cluster.
+- For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \ --location = LOCATION \ --destination-gke-cluster = DESTINATION GKE CLUSTER \ --destination-gke-location = DESTINATION GKE LOCATION \ --destination-gke-namespace = DESTINATION GKE NAMESPACE \ --destination-gke-service = DESTINATION GKE SERVICE \ --destination-gke-path = DESTINATION GKE PATH \ --event-filters = "type= EVENT FILTER TYPE " \ --event-filters = " COLLECTION ID = RESOURCE ID " \ --event-filters-path-pattern = " COLLECTION ID = PATH PATTERN " \ --event-data-content-type = " EVENT DATA CONTENT TYPE " \ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com " Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.
+- Enable the Eventarc, Eventarc Publishing, Google Kubernetes Engine, and Resource Manager APIs. gcloud services enable eventarc.googleapis.com \ eventarcpublishing.googleapis.com \ container.googleapis.com \ cloudresourcemanager.googleapis.com If applicable, enable the API related to the direct events.
+- If you don't already have one, create a user-managed service account, then grant it the roles and permissions necessary so that Eventarc can manage events for your target GKE destination.
 

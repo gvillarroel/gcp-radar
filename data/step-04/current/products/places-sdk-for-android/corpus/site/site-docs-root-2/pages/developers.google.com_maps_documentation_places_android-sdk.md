@@ -5,7 +5,7 @@ url: https://developers.google.com/maps/documentation/places/android-sdk
 knowledge_key: corpus
 source_id: site-docs-root-2
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/places/android-sdk/overview
+entrypoint: https://developers.google.com/maps/documentation/places/android-sdk
 source_metadata:
   url: https://developers.google.com/maps/documentation/places/android-sdk
   title: "Google Maps Platform Documentation \_|\_ Places SDK for Android \_|\_ Google\

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:38.933Z"
+generated_at: "2026-04-12T12:17:32.213Z"
 product_name: "Integration Connectors"
 product_slug: "integration-connectors"
 feature_name: "MongoDB connector version 1"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-02-19"
 deprecation_date: "2024-04-20"
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/custom-connectors"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions"
+  - "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
 keywords:
   - "mongodb"
   - "connector"
@@ -38,45 +39,69 @@ Version 1 of the MongoDB connector is deprecated and support ends on 2024-04-20;
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions](https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions)
+- [https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView](https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/reference/rest](https://docs.cloud.google.com/integration-connectors/docs/reference/rest)
 
 ## Supporting Pages
 
-### Marketplace connectors overview | Integration Connectors | Google Cloud Documentation
+### "IAM roles and permissions for Integration Connectors \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- Source ID: `site-docs-root`
-- Final score: 116
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions](https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions)
+- Source ID: `site-docs-root-2`
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following table lists all the predefined IAM roles for Integration Connectors: Role Permissions Connector Admin ( roles/ connectors.admin ) Full access to all resources of Connectors Service. connectors.actions. connectors.actions.execute connectors.actions.list connectors.connections.create connectors.connections.delete connectors. connections. executeSqlQuery connectors. connections. generateOpenAPISpec connectors.connections.get connectors. connections. getConnectionSchemaMetadata connectors. connections. getIamPolicy connectors. connections. getRuntimeActionSchema connectors. connections. getRuntimeEntitySchema connectors.connections.list connectors. connections. setIamPolicy connectors.connections.update connectors.connectors. connectors.connectors.get connectors.connectors.list connectors. customConnectorVersions. connectors. customConnectorVersions. create connectors. customConnectorVersions. delete connectors. customConnectorVersions. get connectors. customConnectorVersions. getIamPolicy connectors. customConnectorVersions. list connectors. customConnectorVersions. setIamPolicy connectors. customConnectorVersions. update connectors.customConnectors. connectors. customConnectors. create connectors. customConnectors. delete connectors. customConnectors. get connectors. customConnectors. getIamPolicy connectors. customConnectors. list connectors. customConnectors. setIamPolicy connectors. customConnectors. update connectors. endpointAttachments. connectors. endpointAttachments. create connectors. endpointAttachments. delete connectors. endpointAttachments. get connectors. endpointAttachments. getIamPolicy connectors. endpointAttachments. list connectors. endpointAttachments. setIamPolicy connectors. endpointAttachments. update connectors.entities. connectors.entities.create connectors.entities.delete connectors. entities. deleteEntitiesWithConditions connectors.entities.get connectors.entities.list connectors.entities.update connectors. entities. updateEntitiesWithConditions connectors.entityTypes.list connectors. eventSubscriptions. connectors. eventSubscriptions. create connectors. eventSubscriptions. delete connectors. eventSubscriptions. get connectors. eventSubscriptions. list connectors. eventSubscriptions. update connectors.eventtypes. connectors.eventtypes.get connectors.eventtypes.list connectors.locations. connectors.locations.get connectors.locations.list connectors.managedZones. connectors.managedZones.create connectors.managedZones.delete connectors.managedZones.get connectors. managedZones. getIamPolicy connectors.managedZones.list connectors. managedZones. setIamPolicy connectors.managedZones.update connectors.operations. connectors.operations.cancel connectors.operations.delete connectors.operations.get connectors.operations.list connectors.providers. connectors.providers.get connectors.providers.list connectors.regionalSettings. connectors. regionalSettings. get connectors. regionalSettings. update connectors.runtimeconfig.get connectors. schemaMetadata. refresh connectors.settings. connectors.settings.get connectors.settings.update connectors.versions. connectors.versions.get connectors.versions.list resourcemanager.projects.get resourcemanager.projects.list secretmanager. secrets. getIamPolicy Connectors Viewer ( roles/ connectors.viewer ) Read-only access to Connectors all resources. connectors. connections. generateOpenAPISpec connectors.connections.get connectors. connections. getConnectionSchemaMetadata connectors. connections. getIamPolicy connectors. connections. getRuntimeActionSchema connectors. connections. getRuntimeEntitySchema connectors.connections.list connectors.connectors. connectors.connectors.get connectors.connectors.list connectors. customConnectorVersions. get connectors. customConnectorVersions. getIamPolicy connectors. customConnectorVersions. list connectors. customConnectors. get connectors. customConnectors. getIamPolicy connectors. customConnectors. list connectors. endpointAttachments. get connectors. endpointAttachments. getIamPolicy connectors. endpointAttachments. list connectors. eventSubscriptions. get connectors. eventSubscriptions. list connectors.eventtypes. connectors.eventtypes.get connectors.eventtypes.list connectors.locations. connectors.locations.get connectors.locations.list connectors.managedZones.get connectors. managedZones. getIamPolicy connectors.managedZones.list connectors.operations.get connectors.operations.list connectors.providers. connectors.providers.get connectors.providers.list connectors. regionalSettings. get connectors.runtimeconfig.get connectors.settings.get connectors.versions. connectors.versions.get connectors.versions.list resourcemanager.projects.get resourcemanager.projects.list Custom Connectors Admin ( roles/ connectors.customConnectorAdmin ) Custom Connector is a global resource which creates custom connector within the given target project.
+- Role Permissions Connectors Platform Service Agent ( roles/ connectors.serviceAgent ) Grants Connectors Platform service account to manage customer resources Warning: Do not grant service agent roles to any principals except service agents . connectors.actions. connectors.actions.execute connectors.actions.list connectors.connections.get connectors. connections. getConnectionSchemaMetadata connectors.connections.list connectors.connectors. connectors.connectors.get connectors.connectors.list connectors. customConnectorVersions. get connectors. customConnectorVersions. list connectors. customConnectors. get connectors. customConnectors. list connectors. endpointAttachments. get connectors. endpointAttachments. list connectors.entities.get connectors.entityTypes.list connectors. eventSubscriptions. get connectors. eventSubscriptions. list connectors.eventtypes. connectors.eventtypes.get connectors.eventtypes.list connectors.locations. connectors.locations.get connectors.locations.list connectors.managedZones.get connectors.managedZones.list connectors.providers. connectors.providers.get connectors.providers.list connectors.runtimeconfig.get iam. serviceAccounts. getAccessToken iam. serviceAccounts. getOpenIdToken iam. serviceAccounts. implicitDelegation monitoring. metricDescriptors. create monitoring. metricDescriptors. get monitoring. metricDescriptors. list monitoring. monitoredResourceDescriptors. monitoring. monitoredResourceDescriptors. get monitoring. monitoredResourceDescriptors. list monitoring.timeSeries.create For more information about predefined roles, see Roles and permissions .
+- This role grants Admin access to Custom Connector resources connectors. customConnectorVersions. connectors. customConnectorVersions. create connectors. customConnectorVersions. delete connectors. customConnectorVersions. get connectors. customConnectorVersions. getIamPolicy connectors. customConnectorVersions. list connectors. customConnectorVersions. setIamPolicy connectors. customConnectorVersions. update connectors.customConnectors. connectors. customConnectors. create connectors. customConnectors. delete connectors. customConnectors. get connectors. customConnectors. getIamPolicy connectors. customConnectors. list connectors. customConnectors. setIamPolicy connectors. customConnectors. update connectors.locations. connectors.locations.get connectors.locations.list Custom Connector Viewer ( roles/ connectors.customConnectorViewer ) Custom Connector is a global resource which creates custom connector within the given target project.
+- This role grants Read-only access to Custom Connector & Custom Connector Version resources. connectors. customConnectorVersions. get connectors. customConnectorVersions. getIamPolicy connectors. customConnectorVersions. list connectors. customConnectors. get connectors. customConnectors. getIamPolicy connectors. customConnectors. list connectors.locations. connectors.locations.get connectors.locations.list Connectors Endpoint Attachment Admin ( roles/ connectors.endpointAttachmentAdmin ) Endpoint Attachment is a regional resource which creates PSC connection endpoint for the given PSC Service Attachment.
+
+### ConnectorVersionView \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView](https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView)
+- Source ID: `site-api-reference`
+- Final score: 234
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-06-27 UTC."],[],[]]
+- Home Documentation Application development Integration Connectors Reference Send feedback ConnectorVersionView Stay organized with collections Save and categorize content based on your preferences.
+- Java is a registered trademark of Oracle and/or its affiliates.
+
+### Apache Cassandra \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 222
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Marketplace connectors overview Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview As a partner, when you publish a custom connector as a Marketplace connector, it enhances the visibility and reach of the connector.
-- As a Marketplace consumer, you can use the trusted Google Cloud Marketplace platform to discover and purchase connectors required to build integrations in Application ...
+- PSC connection type Field name Details Location us-central1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn-psc Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database DATABASE NAME Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 SSL Configuration No Destination Type Host address Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 SSL connection type Field name Details Location us-central1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database testgcp Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (under SSL Configuration) Yes Choose Trust Model (under Trust Store) Private Custom Trust Store CUSTOM TRUST STORE Secret version 1 Client Certificate (under Key Store) CLIENT CERT Secret version 1 Client Private Key (under Key Store) CLIENT PRIVATE KEY Secret version 1 Destination Type Host address Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 Multinode connectivity type Field name Details Location europe-west1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn-multinode1 Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database test-google-cloud Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (under SSL Configuration) No Destination Type Host address Host 192.0.2.0 Port PORT Host 192.0.2.0 Port PORT Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 To use a multinode connection type, SSL must be disabled in the Cassandra instance and you must use the username and password to authenticate.
+- Connection configuration samples Basic authentication connection type Fieldname Details Location us-central1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database test-google-cloud Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (SSL Configuration) No Destination Type Host address Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 If SSL is disabled in the Cassandra instance, you cannot use basic authentication with username and password.
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { "employeeCode" : "5100" , "startDate" : "2010-01-01 00:00:00.0" , "country" : "US" } If the integration is successful, the connector task's connectorOutputPayload field will have the response of the create operation.
+- Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.
 
-### Google Drive connector | Integration Connectors | Google Cloud Documentation
+### Connectors API \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- Source ID: `site-docs-root`
-- Final score: 106
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Google Drive connector Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc google drive/overview If the action is successful, the connector task&#x27;s connectorOutputPayload response parameter will have a value similar to the following: ...
-- The following example shows how to configure the SubscribeToFileChanges action in Application Integration:
-
-### Custom connectors | Integration Connectors | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- Source ID: `site-docs-root`
-- Final score: 98
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/reference/rest](https://docs.cloud.google.com/integration-connectors/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 210
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Custom connectors Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/custom-connectors This page provides an overview of the custom connectors feature in Integration Connectors, and assumes that you are familiar with the following concepts:
+- REST Resource: v1.projects.locations.global.customConnectors.customConnectorVersions Methods create POST /v1/{parent=projects/ /locations/global/customConnectors/ }/customConnectorVersions Creates a new CustomConnectorVersion in a given project and location. get GET /v1/{name=projects/ /locations/global/customConnectors/ /customConnectorVersions/ } Gets details of a single CustomConnectorVersion. list GET /v1/{parent=projects/ /locations/global/customConnectors/ }/customConnectorVersions List CustomConnectorVersions in a given project REST Resource: v1.projects.locations.global.managedZones Methods create POST /v1/{parent=projects/ /locations/global}/managedZones Creates a new ManagedZone in a given project and location. delete DELETE /v1/{name=projects/ /locations/global/managedZones/ } Deletes a single ManagedZone. get GET /v1/{name=projects/ /locations/global/managedZones/ } Gets details of a single ManagedZone. list GET /v1/{parent=projects/ /locations/global}/managedZones List ManagedZones in a given project patch PATCH /v1/{managedZone.name=projects/ /locations/global/managedZones/ } Updates the parameters of a single ManagedZone.
+- REST Resource: v1.projects.locations.global.customConnectors Methods create POST /v1/{parent=projects/ /locations/global}/customConnectors Creates a new CustomConnector in a given project and location. delete DELETE /v1/{name=projects/ /locations/global/customConnectors/ } Deletes a single CustomConnector. get GET /v1/{name=projects/ /locations/global/customConnectors/ } Gets details of a single CustomConnector. list GET /v1/{parent=projects/ /locations/global}/customConnectors List CustomConnectorVersions in a given project patch PATCH /v1/{customConnector.name=projects/ /locations/global/customConnectors/ } Updates the parameters of a CustomConnector.
+- REST Resource: v1.projects.locations.providers.connectors.versions Methods fetchAuthSchema GET /v1/{name=projects/ /locations/ /providers/ /connectors/ /versions/ }:fetchAuthSchema fetch and return the list of auth config variables required to override the connection backend auth. get GET /v1/{name=projects/ /locations/ /providers/ /connectors/ /versions/ } Gets details of a single connector version. list GET /v1/{parent=projects/ /locations/ /providers/ /connectors/ }/versions Lists Connector Versions in a given project and location.
+- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://connectors.googleapis.com REST Resource: v1.projects.locations Methods get GET /v1/{name=projects/ /locations/ } Gets information about a location. getRegionalSettings GET /v1/{name=projects/ /locations/ /regionalSettings} GetRegionalSettings gets settings of a region. getRuntimeConfig GET /v1/{name=projects/ /locations/ /runtimeConfig} Gets the runtimeConfig of a location. list GET /v1/{name=projects/ }/locations Lists information about the supported locations for this service. updateRegionalSettings PATCH /v1/{regionalSettings.name=projects/ /locations/ /regionalSettings} Update the settings of a region.
 

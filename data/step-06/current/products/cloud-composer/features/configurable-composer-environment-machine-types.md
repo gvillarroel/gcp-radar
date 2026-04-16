@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.022Z"
+generated_at: "2026-04-12T12:11:20.225Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Configurable Composer environment machine types"
 feature_slug: "configurable-composer-environment-machine-types"
 latest_feature_date: "2020-09-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/create-environments"
   - "https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsClient"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments"
 keywords:
   - "configurable"
   - "composer"
@@ -26,7 +27,7 @@ keywords:
 # Configurable Composer environment machine types
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ You can set or update machine types for the Airflow web server and Cloud SQL ins
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
 - [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsClient)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
 - Source ID: `site-iam-reference`
-- Final score: 196
+- Final score: 242
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 188
+- Final score: 232
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsClient)
 - Source ID: `site-python-reference`
-- Final score: 188
+- Final score: 232
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - Update an environment. name str The relative resource name of the environment to update, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" This corresponds to the name field on the request instance; if request is provided, this should not be set. environment google.cloud.orchestration.airflow.service v1.types.Environment A patch environment.
 - The environment name to create a ConfigMap for, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" This corresponds to the parent field on the request instance; if request is provided, this should not be set. user workloads config map google.cloud.orchestration.airflow.service v1.types.UserWorkloadsConfigMap Required.
 - The environment name to create a Secret for, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" This corresponds to the parent field on the request instance; if request is provided, this should not be set. user workloads secret google.cloud.orchestration.airflow.service v1.types.UserWorkloadsSecret Required.
+
+### "REST Resource: projects.locations.environments \_|\_ Cloud Composer \_|\_\
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- Source ID: `site-docs-reference`
+- Final score: 232
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You cannot set networking connection type in public IP environment.
+- Home Documentation Data analytics Cloud Composer Reference Send feedback REST Resource: projects.locations.environments Stay organized with collections Save and categorize content based on your preferences.
+- If this field is set to true, IPAllocationPolicy.use ip aliases must be set to true for Cloud Composer environments in versions composer-1. . -airflow- . . .
+- This field is supported for Cloud Composer environments in versions composer-1. . -airflow- . . . machineType string Optional.
 

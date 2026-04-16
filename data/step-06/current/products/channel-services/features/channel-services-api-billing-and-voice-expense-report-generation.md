@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:19:31.150Z"
+generated_at: "2026-04-14T11:56:59.872Z"
 product_name: "Channel Services"
 product_slug: "channel-services"
 feature_name: "Channel Services API Billing and Voice Expense Report Generation"
 feature_slug: "channel-services-api-billing-and-voice-expense-report-generation"
 latest_feature_date: "2022-09-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery"
-  - "https://docs.cloud.google.com/channel/docs/reference/rest"
-  - "https://docs.cloud.google.com/channel/docs/reference/rpc"
+  - "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview"
+  - "https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter"
 keywords:
+  - "generation"
   - "expense"
+  - "ability"
   - "report"
   - "voice"
-  - "services"
   - "billing"
-  - "channel"
-  - "and"
-  - "api"
+  - "adds"
 ---
 
 # Channel Services API Billing and Voice Expense Report Generation
 
 Product: Channel Services
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +37,13 @@ Adds the ability in the Channel Services API to generate reports for Google Clou
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery](https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery)
-- [https://docs.cloud.google.com/channel/docs/reference/rest](https://docs.cloud.google.com/channel/docs/reference/rest)
-- [https://docs.cloud.google.com/channel/docs/reference/rpc](https://docs.cloud.google.com/channel/docs/reference/rpc)
+- [https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview](https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview)
+- [https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter](https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter)
 
 ## Supporting Pages
 
@@ -52,41 +51,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery](https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery)
 - Source ID: `site-docs-reference`
-- Final score: 194
+- Final score: 99
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
+- DATASET NAME . reseller billing detailed export v1 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) AND payer billing account id IN ( PAYER BILLING ACCOUNT IDS ) GROUP BY billing account id , currency , invoice . month ORDER BY billing account id , currency , invoice . month ; For more information on partitioning, clustering, and best practices, see the following links: Query Partitioned tables Query Clustered tables Optimize query computation Best Practices to control costs in BigQuery Finding payer's billing account ID To find the payer's billing account ID, open the billing accounts page of the Partner Sales Console and click the Partner billing tab.
 - For Google Workspace consumptive SKUs (Google Voice and Drive), this is the number of minutes used. usage.pricing unit For Google Cloud, learn more about Cloud Billing Catalog API {: track-type="tasks" class="external" track-name="externalLink" track-metadata-position="body"} For Google Workspace, this is count . credits.id For Google Cloud, this is either an alphanumeric unique identifier ( 12-b34-c56-d78 ), or a description of the credit type ( Committed Usage Discount: CPU ).
-- Required service account permissions The Channel Services data export uses a service account that is owned and managed by Google, and has permission to write billing records to a table.
-- Use the export time column to understand when the exported billing data was last updated. entitlement name String The resource name of the Cloud Channel API Entitlement .
-- If you already have a project and BigQuery dataset for Cloud Billing data exports , you can reuse that project and dataset for the Channel Services export.
+- For example: "202101" is the same as January 2021. cost type String The type of cost this line item represents: regular, tax, adjustment, or rounding error. service.id String The ID of the service that the usage is associated with. service.description String The Google service that reported the billing data. sku.id String The SKU ID of the resource used by the service. sku.description String A description of the resource type used by the service.
+- Depending on the product family, this may be a billing account or a Cloud Identity. payer billing account id String The ID of your parent billing account. invoice.month String The year and month (YYYYMM) of the invoice that includes the cost line items.
 
-### Cloud Channel API \_|\_ Channel Services \_|\_ Google Cloud Documentation
+### Rebilling overview \_|\_ Channel Services \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/channel/docs/reference/rest](https://docs.cloud.google.com/channel/docs/reference/rest)
-- Source ID: `site-api-reference`
-- Final score: 192
+- URL: [https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview](https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview)
+- Source ID: `site-docs-reference`
+- Final score: 84
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://cloudchannel.googleapis.com REST Resource: v1alpha1.accounts Methods checkCloudIdentityAccountsExist POST /v1alpha1/{parent=accounts/ }:checkCloudIdentityAccountsExist Confirms the existence of Cloud Identity accounts based on the domain and if the Cloud Identity accounts are owned by the reseller. listProvisionableCloudIdentityTypes POST /v1alpha1/{parent=accounts/ }:listProvisionableCloudIdentityTypes Returns the Google Workspace customer types you can create for the given domain, and shows if this requires a transfer. listSubscribers GET /v1alpha1/{account=accounts/ }:listSubscribers Lists service accounts with subscriber privileges on the Pub/Sub topic created for this Channel Services account or integrator. listTransferableOffers POST /v1alpha1/{parent=accounts/ }:listTransferableOffers List TransferableOffer s of a customer based on Cloud Identity ID or Customer Name in the request. listTransferableSkus POST /v1alpha1/{parent=accounts/ }:listTransferableSkus List TransferableSku s of a customer based on the Cloud Identity ID or Customer Name in the request. register POST /v1alpha1/{account=accounts/ }:register Registers a service account with subscriber privileges on the Pub/Sub topic for this Channel Services account or integrator. unregister POST /v1alpha1/{account=accounts/ }:unregister Unregisters a service account with subscriber privileges on the Pub/Sub topic created for this Channel Services account or integrator.
-- Home Technology areas Channel Services APIs & Reference Send feedback Cloud Channel API Stay organized with collections Save and categorize content based on your preferences.
-- REST Resource: v1alpha1.accounts REST Resource: v1alpha1.accounts.channelPartnerLinks REST Resource: v1alpha1.accounts.channelPartnerLinks.channelPartnerRepricingConfigs REST Resource: v1alpha1.accounts.channelPartnerLinks.customers REST Resource: v1alpha1.accounts.customers REST Resource: v1alpha1.accounts.customers.customerRepricingConfigs REST Resource: v1alpha1.accounts.customers.entitlements REST Resource: v1alpha1.accounts.offers REST Resource: v1alpha1.accounts.reportJobs REST Resource: v1alpha1.accounts.reports REST Resource: v1alpha1.accounts.skuGroups REST Resource: v1alpha1.accounts.skuGroups.billableSkus REST Resource: v1alpha1.integrators REST Resource: v1alpha1.operations REST Resource: v1alpha1.opportunities REST Resource: v1alpha1.products REST Resource: v1alpha1.products.skus REST Resource: v1.accounts REST Resource: v1.accounts.channelPartnerLinks REST Resource: v1.accounts.channelPartnerLinks.channelPartnerRepricingConfigs REST Resource: v1.accounts.channelPartnerLinks.customers REST Resource: v1.accounts.customers REST Resource: v1.accounts.customers.customerRepricingConfigs REST Resource: v1.accounts.customers.entitlements REST Resource: v1.accounts.offers REST Resource: v1.accounts.reportJobs REST Resource: v1.accounts.reports REST Resource: v1.accounts.skuGroups REST Resource: v1.accounts.skuGroups.billableSkus REST Resource: v1.integrators REST Resource: v1.operations REST Resource: v1.products REST Resource: v1.products.skus Service: cloudchannel.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
-- REST Resource: v1.accounts Methods checkCloudIdentityAccountsExist POST /v1/{parent=accounts/ }:checkCloudIdentityAccountsExist Confirms the existence of Cloud Identity accounts based on the domain and if the Cloud Identity accounts are owned by the reseller. listSubscribers GET /v1/{account=accounts/ }:listSubscribers Lists service accounts with subscriber privileges on the Pub/Sub topic created for this Channel Services account or integrator. listTransferableOffers POST /v1/{parent=accounts/ }:listTransferableOffers List TransferableOffer s of a customer based on Cloud Identity ID or Customer Name in the request. listTransferableSkus POST /v1/{parent=accounts/ }:listTransferableSkus List TransferableSku s of a customer based on the Cloud Identity ID or Customer Name in the request. register POST /v1/{account=accounts/ }:register Registers a service account with subscriber privileges on the Pub/Sub topic for this Channel Services account or integrator. unregister POST /v1/{account=accounts/ }:unregister Unregisters a service account with subscriber privileges on the Pub/Sub topic created for this Channel Services account or integrator.
+- Since this report includes customer and channel partner costs, along with customer metadata and cost configured using Repricing configurations , you can use the exported data to improve your internal billing processes and financial analytics.
+- Rebilling consists of two main features: Repricing configurations BigQuery exports BigQuery exports You can export a comprehensive report of your customers' billing usage and cost data to a BigQuery dataset that you own.
+- Optimized queries : Channel Services data exports use the payer billing account id as the clustering column, so queries for one parent billing account are optimized to reduce the cost of querying data data.
+- Compatible with Cloud Billing data exports : The Channel Services data export table schema is backward compatible with Cloud Billing Detailed data export , so you can migrate your existing data exports.
 
-### Cloud Channel API \_|\_ Channel Services \_|\_ Google Cloud Documentation
+### "Reseller account with multiple Google Workspace billing account Account\
 
-- URL: [https://docs.cloud.google.com/channel/docs/reference/rpc](https://docs.cloud.google.com/channel/docs/reference/rpc)
-- Source ID: `site-docs-root`
-- Final score: 192
+- URL: [https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter](https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter)
+- Source ID: `site-docs-reference`
+- Final score: 82
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Home Technology areas Channel Services APIs & Reference Send feedback Cloud Channel API Stay organized with collections Save and categorize content based on your preferences.
-- Service: cloudchannel.googleapis.com The Service name cloudchannel.googleapis.com is needed to create RPC client stubs. google.cloud.channel.v1.CloudChannelReportsService This item is deprecated!
-- The Cloud Channel API enables Google Cloud partners to have a single unified resale platform and APIs across all of Google Cloud including GCP, Workspace, Maps and Chrome.
-- RunReportJob (deprecated) Begins generation of data for a given report. google.cloud.channel.v1alpha1.CloudChannelService Methods ActivateEntitlement Activates a previously suspended entitlement.
+- For example, Google Workspace Business Subscriptions and Google Workspace Chrome Subscriptions must use the same Google Workspace billing account but Google Workspace Voice Subscriptions require a different Google Workspace billing account.
+- The Google Workspace and Voice Google Workspace billing account must still have the same currency to satisfy condition 1.
+- Otherwise, you must choose a specific Google Workspace Voice billing account, otherwise we will throw an exception.
+- Google Workspace Voice SKU type - If there is only one Google Workspace Voice billing account, we default to this.
 

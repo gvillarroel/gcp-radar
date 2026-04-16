@@ -7,7 +7,6 @@ Step 2 feature inventory: 1 features, profile: api heavy.
 | ---: | --- | --- | --- | ---: | --- | --- |
 | 100 | yes | product_reference | https://developers.google.com/workspace/tasks/reference/rest | 4 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks | 4 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | supporting_page | https://docs.cloud.google.com/tasks/docs/creating-queues | 3 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/tasks/docs/dual-overview | 3 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/tasks/docs/reference/libraries | 4 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/tasks/docs/reference/rest | 3 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
@@ -23,10 +22,11 @@ Step 2 feature inventory: 1 features, profile: api heavy.
 | 95 | no | supporting_page | https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/overview | 2 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | supporting_page | https://developers.google.com/workspace/tasks/downloads | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://developers.google.com/workspace/tasks/limits | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://developers.google.com/workspace/tasks/oauth-and-tasks-on-android?csw=1 | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://developers.google.com/workspace/tasks/oauth-authorization-callback-handler | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/tasks/docs/add-task-queue | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/tasks/docs/add-task-queue | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/tasks/docs/add-task-queue-app-eng | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/tasks/docs/creating-queues | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://developers.google.com/api-client-library/dotnet/apis/tasks/v1 | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta3/java/latest/com/google/api/services/cloudtasks/v2beta3/model/Task.html | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | supporting_page | https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta3/java/latest/com/google/api/services/cloudtasks/v2beta3/model/Task.html | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://developers.google.com/resources/api-libraries/documentation/tasks/v1/csharp/latest | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | supporting_page | https://developers.google.com/resources/api-libraries/documentation/tasks/v1/java/latest/com/google/api/services/tasks/model/Task.html | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |

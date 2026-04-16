@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.039Z"
+generated_at: "2026-04-12T12:15:59.665Z"
 product_name: "Filestore"
 product_slug: "filestore"
 feature_name: "Snapshots"
@@ -9,9 +9,10 @@ latest_feature_date: "2021-12-16"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/filestore/docs/snapshots"
-  - "https://docs.cloud.google.com/filestore/docs/reference/rest/v1beta1/Tier"
-  - "https://docs.cloud.google.com/filestore/docs/service-tiers"
+  - "https://docs.cloud.google.com/filestore/docs/csi-driver"
+  - "https://docs.cloud.google.com/filestore/docs/overview"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub"
+  - "https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke"
 keywords:
   - "snapshots"
   - "filestore"
@@ -38,47 +39,66 @@ Filestore snapshots are generally available; Filestore's Enterprise tier support
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/filestore/docs/snapshots](https://docs.cloud.google.com/filestore/docs/snapshots)
-- [https://docs.cloud.google.com/filestore/docs/reference/rest/v1beta1/Tier](https://docs.cloud.google.com/filestore/docs/reference/rest/v1beta1/Tier)
-- [https://docs.cloud.google.com/filestore/docs/service-tiers](https://docs.cloud.google.com/filestore/docs/service-tiers)
+- [https://docs.cloud.google.com/filestore/docs/csi-driver](https://docs.cloud.google.com/filestore/docs/csi-driver)
+- [https://docs.cloud.google.com/filestore/docs/overview](https://docs.cloud.google.com/filestore/docs/overview)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub](https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub)
+- [https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke](https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke)
 
 ## Supporting Pages
 
-### Snapshots overview | Filestore | Google Cloud Documentation
+### "Access Filestore instances with the Filestore CSI driver \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/filestore/docs/snapshots](https://docs.cloud.google.com/filestore/docs/snapshots)
+- URL: [https://docs.cloud.google.com/filestore/docs/csi-driver](https://docs.cloud.google.com/filestore/docs/csi-driver)
 - Source ID: `site-docs-root`
-- Final score: 100
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Snapshots overview Filestore Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/snapshots Filestore · Start free · Home · Documentation · Storage · Filestore · Guides · Send feedback · This page describes what a snapshot is, how it works, and discusses limitations and best practices.
-- To see how to use snapshots, see the following guides: Preserve the state of your data with snapshots ·
-
-### Tier | Filestore | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/filestore/docs/reference/rest/v1beta1/Tier](https://docs.cloud.google.com/filestore/docs/reference/rest/v1beta1/Tier)
-- Source ID: `site-docs-reference`
-- Final score: 98
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Tier Filestore Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/reference/rest/v1beta1/Tier Documentation · Storage · Filestore · Reference · Send feedback · Available service tiers.
-- Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.
-
-### About service tiers | Filestore | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/filestore/docs/service-tiers](https://docs.cloud.google.com/filestore/docs/service-tiers)
-- Source ID: `site-docs-root`
-- Final score: 85
+- Final score: 215
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- About service tiers Filestore Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/service-tiers This page describes the service tiers that Filestore offers and provides guidance on selecting the tier that best suits your needs.
+- Service tier Share type GKE minimum version for NFSv3 GKE minimum version for NFSv4.1 Enterprise Single share, multishare 1.25 1.33 (single share only) Zonal (1 TiB - 9.75 TiB) Single share 1.31 1.33 Zonal (10 TiB - 100 TiB) Single share 1.27 1.33 Regional Single share 1.33.4-gke.1172000 1.33.4-gke.1172000 Basic HDD (100 GiB - 63.9 TiB) Single share 1.33 Not supported Basic HDD Single share 1.21 Not supported Basic SSD Single share 1.21 Not supported Filestore uses the NFSv3 file system protocol on the Filestore instance by default and supports any NFSv3-compatible client.
+- Create a volume using the Filestore CSI driver The following sections describe the typical process for using a Kubernetes volume backed by a Filestore CSI driver in GKE: Create a StorageClass Use a PersistentVolumeClaim to access the volume Create a Deployment that consumes the volume Create a StorageClass After you enable the Filestore CSI driver, GKE automatically installs the following StorageClasses for provisioning Filestore instances: zonal-rwx , using the Filestore zonal tier . enterprise-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a Filestore instance. enterprise-multishare-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a share of a given Filestore instance.
+- For dynamic provisioning, set the protocol field to NFS V4 1 in the parameters of a StorageClass object. apiVersion : storage.k8s.io/v1 kind : StorageClass metadata : name : enterprise-multishare-rwx provisioner : filestore.csi.storage.gke.io parameters : tier : enterprise multishare : "true" instance-storageclass-label : "enterprise-multishare-rwx" protocol : NFS V4 1 volumeBindingMode : WaitForFirstConsumer allowVolumeExpansion : true You cannot mount the Filestore instance with the NFSv4.1 protocol with mountOptions set to nfsvers=3 in the StorageClass object.
+- Reconnect Filestore single share volumes If you are using Filestore with the basic HDD, basic SSD, or enterprise (single share) tier, you can follow these instructions to reconnect your existing Filestore instance to your GKE workloads.
+
+### Filestore overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/filestore/docs/overview](https://docs.cloud.google.com/filestore/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 199
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Filestore supports the following file system protocols: Protocol Supported service tiers Highlights NFSv3 All service tiers Supports bidirectional communication between the client and server.
+- NFSv4.1 zonal, regional, and enterprise service tiers Supports client and server authentication, message integrity checks, and in-transit data encryption.
+- Regional reliability Regional and Enterprise tier instances are regional resources.
+- Networking For information related to Filestore networking requirements, see the following resources: Filestore networking and IP resource requirements Configure NFS ports on client VMs Configure firewall rules Create an instance on a Shared VPC network in service projects Supported file system protocols Performance Custom performance lets you define the performance settings for your Filestore instances independently of the specified capacity.
+
+### "Class CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub (1.89.0)\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub](https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub)
+- Source ID: `site-java-reference`
+- Final score: 185
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- As such, Filestore instances are resources of the form: /projects/{project number}/locations/{location id}/instances/{instance id} and backups are resources of the form: /projects/{project number}/locations/{location id}/backup/{backup id} Note that location id must be a Google Cloud zone for instances, but a Google Cloud region for backups; for example: projects/12345/locations/us-central1-c/instances/my-filestore projects/12345/locations/us-central1/backups/my-backup Inheritance java.lang.Object > io.grpc.stub.AbstractStub > io.grpc.stub.AbstractBlockingStub > CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub Inherited Members io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel) io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.<T>withOption(io.grpc.CallOptions.Key<T>,T) io.grpc.stub.AbstractStub.build(io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.getCallOptions() io.grpc.stub.AbstractStub.getChannel() io.grpc.stub.AbstractStub.withCallCredentials(io.grpc.CallCredentials) io.grpc.stub.AbstractStub.withChannel(io.grpc.Channel) io.grpc.stub.AbstractStub.withCompression(java.lang.String) io.grpc.stub.AbstractStub.withDeadline(io.grpc.Deadline) io.grpc.stub.AbstractStub.withDeadlineAfter(java.time.Duration) io.grpc.stub.AbstractStub.withDeadlineAfter(long,java.util.concurrent.TimeUnit) io.grpc.stub.AbstractStub.withExecutor(java.util.concurrent.Executor) io.grpc.stub.AbstractStub.withInterceptors(io.grpc.ClientInterceptor...) io.grpc.stub.AbstractStub.withMaxInboundMessageSize(int) io.grpc.stub.AbstractStub.withMaxOutboundMessageSize(int) io.grpc.stub.AbstractStub.withOnReadyThreshold(int) io.grpc.stub.AbstractStub.withWaitForReady() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods build(Channel channel, CallOptions callOptions) protected CloudFilestoreManagerGrpc .
+- The file.googleapis.com service implements the Filestore API and defines the following resource model for managing instances: The service works with a collection of cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ Each location has a collection of instances and backups, named: /instances/ and /backups/ respectively.
+- Parameter Name Description request ListSnapshotsRequest Returns Type Description ListSnapshotsResponse promoteReplica(PromoteReplicaRequest request) public Operation promoteReplica ( PromoteReplicaRequest request ) Promote the standby instance (replica).
+- 1.89.0 (latest) 1.88.0 1.86.0 1.84.0 1.83.0 1.82.0 1.81.0 1.79.0 1.77.0 1.76.0 1.75.0 1.74.0 1.73.0 1.71.0 1.69.0 1.68.0 1.65.0 1.64.0 1.63.0 1.61.0 1.60.0 1.59.0 1.58.0 1.57.0 1.56.0 1.55.0 1.54.0 1.53.0 1.52.0 1.50.0 1.49.0 1.48.0 1.47.0 1.46.0 1.45.0 1.44.0 1.43.0 1.42.0 1.41.0 1.40.0 1.38.0 1.37.0 1.36.0 1.35.0 1.34.0 1.33.0 1.32.0 1.31.0 1.30.0 1.29.0 1.28.0 1.25.0 1.24.0 1.23.0 1.22.0 1.21.0 1.20.0 1.19.0 1.18.0 1.17.0 1.16.0 1.15.0 1.14.0 1.13.0 1.12.0 1.10.0 1.9.0 1.8.0 1.7.0 1.6.0 1.5.0 1.2.0 public static final class CloudFilestoreManagerGrpc .
+
+### "Back up and restore persistent storage for your GKE clusters \_|\_ Filestore\
+
+- URL: [https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke](https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke)
+- Source ID: `site-docs-root-2`
+- Final score: 177
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Only the following Filestore service tiers are supported: Service tier Share type GKE minimum version for NFSv3 GKE minimum version for NFSv4.1 Enterprise Single share, multishare 1.25 1.33 (single share only) Zonal (1 TiB - 9.75 TiB) Single share 1.31 1.33 Zonal (10 TiB - 100 TiB) Single share 1.27 1.33 Regional Single share 1.33.4-gke.1172000 1.33.4-gke.1172000 Basic HDD (100 GiB - 63.9 TiB) Single share 1.33 Not supported Basic HDD Single share 1.21 Not supported Basic SSD Single share 1.21 Not supported Use control plane versions 1.17 or later.
+- You can check the status by running the following command: kubectl get volumesnapshot \ -o custom-columns = 'NAME:.metadata.name,READY:.status.readyToUse' If the snapshot is ready to use, the output is similar to the following: NAME READY my-snapshot true Delete the test file Delete the test file that you created: kubectl exec POD NAME \ -- sh -c 'rm /usr/share/hello/hello.txt' Verify that the file no longer exists: kubectl exec POD NAME \ -- sh -c 'cat /usr/share/hello/hello.txt' The output is similar to the following: cat: /usr/share/hello/hello.txt: No such file or directory Restore the volume snapshot Save the following manifest as pvc-restore.yaml : Filestore apiVersion : v1 kind : PersistentVolumeClaim metadata : name : pvc-restore spec : dataSource : name : my-snapshot kind : VolumeSnapshot apiGroup : snapshot.storage.k8s.io storageClassName : enterprise-rwx accessModes : - ReadWriteMany resources : requests : storage : 1Ti Note: The namespace of the PersistentVolumeClaim must be the same as the namespace of the VolumeSnapshot .
+- Create a PersistentVolumeClaim and a Deployment To create the PersistentVolumeClaim object, save the following manifest as my-pvc.yaml : Filestore apiVersion : v1 kind : PersistentVolumeClaim metadata : name : my-pvc spec : storageClassName : enterprise-rwx accessModes : - ReadWriteMany resources : requests : storage : 1Ti This example creates an enterprise tier Filestore PVC.
+- The Filestore CSI driver does not support dynamic provisioning or backup workflows for the Regional Filestore service tier : You can back up only one share per instance at a time.
 

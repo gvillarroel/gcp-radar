@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.788Z"
+generated_at: "2026-04-12T12:16:18.961Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Anthos"
@@ -11,6 +11,7 @@ coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
 keywords:
   - "anthos"
@@ -33,12 +34,13 @@ Anthos 1.1.2 is available; Anthos 1.1.1 is available.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 
 ## Supporting Pages
@@ -47,7 +49,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 108
+- Final score: 137
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -60,7 +62,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 58
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -69,11 +71,24 @@ Evidence snippets:
 - To enable support access for the cluster, run the following commands: enable Connect Gateway API gcloud services enable connectgateway.googleapis.com --project = PROJECT ID generate RBAC to enable access gcloud container fleet memberships support-access enable MEMBERSHIP NAME \ --project = PROJECT ID verify the access is enabled gcloud container fleet memberships support-access describe MEMBERSHIP NAME \ --project = PROJECT ID Replace the following: MEMBERSHIP NAME : the name used to uniquely represent the cluster in its fleet.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 
+### "Share snapshots with Google Support \_|\_ Google Kubernetes Engine (GKE)\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-snapshot)
+- Source ID: `site-docs-reference`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If you want to revoke Google's permission to access your Cloud Storage bucket, run the following command: gcloud storage buckets remove-iam-policy-binding gs:// BUCKET NAME/CLUSTER NAME/SNAPSHOT FILE NAME \ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-anthossupport.iam.gserviceaccount.com \ --role = roles/storage.legacyObjectReader Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- You do this by running the following command: Google Distributed Cloud on bare metal release 1.15.0 and higher To share access with Google Support, use the following command: gcloud storage buckets add-iam-policy-binding gs:// BUCKET NAME \ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-anthossupport.iam.gserviceaccount.com \ --role = roles/storage.objectViewer Replace BUCKET NAME with the name of the bucket into which your snapshot was uploaded.
+- To revoke access to your bucket: gcloud storage buckets remove-iam-policy-binding gs:// BUCKET NAME \ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-anthossupport.iam.gserviceaccount.com \ --role = roles/storage.objectViewer Google Distributed Cloud on VMware release 1.15.0 and higher As described in Upload snapshots to a Cloud Storage bucket , when you create a snapshot with the --share-with flag, it is automatically shared with Google Support.
+- Manually share access to an uploaded snapshot gcloud storage buckets add-iam-policy-binding gs:// BUCKET NAME/CLUSTER NAME/SNAPSHOT FILE NAME \ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-anthossupport.iam.gserviceaccount.com \ --role = roles/storage.legacyObjectReader ...where: BUCKET NAME/CLUSTER NAME/SNAPSHOT FILE NAME is the snapshot location you noted when you created the cluster snapshot.
+
 ### "GKE deployment options \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - Source ID: `site-docs-reference`
-- Final score: 54
+- Final score: 62
 - Re-rank relevance: N/A
 
 Evidence snippets:

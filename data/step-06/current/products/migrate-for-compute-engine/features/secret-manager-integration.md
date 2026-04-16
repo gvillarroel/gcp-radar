@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:45.321Z"
+generated_at: "2026-04-12T12:17:53.338Z"
 product_name: "Migrate for Compute Engine"
 product_slug: "migrate-for-compute-engine"
 feature_name: "Secret Manager integration"
 feature_slug: "secret-manager-integration"
 latest_feature_date: "2020-08-12"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started"
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture"
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices"
 keywords:
   - "secret"
   - "manager"
@@ -24,7 +27,7 @@ keywords:
 # Secret Manager integration
 
 Product: Migrate for Compute Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Lets you store Migrate for Compute Engine passwords and encryption keys in Secre
 
 Lets you store Migrate for Compute Engine passwords and encryption keys in Secret Manager.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference)
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started)
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture)
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Roles and permissions reference \_|\_ Migrate to Virtual Machines \_|\_\
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference)
+- Source ID: `site-iam-reference`
+- Final score: 155
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following permissions are required to create a resource group associated with the source, verify that it exists, list the resources it contains, and delete it when the source is deleted: "Microsoft.Resources/subscriptions/resourceGroups/write", "Microsoft.Resources/subscriptions/resourceGroups/read", "Microsoft.Resources/subscriptions/resourceGroups/delete" The following permission is required in order to obtain the inventory list and to get the details of the VMs that are being migrated: "Microsoft.Compute/virtualMachines/read" The following permission is required to deallocate a VM when it is being cut over into a Google Cloud VM: "Microsoft.Compute/virtualMachines/deallocate/action" The following permissions are required to create, list, and delete snapshots / restore points of the VM being migrated: "Microsoft.Compute/restorePointCollections/read", "Microsoft.Compute/restorePointCollections/write", "Microsoft.Compute/restorePointCollections/delete", "Microsoft.Compute/restorePointCollections/restorePoints/read", "Microsoft.Compute/restorePointCollections/restorePoints/write", "Microsoft.Compute/restorePointCollections/restorePoints/delete", "Microsoft.Compute/snapshots/delete", "Microsoft.Compute/snapshots/write", "Microsoft.Compute/snapshots/read" The following permissions are required for reading snapshot / restore point data: "Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints/read", "Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints/beginGetAccess/action", "Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints/endGetAccess/action", "Microsoft.Compute/snapshots/beginGetAccess/action", "Microsoft.Compute/snapshots/endGetAccess/action" Grant network access In addition to granting permissions, you must verify that access to your disks is not blocked or restricted to any specific network.
+- Permissions to add a target project To add a target project, the user account you use to sign in to the Google Cloud console requires: The role vmmigration.admin on the host project The role resourcemanager.projectIamAdmin on the target project Note: If your user account does not have the resourcemanager.projectIamAdmin role on the target project, or you are forbidden from adding it for security reasons, you can still add the target project.
+- The following sections describes these roles and permissions organized by the major components of Migrate to Virtual Machines: Google Cloud console user accounts Migrate to Virtual Machines default service account Target project service account In addition, Cloud Identity and Access Management (IAM) includes two predefined roles that you can use to control access for users in your organization.
+- Because you perform these actions in the Google Cloud console , the user account that requires these permissions is the account that you use to sign in to the Google Cloud console: To add a target project to Migrate to Virtual Machines, the user account you use to sign in to the Google Cloud console requires the permissions described in Permissions to add a target project .
+
+### Migration journey with Migrate to Virtual Machines \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started)
+- Source ID: `site-docs-reference`
+- Final score: 152
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Assess the source environment and workloads In the assess phase , you gather information about the following: Your source and target environment The workloads that you want to migrate To help you to plan your migration and to rightsize the resources that you need for the migration and your target environment, it's crucial to assess your source environment and the workloads that you want to migrate.
+- Evaluate Migrate to Virtual Machines requirements to ensure that both your source and target environments provide the features and the resources that Migrate to Virtual Machines needs for the migration, such as network connectivity and bandwidth, and secure communication channels.
+- These source environments can include the following: A VMware vSphere environment A Microsoft Azure VM environment An Amazon Elastic Compute Cloud (Amazon EC2) environment Migrate to Virtual Machines lets you streamline your VM migration to Google Cloud.
+- When you migrate the VMs in a group, Migrate to Virtual Machines performs all the operations of the VM migration lifecycle on each VM in the group or, optionally, on a subset of the VMs in the group.
+
+### Migrate to Virtual Machines architecture \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture)
+- Source ID: `site-docs-reference`
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Migrate to Virtual Machines lets you migrate VMs and disks of VMs from the following four migration sources to Google Cloud: vSphere data center (on-premises) AWS cloud service Azure cloud service Google Cloud VMware Engine The following diagram shows the architecture for migrating VMs and disks of VMs from various migration sources to Google Cloud: About Google Cloud projects Google Cloud projects form the basis for creating, enabling, and using Google Cloud services including managing APIs, enabling billing, adding and removing collaborators, and managing permissions for Google Cloud resources.
+- You can customize the Compute Engine VM to specify: Google Cloud project Number of CPUs Amount of memory Disk type Network configuration many other options You might have different requirements on the target Compute Engine VM based on whether the instance is being used for testing a migrated VM or being used in a production environment.
+- Migration sources Migrate to Virtual Machines lets you to migrate VMs from the following four migration sources: vSphere data center: Migrate on-premises VMs from the vSphere data center to Google Cloud.
+- Along with the Migrate to Virtual Machines services, you also use the following Google Cloud services when performing a migration.
+
+### Migrate to Virtual Machines best practices \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices)
+- Source ID: `site-docs-reference`
+- Final score: 124
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example, after analyzing the migration plan, you might determine values for the following: The expected migration duration The expected number of VMs to migrate for each time unit The total migration cost The migration cost per VM The available network throughput The compatibility of the tools you're using for backup and disaster recovery with the target environment Consider all deployment environments for your applications when you analyze the migration plan.
+- Analyze the migration plan Before you start your migration plan analysis, and to help you to understand the architecture of Migrate to Virtual Machines, we recommend that you read the following documents: The structure of a Migrate to Virtual Machines migration .
+- For example, if you migrate a database that supports a high volume of transactions per time unit, the speed at which the transactions are propagated to the target environment might not be fast enough to complete the synchronization.
+- Analyze your current environment to rightsize the target environment To draft a complete migration plan, define the machine type of each VM in the target environment for each VM that you want to migrate from the source environment.
 

@@ -1,91 +1,92 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:07:28.876Z"
+generated_at: "2026-04-14T18:39:20.086Z"
 product_name: "Calendar API"
 product_slug: "calendar-api"
 feature_name: "Secondary calendar data ownership"
 feature_slug: "secondary-calendar-data-ownership"
 latest_feature_date: "2025-10-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/workspace/calendar/api/v3/reference"
   - "https://developers.google.com/workspace/calendar/api/v3/reference/calendars"
-  - "https://developers.google.com/workspace/calendar/api/guides/overview"
+  - "https://developers.google.com/workspace/calendar/api/v3/reference"
+  - "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList"
 keywords:
   - "secondary"
-  - "single"
-  - "introduced"
-  - "ownership"
-  - "owner"
   - "calendar"
-  - "the"
-  - "api"
+  - "ownership"
+  - "calendars"
+  - "now"
+  - "have"
+  - "single"
+  - "owner"
 ---
 
 # Secondary calendar data ownership
 
 Product: Calendar API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The Calendar API introduced a single data owner model for secondary calendars, with a read-only dataOwner field and owner-restricted actions.
+Secondary calendars now have a single data owner exposed through the read-only dataOwner field, with ownership-based restrictions on deletion, access changes, and calendar list removal.
 
 ## Extended Definition
 
-The Calendar API introduced a single data owner model for secondary calendars, with a read-only dataOwner field and owner-restricted actions.
+Secondary calendars now have a single data owner exposed through the read-only dataOwner field, with ownership-based restrictions on deletion, access changes, and calendar list removal.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/workspace/calendar/api/v3/reference](https://developers.google.com/workspace/calendar/api/v3/reference)
 - [https://developers.google.com/workspace/calendar/api/v3/reference/calendars](https://developers.google.com/workspace/calendar/api/v3/reference/calendars)
-- [https://developers.google.com/workspace/calendar/api/guides/overview](https://developers.google.com/workspace/calendar/api/guides/overview)
+- [https://developers.google.com/workspace/calendar/api/v3/reference](https://developers.google.com/workspace/calendar/api/v3/reference)
+- [https://developers.google.com/workspace/calendar/api/v3/reference/calendarList](https://developers.google.com/workspace/calendar/api/v3/reference/calendarList)
 
 ## Supporting Pages
-
-### API Reference \_|\_ Google Calendar \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/workspace/calendar/api/v3/reference](https://developers.google.com/workspace/calendar/api/v3/reference)
-- Source ID: `site-api-reference`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Method HTTP request Description URIs relative to https://www.googleapis.com/calendar/v3, unless otherwise noted get GET /users/me/settings/ setting Returns a single user setting. list GET /users/me/settings Returns all user settings for the authenticated user. watch POST /users/me/settings/watch Watch for changes to Settings resources.
-- For example, if a service account is the data owner, data ownership cannot be transferred. patch PATCH /calendars/ calendarId Updates metadata for a calendar.
-- Method HTTP request Description URIs relative to https://www.googleapis.com/calendar/v3, unless otherwise noted delete DELETE /users/me/calendarList/ calendarId Removes a calendar from the user's calendar list. get GET /users/me/calendarList/ calendarId Returns a calendar from the user's calendar list. insert POST /users/me/calendarList Inserts an existing calendar into the user's calendar list. list GET /users/me/calendarList Returns the calendars on the user's calendar list. patch PATCH /users/me/calendarList/ calendarId Updates an existing calendar on the user's calendar list.
-- Method HTTP request Description URIs relative to https://www.googleapis.com/calendar/v3, unless otherwise noted delete DELETE /calendars/ calendarId /acl/ ruleId Deletes an access control rule. get GET /calendars/ calendarId /acl/ ruleId Returns an access control rule. insert POST /calendars/ calendarId /acl Creates an access control rule. list GET /calendars/ calendarId /acl Returns the rules in the access control list for the calendar. patch PATCH /calendars/ calendarId /acl/ ruleId Updates an access control rule.
 
 ### Calendars \_|\_ Google Calendar \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/workspace/calendar/api/v3/reference/calendars](https://developers.google.com/workspace/calendar/api/v3/reference/calendars)
 - Source ID: `site-api-reference`
-- Final score: 140
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 109
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Use calendars.clear for clearing all events on primary calendars. get Returns metadata for a calendar. insert Creates a secondary calendar.
 - For example, if a service account is the data owner, data ownership cannot be transferred. patch Updates metadata for a calendar.
+- Set only for secondary calendars.
 - Resource representations { "kind": "calendar#calendar", "etag": etag , "id": string , "summary": string , "description": string , "location": string , "timeZone": string , "dataOwner": string , "conferenceProperties": { "allowedConferenceSolutionTypes": [ string ] }, "autoAcceptInvitations": boolean } Property name Value Description Notes autoAcceptInvitations boolean Whether this calendar automatically accepts invitations.
-- The possible values are: "eventHangout" "eventNamedHangout" "hangoutsMeet" Optional. dataOwner string The email of the owner of the calendar.
-- This operation deletes all events associated with the primary calendar of an account. delete Deletes a secondary calendar.
 
-### Google Calendar API overview \_|\_ Google for Developers
+### API Reference \_|\_ Google Calendar \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/workspace/calendar/api/guides/overview](https://developers.google.com/workspace/calendar/api/guides/overview)
-- Source ID: `site-docs-root`
-- Final score: 140
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/workspace/calendar/api/v3/reference](https://developers.google.com/workspace/calendar/api/v3/reference)
+- Source ID: `site-api-reference`
+- Final score: 87
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Following is a list of common terms used in the Google Calendar API: Event An event on a calendar containing information such as the title, start and end times, and attendees.
-- The Google Calendar API is a RESTful API that can be accessed through explicit HTTP calls or using the Google Client Libraries.
-- The metadata for a single calendar that appears on the calendar list is represented by a CalendarListEntry resource .
-- To learn how to configure and run a simple Google Calendar API app, read the Quickstarts overview .
+- For example, if a service account is the data owner, data ownership cannot be transferred. patch PATCH /calendars/ calendarId Updates metadata for a calendar.
+- Deprecated behavior: If a non- default event is imported, its type will be changed to default and any event-type-specific properties it may have will be dropped. insert POST /calendars/ calendarId /events Creates an event. instances GET /calendars/ calendarId /events/ eventId /instances Returns instances of the specified recurring event. list GET /calendars/ calendarId /events Returns events on the specified calendar. move POST /calendars/ calendarId /events/ eventId /move Moves an event to another calendar, i.e. changes an event's organizer.
+- Use calendars.clear for clearing all events on primary calendars. get GET /calendars/ calendarId Returns metadata for a calendar. insert POST /calendars Creates a secondary calendar.
+- This operation deletes all events associated with the primary calendar of an account. delete DELETE /calendars/ calendarId Deletes a secondary calendar.
+
+### CalendarList \_|\_ Google Calendar \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/calendar/api/v3/reference/calendarList](https://developers.google.com/workspace/calendar/api/v3/reference/calendarList)
+- Source ID: `site-api-reference`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- A calendar has a single data owner, but can have multiple users with owner role. autoAcceptInvitations boolean Whether this calendar automatically accepts invitations.
+- Set only for secondary calendars.
+- Resource representations { "kind" : "calendar#calendarListEntry" , "etag" : etag , "id" : string , "summary" : string , "description" : string , "location" : string , "timeZone" : string , "dataOwner" : string , "summaryOverride" : string , "colorId" : string , "backgroundColor" : string , "foregroundColor" : string , "hidden" : boolean , "selected" : boolean , "accessRole" : string , "defaultReminders" : [ { "method" : string , "minutes" : integer } ], "notificationSettings" : { "notifications" : [ { "type" : string , "method" : string } ] } , "primary" : boolean , "deleted" : boolean , "conferenceProperties" : { "allowedConferenceSolutionTypes" : [ string ] } , "autoAcceptInvitations" : boolean } Property name Value Description Notes accessRole string The effective access role that the authenticated user has on the calendar.
+- Methods delete Removes a calendar from the user's calendar list. get Returns a calendar from the user's calendar list. insert Inserts an existing calendar into the user's calendar list. list Returns the calendars on the user's calendar list. patch Updates an existing calendar on the user's calendar list.
 

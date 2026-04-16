@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:05.319Z"
+generated_at: "2026-04-15T12:02:17.128Z"
 product_name: "Vertex AI"
 product_slug: "vertex-ai"
 feature_name: "Vertex AI codechat-bison model"
 feature_slug: "vertex-ai-codechat-bison-model"
 latest_feature_date: "2023-06-29"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component"
+  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model"
+  - "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
 keywords:
   - "vertex"
   - "ai"
   - "codechat"
   - "bison"
   - "model"
-  - "the"
   - "was"
   - "included"
+  - "codey"
 ---
 
 # Vertex AI codechat-bison model
 
 Product: Vertex AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ The codechat-bison model was included in the Vertex AI Codey API release for mul
 
 The codechat-bison model was included in the Vertex AI Codey API release for multi-turn code chat.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component)
+- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model)
+- [https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Model and endpoint components \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-endpoint-component)
+- Source ID: `site-api-reference`
+- Final score: 61
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Model operators The Google Cloud SDK includes the following operators related to the Model resource: ModelDeleteOp ModelExportOp ModelUploadOp Endpoint operators The Google Cloud SDK includes the following operators related to the Endpoint resource: EndpointCreateOp EndpointDeleteOp ModelDeployOp ModelUndeployOp API reference For component reference, see the following Google Cloud SDK reference pages: Model components Endpoint components For Vertex AI API resource reference, see the following API reference pages: model resource reference endpoint resource reference Version history and release notes To learn more about the version history and changes to the Google Cloud Pipeline Components SDK, see the Google Cloud Pipeline Components SDK Release Notes .
+- Home Documentation AI and ML Vertex AI Reference Send feedback Model and endpoint components Stay organized with collections Save and categorize content based on your preferences.
+- Learn more about how to Import models to Vertex AI and Request predictions .
+- Model , this resource is available in Vertex AI.
+
+### Model evaluation components \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component](https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component)
+- Source ID: `site-api-reference`
+- Final score: 61
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Vertex AI provides the following model evaluation components: ModelEvaluationClassificationOp ModelEvaluationForecastingOp ModelEvaluationRegressionOp Model type support The following table shows supported model types for each model evaluation component: Model evaluation component Supported model types ModelEvaluationClassificationOp AutoML tabular or image Custom tabular ModelEvaluationRegressionOp AutoML tabular Custom tabular ModelEvaluationForecastingOp AutoML tabular Remove the target field For some model types, the BatchPredictionJob component requires you to exclude the target column (ground truth) from your dataset.
+- Home Documentation AI and ML Vertex AI Reference Send feedback Model evaluation components Stay organized with collections Save and categorize content based on your preferences.
+- Model evaluations without Vertex AI-generated batch predictions You can use a model evaluation pipeline component with a batch prediction that you didn't generate in Vertex AI.
+- AutoML models When training AutoML models, Vertex AI uses default schemas.
+
+### Train and deploy your model \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model)
+- Source ID: `site-docs-reference-2`
+- Final score: 61
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- CustomTrainingJob ( display name = JOB NAME , script path = "task.py" , container uri = "us-docker.pkg.dev/vertex-ai/training/tf-cpu.2-8:latest" , requirements =[ "google-cloud-bigquery>=2.20.0" , "db-dtypes" , "protobuf<3.20.0" ], model serving container image uri = "us-docker.pkg.dev/vertex-ai/prediction/tf2-cpu.2-8:latest" , ) Create and train your model In the previous step you created a CustomTrainingJob named job .
+- Home Documentation AI and ML Vertex AI Send feedback Train and deploy your model Stay organized with collections Save and categorize content based on your preferences.
+- In previous steps in this tutorial, you prepared your data for training and created a script that Vertex AI uses to train your model.
+- Vertex AI uses the training pipeline and the code in your Python training script to train and create your model.
 

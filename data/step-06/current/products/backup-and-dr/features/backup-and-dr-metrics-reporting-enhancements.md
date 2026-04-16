@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.219Z"
+generated_at: "2026-04-14T09:35:01.948Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Backup and DR metrics reporting enhancements"
 feature_slug: "backup-and-dr-metrics-reporting-enhancements"
 latest_feature_date: "2023-01-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/apply-backup-temp-overview"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts"
 keywords:
   - "enhancements"
+  - "ongoing"
   - "metrics"
   - "reporting"
   - "improved"
-  - "backup"
-  - "was"
-  - "and"
-  - "dr"
 ---
 
 # Backup and DR metrics reporting enhancements
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,35 @@ Metrics reporting was improved for ongoing management console and backup/recover
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/apply-backup-temp-overview](https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/apply-backup-temp-overview)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts](https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts)
 
 ## Supporting Pages
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Monitor jobs in the appliance management console \_|\_ Backup and DR \_\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
 - Source ID: `site-docs-root`
-- Final score: 184
+- Final score: 70
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- Enhanced backups are managed and stored by Backup and DR Service and provide immutable and indelible backups through backup vault, fine grained scheduling, backup protection against source project deletion and source cluster deletion, PiTR using logs and centralized monitoring and reporting.
-- Enhanced backups are managed and stored by Backup and DR Service and provide immutable and indelible backups through backup vault, fine grained scheduling, backup protection against source instance deletion and centralized monitoring and reporting.
-- This issue only affected Backup and DR Service deployments where SAP HANA was backed up using either the Volume level (LVM CBT) or Persistent Disk snapshot backup methods.
-- Feature Backup and DR Service has added a new reporting system based on the built-in Google Cloud services: Cloud Monitoring, Cloud Logging, and BigQuery.
+### "Configure log-based alerts for a backup/recovery appliance \_|\_ Backup\
 
-### "Backup and DR Service for Filestore and file systems on self-managed storage\
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems)
-- Source ID: `site-api-reference`
-- Final score: 156
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts](https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts)
+- Source ID: `site-docs-reference`
+- Final score: 66
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- You can find additional information in the following pages: Backup and DR for file systems Manage hosts and their connected applications Configure application details and settings to protect file system data Apply a backup plan to protect a file system Restore a file system to the source Mount a file system or file share Mount and migrate a file system for instant recovery to any target Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Backup and DR Service lets you capture data from production SMB, NFS, and Filestore file systems, manage it in the most efficient way possible, and use virtual copies of the data for business requirements like backup, test and development, analytics, and AI.
-- Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for Filestore and file systems on self-managed storage Stay organized with collections Save and categorize content based on your preferences.
-- What's next Manage hosts and their connected applications Other documentation for Backup and DR for file systems This page is one in a series of pages specific to protecting and recovering filesystems with Backup and DR Service.
+### "Apply a backup template using the appliance management console \_|\_ Backup\
 
-### Product overview \_|\_ Backup and DR \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr)
-- Source ID: `site-api-reference`
-- Final score: 150
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Backup and DR Service provides the following capabilities: Centralized backup management Policy-based backup management Comprehensive monitoring and reporting Incremental backups for faster recovery point objective (RPO) and lower total cost of ownership (TCO) Backup storage: the service supports two types of storage for backups: A backup vault is a Google-managed secured and isolated storage resource, managed by Backup and DR Service.
-- Backup and DR Service provides centralized management, monitoring, and reporting of day to day backup operations all from one place.
-- Home Documentation Storage Backup and DR Guides Send feedback Product overview Stay organized with collections Save and categorize content based on your preferences.
-- Note: Enable 30-day introductory trial for Backup and DR Service to explore a unified, centralized backup solution featuring immutable backup vaults.
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/apply-backup-temp-overview](https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/apply-backup-temp-overview)
+- Source ID: `site-docs-root`
+- Final score: 62
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 

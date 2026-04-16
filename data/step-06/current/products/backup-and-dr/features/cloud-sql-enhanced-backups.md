@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.179Z"
+generated_at: "2026-04-14T09:35:01.917Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Cloud SQL enhanced backups"
 feature_slug: "cloud-sql-enhanced-backups"
 latest_feature_date: "2025-12-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sql-server"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
 keywords:
-  - "sql"
   - "generally"
   - "centralized"
   - "available"
-  - "are"
   - "enhanced"
+  - "management"
   - "backups"
-  - "with"
 ---
 
 # Cloud SQL enhanced backups
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +36,53 @@ Cloud SQL enhanced backups are generally available, with centralized backup mana
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sql-server)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan)
 
 ## Supporting Pages
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Backup vault for immutable and indelible backups \_|\_ Backup and DR \_\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault)
+- Source ID: `site-docs-reference`
+- Final score: 114
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Centralized model : In the centralized model, organizations streamline backup management by creating backup vaults and deploying the appliance management console within a designated central administrator project.
+- Decentralized model : In the decentralized model, appliance management consoles and backup vaults are created in various projects based on the organization's specific needs and required isolation levels.
+- Centralized model : In the centralized model, organizations streamline backup management by creating backup vaults and plans within a designated central administrator project.
+- How backup vaults work When backups are stored in a backup vault, the Backup and DR Service handles the storage and management of the backup data.
+
+### "Set up and plan a backup/recovery appliance deployment \_|\_ Backup and\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan)
+- Source ID: `site-docs-reference`
+- Final score: 89
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Components of the backup/recovery appliance architecture The Backup and DR Service architecture is delivered through the following components: Google Cloud console : The Google Cloud console includes the Backup and DR product for central management of your Persistent Disk vaulted backups, backup plans for Compute Engine instances, and enhanced backup for Cloud SQL in those products.
+- The appliance management console is deployed in the backup administration project and is highly available within the deployed region, providing resilience against zonal outages.
+- These backups require a Backup and DR management console and one or more backup/recovery appliances.
+- Management console supported regions While Backup and DR Service can be used to back up supported workloads in any Google Cloud region, the appliance management console can be activated only in the following regions: Geographic Area Region Name Region Description North America northamerica-northeast1 Montréal Low CO 2 northamerica-northeast2 Toronto Low CO 2 us-central1 Iowa Low CO 2 us-east1 South Carolina us-east4 Northern Virginia us-east5 Columbus us-south1 Dallas Low CO 2 us-west1 Oregon Low CO 2 us-west2 Los Angeles us-west3 Salt Lake City us-west4 Las Vegas northamerica-south1 Querétaro South America southamerica-east1 São Paulo Low CO 2 southamerica-west1 Santiago Low CO 2 Europe europe-central2 Warsaw europe-north1 Finland Low CO 2 europe-north2 Stockholm Low CO 2 europe-southwest1 Madrid Low CO 2 europe-west1 Belgium Low CO 2 europe-west2 London Low CO 2 europe-west3 Frankfurt europe-west4 Netherlands Low CO 2 europe-west6 Zürich Low CO 2 europe-west8 Milan europe-west9 Paris Low CO 2 europe-west10 Berlin europe-west12 Turin Middle East me-central1 Doha me-central2 Dammam me-west1 Israel Africa africa-south1 Johannesburg Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne India asia-south1 Mumbai asia-south2 Delhi Querétaro (northamerica-south1), Montréal (northamerica-northeast1), and Osaka (asia-northeast2) don't support zone separation.
+
+### "Set up and plan a backup/recovery appliance deployment \_|\_ Backup and\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan)
 - Source ID: `site-docs-root`
-- Final score: 176
+- Final score: 89
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- December 16, 2025 Feature Cloud SQL enhanced backups are now generally available (GA).
-- With enhanced backups, backups are managed and stored in a centralized backup management project that leverages Backup and DR service to provide enforced retention, granular scheduling, and longer retention.
-- March 05, 2026 Feature AlloyDB enhanced backups are now generally available ( GA ).
-- Feature Filestore enhanced backups are now generally available (GA).
-
-### Backup and DR Service for Microsoft SQL Server \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server)
-- Source ID: `site-api-reference`
-- Final score: 126
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- You can find additional information at: Backup and DR for Microsoft SQL Server Databases Prepare SQL Server databases for Backup and DR Service Add a SQL Server database host and discover databases Configure backup plans for Microsoft SQL Server instances and databases Application details and settings for Microsoft SQL Server instances and databases Mount a SQL Server database Mount databases into SQL Always On Availability Groups Manage an active mount Migrate a SQL Server database Clone SQL Server databases Recover SQL Server backups What's Next Prepare SQL server databases for Backup and DR Service .
-- Backup and DR has a proprietary method of change block tracking so backup solutions using SQL or other methods of obtaining the backups are not impacted by a scheduled Backup and DR data capture jobs.
-- Reason If your system is configured to manage (capture or truncate(purge)) logs, and the legacy backup software is also capturing and/or truncating/purging logs, then one or both systems may end up with an incomplete log chain, making it difficult or impossible to recover the database to a specific point in time.
-- Backup and DR provides two ways to mount an Microsoft SQL Server database: The Virtual Application mount presents and makes the captured Microsoft SQL Server data available to a target server as an Microsoft SQL Server database.
-
-### Prepare SQL Server databases for Backup and DR \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sql-server)
-- Source ID: `site-api-reference`
-- Final score: 118
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- You can find additional information at: Backup and DR for Microsoft SQL Server Databases Prepare SQL Server databases for Backup and DR Service Add a SQL Server database host and discover databases Configure backup plans for Microsoft SQL Server instances and databases Application details and settings for Microsoft SQL Server instances and databases Mount a SQL Server database Mount databases into SQL Always On Availability Groups Manage an active mount Migrate a SQL Server database Clone SQL Server databases Recover SQL Server backups Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Storage Backup and DR Reference Send feedback Prepare SQL Server databases for Backup and DR Stay organized with collections Save and categorize content based on your preferences.
-- To perform Backup and DR capture, restore, unmount, delete, and virtual application mount operations on a SQL Server database, you must provide credentials for a Windows user—a local user or a domain user—who has a role with sufficient SQL privileges to perform the operation.
-- Windows local administrator user To perform capture, restore, unmount delete, and virtual application mounts, the Backup and DR agent must be installed with the credentials of a Microsoft Windows user who has sufficient privileges in the SQL environment.
+- Components of the backup/recovery appliance architecture The Backup and DR Service architecture is delivered through the following components: Google Cloud console : The Google Cloud console includes the Backup and DR product for central management of your Persistent Disk vaulted backups, backup plans for Compute Engine instances, and enhanced backup for Cloud SQL in those products.
+- The appliance management console is deployed in the backup administration project and is highly available within the deployed region, providing resilience against zonal outages.
+- These backups require a Backup and DR management console and one or more backup/recovery appliances.
+- Management console supported regions While Backup and DR Service can be used to back up supported workloads in any Google Cloud region, the appliance management console can be activated only in the following regions: Geographic Area Region Name Region Description North America northamerica-northeast1 Montréal Low CO 2 northamerica-northeast2 Toronto Low CO 2 us-central1 Iowa Low CO 2 us-east1 South Carolina us-east4 Northern Virginia us-east5 Columbus us-south1 Dallas Low CO 2 us-west1 Oregon Low CO 2 us-west2 Los Angeles us-west3 Salt Lake City us-west4 Las Vegas northamerica-south1 Querétaro South America southamerica-east1 São Paulo Low CO 2 southamerica-west1 Santiago Low CO 2 Europe europe-central2 Warsaw europe-north1 Finland Low CO 2 europe-north2 Stockholm Low CO 2 europe-southwest1 Madrid Low CO 2 europe-west1 Belgium Low CO 2 europe-west2 London Low CO 2 europe-west3 Frankfurt europe-west4 Netherlands Low CO 2 europe-west6 Zürich Low CO 2 europe-west8 Milan europe-west9 Paris Low CO 2 europe-west10 Berlin europe-west12 Turin Middle East me-central1 Doha me-central2 Dammam me-west1 Israel Africa africa-south1 Johannesburg Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne India asia-south1 Mumbai asia-south2 Delhi Querétaro (northamerica-south1), Montréal (northamerica-northeast1), and Osaka (asia-northeast2) don't support zone separation.
 

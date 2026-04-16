@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.781Z"
+generated_at: "2026-04-15T00:42:40.913Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Inverted-regex build triggers on specified branches"
 feature_slug: "inverted-regex-build-triggers-on-specified-branches"
 latest_feature_date: "2019-05-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
-  - "https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration"
-  - "https://docs.cloud.google.com/build/docs/building/build-containerize-python"
+  - "https://docs.cloud.google.com/build/docs/api/reference/rest"
+  - "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center"
 keywords:
   - "inverted"
-  - "regex"
-  - "build"
-  - "triggers"
-  - "on"
-  - "specified"
   - "branches"
-  - "can"
+  - "regex"
+  - "specified"
+  - "triggers"
 ---
 
 # Inverted-regex build triggers on specified branches
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ Cloud Build build triggers can use inverted regex matching and be restricted to 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
-- [https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration](https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration)
-- [https://docs.cloud.google.com/build/docs/building/build-containerize-python](https://docs.cloud.google.com/build/docs/building/build-containerize-python)
+- [https://docs.cloud.google.com/build/docs/api/reference/rest](https://docs.cloud.google.com/build/docs/api/reference/rest)
+- [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center)
 
 ## Supporting Pages
 
@@ -52,40 +49,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
 - Source ID: `site-docs-root-2`
-- Final score: 208
+- Final score: 109
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Security implications of build triggers The service account configured for a build trigger can provide elevated build-time permissions to users who employ triggers to invoke a build.
 - Note: Only the service account specified in the gcloud builds triggers create command is used for builds invoked with triggers.
 - If you specified a service account in your build config, it will be ignored during build execution when using triggers.
 - Only the service account specified on your trigger will be used for builds executed by triggers.
+- Build triggers ignore the service account specified in the build config file.
 
-### Create a build configuration file \_|\_ Cloud Build \_|\_ Google Cloud Documentation
+### Cloud Build API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration](https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration)
+- URL: [https://docs.cloud.google.com/build/docs/api/reference/rest](https://docs.cloud.google.com/build/docs/api/reference/rest)
 - Source ID: `site-docs-root`
-- Final score: 200
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 81
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The following snippet includes two more steps to the build config file: a docker build step to invoke the docker push command to push the image build in the previous step to Artifact Registry . a build step for the Google Cloud SDK command with the gcloud entrypoint specified, which creates a Compute Engine instance from the container image in Artifact Registry.
-- The following snippet includes two more steps to the build config file: a docker build step to invoke the docker push command to push the image build in the previous step to Artifact Registry . a build step for the Google Cloud SDK command with the gcloud entrypoint specified, which creates a Compute Engine instance from the container image in Artifact Registry.
-- You can add any number of build steps to your build config file by including additional name fields and pointing them to cloud builders .
-- You can add any number of build steps to your build config file by including additional name fields and pointing them to cloud builders .
+- REST Resource: v2.projects.locations.connections Methods create POST /v2/{parent=projects/ /locations/ }/connections Creates a Connection. delete DELETE /v2/{name=projects/ /locations/ /connections/ } Deletes a single connection. fetchLinkableRepositories GET /v2/{connection=projects/ /locations/ /connections/ }:fetchLinkableRepositories FetchLinkableRepositories get repositories from SCM that are accessible and could be added to the connection. get GET /v2/{name=projects/ /locations/ /connections/ } Gets details of a single connection. getIamPolicy GET /v2/{resource=projects/ /locations/ /connections/ }:getIamPolicy Gets the access control policy for a resource. list GET /v2/{parent=projects/ /locations/ }/connections Lists Connections in a given project and location. patch PATCH /v2/{connection.name=projects/ /locations/ /connections/ } Updates a single connection. processWebhook POST /v2/{parent=projects/ /locations/ }/connections:processWebhook ProcessWebhook is called by the external SCM for notifying of events. setIamPolicy POST /v2/{resource=projects/ /locations/ /connections/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v2/{resource=projects/ /locations/ /connections/ }:testIamPermissions Returns permissions that a caller has on the specified resource.
+- REST Resource: v2.projects.locations REST Resource: v2.projects.locations.connections REST Resource: v2.projects.locations.connections.repositories REST Resource: v2.projects.locations.operations REST Resource: v1 REST Resource: v1.githubDotComWebhook REST Resource: v1.locations REST Resource: v1.operations REST Resource: v1.projects.builds REST Resource: v1.projects.githubEnterpriseConfigs REST Resource: v1.projects.locations REST Resource: v1.projects.locations.bitbucketServerConfigs REST Resource: v1.projects.locations.bitbucketServerConfigs.connectedRepositories REST Resource: v1.projects.locations.bitbucketServerConfigs.repos REST Resource: v1.projects.locations.builds REST Resource: v1.projects.locations.gitLabConfigs REST Resource: v1.projects.locations.gitLabConfigs.connectedRepositories REST Resource: v1.projects.locations.gitLabConfigs.repos REST Resource: v1.projects.locations.githubEnterpriseConfigs REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.triggers REST Resource: v1.projects.locations.workerPools REST Resource: v1.projects.triggers Service: cloudbuild.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v2.projects.locations.connections.repositories Methods accessReadToken POST /v2/{repository=projects/ /locations/ /connections/ /repositories/ }:accessReadToken Fetches read token of a given repository. accessReadWriteToken POST /v2/{repository=projects/ /locations/ /connections/ /repositories/ }:accessReadWriteToken Fetches read/write token of a given repository. batchCreate POST /v2/{parent=projects/ /locations/ /connections/ }/repositories:batchCreate Creates multiple repositories inside a connection. create POST /v2/{parent=projects/ /locations/ /connections/ }/repositories Creates a Repository. delete DELETE /v2/{name=projects/ /locations/ /connections/ /repositories/ } Deletes a single repository. fetchGitRefs GET /v2/{repository=projects/ /locations/ /connections/ /repositories/ }:fetchGitRefs Fetch the list of branches or tags for a given repository. get GET /v2/{name=projects/ /locations/ /connections/ /repositories/ } Gets details of a single repository. list GET /v2/{parent=projects/ /locations/ /connections/ }/repositories Lists Repositories in a given connection.
+- REST Resource: v1.projects.locations.triggers Methods create POST /v1/{parent=projects/ /locations/ }/triggers Creates a new BuildTrigger . delete DELETE /v1/{name=projects/ /locations/ /triggers/ } Deletes a BuildTrigger by its project ID and trigger ID. get GET /v1/{name=projects/ /locations/ /triggers/ } Returns information about a BuildTrigger . list GET /v1/{parent=projects/ /locations/ }/triggers Lists existing BuildTrigger s. patch PATCH /v1/{trigger.resourceName=projects/ /locations/ /triggers/ } Updates a BuildTrigger by its project ID and trigger ID. run POST /v1/{name=projects/ /locations/ /triggers/ }:run Runs a BuildTrigger at a particular source revision. webhook POST /v1/{name=projects/ /locations/ /triggers/ }:webhook ReceiveTriggerWebhook [Experimental] is called when the API receives a webhook request targeted at a specific trigger.
 
-### Build, test, and containerize Python applications \_|\_ Google Cloud Documentation
+### "Connect to a Bitbucket Data Center host \_|\_ Cloud Build \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/build/docs/building/build-containerize-python](https://docs.cloud.google.com/build/docs/building/build-containerize-python)
+- URL: [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center)
 - Source ID: `site-docs-root-2`
-- Final score: 190
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 71
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The following build step stores the test logs that you saved in the JUNIT XML file to a Cloud Storage bucket: Save test logs to Google Cloud Storage artifacts : objects : location : gs://${ BUCKET NAME}/ paths : - ${SHORT SHA} test log.xml The following snippet shows the complete build config file for the all the steps described above: steps : Install dependencies - name : python entrypoint : pip args : [ "install" , "-r" , "requirements.txt" , "--user" ] Run unit tests - name : python entrypoint : python args : [ "-m" , "pytest" , "--junitxml=${SHORT SHA} test log.xml" ] Docker Build - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' , '.' ] Docker push to Google Artifact Registry - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , 'us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' ] Deploy to Cloud Run - name : google/cloud-sdk args : [ 'gcloud' , 'run' , 'deploy' , 'helloworld-${SHORT SHA}' , '--image=us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' , '--region' , 'us-central1' , '--platform' , 'managed' , '--allow-unauthenticated' ] Save test logs to Google Cloud Storage artifacts : objects : location : gs://${ BUCKET NAME}/ paths : - ${SHORT SHA} test log.xml Store images in Google Artifact Registry images : - us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA} Start your build : manually or using build triggers .
-- The following build step adds arguments to install requirements from the requirements.txt file: steps : Install dependencies - name : python entrypoint : pip args : [ "install" , "-r" , "requirements.txt" , "--user" ] Add unit tests : If you've defined unit tests in your application using a testing framework such as pytest , you can configure Cloud Build to run the tests by adding the following fields in a build step: name : Set the value of this field to python to use the python image from Docker Hub for your task. entrypoint : Set the value of this field to python to run python commands. args : Add the arguments for running the python pytest command.
-- The following build step deploys the previously built image to Cloud Run: Deploy to Cloud Run - name : google/cloud-sdk args : [ 'gcloud' , 'run' , 'deploy' , 'helloworld-${SHORT SHA}' , '--image=us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' , '--region' , 'us-central1' , '--platform' , 'managed' , '--allow-unauthenticated' ] Save test logs to Cloud Storage : You can configure Cloud Build to store any test logs in Cloud Storage by specifying an existing bucket location and path to the test logs.
-- Docker Build - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' , '.' ] Push the container to Artifact Registry : You can store the built container in Artifact Registry, which is a Google Cloud service that you can use to store, manage, and secure build artifacts.
+- On the Triggers page, when you click Run , the Run trigger page opens and shows a Failed to list branches.
+- This way, you can configure build triggers to build repositories from Bitbucket Data Center and build repositories from Bitbucket Data Center in a private network .
+- If no value is specified for the IP address, the IP address is automatically assigned a range within the peered VPC network.
+- If no value is specified for the prefix length, IP addresses are automatically assigned within the peered VPC network.
 

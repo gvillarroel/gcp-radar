@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.421Z"
+generated_at: "2026-04-13T13:51:57.816Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "PostgreSQL flags"
@@ -9,17 +9,14 @@ latest_feature_date: "2021-03-31"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/postgres/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion"
-  - "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+  - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags"
+  - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags/list"
+  - "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
 keywords:
-  - "postgresql"
-  - "flags"
-  - "sql"
-  - "for"
-  - "supports"
   - "configurable"
+  - "flags"
   - "database"
+  - "supports"
 ---
 
 # PostgreSQL flags
@@ -37,53 +34,54 @@ Cloud SQL for PostgreSQL supports configurable PostgreSQL database flags.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion)
-- [https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases](https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases)
+- [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags)
+- [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags/list](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags/list)
+- [https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore](https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore)
 
 ## Supporting Pages
 
-### Cloud SQL for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### Method: flags.list \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 216
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following information applies to flags and extensions for PostgreSQL 18: Flags The following new flags are available for PostgreSQL 18 only: autovacuum vacuum max threshold autovacuum worker slots enable distinct reordering enable self join elimitation io max concurrency io method io workers log lock failures max active replecation origins track cost delay timing vacuum max eager freeze failure rate vacuum truncate For more information, see Configure database flags .
-- May 19, 2023 Feature The following extensions , views , utilities , and flags are generally available: Extensions postgresql anonymizer: mask or replace personally identifiable information (PII) or sensitive data from a PostgreSQL database. pgtt: create, manage and use Oracle-style global temporary tables. rdkit: compare, manipulate, and identify molecular structures.
-- July 29, 2021 Feature Cloud SQL for PostgreSQL now supports the following flags: tcp keepalives count tcp keepalives idle tcp keepalives interval For more information about these flags, see the Cloud SQL for PostgreSQL flags documentation.
-- The following information applies to flags and extensions for PostgreSQL 17: Flags These flags are deprecated for PostgreSQL 17: old snapshot threshold trace recovery messages For more information, see Configure database flags .
-
-### SqlDatabaseVersion \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/SqlDatabaseVersion)
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags/list](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags/list)
 - Source ID: `site-api-reference`
-- Final score: 204
+- Final score: 31
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Databases Cloud SQL PostgreSQL Reference Send feedback Method: flags.list Stay organized with collections Save and categorize content based on your preferences.
+- By default, this method returns flags for all database types and versions. flagScope enum ( SqlFlagScope ) Optional.
+- Query parameters Parameters databaseVersion string Database type and version you want to retrieve flags for.
+- Lists all available database flags for Cloud SQL instances.
+
+### REST Resource: flags \_|\_ Cloud SQL for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/flags)
+- Source ID: `site-api-reference`
+- Final score: 31
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON representation { "name" : string , "type" : enum ( SqlFlagType ) , "appliesTo" : [ enum ( SqlDatabaseVersion ) ] , "allowedStringValues" : [ string ] , "minValue" : string , "maxValue" : string , "requiresRestart" : boolean , "kind" : string , "inBeta" : boolean , "allowedIntValues" : [ string ] , "flagScope" : enum ( SqlFlagScope ) , // Union field recommended value can be only one of the following: "recommendedStringValue" : string , "recommendedIntValue" : string // End of list of possible types for union field recommended value . } Fields name string This is the name of the flag.
+- See the complete list . allowedStringValues[] string For STRING flags, a list of strings that the value can be set to. minValue string ( Int64Value format) For INTEGER flags, the minimum allowed value. maxValue string ( Int64Value format) For INTEGER flags, the maximum allowed value. requiresRestart boolean Indicates whether changing this flag will trigger a database restart.
+- Enums SQL FLAG SCOPE UNSPECIFIED Assume database flags if unspecified SQL FLAG SCOPE DATABASE database flags SQL FLAG SCOPE CONNECTION POOL connection pool configuration flags Methods list Lists all available database flags for Cloud SQL instances.
+- Home Documentation Databases Cloud SQL PostgreSQL Reference Send feedback REST Resource: flags Stay organized with collections Save and categorize content based on your preferences.
+
+### "Restore an instance overview \_|\_ Cloud SQL for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore](https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore)
+- Source ID: `site-iam-reference`
+- Final score: 23
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Databases Cloud SQL PostgreSQL Reference Send feedback SqlDatabaseVersion Stay organized with collections Save and categorize content based on your preferences.
-- POSTGRES 9 6 The database version is PostgreSQL 9.6.
-- POSTGRES 10 The database version is PostgreSQL 10.
-- POSTGRES 11 The database version is PostgreSQL 11.
-
-### "Create and manage databases \_|\_ Cloud SQL for PostgreSQL \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases](https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases)
-- Source ID: `site-docs-root`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /databases" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "CREATE DATABASE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } psql Client For reference information, see CREATE DATABASE in the PostgreSQL documentation.
-- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method DELETE -Headers $headers -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /databases/ database-name " Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "DELETE DATABASE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } psql Client For reference information, see DROP DATABASE in the PostgreSQL documentation.
-- See the following topics in the PostgreSQL documentation for background and a list of supported character set values: Collation Support Character Set Support CREATE DATABASE database name [[ ENCODING encoding ][ LC COLLATE lc collate ]]; For example: CREATE DATABASE "example db" WITH OWNER "example user" ENCODING 'UTF8' LC COLLATE = 'pl PL.utf8' LC CTYPE = 'pl PL.utf8' TEMPLATE template0; Note: The default template is template1 .
-- MySQL PostgreSQL SQL Server This page contains information about creating, listing, and deleting PostgreSQL databases on a Cloud SQL instance.
+- Note: If your instance has a large number of write-ahead logs on disk and you want to save disk space, then we recommend that you slowly reduce the value of the following: transactionLogRetentionDays configuration setting expire logs days database flag binlog expire logs seconds database flag For example, to prevent performance issues, reduce the value of the flags by one day, each day, over several days.
+- For more information, see Configure database flags .
+- For PITR write-ahead logs that are stored on disk , that are being switched to Cloud Storage, or that are already switched to Cloud Storage, Cloud SQL retains the logs for the minimum value set for one of the following configurations: The transactionLogRetentionDays backup configuration setting The expire logs days or the binlog expire logs seconds flag Cloud SQL doesn't set any values for these flags if the write-ahead logs are stored on disk, are being switched to Cloud Storage, or have already been switched to Cloud Storage.
+- Requirements for restoring to a new instance When you restore your instance to a new instance, note the following requirements: The target instance must have the same database version as the instance from which the backup was taken.
 

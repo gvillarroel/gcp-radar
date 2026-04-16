@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:50.787Z"
+generated_at: "2026-04-12T12:18:07.471Z"
 product_name: "Places SDK for iOS"
 product_slug: "places-sdk-for-ios"
 feature_name: "Text Search API (New)"
 feature_slug: "text-search-api-new"
 latest_feature_date: "2024-04-01"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/text-search"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/overview"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/legacy/overview-legacy"
 keywords:
   - "text"
   - "search"
@@ -24,7 +27,7 @@ keywords:
 # Text Search API (New)
 
 Product: Places SDK for iOS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Returns information about places based on a text query.
 
 Returns information about places based on a text query.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/ios-sdk/text-search](https://developers.google.com/maps/documentation/places/ios-sdk/text-search)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/overview](https://developers.google.com/maps/documentation/places/ios-sdk/overview)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete](https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/legacy/overview-legacy](https://developers.google.com/maps/documentation/places/ios-sdk/legacy/overview-legacy)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Text Search (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/text-search](https://developers.google.com/maps/documentation/places/ios-sdk/text-search)
+- Source ID: `site-docs-root`
+- Final score: 266
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Text Search (New) returns information about a set of places based on a string (for example, "pizza in New York" or "shoe stores near Ottawa" or "123 Main Street").
+- GMSPlaceSearchByTextRequest request = [[ GMSPlaceSearchByTextRequest alloc ] initWithTextQuery : @"pizza in New York" placeProperties : @[ GMSPlacePropertyName , GMSPlacePropertyPlaceID ] ]; request . isOpenNow = YES ; request . includedType = @"restaurant" ; request . maxResultCount = 5 ; request . minRating = 3.5 ; request . rankPreference = GMSPlaceSearchByTextRankPreferenceDistance ; request . isStrictTypeFiltering = YES ; request . priceLevels = @[ @( kGMSPlacesPriceLevelFree ) , @( kGMSPlacesPriceLevelCheap ) ] ; request . locationBias = GMSPlaceCircularLocationOption ( CLLocationCoordinate2DMake ( 40.7 , -74.0 ), 200.0 ); // Array to hold the places in the response placeResults = [ NSArray array ]; // Create the GMSPlaceSearchByTextRequest object. [ placesClient searchByTextWithRequest : request callback : ^ ( NSArray<GMSPlace > Nullable placeResults , NSError Nullable error ) { if ( error != nil ) { NSLog ( @"An error occurred %@" , [ error localizedDescription ]); return ; } else { if ( placeResults . count > 0 ) { // Get list of places. placeResults = placeResults ; } } } ]; Text Search responses The Text Search API returns an array of matches in the form of GMSPlace objects, with one GMSPlace object per matching place.
+- For example: Places Swift SDK let request = SearchByTextRequest () request . shouldIncludePureServiceAreaBusinesses = true Swift let request = SearchByTextRequest () request . shouldIncludePureServiceAreaBusinesses : true Objective-C GMSPlaceSearchByTextRequest request = [[ GMSPlaceSearchByTextRequest alloc ] initWithTextQuery : @"pizza in New York" placeProperties : @[ GMSPlacePropertyAll ] ]; request . shouldIncludePureServiceAreaBusinesses = YES ; Display attributions in your app When your app displays information obtained from GMSPlacesClient , such as photos and reviews, the app must also display the required attributions.
+- Text Search uses the Places API (New) and requires a text query, with optional location bias and filters, returning an array of GMSPlace objects. iOS implementation involves creating a GMSPlaceSearchByTextRequest and executing the search using GMSPlacesClient searchByTextWithRequest:callback: .
+
+### Overview \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/overview](https://developers.google.com/maps/documentation/places/ios-sdk/overview)
+- Source ID: `site-docs-root`
+- Final score: 238
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Text Search (New) Returns information about a set of places based on a text search.
+- Places SDK for iOS provides the following APIs: Places SDK for iOS (New) Description Place Details (New) Returns information about places, including the place's name and address, the geographical location, the type of place (such as night club, pet store, museum), and more.
+- Nearby Search (New) Returns information about a set of places by specifying a location as a search area.
+- Note: Whenever your app displays information about places sourced from the Places SDK for iOS, the app must also show all relevant attributions that are returned by the API.
+
+### Place Autocomplete (New) \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete](https://developers.google.com/maps/documentation/places/ios-sdk/place-autocomplete)
+- Source ID: `site-docs-root`
+- Final score: 220
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This example sets the origin to the center of San Francisco: Places Swift SDK let filter = AutocompleteFilter ( origin : CLLocation ( latitude : 37.7749 , longitude : - 122.4194 )) let token = AutocompleteSessionToken () let autocompleteRequest = AutocompleteRequest ( query : "Amoeba" , sessionToken : token , filter : filter ) switch await placesClient . fetchAutocompleteSuggestions ( with : autocompleteRequest ) { case . success ( let autocompleteSuggestions ): for suggestion in autocompleteSuggestions { switch suggestion { case . place : // Show place suggestion data. } } case . failure ( let placesError ): // Handle error. } Swift let token = GMSAutocompleteSessionToken () let origin = CLLocation ( latitude : 37.7749 , longitude : - 122.4194 ) let filter = GMSAutocompleteFilter () filter . origin = origin let request = GMSAutocompleteRequest ( query : "Amoeba" ) request . filter = filter request . sessionToken = token GMSPlacesClient . shared (). fetchAutocompleteSuggestions ( from : request , callback : { ( results , error ) in if let error = error { print ( "Autocomplete error: \( error ) " ) return } if let autocompleteResults = results { for result in autocompleteResults { print ( "Result \( String ( describing : result . placeSuggestion ?. placeID )) with \( String ( describing : result . placeSuggestion ?. attributedFullText )) and distance: \( String ( describing : result . placeSuggestion ?. distanceMeters )) " ) } } }) Objective-C GMSAutocompleteFilter filter = [[ GMSAutocompleteFilter alloc ] init ]; filter . origin = [[ CLLocation alloc ] initWithLatitude : 37.395804 longitude : -122.077023 ]; GMSAutocompleteRequest request = [[ GMSAutocompleteRequest alloc ] initWithQuery : @"Amoeba" ]; request . sessionToken = token ; request . filter = filter ; [[ GMSPlacesClient sharedClient ] fetchAutocompleteSuggestionsFromRequest : request callback :^ ( NSArray<GMSAutocompleteSuggestion > results , NSError error ){ // Handle response for ( GMSAutocompleteSuggestion suggestion in results ) { if ( suggestion . placeSuggestion ) { // Show place suggestion data. } } }]; Customize content and theme Swift let uiCustomization = AutocompleteUICustomization ( listDensity : . multiLine , listItemIcon : . noIcon , theme : PlacesMaterialTheme () ) Add a Places Autocomplete widget (full code) Places Swift SDK struct PlaceAutocompleteDemoView : View { @ State private var fetchedPlace : Place ? @ State private var placesError : PlacesError ? @ State private var showWidget = false public var body : some View { VStack { Button ( "Search for a place" ) { showWidget . toggle () } . placeAutocomplete ( show : $ showWidget , onSelection : { ( autocompletePlaceSuggestion , autocompleteSessionToken ) in Task { let placesClient = await PlacesClient . shared let fetchPlaceRequest = FetchPlaceRequest ( placeID : autocompletePlaceSuggestion . placeID , placeProperties : [. displayName , . formattedAddress ], sessionToken : autocompleteSessionToken ) switch await placesClient . fetchPlace ( with : fetchPlaceRequest ) { case . success ( let place ): print ( "Fetched place: \( place ) " ) self . fetchedPlace = place case . failure ( let placesError ): print ( "Failed to fetch place: \( placesError ) " ) self . placesError = placesError } } }, onError : { placesError in self . placesError = placesError } ) } } } Autocomplete (New) optimization This section describes best practices to help you make the most of the Autocomplete (New) service.
+- Places Swift SDK let center = ( 37.3913916 , - 122.0879074 ) let northEast = ( 37.388162 , - 122.088137 ) let southWest = ( 37.395804 , - 122.077023 ) let bias = RectangularCoordinateRegion ( northEast : northEast , southWest : southWest ) let filter = AutocompleteFilter ( types : [ . restaurant ], origin : center , coordinateRegionBias : bias ) let autocompleteRequest = AutocompleteRequest ( query : "Sicilian piz" , filter : filter ) switch await placesClient . fetchAutocompleteSuggestions ( with : autocompleteRequest ) { case . success ( let autocompleteSuggestions ): // Handle suggestions. case . failure ( let placesError ): // Handle error. } Swift let token = GMSAutocompleteSessionToken () let northWestBounds = CLLocationCoordinate2DMake ( 40.921628 , - 73.700051 ) let southEastBounds = CLLocationCoordinate2DMake ( 40.477398 , - 74.259087 ) let filter = GMSAutocompleteFilter () filter . types = [ kGMSPlaceTypeRestaurant ] filter . locationBias = GMSPlaceRectangularLocationOption ( northWestBounds , southEastBounds ) let request = GMSAutocompleteRequest ( query : "Spagh" ) request . filter = filter request . sessionToken = token GMSPlacesClient . shared (). fetchAutocompleteSuggestions ( from : request , callback : { ( results , error ) in if let error = error { print ( "Autocomplete error: \( error ) " ) return } if let autocompleteResults = results { for result in autocompleteResults { print ( "Result \( String ( describing : result . placeSuggestion ?. placeID )) with \( String ( describing : result . placeSuggestion ?. attributedFullText )) " ) } } }) Objective-C CLLocationCoordinate2D northEast = CLLocationCoordinate2DMake ( 37.388162 , -122.088137 ); CLLocationCoordinate2D southWest = CLLocationCoordinate2DMake ( 37.395804 , -122.077023 ); GMSAutocompleteFilter filter = [[ GMSAutocompleteFilter alloc ] init ]; filter . types = @[ kGMSPlaceTypeRestaurant ] ; filter . locationBias = GMSPlaceRectangularLocationOption ( northEast , southWest ); GMSAutocompleteRequest request = [[ GMSAutocompleteRequest alloc ] initWithQuery : @"Sicilian piz" ]; request . sessionToken = token ; request . filter = filter ; [[ GMSPlacesClient sharedClient ] fetchAutocompleteSuggestionsFromRequest : request callback :^ ( NSArray<GMSAutocompleteSuggestion > results , NSError error ){ // Handle response for ( GMSAutocompleteSuggestion suggestion in results ) { if ( suggestion . placeSuggestion ) { // Show place suggestion data. } } }]; Autocomplete (New) responses Autocomplete returns an array of up to five GMSAutocompleteSuggestion instances.
+- The following example specifies a query string of "Soccer" and uses the types parameter to restrict results to establishments of type "sporting goods store" : Places Swift SDK let filter = AutocompleteFilter ( types : [ PlaceType ( rawValue : "sporting goods store" ) ]) let token = AutocompleteSessionToken () let autocompleteRequest = AutocompleteRequest ( query : "Soccer" , sessionToken : token , filter : filter ) switch await placesClient . fetchAutocompleteSuggestions ( with : autocompleteRequest ) { case . success ( let autocompleteSuggestions ): for suggestion in autocompleteSuggestions { switch suggestion { case . place : // Show place suggestion data. } } case . failure ( let placesError ): // Handle error. } Swift let token = GMSAutocompleteSessionToken () let filter = GMSAutocompleteFilter () filter . types = [ "sporting goods store" ] let request = GMSAutocompleteRequest ( query : "Soccer" ) request . filter = filter request . sessionToken = token GMSPlacesClient . shared (). fetchAutocompleteSuggestions ( from : request , callback : { ( results , error ) in if let error = error { print ( "Autocomplete error: \( error ) " ) return } if let autocompleteResults = results { for result in autocompleteResults { print ( "Result \( String ( describing : result . placeSuggestion ?. placeID )) with \( String ( describing : result . placeSuggestion ?. attributedFullText )) " ) } } }) Objective-C GMSAutocompleteFilter filter = [[ GMSAutocompleteFilter alloc ] init ]; filter . types = @[ "sporting goods store" ] ; GMSAutocompleteRequest request = [[ GMSAutocompleteRequest alloc ] initWithQuery : @"Soccer" ]; request . sessionToken = token ; request . filter = filter ; [[ GMSPlacesClient sharedClient ] fetchAutocompleteSuggestionsFromRequest : request callback :^ ( NSArray<GMSAutocompleteSuggestion > results , NSError error ){ // Handle response for ( GMSAutocompleteSuggestion suggestion in results ) { if ( suggestion . placeSuggestion ) { // Show place suggestion data. } } }]; Use origin When you include the origin parameter in the request, specified as latitude and longitude coordinates, the API includes the straight-line distance from the origin to the destination in the response.
+- When requesting Place Details (New) about the selected prediction, include the following parameters: The place ID from the Autocomplete (New) response The session token used in the Autocomplete (New) request The fields parameter specifying the Autocomplete (New) data fields you need No, needs only address and location Geocoding API could be a more cost-effective option than Place Details (New) for your application, depending on the performance of your Autocomplete (New) usage.
+
+### Places SDK (Legacy) overview \_|\_ Places SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/legacy/overview-legacy](https://developers.google.com/maps/documentation/places/ios-sdk/legacy/overview-legacy)
+- Source ID: `site-docs-reference`
+- Final score: 216
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Places SDK for iOS (New) Minimum SDK Version Places SDK for iOS Minimum SDK Version Place Details (New) 9.0.0 Place Details 3.0.0 Place Photo (New) 9.0.0 Place Photo 3.0.0 Text Search (New) 8.5.0 Nearby Search (New) 9.0.0 Autocomplete (New) 9.0.0 Autocomplete 3.0.0 Current Place 3.0.0 Migrate to the new APIs To migrate to the new APIs, see the following migration guides: Migrate to Place Details (New) Migrate to Place Photo (New) Migrate to Autocomplete (New) Enhancements in Places SDK for iOS (New) This section covers key features added to Places SDK for iOS (New).
+- New features The Places SDK for iOS (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) Simplified pricing Pricing is simplified with Places SDK for iOS (New) so that you only pay for the data you use.
+- The Places SDK lets you search for and retrieve information for a variety of place types using a text string or by proximity.
+- Expanded place types The new SDK includes new place types, which are returned as part of the Place Details and Text Search response.
 

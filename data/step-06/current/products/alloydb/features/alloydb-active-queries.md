@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.592Z"
+generated_at: "2026-04-12T12:07:33.839Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB active queries"
 feature_slug: "alloydb-active-queries"
 latest_feature_date: "2025-02-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance"
-  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators"
+  - "https://docs.cloud.google.com/alloydb/docs/query-insights-overview"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall"
 keywords:
   - "running query list"
   - "query activity view"
@@ -26,7 +27,7 @@ keywords:
 # AlloyDB active queries
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,50 +39,45 @@ AlloyDB for PostgreSQL now supports active query functionality as a generally av
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance)
-- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
+- [https://docs.cloud.google.com/alloydb/docs/query-insights-overview](https://docs.cloud.google.com/alloydb/docs/query-insights-overview)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- [https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall](https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall)
 
 ## Supporting Pages
 
-### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+### "Perform intelligent SQL queries using AI functions \_|\_ AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance)
-- Source ID: `site-api-reference`
-- Final score: 26
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
+- Source ID: `site-docs-reference-2`
+- Final score: 100
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- Union field track active queries . track active queries can be only one of the following: trackActiveQueries boolean Track actively running queries on the instance.
-- ObservabilityInstanceConfig JSON representation { // Union field enabled can be only one of the following: "enabled" : boolean // End of list of possible types for union field enabled . // Union field preserve comments can be only one of the following: "preserveComments" : boolean // End of list of possible types for union field preserve comments . // Union field track wait events can be only one of the following: "trackWaitEvents" : boolean // End of list of possible types for union field track wait events . // Union field track wait event types can be only one of the following: "trackWaitEventTypes" : boolean // End of list of possible types for union field track wait event types . // Union field max query string length can be only one of the following: "maxQueryStringLength" : integer // End of list of possible types for union field max query string length . // Union field record application tags can be only one of the following: "recordApplicationTags" : boolean // End of list of possible types for union field record application tags . // Union field query plans per minute can be only one of the following: "queryPlansPerMinute" : integer // End of list of possible types for union field query plans per minute . // Union field track active queries can be only one of the following: "trackActiveQueries" : boolean // End of list of possible types for union field track active queries . } Fields Union field enabled . enabled can be only one of the following: enabled boolean Observability feature status for an instance.
+### About query insights \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
 
-### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances)
-- Source ID: `site-api-reference`
-- Final score: 26
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Union field track active queries . track active queries can be only one of the following: trackActiveQueries boolean Track actively running queries on the instance.
-- ObservabilityInstanceConfig JSON representation { // Union field enabled can be only one of the following: "enabled" : boolean // End of list of possible types for union field enabled . // Union field preserve comments can be only one of the following: "preserveComments" : boolean // End of list of possible types for union field preserve comments . // Union field track wait events can be only one of the following: "trackWaitEvents" : boolean // End of list of possible types for union field track wait events . // Union field track wait event types can be only one of the following: "trackWaitEventTypes" : boolean // End of list of possible types for union field track wait event types . // Union field max query string length can be only one of the following: "maxQueryStringLength" : integer // End of list of possible types for union field max query string length . // Union field record application tags can be only one of the following: "recordApplicationTags" : boolean // End of list of possible types for union field record application tags . // Union field query plans per minute can be only one of the following: "queryPlansPerMinute" : integer // End of list of possible types for union field query plans per minute . // Union field track active queries can be only one of the following: "trackActiveQueries" : boolean // End of list of possible types for union field track active queries . } Fields Union field enabled . enabled can be only one of the following: enabled boolean Observability feature status for an instance.
-
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/query-insights-overview](https://docs.cloud.google.com/alloydb/docs/query-insights-overview)
 - Source ID: `site-docs-root`
-- Final score: 26
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 92
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- July 31, 2024 Feature Gemini in Databases assistance in AlloyDB for PostgreSQL is now available in Preview for standard and enhanced query insights, system insights, index advisor, and active queries.
-- February 14, 2025 Feature Support for advanced query insights , index advisor , and active queries is now generally available ( GA ) in AlloyDB for PostgreSQL.
-- August 08, 2024 Feature Enhanced Query Insights and active queries are now available in Preview for read pool instances.
-- Monitor active queries : monitor and troubleshoot the queries that are active in your database.
+### "Measure vector query recall \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall](https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall)
+- Source ID: `site-docs-root-2`
+- Final score: 92
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

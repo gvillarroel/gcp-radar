@@ -1,0 +1,88 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T01:49:39.123Z"
+product_name: "Dataproc"
+product_slug: "dataproc"
+feature_name: "Dataproc images 2.0.50 and 2.1.0-RC3"
+feature_slug: "dataproc-images-2-0-50-and-2-1-0-rc3"
+latest_feature_date: "2022-11-11"
+deprecation_date: "2022-11-11"
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+keywords:
+  - "preview"
+  - "versions"
+  - "were"
+  - "images"
+  - "image"
+---
+
+# Dataproc images 2.0.50 and 2.1.0-RC3
+
+Product: Dataproc
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Dataproc image versions 2.0.50 and preview 2.1.0-RC3 were deprecated for cluster creation; deprecated on 2022-11-11.
+
+## Extended Definition
+
+Dataproc image versions 2.0.50 and preview 2.1.0-RC3 were deprecated for cluster creation; deprecated on 2022-11-11.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images)
+- [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices)
+- [https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images](https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images)
+
+## Supporting Pages
+
+### "Create a Managed Service for Apache Spark custom image \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images)
+- Source ID: `site-docs-root`
+- Final score: 122
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Advanced usage: If you use your own process to create a custom Managed Service for Apache Spark image, you must add the goog-dataproc-version label manually to your custom image, as follows: Extract the goog-dataproc-version label from the base Managed Service for Apache Spark image used to create the custom image. gcloud compute images describe ${BASE DATAPROC IMAGE} \ --project cloud-dataproc \ --format="value(labels.goog-dataproc-version)" Set the label on the custom image. gcloud compute images add-labels IMAGE NAME --labels= [KEY=VALUE,...] Use a custom image You specify the custom image when you create a Managed Service for Apache Spark cluster.
+- Full URI: https://www.googleapis.com/compute/beta/projects/ PROJECT ID /global/images/family/ CUSTOM IMAGE FAMILY NAME/var> Partial URI: projects/ PROJECT ID /global/images/family/ CUSTOM IMAGE FAMILY NAME Find the custom image URI Google Cloud CLI Run the following command to list the names of your custom images. gcloud compute images list Pass the name of your custom image to the following command to list the URI ( selfLink ) of your custom image. gcloud compute images describe custom-image-name Output snippet: ... name: CUSTOM IMAGE NAME selfLink: https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/images/ CUSTOM IMAGE NAME ...
+- The REST response lists additional information about the image, including the selfLink , which is the image URI. { ... "name": "my-custom-image", "selfLink": "projects/ PROJECT ID /global/images/ CUSTOM IMAGE NAME " , "sourceDisk": ..., ... } Create a cluster with a custom image create a cluster with using the gcloud CLI, the Managed Service for Apache Spark API, or the Google Cloud console. gcloud CLI Create a Managed Service for Apache Spark cluster with a custom image using the dataproc clusters create command with the --image flag.
+- Sample dataproc.custom.properties file: dataproc.conscrypt.provider.enable= VALUE dataproc.logging.stackdriver.enable= VALUE Sample customization script file-creation snippet to override two cluster properties: cat <<EOF >/etc/google-dataproc/dataproc.custom.properties dataproc.conscrypt.provider.enable=true dataproc.logging.stackdriver.enable=false EOF Create a cluster with an expired custom image Managed Service for Apache Spark cannot guarantee support of issues that arise with clusters created with expired custom images.
+
+### "Create a Google Kubernetes Engine custom container image \_|\_ Managed Service\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images](https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images)
+- Source ID: `site-docs-root`
+- Final score: 94
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Base Spark images Managed Service for Apache Spark supports the following base Spark container images: Spark 3.5 : ${REGION}-docker.pkg.dev/cloud-dataproc/spark/dataproc 2.2 Sample custom container image build Sample Dockerfile FROM us - central1 - docker . pkg . dev / cloud - dataproc / spark / dataproc 2 .0 : latest Change to root temporarily so that it has permissions to create dirs and copy files.
+- Custom container image requirements and settings Base images You can use docker tools for building customized docker based upon one of the published Managed Service for Apache Spark on GKE base Spark images .
+- Your custom container image must use one of the Managed Service for Apache Spark on GKE base Spark images .
+- Python: Managed Service for Apache Spark on GKE base Spark images have Miniconda3 installed at /opt/conda .
+
+### "Managed Service for Apache Spark best practices for production \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices)
+- Source ID: `site-docs-root`
+- Final score: 88
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Managed Service for Apache Spark preview image versions New minor versions of Managed Service for Apache Spark images are available in a preview version prior to release in the standard minor image version track.
+- Use custom images when necessary If you have dependencies to add to the cluster, such as native Python libraries, or security hardening or virus protection software, create a custom image from the latest image in your target minor image version track.
+- Specify cluster image versions Managed Service for Apache Spark uses image versions to bundle operating system, big data components , and Google Cloud connectors into a package that is deployed on a cluster.
+- Each supported minor image version page, such as 2.0.x release versions , lists the component versions available with the current and previous four sub-minor image releases.
+

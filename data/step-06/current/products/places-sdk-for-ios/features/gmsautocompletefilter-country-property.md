@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:50.788Z"
+generated_at: "2026-04-12T12:18:07.473Z"
 product_name: "Places SDK for iOS"
 product_slug: "places-sdk-for-ios"
 feature_name: "GMSAutocompleteFilter.country property"
 feature_slug: "gmsautocompletefilter-country-property"
 latest_feature_date: "2023-05-17"
 deprecation_date: "2023-05-17"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFilter"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteResultsViewController"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteViewController"
+  - "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFetcher"
 keywords:
   - "gmsautocompletefilter"
   - "country"
@@ -24,7 +27,7 @@ keywords:
 # GMSAutocompleteFilter.country property
 
 Product: Places SDK for iOS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ The country property on GMSAutocompleteFilter is deprecated and replaced by the 
 
 The country property on GMSAutocompleteFilter is deprecated and replaced by the countries property; deprecated on 2023-05-17.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFilter](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFilter)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteResultsViewController](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteResultsViewController)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteViewController](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteViewController)
+- [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFetcher](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFetcher)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "GooglePlaces Framework Reference \_|\_ Places SDK for iOS \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFilter](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFilter)
+- Source ID: `site-docs-reference`
+- Final score: 201
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-26 UTC."],[],["The GMSAutocompleteFilter class customizes autocomplete suggestions.
+- Declaration Swift var shouldIncludePureServiceAreaBusinesses : Bool { get set } Objective-C @property ( nonatomic ) BOOL shouldIncludePureServiceAreaBusinesses ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Declaration Swift var countries : [ String ]? { get set } Objective-C @property ( nonatomic , copy , nullable ) NSArray < NSString > countries ; origin The straight line distance origin location for measuring the straight line distance between the origin location and autocomplete predictions.
+- Declaration Swift var types : [ String ]? { get set } Objective-C @property ( nonatomic , nullable ) NSArray < NSString > types ; country Deprecated country property is deprecated in favor of countries .
+
+### "GooglePlaces Framework Reference \_|\_ Places SDK for iOS \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteResultsViewController](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteResultsViewController)
+- Source ID: `site-docs-reference`
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Declaration Swift var autocompleteFilter : GMSAutocompleteFilter ? { get set } Objective-C @property ( nonatomic , strong , nullable ) GMSAutocompleteFilter autocompleteFilter ; tableCellBackgroundColor Deprecated Use the placeAutocomplete View extension in Places Swift SDK ( https://developers.google.com/maps/documentation/places/ios-sdk/google-places-swift ) instead.
+- Declaration Swift var placeFields : GMSPlaceField { get set } Objective-C @property ( nonatomic ) GMSPlaceField placeFields ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-26 UTC."],[],["GMSAutocompleteResultsViewController displays place autocomplete predictions in a table view, updating as text changes.
+- The color used to highlight matching text in autocomplete results Declaration Swift var primaryTextHighlightColor : UIColor { get set } Objective-C @property ( nonatomic , strong ) GMS AVAILABLE BUT DEPRECATED MSG UIColor primaryTextHighlightColor ; secondaryTextColor Deprecated Use the placeAutocomplete View extension in Places Swift SDK ( https://developers.google.com/maps/documentation/places/ios-sdk/google-places-swift ) instead.
+
+### "GooglePlaces Framework Reference \_|\_ Places SDK for iOS \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteViewController](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteViewController)
+- Source ID: `site-docs-reference`
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Declaration Swift var placeProperties : [ String ] { get set } Objective-C @property ( nonatomic , strong ) GMS AVAILABLE BUT DEPRECATED MSG NSArray < NSString > placeProperties ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Declaration Swift var autocompleteFilter : GMSAutocompleteFilter ? { get set } Objective-C @property ( nonatomic , strong , nullable ) GMSAutocompleteFilter autocompleteFilter ; tableCellBackgroundColor Deprecated Use the placeAutocomplete View extension in Places Swift SDK ( https://developers.google.com/maps/documentation/places/ios-sdk/google-places-swift ) instead.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-26 UTC."],[],["GMSAutocompleteViewController displays autocomplete predictions as users type.
+- The color used to highlight matching text in autocomplete results Declaration Swift var primaryTextHighlightColor : UIColor { get set } Objective-C @property ( nonatomic , strong ) GMS AVAILABLE BUT DEPRECATED MSG UIColor primaryTextHighlightColor ; secondaryTextColor Deprecated Use the placeAutocomplete View extension in Places Swift SDK ( https://developers.google.com/maps/documentation/places/ios-sdk/google-places-swift ) instead.
+
+### "GooglePlaces Framework Reference \_|\_ Places SDK for iOS \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFetcher](https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFetcher)
+- Source ID: `site-docs-reference`
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This parameter may be nil. / - ( instancetype ) initWithFilter :( nullable GMSAutocompleteFilter ) filter NS DESIGNATED INITIALIZER GMS AVAILABLE BUT DEPRECATED MSG ( "Use <code>GMSPlacesClient#fetchAutocompleteSuggestionsFromRequest:callback:</code> " "instead." ) ; / Delegate to be notified with autocomplete prediction results. / @property ( nonatomic , weak , nullable ) id < GMSAutocompleteFetcherDelegate > delegate GMS AVAILABLE BUT DEPRECATED MSG ( "Use <code>GMSPlacesClient#fetchAutocompleteSuggestionsFromRequest:callback:</code> " "instead." ) ; / Filter to apply to autocomplete suggestions (can be nil). / @property ( nonatomic , strong , nullable ) GMSAutocompleteFilter autocompleteFilter GMS AVAILABLE BUT DEPRECATED MSG ( "Use <code>GMSPlacesClient#fetchAutocompleteSuggestionsFromRequest:callback:</code> " "instead." ) ; / Provide a GMSAutocompleteSessionToken for tracking the specific autocomplete query flow. / - ( void ) provideSessionToken :( nullable GMSAutocompleteSessionToken ) sessionToken GMS AVAILABLE BUT DEPRECATED MSG ( "Use <code>GMSPlacesClient#fetchAutocompleteSuggestionsFromRequest:callback:</code> " "instead." ) ; / Notify the fetcher that the source text to autocomplete has changed.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-26 UTC."],[],[]]
+- This method is non-blocking. @param text The partial text to autocomplete. / - ( void ) sourceTextHasChanged :( nullable NSString ) text GMS AVAILABLE BUT DEPRECATED MSG ( "Use <code>GMSPlacesClient#fetchAutocompleteSuggestionsFromRequest:callback:</code> " "instead." ) ; @end -initWithFilter: Deprecated Use GMSPlacesClient#fetchAutocompleteSuggestionsFromRequest:callback: instead.
+- Declaration Swift var autocompleteFilter : GMSAutocompleteFilter ? { get set } Objective-C @property ( nonatomic , strong , nullable ) GMSAutocompleteFilter autocompleteFilter ; -provideSessionToken: Deprecated Use GMSPlacesClient#fetchAutocompleteSuggestionsFromRequest:callback: instead.
 

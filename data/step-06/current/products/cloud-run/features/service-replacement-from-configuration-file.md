@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.930Z"
+generated_at: "2026-04-14T15:34:54.623Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Service replacement from configuration file"
 feature_slug: "service-replacement-from-configuration-file"
 latest_feature_date: "2020-01-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient"
-  - "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+  - "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud"
+  - "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
 keywords:
   - "replacement"
-  - "from"
+  - "local"
   - "configuration"
   - "file"
-  - "run"
-  - "services"
-  - "can"
-  - "be"
+  - "gcloud"
+  - "deployed"
 ---
 
 # Service replacement from configuration file
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +36,55 @@ Cloud Run services can be deployed from a local configuration file with the gclo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient)
-- [https://docs.cloud.google.com/run/docs/tutorials/secure-services](https://docs.cloud.google.com/run/docs/tutorials/secure-services)
+- [https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting](https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting)
+- [https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud](https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud)
+- [https://docs.cloud.google.com/run/docs/tutorials/image-processing](https://docs.cloud.google.com/run/docs/tutorials/image-processing)
 
 ## Supporting Pages
 
-### "Class ServicesAsyncClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
+### "Tutorial: Local troubleshooting of a Cloud Run service \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 204
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates software lifecycle decisions such as rollout policy and team resource ownership. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 async def sample list services(): Create a client client = run v2 .
-- Returns Type Description ServicesAsyncClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
-- Format: projects/{project}/locations/{location}/services/{service}, where {project} can be project id or number.
-
-### "Class ServicesClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesClient)
-- Source ID: `site-python-reference`
-- Final score: 204
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates software lifecycle decisions such as rollout policy and team resource ownership. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 def sample list services(): Create a client client = run v2 .
-- Returns Type Description ServicesClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
-- Format: projects/{project}/locations/{location}/services/{service}, where {project} can be project id or number.
-
-### Secure Cloud Run services tutorial \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/tutorials/secure-services](https://docs.cloud.google.com/run/docs/tutorials/secure-services)
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting](https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 194
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 176
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Command line gcloud run services add-iam-policy-binding renderer \ --member serviceAccount:editor-identity@ PROJECT ID .iam.gserviceaccount.com \ --role roles/run.invoker Terraform To learn how to apply or remove a Terraform configuration, see Basic Terraform commands . resource "google cloud run service iam member" "editor invokes renderer" { location = google cloud run v2 service.renderer.location service = google cloud run v2 service.renderer.name role = "roles/run.invoker" member = "serviceAccount:${google service account.editor.email}" } Because this is given the invoker role in the context of the render service, the render service is the only private Cloud Run service the editor can invoke.
-- Terraform To learn how to apply or remove a Terraform configuration, see Basic Terraform commands . resource "google cloud run v2 service" "renderer" { name = "renderer" location = "us-central1" deletion protection = false # set to "true" in production template { containers { Replace with the URL of your Secure Services > Renderer image. gcr.io/<PROJECT ID>/renderer image = "us-docker.pkg.dev/cloudrun/container/hello" } service account = google service account.renderer.email } } Try out the private Markdown rendering service Private services cannot be directly loaded by a web browser.
-- Remove the gcloud default configurations you added during tutorial setup. gcloud config unset run / region Remove the project configuration: gcloud config unset project Delete other Google Cloud resources created in this tutorial: Delete the editor container image named REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /editor from Artifact Registry Delete the render container image named REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /renderer from Artifact Registry Delete the editor service account editor-identity@PROJECT ID.iam.gserviceaccount.com Delete the render service account renderer-identity@PROJECT ID.iam.gserviceaccount.com What's next Further secure your project by walking through the using IAM securely checklist Extend this sample application to track Markdown usage with Cloud Monitoring custom metrics Review the Pub/Sub tutorial for an approach to secure, asynchronous microservices Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Builder () . url ( url ) . addHeader ( "Authorization" , "Bearer " + token ) . post ( body ) . build (); Response response = ok . newCall ( request ). execute (); html = response . body (). string (); } catch ( IOException e ) { logger . error ( "Unable to get rendered data" , e ); } return html ; } Parse the markdown from JSON and send it to the Renderer service to be transformed into HTML. // '/render' expects a JSON body payload with a 'data' property holding plain text // for rendering. @PostMapping ( value = "/render" , consumes = "application/json" ) public String render ( @RequestBody Data data ) { String markdown = data . getData (); String url = System . getenv ( "EDITOR UPSTREAM RENDER URL" ); if ( url == null ) { String msg = "No configuration for upstream render service: " + "add EDITOR UPSTREAM RENDER URL environment variable" ; logger . error ( msg ); throw new IllegalStateException ( msg ); } String html = makeAuthenticatedRequest ( url , markdown ); return html ; } C# GetAuthenticatedPostResponse creates authenticated requests to private services.
+- Update components: gcloud components update Follow the instructions to install Docker locally Required roles To get the permissions that you need to complete the tutorial, ask your administrator to grant you the following IAM roles on your project: Cloud Build Editor ( roles/cloudbuild.builds.editor ) Cloud Run Admin ( roles/run.admin ) Error Reporting Viewer ( roles/errorreporting.viewer ) Logs View Accessor ( roles/logging.viewAccessor ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Check whether the service works locally with the NAME environment available in place: Run the container locally with the environment variable added: PORT = 8080 && docker run --rm -e PORT = $PORT -p 9000 : $PORT \ -e NAME = "Local World!" \ gcr.io/ PROJECT ID /hello-service Navigate your browser to http://localhost:9000 See "Hello Local World!" appear on the page Modify the running Cloud Run service environment to include this variable: Run the services update command to add an environment variable: gcloud run services update hello - service \ -- set - env - vars NAME = Override Wait a few seconds while Cloud Run creates a new revision based on the previous revision with the new environment variable added.
+- Printf ( "warning: NAME not set, default to %s" , name ) } Java String name = System . getenv (). getOrDefault ( "NAME" , "World" ); if ( System . getenv ( "NAME" ) == null ) { logger . warn ( String . format ( "NAME not set, default to %s" , name )); } Test locally by re-building and running the container through the affected configuration cases: Node.js docker build --tag gcr.io/ PROJECT ID /hello-service .
+- COPY package . json . / Install dependencies . if you need a deterministic and repeatable build create a package - lock . json file and use npm ci : RUN npm ci -- omit = dev if you need to include development dependencies during development of your application , use : RUN npm install -- dev RUN npm install -- omit = dev Copy local code to the container image .
+
+### "Quickstart: Deploy a Cloud Run function using the gcloud CLI \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud](https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud)
+- Source ID: `site-docs-reference-2`
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- See the License for the specific language governing permissions and limitations under the License . -- > < project xmlns = "http://maven.apache.org/POM/4.0.0" xmlns : xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi : schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" > < modelVersion>4 .0.0 < / modelVersion > < groupId>com . example . functions < / groupId > < artifactId>functions - hello - world < / artifactId > < version>1 .0.0 - SNAPSHOT < / version > < parent > < groupId>com . google . cloud . samples < / groupId > < artifactId>shared - configuration < / artifactId > < version>1 .2.0 < / version > < / parent > < dependencyManagement > < dependencies > < dependency > < artifactId>libraries - bom < / artifactId > < groupId>com . google . cloud < / groupId > < scope>import < / scope > < type>pom < / type > < version>26 .32.0 < / version > < / dependency > < / dependencies > < / dependencyManagement > < properties > < maven . compiler . target>11 < / maven . compiler . target > < maven . compiler . source>11 < / maven . compiler . source > < / properties > < dependencies > < !-- Required for Function primitives -- > < dependency > < groupId>com . google . cloud . functions < / groupId > < artifactId>functions - framework - api < / artifactId > < version>1 .1.0 < / version > < scope>provided < / scope > < / dependency > < !-- The following dependencies are only required for testing -- > < dependency > < groupId>com . google . truth < / groupId > < artifactId>truth < / artifactId > < version>1 .4.0 < / version > < scope>test < / scope > < / dependency > < dependency > < groupId>com . google . guava < / groupId > < artifactId>guava - testlib < / artifactId > < scope>test < / scope > < / dependency > < dependency > < groupId>org . mockito < / groupId > < artifactId>mockito - core < / artifactId > < version>5 .10.0 < / version > < scope>test < / scope > < / dependency > < / dependencies > < build > < plugins > < plugin > < !-- Google Cloud Functions Framework Maven plugin This plugin allows you to run Cloud Functions Java code locally .
+- Write the sample function To write an application, follow these steps: Node.js Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a package.json file in the helloworld directory to specify Node.js dependencies: { "name" : "nodejs-docs-samples-functions-hello-world-get" , "version" : "0.0.1" , "private" : true , "license" : "Apache-2.0" , "author" : "Google Inc." , "repository" : { "type" : "git" , "url" : "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git" }, "engines" : { "node" : ">=16.0.0" }, "scripts" : { "test" : "c8 mocha -p -j 2 test/ .test.js --timeout=6000 --exit" }, "dependencies" : { "@google-cloud/functions-framework" : "^3.1.0" }, "devDependencies" : { "c8" : "^10.0.0" , "gaxios" : "^6.0.0" , "mocha" : "^10.0.0" , "wait-port" : "^1.0.4" } } Create an index.js file in the helloworld directory with the following Node.js sample: const functions = require ( '@google-cloud/functions-framework' ); // Register an HTTP function with the Functions Framework that will be executed // when you make an HTTP request to the deployed function's endpoint. functions . http ( 'helloGET' , ( req , res ) = > { res . send ( 'Hello World!' ); }); Python Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a requirements.txt file in the helloworld directory, to specify Python dependencies: functions - framework == 3.9.2 flask == 3.0.3 google - cloud - error - reporting == 1.11.1 MarkupSafe == 2.1.3 This adds packages needed by the sample.
+- From the console, create a new empty web project using the dotnet command. dotnet new web -o helloworld-csharp Change directory to helloworld-csharp : Replace the sample code in the project file helloworld-csharp.csproj with the following: <Project Sdk="Microsoft.NET.Sdk"> <PropertyGroup> <OutputType>Exe</OutputType> <TargetFramework>net8.0</TargetFramework> </PropertyGroup> <ItemGroup> <PackageReference Include="Google.Cloud.Functions.Hosting" Version="3.0.1" /> </ItemGroup> </Project> Replace the sample code in Program.cs file with the following: using Google.Cloud.Functions.Framework; using Microsoft.AspNetCore.Http; using System.Threading.Tasks; namespace HelloWorld; public class Function : IHttpFunction { public async Task HandleAsync(HttpContext context) { await context.Response.WriteAsync("Hello World!", context.RequestAborted); } } Deploy the function To deploy your Cloud Run function, follow these steps: Deploy the function by running the following command in the directory that contains the sample code: Node.js gcloud run deploy nodejs-http-function \ --source . \ --function helloGET \ --base-image nodejs24 \ --region REGION \ --allow-unauthenticated Replace REGION with the Google Cloud region of the service where you want to deploy your function.
+- HelloWorld < / functionTarget > < / configuration > < / plugin > < plugin > < groupId>org . apache . maven . plugins < / groupId > < artifactId>maven - surefire - plugin < / artifactId > < !-- version 3.0.0 - M4 does not load JUnit5 correctly -- > < !-- see https : //issues.apache.org/jira/browse/SUREFIRE-1750 -- > < version>3 .2.5 < / version > < configuration > < includes > < include > / Test . java < / include > < / includes > < skipTests>$ { skipTests } < / skipTests > < reportNameSuffix>sponge log < / reportNameSuffix > < trimStackTrace>false < / trimStackTrace > < / configuration > < / plugin > < / plugins > < / build > < / project > Ruby Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named app.rb and paste the following code into it: require "functions framework" FunctionsFramework . http "hello get" do request The request parameter is a Rack::Request object.
+
+### "Process images from Cloud Storage tutorial \_|\_ Cloud Run \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/image-processing](https://docs.cloud.google.com/run/docs/tutorials/image-processing)
+- Source ID: `site-docs-root`
+- Final score: 148
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Node.js // Blurs the given file using ImageMagick, and uploads it to another bucket. const blurImage = async ( file , blurredBucketName ) = > { const tempLocalPath = /tmp/ ${ path . parse ( file . name ). base } ; // Download file from bucket. try { await file . download ({ destination : tempLocalPath }); console . log ( Downloaded ${ file . name } to ${ tempLocalPath } . ); } catch ( err ) { throw new Error ( File download failed: ${ err } ); } await new Promise (( resolve , reject ) = > { gm ( tempLocalPath ) . blur ( 0 , 16 ) . write ( tempLocalPath , ( err , stdout ) = > { if ( err ) { console . error ( 'Failed to blur image.' , err ); reject ( err ); } else { console . log ( Blurred image: ${ file . name } ); resolve ( stdout ); } }); }); // Upload result to a different bucket, to avoid re-triggering this function. const blurredBucket = storage . bucket ( blurredBucketName ); // Upload the Blurred image back into the bucket. const gcsPath = gs:// ${ blurredBucketName } / ${ file . name } ; try { await blurredBucket . upload ( tempLocalPath , { destination : file . name }); console . log ( Uploaded blurred image to: ${ gcsPath } ); } catch ( err ) { throw new Error ( Unable to upload blurred image to ${ gcsPath } : ${ err } ); } // Delete the temporary file. const unlink = promisify ( fs . unlink ); return unlink ( tempLocalPath ); }; Python def blur image ( current blob ): """Blurs the given file using ImageMagick.
+- To grant this permission and create a Cloud Storage notification, add the following to your existing main.tf file: data "google storage project service account" "gcs account" {} resource "google pubsub topic iam binding" "binding" { topic = google pubsub topic.default.name role = "roles/pubsub.publisher" members = [ "serviceAccount:${data.google storage project service account.gcs account.email address}" ] } resource "google storage notification" "notification" { bucket = google storage bucket.imageproc input.name payload format = "JSON API V1" topic = google pubsub topic.default.id depends on = [ google pubsub topic iam binding.binding ] } Try it out Upload an offensive image, such as this image of a flesh-eating zombie : curl -o zombie.jpg https://cdn.pixabay.com/photo/2015/09/21/14/24/zombie-949916 960 720.jpg gcloud storage cp zombie.jpg gs:// INPUT BUCKET NAME where INPUT BUCKET NAME is the Cloud Storage bucket you created earlier for uploading images.
+- Use the gcloud credential helper to authorize Docker to push to your Artifact Registry. gcloud auth configure-docker Build your final container with Jib and publish on Artifact Registry: < plugin > < groupId>com . google . cloud . tools < / groupId > < artifactId>jib - maven - plugin < / artifactId > < version>3 .4.0 < / version > < configuration > < from > < image>gcr . io / PROJECT ID / imagemagick < / image > < / from > < to > < image>gcr . io / PROJECT ID / pubsub < / image > < / to > < / configuration > < / plugin > mvn compile jib:build \ -Dimage = REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /pubsub \ -Djib.from.image = REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /imagemagick Replace: PROJECT ID with your Google Cloud project ID REPOSITORY with the name of the Artifact Registry repository.
+- You could instead re-upload it to the same bucket + tell your function to ignore files marked as blurred (e.g. those with a "blurred" prefix) blur bucket name = os . getenv ( "BLURRED BUCKET NAME" ) blur bucket = storage client . bucket ( blur bucket name ) new blob = blur bucket . blob ( file name ) new blob . upload from filename ( temp local filename ) print ( f "Blurred image uploaded to: gs:// { blur bucket name } / { file name } " ) Delete the temporary file. os . remove ( temp local filename ) Go // blur blurs the image stored at gs://inputBucket/name and stores the result in // gs://outputBucket/name. func blur ( ctx context .
 

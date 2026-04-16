@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-11T20:08:28.173Z",
+  "generated_at": "2026-04-13T17:08:00.010Z",
   "product_name": "Apigee hybrid",
   "product_slug": "apigee-hybrid",
   "step02_source_path": "data/step-02/current/apigee-hybrid.md",
@@ -215,6 +215,13 @@
     },
     {
       "round": 1,
+      "intent": "apigee_hybrid_exact_docs",
+      "query": "site:docs.cloud.google.com/apigee/docs/hybrid \"forward-proxy\" OR \"allow-gcp-urls\" OR \"configure-large-payload-support\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
       "intent": "canonical_docs",
       "query": "site:docs.cloud.google.com/apigee/docs/hybrid \"What is Apigee hybrid\"",
       "official_result_count": 1,
@@ -222,7 +229,7 @@
         {
           "title": "What is Apigee hybrid? | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid",
-          "description": "As you can see, hybrid consists of the following primary components: Apigee-run management plane: A set of services hosted in the cloud and maintained by Google. These services include the UI, management API, and analytics. Customer-managed runtime plane: A set of containerized runtime services that you set up and maintain in your own Kubernetes cluster. All API traffic passes through and is processed within the runtime plane.",
+          "description": "As you can see, hybrid consists of the following primary components: Apigee-run management plane: <strong>A set of services hosted in the cloud and maintained by Google</strong>. These services include the UI, management API, and analytics.",
           "rank": 1
         }
       ]
@@ -291,15 +298,15 @@
           "rank": 6
         },
         {
-          "title": "Manage API resources with Apigee Spaces | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/spaces/manage-space-resources",
-          "description": "This topic describes how to create and manage API resources in a Space. You can create API proxies, shared flows, and API products in a Space. <strong>Resources created in the Space inherit the same permissions as the Space</strong>.",
-          "rank": 7
-        },
-        {
           "title": "About Apigee provisioning permissions | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/permissions",
           "description": "Click the Select a role menu and then type the role name in the Filter field. For example, Apigee Organization Admin. Click the role listed in the results. Click Save. To provide least-necessary privileges, create an IAM custom role and assign permissions from the following sections.",
+          "rank": 7
+        },
+        {
+          "title": "Manage API resources with Apigee Spaces | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/spaces/manage-space-resources",
+          "description": "This topic describes how to create and manage API resources in a Space. You can create API proxies, shared flows, and API products in a Space. <strong>Resources created in the Space inherit the same permissions as the Space</strong>.",
           "rank": 8
         }
       ]
@@ -349,27 +356,27 @@
           "rank": 4
         },
         {
-          "title": "Using data residency with Apigee hybrid | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.13/using-data-residency-with-apigee-hybrid",
-          "description": "Starting with hybrid version 1.12, you can use data residency with new Apigee hybrid installations. You cannot convert an existing installation to use data residency. Data residency meets compliance and regulatory requirements by allowing you to specify the geographic locations (regions) where Apigee data is stored.",
-          "rank": 5
-        },
-        {
           "title": "GCP URLs to allow for Hybrid | Apigee | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/allow-gcp-urls",
           "description": "You are currently viewing version 1.9 of the Apigee hybrid documentation. This version is end of life. You should upgrade to a newer version. For more information, see Supported versions. ... If you have a restricted VPC environment where external domains need to be allowed, here is a list of Google Cloud urls that Apigee hybrid may need to connect with during install and runtime.",
-          "rank": 6
+          "rank": 5
         },
         {
           "title": "Apigee hybrid release notes | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes",
           "description": "In Apigee hybrid v1.16, the Unified Data Collection Agent (UDCA) component has been removed. The responsibilities of sending analytics, trace, and deployment status data to the Apigee control plane are now handled using a Google Cloud Pub/Sub based data pipeline.",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "Apigee hybrid shared responsibility model | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/shared-responsibility-model",
           "description": "Provision and manage the load balancers ... on Apigee hybrid to their intended consumers. This includes managing the lifecycle of SSL certificates, scaling of the load balancers, failover capabilities etc. Maintain your workloads, including your application code, configuration files, container images, data, Role-based access control (RBAC)/IAM policy, and containers and pods that you are running. Overall system administration for your on-premises or multi-cloud Kubernetes ...",
+          "rank": 7
+        },
+        {
+          "title": "Using data residency with Apigee hybrid | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/using-data-residency-with-apigee-hybrid",
+          "description": "Starting with hybrid version 1.12, you can use Data residency with new Apigee hybrid installations.",
           "rank": 8
         }
       ]
@@ -421,7 +428,7 @@
         {
           "title": "Apigee Adapter for Envoy release notes | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/release/notes/100-envoy-adapter-release-notes",
-          "description": "<strong>On Tuesday, April 29, 2021</strong>, we released version 2.0.1 of Apigee Adapter for Envoy. Note: If you are upgrading an existing Apigee Adapter for Envoy, you must add the --force-proxy-install flag to the provision command.",
+          "description": "On <strong>June 7, 2021</strong>, we released version 2.0.2 of Apigee Adapter for Envoy. Note: If you are upgrading an existing Apigee Adapter for Envoy, you must add the --force-proxy-install flag to the provision command.",
           "rank": 5
         },
         {
@@ -504,6 +511,44 @@
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.11/helm-install-helm-charts",
           "description": "Usually this is the same as ENV_NAME. However, if your environment has the same name as your environment group, you must use different release names for the environment and environment group, for example dev-env-release and dev-envgroup-release. For more information on releases in Helm, see Three big concepts in the Helm documentation.",
           "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "apigee_hybrid_exact_docs",
+      "query": "site:docs.cloud.google.com/apigee/docs/hybrid \"guardrails\" OR \"apigee-pull-push\" OR \"using-data-residency-with-apigee-hybrid\"",
+      "official_result_count": 5,
+      "results": [
+        {
+          "title": "Diagnosing issues with guardrails | Apigee | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.16/guardrails",
+          "description": "# Apigee Guardrails guardrails: image: url: &quot;gcr.io/ng-hybrid/guardrails/apigee-watcher&quot; tag: &quot;1.16.0&quot; pullPolicy: Always tolerations: - key: &quot;say&quot; operator: &quot;Equal&quot; value: &quot;taunt&quot; effect: &quot;NoSchedule&quot;",
+          "rank": 1
+        },
+        {
+          "title": "Apigee hybrid release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes",
+          "description": "Starting with v1.14.2, third-party container images will be labeled with a version tag that matches the Apigee hybrid image tag. This affects the image tags returned by the apigee-pull-push command line tool.",
+          "rank": 2
+        },
+        {
+          "title": "apigee-pull-push | Apigee | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/apigee-pull-push",
+          "description": "Unsupported versions: · apigee-pull-push.sh is <strong>a utility that pulls all the images for the current Google Cloud project from the Google Cloud Container Registry and pushes them to your specified repository</strong>",
+          "rank": 3
+        },
+        {
+          "title": "Upgrading Apigee hybrid to version 1.16 | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.16/upgrade",
+          "description": "<strong>Update the Vault secret secret/data/apigee/orgsakeys to add a guardrails entry with the contents of the apigee-guardrails service account key file</strong>. vault kv patch secret/apigee/orgsakeys guardrails=&quot;$(cat ./service-accounts/hybrid115-apigee...",
+          "rank": 4
+        },
+        {
+          "title": "Upgrading Apigee hybrid to version 1.15 | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.15/upgrade",
+          "description": "Starting with hybrid v1.14, new analytics and debug data pipeline is enabled by default for all Apigee hybrid orgs. You must follow the steps in enable analytics publisher access to configure the authorization flow. This upgrade procedure assumes you are using the same namespace and service accounts for the upgraded installation. If you are making any configuration changes, be sure to reflect those changes in your overrides file before installing the Helm charts. Pull the Apigee Helm charts.",
+          "rank": 5
         }
       ]
     },
@@ -652,39 +697,39 @@
           "rank": 2
         },
         {
+          "title": "Use a custom cert-manager with Apigee hybrid",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/preview/use-custom-cert-manager",
+          "description": "This feature gives you the option to install a custom cert-manager for Apigee hybrid with a modified role based access control (RBAC)-related configuration using restrictive permissions.",
+          "rank": 3
+        },
+        {
           "title": "VPC Service Controls for API hub | Apigee | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/apihub/vpc-service-control",
           "description": "<strong>VPC Service Controls enables you to establish a service perimeter around your API hub resources, constraining ingress and egress traffic</strong>. This perimeter helps to: Limit unauthorised access: Control which Google Cloud services and VPC networks ...",
-          "rank": 3
+          "rank": 4
         },
         {
           "title": "Step 5: Add a policy | Apigee | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/add-policy",
           "description": "This page applies to Apigee and Apigee hybrid. View Apigee Edge documentation. Now that you&#x27;ve changed your target endpoint, you&#x27;re ready to add a policy to your proxy. A policy is an Apigee component that you can attach to different points in the message flow through your API proxies. Policies can transform message formats, enforce access control, call remote services, authorize users, examine message content for potential threats, and do much more.",
-          "rank": 4
+          "rank": 5
         },
         {
           "title": "What is Apigee? | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee-old",
           "description": "An API product is a bundle of API proxies combined with a service plan. That service plan can set access limits on API proxies, provide security, allow monitoring and analytics, and provide additional features. API products are also the central mechanism that Apigee uses for authorization and access control to your APIs.",
-          "rank": 5
+          "rank": 6
         },
         {
           "title": "Getting started with Google Cloud Support | Apigee | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/support/getting-started-with-support",
           "description": "If you have a free trial Apigee eval account, you can post questions and find answers in the Apigee community, where Apigee engineers are able to respond. The following documents describe how to access support services: Getting support with Cloud Customer Care: Describes the support options, how to sign up for support, and how to contact support. Access control with IAM: Describes how to control who (identity) has what access (roles) to which resource.",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "Gated egress and gated ingress | Cloud Architecture Center | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/architecture/hybrid-multicloud-secure-networking-patterns/gated-egress-ingress",
           "description": "The following diagram illustrates how Apigee and Apigee Hybrid are designed to address such requirements with a localized API gateway in each environment. API platform management is centralized in Google Cloud. This design helps to enforce strict access control measures where only pre-approved IP addresses (target and destination APIs or Private Service Connect endpoint IP addresses) can communicate between Google Cloud and the other environments.",
-          "rank": 7
-        },
-        {
-          "title": "PCI Configuration Guide for Apigee | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/pci-configuration-guide",
-          "description": "Cloud Identity also offers multi-factor authentication (PCI Requirement 8: Assign a unique ID to each person with computer access). SAML as described at SAML Overview, can be used as an alternative for authentication controls. Note: Customers with specific password requirements are recommended to use SAML to meet their individual requirements. Scanning and testing of hosts is required for PCI compliance (Requirement 11: Regularly test security systems and processes). For Apigee, customers are responsible for the scanning and testing of their API endpoints (sometimes called the &quot;runtime components&quot;) in Apigee.",
           "rank": 8
         }
       ]
@@ -729,14 +774,14 @@
         },
         {
           "title": "Using Apigee Adapter for Envoy with Apigee hybrid | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/envoy-adapter/v1.0.x/example-hybrid",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/envoy-adapter/v1.1.x/example-hybrid",
           "description": "In this example, you will deploy a simple HTTP service in the same Kubernetes cluster where Apigee hybrid is deployed. Then, you will configure the Apigee Adapter for Envoy to manage API calls to this service with Apigee. The following figure shows the basic architecture for the Apigee hybrid integration:",
           "rank": 4
         },
         {
           "title": "Apigee architecture overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/api-platform/architecture/overview",
-          "description": "<strong>This section describes the Apigee system architecture when Apigee is provisioned with the VPC peering option</strong>. During provisioning, components are configured and created that allow bidirectional communication between a virtual private cloud network ...",
+          "description": "<strong>This section describes the Apigee system architecture when Apigee is not provisioned with the VPC peering option</strong>. During provisioning, components are configured and created that allow bidirectional communication between a virtual private cloud ...",
           "rank": 5
         },
         {
@@ -843,15 +888,15 @@
           "rank": 5
         },
         {
-          "title": "Apigee hybrid release notes | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes",
-          "description": "Apigee hybrid now supports Workload Identity Federation for component authentication on AKS and EKS installations. See Enabling Workload Identity Federation on AKS and EKS. ... You can now add your own contractEncryptionKey for new Apigee hybrid installations. For details, see Data encryption. ... Hybrid v1.12 now supports storing service account keys in Hashicorp Vault.",
-          "rank": 6
-        },
-        {
           "title": "Step 1: Create a cluster | Apigee | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.15/install-create-cluster",
           "description": "Apigee hybrid also offers a separate option to use Workload Identity Federation for GKE to authenticate service accounts.",
+          "rank": 6
+        },
+        {
+          "title": "Apigee hybrid release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes",
+          "description": "Apigee hybrid now supports Workload Identity Federation for component authentication on AKS and EKS installations. See Enabling Workload Identity Federation on AKS and EKS. ... You can now add your own contractEncryptionKey for new Apigee hybrid installations. For details, see Data encryption. ... Hybrid v1.12 now supports storing service account keys in Hashicorp Vault.",
           "rank": 7
         },
         {
@@ -859,6 +904,32 @@
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/install-service-accounts",
           "description": "This option does not use downloaded certificate files to authenticate the service accounts, Instead, it associates the Google Cloud service accounts that you create in this step with Kubernetes service accounts in the Kubernetes cluster. Workload identity is only available on GKE installations. Use the following procedures to create the Google Cloud service accounts for your hybrid installation: The create-service-account tool: If you are installing Apigee hybrid on a platform ...",
           "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "apigee_hybrid_exact_docs",
+      "query": "site:docs.cloud.google.com/apigee/docs/hybrid \"allowlist\" OR \"supported-platforms\"",
+      "official_result_count": 3,
+      "results": [
+        {
+          "title": "Using data residency with Apigee hybrid | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+          "description": "If you are using forward proxies with data residency, you must additionally allowlist in the forward proxy:",
+          "rank": 1
+        },
+        {
+          "title": "Apigee hybrid release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes",
+          "description": "Support for these policies is limited to installations on Google Cloud Platform.",
+          "rank": 2
+        },
+        {
+          "title": "Configure forward proxying for API proxies | Apigee | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+          "description": "If you only specify httpProxy, you must also ensure that *.googleapis.com is allowlisted for your Apigee Runtime pods to enable connectivity to these services.",
+          "rank": 3
         }
       ]
     },
@@ -881,21 +952,21 @@
           "rank": 2
         },
         {
-          "title": "Using data residency with Apigee hybrid | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.13/using-data-residency-with-apigee-hybrid",
-          "description": "You must enable a non-forward proxy ... data residency. This route can be a NAT with allowlisting for: ... URLs required by Apigee hybrid, see Google Cloud URLs to allow for Hybrid. To enable analytics and debug data collection, follow the instructions in Configure hybrid to use the new data pipeline. ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed ...",
-          "rank": 3
-        },
-        {
           "title": "Service account authentication methods in Apigee hybrid | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.15/sa-authentication-methods",
           "description": "This method <strong>requires binding each Kubernetes service account to a specific Google Cloud service account</strong>. The Apigee hybrid installation process creates the Kubernetes service accounts specific to your installation when you install the Apigee ...",
-          "rank": 4
+          "rank": 3
         },
         {
           "title": "Configure hybrid to use the new data pipeline | Apigee | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.13/data-collection-with-data-residency",
           "description": "Note: The new data pipeline is required for hybrid orgs on v1.13.1 or higher with data residency enabled.",
+          "rank": 4
+        },
+        {
+          "title": "Using data residency with Apigee hybrid | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+          "description": "If you are using forward proxies with data residency, you must additionally allowlist in the forward proxy: ... URLs required by Apigee hybrid, see Google Cloud URLs to allow for Hybrid. To enable analytics and debug data collection, follow the instructions in Configure hybrid to use the new data pipeline. ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples ...",
           "rank": 5
         },
         {
@@ -1013,21 +1084,21 @@
           "rank": 5
         },
         {
-          "title": "Managing access in Google Cloud | Apigee | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-access",
-          "description": "Try to limit the number of Apigee Organization Admin roles you assign because this role has the highest level of permissions. To add a user and assign Apigee roles to it in your Google Cloud project: In the Google Cloud console, go to the IAM &amp; Admin &gt; IAM page.",
+          "title": "About Apigee provisioning permissions | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/permissions",
+          "description": "See Custom roles and permissions to provide least-necessary privileges. ... In the Google Cloud console, go to IAM &amp; Admin &gt; IAM for your project. ... Click Grant access. Type a new Principal name. Click the Select a role menu and then type the role name in the Filter field. For example, Apigee Organization Admin.",
           "rank": 6
         },
         {
-          "title": "About Apigee provisioning permissions | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/permissions",
-          "description": "This page applies to Apigee, but not to Apigee hybrid. View Apigee Edge documentation. This document describes the Google Cloud IAM permissions that are required to successfully provision Apigee. ... Predefined roles: Provide sufficient permission to do the provisioning steps.",
+          "title": "Managing access in Google Cloud | Apigee | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-access",
+          "description": "Try to limit the number of Apigee Organization Admin roles you assign because this role has the highest level of permissions. To add a user and assign Apigee roles to it in your Google Cloud project: In the Google Cloud console, go to the IAM &amp; Admin &gt; IAM page.",
           "rank": 7
         },
         {
-          "title": "Add IAM conditions | Apigee | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
-          "description": "Resource tags: Use to configure conditional access based on the tags attached to a resource. For example, you can set a condition that grants a role only for resources that have the tag env: prod attached. To add an IAM condition to a existing principal (user, group, or service account), perform the following steps:",
+          "title": "Install the Apigee Operator for Kubernetes for Apigee hybrid | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid",
+          "description": "Create and manage service accounts: Service Account Admin (roles/iam.serviceAccountAdmin) Create and manage Apigee resources: Apigee Admin (roles/apigee.admin) For more information about granting roles, see Manage access to projects, folders, and organizations. You might also be able to get the required permissions through custom roles or other predefined roles.",
           "rank": 8
         }
       ]
@@ -1060,19 +1131,19 @@
         {
           "title": "Apigee architecture overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/api-platform/architecture/overview",
-          "description": "<strong>This section describes the Apigee system architecture when Apigee is provisioned with the VPC peering option</strong>. During provisioning, components are configured and created that allow bidirectional communication between a virtual private cloud network ...",
+          "description": "<strong>This section describes the Apigee system architecture when Apigee is not provisioned with the VPC peering option</strong>. During provisioning, components are configured and created that allow bidirectional communication between a virtual private cloud ...",
           "rank": 3
+        },
+        {
+          "title": "What is Apigee? | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee-old",
+          "description": "Apigee: A cloud version hosted ... Apigee hybrid: <strong>A hybrid version consisting of a runtime plane installed on-premises or in a cloud provider of your choice, and a management plane running in Apigee&#x27;s cloud</strong>....",
+          "rank": 4
         },
         {
           "title": "Apigee hybrid Helm reference | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.13/helm-reference",
           "description": "Note: The hybrid Helm charts depend on the Apigee hybrid Custom Resource Definitions (CRDs) being installed.",
-          "rank": 4
-        },
-        {
-          "title": "What is Apigee? | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
-          "description": "View Apigee Edge documentation. <strong>Apigee is Google Cloud&#x27;s native API management platform that can be used to build, manage, and secure APIs — for any use case, environment, or scale</strong>.",
           "rank": 5
         },
         {
@@ -1121,7 +1192,7 @@
     {
       "title": "What is Apigee hybrid? | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid",
-      "description": "As you can see, hybrid consists of the following primary components: Apigee-run management plane: A set of services hosted in the cloud and maintained by Google. These services include the UI, management API, and analytics. Customer-managed runtime plane: A set of containerized runtime services that you set up and maintain in your own Kubernetes cluster. All API traffic passes through and is processed within the runtime plane.",
+      "description": "As you can see, hybrid consists of the following primary components: Apigee-run management plane: <strong>A set of services hosted in the cloud and maintained by Google</strong>. These services include the UI, management API, and analytics.",
       "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/apigee/docs/hybrid \"What is Apigee hybrid\"",
@@ -1144,17 +1215,15 @@
       "consistency_score": 100,
       "product_fit_score": 200,
       "feature_coverage": {
-        "score": 24,
+        "score": 18,
         "matched_phrases": [],
         "matched_tokens": [
           "and",
           "the",
-          "runtime",
-          "with",
           "service",
-          "kubernetes",
           "api",
-          "cloud"
+          "cloud",
+          "components"
         ],
         "user_facing_alignment": 0
       },
@@ -1167,17 +1236,15 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "and",
           "the",
-          "runtime",
-          "with",
           "service",
-          "kubernetes",
           "api",
-          "cloud"
+          "cloud",
+          "components"
         ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
@@ -1189,24 +1256,27 @@
       "title": "Apigee hybrid release notes | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes",
       "description": "In Apigee hybrid v1.16, the Unified Data Collection Agent (UDCA) component has been removed. The responsibilities of sending analytics, trace, and deployment status data to the Apigee control plane are now handled using a Google Cloud Pub/Sub based data pipeline.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Apigee hybrid\" \"release notes\"",
         "site:docs.cloud.google.com/apigee/docs/hybrid \"Apigee hybrid\"",
         "site:docs.cloud.google.com/apigee/docs/hybrid config-prop-ref install-before-begin release-notes",
         "site:docs.cloud.google.com \"Apigee hybrid\" \"apigee hybrid v1\"",
+        "site:docs.cloud.google.com/apigee/docs/hybrid \"guardrails\" OR \"apigee-pull-push\" OR \"using-data-residency-with-apigee-hybrid\"",
         "site:docs.cloud.google.com/apigee/docs/hybrid what-is-hybrid helm-reference cli-reference",
         "site:docs.cloud.google.com/apigee/docs/hybrid sa-authentication-methods install-sa-authentication data-collection-with-data-residency",
         "site:docs.cloud.google.com \"Apigee hybrid\" \"apigee hybrid 1\"",
-        "site:docs.cloud.google.com/apigee/docs/hybrid supported-platforms service-account-authentication"
+        "site:docs.cloud.google.com/apigee/docs/hybrid supported-platforms service-account-authentication",
+        "site:docs.cloud.google.com/apigee/docs/hybrid \"allowlist\" OR \"supported-platforms\""
       ],
       "intent_hits": [
         "product_docs",
         "release_notes_focus",
         "apigee_docs",
         "canonical_docs",
-        "feature_guides"
+        "feature_guides",
+        "apigee_hybrid_exact_docs"
       ],
       "round_hits": [
         1,
@@ -1268,11 +1338,13 @@
       "query_hits": [
         "site:docs.cloud.google.com/apigee/docs/hybrid \"Apigee hybrid\"",
         "site:docs.cloud.google.com \"Apigee hybrid\" \"apigee hybrid v1\"",
+        "site:docs.cloud.google.com/apigee/docs/hybrid \"guardrails\" OR \"apigee-pull-push\" OR \"using-data-residency-with-apigee-hybrid\"",
         "site:docs.cloud.google.com \"Apigee hybrid\" \"apigee hybrid 1\""
       ],
       "intent_hits": [
         "apigee_docs",
-        "feature_guides"
+        "feature_guides",
+        "apigee_hybrid_exact_docs"
       ],
       "round_hits": [
         1,
@@ -1503,6 +1575,65 @@
           "before"
         ],
         "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Using Apigee Adapter for Envoy with Apigee hybrid | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/envoy-adapter/v1.1.x/example-hybrid",
+      "description": "In this example, you will deploy a simple HTTP service in the same Kubernetes cluster where Apigee hybrid is deployed. Then, you will configure the Apigee Adapter for Envoy to manage API calls to this service with Apigee. The following figure shows the basic architecture for the Apigee hybrid integration:",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "the",
+          "with",
+          "service",
+          "kubernetes",
+          "api",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "the",
+          "with",
+          "service",
+          "kubernetes",
+          "api",
+          "cloud"
+        ],
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
@@ -1749,7 +1880,7 @@
       "title": "Apigee hybrid shared responsibility model | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/hybrid/shared-responsibility-model",
       "description": "Provision and manage the load balancers ... on Apigee hybrid to their intended consumers. This includes managing the lifecycle of SSL certificates, scaling of the load balancers, failover capabilities etc. Maintain your workloads, including your application code, configuration files, container images, data, Role-based access control (RBAC)/IAM policy, and containers and pods that you are running. Overall system administration for your on-premises or multi-cloud Kubernetes ...",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud documentation",
         "site:docs.cloud.google.com/apigee/docs/hybrid \"Apigee hybrid\"",
@@ -1950,7 +2081,7 @@
         2,
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 100,
       "feature_coverage": {
@@ -1990,7 +2121,7 @@
           "allows"
         ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
@@ -2049,68 +2180,6 @@
           "apigeectl",
           "are",
           "cloud",
-          "installation"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Using data residency with Apigee hybrid | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.13/using-data-residency-with-apigee-hybrid",
-      "description": "Starting with hybrid version 1.12, you can use data residency with new Apigee hybrid installations. You cannot convert an existing installation to use data residency. Data residency meets compliance and regulatory requirements by allowing you to specify the geographic locations (regions) where Apigee data is stored.",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud documentation",
-        "site:docs.cloud.google.com/apigee/docs/hybrid sa-authentication-methods install-sa-authentication data-collection-with-data-residency"
-      ],
-      "intent_hits": [
-        "product_docs",
-        "canonical_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 100,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "and",
-          "the",
-          "new",
-          "with",
-          "api",
-          "cloud",
-          "data",
-          "installation"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "and",
-          "the",
-          "new",
-          "with",
-          "api",
-          "cloud",
-          "data",
           "installation"
         ],
         "keep": false,
@@ -2183,12 +2252,14 @@
       "query_hits": [
         "site:docs.cloud.google.com/apigee/docs/hybrid config-prop-ref install-before-begin release-notes",
         "site:docs.cloud.google.com \"Apigee hybrid\" \"apigee hybrid v1\"",
+        "site:docs.cloud.google.com/apigee/docs/hybrid \"guardrails\" OR \"apigee-pull-push\" OR \"using-data-residency-with-apigee-hybrid\"",
         "site:docs.cloud.google.com \"Apigee hybrid\" \"apigee hybrid 1\"",
         "site:docs.cloud.google.com/apigee/docs/hybrid supported-platforms service-account-authentication"
       ],
       "intent_hits": [
         "canonical_docs",
         "feature_guides",
+        "apigee_hybrid_exact_docs",
         "apigee_docs"
       ],
       "round_hits": [
@@ -2363,7 +2434,7 @@
     {
       "title": "Apigee architecture overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/architecture/overview",
-      "description": "<strong>This section describes the Apigee system architecture when Apigee is provisioned with the VPC peering option</strong>. During provisioning, components are configured and created that allow bidirectional communication between a virtual private cloud network ...",
+      "description": "<strong>This section describes the Apigee system architecture when Apigee is not provisioned with the VPC peering option</strong>. During provisioning, components are configured and created that allow bidirectional communication between a virtual private cloud ...",
       "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud docs overview",
@@ -2422,58 +2493,65 @@
       "keep": false
     },
     {
-      "title": "Add IAM conditions | Apigee | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
-      "description": "This page applies to Apigee and Apigee hybrid. Identity and Access Management (IAM) Conditions lets you to define and enforce conditional access control for Google Cloud resources, including API hub resources.",
-      "rank": 1,
+      "title": "What is Apigee? | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee-old",
+      "description": "An API product is a bundle of API proxies combined with a service plan. That service plan can set access limits on API proxies, provide security, allow monitoring and analytics, and provide additional features. API products are also the central mechanism that Apigee uses for authorization and access control to your APIs.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" \"access control\"",
-        "site:docs.cloud.google.com \"Apigee hybrid\" IAM roles permissions"
+        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "iam_permissions"
+        "iam_permissions",
+        "product_docs"
       ],
       "round_hits": [
         2,
         3
       ],
-      "best_rank": 1,
+      "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": -20,
+      "product_fit_score": 6,
       "feature_coverage": {
-        "score": 15,
+        "score": 24,
         "matched_phrases": [],
         "matched_tokens": [
           "for",
           "and",
+          "the",
+          "with",
+          "service",
           "access",
           "api",
-          "cloud"
+          "are"
         ],
         "user_facing_alignment": 0
       },
-      "deterministic_score": 97,
+      "deterministic_score": 95,
       "api_score": {
         "classification": "supporting_page",
-        "score": 97,
-        "family_score": -148,
+        "score": 95,
+        "family_score": -28,
         "family_preferred": false,
-        "family_forbidden": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 0,
+        "product_match": 2,
         "coverage_value": 2,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "for",
           "and",
+          "the",
+          "with",
+          "service",
           "access",
           "api",
-          "cloud"
+          "are"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 93,
+      "final_score": 91,
       "keep": false
     },
     {
@@ -2539,7 +2617,7 @@
       "title": "Service account authentication methods in Apigee hybrid | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.15/sa-authentication-methods",
       "description": "This method <strong>requires binding each Kubernetes service account to a specific Google Cloud service account</strong>. The Apigee hybrid installation process creates the Kubernetes service accounts specific to your installation when you install the Apigee ...",
-      "rank": 4,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/apigee/docs/hybrid sa-authentication-methods install-sa-authentication data-collection-with-data-residency",
         "site:docs.cloud.google.com/apigee/docs/hybrid supported-platforms service-account-authentication"
@@ -2576,7 +2654,7 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 4,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "the",
@@ -2705,31 +2783,32 @@
       "keep": false
     },
     {
-      "title": "Using Apigee Adapter for Envoy with Apigee hybrid | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/envoy-adapter/v1.0.x/example-hybrid",
-      "description": "In this example, you will deploy a simple HTTP service in the same Kubernetes cluster where Apigee hybrid is deployed. Then, you will configure the Apigee Adapter for Envoy to manage API calls to this service with Apigee. The following figure shows the basic architecture for the Apigee hybrid integration:",
-      "rank": 4,
+      "title": "Install the Apigee Operator for Kubernetes for Apigee hybrid | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid",
+      "description": "Create and manage service accounts: Service Account Admin (roles/iam.serviceAccountAdmin) Create and manage Apigee resources: Apigee Admin (roles/apigee.admin) For more information about granting roles, see Manage access to projects, folders, and organizations. You might also be able to get the required permissions through custom roles or other predefined roles.",
+      "rank": 8,
       "query_hits": [
-        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud docs overview"
+        "site:docs.cloud.google.com \"Apigee hybrid\" IAM roles permissions"
       ],
       "intent_hits": [
-        "product_docs"
+        "iam_permissions"
       ],
       "round_hits": [
-        2
+        3
       ],
-      "best_rank": 4,
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 100,
       "feature_coverage": {
-        "score": 21,
+        "score": 24,
         "matched_phrases": [],
         "matched_tokens": [
           "for",
+          "and",
           "the",
-          "with",
           "service",
           "kubernetes",
+          "access",
           "api",
           "cloud"
         ],
@@ -2748,67 +2827,11 @@
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "for",
+          "and",
           "the",
-          "with",
           "service",
           "kubernetes",
-          "api",
-          "cloud"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Using Apigee Adapter for Envoy with Apigee hybrid | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/envoy-adapter/v1.1.x/example-hybrid",
-      "description": "In this example, you will deploy a simple HTTP service in the same Kubernetes cluster where Apigee hybrid is deployed. Then, you will configure the Apigee Adapter for Envoy to manage API calls to this service with Apigee. The following figure shows the basic architecture for the Apigee hybrid integration:",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 100,
-      "feature_coverage": {
-        "score": 21,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "for",
-          "the",
-          "with",
-          "service",
-          "kubernetes",
-          "api",
-          "cloud"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "for",
-          "the",
-          "with",
-          "service",
-          "kubernetes",
+          "access",
           "api",
           "cloud"
         ],
@@ -2822,7 +2845,7 @@
       "title": "Step 5: Add a policy | Apigee | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/add-policy",
       "description": "This page applies to Apigee and Apigee hybrid. View Apigee Edge documentation. Now that you&#x27;ve changed your target endpoint, you&#x27;re ready to add a policy to your proxy. A policy is an Apigee component that you can attach to different points in the message flow through your API proxies. Policies can transform message formats, enforce access control, call remote services, authorize users, examine message content for potential threats, and do much more.",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" \"access control\""
       ],
@@ -2832,7 +2855,7 @@
       "round_hits": [
         2
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 100,
       "feature_coverage": {
@@ -3208,6 +3231,65 @@
       "keep": false
     },
     {
+      "title": "Use a custom cert-manager with Apigee hybrid",
+      "url": "https://docs.cloud.google.com/apigee/docs/hybrid/preview/use-custom-cert-manager",
+      "description": "This feature gives you the option to install a custom cert-manager for Apigee hybrid with a modified role based access control (RBAC)-related configuration using restrictive permissions.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Apigee hybrid\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "the",
+          "with",
+          "access",
+          "api",
+          "cloud",
+          "configuration",
+          "custom"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "the",
+          "with",
+          "access",
+          "api",
+          "cloud",
+          "configuration",
+          "custom"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Step 4: Create service accounts | Apigee | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/install-service-accounts",
       "description": "This option does not use downloaded certificate files to authenticate the service accounts, Instead, it associates the Google Cloud service accounts that you create in this step with Kubernetes service accounts in the Kubernetes cluster. Workload identity is only available on GKE installations. Use the following procedures to create the Google Cloud service accounts for your hybrid installation: The create-service-account tool: If you are installing Apigee hybrid on a platform ...",
@@ -3499,6 +3581,61 @@
       "keep": false
     },
     {
+      "title": "Using data residency with Apigee hybrid | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/using-data-residency-with-apigee-hybrid",
+      "description": "Starting with hybrid version 1.12, you can use Data residency with new Apigee hybrid installations.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "new",
+          "with",
+          "api",
+          "cloud",
+          "data",
+          "installation"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "new",
+          "with",
+          "api",
+          "cloud",
+          "data",
+          "installation"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Configuration property reference | Apigee | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.13/config-prop-ref",
       "description": "This section lists all of the configuration properties that you can use to customize the runtime plane of your Apigee hybrid deployment. Note: For instructions on how to add custom annotations, which are key/value maps used to attach metadata to Apigee hybrid Kubernetes pods, see Custom annotations.",
@@ -3737,10 +3874,71 @@
       "keep": false
     },
     {
+      "title": "Using data residency with Apigee hybrid | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+      "description": "If you are using forward proxies with data residency, you must additionally allowlist in the forward proxy: ... URLs required by Apigee hybrid, see Google Cloud URLs to allow for Hybrid. To enable analytics and debug data collection, follow the instructions in Configure hybrid to use the new data pipeline. ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples ...",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/apigee/docs/hybrid sa-authentication-methods install-sa-authentication data-collection-with-data-residency",
+        "site:docs.cloud.google.com/apigee/docs/hybrid \"allowlist\" OR \"supported-platforms\""
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "apigee_hybrid_exact_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "and",
+          "the",
+          "new",
+          "with",
+          "api",
+          "are",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "and",
+          "the",
+          "new",
+          "with",
+          "api",
+          "are",
+          "cloud"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Step 1: Create a cluster | Apigee | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.15/install-create-cluster",
       "description": "Apigee hybrid also offers a separate option to use Workload Identity Federation for GKE to authenticate service accounts.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com/apigee/docs/hybrid supported-platforms service-account-authentication"
       ],
@@ -3750,7 +3948,7 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 100,
       "feature_coverage": {
@@ -3909,7 +4107,7 @@
       "title": "GCP URLs to allow for Hybrid | Apigee | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/allow-gcp-urls",
       "description": "You are currently viewing version 1.9 of the Apigee hybrid documentation. This version is end of life. You should upgrade to a newer version. For more information, see Supported versions. ... If you have a restricted VPC environment where external domains need to be allowed, here is a list of Google Cloud urls that Apigee hybrid may need to connect with during install and runtime.",
-      "rank": 6,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud documentation"
       ],
@@ -3919,7 +4117,7 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 100,
       "feature_coverage": {
@@ -4247,7 +4445,7 @@
       "title": "Gated egress and gated ingress | Cloud Architecture Center | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/architecture/hybrid-multicloud-secure-networking-patterns/gated-egress-ingress",
       "description": "The following diagram illustrates how Apigee and Apigee Hybrid are designed to address such requirements with a localized API gateway in each environment. API platform management is centralized in Google Cloud. This design helps to enforce strict access control measures where only pre-approved IP addresses (target and destination APIs or Private Service Connect endpoint IP addresses) can communicate between Google Cloud and the other environments.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" \"access control\""
       ],
@@ -4257,7 +4455,7 @@
       "round_hits": [
         2
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 78,
       "feature_coverage": {
@@ -4344,7 +4542,7 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 4,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "for",
@@ -4360,6 +4558,63 @@
       },
       "final_score": 90,
       "keep": true
+    },
+    {
+      "title": "apigee-pull-push | Apigee | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/apigee-pull-push",
+      "description": "Unsupported versions: · apigee-pull-push.sh is <strong>a utility that pulls all the images for the current Google Cloud project from the Google Cloud Container Registry and pushes them to your specified repository</strong>",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/apigee/docs/hybrid \"guardrails\" OR \"apigee-pull-push\" OR \"using-data-residency-with-apigee-hybrid\""
+      ],
+      "intent_hits": [
+        "apigee_hybrid_exact_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 6,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "and",
+          "the",
+          "support",
+          "supported",
+          "api",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "and",
+          "the",
+          "support",
+          "supported",
+          "api",
+          "cloud"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
     },
     {
       "title": "Manage runtime plane components | Apigee | Google Cloud Documentation",
@@ -4413,6 +4668,61 @@
           "before",
           "cloud",
           "components"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure forward proxying for API proxies | Apigee | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+      "description": "If you only specify httpProxy, you must also ensure that *.googleapis.com is allowlisted for your Apigee Runtime pods to enable connectivity to these services.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/apigee/docs/hybrid \"allowlist\" OR \"supported-platforms\""
+      ],
+      "intent_hits": [
+        "apigee_hybrid_exact_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 6,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "the",
+          "runtime",
+          "service",
+          "api",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 2,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "the",
+          "runtime",
+          "service",
+          "api",
+          "cloud"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -4539,6 +4849,57 @@
       "keep": false
     },
     {
+      "title": "Diagnosing issues with guardrails | Apigee | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.16/guardrails",
+      "description": "# Apigee Guardrails guardrails: image: url: &quot;gcr.io/ng-hybrid/guardrails/apigee-watcher&quot; tag: &quot;1.16.0&quot; pullPolicy: Always tolerations: - key: &quot;say&quot; operator: &quot;Equal&quot; value: &quot;taunt&quot; effect: &quot;NoSchedule&quot;",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/apigee/docs/hybrid \"guardrails\" OR \"apigee-pull-push\" OR \"using-data-residency-with-apigee-hybrid\""
+      ],
+      "intent_hits": [
+        "apigee_hybrid_exact_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 6,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "with",
+          "policy",
+          "api",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 2,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "with",
+          "policy",
+          "api",
+          "cloud"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Publishing your APIs | Apigee | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
       "description": "After you publish your API, at any time you can download the OpenAPI, AsyncAPI, or GraphQL reference documentation that is published on your portal. To download API documentation using organizations.sites.apidocs.getDocumentation: curl -X GET &quot;https://apigee.googleapis.com/v1/organizations/ORG_NAME/sites/SITE_ID/apidocs/API_DOC/documentation&quot; \\ -H &quot;Authorization: Bearer $(gcloud auth print-access-token)&quot;",
@@ -4586,65 +4947,6 @@
           "api",
           "are",
           "cloud"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "PCI Configuration Guide for Apigee | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/pci-configuration-guide",
-      "description": "Cloud Identity also offers multi-factor authentication (PCI Requirement 8: Assign a unique ID to each person with computer access). SAML as described at SAML Overview, can be used as an alternative for authentication controls. Note: Customers with specific password requirements are recommended to use SAML to meet their individual requirements. Scanning and testing of hosts is required for PCI compliance (Requirement 11: Regularly test security systems and processes). For Apigee, customers are responsible for the scanning and testing of their API endpoints (sometimes called the &quot;runtime components&quot;) in Apigee.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Apigee hybrid\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 0,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "for",
-          "and",
-          "the",
-          "runtime",
-          "with",
-          "access",
-          "api",
-          "are"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 1,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "for",
-          "and",
-          "the",
-          "runtime",
-          "with",
-          "access",
-          "api",
-          "are"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -4760,7 +5062,7 @@
       "title": "VPC Service Controls for API hub | Apigee | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/apihub/vpc-service-control",
       "description": "<strong>VPC Service Controls enables you to establish a service perimeter around your API hub resources, constraining ingress and egress traffic</strong>. This perimeter helps to: Limit unauthorised access: Control which Google Cloud services and VPC networks ...",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" \"access control\""
       ],
@@ -4770,7 +5072,7 @@
       "round_hits": [
         2
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 0,
       "feature_coverage": {
@@ -4871,61 +5173,6 @@
       "keep": false
     },
     {
-      "title": "Managing access in Google Cloud | Apigee | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-access",
-      "description": "Try to limit the number of Apigee Organization Admin roles you assign because this role has the highest level of permissions. To add a user and assign Apigee roles to it in your Google Cloud project: In the Google Cloud console, go to the IAM &amp; Admin &gt; IAM page.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Apigee hybrid\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 0,
-      "feature_coverage": {
-        "score": 18,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "for",
-          "and",
-          "the",
-          "access",
-          "api",
-          "cloud"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 91,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 91,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 1,
-        "coverage_value": 2,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "for",
-          "and",
-          "the",
-          "access",
-          "api",
-          "cloud"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 82,
-      "keep": false
-    },
-    {
       "title": "Advanced API Security for multiple Apigee organizations and gateways | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
       "description": "Caution: Pricing for Advanced API ... existing Apigee organization license type. We recommend that you use the Advanced API Security advisor tool to understand your costs before enabling the add-on in your API hub instance. To use Advanced API Security, you must have the following IAM roles and permissions...",
@@ -4981,10 +5228,10 @@
       "keep": false
     },
     {
-      "title": "What is Apigee? | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee-old",
-      "description": "An API product is a bundle of API proxies combined with a service plan. That service plan can set access limits on API proxies, provide security, allow monitoring and analytics, and provide additional features. API products are also the central mechanism that Apigee uses for authorization and access control to your APIs.",
-      "rank": 5,
+      "title": "Add IAM conditions | Apigee | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
+      "description": "This page applies to Apigee and Apigee hybrid. Identity and Access Management (IAM) Conditions lets you to define and enforce conditional access control for Google Cloud resources, including API hub resources.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" \"access control\""
       ],
@@ -4994,56 +5241,162 @@
       "round_hits": [
         2
       ],
-      "best_rank": 5,
+      "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 6,
+      "product_fit_score": -20,
       "feature_coverage": {
-        "score": 24,
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "and",
+          "access",
+          "api",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 91,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 91,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "and",
+          "access",
+          "api",
+          "cloud"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 82,
+      "keep": false
+    },
+    {
+      "title": "Managing access in Google Cloud | Apigee | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-access",
+      "description": "Try to limit the number of Apigee Organization Admin roles you assign because this role has the highest level of permissions. To add a user and assign Apigee roles to it in your Google Cloud project: In the Google Cloud console, go to the IAM &amp; Admin &gt; IAM page.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Apigee hybrid\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 0,
+      "feature_coverage": {
+        "score": 18,
         "matched_phrases": [],
         "matched_tokens": [
           "for",
           "and",
           "the",
-          "with",
-          "service",
           "access",
           "api",
-          "are"
+          "cloud"
         ],
         "user_facing_alignment": 0
       },
-      "deterministic_score": 86,
+      "deterministic_score": 88,
       "api_score": {
         "classification": "supporting_page",
-        "score": 86,
+        "score": 88,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 4,
-        "product_match": 2,
+        "product_match": 1,
         "coverage_value": 2,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "for",
           "and",
           "the",
-          "with",
-          "service",
           "access",
           "api",
-          "are"
+          "cloud"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 78,
+      "final_score": 80,
+      "keep": false
+    },
+    {
+      "title": "About Apigee provisioning permissions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/permissions",
+      "description": "Click the Select a role menu and then type the role name in the Filter field. For example, Apigee Organization Admin. Click the role listed in the results. Click Save. To provide least-necessary privileges, create an IAM custom role and assign permissions from the following sections.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Apigee hybrid\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Apigee hybrid\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 0,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "and",
+          "the",
+          "api",
+          "cloud",
+          "custom"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 73,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 73,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 1,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "and",
+          "the",
+          "api",
+          "cloud",
+          "custom"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 72,
       "keep": false
     },
     {
       "title": "Manage API resources with Apigee Spaces | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/spaces/manage-space-resources",
       "description": "This topic describes how to create and manage API resources in a Space. You can create API proxies, shared flows, and API products in a Space. <strong>Resources created in the Space inherit the same permissions as the Space</strong>.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" \"roles and permissions\""
       ],
@@ -5053,7 +5406,7 @@
       "round_hits": [
         1
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 0,
       "feature_coverage": {
@@ -5070,10 +5423,10 @@
         ],
         "user_facing_alignment": 0
       },
-      "deterministic_score": 81,
+      "deterministic_score": 78,
       "api_score": {
         "classification": "supporting_page",
-        "score": 81,
+        "score": 78,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
@@ -5093,176 +5446,7 @@
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 74,
-      "keep": false
-    },
-    {
-      "title": "What is Apigee? | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
-      "description": "An overview of Apigee, including descriptions of Apigee API proxies, benefits, and next steps.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 67,
-      "product_fit_score": 6,
-      "feature_coverage": {
-        "score": 12,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "for",
-          "and",
-          "api",
-          "cloud"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 74,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 74,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 4,
-        "product_match": 2,
-        "coverage_value": 1,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "for",
-          "and",
-          "api",
-          "cloud"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 73,
-      "keep": false
-    },
-    {
-      "title": "Getting started with Google Cloud Support | Apigee | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/support/getting-started-with-support",
-      "description": "If you have a free trial Apigee eval account, you can post questions and find answers in the Apigee community, where Apigee engineers are able to respond. The following documents describe how to access support services: Getting support with Cloud Customer Care: Describes the support options, how to sign up for support, and how to contact support. Access control with IAM: Describes how to control who (identity) has what access (roles) to which resource.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Apigee hybrid\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 6,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "for",
-          "and",
-          "the",
-          "support",
-          "with",
-          "service",
-          "access",
-          "api"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 77,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 77,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 4,
-        "product_match": 2,
-        "coverage_value": 1,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "for",
-          "and",
-          "the",
-          "support",
-          "with",
-          "service",
-          "access",
-          "api"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 70,
-      "keep": false
-    },
-    {
-      "title": "About Apigee provisioning permissions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/permissions",
-      "description": "Click the Select a role menu and then type the role name in the Filter field. For example, Apigee Organization Admin. Click the role listed in the results. Click Save. To provide least-necessary privileges, create an IAM custom role and assign permissions from the following sections.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Apigee hybrid\" \"roles and permissions\"",
-        "site:docs.cloud.google.com \"Apigee hybrid\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 67,
-      "product_fit_score": 0,
-      "feature_coverage": {
-        "score": 18,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "for",
-          "and",
-          "the",
-          "api",
-          "cloud",
-          "custom"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 70,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 70,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 4,
-        "product_match": 1,
-        "coverage_value": 1,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "for",
-          "and",
-          "the",
-          "api",
-          "cloud",
-          "custom"
-        ],
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 70,
+      "final_score": 71,
       "keep": false
     },
     {
@@ -5319,9 +5503,68 @@
       "keep": false
     },
     {
+      "title": "Getting started with Google Cloud Support | Apigee | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/support/getting-started-with-support",
+      "description": "If you have a free trial Apigee eval account, you can post questions and find answers in the Apigee community, where Apigee engineers are able to respond. The following documents describe how to access support services: Getting support with Cloud Customer Care: Describes the support options, how to sign up for support, and how to contact support. Access control with IAM: Describes how to control who (identity) has what access (roles) to which resource.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Apigee hybrid\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 6,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "and",
+          "the",
+          "support",
+          "with",
+          "service",
+          "access",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 74,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 74,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 2,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "and",
+          "the",
+          "support",
+          "with",
+          "service",
+          "access",
+          "api"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 68,
+      "keep": false
+    },
+    {
       "title": "Apigee Adapter for Envoy release notes | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/release/notes/100-envoy-adapter-release-notes",
-      "description": "<strong>On Tuesday, April 29, 2021</strong>, we released version 2.0.1 of Apigee Adapter for Envoy. Note: If you are upgrading an existing Apigee Adapter for Envoy, you must add the --force-proxy-install flag to the provision command.",
+      "description": "On <strong>June 7, 2021</strong>, we released version 2.0.2 of Apigee Adapter for Envoy. Note: If you are upgrading an existing Apigee Adapter for Envoy, you must add the --force-proxy-install flag to the provision command.",
       "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Apigee hybrid\" \"release notes\""
@@ -5371,6 +5614,57 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 61,
+      "keep": false
+    },
+    {
+      "title": "What is Apigee? | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+      "description": "An overview of Apigee, including descriptions of Apigee API proxies, benefits, and next steps.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Apigee hybrid\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 6,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "and",
+          "api",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 65,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 65,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 2,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "and",
+          "api",
+          "cloud"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 60,
       "keep": false
     },
     {

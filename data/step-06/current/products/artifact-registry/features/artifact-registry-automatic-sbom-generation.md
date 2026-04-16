@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T17:49:26.924Z"
+generated_at: "2026-04-14T08:39:49.491Z"
 product_name: "Artifact Registry"
 product_slug: "artifact-registry"
 feature_name: "Artifact Registry automatic SBOM generation"
 feature_slug: "artifact-registry-automatic-sbom-generation"
 latest_feature_date: "2022-10-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
-  - "https://docs.cloud.google.com/artifact-registry/docs/release-notes"
   - "https://docs.cloud.google.com/artifact-registry/docs/analysis"
+  - "https://docs.cloud.google.com/artifact-registry/docs/docker"
 keywords:
   - "generation"
   - "automatic"
   - "sbom"
   - "scanning"
   - "container"
-  - "registry"
-  - "artifact"
-  - "now"
 ---
 
 # Artifact Registry automatic SBOM generation
 
 Product: Artifact Registry
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ Artifact Registry automatic container scanning now generates software bill of ma
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr](https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr)
-- [https://docs.cloud.google.com/artifact-registry/docs/release-notes](https://docs.cloud.google.com/artifact-registry/docs/release-notes)
 - [https://docs.cloud.google.com/artifact-registry/docs/analysis](https://docs.cloud.google.com/artifact-registry/docs/analysis)
+- [https://docs.cloud.google.com/artifact-registry/docs/docker](https://docs.cloud.google.com/artifact-registry/docs/docker)
 
 ## Supporting Pages
 
@@ -52,38 +49,39 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr](https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr)
 - Source ID: `site-docs-root`
-- Final score: 198
+- Final score: 97
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- Automatic scanning The Google Cloud CLI command gcloud container images includes flags for viewing scan results, including vulnerabilities and other metadata.
 - The initial setup includes automatic creation of Artifact Registry repositories for each Container Registry host in your project and redirection of gcr.io to the corresponding Artifact Registry repositories.
-- Existing Container Registry images maintained by Google Most Google-owned images previously hosted on Container Registry are now hosted on Artifact Registry in gcr.io repositories.
+- Automatic scanning The Google Cloud CLI command gcloud artifacts docker images includes flags for viewing scan results, including vulnerabilities and other metadata.
 - On-demand scanning The Google Cloud CLI command gcloud artifacts docker images scan scans for vulnerabilities in local images or images in the Container Registry.
-- Operation Container Registry Artifact Registry Create a repository Not applicable. gcloud artifacts repositories create Delete a repository Not applicable. gcloud artifacts repositories delete List images gcloud container images list gcloud artifacts docker images list List tags gcloud container images list-tags gcloud artifacts docker tags list Add a tag gcloud container images add-tag gcloud artifacts docker tags add Delete a tag gcloud container images untag gcloud artifacts docker tags delete Describe images gcloud container images describe gcloud artifacts docker images list --include-tags Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-
-### Artifact Registry release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/release-notes](https://docs.cloud.google.com/artifact-registry/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 198
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For more information, see the Types of scanning in the Container Analysis documentation October 11, 2022 v1 Feature When users enable the Container Scanning API and push container images to Artifact Registry, automatic container scanning now generates metadata including a software bill of materials (SBOM) dependency list.
-- For more information, see Container scanning overview . v1 Feature Artifact Analysis now supports scanning for vulnerabilities in the following types of operating systems: AlmaLinux OS Chainguard Google Distroless Red Hat Universal Base Image (UBI) Rocky Linux SUSE Linux Enterprise Server (SLES) Wolfi If the Container Scanning API is enabled, it scans container images pushed to Artifact Registry addressing these new operating systems, in addition to already supported operating system and language package vulnerabilities.
-- October 21, 2024 v1 Feature Artifact Analysis now supports manual scans for vulnerabilities in the following types of packages: AlmaLinux OS Chainguard .NET Google Distroless NPM PHP Python Ruby Rust Red Hat Universal Base Image (UBI) Rocky Linux SUSE Linux Enterprise Server (SLES) Wolfi You can use the On-Demand Scanning API to manually scan container images locally on your computer or in your registry.
-- For more information, see Python overview and Node.js overview . v1 Feature Artifact Analysis now offers the ability to export a consolidated software bill of materials (SBOM) for scanned containers in Artifact Registry.
 
 ### "Artifact analysis and vulnerability scanning \_|\_ Artifact Registry \_\
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/analysis](https://docs.cloud.google.com/artifact-registry/docs/analysis)
 - Source ID: `site-docs-root-2`
-- Final score: 186
+- Final score: 89
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- GKE workload vulnerability scanning - standard tier Caution: Starting on July 23, 2024, standard tier/container OS vulnerability scanning is deprecated and is scheduled for shutdown on July 31, 2025.
+- In addition to basic container OS scanning, GKE users can upgrade to advanced vulnerability insights to take advantage of continual language package vulnerability detection.
 - Automatic scanning in Artifact Registry The scanning process is triggered automatically every time you push a new image to Artifact Registry.
-- Security Command Center aggregates vulnerability findings from Artifact Registry scans, allowing you to view container image vulnerabilities within your running workloads, across all projects alongside your other security risks in Security Command Center.
-- Registry scanning This section outlines Artifact Analysis vulnerability scanning features based in Artifact Registry, and lists related Google Cloud products where you can enable complementary capabilities to support your security posture.
-- Home Documentation Application development Artifact Registry Guides Send feedback Artifact analysis and vulnerability scanning Stay organized with collections Save and categorize content based on your preferences.
+- As part of GKE security posture dashboard, workload vulnerability scanning provides detection of container image OS vulnerabilities.
+
+### Work with container images \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/docker](https://docs.cloud.google.com/artifact-registry/docs/docker)
+- Source ID: `site-docs-root`
+- Final score: 72
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Metadata can be any relevant information you want to store that is related to a container image, including files you can scan or generate with Artifact Analysis : Software bill of materials (SBOM) Vulnerability scan results Other metadata such as build provenance Set up Pub/Sub notifications for changes to your repository.
+- The Cloud Build default service account has permissions to push to and pull from Artifact Registry repositories in the same Google Cloud project unless you have disabled automatic role granting to default service accounts.
+- The default service account for Compute Engine has permissions to pull from Artifact Registry repositories in the same Google Cloud project unless you have disabled automatic role granting to default service accounts .
+- Home Documentation Application development Artifact Registry Guides Send feedback Work with container images Stay organized with collections Save and categorize content based on your preferences.
 

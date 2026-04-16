@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/specifying-
 knowledge_key: corpus
 source_id: site-docs-reference-2
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/configuring-your-app-with-app-yaml
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/specifying-dependencies
   title: "Specifying dependencies \_|\_ App Engine standard environment \_|\_ Google\

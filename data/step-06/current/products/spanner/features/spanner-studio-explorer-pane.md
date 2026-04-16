@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.935Z"
+generated_at: "2026-04-13T22:42:27.271Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner Studio Explorer pane"
@@ -9,17 +9,16 @@ latest_feature_date: "2023-08-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
-  - "https://docs.cloud.google.com/spanner/docs/instances"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
+  - "https://docs.cloud.google.com/spanner/docs/configure-fgac"
+  - "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+  - "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
 keywords:
-  - "spanner"
-  - "studio"
   - "explorer"
   - "pane"
+  - "interactive"
   - "includes"
-  - "an"
-  - "in"
+  - "studio"
+  - "enables"
   - "preview"
 ---
 
@@ -38,46 +37,52 @@ Spanner Studio includes an Explorer pane in Preview that enables interactive bro
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
+- [https://docs.cloud.google.com/spanner/docs/configure-fgac](https://docs.cloud.google.com/spanner/docs/configure-fgac)
+- [https://docs.cloud.google.com/spanner/docs/create-query-database-console](https://docs.cloud.google.com/spanner/docs/create-query-database-console)
+- [https://docs.cloud.google.com/spanner/docs/vector-search-tutorial](https://docs.cloud.google.com/spanner/docs/vector-search-tutorial)
 
 ## Supporting Pages
 
-### django_spanner.operations — google-cloud-spanner-django documentation
+### Configure fine-grained access control \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- Source ID: `site-python-reference`
-- Final score: 216
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
-
-### Instances overview | Spanner | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
+- URL: [https://docs.cloud.google.com/spanner/docs/configure-fgac](https://docs.cloud.google.com/spanner/docs/configure-fgac)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Instances overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/instances Once an instance is created, you can list, edit, or delete it.
-- Spanner is a fully managed database service which oversees its own underlying tasks and resources, including monitoring and restarting processes when necessary with zero downtime.
-
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 160
+- Final score: 91
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- In the Explorer pane, navigate to the role for which you want to grant privileges.
+- In the Explorer pane, navigate to the role for which you want to revoke privilege.
+- To drop the role, go to the Spanner Studio page and enter the following statement: DROP ROLE ROLE NAME ; Click Submit . gcloud To revoke all privileges for a role and then drop the role, use the gcloud spanner databases ddl update command as follows: GoogleSQL gcloud spanner databases ddl update DATABASE NAME \ --instance = INSTANCE NAME \ --ddl = 'REVOKE PERMISSIONS ON TABLE TABLE NAME FROM ROLE ROLE NAME ; DROP ROLE ROLE NAME ;' PostgreSQL gcloud spanner databases ddl update DATABASE NAME \ --instance = INSTANCE NAME \ --ddl = 'REVOKE PERMISSIONS ON TABLE TABLE NAME FROM ROLE NAME ; DROP ROLE ROLE NAME ;' Valid values for PERMISSIONS are SELECT , INSERT , UPDATE , and DELETE .
+- Grant database roles to principals To access Spanner resources, a principal must be granted the necessary database role using one of the following options: Console On the database Overview page, click SHOW INFO PANEL if the Info panel is not already open.
+
+### "Create and query a database in the Google Cloud console \_|\_ Spanner \_\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/create-query-database-console](https://docs.cloud.google.com/spanner/docs/create-query-database-console)
+- Source ID: `site-docs-reference`
+- Final score: 78
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- In the Explorer, click more vert View actions next to the Singers table, and then click Preview Data .
+- In the Explorer, click more vert View actions next to the Singers table, and then click Preview Data .
+- In the Explorer, click more vert View actions next to the Singers table, and then click Preview Data .
+- The Google Cloud console displays the Singers table's Spanner Studio page with a new query tab that contains the INSERT statement that you edit to insert a row in the Singers table and view the result of that insertion: GoogleSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.
+
+### "Get started using Spanner for generative AI applications \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/vector-search-tutorial](https://docs.cloud.google.com/spanner/docs/vector-search-tutorial)
+- Source ID: `site-docs-root`
+- Final score: 63
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- After the model is added successfully, you'll see it displayed in the Explorer pane.
+- In a new tab in Spanner Studio , copy and paste the following DDL statement to re-create the productDescriptionEmbedding column: ALTER TABLE products DROP COLUMN productDescriptionEmbedding ; ALTER TABLE products ADD COLUMN productDescriptionEmbedding ARRAY<FLOAT32> ( vector length = > VECTOR LENGTH VALUE ); Replace VECTOR LENGTH VALUE with the maximum output dimensions of the embedding model you've chosen.
+- Load data To load the Cymbal sample data into the products table, do the following: In a new tab in Spanner Studio , copy and paste the following insert statement: INSERT INTO products ( categoryId , productId , productName , productDescription , createTime , inventoryCount , priceInCents ) VALUES ( 1 , 1 , "Cymbal Helios Helmet" , "Safety meets style with the Cymbal children's bike helmet.
+- In a new tab in Spanner Studio , copy and paste the following query to generate the prompt embedding and perform vector search: -- Generate the prompt embedding WITH embedding AS ( SELECT embeddings . values FROM ML .
 

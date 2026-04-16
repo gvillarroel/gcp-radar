@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.469Z"
+generated_at: "2026-04-15T12:06:50.504Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Gemini 1.0 Ultra integration"
@@ -9,15 +9,14 @@ latest_feature_date: "2024-05-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment"
 keywords:
   - "gemini"
   - "ultra"
   - "integration"
   - "integrates"
-  - "for"
   - "ai"
   - "capabilities"
 ---
@@ -41,42 +40,42 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment)
 
 ## Supporting Pages
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
+### Mainframe Assessment Tool overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 78
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
-
-### Configure your Google Cloud project for Mainframe Assessment Tool | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- Source ID: `site-docs-root`
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
+- Source ID: `site-docs-reference`
 - Final score: 60
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Configure your Google Cloud project for Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project This page describes the process to set up and configure your Google Cloud project to work with Mainframe Assessment Tool.
+- Seamless IDE integration: access powerful generative AI capabilities and customized Gemini models for modernizing mainframe applications inside an IDE.
+- The extension integrates mainframe-specific generative AI code analysis capabilities—such as specification, code, and test generation—within an Integrated Development Environment (IDE).
+- Generative AI assisted code generation and specifications creation: use Gemini Code Assist , generative AI, and mainframe-specific context to analyze and reimagine legacy mainframe code into modern languages, such as Java, C#, and Python.
+- Code modernization with Mainframe Code Rewrite ( Preview ) After you complete your assessment by using Mainframe Assessment Tool, you can start modernizing your code with Mainframe Code Rewrite , using generative AI and Gemini models.
 
-### Mainframe Assessment Tool MCP server | Google Cloud Documentation
+### "Configure your Google Cloud project for Mainframe Assessment Tool \_|\_\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
-- Source ID: `site-docs-root`
-- Final score: 52
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment)
+- Source ID: `site-docs-reference`
+- Final score: 30
+- Re-rank relevance: N/A
+
+### "Extract business rules \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- Source ID: `site-docs-reference`
+- Final score: 30
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool MCP server Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server This page describes how to set up and interact with Mainframe Assessment Tool assessments by using MCP clients such as Gemini CLI or AI agents through the Model Context Protocol (MCP).
-- You can use natural language prompts to get insights into your mainframe assessments.
+- Exporting business rules lets you use the rules as input with tools such as Gemini CLI for modernization and analysis, share them with stakeholders, or perform offline analysis.
+- Start a business rules extraction job Mainframe Assessment Tool uses Gemini-powered agents to analyze your code.
+- To export the agent configuration in Markdown for use with Gemini CLI, click Export for Gemini Modernization .
+- Gemini 3 Flash is only available through the global endpoint and might not be available in all regions.
 

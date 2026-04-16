@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.412Z"
+generated_at: "2026-04-15T13:50:17.857Z"
 product_name: "Firestore"
 product_slug: "firestore"
 feature_name: "Firestore Enterprise edition Native mode"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-03-05"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/firestore/native/docs/reference/libraries"
-  - "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
-  - "https://docs.cloud.google.com/firestore/docs/release-notes"
+  - "https://docs.cloud.google.com/firestore/native/docs/editions-overview"
+  - "https://docs.cloud.google.com/firestore/native/docs/enterprise-index-overview"
+  - "https://docs.cloud.google.com/firestore/native/docs/enterprise-indexing"
 keywords:
   - "firestore"
   - "enterprise"
   - "edition"
   - "native"
   - "mode"
-  - "is"
-  - "supported"
-  - "in"
+  - "all"
+  - "regions"
+  - "available"
 ---
 
 # Firestore Enterprise edition Native mode
@@ -42,43 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
-- [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- [https://docs.cloud.google.com/firestore/docs/release-notes](https://docs.cloud.google.com/firestore/docs/release-notes)
+- [https://docs.cloud.google.com/firestore/native/docs/editions-overview](https://docs.cloud.google.com/firestore/native/docs/editions-overview)
+- [https://docs.cloud.google.com/firestore/native/docs/enterprise-index-overview](https://docs.cloud.google.com/firestore/native/docs/enterprise-index-overview)
+- [https://docs.cloud.google.com/firestore/native/docs/enterprise-indexing](https://docs.cloud.google.com/firestore/native/docs/enterprise-indexing)
 
 ## Supporting Pages
 
-### Firestore client libraries | Firestore in Native mode | Google Cloud Documentation
+### "Firestore editions overview \_|\_ Firestore in Native mode \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
-- Source ID: `site-docs-reference`
-- Final score: 164
+- URL: [https://docs.cloud.google.com/firestore/native/docs/editions-overview](https://docs.cloud.google.com/firestore/native/docs/editions-overview)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 214
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Firestore client libraries Firestore in Native mode Google Cloud Documentation Source URL: https://docs.cloud.google.com/firestore/native/docs/reference/libraries API Reference Documentation · Source Code · GitHub Issue Tracker · Stack Overflow · The Firebase Admin SDKs bundle the Google Cloud client libraries for Firestore alongside client libraries and SDKs for several other Firebase features.
-- Using one of the Admin SDKs, you can initialize access to Firestore and several other services from a single SDK.
+- Firestore Enterprise edition : supports the MongoDB compatibility APIs or the Firestore in Native mode API.
+- Firestore is available in the following editions: Enterprise edition : provides the most advanced Firestore capabilities, maximizing developer flexibility and control.
+- Document Size Limits 4 MiB with MongoDB compatibility 1 MiB with Firestore in Native mode 1 MiB Supports Firestore with MongoDB compatibility Yes No Supports Firestore in Native mode: server-side, web, and mobile SDKs with real-time and offline support Yes (Preview) Yes Indexing Fully customizable, with support for advanced indexes like unique, dense, and sparse.
+- Editions features The following table summarizes the features available for each edition: Enterprise Standard Query Engine Advanced query engine More than 180 stages and operators, including support for aggregations, arithmetic, arrays, sets, type conversions, and joining data.
 
-### Class FirestoreAdminClient (2.22.0) | Python client libraries | Google Cloud Documentation
+### "Enterprise edition index overview \_|\_ Firestore in Native mode \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- Source ID: `site-python-reference`
-- Final score: 148
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Class FirestoreAdminClient (2.22.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore admin v1.services.firestore admin.client.FirestoreAdminClient Project, Database, Namespace, Collection, Collection Group, and Document are used as defined in the Google Cloud Firestore API.
-
-### Firestore release notes | Firestore in Native mode | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/firestore/docs/release-notes](https://docs.cloud.google.com/firestore/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 146
+- URL: [https://docs.cloud.google.com/firestore/native/docs/enterprise-index-overview](https://docs.cloud.google.com/firestore/native/docs/enterprise-index-overview)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 198
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Firestore release notes Firestore in Native mode Google Cloud Documentation Source URL: https://docs.cloud.google.com/firestore/docs/release-notes Support for Firestore point-in-time recovery (PITR) feature that provides protection against accidental deletion or writes is now generally available (GA). ...
-- For documents with many fields that don&#x27;t require indexing, you can now add collection-level index exemptions on all fields in a collection ...
+- Enterprise edition index overview Preview — Firestore in Native mode (with Pipeline Operations) for Enterprise Edition This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Firestore Enterprise edition does not create any indexes by default .
+- This section describes indexing for Firestore Enterprise edition.
+
+### "Manage Enterprise edition indexes \_|\_ Firestore in Native mode \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/enterprise-indexing](https://docs.cloud.google.com/firestore/native/docs/enterprise-indexing)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 192
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Manage Enterprise edition indexes Preview — Firestore in Native mode (with Pipeline Operations) for Enterprise Edition This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- This page describes how to manage your indexes for Firestore Enterprise edition.
+- To learn more about Firestore Enterprise edition indexes, see Indexes overview .
 

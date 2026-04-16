@@ -1,87 +1,91 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.639Z"
+generated_at: "2026-04-14T03:53:29.525Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB AI"
 feature_slug: "alloydb-ai"
 latest_feature_date: "2023-08-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases"
+  - "https://docs.cloud.google.com/alloydb/docs/overview"
   - "https://docs.cloud.google.com/alloydb/docs/ai"
-  - "https://docs.cloud.google.com/alloydb/docs/ai/activate-adaptive-filtering"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
 keywords:
-  - "AI feature in AlloyDB Omni"
-  - "Generative AI in AlloyDB"
-  - "AlloyDB AI feature"
-  - "AlloyDB for AI"
-  - "AlloyDB AI"
+  - "alloydb"
+  - "ai"
+  - "suite"
+  - "features"
+  - "building"
+  - "generative"
+  - "applications"
+  - "omni"
 ---
 
 # AlloyDB AI
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-AlloyDB AI is a generative AI feature set available for both AlloyDB and AlloyDB Omni.
+AlloyDB AI is a suite of features for building generative AI applications in AlloyDB and AlloyDB Omni.
 
 ## Extended Definition
 
-AlloyDB AI is a generative AI feature set available for both AlloyDB and AlloyDB Omni.
+AlloyDB AI is a suite of features for building generative AI applications in AlloyDB and AlloyDB Omni.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases](https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases)
+- [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
 - [https://docs.cloud.google.com/alloydb/docs/ai](https://docs.cloud.google.com/alloydb/docs/ai)
-- [https://docs.cloud.google.com/alloydb/docs/ai/activate-adaptive-filtering](https://docs.cloud.google.com/alloydb/docs/ai/activate-adaptive-filtering)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
 
 ## Supporting Pages
+
+### "Build generative AI applications \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases](https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases)
+- Source ID: `site-docs-reference`
+- Final score: 114
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Codelab: Installing and Setting-up Toolbox for your Generative AI & Agentic Applications on AlloyDB Build and deploy a personalized fashion styling assistant The following codelabs show you how to build and deploy a personalized style assistant with Gemini, model endpoint management, vector search, Vertex AI, and agents.
+- Codelab: Building an LLM and RAG-based chat application using AlloyDB AI and LangChain Create a chatbot to answer questions about movies This tutorial shows you how to build a generative AI chatbot that uses Gemini , Vertex AI , and the AlloyDB LangChain integration.
+- Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Build generative AI applications Stay organized with collections Save and categorize content based on your preferences.
+- Codelab: Part 1: Build a Smart Shopping Assistant with AlloyDB and AI Applications Codelab: Part 2: Deploy a Smart Shopping Assistant with AlloyDB and AI Applications Build an LLM and RAG-based chat application using AlloyDB AI and LangChain This codelab guides you through deploying the GenAI Databases Retrieval Service and then shows you how to build a sample interactive application using your newly set up environment.
+
+### AlloyDB overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 108
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Low-latency AI applications: build generative AI applications by leveraging AlloyDB AI, which integrates vector search and machine learning model invocation directly into the database engine, removing the need for high-latency external data movement.
+- Use AlloyDB if you want to spend less time managing infrastructure and more time building applications.
+- AlloyDB AI AlloyDB AI integrates a suite of AI and ML features directly into your AlloyDB database.
+- For a list of use cases for AlloyDB AI capabilities, see Build generative AI applications .
 
 ### "Build generative AI applications using AlloyDB AI \_|\_ AlloyDB for PostgreSQL\
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/ai](https://docs.cloud.google.com/alloydb/docs/ai)
-- Source ID: `site-docs-root`
-- Final score: 62
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is centered on AlloyDB AI and defines it as a suite of AI/ML capabilities for building generative AI applications.
+- Source ID: `site-docs-reference`
+- Final score: 102
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- The registered metadata is then used to invoke predictions from these models. alloydb ai nl extension: the alloydb ai nl extension enables developers to build applications that accurately and securely answer end user natural language questions about data in the AlloyDB database.
-- Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Build generative AI applications using AlloyDB AI Stay organized with collections Save and categorize content based on your preferences.
-- The natural language questions are then processed by AlloyDB AI to automatically generate an accurate SQL query that retrieve the answer.
 - AlloyDB AI provides a suite of AI and ML features that enable you to build generative AI applications.
-
-### "Activate adaptive filtering in AlloyDB AI \_|\_ AlloyDB for PostgreSQL \_\
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/activate-adaptive-filtering](https://docs.cloud.google.com/alloydb/docs/ai/activate-adaptive-filtering)
-- Source ID: `site-docs-root`
-- Final score: 58
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is an AlloyDB AI documentation page that explains a concrete AI capability (adaptive filtering), its behavior, and how to enable it.
-
-Evidence snippets:
-- What's next Filtered vector search in AlloyDB AI Understand adaptive filtering in AlloyDB AI Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Activate adaptive filtering in AlloyDB AI Stay organized with collections Save and categorize content based on your preferences.
-- This page provides instructions for enabling adaptive filtering in AlloyDB AI, a feature that optimizes filtered vector searches.
-
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 42
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- March 03, 2026 Feature The following AlloyDB AI features are now generally available ( GA ): Auto vector embeddings provide a scalable, automated solution for managing the lifecycle of vector embeddings for large-scale datasets, eliminating the need for manual reindexing or custom scripts.
-- Feature The following AlloyDB AI features are available in Preview : You can now use the ai.hybrid search() function, which fuses results from each search type into a single list using the Reciprocal Rank Fusion (RRF) algorithm.
-- Feature AlloyDB Omni version 15.5.1 has the following AlloyDB AI features available in Preview: Model endpoint management lets you maintain a per-project registry of AI model endpoints from a variety of sources and providers.
-- Change Updated the following extensions related to the PostGIS extension to version 3.2.3: postgis postgis raster postgis sfcgal postgis tiger geocoder postgis topology address standardizer address standardizer data us August 29, 2023 Feature AlloyDB AI, a suite of features for building generative AI applications , is now available with both AlloyDB and AlloyDB Omni.
+- To simplify the process of building AI applications, AlloyDB provides the following extensions: vector extension: the standard pgvector PostgreSQL extension is customized for AlloyDB, and referred to as vector .
+- Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Build generative AI applications using AlloyDB AI Stay organized with collections Save and categorize content based on your preferences.
+- The registered metadata is then used to invoke predictions from these models. alloydb ai nl extension: the alloydb ai nl extension enables developers to build applications that accurately and securely answer end user natural language questions about data in the AlloyDB database.
 

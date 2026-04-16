@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.151Z"
+generated_at: "2026-04-12T20:57:08.282Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "App Engine custom domain management via gcloud and Admin API"
 feature_slug: "app-engine-custom-domain-management-via-gcloud-and-admin-api"
 latest_feature_date: "2017-09-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
-  - "https://docs.cloud.google.com/appengine/docs/standard/hosting-a-static-website"
+  - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+  - "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed"
+  - "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml"
 keywords:
-  - "management"
-  - "domain"
-  - "gcloud"
-  - "custom"
-  - "via"
-  - "engine"
-  - "and"
   - "app"
+  - "engine"
+  - "custom"
+  - "domain"
+  - "management"
+  - "via"
+  - "gcloud"
+  - "admin"
 ---
 
 # App Engine custom domain management via gcloud and Admin API
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,54 @@ Custom domain mapping operations are now generally available through gcloud comm
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
-- [https://docs.cloud.google.com/appengine/docs/standard/hosting-a-static-website](https://docs.cloud.google.com/appengine/docs/standard/hosting-a-static-website)
+- [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
+- [https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml](https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml)
 
 ## Supporting Pages
 
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
+### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- Source ID: `site-docs-root`
-- Final score: 222
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 120
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Deploy your web service on App Engine In your go-app directory where your app.yaml file is located, deploy your web service to App Engine using the following command: gcloud app deploy To launch your browser and view your web service at https:// PROJECT ID .
-- To initialize the gcloud CLI, run the following command: gcloud init Create your App Engine app and its associated resources.
-- Create a new folder called go-app for your Go service: mkdir go-app In your go-app/ folder, create a file called app.yaml , and add the following contents: runtime : go126 # or another supported version This is the simplest configuration for an App Engine app.
-- You must choose a location, which cannot be changed later. gcloud app create Learn more : Generally, select the region nearest to your app's users, but also consider the location of the other Google Cloud products and services that your app uses.
+- To perform these steps, you must have one of the following roles on the host project: Owner role ( roles/owner ) Compute Security Admin role ( roles/compute.securityAdmin ) Custom Identity and Access Management (IAM) role with the compute.firewalls.create permission enabled For a basic configuration, apply the rules to allow serverless resources in any service project connected to the Shared VPC network to send requests to any resource in the network.
+- You must have one of the following Identity and Access Management (IAM) roles: Compute Security Admin role Custom IAM role with the compute.firewalls.create permission enabled Deny connector traffic across your VPC network.
+- You must have one of the following Identity and Access Management (IAM) roles: Compute Security Admin role Custom IAM role with the compute.firewalls.create permission enabled Deny connector traffic across your VPC network.
+- You must have one of the following Identity and Access Management (IAM) roles: Compute Security Admin role Custom IAM role with the compute.firewalls.create permission enabled Deny egress traffic from your connector.
 
-### "appengine-web.xml reference \_|\_ App Engine standard environment \_|\_\
+### "How requests are routed \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 117
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Example URLs Here are some examples of URLs for App Engine, showing both the appspot.com domain that App Engine assigns to your app and a custom domain, which you can set up for your app .
+- For example, to describe version 20191023t101741 for the default service, enter gcloud app versions describe 20191023t101741 --service=default Domain name is included in the request data The domain name used for the request is included in the request data that is passed to your app.
+- Routing with a dispatch file You can create a dispatch file to override App Engine's URL-based routing rules and define your own custom routing rules.
+- REGION ID .r.appspot.com https:// CUSTOM DOMAIN Requests are received by any version that is configured for traffic in the default service.
+
+### "Scheduling jobs with cron.yaml \_|\_ App Engine standard environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml](https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml)
 - Source ID: `site-docs-reference`
-- Final score: 220
-- Re-rank relevance: N/A
+- Final score: 109
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To serve custom error pages, add a <static-error-handlers> section to your appengine-web.xml , as ins this example: <static-error-handlers> <handler file="default error.html" /> <handler file="over quota.html" error-code="over quota" /> </static-error-handlers> Warning : Make sure that the path to the error response file does not overlap with static file handler paths.
-- With warmup requests enabled, the App Engine infrastructure issues GET requests to / ah/warmup , initializing <load-on-startup> servlets, ServletContextListeners , and custom warmup servlets, which allow you to initialize your application's code as it requires.
-- By default, the generated entrypoint for a F4 instance class (memory settings are calculated from the instance class) is equivalent to the following configuration: <appengine-web-app xmlns="http://appengine.google.com/ns/1.0"> <entrypoint> java -showversion -Xms32M -Xmx819M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+PrintCommandLineFlags --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio.charset=ALL-UNNAMED --add-opens java.logging/java.util.logging=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED -Dclasspath.runtimebase=/base/java runtime -Djava.class.path=/base/java runtime/runtime-main.jar -Djava.library.path=/base/java runtime: com/google/apphosting/runtime/JavaRuntimeMainWithDefaults --fixed application path=/workspace /base/java runtime </entrypoint> </appengine-web-app> You can modify the configuration to add extra JVM process flags or define your own process to boot.
-- The following example demonstrates how to designate all png files as static files (except those in the data/ directory and all of its subdirectories): < static - files > < include path = "/ .png" / > < exclude path = "/data/ .png" / > < / static - files > You can also set HTTP headers to use when responding to requests to these static resources. < static - files > < include path = "/my static-files" > < http - header name = "Access-Control-Allow-Origin" value = "http://example.org" / > < / include > < / static - files > Note: If the path string doesn't start with a slash, then the HTTP headers, if any, work on App Engine but do not work on the Development Server.
-
-### "Hosting a static website on App Engine \_|\_ App Engine standard environment\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/hosting-a-static-website](https://docs.cloud.google.com/appengine/docs/standard/hosting-a-static-website)
-- Source ID: `site-docs-root`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- REGION ID .r.appspot.com , run the following command: gcloud app browse What's next Serve your App Engine hosted website from a custom domain .
-- Install and then initialize the Google Cloud CLI: Download the SDK Listing your Google Cloud console project IDs From the command line, run: gcloud projects list OK Creating a website to host on Google App Engine Basic structure for the project This guide uses the following structure for the project: app.yaml : Configure the settings of your App Engine application. www/ : Directory to store all of your static files, such as HTML, CSS, images, and JavaScript. css/ : Directory to store stylesheets. style.css : Basic stylesheet that formats the look and feel of your site. images/ : Optional directory to store images. index.html : An HTML file that displays content for your website. js/ : Optional directory to store JavaScript files.
-- Before you begin Before you can host your website on App Engine: Create a new Google Cloud console project or retrieve the project ID of an existing project to use: Go to the Projects page Tip: You can retrieve a list of your existing project IDs with the gcloud command line tool .
-- To deploy your app, run the following command from within the root directory of your application where the app.yaml file is located: gcloud app deploy Optional flags: Include the --project flag to specify an alternate Google Cloud console project ID to what you initialized as the default in the gcloud CLI.
+- To deploy or update schedules, your account requires one of the following Identity and Access Management roles: Owner Editor Cloud Scheduler Admin ( roles/cloudscheduler.admin ) You can set the permission on the IAM page in the Google Cloud console .
+- Start-time interval examples Use the following examples to help you understand how to define job schedules that use a start-time interval: Runs every 5 minutes from 10:00 to 14:00, every day: schedule : every 5 minutes from 10:00 to 14:00 Runs once every hour from 08:00 to 16:00, every day: schedule : every 1 hours from 08:00 to 16:00 Runs once every two hours, every day starting at 00:00: schedule : every 2 hours synchronized Custom interval [TYPE]: Custom intervals can include the every prefix to define a repetitive interval, or you can define a specific list of days in a month: To define a repetitive interval you can use the every prefix.
+- By default, if the of clause is excluded, the custom interval is run every month. [MONTH]: You must specify the months in a comma-separated list and can include a mix of the following long or abbreviated values: january or jan february or feb march or mar april or apr may june or jun july or jul august or aug september or sep october or oct november or nov december or dec Use month to specify all months in the year. [HH:MM]: You must specify the time values in the 24 hour format, HH:MM , where: HH are integers from 00 to 23 .
+- Example: schedule : 1st monday of sep,oct,nov 09:00 schedule : 1 of jan,april,july,oct 00:00 Custom interval examples Use the following examples to help you understand how to define job schedules that use a custom interval: Runs every day at 00:00: schedule : every day 00:00 Runs every Monday at 09:00: schedule : every monday 09:00 Runs one time on the second Wednesday in March at 17:00: schedule : 2nd wednesday of march 17:00 Runs six times in May.
 

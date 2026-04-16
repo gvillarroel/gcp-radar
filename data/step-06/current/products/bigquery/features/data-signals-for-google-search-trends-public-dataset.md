@@ -1,72 +1,89 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.748Z"
+generated_at: "2026-04-15T12:48:36.693Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "Data Signals for Google Search Trends public dataset"
 feature_slug: "data-signals-for-google-search-trends-public-dataset"
 latest_feature_date: "2022-03-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/access-control"
-  - "https://docs.cloud.google.com/bigquery/docs/tables"
+  - "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+  - "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent"
 keywords:
-  - "Data Signals for Google Search Trends"
-  - "Data Signals"
-  - "Google Search Trends dataset"
-  - "Google Cloud Marketplace"
-  - "Search Trends dataset"
-  - "Analytics Hub listing"
-  - "dataset preview"
-  - "public dataset"
+  - "signals"
+  - "search"
+  - "trends"
+  - "public"
+  - "dataset"
+  - "international"
+  - "available"
+  - "through"
 ---
 
 # Data Signals for Google Search Trends public dataset
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The international public dataset for Data Signals for Google Search Trends became available in Preview for discovery and sharing in Google Cloud Marketplace and Analytics Hub.
+The international public dataset for Data Signals for Google Search Trends is available through Google Cloud Marketplace and Analytics Hub.
 
 ## Extended Definition
 
-The international public dataset for Data Signals for Google Search Trends became available in Preview for discovery and sharing in Google Cloud Marketplace and Analytics Hub.
+The international public dataset for Data Signals for Google Search Trends is available through Google Cloud Marketplace and Analytics Hub.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/access-control](https://docs.cloud.google.com/bigquery/docs/access-control)
-- [https://docs.cloud.google.com/bigquery/docs/tables](https://docs.cloud.google.com/bigquery/docs/tables)
+- [https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial](https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- [https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent](https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent)
 
 ## Supporting Pages
 
-### BigQuery IAM roles and permissions \_|\_ Google Cloud Documentation
+### "Data definition language (DDL) statements in GoogleSQL \_|\_ BigQuery \_\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/access-control](https://docs.cloud.google.com/bigquery/docs/access-control)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- Source ID: `site-docs-reference`
+- Final score: 139
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Permission Included in roles analyticshub. dataExchanges. create Owner ( roles/ owner ) Editor ( roles/ editor ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) analyticshub. dataExchanges. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) analyticshub.dataExchanges.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) Analytics Hub Publisher ( roles/ analyticshub.publisher ) Analytics Hub Subscriber ( roles/ analyticshub.subscriber ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Analytics Hub Viewer ( roles/ analyticshub.viewer ) Support User ( roles/ iam.supportUser ) analyticshub. dataExchanges. getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) Analytics Hub Publisher ( roles/ analyticshub.publisher ) Analytics Hub Subscriber ( roles/ analyticshub.subscriber ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Analytics Hub Viewer ( roles/ analyticshub.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Security Reviewer ( roles/ iam.securityReviewer ) Support User ( roles/ iam.supportUser ) analyticshub. dataExchanges. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) Analytics Hub Publisher ( roles/ analyticshub.publisher ) Analytics Hub Subscriber ( roles/ analyticshub.subscriber ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Analytics Hub Viewer ( roles/ analyticshub.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Security Reviewer ( roles/ iam.securityReviewer ) Support User ( roles/ iam.supportUser ) analyticshub. dataExchanges. setIamPolicy Owner ( roles/ owner ) Analytics Hub Admin ( roles/ analyticshub.admin ) Security Admin ( roles/ iam.securityAdmin ) analyticshub. dataExchanges. subscribe Owner ( roles/ owner ) Analytics Hub Subscriber ( roles/ analyticshub.subscriber ) analyticshub. dataExchanges. update Owner ( roles/ owner ) Editor ( roles/ editor ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) analyticshub. dataExchanges. viewSubscriptions Owner ( roles/ owner ) Analytics Hub Admin ( roles/ analyticshub.admin ) analyticshub.listings.create Owner ( roles/ owner ) Editor ( roles/ editor ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Publisher ( roles/ analyticshub.publisher ) analyticshub.listings.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) analyticshub.listings.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) Analytics Hub Publisher ( roles/ analyticshub.publisher ) Analytics Hub Subscriber ( roles/ analyticshub.subscriber ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Analytics Hub Viewer ( roles/ analyticshub.viewer ) Support User ( roles/ iam.supportUser ) analyticshub. listings. getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) Analytics Hub Publisher ( roles/ analyticshub.publisher ) Analytics Hub Subscriber ( roles/ analyticshub.subscriber ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Analytics Hub Viewer ( roles/ analyticshub.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Security Reviewer ( roles/ iam.securityReviewer ) Support User ( roles/ iam.supportUser ) analyticshub.listings.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) Analytics Hub Publisher ( roles/ analyticshub.publisher ) Analytics Hub Subscriber ( roles/ analyticshub.subscriber ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Analytics Hub Viewer ( roles/ analyticshub.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Security Reviewer ( roles/ iam.securityReviewer ) Support User ( roles/ iam.supportUser ) analyticshub. listings. setIamPolicy Owner ( roles/ owner ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) Security Admin ( roles/ iam.securityAdmin ) analyticshub. listings. subscribe Owner ( roles/ owner ) Analytics Hub Subscriber ( roles/ analyticshub.subscriber ) analyticshub.listings.update Owner ( roles/ owner ) Editor ( roles/ editor ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) analyticshub. listings. viewSubscriptions Owner ( roles/ owner ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) analyticshub. subscriptions. create Owner ( roles/ owner ) Editor ( roles/ editor ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) analyticshub. subscriptions. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) analyticshub.subscriptions.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Support User ( roles/ iam.supportUser ) analyticshub. subscriptions. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Security Admin ( roles/ iam.securityAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Security Reviewer ( roles/ iam.securityReviewer ) Support User ( roles/ iam.supportUser ) analyticshub. subscriptions. update Owner ( roles/ owner ) Editor ( roles/ editor ) Analytics Hub Admin ( roles/ analyticshub.admin ) Analyticshub Editor ( roles/ analyticshub.editor ) Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Permissions for BigQuery ML tasks The following table describes the permissions needed for common BigQuery ML tasks.
-- Role Permissions Analytics Hub Admin ( roles/ analyticshub.admin ) Administer Data Exchanges and Listings analyticshub. dataExchanges. create analyticshub. dataExchanges. delete analyticshub.dataExchanges.get analyticshub. dataExchanges. getIamPolicy analyticshub. dataExchanges. list analyticshub. dataExchanges. setIamPolicy analyticshub. dataExchanges. update analyticshub. dataExchanges. viewSubscriptions analyticshub.listings.create analyticshub.listings.delete analyticshub.listings.get analyticshub. listings. getIamPolicy analyticshub.listings.list analyticshub. listings. setIamPolicy analyticshub.listings.update analyticshub. listings. viewSubscriptions analyticshub.subscriptions. analyticshub. subscriptions. create analyticshub. subscriptions. delete analyticshub.subscriptions.get analyticshub. subscriptions. list analyticshub. subscriptions. update resourcemanager.projects.get resourcemanager.projects.list Analyticshub Editor ( roles/ analyticshub.editor ) Editor role for analyticshub analyticshub. dataExchanges. create analyticshub. dataExchanges. delete analyticshub.dataExchanges.get analyticshub. dataExchanges. getIamPolicy analyticshub. dataExchanges. list analyticshub. dataExchanges. update analyticshub.listings.create analyticshub.listings.delete analyticshub.listings.get analyticshub. listings. getIamPolicy analyticshub.listings.list analyticshub.listings.update analyticshub.subscriptions. analyticshub. subscriptions. create analyticshub. subscriptions. delete analyticshub.subscriptions.get analyticshub. subscriptions. list analyticshub. subscriptions. update resourcemanager.projects.get resourcemanager.projects.list Analytics Hub Listing Admin ( roles/ analyticshub.listingAdmin ) Grants full control over the Listing, including updating, deleting and setting ACLs analyticshub.dataExchanges.get analyticshub. dataExchanges. getIamPolicy analyticshub. dataExchanges. list analyticshub.listings.delete analyticshub.listings.get analyticshub. listings. getIamPolicy analyticshub.listings.list analyticshub. listings. setIamPolicy analyticshub.listings.update analyticshub. listings. viewSubscriptions resourcemanager.projects.get resourcemanager.projects.list Analytics Hub Publisher ( roles/ analyticshub.publisher ) Can publish to Data Exchanges thus creating Listings analyticshub.dataExchanges.get analyticshub. dataExchanges. getIamPolicy analyticshub. dataExchanges. list analyticshub.listings.create analyticshub.listings.get analyticshub. listings. getIamPolicy analyticshub.listings.list resourcemanager.projects.get resourcemanager.projects.list Analytics Hub Subscriber ( roles/ analyticshub.subscriber ) Can browse Data Exchanges and subscribe to Listings analyticshub.dataExchanges.get analyticshub. dataExchanges. getIamPolicy analyticshub. dataExchanges. list analyticshub. dataExchanges. subscribe analyticshub.listings.get analyticshub. listings. getIamPolicy analyticshub.listings.list analyticshub. listings. subscribe resourcemanager.projects.get resourcemanager.projects.list Analytics Hub Subscription Owner ( roles/ analyticshub.subscriptionOwner ) Grants full control over the Subscription, including updating and deleting analyticshub.dataExchanges.get analyticshub. dataExchanges. getIamPolicy analyticshub. dataExchanges. list analyticshub.listings.get analyticshub. listings. getIamPolicy analyticshub.listings.list analyticshub.subscriptions. analyticshub. subscriptions. create analyticshub. subscriptions. delete analyticshub.subscriptions.get analyticshub. subscriptions. list analyticshub. subscriptions. update resourcemanager.projects.get resourcemanager.projects.list Analytics Hub Viewer ( roles/ analyticshub.viewer ) Can browse Data Exchanges and Listings analyticshub.dataExchanges.get analyticshub. dataExchanges. getIamPolicy analyticshub. dataExchanges. list analyticshub.listings.get analyticshub. listings. getIamPolicy analyticshub.listings.list resourcemanager.projects.get resourcemanager.projects.list BigQuery permissions The following tables list the permissions available in BigQuery.
+- For more information, see Set up authentication for client libraries . // Import the Google Cloud client library and create a client const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function ddlCreateView () { // Creates a view via a DDL query / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = "my project" // const datasetId = "my dataset" // const tableId = "my new view" const query = CREATE VIEW \ ${ projectId } . ${ datasetId } . ${ tableId } \ OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name="new view", description="a view that expires in 2 days", labels=[("org unit", "development")] ) AS SELECT name, state, year, number FROM \bigquery-public-data.usa names.usa 1910 current\ WHERE state LIKE 'W%' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query const options = { query : query , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); job . on ( 'complete' , metadata = > { console . log ( Created new view ${ tableId } via job ${ metadata . id } ); }); } Python Call the Client.query() method to start a query job.
+- The table schema contains 2 columns: transaction id: An integer transaction date: A date The table option list specifies the: Partition expiration: Three days Description: A table partitioned by transaction date Creating a partitioned table from the result of a query The following example creates a partitioned table named days with rain in mydataset using a DATE column: CREATE TABLE mydataset . days with rain PARTITION BY date OPTIONS ( partition expiration days = 365 , description = "weather stations with precipitation, partitioned by day" ) AS SELECT DATE ( CAST ( year AS INT64 ), CAST ( mo AS INT64 ), CAST ( da AS INT64 )) AS date , ( SELECT ANY VALUE ( name ) FROM bigquery-public-data.noaa gsod.stations AS stations WHERE stations . usaf = stn ) AS station name , -- Stations can have multiple names prcp FROM bigquery-public-data.noaa gsod.gsod2017 AS weather WHERE prcp != 99.9 -- Filter unknown values AND prcp > 0 -- Filter stations/days with no precipitation If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table .
+- Examples The following table function takes an INT64 parameter that is used to filter the results of a query: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example specifies the return TABLE type in the RETURNS clause: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) RETURNS TABLE<name STRING , year INT64 , total INT64 > AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example computes total sales for items with the name item name from the orders table: CREATE TABLE FUNCTION mydataset . compute sales ( orders TABLE<item STRING , sales INT64 > , item name STRING ) AS ( SELECT SUM ( sales ) AS total sales , item FROM orders WHERE item = item name GROUP BY item ); CREATE PROCEDURE statement Creates a new procedure , which is a block of statements that can be called from other queries.
+- For more information, see Set up authentication for client libraries . from google.cloud import bigquery project = 'my-project' dataset id = 'my dataset' table id = 'new view' client = bigquery.Client(project=project) sql = """ CREATE VIEW {} . {} . {} OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name="new view", description="a view that expires in 2 days", labels=[("org unit", "development")] ) AS SELECT name, state, year, number FROM bigquery-public-data.usa names.usa 1910 current WHERE state LIKE 'W%' """ . format ( project , dataset id , table id ) job = client . query ( sql ) # API request. job . result () # Waits for the query to finish. print ( 'Created new view " {} . {} . {} ".' . format ( job . destination . project , job . destination . dataset id , job . destination . table id , ) ) On-demand query size calculation If you use on-demand billing, BigQuery charges for data definition language (DDL) queries based on the number of bytes processed by the query.
 
-### Create and use tables \_|\_ BigQuery \_|\_ Google Cloud Documentation
+### "Perform semantic search and retrieval-augmented generation \_|\_ BigQuery\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/tables](https://docs.cloud.google.com/bigquery/docs/tables)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial](https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial)
+- Source ID: `site-docs-reference-2`
+- Final score: 137
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The query retrieves data from the USA Name Data public dataset . bq query \ --destination table mydataset.mytable \ --use legacy sql = false \ 'SELECT name, number FROM bigquery-public-data.usa names.usa 1910 current WHERE gender = "M" ORDER BY number DESC' Enter the following command to use query results to overwrite a destination table named mytable in mydataset .
-- Because the public dataset is stored in the US multi-region location, the dataset that contains your destination table must also be in the US.
-- Examples: Note: These examples query a US-based public dataset.
-- This dataset is part of the BigQuery public dataset program .
+- GENERATE EMBEDDING ( MODEL bqml tutorial.embedding model , ( SELECT 'improving password security' AS content )) ), top k => 5 , options => '{"fraction lists to search": 0.01}' ) The output is similar to the following: +-----------------------------+--------------------+-------------------------------------------------+-------------------------------------------------+ query publication number title abstract +-----------------------------+--------------------+-------------------------------------------------+-------------------------------------------------+ improving password security SG-120868-A1 Data storage device security method and a...
+- GENERATE EMBEDDING ( MODEL bqml tutorial.embedding model , ( SELECT , abstract AS content FROM patents-public-data.google patents research.publications WHERE LENGTH ( abstract ) > 0 AND LENGTH ( title ) > 0 AND country = 'Singapore' ) ) WHERE LENGTH ( status ) = 0 ; This query takes approximately 5 minutes to complete.
+- Go to BigQuery In the query editor, run the following SQL statement: SELECT query . query , base . publication number , base . title , base . abstract FROM VECTOR SEARCH ( TABLE bqml tutorial.embeddings , 'embedding' , ( SELECT embedding , content AS query FROM AI .
+- Perform semantic search and retrieval-augmented generation This tutorial guides you through the end-to-end process of creating and using text embeddings for semantic search and retrieval-augmented generation (RAG) .
+
+### "Use the Colab Enterprise Data Science Agent with BigQuery \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent](https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent)
+- Source ID: `site-docs-reference-5`
+- Final score: 132
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example: "Help me perform exploratory data analysis and get insights about the data in this table: project id : dataset . table ." Replace the following: project id : your project ID dataset : the name of the dataset that contains the table you're analyzing table : the name of the table you're analyzing Type @ to search for a BigQuery table in your current project.
+- SQL and BigQuery ML prompts Create and evaluate a classification model on bigquery-public-data.ml datasets.census adult income using BigQuery SQL.
+- Optional: Reference your data in one of the following ways: Upload a CSV file or use the + symbol in your prompt to search for available files.
+- Find the features that can best predict the penguin species from the table bigquery-public data.ml datasets.penguins using BigQuery DataFrames.
 

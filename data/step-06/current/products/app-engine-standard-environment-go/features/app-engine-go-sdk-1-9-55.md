@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:52:30.818Z"
+generated_at: "2026-04-12T20:52:24.748Z"
 product_name: "App Engine standard environment Go"
 product_slug: "app-engine-standard-environment-go"
 feature_name: "App Engine Go SDK 1.9.55"
 feature_slug: "app-engine-go-sdk-1-9-55"
 latest_feature_date: "2017-06-27"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic"
+  - "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine"
+  - "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine"
 keywords:
-  - "go sdk 1.9.55 release notes"
-  - "appengine-go 1.9.55"
-  - "Go 1.9.55 update"
-  - "App Engine Go SDK 1.9.55"
-  - "release 1.9.55"
-  - "go1.9.55"
-  - "Go SDK 1.9.55"
-  - "SDK 1.9.55"
+  - "app"
+  - "engine"
+  - "go"
+  - "sdk"
+  - "55"
+  - "version"
+  - "was"
+  - "released"
 ---
 
 # App Engine Go SDK 1.9.55
 
 Product: App Engine standard environment Go
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ App Engine Go SDK version 1.9.55 was released.
 
 App Engine Go SDK version 1.9.55 was released.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic](https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic)
+- [https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine)
+- [https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Method: apps.services.versions.patch \_|\_ App Engine Admin API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic](https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic)
+- Source ID: `site-docs-reference-2`
+- Final score: 48
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can specify the following fields depending on the App Engine environment and type of scaling that the version resource uses: Standard environment instanceClass automatic scaling in the standard environment: automaticScaling.min idle instances automaticScaling.max idle instances automaticScaling.standard scheduler settings.max instances automaticScaling.standard scheduler settings.min instances automaticScaling.standard scheduler settings.target cpu utilization automaticScaling.standard scheduler settings.target throughput utilization basic scaling or manual scaling in the standard environment: servingStatus manualScaling.instances Flexible environment servingStatus automatic scaling in the flexible environment: automaticScaling.min total instances automaticScaling.max total instances automaticScaling.cool down period sec automaticScaling.cpu utilization.target utilization manual scaling in the flexible environment: manualScaling.instances HTTP request PATCH https://appengine.googleapis.com/v1/{name=apps/ /services/ /versions/ } The URL uses gRPC Transcoding syntax.
+- Authorization requires the following IAM permission on the specified resource name : appengine.versions.update Query parameters Parameters updateMask string ( FieldMask format) Standard field mask for the set of fields to be updated.
+- Home Technology areas App Engine Admin API Reference Send feedback Method: apps.services.versions.patch Stay organized with collections Save and categorize content based on your preferences.
+- Request body The request body contains an instance of Version .
+
+### An overview of App Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine)
+- Source ID: `site-docs-reference`
+- Final score: 44
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In this diagram, the app has two services that contain multiple versions, and two of those versions are actively running on multiple instances: Other Google Cloud services, for example Datastore, are shared across your App Engine app.
+- Each App Engine application includes at least one service, the default service, which can hold many versions, depending on your app's billing status.
+- The App Engine application is a top-level container that includes the service, version, and instance resources that make up your app.
+- For example, an app that handles your customer requests might include separate services that each handle different tasks, such as: API requests from mobile devices Internal, administration-type requests Backend processing such as billing pipelines and data analysis Each service in App Engine consists of the source code from your app and the corresponding App Engine configuration files.
+
+### An overview of App Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine)
+- Source ID: `site-docs-reference`
+- Final score: 44
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In this diagram, the app has two services that contain multiple versions, and two of those versions are actively running on multiple instances: Other Google Cloud services, for example Datastore, are shared across your App Engine app.
+- Each App Engine application includes at least one service, the default service, which can hold many versions, depending on your app's billing status.
+- The App Engine application is a top-level container that includes the service, version, and instance resources that make up your app.
+- For example, an app that handles your customer requests might include separate services that each handle different tasks, such as: API requests from mobile devices Internal, administration-type requests Backend processing such as billing pipelines and data analysis Each service in App Engine consists of the source code from your app and the corresponding App Engine configuration files.
 

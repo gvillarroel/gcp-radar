@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:02.952Z"
+generated_at: "2026-04-15T11:58:39.664Z"
 product_name: "Text-to-Speech"
 product_slug: "text-to-speech"
 feature_name: "Chirp 3 HD voices in Preview for Punjabi (pa-IN)"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-12-12"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts"
-  - "https://docs.cloud.google.com/text-to-speech/docs/get-started"
-  - "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
+  - "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd"
+  - "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types"
+  - "https://docs.cloud.google.com/text-to-speech/docs/voices"
 keywords:
   - "chirp"
   - "hd"
   - "voices"
-  - "in"
   - "preview"
-  - "for"
   - "punjabi"
   - "pa"
+  - "text"
+  - "speech"
 ---
 
 # Chirp 3 HD voices in Preview for Punjabi (pa-IN)
@@ -42,41 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/text-to-speech/docs/gemini-tts](https://docs.cloud.google.com/text-to-speech/docs/gemini-tts)
-- [https://docs.cloud.google.com/text-to-speech/docs/get-started](https://docs.cloud.google.com/text-to-speech/docs/get-started)
-- [https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1](https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1)
+- [https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd](https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd)
+- [https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types](https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types)
+- [https://docs.cloud.google.com/text-to-speech/docs/voices](https://docs.cloud.google.com/text-to-speech/docs/voices)
 
 ## Supporting Pages
 
-### Gemini-TTS | Cloud Text-to-Speech | Google Cloud Documentation
+### Chirp 3: HD voices \_|\_ Cloud Text-to-Speech \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/text-to-speech/docs/gemini-tts](https://docs.cloud.google.com/text-to-speech/docs/gemini-tts)
-- Source ID: `site-docs-root`
-- Final score: 62
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Using Gemini-TTS, you can synthesize single or multi-speaker speech from short snippets to long-form narratives, precisely dictating style, accent, pace, tone, and even emotional expression, all steerable through natural-language prompts.
-- Gemini-TTS Cloud Text-to-Speech Google Cloud Documentation Source URL: https://docs.cloud.google.com/text-to-speech/docs/gemini-tts Gemini-TTS is the latest evolution of our Cloud TTS technology that moves beyond natural-sounding speech and provides granular control over generated audio using text-based prompts.
-
-### Get started with Cloud Text-to-Speech | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/text-to-speech/docs/get-started](https://docs.cloud.google.com/text-to-speech/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 34
+- URL: [https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd](https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd)
+- Source ID: `site-docs-reference-2`
+- Final score: 150
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Get started with Cloud Text-to-Speech Google Cloud Documentation Source URL: https://docs.cloud.google.com/text-to-speech/docs/get-started Learn how to get started with the Cloud Text-to-Speech API, including enabling the API and setting up a Google Cloud project.
+- Language BCP-47 Code Arabic (Generic) ar-XA Bengali (India) bn-IN Bulgarian (Bulgaria) bg-BG Chinese (Hong Kong) yue-HK Croatian (Croatia) hr-HR Czech (Czech Republic) cs-CZ Danish (Denmark) da-DK Dutch (Belgium) nl-BE Dutch (Netherlands) nl-NL English (Australia) en-AU English (India) en-IN English (United Kingdom) en-GB English (United States) en-US Estonian (Estonia) et-EE Finnish (Finland) fi-FI French (Canada) fr-CA French (France) fr-FR German (Germany) de-DE Greek (Greece) el-GR Gujarati (India) gu-IN Hebrew (Israel) he-IL Hindi (India) hi-IN Hungarian (Hungary) hu-HU Indonesian (Indonesia) id-ID Italian (Italy) it-IT Japanese (Japan) ja-JP Kannada (India) kn-IN Korean (South Korea) ko-KR Latvian (Latvia) lv-LV Lithuanian (Lithuania) lt-LT Malayalam (India) ml-IN Mandarin Chinese (China) cmn-CN Marathi (India) mr-IN Norwegian Bokmål (Norway) nb-NO Polish (Poland) pl-PL Portuguese (Brazil) pt-BR Punjabi (India) pa-IN Romanian (Romania) ro-RO Russian (Russia) ru-RU Serbian (Cyrillic) sr-RS Slovak (Slovakia) sk-SK Slovenian (Slovenia) sl-SI Spanish (Spain) es-ES Spanish (United States) es-US Swahili (Kenya) sw-KE Swedish (Sweden) sv-SE Tamil (India) ta-IN Telugu (India) te-IN Thai (Thailand) th-TH Turkish (Turkey) tr-TR Ukrainian (Ukraine) uk-UA Urdu (India) ur-IN Vietnamese (Vietnam) vi-VN Regional availability Chirp 3: HD voices are available in the following Google Cloud regions respectively: Google Cloud Zone Launch Readiness global GA us GA eu GA asia-southeast1 GA europe-west2 GA asia-northeast1 GA Supported output formats The default response format is LINEAR16, but other formats which are supported include: API Method Format streaming ALAW, MULAW, OGG OPUS and PCM batch ALAW, MULAW, MP3, OGG OPUS and PCM Use Chirp 3: HD voices Discover how to use Chirp 3: HD voices to synthesize speech.
+- Home Documentation AI and ML Cloud Text-to-Speech Guides Send feedback Chirp 3: HD voices Stay organized with collections Save and categorize content based on your preferences.
+- Try Chirp 3: HD voices in Vertex AI Studio Try in Colab View notebook on GitHub Cloud TTS Chirp 3: HD voices represent the latest generation of Text-to-Speech technology.
+- Language availability Chirp 3: HD voices are supported in the following languages, with Punjabi (India) and Chinese (Hong Kong) available in Preview .
 
-### Package google.cloud.texttospeech.v1 | Cloud Text-to-Speech | Google Cloud Documentation
+### "Supported voices and languages \_|\_ Cloud Text-to-Speech \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1](https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1)
+- URL: [https://docs.cloud.google.com/text-to-speech/docs/voices](https://docs.cloud.google.com/text-to-speech/docs/voices)
 - Source ID: `site-docs-reference`
-- Final score: 32
+- Final score: 122
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Package google.cloud.texttospeech.v1 Cloud Text-to-Speech Google Cloud Documentation Source URL: https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1 Configuration for a multi-speaker text-to-speech setup.
+- Replace PROJECT ID with your project ID. curl -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "x-goog-user-project: PROJECT ID " \ -H "Content-Type: application/json; charset=utf-8" \ "https://texttospeech.googleapis.com/v1/voices" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { "voices": [ { "languageCodes": [ "es-ES" ], "name": "es-ES-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, { "languageCodes": [ "ja-JP" ], "name": "ja-JP-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 22050 }, { "languageCodes": [ "pt-BR" ], "name": "pt-BR-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.
+- TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . def list voices (): """Lists the available voices.""" from google.cloud import texttospeech client = texttospeech .
+
+### "Supported voices and languages \_|\_ Cloud Text-to-Speech \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types](https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types)
+- Source ID: `site-docs-root`
+- Final score: 122
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Replace PROJECT ID with your project ID. curl -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "x-goog-user-project: PROJECT ID " \ -H "Content-Type: application/json; charset=utf-8" \ "https://texttospeech.googleapis.com/v1/voices" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { "voices": [ { "languageCodes": [ "es-ES" ], "name": "es-ES-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, { "languageCodes": [ "ja-JP" ], "name": "ja-JP-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 22050 }, { "languageCodes": [ "pt-BR" ], "name": "pt-BR-Standard-A", "ssmlGender": "FEMALE", "naturalSampleRateHertz": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.
+- TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .
+- For more information, see Set up authentication for a local development environment . def list voices (): """Lists the available voices.""" from google.cloud import texttospeech client = texttospeech .
 

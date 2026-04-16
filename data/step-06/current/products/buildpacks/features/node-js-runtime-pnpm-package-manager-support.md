@@ -1,0 +1,92 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T11:53:44.047Z"
+product_name: "Buildpacks"
+product_slug: "buildpacks"
+feature_name: "Node.js runtime pnpm package manager support"
+feature_slug: "node-js-runtime-pnpm-package-manager-support"
+latest_feature_date: "2023-06-01"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/docs/buildpacks/nodejs"
+  - "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs"
+  - "https://docs.cloud.google.com/docs/buildpacks/runtime-support"
+keywords:
+  - "node"
+  - "js"
+  - "runtime"
+  - "pnpm"
+  - "package"
+  - "manager"
+  - "runtimes"
+  - "configure"
+---
+
+# Node.js runtime pnpm package manager support
+
+Product: Buildpacks
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Node.js runtimes support using the pnpm package manager to configure dependencies.
+
+## Extended Definition
+
+Node.js runtimes support using the pnpm package manager to configure dependencies.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/docs/buildpacks/nodejs](https://docs.cloud.google.com/docs/buildpacks/nodejs)
+- [https://docs.cloud.google.com/docs/buildpacks/service-specific-configs](https://docs.cloud.google.com/docs/buildpacks/service-specific-configs)
+- [https://docs.cloud.google.com/docs/buildpacks/runtime-support](https://docs.cloud.google.com/docs/buildpacks/runtime-support)
+
+## Supporting Pages
+
+### Building a Node.js application \_|\_ Buildpacks \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/docs/buildpacks/nodejs](https://docs.cloud.google.com/docs/buildpacks/nodejs)
+- Source ID: `site-docs-reference`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Package manager precedence The Node.js buildpack determines the package manager based on the configuration in the following order of precedence: The buildpack first checks for lockfiles in the following order: Yarn - yarn.lock pnpm - pnpm-lock.yaml Bun - bun.lock or bun.lockb NPM - package-lock.json If you don't use lockfiles, the Node.js buildpack uses the value you assign the GOOGLE PACKAGE MANAGER environment variable.
+- When deploying a function onto Cloud Run functions, the engines.node property should be compatible with the runtime used to deploy your function Install dependencies NPM is the default package manager for all versions of Node.js.
+- To configure the buildpack to use the latest version of Node.js when deploying your app, add the following values in your package.json : "engines" : { "node" : "24.x.x" } Use GOOGLE NODEJS VERSION You can also specify the Node.js version using the GOOGLE NODEJS VERSION environment variable.
+- Bun package manager The Node.js buildpack supports the Bun package manager, google.nodejs.bun buildpack for installing dependencies.
+
+### "Configure Cloud Run and Cloud Run functions services \_|\_ Buildpacks \_\
+
+- URL: [https://docs.cloud.google.com/docs/buildpacks/service-specific-configs](https://docs.cloud.google.com/docs/buildpacks/service-specific-configs)
+- Source ID: `site-docs-reference`
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Examples: Go: 1.25.1 Java: 25 Node.js: 24.1.0 .NET: 10.0.101 GOOGLE BUILDABLE For Go, Java, Dart, and .NET runtimes: Specifies path to a buildable unit.
+- GOOGLE GRADLE BUILD ARGS For Java runtimes using the Gradle plugin: Overrides the default Gradle command with the build command that you specify.
+- GOOGLE MAVEN BUILD ARGS For Java runtimes using the Maven plugin: Overrides the default Maven command with the build command that you specify.
+- GOOGLE BUILD ARGS For Java (Maven and Gradle) and .NET runtimes: Appends arguments to the build command.
+
+### "Google Cloud's buildpacks runtime lifecycle \_|\_ Buildpacks \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/docs/buildpacks/runtime-support](https://docs.cloud.google.com/docs/buildpacks/runtime-support)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Note: Runtime ID is often used when deploying from the from the command line or through Terraform Node.js Runtime Runtime ID Stacks Runtime base image Deprecation Decommission Node.js 24 nodejs24 google-24 (default) google-24-full google-24/nodejs24 google-24-full/nodejs24 2028-04-30 2028-10-31 Node.js 22 nodejs22 google-22 (default) google-22-full google-22/nodejs22 google-22-full/nodejs22 2027-04-30 2027-10-31 Node.js 20 nodejs20 google-22 (default) google-22-full google-22/nodejs20 google-22-full/nodejs20 2026-04-30 2026-10-30 Node.js 18 nodejs18 google-22 (default) google-22-full google-22/nodejs18 google-22-full/nodejs18 2025-04-30 2025-10-30 Node.js 16 nodejs16 google-18-full google-18-full/nodejs16 2024-01-30 2025-01-30 Node.js 14 nodejs14 google-18-full google-18-full/nodejs14 2024-01-30 2025-01-30 Node.js 12 nodejs12 google-18-full google-18-full/nodejs12 2024-01-30 2025-01-30 Node.js 10 nodejs10 google-18-full google-18-full/nodejs10 2024-01-30 2025-01-30 Node.js 8 nodejs8 Decommissioned Decommissioned 2020-06-05 Feb 2021 Node.js 6 nodejs6 Decommissioned Decommissioned 2019-04-17 Aug 2020 Python Runtime Runtime ID Stacks Runtime base image Deprecation Decommission Python 3.14 python314 google-24 (default) google-24-full google-24/python314 google-24-full/python314 2030-10-10 2031-04-10 Python 3.13 python313 google-22 (default) google-22-full google-22/python313 google-22-full/python313 2029-10-10 2030-04-10 Python 3.12 python312 google-22 (default) google-22-full google-22/python312 google-22-full/python312 2028-10-02 2029-04-02 Python 3.11 python311 google-22 (default) google-22-full google-22/python311 google-22-full/python311 2027-10-24 2028-04-24 Python 3.10 python310 google-22 (default) google-22-full google-22/python310 google-22-full/python310 2026-10-04 2027-04-04 Python 3.9 python39 google-18-full google-18-full/python39 2025-10-05 2026-04-05 Python 3.8 python38 google-18-full google-18-full/python38 2024-10-14 2025-10-14 Python 3.7 python37 google-18-full google-18-full/python37 2024-01-30 2025-01-30 Go Runtime Runtime ID Stacks Runtime base image Deprecation Decommission Go 1.26 go126 google-24 (default) google-24-full google-24/go126 google-24-full/go126 Go 1.25 go125 google-22 (default) google-22-full google-22/go125 google-22-full/go125 Go 1.24 go124 google-22 (default) google-22-full google-22/go124 google-22-full/go124 2026-09-02 2027-03-02 Go 1.23 go123 google-22 (default) google-22-full google-22/go123 google-22-full/go123 2026-02-21 2026-08-21 Go 1.22 go122 google-22 (default) google-22-full google-22/go122 google-22-full/go122 2026-01-28 2026-07-28 Go 1.21 go121 google-22 (default) google-22-full google-22/go121 google-22-full/go121 2025-09-03 2026-03-03 Go 1.20 go120 google-22 (default) google-22-full google-22/go120 google-22-full/go120 2024-05-01 2025-05-01 Go 1.19 go119 google-22 (default) google-22-full google-22/go119 google-22-full/go119 2024-04-30 2025-01-30 Go 1.18 go118 google-22 (default) google-22-full google-22/go118 google-22-full/go120 2024-01-30 2025-01-30 Go 1.16 go116 google-18-full google-18-full/go116 2024-01-30 2025-01-30 Go 1.13 go113 google-18-full google-18-full/go113 2024-01-30 2025-01-30 Go 1.11 go111 Decommissioned Decommissioned 2020-08-05 Feb 2021 Note: Go's release policy states that each major Go release is supported until there are two newer major releases.
+- Runtimes on Google Cloud's buildpacks are base images that include components and operating system, software required to build and execute code written for a specific programming language, and software to support your function.
+- Before a runtime reaches the deprecation phase as described in the runtimes support schedule , Google will provide a notification to customers in the Google Cloud console.
+- Support Schedule Here is the list of supported Google Cloud's buildpacks runtimes, as well as runtimes that have been deprecated or decommissioned.
+

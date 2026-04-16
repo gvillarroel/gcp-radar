@@ -1,0 +1,90 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T12:48:36.480Z"
+product_name: "BigQuery"
+product_slug: "bigquery"
+feature_name: "Search Ads 360 connector for new Reporting API"
+feature_slug: "search-ads-360-connector-for-new-reporting-api"
+latest_feature_date: "2024-04-01"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/bigquery/docs/search-ads-migration-guide"
+  - "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+  - "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+keywords:
+  - "search"
+  - "ads"
+  - "360"
+  - "connector"
+  - "reporting"
+  - "bigquery"
+  - "transfer"
+  - "supports"
+---
+
+# Search Ads 360 connector for new Reporting API
+
+Product: BigQuery
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+BigQuery Data Transfer Service for Search Ads 360 supports the new Search Ads 360 Reporting API, including custom Floodlight variables and custom columns.
+
+## Extended Definition
+
+BigQuery Data Transfer Service for Search Ads 360 supports the new Search Ads 360 Reporting API, including custom Floodlight variables and custom columns.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/bigquery/docs/search-ads-migration-guide](https://docs.cloud.google.com/bigquery/docs/search-ads-migration-guide)
+- [https://docs.cloud.google.com/bigquery/docs/google-ads-transfer](https://docs.cloud.google.com/bigquery/docs/google-ads-transfer)
+- [https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners](https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners)
+
+## Supporting Pages
+
+### Search Ads 360 migration guide \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/search-ads-migration-guide](https://docs.cloud.google.com/bigquery/docs/search-ads-migration-guide)
+- Source ID: `site-api-reference`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Old Search Ads Report New Search Ads Resource New BigQuery Table Name adGroup ad group p sa AdGroupStats customer id p sa AdGroup customer id p sa AdGroupDeviceStats customer id p sa AdGroupConversionActionAndDeviceStats customer id ad ad group ad p sa AdConversionActionAndDeviceStats customer id p sa AdDeviceStats customer id p sa Ad customer id N/A ad group asset p sa AdGroupAssetStats customer id p sa AdGroupConversionActionAndAssetStats customer id N/A ad group asset set p sa AdGroupAssetSet customer id adGroupTarget ad group audience view p sa AdGroupAudienceDeviceStats customer id p sa AdGroupAudienceConversionActionAndDeviceStats customer id adGroupTarget ad group criterion p sa NegativeAdGroupCriterion customer id p sa NegativeAdGroupKeyword customer id p sa AdGroupCriterion customer id adGroupTarget age range view p sa AgeRangeDeviceStats customer id p sa AgeRangeConversionActionAndDeviceStats customer id N/A asset p sa Asset customer id bidStrategy bidding strategy p sa BidStrategy customer id p sa BidStrategyStats customer id campaign campaign p sa CampaignConversionActionAndDeviceStats customer id p sa Campaign customer id p sa CampaignDeviceStats customer id p sa CampaignStats customer id N/A campaign asset p sa CampaignAssetStats customer id p sa CampaignConversionActionAndAssetStats customer id N/A campaign asset set p sa CampaignAssetSet customer id campaignTarget campaign audience view p sa CampaignAudienceConversionActionAndDeviceStats customer id p sa CampaignAudienceDeviceStats customer id campaignTarget campaign criterion p sa CampaignCriterion customer id p sa NegativeCampaignKeyword customer id p sa NegativeCampaignCriterion customer id productLeadAndCrossSell cart data sales view p sa CartDataSalesStats customer id conversion conversion p sa Conversion customer id floodlightActivity conversion action p sa ConversionAction customer id account customer p sa Account customer id p sa AccountDeviceStats customer id p sa AccountConversionActionAndDeviceStats customer id p sa AccountStats customer id N/A customer asset p sa CustomerAssetStats customer id p sa CustomerConversionActionAndAssetStats customer id N/A customer asset set p sa CustomerAssetSet customer id adGroupTarget gender view p sa GenderDeviceStats customer id p sa GenderConversionActionAndDeviceStats customer id keyword keyword view p sa Keyword customer id p sa KeywordDeviceStats customer id p sa KeywordStats customer id p sa KeywordConversionActionAndDeviceStats customer id adGroupTarget location view p sa LocationDeviceStats customer id p sa LocationConversionActionAndDeviceStats customer id productAdvertised shopping performance view p sa ProductAdvertised customer id p sa ProductAdvertisedConversionActionAndDeviceStats customer id p sa ProductAdvertisedDeviceStats customer id productGroup product group view p sa ProductGroupStats customer id p sa ProductGroup customer id visit visit p sa Visit customer id adGroupTarget webpage view p sa WebpageDeviceStats customer id p sa WebpageConversionActionAndDeviceStats customer id Field mapping The BigQuery Data Transfer Service supports a subset of Search Ads 360 report fields as listed in Search Ads 360 report transformation .
+- The old Search Ads 360 reporting API is no longer supported, so you should migrate your BigQuery Data Transfer Service workflows to be compatible with the new Search Ads 360 reporting API.
+- What's new with Search Ads 360 The new Search Ads 360 reporting API offers several changes that might affect your existing BigQuery Data Transfer Service workflows.
+- Examples of migrated queries The following examples demonstrate how a BigQuery query might look before and after it is mapped to the new Search Ads 360 reporting API.
+
+### Load Google Ads data into BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/google-ads-transfer](https://docs.cloud.google.com/bigquery/docs/google-ads-transfer)
+- Source ID: `site-api-reference`
+- Final score: 135
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- When you trigger a manual transfer, Match Table snapshots for the following tables are not updated: Ad AdGroup AdGroupAudience AdGroupBidModifier AdGroupAdLabel AdGroupCriterion AdGroupCriterionLabel AdGroupLabel AgeRange Asset AssetGroup AssetGroupAsset AssetGroupListingGroupFilter AssetGroupSignal Audience BidGoal Budget Campaign CampaignAudience CampaignCriterion CampaignLabel Customer Gender Keyword LocationBasedCampaignCriterion ParentalStatus Placement Video Custom reports The BigQuery Data Transfer Service for Google Ads connector also supports the use of custom reports using Google Ads Query Language (GAQL) queries in the Google Ads transfer configuration.
+- Connector overview The BigQuery Data Transfer Service for the Google Ads connector supports the following options for your data transfer.
+- The automatically triggered backfill runs will either overwrite or incrementally update your BigQuery destination table, depending on whether or not incremental updates are supported in the BigQuery Data Transfer Service connector.
+- Load Google Ads data into BigQuery You can load data from Google Ads (formerly known as Google AdWords) to BigQuery using the BigQuery Data Transfer Service for Google Ads connector.
+
+### Google Cloud Ready - BigQuery Partners \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners](https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners)
+- Source ID: `site-docs-reference-5`
+- Final score: 130
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Partner references Talend Cloud with BigQuery BigQuery connector guide Partner Advantage page Direct link Trifacta Solution Dataprep by Trifacta Category ETL & Data Integration Description Dataprep by Trifacta is an intelligent data service for visually exploring, cleaning, and preparing structured and unstructured data for analysis, reporting, and machine learning.
+- You can use this connector to integrate Google BigQuery API data inside apps like SSIS, SQL Server, or popular ETL Platforms / BI Tools/ Reporting Apps / Programming languages.
+- The BigQuery connector for Datahub lets it ingest metadata from your BigQuery environment, providing a centralized and searchable catalog for all your tables, views, and data.
+- The Simba Google BigQuery ODBC Connector enables business intelligence (BI), analytics, and reporting on data that has been uploaded to Google Storage.
+

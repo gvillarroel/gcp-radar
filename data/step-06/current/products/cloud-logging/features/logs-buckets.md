@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.565Z"
+generated_at: "2026-04-14T23:59:44.447Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Logs Buckets"
 feature_slug: "logs-buckets"
 latest_feature_date: "2020-08-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
-  - "https://docs.cloud.google.com/logging/docs/release-notes"
-  - "https://docs.cloud.google.com/logging/docs/central-log-storage"
+  - "https://docs.cloud.google.com/logging/docs/audit"
+  - "https://docs.cloud.google.com/logging/docs/buckets"
 keywords:
   - "logs"
   - "buckets"
   - "let"
   - "users"
   - "centralize"
-  - "or"
   - "separate"
   - "according"
+  - "storage"
 ---
 
 # Logs Buckets
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Logs Buckets let users centralize or separate logs according to their storage an
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
-- [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
-- [https://docs.cloud.google.com/logging/docs/central-log-storage](https://docs.cloud.google.com/logging/docs/central-log-storage)
+- [https://docs.cloud.google.com/logging/docs/audit](https://docs.cloud.google.com/logging/docs/audit)
+- [https://docs.cloud.google.com/logging/docs/buckets](https://docs.cloud.google.com/logging/docs/buckets)
 
 ## Supporting Pages
 
@@ -52,38 +52,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
 - Source ID: `site-docs-root`
-- Final score: 150
+- Final score: 158
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - A separate dialog opens with the following information: The pattern that was found The percentage of log entries that contain the pattern Example log entries that contain the pattern In this dialog, you can hide or show log entries: Hide similar log entries You can hide similar log entries, which lets you remove logs from your query results.
-- For more information about investigations, see the following documentation: Troubleshoot issues with Gemini Cloud Assist investigations Create a Gemini Cloud Assist investigation Manage Gemini Cloud Assist investigations View similar log entries You can view log entries that are similar to a selected log entry, which lets you focus on logs of interest.
-- Adjust time controls The timeline provides time controls that let you adjust the data that you see in the Logs Explorer: Time handles: Drag the timeline's handles inward to narrow the data or outward to widen the data in the timeline.
 - When you select the Zoom to time feature, the following happens: The logs data that you see in the Query results pane reloads and narrows according to the time-range restriction of the selected timeline bar.
+- When you select the Scroll to time feature, the following happens: The logs data that you see in the Query results pane adjusts according to the time range captured by the selected timeline bar.
+- This document provides you with an overview of the Logs Explorer in the Google Cloud console, which you can use to retrieve, view, and analyze log entries that are stored in log buckets .
 
-### Logging release notes \_|\_ Google Cloud Documentation
+### Cloud Audit Logs overview \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
+- URL: [https://docs.cloud.google.com/logging/docs/audit](https://docs.cloud.google.com/logging/docs/audit)
 - Source ID: `site-docs-root`
-- Final score: 144
+- Final score: 118
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- August 03, 2020 Feature Alpha release: You can now use Logs Buckets to centralize or divide your logs based on your needs.
-- August 11, 2020 Feature Beta release: You can now use Logs Buckets to centralize or divide your logs based on your needs.
-- Announcement To help you understand your logs volume and usage within the context of your Logs Buckets, the Resource Usage page has been moved to the Logs Storage page, which now contains your resource usage information.
-- Change Deleting logs-based metrics in alerting policies : Attempting to delete a logs-based metric that is used in one or more Stackdriver Monitoring alerting policies now fails with the status FAILED PRECONDITION .
+- To get the permissions that you need to get access to all logs in the Required and Default buckets, including Data Access logs, ask your administrator to grant you the Private Logs Viewer ( roles/logging.privateLogViewer ) IAM role on your project.
+- If you route log data to other Google Cloud services, then see the following documents: Cloud Storage pricing BigQuery pricing Pub/Sub pricing What's next Learn how to read and understand audit logs .
+- Cloud Storage : When Cloud Storage usage logs are enabled, Cloud Storage writes usage data to the Cloud Storage bucket, which generates Data Access audit logs for the bucket.
+- Publicly available resources that have the Identity and Access Management policies allAuthenticatedUsers or allUsers don't generate audit logs.
 
-### "Aggregate and store your organization's logs \_|\_ Cloud Logging \_|\_ Google\
+### Configure log buckets \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/central-log-storage](https://docs.cloud.google.com/logging/docs/central-log-storage)
+- URL: [https://docs.cloud.google.com/logging/docs/buckets](https://docs.cloud.google.com/logging/docs/buckets)
 - Source ID: `site-docs-root`
-- Final score: 138
+- Final score: 116
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Before you begin Ensure the following: To get the permissions that you need to configure an aggregated sink, ask your administrator to grant you the following IAM roles on your organization: To create log buckets and sinks in a project: Logs Configuration Writer ( roles/logging.configWriter ) - your project To create an aggregated sink: Logs Configuration Writer ( roles/logging.configWriter ) - your organization To grant roles to principals: Owner ( roles/owner ) - your project For more information about granting roles, see Manage access to projects, folders, and organizations .
-- Execute the gcloud logging sinks create command: gcloud logging sinks create PROJECT LEVEL SINK NAME SINK DESTINATION --project= PROJECT ID --log-filter='logName:cloudaudit.googleapis.com' \ --description=" Audit logs from my organization " \ Create the aggregated sink Aggregated sinks combine and route log entries from the resources contained by an organization or folder to a destination.
-- Execute the gcloud logging sinks create command: gcloud logging sinks create SINK NAME \ logging.googleapis.com/projects/ PROJECT ID \ --log-filter='logName:cloudaudit.googleapis.com' \ --description=" Audit logs from my organization " \ --organization= ORGANIZATION ID \ --include-children The --include-children option is important.
-- In the following steps, you grant a principal the role of roles/logging.viewAccessor along with an IAM condition that restricts the grant to the view named AllLogs : In the Google Cloud console, go to the IAM page: Go to IAM If you use the search bar to find this page, then select the result whose subheading is IAM & Admin .
+- On the Logs Storage page, the pending-deletion indicator is removed from your log bucket. gcloud To restore a log bucket that is pending deletion, run the gcloud logging buckets undelete command: gcloud logging buckets undelete BUCKET ID --location= LOCATION REST To restore a bucket that is pending deletion, use projects.locations.buckets.undelete in the Logging API.
+- List buckets To list the log buckets associated with a Google Cloud project, and to see details such as retention settings, do the following: Google Cloud console In the Google Cloud console, go to the Logs Storage page: Go to Logs Storage If you use the search bar to find this page, then select the result whose subheading is Logging .
+- Track volume of logs stored in log buckets The Logs Storage page in the Google Cloud console tracks the volume of logs data stored in log buckets: In the Google Cloud console, go to the Logs Storage page: Go to Logs Storage If you use the search bar to find this page, then select the result whose subheading is Logging .
+- The Logs Storage page displays a summary of statistics for your Google Cloud project: The following statistics are reported: Current month ingestion : The amount of logs data that your Google Cloud project has stored in log buckets since the first day of the current calendar month.
 

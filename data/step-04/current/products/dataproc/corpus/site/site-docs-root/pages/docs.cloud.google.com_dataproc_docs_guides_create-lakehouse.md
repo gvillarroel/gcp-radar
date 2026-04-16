@@ -23,11 +23,10 @@ Guides
 Send feedback
 Stay organized with collections
 Save and categorize content based on your preferences.
-Create a lakehouse with Spark and BigQuery
+Create a lakehouse with Spark and BigLake metastore
 A lakehouse architecture combines the flexibility of a data lake with the data
 management features of a data warehouse. This document shows you how to set up a
-lakehouse on Google Cloud. You use Apache Iceberg as the table format, Apache
-Spark on Managed Service for Apache Spark for processing, and the BigQuery Iceberg REST Catalog for
+lakehouse on Google Cloud. You use Apache Iceberg as the table format, Managed Service for Apache Spark for processing, and the BigLake metastore Iceberg REST Catalog for
 unified metadata management.
 This architecture uses open table formats like Iceberg to add data warehousing
 capabilities, such as transactions and schema evolution, to data in Cloud Storage. This approach creates a single source of truth for your data that is
@@ -117,21 +116,20 @@ to the Compute Engine default service account, not to your user account. Failure
 Create a Managed Service for Apache Spark cluster
 Create a Managed Service for Apache Spark cluster with the Iceberg and Jupyter optional components.
 To create the cluster, run the following gcloud command:
-gcloud beta dataproc clusters create CLUSTER_NAME \
+gcloud dataproc clusters create CLUSTER_NAME \
 --project = PROJECT_ID \
 --region = REGION \
 --image-version = 2 .3-debian12 \
 --optional-components = ICEBERG,JUPYTER \
 --enable-component-gateway
 Replace the following:
-CLUSTER_NAME : the name for your Managed Service for Apache Spark
-cluster.
+CLUSTER_NAME : a name for your cluster.
 PROJECT_ID : your Google Cloud project ID.
 REGION : the Google Cloud region for the
 cluster, for example, us-central1 .
 Connect to the cluster using a Jupyter Notebook. You can use a Vertex AI Workbench notebook or launch a notebook directly on the cluster.
 Configure a Spark session
-In your Jupyter Notebook, create a Spark session configured to use the BigQuery
+In your Jupyter Notebook, create a Spark session configured to use the BigLake metastore
 Iceberg REST Catalog.
 import pyspark
 from pyspark.context import SparkContext
@@ -144,14 +142,14 @@ spark = SparkSession . builder . appName ( " APP_NAME " ) \
 . config ( f 'spark.sql.catalog. { catalog_name } .warehouse' , 'gs:// GCS_BUCKET ' ) \
 . config ( f 'spark.sql.catalog. { catalog_name } .header.x-goog-user-project' , ' PROJECT_ID ' ) \
 . config ( f 'spark.sql.catalog. { catalog_name } .rest.auth.type' , 'org.apache.iceberg.gcp.auth.GoogleAuthManager' ) \
-. config ( f 'spark.sql.catalog. { catalog_name } .io-impl' , 'org.apache.iceberg.hadoop.HadoopFileIO' ) \
+. config ( f 'spark.sql.catalog. { catalog_name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \
 . config ( f 'spark.sql.catalog. { catalog_name } .rest-metrics-reporting-enabled' , 'false' ) \
 . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \
-. config ( 'spark.sql.defaultCatalog' , ' CATALOG_NAME ' ) \
+. config ( 'spark.sql.defaultCatalog' , catalog_name ) \
 . getOrCreate ()
 Replace the following:
 CATALOG_NAME : a name for your Iceberg catalog,
-for example, bq_iceberg_catalog .
+for example, iceberg_catalog .
 APP_NAME : the name of your Spark application.
 GCS_BUCKET : the Cloud Storage bucket to store
 your Iceberg table data.
@@ -159,12 +157,12 @@ PROJECT_ID : your Google Cloud project ID.
 Manage data with Spark SQL
 After you configure the Spark session, use Spark SQL to perform data management
 operations.
-Create a namespace. In the BigQuery Iceberg REST Catalog, a namespace
+Create a namespace. In the BigLake metastore Iceberg REST Catalog, a namespace
 corresponds to a BigQuery dataset.
 spark . sql ( "CREATE NAMESPACE IF NOT EXISTS NAMESPACE_NAME " )
 spark . sql ( "USE NAMESPACE_NAME " )
 Replace NAMESPACE_NAME with the name for your
-namespace, for example, spark_bq_lakehouse .
+namespace, for example, spark_lakehouse .
 Create a base table in Iceberg format and insert data.
 spark . sql ( "DROP TABLE IF EXISTS base_table PURGE" )
 spark . sql ( "CREATE TABLE base_table (id LONG) USING iceberg" )
@@ -273,11 +271,11 @@ before any UPDATE or DELETE operations.
 | 6|
 +---+
 What's next
-Learn more about the BigQuery Iceberg REST Catalog .
+Learn more about the BigLake metastore Iceberg REST Catalog .
 Explore the features of Apache Iceberg .
-Learn how to query Iceberg data from BigQuery .
+Learn how to query Iceberg data from BigLake metastore .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

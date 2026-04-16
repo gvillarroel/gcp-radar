@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:20.472Z"
+generated_at: "2026-04-12T12:16:09.660Z"
 product_name: "Gemini"
 product_slug: "gemini"
 feature_name: "BigQuery data canvas"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-08-28"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
   - "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
-  - "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
 keywords:
   - "canvas"
   - "gemini"
@@ -38,47 +39,66 @@ Gemini in BigQuery provides a data canvas for interactive data exploration and a
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini)
 - [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
-- [https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
 
 ## Supporting Pages
 
-### Set up Gemini Code Assist Standard and Enterprise | Gemini for Google Cloud | Google Cloud Documentation
+### "Code with Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
 
-- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
-- Source ID: `site-docs-root`
-- Final score: 224
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini)
+- Source ID: `site-docs-root-2`
+- Final score: 269
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Set up Gemini Code Assist Standard and Enterprise Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini Before you can use services available to users with Gemini Code Assist Standard or Enterprise licenses, your team needs to perform the setup steps that are described in this document: Note: An administrator typically performs steps 1-4.
-- Purchase a subscription to Gemini Code Assist Standard or Enterprise.
-- Enable the Gemini for Google Cloud API in a Google Cloud project.
-- Assign licenses to users in your organization.
+- Prompt Gemini Code Assist with code transformation Code transformation allows you to use commands or natural language prompts in the Quick Pick menu to request modifications to your code, and provides you with a diff view to show pending changes to your code.
+- A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service "cloudaicompanion.googleapis.com:443" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info IntelliJ There are no known issues for Gemini Code Assist for IntelliJ and other supported JetBrains IDEs.
+- Prompt Gemini Code Assist in a code file with a comment If you prefer, you can also prompt Gemini Code Assist in your code file with a comment by following these steps: VS Code On a new line, enter the comment Function to create a Cloud Storage bucket , and then press Enter (for Windows and Linux) or Return (for macOS).
+- This document describes how you can use Gemini Code Assist , an AI-powered collaborator in your IDE, to help you do the following in VS Code or IntelliJ and other supported JetBrains IDEs : Generate code for your project with code transformation.
 
-### Gemini Code Assist Standard and Enterprise overview | Gemini for Google Cloud | Google Cloud Documentation
+### "Gemini Code Assist Standard and Enterprise overview \_|\_ Gemini for Google\
 
 - URL: [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
 - Source ID: `site-docs-root`
-- Final score: 198
+- Final score: 266
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini Code Assist Standard and Enterprise overview Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/overview Gemini Code Assist Standard and Enterprise, which are products in the Gemini for Google Cloud portfolio, offer AI-powered assistance to help your development team build, deploy, and operate applications throughout the software development lifecycle.
+- Gemini Code Assist code explained for Apigee policies. ( Preview ) Gemini in Application Integration The following table shows the types of generative AI assistance in Application Integration in the Google Cloud console: Integration creation assist Gemini Code Assist Standard Gemini Code Assist Enterprise AI-assisted visual editor for automation flow generation Enterprise context embedded AI-assisted automation authoring Generative AI Automation flow documentation generation and refinement Gemini in BigQuery features with Gemini Code Assist The following table shows the types of generative AI assistance for BigQuery in BigQuery Studio : Data insights Gemini Code Assist Standard Gemini Code Assist Enterprise Data insights provides an insightful library of queries generated from the metadata of your tables.
+- Gemini Cloud Assist The following table shows the types of generative AI assistance in Gemini Cloud Assist in the Google Cloud console: Gemini Cloud Assist assistance Gemini Code Assist Standard Gemini Code Assist Enterprise Gemini Cloud Assist features (including features available to all Google users and available to Gemini Code Assist Enterprise users) Gemini in Apigee The following table shows the types of generative AI assistance with API development in Apigee (IDE and the Google Cloud console): Gemini Code Assist for API management Gemini Code Assist Standard Gemini Code Assist Enterprise Create or edit OpenAPI specification using natural language prompts.
+- Gemini in Colab Enterprise The following table shows the types of generative AI assistance for code in Colab Enterprise : Notebook code assist Gemini Code Assist Standard Gemini Code Assist Enterprise Python code generation and completion in notebook Gemini in databases The following table shows the types of generative AI assistance for coding in databases: Generate SQL queries Gemini Code Assist Standard Gemini Code Assist Enterprise Write in natural language to generate SQL statements.
+- Interact with Gemini Code Assist in your IDE After you set up Gemini Code Assist Standard or Enterprise for a Google Cloud project , and install the Gemini Code Assist extension in your IDE ( VS Code or supported JetBrains IDE ), you can ask for assistance in the following ways: Receive code completions or generate code directly in the code editor.
 
-### Gemini CLI | Gemini for Google Cloud | Google Cloud Documentation
+### "Chat with Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
 
-- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli)
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini)
 - Source ID: `site-docs-root`
-- Final score: 184
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 265
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini CLI Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli The Gemini CLI uses a reason and act (ReAct) loop with your built-in tools and local or remote MCP servers to complete complex use cases like fixing bugs, creating new features, and improving test coverage.
+- Create custom commands By default, Gemini Code Assist provides commands like /generate for VS Code and Generate Code for IntelliJ and other supported JetBrains IDEs .
+- Rules in Gemini let you define your preferences, such as: Coding style Output formats Tech stack Language For example, you can create a rule such as "Always give me concise responses in Kotlin." VS Code In your code file, press Control+I (for Windows and Linux) or Command+I (for macOS) to open the Gemini Code Assist Quick Pick menu.
+- If you disable automatic outline generation, you can manually generate an outline for the file in focus by right-clicking in the file and selecting Gemini Code Assist > Outline current file , or by going to the Gemini Code Assist outline pane and clicking the Generate outline button.
+- You can also invoke the custom command with the in-editor prompt by performing the following tasks: In your code file, highlight the code that you want to modify, and press Alt+\ (for Windows and Linux) or Cmd+\ (for macOS) to open the Gemini Code Assist Quick Pick menu.
+
+### "Set up Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
+- Source ID: `site-docs-root`
+- Final score: 261
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Learn more about the supported features: Code features overview Chat features overview Get started with the following guides: Code with Gemini Code Assist Chat with Gemini Code Assist List of directories where Gemini Code Assist caches information The following table provides a list of directories where Gemini Code Assist stores extension information such as auth tokens: Windows %LOCALAPPDATA%/cloud-code %LOCALAPPDATA%/google-vscode-extension macOS /Library/Application Support/cloud-code /Library/Application Support/google-vscode-extension Linux /.cache/cloud-code /.cache/google-vscode-extension Sign into Google and select a Google Cloud project Once users have installed Gemini Code Assist in their IDEs, they need to sign in to their Google Accounts, and if it's their first time using Gemini Code Assist Standard or Enterprise in their IDE, they select a Google Cloud project.
+- Configure the firewall for API traffic between your IDE and Google In addition to enabling the Gemini for Google Cloud API, users behind firewalls also need to allow traffic to pass through for the following APIs: oauth2.googleapis.com : used to sign in to Google Cloud. serviceusage.googleapis.com : used for checking that the user's Gemini Code Assist project is properly configured. cloudaicompanion.googleapis.com : the primary Gemini for Google Cloud API endpoint. cloudcode-pa.googleapis.com : an internal API that provides IDE-related features. cloudresourcemanager.googleapis.com : used in the IDEs for project pickers.
+- Any custom roles that you create need the following permissions for you to assign and manage Gemini Code Assist licenses: consumerprocurement.orders.get consumerprocurement.orders.licensePools. consumerprocurement.orders.licensePools.update consumerprocurement.orders.licensePools.get consumerprocurement.orders.licensePools.assign consumerprocurement.orders.licensePools.unassign consumerprocurement.orders.licensePools.enumerateLicensedUsers Also note that for any of the preceding permissions to work, the Gemini for Google Cloud API needs to be enabled in the same Google Cloud project where you've assigned each permission.
+- The Resource Manager API may not be necessary if the projects are explicitly configured in your settings.json file. people.googleapis.com : provides access to information about profiles and contacts. firebaselogging-pa.googleapis.com : an internal API used for sending product telemetry including events as to whether suggestions were accepted. feedback-pa.googleapis.com : an internal API used for in-IDE feedback submission. apihub.googleapis.com : used by the Cloud Code API Browser feature. lh3.googleusercontent.com and lh5.googleusercontent.com : used to obtain user photos.
 

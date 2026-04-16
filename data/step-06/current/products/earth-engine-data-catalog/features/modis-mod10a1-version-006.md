@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:59.048Z"
+generated_at: "2026-04-14T15:13:20.284Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "MODIS MOD10A1 Version 006"
 feature_slug: "modis-mod10a1-version-006"
 latest_feature_date: "2017-02-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/catalog/modis"
-  - "https://developers.google.com/earth-engine/datasets/catalog"
   - "https://developers.google.com/earth-engine/datasets/tags/geophysical"
+  - "https://developers.google.com/earth-engine/datasets/tags/cryosphere"
 keywords:
   - "modis"
   - "mod10a1"
@@ -26,7 +26,7 @@ keywords:
 # MODIS MOD10A1 Version 006
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ A MODIS daily snow cover dataset for Terra, version 006.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/datasets/catalog/modis](https://developers.google.com/earth-engine/datasets/catalog/modis)
-- [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - [https://developers.google.com/earth-engine/datasets/tags/geophysical](https://developers.google.com/earth-engine/datasets/tags/geophysical)
+- [https://developers.google.com/earth-engine/datasets/tags/cryosphere](https://developers.google.com/earth-engine/datasets/tags/cryosphere)
 
 ## Supporting Pages
 
@@ -52,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/modis](https://developers.google.com/earth-engine/datasets/catalog/modis)
 - Source ID: `site-docs-root`
-- Final score: 192
+- Final score: 188
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +61,11 @@ Evidence snippets:
 - Snow cover data are based on a snow mapping algorithm that employs a Normalized Difference Snow Index (NDSI) and other criteria tests. photo library MODIS/061/MOD10A1 MOD11A1.061 Terra Land Surface Temperature and Emissivity Daily Global 1km The MOD11A1 V6.1 product provides daily land surface temperature (LST) and emissivity values in a 1200 x 1200 kilometer grid.
 - For each pixel, a value is selected from all the acquisitions within the 8-day composite on the basis of high observation coverage, low view angle, the absence of clouds or cloud shadow, and aerosol loading. photo library MODIS/061/MOD09A1 MOD09CMG.061 Surface Reflectance Daily L3 Global 0.05 Deg CMG The MOD09CMG Version 6.1 product provides an estimate of the surface spectral reflectance of Terra Moderate Resolution Imaging Spectroradiometer (MODIS) Bands 1 through 7, resampled to 5600 meter pixel resolution and corrected for atmospheric conditions such as gasses, aerosols, and Rayleigh scattering.
 
-### Earth Engine Data Catalog \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For each … 8-day global mod09q1 modis nasa satellite-imagery MOD10A1.061 Terra Snow Cover Daily Global 500m The MOD10A1 V6.1 Snow Cover Daily Global 500m product contains snow cover, snow albedo, fractional snow cover, and quality assessment (QA) data.
-- General … albedo cryosphere daily geophysical global modis MOD10A2.061 Terra Snow Cover 8-Day L3 Global 500m MOD10A2 is a snow cover dataset from the MODIS on the Terra satellite.
-- The Multivariate Adaptive Constructed Analogs (MACA) method is a statistical downscaling method which utilizes a training dataset (i.e. a meteorological observation dataset) to remove historical biases and match spatial patterns … climate conus geophysical idaho maca monthly MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
-- Completed in late 1996, GTOPO30 was developed over a three-year period through … dem elevation elevation-topography geophysical nasa topography GlobCover: Global Land Cover Map GlobCover 2009 is a global land cover map based on ENVISAT's Medium Resolution Imaging Spectrometer (MERIS) Level 1B data acquired in full resolution mode with a spatial resolution of approximately 300 meters. esa landcover landuse-landcover GlobFire Daily Fire Event Detection Based on MCD64A1 Fire boundaries based on the MODIS dataset MCD64A1.
-
 ### "Datasets tagged geophysical in Earth Engine \_|\_ Earth Engine Data Catalog\
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/geophysical](https://developers.google.com/earth-engine/datasets/tags/geophysical)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 172
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +73,18 @@ Evidence snippets:
 - General … albedo cryosphere daily geophysical global modis MOD10A2.061 Terra Snow Cover 8-Day L3 Global 500m MOD10A2 is a snow cover dataset from the MODIS on the Terra satellite.
 - The … aqua atmosphere climate geophysical global modis MYD10A1.061 Aqua Snow Cover Daily Global 500m The MYD10A1 V6 Snow Cover Daily Global 500m product contains snow cover, snow albedo, fractional snow cover, and quality assessment (QA) data.
 - The Multivariate Adaptive Constructed Analogs (MACA) method is a statistical downscaling method which utilizes a training dataset (i.e. a meteorological observation dataset) to remove historical biases and match spatial patterns … climate conus geophysical idaho maca monthly MCD64A1.061 MODIS Burned Area Monthly Global 500m The Terra and Aqua combined MCD64A1 Version 6.1 Burned Area data product is a monthly, global gridded 500m product containing per-pixel burned-area and quality information.
+
+### "Datasets tagged cryosphere in Earth Engine \_|\_ Earth Engine Data Catalog\
+
+- URL: [https://developers.google.com/earth-engine/datasets/tags/cryosphere](https://developers.google.com/earth-engine/datasets/tags/cryosphere)
+- Source ID: `site-docs-root-3`
+- Final score: 171
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- General … albedo cryosphere daily geophysical global modis MOD10A2.061 Terra Snow Cover 8-Day L3 Global 500m MOD10A2 is a snow cover dataset from the MODIS on the Terra satellite.
+- The maps are generated by tracking visible features between optical image pairs acquired by the Landsat … arctic cryosphere gimp greenland ice nasa MOD10A1.061 Terra Snow Cover Daily Global 500m The MOD10A1 V6.1 Snow Cover Daily Global 500m product contains snow cover, snow albedo, fractional snow cover, and quality assessment (QA) data.
+- An eight-day compositing period was chosen because that is the exact ground track repeat … cryosphere daily geophysical global modis nasa MYD10A1.061 Aqua Snow Cover Daily Global 500m The MYD10A1 V6 Snow Cover Daily Global 500m product contains snow cover, snow albedo, fractional snow cover, and quality assessment (QA) data.
+- Multiple datasets are available providing detailed ice and snow cover information for regions like Greenland and globally, utilizing data from satellites like Landsat and MODIS.
 

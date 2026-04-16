@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.471Z"
+generated_at: "2026-04-14T07:40:14.475Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Private triggers"
 feature_slug: "private-triggers"
 latest_feature_date: "2024-02-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/using-integration-connectors"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger"
+  - "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
 keywords:
   - "private"
   - "split"
+  - "large"
   - "triggers"
-  - "application"
   - "supports"
-  - "integration"
-  - "to"
-  - "now"
 ---
 
 # Private triggers
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,51 @@ Application Integration now supports private triggers to split large flows into 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/using-integration-connectors](https://docs.cloud.google.com/application-integration/docs/using-integration-connectors)
+- [https://docs.cloud.google.com/application-integration/docs/configure-private-trigger](https://docs.cloud.google.com/application-integration/docs/configure-private-trigger)
+- [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
+- [https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger](https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger)
 
 ## Supporting Pages
 
-### "Automate Salesforce opportunity to BigQuery order \_|\_ Application Integration\
+### Private triggers \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
-- Source ID: `site-docs-root`
-- Final score: 194
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-private-trigger](https://docs.cloud.google.com/application-integration/docs/configure-private-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 160
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors BigQuery Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier .
-- This tutorial describes a use case on how you can use Application Integration to automate an order management flow between a customer relationship management (CRM) application and an enterprise resource planning (ERP) application.
-- Home Documentation Application development Application Integration Guides Send feedback Automate Salesforce opportunity to BigQuery order Stay organized with collections Save and categorize content based on your preferences.
-- During validation, if the account information doesn't exist in BigQuery, the integration will automatically create a new entry in both the BigQuery table and the attached ServiceNow instance using Integration Connectors.
+- Private triggers Private triggers enable you to break large flows into various subflows.
+- Private triggers can be invoked from the following flow control tasks: Call Integration For Each Loop For Each Parallel While Loop Quotas and limits The execution of private triggers shares the Maximum cumulative size of all the integration data limit, which is set to 30 MB, with the parent integration.
+- Limitation If your private trigger workflow contains any of the following async tasks, then you can't trigger the private workflow from the main workflow with the SYNC execution strategy: Timer task Suspend task Approval task What's next Learn about all tasks and triggers .
+- Increases security: Restrict flows to be invoked only from other integrations as private triggers cannot be triggered independently from public APIs.
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### SAP ERP trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 184
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger](https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 74
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 23, 2024 Feature Application Integration now supports private triggers that enable you to break large flows into various subflows.
-- Issue Known issues Integration fails to publish when duplicate Connector Event triggers are configured Event subscription error when an integration containing Connector Event triggers is uploaded For more information, see Application Integration known issues .
-- February 02, 2026 Feature FIFO message processing with Pub/Sub ordering keys Application Integration now supports publishing messages to Google Cloud Pub/Sub topics using ordering keys, enabling First-In, First-Out (FIFO) message processing.
-- December 20, 2024 Change Dynamic Backend Authentication support for Connectors Application Integration now supports dynamic backend authentication for connectors.
+- This field identifies the type of event associated with the incoming event request. { "event type" : "user.created" , ... // other request fields ... } Select Enable private connectivity for secured connectivity between your backend application and your connection.
+- Custom read table functions The connector includes a custom read-table RFC, Z CUSTOM READ TABLE that is similar to the SAP RFC READ TABLE , but with a larger buffer to address the DATA BUFFER EXCEEDED problem and bypass RFC READ TABLE limitations.
+- If you want to establish a private connection to your backend systems, select Endpoint attachment from the list, and then select the required endpoint attachment from the Endpoint Attachment list.
+- ELSE. lv client key = 'IC DEMO GOOGLE APIK'. lv p connections id = 'conn-event-triggers-from-sap-erp-apik'.
 
-### "Use Integration Connectors \_|\_ Application Integration \_|\_ Google Cloud\
+### "All triggers and tasks \_|\_ Application Integration \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/using-integration-connectors](https://docs.cloud.google.com/application-integration/docs/using-integration-connectors)
+- URL: [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
 - Source ID: `site-docs-root`
-- Final score: 182
+- Final score: 66
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- These connectors let you quickly and securely connect to the Google Cloud services and other business applications from your integrations.
-- Supported connectors For the list of all the supported connectors for Application Integration, see Integration Connectors reference .
-- By using connectors available in Integration Connectors, you get the following benefits: Standardized interfaces Integration Connectors provide standardized interfaces for entities and actions.
-- Home Documentation Application development Application Integration Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Triggers API trigger Private trigger Cloud Pub/Sub trigger Schedule trigger Salesforce trigger Cloud Scheduler trigger Error Catcher trigger Connector Event triggers Apache Kafka trigger HL7 trigger IBM MQ trigger Jira Cloud trigger Jira Server Data Center trigger HubSpot trigger Rabbit MQ trigger SAP Gateway trigger SAP ERP trigger ServiceNow trigger Solace trigger TIBCO EMS trigger Webhook trigger Zendesk trigger Tasks for Google Cloud services AI Platform - Prediction task Apps Script task Cloud Function task Cloud KMS - decrypt Cloud KMS - encrypt Dataflow - Create Job task Drive - List task Doc AI - Batch Process task Doc AI - Operation task Doc AI - Process task Firestore - Batch Get task Firestore - Batch Write task Firestore - Document Get task Language - Annotate Text task Language - Classify Text task Secret Manager - Access task Sheets - Append task Sheets - Batch Get task Sheets - Get task Translate - Document task Translate - Text task Vertex AI - Predict task Workflows - Execute task Integration tasks Data Mapping task Call Integration task For Each Parallel task For Each Loop task While Loop task Approval task Send Email task Suspend task Timer task JavaScript task Return task Connectors task Call REST Endpoint task Data transformer script task Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- All triggers and tasks This page introduces the various configurable triggers and tasks available in Application Integration.
 

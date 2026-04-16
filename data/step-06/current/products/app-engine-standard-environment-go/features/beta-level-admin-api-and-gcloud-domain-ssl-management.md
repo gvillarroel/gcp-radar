@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:52:30.820Z"
+generated_at: "2026-04-12T20:52:24.750Z"
 product_name: "App Engine standard environment Go"
 product_slug: "app-engine-standard-environment-go"
 feature_name: "Beta-level Admin API and gcloud domain/SSL management"
 feature_slug: "beta-level-admin-api-and-gcloud-domain-ssl-management"
 latest_feature_date: "2017-06-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started"
-  - "https://docs.cloud.google.com/appengine/docs/admin-api/apis"
-  - "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed"
+  - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/connecting-vpc"
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl"
 keywords:
-  - "domain and SSL management"
-  - "gcloud app domain-mappings"
-  - "domain mappings"
-  - "SSL certificates"
-  - "gcloud app ssl"
-  - "custom domains"
-  - "App Engine Admin API beta"
-  - "App Engine Admin API"
+  - "beta"
+  - "level"
+  - "admin"
+  - "gcloud"
+  - "domain"
+  - "ssl"
+  - "management"
+  - "command"
 ---
 
 # Beta-level Admin API and gcloud domain/SSL management
 
 Product: App Engine standard environment Go
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,49 +38,55 @@ The Admin API and gcloud command-line tool added beta-level features for creatin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
-- [https://docs.cloud.google.com/appengine/docs/admin-api/apis](https://docs.cloud.google.com/appengine/docs/admin-api/apis)
-- [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
+- [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- [https://docs.cloud.google.com/appengine/docs/standard/go/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/go/connecting-vpc)
+- [https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl](https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl)
 
 ## Supporting Pages
 
-### "An Overview of the Admin API \_|\_ App Engine Admin API \_|\_ Google Cloud\
+### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
-- Source ID: `site-docs-root`
-- Final score: 38
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.
-- The App Engine Admin API is a RESTful API for managing your App Engine applications regardless of programming language.
-- Tip: You can use client libraries to interact with App Engine Admin API.
-
-### APIs and Reference \_|\_ App Engine Admin API \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/apis](https://docs.cloud.google.com/appengine/docs/admin-api/apis)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
 - Source ID: `site-docs-reference`
-- Final score: 28
-- Re-rank relevance: N/A
+- Final score: 157
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Technology areas App Engine Admin API Reference Send feedback APIs and Reference Stay organized with collections Save and categorize content based on your preferences.
+- Use the following gcloud command to delete a connector: gcloud compute networks vpc-access connectors delete CONNECTOR NAME --region= REGION Replace the following: CONNECTOR NAME with the name of the connector you want to delete REGION with the region where the connector is located Manage custom constraints for projects This section describes how to create custom constraints for Serverless VPC Access connectors and enforce them at the project level.
+- To increase the minimum or maximum number of instances for the connector, run the following command in your terminal: gcloud beta compute networks vpc-access connectors update CONNECTOR NAME --region = REGION --min-instances = MIN INSTANCES --max-instances = MAX INSTANCES Replace the following: CONNECTOR NAME : the name of your connector REGION : the name of your connector's region MIN INSTANCES : your preferred minimum number of instances.
+- To update the connector machine type, run the following command in your terminal: gcloud beta compute networks vpc-access connectors update CONNECTOR NAME --region = REGION --machine-type = MACHINE TYPE Replace the following: CONNECTOR NAME : the name of your connector REGION : the name of your connector's region MACHINE TYPE : your preferred machine type.
+- To perform these steps, you must have one of the following roles on the host project: Owner role ( roles/owner ) Compute Security Admin role ( roles/compute.securityAdmin ) Custom Identity and Access Management (IAM) role with the compute.firewalls.create permission enabled For a basic configuration, apply the rules to allow serverless resources in any service project connected to the Shared VPC network to send requests to any resource in the network.
 
-### "How requests are routed \_|\_ App Engine standard environment \_|\_ Google\
+### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
-- Source ID: `site-docs-root`
-- Final score: 22
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/go/connecting-vpc)
+- Source ID: `site-docs-reference-2`
+- Final score: 157
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Otherwise, users can use your app's App Engine URL to bypass the load balancer, Cloud Armor security policies, SSL certificates, and private keys that are passed through the load balancer.
-- Soft routing does not apply to custom domains; requests to them will return a HTTP 404 status code if the hostname is invalid.
-- Reuse the same SSL certificates and private keys that you use for Compute Engine, Google Kubernetes Engine, and Cloud Storage.
-- You can use the simple " . " URL notation with your own custom domains and with HTTP requests.
+- Use the following gcloud command to delete a connector: gcloud compute networks vpc-access connectors delete CONNECTOR NAME --region= REGION Replace the following: CONNECTOR NAME with the name of the connector you want to delete REGION with the region where the connector is located Manage custom constraints for projects This section describes how to create custom constraints for Serverless VPC Access connectors and enforce them at the project level.
+- To increase the minimum or maximum number of instances for the connector, run the following command in your terminal: gcloud beta compute networks vpc-access connectors update CONNECTOR NAME --region = REGION --min-instances = MIN INSTANCES --max-instances = MAX INSTANCES Replace the following: CONNECTOR NAME : the name of your connector REGION : the name of your connector's region MIN INSTANCES : your preferred minimum number of instances.
+- To update the connector machine type, run the following command in your terminal: gcloud beta compute networks vpc-access connectors update CONNECTOR NAME --region = REGION --machine-type = MACHINE TYPE Replace the following: CONNECTOR NAME : the name of your connector REGION : the name of your connector's region MACHINE TYPE : your preferred machine type.
+- To perform these steps, you must have one of the following roles on the host project: Owner role ( roles/owner ) Compute Security Admin role ( roles/compute.securityAdmin ) Custom Identity and Access Management (IAM) role with the compute.firewalls.create permission enabled For a basic configuration, apply the rules to allow serverless resources in any service project connected to the Shared VPC network to send requests to any resource in the network.
+
+### "Securing custom domains with SSL \_|\_ App Engine standard environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl](https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl)
+- Source ID: `site-docs-reference-2`
+- Final score: 154
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you prefer, you can use gcloud commands or the Admin API .
+- Example: myserver.key.pem Example: openssl rsa -in myserver.key -out myserver.key.pem Concatenate all of the .crt files from your CA into one file, using the following command: cat [ MY DOMAIN CERT ] . crt [ MY SecureServerCA ] . crt [ MY TrustCA ] . crt [ MY TrustExternalCARoot ] . crt > [ MY CONCAT CERT ] . crt where [MY DOMAIN CERT].crt is the certificate for your domain.
+- Example: concat.crt Example: cat www example com.crt AddTrustExternalCARoot.crt RSADomainValidationSecureServerCA.crt RSAAddTrustCA.crt > concat.crt Verify your SSL certificate and private key: To verify that the private key and certificate match , you can use the openssl x509 and openssl rsa commands.
+- You will need to configure an email address in your domain account, for example admin@example.com , so that you can receive and respond to the CA's approval request.
 

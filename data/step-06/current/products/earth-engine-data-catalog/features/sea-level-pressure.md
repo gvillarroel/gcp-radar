@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:59.115Z"
+generated_at: "2026-04-14T15:13:20.358Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Sea-Level Pressure"
 feature_slug: "sea-level-pressure"
 latest_feature_date: "2015-03-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/catalog"
   - "https://developers.google.com/earth-engine/datasets/tags/atmosphere"
@@ -19,13 +19,12 @@ keywords:
   - "ncep"
   - "ncar"
   - "reanalysis"
-  - "for"
 ---
 
 # Sea-Level Pressure
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,7 +36,7 @@ NCEP/NCAR reanalysis data for sea-level pressure.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -51,7 +50,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 166
+- Final score: 161
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -64,20 +63,20 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/atmosphere](https://developers.google.com/earth-engine/datasets/tags/atmosphere)
 - Source ID: `site-docs-root`
-- Final score: 150
+- Final score: 159
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - These methane emission fluxes were produced using a point source detection and emissions quantification framework specialized to exploit the high spatial resolution, wide spatial coverage, and high precision of … atmosphere climate edf edf-methanesat-ee emissions ghg NCEP-DOE Reanalysis 2 (Gaussian Grid), Total Cloud Coverage NCEP-DOE Reanalysis 2 project is using a state-of-the-art analysis/forecast system to perform data assimilation using past data from 1979 through the previous year. atmosphere climate cloud geophysical ncep noaa NCEP/NCAR Reanalysis Data, Sea-Level Pressure [deprecated] The NCEP/NCAR Reanalysis Project is a joint project between the National Centers for Environmental Prediction (NCEP, formerly "NMC") and the National Center for Atmospheric Research (NCAR).
-- The goal of this joint effort is to produce new atmospheric analyses using historical data as well as to … atmosphere climate geophysical ncep noaa pressure NCEP/NCAR Reanalysis Data, Surface Temperature [deprecated] The NCEP/NCAR Reanalysis Project is a joint project between the National Centers for Environmental Prediction (NCEP, formerly "NMC") and the National Center for Atmospheric Research (NCAR).
 - NCEP/NCAR offers reanalysis data on sea-level pressure, surface temperature, and water vapor.
+- The goal of this joint effort is to produce new atmospheric analyses using historical data as well as to … atmosphere climate geophysical ncep noaa pressure NCEP/NCAR Reanalysis Data, Surface Temperature [deprecated] The NCEP/NCAR Reanalysis Project is a joint project between the National Centers for Environmental Prediction (NCEP, formerly "NMC") and the National Center for Atmospheric Research (NCAR).
 - The goal of this joint effort is to produce new atmospheric analyses using historical data as well as to … atmosphere climate geophysical ncep noaa reanalysis NCEP/NCAR Reanalysis Data, Water Vapor [deprecated] The NCEP/NCAR Reanalysis Project is a joint project between the National Centers for Environmental Prediction (NCEP, formerly "NMC") and the National Center for Atmospheric Research (NCAR).
 
 ### "Datasets tagged climate in Earth Engine \_|\_ Earth Engine Data Catalog\
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
 - Source ID: `site-docs-root`
-- Final score: 150
+- Final score: 159
 - Re-rank relevance: N/A
 
 Evidence snippets:

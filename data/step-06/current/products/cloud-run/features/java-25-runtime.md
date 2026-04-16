@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.888Z"
+generated_at: "2026-04-14T15:34:54.401Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Java 25 runtime"
@@ -9,18 +9,13 @@ latest_feature_date: "2025-12-22"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
-  - "https://docs.cloud.google.com/run/docs/container-contract"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java"
+  - "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus"
 keywords:
   - "java"
-  - "25"
   - "runtime"
-  - "run"
   - "supports"
-  - "the"
-  - "for"
-  - "services"
 ---
 
 # Java 25 runtime
@@ -38,53 +33,53 @@ Cloud Run supports the Java 25 runtime for services; Cloud Run supports the Java
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/tutorials/identity-platform](https://docs.cloud.google.com/run/docs/tutorials/identity-platform)
-- [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview)
+- [https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java](https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java)
+- [https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus](https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus)
 
 ## Supporting Pages
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### "google-cloud-run overview (0.88.0) \_|\_ Java client libraries \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 200
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- November 11, 2025 Feature You can set a task timeout up to 168 hours (7 days) for Cloud Run jobs. (GA) November 06, 2025 Feature Use dual-stack subnets with IPv6 to let your Cloud Run resources send IPv4 and internal IPv6 traffic to a VPC network with Direct VPC egress, and send external IPv6 traffic to the public internet. (GA) October 31, 2025 Feature Support for Java 25 runtime is in Preview .
-- April 02, 2025 Feature Deploying multiple containers (sidecars) to a Cloud Run job is now generally available. (GA) March 28, 2025 Feature The ability to disable the Invoker IAM check for Cloud Run services is now at general availability (GA).
-- March 26, 2025 Change Cloud Run services configured with Direct VPC egress now use only 2 times (2X) as many IP addresses as the number of instances for the duration of the instance plus up to 20 minutes, reduced from 4X as many IP addresses.
-- October 30, 2025 Feature For Cloud Run source deployed services and functions with GPU enabled , Cloud Run defaults to using Cloud Build's e2-highcpu-8 machine type for the build process when using the gcloud CLI or the Google Cloud console.
-
-### End user authentication for Cloud Run tutorial \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/tutorials/identity-platform](https://docs.cloud.google.com/run/docs/tutorials/identity-platform)
-- Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview)
+- Source ID: `site-java-reference`
+- Final score: 33
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Remove the gcloud default region configuration you added during tutorial setup: gcloud config unset run / region Remove the project configuration: gcloud config unset project Delete other Google Cloud resources created in this tutorial: Delete the service container image from Artifact Registry Delete the service account vote-identity@PROJECT ID.iam.gserviceaccount.com Delete the Cloud SQL instance Delete the secret in Secret Manager What's next Dive deeper into Connecting from Cloud Run to Cloud SQL Learn more about sign in methods and managing users with Identity Platform Review other ways to authenticate developers, services, and users of services deployed to Cloud Run Explore other Cloud Run demos, tutorials, and samples Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Change to the directory that contains the Cloud Run sample code: Node.js cd nodejs-docs-samples/run/idp-sql/ Python cd python-docs-samples/run/idp-sql/ Java cd java-docs-samples/run/idp-sql/ Visualizing the architecture Diagram shows an end-user logging-in through a Google sign-in dialog provided by Identity Platform, and then being redirected back to Cloud Run with the user's identity.
-- You can locate the service URL in the logs after the build or deployment or you can find it anytime using: gcloud run services describe idp-sql --format 'value(status.url)' Go to the APIs & Services > Credentials page Click the pencil icon beside your OAuth Client ID to edit it and under the Authorized redirect URIs click the Add URI button.
-- Meeting your latency, availability, or durability requirements are primary factors for selecting the region where your Cloud Run services are run.
+- Cloud Run Product Reference GitHub Repository Maven artifact Getting Started In order to use this library, you first need to go through the following steps: Install a JDK (Java Development Kit) Select or create a Cloud Platform project Enable billing for your project Enable the API Set up authentication Use the Cloud Run for Java To ensure that your project uses compatible versions of the libraries and their component artifacts, import com.google.cloud:libraries-bom and use the BOM to specify dependency versions.
+- Managing Library Versions We recommend using the com.google.cloud:libraries-bom installation method detailed above to streamline dependency management across multiple Cloud Java client libraries.
+- Home Documentation Developer tools Java Client libraries Send feedback google-cloud-run overview (0.88.0) Stay organized with collections Save and categorize content based on your preferences.
+- Choosing the Right Version ID Each Cloud Java client library may contain packages tied to specific Version IDs (e.g., v1 , v2alpha ).
 
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+### "Quickstart: build and create a Java job in Cloud Run \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java](https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java)
+- Source ID: `site-docs-reference-2`
+- Final score: 32
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- 1 Environment variables for worker pools Cloud Run sets the following environment variables for worker pools: Name Description Example CLOUD RUN WORKER POOL The name of the running Cloud Run worker pool. hello-world CLOUD RUN WORKER POOL REVISION The name of the running Cloud Run worker pool revision. hello-world.1 Request and response header requirements (services) For services, Cloud Run restricts header names to printable non-whitespace ASCII, and cannot contain colons.
-- Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.
-- Responses (services) For Cloud Run services, your container must send a response within the time specified in the request timeout setting after it receives a request, including the container startup time.
-- For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.
+- JobsExample < / mainClass > < / manifest > < / archive > < / configuration > < / plugin > < / plugins > < / build > < / project > Create a project.toml file with the following contents, to build with the Java version supported by Buildpack: Default version is Java 11 - See https : //cloud.google.com/docs/buildpacks/java#specify a java version Match the version required in pom . xml by setting it here - See https : //cloud.google.com/docs/buildpacks/set-environment-variables#build the application with environment variables [[ build . env ]] name = "GOOGLE RUNTIME VERSION" value = "17" Your code is complete and ready to be packaged in a container.
+- Success: You created and executed a job using the Java runtime in Cloud Run.
+- Copy the following sample lines into it: package com.example ; abstract class JobsExample { // These values are provided automatically by the Cloud Run Jobs runtime. private static String CLOUD RUN TASK INDEX = System . getenv (). getOrDefault ( "CLOUD RUN TASK INDEX" , "0" ); private static String CLOUD RUN TASK ATTEMPT = System . getenv (). getOrDefault ( "CLOUD RUN TASK ATTEMPT" , "0" ); // User-provided environment variables private static int SLEEP MS = Integer . parseInt ( System . getenv (). getOrDefault ( "SLEEP MS" , "0" )); private static float FAIL RATE = Float . parseFloat ( System . getenv (). getOrDefault ( "FAIL RATE" , "0.0" )); // Start script public static void main ( String [] args ) { System . out . println ( String . format ( "Starting Task #%s, Attempt #%s..." , CLOUD RUN TASK INDEX , CLOUD RUN TASK ATTEMPT )); try { runTask ( SLEEP MS , FAIL RATE ); } catch ( RuntimeException InterruptedException e ) { System . err . println ( String . format ( "Task #%s, Attempt #%s failed." , CLOUD RUN TASK INDEX , CLOUD RUN TASK ATTEMPT )); // Catch error and denote process-level failure to retry Task System . exit ( 1 ); } } static void runTask ( int sleepTime , float failureRate ) throws InterruptedException { // Simulate work if ( sleepTime > 0 ) { Thread . sleep ( sleepTime ); } // Simulate errors if ( failureRate < 0 failureRate > 1 ) { System . err . println ( String . format ( "Invalid FAIL RATE value: %s.
+- Must be a float between 0 and 1 inclusive." , failureRate )); return ; } if ( Math . random () < failureRate ) { throw new RuntimeException ( "Task Failed." ); } System . out . println ( String . format ( "Completed Task #%s" , CLOUD RUN TASK INDEX )); } } Cloud Run jobs allows users to specify the number of tasks the job is to execute.
+
+### "Autoscale worker pools based on Prometheus metrics \_|\_ Cloud Run \_|\_\
+
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus](https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus)
+- Source ID: `site-docs-root-2`
+- Final score: 30
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Deploy the service to scale your workloads To deploy the service to scale your worker pool, run the following command with a prebuilt container image: CREMA CONFIG PARAM VERSION = projects/ $PROJECT ID /locations/ $PARAMETER REGION /parameters/ $PARAMETER ID /versions/ $PARAMETER VERSION IMAGE = us-central1-docker.pkg.dev/cloud-run-oss-images/crema-v1/autoscaler:1.0 gcloud beta run deploy $CREMA SERVICE NAME \ --image = ${ IMAGE } \ --region = ${ REGION } \ --service-account = " ${ CREMA SA NAME } " \ --no-allow-unauthenticated \ --no-cpu-throttling \ --base-image = us-central1-docker.pkg.dev/serverless-runtimes/google-24/runtimes/java25 \ --labels = created-by = crema \ --set-env-vars = "CREMA CONFIG= ${ CREMA CONFIG PARAM VERSION } ,OUTPUT SCALER METRICS=True" Test your autoscaling service To verify your autoscaling service is working correctly, check the Logs tab of the Cloud Run service .
+- Java is a registered trademark of Oracle and/or its affiliates.
 

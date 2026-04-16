@@ -1,0 +1,951 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-14T01:57:24.344Z",
+  "product_name": "Speech-to-Text",
+  "product_slug": "speech-to-text",
+  "input_file": "data/step-06/current/products/speech-to-text/extended-features.json",
+  "feature_count": 50,
+  "passed_feature_count": 50,
+  "failed_feature_count": 0,
+  "warned_feature_count": 2,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "Speech-to-Text regional endpoints",
+      "feature_slug": "speech-to-text-regional-endpoints",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text API v1",
+      "feature_slug": "cloud-speech-to-text-api-v1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "Chirp 3 model",
+      "feature_slug": "chirp-3-model",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model"
+      ]
+    },
+    {
+      "feature_name": "Automatic language detection",
+      "feature_slug": "automatic-language-detection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/multiple-languages"
+      ]
+    },
+    {
+      "feature_name": "Built-in denoiser for transcription",
+      "feature_slug": "built-in-denoiser-for-transcription",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/encryption"
+      ]
+    },
+    {
+      "feature_name": "Chirp 3: Transcription (Speech-to-Text V2)",
+      "feature_slug": "chirp-3-transcription-speech-to-text-v2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models"
+      ]
+    },
+    {
+      "feature_name": "Recognition method support for chirp_3",
+      "feature_slug": "recognition-method-support-for-chirp-3",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.types"
+      ]
+    },
+    {
+      "feature_name": "Speaker diarization",
+      "feature_slug": "speaker-diarization",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/multiple-voices",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+      ]
+    },
+    {
+      "feature_name": "Speech adaptation with custom vocabularies",
+      "feature_slug": "speech-adaptation-with-custom-vocabularies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Chirp 3: Transcription",
+      "feature_slug": "speech-to-text-chirp-3-transcription",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Chirp 2 model general availability",
+      "feature_slug": "speech-to-text-chirp-2-model-general-availability",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Chirp 2 model adaptation",
+      "feature_slug": "speech-to-text-chirp-2-model-adaptation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Chirp 2 model ASR accuracy and speed improvements",
+      "feature_slug": "speech-to-text-chirp-2-model-asr-accuracy-and-speed-improvements",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Chirp 2 multilingual ASR support",
+      "feature_slug": "speech-to-text-chirp-2-multilingual-asr-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Chirp 2 speech translation",
+      "feature_slug": "speech-to-text-chirp-2-speech-translation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Chirp 2 streaming recognition",
+      "feature_slug": "speech-to-text-chirp-2-streaming-recognition",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Chirp 2 word-level timestamps",
+      "feature_slug": "speech-to-text-chirp-2-word-level-timestamps",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api"
+      ]
+    },
+    {
+      "feature_name": "latest_long model adaptation",
+      "feature_slug": "latest-long-model-adaptation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.services.adaptation.AdaptationAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.services.adaptation.AdaptationClient"
+      ]
+    },
+    {
+      "feature_name": "latest_short model quality improvement",
+      "feature_slug": "latest-short-model-quality-improvement",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model"
+      ]
+    },
+    {
+      "feature_name": "chirp_telephony model",
+      "feature_slug": "chirp-telephony-model",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text telephony model",
+      "feature_slug": "speech-to-text-telephony-model",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/use-model"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text telephony_short model",
+      "feature_slug": "speech-to-text-telephony-short-model",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model"
+      ]
+    },
+    {
+      "feature_name": "Medical speech recognition models",
+      "feature_slug": "medical-speech-recognition-models",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model"
+      ]
+    },
+    {
+      "feature_name": "Multi-region endpoints",
+      "feature_slug": "multi-region-endpoints",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/deploy-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/multiple-languages"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Spoken Emoji",
+      "feature_slug": "speech-to-text-spoken-emoji",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/spoken-emoji",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Spoken Punctuation",
+      "feature_slug": "speech-to-text-spoken-punctuation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/automatic-punctuation",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text Model Adaptation",
+      "feature_slug": "speech-to-text-model-adaptation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/prepare-data"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text long-running transcription output to Cloud Storage",
+      "feature_slug": "speech-to-text-long-running-transcription-output-to-cloud-storage",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text regional endpoints",
+      "feature_slug": "speech-to-text-regional-endpoints",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "feature_name": "Speech-to-Text On-Prem API",
+      "feature_slug": "speech-to-text-on-prem-api",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/apis",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+      ]
+    },
+    {
+      "feature_name": "Automatic punctuation",
+      "feature_slug": "automatic-punctuation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/automatic-punctuation",
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/recognizers",
+        "https://docs.cloud.google.com/speech-to-text/docs/multiple-languages"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text language support",
+      "feature_slug": "cloud-speech-to-text-language-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/multiple-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens"
+      ]
+    },
+    {
+      "feature_name": "Enhanced telephony model",
+      "feature_slug": "enhanced-telephony-model",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model"
+      ]
+    },
+    {
+      "feature_name": "Speech adaptation boost",
+      "feature_slug": "speech-adaptation-boost",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/encryption",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages"
+      ]
+    },
+    {
+      "feature_name": "Endless streaming transcription",
+      "feature_slug": "endless-streaming-transcription",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api"
+      ]
+    },
+    {
+      "feature_name": "Speech adaptation hints",
+      "feature_slug": "speech-adaptation-hints",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.services.adaptation.AdaptationAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.services.adaptation.AdaptationClient"
+      ]
+    },
+    {
+      "feature_name": "MP3 audio transcription support",
+      "feature_slug": "mp3-audio-transcription-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/encoding",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize"
+      ]
+    },
+    {
+      "feature_name": "Streaming recognition 5-minute duration limit",
+      "feature_slug": "streaming-recognition-5-minute-duration-limit",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quotas",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text v1beta API version",
+      "feature_slug": "cloud-speech-to-text-v1beta-api-version",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/apis"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text data logging",
+      "feature_slug": "cloud-speech-to-text-data-logging",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/encoding",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/use-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/setup"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text enhanced models",
+      "feature_slug": "cloud-speech-to-text-enhanced-models",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text model selection",
+      "feature_slug": "cloud-speech-to-text-model-selection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/deploy-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text multi-channel transcription",
+      "feature_slug": "cloud-speech-to-text-multi-channel-transcription",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text recognition metadata",
+      "feature_slug": "cloud-speech-to-text-recognition-metadata",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models"
+      ]
+    },
+    {
+      "feature_name": "Multi-channel transcription",
+      "feature_slug": "multi-channel-transcription",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3"
+      ]
+    },
+    {
+      "feature_name": "Word-level confidence",
+      "feature_slug": "word-level-confidence",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2",
+        "https://docs.cloud.google.com/speech-to-text/docs/overview",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text punctuation insertion",
+      "feature_slug": "cloud-speech-to-text-punctuation-insertion",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/automatic-punctuation",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "feature_name": "Recognition metadata in transcription requests",
+      "feature_slug": "recognition-metadata-in-transcription-requests",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+      ]
+    },
+    {
+      "feature_name": "Speech recognition model selection",
+      "feature_slug": "speech-recognition-model-selection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize"
+      ]
+    },
+    {
+      "feature_name": "OGG_OPUS sample rate support in Cloud Speech-to-Text",
+      "feature_slug": "ogg-opus-sample-rate-support-in-cloud-speech-to-text",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/encoding",
+        "https://docs.cloud.google.com/speech-to-text/docs/audit-logging",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+      ]
+    },
+    {
+      "feature_name": "Word time offsets in Speech-to-Text recognition",
+      "feature_slug": "word-time-offsets-in-speech-to-text-recognition",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "https://docs.cloud.google.com/speech-to-text/docs/encoding",
+        "https://docs.cloud.google.com/speech-to-text/docs/multiple-voices",
+        "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2"
+      ]
+    },
+    {
+      "feature_name": "Cloud Speech-to-Text API v1",
+      "feature_slug": "cloud-speech-to-text-api-v1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest"
+      ]
+    }
+  ]
+}

@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.381Z"
+generated_at: "2026-04-12T12:13:45.737Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Dataplex repository management"
 feature_slug: "dataplex-repository-management"
 latest_feature_date: "2024-12-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataform/docs/manage-repository"
   - "https://docs.cloud.google.com/dataform/docs/cmek"
+  - "https://docs.cloud.google.com/dataform/docs/manage-repository"
+  - "https://docs.cloud.google.com/dataform/docs/overview"
   - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
 keywords:
   - "dataplex"
@@ -26,7 +27,7 @@ keywords:
 # Dataplex repository management
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,37 +39,24 @@ Dataplex repository management lets you manage Dataform repositories in Dataplex
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataform/docs/manage-repository](https://docs.cloud.google.com/dataform/docs/manage-repository)
 - [https://docs.cloud.google.com/dataform/docs/cmek](https://docs.cloud.google.com/dataform/docs/cmek)
+- [https://docs.cloud.google.com/dataform/docs/manage-repository](https://docs.cloud.google.com/dataform/docs/manage-repository)
+- [https://docs.cloud.google.com/dataform/docs/overview](https://docs.cloud.google.com/dataform/docs/overview)
 - [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
 
 ## Supporting Pages
-
-### Manage a repository \_|\_ Dataform \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataform/docs/manage-repository](https://docs.cloud.google.com/dataform/docs/manage-repository)
-- Source ID: `site-docs-root-2`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Required roles To get the permissions that you need to complete the tasks in this document, ask your administrator to grant you the following IAM roles: Configure Dataform settings and manage the location of the Dataform core package: Dataform Admin ( roles/dataform.admin ) on repositories.
-- Home Documentation Data analytics Dataform Guides Send feedback Manage a repository Stay organized with collections Save and categorize content based on your preferences.
-- Manage Dataform core package location When you initialize the first workspace in a repository, Dataform automatically sets Dataform core as a dependency package.
-- The following code sample shows workflow settings defined in a dataform.json file: { "warehouse" : "bigquery" , "defaultDatabase" : "dataform-demos" , "defaultLocation" : "US" , "defaultSchema" : "dataform" , "assertionSchema" : "dataform assertions" "vars" : { "environmentName" : "development" } } The following code sample shows the preceding dataform.json file converted to workflow settings.yaml : defaultProject : dataform-demos defaultLocation : US defaultDataset : dataform defaultAssertionDataset : dataform assertions vars : environmentName : "development" Manage the Dataform core package This section shows you how to manage the Dataform core framework dependency package and update it to the latest version.
 
 ### Use customer-managed encryption keys \_|\_ Dataform \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataform/docs/cmek](https://docs.cloud.google.com/dataform/docs/cmek)
 - Source ID: `site-docs-root-2`
-- Final score: 174
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 222
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This integration lets you specify the following encryption compliance requirements for Dataform repositories in your organization: Require CMEKs for all new Dataform repositories Restrict Cloud KMS keys for a Dataform project Considerations when applying organization policies Before applying any CMEK organization policies, you should be aware of the following.
@@ -76,11 +64,39 @@ Evidence snippets:
 - CMEK encryption of repository data When you apply CMEK encryption to a Dataform repository, all Dataform-managed customer data in that repository is encrypted at rest using the CMEK protection key set for the repository.
 - Set a default Dataform CMEK key Setting a default Dataform CMEK key for your Google Cloud project lets you encrypt multiple repositories with the same CMEK key.
 
+### Manage a repository \_|\_ Dataform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/manage-repository](https://docs.cloud.google.com/dataform/docs/manage-repository)
+- Source ID: `site-docs-root-2`
+- Final score: 213
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Required roles To get the permissions that you need to complete the tasks in this document, ask your administrator to grant you the following IAM roles: Configure Dataform settings and manage the location of the Dataform core package: Dataform Admin ( roles/dataform.admin ) on repositories.
+- Home Documentation Data analytics Dataform Guides Send feedback Manage a repository Stay organized with collections Save and categorize content based on your preferences.
+- Manage Dataform core package location When you initialize the first workspace in a repository, Dataform automatically sets Dataform core as a dependency package.
+- The following code sample shows workflow settings defined in a dataform.json file: { "warehouse" : "bigquery" , "defaultDatabase" : "dataform-demos" , "defaultLocation" : "US" , "defaultSchema" : "dataform" , "assertionSchema" : "dataform assertions" "vars" : { "environmentName" : "development" } } The following code sample shows the preceding dataform.json file converted to workflow settings.yaml : defaultProject : dataform-demos defaultLocation : US defaultDataset : dataform defaultAssertionDataset : dataform assertions vars : environmentName : "development" Manage the Dataform core package This section shows you how to manage the Dataform core framework dependency package and update it to the latest version.
+
+### Dataform overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/overview](https://docs.cloud.google.com/dataform/docs/overview)
+- Source ID: `site-docs-root`
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Dataform lets you create repositories to manage your code In a Dataform repository , you use Dataform core , an extension of SQL, to write SQLX files in which you define your workflow.
+- Data transformation processes in Dataform The data transformation workflow for Dataform is as follows: Dataform lets you create repositories to manage your code.
+- The following code sample shows you how to reference a table in a SQLX file with the ref function. config { type : "table" } SELECT order date AS date , order id AS order id , order status AS order status , SUM ( item count ) AS item count , SUM ( amount ) AS revenue FROM ${ ref ( "store clean" ) } GROUP BY 1 , 2 , 3 The output is similar to the following: CREATE OR REPLACE TABLE Dataform . orders AS SELECT order date AS date , order id AS order id , order status AS order status , SUM ( item count ) AS item count , SUM ( amount ) AS revenue FROM Dataform stg . store clean GROUP BY 1 , 2 , 3 For more information on additional dependency management, for example, executing code conditionally, using other Dataform core built-in functions, see the Dataform core reference .
+- In a Dataform workspace, you can develop the following workflow actions: Source data declarations Tables and views Incremental tables Table partitions and clusters Dependencies between actions Documentation of tables Custom SQL operations BigQuery labels BigQuery policy tags Dataform tags Data quality tests, called assertions You can use JavaScript to reuse your Dataform workflow code in the following ways: Across a file with code encapsulation Across a repository with includes Across repositories with packages Dataform compiles the workflow code in your workspace in real-time.
+
 ### "Class DataformAsyncClient (0.10.0) \_|\_ Python client libraries \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 168
+- Final score: 200
 - Re-rank relevance: N/A
 
 Evidence snippets:

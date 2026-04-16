@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:14.176Z"
+generated_at: "2026-04-12T12:20:13.548Z"
 product_name: "VPC Service Controls"
 product_slug: "vpc-service-controls"
 feature_name: "Connect Gateway fleet-related APIs integration"
 feature_slug: "connect-gateway-fleet-related-apis-integration"
 latest_feature_date: "2021-11-23"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products"
+  - "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-private-connectivity"
+  - "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting"
+  - "https://docs.cloud.google.com/vpc-service-controls/docs/private-connectivity"
 keywords:
   - "connect"
   - "gateway"
@@ -24,7 +27,7 @@ keywords:
 # Connect Gateway fleet-related APIs integration
 
 Product: VPC Service Controls
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ VPC Service Controls supports integration with Connect Gateway fleet-related API
 
 VPC Service Controls supports integration with Connect Gateway fleet-related APIs including GKE Hub, GKE Connect, and Connect Gateway.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vpc-service-controls/docs/supported-products](https://docs.cloud.google.com/vpc-service-controls/docs/supported-products)
+- [https://docs.cloud.google.com/vpc-service-controls/docs/set-up-private-connectivity](https://docs.cloud.google.com/vpc-service-controls/docs/set-up-private-connectivity)
+- [https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting](https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting)
+- [https://docs.cloud.google.com/vpc-service-controls/docs/private-connectivity](https://docs.cloud.google.com/vpc-service-controls/docs/private-connectivity)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Supported products and limitations \_|\_ VPC Service Controls \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/vpc-service-controls/docs/supported-products](https://docs.cloud.google.com/vpc-service-controls/docs/supported-products)
+- Source ID: `site-docs-reference-2`
+- Final score: 258
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Service name gkeconnect.googleapis.com, gkehub.googleapis.com, connectgateway.googleapis.com Details Fleet management APIs, including the Connect gateway , can be protected with VPC Service Controls, and fleet management features can be used normally inside service perimeters.
+- For more information, see the following: Use VPC Service Controls with the Connect Agent Use VPC Service Controls with the Connect gateway For more information about Fleets, refer to the product documentation .
+- Service name connectors.googleapis.com Details The API for Integration Connectors can be protected by VPC Service Controls and the product can be used normally inside service perimeters.
+- When using the Connect gateway to access GKE clusters, VPC Service Controls perimeter for container.googleapis.com is not enforced.
+
+### "Set up private connectivity to Google APIs and services \_|\_ VPC Service\
+
+- URL: [https://docs.cloud.google.com/vpc-service-controls/docs/set-up-private-connectivity](https://docs.cloud.google.com/vpc-service-controls/docs/set-up-private-connectivity)
+- Source ID: `site-docs-root`
+- Final score: 217
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Configure custom static routes in a VPC network Add custom static routes to enable access to Google-managed services that VPC Service Controls supports. gcloud compute routes create ROUTE NAME \ --network = NETWORK NAME \ --destination-range = DESTINATION RANGE \ --next-hop-gateway = default-internet-gateway Replace the following: ROUTE NAME : a name for the custom route NETWORK NAME : the name of your VPC network DESTINATION RANGE : the destination range for the route To route traffic to the restricted.googleapis.com VIP, use the following ranges: For IPv4 traffic: 199.36.153.4/30 For IPv6 traffic: 2600:2d00:0002:1000::/56 To route traffic to APIs that allow direct connectivity , use the following ranges: For IPv4 traffic: 34.126.0.0/18 For IPv6 traffic: 2001:4860:8040::/42 Announce the restricted route to hosts in an on-premises network If you're using Private Google Access for on-premises hosts, configure routes so that Google API traffic is forwarded through your Cloud VPN or Cloud Interconnect connection.
+- Home Documentation Networking VPC Service Controls Guides Send feedback Set up private connectivity to Google APIs and services Stay organized with collections Save and categorize content based on your preferences.
+- This document describes how to set up private connectivity from hosts in a VPC network or on-premises network to Google APIs and services that VPC Service Controls supports.
+- Configure routes to restricted.googleapis.com Although VPC Service Controls are enforced for compatible and configured services, regardless of the domain you use, restricted.googleapis.com provides additional risk mitigation for data exfiltration. restricted.googleapis.com denies access to Google APIs and services that are not supported by VPC Service Controls.
+
+### "Troubleshoot common issues \_|\_ VPC Service Controls \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting](https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting)
+- Source ID: `site-docs-reference-2`
+- Final score: 209
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- A VM that belongs to project A (which can be a Google Kubernetes Engine node) attempts to access a protected resource in project B but the connection fails, and the following audit log record is generated in project B: { "protoPayload": { "@type": "type.googleapis.com/google.cloud.audit.AuditLog", "status": { "code": 7, "message": "Request is prohibited by organization's policy. vpcServiceControlsUniqueIdentifier: kmpY9Fgfuhgi2NE90lURjFWuiS1nGRqxCw4L12HdW8h46Un - LZw", "details": [ { "@type": "type.googleapis.com/google.rpc.PreconditionFailure", "violations": [ { "type": "VPC SERVICE CONTROLS", "description": "kmpY9Fgfuhgi2NE90lURjFWuiS1nGRqxCw4L12HdW8h46Un - LZw" } ] } ] }, "authenticationInfo": { "principalEmail": "my-user@example.iam.gserviceaccount.com", "serviceAccountKeyName": "//iam.googleapis.com/projects/my-project/serviceAccounts/my-user@example.iam.gserviceaccount.com/keys/<code><var>ACCOUNT KEY</var></code>" }, "requestMetadata": { "callerIp": "gce-internal-ip", "requestAttributes": {}, "destinationAttributes": {} }, "serviceName": "cloudfunctions.googleapis.com", "methodName": "google.cloud.functions.v1.CloudFunctionsService.ListFunctions", "resourceName": "<code><var>PROJECT ID 1</var></code>", "metadata": { "violationReason": "NETWORK NOT IN SAME SERVICE PERIMETER", "resourceNames": [ "projects/<code><var>PROJECT ID 2</var></code>/locations/-" ], "securityPolicyInfo": { "servicePerimeterName": "accessPolicies/<code><var>ACCESS POLICY</var></code>/servicePerimeters/us sandbox", "organizationId": "<code><var>ORGANIZATION ID</var></code>" }, "deviceState": "Unknown", "vpcServiceControlsUniqueId": "kmpY9Fgfuhgi2NE90lURjFWuiS1nGRqxCw4L12HdW8h46Un - LZw", "ingressViolations": [ { "targetResource": "projects/<code><var>PROJECT ID 1</var></code>", "servicePerimeter": "accessPolicies/<code><var>ACCESS POLICY</var></code>/servicePerimeters/<code><var>PERIMETER NAME</var></code>", "source": "<code><var>PROJECT ID 2</var></code>" } ], "@type": "type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata" } }, "insertId": "tzf7fd103i", "resource": { "type": "audited resource", "labels": { "service": "cloudfunctions.googleapis.com", "method": "google.cloud.functions.v1.CloudFunctionsService.ListFunctions", "project id": "<code><var>PROJECT ID 2</var></code>" } }, "timestamp": "2024-04-02T19:56:10.770681816Z", "severity": "ERROR", "logName": "projects/<code><var>PROJECT ID 2</var></code>/logs/cloudaudit.googleapis.com%2Fpolicy", "receiveTimestamp": "2024-04-02T19:56:11.463811603Z" } The callerIp resource does not record an external IP address.
+- For example, suppose the following command is used: gcloud logging sinks describe example-sink The command returns the following output: destination : bigquery . googleapis . com / projects / corp - resources - public / datasets / logs filter : - resource . type = "audited resource" resource . labels . service = "bigquery.googleapis.com" name : example - sink outputVersionFormat : V2 writerIdentity : serviceAccount : p927005422713 - 439672 @ gcp - sa - logging . iam.gserviceaccount.com The following audit log record is generated: { insertId : "e5i2i8cbqw" logName : "projects/perimeter-network/logs/cloudaudit.googleapis.com %2F policy" protoPayload : { @ type : "type.googleapis.com/google.cloud.audit.AuditLog" authenticationInfo : { principalEmail : "p927005422713-439672@gcp-sa-logging.iam.gserviceaccount.com" } metadata : { @ type : "type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata" resourceNames : [ 0 : "corp-resources-public" ] violationReason : "RESOURCES NOT IN SAME SERVICE PERIMETER" } methodName : "google.cloud.bigquery.v2.TableDataService.InsertAll" requestMetadata : { callerIp : "2002:a49:8c51::" destinationAttributes : { } requestAttributes : { } } resourceName : "projects/927005422713" serviceName : "bigquery.googleapis.com" status : { code : 7 details : [ 0 : { @ type : "type.googleapis.com/google.rpc.PreconditionFailure" violations : [ 0 : { type : "VPC SERVICE CONTROLS" } ] } ] message : "Request is prohibited by organization's policy" } } receiveTimestamp : "2018-11-29T17:32:19.287138882Z" resource : { labels : { method : "google.cloud.bigquery.v2.TableDataService.InsertAll" project id : "perimeter-network" service : "bigquery.googleapis.com" } type : "audited resource" } severity : "ERROR" timestamp : "2018-11-29T17:32:19.054662413Z" } The audit log record is generated for BigQuery, not for Logging.
+- The audit log record for the destination service (Cloud Storage) contains detailed reasons for the failure: { insertId : "1bq397kcfj1" logName : "projects/corp-resources-private/logs/cloudaudit.googleapis.com %2F policy" protoPayload : { @ type : "type.googleapis.com/google.cloud.audit.AuditLog" authenticationInfo : { principalEmail : "storage-accessing@example.iam.gserviceaccount.com" } metadata : { @ type : "type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata" resourceNames : [ 0 : "projects/1004338142803" 1 : "projects/ /buckets/corp-resources-public-1" ] violationReason : "RESOURCES NOT IN SAME SERVICE PERIMETER" } methodName : "google.storage.BillingRequiredRead" requestMetadata : { callerIp : "10.5.0.4" callerNetwork : "//compute.googleapis.com/projects/perimeter-network/global/networks/ unknown " destinationAttributes : { } requestAttributes : { } } resourceName : "projects/1004338142803" serviceName : "storage.googleapis.com" status : { code : 7 details : [ 0 : { @ type : "type.googleapis.com/google.rpc.PreconditionFailure" violations : [ 0 : { type : "VPC SERVICE CONTROLS" } ] } ] message : "Request is prohibited by organization's policy" } } receiveTimestamp : "2018-12-01T19:03:05.617451586Z" resource : { labels : { method : "google.storage.BillingRequiredRead" project id : "corp-resources-private" service : "storage.googleapis.com" } type : "audited resource" } severity : "ERROR" timestamp : "2018-12-01T19:03:05.420005215Z" } From this log, it is clear that the two projects 1004338142803 ( corp-resources-private-1 ) and corp-resources-public are both being used to complete the command.
+- In the audit logs for the perimeter-network project, where the command was executed, there is an audit log record for the saveAsTextFile operation: { insertId : "qdj1o9d1run" logName : "projects/corp-resources-private/logs/cloudaudit.googleapis.com%2Fpolicy" protoPayload : { @ type : "type.googleapis.com/google.cloud.audit.AuditLog" authenticationInfo : { principalEmail : "1004338142803-compute@developer.gserviceaccount.com" } metadata : { @ type : "type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata" resourceNames : [ 0 : "projects/ /buckets/corp-resources-public-1/objects/out.txt" ] violationReason : "RESOURCES NOT IN SAME SERVICE PERIMETER" } methodName : "google.storage.BillingRequiredRead" requestMetadata : { callerIp : "10.246.0.3" callerNetwork : "//compute.googleapis.com/projects/corp-resources-private/global/networks/ unknown " destinationAttributes : { } requestAttributes : { } } resourceName : "projects/1004338142803" serviceName : "storage.googleapis.com" status : { code : 7 details : [ 0 : { @ type : "type.googleapis.com/google.rpc.PreconditionFailure" violations : [ 0 : { type : "VPC SERVICE CONTROLS" } ] } ] message : "Request is prohibited by organization's policy" } } receiveTimestamp : "2018-11-29T00:31:43.666227930Z" resource : { labels : { method : "google.storage.BillingRequiredRead" project id : "corp-resources-private" service : "storage.googleapis.com" } type : "audited resource" } severity : "ERROR" timestamp : "2018-11-29T00:31:43.608250320Z" } Due to audit log limitations, the methodName for Cloud Storage is listed as Read even though it is actually a write operation.
+
+### Private Google Access with VPC Service Controls \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vpc-service-controls/docs/private-connectivity](https://docs.cloud.google.com/vpc-service-controls/docs/private-connectivity)
+- Source ID: `site-docs-reference`
+- Final score: 199
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Private Google Access with VPC Service Controls (click to enlarge) DNS was configured in the VPC network to map .googleapis.com requests to restricted.googleapis.com , which resolves to 199.36.153.4/30 .
+- For on-premises hosts to reach restricted Google API services, requests to Google APIs must be sent through a VPC network, either through a Cloud VPN tunnel or a Cloud Interconnect connection.
+- Private Google Access offers private connectivity to hosts in either a VPC network or an on-premises network that uses private IP addresses to access Google APIs and services .
+- If you require access to other Google APIs and services that aren't supported by VPC Service Controls, you can use private.googleapis.com .
 

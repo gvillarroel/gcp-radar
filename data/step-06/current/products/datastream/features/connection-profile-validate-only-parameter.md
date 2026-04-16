@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:11:59.758Z"
+generated_at: "2026-04-12T12:14:04.328Z"
 product_name: "Datastream"
 product_slug: "datastream"
 feature_name: "Connection profile validate_only parameter"
 feature_slug: "connection-profile-validate-only-parameter"
 latest_feature_date: "2023-01-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
   - "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
-  - "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient"
+  - "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create"
+  - "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/discover"
 keywords:
   - "connection"
   - "profile"
@@ -26,7 +27,7 @@ keywords:
 # Connection profile validate_only parameter
 
 Product: Datastream
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The Datastream API supports a validate_only parameter on connection profile reso
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastream/docs/using-datastream-apis](https://docs.cloud.google.com/datastream/docs/using-datastream-apis)
 - [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles)
-- [https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient](https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient)
+- [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create)
+- [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/discover](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/discover)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastream/docs/using-datastream-apis](https://docs.cloud.google.com/datastream/docs/using-datastream-apis)
 - Source ID: `site-docs-root`
-- Final score: 224
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 283
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - At the prompt, enter the following command: curl -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the value of the fileRotationMb parameter for the Cloud Storage connection profile is now 100 . { "name" : " PROJECT PATH /streams/ STREAM ID " , "createTime" : " DATE AND TIME STAMP " , "updateTime" : " DATE AND TIME STAMP " , "displayName" : " DISPLAY NAME " , "sourceConfig" : { "sourceConnectionProfileName" : "projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID " , "oracleSourceConfig" : { "allowlist" : { "oracleSchemas" : [ { "schema" : "ROOT" } ] }, "rejectlist" : {} } }, "destinationConfig" : { "destinationConnectionProfileName" : "projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID " , "gcsDestinationConfig" : { "fileRotationMb" : 100 , "fileRotationInterval" : "15s" "avroFileFormat" : {} } }, "state" : "CREATED" , "backfillAll" : {} } Start the stream.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles)
 - Source ID: `site-api-reference`
-- Final score: 210
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 273
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Connection configuration for the ConnectionProfile. profile can be only one of the following: oracleProfile object ( OracleProfile ) Profile for connecting to an Oracle source. gcsProfile object ( GcsProfile ) Profile for connecting to a Cloud Storage destination. mysqlProfile object ( MysqlProfile ) Profile for connecting to a MySQL source. bigqueryProfile object ( BigQueryProfile ) Profile for connecting to a BigQuery destination. postgresqlProfile object ( PostgresqlProfile ) Profile for connecting to a PostgreSQL source. sqlServerProfile object ( SqlServerProfile ) Profile for connecting to a SQLServer source. salesforceProfile object ( SalesforceProfile ) Profile for connecting to a Salesforce source. mongodbProfile object ( MongodbProfile ) Profile for connecting to a MongoDB source. spannerProfile object ( SpannerProfile ) Profile for connecting to a Spanner source.
@@ -76,16 +78,31 @@ Evidence snippets:
 - Connectivity options used to establish a connection to the profile. connectivity can be only one of the following: staticServiceIpConnectivity object ( StaticServiceIpConnectivity ) Static Service IP connectivity. forwardSshConnectivity object ( ForwardSshTunnelConnectivity ) Forward SSH tunnel connectivity. privateConnectivity object ( PrivateConnectivity ) Private connectivity.
 - Used when the source database is configured to allow incoming connections from the Datastream public IP addresses for the region specified in the connection profile.
 
-### "Class DatastreamAsyncClient (1.18.0) \_|\_ Python client libraries \_|\_\
+### "Method: projects.locations.connectionProfiles.create \_|\_ Datastream \_\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient](https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 202
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create)
+- Source ID: `site-api-reference`
+- Final score: 261
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- CreateConnectionProfileRequest ( parent="parent value", connection profile id="connection profile id value", connection profile=connection profile, ) Make the request operation = client. create connection profile (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.datastream v1.types.CreateConnectionProfileRequest , dict]] The request object.
-- UpdateConnectionProfileRequest ( connection profile=connection profile, ) Make the request operation = client. update connection profile (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.datastream v1.types.UpdateConnectionProfileRequest , dict]] The request object.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datastream v1 async def sample discover connection profile(): Create a client client = datastream v1 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datastream v1 async def sample create connection profile(): Create a client client = datastream v1 .
+- Authorization requires the following IAM permission on the specified resource parent : datastream.connectionProfiles.create Query parameters Parameters connectionProfileId string Required.
+- HTTP request POST https://datastream.googleapis.com/v1/{parent}/connectionProfiles Path parameters Parameters parent string Required.
+- Only validate the connection profile, but don't create any resources.
+- IAM Permissions Requires the following IAM permission on the parent resource: datastream.connectionProfiles.create For more information, see the IAM documentation .
+
+### "Method: projects.locations.connectionProfiles.discover \_|\_ Datastream\
+
+- URL: [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/discover](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/discover)
+- Source ID: `site-api-reference`
+- Final score: 260
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Authorization requires the following IAM permission on the specified resource parent : datastream.connectionProfiles.discover Request body The request body contains data with the following structure: JSON representation { // Union field target can be only one of the following: "connectionProfile" : { object ( ConnectionProfile ) } , "connectionProfileName" : string // End of list of possible types for union field target . // Union field hierarchy can be only one of the following: "fullHierarchy" : boolean , "hierarchyDepth" : integer // End of list of possible types for union field hierarchy . // Union field data object can be only one of the following: "oracleRdbms" : { object ( OracleRdbms ) } , "mysqlRdbms" : { object ( MysqlRdbms ) } , "postgresqlRdbms" : { object ( PostgresqlRdbms ) } , "sqlServerRdbms" : { object ( SqlServerRdbms ) } , "salesforceOrg" : { object ( SalesforceOrg ) } , "mongodbCluster" : { object ( MongodbCluster ) } , "spannerDatabase" : { object ( SpannerDatabase ) } // End of list of possible types for union field data object . } Fields Union field target .
+- HTTP request POST https://datastream.googleapis.com/v1/{parent}/connectionProfiles:discover Path parameters Parameters parent string Required.
+- IAM Permissions Requires the following IAM permission on the parent resource: datastream.connectionProfiles.discover For more information, see the IAM documentation .
+- The connection profile on which to run discover. target can be only one of the following: connectionProfile object ( ConnectionProfile ) Optional.
 

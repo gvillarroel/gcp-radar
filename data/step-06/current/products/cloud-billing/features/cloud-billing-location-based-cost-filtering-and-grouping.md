@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.363Z"
+generated_at: "2026-04-14T13:57:37.644Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Cloud Billing Location-Based Cost Filtering and Grouping"
 feature_slug: "cloud-billing-location-based-cost-filtering-and-grouping"
 latest_feature_date: "2019-05-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/reports"
   - "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
@@ -18,15 +18,15 @@ keywords:
   - "based"
   - "cost"
   - "filtering"
-  - "and"
   - "grouping"
   - "adds"
+  - "report"
 ---
 
 # Cloud Billing Location-Based Cost Filtering and Grouping
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Adds support for filtering and grouping billing report costs by geography, multi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
@@ -52,8 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
 - Source ID: `site-docs-root`
-- Final score: 212
-- Re-rank relevance: N/A
+- Final score: 204
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - The Group by options include the following: Single dimension Multiple dimension by date Multiple dimension by month Subaccount Project Project Hierarchy Service SKU Application Location: Region or multi-region Label keys No grouping (show total cost only) Date > Subaccount Date > Project Date > Project Hierarchy Date > Service Date > SKU Date > Application Date > Location: Region or multi-region Month > Subaccount Month > Project Month > Project Hierarchy Month > Service Month > SKU Month > Application Month > Location: Region or multi-region Single-dimension Group by options When using a single-dimension Group by option, the report table and the report chart display the data differently.
@@ -69,10 +70,10 @@ Evidence snippets:
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Billing account ID Project ID SKU description Cost type Cost 123456-ABCDEF-123456 example-project N1 Predefined Instance Core Usage $60 123456-ABCDEF-123456 test-project N1 Predefined Instance Core Usage $40 123456-ABCDEF-123456 0 State sales tax (10.0%) Tax $10 For costs recorded after September 1, 2020, the $10 tax total is broken out to attribute $6 for example-project , and $4 for test-project : Billing account ID Project ID SKU description Cost type Cost 123456-ABCDEF-123456 example-project N1 Predefined Instance Core Usage $60 123456-ABCDEF-123456 example-project State sales tax (10.0%) Tax $6 123456-ABCDEF-123456 test-project N1 Predefined Instance Core Usage $40 123456-ABCDEF-123456 test-project State sales tax (10.0%) Tax $4 Viewing project-level taxes in the nested table view To view your tax costs by project in the nested table view , you must use or configure a Group by option with Project as the first grouping dimension.
-- The totals in the footer include taxes (for each tax type), invoice corrections and billing modifications , and rounding errors (if applicable to your Cloud Billing account), as well as the total of the costs in the table, based on the selected filters.
-- Home Documentation Costs and usage management Cloud Billing Guides Send feedback View and download the cost details of your invoice or statement Stay organized with collections Save and categorize content based on your preferences.
 - Figure 3 - Flat table view : Example of the Cost table report with no grouping option selected, and a few columns deselected for display (such as billing account name and billing account ID).
+- Billing account ID Project ID SKU description Cost type Cost 123456-ABCDEF-123456 example-project N1 Predefined Instance Core Usage $60 123456-ABCDEF-123456 test-project N1 Predefined Instance Core Usage $40 123456-ABCDEF-123456 0 State sales tax (10.0%) Tax $10 For costs recorded after September 1, 2020, the $10 tax total is broken out to attribute $6 for example-project , and $4 for test-project : Billing account ID Project ID SKU description Cost type Cost 123456-ABCDEF-123456 example-project N1 Predefined Instance Core Usage $60 123456-ABCDEF-123456 example-project State sales tax (10.0%) Tax $6 123456-ABCDEF-123456 test-project N1 Predefined Instance Core Usage $40 123456-ABCDEF-123456 test-project State sales tax (10.0%) Tax $4 Viewing project-level taxes in the nested table view To view your tax costs by project in the nested table view , you must use or configure a Group by option with Project as the first grouping dimension.
+- To gain this permission, ask your administrator to grant you one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Viewer Billing Account Costs Manager Billing Account Administrator For more information about billing permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding predefined IAM roles for Cloud Billing Access the report To view the Cost table report for your Cloud Billing account: In the Google Cloud console, go to your Cloud Billing account.
+- CSV file name For the Cost table report, the file name follows this pattern: [Billing Account name] Cost table, [YYYY-MM-DD] — [YYYY-MM-DD].csv For example, a CSV file of the cost table data downloaded for a Cloud Billing account named My Billing Account , for an invoice month of March 2023 , is named: My Billing Account Cost table, 2023-03-01 — 2023-03-31.csv Note: If you download a report with the same invoice month multiple times, then the default report name will be the same.
 
 ### "Understand your savings with cost breakdown reports \_|\_ Cloud Billing\
 
@@ -82,8 +83,8 @@ Evidence snippets:
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If your Cloud Billing account is associated with a custom pricing contract , the on-demand rate used to calculate the gross cost of your usage depends on the time range of the costs you're analyzing: For costs incurred before May 1, 2021, your on-demand rate is based on your contract prices, and includes the savings you earned compared to list prices.
 - Home Documentation Costs and usage management Cloud Billing Guides Send feedback Understand your savings with cost breakdown reports Stay organized with collections Save and categorize content based on your preferences.
-- Cost data filtered by application might be based on partial data, limited to projects and costs for the Cloud Billing account you are actively viewing.
 - To gain this permission using a predefined role, ask your administrator to grant you one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Administrator Billing Account Costs Manager Billing Account Viewer For more information about billing permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding predefined IAM roles for Cloud Billing Access the report To view the Cost breakdown report for your Cloud Billing account: In the Google Cloud console, go to your Cloud Billing account.
+- CSV filename For the cost breakdown data, the CSV filename follows this pattern: [Billing Account name] Cost Breakdown, [YYYY-MM-DD] - [YYYY-MM-DD].csv For example, a CSV file of the cost breakdown data downloaded for a Cloud Billing account named My Billing Account , for a date range of October 1 to December 31, 2022 , is named: My Billing Account Cost Breakdown, 2022-10-01 - 2022-12-31.csv Note: If you download a report with the same date range multiple times, then the default report name will be the same.
+- For a Cloud Billing account associated with a custom pricing contract , when viewing the report using a time range that starts May 1, 2021 , or later, the cost breakdown report displays a Usage cost column, and a Negotiated savings column, as well as any other applicable credits and invoice-level charges: Figure 2 : Example of the cost breakdown report for a Cloud Billing account associated with a custom pricing contract.
 

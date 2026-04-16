@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:28:07.836Z"
+generated_at: "2026-04-12T12:12:50.390Z"
 product_name: "Cloud Vision API Product Search"
 product_slug: "cloud-vision-api-product-search"
 feature_name: "multi-detection"
 feature_slug: "multi-detection"
 latest_feature_date: "2018-12-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/vision/product-search/docs/searching-response"
   - "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products"
   - "https://docs.cloud.google.com/vision/product-search/docs/searching"
+  - "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images"
 keywords:
   - "multi"
   - "detection"
@@ -26,7 +27,7 @@ keywords:
 # multi-detection
 
 Product: Cloud Vision API Product Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Multi-detection finds multiple products in an image and returns similar products
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/vision/product-search/docs/searching-response](https://docs.cloud.google.com/vision/product-search/docs/searching-response)
 - [https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products](https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products)
 - [https://docs.cloud.google.com/vision/product-search/docs/searching](https://docs.cloud.google.com/vision/product-search/docs/searching)
+- [https://docs.cloud.google.com/vision/product-search/docs/create-reference-images](https://docs.cloud.google.com/vision/product-search/docs/create-reference-images)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/vision/product-search/docs/searching-response](https://docs.cloud.google.com/vision/product-search/docs/searching-response)
 - Source ID: `site-docs-root`
-- Final score: 222
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 288
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Multiple-product images (multi-detection) & response The following search image contains multiple products. gs://cloud-samples-data/product search/multiple dresses.jpg Using Vision API Product Search to search for similar products returns a response that identifies multiple bounding boxes in the image, one for the entire image and also three boxes for each of the three dresses.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products](https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For an example of single-product detection and multi-detection of products in an image, see Understanding search responses & multi-detection .
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision/product-search/docs/searching](https://docs.cloud.google.com/vision/product-search/docs/searching)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - See the Understanding search responses & multi-detection topic for an example of single product detection and multi-detection of products in an image.
 - Currently you can only specify one product category (homegoods, apparel, toys, packaged goods, and general ). imageContext.filter - (Optional) A key-value filtering expression (or multiple expressions) for product label.
 - Currently you can only specify one product category (homegoods, apparel, toys, packaged goods, and general ). imageContext.filter - (Optional) A key-value filtering expression (or multiple expressions) for product label.
 - Response { "responses": [ { "productSearchResults" : { "indexTime": "2019-09-04T21:03:35.662099907Z", "results": [ { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id65 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.38946953, "image": "projects/ project-id /locations/ location-id /products/product id65/referenceImages/ image65 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id35 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.3847863, "image": "projects/ project-id /locations/ location-id /products/product id35/referenceImages/ image35 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id34 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.33896044, "image": "projects/ project-id /locations/ location-id /products/product id34/referenceImages/ image34 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id62 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.32509044, "image": "projects/ project-id /locations/ location-id /products/product id62/referenceImages/ image62 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id32 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.3237155, "image": "projects/ project-id /locations/ location-id /products/product id32/referenceImages/image32" } ], "productGroupedResults" : [ { "boundingPoly": { "normalizedVertices": [ { "x": 0.00458825, "y": 0.11000001 }, { "x": 0.988353, "y": 0.11000001 }, { "x": 0.988353, "y": 0.9290588 }, { "x": 0.00458825, "y": 0.9290588 } ] }, "results": [ { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id65 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.41785678, "image": "projects/ project-id /locations/ location-id /products/product id65/referenceImages/ image65 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id35 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.3803885, "image": "projects/ project-id /locations/ location-id /products/product id35/referenceImages/ image35 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id34 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.36055994, "image": "projects/ project-id /locations/ location-id /products/product id34/referenceImages/ image34 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id93 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "shoe" }, { "key": "kids", "value": "true" } ] }, "score": 0.33286288, "image": "projects/ project-id /locations/ location-id /products/product id93/referenceImages/ image93 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id62 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.32263064, "image": "projects/ project-id /locations/ location-id /products/product id62/referenceImages/ image62 " } ], "objectAnnotations": [ { "mid": "/m/01d40f", "name": "Dress", "score": 0.95488 } ] } ] } } ] } Go To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .
+
+### "Creating your reference images & indexing \_|\_ Vision API Product Search\
+
+- URL: [https://docs.cloud.google.com/vision/product-search/docs/create-reference-images](https://docs.cloud.google.com/vision/product-search/docs/create-reference-images)
+- Source ID: `site-docs-root`
+- Final score: 203
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Creating multiple reference images with bulk import You can also create reference images at the same time you create a product set and multiple products.
+- The response should look similar to the following: { "name": "locations/ location-id /operations/f10f34e32c40a710", "metadata": { "@type": "type.googleapis.com/google.cloud.vision.v1.BatchOperationMetadata", "state": "SUCCESSFUL", "submitTime": "2019-12-06T21:16:04.476466873Z", "endTime": "2019-12-06T21:16:40.594258084Z" }, "done": true, "response": { "@type": "type.googleapis.com/google.cloud.vision.v1.ImportProductSetsResponse", "referenceImages": [ { "name": "projects/ project-id /locations/ location-id /products/product id0/referenceImages/image0", "uri": "gs:// my-storage-bucket /img 039.jpg" }, { "name": "projects/ project-id /locations/ location-id /products/product id1/referenceImages/image1", "uri": "gs:// my-storage-bucket /img 105.jpg" }, { "name": "projects/ project-id /locations/ location-id /products/product id2/referenceImages/image2", "uri": "gs:// my-storage-bucket /img 224.jpg" }, { "name": "projects/ project-id /locations/ location-id /products/product id3/referenceImages/image3", "uri": "gs:// my-storage-bucket /img 385.jpg" } ], "statuses": [ {}, {}, {}, {} ] } } Go To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .
+- Target files must be in Product Search CSV format'; // A resource that represents Google Cloud Platform location. const projectLocation = client . locationPath ( projectId , location ); // Set the input configuration along with Google Cloud Storage URI const inputConfig = { gcsSource : { csvFileUri : gcsUri , }, }; // Import the product sets from the input URI. const [ response , operation ] = await client . importProductSets ({ parent : projectLocation , inputConfig : inputConfig , }); console . log ( 'Processing operation name: ' , operation . name ); // synchronous check of operation status const [ result ] = await response . promise (); console . log ( 'Processing done.' ); console . log ( 'Results of the processing:' ); for ( const i in result . statuses ) { console . log ( 'Status of processing ' , i , 'of the csv:' , result . statuses [ i ] ); // Check the status of reference image if ( result . statuses [ i ]. code === 0 ) { console . log ( result . referenceImages [ i ]); } else { console . log ( 'No reference image.' ); } } } importProductSets (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .
+- OperationFuture<ImportProductSetsResponse , BatchOperationMetadata > response = client . importProductSetsAsync ( formattedParent , inputConfig ); System . out . println ( String . format ( "Processing operation name: %s" , response . getName ())); ImportProductSetsResponse results = response . get (); System . out . println ( "Processing done." ); System . out . println ( "Results of the processing:" ); for ( int i = 0 ; i < results . getStatusesCount (); i ++ ) { System . out . println ( String . format ( "Status of processing line %s of the csv: %s" , i , results . getStatuses ( i ))); // Check the status of reference image. if ( results . getStatuses ( i ). getCode () == 0 ) { ReferenceImage referenceImage = results . getReferenceImages ( i ); System . out . println ( referenceImage ); } else { System . out . println ( "No reference image." ); } } } } Node.js To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .
 

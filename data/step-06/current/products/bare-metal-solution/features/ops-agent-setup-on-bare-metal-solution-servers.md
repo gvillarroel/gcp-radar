@@ -1,32 +1,27 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:23.976Z"
+generated_at: "2026-04-14T09:47:34.411Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "Ops Agent setup on Bare Metal Solution servers"
 feature_slug: "ops-agent-setup-on-bare-metal-solution-servers"
 latest_feature_date: "2024-05-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bare-metal/docs/set-up-ops-agent-for-bms"
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices"
+  - "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new"
+  - "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations"
+  - "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
 keywords:
   - "agent"
   - "setup"
-  - "ops"
   - "servers"
-  - "solution"
-  - "metal"
-  - "bare"
-  - "on"
 ---
 
 # Ops Agent setup on Bare Metal Solution servers
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +33,54 @@ You can now set up Ops Agent on Bare Metal Solution servers to view solution met
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bare-metal/docs/set-up-ops-agent-for-bms](https://docs.cloud.google.com/bare-metal/docs/set-up-ops-agent-for-bms)
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices)
+- [https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new](https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new)
+- [https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations](https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations)
+- [https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry](https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry)
 
 ## Supporting Pages
 
-### Set up Ops Agent for Bare Metal Solution \_|\_ Google Cloud Documentation
+### "What's new with Google Cloud's Agent for SAP \_|\_ SAP on Google Cloud \_\
 
-- URL: [https://docs.cloud.google.com/bare-metal/docs/set-up-ops-agent-for-bms](https://docs.cloud.google.com/bare-metal/docs/set-up-ops-agent-for-bms)
-- Source ID: `site-docs-root-2`
-- Final score: 276
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Go to Servers Identify the following information for your server: Project ID Server name Location of the server On your Bare Metal Solution server, run the following commands: GOOGLE APPLICATION CREDENTIALS="/etc/google/auth/application default credentials.json" sudo mkdir -p /etc/google/auth sudo mv "$HOME/temp.json" "$GOOGLE APPLICATION CREDENTIALS" sudo chown root:root "$GOOGLE APPLICATION CREDENTIALS" sudo chmod 0400 "$GOOGLE APPLICATION CREDENTIALS" The variable GOOGLE APPLICATION CREDENTIALS must be visible to the Ops Agent process.
-- On your Bare Metal Solution server, restart the Ops Agent to use the new credentials by running the following command: sudo service google-cloud-ops-agent restart Install the Ops Agent To install the agent using the command line, do the following: Open a terminal connection to your Bare Metal Solution server using SSH or a similar tool and ensure that you have sudo access.
-- DefaultEnvironment=GOOGLE APPLICATION CREDENTIALS= path to credentials file BMS PROJECT ID= PROJECT ID BMS LOCATION= REGION BMS INSTANCE ID= SERVER ID Reload the environment variables. sudo systemctl daemon - reload Your Bare Metal Solution server now has the credentials that the Ops Agent needs.
-- Authorize a service account with a private key To authorize the Ops Agent by using a service account private key, do the following: Copy the private key file to the following location on your Bare Metal Solution server so that the Ops Agent can recognize the credentials.
-
-### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- Source ID: `site-docs-root-2`
-- Final score: 268
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
-- If you use a block-based backup disk with iSCSI, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on port TCP-3260.
-- Number of processors used The Bare Metal Solution servers come in several sizes .
-
-### Best practices for Oracle on Bare Metal Solution \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices)
-- Source ID: `site-docs-root`
-- Final score: 250
+- URL: [https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new](https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new)
+- Source ID: `site-docs-reference-2`
+- Final score: 104
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Use a uniform LUN size Create no more than two ASM disk groups Stripe ASM disk groups across all LUNs in all volumes Use LUNs and volumes with the same performance characteristics in the same disk group Do not share storage volumes across multiple RAC clusters Know the required IOPS and throughput capacity before you create ASM disk groups Leave the multipath configuration as-is Configure important settings for ASM Create your ASM disk group with external redundancy Reboot your Bare Metal Solution servers after ASM disk creation Use a uniform LUN size The LUN size you select should be representative of the unit of growth.
-- To configure jumbo frames on Bare Metal Solution servers for Oracle RAC: View the settings of your Bare Metal Solution private network to confirm that jumbo frames have been configured: gcloud bms networks describe NETWORK NAME -- project = PROJECT ID -- region = REGION grep jumboFramesEnabled Sample output: jumboFramesEnabled : true Identify the network interfaces and their mtu size: ip link show grep mtu Sample output: 1 : lo : < LOOPBACK , UP , LOWER UP > mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000 2 : enp55s0f1 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 3 : enp55s0f2 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 4 : enp55s0f3 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 5 : enp17s0f0 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000 6 : enp17s0f1 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond1 state UP mode DEFAULT group default qlen 1000 7 : enp173s0f0 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000 8 : enp173s0f1 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond1 state UP mode DEFAULT group default qlen 1000 9 : bond1 : < BROADCAST , MULTICAST , MASTER , UP , LOWER UP > mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000 10 : bond1 .
-- 118 @ bond0 : < BROADCAST , MULTICAST , UP , LOWER UP > mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000 13 : virbr0 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default qlen 1000 14 : virbr0 - nic : < BROADCAST , MULTICAST > mtu 1500 qdisc pfifo fast master virbr0 state DOWN mode DEFAULT group default qlen 1000 Using root-level privileges, add MTU=9000 to the interface configuration file for all servers in the Bare Metal Solution environment that use jumbo frames.
-- Reboot your Bare Metal Solution servers after ASM disk creation After you create your ASM disk groups, you should reboot all Bare Metal Solution servers in the cluster to make sure that both the ASM instance and the disk groups come online after the reboot.
+- Validate the Google Cloud setup for agent features : By running the agent's status command, you can validate if your setup in Google Cloud is complete for using the agent features.
+- From this version, for agent instances running on Bare Metal Solution servers, the agent configuration parameter instance id has been replaced by the parameter instance name .
+- Fixes for accessing the cloud properties configuration of agent instances running on Bare Metal Solution servers.
+- For agent instances on Bare Metal Solution servers, see Configuration parameters .
+
+### "Google Cloud's Agent for SAP operations guide \_|\_ SAP on Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations](https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations)
+- Source ID: `site-docs-reference-2`
+- Final score: 96
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- In the overview pane, check the availability and content of the following fields for the correct end-to-end setup of the SAP and Google monitoring infrastructure: Cloud Provider : Google Cloud Platform Enhanced Monitoring Access : TRUE Enhanced Monitoring Details : ACTIVE View the SAP Host Agent metrics After installing or updating the configuration of Google Cloud's Agent for SAP, you can view the collected SAP Host Agent metrics.
+- As an administrator, run the following command from PowerShell: Remove-Service -Name 'google-cloud-sap-agent' View the agent's logs in Cloud Logging By default, the logs for Google Cloud's Agent for SAP are redirected from your Compute Engine instances and Bare Metal Solution servers to Cloud Logging .
+- Version 3.12 (latest) keyboard arrow down Version 3.12 (latest) Version 2 This guide covers operational considerations and procedures for running version 3.12 (latest) of Google Cloud's Agent for SAP on Compute Engine instances and Bare Metal Solution servers.
+- You can see the logs generated by the agent instances running on all your Compute Engine instances or Bare Metal Solution servers.
+
+### "Agent Registry roles and permissions \_|\_ Identity and Access Management\
+
+- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry](https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry)
+- Source ID: `site-iam-reference`
+- Final score: 84
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Agent Registry roles Role Permissions Agent Registry API Admin Beta ( roles/ agentregistry.admin ) Full access to Agent Registry API resources. agentregistry. agentregistry.agents.get agentregistry.agents.list agentregistry.endpoints.get agentregistry.endpoints.list agentregistry.locations.get agentregistry.locations.list agentregistry.mcpServers.get agentregistry.mcpServers.list agentregistry. operations. cancel agentregistry. operations. delete agentregistry.operations.get agentregistry.operations.list agentregistry.services.create agentregistry.services.delete agentregistry.services.get agentregistry.services.list agentregistry.services.update Agent Registry API Editor Beta ( roles/ agentregistry.editor ) Edit access to Agent Registry API resources. agentregistry. agentregistry.agents.get agentregistry.agents.list agentregistry.endpoints.get agentregistry.endpoints.list agentregistry.locations.get agentregistry.locations.list agentregistry.mcpServers.get agentregistry.mcpServers.list agentregistry. operations. cancel agentregistry. operations. delete agentregistry.operations.get agentregistry.operations.list agentregistry.services.create agentregistry.services.delete agentregistry.services.get agentregistry.services.list agentregistry.services.update Agent Registry API Viewer Beta ( roles/ agentregistry.viewer ) Readonly access to Agent Registry API resources. agentregistry.agents. agentregistry.agents.get agentregistry.agents.list agentregistry.endpoints. agentregistry.endpoints.get agentregistry.endpoints.list agentregistry.locations. agentregistry.locations.get agentregistry.locations.list agentregistry.mcpServers. agentregistry.mcpServers.get agentregistry.mcpServers.list agentregistry.operations.get agentregistry.operations.list agentregistry.services.get agentregistry.services.list Agent Registry permissions Permission Included in roles agentregistry.agents.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
+- Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) agentregistry.endpoints.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) agentregistry.endpoints.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) agentregistry.locations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) agentregistry.locations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) agentregistry.mcpServers.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
+- Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) agentregistry.mcpServers.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
+- Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) agentregistry. operations. cancel Owner ( roles/ owner ) Editor ( roles/ editor ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) agentregistry. operations. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) agentregistry.operations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) agentregistry.operations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) agentregistry.services.create Owner ( roles/ owner ) Editor ( roles/ editor ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) agentregistry.services.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) agentregistry.services.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) agentregistry.services.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) agentregistry.services.update Owner ( roles/ owner ) Editor ( roles/ editor ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.519Z"
+generated_at: "2026-04-14T23:59:44.294Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Logs Explorer query cancellation"
 feature_slug: "logs-explorer-query-cancellation"
 latest_feature_date: "2025-06-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/release-notes"
   - "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+  - "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud"
   - "https://docs.cloud.google.com/logging/docs/view/building-queries"
 keywords:
   - "logs"
@@ -26,7 +26,7 @@ keywords:
 # Logs Explorer query cancellation
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +38,21 @@ Logs Explorer lets users stop a running query with a Stop query control.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
 - [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
+- [https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud](https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud)
 - [https://docs.cloud.google.com/logging/docs/view/building-queries](https://docs.cloud.google.com/logging/docs/view/building-queries)
 
 ## Supporting Pages
-
-### Logging release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 140
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- June 04, 2025 Feature You can now cancel a running query in the Logs Explorer by clicking the Stop query button.
-- April 26, 2022 Feature You can now do the following in the improved Logs Explorer: Use the new plain-text search field and filter menus to construct queries without using the query language Customize your date and time format preferences for building queries and to display dates and times in the UI.
-- January 08, 2024 Feature You can now go to the Log Analytics page from the Logs Explorer page by clicking the Analyze results button, which automatically translates the Logging query language query into a SQL query.
-- Feature When querying your logs data in the Logs Explorer, you can now select queries from a library , making it easier to explore your data and find logs during time-critical troubleshooting sessions.
 
 ### View and analyze logs \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
 - Source ID: `site-docs-root`
-- Final score: 130
+- Final score: 165
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +61,25 @@ Evidence snippets:
 - The Logs Explorer contains the following sections, which are detailed on this page: Primary toolbar Query pane Fields pane Timeline Query results pane Primary toolbar in the Logs Explorer Using the primary toolbar, you can do the following: menu book Query library : View saved, recent, and suggested queries.
 - The copied URL has the corresponding absolute time range represented by the time range of your query; for example, 7:49:37 PM - 8:49:37 PM . settings Preferences : Adjust the view of the Logs Explorer page, and customize the format of your query results.
 
+### "Quickstart: Write and query log entries with the gcloud CLI \_|\_ Cloud\
+
+- URL: [https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud](https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud)
+- Source ID: `site-docs-root`
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Query log entries in the Logs Explorer You can query log entries by using the query editor and, with structured logs, by the key and value.
+- View and query log entries by using the Logs Explorer.
+- The method returns a response similar to the following: { "entries": [ { "textPayload": "A simple entry", "insertId": "vd4m1if7h7u1a", "resource": { "type": "global", "labels": { "project id": "myloggingproject" } }, "timestamp": "2018-11-01T18:39:19.718100792Z", "logName": "projects/myloggingproject/logs/my-test-log", "receiveTimestamp": "2018-11-01T18:39:19.718100792Z" }, { "insertId": "jpj9zjf73t1mn", "jsonPayload": { "message": "My second entry", "weather": "partly cloudy" }, "resource": { "type": "global", "labels": { "project id": "myloggingproject" } }, "timestamp": "2018-11-01T18:39:31.114507977Z", "logName": "projects/myloggingproject/logs/my-test-log", "receiveTimestamp": "2018-11-01T18:39:31.114507977Z" } ] } View log entries in the Logs Explorer To view log entries in the Google Cloud console, you can use the Logs Explorer.
+- For example, to display all log entries that contain the text simple , do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .
+
 ### "Build and save queries by using the Logging query language \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/logging/docs/view/building-queries](https://docs.cloud.google.com/logging/docs/view/building-queries)
 - Source ID: `site-docs-root`
-- Final score: 106
+- Final score: 137
 - Re-rank relevance: N/A
 
 Evidence snippets:

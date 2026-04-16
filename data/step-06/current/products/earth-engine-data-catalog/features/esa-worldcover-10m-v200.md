@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.564Z"
+generated_at: "2026-04-14T15:13:19.636Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "ESA WorldCover 10m v200"
 feature_slug: "esa-worldcover-10m-v200"
 latest_feature_date: "2022-11-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/landcover"
   - "https://developers.google.com/earth-engine/datasets/tags/landuse-landcover"
@@ -17,16 +17,16 @@ keywords:
   - "worldcover"
   - "10m"
   - "v200"
-  - "this"
   - "dataset"
   - "provides"
   - "10"
+  - "global"
 ---
 
 # ESA WorldCover 10m v200
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ This dataset provides 10 m global land cover from ESA WorldCover v200.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,38 +52,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 - Source ID: `site-docs-root`
-- Final score: 182
+- Final score: 152
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - The WorldCover product comes with 11 land cover classes and has been generated in the framework of … esa landcover landuse landuse-landcover sentinel1-derived sentinel2-derived ESA WorldCover 10m v200 The European Space Agency (ESA) WorldCover 10 m 2021 product provides a global land cover map for 2021 at 10 m resolution based on Sentinel-1 and Sentinel-2 data.
-- The active cropland products indicate whether or not a pixel identified as temporary crops has been actively … agriculture copernicus crop esa global landcover ESA WorldCover 10m v100 The European Space Agency (ESA) WorldCover 10 m 2020 product provides a global land cover map for 2020 at 10 m resolution based on Sentinel-1 and Sentinel-2 data.
-- The GFSAD products are derived through multi-sensor remote sensing data (e.g., Landsat, MODIS, AVHRR), secondary data, and field-plot data … agriculture crop landcover usgs GHSL: Global built-up surface 10m (P2023A) This raster dataset depicts the distribution of built-up surfaces, expressed in square metres per 10 m grid cell, for 2018 as observed from the S2 image data.
-- This first … agriculture landcover landuse landuse-landcover tsinghua Dynamic World V1 Dynamic World is a 10m near-real-time (NRT) Land Use/Land Cover (LULC) dataset that includes class probabilities and label information for nine classes.
+- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
+- The WorldCover product comes with 11 land cover classes and has been generated in the framework of … esa landcover landuse landuse-landcover sentinel1-derived sentinel2-derived FireCCI51: MODIS Fire cci Burned Area Pixel Product, Version 5.1 The MODIS Fire cci Burned Area pixel product version 5.1 (FireCCI51) is a monthly global 250m spatial resolution dataset containing information on burned area as well as ancillary data.
+- Produced by the Land & Carbon Lab Global Pasture Watch initiative, the mapped grassland extent includes any land cover type, which contains at least 30% of dry … global global-pasture-watch land landcover landuse landuse-landcover GPW Annual Probabilities of Natural/Semi-natural Grasslands v1 This dataset provides global annual probability maps of natural/semi-natural grassland from 2000 to 2022 at 30-m spatial resolution.
 
 ### "Datasets tagged landuse-landcover in Earth Engine \_|\_ Earth Engine Data\
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
 - Source ID: `site-docs-root-3`
-- Final score: 174
+- Final score: 152
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - The WorldCover product comes with 11 land cover classes and has been generated in the framework of … esa landcover landuse landuse-landcover sentinel1-derived sentinel2-derived ESA WorldCover 10m v200 The European Space Agency (ESA) WorldCover 10 m 2021 product provides a global land cover map for 2021 at 10 m resolution based on Sentinel-1 and Sentinel-2 data.
-- The revisit frequency of Sentinel-2 is between 2-5 days … global google landcover landuse landuse-landcover nrt ESA WorldCover 10m v100 The European Space Agency (ESA) WorldCover 10 m 2020 product provides a global land cover map for 2020 at 10 m resolution based on Sentinel-1 and Sentinel-2 data.
-- The WorldCover product comes with 11 land cover classes and has been generated in the framework of … esa landcover landuse landuse-landcover sentinel1-derived sentinel2-derived Farmscapes 2020 The Farmscapes 2020 dataset provides high-resolution (25cm) probability maps for three key semi-natural features within England's agricultural landscapes: hedgerows, woodland, and stone walls.
-- This first … agriculture landcover landuse landuse-landcover tsinghua Dynamic World V1 Dynamic World is a 10m near-real-time (NRT) Land Use/Land Cover (LULC) dataset that includes class probabilities and label information for nine classes.
+- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
+- Designed to continuously represent Earth's terrestrial surface as a proportion of basic vegetation traits, it provides a gradation of three surface cover components: percent tree cover, percent … annual geophysical global landuse-landcover modis nasa MapBiomas Land Use and Land Cover - Bolivia V1.0 MapBiomas Land Use and Land Cover (LULC) dataset for Bolivia is produced annually by the MapBiomas Project using Landsat satellite imagery and machine learning classification techniques.
+- Produced by the Land & Carbon Lab Global Pasture Watch initiative, the mapped grassland extent includes any land cover type, which contains at least 30% of dry … global global-pasture-watch land landcover landuse landuse-landcover GPW Annual Probabilities of Natural/Semi-natural Grasslands v1 This dataset provides global annual probability maps of natural/semi-natural grassland from 2000 to 2022 at 30-m spatial resolution.
 
 ### Earth Engine Data Catalog \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 132
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - The WorldCover product comes with 11 land cover classes and has been generated in the framework of … esa landcover landuse landuse-landcover sentinel1-derived sentinel2-derived ESA WorldCover 10m v200 The European Space Agency (ESA) WorldCover 10 m 2021 product provides a global land cover map for 2021 at 10 m resolution based on Sentinel-1 and Sentinel-2 data.
-- The active cropland products indicate whether or not a pixel identified as temporary crops has been actively … agriculture copernicus crop esa global landcover ESA WorldCover 10m v100 The European Space Agency (ESA) WorldCover 10 m 2020 product provides a global land cover map for 2020 at 10 m resolution based on Sentinel-1 and Sentinel-2 data.
-- Total emissions for the survey … atmosphere climate edf emissions ghg methane MethaneAIR L4 Point Sources V1.1.0 This dataset provides data for high-emitting methane point source detections (kg/hr) over 13 oil and gas or coal extraction areas from Colorado, New Mexico, and Texas in the west to Pennsylvania, Ohio, and West Virginia in the east, plus three urban areas (New York City, … atmosphere climate edf edf-methanesat-ee emissions ghg MethaneAIR L4 Point Sources v1 This dataset provides data for high-emitting methane point source detections (kg/hr) over 13 oil and gas or coal extraction areas from Colorado, New Mexico, and Texas in the west to Pennsylvania, Ohio, and West Virginia in the east, plus three urban areas (New York City, … atmosphere climate edf emissions ghg methane MethaneSAT L3 Concentration Public Preview V1.0.0 This early "Public Preview" dataset provides geospatial data for the column-averaged dry-air mole fraction of methane in the atmosphere, "XCH4", retrieved from measurements by the MethaneSAT imaging spectrometer.
-- Real-time data is any data that relates to a time that is no … climate forecast gcp-public-data-weathernext precipitation publisher-dataset temperature Wildfire Risk to Communities v0 This dataset depicts components of wildfire risk for all lands in the United States that: 1) are landscape-wide (i.e., measurable at every pixel across the landscape); and 2) represent in situ risk - risk at the location where the adverse effects take place on the … burn fire usda wildfire World Settlement Footprint 2015 The World Settlement Footprint (WSF) 2015 is a 10m resolution binary mask outlining the extent of human settlements globally derived by means of 2014-2015 multitemporal Landsat-8 and Sentinel-1 imagery (of which 217,000 and 107,000 scenes have been processed, respectively).
+- The Multivariate Adaptive Constructed Analogs (MACA) method is a statistical downscaling method which utilizes a training dataset (i.e. a meteorological observation dataset) to remove historical biases and match spatial patterns … climate conus geophysical idaho maca monthly MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
+- This dataset provides a high quality Climate Data Record (CDR) of global infrared measurements from geostationary satellites. … brightness cdr climate infrared noaa reflectance NOAA CDR OISST v02r01: Optimum Interpolation Sea Surface Temperature The NOAA 1/4 degree daily Optimum Interpolation Sea Surface Temperature (OISST) provides complete ocean temperature fields constructed by combining bias-adjusted observations from different platforms (satellite, ships, buoys) on a regular global grid, with gaps filled in by interpolation.
+- Each 10-meter pixel in this dataset is a 64-dimensional representation, or "embedding vector," that encodes temporal trajectories of surface conditions at and around that pixel as measured by various Earth observation … annual global google landsat-derived satellite-imagery sentinel1-derived Sentinel-1 SAR GRD: C-band Synthetic Aperture Radar Ground Range Detected, log scaling The Sentinel-1 mission provides data from a dual-polarization C-band Synthetic Aperture Radar (SAR) instrument at 5.405GHz (C band).
 

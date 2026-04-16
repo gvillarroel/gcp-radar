@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.491Z"
+generated_at: "2026-04-14T07:40:14.493Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "JavaScript task"
 feature_slug: "javascript-task"
 latest_feature_date: "2023-02-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task"
   - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task"
 keywords:
   - "snippets"
-  - "add"
   - "lets"
   - "javascript"
+  - "mapping"
   - "users"
   - "custom"
   - "task"
-  - "the"
 ---
 
 # JavaScript task
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +37,54 @@ The JavaScript task lets users add custom JavaScript snippets for mapping logic,
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/application-integration/docs/configure-javascript-task](https://docs.cloud.google.com/application-integration/docs/configure-javascript-task)
 - [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
+- [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
 
 ## Supporting Pages
+
+### JavaScript task \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-javascript-task](https://docs.cloud.google.com/application-integration/docs/configure-javascript-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 194
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The JavaScript task lets you write custom JavaScript code snippets for your integration.
+- In the parameters field, locate the parameter named script . "taskConfigs": [{ "task": "JavaScriptTask", "taskId": 1, "parameters": { "script": { "key": "script", "value": { "stringValue": "function that is called during the JavaScriptTask execution" } }" }] In this parameters field, add parameters that are used in the JavaScriptTask field by using the following template: "ParamName": { "key": "ParamName", "value": { "stringValue": "$ParamName$" } } To upload the integration version, make a call to the projects.locations.integrations.versions.upload method with the updated integration version file.
+- In the parameters field, locate the parameter named script . "taskConfigs": [{ "task": "JavaScriptTask", "taskId": 1, "parameters": { "script": { "key": "script", "value": { "stringValue": "function that is called during the JavaScriptTask execution" } }" }] In this parameters field, add parameters that are used in the JavaScriptTask field by using the following template: "ParamName": { "key": "ParamName", "value": { "stringValue": "$ParamName$" } } Save the changes that you made to the integration version file.
+- What's next Learn about the following: Configuring JavaScript tasks with Gemini assistance All tasks and triggers Testing and publishing integrations Error handling Integration execution logs Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 
 ### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 158
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference-2`
+- Final score: 176
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Add a JavaScript task The JavaScript task lets you write custom JavaScript code snippets for your integration.
 - Edit a JavaScript task The JavaScript task lets you write custom JavaScript code snippets for your integration.
+- Add a JavaScript task The JavaScript task lets you write custom JavaScript code snippets for your integration.
+- When you confirm the prompt, the data mapping task is replaced by a JavaScript task .
 - Supported tasks and triggers Gemini can assist you to add the following tasks and triggers: Triggers Tasks API trigger Cloud Pub/Sub trigger Salesforce trigger Jira Cloud ServiceNow Zendesk Cloud Scheduler trigger Data mapper task Approval task Suspend task Javascript task Cloud Run functions Timer task Return task Send email task Connectors task Call REST endpoint task Doc AI - Process task Gemini also assists you to create the following control flow tasks but can't generate sub-integrations: For Each Loop task For Each Parallel task While Loop task Call Integration task Create an integration Gemini assists you to create and build integrations using your natural language statements (or prompts ) as input.
-- In Application Integration, Gemini Code Assist can assist you to do the following: Create integrations Configure connector tasks in an integration Configure Call REST API tasks in an integration Add edge conditions and append additional tasks to an integration Configure JavaScript tasks ( Preview ) Generate integration description For detailed information about Gemini for Google Cloud, see Gemini for Google Cloud overview .
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### Connectors task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 150
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 119
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 06, 2023 Feature JavaScript task The JavaScript task lets you write custom JavaScript code snippets for your integration.
-- May 05, 2025 Change Cloud Function Task adds support for Cloud Functions v2 API The Cloud Function task in Application Integration now lets you create, link, and run the latest generation of serverless functions, called Cloud Run functions, using the Cloud Functions v2 API.
-- Feature Error catcher trigger The Error Catcher trigger lets you invoke an error catcher that is defined or customized to handle the failure of an identified trigger, task, or edge condition in your integration.
-- Feature Return task The Return task lets you customize the error messages corresponding to the HTTP response codes that are returned during an integration execution failure.
-
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Add and configure a Data Mapping task The Data Mapping task lets you perform variable assignments in your integration, get and set properties of json objects, and apply nested transform functions to values.
-- In Default Value , enter the following JSON: [{ "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" }, { "orderId" : "2" , "customerName" : "Tim Harvey" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "Los Angeles" , "country" : "USA" , "zipcode" : "210738" }, "items" : [{ "itemid" : "222-333-444" , "itemName" : "Laptop" , "itemPrice" : 5999.0 , "quantity" : 1.0 }], "paymentDetails" : { "mode" : "Online Payment" , "status" : "Success" }, "expectedDelivery" : "21 Feb 2023" }] In this sample JSON object, replace both occurrences of YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- In Default Value , enter the following JSON. { "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" } In this sample JSON object, replace YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- Connect the elements in the sub-integration Now that you have added and configured the required tasks and triggers in the sub-integration, add a connection (edge) between the elements.
+- If your result set has a large number of pages, you can consider using the While Loop task to get the next page and using the Data Mapping task to automatically assign page token values to the listEntitiesPageToken input parameter after each run.
+- Connectors task The Connectors task lets you quickly and securely connect to the various Google Cloud services and other business applications from your integration using the out-of-the-box connectors available in Integration Connectors .
+- If you want to use an integration variable, you must first configure a Data Mapping task to create a mapping between the integration variable and the filter clause.
+- Action: Execute custom SQL query To create a custom query, follow these steps: Follow the detailed instructions to add a connectors task .
 

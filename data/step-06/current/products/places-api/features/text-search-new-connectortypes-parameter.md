@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:49.754Z"
+generated_at: "2026-04-12T12:18:06.053Z"
 product_name: "Places API"
 product_slug: "places-api"
 feature_name: "Text Search (New) connectorTypes parameter"
 feature_slug: "text-search-new-connectortypes-parameter"
 latest_feature_date: "2024-02-21"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/web-service/text-search"
+  - "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText"
+  - "https://developers.google.com/maps/documentation/places/web-service/migrate-text"
+  - "https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text"
 keywords:
   - "text"
   - "search"
@@ -24,7 +27,7 @@ keywords:
 # Text Search (New) connectorTypes parameter
 
 Product: Places API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ This parameter filters places by the type of EV charging connector available at 
 
 This parameter filters places by the type of EV charging connector available at a place.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/web-service/text-search](https://developers.google.com/maps/documentation/places/web-service/text-search)
+- [https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText)
+- [https://developers.google.com/maps/documentation/places/web-service/migrate-text](https://developers.google.com/maps/documentation/places/web-service/migrate-text)
+- [https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text](https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Text Search (New) \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/text-search](https://developers.google.com/maps/documentation/places/web-service/text-search)
+- Source ID: `site-docs-root`
+- Final score: 277
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, add places.types,places.websiteUri to include the restaurant type and Web address in the response : curl -X POST -d '{ "textQuery" : "Spicy Vegetarian Food in Sydney, Australia" }' \ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \ -H 'X-Goog-FieldMask: places.displayName,places.formattedAddress, places.types,places.websiteUri ' \ 'https://places.googleapis.com/v1/places:searchText' The response is now in the form: { "places" : [ { "types" : [ "vegetarian restaurant" , "vegan restaurant" , "chinese restaurant" , "restaurant" , "food" , "point of interest" , "establishment" ], "formattedAddress" : "367 Pitt St, Sydney NSW 2000, Australia" , "websiteUri" : "http://www.motherchusvegetarian.com.au/" , "displayName" : { "text" : "Mother Chu's Vegetarian Kitchen" , "languageCode" : "en" } }, { "types" : [ "vegan restaurant" , "thai restaurant" , "vegetarian restaurant" , "indian restaurant" , "italian restaurant" , "american restaurant" , "restaurant" , "food" , "point of interest" , "establishment" ], "formattedAddress" : "175 First Ave, Five Dock NSW 2046, Australia" , "websiteUri" : "http://www.veggosizzle.com.au/" , "displayName" : { "text" : "Veggo Sizzle - Vegan & Vegetarian Restaurant, Five Dock, Sydney" , "languageCode" : "en" } }, ... ] } Filter places by price level Use the priceLevel option to filter the results to restaurants defined as inexpensive or moderately expensive: curl -X POST -d '{ "textQuery" : "Spicy Vegetarian Food in Sydney, Australia", "priceLevels":["PRICE LEVEL INEXPENSIVE", "PRICE LEVEL MODERATE"] }' \ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \ -H 'X-Goog-FieldMask: places.displayName,places.formattedAddress, places.priceLevel ' \ 'https://places.googleapis.com/v1/places:searchText' This example also uses the X-Goog-FieldMask header to add the places.priceLevel data field to the response so it is in the form: { "places" : [ { "formattedAddress" : "367 Pitt St, Sydney NSW 2000, Australia" , "priceLevel" : "PRICE LEVEL MODERATE" , "displayName" : { "text" : "Mother Chu's Vegetarian Kitchen" , "languageCode" : "en" } }, { "formattedAddress" : "115 King St, Newtown NSW 2042, Australia" , "priceLevel" : "PRICE LEVEL MODERATE" , "displayName" : { "text" : "Green Mushroom" , "languageCode" : "en" } }, ... ] } Add additional options to refine your search, such as includedType , minRating , rankPreference , openNow , and other parameters described in Optional parameters .
+- In this example, you include addressDescriptors in the field mask: curl -X POST -d '{ "textQuery": "clothes", "maxResultCount": 5, "locationBias": { "circle": { "center": { "latitude": 37.321328, "longitude": -121.946275 } } }, "rankPreference":"RANK PREFERENCE UNSPECIFIED" }' \ -H 'Content-Type: application/json' \ -H "X-Goog-Api-Key: API KEY " \ -H "X-Goog-FieldMask: places.displayName, places.addressDescriptor " \ https://places.googleapis.com/v1/places:searchText The response includes the place specified in the request, a list of nearby landmarks and their distance from the place, and a list of areas and their containment relationship to the place: { "places" : [ { "displayName" : { "text" : "Urban Outfitters" , "languageCode" : "en" }, "addressDescriptor" : { "landmarks" : [ { "name" : "places/ChIJVVVVUB7Lj4ARXyb4HFVDV8s" , "placeId" : "ChIJVVVVUB7Lj4ARXyb4HFVDV8s" , "displayName" : { "text" : "Westfield Valley Fair" , "languageCode" : "en" }, "types" : [ "clothing store" , "department store" , "establishment" , "food" , "movie theater" , "point of interest" , "restaurant" , "shoe store" , "shopping mall" , "store" ], "spatialRelationship" : "WITHIN" , "straightLineDistanceMeters" : 133.72855 }, { "name" : "places/ChIJ62 oCR7Lj4AR MGWkSPotD4" , "placeId" : "ChIJ62 oCR7Lj4AR MGWkSPotD4" , "displayName" : { "text" : "Nordstrom" , "languageCode" : "en" }, "types" : [ "clothing store" , "department store" , "establishment" , "point of interest" , "shoe store" , "store" ], "straightLineDistanceMeters" : 250.99161 }, { "name" : "places/ChIJ8WvuSB7Lj4ARFyHppkxDRQ4" , "placeId" : "ChIJ8WvuSB7Lj4ARFyHppkxDRQ4" , "displayName" : { "text" : "Macy's" , "languageCode" : "en" }, "types" : [ "clothing store" , "department store" , "establishment" , "point of interest" , "store" ], "straightLineDistanceMeters" : 116.24196 }, { "name" : "places/ChIJ9d3plB Lj4ARzyaU5bn80WY" , "placeId" : "ChIJ9d3plB Lj4ARzyaU5bn80WY" , "displayName" : { "text" : "Bank of America Financial Center" , "languageCode" : "en" }, "types" : [ "bank" , "establishment" , "finance" , "point of interest" ], "straightLineDistanceMeters" : 121.61515 }, { "name" : "places/ChIJaXCjxvXLj4ARCPmQpvJ52Lw" , "placeId" : "ChIJaXCjxvXLj4ARCPmQpvJ52Lw" , "displayName" : { "text" : "Bloomingdale's" , "languageCode" : "en" }, "types" : [ "clothing store" , "department store" , "establishment" , "furniture store" , "home goods store" , "point of interest" , "shoe store" , "store" ], "straightLineDistanceMeters" : 81.32396 } ], "areas" : [ { "name" : "places/ChIJb3F-EB7Lj4ARnHApQ Hu1gI" , "placeId" : "ChIJb3F-EB7Lj4ARnHApQ Hu1gI" , "displayName" : { "text" : "Westfield Valley Fair" , "languageCode" : "en" }, "containment" : "WITHIN" }, { "name" : "places/ChIJXYuykB Lj4AR1Ot8nU5q26Q" , "placeId" : "ChIJXYuykB Lj4AR1Ot8nU5q26Q" , "displayName" : { "text" : "Valley Fair" , "languageCode" : "en" }, "containment" : "WITHIN" }, { "name" : "places/ChIJtYoUX2DLj4ARKoKOb1G0CpM" , "placeId" : "ChIJtYoUX2DLj4ARKoKOb1G0CpM" , "displayName" : { "text" : "Central San Jose" , "languageCode" : "en" }, "containment" : "WITHIN" } ] } }, /.../ ] } Find businesses opening in the future The following example shows a Text Search (New) request for businesses opening in the future in New Meadows, Idaho: curl -X POST \ -H "Content-Type: application/json" \ -H "X-Goog-Api-Key: API KEY " \ -H "X-Goog-FieldMask: places.id,places.displayName, places.businessStatus,places.openingDate " \ -d '{ "textQuery": "Roberts Greenhouse and Tree Farm", "includeFutureOpeningBusinesses": true , "maxResultCount": 20, "locationBias": { "circle": { "center": {"latitude": 44.9755100, "longitude": -116.2842180}, "radius": 20 } } }' \ "https://places.googleapis.com/v1/places:searchText" The response includes businesses that will open in the future, along with their business status and anticipated opening date: { "places" : [ { "id" : "ChIJp1-VoKWJplQRMz8g-7Wa3Do" , "businessStatus" : "FUTURE OPENING" , "displayName" : { "text" : "Roberts Greenhouse and Tree Farm" , "languageCode" : "en" }, "openingDate" : { "year" : 2026 , "month" : 4 , "day" : 15 } } ] } Try it!
+- Only four results are returned. curl -X POST -d '{ "textQuery": "EV Charging Station Mountain View", "pageSize": 4, "evOptions": { "minimumChargingRateKw": 10, "connectorTypes": ["EV CONNECTOR TYPE J1772","EV CONNECTOR TYPE TESLA"] } }' \ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \ -H "X-Goog-FieldMask: places.displayName,places.evChargeOptions" \ 'https://places.googleapis.com/v1/places:searchText' The request returns the following response: { "places" : [ { "displayName" : { "text" : "EVgo Charging Station" , "languageCode" : "en" }, "evChargeOptions" : { "connectorCount" : 16 , "connectorAggregation" : [ { "type" : "EV CONNECTOR TYPE CHADEMO" , "maxChargeRateKw" : 100 , "count" : 8 , "availableCount" : 5 , "outOfServiceCount" : 0 , "availabilityLastUpdateTime" : "2024-01-10T19:10:00Z" }, { "type" : "EV CONNECTOR TYPE CCS COMBO 1" , "maxChargeRateKw" : 100 , "count" : 2 , "availableCount" : 2 , "outOfServiceCount" : 0 , "availabilityLastUpdateTime" : "2024-01-10T19:10:00Z" }, { "type" : "EV CONNECTOR TYPE CCS COMBO 1" , "maxChargeRateKw" : 350 , "count" : 6 , "availableCount" : 3 , "outOfServiceCount" : 0 , "availabilityLastUpdateTime" : "2024-01-10T19:10:00Z" } ] } }, { "displayName" : { "text" : "EVgo Charging Station" , "languageCode" : "en" }, "evChargeOptions" : { "connectorCount" : 6 , "connectorAggregation" : [ { "type" : "EV CONNECTOR TYPE CCS COMBO 1" , "maxChargeRateKw" : 100 , "count" : 4 , "availableCount" : 3 , "outOfServiceCount" : 0 , "availabilityLastUpdateTime" : "2024-01-10T19:10:00Z" }, { "type" : "EV CONNECTOR TYPE CCS COMBO 1" , "maxChargeRateKw" : 350 , "count" : 2 , "availableCount" : 0 , "outOfServiceCount" : 2 , "availabilityLastUpdateTime" : "2024-01-10T19:10:00Z" } ] } }, { "displayName" : { "text" : "EVgo Charging Station" , "languageCode" : "en" }, "evChargeOptions" : { "connectorCount" : 5 , "connectorAggregation" : [ { "type" : "EV CONNECTOR TYPE J1772" , "maxChargeRateKw" : 3.5999999046325684 , "count" : 1 , "availableCount" : 0 , "outOfServiceCount" : 1 , "availabilityLastUpdateTime" : "2024-01-10T19:10:00Z" }, { "type" : "EV CONNECTOR TYPE CHADEMO" , "maxChargeRateKw" : 50 , "count" : 2 , "availableCount" : 0 , "outOfServiceCount" : 0 , "availabilityLastUpdateTime" : "2024-01-10T19:10:00Z" }, { "type" : "EV CONNECTOR TYPE CCS COMBO 1" , "maxChargeRateKw" : 50 , "count" : 2 , "availableCount" : 0 , "outOfServiceCount" : 0 , "availabilityLastUpdateTime" : "2024-01-10T19:10:00Z" } ] } }, { "displayName" : { "text" : "Electric Vehicle Charging Station" , "languageCode" : "en" }, "evChargeOptions" : { "connectorCount" : 10 , "connectorAggregation" : [ { "type" : "EV CONNECTOR TYPE OTHER" , "maxChargeRateKw" : 210 , "count" : 10 } ] } } ] } Search for service area businesses Use the includePureServiceAreaBusinesses parameter to search for businesses without a physical service address (for example, a mobile cleaning service or a food truck).
+- The following example shows a request for "pizza in New York" limited to 5 results per page: curl -X POST -d '{ "textQuery": "pizza in New York", "pageSize": 5 }' \ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \ -H "X-Goog-FieldMask: places.id, nextPageToken " \ 'https://places.googleapis.com/v1/places:searchText' { "places" : [ { "id" : "ChIJifIePKtZwokRVZ-UdRGkZzs" }, { "id" : "ChIJPxPd P1YwokRfzLhSiACEoU" }, { "id" : "ChIJrXXKn5NZwokR78g0ipCnY60" }, { "id" : "ChIJ6ySICVZYwokR9rIK8HjXhzE" }, { "id" : "ChIJ6xvs94VZwokRnT1D2lX2OTw" } ], "nextPageToken" : "AeCrKXsZWzNVbPzO-MRWPu52jWO Xx8aKwOQ69 Je3DxRpfdjClq8Ekwh3UcF2h2Jn75kL6PtWLGV4ecQri-GEUKN OFpJkdVc-JL4Q" } To access the next page of results, use pageToken to pass in the nextPageToken in the request body: curl -X POST -d '{ "textQuery": "pizza in New York", "pageSize": 5, "pageToken": "AeCrKXsZWzNVbPzO-MRWPu52jWO Xx8aKwOQ69 Je3DxRpfdjClq8Ekwh3UcF2h2Jn75kL6PtWLGV4ecQri-GEUKN OFpJkdVc-JL4Q" }' \ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \ -H "X-Goog-FieldMask: places.id,nextPageToken" \ 'https://places.googleapis.com/v1/places:searchText' { "places" : [ { "id" : "ChIJL-LN1N1ZwokR8K2jACu6Ydw" }, { "id" : "ChIJjaD94kFZwokR-20CXqlpy 4" }, { "id" : "ChIJ6ffdpJNZwokRmcafdROM5q0" }, { "id" : "ChIJ8Q2WSpJZwokRQz-bYYgEskM" }, { "id" : "ChIJ8164qwFZwokRhplkmhvq1uE" } ], "nextPageToken" : "AeCrKXvPd6uUy-oj96W2OaqEe2pUD8QTxOM8-sKfUcFsC9t2Wey5qivrKGoGSxcZnyc7RPmaFfAktslrKbUh31ZDTkL0upRmaxA7c c" } Note: All parameters other than maxResultCount , pageSize , and pageToken must be the same as the previous request.
+
+### Method: places.searchText \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText)
+- Source ID: `site-api-reference`
+- Final score: 257
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-18 UTC."],[],["The core function is searching for places via a POST request to places:searchText, using a text query and various filters.
+- The API uses POST requests to https://places.googleapis.com/v1/places:searchText with parameters in the request body.
+- Request body The request body contains data with the following structure: JSON representation { "textQuery" : string , "languageCode" : string , "regionCode" : string , "rankPreference" : enum ( RankPreference ) , "includedType" : string , "openNow" : boolean , "minRating" : number , "maxResultCount" : integer , "pageSize" : integer , "pageToken" : string , "priceLevels" : [ enum ( PriceLevel ) ] , "strictTypeFiltering" : boolean , "locationBias" : { object ( LocationBias ) } , "locationRestriction" : { object ( LocationRestriction ) } , "evOptions" : { object ( EVOptions ) } , "routingParameters" : { object ( RoutingParameters ) } , "searchAlongRouteParameters" : { object ( SearchAlongRouteParameters ) } , "includePureServiceAreaBusinesses" : boolean , "includeFutureOpeningBusinesses" : boolean } Fields textQuery string Required.
+- HTTP request Request body JSON representation Response body JSON representation Authorization scopes RankPreference LocationBias JSON representation LocationRestriction JSON representation EVOptions JSON representation SearchAlongRouteParameters JSON representation Polyline JSON representation ContextualContent JSON representation Justification JSON representation ReviewJustification JSON representation HighlightedText JSON representation HighlightedTextRange JSON representation BusinessAvailabilityAttributesJustification JSON representation Text query based place search.
+
+### Migrate to Text Search (New) \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/migrate-text](https://developers.google.com/maps/documentation/places/web-service/migrate-text)
+- Source ID: `site-docs-root`
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In this example, you request a JSON response containing information about "Spicy Vegetarian Food in Sydney, Australia" and pass all parameters as URL parameters: curl -L -X GET \ 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=Spicy%20Vegetarian%20Food%20in%20Sydney%20Australia&key= API KEY With Text Search (New), you make a POST request and pass all parameters in the JSON request body or in headers as part of the POST request.
+- This example also uses a field mask so the response only includes the display name and formatted address of the place: curl -X POST -d '{ "textQuery" : "Spicy Vegetarian Food in Sydney, Australia" }' \ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \ -H 'X-Goog-FieldMask: places.displayName,places.formattedAddress' \ 'https://places.googleapis.com/v1/places:searchText' Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Products Google Maps Platform Documentation Web Services Places API Legacy Send feedback Migrate to Text Search (New) Stay organized with collections Save and categorize content based on your preferences.
+- The following table lists parameters in Text Search (Legacy) that have been renamed or modified for Text Search (New), or parameters that are no longer supported.
+
+### Migrate to Text Search (New) \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text](https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text)
+- Source ID: `site-docs-root-2`
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In this example, you request a JSON response containing information about "Spicy Vegetarian Food in Sydney, Australia" and pass all parameters as URL parameters: curl -L -X GET \ 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=Spicy%20Vegetarian%20Food%20in%20Sydney%20Australia&key= API KEY With Text Search (New), you make a POST request and pass all parameters in the JSON request body or in headers as part of the POST request.
+- This example also uses a field mask so the response only includes the display name and formatted address of the place: curl -X POST -d '{ "textQuery" : "Spicy Vegetarian Food in Sydney, Australia" }' \ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \ -H 'X-Goog-FieldMask: places.displayName,places.formattedAddress' \ 'https://places.googleapis.com/v1/places:searchText' Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Products Google Maps Platform Documentation Web Services Places API Legacy Send feedback Migrate to Text Search (New) Stay organized with collections Save and categorize content based on your preferences.
+- The following table lists parameters in Text Search (Legacy) that have been renamed or modified for Text Search (New), or parameters that are no longer supported.
 

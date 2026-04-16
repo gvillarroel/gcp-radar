@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:22:50.096Z"
+generated_at: "2026-04-12T12:18:47.286Z"
 product_name: "Service Catalog"
 product_slug: "service-catalog"
 feature_name: "Private Catalog distribution controls"
 feature_slug: "private-catalog-distribution-controls"
 latest_feature_date: "2019-02-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/service-catalog/docs/access-control"
-  - "https://docs.cloud.google.com/service-catalog/docs/assign-solutions"
   - "https://docs.cloud.google.com/service-catalog/docs/overview"
+  - "https://docs.cloud.google.com/service-catalog/docs/assign-solutions"
+  - "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
 keywords:
   - "private"
   - "catalog"
@@ -26,7 +27,7 @@ keywords:
 # Private Catalog distribution controls
 
 Product: Service Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Private Catalog allows cloud admins to control distribution of solutions within 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/service-catalog/docs/access-control](https://docs.cloud.google.com/service-catalog/docs/access-control)
-- [https://docs.cloud.google.com/service-catalog/docs/assign-solutions](https://docs.cloud.google.com/service-catalog/docs/assign-solutions)
 - [https://docs.cloud.google.com/service-catalog/docs/overview](https://docs.cloud.google.com/service-catalog/docs/overview)
+- [https://docs.cloud.google.com/service-catalog/docs/assign-solutions](https://docs.cloud.google.com/service-catalog/docs/assign-solutions)
+- [https://docs.cloud.google.com/service-catalog/docs/share-catalog](https://docs.cloud.google.com/service-catalog/docs/share-catalog)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/service-catalog/docs/access-control](https://docs.cloud.google.com/service-catalog/docs/access-control)
 - Source ID: `site-docs-reference`
-- Final score: 144
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 180
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Operates under a target Google Cloud resource, such as an organization, project, or folder. cloudprivatecatalog.targets.get resourcemanager.projects.get resourcemanager.projects.list Adding users to Service Catalog IAM roles Users, Google Groups, or domains must have the resourcemanager.organizations.setIamPolicy permission on the organization to add users to the Service Catalog IAM roles.
@@ -62,13 +64,27 @@ Evidence snippets:
 - In the example, members of the Google Group ( MyCompanyCatalogAdmins ) can assign users and groups to IAM roles in the organization because the group has been granted the setIamPolicy permission when granted the Organization Administrator role.
 - For example, you can grant both roles/cloudprivatecatalogproducer.admin and roles/cloudprivatecatalogproducer.manager to your cloud admin team's Google group .
 
+### Overview of Service Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/service-catalog/docs/overview](https://docs.cloud.google.com/service-catalog/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 157
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Features Service Catalog includes the following features: A Service Catalog experience for users and cloud admins Ability to create multiple catalogs and share them at different folder and project levels Ability to add additional Service Catalog cloud admins to create and curate content Support for reference links and Cloud Deployment Manager (Deployment Manager) templates Single point of entry for cloud admins and users Respect for organizational policies and Deployment Manager constraints to complement Service Catalog and provide controls A cloud admin can create a catalog under a Google Cloud organization.
+- Overview of Service Catalog Service Catalog enables developers and cloud admins to make their solutions discoverable to their own organization's internal enterprise users.
+- While making solutions discoverable, cloud admins can also control the distribution of solutions and ensure compliance and governance.
+- So she wants to run Service Catalog specifically for her engineering team to control what they can launch from Google Cloud.
+
 ### "Assigning solutions to a catalog \_|\_ Service Catalog \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/service-catalog/docs/assign-solutions](https://docs.cloud.google.com/service-catalog/docs/assign-solutions)
 - Source ID: `site-docs-reference`
-- Final score: 110
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 142
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - By curating solutions into catalogs, you control which users can view and launch approved solutions in your organization.
@@ -76,17 +92,17 @@ Evidence snippets:
 - If you've already shared the catalog to a Google Cloud resource, users who have access to the resource can now view and launch the solution.
 - To remove a solution from all associated catalogs and delete it from Service Catalog, see deleting solutions from Service Catalog .
 
-### Overview of Service Catalog \_|\_ Google Cloud Documentation
+### Sharing a catalog \_|\_ Service Catalog \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/service-catalog/docs/overview](https://docs.cloud.google.com/service-catalog/docs/overview)
+- URL: [https://docs.cloud.google.com/service-catalog/docs/share-catalog](https://docs.cloud.google.com/service-catalog/docs/share-catalog)
 - Source ID: `site-docs-reference`
-- Final score: 110
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 138
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Features Service Catalog includes the following features: A Service Catalog experience for users and cloud admins Ability to create multiple catalogs and share them at different folder and project levels Ability to add additional Service Catalog cloud admins to create and curate content Support for reference links and Cloud Deployment Manager (Deployment Manager) templates Single point of entry for cloud admins and users Respect for organizational policies and Deployment Manager constraints to complement Service Catalog and provide controls A cloud admin can create a catalog under a Google Cloud organization.
-- Overview of Service Catalog Service Catalog enables developers and cloud admins to make their solutions discoverable to their own organization's internal enterprise users.
-- While making solutions discoverable, cloud admins can also control the distribution of solutions and ensure compliance and governance.
-- So she wants to run Service Catalog specifically for her engineering team to control what they can launch from Google Cloud.
+- Grant the following Identity and Access Management (IAM) roles to users who will use the shared catalog: Catalog Consumer ( roles/cloudprivatecatalog.consumer ) OR the IAM Viewer ( roles/viewer ) role for the relevant organization, project, or folder.
+- Before you begin You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) OR Catalog Manager ( roles/cloudprivatecatalogproducer.manager ) role for the Google Cloud project where Service Catalog is enabled, and the folder, project, or organization where you're sharing the catalog.
+- If your catalog contains DM-based solutions, the Deployment Manager Editor ( roles/deploymentmanager.editor ) role for the project where your users deploy the solution.
+- After you assign solutions to a catalog, you must share the catalog to a Google Cloud resource , such as a project, folder, or organization.
 

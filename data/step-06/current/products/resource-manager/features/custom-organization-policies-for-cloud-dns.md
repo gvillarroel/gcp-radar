@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:52.968Z"
+generated_at: "2026-04-15T13:51:00.052Z"
 product_name: "Resource Manager"
 product_slug: "resource-manager"
 feature_name: "Custom organization policies for Cloud DNS"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-02-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies"
   - "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+  - "https://docs.cloud.google.com/resource-manager/docs/access-control-proj"
   - "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization"
 keywords:
   - "custom"
   - "organization"
   - "policies"
-  - "for"
   - "dns"
   - "supports"
   - "more"
   - "granular"
+  - "control"
 ---
 
 # Custom organization policies for Cloud DNS
@@ -42,40 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies](https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies)
 - [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
+- [https://docs.cloud.google.com/resource-manager/docs/access-control-proj](https://docs.cloud.google.com/resource-manager/docs/access-control-proj)
 - [https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
 
 ## Supporting Pages
 
-### REST Resource: organizations.policies | Resource Manager | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies](https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies)
-- Source ID: `site-docs-reference`
-- Final score: 79
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- REST Resource: organizations.policies Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies Documentation · Security · Resource Manager · Reference · Send feedback · Resource: Policy · JSON representation · Methods · Defines an organization policy which is used to specify constraints for configurations of Google Cloud resources.
-
-### Access control for organization resources with IAM | Resource Manager | Google Cloud Documentation
+### "Access control for organization resources with IAM \_|\_ Resource Manager\
 
 - URL: [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
 - Source ID: `site-iam-reference`
-- Final score: 62
+- Final score: 194
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control for organization resources with IAM Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/access-control-org Control IAM access for organization resources.
-- Manage allow policies, grant roles, apply Organization Policy, and test permissions.
+- Lowest-level resources where you can grant this role: Organization cloudasset. assets. analyzeOrgPolicy cloudasset. assets. exportResource cloudasset.assets.listResource cloudasset. assets. searchAllResources orgpolicy. orgpolicy.constraints.list orgpolicy. customConstraints. create orgpolicy. customConstraints. delete orgpolicy. customConstraints. get orgpolicy. customConstraints. list orgpolicy. customConstraints. update orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set policysimulator. orgPolicyViolations. list policysimulator. orgPolicyViolationsPreviews. policysimulator. orgPolicyViolationsPreviews. create policysimulator. orgPolicyViolationsPreviews. get policysimulator. orgPolicyViolationsPreviews. list recommender. orgPolicyInsights. recommender. orgPolicyInsights. get recommender. orgPolicyInsights. list recommender. orgPolicyInsights. update recommender. orgPolicyRecommendations. recommender. orgPolicyRecommendations. get recommender. orgPolicyRecommendations. list recommender. orgPolicyRecommendations. update Browser ( roles/ browser ) Read access to browse the hierarchy for a project, including the folder, organization, and allow policy.
+- Lowest-level resources where you can grant this role: Project essentialcontacts. essentialcontacts. contacts. create essentialcontacts. contacts. delete essentialcontacts.contacts.get essentialcontacts. contacts. list essentialcontacts. contacts. send essentialcontacts. contacts. update iam.policybindings. iam.policybindings.get iam.policybindings.list orgpolicy.constraints.list orgpolicy.policies.list orgpolicy.policy.get resourcemanager.capabilities. resourcemanager. capabilities. get resourcemanager. capabilities. update resourcemanager. folders. createPolicyBinding resourcemanager. folders. deletePolicyBinding resourcemanager.folders.get resourcemanager. folders. getIamPolicy resourcemanager.folders.list resourcemanager. folders. searchPolicyBindings resourcemanager. folders. setIamPolicy resourcemanager. folders. updatePolicyBinding resourcemanager. organizations. resourcemanager. organizations. createPolicyBinding resourcemanager. organizations. deletePolicyBinding resourcemanager. organizations. get resourcemanager. organizations. getIamPolicy resourcemanager. organizations. searchPolicyBindings resourcemanager. organizations. setIamPolicy resourcemanager. organizations. updatePolicyBinding resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Organization Viewer ( roles/ resourcemanager.organizationViewer ) Provides access to view an organization.
+- Lowest-level resources where you can grant this role: Project resourcemanager.folders.get resourcemanager.folders.list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list Creating custom roles In addition to the predefined roles described in this topic, you can also create custom roles that are collections of permissions that you tailor to your needs.
+- Lowest-level resources where you can grant this role: Organization resourcemanager. organizations. get Organization Policy Administrator ( roles/ orgpolicy.policyAdmin ) Provides access to define what restrictions an organization wants to place on the configuration of cloud resources by setting Organization Policies.
 
-### Set up a Google Cloud organization resource | Resource Manager | Google Cloud Documentation
+### "Access control for projects with IAM \_|\_ Resource Manager \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/resource-manager/docs/access-control-proj](https://docs.cloud.google.com/resource-manager/docs/access-control-proj)
+- Source ID: `site-iam-reference`
+- Final score: 180
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Google Cloud offers Identity and Access Management (IAM) , which lets you give more granular access to specific Google Cloud resources and prevents unwanted access to other resources.
+- IAM lets you control who (users) has what access (roles) to which resources by setting allow policies.
+- For more information, see Manage access to projects, folders, and organizations .
+- To learn more about VPC Service Controls, see the VPC Service Controls overview .
+
+### "Set up a Google Cloud organization resource \_|\_ Resource Manager \_|\_\
 
 - URL: [https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
 - Source ID: `site-docs-root`
-- Final score: 40
-- Re-rank relevance: N/A
+- Final score: 178
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Set up a Google Cloud organization resource Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization Set up Google Cloud organization resources.
+- As the Organization Administrator takes control, they might want to remove these organization-level permissions to start locking down access at a finer granularity (for instance, at the folder or project level).
+- Google Workspace or Cloud Identity super administrator responsibilities, in the context of Google Cloud organization resource setup are: Assigning the Organization Administrator role to some users Being a point of contact in case of recovery issues Controlling the lifecycle of the Google Workspace or Cloud Identity account and organization resource as explained under Delete an organization The Organization Administrator , once assigned, can assign Identity and Access Management roles to other users.
+- Note that, because allow and deny policies are inherited down the hierarchy, having the Project Creator role assigned to the entire domain ( domain:mycompany.com ) at the organization resource level implies that every user in the domain can create projects anywhere in the hierarchy.
+- The Google Workspace or Cloud Identity super administrators and the Google Cloud Organization Administrator are key roles during the setup process and for lifecycle control for the organization resource.
 

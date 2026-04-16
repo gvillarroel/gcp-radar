@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.911Z"
+generated_at: "2026-04-14T15:34:54.493Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "NFS volume mounts"
 feature_slug: "nfs-volume-mounts"
 latest_feature_date: "2024-08-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/run/docs/container-contract"
   - "https://docs.cloud.google.com/run/docs/reference/container-contract"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service"
 keywords:
-  - "nfs"
-  - "volume"
   - "mounts"
-  - "let"
-  - "run"
-  - "services"
-  - "and"
+  - "volume"
+  - "file"
+  - "mount"
   - "jobs"
 ---
 
 # NFS volume mounts
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ NFS volume mounts let Cloud Run services and jobs mount an NFS file share as a v
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service)
 
 ## Supporting Pages
 
@@ -52,39 +49,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 182
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - This restricts some network capabilities and prevents your root containers from running as "true root." Limited file system mounts from inside containers The supported path for mounting file systems in Cloud Run is through the fully managed volume mounts feature in your Cloud Run container configuration .
-- Container running in a job execution must exit upon completion For Cloud Run jobs, the container must exit with exit code 0 when the job has successfully completed, and exit with a non-zero exit code when the job has failed.
-- Outbound request timeouts For Cloud Run services and jobs, there is a timeout after 10 minutes of idle time for requests from your container to VPC .
-- Instance lifecycle Lifecycle characteristics differ for Cloud Run jobs and services, so these are described separately in the following subsections.
+- In addition, Cloud Run doesn't support nested volume mounts that mount one volume inside of another volume.
+- Typical uses of memory include: Code loaded into memory to run the service Writing to the file system Extra processes running in the container such as an nginx server In-memory caching systems such as the PHP OpCache Per request memory usage Shared in-memory volumes GPU You can configure a container in a Cloud Run instance to access a GPU.
+- Unsupported mechanisms include, but aren't limited to, the following: Running a mount process inside the container to mount any of the following: NFS, Filestore, SMB/CIFS, or any other network file system.
 
 ### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 182
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - This restricts some network capabilities and prevents your root containers from running as "true root." Limited file system mounts from inside containers The supported path for mounting file systems in Cloud Run is through the fully managed volume mounts feature in your Cloud Run container configuration .
-- Container running in a job execution must exit upon completion For Cloud Run jobs, the container must exit with exit code 0 when the job has successfully completed, and exit with a non-zero exit code when the job has failed.
-- Outbound request timeouts For Cloud Run services and jobs, there is a timeout after 10 minutes of idle time for requests from your container to VPC .
-- Instance lifecycle Lifecycle characteristics differ for Cloud Run jobs and services, so these are described separately in the following subsections.
+- In addition, Cloud Run doesn't support nested volume mounts that mount one volume inside of another volume.
+- Typical uses of memory include: Code loaded into memory to run the service Writing to the file system Extra processes running in the container such as an nginx server In-memory caching systems such as the PHP OpCache Per request memory usage Shared in-memory volumes GPU You can configure a container in a Cloud Run instance to access a GPU.
+- Unsupported mechanisms include, but aren't limited to, the following: Running a mount process inside the container to mount any of the following: NFS, Filestore, SMB/CIFS, or any other network file system.
 
-### "Package com.google.cloud.run.v2 (0.88.0) \_|\_ Java client libraries \_\
+### Quickstart: Deploy a Python (Flask) web app to Google Cloud with Cloud Run | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2)
-- Source ID: `site-java-reference`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 127
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Builder Builder for projects/{project}/locations/{location}. com. google. cloud. run. v2.NFS Volume Source Represents an NFS mount. com. google. cloud. run. v2.NFS Volume Source.
-- List Worker Pools Response Or Builder com. google. cloud. run. v2.NFS Volume Source Or Builder com. google. cloud. run. v2.
-- Builder Represents a volume backed by a Cloud Storage bucket using Cloud Storage FUSE. com. google. cloud. run. v2.GRPC Action GRPCAction describes an action involving a GRPC port. com. google. cloud. run. v2.GRPC Action.
-- Builder Builder for ExecutionsSettings. com. google. cloud. run. v2.GCS Volume Source Represents a volume backed by a Cloud Storage bucket using Cloud Storage FUSE. com. google. cloud. run. v2.GCS Volume Source.
+- AI use cases in Cloud Run Get started Overview Deploy a sample web service Deploy a sample container Deploy from a git repository Deploy a Hello World service from source code Go Node.js Python Flask FastAPI Gradio LangChain Smolagents Streamlit Agent Development Kit (ADK) for Python Java Kotlin C# C++ PHP Ruby Other Frameworks Overview Angular SSR Next.js Nuxt.js SvelteKit Deploy a sample function Deploy a function using the console Deploy a function using gcloud Execute a sample job Execute a job Execute a job from source code Go Node.js Python Java Shell Deploy a sample worker pool Develop Set up your environment Plan and prepare your service Develop your service Containerize your code Connect to Google Cloud services Install a system package in your container Run gcloud commands within your container Plan and prepare your function Overview Compare Cloud Run functions Write Cloud Run functions Runtimes Overview Node.js Overview Node.js dependencies Python Overview Python dependencies Go Overview Go dependencies Java Overview Java dependencies .NET Ruby PHP Local functions development Function triggers Tutorials Create a function that returns BigQuery results Create a function that returns Spanner results Integrate with Cloud databases Codelabs Build and test Build sources to containers Build functions to containers Local testing Serve HTTP requests Deploy services Deploy container images Continuous deployment from git Deploy from source code Deploy from Compose Deploy functions Serve web traffic Mapping custom domains Serving static assets with CDN Serving traffic from multiple regions Deploy a multi-region app with service health Enable session affinity Frontend proxying using Nginx Manage services View, copy, or delete services View or delete revisions Traffic migration, gradual rollouts, rollbacks Configure services Overview Capacity Memory limits CPU limits GPU GPU configuration GPU performance best practices Request timeout Maximum concurrent requests About maximum concurrent requests per instance Configure maximum concurrent requests Billing Optimize service configurations with Recommender Environment Container port and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes CIFS/SMB Execution environment Container health checks HTTP/2 requests Secrets Service identity Scaling About instance autoscaling for services Maximum instances About maximum instances for services Configure maximum instances Minimum instances Manual scaling Metadata Description Labels Tags Source deploy configurations Supported language runtimes and base images Configure automatic base image updates Build environment variables Build service account Build worker pools Invoke and trigger services Invoke with HTTPS requests Host a webhook target Stream with WebSockets Overview Build a WebSocket Chat service tutorial Invoke asynchronously Invoke services on a schedule Create a workflow Invoke services as part of a Workflow Connect a series of services from Cloud Functions and Cloud Run tutorial Execute asynchronous tasks Call a service from a Pub/Sub push subscription Trigger service from Pub/Sub Integrate image processing into Pub/Sub sample tutorial Trigger from events Create triggers with Eventarc Pub/Sub triggers Create Pub/Sub Eventarc triggers Trigger functions from Pub/Sub using Eventarc Trigger functions from routed log entries Cloud Storage triggers Create triggers with Cloud Storage Trigger services from Cloud Storage using Eventarc Trigger functions from Cloud Storage using Eventarc Firestore triggers Create triggers with Firestore Trigger functions from events in a Firestore database Connect with other services using gRPC Best practices General development tips for services Cost optimization Optimize Java services Optimize Python services Optimize Node.js services Load testing best practices Understand zonal redundancy Functions best practices Overview Configure event-driven function retries Execute job tasks to completion Create jobs Execute jobs Execute jobs Execute scheduled jobs Execute jobs from Workflows Configure jobs Container entrypoint CPU limits Memory limits GPU GPU configuration GPU best practices Environment variables Container health checks Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Labels Maximum retries Parallelism Secrets Service identity Task timeout Tags Manage jobs View or delete jobs View or stop job executions Best practices Jobs retries and checkpoints Cost optimization Perform continuous background work Deploy worker pools Deploy worker pools Deploy worker pools from source code Manage worker pools View or delete worker pools View or delete worker pool revisions Instance splits and rollbacks Configure worker pools Capacity Memory limits CPU limits GPU GPU configuration GPU best practices Environment Container and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Container health checks Secrets Service identity Instance count Metadata Description Labels Scale based on external metrics Autoscale worker pools with external metrics Kafka autoscaler Host GitHub runners with worker pools Autoscale worker pools based on Prometheus metrics Autoscale worker pools with Pub/Sub pull subscriptions Automate scaling with Workflows Cost optimization Configure networking Best practices for Cloud Run networking Configure private networking Send traffic to VPC network Overview Direct VPC Register private IPs for worker pools using Cloud DNS Dual-stack (IPv4 and IPv6) Migrate standard VPC connector to Direct VPC VPC connectors Send traffic to Shared VPC network Overview Direct VPC Migrate Shared VPC connector to Direct VPC Connectors in service projects Connectors in host project Static outbound IP address Network security Restrict endpoint ingress (services) Use VPC Service Controls (VPC SC) Cloud Service Mesh Secure Security design overview Authenticate requests Overview Allow public access Custom audiences Authenticate developers Service-to-service Authenticate users End user authentication tutorial Secure your resources Access control with IAM Configure IAP for Cloud Run Introduction to service identity Protect services with Cloud Armor Use Binary Authorization Use Cloud Run Threat Detection Use customer managed encryption keys Manage custom constraints for projects View software supply chain security insights Secure Cloud Run services tutorial Multi-tenant platforms running untrusted code Monitor and log Monitoring and logging overview View built-in metrics Write Prometheus metrics Write OpenTelemetry metrics Log and view logs Audit logging Error reporting Use distributed tracing for services Run AI solutions Overview Explore resources AI agents Overview Build and deploy A2A agents Overview Deploy A2A agents Build and deploy ADK agents Build and deploy n8n agents MCP servers Overview Build and deploy a remote MCP server Tools Code execution Browser automation Inference with GPUs Overview Services Run LLM inference on Cloud Run GPUs with Ollama Run agents with Gemma 4 models on Cloud Run Run LLM inference on Cloud Run GPUs with vLLM Run OpenCV on Cloud Run with GPU acceleration Run LLM inference on Cloud Run GPUs with Hugging Face Transformers.js Run LLM inference on Cloud Run GPUs with Hugging Face TGI Jobs Fine tune LLMs using GPUs with Cloud Run jobs Run batch inference using GPUs with Cloud Run jobs GPU-accelerated video transcoding with FFmpeg AI-assisted development and vibe coding Introduction to Cloud Run for AI-assisted developers Cookbook Migrate An existing web service From App Engine From Cloud Run functions (1st gen) From AWS Lambda From Heroku From Cloud Foundry Migration overview Choose an OCI-compliant-strategy Migrate to OCI containers Migrate configuration Sample migration: Spring Music From VMWare Tanzu From a VM using Migrate to Containers From Kubernetes To GKE Troubleshoot Introduction Troubleshoot errors Local troubleshooting tutorial Known issues Samples All Cloud Run code samples All Cloud Run functions code samples Code samples for all products AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application hosting Cloud Run Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Write the sample application To write an application in Python: Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named main.py and paste the following code into it: import os from flask import Flask app = Flask ( __name__ ) @app . route ( "/" ) def hello_world (): """Example Hello World route.""" name = os . environ . get ( "NAME" , "World" ) return f "Hello { name } !" if __name__ == "__main__" : app . run ( debug = True , host = "0.0.0.0" , port = int ( os . environ . get ( "PORT" , 8080 ))) This code responds to requests with our "Hello World" greeting.
+- Create a file named requirements.txt and paste the following code into it: Flask~=3.0 gunicorn~=23.0 Werkzeug~=3.0 This code adds packages needed by the sample.
+- By following the steps in this quickstart, Cloud Run automatically builds a Dockerfile for you when you deploy from source code .
 

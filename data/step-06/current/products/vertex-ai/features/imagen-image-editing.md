@@ -1,30 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:05.311Z"
+generated_at: "2026-04-15T12:02:17.119Z"
 product_name: "Vertex AI"
 product_slug: "vertex-ai"
 feature_name: "Imagen image editing"
 feature_slug: "imagen-image-editing"
 latest_feature_date: "2023-07-17"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/image/usage-guidelines"
+  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/dataset"
+  - "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-recognition-automl/training"
 keywords:
   - "imagen"
   - "image"
   - "editing"
-  - "on"
   - "vertex"
   - "ai"
   - "announced"
-  - "general"
+  - "availability"
 ---
 
 # Imagen image editing
 
 Product: Vertex AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +35,57 @@ Imagen on Vertex AI announced general availability of image editing.
 
 Imagen on Vertex AI announced general availability of image editing.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vertex-ai/docs/generative-ai/image/usage-guidelines](https://docs.cloud.google.com/vertex-ai/docs/generative-ai/image/usage-guidelines)
+- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/dataset](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/dataset)
+- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-recognition-automl/training](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-recognition-automl/training)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Responsible AI and usage guidelines for Imagen \_|\_ Generative AI on Vertex\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/generative-ai/image/usage-guidelines](https://docs.cloud.google.com/vertex-ai/docs/generative-ai/image/usage-guidelines)
+- Source ID: `site-docs-reference-3`
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- These code to category mappings are as follows: Error code Safety category Description Content filtered: prompt input or image output 58061214 17301594 Child Detects child content where it isn't allowed due to the API request settings or allowlisting. input (prompt): 58061214 output (image): 17301594 29310472 15236754 Celebrity Detects a photorealistic representation of a celebrity in the request. input (prompt): 29310472 output (image): 15236754 62263041 Dangerous content Detects content that's potentially dangerous in nature. input (prompt) 57734940 22137204 Hate Detects hate-related topics or content. input (prompt): 57734940 output (image): 22137204 74803281 29578790 42876398 Other Detects other miscellaneous safety issues with the request. input (prompt): 42876398 output (image): 29578790, 74803281 39322892 People/Face Detects a person or face when it isn't allowed due to the request safety settings. output (image) 92201652 Personal information Detects Personally Identifiable Information (PII) in the text, such as the mentioning a credit card number, home addresses, or other such information. input (prompt) 89371032 49114662 72817394 Prohibited content Detects the request of prohibited content in the request. input (prompt): 89371032 output (image): 49114662, 72817394 90789179 63429089 43188360 Sexual Detects content that's sexual in nature. input (prompt): 90789179 output (image): 63429089, 43188360 35561574 35561575 Third-party content Guardrails related to third-party content. input (prompt) output (image) 78610348 Toxic Detects toxic topics or content in the text. input (prompt) 61493863 56562880 Violence Detects violence-related content from the image or text. input (prompt): 61493863 output (image): 56562880 32635315 Vulgar Detects vulgar topics or content from the text. input (prompt) 64151117 Celebrity or child Detects photorealistic respresentation of a celebrity or of a child that violates Google's safety policies. input (prompt) output (image) Limitations The following limits apply to different tasks: Image generation and editing limitations Bias amplification : While Imagen on Vertex AI can generate high-quality images, there may be potential biases in the generated content.
+- View Imagen for Generation model card View Imagen for Editing and Customization model card Imagen usage guidelines Read the following general product attributes and legal considerations before you use Imagen on Vertex AI.
+- Misrepresentation and authenticity : Editing images using Imagen on Vertex AI can result in misrepresentation or manipulation of images, potentially leading to the creation of deceptive or misleading content.
+- Misrepresentation and authenticity : Be cautious when editing images of adults or children, as editing images using Imagen on Vertex AI might result in misrepresentation or manipulation of images.
+
+### "Hello image data: Create an image classification dataset and import images\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/dataset](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/dataset)
+- Source ID: `site-docs-reference-2`
+- Final score: 95
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Vertex AI Send feedback Hello image data: Create an image classification dataset and import images Stay organized with collections Save and categorize content based on your preferences.
+- Below you can see some sample rows: gs://cloud-samples-data/ai-platform/flowers/flowers.csv : gs://cloud-samples-data/ai-platform/flowers/daisy/10559679065 50d2b16f6d.jpg,daisy gs://cloud-samples-data/ai-platform/flowers/dandelion/10828951106 c3cd47983f.jpg,dandelion gs://cloud-samples-data/ai-platform/flowers/roses/14312910041 b747240d56 n.jpg,roses gs://cloud-samples-data/ai-platform/flowers/sunflowers/127192624 afa3d9cb84.jpg,sunflowers gs://cloud-samples-data/ai-platform/flowers/tulips/13979098645 50b9eebc02 n.jpg,tulips Create an image classification dataset and import data Visit the Google Cloud console to begin the process of creating your dataset and training your image classification model.
+- Previous arrow back Set up your project and environment Next Train an AutoML image classification model arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- This tutorial focuses on image classification (applying a label to an image), but the same data could be used for another objective, such as object detection (object identification and labeling).
+
+### "Hello image data: Train an AutoML image classification model \_|\_ Vertex\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-recognition-automl/training](https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-recognition-automl/training)
+- Source ID: `site-docs-reference-3`
+- Final score: 83
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Vertex AI Send feedback Hello image data: Train an AutoML image classification model Stay organized with collections Save and categorize content based on your preferences.
+- Previous arrow back Create a dataset and import images Next Evaluate and analyze model performance arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Key point: An annotation set is the collection of annotations associated with a data type and a specific objective (image data type, classification objective in this case).
+- After your dataset is created and data is imported, use the Google Cloud console to review the training images and begin model training.
 

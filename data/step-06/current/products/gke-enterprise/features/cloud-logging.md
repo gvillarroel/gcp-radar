@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.772Z"
+generated_at: "2026-04-12T12:16:18.951Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Cloud Logging"
@@ -11,6 +11,7 @@ coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
 keywords:
   - "logging"
@@ -38,12 +39,13 @@ A managed logging service for collecting, storing, and analyzing logs; A managed
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 
 ## Supporting Pages
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 104
+- Final score: 144
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - Source ID: `site-docs-reference`
-- Final score: 84
+- Final score: 126
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +76,24 @@ Evidence snippets:
 - Enable GKE API Enabling this API gives you access to the GKE, which includes the following features: Config Sync Policy Controller Config Controller Migrate to Containers GKE Identity Service Cloud Logging and Cloud Monitoring for GKE system components Security posture dashboard Node to node encryption FQDN network policies Enable related products and features To use the following products and features with GKE, you must enable each of these features individually.
 - Application deployment Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Knative serving Google Cloud Marketplace Application migration Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Migrate to Containers VM management Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) VM Runtime on Google Distributed Cloud What's next Version and upgrade support Managed Cloud Service Mesh supported features In-cluster Cloud Service Mesh supported features Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 
+### "Version and upgrade support \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support)
+- Source ID: `site-docs-reference`
+- Final score: 114
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- On AWS Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 1.31.6-gke.200 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 1.30.10-gke.200 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 On Azure Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 - 1.31 1.31.6-gke.200 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 1.30.10-gke.200 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 GKE attached clusters: Amazon Elastic Kubernetes Service (EKS) Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 - 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 - 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 GKE attached clusters: Azure Kubernetes Service (AKS) Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 - 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 - 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1 Connect, Cloud Logging, and Cloud Monitoring are supported on all cluster types.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- For details about recommended versions, see Amazon EKS platform versions and Supported Kubernetes versions in Azure Kubernetes Service (AKS) .
+- To ensure a proper upgrade path, recommended patch versions are proven against our highest standard for production use.
+
 ### "Grant support read-only access to clusters \_|\_ Google Kubernetes Engine\
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 80
+- Final score: 98
 - Re-rank relevance: N/A
 
 Evidence snippets:

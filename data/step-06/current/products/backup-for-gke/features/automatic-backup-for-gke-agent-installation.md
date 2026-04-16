@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.538Z"
+generated_at: "2026-04-14T09:38:03.554Z"
 product_name: "Backup for GKE"
 product_slug: "backup-for-gke"
 feature_name: "Automatic Backup for GKE agent installation"
 feature_slug: "automatic-backup-for-gke-agent-installation"
 latest_feature_date: "2023-07-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan"
   - "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup"
-  - "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra"
 keywords:
   - "automatically"
   - "installation"
+  - "installs"
   - "agent"
   - "automatic"
-  - "backup"
-  - "now"
-  - "for"
-  - "gke"
 ---
 
 # Automatic Backup for GKE agent installation
 
 Product: Backup for GKE
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ Backup for GKE now automatically installs the agent in a cluster when a user cre
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan)
 - [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup)
-- [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra](https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra)
 
 ## Supporting Pages
 
@@ -52,41 +49,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan)
 - Source ID: `site-docs-root`
-- Final score: 226
+- Final score: 99
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Note: This will automatically install the Backup for GKE agent in the specified cluster.
 - Automatic pause : Backup for GKE can automatically pause a backup plan in the following scenarios: When initiating a backup (scheduled or manual), if any of the following errors occur: StatusInvalidCluster : The StatusInvalidCluster error indicates an unrecoverable condition where the cluster name is invalid or metadata information of the cluster is unavailable.
-- If this value is set, then backups created for that plan cannot be deleted (either automatically or manually) until that lifetime expires.
-- In the Retention policy section, do the following: Set the number of days to retain the backup before the backup is automatically deleted.
+- To automatically create backups, in the Backup schedule section, select the Enable backup schedule checkbox, and then choose one of the following methods: Note: All backup schedules are interpreted in UTC timezone.
+- AgentNotInstalled : The AgentNotInstalled error indicates an unrecoverable condition where the cluster doesn't have the necessary agent custom resource definitions installed, implying improper agent installation.
 
 ### Back up your workloads \_|\_ Backup for GKE \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup)
 - Source ID: `site-docs-root`
-- Final score: 208
+- Final score: 82
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
+- View a volume backup Volume backup resources are automatically created by the agent when PersistentVolumeClaims are encountered within the scope of a backup.
+- These resources are created and managed by the agent automatically as part of the backup operation.
 - If the backup plan for this backup defines a minimum lifetime for backups, configured with the --backup-delete-lock-days flag, then backups created for this plan cannot be deleted (either automatically or manually) until that lifetime expires.
 - Enter a backup name and optional description. (Optional) Set the number of days to retain the backup before the backup is automatically deleted. (Optional) Set the number of days during which backups cannot be deleted.
-- Delete a backup Backups can be deleted in two ways: If the backup plan defines a retention period, backups created for that plan are automatically deleted after that period expires.
-- View a volume backup Volume backup resources are automatically created by the agent when PersistentVolumeClaims are encountered within the scope of a backup.
 
-### Backup for GKE \_|\_ Google Cloud Documentation
+### AI/ML orchestration on GKE documentation \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke)
-- Source ID: `site-api-reference`
-- Final score: 204
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra](https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra)
+- Source ID: `site-docs-root`
+- Final score: 77
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Administrators don't interact with the agent, as the agent is driven by custom Kubernetes resources ( BackupJob and RestoreJob ) automatically created in the cluster by the Backup for GKE service in response to the creation of backup and restore cloud resources.
-- Agent overview The Backup for GKE agent is deployed and runs in each GKE cluster that you configure to be backed up by the Backup for GKE service.
-- A GKE add-on (the Backup for GKE agent) that must be enabled in each cluster for which you wish to perform backup and restore operations.
-- The agent runs backup and restore operations in these clusters by interacting with the Backup for GKE API.
+- AI ML Storage Use case Use cases Automatic driver installation simplifies using NVIDIA GPUs in GKE Automatically install Nvidia GPU drivers in GKE.
+- Tutorial AI/ML Inference Agentic AI Training Training and tutorials Deploy an agentic AI application on GKE with the Agent Development Kit (ADK) and Vertex AI Learn how to deploy and manage a containerized agentic AI application on GKE, using the Agent Development Kit (ADK) and Vertex AI for scalable inference with Gemini 2.0 Flash.
+- Tutorial Agent Sandbox Agentic AI Training Training and tutorials Deploy an agentic AI application on GKE with the Agent Development Kit (ADK) and a self-hosted LLM Learn how to deploy and manage a containerized agentic AI application on GKE, using the Agent Development Kit (ADK) and vLLM for scalable inference with Llama 3.1.
+- AI/ML Inference AI/ML Training Storage Training Training and tutorials Isolate AI code execution with Agent Sandbox Learn how to install and run the Agent Sandbox controller on GKE, and deploy a sandboxed environment on the cluster for testing untrusted shell commands.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.804Z"
+generated_at: "2026-04-15T13:50:47.134Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Custom CRM extended OAuth authentication"
@@ -9,9 +9,9 @@ latest_feature_date: "2023-03-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api"
 keywords:
   - "custom"
   - "crm"
@@ -19,8 +19,7 @@ keywords:
   - "oauth"
   - "authentication"
   - "adds"
-  - "to"
-  - "the"
+  - "integration"
 ---
 
 # Custom CRM extended OAuth authentication
@@ -42,48 +41,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api](https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Salesforce integration guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 156
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 107
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Custom CRM, Extended OAuth and nested parameter support : The following enhancements have been added to the Custom CRM integration offering: Extended OAuth Authentication support.
-- Fixed an issue where the client secret couldn't be saved when a user attempted to set up authentication (using either basic authentication or OAuth) for a custom CRM with the Generic API CRM lookup method.
-- Fixed an issue where the setup dialog for Find an account by query endpoint could not be reached due to an authentication error when configuring OAuth for a custom CRM.
-- Support for new CRM features: Surveys Agent Status inheritance Custom Callback number Improved support for OAuth authentication, for example now including admin tokens.
+- Create an APEX REST class Although your code will be different, please see the below example: @RestResource ( urlmapping = '/searchVIP' ) global class UjetVIPSearch { @httpPOST global static void searchVIP () { RestRequest req = RestContext . request ; RestResponse res = RestContext . response ; responsewrapper response = new responsewrapper (); try { requestWrapper jsonBody ; jsonBody = ( requestWrapper ) JSON . deserialize ( req . requestBody . toString (), requestWrapper . class ); String aninumber = jsonBody . phone ; // CCAI Platform will send phone parameter in format % 222 % 333 % 4444 if ( string . isNotBlank ( aninumber )) { integer cnt = [ SELECT count() from Contact where Contact.Phone like :aninumber AND VIP c = true ] ; response . is vip = ( cnt > 0 ); res . responseBody = blob . valueof ( JSON . serialize ( response )); } else { res . statuscode = 404 ; res . responseBody = blob . valueof ( 'No Contact found' ); } } catch ( exception e ) { res . statuscode = 500 ; res . responseBody = blob . valueof ( e . getmessage ()); } } public class responsewrapper { public boolean is vip ; } public class requestWrapper { public string phone ; } } Modify security Since the Apex REST class will be accessed by the agent's OAuth token, you will need to add all applicable agent profiles into the "Enabled Profiles" column.
+- No Case: ability to connect the CCAI Platform Custom Session object directly to any Salesforce account object, bypassing the need to create a case This builds on two related features: Option to look-up end users in Person Account object (instead of Contact ( default )) Option to leverage our CCAI Platform Session Object which stores all assets and data related to a single session in optimized CCAI Platform Session object Configuration availability requirements The configuration options for Account Lookup and Session Data are only available if the following conditions are met: Account Lookup configuration To configure custom account lookup settings, the following is required: Logged in Agent - at least one agent needs to be logged into a CCAI Platform adapter in Salesforce.
+- Feedback: when enabled, shows customer feedback collected during session on record Case: case the session object is attached to Initial menu selected: initial queue menu selected Materialized menu path: the selected path leading to connection with the agent Language: the language used or selected for the session Outbound phone number -- applicable outbound phone number Status: status of the session Total transfers: number of total transfers during the session Files All media files associated with the session object are attached as files to the session object.
+- Session actions Reflects session activities: Started call Custom data from customer has arrived Finished call Customer rating feedback received Example: Session action detail UI - end user feedback Transfers Any transfers associated with the session are listed in this section.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Zendesk app installation guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 80
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Get info from the developer settings as needed The Settings > Developer Settings area is strictly for developers - you need to supply information from this page to your developers if you are setting up any SDKs or making any custom CRM configurations.
-- PSTN Fallback calls : When the end-user doesn't have a strong enough data connection for a VoIP call, CCAI Platform will fallback to a PSTN call while still sending the important custom data packet to your CRM record.
-- PSTN Fallback calls : When the end-user doesn't have a strong enough data connection for a VoIP call, CCAI Platform will fallback to a PSTN call while still sending the important custom data packet to your CRM record.
-- Recommended headset features Binaural - Audio in both ears cuts down on background noise Noise-canceling microphone Noise-canceling headset USB connection Brands of headsets our customers use Jabra Logitech Plantronics Sennheiser What's next Configure a sample contact center Private Service Connect Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 72
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide)
+- Source ID: `site-docs-reference`
+- Final score: 98
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Contact Center AI Platform (CCAI Platform) is an AI-driven Contact Center as a Service platform that is built natively on Google Cloud and uses the other Gemini Enterprise for Customer Experience products at its core.
-- Customer Experience Insights : Uses natural language processing to help contact center managers by identifying call drivers, sentiment, popular questions, and other information about customer interactions.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
-- Provides smart device capabilities like photo and video sharing, channel blending, and convenient, on-device authentication.
+- Follow these instructions or refer to the following link from Zendesk: Using OAuth authentication with your application .
+- Check if custom ticket fields were created from Zendesk by referring to: Admin > Manage > User Fields Admin > Manage > Ticket Fields Fields User Fields Identifier Ticket Fields Verification (Checkbox) Customer Text Feedback (Multi-line text) Customer Satisfaction Rating (Numeric): 1 to 5 Shared Customer Rating (Text): Twitter or Facebook Domain-based Access Control Refer to Domain-based Access Control for steps to limit platform access based on the domain and details related to CRM-specific domains.
+- Redirect URLs Set the Redirect URLs of the OAuth client as follows, https://INSTANCE.ccaiplatform.com/v1/zendesk/oauth callback You should replace INSTANCE with the actual subdomain of your CCAI Platform.
+- Set Zendesk Subdomain to the subdomain of your Zendesk account. https://your zendesk subdomain.zendesk.com Set OAuth Client ID to the Unique Identifier of your Zendesk OAuth client.
+
+### "Mid-Session authentication by API \_|\_ Google Cloud Contact Center as a\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api](https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 91
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Mid-Session authentication by API Stay organized with collections Save and categorize content based on your preferences.
+- Upon successful authentication, you can update the end user identifier to link the session to the verified end-user.
+- Aids with customer lookup. john@doe.com 3 phone String No The generic phone number associated with the interaction.
+- This page explains how to use call and chat API endpoints for mid-session authentication in your SDK channels.
 

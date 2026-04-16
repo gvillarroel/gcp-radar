@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.627Z"
+generated_at: "2026-04-15T13:50:47.017Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Web SDK exited event"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-12-06"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets"
 keywords:
   - "web"
   - "sdk"
   - "exited"
   - "event"
-  - "the"
   - "now"
   - "provides"
-  - "an"
+  - "triggers"
+  - "when"
 ---
 
 # Web SDK exited event
@@ -42,48 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Chat Settings and Features \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 156
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
+- Source ID: `site-docs-reference`
+- Final score: 103
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature New session events for quality management The following session events are now available for quality management (QM) integration: Hold Mute Redaction Recording indication Queue information Feature New custom data types for events The following custom data types for events are now available using the Web SDK: custom data secured custom data not secured For more information, see Data for events .
-- For example, if you have a list of restaurant options, you might create a content card for each one with a deep link that brings the user to the restaurant's website when they click. iOS SDK, improved accessibility : The mobile iOS SDK now fulfills the following Web Content Accessibility Guidelines (WCAG) criteria for improved accessibility: Identify Input Purpose : Ensure that each input field is programmatically determinable, allowing users to autofill inputs.
-- Feature Web SDK: Support for hiding the download transcript option You can now configure the web SDK to do the following on the end-user's chat screen: Hide the command to download a transcript during a session .
-- Feature Virtual Agent, signed and unsigned data parameters : You can now pass signed and unsigned (secured/unsecured) data parameters for Virtual Agent calls and chats using Mobile SDK in addition to the Web SDK.
+- For When the transfer count exceeds the limit , select one of the following: Disable all transfer options : when the limit is reached, this prevents an agent from making additional transfers Allow one final transfer to the queue : when the limit is reached, this lets an agent do a final transfer to a queue that you specify.
+- Proactive Web SDK Triggers Overview When triggers are configured, and the trigger conditions are met, the Web SDK window will appear expanded on the page, prompting the consumer to make a selection from choices dictated by the trigger configuration.
+- Triggers can be set for: Time spent on a page Keywords are/are not in the URL Returning or new visitor to the page Visited page number of times Setting up Proactive Triggers There are four steps to follow when setting up a new Proactive Trigger.
+- Reporting details When the timer hits 00 seconds, an event is logged that notes that the agent exceeded the target chat response time and can be seen in the 2 Agent Activity reports.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Android SDK guide \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 94
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide)
+- Source ID: `site-docs-reference`
+- Final score: 93
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- About the CCAI Platform SDKs CCAI Platform SDKs let you provide voice and chat support to your customers on your website or inside your app on iOS and Android.
-- Web SDK With the CCAI Platform Web SDK, your customers can get in touch with your support team directly on your website.
-- Instant web calls: Provide visitors with an estimated wait time and automatically initiate an outbound call to a site visitor when their place in the support queue is reached Scheduled calls: Allow site visitors to schedule a time to talk with your support team Queue deflection: Automatically route end users to a message or page on your site Chat support: Provide live chat support directly from your website Proactive triggers : Display a contact bubble for web calls and chats automatically based on visitor behavior.
+- Log.i ( "CCAI Platform Event Type" , eventType.getValue ()) ; StringBuilder builder = new StringBuilder () ; for ( Map.Entry<String, Object> entry : eventData.entrySet ()) { builder.append ( entry.getKey ()) .append ( " : " ) .append ( entry.getValue ()) .append ( "\n" ) ; } Log.i ( "CCAI Platform Event Data" , builder.toString ()) ; } }) ; Event type Description Data included in event EmailClicked Triggers when the end-user clicks the email channel.
+- Log.i ( "CCAI Platform Event Type" , eventType.getValue ()) ; StringBuilder builder = new StringBuilder () ; for ( Map.Entry<String, Object> entry : eventData.entrySet ()) { builder.append ( entry.getKey ()) .append ( " : " ) .append ( entry.getValue ()) .append ( "\n" ) ; } Log.i ( "CCAI Platform Event Data" , builder.toString ()) ; } }) ; App permissions The app requires the following permissions and requests these permissions of user when required.
+- Queue menu data, session created data, session ended data SdkTerminated Triggers when the SDK is closed, including when it's closed unexpectedly.
+- Session data SessionResumed Triggers when the end-user switches back to a chat or call session from the background.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Standard Reports: Queue Data Sets \_|\_ Google Cloud Contact Center as a\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 64
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets)
+- Source ID: `site-docs-reference`
+- Final score: 86
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
-- It provides a turnkey implementation of an omni-channel contact center that is built to integrate with Google's other contact center AI products.
-- Provides smart device capabilities like photo and video sharing, channel blending, and convenient, on-device authentication.
-- CCAI Platform: Provides organizations with modern, embeddable APIs that are optimized for the smartphone era.
+- For the queue interactions for each date, the report provides a breakdown of how the interactions exited the queue.
+- For the queue entries for each date, the report provides a breakdown of how those interactions exited the queue.
+- This report provides insights to configured SLAs including thresholds and service level event status.
+- Avg Speed of Answer (ASA) Average time that elapsed between when an interaction entered a queue and when it was assigned to an agent. (Avg Queue Time) Max Speed to Answer The maximum time that elapsed from when an interaction entered a queue and when it was assigned to an agent. (Also known as Max Queue Time) SLA % Out of all the interactions that entered the queue, the percentage of interactions that started an active conversation with an agent within the configured SLA threshold.
 

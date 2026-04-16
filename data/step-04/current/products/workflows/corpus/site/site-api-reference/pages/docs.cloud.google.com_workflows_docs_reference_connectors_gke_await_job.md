@@ -1,0 +1,71 @@
+---
+title: "Function: gke.await_job \_|\_ Workflows \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/workflows/docs/reference/connectors/gke/await_job
+knowledge_key: corpus
+source_id: site-api-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview
+source_metadata:
+  url: https://docs.cloud.google.com/workflows/docs/reference/connectors/gke/await_job
+  title: "Function: gke.await_job \_|\_ Workflows \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Application development
+Workflows
+Reference
+Send feedback
+Function: gke.await_job
+Stay organized with collections
+Save and categorize content based on your preferences.
+Wait for a Kubernetes Job to complete.
+Arguments
+Arguments
+cluster_id
+string
+The ID of the cluster.
+job_name
+string
+Name of the job.
+location
+string
+The location that the cluster is hosted in.
+namespace
+string
+The namespace of the job (default: default ).
+project
+string
+The project that the cluster is hosted in. Default value is this workflow's project.
+query
+Optional query parameters for fetching the job. If present, must be a map of simple types that will be URL-encoded and appended to the URL. For more information, see Kubernetes API reference .
+timeout
+float
+The timeout, in seconds (default: 1800.0 ). If the job doesn't complete within the timeout, a TimeoutError is raised. The maximum allowed timeout is one year.
+polling_policy
+dict
+Policy for polling the job's status. Supported fields are initial_delay , max_delay , and multiplier . For details, see Connectors reference .
+Returns
+The completed Kubernetes
+Job .
+Raised exceptions
+Exceptions
+ConnectionError
+In case of a network problem (DNS failure, refused connection, etc.).
+TimeoutError
+When the specified timeout is reached before the response is received.
+HttpError
+If the response status is >= 400.
+ValueError
+If the cluster does not have status RUNNING .
+FailedJobError
+If the job failed.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

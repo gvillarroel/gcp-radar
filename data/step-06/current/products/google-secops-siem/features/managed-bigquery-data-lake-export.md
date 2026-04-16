@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:56:14.447Z"
+generated_at: "2026-04-15T00:53:15.604Z"
 product_name: "Google SecOps SIEM"
 product_slug: "google-secops-siem"
 feature_name: "Managed BigQuery data lake export"
 feature_slug: "managed-bigquery-data-lake-export"
 latest_feature_date: "2024-07-17"
 deprecation_date: "2024-12-31"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
   - "https://docs.cloud.google.com/chronicle/docs/deprecations"
-  - "https://docs.cloud.google.com/chronicle/docs/soar/release-notes"
+  - "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
 keywords:
   - "managed"
+  - "bigquery"
   - "lake"
   - "export"
-  - "the"
-  - "for"
   - "will"
   - "no"
   - "longer"
+  - "accessible"
 ---
 
 # Managed BigQuery data lake export
 
 Product: Google SecOps SIEM
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,67 +38,52 @@ The managed BigQuery data lake for export will no longer be accessible to most G
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
 - [https://docs.cloud.google.com/chronicle/docs/deprecations](https://docs.cloud.google.com/chronicle/docs/deprecations)
-- [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
+- [https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs](https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs)
+- [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
 
 ## Supporting Pages
-
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 17, 2024 Deprecated On December 31, 2024, the managed BigQuery data lake for export will not be accessible to Google SecOps customers except for customers in the Enterprise Plus Tier.
-- A10 Load Balancer ( A10 LOAD BALANCER ) Akamai Enterprise Application Access ( AKAMAI EAA ) Akamai WAF ( AKAMAI WAF ) Apache ( APACHE ) Apache Tomcat ( TOMCAT ) AppOmni ( APPOMNI ) Arcsight CEF ( ARCSIGHT CEF ) Aruba ( ARUBA WIRELESS ) Aruba Airwave ( ARUBA AIRWAVE ) Atlassian Cloud Admin Audit ( ATLASSIAN AUDIT ) Attivo Networks ( ATTIVO ) Auth0 ( AUTH ZERO ) Avigilon Access Logs ( AVIGILON ACCESS LOGS ) AWS Cloudtrail ( AWS CLOUDTRAIL ) AWS GuardDuty ( GUARDDUTY ) AWS RDS ( AWS RDS ) AWS Security Hub ( AWS SECURITY HUB ) AWS VPC Flow ( AWS VPC FLOW ) Azure AD ( AZURE AD ) Azure Application Gateway ( AZURE GATEWAY ) Azure Cosmos DB ( AZURE COSMOS DB ) Azure Firewall ( AZURE FIREWALL ) Azure Front Door ( AZURE FRONT DOOR ) Bindplane Agent ( BINDPLANE AGENT ) BloxOne Threat Defense ( BLOXONE ) Blue Coat Proxy ( BLUECOAT WEBPROXY ) Cato Networks ( CATO NETWORKS ) Check Point ( CHECKPOINT FIREWALL ) Check Point Harmony ( CHECKPOINT HARMONY ) CircleCI ( CIRCLECI ) Cisco AMP ( CISCO AMP ) Cisco Application Centric Infrastructure ( CISCO ACI ) Cisco ASA ( CISCO ASA FIREWALL ) Cisco Email Security ( CISCO EMAIL SECURITY ) Cisco Firepower NGFW ( CISCO FIREPOWER FIREWALL ) Cisco Internetwork Operating System ( CISCO IOS ) Cisco ISE ( CISCO ISE ) Cisco NX-OS ( CISCO NX OS ) Cisco Umbrella DNS ( UMBRELLA DNS ) Cisco Umbrella Web Proxy ( UMBRELLA WEBPROXY ) Cisco vManage SD-WAN ( CISCO SDWAN ) Cisco VPN ( CISCO VPN ) Citrix Netscaler ( CITRIX NETSCALER ) Cloudflare ( CLOUDFLARE ) Cloudflare Warp ( CLOUDFLARE WARP ) CrowdStrike Detection Monitoring ( CS DETECTS ) CrowdStrike Falcon ( CS EDR ) CrowdStrike Falcon Stream ( CS STREAM ) Crowdstrike Identity Protection Services ( CS IDP ) Dell CyberSense ( DELL CYBERSENSE ) Duo Administrator Logs ( DUO ADMIN ) Elastic Packet Beats ( ELASTIC PACKETBEATS ) Elastic Windows Event Log Beats ( ELASTIC WINLOGBEAT ) ExtraHop RevealX ( EXTRAHOP ) F5 ASM ( F5 ASM ) F5 BIGIP LTM ( F5 BIGIP LTM ) F5 Distributed Cloud Services ( F5 DCS ) Fastly CDN ( FASTLY CDN ) Forcepoint DLP ( FORCEPOINT DLP ) Forcepoint Proxy ( FORCEPOINT WEBPROXY ) FortiGate ( FORTINET FIREWALL ) Fortinet FortiAnalyzer ( FORTINET FORTIANALYZER ) Fortinet FortiClient ( FORTINET FORTICLIENT ) Fortinet FortiDDoS ( FORTINET FORTIDDOS ) Fortinet FortiEDR ( FORTINET FORTIEDR ) Fortinet Proxy ( FORTINET WEBPROXY ) GitHub ( GITHUB ) Gitlab ( GITLAB ) HP Linux ( HP LINUX ) IBM Guardium ( GUARDIUM ) Imperva ( IMPERVA WAF ) Juniper MX Router ( JUNIPER MX ) Kemp Load Balancer ( KEMP LOADBALANCER ) Linkshadow NDR ( LINKSHADOW NDR ) Linux Auditing System (AuditD) ( AUDITD ) McAfee Web Gateway ( MCAFEE WEBPROXY ) McAfee Web Protection ( MCAFEE WEB PROTECTION ) Micro Focus iManager ( MICROFOCUS IMANAGER ) Microsoft Azure NSG Flow ( AZURE NSG FLOW ) Microsoft Azure Resource ( AZURE RESOURCE LOGS ) Microsoft CyberX ( CYBERX ) Microsoft Defender for Endpoint ( MICROSOFT DEFENDER ENDPOINT ) Microsoft Dynamics 365 User Activity ( MICROSOFT DYNAMICS 365 ) Microsoft Graph API Alerts ( MICROSOFT GRAPH ALERT ) Microsoft Netlogon ( MICROSOFT NETLOGON ) Microsoft PowerShell ( POWERSHELL ) Microsoft System Center Endpoint Protection ( MICROSOFT SCEP ) Mikrotik Router ( MIKROTIK ROUTER ) Mimecast URL Logs ( MIMECAST URL LOGS ) Office 365 ( OFFICE 365 ) Okta ( OKTA ) Okta User Context ( OKTA USER CONTEXT ) Open LDAP ( OPENLDAP ) Open Policy Agent ( OPA ) Oracle ( ORACLE DB ) Oracle Cloud Guard ( OCI CLOUDGUARD ) Orca Cloud Security Platform ( ORCA ) Palo Alto Cortex XDR Alerts ( CORTEX XDR ) Palo Alto Networks Firewall ( PAN FIREWALL ) Palo Alto Networks IoT Security ( PAN IOT ) Palo Alto Prisma Cloud Alert payload ( PAN PRISMA CA ) ProFTPD ( PROFTPD ) Proofpoint Observeit ( OBSERVEIT ) Proofpoint On Demand ( PROOFPOINT ON DEMAND ) ProofPoint Secure Email Relay ( PROOFPOINT SER ) Proofpoint Tap Alerts ( PROOFPOINT MAIL ) Proofpoint Threat Response ( PROOFPOINT TRAP ) RSA SecurID Access Identity Router ( RSA SECURID ) Rubrik ( RUBRIK ) Salesforce ( SALESFORCE ) Security Command Center Threat ( N/A ) Sentry ( SENTRY ) ServiceNow Audit ( SERVICENOW AUDIT ) ServiceNow CMDB ( SERVICENOW CMDB ) Smartsheet ( SMARTSHEET ) Snare System Diagnostic Logs ( SNARE SOLUTIONS ) Snowflake ( SNOWFLAKE ) Solaris system ( SOLARIS SYSTEM ) SonicWall ( SONIC FIREWALL ) Sophos Central ( SOPHOS CENTRAL ) Sophos UTM ( SOPHOS UTM ) Sourcefire ( SOURCEFIRE IDS ) Suricata EVE ( SURICATA EVE ) Symantec DLP ( SYMANTEC DLP ) Symantec Endpoint Protection ( SEP ) Symantec Event export ( SYMANTEC EVENT EXPORT ) Symantec Web Security Service ( SYMANTEC WSS ) Sysdig ( SYSDIG ) Tableau ( TABLEAU ) Tanium Asset ( TANIUM ASSET ) Tanium Threat Response ( TANIUM THREAT RESPONSE ) tenable.io ( TENABLE IO ) Trend Micro ( TIPPING POINT ) Trend Micro Deep Security ( TRENDMICRO DEEP SECURITY ) Trend Micro Vision One ( TRENDMICRO VISION ONE ) TrendMicro Deep Discovery Inspector ( TRENDMICRO DDI ) UberAgent ( UBERAGENT ) Unix system ( NIX SYSTEM ) Vectra Detect ( VECTRA DETECT ) Vectra Stream ( VECTRA STREAM ) Venafi ZTPKI ( VENAFI ZTPKI ) Vercel WAF ( VERCEL WAF ) Virtru Email Encryption ( VIRTRU EMAIL ENCRYPTION ) WatchGuard ( WATCHGUARD ) Wazuh ( WAZUH ) Windows DNS ( WINDOWS DNS ) Windows Event ( WINEVTLOG ) Windows Event (XML) ( WINEVTLOG XML ) Windows Network Policy Server ( WINDOWS NET POLICY SERVER ) Zendesk CRM ( ZENDESK CRM ) ZeroFox Platform ( ZEROFOX PLATFORM ) Zimperium ( ZIMPERIUM ) Zoom Operation Logs ( ZOOM OPERATION LOGS ) Zscaler ( ZSCALER WEBPROXY ) Zscaler Internet Access Audit Logs ( ZSCALER INTERNET ACCESS ) Zscaler Secure Private Access Audit Logs ( ZSCALER ZPA AUDIT ) The following log types were added without a default parser.
-- For example: Old rule name: ATI Active Breach Rule Match for File IoCs (SHA256) New rule name: ATI Active Breach Rule Match for File IoCs (about.file.sha256) March 26, 2025 Announcement The managed BigQuery resources and API keys associated with the chronicle-tla Google Cloud project will be fully deprecated by April 30, 2025.
-- Users without global scope will see restricted information in the following areas: Emerging threats page: IOC match counts per campaign are no longer visible.
-
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 17, 2024 Deprecated On December 31, 2024, the managed BigQuery data lake for export will not be accessible to Google SecOps customers except for customers in the Enterprise Plus Tier.
-- A10 Load Balancer ( A10 LOAD BALANCER ) Akamai Enterprise Application Access ( AKAMAI EAA ) Akamai WAF ( AKAMAI WAF ) Apache ( APACHE ) Apache Tomcat ( TOMCAT ) AppOmni ( APPOMNI ) Arcsight CEF ( ARCSIGHT CEF ) Aruba ( ARUBA WIRELESS ) Aruba Airwave ( ARUBA AIRWAVE ) Atlassian Cloud Admin Audit ( ATLASSIAN AUDIT ) Attivo Networks ( ATTIVO ) Auth0 ( AUTH ZERO ) Avigilon Access Logs ( AVIGILON ACCESS LOGS ) AWS Cloudtrail ( AWS CLOUDTRAIL ) AWS GuardDuty ( GUARDDUTY ) AWS RDS ( AWS RDS ) AWS Security Hub ( AWS SECURITY HUB ) AWS VPC Flow ( AWS VPC FLOW ) Azure AD ( AZURE AD ) Azure Application Gateway ( AZURE GATEWAY ) Azure Cosmos DB ( AZURE COSMOS DB ) Azure Firewall ( AZURE FIREWALL ) Azure Front Door ( AZURE FRONT DOOR ) Bindplane Agent ( BINDPLANE AGENT ) BloxOne Threat Defense ( BLOXONE ) Blue Coat Proxy ( BLUECOAT WEBPROXY ) Cato Networks ( CATO NETWORKS ) Check Point ( CHECKPOINT FIREWALL ) Check Point Harmony ( CHECKPOINT HARMONY ) CircleCI ( CIRCLECI ) Cisco AMP ( CISCO AMP ) Cisco Application Centric Infrastructure ( CISCO ACI ) Cisco ASA ( CISCO ASA FIREWALL ) Cisco Email Security ( CISCO EMAIL SECURITY ) Cisco Firepower NGFW ( CISCO FIREPOWER FIREWALL ) Cisco Internetwork Operating System ( CISCO IOS ) Cisco ISE ( CISCO ISE ) Cisco NX-OS ( CISCO NX OS ) Cisco Umbrella DNS ( UMBRELLA DNS ) Cisco Umbrella Web Proxy ( UMBRELLA WEBPROXY ) Cisco vManage SD-WAN ( CISCO SDWAN ) Cisco VPN ( CISCO VPN ) Citrix Netscaler ( CITRIX NETSCALER ) Cloudflare ( CLOUDFLARE ) Cloudflare Warp ( CLOUDFLARE WARP ) CrowdStrike Detection Monitoring ( CS DETECTS ) CrowdStrike Falcon ( CS EDR ) CrowdStrike Falcon Stream ( CS STREAM ) Crowdstrike Identity Protection Services ( CS IDP ) Dell CyberSense ( DELL CYBERSENSE ) Duo Administrator Logs ( DUO ADMIN ) Elastic Packet Beats ( ELASTIC PACKETBEATS ) Elastic Windows Event Log Beats ( ELASTIC WINLOGBEAT ) ExtraHop RevealX ( EXTRAHOP ) F5 ASM ( F5 ASM ) F5 BIGIP LTM ( F5 BIGIP LTM ) F5 Distributed Cloud Services ( F5 DCS ) Fastly CDN ( FASTLY CDN ) Forcepoint DLP ( FORCEPOINT DLP ) Forcepoint Proxy ( FORCEPOINT WEBPROXY ) FortiGate ( FORTINET FIREWALL ) Fortinet FortiAnalyzer ( FORTINET FORTIANALYZER ) Fortinet FortiClient ( FORTINET FORTICLIENT ) Fortinet FortiDDoS ( FORTINET FORTIDDOS ) Fortinet FortiEDR ( FORTINET FORTIEDR ) Fortinet Proxy ( FORTINET WEBPROXY ) GitHub ( GITHUB ) Gitlab ( GITLAB ) HP Linux ( HP LINUX ) IBM Guardium ( GUARDIUM ) Imperva ( IMPERVA WAF ) Juniper MX Router ( JUNIPER MX ) Kemp Load Balancer ( KEMP LOADBALANCER ) Linkshadow NDR ( LINKSHADOW NDR ) Linux Auditing System (AuditD) ( AUDITD ) McAfee Web Gateway ( MCAFEE WEBPROXY ) McAfee Web Protection ( MCAFEE WEB PROTECTION ) Micro Focus iManager ( MICROFOCUS IMANAGER ) Microsoft Azure NSG Flow ( AZURE NSG FLOW ) Microsoft Azure Resource ( AZURE RESOURCE LOGS ) Microsoft CyberX ( CYBERX ) Microsoft Defender for Endpoint ( MICROSOFT DEFENDER ENDPOINT ) Microsoft Dynamics 365 User Activity ( MICROSOFT DYNAMICS 365 ) Microsoft Graph API Alerts ( MICROSOFT GRAPH ALERT ) Microsoft Netlogon ( MICROSOFT NETLOGON ) Microsoft PowerShell ( POWERSHELL ) Microsoft System Center Endpoint Protection ( MICROSOFT SCEP ) Mikrotik Router ( MIKROTIK ROUTER ) Mimecast URL Logs ( MIMECAST URL LOGS ) Office 365 ( OFFICE 365 ) Okta ( OKTA ) Okta User Context ( OKTA USER CONTEXT ) Open LDAP ( OPENLDAP ) Open Policy Agent ( OPA ) Oracle ( ORACLE DB ) Oracle Cloud Guard ( OCI CLOUDGUARD ) Orca Cloud Security Platform ( ORCA ) Palo Alto Cortex XDR Alerts ( CORTEX XDR ) Palo Alto Networks Firewall ( PAN FIREWALL ) Palo Alto Networks IoT Security ( PAN IOT ) Palo Alto Prisma Cloud Alert payload ( PAN PRISMA CA ) ProFTPD ( PROFTPD ) Proofpoint Observeit ( OBSERVEIT ) Proofpoint On Demand ( PROOFPOINT ON DEMAND ) ProofPoint Secure Email Relay ( PROOFPOINT SER ) Proofpoint Tap Alerts ( PROOFPOINT MAIL ) Proofpoint Threat Response ( PROOFPOINT TRAP ) RSA SecurID Access Identity Router ( RSA SECURID ) Rubrik ( RUBRIK ) Salesforce ( SALESFORCE ) Security Command Center Threat ( N/A ) Sentry ( SENTRY ) ServiceNow Audit ( SERVICENOW AUDIT ) ServiceNow CMDB ( SERVICENOW CMDB ) Smartsheet ( SMARTSHEET ) Snare System Diagnostic Logs ( SNARE SOLUTIONS ) Snowflake ( SNOWFLAKE ) Solaris system ( SOLARIS SYSTEM ) SonicWall ( SONIC FIREWALL ) Sophos Central ( SOPHOS CENTRAL ) Sophos UTM ( SOPHOS UTM ) Sourcefire ( SOURCEFIRE IDS ) Suricata EVE ( SURICATA EVE ) Symantec DLP ( SYMANTEC DLP ) Symantec Endpoint Protection ( SEP ) Symantec Event export ( SYMANTEC EVENT EXPORT ) Symantec Web Security Service ( SYMANTEC WSS ) Sysdig ( SYSDIG ) Tableau ( TABLEAU ) Tanium Asset ( TANIUM ASSET ) Tanium Threat Response ( TANIUM THREAT RESPONSE ) tenable.io ( TENABLE IO ) Trend Micro ( TIPPING POINT ) Trend Micro Deep Security ( TRENDMICRO DEEP SECURITY ) Trend Micro Vision One ( TRENDMICRO VISION ONE ) TrendMicro Deep Discovery Inspector ( TRENDMICRO DDI ) UberAgent ( UBERAGENT ) Unix system ( NIX SYSTEM ) Vectra Detect ( VECTRA DETECT ) Vectra Stream ( VECTRA STREAM ) Venafi ZTPKI ( VENAFI ZTPKI ) Vercel WAF ( VERCEL WAF ) Virtru Email Encryption ( VIRTRU EMAIL ENCRYPTION ) WatchGuard ( WATCHGUARD ) Wazuh ( WAZUH ) Windows DNS ( WINDOWS DNS ) Windows Event ( WINEVTLOG ) Windows Event (XML) ( WINEVTLOG XML ) Windows Network Policy Server ( WINDOWS NET POLICY SERVER ) Zendesk CRM ( ZENDESK CRM ) ZeroFox Platform ( ZEROFOX PLATFORM ) Zimperium ( ZIMPERIUM ) Zoom Operation Logs ( ZOOM OPERATION LOGS ) Zscaler ( ZSCALER WEBPROXY ) Zscaler Internet Access Audit Logs ( ZSCALER INTERNET ACCESS ) Zscaler Secure Private Access Audit Logs ( ZSCALER ZPA AUDIT ) The following log types were added without a default parser.
-- For example: Old rule name: ATI Active Breach Rule Match for File IoCs (SHA256) New rule name: ATI Active Breach Rule Match for File IoCs (about.file.sha256) March 26, 2025 Announcement The managed BigQuery resources and API keys associated with the chronicle-tla Google Cloud project will be fully deprecated by April 30, 2025.
-- Users without global scope will see restricted information in the following areas: Emerging threats page: IOC match counts per campaign are no longer visible.
 
 ### "Feature deprecations \_|\_ Google Security Operations \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/deprecations](https://docs.cloud.google.com/chronicle/docs/deprecations)
 - Source ID: `site-api-reference`
-- Final score: 154
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- BigQuery data lake December 31, 2024 March 31, 2025 On December 31, 2024, the managed BigQuery data lake for export won't be accessible to Google SecOps customers except for customers in the Enterprise Plus Tier.
-- Users will no longer be able to use integrations that run Python 2.7 in the Google SecOps platform after October 13, 2024.
-- Users will no longer be able to use integrations that run Python 3.7 in the Google SecOps platform after June 1, 2025.
-- NETSKOPE ALERT log type October 15, 2025 November 30, 2025 As of October 15, 2025, the Netskope Alerts v1 connector (for the NETSKOPE ALERT log type) has been deprecated and will be removed on November 30, 2025.
-
-### Google Security Operations SOAR release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 152
+- Final score: 144
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- As part of the fix, large parameter values will show as truncated on the platform but will not change the actual value sent to the playbook. (ID #49774296) Fixed Missing audit log entries when deleting permission groups (ID #51496411) Fixed Playbook simulator sometimes not executing actions in the correct order (ID #48264534) Fixed The platform does not show the correct error when trying to save a playbook which is open in another tab. (ID #00269661) Fixed Can't remove the remote agent after host/container has stopped (ID #49024310) Fixed List and multi-select parameters not appearing correctly in the IDE (ID # 51995565) July 29, 2024 Announcement Release 6.3.12 is now in General Availability.
-- Fixed lastLoginTime returns wrong date for SAML users (ID #00278010) Fixed Playbooks with async actions longer than 7 days can't be saved even though time set to 14 days in IDE (ID #00269032) Fixed Wrong error message returned for environment alias duplicates (ID #00271405) Fixed Clicking on events configuration opens the wrong mapping & modeling rules Fixed Incident Manager appearing in navigation even though user doesn"t have license (ID #49062139) March 15, 2024 Announcement Release 6.2.5.0 is now in General Availability.
-- Fixed Timeout for automatic and manual python-run operations failing after 5 minutes even though it's defined for a longer time in the platform (ID #00243596, #00213817, #45379045, #48348087, #00245583. #00227758, #00250153) Automatic actions/operations now run for up to the time defined in the platform (maximum of 20 minutes).
-- Note that Scripts are not supported for security reasons. (ID #00273271) Fixed Unable to create new playbook blocks (ID #00275270) Fixed Custom integration settings: existing script dependencies don't show up (ID #49703871) February 22, 2024 Deprecated The following APIs have been deprecated and will be deleted in 6 months.
+- BigQuery data lake December 31, 2024 March 31, 2025 On December 31, 2024, the managed BigQuery data lake for export won't be accessible to Google SecOps customers except for customers in the Enterprise Plus Tier.
+- Chronicle BigQuery udm events table July 01, 2023 August 01, 2023 On or after July 1, 2023, the existing udm events table in Chronicle-managed BigQuery projects will be fully replaced with a new table named events .
+- BigQuery data lake December 31, 2024 April 30, 2025 The shutdown of managed BigQuery resources and API keys associated with the chronicle-tla Google Cloud project has been extended to April 30, 2025.
+- Google SecOps ingestion stats table in BigQuery April 18, 2024 May 15, 2024 The ingestion stats table in BigQuery has been deprecated and will no longer be updated after May 15, 2024.
+
+### "Ingest Google Cloud data \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs](https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs)
+- Source ID: `site-api-reference`
+- Final score: 87
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This asset metadata is drawn from your Cloud Asset Inventory and consists of information about your assets, resources, and identities including the following: Environment Location Zone Hardware models Access control relationships between resources and identities The following types of Google Cloud asset metadata will be exported to your Google SecOps instance: GCP BIGQUERY CONTEXT GCP COMPUTE CONTEXT GCP IAM CONTEXT GCP IAM ANALYSIS GCP STORAGE CONTEXT GCP CLOUD FUNCTIONS CONTEXT GCP SQL CONTEXT GCP NETWORK CONNECTIVITY CONTEXT GCP RESOURCE MANAGER CONTEXT The following are examples of Google Cloud asset metadata: Application name— Google-iamSample/0.1 Project name— projects/my-project Note: You need to have either Security Command Center Standard or Security Command Center Premium enabled to export Google Cloud asset metadata to Google SecOps.
+- Select the type of data that will be sent by enabling one or more of the following options: Google Cloud Logging : For more information about this option, see Export Google Cloud Logs .
+- In the Organization menu, select the organization from which logs will be exported.
+- To learn how to filter out logs that are generated by routine activities, see Tune Cloud Audit Logs filters . log id("cloudaudit.googleapis.com/activity") (exported by the default filter) log id("cloudaudit.googleapis.com/system event") (exported by the default filter) log id("cloudaudit.googleapis.com/policy") log id("cloudaudit.googleapis.com/access transparency") Cloud NAT logs ( GCP CLOUD NAT ): log id("compute.googleapis.com/nat flows") Cloud DNS logs ( GCP DNS ): log id("dns.googleapis.com/dns queries") (exported by the default filter) Firewall policy rules logging ( GCP FIREWALL ): log id("compute.googleapis.com/firewall") GCP IDS : log id("ids.googleapis.com/threat") log id("ids.googleapis.com/traffic") GCP LOADBALANCING : This includes logs from Google Cloud Armor and Cloud Load Balancing (both External and Internal). log id("requests") log id("loadbalancing.googleapis.com/requests") GCP CLOUDSQL : log id("cloudsql.googleapis.com/mysql-general.log") log id("cloudsql.googleapis.com/mysql.err") log id("cloudsql.googleapis.com/postgres.log") log id("cloudsql.googleapis.com/sqlagent.out") log id("cloudsql.googleapis.com/sqlserver.err") GCP VPC FLOW : log id("compute.googleapis.com/vpc flows") (for US and EU regions only) NIX SYSTEM : log id("syslog") log id("authlog") log id("securelog") log id("osconfig.googleapis.com/patch job") LINUX SYSMON : log id("sysmon.raw") WINEVTLOG : log id("winevt.raw") log id("windows event log") BRO JSON : log id("zeek json streaming conn") log id("zeek json streaming dhcp") log id("zeek json streaming dns") log id("zeek json streaming http") log id("zeek json streaming ssh") log id("zeek json streaming ssl") KUBERNETES NODE : log id("events") log id("stdout") log id("stderr") AUDITD : log id("audit log") GCP APIGEE X : log id("apigee.googleapis.com/ingress instance") log id("apigee.googleapis.com") log id("apigee-logs") log id("apigee") logName = "^projects/[\w\-]+/logs/apigee[\w\-\.] $" GCP RECAPTCHA ENTERPRISE : log id("recaptchaenterprise.googleapis.com/assessment") log id("recaptchaenterprise.googleapis.com/annotation") GCP RUN : log id("run.googleapis.com/stderr") log id("run.googleapis.com/stdout") log id("run.googleapis.com/requests") log id("run.googleapis.com/varlog/system") GCP NGFW ENTERPRISE : log id("networksecurity.googleapis.com/firewall threat") GCP ABUSE EVENTS : log id("abuseevent.googleapis.com/abuse events") GCP DNS ATD log id("networksecurity.googleapis.com/dns threat events") Model Armor logs ( GCP MODEL ARMOR ): This includes logs for sanitization operations (screening prompts and responses) and template operations (creation, updates). log id("modelarmor.googleapis.com/sanitize operations") log id("modelarmor.googleapis.com/templates") Customize export filter settings By default, your Cloud Audit Logs (Admin Activity and System Event) and Cloud DNS logs are sent to your Google SecOps instance.
+
+### "Cloud Threats category overview \_|\_ Google Security Operations \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
+- Source ID: `site-api-reference`
+- Final score: 77
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following log data, listed by product name and Google SecOps ingestion label: BigQuery ( GCP BIGQUERY CONTEXT ) Compute Engine ( GCP COMPUTE CONTEXT ) IAM ( GCP IAM CONTEXT ) Sensitive Data Protection ( GCP DLP CONTEXT ) Cloud Audit Logs ( GCP CLOUDAUDIT ) Google Workspace Activity ( WORKSPACE ACTIVITY ) Cloud DNS queries ( GCP DNS ) The following Security Command Center finding classes , listed by findingClass identifier and Google SecOps ingestion label: Threat ( GCP SECURITYCENTER THREAT ) Misconfiguration ( GCP SECURITYCENTER MISCONFIGURATION ) Vulnerability ( GCP SECURITYCENTER VULNERABILITY ) SCC Error ( GCP SECURITYCENTER ERROR ) The CDIR SCC Enhanced rule sets also depend on data from Google Cloud services.
+- The following export filter exports Google Cloud Cloud Run ( GCP RUN ) logs, in addition to the default logs both through the direct ingestion mechanism as well as through Cloud Storage and Sinks : log id("run.googleapis.com/stdout") OR log id("run.googleapis.com/stderr") OR log id("run.googleapis.com/requests") OR log id("run.googleapis.com/varlog/system) Curated detections for AWS rule sets AWS rule sets in this category help identify threats in AWS environments using event and context data, and includes the following rule sets: AWS - Compute : Detects anomalous activity surrounding AWS compute resources, including EC2 and Lambda.
+- CDIR SCC Enhanced rule sets All rule sets that begin with the name CDIR SCC Enhanced use Security Command Center Premium findings contextualized with several other Google Cloud log sources, including the following: Cloud Audit Logs Cloud DNS logs Identity and Access Management (IAM) analysis Sensitive Data Protection context BigQuery context Compute Engine context To use the CDIR SCC Enhanced rule sets, we recommend that you collect the following Google Cloud data: Log data listed in the All rule sets section.
+- CDIR SCC Enhanced Exfiltration : Contains context-aware rules that correlate Security Command Center Exfiltration findings with other log sources, including Cloud Audit Logs logs, Sensitive Data Protection context, BigQuery context and Security Command Center Misconfiguration logs.
 

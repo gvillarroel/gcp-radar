@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.883Z"
+generated_at: "2026-04-14T15:13:20.138Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "MODIS/006/MOD44W"
 feature_slug: "modis-006-mod44w"
 latest_feature_date: "2018-04-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/datasets/tags/landuse-landcover"
+  - "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD44W"
   - "https://developers.google.com/earth-engine/datasets/catalog/modis"
-  - "https://developers.google.com/earth-engine/datasets/tags/landcover"
+  - "https://developers.google.com/earth-engine/datasets/tags/surface-ground-water"
 keywords:
   - "modis"
   - "006"
   - "mod44w"
-  - "and"
   - "srtm"
   - "derived"
   - "global"
   - "land"
+  - "water"
 ---
 
 # MODIS/006/MOD44W
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ A MODIS and SRTM-derived global land/water mask.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
+- [https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD44W](https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD44W)
 - [https://developers.google.com/earth-engine/datasets/catalog/modis](https://developers.google.com/earth-engine/datasets/catalog/modis)
-- [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
+- [https://developers.google.com/earth-engine/datasets/tags/surface-ground-water](https://developers.google.com/earth-engine/datasets/tags/surface-ground-water)
 
 ## Supporting Pages
 
-### "Datasets tagged landuse-landcover in Earth Engine \_|\_ Earth Engine Data\
+### MOD44W.006 Terra Land Water Mask Derived From MODIS and SRTM Yearly Global 250m | Earth Engine Data Catalog | Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
-- Source ID: `site-docs-root-3`
-- Final score: 220
+- URL: [https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD44W](https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD44W)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 409
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The MCD12Q2 Version 6.1 data product is derived from time series of the 2-band Enhanced Vegetation Index (EVI2) … evi global landuse-landcover modis onset-greenness phenology MOD44B.061 Terra Vegetation Continuous Fields Yearly Global 250m The Terra MODIS Vegetation Continuous Fields (VCF) product is a sub-pixel-level representation of surface vegetation cover estimates globally.
-- Land … landcover landuse-landcover modis nasa usgs yearly MCD12Q2.006 Land Cover Dynamics Yearly Global 500m The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Dynamics (MCD12Q2) Version 6.1 data product provides global land surface phenology metrics at yearly intervals.
-- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
-- Designed to continuously represent Earth's terrestrial surface as a proportion of basic vegetation traits, it provides a gradation of three surface cover components: percent tree cover, percent … annual geophysical global landuse-landcover modis nasa MapBiomas Land Use and Land Cover - Bolivia V1.0 MapBiomas Land Use and Land Cover (LULC) dataset for Bolivia is produced annually by the MapBiomas Project using Landsat satellite imagery and machine learning classification techniques.
+- Dataset Availability 2000-01-01T00:00:00Z–2015-01-01T00:00:00Z Dataset Producer NASA LP DAAC at the USGS EROS Center Earth Engine Snippet ee.ImageCollection("MODIS/006/MOD44W") open_in_new Cadence 1 Year Tags geophysical mod44w modis nasa srtm surface-ground-water usgs water-mask Description The MOD44W V6 land/water mask 250m product is derived using a decision tree classifier trained with MODIS data and validated with the MOD44W V5 product.
+- MODIS/006/MOD44W, geophysical,mod44w,modis,nasa,srtm,surface-ground-water,usgs,water-mask 2000-01-01T00:00:00Z/2015-01-01T00:00:00Z -90 -180 90 180 Google Earth Engine https://developers.google.com/earth-engine/datasets https://doi.org/10.5067/MODIS/MOD44W.006 https://doi.org/10.5067/MODIS/MOD44W.006 Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],["The MOD44W V6 dataset, provided by NASA LP DAAC, offers a yearly land/water mask product from 2000 to 2015 at a 250-meter resolution, and can be accessed using the Earth Engine snippet.
+- Filter . date ( '2015-01-01' , '2015-05-01' )); var waterMask = dataset . select ( 'water_mask' ); var waterMaskVis = { min : 0 , max : 1 , palette : [ 'bcba99' , '2d0491' ], }; Map . setCenter ( 6.746 , 46.529 , 2 ); Map . addLayer ( waterMask , waterMaskVis , 'Water Mask' ); Open in Code Editor MOD44W.006 Terra Land Water Mask Derived From MODIS and SRTM Yearly Global 250m The MOD44W V6 land/water mask 250m product is derived using a decision tree classifier trained with MODIS data and validated with the MOD44W V5 product.
+- MOD44W.006 Terra Land Water Mask Derived From MODIS and SRTM Yearly Global 250m | Earth Engine Data Catalog | Google for Developers Skip to main content Earth Engine Data Catalog / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Home Categories All Datasets All Tags Landsat MODIS Sentinel Publisher Community API Docs Dataset Status Changelog Earth Engine Data Catalog Home Categories All Datasets All Tags Landsat MODIS Sentinel Publisher Community API Docs Dataset Status Changelog Home Earth Engine Data Catalog All Datasets Send feedback MOD44W.006 Terra Land Water Mask Derived From MODIS and SRTM Yearly Global 250m Stay organized with collections Save and categorize content based on your preferences.
 
 ### "MODIS Collections in Earth Engine \_|\_ Earth Engine Data Catalog \_|\_\
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/modis](https://developers.google.com/earth-engine/datasets/catalog/modis)
 - Source ID: `site-docs-root`
-- Final score: 186
+- Final score: 201
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - VCF products provide a continuous, quantitative portrayal of land surface cover with improved spatial detail, and hence, are widely used in environmental modeling and monitoring applications. photo library MODIS/006/MOD44B MOD44W.006 Terra Land Water Mask Derived From MODIS and SRTM Yearly Global 250m The MOD44W V6 land/water mask 250m product is derived using a decision tree classifier trained with MODIS data and validated with the MOD44W V5 product.
 - This product is generated from the MODIS/006/MOD09GA surface reflectance composites. photo library MODIS/MOD09GA 006 NDWI MOD44W.005 Land Water Mask Derived From MODIS and SRTM The Global Water Mask uses the SWBD (SRTM Water Body Data) in combination with MODIS 250m data to create a complete global map of surface water at 250m spatial resolution, circa 2000-2002.
-- The product is referred to as ocean reflectance, because bands 8-16 are used primarily to produce ocean products, but this is not an ocean product as the tiles produced are land tiles. photo library MODIS/006/MYDOCGA MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
-- Additional land cover property assessment layers are provided by the Food and Agriculture Organization (FAO) Land Cover Classification System (LCCS) for land cover, land use, and surface hydrology. photo library MODIS/061/MCD12Q1 MCD12Q2.006 Land Cover Dynamics Yearly Global 500m The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Dynamics (MCD12Q2) Version 6.1 data product provides global land surface phenology metrics at yearly intervals.
+- A series of masks are applied to address known issues caused by terrain shadow, burn scars, cloudiness, or ice cover in oceans. photo library MODIS/006/MOD44W MODOCGA.006 Terra Ocean Reflectance Daily Global 1km The MODOCGA V6 ocean reflectance product consists of 1 kilometer reflectance data from Terra MODIS bands 8-16.
+- The date is encoded in a single data layer as the ordinal day of the calendar year on which the burn occurred, with values assigned to unburned land pixels and additional special values reserved for missing data and water grid cells. photo library MODIS/061/MCD64A1 MOD08 M3.061 Terra Atmosphere Monthly Global Product MOD08 M3 V6.1 is an atmosphere global product that contains monthly 1 x 1 degree grid average values of atmospheric parameters.
 
-### "Datasets tagged landcover in Earth Engine \_|\_ Earth Engine Data Catalog\
+### "Datasets tagged surface-ground-water in Earth Engine \_|\_ Earth Engine\
 
-- URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
-- Source ID: `site-docs-root`
-- Final score: 168
+- URL: [https://developers.google.com/earth-engine/datasets/tags/surface-ground-water](https://developers.google.com/earth-engine/datasets/tags/surface-ground-water)
+- Source ID: `site-docs-root-3`
+- Final score: 187
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The WorldCover product comes with 11 land cover classes and has been generated in the framework of … esa landcover landuse landuse-landcover sentinel1-derived sentinel2-derived FireCCI51: MODIS Fire cci Burned Area Pixel Product, Version 5.1 The MODIS Fire cci Burned Area pixel product version 5.1 (FireCCI51) is a monthly global 250m spatial resolution dataset containing information on burned area as well as ancillary data.
-- The GFSAD products are derived through multi-sensor remote sensing data (e.g., Landsat, MODIS, AVHRR), secondary data, and field-plot data … agriculture crop landcover usgs GHSL: Global built-up surface 10m (P2023A) This raster dataset depicts the distribution of built-up surfaces, expressed in square metres per 10 m grid cell, for 2018 as observed from the S2 image data.
-- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
-- The temporal dynamics of human settlements … landcover landsat-derived population sentinel1-derived settlement urban Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],["Datasets primarily provide global, regional, or national land cover and related data.
+- This dataset is intended for use in processing of raster data and for … geophysical mod44w modis srtm surface-ground-water water-mask MOD44W.006 Terra Land Water Mask Derived From MODIS and SRTM Yearly Global 250m The MOD44W V6 land/water mask 250m product is derived using a decision tree classifier trained with MODIS data and validated with the MOD44W V5 product.
+- MERIT Hydro contains the output of a new … dem elevation flow-direction hand hydrography hydrosheds MERIT Hydro: Supplementary Visualization Layers Supplementary visualization layers for MERIT Hydro dem elevation flow-direction hand hydrography hydrosheds MOD44W.005 Land Water Mask Derived From MODIS and SRTM The Global Water Mask uses the SWBD (SRTM Water Body Data) in combination with MODIS 250m data to create a complete global map of surface water at 250m spatial resolution, circa 2000-2002.
+- A series of masks are applied to address known issues caused by terrain shadow, burn scars, cloudiness, or ice cover … geophysical mod44w modis nasa srtm surface-ground-water Murray Global Intertidal Change Classification The Murray Global Intertidal Change Dataset contains global maps of tidal flat ecosystems produced via a supervised classification of 707,528 Landsat Archive images.
+- The 250m floodplain dataset is derived by processing the NASA SRTM Digital Elevation model gathered from http://srtm.csi.cgiar.org/, and in particular the 250-m SRTM version 4.1 … flood monitoring surface-ground-water GLCF: Landsat Global Inland Water The Global Inland Water dataset shows inland surface water bodies, including fresh and saline lakes, rivers, and reservoirs.
 

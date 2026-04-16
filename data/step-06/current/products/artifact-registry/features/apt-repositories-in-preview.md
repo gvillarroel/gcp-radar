@@ -1,31 +1,27 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T17:49:26.934Z"
+generated_at: "2026-04-14T08:39:49.496Z"
 product_name: "Artifact Registry"
 product_slug: "artifact-registry"
 feature_name: "Apt repositories in Preview"
 feature_slug: "apt-repositories-in-preview"
 latest_feature_date: "2021-08-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/upload"
-  - "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/import"
-  - "https://docs.cloud.google.com/artifact-registry/docs/fingerprint"
+  - "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories"
+  - "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments"
+  - "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager"
 keywords:
   - "introduces"
-  - "apt"
   - "repositories"
   - "preview"
-  - "registry"
-  - "artifact"
-  - "in"
 ---
 
 # Apt repositories in Preview
 
 Product: Artifact Registry
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,54 +33,54 @@ Artifact Registry introduces Apt repositories in Preview.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/upload](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/upload)
-- [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/import](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/import)
-- [https://docs.cloud.google.com/artifact-registry/docs/fingerprint](https://docs.cloud.google.com/artifact-registry/docs/fingerprint)
+- [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories)
+- [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments)
+- [https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager](https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager)
 
 ## Supporting Pages
 
-### "Method: projects.locations.repositories.aptArtifacts.upload \_|\_ Artifact\
+### "REST Resource: projects.locations.repositories \_|\_ Artifact Registry \_\
 
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/upload](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/upload)
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories)
 - Source ID: `site-api-reference`
-- Final score: 200
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- HTTP request Choose a location: global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-west1 northamerica-northeast1 northamerica-northeast2 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 me-central2 us-east7 us eu Upload URI, for media upload requests: POST https://artifactregistry.googleapis.com/upload/v1/{parent=projects/ /locations/ /repositories/ }/aptArtifacts:create Metadata URI, for metadata-only requests: POST https://artifactregistry.googleapis.com/v1/{parent=projects/ /locations/ /repositories/ }/aptArtifacts:create The URLs use gRPC Transcoding syntax.
-- Home Documentation Application development Artifact Registry Reference Send feedback Method: projects.locations.repositories.aptArtifacts.upload Stay organized with collections Save and categorize content based on your preferences.
-- Authorization requires the following IAM permission on the specified resource parent : artifactregistry.aptartifacts.create Request body The request body must be empty.
-- Path parameters Parameters parent string The name of the parent resource where the artifacts will be uploaded.
-
-### "Method: projects.locations.repositories.aptArtifacts.import \_|\_ Artifact\
-
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/import](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.aptArtifacts/import)
-- Source ID: `site-api-reference`
-- Final score: 192
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- HTTP request Choose a location: global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-west1 northamerica-northeast1 northamerica-northeast2 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 me-central2 us-east7 us eu POST https://artifactregistry.googleapis.com/v1/{parent=projects/ /locations/ /repositories/ }/aptArtifacts:import The URLs use gRPC Transcoding syntax.
-- Authorization requires the following IAM permission on the specified resource parent : artifactregistry.aptartifacts.create Request body The request body contains data with the following structure: JSON representation { // Union field source can be only one of the following: "gcsSource" : { object ( ImportAptArtifactsGcsSource ) } // End of list of possible types for union field source . } Fields Union field source .
-- Home Documentation Application development Artifact Registry Reference Send feedback Method: projects.locations.repositories.aptArtifacts.import Stay organized with collections Save and categorize content based on your preferences.
-- The source location of the package binaries. source can be only one of the following: gcsSource object ( ImportAptArtifactsGcsSource ) Google Cloud Storage location where input content is located.
-
-### "Use fingerprints to verify package version identities \_|\_ Artifact Registry\
-
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/fingerprint](https://docs.cloud.google.com/artifact-registry/docs/fingerprint)
-- Source ID: `site-docs-root-2`
-- Final score: 190
+- Final score: 70
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In the following command, the package defined for target is formatted so that Artifact Registry also validates the package's fingerprint: gcloud artifacts attachments create my-attachment --target = 'projects/test-project/locations/us-west1/repositories/test-repo/packages/test-pkg/versions/v1@dirsum sha256:30330c6b65a26ebf1a13e1b9ded4068b4c36d72ed3b62226e3243b5bee18fd31' --attachment-type = "application/vnd.in-toto+json" --attachment-namespace = "mynamespace.com" --files = att.txt If the provided fingerprint doesn't match the fingerprint of the current version, then Artifact Registry rejects the API request and shows a failed precondition error.
-- Required roles To get the permissions that you need to view package version fingerprints in Artifact Registry repositories, ask your administrator to grant you the Artifact Registry Reader ( roles/artifactregistry.reader ) IAM role on the Google Cloud project.
-- You can use artifact fingerprints to uniquely identify packages in Artifact Registry repositories.
-- Retrieve the fingerprint of a package version in your repository Fingerprints have the following structure: VERSION @DIRSUM SHA256: HASH VALUE To retrieve the fingerprint of a package version in an Artifact Registry repository, enter the following in the Google Cloud CLI: gcloud artifacts versions describe VERSION --repository = REPOSITORY --location = LOCATION --package = PACKAGE NAME Where: VERSION is the version of your package, such as 1.0543 .
+- Repositories that are generally available or in public preview use this to calculate storage costs. satisfiesPzs boolean Output only.
+- JSON representation { "name" : string , "format" : enum ( Format ) , "description" : string , "labels" : { string : string , ... } , "createTime" : string , "updateTime" : string , "kmsKeyName" : string , "mode" : enum ( Mode ) , "cleanupPolicies" : { string : { object ( CleanupPolicy ) } , ... } , "sizeBytes" : string , "satisfiesPzs" : boolean , "cleanupPolicyDryRun" : boolean , "vulnerabilityScanningConfig" : { object ( VulnerabilityScanningConfig ) } , "disallowUnspecifiedMode" : boolean , "satisfiesPzi" : boolean , "registryUri" : string , // Union field format config can be only one of the following: "mavenConfig" : { object ( MavenRepositoryConfig ) } , "dockerConfig" : { object ( DockerRepositoryConfig ) } // End of list of possible types for union field format config . // Union field mode config can be only one of the following: "virtualRepositoryConfig" : { object ( VirtualRepositoryConfig ) } , "remoteRepositoryConfig" : { object ( RemoteRepositoryConfig ) } // End of list of possible types for union field mode config . } Fields name string The name of the repository, for example: projects/p1/locations/us-central1/repositories/repo1 .
+- Methods create Creates a repository. delete Deletes a repository and all of its contents. exportArtifact Exports an artifact to a Cloud Storage bucket. get Gets a repository. getIamPolicy Gets the IAM policy for a given resource. list Lists repositories. patch Updates a repository. setIamPolicy Updates the IAM policy for a given resource. testIamPermissions Tests if the caller has a list of permissions on a resource.
+- Repository-specific configurations. format config can be only one of the following: mavenConfig object ( MavenRepositoryConfig ) Maven repository config contains repository level configuration for the repositories of maven type. dockerConfig object ( DockerRepositoryConfig ) Docker repository config contains repository level configuration for the repositories of docker type.
+
+### "REST Resource: projects.locations.repositories.attachments \_|\_ Artifact\
+
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments](https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments)
+- Source ID: `site-api-reference`
+- Final score: 55
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Home Documentation Application development Artifact Registry Reference Send feedback REST Resource: projects.locations.repositories.attachments Stay organized with collections Save and categorize content based on your preferences.
+- E.g. projects/p1/locations/us-central1/repositories/repo1/files/sha:<sha-of-file> . ociVersionName string Output only.
+- E.g. projects/p1/locations/us-central1/repositories/repo1/packages/p1/versions/v1 . type string Type of attachment.
+- E.g. projects/p1/locations/us/repositories/repo/attachments/sbom . target string Required.
+
+### "Class ListRepositoriesAsyncPager (1.20.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager](https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager)
+- Source ID: `site-python-reference`
+- Final score: 53
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.artifactregistry v1.types.ListRepositoriesRequest The initial request object. response google.cloud.artifactregistry v1.types.ListRepositoriesResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- Version latest keyboard arrow down 1.20.0 (latest) 1.19.0 1.18.0 1.17.0 1.16.1 1.15.2 1.14.0 1.13.1 1.12.0 1.11.5 1.10.0 1.9.0 1.8.4 1.7.0 1.6.1 1.5.0 1.4.1 1.3.3 1.2.1 1.1.2 1.0.2 0.5.0 0.4.1 0.3.3 0.2.2 0.1.0 ListRepositoriesAsyncPager ( method : typing .
+- Home Documentation Developer tools Python Client libraries Send feedback Class ListRepositoriesAsyncPager (1.20.0) Stay organized with collections Save and categorize content based on your preferences.
+- If there are more pages, the aiter method will make additional ListRepositories requests and continue to iterate through the repositories field on the corresponding responses.
 

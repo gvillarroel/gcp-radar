@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:05.366Z"
+generated_at: "2026-04-15T12:02:17.172Z"
 product_name: "Vertex AI"
 product_slug: "vertex-ai"
 feature_name: "Vertex Explainable AI"
 feature_slug: "vertex-explainable-ai"
 latest_feature_date: "2021-09-15"
 deprecation_date: "2026-03-16"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based"
+  - "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+  - "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/overview"
 keywords:
   - "vertex"
   - "explainable"
   - "ai"
-  - "is"
   - "capability"
-  - "that"
   - "provides"
   - "model"
+  - "prediction"
+  - "explanations"
 ---
 
 # Vertex Explainable AI
 
 Product: Vertex AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Vertex Explainable AI is a Vertex AI capability that provides model prediction e
 
 Vertex Explainable AI is a Vertex AI capability that provides model prediction explanations and interpretability tooling; Vertex Explainable AI is generally available, enabling model interpretability and explanation features within Vertex AI; deprecated on 2026-03-16.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based)
+- [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials)
+- [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/overview](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Configure feature-based explanations \_|\_ Vertex AI \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based)
+- Source ID: `site-docs-reference-3`
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The flags most pertinent to Vertex Explainable AI are highlighted. gcloud ai models upload \ --region = LOCATION \ --display-name = MODEL NAME \ --container-image-uri = IMAGE URI \ --artifact-uri = PATH TO MODEL ARTIFACT DIRECTORY \ --explanation-method = integrated-gradients \ --explanation-step-count = STEP COUNT \ --explanation-metadata-file = explanation-metadata.json Replace the following: IMAGE URI : The URI of a TensorFlow pre-built container for serving predictions .
+- The flags most pertinent to Vertex Explainable AI are highlighted. gcloud ai models upload \ --region = LOCATION \ --display-name = MODEL NAME \ --container-image-uri = IMAGE URI \ --artifact-uri = PATH TO MODEL ARTIFACT DIRECTORY \ --explanation-method = sampled-shapley \ --explanation-path-count = PATH COUNT \ --explanation-metadata-file = explanation-metadata.json Replace the following: IMAGE URI : The URI of a TensorFlow pre-built container for serving predictions .
+- The flags most pertinent to Vertex Explainable AI are highlighted. gcloud ai models upload \ --region = LOCATION \ --display-name = MODEL NAME \ --container-image-uri = IMAGE URI \ --artifact-uri = PATH TO MODEL ARTIFACT DIRECTORY \ --explanation-method = xrai \ --explanation-step-count = STEP COUNT \ --explanation-metadata-file = explanation-metadata.json Replace the following: IMAGE URI : The URI of a TensorFlow pre-built container for serving predictions .
+- The flags most pertinent to Vertex Explainable AI are highlighted. gcloud ai models upload \ --region = LOCATION \ --display-name = MODEL NAME \ --container-image-uri = IMAGE URI \ --artifact-uri = PATH TO MODEL ARTIFACT DIRECTORY \ --explanation-method = sampled-shapley \ --explanation-path-count = PATH COUNT \ --explanation-metadata-file = explanation-metadata.json Replace the following: IMAGE URI : The URI of a pre-built container for serving predictions .
+
+### "Vertex Explainable AI notebook tutorials \_|\_ Vertex AI \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials)
+- Source ID: `site-docs-reference-2`
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Tutorial steps Download pretrained model from TensorFlow Hub Upload model for deployment Deploy model for online prediction Make online prediction with explanations Make batch predictions with explanations Colab Colab Enterprise GitHub Vertex AI Workbench Vertex Explainable AI Explaining text classification with Vertex Explainable AI .
+- Learn to use Vertex AI Training and Vertex Explainable AI to create a custom image classification model with explanations, and then you learn to use Vertex AI Batch Prediction to make a batch prediction request with explanations.
+- Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .
+- List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction .
+
+### "Introduction to Vertex Explainable AI \_|\_ Vertex AI \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/overview](https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/overview)
+- Source ID: `site-docs-reference-3`
+- Final score: 191
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- References For feature attribution, the implementations of sampled Shapley, integrated gradients, and XRAI are based on the following references, respectively: Bounding the Estimation Error of Sampling-based Shapley Value Approximation Axiomatic Attribution for Deep Networks XRAI: Better Attributions Through Regions Notebooks To get started using Vertex Explainable AI, use these notebooks: Notebook Explainability method ML framework Modality Task GitHub link example-based explanations TensorFlow image Train a classification model that predicts the class of the provided input image and get online explanations GitHub link feature-based AutoML tabular Train a binary classification model that predicts whether a bank custom purchased a term deposit and get batch explanations GitHub link feature-based AutoML tabular Train a classification model that predicts the type of Iris flower species and get online explanations GitHub link feature-based (sampled Shapley) scikit-learn tabular Train a linear regression model that predicts taxi fares and get online explanations GitHub link feature-based (integrated gradients) TensorFlow image Train a classification model that predicts the class of the provided input image and get batch explanations GitHub link feature-based (integrated gradients) TensorFlow image Train a classification model that predicts the class of the provided input image and get online explanations GitHub link feature-based (integrated gradients) TensorFlow tabular Train a regression model that predicts the median price of a house and get batch explanations GitHub link feature-based (integrated gradients) TensorFlow tabular Train a regression model that predicts the median price of a house and get online explanations GitHub link feature-based (sampled Shapley) TensorFlow text Train a LSTM model that classifies movie reviews as positive or negative using the text of the review and get online explanations Educational resources The following resources provide further useful educational material: Explainable AI for Practitioners Interpretable Machine Learning: Shapley values Ankur Taly's Integrated Gradients GitHub repository .
+- Vertex Explainable AI offers Feature-based and Example-based explanations to provide better understanding of model decision making.
+- Feature-based explanations Vertex Explainable AI integrates feature attributions into Vertex AI.
+- If you request explanations , you get the predicted class along with an overlay for the image, showing which areas in the image contributed most strongly to the resulting inference: A photo of a daisy with feature attribution overlay Supported model types Feature attribution is supported for all types of models (both AutoML and custom-trained), frameworks (TensorFlow, scikit, XGBoost), BigQuery ML models, and modalities (images, text, tabular).
 

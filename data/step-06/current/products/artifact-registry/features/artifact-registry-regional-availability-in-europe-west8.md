@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T17:49:26.929Z"
+generated_at: "2026-04-14T08:39:49.493Z"
 product_name: "Artifact Registry"
 product_slug: "artifact-registry"
 feature_name: "Artifact Registry regional availability in europe-west8"
 feature_slug: "artifact-registry-regional-availability-in-europe-west8"
 latest_feature_date: "2022-04-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers"
-  - "https://docs.cloud.google.com/artifact-registry/docs/fingerprint"
-  - "https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins"
+  - "https://docs.cloud.google.com/artifact-registry/docs/reference/rest"
+  - "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient"
 keywords:
   - "west8"
   - "availability"
   - "regional"
   - "europe"
-  - "registry"
-  - "artifact"
-  - "is"
-  - "in"
+  - "available"
+  - "region"
 ---
 
 # Artifact Registry regional availability in europe-west8
 
 Product: Artifact Registry
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +36,52 @@ Artifact Registry is available in the europe-west8 region (Milan, Italy).
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers](https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers)
-- [https://docs.cloud.google.com/artifact-registry/docs/fingerprint](https://docs.cloud.google.com/artifact-registry/docs/fingerprint)
-- [https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins](https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins)
+- [https://docs.cloud.google.com/artifact-registry/docs/reference/rest](https://docs.cloud.google.com/artifact-registry/docs/reference/rest)
+- [https://docs.cloud.google.com/artifact-registry/docs/access-control](https://docs.cloud.google.com/artifact-registry/docs/access-control)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient)
 
 ## Supporting Pages
 
-### "Migrate container images from a third-party registry \_|\_ Artifact Registry\
+### Artifact Registry API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers](https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers)
-- Source ID: `site-docs-root-2`
-- Final score: 218
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/reference/rest](https://docs.cloud.google.com/artifact-registry/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 103
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Keep track of new image pulls by running the following query in the BigQuery console: SELECT FORMAT TIMESTAMP ( "%D %R" , timestamp ) as timeOfImagePull , REGEXP EXTRACT ( jsonPayload . message , r '"(. ?)"' ) AS imageName , COUNT ( ) AS numberOfPulls FROM image pull logs . events ` GROUP BY timeOfImagePull , imageName ORDER BY timeOfImagePull DESC , numberOfPulls DESC All new image pulls should be from Artifact Registry and contain the string docker.pkg.dev .
-- GO111MODULE = on go get github.com/google/go-containerregistry/cmd/gcrane Create a script named copy images.sh to copy your list of files. #!/bin/bash images = $( cat images.txt ) if [ -z " ${ AR PROJECT } " ] then echo ERROR: AR PROJECT must be set before running this exit 1 fi for img in ${ images } do gcrane cp ${ img } LOCATION -docker.pkg.dev/ ${ AR PROJECT } / ${ img } done Replace LOCATION with the regional or multi-regional location of the repository.
-- Costs This guide uses the following billable components of Google Cloud: GKE Artifact Registry BigQuery Logging Identify images to migrate Search the files you use to build and deploy your container images for references to third-party registries, then check how often you pull the images.
-- Enable the Artifact Registry API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.
+- Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-west1 northamerica-northeast1 northamerica-northeast2 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 me-central2 us-east7 us eu https://artifactregistry.googleapis.com REST Resource: v1.projects Methods getProjectSettings GET /v1/{name=projects/ /projectSettings} Retrieves the Settings for the Project. updateProjectSettings PATCH /v1/{projectSettings.name=projects/ /projectSettings} Updates the Settings for the Project.
+- A service that is available in multiple regions might have multiple regional endpoints.
+- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://artifactregistry.googleapis.com Regional service endpoint A regional service endpoint is a base URL that specifies the network address of an API service in a single region.
 
-### "Use fingerprints to verify package version identities \_|\_ Artifact Registry\
+### "Class ArtifactRegistryClient (1.87.0) \_|\_ Java client libraries \_|\_\
 
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/fingerprint](https://docs.cloud.google.com/artifact-registry/docs/fingerprint)
-- Source ID: `site-docs-root-2`
-- Final score: 218
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient)
+- Source ID: `site-java-reference`
+- Final score: 71
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In the following command, the package defined for target is formatted so that Artifact Registry also validates the package's fingerprint: gcloud artifacts attachments create my-attachment --target = 'projects/test-project/locations/us-west1/repositories/test-repo/packages/test-pkg/versions/v1@dirsum sha256:30330c6b65a26ebf1a13e1b9ded4068b4c36d72ed3b62226e3243b5bee18fd31' --attachment-type = "application/vnd.in-toto+json" --attachment-namespace = "mynamespace.com" --files = att.txt If the provided fingerprint doesn't match the fingerprint of the current version, then Artifact Registry rejects the API request and shows a failed precondition error.
-- Retrieve the fingerprint of a package version in your repository Fingerprints have the following structure: VERSION @DIRSUM SHA256: HASH VALUE To retrieve the fingerprint of a package version in an Artifact Registry repository, enter the following in the Google Cloud CLI: gcloud artifacts versions describe VERSION --repository = REPOSITORY --location = LOCATION --package = PACKAGE NAME Where: VERSION is the version of your package, such as 1.0543 .
-- Validate fingerprints as immutable references in the Artifact Registry API Certain Artifact Registry API requests will validate a package from your repository if the fingerprint of that package is formatted as follows: VERSION @DIRSUM SHA256: HASH VALUE For example, you want to create an attachment on a package in your repository.
-- Required roles To get the permissions that you need to view package version fingerprints in Artifact Registry repositories, ask your administrator to grant you the Artifact Registry Reader ( roles/artifactregistry.reader ) IAM role on the Google Cloud project.
+- For example: To customize credentials: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library ArtifactRegistrySettings artifactRegistrySettings = ArtifactRegistrySettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( myCredentials )) . build (); ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ( artifactRegistrySettings ); To customize the endpoint: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library ArtifactRegistrySettings artifactRegistrySettings = ArtifactRegistrySettings . newBuilder (). setEndpoint ( myEndpoint ). build (); ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ( artifactRegistrySettings ); To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over the wire: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library ArtifactRegistrySettings artifactRegistrySettings = ArtifactRegistrySettings . newHttpJsonBuilder (). build (); ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ( artifactRegistrySettings ); Please refer to the GitHub repository's samples for more quickstart code snippets.
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ()) { BatchDeleteVersionsRequest request = BatchDeleteVersionsRequest . newBuilder () . setParent ( PackageName . of ( "[PROJECT]" , "[LOCATION]" , "[REPOSITORY]" , "[PACKAGE]" ). toString ()) . addAllNames ( new ArrayList<String> ()) . setValidateOnly ( true ) . build (); OperationFuture<Empty , BatchDeleteVersionsMetadata > future = artifactRegistryClient . batchDeleteVersionsOperationCallable (). futureCall ( request ); // Do something. future . get (); } Returns Type Description OperationCallable < BatchDeleteVersionsRequest , Empty , BatchDeleteVersionsMetadata > close() public final void close () createAttachmentAsync(CreateAttachmentRequest request) public final OperationFuture<Attachment , OperationMetadata > createAttachmentAsync ( CreateAttachmentRequest request ) Creates an attachment.
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ()) { ListVersionsRequest request = ListVersionsRequest . newBuilder () . setParent ( "parent-995424086" ) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . setView ( VersionView . forNumber ( 0 )) . setOrderBy ( "orderBy-1207110587" ) . setFilter ( "filter-1274492040" ) . build (); ApiFuture<Version> future = artifactRegistryClient . listVersionsPagedCallable (). futureCall ( request ); // Do something. for ( Version element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListVersionsRequest , ListVersionsPagedResponse > setIamPolicy(SetIamPolicyRequest request) public final Policy setIamPolicy ( SetIamPolicyRequest request ) Updates the IAM policy for a given resource.
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ()) { BatchDeleteVersionsRequest request = BatchDeleteVersionsRequest . newBuilder () . setParent ( PackageName . of ( "[PROJECT]" , "[LOCATION]" , "[REPOSITORY]" , "[PACKAGE]" ). toString ()) . addAllNames ( new ArrayList<String> ()) . setValidateOnly ( true ) . build (); ApiFuture<Operation> future = artifactRegistryClient . batchDeleteVersionsCallable (). futureCall ( request ); // Do something. future . get (); } Returns Type Description UnaryCallable < BatchDeleteVersionsRequest , Operation > batchDeleteVersionsOperationCallable() public final OperationCallable<BatchDeleteVersionsRequest , Empty , BatchDeleteVersionsMetadata > batchDeleteVersionsOperationCallable () Deletes multiple versions across a repository.
 
-### Integrating with Jenkins \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
+### Access control with IAM \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins](https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins)
-- Source ID: `site-docs-root-2`
-- Final score: 218
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/access-control](https://docs.cloud.google.com/artifact-registry/docs/access-control)
+- Source ID: `site-docs-root`
+- Final score: 71
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Application development Artifact Registry Guides Send feedback Integrating with Jenkins Stay organized with collections Save and categorize content based on your preferences.
-- Console To create a cluster using Google Cloud console, perform the following steps: Visit the Artifact Registry menu in Google Cloud console.
-- In the project that contains the repository, grant the Artifact Registry Writer role to the Jenkins service account that you created.
-- Configuring access to your repository Create a dedicated service account for Jenkins to use with Artifact Registry.
+- In the project with your cluster, create an imagePullSecret secret called artifact-registry with the service account key. kubectl create secret docker-registry artifact-registry \ --docker-server = https:// LOCATION -docker.pkg.dev \ --docker-email = SERVICE-ACCOUNT-EMAIL \ --docker-username = json key \ --docker-password = " $( cat KEY-FILE ) " Replace the following: LOCATION is the regional or multi-regional location of the repository.
+- LOCATION is the regional or multi-regional location of the repository.
+- LOCATION is the regional or multi-regional location of the repository.
+- Configuring public access to a repository If you have artifacts that you want to make available to anyone on the internet without authentication, store them in a repository that you make public.
 

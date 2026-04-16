@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.823Z"
+generated_at: "2026-04-12T12:12:48.994Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "SQL query result alerting"
 feature_slug: "sql-query-result-alerting"
 latest_feature_date: "2026-03-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/trace/docs/sql-in-alerting"
-  - "https://docs.cloud.google.com/monitoring/docs/custom-constraints"
   - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/custom-constraints"
+  - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
 keywords:
   - "sql"
   - "query"
@@ -26,7 +27,7 @@ keywords:
 # SQL query result alerting
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Alerting policies can monitor the results of SQL queries.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/trace/docs/sql-in-alerting](https://docs.cloud.google.com/trace/docs/sql-in-alerting)
-- [https://docs.cloud.google.com/monitoring/docs/custom-constraints](https://docs.cloud.google.com/monitoring/docs/custom-constraints)
 - [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/custom-constraints](https://docs.cloud.google.com/monitoring/docs/custom-constraints)
+- [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/trace/docs/sql-in-alerting](https://docs.cloud.google.com/trace/docs/sql-in-alerting)
 - Source ID: `site-docs-root-2`
-- Final score: 256
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 322
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Evaluation types for SQL-based alerting policies Conditions that monitor a SQL query result support two types of evaluation: Row count threshold : The condition is met when the number of rows in the query result is greater than, equal to, or less than a threshold value.
@@ -62,11 +64,25 @@ Evidence snippets:
 - Before you create a SQL-based alerting policy, complete the following steps: To get the permissions that you need to query trace data and create SQL-based alerting policies, ask your administrator to grant you the following IAM roles on your project: Query trace data: Cloud Trace User ( roles/cloudtrace.user ) Create SQL-based alerting policies: Monitoring Editor ( roles/monitoring.editor ) Logging SqlAlertWriter ( roles/logging.sqlAlertWriter ) Verify that the Monitoring Service Account exists and that it has the following roles: Monitoring Service Agent ( roles/monitoring.notificationServiceAgent ) on your project.
 - Alerting policies that monitor a SQL query result must have only one condition.
 
+### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- Source ID: `site-iam-reference`
+- Final score: 225
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For principals who don't need to create or modify alerting policies or dashboards, consider granting the Monitoring Viewer role ( roles/monitoring.viewer ).
+- To view all alerting policies associated with the application, go to the toolbar and click query stats Explore data .
+- Update the alerting policies that monitor your application data to include application-specific labels.
+- List applications To list the applications you have registered with App Hub, along with information like the number of incidents and the application's location, criticality, and environment, do the following: In the Google Cloud console, go to the Application monitoring page: Go to Application monitoring If you use the search bar to find this page, then select the result whose subheading is Monitoring .
+
 ### "Use custom organization policies \_|\_ Cloud Monitoring \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/custom-constraints](https://docs.cloud.google.com/monitoring/docs/custom-constraints)
 - Source ID: `site-iam-reference`
-- Final score: 186
+- Final score: 223
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,17 +91,17 @@ Evidence snippets:
 - Test the policy Try to create an alerting policy with documentation that excludes the resource project name. gcloud monitoring policies create \ --display-name="CPU Utilization - 5% Threshold" \ --project= PROJECT ID \ --condition-display-name="Condition 1" \ --condition-filter='resource.type="gce instance" AND metric.type="compute.googleapis.com/instance/cpu/utilization"' \ --duration='60s' \ --if='>5' \ --combiner='AND' \ --documentation='The ${ metric . display name } of the ${ resource . type } ${ resource . label . instance id } has exceeded 5% for over 60 seconds.' \ Replace PROJECT ID with your project ID.
 - Apply the constraint: gcloud org-policies set-custom-constraint /constraint-alert-doc-has-project.yaml Verify that the constraint exists: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID The output is similar to the following: CUSTOM CONSTRAINT: custom.alertDocHasProject ACTION TYPE: DENY METHOD TYPES: CREATE,UPDATE RESOURCE TYPES: monitoring.googleapis.com/AlertPolicy DISPLAY NAME: Alerting policy documentation must include the project name.
 
-### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 - Source ID: `site-iam-reference`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 215
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For principals who don't need to create or modify alerting policies or dashboards, consider granting the Monitoring Viewer role ( roles/monitoring.viewer ).
-- To view all alerting policies associated with the application, go to the toolbar and click query stats Explore data .
-- Update the alerting policies that monitor your application data to include application-specific labels.
-- List applications To list the applications you have registered with App Hub, along with information like the number of incidents and the application's location, criticality, and environment, do the following: In the Google Cloud console, go to the Application monitoring page: Go to Application monitoring If you use the search bar to find this page, then select the result whose subheading is Monitoring .
+- To create an alerting policy that monitors a metric collection rate, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .
+- View summaries of metric usage To view summaries of the number of billable metrics, rates of metric ingestion, and error rate, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .
+- View the volume of excluded metrics To see the volume of excluded bytes or samples as a chart in Metrics Explorer, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .
+- Authorization To get the permissions that you need to view dashboards and create alerting policies by using the Google Cloud console or to create, edit, and delete metric-exclusion rules, ask your administrator to grant you the Monitoring Editor ( roles/monitoring.editor ) IAM role on your project.
 

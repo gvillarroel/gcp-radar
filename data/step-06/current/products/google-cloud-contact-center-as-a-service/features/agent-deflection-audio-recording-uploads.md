@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.619Z"
+generated_at: "2026-04-15T13:50:47.009Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Agent deflection audio recording uploads"
@@ -9,9 +9,9 @@ latest_feature_date: "2026-02-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings"
 keywords:
   - "agent"
   - "deflection"
@@ -42,48 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Customizing languages, recordings, & messages \_|\_ Google Cloud Contact\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 154
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages)
+- Source ID: `site-docs-reference-2`
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To upload an audio recording for language selection, do the following: Select Upload Audio Recording for Language Selection .
+- To upload an audio recording for the IVR queue menu readout, do the following: Select Customized record file .
+- To upload an audio recording for the parent queue message, do the following.
+- To upload an audio recording for the leaf queue message, do the following.
+
+### "Agent extensions guide \_|\_ Google Cloud Contact Center as a Service \_\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide)
+- Source ID: `site-docs-reference`
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Select Upload audio recording , and then upload an audio recording file with your message.
+- Select Upload audio recording , and then upload an audio recording file with your message.
+- Select Upload audio recording , and then upload an audio recording file with your message.
+- Select Upload audio recording , and then upload an audio recording file with your message.
+
+### "Call and Chat Settings \_|\_ Google Cloud Contact Center as a Service \_\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings)
+- Source ID: `site-docs-reference`
+- Final score: 167
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- A new Upload audio recording option appears in the call adapter in the following locations: Options > Agent Deflections > After hours deflection Options > Agent Deflections > Overcapacity deflection Options > Agent Deflections > Automatic redirections If you make changes to an agent's after-hours deflection settings, overcapacity deflection settings, or automatic redirection settings, you can now revert to the settings that the agent selected in the call adapter.
-- Feature Improvements to deflection message management Agents can now upload message files from the call adapter to use for message and voicemail greetings.
-- Fixed an issue where the global Overcapacity Deflection Messages setting was configured for Uploading Audio Recordings , but queues inheriting global settings incorrectly displayed Text-to-speech in the UI.
-- September 23, 2024 Feature Agent-level deflections With agent-level deflections, you can let your agents set their own deflection options for agent to agent calls.
-
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 110
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Running any network or CPU intensive applications on the same computer, like streaming music or large uploads/downloads, will compete with bandwidth for audio from Contact Center AI Platform (CCAI Platform) and is highly discouraged.
-- Programs & physical requirements Agents should use a hard-wired connection as Wi-Fi connectivity cannot guarantee the support of proper voice quality.
-- Assigning Agents to queues so they can receive calls/chats.
-- Recommended headset features Binaural - Audio in both ears cuts down on background noise Noise-canceling microphone Noise-canceling headset USB connection Brands of headsets our customers use Jabra Logitech Plantronics Sennheiser What's next Configure a sample contact center Private Service Connect Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 34
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- It uses the contact center AI building blocks to allow a seamless transition to human agents.
-- Delivers AI-based omni-channel routing, intelligent Virtual Agent, Agent Assist, and Insights capabilities that enables organizations to streamline customer experiences.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
+- If After Hour Deflection is disabled, mark the checkbox Allow transfers to queues outside of operation when After Hours Deflection is disabled for the following behavior: Agents will be able to see the following queues as options to transfer to in the Agent Adapter: All queues within operating hours All queues that are outside of hours of operation with no deflection enabled and active, logged-in agents All queues that are after hours with after hour deflection enabled All queues that are after hours with an assigned virtual agent in 24-hour availability mode Agents will not be able to see the following types of queues: All queues that are outside of operating hours with an assigned virtual agent limited to queue hours of operation After hour deflection options : Select Email to deflect an end-user to email if chatting in after hours.
+- Mark the checkbox Allow transfers to queues outside of operation hours for the following behavior: Agents will be able to see the following queues as options to transfer to in the Agent Adapter: All queues within operating hours All queues that are outside of operation hours with after hour deflection enabled All queues that are outside of hours of operation with no deflection enabled and active, logged-in agents All queues that are after hours with an assigned virtual agent in 24-hour availability mode Agents will not be able to see the following types of queues: All queues that are outside of operating hours with an assigned virtual agent limited to queue hours of operation Select Mobile and Web SDK call deflection options When selected, visual options will be displayed when outside of hours of operation.
+- Agents assigned to the queue that was called when operating hours were reached will be alerted of voicemails left as a result of this deflection setting.
+- Upload Audio Recording : upload an audio file for CCAI Platform to play before the call starts.
 

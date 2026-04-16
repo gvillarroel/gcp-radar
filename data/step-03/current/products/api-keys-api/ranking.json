@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:47:51.060Z",
+  "generated_at": "2026-04-12T21:35:13.927Z",
   "product_name": "API Keys API",
   "product_slug": "api-keys-api",
   "step02_source_path": "data/step-02/current/api-keys-api.md",
@@ -8,6 +8,25 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 1,
+    "source_row_count": 2,
+    "top_phrases": [
+      "api keys api"
+    ],
+    "top_tokens": [
+      "api",
+      "availability",
+      "available",
+      "general",
+      "keys",
+      "now",
+      "preview",
+      "the",
+      "was"
+    ],
+    "inventory_profile": "api_heavy"
+  },
   "dominant_doc_family": "api-keys",
   "dominant_python_slug": "apikeys",
   "dominant_java_slug": "google-cloud-apikeys",
@@ -26,6 +45,62 @@
       "query": "site:developers.google.com \"API Keys API\" official documentation OR site:developers.google.com \"api keys api\" official documentation",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Creating and managing API keys | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/create-manage-api-keys",
+          "description": "This page explains how to create and manage API keys using the API Keys API.",
+          "rank": 1
+        },
+        {
+          "title": "Use API keys to access APIs | Authentication | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/authentication/api-keys-use",
+          "description": "This page describes how to use API keys to access Google Cloud APIs and services that accept API keys.",
+          "rank": 2
+        },
+        {
+          "title": "Getting started with API Keys API | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/get-started-api-keys",
+          "description": "gcurl https://apikeys.googleapis.com/v2/projects/YOUR_PROJECT_NUMBER/locations/global/keys",
+          "rank": 3
+        },
+        {
+          "title": "API Keys documentation | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs",
+          "description": "API Keys lets you create and manage your API keys for your projects.",
+          "rank": 4
+        },
+        {
+          "title": "API Keys Overview | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/overview",
+          "description": "Instead of embedding your API keys in your applications, store them in environment variables or in files outside of your application&#x27;s source tree. Add restrictions on the API key.",
+          "rank": 5
+        },
+        {
+          "title": "How-to guides | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/how-to",
+          "description": "Use the API to create, update, delete and restore API keys.",
+          "rank": 6
+        },
+        {
+          "title": "Adding restrictions to API keys | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/add-restrictions-api-keys",
+          "description": "When the response from operations.get contains &quot;done&quot;: true, the response contains the updated Key with the restrictions. The following example shows how to create a new API key that only allows HTTP requests from a list of specific URLs.",
+          "rank": 7
+        },
+        {
+          "title": "Package google.api.apikeys.v2 | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2",
+          "description": "The representation of a key managed by the API Keys API.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -115,13 +190,19 @@
       "round": 1,
       "intent": "python_client",
       "query": "site:docs.cloud.google.com/python/docs/reference \"API Keys API\"",
-      "official_result_count": 1,
+      "official_result_count": 2,
       "results": [
+        {
+          "title": "API Keys API - Python client libraries",
+          "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest/summary_overview",
+          "description": "Classes, methods and properties &amp; attributes for <strong>API Keys API</strong>.",
+          "rank": 1
+        },
         {
           "title": "Class Key (0.7.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest/google.cloud.api_keys_v2.types.Key",
           "description": "The representation of a key managed by the <strong>API Keys API</strong>.",
-          "rank": 1
+          "rank": 2
         }
       ]
     },
@@ -146,9 +227,65 @@
         },
         {
           "title": "Google Maps Platform security guidance | Google for Developers",
-          "url": "https://developers.google.com/maps/api-key-best-practices?hl=ur",
+          "url": "https://developers.google.com/maps/api-key-best-practices",
           "description": "If you have applied IP address restrictions to your key, and your service logs Maps Platform API error responses, check your system logs for further information. The error response will include the server IP address that you need to authorize. ... While Maps Static API, Street View Static API more recent Google Maps Platform APIs will also support referrer restrictions, note that web browsers or webviews will likely restrict the Referer header to the Origin for cross-origin requests, and will likely omiy sending it altogether, e.g., for locally accessed resources, or for resources served over protocols other than HTTP or HTTPS.",
           "rank": 2
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Creating and managing API keys | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/create-manage-api-keys",
+          "description": "This page explains how to create and manage API keys using the API Keys API.",
+          "rank": 1
+        },
+        {
+          "title": "Use API keys to access APIs | Authentication | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/authentication/api-keys-use",
+          "description": "This page describes how to use API keys to access Google Cloud APIs and services that accept API keys.",
+          "rank": 2
+        },
+        {
+          "title": "Getting started with API Keys API | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/get-started-api-keys",
+          "description": "gcurl https://apikeys.googleapis.com/v2/projects/YOUR_PROJECT_NUMBER/locations/global/keys",
+          "rank": 3
+        },
+        {
+          "title": "API Keys documentation | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs",
+          "description": "API Keys lets you create and manage your API keys for your projects.",
+          "rank": 4
+        },
+        {
+          "title": "API Keys Overview | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/overview",
+          "description": "Instead of embedding your API keys in your applications, store them in environment variables or in files outside of your application&#x27;s source tree. Add restrictions on the API key.",
+          "rank": 5
+        },
+        {
+          "title": "How-to guides | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/how-to",
+          "description": "Use the API to create, update, delete and restore API keys.",
+          "rank": 6
+        },
+        {
+          "title": "Adding restrictions to API keys | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/add-restrictions-api-keys",
+          "description": "When the response from operations.get contains &quot;done&quot;: true, the response contains the updated Key with the restrictions. The following example shows how to create a new API key that only allows HTTP requests from a list of specific URLs.",
+          "rank": 7
+        },
+        {
+          "title": "Package google.api.apikeys.v2 | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2",
+          "description": "The representation of a key managed by the API Keys API.",
+          "rank": 8
         }
       ]
     },
@@ -211,15 +348,15 @@
           "rank": 3
         },
         {
-          "title": "Use API keys to access APIs | Authentication | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/docs/authentication/api-keys-use",
-          "description": "For more information about the API Keys API, see the API Keys API documentation. Select the tab for how you plan to use the samples on this page: To use the .NET samples on this page in a local development environment, install and initialize the gcloud CLI, and then set up Application Default Credentials with your user credentials. Install the Google Cloud ...",
-          "rank": 4
-        },
-        {
           "title": "API Keys documentation | API Keys API Documentation | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/api-keys/docs",
           "description": "API Keys <strong>lets you create and manage your API keys for your projects</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Use API keys to access APIs | Authentication | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/authentication/api-keys-use",
+          "description": "For more information about the API Keys API, see the API Keys API documentation. Select the tab for how you plan to use the samples on this page: To use the .NET samples on this page in a local development environment, install and initialize the gcloud CLI, and then set up Application Default Credentials with your user credentials. Install the Google Cloud ...",
           "rank": 5
         },
         {
@@ -229,15 +366,15 @@
           "rank": 6
         },
         {
-          "title": "API Keys API Documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/api-keys/docs/reference/rest",
-          "description": "Manages the API keys associated with developer projects. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests. A Discovery Document is a machine-readable specification for describing and consuming REST APIs.",
+          "title": "Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest/summary_overview",
+          "description": "Overview of the APIs available for API Keys API.",
           "rank": 7
         },
         {
-          "title": "Getting information about API keys | API Keys API Documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/api-keys/docs/get-info-api-keys",
-          "description": "See Getting started with the API Keys for details on getting set up to experiment with the API. You can get a list of all the keys owned by a Google Cloud project with the ListKeys method:",
+          "title": "API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/reference/rest",
+          "description": "Manages the API keys associated with developer projects. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests. A Discovery Document is a machine-readable specification for describing and consuming REST APIs.",
           "rank": 8
         }
       ]
@@ -246,13 +383,19 @@
       "round": 2,
       "intent": "python_client",
       "query": "site:docs.cloud.google.com \"API Keys API\" \"Python client libraries\"",
-      "official_result_count": 1,
+      "official_result_count": 2,
       "results": [
+        {
+          "title": "API Keys API - Python client libraries",
+          "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest/summary_overview",
+          "description": "Python · Client libraries · Send feedback · Stay organized with collections Save and categorize content based on your preferences. Version latestkeyboard_arrow_down · 0.7.0 (latest) 0.6.0 · 0.5.17 · 0.4.1 · 0.3.0 · 0.2.2 · 0.1.0 · Overview of the APIs available for API Keys API.",
+          "rank": 1
+        },
         {
           "title": "Class Key (0.7.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest/google.cloud.api_keys_v2.types.Key",
           "description": "Python · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 0.7.0 (latest) 0.6.0 · 0.5.17 · 0.4.1 · 0.3.0 · 0.2.2 · 0.1.0 · Key(mapping=None, *, ignore_unknown_fields=False, **kwargs) The representation of a key managed by the API Keys API.",
-          "rank": 1
+          "rank": 2
         }
       ]
     },
@@ -282,6 +425,62 @@
       "query": "site:developers.google.com \"API Keys API\" overview OR site:developers.google.com \"api keys api\" overview",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Creating and managing API keys | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/create-manage-api-keys",
+          "description": "This page explains how to create and manage API keys using the API Keys API.",
+          "rank": 1
+        },
+        {
+          "title": "Use API keys to access APIs | Authentication | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/authentication/api-keys-use",
+          "description": "This page describes how to use API keys to access Google Cloud APIs and services that accept API keys.",
+          "rank": 2
+        },
+        {
+          "title": "Getting started with API Keys API | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/get-started-api-keys",
+          "description": "gcurl https://apikeys.googleapis.com/v2/projects/YOUR_PROJECT_NUMBER/locations/global/keys",
+          "rank": 3
+        },
+        {
+          "title": "API Keys documentation | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs",
+          "description": "API Keys lets you create and manage your API keys for your projects.",
+          "rank": 4
+        },
+        {
+          "title": "API Keys Overview | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/overview",
+          "description": "Instead of embedding your API keys in your applications, store them in environment variables or in files outside of your application&#x27;s source tree. Add restrictions on the API key.",
+          "rank": 5
+        },
+        {
+          "title": "How-to guides | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/how-to",
+          "description": "Use the API to create, update, delete and restore API keys.",
+          "rank": 6
+        },
+        {
+          "title": "Adding restrictions to API keys | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/add-restrictions-api-keys",
+          "description": "When the response from operations.get contains &quot;done&quot;: true, the response contains the updated Key with the restrictions. The following example shows how to create a new API key that only allows HTTP requests from a list of specific URLs.",
+          "rank": 7
+        },
+        {
+          "title": "Package google.api.apikeys.v2 | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2",
+          "description": "The representation of a key managed by the API Keys API.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 3,
@@ -359,21 +558,21 @@
           "rank": 1
         },
         {
-          "title": "Getting started with API Keys API | API Keys API Documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/api-keys/docs/get-started-api-keys",
-          "description": "This page describes how to set up your local environment to experiment with API Keys using the curl command. Sign in to your Google Cloud account. If you&#x27;re new to Google Cloud, create an account to evaluate how our products perform in real-world scenarios.",
-          "rank": 2
-        },
-        {
           "title": "API Keys Overview | API Keys API Documentation | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/api-keys/docs/overview",
           "description": "An API key is <strong>a simple encrypted string that you can use when calling Google Cloud APIs</strong>.",
-          "rank": 3
+          "rank": 2
         },
         {
           "title": "API Keys documentation | API Keys API Documentation | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/api-keys/docs",
           "description": "Access 20+ free products for common use cases, including AI APIs, VMs, data warehouses, and more. Find quickstarts and guides, review key references, and get help with common issues.",
+          "rank": 3
+        },
+        {
+          "title": "Getting started with API Keys API | API Keys API Documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/api-keys/docs/get-started-api-keys",
+          "description": "This page describes how to set up your local environment to experiment with API Keys using the curl command. Sign in to your Google Cloud account. If you&#x27;re new to Google Cloud, create an account to evaluate how our products perform in real-world scenarios.",
           "rank": 4
         },
         {
@@ -395,9 +594,9 @@
           "rank": 7
         },
         {
-          "title": "Getting information about API keys | API Keys API Documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/api-keys/docs/get-info-api-keys",
-          "description": "See Getting started with the API Keys for details on getting set up to experiment with the API. You can get a list of all the keys owned by a Google Cloud project with the ListKeys method:",
+          "title": "Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest/summary_overview",
+          "description": "Classes, methods and properties &amp; attributes for API Keys API.",
           "rank": 8
         }
       ]
@@ -418,12 +617,14 @@
       "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
         "site:docs.cloud.google.com \"API Keys API\" \"access control\"",
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "product_docs",
+        "feature_guides",
         "iam_permissions"
       ],
       "round_hits": [
@@ -434,6 +635,17 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -444,8 +656,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 100,
       "keep": true
@@ -473,6 +692,18 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -483,25 +714,31 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 100,
       "keep": true
     },
     {
-      "title": "Creating and managing API keys | API Keys API Documentation | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/api-keys/docs/create-manage-api-keys",
-      "description": "You can only specify displayName and restrictions fields of the Key object. The CreateKey isn&#x27;t a synchronous method. Instead, when you issue a call to CreateKey, you initiate a long-running operation. The following example issues a CreateKey call to create an API key with no restrictions:",
-      "rank": 4,
+      "title": "Adding restrictions to API keys | API Keys API Documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/api-keys/docs/add-restrictions-api-keys",
+      "description": "When the response from operations.get contains &quot;done&quot;: true, the response contains the updated Key with the restrictions. The following example shows how to create a new API key that only allows HTTP requests from a list of specific URLs.",
+      "rank": 7,
       "query_hits": [
-        "site:docs.cloud.google.com \"API Keys API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"API Keys API\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
         "site:docs.cloud.google.com \"API Keys API\" IAM roles permissions"
       ],
       "intent_hits": [
-        "product_docs",
+        "feature_guides",
         "iam_permissions"
       ],
       "round_hits": [
@@ -509,9 +746,21 @@
         2,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 5,
       "consistency_score": 100,
       "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -521,9 +770,78 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Creating and managing API keys | API Keys API Documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/api-keys/docs/create-manage-api-keys",
+      "description": "You can only specify displayName and restrictions fields of the Key object. The CreateKey isn&#x27;t a synchronous method. Instead, when you issue a call to CreateKey, you initiate a long-running operation. The following example issues a CreateKey call to create an API key with no restrictions:",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"API Keys API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
+        "site:docs.cloud.google.com \"API Keys API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"API Keys API\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "feature_guides",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 100,
       "keep": false
@@ -535,12 +853,14 @@
       "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference",
         "site:docs.cloud.google.com \"API Keys API\" IAM roles permissions"
       ],
       "intent_hits": [
         "product_docs",
+        "feature_guides",
         "iam_permissions"
       ],
       "round_hits": [
@@ -551,6 +871,18 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -560,9 +892,74 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "How-to guides | API Keys API Documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/api-keys/docs/how-to",
+      "description": "Use the API to create, update, delete and restore API keys.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"API Keys API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"API Keys API\" \"api keys api\""
+      ],
+      "intent_hits": [
+        "product_docs",
+        "feature_guides"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 100,
+      "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 100,
       "keep": false
@@ -574,11 +971,13 @@
       "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs"
+        "product_docs",
+        "feature_guides"
       ],
       "round_hits": [
         1,
@@ -588,6 +987,18 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -598,8 +1009,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 100,
       "keep": true
@@ -625,6 +1044,18 @@
       "best_rank": 6,
       "consistency_score": 100,
       "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 17,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -635,24 +1066,32 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 100,
       "keep": true
     },
     {
-      "title": "Use API keys to access APIs | Authentication | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/docs/authentication/api-keys-use",
-      "description": "For more information about the API Keys API, see the API Keys API documentation. Select the tab for how you plan to use the samples on this page: To use the .NET samples on this page in a local development environment, install and initialize the gcloud CLI, and then set up Application Default Credentials with your user credentials. Install the Google Cloud ...",
-      "rank": 2,
+      "title": "Package google.api.apikeys.v2 | API Keys API Documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2",
+      "description": "The representation of a key managed by the API Keys API.",
+      "rank": 8,
       "query_hits": [
-        "site:docs.cloud.google.com \"API Keys API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"API Keys API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference",
         "site:docs.cloud.google.com \"API Keys API\" IAM roles permissions"
       ],
       "intent_hits": [
+        "feature_guides",
         "product_docs",
         "iam_permissions"
       ],
@@ -661,9 +1100,21 @@
         2,
         3
       ],
-      "best_rank": 1,
+      "best_rank": 7,
       "consistency_score": 100,
-      "product_fit_score": 130,
+      "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -673,67 +1124,55 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 100,
       "keep": false
     },
     {
-      "title": "Getting information about API keys | API Keys API Documentation | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/api-keys/docs/get-info-api-keys",
-      "description": "See Getting started with the API Keys for details on getting set up to experiment with the API. You can get a list of all the keys owned by a Google Cloud project with the ListKeys method:",
-      "rank": 8,
+      "title": "API Keys API - Python client libraries",
+      "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest",
+      "description": "Classes, methods and properties &amp; attributes for <strong>API Keys API</strong>.",
+      "rank": 1,
       "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"API Keys API\"",
+        "site:docs.cloud.google.com \"API Keys API\" \"Python client libraries\"",
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference"
       ],
       "intent_hits": [
+        "python_client",
         "product_docs"
       ],
       "round_hits": [
+        1,
         2,
         3
       ],
-      "best_rank": 8,
-      "consistency_score": 67,
-      "product_fit_score": 152,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Class Key (0.7.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest",
-      "description": "The representation of a key managed by the <strong>API Keys API</strong>.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"API Keys API\"",
-        "site:docs.cloud.google.com \"API Keys API\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
       "best_rank": 1,
-      "consistency_score": 67,
+      "consistency_score": 100,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -744,17 +1183,142 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
-      "final_score": 95,
+      "final_score": 100,
       "keep": true
+    },
+    {
+      "title": "API Keys API - Python client libraries",
+      "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest/summary_overview",
+      "description": "Classes, methods and properties &amp; attributes for <strong>API Keys API</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"API Keys API\"",
+        "site:docs.cloud.google.com \"API Keys API\" \"Python client libraries\"",
+        "site:docs.cloud.google.com \"API Keys API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "python_client",
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: api keys api"
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Use API keys to access APIs | Authentication | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/authentication/api-keys-use",
+      "description": "For more information about the API Keys API, see the API Keys API documentation. Select the tab for how you plan to use the samples on this page: To use the .NET samples on this page in a local development environment, install and initialize the gcloud CLI, and then set up Application Default Credentials with your user credentials. Install the Google Cloud ...",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"API Keys API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"API Keys API\" \"api keys api\"",
+        "site:docs.cloud.google.com \"API Keys API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"API Keys API\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "feature_guides",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: api keys api"
+      },
+      "final_score": 100,
+      "keep": false
     },
     {
       "title": "Class Key (0.7.0) | Python client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/python/docs/reference/apikeys/latest/google.cloud.api_keys_v2.types.Key",
       "description": "The representation of a key managed by the <strong>API Keys API</strong>.",
-      "rank": 1,
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"API Keys API\"",
         "site:docs.cloud.google.com \"API Keys API\" \"Python client libraries\""
@@ -766,9 +1330,21 @@
         1,
         2
       ],
-      "best_rank": 1,
+      "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 17,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -779,8 +1355,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 95,
       "keep": false
@@ -804,6 +1388,18 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -813,9 +1409,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 95,
       "keep": false
@@ -839,6 +1443,18 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 17,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -849,8 +1465,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 95,
       "keep": false
@@ -874,6 +1498,18 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 17,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -884,43 +1520,18 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Adding restrictions to API keys | API Keys API Documentation | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/api-keys/docs/add-restrictions-api-keys",
-      "description": "<strong>API key restrictions ensure that only your apps and websites can use your keys</strong>. For security reasons, we recommend that you add restrictions that specify: · If a client uses a restricted API key to issue a request that doesn&#x27;t ...",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"API Keys API\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 152,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
       "keep": false
     },
     {
@@ -940,6 +1551,18 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -949,80 +1572,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 90,
       "keep": true
-    },
-    {
-      "title": "How-to guides | API Keys API Documentation | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/api-keys/docs/how-to",
-      "description": "Use the API to create, update, delete and restore API keys.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"API Keys API\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 152,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Package google.api.apikeys.v2 | API Keys API Documentation | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2",
-      "description": "Manages the API keys associated with projects. Identifier of an Android application for key use. The Android apps that are allowed to use the key. A restriction for a specific service and optionally one or multiple specific methods. Both fields are case insensitive. The HTTP referrers (websites) ...",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"API Keys API\" Google Cloud introduction reference",
-        "site:docs.cloud.google.com \"API Keys API\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "product_docs",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 152,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
     },
     {
       "title": "Troubleshooting | API Keys API Documentation | Google Cloud Documentation",
@@ -1041,6 +1604,18 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 152,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1050,9 +1625,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 90,
       "keep": false
@@ -1074,6 +1657,18 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [
+          "api keys api"
+        ],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1083,9 +1678,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "api keys api"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: api keys api"
       },
       "final_score": 90,
       "keep": false
@@ -1107,25 +1710,41 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 8,
-      "deterministic_score": 96,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 96,
+        "score": 100,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 2,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "keys",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 87,
+      "final_score": 90,
       "keep": false
     },
     {
       "title": "Google Maps Platform security guidance | Google for Developers",
-      "url": "https://developers.google.com/maps/api-key-best-practices?hl=ur",
+      "url": "https://developers.google.com/maps/api-key-best-practices",
       "description": "If you have applied IP address restrictions to your key, and your service logs Maps Platform API error responses, check your system logs for further information. The error response will include the server IP address that you need to authorize. ... While Maps Static API, Street View Static API more recent Google Maps Platform APIs will also support referrer restrictions, note that web browsers or webviews will likely restrict the Referer header to the Origin for cross-origin requests, and will likely omiy sending it altogether, e.g., for locally accessed resources, or for resources served over protocols other than HTTP or HTTPS.",
       "rank": 2,
       "query_hits": [
@@ -1140,20 +1759,34 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 6,
-      "deterministic_score": 69,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 75,
       "api_score": {
         "classification": "supporting_page",
-        "score": 69,
+        "score": 75,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 3,
+        "parent_page_likelihood": 4,
         "product_match": 2,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 64,
+      "final_score": 69,
       "keep": false
     }
   ]

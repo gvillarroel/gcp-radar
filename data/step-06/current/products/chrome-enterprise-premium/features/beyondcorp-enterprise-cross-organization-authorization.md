@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:30:05.316Z"
+generated_at: "2026-04-14T12:10:45.842Z"
 product_name: "Chrome Enterprise Premium"
 product_slug: "chrome-enterprise-premium"
 feature_name: "BeyondCorp Enterprise cross-organization authorization"
 feature_slug: "beyondcorp-enterprise-cross-organization-authorization"
 latest_feature_date: "2023-01-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization"
   - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
   - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
 keywords:
-  - "beyondcorp"
-  - "enterprise"
+  - "authorization"
+  - "policies"
   - "cross"
   - "organization"
-  - "authorization"
+  - "trust"
   - "allows"
-  - "policies"
-  - "to"
+  - "beyondcorp"
 ---
 
 # BeyondCorp Enterprise cross-organization authorization
 
 Product: Chrome Enterprise Premium
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +37,7 @@ Cross-organization authorization allows BeyondCorp Enterprise policies to trust 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
@@ -52,21 +51,21 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization](https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization)
 - Source ID: `site-iam-reference`
-- Final score: 204
+- Final score: 211
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Expected post-configuration policies Following are the policies for the resource and partner organizations after cross-org authorization is configured: Resource organization (organizations/RESOURCE ORG ID): access policy : access level : SP1 -- "requireScreenlock" : true AuthorizedorgsDesc : AOD1 -- authorizationtype : trust -- asset type : device -- authorization direction : from -- orgs : [ organizations / PARTNER ORG ID ] Partner organization (organizations/PARTNER ORG ID): access policy : AuthorizedOrgsDesc : AOD2 -- authorizationtype : trust -- asset type : device -- authorization direction : to -- orgs : [ organizations / RESOURCE ORG ID ] The following image shows the visibility of the device attributes of the partner organization after cross-org authorization is configured.
 - Following are the policies for the resource and partner organizations before cross-org authorization is configured: Resource organization (organizations/RESOURCE ORG ID): access policy: access level: SP1 --"requireScreenlock": true Partner organization (organizations/PARTNER ORG ID): no access policy In the following image, the device attributes of the device in the partner organization are not visible to the resource organization because cross-org authorization is not configured.
-- Home Documentation Security Chrome Enterprise Premium Guides Send feedback Configure authorization across organizations Stay organized with collections Save and categorize content based on your preferences.
-- Manage a cross-org authorization configuration After you configure cross-org authorization, you might need to remove access to an organization, add access to another organization, or other tasks.
+- Cross-org authorization lets you configure an access policy to trust and use data, such as device attributes, owned by other organizations.
+- Create an AuthorizedOrgsDesc resource and authorize external organizations To create an AuthorizedOrgsDesc resource and include the external organizations to which you want to grant access, run the following command: gcloud access-context-manager authorized-orgs create AUTHORIZED ORGS DESC NAME --authorization type=AUTHORIZATION TYPE TRUST --asset type=ASSET TYPE DEVICE --authorization direction=AUTHORIZATION DIRECTION FROM --orgs= ORG ID --policy= ACCESS POLICY NUMBER Replace the following: AUTHORIZED ORGS DESC NAME : A unique name for the AuthorizedOrgsDesc resource.
 
 ### "Secure access to private web applications \_|\_ Chrome Enterprise Premium\
 
 - URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps)
 - Source ID: `site-docs-root`
-- Final score: 164
+- Final score: 123
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -80,7 +79,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps)
 - Source ID: `site-docs-root`
-- Final score: 164
+- Final score: 119
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 

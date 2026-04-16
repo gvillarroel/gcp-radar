@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:58:32.640Z"
+generated_at: "2026-04-15T11:57:14.547Z"
 product_name: "Cloud SQL for SQL Server"
 product_slug: "cloud-sql-for-sql-server"
 feature_name: "Automatic max server memory configuration"
 feature_slug: "automatic-max-server-memory-configuration"
 latest_feature_date: "2024-10-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
   - "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
 keywords:
   - "automatic"
   - "max"
@@ -26,7 +26,7 @@ keywords:
 # Automatic max server memory configuration
 
 Product: Cloud SQL for SQL Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,48 +38,21 @@ Cloud SQL automatically configures the SQL Server max server memory flag based o
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
-- [https://docs.cloud.google.com/sql/docs/sqlserver/flags](https://docs.cloud.google.com/sql/docs/sqlserver/flags)
 - [https://docs.cloud.google.com/sql/docs/sqlserver/create-instance](https://docs.cloud.google.com/sql/docs/sqlserver/create-instance)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/flags](https://docs.cloud.google.com/sql/docs/sqlserver/flags)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/best-practices](https://docs.cloud.google.com/sql/docs/sqlserver/best-practices)
 
 ## Supporting Pages
-
-### Cloud SQL for SQL Server release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 226
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Cloud SQL configures the max server memory (mb) flag based on the instance size automatically by limiting the amount of memory that SQL Server can allocate for its internal pools.
-- February 18, 2026 Change After March 17, 2026, when you enable the Cloud SQL Admin API ( sqladmin.googleapis.com ), the Cloud SQL remote MCP server is enabled automatically.
-- August 22, 2022 Change Cloud SQL may set a value for the max server memory (mb) flag on instances, based on Microsoft's recommended values .
-- You can manually set a value for this flag, or omit the flag and let Cloud SQL manage memory limits for you automatically.
-
-### "Configure database flags \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/flags](https://docs.cloud.google.com/sql/docs/sqlserver/flags)
-- Source ID: `site-docs-root`
-- Final score: 218
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = "false" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 To set a flag for an existing database: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id Request JSON body: { "settings": { "databaseFlags": [ { "name": " flag name ", "value": " flag value " } ] } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
-- Using the max degree of parallelism (MAXDOP) flag, you can control the number of threads at three levels: Instance level, using database flags Database scope, using TSQL Query level, using query hints Note that if the instance is resized, then the flag value remains unchanged. max server memory (mb) The max server memory (mb) flag limits the amount of memory that Cloud SQL can allocate for its internal pools.
-- If you must manually manage this value, as a general recommendation, set the max server memory (mb) value to roughly 80% of available memory to help prevent SQL Server from consuming all memory.
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id " Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "UPDATE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } REST v1beta4 To clear all flags for an existing instance: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { "settings": { "databaseFlags": [] } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 
 ### Create instances \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sql/docs/sqlserver/create-instance](https://docs.cloud.google.com/sql/docs/sqlserver/create-instance)
 - Source ID: `site-docs-root`
-- Final score: 218
+- Final score: 132
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +60,30 @@ Evidence snippets:
 - HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { "name": " INSTANCE ID ", "region": " REGION ", "databaseVersion": " DATABASE VERSION ", "rootPassword": " PASSWORD ", "settings": { "tier": " MACHINE TYPE ", "edition": " EDITION TYPE ", "backupConfiguration": { "enabled": true }, "dataCacheConfig": { "dataCacheEnabled": DATA CACHE ENABLED }, "ipConfiguration": { "privateNetwork": " PRIVATE NETWORK ", "authorizedNetworks": [ AUTHORIZED NETWORKS ], "ipv4Enabled": false, "serverCaMode": " CA MODE ", "serverCertificateRotationMode": " SERVER CERTIFICATE ROTATION MODE ", "customSubjectAlternativeNames": " DNS NAMES " } }, "sqlNetworkArchitecture": "NEW NETWORK ARCHITECTURE" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 - The following sections show the vCPU and memory configuration for each database version and machine type: SQL Server 2017 Express, SQL Server 2019 Express, SQL Server 2022 Express, and SQL Server 2025 Express Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 1 to 8 vCPUs, 3.75 GB to 52 GB SQL Server 2017 Web, SQL Server 2019 Web, and SQL Server 2022 Web Important : SQL Server Web edition software can only be used to support public and internet-accessible pages, websites, and web services.
 - When selecting the number of CPUs and amount of memory, there are some restrictions on the configuration that you choose: The number of vCPUs that you can configure for your instance is based on your SQL server version.
+
+### "Configure database flags \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/flags](https://docs.cloud.google.com/sql/docs/sqlserver/flags)
+- Source ID: `site-docs-root`
+- Final score: 120
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = "false" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 To set a flag for an existing database: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id Request JSON body: { "settings": { "databaseFlags": [ { "name": " flag name ", "value": " flag value " } ] } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id " Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "UPDATE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } REST v1beta4 To clear all flags for an existing instance: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { "settings": { "databaseFlags": [] } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- For example, to set the 1204 , remote access , and remote query timeout (s) flags, you can use the following command: gcloud sql instances patch INSTANCE NAME \ --database-flags = "1204" = on, "remote access" = on, "remote query timeout (s)" = 300 Terraform To add database flags, use a Terraform resource . resource "google sql database instance" "instance" { name = "sqlserver-instance-flags" region = "us-central1" database version = "SQLSERVER 2019 STANDARD" root password = "INSERT-PASSWORD-HERE" settings { database flags { name = "1204" value = "on" } database flags { name = "remote access" value = "on" } database flags { name = "remote query timeout (s)" value = "300" } tier = "db-custom-2-7680" } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.
+- REST v1beta4 To set a flag for an existing database: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { "settings": { "databaseFlags": [ { "name": " flag name ", "value": " flag value " } ] } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+
+### "General best practices \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/best-practices](https://docs.cloud.google.com/sql/docs/sqlserver/best-practices)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 116
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The value is automatically calculated by the SQL Server engine at startup. max server memory (mb) This flag limits the amount of memory that Cloud SQL can allocate for its internal pools.
+- The following table has recommended values and percentages of total RAM for some popular virtual machine (VM) tiers: Instance tier (MB) max server memory (mb) % (Total) 3840 1440 37 4096 1632 39 5792 2912 50 8192 4704 57 11584 7248 62 16384 10848 66 23168 16800 72 32768 25200 76 46336 37072 80 65568 53888 82 92704 77648 83 131136 111248 84 185440 158784 85 262272 226000 86 370880 321056 86 524544 455488 86 741792 645600 87 To monitor the memory usage for your instance, use the following metrics : database/memory/usage database/sqlserver/memory/buffer cache hit ratio database/sqlserver/memory/memory grants pending database/sqlserver/memory/page life expectancy For more information, see Monitor Cloud SQL instances .
+- If you must manually manage the flag's value, we recommend using the following formula to set the max server memory (mb) database flag: Reserve 1.4 GB of memory for the OS and agents.
+- If you don't set a value for the flag and you resize your instance, then Cloud SQL adjusts the value of the flag automatically to meet our recommendations for the new instance size.
 

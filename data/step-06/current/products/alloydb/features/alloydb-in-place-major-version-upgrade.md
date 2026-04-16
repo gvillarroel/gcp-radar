@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.596Z"
+generated_at: "2026-04-12T12:07:33.842Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB in-place major version upgrade"
 feature_slug: "alloydb-in-place-major-version-upgrade"
 latest_feature_date: "2024-10-28"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+  - "https://docs.cloud.google.com/alloydb/docs/maintenance"
+  - "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+  - "https://docs.cloud.google.com/alloydb/docs/cluster-create"
 keywords:
   - "major upgrade operation"
   - "in-place major version upgrade"
@@ -23,7 +26,7 @@ keywords:
 # AlloyDB in-place major version upgrade
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -31,27 +34,48 @@ AlloyDB for PostgreSQL now supports in-place major-version upgrades, including P
 
 ## Extended Definition
 
-AlloyDB in-place major version upgrade is a managed operation that upgrades the PostgreSQL major version of an existing AlloyDB cluster without replacing the cluster in place. According to AlloyDB release notes, the feature supports upgrading a cluster from PostgreSQL 14 or 15 to PostgreSQL 16, and it progressed from Preview (reported 2024-10-28) to General Availability (reported 2025-03-19).
+AlloyDB for PostgreSQL now supports in-place major-version upgrades, including PostgreSQL 14 to PostgreSQL 15.
 
 ## Evidence Summary
 
-The cited release-notes page is the authoritative source confirming both availability milestones and the supported source/target versions for AlloyDB in-place major version upgrades.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- [https://docs.cloud.google.com/alloydb/docs/maintenance](https://docs.cloud.google.com/alloydb/docs/maintenance)
+- [https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes](https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes)
+- [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- Source ID: `site-api-reference`
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Maintenance overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/maintenance](https://docs.cloud.google.com/alloydb/docs/maintenance)
+- Source ID: `site-docs-reference-2`
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes](https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes)
 - Source ID: `site-docs-root`
-- Final score: 22
+- Final score: 78
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- Feature You can perform an in-place major version upgrade of your AlloyDB cluster to PostgreSQL version 16 from PostgreSQL version 14 or 15.
-- March 19, 2025 Feature Performing an in-place major version upgrade of your AlloyDB cluster is generally available ( GA ).
-- October 28, 2024 Feature AlloyDB for PostgreSQL now supports in-place major version upgrade in Preview .
+### "Create a cluster and its primary instance \_|\_ AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
+- Source ID: `site-docs-reference-2`
+- Final score: 74
+- Re-rank relevance: N/A
 

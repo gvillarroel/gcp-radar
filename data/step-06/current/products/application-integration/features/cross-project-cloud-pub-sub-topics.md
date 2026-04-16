@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.474Z"
+generated_at: "2026-04-14T07:40:14.477Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Cross-project Cloud Pub/Sub topics"
 feature_slug: "cross-project-cloud-pub-sub-topics"
 latest_feature_date: "2023-12-01"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-pubsub-trigger"
+  - "https://docs.cloud.google.com/application-integration/docs/build-cicd"
   - "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task"
 keywords:
   - "project"
   - "cross"
+  - "account"
   - "topics"
-  - "pub"
-  - "sub"
   - "triggers"
-  - "with"
-  - "now"
 ---
 
 # Cross-project Cloud Pub/Sub topics
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,55 @@ Cloud Pub/Sub triggers now support cross-project topics, with service account co
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email](https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
+- [https://docs.cloud.google.com/application-integration/docs/configure-pubsub-trigger](https://docs.cloud.google.com/application-integration/docs/configure-pubsub-trigger)
+- [https://docs.cloud.google.com/application-integration/docs/build-cicd](https://docs.cloud.google.com/application-integration/docs/build-cicd)
 - [https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task](https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task)
 
 ## Supporting Pages
 
-### "Listen to Cloud Pub/Sub topic and send an email \_|\_ Application Integration\
+### Cloud Pub/Sub trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email](https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email)
-- Source ID: `site-docs-root`
-- Final score: 162
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-pubsub-trigger](https://docs.cloud.google.com/application-integration/docs/configure-pubsub-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 129
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Specify the topic the trigger should listen to in the Pub/Sub topic field in the following format: projects/ PROJECT ID /topics/ TOPIC ID where: PROJECT ID is the Google Cloud project where your topic is created.
-- Before you begin Assign the following Identity and Access Management (IAM) roles to the Application Integration Service Agent ( service- PROJECT NUMBER @gcp-sa-integrations.iam.gserviceaccount.com ) in your Google Cloud project: Pub/Sub Editor Application Integration Invoker For more information about assigning IAM roles, see IAM roles and permissions .
-- Overview In this quickstart, you will create an integration with a Cloud Pub/Sub trigger to listen to an existing Pub/Sub topic that receives temperature readings in degrees Kelvin from a IOT device.
-- Add a Cloud Pub/Sub trigger To add a Cloud Pub/Sub trigger to the integration, follow the steps below: In the integration editor, select Triggers to display a list of available triggers.
+- Service account IAM role granted Application Integration's default service account: service- PROJECT NUMBER @gcp-sa-integrations.iam.gserviceaccount.com Pub/Sub Editor ( roles/pubsub.editor ) Service Account User ( roles/iam.serviceAccountUser ) If the Pub/Sub topic's Google Cloud project is different from the integration's Google Cloud project, the default service account needs Pub/Sub Editor role in the topic's Google Cloud project.
+- Configure a Cloud Pub/Sub trigger Click the Cloud Pub/Sub trigger element in the integration editor to view the trigger configuration pane, and then do the following tasks: Specify the topic the trigger should listen to in the Pub/Sub topic field in the following format: projects/ PROJECT ID /topics/ TOPIC ID To view all the available topics in your Google Cloud project, see the Topic name column in Topics .
+- The value of the config variable must be a service account email address with the following format: SERVICE ACCOUNT NAME @ project-id .iam.gserviceaccount.com .
+- However, if you want to modify any of the existing Pub/Sub triggers, you must configure a service account to continue using those triggers.
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### "Build CICD for your integration \_|\_ Application Integration \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 152
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/application-integration/docs/build-cicd](https://docs.cloud.google.com/application-integration/docs/build-cicd)
+- Source ID: `site-docs-reference-2`
+- Final score: 113
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- December 01, 2023 Feature Cloud Pub/Sub trigger supports cross-project topics You can now configure your Cloud Pub/Sub trigger for a Pub/Sub topic that isn't in the same Google Cloud project as your integration.
-- February 02, 2026 Feature FIFO message processing with Pub/Sub ordering keys Application Integration now supports publishing messages to Google Cloud Pub/Sub topics using ordering keys, enabling First-In, First-Out (FIFO) message processing.
-- Issue Known issues Integration fails to publish when duplicate Connector Event triggers are configured Event subscription error when an integration containing Connector Event triggers is uploaded For more information, see Application Integration known issues .
-- Your existing Cloud Pub/Sub triggers, that don't have any service account associated with them, will continue to work as before.
+- Enable the APIs Create a service account: Ensure that you have the Create Service Accounts IAM role ( roles/iam.serviceAccountCreator ) and the Project IAM Admin role ( roles/resourcemanager.projectIamAdmin ).
+- Enable the APIs Create a service account: Ensure that you have the Create Service Accounts IAM role ( roles/iam.serviceAccountCreator ) and the Project IAM Admin role ( roles/resourcemanager.projectIamAdmin ).
+- Note : The Role field affects which resources the service account can access in your project.
+- Note : The Role field affects which resources the service account can access in your project.
 
 ### "Insert data into BigQuery using a For Each Parallel task \_|\_ Application\
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task](https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task)
 - Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: N/A
+- Final score: 100
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - To create a BigQuery dataset with the name bq tutorial , enter the following command in your Cloud Shell terminal: bq --project id ${PROJECT ID} --location ${REGION} mk bq tutorial To create a BigQuery table with the name tutorial , enter the following command in your Cloud Shell terminal: bq --project id ${PROJECT ID} \ query \ --nouse legacy sql \ 'create table bq tutorial.tutorial ( unique key STRING NOT NULL, created date STRING, closed date STRING, agency STRING, agency name STRING, complaint type STRING, descriptor STRING, location type STRING, incident zip STRING, incident address STRING, street name STRING, cross street 1 STRING, cross street 2 STRING, intersection street 1 STRING, intersection street 2 STRING, address type STRING, city STRING, landmark STRING, facility type STRING, status STRING, due date STRING, resolution action updated date STRING, community board STRING, borough STRING, x coordinate state plane STRING, y coordinate state plane STRING, park facility name STRING, park borough STRING, school name STRING, school number STRING, school region STRING, school code STRING, school phone number STRING, school address STRING, school city STRING, school state STRING, school zip STRING, school not found STRING, school or citywide complaint STRING, vehicle type STRING, taxi company borough STRING, taxi pick up location STRING, bridge highway name STRING, bridge highway direction STRING, bridge highway segment STRING, road ramp STRING, garage lot name STRING, ferry direction STRING, ferry terminal name STRING, latitude STRING, longitude STRING, location STRING ) ' Verify that your BigQuery table is created.
-- To select three random entries from the sample dataset and store them in a way that you can pass them to the integration, enter the following commands in your Cloud Shell terminal: AUTH=$(gcloud auth print-access-token) export SAMPLE DOCS=$(jq $(r=$((RANDOM % 1000)) ; echo ".[$r:$((r + 3))]") < bq-sample-dataset.json jq -Rs '.') generate post data() { cat <<EOF { "triggerId": "api trigger/process-records API 1", "inputParameters": { "records": { "jsonValue": $SAMPLE DOCS } } } EOF } To start the testing, enter the following command in your Cloud Shell terminal: curl -X POST \ https://integrations.googleapis.com/v1/projects/ project id /locations/ region /integrations/process-records:execute \ -H "Authorization: Bearer $AUTH" \ -H "Content-Type: application/json" \ -d "$(generate post data)" In this command, replace: project id with the project ID of your Google Cloud project. region with the region where you created your integration.
-- To enable BigQuery APIs, enter the following commands in your Cloud Shell terminal: export PROJECT ID= project id export REGION= region gcloud services enable --project "${PROJECT ID}" \ bigquery.googleapis.com \ bigquerystorage.googleapis.com In this command, replace: project id with the project ID of your Google Cloud project. region with the region that you want to use to create your BigQuery dataset.
-- If the variables aren't listed, refresh the page, as it takes some time for the variables to be visible after the sub-integration is published.
+- Do the following in your Google Cloud project: Grant the following roles to the service account that you want to use to create the connection: roles/bigquery.dataEditor roles/bigquery.readSessionUser roles/secretmanager.viewer roles/secretmanager.secretAccessor Enable the following services: secretmanager.googleapis.com (Secret Manager API) connectors.googleapis.com (Connectors API) If these services have not been enabled for your project previously, you are prompted to enable them when creating the connection in the Create Connection page.
+- Enter the following sample JSON payload: [{ "unique key":"304271", "created date":"02/06/2007 12:00:00 AM", "closed date":"03/01/2007 12:00:00 AM", "agency":"TLC", "agency name":"Taxi and Limousine Commission", "complaint type":"Taxi Complaint", "descriptor":"Driver Complaint", "location type":"Street", "incident zip":"10001", "incident address":"", "street name":"", "cross street 1":"", "cross street 2":"", "intersection street 1":"WEST 29 STREET", "intersection street 2":"7 AVENUE", "address type":"INTERSECTION", "city":"NEW YORK", "landmark":"", "facility type":"N/A", "status":"Closed", "due date":"02/28/2007 12:00:00 AM", "resolution action updated date":"03/01/2007 12:00:00 AM", "community board":"05 MANHATTAN", "borough":"MANHATTAN", "x coordinate state plane":"986215", "y coordinate state plane":"211740", "park facility name":"", "park borough":"MANHATTAN", "school name":"", "school number":"", "school region":"", "school code":"", "school phone number":"", "school address":"", "school city":"", "school state":"", "school zip":"", "school not found":"", "school or citywide complaint":"", "vehicle type":"", "taxi company borough":"", "taxi pick up location":"Other", "bridge highway name":"", "bridge highway direction":"", "road ramp":"", "bridge highway segment":"", "garage lot name":"", "ferry direction":"", "ferry terminal name":"", "latitude":"40.74785373937869", "longitude":"-73.99290823133913", "location":"(40.74785373937869, -73.99290823133913)" }] Click Create .
+- Enter the following sample JSON payload: { "unique key":"304271", "created date":"02/06/2007 12:00:00 AM", "closed date":"03/01/2007 12:00:00 AM", "agency":"TLC", "agency name":"Taxi and Limousine Commission", "complaint type":"Taxi Complaint", "descriptor":"Driver Complaint", "location type":"Street", "incident zip":"10001", "incident address":"", "street name":"", "cross street 1":"", "cross street 2":"", "intersection street 1":"WEST 29 STREET", "intersection street 2":"7 AVENUE", "address type":"INTERSECTION", "city":"NEW YORK", "landmark":"", "facility type":"N/A", "status":"Closed", "due date":"02/28/2007 12:00:00 AM", "resolution action updated date":"03/01/2007 12:00:00 AM", "community board":"05 MANHATTAN", "borough":"MANHATTAN", "x coordinate state plane":"986215", "y coordinate state plane":"211740", "park facility name":"", "park borough":"MANHATTAN", "school name":"", "school number":"", "school region":"", "school code":"", "school phone number":"", "school address":"", "school city":"", "school state":"", "school zip":"", "school not found":"", "school or citywide complaint":"", "vehicle type":"", "taxi company borough":"", "taxi pick up location":"Other", "bridge highway name":"", "bridge highway direction":"", "road ramp":"", "bridge highway segment":"", "garage lot name":"", "ferry direction":"", "ferry terminal name":"", "latitude":"40.74785373937869", "longitude":"-73.99290823133913", "location":"(40.74785373937869, -73.99290823133913)" } Click Create .
 

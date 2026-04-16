@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:05.363Z"
+generated_at: "2026-04-15T12:02:17.170Z"
 product_name: "Vertex AI"
 product_slug: "vertex-ai"
 feature_name: "Autopackaging for gcloud ai custom-jobs create"
 feature_slug: "autopackaging-for-gcloud-ai-custom-jobs-create"
 latest_feature_date: "2021-11-19"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vertex-ai/docs/general/custom-service-account"
+  - "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+  - "https://docs.cloud.google.com/vertex-ai/docs/general/cmek"
 keywords:
   - "autopackaging"
-  - "for"
   - "gcloud"
   - "ai"
   - "custom"
   - "jobs"
   - "create"
-  - "the"
+  - "option"
+  - "command"
 ---
 
 # Autopackaging for gcloud ai custom-jobs create
 
 Product: Vertex AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ The autopackaging option in the `gcloud ai custom-jobs create` command enables r
 
 The autopackaging option in the `gcloud ai custom-jobs create` command enables running code from a local machine as a Vertex AI custom training job.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vertex-ai/docs/general/custom-service-account](https://docs.cloud.google.com/vertex-ai/docs/general/custom-service-account)
+- [https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create](https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create)
+- [https://docs.cloud.google.com/vertex-ai/docs/general/cmek](https://docs.cloud.google.com/vertex-ai/docs/general/cmek)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Use a custom service account \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/general/custom-service-account](https://docs.cloud.google.com/vertex-ai/docs/general/custom-service-account)
+- Source ID: `site-docs-reference-3`
+- Final score: 191
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Optional : If the user-managed service account is in a different project than your training jobs, you must grant the Service Account Token Creator role (roles/iam.serviceAccountTokenCreator) to the Vertex AI Service Agent of the project where you're using Vertex AI. gcloud iam service-accounts add-iam-policy-binding \ --role = roles/iam.serviceAccountTokenCreator \ --member = serviceAccount: AI PLATFORM SERVICE AGENT \ CUSTOM SERVICE ACCOUNT Optional : If you also plan to use the user-managed service account for predictions, then you must grant the Service Account Admin role ( roles/iam.serviceAccountAdmin ) to the Vertex AI Service Agent of the project where you're using Vertex AI: gcloud iam service-accounts add-iam-policy-binding \ --role = roles/iam.serviceAccountAdmin \ --member = serviceAccount: AI PLATFORM SERVICE AGENT \ CUSTOM SERVICE ACCOUNT Replace the following: AI PLATFORM SERVICE AGENT : The email address of your project's Vertex AI Service Agent, which has the following format: service- PROJECT NUMBER @gcp-sa-aiplatform.iam.gserviceaccount.com To find the Vertex AI Service Agent, go to the IAM page in the Google Cloud console.
+- Execute the gcloud ai endpoints deploy-model command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud ai endpoints deploy-model ENDPOINT ID \ --region = LOCATION \ --model = MODEL ID \ --display-name = DEPLOYED MODEL NAME \ --machine-type = MACHINE TYPE \ --min-replica-count = MIN REPLICA COUNT \ --max-replica-count = MAX REPLICA COUNT \ --traffic-split = 0 = 100 \ --service-account = CUSTOM SERVICE ACCOUNT Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud ai endpoints deploy-model ENDPOINT ID --region = LOCATION --model = MODEL ID --display-name = DEPLOYED MODEL NAME --machine-type = MACHINE TYPE --min-replica-count = MIN REPLICA COUNT --max-replica-count = MAX REPLICA COUNT --traffic-split = 0 = 100 --service-account = CUSTOM SERVICE ACCOUNT Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud ai endpoints deploy-model ENDPOINT ID ^ --region = LOCATION ^ --model = MODEL ID ^ --display-name = DEPLOYED MODEL NAME ^ --machine-type = MACHINE TYPE ^ --min-replica-count = MIN REPLICA COUNT ^ --max-replica-count = MAX REPLICA COUNT ^ --traffic-split = 0 = 100 ^ --service-account = CUSTOM SERVICE ACCOUNT API Follow Deploying a model using the Vertex AI API .
+- Attach a service account to a custom training resource To configure Vertex AI to use your new service account during custom training, specify the service account's email address in the serviceAccount field of a CustomJobSpec message when you start custom training.
+- Depending on which type of custom training resource you are creating, the placement of this field in your API request differs: If you are creating a CustomJob , specify the service account's email address in CustomJob.jobSpec.serviceAccount .
+
+### Create a Vertex AI Workbench instance \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create](https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 174
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances create INSTANCE NAME \ --project = PROJECT ID \ --location = LOCATION \ --vm-image-project = VM IMAGE PROJECT \ --vm-image-name = VM IMAGE NAME \ --machine-type = MACHINE TYPE \ --metadata = METADATA Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances create INSTANCE NAME --project = PROJECT ID --location = LOCATION --vm-image-project = VM IMAGE PROJECT --vm-image-name = VM IMAGE NAME --machine-type = MACHINE TYPE --metadata = METADATA Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances create INSTANCE NAME ^ --project = PROJECT ID ^ --location = LOCATION ^ --vm-image-project = VM IMAGE PROJECT ^ --vm-image-name = VM IMAGE NAME ^ --machine-type = MACHINE TYPE ^ --metadata = METADATA For more information about the command for creating an instance from the command line, see the gcloud CLI documentation .
+- When the instance is ready to use, Vertex AI Workbench activates an Open JupyterLab link. gcloud Before using any of the command data below, make the following replacements: INSTANCE NAME : the name of your Vertex AI Workbench instance; must start with a letter followed by up to 62 lowercase letters, numbers, or hyphens (-), and cannot end with a hyphen PROJECT ID : your project ID LOCATION : the zone where you want your instance to be located VM IMAGE PROJECT : the ID of the Google Cloud project that VM image belongs to; the default Google Cloud project ID for supported images is cloud-notebooks-managed VM IMAGE NAME : the image name; to find the image name of a specific version, see Find the specific version MACHINE TYPE : the machine type of your instance's VM METADATA : custom metadata to apply to this instance; for example, to specify a post-startup-script, you can use the post-startup-script metadata tag, in the format: --metadata=post-startup-script=gs:// BUCKET NAME /hello.sh To enable the JupyterLab 4 preview, use --metadata=enable-jupyterlab4-preview=true .
+- To restart your instance, select the instance and click arrow right Start . gcloud You can change the JupyterLab version on an existing instance by using the following command: gcloud workbench instances update INSTANCE NAME \ --project = " PROJECT ID " \ --location = " LOCATION " \ --metadata = enable-jupyterlab4 = ENABLEMENT BOOLEAN Replace the following: PROJECT ID : your project ID LOCATION : the zone where you want your instance to be located INSTANCE NAME : the name of your Vertex AI Workbench instance ENABLEMENT BOOLEAN : use one of the following: false : changes to JupyterLab 3. true : changes to JupyterLab 4.
+- To learn how to apply or remove a Terraform configuration, see Basic Terraform commands . resource "google workbench instance" "default" { name = "workbench-instance-example" location = "us-central1-a" gce setup { machine type = "n1-standard-1" accelerator configs { type = "NVIDIA TESLA T4" core count = 1 } vm image { project = "cloud-notebooks-managed" family = "workbench-instances" } } } Change the version of JupyterLab on an existing instance This section describes how to change the JupyterLab version on your instance by using the Google Cloud console or the gcloud CLI.
+
+### "Customer-managed encryption keys (CMEK) \_|\_ Vertex AI \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/general/cmek](https://docs.cloud.google.com/vertex-ai/docs/general/cmek)
+- Source ID: `site-docs-reference-3`
+- Final score: 173
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Click Save . gcloud Run the following command: gcloud kms keys add-iam-policy-binding KEY NAME \ --keyring = KEY RING NAME \ --location = REGION \ --project = KMS PROJECT ID \ --member = serviceAccount:service- AI PLATFORM PROJECT NUMBER @gcp-sa-aiplatform.iam.gserviceaccount.com \ --role = roles/cloudkms.cryptoKeyEncrypterDecrypter In this command, replace the following placeholders: KEY NAME : The name of the key that you created in a preceding section of this guide .
+- Deploy and manage public endpoints Deploy and manage index endpoints in a VPC network Vector Search Private Service Connect Colab Enterprise runtime The boot disk and data disks of the runtime's VM Use customer-managed encryption keys (CMEK) in Colab Enterprise Colab Enterprise notebook The notebook file and its comments Use customer-managed encryption keys (CMEK) in Colab Enterprise Vertex AI Agent Engine The copy of your agent source files, including code, scripts, and any dependency files The container images built from your agent source files The running instances deployed from your agent container images Vertex AI Agent Engine overview CMEK support for Generative AI tuning pipelines CMEK support is provided in the tuning pipeline of the following models: BERT T5 image-generation (GPU) Limitations CMEK support isn't provided in the following: AutoML image model batch prediction ( BatchPredictionJob ) TPU tuning Configure CMEK for your resources The following sections describe how to create a key ring and key in Cloud Key Management Service, grant Vertex AI encrypter and decrypter permissions for your key, and create resources that use CMEK.
+- Console When you create a new CMEK-supported resource in the Vertex AI section of the Google Cloud console , you can select your key in the general or advanced option section: REST & CMD Line When you create a supported resource , add an encryptionSpec object to your request and set the encryptionSpec.kmsKeyName field to point to your key resource.
+- After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity .
 

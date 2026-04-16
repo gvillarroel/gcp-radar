@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.375Z"
+generated_at: "2026-04-14T13:57:37.656Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Cloud Billing reports availability"
 feature_slug: "cloud-billing-reports-availability"
 latest_feature_date: "2018-04-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/reports"
   - "https://docs.cloud.google.com/billing/docs/onboarding-checklist"
-  - "https://docs.cloud.google.com/billing/docs/how-to/budgets"
+  - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup"
 keywords:
   - "billing"
   - "reports"
@@ -26,7 +26,7 @@ keywords:
 # Cloud Billing reports availability
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Cloud Billing reports became generally available, enabling users to chart billin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
 - [https://docs.cloud.google.com/billing/docs/onboarding-checklist](https://docs.cloud.google.com/billing/docs/onboarding-checklist)
-- [https://docs.cloud.google.com/billing/docs/how-to/budgets](https://docs.cloud.google.com/billing/docs/how-to/budgets)
+- [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup)
 
 ## Supporting Pages
 
@@ -52,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
 - Source ID: `site-docs-root`
-- Final score: 176
+- Final score: 149
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +65,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/billing/docs/onboarding-checklist](https://docs.cloud.google.com/billing/docs/onboarding-checklist)
 - Source ID: `site-docs-root`
-- Final score: 134
+- Final score: 111
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +74,16 @@ Evidence snippets:
 - Overview Projects are: Required to use resources (such as Compute Engine virtual machines, Pub/Sub topics, and Cloud Storage buckets) The base-level organizing entity in Google Cloud – all service-level resources are parented by projects Used to form the basis for enabling services, APIs, and IAM permissions Folders are: A grouping mechanism for projects and can contain both projects and other folders Used to group resources that share common IAM policies Mapped under an Organization node (you must have an Organization node to use folders) Labels are: Used to categorize your Google Cloud resources (such as Compute Engine instances) Key-value pairs you attach to resources, letting you filter resources based on their labels Great for cost tracking at a granular-level because they're forwarded to the billing system so you can analyze your charges by label stars Key Decision: Folders and Projects Strategy Projects are required.
 - Note: To ensure users can receive monthly invoices and important communications about Google payments profile issues, new Google payments profile users and administrators will need to verify their email address. ❑ For invoiced billing, assign multiple invoice delivery addresses , both for email delivery and for paper invoice delivery, to ensure that you're always aware of when a new invoice has been sent out. ❑ For electronic notifications and monthly statements, add users and set their email preferences to receive documents and notices.
 
-### "Create, edit, or delete budgets and budget alerts \_|\_ Cloud Billing \_\
+### Set up Cloud Billing data export to BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/budgets](https://docs.cloud.google.com/billing/docs/how-to/budgets)
-- Source ID: `site-docs-root`
-- Final score: 114
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup)
+- Source ID: `site-docs-root-2`
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For billing account users : Launch the create budgets tutorial For project users : Launch the create budgets tutorial To set up a new budget, you need to complete the following steps: Create and name the budget (Single-project budgets) Control access to the budget Set the budget scope Set the budget amount Set the budget threshold rules and actions Click finish to save the new budget For a deeper discussion about budgets, including all the options and considerations available in each step, continue reading this page.
-- To create budgets for a project, you need a role that includes the following permissions on the project: resourcemanager.projects.get billing.resourceCosts.get (optional) billing.resourcebudgets.read billing.resourcebudgets.write To gain these permissions using a predefined role, ask your administrator to grant you one of the following IAM roles on your project: Project Owner Project Editor Optional project permission: A user with the billing.resourceCosts.get permission on the project can view the costs for the project, including reports and the cost trend chart that displays on the budget create or edit pages.
-- To manage budgets for a project, you need a role that includes the following permissions on the project: resourcemanager.projects.get billing.resourceCosts.get (optional) billing.resourcebudgets.read billing.resourcebudgets.write To gain these permissions using a predefined role, ask your administrator to grant you one of the following IAM roles on your project: Project Owner Project Editor Optional project permission: A user with the billing.resourceCosts.get permission on the project can view the costs for the project, including reports and the cost trend chart that displays on the budget create or edit pages.
-- To view a list of budgets for your project, you need a role that includes the following permissions on the project: resourcemanager.projects.get billing.resourceCosts.get (optional) billing.resourcebudgets.read To gain these permissions using a predefined role, ask your administrator to grant you one of the following IAM roles on your project: Project Owner Project Editor Project Viewer Optional project permission: A user with the billing.resourceCosts.get permission on the project can view the costs for the project, including reports and the cost trend chart that displays on the budget create or edit pages.
+- Resource-level tags are available for the following resources: Compute Engine instances Spanner instances Cloud Run services Artifact Registry repositories Related topics Topics related to exported Cloud Billing data Understanding the Cloud Billing data tables in BigQuery Example queries for Cloud Billing data export to BigQuery Visualize spend over time with Looker Studio Cost and pricing reports available in the Google Cloud console View your Cloud Billing reports and cost trends View and download the cost details of your invoice or statement View and download prices for Google's cloud services Understand your savings with cost breakdown reports Analyze the effectiveness of your committed use discounts View your cost and payment history Previous arrow back Overview of billing data export to BigQuery Next Understand the billing data tables in BigQuery arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Before you update the project or dataset where your billing data is stored, or disable any of your data exports, review the limitations and data availability guidelines for how these updates might impact your billing data exported to BigQuery.
+- If you edit the export settings to change the project or dataset where your exported billing data is stored, or you are re-enabling the export , then billing data is not added retroactively .
+- For a quick introduction to enabling billing data export and running sample queries of Cloud Billing data in BigQuery, follow this interactive tutorial for billing data export .
 

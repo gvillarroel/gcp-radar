@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:58:32.918Z"
+generated_at: "2026-04-15T11:57:14.586Z"
 product_name: "Cloud SQL for SQL Server"
 product_slug: "cloud-sql-for-sql-server"
 feature_name: "cross-region replicas"
@@ -9,18 +9,18 @@ latest_feature_date: "2021-06-21"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api-error-messages"
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/ad"
+  - "https://docs.cloud.google.com/sql/docs/feature_support"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
 keywords:
   - "cross"
   - "region"
   - "replicas"
   - "sql"
-  - "for"
   - "server"
   - "supports"
   - "creating"
+  - "other"
 ---
 
 # cross-region replicas
@@ -38,53 +38,52 @@ Cloud SQL for SQL Server supports creating replicas in other regions.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
-- [https://docs.cloud.google.com/sql/docs/sqlserver/admin-api-error-messages](https://docs.cloud.google.com/sql/docs/sqlserver/admin-api-error-messages)
-- [https://docs.cloud.google.com/sql/docs/sqlserver/ad](https://docs.cloud.google.com/sql/docs/sqlserver/ad)
+- [https://docs.cloud.google.com/sql/docs/feature_support](https://docs.cloud.google.com/sql/docs/feature_support)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/quotas](https://docs.cloud.google.com/sql/docs/sqlserver/quotas)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring](https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring)
 
 ## Supporting Pages
 
-### Cloud SQL for SQL Server release notes \_|\_ Google Cloud Documentation
+### Cloud SQL feature support by database engine \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/feature_support](https://docs.cloud.google.com/sql/docs/feature_support)
 - Source ID: `site-docs-root`
-- Final score: 256
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 41
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- February 08, 2022 Feature Cross-region replication is now generally available in Cloud SQL for SQL Server.
-- Feature Cloud SQL for SQL Server now supports SQL Server 2025 ( GA ): SQL Server 2025 Standard SQL Server 2025 Enterprise SQL Server 2025 Express For more information, see Database versions and version policies and Choose a machine series .
-- May 14, 2025 Feature Cloud SQL for SQL Server now supports TLS connections to Active Directory endpoints without requiring server certificate trust or the use of IP addresses.
-- March 17, 2025 Feature Cloud SQL for SQL Server supports transparent data encryption (TDE) to encrypt data stored in your Cloud SQL for SQL Server instances.
+- Cloud SQL features MySQL PostgreSQL SQL Server Data protection Backups ✓ ✓ ✓ Point-in-time recovery (PITR) ✓ ✓ ✓ High availability ✓ ✓ ✓ Cloning ✓ ✓ ✓ Disaster recovery ✓ ✓ ✓ Data migration Data migration to external servers ✓ Logs Instance logging ✓ ✓ ✓ Planned maintenance Maintenance windows ✓ ✓ ✓ Maintenance controls ✓ ✓ ✓ Self service maintenance ✓ ✓ ✓ Replication Read replicas ✓ ✓ ✓ Cross-region read replicas ✓ ✓ ✓ External read replicas ✓ ✓ ✓ Binary logging on read replicas ✓ Replication from an external server ✓ ✓ Read replica indexes stored procedures ✓ Logical replication ✓ Security Customer-managed encryption keys (CMEK) ✓ ✓ ✓ Cloud SQL Auth Proxy support ✓ ✓ ✓ Audit logging ✓ ✓ ✓ Connection organization policies ✓ ✓ ✓ IAM database authentication ✓ ✓ Access Transparency (AXT) ✓ ✓ ✓ Key Access Justification ✓ ✓ ✓ Private Service Connect ✓ ✓ ✓ Cloud Security Command Center Monitoring ✓ ✓ ✓ Cloud External Key Manager (EKM) ✓ ✓ ✓ VPC Service Controls ✓ ✓ ✓ Insights Query Insights ✓ ✓ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
 
-### "Cloud SQL Admin API error messages \_|\_ Cloud SQL for SQL Server \_|\_\
+### Quotas and limits \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/admin-api-error-messages](https://docs.cloud.google.com/sql/docs/sqlserver/admin-api-error-messages)
-- Source ID: `site-api-reference`
-- Final score: 214
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/quotas](https://docs.cloud.google.com/sql/docs/sqlserver/quotas)
+- Source ID: `site-docs-root`
+- Final score: 41
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- ListServerCas SqlOperationsService.List SqlSslCertsService.List SqlUsersService.List 500 Mutate sqladmin.googleapis.com/mutate The number of requests that are made per minute per user per region to use the APIs in this category.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- CreateEphemeral SqlSslCertsService.Delete SqlSslCertsService.Insert SqlUsersService.Delete SqlUsersService.Insert SqlUsersService.Update 180 Default per region sqladmin.googleapis.com/ default per region The number of default regional requests that are made per minute per user per region to use the APIs in this category.
+- SqlBackupRunsService.Get SqlDatabasesService.Get SqlInstancesService.Get SqlOperationsService.Get SqlSslCertsService.Get SqlUsersService.Get 500 List sqladmin.googleapis.com/list The number of requests that are made per minute per user per region to use the APIs in this category.
+
+### "Restore an instance using a backup \_|\_ Cloud SQL for SQL Server \_|\_\
+
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring](https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 33
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Databases Cloud SQL SQL Server Reference Send feedback Cloud SQL Admin API error messages Stay organized with collections Save and categorize content based on your preferences.
-- ERROR BOTH GCE ZONE GAE APP SPECIFIED The Compute Engine zone and the App Engine application ID are both specified for location preference when creating or updating an instance.
-- ERROR INVALID CLONE DESTINATION PROJECT The project for the destination Cloud SQL instance doesn't match the project on the request URL.
-- ERROR INVALID CLONE SOURCE PROJECT The project for the source Cloud SQL instance doesn't match the project on the request URL.
-
-### "Overview of Managed Microsoft AD in Cloud SQL \_|\_ Cloud SQL for SQL Server\
-
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/ad](https://docs.cloud.google.com/sql/docs/sqlserver/ad)
-- Source ID: `site-iam-reference`
-- Final score: 208
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Best practices for integrating with Managed Microsoft AD When you plan an integration, review the following: Prerequisites for integration Integrating with a managed AD domain in a different project Managed Microsoft AD documentation Deploy domain controllers in additional regions Use the AD diagnosis tool to troubleshoot AD setup issues with your on-premises domain and Cloud SQL for SQL Server instances in Google Cloud console.
-- Having a SQL Server instance and a managed AD instance in the same region offers the lowest network latency and the best performance.
-- If your Managed Microsoft AD is in a different project, AD PROJECT ID should be the one containing the Managed Service for Microsoft Active Directory instance, while the service account's SQL PROJECT NUMBER should be the one containing the SQL Server instance: gcloud projects add-iam-policy-binding AD PROJECT ID \ --member = serviceAccount:service- SQL PROJECT NUMBER @gcp-sa-cloud-sql.iam.gserviceaccount.com \ --role = roles/managedidentities.sqlintegrator Also see gcloud beta services identity create .
-- However, you can: Add global groups or individual user logins directly in SQL Server Use universal groups when all groups and users belong to the same forest If domain local groups were supported, individual user accounts, and global and universal groups, could be added as children of a domain local group (that guards access to SQL Server).
+- To restore your instance using a backup to an instance in a different project or region, do the following: gcloud To restore a backup from a backup vault to an existing instance, do the following: If restoring to an existing instance, determine if the target instance has any read replicas using the gcloud sql instances describe command: gcloud sql instances describe TARGET INSTANCE NAME Replace the following: TARGET INSTANCE NAME : the name of the target instance you want to restore your backup to.
+- To restore your instance using a backup to an instance in a different project or region, do the following: gcloud If restoring to an existing instance, determine if the target instance has any read replicas using the gcloud sql instances describe command: gcloud sql instances describe TARGET INSTANCE NAME Replace the following: TARGET INSTANCE NAME : the name of the target instance you want to restore your backup to.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ TARGET INSTANCE ID /restoreBackup" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ TARGET INSTANCE ID ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "RESTORE BACKUP", "name": " OPERATION ID ", "targetId": " TARGET INSTANCE ID ", "selfLink": "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID ", "targetProject": " PROJECT ID " } REST v1beta4 When restoring to an existing instance, all replicas must be deleted from your target instance prior to restoring.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /restoreBackup" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ TARGET INSTANCE ID ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "RESTORE BACKUP", "name": " OPERATION ID ", "targetId": " TARGET INSTANCE ID ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID ", "targetProject": " PROJECT ID " } After the restore operation completes, recreate any replicas that you deleted in this procedure.
 

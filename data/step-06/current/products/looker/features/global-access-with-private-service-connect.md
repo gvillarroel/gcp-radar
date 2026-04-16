@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.359Z"
+generated_at: "2026-04-15T13:43:38.437Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Global access with Private Service Connect"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-12-01"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
-  - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+  - "https://docs.cloud.google.com/looker/docs/bi-connectors"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
 keywords:
   - "global"
   - "access"
-  - "with"
   - "private"
   - "connect"
   - "enables"
-  - "for"
   - "looker"
+  - "core"
+  - "instances"
 ---
 
 # Global access with Private Service Connect
@@ -42,43 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect)
+- [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
 
 ## Supporting Pages
 
-### Looker (Google Cloud core) access control with IAM | Google Cloud Documentation
+### "Admin settings - OpenID Connect authentication \_|\_ Looker \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- Source ID: `site-iam-reference`
-- Final score: 130
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect)
+- Source ID: `site-docs-reference`
+- Final score: 174
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Looker (Google Cloud core) access control with IAM Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-access-control Looker (Google Cloud core) uses Identity and Access Management (IAM) to provision user and admin access through a set of IAM roles.
-- For a detailed description of Google Cloud IAM, see the IAM documentation.
+- Additionally, Looker (Google Cloud core) customers who are using OIDC with a private connections instance, must ensure that their networks are set up to allow access to the OIDC provider.
+- Enabling mirror OpenID Connect groups If you are using a Looker (Google Cloud core) instance, we recommend that you enable group mirroring for only the primary authentication method and don't enable group mirroring for the backup OAuth authentication .
+- However, it is only possible when one of the following two conditions is met: Condition 1 : Users are authenticating into Looker (Google Cloud core) using their Google identities through the OpenID Connect protocol.
+- Note: Customers who use Looker (Google Cloud core) should be aware of their responsibility for controlling access and permissions when using third-party identity providers.
 
-### Access control and permission management | Looker | Google Cloud Documentation
+### Admin settings - BI Connectors \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 91
+- URL: [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- Source ID: `site-docs-reference`
+- Final score: 173
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Looker (Google Cloud core) private connections (private services access) instances aren't supported.
+- The Microsoft Excel connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- The Tableau Desktop connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- For customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections, your network administrator must configure your network so that traffic from Microsoft Excel can reach your Looker instance.
+
+### Admin settings - General settings \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- Source ID: `site-docs-reference`
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
-- Data access can be further restricted within a model using access filters to limit which rows of data ...
-
-### Looker (Google Cloud core) overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 87
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
+- Email Domain Allowlist for Scheduled Content Note: In Looker (Google Cloud core) instances, you set the email domain allowlist for an instance within the Google Cloud console .
+- Default Private Personal Folders Note: The Default Private Personal Folders option is not available for Looker instances with Closed System enabled.
+- Automated Gemini in Looker enablement and user management Note: This setting is not available for Looker (Google Cloud core) instances.
+- Some settings are available only for Looker (original) instances or only for Looker (Google Cloud core) instances.
 

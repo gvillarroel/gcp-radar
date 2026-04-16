@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:47:20.776Z",
+  "generated_at": "2026-04-13T17:07:40.841Z",
   "product_name": "Address Validation API",
   "product_slug": "address-validation-api",
   "step02_source_path": "data/step-02/current/address-validation-api.md",
@@ -8,11 +8,123 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 4,
+    "source_row_count": 3,
+    "top_phrases": [
+      "address validation api verdict hasspellcorrectedcomponents field",
+      "address validation api verdict possiblenextaction field",
+      "address validation api english address response format",
+      "the address validation api now includes a possiblenextaction field in the verdict to indicate recommended next steps after receiving a validation response",
+      "the address validation api now includes a hasspellcorrectedcomponents field in the verdict to indicate whether address components were spell corrected",
+      "the address validation api now supports session based pricing when used with the autocomplete new api",
+      "address validation api session pricing with autocomplete new",
+      "address validation api session pricing with autocomplete"
+    ],
+    "top_tokens": [
+      "address",
+      "api",
+      "now",
+      "the",
+      "validation",
+      "field",
+      "includes",
+      "indicate",
+      "response",
+      "supports",
+      "verdict",
+      "addresses",
+      "after",
+      "autocomplete",
+      "based",
+      "capability",
+      "components",
+      "corrected",
+      "english",
+      "format",
+      "hasspellcorrectedcomponents",
+      "new",
+      "next",
+      "possiblenextaction",
+      "preview",
+      "pricing",
+      "receiving",
+      "recommended",
+      "responses",
+      "returning",
+      "session",
+      "spell",
+      "steps",
+      "used",
+      "validated",
+      "were",
+      "when",
+      "whether",
+      "with"
+    ],
+    "inventory_profile": "api_heavy"
+  },
   "dominant_doc_family": "go",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
   "candidates_scored_by_api": 18,
   "search_runs": [
+    {
+      "round": 1,
+      "intent": "address_validation_exact_docs",
+      "query": "site:developers.google.com/maps/documentation/address-validation \"validateAddress\" OR \"build-validation-logic\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Try Address Validation | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/demo",
+          "description": "Use this demo to try the Address Validation API using any address from a supported region. The demo takes an address and region as input, and then displays the response from the ValidateAddress method as visualized content and as a JSON object.",
+          "rank": 1
+        },
+        {
+          "title": "Method: validateAddress | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "description": "The Google Maps Address Validation ... and metadata · <strong>The API uses a PostalAddress object as input and returns a ValidationResult with address details, validation status, and geocoding information</strong>...",
+          "rank": 2
+        },
+        {
+          "title": "Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest",
+          "description": "The API offers two main methods: <strong>validateAddress for validating an address</strong> and provideValidationFeedback for providing feedback on validation outcomes.",
+          "rank": 3
+        },
+        {
+          "title": "Send an address validation request | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/requests-validate-address",
+          "description": "curl -X POST -d &#x27;{ &quot;address&quot;: { &quot;regionCode&quot;: &quot;US&quot;, &quot;locality&quot;: &quot;Mountain View&quot;, &quot;addressLines&quot;: [&quot;1600 Amphitheatre Pkwy&quot;] } }&#x27; \\ -H &#x27;Content-Type: application/json&#x27; \\ &quot;https://addressvalidation.googleapis.com/v1:validateAddress?key=API_KEY&quot;",
+          "rank": 4
+        },
+        {
+          "title": "Address Validation API client library examples | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/client-library-examples",
+          "description": "using Google.Maps.AddressValidation.V1; using Google.Type; ... private static async Task CallAddressValidation() { // Create the Address Validation Client AddressValidationClient client = await AddressValidationClient.CreateAsync(); // Define the request with the address to be validated var request = new ValidateAddressRequest { Address = new PostalAddress { RegionCode = &quot;US&quot;, LanguageCode = &quot;en&quot;, PostalCode = &quot;94043&quot;, AdministrativeArea = &quot;CA&quot;, Locality = &quot;Mountain View&quot;, AddressLines = { &quot;1600 Amphitheatre Parkway&quot; } } }; try { // Call the API asynchronously ValidateAddressResponse response",
+          "rank": 5
+        },
+        {
+          "title": "Best Practices Using Address Validation API Web Services | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/web-service-best-practices",
+          "description": "Generally, these services return data in the response body as JSON for parsing and/or processing by your application. Validate an address by <strong>sending an HTTP POST request to the validateAddress method</strong>:",
+          "rank": 6
+        },
+        {
+          "title": "Handle updated addresses | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/handle-updated-address",
+          "description": "The responseId field specifies which address validation results you are providing feedback for. This value must be the same as the responseId value returned by the first call to the validateAddress method.",
+          "rank": 7
+        },
+        {
+          "title": "Address Validation API client libraries | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/client_libraries",
+          "description": "<strong>Utilize the `AddressValidationClient` to validate an address, creating a `ValidateAddressRequest` with properties like `PostalAddress`, `PreviousResponseId`, `EnableUspsCass`, and `SessionToken`</strong>. Send the request to the client and obtain a ...",
+          "rank": 8
+        }
+      ]
+    },
     {
       "round": 1,
       "intent": "api_reference",
@@ -63,18 +175,32 @@
           "rank": 6
         },
         {
-          "title": "Address Validation API Usage and Billing | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/address-validation/usage-and-billing",
-          "description": "[[[&quot;Easy to understand&quot;,&quot;easyT... updated 2026-03-31 UTC.&quot;],[],[&quot;The Address Validation API <strong>requires enabled billing and an API key or OAuth token</strong>....",
-          "rank": 7
-        },
-        {
           "title": "Understand a basic address validation response | Address Validation API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
           "description": "Note: <strong>This document describes the basic elements of an address validation response for an address of high quality</strong>. For guidance on working with real-world address scenarios and building logic around more complex responses, see See Build your ...",
+          "rank": 7
+        },
+        {
+          "title": "Address Validation API Usage and Billing | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/usage-and-billing",
+          "description": "[[[&quot;Easy to understand&quot;,&quot;easyT... updated 2026-03-31 UTC.&quot;],[],[&quot;The Address Validation API <strong>requires enabled billing and an API key or OAuth token</strong>....",
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Address Validation API\" \"address validation api verdict hasspellcorrectedcomponents field\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Address Validation API\" \"the address validation api now includes a possiblenextaction field in the verdict to indicate recommended next steps after receiving a validation response\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 1,
@@ -109,15 +235,15 @@
           "rank": 2
         },
         {
-          "title": "Google Maps Platform Documentation | Address Validation API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/address-validation",
-          "description": "Create an account, generate an API key, and start building. ... Validate an address.",
-          "rank": 3
-        },
-        {
           "title": "Try Address Validation | Address Validation API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/address-validation/demo",
           "description": "The demo takes an address and region as input, and then displays the response from the ValidateAddress method as visualized content and as a JSON object. Coverage and data quality: To file an issue or address correction, use the API or file a bug or feature request.",
+          "rank": 3
+        },
+        {
+          "title": "Google Maps Platform Documentation | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation",
+          "description": "Create an account, generate an API key, and start building. ... Validate an address.",
           "rank": 4
         },
         {
@@ -139,9 +265,9 @@
           "rank": 7
         },
         {
-          "title": "Address Validation API Usage and Billing | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/address-validation/usage-and-billing",
-          "description": "You can manage your API usage and costs by setting daily quota limits through the Google Cloud console. There&#x27;s a maximum request limit of 6,000 queries per minute for the validation methods and another 6,000 QPM limit for feedback methods. Usage is subject to Google Maps Platform Terms of Service and you can find resources for cost management and usage monitoring in the documentation. Reminder: To use the Address Validation API, you must enable billing on each of your projects and include an API key or OAuth token with all API or SDK requests.",
+          "title": "Method: validateAddress | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "description": "The Google Maps Address Validation API <strong>validates postal addresses, providing deliverability, geocoding, and metadata</strong>.",
           "rank": 8
         }
       ]
@@ -190,6 +316,50 @@
       "query": "site:docs.cloud.google.com/python/docs/reference \"Address Validation API\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 2,
+      "intent": "address_validation_exact_docs",
+      "query": "site:developers.google.com/maps/documentation/address-validation \"understand-response\" OR \"possibleNextAction\" OR \"hasSpellCorrectedComponents\"",
+      "official_result_count": 6,
+      "results": [
+        {
+          "title": "Understand a basic address validation response | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
+          "description": "The possibleNextAction property <strong>offers an interpretive summary of the rest of the API response</strong>, with the goal of helping you determine whether or not you should prompt your customer to review or make edits to their address.",
+          "rank": 1
+        },
+        {
+          "title": "Build your validation logic | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "description": "When designing how your system responds to signals from the Address Validation API, the following recommendations can help you build a more effective response model. However, these are only recommendations, so bear in mind that your implementation should suit your business model. If you want to reduce the risk of failed deliveries, you might customize your logic to prompt your customers more often. For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX or verdict.validationGranularity == OTHER or verdict.validationGranularity == ROUTE) Prompt customer to fix their address.",
+          "rank": 2
+        },
+        {
+          "title": "Address Validation API release notes | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/release-notes",
+          "description": "<strong>possibleNextAction field in the verdict to help you determine what action to take after receiving the API response</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "Fix address - examples | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/fix-address-example",
+          "description": "This document provides real-world examples of when the Address Validation API signals that an address needs to be fixed · The API provides signals such as validationGranularity, confirmationLevel, and missingComponentTypes to indicate potential issues with an address",
+          "rank": 4
+        },
+        {
+          "title": "Confirm address - examples | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/confirm-address-example",
+          "description": "The example below emphasizes the important signals from the response. { &quot;inputGranularity&quot;: &quot;SUB_PREMISE&quot;, &quot;validationGranularity&quot;: &quot;PREMISE_PROXIMITY&quot;, &quot;geocodeGranularity&quot;: &quot;PREMISE_PROXIMITY&quot;, &quot;addressComplete&quot;: true, &quot;hasUnconfirmedComponents&quot;: true &quot;hasReplacedComponents&quot;: true, &quot;possibleNextAction&quot;: &quot;CONFIRM&quot; }",
+          "rank": 5
+        },
+        {
+          "title": "Add subpremises to address - examples (US only) | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example",
+          "description": "{ &quot;inputGranularity&quot;: &quot;PREMISE&quot;, &quot;validationGranularity&quot;: &quot;PREMISE&quot;, &quot;geocodeGranularity&quot;: &quot;PREMISE&quot;, &quot;hasInferredComponents&quot;: true, &quot;hasReplacedComponents&quot;: true, &quot;possibleNextAction&quot;: &quot;CONFIRM_ADD_SUBPREMISES&quot; }",
+          "rank": 6
+        }
+      ]
     },
     {
       "round": 2,
@@ -247,12 +417,26 @@
           "rank": 7
         },
         {
-          "title": "Address Validation (beta) | Maps JavaScript API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/javascript/reference/3.62/address-validation",
-          "description": "Access by calling const {AddressComponent} = await google.maps.importLibrary(&quot;addressValidation&quot;). See Libraries in the Maps JavaScript API. google.maps.addressValidation.AddressMetadata class · Notice: Available only in the v=beta channel. The metadata for the address. AddressMetadata is not guaranteed to be fully populated for every address sent to the Address Validation API.",
+          "title": "Package google.type | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.type",
+          "description": "Address Validation API · Reference · Send feedback · outlined_flag · The Address Validation API <strong>uses LatLng and PostalAddress message types for location and address data</strong>. LatLng represents latitude and longitude coordinates conforming to ...",
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Address Validation API\" \"address validation api verdict possiblenextaction field\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Address Validation API\" \"the address validation api now includes a hasspellcorrectedcomponents field in the verdict to indicate whether address components were spell corrected\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 2,
@@ -371,6 +555,13 @@
     },
     {
       "round": 3,
+      "intent": "address_validation_exact_docs",
+      "query": "site:developers.google.com/maps/documentation/address-validation \"add-subpremises-address-example\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Address Validation API\" \"API reference\"",
       "official_result_count": 0,
@@ -401,15 +592,15 @@
           "rank": 3
         },
         {
-          "title": "Google Maps Platform Documentation | Address Validation API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/address-validation",
-          "description": "Learn how the Maps Address Validation API works.",
-          "rank": 4
-        },
-        {
           "title": "Address Validation Overview | Maps JavaScript API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/javascript/address-validation/overview",
           "description": "When a call to fetchAddressValidation is made the API attempts the following: Corrects — Provides component-level vaidation checks, including sub-premises where available. Completes — Attempts to infer missing or incorrect address components. Formats — Cleans up and standardizes the format for address components. The United States Postal Service® (USPS®)1 maintains the Coding Accuracy Support System (CASS™) to support and certify address validation providers.",
+          "rank": 4
+        },
+        {
+          "title": "Google Maps Platform Documentation | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation",
+          "description": "Learn how the Maps Address Validation API works.",
           "rank": 5
         },
         {
@@ -419,18 +610,32 @@
           "rank": 6
         },
         {
-          "title": "Overview | Address Validation API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/address-validation/reference",
-          "description": "Address Validation API · Home · Products · Google Maps Platform · Web Services · Address Validation API · Send feedback · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed ...",
-          "rank": 7
-        },
-        {
           "title": "Method: validateAddress | Address Validation API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
           "description": "Enables the Address Validation API to include additional information in the response. The result of validating an address. High level overview of the address validation result and geocode.",
+          "rank": 7
+        },
+        {
+          "title": "Overview | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference",
+          "description": "Address Validation API · Home · Products · Google Maps Platform · Web Services · Address Validation API · Send feedback · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed ...",
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Address Validation API\" \"address validation api english address response format\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Address Validation API\" \"the address validation api now supports session based pricing when used with the autocomplete new api\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 3,
@@ -490,15 +695,15 @@
           "rank": 5
         },
         {
-          "title": "Send an address validation request | Address Validation API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/address-validation/requests-validate-address",
-          "description": "The Address Validation API <strong>validates addresses using a POST request to a specified endpoint with a JSON request body containing the address details</strong>.",
-          "rank": 6
-        },
-        {
           "title": "Method: validateAddress | Address Validation API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
           "description": "Enables the Address Validation API to include additional information in the response. The result of validating an address. High level overview of the address validation result and geocode.",
+          "rank": 6
+        },
+        {
+          "title": "Send an address validation request | Address Validation API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/address-validation/requests-validate-address",
+          "description": "The Address Validation API <strong>validates addresses using a POST request to a specified endpoint with a JSON request body containing the address details</strong>.",
           "rank": 7
         },
         {
@@ -582,19 +787,22 @@
   ],
   "scored_urls": [
     {
-      "title": "Address Validation API v1 - Package cloud.google.com/go/maps/addressvalidation/apiv1 (v1.31.0) | Go client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/maps/latest/addressvalidation/apiv1",
-      "description": "The Address Validation API <strong>allows developers to verify the accuracy of addresses</strong>. Given an address, it returns information about the correctness of the components of the parsed address, a geocode, and a verdict on the deliverability of the parsed ...",
+      "title": "Try Address Validation | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/demo",
+      "description": "Use this demo to try the Address Validation API using any address from a supported region. The demo takes an address and region as input, and then displays the response from the ValidateAddress method as visualized content and as a JSON object.",
       "rank": 1,
       "query_hits": [
-        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud introduction reference",
-        "site:docs.cloud.google.com \"Address Validation API\" IAM roles permissions"
+        "site:developers.google.com/maps/documentation/address-validation \"validateAddress\" OR \"build-validation-logic\"",
+        "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation",
+        "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation",
+        "site:developers.google.com \"Address Validation API\" reference OR site:developers.google.com \"address validation api\" reference",
+        "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
+        "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
       ],
       "intent_hits": [
-        "product_docs",
-        "iam_permissions"
+        "address_validation_exact_docs",
+        "developers_docs",
+        "maps_docs"
       ],
       "round_hits": [
         1,
@@ -603,135 +811,37 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 164,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Package cloud.google.com/go/maps/addressvalidation/apiv1/addressvalidationpb (v1.25.0) | Go client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/maps/latest/addressvalidation/apiv1/addressvalidationpb",
-      "description": "Address *Address `protobuf:&quot;bytes,2,opt,name=address,proto3&quot; json:&quot;address,omitempty&quot;` // Information about the location and place that the address geocoded to. Geocode *Geocode `protobuf:&quot;bytes,3,opt,name=geocode,proto3&quot; json:&quot;geocode,omitempty&quot;` // Other information relevant to deliverability. `metadata` is not guaranteed // to be fully populated for every address sent to the Address Validation API.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 100,
-      "product_fit_score": 164,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Google Maps Platform Documentation | Address Validation API | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/address-validation",
-      "description": "Learn how the Maps Address Validation API works.",
-      "rank": 3,
-      "query_hits": [
-        "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation",
-        "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation",
-        "site:developers.google.com \"Address Validation API\" reference OR site:developers.google.com \"address validation api\" reference",
-        "site:developers.google.com/maps \"Address Validation API\" reference rest OR site:developers.google.com/maps \"address validation api\" reference rest",
-        "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
-        "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs",
-        "maps_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 100,
-      "product_fit_score": 142,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": true
-    },
-    {
-      "title": "Try Address Validation | Address Validation API | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/address-validation/demo",
-      "description": "<strong>The demo takes an address and region as input, and then displays the response from the ValidateAddress method as visualized content and as a JSON object</strong>. Coverage and data quality: To file an issue or address correction, use the API or file ...",
-      "rank": 6,
-      "query_hits": [
-        "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation",
-        "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation",
-        "site:developers.google.com \"Address Validation API\" reference OR site:developers.google.com \"address validation api\" reference",
-        "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
-        "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs",
-        "maps_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 100,
-      "product_fit_score": 142,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -762,17 +872,39 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 142,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "now",
+          "the",
+          "validation",
+          "components"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "product_root",
+        "classification": "product_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "now",
+          "the",
+          "validation",
+          "components"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -782,8 +914,315 @@
     {
       "title": "Address Validation API | Google for Developers",
       "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest",
-      "description": "<strong>It returns details on the correctness of address components, geocodes, and an overall deliverability verdict</strong>. Developers can interact with the API using Google-provided client libraries or by directly making API requests.",
+      "description": "The API offers two main methods: <strong>validateAddress for validating an address</strong> and provideValidationFeedback for providing feedback on validation outcomes.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"validateAddress\" OR \"build-validation-logic\"",
+        "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation",
+        "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation",
+        "site:developers.google.com \"Address Validation API\" reference OR site:developers.google.com \"address validation api\" reference",
+        "site:developers.google.com/maps \"Address Validation API\" reference rest OR site:developers.google.com/maps \"address validation api\" reference rest",
+        "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
+        "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs",
+        "developers_docs",
+        "maps_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Method: validateAddress | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+      "description": "The Google Maps Address Validation ... and metadata · <strong>The API uses a PostalAddress object as input and returns a ValidationResult with address details, validation status, and geocoding information</strong>...",
       "rank": 2,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"validateAddress\" OR \"build-validation-logic\"",
+        "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation",
+        "site:developers.google.com \"Address Validation API\" reference OR site:developers.google.com \"address validation api\" reference",
+        "site:developers.google.com/maps \"Address Validation API\" reference rest OR site:developers.google.com/maps \"address validation api\" reference rest",
+        "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
+        "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs",
+        "maps_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "format",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "format",
+          "with"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Send an address validation request | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/requests-validate-address",
+      "description": "curl -X POST -d &#x27;{ &quot;address&quot;: { &quot;regionCode&quot;: &quot;US&quot;, &quot;locality&quot;: &quot;Mountain View&quot;, &quot;addressLines&quot;: [&quot;1600 Amphitheatre Pkwy&quot;] } }&#x27; \\ -H &#x27;Content-Type: application/json&#x27; \\ &quot;https://addressvalidation.googleapis.com/v1:validateAddress?key=API_KEY&quot;",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"validateAddress\" OR \"build-validation-logic\"",
+        "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation",
+        "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation",
+        "site:developers.google.com/maps \"Address Validation API\" reference rest OR site:developers.google.com/maps \"address validation api\" reference rest",
+        "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
+        "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs",
+        "developers_docs",
+        "maps_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Address Validation API v1 - Package cloud.google.com/go/maps/addressvalidation/apiv1 (v1.31.0) | Go client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/maps/latest/addressvalidation/apiv1",
+      "description": "The Address Validation API <strong>allows developers to verify the accuracy of addresses</strong>. Given an address, it returns information about the correctness of the components of the parsed address, a geocode, and a verdict on the deliverability of the parsed ...",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"Address Validation API\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 164,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "verdict",
+          "addresses",
+          "components",
+          "format"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "verdict",
+          "addresses",
+          "components",
+          "format"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Package cloud.google.com/go/maps/addressvalidation/apiv1/addressvalidationpb (v1.25.0) | Go client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/maps/latest/addressvalidation/apiv1/addressvalidationpb",
+      "description": "Address *Address `protobuf:&quot;bytes,2,opt,name=address,proto3&quot; json:&quot;address,omitempty&quot;` // Information about the location and place that the address geocoded to. Geocode *Geocode `protobuf:&quot;bytes,3,opt,name=geocode,proto3&quot; json:&quot;geocode,omitempty&quot;` // Other information relevant to deliverability. `metadata` is not guaranteed // to be fully populated for every address sent to the Address Validation API.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Address Validation API\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 164,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "format"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "format"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Google Maps Platform Documentation | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation",
+      "description": "Learn how the Maps Address Validation API works.",
+      "rank": 3,
       "query_hits": [
         "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation",
         "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation",
@@ -801,64 +1240,42 @@
         2,
         3
       ],
-      "best_rank": 1,
+      "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 142,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "api_reference",
+        "classification": "product_root",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
       "keep": true
-    },
-    {
-      "title": "Send an address validation request | Address Validation API | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/address-validation/requests-validate-address",
-      "description": "The Address Validation API <strong>validates addresses using a POST request to a specified endpoint with a JSON request body containing the address details</strong>.",
-      "rank": 4,
-      "query_hits": [
-        "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation",
-        "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation",
-        "site:developers.google.com/maps \"Address Validation API\" reference rest OR site:developers.google.com/maps \"address validation api\" reference rest",
-        "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
-        "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs",
-        "maps_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 100,
-      "product_fit_score": 142,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
     },
     {
       "title": "Validate addresses | SAP on Google Cloud | Google Cloud Documentation",
@@ -881,6 +1298,18 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 108,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "addresses"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -891,48 +1320,18 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "addresses"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Method: validateAddress | Address Validation API | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
-      "description": "Address Validation API · Reference · Send feedback · outlined_flag · The Google Maps Address Validation API <strong>validates postal addresses, providing deliverability, geocoding, and metadata</strong>.",
-      "rank": 4,
-      "query_hits": [
-        "site:developers.google.com \"Address Validation API\" reference OR site:developers.google.com \"address validation api\" reference",
-        "site:developers.google.com/maps \"Address Validation API\" reference rest OR site:developers.google.com/maps \"address validation api\" reference rest",
-        "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
-        "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs",
-        "maps_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 166,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
       "keep": false
     },
     {
@@ -955,17 +1354,37 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 142,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "addresses"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "addresses"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -976,34 +1395,60 @@
       "title": "Understand a basic address validation response | Address Validation API | Google for Developers",
       "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
       "description": "Note: <strong>This document describes the basic elements of an address validation response for an address of high quality</strong>. For guidance on working with real-world address scenarios and building logic around more complex responses, see See Build your ...",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation",
         "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation",
+        "site:developers.google.com/maps/documentation/address-validation \"understand-response\" OR \"possibleNextAction\" OR \"hasSpellCorrectedComponents\"",
         "site:developers.google.com/maps \"Address Validation API\" reference rest OR site:developers.google.com/maps \"address validation api\" reference rest"
       ],
       "intent_hits": [
         "developers_docs",
-        "maps_docs"
+        "maps_docs",
+        "address_validation_exact_docs"
       ],
       "round_hits": [
         1,
         2
       ],
-      "best_rank": 6,
+      "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 142,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "responses",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "responses",
+          "with"
+        ],
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
@@ -1028,6 +1473,20 @@
       "best_rank": 5,
       "consistency_score": 67,
       "product_fit_score": 48,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "field",
+          "components",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1037,7 +1496,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "field",
+          "components",
+          "with"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1045,10 +1514,413 @@
       "keep": false
     },
     {
+      "title": "Add subpremises to address - examples (US only) | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example",
+      "description": "{ &quot;inputGranularity&quot;: &quot;PREMISE&quot;, &quot;validationGranularity&quot;: &quot;PREMISE&quot;, &quot;geocodeGranularity&quot;: &quot;PREMISE&quot;, &quot;hasInferredComponents&quot;: true, &quot;hasReplacedComponents&quot;: true, &quot;possibleNextAction&quot;: &quot;CONFIRM_ADD_SUBPREMISES&quot; }",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"understand-response\" OR \"possibleNextAction\" OR \"hasSpellCorrectedComponents\""
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "validation",
+          "components",
+          "next",
+          "possiblenextaction"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "validation",
+          "components",
+          "next",
+          "possiblenextaction"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Build your validation logic | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+      "description": "When designing how your system responds to signals from the Address Validation API, the following recommendations can help you build a more effective response model. However, these are only recommendations, so bear in mind that your implementation should suit your business model. If you want to reduce the risk of failed deliveries, you might customize your logic to prompt your customers more often. For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX or verdict.validationGranularity == OTHER or verdict.validationGranularity == ROUTE) Prompt customer to fix their address.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"understand-response\" OR \"possibleNextAction\" OR \"hasSpellCorrectedComponents\""
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "verdict",
+          "next",
+          "possiblenextaction"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "verdict",
+          "next",
+          "possiblenextaction"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Address Validation API client libraries | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/client_libraries",
+      "description": "<strong>Utilize the `AddressValidationClient` to validate an address, creating a `ValidateAddressRequest` with properties like `PostalAddress`, `PreviousResponseId`, `EnableUspsCass`, and `SessionToken`</strong>. Send the request to the client and obtain a ...",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"validateAddress\" OR \"build-validation-logic\""
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "session",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "session",
+          "with"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Address Validation API client library examples | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/client-library-examples",
+      "description": "using Google.Maps.AddressValidation.V1; using Google.Type; ... private static async Task CallAddressValidation() { // Create the Address Validation Client AddressValidationClient client = await AddressValidationClient.CreateAsync(); // Define the request with the address to be validated var request = new ValidateAddressRequest { Address = new PostalAddress { RegionCode = &quot;US&quot;, LanguageCode = &quot;en&quot;, PostalCode = &quot;94043&quot;, AdministrativeArea = &quot;CA&quot;, Locality = &quot;Mountain View&quot;, AddressLines = { &quot;1600 Amphitheatre Parkway&quot; } } }; try { // Call the API asynchronously ValidateAddressResponse response",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"validateAddress\" OR \"build-validation-logic\""
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "new",
+          "validated",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "new",
+          "validated",
+          "with"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Confirm address - examples | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/confirm-address-example",
+      "description": "The example below emphasizes the important signals from the response. { &quot;inputGranularity&quot;: &quot;SUB_PREMISE&quot;, &quot;validationGranularity&quot;: &quot;PREMISE_PROXIMITY&quot;, &quot;geocodeGranularity&quot;: &quot;PREMISE_PROXIMITY&quot;, &quot;addressComplete&quot;: true, &quot;hasUnconfirmedComponents&quot;: true &quot;hasReplacedComponents&quot;: true, &quot;possibleNextAction&quot;: &quot;CONFIRM&quot; }",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"understand-response\" OR \"possibleNextAction\" OR \"hasSpellCorrectedComponents\""
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "components",
+          "next",
+          "possiblenextaction"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "components",
+          "next",
+          "possiblenextaction"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Fix address - examples | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/fix-address-example",
+      "description": "This document provides real-world examples of when the Address Validation API signals that an address needs to be fixed · The API provides signals such as validationGranularity, confirmationLevel, and missingComponentTypes to indicate potential issues with an address",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"understand-response\" OR \"possibleNextAction\" OR \"hasSpellCorrectedComponents\""
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "indicate",
+          "when",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "indicate",
+          "when",
+          "with"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Handle updated addresses | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/handle-updated-address",
+      "description": "The responseId field specifies which address validation results you are providing feedback for. This value must be the same as the responseId value returned by the first call to the validateAddress method.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"validateAddress\" OR \"build-validation-logic\""
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "field",
+          "response",
+          "addresses"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "field",
+          "response",
+          "addresses"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Overview | Address Validation API | Google for Developers",
       "url": "https://developers.google.com/maps/documentation/address-validation/reference",
       "description": "Address Validation API · Home · Products · Google Maps Platform · Web Services · Address Validation API · Send feedback · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed ...",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
         "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
@@ -1060,19 +1932,37 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 142,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1095,18 +1985,36 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 142,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "api_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -1128,17 +2036,41 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 142,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "format",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response",
+          "format",
+          "with"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1146,44 +2078,9 @@
       "keep": false
     },
     {
-      "title": "Address Validation API Usage and Billing | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/address-validation/usage-and-billing",
-      "description": "[[[&quot;Easy to understand&quot;,&quot;easyT... updated 2026-03-31 UTC.&quot;],[],[&quot;The Address Validation API <strong>requires enabled billing and an API key or OAuth token</strong>....",
-      "rank": 7,
-      "query_hits": [
-        "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation",
-        "site:developers.google.com/maps \"Address Validation API\" documentation OR site:developers.google.com/maps \"address validation api\" documentation"
-      ],
-      "intent_hits": [
-        "developers_docs",
-        "maps_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 142,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Address Validation (beta) | Maps JavaScript API | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/javascript/reference/3.62/address-validation",
-      "description": "Access by calling const {AddressComponent} = await google.maps.importLibrary(&quot;addressValidation&quot;). See Libraries in the Maps JavaScript API. google.maps.addressValidation.AddressMetadata class · Notice: Available only in the v=beta channel. The metadata for the address. AddressMetadata is not guaranteed to be fully populated for every address sent to the Address Validation API.",
+      "title": "Package google.type | Address Validation API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.type",
+      "description": "Address Validation API · Reference · Send feedback · outlined_flag · The Address Validation API <strong>uses LatLng and PostalAddress message types for location and address data</strong>. LatLng represents latitude and longitude coordinates conforming to ...",
       "rank": 8,
       "query_hits": [
         "site:developers.google.com \"Address Validation API\" reference OR site:developers.google.com \"address validation api\" reference"
@@ -1196,19 +2093,200 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 142,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Address Validation API release notes | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/release-notes",
+      "description": "<strong>possibleNextAction field in the verdict to help you determine what action to take after receiving the API response</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"understand-response\" OR \"possibleNextAction\" OR \"hasSpellCorrectedComponents\""
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "field",
+          "response",
+          "verdict",
+          "after"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "field",
+          "response",
+          "verdict",
+          "after"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Address Validation API Usage and Billing | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/usage-and-billing",
+      "description": "[[[&quot;Easy to understand&quot;,&quot;easyT... updated 2026-03-31 UTC.&quot;],[],[&quot;The Address Validation API <strong>requires enabled billing and an API key or OAuth token</strong>....",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Address Validation API\" official documentation OR site:developers.google.com \"address validation api\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Best Practices Using Address Validation API Web Services | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/address-validation/web-service-best-practices",
+      "description": "Generally, these services return data in the response body as JSON for parsing and/or processing by your application. Validate an address by <strong>sending an HTTP POST request to the validateAddress method</strong>:",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/address-validation \"validateAddress\" OR \"build-validation-logic\""
+      ],
+      "intent_hits": [
+        "address_validation_exact_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 184,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "response"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1230,6 +2308,21 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 142,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "field",
+          "response",
+          "next",
+          "possiblenextaction"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1239,9 +2332,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "field",
+          "response",
+          "next",
+          "possiblenextaction"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1263,6 +2367,18 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 134,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "validation",
+          "were",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -1273,8 +2389,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "validation",
+          "were",
+          "with"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": true
@@ -1296,6 +2420,19 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 134,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "verdict",
+          "format"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1306,8 +2443,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "verdict",
+          "format"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1329,6 +2475,17 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 134,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "validation",
+          "next"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1338,7 +2495,14 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "validation",
+          "next"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1349,7 +2513,7 @@
       "title": "Address Validation Overview | Maps JavaScript API | Google for Developers",
       "url": "https://developers.google.com/maps/documentation/javascript/address-validation/overview",
       "description": "When a call to fetchAddressValidation is made the API attempts the following: Corrects — Provides component-level vaidation checks, including sub-premises where available. Completes — Attempts to infer missing or incorrect address components. Formats — Cleans up and standardizes the format for address components. The United States Postal Service® (USPS®)1 maintains the Coding Accuracy Support System (CASS™) to support and certify address validation providers.",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:developers.google.com \"Address Validation API\" overview OR site:developers.google.com \"address validation api\" overview",
         "site:developers.google.com/maps \"Address Validation API\" overview OR site:developers.google.com/maps \"address validation api\" overview"
@@ -1361,9 +2525,23 @@
       "round_hits": [
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 48,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "components",
+          "format",
+          "when"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1373,7 +2551,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "components",
+          "format",
+          "when"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1397,6 +2585,17 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 40,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1406,7 +2605,14 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1434,20 +2640,40 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 14,
-      "deterministic_score": 75,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "validated"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 70,
       "api_score": {
         "classification": "supporting_page",
-        "score": 75,
+        "score": 70,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 4,
         "product_match": 2,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "the",
+          "validation",
+          "validated"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 79,
+      "final_score": 75,
       "keep": false
     },
     {
@@ -1467,20 +2693,36 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 24,
-      "deterministic_score": 34,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "api",
+          "validation"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 27,
       "api_score": {
         "classification": "supporting_page",
-        "score": 34,
+        "score": 27,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 2,
+        "parent_page_likelihood": 1,
         "product_match": 3,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "api",
+          "validation"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 34,
+      "final_score": 28,
       "keep": false
     }
   ]

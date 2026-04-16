@@ -1,7 +1,7 @@
 version: 1
 name: corpus
-created_at: '2026-04-10T00:01:21+00:00'
-updated_at: '2026-04-11T13:17:00+00:00'
+created_at: '2026-04-14T16:08:06+00:00'
+updated_at: '2026-04-14T16:25:32+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -10,8 +10,8 @@ sources:
 - type: site
   id: site-docs-root
   title: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs
-  created_at: '2026-04-11T13:09:14+00:00'
-  updated_at: '2026-04-11T13:12:08+00:00'
+  created_at: '2026-04-14T16:08:07+00:00'
+  updated_at: '2026-04-14T16:11:19+00:00'
   update_command: know sync site https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 2
     max_pages: 52
     compact_output: true
-  last_synced_at: '2026-04-11T13:12:08+00:00'
+  last_synced_at: '2026-04-14T16:11:19+00:00'
 - type: site
   id: site-docs-root-2
   title: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/overview
-  created_at: '2026-04-11T13:09:14+00:00'
-  updated_at: '2026-04-11T13:15:03+00:00'
+  created_at: '2026-04-14T16:08:07+00:00'
+  updated_at: '2026-04-14T16:14:35+00:00'
   update_command: know sync site https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/overview
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root-2
@@ -34,26 +34,54 @@ sources:
     max_depth: 2
     max_pages: 52
     compact_output: true
-  last_synced_at: '2026-04-11T13:15:03+00:00'
+  last_synced_at: '2026-04-14T16:14:35+00:00'
 - type: site
   id: site-docs-reference
-  title: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/security
-  created_at: '2026-04-11T13:09:14+00:00'
-  updated_at: '2026-04-11T13:16:01+00:00'
-  update_command: know sync site https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/security
+  title: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/install-overview
+  created_at: '2026-04-14T16:08:07+00:00'
+  updated_at: '2026-04-14T16:17:14+00:00'
+  update_command: know sync site https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/install-overview
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/install-overview
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T16:17:14+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/security
+  created_at: '2026-04-14T16:08:08+00:00'
+  updated_at: '2026-04-14T16:18:14+00:00'
+  update_command: know sync site https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/security
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
   config:
     url: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/security
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T13:16:01+00:00'
+  last_synced_at: '2026-04-14T16:18:14+00:00'
+- type: site
+  id: site-docs-reference-3
+  title: https://cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/security
+  created_at: '2026-04-14T16:08:08+00:00'
+  updated_at: '2026-04-14T16:19:24+00:00'
+  update_command: know sync site https://cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/security
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-3
+  config:
+    url: https://cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/security
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T16:19:24+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/authentication
-  created_at: '2026-04-11T13:09:15+00:00'
-  updated_at: '2026-04-11T13:17:00+00:00'
+  created_at: '2026-04-14T16:08:08+00:00'
+  updated_at: '2026-04-14T16:20:24+00:00'
   update_command: know sync site https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/concepts/authentication
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -62,4 +90,32 @@ sources:
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T13:17:00+00:00'
+  last_synced_at: '2026-04-14T16:20:24+00:00'
+- type: site
+  id: site-docs-reference-required-4
+  title: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/admin-workstation-configuration-file
+  created_at: '2026-04-14T16:08:09+00:00'
+  updated_at: '2026-04-14T16:22:58+00:00'
+  update_command: know sync site https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/admin-workstation-configuration-file
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/admin-workstation-configuration-file
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T16:22:58+00:00'
+- type: site
+  id: site-docs-reference-required-5
+  title: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/create-admin-workstation
+  created_at: '2026-04-14T16:08:09+00:00'
+  updated_at: '2026-04-14T16:25:32+00:00'
+  update_command: know sync site https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/create-admin-workstation
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
+  config:
+    url: https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/create-admin-workstation
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T16:25:32+00:00'

@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:56:14.370Z"
+generated_at: "2026-04-15T00:53:15.543Z"
 product_name: "Google SecOps SIEM"
 product_slug: "google-secops-siem"
 feature_name: "Layered aggregations in multi-stage queries"
 feature_slug: "layered-aggregations-in-multi-stage-queries"
 latest_feature_date: "2025-08-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
   - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
-  - "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+  - "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
 keywords:
   - "layered"
   - "aggregations"
-  - "in"
   - "multi"
   - "stage"
   - "queries"
   - "expands"
-  - "with"
+  - "baselines"
+  - "deviations"
 ---
 
 # Layered aggregations in multi-stage queries
 
 Product: Google SecOps SIEM
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,66 +38,52 @@ Expands multi-stage queries with layered aggregations, baselines, deviations, tr
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
 - [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
-- [https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs](https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs)
+- [https://docs.cloud.google.com/chronicle/docs/detection/composite-detections](https://docs.cloud.google.com/chronicle/docs/detection/composite-detections)
+- [https://docs.cloud.google.com/chronicle/docs/yara-l/functions](https://docs.cloud.google.com/chronicle/docs/yara-l/functions)
 
 ## Supporting Pages
-
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 132
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Action1 ( ACTION1 ) CDNetworks Cloud Security ( CDNETWORKS CLOUD SECURITY ) Claude Compliance Logs ( CLAUDE COMPLIANCE LOGS ) Dell RecoverPoint ( DELL RECOVERPOINT ) IBM Storwize ( IBM STORWIZE ) LeapXpert Audit Logs ( LEAPXPERT AUDIT ) Oracle Key Vault Audit Logs ( ORACLE KEY VAULT AUDIT LOGS ) RSA Cloud ( RSA CLOUD ) ServiceNow Antivirus Activity ( SERVICENOW ANTIVIRUS ACTIVITY ) ServiceNow Attachment ( SERVICENOW ATTACHMENT ) ServiceNow Email ( SERVICENOW EMAIL ) Versa Director ( VERSA DIRECTOR ) ZPE Systems NodeGrid ( ZPE SYSTEMS NODEGRID ) March 31, 2026 Feature Multi-stage queries in YARA-L The Multi-stage queries feature is now GA.
-- February 24, 2026 Feature New: cross joins in multi-stage queries You can now use cross joins in YARA-L 2.0 multi-stage queries let you compare individual UDM event data against aggregated statistics calculated in previous YARA-L stages.
-- Layer aggregations and analytics across multi-stage queries Recent updates to multi-stage queries let you: Layer aggregations and data statistical functions.
-- You can use multi-stage queries in both Dashboards and Search to build sophisticated detection and visualization logic.
-
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 128
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- February 24, 2026 Feature New: cross joins in multi-stage queries You can now use cross joins in YARA-L 2.0 multi-stage queries let you compare individual UDM event data against aggregated statistics calculated in previous YARA-L stages.
-- Layer aggregations and analytics across multi-stage queries Recent updates to multi-stage queries let you: Layer aggregations and data statistical functions.
-- You can use multi-stage queries in both Dashboards and Search to build sophisticated detection and visualization logic.
-- Multi-stage queries in YARA-L let you feed the output of one query stage directly into the input of a subsequent stage.
 
 ### "Search for events and alerts \_|\_ Google Security Operations \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 - Source ID: `site-api-reference`
-- Final score: 116
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- Complex queries: Queries that span more than 1 day, use multiple sources, or include stats.
+- The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = "USER LOGIN" and target.hostname = "finance-svr" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = "NETWORK CONNECTION" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = "PROCESS LAUNCH" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields.
 - For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = "USER RESOURCE UPDATE CONTENT" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.
-- Search for events that use multiple keys with the same name, using a regular expression: additional.fields.key = /myKeynumber / Use regular expressions and the nocase operator: additional.fields["pod name"] = /br/ additional.fields["pod name"] = bar nocase Use block and single-line comments.
-- Grouped fields can also be used in combination with regular UDM fields as shown in the following example: ip = "5.6.7.8" AND metadata.event type = "NETWORK CONNECTION" Grouped fields have a separate section in Aggregations .
-- If there are multiple alerts associated with the timeline, the chip displays the numbers of associated alerts.
+- Feature Programmatic access limit Web interface limit QPH limit 2,000 1,000 Simple query concurrency 40 40 Complex query concurrency 10 10 Concurrency limits Concurrency limits define the number of simultaneous search operations allowed per tenant: Simple queries: Queries that span less than one day, use a single data source, and don't include stats.
 
-### "Ingest Google Cloud data \_|\_ Google Security Operations \_|\_ Google Cloud\
+### "Composite detections \_|\_ Google Security Operations \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs](https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs)
-- Source ID: `site-api-reference`
-- Final score: 110
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/composite-detections](https://docs.cloud.google.com/chronicle/docs/detection/composite-detections)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 54
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Export filter example: Include additional log types The following export filter exports access transparency logs in addition to the default logs: log id("dns.googleapis.com/dns queries") OR log id("cloudaudit.googleapis.com/activity") OR log id("cloudaudit.googleapis.com/system event") OR log id("cloudaudit.googleapis.com/access transparency") Export filter example: Include additional logs from a specific project The following export filter exports access transparency logs from a specific project, in addition to the default logs: log id("dns.googleapis.com/dns queries") OR log id("cloudaudit.googleapis.com/activity") OR log id("cloudaudit.googleapis.com/system event") OR logName = "projects/my-project-id/logs/cloudaudit.googleapis.com%2Faccess transparency" Export filter example: Include additional logs from a specific folder The following export filter exports access transparency logs from a specific folder, in addition to the default logs: log id("dns.googleapis.com/dns queries") OR log id("cloudaudit.googleapis.com/activity") OR log id("cloudaudit.googleapis.com/system event") OR logName = "folders/my-folder-id/logs/cloudaudit.googleapis.com%2Faccess transparency" Export filter example: Exclude logs from a specific project The following export filter exports the default logs from the entire Google Cloud organization with the exception of a specific project: (log id("dns.googleapis.com/dns queries") OR log id("cloudaudit.googleapis.com/activity") OR log id("cloudaudit.googleapis.com/system event")) AND (NOT logName = "^projects/my-project-id/logs/. $") Export Google Cloud asset metadata You can export your Google Cloud asset metadata from Cloud Asset Inventory to Google SecOps.
-- To learn how to filter out logs that are generated by routine activities, see Tune Cloud Audit Logs filters . log id("cloudaudit.googleapis.com/activity") (exported by the default filter) log id("cloudaudit.googleapis.com/system event") (exported by the default filter) log id("cloudaudit.googleapis.com/policy") log id("cloudaudit.googleapis.com/access transparency") Cloud NAT logs ( GCP CLOUD NAT ): log id("compute.googleapis.com/nat flows") Cloud DNS logs ( GCP DNS ): log id("dns.googleapis.com/dns queries") (exported by the default filter) Firewall policy rules logging ( GCP FIREWALL ): log id("compute.googleapis.com/firewall") GCP IDS : log id("ids.googleapis.com/threat") log id("ids.googleapis.com/traffic") GCP LOADBALANCING : This includes logs from Google Cloud Armor and Cloud Load Balancing (both External and Internal). log id("requests") log id("loadbalancing.googleapis.com/requests") GCP CLOUDSQL : log id("cloudsql.googleapis.com/mysql-general.log") log id("cloudsql.googleapis.com/mysql.err") log id("cloudsql.googleapis.com/postgres.log") log id("cloudsql.googleapis.com/sqlagent.out") log id("cloudsql.googleapis.com/sqlserver.err") GCP VPC FLOW : log id("compute.googleapis.com/vpc flows") (for US and EU regions only) NIX SYSTEM : log id("syslog") log id("authlog") log id("securelog") log id("osconfig.googleapis.com/patch job") LINUX SYSMON : log id("sysmon.raw") WINEVTLOG : log id("winevt.raw") log id("windows event log") BRO JSON : log id("zeek json streaming conn") log id("zeek json streaming dhcp") log id("zeek json streaming dns") log id("zeek json streaming http") log id("zeek json streaming ssh") log id("zeek json streaming ssl") KUBERNETES NODE : log id("events") log id("stdout") log id("stderr") AUDITD : log id("audit log") GCP APIGEE X : log id("apigee.googleapis.com/ingress instance") log id("apigee.googleapis.com") log id("apigee-logs") log id("apigee") logName = "^projects/[\w\-]+/logs/apigee[\w\-\.] $" GCP RECAPTCHA ENTERPRISE : log id("recaptchaenterprise.googleapis.com/assessment") log id("recaptchaenterprise.googleapis.com/annotation") GCP RUN : log id("run.googleapis.com/stderr") log id("run.googleapis.com/stdout") log id("run.googleapis.com/requests") log id("run.googleapis.com/varlog/system") GCP NGFW ENTERPRISE : log id("networksecurity.googleapis.com/firewall threat") GCP ABUSE EVENTS : log id("abuseevent.googleapis.com/abuse events") GCP DNS ATD log id("networksecurity.googleapis.com/dns threat events") Model Armor logs ( GCP MODEL ARMOR ): This includes logs for sanitization operations (screening prompts and responses) and template operations (creation, updates). log id("modelarmor.googleapis.com/sanitize operations") log id("modelarmor.googleapis.com/templates") Customize export filter settings By default, your Cloud Audit Logs (Admin Activity and System Event) and Cloud DNS logs are sent to your Google SecOps instance.
-- Control the rate of ingestion When the data ingestion rate for a tenant reaches a certain threshold, Google Security Operations restricts the rate of ingestion for new data feeds to prevent a source with a high ingestion rate from affecting the ingestion rate of another data source.
-- Additionally, raise a Support ticket with Google SecOps to provide your feedback in support of possibly collecting this type of log using direct ingestion (Option 1) in the future.
+- This includes detecting multi-stage attacks, correlating multiple low-confidence alerts into a single high-confidence alert, or enriching detections with additional context from other data sources.
+- Detect multi-stage malware This use case involves identifying malware that operates slowly over a long period, which is difficult to catch with single rules that have short match windows.
+- Benefits of composite detections Composite detections have the following benefits: Unmask multi-stage attacks : Cyberattacks are often multifaceted and interconnected.
+- Decide which noisy rules you need to refine, which complex rules you need to simplify, and which new multi-stage detections you need to prioritize.
+
+### Functions \_|\_ Google Security Operations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/yara-l/functions](https://docs.cloud.google.com/chronicle/docs/yara-l/functions)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 53
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Param data types INT FLOAT , BOOL Return type FLOAT Code samples Example 1 This example returns the median when the input values aren't zero. rule median file size { meta: events: $e.metadata.event type = "FILE COPY" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 2 if the file sizes in the match window are [1, 2, 3] condition: $e } Example 2 This example returns the median when the input includes some zero values that shouldn't be ignored. rule median file size { meta: events: $e.metadata.event type = "FILE COPY" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 1 if the file sizes in the match window are [0,0, 1, 2, 3] condition: $e } Example 3 This example returns the median when the input includes some zero values which should be ignored. rule median file size { meta: events: $e.metadata.event type = "FILE COPY" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size, true) // returns 2 if the file sizes in the match window are [0,0, 1, 2, 3] condition: $e } Example 4 This example returns the median when the input includes all zero values which should be ignored. rule median file size { meta: events: $e.metadata.event type = "FILE COPY" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 0 if the file sizes in the match window are [0,0] condition: $e } Example 5 This example shows that, when there are multiple medians, only one median is returned. rule median file size { meta: events: $e.metadata.event type = "FILE COPY" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 1 if the file sizes in the match window are [1, 2, 3, 4] condition: $e } window.mode Supported in: Rules window.mode(values) Description Return the mode of the input values.
+- Equivalent to: hash.fingerprint2011(byteOrString) % rateDenominator < rateNumerator Param data types byteOrString: Expression that evaluates to either a BYTE or STRING . rateNumerator: 'INT' rateDenominator: 'INT' Return type BOOL Code sample events: $e.metadata.event type = "NETWORK CONNECTION" $asset id = $e.principal.asset.asset id optimization.sample rate($e.metadata.id, 1, 5) // Only 1 out of every 5 events match: $asset id over 1h outcome: $event count = count distinct($e.metadata.id) // estimate the usage by multiplying by the inverse of the sample rate $usage past hour = sum(5.0 $e.network.sent bytes) condition: // Requiring a certain number of events after sampling avoids bias (e.g. a // device with just 1 connection will still show up 20% of the time and // if we multiply that traffic by 5, we'll get an incorrect estimate) $e and ($usage past hour > 1000000000) and $event count >= 100 strings.base64 decode Supported in: Rules Search strings.base64 decode(encodedString) Description Returns a string containing the base64 decoded version of the encoded string.
+- Param data types STRING Return type STRING Code samples Example 1 This example shows an empty string strings.extract domain("") = "" Example 2 random string, not a URL strings.extract domain("1234") = "" Example 3 multiple backslaches strings.extract domain("\\\\") = "" Example 4 non-alphabet characters handled gracefully strings.extract domain("http://例子.卷筒纸.中国") = "卷筒纸.中国" Example 5 handling URIs strings.extract domain("mailto:?to=&subject=&body=") = "" Example 6 multiple characters before actual URL strings.extract domain(" \t !$5 ^)&dahgsdfs;http://www.google.com") = "google.com" Example 7 special characters in URI # strings.extract domain("test#@google.com") = "" Example 8 special characters in URL # strings.extract domain("https://test#@google.com") = "" Example 9 positive test case strings.extract domain("https://google.co.in") = "google.co.in" strings.extract hostname Supported in: Rules Search strings.extract hostname(string) Description Extracts the hostname from a string.
+- Param data types STRING Return type STRING Code samples Example 1 This example returns an empty string. strings.extract hostname("") = "" Example 2 random string, not a URL strings.extract hostname("1234") = "1234" Example 3 multiple backslashes strings.extract hostname("\\\\") = "" Example 4 non-English characters handled gracefully strings.extract hostname("http://例子.卷筒纸.中国") = "例子.卷筒纸.中国" Example 5 handling URIs strings.extract hostname("mailto:?to=&subject=&body=") = "mailto" Example 6 multiple characters before actual URL strings.extract hostname(" \t !$5 ^)&dahgsdfs;http://www.google.com") = "www.google.com" Example 7 special characters in URI # strings.extract hostname("test#@google.com") = "test" Example 8 special characters in URL # strings.extract hostname("https://test#@google.com") = "test" strings.from base64 Supported in: Rules Search strings.from base64(base64 encoded string) Description Function converts a base64 encoded STRING value to a raw binary BYTES value.
 

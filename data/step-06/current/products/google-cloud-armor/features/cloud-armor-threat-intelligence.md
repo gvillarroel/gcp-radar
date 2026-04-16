@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:23.965Z"
+generated_at: "2026-04-12T12:16:20.940Z"
 product_name: "Google Cloud Armor"
 product_slug: "google-cloud-armor"
 feature_name: "Cloud Armor Threat Intelligence"
 feature_slug: "cloud-armor-threat-intelligence"
 latest_feature_date: "2022-09-21"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/armor/docs/cloud-armor-overview"
+  - "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+  - "https://docs.cloud.google.com/armor/docs/configure-security-policies"
+  - "https://docs.cloud.google.com/armor/docs/security-policy-overview"
 keywords:
   - "armor"
   - "threat"
@@ -24,7 +27,7 @@ keywords:
 # Cloud Armor Threat Intelligence
 
 Product: Google Cloud Armor
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Cloud Armor Threat Intelligence can allow or block traffic to HTTP(S) load balan
 
 Cloud Armor Threat Intelligence can allow or block traffic to HTTP(S) load balancers based on threat intelligence data; Cloud Armor Threat Intelligence is available in public preview for allowing or blocking traffic to HTTP(S) load balancers based on threat intelligence data.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/armor/docs/cloud-armor-overview](https://docs.cloud.google.com/armor/docs/cloud-armor-overview)
+- [https://docs.cloud.google.com/armor/docs/rules-language-reference](https://docs.cloud.google.com/armor/docs/rules-language-reference)
+- [https://docs.cloud.google.com/armor/docs/configure-security-policies](https://docs.cloud.google.com/armor/docs/configure-security-policies)
+- [https://docs.cloud.google.com/armor/docs/security-policy-overview](https://docs.cloud.google.com/armor/docs/security-policy-overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Product overview \_|\_ Google Cloud Armor \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/armor/docs/cloud-armor-overview](https://docs.cloud.google.com/armor/docs/cloud-armor-overview)
+- Source ID: `site-docs-root`
+- Final score: 278
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Google Threat Intelligence Cloud Armor Google Threat Intelligence lets you secure your traffic by allowing or blocking traffic to your global external Application Load Balancers and classic Application Load Balancers based on several categories of threat intelligence data.
+- You can attach security policies to the backend services of the following load balancers: All external Application Load Balancers, including classic Application Load Balancers Regional internal Application Load Balancer Global external proxy Network Load Balancer (TCP/SSL) Classic proxy Network Load Balancer (TCP/SSL) External passthrough Network Load Balancer (TCP/UDP) Cloud Armor security policies enable you to allow or deny access to your deployment at the Google Cloud edge, as close as possible to the source of incoming traffic.
+- The rules allow Cloud Armor to evaluate dozens of distinct traffic signatures by referring to conveniently named rules, rather than requiring you to define each signature manually.
+- Google Cloud Armor Adaptive Protection Adaptive Protection helps you protect your applications and services from L7 distributed denial-of-service (DDoS) attacks by analyzing patterns of traffic to your backend services, detecting and alerting on suspected attacks, and generating suggested WAF rules to mitigate such attacks.
+
+### "Configure custom rules language attributes \_|\_ Google Cloud Armor \_|\_\
+
+- URL: [https://docs.cloud.google.com/armor/docs/rules-language-reference](https://docs.cloud.google.com/armor/docs/rules-language-reference)
+- Source ID: `site-docs-reference`
+- Final score: 276
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Allow or deny traffic from a specific ASN If your web application needs to be blocked to customers serviced by a specific network operator, you can use the ASN number of the network operator to block.
+- Examples The following expression matches the incoming request against the Google Threat Intelligence iplist-known-malicious-ips feed for protection from the known list of malicious IPs: evaluateThreatIntelligence('iplist-known-malicious-ips') The following expression matches the incoming request against the Google Threat Intelligence iplist-known-malicious-ips feed for protection from the known list of malicious IPs except for IPs in 203.0.113.0/24 : evaluateThreatIntelligence('iplist-known-malicious-ips', ['203.0.113.0/24']) The following expression matches the custom request header for user IP against the address group named my-own-list-of-bad-ips : evaluateAddressGroup('my-own-list-of-bad-ips', origin.user ip) What's next Configure Cloud Armor security policies Tune Cloud Armor preconfigured WAF rules Troubleshoot Cloud Armor issues Quotas and limit Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The following expression matches with requests that originated from the 192.0.2.0/24 IP address range: inIpRange(origin.user ip, '192.0.2.0/24') The following expression matches with requests that originated from the 2001:db8::/32 IP address range: inIpRange(origin.user ip, '2001:db8::/32') Allow or deny traffic with a specific cookie The following expression matches with requests that have a cookie containing 80=BLAH : has(request.headers['cookie']) && request.headers['cookie'].contains('80=BLAH') Allow or deny traffic with a non-empty referer header The following expression matches with requests that have a non-empty referer header: has(request.headers['referer']) && request.headers['referer'] != "" Allow or deny traffic based on host header You can allow or deny traffic based on the value of the Host header in the request.
+- The following expression matches with requests to multiple domains using contains : request.headers['host'].lower().contains('test.example.com') request.headers['host'].lower().contains('test22.example.com') The following expression matches requests for a domain and its subdomains using matches : request.headers['host'].matches('(?i:(sub\.)?test\.example\.com)') Allow or deny traffic from a specific region If your web application isn't available in the AU region, then all requests from that region must be blocked.
+
+### "Configure Cloud Armor security policies \_|\_ Google Cloud Armor \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/armor/docs/configure-security-policies](https://docs.cloud.google.com/armor/docs/configure-security-policies)
+- Source ID: `site-docs-root`
+- Final score: 272
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following command adds a rule to allow traffic from the IP address 1.2.3.4 and contains the string example in the user-agent header: gcloud compute security-policies rules create 1000 \ --security-policy my-policy \ --expression "inIpRange(origin.ip, '1.2.3.4/32') && has(request.headers['user-agent']) && request.headers['user-agent'].contains('example')" \ --action allow \ --description "Block User-Agent 'example'" The following command adds a rule to block requests if the request's cookie contains a specific value: gcloud compute security-policies rules create 1000 \ --security-policy my-policy \ --expression "has(request.headers['cookie']) && request.headers['cookie'].contains('80=BLAH')" \ --action deny-403 \ --description "Cookie Block" The following command adds a rule to block requests from the region AU : gcloud compute security-policies rules create 1000 \ --security-policy my-policy \ --expression "origin.region code == 'AU'" \ --action deny-403 \ --description "AU block" The following command adds a rule to block requests from the region AU that are not in the specified IP range: gcloud compute security-policies rules create 1000 \ --security-policy my-policy \ --expression "origin.region code == "AU" && !inIpRange(origin.ip, '1.2.3.0/24')" \ --action deny-403 \ --description "country and IP block" The following command adds a rule to block requests with a URI that matches a regular expression: gcloud compute security-policies rules create 1000 \ --security-policy my-policy \ --expression "request.path.matches('/example path/')" \ --action deny-502 \ --description "regex block" The following command adds a rule to block requests if the Base64 decoded value of the user-id header contains a specific value: gcloud compute security-policies rules create 1000 \ --security-policy my-policy \ --expression "has(request.headers['user-id']) && request.headers['user-id'].base64Decode().contains('myValue')" \ --action deny-403 \ --description "country and IP block" The following command adds a rule that uses a preconfigured expression set to mitigate SQLi attacks: gcloud compute security-policies rules create 1000 \ --security-policy my-policy \ --expression "evaluatePreconfiguredWaf('sqli-stable')" \ --action deny-403 Update a single rule in a security policy Use these instructions to update a single rule in a Cloud Armor security policy.
+- For example, you can modify the the priorities of the existing rules and add a new rule: description: my description fingerprint: PWfLGDWQDLY= id: '123' name: my-policy rules: - action: deny(404) description: my-rule-1 match: expr: expression: evaluatePreconfiguredWaf('xss-stable') versionedExpr: SRC IPS V1 preview: false priority: 1 - action: allow description: my-new-rule match: config: srcIpRanges: - '1.2.3.1' versionedExpr: SRC IPS V1 preview: false priority: 10 - action: allow description: my-rule-2 match: config: srcIpRanges: - '1.2.3.4' versionedExpr: SRC IPS V1 preview: false priority: 11 - action: deny description: default rule kind: compute#securityPolicyRule match: config: srcIpRanges: - ' ' versionedExpr: SRC IPS V1 preview: false priority: 2147483647 selfLink: https://www.googleapis.com/compute/v1/projects/my-project/global/securityPolicies/my-policy Create a new Cloud Armor security policy and specify the modified filename and format, as shown in the following example: gcloud compute security-policies create new-policy \ --file-name modified-policy \ --file-format yaml Remove the old security policy from the relevant backend service, as shown in the following example: gcloud compute backend-services update my-backend \ --security-policy "" Add the new security policy to the backend service, as shown in the following example: gcloud compute backend-services update my-backend \ --security-policy new-policy If the old policy is unused, delete it: gcloud compute security-policies delete my-policy Delete rules from a security policy Use these instructions to delete rules from a Cloud Armor security policy.
+- If you don't provide the file format, Cloud Armor uses the default YAML. gcloud compute security-policies export NAME \ --file-name FILE NAME \ --file-format FILE FORMAT The following example exports the my-policy security policy to the my-file file in the YAML format: gcloud compute security-policies export my-policy \ --file-name my-file \ --file-format yaml The following example shows an exported security policy: description: my description fingerprint: PWfLGDWQDLY= id: '123' name: my-policy rules: - action: allow description: default rule match: config: srcIpRanges: - ' ' versionedExpr: SRC IPS V1 preview: false priority: 2147483647 selfLink: https://www.googleapis.com/compute/v1/projects/my-project/global/securityPolicies/my-policy You can modify the exported file with any text editor, and then import it back to Google Cloud by using the import command.
+- You can only update one security policy at a time using this command: gcloud compute security-policies rules update PRIORITY [ \ --security-policy POLICY NAME \ --description DESCRIPTION \ --src-ip-ranges IP RANGES --expression EXPRESSION \ --action=[ allow deny-403 deny-404 deny-502 ] \ --preview ] For example, the following command updates a rule with priority 1111 to allow traffic from the IP address range 192.0.2.0/24: gcloud compute security-policies rules update 1111 \ --security-policy my-policy \ --description "allow traffic from 192.0.2.0/24" \ --src-ip-ranges "192.0.2.0/24" \ --action "allow" For more information about this command, see gcloud compute security-policies rules update .
+
+### Security policy overview \_|\_ Google Cloud Armor \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/armor/docs/security-policy-overview](https://docs.cloud.google.com/armor/docs/security-policy-overview)
+- Source ID: `site-docs-root`
+- Final score: 254
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Globally scoped security policies Backend security policy Edge security policy Internal service security policy Frontend type Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Cloud Service Mesh clients Attachment point (protected resource) Backend service Backend service Backend service Backend bucket Cloud Service Mesh endpoint policy Rule actions Allow Deny Redirect ( GOOGLE RECAPTCHA and EXTERNAL 302 ) Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Fairshare Client IP address Client geography Client ASN Media CDN only Rate limiting TLS fingerprinting (JA3 and JA4) Bot management HTTP filtering Media CDN only WAF Adaptive Protection Address Group Google Threat Intelligence Media CDN only Security Command Center Cloud Monitoring Request logging Regionally scoped security policies Regional backend security policy Network edge security policy Frontend type Regional external Application Load Balancer Regional internal Application Load Balancer External passthrough Network Load Balancer External protocol forwarding VMs with NICs that have external IP addresses Attachment point (protected resource) Backend service (regional) Backend service (regional) Target pool Target instance Backend service (regional) Instance Rule actions Allow Deny Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Client IP address Client geography Client ASN Rate limiting TLS fingerprinting (JA3 and JA4) JA3 only JA3 only Bot management HTTP filtering WAF Adaptive Protection Address Group Google Threat Intelligence Byte offset filtering Security Command Center Cloud Monitoring Request logging Backend security policies Backend security policies are used with backend services exposed by the following load balancer types: Global external Application Load Balancer Classic Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer You use backend security policies to filter requests and protect backend services that reference instance groups or any of the supported NEG types behind the previously listed load balancer types.
+- Rule1 expr: inIPRange(origin.ip, '10.10.10.0/24') action: deny(403) priority: 1 Rule2 expr: evaluatePreconfiguredWaf('xss-v422-stable') action: deny(403) priority: 2 Rule3 expr: inIPRange(origin.ip, '9.9.9.0/24') action: allow priority: 3 Rule-default action: deny(403) priority: INT-MAX In the following example, the policy allows IP 9.9.9.1 without scanning against XSS attacks: Rule1 expr: inIPRange(origin.ip, '10.10.10.0/24') action: deny(403) priority: 1 Rule2 expr: inIPRange(origin.ip, '9.9.9.0/24') action: allow priority: 2 Rule3 expr: evaluatePreconfiguredWaf('xss-v422-stable') action: deny(403) priority: 3 Rule-default action: allow priority: INT-MAX Default rule Each Cloud Armor security policy contains a default rule that is matched if none of the higher priority rules are matched or if there are no other rules in the policy.
+- You can use a default security policy that throttles traffic over a user-specified threshold when you configure one of the following load balancers: Global external Application Load Balancer Classic Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Global external proxy Network Load Balancer (TCP/SSL) Classic proxy Network Load Balancer (TCP/SSL) In addition, you can configure Google Cloud Armor preconfigured WAF rules, which are complex web application firewall (WAF) rules with dozens of signatures that are compiled from open source industry standards.
+- Google Cloud Armor security policies protect your application by providing Layer 7 filtering and by scrubbing incoming requests for common web attacks or other Layer 7 attributes to potentially block traffic before it reaches your load-balanced backend services or backend buckets.
 

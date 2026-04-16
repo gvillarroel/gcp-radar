@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.879Z"
+generated_at: "2026-04-12T12:14:02.796Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "TransactionOptions for read-only and read-write transactions"
 feature_slug: "transactionoptions-for-read-only-and-read-write-transactions"
 latest_feature_date: "2018-01-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions"
   - "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore"
+  - "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices"
   - "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
 keywords:
   - "transactionoptions"
@@ -26,7 +27,7 @@ keywords:
 # TransactionOptions for read-only and read-write transactions
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ TransactionOptions lets Datastore Data API clients choose read-only or read-writ
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions](https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions)
 - [https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore](https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore)
+- [https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices](https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices)
 - [https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore](https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions](https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions)
 - Source ID: `site-iam-reference`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 218
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Entity taskList ; QueryResults<Entity> tasks ; Transaction txn = datastore . newTransaction ( TransactionOptions . newBuilder (). setReadOnly ( ReadOnly . newBuilder (). build ()). build ()); try { taskList = txn . get ( taskListKey ); Query<Entity> query = Query . newEntityQueryBuilder () . setKind ( "Task" ) . setFilter ( PropertyFilter . hasAncestor ( taskListKey )) . build (); tasks = txn . run ( query ); txn . commit (); } finally { if ( txn . isActive ()) { txn . rollback (); } } Node.js To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore](https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore)
 - Source ID: `site-iam-reference`
-- Final score: 154
+- Final score: 197
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,11 +77,25 @@ Evidence snippets:
 - Additional Resources The following resources provide more information about the topics discussed in this document: Google App Engine: Storing Data Datastore Overview Google Cloud Platform Blog Cloud SQL Using Python App Engine with Cloud SQL Bigtable: A Distributed Storage System for Structured Data App Engine 1.5.2 SDK Released Megastore: Providing Scalable, Highly Available Storage for Interactive Services [1] An entity group can even be formed by specifying only one key of the root or parent entity, without storing the actual entities for the root or parent, because the entity group functions are all implemented based on relationships between keys. [2] The supported limit is one update per second per entity group outside transactions, or one transaction per second per entity group.
 - Datastore API Read of entity value Read of index Global Query Eventual consistency Eventual consistency Keys-only Global Query N/A Eventual consistency Ancestor Query Strong consistency Strong consistency Lookup by key (get()) Strong consistency N/A Table 1: Datastore queries/get calls and possible consistency behaviors Datastore queries without an ancestor are known as global queries and are designed to work with an eventual consistency model.
 
+### Cloud Datastore best practices \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices](https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices)
+- Source ID: `site-iam-reference`
+- Final score: 174
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- A possible strategy for gradually ramping up reads or writes to a new kind is use a deterministic hash of the user ID to get a random percentage of users that write new entities.
+- Maintaining such an index could lead to hotspots that impact Datastore latency for applications with high read and write rates.
+- API calls Use batch operations for your reads, writes, and deletes instead of single operations.
+- Writing at a sustained rate above that limit makes eventually consistent reads more eventual, leads to time outs for strongly consistent reads, and results in slower overall performance of your application.
+
 ### Fast and Reliable Ranking in Google Datastore \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore](https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore)
 - Source ID: `site-iam-reference`
-- Final score: 130
+- Final score: 168
 - Re-rank relevance: N/A
 
 Evidence snippets:

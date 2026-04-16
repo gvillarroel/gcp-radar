@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.471Z"
+generated_at: "2026-04-15T12:48:36.405Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery tables for Apache Iceberg"
@@ -9,15 +9,18 @@ latest_feature_date: "2024-10-10"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/release-notes"
+  - "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+  - "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
 keywords:
-  - "customer-owned cloud buckets"
-  - "BigQuery tables for Apache Iceberg"
-  - "query Apache Iceberg data"
-  - "Iceberg external table"
-  - "Apache Iceberg tables"
-  - "BQ Iceberg tables"
-  - "Iceberg table support"
+  - "bigquery"
+  - "tables"
+  - "apache"
+  - "iceberg"
+  - "bring"
+  - "storage"
+  - "optimization"
+  - "stored"
 ---
 
 # BigQuery tables for Apache Iceberg
@@ -27,32 +30,61 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Introduces BigQuery tables for Apache Iceberg that allow querying Iceberg data in customer-owned cloud buckets without moving data.
+BigQuery tables for Apache Iceberg bring BigQuery storage optimization to Apache Iceberg tables stored in user-controlled cloud buckets without moving the data.
 
 ## Extended Definition
 
-BigQuery tables for Apache Iceberg in BigQuery refer to support for Apache Iceberg external tables, including the ability to query them from BigQuery features such as materialized views without first migrating the data into BigQuery-managed storage. The release notes also state this feature was later renamed to "BigLake tables for Apache Iceberg in BigQuery," and document later capability additions such as merge-on-read support and access to snapshots via `FOR SYSTEM TIME AS OF`.
+BigQuery tables for Apache Iceberg bring BigQuery storage optimization to Apache Iceberg tables stored in user-controlled cloud buckets without moving the data.
 
 ## Evidence Summary
 
-The provided BigQuery release-notes excerpts confirm the feature’s existence, its rename to BigLake tables for Apache Iceberg, and key externally table behaviors including materialized-view usage, snapshot access, and merge-on-read.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
+- [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- [https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc](https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
 
 ## Supporting Pages
 
-### BigQuery release notes \_|\_ Google Cloud Documentation
+### "Configure BigLake metastore for Managed Service for Apache Spark and Spark\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 20
+- URL: [https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc](https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc)
+- Source ID: `site-docs-reference-5`
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Configure the Iceberg custom catalog plugin for BigLake metastore: FLINK VERSION = 1 .19 ICEBERG VERSION = 1 .6.1 cd /usr/lib/flink sudo wget -c https://repo.maven.apache.org/maven2/org/apache/iceberg/iceberg-flink-runtime- ${ FLINK VERSION } / ${ ICEBERG VERSION } /iceberg-flink-runtime- ${ FLINK VERSION } - ${ ICEBERG VERSION } .jar -P lib sudo gcloud storage cp gs://spark-lib/bigquery/iceberg-bigquery-catalog- ${ ICEBERG VERSION } -1.0.2.jar lib/ Start the Flink session on YARN: HADOOP CLASSPATH = hadoop classpath sudo bin/yarn-session.sh -nm flink-dataproc -d sudo bin/sql-client.sh embedded \ -s yarn-session Create a catalog in Flink: CREATE CATALOG CATALOG NAME WITH ( 'type' = 'iceberg' , 'warehouse' = ' WAREHOUSE DIRECTORY ' , 'catalog-impl' = 'org.apache.iceberg.gcp.bigquery.BigQueryMetastoreCatalog' , 'gcp project' = ' PROJECT ID ' , 'gcp location' = ' LOCATION ' ); Replace the following: CATALOG NAME : the Flink catalog identifier, which is linked to a BigLake metastore catalog.
+- Required roles To get the permissions that you need to configure BigLake metastore, ask your administrator to grant you the following IAM roles: Create a Managed Service for Apache Spark cluster: Dataproc Worker ( roles/dataproc.worker ) on the Compute Engine default service account in the project Create BigLake metastore tables: Dataproc Worker ( roles/dataproc.worker ) on the Dataproc VM service account in the project BigQuery Data Editor ( roles/bigquery.dataEditor ) on the Dataproc VM service account in the project Storage Object User ( roles/storage.objectUser ) on the Dataproc VM service account in the project Query BigLake metastore tables: BigQuery Data Viewer ( roles/bigquery.dataViewer ) on the project BigQuery User ( roles/bigquery.user ) on the project Storage Object Viewer ( roles/storage.objectViewer ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Submit a Spark job using one of the following methods: Google Cloud CLI gcloud dataproc jobs submit spark-sql \ --project = PROJECT ID \ --cluster = CLUSTER NAME \ --region = REGION \ --jars = https://storage-download.googleapis.com/maven-central/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5 2.12/1.6.1/iceberg-spark-runtime-3.5 2.12-1.6.1.jar, BIGLAKE ICEBERG CATALOG JAR \ --properties = spark.sql.catalog.
+- Linux cluster-1-m 3.16.0-0.bpo.4-amd64 ... ... example-cluster@cluster-1-m: $ In the terminal, run the following BigLake metastore initialization command: spark-sql \ --jars https://storage-download.googleapis.com/maven-central/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5 2.12/1.6.1/iceberg-spark-runtime-3.5 2.12-1.6.1.jar, BIGLAKE ICEBERG CATALOG JAR \ --conf spark.sql.catalog.
+
+### "Data definition language (DDL) statements in GoogleSQL \_|\_ BigQuery \_\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- Source ID: `site-docs-reference`
+- Final score: 166
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- June 09, 2025 Libraries Java 2.51.0 (2025-06-06) Features bigquery: Job creation mode GA ( #3804 ) ( a21cde8 ) bigquery: Support Fine Grained ACLs for Datasets ( #3803 ) ( bebf1c6 ) Dependencies Rollback netty.version to v4.1.119.Final ( #3827 ) ( 94c71a0 ) Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.65.0 ( #3787 ) ( 0574ecc ) Update dependency com.google.apis:google-api-services-bigquery to v2-rev20250511-2.0.0 ( #3794 ) ( d3bf724 ) Update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ( #3811 ) ( 2c5ede4 ) Feature You can reference Iceberg external tables in materialized views instead of migrating that data to BigQuery-managed storage.
-- September 16, 2025 Feature You can now access snapshots of Apache Iceberg external tables that are retained in your Iceberg metadata by using the FOR SYSTEM TIME AS OF clause.
-- Feature BigQuery tables for Apache Iceberg have been renamed BigLake tables for Apache Iceberg in BigQuery .
-- March 31, 2025 Feature Iceberg external tables now support merge-on-read.
+- External tables let BigQuery query data that is stored outside of BigQuery storage.
+- You can add Spark properties using the following format: [("key1","value1"),("key2", "value2")] For example: bq query --nouse legacy sql --dry run 'CREATE PROCEDURE my bq project.my dataset.spark proc() WITH CONNECTION my-project-id.us.my-connection OPTIONS( engine="SPARK", main file uri="gs://my-bucket/my-pyspark-main.py", properties=[ ("spark.executor.instances", "3"), ("spark.yarn.am.memory", "3g") ]) LANGUAGE PYTHON' Error in query string: Invalid value: \ Invalid properties: \ Attempted to set unsupported properties: \ [ spark:spark.yarn.am.memory ] at [ 1 :1 ] Note: You can use the BigQuery dry run feature to validate your stored procedure without creating it. main file uri STRING The Cloud Storage URI of the main Python, Scala, or Java JAR file of the Spark application.
+- BigQuery supports stored procedures for Apache Spark that are written in Python, Java, or Scala. pyspark code : The PySpark code for the stored procedure for Apache Spark if you want to pass the body of the procedure inline.
+- To create a stored procedure for Apache Spark, additional IAM permission are needed: Permission Resource bigquery.connections.delegate The connection which you use to create the stored procedure for Apache Spark .
+
+### "Introduction to BigLake external tables \_|\_ BigQuery \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- Source ID: `site-docs-reference-5`
+- Final score: 166
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- BigLake tables support the following formats: Avro CSV Delta Lake Iceberg JSON ORC Parquet You can't use cached metadata with Apache Iceberg external tables ; BigQuery already uses the metadata that Iceberg captures in manifest files.
+- Supported data stores You can use BigLake tables with the following data stores: Amazon S3 by using BigQuery Omni Blob Storage by using BigQuery Omni Cloud Storage Temporary table support BigLake tables based on Cloud Storage can be temporary or permanent.
+- Cache-enabled tables with materialized views You can use materialized views over BigLake metadata cache-enabled tables to improve performance and efficiency when querying structured data stored in Cloud Storage or Amazon Simple Storage Service (Amazon S3).
+- For example, the following diagram demonstrates how the BigQuery Storage API lets users access authorized data using open source query engines such as Apache Spark: For more information about connectors supported by BigQuery, see BigQuery connectors .
 

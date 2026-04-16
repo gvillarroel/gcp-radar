@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.471Z"
+generated_at: "2026-04-15T12:48:36.404Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery migration assessment for Oracle"
@@ -9,16 +9,18 @@ latest_feature_date: "2024-10-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/release-notes"
   - "https://docs.cloud.google.com/bigquery/docs/migration-intro"
+  - "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+  - "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata"
 keywords:
-  - "assessment report for Oracle migration"
-  - "BQ Oracle migration assessment"
-  - "Oracle migration assessment"
-  - "Oracle assessment"
-  - "BigQuery migration assessment"
-  - "Oracle to BigQuery"
-  - "migration complexity"
+  - "bigquery"
+  - "migration"
+  - "assessment"
+  - "oracle"
+  - "evaluates"
+  - "complexity"
+  - "migrating"
+  - "warehouses"
 ---
 
 # BigQuery migration assessment for Oracle
@@ -28,44 +30,62 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Adds a BigQuery migration assessment tool to evaluate the complexity of moving data from Oracle to BigQuery.
+The BigQuery migration assessment for Oracle evaluates the complexity of migrating data from Oracle data warehouses to BigQuery.
 
 ## Extended Definition
 
-BigQuery migration assessment is a feature of BigQuery Migration Service that enables teams to assess and plan data warehouse migrations to BigQuery. The Oracle-focused variant supports evaluating migration of an Oracle data warehouse to BigQuery, including a total cost of ownership (TCO) calculator that estimates compute and storage costs. The evidence indicates it is positioned as a migration planning assessment capability rather than a separate standalone migration engine.
+The BigQuery migration assessment for Oracle evaluates the complexity of migrating data from Oracle data warehouses to BigQuery.
 
 ## Evidence Summary
 
-Release notes confirm Oracle-specific migration assessment support and its TCO costing detail, while the migration service intro defines assessment as a feature used to assess and plan data warehouse migration to BigQuery.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
 - [https://docs.cloud.google.com/bigquery/docs/migration-intro](https://docs.cloud.google.com/bigquery/docs/migration-intro)
+- [https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration](https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration)
+- [https://docs.cloud.google.com/bigquery/docs/hadoop-metadata](https://docs.cloud.google.com/bigquery/docs/hadoop-metadata)
 
 ## Supporting Pages
-
-### BigQuery release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 32
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- January 16, 2025 Feature The BigQuery migration assessment for Oracle now includes a total cost of ownership (TCO) calculator that provides an estimation of compute and storage costs for migrating your Oracle data warehouse to BigQuery.
-- Feature Use the BigQuery migration assessment for Informatica to assess the complexity of migrating data from your Informatica platform to BigQuery.
-- Feature You can use the BigQuery migration assessment for Snowflake to assess the complexity of migrating from Snowflake to BigQuery.
-- June 16, 2025 Feature The BigQuery migration assessment is now available for workflows that use Cloudera and Apache Hadoop .
 
 ### Introduction to BigQuery Migration Service \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bigquery/docs/migration-intro](https://docs.cloud.google.com/bigquery/docs/migration-intro)
 - Source ID: `site-docs-root`
-- Final score: 28
-- Re-rank relevance: N/A
+- Final score: 126
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The BigQuery Migration Service includes the following features: BigQuery migration assessment : Assess and plan your data warehouse migration by running a BigQuery migration assessment .
+- The BigQuery Migration Service is a comprehensive solution for migrating your data warehouse to BigQuery.
 - For more information on BigQuery migration assessment, see BigQuery migration assessment .
+- You can also use the following open-source tools to help you with your migration process: Data migration tool : Use the data migration tool to automate your data warehouse migration to BigQuery.
+
+### Migrating permissions from Hadoop \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration](https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration)
+- Source ID: `site-api-reference`
+- Final score: 109
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You must also include either the HDFS file, the Apache Ranger file generated by the dwh-migration-dumper tool, or both, depending on which source you are migrating permissions from.
+- You must also include either the HDFS file, the Apache Ranger file generated by the dwh-migration-dumper tool, or both, depending on which source you are migrating permissions from.
+- Apply permissions Once you have generated a target permissions file, you can then run the permissions migration tool to apply the IAM permissions to Cloud Storage or BigQuery.
+- Run the permission migration tool with the target permissions file to apply permissions to Cloud Storage or BigQuery .
+
+### "Extracting metadata from Apache Hive for migration \_|\_ BigQuery \_|\_\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/hadoop-metadata](https://docs.cloud.google.com/bigquery/docs/hadoop-metadata)
+- Source ID: `site-api-reference`
+- Final score: 94
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Cloudera Run the following command to extract metadata from Cloudera using the dwh-migration-dumper tool. dwh-migration-dumper \ --connector cloudera-manager \ --url CLOUDERA-URL \ --user CLOUDERA-USER \ --password CLOUDERA-PASSWORD \ --output gs:// MIGRATION-BUCKET /cloudera-dumper-output.zip \ --yarn-application-types APPLICATION-TYPES \ --pagination-page-size PAGE-SIZE \ --assessment \ Replace the following: CLOUDERA-URL : the URL for Cloudera Manager CLOUDERA-USER : the username of the Cloudera user CLOUDERA-PASSWORD : the password of the Cloudera user MIGRATION-BUCKET : the Cloud Storage bucket that you are using to store the migration files.
+- Apache Ranger Run the following command to extract metadata from Apache Ranger using the dwh-migration-dumper tool. dwh-migration-dumper \ --connector ranger \ --host RANGER-HOST \ --port 6080 \ --user RANGER-USER \ --password RANGER-PASSWORD \ --ranger-scheme RANGER-SCHEME \ --output gs:// MIGRATION-BUCKET /ranger-dumper-output.zip \ --assessment \ Replace the following: RANGER-HOST : the hostname of the Apache Ranger instance RANGER-USER : the username of the Apache Ranger user RANGER-PASSWORD : the password of the Apache Ranger user RANGER-SCHEME : specify if Apache Ranger is using http or https .
+- HDFS Run the following command to extract metadata from HDFS using the dwh-migration-dumper tool. dwh-migration-dumper \ --connector hdfs \ --host HDFS-HOST \ --port HDFS-PORT \ --output gs:// MIGRATION-BUCKET /hdfs-dumper-output.zip \ --assessment \ Replace the following: HDFS-HOST : the HDFS NameNode hostname HDFS-PORT : the HDFS NameNode port number.
+- Apache Hive query logs Perform the steps in the Apache Hive section Extract query logs with the hadoop-migration-assessment logging hook to extract your Apache Hive query logs.
 

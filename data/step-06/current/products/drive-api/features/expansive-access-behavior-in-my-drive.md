@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:41:51.889Z"
+generated_at: "2026-04-12T12:14:32.794Z"
 product_name: "Drive API"
 product_slug: "drive-api"
 feature_name: "Expansive access behavior in My Drive"
 feature_slug: "expansive-access-behavior-in-my-drive"
 latest_feature_date: "2025-02-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access"
   - "https://developers.google.com/workspace/drive/api/guides/about-sdk"
+  - "https://developers.google.com/workspace/drive/api/guides/about-shareddrives"
   - "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives"
 keywords:
   - "expansive"
@@ -26,7 +27,7 @@ keywords:
 # Expansive access behavior in My Drive
 
 Product: Drive API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Drive API lets clients opt into expansive access behavior in My Drive by setting
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/drive/api/guides/limited-expansive-access](https://developers.google.com/workspace/drive/api/guides/limited-expansive-access)
 - [https://developers.google.com/workspace/drive/api/guides/about-sdk](https://developers.google.com/workspace/drive/api/guides/about-sdk)
+- [https://developers.google.com/workspace/drive/api/guides/about-shareddrives](https://developers.google.com/workspace/drive/api/guides/about-shareddrives)
 - [https://developers.google.com/workspace/drive/api/guides/enable-shareddrives](https://developers.google.com/workspace/drive/api/guides/enable-shareddrives)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/limited-expansive-access](https://developers.google.com/workspace/drive/api/guides/limited-expansive-access)
 - Source ID: `site-docs-root`
-- Final score: 216
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 250
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Developers can opt in to expansive access API behavior in My Drive ahead of any future mandatory enforcement.
@@ -66,8 +68,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/about-sdk](https://developers.google.com/workspace/drive/api/guides/about-sdk)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: N/A
+- Final score: 212
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - These terms define the key components shown in Figure 1: Google Drive Google's cloud file storage service provides users with a personal storage space, called My Drive , and the option to access collaborative shared folders, called shared drives .
@@ -75,13 +78,27 @@ Evidence snippets:
 - Apply labels to Drive files, set label field values, read label field values on files, and search for files using label metadata terms defined by the custom label taxonomy.
 - Create a dedicated Drive folder to store application-specific data so the app cannot access all the user's content stored in Drive.
 
+### Shared drives overview \_|\_ Google Drive \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/drive/api/guides/about-shareddrives](https://developers.google.com/workspace/drive/api/guides/about-shareddrives)
+- Source ID: `site-docs-root`
+- Final score: 201
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Related topics Manage folders with limited and expansive access Create a shortcut to a Drive file How file access works in shared drives Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Roles for shared drives As with items in My Drive, each user in a shared drive is granted access with a specific role.
+- Compare member and file access There are two classes of permissions in shared drives: Member permissions are for users who have been granted access to the shared drive, either directly or through a group.
+- Members have access to all files within the shared drive, with the access level depending on the role given to the member, such as commenter or reader .
+
 ### Implement shared drive support \_|\_ Google Drive \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/enable-shareddrives](https://developers.google.com/workspace/drive/api/guides/enable-shareddrives)
 - Source ID: `site-docs-root`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 191
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following query modes are specific to shared drives: includeItemsFromAllDrives corpora Query description true user Queries files that the user has accessed, including both shared drive and My Drive files. true domain Queries files that are shared to the domain, including both shared drive and My Drive files. true drive Queries all items in the specified shared drive.

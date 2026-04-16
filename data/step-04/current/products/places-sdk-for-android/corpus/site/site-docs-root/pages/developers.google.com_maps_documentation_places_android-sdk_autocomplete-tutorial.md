@@ -5,7 +5,7 @@ url: https://developers.google.com/maps/documentation/places/android-sdk/autocom
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/places/android-sdk
+entrypoint: https://developers.google.com/maps/documentation/places/android-sdk/overview
 source_metadata:
   url: https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial
   title: "Add Place Autocomplete to an address form \_|\_ Places SDK for Android \_\
@@ -562,6 +562,6 @@ lite mode to provide limited
 interactivity.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-09 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["The system utilizes the Google Maps Platform to enhance address input and validation. Key actions include: using Place Autocomplete to predict addresses as users type, extracting detailed address components from selections, and automatically populating form fields. The selected address is then displayed on a map for visual confirmation. It also compares the entered location with the user's actual device location. The workflow involves launching an autocomplete intent, retrieving a `Place` object, extracting components, populating forms, and updating the map with a marker. It also requests permissions to access device location.\n"]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],["The system utilizes the Google Maps Platform to enhance address input and validation. Key actions include: using Place Autocomplete to predict addresses as users type, extracting detailed address components from selections, and automatically populating form fields. The selected address is then displayed on a map for visual confirmation. It also compares the entered location with the user's actual device location. The workflow involves launching an autocomplete intent, retrieving a `Place` object, extracting components, populating forms, and updating the map with a marker. It also requests permissions to access device location.\n"]]

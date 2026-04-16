@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.029Z"
+generated_at: "2026-04-12T12:11:19.227Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer Python 3.11.8 runtime"
 feature_slug: "cloud-composer-python-3-11-8-runtime"
 latest_feature_date: "2024-04-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
+  - "https://docs.cloud.google.com/python/docs/reference/composer/latest"
 keywords:
   - "composer"
   - "python"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer Python 3.11.8 runtime
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Python 3.11.8 is now supported in Cloud Composer environments running Airflow 2.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- [https://docs.cloud.google.com/python/docs/reference/composer/latest](https://docs.cloud.google.com/python/docs/reference/composer/latest)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - Source ID: `site-iam-reference`
-- Final score: 216
+- Final score: 267
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 198
+- Final score: 244
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,30 @@ Evidence snippets:
 - Available upgrade choices in Cloud Composer 2 In Google Cloud console, you can create a new environment or upgrade an existing environment only using one of the latest supported versions of Cloud Composer 2.
 - This means the Google Cloud console indicates a support end date that is one year after the image was released in your specific region, based on Cloud Composer version deprecation and support periods .
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 192
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
+- Source ID: `site-iam-reference`
+- Final score: 224
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- December 16, 2024 Feature Cloud Composer 3 is now generally available (GA) : All Airflow builds starting from airflow-2.9.3-build.11 and airflow-2.10.2-build.4 are supported at the GA level.
-- Change Cloud Composer 2.1.14 and 1.20.12 images are available: composer-2.1.14-airflow-2.5.1 composer-2.1.14-airflow-2.4.3 (default) composer-2.1.14-airflow-2.3.4 composer-1.20.12-airflow-2.4.3 composer-1.20.12-airflow-2.3.4 composer-1.20.12-airflow-1.10.15 April 18, 2023 Feature Java Runtime in Airflow workers and schedulers is updated from version 11 to version 17 .
-- Change Cloud Composer 2.5.3 images are available: composer-2.5.3-airflow-2.5.3 composer-2.5.3-airflow-2.6.3 (default) December 01, 2023 Feature (Available without upgrading) The dags list-import-errors Airflow CLI command is now supported.
-- Composer users can now use Dataflow Operators with Python 2 and 3. (Airflow 1.10.3 only.) Fixed an issue with App Engine health check errors when creating environments with Composer version 1.7.5 or lower.
+- Users with the composer.environments.update permission can execute Python code on behalf of the environment's service account when installing packages in your environment.
+- Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 This page describes how to install Python packages for your Cloud Composer environment.
+- To install custom PyPI packages from an Artifact Registry repository: Create a pip.conf file and include the following information in the file, if applicable: URL of the Artifact Registry repository (in the index-url parameter) Access credentials for the repository Non-default pip installation options For an Artifact Registry repository, append /simple/ to the repository URL: [global] index-url = https://us-central1-python.pkg.dev/example-project/example-repository/simple/ (Optional) In some cases, you might want to fetch packages from multiple repositories, such as when your Artifact Registry repository contains some specific packages that you want to install, and you want to install all other packages from PyPI: Configure an Artifact Registry virtual repository .
+- Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.softwareConfig.pypiPackages.EXAMPLE PACKAGE, // config.softwareConfig.pypiPackages.ANOTHER PACKAGE { "config" : { "softwareConfig" : { "pypiPackages" : { "EXAMPLE PACKAGE" : "" , "ANOTHER PACKAGE" : ">=1.10.3" } } } } Terraform The pypi packages block in the software config block specifies packages. resource "google composer environment" "example" { name = " ENVIRONMENT NAME " region = " LOCATION " config { software config { pypi packages = { PACKAGE NAME = " EXTRAS AND VERSION " } } } } Replace: ENVIRONMENT NAME with the name of the environment.
+
+### "Python Client for Cloud Composer \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/composer/latest](https://docs.cloud.google.com/python/docs/reference/composer/latest)
+- Source ID: `site-python-reference`
+- Final score: 220
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Environment-Based Examples Enabling the default handler for all Google-based loggers export GOOGLE SDK PYTHON LOGGING SCOPE=google Enabling the default handler for a specific Google module (for a client library called library v1 ): export GOOGLE SDK PYTHON LOGGING SCOPE=google.cloud.library v1 Advanced, code-based configuration You can also configure a valid logging scope using Python’s standard logging mechanism.
+- Mac/Linux python3 -m venv <your-env> source <your-env>/bin/activate pip install google-cloud-orchestration-airflow Windows py -m venv <your-env> .\<your-env>\Scripts\activate pip install google-cloud-orchestration-airflow Next Steps Read the Client Library Documentation for Cloud Composer to see other available methods on the client.
+- Version latest keyboard arrow down 1.19.0 (latest) 1.18.0 1.17.5 1.16.1 1.15.1 1.14.0 1.13.1 1.12.2 1.11.1 1.10.0 1.9.1 1.8.0 1.7.1 1.6.1 1.5.0 1.4.4 1.3.2 1.2.1 1.1.0 1.0.0 0.1.3 Cloud Composer : is a managed Apache Airflow service that helps you create, schedule, monitor and manage workflows.
+- Python >= 3.7, including 3.14 Unsupported Python Versions Python <= 3.6 If you are using an end-of-life version of Python, we recommend that you update as soon as possible to an actively supported version.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:38.920Z"
+generated_at: "2026-04-12T12:17:32.203Z"
 product_name: "Integration Connectors"
 product_slug: "integration-connectors"
 feature_name: "Google services connector OAuth 2.0 scope selection"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-09-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/integration-connectors/docs/custom-connectors"
-  - "https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
 keywords:
   - "services"
   - "connector"
@@ -38,45 +39,70 @@ Google services connectors let you select OAuth 2.0 authorization code scopes fr
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/reference/rest](https://docs.cloud.google.com/integration-connectors/docs/reference/rest)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure)
 
 ## Supporting Pages
 
-### Custom connectors | Integration Connectors | Google Cloud Documentation
+### Apigee API hub \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- Source ID: `site-docs-root`
-- Final score: 144
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Custom connectors Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/custom-connectors This page provides an overview of the custom connectors feature in Integration Connectors, and assumes that you are familiar with the following concepts:
-
-### Marketplace connectors overview | Integration Connectors | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- Source ID: `site-docs-root`
-- Final score: 136
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Marketplace connectors overview Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview As a partner, when you publish a custom connector as a Marketplace connector, it enhances the visibility and reach of the connector.
-- As a Marketplace consumer, you can use the trusted Google Cloud Marketplace platform to discover and purchase connectors required to build integrations in Application ...
-
-### Connectors API | Integration Connectors | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/reference/rest](https://docs.cloud.google.com/integration-connectors/docs/reference/rest)
-- Source ID: `site-api-reference`
-- Final score: 132
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 265
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Connectors API Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/reference/rest Integration Connectors · Reference · Send feedback · Enables users to create and manage connections to Google Cloud services and third-party business applications using the Connectors interface.
+- Enable the following services: secretmanager.googleapis.com (Secret Manager API) connectors.googleapis.com (Connectors API) To understand how to enable services, see Enabling services .
+- Home Documentation Application development Integration Connectors Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Authorize the connection If you use OAuth 2.0 - authorization code to authenticate the connection, complete the following tasks after you create the connection.
+- If these services or permissions have not been enabled for your project previously, you are prompted to enable them when you configure the connector.
+
+### Azure AD (Entra ID) \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 265
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- OAuth 2.0 Client Credentials connection type Field name Details Location us-central1 Connector Azure AD (Entra ID) Connector version 1 Connection Name azure-ad-client-credentials Enable Cloud Logging Yes Service Account XXXX@serviceaccount Azure Tenant 9b25e811-f983-4982-82e4-263c1ca48112 Minimum number of nodes 2 Maximum number of nodes 50 Authentication Yes OAuth 2.0 - Client credentials with client secret Yes Client Id XXXX Client Secret XXXX Secret version 1 OAuth 2.0 Client credentials with JWT bearer connection type Field name Details Location europe-west1 Connector Azure AD (Entra ID) Connector version 1 Connection Name azure-jwt Enable Cloud Logging Yes Service Account XXXX@serviceaccount Azure Tenant 9b25e811-f983-4982-82e4-263c1ca48112 Minimum number of nodes 2 Maximum number of nodes 50 Authentication Yes OAuth 2.0 - Client credentials with JWT bearer Yes Private Key XXXX Secret version 1 Client Id XXXX When you use the OAuth 2.0 Client credentials with JWT bearer connection type, complete the following tasks: Create a self signed certificate and download both the private key certificate and public key.
+- Azure AD (Auth Code Grant Type) connection type Field name Details Location europe-west1 Connector Azure AD (Entra ID) Connector version 1 Connection Name azure-ad-connection Enable Cloud Logging Yes Service Account XXXX@serviceaccount Azure Tenant 9b25e811-f983-4982-82e4-263c1ca48112 Minimum number of nodes 2 Maximum number of nodes 50 Authentication Yes Azure AD Yes Client Id XXXX Scope https://graph.microsoft.com/user.read Client Secret XXXX Secret version 1 Authorization URL https://login.microsoftonline.com/9bxxxxxxxxx8112/oauth2/v2.0/authorize?prompt=consent Before you specify a value for the Scope field, ensure the following: You must provide User.Read.All and User.Write.All permissions at the connection level and at the Azure App level.
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { "UserId" : "9630c9d7-cf15-4406-8d21-598e41a058cc" } If the action is successful, the FetchAdditionalUserFields task's connectorOutputPayload response parameter has a value similar to the following: [{ "id" : "9630c9d7-cf15-4406-8d21-598e41a058cc" , "deleteddatetime" : null , "accountenabled" : "true" , "agegroup" : null , "businessphones" : "" , "city" : null , "companyname" : null , "consentprovidedforminor" : null , "country" : null , "createddatetime" : "2024-04-12T10:24:42Z" , "creationtype" : null , "department" : null , "displayname" : "Azure AD Test" , "employeehiredate" : null , "employeeid" : null , "employeeleavedatetime" : null , "employeetype" : null , "externaluserstate" : null , "externaluserstatechangedatetime" : null , "faxnumber" : null , "givenname" : null , "imaddresses" : "" , "isresourceaccount" : null , "jobtitle" : null , "lastpasswordchangedatetime" : "2024-05-14T05:07:15Z" , "legalagegroupclassification" : null , "mail" : null , "mailnickname" : "Azure AD Test" , "mobilephone" : null , "officelocation" : null , "onpremisesdistinguishedname" : null , "onpremisesdomainname" : null , "onpremisesimmutableid" : null , "onpremiseslastsyncdatetime" : null , "onpremisessamaccountname" : null , "onpremisessecurityidentifier" : null , "onpremisessyncenabled" : null , "onpremisesuserprincipalname" : null , "othermails" : "" , "passwordpolicies" : null , "postalcode" : null , "preferreddatalocation" : null , "preferredlanguage" : null , "proxyaddresses" : "" , "securityidentifier" : "S-1-12-1-2519779799-1141296917-2388205965-3428360257" , "showinaddresslist" : null , "signinsessionsvalidfromdatetime" : "2024-05-14T05:07:15Z" , "state" : null , "streetaddress" : null , "surname" : null , "usagelocation" : "IN" , "userprincipalname" : "Azure AD Test@z8474.onmicrosoft.com" , "usertype" : "Member" , "aboutme" : null , "birthday" : "0001-01-01T08:00:00Z" , "hiredate" : "0001-01-01T08:00:00Z" , "interests" : "" , "mysite" : null , "pastprojects" : "" , "preferredname" : "" , "responsibilities" : "" , "schools" : "" , "skills" : "" , "assignedlicenses" : "" , "assignedplans" : "[\r\n {\r\n \"assignedDateTime\": \"2024-05-16T10:17:45Z\",\r\n \"capabilityStatus\": \"Deleted\",\r\n \"service\": \"DynamicsNAV\",\r\n \"servicePlanId\": \"3f2afeed-6fb5-4bf9-998f-f2912133aead\"\r\n }\r\n]" , "authorizationinfo certificateuserids" : "" , "identities" : "[\r\n {\r\n \"signInType\": \"userPrincipalName\",\r\n \"issuer\": \"z8474.onmicrosoft.com\",\r\n \"issuerAssignedId\": \"Azure AD Test@z8474.onmicrosoft.com\"\r\n }\r\n]" , "licenseassignmentstates" : "" , "onpremisesextensionattributes extensionattribute1" : null , "onpremisesextensionattributes extensionattribute2" : null , "onpremisesextensionattributes extensionattribute3" : null , "onpremisesextensionattributes extensionattribute4" : null , "onpremisesextensionattributes extensionattribute5" : null , "onpremisesextensionattributes extensionattribute6" : null , "onpremisesextensionattributes extensionattribute7" : null , "onpremisesextensionattributes extensionattribute8" : null , "onpremisesextensionattributes extensionattribute9" : null , "onpremisesextensionattributes extensionattribute10" : null , "onpremisesextensionattributes extensionattribute11" : null , "onpremisesextensionattributes extensionattribute12" : null , "onpremisesextensionattributes extensionattribute13" : null , "onpremisesextensionattributes extensionattribute14" : null , "onpremisesextensionattributes extensionattribute15" : null , "onpremisesprovisioningerrors" : "" , "provisionedplans" : "" , "serviceprovisioningerrors" : "" , "customsecurityattributes" : "{\r\n \"ConnectorTesting\": {\r\n \"@odata.type\": \"#microsoft.graph.customSecurityAttributeValue\",\r\n \"FavouriteSport\": \"cricket\",\r\n \"FavouriteMovie\": \"3 idiots\"\r\n }\r\n}" , "signinactivity lastsignindatetime" : "2024-05-14T07:04:51Z" , "signinactivity lastsigninrequestid" : "ed35b322-d0d9-4fcb-8e71-f9ee7e065e00" , "signinactivity lastnoninteractivesignindatetime" : "2024-05-15T09:00:02Z" , "signinactivity lastnoninteractivesigninrequestid" : "0d4ce88b-710a-440f-a612-f590954d6800" , "signinactivity lastsuccessfulsignindatetime" : "2024-05-15T06:45:42Z" , "signinactivity lastsuccessfulsigninrequestid" : "64643e9d-3468-4e4d-b7c3-8bd316956600" } Note: By default, the entity retrieves the mandatory attributes coming from the Azure AD OData endpoint.
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { "UserId" : "8cbe82b6-0dd5-4f10-bf67-82bf88ac6cb8" , "Levels" : "max" } If the action is successful, the RetrieveManagerChain task's connectorOutputPayload response parameter has a value similar to the following: [{ "id" : "8cbe82b6-0dd5-4f10-bf67-82bf88ac6cb8" , "displayName" : "test1" , "manager" : "{\r\n \"@odata.type\": \"#microsoft.graph.user\",\r\n \"id\": \"9630c9d7-cf15-4406-8d21-598e41a058cc\",\r\n \"deletedDateTime\": null,\r\n \"accountEnabled\": true,\r\n \"ageGroup\": null,\r\n \"businessPhones\": [],\r\n \"city\": null,\r\n \"companyName\": null,\r\n \"consentProvidedForMinor\": null,\r\n \"country\": null,\r\n \"createdDateTime\": \"2024-04-12T10:24:42Z\",\r\n \"creationType\": null,\r\n \"department\": null,\r\n \"displayName\": \"Azure AD Test\",\r\n \"employeeId\": null,\r\n \"employeeHireDate\": null,\r\n \"employeeLeaveDateTime\": null,\r\n \"employeeType\": null,\r\n \"externalUserState\": null,\r\n \"externalUserStateChangeDateTime\": null,\r\n \"faxNumber\": null,\r\n \"givenName\": null,\r\n \"isLicenseReconciliationNeeded\": false,\r\n \"jobTitle\": null,\r\n \"legalAgeGroupClassification\": null,\r\n \"mail\": null,\r\n \"mailNickname\": \"Azure AD Test\",\r\n \"mobilePhone\": null,\r\n \"onPremisesDistinguishedName\": null,\r\n \"onPremisesDomainName\": null,\r\n \"onPremisesImmutableId\": null,\r\n \"onPremisesLastSyncDateTime\": null,\r\n \"onPremisesSecurityIdentifier\": null,\r\n \"onPremisesSamAccountName\": null,\r\n \"onPremisesSyncEnabled\": null,\r\n \"onPremisesUserPrincipalName\": null,\r\n \"otherMails\": [],\r\n \"passwordPolicies\": null,\r\n \"officeLocation\": null,\r\n \"postalCode\": null,\r\n \"preferredDataLocation\": null,\r\n \"preferredLanguage\": null,\r\n \"proxyAddresses\": [],\r\n \"refreshTokensValidFromDateTime\": \"2024-05-14T05:07:15Z\",\r\n \"imAddresses\": [],\r\n \"isResourceAccount\": null,\r\n \"showInAddressList\": null,\r\n \"securityIdentifier\": \"S-1-12-1-2519779799-1141296917-2388205965-3428360257\",\r\n \"signInSessionsValidFromDateTime\": \"2024-05-14T05:07:15Z\",\r\n \"state\": null,\r\n \"streetAddress\": null,\r\n \"surname\": null,\r\n \"usageLocat ...[too long to view on UI.
+
+### BigQuery \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 265
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The results of all the entity operations and actions will be available as a JSON response in the Connectors task's connectorOutputPayload response parameter after you run your integration.
+- Enable the following services: secretmanager.googleapis.com (Secret Manager API) connectors.googleapis.com (Connectors API) To understand how to enable services, see Enabling services .
+- Home Documentation Application development Integration Connectors Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Authorize the connection If you use OAuth 2.0 - authorization code to authenticate the connection, complete the following tasks after you create the connection.
+
+### Box \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 265
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- OAuth authorization code connection type Field name Details Location us-central1 Connector Box Connector version 1 Connection Name box-conn Enable Cloud Logging yes Service Account XXXX@serviceaccount Impersonate User Mode User Authorization OAuth 2.0 - Authorization code Minimum number of nodes 2 Maximum number of nodes 2 Client ID XXXX Scopes root readwrite Client Secret XXXX Secret Version 1 For information about Box OAuth configuration, see Create your OAuth application .
+- OAuth JWT token method connection type Field name Details Location us-central1 Connector Box Connector version 1 Connection Name box-conn Enable Cloud Logging yes Service Account XXXX@serviceaccount Impersonate User Mode User Minimum number of nodes 2 Maximum number of nodes 2 Authentication JWT Authentication Client ID XXXX Client Secret XXXX Secret Version 1 Private key XXXX Secret Version 1 Private key Password XXXX Secret Version 1 Box Application Access level Enterprise Enterprise ID/User Id XXXX OAuth JWT Public Key Id XXXX Auth Scheme OAuthJWT Initiatiate OAuth GETANDREFRESH OAuth JWT Cert Type PEMKEY BLOB You can access the Client ID, Client Secret, Box Application Access Level, and Enterprise Id/User Id from the Box account.
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { "ItemId" : "1253997361112" , "ItemType" : "file" , "Action" : "review" , "Message" : "Creating a task from Google Cloud Platform" , "DueAt" : "2023-12-12 09:01:15.0" , "CompletionRule" : "all assignees" } If the integration is successful, the Folder task's connectorOutputPayload response parameter will have a value similar to the following: { "Id" : "1253997361112" } Example - Create taskassignments In the Configure connector task dialog, click Entities .
+- OAuth Client Credentials connection type Field name Details Location us-central1 Connector Box Connector version 1 Connection Name oauth-clientcred-conn Enable Cloud Logging yes Service Account XXXX@serviceaccount Impersonate User Mode User As User Id XXXX Minimum number of nodes 2 Maximum number of nodes 2 Authentication OAuth Client Credentials OAuth Client ID XXXX OAuth Client Secret XXXX Secret Version 1 Subject ID XXXX Box Application Access Level enterprise You can access Client ID, Client Secret, Box Application Access Level, and Enterprise Id/User Id from the Box account.
 

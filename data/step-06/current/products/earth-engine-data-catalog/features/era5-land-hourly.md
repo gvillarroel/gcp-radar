@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.709Z"
+generated_at: "2026-04-14T15:13:19.866Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "ERA5-Land Hourly"
 feature_slug: "era5-land-hourly"
 latest_feature_date: "2020-11-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/climate"
   - "https://developers.google.com/earth-engine/datasets/tags/precipitation"
@@ -24,7 +24,7 @@ keywords:
 # ERA5-Land Hourly
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,7 +36,7 @@ Hourly ECMWF ERA5-Land climate reanalysis data.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -50,7 +50,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
 - Source ID: `site-docs-root`
-- Final score: 156
+- Final score: 185
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -63,7 +63,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/precipitation](https://developers.google.com/earth-engine/datasets/tags/precipitation)
 - Source ID: `site-docs-root-3`
-- Final score: 130
+- Final score: 159
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -76,7 +76,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/temperature](https://developers.google.com/earth-engine/datasets/tags/temperature)
 - Source ID: `site-docs-root`
-- Final score: 130
+- Final score: 159
 - Re-rank relevance: N/A
 
 Evidence snippets:

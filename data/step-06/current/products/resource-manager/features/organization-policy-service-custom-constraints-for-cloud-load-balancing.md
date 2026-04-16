@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:52.976Z"
+generated_at: "2026-04-15T13:51:00.063Z"
 product_name: "Resource Manager"
 product_slug: "resource-manager"
 feature_name: "Organization Policy Service custom constraints for Cloud Load Balancing"
@@ -9,18 +9,18 @@ latest_feature_date: "2024-12-16"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies"
-  - "https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest"
-  - "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+  - "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+  - "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+  - "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints"
 keywords:
   - "organization"
   - "policy"
   - "custom"
   - "constraints"
-  - "for"
   - "load"
   - "balancing"
   - "let"
+  - "you"
 ---
 
 # Organization Policy Service custom constraints for Cloud Load Balancing
@@ -42,41 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies](https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies)
-- [https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest](https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest)
-- [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
+- [https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies](https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies)
+- [https://docs.cloud.google.com/resource-manager/docs/custom-constraints](https://docs.cloud.google.com/resource-manager/docs/custom-constraints)
+- [https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints](https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints)
 
 ## Supporting Pages
 
-### REST Resource: organizations.policies | Resource Manager | Google Cloud Documentation
+### "Create custom constraints for Essential Contacts \_|\_ Resource Manager\
 
-- URL: [https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies](https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies)
-- Source ID: `site-docs-reference`
-- Final score: 70
+- URL: [https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies](https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies)
+- Source ID: `site-docs-reference-2`
+- Final score: 175
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- REST Resource: organizations.policies Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/organizations.policies Documentation · Security · Resource Manager · Reference · Send feedback · Resource: Policy · JSON representation · Methods · Defines an organization policy which is used to specify constraints for configurations of Google Cloud resources.
+- This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: essentialcontacts.googleapis.com/Contact To learn more about Organization Policy, see Custom organization policies .
+- However, if you want more granular, customizable control over the specific fields that are restricted in your organization policies, you can also create custom constraints and use those custom constraints in an organization policy.
+- Test the policy Try creating a contact for a different category: gcloud essential-contacts create --email = randomemail@example.com --language = en --notification-categories = security The output is similar to the following: (gcloud.essential-contacts.create) FAILED PRECONDITION: Precondition check failed. - '@type': type.googleapis.com/google.rpc.ErrorInfo domain: iam.googleapis.com metadata: customConstraints: customConstraints/custom.onlyTechnicalNotificationsAllowed reason: CUSTOM ORG POLICY VIOLATION - '@type': type.googleapis.com/google.rpc.DebugInfo detail: '[ORIGINAL ERROR] generic::failed precondition: com.google.apps.framework.auth.IamFailedPreconditionException: Operation denied by custom org policy: ["customConstraints/custom.onlyTechnicalNotificationsAllowed": "The contact can only be subscribed to technical notifications."]. [google.rpc.error details ext] { details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "CUSTOM ORG POLICY VIOLATION" domain: "iam.googleapis.com" metadata { key: "customConstraints" value: "customConstraints/custom.onlyTechnicalNotificationsAllowed" } } } }' Essential Contacts supported resources The following table lists the Essential Contacts resources that you can reference in custom constraints.
+- Before you begin, you need to know the following: Your organization ID A project ID Create the constraint Save the following file as constraint-technical-notification.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.onlyTechnicalNotificationsAllowed resourceTypes : - essentialcontacts.googleapis.com/TechnicalNotifications methodTypes : - CREATE - UPDATE condition : "resource.notificationCategorySubscriptions \ [0 \ ] == 'TECHNICAL' && resource.notificationCategorySubscriptions.size()==1" actionType : ALLOW displayName : TechnicalNotifications description : The contact can only be subscribed to technical notifications.
 
-### Organization Policy API | Resource Manager | Google Cloud Documentation
+### "Manage resources with custom constraints \_|\_ Resource Manager \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest](https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest)
-- Source ID: `site-docs-reference`
-- Final score: 64
+- URL: [https://docs.cloud.google.com/resource-manager/docs/custom-constraints](https://docs.cloud.google.com/resource-manager/docs/custom-constraints)
+- Source ID: `site-docs-reference-2`
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Organization Policy API Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/reference/orgpolicy/rest Documentation · Security · Resource Manager · Reference · Send feedback · The Organization Policy API allows users to configure governance rules on their Google Cloud resources across the resource hierarchy.
-- REST Resource: v2.folders.constraints · REST Resource: v2.folders.policies ·
+- Test the policy Create a project with project ID sampleDemoProject in the organization: gcloud projects create sampleDemoProject \ --organization = ORGANIZATION ID The output is the following: PERMISSION DENIED: The caller does not have permission Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints.
+- This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: cloudresourcemanager.googleapis.com/Project cloudresourcemanager.googleapis.com/Folder To learn more about Organization Policy, see Custom organization policies .
+- However, if you want more granular, customizable control over the specific fields that are restricted in your organization policies, you can also create custom constraints and use those custom constraints in an organization policy.
+- Create the constraint To define a constraint that denies all project create and updates if the project ID does not start with dev , create the constraint-allow-dev-projects.yaml with the following contents: name : organizations/ ORGANIZATION ID /customConstraints/custom.allowProjectForDevIdOnly resourceTypes : - cloudresourcemanager.googleapis.com/Project methodTypes : - CREATE - UPDATE condition : "resource.projectId.startsWith(\"dev \")" actionType : ALLOW displayName : Allow dev projects description : All projects in the org should start with dev .
 
-### Access control for organization resources with IAM | Resource Manager | Google Cloud Documentation
+### "Manage Google Cloud security baseline constraints \_|\_ Resource Manager\
 
-- URL: [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
+- URL: [https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints](https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints)
 - Source ID: `site-iam-reference`
-- Final score: 58
+- Final score: 161
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control for organization resources with IAM Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/access-control-org Control IAM access for organization resources.
-- Manage allow policies, grant roles, apply Organization Policy, and test permissions.
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage organization policies: orgpolicy.constraints.list orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set You might also be able to get these permissions with custom roles or other predefined roles .
+- Restrict identities by domain constraints/iam.allowedPolicyMemberDomains Limit resource sharing to identities that belong to a particular organization resource or Google Workspace customer ID.
+- Disable organization policies To disable or delete an organization policy, run the following command: gcloud org-policies delete CONSTRAINT NAME --organization = ORGANIZATION ID Replace the following: CONSTRAINT NAME : the name of the organization policy constraint that you want to delete—for example, iam.allowedPolicyMemberDomains ORGANIZATION ID : the unique identifier of your organization What's next For more information about creating and managing organization policies, see Using constraints .
+- Organization policy name Organization policy constraint Description Impact of enforcement Disable service account key creation constraints/iam.managed.disableServiceAccountKeyCreation Prevent users from creating persistent keys for service accounts.
 

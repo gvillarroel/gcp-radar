@@ -5,470 +5,359 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 216
-Unique features: 460
+Unique features: 349
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
-| 2026-03-12 | AddOnsResponseService |  | AddOnsResponseService enables Apps Script developers to create and manage interactive responses for Google Workspace add-ons that extend Google Chat. |
-| 2026-03-05 | Maps service API key authentication methods |  | Authentication to the Maps service is now supported via setAuthenticationByKey(apiKey), setAuthenticationByKey(apiKey, signingKey), and resetAuthenticationApiKey(). |
-| 2026-03-05 | Maps service setAuthentication(clientId | 2026-05-31 | The Maps service method setAuthentication(clientId, signingKey) is deprecated and scheduled for removal; deprecated on 2026-05-31. |
-| 2026-03-05 | signingKey) method | 2026-05-31 | The Maps service method setAuthentication(clientId, signingKey) is deprecated and scheduled for removal; deprecated on 2026-05-31. |
-| 2026-01-12 | Vertex AI advanced service |  | Apps Script’s Vertex AI advanced service is generally available for calling Vertex AI APIs and using models to generate outputs. |
-| 2025-06-04 | Apps Script Google Analytics Management API advanced service | 2025-06-04 | The Apps Script Advanced Service for Google Analytics Management API is deprecated and replaced by the Google Analytics Data API Advanced Service; deprecated on 2025-06-04. |
-| 2025-06-04 | Apps Script Google Analytics Reporting API advanced service | 2025-06-04 | The Apps Script Advanced Service for Google Analytics Reporting API is deprecated and replaced by the Google Analytics Data API Advanced Service; deprecated on 2025-06-04. |
-| 2025-04-08 | Forms Service setPublished method |  | The Forms Service can now publish forms and control respondent access through the setPublished method. |
-| 2025-01-08 | AuthorizationInfo.getAuthorizedScopes method |  | AuthorizationInfo.getAuthorizedScopes() was added to retrieve the OAuth scopes granted to a script. |
-| 2025-01-08 | Granular OAuth consent in Apps Script IDE |  | Apps Script IDE executions now support granular OAuth permissions, allowing users to authorize selected OAuth scopes. |
-| 2025-01-08 | ScriptApp.getAuthorizationInfo method |  | ScriptApp.getAuthorizationInfo(authMode, oAuthScopes) was added to retrieve authorization details for a script execution context. |
-| 2025-01-08 | ScriptApp.requireAllScopes method |  | ScriptApp.requireAllScopes(authMode) was added to enforce authorization for all required OAuth scopes. |
-| 2025-01-08 | ScriptApp.requireScopes method |  | ScriptApp.requireScopes(authMode, oAuthScopes) was added to request specific OAuth scopes programmatically. |
-| 2024-12-09 | Calendar event transparency control |  | Calendar event transparency (Busy/Available) can now be read and set via Apps Script. |
-| 2024-12-09 | CellImage.getUrl method | 2024-12-09 | CellImage.getUrl() in the Spreadsheet service is deprecated; deprecated on 2024-12-09. |
-| 2024-12-09 | CellImageBuilder.getUrl method | 2024-12-09 | CellImageBuilder.getUrl() in the Spreadsheet service is deprecated; deprecated on 2024-12-09. |
-| 2024-12-09 | OverGridImage.getUrl method | 2024-12-09 | OverGridImage.getUrl() in the Spreadsheet service is deprecated; deprecated on 2024-12-09. |
-| 2024-12-09 | Spreadsheet.getSheetById method |  | Spreadsheet.getSheetById() was added to retrieve a sheet by its unique ID. |
-| 2024-11-27 | Calendar event getEventType method |  | Calendar service now exposes getEventType() to identify event types such as out-of-office and working location. |
-| 2024-09-03 | DataSourceSpec.asLooker() |  | The DataSourceSpec.asLooker() method is added to produce Looker-based data source specifications. |
-| 2024-09-03 | DataSourceSpecBuilder.asLooker() |  | The DataSourceSpecBuilder.asLooker() method is added to create Looker-oriented data source specs through a builder pattern. |
-| 2024-09-03 | LOOKER data source type in Spreadsheet service |  | Apps Script Spreadsheet service adds support for a new LOOKER data source type for connected sheet data integrations. |
-| 2024-09-03 | Looker integration in Connected Sheets via Apps Script |  | Apps Script can create or access Looker data source connections and use them in Connected Sheets with sheet links and pivot-table workflows. |
-| 2024-09-03 | LookerDataSourceSpec |  | A new LookerDataSourceSpec class is added to represent Looker-specific spreadsheet data source specifications. |
-| 2024-09-03 | LookerDataSourceSpecBuilder |  | A new LookerDataSourceSpecBuilder class is introduced for constructing Looker spreadsheet data source specifications. |
-| 2024-08-15 | Docs tab creation and organization in Apps Script |  | Apps Script Document service now supports creating and organizing tabs in Google Docs documents. |
-| 2024-07-25 | Add-ons columns control support |  | Columns controls are now generally available for Apps Script add-ons. |
-| 2024-07-25 | Add-ons multiselect menu support |  | Multiselect menus are now generally available for Apps Script add-ons. |
-| 2024-05-02 | Advanced Google Workspace Events service |  | Apps Script can now subscribe to events through the Advanced Google Workspace Events service. |
-| 2024-04-30 | DataSource.cancelAllLinkedDataSourceObjectRefreshes() |  | The cancelAllLinkedDataSourceObjectRefreshes() method is added to DataSource to cancel all running refreshes for linked data source objects. |
-| 2024-04-30 | SpreadsheetService.cancelDataRefresh() |  | The cancelDataRefresh() method is added to spreadsheet data source objects to stop a currently running data refresh. |
-| 2024-04-22 | Google Chat Card Service support in Apps Script |  | Google Chat apps can use Apps Script's Card Service to build card-based interfaces such as messages and dialogs; Google Chat apps begin supporting Apps Script's Card Service in Developer Preview for card-based UI development. |
-| 2024-03-07 | Bulk deletion of unused Apps Script versions |  | Projects can now delete multiple unused versions at once from the Project History page. |
-| 2024-03-05 | LinkPreview class in Apps Script Card Service |  | The LinkPreview class is added to Apps Script Card Service for controlling link preview card metadata. |
-| 2024-02-21 | Add-ons columns control developer preview |  | Columns support for add-ons enters Developer Preview in Apps Script. |
-| 2024-02-21 | Add-ons multiselect menu developer preview |  | Multiselect menu support for add-ons enters Developer Preview in Apps Script. |
-| 2024-01-24 | Google Workspace Add-ons @ menu third-party resource creation in Google Docs |  | Google Workspace Add-ons can create third-party resources from the @ menu in Google Docs; Google Workspace Add-ons can create third-party resources from the @ menu in Google Docs via developer preview availability. |
-| 2024-01-18 | Google Workspace Add-ons link previews in Google Sheets and Google Slides |  | Google Workspace Add-ons now support link previews in Google Sheets and Google Slides; Google Workspace Add-ons support link previews in Google Sheets and Google Slides as part of the Developer Preview program. |
-| 2023-12-13 | Apps Script Card service Action.setPersistValues method |  | The Action class in Apps Script Card service now includes setPersistValues(persistValues) to control whether form values come from the client or server after an action response. |
-| 2023-12-11 | Apps Script Advanced Drive service Drive API v3 support |  | Apps Script can now call version 3 of the Google Drive API through the Advanced Drive service. |
-| 2023-12-06 | Apps Script IDE version deletion from project history |  | Users can delete script versions from the Project History page in the Apps Script IDE. |
-| 2023-11-06 | Apps Script Advanced Chat Service for Google Chat API |  | Apps Script can call the Google Chat API via the Advanced Chat Service. |
-| 2023-09-19 | Apps Script classic Google Sites service | 2023-09-19 | The classic Google Sites service in Apps Script was deprecated with the platform transition to new Sites; deprecated on 2023-09-19. |
-| 2023-08-23 | Apps Script project version comparison in IDE history |  | Apps Script now lets users view and compare previously deployed script versions against the current version in the IDE project history. |
-| 2023-06-12 | Google Workspace Add-on third-party smart chips |  | Google Workspace Add-ons can now use third-party smart chips. |
-| 2023-06-12 | Google Workspace Add-ons link previews |  | Google Workspace Add-ons now support link previews as a generally available capability. |
-| 2022-12-16 | Apps Script Contacts service | January 2025 | The Contacts service in Apps Script was deprecated, with migration recommended to the People API advanced service; deprecated on January 2025. |
-| 2022-11-03 | Utilities.parseDate |  | Adds the Utilities.parseDate(date, timeZone, format) method for parsing date strings using Java SimpleDateFormat-style patterns. |
-| 2022-11-01 | getChatThreads method | 2022-11-01 | Deprecates the getChatThreads() Chat API methods, including the getChatThreads(start, max) overload, with no Apps Script replacement provided; Marks the getChatThreads() and getChatThreads(start, max) methods as deprecated, with no replacement method available in Apps Script; deprecated on 2022-11-01. |
-| 2022-09-27 | Legacy Apps Script IDE | 2022-09-27 | Turns down the legacy Apps Script integrated development environment in favor of the redesigned IDE; deprecated on 2022-09-27. |
-| 2022-04-13 | Alphabetical file sorting in Apps Script editor |  | Adds support for sorting files alphabetically in the new Apps Script editor. |
-| 2022-04-13 | Rhino function debugging in V8 migration-free mode |  | Enables debugging Rhino functions in the new IDE without requiring migration to the V8 runtime. |
-| 2022-04-13 | Script project time zone configuration in Apps Script IDE |  | Adds the ability to set a time zone for a script project from the new Apps Script IDE. |
-| 2022-04-13 | Script property management in Apps Script IDE |  | Adds the ability to add, edit, and delete script properties from the project settings page in the new IDE. |
-| 2022-04-13 | Test deployments for Editor add-ons in Apps Script IDE |  | Allows creating test deployments for Editor add-ons in the new Apps Script IDE. |
-| 2022-03-24 | Card Service Attachment class |  | Introduces an Attachment class in Card Service for adding custom attachments to Google Calendar events in Workspace add-ons. |
-| 2022-03-24 | EventAttachmentTrigger |  | Adds an event trigger that fires when users click an add-on attachment provider in the Calendar event attachment menu. |
-| 2022-03-18 | Spreadsheet Service color getter Object() migration | 2022-03-18 | Deprecates old Spreadsheet Service color getter methods such as getFontColor(), getTabColor(), and related methods, replacing them with Object-suffixed methods like getFontColorObject() and getTabColorObject(); deprecated on 2022-03-18. |
-| 2022-02-14 | External editor edit email alerts |  | Notifies script project owners by email when users outside the owner's organization edit container-bound or standalone scripts in the new IDE. |
-| 2022-01-19 | Spreadsheet cell image support |  | Adds CellImageBuilder and CellImage support, plus SpreadsheetApp.newCellImage(), to create and place image values in spreadsheet cells via Range methods. |
-| 2021-12-15 | TLS 1.0/1.1 support in Apps Script JDBC | 2021-12-15 | Disables TLS 1.0 and TLS 1.1 for JDBC connections and requires TLS 1.2 or higher; deprecated on 2021-12-15. |
-| 2021-09-01 | HTML Service iframe sandbox top-navigation control |  | Replaces the iframe sandbox's allow-top-navigation behavior with allow-top-navigation-by-user-activation, enabling top-level navigation only through user action. |
-| 2021-08-31 | Drive resource-key sharing methods |  | Adds getSecurityUpdateEligible, getSecurityUpdateEnabled, and setSecurityUpdateEnabled methods to Drive file and folder resources to manage resource-key based sharing security. |
-| 2021-08-23 | Document Service Date smart chip class |  | Adds a Date smart chip class for representing formatted date chips in Google Docs. |
-| 2021-08-23 | Document Service Person smart chip class |  | Adds a Person smart chip class for representing a linked person chip in Google Docs. |
-| 2021-08-23 | Document Service RichLink smart chip class |  | Adds a RichLink smart chip class for representing links to Google resources in Google Docs. |
-| 2021-06-01 | CardService.newDivider |  | Adds the newDivider() method to the Card service for adding divider widgets in Google Workspace add-on cards. |
-| 2021-05-27 | SpreadsheetApp.Sheet.setRowHeightsForced |  | Adds setRowHeightsForced(startRow, numRows, height) to the Sheet class to manually set fixed row heights. |
-| 2020-10-23 | Apps Script Tables advanced service |  | Adds the Tables advanced service to Apps Script for programmatic read/write access to rows in Google Tables. |
-| 2020-09-03 | Spreadsheet service BigQueryDataSourceSpec connected sheets methods |  | Adds Connected Sheets methods to BigQueryDataSourceSpec in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service BigQueryDataSourceSpecBuilder connected sheets methods |  | Adds Connected Sheets methods to BigQueryDataSourceSpecBuilder in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service DataExecutionStatus connected sheets methods |  | Adds Connected Sheets methods to DataExecutionStatus in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service DataSource connected sheets methods |  | Adds Connected Sheets methods to DataSource in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service DataSourceChart class |  | Adds the DataSourceChart class to support Connected Sheets in Apps Script. |
-| 2020-09-03 | Spreadsheet service DataSourceColumn class |  | Adds the DataSourceColumn class to support Connected Sheets in Apps Script. |
-| 2020-09-03 | Spreadsheet service DataSourceFormula class |  | Adds the DataSourceFormula class to support Connected Sheets in Apps Script. |
-| 2020-09-03 | Spreadsheet service DataSourcePivotTable class |  | Adds the DataSourcePivotTable class to support Connected Sheets in Apps Script. |
-| 2020-09-03 | Spreadsheet service DataSourceRefreshSchedule class |  | Adds the DataSourceRefreshSchedule class to support Connected Sheets refresh scheduling in Apps Script. |
-| 2020-09-03 | Spreadsheet service DataSourceRefreshScheduleFrequency class |  | Adds the DataSourceRefreshScheduleFrequency class to support Connected Sheets refresh cadence configuration. |
-| 2020-09-03 | Spreadsheet service DataSourceSheet class |  | Adds the DataSourceSheet class to support Connected Sheets scenarios in Apps Script. |
-| 2020-09-03 | Spreadsheet service DataSourceSheetFilter class |  | Adds the DataSourceSheetFilter class to support Connected Sheets filtering features in Apps Script. |
-| 2020-09-03 | Spreadsheet service DataSourceTable connected sheets methods |  | Adds Connected Sheets methods to DataSourceTable in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service DataSourceTableColumn class |  | Adds the DataSourceTableColumn class to support Connected Sheets table metadata in Apps Script. |
-| 2020-09-03 | Spreadsheet service DataSourceTableFilter class |  | Adds the DataSourceTableFilter class to support Connected Sheets filtering in Apps Script. |
-| 2020-09-03 | Spreadsheet service DateTimeGroupingRule class |  | Adds the DateTimeGroupingRule class to support Connected Sheets date-time grouping behavior in Apps Script. |
-| 2020-09-03 | Spreadsheet service EmbeddedChart connected sheets methods |  | Adds Connected Sheets methods to EmbeddedChart in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service FilterCriteriaBuilder connected sheets methods |  | Adds Connected Sheets methods to FilterCriteriaBuilder in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service PivotFilter connected sheets methods |  | Adds Connected Sheets methods to PivotFilter in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service PivotGroup connected sheets methods |  | Adds Connected Sheets methods to PivotGroup in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service PivotGroupLimit class |  | Adds the PivotGroupLimit class to support Connected Sheets pivot limits in Apps Script. |
-| 2020-09-03 | Spreadsheet service PivotTable connected sheets methods |  | Adds Connected Sheets methods to PivotTable in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service PivotValue connected sheets methods |  | Adds Connected Sheets methods to PivotValue in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service Range connected sheets methods |  | Adds Connected Sheets methods to Range in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service Sheet connected sheets methods |  | Adds Connected Sheets methods to Sheet in the Spreadsheet service. |
-| 2020-09-03 | Spreadsheet service SortSpec class |  | Adds the SortSpec class to support Connected Sheets sorting configuration in Apps Script. |
-| 2020-09-03 | Spreadsheet service Spreadsheet connected sheets methods |  | Adds Connected Sheets methods to Spreadsheet in the Spreadsheet service. |
-| 2020-09-03 | SpreadsheetApp connected sheets methods |  | Adds Connected Sheets methods to SpreadsheetApp for controlling spreadsheet-level Connected Sheets behavior. |
-| 2020-08-27 | Card Service DecoratedText class |  | Adds the DecoratedText class to Card Service as a replacement for KeyValue with optional decorations. |
-| 2020-07-27 | DriveApp.enforceSingleParent |  | Adds DriveApp.enforceSingleParent(value) to control whether files can have multiple parents. |
-| 2020-07-27 | File.getTargetId |  | Adds File.getTargetId() to return the ID of the item a shortcut points to. |
-| 2020-07-27 | File.getTargetMimeType |  | Adds File.getTargetMimeType() to return the MIME type of the item a shortcut references. |
-| 2020-07-27 | File.moveTo |  | Adds File.moveTo(destination) to move a file to a target folder in Drive. |
-| 2020-07-27 | Folder.addFile | 2020-07-27 | Deprecates the Folder.addFile() method in Apps Script; deprecated on 2020-07-27. |
-| 2020-07-27 | Folder.addFolder | 2020-07-27 | Deprecates the Folder.addFolder() method in Apps Script; deprecated on 2020-07-27. |
-| 2020-07-27 | Folder.createShortcut |  | Adds Folder.createShortcut(targetId) to create shortcut files from Drive item IDs. |
-| 2020-07-27 | Folder.moveTo |  | Adds Folder.moveTo(destination) to move an item into a destination folder. |
-| 2020-07-27 | Folder.removeFile | 2020-07-27 | Deprecates the Folder.removeFile() method in Apps Script; deprecated on 2020-07-27. |
-| 2020-07-27 | Folder.removeFolder | 2020-07-27 | Deprecates the Folder.removeFolder() method in Apps Script; deprecated on 2020-07-27. |
-| 2020-06-12 | PivotTable.getSourceDataRange |  | Adds PivotTable.getSourceDataRange() to return the source range used by a pivot table. |
-| 2020-06-12 | PivotValue.remove |  | Adds PivotValue.remove() to remove a value from a pivot table. |
-| 2020-06-12 | RichTextValue.getLinkUrl |  | Adds RichTextValue.getLinkUrl() to retrieve the URL linked to a rich text value. |
-| 2020-06-12 | RichTextValueBuilder.setLinkUrl |  | Adds RichTextValueBuilder.setLinkUrl() to set link URLs on rich text values. |
-| 2020-04-22 | Spreadsheet service onSelectionChange trigger |  | Adds the simple trigger onSelectionChange(e), which fires when a spreadsheet selection changes. |
-| 2020-04-02 | Drive Permission.FILE_ORGANIZER |  | Adds the FILE_ORGANIZER enum value in Drive Permission to grant shared drive organization capabilities. |
-| 2020-04-02 | Spreadsheet service Drawing class and Sheet.getDrawings |  | Adds the Drawing class and support for Sheet.getDrawings() in the Spreadsheet service. |
-| 2020-02-28 | Spreadsheet service Banding Color-object methods |  | Adds multiple Banding class methods in Spreadsheet service for color manipulation using Color objects. |
-| 2020-02-28 | Spreadsheet service BooleanCondition color methods |  | Adds Color-object methods on BooleanCondition for reading background and font colors. |
-| 2020-02-28 | Spreadsheet service ConditionalFormatRuleBuilder Color methods |  | Adds Color-object based methods to ConditionalFormatRuleBuilder for color-based formatting rules. |
-| 2020-02-28 | Spreadsheet service GradientCondition Color methods |  | Adds Color-object methods to GradientCondition for retrieving condition gradient colors. |
-| 2020-02-28 | Spreadsheet service Range Color methods |  | Adds multiple Range methods using Color objects to get and set font/background colors. |
-| 2020-02-28 | Spreadsheet service Sheet tab color methods |  | Adds methods on Sheet to get and set tab colors with Color objects. |
-| 2020-02-28 | Spreadsheet service Slicer Color methods |  | Adds methods on Slicer to get and set background colors with Color objects. |
-| 2020-02-28 | TextStyle.getForegroundColorObject |  | Adds TextStyle.getForegroundColorObject() to retrieve foreground color as a Color object. |
-| 2020-02-28 | TextStyleBuilder.setForegroundColorObject |  | Adds TextStyleBuilder.setForegroundColorObject(color) for setting foreground color via Color objects. |
-| 2020-01-21 | Apps Script Card service widgets and event response builders |  | The Card service added new widget and event-response classes and builder methods, including calendar, drive item, time/date picker, and fixed-footer APIs. |
-| 2020-01-21 | Apps Script Conference Data service |  | The Conference Data service was added to help Calendar G Suite add-ons stay synchronized with third-party conferencing applications. |
-| 2020-01-21 | Apps Script deprecated Gmail add-on manifest fields | 2020-01-21 | Manifest fields that previously supported Gmail add-ons were marked deprecated in favor of the unified AddOns manifest configuration; deprecated on 2020-01-21. |
-| 2020-01-21 | Apps Script G Suite add-ons manifest configuration |  | Apps Script add-on manifests now use the AddOns object to define G Suite add-on configuration controls. |
-| 2019-12-18 | Apps Script Spreadsheet theme APIs |  | Spreadsheet theme support was extended with new theme/color classes and methods for reading and setting spreadsheet theme data. |
-| 2019-12-11 | Apps Script Data Studio dynamic connector response APIs |  | Data Studio connectors gained dynamic response and control capability through new response classes and dynamic flags on input/config components. |
-| 2019-11-06 | Apps Script ScriptApp identity token API |  | ScriptApp.getIdentityToken() was introduced to return an identity token for the effective user. |
-| 2019-11-06 | Apps Script Spreadsheet slicer APIs |  | Spreadsheet support for slicers was added, including APIs to retrieve and insert slicers for filtering ranges, charts, and pivot tables. |
-| 2019-10-28 | Apps Script web app publishing to Chrome Web Store | 2019-10-28 | Publishing Apps Script web apps to the Chrome Web Store was discontinued and previously published web apps are no longer discoverable there; deprecated on 2019-10-28. |
-| 2019-10-23 | Apps Script UiApp service APIs | 2019-10-23 | UiApp-related charts integration classes and methods were removed as part of the UiApp service shutdown; deprecated on 2019-10-23. |
-| 2019-08-07 | Apps Script UI service | 2019-07-15 | The UI service was shut down, and its documentation was removed; The UI service was deprecated, with deprecation scheduled for June 30, 2015; deprecated on 2019-07-15. |
-| 2019-07-26 | Apps Script Group service getRoles API |  | The Groups service added support for retrieving a user’s roles in a group via Groups.getRoles(user). |
-| 2019-07-26 | Apps Script Slides concrete color scheme API |  | The Slides service gained methods to set concrete theme colors on a presentation’s color scheme. |
-| 2019-07-26 | Apps Script Spreadsheet whitespace and duplicate cleanup APIs |  | Spreadsheet range APIs were expanded with methods to trim whitespace and remove duplicate values. |
-| 2019-05-20 | Apps Script Gmail message header retrieval |  | GmailMessage.getHeader(name) was added to retrieve RFC 2822 headers from a message. |
-| 2019-05-20 | Apps Script Optimization batch modeling API |  | Optimization service received new batch methods for adding constraints and variables in the linear optimization engine. |
-| 2019-05-03 | Apps Script Document language APIs |  | Document language support was added with methods to get and set document language codes. |
-| 2019-04-19 | Apps Script Data Studio FieldType enum extension |  | The Data Studio FieldType enum was extended with HYPERLINK, IMAGE, and IMAGE_LINK values. |
-| 2019-04-05 | Apps Script Card service Notification.setType behavior | 2019-04-05 | Notification.setType(type) no longer applies a type and now behaves as a no-op; deprecated on 2019-04-05. |
-| 2019-04-05 | Apps Script Data Studio BigQuery connector configuration |  | Data Studio support was extended with BigQueryConfig and related API methods for building BigQuery connector configuration. |
-| 2019-04-05 | Apps Script Spreadsheet text finder and checkbox APIs |  | Spreadsheet gained APIs for text finding and checkboxes, along with additional chart, validation, and recalculation controls. |
-| 2019-02-26 | Apps Script Data Studio: Field reaggregation settings |  | The Data Studio service gained methods to get and set whether a field can be reaggregated. |
-| 2019-02-26 | Apps Script Spreadsheet service: BigQuery data connectors |  | The Spreadsheet service was extended with BigQuery data source classes and methods to create, configure, and execute BigQuery-backed data connectors in Sheets. |
-| 2019-01-22 | Apps Script Data Studio: Community connector authentication types |  | Data Studio gained classes for representing and returning supported authentication types for community connectors. |
-| 2019-01-22 | Apps Script Spreadsheet service: Rich text and text styling |  | The Spreadsheet service added rich text and text-style APIs for creating and applying rich text formatting to cell ranges. |
-| 2019-01-22 | Apps Script UiApp service | 2019-07-15 | UiApp was deprecated and marked for official shutdown; deprecated on 2019-07-15. |
-| 2019-01-04 | Apps Script Data Studio: Connector error response builders |  | Data Studio added DebugError and UserError APIs to support creating and returning error messages from community connectors. |
-| 2019-01-04 | Apps Script Slides service: Slide linking and text box insertion |  | The Slides service added APIs for slide linking workflows and for inserting text boxes with optional position and sizing controls. |
-| 2018-12-13 | Apps Script Fusion Tables advanced service | 2019-12-03 | The Fusion Tables advanced service was deprecated and scheduled for full shutdown; deprecated on 2019-12-03. |
-| 2018-12-13 | Apps Script Slides service: Connector line APIs |  | The Slides service added APIs to inspect, identify, and configure connector lines and their endpoints/connection sites. |
-| 2018-11-14 | Apps Script Card service: TextButton styling |  | Card service added TextButtonStyle support and methods to control text button background color and disabled state. |
-| 2018-11-14 | Apps Script Slides service: Element z-order and accessibility metadata |  | The Slides service added methods to control page-element stacking order and to set/get element titles and descriptions. |
-| 2018-11-14 | Apps Script Spreadsheet service: Developer metadata |  | Spreadsheet gained developer metadata classes and APIs to add, find, and retrieve metadata associated with spreadsheet objects. |
-| 2018-10-30 | Apps Script console service: Logging methods |  | The console service was extended with error, info, and warn logging methods. |
-| 2018-10-30 | Apps Script Data Studio: Field hidden state |  | Data Studio added APIs to check and set whether a field is marked as hidden. |
-| 2018-10-30 | Apps Script Gmail service: Attachment access helpers |  | Gmail gained methods to obtain attachment hash values and retrieve attachments from messages with options. |
-| 2018-10-30 | Apps Script Spreadsheet service: Images and visibility APIs |  | Spreadsheet added OverGridImage support along with APIs for retrieving sheet images and checking row/column hidden states. |
-| 2018-10-18 | Apps Script Card service: Gmail add-on compose actions |  | The Card service added APIs to support Gmail add-on compose actions for updating draft content and related compose behavior. |
-| 2018-08-20 | Apps Script Utilities service: RSA signature APIs |  | Utilities added RSA signature generation methods and the RsaAlgorithm options for secure hashing workflows. |
-| 2018-06-19 | Apps Script Forms service: Delete form responses |  | Forms added a Form.deleteResponse(responseId) method to remove a specific form response programmatically. |
-| 2018-06-19 | Apps Script UrlFetch service: Daily total data-per-user quota | 2018-06-19 | The UrlFetch total per-user daily data-received quota was removed; deprecated on 2018-06-19. |
-| 2018-06-19 | Apps Script Utilities service: Digest and HMAC APIs |  | Utilities added digest and HMAC/hash signature methods for byte-array inputs with configurable algorithms. |
-| 2018-04-23 | Apps Script Spreadsheet grouping API |  | Added a Spreadsheet Group model and GroupControlTogglePosition enum plus methods for collapsing, expanding, and controlling grouped row and column ranges. |
-| 2018-04-11 | Apps Script Charts embedded chart support |  | Extended the Charts service to support embedded charts in Google Sheets and added new chart types including timeline, bubble, candlestick, gauge, geo, radar, sparkline, stepped area, treemap, and waterfall. |
-| 2018-04-11 | Apps Script Sheets service API expansion |  | Expanded the Sheets service with new classes and range methods to support more script-driven spreadsheet actions such as banding, conditional formatting, filtering, pivot tables, and text/wrap/rotation operations. |
-| 2018-03-26 | ScriptApp.Service.enable(restriction) | 2018-03-26 | Sunset the deprecated ScriptApp.Service.enable(restriction) method and the associated deprecated Service.Restriction enum; deprecated on 2018-03-26. |
-| 2018-03-26 | Spreadsheet setActiveSheet restore-selection overload |  | Added SpreadsheetApp.setActiveSheet(sheet, restoreSelection) and Spreadsheet.setActiveSheet(sheet, restoreSelection) for restoring selection state when switching active sheets. |
-| 2018-02-26 | Calendar event triggers |  | Introduced Calendar event triggers so scripts can detect recently changed events through regular synchronization with the Calendar advanced service. |
-| 2018-02-13 | Slides service content insertion methods |  | Added insertion APIs across Slides classes (Layout, Master, Page, Presentation, Slide, and TextRange) to add groups, media, shapes, tables, charts, and text range content from scripts. |
-| 2018-02-13 | Spreadsheet copy/paste type support |  | Added the CopyPasteType enum and a new Range.copyTo overload that accepts a paste type. |
-| 2018-01-19 | Blob gzip compression APIs |  | Added Utilities APIs to compress and decompress Blob objects using gzip. |
-| 2018-01-19 | UrlFetch batch requests |  | Added UrlFetchApp.fetchAll to perform multiple URL fetch calls in a single invocation. |
-| 2017-10-24 | Apps Script manifest-based project management |  | Enabled direct editing of Apps Script manifests, explicit OAuth scope configuration, and manifest-driven deployment targeting script add-ons, web apps, and API executables. |
-| 2017-10-24 | Gmail add-ons framework and Card service |  | Introduced the Gmail add-ons framework and Card service for building Gmail add-on UIs for desktop and mobile. |
-| 2017-10-10 | Calendar all-day event APIs |  | Added all-day event creation and lookup methods to Calendar services and CalendarEvent.setAllDayDates support. |
-| 2017-10-10 | Groups service membership query APIs |  | Expanded the Groups service with methods to list and check group membership via Group.getGroups and Group.hasGroup. |
-| 2017-10-10 | Spreadsheet autofill and move-range APIs |  | Added auto-fill methods and row/column movement methods in Spreadsheet APIs, including Range.autoFill, Range.autoFillToNeighbor, Sheet.moveColumns, and Sheet.moveRows. |
-| 2017-09-26 | Apps Script Slides service support |  | Introduced Apps Script support for the Google Slides service so scripts can create/edit presentations and build Slides add-ons. |
-| 2017-09-15 | Gmail priority inbox detection |  | Added priority inbox detection methods on GmailMessage and GmailThread via isInPriorityInbox(). |
-| 2017-09-15 | GmailDraft message draft support |  | Added GmailDraft to the Gmail service, enabling scripts to create, edit, delete, and send new drafts and draft replies. |
-| 2017-07-28 | Apps Script Forms Checkbox Grid item |  | Added support for the Checkbox Grid item in the Apps Script Forms service. |
-| 2017-07-28 | Apps Script Spreadsheet.getFormUrl method |  | Added the Spreadsheet.getFormUrl() method to return form response URLs associated with a sheet or spreadsheet. |
-| 2017-07-28 | Apps Script Stackdriver Error Reporting integration |  | Enabled Apps Script to collect exception and error reports through Stackdriver Error Reporting. |
-| 2017-06-20 | Apps Script Range.randomize method |  | Added the Range.randomize() method to randomize the order of rows in a spreadsheet range. |
-| 2017-04-26 | Apps Script Calendar event color API |  | Added Calendar Event color access and assignment through getColor(), setColor(), and EventColor. |
-| 2017-04-26 | Apps Script Combo and Histogram chart support |  | Added support for Combo and Histogram chart types that can be embedded in Google Sheets. |
-| 2017-04-26 | Apps Script Google Forms quiz access in Forms service |  | Made Google Forms quizzes accessible from the Apps Script Forms service. |
-| 2017-03-09 | Apps Script container-bound script ownership model |  | Set container-bound scripts to be owned by the container owner rather than the creator. |
-| 2017-03-09 | Apps Script editor deployment and add-on publishing permissions |  | Enabled script editors (beyond owners) to publish add-ons and deploy scripts as web apps or executables for the Execution API. |
-| 2017-03-09 | Apps Script Shared drives collaboration |  | Introduced Shared Drive support for Apps Script files and scripts with group ownership for collaborative development. |
-| 2016-11-23 | Apps Script Forms validation classes |  | Added validation classes for multiple Google Forms item types, including checkboxes, generic data, grid items, paragraph text, and text items. |
-| 2016-10-19 | Apps Script HtmlService X-Frame-Options header support |  | Added X-Frame-Options header support in HtmlService to allow iframe rendering for Apps Script HTML and web apps. |
-| 2016-07-28 | Apps Script Android add-ons |  | Added support for Google Docs and Sheets add-ons that work on Android. |
-| 2016-07-12 | Apps Script project key deprecation | 2016-07-12 | Deprecated using project keys as script identifiers and designated the Script ID as the preferred unique identifier; deprecated on 2016-07-12. |
-| 2016-07-06 | Apps Script NATIVE sandbox mode | 2016-07-06 | Deprecated the NATIVE sandbox mode by shutting it down and defaulting scripts to IFRAME mode; deprecated on 2016-07-06. |
-| 2016-04-11 | Apps Script UrlFetchApp PATCH support |  | Added support for HTTP PATCH requests in UrlFetchApp. |
-| 2016-03-25 | Apps Script DashboardPanel.add(widget) method | 2016-03-25 | Deprecated the DashboardPanel.add(widget) method in UiApp-related code paths; deprecated on 2016-03-25. |
-| 2016-02-29 | Apps Script NamedRange API |  | Added a new NamedRange type and related API methods for naming, retrieving, setting, and deleting named ranges, including protection association. |
-| 2016-02-29 | Apps Script Spreadsheet tab color methods |  | Added getTabColor() and setTabColor(color) methods in the Spreadsheet API for sheet tab color management. |
-| 2016-02-29 | Apps Script Utilities.getUuid method |  | Added a Utilities.getUuid() method to generate unique identifiers. |
-| 2015-12-10 | Apps Script HTML Service EMULATED sandbox mode | 2015-12-10 | The HTML service’s EMULATED sandbox mode was deprecated, so scripts explicitly requesting it now use IFRAME mode; deprecated on 2015-12-10. |
-| 2015-08-10 | Apps Script ScriptApp Service.enable method | 2015-08-10 | The ScriptApp global method Service.enable() was deprecated as it is no longer needed under the updated Apps Script authorization model; deprecated on 2015-08-10. |
-| 2015-08-04 | Apps Script Spreadsheet warning-only protection methods |  | Spreadsheet protection gained warning-based control with Protection.isWarningOnly() and Protection.setWarningOnly() for protected ranges. |
-| 2015-06-30 | Apps Script Utilities computeRsaSha256Signature methods |  | The Utilities service added computeRsaSha256Signature variants to sign strings with the RSA SHA-256 algorithm. |
-| 2015-05-20 | Apps Script OAuthConfig class | 2015-05-20 | The OAuthConfig class was deprecated in favor of using OAuth libraries; deprecated on 2015-05-20. |
-| 2015-05-20 | Apps Script ScriptApp installation source APIs |  | ScriptApp gained installation metadata methods, ScriptApp.getInstallationSource() and ScriptApp.getProjectKey(). |
-| 2015-05-20 | Apps Script UrlFetchApp OAuth service registration methods | 2015-05-20 | UrlFetchApp.addOAuthService(serviceName) and UrlFetchApp.removeOAuthService(serviceName) were deprecated in favor of OAuth libraries; deprecated on 2015-05-20. |
-| 2015-05-20 | Apps Script web-safe Base64 utilities |  | Utilities gained web-safe Base64 encode and decode methods for string and byte data. |
-| 2015-04-23 | Apps Script DocsList service | 2015-04-23 | The DocsList service was sunset and is no longer functional, with DriveApp as the replacement; The DocsList service was deprecated, with deprecation scheduled for April 20, 2015; deprecated on 2015-04-23. |
-| 2015-03-19 | Apps Script add-on authorization project reassignment |  | Scripts can change the Google Developers Console project used for authorization, enabling Marketplace app and add-on bundling. |
-| 2015-03-19 | Apps Script domain-wide add-on installation |  | Admins can now publish and authorize add-ons for all users in a Google Apps domain via Google Apps Marketplace. |
-| 2015-03-04 | Apps Script URL Fetch OAuthConfig class | 2015-03-04 | The URL Fetch OAuthConfig class for OAuth 1.0 connections was deprecated in favor of the OAuth1 open source library; deprecated on 2015-03-04. |
-| 2015-02-10 | Apps Script FontFamily enum | 2015-02-10 | The FontFamily enum was deprecated as Text font APIs moved to string-based font-family values; deprecated on 2015-02-10. |
-| 2015-02-10 | Apps Script legacy sheet protection APIs | 2015-02-10 | The legacy PageProtection class and related getSheetProtection/setSheetProtection methods were deprecated in favor of Protection APIs; deprecated on 2015-02-10. |
-| 2015-02-10 | Apps Script Spreadsheet Protection API |  | Apps Script added a new Spreadsheet protection model with Protection, ProtectionType, and related range/sheet protection methods such as protect() and getProtections(). |
-| 2015-02-10 | Apps Script SpreadsheetApp.open DocsList File parameter | 2015-02-10 | The SpreadsheetApp.open(file) signature using a DocsList File object was replaced by a Drive File-based variant; deprecated on 2015-02-10. |
-| 2014-12-11 | Apps Script Domain service | 2014-12-11 | The Domain service was removed, directing users to alternatives; deprecated on 2014-12-11. |
-| 2014-12-11 | HTML service IFRAME sandbox mode |  | Apps Script HTML service added an IFRAME sandbox mode that reduces restrictions and runs faster, with compatibility exceptions for some older browsers. |
-| 2014-12-01 | FormApp.getShuffleQuestions |  | Added Form.getShuffleQuestions() so scripts can read whether form page questions are presented in randomized order. |
-| 2014-12-01 | FormApp.hasLimitOneResponsePerUser |  | Added Form.hasLimitOneResponsePerUser() to detect whether a form is limited to one response per user. |
-| 2014-12-01 | FormApp.setLimitOneResponsePerUser |  | Added Form.setLimitOneResponsePerUser(enabled) to configure whether a form allows only one response per respondent. |
-| 2014-12-01 | FormApp.setShuffleQuestions |  | Added Form.setShuffleQuestions(shuffle) to enable or disable randomized question ordering on each form page. |
-| 2014-12-01 | FormApp.shortenFormUrl |  | Added Form.shortenFormUrl(url) to convert a long Google Form URL into a short URL. |
-| 2014-12-01 | SpreadsheetApp.Sheet.insertImage |  | Added Sheet.insertImage(blob, column, row[, offsetX, offsetY]) to insert image blobs into a sheet at a specific cell with optional offsets. |
-| 2014-10-23 | Finance service | 2014-10-23 | The Apps Script Finance service was removed; Deprecated the Finance service in Apps Script with planned shutdown after a six-month transition period; deprecated on 2014-10-23. |
-| 2014-10-14 | Sheets and Docs add-on time-driven installable triggers |  | Add-ons for Google Sheets and Google Docs gained support for time-driven installable (clock) triggers. |
-| 2014-09-30 | DocumentTriggerBuilder |  | Added DocumentTriggerBuilder to build installable document-based triggers for add-ons. |
-| 2014-09-30 | Google Docs installable open trigger |  | Added an installable open trigger for Google Docs that can call authorized services when the user has preauthorized access. |
-| 2014-09-30 | LinearOptimizationService |  | Added LinearOptimizationService to let Apps Script solve linear and mixed-integer linear optimization problems. |
-| 2014-09-30 | ScriptApp.AuthorizationInfo |  | Added AuthorizationInfo to represent whether a script requires authorization and provide an authorization dialog URL. |
-| 2014-09-30 | ScriptApp.AuthorizationStatus |  | Added the AuthorizationStatus enum to represent script authorization state values. |
-| 2014-09-30 | ScriptApp.getAuthorizationInfo |  | Added ScriptApp.getAuthorizationInfo() to retrieve an AuthorizationInfo object for checking script authorization needs. |
-| 2014-09-30 | ScriptApp.getUserTriggers |  | Added ScriptApp.getUserTriggers(...) to list all installable triggers owned by the current user for a specific document, spreadsheet, or form. |
-| 2014-09-30 | Sheets and Docs add-on installable triggers |  | Add-ons for Google Sheets and Docs gained support for most installable triggers, excluding time-driven triggers. |
-| 2014-09-04 | CacheService.getDocumentCache |  | Added CacheService.getDocumentCache() to provide document-level cache access for all users in an add-on context. |
-| 2014-09-04 | CacheService.getPrivateCache | 2014-09-04 | CacheService.getPrivateCache() was deprecated in favor of CacheService.getUserCache() and CacheService.getScriptCache(); deprecated on 2014-09-04. |
-| 2014-09-04 | CacheService.getPublicCache | 2014-09-04 | CacheService.getPublicCache() was deprecated in favor of CacheService.getUserCache() and CacheService.getScriptCache(); deprecated on 2014-09-04. |
-| 2014-09-04 | DocsListDialog.setOAuthToken |  | Added DocsListDialog.setOAuthToken(oAuthToken) for supplying the user OAuth token used when fetching data for the Docs picker dialog. |
-| 2014-09-04 | LockService.getDocumentLock |  | Added LockService.getDocumentLock() to provide document-level locking for all users in an add-on context. |
-| 2014-09-04 | LockService.getPrivateLock | 2014-09-04 | LockService.getPrivateLock() was deprecated and replaced by LockService.getUserLock() and LockService.getScriptLock(); deprecated on 2014-09-04. |
-| 2014-09-04 | LockService.getPublicLock | 2014-09-04 | LockService.getPublicLock() was deprecated and replaced by LockService.getUserLock() and LockService.getScriptLock(); deprecated on 2014-09-04. |
-| 2014-07-17 | ScriptApp.EventType.ON_CHANGE |  | Added the ON_CHANGE value to ScriptApp.EventType so Google Sheets change events can be detected. |
-| 2014-06-20 | Legacy Google Sheets Script Gallery | 2014-06-20 | The script gallery in the old version of Google Sheets was deprecated in favor of the newer add-on store; deprecated on 2014-06-20. |
-| 2014-05-15 | Domain service | 2014-11-20 | The Domain service was deprecated and planned for shutdown on November 20, 2014; deprecated on 2014-11-20. |
-| 2014-05-15 | Form trigger event source property |  | Added a source property to form trigger event objects to indicate which form triggered the event. |
-| 2014-05-15 | ScriptDB | 2014-11-20 | ScriptDB was deprecated and scheduled to be turned off on November 20, 2014; deprecated on 2014-11-20. |
-| 2014-04-10 | SOAP service | 2013-07-09 | The deprecated SOAP service was removed from autocomplete and documentation in Apps Script; deprecated on 2013-07-09. |
-| 2014-04-10 | UI service DeckPanel | 2013-04-15 | The UI service DeckPanel widget was completely disabled; deprecated on 2013-04-15. |
-| 2014-04-10 | UI service DecoratedPopupPanel | 2013-04-15 | The UI service DecoratedPopupPanel widget was completely disabled; deprecated on 2013-04-15. |
-| 2014-04-10 | UI service DockLayoutPanel | 2013-04-15 | The UI service DockLayoutPanel widget was completely disabled; deprecated on 2013-04-15. |
-| 2014-04-10 | UI service DockPanel | 2013-04-15 | The UI service DockPanel widget was completely disabled; deprecated on 2013-04-15. |
-| 2014-04-10 | UI service StackLayoutPanel | 2013-04-15 | The UI service StackLayoutPanel widget was completely disabled; deprecated on 2013-04-15. |
-| 2014-04-10 | UI service TabLayoutPanel | 2013-04-15 | The UI service TabLayoutPanel widget was completely disabled; deprecated on 2013-04-15. |
-| 2014-04-10 | XML service | 2013-07-09 | The deprecated old XML service was removed from autocomplete and documentation in Apps Script; deprecated on 2013-07-09. |
-| 2014-04-03 | Range.getDataSourceUrl |  | Added support for the Range.getDataSourceUrl() method in the new version of Google Sheets. |
-| 2014-03-11 | @OnlyCurrentDoc and @NotOnlyCurrentDoc annotations |  | Added support for the @OnlyCurrentDoc and @NotOnlyCurrentDoc JsDoc annotations to control authorization scope for add-ons and scripts. |
-| 2014-03-11 | HTML Service styling CSS package |  | Released an HTML Service CSS package that applies Google-styled fonts, buttons, and form elements in dialogs and sidebars. |
-| 2014-03-11 | ScriptApp.AuthMode |  | Added the ScriptApp.AuthMode enum to identify authorized-service categories used by triggered executions. |
-| 2014-03-11 | Ui.createAddonMenu |  | Added the Ui.createAddonMenu() method so add-ons can insert a submenu into the Add-ons menu in Sheets or Docs. |
-| 2014-02-25 | DocumentApp bookmark and named-range APIs |  | Added DocumentApp APIs for bookmarks and named ranges, including cursor/selection control, along with related helper classes and methods. |
-| 2014-02-25 | google.script.host.editor.focus |  | Added google.script.host.editor.focus() in HTML Service to shift focus from a dialog or sidebar back to the editor. |
-| 2014-02-25 | ScriptApp state-token APIs |  | Added ScriptApp state-token APIs, including StateTokenBuilder, ScriptApp.newStateToken(), and ScriptApp.getOAuthToken(). |
-| 2014-02-25 | Ui.showModalDialog |  | Added Ui.showModalDialog(userInterface, title) for modal dialog display in Docs, Forms, and the new Sheets UI. |
-| 2014-02-25 | Ui.showModelessDialog |  | Replaced showDialog(userInterface) with Ui.showModelessDialog(userInterface, title) to display non-blocking dialogs. |
-| 2014-01-27 | DocumentApp SearchResult class | 2014-01-27 | Deprecated the DocumentApp SearchResult class in favor of RangeElement; deprecated on 2014-01-27. |
-| 2014-01-27 | DocumentApp SelectedElement class | 2014-01-27 | Deprecated the DocumentApp SelectedElement class and renamed it to Range; deprecated on 2014-01-27. |
-| 2014-01-27 | DocumentApp Selection class | 2014-01-27 | Deprecated the DocumentApp Selection class and replaced it with Range; deprecated on 2014-01-27. |
-| 2014-01-27 | Selection.getSelectedElements | 2014-01-27 | Deprecated Selection.getSelectedElements() and replaced it with Range.getRangeElements(); deprecated on 2014-01-27. |
-| 2014-01-27 | Session.getActiveUserLocale |  | Added Session.getActiveUserLocale() to allow scripts to read the active user's locale. |
-| 2014-01-27 | Session.getActiveUserTimeZone | 2014-02-18 | Removed Session.getActiveUserTimeZone(), which did not return a value for most users; Added Session.getActiveUserTimeZone() to allow scripts to read the active user's time zone; deprecated on 2014-02-18. |
-| 2014-01-21 | SpreadsheetApp.getUi |  | Added SpreadsheetApp.getUi() to access the spreadsheet UI for adding menus, dialogs, and sidebars in the new Sheets version. |
-| 2014-01-13 | DataValidationBuilder.requireFormulaSatisfied |  | Added DataValidationBuilder.requireFormulaSatisfied(String) for formula-based data validation criteria. |
-| 2014-01-13 | DataValidationCriteria.CUSTOM_FORMULA |  | Added the CUSTOM_FORMULA value to DataValidationCriteria for formula-driven validation. |
-| 2014-01-13 | Spreadsheet.isAnonymousView | 2014-01-13 | Deprecated SpreadsheetApp.Spreadsheet.isAnonymousView(); deprecated on 2014-01-13. |
-| 2014-01-13 | Spreadsheet.isAnonymousWrite | 2014-01-13 | Deprecated SpreadsheetApp.Spreadsheet.isAnonymousWrite(); deprecated on 2014-01-13. |
-| 2014-01-13 | Spreadsheet.isReadable | 2014-01-13 | Deprecated SpreadsheetApp.Spreadsheet.isReadable(); deprecated on 2014-01-13. |
-| 2014-01-13 | Spreadsheet.isWritable | 2014-01-13 | Deprecated SpreadsheetApp.Spreadsheet.isWritable(); deprecated on 2014-01-13. |
-| 2014-01-13 | Spreadsheet.setAnonymousAccess | 2014-01-13 | Deprecated SpreadsheetApp.Spreadsheet.setAnonymousAccess(); deprecated on 2014-01-13. |
-| 2014-01-06 | Maps.DirectionFinder.Mode.TRANSIT |  | Added the TRANSIT value to Maps.DirectionFinder.Mode for retrieving public transit routes. |
-| 2014-01-06 | UrlFetchApp.fetch parameter escaping |  | Added advanced URL parameter escaping control to UrlFetchApp.fetch(). |
-| 2013-12-16 | Apps Script Advanced Service: Admin SDK Directory |  | Added support for the Admin SDK Directory Advanced Service in Apps Script. |
-| 2013-12-16 | Apps Script Advanced Service: Admin SDK Reports |  | Added support for the Admin SDK Reports Advanced Service in Apps Script. |
-| 2013-12-16 | Apps Script Advanced Service: Fusion Tables |  | Added support for the Fusion Tables Advanced Service in Apps Script. |
-| 2013-12-16 | Apps Script Advanced Service: Google+ Domains |  | Added support for the Google+ Domains Advanced Service in Apps Script. |
-| 2013-12-16 | Apps Script Advanced Service: Mirror |  | Added support for the Mirror Advanced Service in Apps Script. |
-| 2013-12-16 | Apps Script Advanced Service: YouTube |  | Added support for the YouTube Advanced Service in Apps Script. |
-| 2013-12-16 | Apps Script Advanced Service: YouTube Analytics |  | Added support for the YouTube Analytics Advanced Service in Apps Script. |
-| 2013-12-02 | DocumentApp ParagraphHeading enum SUBTITLE value |  | Added a SUBTITLE constant to DocumentApp.ParagraphHeading. |
-| 2013-12-02 | DocumentApp ParagraphHeading enum TITLE value |  | Added a TITLE constant to DocumentApp.ParagraphHeading. |
-| 2013-11-18 | Utilities.jsonParse method | 2013-11-18 | Deprecated Utilities.jsonParse() in favor of the standard JSON.parse() method; deprecated on 2013-11-18. |
-| 2013-11-18 | Utilities.jsonStringify method | 2013-11-18 | Deprecated Utilities.jsonStringify() in favor of the standard JSON.stringify() method; deprecated on 2013-11-18. |
-| 2013-10-08 | FormApp custom closed-form message APIs |  | Added Form.getCustomClosedFormMessage() and Form.setCustomClosedFormMessage(message) to manage custom messages shown after form submission. |
-| 2013-10-08 | FormApp progress bar APIs |  | Added Form.hasProgressBar() and Form.setProgressBar() to let scripts read and control form progress bar behavior. |
-| 2013-10-08 | FormApp video item API |  | Added Form.addVideoItem() to allow scripts to insert YouTube videos in forms. |
-| 2013-09-23 | DriveApp getOwner methods |  | Added File.getOwner() and Folder.getOwner() for retrieving the owner of Drive files and folders. |
-| 2013-09-16 | DriveApp iterator continuation API |  | Added continuation-token APIs for Drive iterators, including getContinuationToken and continue*Iterator methods, to resume iteration across executions. |
-| 2013-09-16 | HTML Service CSS3 support in Caja sandbox |  | Expanded HTML Service Caja sandbox support to most CSS3 features, with a small set remaining unsupported. |
-| 2013-09-16 | UiApp Hyperlink widget | 2013-03-18 | Deprecated and disabled the UiApp Hyperlink widget; Deprecated the UiApp Hyperlink widget due to limited usability; deprecated on 2013-03-18. |
-| 2013-09-16 | UiApp InlineHyperlink widget | 2013-03-18 | Deprecated and disabled the UiApp InlineHyperlink widget; Deprecated the UiApp InlineHyperlink widget due to limited usability; deprecated on 2013-03-18. |
-| 2013-09-16 | UiApp LayoutPanel widget | 2013-03-18 | Deprecated and disabled the UiApp LayoutPanel widget; Deprecated the UiApp LayoutPanel widget due to limited usability; deprecated on 2013-03-18. |
-| 2013-09-16 | UiApp RichTextArea widget | 2013-03-18 | Deprecated and disabled the UiApp RichTextArea widget; Deprecated the UiApp RichTextArea widget due to limited usability; deprecated on 2013-03-18. |
-| 2013-09-09 | DocumentApp footer and header sibling navigation methods | 2013-09-09 | Deprecated FooterSection.getNextSibling() and FooterSection.getPreviousSibling() (plus HeaderSection equivalents) as not useful; deprecated on 2013-09-09. |
-| 2013-09-09 | DocumentApp FooterSection/FootnoteSection/HeaderSection legacy methods | 2013-09-09 | Deprecated the methods getFootnotes(), getLinkUrl(), setLinkUrl(url), and isAtDocumentEnd() on FooterSection, FootnoteSection, and HeaderSection; deprecated on 2013-09-09. |
-| 2013-09-09 | DocumentApp InlineImage link URL APIs |  | Added InlineImage.getLinkUrl() and InlineImage.setLinkUrl(url) for reading and setting image link URLs. |
-| 2013-09-03 | DriveApp file and folder access list APIs |  | Added File.getViewers(), File.getEditors(), Folder.getViewers(), and Folder.getEditors() to retrieve users with view or edit access. |
-| 2013-09-03 | DriveApp folder lookup APIs |  | Added DriveApp.getFoldersByName(name) and DriveApp.searchFolders(params) to locate folders by name or query. |
-| 2013-09-03 | Simple onEdit trigger user email access | 2013-09-03 | Removed the ability for simple onEdit() triggers to obtain the script user's email address; deprecated on 2013-09-03. |
-| 2013-08-19 | DriveApp File.makeCopy destination overloads |  | Added File.makeCopy(destination) and File.makeCopy(name, destination) so scripts can copy files to a specific folder. |
-| 2013-08-13 | Spreadsheet.deleteSheet method |  | Adds Spreadsheet.deleteSheet(sheet), enabling scripts to delete sheets that are not the active sheet. |
-| 2013-08-05 | DocsList.find method | 2013-08-05 | Deprecates DocsList.find(query, start, max); deprecated on 2013-08-05. |
-| 2013-08-05 | DocsList.getAllFiles method | 2013-08-05 | Deprecates DocsList.getAllFiles(start, max); deprecated on 2013-08-05. |
-| 2013-08-05 | DocsList.getAllFolders method | 2013-08-05 | Deprecates DocsList.getAllFolders(start, max); deprecated on 2013-08-05. |
-| 2013-08-05 | DocsList.getFiles method | 2013-08-05 | Deprecates DocsList.getFiles(start, max); deprecated on 2013-08-05. |
-| 2013-08-05 | DocsList.getFilesByType method | 2013-08-05 | Deprecates DocsList.getFilesByType(fileType, start, max); deprecated on 2013-08-05. |
-| 2013-08-05 | DocsList.getFolders method | 2013-08-05 | Deprecates DocsList.getFolders(start, max); deprecated on 2013-08-05. |
-| 2013-08-05 | GmailMessage.getPlainBody method |  | Adds GmailMessage.getPlainBody(), returning message content without HTML formatting. |
-| 2013-08-05 | Programmatic control of Google Sheets data-validation rules |  | Introduces APIs to control Google Sheets data-validation rules programmatically. |
-| 2013-07-29 | Apps Script autocomplete shortcut on ChromeOS |  | Enables autocomplete/content-assist in Apps Script on ChromeOS using Ctrl + Space. |
-| 2013-07-22 | Apps Script Dashboard DriveApp service tracking |  | Adds DriveApp to the list of services tracked in the Apps Script Dashboard. |
-| 2013-07-22 | Apps Script Dashboard FormApp service tracking |  | Adds FormApp to the list of services tracked in the Apps Script Dashboard. |
-| 2013-07-09 | ECMAScript for XML (E4X) support | 2013-07-09 | Deprecates support for the JavaScript feature E4X; deprecated on 2013-07-09. |
-| 2013-07-09 | Legacy Xml service | 2013-07-09 | Deprecates the legacy Xml service in Apps Script; deprecated on 2013-07-09. |
-| 2013-07-09 | SoapService | 2013-07-09 | Deprecates the SoapService in Apps Script; deprecated on 2013-07-09. |
-| 2013-07-09 | XmlService |  | Adds XmlService as the replacement for the old Xml service. |
-| 2013-06-17 | DriveService.addCommenter method |  | Adds DriveService.addCommenter() so scripts can add commenters to files. |
-| 2013-06-17 | DriveService.removeCommenter method |  | Adds DriveService.removeCommenter() so scripts can remove commenters from files. |
-| 2013-06-17 | GmailApp Sent Mail behavior |  | Updates GmailApp so mail sent by scripts is delivered to the Gmail Sent Mail folder. |
-| 2013-05-13 | Apps Script authorization flow upgrade option |  | Adds an authorization-flow option with fewer clicks that can auto-create a Google Developers Console project. |
-| 2013-05-13 | Apps Script editor in Google Docs and Google Forms |  | Makes the Apps Script editor available in Google Docs and Google Forms as script containers. |
-| 2013-05-13 | DocumentApp and FormApp getUi methods |  | Adds getUi() to DocumentApp and FormApp to return a Ui object for adding menus, dialogs, and sidebars. |
-| 2013-05-13 | Drive Service |  | Introduces the Apps Script Drive Service for creating and modifying files and folders in Google Drive. |
-| 2013-05-13 | Forms Service |  | Introduces the Apps Script Forms Service for creating and modifying Google Forms. |
-| 2013-05-13 | FormTriggerBuilder class |  | Adds the FormTriggerBuilder class for building triggers tied to Google Forms events. |
-| 2013-05-13 | HtmlService.setSandboxMode method |  | Adds setSandboxMode() to HtmlService to enable a faster sandbox mode. |
-| 2013-05-13 | MimeType enum |  | Adds a MimeType enum for MIME-type constants. |
-| 2013-05-09 | doPost POST body access |  | Adds e.postData.getDataAsString() to access POST body data in doPost() request handlers. |
-| 2013-05-02 | Spreadsheet onChange trigger |  | Adds onChange() support so spreadsheet change events fire for certain modifications such as row insertions. |
-| 2013-04-22 | Sheet.autoResizeColumn method |  | Adds autoResizeColumn() to Sheet for automatically resizing a column to fit its contents. |
-| 2013-04-22 | Tree lazy loading |  | Adds lazy-loading support in Tree to reduce UI rendering wait times. |
-| 2013-04-22 | Tree.clear method |  | Adds clear() to Tree to remove all child nodes. |
-| 2013-04-22 | TreeItem.clear method |  | Adds clear() to TreeItem to remove all child nodes. |
-| 2013-04-15 | UiApp DeckPanel widget | 2013-04-15 | Deprecated the UiApp DeckPanel widget due to limited usability; deprecated on 2013-04-15. |
-| 2013-04-15 | UiApp DecoratedPopupPanel widget | 2013-04-15 | Deprecated the UiApp DecoratedPopupPanel widget due to limited usability; deprecated on 2013-04-15. |
-| 2013-04-15 | UiApp DockLayoutPanel widget | 2013-04-15 | Deprecated the UiApp DockLayoutPanel widget due to limited usability; deprecated on 2013-04-15. |
-| 2013-04-15 | UiApp DockPanel widget | 2013-04-15 | Deprecated the UiApp DockPanel widget due to limited usability; deprecated on 2013-04-15. |
-| 2013-04-15 | UiApp StackLayoutPanel widget | 2013-04-15 | Deprecated the UiApp StackLayoutPanel widget due to limited usability; deprecated on 2013-04-15. |
-| 2013-04-15 | UiApp TabLayoutPanel widget | 2013-04-15 | Deprecated the UiApp TabLayoutPanel widget due to limited usability; deprecated on 2013-04-15. |
-| 2013-04-01 | Sheet.hideSheet() method |  | Added the Sheet.hideSheet() method so scripts can hide an individual spreadsheet sheet. |
-| 2013-04-01 | Sheet.isSheetHidden() method |  | Added the Sheet.isSheetHidden() method so scripts can check whether a spreadsheet sheet is hidden. |
-| 2013-04-01 | Sheet.showSheet() method |  | Added the Sheet.showSheet() method so scripts can make a spreadsheet sheet visible again. |
-| 2013-03-18 | GUI Builder | 2013-03-18 | Deprecated the Apps Script GUI Builder feature due to limited usability; deprecated on 2013-03-18. |
-| 2013-03-18 | UiApp SuggestBox widget | 2013-03-18 | Deprecated the UiApp SuggestBox widget due to limited usability; deprecated on 2013-03-18. |
-| 2013-03-11 | DocsList.FileType.FORM property |  | Added DocsList.FileType.FORM so DocsList can access Google Forms. |
-| 2013-03-11 | Utilities.formatString() method |  | Added the Utilities.formatString() method to support printf-style placeholder substitution in format strings. |
-| 2013-02-14 | DocumentApp.openByUrl() method |  | Added DocumentApp.openByUrl() to open Google Docs documents directly by URL. |
-| 2013-02-11 | Email attachment of StaticMap objects |  | Added support for attaching StaticMap objects directly in emails. |
-| 2013-01-31 | SpreadsheetApp.openByUrl() method |  | Added SpreadsheetApp.openByUrl() to open spreadsheets directly by URL. |
-| 2013-01-24 | Jdbc.getConnection useJDBCCompliantTimezoneShift argument |  | Added support for the useJDBCCompliantTimezoneShift advanced argument in Jdbc.getConnection when connecting to external databases. |
-| 2013-01-24 | UiInstance.createAnchor mailto link support |  | Added support in UiInstance.createAnchor for links using the mailto URI scheme. |
-| 2013-01-24 | UrlFetchApp.fetch followRedirects advanced argument |  | Added the followRedirects advanced argument to UrlFetchApp.fetch. |
-| 2013-01-17 | ClockTriggerBuilder.after(durationMilliseconds) method |  | Added ClockTriggerBuilder.after(durationMilliseconds) to simplify creating one-off triggers. |
-| 2012-12-11 | Chart data source URL validation |  | Added stricter validation for chart data source URLs used in charts. |
-| 2012-11-13 | SoapService SSL certificate validation toggle |  | Added the ability to disable SSL certificate validation in SoapService. |
-| 2012-11-06 | EmbeddedChartBuilder.asAreaChart() method |  | Added EmbeddedChartBuilder.asAreaChart() as a chart-type builder method for embedded charts. |
-| 2012-11-06 | EmbeddedChartBuilder.asBarChart() method |  | Added EmbeddedChartBuilder.asBarChart() as a chart-type builder method for embedded charts. |
-| 2012-11-06 | EmbeddedChartBuilder.asColumnChart() method |  | Added EmbeddedChartBuilder.asColumnChart() as a chart-type builder method for embedded charts. |
-| 2012-11-06 | EmbeddedChartBuilder.asLineChart() method |  | Added EmbeddedChartBuilder.asLineChart() as a chart-type builder method for embedded charts. |
-| 2012-11-06 | EmbeddedChartBuilder.asPieChart() method |  | Added EmbeddedChartBuilder.asPieChart() as a chart-type builder method for embedded charts. |
-| 2012-11-06 | EmbeddedChartBuilder.asScatterChart() method |  | Added EmbeddedChartBuilder.asScatterChart() as a chart-type builder method for embedded charts. |
-| 2012-11-06 | EmbeddedChartBuilder.asTableChart() method |  | Added EmbeddedChartBuilder.asTableChart() as a chart-type builder method for embedded charts. |
-| 2012-10-26 | Apps Script Chrome Web Store custom web app icon |  | Apps Script web apps published to the Chrome Web Store can now be assigned a custom app icon shown on Chrome’s New Tab Page. |
-| 2012-10-26 | GmailApp alternate sender support |  | Apps Script added Gmail alias support by enabling GmailApp.getAliases() and allowing the selected alias to be used via the "from" option in GmailApp.sendEmail(). |
-| 2012-10-26 | GmailAttachment class |  | Apps Script introduced the GmailAttachment class, a Blob-like object with a getSize() method that is not subject to quota limits. |
-| 2012-10-26 | HtmlService dialog closing support |  | HtmlService pages can now programmatically close their containing dialogs. |
-| 2012-09-21 | CategoryFilterBuilder.setLabelSeparator |  | CategoryFilterBuilder gained a setLabelSeparator() method to support custom label separator strings. |
-| 2012-09-21 | DocsList.getFilesByType string argument deprecation | 2012-09-21 | Passing string values to DocsList.getFilesByType is deprecated in favor of using DocsList.FileType enumeration values; deprecated on 2012-09-21. |
-| 2012-09-07 | SitesApp Page deletion check |  | SitesApp Page objects gained an isDeleted() method. |
-| 2012-08-30 | PropertiesService ScriptProperties and UserProperties enhancements |  | ScriptProperties and UserProperties received deletion methods plus additional bulk-property operations, including setting multiple properties and retrieving all properties. |
-| 2012-08-20 | Logger formatted logging API |  | Logger gained a new log() method that accepts a format string and variable substitution values. |
-| 2012-08-20 | UiApp setStyleAttributes |  | UiApp widgets now support setting multiple style attributes at once through setStyleAttributes(). |
-| 2012-08-03 | DocsList File.getThumbnail |  | The DocsList File class gained a getThumbnail() method. |
-| 2012-07-26 | Apps Script Analytics service support |  | Apps Script added integration support for Google Analytics through the Analytics Service. |
-| 2012-07-26 | Library autocomplete in development mode |  | Included libraries now support autocomplete when they are added in development mode. |
-| 2012-07-26 | Script editor collaborator chat |  | The Script Editor added support for collaboration chat with a visible chat panel when multiple users edit a script. |
-| 2012-07-26 | UiInstance.remove |  | UiInstance added remove() methods for removing widgets from UI instances. |
-| 2012-06-27 | Apps Script Chrome Web Store registration |  | Apps Script added support for registering web apps in the Chrome Web Store for publishing and distribution. |
-| 2012-06-27 | Apps Script Content Service |  | Apps Script launched the Content Service to serve text, XML, RSS, and JSON responses. |
-| 2012-06-27 | Apps Script Html Service |  | Apps Script launched the Html Service for building web apps with HTML, CSS, and JavaScript. |
-| 2012-06-27 | Apps Script ScriptDb |  | Apps Script launched ScriptDb, a JavaScript object database service. |
-| 2012-06-27 | Apps Script web app versioning and execute-as-user |  | Web app publishing in Apps Script gained versioning support and an option to execute as the user accessing the app. |
-| 2012-06-27 | Standalone Apps Script projects |  | Apps Script launched script.google.com and support for creating standalone scripts not bound to a specific container app. |
-| 2012-06-14 | Domain Service nickname and group management support |  | The Domain Service added support for NicknameManager and GroupsManager. |
-| 2012-06-14 | Google Sheets Embedded Charts |  | Apps Script added APIs to create, modify, and remove Embedded Charts that use spreadsheet data ranges. |
-| 2012-05-21 | Apps Script libraries and versioning |  | Apps Script launched Script Libraries and script versioning support. |
-| 2012-05-21 | File and Folder description methods |  | File and Folder objects gained getDescription() and setDescription() methods. |
-| 2012-05-04 | DocumentApp HorizontalAlignment.JUSTIFY enum value |  | The DocumentApp.HorizontalAlignment enumeration now includes a JUSTIFY value for horizontal text alignment. |
-| 2012-04-19 | Script Service everyMinutes() method |  | The Script service added an everyMinutes() method to define minute-based trigger scheduling. |
-| 2012-04-16 | DocsList getRootFolder() method |  | The DocsList service gained getRootFolder() to retrieve the top-level root folder. |
-| 2012-04-16 | File and Folder isTrashed() method |  | File and Folder classes now support isTrashed() to check whether an item is in trash. |
-| 2012-04-04 | Script service for trigger and publishing management |  | Apps Script introduced the Script service to programmatically set triggers and manage script publishing. |
-| 2012-03-13 | GmailMessage.forward subject argument support |  | GmailMessage.forward now accepts a subject field through its advanced arguments. |
-| 2012-03-07 | Spreadsheet sheet protection API |  | Sheet protection was introduced with Sheet.getSheetProtection(), Sheet.setSheetProtection(), and the new PageProtection class. |
-| 2012-03-07 | UiApp Anchor target property |  | UiApp Anchor widgets can now have a target specified. |
-| 2012-03-07 | UiApp supported HTML tags |  | UiApp widgets now accept a limited, predefined set of HTML tags when rendering content. |
-| 2012-02-12 | Document addHeader()/addFooter() methods |  | The Document class now supports addHeader() and addFooter() for inserting document headers and footers. |
-| 2012-02-12 | Range.merge() method |  | The Range class gained a merge() method to combine ranges of cells. |
-| 2012-02-06 | Calendar.getEventSeriesById() method |  | Calendar gained getEventSeriesById() for retrieving an event series by its identifier. |
-| 2012-02-06 | Script editor cancel-running-scripts capability |  | Developers can now cancel running scripts when they were started from the script editor. |
-| 2012-01-24 | ListItem.setGlyphType() method |  | ListItem gained setGlyphType() to choose glyph styles beyond numeric list markers. |
-| 2012-01-24 | ListItem.setNestingLevel() method |  | ListItem gained setNestingLevel() to control the nesting depth of list items. |
-| 2012-01-24 | TableCell width getter/setter methods |  | TableCell now supports getWidth() and setWidth() for reading and adjusting cell width. |
-| 2011-12-14 | AdSense Service support |  | Apps Script added support for the AdSense service. |
-| 2011-12-14 | Domain Service support |  | Apps Script added support for the Domain service. |
-| 2011-12-14 | Groups Service support |  | Apps Script added support for the Groups service. |
-| 2011-12-14 | Revision History copy and paste support |  | Apps Script added the ability to copy and paste content from Revision History. |
-| 2011-12-14 | Spreadsheet.show() autocomplete support |  | Spreadsheet.show() was enabled for autocomplete in editor tooling. |
-| 2011-11-07 | Cache Service |  | Apps Script introduced the Cache service for temporary data caching in scripts. |
-| 2011-11-07 | Lock Service |  | Apps Script introduced the Lock service for coordinated script execution control. |
-| 2011-11-07 | UiApp client handlers |  | UiApp gained support for client-side handlers. |
-| 2011-11-07 | UiApp validators |  | UiApp gained support for validators for user input and UI logic. |
-| 2011-09-26 | Charts Service |  | Apps Script added the Charts service for dynamic chart creation and embedding in apps, email, and exports. |
-| 2011-09-26 | MailApp.sendEmail inlineImages support |  | MailApp.sendEmail now supports including inlineImages in email messages. |
-| 2011-09-26 | Prediction Service |  | Apps Script added the Prediction service to access cloud-hosted machine-learning prediction capabilities. |
-| 2011-09-26 | Tasks Service |  | Apps Script added the Tasks service for creating and managing tasks and task lists. |
-| 2011-09-26 | UrlShortener Service |  | Apps Script added the UrlShortener service for creating and managing goo.gl short URLs. |
-| 2011-08-04 | GUI Builder ScrollPanel support |  | Added support for a ScrollPanel component in the Apps Script GUI Builder. |
-| 2011-07-25 | Apps Script project support |  | Added support for using projects in Apps Script. |
-| 2011-07-25 | Xml.element child node handling |  | Fixed Xml.element behavior so it correctly handles child elements that are XmlElements. |
-| 2011-05-04 | Apps Script Document service |  | Added the Document service to Apps Script. |
-| 2011-05-04 | Apps Script Gmail service |  | Added the Gmail service to Apps Script. |
-| 2011-05-04 | Apps Script GUI Builder |  | Introduced the GUI Builder in Apps Script. |
-| 2011-04-15 | Spreadsheet.appendRow method |  | Added the appendRow() method to the Spreadsheet service. |
-| 2011-03-21 | FileUpload binary file support |  | Enabled uploading binary files through FileUpload. |
-| 2011-03-21 | ListBox multi-select mode |  | Enhanced ListBox so it can function as a multi-select control. |
-| 2011-03-08 | Utilities.parseCsv method |  | Added a Utilities class method to parse CSV text. |
-| 2010-10-21 | Apps Script Google Sites integration |  | Added integration so Apps Script can run from within Google Sites. |
-| 2010-10-16 | Calendar event series retrieval |  | Added CalendarEvent.getEventSeries() to access existing event series. |
-| 2010-10-16 | Calendar event series update and deletion |  | Added CalendarEventSeries capabilities to modify or delete an entire event series. |
-| 2010-10-16 | Calendar recurring event series creation |  | Added APIs for creating recurring events through CalendarApp.newRecurrence() and Calendar.createEventSeries(). |
-| 2010-09-17 | CalendarEvent timestamp methods |  | Added CalendarEvent.getDateCreated() and CalendarEvent.getLastUpdated() methods. |
-| 2010-09-17 | Contact.getLastUpdated method |  | Added Contact.getLastUpdated() to retrieve the last update time for a contact. |
-| 2010-08-16 | Apps Script Blob class |  | Introduced a new Blob class to simplify data movement across Apps Script services. |
-| 2010-08-16 | Contact name and profile methods |  | Added Contact methods for getting and setting given, middle, family, maiden, and nickname fields. |
-| 2010-08-16 | Outbound OAuth requests support |  | Added support for outbound OAuth requests via UrlFetchApp.addOAuthService(). |
-| 2010-08-16 | Script editor find and replace |  | Added find-and-replace functionality to the Apps Script editor. |
-| 2010-08-16 | Script persistent properties |  | Added persistent script storage via UserProperties and ScriptProperties. |
-| 2010-08-16 | Script revision history UI |  | Added script revision history access from File > See revision history in the editor. |
-| 2010-08-16 | Script timezone configuration in properties |  | Added the ability to set a script's timezone from File > Properties. |
-| 2010-08-16 | Session user identity methods |  | Added Session.getActiveUser() and Session.getEffectiveUser() and clarified Session.getUser() behavior. |
-| 2010-08-16 | Spreadsheet.getFormUrl method |  | Added Spreadsheet.getFormUrl() to retrieve a spreadsheet's form URL. |
-| 2010-08-16 | Spreadsheet.show editor support |  | Added Spreadsheet.show() to script editor autocomplete and documentation. |
-| 2010-08-16 | UiApp availability expansion |  | Made UiApp available to all users, not just Google Apps Premier domains. |
-| 2010-08-16 | Utilities JSON utility methods |  | Added Utilities.jsonParse() and Utilities.jsonStringify() for JSON parsing and serialization. |
-| 2010-08-01 | Sheet and Range sorting methods |  | Added sorting methods Sheet.sort() and Range.sort(). |
-| 2010-08-01 | Sheet frozen rows and columns APIs |  | Added Sheet.getFrozenRows() and Sheet.getFrozenColumns() methods. |
-| 2010-08-01 | Sheet row and column dimension methods |  | Added methods to retrieve row heights and column widths via Sheet.getRowHeight() and Sheet.getColumnWidth(). |
+| 2026-03-12 | AddOnsResponseService |  | AddOnsResponseService lets developers create and manage interactive responses for Google Workspace add-ons that extend Google Chat. |
+| 2026-03-05 | Maps Service API key authentication |  | Maps Service API key authentication lets scripts authenticate with an API key and optionally a signing key. |
+| 2026-03-05 | Maps Service client ID authentication | June 2026 | Maps Service client ID authentication uses setAuthentication(clientId, signingKey) to authenticate requests with a Maps Platform client ID; deprecated on June 2026. |
+| 2026-01-12 | Vertex AI advanced service |  | The Vertex AI advanced service lets Apps Script call the Vertex AI API to prompt models for text, images, and other generated content. |
+| 2025-06-04 | Google Analytics Management API and Reporting API advanced service | 2025-06-04 | The Google Analytics Management API and Reporting API advanced service provides Apps Script access to Universal Analytics administration and reporting APIs; deprecated on 2025-06-04. |
+| 2025-04-08 | Forms Service form publishing |  | Forms Service form publishing lets scripts publish forms and control who can respond to them. |
+| 2025-01-08 | Granular OAuth consent in Apps Script IDE |  | Granular OAuth consent in the Apps Script IDE lets users approve individual OAuth scopes during script execution. |
+| 2025-01-08 | Granular OAuth scope management APIs |  | Granular OAuth scope management APIs let developers inspect required and authorized scopes programmatically through ScriptApp and AuthorizationInfo. |
+| 2024-12-09 | Calendar event transparency |  | Calendar event transparency support lets scripts get and set whether events appear as Busy or Available. |
+| 2024-12-09 | Spreadsheet Service image source URL access | 2024-12-09 | Spreadsheet Service image source URL access exposes an image's source URL through getUrl() on CellImage, CellImageBuilder, and OverGridImage; deprecated on 2024-12-09. |
+| 2024-12-09 | Spreadsheet.getSheetById |  | Spreadsheet.getSheetById lets scripts retrieve a sheet by its unique sheet ID. |
+| 2024-11-27 | Calendar event type detection |  | Calendar event type detection lets scripts distinguish regular events from event types such as out-of-office and working location. |
+| 2024-09-03 | Looker in Connected Sheets for Apps Script |  | Looker in Connected Sheets support lets Apps Script create and use Looker data source connections in spreadsheets. |
+| 2024-08-15 | Document tabs in Document service |  | Document service tabs support lets scripts create and organize tabs in Google Docs documents. |
+| 2024-07-25 | Add-ons columns layout |  | Add-ons columns layout lets developers arrange interface content in columns; Add-ons columns layout lets developers arrange interface content in columns. |
+| 2024-07-25 | Add-ons multiselect menus |  | Add-ons multiselect menus let developers present selectable multi-value menu inputs in add-on interfaces; Add-ons multiselect menus let developers present selectable multi-value menu inputs in add-on interfaces. |
+| 2024-05-02 | Google Workspace Events advanced service |  | The Google Workspace Events advanced service lets Apps Script subscribe to Google Workspace events. |
+| 2024-04-30 | Spreadsheet data source refresh cancellation |  | Spreadsheet data source refresh cancellation lets scripts stop running refresh operations for linked data source objects. |
+| 2024-04-22 | Google Chat apps Card Service support |  | Google Chat apps Card Service support lets Apps Script Chat apps build card messages and dialogs with Card Service; Google Chat apps Card Service support lets Apps Script Chat apps build card messages and dialogs with Card Service. |
+| 2024-03-07 | Bulk version deletion in project history |  | Bulk version deletion in project history lets users delete multiple unused script versions at once. |
+| 2024-03-05 | Card Service LinkPreview |  | The Card Service LinkPreview class lets developers control smart chip titles, preview titles, and preview cards for links. |
+| 2024-01-24 | Add-ons third-party resource creation in Docs @ menu |  | Google Workspace Add-ons can create third-party resources from the @ menu in Google Docs; Google Workspace Add-ons can create third-party resources from the @ menu in Google Docs. |
+| 2024-01-18 | Add-ons link previews in Sheets and Slides |  | Google Workspace Add-ons can show link previews with smart chips in Google Sheets and Slides; Google Workspace Add-ons can show link previews with smart chips in Google Sheets and Slides. |
+| 2023-12-13 | Card Service Action.setPersistValues |  | Action.setPersistValues lets Card Service actions control whether updated form values come from the client or the server. |
+| 2023-12-11 | Advanced Drive service v3 |  | The advanced Drive service v3 lets Apps Script call version 3 of the Google Drive API. |
+| 2023-12-06 | Version deletion from project history |  | Version deletion from project history lets users remove undeployed script versions from the Apps Script IDE. |
+| 2023-11-06 | Advanced Chat service |  | The Advanced Chat service lets Apps Script call the Google Chat API. |
+| 2023-09-19 | Classic Google Sites service | 2023-09-19 | The classic Google Sites service provides Apps Script integration with classic Sites; deprecated on 2023-09-19. |
+| 2023-08-23 | Project history version comparison |  | Project history version comparison lets editors view deployed script versions and compare them with the current version in the IDE. |
+| 2023-06-12 | Third-party smart chips and link previews |  | Third-party smart chips and link previews let Google Workspace Add-ons preview links with smart chips. |
+| 2022-12-16 | Contacts service | January 2025 | The Contacts service provides Apps Script access to Google Contacts data; deprecated on January 2025. |
+| 2022-11-03 | Utilities.parseDate |  | Utilities.parseDate parses a string date using a specified time zone and format based on SimpleDateFormat. |
+| 2022-11-01 | Chat thread retrieval methods | 2022-11-01 | Chat thread retrieval methods let Apps Script access chat threads through getChatThreads overloads; Chat thread retrieval methods let Apps Script access chat threads through getChatThreads overloads; deprecated on 2022-11-01. |
+| 2022-09-27 | Legacy Apps Script IDE | 2022-09-27 | The legacy Apps Script IDE is the older script editor experience replaced by the redesigned IDE; deprecated on 2022-09-27. |
+| 2022-04-13 | Alphabetical file sorting in new IDE |  | The new Apps Script IDE lets developers sort project files alphabetically in the editor. |
+| 2022-04-13 | Editor add-on test deployments in new IDE |  | The new Apps Script IDE lets developers create test deployments for Editor Add-ons. |
+| 2022-04-13 | Rhino debugging in new IDE |  | The new Apps Script IDE lets developers debug Rhino functions without migrating to the V8 runtime. |
+| 2022-04-13 | Script properties management in new IDE |  | The new Apps Script IDE lets developers add, edit, and delete script properties from the project settings page. |
+| 2022-04-13 | Script time zone setting in new IDE |  | The new Apps Script IDE lets developers set the time zone for a script project. |
+| 2022-03-24 | Calendar event attachments for add-ons |  | Calendar event attachments for Google Workspace Add-ons let developers add custom attachments and handle attachment-provider trigger events. |
+| 2022-03-18 | Spreadsheet Service color getter methods | 2022-03-18 | Spreadsheet Service color getter methods return color values from spreadsheet objects such as ranges, sheets, banding, and slicers; deprecated on 2022-03-18. |
+| 2022-02-14 | External collaborator edit alerts in new IDE |  | The new Apps Script IDE emails owners when someone outside their organization edits a script project. |
+| 2022-01-19 | In-cell images in Spreadsheet Service |  | In-cell images in Spreadsheet Service let scripts create image values and place them directly into spreadsheet cells. |
+| 2021-12-15 | TLS 1.0 and TLS 1.1 for JDBC connections | 2021-12-15 | TLS 1.0 and TLS 1.1 are older security protocol versions previously usable for Apps Script JDBC connections; deprecated on 2021-12-15. |
+| 2021-09-01 | HTML Service user-activated top navigation |  | HTML Service iframe sandboxing now supports top-level navigation only through user activation via allow-top-navigation-by-user-activation. |
+| 2021-08-31 | Drive resource key security update controls |  | Drive resource key security update controls let scripts check and set whether shared files and folders require a resource key. |
+| 2021-08-23 | Document service smart chips |  | Document service smart chips add Date, Person, and RichLink elements to represent smart chip content in Google Docs. |
+| 2021-06-01 | Add-ons divider widget |  | The add-ons divider widget lets developers insert visual dividers into add-on cards with Card Service. |
+| 2021-05-27 | Sheet forced row heights |  | Apps Script Spreadsheet service lets scripts manually set row heights with Sheet.setRowHeightsForced(). |
+| 2020-10-23 | Google Tables advanced service |  | Apps Script includes an advanced service for Google Tables that allows scripts to read and edit table rows programmatically. |
+| 2020-09-03 | Connected Sheets support |  | Apps Script Spreadsheet service adds classes and methods for working with Connected Sheets data sources, tables, charts, and refresh behavior. |
+| 2020-08-27 | DecoratedText widget |  | Apps Script Card Service adds the DecoratedText widget for displaying text with optional decorations. |
+| 2020-07-27 | Drive item move operations |  | Apps Script Drive File and Folder classes add moveTo() methods for moving items to destination folders. |
+| 2020-07-27 | Drive shortcuts support |  | Apps Script Drive File and Folder classes add methods for creating shortcuts and retrieving shortcut target information. |
+| 2020-07-27 | Drive single-parent enforcement |  | Apps Script DriveApp adds enforceSingleParent() to enable or disable single-parent behavior for Drive items. |
+| 2020-07-27 | Folder multi-parent modification methods | 2020-07-27 | Apps Script Drive Folder methods for adding and removing files or folders directly from folders are deprecated; deprecated on 2020-07-27. |
+| 2020-06-12 | Pivot table source range access |  | Apps Script Spreadsheet service adds PivotTable.getSourceDataRange() to access the source range of a pivot table. |
+| 2020-06-12 | Pivot table value removal |  | Apps Script Spreadsheet service adds PivotValue.remove() to remove a value from a pivot table. |
+| 2020-06-12 | Rich text link URLs |  | Apps Script Spreadsheet service adds methods to get and set link URLs on RichTextValue content. |
+| 2020-04-22 | Sheets selection change trigger |  | Apps Script adds the onSelectionChange(e) simple trigger for running code when a spreadsheet selection changes. |
+| 2020-04-02 | Shared drive FILE_ORGANIZER permission |  | Apps Script Drive service adds the FILE_ORGANIZER permission enum value for shared drive content management. |
+| 2020-04-02 | Spreadsheet drawings support |  | Apps Script Spreadsheet service adds the Drawing class and Sheet.getDrawings() for accessing drawings in sheets. |
+| 2020-02-28 | Spreadsheet theme color objects |  | Apps Script Spreadsheet service adds Color object-based methods for working with theme colors across formatting APIs. |
+| 2020-01-21 | Conference Data service |  | Apps Script adds the Conference Data service to help Calendar add-ons synchronize with third-party conferencing applications. |
+| 2020-01-21 | G Suite Add-ons card widgets and responses |  | Apps Script Card Service adds new widgets and event response types for building G Suite Add-on interfaces. |
+| 2020-01-21 | G Suite Add-ons manifest model |  | Apps Script updates the add-ons manifest structure to support configuration for G Suite Add-ons. |
+| 2019-12-18 | Spreadsheet theme APIs |  | Apps Script Spreadsheet service adds classes and methods for building colors and managing spreadsheet themes. |
+| 2019-12-11 | Data Studio dynamic configuration controls |  | Apps Script Data Studio service adds dynamic and stepped configuration options for community connector fields and inputs. |
+| 2019-12-11 | Data Studio response builders |  | Apps Script Data Studio service adds response classes and builders for schema, data, and credentials responses. |
+| 2019-11-06 | Script identity tokens |  | Apps Script Script service adds ScriptApp.getIdentityToken() to return an identity token for the effective user. |
+| 2019-11-06 | Spreadsheet slicers |  | Apps Script Spreadsheet service adds slicer support for filtering ranges, charts, and pivot tables. |
+| 2019-10-28 | Chrome Web Store publishing for Apps Script web apps | 2019-10-28 | Apps Script web apps can no longer be published to the Chrome Web Store; deprecated on 2019-10-28. |
+| 2019-10-23 | EmbeddedChart ID and type methods | 2019-10-23 | Apps Script removes EmbeddedChart methods for getting type or ID and setting chart ID in the Spreadsheet service; deprecated on 2019-10-23. |
+| 2019-10-23 | UiApp-related chart dashboard classes and methods | 2019-10-23 | Apps Script removes seldom-used Charts service classes and methods that depended on the shut down UiApp service; deprecated on 2019-10-23. |
+| 2019-08-07 | UI service | July 15, 2019 | Apps Script UI service documentation was removed after the service was deprecated and shut down; The UI service provided Apps Script user interface capabilities before HTML Service replaced it; deprecated on July 15, 2019. |
+| 2019-07-26 | Group user roles lookup |  | Apps Script Group service adds Groups.getRoles(user) to list a user's roles in a group. |
+| 2019-07-26 | Slides concrete color scheme control |  | Apps Script Slides service adds methods to set concrete colors in a presentation color scheme. |
+| 2019-07-26 | Spreadsheet whitespace trimming and duplicate removal |  | Apps Script Spreadsheet service adds methods to trim whitespace and remove duplicate values from ranges and range lists. |
+| 2019-05-20 | Gmail message header access |  | Apps Script Gmail service adds GmailMessage.getHeader() to retrieve RFC 2822 message headers. |
+| 2019-05-20 | Optimization batch variable and constraint creation |  | Apps Script Optimization service adds batch methods for creating multiple constraints and variables at once. |
+| 2019-05-03 | Document language management |  | Apps Script Document service adds methods to get, set, and list supported document language codes. |
+| 2019-04-19 | Data Studio hyperlink and image field types |  | Apps Script Data Studio service adds HYPERLINK, IMAGE, and IMAGE_LINK values to the FieldType enum. |
+| 2019-04-05 | Data Studio BigQuery connector configuration |  | Apps Script Data Studio service adds BigQuery connector configuration classes and builder methods. |
+| 2019-04-05 | Embedded chart range clearing |  | Apps Script embedded chart builders add clearRanges() to reset chart source ranges. |
+| 2019-04-05 | Spreadsheet checkboxes |  | Apps Script Spreadsheet service adds checkbox data validation and methods to insert, check, uncheck, and remove checkboxes. |
+| 2019-04-05 | Spreadsheet iterative calculation controls |  | Apps Script Spreadsheet service adds APIs to configure iterative calculation settings and recalculation intervals. |
+| 2019-04-05 | Spreadsheet text finder |  | Apps Script Spreadsheet service adds TextFinder and related methods for finding text in ranges, sheets, and spreadsheets. |
+| 2019-02-26 | Data Studio reaggregation settings |  | Apps Script Data Studio service adds methods to get and set field reaggregation behavior. |
+| 2019-02-26 | Sheets BigQuery data connectors |  | Apps Script Spreadsheet service adds classes and methods for creating and using BigQuery data source tables in Sheets. |
+| 2019-01-22 | Data Studio authentication type responses |  | Apps Script Data Studio service adds authentication type classes and response builders for community connectors. |
+| 2019-01-22 | Spreadsheet rich text and text styles |  | Apps Script Spreadsheet service adds rich text and text style classes and methods for formatted cell content. |
+| 2019-01-22 | UiApp service | July 15th, 2019 | Apps Script UiApp service is deprecated for shutdown and will no longer function after the announced date; deprecated on July 15th, 2019. |
+| 2019-01-04 | Data Studio error response objects |  | Apps Script Data Studio service adds DebugError and UserError classes for connector error reporting. |
+| 2019-01-04 | Slides slide linking and text box insertion |  | Apps Script Slides service adds APIs for linked slides, refreshing or unlinking them, and inserting text boxes. |
+| 2018-12-13 | Slides connector lines |  | Apps Script Slides service adds connector line classes and methods for connecting page elements. |
+| 2018-11-14 | Card Service text button styling |  | Apps Script Card Service adds text button styling and background customization methods. |
+| 2018-11-14 | Slides page element ordering and accessibility metadata |  | Apps Script Slides service adds methods to control Z-order and set titles and descriptions on page elements. |
+| 2018-11-14 | Spreadsheet developer metadata |  | Apps Script Spreadsheet service adds developer metadata APIs for attaching and finding metadata on ranges, sheets, and spreadsheets. |
+| 2018-10-30 | Console logging methods |  | Apps Script console service adds error, info, and warn logging methods. |
+| 2018-10-30 | Data Studio field visibility control |  | Apps Script Data Studio service adds methods to get and set whether a field is hidden. |
+| 2018-10-30 | Gmail attachment hash and filtered attachment retrieval |  | Apps Script Gmail service adds attachment hashing and message attachment retrieval options. |
+| 2018-10-30 | Spreadsheet over-grid images and visibility checks |  | Apps Script Spreadsheet service adds over-grid image support and methods to inspect hidden rows and columns. |
+| 2018-10-18 | Gmail add-on compose actions |  | Apps Script Card Service adds compose action response classes and builders for Gmail add-ons. |
+| 2018-08-20 | Utilities RSA signatures |  | Apps Script Utilities service adds RSA signature methods and the RsaAlgorithm class. |
+| 2018-06-19 | Forms response deletion |  | Apps Script Forms service adds Form.deleteResponse() to delete a form response by ID. |
+| 2018-06-19 | UrlFetch daily received-data quota | 2018-06-19 | Apps Script removes the per-user daily quota on total data received by UrlFetch; deprecated on 2018-06-19. |
+| 2018-06-19 | Utilities byte-array digest and HMAC methods |  | Apps Script Utilities service adds digest and HMAC signature methods that accept byte arrays. |
+| 2018-04-23 | Spreadsheet row and column groups |  | Apps Script Spreadsheet service adds group objects and methods for expanding, collapsing, and managing row and column groups. |
+| 2018-04-11 | Advanced Sheets editing APIs |  | Apps Script Spreadsheet service adds a broad set of classes and methods for advanced editing, formatting, filtering, pivoting, and selection operations. |
+| 2018-04-11 | Embedded Charts enhancements |  | Apps Script Charts service adds EmbeddedChart support in Google Sheets, including hidden-dimension and merge strategies and new chart types. |
+| 2018-03-26 | Active sheet selection restoration |  | Apps Script Spreadsheet service adds setActiveSheet(sheet, restoreSelection) overloads to preserve selection when switching sheets. |
+| 2018-03-26 | ScriptApp.Service enable method | 2018-03-26 | Apps Script sunsets the deprecated ScriptApp.Service.enable(restriction) method; deprecated on 2018-03-26. |
+| 2018-03-26 | ScriptApp.Service.Restriction enum | 2018-03-26 | Apps Script sunsets the deprecated ScriptApp.Service.Restriction enum; deprecated on 2018-03-26. |
+| 2018-02-26 | Calendar event triggers |  | Apps Script adds calendar event triggers for detecting recently changed calendar events alongside the Calendar advanced service. |
+| 2018-02-13 | Slides element insertion across page types |  | Apps Script Slides service adds methods to insert groups, images, lines, shapes, charts, tables, videos, and word art into layouts, masters, pages, and slides. |
+| 2018-02-13 | Slides text range insertion and appending |  | Apps Script Slides service adds methods to append and insert text ranges with optional source formatting preservation. |
+| 2018-02-13 | Spreadsheet copy paste types |  | Apps Script Spreadsheet service adds the CopyPasteType enum and a Range.copyTo() overload for paste type control. |
+| 2018-01-19 | UrlFetch batch requests |  | Apps Script UrlFetch service adds fetchAll() for making multiple fetch requests in one call. |
+| 2018-01-19 | Utilities gzip compression |  | Apps Script Utilities service adds methods to compress and decompress Blob objects using gzip. |
+| 2017-10-24 | Apps Script project manifest editing |  | Apps Script lets developers view and explicitly edit project manifests for direct control of project properties. |
+| 2017-10-24 | Card Service for Gmail add-ons |  | Apps Script adds a Card Service for building Gmail add-on interfaces with widget-based UI instead of HTML or CSS. |
+| 2017-10-24 | Explicit OAuth scope control |  | Apps Script lets developers directly control the OAuth scopes requested during authorization. |
+| 2017-10-24 | Gmail add-ons framework |  | Apps Script makes the Gmail add-ons framework generally available to all developers. |
+| 2017-10-24 | Manifest-based deployments |  | Apps Script lets developers deploy script projects directly from the project manifest. |
+| 2017-10-10 | Calendar all-day event creation and lookup |  | Apps Script Calendar service adds methods to create all-day events, retrieve events by iCal ID, and set all-day dates. |
+| 2017-10-10 | Groups nested group inspection |  | Apps Script Groups service adds methods to list groups and test whether a group contains another group. |
+| 2017-10-10 | Spreadsheet autofill and row or column movement |  | Apps Script Spreadsheet service adds autofill options and methods to move rows and columns. |
+| 2017-09-26 | Google Slides service |  | Apps Script adds support for the Google Slides service, including presentation editing and Slides add-on development. |
+| 2017-09-15 | Gmail drafts management |  | Apps Script Gmail service adds GmailDraft support for creating, editing, deleting, and sending draft messages and replies. |
+| 2017-09-15 | Priority Inbox detection |  | Apps Script Gmail service adds methods to determine whether a message or thread is in Priority Inbox. |
+| 2017-07-28 | Forms checkbox grid item |  | Apps Script Forms service adds a Checkbox Grid item type. |
+| 2017-07-28 | Spreadsheet linked form URL access |  | Apps Script Spreadsheet service adds Spreadsheet.getFormUrl() to return the URL of a form linked to a sheet or spreadsheet. |
+| 2017-07-28 | Stackdriver Error Reporting integration |  | Apps Script enables collection of exception and error reports through Stackdriver Error Reporting. |
+| 2017-06-20 | Range row randomization |  | Apps Script Spreadsheet service adds Range.randomize() to randomize the order of rows in a range. |
+| 2017-04-26 | Calendar event colors |  | Apps Script Calendar service adds getColor(), setColor(), and EventColor support for calendar events. |
+| 2017-04-26 | Combo and histogram charts |  | Apps Script adds support for Combo and Histogram charts, including embedding them in Google Sheets. |
+| 2017-04-26 | Forms quizzes support |  | Apps Script Forms service adds access to Google Forms quizzes features. |
+| 2017-03-09 | Container-bound script ownership inheritance |  | Apps Script makes the container owner the owner of new container-bound script projects regardless of who created them. |
+| 2017-03-09 | Editor deployment permissions |  | Apps Script allows script editors, in addition to owners, to publish add-ons and deploy scripts as web apps or executables. |
+| 2017-03-09 | Shared drive project collaboration |  | Apps Script supports project collaboration in Shared drives so scripts can be group-owned and maintained collaboratively. |
+| 2016-11-23 | Form validation classes |  | Form validation classes let scripts validate checkbox, generic data, grid, paragraph text, and text form items. |
+| 2016-10-19 | HtmlService X-Frame-Options header support |  | HtmlService can set X-Frame-Options headers so Apps Script HTML and web apps can render in iframes. |
+| 2016-07-28 | Android add-ons support |  | Apps Script add-ons for Google Docs and Sheets can run on Android. |
+| 2016-07-12 | Project keys for script identification | 2016-07-12 | Project keys were previously used as unique identifiers for Apps Script projects; deprecated on 2016-07-12. |
+| 2016-07-06 | HTML Service NATIVE sandbox mode | 2016-07-06 | NATIVE was an HTML Service sandbox mode for running Apps Script web content; deprecated on 2016-07-06. |
+| 2016-04-11 | UrlFetchApp PATCH request support |  | UrlFetchApp can send HTTP PATCH requests. |
+| 2016-03-25 | DashboardPanel.add(widget) | 2016-03-25 | DashboardPanel.add(widget) added UiApp widgets to a dashboard panel; deprecated on 2016-03-25. |
+| 2016-02-29 | Spreadsheet named ranges |  | The Spreadsheet service can create, manage, list, and protect named ranges. |
+| 2016-02-29 | Spreadsheet tab color API |  | The Spreadsheet service can get and set sheet tab colors. |
+| 2016-02-29 | Utilities.getUuid() |  | Utilities.getUuid() generates a unique identifier string. |
+| 2015-12-10 | HTML Service EMULATED sandbox mode | 2015-12-10 | EMULATED was an HTML Service sandbox mode for running Apps Script web content; deprecated on 2015-12-10. |
+| 2015-08-10 | ScriptApp.Service.enable() | 2015-08-10 | ScriptApp.Service.enable() enabled access to a service under the older Apps Script authorization model; deprecated on 2015-08-10. |
+| 2015-08-04 | Spreadsheet warning-only protection |  | Spreadsheet protections can warn users before edits instead of fully blocking edits. |
+| 2015-06-30 | Utilities RSA SHA-256 signature support |  | Utilities can sign strings with RSA SHA-256 using computeRsaSha256Signature variants. |
+| 2015-05-20 | Legacy OAuth service integration API | 2015-05-20 | The legacy OAuthConfig and related UrlFetchApp OAuth service methods supported OAuth integrations before library-based alternatives; deprecated on 2015-05-20. |
+| 2015-05-20 | Script installation source API |  | The Script service can identify a script's installation source and project key. |
+| 2015-05-20 | Web-safe Base64 utilities |  | Utilities can encode and decode web-safe Base64 values. |
+| 2015-04-23 | DocsList service | 2015-04-23 | DocsList service provided Apps Script access to Google Docs file listings and related operations; DocsList service provided Apps Script access to Google Docs file listings and related operations; deprecated on 2015-04-23. |
+| 2015-03-19 | Domain-wide add-on installation |  | Admins can install and authorize Docs, Sheets, and Forms add-ons for all users in a domain. |
+| 2015-03-19 | Script authorization project switching |  | Scripts can change which Google Developers Console project is used for authorization. |
+| 2015-03-04 | OAuthConfig | 2015-03-04 | OAuthConfig was the URL Fetch service class for connecting to OAuth 1.0 APIs; deprecated on 2015-03-04. |
+| 2015-02-10 | DocumentApp FontFamily enum | 2015-02-10 | The Document service FontFamily enum represented font families before string-based font names were adopted; deprecated on 2015-02-10. |
+| 2015-02-10 | Legacy sheet protection API | 2015-02-10 | PageProtection and the older sheet protection methods managed spreadsheet protection in the legacy Sheets model; deprecated on 2015-02-10. |
+| 2015-02-10 | Spreadsheet protection API |  | The Spreadsheet service can precisely protect sheets and ranges using the Protection model. |
+| 2015-02-10 | SpreadsheetApp.open(DocsList File) | 2015-02-10 | SpreadsheetApp.open(file) accepted a File object from the deprecated DocsList service; deprecated on 2015-02-10. |
+| 2014-12-11 | HTML Service IFRAME sandbox mode |  | IFRAME is an HTML Service sandbox mode with fewer restrictions and better performance than earlier modes. |
+| 2014-12-01 | Form one-response limit |  | Forms can get and set whether respondents are limited to one response per user. |
+| 2014-12-01 | Form question shuffling |  | Forms can get and set whether questions are shuffled on each page. |
+| 2014-12-01 | Form URL shortening |  | Forms can convert a long form URL into a short URL. |
+| 2014-12-01 | Spreadsheet image insertion |  | Sheets can insert images from blobs at specified row and column positions with optional offsets. |
+| 2014-10-23 | Finance service | 2014-10-23 | The Finance service provided Apps Script access to Google Finance data; The Finance service provided Apps Script access to Google Finance data; deprecated on 2014-10-23. |
+| 2014-10-14 | Time-driven installable triggers for add-ons |  | Google Sheets and Docs add-ons can use time-driven installable triggers. |
+| 2014-09-30 | Add-on installable trigger support |  | Google Sheets and Docs add-ons can use most installable triggers. |
+| 2014-09-30 | Google Docs installable open trigger |  | Google Docs supports an installable open trigger that can run authorized services. |
+| 2014-09-30 | LinearOptimizationService |  | LinearOptimizationService lets scripts model and solve linear and mixed-integer linear programs. |
+| 2014-09-04 | DocsListDialog OAuth token support |  | DocsListDialog can accept an OAuth 2.0 token for fetching user-specific dialog data. |
+| 2014-09-04 | Document-scoped cache and lock |  | Add-ons can use document-scoped cache and lock objects shared by users within the current document. |
+| 2014-09-04 | Legacy private and public cache and lock methods | 2014-09-04 | The older private and public cache and lock method names were replaced by user and script scoped equivalents; deprecated on 2014-09-04. |
+| 2014-07-17 | ScriptApp.EventType.ON_CHANGE |  | ScriptApp.EventType includes ON_CHANGE so scripts can detect Google Sheets change events correctly. |
+| 2014-06-20 | Script gallery in old Google Sheets | 2014-06-20 | The script gallery in the old version of Google Sheets distributed scripts before add-ons replaced it; deprecated on 2014-06-20. |
+| 2014-05-15 | Form trigger source property |  | Form trigger events include a source property so scripts can retrieve the triggering form. |
+| 2014-04-10 | Old Xml service | 2014-04-10 | The old XML service provided earlier XML processing support in Apps Script; The legacy Xml service was deprecated; deprecated on 2014-04-10. |
+| 2014-04-10 | SOAP service | 2014-04-10 | The SOAP service provided Apps Script integration with SOAP-based web services; deprecated on 2014-04-10. |
+| 2014-04-10 | UiApp layout and popup widgets | 2014-04-10 | Several UiApp layout and popup widgets were disabled, including DeckPanel, DecoratedPopupPanel, DockLayoutPanel, DockPanel, StackLayoutPanel, and TabLayoutPanel; deprecated on 2014-04-10. |
+| 2014-04-03 | Range.getDataSourceUrl() in new Google Sheets |  | The Range.getDataSourceUrl() method is supported in the new version of Google Sheets. |
+| 2014-03-11 | Current-document authorization annotations |  | The @OnlyCurrentDoc and @NotOnlyCurrentDoc annotations control whether authorization is limited to the current document. |
+| 2014-03-11 | Google-styled CSS package for HTML Service |  | A CSS package applies Google styling to fonts, buttons, and form elements in HTML Service dialogs and sidebars. |
+| 2014-03-11 | ScriptApp.AuthMode |  | ScriptApp.AuthMode identifies categories of authorized services available to a triggered function. |
+| 2014-03-11 | Ui.createAddonMenu() |  | Ui.createAddonMenu() lets scripts add a submenu to the Add-ons menu in Google Sheets or Docs. |
+| 2014-02-25 | Document bookmarks API |  | DocumentApp can create and retrieve bookmarks in documents. |
+| 2014-02-25 | Document cursor and selection API |  | DocumentApp can create positions and ranges and set the user's cursor or selection. |
+| 2014-02-25 | Document named ranges API |  | DocumentApp can create, retrieve, and list named ranges in documents. |
+| 2014-02-25 | google.script.host.editor.focus() |  | The HTML Service client API can move browser focus from a dialog or sidebar back to the editor. |
+| 2014-02-25 | Modal and modeless dialog API |  | The Ui class can show modal or modeless dialogs with explicit dialog titles. |
+| 2014-02-25 | Script state token API |  | ScriptApp can create state tokens for use in callback flows such as OAuth. |
+| 2014-02-25 | ScriptApp.getOAuthToken() |  | ScriptApp.getOAuthToken() returns the script's OAuth 2.0 access token. |
+| 2014-02-18 | Session.getActiveUserTimeZone() | 2014-02-18 | Session.getActiveUserTimeZone() returned the active user's time zone; deprecated on 2014-02-18. |
+| 2014-01-27 | Legacy DocumentApp selection class names | 2014-01-27 | Older DocumentApp selection class and method names were replaced with Range and RangeElement naming; deprecated on 2014-01-27. |
+| 2014-01-27 | Session locale and time zone API |  | Session can return the active user's locale and time zone. |
+| 2014-01-21 | Spreadsheet.getUi() |  | Spreadsheet.getUi() gives scripts access to the spreadsheet user interface for menus, dialogs, and sidebars. |
+| 2014-01-13 | Custom formula data validation in Google Sheets |  | Sheets data validation can use custom formulas through requireFormulaSatisfied and CUSTOM_FORMULA criteria. |
+| 2014-01-13 | Spreadsheet anonymous access methods | 2014-01-13 | Several SpreadsheetApp.Spreadsheet methods controlled anonymous viewing and writing access; deprecated on 2014-01-13. |
+| 2014-01-06 | Maps transit directions mode |  | Maps.DirectionFinder.Mode includes TRANSIT for retrieving public transit routes. |
+| 2014-01-06 | UrlFetchApp advanced parameter escaping |  | UrlFetchApp.fetch() supports an advanced parameter to disable automatic escaping of reserved URL characters. |
+| 2013-12-16 | Admin SDK Directory advanced service |  | Apps Script added an advanced service for the Admin SDK Directory API. |
+| 2013-12-16 | Admin SDK Reports advanced service |  | Apps Script added an advanced service for the Admin SDK Reports API. |
+| 2013-12-16 | Fusion Tables advanced service | December 3rd, 2019 | Apps Script Fusion Tables advanced service is deprecated and scheduled for full shutdown; Apps Script added an advanced service for the Fusion Tables API; deprecated on December 3rd, 2019. |
+| 2013-12-16 | Google+ Domains advanced service |  | Apps Script added an advanced service for the Google+ Domains API. |
+| 2013-12-16 | Mirror advanced service |  | Apps Script added an advanced service for the Mirror API. |
+| 2013-12-16 | YouTube advanced service |  | Apps Script added an advanced service for the YouTube API. |
+| 2013-12-16 | YouTube Analytics advanced service |  | Apps Script added an advanced service for the YouTube Analytics API. |
+| 2013-12-02 | Document paragraph TITLE and SUBTITLE headings |  | DocumentApp.ParagraphHeading includes TITLE and SUBTITLE heading values. |
+| 2013-11-18 | Utilities.jsonParse() and Utilities.jsonStringify() | 2013-11-18 | Utilities.jsonParse() and Utilities.jsonStringify() provided JSON parsing and serialization helpers before standard JavaScript JSON methods were preferred; deprecated on 2013-11-18. |
+| 2013-10-08 | Custom closed-form message |  | FormApp can get and set a custom message shown when a form is closed. |
+| 2013-10-08 | Form progress bar controls |  | FormApp can get and set whether a form shows a progress bar. |
+| 2013-10-08 | Form video items |  | FormApp can add YouTube video items to forms. |
+| 2013-09-23 | Drive file and folder owner retrieval |  | DriveApp can retrieve the owner of a file or folder. |
+| 2013-09-16 | Drive iterator continuation tokens |  | DriveApp supports saving and resuming file and folder iterators with continuation tokens. |
+| 2013-09-16 | HTML Service CSS3 support |  | HTML Service supports most CSS3 features within the Caja security sandbox. |
+| 2013-09-16 | layout | 2013-09-16 | Several UiApp widgets were disabled, including Hyperlink, InlineHyperlink, LayoutPanel, and RichTextArea; deprecated on 2013-09-16. |
+| 2013-09-16 | UiApp hyperlink | 2013-09-16 | Several UiApp widgets were disabled, including Hyperlink, InlineHyperlink, LayoutPanel, and RichTextArea; deprecated on 2013-09-16. |
+| 2013-09-09 | DocumentApp section utility methods | 2013-09-09 | DocumentApp methods for footnotes, link URLs, document-end checks, and sibling navigation in header and footer sections were deprecated; deprecated on 2013-09-09. |
+| 2013-09-09 | InlineImage link URL methods |  | Inline images in DocumentApp can now get and set hyperlink URLs. |
+| 2013-09-03 | Drive file and folder access lists |  | Drive files and folders can now return their viewers and editors as User arrays. |
+| 2013-09-03 | DriveApp folder search |  | DriveApp can now find folders by name and search folders by query parameters. |
+| 2013-09-03 | Simple onEdit trigger user email access | 2013-09-03 | Simple onEdit triggers can no longer retrieve the user's email address; deprecated on 2013-09-03. |
+| 2013-08-19 | Drive file copy to destination folder |  | DriveApp can now copy a file directly into a specified destination folder. |
+| 2013-08-13 | Spreadsheet non-active sheet deletion |  | Spreadsheets can now delete sheets without making them the active sheet first. |
+| 2013-08-05 | DocsList paginated listing methods | 2013-08-05 | DocsList methods that used start and max pagination arguments were deprecated in favor of DriveApp or paging-specific alternatives; deprecated on 2013-08-05. |
+| 2013-08-05 | GmailMessage plain text body access |  | GmailMessage can now return message content without HTML formatting. |
+| 2013-08-05 | Google Sheets data validation rules API |  | Apps Script can now programmatically control data-validation rules in Google Sheets. |
+| 2013-07-29 | ChromeOS autocomplete keyboard shortcut |  | On ChromeOS devices, autocomplete in the script editor can now be activated with Ctrl+Space. |
+| 2013-07-22 | Apps Script Dashboard service tracking for DriveApp and FormApp |  | The Apps Script Dashboard now tracks DriveApp and FormApp services. |
+| 2013-07-09 | E4X support | 2013-07-09 | Support for the JavaScript E4X feature was deprecated; deprecated on 2013-07-09. |
+| 2013-07-09 | SoapService | 2013-07-09 | SoapService was deprecated; deprecated on 2013-07-09. |
+| 2013-07-09 | XmlService |  | XmlService was added as the replacement for the old Xml service. |
+| 2013-06-17 | Drive file commenter management |  | The Drive Service can now add and remove commenters on files. |
+| 2013-06-17 | GmailApp sent mail synchronization |  | Mail sent with GmailApp now appears in Gmail's Sent Mail folder. |
+| 2013-05-13 | Container-bound scripts for Docs and Forms |  | Google Docs and Google Forms can now host bound scripts directly from their editors. |
+| 2013-05-13 | Drive Service |  | Drive Service was added to create and modify files and folders in Google Drive. |
+| 2013-05-13 | Editor UI extension APIs for Docs and Forms |  | DocumentApp and FormApp can now return a Ui object for adding menus, dialogs, and sidebars to editors. |
+| 2013-05-13 | Form trigger builder |  | FormTriggerBuilder was added to let scripts respond to Google Forms events. |
+| 2013-05-13 | Forms Service |  | Forms Service was added to create and modify Google Forms programmatically. |
+| 2013-05-13 | HtmlService sandbox mode selection |  | HtmlService can now use setSandboxMode to enable a faster sandbox implementation. |
+| 2013-05-13 | MimeType enum |  | The MimeType enum was added to provide named MIME type declarations. |
+| 2013-05-13 | Simplified Apps Script authorization flow |  | Apps Script introduced a new authorization flow with fewer clicks and automatic Google Developers Console project creation. |
+| 2013-05-09 | doPost request body access |  | The request object passed to doPost now includes the POST body through e.postData.getDataAsString(). |
+| 2013-05-02 | Spreadsheet change events |  | Scripts can now respond to spreadsheet change events such as row insertions with onChange(). |
+| 2013-04-22 | Sheet auto-resize column |  | Sheets can now automatically resize a column to fit its contents. |
+| 2013-04-22 | Tree and TreeItem clear method |  | Tree and TreeItem objects can now remove all children with a clear() method. |
+| 2013-04-22 | Tree lazy loading |  | The Tree class now supports lazy loading to reduce UI rendering wait times. |
+| 2013-04-15 | UiApp panel layout widgets | 2013-04-15 | Several UiApp panel and layout widgets, including DeckPanel and DockPanel variants, were deprecated; deprecated on 2013-04-15. |
+| 2013-04-01 | Sheet visibility controls |  | Sheets can now be hidden, shown, and checked for hidden state programmatically. |
+| 2013-03-18 | UiApp hyperlink and rich input widgets | 2013-03-18 | Several UiApp widgets, including Hyperlink, InlineHyperlink, LayoutPanel, RichTextArea, and SuggestBox, were deprecated; deprecated on 2013-03-18. |
+| 2013-03-11 | DocsList FORM file type |  | DocsList.FileType now includes FORM for accessing Google Forms files. |
+| 2013-03-11 | Utilities.formatString |  | Utilities now supports printf-like placeholder substitution with formatString(). |
+| 2013-02-14 | DocumentApp.openByUrl |  | Documents can now be opened directly by URL with DocumentApp.openByUrl(). |
+| 2013-02-11 | StaticMap email attachments |  | StaticMap objects can now be attached directly to emails. |
+| 2013-01-31 | SpreadsheetApp.openByUrl |  | Spreadsheets can now be opened directly by URL with SpreadsheetApp.openByUrl(). |
+| 2013-01-24 | JDBC compliant timezone shift option |  | Jdbc.getConnection now supports the useJDBCCompliantTimezoneShift advanced argument for external databases. |
+| 2013-01-24 | UiInstance mailto links |  | UiInstance.createAnchor now supports links that use the mailto scheme. |
+| 2013-01-24 | UrlFetchApp followRedirects option |  | UrlFetchApp.fetch now accepts followRedirects as an advanced argument. |
+| 2013-01-17 | ClockTriggerBuilder.after |  | ClockTriggerBuilder can now create one-off triggers more easily with after(durationMilliseconds). |
+| 2012-12-11 | Chart datasource URL validation |  | Charts now apply extra validation to datasource URLs, blocking custom URLs that rely on non-Google authentication. |
+| 2012-11-13 | SoapService SSL certificate validation control |  | SoapService can now disable SSL certificate validation when needed. |
+| 2012-11-06 | EmbeddedChartBuilder chart type helpers |  | EmbeddedChartBuilder now provides chart-specific helper methods as easier alternatives to setChartType(). |
+| 2012-10-26 | Chrome Web Store web app custom icon |  | Web apps published to the Chrome Web Store can now use a custom app icon. |
+| 2012-10-26 | Gmail aliases and custom sender selection |  | GmailApp can now list alternate sender addresses and send email using a selected alias. |
+| 2012-10-26 | GmailAttachment |  | The GmailAttachment class was added as a Blob-like type with a getSize() method that avoids quota restrictions. |
+| 2012-10-26 | HtmlService dialog close API |  | HtmlService pages can now close their containing dialogs programmatically. |
+| 2012-09-21 | CategoryFilterBuilder label separator |  | CategoryFilterBuilder can now specify label separator strings with setLabelSeparator(). |
+| 2012-09-21 | DocsList.getFilesByType string arguments | 2012-09-21 | Passing string document types to DocsList.getFilesByType() was deprecated in favor of DocsList.FileType enum values; deprecated on 2012-09-21. |
+| 2012-09-07 | SitesApp Page.isDeleted |  | SitesApp Page objects can now report whether they are deleted. |
+| 2012-08-30 | Chart builder setOption |  | Chart builders can now set advanced chart options through setOption(). |
+| 2012-08-30 | Properties service bulk management methods |  | ScriptProperties and UserProperties now support deletion, bulk set, and full retrieval operations. |
+| 2012-08-20 | Logger formatted log method |  | Logger now supports a log method that accepts a format string and variable values. |
+| 2012-08-20 | UiApp setStyleAttributes |  | UiApp widgets can now apply multiple style attributes at once with setStyleAttributes(). |
+| 2012-08-03 | DocsList File.getThumbnail |  | DocsList File objects can now return a thumbnail image. |
+| 2012-07-26 | Analytics Service |  | Apps Script added support for Google Analytics through the Analytics Service. |
+| 2012-07-26 | Autocomplete for development-mode libraries |  | Autocomplete now works for included libraries when they are added in development mode. |
+| 2012-07-26 | Script editor collaborator chat |  | The script editor now supports chat for people collaborating on a script. |
+| 2012-07-26 | UiInstance.remove methods |  | UiInstance now provides remove methods to delete widgets from the UI. |
+| 2012-06-27 | Chrome Web Store registration for Apps Script web apps |  | Apps Script web apps can now be registered in the Chrome Web Store for easier publishing and distribution. |
+| 2012-06-27 | Content Service |  | Content Service was launched for serving text responses such as XML, RSS, JSON, and plain text. |
+| 2012-06-27 | Html Service |  | Html Service was launched for building web apps with HTML, CSS, and JavaScript. |
+| 2012-06-27 | ScriptDb | 2014-11-20 | ScriptDB was an Apps Script data storage service for scripts; ScriptDb was launched as a JavaScript object database for Apps Script; deprecated on 2014-11-20. |
+| 2012-06-27 | Standalone scripts |  | Apps Script launched standalone scripts on script.google.com that are not bound to a container application. |
+| 2012-06-27 | Web app deployment versioning and execute-as-user |  | Apps Script web apps can now be published with versioning and configured to execute as the accessing user. |
+| 2012-06-14 | Domain Service nickname and group management |  | The Domain Service now supports NicknameManager and GroupsManager. |
+| 2012-06-14 | Embedded Charts in Google Sheets |  | Apps Script can now create, modify, and remove embedded charts in Google Sheets. |
+| 2012-05-21 | Drive file and folder descriptions |  | File and Folder objects can now get and set description metadata. |
+| 2012-05-21 | Script Libraries and Versions |  | Apps Script launched reusable script libraries together with version management. |
+| 2012-05-04 | DocumentApp horizontal alignment justify |  | DocumentApp.HorizontalAlignment now includes a JUSTIFY value. |
+| 2012-04-19 | Script Service everyMinutes trigger scheduling |  | Script Service can now schedule triggers at minute intervals with everyMinutes(). |
+| 2012-04-16 | DocsList.getRootFolder |  | DocsList now provides a method to retrieve the root folder. |
+| 2012-04-16 | Drive trash state checks |  | File and Folder objects can now report whether an item is in the trash. |
+| 2012-04-04 | Script Service |  | The Script service was launched for programmatically setting triggers and managing script publishing as a service. |
+| 2012-03-13 | GmailMessage.forward subject option |  | GmailMessage.forward() can now set the subject line through advanced arguments. |
+| 2012-03-07 | Limited HTML tags in UiApp widgets |  | UiApp widgets now support a limited set of embedded HTML tags. |
+| 2012-03-07 | Spreadsheet sheet protection API |  | Sheets now support protection management through getSheetProtection, setSheetProtection, and PageProtection. |
+| 2012-03-07 | UiApp anchor target control |  | UiApp can now set the target attribute for Anchor widgets. |
+| 2012-02-12 | Document headers and footers API |  | Document objects can now add headers and footers programmatically. |
+| 2012-02-12 | Range.merge |  | Spreadsheet ranges can now be merged with a merge() method. |
+| 2012-02-06 | Calendar.getEventSeriesById |  | Calendar now supports retrieving an event series by its ID. |
+| 2012-02-06 | Script execution cancellation from editor |  | Running scripts can now be canceled directly from the script editor. |
+| 2012-01-24 | ListItem glyph type |  | ListItem supports setting list glyph types beyond numeric glyphs. |
+| 2012-01-24 | ListItem nesting level |  | ListItem supports setting the nesting level of list items. |
+| 2012-01-24 | TableCell width control |  | TableCell supports getting and setting cell width. |
+| 2011-12-14 | AdSense service |  | Apps Script includes a service for working with AdSense. |
+| 2011-12-14 | Domain service | 2014-12-11 | The Domain service exposed Google Apps domain administration functionality in Apps Script; The Domain service exposed Google Apps domain administration functionality in Apps Script; deprecated on 2014-12-11. |
+| 2011-12-14 | Groups service |  | Apps Script includes a service for working with Google Groups. |
+| 2011-12-14 | Revision History copy and paste |  | Revision History supports copying and pasting content. |
+| 2011-12-14 | Spreadsheet.show autocomplete |  | Spreadsheet.show() is available in script editor autocomplete; Spreadsheet.show() is available in script editor autocomplete and documentation. |
+| 2011-11-07 | Cache service |  | Apps Script includes a cache service for storing temporary data. |
+| 2011-11-07 | Client handlers and validators |  | Apps Script supports client handlers and validators for UI interactions. |
+| 2011-11-07 | Lock service |  | Apps Script includes a locking service for coordinating script execution. |
+| 2011-09-26 | Charts service |  | Apps Script includes a charting service for creating charts and embedding or exporting them. |
+| 2011-09-26 | MailApp inline images |  | MailApp.sendEmail() supports sending emails with inline images. |
+| 2011-09-26 | Prediction service |  | Apps Script includes a prediction service for accessing hosted machine learning capabilities. |
+| 2011-09-26 | Tasks service |  | Apps Script includes a service for managing tasks and task lists. |
+| 2011-09-26 | URL Shortener service |  | Apps Script includes a service for creating and managing goo.gl short URLs. |
+| 2011-08-04 | GUI Builder ScrollPanel support |  | GUI Builder supports the ScrollPanel component. |
+| 2011-07-25 | Apps Script projects |  | Apps Script supports projects as a development unit. |
+| 2011-05-04 | Document service |  | Apps Script includes a service for interacting with Google Docs documents. |
+| 2011-05-04 | Gmail service |  | Apps Script includes a service for interacting with Gmail. |
+| 2011-05-04 | GUI Builder | 2013-03-18 | The GUI Builder was deprecated; Apps Script includes a GUI Builder for creating user interfaces; deprecated on 2013-03-18. |
+| 2011-04-15 | Spreadsheet appendRow |  | Spreadsheet supports appending rows with the appendRow() method. |
+| 2011-03-21 | FileUpload binary file upload |  | FileUpload supports uploading binary files. |
+| 2011-03-21 | ListBox multi-select |  | ListBox supports selecting multiple items. |
+| 2011-03-08 | Utilities CSV parsing |  | Utilities includes a method for parsing CSV text. |
+| 2010-10-21 | Google Sites integration |  | Apps Script can be run from within Google Sites. |
+| 2010-10-16 | Recurring calendar events |  | Apps Script supports creating, accessing, modifying, and deleting recurring calendar event series. |
+| 2010-09-17 | Calendar event metadata timestamps |  | CalendarEvent exposes creation and last-updated timestamps. |
+| 2010-09-17 | Contact last updated timestamp |  | Contact exposes the date when a contact was last updated. |
+| 2010-08-16 | Blob class |  | Apps Script includes a Blob class for moving data between services. |
+| 2010-08-16 | Contact name fields |  | Contact supports getting and setting given, middle, family, maiden, and nickname fields. |
+| 2010-08-16 | Outbound OAuth requests |  | Apps Script supports outbound OAuth requests through UrlFetchApp OAuth services. |
+| 2010-08-16 | Revision history |  | The script editor provides revision history for scripts. |
+| 2010-08-16 | Script and user properties |  | Apps Script supports persistent storage through ScriptProperties and UserProperties. |
+| 2010-08-16 | Script editor find and replace |  | The script editor supports find and replace. |
+| 2010-08-16 | Script timezone configuration |  | Scripts support configuring and viewing their timezone in the script editor and triggers dialog. |
+| 2010-08-16 | Session active and effective user access |  | Session provides methods to retrieve the active user and effective user. |
+| 2010-08-16 | Sites service enhancements |  | The Sites service gained additional functionality and issue fixes. |
+| 2010-08-16 | Spreadsheet form URL access |  | Spreadsheet provides a method to retrieve the associated form URL. |
+| 2010-08-16 | UiApp general availability |  | UiApp is available to all users rather than only Google Apps Premier domains. |
+| 2010-08-16 | Utilities JSON support |  | Utilities provides methods for parsing and stringifying JSON. |
+| 2010-08-01 | Sheet and Range sorting |  | Sheet and Range support sorting data. |
+| 2010-08-01 | Sheet frozen rows and columns |  | Sheet supports retrieving the number of frozen rows and columns. |
+| 2010-08-01 | Sheet row height and column width access |  | Sheet supports retrieving row heights and column widths. |
 
 Source file slug: `apps-script.md`
 

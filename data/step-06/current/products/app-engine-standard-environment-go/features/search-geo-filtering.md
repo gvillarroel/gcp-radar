@@ -1,0 +1,88 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T06:49:48.319Z"
+product_name: "App Engine standard environment Go"
+product_slug: "app-engine-standard-environment-go"
+feature_name: "Search geo filtering"
+feature_slug: "search-geo-filtering"
+latest_feature_date: "2015-10-29"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/appengine/docs/quotas"
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains"
+  - "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+keywords:
+  - "improved"
+  - "accuracy"
+  - "queries"
+  - "have"
+  - "filtering"
+  - "search"
+---
+
+# Search geo filtering
+
+Product: App Engine standard environment Go
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Search queries have improved geo filtering accuracy.
+
+## Extended Definition
+
+Search queries have improved geo filtering accuracy.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- [https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains)
+- [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
+
+## Supporting Pages
+
+### "Quotas and limits \_|\_ App Engine standard environment \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- Source ID: `site-docs-reference-4`
+- Final score: 64
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Resource or API call Free Quota Total storage (documents and indexes) 0.25 GB Queries 1000 queries per day Adding documents to indexes 0.01 GB per day The application console quota section displays a raw count of API requests.
+- The Search API imposes these limits to ensure the reliability of the service: 100 aggregated minutes of query execution time per minute, within an app and an index .
+- This includes indexes that were created in the past and no longer appear in the application's configuration but have not been deleted.
+- For example, if you have standard versions and flexible versions in the same app, those versions count towards the same limit.
+
+### "Mapping custom domains \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains)
+- Source ID: `site-docs-reference-4`
+- Final score: 51
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Updating DNS records at your domain registrar Note: If you have a custom domain set up for your App Engine app and want to move it to a different Google Cloud project, you do not need to update your custom domain DNS records as these will remain fixed for the domain when you switch projects.
+- Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.
+- Delegating ownership to other Google Cloud users or service accounts If you need to delegate the ownership of your domain to other users or service accounts, you can add permission through the Search Console page.
+- In order to add or edit a custom domain mapping, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.get permission.
+
+### "App Engine audit logging information \_|\_ App Engine standard environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
+- Source ID: `site-docs-reference`
+- Final score: 44
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To display all audit logs, enter either of the following queries into the query-editor field, and then click Run query : logName:"cloudaudit.googleapis.com" protoPayload."@type"="type.googleapis.com/google.cloud.audit.AuditLog" To display the audit logs for a specific resource and audit log type, in the Query builder pane, do the following: In Resource type , select the Google Cloud resource whose audit logs you want to see.
+- Here are some reasons you might want to route your audit logs: To keep audit logs for a longer period of time or to use more powerful search capabilities, you can route copies of your audit logs to Cloud Storage, BigQuery, or Pub/Sub.
+- For more information about querying by using the Logs Explorer, see Build queries in the Logs Explorer . gcloud The Google Cloud CLI provides a command-line interface to the Logging API.
+- In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .
+

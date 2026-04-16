@@ -1,88 +1,92 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.746Z"
+generated_at: "2026-04-15T12:48:36.691Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "Analytics Hub"
 feature_slug: "analytics-hub"
 latest_feature_date: "2022-04-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/release-notes"
-  - "https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial"
-  - "https://docs.cloud.google.com/bigquery/docs/loading-data"
+  - "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges"
+  - "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+  - "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
 keywords:
-  - "BigQuery data exchange"
-  - "data exchange"
-  - "publisher"
-  - "Analytics Hub listing"
-  - "listing details"
-  - "subscriptions"
-  - "subscriber"
-  - "Analytics Hub"
+  - "analytics"
+  - "hub"
+  - "lets"
+  - "organizations"
+  - "create"
+  - "secure"
+  - "exchanges"
+  - "share"
 ---
 
 # Analytics Hub
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Analytics Hub enables secure data exchanges in BigQuery, letting providers publish shared dataset listings and subscribers discover and subscribe to them.
+Analytics Hub lets organizations create secure data exchanges and share analytics assets through publishable listings.
 
 ## Extended Definition
 
-Analytics Hub enables secure data exchanges in BigQuery, letting providers publish shared dataset listings and subscribers discover and subscribe to them.
+Analytics Hub lets organizations create secure data exchanges and share analytics assets through publishable listings.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
-- [https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial](https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial)
-- [https://docs.cloud.google.com/bigquery/docs/loading-data](https://docs.cloud.google.com/bigquery/docs/loading-data)
+- [https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges](https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges)
+- [https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction](https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction)
+- [https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings](https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings)
 
 ## Supporting Pages
 
-### BigQuery release notes \_|\_ Google Cloud Documentation
+### Manage data exchanges \_|\_ BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 64
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- March 10, 2025 Announcement Analytics Hub egress controls and data clean room subscriptions are now available in all BigQuery editions and on-demand pricing.
-- February 17, 2025 Libraries Node.js 7.9.2 (2025-02-12) Bug Fixes Avoid schema field mutation when passing selectedFields opt ( #1437 ) ( 27044d5 ) Java 2.48.0 (2025-02-13) Features Implement wasNull for BigQueryResultSet ( #3650 ) ( c7ef94b ) Dependencies Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.59.0 ( #3660 ) ( 3a6228b ) Update dependency com.google.apis:google-api-services-bigquery to v2-rev20250128-2.0.0 ( #3667 ) ( 0b92af6 ) Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.63.0 ( #3661 ) ( 9bc8c01 ) Update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ( #3669 ) ( 4d9e0ff ) Documentation Update CONTRIBUTING.md for users without branch permissions ( #3670 ) ( 009b9a2 ) Libraries Java 2.48.0 (2025-02-13) Features Implement wasNull for BigQueryResultSet ( #3650 ) ( c7ef94b ) Dependencies Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.59.0 ( #3660 ) ( 3a6228b ) Update dependency com.google.apis:google-api-services-bigquery to v2-rev20250128-2.0.0 ( #3667 ) ( 0b92af6 ) Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.63.0 ( #3661 ) ( 9bc8c01 ) Update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ( #3669 ) ( 4d9e0ff ) Documentation Update CONTRIBUTING.md for users without branch permissions ( #3670 ) ( 009b9a2 ) Feature Subscriber email logging lets you log the principal identifiers of users who execute jobs and queries against linked datasets.
-- June 02, 2025 Libraries Go 1.69.0 (2025-05-27) Features bigquery/analyticshub: Add support for Analytics Hub & Marketplace Integration ( 2aaada3 ) bigquery/analyticshub: Adding allow only metadata sharing to Listing resource ( 2aaada3 ) bigquery/analyticshub: Adding CommercialInfo message to the Listing and Subscription resources ( 2aaada3 ) bigquery/analyticshub: Adding delete commercial and revoke commercial to DeleteListingRequest and RevokeSubscriptionRequest ( 2aaada3 ) bigquery/analyticshub: Adding DestinationDataset to the Subscription resource ( 2aaada3 ) bigquery/analyticshub: Adding routine field to the SharedResource message ( 2aaada3 ) bigquery: Add support for dataset view and update modes ( #12290 ) ( 7c1f961 ) bigquery: Job creation mode GA ( #12225 ) ( 1d8990d ) Libraries Node.js 8.1.0 (2025-05-29) Features Job creation mode GA ( #1480 ) ( b51359a ) Support per-job reservation assignment ( #1477 ) ( 8151e72 ) Libraries Python 3.34.0 (2025-05-27) Features Job creation mode GA ( #2190 ) ( 64cd39f ) Bug Fixes deps: Update all dependencies ( #2184 ) ( 12490f2 ) Documentation Update query.py ( #2192 ) ( 9b5ee78 ) Use query and wait in the array parameters sample ( #2202 ) ( 28a9994 ) Feature BigQuery now supports using Spanner external datasets with authorized views , authorized routines , and Cloud resource connections .
-- May 19, 2025 Libraries Go 1.68.0 (2025-05-12) Features bigquery/analyticshub: Support new feature Sharing Cloud Pubsub Streams via AH (GA) and Subscriber Email logging feature ( #11908 ) ( a21d596 ) bigquery/storage: Increased the number of partitions can be written in a single request ( 43bc515 ) bigquery: Add performance insights ( #12101 ) ( aef68ab ) bigquery: Add some missing fields to BQ stats ( #12212 ) ( 77b08e8 ) bigquery: Add WriteTruncateData write disposition ( #12013 ) ( b1126a3 ) bigquery: New client(s) ( #12228 ) ( f229bd9 ) bigquery: Support managed iceberg tables ( #11931 ) ( 35e0774 ) bigquery: Support per-job reservation assignment ( #12078 ) ( c9cebcc ) Bug Fixes bigquery: Cache total rows count ( #12230 ) ( 202dce0 ), refs #11874 #11873 bigquery: Parse timestamps with timezone info ( #11950 ) ( 530d522 ) bigquery: Update google.golang.org/api to 0.229.0 ( 3319672 ) bigquery: Upgrade gRPC service registration func ( 7c01015 ) Documentation bigquery/storage: Updated the number of partitions (from 100 to 900) can be inserted, updated and deleted in a single request ( 43bc515 ) Libraries Python 3.32.0 (2025-05-12) - YANKED Reason this release was yanked: PR #2154 caused a performance regression.
-
-### "Detect anomalies in multiple time series with the TimesFM model \_|\_ BigQuery\
-
-- URL: [https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial](https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial)
-- Source ID: `site-docs-root-2`
-- Final score: 26
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges](https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges)
+- Source ID: `site-docs-reference-5`
+- Final score: 216
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- DETECT ANOMALIES ( ( SELECT FROM bike share trips WHERE trip hour >= TIMESTAMP ( '2017-07-01' ) AND trip hour TIMESTAMP ( '2017-08-01' ) ), ( SELECT FROM bike share trips WHERE trip hour >= TIMESTAMP ( '2017-08-01' ) AND trip hour TIMESTAMP ( '2017-09-01' ) ), anomaly prob threshold => 0.95 , timestamp col => 'trip hour' , data col => 'num trips' , id cols => [ 'subscriber type' ] ); The results look similar to the following: +-----------------+-------------------------+------------------+------------+--------------------+---------------------+---------------------+---------------------------+ subscriber type time series timestamp time series data is anomaly lower bound upper bound anomaly probability ai detect anomalies status +-----------------+-------------------------+------------------+------------+--------------------+---------------------+---------------------+---------------------------+ Customer 2017-08-01 00:00:00 UTC 13.0 false -1.97939332204...
-- 0.12345678901234... +-----------------+-------------------------+------------------+------------+--------------------+---------------------+---------------------+---------------------------+ ... ... ... ... ... ... ... ... +-----------------+-------------------------+------------------+------------+--------------------+---------------------+---------------------+---------------------------+ Subscriber 2017-08-01 00:00:00 UTC 13.0 false -1.97939332204...
-- Go to BigQuery In the query editor, paste in the following query and click Run : WITH bike share trips AS ( SELECT TIMESTAMP TRUNC ( start date , HOUR ) AS trip hour , COUNT ( ) AS num trips , subscriber type FROM bigquery-public-data.san francisco bikeshare.bikeshare trips GROUP BY TIMESTAMP TRUNC ( start date , HOUR ), subscriber type ) SELECT FROM AI .
-- 0.38048622012138... +-----------------+-------------------------+------------------+------------+--------------------+---------------------+---------------------+---------------------------+ Subscriber 2017-08-01 01:00:00 UTC 3.0 false -5.12345678901...
+- To view data exchanges in your organization, use the organizations.locations.dataExchanges.list method : GET https://analyticshub.googleapis.com/v1/organizations/ ORGANIZATION ID /location/ LOCATION /dataExchanges Replace the following: ORGANIZATION ID : the organization ID.
+- POST https://analyticshub.googleapis.com/v1/projects/ PROJECT ID /location/ LOCATION /dataExchanges?dataExchangeId= DATAEXCHANGE ID Replace the following: PROJECT ID : the ID of the project where you want to create the data exchange.
+- DELETE https://analyticshub.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /dataExchanges/ DATAEXCHANGE ID Replace the following: PROJECT ID : the ID of the project in which you want to create the data exchange.
+- Create BigQuery sharing administrators To manage data exchanges, create data exchange administrators by granting users the Analytics Hub Admin role ( roles/analyticshub.admin ) at the project or data exchange level.
 
-### Introduction to loading data \_|\_ BigQuery \_|\_ Google Cloud Documentation
+### Introduction to BigQuery sharing \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/loading-data](https://docs.cloud.google.com/bigquery/docs/loading-data)
-- Source ID: `site-docs-root`
-- Final score: 24
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction](https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction)
+- Source ID: `site-docs-reference-5`
+- Final score: 194
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Run queries on shared data To run queries on a BigQuery dataset that someone has shared with you, see Introduction to BigQuery sharing (formerly Analytics Hub) .
-- Sharing is a data exchange platform that enables data sharing.
-- For more information, see BigQuery subscriptions .
+- The Analytics Hub Admin role lets you create multiple data exchanges and manage other users performing sharing tasks.
+- Introduction to BigQuery sharing BigQuery sharing (formerly Analytics Hub) is a data exchange platform that lets you share data and insights at scale across organizational boundaries with a robust security and privacy framework.
+- As an Analytics Hub Admin, you can create data exchanges that enable data sharing, and then give permissions to data publishers and subscribers to access these data exchanges.
+- If you want employees to only update, delete, and share listings, but not create them, grant them the Analytics Hub Listing Admin role ( roles/analyticshub.listingAdmin ).
+
+### Manage listings \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings](https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings)
+- Source ID: `site-docs-reference-5`
+- Final score: 194
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Enable the Analytics Hub API gcloud Run the gcloud services enable command: gcloud services enable analyticshub.googleapis.com Required roles To manage listings and subscriptions, you must have one of the following BigQuery sharing Identity and Access Management (IAM) roles: Analytics Hub Publisher role ( roles/analyticshub.publisher ), which lets you create, update, delete, and set IAM policies on your listings.
+- POST https://analyticshub.googleapis.com/v1/projects/ PROJECT ID /location/ LOCATION /dataExchanges/ DATAEXCHANGE ID /listings?listingId= LISTING ID Replace the following: PROJECT ID : the project ID that contains the data exchange in which you want to create the listing.
+- Analytics Hub Admin role ( roles/analyticshub.admin ), which lets you create, update, delete, and set IAM policies on all listings in your data exchange.
+- Use the following format to add members: user:test-user@gmail.com group:admins@example.com serviceAccount:test123@example.domain.com domain:example.domain.com For example, to grant the roles/analyticshub.subscriber role to group:subscribers@example.com , add the following binding to the policy: { "members": [ "group:subscribers@example.com" ], "role":"roles/analyticshub.subscriber" } Write the updated policy by using the projects.locations.dataExchanges.listings.setIamPolicy method .
 

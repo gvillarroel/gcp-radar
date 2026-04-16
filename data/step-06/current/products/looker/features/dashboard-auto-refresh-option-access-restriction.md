@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.548Z"
+generated_at: "2026-04-15T13:43:38.536Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Dashboard auto-refresh option access restriction"
@@ -9,8 +9,9 @@ latest_feature_date: "2023-11-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+  - "https://docs.cloud.google.com/looker/docs/access-levels"
 keywords:
   - "dashboard"
   - "auto"
@@ -37,33 +38,53 @@ Admins can restrict non-admin users from accessing the dashboard auto-refresh op
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- [https://docs.cloud.google.com/looker/docs/access-levels](https://docs.cloud.google.com/looker/docs/access-levels)
 
 ## Supporting Pages
 
-### Access control and permission management | Looker | Google Cloud Documentation
+### Admin settings - General settings \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 52
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- Source ID: `site-docs-reference`
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Data access can be further restricted within a model using access filters to limit which rows of data ...
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
+- Limit Automatically refresh dashboard option When this setting is enabled, only Looker admins will be able to enable the Automatically refresh dashboard option on user-defined dashboards.
+- Auto-certify LookML When this option is enabled, all LookML dashboards and LookML Explores will be automatically certified.
+- This prevents non-admin users from automatically refreshing data on dashboards and dashboard tiles.
+- Automatically refreshing dashboard data can place a significant strain on some database systems.
 
-### Looker (Google Cloud core) access control with IAM | Google Cloud Documentation
+### Admin settings - Roles \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- Source ID: `site-iam-reference`
-- Final score: 42
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- Source ID: `site-docs-reference`
+- Final score: 165
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) access control with IAM Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-access-control Looker (Google Cloud core) uses Identity and Access Management (IAM) to provision user and admin access through a set of IAM roles.
+- LookML dashboard user access data , clear cache refresh , mobile app access , see lookml dashboards User access data , can create forecast , clear cache refresh , create custom fields , create table calculations , download without limit , explore , manage spaces , mobile app access , save content , save dashboards , save looks , schedule look emails , see drill overlay , see lookml , see lookml dashboards , see looks , see sql , see user dashboards , send to integration , schedule without limit User who can't view LookML access data , can create forecast , clear cache refresh , create custom fields , create table calculations , download without limit , explore , manage spaces , mobile app access , save content , save dashboards , save looks , schedule look emails , see lookml dashboards , see looks , see user dashboards , send to integration , schedule without limit Viewer access data , clear cache refresh , download without limit , mobile app access , schedule look emails , see drill overlay , see lookml dashboards , see looks , see user dashboards , schedule without limit You'll see these permission sets appear as options when you create a new role.
+- Gemini gemini in looker Conversational Analytics Agent Manager access data , gemini in looker , chat with agent , chat with explore , save agents Conversational Analytics User access data , gemini in looker , chat with agent Customer Engineer Advanced Editor access data , can create forecast , can override vis config , chat with agent , chat with explore , clear cache refresh , create custom fields , create table calculations , deploy , develop , explore , follow alerts , gemini in looker , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , save agents , save content , save dashboards , save looks , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Customer Engineer Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.
+- Default permission sets For new installations, Looker includes several default permission sets that you can start with: Permission Set Included Permissions Admin All permissions Developer access data , can create forecast , clear cache refresh , create custom fields , create table calculations , deploy , develop , download without limit , explore , manage spaces , mobile app access , save content , save dashboards , save looks , schedule look emails , see drill overlay , see lookml , see lookml dashboards , see looks , see pdts , see sql , see user dashboards , send to integration , schedule without limit , use sql runner NOTE : The see pdts permission is included in the Developer default permission only for Looker installations that were created with Looker 21.18 or later.
+- Support Advanced Editor access data , clear cache refresh , create custom fields , create table calculations , develop , explore , follow alerts , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Support Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.
+
+### "Designing and configuring a system of access levels \_|\_ Looker \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/looker/docs/access-levels](https://docs.cloud.google.com/looker/docs/access-levels)
+- Source ID: `site-docs-reference`
+- Final score: 156
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Manage Access, Edit : This access level lets a user do everything that the View access level does, plus make changes to the folder, such as the following: Editing Looks and editing dashboards in the folder Specifying which users and groups of users can view or manage the folder Creating subfolders Renaming, moving, and deleting a folder Moving Looks and dashboards Deleting Looks and dashboards For additional discussion of content access and permissions, see Controlling user content access and How content access and permissions interact .
+- Types of access to folders One of two access levels can be assigned to each Looker user or group for any given folder: View : With this access level, a user can see that the folder exists, can view the Looks and dashboards inside it, and can copy the Looks and dashboards in the folder.
+- Enable the Closed System option in the Admin panel It's best to enable the Closed System option before setting up any access controls on folders, since enabling the Closed System option makes changes to your system (see the introduction to Configuring a closed system on this page).
+- Access Type Inheritance Pattern Description Manage Access, Edit Flows all the way down the folder hierarchy Once you give a user access to Manage Access, Edit in a folder, they will retain that access level to all Looks, dashboards, and subfolders within that folder.
 

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.070Z"
+generated_at: "2026-04-14T00:23:22.629Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Kerberos automatic configuration"
 feature_slug: "kerberos-automatic-configuration"
 latest_feature_date: "2020-07-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/about-kerberos"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos"
 keywords:
   - "kerberos"
   - "automatic"
@@ -26,7 +26,7 @@ keywords:
 # Kerberos automatic configuration
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,54 @@ Dataproc can automatically configure Kerberos during cluster creation without re
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/about-kerberos](https://docs.cloud.google.com/dataproc-metastore/docs/about-kerberos)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos](https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos)
 
 ## Supporting Pages
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change Dataproc on Compute Engine: Dataproc now automatically configures Knox Gateway configuration properties gateway.dispatch.whitelist.services and gateway.dispatch.whitelist for component web UIs within the cluster.
-- January 30, 2025 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.89 1.2.33 2.2.33 Change Dataproc on Compute Engine: Private Google Access is now automatically enabled in the configured subnetwork when creating clusters with internal IP addresses .
-- Announcement Announcing the General Availability (GA) release of the Dataproc Workflow Timeout feature, which allows users to set a timeout on their graph of jobs and automatically cancel their workflow after a specified period.
-- August 28, 2020 Feature Launched Dataproc Workflow Timeout feature, which allows users to set a timeout on their graph of jobs and automatically cancel their workflow after a specified period.
 
 ### Create a Dataproc Metastore service \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
 - Source ID: `site-docs-root-2`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- If you change your endpoint to gRPC, this value automatically changes to 443 and can't be changed. (Optional) For Dataproc Metastore 1.
-- You can sign in by executing gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI.
-- Provisioning the service might take a few minutes. gcloud CLI To create a metastore, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \ --location= LOCATION \ --instance-size= INSTANCE SIZE \ --scaling-factor= SCALING FACTOR \ --port= PORT \ --tier= TIER \ --endpoint-protocol= ENDPOINT PROTOCOL \ --database-type= DATABASE TYPE \ --hive-metastore-version= HIVE METASTORE VERSION \ --data-catalog-sync= DATA CATALOG SYNC \ --release-channel= RELEASE CHANNEL \ --hive-metastore-configs= METADATA OVERRIDE \ --labels= LABELS \ --auxiliary-versions= AUXILIARY VERSION \ --network= NETWORK \ --consumer-subnetworks="projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET1 , projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET2 " \ --kerberos-principal= KERBEROS PRINCIPAL \ --krb5-config= KRB5 CONFIG \ --keytab= CLOUD SECRET \ --encryption-kms-key= KMS KEY Replace the following: Service settings : SERVICE : The name of your new Dataproc Metastore service.
-- You can check the active account by executing gcloud auth list . curl -X POST -s -i -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -d '{"scaling config":{"autoscaling config":{"autoscaling enabled": true,"limit config":{"max scaling factor": MAX SCALING FACTOR ,"min scaling factor": MIN SCALING FACTOR }}}}' \ -H "Content-Type:application/json" \ https://metastore.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/services?service id= SERVICE ID Replace the following: MIN INSTANCES Optional: The minimum number of instances to use in your autoscaling configuration.
-
-### "Package com.google.cloud.dataproc.v1 (4.85.0) \_|\_ Java client libraries\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1)
-- Source ID: `site-java-reference`
-- Final score: 148
+- Final score: 139
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Startup Config Configuration to handle the startup of instances during cluster create and update process. com. google. cloud. dataproc. v1.
-- Builder Configuration to handle the startup of instances during cluster create and update process. com. google. cloud. dataproc. v1.
-- Security Config Security related configuration, including encryption, Kerberos, etc. com. google. cloud. dataproc. v1.
-- Builder Security related configuration, including encryption, Kerberos, etc. com. google. cloud. dataproc. v1.
+- If you change your endpoint to gRPC, this value automatically changes to 443 and can't be changed. (Optional) For Dataproc Metastore 1.
+- Provisioning the service might take a few minutes. gcloud CLI To create a metastore, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \ --location= LOCATION \ --instance-size= INSTANCE SIZE \ --scaling-factor= SCALING FACTOR \ --port= PORT \ --tier= TIER \ --endpoint-protocol= ENDPOINT PROTOCOL \ --database-type= DATABASE TYPE \ --hive-metastore-version= HIVE METASTORE VERSION \ --data-catalog-sync= DATA CATALOG SYNC \ --release-channel= RELEASE CHANNEL \ --hive-metastore-configs= METADATA OVERRIDE \ --labels= LABELS \ --auxiliary-versions= AUXILIARY VERSION \ --network= NETWORK \ --consumer-subnetworks="projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET1 , projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET2 " \ --kerberos-principal= KERBEROS PRINCIPAL \ --krb5-config= KRB5 CONFIG \ --keytab= CLOUD SECRET \ --encryption-kms-key= KMS KEY Replace the following: Service settings : SERVICE : The name of your new Dataproc Metastore service.
+- Create Dataproc Metastore using default settings Creating a Dataproc Metastore using the default settings configures your service with an enterprise tier, a medium instance size, the latest version of the Hive metastore, a Thrift endpoint, and a data location of us-central1 .
+- Create Dataproc Metastore using advanced settings Creating a Dataproc Metastore using the advanced settings shows you how to modify configurations such as network configurations, scaling settings, endpoint settings, security settings, and optional features.
+
+### How Kerberos works with Dataproc Metastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/about-kerberos](https://docs.cloud.google.com/dataproc-metastore/docs/about-kerberos)
+- Source ID: `site-docs-root-2`
+- Final score: 135
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You need to specify the secret version that you want to use, Dataproc Metastore does not pick the latest version automatically. krb5.conf file A valid krb5.conf file contains Kerberos configuration information, such as the KDC IP, port, and realm name.
+- Required Kerberos assets The following section provides general information on the Kerberos assets that you need to configure Kerberos for a Dataproc Metastore service.
+- Kerberos principal When you configure Kerberos for a Dataproc Metastore service, you generate your principal file using a Managed Service for Apache Spark cluster.
+- You can configure Kerberos on the following Dataproc Metastore services: A Dataproc Metastore service that uses the Thrift endpoint protocol .
+
+### "Configure Kerberos for Dataproc Metastore Thrift endpoints \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos](https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos)
+- Source ID: `site-docs-root-2`
+- Final score: 132
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use the project ID and number of the project that contains the Cloud Storage bucket. gcloud projects add-iam-policy-binding PROJECT ID \ --member serviceAccount:service- PROJECT NUMBER @gcp-sa-metastore.iam.gserviceaccount.com \ --role roles/storage.objectViewer Create a Dataproc Metastore service with Kerberos Create a new Dataproc Metastore service that's configured with your Kerberos files.
+- Configure the Managed Service for Apache Spark cluster for Kerberos The following instructions show you how to use SSH to connect to a primary Managed Service for Apache Spark cluster that's associated with your Dataproc Metastore service.
+- Home Documentation Data analytics Dataproc Metastore Guides Send feedback Configure Kerberos for Dataproc Metastore Thrift endpoints Stay organized with collections Save and categorize content based on your preferences.
+- Enable Kerberos for Dataproc Metastore The following instructions show you how to configure Kerberos for a Dataproc Metastore service that is attached to a Managed Service for Apache Spark cluster.
 

@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T17:49:26.943Z"
+generated_at: "2026-04-14T08:39:49.500Z"
 product_name: "Artifact Registry"
 product_slug: "artifact-registry"
 feature_name: "Artifact Registry beta launch"
 feature_slug: "artifact-registry-beta-launch"
 latest_feature_date: "2020-03-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/artifact-registry/docs/release-notes"
-  - "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers"
-  - "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance"
+  - "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+  - "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+  - "https://docs.cloud.google.com/artifact-registry/docs/access-control"
 keywords:
+  - "successor"
   - "entered"
   - "launch"
   - "beta"
+  - "package"
   - "container"
-  - "as"
-  - "registry"
-  - "artifact"
-  - "the"
 ---
 
 # Artifact Registry beta launch
 
 Product: Artifact Registry
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +36,54 @@ Artifact Registry entered beta as the container-and-package registry successor w
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/artifact-registry/docs/release-notes](https://docs.cloud.google.com/artifact-registry/docs/release-notes)
-- [https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers](https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers)
-- [https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance](https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance)
+- [https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images](https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images)
+- [https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr](https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr)
+- [https://docs.cloud.google.com/artifact-registry/docs/access-control](https://docs.cloud.google.com/artifact-registry/docs/access-control)
 
 ## Supporting Pages
 
-### Artifact Registry release notes \_|\_ Google Cloud Documentation
+### "Quickstart: Store Docker container images in Artifact Registry \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/release-notes](https://docs.cloud.google.com/artifact-registry/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For more information, see Container scanning overview . v1 Feature Artifact Analysis now supports scanning for vulnerabilities in the following types of operating systems: AlmaLinux OS Chainguard Google Distroless Red Hat Universal Base Image (UBI) Rocky Linux SUSE Linux Enterprise Server (SLES) Wolfi If the Container Scanning API is enabled, it scans container images pushed to Artifact Registry addressing these new operating systems, in addition to already supported operating system and language package vulnerabilities.
-- October 21, 2024 v1 Feature Artifact Analysis now supports manual scans for vulnerabilities in the following types of packages: AlmaLinux OS Chainguard .NET Google Distroless NPM PHP Python Ruby Rust Red Hat Universal Base Image (UBI) Rocky Linux SUSE Linux Enterprise Server (SLES) Wolfi You can use the On-Demand Scanning API to manually scan container images locally on your computer or in your registry.
-- Artifact Registry creation time is set to the time the image was uploaded to Container Registry, and update time is set to the time the image is copied to Artifact Registry.
-- The Container Analysis API stores metadata in the same region or multi-region as the Artifact Registry repository where your image is scanned.
-
-### "Migrate container images from a third-party registry \_|\_ Artifact Registry\
-
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers](https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers)
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images](https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images)
 - Source ID: `site-docs-root-2`
-- Final score: 196
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following example shows manifest referencing a third-party registry: apiVersion : apps/v1 kind : Deployment metadata : name : nginx-deployment spec : selector : matchLabels : app : nginx replicas : 2 template : metadata : labels : app : nginx spec : containers : - name : nginx image : nginx:1.14.2 ports : - containerPort : 80 This updated version of the manifest points to an image on us-docker.pkg.dev . apiVersion : apps/v1 kind : Deployment metadata : name : nginx-deployment spec : selector : matchLabels : app : nginx replicas : 2 template : metadata : labels : app : nginx spec : containers : - name : nginx image : us-docker.pkg.dev/<AR PROJECT>/nginx:1.14.2 ports : - containerPort : 80 For a large number of manifests, use sed or another tool that can handle updates across many text files.
-- Keep track of new image pulls by running the following query in the BigQuery console: SELECT FORMAT TIMESTAMP ( "%D %R" , timestamp ) as timeOfImagePull , REGEXP EXTRACT ( jsonPayload . message , r '"(. ?)"' ) AS imageName , COUNT ( ) AS numberOfPulls FROM image pull logs . events ` GROUP BY timeOfImagePull , imageName ORDER BY timeOfImagePull DESC , numberOfPulls DESC All new image pulls should be from Artifact Registry and contain the string docker.pkg.dev .
-- GO111MODULE = on go get github.com/google/go-containerregistry/cmd/gcrane Create a script named copy images.sh to copy your list of files. #!/bin/bash images = $( cat images.txt ) if [ -z " ${ AR PROJECT } " ] then echo ERROR: AR PROJECT must be set before running this exit 1 fi for img in ${ images } do gcrane cp ${ img } LOCATION -docker.pkg.dev/ ${ AR PROJECT } / ${ img } done Replace LOCATION with the regional or multi-regional location of the repository.
-- Costs This guide uses the following billable components of Google Cloud: GKE Artifact Registry BigQuery Logging Identify images to migrate Search the files you use to build and deploy your container images for references to third-party registries, then check how often you pull the images.
-
-### "Learn about your container images with Gemini assistance \_|\_ Artifact\
-
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance](https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance)
-- Source ID: `site-docs-root-2`
-- Final score: 192
+- Final score: 79
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Required roles To get the permissions that you need to list repositories and container images in Artifact Registry, ask your administrator to grant you the Artifact Registry Reader ( roles/artifactregistry.reader ) IAM role on the project or repository.
-- Home Documentation Application development Artifact Registry Guides Send feedback Learn about your container images with Gemini assistance Stay organized with collections Save and categorize content based on your preferences.
-- Go to project selector If you don't have any container images stored in an Artifact Registry repository, then follow the instructions in Store Docker container images in Artifact Registry .
-- This document describes how you can use Gemini Cloud Assist to list your Artifact Registry repositories and container images stored in Docker-format repositories.
+- Store Docker container images in Artifact Registry Artifact Registry provides a single location for managing private packages and Docker container images.
+- Run the following command to tag the image as quickstart-image:tag1 : docker tag us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 \ us-west1-docker.pkg.dev/ PROJECT /quickstart-docker-repo/quickstart-image:tag1 Where: us-west1 is the repository location. us-west1-docker.pkg.dev is the hostname for the Docker repository you created.
+- For this sample image: us-docker.pkg.dev is the hostname for container images stored in Artifact Registry Docker repositories, which includes the location of the repository ( us ). google-samples is the project ID. containers is the repository ID. /gke/hello-app is the path to the image in the repository containers .
+- Click Delete . gcloud To delete the quickstart-docker-repo repository, run the following command: gcloud artifacts repositories delete quickstart-docker-repo --location = us-west1 What's next Learn more about working with container images .
+
+### "Transition from Container Registry \_|\_ Artifact Registry \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr](https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr)
+- Source ID: `site-docs-root`
+- Final score: 72
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Feature Container Registry Artifact Registry Supported formats Container images only Multiple artifact formats , including container images, language packages, and OS packages.
+- Scans return OS and language package vulnerability information for images in Container Registry with supported operating systems .
+- Scanning for OS and language package vulnerabilities in containers.
+- Operation Container Registry Artifact Registry Create a repository Not applicable. gcloud artifacts repositories create Delete a repository Not applicable. gcloud artifacts repositories delete List images gcloud container images list gcloud artifacts docker images list List tags gcloud container images list-tags gcloud artifacts docker tags list Add a tag gcloud container images add-tag gcloud artifacts docker tags add Delete a tag gcloud container images untag gcloud artifacts docker tags delete Describe images gcloud container images describe gcloud artifacts docker images list --include-tags Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Access control with IAM \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/access-control](https://docs.cloud.google.com/artifact-registry/docs/access-control)
+- Source ID: `site-docs-root`
+- Final score: 71
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Container images: Docker , Helm Language packages: Java , Node.js , Python , Go OS packages: Debian , RPM Other: Kubeflow Pipeline templates GitLab on Google Cloud The GitLab on Google Cloud integration uses Workload Identity Federation for authorization and authentication for GitLab workloads on Google Cloud without the need for service accounts or service account keys.
+- Container images: Docker , Helm Language packages: Java , Node.js , Python , Go OS packages: Debian , RPM Other: Kubeflow Pipeline templates Use a service account : Create a service account to act on behalf of your application, or choose an existing service account that use for your CI/CD automation.
+- Container images: Docker , Helm Language packages: Java , Node.js , Python , Go OS packages: Debian , RPM You can also restrict artifact downloads with download rules .
+- If you're new to using Terraform for Google Cloud, see the Get Started - Google Cloud page on the HashiCorp website. provider "google" { project = " PROJECT-ID " } resource "google artifact registry repository" "my-repo" { provider = google-beta location = " LOCATION " repository id = " REPOSITORY " description = " DESCRIPTION " format = " FORMAT " } resource "google service account" "repo-account" { provider = google-beta account id = " ACCOUNT-ID " display name = "Repository Service Account" } resource "google artifact registry repository iam member" "repo-iam" { provider = google-beta location = google artifact registry repository.my-repo.location repository = google artifact registry repository.my-repo.name role = "roles/artifactregistry.reader" member = "serviceAccount:${google service account.repo-account.email}" } ACCOUNT-ID is the ID of the service account.
 

@@ -93,8 +93,8 @@ customer project resources.
 Execution-time service account
 This is the default Compute Engine service account that
 Cloud Data Fusion creates to deploy jobs that access other
-Google Cloud resources. By default, it attaches to a Dataproc
-cluster VM to enable Cloud Data Fusion to access Dataproc
+Google Cloud resources. By default, it attaches to a Managed Service for Apache Spark
+cluster VM to enable Cloud Data Fusion to access Managed Service for Apache Spark
 resources during a pipeline run.
 For more information, see Service accounts in Cloud Data Fusion .
 Logging and monitoring
@@ -110,9 +110,9 @@ specific metrics.
 Note: Enabling Logging and Monitoring in your
 instance incurs additional costs. For more information, see
 Pricing .
-Lineage integration with Dataplex Universal Catalog
-Cloud Data Fusion provides an integration with Dataplex Universal Catalog for
-lineage. For more information, see View lineage in Dataplex Universal Catalog .
+Lineage integration with Knowledge Catalog
+Cloud Data Fusion provides an integration with Knowledge Catalog for
+lineage. For more information, see View lineage in Knowledge Catalog .
 Encryption
 Customer-managed encryption keys (CMEK) enable encryption of data at rest with a
 key that you can control through the Cloud Key Management Service. CMEK provides user control
@@ -132,6 +132,6 @@ What's next
 Learn more about Cloud Data Fusion: Studio .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

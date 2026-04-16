@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:07:58.655Z"
+generated_at: "2026-04-15T11:57:27.297Z"
 product_name: "Cloud TPU"
 product_slug: "cloud-tpu"
 feature_name: "Cloud TPU in Google Kubernetes Engine"
 feature_slug: "cloud-tpu-in-google-kubernetes-engine"
 latest_feature_date: "2018-07-12"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup"
-  - "https://docs.cloud.google.com/tpu/docs/release-notes"
-  - "https://docs.cloud.google.com/tpu/docs/intro-to-tpu"
+  - "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm"
+  - "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu"
 keywords:
   - "tpu"
-  - "in"
   - "kubernetes"
   - "engine"
   - "integration"
-  - "with"
   - "lets"
   - "you"
+  - "run"
+  - "machine"
 ---
 
 # Cloud TPU in Google Kubernetes Engine
 
 Product: Cloud TPU
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Cloud TPU integration with Google Kubernetes Engine lets you run machine learnin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup](https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup)
-- [https://docs.cloud.google.com/tpu/docs/release-notes](https://docs.cloud.google.com/tpu/docs/release-notes)
-- [https://docs.cloud.google.com/tpu/docs/intro-to-tpu](https://docs.cloud.google.com/tpu/docs/intro-to-tpu)
+- [https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm](https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm)
+- [https://docs.cloud.google.com/iam/docs/roles-permissions/tpu](https://docs.cloud.google.com/iam/docs/roles-permissions/tpu)
 
 ## Supporting Pages
 
@@ -52,40 +52,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup](https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup)
 - Source ID: `site-docs-root`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE AI/ML Guides Send feedback About TPUs in GKE Stay organized with collections Save and categorize content based on your preferences.
-- Autopilot Standard This document describes how Cloud TPU works with Google Kubernetes Engine (GKE), including terminology, the benefits of Tensor Processing Units (TPUs), and workload scheduling considerations.
-- You can configure collection scheduling in the following scenarios: When creating a TPU slice node pool in GKE Standard When deploying workloads on GKE Autopilot When creating a cluster that enables node auto-provisioning What's next To learn how to set up Cloud TPU in GKE, see the following pages: Plan TPUs in GKE to start your TPU setup Deploy TPU workloads in GKE Autopilot Deploy TPU workloads in GKE Standard Learn about best practices for using Cloud TPU for your ML tasks Video: Build large-scale machine learning on Cloud TPU with GKE Serve Large Language Models with KubeRay on TPUs Learn about Sandboxing GPU workloads with GKE Sandbox Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 - Machine type naming Machine type naming for TPUs in GKE varies depending on the cluster mode and TPU version: GKE Standard: you select a specific Compute Engine machine type, for example, ct6e-standard-1t for TPU Trillium (v6e).
+- Autopilot Standard This document describes how Cloud TPU works with Google Kubernetes Engine (GKE), including terminology, the benefits of Tensor Processing Units (TPUs), and workload scheduling considerations.
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE AI/ML Guides Send feedback About TPUs in GKE Stay organized with collections Save and categorize content based on your preferences.
+- You can configure collection scheduling in the following scenarios: When creating a TPU slice node pool in GKE Standard When deploying workloads on GKE Autopilot When creating a cluster that enables node auto-provisioning What's next To learn how to set up Cloud TPU in GKE, see the following pages: Plan TPUs in GKE to start your TPU setup Deploy TPU workloads in GKE Autopilot Deploy TPU workloads in GKE Standard Learn about best practices for using Cloud TPU for your ML tasks Video: Build large-scale machine learning on Cloud TPU with GKE Serve Large Language Models with KubeRay on TPUs Learn about Sandboxing GPU workloads with GKE Sandbox Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 
-### Cloud TPU release notes \_|\_ Google Cloud Documentation
+### "Cloud TPU roles and permissions \_|\_ Identity and Access Management (IAM)\
 
-- URL: [https://docs.cloud.google.com/tpu/docs/release-notes](https://docs.cloud.google.com/tpu/docs/release-notes)
+- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/tpu](https://docs.cloud.google.com/iam/docs/roles-permissions/tpu)
+- Source ID: `site-iam-reference`
+- Final score: 90
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) tpu.runtimeversions.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Support User ( roles/ iam.supportUser ) tpu.runtimeversions.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) tpu.tensorflowversions.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Support User ( roles/ iam.supportUser ) tpu.tensorflowversions.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) tpu.nodes.performMaintenance Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.reimage Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.reset Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu. nodes. simulateMaintenanceEvent Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.start Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.stop Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.update Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.operations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
+- Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) tpu.operations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
+- Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) tpu.locations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
+
+### TPU architecture \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm](https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: N/A
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- August 29, 2023 Announcement You can now create Cloud Tensor Processing Unit (TPU) nodes in Google Kubernetes Engine (GKE) to run AI workloads, from training to inference models.
-- Google supports Cloud TPU integrations with TensorFlow, PyTorch, and JAX, and you can even write your own integrations via a new libtpu shared library on the VM.
-- This mode, powered by the Dynamic Workload Scheduler , lets you check TPU availability up to 120 days in advance and request capacity based on your schedule.
-- You have root access to every TPU VM you create, so you can install and run any code you wish in a tight loop with your TPU accelerators.
-
-### Introduction to Cloud TPU \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/tpu/docs/intro-to-tpu](https://docs.cloud.google.com/tpu/docs/intro-to-tpu)
-- Source ID: `site-docs-reference`
-- Final score: 166
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- CPUs Quick prototyping that requires maximum flexibility Simple models that don't take long to train Small models with small, effective batch sizes Models that contain many custom TensorFlow operations written in C++ Models that are limited by available I/O or the networking bandwidth of the host system GPUs Models with a significant number of custom PyTorch/JAX operations that must run at least partially on CPUs Models with TensorFlow ops that are not available on Cloud TPU (see the list of available TensorFlow ops ) Medium-to-large models with larger effective batch sizes TPUs Models dominated by matrix computations Models with no custom PyTorch/JAX operations inside the main training loop Models that train for weeks or months Large models with large effective batch sizes Models with ultra-large embeddings common in advanced ranking and recommendation workloads Cloud TPUs are not suited to the following workloads: Linear algebra programs that require frequent branching or contain many element-wise algebra operations Workloads that require high-precision arithmetic Neural network workloads that contain custom operations in the main training loop TPUs in Google Cloud You can use TPUs through Cloud TPU VMs, Google Kubernetes Engine, and Vertex AI.
-- Google Cloud service Resources Cloud TPU Get started with Cloud TPU VMs Google Kubernetes Engine About TPUs in GKE Vertex AI Training on Vertex AI with TPUs Use TPUs for online prediction on Vertex AI Best practices for model development A program whose computation is dominated by non-matrix operations such as add, reshape, or concatenate, will likely not achieve high MXU utilization.
-- Getting started with Cloud TPU Set up a Google Cloud account Activate the Cloud TPU API Grant Cloud TPU access to your Cloud Storage buckets Run a basic calculation on a TPU Train a reference model on a TPU Analyze your model Requesting help To get help, contact Cloud TPU support .
-- TPUs can be connected in groups called slices that scale up your workloads with little to no code changes.
+- You can directly use TPU VMs for your workloads or use them through Google Kubernetes Engine or Vertex AI.
+- TPU topology visualizer The TPU topology visualizer is a tool that lets you visualize the physical layout of TPUs and their associated networking infrastructure within a physical data center.
+- Using this hybrid connectivity, Multislice enables parallelism across slices and lets you use a greater number of TPU cores for a single job than what a single slice can accommodate.
+- TPUs can't run word processors, control rocket engines, or execute bank transactions, but they can handle massive matrix operations used in neural networks at fast speeds.
 

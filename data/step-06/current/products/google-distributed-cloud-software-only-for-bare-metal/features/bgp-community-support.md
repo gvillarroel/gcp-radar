@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:32.309Z"
+generated_at: "2026-04-15T12:05:49.345Z"
 product_name: "Google Distributed Cloud (software only) for bare metal"
 product_slug: "google-distributed-cloud-software-only-for-bare-metal"
 feature_name: "BGP community support"
 feature_slug: "bgp-community-support"
 latest_feature_date: "2023-12-15"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/load-balance"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb"
 keywords:
   - "bgp"
   - "community"
   - "adds"
   - "so"
   - "routes"
-  - "from"
   - "load"
   - "balancers"
+  - "can"
 ---
 
 # BGP community support
 
 Product: Google Distributed Cloud (software only) for bare metal
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ Adds BGP Community support so routes from BGP load balancers can be distinguishe
 
 Adds BGP Community support so routes from BGP load balancers can be distinguished from other network routes.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/load-balance](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/load-balance)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Configure bundled load balancing with MetalLB \_|\_ Google Distributed Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb)
+- Source ID: `site-iam-reference`
+- Final score: 93
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The cluster configuration for separated load balancers should look similar to the following example: apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : hybrid-ha-lb namespace : cluster-hybrid-ha-lb spec : type : hybrid profile : default anthosBareMetalVersion : 1.34 gkeConnect : projectID : project-fleet controlPlane : loadBalancer : mode : bundled nodePoolSpec : nodes : - address : 10.200.0.2 - address : 10.200.0.3 - address : 10.200.0.4 clusterNetwork : pods : cidrBlocks : - 192.168.0.0/16 services : cidrBlocks : - 10.96.0.0/20 ... loadBalancer : mode : bundled ... nodePoolSpec : nodes : - address : 10.200.0.5 - address : 10.200.0.6 - address : 10.200.0.7 clusterOperations : ...
+- The following diagram shows the control plane and data plane load balancers separated after the data plane load balancer has been migrated off of the control plane nodes: To migrate the data plane load balancer to a load balancer node pool when you update a cluster, use the following steps: In the cluster configuration file, specify a load balancer node pool with loadBalancer.nodePoolSpec as described in the loadBalancer.nodePoolSpec section of this document.
+- The following diagram shows the default bundled load balancer configuration with both control plane and data plane load balancers running on control plane nodes or both running in the load balancer node pool: With version 1.32 clusters, you can configure the control plane load balancers to run on the control plane nodes and the data plane load balancers to run in the load balancer node pool.
+- The following diagram shows the control plane and data plane load balancers separated on to different nodes: To separate the load balancers when you create a cluster, use the following steps: In the cluster configuration file, specify a load balancer node pool with loadBalancer.nodePoolSpec as described in the loadBalancer.nodePoolSpec section of this document.
+
+### "Overview of load balancers \_|\_ Google Distributed Cloud (software only)\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/load-balance](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/load-balance)
+- Source ID: `site-iam-reference`
+- Final score: 91
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Overview of load balancers Stay organized with collections Save and categorize content based on your preferences.
+- The following diagram shows an example network topology where bundled MetalLB load balancers are located on the control plane nodes.
+- Manual load balancer mode If you choose manual load balancing, Google Distributed Cloud does not deploy load balancers.
+- BGP : This load-balancing mode supports the advertisement of ServiceType LoadBalancer virtual IP addresses (VIPs) through external Border Gateway Protocol (eBGP) for your clusters.
+
+### "Configure manual load balancing \_|\_ Google Distributed Cloud (software\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb)
+- Source ID: `site-iam-reference`
+- Final score: 74
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Support LoadBalancer Services in user clusters You must configure load balancing to support Kubernetes LoadBalancer services In manual load-balancing mode, Google Distributed Cloud does not automatically provision load balancers so LoadBalancer services don't work unless you provision and configure load balancers to point the services.
+- Unlike bundled load balancing where Google Distributed Cloud deploys load balancers to cluster nodes for control plane and data plane traffic, with manual load balancing you configure your own load-balancing solutions for control plane and data plane traffic.
+- Configure support for LoadBalancer services In manual load-balancing mode, Google Distributed Cloud does not automatically provision load balancers to support LoadBalancer services .
+- The following sample output shows the structure of the ports section: spec : clusterIP : 172.26.232.107 externalTrafficPolicy : Cluster loadBalancerIP : 21.0.101.77 ports : - name : status-port nodePort : 30281 port : 15021 protocol : TCP targetPort : 15021 - name : http nodePort : 30124 port : 80 protocol : TCP targetPort : 80 - name : https nodePort : 31858 port : 443 protocol : TCP targetPort : 443 There are ports for HTTP and HTTPS traffic.
 

@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.999Z"
+generated_at: "2026-04-15T13:44:17.172Z"
 product_name: "Looker Studio"
 product_slug: "looker-studio"
 feature_name: "Looker connector filter-only fields as controls and quick filters"
 feature_slug: "looker-connector-filter-only-fields-as-controls-and-quick-filters"
 latest_feature_date: "2024-11-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker-studio/docs/release-notes"
+  - "https://developers.google.com/looker-studio/connector/filters"
+  - "https://developers.google.com/looker-studio/connector/reference"
+  - "https://developers.google.com/looker-studio/connector/bigquery-row-level-security"
 keywords:
   - "looker"
   - "connector"
   - "filter"
   - "only"
   - "fields"
-  - "as"
   - "controls"
-  - "and"
+  - "quick"
+  - "filters"
 ---
 
 # Looker connector filter-only fields as controls and quick filters
 
 Product: Looker Studio
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,24 +38,55 @@ Filter-only fields from the Looker connector can be used as report controls and 
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker-studio/docs/release-notes](https://docs.cloud.google.com/looker-studio/docs/release-notes)
+- [https://developers.google.com/looker-studio/connector/filters](https://developers.google.com/looker-studio/connector/filters)
+- [https://developers.google.com/looker-studio/connector/reference](https://developers.google.com/looker-studio/connector/reference)
+- [https://developers.google.com/looker-studio/connector/bigquery-row-level-security](https://developers.google.com/looker-studio/connector/bigquery-row-level-security)
 
 ## Supporting Pages
 
-### Looker Studio release notes | Google Cloud Documentation
+### Filters \_|\_ Community Connectors \_|\_ Google for Developers
 
-- URL: [https://docs.cloud.google.com/looker-studio/docs/release-notes](https://docs.cloud.google.com/looker-studio/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 100
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/looker-studio/connector/filters](https://developers.google.com/looker-studio/connector/filters)
+- Source ID: `site-docs-reference`
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Looker Studio release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker-studio/docs/release-notes The Looker connector can now connect to a private IP (private services access) only Looker (Google Cloud core) instance or to a private IP (Private Service Connect) Looker (Google Cloud core) instance using the Looker instance ID. ...
-- For Looker Studio Pro subscriptions that are created on or after June 3, 2025, Gemini in Looker is enabled automatically.
-- The Assets: search API endpoint now includes a previousPageToken attribute in its response.
-- This token allows API users to paginate forwards and backwards through the result set. ...
+- The report user has configured two filters: country is IN LIST of Canada, USA source is IN LIST of Social, Organic The report user has configured a chart component with the source dimension and sessions metric getData() is executed by Looker Studio with the following request object: { "fields" : [ { "name" : "source" }, { "name" : "sessions" }, { "name" : "country" , "forFilterOnly" : true } ], "dimensionsFilters" : [ [{ "fieldName" : "country" , "values" : [ "Canada" , "USA" ], "type" : "INCLUDE" , "operator" : "IN LIST" }], [{ "fieldName" : "source" , "values" : [ "Social" , "Organic" ], "type" : "INCLUDE" , "operator" : "IN LIST" }] ] } Connector responds with filtered data.
+- If a report contains filters and a community connector returns unfiltered data for all fields requested then Looker Studio will apply filters to the connector response.
+- When filters are successfully applied within the connector, the response should exclude forFilterOnly fields and include filtersApplied: true .
+- For example, for the following filter, the connector should only include values that have a country of USA AND a source of Social . { "dimensionsFilters" : [ [{ "fieldName" : "country" , "values" : [ "USA" ], "type" : "INCLUDE" , "operator" : "EQUALS" }], [{ "fieldName" : "source" , "values" : [ "Social" ], "type" : "INCLUDE" , "operator" : "EQUALS" }] ] } OR together each sub-array in the request.dimensionsFilters array.
+
+### "Community Connector API Reference \_|\_ Community Connectors \_|\_ Google\
+
+- URL: [https://developers.google.com/looker-studio/connector/reference](https://developers.google.com/looker-studio/connector/reference)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- It has the following structure: { "configParams" : object , "scriptParams" : { "sampleExtraction" : boolean , "lastRefresh" : string }, "dateRange" : { "startDate" : string , "endDate" : string }, "fields" : [ { "name" : string } ], "dimensionsFilters" : [ [{ "fieldName" : string , "values" : string [], "type" : DimensionsFilterType , "operator" : Operator }] ] } Name Type Description configParams object An object containing the user provided values for the config parameters defined by the connector. scriptParams ScriptParams An object containing information relevant to connector execution dateRange DateRange By default, the date range provided will be the last 28 days excluding today.
+- It will be in YYYY-MM-DD format. scriptParams Name Type Description sampleExtraction boolean If true , the getData() request is for automatic semantic type detection . lastRefresh string A timestamp that marks the most recent request for a refresh of data. dimensionsFilters name type description fieldName string The name of the field to be filtered values string[] An array of values to use for the operator. type "INCLUDE" "EXCLUDE" Whether data matching this filter should be included or excluded from the getData() response. operator FilterOperator The operator to apply Note: If more than 20 fields are in the request, then multiple getData requests will be sent.
+- Example Note: In the response, order of values in rows must match the order of fields in the schema. { "schema": [ { "name": "OpportunityName", "dataType": "STRING" }, { "name": "IsVerified", "dataType": "BOOLEAN" }, { "name": "Created", "dataType": "STRING" }, { "name": "Amount", "dataType": "NUMBER" } ], "rows": [ { "values": ["Interesting", true, "2017-05-23", "120453.65"] }, { "values": ["SF", false, "2017-03-03", "362705286.92"] }, { "values": ["Spring Sale", true, "2017-04-21", "870.12"] } ], "filtersApplied": false } BigQuery @return {object} A JavaScript object representing the BigQuery query configuration.
+- When sampleExtraction is set to `true , the date two days earlier than today is given as both the start and end date. fields[].name string The names of the requested fields. fields[].forFilterOnly boolean Marks a field only used for filtering the request.
+
+### "BigQuery row-level security with Advanced Services \_|\_ Community Connectors\
+
+- URL: [https://developers.google.com/looker-studio/connector/bigquery-row-level-security](https://developers.google.com/looker-studio/connector/bigquery-row-level-security)
+- Source ID: `site-docs-reference`
+- Final score: 124
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- YEAR MONTH DAY ); return fields ; } function getSchema ( request ) { return { schema : getFields (). build () } ; } var SERVICE ACCOUNT CREDS = 'SERVICE ACCOUNT CREDS' ; var SERVICE ACCOUNT KEY = 'private key' ; var SERVICE ACCOUNT EMAIL = 'client email' ; var BILLING PROJECT ID = 'project id' ; / Copy the entire credentials JSON file from creating a service account in GCP. / function getServiceAccountCreds () { return JSON . parse ( scriptProperties . getProperty ( SERVICE ACCOUNT CREDS )); } function getOauthService () { var serviceAccountCreds = getServiceAccountCreds (); var serviceAccountKey = serviceAccountCreds [ SERVICE ACCOUNT KEY ] ; var serviceAccountEmail = serviceAccountCreds [ SERVICE ACCOUNT EMAIL ] ; return OAuth2 . createService ( 'RowLevelSecurity' ) . setAuthorizationBaseUrl ( 'https://accounts.google.com/o/oauth2/auth' ) . setTokenUrl ( 'https://accounts.google.com/o/oauth2/token' ) . setPrivateKey ( serviceAccountKey ) . setIssuer ( serviceAccountEmail ) . setPropertyStore ( scriptProperties ) . setCache ( CacheService . getScriptCache ()) . setScope ( [ 'https://www.googleapis.com/auth/bigquery.readonly' ] ); } var BASE SQL = 'SELECT d.region, d.sales, d.date ' + 'FROM datastudio-solutions.row level security.data d ' + 'INNER JOIN datastudio-solutions.row level security.access a ' + 'ON d.region = a.region ' + 'where a.email=@email' ; function getData ( request ) { var accessToken = getOauthService (). getAccessToken (); var serviceAccountCreds = getServiceAccountCreds (); var billingProjectId = serviceAccountCreds [ BILLING PROJECT ID ] ; var email = Session . getEffectiveUser (). getEmail (); var bqTypes = DataStudioApp . createCommunityConnector ().
+- The implementation involves creating a Community Connector, setting up a service account, and constructing a BigQuery query that filters data based on the viewer's email.
+- NONE ) . build (); } function getConfig ( request ) { var config = cc . getConfig (); config . newInfo () . setId ( 'generalInfo' ) . setText ( 'This is an example connector to showcase row level security.' ); return config . build (); } function getFields () { var fields = cc . getFields (); var types = cc .
+- Home Products Looker Studio Community Connectors BigQuery row-level security with Advanced Services Stay organized with collections Save and categorize content based on your preferences.
 

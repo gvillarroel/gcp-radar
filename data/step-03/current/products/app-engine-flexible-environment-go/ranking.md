@@ -21,9 +21,9 @@ Step 2 feature inventory: 57 features, profile: api heavy.
 | 90 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/php/create-app | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | irrelevant | https://cloud.google.com/appengine/docs/flexible/python/configuring-your-app-with-app-yaml | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 38 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/release-notes | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 15 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/python/release-notes | 3 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 15 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/java/release-notes | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 10 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/dotnet/release-notes | 2 |  | Heuristic tail scoring was applied outside the API-ranked set. |
+| 10 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/dotnet/release-notes | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 10 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/nodejs/release-notes | 2 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 10 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/php/release-notes | 2 |  | Heuristic tail scoring was applied outside the API-ranked set. |
+| 10 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/python/release-notes | 2 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 5 | no | irrelevant | https://docs.cloud.google.com/appengine/docs/flexible/ruby/release-notes | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |

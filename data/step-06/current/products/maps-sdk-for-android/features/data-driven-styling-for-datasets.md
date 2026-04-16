@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:43.381Z"
+generated_at: "2026-04-15T11:56:13.724Z"
 product_name: "Maps SDK for Android"
 product_slug: "maps-sdk-for-android"
 feature_name: "Data-driven styling for datasets"
 feature_slug: "data-driven-styling-for-datasets"
 latest_feature_date: "2024-07-30"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/android-sdk/cloud-customization/map-styles"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap"
+  - "https://developers.google.com/maps/documentation/android-sdk/cloud-customization"
 keywords:
   - "driven"
   - "styling"
-  - "for"
   - "datasets"
   - "lets"
   - "you"
   - "upload"
   - "geospatial"
+  - "style"
 ---
 
 # Data-driven styling for datasets
 
 Product: Maps SDK for Android
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Data-driven styling for datasets lets you upload geospatial datasets, style thei
 
 Data-driven styling for datasets lets you upload geospatial datasets, style their features, and display them on maps.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/android-sdk/cloud-customization/map-styles](https://developers.google.com/maps/documentation/android-sdk/cloud-customization/map-styles)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap](https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap)
+- [https://developers.google.com/maps/documentation/android-sdk/cloud-customization](https://developers.google.com/maps/documentation/android-sdk/cloud-customization)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Create and use map styles \_|\_ Maps SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/android-sdk/cloud-customization/map-styles](https://developers.google.com/maps/documentation/android-sdk/cloud-customization/map-styles)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 156
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To use data-driven styling or datasets with a science dark mode style, you must do the following in the Google Cloud console: Go to Map Styles and either select a light mode style or create one .
+- Use data-driven styling and datasets In the style details page, you can enable and view layers for data-driven styling for boundaries and data-driven styling for datasets on light mode styles.
+- When you link a light mode style that has data-driven styling or datasets enabled to a map ID , the enabled layers are also available for the science dark mode style.
+- You can create new styles, duplicate existing ones or versions, or import JSON styling for customization.
+
+### GoogleMap \_|\_ Navigation SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap](https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap)
+- Source ID: `site-docs-reference`
+- Final score: 91
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- UiSettings getUiSettings () Gets the user interface settings for the map. boolean isBuildingsEnabled () Returns whether 3D buildings layer is enabled. boolean isCameraFollowingMyLocation () Returns whether the camera is following current location or not. boolean isIndoorEnabled () Gets whether indoor maps are currently enabled. boolean isMyLocationEnabled () Gets the status of the my-location layer. boolean isTrafficEnabled () Checks whether the map is drawing traffic data. boolean isTransitEnabled () Checks whether the map is drawing transit data. void moveCamera ( CameraUpdate update) Repositions the camera according to the instructions defined in the update. void removeOnMapCapabilitiesChangedListener ( GoogleMap.OnMapCapabilitiesChangedListener listener) Removes a listener that's invoked when the map capabilities are changed. void resetMinMaxZoomPreference () Removes any previously specified upper and lower zoom bounds. void setBuildingsEnabled (boolean enabled) Turns the 3D buildings layer on or off. void setContentDescription (String description) Sets a contentDescription for the map. boolean setIndoorEnabled (boolean enabled) Sets whether indoor maps should be enabled. void setInfoWindowAdapter ( GoogleMap.InfoWindowAdapter adapter) Sets a custom renderer for the contents of info windows. void setLatLngBoundsForCameraTarget ( LatLngBounds bounds) Specifies a LatLngBounds to constrain the camera target, so that when users scroll and pan the map, the camera target does not move outside these bounds. void setLocationSource ( LocationSource source) Replaces the location source of the my-location layer. void setMapColorScheme (int mapColorScheme) Sets the map rendering color scheme to light, dark, or follow system settings after initialization. boolean setMapStyle ( MapStyleOptions style) Sets the styling of the base map. void setMapType (int type) Sets the type of map tiles that should be displayed. void setMaxZoomPreference (float maxZoomPreference) Sets a preferred upper bound for the camera zoom. void setMinZoomPreference (float minZoomPreference) Sets a preferred lower bound for the camera zoom. void setMyLocationEnabled (boolean enabled) Enables or disables the my-location layer. void setOnCameraChangeListener ( GoogleMap.OnCameraChangeListener listener) This method is deprecated.
+- Inherited Method Summary From class java.lang.Object boolean equals (Object arg0) final Class<?> getClass () int hashCode () final void notify () final void notifyAll () String toString () final void wait (long arg0, int arg1) final void wait (long arg0) final void wait () Constants public static final String DEMO MAP ID Data-driven styling features are not available in the Navigation SDK.
+- Constant Summary String DEMO MAP ID Data-driven styling features are not available in the Navigation SDK. int MAP TYPE HYBRID Satellite maps with a transparent layer of major streets. int MAP TYPE NONE No base map tiles. int MAP TYPE NORMAL Basic maps. int MAP TYPE SATELLITE Satellite maps with no labels. int MAP TYPE TERRAIN This constant is deprecated.
+- Parameters style Returns true if the style was successfully parsed; false if problems were detected with the MapStyleOptions , including, e.g. unparsable styling JSON, unrecognized feature type, unrecognized element type, or invalid styler keys.
+
+### "Cloud-based maps styling overview \_|\_ Maps SDK for Android \_|\_ Google\
+
+- URL: [https://developers.google.com/maps/documentation/android-sdk/cloud-customization](https://developers.google.com/maps/documentation/android-sdk/cloud-customization)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 85
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- What can you do with cloud-based maps styling You can do the following with cloud-based maps styling: Use a no-code style editor : A designer can create and preview a style to match your goals and branding without needing to code.
+- More ways to customize maps : Cloud-based maps styling makes it easier and more intuitive for you to style your map.
+- How cloud-based maps styling works Map styles are stored and edited in the Google Maps Platform Cloud Console.
+- 5 Adjust your map style online Whenever you need to change your map style, edit it in cloud styling.
 

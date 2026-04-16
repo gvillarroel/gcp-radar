@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.133Z"
+generated_at: "2026-04-15T00:01:13.963Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "GKE dashboard operations menu"
 feature_slug: "gke-dashboard-operations-menu"
 latest_feature_date: "2021-03-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
-  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services"
   - "https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services"
+  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
 keywords:
   - "gke"
   - "dashboard"
@@ -20,13 +20,13 @@ keywords:
   - "kubernetes"
   - "engine"
   - "clusters"
-  - "and"
+  - "workloads"
 ---
 
 # GKE dashboard operations menu
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ Kubernetes Engine Clusters and Workloads dashboards include an Operations menu w
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- [https://docs.cloud.google.com/monitoring/docs/application-monitoring-services](https://docs.cloud.google.com/monitoring/docs/application-monitoring-services)
 - [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/application-monitoring-services](https://docs.cloud.google.com/monitoring/docs/application-monitoring-services)
+- [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 168
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Kubernetes Engine's Clusters and Workloads dashboards now provide an Operations menu.
-- Feature Observability for Google Kubernetes Engine: Charts on the Observability tab for each of your GKE clusters and workloads now includes an optional fleet ID filter, where applicable.
-- Feature Observability for Google Kubernetes Engine: The Observability tab for each of your GKE clusters now includes filters for recommended and configured integrations.
-- To learn more, see the following: List registered and discovered services and workloads Application Monitoring overview View application telemetry April 02, 2026 Feature Application Monitoring has added support for the following resources: Vertex AI Workbench GKE Gateway GKE Ingress Layer 7 cross-regional Application Load Balancers Additionally, dashboards for Kubernetes workloads display L4 and L7 traffic metrics, when both are available.
-
-### Application Monitoring supported infrastructure \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring-services](https://docs.cloud.google.com/monitoring/docs/application-monitoring-services)
-- Source ID: `site-docs-reference`
-- Final score: 120
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For example, for managed instance groups (MIGs), Cloud Run, and Google Kubernetes Engine deployments, this field shows the CPU utilization.
-- Kubernetes CronJobs (Regional and zonal) To learn how to run Cron Jobs in GKE, see About CronJobs in GKE .
-- Compute Engine MIGs (Regional and zonal) Traffic : instance/network/received bytes count Saturation : instance/cpu/utilization Dataproc Metastore service (Regional and multi-regional) Traffic : The metric depends on whether the service is single- or multi-region: Single: service/request count .
-- The dashboards that Application Monitoring creates display log and metric data, including the following golden signals, when that data includes application-specific labels: Traffic : Incoming request rates on the service or workload over the selected time period.
 
 ### "Instrument an application for Application Monitoring \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
 - Source ID: `site-docs-reference`
-- Final score: 118
+- Final score: 131
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Use Google Cloud Managed Service for Prometheus on GKE To have Google Cloud Observability attach application labels to metric data generated by your application's workloads that runs on Google Kubernetes Engine clusters, do the following: Use Google Cloud Managed Service for Prometheus with managed collection .
+- Metric data from instrumentation you added to your applications can include the following metric labels: metric.labels.apphub application {container,id,location} metric.labels.apphub workload {criticality type,environment type,id} Trace spans generated by instrumentation you added to your applications can include the following resource attributes: gcp.apphub.application.{container,id,location} gcp.apphub.{workload,service}.{criticality type,environment type,id} About OpenTelemetry HTTP server metrics There are no system metrics for workloads that run on Google Kubernetes Engine that can report the traffic level, server error rate, or the latency for HTTP requests.
+- Resource detectors can help you set the previous attributes: resourcedetectionprocessor Go: Google Cloud resource detector Java: opentelemetry-java-contrib/gcp-resources Node.js: resource-detector-gcp Python: opentelemetry-resourcedetector-gcp Attributes for Google Kubernetes Engine workloads For a Google Kubernetes Engine workload, configure your collector or your instrumentation to do the following: Extract metadata, like the namespace , from the environment.
 - For example, if you deploy an OpenTelemetry Collector or the Google-built Collector and are running on Google Kubernetes Engine, then you might do the following: In the Google Cloud console, go to the Workloads page: Go to Workloads If you use the search bar to find this page, then select the result whose subheading is Kubernetes Engine .
-- If you run workloads on Google Kubernetes Engine, then this approach exports the HTTP server metric that Application Monitoring uses to generate values for the traffic level, server error rate, and the latency for HTTP requests.
-- Deploy your workloads on a Google Kubernetes Engine cluster whose version is at least 1.32.1-gke.1439000 .
+
+### Application Monitoring supported infrastructure \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring-services](https://docs.cloud.google.com/monitoring/docs/application-monitoring-services)
+- Source ID: `site-docs-reference`
+- Final score: 118
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example, for managed instance groups (MIGs), Cloud Run, and Google Kubernetes Engine deployments, this field shows the CPU utilization.
+- To learn how to use a StatefulSet or deploy a stateful application, see About StatefulSets in Google Kubernetes Engine .
+- Compute Engine MIGs (Regional and zonal) Traffic : instance/network/received bytes count Saturation : instance/cpu/utilization Dataproc Metastore service (Regional and multi-regional) Traffic : The metric depends on whether the service is single- or multi-region: Single: service/request count .
+- The dashboards that Application Monitoring creates display log and metric data, including the following golden signals, when that data includes application-specific labels: Traffic : Incoming request rates on the service or workload over the selected time period.
+
+### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- Source ID: `site-docs-reference-2`
+- Final score: 98
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- View summary information To view general information about the application along with a list of services and workloads, on the dashboard for the application, select the Overview tab: As shown, this tab provides general information about the application along with a list of services and workloads that are registered to the application.
+- The Application Monitoring dashboards display the following: Details about your registered applications, including their location, criticality, and registered services ( ) and workloads ( ).
+- The Traces section of a dashboard lists information about spans generated by your registered services and workloads when those spans contain application-specific resource attributes .
+- For workloads, the dashboard also displays event annotations , which can help you correlate data from different sources when you are troubleshooting an issue.
 

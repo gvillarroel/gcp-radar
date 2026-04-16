@@ -31,20 +31,6 @@ permission index .
 Access Context Manager roles
 Role
 Permissions
-Cloud Access Binding Admin
-( roles/ accesscontextmanager.gcpAccessAdmin )
-Create, edit, and change Cloud access bindings.
-accesscontextmanager. gcpUserAccessBindings.*
-accesscontextmanager. gcpUserAccessBindings. create
-accesscontextmanager. gcpUserAccessBindings. delete
-accesscontextmanager. gcpUserAccessBindings. get
-accesscontextmanager. gcpUserAccessBindings. list
-accesscontextmanager. gcpUserAccessBindings. update
-Cloud Access Binding Reader
-( roles/ accesscontextmanager.gcpAccessReader )
-Read access to Cloud access bindings.
-accesscontextmanager. gcpUserAccessBindings. get
-accesscontextmanager. gcpUserAccessBindings. list
 Access Context Manager Admin
 ( roles/ accesscontextmanager.policyAdmin )
 Full access to policies, access levels, access zones and authorized orgs descs.
@@ -81,6 +67,20 @@ cloudasset. assets. searchAllResources
 resourcemanager. organizations. get
 resourcemanager.projects.get
 resourcemanager.projects.list
+Cloud Access Binding Admin
+( roles/ accesscontextmanager.gcpAccessAdmin )
+Create, edit, and change Cloud access bindings.
+accesscontextmanager. gcpUserAccessBindings.*
+accesscontextmanager. gcpUserAccessBindings. create
+accesscontextmanager. gcpUserAccessBindings. delete
+accesscontextmanager. gcpUserAccessBindings. get
+accesscontextmanager. gcpUserAccessBindings. list
+accesscontextmanager. gcpUserAccessBindings. update
+Cloud Access Binding Reader
+( roles/ accesscontextmanager.gcpAccessReader )
+Read access to Cloud access bindings.
+accesscontextmanager. gcpUserAccessBindings. get
+accesscontextmanager. gcpUserAccessBindings. list
 Access Context Manager Editor
 ( roles/ accesscontextmanager.policyEditor )
 Edit access to policies. Create, edit, and change access levels, access zones and authorized orgs descs.
@@ -192,12 +192,12 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor )
 Access Context Manager Reader ( roles/ accesscontextmanager.policyReader )
 VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 accesscontextmanager. accessLevels. replaceAll
 Owner ( roles/ owner )
@@ -237,12 +237,12 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor )
 Access Context Manager Reader ( roles/ accesscontextmanager.policyReader )
 VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 accesscontextmanager. authorizedOrgsDescs. update
 Owner ( roles/ owner )
@@ -266,22 +266,22 @@ Cloud Access Binding Reader ( roles/ accesscontextmanager.gcpAccessReader )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
-Security Center Service Agent ( roles/ securitycenter.serviceAgent )
 Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent )
+Security Center Service Agent ( roles/ securitycenter.serviceAgent )
 accesscontextmanager. gcpUserAccessBindings. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin )
 Cloud Access Binding Reader ( roles/ accesscontextmanager.gcpAccessReader )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
-Security Center Service Agent ( roles/ securitycenter.serviceAgent )
 Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent )
+Security Center Service Agent ( roles/ securitycenter.serviceAgent )
 accesscontextmanager. gcpUserAccessBindings. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -311,24 +311,24 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor )
 Access Context Manager Reader ( roles/ accesscontextmanager.policyReader )
 VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 accesscontextmanager. policies. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor )
 Access Context Manager Reader ( roles/ accesscontextmanager.policyReader )
 VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
@@ -382,12 +382,12 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor )
 Access Context Manager Reader ( roles/ accesscontextmanager.policyReader )
 VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 SLZ BQDW Blueprint Organization Level Remediator ( roles/ securedlandingzone.bqdwOrgRemediator )
 accesscontextmanager. servicePerimeters. replaceAll
@@ -406,6 +406,6 @@ Warning: Don't grant service agent roles to any principals except service agents
 Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent )
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

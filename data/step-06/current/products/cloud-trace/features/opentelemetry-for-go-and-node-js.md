@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.835Z"
+generated_at: "2026-04-12T12:12:49.004Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "OpenTelemetry for Go and Node.js"
 feature_slug: "opentelemetry-for-go-and-node-js"
 latest_feature_date: "2020-03-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/trace/docs/setup/nodejs-ot"
   - "https://docs.cloud.google.com/trace/docs/setup/nodejs"
   - "https://docs.cloud.google.com/trace/docs/reference/trace-schema"
+  - "https://docs.cloud.google.com/trace/docs/setup"
 keywords:
   - "opentelemetry"
   - "for"
@@ -26,7 +27,7 @@ keywords:
 # OpenTelemetry for Go and Node.js
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Trace supports using OpenTelemetry with Go and Node.js applications on GKE
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/trace/docs/setup/nodejs-ot](https://docs.cloud.google.com/trace/docs/setup/nodejs-ot)
 - [https://docs.cloud.google.com/trace/docs/setup/nodejs](https://docs.cloud.google.com/trace/docs/setup/nodejs)
 - [https://docs.cloud.google.com/trace/docs/reference/trace-schema](https://docs.cloud.google.com/trace/docs/reference/trace-schema)
+- [https://docs.cloud.google.com/trace/docs/setup](https://docs.cloud.google.com/trace/docs/setup)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/trace/docs/setup/nodejs-ot](https://docs.cloud.google.com/trace/docs/setup/nodejs-ot)
 - Source ID: `site-docs-root`
-- Final score: 246
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 312
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data, and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure OpenTelemetry Configure your app to preload the OpenTelemetry configuration Configure structured logging Write structured logs Configure OpenTelemetry The default configuration for the OpenTelemetry Node.js SDK exports traces by using the OTLP protocol .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/trace/docs/setup/nodejs](https://docs.cloud.google.com/trace/docs/setup/nodejs)
 - Source ID: `site-docs-root-2`
-- Final score: 246
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 312
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data, and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure OpenTelemetry Configure your app to preload the OpenTelemetry configuration Configure structured logging Write structured logs Configure OpenTelemetry The default configuration for the OpenTelemetry Node.js SDK exports traces by using the OTLP protocol .
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/trace/docs/reference/trace-schema](https://docs.cloud.google.com/trace/docs/reference/trace-schema)
 - Source ID: `site-docs-reference`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 267
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation Observability Cloud Trace Reference Send feedback Storage schema for trace data Stay organized with collections Save and categorize content based on your preferences.
 - The Cloud Trace API doesn't use the OpenTelemetry OTLP Protocol and defines a proprietary data format.
 - For the same executable and the same endpoint, using a consistent name makes it easier to correlate cross-trace spans.
 - Trace data sent to your Google Cloud project through this API is converted to the format described by this document.
+
+### Instrument for Cloud Trace \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/trace/docs/setup](https://docs.cloud.google.com/trace/docs/setup)
+- Source ID: `site-docs-root-2`
+- Final score: 260
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The instrumentation samples we provide use OpenTelemetry : For samples that use a collector-based export, see the following: Go Java Node.js Python These samples send trace data to the Telemetry API.
+- OpenTelemetry examples: Python sample Java sample Node.js sample Go sample C++ sample Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The following lists the default paths for Windows and Linux: Windows: %APPDATA%/gcloud/application default credentials.json Linux: $HOME/.config/gcloud/application default credentials.json Set the GOOGLE APPLICATION CREDENTIALS environment variable to the path to your service account: Linux/macOS export GOOGLE APPLICATION CREDENTIALS = path-to-your-service-accounts-private-key Windows set GOOGLE APPLICATION CREDENTIALS = path-to-your-service-accounts-private-key PowerShell: $env :GOOGLE APPLICATION CREDENTIALS = "path-to-your-service-accounts-private-key" What's next For detailed configuration information, samples, and links to GitHub and other open source repositories, go to the setup page for your language.
+- The following command illustrates setting the --scopes flag: gcloud container clusters create example-cluster-name --scopes=https://www.googleapis.com/auth/trace.append Running locally and elsewhere: If your application is running outside of Google Cloud, then you must provide authentication credentials in the form of a service account to the client library.
 

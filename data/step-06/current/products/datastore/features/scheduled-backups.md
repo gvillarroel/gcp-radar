@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.841Z"
+generated_at: "2026-04-12T12:14:02.770Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Scheduled backups"
 feature_slug: "scheduled-backups"
 latest_feature_date: "2024-06-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/backups"
   - "https://docs.cloud.google.com/datastore/docs/tools/indexconfig"
+  - "https://docs.cloud.google.com/datastore/docs/cmek"
   - "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
 keywords:
   - "scheduled"
@@ -24,7 +25,7 @@ keywords:
 # Scheduled backups
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,12 +37,13 @@ Scheduled backups automatically create backups on a schedule; Scheduled backups 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/backups](https://docs.cloud.google.com/datastore/docs/backups)
 - [https://docs.cloud.google.com/datastore/docs/tools/indexconfig](https://docs.cloud.google.com/datastore/docs/tools/indexconfig)
+- [https://docs.cloud.google.com/datastore/docs/cmek](https://docs.cloud.google.com/datastore/docs/cmek)
 - [https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console](https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console)
 
 ## Supporting Pages
@@ -50,9 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/backups](https://docs.cloud.google.com/datastore/docs/backups)
 - Source ID: `site-iam-reference`
-- Final score: 156
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 214
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Required roles To get the permissions that you need to manage backups and backup schedules, ask your administrator to grant you one or more of the following Identity and Access Management roles: roles/datastore.owner : Full access to the Firestore database roles/datastore.backupsAdmin : Read and write access to backups roles/datastore.backupsViewer : Read access to backups roles/datastore.backupSchedulesAdmin : Read and write access to backup schedules roles/datastore.backupSchedulesViewer : Read access to backup schedules roles/datastore.restoreAdmin : Permissions to initiate restore operations Create and manage backup schedules The following examples demonstrate how to set up a backup schedule.
@@ -64,9 +66,8 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/tools/indexconfig](https://docs.cloud.google.com/datastore/docs/tools/indexconfig)
 - Source ID: `site-docs-root`
-- Final score: 116
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 132
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - For example, a recently completed composite index build shows the following information: { "operations": [ { "name": "projects/ project-id /operations/S01vcFVpSmdBQ0lDDCoDIGRiNTdiZDQNmE4YS0yMTVmNWUzZSQadGx1YWZlZAcSMXRzYWVzdS1yZXhlZG5pLW5pbWRhFQpWEg", "done": true, "metadata": { "@type": "type.googleapis.com/google.datastore.admin.v1.IndexOperationMetadata", "common": { "endTime": "2020-06-23T16:55:29.923562Z", "operationType": "CREATE INDEX", "startTime": "2020-06-23T16:55:10Z", "state": "SUCCESSFUL" }, "indexId": "CICAJiUpoMK", "progressEntities": { "workCompleted": "2193027", "workEstimated": "2198182" } }, "response": { "@type": "type.googleapis.com/google.datastore.admin.v1.Index", "ancestor": "NONE", "indexId": "CICAJiUpoMK", "kind": "Task", "projectId": " project-id ", "properties": [ { "direction": "ASCENDING", "name": "priority" }, { "direction": "ASCENDING", "name": "done" }, { "direction": "DESCENDING", "name": "created" } ], "state": "READY" } }, ] } Describing a single operation Instead of listing all long-running operations, you can list the details of a single operation: gcloud Use the operations describe command to show the status of a composite index build. gcloud datastore operations describe operation-name rest Before using any of the request data, make the following replacements: project-id : your project ID HTTP method and URL: GET https://datastore.googleapis.com/v1/projects/ project-id /operations To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
@@ -74,11 +75,24 @@ Evidence snippets:
 - For example, here is the progress status of a composite index build: { "operations": [ { "name": "projects/ project-id /operations/AyAyMDBiM2U5NTgwZDAtZGIyYi0zYjc0LTIzYWEtZjg1ZGdWFmZWQHEjF0c2Flc3UtcmV4ZWRuaS1uaW1kYRUKSBI", "metadata": { "@type": "type.googleapis.com/google.datastore.admin.v1.IndexOperationMetadata", "common": { "operationType": "CREATE INDEX", "startTime": "2020-06-23T16:52:25.697539Z", "state": "PROCESSING" }, "progressEntities": { "workCompleted": "219327", "workEstimated": "2198182" } }, }, ...
 - The following is an example of an index.yaml file: indexes : - kind : Task ancestor : no properties : - name : done - name : priority direction : desc - kind : Task properties : - name : collaborators direction : asc - name : created direction : desc - kind : TaskList ancestor : yes properties : - name : percent complete direction : asc - name : type direction : asc The syntax of index.yaml is the YAML format.
 
+### "Customer-managed encryption keys (CMEK) \_|\_ Datastore \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/datastore/docs/cmek](https://docs.cloud.google.com/datastore/docs/cmek)
+- Source ID: `site-iam-reference`
+- Final score: 128
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can only restore a key during the period when a key version is scheduled for destruction.
+- Before being permanently destroyed, a key version is scheduled for destruction.
+- In the event of a key being unavailable, to preserve data beyond the seven days limit, we recommend that you enable backups for your Datastore mode CMEK database with the required retention period.
+- Additionally, CMEK organization policy constraints can be used to require that any databases created by restore or clone and any Cloud Storage buckets used for Import are CMEK-protected.
+
 ### Datastore Admin \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console](https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console)
 - Source ID: `site-docs-root`
-- Final score: 106
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:

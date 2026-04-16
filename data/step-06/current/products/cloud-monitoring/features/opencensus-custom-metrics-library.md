@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.144Z"
+generated_at: "2026-04-15T00:01:14.003Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "OpenCensus custom metrics library"
 feature_slug: "opencensus-custom-metrics-library"
 latest_feature_date: "2019-04-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
-  - "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent"
-  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus"
+  - "https://docs.cloud.google.com/monitoring/docs/reference/libraries"
+  - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+  - "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient"
 keywords:
   - "opencensus"
   - "custom"
   - "metrics"
   - "library"
-  - "is"
-  - "the"
   - "generally"
   - "available"
+  - "official"
+  - "writing"
 ---
 
 # OpenCensus custom metrics library
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ OpenCensus is the generally available official library for writing user-defined 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- [https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent](https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent)
-- [https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus](https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus)
+- [https://docs.cloud.google.com/monitoring/docs/reference/libraries](https://docs.cloud.google.com/monitoring/docs/reference/libraries)
+- [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
+- [https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient)
 
 ## Supporting Pages
 
-### Monitoring release notes \_|\_ Google Cloud Documentation
+### Monitoring client libraries \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
+- URL: [https://docs.cloud.google.com/monitoring/docs/reference/libraries](https://docs.cloud.google.com/monitoring/docs/reference/libraries)
 - Source ID: `site-docs-reference`
-- Final score: 164
+- Final score: 125
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This client only needs to be created // once, and can be reused for multiple requests. try ( MetricServiceClient metricServiceClient = MetricServiceClient . create ()) { // Prepares an individual data point TimeInterval interval = TimeInterval . newBuilder () . setEndTime ( Timestamps . fromMillis ( System . currentTimeMillis ())) . build (); TypedValue value = TypedValue . newBuilder (). setDoubleValue ( 123.45 ). build (); Point point = Point . newBuilder (). setInterval ( interval ). setValue ( value ). build (); List<Point> pointList = new ArrayList <> (); pointList . add ( point ); ProjectName name = ProjectName . of ( projectId ); // Prepares the metric descriptor Map<String , String > metricLabels = new HashMap <> (); metricLabels . put ( "store id" , "Pittsburg" ); Metric metric = Metric . newBuilder () . setType ( "custom.googleapis.com/stores/daily sales" ) . putAllLabels ( metricLabels ) . build (); // Prepares the monitored resource descriptor Map<String , String > resourceLabels = new HashMap <> (); resourceLabels . put ( "project id" , projectId ); MonitoredResource resource = MonitoredResource . newBuilder (). setType ( "global" ). putAllLabels ( resourceLabels ). build (); // Prepares the time series request TimeSeries timeSeries = TimeSeries . newBuilder () . setMetric ( metric ) . setResource ( resource ) . addAllPoints ( pointList ) . build (); List<TimeSeries> timeSeriesList = new ArrayList <> (); timeSeriesList . add ( timeSeries ); CreateTimeSeriesRequest request = CreateTimeSeriesRequest . newBuilder () . setName ( name . toString ()) . addAllTimeSeries ( timeSeriesList ) . build (); // Writes time series data metricServiceClient . createTimeSeries ( request ); System . out . printf ( "Done writing time series data.%n" ); } } } Node.js // Imports the Google Cloud client library const monitoring = require ( ' @google-cloud/monitoring ' ); async function quickstart () { // Creates a client const client = new monitoring .
+- MetricServiceClient (); // TODO(developer): Uncomment and set the following variables // const projectId = "PROJECT ID" // Prepares an individual data point const dataPoint = { interval : { endTime : { seconds : Date . now () / 1000 , }, }, value : { // The amount of sales doubleValue : 123.45 , }, }; // Prepares the time series request const request = { name : client . projectPath ( projectId ), timeSeries : [ { // Ties the data point to a custom metric metric : { type : 'custom.googleapis.com/stores/daily sales' , labels : { store id : 'Pittsburgh' , }, }, resource : { type : 'global' , labels : { project id : projectId , }, }, points : [ dataPoint ], }, ], }; // Writes time series data const [ result ] = await client . createTimeSeries ( request ); console . log ( 'Done writing time series data.' , result ); } quickstart (); PHP Includes the autoloader for libraries installed with composer require once DIR . '/vendor/autoload.php'; Imports the Google Cloud client library use Google\Api\Metric; use Google\Api\MonitoredResource; use Google\Cloud\Monitoring\V3\Client\MetricServiceClient; use Google\Cloud\Monitoring\V3\CreateTimeSeriesRequest; use Google\Cloud\Monitoring\V3\Point; use Google\Cloud\Monitoring\V3\TimeInterval; use Google\Cloud\Monitoring\V3\TimeSeries; use Google\Cloud\Monitoring\V3\TypedValue; use Google\Protobuf\Timestamp; // These variables are set by the App Engine environment.
+- To test locally, // ensure these are set or manually change their values. $projectId = getenv('GCLOUD PROJECT') ?: 'YOUR PROJECT ID'; $instanceId = '1234567890123456789'; $zone = 'us-central1-f'; try { $client = new MetricServiceClient(); $formattedProjectName = 'projects/' . $projectId; $labels = [ 'instance id' => $instanceId, 'zone' => $zone, ]; $m = new Metric(); $m->setType('custom.googleapis.com/my metric'); $r = new MonitoredResource(); $r->setType('gce instance'); $r->setLabels($labels); $value = new TypedValue(); $value->setDoubleValue(3.14); $timestamp = new Timestamp(); $timestamp->setSeconds(time()); $interval = new TimeInterval(); $interval->setStartTime($timestamp); $interval->setEndTime($timestamp); $point = new Point(); $point->setValue($value); $point->setInterval($interval); $points = [$point]; $timeSeries = new TimeSeries(); $timeSeries->setMetric($m); $timeSeries->setResource($r); $timeSeries->setPoints($points); $createTimeSeriesRequest = (new CreateTimeSeriesRequest()) ->setName($formattedProjectName) ->setTimeSeries([$timeSeries]); $client->createTimeSeries($createTimeSeriesRequest); print('Successfully submitted a time series' .
+- The samples on this page use custom, or user-defined, metrics to illustrate the use of the client libraries.
+
+### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
+- Source ID: `site-docs-reference`
+- Final score: 112
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- April 23, 2019 Feature The OpenCensus library is now generally available as the official library for user-defined metrics in Stackdriver Monitoring.
-- November 08, 2023 Change Observability for Google Kubernetes Engine: The curated set of kube state metrics is now Generally Available.
-- December 05, 2018 Feature Documentation for using OpenCensus to capture custom metrics in Java applications is now available.
-- Change The API to manage the metrics scope of a Google Cloud project is now Generally Available.
+- What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For example, to list active metrics that appear in no alerting policies and in no custom dashboards, add the following filters to the filter bar: Status: Active Alert Policies: (Empty) Custom Dashboards: (Empty) By default, when you add multiple filters, the table includes a row when the row meets all filters.
+- The following table describes the categories of billable metrics available on the Metrics Management page and whether they are measured by bytes or samples ingested: Domain Metric prefix Pricing model Meaning Agent agent.googleapis.com Bytes Metrics that are collected from external resources by agents .
+- To view information about errors in writing metric data, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .
 
-### "User-defined metrics from the agent \_|\_ Cloud Monitoring \_|\_ Google\
+### "Class MetricServiceAsyncClient (2.30.0) \_|\_ Python client libraries \_\
 
-- URL: [https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent](https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent)
-- Source ID: `site-iam-reference`
-- Final score: 154
+- URL: [https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 109
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- TypeInstance "^active-connections$" # Match on type instance . < / Match > < Target "set" > Specify the metric descriptor type : MetaData "stackdriver metric type" "custom.googleapis.com/nginx/active connections" Specify a value for the "service name" label ; clean it up in the next Target : MetaData "label:service name" "%{plugin instance}" < / Target > < Target "replace" > Remove the "nginx " prefix in the service name to get the real service name : MetaData "label:service name" "nginx " "" < / Target > < / Rule > The following rule is run after rewriting your metric , or if the metric wasn ' t one of your user - defined metrics .
-- The time series data for this metric descriptor must contain the following information, because of the way the metric descriptor is defined: Metric type: custom.googleapis.com/nginx/active connections Metric label values: service name : either "my service a" or "my service b" Other time series information, including the associated monitored resource —the VM instance sending the data—and the metric's data point, is automatically obtained by the agent for all metrics.
-- PreCacheChain "PreCache" < Chain "PreCache" > < Rule "jump to custom metrics from curl json" > If the plugin name and instance match , this is PROBABLY a metric we ' re looking for : < Match regex > Plugin "^curl json$" PluginInstance "^nginx " < / Match > < Target "jump" > Go execute the following chain ; then come back .
-- For example: custom.googleapis.com/my measurement custom.googleapis.com/instance/network/received packets count custom.googleapis.com/instance/network/sent packets count The recommended naming is hierarchical to make the metrics easier for people to keep track of.
-
-### Collect Prometheus metrics \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus](https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus)
-- Source ID: `site-iam-reference`
-- Final score: 152
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following meta labels are available on targets for you to use in the relabel configs section: meta gce instance id : the numeric ID of the Compute Engine instance (local) meta gce instance name : the name of the Compute Engine instance (local); the Ops Agent automatically places this value in the mutable instance name label on your metrics. meta gce machine type : full or partial URL of the machine type of the instance; the Ops Agent automatically places this value in the mutable machine type label on your metrics. meta gce metadata NAME : each metadata item of the instance meta gce network : the network URL of the instance meta gce private ip : the private IP address of the instance meta gce interface ipv4 NAME : IPv4 address of each named interface meta gce project : the Google Cloud project in which the instance is running (local) meta gce public ip : the public IP address of the instance, if present meta gce tags : comma separated list of instance tags meta gce zone : the Compute Engine zone URL in which the instance is running The values of these labels are set when the Ops Agent starts.
-- Compute Engine meta labels available during relabeling When the Ops Agent scrapes metrics, it includes a set of meta labels whose values are based on the configuration of the Compute Engine VM on which the agent is running.
-- Setting up the example requires the following resources, which you might have to install: git curl make python3 Go language, version 1.19 or higher Create or configure your application To obtain and run the JSON Exporter, use the following procedure: Clone the json exporter repository and check out the exporter by running the following commands: git clone https://github.com/prometheus-community/json exporter.git cd json exporter git checkout v0.5.0 Build the exporter by running the following command: make build Start the Python HTTP server by running the following command: python3 -m http.server 8000 & Start the JSON Exporter by running the following command: ./json exporter --config.file examples/config.yml & Query the JSON Exporter to verify that it is running and exposing metrics on port 7979: curl "http://localhost:7979/probe?module=default&target=http://localhost:8000/examples/data.json" If the query was successful, then you see output that resembles the following: HELP example global value Example of a top-level global value scrape in the json TYPE example global value untyped example global value{environment="beta",location="planet-mars"} 1234 HELP example value active Example of sub-level value scrapes from a json TYPE example value active untyped example value active{environment="beta",id="id-A"} 1 example value active{environment="beta",id="id-C"} 1 HELP example value boolean Example of sub-level value scrapes from a json TYPE example value boolean untyped example value boolean{environment="beta",id="id-A"} 1 example value boolean{environment="beta",id="id-C"} 0 HELP example value count Example of sub-level value scrapes from a json TYPE example value count untyped example value count{environment="beta",id="id-A"} 1 example value count{environment="beta",id="id-C"} 3 In this output, the strings like example value active are the metric names, with labels and values in braces.
-- The full structure of the Prometheus receiver is shown in the following: metrics: receivers: prom application: type: prometheus config: scrape configs: - job name: ' STRING ' # must be unique across all Prometheus receivers scrape interval: # duration, like 10m or 15s scrape timeout: # duration, like 10m or 15s metrics path: # resource path for metrics, default = /metrics honor timestamps: # boolean, default = false scheme: # http or https, default = http params: - STRING : STRING basic auth: username: STRING password: SECRET password file: STRING authorization: type: STRING # default = Bearer credentials: SECRET credentials file: FILENAME oauth2: OAUTH2 # See Prometheus oauth2 follow redirects: # boolean, default = true enable http2: # boolean, default = true tls config: TLS CONFIG # See Prometheus tls config proxy url: STRING static configs: STATIC CONFIG # See Prometheus static config relabel configs: RELABEL CONFIG # See Prometheus relabel config metric relabel configs: METRIC RELABEL CONFIGS # See Prometheus metric relabel configs For examples of relabeling configs, see Additional receiver configuration .
+- User-created metric descriptors define custom metrics <https://cloud.google.com/monitoring/custom-metrics> .
+- Only user-created custom metrics <https://cloud.google.com/monitoring/custom-metrics> can be deleted.
+- The new custom metric https://cloud.google.com/monitoring/custom-metrics descriptor.
+- Generally, you only need to set this if you're developing your own client library.
 

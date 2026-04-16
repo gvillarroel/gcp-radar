@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.012Z"
+generated_at: "2026-04-13T22:42:27.299Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "ANALYZE DDL command"
@@ -9,18 +9,15 @@ latest_feature_date: "2022-06-30"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/iam"
-  - "https://docs.cloud.google.com/spanner/docs/schema-and-data-model"
-  - "https://docs.cloud.google.com/spanner/docs/graph/overview"
+  - "https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
 keywords:
+  - "administrators"
+  - "manually"
   - "analyze"
-  - "ddl"
   - "command"
   - "introduces"
-  - "the"
-  - "so"
-  - "administrators"
-  - "can"
 ---
 
 # ANALYZE DDL command
@@ -38,48 +35,46 @@ Introduces the ANALYZE DDL command so administrators can manually refresh the op
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/iam](https://docs.cloud.google.com/spanner/docs/iam)
-- [https://docs.cloud.google.com/spanner/docs/schema-and-data-model](https://docs.cloud.google.com/spanner/docs/schema-and-data-model)
-- [https://docs.cloud.google.com/spanner/docs/graph/overview](https://docs.cloud.google.com/spanner/docs/graph/overview)
+- [https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions](https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat)
 
 ## Supporting Pages
 
-### IAM overview | Spanner | Google Cloud Documentation
+### List query optimizer versions \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/spanner/docs/iam](https://docs.cloud.google.com/spanner/docs/iam)
-- Source ID: `site-iam-reference`
-- Final score: 30
+- URL: [https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions](https://docs.cloud.google.com/spanner/docs/query-optimizer/query-optimizer-versions)
+- Source ID: `site-docs-reference`
+- Final score: 72
+- Re-rank relevance: N/A
+
+### "JDBC session management commands (GoogleSQL) \_|\_ Spanner \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
+- Source ID: `site-docs-reference`
+- Final score: 64
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- IAM overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/iam There are two types of predefined roles for Spanner: Person roles: Granted to users or groups, which allows them to perform actions on the resources in your project.
+- Home Documentation Databases Spanner Reference Send feedback JDBC session management commands (GoogleSQL) Stay organized with collections Save and categorize content based on your preferences.
+- RUN PARTITION 'partition-token' RUN PARTITION 'partition-token' Executes a query partition that has previously been returned by the PARTITION command.
+- Each partition token can be executed on a separate connection on the same or another client using the RUN PARTITION 'partition-token' command.
+- The command can be executed on any connection that is connected to the same database as the database that created the partition tokens.
 
-### Schemas overview | Spanner | Google Cloud Documentation
+### "JDBC session management commands (PostgreSQL) \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/schema-and-data-model](https://docs.cloud.google.com/spanner/docs/schema-and-data-model)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat)
+- Source ID: `site-docs-reference`
+- Final score: 64
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- You can also further segment and store rows in your database table across different geographic regions.
-- Schemas overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/schema-and-data-model You use schemas to organize objects, ... a schema for each database in Spanner.
-- For more information, see the Geo-partitioning overview....
-
-### Spanner Graph overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/graph/overview](https://docs.cloud.google.com/spanner/docs/graph/overview)
-- Source ID: `site-docs-root`
-- Final score: 26
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Spanner Graph overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/graph/overview Documentation · Databases · Spanner · Guides · Send feedback · PostgreSQL interface note: The examples in topics for Spanner Graph are intended for GoogleSQL-dialect databases.
-- Note: This feature is available with the Spanner Enterprise edition and Enterprise Plus edition.
-- Spanner Graph doesn&#x27;t support the PostgreSQL interface.
-- For more information, see the Spanner editions overview.
+- Home Documentation Databases Spanner Reference Send feedback JDBC session management commands (PostgreSQL) Stay organized with collections Save and categorize content based on your preferences.
+- BEGIN ; SELECT FirstName , LastName FROM Singers ORDER BY LastName ; COMMIT ; -- Add 'READ WRITE' or 'READ ONLY' to the 'BEGIN' command to -- override the current default of the connection.
+- RUN PARTITION 'partition-token' RUN PARTITION 'partition-token' Executes a query partition that has previously been returned by the PARTITION command.
+- Each partition token can be executed on a separate JDBC connection on the same or another host using the RUN PARTITION 'partition-token' command.
 

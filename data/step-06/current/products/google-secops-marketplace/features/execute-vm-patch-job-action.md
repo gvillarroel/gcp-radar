@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:34.406Z"
+generated_at: "2026-04-12T12:17:17.687Z"
 product_name: "Google SecOps Marketplace"
 product_slug: "google-secops-marketplace"
 feature_name: "Execute VM Patch Job action"
 feature_slug: "execute-vm-patch-job-action"
 latest_feature_date: "2024-12-24"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
 keywords:
   - "execute"
   - "vm"
@@ -24,7 +27,7 @@ keywords:
 # Execute VM Patch Job action
 
 Product: Google SecOps Marketplace
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ Adds an action that executes a VM patch job.
 
 Adds an action that executes a VM patch job.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox)
+- [https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines](https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Integrate Automox with Google SecOps \_|\_ Google Security Operations \_\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox)
+- Source ID: `site-docs-root`
+- Final score: 170
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Run on This action runs on the following entities: IP Address Hostname Action Results Script Result Script result name Value options Example is success True/False is success=False JSON Result { "id" : 2263017 , "agent version" : "1.41.125" , "commands" : [], "compatibility checks" : { "missing wmi integrity check" : false , "missing powershell" : false , "low diskspace" : false }, "compliant" : true , "connected" : false , "create time" : "2022-10-24T09:14:12+0000" , "custom name" : "" , "deleted" : false , "detail" : { "IPS" : [ "192.0.2.176" , "2001:db8:1:1:1:1:1:1" ], "UPDATE SOURCE CHECK" : { "CONNECTED" : "True" , "ERROR" : "Succeeded" }, "MDM SERVER" : null , "FQDNS" : [ "DESKTOP-65M05SE.WORKGROUP" ], "RAM" : "8589934592" , "SECURE TOKEN ACCOUNT" : null , "LAST USER LOGON" : { "SRC" : "DESKTOP-65M05SE" , "USER" : "DESKTOP-65M05SE\\Admin" , "TIME" : "10/24/2022 2:59:45 AM" }, "VOLUME" : [ { "IS SYSTEM DISK" : "True" , "VOLUME" : "C:" , "FSTYPE" : "NTFS" , "LABEL" : "Local Disk" , "AVAIL" : "63766056960" , "FREE" : "39201988608" } ], "DISTINGUISHED NAME" : "" , "MODEL" : "VMware7,1" , "CPU" : "Intel(R) Xeon(R) CPU E5-2698 v3 @ 2.30GHz" , "MDM PROFILE INSTALLED" : null , "VENDOR" : "VMware, Inc." , "AUTO UPDATE OPTIONS" : { "OPTIONS" : "off" , "ENABLED" : "1" }, "SERVICETAG" : "No Asset Tag" , "PS VERSION" : "5" , "WSUS CONFIG" : { "WSUS REACHABLE" : "1" , "WSUS MANAGED" : "0" , "WSUS SERVER" : "" }, "SERIAL" : "VMware" , "NICS" : [ { "VENDOR" : "Intel(R) 82574L Gigabit Network Connection" , "DEVICE" : "Ethernet0" , "TYPE" : "enet" , "MAC" : "01:23:45:AB:CD:EF" , "IPS" : [ "172.30.201.176" , "2001:db8:1:1:1:1:1:1" ], "CONNECTED" : true }, { "IPS" : [], "CONNECTED" : false , "VENDOR" : "WAN Miniport (IP)" , "DEVICE" : "" , "TYPE" : "enet" , "MAC" : "01:23:45:AB:CD:EF" }, { "VENDOR" : "WAN Miniport (IPv6)" , "DEVICE" : "" , "TYPE" : "enet" , "MAC" : "01:23:45:AB:CD:EF" , "IPS" : [], "CONNECTED" : false }, { "CONNECTED" : false , "VENDOR" : "WAN Miniport (Network Monitor)" , "DEVICE" : "" , "TYPE" : "enet" , "MAC" : "01:23:45:AB:CD:EF" , "IPS" : [] } ], "WMI INTEGRITY CHECK" : "True" , "VERSION" : "440BX Desktop Reference Platform" , "DISKS" : [ { "TYPE" : "VMware Virtual disk SCSI Disk Device" , "SIZE" : "64420392960" } ] }, "display name" : "DESKTOP-65M05SE" , "exception" : false , "instance id" : "" , "ip addrs" : [ "192.0.2.139" ], "ip addrs private" : [ "192.0.2.176" , "2001:db8:1:1:1:1:1:1" ], "is compatible" : true , "is delayed by notification" : false , "is delayed by user" : false , "last disconnect time" : "2022-10-25T09:19:29+0000" , "last logged in user" : "DESKTOP-65M05SE\\Admin" , "last process time" : "2022-10-25T08:19:24+0000" , "last refresh time" : "2022-10-25T08:23:48+0000" , "last scan failed" : false , "last update time" : "2022-10-25T08:22:14+0000" , "mdm" : null , "name" : "DESKTOP-65M05SE" , "needs attention" : false , "needs reboot" : false , "next patch time" : null , "notification count" : 0 , "organization id" : 104513 , "organizational unit" : "" , "os family" : "Windows" , "os name" : "10 Enterprise Evaluation" , "os version" : "10.0.19043" , "os version id" : 4876 , "patch deferral count" : 0 , "patches" : 1 , "pending" : false , "pending patches" : 0 , "policy status" : [ { "id" : 316123693 , "organization id" : 104513 , "policy id" : 245687 , "server id" : 2263017 , "policy name" : "Apply All Patches" , "policy type name" : "patch" , "status" : 1 , "result" : "{}" , "create time" : "2022-10-25T08:23:48+0000" , "will reboot" : false , "pending count" : 0 , "next remediation" : null } ], "reboot deferral count" : 0 , "reboot is delayed by notification" : false , "reboot is delayed by user" : false , "reboot notification count" : 0 , "refresh interval" : 1440 , "serial number" : "VMware" , "server group id" : 145150 , "server policies" : [], "status" : { "device status" : "not-ready" , "agent status" : "disconnected" , "policy status" : "compliant" , "policy statuses" : [ { "id" : 245687 , "compliant" : true }, { "id" : 245688 , "compliant" : true } ] }, "tags" : [ "Recently Added" ], "timezone" : "UTC-0700" , "total count" : 1 , "uptime" : "1872" , "uuid" : " UUID " , "list of patches" : [ { "id" : 2077952013 , "server id" : 2263017 , "package id" : 227229243 , "software id" : 167943 , "installed" : true , "ignored" : false , "group ignored" : false , "deferred until" : null , "group deferred until" : null , "name" : "example" , "display name" : "MSXML 6.0 RTM Security Update (925673)" , "version" : "103" , "repo" : "WindowsUpdate" , "cves" : [], "cve score" : "9.0" , "agent severity" : "9.0" , "severity" : "critical" , "package version id" : 233355423 , "os name" : "10 Enterprise Evaluation" , "os version" : "10.0.19043" , "os version id" : 4876 , "create time" : "2021-06-28T15:45:57+0000" , "requires reboot" : true , "patch classification category id" : 8 , "patch scope" : "important" , "is uninstallable" : false , "secondary id" : null , "is managed" : true , "impact" : 0 , "organization id" : 104513 } ] } Entity Enrichment Enrichment Field Name Logic - When to apply id When available in JSON agent version When available in JSON compliant When available in JSON connected When available in JSON create time When available in JSON custom name When available in JSON ip addrs private When available in JSON last disconnect time When available in JSON last logged in user When available in JSON last update time When available in JSON os When available in JSON pending patches When available in JSON tags When available in JSON Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If data is available for one entity (is success=true): "Successfully enriched the following entities using information from Automox: {entity.identifier}".
+- Please check the JSON result to be sure that the command executed correctly." If the device is not found or it's connected for one entity (is success=true): "Action wasn't able to execute command "{Command}" on the following entities in Automox: {entity.identifier}.
+- Parameters Parameter Name Type Default Value Is Mandatory Description Command DDL Scan Device Possible Values: Scan Device Install Specific Patches Install All Available Patches Restart Device No Specify a command that needs to be executed on the device.
+- Parameters Parameter Name Type Default Value Is Mandatory Description Return Patches Checkbox Checked No If enabled, the action returns a list of patches that need to be updated on the machine.
+
+### "Response integrations community contribution guidelines \_|\_ Google Security\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines](https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines)
+- Source ID: `site-docs-reference`
+- Final score: 121
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For changes that affect all integration items: Integration - {Update} For changes that affect all actions: Integration's Actions - {Update} For changes that affect all connectors: Integration's Connectors - {Update} For changes that affect all jobs: Integration's Jobs - {Update} If the release contained a regressive change, then in the release note you need to specify REGRESSIVE! .
+- Release notes The general structure for the release note should follow the following format: {integration item} - {update} For example: Get Case Details - Added ability to fetch information about affected IOCs Depending on the situation, there are unique release notes for specific scenarios: If it's a new integration: New Integration Added - {integration name} If a new action is added: New Action Added - {action name} If a new connector is added: New Connector Added - {connector name} If a new job is added: New Job Added - {job name} If a predefined widget is added to an action: {action name} - Added Predefined Widget.
+- If you believe that a critical error was encountered during the action execution, then make sure there is a verbose message for this situation and fail the action.
+- Actions Name The Name of the action should point to the activity that is being performed; for example, Get Case Details , List Entity Events , or Execute Search .
+
+### "Integrate Anomali ThreatStream with Google SecOps \_|\_ Google Security\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream)
+- Source ID: `site-docs-root`
+- Final score: 120
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False JSON result approved jobs = [ { "id" :, "entity" : { e nt i t y.ide nt i f ier } } ] jobs wi t h excluded e nt i t ies = [ { "id" :, "entity" : { e nt i t y.ide nt i f ier } } ] Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found(is success=true): "Successfully submitted and approved the following entities in Anomali ThreatStream:\n{0}".format(entity.identifier list) If fails to enrich some entities (rejected entities) (is success=true): "Action was not able to successfully submit and approve the following entities in Anomali ThreatStream\n: {0}".format([entity.identifier]) If fails to enrich for all entities (is success=false): "No entities were successfully submitted to Anomali ThreatStream." The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: "Error executing action "Submit Observables".
+- Run on This action runs on the following entities: Hash IP Address URL Email Address (user entity that matches email regex) Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found (is success=true): "Successfully reported the following entities as false positive in Anomali ThreatStream:\n{0}".format(entity.identifier list) If fail to mark specific entities (is success=true): "Action was not able to report the following entities as false positive in Anomali ThreatStream\n: {0}".format([entity.identifier]) If fail to enrich all entities (is success=false): "No entities were reported as false positive." The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: "Error executing action "Report As False Positive".
+- Run on This action runs on the following entities: Hash IP Address URL Email (user entity that matches email regex) Threat Actor CVE Action results Script result Script result name Value options Example is success True or False is success:False JSON result { "{} hashes.format(subtype)" : [ "" ], "all hashes" : [ "md5hash 1" ], "domains" : [ "" ] "urls" : [] "emails" : [] "ips" : [] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found (is success=true): "Successfully retrieved related hashes from Anomali ThreatStream" If no hashes are found (is success=false): "No related hashes were found." The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: "Error executing action "Get Related Hashes".
+- Example: apt Only Suspicious Entity Insight Checkbox Unchecked Yes If enabled, action will create insight only for entities that exceeded the Severity Threshold and Confidence Threshold.
+
+### "AWS Identity and Access Management (IAM) \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam)
+- Source ID: `site-docs-root`
+- Final score: 119
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Please note, there are additional policies that match the provided filter." If no data: Print "No Policies were found in AWS IAM" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, max>1000): print "Error executing action 'List Policies.
+- Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result { "PolicyName" : "S3-read-only-bucket" , "PolicyId" : "ANPAYPE7MW7AFKUDK3HD7" , "Arn" : "arn:aws:iam::582302349248:policy/S3-read-only-bucket" , "Path" : "/" , "DefaultVersionId" : "v1" , "AttachmentCount" : 0 , "PermissionsBoundaryUsageCount" : 0 , "IsAttachable" : true , "CreateDate" : "2020-12-6T17:16:45" , "UpdateDate" : "2020-12-6T17:16:45" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print "<Policy name> policy was successfully created" The action should fail and stop a playbook execution: If error - Policy already exists: Print "Could not create <policy name> policy.
+- Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ "Arn" : "arn:aws:iam::582302349248:group/ZivGroup" , "CreateDate" : "2020-12-05 16:18:36+00:00" , "Path" : "/" , "GroupId" : "AGPAYPE7MW7AMKCWMJPMX" , "GroupName" : "ZivGroup" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print "Successfully listed available groups in AWS IAM" If no data available: Print "No Groups found in AWS IAM" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, If 'Max Groups'> 1000): print "Error executing action 'List Groups'.
+- Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ "Arn" : "arn:aws:iam::582302349248:user/ziv" , "CreateDate" : "2020-12-03T12:12:20" , "Path" : "/" , "UserId" : "AIDAYPE7MW7AFMHK4WCHS" , "UserName" : "ziv" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print "Successfully listed available users in AWS IAM" If no data available: Print "No users found in AWS IAM" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, if max>10000): print "Error executing action 'List Users'.
 

@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:44.701Z"
+generated_at: "2026-04-12T12:17:52.730Z"
 product_name: "Memorystore for Redis Cluster"
 product_slug: "memorystore-for-redis-cluster"
 feature_name: "IAM authentication"
 feature_slug: "iam-authentication"
 latest_feature_date: "2023-08-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth"
+  - "https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth"
+  - "https://docs.cloud.google.com/memorystore/docs/cluster/access-control"
+  - "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
 keywords:
   - "iam"
   - "authentication"
@@ -23,7 +26,7 @@ keywords:
 # IAM authentication
 
 Product: Memorystore for Redis Cluster
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +36,72 @@ Memorystore for Redis Cluster supports IAM authentication.
 
 Memorystore for Redis Cluster supports IAM authentication.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth)
+- [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth)
+- [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control)
+- [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "About IAM authentication \_|\_ Memorystore for Redis Cluster \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth)
+- Source ID: `site-docs-root`
+- Final score: 336
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Redis AUTH command The IAM authentication feature uses the Redis AUTH command to integrate with IAM, allowing clients to provide an IAM access token that will be verified by the Memorystore cluster before allowing access to data.
+- Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback About IAM authentication Stay organized with collections Save and categorize content based on your preferences.
+- IAM authentication for Redis When using IAM authentication, permission to access a Memorystore cluster isn't granted directly to the end user.
+- For Memorystore IAM authentication, a user requires the redis.clusters.connect permission to authenticate with a cluster.
+
+### "Manage IAM authentication \_|\_ Memorystore for Redis Cluster \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth)
+- Source ID: `site-docs-root`
+- Final score: 336
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Create an instance with IAM authentication To create a Memorystore for Redis Cluster instance that uses IAM authentication, run the create command: gcloud redis clusters create INSTANCE ID --region= REGION ID --network= NETWORK --node-type= NODE TYPE --shard-count= SHARD COUNT --auth-mode=iam-auth Replace the following: INSTANCE ID is the ID of the Memorystore for Redis Cluster instance you're creating.
+- Troubleshooting error messages with IAM authentication Error message Recommended action Description -WRONGPASS invalid username-password pair or user is disabled Verify the username and access token provided to the Memorystore for Redis Cluster server The username or access token provided is invalid. "default" is the only supported username.
+- IAM permissions may take a few minutes to propagate if recently changed. -NOAUTH Authentication required Check that application is configured to provide an IAM access token to the Memorystore for Redis Cluster server The application is not providing an access token to the Memorystore for Redis Cluster server.
+- Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback Manage IAM authentication Stay organized with collections Save and categorize content based on your preferences.
+
+### "Access control with IAM \_|\_ Memorystore for Redis Cluster \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control)
+- Source ID: `site-docs-root`
+- Final score: 272
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Can't create or delete instances. roles/redis.viewer Redis Viewer All redis permissions except for redis.clusters.create redis.clusters.delete redis.clusters.update redis.clusters.connect redis.operations.delete Read-only access to all Memorystore for Redis Cluster resources. roles/redis.dbConnectionUser Redis Database Connection User redis.clusters.connect A role that you can assign to users who need to authenticate with IAM authentication.
+- Permissions and their roles The following table lists each permission that Memorystore for Redis Cluster supports and the Memorystore for Redis roles that include it: Permission Redis role Basic role redis.clusters.list Redis Admin Redis Editor Redis Viewer Viewer redis.clusters.get Redis Admin Redis Editor Redis Viewer Viewer redis.clusters.create Redis Admin Owner redis.clusters.update Redis Admin Redis Editor Editor redis.clusters.connect Redis Admin Redis Database Connection User Owner redis.clusters.rescheduleMaintenance Redis Admin Owner Custom roles If the predefined roles do not address your unique business requirements, you can define your own custom roles with permissions that you specify.
+- Full access and control for all Google Cloud resources; manage user access roles/editor Editor All redis permissions except for .getIamPolicy & .setIamPolicy Read-write access to all Google Cloud and Redis resources (full control except for the ability to modify permissions) roles/viewer Viewer redis. .get redis. .list Read-only access to all Memorystore for Redis Cluster resources.
+- Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback Access control with IAM Stay organized with collections Save and categorize content based on your preferences.
+
+### "Client library connection code samples \_|\_ Memorystore for Redis Cluster\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection)
+- Source ID: `site-docs-root`
+- Final score: 272
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- GenerateAccessTokenRequest ( name = service account , scope = [ 'https://www.googleapis.com/auth/cloud-platform' ], ) Make the request response = client . generate access token ( request = request ) Handle the response return str ( response . access token ) def iam connect ( self ): "Initialize the connection and authenticate" self . parser . on connect ( self ) auth args = ( generate access token (),) self . send command ( "AUTH" , auth args , check health = False ) try : auth response = self . read response () except AuthenticationWrongNumberOfArgsError : self . send command ( "AUTH" , self . password , check health = False ) auth response = self . read response () if str if bytes ( auth response ) != "OK" : raise AuthenticationError ( "Invalid Username or Password" ) Connect to Memorystore for Redis Cluster backoff = ConstantBackoff ( 3 ) retry = Retry ( retries =- 1 , backoff = backoff , supported errors = ( ConnectionError , ConnectionResetError )) r = redis . cluster .
+- CertificateFactory cf = CertificateFactory . getInstance ( "X.509" ); X509Certificate caCert = ( X509Certificate ) cf . generateCertificate ( is ); TrustManagerFactory tmf = TrustManagerFactory . getInstance ( TrustManagerFactory . getDefaultAlgorithm ()); KeyStore ks = KeyStore . getInstance ( KeyStore . getDefaultType ()); ks . load ( null ); // You don't need the KeyStore cluster to come from a file. ks . setCertificateEntry ( "caCert" , caCert ); tmf . init ( ks ); SSLContext sslContext = SSLContext . getInstance ( "TLS" ); sslContext . init ( null , tmf . getTrustManagers (), null ); JedisCluster jedisCluster = new JedisCluster ( discovery , DefaultJedisClientConfig . builder () . connectionTimeoutMillis ( timeout ) . socketTimeoutMillis ( timeout ) . credentialsProvider ( credentialsProvider ) . ssl ( true ) . sslSocketFactory ( sslContext . getSocketFactory ()) . build (), maxAttempts , config ); // Perform operations on the cluster jedisCluster . set ( "myKey" , "Hello, Redis Cluster!" ); String value = jedisCluster . get ( "myKey" ); System . out . println ( "Value for myKey: " + value ); int count = 0 ; for ( int i = 0 ; i 1000 ; i ++ ) { String k = "jediskey" + String . valueOf ( i ); String v = "jedisvalue" + String . valueOf ( i ); jedisCluster . set ( k , v ); String got = jedisCluster . get ( k ); if ( got . equals ( v )) { count ++ ; } else { System . out . println ( "unexpected value" ); } } System . out . println ( "Successfully got " + String . valueOf ( count ) + " keys" ); // Disconnect from the cluster jedisCluster . close (); // Cleanup the resources used by the provider (( Closeable ) credentialsProvider ). close (); } } Go We recommend using Go , versions 1.24.5 and later. package main import ( "context" "crypto/tls" "crypto/x509" "flag" "fmt" "io/ioutil" "log" "sync" "time" credentials "google.golang.org/genproto/googleapis/iam/credentials/v1" "github.com/golang/protobuf/ptypes" "github.com/redis/go-redis/v9" "google.golang.org/api/option" gtransport "google.golang.org/api/transport/grpc" ) var ( svcAccount = flag .
+- Duration . newBuilder () . setSeconds ( lifetime . getSeconds ()) . setNanos ( lifetime . getNano ()) . build (); GenerateAccessTokenResponse response = this . iamClient . generateAccessToken ( this . accountName , new ArrayList <> (), Collections . singletonList ( "https://www.googleapis.com/auth/cloud-platform" ), lifetimeProto ); // got a successful token refresh this . credentials = new RedisCredentials () { @Override public boolean hasUsername () { return false ; } @Override public boolean hasPassword () { return true ; } @Override public String getUsername () { return "default" ; } @Override public char [] getPassword () { return response . getAccessToken (). toCharArray (); } }; this . lastRefreshInstant = Instant . now (); // clear the last saved exception this . lastException = null ; logger . info ( "IAM token refreshed with lastRefreshInstant [" + lastRefreshInstant + "], refreshDuration [" + this . refreshDuration + "], accountName [" + this . accountName + "] and lifetime [" + this . lifetime + "]" ); } catch ( Exception e ) { // Save last exception for inline feedback this . lastException = e ; // Bubble up for direct feedback throw e ; } } } / Sample code to demonstrate how to use IAMAuth; not intended for production use / public static void main ( String [] args ) throws Exception { // These are the parameters the user needs to replace String discoveryEndpointIp = " CLUSTER DISCOVERY ENDPOINT IP ADDRESS " ; int discoveryEndpointPort = CLUSTER DISCOVERY ENDPOINT PORT NUMBER ; String accountName = " ACCOUNT NAME " ; String caFileName = " CA FILE NAME " ; int refreshDurationSec = REFRESH DURATION SEC ; int lifetimeSec = LIFETIME SEC ; RedisCredentialsProvider credentialsProvider = new RedisClusterCredentialsProvider ( accountName , Duration . ofSeconds ( refreshDurationSec ), Duration . ofSeconds ( lifetimeSec )); RedisURI redisUri = RedisURI .
+- Duration . newBuilder () . setSeconds ( lifetime . getSeconds ()) . setNanos ( lifetime . getNano ()) . build (); GenerateAccessTokenResponse response = iamClient . generateAccessToken ( this . accountName , delegates , Collections . singletonList ( "https://www.googleapis.com/auth/cloud-platform" ), lifetimeProto ); // got a successful token refresh this . credentials = new DefaultRedisCredentials ( "default" , response . getAccessToken ()); this . lastRefreshInstant = Instant . now (); // clear the last saved exception this . lastException = null ; logger . info ( "IAM token refreshed with lastRefreshInstant [" + lastRefreshInstant + "], refreshDuration [" + this . refreshDuration + "], accountName [" + this . accountName + "] and lifetime [" + this . lifetime + "]" ); } catch ( Exception e ) { // Save last exception for inline feedback this . lastException = e ; // Bubble up for direct feedback throw e ; } } } / Sample code to demonstrate how to use IAMAuth; not intended for production use / public static void main ( String [] args ) throws Exception { String discoveryEndpointIp = " CLUSTER DISCOVERY ENDPOINT IP ADDRESS " ; int discoveryEndpointPort = CLUSTER DISCOVERY ENDPOINT PORT NUMBER ; GenericObjectPoolConfig config = new GenericObjectPoolConfig (); config . setTestWhileIdle ( true ); int timeout = 5000 ; int maxAttempts = 5 ; HostAndPort discovery = new HostAndPort ( discoveryEndpointIp , discoveryEndpointPort ); RedisCredentialsProvider credentialsProvider = new RedisClusterCredentialsProvider ( "projects/-/serviceAccounts/example-service-account@example-project.iam.gserviceaccount.com" , Duration . ofSeconds ( 300 ), Duration . ofSeconds ( 3600 )); // Create JedisCluster cluster InputStream is = new FileInputStream ( "server-ca.pem" ); // You could get a resource as a stream instead.
 

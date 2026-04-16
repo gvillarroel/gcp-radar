@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.796Z"
+generated_at: "2026-04-15T12:05:13.756Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Targeted reservations for accelerator pipelines"
@@ -9,19 +9,18 @@ latest_feature_date: "2025-08-27"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/dataflow/docs/guides/compute-engine-reservations"
-  - "https://docs.cloud.google.com/dataflow/docs/release-notes"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines"
+  - "https://docs.cloud.google.com/dataflow/docs/cuds"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc"
 keywords:
   - "targeted"
   - "reservations"
-  - "for"
   - "accelerator"
   - "pipelines"
   - "dataflow"
   - "supports"
   - "specifically"
+  - "compute"
 ---
 
 # Targeted reservations for accelerator pipelines
@@ -39,67 +38,55 @@ Dataflow supports specifically targeted Compute Engine reservations for pipeline
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataflow/docs/guides/compute-engine-reservations](https://docs.cloud.google.com/dataflow/docs/guides/compute-engine-reservations)
-- [https://docs.cloud.google.com/dataflow/docs/release-notes](https://docs.cloud.google.com/dataflow/docs/release-notes)
-- [https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance](https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance)
-- [https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines](https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines)
+- [https://docs.cloud.google.com/dataflow/docs/cuds](https://docs.cloud.google.com/dataflow/docs/cuds)
+- [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse)
+- [https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc](https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc)
 
 ## Supporting Pages
 
-### Use Compute Engine reservations with Dataflow \_|\_ Google Cloud Documentation
+### "BigQuery to Clickhouse template \_|\_ Cloud Dataflow \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/compute-engine-reservations](https://docs.cloud.google.com/dataflow/docs/guides/compute-engine-reservations)
-- Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Reservations and accelerators Dataflow supports specifically targeted reservations for pipelines using accelerators (GPUs or TPUs).
-- Compute Engine pricing model If your Dataflow usage includes VMs from specifically targeted reservations that have GPUs or TPUs, then compute resources from those reserved VMs are billed according to Compute Engine Pricing .
-- If your specifically targeted reservations are attached to a Compute Engine resource-based commitment , then you also receive applicable resource-based committed use discounts (CUDs) for your usage.
-- For instructions on using Dataflow accelerators with specific reservations, contact your account team.
-
-### Dataflow release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/release-notes](https://docs.cloud.google.com/dataflow/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 138
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse)
+- Source ID: `site-api-reference`
+- Final score: 46
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Feature Dataflow supports specifically targeted reservations for pipelines using accelerators (GPUs or TPUs).
-- March 17, 2022 Feature Dataflow now supports the following Google-provided templates in GA: Pub/Sub Subscription to BigQuery Pub/Sub Topic to BigQuery Pub/Sub Avro to BigQuery Pub/Sub Proto to BigQuery Pub/Sub to Pub/Sub Pub/Sub to Cloud Storage Avro Pub/Sub to Cloud Storage Text Cloud Storage Text to BigQuery (Stream) Cloud Storage Text to Pub/Sub (Stream) Change Data Capture to BigQuery (Stream) Apache Kafka to BigQuery BigQuery export to Parquet (via Storage API) Firestore to Cloud Storage Text Cloud Spanner to Cloud Storage Text Cloud Storage Text to BigQuery Cloud Storage Text to Firestore Cloud Storage Text to Pub/Sub (Batch) Apache Cassandra to Bigtable Datastream to Cloud Spanner File Format Conversion Bulk Compress Cloud Storage Files Bulk Decompress Cloud Storage Files Firestore Bulk Delete Streaming Data Generator to Pub/Sub, BigQuery, and Cloud Storage March 04, 2022 Feature You can now use the Apache Beam SDK for Go to create batch Dataflow pipelines .
-- August 27, 2025 Feature Dataflow supports TPUs, Google's custom-designed AI accelerators that are optimized for large-scale AI/ML workloads.
-- November 21, 2025 Feature Dataflow now supports speculative execution for batch pipelines.
+- BATCH , displayName = "BigQuery to ClickHouse" , description = "The BigQuery to ClickHouse template is a batch pipeline that ingests data from a BigQuery table into ClickHouse table. " + "The template can either read the entire table or read specific records using a supplied query." , optionsClass = BigQueryToClickHouseOptions . class , skipOptions = { "javascriptTextTransformReloadIntervalMinutes" , "pythonExternalTextTransformGcsPath" , "pythonExternalTextTransformFunctionName" }, flexContainerName = "bigquery-to-clickhouse" , documentation = "https://cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse" , contactInformation = "https://cloud.google.com/support" , preview = true , requirements = { "The source BigQuery table must exist." , "The ClickHouse target table must exist prior running." , "This ClickHouse target table must have the exact same column names as the the source table/query." }) public class BigQueryToClickHouse { private static final Logger log = LoggerFactory . getLogger ( BigQueryToClickHouse . class ); / Main entry point for pipeline execution. @param args Command line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); BigQueryToClickHouseOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigQueryToClickHouseOptions . class ); run ( options ); } / Runs the pipeline with the supplied options. @param options The execution parameters to the pipeline. @return The result of the pipeline execution. / private static PipelineResult run ( BigQueryToClickHouseOptions options ) { try { checkArgument ( ! options . getJdbcUrl (). isEmpty (), "The ClickHouse JDBC url must have the following template: jdbc:clickhouse://host:port/schema" ); checkArgument ( ! options . getClickHouseTable (). isEmpty (), "ClickHouse target table name is empty.
+- POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { "launch parameter" : { "jobName" : " JOB NAME " , "parameters" : { "jdbcUrl" : " JDBC URL " , "clickHouseUsername" : " CLICKHOUSE USERNAME " , "clickHouseTable" : " CLICKHOUSE TABLE " }, "containerSpecGcsPath" : "gs://dataflow-templates- LOCATION / VERSION /flex/BigQuery to Clickhouse" , } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
+- In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \ --project = PROJECT ID \ --region = REGION NAME \ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/BigQuery to Clickhouse \ --parameters \ jdbcUrl = JDBC URL , \ clickHouseUsername = CLICKHOUSE USERNAME , \ clickHouseTable = CLICKHOUSE TABLE Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice REGION NAME : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
+- ColumnType . parseDefaultExpression ( columnType , value . toString ())); } } else { rowBuilder . addValue ( null ); } } Row row = rowBuilder . build (); out . output ( row ); } } What's next Learn about Dataflow templates .
 
-### "Performance characteristics of Kafka to BigQuery pipelines \_|\_ Cloud Dataflow\
+### Use Eventarc to manage Dataflow jobs \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance](https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance)
-- Source ID: `site-docs-root-2`
-- Final score: 132
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Performance characteristics of Kafka to BigQuery pipelines Stay organized with collections Save and categorize content based on your preferences.
-- BQ TABLE NAME dlq" , \ numStorageWriteApiStreams = 400 At-least-once mode gcloud dataflow flex-template run JOB NAME \ --project = PROJECT ID \ --template-file-gcs-location = gs://dataflow-templates-us-central1/latest/flex/Kafka to BigQuery Flex \ --enable-streaming-engine \ --additional-experiments = streaming mode at least once \ --parameters \ readBootstrapServerAndTopic = " KAFKA BOOTSTRAP ADDRESS ; KAFKA TOPIC " , \ kafkaReadAuthenticationMode = APPLICATION DEFAULT CREDENTIALS, \ messageFormat = JSON, \ writeMode = SINGLE TABLE NAME, \ outputTableSpec = " PROJECT ID : BQ DATASET .
-- The benchmark tests used a message schema similar to the following: { "logStreamId" : "{{integer(1000001,2000000)}}" , "message" : "{{alphaNumeric(962)}}" } Next steps Use the Dataflow job monitoring interface Best practices for Dataflow cost optimization Troubleshoot slow or stuck streaming jobs Read from Apache Kafka to Dataflow Write from Dataflow to BigQuery Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Exactly-once mode gcloud dataflow flex-template run JOB NAME \ --project = PROJECT ID \ --template-file-gcs-location = gs://dataflow-templates-us-central1/latest/flex/Kafka to BigQuery Flex \ --enable-streaming-engine \ --parameters \ readBootstrapServerAndTopic = " KAFKA BOOTSTRAP ADDRESS ; KAFKA TOPIC " , \ kafkaReadAuthenticationMode = APPLICATION DEFAULT CREDENTIALS, \ messageFormat = JSON, \ writeMode = SINGLE TABLE NAME, \ outputTableSpec = " PROJECT ID : BQ DATASET .
-
-### Develop and test Dataflow pipelines \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines](https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines)
-- Source ID: `site-docs-root`
-- Final score: 124
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc](https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc)
+- Source ID: `site-docs-reference-2`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- You can use TestPipeline on a Apache Beam pipeline runner such as the Direct Runner or the Dataflow Runner to apply assertions on the contents of PCollection objects using PAssert , as shown in the following code snippet of a JUnit test class : @Rule public final transient TestPipeline p = TestPipeline . create (); @Test @Category ( NeedsRunner . class ) public void myPipelineTest () throws Exception { final PCollection<String> pcol = p . apply (...) PAssert . that ( pcol ). containsInAnyOrder (...); p . run (); } Unit tests for individual transforms By factoring your code into reusable transforms, for example, as top-level or static nested classes, you can create targeted tests for different parts of your pipeline.
-- For streaming pipelines, you can also run end-to-end tests using generated data, for example, using the Dataflow Streaming Data Generator to emulate production-like data characteristics and volumes.
-- Although this page focuses on running pipelines built using the Apache Beam Java SDK, Dataflow also supports Apache Beam pipelines that were developed using Python and Go.
-- The following sections describe how various formal software tests apply to data pipelines using Dataflow.
+- The following shows an example payload: { "id" : "2023-04-13 16 28 37-12345678" , "projectId" : "my-project" , "name" : "job1" , "currentState" : "JOB STATE QUEUED" , "currentStateTime" : "2023-04-13T23:28:37.437622Z" , "createTime" : "2023-04-13T23:28:37.437622Z" , "location" : "us-central1" , "startTime" : "2023-04-13T23:28:37.437622Z" } For more information about job states, see the following topics: JobState Life of a Dataflow job What's next Design Dataflow pipeline workflows .
+- Create a trigger To create an Eventarc trigger for Dataflow job state changes, refer to one of the following documents: Route Dataflow events to Cloud Run Route Dataflow events to Google Kubernetes Engine Route Dataflow events to Workflows Create a trigger for Cloud Run functions Optionally, you can filter events by Dataflow job ID.
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use Eventarc to manage Dataflow jobs Stay organized with collections Save and categorize content based on your preferences.
+- If your Dataflow pipeline is part of a larger solution that runs on Google Kubernetes Engine, the trigger can route the event to a GKE service running in your cluster.
+
+### Committed use discounts \_|\_ Cloud Dataflow \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/cuds](https://docs.cloud.google.com/dataflow/docs/cuds)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 40
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Resources eligible for Dataflow CUDs Note: While Dataflow Committed Use Discounts (CUDs) don't apply to GPUs and TPUs, you can apply resource-based CUDs for these accelerators by purchasing Compute Engine resource-based commitments with specifically targeted reservations, and using these reservations with Dataflow.
+- For more information, see Use Compute Engine reservations with Dataflow .
+- Dataflow CUDs apply to your spending on the following resources: Worker CPU and memory for streaming jobs Streaming Engine data processed Streaming Engine compute units Data Compute Units (DCUs) for Dataflow Prime streaming jobs Dataflow CUDs don't apply to your spending on the following resources: Worker CPU and memory for batch and FlexRS jobs Dataflow Shuffle data processed Data Compute Units (DCUs) for Dataflow Prime batch jobs Persistent Disk storage GPUs and TPUs Snapshots Confidential VMs For a list of applicable SKUs, see Dataflow CUD Eligible SKUs .
+- As a basis for comparison, compute the on-demand cost of Dataflow capacity, without the application of any commitment discounts: Monthly cost based on on-demand pricing: $5.73 per hour 730 hours = $4,182.9 per month.
 

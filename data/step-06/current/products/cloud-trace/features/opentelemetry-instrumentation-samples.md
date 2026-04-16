@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.831Z"
+generated_at: "2026-04-12T12:12:49.000Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "OpenTelemetry instrumentation samples"
 feature_slug: "opentelemetry-instrumentation-samples"
 latest_feature_date: "2024-05-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
   - "https://docs.cloud.google.com/trace/docs/setup/nodejs-ot"
   - "https://docs.cloud.google.com/trace/docs/setup/nodejs"
+  - "https://docs.cloud.google.com/trace/docs/setup/python-ot"
 keywords:
   - "opentelemetry"
   - "instrumentation"
@@ -26,7 +27,7 @@ keywords:
 # OpenTelemetry instrumentation samples
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Google published OpenTelemetry samples for Python and Node.js applications to co
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/trace/docs/setup/sample-overview](https://docs.cloud.google.com/trace/docs/setup/sample-overview)
 - [https://docs.cloud.google.com/trace/docs/setup/nodejs-ot](https://docs.cloud.google.com/trace/docs/setup/nodejs-ot)
 - [https://docs.cloud.google.com/trace/docs/setup/nodejs](https://docs.cloud.google.com/trace/docs/setup/nodejs)
+- [https://docs.cloud.google.com/trace/docs/setup/python-ot](https://docs.cloud.google.com/trace/docs/setup/python-ot)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/trace/docs/setup/sample-overview](https://docs.cloud.google.com/trace/docs/setup/sample-overview)
 - Source ID: `site-docs-root-2`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 217
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - How the samples work The samples for Go, Java, Node.js, and Python use the OpenTelemetry protocol to collect trace and metric data.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/trace/docs/setup/nodejs-ot](https://docs.cloud.google.com/trace/docs/setup/nodejs-ot)
 - Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 209
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Clone the repository: git clone https://github.com/GoogleCloudPlatform/opentelemetry-operations-js Go to the sample directory: cd opentelemetry-operations-js/samples/instrumentation-quickstart Build and run the sample: docker compose up --abort-on-container-exit If you aren't running on Cloud Shell, then run the application with the GOOGLE APPLICATION CREDENTIALS environment variable pointing to a credentials file.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/trace/docs/setup/nodejs](https://docs.cloud.google.com/trace/docs/setup/nodejs)
 - Source ID: `site-docs-root-2`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 209
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Clone the repository: git clone https://github.com/GoogleCloudPlatform/opentelemetry-operations-js Go to the sample directory: cd opentelemetry-operations-js/samples/instrumentation-quickstart Build and run the sample: docker compose up --abort-on-container-exit If you aren't running on Cloud Shell, then run the application with the GOOGLE APPLICATION CREDENTIALS environment variable pointing to a credentials file.
 - Your application is not instrumented and will not produce telemetry' , error ); } // Gracefully shut down the SDK to flush telemetry when the program exits process . on ( 'SIGTERM' , () = > { sdk . shutdown () . then (() = > diag . debug ( 'OpenTelemetry SDK terminated' )) . catch ( error = > diag . error ( 'Error terminating OpenTelemetry SDK' , error )); }); The previous code sample configures OpenTelemetry to export metrics using the OTLP protocol , and it uses the @opentelemetry/auto-instrumentations-node package to configure all available Node.js instrumentations.
 - Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data, and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure OpenTelemetry Configure your app to preload the OpenTelemetry configuration Configure structured logging Write structured logs Configure OpenTelemetry The default configuration for the OpenTelemetry Node.js SDK exports traces by using the OTLP protocol .
 - The following code sample illustrates a Dockerfile passing the --require flag: CMD node --require ./build/src/instrumentation.js build/src/index.js 2>&1 tee /var/log/app.log Configure structured logging To include the trace information as part of the JSON-formatted logs written to standard output, configure your app to output structured logs in JSON format.
+
+### Python instrumentation sample \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/trace/docs/setup/python-ot](https://docs.cloud.google.com/trace/docs/setup/python-ot)
+- Source ID: `site-docs-root`
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Clone the repository: git clone https://github.com/GoogleCloudPlatform/opentelemetry-operations-python Go to the sample directory: cd opentelemetry-operations-python/samples/instrumentation-quickstart Build and run the sample: docker compose up --abort-on-container-exit If you aren't running on Cloud Shell, then run the application with the GOOGLE APPLICATION CREDENTIALS environment variable pointing to a credentials file.
+- To generate metrics and traces for the HTTP client and server, the example app installs the opentelemetry-instrumentation-flask and opentelemetry-instrumentation-requests instrumentation libraries: logger = logging . getLogger ( name ) Initialize OpenTelemetry Python SDK and structured logging setup opentelemetry () setup structured logging () app = Flask ( name ) Add instrumentation FlaskInstrumentor () . instrument app ( app ) RequestsInstrumentor () . instrument () The app has two endpoints: The /multi endpoint is handled by the multi function.
+- The following code sample illustrates how to configure the standard logging library to output JSON structured logs using the python-json-logger library, and how to use the opentelemetry-instrumentation-logging package to include trace information. class JsonFormatter ( jsonlogger .
+- For more information and configuration options, see OpenTelemetry Python instrumentation .
 

@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/endpoint-verification/docs/collect-config-att
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
 source_metadata:
   url: https://docs.cloud.google.com/endpoint-verification/docs/collect-config-attributes
   title: "Enable collection of configurable device attributes \_|\_ Endpoint Verification\

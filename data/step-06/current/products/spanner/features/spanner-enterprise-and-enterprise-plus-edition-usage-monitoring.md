@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.829Z"
+generated_at: "2026-04-13T22:42:27.157Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner Enterprise and Enterprise Plus edition usage monitoring"
@@ -9,18 +9,17 @@ latest_feature_date: "2026-02-25"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/editions-overview"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/spanner"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
+  - "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+  - "https://docs.cloud.google.com/spanner/docs/columnar-engine"
+  - "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
 keywords:
-  - "spanner"
   - "enterprise"
-  - "and"
   - "plus"
   - "edition"
-  - "usage"
+  - "feature"
   - "monitoring"
   - "provides"
+  - "usage"
 ---
 
 # Spanner Enterprise and Enterprise Plus edition usage monitoring
@@ -38,45 +37,53 @@ Spanner provides monitoring for Enterprise and Enterprise Plus edition feature u
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/editions-overview](https://docs.cloud.google.com/spanner/docs/editions-overview)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/spanner](https://docs.cloud.google.com/iam/docs/roles-permissions/spanner)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
+- [https://docs.cloud.google.com/spanner/docs/vector-search-tutorial](https://docs.cloud.google.com/spanner/docs/vector-search-tutorial)
+- [https://docs.cloud.google.com/spanner/docs/columnar-engine](https://docs.cloud.google.com/spanner/docs/columnar-engine)
+- [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
 
 ## Supporting Pages
 
-### Spanner editions overview | Google Cloud Documentation
+### "Get started using Spanner for generative AI applications \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/editions-overview](https://docs.cloud.google.com/spanner/docs/editions-overview)
+- URL: [https://docs.cloud.google.com/spanner/docs/vector-search-tutorial](https://docs.cloud.google.com/spanner/docs/vector-search-tutorial)
 - Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Spanner editions overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/editions-overview Spanner · Start free · Home · ... and its key features.
-- Spanner editions is a tier-based pricing model that provides different capabilities at different price points....
-
-### Spanner roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/spanner](https://docs.cloud.google.com/iam/docs/roles-permissions/spanner)
-- Source ID: `site-iam-reference`
-- Final score: 86
+- Final score: 108
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Spanner roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/spanner This page lists the IAM roles and permissions for Spanner.
+- Note: This feature is available with the Spanner Enterprise edition and Enterprise Plus edition.
+- Spanner vector search is available only in the Enterprise edition or Enterprise Plus edition.
+- On the Select an edition page, select Enterprise Plus or Enterprise .
+- This handy gadget features essential tools like screwdrivers, hex wrenches, and tire levers, keeping you ready for minor repairs and adjustments on the go.
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### Spanner columnar engine overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 85
+- URL: [https://docs.cloud.google.com/spanner/docs/columnar-engine](https://docs.cloud.google.com/spanner/docs/columnar-engine)
+- Source ID: `site-docs-root`
+- Final score: 101
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Note: This feature is available with the Spanner Enterprise edition and Enterprise Plus edition.
+- Preview — Spanner columnar engine This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- After you enable the Spanner columnar engine and Spanner completes data compaction, storage usage increases to include the new columnar representation.
+- This page provides an overview of the columnar engine for Spanner and describes how to use it.
+
+### "Best practices for using Spanner as a gaming database \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
+- Source ID: `site-docs-root`
+- Final score: 96
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- In Monitoring, you can see details on your Spanner usage, including data storage and CPU usage.
+- Spanner is the first scalable, enterprise-grade, globally distributed, and strongly consistent database service built for the cloud to combine the benefits of relational database structure with non-relational horizontal scale.
+- We recommend running load tests with double the load you expect in production in order to be prepared for spikes in usage and cases where your game is more popular than anticipated.
+- Warm up the database before game launch Before you launch your game, we recommend that you warm up your database to take advantage of the Spanner parallelization features.
 

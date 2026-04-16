@@ -1,23 +1,22 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.544Z"
+generated_at: "2026-04-14T23:59:44.381Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Logging query language comments"
 feature_slug: "logging-query-language-comments"
 latest_feature_date: "2022-04-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/logging/docs/view/logging-query-language"
   - "https://docs.cloud.google.com/logging/docs/view/building-queries"
-  - "https://docs.cloud.google.com/logging/docs/release-notes"
+  - "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
 keywords:
   - "logging"
   - "query"
   - "language"
   - "comments"
-  - "the"
   - "supports"
   - "within"
   - "queries"
@@ -26,7 +25,7 @@ keywords:
 # Logging query language comments
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +37,13 @@ The Logging query language supports comments within queries.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/logging/docs/view/logging-query-language](https://docs.cloud.google.com/logging/docs/view/logging-query-language)
 - [https://docs.cloud.google.com/logging/docs/view/building-queries](https://docs.cloud.google.com/logging/docs/view/building-queries)
-- [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
+- [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
 
 ## Supporting Pages
 
@@ -52,9 +51,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/logging/docs/view/logging-query-language](https://docs.cloud.google.com/logging/docs/view/logging-query-language)
 - Source ID: `site-docs-root`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 211
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For example, the following functions match the string "hello world": SEARCH("hello world") SEARCH("Hello World") SEARCH("HELLO WORLD") Because backticks are used in the following functions, they produce different results: SEARCH("hello world") SEARCH("world hello") The Logging query language supports different ways that you can search your log data.
@@ -66,7 +65,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/logging/docs/view/building-queries](https://docs.cloud.google.com/logging/docs/view/building-queries)
 - Source ID: `site-docs-root`
-- Final score: 212
+- Final score: 166
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,16 +74,16 @@ Evidence snippets:
 - The queries you build are written in the Logging query language .
 - The following example illustrates a sample request body, which contains an instance of SavedQuery : { "parent": "projects/my-project/locations/global" "savedQueryId": "compute-query" { "displayName": "compute-admin-activity-query", "description": "Queries for Compute Engine Admin Activity logs.", "loggingQuery": { "filter": resource.type="gce instance" AND log id("cloudaudit.googleapis.com/activity"), }, "visibility": "PRIVATE" } } To share the query with other members of the Google Cloud project, specify a value of SHARED in the visibility field.
 
-### Logging release notes \_|\_ Google Cloud Documentation
+### View and analyze logs \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
+- URL: [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
 - Source ID: `site-docs-root`
-- Final score: 178
+- Final score: 122
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- April 18, 2023 Feature You can now configure Log Analytics on Cloud Logging buckets and BigQuery linked datasets by using the following Terraform modules: google logging project bucket config google logging linked dataset April 11, 2023 Change The Logging Query Language now supports a built-in SEARCH function that you can use to find strings in your log data.
-- March 14, 2023 Feature The Logging Query Language now supports a built-in SEARCH function that you can use to find strings in your log data.
-- April 03, 2024 Feature The Logging query language now supports the cast and regexp extract functions.
-- September 15, 2025 Libraries Java 3.23.4 (2025-09-11) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.62.1 ( 1438bff ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ( #1853 ) ( c21a635 ) Update googleapis/sdk-platform-java action to v2.62.1 ( #1855 ) ( b6ce498 ) September 08, 2025 Libraries Node.js 11.2.1 (2025-09-03) Bug Fixes logging: Specifying resourceNames should fetch logs only from those resources ( #1597 ) ( ff7899f ) August 25, 2025 Libraries Java 3.23.3 (2025-08-20) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ( #1848 ) ( 162ef56 ) August 11, 2025 Libraries Java 3.23.2 (2025-08-05) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.61.0 ( 0a21b83 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ( #1843 ) ( 975d8ae ) Java 3.23.2 (2025-08-05) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.61.0 ( 0a21b83 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ( #1843 ) ( 975d8ae ) Java 3.23.2 (2025-08-05) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.61.0 ( 0a21b83 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ( #1843 ) ( 975d8ae ) August 04, 2025 Libraries Java 3.23.1 (2025-07-28) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.60.2 ( 6a268f8 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ( #1834 ) ( 2e46f6e ) Java 3.23.1 (2025-07-28) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.60.2 ( 6a268f8 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ( #1834 ) ( 2e46f6e ) Java 3.23.1 (2025-07-28) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.60.2 ( 6a268f8 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ( #1834 ) ( 2e46f6e ) Java 3.23.1 (2025-07-28) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.60.2 ( 6a268f8 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ( #1834 ) ( 2e46f6e ) Feature You can now build queries without manually writing SQL in the Log Analytics page by using the query builder.
+- For more information, see Write advanced queries using the Logging query language .
+- Query-editor field: Build advanced queries by using the Logging query language.
+- The Observability Analytics page opens in a new tab and automatically translates the current Logging query language query into a SQL query.
+- These filters use an extended set of Logging query language such as disjunctive clauses.
 

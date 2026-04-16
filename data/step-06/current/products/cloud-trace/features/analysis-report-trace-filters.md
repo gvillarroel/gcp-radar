@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.837Z"
+generated_at: "2026-04-12T12:12:49.007Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Analysis report trace filters"
 feature_slug: "analysis-report-trace-filters"
 latest_feature_date: "2018-12-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/trace/docs/finding-traces"
   - "https://docs.cloud.google.com/trace/docs/trace-filters"
-  - "https://docs.cloud.google.com/trace/docs/release-notes"
+  - "https://docs.cloud.google.com/trace/docs/finding-traces"
+  - "https://docs.cloud.google.com/trace/docs/analytics"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesFixedSizeCollection"
 keywords:
   - "analysis"
   - "report"
@@ -26,7 +27,7 @@ keywords:
 # Analysis report trace filters
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +39,36 @@ Analysis reports can filter traces by full URI, URI prefix, or trace filter.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/trace/docs/finding-traces](https://docs.cloud.google.com/trace/docs/finding-traces)
 - [https://docs.cloud.google.com/trace/docs/trace-filters](https://docs.cloud.google.com/trace/docs/trace-filters)
-- [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
+- [https://docs.cloud.google.com/trace/docs/finding-traces](https://docs.cloud.google.com/trace/docs/finding-traces)
+- [https://docs.cloud.google.com/trace/docs/analytics](https://docs.cloud.google.com/trace/docs/analytics)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesFixedSizeCollection)
 
 ## Supporting Pages
+
+### Cloud Trace filters \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/trace/docs/trace-filters](https://docs.cloud.google.com/trace/docs/trace-filters)
+- Source ID: `site-docs-reference`
+- Final score: 222
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This document describes how you can configure filters when you use the Cloud Trace API list method.
+- For example, the following filter matches traces that have a latency of one second or more, and that contain a span named /modules.GetNumInstances : +span:/modules.GetNumInstances latency:1s All string comparisons are case-sensitive.
+- Home Documentation Observability Cloud Trace Reference Send feedback Cloud Trace filters Stay organized with collections Save and categorize content based on your preferences.
+- No results If your filter does not return any traces, check the following: Be sure there are no spaces in the filter except the ones that separate the comparisons.
 
 ### Find and explore traces \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/trace/docs/finding-traces](https://docs.cloud.google.com/trace/docs/finding-traces)
 - Source ID: `site-docs-root`
-- Final score: 186
+- Final score: 221
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,31 +77,31 @@ Evidence snippets:
 - Filter your trace data To display only information that is of interest to you, apply filters.
 - You can apply filters to restrict which spans the tables show.
 
-### Cloud Trace filters \_|\_ Google Cloud Documentation
+### Query and analyze traces \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/trace/docs/trace-filters](https://docs.cloud.google.com/trace/docs/trace-filters)
-- Source ID: `site-docs-reference`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- This document describes how you can configure filters when you use the Cloud Trace API list method.
-- For example, the following filter matches traces that have a latency of one second or more, and that contain a span named /modules.GetNumInstances : +span:/modules.GetNumInstances latency:1s All string comparisons are case-sensitive.
-- Home Documentation Observability Cloud Trace Reference Send feedback Cloud Trace filters Stay organized with collections Save and categorize content based on your preferences.
-- No results If your filter does not return any traces, check the following: Be sure there are no spaces in the filter except the ones that separate the comparisons.
-
-### Trace release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
+- URL: [https://docs.cloud.google.com/trace/docs/analytics](https://docs.cloud.google.com/trace/docs/analytics)
 - Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 200
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Feature You can now filter traces for analysis reports by the full URI, by the URI prefix, or by using trace filter.
-- To learn more, see the following: Find and explore traces Application Monitoring overview View application telemetry Telemetry (OTLP) API overview June 13, 2025 Change The Analysis reports page has been removed.
-- You can use menus to apply filters and to group traces by span and service name.
-- June 05, 2017 Feature Advanced trace filters : The Trace List page and Trace API now allow filtering traces by custom labels, latencies, child spans, and methods in addition to URIs.
+- Home Documentation Observability Cloud Trace Guides Send feedback Query and analyze traces Stay organized with collections Save and categorize content based on your preferences.
+- Query trace data This section describes the approaches that you can use to query your trace data: Load a system-defined query, edit this query, and then run the query.
+- If you want to view or explore individual traces or spans, or view attributes that are attached to spans, then use the Trace Explorer page.
+- Filters : Add filters when you want to restrict the query to spans that contain a specific attribute or span ID.
+
+### "Class TraceServiceClient.ListTracesFixedSizeCollection (2.88.0) \_|\_ Java\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesFixedSizeCollection)
+- Source ID: `site-java-reference`
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- ListTracesFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > TraceServiceClient.ListTracesFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<TraceServiceClient.ListTracesPage> pages, int collectionSize) protected TraceServiceClient .
+- 2.88.0 (latest) 2.87.0 2.85.0 2.83.0 2.82.0 2.80.0 2.78.0 2.76.0 2.75.0 2.74.0 2.73.0 2.72.0 2.70.0 2.68.0 2.67.0 2.64.0 2.63.0 2.62.0 2.60.0 2.59.0 2.58.0 2.57.0 2.56.0 2.55.0 2.54.0 2.53.0 2.52.0 2.51.0 2.49.0 2.48.0 2.47.0 2.46.0 2.45.0 2.44.0 2.43.0 2.42.0 2.41.0 2.40.0 2.39.0 2.37.0 2.36.0 2.35.0 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.0 2.28.0 2.27.0 2.24.0 2.23.0 2.22.0 2.21.0 2.20.0 2.19.0 2.18.0 2.17.0 2.16.0 2.15.0 2.14.0 2.13.0 2.12.0 2.11.0 2.9.0 2.8.0 2.7.0 2.6.0 2.5.0 2.4.0 2.3.7 2.2.0 2.1.13 public static class TraceServiceClient .
+- ListTracesPage > pages , int collectionSize ) Parameters Name Description pages List < ListTracesPage > collectionSize int Returns Type Description TraceServiceClient.ListTracesFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Developer tools Java Client libraries Send feedback Class TraceServiceClient.ListTracesFixedSizeCollection (2.88.0) Stay organized with collections Save and categorize content based on your preferences.
 

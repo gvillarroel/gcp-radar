@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:50:33.021Z",
+  "generated_at": "2026-04-12T21:39:05.382Z",
   "product_name": "Cloud Identity",
   "product_slug": "cloud-identity",
   "step02_source_path": "data/step-02/current/cloud-identity.md",
@@ -8,6 +8,43 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 2,
+    "source_row_count": 2,
+    "top_phrases": [
+      "posix groups",
+      "posix groups let cloud identity groups use posix attributes for unix style identity and access integration",
+      "identity groups can be created to map to external identity providers",
+      "external identity provider mapped identity groups",
+      "external identity provider",
+      "mapped identity groups"
+    ],
+    "top_tokens": [
+      "groups",
+      "identity",
+      "2024",
+      "access",
+      "and",
+      "attributes",
+      "can",
+      "cloud",
+      "created",
+      "deprecated",
+      "external",
+      "for",
+      "integration",
+      "let",
+      "map",
+      "mapped",
+      "posix",
+      "provider",
+      "providers",
+      "style",
+      "unix",
+      "use"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "identity",
   "dominant_python_slug": "iam",
   "dominant_java_slug": "google-cloud-iap",
@@ -63,30 +100,69 @@
           "rank": 6
         },
         {
-          "title": "CloudIdentity.Groups.Memberships.Create (Cloud Identity API v1beta1 (Rev. 100) 1.25.0)",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudidentity/v1beta1/java/latest/com/google/api/services/cloudidentity/v1beta1/CloudIdentity.Groups.Memberships.Create.html",
-          "description": "Creates a `Membership`. Create a request for the method &quot;memberships.create&quot;. This request holds the parameters needed by the the cloudidentity server.",
-          "rank": 7
-        },
-        {
           "title": "CloudIdentity.Groups.Memberships.Create (Cloud Identity API v1 (Rev. 87) 1.25.0)",
           "url": "https://developers.google.com/resources/api-libraries/documentation/cloudidentity/v1/java/latest/com/google/api/services/cloudidentity/v1/CloudIdentity.Groups.Memberships.Create.html",
           "description": "[Resource name](https://cloud.google.com/apis/design/resource_names) of the Group to create Membership within. Format: `groups/{group_id}`, where `group_id` is the unique ID assigned to the Group. ... OAuth access token. ... Data format for response. ... Selector specifying which fields to include in a partial response. ... API key. Your API key identifies your project and provides you with API access, quota, and reports.",
+          "rank": 7
+        },
+        {
+          "title": "CloudIdentity.Groups.Create (Cloud Identity API v1 (Rev. 87) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudidentity/v1/java/latest/com/google/api/services/cloudidentity/v1/CloudIdentity.Groups.Create.html",
+          "description": "CloudIdentity.initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest) must be called to initialize this instance immediately after invoking the constructor. ... OAuth access token. ... Data format for response. ... Selector specifying which fields to include in a partial response. ... API key. Your API key identifies your project and provides you with API access, quota, and reports.",
           "rank": 8
         }
       ]
     },
     {
       "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud Identity\" \"posix groups\"",
+      "official_result_count": 3,
+      "results": [
+        {
+          "title": "Groups API overview | Cloud Identity | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/identity/docs/groups",
+          "description": "POSIX groups are <strong>integrated with Google Cloud and are used by VMs in your organization that have OS Login enabled</strong>. Note: You must use the beta version of the Cloud Identity Groups API to create and manage POSIX groups.",
+          "rank": 1
+        },
+        {
+          "title": "POSIX groups deprecation | Cloud Identity | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/identity/docs/deprecations/posix-groups",
+          "description": "Cloud Identity offered POSIX groups (Preview), which <strong>linked POSIX groups with supplementary Linux groups in your organization&#x27;s VMs</strong>. As of September 26, 2024, you can no longer create new POSIX groups and existing POSIX groups will be removed ...",
+          "rank": 2
+        },
+        {
+          "title": "How-to Guides | Cloud Identity | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/identity/docs/how-to?rd=2&visit_id=636883633152253802-4236287830",
+          "description": "Retrieve and list POSIX groups using the Groups API. Formulate and test a membership query for dynamic groups. Create and update a dynamic group using the Groups API. Retrieve a dynamic group and list members using the Groups API. Valid user fields for dynamic group queries. Create and search for identity...",
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud Identity\" \"external identity provider mapped identity groups\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Cloud Identity\" \"roles and permissions\"",
-      "official_result_count": 1,
+      "official_result_count": 2,
       "results": [
         {
           "title": "Migrate SOAR permissions to Google Cloud IAM | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-soar-permissions-iam",
           "description": "The Google Cloud console verification process automates the transition from SOAR permissions to Google Cloud IAM by doing the following key steps: Reads existing permissions configurations, including custom permission groups and user assignments. Generates custom IAM roles that replicate the existing permissions groups.",
           "rank": 1
+        },
+        {
+          "title": "Roles and permissions | Looker Studio | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/looker/docs/studio/roles-and-permissions",
+          "description": "With IAM, you manage access to Looker Studio assets by assigning users to a predefined role. <strong>A role is a collection of permissions that allows users to perform certain actions while preventing them from performing other actions</strong>.",
+          "rank": 2
         }
       ]
     },
@@ -124,7 +200,7 @@
         },
         {
           "title": "How-to Guides | Cloud Identity | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/identity/docs/how-to?hl=en&visit_id=639112267192534247-779309721&rd=1",
+          "url": "https://docs.cloud.google.com/identity/docs/how-to?visit_id=639115639773634112-661764383&rd=1",
           "description": "Manage identity-mapped group memberships using the Groups API. Query group memberships using the Groups API. Manage membership expirations using the Groups API. Set up the User Invitation API. Create and manage user invitations using the User Invitation API. Set up the Policy API. List and get policies using the Policy API. Contact support for Cloud ...",
           "rank": 3
         },
@@ -147,15 +223,15 @@
           "rank": 6
         },
         {
-          "title": "Set up paid Cloud Identity service | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/identity/docs/how-to/set-up-paid-cloud-identity-service?visit_id=639111613104718508-1778709792&rd=1",
-          "description": "Google Workspace, Essentials, and Cloud Identity Premium—After your free trial ends and your paid subscription starts, we charge your payment method at the beginning of the following month. If your paid service starts in May, for example, we charge you at the beginning of June.",
-          "rank": 7
-        },
-        {
           "title": "Editions | Cloud Identity | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/identity/docs/editions",
           "description": "There are two editions of Cloud Identity: The premium edition and the free edition.",
+          "rank": 7
+        },
+        {
+          "title": "Understand your bills and charges | Cloud Identity | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/identity/docs/how-to/understand-your-bills-and-charges?visit_id=639115980188444166-4001729564&rd=1",
+          "description": "Applies to Cloud Identity Premium and other paid subscriptions in your Google Admin console. If you purchased your service from a reseller, contact your Google reseller · This document <strong>helps you understand your Google service bills and payments</strong>.",
           "rank": 8
         }
       ]
@@ -164,13 +240,19 @@
       "round": 1,
       "intent": "python_client",
       "query": "site:docs.cloud.google.com/python/docs/reference \"Cloud Identity\"",
-      "official_result_count": 1,
+      "official_result_count": 2,
       "results": [
         {
-          "title": "Python client libraries | Google Cloud Documentation",
+          "title": "Python Client for Cloud Identity and Access Management",
           "url": "https://docs.cloud.google.com/python/docs/reference/iam/latest",
           "description": "Cloud Identity and Access Management: <strong>Manages identity and access control for Google Cloud Platform resources</strong>, including the creation of service accounts, which you can use to authenticate to Google and make API calls.",
           "rank": 1
+        },
+        {
+          "title": "Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/iam/latest/summary_overview",
+          "description": "Classes, methods and properties &amp; attributes for <strong>Cloud Identity</strong> and Access Management API.",
+          "rank": 2
         }
       ]
     },
@@ -239,20 +321,34 @@
     },
     {
       "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud Identity\" \"posix groups let cloud identity groups use posix attributes for unix style identity and access integration\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud Identity\" \"external identity provider\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Cloud Identity\" \"access control\"",
       "official_result_count": 8,
       "results": [
         {
-          "title": "Overview of identity and access management | Cloud Architecture Center | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/architecture/identity",
-          "description": "Google Workspace or Cloud Identity <strong>lets you centrally control which corporate identities can use which Google services</strong>. By restricting access to certain services, you establish a base level of access control.",
-          "rank": 1
-        },
-        {
           "title": "Identity management products and features | Authentication | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/docs/authentication/identity-products",
           "description": "Google Workspace is a suite of business productivity and collaboration tools based on Google identities (Google Accounts). Google Workspace includes the functionality provided by Cloud Identity for user management. Google Accounts provide access to Google&#x27;s products and services, including Google Cloud. IAM provides fine-grained access control for Google Cloud resources.",
+          "rank": 1
+        },
+        {
+          "title": "Overview of identity and access management | Cloud Architecture Center | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/architecture/identity",
+          "description": "Google Workspace or Cloud Identity <strong>lets you centrally control which corporate identities can use which Google services</strong>. By restricting access to certain services, you establish a base level of access control.",
           "rank": 2
         },
         {
@@ -274,15 +370,15 @@
           "rank": 5
         },
         {
-          "title": "Manage access with IAM | Dataplex Universal Catalog | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dataplex/docs/iam-and-access-control",
-          "description": "<strong>IAM lets you control who (principals) has what access (roles) to which resources</strong>. A principal can be a Google Account (for end users), a service account (for apps and virtual machines), a Google group, or a Google Workspace or Cloud Identity domain.",
-          "rank": 6
-        },
-        {
           "title": "Configure a Google Cloud identity provider | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/onboard/configure-cloud-authentication",
           "description": "When using Cloud Identity or Google Workspace, you <strong>create managed user accounts to control access to Google Cloud resources and to Google SecOps</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Manage access with IAM | Dataplex Universal Catalog | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dataplex/docs/iam-and-access-control",
+          "description": "<strong>IAM lets you control who (principals) has what access (roles) to which resources</strong>. A principal can be a Google Account (for end users), a service account (for apps and virtual machines), a Google group, or a Google Workspace or Cloud Identity domain.",
           "rank": 7
         },
         {
@@ -327,20 +423,20 @@
         },
         {
           "title": "How-to Guides | Cloud Identity | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/identity/docs/how-to?hl=en&rd=2&visit_id=636883633152253802-4236287830",
+          "url": "https://docs.cloud.google.com/identity/docs/how-to?visit_id=639115639773634112-661764383&rd=1",
           "description": "Change a user&#x27;s Cloud Identity license. Overview of billing and payments for Cloud Identity.",
           "rank": 3
-        },
-        {
-          "title": "Identity management for Google Cloud | Identity and Access Management (IAM) | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/iam/docs/google-identities",
-          "description": "Overview of identity management strategies for Google Cloud.",
-          "rank": 4
         },
         {
           "title": "Quickstart: Set up Cloud Identity as a Google Cloud administrator | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/identity/docs/how-to/set-up-cloud-identity-admin",
           "description": "This document shows you how to set up Cloud Identity and become a Google Cloud administrator who can manage Google Cloud users and resources.",
+          "rank": 4
+        },
+        {
+          "title": "Identity management for Google Cloud | Identity and Access Management (IAM) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/iam/docs/google-identities",
+          "description": "Overview of identity management strategies for Google Cloud.",
           "rank": 5
         },
         {
@@ -371,8 +467,8 @@
       "results": [
         {
           "title": "Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/iam/latest",
-          "description": "Python · Client libraries · Send feedback · Stay organized with collections Save and categorize content based on your preferences. Version latestkeyboard_arrow_down · 2.21.0 (latest) 2.20.0 · 2.19.1 · 2.18.3 · 2.17.0 · 2.16.1 · 2.15.2 · 2.14.3 · 2.13.0 · 2.12.1 · 2.11.2 · 2.10.0 · 2.9.0 · 2.8.2 · 2.7.0 · 2.6.2 · 2.5.1 · 2.4.0 · 2.3.2 · 2.2.0 · 2.1.0 · 2.0.0 · 1.0.3 · 0.3.2 · 0.2.0 · Cloud Identity and Access Management: Manages identity and access control for Google Cloud Platform resources, including the creation of service accounts, which you can use to authenticate to Google and make API calls.",
+          "url": "https://docs.cloud.google.com/python/docs/reference/iam/latest/summary_overview",
+          "description": "Overview of the APIs available for Cloud Identity and Access Management API.",
           "rank": 1
         }
       ]
@@ -391,15 +487,15 @@
       "official_result_count": 8,
       "results": [
         {
-          "title": "CloudIdentity (Cloud Identity API v1 (Rev. 87) 1.25.0)",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudidentity/v1/java/latest/com/google/api/services/cloudidentity/v1/CloudIdentity.html",
-          "description": "Service definition for CloudIdentity (v1). API for provisioning and managing identity resources.",
-          "rank": 1
-        },
-        {
           "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
           "url": "https://developers.google.com/api-client-library/dotnet/apis/cloudidentity/v1",
           "description": "Cloud IDS API v1 · Google.Apis.Iam.v1 · Identity and Access Management (IAM) API v1 · Google.Apis.Iam.v2 · Identity and Access Management (IAM) API v2 · Google.Apis.Iam.v2beta · Identity and Access Management (IAM) API v2beta · Google.Apis.Indexing.v3 ·",
+          "rank": 1
+        },
+        {
+          "title": "CloudIdentity (Cloud Identity API v1 (Rev. 87) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudidentity/v1/java/latest/com/google/api/services/cloudidentity/v1/CloudIdentity.html",
+          "description": "Service definition for CloudIdentity (v1). API for provisioning and managing identity resources.",
           "rank": 2
         },
         {
@@ -427,9 +523,9 @@
           "rank": 6
         },
         {
-          "title": "Create an identity connector | Cloud Search | Google for Developers",
-          "url": "https://developers.google.com/cloud-search/docs/guides/identity-connector",
-          "description": "In the full sync case, the repository is responsible * for providing a snapshot of the complete identity mappings and * group rosters. This is then reconciled against the current set * of mappings and groups in Cloud Directory.",
+          "title": "API Help (Cloud Identity-Aware Proxy API v1 (Rev. 47) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/iap/v1/java/latest/help-doc.html",
+          "description": "<strong>The Overview page is the front page of this API document and provides a list of all packages with a summary for each</strong>.",
           "rank": 7
         },
         {
@@ -442,9 +538,23 @@
     },
     {
       "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud Identity\" \"identity groups can be created to map to external identity providers\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud Identity\" \"mapped identity groups\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Cloud Identity\" IAM roles permissions",
-      "official_result_count": 4,
+      "official_result_count": 2,
       "results": [
         {
           "title": "Understanding allow policies | Identity and Access Management (IAM) | Google Cloud Documentation",
@@ -453,22 +563,10 @@
           "rank": 1
         },
         {
-          "title": "Manage users with IAM database authentication | Cloud SQL for PostgreSQL | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
-          "description": "To give the group members login permissions, <strong>click the icon, and then select Add IAM role</strong>. If the icon no longer appears, then all members of the group are assigned the role that gives the login permission.",
-          "rank": 2
-        },
-        {
           "title": "Migrate SOAR permissions to Google Cloud IAM | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-soar-permissions-iam",
           "description": "The Google Cloud console verification process automates the transition from SOAR permissions to Google Cloud IAM by doing the following key steps: Reads existing permissions configurations, including custom permission groups and user assignments. Generates custom IAM roles that replicate the existing permissions groups.",
-          "rank": 3
-        },
-        {
-          "title": "Autorisations IAM pour Cloud Storage | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions?hl=fr",
-          "description": "Les tableaux suivants répertorient ... Les autorisations Cloud IAM sont regroupées par rôles, et <strong>vous attribuez des rôles à des utilisateurs et à des groupes</strong>....",
-          "rank": 4
+          "rank": 2
         }
       ]
     },
@@ -498,21 +596,21 @@
           "rank": 2
         },
         {
-          "title": "Overview of identity and access management | Cloud Architecture Center | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/architecture/identity",
-          "description": "Google Cloud lets you manage application identities, and address these requirements, by using Google Cloud service accounts and Kubernetes service accounts. For more information about service accounts and best practices for using them, see the Understanding service accounts. Customer identities are the identities that you manage for users to let them interact with your website or customer-facing applications. Managing customer identities and their access is also referred to as customer identity and access management (CIAM).",
-          "rank": 3
-        },
-        {
-          "title": "Identity management for Google Cloud | Identity and Access Management (IAM) | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/iam/docs/google-identities",
-          "description": "Overview of identity management strategies for Google Cloud.",
-          "rank": 4
-        },
-        {
           "title": "Quickstart: Set up Cloud Identity as a Google Cloud administrator | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/identity/docs/how-to/set-up-cloud-identity-admin",
           "description": "For example, using your Cloud Identity organization you can restrict project access only to Cloud Identity users. As the first super administrator to access the Google Cloud console, you&#x27;ll be assigned the role of Org Owner, and you&#x27;ll be able to manage the organization settings and assign policies at the highest level.",
+          "rank": 3
+        },
+        {
+          "title": "Overview of identity and access management | Cloud Architecture Center | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/architecture/identity",
+          "description": "Google Cloud lets you manage application identities, and address these requirements, by using Google Cloud service accounts and Kubernetes service accounts. For more information about service accounts and best practices for using them, see the Understanding service accounts. Customer identities are the identities that you manage for users to let them interact with your website or customer-facing applications. Managing customer identities and their access is also referred to as customer identity and access management (CIAM).",
+          "rank": 4
+        },
+        {
+          "title": "Cloud Identity API | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/identity/docs/reference/rest",
+          "description": "Cloud Identity · Reference · Send feedback · API for provisioning and managing identity resources. To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
           "rank": 5
         },
         {
@@ -522,9 +620,9 @@
           "rank": 6
         },
         {
-          "title": "Cloud Identity API | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/identity/docs/reference/rest",
-          "description": "Cloud Identity · Reference · Send feedback · API for provisioning and managing identity resources. To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
+          "title": "Identity management for Google Cloud | Identity and Access Management (IAM) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/iam/docs/google-identities",
+          "description": "Overview of identity management strategies for Google Cloud.",
           "rank": 7
         },
         {
@@ -560,14 +658,14 @@
           "rank": 3
         },
         {
-          "title": "google.auth.iam module — google-auth 1.19.1 documentation",
-          "url": "https://googleapis.dev/python/google-auth/1.19.1/reference/google.auth.iam.html",
+          "title": "google.auth.iam module — google-auth 2.41.1 documentation",
+          "url": "https://googleapis.dev/python/google-auth/latest/reference/google.auth.iam.html",
           "description": "Tools for using the Google <strong>Cloud Identity</strong> and Access Management (IAM) API’s auth-related functionality.",
           "rank": 4
         },
         {
-          "title": "google.auth.iam module — google-auth 2.41.1 documentation",
-          "url": "https://googleapis.dev/python/google-auth/latest/reference/google.auth.iam.html",
+          "title": "google.auth.iam module — google-auth 1.19.1 documentation",
+          "url": "https://googleapis.dev/python/google-auth/1.19.1/reference/google.auth.iam.html",
           "description": "Tools for using the Google <strong>Cloud Identity</strong> and Access Management (IAM) API’s auth-related functionality.",
           "rank": 5
         }
@@ -596,6 +694,17 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -605,7 +714,14 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -633,6 +749,18 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 27,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "can",
+          "cloud",
+          "use"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -642,7 +770,15 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "can",
+          "cloud",
+          "use"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -670,6 +806,18 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -680,6 +828,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "use"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -707,6 +863,17 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -717,6 +884,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -744,6 +918,20 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "let"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -753,7 +941,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "let"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -778,9 +976,23 @@
         2,
         3
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 100,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -790,7 +1002,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "use"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -818,6 +1040,18 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 44,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -828,6 +1062,14 @@
         "parent_page_likelihood": 5,
         "product_match": 4,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -853,6 +1095,18 @@
       "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 27,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "use"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -863,7 +1117,76 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "use"
+        ],
         "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "How-to Guides | Cloud Identity | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/identity/docs/how-to?visit_id=639115639773634112-661764383&rd=1",
+      "description": "Manage identity-mapped group memberships using the Groups API. Query group memberships using the Groups API. Manage membership expirations using the Groups API. Set up the User Invitation API. Create and manage user invitations using the User Invitation API. Set up the Policy API. List and get policies using the Policy API. Contact support for Cloud ...",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "map",
+          "mapped",
+          "use"
+        ],
+        "user_facing_alignment": 1
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "map",
+          "mapped",
+          "use"
+        ],
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
@@ -888,6 +1211,18 @@
       "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -898,6 +1233,71 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "CloudIdentity.Groups.Create (Cloud Identity API v1 (Rev. 87) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/cloudidentity/v1/java/latest/com/google/api/services/cloudidentity/v1/CloudIdentity.Groups.Create.html",
+      "description": "CloudIdentity.initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest) must be called to initialize this instance immediately after invoking the constructor. ... OAuth access token. ... Data format for response. ... Selector specifying which fields to include in a partial response. ... API key. Your API key identifies your project and provides you with API access, quota, and reports.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Identity\" official documentation OR site:developers.google.com \"cloud identity\" official documentation",
+        "site:developers.google.com \"Cloud Identity\" overview OR site:developers.google.com \"cloud identity\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -923,6 +1323,17 @@
       "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -933,117 +1344,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "cloud",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Overview of identity and access management | Cloud Architecture Center | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/architecture/identity",
-      "description": "Google Workspace or Cloud Identity <strong>lets you centrally control which corporate identities can use which Google services</strong>. By restricting access to certain services, you establish a base level of access control.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Identity\" \"access control\"",
-        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "iam_permissions",
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 67,
-      "product_fit_score": 100,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Overview of Google identity management | Cloud Architecture Center | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/architecture/identity/overview-google-authentication",
-      "description": "For managing access, we recommend that you use groups. Although OUs resemble Google Cloud folders, the two entities serve different purposes and are unrelated to another. Managed user accounts work similarly to consumer user accounts, but they can be fully controlled by administrators of the Cloud Identity ...",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Identity\" \"access control\"",
-        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "iam_permissions",
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 100,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Create an identity connector | Cloud Search | Google for Developers",
-      "url": "https://developers.google.com/cloud-search/docs/guides/identity-connector",
-      "description": "These options are for developers who might not be programming in Java or whose codebase better accommodates a REST API or a library. To create an identity connector using the REST API, refer to Directory API: User Accounts for information on mapping users and Cloud Identity Documentation for information on mapping groups.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Cloud Identity\" reference OR site:developers.google.com \"cloud identity\" reference",
-        "site:developers.google.com \"Cloud Identity\" overview OR site:developers.google.com \"cloud identity\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 67,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
@@ -1052,7 +1361,7 @@
       "title": "Configure a Google Cloud identity provider | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/onboard",
       "description": "When using Cloud Identity or Google Workspace, you <strong>create managed user accounts to control access to Google Cloud resources and to Google SecOps</strong>.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Identity\" \"access control\"",
         "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud introduction reference"
@@ -1068,6 +1377,19 @@
       "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "provider",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -1078,6 +1400,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "provider",
+          "use"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1088,7 +1419,7 @@
       "title": "Configure a Google Cloud identity provider | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/onboard/configure-cloud-authentication",
       "description": "When using Cloud Identity or Google Workspace, you <strong>create managed user accounts to control access to Google Cloud resources and to Google SecOps</strong>.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Identity\" \"access control\"",
         "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud introduction reference"
@@ -1104,6 +1435,19 @@
       "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "provider",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -1114,6 +1458,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "provider",
+          "use"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1139,6 +1492,16 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 70,
+      "feature_coverage": {
+        "score": -7,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1148,7 +1511,13 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1157,9 +1526,9 @@
     },
     {
       "title": "Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/iam/latest",
-      "description": "Cloud Identity and Access Management: <strong>Manages identity and access control for Google Cloud Platform resources</strong>, including the creation of service accounts, which you can use to authenticate to Google and make API calls.",
-      "rank": 1,
+      "url": "https://docs.cloud.google.com/python/docs/reference/iam/latest/summary_overview",
+      "description": "Classes, methods and properties &amp; attributes for <strong>Cloud Identity</strong> and Access Management API.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Cloud Identity\"",
         "site:docs.cloud.google.com \"Cloud Identity\" \"Python client libraries\""
@@ -1174,6 +1543,19 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 70,
+      "feature_coverage": {
+        "score": 2,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "attributes",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1183,7 +1565,16 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "attributes",
+          "cloud",
+          "for"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1191,10 +1582,187 @@
       "keep": false
     },
     {
+      "title": "Overview of identity and access management | Cloud Architecture Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/architecture/identity",
+      "description": "For more details on the feature set and how to integrate Identity Platform with your custom applications, see the Identity Platform documentation. Access management focuses on the following processes: Granting or revoking access to specific resources for identities. Managing roles and permissions. Delegating administrative capabilities to trusted individuals. Enforcing access control. Auditing accesses that are performed by identities. Your organization might rely on a combination of Google services. For example, you might use Google Workspace for collaboration, Google Cloud for deploying custom workloads, and Google Analytics for measuring advertising success metrics.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Cloud Identity\" \"access control\"",
+        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 6,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Overview of Google identity management | Cloud Architecture Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/architecture/identity/overview-google-authentication",
+      "description": "All Google services, including Google Cloud, Google Marketing Platform, and Google Ads, rely on Google Sign-In to authenticate users. This document <strong>explains the domain model that Google Sign-In relies on for authentication and identity management</strong>. ...",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Cloud Identity\" \"access control\"",
+        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 6,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 2,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "POSIX groups deprecation | Cloud Identity | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/identity/docs/deprecations/posix-groups",
+      "description": "Cloud Identity offered POSIX groups (Preview), which <strong>linked POSIX groups with supplementary Linux groups in your organization&#x27;s VMs</strong>. As of September 26, 2024, you can no longer create new POSIX groups and existing POSIX groups will be removed ...",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Identity\" \"posix groups\""
+      ],
+      "intent_hits": [
+        "feature_guides"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [
+          "posix groups"
+        ],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "2024",
+          "and",
+          "can",
+          "cloud",
+          "posix"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "posix groups"
+        ],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "2024",
+          "and",
+          "can",
+          "cloud",
+          "posix"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: posix groups"
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Editions | Cloud Identity | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/identity/docs/editions",
       "description": "There are two editions of Cloud Identity: The premium edition and the free edition.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud documentation"
       ],
@@ -1204,9 +1772,19 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1217,6 +1795,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1224,22 +1808,37 @@
       "keep": false
     },
     {
-      "title": "How-to Guides | Cloud Identity | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/identity/docs/how-to?hl=en&rd=2&visit_id=636883633152253802-4236287830",
-      "description": "Change a user&#x27;s Cloud Identity license. Overview of billing and payments for Cloud Identity.",
-      "rank": 3,
+      "title": "Groups API overview | Cloud Identity | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/identity/docs/groups",
+      "description": "POSIX groups are <strong>integrated with Google Cloud and are used by VMs in your organization that have OS Login enabled</strong>. Note: You must use the beta version of the Cloud Identity Groups API to create and manage POSIX groups.",
+      "rank": 1,
       "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud docs overview"
+        "site:docs.cloud.google.com \"Cloud Identity\" \"posix groups\""
       ],
       "intent_hits": [
-        "product_docs"
+        "feature_guides"
       ],
       "round_hits": [
-        2
+        1
       ],
-      "best_rank": 3,
+      "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [
+          "posix groups"
+        ],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "posix",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1249,18 +1848,90 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "posix groups"
+        ],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "posix",
+          "use"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: posix groups"
       },
       "final_score": 90,
       "keep": false
     },
     {
       "title": "How-to Guides | Cloud Identity | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/identity/docs/how-to?hl=en&visit_id=639112267192534247-779309721&rd=1",
-      "description": "Manage identity-mapped group memberships using the Groups API. Query group memberships using the Groups API. Manage membership expirations using the Groups API. Set up the User Invitation API. Create and manage user invitations using the User Invitation API. Set up the Policy API. List and get policies using the Policy API. Contact support for Cloud ...",
+      "url": "https://docs.cloud.google.com/identity/docs/how-to?rd=2&visit_id=636883633152253802-4236287830",
+      "description": "Retrieve and list POSIX groups using the Groups API. Formulate and test a membership query for dynamic groups. Create and update a dynamic group using the Groups API. Retrieve a dynamic group and list members using the Groups API. Valid user fields for dynamic group queries. Create and search for identity...",
       "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Identity\" \"posix groups\""
+      ],
+      "intent_hits": [
+        "feature_guides"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 45,
+        "matched_phrases": [
+          "posix groups"
+        ],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "posix",
+          "use"
+        ],
+        "user_facing_alignment": 1
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "posix groups"
+        ],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "posix",
+          "use"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: posix groups"
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Understand your bills and charges | Cloud Identity | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/identity/docs/how-to/understand-your-bills-and-charges?visit_id=639115980188444166-4001729564&rd=1",
+      "description": "Applies to Cloud Identity Premium and other paid subscriptions in your Google Admin console. If you purchased your service from a reseller, contact your Google reseller · This document <strong>helps you understand your Google service bills and payments</strong>.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud documentation"
       ],
@@ -1270,42 +1941,19 @@
       "round_hits": [
         1
       ],
-      "best_rank": 3,
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud"
+        ],
+        "user_facing_alignment": 1
       },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Set up paid Cloud Identity service | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/identity/docs/how-to/set-up-paid-cloud-identity-service?visit_id=639111613104718508-1778709792&rd=1",
-      "description": "Google Workspace, Essentials, and Cloud Identity Premium—After your free trial ends and your paid subscription starts, we charge your payment method at the beginning of the following month. If your paid service starts in May, for example, we charge you at the beginning of June.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1315,7 +1963,13 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1326,7 +1980,7 @@
       "title": "Cloud Identity API | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/identity/docs/reference/rest",
       "description": "Cloud Identity · Reference · Send feedback · API for provisioning and managing identity resources. To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
-      "rank": 7,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Identity\" Google Cloud introduction reference"
       ],
@@ -1336,9 +1990,21 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": -1,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -1348,7 +2014,15 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1356,43 +2030,10 @@
       "keep": true
     },
     {
-      "title": "CloudIdentity.Groups.Create (Cloud Identity API v1 (Rev. 87) 1.25.0)",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/cloudidentity/v1/java/latest/com/google/api/services/cloudidentity/v1/CloudIdentity.Groups.Create.html",
-      "description": "Description copied from class: CloudIdentityRequest · API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token. Overrides: setKey in class CloudIdentityRequest&lt;Operation&gt; public CloudIdentity.Groups.Create setOauthToken(java.lang.String oauthToken) Description copied from class: CloudIdentityRequest ·",
-      "rank": 4,
-      "query_hits": [
-        "site:developers.google.com \"Cloud Identity\" overview OR site:developers.google.com \"cloud identity\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 100,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
       "title": "CloudIdentity.Groups.Memberships.Create (Cloud Identity API v1 (Rev. 87) 1.25.0)",
       "url": "https://developers.google.com/resources/api-libraries/documentation/cloudidentity/v1/java/latest/com/google/api/services/cloudidentity/v1/CloudIdentity.Groups.Memberships.Create.html",
       "description": "[Resource name](https://cloud.google.com/apis/design/resource_names) of the Group to create Membership within. Format: `groups/{group_id}`, where `group_id` is the unique ID assigned to the Group. ... OAuth access token. ... Data format for response. ... Selector specifying which fields to include in a partial response. ... API key. Your API key identifies your project and provides you with API access, quota, and reports.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:developers.google.com \"Cloud Identity\" official documentation OR site:developers.google.com \"cloud identity\" official documentation"
       ],
@@ -1402,9 +2043,22 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1414,7 +2068,16 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1438,6 +2101,17 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1448,6 +2122,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "cloud",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1471,6 +2152,15 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1481,6 +2171,11 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "cloud"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1504,39 +2199,20 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 100,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "let"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "CloudIdentity.Groups.Memberships.Create (Cloud Identity API v1beta1 (Rev. 100) 1.25.0)",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/cloudidentity/v1beta1/java/latest/com/google/api/services/cloudidentity/v1beta1/CloudIdentity.Groups.Memberships.Create.html",
-      "description": "Creates a `Membership`. Create a request for the method &quot;memberships.create&quot;. This request holds the parameters needed by the the cloudidentity server.",
-      "rank": 7,
-      "query_hits": [
-        "site:developers.google.com \"Cloud Identity\" official documentation OR site:developers.google.com \"cloud identity\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1546,7 +2222,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "let"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1570,6 +2256,15 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1580,6 +2275,62 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "cloud"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "API Help (Cloud Identity-Aware Proxy API v1 (Rev. 47) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/iap/v1/java/latest/help-doc.html",
+      "description": "<strong>The Overview page is the front page of this API document and provides a list of all packages with a summary for each</strong>.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Identity\" overview OR site:developers.google.com \"cloud identity\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1603,6 +2354,21 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1613,6 +2379,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "use"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1623,7 +2400,7 @@
       "title": "Identity management products and features | Authentication | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/docs/authentication/identity-products",
       "description": "Google Workspace is a suite of business productivity and collaboration tools based on Google identities (Google Accounts). Google Workspace includes the functionality provided by Cloud Identity for user management. Google Accounts provide access to Google&#x27;s products and services, including Google Cloud. IAM provides fine-grained access control for Google Cloud resources.",
-      "rank": 2,
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Identity\" \"access control\""
       ],
@@ -1633,9 +2410,22 @@
       "round_hits": [
         2
       ],
-      "best_rank": 2,
+      "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1646,6 +2436,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1655,6 +2454,59 @@
     {
       "title": "google.auth.iam module — google-auth 1.19.1 documentation",
       "url": "https://googleapis.dev/python/google-auth/1.19.1/reference/google.auth.iam.html",
+      "description": "Tools for using the Google <strong>Cloud Identity</strong> and Access Management (IAM) API’s auth-related functionality.",
+      "rank": 5,
+      "query_hits": [
+        "site:googleapis.dev/python \"Cloud Identity\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "google.auth.iam module — google-auth 2.41.1 documentation",
+      "url": "https://googleapis.dev/python/google-auth/latest",
       "description": "Tools for using the Google <strong>Cloud Identity</strong> and Access Management (IAM) API’s auth-related functionality.",
       "rank": 4,
       "query_hits": [
@@ -1669,39 +2521,18 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 92,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "google.auth.iam module — google-auth 2.41.1 documentation",
-      "url": "https://googleapis.dev/python/google-auth/latest",
-      "description": "Tools for using the Google <strong>Cloud Identity</strong> and Access Management (IAM) API’s auth-related functionality.",
-      "rank": 5,
-      "query_hits": [
-        "site:googleapis.dev/python \"Cloud Identity\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1712,6 +2543,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1722,7 +2561,7 @@
       "title": "google.auth.iam module — google-auth 2.41.1 documentation",
       "url": "https://googleapis.dev/python/google-auth/latest/reference/google.auth.iam.html",
       "description": "Tools for using the Google <strong>Cloud Identity</strong> and Access Management (IAM) API’s auth-related functionality.",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:googleapis.dev/python \"Cloud Identity\""
       ],
@@ -1732,9 +2571,21 @@
       "round_hits": [
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1744,7 +2595,15 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1768,6 +2627,18 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1778,6 +2649,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1801,6 +2680,20 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1811,6 +2704,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "use"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1834,6 +2737,18 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1843,8 +2758,73 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
         "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create an identity connector | Cloud Search | Google for Developers",
+      "url": "https://developers.google.com/cloud-search/docs/guides/identity-connector",
+      "description": "These options are for developers who might not be programming in Java or whose codebase better accommodates a REST API or a library. To create an identity connector using the REST API, refer to Directory API: User Accounts for information on mapping users and Cloud Identity Documentation for information on mapping groups.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Identity\" reference OR site:developers.google.com \"cloud identity\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "map",
+          "use"
+        ],
+        "user_facing_alignment": 1
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for",
+          "map",
+          "use"
+        ],
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1867,6 +2847,18 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1877,6 +2869,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "identity",
+          "and",
+          "cloud",
+          "for"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1887,7 +2887,7 @@
       "title": "Manage access with IAM | Dataplex Universal Catalog | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dataplex/docs/iam-and-access-control",
       "description": "<strong>IAM lets you control who (principals) has what access (roles) to which resources</strong>. A principal can be a Google Account (for end users), a service account (for apps and virtual machines), a Google group, or a Google Workspace or Cloud Identity domain.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Identity\" \"access control\""
       ],
@@ -1897,9 +2897,24 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "let",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1909,7 +2924,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "let",
+          "use"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1933,6 +2959,19 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -1943,10 +2982,129 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python Client for Cloud Identity and Access Management",
+      "url": "https://docs.cloud.google.com/python/docs/reference/iam/latest",
+      "description": "Cloud Identity and Access Management: <strong>Manages identity and access control for Google Cloud Platform resources</strong>, including the creation of service accounts, which you can use to authenticate to Google and make API calls.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Identity\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 70,
+      "feature_coverage": {
+        "score": 5,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Roles and permissions | Looker Studio | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/looker/docs/studio/roles-and-permissions",
+      "description": "With IAM, you manage access to Looker Studio assets by assigning users to a predefined role. <strong>A role is a collection of permissions that allows users to perform certain actions while preventing them from performing other actions</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Identity\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": -28,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "access",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 82,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 82,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "access",
+          "and",
+          "cloud",
+          "for",
+          "use"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 75,
       "keep": false
     },
     {
@@ -1966,20 +3124,93 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": -22,
-      "deterministic_score": 66,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 81,
       "api_score": {
         "classification": "iam_reference",
-        "score": 66,
+        "score": 81,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 3,
+        "parent_page_likelihood": 4,
         "product_match": 0,
         "coverage_value": 2,
-        "keep": false,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "can",
+          "cloud"
+        ],
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 61,
+      "final_score": 74,
+      "keep": false
+    },
+    {
+      "title": "IAM principals | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/principals-overview",
+      "description": "In Identity and Access Management (IAM), you control access for principals. A principal represents one or more identities that have authenticated to Google Cloud.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Identity\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": -22,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 77,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 77,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "access",
+          "and",
+          "cloud",
+          "for"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 70,
       "keep": false
     },
     {
@@ -2001,119 +3232,38 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": -28,
-      "deterministic_score": 58,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "groups",
+          "and",
+          "cloud",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 70,
       "api_score": {
         "classification": "iam_reference",
-        "score": 58,
+        "score": 70,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 3,
+        "parent_page_likelihood": 4,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "groups",
+          "and",
+          "cloud",
+          "use"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 59,
-      "keep": false
-    },
-    {
-      "title": "IAM principals | Identity and Access Management (IAM) | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/iam/docs/principals-overview",
-      "description": "In Identity and Access Management (IAM), you control access for principals. A principal represents one or more identities that have authenticated to Google Cloud.",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Identity\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": -22,
-      "deterministic_score": 62,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 62,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 3,
-        "product_match": 0,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 58,
-      "keep": false
-    },
-    {
-      "title": "Autorisations IAM pour Cloud Storage | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions?hl=fr",
-      "description": "Les tableaux suivants répertorient ... Les autorisations Cloud IAM sont regroupées par rôles, et <strong>vous attribuez des rôles à des utilisateurs et à des groupes</strong>....",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Identity\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": -28,
-      "deterministic_score": 57,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 57,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 3,
-        "product_match": 0,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 53,
-      "keep": false
-    },
-    {
-      "title": "Manage users with IAM database authentication | Cloud SQL for PostgreSQL | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
-      "description": "To give the group members login permissions, <strong>click the icon, and then select Add IAM role</strong>. If the icon no longer appears, then all members of the group are assigned the role that gives the login permission.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Identity\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": -28,
-      "deterministic_score": 49,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 49,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 2,
-        "product_match": 0,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 47,
+      "final_score": 70,
       "keep": false
     },
     {
@@ -2133,20 +3283,42 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": -22,
-      "deterministic_score": 21,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "identity",
+          "cloud",
+          "external",
+          "for",
+          "map",
+          "mapped"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 23,
       "api_score": {
         "classification": "supporting_page",
-        "score": 21,
+        "score": 23,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 1,
         "product_match": 0,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "identity",
+          "cloud",
+          "external",
+          "for",
+          "map",
+          "mapped"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 23,
+      "final_score": 25,
       "keep": false
     }
   ]

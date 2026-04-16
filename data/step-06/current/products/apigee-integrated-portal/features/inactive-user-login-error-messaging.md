@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:39.215Z"
+generated_at: "2026-04-14T04:55:46.932Z"
 product_name: "Apigee Integrated Portal"
 product_slug: "apigee-integrated-portal"
 feature_name: "Inactive user login error messaging"
 feature_slug: "inactive-user-login-error-messaging"
 latest_feature_date: "2022-05-04"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
 keywords:
-  - "inactive account sign-in message"
-  - "inactive user login error"
-  - "authentication inactive user"
-  - "rejected inactive user"
-  - "account inactive login"
-  - "inactive user login"
-  - "login error message"
-  - "inactive user error"
+  - "messaging"
+  - "inactive"
+  - "improves"
+  - "login"
+  - "error"
+  - "shown"
+  - "user"
+  - "when"
 ---
 
 # Inactive user login error messaging
 
 Product: Apigee Integrated Portal
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Improves error messaging shown when logins are rejected for inactive users.
 
 Improves error messaging shown when logins are rejected for inactive users.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Publishing your APIs \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)
+- Source ID: `site-docs-reference`
+- Final score: 97
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Include one of the following in the update call: When not enrolled in the Preview release of the audience management feature: "anonAllowed": true, # Anonymous users can see the API "anonAllowed": false, # Only registered users can see the API To edit the API: Use the organizations.sites.apidocs.get call to return the current values: curl -X GET "https://apigee.googleapis.com/v1/organizations/ ORG NAME /sites/ SITE ID /apidocs/ API DOC " \ -H "Authorization: Bearer $(gcloud auth print-access-token)" Use the organizations.sites.apidocs.update call to edit the API.
+- Error: Failed to fetch error returned when using Try this API When using Try this API , if the TypeError: Failed to fetch error is returned, consider the following possible causes and resolutions: For mixed content errors, the error may be caused by a known swagger-ui issue .
+- Error: Request header field not allowed When using Try this API , if you receive a Request header field not allowed error, similar to the following example, you may need to update the headers supported in the CORS policy.
+- Error: Access denied when calling an API proxy using OAuth 2.0 Google Cloud console 's OAuthV2 policy returns a token response that contains certain non-RFC-compliant properties.
+
+### Get started with Apigee Model Armor policies \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies)
+- Source ID: `site-docs-reference`
+- Final score: 93
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The sample policy shown below uses all default parameters: <SanitizeUserPrompt async="false" continueOnError="false" enabled="true" name="sanitize-response"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/$LOCATION/templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> </SanitizeUserPrompt> When you call your API proxy, the input from the prompt is automatically extracted and passed on to Model Armor and processed according to the parameters of your Model Armor template.
+- Disable a Model Armor policy To disable the Model Armor policy, set the enabled attribute to false , as shown in the following example: <SanitizeModelResponse async="false" continueOnError="false" enabled="false" name="sanitize-response"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/$LOCATION/templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> <LLMResponseSource>{jsonPath('$.candidates[-1].content.parts[-1].text',response.content,true)}</LLMResponseSource> </SanitizeModelResponse> You can edit policy content in the Google Cloud console.
+- Create a Model Armor template Create a Model Armor template for sanitizing user prompts and LLM responses: gcloud model-armor templates create --location $LOCATION TEMPLATE NAME --rai-settings-filters = '[{ "filterType":"HATE SPEECH", "confidenceLevel": "MEDIUM AND ABOVE" },{ "filterType": "HARASSMENT", "confidenceLevel": "MEDIUM AND ABOVE" },{ "filterType": "SEXUALLY EXPLICIT", "confidenceLevel": "MEDIUM AND ABOVE" }]' --basic-config-filter-enforcement = enabled --pi-and-jailbreak-filter-settings-enforcement = enabled --pi-and-jailbreak-filter-settings-confidence-level = LOW AND ABOVE --malicious-uri-filter-settings-enforcement = enabled --template-metadata-custom-llm-response-safety-error-code = 798 --template-metadata-custom-llm-response-safety-error-message = "test template llm response evaluation failed" --template-metadata-custom-prompt-safety-error-code = 799 --template-metadata-custom-prompt-safety-error-message = "test template prompt evaluation failed" --template-metadata-ignore-partial-invocation-failures --template-metadata-log-operations --template-metadata-log-sanitize-operations Substitute TEMPLATE NAME with the name of the template you want to create.
+- This region name can be used to identify the correct Model Armor template to use for that instance For example: <SanitizeModelResponse async="false" continueOnError="false" enabled="true" name="sanitize-response"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/ {system.region.name} /templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> <LLMResponseSource>{jsonPath('$.candidates[-1].content.parts[-1].text',response.content,true)}</LLMResponseSource> </SanitizeModelResponse> Model Armor response processing You can add additional processing logic after the Model Armor policy processes the LLM response.
+
+### Developer portal solutions | Apigee | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 89
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Managing API products Managing client applications Organizing client app ownership Controlling developer access to your apps App access overview Registering app developers Importing existing consumer keys and secrets Developer portal solutions API design overview Building your integrated portal Introduction How portal users interact with your portal Getting started Tutorial: Building your first portal Overview Step 1: Create a portal Step 2: Customize the color palette Step 3: Customize the logo Step 4: Edit page content Step 5: Set up navigation Step 6: Publish an API Quick tips for customizing the sample portal Best practices for building your portal Building and publishing your portal Steps to build your portal Managing your portals Managing the pages in your portal Developing portal content Customizing your theme Setting up navigation Publishing your APIs Managing access to your APIs using API keys Managing the default visibility Managing your assets Customizing your domain Configuring email Configure a content security policy Configuring analytics tracking Adding custom scripts Publishing your portal content Viewing your live portal Creating a custom search page Managing user account creation and sign-in experience Configuring the user account creation and sign-in experience Configuring identity providers Managing user accounts Managing developer teams Managing audiences Reference Cookies Markdown syntax Building your portal using Drupal Introduction Drupal-based developer portal in Cloud Marketplace Overview Get started Customize your portal Support resources Choosing a hosting provider Support process for Apigee Drupal modules MONETIZE Overview of Apigee monetization Steps to use Apigee monetization Enabling Apigee monetization Enforcing monetization limits in API proxies Enforcing monetization quotas in API products Managing prepaid account balances Managing rate plans for API products Integrating monetization in Drupal portal Purchasing API product subscriptions using API Debugging monetization using the Debug tool Capturing monetization data Generating monetization reports ADMINISTER Users, roles, and access Users and roles Apigee roles Managing users, roles, and permissions using APIs Managing users in the UI Managing access in Google Cloud Access Apigee using Workforce Identity Federation Adding IAM Conditions to policies Apigee Spaces Apigee Spaces overview Apigee Spaces roles and permissions Create and manage Apigee Spaces Manage API resources with Apigee Spaces Move API resources in Apigee Spaces IAM permission hierarchy in Apigee Spaces Network Configuration Peering ranges Using multiple regions Managing instances Changing instance IPs Recreating an Apigee instance with zero downtime Using shared VPC networks Southbound networking patterns Northbound networking with Private Service Connect Migrate northbound routing to Private Service Connect Configure active health check for regional failover with Private Service Connect Client IP resolution Security administration TLS Options for configuring TLS Accessing TLS connection information in an API proxy Working with references SAML Using VPC Service Controls About the encryption keys Provisioning NAT IPs Performance considerations for Apigee Cloud NAT Calculating static NAT IP requirements Preventing DoS attacks Integrate Apigee with your SIEM solution Integrate Apigee with Google SecOps Managing data collectors Backups Switching between organizations Manage maintenance updates Overview Manage instance maintenance windows View maintenance logs ANALYZE Analytics overview Using the analytics dashboards API metrics API proxy performance Error code analysis Latency analysis Cache performance Target performance Developer analysis Developer engagement Traffic composition End user analysis Devices Geomap Custom reports Creating and managing custom reports Analytics metrics, dimensions, and filters reference Operations anomalies Operations anomalies overview View and investigate anomalies Create anomaly alerts Collecting custom data with the DataCapture policy Exporting data from analytics Obfuscate user data for analytics Data Studio integration Using the API Using the asynchronous custom reports API Using the metrics API Metrics API examples Troubleshooting Troubleshooting with analytics What does an analytics entity named 'not set' mean?
+- Attaching and configuring policies in the UI Attaching and configuring policies in XML files Attaching a policy to a ProxyEndpoint or TargetEndpoint flow Managing resources About policy errors Securing an API proxy Security overview IAM IAM-based API authentication OAuth2 Tutorial: Securing an API proxy with OAuth Getting started with OAuth2 Introduction to OAuth 2.0 Videos Client credentials grant type Auth code grant type Password grant type Using JWT access tokens Configuring a new API proxy Registering client apps Obtaining client credentials Understanding OAuth endpoints Requesting tokens and codes Customizing tokens and codes Revoking and approving tokens Revoking tokens by end user ID and app ID Revoking and approving consumer keys Sending an access token Verifying access token Working with OAuth2 scopes Using third-party OAuth tokens Hashing tokens for extra security Advanced OAuth2 topics API keys Tutorial: Securing an API proxy with API keys API keys Setting up API key validation Using Google authentication Using SAML policies in an API proxy Content-based security Masking and hiding data Last-mile security Using AI policies Get started with LLM token policies Get started with Model Armor Get started with semantic caching Limit request traffic Rate-limiting Comparing rate-limiting policies Caching and persistence Overview General purpose caching Response caching Using key value maps Using property sets Support for HTTP response headers Cache internals Videos Shaping, accessing, and converting messages Accessing configuration data Incorporating procedural code Adding CORS support Enabling distributed tracing Using GraphQL Streaming requests and responses Streaming server-sent events Using WebSockets Creating Java callouts How to create Java Callout How to handle JavaCallout policy errors How to use properties in the JavaCallout Adding a custom Java callout security policy Integrating with Contact Center AI Deploying API proxies Deployment overview Deploying an API proxy Undeploying an API proxy Load balancing across backend servers Deploying archives Debugging programmable proxies Tutorial: View message data with the Debug view Debug overview Using Debug Using Offline Debug Using performance metrics Use Terraform with Apigee Performing health checks MCP in Apigee MCP in Apigee overview Get started with Apigee and MCP Monitor and analyze MCP traffic Troubleshoot MCP deployments DEVELOP (LOCAL) Overview of local development with Apigee Get started Set up Apigee in Cloud Code Use Apigee in Cloud Code Tutorial: Build and deploy your first API proxy Overview Step 1: Create an Apigee workspace Step 2: Create an API proxy Step 3: Configure and deploy an environment Step 4: Test your API Step 5: Change your target endpoint Step 6: Attach a policy Step 7: Deploy to an Apigee environment Step 8: Promote an archive to production Develop using Apigee in Cloud Code Manage the Apigee workspace Design and edit APIs Develop API proxies Develop shared flows Add features using policies Manage resources Build and export test resources Configure and deploy environments Test APIs Deploy an archive to an Apigee environment Manage the Apigee Emulator Apigee Command Palette Reference DEVELOP (Kubernetes) Apigee APIM Operator for Kubernetes Overview Before you begin Install the Apigee APIM Operator Install the Apigee APIM Operator for Apigee hybrid Use APIM policies with the Apigee APIM Operator Create an ApigeeBackendService Create an APIMExtensionPolicy Enable security and quota enforcement Add policies to the GKE gateway Update Apigee policies with the Apigee APIM Operator Uninstall the Apigee APIM Operator Troubleshoot the Apigee APIM Operator Apigee APIM Operator resource reference Licenses in Apigee APIM Operator DEVELOP (Service Extensions) Apigee Extension Processor overview Get started with the Apigee Extension Processor PUBLISH Publishing overview Managing API products What is an API product?
+- Install Big picture Project and org setup Before you begin Step 1: Create a Google Cloud account Step 2: Create a Google Cloud project Step 3: Enable APIs Step 4: Create an organization Step 5: Configure your DNS Step 6: Create an environment group Hybrid runtime setup Before you begin GKE hybrid setup Step 1: Create a cluster Step 2: Install cert-manager and ASM Step 3: Install apigeectl Step 4: Configure the cluster Step 5: Install hybrid runtime GKE on-prem hybrid setup Step 1: Create a cluster Step 2: Install cert-manager and ASM Step 3: Install apigeectl Step 4: Configure the cluster Step 5: Install hybrid runtime AKS hybrid setup Step 1: Create a cluster Step 2: Install cert-manager and ASM Step 3: Install apigeectl Step 4: Configure the cluster Step 5: Install hybrid runtime EKS hybrid setup Step 1: Create a cluster Step 2: Install cert-manager and ASM Step 3: Install apigeectl Step 4: Configure the cluster Step 5: Install hybrid runtime GKE on AWS hybrid setup Step 1: Create a cluster Step 2: Install cert-manager and ASM Step 3: Install apigeectl Step 4: Configure the cluster Step 5: Install hybrid runtime After the install: Test Create and deploy a new API proxy Check deployment status Uninstall hybrid runtime Administer Administration overview Troubleshooting Cassandra troubleshooting Message processor troubleshooting guide Printing build info Expanding Istio replica counts when draining nodes StreamingPull errors 100% Remove double slashes from requests Data collection Data collection overview Where is your data stored?
+- Custom theme Custom menus Third-party tags, like Google Analytics Custom JavaScript code Custom domain name HTTPs enabled Terms and conditions for account creation Mobile device display optimization Integration with custom scripts and script tags SMTP configuration Email template configuration CAPTCHA to prevent spam Roles and permissions for developer/consumer accounts Federated login Content management APIs Using Drupal Monetization Search configuration * Blog and forums ** Page templates for content creation App analytics on the portal Rules-based event management Extensible with add-on modules Custom app registration flows Custom developer registration flows Portal logs Link checker Microsoft Internet Explorer/Microsoft Edge support Microsoft Edge only Regional hosting us-west1 only (As a custom solution, you can host a Drupal portal in the region or regions of your choice.) Footnotes: * At this time, the portal does provide a search solution out of the box; however, you can add a Google custom search engine to your portal. ** At this time, the portal isn't set up to include forums or blogs out-of-the-box; however, you can use services like Google Blogger, Google Groups, StackOverflow, or Medium, which have the advantage of being familiar to and already in use by many end users. (These services can be added using menus.) Build an integrated portal Create a lightweight developer portal quickly in the Apigee UI.
 

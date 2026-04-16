@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:46.521Z"
+generated_at: "2026-04-12T12:18:00.050Z"
 product_name: "Migration Center"
 product_slug: "migration-center"
 feature_name: "File selection regex flags"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-08-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/migration-center/docs/migration-center-overview"
-  - "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center"
-  - "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesAsyncPager"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesPager"
 keywords:
   - "file"
   - "selection"
@@ -38,48 +39,66 @@ Migration Center adds the --force-include and --force-exclude flags to control f
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/migration-center/docs/migration-center-overview](https://docs.cloud.google.com/migration-center/docs/migration-center-overview)
-- [https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center](https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center)
-- [https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools](https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesAsyncPager](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesAsyncPager)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesPager](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesPager)
 
 ## Supporting Pages
 
-### Migration Center overview | Google Cloud Documentation
+### "Class MigrationCenterAsyncClient (0.4.0) \_|\_ Python client libraries \_\
 
-- URL: [https://docs.cloud.google.com/migration-center/docs/migration-center-overview](https://docs.cloud.google.com/migration-center/docs/migration-center-overview)
-- Source ID: `site-docs-root`
-- Final score: 134
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 221
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Migration Center overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/migration-center-overview With Migration Center, you can dive deep in the analysis and get a holistic view into your environment.
-- Generate total cost of ownership reports based on the migration preferences that you specify according to your business objectives and constraints.
-- Get data-driven suggestions based on a technical fit assessment on the Google Cloud products to migrate your assets to, and know the costs in advance.
-- Identify application and network dependencies to know which components you must migrate together.
+- CreateImportDataFileRequest ( parent="parent value", import data file id="import data file id value", import data file=import data file, ) Make the request operation = client. create import data file (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateImportDataFileRequest , dict]] The request object.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 async def sample create import data file(): Create a client client = migrationcenter v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 async def sample delete import data file(): Create a client client = migrationcenter v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 async def sample list import data files(): Create a client client = migrationcenter v1 .
 
-### Get started with Migration Center | Google Cloud Documentation
+### "Class MigrationCenterClient (0.4.0) \_|\_ Python client libraries \_|\_\
 
-- URL: [https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center](https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center)
-- Source ID: `site-docs-root`
-- Final score: 120
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient)
+- Source ID: `site-python-reference`
+- Final score: 221
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- This document explains the different options you have to create a project, and how to activate Migration Center....
-- Get started with Migration Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center To start using Google Cloud Migration ... need to activate Migration Center.
+- CreateImportDataFileRequest ( parent="parent value", import data file id="import data file id value", import data file=import data file, ) Make the request operation = client. create import data file (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreateImportDataFileRequest , dict] The request object.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 def sample create import data file(): Create a client client = migrationcenter v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 def sample delete import data file(): Create a client client = migrationcenter v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 def sample list import data files(): Create a client client = migrationcenter v1 .
 
-### Migration tools | Migration Center | Google Cloud Documentation
+### "Class ListImportDataFilesAsyncPager (0.4.0) \_|\_ Python client libraries\
 
-- URL: [https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools](https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools)
-- Source ID: `site-docs-root`
-- Final score: 118
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesAsyncPager](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesAsyncPager)
+- Source ID: `site-python-reference`
+- Final score: 189
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Migration tools Migration Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools They allow you to move your existing ... you modernize your infrastructure.
-- This document presents the main tools that Google Cloud professional service teams use during migration projects....
+- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.migrationcenter v1.types.ListImportDataFilesRequest The initial request object. response google.cloud.migrationcenter v1.types.ListImportDataFilesResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- ListImportDataFilesResponse ], ], request : google . cloud . migrationcenter v1 . types . migrationcenter .
+- ListImportDataFilesResponse ], ], request : google . cloud . migrationcenter v1 . types . migrationcenter .
+- ListImportDataFilesRequest , response : google . cloud . migrationcenter v1 . types . migrationcenter .
+
+### "Class ListImportDataFilesPager (0.4.0) \_|\_ Python client libraries \_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesPager](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers.ListImportDataFilesPager)
+- Source ID: `site-python-reference`
+- Final score: 189
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.migrationcenter v1.types.ListImportDataFilesRequest The initial request object. response google.cloud.migrationcenter v1.types.ListImportDataFilesResponse The initial response object. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- ListImportDataFilesResponse , ], request : google . cloud . migrationcenter v1 . types . migrationcenter .
+- ListImportDataFilesResponse , ], request : google . cloud . migrationcenter v1 . types . migrationcenter .
+- ListImportDataFilesRequest , response : google . cloud . migrationcenter v1 . types . migrationcenter .
 

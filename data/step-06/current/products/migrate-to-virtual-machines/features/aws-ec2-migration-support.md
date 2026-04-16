@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:46.049Z"
+generated_at: "2026-04-12T12:17:54.994Z"
 product_name: "Migrate to Virtual Machines"
 product_slug: "migrate-to-virtual-machines"
 feature_name: "AWS EC2 migration support"
 feature_slug: "aws-ec2-migration-support"
 latest_feature_date: "2023-01-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source"
+  - "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source"
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started"
+  - "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture"
 keywords:
   - "aws"
   - "ec2"
@@ -24,7 +27,7 @@ keywords:
 # AWS EC2 migration support
 
 Product: Migrate to Virtual Machines
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Lets you migrate AWS EC2 instances to Compute Engine from an AWS source.
 
 Lets you migrate AWS EC2 instances to Compute Engine from an AWS source.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source)
+- [https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source](https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source)
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started)
+- [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Create an AWS source \_|\_ Migrate to Virtual Machines \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source)
+- Source ID: `site-docs-root`
+- Final score: 286
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Introduction Migrate to Virtual Machines lets you migrate your EC2 instances from your AWS account to Google Compute Engine instances.
+- Use the provided JSON template to provide migration permissions for your policy: { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Action": [ "ec2:DescribeInstances", "ec2:DescribeVolumes", "ec2:DescribeInstanceTypes", "ec2:DescribeSnapshots", "ec2:CreateTags", "ec2:CreateSnapshots", "ec2:StopInstances" ], "Resource": " " }, { "Effect": "Allow", "Action": [ "ebs:ListSnapshotBlocks", "ebs:ListChangedBlocks", "ebs:GetSnapshotBlock", "ec2:DeleteSnapshot", "ec2:DeleteTags" ], "Resource": " ", "Condition": { "StringEquals": { "aws:ResourceTag/m2vm-resource": "snapshot" } } } ] } If your EC2 instances use encrypted volumes with non-AWS managed keys, you must add the following statement to the preceding policy to grant the created user permission to access the encryption key. { "Effect": "Allow", "Action": [ "kms:Decrypt", "kms:DescribeKey" ], "Resource": "<<KMS key ARN>>" } For more information about the permissions breakdown for the JSON template fields, see permissions breakdown .
+- We highly recommend that you specify tags, as this lets you mark a subset of your EC2 instances you intend to migrate.
+- AWS region (mandatory) The region in AWS (e.g. eu-west-1 ) from which you want to migrate EC2 instances.
+
+### "Create an AWS source \_|\_ Migrate to Virtual Machines \_|\_ Google Cloud\
+
+- URL: [https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source](https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-an-aws-source)
+- Source ID: `site-docs-root-2`
+- Final score: 286
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Introduction Migrate to Virtual Machines lets you migrate your EC2 instances from your AWS account to Google Compute Engine instances.
+- Use the provided JSON template to provide migration permissions for your policy: { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Action": [ "ec2:DescribeInstances", "ec2:DescribeVolumes", "ec2:DescribeInstanceTypes", "ec2:DescribeSnapshots", "ec2:CreateTags", "ec2:CreateSnapshots", "ec2:StopInstances" ], "Resource": " " }, { "Effect": "Allow", "Action": [ "ebs:ListSnapshotBlocks", "ebs:ListChangedBlocks", "ebs:GetSnapshotBlock", "ec2:DeleteSnapshot", "ec2:DeleteTags" ], "Resource": " ", "Condition": { "StringEquals": { "aws:ResourceTag/m2vm-resource": "snapshot" } } } ] } If your EC2 instances use encrypted volumes with non-AWS managed keys, you must add the following statement to the preceding policy to grant the created user permission to access the encryption key. { "Effect": "Allow", "Action": [ "kms:Decrypt", "kms:DescribeKey" ], "Resource": "<<KMS key ARN>>" } For more information about the permissions breakdown for the JSON template fields, see permissions breakdown .
+- We highly recommend that you specify tags, as this lets you mark a subset of your EC2 instances you intend to migrate.
+- AWS region (mandatory) The region in AWS (e.g. eu-west-1 ) from which you want to migrate EC2 instances.
+
+### Migration journey with Migrate to Virtual Machines \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started)
+- Source ID: `site-docs-reference`
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- These source environments can include the following: A VMware vSphere environment A Microsoft Azure VM environment An Amazon Elastic Compute Cloud (Amazon EC2) environment Migrate to Virtual Machines lets you streamline your VM migration to Google Cloud.
+- Migrate to Virtual Machines accelerates your VM migration, saves you time, and lets you focus on improving your workloads.
+- As part of the VM migration lifecycle, Migrate to Virtual Machines lets you run a test clone of a VM in Google Cloud.
+- Assess the source environment and workloads In the assess phase , you gather information about the following: Your source and target environment The workloads that you want to migrate To help you to plan your migration and to rightsize the resources that you need for the migration and your target environment, it's crucial to assess your source environment and the workloads that you want to migrate.
+
+### Migrate to Virtual Machines architecture \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture](https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/architecture)
+- Source ID: `site-docs-reference`
+- Final score: 227
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Migrate to Virtual Machines lets you migrate VMs and disks of VMs from the following four migration sources to Google Cloud: vSphere data center (on-premises) AWS cloud service Azure cloud service Google Cloud VMware Engine The following diagram shows the architecture for migrating VMs and disks of VMs from various migration sources to Google Cloud: About Google Cloud projects Google Cloud projects form the basis for creating, enabling, and using Google Cloud services including managing APIs, enabling billing, adding and removing collaborators, and managing permissions for Google Cloud resources.
+- AWS Cloud service: Migrate your EC2 instances from your AWS account to Google Cloud.
+- Migration sources Migrate to Virtual Machines lets you to migrate VMs from the following four migration sources: vSphere data center: Migrate on-premises VMs from the vSphere data center to Google Cloud.
+- Home Documentation Migration Migrate to Virtual Machines Guides Send feedback Migrate to Virtual Machines architecture Stay organized with collections Save and categorize content based on your preferences.
 

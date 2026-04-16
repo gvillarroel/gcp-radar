@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 170
-Unique features: 269
+Unique features: 266
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -80,7 +80,6 @@ Unique features: 269
 | 2025-04-02 | MAC_ADDRESS_UNIVERSAL infoType detector |  | The MAC_ADDRESS_UNIVERSAL infoType detector is available in all regions. |
 | 2025-03-19 | CZECHIA_PASSPORT infoType detector |  | The CZECHIA_PASSPORT infoType detector is available in all regions. |
 | 2025-03-04 | Sensitive Data Protection availability in europe-north2 |  | Sensitive Data Protection is available in the europe-north2 region. |
-| 2025-02-17 | Data profile finding fields in Security Command Center |  | Data profile findings sent to Security Command Center can include the INFO_TYPES and RELATED_RESOURCES fields. |
 | 2025-02-14 | Sensitive data discovery for Vertex AI |  | Sensitive Data Protection can profile Vertex AI training data at the organization, folder, or project level. |
 | 2025-02-11 | JAPAN_CORPORATE_NUMBER infoType detector |  | The JAPAN_CORPORATE_NUMBER infoType detector is available in all regions. |
 | 2025-02-03 | CVV_NUMBER infoType detector |  | The CVV_NUMBER infoType detector is available in all regions. |
@@ -193,7 +192,6 @@ Unique features: 269
 | 2019-10-10 | ADVERTISING_ID infoType detector |  | Detects advertising IDs as an infoType. |
 | 2019-10-10 | ORGANIZATION_NAME infoType detector |  | Detects organization names as an infoType. |
 | 2019-10-10 | SPAIN_DNI_NUMBER infoType detector |  | Detects Spanish DNI numbers as an infoType. |
-| 2019-09-13 | SCOTLAND_COMMUNITY_HEALTH_NUMBER infoType detector |  | Detects Scotland community health numbers as an infoType. |
 | 2019-08-26 | Cloud DLP UI |  | The Cloud DLP user interface in Google Cloud Console is generally available. |
 | 2019-08-15 | MEDICAL_TERM infoType detector |  | Detects medical terms as an infoType. |
 | 2019-08-05 | SPAIN_SOCIAL_SECURITY_NUMBER infoType detector |  | Detects Spanish social security numbers as an infoType. |
@@ -271,7 +269,6 @@ Unique features: 269
 | 2017-08-17 | InfoTypeLimit finding limits |  | Lets you limit the number of findings returned per infoType in an inspection job. |
 | 2017-08-17 | OperationConfig finding limits |  | Lets you limit the number of findings returned per file, Cloud Datastore entity, or database row. |
 | 2017-08-10 | Structured data inspection and redaction |  | Supports scanning and redacting structured data by supplying a Table in ContentItem. |
-| 2017-08-03 | BigQuery inspection support |  | Allows BigQuery data to be scanned with inspect.operations.create. |
 | 2017-08-03 | BigQuery results storage |  | Allows inspection results from BigQuery, Cloud Datastore, and Cloud Storage scans to be written to BigQuery. |
 | 2017-06-15 | Image auto-redaction |  | Automatically redacts all text from images and supports custom fill colors for image redaction bounding boxes. |
 | 2017-05-11 | Findings filtering |  | Allows inspection findings to be filtered by infoType and likelihood when listing results. |

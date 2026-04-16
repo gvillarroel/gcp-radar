@@ -5,7 +5,7 @@ url: https://developers.google.com/maps/documentation/navigation/android-sdk
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/navigation/android-sdk/overview
+entrypoint: https://developers.google.com/maps/documentation/navigation/android-sdk
 source_metadata:
   url: https://developers.google.com/maps/documentation/navigation/android-sdk
   title: "Google Maps Platform Documentation \_|\_ Navigation SDK for Android \_|\_\

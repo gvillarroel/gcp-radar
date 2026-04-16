@@ -190,17 +190,17 @@ API
 To create a GitHub Enterprise trigger with the API, use the
 following JSON template:
 {
-"filename" : "cloudbuild.yaml" ,
-"name" : " TRIGGER_NAME " ,
-"description" : " TRIGGER_DESCRIPTION " ,
-"serviceAccount" : " SERVICE_ACCOUNT " ,
+"filename" : "cloudbuild.yaml&qu ot; ,
+& quot;name" : "TR IGGER_NAME" ,
+"description" : "TRIGGER _DESCRIPTION" ,
+"serviceAc count " : "SERVICE_ ACCOUNT&q uot; ,
 "github" : {
-"owner" : " OWNER " ,
-"name" : " REPO_NAME " ,
-"push" : {
+"owner" : "OWNER" ,
+"name" : " REPO_NAME" ; ,
+"push&q uot; : {
 "branch" : ".*"
 },
-"enterprise_config_resource_name" : "projects/ PROJECT_NUMBER /githubEnterpriseConfigs/ CONNECTION_ID "
+"e nterp rise_config_resource_name" : "projects/PROJECT_NUMBER/githubEnterpriseConfigs/CONNECTION_ID"
 },
 "include_build_logs" : i n clude - build - logs - value
 }
@@ -222,7 +222,7 @@ optional include_build_logs field. If this field has a value of
 INCLUDE_BUILD_LOGS_SPECIFIED , then build logs are shown on
 your repository.
 Enter the following curl command in your terminal:
-curl - X POST - H "Authorization: Bearer " $ ( gcloud auth print - access - token ) - H "Content-Type: application/json; charset=utf-8" - H "x-goog-user-project: PROJECT_NUMBER " https : // cloudbuild . googleapis . com / v1 / projects / PROJECT_ID / triggers - d @trigger . json
+curl - X POST - H "Authorization: Bearer " $ ( gcloud auth print - access - token ) - H "Content-Type: application/json; charset=utf-8" - H &q uot;x-goog-use r-project: PROJECT_NUMBER" https : // cloudbui ld . googlea pis . com / v1 / projects / PROJECT _ID / triggers - d @trigger . json
 Where:
 PROJECT_NUMBER is your Google Cloud project number.
 PROJECT_ID is your Google Cloud project ID.
@@ -258,6 +258,6 @@ Learn how to build repositories from GitHub Enterprise in a private network .
 Learn how to perform blue-green deployments on Compute Engine .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:25:24+00:00'
-updated_at: '2026-04-11T21:59:30+00:00'
+updated_at: '2026-04-15T13:35:13+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime
   created_at: '2026-04-11T21:44:42+00:00'
-  updated_at: '2026-04-11T21:47:00+00:00'
+  updated_at: '2026-04-15T13:20:45+00:00'
   update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T21:47:00+00:00'
+  last_synced_at: '2026-04-15T13:20:45+00:00'
 - type: site
   id: site-docs-root-2
   title: https://docs.cloud.google.com/appengine/docs/standard/overview
   created_at: '2026-04-11T21:44:43+00:00'
-  updated_at: '2026-04-11T21:49:25+00:00'
+  updated_at: '2026-04-15T13:23:08+00:00'
   update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/overview
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root-2
@@ -34,26 +34,26 @@ sources:
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T21:49:25+00:00'
+  last_synced_at: '2026-04-15T13:23:08+00:00'
 - type: site
   id: site-docs-reference
-  title: https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes
-  created_at: '2026-04-11T21:44:43+00:00'
-  updated_at: '2026-04-11T21:52:03+00:00'
-  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes
+  title: https://docs.cloud.google.com/appengine/docs/legacy/standard/python/tools/built-in-libraries-27
+  created_at: '2026-04-12T13:47:13+00:00'
+  updated_at: '2026-04-15T13:25:34+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/legacy/standard/python/tools/built-in-libraries-27
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
   config:
-    url: https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes
+    url: https://docs.cloud.google.com/appengine/docs/legacy/standard/python/tools/built-in-libraries-27
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T21:52:03+00:00'
+  last_synced_at: '2026-04-15T13:25:34+00:00'
 - type: site
   id: site-docs-reference-2
   title: https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app
-  created_at: '2026-04-11T21:44:44+00:00'
-  updated_at: '2026-04-11T21:54:36+00:00'
+  created_at: '2026-04-12T13:47:14+00:00'
+  updated_at: '2026-04-15T13:27:56+00:00'
   update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference-2
@@ -62,32 +62,59 @@ sources:
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T21:54:36+00:00'
+  last_synced_at: '2026-04-15T13:27:56+00:00'
 - type: site
   id: site-docs-reference-3
-  title: https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml
-  created_at: '2026-04-11T21:44:44+00:00'
-  updated_at: '2026-04-11T21:57:06+00:00'
-  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml
+  title: https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies
+  created_at: '2026-04-12T22:30:06+00:00'
+  updated_at: '2026-04-15T13:30:20+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference-3
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-15T13:30:20+00:00'
+- type: site
+  id: site-docs-reference-4
+  title: https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/writing-web-service
+  created_at: '2026-04-12T22:30:06+00:00'
+  updated_at: '2026-04-15T13:32:47+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/writing-web-service
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-4
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/writing-web-service
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-15T13:32:47+00:00'
+- type: site
+  id: site-docs-reference-required-5
+  title: https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml
+  created_at: '2026-04-12T22:30:07+00:00'
+  updated_at: '2026-04-15T13:35:13+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
   config:
     url: https://docs.cloud.google.com/appengine/docs/standard/nodejs/configuring-your-app-with-app-yaml
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T21:57:06+00:00'
+  last_synced_at: '2026-04-15T13:35:13+00:00'
 - type: site
-  id: site-docs-reference-4
-  title: https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project
-  created_at: '2026-04-11T21:44:46+00:00'
-  updated_at: '2026-04-11T21:59:30+00:00'
-  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project
+  id: site-docs-reference-required-6
+  title: https://docs.cloud.google.com/appengine/docs/standard/nodejs/services/access
+  created_at: '2026-04-12T22:30:07+00:00'
+  updated_at: '2026-04-12T22:30:07+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/nodejs/services/access
     --key corpus --compact
-  delete_command: know del --key corpus site-docs-reference-4
+  delete_command: know del --key corpus site-docs-reference-required-6
   config:
-    url: https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project
+    url: https://docs.cloud.google.com/appengine/docs/standard/nodejs/services/access
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T21:59:30+00:00'

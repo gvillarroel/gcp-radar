@@ -1,29 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:40.926Z"
+generated_at: "2026-04-14T05:04:10.356Z"
 product_name: "Apigee Monetization"
 product_slug: "apigee-monetization"
 feature_name: "Monetization Dynamic Consumption Pricing"
 feature_slug: "monetization-dynamic-consumption-pricing"
 latest_feature_date: "2021-11-03"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview"
 keywords:
-  - "per-unit price multiplier"
-  - "usage-based multiplier"
-  - "dynamic usage pricing"
-  - "dynamic consumption pricing"
-  - "dynamic price multiplier"
-  - "base price multiplier"
-  - "price multiplier"
+  - "dynamic"
+  - "unit"
+  - "consumption"
+  - "pricing"
+  - "allowing"
+  - "supports"
 ---
 
 # Monetization Dynamic Consumption Pricing
 
 Product: Apigee Monetization
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +34,56 @@ Monetization supports dynamic consumption pricing by allowing a per-unit price m
 
 Monetization supports dynamic consumption pricing by allowing a per-unit price multiplier to be applied on top of the base price.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans](https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview](https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Managing rate plans for API products \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans](https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans)
+- Source ID: `site-docs-reference`
+- Final score: 82
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The following provides an example of the response output, including the two rate plans, myrateplan1 and myrateplan2 associated with HelloworldProduct API product: { "ratePlans": [ { "name": "6b51b501-ac15-41b7-bb3e-621edb849e13", "apiproduct": "HelloworldProduct", "displayName": "myrateplan2", "billingPeriod": "MONTHLY", "currencyCode": "USD", "setupFee": { "currencyCode": "USD", "units": "20" }, "fixedRecurringFee": { "currencyCode": "USD", "units": "25" }, "fixedFeeFrequency": 1, "consumptionPricingType": "FIXED PER UNIT", "consumptionPricingRates": [ { "fee": { "currencyCode": "USD", "nanos": 500000000 } } ], "revenueShareType": "FIXED", "revenueShareRates": [ { "sharePercentage": 2 } ], "state": "DRAFT" }, { "name": "8c0b527c-ba2f-45f1-ac1c-b9e891546fc2", "apiproduct": "HelloworldProduct", "displayName": "myrateplan1", "billingPeriod": "MONTHLY", "currencyCode": "USD", "consumptionPricingType": "FIXED PER UNIT", "consumptionPricingRates": [ { "fee": { "currencyCode": "USD", "units": "3" } } ], "state": "PUBLISHED", "startTime": "1617302588000" } ] } For more information about the API and its response payload, see the List rate plans API Viewing details for a rate plan using the API To view details for a rate plan, issue a GET request to the following API: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME To determine the name of the rate plan to pass in the resource path, see Listing the rate plans in an organization .
+- To update a rate plan, issue a PUT request to the following API, passing the modified request body in your request: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME For example, the following changes the consumption-based fee to 5 ; and the revenue share percentage to 6.5% all other configuration settings are included to ensure that they are maintained: curl "https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME " \ -X PUT \ -H "Authorization: Bearer $TOKEN" \ -H "Content-type: application/json" \ -d '{ "apiproduct": "HelloworldProduct", "displayName": "myrateplan3", "currencyCode":"USD", "billingPeriod":"MONTHLY", "consumptionPricingType":"FIXED PER UNIT", "consumptionPricingRates":[{ "fee":{ "units":"5" , "nanos":0 } }], "revenueShareType":"FIXED", "revenueShareRates":[{ "sharePercentage":"6.5" }], "state":"DRAFT", "startTime": 1617302588000 }' For more information about the fields you can specify in the request body, see Resource: RatePlans .
+- To publish the rate plan, issue a PUT request to the following API, passing the modified request body in your request: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME For example, the following changes the status of the rateplan1 rate plan to PUBLISHED and sets the activation time to April 1, 2021, specified as milliseconds since epoch: curl "https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME " \ -X PUT \ -H "Authorization: Bearer $TOKEN" \ -H "Content-type: application/json" \ -d '{ "apiproduct": "HelloworldProduct", "displayName": "myrateplan3", "currencyCode":"USD", "billingPeriod":"MONTHLY", "consumptionPricingType":"FIXED PER UNIT", "consumptionPricingRates":[{ "fee":{ "units":"3", "nanos":0 } }], "revenueShareType":"FIXED", "revenueShareRates":[{ "sharePercentage":"5" }], "state":"PUBLISHED", "startTime": 1617302588000 }' For more information about the fields you can specify in the request body, see Resource: RatePlans .
+- Required fields for draft rate plan Required fields for published rate plan apiproduct displayName state apiproduct billingPeriod currencyCode displayName startTime state Note: To publish a rate plan, see Publishing a rate plan For example, the following API call creates a draft rate plan named myrateplan5 associated with the HelloworldProduct API product: curl "https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/HelloworldProduct/rateplans" \ -X POST \ -H "Authorization: Bearer $TOKEN" \ -H "Content-type: application/json" \ -d '{ "apiproduct":"HelloworldProduct", "billingPeriod":"MONTHLY", "consumptionPricingType":"FIXED PER UNIT", "consumptionPricingRates":[{ "fee":{ "units":"3", "nanos":0 } }], "currencyCode":"USD", "displayName":"myrateplan5", "revenueShareType":"FIXED", "revenueShareRates":[{ "sharePercentage":"1" }], "setupFee":{ "units":"10", "nanos":0 }, "state":"DRAFT" }' Where $TOKEN is set to your OAuth 2.0 access token, as described in Obtaining an OAuth 2.0 access token .
+
+### Get started with LLM token policies \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies)
+- Source ID: `site-docs-reference`
+- Final score: 72
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The following LLMTokenQuota policy example enforces a quota of 10,000 tokens per hour, with the settings dynamically sourced from an API product: < LLMTokenQuota name = "Quota-Enforce-Only" type = "rollingwindow" > < EnforceOnly>true < / EnforceOnly > < ! -- The interval and time unit for the quota -- > < Interval ref = "verifyapikey.verify-api-key.apiproduct.developer.llmQuota.interval" > 1 < / Interval > < TimeUnit ref = "verifyapikey.verify-api-key.apiproduct.developer.llmQuota.timeunit" > hour < / TimeUnit > < ! -- The number of tokens allowed in the interval -- > < Allow count = "10000" countRef = "verifyapikey.verify-api-key.apiproduct.developer.llmQuota.limit" / > < ! -- Specifies where to get the token usage from the LLM ' s response -- > < LLMTokenUsageSource > { jsonPath ( '$ . usageMetadata . candidatesTokenCount ' , response . content , true )} < / LLMTokenUsageSource > < ! -- Specifies where to get the model name from the LLM ' s response -- > < LLMModelSource > { jsonPath ( '$ . model ' , response . content , true )} < / LLMModelSource > < / LLMTokenQuota > Where: <EnforceOnly> : When set to true , this element is used to reject API calls once the token quota has been exceeded.
+- See the PromptTokenLimit policy reference page for: Examples Flow variables Error reference Configure the PromptTokenLimit policy in the Apigee UI when performing the following tasks: Create an API product Creating an API proxy using the UI Attaching and configuring policies in the UI LLMTokenQuota policy Use the LLMTokenQuota policy when you want to set and enforce token consumption quotas for different API products, developers, or apps.
+- See the LLMTokenQuota policy reference page for: Examples Flow variables Error reference Configure the LLMTokenQuota policy in the Apigee UI as described in the following sections: Create an API product Creating an API proxy using the UI Attaching and configuring policies in the UI Limitations The LLM token policies have the following limitations: LLMTokenQuota policy limitations The policy currently only supports text-based tokens.
+- The LLMTokenQuota policy allows you to enforce token consumption limits for your LLM APIs over a specific time period (e.g., per minute, hour, day, or month).
+
+### Overview of Apigee monetization | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview](https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 64
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]] Products and pricing See all products Google Cloud pricing Google Cloud Marketplace Contact sales Support Community forums Support Release Notes System status Resources GitHub Getting Started with Google Cloud Code samples Cloud Architecture Center Training and Certification Engage Blog Events X (Twitter) Google Cloud on YouTube Google Cloud Tech on YouTube About Google Privacy Site terms Google Cloud terms Manage cookies Our third decade of climate action: join us Sign up for the Google Cloud newsletter Subscribe English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어
+- Use AppGroups to manage API product subscriptions Apigee supports using AppGroups to manage API product subscriptions and monetization for usage of those API products.
+- When creating a rate plan , you configure the billing currency and frequency, any setup and recurring fees, and the consumption-based fees.
+- Understand billing for monetized API products Apigee monetization supports both postpaid and prepaid billing accounts.
 

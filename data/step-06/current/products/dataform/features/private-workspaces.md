@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.376Z"
+generated_at: "2026-04-12T12:13:45.733Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Private workspaces"
 feature_slug: "private-workspaces"
 latest_feature_date: "2025-12-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataform/docs/access-control"
+  - "https://docs.cloud.google.com/dataform/docs/create-workspace"
   - "https://docs.cloud.google.com/dataform/docs/create-repository"
   - "https://docs.cloud.google.com/dataform/docs/repositories"
 keywords:
@@ -26,7 +27,7 @@ keywords:
 # Private workspaces
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,11 +39,12 @@ Private workspaces restrict workspace access to the workspace creator in Datafor
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
+- [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
 - [https://docs.cloud.google.com/dataform/docs/create-repository](https://docs.cloud.google.com/dataform/docs/create-repository)
 - [https://docs.cloud.google.com/dataform/docs/repositories](https://docs.cloud.google.com/dataform/docs/repositories)
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 - Source ID: `site-docs-root-2`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 250
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To restrict Dataform workspace access so that only the workspace creator can read and write code in that workspace, set the enable private workspace field to true in the projects.locations.updateConfig method .
@@ -62,13 +64,26 @@ Evidence snippets:
 - Predefined Dataform roles The following table lists the predefined roles that give you access to Dataform resources: Role Permissions Dataform Admin ( roles/ dataform.admin ) Full access to all Dataform resources. dataform. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.config.update dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations.get dataform.locations.list dataform.operations.cancel dataform.operations.delete dataform.operations.get dataform.operations.list dataform.releaseConfigs.create dataform.releaseConfigs.delete dataform.releaseConfigs.get dataform.releaseConfigs.list dataform.releaseConfigs.update dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. scheduleRelease dataform. repositories. scheduleWorkflow dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.create dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform. workflowConfigs. create dataform. workflowConfigs. delete dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowConfigs. update dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Dataform Editor ( roles/ dataform.editor ) Edit access to Workspaces and Read-only access to Repositories. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.releaseConfigs.get dataform.releaseConfigs.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.workflowConfigs.get dataform.workflowConfigs.list dataform.workflowInvocations. dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Dataform Viewer ( roles/ dataform.viewer ) Read-only access to all Dataform resources. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.releaseConfigs.get dataform.releaseConfigs.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Code Commenter Beta ( roles/ dataform.codeCommenter ) Permissions to comment, at the repository level.
 - Can share the team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders. dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform.workspaces. dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Team Folder Viewer ( roles/ dataform.teamFolderViewer ) View access to a team folder and its contents. dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents .
 
+### Create a development workspace \_|\_ Dataform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
+- Source ID: `site-docs-root-2`
+- Final score: 200
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Note: If you enhance security by setting the enable private workspace field (Preview) to true in the projects.locations.updateConfig Dataform API method , only the workspace creator can read and write code in that Dataform workspace.
+- Required roles To get the permissions that you need to create, initialize, and delete a development workspace, ask your administrator to grant you the Dataform Editor ( roles/dataform.editor ) IAM role on workspaces.
+- This restriction also applies to viewing generated artifacts, such as compiled SQL, compilation errors, and run logs, for the workspace's compilations or workflow invocations.
+- In the Development workspaces tab, select the development workspace that you want to delete, and then click Delete selected workspaces .
+
 ### Create a repository \_|\_ Dataform \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataform/docs/create-repository](https://docs.cloud.google.com/dataform/docs/create-repository)
 - Source ID: `site-docs-root`
-- Final score: 156
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 189
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - For more information, see Restrict remote repositories Required roles To get the permissions that you need to create and delete a repository, ask your administrator to grant you the following IAM roles on repositories: Dataform Admin ( roles/dataform.admin ) - the project Service Account User ( roles/iam.serviceAccountUser ) - the custom service account For more information about granting roles, see Manage access to projects, folders, and organizations .
@@ -80,9 +95,8 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataform/docs/repositories](https://docs.cloud.google.com/dataform/docs/repositories)
 - Source ID: `site-docs-root-2`
-- Final score: 156
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 189
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - For more information, see Restrict remote repositories Required roles To get the permissions that you need to create and delete a repository, ask your administrator to grant you the following IAM roles on repositories: Dataform Admin ( roles/dataform.admin ) - the project Service Account User ( roles/iam.serviceAccountUser ) - the custom service account For more information about granting roles, see Manage access to projects, folders, and organizations .

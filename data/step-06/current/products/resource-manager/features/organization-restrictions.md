@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:52.995Z"
+generated_at: "2026-04-15T13:51:00.077Z"
 product_name: "Resource Manager"
 product_slug: "resource-manager"
 feature_name: "Organization restrictions"
@@ -9,18 +9,17 @@ latest_feature_date: "2023-02-16"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
   - "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
-  - "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization"
-  - "https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles"
+  - "https://docs.cloud.google.com/resource-manager/docs/access-control-proj"
 keywords:
   - "organization"
   - "restrictions"
   - "limit"
   - "access"
-  - "to"
   - "resources"
-  - "in"
   - "authorized"
+  - "organizations"
 ---
 
 # Organization restrictions
@@ -42,42 +41,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
+- [https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview](https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview)
 - [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
-- [https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
-- [https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles](https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles)
+- [https://docs.cloud.google.com/resource-manager/docs/access-control-proj](https://docs.cloud.google.com/resource-manager/docs/access-control-proj)
 
 ## Supporting Pages
 
-### Access control for organization resources with IAM | Resource Manager | Google Cloud Documentation
+### "Introduction to organization restrictions \_|\_ Resource Manager \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
-- Source ID: `site-iam-reference`
-- Final score: 94
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Access control for organization resources with IAM Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/access-control-org Control IAM access for organization resources.
-- Manage allow policies, grant roles, apply Organization Policy, and test permissions.
-
-### Set up a Google Cloud organization resource | Resource Manager | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
-- Source ID: `site-docs-root`
-- Final score: 84
+- URL: [https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview](https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview)
+- Source ID: `site-docs-reference-2`
+- Final score: 264
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Set up a Google Cloud organization resource Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization Set up Google Cloud organization resources.
+- For managed devices in an organization, the organization restrictions feature restricts access only to resources in authorized Google Cloud organizations.
+- Common use cases Here are some common organization restrictions use cases: Restrict access to employees in your organization so that employees can access resources only in your Google Cloud organization and not other organizations.
+- There is a need in organizations to restrict access of their employees only to resources in authorized Google Cloud organizations.
+- This proxy configuration prevents users from accessing any Google Cloud resources in non-authorized Google Cloud organizations.
 
-### Assign Identity and Access Management roles and permissions | Resource Manager | Google Cloud Documentation
+### "Access control for organization resources with IAM \_|\_ Resource Manager\
 
-- URL: [https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles](https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles)
+- URL: [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
 - Source ID: `site-iam-reference`
-- Final score: 82
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- To migrate a project between organization resources, you need the following roles on the project, its parent resource, and the destination resource: Project IAM Admin (roles/resourcemanager.projectIamAdmin) on the project that you want to migrate between organization resources.
-- Assign Identity and Access Management roles and permissions Resource Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/resource-manager/docs/assign-iam-roles To gain these permissions, ask your administrator to grant the suggested role at the appropriate level of the resource hierarchy.
+- Lowest-level resources where you can grant this role: Organization resourcemanager. organizations. get Organization Policy Administrator ( roles/ orgpolicy.policyAdmin ) Provides access to define what restrictions an organization wants to place on the configuration of cloud resources by setting Organization Policies.
+- Lowest-level resources where you can grant this role: Project essentialcontacts. essentialcontacts. contacts. create essentialcontacts. contacts. delete essentialcontacts.contacts.get essentialcontacts. contacts. list essentialcontacts. contacts. send essentialcontacts. contacts. update iam.policybindings. iam.policybindings.get iam.policybindings.list orgpolicy.constraints.list orgpolicy.policies.list orgpolicy.policy.get resourcemanager.capabilities. resourcemanager. capabilities. get resourcemanager. capabilities. update resourcemanager. folders. createPolicyBinding resourcemanager. folders. deletePolicyBinding resourcemanager.folders.get resourcemanager. folders. getIamPolicy resourcemanager.folders.list resourcemanager. folders. searchPolicyBindings resourcemanager. folders. setIamPolicy resourcemanager. folders. updatePolicyBinding resourcemanager. organizations. resourcemanager. organizations. createPolicyBinding resourcemanager. organizations. deletePolicyBinding resourcemanager. organizations. get resourcemanager. organizations. getIamPolicy resourcemanager. organizations. searchPolicyBindings resourcemanager. organizations. setIamPolicy resourcemanager. organizations. updatePolicyBinding resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Organization Viewer ( roles/ resourcemanager.organizationViewer ) Provides access to view an organization.
+- Http ())) policy = crm . organizations () . getIamPolicy ( resource = flags . organizationId , body = {}) . execute () print json . dumps ( policy , indent = 2 ) Grant access to an organization resource Organization Administrators can grant IAM roles to team members so that they can access an organization's resources and APIs.
+- Lowest-level resources where you can grant this role: Organization cloudasset. assets. analyzeOrgPolicy cloudasset. assets. exportResource cloudasset.assets.listResource cloudasset. assets. searchAllResources orgpolicy. orgpolicy.constraints.list orgpolicy. customConstraints. create orgpolicy. customConstraints. delete orgpolicy. customConstraints. get orgpolicy. customConstraints. list orgpolicy. customConstraints. update orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set policysimulator. orgPolicyViolations. list policysimulator. orgPolicyViolationsPreviews. policysimulator. orgPolicyViolationsPreviews. create policysimulator. orgPolicyViolationsPreviews. get policysimulator. orgPolicyViolationsPreviews. list recommender. orgPolicyInsights. recommender. orgPolicyInsights. get recommender. orgPolicyInsights. list recommender. orgPolicyInsights. update recommender. orgPolicyRecommendations. recommender. orgPolicyRecommendations. get recommender. orgPolicyRecommendations. list recommender. orgPolicyRecommendations. update Browser ( roles/ browser ) Read access to browse the hierarchy for a project, including the folder, organization, and allow policy.
+
+### "Access control for projects with IAM \_|\_ Resource Manager \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/resource-manager/docs/access-control-proj](https://docs.cloud.google.com/resource-manager/docs/access-control-proj)
+- Source ID: `site-iam-reference`
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Lowest-level resources where you can grant this role: Folder resourcemanager. organizations. get resourcemanager. projects. create Project Deleter ( roles/ resourcemanager.projectDeleter ) Provides access to delete Google Cloud projects.
+- Lowest-level resources where you can grant this role: Project iam.policybindings. iam.policybindings.get iam.policybindings.list resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Browser ( roles/ browser ) Read access to browse the hierarchy for a project, including the folder, organization, and allow policy.
+- Lowest-level resources where you can grant this role: Project resourcemanager.folders.get resourcemanager.folders.list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list Basic roles Use basic roles only when necessary.
+- For more information, see Manage access to projects, folders, and organizations .
 

@@ -1,72 +1,91 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.564Z"
+generated_at: "2026-04-14T03:53:29.466Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB remote MCP server"
 feature_slug: "alloydb-remote-mcp-server"
 latest_feature_date: "2026-02-17"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex"
 keywords:
-  - "Model Context Protocol server"
-  - "AI applications connect via MCP"
-  - "remote MCP server"
-  - "LLM access to AlloyDB clusters"
-  - "alloydb clusters in AI platforms"
-  - "MCP server for AlloyDB"
-  - "MCP endpoint"
-  - "AlloyDB MCP server"
+  - "alloydb"
+  - "remote"
+  - "mcp"
+  - "server"
+  - "lets"
+  - "llms"
+  - "ai"
+  - "applications"
 ---
 
 # AlloyDB remote MCP server
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The AlloyDB remote MCP server enables easy interaction with AlloyDB clusters from LLMs, AI applications, and AI-enabled development platforms.
+The AlloyDB remote MCP server lets LLMs, AI applications, and AI-enabled development platforms interact with AlloyDB clusters.
 
 ## Extended Definition
 
-The AlloyDB remote MCP server is a Google Cloud remote Model Context Protocol (MCP) server that lets LLMs, AI applications, and AI-enabled development platforms interact with AlloyDB clusters. It exposes cluster and instance management tools (for example: list/create/get clusters and list/create instances) and is accessed via an MCP endpoint (including regional endpoints).
+The AlloyDB remote MCP server lets LLMs, AI applications, and AI-enabled development platforms interact with AlloyDB clusters.
 
 ## Evidence Summary
 
-The MCP reference page defines what the AlloyDB MCP server provides and how it is exposed, while release notes explicitly state that the AlloyDB remote MCP server enables easy interaction from LLMs and AI platforms.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/reference/mcp](https://docs.cloud.google.com/alloydb/docs/reference/mcp)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- [https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases](https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases)
+- [https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex](https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex)
 
 ## Supporting Pages
 
-### MCP Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+### "Use the AlloyDB remote MCP server \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp](https://docs.cloud.google.com/alloydb/docs/reference/mcp)
-- Source ID: `site-api-reference`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- Source ID: `site-docs-reference-2`
+- Final score: 239
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- This document shows you how to use the AlloyDB for PostgreSQL remote Model Context Protocol (MCP) server to connect with AI applications including Gemini CLI, ChatGPT, Claude, and custom applications you are developing.
+- The AlloyDB for PostgreSQL remote MCP server lets you access and run AlloyDB tools to manage AlloyDB clusters and instances from your AI-enabled development environments and AI agent platforms..
+- Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Use the AlloyDB remote MCP server Stay organized with collections Save and categorize content based on your preferences.
+- Authentication and authorization The AlloyDB for PostgreSQL remote MCP server uses the OAuth 2.0 protocol with Identity and Access Management (IAM) for authentication and authorization.
+
+### "Build generative AI applications \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases](https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases)
+- Source ID: `site-docs-reference`
+- Final score: 97
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The alloydb MCP server has the following tools: MCP Tools list clusters List all clusters create cluster Create a new cluster get cluster Get a cluster list instances List all instances in a cluster create instance Creates an AlloyDB instance, which is a child resource of a cluster.
-- The alloydb MCP server uses regional endpoints: For example, https://alloydb.northamerica-northeast2.rep.googleapis.com/mcp For information about available locations, see AlloyDB locations .
-- For more information about using Google and Google Cloud remote MCP servers, see Google Cloud MCP servers overview .
-- Google MCP endpoints can be global or regional.
+- Codelab: Part 1: Build a Smart Shopping Assistant with AlloyDB and AI Applications Codelab: Part 2: Deploy a Smart Shopping Assistant with AlloyDB and AI Applications Build an LLM and RAG-based chat application using AlloyDB AI and LangChain This codelab guides you through deploying the GenAI Databases Retrieval Service and then shows you how to build a sample interactive application using your newly set up environment.
+- Codelab: Build an AI-powered outfit recommendation app with AlloyDB and serverless runtimes Build an application that invokes a database query from your agent or a generative AI application The following codelab shows you how to build an application that uses Gen AI Toolbox for Databases to perform a simple AlloyDB query that you can invoke from your agent or from a generative AI application.
+- Codelab: Installing and Setting-up Toolbox for your Generative AI & Agentic Applications on AlloyDB Build and deploy a personalized fashion styling assistant The following codelabs show you how to build and deploy a personalized style assistant with Gemini, model endpoint management, vector search, Vertex AI, and agents.
+- Codelab: Toy Store Search App with Cloud Databases, Serverless Runtimes and Open Source Integrations Deploy AlloyDB Omni and a local AI model on Kubernetes In this codelab you learn how to deploy AlloyDB Omni on GKE and use it with an open embedding model deployed in the same Kubernetes cluster.
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Build LLM-powered applications using LlamaIndex \_|\_ AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 24
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex](https://docs.cloud.google.com/alloydb/docs/ai/build-llm-powered-applications-using-llamaindex)
+- Source ID: `site-docs-reference`
+- Final score: 82
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- The AlloyDB remote MCP server lets you interact easily with AlloyDB clusters from LLMs, AI applications, and AI-enabled development platforms.
-- Feature You can now use the AlloyDB remote MCP server .
+- Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Build LLM-powered applications using LlamaIndex Stay organized with collections Save and categorize content based on your preferences.
+- LlamaIndex acts as a bridge between custom data and LLMs, facilitating the development of knowledge assistant applications with retrieval-augmented generation (RAG) capabilities.
+- By combining LlamaIndex's indexing and querying capabilities with AlloyDB's high performance and reliability, you can build more efficient and scalable LLM-powered applications.
+- LlamaIndex is a generative AI orchestration framework that lets you connect and integrate data sources with large language models (LLMs).
 

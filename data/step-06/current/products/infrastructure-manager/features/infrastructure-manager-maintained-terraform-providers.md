@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:38.524Z"
+generated_at: "2026-04-12T12:17:30.391Z"
 product_name: "Infrastructure Manager"
 product_slug: "infrastructure-manager"
 feature_name: "Infrastructure Manager-maintained Terraform providers"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-08-29"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest"
   - "https://docs.cloud.google.com/infrastructure-manager/docs/terraform"
   - "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources"
+  - "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment"
+  - "https://docs.cloud.google.com/infrastructure-manager/docs/overview"
 keywords:
   - "infrastructure"
   - "manager"
@@ -38,49 +39,70 @@ Use Terraform providers maintained by Infrastructure Manager during deployment c
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest](https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest)
 - [https://docs.cloud.google.com/infrastructure-manager/docs/terraform](https://docs.cloud.google.com/infrastructure-manager/docs/terraform)
 - [https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources](https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources)
+- [https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment](https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment)
+- [https://docs.cloud.google.com/infrastructure-manager/docs/overview](https://docs.cloud.google.com/infrastructure-manager/docs/overview)
 
 ## Supporting Pages
 
-### Infrastructure Manager API | Infrastructure Manager | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest](https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest)
-- Source ID: `site-docs-reference`
-- Final score: 132
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Infrastructure Manager API Infrastructure Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest Creates and manages Google Cloud Platform resources and infrastructure. ...
-- If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
-- To call this service, we recommend that you use the Google-provided client libraries.
-
-### Terraform and Infrastructure Manager | Google Cloud Documentation
+### Terraform and Infrastructure Manager \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/infrastructure-manager/docs/terraform](https://docs.cloud.google.com/infrastructure-manager/docs/terraform)
 - Source ID: `site-docs-root`
-- Final score: 130
+- Final score: 275
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Terraform and Infrastructure Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/infrastructure-manager/docs/terraform Infra Manager deploys infrastructure resources and configurations that are defined in a Terraform configuration.
-- These configurations can consist of multiple files and directories but their entrypoint must be a Terraform root module.
+- To learn how to specify the use of a Infra Manager maintained Terraform provider, see Deploy infrastructure using Infrastructure Manager , Update a deployment , or Preview a deployment .
+- Infra Manager supports Terraform providers for Google Cloud: google google-beta Omit this field to use the HashiCorp-maintained Terraform provider for Google Cloud .
+- Use the Terraform provider for Google Cloud You can configure deployments and previews to use Infra Manager maintained Terraform providers for Google Cloud.
+- This optional field lets you specify the use of the Infra Manager maintained Terraform providers to create or update a deployment or preview deployment.
 
-### Deploy infrastructure using Infrastructure Manager | Google Cloud Documentation
+### Deploy infrastructure using Infrastructure Manager \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources](https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources)
 - Source ID: `site-docs-root`
-- Final score: 114
+- Final score: 240
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Deploy infrastructure using Infrastructure Manager Google Cloud Documentation Source URL: https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources This page describes how to use Infrastructure Manager to provision a set of Google Cloud resources that are defined in a Terraform configuration.
+- This page describes how to use Infrastructure Manager to provision a set of Google Cloud resources that are defined in a Terraform configuration.
+- Set to SERVICE MAINTAINED to use the Infra Manager maintained Terraform provider.
+- Set to SERVICE MAINTAINED to use the Infra Manager maintained Terraform provider.
+- Set to SERVICE MAINTAINED to use the Infra Manager maintained Terraform provider.
+
+### Preview a deployment \_|\_ Infrastructure Manager \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment](https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment)
+- Source ID: `site-iam-reference`
+- Final score: 224
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To preview the deployment: gcloud infra - manager previews create projects / PROJECT ID / locations / LOCATION / previews / PREVIEW ID \ -- service - account projects / SERVICE ACCOUNT PROJECT ID / serviceAccounts / SERVICE ACCOUNT \ -- git - source - repo = " GIT REPO " \ -- git - source - directory = " DIRECTORY " \ -- git - source - ref = " REF " \ -- input - values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \ -- tf - version - constraint = TERRAFORM VERSION \ -- annotations = " ANNOTATION KEY = ANNOTATION VALUE " -- provider - source = SERVICE MAINTAINED Replace: PROJECT ID is the project ID where Infrastructure Manager runs.
+- To preview the update: gcloud infra - manager previews create projects / PROJECT ID / locations / LOCATION / previews / PREVIEW ID \ -- service - account projects / SERVICE ACCOUNT PROJECT ID / serviceAccounts / SERVICE ACCOUNT \ -- gcs - source gs : // BUCKET NAME / OBJECT NAME \ -- input - values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \ -- tf - version - constraint = TERRAFORM VERSION \ -- annotations = " ANNOTATION KEY = ANNOTATION VALUE " -- provider - source = SERVICE MAINTAINED Replace: PROJECT ID is the project ID where Infrastructure Manager runs.
+- This page describes how to use Infrastructure Manager to preview the deployment of resources defined in a Terraform configuration.
+- Set to SERVICE MAINTAINED to use the Infra Manager maintained Terraform provider.
+
+### Infrastructure Manager overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/infrastructure-manager/docs/overview](https://docs.cloud.google.com/infrastructure-manager/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For each revision, Infra Manager stores the following: Logs The configuration used to do the revision The list of Google Cloud resources created by the revision The state file created as part of each deployment and revision See Infrastructure as Code on Google Cloud for more information about IaC.
+- Infra Manager and Infrastructure as Code Infra Manager allows you to use IaC to manage the lifecycle of Google Cloud resources: Terraform is defined declaratively in a Terraform configuration .
+- Initializes Terraform ( terraform init ) Validates the Terraform configuration ( terraform validate ) Actuates the configuration ( terraform apply , or terraform destroy if you are deleting a deployment) Streams Cloud Build logs into a storage bucket created by Infra Manager.
+- Infra Manager allows you to deploy programmatically to Google Cloud, allowing you to use this service rather than maintaining a different toolchain to work with Terraform on Google Cloud.
 

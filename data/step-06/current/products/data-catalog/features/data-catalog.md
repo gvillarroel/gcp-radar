@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:06.175Z"
+generated_at: "2026-04-12T12:13:34.800Z"
 product_name: "Data Catalog"
 product_slug: "data-catalog"
 feature_name: "Data Catalog"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/iam/docs/roles-permissions/datacatalog"
   - "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient"
+  - "https://docs.cloud.google.com/data-catalog/docs/reference/rest"
 keywords:
   - "catalog"
   - "is"
@@ -38,13 +39,14 @@ Data Catalog is a managed metadata catalog service for discovering, managing, an
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/iam/docs/roles-permissions/datacatalog](https://docs.cloud.google.com/iam/docs/roles-permissions/datacatalog)
 - [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient)
+- [https://docs.cloud.google.com/data-catalog/docs/reference/rest](https://docs.cloud.google.com/data-catalog/docs/reference/rest)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/datacatalog](https://docs.cloud.google.com/iam/docs/roles-permissions/datacatalog)
 - Source ID: `site-iam-reference`
-- Final score: 228
+- Final score: 274
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 202
+- Final score: 248
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient)
 - Source ID: `site-python-reference`
-- Final score: 202
+- Final score: 248
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -89,4 +91,18 @@ Evidence snippets:
 - ListEntriesRequest ( parent="parent value", ) Make the request page result = client. list entries (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.datacatalog v1.types.ListEntriesRequest , dict] The request object.
 - ListTagsRequest ( parent="parent value", ) Make the request page result = client. list tags (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.datacatalog v1.types.ListTagsRequest , dict] The request object.
 - Supported resources are: Tag templates Entry groups Note: This method sets policies only within Data Catalog and can't be used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources synced with the Data Catalog.
+
+### "Google Cloud Data Catalog API \_|\_ Data Catalog Documentation \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/data-catalog/docs/reference/rest](https://docs.cloud.google.com/data-catalog/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 246
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://datacatalog.googleapis.com REST Resource: v1beta1.catalog Methods search (deprecated) POST /v1beta1/catalog:search Searches Data Catalog for multiple resources like entries, tags that match a query.
+- Data Catalog API methods that are related to Data Catalog search and metadata are deprecated and will be discontinued on January 30, 2026.
+- A fully managed and highly scalable data discovery and metadata management service.
+- REST Resource: v1.projects.locations.taxonomies Methods create POST /v1/{parent}/taxonomies Creates a taxonomy in a specified project. delete DELETE /v1/{name} Deletes a taxonomy, including all policy tags in this taxonomy, their associated policies, and the policy tags references from BigQuery columns. export GET /v1/{parent}/taxonomies:export Exports taxonomies in the requested type and returns them, including their policy tags. get GET /v1/{name} Gets a taxonomy. getIamPolicy POST /v1/{resource}:getIamPolicy Gets the IAM policy for a policy tag or a taxonomy. import POST /v1/{parent}/taxonomies:import Creates new taxonomies (including their policy tags) in a given project by importing from inlined or cross-regional sources. list GET /v1/{parent}/taxonomies Lists all taxonomies in a project in a particular location that you have a permission to view. patch PATCH /v1/{taxonomy.name} Updates a taxonomy, including its display name, description, and activated policy types. replace POST /v1/{name}:replace Replaces (updates) a taxonomy and all its policy tags. setIamPolicy POST /v1/{resource}:setIamPolicy Sets the IAM policy for a policy tag or a taxonomy. testIamPermissions POST /v1/{resource}:testIamPermissions Returns your permissions on a specified policy tag or taxonomy.
 

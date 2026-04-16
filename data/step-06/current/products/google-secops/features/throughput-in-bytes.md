@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.946Z"
+generated_at: "2026-04-14T16:02:18.788Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "Throughput in Bytes"
 feature_slug: "throughput-in-bytes"
 latest_feature_date: "2025-06-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
   - "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide"
+  - "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
 keywords:
   - "throughput"
-  - "in"
   - "bytes"
-  - "the"
   - "widget"
   - "shows"
   - "ingestion"
   - "volume"
+  - "over"
+  - "time"
 ---
 
 # Throughput in Bytes
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,54 @@ The Throughput in Bytes widget shows ingestion volume over time.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
 - [https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide](https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide)
+- [https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api](https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api)
+- [https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview](https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview)
 
 ## Supporting Pages
-
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 148
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Throughput in bytes : shows ingestion volume over time.
-- The total entry number and total size bytes fields are defined in the new explore and used to query the log count and log volume for the Google SecOps Ingestion API.
-- Feature RBAC for ingestion metrics Administrators can now use RBAC for ingestion metrics to restrict visibility of system health data, such as ingestion volume, errors, and throughput, based on a user's business scope.
-- The document provides instructions on how to view and monitor the ingestion volume for the various tenants that you manage.
-
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 144
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Throughput in bytes : shows ingestion volume over time.
-- The total entry number and total size bytes fields are defined in the new explore and used to query the log count and log volume for the Google SecOps Ingestion API.
-- Feature RBAC for ingestion metrics Administrators can now use RBAC for ingestion metrics to restrict visibility of system health data, such as ingestion volume, errors, and throughput, based on a user's business scope.
-- The document provides instructions on how to view and monitor the ingestion volume for the various tenants that you manage.
 
 ### "Dashboards overview \_|\_ Google Security Operations \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide](https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide)
 - Source ID: `site-docs-reference`
-- Final score: 130
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 171
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Data Ingestion and Health dashboard The Data Ingestion and Health dashboard provides information about the type, volume, and health of data being ingested into your Google Security Operations SIEM tenant.
-- This dashboard provides visualizations that help you understand the volume of ingested logs, ingestion errors, and other relevant information.
-- The dashboard shows visualizations that help you understand the volume of data sources, rule sets, alerts, and other information.
+- The table is followed by graphs of all Google Cloud services with their associated data that show their ingestion trend over the following time intervals: Last 24 hours Last 30 days Last six months Context Aware Detections - Risk dashboard The Context Aware Detections - Risk dashboard provides insight into the current threat status of assets and users in your enterprise.
+- Burst Rejection Graph : displays the hourly volume over time of logs that were rejected for exceeding the burst limit (see Burst limits ).
 - Ingestion - Throughput (All-Time) : displays the ingestion throughput per year for all the time that there is data for.
+- Burst Limit Graph - Ingestion Rate : displays the log-ingestion hourly rate over time (see Burst limits ).
+
+### "Forwarder Management \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api](https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api)
+- Source ID: `site-api-reference`
+- Final score: 133
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- SERVICE ACCOUNT FILE is the full path to the apikeys-demo.json file ToDo: Replace this with the full path to your OAuth2 credentials SERVICE ACCOUNT FILE = '/customer-keys/apikeys-demo.json' Create a credential using the Google Developer Service Account Credential and Backstory API Scope. credentials = service account.Credentials.from service account file(SERVICE ACCOUNT FILE, scopes=SCOPES) Build a requests Session Object to make authorized OAuth requests. http session = requests.AuthorizedSession(credentials) Your endpoint GET POST PATCH etc. code will vary below Reference List example (for US region) url = 'https://backstory.googleapis.com/v2/lists/COLDRIVER SHA256' You might need another regional endpoint for your API call; see https://cloud.google.com/chronicle/docs/reference/ingestion-api#regional endpoints requests GET example response = http session.request("GET", url) POST example uses json body = { "foo": "bar" } response = http session.request("POST", url, json=body) PATCH example uses params and json params = { "foo": "bar" } response = http session.request("PATCH", url, params=params, json=body) For more complete examples, see: https://github.com/chronicle/api-samples-python/ Backstory API query limits The Backstory API enforces limits on the volume of requests that can be made by any one customer against the Google SecOps platform.
+- Response example { "collectors": [ { "name": "?", "displayName": "abc collector 1", "config": { "logType": "tomcat", "maxSecondsPerBatch": "10", "maxBytesPerBatch": "1048576" } }, { "name": "?", "displayName": "abc collector 2", "config": { "logType": "tomcat", "maxSecondsPerBatch": "10", "maxBytesPerBatch": "1048576" } } ] } Update Collector When updating a collector with the API, you can choose to overwrite the entire collector configuration or to overwrite only specific fields of the collector configuration.
+- PATCH https://backstory.googleapis.com/v2/forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56/collectors/98ab7cd6-54ef-3abc-d21e-1f23a4bcde56?updateMask=displayName,config.logType,config.metadata.assetNamespace,config.syslogSettings.protocol { "display name": "UpdatedCollector" "config": { "metadata": { "asset namespace": "COLLECTOR", }, "log type": "CISCO ASA FIREWALL", "syslog settings": { "protocol": "TCP", } } } Response example This is an example of the response returned for the request example above. { "name": "forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56/collectors/98ab7cd6-54ef-3abc-d21e-1f23a4bcde56", "displayName": "UpdatedCollector", "config": { "logType": "CISCO ASA FIREWALL", "metadata": { "assetNamespace": "COLLECTOR" }, "maxSecondsPerBatch": 10, "maxBytesPerBatch": "1048576", "syslogSettings": { "protocol": "TCP", "address": "0.0.0.0", "port": 10514, } }, "state": "ACTIVE" } Delete Collector Deletes a collector.
+- The default is false . pcap settings.network interface string Optional The interface to listen to for PCAP data. pcap settings.bpf string Optional The Berkeley Packet Filter (BPF) for pcap. splunk settings.authentication.username string Optional The username of an identity used for authentication. splunk settings.authentication.password string Optional The password of the account identified by the username. splunk settings.host string Optional The host or IP address for the Splunk REST API. splunk settings.port integer Optional The port for the Splunk REST API. splunk settings.minimum window size integer Optional The minimum time range in seconds for a given Splunk search.
+
+### Cases overview \_|\_ Google Security Operations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview](https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview)
+- Source ID: `site-docs-reference-2`
+- Final score: 112
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Each case entry shows key metadata, such as: Case name and unique ID Case timestamp Number of associated alerts Assigned analyst (with avatar) Case priority and stage (optional, depending on view) Analysts can toggle between these views: Default view : Shows case cards with essential information.
+- They collect enrichment data, analyst comments, and historical context, letting analysts track entity behavior over time and across cases.
+- Case overview tab The Case Overview tab displays case-specific widgets configured by the administrator.
+- Case top bar The Case Top Bar displays case-level context and available actions, as follows: The case queue header displays the case title, ID, priority, stage , timestamp, change environment, and tags .
 

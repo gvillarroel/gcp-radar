@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:38.919Z"
+generated_at: "2026-04-12T12:17:32.202Z"
 product_name: "Integration Connectors"
 product_slug: "integration-connectors"
 feature_name: "BigQuery connector OAuth 2.0 authorization code support"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-09-19"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/custom-connectors"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
 keywords:
   - "connector"
   - "oauth"
@@ -37,45 +38,68 @@ The BigQuery connector supports OAuth 2.0 authorization code authentication.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure)
 
 ## Supporting Pages
 
-### Google Drive connector | Integration Connectors | Google Cloud Documentation
+### Apigee API hub \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- Source ID: `site-docs-root`
-- Final score: 92
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 218
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following authentication types are supported by the Apigee API hub connection: OAuth 2.0 - Authorization code Service account authentication To understand how to configure these authentication types, see Configure authentication .
+- Verify the OAuth 2.0 - Authorization code details in the Authentication section.
+- Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in the Apigee API hub, you must re-authorize your Apigee API hub connection.
+- Authorize the connection If you use OAuth 2.0 - authorization code to authenticate the connection, complete the following tasks after you create the connection.
+
+### Asana \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 209
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Google Drive connector Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc google drive/overview If the action is successful, the connector task&#x27;s connectorOutputPayload response parameter will have a value similar to the following: ...
-- The following example shows how to configure the SubscribeToFileChanges action in Application Integration:
+- Additional steps after connection creation If you selected OAuth 2.0 - Authorization code for authentication, you must do the following additional steps after creating the connection: In the Connections page , locate the newly created connection.
+- The following authentication types are supported by the Asana connection: Personal Access Token OAuth 2.0 Authorization code To understand how to configure these authentication types, see Configure authentication .
+- Verify the OAuth 2.0 - Authorization code details in the Authentication section.
+- Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in your Asana application, you must re-authorize your Asana connection.
 
-### Marketplace connectors overview | Integration Connectors | Google Cloud Documentation
+### Box \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- Source ID: `site-docs-root`
-- Final score: 86
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 209
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Marketplace connectors overview Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview As a partner, when you publish a custom connector as a Marketplace connector, it enhances the visibility and reach of the connector.
-- As a Marketplace consumer, you can use the trusted Google Cloud Marketplace platform to discover and purchase connectors required to build integrations in Application ...
+- The following authentication types are supported by the Box connection: JWT authentication OAuth 2.0 - Authorization code Box JSON OAuth 2.0 - Client credentials To understand how to configure these authentication types, see Configure authentication .
+- Additional steps after connection creation If you selected OAuth 2.0 - Authorization code for authentication, you must do the following additional steps after creating the connection: In the Connections page , locate the newly created connection.
+- Verify the OAuth 2.0 - Authorization code details in the Authentication section.
+- OAuth JWT token method connection type Field name Details Location us-central1 Connector Box Connector version 1 Connection Name box-conn Enable Cloud Logging yes Service Account XXXX@serviceaccount Impersonate User Mode User Minimum number of nodes 2 Maximum number of nodes 2 Authentication JWT Authentication Client ID XXXX Client Secret XXXX Secret Version 1 Private key XXXX Secret Version 1 Private key Password XXXX Secret Version 1 Box Application Access level Enterprise Enterprise ID/User Id XXXX OAuth JWT Public Key Id XXXX Auth Scheme OAuthJWT Initiatiate OAuth GETANDREFRESH OAuth JWT Cert Type PEMKEY BLOB You can access the Client ID, Client Secret, Box Application Access Level, and Enterprise Id/User Id from the Box account.
 
-### Custom connectors | Integration Connectors | Google Cloud Documentation
+### Bigtable \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- Source ID: `site-docs-root`
-- Final score: 80
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 205
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Custom connectors Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/custom-connectors This page provides an overview of the custom connectors feature in Integration Connectors, and assumes that you are familiar with the following concepts:
+- Service account authentication connection type Field name Details Location asia-east1 Version 1 Connector bigtable Connector version 1 Connection Name googlecloud-bigtable-service-authontication Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Project Id PROJECT ID Instance ID gcloud-bigtable-instance Connection Pool Size 1 Minimum number of nodes 2 Maximum number of nodes 50 Client Secret bigtable-client-secret Secret Version 1 OAuth 2.0 - Authorization code connection type Field name Details Location asia-east1 Version 1 Connector bigtable Connector version 1 Connection Name bigtable-oauth Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Project Id PROJECT ID Instance ID googlecloud-bigtable-instance Connection Pool Size 1 Minimum number of nodes 2 Maximum number of nodes 50 Client Secret bigtable-client-secret Secret Version 1 System limitations The Bigtable connector can process a maximum of 16 transactions per second, per node , and throttles any transactions beyond this limit.
+- The following authentication types are supported by the Bigtable connection: Service Account Authentication OAuth 2.0 - Authorization code To understand how to configure these authentication types, see Configure authentication .
+- OAuth 2.0 - Authorization code Client ID : The client ID provided by the application.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
 

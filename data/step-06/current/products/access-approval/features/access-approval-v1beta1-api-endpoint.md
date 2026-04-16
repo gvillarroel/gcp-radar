@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:23.455Z"
+generated_at: "2026-04-12T15:57:29.238Z"
 product_name: "Access Approval"
 product_slug: "access-approval"
 feature_name: "Access Approval v1beta1 API endpoint"
 feature_slug: "access-approval-v1beta1-api-endpoint"
 latest_feature_date: "2020-01-27"
 deprecation_date: "2020-08-01"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/approve"
 keywords:
   - "August 1 2020 deprecation"
   - "stopped accepting requests"
@@ -24,7 +27,7 @@ keywords:
 # Access Approval v1beta1 API endpoint
 
 Product: Access Approval
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,25 +39,46 @@ The Access Approval API v1beta1 endpoint was announced to stop accepting request
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes](https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/approve](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/approve)
 
 ## Supporting Pages
 
-### Release notes \_|\_ Access Approval \_|\_ Google Cloud Documentation
+### "REST Resource: folders.approvalRequests \_|\_ Access Approval \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes](https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests)
+- Source ID: `site-api-reference`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- The v1beta1 endpoint will stop accepting requests on August 1, 2020. v1beta1 Feature AccessApprovalSettings now includes the configuration of enrollment at the project, folder or organization level.
-- Project and folder enrollment can be done for 'all' cloud products only, while organization enrollment can be done for either of individual or 'all' products. v1beta1 Feature DeleteAccessApprovalSettings API has been added.
-- January 27, 2020 v1beta1 Feature The v1 endpoint is available and functionally equivalent to v1beta1.
-- March 29, 2019 v1beta1 Feature Beta release of Access Approval API.
+### "REST Resource: organizations.approvalRequests \_|\_ Access Approval \_|\_\
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests)
+- Source ID: `site-api-reference`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "REST Resource: projects.approvalRequests \_|\_ Access Approval \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/projects.approvalRequests)
+- Source ID: `site-api-reference`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Method: folders.approvalRequests.approve \_|\_ Access Approval \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/approve](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/approve)
+- Source ID: `site-api-reference`
+- Final score: 90
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

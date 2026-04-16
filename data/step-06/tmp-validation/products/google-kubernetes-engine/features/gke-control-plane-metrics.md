@@ -1,0 +1,89 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T03:58:56.282Z"
+product_name: "Google Kubernetes Engine"
+product_slug: "google-kubernetes-engine"
+feature_name: "GKE control plane metrics"
+feature_slug: "gke-control-plane-metrics"
+latest_feature_date: "2022-09-28"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security"
+keywords:
+  - "available"
+  - "control"
+  - "metrics"
+  - "clusters"
+  - "plane"
+---
+
+# GKE control plane metrics
+
+Product: Google Kubernetes Engine
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Control plane metrics are available for supported GKE clusters.
+
+## Extended Definition
+
+Control plane metrics are available for supported GKE clusters.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security)
+
+## Supporting Pages
+
+### "Collect and view control plane metrics \_|\_ Google Kubernetes Engine (GKE)\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics)
+- Source ID: `site-docs-reference-2`
+- Final score: 240
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To enable control plane metrics from the Observability tab for the cluster, do the following: In the Google Cloud console, go to the Kubernetes clusters page: Go to Kubernetes clusters If you use the search bar to find this page, then select the result whose subheading is Kubernetes Engine .
+- To enable control plane metrics from the Details tab for the cluster, do the following: In the Google Cloud console, go to the Kubernetes clusters page: Go to Kubernetes clusters If you use the search bar to find this page, then select the result whose subheading is Kubernetes Engine .
+- For example, to measure the API server traffic per instance of the Kubernetes control plane, use the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=" CLUSTER NAME "}[1m])) To query the unsuccessful requests, filter the code label for 4xx and 5xx values by using the following PromQL query: sum(rate(apiserver request total{code= "[45].."}[5m])) To query the successful requests, filter the code label for 2xx values by using the following PromQL query: sum(rate(apiserver request total{code= "2.."}[5m])) To query the rejected requests by the API server per instance of the Kubernetes control plane, filter the code label for the value 429 ( http.StatusTooManyRequests ) by using the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=" CLUSTER NAME ", code="429"}[1m])) Saturation You can measure the saturation in your system by using the apiserver current inflight requests and apiserver storage objects metrics.
+- Click Save Changes . gcloud Update your cluster to collect metrics emitted by the Kubernetes API server, Scheduler, and Controller Manager: gcloud container clusters update CLUSTER NAME \ --location = COMPUTE LOCATION \ --monitoring = SYSTEM,API SERVER,SCHEDULER,CONTROLLER MANAGER Replace the following: CLUSTER NAME : the name of the cluster.
+
+### "About GKE control plane authority \_|\_ GKE security \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority)
+- Source ID: `site-iam-reference`
+- Final score: 157
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- What's next Run your own certificate authorities and signing keys in GKE Encrypt GKE control plane data at rest with your keys Verify GKE control plane VM integrity Verify credential issuance and usage in GKE clusters Verify connections by Google personnel in the cluster control plane Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The following documents show you how to view and process the various types of control plane logs: Verify credential issuance and verification operations in GKE clusters Verify connections by Google personnel in the cluster control plane Additional resources about control plane security This section describes other methods that you can use to improve your confidence in your control plane security.
+- About GKE control plane authority features In GKE, Google Cloud fully manages the security configuration of the control plane, including encryption of storage at rest , and configuring the keys and certificate authorities (CAs) that sign and verify credentials in your clusters.
+- Autopilot Standard Note: This document uses a general availability feature named GKE control plane authority that's only available for eligible Google Cloud customers.
+
+### Control plane security \_|\_ GKE security \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security)
+- Source ID: `site-iam-reference`
+- Final score: 157
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Traffic on port 2380 between etcd database instances on multiple control plane VMs (such as in regional clusters) is encrypted by mutual TLS .
+- Port 2380 isn't used in clusters that store the cluster state in a Spanner database because the database doesn't run in the control plane VMs.
+- For details about why you'd use these features and for all of the capabilities that are available, see About GKE control plane authority .
+- This minimizes the risk of a control plane component becoming unavailable.
+

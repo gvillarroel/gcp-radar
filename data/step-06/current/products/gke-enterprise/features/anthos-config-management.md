@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.770Z"
+generated_at: "2026-04-12T12:16:18.949Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Anthos Config Management"
@@ -11,6 +11,7 @@ coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
 keywords:
   - "anthos"
@@ -38,12 +39,13 @@ A service for centrally managing Kubernetes configuration and policy across clus
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
 
 ## Supporting Pages
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 152
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 146
+- Final score: 183
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,13 +76,25 @@ Evidence snippets:
 - To review the usage, enable Data Access audit logs and look for audit logs with the caller identity set to service-PROJECT NUMBER@gcp-sa-anthossupport.iam.gserviceaccount.com .
 - If you need to install the Google Cloud CLI, see the installation guide . kubectl for running commands against Kubernetes clusters.
 
+### "Common GKE user roles and tasks \_|\_ Google Kubernetes Engine (GKE) \_\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
+- Source ID: `site-iam-reference`
+- Final score: 150
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- IT administrators IT administrators are responsible for the upkeep, configuration, and reliable operation of an organization's computer systems, servers, and data security systems.
+- Network administrators Network administrators are responsible for the installation, configuration, maintenance, and troubleshooting of computer networks.
+- They manage multiple security functions and are responsible for implementing configurations of systems to meet defined requirements.
+- Platform admins and operators Platform admins and operators are responsible for provisioning and creating resources for application teams, and managing the central infrastructure for their organization.
+
 ### "Reference architecture: Hybrid environment for Google Kubernetes Engine\
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
 - Source ID: `site-docs-reference`
-- Final score: 124
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 144
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Design considerations for availability, security and compliance, scale and limits, observability, Git-ops based configuration management, and more.

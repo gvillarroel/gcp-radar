@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2026-02-27 | Cloud Product Registry API | LOW | [source](https://docs.cloud.google.com/product-registry/overview)<br>[source](https://docs.cloud.google.com/product-registry/release-notes)<br>[source](https://docs.cloud.google.com/product-registry/reference/cloudproductregistry-api/rest/v1/logicalProducts/get) | Cloud Product Registry API provides programmatic access to the official hierarchy of first-party Google Cloud products and variants with basic product attributes. |
+| 2026-02-27 | Cloud Product Registry API | MEDIUM | [source](https://docs.cloud.google.com/product-registry/overview)<br>[source](https://docs.cloud.google.com/product-registry/reference/cloudproductregistry-api/rest/v1/logicalProducts/get)<br>[source](https://docs.cloud.google.com/product-registry/reference/cloudproductregistry-api/rest/v1/logicalProducts/list)<br>[source](https://docs.cloud.google.com/product-registry/reference/cloudproductregistry-api/rest/v1/logicalProducts/lookupEntity) | Cloud Product Registry API provides programmatic access to the official hierarchy of first-party Google Cloud products and variants with basic product attributes. |
 

@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 154
-Unique features: 198
+Unique features: 197
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -23,7 +23,6 @@ Unique features: 198
 | 2025-12-23 | Bluesky Insights |  | This partner connector imports Bluesky data into Looker Studio. |
 | 2025-12-23 | Ecwid |  | This partner connector imports Ecwid data into Looker Studio. |
 | 2025-12-23 | Facebook Insights |  | This partner connector imports Facebook Insights data into Looker Studio. |
-| 2025-12-23 | G2 |  | This partner connector imports G2 data into Looker Studio. |
 | 2025-12-23 | Mentionlytics |  | This partner connector imports Mentionlytics data into Looker Studio. |
 | 2025-12-23 | Odoo Attendance AppiWorks |  | This partner connector imports Odoo Attendance data into Looker Studio. |
 | 2025-12-23 | Shopee Ads |  | This partner connector imports Shopee Ads data into Looker Studio. |

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:38.934Z"
+generated_at: "2026-04-12T12:17:32.214Z"
 product_name: "Integration Connectors"
 product_slug: "integration-connectors"
 feature_name: "Custom SQL editor"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-01-30"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/integration-connectors/docs/custom-connectors"
-  - "https://docs.cloud.google.com/integration-connectors/docs/overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
 keywords:
   - "custom"
   - "sql"
@@ -38,46 +39,69 @@ The custom SQL editor lets you run custom queries across supported connectors in
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- [https://docs.cloud.google.com/integration-connectors/docs/overview](https://docs.cloud.google.com/integration-connectors/docs/overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure)
 
 ## Supporting Pages
 
-### Custom connectors | Integration Connectors | Google Cloud Documentation
+### "Cloud SQL for PostgreSQL \_|\_ Integration Connectors \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- Source ID: `site-docs-root`
-- Final score: 58
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Custom connectors Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/custom-connectors This page provides an overview of the custom connectors feature in Integration Connectors, and assumes that you are familiar with the following concepts:
-
-### Integration Connectors overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/overview](https://docs.cloud.google.com/integration-connectors/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 34
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 225
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- With connectors, both Google Cloud services and other business applications are exposed to your integrations through a transparent, standard interface.
-- Integration Connectors overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/overview Integration Connectors let you connect to various data sources from your integrations.
+- Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.
+- Cloud SQL for PostgreSQL The PostgreSQL connector type lets you insert, read, update, and delete rows in a PostgreSQL database.
+- To execute custom SQL queries, the connector provides the Execute custom query action.
+- When creating this connection by using Terraform, you must set the following variables in your Terraform configuration file: Parameter name Data type Required Description project id STRING True Project ID of the project that contains the Cloud SQL instance. e.g. myproject. database region STRING True The cloud region for the instance. e.g. us-central1. instance id STRING True Database instance ID.
 
-### Marketplace connectors overview | Integration Connectors | Google Cloud Documentation
+### Cloud SQL for MySQL \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- Source ID: `site-docs-root`
-- Final score: 34
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 225
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.
+- Cloud SQL for MySQL The MySQL connector lets you insert, read, update and delete rows in a MySQL database.
+- To execute custom SQL queries, the connector provides the Execute custom query action.
+- When creating this connection by using Terraform, you must set the following variables in your Terraform configuration file: Parameter name Data type Required Description project id STRING True Project ID of the project that contains the Cloud SQL instance. e.g. myproject. database region STRING True The cloud region for the instance. e.g. us-central1. instance id STRING True Database instance ID.
+
+### CockroachDB \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Running this example, returns a response similar to the following in the Connector task's connectorOutputPayload output variable: { } Create connections using Terraform You can use the Terraform resource to create a new connection.
+- To configure the node values, do the following: If you are a pay-as-you-go customer, configure the minimum and maximum node value in the edit connection page.
+- You can use a question mark (?) in a SQL statement to represent a single parameter that must be specified in the query parameters list.
+- If you've used question marks in your SQL query, you must add the parameter by clicking + Add Parameter Name for each question mark.
+
+### Couchbase \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 189
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Marketplace connectors overview Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview As a partner, when you publish a custom connector as a Marketplace connector, it enhances the visibility and reach of the connector.
-- As a Marketplace consumer, you can use the trusted Google Cloud Marketplace platform to discover and purchase connectors required to build integrations in Application ...
+- To execute custom SQL queries, the connector provides the Execute custom query action.
+- Supported values are: N1QL, Analytics create table ram quota STRING False The default RAM quota, in megabytes, to use when inserting buckets via the CREATE TABLE syntax. dataverse separator STRING False The character or characters used to denote Analytics dataverses and scopes/collections. flavor separator STRING False The character or characters used to denote flavors. n1 qlport STRING False The port for connecting to the Couchbase N1QL Endpoint. periods separator STRING False The character or characters used to denote hierarchy. query execution timeout STRING False This sets the server-side timeout for the query, which governs how long Couchbase will execute the query before returning a timeout error. strict comparison STRING False Adjusts how precisely to translate filters on SQL input queries into Couchbase queries.
+- Note: The results of all the actions will be available as a JSON response in the Connectors task's connectorOutputPayload response parameter after you run your integration.
+- To configure the node values, do the following: If you are a pay-as-you-go customer, configure the minimum and maximum node value in the edit connection page.
 

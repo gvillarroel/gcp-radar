@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:21:40+00:00'
-updated_at: '2026-04-10T14:55:54+00:00'
+updated_at: '2026-04-13T18:32:07+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/apigee/docs/api-platform/integration/using-application-integration
   created_at: '2026-04-10T14:52:21+00:00'
-  updated_at: '2026-04-10T14:54:19+00:00'
+  updated_at: '2026-04-13T18:25:19+00:00'
   update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/integration/using-application-integration
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 1
     max_pages: 36
     compact_output: true
-  last_synced_at: '2026-04-10T14:54:19+00:00'
+  last_synced_at: '2026-04-13T18:25:19+00:00'
 - type: site
   id: site-api-reference
   title: https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest
   created_at: '2026-04-10T14:52:21+00:00'
-  updated_at: '2026-04-10T14:55:54+00:00'
+  updated_at: '2026-04-13T18:26:57+00:00'
   update_command: know sync site https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
@@ -34,4 +34,46 @@ sources:
     max_depth: 1
     max_pages: 26
     compact_output: true
-  last_synced_at: '2026-04-10T14:55:54+00:00'
+  last_synced_at: '2026-04-13T18:26:57+00:00'
+- type: site
+  id: site-docs-root-required-2
+  title: https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks
+  created_at: '2026-04-13T18:23:13+00:00'
+  updated_at: '2026-04-13T18:29:02+00:00'
+  update_command: know sync site https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-required-2
+  config:
+    url: https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks
+    max_depth: 1
+    max_pages: 36
+    compact_output: true
+  last_synced_at: '2026-04-13T18:29:02+00:00'
+- type: site
+  id: site-docs-reference-required-1
+  title: https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference
+  created_at: '2026-04-13T18:23:13+00:00'
+  updated_at: '2026-04-13T18:30:35+00:00'
+  update_command: know sync site https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-1
+  config:
+    url: https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-13T18:30:35+00:00'
+- type: site
+  id: site-docs-reference-required-2
+  title: https://docs.cloud.google.com/application-integration/docs/vpc-service-controls
+  created_at: '2026-04-13T18:23:14+00:00'
+  updated_at: '2026-04-13T18:32:07+00:00'
+  update_command: know sync site https://docs.cloud.google.com/application-integration/docs/vpc-service-controls
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/application-integration/docs/vpc-service-controls
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-13T18:32:07+00:00'

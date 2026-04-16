@@ -1,0 +1,43 @@
+---
+title: "ActionHandler \_|\_ Gmail \_|\_ Google for Developers"
+url: https://developers.google.com/workspace/gmail/markup/reference/types/ActionHandler
+knowledge_key: corpus
+source_id: site-docs-reference-required-15
+source_type: site
+entrypoint: https://developers.google.com/workspace/gmail/markup/reference/go-to-action
+source_metadata:
+  url: https://developers.google.com/workspace/gmail/markup/reference/types/ActionHandler
+  title: "ActionHandler \_|\_ Gmail \_|\_ Google for Developers"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Google Workspace
+Gmail
+Reference
+Send feedback
+ActionHandler
+Stay organized with collections
+Save and categorize content based on your preferences.
+Type name: ActionHandler
+Extends Intangible
+Name
+Type
+Description
+actionType
+URL
+Type of action that the handler accepts. This is to allow user agents to automatically discover potential action handlers for various actions.
+optionalProperty
+Property
+Property that can be specified on the Action that the handler supports.
+requiredProperty
+Property
+Property that must be provided on the action for it to be handled by the handler.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-03-24 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-03-24 UTC."],[],[]]

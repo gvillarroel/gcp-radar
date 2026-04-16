@@ -1,0 +1,3063 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-15T12:12:39.469Z",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "input_file": "data/step-06/current/products/cloud-sql-for-sql-server/extended-features.json",
+  "feature_count": 176,
+  "passed_feature_count": 176,
+  "failed_feature_count": 0,
+  "warned_feature_count": 6,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "SQL Server 2019 support",
+      "feature_slug": "sql-server-2019-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/introduction",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "feature_name": "cross-region replicas",
+      "feature_slug": "cross-region-replicas",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "feature_name": "replication",
+      "feature_slug": "replication",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "feature_name": "change data capture",
+      "feature_slug": "change-data-capture",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview"
+      ]
+    },
+    {
+      "feature_name": "instance cloning",
+      "feature_slug": "instance-cloning",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "feature_name": "96-core machine types",
+      "feature_slug": "96-core-machine-types",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "Read pools",
+      "feature_slug": "read-pools",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "Cross-project point-in-time recovery",
+      "feature_slug": "cross-project-point-in-time-recovery",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr"
+      ]
+    },
+    {
+      "feature_name": "Multi-region backup vaults",
+      "feature_slug": "multi-region-backup-vaults",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-enhanced-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "feature_name": "Automatic server certificate rotation",
+      "feature_slug": "automatic-server-certificate-rotation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde"
+      ]
+    },
+    {
+      "feature_name": "Gemini Cloud Assist investigation capabilities",
+      "feature_slug": "gemini-cloud-assist-investigation-capabilities",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity"
+      ]
+    },
+    {
+      "feature_name": "Organization policy control for MCP services",
+      "feature_slug": "organization-policy-control-for-mcp-services",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL remote MCP server",
+      "feature_slug": "cloud-sql-remote-mcp-server",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "feature_name": "Server CA mode update",
+      "feature_slug": "server-ca-mode-update",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/how-tos/performance"
+      ]
+    },
+    {
+      "feature_name": "Enhanced backups",
+      "feature_slug": "enhanced-backups",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-enhanced-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "feature_name": "Point-in-time recovery after instance deletion",
+      "feature_slug": "point-in-time-recovery-after-instance-deletion",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Microsoft Entra ID integration",
+      "feature_slug": "microsoft-entra-id-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Customer-managed Active Directory integration",
+      "feature_slug": "customer-managed-active-directory-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "N4 machine series support",
+      "feature_slug": "n4-machine-series-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition"
+      ]
+    },
+    {
+      "feature_name": "Advanced disaster recovery for PSC-enabled Enterprise Plus instances",
+      "feature_slug": "advanced-disaster-recovery-for-psc-enabled-enterprise-plus-instances",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore"
+      ]
+    },
+    {
+      "feature_name": "Gemini query error fixing in Cloud SQL Studio",
+      "feature_slug": "gemini-query-error-fixing-in-cloud-sql-studio",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api-error-messages"
+      ]
+    },
+    {
+      "feature_name": "Gemini CLI extension for Cloud SQL for SQL Server",
+      "feature_slug": "gemini-cli-extension-for-cloud-sql-for-sql-server",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "feature_name": "Retained PITR logs after instance deletion",
+      "feature_slug": "retained-pitr-logs-after-instance-deletion",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Automatic Private Service Connect endpoint creation",
+      "feature_slug": "automatic-private-service-connect-endpoint-creation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Final backup settings",
+      "feature_slug": "final-backup-settings",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "feature_name": "MAXDOP database flag",
+      "feature_slug": "maxdop-database-flag",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+      ]
+    },
+    {
+      "feature_name": "Saved queries in Cloud SQL Studio",
+      "feature_slug": "saved-queries-in-cloud-sql-studio",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "feature_name": "Deny maintenance period for outdated maintenance versions",
+      "feature_slug": "deny-maintenance-period-for-outdated-maintenance-versions",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "IPv6 endpoints for Private Service Connect",
+      "feature_slug": "ipv6-endpoints-for-private-service-connect",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Private Service Connect backends",
+      "feature_slug": "private-service-connect-backends",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Private Service Connect outbound connectivity",
+      "feature_slug": "private-service-connect-outbound-connectivity",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity"
+      ]
+    },
+    {
+      "feature_name": "Near-zero downtime maintenance and machine tier upgrades",
+      "feature_slug": "near-zero-downtime-maintenance-and-machine-tier-upgrades",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "Backup service selection",
+      "feature_slug": "backup-service-selection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-enhanced-backups"
+      ]
+    },
+    {
+      "feature_name": "Active Directory support for write endpoints",
+      "feature_slug": "active-directory-support-for-write-endpoints",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "Maximum server memory recommender",
+      "feature_slug": "maximum-server-memory-recommender",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "Combined private services access and Private Service Connect",
+      "feature_slug": "combined-private-services-access-and-private-service-connect",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview"
+      ]
+    },
+    {
+      "feature_name": "TLS connections to Active Directory endpoints without server certificate trust",
+      "feature_slug": "tls-connections-to-active-directory-endpoints-without-server-certificate-trust",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "feature_name": "AI-assisted troubleshooting",
+      "feature_slug": "ai-assisted-troubleshooting",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Custom subject alternative name configuration",
+      "feature_slug": "custom-subject-alternative-name-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl"
+      ]
+    },
+    {
+      "feature_name": "Customer-managed CA mode",
+      "feature_slug": "customer-managed-ca-mode",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "Shared CA mode",
+      "feature_slug": "shared-ca-mode",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad"
+      ]
+    },
+    {
+      "feature_name": "Private Service Connect endpoint propagation",
+      "feature_slug": "private-service-connect-endpoint-propagation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview"
+      ]
+    },
+    {
+      "feature_name": "Query insights",
+      "feature_slug": "query-insights",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/how-tos/performance"
+      ]
+    },
+    {
+      "feature_name": "Enterprise Plus recommender",
+      "feature_slug": "enterprise-plus-recommender",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore"
+      ]
+    },
+    {
+      "feature_name": "SQL Server 2022 Standard default version",
+      "feature_slug": "sql-server-2022-standard-default-version",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "feature_name": "Retained backups after instance deletion",
+      "feature_slug": "retained-backups-after-instance-deletion",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "feature_name": "Transaction log export",
+      "feature_slug": "transaction-log-export",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Transparent data encryption",
+      "feature_slug": "transparent-data-encryption",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "feature_name": "Point-in-time recovery for unavailable instances",
+      "feature_slug": "point-in-time-recovery-for-unavailable-instances",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr"
+      ]
+    },
+    {
+      "feature_name": "Enterprise edition support in europe-north2",
+      "feature_slug": "enterprise-edition-support-in-europe-north2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition"
+      ]
+    },
+    {
+      "feature_name": "Final backup before instance deletion",
+      "feature_slug": "final-backup-before-instance-deletion",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "feature_name": "tempdb file size control",
+      "feature_slug": "tempdb-file-size-control",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "feature_name": "Active queries",
+      "feature_slug": "active-queries",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "Index advisor",
+      "feature_slug": "index-advisor",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "Query insights for Enterprise Plus",
+      "feature_slug": "query-insights-for-enterprise-plus",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "feature_name": "System insights",
+      "feature_slug": "system-insights",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Enterprise Plus regional expansion",
+      "feature_slug": "enterprise-plus-regional-expansion",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/mcp/supported-products",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "northamerica-south1 region availability",
+      "feature_slug": "northamerica-south1-region-availability",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "BackupRun custom organization policies",
+      "feature_slug": "backuprun-custom-organization-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/backupRuns",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+      ]
+    },
+    {
+      "feature_name": "Instances resource custom organization policy fields",
+      "feature_slug": "instances-resource-custom-organization-policy-fields",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting"
+      ]
+    },
+    {
+      "feature_name": "Backup size visibility",
+      "feature_slug": "backup-size-visibility",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore"
+      ]
+    },
+    {
+      "feature_name": "Backup maxChargeableBytes field",
+      "feature_slug": "backup-maxchargeablebytes-field",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/backupRuns",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "feature_name": "Read replicas with private services access and connector enforcement",
+      "feature_slug": "read-replicas-with-private-services-access-and-connector-enforcement",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "feature_name": "Automatic max server memory configuration",
+      "feature_slug": "automatic-max-server-memory-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "feature_name": "PITR transaction log export",
+      "feature_slug": "pitr-transaction-log-export",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/pitr"
+      ]
+    },
+    {
+      "feature_name": "Server certificate authority mode configuration",
+      "feature_slug": "server-certificate-authority-mode-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/connect/get"
+      ]
+    },
+    {
+      "feature_name": "Instance time zone update",
+      "feature_slug": "instance-time-zone-update",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "Extended PITR transaction log retention",
+      "feature_slug": "extended-pitr-transaction-log-retention",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Studio User IAM role",
+      "feature_slug": "cloud-sql-studio-user-iam-role",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions"
+      ]
+    },
+    {
+      "feature_name": "Clone preferred zone selection",
+      "feature_slug": "clone-preferred-zone-selection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/pitr"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Enterprise edition",
+      "feature_slug": "cloud-sql-enterprise-edition",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Enterprise Plus edition",
+      "feature_slug": "cloud-sql-enterprise-plus-edition",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "Extended Events",
+      "feature_slug": "extended-events",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL instance custom organization policies",
+      "feature_slug": "cloud-sql-instance-custom-organization-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Studio",
+      "feature_slug": "cloud-sql-studio",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Dataplex Catalog integration",
+      "feature_slug": "dataplex-catalog-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/roles-and-permissions"
+      ]
+    },
+    {
+      "feature_name": "Available database versions for upgrade API",
+      "feature_slug": "available-database-versions-for-upgrade-api",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "Week 5 maintenance notifications",
+      "feature_slug": "week-5-maintenance-notifications",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "feature_name": "PITR transaction logs in Cloud Storage",
+      "feature_slug": "pitr-transaction-logs-in-cloud-storage",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/pitr"
+      ]
+    },
+    {
+      "feature_name": "Database Center",
+      "feature_slug": "database-center",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/introduction",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "feature_name": "Database Insight recommendations",
+      "feature_slug": "database-insight-recommendations",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases"
+      ]
+    },
+    {
+      "feature_name": "SSL mode",
+      "feature_slug": "ssl-mode",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Private Service Connect",
+      "feature_slug": "private-service-connect",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Private Service Connect availability type selection",
+      "feature_slug": "private-service-connect-availability-type-selection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    },
+    {
+      "feature_name": "Private Service Connect cross-region read replicas",
+      "feature_slug": "private-service-connect-cross-region-read-replicas",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools"
+      ]
+    },
+    {
+      "feature_name": "SQL Server Reporting Services",
+      "feature_slug": "sql-server-reporting-services",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "New network architecture upgrade",
+      "feature_slug": "new-network-architecture-upgrade",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "Automatic read replica maintenance during self-service maintenance",
+      "feature_slug": "automatic-read-replica-maintenance-during-self-service-maintenance",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting"
+      ]
+    },
+    {
+      "feature_name": "africa-south1 region availability",
+      "feature_slug": "africa-south1-region-availability",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "Bulk insert support",
+      "feature_slug": "bulk-insert-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Transaction log backup import",
+      "feature_slug": "transaction-log-backup-import",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/Backups/ListBackups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "feature_name": "cross db ownership chaining flag",
+      "feature_slug": "cross-db-ownership-chaining-flag",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "feature_name": "enable-high-availability recommender",
+      "feature_slug": "enable-high-availability-recommender",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "me-central2 region availability",
+      "feature_slug": "me-central2-region-availability",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "europe-west10 region availability",
+      "feature_slug": "europe-west10-region-availability",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "CMEK re-encryption with new primary key version",
+      "feature_slug": "cmek-re-encryption-with-new-primary-key-version",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/client-side-encryption"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Node.js Language Connector",
+      "feature_slug": "cloud-sql-node-js-language-connector",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity"
+      ]
+    },
+    {
+      "feature_name": "Multiple API rate quota categories",
+      "feature_slug": "multiple-api-rate-quota-categories",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/mcp/quotas",
+        "https://docs.cloud.google.com/sql/docs/error-messages"
+      ]
+    },
+    {
+      "feature_name": "Default maintenance windows",
+      "feature_slug": "default-maintenance-windows",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "feature_name": "Non-RFC 1918 IP address range support",
+      "feature_slug": "non-rfc-1918-ip-address-range-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak"
+      ]
+    },
+    {
+      "feature_name": "SQL Server 2022",
+      "feature_slug": "sql-server-2022",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "feature_name": "Differential backup import and export",
+      "feature_slug": "differential-backup-import-and-export",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Proxy Operator",
+      "feature_slug": "cloud-sql-proxy-operator",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview"
+      ]
+    },
+    {
+      "feature_name": "PITR with read replicas",
+      "feature_slug": "pitr-with-read-replicas",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "feature_name": "Simultaneous multithreading control",
+      "feature_slug": "simultaneous-multithreading-control",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "bcp utility support",
+      "feature_slug": "bcp-utility-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/mcp/authenticate-mcp"
+      ]
+    },
+    {
+      "feature_name": "me-central1 region availability",
+      "feature_slug": "me-central1-region-availability",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "SqlPackage utility support",
+      "feature_slug": "sqlpackage-utility-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "feature_name": "Expanded Cloud SQL metrics",
+      "feature_slug": "expanded-cloud-sql-metrics",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "Read replica maintenance inheritance",
+      "feature_slug": "read-replica-maintenance-inheritance",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Active Directory Diagnosis tool",
+      "feature_slug": "cloud-sql-active-directory-diagnosis-tool",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Linked Servers",
+      "feature_slug": "linked-servers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Regional availability in europe-west12",
+      "feature_slug": "regional-availability-in-europe-west12",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "Get user details API",
+      "feature_slug": "get-user-details-api",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Auth Proxy v2",
+      "feature_slug": "cloud-sql-auth-proxy-v2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-networks"
+      ]
+    },
+    {
+      "feature_name": "Underprovisioned instance recommender",
+      "feature_slug": "underprovisioned-instance-recommender",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/choose-edition"
+      ]
+    },
+    {
+      "feature_name": "Automated backup audit logs",
+      "feature_slug": "automated-backup-audit-logs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "feature_name": "Point-in-time recovery",
+      "feature_slug": "point-in-time-recovery",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Striped import and export",
+      "feature_slug": "striped-import-and-export",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "feature_name": "Permanent instance time zone",
+      "feature_slug": "permanent-instance-time-zone",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "Terraform support for self-service maintenance",
+      "feature_slug": "terraform-support-for-self-service-maintenance",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases"
+      ]
+    },
+    {
+      "feature_name": "Immediate instance name reuse",
+      "feature_slug": "immediate-instance-name-reuse",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Regional availability in me-west1",
+      "feature_slug": "regional-availability-in-me-west1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "Instance deletion protection",
+      "feature_slug": "instance-deletion-protection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "In-place major version upgrade",
+      "feature_slug": "in-place-major-version-upgrade",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "SQL Server Audit",
+      "feature_slug": "sql-server-audit",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "feature_name": "Transactional replication to external subscribers",
+      "feature_slug": "transactional-replication-to-external-subscribers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/ExternalSyncMode",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api-error-messages"
+      ]
+    },
+    {
+      "feature_name": "Faster machine type changes",
+      "feature_slug": "faster-machine-type-changes",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting"
+      ]
+    },
+    {
+      "feature_name": "Regional availability in us-south1",
+      "feature_slug": "regional-availability-in-us-south1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "Regional availability in us-east5",
+      "feature_slug": "regional-availability-in-us-east5",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "Regional availability in europe-west9",
+      "feature_slug": "regional-availability-in-europe-west9",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "Idle database instance recommender",
+      "feature_slug": "idle-database-instance-recommender",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases"
+      ]
+    },
+    {
+      "feature_name": "Overprovisioned database instance recommender",
+      "feature_slug": "overprovisioned-database-instance-recommender",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases"
+      ]
+    },
+    {
+      "feature_name": "Maintenance changelogs",
+      "feature_slug": "maintenance-changelogs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "feature_name": "Self-service maintenance",
+      "feature_slug": "self-service-maintenance",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/introduction"
+      ]
+    },
+    {
+      "feature_name": "Regional availability in europe-west8",
+      "feature_slug": "regional-availability-in-europe-west8",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "CMEK organization policy constraints",
+      "feature_slug": "cmek-organization-policy-constraints",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "feature_name": "Allocated IP range selection for clones and replicas",
+      "feature_slug": "allocated-ip-range-selection-for-clones-and-replicas",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting"
+      ]
+    },
+    {
+      "feature_name": "Google Cloud tags for instances",
+      "feature_slug": "google-cloud-tags-for-instances",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/mcp/access-control",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "feature_name": "Cross-region replication",
+      "feature_slug": "cross-region-replication",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/feature_support"
+      ]
+    },
+    {
+      "feature_name": "SQL Server 2019 default version",
+      "feature_slug": "sql-server-2019-default-version",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/connect/get",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Key Access Justifications",
+      "feature_slug": "key-access-justifications",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "feature_name": "Database minor version visibility",
+      "feature_slug": "database-minor-version-visibility",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "feature_name": "Cross-project Managed Service for Microsoft Active Directory integration",
+      "feature_slug": "cross-project-managed-service-for-microsoft-active-directory-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "feature_name": "Regional availability in southamerica-west1",
+      "feature_slug": "regional-availability-in-southamerica-west1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "Access Approval",
+      "feature_slug": "access-approval",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "feature_name": "Automatic stop on low storage",
+      "feature_slug": "automatic-stop-on-low-storage",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "out-of-disk recommender",
+      "feature_slug": "out-of-disk-recommender",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "IAM Conditions support",
+      "feature_slug": "iam-conditions-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/mcp/access-control",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Admin API v1",
+      "feature_slug": "cloud-sql-admin-api-v1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api"
+      ]
+    },
+    {
+      "feature_name": "Regional availability in northamerica-northeast2",
+      "feature_slug": "regional-availability-in-northamerica-northeast2",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "feature_name": "asia-south2 region support",
+      "feature_slug": "asia-south2-region-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/mcp/supported-products",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl"
+      ]
+    },
+    {
+      "feature_name": "Managed Service for Microsoft Active Directory integration",
+      "feature_slug": "managed-service-for-microsoft-active-directory-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "feature_name": "SQL Server 2019 support",
+      "feature_slug": "sql-server-2019-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/introduction",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "feature_name": "64 TB storage capacity",
+      "feature_slug": "64-tb-storage-capacity",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-storage-shrink",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "australia-southeast2 region support",
+      "feature_slug": "australia-southeast2-region-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/mcp/supported-products",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    },
+    {
+      "feature_name": "cross-region replicas",
+      "feature_slug": "cross-region-replicas",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "feature_name": "replication",
+      "feature_slug": "replication",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "feature_name": "faster maintenance",
+      "feature_slug": "faster-maintenance",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "change data capture",
+      "feature_slug": "change-data-capture",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview"
+      ]
+    },
+    {
+      "feature_name": "tempdb management",
+      "feature_slug": "tempdb-management",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "feature_name": "europe-central2 region support",
+      "feature_slug": "europe-central2-region-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/mcp/supported-products",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/connect/get"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL Admin API v1beta4",
+      "feature_slug": "cloud-sql-admin-api-v1beta4",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "feature_name": "database/memory/total_usage metric",
+      "feature_slug": "database-memory-total-usage-metric",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "automated backup retention settings",
+      "feature_slug": "automated-backup-retention-settings",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "feature_name": "deny maintenance periods",
+      "feature_slug": "deny-maintenance-periods",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "feature_name": "default database collation",
+      "feature_slug": "default-database-collation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "feature_name": "instance cloning",
+      "feature_slug": "instance-cloning",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "feature_name": "committed use discounts",
+      "feature_slug": "committed-use-discounts",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    },
+    {
+      "feature_name": "asia-southeast2 region support",
+      "feature_slug": "asia-southeast2-region-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/mcp/supported-products",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl"
+      ]
+    },
+    {
+      "feature_name": "us-west4 region support",
+      "feature_slug": "us-west4-region-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "96-core machine types",
+      "feature_slug": "96-core-machine-types",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    },
+    {
+      "feature_name": "cross-region private IP access",
+      "feature_slug": "cross-region-private-ip-access",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    },
+    {
+      "feature_name": "us-west3 region support",
+      "feature_slug": "us-west3-region-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL for SQL Server",
+      "feature_slug": "cloud-sql-for-sql-server",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "feature_name": "asia-northeast3 region support",
+      "feature_slug": "asia-northeast3-region-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/mcp/supported-products",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl"
+      ]
+    },
+    {
+      "feature_name": "VPC Service Controls",
+      "feature_slug": "vpc-service-controls",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "feature_name": "Cloud VPN connectivity",
+      "feature_slug": "cloud-vpn-connectivity",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview"
+      ]
+    },
+    {
+      "feature_name": "connection organization policies",
+      "feature_slug": "connection-organization-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "feature_name": "maintenance notifications",
+      "feature_slug": "maintenance-notifications",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/availability"
+      ]
+    },
+    {
+      "feature_name": "Access Transparency",
+      "feature_slug": "access-transparency",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "feature_name": "customer-managed encryption keys",
+      "feature_slug": "customer-managed-encryption-keys",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    }
+  ]
+}

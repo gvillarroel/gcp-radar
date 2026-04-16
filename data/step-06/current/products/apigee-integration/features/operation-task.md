@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:40.078Z"
+generated_at: "2026-04-14T05:03:12.347Z"
 product_name: "Apigee Integration"
 product_slug: "apigee-integration"
 feature_name: "Operation task"
@@ -9,16 +9,14 @@ latest_feature_date: "2023-05-23"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote"
+  - "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task"
 keywords:
-  - "Long-running operation task"
-  - "Async operation integration task"
-  - "Operation polling task"
-  - "Operation action task"
-  - "Operation status"
-  - "Poll Operation"
-  - "Operation task"
-  - "Operation"
+  - "operation"
+  - "preview"
+  - "task"
+  - "adds"
 ---
 
 # Operation task
@@ -32,55 +30,53 @@ Adds an Operation integration task in preview.
 
 ## Extended Definition
 
-In this documented Apigee workflow, an operation task is handled as a long-running operation: a command initiates an action and returns an operation ID with metadata such as state, and users poll that operation until it reaches completion. In the cited flow, deployment uses `gcloud beta apigee archives deploy` to start the operation and `gcloud beta apigee operations describe <OPERATION_ID>` to check status until the state indicates completion.
+Adds an Operation integration task in preview.
 
 ## Evidence Summary
 
-The page shows asynchronous operation handling (start + operation ID + polling status) for Apigee archive deployment, which partially aligns with an Operation task pattern but is not a full feature specification.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote](https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote)
+- [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
+- [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
+- [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
 
 ## Supporting Pages
 
-### "Step 8: Promote an archive to production \_|\_ Apigee \_|\_ Google Cloud\
+### 所有觸發條件和工作 | Application Integration | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote](https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote)
-- Source ID: `site-docs-root`
-- Final score: 26
-- Re-rank relevance: WEAK
-- Re-rank rationale: The page is a deployment guide that briefly references long-running operations, but it does not describe an Operation integration task feature.
-
-Evidence snippets:
-- Run the following command to view all archive deployments in the prod environment: gcloud beta apigee archives list --environment=prod The following provides an example of the response: Using Apigee organization 'prod' ARCHIVE ID ENVIRONMENT DEPLOYED AT LABELS OPERATION STATUS vrytwbhso558oil53m prod 2021-04-20 21:20:53 release=052021.1 Deployed Congratulations!
-- Using Apigee organization 'prod' done: true metadata: '@type': type.googleapis.com/google.cloud.apigee.v1.OperationMetadata operationType: INSERT state: IN PROGRESS targetResourceName: uri name: organizations/prod/operations/ $OPERATION ID organization: prod response: '@type': type.googleapis.com/google.cloud.apigee.v1.CanaryEvaluation control: 1-5-0-20210319-071117-ghq74 endTime: '2021-03-20T06:15:44.329363950Z' metricLabels: env: test location: us-central1 name: uri startTime: '2021-03-20T06:14:44.306534584Z' treatment: 1-5-0-20210319-190954-if0wk verdict: NONE uuid: $OPERATION ID Repeat the previous step until state is set to FINISHED indicating that the archive depoloyment is complete.
-- In the Terminal tab in Apigee VS Code, navigate to the myapigeeworkspace directory. cd myapigeeworkspace Run the following command: gcloud beta apigee archives deploy --environment=prod --labels=release=052021.1 The following provides an example of the response: Using Apigee organization dev Waiting for operation [ $OPERATION ID ] to complete...⠹ Run the following command to check the status of the operation, replacing $OPERATION ID with the operation ID returned in the previous call: gcloud beta apigee operations describe $OPERATION ID The following provides an example of the response.
-- This triggers a long-running operation that can take several minutes to complete.
-
-### Get started with Apigee and MCP \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 106
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Add the following content to the file: mcp-quickstart-openapi.yaml --- openapi : 3.0.3 info : title : Cymbal Group Products API description : This is the official API for managing the artists for Cymbal Group Products. version : 1.0.0 servers : - url : https://cymbal.products.com description : Cymbal Group Production Server - url : https://internal.products.com description : Cymbal Group internal Server paths : /artists : get : description : Returns a list of artists operationId : listArtists parameters : - name : limit in : query description : Limits the number of items on a page schema : type : integer - name : offset in : query description : Specifies the page number of the artists to be displayed schema : type : integer responses : "200" : description : An array of artists content : application/json : schema : type : array items : $ref : "#/components/schemas/Artist" post : summary : Create a new artist operationId : createArtist tags : - artists requestBody : description : The artist to create. required : true content : application/json : schema : $ref : "#/components/schemas/Artist" responses : "201" : description : The newly created artist profile content : application/json : schema : $ref : "#/components/schemas/Artist" "400" : description : Invalid username supplied /artists/{username} : get : summary : Info for a specific artist operationId : showArtistByUsername tags : - artists parameters : - name : username in : path required : true description : The username of the artist to retrieve schema : type : string responses : "200" : description : Expected response to a valid request content : application/json : schema : $ref : "#/components/schemas/Artist" "404" : description : Artist not found components : securitySchemes : bearerAuth : type : http scheme : bearer oauth2 : type : oauth2 flows : authorizationCode : authorizationUrl : /oauth/authorize tokenUrl : /oauth/token scopes : artists.read : Grants read access artists.write : Grants write access schemas : Artist : type : object required : - id properties : id : type : string format : uuid description : Unique identifier for the artist Hostname matching requirement It is critical that the value of the hostname in the servers.url field of the OpenAPI specification is an exact match for the environment group hostname of the Apigee environment where the MCP Discovery Proxy is deployed.
-- Create an OpenAPI 3.0.x specification describing your API operations Before you create and deploy your MCP Discovery Proxy, you need to create an OpenAPI 3.0.x specification that describes the API operations that you want to expose as MCP tools.
-- The following sections describe the steps to create and deploy an MCP Discovery Proxy, create an API product, and list available tools: Create an OpenAPI 3.0.x specification describing your API operations.
-- MCP in Apigee supports the following OpenAPI versions: 3.0.0 3.0.1 3.0.2 3.0.3 This quickstart uses a sample OpenAPI 3.0.x specification with three API operations: GET /artists : Returns a list of artists.
+- 所有觸發條件和工作 | Application Integration | Google Cloud Documentation 跳至主要內容 技術領域 close AI 和機器學習 應用程式開發 應用程式託管 運算 資料分析和管道 資料庫 分散式雲端、混合雲和多雲端 產業解決方案 遷移 網路 觀測能力與監控 安全性 Storage 跨產品工具 close 存取權與資源管理 費用與用量管理 基礎架構即程式碼 SDK、語言、框架和工具 / 控制台 English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 登入 Application Integration 免費試用 總覽 指南 參考資料 範例 資源 技術領域 更多 總覽 指南 參考資料 範例 資源 跨產品工具 更多 控制台 Discover Application Integration 總覽 Application Integration 中的自動調度資源簡介 選擇 Application Integration 或 Workflows 開始使用 設定 Application Integration 探索 Application Integration 試用範例整合功能 探索整合服務編輯器版面配置 使用畫布檢視畫面 快速入門導覽課程 所有快速入門導覽課程 擷取 API 酬載並傳送電子郵件 監聽 Cloud Pub/Sub 主題並傳送電子郵件 使用 For Each Loop 工作叫用子整合 應用程式整合和 ADK 訂閱項目授權 設計 整合 建立新的整合功能 使用範本建立整合 上傳及下載整合功能 整合元素 分支與彙整 邊緣和邊緣條件 Variables 整合版本 使用 Gemini 建構整合功能 範本 簡介 建立新範本 共用範本 匯入及下載範本 設定 所有觸發條件和工作 觸發條件 簡介 設定觸發條件 API 觸發條件 私有觸發條件 Cloud Pub/Sub 觸發條件 排定觸發條件 Salesforce 觸發條件 Cloud Scheduler 觸發條件 錯誤擷取器觸發條件 設定連接器事件觸發條件 Apache Kafka 觸發條件 Azure AD 觸發程序 HubSpot 觸發條件 IBM MQ 觸發條件 Jira Cloud 觸發條件 Jira Server Data Center 觸發條件 HL7 觸發條件 RabbitMQ 觸發條件 SAP ERP 觸發條件 SAP Gateway 觸發程序 ServiceNow 觸發條件 Solace 觸發條件 TIBCO EMS 觸發條件 Webhook 觸發條件 Zendesk 觸發條件 工作 簡介 設定 Google Cloud 服務工作 AI Platform - 預測工作 Apps Script 工作 Cloud 函式工作 Cloud KMS - 解密工作 Cloud KMS - 加密工作 Dataflow - 建立工作任務 雲端硬碟 - 列出工作 Doc AI - 批次處理工作 Doc AI - Operation task Doc AI - Process task Firestore - Batch Get 工作 Firestore - Batch Write 工作 Firestore - Document Get 工作 語言 - 標註文字工作 語言 - 分類文字工作 Secret Manager - Access task Google 試算表 - 附加工作 Google 試算表 - 批次取得工作 Google 試算表 - 取得工作 翻譯 - 文件工作 翻譯 - 文字工作 Vertex AI - 預測工作 工作流程 - 執行工作 設定整合工作 通話整合工作 For Each 並行工作 針對每個迴圈工作 while 迴圈工作 審核工作 傳送電子郵件工作 暫停工作 計時器工作 JavaScript 工作 發還作業 呼叫 REST 端點工作 設定資料對應 簡介 Data Transformer 指令碼工作 資料對應工作 連接器 使用 Integration Connectors 設定連接器工作 支援的連接器 自訂連接器 建立自訂連接器 編輯自訂連接器 管理自訂連接器 Marketplace 連接器 總覽 合作夥伴專用的 Marketplace 連接器 開發 Marketplace 連接器 建立 Compute Engine VM 建立網路服務 建立自訂連接器 建立啟動指令碼 建立 VM 部署指令碼 將 VM 映像檔送交審核 提交發布要求 購買及使用 Marketplace 連接器 取得支援 測試、發布及部署 測試及發布整合項目 查看整合項目的 OpenAPI 規格 使用整合功能建構對話型服務專員 為整合項目建構 CICD 測試案例 簡介 建立測試案例 設定測試案例 管理測試案例 執行測試案例 上傳及下載測試案例 管理 管理整合項目 管理整合項目 複製整合項目 管理範本 整合執行作業 取消執行作業 重播執行作業 簡介 重播執行作業 管理地區 教學課程 所有教學課程 API 要求完成 自動指派 Salesforce 案件的處理人員 自動將 Salesforce 商機轉換為 BigQuery 訂單 在 Cloud SQL 中儲存 Salesforce 商機詳細資料 對 MySQL 資料庫執行 CRUD 作業 使用「For Each Parallel」工作將資料插入 BigQuery 在 Connectors 工作中，將 JSON 酬載視為字串處理 管理 控管資源存取權 使用 IAM 控管存取權 簡介 預先定義的 IAM 角色 新增 IAM 條件 使用驗證設定檔控管存取權 使用 VPC Service Controls 控制存取權 使用自訂限制條件管理資源 安全守則 遮蓋記錄中的機密資料 客戶自行管理的加密金鑰 監控與記錄 本機記錄 監控資源 總覽 使用 Cloud Monitoring 使用 Application Integration 資訊主頁 管理記錄 簡介 查看執行記錄 使用 AI 排解執行記錄失敗問題 在 Cloud Logging 中查看記錄 查看稽核記錄 建立快訊 錯誤處理 錯誤與錯誤處理機制 簡介 錯誤處理策略 錯誤擷取器 AI 和機器學習 應用程式開發 應用程式託管 運算 資料分析和管道 資料庫 分散式雲端、混合雲和多雲端 產業解決方案 遷移 網路 觀測能力與監控 安全性 Storage 存取權與資源管理 費用與用量管理 基礎架構即程式碼 SDK、語言、框架和工具 Home Documentation Application development Application Integration 指南 提供意見 透過集合功能整理內容 你可以依據偏好儲存及分類內容。 所有觸發條件和工作 本頁面介紹 Application Integration 中可設定的各種觸發條件和工作。 觸發條件 API 觸發條件 私人觸發條件 Cloud Pub/Sub 觸發條件 排定觸發條件 Salesforce 觸發條件 Cloud Scheduler 觸發條件 Error Catcher 觸發條件 連接器事件觸發條件 Apache Kafka 觸發條件 HL7 觸發條件 IBM MQ 觸發條件 Jira Cloud 觸發條件 Jira Server Data Center 觸發條件 HubSpot 觸發條件 Rabbit MQ 觸發條件 SAP Gateway 觸發條件 SAP ERP 觸發條件 ServiceNow 觸發條件 Solace 觸發條件 TIBCO EMS 觸發條件 Webhook 觸發條件 Zendesk 觸發條件 Google Cloud 服務的相關工作 AI 平台 - 預測工作 Apps Script 工作 Cloud Functions 工作 Cloud KMS - 解密 Cloud KMS - encrypt Dataflow - Create Job task 雲端硬碟 - 列出工作 Doc AI - Batch Process 工作 Doc AI - Operation task Doc AI - 處理工作 Firestore - Batch Get task Firestore - Batch Write task Firestore - Document Get task 語言 - 註解文字工作 Language - Classify Text task Secret Manager - Access task 試算表 - 附加工作 試算表 - 批次取得工作 試算表 - 取得工作 翻譯 - 文件工作 翻譯 - 文字工作 Vertex AI - 預測工作 工作流程 - 執行工作 整合工作 資料對應工作 通話整合工作 For Each 並行工作 針對每個迴圈工作 While 迴圈工作 審核工作 傳送電子郵件工作 暫停工作 計時器工作 JavaScript 工作 發還作業 連接器工作 呼叫 REST 端點工作 資料轉換器指令碼工作 提供意見 除非另有註明，否則本頁面中的內容是採用 創用 CC 姓名標示 4.0 授權 ，程式碼範例則為 阿帕契 2.0 授權 。詳情請參閱《 Google Developers 網站政策 》。Java 是 Oracle 和/或其關聯企業的註冊商標。 上次更新時間：2026-04-11 (世界標準時間)。 想進一步說明嗎？ [[["容易理解","easyToUnderstand","thumb-up"],["確實解決了我的問題","solvedMyProblem","thumb-up"],["其他","otherUp","thumb-up"]],[["難以理解","hardToUnderstand","thumb-down"],["資訊或程式碼範例有誤","incorrectInformationOrSampleCode","thumb-down"],["缺少我需要的資訊/範例","missingTheInformationSamplesINeed","thumb-down"],["翻譯問題","translationIssue","thumb-down"],["其他","otherDown","thumb-down"]],["上次更新時間：2026-04-11 (世界標準時間)。"],[],[]] 產品與定價 查看所有產品/服務 Google Cloud 定價 Google Cloud Marketplace 與銷售人員聯絡 支援服務 社群論壇 支援服務 版本資訊 系統狀態 實用資源 GitHub 開始使用 Google Cloud 程式碼範例 雲端架構中心 訓練與認證 互動交流 網誌 活動 X (Twitter) Google Cloud 的 YouTube 頻道 Google Cloud Tech 的 YouTube 頻道 關於 Google 隱私權 網站條款 Google Cloud 服務條款 Manage cookies 我們的第三個十年氣候計畫：加入我們 訂閱 Google Cloud 電子報 訂閱 English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어
 
-### Secure an API with OAuth 2.0 \_|\_ Apigee \_|\_ Google Cloud Documentation
+### Data Transformer task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials)
-- Source ID: `site-docs-root`
-- Final score: 25
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
+- Source ID: `site-docs-root-required-2`
+- Final score: 102
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Click the GenerateAccessTokenClient policy in the Request pane: The following XML configuration is displayed: < OAuthV2 name = "GenerateAccessTokenClient" > < ! -- This policy generates an OAuth 2.0 access token using the client credentials grant type -- > < Operation>GenerateAccessToken < / Operation > < ! -- This is in milliseconds , so expire in an hour -- > < ExpiresIn>3600000 < / ExpiresIn > < SupportedGrantTypes > < ! -- This part is very important : most real OAuth 2.0 apps will want to use other grant types .
-- In this case it is important to NOT include the "client credentials" type because it allows a client to get access to a token with no user authentication -- > < GrantType>client credentials < / GrantType > < / SupportedGrantTypes > < GrantType>request . queryparam . grant type < / GrantType > < GenerateResponse / > < / OAuthV2 > The configuration includes the following: The <Operation> , which can be one of several predefined values, defines what the policy is going to do.
-- Click the Verify OAuth v2.0 Access Token icon in the right-hand pane and look at the XML below it in the text editor. <OAuthV2 async="false" continueOnError="false" enabled="true" name="verify-oauth-v2-access-token"> <DisplayName>Verify OAuth v2.0 Access Token</DisplayName> <Operation>VerifyAccessToken</Operation> </OAuthV2> Notice that the <Operation> is VerifyAccessToken .
-- The Operation defines what the policy is supposed to do.
+- Data Transformer task Preview — BigQuery Connector This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- In the Data Transformer (preview) Task Editor page, select one of the following options: By default, the Diagram mode opens.
+- To add the transformation for fields that cannot be mapped directly, click settings Transformation and add the transformation operation by clicking + Add operation : After the transformation is complete, you can execute the integration to map the old ticketing system to the new system.
+- If you want to choose the result of the previous operation in the succeeding operation, select the Previous Operation Result variable as shown in the following image: To remove the operation, click delete Delete next to the operation.
+
+### Connectors task \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
+- Source ID: `site-docs-root-required-2`
+- Final score: 86
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Configure task input and output variables The Connectors task configuration pane displays Task Input and Task Output variables that are automatically generated based on the Entity and Operation or Action selected in the Configure connector task dialog.
+- A filter clause can be applied only for the following entity operations: List Delete Update When you select any of these operations, the Task Input section of the Connectors task displays the Filter clause field automatically.
+- Filter clause for entity operations You can restrict the records that are processed by the Connectors task using the Filter clause variable, which is available as a Task Input .
+- Map listEntitiesNextPageToken from the last loop iteration to listEntitiesPageToken in the LIST Operation of the current loop iteration's Connectors task.
 

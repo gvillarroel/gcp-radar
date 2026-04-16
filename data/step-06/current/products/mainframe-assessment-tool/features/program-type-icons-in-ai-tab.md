@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.460Z"
+generated_at: "2026-04-15T12:06:50.497Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Program type icons in AI tab"
@@ -9,18 +9,17 @@ latest_feature_date: "2024-09-05"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
 keywords:
   - "program"
   - "type"
   - "icons"
-  - "in"
   - "ai"
   - "tab"
   - "adds"
-  - "the"
+  - "indicate"
 ---
 
 # Program type icons in AI tab
@@ -42,44 +41,46 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
 
 ## Supporting Pages
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 110
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
-
-### View and understand assessment results | Mainframe Assessment Tool | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- Source ID: `site-docs-root`
-- Final score: 110
+- Source ID: `site-docs-reference`
+- Final score: 92
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- View and understand assessment results Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results The Assets page provides a summary, detailed logic, and code suggestions for a program or job in your mainframe application.
-- You can also view the status, type, language, and execution mode (batch or online) for each asset.
+- The following table lists different report types and their description: Report type Description Details Inventory Provides details about the number of files, code lines, and program types, including scheduler configuration files (BMC Control-M).
+- Type: the type of the program; for example, COBOL or JCL .
+- Program name: identifies the program module that has been found within the uploaded source code but does not appear to be called or executed by any other part of the application.
+- For COBOL programs, the Code suggestions page provides an AI-generated code suggestion in the programming languages that you selected when you created the assessment.
 
-### Mainframe Assessment Tool overview | Google Cloud Documentation
+### "Create and update assessments \_|\_ Mainframe Assessment Tool \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 107
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
+- Source ID: `site-docs-reference`
+- Final score: 51
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview Mainframe Assessment Tool helps assess your existing mainframe codebase and plan your migration to Google Cloud.
-- Mainframe Assessment Tool automates assessment, saving you time and resources.
+- If available, provide the source code of the following types: COBOL programs ( cob and cbl ) COBOL copybooks ( inc and cpy ) Easytrieve programs ( ezt ) HLASM programs ( asm ) JCL jobs ( jcl ) JCL procedures ( proc ) JCL includes JCL card data ( ctl ) PL/I programs ( pli and pl1 ) RPG/RPGLE programs ( rpg and rpgle ) RPG/RPGLE include files ( rpginc and rpgleinc ) Scheduler configurations for BMC Control-M Don't include binaries and other non-source files in the zip file.
+- If the applications contain references to external artifacts such as programs or tables, we recommend that you include these dependencies as well.
+
+### "Export assessment results \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results)
+- Source ID: `site-docs-reference`
+- Final score: 51
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- After importing the nodes, import relationships using a query similar to the following: CALL apoc . load . jsonl ( 'file:///<your-data-file>.jsonl' ) YIELD value WHERE value . type = 'relationship' MATCH ( startNode { id : value . start . id }), ( endNode { id : value . end . id }) CALL apoc . merge . relationship ( startNode , value . label , {}, value . properties , endNode ) YIELD rel RETURN count ( rel ); This query reads relationship objects from the file and creates relationships in the Neo4j database between nodes that were created in the previous step.
+- For better performance on large datasets, create constraints for all node labels using a query similar to the following: CALL apoc . load . jsonl ( 'file:///<your-data-file>.jsonl' ) YIELD value WHERE value . type = 'node' UNWIND value . labels as label WITH distinct label CALL apoc . cypher . doIt ( "CREATE CONSTRAINT IF NOT EXISTS FOR (n:" + apoc . text . quoteLabel ( label ) + ") REQUIRE n.id IS UNIQUE" , {}) YIELD value RETURN count ( ); This query reads node labels from the file and creates a unique constraint on the id property for each label.
+- Import nodes using a Cypher query similar to the following: CALL apoc . load . jsonl ( 'file:///<your-data-file>.jsonl' ) YIELD value WHERE value . type = 'node' CALL apoc . merge . node ( value . labels , { id : value . id }, value . properties , value . properties ) YIELD node RETURN count ( node ); This query reads each line from the file, and if it's a node, it creates a corresponding node in the Neo4j database with its labels and properties, using MERGE to avoid duplicates based on node id .
+- The zip archive includes a JSON file for each program in your assessment, containing all the collected data, including summaries, detailed logic, and code suggestions.
 

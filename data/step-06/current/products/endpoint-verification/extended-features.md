@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2018-07-03 | Endpoint Verification | LOW | [source](https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user)<br>[source](https://docs.cloud.google.com/endpoint-verification/docs/device-information)<br>[source](https://docs.cloud.google.com/endpoint-verification/docs/quickstart) | Endpoint Verification is a Google tool for verifying endpoint devices and collecting device information for access decisions. |
+| 2018-07-03 | Endpoint Verification | MEDIUM | [source](https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user)<br>[source](https://docs.cloud.google.com/endpoint-verification/docs/device-information)<br>[source](https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension)<br>[source](https://docs.cloud.google.com/endpoint-verification/docs/quickstart) | Endpoint Verification is a Google tool for verifying endpoint devices and collecting device information for access decisions. |
 

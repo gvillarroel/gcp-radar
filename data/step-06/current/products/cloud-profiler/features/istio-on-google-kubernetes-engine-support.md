@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:24:06.818Z"
+generated_at: "2026-04-12T12:11:53.472Z"
 product_name: "Cloud Profiler"
 product_slug: "cloud-profiler"
 feature_name: "Istio on Google Kubernetes Engine support"
 feature_slug: "istio-on-google-kubernetes-engine-support"
 latest_feature_date: "2019-12-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/profiler/docs/profiling-python"
   - "https://docs.cloud.google.com/profiler/docs/profiling-java"
   - "https://docs.cloud.google.com/profiler/docs/profiling-go"
+  - "https://docs.cloud.google.com/profiler/docs/profiling-nodejs"
 keywords:
   - "istio"
   - "on"
@@ -26,7 +27,7 @@ keywords:
 # Istio on Google Kubernetes Engine support
 
 Product: Cloud Profiler
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Profiler supports profiling Istio services on Google Kubernetes Engine for
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/profiler/docs/profiling-python](https://docs.cloud.google.com/profiler/docs/profiling-python)
 - [https://docs.cloud.google.com/profiler/docs/profiling-java](https://docs.cloud.google.com/profiler/docs/profiling-java)
 - [https://docs.cloud.google.com/profiler/docs/profiling-go](https://docs.cloud.google.com/profiler/docs/profiling-go)
+- [https://docs.cloud.google.com/profiler/docs/profiling-nodejs](https://docs.cloud.google.com/profiler/docs/profiling-nodejs)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/profiler/docs/profiling-python](https://docs.cloud.google.com/profiler/docs/profiling-python)
 - Source ID: `site-docs-root`
-- Final score: 218
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 273
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires Python 3 runtime environment ) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/profiler/docs/profiling-java](https://docs.cloud.google.com/profiler/docs/profiling-java)
 - Source ID: `site-docs-root`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 257
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires App Engine SDK version 1.9.64 or later) Managed Service for Apache Spark (For information, see Configuring Cloud Profiler for Managed Service for Apache Spark Spark and Hadoop jobs .) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/profiler/docs/profiling-go](https://docs.cloud.google.com/profiler/docs/profiling-go)
 - Source ID: `site-docs-root`
-- Final score: 194
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 249
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires Go 1.11 or higher) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.
 - Running with Linux Alpine The Go profiling agent for Linux Alpine is supported only for Google Kubernetes Engine configurations.
 - Config { // Service and ServiceVersion can be automatically inferred when running // on App Engine. // ProjectID must be set if not running on GCP. // ProjectID: "my-project", }); err != nil { // TODO: Handle error. } } When you run the application locally, set the ProjectID (the ID of your Google Cloud project) and Service parameters in profiler.Config , since they cannot be derived from a local environment.
 - Start ( cfg ); err != nil { // TODO: Handle error. } } If you have dependencies in your source code that are fetched manually, then you might need to add the following to your build script or Dockerfile: go get cloud.google.com/go/profiler App Engine For the App Engine flexible environment and the App Engine standard environment, the code additions are nearly identical to those for Compute Engine and GKE.
+
+### Profiling Node.js applications \_|\_ Cloud Profiler \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/profiler/docs/profiling-nodejs](https://docs.cloud.google.com/profiler/docs/profiling-nodejs)
+- Source ID: `site-docs-root`
+- Final score: 249
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.
+- Set the logLevel value in the same object that provides the service context: require ( '@google-cloud/profiler' ). start ( { serviceContext : { ... } logLevel : 3 } ); Running with Linux Alpine The Node.js profiling agent for Linux Alpine is supported only for Google Kubernetes Engine configurations.
+- See Service name and version arguments for more information on these configuration options: require ( ' @google-cloud/profiler ' ). start ({ serviceContext : { service : 'your-service' , version : '1.0.0' , }, }); App Engine For App Engine flexible environment and for App Engine standard environment, the require code is similar to the following: require ( ' @google-cloud/profiler ' ). start (); In App Engine, the service and version parameters are derived from the environment, so you don't have to specify them.
+- Compute Engine For Compute Engine, do the following: Install the latest version of Cloud Profiler: npm install @google-cloud/profiler Modify your application require code to create a serviceContext object that assigns to service the name of the service being profiled.
 

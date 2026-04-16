@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.193Z"
+generated_at: "2026-04-14T09:35:01.926Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Deployment of backup/recovery appliances across management console VPCs"
 feature_slug: "deployment-of-backup-recovery-appliances-across-management-console-vpcs"
 latest_feature_date: "2024-10-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
   - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide"
 keywords:
+  - "vpcs"
   - "deployment"
   - "across"
   - "appliances"
   - "management"
   - "console"
   - "recovery"
-  - "of"
-  - "backup"
 ---
 
 # Deployment of backup/recovery appliances across management console VPCs
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +37,55 @@ Administrators can now deploy backup/recovery appliances in any VPC available wi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan)
 - [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide)
 
 ## Supporting Pages
 
 ### "Set up and plan a backup/recovery appliance deployment \_|\_ Backup and\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan)
-- Source ID: `site-docs-root`
-- Final score: 232
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan)
+- Source ID: `site-docs-reference`
+- Final score: 199
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Each Backup and DR deployment includes a single appliance management console managing any number of backup/recovery appliances.
-- Purpose Source Target Port (TCP) Support traffic (support to appliance) SSH CLIENT IP Backup/recovery appliance 26 iSCSI backup (host to appliance) AGENT HOST IP Backup/recovery appliance 3260 StreamSnap traffic (appliance to appliance) SOURCE APPLIANCE IP Backup/recovery appliance 5107 Backup/recovery appliance connectivity to management console APPLIANCE IP .backupdr.googleusercontent.com 443 Replace the following: SSH CLIENT IP: the IP address of the host running the SSH client.
-- Components of the backup/recovery appliance architecture The Backup and DR Service architecture is delivered through the following components: Google Cloud console : The Google Cloud console includes the Backup and DR product for central management of your Persistent Disk vaulted backups, backup plans for Compute Engine instances, and enhanced backup for Cloud SQL in those products.
 - Supported regions The following section lists the appliance management console and backup/recovery appliances supported regions.
+- Appliance management console : The management console serves as the management plane for your backup/recovery appliances.
+- These backups require a Backup and DR management console and one or more backup/recovery appliances.
 
-### "Monitor jobs in the appliance management console \_|\_ Backup and DR \_\
+### "Set up and plan a backup/recovery appliance deployment \_|\_ Backup and\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan)
 - Source ID: `site-docs-root`
-- Final score: 184
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- From the Monitor tab, you can view and manage jobs (cancel active jobs or change the job priority of a queued job) from backup/recovery appliances managed by the appliance management console.
-- Run an on-demand backup job from the appliance management console To run an on-demand capture of a managed application from the Manage Backup Plan page: Click the App Manager tab and select the Applications option from the drop-down list.
-- Home Documentation Storage Backup and DR Guides Send feedback Monitor jobs in the appliance management console Stay organized with collections Save and categorize content based on your preferences.
-- To perform on-demand log replication of just the database log to a remote backup/recovery appliance, select the Replicate Logs menu command described in Running On-Demand Database Log Replication .
-
-### "Backup plans in the appliance management console overview \_|\_ Backup and\
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan)
-- Source ID: `site-docs-root`
-- Final score: 182
+- Final score: 189
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- You define a resource profile for any backup/recovery appliance that has been added to the appliance management console.
-- Backup plans are the rules that the appliance management console uses to define how often to back up application data, how long to retain the application data backups, and where and how to replicate the application's data backups.
-- Where the backup data is retained (local backup/recovery appliance, remote backup/recovery appliance or OnVault storage location) By mixing and matching policies within a template you can create a single template that defines the shortterm and longterm retention of data, as well as where the data will be retained and how long the replicated data will be retained.
-- Home Documentation Storage Backup and DR Guides Send feedback Backup plans in the appliance management console overview Stay organized with collections Save and categorize content based on your preferences.
+- Each Backup and DR deployment includes a single appliance management console managing any number of backup/recovery appliances.
+- Supported regions The following section lists the appliance management console and backup/recovery appliances supported regions.
+- Appliance management console : The management console serves as the management plane for your backup/recovery appliances.
+- These backups require a Backup and DR management console and one or more backup/recovery appliances.
+
+### "Deploy a backup/recovery appliance \_|\_ Backup and DR \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide)
+- Source ID: `site-docs-reference`
+- Final score: 179
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- It is in this format: projects/test-project/locations/us-central1/operations/operationID The output is displayed as: Terraform You can use the following Terraform resource links to deploy an appliance management console and a backup/recovery appliance: Deploy a appliance management console using Terraform resource Deploy a backup/recovery appliance using Terraform resource Caution: When deploying multiple backup/recovery appliances using Terraform, each appliance must be associated with a unique Service Account.
+- Resizing the appliance or changing its machine configuration—changing the series, CPU, memory—can make the backup/recovery appliance unusable. gcloud You can use gcloud CLI to create an appliance management console.
+- If you need to add more than 30 appliances, create a new project, deploy a new appliance management console, and then deploy the appliances.
+- When the deployment is complete, click Log in to the management console and the appliance management console will open in a new window.
 

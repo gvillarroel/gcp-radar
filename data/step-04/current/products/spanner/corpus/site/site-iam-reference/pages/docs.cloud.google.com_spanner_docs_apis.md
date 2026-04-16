@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/spanner/docs/apis
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/spanner/docs/configure-fgac
+entrypoint: https://docs.cloud.google.com/spanner/docs/access-with-fgac
 source_metadata:
   url: https://docs.cloud.google.com/spanner/docs/apis
   title: "APIs & reference \_|\_ Spanner \_|\_ Google Cloud Documentation"

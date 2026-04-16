@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.298Z"
+generated_at: "2026-04-14T15:13:19.224Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Brazil Forest Imagery Dataset 2008 Analytic Basemap"
 feature_slug: "brazil-forest-imagery-dataset-2008-analytic-basemap"
 latest_feature_date: "2026-03-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/satellite-imagery"
   - "https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_MS_V1"
@@ -26,7 +26,7 @@ keywords:
 # Brazil Forest Imagery Dataset 2008 Analytic Basemap
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Provides an analytic basemap for the Brazil Forest Imagery Dataset 2008.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,8 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - Source ID: `site-docs-root-3`
-- Final score: 200
-- Re-rank relevance: N/A
+- Final score: 229
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER) is a multispectral imager that … aster imagery nasa nir radiance satellite-imagery Brazil Forest Imagery Dataset 2008: Analytic Basemap This dataset provides up to a 10-meter resolution multispectral (green, red, and near-infrared) basemap of Brazil, primarily captured in 2008, to support implementation of the Brazil Forest Code.
@@ -65,9 +66,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_MS_V1](https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_MS_V1)
 - Source ID: `site-docs-root-2`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 201
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - See also Brazil Forest Imagery Dataset 2008: Analytic Basemap .
@@ -79,9 +80,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_PMS_NC_V1](https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_PMS_NC_V1)
 - Source ID: `site-docs-root-2`
-- Final score: 166
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 198
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Dataset Availability 2007-01-01T00:00:00Z–2009-11-26T23:59:59Z Dataset Producer Google/CNES Earth Engine Snippet ee.ImageCollection("AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/PMS NC/V1") open in new Tags brazil forest-code google rgb satellite-imagery spot Description This collection provides high-resolution pansharpened pseudo-natural color SPOT imagery satellites 2, 4, and 5 for Brazil circa 2008.

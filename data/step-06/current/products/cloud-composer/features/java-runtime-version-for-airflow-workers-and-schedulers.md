@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.763Z"
+generated_at: "2026-04-12T12:11:20.048Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Java runtime version for Airflow workers and schedulers"
 feature_slug: "java-runtime-version-for-airflow-workers-and-schedulers"
 latest_feature_date: "2021-09-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
-  - "https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsAsyncClient"
+  - "https://docs.cloud.google.com/composer/docs/latest/manage-dags"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/executeAirflowCommand"
 keywords:
   - "java"
   - "runtime"
@@ -26,7 +27,7 @@ keywords:
 # Java runtime version for Airflow workers and schedulers
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ The Java runtime for Airflow workers and schedulers in Cloud Composer was update
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
-- [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsAsyncClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsAsyncClient)
+- [https://docs.cloud.google.com/composer/docs/latest/manage-dags](https://docs.cloud.google.com/composer/docs/latest/manage-dags)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/executeAirflowCommand](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/executeAirflowCommand)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change Cloud Composer 2.1.14 and 1.20.12 images are available: composer-2.1.14-airflow-2.5.1 composer-2.1.14-airflow-2.4.3 (default) composer-2.1.14-airflow-2.3.4 composer-1.20.12-airflow-2.4.3 composer-1.20.12-airflow-2.3.4 composer-1.20.12-airflow-1.10.15 April 18, 2023 Feature Java Runtime in Airflow workers and schedulers is updated from version 11 to version 17 .
-- January 28, 2025 Feature Java Runtime in Airflow workers and schedulers is updated from version 17 to version 21 .
-- Feature Java Runtime in Airflow workers and schedulers is updated from version 8 to version 11.
-- It comes with a number of new features and characteristics: All infrastructure hidden in a tenant project Evergreen versioning Simplified networking configuration Improved performance More reliable DAG parsing and scheduling as DAG Processor and Schedulers are now separate components 10 times bigger storage for Airflow workers As well as most functionalities already known from the previous Composer versions.
 
 ### "Cross-project environment monitoring with Terraform \_|\_ Cloud Composer\
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 150
+- Final score: 197
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +63,43 @@ Evidence snippets:
 - Implementation steps On your local computer where you run Terraform, set the GOOGLE CLOUD PROJECT environment variable to the ID of your Monitoring Project : export GOOGLE CLOUD PROJECT = MONITORING PROJECT ID Make sure that your Terraform Google provider is authenticated and has access to the following permissions: roles/monitoring.editor permission in Monitoring Project roles/monitoring.viewer , roles/logging.viewer in all Monitored Projects Copy the following main.tf file to the local computer where you run Terraform.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 
-### "Class ImageVersionsAsyncClient (1.19.0) \_|\_ Python client libraries \_\
+### Add and update DAGs \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsAsyncClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 136
+- URL: [https://docs.cloud.google.com/composer/docs/latest/manage-dags](https://docs.cloud.google.com/composer/docs/latest/manage-dags)
+- Source ID: `site-docs-root`
+- Final score: 181
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- ListImageVersionsRequest ( ) Make the request page result = client. list image versions (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.orchestration.airflow.service v1.types.ListImageVersionsRequest , dict]] The request object.
-- List ImageVersions in a project and location. parent str List ImageVersions in the given project and location, in the form: "projects/{projectId}/locations/{locationId}" This corresponds to the parent field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.orchestration.airflow import service v1 async def sample list image versions(): Create a client client = service v1.
-- Returns Type Description google.cloud.orchestration.airflow.service v1.services.image versions.pagers.ListImageVersionsAsyncPager The ImageVersions in a project and location.
+- Your environment synchronizes DAGs from this bucket to Airflow components such as Airflow workers and schedulers.
+- This happens because DAG files are synced independently for schedulers and workers.
+- If you re-parse a DAG manually, for example, through Airflow UI, then the DAG processor re-parses the current version of the DAG available to it , which might not be the latest version of the DAG that you uploaded to the environment's bucket.
+- In a healthy environment, waiting for about 20-30 seconds is enough for all workers to sync. (Optional) If you want to be completely sure that all workers have the new version of the DAG file, inspect logs for each individual worker.
+
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 180
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Such entities are eventually removed from local storages of Airflow schedulers and workers when these components are restarted (for example, as a result of scaling down or maintenance operations in your environment's cluster).
+- Airflow workers or schedulers might experience issues when accessing the environment's Cloud Storage bucket Cloud Composer uses gcsfuse to access the /data folder in the environment's bucket and to save Airflow task logs to the /logs directory (if enabled).
+- This problem happens because the DAG file is synchronized between your environment's bucket, Airflow workers, and Airflow schedulers of your environment.
+- Empty folders in Scheduler and Workers Cloud Composer does not actively remove empty folders from Airflow workers and schedulers.
+
+### "Method: projects.locations.environments.executeAirflowCommand \_|\_ Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/executeAirflowCommand](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/executeAirflowCommand)
+- Source ID: `site-docs-reference`
+- Final score: 179
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Authorization requires the following IAM permission on the specified resource environment : composer.environments.executeAirflowCommand Request body The request body contains data with the following structure: JSON representation { "command" : string , "subcommand" : string , "parameters" : [ string ] } Fields command string Airflow command. subcommand string Airflow subcommand. parameters[] string Parameters for the Airflow command/subcommand as an array of arguments.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-18 UTC."],[],[]]
+- If successful, the response body contains data with the following structure: JSON representation { "executionId" : string , "pod" : string , "podNamespace" : string , "error" : string } Fields executionId string The unique ID of the command execution for polling. pod string The name of the pod where the command is executed. podNamespace string The namespace of the pod where the command is executed. error string Error message.
+- Home Documentation Data analytics Cloud Composer Reference Send feedback Method: projects.locations.environments.executeAirflowCommand Stay organized with collections Save and categorize content based on your preferences.
 

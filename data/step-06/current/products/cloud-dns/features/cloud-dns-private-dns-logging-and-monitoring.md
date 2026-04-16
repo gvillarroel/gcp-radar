@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:30.791Z"
+generated_at: "2026-04-12T12:11:24.695Z"
 product_name: "Cloud DNS"
 product_slug: "cloud-dns"
 feature_name: "Cloud DNS private DNS logging and monitoring"
 feature_slug: "cloud-dns-private-dns-logging-and-monitoring"
 latest_feature_date: "2019-04-05"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/dns/docs/troubleshooting"
+  - "https://docs.cloud.google.com/dns/docs/zones"
+  - "https://docs.cloud.google.com/dns/docs/best-practices"
+  - "https://docs.cloud.google.com/dns/docs/create-custom-constraints"
 keywords:
   - "dns"
   - "private"
@@ -24,7 +27,7 @@ keywords:
 # Cloud DNS private DNS logging and monitoring
 
 Product: Cloud DNS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ Cloud DNS private DNS logging and monitoring provides visibility into private DN
 
 Cloud DNS private DNS logging and monitoring provides visibility into private DNS query activity and operational behavior.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/dns/docs/troubleshooting](https://docs.cloud.google.com/dns/docs/troubleshooting)
+- [https://docs.cloud.google.com/dns/docs/zones](https://docs.cloud.google.com/dns/docs/zones)
+- [https://docs.cloud.google.com/dns/docs/best-practices](https://docs.cloud.google.com/dns/docs/best-practices)
+- [https://docs.cloud.google.com/dns/docs/create-custom-constraints](https://docs.cloud.google.com/dns/docs/create-custom-constraints)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Troubleshoot Cloud DNS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dns/docs/troubleshooting](https://docs.cloud.google.com/dns/docs/troubleshooting)
+- Source ID: `site-docs-root`
+- Final score: 189
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This page provides solutions for common issues that you might encounter when using Cloud DNS to create public zones, private zones, reverse lookup zones, forwarding zones, and resource records.
+- Determine that your VM is using: gcloud compute instances describe VM NAME \ --zone= GCE ZONE \ --format="csvno-heading" Ensure that the network is in the list of networks authorized to query your private zone: gcloud dns managed-zones describe PRIVATE ZONE NAME \ --format="csv(privateVisibilityConfig['networks'])" Verify that the DNS name in the query matches your zone Google Cloud resolves a record according to the name resolution order , using the zone with the longest suffix to decide which zone to query for a given DNS name.
+- The output of the following command shows the DNS suffix for a given private zone: gcloud dns managed-zones describe PRIVATE ZONE NAME \ --format="csvno-heading" Query for the DNS name using the metadata server Use dig to submit the DNS name query directly to the Google Cloud metadata server, 169.254.169.254 : dig DNS NAME @169.254.169.254 Use dig to query the VM's default name server: dig DNS NAME If the output of the two dig commands produces different answers, check the ;; SERVER: section of the second command.
+- Private zones not resolving through Cloud VPN or Cloud Interconnect First make sure that you can successfully query and resolve the DNS name from within an authorized VPC network .
+
+### Create, modify, and delete zones \_|\_ Cloud DNS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dns/docs/zones](https://docs.cloud.google.com/dns/docs/zones)
+- Source ID: `site-docs-root`
+- Final score: 187
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Click Create . gcloud Run the dns managed-zones create command: gcloud dns managed-zones create NAME \ --description= DESCRIPTION \ --dns-name= DNS SUFFIX \ --networks= VPC NETWORK LIST \ --labels= LABELS \ --visibility=private Replace the following: NAME : a name for your zone DESCRIPTION : a description for your zone DNS SUFFIX : the DNS suffix for your zone, such as example.private VPC NETWORK LIST : a comma-delimited list of VPC networks that are authorized to query the zone LABELS : an optional comma-delimited list of key-value pairs such as dept=marketing or project=project1 ; for more information, see the SDK documentation Terraform resource "google dns managed zone" "private zone" { name = "private-zone" dns name = "private.example.com." description = "Example private DNS zone" labels = { foo = "bar" } visibility = "private" private visibility config { networks { network url = google compute network.network 1.id } networks { network url = google compute network.network 2.id } } } resource "google compute network" "network 1" { name = "network-1" auto create subnetworks = false } resource "google compute network" "network 2" { name = "network-2" auto create subnetworks = false } API Send a POST request using the managedZones.create method: POST https://dns.googleapis.com/dns/v1/projects/ PROJECT ID /managedZones { "name": " NAME ", "description": " DESCRIPTION ", "dnsName": " DNS NAME ", "visibility": "private", "privateVisibilityConfig": { "kind": "dns#managedZonePrivateVisibilityConfig", "networks": [ { "kind": "dns#managedZonePrivateVisibilityConfigNetwork", "networkUrl": " VPC NETWORK 1 " }, { "kind": "dns#managedZonePrivateVisibilityConfigNetwork", "networkUrl": " VPC NETWORK 2 " }, .... ] } } Replace the following: PROJECT ID : the ID of the project where the managed zone is created NAME : a name for your zone DESCRIPTION : a description for your zone DNS NAME : the DNS suffix for your zone, such as example.private VPC NETWORK 1 and VPC NETWORK 2 : URLs for VPC networks in the same project that can query records in this zone.
+- Go to Cloud DNS zones View managed zones in the right pane. gcloud Run the dns managed-zones list command: gcloud dns managed-zones list To list all managed zones, modify the command as follows: gcloud dns managed-zones list --filter="visibility=public" To list all managed private zones, modify the command as follows: gcloud dns managed-zones list --filter="visibility=private" Describe a managed zone To view the attributes of a managed zone, complete the following steps.
+- The Zone details page is displayed. gcloud Run the dns managed-zones create command: gcloud dns managed-zones create NAME \ --description= DESCRIPTION \ --dns-name= DNS SUFFIX \ --labels= LABELS \ --visibility=public Replace the following: NAME : a name for your zone DESCRIPTION : a description for your zone DNS SUFFIX : the DNS suffix for your zone, such as example.com LABELS : an optional comma-delimited list of key-value pairs such as dept=marketing or project=project1 ; for more information, see the SDK documentation Terraform resource "google dns managed zone" "example zone" { name = "example-zone" dns name = "example-${random id.rnd.hex}.com." description = "Example DNS zone" labels = { name = "value" } } resource "random id" "rnd" { byte length = 4 } API Send a POST request using the managedZones.create method: POST https://dns.googleapis.com/dns/v1/projects/ PROJECT ID /managedZones { "name": " NAME ", "description": " DESCRIPTION ", "dnsName": " DNS NAME ", "visibility": "public" } Replace the following: PROJECT ID : the ID of the project where the managed zone is created NAME : a name for your zone DESCRIPTION : a description for your zone DNS NAME : the DNS suffix for your zone, such as example.com Important: Cloud DNS creates NS and SOA records for you automatically when you create the zone.
+- Terraform resource "google dns managed zone" "private zone" { name = "private-zone" dns name = "private.example.com." description = "Example private DNS zone" labels = { foo = "bar" } visibility = "private" private visibility config { networks { network url = google compute network.network 1.id } networks { network url = google compute network.network 2.id } } } resource "google compute network" "network 1" { name = "network-1" auto create subnetworks = false } resource "google compute network" "network 2" { name = "network-2" auto create subnetworks = false } Create a managed reverse lookup private zone A managed reverse lookup zone is a private zone with a special attribute that instructs Cloud DNS to perform a PTR lookup against Compute Engine DNS data.
+
+### Best practices for Cloud DNS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dns/docs/best-practices](https://docs.cloud.google.com/dns/docs/best-practices)
+- Source ID: `site-docs-root`
+- Final score: 185
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use alternative name servers only if all DNS traffic needs to be monitored or filtered on-premises, and if private DNS logging can't meet your requirements.
+- This document provides best practices for private zones, DNS forwarding, and reference architectures for hybrid DNS.
+- Your system can use Cloud DNS to take advantage of centralized logging and monitoring .
+- This document describes best practices for forwarding private DNS requests between environments to make sure that services can be addressed from both on-premises environments and within Google Cloud.
+
+### "Create custom organization policy constraints \_|\_ Cloud DNS \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/dns/docs/create-custom-constraints](https://docs.cloud.google.com/dns/docs/create-custom-constraints)
+- Source ID: `site-iam-reference`
+- Final score: 180
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Resource Field dns.googleapis.com/ManagedZone resource.cloudLoggingConfig.enableLogging resource.description resource.dnsName resource.dnssecConfig.defaultKeySpecs.algorithm resource.dnssecConfig.defaultKeySpecs.keyLength resource.dnssecConfig.defaultKeySpecs.keyType resource.dnssecConfig.nonExistence resource.dnssecConfig.state resource.forwardingConfig.targetNameServers.domainName resource.forwardingConfig.targetNameServers.forwardingPath resource.forwardingConfig.targetNameServers.ipv4Address resource.forwardingConfig.targetNameServers.ipv6Address resource.name resource.privateVisibilityConfig.gkeClusters.gkeClusterName resource.privateVisibilityConfig.networks.networkUrl resource.serviceDirectoryConfig.namespace.namespaceUrl resource.visibility dns.googleapis.com/Policy resource.alternativeNameServerConfig.targetNameServers.forwardingPath resource.alternativeNameServerConfig.targetNameServers.ipv4Address resource.alternativeNameServerConfig.targetNameServers.ipv6Address resource.description resource.dns64Config.scope.allQueries resource.enableInboundForwarding resource.enableLogging resource.name resource.networks.networkUrl dns.googleapis.com/ResourceRecordSet resource.name resource.routingPolicy.geo.enableFencing resource.routingPolicy.geo.item.healthCheckedTargets.externalEndpoints resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.port resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.project resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.region resource.routingPolicy.geo.item.location resource.routingPolicy.geo.item.rrdata resource.routingPolicy.healthCheck resource.routingPolicy.primaryBackup.backupGeoTargets.enableFencing resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.externalEndpoints resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.port resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.project resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.region resource.routingPolicy.primaryBackup.backupGeoTargets.item.location resource.routingPolicy.primaryBackup.backupGeoTargets.item.rrdata resource.routingPolicy.primaryBackup.primaryTargets.externalEndpoints resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipAddress resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipProtocol resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.loadBalancerType resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.networkUrl resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.port resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.project resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.region resource.routingPolicy.primaryBackup.trickleTraffic resource.routingPolicy.wrr.item.healthCheckedTargets.externalEndpoints resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.port resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.project resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.region resource.routingPolicy.wrr.item.rrdata resource.routingPolicy.wrr.item.weight resource.rrdata resource.ttl resource.type dns.googleapis.com/ResponsePolicy resource.description resource.gkeClusters.gkeClusterName resource.networks.networkUrl resource.responsePolicyName dns.googleapis.com/ResponsePolicyRule resource.behavior resource.dnsName resource.localData.localData.name resource.localData.localData.routingPolicy.geo.enableFencing resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.externalEndpoints resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.port resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.project resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.region resource.localData.localData.routingPolicy.geo.item.location resource.localData.localData.routingPolicy.geo.item.rrdata resource.localData.localData.routingPolicy.healthCheck resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.enableFencing resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.externalEndpoints resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.port resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.project resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.region resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.location resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.rrdata resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.externalEndpoints resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipAddress resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipProtocol resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.loadBalancerType resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.networkUrl resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.port resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.project resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.region resource.localData.localData.routingPolicy.primaryBackup.trickleTraffic resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.externalEndpoints resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.port resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.project resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.region resource.localData.localData.routingPolicy.wrr.item.rrdata resource.localData.localData.routingPolicy.wrr.item.weight resource.localData.localData.rrdata resource.localData.localData.ttl resource.localData.localData.type resource.ruleName What's next Learn more about Organization Policy Service .
+- Description Constraint syntax Restrict logging for Cloud DNS instances name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictManagedZoneWithDeniedDescription resourceTypes : - dns.googleapis.com/ManagedZone methodTypes : - CREATE - UPDATE condition : resource.description.contains('denied') actionType : DENY displayName : Restrict create / update for Cloud DNS ManagedZone resources description : Prevents users from creating / updating for Cloud DNS ManagedZone resources Cloud DNS supported resources The following table lists the Cloud DNS resources that you can reference in custom constraints.
+- For example, if a request to create or update a Cloud DNS instance fails to satisfy custom constraint validation as set by your organization policy, the request fails and an error will be returned to the caller.
+- Home Documentation Networking Cloud DNS Guides Send feedback Create custom organization policy constraints Stay organized with collections Save and categorize content based on your preferences.
 

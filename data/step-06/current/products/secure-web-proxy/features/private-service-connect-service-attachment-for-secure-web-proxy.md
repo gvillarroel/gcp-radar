@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:55.661Z"
+generated_at: "2026-04-12T12:18:17.168Z"
 product_name: "Secure Web Proxy"
 product_slug: "secure-web-proxy"
 feature_name: "Private Service Connect service attachment for Secure Web Proxy"
@@ -11,7 +11,8 @@ coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment"
   - "https://docs.cloud.google.com/secure-web-proxy/docs/overview"
-  - "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-next-hop"
+  - "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview"
+  - "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview"
 keywords:
   - "private"
   - "connect"
@@ -38,48 +39,70 @@ Secure Web Proxy can be published as a Private Service Connect service attachmen
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment](https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment)
 - [https://docs.cloud.google.com/secure-web-proxy/docs/overview](https://docs.cloud.google.com/secure-web-proxy/docs/overview)
-- [https://docs.cloud.google.com/secure-web-proxy/docs/deploy-next-hop](https://docs.cloud.google.com/secure-web-proxy/docs/deploy-next-hop)
+- [https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview](https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview)
+- [https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview](https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview)
 
 ## Supporting Pages
 
-### Publish Secure Web Proxy as a Private Service Connect service | Google Cloud Documentation
+### "Publish Secure Web Proxy as a Private Service Connect service \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment](https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment)
-- Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: N/A
+- Source ID: `site-iam-reference`
+- Final score: 342
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Publish Secure Web Proxy as a Private Service Connect service Google Cloud Documentation Source URL: https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment Create an endpoint in each VPC ... following steps for each endpoint that you need to create.
-- In the Google Cloud console, go to the Private Service Connect page....
+- Cloud Shell Use the gcloud compute service-attachments create command . gcloud compute service-attachments create SERVICE ATTACHMENT NAME \ --target-service= SWP INSTANCE URI \ --connection-preference=ACCEPT AUTOMATIC \ --nat-subnets= NAT SUBNET NAME \ --region= REGION \ --project= PROJECT \ Replace the following: SERVICE ATTACHMENT NAME : the name of the service attachment SWP INSTANCE URI : the URI of the Secure Web Proxy instance, in the following form: //networkservices.googleapis.com/projects/ PROJECT ID /locations/ REGION /gateways/ INSTANCE NAME NAT SUBNET NAME : the name of the Private Service Connect subnet REGION : the region of the Secure Web Proxy deployment PROJECT : the project of the Secure Web Proxy deployment Create endpoints Create an endpoint in each VPC network and region that needs to send egress traffic through the centralized Secure Web Proxy instance.
+- To centralize your Secure Web Proxy deployment across multiple VPC networks, you can make Secure Web Proxy available through a Private Service Connect service attachment.
+- Publishing Secure Web Proxy as a Private Service Connect service lets you centralize egress traffic management for workloads across multiple VPC networks. (click to enlarge).
+- Publish Secure Web Proxy as a Private Service Connect service To publish Secure Web Proxy as a service, create a Private Service Connect subnet and service attachment.
 
-### Secure Web Proxy overview | Google Cloud Documentation
+### Secure Web Proxy overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/secure-web-proxy/docs/overview](https://docs.cloud.google.com/secure-web-proxy/docs/overview)
 - Source ID: `site-docs-root`
-- Final score: 152
+- Final score: 300
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Secure Web Proxy overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/secure-web-proxy/docs/overview Centralized gateway: your workloads, such as virtual machines (VMs) and containers are configured to send all outbound web requests to the central Secure Web Proxy instance.
-- Policy enforcement: the proxy inspects the request and applies your granular security policies to determine whether to allow or deny the connection.
-- Secure outbound traffic: if the request is allowed, then the traffic is securely routed out to the internet by using the Google Cloud infrastructure, typically Cloud NAT.
+- By deploying Secure Web Proxy as a Private Service Connect service attachment, you can resolve those scaling-related limitations.
+- Private Service Connect service attachment mode With this mode, you can centralize your web proxy deployments across a complex, multi-Virtual Private Cloud (VPC) architecture.
+- Deploy Secure Web Proxy as a Private Service Connect service attachment (click to enlarge).
+- In this way, Secure Web Proxy acts as an intermediary, establishing new TCP connections for the client and ensuring that every connection meets the requirements of the administered security policy.
 
-### Deploy Secure Web Proxy as next hop | Google Cloud Documentation
+### TLS inspection overview \_|\_ Secure Web Proxy \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/secure-web-proxy/docs/deploy-next-hop](https://docs.cloud.google.com/secure-web-proxy/docs/deploy-next-hop)
-- Source ID: `site-docs-root`
-- Final score: 142
+- URL: [https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview](https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview)
+- Source ID: `site-iam-reference`
+- Final score: 284
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Deploy Secure Web Proxy as next hop Google Cloud Documentation Source URL: https://docs.cloud.google.com/secure-web-proxy/docs/deploy-next-hop This page provides an overview of how to create a Secure Web Proxy policy and then explains how to configure next hop routing for your Secure Web Proxy instance.
+- Key features The Secure Web Proxy TLS inspection service offers a flexible, scalable framework for managing encrypted traffic through the following capabilities: Integrated private trust : built-in integration with CA Service provides a highly available, Google-managed repository for your private CAs.
+- Private trust anchor : Because Secure Web Proxy presents certificates that are signed by your internal CA rather than a public CA, clients trust the connection only if your private root CA is pre-installed.
+- By gaining visibility into the encrypted request, Secure Web Proxy can apply advanced security policies—such as URL filtering on the full request path and HTTP header inspection—to protect your environment from threats hidden within encrypted tunnels.
+- Result of certificate pinning : when Secure Web Proxy presents its signed certificate, the application detects that the certificate doesn't match its hardcoded expectations and terminates the connection.
+
+### Policies and rules \_|\_ Secure Web Proxy \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview](https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview)
+- Source ID: `site-iam-reference`
+- Final score: 270
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following table shows whether various Virtual Private Cloud (VPC) architectures are supported when using source identity-based security policies: VPC VPC architecture Support Within VPC Cross project (Shared VPC) Cross VPC Cross peering link (peer VPC) Cross VPC Cross Private Service Connect Cross VPC Cross Network Connectivity Center spokes Destination attributes Secure Web Proxy policies determine whether a destination is approved by analyzing the following attributes of the target website or service: Destination domain : the website's address, such as example.com .
+- You can assign your enterprise IP addresses (or static Google Cloud IP addresses) that Secure Web Proxy uses for outbound traffic.
+- Application Matcher includes the following items: Full URL path Request method—for example, block all DELETE actions Specific HTTP headers Host matching rules Secure Web Proxy uses hostname matching to verify the destination domain, which varies slightly depending on how your proxy is deployed as shown in the following table.
+- Source attributes To enforce granular security, Secure Web Proxy policies identify the source of the traffic by using the following cloud identity and network location data: Service accounts : unique identities that are assigned to your applications or workloads.
 

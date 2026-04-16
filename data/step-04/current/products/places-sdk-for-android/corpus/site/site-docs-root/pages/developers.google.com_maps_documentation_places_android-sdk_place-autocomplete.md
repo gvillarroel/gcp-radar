@@ -4,7 +4,7 @@ url: https://developers.google.com/maps/documentation/places/android-sdk/place-a
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/places/android-sdk
+entrypoint: https://developers.google.com/maps/documentation/places/android-sdk/overview
 source_metadata:
   url: https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete
   title: "Autocomplete (New) \_|\_ Places SDK for Android \_|\_ Google for Developers"
@@ -699,6 +699,6 @@ Synthetic results located outside the location restriction may be returned based
 overlaps with the location restriction.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-09 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["The Autocomplete feature returns place predictions based on a text query. It uses `PlacesClient.findAutocompletePredictions()` and `FindAutocompletePredictionsRequest` to retrieve up to five `AutocompletePrediction` objects. Key actions include setting the text query, optionally filtering by place types, countries, or location (bias/restriction). Developers can specify an origin to calculate distances and use session tokens for billing. Location restriction limits, while bias favors, results within a defined area. `FindAutocompletePredictionsRequest` builder is used to set these parameters.\n"]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],["The Autocomplete feature returns place predictions based on a text query. It uses `PlacesClient.findAutocompletePredictions()` and `FindAutocompletePredictionsRequest` to retrieve up to five `AutocompletePrediction` objects. Key actions include setting the text query, optionally filtering by place types, countries, or location (bias/restriction). Developers can specify an origin to calculate distances and use session tokens for billing. Location restriction limits, while bias favors, results within a defined area. `FindAutocompletePredictionsRequest` builder is used to set these parameters.\n"]]

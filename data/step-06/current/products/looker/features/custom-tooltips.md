@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.320Z"
+generated_at: "2026-04-15T13:43:38.400Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Custom tooltips"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-03-05"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
+  - "https://docs.cloud.google.com/looker/docs/bar-options"
+  - "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor"
+  - "https://docs.cloud.google.com/looker/docs/chart-config-editor"
 keywords:
   - "custom"
   - "tooltips"
-  - "are"
   - "generally"
   - "available"
-  - "in"
-  - "the"
   - "explore"
+  - "visualization"
+  - "editor"
+  - "ui"
 ---
 
 # Custom tooltips
@@ -42,43 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
+- [https://docs.cloud.google.com/looker/docs/bar-options](https://docs.cloud.google.com/looker/docs/bar-options)
+- [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
 
 ## Supporting Pages
 
-### Using the API Explorer | Looker | Google Cloud Documentation
+### Bar chart options \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 118
+- URL: [https://docs.cloud.google.com/looker/docs/bar-options](https://docs.cloud.google.com/looker/docs/bar-options)
+- Source ID: `site-docs-reference`
+- Final score: 190
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Using the API Explorer Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-explorer There may also be Ruby and Java ... languages.
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
+- Click the Custom Tooltip switch to configure tooltips within the Explore visualization editor by using a combination of UI settings and an HTML editor that supports Liquid templating.
+- Note: Custom tooltips are not supported for donut multiples charts , word cloud charts , static map (regions) charts , static maps (points) charts , charts that are made using the Chart Config Editor (with the exception of Sankey charts ), or custom visualizations.
+- This editor lets you modify HighCharts visualizations by exposing certain JSON parameters of the visualization, enabling deep customization.
+- See the Examples section of the Chart Config Editor article for examples of some common use cases, including the following examples: Changing the background color and axis text color Conditional formatting of values within a series Customizing tooltip color Adding vertical reference bands and captions Adding chart annotations Series menu options The series menu controls how your chart shows each data series .
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### "Customizing visualizations using the Chart Config Editor \_|\_ Looker \_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 112
+- URL: [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- Source ID: `site-docs-reference`
+- Final score: 171
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
+- Customizing a visualization To customize a visualization with the Chart Config Editor, follow these steps: View a visualization in an Explore, or edit a visualization in a Look or dashboard.
+- Home Documentation Data analytics Looker Guides Send feedback Customizing visualizations using the Chart Config Editor Stay organized with collections Save and categorize content based on your preferences.
+- You can use the Chart Config Editor to customize formatting options on Looker visualizations that use the HighCharts API .
+- Similarly, to change the text color of the axes in a visualization, use the following attributes: xAxis.labels.style.color xAxis.title.style.color yAxis.labels.style.color yAxis.title.style.color The following HighCharts JSON changes the background color of the visualization to purple, and the text of the axis titles and labels to white. { chart : { backgroundColor : "purple" }, xAxis : { labels : { style : { color : "white" } }, title : { style : { color : "white" } } }, yAxis : { labels : { style : { color : "white" } }, title : { style : { color : "white" } } } } Customize tooltip color To customize the color of the tooltip, use the following attributes: tooltip.backgroundColor tooltip.style.color The following HighCharts JSON changes the background color of the tooltip to cyan, and changes the color of the tooltip text to black. { tooltip : { backgroundColor : "cyan" , style : { color : "black" } } } Customize tooltip content and styles To customize the content of the tooltip, use the following attributes: tooltip.format tooltip.shared The following HighCharts JSON changes the tooltip format such that the x-axis value appears at the top of the tooltip in larger font, followed by a list of all series values at that point.
 
-### Getting started with the Looker API | Google Cloud Documentation
+### "Customizing visualizations using the Chart Config Editor \_|\_ Looker \_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 84
+- URL: [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 161
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
+- Customizing a visualization To customize a visualization with the Chart Config Editor, follow these steps: View a visualization in an Explore, or edit a visualization in a Look or dashboard.
+- Home Documentation Data analytics Looker Guides Send feedback Customizing visualizations using the Chart Config Editor Stay organized with collections Save and categorize content based on your preferences.
+- You can use the Chart Config Editor to customize formatting options on Looker visualizations that use the HighCharts API .
+- Similarly, to change the text color of the axes in a visualization, use the following attributes: xAxis.labels.style.color xAxis.title.style.color yAxis.labels.style.color yAxis.title.style.color The following HighCharts JSON changes the background color of the visualization to purple, and the text of the axis titles and labels to white. { chart : { backgroundColor : "purple" }, xAxis : { labels : { style : { color : "white" } }, title : { style : { color : "white" } } }, yAxis : { labels : { style : { color : "white" } }, title : { style : { color : "white" } } } } Customize tooltip color To customize the color of the tooltip, use the following attributes: tooltip.backgroundColor tooltip.style.color The following HighCharts JSON changes the background color of the tooltip to cyan, and changes the color of the tooltip text to black. { tooltip : { backgroundColor : "cyan" , style : { color : "black" } } } Customize tooltip content and styles To customize the content of the tooltip, use the following attributes: tooltip.format tooltip.shared The following HighCharts JSON changes the tooltip format such that the x-axis value appears at the top of the tooltip in larger font, followed by a list of all series values at that point.
 

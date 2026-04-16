@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.332Z"
+generated_at: "2026-04-14T11:18:27.985Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Cloud KMS Autokey for Bigtable CMEK"
 feature_slug: "cloud-kms-autokey-for-bigtable-cmek"
 latest_feature_date: "2025-03-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/bigtable/docs/cmek"
-  - "https://docs.cloud.google.com/bigtable/docs/release-notes"
-  - "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table"
+  - "https://docs.cloud.google.com/bigtable/docs/backups"
+  - "https://docs.cloud.google.com/bigtable/docs/managing-backups"
 keywords:
   - "automate"
   - "autokey"
-  - "kms"
+  - "creation"
   - "cmek"
-  - "bigtable"
-  - "can"
-  - "for"
-  - "now"
 ---
 
 # Cloud KMS Autokey for Bigtable CMEK
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +34,53 @@ Cloud KMS Autokey can now automate creation and use of customer-managed encrypti
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/bigtable/docs/cmek](https://docs.cloud.google.com/bigtable/docs/cmek)
-- [https://docs.cloud.google.com/bigtable/docs/release-notes](https://docs.cloud.google.com/bigtable/docs/release-notes)
-- [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table)
+- [https://docs.cloud.google.com/bigtable/docs/backups](https://docs.cloud.google.com/bigtable/docs/backups)
+- [https://docs.cloud.google.com/bigtable/docs/managing-backups](https://docs.cloud.google.com/bigtable/docs/managing-backups)
 
 ## Supporting Pages
 
 ### "Customer-managed encryption keys (CMEK) \_|\_ Bigtable \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/bigtable/docs/cmek](https://docs.cloud.google.com/bigtable/docs/cmek)
-- Source ID: `site-docs-root-2`
-- Final score: 182
+- Source ID: `site-docs-reference-2`
+- Final score: 102
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - CMEK with Cloud KMS Autokey You can either create CMEKs manually to protect your Bigtable clusters or use Cloud KMS Autokey.
-- Logging You can audit the requests that Bigtable sends to Cloud KMS on your behalf in Cloud Logging , if you have enabled Cloud KMS audit logs for the Cloud KMS API in your project.
-- If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Bigtable.
-- You can use the following when you work with CMEK for Bigtable.
+- With Autokey, key rings and keys are generated on demand to support resource creation in Bigtable.
+- Some data is protected by Google default encryption at rest and not by the CMEK key: A subset of row keys that mark range boundaries and are used for routing Debugging data including core dumps and operational logs Data in transit or in memory A subset of timestamp values used for garbage collection Bigtable uses envelope encryption for data at rest.
+- CMEK-protected Bigtable resources (instances, clusters, tables, or backups) tied to a key that has been made inaccessible as the result of a user-triggered action (such as disabling or destroying a key, or by revoking the Encrypter/Decrypter role) for more than 30 consecutive days are automatically deleted .
 
-### Bigtable release notes \_|\_ Google Cloud Documentation
+### Bigtable backups overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigtable/docs/release-notes](https://docs.cloud.google.com/bigtable/docs/release-notes)
+- URL: [https://docs.cloud.google.com/bigtable/docs/backups](https://docs.cloud.google.com/bigtable/docs/backups)
+- Source ID: `site-docs-reference-2`
+- Final score: 89
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Enable replication and automated backup to create daily backups in multiple regions, so that if a table becomes corrupted on one cluster, you have one or more backups that don't share storage on the corrupted cluster.
+- If you want to restore from a CMEK-protected backup to a different instance, the destination instance must be CMEK-protected as well but does not need to have the same CMEK configuration as the source instance.
+- CMEK When you create a backup in a cluster that is protected by a customer-managed encryption key (CMEK) , the backup is pinned to the primary version of the cluster's CMEK key at the time it is taken.
+- Backups of replicated tables that are created as part of automated backup are not exact copies of each other, because backup times can vary from cluster to cluster.
+
+### Manage backups \_|\_ Bigtable \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigtable/docs/managing-backups](https://docs.cloud.google.com/bigtable/docs/managing-backups)
 - Source ID: `site-docs-root`
-- Final score: 170
+- Final score: 76
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- March 24, 2025 Libraries Java 2.56.0 (2025-03-18) Features bigtable: Add support for Logical Views in Admin API ( #2519 ) ( 6dac3fd ) bigtable: Add support for Materialized Views in Admin API ( #2511 ) ( 55cd719 ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.55.1 ( 7992af0 ) Dependencies Sdk-platform-java-config 3.45.1 ( #2517 ) ( b2af258 ) Python 2.30.0 (2025-03-18) Features Update ExecuteQuery to use Prepare ( #1100 ) ( 8a7abc1 ) Bug Fixes Allow protobuf 6.x ( #1092 ) ( 1015fa8 ) Remove setup.cfg configuration for creating universal wheels ( #1097 ) ( 95f4b82 ) March 17, 2025 Libraries Java 2.55.0 (2025-03-11) Features Add MaterializedViewName to ReadRows and SampleRowKeys ( 1763c6e ) Add MaterializedViews and LogicalViews APIs ( 1763c6e ) Add MaterializedViews and LogicalViews APIs ( 7340527 ) Add PrepareQuery api and update ExecuteQuery to support it ( 1763c6e ) bigtable: Add support for data APIs for materialized views ( #2508 ) ( 6310a63 ) large-row-skip: Added large-row-skip-callable with configurable rowadapter ( #2509 ) ( ba193ef ) Next release from main branch is 2.55.0 ( #2506 ) ( 4e45837 ) Publish row key schema fields in table proto and relevant admin APIs to setup a table with a row key schema ( 7340527 ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.54.0 ( 91e4369 ) Documentation Fixed formatting of resource path strings ( 7340527 ) March 11, 2025 Feature You can use Cloud KMS Autokey to automate the creation and use of customer-managed encryption keys (CMEK) in Bigtable clusters.
-- Node.js Changes for @google-cloud/bigtable 4.6.0 (2023-05-26) Features Add ChangeStreamConfig to CreateTable and UpdateTable ( #1269 ) ( 2b05fa4 ) 4.5.2 (2023-05-24) Bug Fixes Parsing for qualifiers with colon characters ( #1277 ) ( b80f533 ) May 23, 2023 Change You can now view information about which customer-managed encryption keys (CMEK) are used to protect your Cloud Bigtable resources and projects using Cloud Key Management Service (KMS).
-- October 28, 2025 Feature You can use Cloud KMS Autokey in the Google Cloud console to automate the creation and use of customer-managed encryption keys (CMEK) in Bigtable clusters.
-- Node.js Changes for @google-cloud/bigtable 5.1.1 (2024-07-11) Bug Fixes Ensure that during resumption of a scan, rows that have not been observed by the caller are re-requested ( #1444 ) ( 2d8de32 ) Remove custom readrows retry logic and rely on gax for retries ( #1422 ) ( 3e0a46e ) Java Changes for google-cloud-bigtable 2.40.0 (2024-06-28) Features Add String type with Utf8Raw encoding to Bigtable API ( #2191 ) ( e7f03fc ) Bug Fixes Add getServiceName() to EnhancedBigTableStubSettings ( #2256 ) ( da703db ) Remove grpclb ( #2033 ) ( 7355375 ) Dependencies Update dependency com.google.truth.extensions:truth-proto-extension to v1.4.3 ( #2268 ) ( 4573220 ) Update dependency org.junit.vintage:junit-vintage-engine to v5.10.3 ( #2269 ) ( 69fef96 ) Update shared dependencies ( #2265 ) ( 61014ca ) June 17, 2024 Feature The Python client library for Bigtable now offers an asynchronous API for use with asynchronous applications.
-
-### "MCP Tools Reference: bigtableadmin.googleapis.com \_|\_ Bigtable \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table)
-- Source ID: `site-docs-reference`
-- Final score: 156
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Table JSON representation { "name" : string , "clusterStates" : { string : { object ( ClusterState ) } , ... } , "columnFamilies" : { string : { object ( ColumnFamily ) } , ... } , "granularity" : enum ( TimestampGranularity ) , "restoreInfo" : { object ( RestoreInfo ) } , "changeStreamConfig" : { object ( ChangeStreamConfig ) } , "deletionProtection" : boolean , "stats" : { object ( TableStats ) } , "tieredStorageConfig" : { object ( TieredStorageConfig ) } , "rowKeySchema" : { object ( Struct ) } , // Union field automated backup config can be only one of the following: "automatedBackupPolicy" : { object ( AutomatedBackupPolicy ) } // End of list of possible types for union field automated backup config . } Fields name string The unique name of the table.
-- Union field automated backup config . automated backup config can be only one of the following: automatedBackupPolicy object ( AutomatedBackupPolicy ) If specified, automated backups are enabled for this table.
-- Type JSON representation { // Union field kind can be only one of the following: "bytesType" : { object ( Bytes ) } , "stringType" : { object ( String ) } , "int64Type" : { object ( Int64 ) } , "float32Type" : { object ( Float32 ) } , "float64Type" : { object ( Float64 ) } , "boolType" : { object ( Bool ) } , "timestampType" : { object ( Timestamp ) } , "dateType" : { object ( Date ) } , "aggregateType" : { object ( Aggregate ) } , "structType" : { object ( Struct ) } , "arrayType" : { object ( Array ) } , "mapType" : { object ( Map ) } , "protoType" : { object ( Proto ) } , "enumType" : { object ( Enum ) } , "geographyType" : { object ( Geography ) } // End of list of possible types for union field kind . } Fields Union field kind .
-- Curl Request curl --location 'https://bigtableadmin.googleapis.com/mcp' \ --header 'content-type: application/json' \ --header 'accept: application/json, text/event-stream' \ --data '{ "method": "tools/call", "params": { "name": "create table", "arguments": { // provide these details according to the tool' s MCP specification } } , "jsonrpc" : "2.0" , "id" : 1 } ' Input Schema Request message for Bigtable.CreateTable CreateTableRequest JSON representation { "projectId" : string , "instanceId" : string , "tableId" : string , "columnFamilies" : [ string ] } Fields projectId string Required.
+- To view backup creation events, enter the following in the Query field: resource.type="audited resource" resource.labels.service="bigtableadmin.googleapis.com" resource.labels.method="CreateAutomatedBackup" Click Run query .
+- Optional: To enable automated backup for a table and set a retention period that is different from the default of seven days, use the --automated-backup-retention-period flag instead of the --enable-automated-backup flag: gcloud bigtable tables update TABLE ID \ --instance= INSTANCE ID \ --automated-backup-retention-period= RETENTION PERIOD Replace RETENTION PERIOD with a value of at least 3 days and up to 90 days, expressed as a number with a unit of m , h , or d (minutes, hours, or days), such as 15d for 15 days.
+- The output looks similar to the following: automatedBackupPolicy : retentionPeriod : 3 d frequency : 24 h columnFamilies : my - family : {} createTime : '2023-02-07T20:10:55.613546Z' granularity : MILLIS name : projects /my-project/instances/my-instance/tables/ my - table updateTime : '2023-02-07T20:10:55.613546Z' Note the following: The automatedBackupPolicy field is absent when automated backup is not enabled for a table.
+- Click Save . gcloud To modify a table's automated backup policy, use the gcloud bigtable tables update command with the --automated-backup-retention-period flag. gcloud bigtable tables update TABLE ID \ --instance= INSTANCE ID \ --automated-backup-retention-period=retention-period= RETENTION PERIOD Replace the following: TABLE ID : the ID of the table that has automated backup.
 

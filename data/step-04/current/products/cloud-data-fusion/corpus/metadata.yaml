@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-10T19:48:19+00:00'
-updated_at: '2026-04-10T19:56:15+00:00'
+updated_at: '2026-04-15T02:24:21+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/data-fusion/docs
   created_at: '2026-04-10T19:48:19+00:00'
-  updated_at: '2026-04-10T19:49:46+00:00'
+  updated_at: '2026-04-15T02:16:25+00:00'
   update_command: know sync site https://docs.cloud.google.com/data-fusion/docs --key
     corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 1
     max_pages: 30
     compact_output: true
-  last_synced_at: '2026-04-10T19:49:46+00:00'
+  last_synced_at: '2026-04-15T02:16:25+00:00'
 - type: site
   id: site-docs-reference
   title: https://docs.cloud.google.com/data-fusion/docs/reference
   created_at: '2026-04-10T19:48:20+00:00'
-  updated_at: '2026-04-10T19:51:00+00:00'
+  updated_at: '2026-04-15T02:17:39+00:00'
   update_command: know sync site https://docs.cloud.google.com/data-fusion/docs/reference
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
@@ -34,12 +34,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-10T19:51:00+00:00'
+  last_synced_at: '2026-04-15T02:17:39+00:00'
 - type: site
   id: site-api-reference
   title: https://docs.cloud.google.com/data-fusion/docs/reference/rest
   created_at: '2026-04-10T19:48:20+00:00'
-  updated_at: '2026-04-10T19:52:14+00:00'
+  updated_at: '2026-04-15T02:18:52+00:00'
   update_command: know sync site https://docs.cloud.google.com/data-fusion/docs/reference/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
@@ -48,12 +48,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-10T19:52:14+00:00'
+  last_synced_at: '2026-04-15T02:18:52+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/data-fusion/docs/access-control
   created_at: '2026-04-10T19:48:20+00:00'
-  updated_at: '2026-04-10T19:53:31+00:00'
+  updated_at: '2026-04-15T02:20:08+00:00'
   update_command: know sync site https://docs.cloud.google.com/data-fusion/docs/access-control
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -62,12 +62,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-10T19:53:31+00:00'
+  last_synced_at: '2026-04-15T02:20:08+00:00'
 - type: site
   id: site-python-reference
   title: https://docs.cloud.google.com/python/docs/reference/datafusion/latest
   created_at: '2026-04-10T19:48:21+00:00'
-  updated_at: '2026-04-10T19:54:51+00:00'
+  updated_at: '2026-04-15T02:21:31+00:00'
   update_command: know sync site https://docs.cloud.google.com/python/docs/reference/datafusion/latest
     --key corpus --compact
   delete_command: know del --key corpus site-python-reference
@@ -76,12 +76,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-10T19:54:51+00:00'
+  last_synced_at: '2026-04-15T02:21:31+00:00'
 - type: site
   id: site-java-reference
   title: https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/overview
   created_at: '2026-04-10T19:48:21+00:00'
-  updated_at: '2026-04-10T19:56:15+00:00'
+  updated_at: '2026-04-15T02:22:56+00:00'
   update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/overview
     --key corpus --compact
   delete_command: know del --key corpus site-java-reference
@@ -90,4 +90,18 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-10T19:56:15+00:00'
+  last_synced_at: '2026-04-15T02:22:56+00:00'
+- type: site
+  id: site-docs-reference-required-2
+  title: https://docs.cloud.google.com/monitoring/api/resources
+  created_at: '2026-04-15T02:15:26+00:00'
+  updated_at: '2026-04-15T02:24:21+00:00'
+  update_command: know sync site https://docs.cloud.google.com/monitoring/api/resources
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/monitoring/api/resources
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-15T02:24:20+00:00'

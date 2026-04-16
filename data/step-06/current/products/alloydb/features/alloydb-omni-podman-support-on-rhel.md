@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.608Z"
+generated_at: "2026-04-12T12:07:33.851Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB Omni Podman support on RHEL"
 feature_slug: "alloydb-omni-podman-support-on-rhel"
 latest_feature_date: "2024-06-25"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_user"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance"
 keywords:
   - "Red Hat Enterprise Linux"
   - "Podman container runtime"
@@ -24,7 +27,7 @@ keywords:
 # AlloyDB Omni Podman support on RHEL
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,26 +35,50 @@ AlloyDB Omni now supports using the Podman container tool on Red Hat Enterprise 
 
 ## Extended Definition
 
-AlloyDB Omni Podman support on RHEL is the ability to run AlloyDB Omni using the Podman container runtime in Red Hat Enterprise Linux environments. The AlloyDB release notes explicitly state that AlloyDB Omni supports the Podman container tool on RHEL, with RHEL 8 support marked as generally available (GA).
+AlloyDB Omni now supports using the Podman container tool on Red Hat Enterprise Linux.
 
 ## Evidence Summary
 
-The cited AlloyDB release-notes page directly confirms both Podman support for AlloyDB Omni on RHEL and GA support status for RHEL 8.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_user](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_user)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 24
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- Source ID: `site-api-reference`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- AlloyDB Omni supports the Podman container tool on Red Hat Enterprise Linux (RHEL).
-- Support for Red Hat Enterprise Linux (RHEL) 8 is generally available ( GA ).
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance)
+- Source ID: `site-api-reference`
+- Final score: 72
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_user](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_user)
+- Source ID: `site-api-reference`
+- Final score: 72
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance)
+- Source ID: `site-api-reference`
+- Final score: 72
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

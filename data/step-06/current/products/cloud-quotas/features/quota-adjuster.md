@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:26:31.355Z"
+generated_at: "2026-04-12T12:11:54.004Z"
 product_name: "Cloud Quotas"
 product_slug: "cloud-quotas"
 feature_name: "Quota adjuster"
 feature_slug: "quota-adjuster"
 latest_feature_date: "2025-01-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/docs/quotas/quota-adjuster"
   - "https://docs.cloud.google.com/docs/quotas/api-overview"
   - "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples"
+  - "https://docs.cloud.google.com/docs/quotas/terminology"
 keywords:
   - "quota"
   - "adjuster"
@@ -26,7 +27,7 @@ keywords:
 # Quota adjuster
 
 Product: Cloud Quotas
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Quota adjuster automatically manages quota settings through the API, gcloud CLI,
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/docs/quotas/quota-adjuster](https://docs.cloud.google.com/docs/quotas/quota-adjuster)
 - [https://docs.cloud.google.com/docs/quotas/api-overview](https://docs.cloud.google.com/docs/quotas/api-overview)
 - [https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples](https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples)
+- [https://docs.cloud.google.com/docs/quotas/terminology](https://docs.cloud.google.com/docs/quotas/terminology)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/docs/quotas/quota-adjuster](https://docs.cloud.google.com/docs/quotas/quota-adjuster)
 - Source ID: `site-docs-reference`
-- Final score: 250
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 316
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - REST Make an HTTP request to update quota adjuster settings: PATCH https://cloudquotas.googleapis.com/v1beta/ RESOURCE CONTAINER / ID /locations/global/quotaAdjusterSettings In the request body, specify the quota adjuster settings resource container and set the enablement field to DISABLED .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/docs/quotas/api-overview](https://docs.cloud.google.com/docs/quotas/api-overview)
 - Source ID: `site-docs-reference`
-- Final score: 200
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 264
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The Cloud Quotas API service has the following endpoint and all URIs are relative to it: https://cloudquotas.googleapis.com Required roles To get the permissions that you need to access the cloudquotas quotaPreferences , cloudquotas quotaInfos , and cloudquotas quotaAdjusterSettings resources, ask your administrator to grant you the Cloud Quotas Admin ( cloudquotas.admin ) IAM role on the project.
@@ -80,13 +82,26 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples](https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples)
 - Source ID: `site-docs-reference`
-- Final score: 182
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 242
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The output would contain data specific to your configuration and look similar to the following example output: createTime : ' CREATE TIME ' dimensions : gpu family : NVIDIA H100 region : us-east4 etag : ETAG VALUE name : projects/12345/locations/global/quotaPreferences/ PREFERENCE ID quotaConfig : grantedValue : '0' preferredValue : '128' traceId : TRACE ID quotaId : GPUS-PER-GPU-FAMILY-per-project-region reconciling : true service : compute.googleapis.com updateTime : ' UPDATE TIME ' Enable quota adjuster through a client project A client project refers to the project used by an application or user to access and interact with Google Cloud resources, while a resource project is the underlying project where those resources are stored and managed.
 - Optional: To view the current quota adjuster settings, run the following command: gcloud beta quotas adjuster settings describe --project= RESOURCE PROJECT ID The output is similar to the following example: enablement: ENABLED etag: 8izmJp6EI mOfLyhkQU9 name: projects/ RESOURCE PROJECT ID /locations/global/quotaAdjusterSettings updateTime: '2025-01-10T17:22:37.883221181Z' To enable quota adjuster for multiple client projects, follow the previous steps 5 to 8.
 - Activate the service account using the service account key that you created earlier: gcloud auth activate-service-account --key-file= KEY FILE Enable quota adjuster on your resource project by specifying the project and the enablement setting: gcloud beta quotas adjuster settings update --project= RESOURCE PROJECT ID \ --enablement= enabled The enablement setting is required when using the gcloud CLI and must be set to enabled or disabled .
 - To enable quota adjuster through a client project using the gcloud CLI, follow these steps: Create a client project: gcloud projects create CLIENT PROJECT ID gcloud config set project CLIENT PROJECT ID Replace CLIENT PROJECT ID with the ID for the project you want to create.
+
+### "Quota and system limit terminology \_|\_ Cloud Quotas \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/docs/quotas/terminology](https://docs.cloud.google.com/docs/quotas/terminology)
+- Source ID: `site-docs-reference`
+- Final score: 180
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The Cloud Quotas API represents dimensions as key-value pairs, where the key is the dimension name, and the value is the value of the named dimension—for example, {" key" : "region", "value" : "us-central1 "}.
+- Until you express a preferred state through quotaPreference.create or quotaPreference.update , QuotaInfo relies on the default quota information available to determine what quota value to enforce.
+- When enabled, the quota adjuster monitors your usage for the specified resources and issues quota adjustment requests when resource usage approaches its quota value.
+- Quota adjuster settings ( Preview ) This resource represents your quota adjuster settings for a particular project.
 

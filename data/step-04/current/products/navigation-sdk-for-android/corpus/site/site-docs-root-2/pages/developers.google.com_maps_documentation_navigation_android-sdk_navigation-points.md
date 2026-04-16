@@ -5,7 +5,7 @@ url: https://developers.google.com/maps/documentation/navigation/android-sdk/nav
 knowledge_key: corpus
 source_id: site-docs-root-2
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/navigation/android-sdk
+entrypoint: https://developers.google.com/maps/documentation/navigation/android-sdk/overview
 source_metadata:
   url: https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points
   title: "Route to navigation points \_|\_ Navigation SDK for Android \_|\_ Google\
@@ -121,6 +121,6 @@ Routes to road segment nearest to the defined coordinates
 From Place ID, though not shown if Place ID is too far from the latitude/longitude coordinates
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-02-23 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-23 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

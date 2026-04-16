@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:34.031Z"
+generated_at: "2026-04-12T12:11:29.572Z"
 product_name: "Cloud Interconnect"
 product_slug: "cloud-interconnect"
 feature_name: "1500 MTU support"
@@ -9,9 +9,10 @@ latest_feature_date: "2021-01-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/dedicated/creating-vlan-attachments"
-  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/creating-vlan-attachments"
-  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner-cci-for-oci/creating-vlan-attachments"
+  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas"
+  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview"
+  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview"
+  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect"
 keywords:
   - "1500"
   - "mtu"
@@ -37,54 +38,67 @@ Cloud Interconnect supports an MTU of 1500 bytes.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/dedicated/creating-vlan-attachments](https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/dedicated/creating-vlan-attachments)
-- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/creating-vlan-attachments](https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/creating-vlan-attachments)
-- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner-cci-for-oci/creating-vlan-attachments](https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner-cci-for-oci/creating-vlan-attachments)
+- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas](https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas)
+- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview)
+- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview)
+- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect)
 
 ## Supporting Pages
 
-### Create VLAN attachments \_|\_ Cloud Interconnect \_|\_ Google Cloud Documentation
+### Quotas and limits \_|\_ Cloud Interconnect \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/dedicated/creating-vlan-attachments](https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/dedicated/creating-vlan-attachments)
-- Source ID: `site-iam-reference`
-- Final score: 176
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas](https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas)
+- Source ID: `site-docs-root`
+- Final score: 174
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Maximum transmission unit (MTU) 1,440 bytes 1,460 bytes 1,500 bytes 8,896 bytes Depending on the VLAN attachment MTU setting, the size of the largest IP address packet that can be transmitted over a VLAN attachment.
+- Maximum lifetime of (Partner Interconnect) VLAN attachment pairing key 28 days The maximum amount of time that can pass between generating a (Partner Interconnect) VLAN attachment pairing key and successful attachment provisioning by the service provider.
+- VLAN attachments total Mbps Quota The maximum bandwidth capacity of all VLAN attachments in a given region for a given project, irrespective of their relationship with Interconnect connections.
+- 10-Gbps increments up to eight circuits (80 Gbps) to increase the maximum total bandwidth of all VLAN attachments that use the Cloud Interconnect connection to 80 Gbps.
+
+### Cloud Interconnect overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview)
+- Source ID: `site-docs-reference`
+- Final score: 168
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- To specify an MTU of 1460, 1500, or 8896 bytes for the attachment, use the --mtu flag, as shown in the following example: gcloud compute interconnects attachments dedicated create ATTACHMENT NAME \ --region= REGION \ --router= ROUTER NAME \ --interconnect= INTERCONNECT NAME \ --mtu=1500 To make use of a 1460, 1500 or 8896-byte MTU, the VPC network that uses the attachment and the on-premises systems and routers must all have the same MTU value set .
-- You can also specify an attachment MTU of 1460, 1500, or 8896 bytes.
-- Describe the attachment to retrieve the IPv4 or IPv6 next hop address. gcloud compute interconnects attachments describe ATTACHMENT NAME \ --region= REGION The output is similar to the following: cloudRouterIpAddress: 169.254.180.81/29 cloudRouterIpv6Address: 2600:2d00:0:1:8000:12:0:299/125 creationTimestamp: '2022-03-22T10:31:40.829-07:00' customerRouterIpAddress: 169.254.180.82/29 customerRouterIpv6Address: 2600:2d00:0:1:8000:12:0:29a/125 dataplaneVersion: 2 id: '2973197662755397267' interconnect: https://www.googleapis.com/compute/v1/projects/my-project/global/interconnects/myinterconnect kind: compute#interconnectAttachment mtu: 1500 name: my-attachment operationalStatus: ACTIVE privateInterconnectInfo: tag8021q: 1000 region: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/routers/my-router stackType: IPV4 IPV6 state: ACTIVE type: DEDICATED vlanTag8021q: 1000 Custom advertised route and MED value configuration To specify a base MED value, use the --advertised-route-priority flag.
-- Use these values to configure your Cloud Router and your on-premises router. gcloud compute interconnects attachments describe ATTACHMENT NAME \ --region= REGION The output is similar to the following: cloudRouterIpAddress: 169.254.180.81/29 creationTimestamp: '2022-03-22T10:31:40.829-07:00' customerRouterIpAddress: 169.254.180.82/29 dataplaneVersion: 2 id: '2973197662755397267' interconnect: https://www.googleapis.com/compute/v1/projects/my-project/global/interconnects/myinterconnect kind: compute#interconnectAttachment mtu: 1500 name: my-attachment operationalStatus: ACTIVE privateInterconnectInfo: tag8021q: 1000 region: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/routers/my-router stackType: IPV4 ONLY state: ACTIVE type: DEDICATED vlanTag8021q: 1000 The cloudRouterIpAddress value ( 169.254.180.81/29 ) is an IPv4 link-local address.
+- The following reserved IP address ranges are not supported: Reserved IPv4 address ranges: 0.0.0.0/8 10.0.0.0/8 100.64.0.0/10 127.0.0.0/8 172.16.0.0/12 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 192.168.0.0/16 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 224.0.0.0/4 240.0.0.0/4 Reserved IPv6 address ranges: ::ffff:0:0/96 64:ff9b::/96 64:ff9b:1::/48 100::/64 2001:/32 2001:20::/28 2001:db8::/32 fe80::/10 2002::/16 3fff::/20 5f00::/16 fc00::/7 fe80::/10 ff00::/8 Configure custom IP address ranges To create VLAN attachments with custom IP address ranges, see the following pages: Dedicated Interconnect: configure custom IP address ranges Layer 2 Partner Interconnect connections: use custom IP address ranges with Layer 2 connections Layer 3 Partner Interconnect connections: use custom IP address ranges with Layer 3 connections Cross-Cloud Interconnect: Alibaba Cloud: configure custom IP address ranges Amazon Web Services (AWS): configure custom IP address ranges Microsoft Azure: configure custom IP address ranges Oracle Cloud Infrastructure: configure custom IP address ranges Support for GRE traffic Cloud Interconnect supports GRE traffic.
+- Cloud Interconnect MTU See the MTU information for your use case: If you are connecting your VPC networks to other networks, Cloud Interconnect VLAN attachments support the following four MTU sizes: 1,440 bytes 1,460 bytes 1,500 bytes 8,896 bytes For information about MTU best practices for VLAN attachments, see Use the same MTU for all VLAN attachments .
+- If you are connecting your on-premises networks to each other, cross-site networks support an MTU size of 9,000 bytes.
+- The following configurations require that you create custom advertised routes on your Cloud Router to direct traffic from your on-premises network to certain internal IP addresses by using a Cloud Interconnect connection: Configure Private Google Access for on-premises hosts Create a Cloud DNS forwarding zone Alternative name server network requirements Cloud Interconnect as a data transfer network Before you use Cloud Interconnect, carefully review Section 2 of the General Service Terms for Google Cloud.
 
-### Create VLAN attachments \_|\_ Cloud Interconnect \_|\_ Google Cloud Documentation
+### Dedicated Interconnect overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/creating-vlan-attachments](https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/creating-vlan-attachments)
-- Source ID: `site-iam-reference`
-- Final score: 168
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Maximum transmission unit (MTU) for the attachment: To make use of the 1460-, 1500-, or 8896-byte maximum transmission unit (MTU), the VPC network that uses the attachment must have an MTU set to the same value .
-- To specify an MTU of 1460 , 1500 , or 8896 use the --mtu parameter—for example, --mtu 1500 .
-- All encrypted VLAN attachments must use an MTU of 1440 bytes, which is the default value.
-- For more information about prerequisites, limitations and why you might use custom IP address ranges, see Custom IP address ranges . gcloud compute interconnects attachments partner create ATTACHMENT NAME \ --project= PROJECT ID \ --region= REGION \ --router= ROUTER NAME \ --encryption IPSEC \ --candidate-cloud-router-ip-address= CANDIDATE CLOUD ROUTER IP ADDRESS \ --candidate-customer-router-ip-address= CANDIDATE CUSTOMER ROUTER IP ADDRESS Replace the following: CANDIDATE CLOUD ROUTER IP ADDRESS : the IPv4 CIDR address that you want to assign to the Cloud Router end of your VLAN attachment, like 192.0.2.1/29 CANDIDATE CUSTOMER ROUTER IP ADDRESS : the IPv4 CIDR address that you want to assign to the customer router end of your VLAN attachment If you use IPv6 dual-stack attachments, use the following command. gcloud compute interconnects attachments partner create ATTACHMENT NAME \ --project= PROJECT ID \ --region= REGION \ --router= ROUTER NAME \ --stack-type=IPV4 IPV6 \ --encryption IPSEC \ --candidate-cloud-router-ipv6-address= CANDIDATE CLOUD ROUTER IP ADDRESS \ --candidate-customer-router-ipv6-address= CANDIDATE CUSTOMER ROUTER IP ADDRESS Replace the following: CANDIDATE CLOUD ROUTER IP ADDRESS : an IPv6 CIDR address, like 2001:db8::1/125 CANDIDATE CUSTOMER ROUTER IP ADDRESS : an IPv6 CIDR address You can use the --candidate-cloud-router-ip-address and --candidate-customer-router-ip-address flags alongside the --candidate-cloud-router-ipv6-address and --candidate-customer-router-ipv6-address flags to create an attachment that uses both IPv4 and IPv6 custom address ranges.
-
-### Create VLAN attachments \_|\_ Cloud Interconnect \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner-cci-for-oci/creating-vlan-attachments](https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner-cci-for-oci/creating-vlan-attachments)
-- Source ID: `site-iam-reference`
-- Final score: 164
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview)
+- Source ID: `site-docs-root`
+- Final score: 165
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- To specify an MTU of 1460 , 1500 , or 8896 use the --mtu parameter—for example, --mtu 1500 .
-- Create VLAN attachments Cloud Interconnect Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools More / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-- Run the following command twice—once for each attachment: gcloud compute interconnects attachments describe NAME --region REGION Replace the following: NAME : the name of the VLAN attachment REGION : the region where the VLAN attachment is located The command returns output that includes cloudRouterIpAddress and customerRouterIpAddress .
-- To configure the Google Cloud resources needed for Partner Cross-Cloud Interconnect for OCI, complete the following tasks: Create two VLAN attachments, one for each of your Partner Cross-Cloud Interconnect for OCI connections.
+- VLAN attachment MTU options VLAN attachments can have a maximum transmission unit (MTU) of 1440, 1460, 1500 or 8896 bytes.
+- Cloud Interconnect groups You can use connection groups to communicate your intended level of reliability, and to receive feedback on how your Cloud Interconnect resources meet that intended level of reliability.
+- Single stack (IPv4 only) Dual stack (IPv4 and IPv6) The stack type that you select for your VLAN attachment determines what version of IP traffic is supported by your Dedicated Interconnect connection.
+- Custom IP address ranges When you create a VLAN attachment for Dedicated Interconnect, you can configure custom IP address ranges for the Cloud Router and customer router ends of the attachment.
+
+### HA VPN over Cloud Interconnect overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect)
+- Source ID: `site-docs-root`
+- Final score: 162
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Payload and latency: HA VPN over Cloud Interconnect differentiates between the following maximum transmission unit (MTU) values: HA VPN over Cloud Interconnect gateway MTU : 1440 bytes.
+- Multi-region deployment for production-level applications If the deployment uses a multi-region Cloud Interconnect topology, the HA VPN over Cloud Interconnect deployment has an SLA of 99.99%.
+- Single region deployment for non-critical applications If the deployment uses a single region Cloud Interconnect topology, the HA VPN over Cloud Interconnect deployment has an SLA of 99.9%.
+- As a solution, HA VPN over Cloud Interconnect has the advantage of providing deployment tools by using the Google Cloud console, the Google Cloud CLI, and the Compute Engine API.
 

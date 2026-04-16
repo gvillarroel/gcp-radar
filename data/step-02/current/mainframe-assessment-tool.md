@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 25
-Unique features: 125
+Unique features: 122
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -99,12 +99,9 @@ Unique features: 125
 | 2024-11-14 | Code suggestion improvements |  | Improves the quality of code suggestions. |
 | 2024-11-14 | Cross-assessment LLM response cache |  | Caches LLM responses across assessments to improve reuse. |
 | 2024-11-14 | HLASM and Easytrieve code suggestions |  | Adds code suggestions for HLASM and Easytrieve programs. |
-| 2024-11-14 | Parsing performance improvements |  | Improves parsing performance. |
-| 2024-11-14 | Tech stack guidance for suggested code |  | Lets users provide tech stack guidance for suggested code. |
 | 2024-11-14 | Vertex AI cached context support |  | Supports Vertex AI cached context to improve performance and reduce costs. |
 | 2024-10-14 | Advanced AI configuration |  | Lets users customize the AI model and the level of generated detail. |
 | 2024-10-14 | AI tab status filtering |  | Lets users filter by program or job status in the AI tab. |
-| 2024-10-14 | and copybook parsing enhancements |  | Improves parsing for COBOL, JCL, and copybooks. |
 | 2024-10-14 | COBOL |  | Improves parsing for COBOL, JCL, and copybooks. |
 | 2024-10-14 | Gemini 1.5 model improvements |  | Improves precision and performance by using the latest Gemini 1.5 models. |
 | 2024-10-14 | JCL |  | Improves parsing for COBOL, JCL, and copybooks. |

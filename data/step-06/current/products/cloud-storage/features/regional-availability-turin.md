@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.751Z"
+generated_at: "2026-04-12T12:12:45.922Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "Regional availability: Turin"
 feature_slug: "regional-availability-turin"
 latest_feature_date: "2023-03-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/storage/docs/availability-durability"
   - "https://docs.cloud.google.com/storage/docs/locations"
   - "https://docs.cloud.google.com/storage/docs/storage-classes"
+  - "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist"
 keywords:
   - "regional"
   - "availability"
@@ -26,7 +27,7 @@ keywords:
 # Regional availability: Turin
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Storage is available in the Turin region (europe-west12).
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/storage/docs/availability-durability](https://docs.cloud.google.com/storage/docs/availability-durability)
 - [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - [https://docs.cloud.google.com/storage/docs/storage-classes](https://docs.cloud.google.com/storage/docs/storage-classes)
+- [https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist](https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/storage/docs/availability-durability](https://docs.cloud.google.com/storage/docs/availability-durability)
 - Source ID: `site-iam-reference`
-- Final score: 190
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 240
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - In the unlikely event of an availability zone outage, such as one caused by a natural disaster, regional buckets remain available, with no need to change storage paths.
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - Source ID: `site-docs-root`
-- Final score: 174
+- Final score: 219
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/storage/docs/storage-classes](https://docs.cloud.google.com/storage/docs/storage-classes)
 - Source ID: `site-docs-root`
-- Final score: 172
+- Final score: 208
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +89,17 @@ Evidence snippets:
 - Availability The availability of Nearline storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.9% 99.95% dual-region 99.9% 99.95% region 99.0% 99.9% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA .
 - Availability The availability of Coldline storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.9% 99.95% dual-region 99.9% 99.95% region 99.0% 99.9% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA .
 - Unlike the "coldest" storage services offered by other Cloud providers, your data is available within milliseconds, not hours or days.
+
+### "Analyze your stored data with Gemini Cloud Assist \_|\_ Cloud Storage \_\
+
+- URL: [https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist](https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist)
+- Source ID: `site-iam-reference`
+- Final score: 190
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following data is not available in Storage Insights datasets, meaning that Gemini Cloud Assist lacks the proper context to respond to prompts relating to that data: Specific cost data, for example: "how much does my bucket cost per month".
+- You can ask prompts such as the following: Prompts related to usage and cost savings: "5 largest buckets without Object Lifecycle Management" "5 largest buckets without Autoclass enabled" Prompts related to security and compliance: "5 largest buckets without object versioning enabled" "5 largest objects with a retention expiration date within the next 30 days" Prompts related to data discovery: "Buckets with a high volume of small files (each under 1 MB)" "Objects in Standard storage class smaller than 50 MB" Before you begin In order to use Gemini Cloud Assist for general prompts related to Cloud Storage, you must first set up Gemini Cloud Assist, including getting required roles.
+- To get the permissions that you need to get insights on bucket and object metadata, ask your administrator to grant you the following IAM roles on the project, folder, or organization that contains the datasets you want to analyze: BigQuery Job User ( roles/bigquery.jobUser ) BigQuery Data Viewer ( roles/bigquery.dataViewer ) Storage Insights Viewer ( roles/storageinsights.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- When you use Gemini Cloud Assist alone without a Storage Intelligence subscription, you can ask prompts about how Cloud Storage generally works, such as the following: "How do I transition objects from one storage class to another?" "How do I enable soft delete on a bucket?" When you enable a Storage Intelligence subscription , you can also ask prompts related to cost saving opportunities, security and compliance, and data discovery.
 

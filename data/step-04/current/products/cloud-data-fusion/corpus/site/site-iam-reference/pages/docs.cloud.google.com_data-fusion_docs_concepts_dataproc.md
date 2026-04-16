@@ -1,6 +1,6 @@
 ---
-title: "Dataproc provisioner properties \_|\_ Cloud Data Fusion \_|\_ Google Cloud\
-  \ Documentation"
+title: "Managed Service for Apache Spark provisioner properties \_|\_ Cloud Data Fusion\
+  \ \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc
 knowledge_key: corpus
 source_id: site-iam-reference
@@ -8,8 +8,8 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/data-fusion/docs/access-control
 source_metadata:
   url: https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc
-  title: "Dataproc provisioner properties \_|\_ Cloud Data Fusion \_|\_ Google Cloud\
-    \ Documentation"
+  title: "Managed Service for Apache Spark provisioner properties \_|\_ Cloud Data\
+    \ Fusion \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
@@ -22,24 +22,24 @@ Data analytics
 Cloud Data Fusion
 Guides
 Send feedback
-Dataproc provisioner properties
+Managed Service for Apache Spark provisioner properties
 Stay organized with collections
 Save and categorize content based on your preferences.
-The Dataproc provisioner in Cloud Data Fusion calls the
+The Managed Service for Apache Spark provisioner in Cloud Data Fusion calls the
 Dataproc API to create and delete clusters in your Google Cloud
 projects. You can configure the clusters in the provisioner's settings.
 For more information about compatibility between Cloud Data Fusion
-versions and Dataproc versions, see Version compatibility .
+versions and Managed Service for Apache Spark versions, see Version compatibility .
 Properties
 Property
 Description
 Project ID
-The Google Cloud project where the Dataproc
+The Google Cloud project where the Managed Service for Apache Spark
 cluster gets created. The project must have the Dataproc API
 enabled.
 Creator service account key
 The service account key provided to the provisioner must have
-permission to access the Dataproc and Compute Engine
+permission to access the Managed Service for Apache Spark and Compute Engine
 APIs. Because your account key is sensitive, we recommend that you provide
 the account key using Secure Storage .
 After you create the secure key, you can add it to a namespace or a
@@ -49,12 +49,12 @@ key. For a system compute profile, enter the name of the key in the
 Secure Account Key field.
 Region
 A geographical location where you can host your resources, such as
-the compute nodes for the Dataproc cluster.
+the compute nodes for the Managed Service for Apache Spark cluster.
 Zone
 An isolated deployment area within a region.
 Network
 The VPC network in your Google Cloud project that will be used
-when creating a Dataproc cluster.
+when creating a Managed Service for Apache Spark cluster.
 Network host project ID
 If the network resides in another Google Cloud project, enter
 the ID of that project. For a Shared VPC, enter the host project
@@ -64,7 +64,7 @@ The subnet to use when creating clusters. It must be within the given
 network and in the region that the zone is in. If left blank, a subnet is
 selected based on the network and zone.
 Runner service account
-The service account name of the Dataproc virtual machines
+The service account name of the Managed Service for Apache Spark virtual machines
 (VM) that are used for running programs. If left blank, the default
 Compute Engine service account is used.
 Number of masters
@@ -123,7 +123,7 @@ Standard Persistent Disk
 SSD Persistent Disk
 Default is Standard Persistent Disk.
 Use predefined Autoscaling
-Enables using predefined Dataproc autoscaling .
+Enables using predefined Managed Service for Apache Spark autoscaling .
 Number of primary workers
 Worker nodes contain a YARN NodeManager and an HDFS DataNode.
 Default is 2 .
@@ -133,10 +133,10 @@ DataNode. This is normally set to zero, unless an autoscaling policy
 requires it to be higher.
 Autoscaling policy
 Path for the autoscaling policy ID or the resource URI.
-For information about configuring and using Dataproc
+For information about configuring and using Managed Service for Apache Spark
 autoscaling to automatically and dynamically resize clusters to meet
 workload demands, see When to use autoscaling
-and Autoscale Dataproc
+and Autoscale Managed Service for Apache Spark
 clusters .
 Metadata
 Additional metadata for instances running in your cluster. You can
@@ -149,35 +149,35 @@ lowercase letters, numbers, and hyphens. Tags must end with a lowercase
 letter or number.
 Enable Secure Boot
 Enables Secure Boot on the
-Dataproc VMs.
+Managed Service for Apache Spark VMs.
 Default is False .
 Enable vTPM
 Enables virtual Trusted Platform Module
 ( vTPM )
-on the Dataproc VMs.
+on the Managed Service for Apache Spark VMs.
 Default is False .
 Enable Integrity Monitoring
 Enables virtual Integrity Monitoring on the
-Dataproc VMs.
+Managed Service for Apache Spark VMs.
 Default is False .
 Image version
-The Dataproc image version. If left blank, one is
+The Managed Service for Apache Spark image version. If left blank, one is
 automatically selected. If the Custom image URI property is
 left blank, this property is ignored.
 Custom image URI
-The Dataproc image URI. If left blank, it's inferred from
+The Managed Service for Apache Spark image URI. If left blank, it's inferred from
 the Image version property.
 Staging bucket
 Cloud Storage bucket used to stage job dependencies and
-config files for running pipelines in Dataproc.
+config files for running pipelines in Managed Service for Apache Spark.
 Temp bucket
 Cloud Storage bucket used to store ephemeral cluster and
-jobs data, such as Spark history files in Dataproc.
+jobs data, such as Spark history files in Managed Service for Apache Spark.
 This property was introduced in Cloud Data Fusion version
 6.9.2.
 Encryption key name
 The customer managed encryption key (CMEK) that's used by
-Dataproc.
+Managed Service for Apache Spark.
 OAuth scopes
 The OAuth 2.0 scopes that you might need to request to access Google
 APIs, depending on the level of access you need.
@@ -193,14 +193,14 @@ Cluster properties overriding the default configuration properties of
 the Hadoop services. For more information on applicable key-value pairs,
 see Cluster properties .
 Common labels
-Labels to organize the Dataproc clusters and jobs
+Labels to organize the Managed Service for Apache Spark clusters and jobs
 being created.
 You can label each resource and then filter the resources by labels.
 Information about labels is forwarded to the billing system, so customers
 can break down your billing charges by
 label.
 Max idle time
-Configure Dataproc to delete a cluster if it's idle
+Configure Managed Service for Apache Spark to delete a cluster if it's idle
 longer than the specified number of minutes. Clusters are normally deleted
 directly after a run ends, but deletion can fail in rare situations. For
 more information, see
@@ -248,9 +248,9 @@ Default is 30 seconds.
 Poll interval
 The number of seconds to wait between polls for cluster status.
 Default is 2 .
-Dataproc profile web interface properties mapped to JSON properties
-Dataproc profile UI property name
-Dataproc profile JSON property name
+Managed Service for Apache Spark profile web interface properties mapped to JSON properties
+Managed Service for Apache Spark profile UI property name
+Managed Service for Apache Spark profile JSON property name
 Profile label
 name
 Profile name
@@ -352,6 +352,6 @@ What's next
 Learn more about managing compute profiles .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

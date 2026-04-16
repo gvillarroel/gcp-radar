@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.400Z"
+generated_at: "2026-04-12T12:13:45.753Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Workspace query preview"
 feature_slug: "workspace-query-preview"
 latest_feature_date: "2023-03-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataform/docs/preview-queries"
   - "https://docs.cloud.google.com/dataform/docs/access-control"
   - "https://docs.cloud.google.com/dataform/docs/create-workspace"
+  - "https://docs.cloud.google.com/dataform/docs/overview"
 keywords:
   - "workspace"
   - "query"
@@ -26,7 +27,7 @@ keywords:
 # Workspace query preview
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Workspace query preview lets users preview queries within a Dataform workspace.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataform/docs/preview-queries](https://docs.cloud.google.com/dataform/docs/preview-queries)
 - [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 - [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
+- [https://docs.cloud.google.com/dataform/docs/overview](https://docs.cloud.google.com/dataform/docs/overview)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataform/docs/preview-queries](https://docs.cloud.google.com/dataform/docs/preview-queries)
 - Source ID: `site-docs-root-2`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 237
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Required roles To get the permissions that you need to preview queries, ask your administrator to grant you the following IAM roles: Dataform Editor ( roles/dataform.editor ) on workspaces BigQuery Job User ( roles/bigquery.jobUser ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 - Source ID: `site-docs-root-2`
-- Final score: 170
+- Final score: 215
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,13 +81,26 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
 - Source ID: `site-docs-root-2`
-- Final score: 154
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 205
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - An initialized development workspace contains the following directories and files: definitions/ : a directory for asset definitions, in Dataform core or JavaScript. includes/ : an empty directory for scripts and variables that you can reuse across the repository. workflow settings.yaml : the default Dataform configuration file containing the Google Cloud project ID and BigQuery schema to publish assets in.
 - Note: If you enhance security by setting the enable private workspace field (Preview) to true in the projects.locations.updateConfig Dataform API method , only the workspace creator can read and write code in that Dataform workspace.
 - To learn how to run a preview to test a SQL query, see Preview SQL queries .
 - Create a Dataform development workspace When you create a development workspace in a new repository for the first time, Dataform prompts you to initialize the development workspace with a set of configuration files that are required for Dataform to work.
+
+### Dataform overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/overview](https://docs.cloud.google.com/dataform/docs/overview)
+- Source ID: `site-docs-root`
+- Final score: 185
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To test the output of a compiled SQL query before you run it to BigQuery, you can run preview of the query in your Dataform workspace.
+- In a Dataform workspace, you can develop the following workflow actions: Source data declarations Tables and views Incremental tables Table partitions and clusters Dependencies between actions Documentation of tables Custom SQL operations BigQuery labels BigQuery policy tags Dataform tags Data quality tests, called assertions You can use JavaScript to reuse your Dataform workflow code in the following ways: Across a file with code encapsulation Across a repository with includes Across repositories with packages Dataform compiles the workflow code in your workspace in real-time.
+- SELECT FROM ... post operations { GRANT roles / bigquery . dataViewer ON TABLE ${ self () } TO "group:someusers@dataform.co" } Encapsulate SQL code To define reusable functions to generate repetitive parts of SQL code, you can use JavaScript blocks.
+- Dataform lets you develop Dataform core in a development workspace In a development workspace, you can define and document tables, their dependencies, and transformation logic to build your workflow.
 

@@ -1,16 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:23.449Z"
+generated_at: "2026-04-12T15:57:29.232Z"
 product_name: "Access Approval"
 product_slug: "access-approval"
 feature_name: "Access Approval UI Access Transparency log view"
 feature_slug: "access-approval-ui-access-transparency-log-view"
 latest_feature_date: "2021-04-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details"
-  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/list"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests/list"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests"
 keywords:
   - "view access approvals in UI"
   - "Access Transparency log view"
@@ -25,7 +27,7 @@ keywords:
 # Access Approval UI Access Transparency log view
 
 Product: Access Approval
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,39 +39,46 @@ Access Approval UI now allows viewing Access Transparency logs associated with a
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details](https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details)
-- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes](https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys](https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/list](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/list)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests/list](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests/list)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests)
 
 ## Supporting Pages
 
-### Anatomy of an Access Approval request \_|\_ Google Cloud Documentation
+### "Review and approve access requests using a custom signing key \_|\_ Access\
 
-- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details](https://docs.cloud.google.com/assured-workloads/access-approval/docs/approval-request-details)
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys](https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys)
 - Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: N/A
+- Final score: 102
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- For more information about viewing Access Transparency logs, see Understanding and using Access Transparency logs .
-- Access Transparency logs provide information about the affected resources and the time of the action.
-- The auto-approved accesses also generate the usual set of Access Transparency logs.
-- For more information, see Justification codes in Access Transparency logs .
+### "Method: folders.approvalRequests.list \_|\_ Access Approval \_|\_ Google\
 
-### Release notes \_|\_ Access Approval \_|\_ Google Cloud Documentation
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/list](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests/list)
+- Source ID: `site-api-reference`
+- Final score: 98
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes](https://docs.cloud.google.com/assured-workloads/access-approval/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 26
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+### "Method: organizations.approvalRequests.list \_|\_ Access Approval \_|\_\
 
-Evidence snippets:
-- April 15, 2021 v1 Feature You can view Access Transparency logs associated with an approval request on the Access Approval UI.
-- October 19, 2020 v1 Change The UpdateAccessApprovalSettings API now accepts product names (as listed here ) in enrolledServices.cloudProduct, and the return values from GetAccessApprovalSettings and UpdateAccessApprovalSettings will contain product names as well. v1 Feature History view is now available on the Access Approval UI.
-- March 24, 2021 v1 Feature Access Transparency logs contain a new field called accessApprovals .
-- Access Transparency logs published before March 24, 2021 will not have this field populated.
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests/list](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests/list)
+- Source ID: `site-api-reference`
+- Final score: 98
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "REST Resource: folders.approvalRequests \_|\_ Access Approval \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests)
+- Source ID: `site-api-reference`
+- Final score: 98
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

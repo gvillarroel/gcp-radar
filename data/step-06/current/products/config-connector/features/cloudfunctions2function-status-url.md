@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.218Z"
+generated_at: "2026-04-13T14:23:05.064Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "CloudFunctions2Function status URL"
@@ -9,18 +9,14 @@ latest_feature_date: "2023-08-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources"
 keywords:
   - "cloudfunctions2function"
-  - "status"
-  - "url"
-  - "config"
-  - "connector"
+  - "resources"
   - "exposes"
-  - "the"
-  - "function"
+  - "status"
 ---
 
 # CloudFunctions2Function status URL
@@ -42,45 +38,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources](https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events](https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources](https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### Monitoring your resources \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 130
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
-
-### IAMPolicy | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 108
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources](https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-your-resources)
+- Source ID: `site-docs-reference`
+- Final score: 87
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
+- Listing all resources You can list the resources that Config Connector manages with, by running the following command: kubectl get gcp Determining a resource's status You can determine if your resource is ready by looking at its status.condition .
+- Viewing events for a single resource You can view the events for a single resource by examining the Events field in the output of the following command: kubectl describe KIND NAME Replace the following: KIND : your resource's kind NAME : your resource's name For example, if you had a Config Connector SQLInstance resource named sqlinstance-sample , use the following command to view its events: kubectl describe sqlinstance sqlinstance-sample Viewing events for a namespace To see the events for all Kubernetes resources in a given namespace, including your Config Connector resources, run the following command: kubectl --namespace CC NAMESPACE get events Replace CC NAMESPACE with the namespace Config Connector manages resources from.
+- Config Connector updates the status to reflect the current state of your resource. kubectl wait --for=condition=READY KIND NAME Replace the following: KIND : your resource's kind.
+- NAME : your resource's name Viewing events Config Connector creates Kubernetes events with information and errors about managing resources.
 
-### Creating resource references | Config Connector | Google Cloud Documentation
+### Monitoring your resources \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events](https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events)
 - Source ID: `site-docs-root`
-- Final score: 106
+- Final score: 77
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Listing all resources You can list the resources that Config Connector manages with, by running the following command: kubectl get gcp Determining a resource's status You can determine if your resource is ready by looking at its status.condition .
+- Viewing events for a single resource You can view the events for a single resource by examining the Events field in the output of the following command: kubectl describe KIND NAME Replace the following: KIND : your resource's kind NAME : your resource's name For example, if you had a Config Connector SQLInstance resource named sqlinstance-sample , use the following command to view its events: kubectl describe sqlinstance sqlinstance-sample Viewing events for a namespace To see the events for all Kubernetes resources in a given namespace, including your Config Connector resources, run the following command: kubectl --namespace CC NAMESPACE get events Replace CC NAMESPACE with the namespace Config Connector manages resources from.
+- Config Connector updates the status to reflect the current state of your resource. kubectl wait --for=condition=READY KIND NAME Replace the following: KIND : your resource's kind.
+- NAME : your resource's name Viewing events Config Connector creates Kubernetes events with information and errors about managing resources.
+
+### "Configure container resources and replicas \_|\_ Config Connector \_|\_\
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources](https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources)
+- Source ID: `site-docs-reference`
+- Final score: 71
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Creating resource references Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references You can find out what format the ... documentation.
-- Config Connector allows resources ...
-- You can also go to an individual resource&#x27;s reference page (for example, PubSubTopic) and look at the value listed in the &quot;IAM External Reference Format&quot; row of the resource&#x27;s summary table.
-- The IAMPolicy, IAMPartialPolicy and IAMPolicyMember pages list the accepted format for all supported resources.
+- Create a file named configure-webhook-manager.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ControllerResource metadata : name : cnrm-webhook-manager spec : replicas : 3 containers : - name : webhook resources : limits : memory : 512Mi requests : memory : 256Mi Use kubectl apply to apply the modified configuration to your cluster: kubectl apply -f configure-webhook-manager.yaml Verify the successful configuration by running the following command. kubectl get controllerresource cnrm-webhook-manager -o jsonpath='{.status.healthy}' It should display status.healthy field set to true .
+- For example, to configure the memory request and limit of the webhook container of the cnrm-webhook-manager controller, create and apply the following YAML file: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ControllerResource metadata : name : cnrm-webhook-manager spec : containers : - name : webhook resources : limits : memory : 512Mi requests : memory : 256Mi Use NamespacedControllerResource for the namespaced controller manager Use the NamespacedControllerResource custom resource only to configure resources for the cnrm-controller-manager when Config Connector is running in namespaced mode.
+- The following YAML file shows an example configuration: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : NamespacedControllerResource metadata : name : cnrm-controller-manager # name should not contain the namespace ID suffix namespace : NAMESPACE spec : containers : - name : manager resources : limits : cpu : 200m memory : 512Mi requests : cpu : 100m memory : 256Mi Replace NAMESPACE with the name of your namespace.
+- After deletion, the Config Connector operator recreates the controllers with the default container resources and replicas. kubectl delete -f configure-webhook-manager.yaml Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

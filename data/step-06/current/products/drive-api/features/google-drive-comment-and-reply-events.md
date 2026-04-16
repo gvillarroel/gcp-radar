@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:41:51.888Z"
+generated_at: "2026-04-12T12:14:32.793Z"
 product_name: "Drive API"
 product_slug: "drive-api"
 feature_name: "Google Drive comment and reply events"
 feature_slug: "google-drive-comment-and-reply-events"
 latest_feature_date: "2025-11-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/drive/api/guides/manage-comments"
   - "https://developers.google.com/workspace/drive/api/guides/events-overview"
   - "https://developers.google.com/workspace/drive/api/guides/about-shareddrives"
+  - "https://developers.google.com/workspace/drive/api/guides/about-changes"
 keywords:
   - "drive"
   - "comment"
@@ -26,7 +27,7 @@ keywords:
 # Google Drive comment and reply events
 
 Product: Drive API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Google Drive events can now report when users post comments or replies in Docs, 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/drive/api/guides/manage-comments](https://developers.google.com/workspace/drive/api/guides/manage-comments)
 - [https://developers.google.com/workspace/drive/api/guides/events-overview](https://developers.google.com/workspace/drive/api/guides/events-overview)
 - [https://developers.google.com/workspace/drive/api/guides/about-shareddrives](https://developers.google.com/workspace/drive/api/guides/about-shareddrives)
+- [https://developers.google.com/workspace/drive/api/guides/about-changes](https://developers.google.com/workspace/drive/api/guides/about-changes)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/manage-comments](https://developers.google.com/workspace/drive/api/guides/manage-comments)
 - Source ID: `site-docs-root`
-- Final score: 180
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 215
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - PATCH https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID ?fields=id,comment Request body { "content": "This comment is now updated." } Delete a comment To delete a comment on a file, use the delete method on the comments resource with the fileId and commentId parameters.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/events-overview](https://developers.google.com/workspace/drive/api/guides/events-overview)
 - Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 204
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - API Google Workspace Events API Google Drive API Google Drive Activity API Source of events Files, folders, and shared drives changes.watch and files.watch DriveActivity Supported events AccessProposal Approval Comment File Permission Reply For a list of supported event types, see Event types for creating subscriptions in the Google Workspace Events API documentation.
@@ -80,12 +82,27 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/about-shareddrives](https://developers.google.com/workspace/drive/api/guides/about-shareddrives)
 - Source ID: `site-docs-root`
-- Final score: 128
-- Re-rank relevance: N/A
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following are the rules for organizerCount and memberCount fields: Only administrators can manage a shared drive with an organizerCount of zero.
 - For example, a user that has role=commenter for a shared drive cannot have their access level reduced at another point within the folder hierarchy.
 - An individual user can be a member of a shared drive and have file access permissions for files contained within the shared drive.
 - Related topics Manage folders with limited and expansive access Create a shortcut to a Drive file How file access works in shared drives Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Track changes for users and shared drives \_|\_ Google Drive \_|\_ Google\
+
+- URL: [https://developers.google.com/workspace/drive/api/guides/about-changes](https://developers.google.com/workspace/drive/api/guides/about-changes)
+- Source ID: `site-docs-root`
+- Final score: 146
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Changes that appear on a shared drive change log If a user is a member of a shared drive, they can access that shared drive's change log which contains: Any changes to the shared drive itself, such as addition or removal of a member Direct changes to the items contained in the shared drive.
+- Home Google Workspace Google Drive Guides Send feedback Track changes for users and shared drives Stay organized with collections Save and categorize content based on your preferences.
+- To track changes for all items visible to a user, both the user change log and the change logs for all shared drives the user is a member of need to be replayed.
+- Even though a user may be a member of a shared drive, certain changes are only reflected in the shared drive change log and never in the user’s change log.
 

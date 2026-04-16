@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:22:38.416Z"
+generated_at: "2026-04-14T17:27:28.061Z"
 product_name: "Earth Engine Server"
 product_slug: "earth-engine-server"
 feature_name: "ee.Collection.filter() expression-string support"
 feature_slug: "ee-collection-filter-expression-string-support"
 latest_feature_date: "2019-09-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/docs/release-notes"
-  - "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring"
+  - "https://developers.google.com/earth-engine/guides/debugging"
   - "https://developers.google.com/earth-engine/guides/exporting_to_bigquery"
+  - "https://developers.google.com/earth-engine/guides/playground"
 keywords:
   - "ee"
   - "collection"
@@ -19,14 +19,14 @@ keywords:
   - "expression"
   - "string"
   - "allows"
-  - "to"
   - "accept"
+  - "strings"
 ---
 
 # ee.Collection.filter() expression-string support
 
 Product: Earth Engine Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,55 @@ Allows ee.Collection.filter() to accept expression strings.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- [https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring](https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring)
+- [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
 - [https://developers.google.com/earth-engine/guides/exporting_to_bigquery](https://developers.google.com/earth-engine/guides/exporting_to_bigquery)
+- [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
 
 ## Supporting Pages
 
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
+### Debugging guide \_|\_ Google Earth Engine \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 164
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 10, 2019 Earth Engine Data Catalog Feature Added NASA/GPM L3/IMERG V06 (no longer available) September 05, 2019 Earth Engine Server Feature Added ee.Filter.expression() to convert conditional and boolean string expressions into filters and allow ee.Collection.filter() to take expression strings.
-- Note that some parameters needed to be renamed after removing opt since they conflict with Python keywords: ee.Collection.limit() : opt property was converted to prop ee.Image.expression() : opt map was converted to map ee.Filter() : opt filter which was converted to filter Feature Added Export.classifier.toAsset and ee.Classifier.load for exporting and loading saved ee.Classifier.smileCart and ee.Classifier.smileRandomForest classifiers.
-- February 15, 2022 Earth Engine Data Catalog Feature Added COPERNICUS/S2 HARMONIZED : Harmonized Sentinel-2 MSI: MultiSpectral Instrument, Level-1C (TOA) February 08, 2022 Earth Engine Data Catalog Feature Added LANDSAT/LT05/C02/T1 : USGS Landsat 5 TM Collection 2 Tier 1 Raw Scenes Added LANDSAT/LT05/C02/T2 : USGS Landsat 5 TM Collection 2 Tier 2 Raw Scenes February 01, 2022 Earth Engine Data Catalog Feature Added LANDSAT/LE07/C02/T1 : USGS Landsat 7 Collection 2 Tier 1 Raw Scenes Added LANDSAT/LE07/C02/T1 RT : USGS Landsat 7 Collection 2 Tier 1 and Real-Time data Raw Scenes Added LANDSAT/LE07/C02/T2 : USGS Landsat 7 Collection 2 Tier 2 Raw Scenes January 25, 2022 Earth Engine Data Catalog Feature Added LANDSAT/LC08/C02/T1 : USGS Landsat 8 Collection 2 Tier 1 Raw Scenes Added LANDSAT/LC08/C02/T1 RT : USGS Landsat 8 Collection 2 Tier 1 and Real-Time data Raw Scenes Added LANDSAT/LC08/C02/T2 : USGS Landsat 8 Collection 2 Tier 2 Raw Scenes Added TERN/AET/CMRSET LANDSAT V2 2 : Actual Evapotranspiration for Australia (CMRSET Landsat V2.2) January 06, 2022 Earth Engine Server Feature Added ee.String.equals() .
-- To refer to the geometry in contexts like ee.Filter.intersects() , ee.Filter.equals() , and ee.FeatureCollection.getDownloadURL() , use a special value ".geo".
-
-### "ee.Algorithms.GeometryConstructors.MultiLineString \_|\_ Google Earth Engine\
-
-- URL: [https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring](https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring)
-- Source ID: `site-docs-reference`
-- Final score: 144
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
+- Source ID: `site-docs-root`
+- Final score: 117
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Products Google Earth Engine Reference Send feedback ee.Algorithms.GeometryConstructors.MultiLineString Stay organized with collections Save and categorize content based on your preferences.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2024-07-13 UTC."],[],["The function MultiLineString creates a geometry object from a list of coordinates.
-- Usage Returns ee.Algorithms.GeometryConstructors.MultiLineString(coordinates, crs , geodesic , maxError ) Geometry Argument Type Details coordinates List The list of LineStrings, or to wrap a single LineString, the list of Points or pairs of Numbers in x,y order. crs Projection, default: null The coordinate reference system of the coordinates.
-- All noncommercial projects will need to select a quota tier by April 27, 2026 or will use the Community Tier by default.
+- Internal errors include a request ID, like the following: (request: 4b14e62b-f73f-49cc-9cf7-901cad12058b) These strings act as unique identifiers to help the Earth Engine team to identify specific issues.
+- In the first case, printing of nonsense in the JavaScript Code Editor will perform the requested operation ( + ) by converting both image and 2 to strings, then concatenating them.
+- ImageCollection ( 'COPERNICUS/S2 HARMONIZED' ) . filterBounds ( ee .
+- ImageCollection ( 'LANDSAT/LC08/C02/T1 TOA' ) . filterBounds ( ee .
 
 ### Exporting to BigQuery \_|\_ Google Earth Engine \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/guides/exporting_to_bigquery](https://developers.google.com/earth-engine/guides/exporting_to_bigquery)
 - Source ID: `site-docs-root-2`
-- Final score: 138
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 100
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To have finer control over this transformation process, you can manually map over the features and transform their geometries, e.g.: Code Editor (JavaScript) var transformedCollection = originalCollection . map ( function transformGeo ( e ) { var myErrorMargin = 10 1000 ; // meters return e . setGeometry ( e . geometry ( myErrorMargin , 'EPSG:4326' , true )); }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) def transform geo ( e ): my error margin = 10 1000 # meters return e . setGeometry ( e . geometry ( my error margin , 'EPSG:4326' , True )) transformed collection = original collection . map ( transform geo ) Caution: Polygons larger than a hemisphere may have their orientation reversed during export.
-- The total number of values in the flattened array is $\sum {i=1}^n d i$, and the value at index $(i i, \ldots, i n)$ in the original Earth Engine array corresponds to the value at the following index in the flattened array: \[ \sum {j=1}^n \left( i j \cdot \prod {k=j+1}^n d k \right) \] For common cases, the indexing expression for the values array is as follows: Array Size Dimensions Indexing Expression 1-dimensional d1 [i1] 2-dimensional d1, d2 [(i1 d2) + i2] 3-dimensional d1, d2, d3 [(i1 d2 d3) + (i2 d3) + i3] For example, consider a 2x3x4 Earth Engine array: ee .
-- Earth Engine type BigQuery type Notes ee.String STRING ee.Number FLOAT or INTEGER ee.Geometry GEOGRAPHY ee.Date TIMESTAMP ee.ByteString BYTES ee.Array STRUCT<ARRAY<INT64>, ARRAY<INT64 FLOAT64>> See the section on arrays Other ee. types not supported See the section on JSON values Arrays Earth Engine exports any multi-dimensional ee.Array to STRUCT<ARRAY<INT64> dimensions, ARRAY<INT64 FLOAT64> values> , similar to the format used by BigQuery's ML.DECODE IMAGE function.
-- Export configuration Syntax Code Editor (JavaScript) Export . table . toBigQuery ({ collection : features , table : 'myproject.mydataset.mytable' , description : 'put my data in bigquery' , append : true , overwrite : false }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) task = ee . batch .
+- ImageCollection ( 'MODIS/061/MOD11A1' ); // Find the max day and night temperatures per pixel for a given time. var maxTemp = mod11a1 . select ([ 'LST Day 1km' , 'LST Night 1km' ]) . filterDate ( '2023-05-15' , '2023-05-25' ) . max (); // Annotate each state with its max day/night temperatures. var annotatedStates = states . map ( function ( e ) { var dict = maxTemp . reduceRegion ({ reducer : ee .
+- ImageCollection ( 'MODIS/061/MOD11A1' ) Find the max day and night temperatures per pixel for a given time. max temp = ( mod11a1 . select ([ 'LST Day 1km' , 'LST Night 1km' ]) . filterDate ( '2023-05-15' , '2023-05-25' ) . max () ) def get max temp for state ( e ): max temp dict = max temp . reduceRegion ( reducer = ee .
+- Filter . equals ( 'survey date' , date . format ( 'dd/MM/yy' ))); var sample = median . reduceRegions ({ collection : lucasForDate , reducer : ee .
+- Filter . equals ( 'survey date' , date . format ( 'dd/MM/yy' )) ) sample = median . reduceRegions ( collection = lucas for date , reducer = ee .
+
+### Earth Engine Code Editor \_|\_ Google Earth Engine \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
+- Source ID: `site-docs-root`
+- Final score: 91
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Click the Palette radio button and specify a custom palette by adding colors ( add ), removing colors ( remove ) or manually entering a comma separated list of hex strings ( edit ) Click Apply to apply the visualization parameters to the current display.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2024-08-05 UTC."],[],["The Earth Engine Code Editor, a web-based IDE, allows geospatial workflow development.
+- It also contains a bar object representing the current date. @module Modules/FooModule / / Returns a greeting string. @param {ee.String} arg The name to which the greeting should be addressed @return {ee.String} The complete greeting. / exports . foo = function ( arg ) { return 'Hello, ' + arg + '!
+- For example: Code Editor (JavaScript) var Foo = require ( 'users/username/default:Modules/FooModule.js' ); print ( Foo . doc ); print ( Foo . foo ( 'world' )); print ( 'Time now:' , Foo . bar ); The require function expects a string that describes the absolute path to the location of the module.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:29:46.700Z"
+generated_at: "2026-04-15T11:53:34.566Z"
 product_name: "Apps Script"
 product_slug: "apps-script"
 feature_name: "Calendar event triggers"
@@ -11,16 +11,16 @@ coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/apps-script/releases"
   - "https://developers.google.com/apps-script/guides/triggers/events"
-  - "https://developers.google.com/apps-script/guides/triggers/installable"
+  - "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response"
 keywords:
-  - "detect"
-  - "introduced"
-  - "triggers"
   - "calendar"
-  - "scripts"
   - "event"
-  - "so"
-  - "can"
+  - "triggers"
+  - "apps"
+  - "script"
+  - "adds"
+  - "detecting"
+  - "recently"
 ---
 
 # Calendar event triggers
@@ -30,11 +30,11 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Introduced Calendar event triggers so scripts can detect recently changed events through regular synchronization with the Calendar advanced service.
+Apps Script adds calendar event triggers for detecting recently changed calendar events alongside the Calendar advanced service.
 
 ## Extended Definition
 
-Introduced Calendar event triggers so scripts can detect recently changed events through regular synchronization with the Calendar advanced service.
+Apps Script adds calendar event triggers for detecting recently changed calendar events alongside the Calendar advanced service.
 
 ## Evidence Summary
 
@@ -44,46 +44,46 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
 - [https://developers.google.com/apps-script/guides/triggers/events](https://developers.google.com/apps-script/guides/triggers/events)
-- [https://developers.google.com/apps-script/guides/triggers/installable](https://developers.google.com/apps-script/guides/triggers/installable)
+- [https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response](https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response)
 
 ## Supporting Pages
-
-### Google Apps Script release notes \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
-- Source ID: `site-docs-root`
-- Final score: 160
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- You can use these triggers in conjunction with the Calendar advanced service to discover recently changed calendar events via regular sync operations.
-- July 17, 2014 Feature Added the value ON CHANGE to the ScriptApp.EventType enum so that Google Sheets change events can be detected correctly.
-- You can also set an event trigger that fires when the user clicks on the add-on attachment provider in the Calendar dropdown menu.
-- Bookmark NamedRange RangeBuilder Document.addBookmark(position) Document.addNamedRange(name, range) Document.getBookmark(id) Document.getBookmarks() Document.getNamedRangeById(id) Document.getNamedRanges() Document.getNamedRanges(name) Document.newPosition(element, offset) Document.newRange() Document.setCursor(position) Document.setSelection(range) Position.insertBookmark() Added the following ScriptApp class and methods, which allow scripts to create state tokens that can be used in callback APIs (like OAuth flows), as well as to retrieve the script's own OAuth 2.0 access token.
 
 ### Event Objects \_|\_ Apps Script \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/apps-script/guides/triggers/events](https://developers.google.com/apps-script/guides/triggers/events)
 - Source ID: `site-docs-reference`
-- Final score: 140
-- Re-rank relevance: N/A
+- Final score: 127
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Time-driven events Time-driven triggers (also called clock triggers) let scripts execute at a particular time or on a recurring interval.
-- Presentation user A User object, representing the active user, if available ( depending on a complex set of security restrictions ). amin@example.com Google Forms events The Forms-specific triggers let scripts respond when a user edits a form or submits a response.
-- 4034124084959907503 Google Calendar events Google Calendar triggers fire when a user's calendar events are updated (created, edited, or deleted).
+- When the Apps Script EventUpdated trigger fires indicating a calendar event change, perform an incremental sync for the affected calendar using the stored nextSyncToken .
 - Page Summary outlined flag Apps Script can run a function automatically using simple or installable triggers when a specific event occurs.
+- Simple triggers and installable triggers let Google Apps Script run a function automatically if a certain event occurs.
+- For example, the following sample code shows a simple onEdit(e) trigger for a Google Sheets script that uses the event object to determine which cell was edited. function onEdit ( e ){ // Set a comment on the edited cell to indicate when it was changed . var range = e . range ; range . setNote ( 'Last modified: ' + new Date ()); } This page describes the fields in the event object for different types of triggers.
 
-### Installable Triggers \_|\_ Apps Script \_|\_ Google for Developers
+### Google Apps Script release notes \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/apps-script/guides/triggers/installable](https://developers.google.com/apps-script/guides/triggers/installable)
-- Source ID: `site-docs-reference`
-- Final score: 138
+- URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
+- Source ID: `site-docs-root`
+- Final score: 127
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Time-driven triggers let scripts execute at a particular time or on a recurring interval, as frequently as every minute or as infrequently as once per month. (An add-on can use a time-driven trigger once per hour at most.) The time might be slightly randomized—for example, if you create a recurring 9 AM trigger, Apps Script chooses a time between 9 AM and 10 AM, then keeps that timing consistent from day to day so that 24 hours elapse before the trigger fires again.
-- Installable triggers, however, offer more flexibility than simple triggers: they can call services that require authorization , they offer several additional types of events including time-driven (clock) triggers, and they can be controlled programmatically.
-- Event-driven triggers Installable event-driven triggers are conceptually similar to simple triggers like onOpen() , but they can respond to additional events, and they behave differently.
-- Event-driven triggers respond to various events in Google Workspace applications, such as opening, editing, or submitting forms, and can call services requiring authorization.
+- The Card service has been extended with the following classes and methods that provide new widgets and event responses: CalendarEventActionResponse CalendarEventActionResponseBuilder DatePicker DateTimePicker DisplayStyle DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder FixedFooter SwitchControlType TimePicker CardBuilder.setDisplayStyle(displayStyle) CardBuilder.setFixedFooter(fixedFooter) CardBuilder.setPeekCardHeader(peekCardHeader) CardService.newCalendarEventActionResponseBuilder() CardService.newDatePicker() CardService.newDateTimePicker() CardService.newDriveItemsSelectedActionResponseBuilder() CardService.newFixedFooter() CardService.newTimePicker() Switch.setControlType(controlType) The Conference Data service has been added to Apps Script.
+- December 07, 2023 Fixed To fix a bug that prevented events of eventType != 'default' from importing, we updated the code sample in Populate a team vacation calendar , the popular Apps Script + Calendar API solution.
+- You can use these triggers in conjunction with the Calendar advanced service to discover recently changed calendar events via regular sync operations.
+- We've also updated the Apps Script code samples to use the Advanced Chat Service in the following Chat API developer guides: Authenticate as an app Authenticate as a user Try it - Respond to Incidents September 26, 2023 Change The email address that sends notifications about errors in triggers has been updated from apps-scripts-notifications@google.com to noreply-apps-scripts-notifications@google.com .
+
+### Class CalendarEventActionResponse \_|\_ Apps Script \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response](https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response)
+- Source ID: `site-docs-reference-3`
+- Final score: 122
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- CalendarEventActionResponse Represents a response that makes changes to the calendar event that the user is currently editing in reaction to an action taken in the UI, such as a button click. // A CalendarEventActionResponse that adds two attendees to an event. const calendarEventActionResponse = AddOnsResponseService . newCalendarEventActionResponseBuilder () . addAttendees ([ 'user1@example.com' , 'user2@example.com' ]) . build (); Methods Method Return type Brief description print Json() String Prints the JSON representation of this object.
+- Home Google Workspace Apps Script Reference Send feedback Class CalendarEventActionResponse Stay organized with collections Save and categorize content based on your preferences.
 

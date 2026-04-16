@@ -864,7 +864,9 @@ Google Cloud does not make any guarantees on the lifetime of TCP
 connections when you use external proxy Network Load Balancers. Clients should be
 resilient to dropped connections, both due to broader internet issues
 and due to regularly scheduled restarts of the proxies managing the
-connections.
+connections. If a proxy is restarted, the proxyStatus status field in
+Proxy Network Load Balancer logs
+displays an associated status message.
 The following limitations apply only to classic proxy Network Load Balancers and
 global external proxy Network Load Balancer that are deployed with an SSL target proxy:
 Classic proxy Network Load Balancers and global external proxy Network Load Balancers do not
@@ -887,6 +889,6 @@ Using SSL policies .
 GFE locations .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

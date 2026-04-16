@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.562Z"
+generated_at: "2026-04-12T12:07:33.813Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB auto vector embeddings"
 feature_slug: "alloydb-auto-vector-embeddings"
 latest_feature_date: "2026-03-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
-  - "https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+  - "https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum"
 keywords:
   - "large dataset embeddings"
   - "incremental refresh"
@@ -26,7 +27,7 @@ keywords:
 # AlloyDB auto vector embeddings
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,23 +39,24 @@ Auto vector embeddings for AlloyDB AI is now generally available, providing mana
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- [https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow](https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow)
+- [https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes](https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- [https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum](https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum)
 
 ## Supporting Pages
 
 ### "Generate and manage auto vector embeddings for large tables \_|\_ AlloyDB\
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
-- Source ID: `site-docs-root-2`
-- Final score: 98
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-2`
+- Final score: 150
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This solution is particularly useful for facilitating semantic search and Retrieval Augmented Generation (RAG) on text content, including the following: Creating initial vector embedding for a new table Generating embeddings after a large data import Refreshing embeddings after significant data changes Maintaining embeddings incrementally Understand auto vector embeddings Auto vector embeddings in AlloyDB provide a scalable way to automate the generation and maintenance of vector embeddings for your data.
@@ -62,30 +64,26 @@ Evidence snippets:
 - Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Generate and manage auto vector embeddings for large tables Stay organized with collections Save and categorize content based on your preferences.
 - With auto vector embeddings, you can do the following: Initialize embeddings for an entire table: generate embeddings for all existing data in a table column with a single command.
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Maintain vector indexes \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 38
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes](https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes)
+- Source ID: `site-docs-root-2`
+- Final score: 90
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 82
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- March 03, 2026 Feature The following AlloyDB AI features are now generally available ( GA ): Auto vector embeddings provide a scalable, automated solution for managing the lifecycle of vector embeddings for large-scale datasets, eliminating the need for manual reindexing or custom scripts.
-- This feature keeps embeddings in sync with transactional data and now supports incremental refresh in manual mode, ensuring that embeddings are only generated for new or updated rows.
-- For more information about storing vector embeddings, creating indexes, and tuning indexes to achieve faster query performance and better recall, see Work with vectors .
-- For more information about storing vector embeddings, creating indexes, and tuning indexes to achieve faster query performance and better recall, see Work with vectors .
+### "Configure adaptive autovacuum \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
-### "Build realtime vector embedding pipeline for AlloyDB with Dataflow \_|\_\
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow](https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow)
+- URL: [https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum](https://docs.cloud.google.com/alloydb/docs/adaptive-autovacuum)
 - Source ID: `site-docs-root`
-- Final score: 22
-- Re-rank relevance: WEAK
-- Re-rank rationale: The page discusses building a manual Dataflow-based ingestion pipeline for generating embeddings, but it does not describe managed automatic vector-embedding lifecycle management or incremental refresh.
-
-Evidence snippets:
-- The Retrieval-Augmented Generation (RAG)-specific Apache Beam modules provide classes for the following tasks: Ingesting data from AlloyDB for PostgreSQL Generating embeddings Writing these vector embeddings back to AlloyDB for PostgreSQL Import the required classes into your pipeline code before you build the pipeline logic.
-- Verify vector embeddings in AlloyDB for PostgreSQL After the pipeline executes, verify that the pipeline wrote the embeddings to your AlloyDB for PostgreSQL database.
-- Configure the embedding handler to generate embeddings The VertexAITextEmbeddings() class defines the text embedding model that creates vector embeddings.
-- You can also use a pre-trained model that is created with the Huggingface SentenceTransformers framework to generate vector embeddings.
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

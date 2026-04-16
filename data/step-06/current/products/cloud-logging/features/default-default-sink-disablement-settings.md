@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.551Z"
+generated_at: "2026-04-14T23:59:44.401Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Default _Default Sink Disablement Settings"
 feature_slug: "default-default-sink-disablement-settings"
 latest_feature_date: "2022-02-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings"
   - "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
-  - "https://docs.cloud.google.com/logging/docs/audit"
+  - "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
 keywords:
   - "default"
   - "sink"
@@ -20,13 +20,13 @@ keywords:
   - "organizations"
   - "can"
   - "disable"
-  - "the"
+  - "projects"
 ---
 
 # Default _Default Sink Disablement Settings
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Organizations can disable the default _Default sink for new projects and folders
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings](https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings)
 - [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
-- [https://docs.cloud.google.com/logging/docs/audit](https://docs.cloud.google.com/logging/docs/audit)
+- [https://docs.cloud.google.com/logging/docs/reference/v2/rest](https://docs.cloud.google.com/logging/docs/reference/v2/rest)
 
 ## Supporting Pages
 
@@ -52,39 +52,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings](https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings)
 - Source ID: `site-docs-reference`
-- Final score: 136
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 163
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- If set to true, the Default sink in newly created projects and folders will created in a disabled state.
+- JSON representation { "name" : string , "kmsKeyName" : string , "kmsServiceAccountId" : string , "storageLocation" : string , "disableDefaultSink" : boolean , "defaultSinkConfig" : { object ( DefaultSinkConfig ) } , "loggingServiceAccountId" : string } Fields name string Output only.
+- DefaultSinkConfig Describes the custom Default sink configuration that is used to override the built-in Default sink configuration in newly created resource containers, such as projects or folders.
 - Note: this setting does not affect the location of resources where a location is explicitly provided when created, such as custom log buckets. disableDefaultSink boolean Optional.
-- JSON representation DefaultSinkConfig JSON representation FilterWriteMode Describes the settings associated with a project, folder, organization, or billing account.
-- This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy.
-- The Default sink can be re-enabled manually if needed. defaultSinkConfig object ( DefaultSinkConfig ) Optional.
 
 ### View and analyze logs \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
 - Source ID: `site-docs-root`
-- Final score: 130
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - To select which parts of the timestamp to display, click the settings Preferences menu, select Format , and then select one of the following options: Date, time, and timezone Date and time (default) Time only Find patterns in your logs by using summary fields Suppose you're looking through the log entries in your query results and want to quickly skim the results by a certain LogEntry field.
-- The selected resource can be a project, folder, or organization: If the toolbar displays Project logs or Default , then the resource's Required and Default buckets are queried.
-- Highlight search terms, monitor and download your logs There are various options to analyze your logs data by selecting the Actions menu of the Query results toolbar: ink highlighter Highlight in results : Enter text to be highlighted in your query results. add chart Create metric : Set up a log-based metric . call merge Create sink : Create a log sink that auto-populates the sink's inclusion filter with the current query expression. add alert Create log alert : Set up a log-based alerting policy . edit Manage alerts : View and manage alerting policies. download Download : Download your logs in CSV or JSON format.
-- Before you begin To get the permissions that you need to use the Logs Explorer to view log entries, ask your administrator to grant you the following IAM roles: To view log entries in the Required bucket and those in the Default view on the Default bucket, or to select a log scope: Logs Viewer ( roles/logging.viewer ) on your project, folder, or organization.
+- For information about how to get access only to a specific log view, see Control access to a log view For more information about granting roles, see Manage access to projects, folders, and organizations .
+- When projects are searched, the search results include the log entries that are routed to the project by a sink in another project, and then stored in a log bucket.
+- For projects, the search results include the log entries that are routed to the project by a sink in another project, and then stored in a log bucket.
 
-### Cloud Audit Logs overview \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
+### Cloud Logging API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/audit](https://docs.cloud.google.com/logging/docs/audit)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/logging/docs/reference/v2/rest](https://docs.cloud.google.com/logging/docs/reference/v2/rest)
+- Source ID: `site-docs-reference`
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To prevent any Policy Denied audit logs from being stored in the Default buckets, you can exclude them by modifying their sinks' filters.
-- To prevent Data Access audit logs from being stored in the Default buckets, you can disable them.
-- If you route Admin Activity audit logs and System Event audit logs to a different project, then those logs don't pass through the Default or Required sink of the destination project.
-- You can also route your audit log entries to user-defined Cloud Logging buckets at the Google Cloud project level or to supported destinations outside of Logging using sinks.
+- REST Resource: v2 REST Resource: v2.billingAccounts REST Resource: v2.billingAccounts.exclusions REST Resource: v2.billingAccounts.locations.buckets REST Resource: v2.billingAccounts.locations.buckets.links REST Resource: v2.billingAccounts.locations.buckets.views REST Resource: v2.billingAccounts.locations.buckets.views.logs REST Resource: v2.billingAccounts.locations.operations REST Resource: v2.billingAccounts.locations.recentQueries REST Resource: v2.billingAccounts.locations.savedQueries REST Resource: v2.billingAccounts.logs REST Resource: v2.billingAccounts.sinks REST Resource: v2.entries REST Resource: v2.exclusions REST Resource: v2.folders REST Resource: v2.folders.exclusions REST Resource: v2.folders.locations.buckets REST Resource: v2.folders.locations.buckets.links REST Resource: v2.folders.locations.buckets.views REST Resource: v2.folders.locations.buckets.views.logs REST Resource: v2.folders.locations.logScopes REST Resource: v2.folders.locations.operations REST Resource: v2.folders.locations.recentQueries REST Resource: v2.folders.locations.savedQueries REST Resource: v2.folders.logs REST Resource: v2.folders.sinks REST Resource: v2.locations.buckets REST Resource: v2.locations.buckets.links REST Resource: v2.locations.buckets.views REST Resource: v2.locations.operations REST Resource: v2.logs REST Resource: v2.monitoredResourceDescriptors REST Resource: v2.organizations REST Resource: v2.organizations.exclusions REST Resource: v2.organizations.locations.buckets REST Resource: v2.organizations.locations.buckets.links REST Resource: v2.organizations.locations.buckets.views REST Resource: v2.organizations.locations.buckets.views.logs REST Resource: v2.organizations.locations.logScopes REST Resource: v2.organizations.locations.operations REST Resource: v2.organizations.locations.recentQueries REST Resource: v2.organizations.locations.savedQueries REST Resource: v2.organizations.logs REST Resource: v2.organizations.sinks REST Resource: v2.projects REST Resource: v2.projects.exclusions REST Resource: v2.projects.locations.buckets REST Resource: v2.projects.locations.buckets.links REST Resource: v2.projects.locations.buckets.views REST Resource: v2.projects.locations.buckets.views.logs REST Resource: v2.projects.locations.logScopes REST Resource: v2.projects.locations.operations REST Resource: v2.projects.locations.recentQueries REST Resource: v2.projects.locations.savedQueries REST Resource: v2.projects.logs REST Resource: v2.projects.metrics REST Resource: v2.projects.sinks REST Resource: v2.sinks Service: logging.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v2.organizations.exclusions Methods create POST /v2/{parent=organizations/ }/exclusions Creates a new exclusion in the Default sink in a specified parent resource. delete DELETE /v2/{name=organizations/ /exclusions/ } Deletes an exclusion in the Default sink. get GET /v2/{name=organizations/ /exclusions/ } Gets the description of an exclusion in the Default sink. list GET /v2/{parent=organizations/ }/exclusions Lists all the exclusions on the Default sink in a parent resource. patch PATCH /v2/{name=organizations/ /exclusions/ } Changes one or more properties of an existing exclusion in the Default sink.
+- REST Resource: v2.projects.exclusions Methods create POST /v2/{parent=projects/ }/exclusions Creates a new exclusion in the Default sink in a specified parent resource. delete DELETE /v2/{name=projects/ /exclusions/ } Deletes an exclusion in the Default sink. get GET /v2/{name=projects/ /exclusions/ } Gets the description of an exclusion in the Default sink. list GET /v2/{parent=projects/ }/exclusions Lists all the exclusions on the Default sink in a parent resource. patch PATCH /v2/{name=projects/ /exclusions/ } Changes one or more properties of an existing exclusion in the Default sink.
+- REST Resource: v2.billingAccounts.logs Methods delete DELETE /v2/{logName=billingAccounts/ /logs/ } Deletes all the log entries in a log for the global Default Log Bucket. list GET /v2/{parent=billingAccounts/ }/logs Lists the logs in projects, organizations, folders, or billing accounts.
 

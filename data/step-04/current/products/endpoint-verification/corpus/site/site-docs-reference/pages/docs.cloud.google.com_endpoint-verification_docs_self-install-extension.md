@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/endpoint-verification/docs/self-install-exten
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
 source_metadata:
   url: https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension
   title: "Install the Endpoint Verification extension \_|\_ Google Cloud Documentation"

@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.831Z"
+generated_at: "2026-04-12T12:17:49.237Z"
 product_name: "Mainframe Connector"
 product_slug: "mainframe-connector"
 feature_name: "DBCS textual types"
 feature_slug: "dbcs-textual-types"
 latest_feature_date: "2024-07-01"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/data-types"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference"
 keywords:
   - "dbcs"
   - "textual"
@@ -24,7 +27,7 @@ keywords:
 # DBCS textual types
 
 Product: Mainframe Connector
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ All DBCS textual types, including N and G, are supported.
 
 All DBCS textual types, including N and G, are supported.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding](https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding)
+- [https://docs.cloud.google.com/mainframe-connector/docs/data-types](https://docs.cloud.google.com/mainframe-connector/docs/data-types)
+- [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference)
+- [https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "qsam and vsam commands reference \_|\_ Mainframe Connector \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding](https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding)
+- Source ID: `site-docs-reference`
+- Final score: 178
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can use the following example to implement a tagged union: { "field override": [ { "field": "VARIANT-1", "modifier": { "null if": { "target field": "TYPE", "non null value": "VAR1" } } }, { "field": "VARIANT-2", "modifier": { "null if": { "target field": "TYPE", "non null value": "VAR2" } } } ], "transformations": [ { "field": "DATA", "transformation": { "exclude": {}} } ] } Logical Types To transcode data to and from multiple formats, Mainframe Connector converts all data to an intermediate representation (IR) that is based on logical types.
+- Mainframe Connector supports the following types of lists: Fixed lists Dynamic lists Packed dynamic lists Fixed lists Fixed lists are used when the exact number of items (item count) that will be a part of the list is known in advance, and this number always remains the same.
+- Logical type BigQuery data type Comments BigDecimal NUMERIC BigInteger NUMERIC Bytes BYTES Date DATE Decimal64 NUMERIC Double FLOAT64 List ARRAY Nested lists and lists of maps are not supported.
+- The following table lists all the logical types supported by Mainframe Connector.
+
+### Mainframe Connector data types \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/data-types](https://docs.cloud.google.com/mainframe-connector/docs/data-types)
+- Source ID: `site-docs-reference`
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If pictures contains the following: N and NSYMBOL == NATIONAL use UTF-16BE N and NSYMBOL == DBCS act as DISPLAY-1 U uses UTF8 Bytes STRING The following character set transformation is performed: First, bytes are decoded into characters, and then those characters are encoded into UTF-8-based bytes stored into the column vector.
+- COBOL usage type Supported flags Condition Optimized Row Columnar (ORC)​​ type Type Decoding behavior ( gsutil cp ) Encoding behavior ( bq export ) COMP1 , COMP2 Double FLOAT64 Encodes the String , Double , and Float data types.
+- ZONED EMPTY VALUES ARE NULL FAIL ON INVALID DATA precision Decimal64 NUMERIC Decode as NULL , if all the bytes are: Either spaces, high, or low, and, Not FAIL ON INVALID DATA or, FAIL ON INVALID DATA and, EMPTY VALUES ARE NULL .
+- PACKED DECIMAL EMPTY VALUES ARE NULL FAIL ON INVALID DATA Decimal64 NUMERIC Decode as NULL , if all the bytes are: Either spaces, high, or low, and Not FAIL ON INVALID DATA or, FAIL ON INVALID DATA and, EMPTY VALUES ARE NULL .
+
+### Copybook parser reference \_|\_ Mainframe Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference)
+- Source ID: `site-docs-reference`
+- Final score: 152
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If you use these constructs in your copybook, Mainframe Connector shows an error. dataAlignedClause dataBlankWhenZeroClause dataCommonOwnLocalClause dataIntegerStringClause dataJustifiedClause dataOccursClause dataReceivedByClause dataRecordAreaClause dataRenamesClause dataSignClause dataSynchronizedClause dataThreadLocalClause dataTypeClause dataTypeDefClause dataUsingClause Data types COBOL data types like COMP-1 and COMP-2 are supported.
+- Unsupported fields and constructs The following sections describe fields and constructs are not supported by the COBOL constructs Data types COBOL constructs COBOL constructs even though these constructs are not supported.
+- The following PICTURE fields are supported: Pic A, Pic, B, Pic G (DBCS), Pic N (national or DBCS), Pic U (UTF8), Pic X, and zoned decimal (max precision 38, max scale 38) IBM Hexadecimal floating point (HFP) is supported.
+- Supported data types and restrictions The following are the data types supported by the Native copybook parser and the restrictions for its use: Level 66 (ALIAS) or 77 (STANDALONE) are not supported.
+
+### Mainframe Connector command-line reference \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference)
+- Source ID: `site-docs-reference`
+- Final score: 151
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The supported format is [PROJECT]:[DATASET].[TABLE] --project id = ID Specify the project to use to execute this command. --allow jagged rows (Optional) Allow missing trailing optional columns in CSV data. --allow quoted newlines (Optional) Allow quoted newlines within CSV data. --append table (Optional) Append the loaded data to the existing data in the destination table. --autodetect (Optional) Enable automatic schema detection for CSV and JSON data. --clustering fields = FIELDS (Optional) If specified, a comma-separated list of columns is used to cluster the destination table in a query.
+- The bq query command uses the following flags and arguments: --project id = ID Specify the project to use to execute this command. --allow large results (Optional) Use large destination table sizes for legacy SQL queries. --append table (Optional) Append the loaded data to the existing data in the destination table. --batch (Optional) Run the query in batch mode. --clustering fields = FIELDS (Optional) Specify a comma-separated list of up to four column names that specify the fields to use for table clustering.
+- If time-based partitioning is enabled without this value, then the table is partitioned based on the load time. --time partitioning type = TYPE (Optional) Enable time-based partitioning on a table and set the partition type using the following value: DAY . --use avro logical types = {true false} (Optional) If --source format is set to AVRO , then set this flag to true to convert logical types into their corresponding types (such as TIMESTAMP ) instead of only using their raw types (such as INTEGER ).
+- Synopsis systemreport [-h] [--available-security-providers] [--supported-ciphers] Flags and arguments The systemreport command uses the following flags and arguments: --available-security-providers (Optional) Print supported security providers. --help or -h (Optional) Display this help message. --supported-ciphers (Optional) Print supported ciphers. vsam decode Decode VSAM data.
 

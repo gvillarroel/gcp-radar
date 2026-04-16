@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.858Z"
+generated_at: "2026-04-12T12:14:02.781Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Aggregation function: count"
 feature_slug: "aggregation-function-count"
 latest_feature_date: "2023-04-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/aggregation-queries"
-  - "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation"
   - "https://docs.cloud.google.com/datastore/docs/concepts/queries"
+  - "https://docs.cloud.google.com/datastore/docs/reference/gql_reference"
+  - "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation"
 keywords:
   - "aggregation"
   - "function"
@@ -23,7 +24,7 @@ keywords:
 # Aggregation function: count
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,13 +36,14 @@ Aggregation queries support the count function; Aggregation queries support the 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/aggregation-queries](https://docs.cloud.google.com/datastore/docs/aggregation-queries)
-- [https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation](https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation)
 - [https://docs.cloud.google.com/datastore/docs/concepts/queries](https://docs.cloud.google.com/datastore/docs/concepts/queries)
+- [https://docs.cloud.google.com/datastore/docs/reference/gql_reference](https://docs.cloud.google.com/datastore/docs/reference/gql_reference)
+- [https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation](https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation)
 
 ## Supporting Pages
 
@@ -49,9 +51,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/aggregation-queries](https://docs.cloud.google.com/datastore/docs/aggregation-queries)
 - Source ID: `site-iam-reference`
-- Final score: 134
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 172
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - GetDoubleValue ()) GQL AGGREGATE SUM(hours) AS total hours, COUNT( ) AS total tasks OVER ( SELECT FROM tasks WHERE is done = false AND tag = 'house' ) GQL supports a simplified form for aggregation queries: SELECT SUM(hours) AS total hours, COUNT( ) AS total tasks FROM tasks WHERE is done = false AND tag = 'house' This example uses the optional aliases of total hours and total tasks .
@@ -59,11 +61,38 @@ Evidence snippets:
 - Read this page to learn how to use aggregation queries. count() aggregation Use the count() aggregation to return the total number of indexed entities that match a given query.
 - Pricing Pricing for the count() , sum() , and avg() aggregation queries depends on the number of index entries scanned during the operation.
 
+### Datastore queries \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/concepts/queries](https://docs.cloud.google.com/datastore/docs/concepts/queries)
+- Source ID: `site-iam-reference`
+- Final score: 153
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Aggregation queries Firestore in Datastore mode supports the count() aggregation query.
+- For more information, see Set up authentication for a local development environment . / Fetch a query cursor. @param int $pageSize @param string $pageCursor @param string $namespaceId / function cursor paging(int $pageSize, string $pageCursor = '', string $namespaceId = null) { $datastore = new DatastoreClient(['namespaceId' => $namespaceId]); $query = $datastore->query() ->kind('Task') ->limit($pageSize) ->start($pageCursor); $result = $datastore->runQuery($query); $nextPageCursor = ''; $entities = []; / @var Entity $entity / foreach ($result as $entity) { $nextPageCursor = $entity->cursor(); $entities[] = $entity; } printf('Found %s entities', count($entities)); $entities = []; if (!empty($nextPageCursor)) { $query = $datastore->query() ->kind('Task') ->limit($pageSize) ->start($nextPageCursor); $result = $datastore->runQuery($query); foreach ($result as $entity) { $entities[] = $entity; } printf('Found %s entities with next page cursor', count($entities)); } } Python To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .
+- For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = "your Google Cloud project id"; // Imports the Cloud Datastore const { Datastore , PropertyFilter , or } = require ( ' @google-cloud/datastore ' ); async function queryFilterOr () { // Instantiate the Datastore const datastore = new Datastore (); const query = datastore . createQuery ( 'Task' ) . filter ( or ([ new PropertyFilter ( 'description' , '=' , 'Buy milk' ), new PropertyFilter ( 'description' , '=' , 'Feed cats' ), ]), ); const [ entities ] = await datastore . runQuery ( query ); for ( const entity of entities ) { console . log ( Entity found: ${ entity [ 'description' ] } ); } } queryFilterOr (); PHP Snippet not available.
+- For more information, see Set up authentication for a local development environment . async function runProjectionQuery () { const priorities = []; const percentCompletes = []; const [ tasks ] = await datastore . runQuery ( query ); tasks . forEach ( task = > { priorities . push ( task . priority ); percentCompletes . push ( task . percent complete ); }); return { priorities : priorities , percentCompletes : percentCompletes , }; } PHP To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .
+
+### GQL Reference \_|\_ Datastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/reference/gql_reference](https://docs.cloud.google.com/datastore/docs/reference/gql_reference)
+- Source ID: `site-docs-root`
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Grammar The GQL grammar is summarized as follows: < aggregation query > : = ( SELECT ( < aggregation > + , ) [ FROM < kind > ] [ WHERE < compound - condition > ] AGGREGATE ( < aggregation > + , ) OVER "(" < query > ")" ) < aggregation > : = ( COUNT "(" " " ")" COUNT UP TO "(" < integer - literal > ")" SUM "(" < property - name > ")" AVG "(" < property - name > ")" ) [ AS < alias > ] < alias > : = < name > < query > : = SELECT ( " " < property - name > + , DISTINCT < property - name > + , DISTINCT ON "(" < property - name > + , ")" " " DISTINCT ON "(" < property - name > + , ")" < property - name > + , ) [ FROM < kind > ] [ WHERE < compound - condition > ] [ ORDER BY ( < property - name > [ ASC DESC ] ) + , ] [ LIMIT ( < result - position > FIRST "(" < result - position > , < result - position > ")" ) ] [ OFFSET < result - position > [ "+" < result - position > ] ] < compound - condition > := < condition > AND < compound - condition > < condition > OR < compound - condition > "(" < compound - condition > ")" < condition > < condition > : = < property - name > IS NULL < property - name > < forward - comparator > < value > < value > < backward - comparator > < property - name > < forward - comparator > := < either - comparator > CONTAINS HAS ANCESTOR IN NOT IN < backward - comparator > := < either - comparator > IN HAS DESCENDANT < either - comparator > := = < < = > > = != < result - position > := < binding - site > < integer - literal > < value > : = < binding - site > < synthetic - literal > < string - literal > < integer - literal > < double - literal > < boolean - literal > < null - literal > < synthetic - literal > := KEY "(" [ "PROJECT" "(" < string - literal > ")" "," ] [ "NAMESPACE" "(" < string - literal > ")" "," ] < key - path - element > + , ")" ARRAY "(" < value > + , ")" BLOB "(" < string - literal > ")" DATETIME "(" < string - literal > ")" < key - path - element > := < kind > "," ( < integer - literal > < string - literal > ) < kind > : = < name > < property - name > := < name > + .
+- AGGREGATE COUNT( ) OVER ( SELECT FROM tasks WHERE is done = false AND tag = 'house' ) AGGREGATE COUNT UP TO(5) OVER ( SELECT FROM tasks WHERE is done = false AND tag = 'house' ) Or over a more complicated base query: AGGREGATE COUNT( ) AS total OVER ( SELECT FROM tasks WHERE is done = true LIMIT 5 OFFSET 10 ) AGGREGATE COUNT UP TO(5) AS total OVER ( SELECT FROM tasks WHERE is done = true LIMIT 5 OFFSET 10 ) Simplified form SELECT COUNT( ) AS total FROM tasks WHERE is done = false AND tag = 'house' SELECT COUNT UP TO(5) AS total FROM tasks WHERE is done = false AND tag = 'house' SUM() and AVG() Use the SUM() aggregation to return the sum of the values of the requested property.
+- Aggregations Firestore in Datastore mode supports the following aggregations: COUNT( ) COUNT UP TO() SUM() AVG() In GQL, you can write aggregations in either a pipelined form or a simplified form.
+- COUNT( ) and COUNT UP TO() Use the COUNT( ) aggregation to return the total number of entities that match a given query.
+
 ### "Class CountAggregation (2.24.0) \_|\_ Python client libraries \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation](https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation)
 - Source ID: `site-python-reference`
-- Final score: 120
+- Final score: 144
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -71,18 +100,4 @@ Evidence snippets:
 - Home Documentation Developer tools Python Client libraries Send feedback Class CountAggregation (2.24.0) Stay organized with collections Save and categorize content based on your preferences.
 - Parameters Name Description alias str The alias for the aggregation. value int The resulting value from the aggregation.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-31 UTC."],[],[]]
-
-### Datastore queries \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/datastore/docs/concepts/queries](https://docs.cloud.google.com/datastore/docs/concepts/queries)
-- Source ID: `site-iam-reference`
-- Final score: 116
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Aggregation queries Firestore in Datastore mode supports the count() aggregation query.
-- For more information, see Set up authentication for a local development environment . / Fetch a query cursor. @param int $pageSize @param string $pageCursor @param string $namespaceId / function cursor paging(int $pageSize, string $pageCursor = '', string $namespaceId = null) { $datastore = new DatastoreClient(['namespaceId' => $namespaceId]); $query = $datastore->query() ->kind('Task') ->limit($pageSize) ->start($pageCursor); $result = $datastore->runQuery($query); $nextPageCursor = ''; $entities = []; / @var Entity $entity / foreach ($result as $entity) { $nextPageCursor = $entity->cursor(); $entities[] = $entity; } printf('Found %s entities', count($entities)); $entities = []; if (!empty($nextPageCursor)) { $query = $datastore->query() ->kind('Task') ->limit($pageSize) ->start($nextPageCursor); $result = $datastore->runQuery($query); foreach ($result as $entity) { $entities[] = $entity; } printf('Found %s entities with next page cursor', count($entities)); } } Python To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .
-- For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = "your Google Cloud project id"; // Imports the Cloud Datastore const { Datastore , PropertyFilter , or } = require ( ' @google-cloud/datastore ' ); async function queryFilterOr () { // Instantiate the Datastore const datastore = new Datastore (); const query = datastore . createQuery ( 'Task' ) . filter ( or ([ new PropertyFilter ( 'description' , '=' , 'Buy milk' ), new PropertyFilter ( 'description' , '=' , 'Feed cats' ), ]), ); const [ entities ] = await datastore . runQuery ( query ); for ( const entity of entities ) { console . log ( Entity found: ${ entity [ 'description' ] } ); } } queryFilterOr (); PHP Snippet not available.
-- For more information, see Set up authentication for a local development environment . async function runProjectionQuery () { const priorities = []; const percentCompletes = []; const [ tasks ] = await datastore . runQuery ( query ); tasks . forEach ( task = > { priorities . push ( task . priority ); percentCompletes . push ( task . percent complete ); }); return { priorities : priorities , percentCompletes : percentCompletes , }; } PHP To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .
 

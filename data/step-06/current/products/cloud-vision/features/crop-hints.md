@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:26:36.721Z"
+generated_at: "2026-04-12T12:12:50.279Z"
 product_name: "Cloud Vision"
 product_slug: "cloud-vision"
 feature_name: "Crop hints"
 feature_slug: "crop-hints"
 latest_feature_date: "2017-05-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/vision/docs/detecting-crop-hints"
   - "https://docs.cloud.google.com/vision/docs/crop-hints"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1"
+  - "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse"
 keywords:
   - "crop"
   - "hints"
@@ -25,7 +26,7 @@ keywords:
 # Crop hints
 
 Product: Cloud Vision
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,13 +38,14 @@ Crop hints suggest optimal crops for images.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/vision/docs/detecting-crop-hints](https://docs.cloud.google.com/vision/docs/detecting-crop-hints)
 - [https://docs.cloud.google.com/vision/docs/crop-hints](https://docs.cloud.google.com/vision/docs/crop-hints)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1)
+- [https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse](https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse)
 
 ## Supporting Pages
 
@@ -51,9 +53,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/vision/docs/detecting-crop-hints](https://docs.cloud.google.com/vision/docs/detecting-crop-hints)
 - Source ID: `site-iam-reference`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 244
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - String filePath = "gs://your-gcs-bucket/path/to/image/file.jpg" ; detectCropHintsGcs ( filePath ); } // Suggests a region to crop to for a remote file on Google Cloud Storage. public static void detectCropHintsGcs ( String gcsPath ) throws IOException { List<AnnotateImageRequest> requests = new ArrayList <> (); ImageSource imgSource = ImageSource . newBuilder (). setGcsImageUri ( gcsPath ). build (); Image img = Image . newBuilder (). setSource ( imgSource ). build (); Feature feat = Feature . newBuilder (). setType ( Feature .
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision/docs/crop-hints](https://docs.cloud.google.com/vision/docs/crop-hints)
 - Source ID: `site-iam-reference`
-- Final score: 158
+- Final score: 204
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,13 +80,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1)
 - Source ID: `site-java-reference`
-- Final score: 108
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 162
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Crop Hints Annotation Set of crop hints that are used to generate new crops when serving images. com. google. cloud. vision. v1.
 - Builder Set of crop hints that are used to generate new crops when serving images. com. google. cloud. vision. v1.
 - Crop Hints Params Parameters for crop hints annotation request. com. google. cloud. vision. v1.
 - Builder Parameters for crop hints annotation request. com. google. cloud. vision. v1.
+
+### AnnotateImageResponse \_|\_ Cloud Vision API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse](https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse)
+- Source ID: `site-api-reference`
+- Final score: 154
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example an original image will likely have partial matching for its crops. pagesWithMatchingImages[] object ( WebPage ) Web pages containing the matching images from the Internet. visuallySimilarImages[] object ( WebImage ) The visually similar image results. bestGuessLabels[] object ( WebLabel ) The service's best guess as to the topic of the request image.
+- CropHintsAnnotation Set of crop hints that are used to generate new crops when serving images.
+- This annotation provides the structural hierarchy for the OCR detected text. safeSearchAnnotation object ( SafeSearchAnnotation ) If present, safe-search annotation has completed successfully. imagePropertiesAnnotation object ( ImageProperties ) If present, image properties were extracted successfully. cropHintsAnnotation object ( CropHintsAnnotation ) If present, crop hints have completed successfully. webDetection object ( WebDetection ) If present, web detection has completed successfully. productSearchResults object ( ProductSearchResults ) If present, product search has completed successfully. error object ( Status ) If set, represents the error message for the operation.
+- For example an original image will likely have partial matching for its crops.
 

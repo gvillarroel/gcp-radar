@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.332Z"
+generated_at: "2026-04-12T12:19:43.310Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Vertex AI Agent Engine Memory Bank"
 feature_slug: "vertex-ai-agent-engine-memory-bank"
 latest_feature_date: "2025-11-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+  - "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk"
-  - "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk"
 keywords:
   - "vertex"
   - "ai"
@@ -27,7 +27,7 @@ keywords:
 # Vertex AI Agent Engine Memory Bank
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +39,14 @@ Memory Bank now supports creating and managing memory revisions; The Agent Engin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
+- [https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk](https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk)
-- [https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk](https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk)
 
 ## Supporting Pages
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
 - Source ID: `site-docs-root`
-- Final score: 290
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 350
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To see an example of using Memory Bank with the Agent Engine SDK, run the "Get started with Memory Bank" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To see an example of using Memory Bank with LangGraph, run the "Get started with Memory Bank - LangGraph" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Before you begin To complete the steps demonstrated in this tutorial, you must first follow the steps in Set up for Memory Bank .
@@ -64,11 +64,25 @@ Evidence snippets:
 - Use the Vertex AI Agent Engine SDK if you don't want an agent framework to orchestrate calls for you, or you want to integrate Sessions and Memory Bank with agent frameworks other than Agent Development Kit (ADK).
 - Generate memories with Vertex AI Agent Engine Sessions After setting up Vertex AI Agent Engine Sessions and Memory Bank, you can create sessions and append events to them.
 
+### "Develop an Agent Development Kit agent \_|\_ Vertex AI Agent Builder \_\
+
+- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk](https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk)
+- Source ID: `site-docs-reference`
+- Final score: 288
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To asynchronously query the agent, use the AdkApp.async stream query method: async for event in app . async stream query ( user id = " USER ID " , session id = SESSION ID , # Optional. you can pass in the session id when querying the agent message = "What is the exchange rate from US dollars to Swedish currency on 2025-04-03?" , ): print ( event ) The agent might respond with a request for information like the following: { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'text' : 'I need to know the Swedish currency code to ' 'provide you with the exchange rate.' }], 'role' : 'model' }, 'id' : 'wIgZAtQ4' , #... } You can send a response (for example, "SEK" ) on behalf of USER ID within the session corresponding to session by specifying: async for event in app . async stream query ( user id = " USER ID " , session id = session . id , # Optional. you can pass in the session id when querying the agent message = "SEK" , ): print ( event ) You should receive a continuation of the conversation like the following sequence of dictionaries: { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function call' : { 'args' : { 'currency date' : '2025-04-03' , 'currency from' : 'USD' , 'currency to' : 'SEK' }, 'id' : 'adk-2b9230a6-4b92-4a1b-9a65-b708ff6c68b6' , 'name' : 'get exchange rate' }}], 'role' : 'model' }, 'id' : 'bOPHtzji' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function response' : { 'id' : 'adk-2b9230a6-4b92-4a1b-9a65-b708ff6c68b6' , 'name' : 'get exchange rate' , 'response' : { 'amount' : 1.0 , 'base' : 'USD' , 'date' : '2025-04-03' , 'rates' : { 'SEK' : 9.6607 }}}}], 'role' : 'user' }, 'id' : '9AoDFmiL' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'text' : 'The exchange rate from USD to SEK on ' '2025-04-03 is 1 USD to 9.6607 SEK.' }], 'role' : 'model' }, 'id' : 'hmle7trT' , ... } (Optional) Manage memories By default, AdkApp uses an in-memory implementation of agentic memory when running locally and uses Vertex AI Agent Engine Memory Bank after you deploy the agent to Vertex AI Agent Engine.
+- If you want to override the default memory service, you can define a memory service builder function that returns a BaseMemoryService as follows: def memory service builder (): from google.adk.memory import InMemoryMemoryService return InMemoryMemoryService () Pass your database to AdkApp as memory service builder= : from vertexai.agent engines import AdkApp app = AdkApp ( agent = agent , # Required. memory service builder = memory service builder , # Optional. ) Use the agent with memories Test your ADK agent with memories: Create a session and interact with the agent: initial session = await app . async create session ( user id = " USER ID " ) async for event in app . async stream query ( user id = " USER ID " , session id = initial session . id , message = "Can you update the temperature to my preferred temperature?" , ): print ( event ) Since there are no available memories during the first session and the agent does not know any user preferences, the agent may reply with a response such as "What is your preferred temperature?" You can respond with the following command: async for event in app . async stream query ( user id = " USER ID " , session id = initial session . id , message = "I like it at 71 degrees" , ): print ( event ) The agent might return with a response such as "Setting the temperature to 71 degrees Fahrenheit.
+- The response is a sequence of dictionaries that's similar to the following: { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function call' : { 'args' : { 'currency date' : '2025-04-03' , 'currency from' : 'USD' , 'currency to' : 'SEK' }, 'id' : 'adk-e39f3ba2-fa8c-4169-a63a-8e4c62b89818' , 'name' : 'get exchange rate' }}], 'role' : 'model' }, 'id' : 'zFyIaaif' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function response' : { 'id' : 'adk-e39f3ba2-fa8c-4169-a63a-8e4c62b89818' , 'name' : 'get exchange rate' , 'response' : { 'amount' : 1.0 , 'base' : 'USD' , 'date' : '2025-04-03' , 'rates' : { 'SEK' : 9.6607 }}}}], 'role' : 'user' }, 'id' : 'u2YR4Uom' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'text' : 'The exchange rate from USD to SEK on ' '2025-04-03 is 9.6607.' }], 'role' : 'model' }, 'id' : 'q3jWA3wl' , ... } (Optional) Manage sessions AdkApp uses in-memory sessions when running locally and uses cloud-based managed sessions after you deploy the agent to Vertex AI Agent Engine.
+- If you want to override the default managed session service with your own database, you can define a session service builder function as follows: def session service builder (): from google.adk.sessions import InMemorySessionService return InMemorySessionService () Pass your database to AdkApp as session service builder= : from vertexai.agent engines import AdkApp app = AdkApp ( agent = agent , # Required. session service builder = session service builder , # Optional. ) Use the agent with sessions When you run the AdkApp locally, the following instructions use in-memory sessions.
+
 ### "Use agent identity with Vertex AI Agent Engine \_|\_ Vertex AI Agent Builder\
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - Source ID: `site-docs-root`
-- Final score: 250
+- Final score: 273
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -81,27 +95,13 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk)
 - Source ID: `site-docs-root`
-- Final score: 236
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 270
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Cloud Run To see an example of using Memory Bank with Cloud Run, run the "Get started with Sessions and Memory Bank for ADK agents in Cloud Run" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To deploy your agent to Cloud Run, refer to the instructions in the ADK documentation to learn how to define your agent to deploy to Cloud Run. adk deploy cloud run \ ... --memory service uri = agentengine:// AGENT ENGINE ID GKE To see an example of using Memory Bank with Google Kubernetes Engine, run the "Get started with Sessions and Memory Bank for ADK agents in Google Kubernetes Engine" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To deploy your agent to Google Kubernetes Engine (GKE), refer to the instructions in the ADK documentation to learn how to define your agent to deploy to GKE. adk deploy gke \ ... --memory service uri = agentengine:// AGENT ENGINE ID ADK Web Important: ADK Web is not meant for use in production deployments.
 - However, you can override the default memory service to use VertexAiMemoryBankService : def memory bank service builder (): return VertexAiMemoryBankService ( project = " PROJECT ID " , location = " LOCATION " , agent engine id = " AGENT ENGINE ID " ) adk app = AdkApp ( agent = adk agent , Override the default memory service. memory service builder = memory bank service builder ) async def call agent ( query , session id , user id ): adk app is a local agent.
 - In this case, you need to directly create the memory service and runner. import asyncio from google.adk.memory import VertexAiMemoryBankService from google.adk.sessions import VertexAiSessionService from google.genai import types memory service = VertexAiMemoryBankService ( project = " PROJECT ID " , location = " LOCATION " , agent engine id = " AGENT ENGINE ID " , ) You can use any ADK session service.
 - When deployed on Agent Engine Runtime, the Agent Engine ADK template uses VertexAiMemoryBankService as the default memory service, using the same Agent Engine instance for Memory Bank as the Agent Engine Runtime.
-
-### "Develop an Agent Development Kit agent \_|\_ Vertex AI Agent Builder \_\
-
-- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk](https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk)
-- Source ID: `site-docs-reference`
-- Final score: 230
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- To asynchronously query the agent, use the AdkApp.async stream query method: async for event in app . async stream query ( user id = " USER ID " , session id = SESSION ID , # Optional. you can pass in the session id when querying the agent message = "What is the exchange rate from US dollars to Swedish currency on 2025-04-03?" , ): print ( event ) The agent might respond with a request for information like the following: { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'text' : 'I need to know the Swedish currency code to ' 'provide you with the exchange rate.' }], 'role' : 'model' }, 'id' : 'wIgZAtQ4' , #... } You can send a response (for example, "SEK" ) on behalf of USER ID within the session corresponding to session by specifying: async for event in app . async stream query ( user id = " USER ID " , session id = session . id , # Optional. you can pass in the session id when querying the agent message = "SEK" , ): print ( event ) You should receive a continuation of the conversation like the following sequence of dictionaries: { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function call' : { 'args' : { 'currency date' : '2025-04-03' , 'currency from' : 'USD' , 'currency to' : 'SEK' }, 'id' : 'adk-2b9230a6-4b92-4a1b-9a65-b708ff6c68b6' , 'name' : 'get exchange rate' }}], 'role' : 'model' }, 'id' : 'bOPHtzji' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function response' : { 'id' : 'adk-2b9230a6-4b92-4a1b-9a65-b708ff6c68b6' , 'name' : 'get exchange rate' , 'response' : { 'amount' : 1.0 , 'base' : 'USD' , 'date' : '2025-04-03' , 'rates' : { 'SEK' : 9.6607 }}}}], 'role' : 'user' }, 'id' : '9AoDFmiL' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'text' : 'The exchange rate from USD to SEK on ' '2025-04-03 is 1 USD to 9.6607 SEK.' }], 'role' : 'model' }, 'id' : 'hmle7trT' , ... } (Optional) Manage memories By default, AdkApp uses an in-memory implementation of agentic memory when running locally and uses Vertex AI Agent Engine Memory Bank after you deploy the agent to Vertex AI Agent Engine.
-- If you want to override the default memory service, you can define a memory service builder function that returns a BaseMemoryService as follows: def memory service builder (): from google.adk.memory import InMemoryMemoryService return InMemoryMemoryService () Pass your database to AdkApp as memory service builder= : from vertexai.agent engines import AdkApp app = AdkApp ( agent = agent , # Required. memory service builder = memory service builder , # Optional. ) Use the agent with memories Test your ADK agent with memories: Create a session and interact with the agent: initial session = await app . async create session ( user id = " USER ID " ) async for event in app . async stream query ( user id = " USER ID " , session id = initial session . id , message = "Can you update the temperature to my preferred temperature?" , ): print ( event ) Since there are no available memories during the first session and the agent does not know any user preferences, the agent may reply with a response such as "What is your preferred temperature?" You can respond with the following command: async for event in app . async stream query ( user id = " USER ID " , session id = initial session . id , message = "I like it at 71 degrees" , ): print ( event ) The agent might return with a response such as "Setting the temperature to 71 degrees Fahrenheit.
-- The response is a sequence of dictionaries that's similar to the following: { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function call' : { 'args' : { 'currency date' : '2025-04-03' , 'currency from' : 'USD' , 'currency to' : 'SEK' }, 'id' : 'adk-e39f3ba2-fa8c-4169-a63a-8e4c62b89818' , 'name' : 'get exchange rate' }}], 'role' : 'model' }, 'id' : 'zFyIaaif' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function response' : { 'id' : 'adk-e39f3ba2-fa8c-4169-a63a-8e4c62b89818' , 'name' : 'get exchange rate' , 'response' : { 'amount' : 1.0 , 'base' : 'USD' , 'date' : '2025-04-03' , 'rates' : { 'SEK' : 9.6607 }}}}], 'role' : 'user' }, 'id' : 'u2YR4Uom' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'text' : 'The exchange rate from USD to SEK on ' '2025-04-03 is 9.6607.' }], 'role' : 'model' }, 'id' : 'q3jWA3wl' , ... } (Optional) Manage sessions AdkApp uses in-memory sessions when running locally and uses cloud-based managed sessions after you deploy the agent to Vertex AI Agent Engine.
-- If you want to override the default managed session service with your own database, you can define a session service builder function as follows: def session service builder (): from google.adk.sessions import InMemorySessionService return InMemorySessionService () Pass your database to AdkApp as session service builder= : from vertexai.agent engines import AdkApp app = AdkApp ( agent = agent , # Required. session service builder = session service builder , # Optional. ) Use the agent with sessions When you run the AdkApp locally, the following instructions use in-memory sessions.
 

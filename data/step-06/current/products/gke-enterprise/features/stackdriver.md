@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.787Z"
+generated_at: "2026-04-12T12:16:18.961Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Stackdriver"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks"
 keywords:
   - "stackdriver"
   - "provides"
@@ -37,13 +38,14 @@ Stackdriver provides monitoring and logging for Google Cloud workloads.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
 
 ## Supporting Pages
 
@@ -51,7 +53,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 112
+- Final score: 157
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -64,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 104
+- Final score: 128
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -77,7 +79,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
 - Source ID: `site-docs-reference`
-- Final score: 84
+- Final score: 104
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -85,4 +87,17 @@ Evidence snippets:
 - Implementation details like logging and monitoring, permissions, and others.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 - Get the reference architecture The reference architecture is published in two parts - the first part explains the architecture, reference deployments, and design prerequisites and considerations, and the second part provides the implementation details.
+
+### "Common GKE user roles and tasks \_|\_ Google Kubernetes Engine (GKE) \_\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
+- Source ID: `site-iam-reference`
+- Final score: 96
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Storage administrators Storage administrators provision and manage the storage infrastructure to ensure data security and compliance, while also monitoring performance, usage, and spend.
+- Deploy workloads that are ready for production, such as machine learning (ML), business intelligence (BI), or ETL (extract, transform, load) and ELT (extract, load, transform).
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Common role archetypes The following high-level areas of common user roles are often referenced in our content: Admins and architects Operators Developers Security specialists Networking specialists Data and AI specialists Storage specialists Admins and architects Admins and architects administer and architect cloud platforms and products.
 

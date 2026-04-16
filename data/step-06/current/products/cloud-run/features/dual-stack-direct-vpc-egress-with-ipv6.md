@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.891Z"
+generated_at: "2026-04-14T15:34:54.413Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Dual-stack Direct VPC egress with IPv6"
@@ -9,18 +9,16 @@ latest_feature_date: "2025-11-06"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service"
   - "https://docs.cloud.google.com/run/docs/container-contract"
-  - "https://docs.cloud.google.com/run/docs/reference/container-contract"
+  - "https://docs.cloud.google.com/python/docs/reference/run/latest"
 keywords:
-  - "dual"
   - "stack"
-  - "direct"
-  - "vpc"
-  - "egress"
-  - "with"
+  - "dual"
   - "ipv6"
-  - "run"
+  - "direct"
+  - "egress"
+  - "supports"
 ---
 
 # Dual-stack Direct VPC egress with IPv6
@@ -38,52 +36,46 @@ Cloud Run supports dual-stack subnets with IPv6 for Direct VPC egress and extern
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service)
 - [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
+- [https://docs.cloud.google.com/python/docs/reference/run/latest](https://docs.cloud.google.com/python/docs/reference/run/latest)
 
 ## Supporting Pages
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### "Python Client for Cloud Run \_|\_ Python client libraries \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 178
+- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest](https://docs.cloud.google.com/python/docs/reference/run/latest)
+- Source ID: `site-python-reference`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Quickstart: Deploy a Python (Gradio) web app to Google Cloud with Cloud Run | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 36
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- November 11, 2025 Feature You can set a task timeout up to 168 hours (7 days) for Cloud Run jobs. (GA) November 06, 2025 Feature Use dual-stack subnets with IPv6 to let your Cloud Run resources send IPv4 and internal IPv6 traffic to a VPC network with Direct VPC egress, and send external IPv6 traffic to the public internet. (GA) October 31, 2025 Feature Support for Java 25 runtime is in Preview .
-- January 24, 2025 Feature You can now use dual-stack subnets with internal IPv6 to let your Cloud Run services and jobs send IPv4 and internal IPv6 traffic to a VPC network with Direct VPC egress. (Preview) January 22, 2025 Feature The Cloud Run Builder ( roles/run.builder ) IAM role is now available in preview.
-- March 26, 2025 Change Cloud Run services configured with Direct VPC egress now use only 2 times (2X) as many IP addresses as the number of instances for the duration of the instance plus up to 20 minutes, reduced from 4X as many IP addresses.
-- March 19, 2024 Feature You can now mount an NFS file share as a volume for Cloud Run services and jobs . (In Preview) March 14, 2024 Feature Direct VPC egress now supports Cloud NAT with Public NAT IP addresses (in Preview).
+- AI use cases in Cloud Run Get started Overview Deploy a sample web service Deploy a sample container Deploy from a git repository Deploy a Hello World service from source code Go Node.js Python Flask FastAPI Gradio LangChain Smolagents Streamlit Agent Development Kit (ADK) for Python Java Kotlin C# C++ PHP Ruby Other Frameworks Overview Angular SSR Next.js Nuxt.js SvelteKit Deploy a sample function Deploy a function using the console Deploy a function using gcloud Execute a sample job Execute a job Execute a job from source code Go Node.js Python Java Shell Deploy a sample worker pool Develop Set up your environment Plan and prepare your service Develop your service Containerize your code Connect to Google Cloud services Install a system package in your container Run gcloud commands within your container Plan and prepare your function Overview Compare Cloud Run functions Write Cloud Run functions Runtimes Overview Node.js Overview Node.js dependencies Python Overview Python dependencies Go Overview Go dependencies Java Overview Java dependencies .NET Ruby PHP Local functions development Function triggers Tutorials Create a function that returns BigQuery results Create a function that returns Spanner results Integrate with Cloud databases Codelabs Build and test Build sources to containers Build functions to containers Local testing Serve HTTP requests Deploy services Deploy container images Continuous deployment from git Deploy from source code Deploy from Compose Deploy functions Serve web traffic Mapping custom domains Serving static assets with CDN Serving traffic from multiple regions Deploy a multi-region app with service health Enable session affinity Frontend proxying using Nginx Manage services View, copy, or delete services View or delete revisions Traffic migration, gradual rollouts, rollbacks Configure services Overview Capacity Memory limits CPU limits GPU GPU configuration GPU performance best practices Request timeout Maximum concurrent requests About maximum concurrent requests per instance Configure maximum concurrent requests Billing Optimize service configurations with Recommender Environment Container port and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes CIFS/SMB Execution environment Container health checks HTTP/2 requests Secrets Service identity Scaling About instance autoscaling for services Maximum instances About maximum instances for services Configure maximum instances Minimum instances Manual scaling Metadata Description Labels Tags Source deploy configurations Supported language runtimes and base images Configure automatic base image updates Build environment variables Build service account Build worker pools Invoke and trigger services Invoke with HTTPS requests Host a webhook target Stream with WebSockets Overview Build a WebSocket Chat service tutorial Invoke asynchronously Invoke services on a schedule Create a workflow Invoke services as part of a Workflow Connect a series of services from Cloud Functions and Cloud Run tutorial Execute asynchronous tasks Call a service from a Pub/Sub push subscription Trigger service from Pub/Sub Integrate image processing into Pub/Sub sample tutorial Trigger from events Create triggers with Eventarc Pub/Sub triggers Create Pub/Sub Eventarc triggers Trigger functions from Pub/Sub using Eventarc Trigger functions from routed log entries Cloud Storage triggers Create triggers with Cloud Storage Trigger services from Cloud Storage using Eventarc Trigger functions from Cloud Storage using Eventarc Firestore triggers Create triggers with Firestore Trigger functions from events in a Firestore database Connect with other services using gRPC Best practices General development tips for services Cost optimization Optimize Java services Optimize Python services Optimize Node.js services Load testing best practices Understand zonal redundancy Functions best practices Overview Configure event-driven function retries Execute job tasks to completion Create jobs Execute jobs Execute jobs Execute scheduled jobs Execute jobs from Workflows Configure jobs Container entrypoint CPU limits Memory limits GPU GPU configuration GPU best practices Environment variables Container health checks Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Labels Maximum retries Parallelism Secrets Service identity Task timeout Tags Manage jobs View or delete jobs View or stop job executions Best practices Jobs retries and checkpoints Cost optimization Perform continuous background work Deploy worker pools Deploy worker pools Deploy worker pools from source code Manage worker pools View or delete worker pools View or delete worker pool revisions Instance splits and rollbacks Configure worker pools Capacity Memory limits CPU limits GPU GPU configuration GPU best practices Environment Container and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Container health checks Secrets Service identity Instance count Metadata Description Labels Scale based on external metrics Autoscale worker pools with external metrics Kafka autoscaler Host GitHub runners with worker pools Autoscale worker pools based on Prometheus metrics Autoscale worker pools with Pub/Sub pull subscriptions Automate scaling with Workflows Cost optimization Configure networking Best practices for Cloud Run networking Configure private networking Send traffic to VPC network Overview Direct VPC Register private IPs for worker pools using Cloud DNS Dual-stack (IPv4 and IPv6) Migrate standard VPC connector to Direct VPC VPC connectors Send traffic to Shared VPC network Overview Direct VPC Migrate Shared VPC connector to Direct VPC Connectors in service projects Connectors in host project Static outbound IP address Network security Restrict endpoint ingress (services) Use VPC Service Controls (VPC SC) Cloud Service Mesh Secure Security design overview Authenticate requests Overview Allow public access Custom audiences Authenticate developers Service-to-service Authenticate users End user authentication tutorial Secure your resources Access control with IAM Configure IAP for Cloud Run Introduction to service identity Protect services with Cloud Armor Use Binary Authorization Use Cloud Run Threat Detection Use customer managed encryption keys Manage custom constraints for projects View software supply chain security insights Secure Cloud Run services tutorial Multi-tenant platforms running untrusted code Monitor and log Monitoring and logging overview View built-in metrics Write Prometheus metrics Write OpenTelemetry metrics Log and view logs Audit logging Error reporting Use distributed tracing for services Run AI solutions Overview Explore resources AI agents Overview Build and deploy A2A agents Overview Deploy A2A agents Build and deploy ADK agents Build and deploy n8n agents MCP servers Overview Build and deploy a remote MCP server Tools Code execution Browser automation Inference with GPUs Overview Services Run LLM inference on Cloud Run GPUs with Ollama Run agents with Gemma 4 models on Cloud Run Run LLM inference on Cloud Run GPUs with vLLM Run OpenCV on Cloud Run with GPU acceleration Run LLM inference on Cloud Run GPUs with Hugging Face Transformers.js Run LLM inference on Cloud Run GPUs with Hugging Face TGI Jobs Fine tune LLMs using GPUs with Cloud Run jobs Run batch inference using GPUs with Cloud Run jobs GPU-accelerated video transcoding with FFmpeg AI-assisted development and vibe coding Introduction to Cloud Run for AI-assisted developers Cookbook Migrate An existing web service From App Engine From Cloud Run functions (1st gen) From AWS Lambda From Heroku From Cloud Foundry Migration overview Choose an OCI-compliant-strategy Migrate to OCI containers Migrate configuration Sample migration: Spring Music From VMWare Tanzu From a VM using Migrate to Containers From Kubernetes To GKE Troubleshoot Introduction Troubleshoot errors Local troubleshooting tutorial Known issues Samples All Cloud Run code samples All Cloud Run functions code samples Code samples for all products AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application hosting Cloud Run Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Write the sample application To write an application in Python: Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named app.py and paste the following code into it: import gradio as gr def hello ( name , intensity ): """Return a friendly greeting.""" return "Hello " + name + "!" * int ( intensity ) demo = gr .
+- To deploy from source: In your source code directory, deploy the current folder using the following command: gcloud run deploy --source .
 
 ### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 148
+- Final score: 33
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For Cloud Run worker pools with Direct VPC ingress, such as database connections or any other custom TCP-based protocol, the container must listen for TCP connections on the port exposed in your container image through the Dockerfile or specified by the PORT environment variable.
+- Make sure you create your instance under a dual-stack subnet . /computeMetadata/v1/instance/network-interfaces/ /computeMetadata/v1/instance/network-interfaces/0/ Network interface directory path for worker pools.
 - Cloud Run worker pools support both Direct VPC egress and Direct VPC ingress .
 - Cloud Run services and jobs support Direct VPC egress .
-- Make sure you create your instance under a dual-stack subnet . /computeMetadata/v1/instance/network-interfaces/ /computeMetadata/v1/instance/network-interfaces/0/ Network interface directory path for worker pools.
-
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: N/A
-
-Evidence snippets:
 - For Cloud Run worker pools with Direct VPC ingress, such as database connections or any other custom TCP-based protocol, the container must listen for TCP connections on the port exposed in your container image through the Dockerfile or specified by the PORT environment variable.
-- Cloud Run worker pools support both Direct VPC egress and Direct VPC ingress .
-- Cloud Run services and jobs support Direct VPC egress .
-- Make sure you create your instance under a dual-stack subnet . /computeMetadata/v1/instance/network-interfaces/ /computeMetadata/v1/instance/network-interfaces/0/ Network interface directory path for worker pools.
 

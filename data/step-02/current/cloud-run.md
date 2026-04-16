@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 178
-Unique features: 138
+Unique features: 137
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -57,7 +57,6 @@ Unique features: 138
 | 2025-06-17 | Ruby 3.4 runtime |  | Cloud Run supports the Ruby 3.4 runtime for deployed workloads; Cloud Run supports the Ruby 3.4 runtime for deployed workloads. |
 | 2025-06-16 | GPU for Cloud Run jobs |  | Cloud Run jobs support GPU configuration for job execution. |
 | 2025-06-09 | Request host and path IAM Conditions |  | Cloud Run supports using request host and request path attributes in IAM Conditions for service invocation access control. |
-| 2025-05-30 | Java function execution ID logging |  | Java Cloud Run functions can add a unique execution ID to logs when using java.util.logging.Logger with Functions Framework 1.4.0 or later. |
 | 2025-05-13 | Function label propagation to Cloud Run |  | Labels set for Cloud Run functions through gcloud functions commands or the Cloud Functions v2 API propagate to Cloud Run deployments. |
 | 2025-05-06 | Direct VPC egress with Private NAT |  | Direct VPC egress supports Private NAT for Cloud Run networking. |
 | 2025-05-05 | Python 3.13 runtime |  | Cloud Run supports the Python 3.13 runtime for deployed workloads; Cloud Run supports the Python 3.13 runtime for deployed workloads. |

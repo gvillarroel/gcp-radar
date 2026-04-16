@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.605Z"
+generated_at: "2026-04-12T12:13:48.468Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "SQL assertion rule type"
 feature_slug: "sql-assertion-rule-type"
 latest_feature_date: "2024-04-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality"
   - "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+  - "https://docs.cloud.google.com/dataplex/docs/check-data-quality"
 keywords:
   - "sql"
   - "assertion"
@@ -26,7 +27,7 @@ keywords:
 # SQL assertion rule type
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Dataplex automatic data quality supports a SQL assertion rule type for detecting
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality](https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality)
 - [https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
+- [https://docs.cloud.google.com/dataplex/docs/check-data-quality](https://docs.cloud.google.com/dataplex/docs/check-data-quality)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality](https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 232
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Export table schema To export the data quality scan results to an existing BigQuery table, make sure that it is compatible with the following table schema: Column name Column data type Sub field name (if applicable) Sub field data type Mode Example data quality scan struct/record resource name string nullable //dataplex.googleapis.com/projects/test-project/locations/europe-west2/datascans/test-datascan project id string nullable dataplex-back-end-dev-project location string nullable us-central1 data scan id string nullable test-datascan display name string nullable datascan-display-name data source struct/record resource name string nullable Entity case: //dataplex.googleapis.com/projects/dataplex-back-end-dev-project/locations/europe-west2/lakes/a0-datascan-test-lake/zones/a0-datascan-test-zone/entities/table1 Table case: //bigquery.googleapis.com/projects/test-project/datasets/test-dataset/tables/test-table dataplex entity project id string nullable dataplex-back-end-dev-project dataplex entity project number integer nullable 123456789 dataplex lake id string nullable (Valid only if source is entity) test-lake dataplex zone id string nullable (Valid only if source is entity) test-zone dataplex entity id string nullable (Valid only if source is entity) test-entity table project id string nullable test-project table project number integer nullable 987654321 dataset id string nullable (Valid only if source is table) test-dataset table id string nullable (Valid only if source is table) test-table data quality job id string nullable caeba234-cfde-4fca-9e5b-fe02a9812e38 data quality job configuration json trigger string nullable ondemand / schedule incremental boolean nullable true / false sampling percent float nullable (0-100) 20.0 (indicates 20%) row filter string nullable col1 >= 0 AND col2 incremental column string nullable column name job labels json nullable {"key1":value1} job start time timestamp nullable 2023-01-01 00:00:00 UTC job end time timestamp nullable 2023-01-01 00:00:00 UTC job quality result struct/record passed boolean nullable true / false score float nullable 90.8 incremental start string nullable 2023-01-01T00:00:00 incremental end string nullable 2024-01-01T00:00:00 job dimension result json nullable {"ACCURACY":{"passed":true,"score":100},"CONSISTENCY":{"passed":false,"score":60}} job rows scanned integer nullable 7500 rule name string nullable test-rule rule description string nullable Test rule description rule type string nullable Range Check rule evaluation type string nullable Per row rule column string nullable Rule only attached to a certain column rule dimension string nullable UNIQUENESS rule threshold percent float nullable (0.0-100.0) Rule-threshold-pct in API 100 rule parameters json nullable {min: 24, max:5345} rule passed boolean nullable true rule rows evaluated integer nullable 7400 rule rows passed integer nullable 3 rule rows null integer nullable 4 rule failed records query string nullable "SELECT FROM test-project.test-dataset.test-table WHERE (NOT((cTime >= '15:31:38.776361' and cTime created on timestamp nullable 2023-01-01 00:00:00 UTC last updated timestamp nullable 2023-01-01 00:00:00 UTC rule assertion row count integer nullable 10 debug queries struct/record description string nullable Test debug query description sql statement string nullable SELECT MIN(col1) AS min col1, AVG(col1) FROM ${data()} debug query results struct/record repeated [{"name": "min col1", "type": "INTEGER", "value": "5"}, {"type": "FLOAT", "value": "7"}] ↳ name string nullable The name of query result column, like min col1 ↳ type string nullable The type of query result column, like INTEGER ↳ value string nullable The value of query result column, like 5 Note: Column rule assertion row count is only applicable for SQL Assertion rule .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview)
 - Source ID: `site-docs-root`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 214
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - All columns Required: SQL condition to use Dimension Optional: Column to associate this rule with Simple aggregate example: avg(price) > 100 Using an expression subquery to compare values across a different table: (SELECT COUNT( ) FROM example project.example dataset.different-table) < COUNT( ) SQL assertion Aggregate An assertion rule uses a data quality query to find rows that fail one or more conditions specified in the query.
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1)
 - Source ID: `site-java-reference`
-- Final score: 154
+- Final score: 192
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,4 +90,18 @@ Evidence snippets:
 - Rule Type The type of the data quality rule. com. google. cloud. dataplex. v1.
 - Data Quality Dimension A dimension captures data quality intent about a defined subset of the rules specified. com. google. cloud. dataplex. v1.
 - Data Quality Rule Result DataQualityRuleResult provides a more detailed, per-rule view of the results. com. google. cloud. dataplex. v1.
+
+### Use data quality tasks \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/check-data-quality](https://docs.cloud.google.com/dataplex/docs/check-data-quality)
+- Source ID: `site-docs-root-2`
+- Final score: 187
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This is a convenience section that allows you to shorten the entity uri metadata registry defaults : dataplex : projects : PROJECT ID locations : REGION ID lakes : operations zones : procurement You have to define a NONE row filter row filters : NONE : filter sql expr : - True INTERNATIONAL ITEMS : filter sql expr : - REGEXP CONTAINS(item id, 'INTNL') rule dimensions are optional but allow you to aggregate reporting. rule dimensions : - consistency - correctness - duplication - completeness - conformance - integrity Rules can be shared across tables or columns. rules : This rule is parameterized with column names as parameter NO DUPLICATES IN COLUMN GROUPS : rule type : CUSTOM SQL STATEMENT dimension : duplication params : custom sql arguments : - column names custom sql statement : - select a. from data a inner join ( select $column names from data group by $column names having count( ) > 1 ) duplicates using ($column names) VALUE ZERO OR POSITIVE : rule type : CUSTOM SQL EXPR dimension : correctness params : custom sql expr : - $column >= 0 VALID ITEM ID : rule type : REGEX dimension : conformance params : pattern : - [A-Z]{5}[0-9]{15} VALID CURRENCY ID : rule type : CUSTOM SQL EXPR dimension : integrity params : custom sql expr : - $column in ('GBP', 'JPY') #rule bindings associate rules to {table, column} rule bindings : TRANSACTIONS UNIQUE : entity uri : dataplex://projects/ PROJECT ID /locations/ REGION ID /lakes/operations/zones/procurement/entities/sales orders column id : id row filter id : NONE incremental time filter column id : last modified timestamp rule ids : - NO DUPLICATES IN COLUMN GROUPS : column names : "id" TRANSACTION AMOUNT VALID : entity uri : dataplex://zones/procurement/entities/sales orders # omitting projects/locations/lakes from uri path to use the default values specified in metadata registry defaults column id : amount row filter id : NONE incremental time filter column id : last modified timestamp rule ids : - VALUE ZERO OR POSITIVE TRANSACTION VALID ITEM ID : entity uri : dataplex://zones/procurement/entities/sales orders column id : item id row filter id : NONE incremental time filter column id : last modified timestamp rule ids : - VALID ITEM ID TRANSACTION CURRENCY VALID : entity uri : dataplex://zones/procurement/entities/sales orders column id : transaction currency row filter id : INTERNATIONAL ITEMS incremental time filter column id : last modified timestamp rule ids : - VALID CURRENCY ID Troubleshoot failed rules with failed records query For every rule that fails, the summary table stores a query in the failed records query column that you can use to get failed records.
+- This is a convenience section that allows you to shorten the entity uri metadata registry defaults : dataplex : projects : PROJECT ID locations : REGION ID lakes : operations zones : procurement You have to define a NONE row filter row filters : NONE : filter sql expr : - True INTERNATIONAL ITEMS : filter sql expr : - REGEXP CONTAINS(item id, 'INTNL') rule dimensions are optional but allow you to aggregate reporting. rule dimensions : - consistency - correctness - duplication - completeness - conformance - integrity Rules can be shared across tables or columns. rules : This rule is parameterized with column names as parameter NO DUPLICATES IN COLUMN GROUPS : rule type : CUSTOM SQL STATEMENT dimension : duplication params : custom sql arguments : - column names custom sql statement : - select a. from data a inner join ( select $column names from data group by $column names having count( ) > 1 ) duplicates using ($column names) VALUE ZERO OR POSITIVE : rule type : CUSTOM SQL EXPR dimension : correctness params : custom sql expr : - $column >= 0 VALID ITEM ID : rule type : REGEX dimension : conformance params : pattern : - [A-Z]{5}[0-9]{15} VALID CURRENCY ID : rule type : CUSTOM SQL EXPR dimension : integrity params : custom sql expr : - $column in ('GBP', 'JPY') #rule bindings associate rules to {table, column} rule bindings : TRANSACTIONS UNIQUE : entity uri : dataplex://projects/ PROJECT ID /locations/ REGION ID /lakes/operations/zones/procurement/entities/sales orders column id : id row filter id : NONE rule ids : - NO DUPLICATES IN COLUMN GROUPS : column names : "id" TRANSACTION AMOUNT VALID : entity uri : dataplex://zones/procurement/entities/sales orders # omitting projects/locations/lakes from uri path to use the default values specified in metadata registry defaults column id : amount row filter id : NONE rule ids : - VALUE ZERO OR POSITIVE TRANSACTION VALID ITEM ID : entity uri : dataplex://zones/procurement/entities/sales orders column id : item id row filter id : NONE rule ids : - VALID ITEM ID TRANSACTION CURRENCY VALID : entity uri : dataplex://zones/procurement/entities/sales orders column id : transaction currency row filter id : INTERNATIONAL ITEMS rule ids : - VALID CURRENCY ID Sample 4 This example enhances Sample 3 by adding incremental validations using the last modified timestamp column.
+- This is a convenience section that allows you to shorten the entity uri metadata registry defaults : dataplex : projects : PROJECT ID locations : REGION ID lakes : operations zones : procurement You have to define a NONE row filter row filters : NONE : filter sql expr : - True INTERNATIONAL ITEMS : filter sql expr : - REGEXP CONTAINS(item id, 'INTNL') rule dimensions are optional but allow you to aggregate reporting. rule dimensions : - consistency - correctness - duplication - completeness - conformance - integrity Rules can be shared across tables or columns. rules : VALUE ZERO OR POSITIVE : rule type : CUSTOM SQL EXPR dimension : correctness params : custom sql expr : - $column >= 0 VALID ITEM ID : rule type : REGEX dimension : conformance params : pattern : - [A-Z]{5}[0-9]{15} VALID CURRENCY ID : rule type : CUSTOM SQL EXPR dimension : integrity params : custom sql expr : - $column in ('GBP', 'JPY') #rule bindings associate rules to {table, column} rule bindings : TRANSACTION AMOUNT VALID : entity uri : dataplex://projects/ PROJECT ID /locations/ REGION ID /lakes/operations/zones/procurement/entities/sales orders column id : amount row filter id : NONE rule ids : - VALUE ZERO OR POSITIVE TRANSACTION VALID ITEM ID : entity uri : dataplex://zones/procurement/entities/sales orders # omitting projects/locations/lakes from uri path to use the default values specified in metadata registry defaults column id : item id row filter id : NONE rule ids : - VALID ITEM ID TRANSACTION CURRENCY VALID : entity uri : dataplex://zones/procurement/entities/sales orders column id : transaction currency row filter id : INTERNATIONAL ITEMS rule ids : - VALID CURRENCY ID Replace the following: PROJECT ID : your project ID.
+- API Replace the following: PROJECT ID = "Your Knowledge Catalog Project ID" REGION = "Your Knowledge Catalog lake region" LAKE ID = "Your Knowledge Catalog lake ID" SERVICE ACC = "Your service account used for reading the data" DATAPLEX TASK ID = "Unique task ID for the data quality task" BUCKET NAME = "Your Cloud Storage bucket name containing the CloudDQ configs or YAML specification" GCP BQ BILLING PROJECT ID = "Your BigQuery billing project" GCP BQ REGION ID = "Your BigQuery dataset region ID" #Optional GCP BQ DATASET ID = "Your BigQuery dataset to store the data quality summary results" TARGET TABLE NAME = "Your target table name to store the results in BigQuery dataset" Submit an HTTP POST request: POST https://dataplex.googleapis.com/v1/projects/${PROJECT ID}/locations/${REGION}/lakes/${LAKE ID}/tasks?task id=${DATAPLEX TASK ID} { "spark": { "python script file": f"gs://dataplex-clouddq-artifacts-us-central1/clouddq pyspark driver.py", "file uris": [ f"gs://dataplex-clouddq-artifacts-us-central1/clouddq-executable.zip", f"gs://dataplex-clouddq-artifacts-us-central1/clouddq-executable.zip.hashsum", f"gs://dataplex-clouddq-artifacts-us-central1/your-clouddq-configs.zip" ] }, "execution spec": { "args": { "TASK ARGS":f"clouddq-executable.zip, ALL, gs://BUCKET NAME/your-clouddq-configs.zip, --gcp project id=${GCP BQ BILLING PROJECT ID}, --gcp region id=${GCP BQ REGION ID}, --gcp bq dataset id=${GCP BQ DATASET ID}, --target bigquery summary table=${GCP BQ BILLING PROJECT ID}.${GCP BQ DATASET ID}.${TARGET TABLE NAME}" }, "service account": "SERVICE ACC" }, "trigger spec": { "type": "ON DEMAND" }, "description": "${DATAPLEX TASK DESCRIPTION}" } See also Sample Airflow DAG for Knowledge Catalog data quality task .
 

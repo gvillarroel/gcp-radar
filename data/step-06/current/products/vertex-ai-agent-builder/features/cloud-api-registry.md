@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.326Z"
+generated_at: "2026-04-12T12:19:43.309Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Cloud API Registry"
 feature_slug: "cloud-api-registry"
 latest_feature_date: "2025-12-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring"
-  - "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline"
-  - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
   - "https://docs.cloud.google.com/agent-builder/overview"
+  - "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+  - "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring"
+  - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
 keywords:
   - "api"
   - "registry"
@@ -27,7 +27,7 @@ keywords:
 # Cloud API Registry
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,24 +39,52 @@ Introduces Cloud API Registry in Google Cloud console to view and manage MCP ser
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring](https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring)
-- [https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline](https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline)
-- [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - [https://docs.cloud.google.com/agent-builder/overview](https://docs.cloud.google.com/agent-builder/overview)
+- [https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref](https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref)
+- [https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring](https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring)
+- [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 
 ## Supporting Pages
+
+### Vertex AI Agent Builder overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/agent-builder/overview](https://docs.cloud.google.com/agent-builder/overview)
+- Source ID: `site-docs-root`
+- Final score: 231
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Tools in the Cloud API Registry (Preview): Use Cloud API Registry in the Google Cloud console to view and manage the MCP servers and tools your agent has access to.
+- Agent Garden (Supported in preview ) is a library in the Google Cloud console where you can find and explore sample agents and tools that are designed to accelerate your development.
+- Agent Tools are tools that you can equip your ADK agent to use, including: Built-in tools such as Grounding with Google Search , Vertex AI Search , and Code Execution RAG Engine for retrieval-augmented generation (RAG) Google Cloud tools to connect to: Your APIs managed in Apigee API hub 100+ enterprise applications through Integration Connectors Custom integrations with Application Integration Model Context Protocol (MCP) tools Ecosystem tools such as LangChain tools, CrewAI tools, and GenAI Toolbox for Databases Govern : Monitor what your agents are doing with an audit trail for end-to-end observability.
+- Detect threats with Security Command Center : Agent Engine Threat Detection (Preview) is a built-in service of Security Command Center that helps you detect and investigate potential attacks on agents that are deployed to Vertex AI Agent Engine Runtime.
+
+### Introduction to the Vertex AI SDK for Python \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref](https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref)
+- Source ID: `site-api-reference`
+- Final score: 194
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Write code with the Vertex AI SDK for Python To use the Vertex AI SDK for Python: Install the google-cloud-aiplatform package, which includes both the Vertex AI SDK for Python and the Vertex AI Python client library, by running the following command in your virtual environment: pip install -- upgrade google - cloud - aiplatform Use the following code to import the google.cloud.aiplatform namespace: from google.cloud import aiplatform Preview: To use features for the Vertex AI SDK for Python that are still in preview , import vertexai.preview : import vertexai.preview If you're using a local shell, then create local authentication credentials for your user account: gcloud auth application-default login You don't need to do this if you're using Cloud Shell.
+- To see an example of using the Vertex AI SDK as part of a more comprehensive workflow, run the "Custom training and online prediction" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Understand the Vertex AI SDK and client library differences When you install the Vertex AI SDK for Python, the Vertex AI Python client library is also installed.
+- Learn about the Vertex AI SDK for Python See the following documentation: Vertex AI SDK class overview : introduces the key classes and functionality in the Vertex AI SDK.
+- The Vertex AI SDK uses Python code to access the Vertex AI API so that you can programmatically accomplish most of what you can do in the Google Cloud console.
 
 ### Monitor an agent \_|\_ Vertex AI Agent Builder \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring](https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring)
 - Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 192
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Once the data points are uploaded through the Cloud Monitoring API, you can view the new metric token count through the Google Cloud console: Go to Metrics Explorer page in the Google Cloud console: Go to Metrics Explorer Click Select a metric to open a search bar.
@@ -64,24 +92,11 @@ Evidence snippets:
 - User-defined metrics The following steps demonstrate how to create and use a user-defined metric ( token count ) for an example workflow where multiple agents call multiple models, and you want to calculate the total count of consumed tokens (assuming that you track the number of tokens since application startup for each invoking agent and target model): Define the custom metric type by calling projects.metricDescriptors.create with the following parameters: name : a URL string, such as projects/ PROJECT ID Request body : a MetricDescriptor object: { "name" : "token count" , "description" : "Token Consumed by models." , "displayName" : "Token Count" , "type" : "custom.googleapis.com/token count" , "metricKind" : "CUMULATIVE" , "valueType" : "INT64" , "unit" : "1" , "labels" : [ { "key" : "model" , "valueType" : "STRING" , "description" : "Model." }, { "key" : "agent" , "valueType" : "STRING" , "description" : "Agent." } ], "monitoredResourceTypes" : [ "generic node" ] } The new metric token count is created with the kind Cumulative , representing the total number of tokens since application startup.
 - See Alignment: within-series regularization for more details on time series alignment. sum over time ( increase ( aiplatform googleapis com : reasoning engine request count { monitored resource = ' aiplatform.googleapis.com/ReasoningEngine ', reasoning engine id = ' RESOURCE ID ', response code = ' RESPONSE CODE ' } [ 10m ] ) [ 10m : 10m ] ) You can query the error rate by calculating the ratio of the requests that are labeled with certain error response codes (such as 500 ) to the total number of requests (percentage of failed requests): sum over time ( sum ( rate ( aiplatform googleapis com : reasoning engine request count { monitored resource = ' aiplatform.googleapis.com/ReasoningEngine ', reasoning engine id = ' RESOURCE ID ', response code = ' 500 ' } [ 10m ] ) ) [ 10m : 10m ] ) / sum over time ( sum ( rate ( aiplatform googleapis com : reasoning engine request count { monitored resource = ' aiplatform.googleapis.com/ReasoningEngine ', reasoning engine id = ' RESOURCE ID ', } [ 10m ] ) ) [ 10m : 10m ] ) For best practices and restrictions for ratio metrics, see About ratios of metrics .
 
-### "Develop a LlamaIndex Query Pipeline agent \_|\_ Vertex AI Agent Builder\
-
-- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline](https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline)
-- Source ID: `site-docs-reference`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- NEXT : '3' > : RelatedNodeInfo ( node id = 'f7d2cb7e-fa0c-40bf-b8e7-b888e36b87f9' , node type = '1' , metadata = {}, hash = 'db7cc1a67fa3afd1e5f24c8c61583781ce6a00c444da8f25a5374468c17b7de0' ) }, metadata template = ' {key} : {value} ' , metadata separator = ' \n ' , text = 'So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp...' , mimetype = 'text/plain' , start char idx = 7166 , end char idx = 11549 , metadata separator = ' \n ' , text template = ' {metadata str} \n\n {content} ' ), score = 0.7403571819090398 ) ] To use the retriever inside LlamaIndexQueryPipelineAgent , add it under the retriever builder= argument: from vertexai.preview import reasoning engines agent = reasoning engines .
-- Request () creds . refresh ( auth req ) if model kwargs is None : model kwargs = {} endpoint = f "https:// { location } -aiplatform.googleapis.com" api base = f ' { endpoint } /v1beta1/projects/ { project } /locations/ { location } /endpoints/openapi' return OpenAILike ( model = model name , api base = api base , api key = creds . token , model kwargs , ) Use the model in LlamaIndexQueryPipelineAgent : from vertexai.preview import reasoning engines agent = reasoning engines .
-- Google GenAI Google GenAI is installed by default when you set up your environment and is automatically used in LlamaIndexQueryPipelineAgent when you omit model builder . from vertexai.preview import reasoning engines agent = reasoning engines .
-- LlamaIndexQueryPipelineAgent ( model = model , runnable builder = runnable with postprocessor builder , ) Query the agent: result = agent . query ( input = "What is Paul Graham's life in College?" ) The output should be similar to the following: [ { 'node' : { 'id ' : 'bb7d2942-213d-4fb3-a7cb-1a664642a7ff' , 'embedding' : None , 'metadata' : { 'file path' : '/content/data/paul graham/paul graham essay.txt' , 'file name' : 'paul graham essay.txt' , 'file type' : 'text/plain' , 'file size' : 75042 , 'creation date' : '2025-03-25' , 'last modified date' : '2025-03-25' }, 'excluded embed metadata keys' : [ 'file name' , 'file type' , 'file size' , 'creation date' , 'last modified date' , 'last accessed date' ], 'excluded llm metadata keys' : [ 'file name' , 'file type' , 'file size' , 'creation date' , 'last modified date' , 'last accessed date' ], 'relationships' : { '1' : { 'node id' : 'c508cee5-5ef2-4fdf-a33d-0427dcb78b5c' , 'node type' : '4' , 'metadata' : { 'file path' : '/content/data/paul graham/paul graham essay.txt' , 'file name' : 'paul graham essay.txt' , 'file type' : 'text/plain' , 'file size' : 75042 , 'creation date' : '2025-03-25' , 'last modified date' : '2025-03-25' }, 'hash' : '0c3c3f46cac874b495d944dfc4b920f6b68817dbbb1699ecc955d1fafb2bf87b' , 'class name' : 'RelatedNodeInfo' }, '2' : { 'node id' : '97a84b41-62bf-4959-acae-cfd4bdfbd4d9' , 'node type' : '1' , 'metadata' : { 'file path' : '/content/data/paul graham/paul graham essay.txt' , 'file name' : 'paul graham essay.txt' , 'file type' : 'text/plain' , 'file size' : 75042 , 'creation date' : '2025-03-25' , 'last modified date' : '2025-03-25' }, 'hash' : 'a7dd352be97e47e8e553ceda3d2d2c9e9d5c54adb298063c94da06167938d583' , 'class name' : 'RelatedNodeInfo' }, '3' : { 'node id' : 'b984eea1-f0bc-4880-812e-3f49f1e304b8' , 'node type' : '1' , 'metadata' : {}, 'hash' : 'db7cc1a67fa3afd1e5f24c8c61583781ce6a00c444da8f25a5374468c17b7de0' , 'class name' : 'RelatedNodeInfo' }}, 'metadata template' : ' {key} : {value} ' , 'metadata separator' : ' \n ' , 'text' : 'So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp...' , 'mimetype' : 'text/plain' , 'start char idx' : 7166 , 'end char idx' : 11549 , 'metadata separator' : ' \n ' , 'text template' : ' {metadata str} \n\n {content} ' , 'class name' : 'TextNode' }, 'score' : 0.7403571819090398 , 'class name' : 'NodeWithScore' }, { 'node' : { 'id ' : 'b984eea1-f0bc-4880-812e-3f49f1e304b8...' } 'score' : 0.7297395567513889 , 'class name' : 'NodeWithScore' } ] ReAct Agent To provide tool-calling behavior with your own ReAct agent, override runnable builder for LlamaIndexQueryPipelineAgent .
-
 ### "Use agent identity with Vertex AI Agent Engine \_|\_ Vertex AI Agent Builder\
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - Source ID: `site-docs-root`
-- Final score: 160
+- Final score: 189
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -89,17 +104,4 @@ Evidence snippets:
 - You first need to store the API Keys for access to the third party services into Secret Manager, and then retrieve these credentials from the Secret Manager. from google.adk.tools.openapi tool.auth.auth helpers import token to scheme credential from google.adk.tools.openapi tool.openapi spec parser.openapi toolset import OpenAPIToolset Access secret is defined in the code blocks above WEATHER DOT COM API KEY = access secret ( project id = 'foo' , secret id = 'weather dot com api key' ) auth scheme , auth credential = token to scheme credential ( "apikey" , "query" , "apikey" , WEATHER DOT COM API KEY ) sample api toolset = OpenAPIToolset ( spec str = "..." , spec str type = "yaml" , auth scheme = auth scheme , auth credential = auth credential , ) Log agent activity If you enable Cloud Logging, you can view logs of which agent and users have accessed a Google Cloud resource.
 - Additional permissions might be needed if you use logging, metrics, and Cloud API registry, and for any other resource you want to expose to your agent.
 - You can view the identity through the Vertex AI Agent Engine Google Cloud console and API.
-
-### Vertex AI Agent Builder overview \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/agent-builder/overview](https://docs.cloud.google.com/agent-builder/overview)
-- Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Tools in the Cloud API Registry (Preview): Use Cloud API Registry in the Google Cloud console to view and manage the MCP servers and tools your agent has access to.
-- Agent Garden (Supported in preview ) is a library in the Google Cloud console where you can find and explore sample agents and tools that are designed to accelerate your development.
-- Agent Tools are tools that you can equip your ADK agent to use, including: Built-in tools such as Grounding with Google Search , Vertex AI Search , and Code Execution RAG Engine for retrieval-augmented generation (RAG) Google Cloud tools to connect to: Your APIs managed in Apigee API hub 100+ enterprise applications through Integration Connectors Custom integrations with Application Integration Model Context Protocol (MCP) tools Ecosystem tools such as LangChain tools, CrewAI tools, and GenAI Toolbox for Databases Govern : Monitor what your agents are doing with an audit trail for end-to-end observability.
-- Detect threats with Security Command Center : Agent Engine Threat Detection (Preview) is a built-in service of Security Command Center that helps you detect and investigate potential attacks on agents that are deployed to Vertex AI Agent Engine Runtime.
 

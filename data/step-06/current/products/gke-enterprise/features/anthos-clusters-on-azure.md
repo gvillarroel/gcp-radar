@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.767Z"
+generated_at: "2026-04-12T12:16:18.948Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Anthos clusters on Azure"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
 keywords:
   - "anthos"
   - "clusters"
@@ -38,13 +39,14 @@ A managed Anthos Kubernetes deployment for Microsoft Azure; A managed Anthos Kub
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - Source ID: `site-docs-reference`
-- Final score: 206
+- Final score: 245
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 184
+- Final score: 230
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 184
+- Final score: 219
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,4 +90,18 @@ Evidence snippets:
 - Unlimited - Viewing cluster status You can see information about your clusters in the console, in the list of Google Kubernetes Engine clusters.
 - Unlimited - Networking and network services This section covers the networking and network services for on-premises clusters, including how they are impacted by a temporary disconnection from Google Cloud.
 - Zero None Support This section covers the scenarios that you might have to go through while interacting with Google Cloud support or your operating partner for a case related to your GKE on GDC clusters.
+
+### "Reference architecture: Hybrid environment for Google Kubernetes Engine\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
+- Source ID: `site-docs-reference`
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback Reference architecture: Hybrid environment for Google Kubernetes Engine clusters Stay organized with collections Save and categorize content based on your preferences.
+- This page is for Cloud architects who want to design and build a a hybrid environment for Google Kubernetes Engine clusters.
+- For more information, see Kubernetes basics , and the Google Kubernetes Engine (GKE) documentation .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 

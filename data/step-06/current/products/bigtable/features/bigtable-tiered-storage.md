@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.323Z"
+generated_at: "2026-04-14T11:18:27.978Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Bigtable tiered storage"
 feature_slug: "bigtable-tiered-storage"
 latest_feature_date: "2025-10-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/get_table"
-  - "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables"
-  - "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table"
+  - "https://docs.cloud.google.com/bigtable/docs/overview"
+  - "https://docs.cloud.google.com/bigtable/docs/autoscaling"
+  - "https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd"
 keywords:
   - "optimized"
   - "reduce"
+  - "costs"
   - "tiered"
   - "allows"
   - "storage"
   - "usage"
-  - "bigtable"
-  - "to"
 ---
 
 # Bigtable tiered storage
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +37,55 @@ Bigtable tiered storage allows optimized storage usage to reduce costs and retai
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/get_table](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/get_table)
-- [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables)
-- [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table)
+- [https://docs.cloud.google.com/bigtable/docs/overview](https://docs.cloud.google.com/bigtable/docs/overview)
+- [https://docs.cloud.google.com/bigtable/docs/autoscaling](https://docs.cloud.google.com/bigtable/docs/autoscaling)
+- [https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd](https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd)
 
 ## Supporting Pages
 
-### "MCP Tools Reference: bigtableadmin.googleapis.com \_|\_ Bigtable \_|\_ Google\
+### Bigtable overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/get_table](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/get_table)
+- URL: [https://docs.cloud.google.com/bigtable/docs/overview](https://docs.cloud.google.com/bigtable/docs/overview)
 - Source ID: `site-docs-reference`
-- Final score: 166
-- Re-rank relevance: N/A
+- Final score: 140
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Table JSON representation { "name" : string , "clusterStates" : { string : { object ( ClusterState ) } , ... } , "columnFamilies" : { string : { object ( ColumnFamily ) } , ... } , "granularity" : enum ( TimestampGranularity ) , "restoreInfo" : { object ( RestoreInfo ) } , "changeStreamConfig" : { object ( ChangeStreamConfig ) } , "deletionProtection" : boolean , "stats" : { object ( TableStats ) } , "tieredStorageConfig" : { object ( TieredStorageConfig ) } , "rowKeySchema" : { object ( Struct ) } , // Union field automated backup config can be only one of the following: "automatedBackupPolicy" : { object ( AutomatedBackupPolicy ) } // End of list of possible types for union field automated backup config . } Fields name string The unique name of the table.
-- For statistics about a specific column family, see ColumnFamilyStats in the mapped ColumnFamily collection above. tieredStorageConfig object ( TieredStorageConfig ) Rules to specify what data is stored in each storage tier.
-- TieredStorageConfig JSON representation { "infrequentAccess" : { object ( TieredStorageRule ) } } Fields infrequentAccess object ( TieredStorageRule ) Rule to specify what data is stored in the infrequent access(IA) tier.
-- TieredStorageRule JSON representation { // Union field rule can be only one of the following: "includeIfOlderThan" : string // End of list of possible types for union field rule . } Fields Union field rule .
+- Compactions Bigtable periodically rewrites your tables to remove deleted entries, to reorganize your data so that reads and writes are more efficient, and to move data as part of tiered storage.
+- Bigtable also excels as a storage engine for batch MapReduce operations, stream processing/analytics, and machine-learning applications.
+- On average, it takes a week for a compaction to complete and execute tasks such as data deletion or moving data to tiered storage.
+- Tiered storage lets you choose the storage tier that best suits your Bigtable data access needs.
 
-### "MCP Tools Reference: bigtableadmin.googleapis.com \_|\_ Bigtable \_|\_ Google\
+### Autoscaling \_|\_ Bigtable \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables)
-- Source ID: `site-docs-reference`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Table JSON representation { "name" : string , "clusterStates" : { string : { object ( ClusterState ) } , ... } , "columnFamilies" : { string : { object ( ColumnFamily ) } , ... } , "granularity" : enum ( TimestampGranularity ) , "restoreInfo" : { object ( RestoreInfo ) } , "changeStreamConfig" : { object ( ChangeStreamConfig ) } , "deletionProtection" : boolean , "stats" : { object ( TableStats ) } , "tieredStorageConfig" : { object ( TieredStorageConfig ) } , "rowKeySchema" : { object ( Struct ) } , // Union field automated backup config can be only one of the following: "automatedBackupPolicy" : { object ( AutomatedBackupPolicy ) } // End of list of possible types for union field automated backup config . } Fields name string The unique name of the table.
-- For statistics about a specific column family, see ColumnFamilyStats in the mapped ColumnFamily collection above. tieredStorageConfig object ( TieredStorageConfig ) Rules to specify what data is stored in each storage tier.
-- TieredStorageConfig JSON representation { "infrequentAccess" : { object ( TieredStorageRule ) } } Fields infrequentAccess object ( TieredStorageRule ) Rule to specify what data is stored in the infrequent access(IA) tier.
-- TieredStorageRule JSON representation { // Union field rule can be only one of the following: "includeIfOlderThan" : string // End of list of possible types for union field rule . } Fields Union field rule .
-
-### "MCP Tools Reference: bigtableadmin.googleapis.com \_|\_ Bigtable \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table)
-- Source ID: `site-docs-reference`
-- Final score: 162
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/bigtable/docs/autoscaling](https://docs.cloud.google.com/bigtable/docs/autoscaling)
+- Source ID: `site-docs-reference-2`
+- Final score: 130
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Table JSON representation { "name" : string , "clusterStates" : { string : { object ( ClusterState ) } , ... } , "columnFamilies" : { string : { object ( ColumnFamily ) } , ... } , "granularity" : enum ( TimestampGranularity ) , "restoreInfo" : { object ( RestoreInfo ) } , "changeStreamConfig" : { object ( ChangeStreamConfig ) } , "deletionProtection" : boolean , "stats" : { object ( TableStats ) } , "tieredStorageConfig" : { object ( TieredStorageConfig ) } , "rowKeySchema" : { object ( Struct ) } , // Union field automated backup config can be only one of the following: "automatedBackupPolicy" : { object ( AutomatedBackupPolicy ) } // End of list of possible types for union field automated backup config . } Fields name string The unique name of the table.
-- For statistics about a specific column family, see ColumnFamilyStats in the mapped ColumnFamily collection above. tieredStorageConfig object ( TieredStorageConfig ) Rules to specify what data is stored in each storage tier.
-- TieredStorageConfig JSON representation { "infrequentAccess" : { object ( TieredStorageRule ) } } Fields infrequentAccess object ( TieredStorageRule ) Rule to specify what data is stored in the infrequent access(IA) tier.
-- TieredStorageRule JSON representation { // Union field rule can be only one of the following: "includeIfOlderThan" : string // End of list of possible types for union field rule . } Fields Union field rule .
+- For example, on an SSD cluster, if you set a storage utilization target of 2.5 TB (50%) per node, and your infrequent access usage is high enough to push the storage usage with tiered storage over the limit, Bigtable adds nodes.
+- 3 TB 60% 3 TB 0 TB 3 TB 1 SSD usage almost exceeds the SSD usage target, and tiered usage almost exceeds the tiered storage limit.
+- 5 TB 100% 6 TB 0 TB 6 TB 2 SSD usage and infrequent access usage are within the tiered storage limit.
+- 5 TB 100% 5 TB 27 TB 32 TB 1 Tiered storage usage exceeds the tiered storage limit.
+
+### Choose between SSD and HDD storage \_|\_ Bigtable \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd](https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd)
+- Source ID: `site-docs-root-2`
+- Final score: 104
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The following table compares Bigtable storage types in the context of tiered storage: Instance and tier Node capacity Expected latency Operations Best for SSD instance, SSD storage tier 5 TB Write/read: single-digit ms Write, read, update, delete High write/read throughput and low latency workloads SSD instance, tiered storage enabled 32 TB (up to 5 TB SSD) Write: single-digit ms Read: low double-digit ms Write, read, update, delete Large datasets with infrequently accessed data HDD instance, HDD tier 16 TB Write: single-digit ms Read: low double-digit ms Write, read, update, delete Large datasets with latency-insensitive workloads For more information about the performance of Bigtable storage types, see Understand performance .
+- In a cluster that uses HDD storage, it's possible to reach the maximum throughput before CPU usage reaches 100%, a situation you can monitor using the disk load metric.
+- SSD storage supports a tiered storage option for infrequently accessed data .
+- Bigtable instances that use SSD storage support tiered storage ( Preview ).
 

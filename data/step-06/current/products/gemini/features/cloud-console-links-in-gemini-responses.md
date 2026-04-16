@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:20.480Z"
+generated_at: "2026-04-12T12:16:09.667Z"
 product_name: "Gemini"
 product_slug: "gemini"
 feature_name: "Cloud console links in Gemini responses"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-04-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/gemini/docs/configure-logging"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3"
   - "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
-  - "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli"
-  - "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
 keywords:
   - "console"
   - "links"
@@ -38,46 +39,66 @@ Gemini can include direct links to relevant Cloud console pages in response outp
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/gemini/docs/configure-logging](https://docs.cloud.google.com/gemini/docs/configure-logging)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3)
 - [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
-- [https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli)
-- [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
 
 ## Supporting Pages
 
-### Set up Gemini Code Assist Standard and Enterprise | Gemini for Google Cloud | Google Cloud Documentation
+### "Configure Gemini Code Assist Standard and Enterprise logging \_|\_ Gemini\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/configure-logging](https://docs.cloud.google.com/gemini/docs/configure-logging)
+- Source ID: `site-docs-root-2`
+- Final score: 271
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If the command succeeds, it returns the operation metadata in the following format: { "name": "projects/<var>CONTAINER PROJECT NAME</var>/locations/global/operations/operation-1737646069712-62c6140bb04bb-49261230-43701daf", "metadata": { "@type": "type.googleapis.com/google.cloud.cloudaicompanion.v1.OperationMetadata", "createTime": "2025-01-23T15:27:50.076075570Z", "target": "projects/<var>TARGET PROJECT NAME</var>/locations/global/loggingSettings/<var>LOGS SETTING ID</var>/settingBindings/<var>LOGS BINDING ID</var>", "verb": "create", "requestedCancellation": false, "apiVersion": "v1" }, "done": false } Disable logging for Gemini Code Assist in a project Select one of the following options: Console In the Google Cloud console, go to the Admin for Gemini page.
+- If the command succeeds, it returns a response body that shows the log prompts and responses and log metadata set to false : { "name": "projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID ", "createTime": "2025-01-23T15:22:49.717166932Z", "updateTime": "2025-01-23T15:22:49.717166932Z", "log prompts and responses": false, "log metadata": false } Set up multi-project logging You can use logs from Gemini Code Assist to create metrics and dashboards for monitoring per-project usage.
+- If the command succeeds, it returns a response body that shows the log prompts and responses and log metadata set to true : { "name": "projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID ", "createTime": "2025-01-23T15:22:49.717166932Z", "updateTime": "2025-01-23T15:22:49.717166932Z", "log prompts and responses": true, "log metadata": true } Run the following command to create the Gemini Code Assist Standard and Enterprise logs setting binding: curl -X POST \ -H "Authorization: Bearer $TOKEN" \ -H 'Content-Type: application/json' \ -d '{ "target": "projects/ TARGET PROJECT NAME " }' \ "https://cloudaicompanion.googleapis.com/v1/projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID /settingBindings?setting binding id= LOGS BINDING ID " Replace the following: TARGET PROJECT NAME : Enter the target project to which the binding should be bound.
+- Create the setting and a setting-specific value: Obtain the token: TOKEN=$(gcloud auth print-access-token) Run the following command to disable the Gemini Code Assist Standard and Enterprise logs settings: curl -X POST \ -H "Authorization: Bearer $TOKEN" \ -H 'Content-Type: application/json' \ -d '{ "log prompts and responses": false, "log metadata": false, } ' \ "https://cloudaicompanion.googleapis.com/v1/projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings?logging metadata id= LOGS SETTING ID " Replace the following: CONTAINER PROJECT NAME : Enter the parent project ID.
+
+### "Chat with Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini)
+- Source ID: `site-docs-root`
+- Final score: 250
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code.
+- A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service "cloudaicompanion.googleapis.com:443" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info 'Activate Gemini Code Assist' still appears after selecting Gemini Code Assist project If you selected your project per the instructions in this guide, which includes enabling the Gemini for Google Cloud API, then there may be an issue with the LS server.
+- Rules in Gemini let you define your preferences, such as: Coding style Output formats Tech stack Language For example, you can create a rule such as "Always give me concise responses in Kotlin." VS Code In your code file, press Control+I (for Windows and Linux) or Command+I (for macOS) to open the Gemini Code Assist Quick Pick menu.
+- If you're using Gemini Code Assist Enterprise , you can use Code customization , which lets you get code suggestions based on your organization's private codebase directly from Gemini Code Assist Enterprise.
+
+### "Gemini 3 in Gemini Code Assist \_|\_ Gemini for Google Cloud \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3)
+- Source ID: `site-docs-root`
+- Final score: 246
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Responses generated with Gemini 3 include a label identifying the model.
+- You can't select a different model in agent mode, as Gemini CLI automatically selects the model.
+- Gemini 3 availability License or subscription Gemini 3 availability Google AI Ultra Available to all users in VS Code and IntelliJ Google AI Pro Available to all users in VS Code and IntelliJ Gemini Code Assist Enterprise Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist Standard Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist for individuals Available to select users from the waitlist in VS Code and IntelliJ.
+- Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Gemini 3 in Gemini Code Assist Stay organized with collections Save and categorize content based on your preferences.
+
+### "Set up Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
 
 - URL: [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
 - Source ID: `site-docs-root`
-- Final score: 148
+- Final score: 242
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Set up Gemini Code Assist Standard and Enterprise Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini Before you can use services available to users with Gemini Code Assist Standard or Enterprise licenses, your team needs to perform the setup steps that are described in this document: Note: An administrator typically performs steps 1-4.
-- Purchase a subscription to Gemini Code Assist Standard or Enterprise.
-- Enable the Gemini for Google Cloud API in a Google Cloud project.
-- Assign licenses to users in your organization.
-
-### Gemini CLI | Gemini for Google Cloud | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli](https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli)
-- Source ID: `site-docs-root`
-- Final score: 143
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Gemini CLI Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli The Gemini CLI uses a reason and act (ReAct) loop with your built-in tools and local or remote MCP servers to complete complex use cases like fixing bugs, creating new features, and improving test coverage.
-
-### Gemini Code Assist Standard and Enterprise overview | Gemini for Google Cloud | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/overview](https://docs.cloud.google.com/gemini/docs/codeassist/overview)
-- Source ID: `site-docs-root`
-- Final score: 125
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Gemini Code Assist Standard and Enterprise overview Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/overview Gemini Code Assist Standard and Enterprise, which are products in the Gemini for Google Cloud portfolio, offer AI-powered assistance to help your development team build, deploy, and operate applications throughout the software development lifecycle.
+- All of the users who have been granted these roles can access Gemini for Google Cloud features in the Google Cloud console within the specified project.
+- Learn more about the supported features: Code features overview Chat features overview Get started with the following guides: Code with Gemini Code Assist Chat with Gemini Code Assist List of directories where Gemini Code Assist caches information The following table provides a list of directories where Gemini Code Assist stores extension information such as auth tokens: Windows %LOCALAPPDATA%/cloud-code %LOCALAPPDATA%/google-vscode-extension macOS /Library/Application Support/cloud-code /Library/Application Support/google-vscode-extension Linux /.cache/cloud-code /.cache/google-vscode-extension Sign into Google and select a Google Cloud project Once users have installed Gemini Code Assist in their IDEs, they need to sign in to their Google Accounts, and if it's their first time using Gemini Code Assist Standard or Enterprise in their IDE, they select a Google Cloud project.
+- After you set up Gemini Code Assist, you can view license assignments by navigating to the Admin for Gemini page, selecting your billing account, clicking Manage Gemini Code Assist Subscription , and then selecting the License management tab.
+- Before you can use services available to users with Gemini Code Assist Standard or Enterprise licenses, your team needs to perform the setup steps that are described in this document: Note: An administrator typically performs steps 1-4.
 

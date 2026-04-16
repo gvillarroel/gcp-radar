@@ -1,16 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.575Z"
+generated_at: "2026-04-12T12:07:33.824Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB support for tds_fdw"
 feature_slug: "alloydb-support-for-tds-fdw"
 latest_feature_date: "2025-10-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
-  - "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+  - "https://docs.cloud.google.com/alloydb/docs/user-grant-access"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+  - "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent"
 keywords:
   - "tds foreign data wrapper"
   - "TDS protocol"
@@ -25,7 +27,7 @@ keywords:
 # AlloyDB support for tds_fdw
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,36 +39,46 @@ AlloyDB now supports the tds_fdw extension to access TDS protocol databases, suc
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- [https://docs.cloud.google.com/alloydb/docs/reference/extensions](https://docs.cloud.google.com/alloydb/docs/reference/extensions)
+- [https://docs.cloud.google.com/alloydb/docs/user-grant-access](https://docs.cloud.google.com/alloydb/docs/user-grant-access)
+- [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Grant access to other users \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/user-grant-access](https://docs.cloud.google.com/alloydb/docs/user-grant-access)
 - Source ID: `site-docs-root`
-- Final score: 34
-- Re-rank relevance: N/A
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- October 06, 2025 Feature AlloyDB supports the tds fdw extension, which provides a foreign data wrapper for accessing databases—such as Microsoft SQL Server and Sybase—that use the Tabular Data Stream (TDS) protocol.
-- Enabling outbound connectivity allows secure connection between your project and an AlloyDB instance during outbound operations such as migrations or foreign data wrappers (FDW).
-- The extension provides a foreign data wrapper for accessing Oracle databases.
+### "Use the AlloyDB remote MCP server \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
-### "Supported database extensions \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- Source ID: `site-docs-reference-2`
+- Final score: 106
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/reference/extensions](https://docs.cloud.google.com/alloydb/docs/reference/extensions)
-- Source ID: `site-api-reference`
-- Final score: 22
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+### "Create and query an AlloyDB database using the Google Cloud console \_|\_\
 
-Evidence snippets:
-- RUM indexes improve upon standard GIN indexes by storing positional information directly in the index, letting you perform faster phrase searches and relevance ranking without accessing the table data. sslinfo Provides information about the SSL certificate that the current client provided when it connected to the instance. tablefunc Provides various functions that return tables (multiple rows). tcn Provides a trigger function that notifies listeners of changes to the content of database tables. tds fdw Provides a foreign data wrapper ( fdw ) for accessing databases that use the Tabular Data Stream (TDS) protocol, such as Microsoft SQL Server or Sybase. temporal tables Provides support for temporal tables.
-- You can use this function to track the last time that a row in a database table was modified. oracle fdw Provides a foreign data wrapper (fdw) for accessing Oracle databases easily and efficiently. orafce Emulates a subset of functions, packages, and operators from the Oracle RDBMS.
+- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- Source ID: `site-docs-root`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Integrate QueryData with an application \_|\_ AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
+- Source ID: `site-docs-root-2`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

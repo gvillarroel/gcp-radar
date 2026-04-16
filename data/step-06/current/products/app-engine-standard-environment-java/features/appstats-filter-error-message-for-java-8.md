@@ -1,29 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:44:03.384Z"
+generated_at: "2026-04-12T20:53:45.894Z"
 product_name: "App Engine standard environment Java"
 product_slug: "app-engine-standard-environment-java"
 feature_name: "Appstats filter error message for Java 8"
 feature_slug: "appstats-filter-error-message-for-java-8"
 latest_feature_date: "2017-09-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
 keywords:
-  - "Appstats filter message"
-  - "appstats compatibility error"
-  - "appstats filter"
-  - "appstats explicit error"
-  - "appstats error"
-  - "Java 8 appstats"
-  - "Java 8 runtime"
+  - "appstats"
+  - "filter"
+  - "error"
+  - "message"
+  - "java"
+  - "runtime"
+  - "now"
+  - "emits"
 ---
 
 # Appstats filter error message for Java 8
 
 Product: App Engine standard environment Java
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,24 +38,54 @@ The Java runtime now emits an explicit error message when the appstats filter is
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes)
+- [https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager](https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager)
+- [https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search](https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search)
+- [https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref)
 
 ## Supporting Pages
 
-### "App Engine standard environment for Java gen2 release notes \_|\_ Google\
+### "appengine-apis overview (5.0.0) \_|\_ App Engine standard environment \_\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager](https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager)
 - Source ID: `site-docs-reference`
-- Final score: 34
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- See Also: JavaMail API , com.google.appengine.api.mail.MailService , The Mail Java API in the Google App Engine Developer's Guide com.google.appengine.api.mail.jakarta Provides a service to send email messages on behalf of administrators or authenticated users, also accessible via a JavaMail interface.
+- See Also: com.google.appengine.api.log.LogService com.google.appengine.api.mail Provides a service to send email messages on behalf of administrators or authenticated users, also accessible via a JavaMail interface.
+- Receiving messages is not supported via the JavaMail API but is supported via an HTTP interface .
+- Receiving messages is not supported via the JavaMail API but is supported via an HTTP interface .
+
+### "appengine-apis overview (5.0.0) \_|\_ App Engine standard environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search](https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search)
+- Source ID: `site-docs-reference`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- See Also: JavaMail API , com.google.appengine.api.mail.MailService , The Mail Java API in the Google App Engine Developer's Guide com.google.appengine.api.mail.jakarta Provides a service to send email messages on behalf of administrators or authenticated users, also accessible via a JavaMail interface.
+- See Also: com.google.appengine.api.log.LogService com.google.appengine.api.mail Provides a service to send email messages on behalf of administrators or authenticated users, also accessible via a JavaMail interface.
+- Receiving messages is not supported via the JavaMail API but is supported via an HTTP interface .
+- Receiving messages is not supported via the JavaMail API but is supported via an HTTP interface .
+
+### "App Engine app.yaml reference \_|\_ App Engine standard environment \_|\_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref)
+- Source ID: `site-docs-reference`
+- Final score: 75
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Fixed Fixed the NoClassDefFoundError error that occurs when using the local development server with the Java 8 runtime and Endpoints Framework Gradle Plugin.
-- Feature Updated Java SDK to version 1.9.58 September 25, 2017 Deprecated The Java 8 runtime no longer supports JDK9 JARs that contain module-info.class .
-- The Java 8 runtime default is to use the native Java HTTP(S) transport, not the URL Fetch transport, as is the case for Java 7 runtime.
-- Fixed Fixed NoClassDefFoundError exception on the local development server when using Cloud Endpoints v2 on the Java 8 runtime.
+- For Python, these variables are available in the os.environ dictionary: env variables : DJANGO SETTINGS MODULE : "myapp.settings" Also see the list of runtime environment variables that cannot be overwritten. error handlers Optional.
+- The user is redirected back to the application URL after signing in or creating an account. unauthorized The request is rejected with an HTTP 401 status code and an error message.
+- In addition, if the user is not an administrator for the application, they are given an error message regardless of the auth fail action setting.
+- Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : "example-gcs-bucket" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.803Z"
+generated_at: "2026-04-15T13:50:47.133Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Queue-level wrap-up settings"
@@ -9,9 +9,9 @@ latest_feature_date: "2023-04-25"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
 keywords:
   - "queue"
   - "level"
@@ -42,46 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Queue and menu setup \_|\_ Google Cloud Contact Center as a Service \_|\_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 172
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- Source ID: `site-docs-reference`
+- Final score: 196
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- April 25, 2023 Feature Queue-level wrap-up settings : You can now customize wrap-up times for different queues, to ensure that agents have adequate time to complete their tasks without compromising service level agreements or taking another call/chat before they are ready.
-- Fixed Fixed an issue where saving queue-level wrap-up settings to the global defaults was not behaving as expected.
-- Fixed an issue where changing the "Custom After Hours Deflection" setting in queue configuration would incorrectly reset wrap up settings from "Queue" to "Global." Fixed an issue where users with custom roles and correct permissions for Queues were unable to add teams.
-- Fixed an issue where unsupported settings, such as Cascade Conditions and Wrap-up settings , mistakenly appeared in the queue menu settings for Apple Messages for Business queues.
+- Define wrap-up queue level settings Wrap-up settings are inherited by all queues globally by default, unless they are overridden (redefined) at the queue level or at the parent queue level.
+- Redefined indicates that the wrap-up settings for that specific queue have been customized and are different from the default settings inherited from the global or parent queue level.
+- Reset to the Global The button Reset to the Global is available when the queue wrap-up settings are redefined at the queue level and are not inherited from a parent queue.
+- Queue-level wrap-up settings Queue-level wrap-up settings allow you to customize the communication of wrap-up times for different queues within a contact center.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Call settings \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 84
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 178
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Get info from the developer settings as needed The Settings > Developer Settings area is strictly for developers - you need to supply information from this page to your developers if you are setting up any SDKs or making any custom CRM configurations.
-- Provide unique visual queue configuration settings: Direct queues to a particular website, like a help center article for a common question.
-- Provide unique visual queue configuration settings Direct queues to a particular website, like a help center article for a common question.
-- Enter your support center details Adding support center email and name: Support Center Details - General Settings .
+- Read out the end-user's phone number at the queue level To read out the end-user's phone number at the queue level, follow these steps: In the CCAI Platform portal, click Settings > Queue .
+- Enable overcapacity deflection at the queue level To enable overcapacity deflection at the queue level, follow these steps: In the CCAI Platform portal, click Settings > Queue .
+- Note: If the outbound numbers are set for a Top-level queue, all sub-queues will acquire the same number setting unless specific settings for the sub-queue are made.
+- For this step, you must use a leaf-queue (the lowest level queue) so that Pre-session SMS Deflection is available as a settings option on the right-side panel.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Chat Settings and Features \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
+- Source ID: `site-docs-reference`
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
+- Configure automatic redaction settings at the queue level To configure automatic redaction settings at the queue level, follow these steps: In the CCAI Platform portal, click Settings > Queue .
+- Configure chat check-in at the queue level To configure chat check-in at the queue level, follow these steps: In the CCAI Platform portal, click Settings > Queue .
+- For more information, see Configure automatic redaction settings at the global level and Configure automatic redaction settings at the queue level .
+- The default notification timer will be set to 5 min and this default timer can be overridden in the queue-level settings described below.
 

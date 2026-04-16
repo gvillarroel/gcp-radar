@@ -1,84 +1,57 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.666Z"
+generated_at: "2026-04-14T00:34:19.622Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer 1.14.0"
 feature_slug: "cloud-composer-1-14-0"
 latest_feature_date: "2022-02-07"
 deprecation_date: "2022-02-07"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
-  - "https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies"
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
+  - "https://docs.cloud.google.com/python/docs/reference/composer/latest/changelog"
+  - "https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient"
 keywords:
   - "composer"
   - "14"
-  - "has"
-  - "reached"
-  - "its"
-  - "end"
-  - "of"
-  - "full"
+  - "version"
+  - "deprecated"
+  - "2022"
+  - "02"
+  - "07"
 ---
 
 # Cloud Composer 1.14.0
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Cloud Composer 1.14.0 has reached its end of full support period; deprecated on 2022-02-07.
+Cloud Composer 1.14.0 is a product version of Cloud Composer; deprecated on 2022-02-07.
 
 ## Extended Definition
 
-Cloud Composer 1.14.0 has reached its end of full support period; deprecated on 2022-02-07.
+Cloud Composer 1.14.0 is a product version of Cloud Composer; deprecated on 2022-02-07.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
+- [https://docs.cloud.google.com/python/docs/reference/composer/latest/changelog](https://docs.cloud.google.com/python/docs/reference/composer/latest/changelog)
+- [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change (Airflow 2.1.1) downgraded google-cloud-memcache dependency from 1.1.0 to 1.0.0 Change (Airflow 2.1.1) Downgraded colorlog dependency from 5.0.1 to 4.8.0 Change New versions of Cloud Composer images: composer-1.16.14-airflow-1.10.12 composer-1.16.14-airflow-1.10.14 composer-1.16.14-airflow-1.10.15 (default) composer-1.17.0-preview.10-airflow-2.0.2 composer-1.17.0-preview.10-airflow-2.1.1 Deprecated Cloud Composer 1.11.2 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.17.2-airflow-2.1.2 composer-1.17.2-airflow-2.0.2 composer-1.17.2-airflow-1.10.15 (default) composer-1.17.2-airflow-1.10.14 composer-1.17.2-airflow-1.10.12 composer-2.0.0-preview.3-airflow-2.1.2 (default) composer-2.0.0-preview.3-airflow-2.0.2 Deprecated Cloud Composer 1.12.1 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.17.1-airflow-2.1.2 composer-1.17.1-airflow-2.0.2 composer-1.17.1-airflow-1.10.15 (default) composer-1.17.1-airflow-1.10.14 composer-1.17.1-airflow-1.10.12 composer-2.0.0-preview.2-airflow-2.1.2 composer-2.0.0-preview.2-airflow-2.0.2 Deprecated Cloud Composer 1.12.0 has reached its end of full support period .
-- Change New versions of Cloud Composer images: composer-1.17.5-airflow-2.1.4 composer-1.17.5-airflow-2.1.2 composer-1.17.5-airflow-2.0.2 composer-1.17.5-airflow-1.10.15 (default) composer-1.17.5-airflow-1.10.12 composer-1.17.5-airflow-1.10.14 Deprecated Cloud Composer 1.13.0 has reached its end of full support period .
-
-### Install Python dependencies \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies](https://docs.cloud.google.com/composer/docs/composer-1/install-python-dependencies)
-- Source ID: `site-iam-reference`
-- Final score: 172
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Note: Cloud Composer does not support pip customization and does not resolve package dependencies and conflicts outside of the resolution mechanisms that the default pip tool provides.
-- On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
-- To install custom PyPI packages from an Artifact Registry repository: Create a pip.conf file and include the following information in the file, if applicable: URL of the Artifact Registry repository (in the index-url parameter) Access credentials for the repository Non-default pip installation options For an Artifact Registry repository, append /simple/ to the repository URL: [global] index-url = https://us-central1-python.pkg.dev/example-project/example-repository/simple/ (Optional) In some cases, you might want to fetch packages from multiple repositories, such as when your Artifact Registry repository contains some specific packages that you want to install, and you want to install all other packages from PyPI: Configure an Artifact Registry virtual repository .
-- Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.softwareConfig.pypiPackages.EXAMPLE PACKAGE, // config.softwareConfig.pypiPackages.ANOTHER PACKAGE { "config" : { "softwareConfig" : { "pypiPackages" : { "EXAMPLE PACKAGE" : "" , "ANOTHER PACKAGE" : ">=1.10.3" } } } } Terraform The pypi packages block in the software config block specifies packages. resource "google composer environment" "example" { name = " ENVIRONMENT NAME " region = " LOCATION " config { software config { pypi packages = { PACKAGE NAME = " EXTRAS AND VERSION " } } } } Replace: ENVIRONMENT NAME with the name of the environment.
 
 ### Cloud Composer version list \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 170
+- Final score: 250
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +59,28 @@ Evidence snippets:
 - Versions with disabled upgrades For some versions of Cloud Composer images, it is not possible to upgrade an environment to a later version: composer-1.7.7-airflow-1.10.2 composer-1.7.7-airflow-1.10.1 composer-1.7.7-airflow-1.9.0 If you use a version with disabled upgrades, we recommend to create a new environment side-by-side, then migrate all your DAGs to the new environment.
 - Last patch of the previous Cloud Composer 2 minor version: composer-2.10.2-airflow- Cloud Composer 2 versions with an extended upgrade timeline: composer-2.10.2-airflow- , composer-2.10.1-ariflow- , composer-2.9.7-airflow- , and other versions with an extended upgrade timeline.
 - In Google Cloud CLI, API, or Terraform, you can upgrade an existing environment to the latest supported versions, three previous versions of Cloud Composer 2, the last patch version of the previous minor version, and to versions with an extended upgrade timeline.
+
+### Changelog \_|\_ Python client libraries \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/composer/latest/changelog](https://docs.cloud.google.com/python/docs/reference/composer/latest/changelog)
+- Source ID: `site-python-reference`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Version latest keyboard arrow down 1.19.0 (latest) 1.18.0 1.17.5 1.16.1 1.15.1 1.14.0 1.13.1 1.12.2 1.11.1 1.10.0 1.9.1 1.8.0 1.7.1 1.6.1 1.5.0 1.4.4 1.3.2 1.2.1 1.1.0 1.0.0 0.1.3 PyPI History 1.19.0 (2026-01-09) Features auto-enable mTLS when supported certificates are detected ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) check Python and dependency versions in generated GAPICs ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) 1.18.0 (2025-10-20) Features Add support for Python 3.14 ( 98ee71abc0f97c88239b50bf0e0827df19630def ) Bug Fixes Deprecate credentials file argument ( 98ee71abc0f97c88239b50bf0e0827df19630def ) 1.17.5 (2025-04-15) Documentation enabled field of MasterAuthorizedNetworksConfig is now marked as optional ( 0a2a1ee ) 1.17.4 (2025-04-12) Documentation [google-cloud-orchestration-airflow] enabled field of MasterAuthorizedNetworksConfig is now marked as optional ( #13728 ) ( 79835a9 ) 1.17.3 (2025-03-21) Documentation [google-cloud-orchestration-airflow] fix typo in comments ( #13697 ) ( 6e93528 ) 1.17.2 (2025-03-19) Documentation [google-cloud-orchestration-airflow] A comment for field ( 6cce4cd ) [google-cloud-orchestration-airflow] update composer supported environments version match ( #13663 ) ( 098c51d ) A comment for field connection type in message .google.cloud.orchestration.airflow.service.v1.NetworkingConfig is changed ( #13679 ) ( 6cce4cd ) 1.17.1 (2025-03-15) Bug Fixes [Many APIs] Allow Protobuf 6.x ( 7295cbb ) remove setup.cfg configuration for creating universal wheels ( #13659 ) ( 59bfd42 ) Documentation [google-cloud-orchestration-airflow] fix Composer 3 image version format in API docs ( #13649 ) ( fb48dac ) 1.17.0 (2025-02-12) Features Add REST Interceptors which support reading metadata ( a0910dd ) Add support for reading selective GAPIC generation methods from service YAML ( a0910dd ) 1.16.1 (2025-01-16) Documentation [google-cloud-orchestration-airflow] A comment for method ListWorkloads in service Environments is changed ( #13443 ) ( f47303a ) 1.16.0 (2024-12-12) Features Add support for opt-in debug logging ( f05eae5 ) Bug Fixes Fix typing issue with gRPC metadata when key ends in -bin ( f05eae5 ) Documentation A comment for field config in message .google.cloud.orchestration.airflow.service.v1beta1.Environment is changed ( f05eae5 ) A comment for field data in message .google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap is changed ( f05eae5 ) A comment for field data in message .google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret is changed ( f05eae5 ) A comment for field image version in message .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig is changed ( f05eae5 ) A comment for field name in message .google.cloud.orchestration.airflow.service.v1beta1.Environment is changed ( f05eae5 ) A comment for field node config in message .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig is changed ( f05eae5 ) A comment for field private environment config in message .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig is changed ( f05eae5 ) A comment for field software config in message .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig is changed ( f05eae5 ) add examples for kubernetes secret ( f05eae5 ) 1.15.1 (2024-11-11) Bug Fixes disable universe-domain validation ( #13244 ) ( ae1f471 ) 1.15.0 (2024-10-24) Features Add support for Python 3.13 ( #13208 ) ( a019409 ) 1.14.0 (2024-09-16) Features [google-cloud-orchestration-airflow] A new method CheckUpgrade is added to service Environments ( b624f04 ) [google-cloud-orchestration-airflow] add satisfies pzi to Environment ( b624f04 ) A new field airflow metadata retention config is added to message .google.cloud.orchestration.airflow.service.v1.DataRetentionConfig ( b624f04 ) A new field satisfies pzi is added to message .google.cloud.orchestration.airflow.service.v1.Environment ( b624f04 ) A new message AirflowMetadataRetentionPolicyConfig is added ( b624f04 ) A new message CheckUpgradeRequest is added ( b624f04 ) Documentation A comment for field maintenance window in message .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig is changed ( b624f04 ) A comment for field storage mode in message .google.cloud.orchestration.airflow.service.v1.TaskLogsRetentionConfig is changed ( b624f04 ) A comment for message WorkloadsConfig is changed ( b624f04 ) 1.13.1 (2024-07-30) Bug Fixes Retry and timeout values do not propagate in requests during pagination ( d95af77 ) 1.13.0 (2024-07-10) Features add airflow database retention days and airflow metadata retention config to message DataRetentionConfig ( 547a8d8 ) add AirflowMetadataRetentionPolicyConfig message ( 547a8d8 ) Documentation various documentation clarifications ( 547a8d8 ) 1.12.2 (2024-07-08) Bug Fixes Allow Protobuf 5.x ( #12868 ) ( 0e39c1a ) 1.12.1 (2024-03-05) Bug Fixes deps: Exclude google-auth 2.24.0 and 2.25.0 ( #12386 ) ( edcad16 ) 1.12.0 (2024-02-22) Features Added field data retention config to EnvironmentConfig ( 0268729 ) Added field storage config to Environment ( 0268729 ) Added field web server plugins mode to SoftwareConfig ( 0268729 ) Added ListWorkloads RPC ( 0268729 ) Bug Fixes deps: [Many APIs] Require google-api-core&gt;=1.34.1 ( #12308 ) ( 74dabeb ) fix ValueError in test validate universe domain ( 7c2f2c2 ) 1.11.1 (2024-02-06) Bug Fixes Add google-auth as a direct dependency ( e75fcf6 ) Add staticmethod decorator to get client cert source and get api endpoint ( e75fcf6 ) Resolve AttributeError ‘Credentials’ object has no attribute ‘universe domain’ ( e75fcf6 ) 1.11.0 (2024-02-01) Features Allow users to explicitly configure universe domain ( 4368029 ) 1.10.0 (2023-12-07) Features Add support for python 3.12 ( f46b37f ) Introduce compatibility with native namespace packages ( f46b37f ) Bug Fixes Require proto-plus >= 1.22.3 ( f46b37f ) Use retry async instead of retry in async client ( f46b37f ) 1.9.2 (2023-09-19) Documentation Minor formatting ( 1ae610b ) 1.9.1 (2023-07-05) Bug Fixes Add async context manager return types ( #11448 ) ( 4d2c35a ) 1.9.0 (2023-06-14) Features added RPCs StopAirflowCommand, ExecuteAirflowCommand, PollAirflowCommand, DatabaseFailover, FetchDatabaseProperties ( #11400 ) ( b2dc3e5 ) 1.8.0 (2023-05-25) Features Add airflow byoid uri field to Cloud Composer API ( #172 ) ( a402b20 ) 1.7.1 (2023-03-23) Documentation Fix formatting of request arg in docstring ( #170 ) ( 91e315c ) 1.7.0 (2023-02-17) Features Enable “rest” transport in Python for services supporting numeric enums ( #163 ) ( 43b46e2 ) Bug Fixes Add service yaml parameters to py gapic library BUILD.bazel targets ( #165 ) ( e244bd5 ) 1.6.1 (2023-01-20) Bug Fixes Add context manager return types ( 693d570 ) Documentation Add documentation for enums ( 693d570 ) 1.6.0 (2023-01-10) Features Add support for python 3.11 ( #154 ) ( 86db9d6 ) 1.5.0 (2022-12-13) Features add support for google.cloud.orchestration.airflow.service. version ( 8edf594 ) Add typing to proto.Message based class attributes ( 8edf594 ) added field enable ip masq agent to NodeConfig ( 6c8a0bf ) added field scheduler count to SoftwareConfig ( 6c8a0bf ) added fields cloud composer network ipv4 cidr block, cloud composer network ipv4 reserved range, enable privately used public ips, cloud composer connection subnetwork, networking config to PrivateEnvironmentConfig ( 6c8a0bf ) added fields maintenance window, workloads config, environment size, master authorized networks config, recovery config to EnvironmentConfig ( 6c8a0bf ) Added LoadSnapshot, SaveSnapshot RPCs ( #150 ) ( 6c8a0bf ) Bug Fixes Add dict typing for client options ( 8edf594 ) deps: Require google-api-core >=1.34.0, >=2.11.0 ( 9b1d61e ) Drop usage of pkg resources ( 9b1d61e ) Fix timeout default values ( 9b1d61e ) Documentation samples: Snippetgen handling of repeated enum field ( 8edf594 ) samples: Snippetgen should call await on the operation coroutine before calling result ( 9b1d61e ) 1.4.4 (2022-10-07) Bug Fixes deps: Allow protobuf 3.19.5 ( #143 ) ( d6bc170 ) 1.4.3 (2022-09-29) Bug Fixes deps: Require protobuf >= 3.20.2 ( #141 ) ( ab36ee0 ) 1.4.2 (2022-08-11) Bug Fixes deps: allow protobuf < 5.0.0 ( #128 ) ( 73fb0c2 ) deps: require proto-plus >= 1.22.0 ( 73fb0c2 ) 1.4.1 (2022-07-13) Bug Fixes deps: require google-api-core>=1.32.0,>=2.8.0 ( #120 ) ( 3fcf6fc ) 1.4.0 (2022-07-07) Features add audience parameter ( 1e74b80 ) Bug Fixes deps: require google-api-core >= 2.8.0 ( #116 ) ( 1e74b80 ) require python 3.7+ ( #118 ) ( 891963c ) 1.3.2 (2022-06-03) Bug Fixes deps: require protobuf <4.0.0dev ( #108 ) ( 9f4671f ) Documentation fix changelog header to consistent size ( #109 ) ( 5d8f6a0 ) 1.3.1 (2022-03-05) Bug Fixes deps: require google-api-core>=1.31.5, >=2.3.2 ( #70 ) ( 5847489 ) 1.3.0 (2022-02-26) Features add api key support ( #60 ) ( 8e05a90 ) Bug Fixes resolve DuplicateCredentialArgs error when using credentials file ( #63 ) ( d2bd1b9 ) 1.2.1 (2021-11-01) Bug Fixes deps: drop packaging dependency ( be8de44 ) deps: require google-api-core >= 1.28.0 ( be8de44 ) Documentation list oneofs in docstring ( be8de44 ) 1.2.0 (2021-10-18) Features add support for python 3.10 ( #36 ) ( f8a94e1 ) 1.1.0 (2021-10-08) Features add context manager support in client ( #32 ) ( e88a664 ) 1.0.0 (2021-10-05) Features bump release level to production/stable ( #12 ) ( 9034947 ) 0.1.3 (2021-09-30) Bug Fixes improper types in pagers generation ( b9b7a2f ) 0.1.2 (2021-09-24) Bug Fixes add ‘dict’ annotation type to ‘request’ ( 7d5d4de ) 0.1.1 (2021-07-28) Bug Fixes deps: pin ‘google-{api,cloud}-core’, ‘google-auth’ to allow 2.x versions ( #9 ) ( b4ef804 ) 0.1.0 (2021-07-28) Features generate v1 and v1beta1 ( 87d29da ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Class ImageVersionsClient (1.19.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.image_versions.ImageVersionsClient)
+- Source ID: `site-python-reference`
+- Final score: 92
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- List ImageVersions in a project and location. parent str List ImageVersions in the given project and location, in the form: "projects/{projectId}/locations/{locationId}" This corresponds to the parent field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.orchestration.airflow import service v1 def sample list image versions(): Create a client client = service v1.
+- These credentials identify the application to the service; if none are specified, the client will attempt to ascertain the credentials from the environment. transport Optional[Union[str,ImageVersionsTransport,Callable[..., ImageVersionsTransport]]] The transport to use, or a Callable that constructs and returns a new transport.
+- ListImageVersionsRequest ( ) Make the request page result = client. list image versions (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.orchestration.airflow.service v1.types.ListImageVersionsRequest , dict] The request object.
 

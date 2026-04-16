@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.331Z"
+generated_at: "2026-04-14T15:13:19.283Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "PRISM Monthly Spatial Climate Dataset"
 feature_slug: "prism-monthly-spatial-climate-dataset"
 latest_feature_date: "2025-11-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/climate"
-  - "https://developers.google.com/earth-engine/datasets/tags/weather"
   - "https://developers.google.com/earth-engine/datasets/tags/geophysical"
+  - "https://developers.google.com/earth-engine/datasets/tags/precipitation"
 keywords:
   - "prism"
   - "monthly"
   - "spatial"
   - "climate"
   - "dataset"
-  - "from"
-  - "the"
   - "oregon"
+  - "state"
+  - "project"
 ---
 
 # PRISM Monthly Spatial Climate Dataset
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ A monthly spatial climate dataset from the Oregon State PRISM project.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
-- [https://developers.google.com/earth-engine/datasets/tags/weather](https://developers.google.com/earth-engine/datasets/tags/weather)
 - [https://developers.google.com/earth-engine/datasets/tags/geophysical](https://developers.google.com/earth-engine/datasets/tags/geophysical)
+- [https://developers.google.com/earth-engine/datasets/tags/precipitation](https://developers.google.com/earth-engine/datasets/tags/precipitation)
 
 ## Supporting Pages
 
@@ -52,21 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
 - Source ID: `site-docs-root`
-- Final score: 220
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The product is developed by the Center for Hydrometeorology and Remote Sensing at the University of California, Irvine … cdr climate geophysical noaa precipitation weather PRISM Daily Spatial Climate Dataset ANd The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
-- PRISM interpolation routines simulate how weather and climate vary … climate geophysical oregonstate precipitation pressure prism PRISM Monthly Spatial Climate Dataset ANm The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
-- The dataset blends the high resolution spatial data from PRISM with the high temporal resolution data from the … climate gridmet humidity merced metdata precipitation GSMaP Operational: Global Satellite Mapping of Precipitation - V6 Global Satellite Mapping of Precipitation (GSMaP) provides a global hourly rain rate with a 0.1 x 0.1 degree resolution.
-- Grids are developed using PRISM (Parameter-elevation Regressions … climate daily geophysical oregonstate precipitation pressure PRISM Long-Term Average Climate Dataset Norm91m The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
-
-### "Datasets tagged weather in Earth Engine \_|\_ Earth Engine Data Catalog\
-
-- URL: [https://developers.google.com/earth-engine/datasets/tags/weather](https://developers.google.com/earth-engine/datasets/tags/weather)
-- Source ID: `site-docs-root`
-- Final score: 216
-- Re-rank relevance: N/A
+- Final score: 267
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The product is developed by the Center for Hydrometeorology and Remote Sensing at the University of California, Irvine … cdr climate geophysical noaa precipitation weather PRISM Daily Spatial Climate Dataset ANd The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
@@ -78,12 +66,27 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/geophysical](https://developers.google.com/earth-engine/datasets/tags/geophysical)
 - Source ID: `site-docs-root`
-- Final score: 194
-- Re-rank relevance: N/A
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The product is developed by the Center for Hydrometeorology and Remote Sensing at the University of California, Irvine … cdr climate geophysical noaa precipitation weather PRISM Daily Spatial Climate Dataset ANd The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
 - PRISM interpolation routines simulate how weather and climate vary … climate geophysical oregonstate precipitation pressure prism PRISM Monthly Spatial Climate Dataset ANm The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
 - Grids are developed using PRISM (Parameter-elevation Regressions … climate daily geophysical oregonstate precipitation pressure PRISM Long-Term Average Climate Dataset Norm91m The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
 - Grids are developed using PRISM (Parameter-elevation … climate geophysical monthly oregonstate precipitation pressure REMA Mosaic The Reference Elevation Model of Antarctica (REMA) is a high resolution, time-stamped Digital Surface Model (DSM) of Antarctica at 2-meter and 8-meter spatial resolutions.
+
+### "Datasets tagged precipitation in Earth Engine \_|\_ Earth Engine Data Catalog\
+
+- URL: [https://developers.google.com/earth-engine/datasets/tags/precipitation](https://developers.google.com/earth-engine/datasets/tags/precipitation)
+- Source ID: `site-docs-root-3`
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The product is developed by the Center for Hydrometeorology and Remote Sensing at the University of California, Irvine … cdr climate geophysical noaa precipitation weather PRISM Daily Spatial Climate Dataset ANd The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
+- PRISM interpolation routines simulate how weather and climate vary … climate geophysical oregonstate precipitation pressure prism PRISM Monthly Spatial Climate Dataset ANm The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
+- Grids are developed using PRISM (Parameter-elevation Regressions … climate daily geophysical oregonstate precipitation pressure PRISM Long-Term Average Climate Dataset Norm91m The PRISM daily and monthly datasets are gridded climate datasets for the conterminous United States, produced by the PRISM Climate Group at Oregon State University.
+- Grids are developed using PRISM (Parameter-elevation … climate geophysical monthly oregonstate precipitation pressure RTMA: Real-Time Mesoscale Analysis The Real-Time Mesoscale Analysis (RTMA) is a high-spatial and temporal resolution analysis for near-surface weather conditions.
 

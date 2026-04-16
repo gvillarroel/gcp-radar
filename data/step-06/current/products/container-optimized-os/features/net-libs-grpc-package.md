@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:04.426Z"
+generated_at: "2026-04-15T13:37:11.080Z"
 product_name: "Container Optimized OS"
 product_slug: "container-optimized-os"
 feature_name: "net-libs/grpc package"
 feature_slug: "net-libs-grpc-package"
 latest_feature_date: "2024-08-20"
 deprecation_date: "2024-08-20"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/toolbox"
 keywords:
   - "net"
   - "libs"
   - "grpc"
   - "package"
   - "provides"
-  - "the"
-  - "in"
   - "container"
+  - "optimized"
+  - "os"
 ---
 
 # net-libs/grpc package
 
 Product: Container Optimized OS
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,22 +38,52 @@ Provides the net-libs/grpc package in Container-Optimized OS; Container-Optimize
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
+- [https://docs.cloud.google.com/container-optimized-os/docs/concepts/security](https://docs.cloud.google.com/container-optimized-os/docs/concepts/security)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed](https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/toolbox](https://docs.cloud.google.com/container-optimized-os/docs/how-to/toolbox)
 
 ## Supporting Pages
 
-### Container-Optimized OS über den Quellcode erstellen | Container-Optimized OS | Google Cloud Documentation
+### Security Overview \_|\_ Container-Optimized OS \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
-- Source ID: `site-docs-root`
-- Final score: 140
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/concepts/security](https://docs.cloud.google.com/container-optimized-os/docs/concepts/security)
+- Source ID: `site-docs-reference`
+- Final score: 50
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mit dem in depot tools enthaltenen Tool cros sdk können Sie eine für die Kompilierung des Container-Optimized OS geeignete chroot erstellen und aufrufen....
-- Container-Optimized OS über den Quellcode erstellen Container-Optimized OS Google Cloud Documentation Source URL: https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de Zum Erstellen eines Container-Optimized ... erstellen.
+- Since Container-Optimized OS is optimized to run containers and containers package their own dependencies, we can trim unnecessary packages and thus minimize the OS attack surface.
+- Built from source at Google Each package in Container-Optimized OS, including the Linux kernel itself, is built from source from ChromiumOS code repositories.
+- Security-centric defaults Container-Optimized OS provides another level of hardening by providing security-minded default values for several features.
+- This page provides an overview of the security features of Container-Optimized OS running on Google Cloud.
+
+### "Debugging node issues using toolbox \_|\_ Container-Optimized OS \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/toolbox](https://docs.cloud.google.com/container-optimized-os/docs/how-to/toolbox)
+- Source ID: `site-docs-reference`
+- Final score: 44
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Although Container-Optimized OS does not include a package manager, you can use the pre-installed toolbox utility to install any additional packages or tools you require.
+- You might need to install additional packages or tools on Container-Optimized OS for certain tasks, such as debugging.
+- TOOLBOX DOCKER IMAGE = "gcr.io/cos-cloud/toolbox" TOOLBOX DOCKER TAG = "v20220722" TOOLBOX DOCKER IMAGE TARBALL = <var> [ location/to/tarball ] </var> TOOLBOX BIND = "--bind=/:/media/root/ --bind=/mnt/disks/:/media/root/mnt/disks/ --bind=/var/:/media/root/var/ --bind=/home:/media/root/home/" : ${ USER :=root } USER@cos-dev $ toolbox Install and run tools from toolbox Once you've invoked the toolbox utility to start the shell, you can use apt-get inside the resulting container to install packages.
+- Access toolbox directory from the host USER@cos-dev $ sudo cp some-file /var/lib/toolbox/USER-gcr.io cos-cloud toolbox-v20220722/root Run a command inside toolbox and save its output in your home directory USER@cos-dev $ toolbox strace -o /media/root/ $HOME /ls.strace ls USER@cos-dev $ more $HOME /ls.strace Clean up disk space used by toolbox The toolbox installation consumes approximately 2-3 GB of disk space in /var (disk usage varies with the Container-Optimized OS version).
+
+### "Scanning COS images with Oval vulnerability feed \_|\_ Container-Optimized\
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed](https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed)
+- Source ID: `site-docs-reference`
+- Final score: 43
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Scanning COS images with Oval vulnerability feed Stay organized with collections Save and categorize content based on your preferences.
+- Extract the downloaded Oval feed: tar xf cos-109.oval.xml.tar.gz Copy cos-package-info.json from your VM instance, in this case my-cos-instance : gcloud compute scp my - cos - instance : / etc / cos - package - info . json .
+- In this case, we use OpenSCAP : oscap oval eval --report report.html cos-109.oval.xml Note that the cos-package-info.json file and the COS Oval feed need to be in the same directory.
+- COS provides an Open Vulnerability and Assessment Language (OVAL) vulnerability feed, which is a structured, machine-readable dataset for all supported COS releases.
 

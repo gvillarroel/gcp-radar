@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.181Z"
+generated_at: "2026-04-14T09:35:01.918Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "AlloyDB for PostgreSQL enhanced backups with Backup and DR"
 feature_slug: "alloydb-for-postgresql-enhanced-backups-with-backup-and-dr"
 latest_feature_date: "2025-10-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart"
   - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle"
 keywords:
   - "alloydb"
   - "postgresql"
+  - "entered"
+  - "public"
   - "enhanced"
   - "backups"
-  - "with"
-  - "backup"
-  - "for"
-  - "and"
 ---
 
 # AlloyDB for PostgreSQL enhanced backups with Backup and DR
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +36,54 @@ AlloyDB for PostgreSQL enhanced backups entered public preview with Backup and D
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart)
 - [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle)
 
 ## Supporting Pages
+
+### "Backup vault for immutable and indelible backups \_|\_ Backup and DR \_\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault)
+- Source ID: `site-docs-reference`
+- Final score: 98
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- What's next Create and manage a backup vault in the Google Cloud console Manage data sources in the Google Cloud console Manage backups in the Google Cloud console Create and manage a backup vault in the Google Cloud console Back up Compute Engine instances to a backup vault Back up Cloud SQL instances to a backup vault Back up AlloyDB clusters to a backup vault Back up Filestore instances to a backup vault Back up disks to a backup vault Manage data sources in the Google Cloud console Manage backups in the Google Cloud console Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The following regions are supported for cross-region backups as well ( Preview ): Geographic Area Region Name Region Description North America northamerica-northeast1 Montréal Low CO 2 northamerica-northeast2 Toronto Low CO 2 us-central1 Iowa Low CO 2 us-east1 South Carolina us-east4 Northern Virginia us-east5 Columbus us-south1 Dallas Low CO 2 us-west1 Oregon Low CO 2 us-west2 Los Angeles us-west3 Salt Lake City us-west4 Las Vegas northamerica-south1 Querétaro South America southamerica-east1 São Paulo Low CO 2 southamerica-west1 Santiago Low CO 2 Europe europe-central2 Warsaw europe-north1 Finland Low CO 2 europe-north2 Stockholm Low CO 2 europe-southwest1 Madrid Low CO 2 europe-west1 Belgium Low CO 2 europe-west2 London Low CO 2 europe-west3 Frankfurt europe-west4 Netherlands Low CO 2 europe-west6 Zürich Low CO 2 europe-west8 Milan europe-west9 Paris Low CO 2 europe-west10 Berlin europe-west12 Turin Middle East me-central1 Doha me-central2 Dammam me-west1 Israel Africa africa-south1 Johannesburg Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne India asia-south1 Mumbai asia-south2 Delhi Querétaro (northamerica-south1), Montréal (northamerica-northeast1), and Osaka (asia-northeast2) don't support zone separation.
+- Supported backup vault regions Compute Engine instance No All supported locations including multi-region and cross-region Compute Engine disk No All supported locations including multi-region (and cross-region ( Preview )) Cloud SQL instance Yes All supported regions including multi-region AlloyDB cluster Yes Not multi-regions Filestore instance Yes Not multi-regions Google Cloud VMware Engine, Oracle database, and SQL Server database No Not multi-regions If a workload supports use of multi-region backup vaults, the source workload location must be compatible with the multi-region backup vault location.
+- Workload Managed by Compute Engine instance Google Cloud console Compute Engine disk Google Cloud console Filestore instance (invitation only) Google Cloud console Cloud SQL instance Google Cloud console AlloyDB cluster Google Cloud console Google Cloud VMware Engine, Oracle database, and SQL Server database appliance management console Note: AlloyDB clusters and Filestore instances in backup vaults are not supported for multi-regions.
 
 ### Backup and DR Service for PostgreSQL \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql)
 - Source ID: `site-api-reference`
-- Final score: 222
+- Final score: 92
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- PostgreSQL backup API used by Backup and DR Volume level (Linux change block tracking and LVM snapshot) backups : Backup and DR uses the PostgreSQL pg start backup(label) and pg stop backup() commands when performing backups with Linux change block tracking and LVM snapshot.
 - What's next Prepare the database for Backup and DR Other documentation for Backup and DR for PostgreSQL Backup and DR for PostgreSQL Prepare the database for Backup and DR Add a PostgreSQL database host and discover databases Define policy templates and resource profiles Set application details and settings Check staging disk format and backup method Protect the PostgreSQL database and its logs Mount a PostgreSQL database Recover PostgreSQL Backups Create a PostgreSQL Backup and DR Workflow Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- PostgreSQL backup API used by Backup and DR Volume level (Linux change block tracking and LVM snapshot) backups : Backup and DR uses the PostgreSQL pg start backup(label) and pg stop backup() commands when performing backups with Linux change block tracking and LVM snapshot.
+- Full+Incremental (file-based traditional) backups : Backup and DR uses the PostgreSQL pg dump file-based backups commands.
 - The quiesce or unquiesce command is run on the primary for a volume-level snapshot job: select pg start backup ( <label> ) ; select pg stop backup () ; The quiesce and unquiesce commands are run on a standby node for a volume-level snapshot job: If PostgreSQL version is 10.x or later: select pg wal replay pause () ; select pg wal replay resume () ; If PostgreSQL version is 9.x: select pg xlog replay pause () ; select pg xlog replay resume () ; How it works: file-based backup The following steps describe the process for how to perform data backup and recovery with file-based backup images: Backup and DR agent is deployed in the database server.
-- Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for PostgreSQL Stay organized with collections Save and categorize content based on your preferences.
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Protect and recover an AlloyDB cluster to a backup vault \_|\_ Backup and\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 200
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- October 30, 2025 Feature Announcing the Public Preview launch of AlloyDB for PostgreSQL enhanced backups with Backup and DR Service.
-- With enhanced backups, backups are managed and stored in a centralized backup management project that leverages Backup and DR service to provide enforced retention, granular scheduling, and longer retention.
-- October 21, 2025 Fixed Resolved a problem with timestamp conversions during recovery range calculations in SAP HANA Fixed a bug that prevented the identification of persistent disk names in some SAP HANA environments Fixed DB2 restore issue wrt pre-flight checks and instances with a large number of archive logs Fixed a logging issue during Postgres upgrades where an incorrect version was displayed after a rollback Resolved a restore failure when using a combination of full and incremental backups for SAP ASE Fixed a connection leak and an issue with executor service shutdown in the VMware hypervisor integration, improving reliability.
-- Database Center is an AI-assisted dashboard that highlights fleet-wide data points.The integration is designed to provide Database Center users with a single, unified, and accurate view of the data protection posture for all databases protected by Backup and DR Service.This capability is available today, at no additional cost, for all Cloud SQL customers who have protected their databases through Backup and DR Service enhanced protection.
-
-### Backup and DR Service for Oracle \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle)
-- Source ID: `site-api-reference`
-- Final score: 182
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart)
+- Source ID: `site-docs-reference`
+- Final score: 90
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Other documentation for Backup and DR for Oracle Backup and DR for Oracle databases Prerequisites for protecting an Oracle database Oracle patches and known issues Prepare Oracle databases for protection Discover and protect an Oracle database Set application details and settings Use dNFS with Backup and DR Protect a discovered Oracle database Mount an Oracle database as a standard mount Create an instant virtual copy of an Oracle database Restore and recover an Oracle database Instant recovery of an Oracle database using Mount and Migrate Provision an environment with a Backup and DR workflow Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Bring Backup and DR protected ASM diskgroups back online after reboot of a target DB server After any database server reboot where Backup and DR copy is mounted, or Backup and DR backups are in progress for the database at the time of reboot/crash, follow these steps to get the Backup and DR disk group mount back: Check that the target database server is back up, and that ASM and RAC system are also up.
-- Backup and DR capture of Exadata data and ExaCC The Backup and DR agent must be installed on the Exadata server to facilitate communication with the backup/recovery appliance and to invoke the RMAN API for database backup.
-- RMAN metadata conflict with legacy backups that make Backup and DR Service backups obsolete By default, the parameter DO NOT UNCATALOG in Backup and DR Service application details & settings is set to No .
+- Home Documentation Storage Backup and DR Guides Send feedback Protect and recover an AlloyDB cluster to a backup vault Stay organized with collections Save and categorize content based on your preferences.
+- The next page shows the restore details so far, and prompts you to Configure a new cluster : This creates a new AlloyDB cluster based on the configuration stored in your backup.
+- Go to Vaulted backups The Vaulted backups page lists only the data resources that have backup plans applied and their backups stored in a backup vault within that project.
+- For AlloyDB clusters, the service agent performs actions on behalf of the Backup and DR Service, so it needs appropriate permissions on the projects it needs to access.
 

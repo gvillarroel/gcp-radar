@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.127Z"
+generated_at: "2026-04-12T20:57:08.271Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "Python 3.9 runtime for App Engine standard environment"
 feature_slug: "python-3-9-runtime-for-app-engine-standard-environment"
 latest_feature_date: "2021-03-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/appengine/docs/standard/python3/runtime"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/runtime"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/python/runtime"
 keywords:
-  - "environment"
-  - "standard"
-  - "runtime"
   - "python"
-  - "engine"
-  - "for"
-  - "the"
+  - "runtime"
   - "app"
+  - "engine"
+  - "standard"
+  - "environment"
+  - "was"
+  - "made"
 ---
 
 # Python 3.9 runtime for App Engine standard environment
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ The Python 3.9 runtime was made generally available for App Engine standard envi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/appengine/docs/standard/python3/runtime](https://docs.cloud.google.com/appengine/docs/standard/python3/runtime)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/runtime](https://docs.cloud.google.com/appengine/docs/standard/go/runtime)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime](https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/python/runtime](https://docs.cloud.google.com/appengine/docs/standard/python/runtime)
 
 ## Supporting Pages
 
@@ -52,41 +52,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/python3/runtime](https://docs.cloud.google.com/appengine/docs/standard/python3/runtime)
 - Source ID: `site-docs-root-2`
-- Final score: 314
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 62
+- Re-rank relevance: N/A
 
 Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Python 3 Runtime Environment Stay organized with collections Save and categorize content based on your preferences.
 - The Python runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : python VERSION Where VERSION is the Python MAJOR and MINOR version numbers.
 - The following example shows how to use uwsgi with App Engine: runtime : python313 entrypoint : uwsgi --http-socket :$PORT --wsgi-file main.py --callable app --master --processes 1 --threads 2 uwsgi==2.0.22 Flask==3.0.0 Environment variables The following environment variables are set by the runtime: Environment variable Description GAE APPLICATION The ID of your App Engine application.
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Python 3 Runtime Environment Stay organized with collections Save and categorize content based on your preferences.
 - The Python runtime is the software stack responsible for installing your web service's code and its dependencies and running your App Engine service.
 
-### "Go runtime environment \_|\_ App Engine standard environment \_|\_ Google\
+### App Engine standard environment \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/runtime](https://docs.cloud.google.com/appengine/docs/standard/go/runtime)
-- Source ID: `site-docs-root`
-- Final score: 270
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The Go runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : go VERSION Where VERSION is the Go MAJOR and MINOR version numbers.
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Go runtime environment Stay organized with collections Save and categorize content based on your preferences.
-- Environment variables The following environment variables are set by the runtime: Environment variable Description GAE APPLICATION The ID of your App Engine application.
-- Metadata server Each instance of your application can use the App Engine metadata server to query information about the instance and your project.
-
-### "Java runtime environment \_|\_ App Engine standard environment \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime)
-- Source ID: `site-docs-root`
-- Final score: 270
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime](https://docs.cloud.google.com/appengine/docs/standard/python/customizing-the-python-runtime)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 46
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Declare the Java runtime for the App Engine standard environment in the app.yaml file.
-- See the License for the specific language governing permissions and limitations under the License. / package com.example.appengine ; import com.sun.net.httpserver.HttpServer ; import java.io.IOException ; import java.io.OutputStream ; import java.net.InetSocketAddress ; public class Main { public static void main ( String [] args ) throws IOException { // Create an instance of HttpServer bound to port defined by the // PORT environment variable when present, otherwise on 8080. int port = Integer . parseInt ( System . getenv (). getOrDefault ( "PORT" , "8080" )); HttpServer server = HttpServer . create ( new InetSocketAddress ( port ), 0 ); // Set root URI path. server . createContext ( "/" , ( var t ) - > { byte [] response = "Hello World!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); // Create a second URI path. server . createContext ( "/foo" , ( var t ) - > { byte [] response = "Foo!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); server . start (); } } Compatibility with previous Java versions For differences between Java 8 and the latest supported Java version, see Migrate from Java 8 to the latest Java runtime .
-- The runtime's Open JDK environment App Engine runs Java apps in a container secured by gVisor on an up-to-date Ubuntu Linux distribution and its supported openjdk-17-jdk for Java 17 or openjdk-21-jdk for Java 21 runtime.
-- Using GraalVM executables The App Engine standard environment Java runtime supports GraalVM native image executables.
+- Standard environment languages and runtimes The standard environment supports the following languages: Go Java Node.js PHP Python Ruby Instance classes The instance class determines the amount of memory and CPU available to each instance, the amount of free quota , and the cost per hour after your app exceeds the free quota.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback App Engine standard environment Stay organized with collections Save and categorize content based on your preferences.
+- The App Engine standard environment is based on container instances running on Google's infrastructure.
+- Applications run in a secure, sandboxed environment, allowing the standard environment to distribute requests across multiple servers and scale servers to meet traffic demands.
+
+### App Engine standard environment \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/python/runtime](https://docs.cloud.google.com/appengine/docs/standard/python/runtime)
+- Source ID: `site-docs-root-required-3`
+- Final score: 46
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Standard environment languages and runtimes The standard environment supports the following languages: Go Java Node.js PHP Python Ruby Instance classes The instance class determines the amount of memory and CPU available to each instance, the amount of free quota , and the cost per hour after your app exceeds the free quota.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback App Engine standard environment Stay organized with collections Save and categorize content based on your preferences.
+- The App Engine standard environment is based on container instances running on Google's infrastructure.
+- Applications run in a secure, sandboxed environment, allowing the standard environment to distribute requests across multiple servers and scale servers to meet traffic demands.
 

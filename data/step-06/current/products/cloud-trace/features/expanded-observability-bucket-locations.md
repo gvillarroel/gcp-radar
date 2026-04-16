@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.823Z"
+generated_at: "2026-04-12T12:12:48.994Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Expanded observability bucket locations"
 feature_slug: "expanded-observability-bucket-locations"
 latest_feature_date: "2026-03-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
   - "https://docs.cloud.google.com/trace/docs/storage-manage"
-  - "https://docs.cloud.google.com/trace/docs/release-notes"
+  - "https://docs.cloud.google.com/trace/docs/troubleshooting"
+  - "https://docs.cloud.google.com/trace/docs/analytics-samples"
 keywords:
   - "expanded"
   - "observability"
@@ -26,7 +27,7 @@ keywords:
 # Expanded observability bucket locations
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Observability buckets for trace data support additional storage locations.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset](https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset)
 - [https://docs.cloud.google.com/trace/docs/storage-manage](https://docs.cloud.google.com/trace/docs/storage-manage)
-- [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
+- [https://docs.cloud.google.com/trace/docs/troubleshooting](https://docs.cloud.google.com/trace/docs/troubleshooting)
+- [https://docs.cloud.google.com/trace/docs/analytics-samples](https://docs.cloud.google.com/trace/docs/analytics-samples)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset](https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset)
 - Source ID: `site-docs-root-2`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Execute the gcloud beta observability buckets datasets links create command: Linux, macOS, or Cloud Shell gcloud beta observability buckets datasets links create \ projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /datasets/ DATASET ID /links/ LINK ID \ --dataset = DATASET ID \ --bucket = BUCKET ID \ --location = LOCATION \ --project = PROJECT ID Windows (PowerShell) gcloud beta observability buckets datasets links create projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /datasets/ DATASET ID /links/ LINK ID --dataset = DATASET ID --bucket = BUCKET ID --location = LOCATION ` --project = PROJECT ID Windows (cmd.exe) gcloud beta observability buckets datasets links create ^ projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /datasets/ DATASET ID /links/ LINK ID ^ --dataset = DATASET ID ^ --bucket = BUCKET ID ^ --location = LOCATION ^ --project = PROJECT ID The create command initiates a long-running operation.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/trace/docs/storage-manage](https://docs.cloud.google.com/trace/docs/storage-manage)
 - Source ID: `site-docs-root-2`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For each object, the value of the name field has the following format: projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /dataset/ DATASET ID For example, when a command was issued to the buckets.datasets.list endpoint with the parent parameter set to projects/my-project/locations/us/buckets/ Trace , the response was: { "datasets": [ { "name": "projects/my-project/locations/us/buckets/ Trace/datasets/Spans", "description": "Trace Spans", "createTime": "2025-01-01T15:42:30.988919645Z", "updateTime": "2025-02-04T15:42:30.988919645Z", } ] } You can issue commands to other Observability API endpoints to get information about the dataset whose ID is DATASET ID .
@@ -76,16 +78,31 @@ Evidence snippets:
 - For example, when a command was issued to the buckets.datasets.views.list endpoint with the parent parameter set to projects/my-project/locations/us/buckets/ Trace/datasets/Spans/views , the response was: { "views": [ { "name": "projects/my-project/locations/us/buckets/ Trace/datasets/Spans/views/ AllSpans", "filter": "", "createTime": "2025-01-01T15:42:30.988919645Z", "updateTime": "2025-02-04T15:42:30.988919645Z", } ] } For a complete list of Observability API endpoints, see the Observability API reference documentation .
 - For example, when a command was issued to the buckets.datasets.links.list endpoint with the parent parameter set to projects/my-project/locations/us/buckets/ Trace/datasets/Spans/links , the response was: { "links": [ { "name": "projects/my-project/locations/us/buckets/ Trace/datasets/Spans/links/my link", "description": "My link for traces to BigQuery", "createTime": "2025-01-12T15:42:30.988919645Z" } ] } For a complete list of Observability API endpoints, see the Observability API reference documentation .
 
-### Trace release notes \_|\_ Google Cloud Documentation
+### Troubleshoot \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/trace/docs/release-notes](https://docs.cloud.google.com/trace/docs/release-notes)
+- URL: [https://docs.cloud.google.com/trace/docs/troubleshooting](https://docs.cloud.google.com/trace/docs/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: N/A
+- Final score: 191
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- March 19, 2026 Feature Google Cloud Observability has expanded the supported locations for observability buckets, which store your trace data, to include the following: africa-south1 asia-east1 asia-east2 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast2 asia-southeast3 australia-southeast2 europe-north2 europe-west1 europe-west4 europe-west6 europe-west8 me-central1 northamerica-northeast2 northamerica-south1 southamerica-west1 us-east5 us-south1 us-west2 us-west3 For a list of supported locations, see Locations for observability buckets .
-- Feature You can now configure observability buckets to be in the following locations : us eu us-central1 us-west1 Your trace data is stored in an observability bucket.
-- April 08, 2026 Feature Google Cloud CLI lets you configure trace scopes, manage observability buckets, and set default observability settings.
-- February 26, 2026 Feature For organizations, folders, and projects, you can now configure default settings for observability buckets.
+- To determine whether an observability bucket exists for your trace data, you can either list your observability buckets or you can open the Trace Explorer page.
+- Error message stating a view does not exist You enter a SQL query in the query pane of the Observability Analytics page, but the SQL parser displays the following error: projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /datasets/ DATASET ID /views/ OBS VIEW ID does not exist The previous error is reported when the view specified in the FROM statement can't be found.
+- You can join views on those buckets when, for that organization, you've configured the default resource settings for Cloud Logging and for observability buckets with the same default Cloud KMS key for the storage location.
+- To provision a observability bucket for your trace data, go to the banner and click Enable .
+
+### Sample SQL queries for Trace \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/trace/docs/analytics-samples](https://docs.cloud.google.com/trace/docs/analytics-samples)
+- Source ID: `site-docs-root-2`
+- Final score: 187
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can join views on those buckets when, for that organization, you've configured the default resource settings for Cloud Logging and for observability buckets with the same default Cloud KMS key for the storage location.
+- Home Documentation Observability Cloud Trace Guides Send feedback Sample SQL queries for Trace Stay organized with collections Save and categorize content based on your preferences.
+- For example, suppose that the resource hierarchy for a log bucket and observability bucket includes the same organization.
+- Trace is the name of the observability bucket Spans is the name of the dataset.
 

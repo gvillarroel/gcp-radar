@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.360Z"
+generated_at: "2026-04-15T13:43:38.437Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Looker Tableau BI Connector"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-12-01"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
-  - "https://docs.cloud.google.com/looker/docs/conversational-analytics-overview"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
+  - "https://docs.cloud.google.com/looker/docs/bi-connectors"
+  - "https://docs.cloud.google.com/bigquery/docs/dts-data-sources-intro"
+  - "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores"
 keywords:
   - "looker"
   - "tableau"
   - "bi"
   - "connector"
   - "makes"
-  - "the"
   - "available"
-  - "on"
+  - "exchange"
+  - "desktop"
 ---
 
 # Looker Tableau BI Connector
@@ -42,45 +42,41 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- [https://docs.cloud.google.com/looker/docs/conversational-analytics-overview](https://docs.cloud.google.com/looker/docs/conversational-analytics-overview)
-- [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
+- [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- [https://docs.cloud.google.com/bigquery/docs/dts-data-sources-intro](https://docs.cloud.google.com/bigquery/docs/dts-data-sources-intro)
+- [https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores](https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores)
 
 ## Supporting Pages
 
-### Access control and permission management | Looker | Google Cloud Documentation
+### Admin settings - BI Connectors \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 148
+- URL: [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- Source ID: `site-docs-reference`
+- Final score: 110
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The Tableau Desktop connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- For customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections, your network administrator must configure your network so that traffic from Tableau Desktop can reach your Looker instance.
+- Tableau Desktop Enable or disable this option to allow or disallow connections to Looker from Tableau Desktop .
+- The Microsoft Excel connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+
+### BigQuery Data Transfer Service data sources \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/dts-data-sources-intro](https://docs.cloud.google.com/bigquery/docs/dts-data-sources-intro)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 84
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
-- Data access can be further restricted within a model using access filters to limit which rows of data ...
-- These roles are then applied to users and groups.
+### AND/OR Filters in Explores \_|\_ Looker \_|\_ Google Cloud Documentation
 
-### Conversational Analytics in Looker overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/conversational-analytics-overview](https://docs.cloud.google.com/looker/docs/conversational-analytics-overview)
-- Source ID: `site-docs-root`
-- Final score: 138
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores](https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores)
+- Source ID: `site-docs-reference`
+- Final score: 72
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Conversational Analytics in Looker overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/conversational-analytics-overview An overview of Conversational Analytics in Looker.
-
-### Looker (Google Cloud core) access control with IAM | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- Source ID: `site-iam-reference`
-- Final score: 130
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Looker (Google Cloud core) access control with IAM Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-access-control Looker (Google Cloud core) uses Identity and Access Management (IAM) to provision user and admin access through a set of IAM roles.
-- For a detailed description of Google Cloud IAM, see the IAM documentation.
+- Home Documentation Data analytics Looker Send feedback AND/OR Filters in Explores Stay organized with collections Save and categorize content based on your preferences.
+- AND/OR filters on dashboards AND/OR filters are created in the Explore Filters section and are translated into Looker expressions before the query is run.
 

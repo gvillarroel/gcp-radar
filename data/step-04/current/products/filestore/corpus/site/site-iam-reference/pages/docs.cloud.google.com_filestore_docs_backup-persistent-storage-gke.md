@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/filestore/docs/create-instance-console
+entrypoint: https://docs.cloud.google.com/filestore/docs/access-control
 source_metadata:
   url: https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke
   title: "Back up and restore persistent storage for your GKE clusters \_|\_ Filestore\

@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.614Z"
+generated_at: "2026-04-12T12:13:48.473Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Data Quality tasks"
 feature_slug: "data-quality-tasks"
 latest_feature_date: "2022-04-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataplex/docs/check-data-quality"
   - "https://docs.cloud.google.com/dataplex/docs/data-quality-tasks-overview"
+  - "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview"
   - "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality"
 keywords:
   - "quality"
@@ -26,7 +27,7 @@ keywords:
 # Data Quality tasks
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Data Quality tasks run data quality validations on BigQuery tables, including ta
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataplex/docs/check-data-quality](https://docs.cloud.google.com/dataplex/docs/check-data-quality)
 - [https://docs.cloud.google.com/dataplex/docs/data-quality-tasks-overview](https://docs.cloud.google.com/dataplex/docs/data-quality-tasks-overview)
+- [https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview)
 - [https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality](https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/check-data-quality](https://docs.cloud.google.com/dataplex/docs/check-data-quality)
 - Source ID: `site-docs-root-2`
-- Final score: 216
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 297
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This document shows you how to create Knowledge Catalog data quality tasks that let you schedule and run data quality checks for your built-in and external BigQuery tables.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/data-quality-tasks-overview](https://docs.cloud.google.com/dataplex/docs/data-quality-tasks-overview)
 - Source ID: `site-docs-root-2`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 293
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Similar to other Knowledge Catalog tasks , the Knowledge Catalog data quality task runs on a serverless Spark environment, converts the YAML specification to BigQuery queries, and then runs those queries on the tables that are defined in the specification file.
@@ -76,11 +78,25 @@ Evidence snippets:
 - How data quality tasks work The following diagram shows how Knowledge Catalog data quality tasks work: Input from users YAML specification : A set of one or more YAML files that define data quality rules based on the specification syntax.
 - Home Documentation Data analytics Knowledge Catalog Guides Send feedback Data quality tasks overview Stay organized with collections Save and categorize content based on your preferences.
 
+### Auto data quality overview \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview)
+- Source ID: `site-docs-root`
+- Final score: 213
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following debug query returns these metrics: SELECT SUM ( revenue ), COUNT ( DISTINCT item id ), SUM ( revenue ) / COUNT ( DISTINCT item id ) FROM example project . example dataset . table Rule execution You can schedule data quality scans to run at a specific interval, or you can run a scan on demand.
+- This provides several benefits: Principle of least privilege: Grant only the exact IAM permissions required for specific data quality tasks to a dedicated service account, minimizing overprovisioned access.
+- Execution identity By default, Knowledge Catalog uses a centralized service agent ( service-PROJECT NUMBER@gcp-sa-dataplex.iam.gserviceaccount.com ) to run data quality scans.
+- Creating data quality scans on a smaller sample of data can reduce the run time and the cost relative to querying the entire dataset.
+
 ### Use auto data quality \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality](https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality)
 - Source ID: `site-docs-root`
-- Final score: 156
+- Final score: 201
 - Re-rank relevance: N/A
 
 Evidence snippets:

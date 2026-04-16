@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.599Z"
+generated_at: "2026-04-12T12:13:48.464Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Lineage occurrence time filter"
 feature_slug: "lineage-occurrence-time-filter"
 latest_feature_date: "2024-10-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataplex/docs/use-lineage"
-  - "https://docs.cloud.google.com/dataplex/docs/release-notes"
+  - "https://docs.cloud.google.com/dataplex/docs/about-data-lineage"
+  - "https://docs.cloud.google.com/dataplex/docs/check-data-quality"
   - "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
 keywords:
   - "lineage"
@@ -26,7 +27,7 @@ keywords:
 # Lineage occurrence time filter
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ The data lineage list view can filter lineage records by the time the lineage oc
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataplex/docs/use-lineage](https://docs.cloud.google.com/dataplex/docs/use-lineage)
-- [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
+- [https://docs.cloud.google.com/dataplex/docs/about-data-lineage](https://docs.cloud.google.com/dataplex/docs/about-data-lineage)
+- [https://docs.cloud.google.com/dataplex/docs/check-data-quality](https://docs.cloud.google.com/dataplex/docs/check-data-quality)
 - [https://docs.cloud.google.com/dataplex/docs/use-data-profiling](https://docs.cloud.google.com/dataplex/docs/use-data-profiling)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/use-lineage](https://docs.cloud.google.com/dataplex/docs/use-lineage)
 - Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 221
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The List view offers simplified and detailed tabular representations of lineage for both table-level and column-level lineage, synchronized with the Graph view.
@@ -62,24 +64,39 @@ Evidence snippets:
 - The List view offers simplified and detailed tabular representations of lineage for both table-level and column-level lineage, synchronized with the Graph view.
 - The List view offers simplified and detailed tabular representations of lineage for both table-level and column-level lineage, synchronized with the Graph view.
 
-### Knowledge Catalog release notes \_|\_ Google Cloud Documentation
+### About data lineage \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
+- URL: [https://docs.cloud.google.com/dataplex/docs/about-data-lineage](https://docs.cloud.google.com/dataplex/docs/about-data-lineage)
 - Source ID: `site-docs-root`
-- Final score: 144
-- Re-rank relevance: N/A
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- October 10, 2024 Feature In the data lineage list view, you can filter lineage information based on the time that lineage occurred.
-- The lineage list view displays full lineage information in a single table.
-- May 28, 2024 Feature Dataplex automatic data quality supports the following capabilities: Email notifications to alert people about the status and results of a data quality job Data quality scores that indicate the percentage of rules that passed API support for rule recommendations based on data profiling scans For more information, see Use auto data quality and Auto data quality overview .
-- You can see the latest product updates for all of Google Cloud on the Google Cloud page, browse and filter all release notes in the Google Cloud console , or programmatically access release notes in BigQuery .
+- New tables created as a result of the following BigQuery jobs: Copy jobs Load jobs that use a Cloud Storage URI Query jobs that use the following data definition language (DDL) in GoogleSQL: CREATE TABLE CREATE TABLE AS SELECT CREATE TABLE COPY CREATE TABLE CLONE CREATE TABLE FUNCTION CREATE TABLE LIKE CREATE VIEW CREATE MATERIALIZED VIEW Existing tables when you use the following data manipulation language (DML) statements in GoogleSQL: SELECT in relation to any of the listed table types: BigQuery Views BigQuery Materialized Views BigQuery External Tables INSERT SELECT MERGE UPDATE DELETE Note: Data lineage doesn't automatically record lineage information for recurring load jobs from the BigQuery Data Transfer Service .
+- Other services Data lineage supports integration with the following Google Cloud services: Cloud Composer Cloud Data Fusion Dataflow Managed Service for Apache Spark for Apache Spark Managed Service for Apache Spark for Apache Hive Managed Service for Apache Spark Managed Service for Apache Spark Looker (Google Cloud core) ( Preview ) Vertex AI Vertex AI Feature Store Data lineage for custom data sources You can use the Data Lineage API to manually record lineage information for any data source that integrated systems don't support.
+- Lineage sources You can populate lineage information in Knowledge Catalog in the following ways: Automatically from integrated Google Cloud services Manually, by using the Data Lineage API for custom sources By importing events from OpenLineage BigQuery When you enable data lineage in your BigQuery project, Knowledge Catalog automatically records lineage information for the following: Note: Data lineage is automatically recorded only for BigQuery tables and views.
+- User experience : you can interact with the stored lineage information in two primary ways: Visual exploration: in the Google Cloud console, a frontend service fetches and renders the lineage data as an interactive graph or list.
+
+### Use data quality tasks \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/check-data-quality](https://docs.cloud.google.com/dataplex/docs/check-data-quality)
+- Source ID: `site-docs-root-2`
+- Final score: 175
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This is a convenience section that allows you to shorten the entity uri metadata registry defaults : dataplex : projects : PROJECT ID locations : REGION ID lakes : operations zones : procurement You have to define a NONE row filter row filters : NONE : filter sql expr : - True INTERNATIONAL ITEMS : filter sql expr : - REGEXP CONTAINS(item id, 'INTNL') rule dimensions are optional but allow you to aggregate reporting. rule dimensions : - consistency - correctness - duplication - completeness - conformance - integrity Rules can be shared across tables or columns. rules : This rule is parameterized with column names as parameter NO DUPLICATES IN COLUMN GROUPS : rule type : CUSTOM SQL STATEMENT dimension : duplication params : custom sql arguments : - column names custom sql statement : - select a. from data a inner join ( select $column names from data group by $column names having count( ) > 1 ) duplicates using ($column names) VALUE ZERO OR POSITIVE : rule type : CUSTOM SQL EXPR dimension : correctness params : custom sql expr : - $column >= 0 VALID ITEM ID : rule type : REGEX dimension : conformance params : pattern : - [A-Z]{5}[0-9]{15} VALID CURRENCY ID : rule type : CUSTOM SQL EXPR dimension : integrity params : custom sql expr : - $column in ('GBP', 'JPY') #rule bindings associate rules to {table, column} rule bindings : TRANSACTIONS UNIQUE : entity uri : dataplex://projects/ PROJECT ID /locations/ REGION ID /lakes/operations/zones/procurement/entities/sales orders column id : id row filter id : NONE incremental time filter column id : last modified timestamp rule ids : - NO DUPLICATES IN COLUMN GROUPS : column names : "id" TRANSACTION AMOUNT VALID : entity uri : dataplex://zones/procurement/entities/sales orders # omitting projects/locations/lakes from uri path to use the default values specified in metadata registry defaults column id : amount row filter id : NONE incremental time filter column id : last modified timestamp rule ids : - VALUE ZERO OR POSITIVE TRANSACTION VALID ITEM ID : entity uri : dataplex://zones/procurement/entities/sales orders column id : item id row filter id : NONE incremental time filter column id : last modified timestamp rule ids : - VALID ITEM ID TRANSACTION CURRENCY VALID : entity uri : dataplex://zones/procurement/entities/sales orders column id : transaction currency row filter id : INTERNATIONAL ITEMS incremental time filter column id : last modified timestamp rule ids : - VALID CURRENCY ID Troubleshoot failed rules with failed records query For every rule that fails, the summary table stores a query in the failed records query column that you can use to get failed records.
+- This is a convenience section that allows you to shorten the entity uri metadata registry defaults : dataplex : projects : PROJECT ID locations : REGION ID lakes : operations zones : procurement You have to define a NONE row filter row filters : NONE : filter sql expr : - True INTERNATIONAL ITEMS : filter sql expr : - REGEXP CONTAINS(item id, 'INTNL') rule dimensions are optional but allow you to aggregate reporting. rule dimensions : - consistency - correctness - duplication - completeness - conformance - integrity Rules can be shared across tables or columns. rules : This rule is parameterized with column names as parameter NO DUPLICATES IN COLUMN GROUPS : rule type : CUSTOM SQL STATEMENT dimension : duplication params : custom sql arguments : - column names custom sql statement : - select a. from data a inner join ( select $column names from data group by $column names having count( ) > 1 ) duplicates using ($column names) VALUE ZERO OR POSITIVE : rule type : CUSTOM SQL EXPR dimension : correctness params : custom sql expr : - $column >= 0 VALID ITEM ID : rule type : REGEX dimension : conformance params : pattern : - [A-Z]{5}[0-9]{15} VALID CURRENCY ID : rule type : CUSTOM SQL EXPR dimension : integrity params : custom sql expr : - $column in ('GBP', 'JPY') #rule bindings associate rules to {table, column} rule bindings : TRANSACTIONS UNIQUE : entity uri : dataplex://projects/ PROJECT ID /locations/ REGION ID /lakes/operations/zones/procurement/entities/sales orders column id : id row filter id : NONE rule ids : - NO DUPLICATES IN COLUMN GROUPS : column names : "id" TRANSACTION AMOUNT VALID : entity uri : dataplex://zones/procurement/entities/sales orders # omitting projects/locations/lakes from uri path to use the default values specified in metadata registry defaults column id : amount row filter id : NONE rule ids : - VALUE ZERO OR POSITIVE TRANSACTION VALID ITEM ID : entity uri : dataplex://zones/procurement/entities/sales orders column id : item id row filter id : NONE rule ids : - VALID ITEM ID TRANSACTION CURRENCY VALID : entity uri : dataplex://zones/procurement/entities/sales orders column id : transaction currency row filter id : INTERNATIONAL ITEMS rule ids : - VALID CURRENCY ID Sample 4 This example enhances Sample 3 by adding incremental validations using the last modified timestamp column.
+- Knowledge Catalog populates this field with TRUE by default, but the value can be overridden if the --progress watermark argument has a value of FALSE . rows validated (integer) Total number of records validated after applying row filters and any high-watermark filters on the incremental time filter column id column, if specified. complex rule validation errors count (float) Number of rows returned by a CUSTOM SQL STATEMENT rule. complex rule validation success flag (boolean) Success status of CUSTOM SQL STATEMENT rules. success count (integer) Total number of records that passed validation.
+- This is a convenience section that allows you to shorten the entity uri metadata registry defaults : dataplex : projects : PROJECT ID locations : REGION ID lakes : operations zones : procurement You have to define a NONE row filter row filters : NONE : filter sql expr : - True INTERNATIONAL ITEMS : filter sql expr : - REGEXP CONTAINS(item id, 'INTNL') rule dimensions are optional but allow you to aggregate reporting. rule dimensions : - consistency - correctness - duplication - completeness - conformance - integrity Rules can be shared across tables or columns. rules : VALUE ZERO OR POSITIVE : rule type : CUSTOM SQL EXPR dimension : correctness params : custom sql expr : - $column >= 0 VALID ITEM ID : rule type : REGEX dimension : conformance params : pattern : - [A-Z]{5}[0-9]{15} VALID CURRENCY ID : rule type : CUSTOM SQL EXPR dimension : integrity params : custom sql expr : - $column in ('GBP', 'JPY') #rule bindings associate rules to {table, column} rule bindings : TRANSACTION AMOUNT VALID : entity uri : dataplex://projects/ PROJECT ID /locations/ REGION ID /lakes/operations/zones/procurement/entities/sales orders column id : amount row filter id : NONE rule ids : - VALUE ZERO OR POSITIVE TRANSACTION VALID ITEM ID : entity uri : dataplex://zones/procurement/entities/sales orders # omitting projects/locations/lakes from uri path to use the default values specified in metadata registry defaults column id : item id row filter id : NONE rule ids : - VALID ITEM ID TRANSACTION CURRENCY VALID : entity uri : dataplex://zones/procurement/entities/sales orders column id : transaction currency row filter id : INTERNATIONAL ITEMS rule ids : - VALID CURRENCY ID Replace the following: PROJECT ID : your project ID.
 
 ### "Create and use data profile scans \_|\_ Knowledge Catalog \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/use-data-profiling](https://docs.cloud.google.com/dataplex/docs/use-data-profiling)
 - Source ID: `site-docs-root`
-- Final score: 142
+- Final score: 168
 - Re-rank relevance: N/A
 
 Evidence snippets:

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.609Z"
+generated_at: "2026-04-12T12:13:48.471Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Data profiling"
 feature_slug: "data-profiling"
 latest_feature_date: "2023-05-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
   - "https://docs.cloud.google.com/dataplex/docs/data-profiling-overview"
   - "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality"
+  - "https://docs.cloud.google.com/dataplex/docs/reference/rest"
 keywords:
   - "profiling"
   - "analyzes"
@@ -26,7 +27,7 @@ keywords:
 # Data profiling
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Data profiling analyzes BigQuery data characteristics without requiring a Datapl
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataplex/docs/use-data-profiling](https://docs.cloud.google.com/dataplex/docs/use-data-profiling)
 - [https://docs.cloud.google.com/dataplex/docs/data-profiling-overview](https://docs.cloud.google.com/dataplex/docs/data-profiling-overview)
 - [https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality](https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality)
+- [https://docs.cloud.google.com/dataplex/docs/reference/rest](https://docs.cloud.google.com/dataplex/docs/reference/rest)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/use-data-profiling](https://docs.cloud.google.com/dataplex/docs/use-data-profiling)
 - Source ID: `site-docs-root`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 212
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Export table schema If you want to export the data profile scan results to an existing BigQuery table, make sure that it is compatible with the following table schema: Column name Column data type Sub field name (if applicable) Sub field data type Mode Example data profile scan struct/record resource name string nullable //dataplex.googleapis.com/projects/test-project/locations/europe-west2/datascans/test-datascan project id string nullable test-project location string nullable us-central1 data scan id string nullable test-datascan data source struct/record resource name string nullable Entity case: //dataplex.googleapis.com/projects/test-project/locations/europe-west2/lakes/test-lake/zones/test-zone/entities/test-entity Table case: //bigquery.googleapis.com/projects/test-project/datasets/test-dataset/tables/test-table dataplex entity project id string nullable test-project dataplex entity project number integer nullable 123456789012 dataplex lake id string nullable (Valid only if source is entity) test-lake dataplex zone id string nullable (Valid only if source is entity) test-zone dataplex entity id string nullable (Valid only if source is entity) test-entity table project id string nullable dataplex-table table project number int64 nullable 345678901234 dataset id string nullable (Valid only if source is table) test-dataset table id string nullable (Valid only if source is table) test-table data profile job id string nullable caeba234-cfde-4fca-9e5b-fe02a9812e38 data profile job configuration json trigger string nullable ondemand / schedule incremental boolean nullable true / false sampling percent float nullable (0-100) 20.0 (indicates 20%) row filter string nullable col1 >= 0 AND col2 column filter json nullable {"include fields":["col1","col2"], "exclude fields":["col3"]} job labels json nullable {"key1":value1} job start time timestamp nullable 2023-01-01 00:00:00 UTC job end time timestamp nullable 2023-01-01 00:00:00 UTC job rows scanned integer nullable 7500 column name string nullable column-1 column type string nullable string column mode string nullable repeated percent null float nullable (0.0-100.0) 20.0 (indicates 20%) percent unique float nullable (0.0-100.0) 92.5 min string length integer nullable (Valid only if column type is string) 10 max string length integer nullable (Valid only if column type is string) 4 average string length float nullable (Valid only if column type is string) 7.2 min value float nullable (Valid only if column type is numeric - integer/float) max value float nullable (Valid only if column type is numeric - integer/float) average value float nullable (Valid only if column type is numeric - integer/float) standard deviation float nullable (Valid only if column type is numeric - integer/float) quartile lower integer nullable (Valid only if column type is numeric - integer/float) quartile median integer nullable (Valid only if column type is numeric - integer/float) quartile upper integer nullable (Valid only if column type is numeric - integer/float) top n struct/record - repeated value string nullable "4009" count integer nullable 20 percent float nullable 10 (indicates 10%) Export table setup When you export to BigQueryExport tables, follow these guidelines: For the field resultsTable , use the format: //bigquery.googleapis.com/projects/{project-id}/datasets/{dataset-id}/tables/{table-id} .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/data-profiling-overview](https://docs.cloud.google.com/dataplex/docs/data-profiling-overview)
 - Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - It is optimized for speed and cost-efficiency to support use cases such as the following: Grounding AI agent responses with immediate data characteristics Cost-effectively pre-generating profiles at scale for global data discovery Providing rapid health reports during interactive data exploration The lightweight mode has the following limitations: Unlike the standard profiling mode, you can't modify the scope, filters, or sampling size on lightweight scans.
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality](https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 172
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,4 +90,18 @@ Evidence snippets:
 - Set alerts on data quality failures for a BigQuery table that isn't organized in a Knowledge Catalog lake: resource.type="dataplex.googleapis.com/DataScan" AND jsonPayload.dataSource="//bigquery.googleapis.com/projects/test-project/datasets/testdataset/table/chicago taxi trips" AND labels."dataplex.googleapis.com/data scan state"="SUCCEEDED" AND resource.labels.resource container="projects/112233445566" AND NOT jsonPayload.dataQuality.passed=true Set alerts on data quality failures for a BigQuery table that's organized in a Knowledge Catalog lake: resource.type="dataplex.googleapis.com/DataScan" AND jsonPayload.dataSource="projects/test-project/datasets/testdataset/table/chicago taxi trips" AND labels."dataplex.googleapis.com/data scan state"="SUCCEEDED" AND resource.labels.resource container="projects/112233445566" AND NOT jsonPayload.dataQuality.passed=true Sample queries to set per rule alerts A sample query to set alerts on all failing data quality rules with the specified custom rule name for a data quality scan: resource.type="dataplex.googleapis.com/DataScan" AND jsonPayload.ruleName="custom-name" AND jsonPayload.result="FAILED" A sample query to set alerts on all failing data quality rules of a specific evaluation type for a data quality scan: resource.type="dataplex.googleapis.com/DataScan" AND jsonPayload.evalutionType="PER ROW" AND jsonPayload.result="FAILED" A sample query to set alerts on all failing data quality rules for a column in the table used for a data quality scan: resource.type="dataplex.googleapis.com/DataScan" AND jsonPayload.column="CInteger" AND jsonPayload.result="FAILED" Troubleshoot a data quality failure For each job with row-level rules that fail, Knowledge Catalog provides a query to get the failed records.
 - To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to read data from various sources and export results: Read BigQuery table data: bigquery.tables.get on BigQuery tables bigquery.tables.getData on BigQuery tables Export scan results to a BigQuery table: bigquery.datasets.get on results dataset and table bigquery.tables.create on results dataset and table bigquery.tables.get on results dataset and table bigquery.tables.getData on results dataset and table bigquery.tables.update on results dataset and table bigquery.tables.updateData on results dataset and table Scan BigQuery data organized in a Knowledge Catalog lake: dataplex.lakes.list on Dataplex resources dataplex.lakes.get on Dataplex resources dataplex.zones.list on Dataplex resources dataplex.zones.get on Dataplex resources dataplex.entities.list on Dataplex resources dataplex.entities.get on Dataplex resources dataplex.operations.get on Dataplex resources Scan a BigQuery external table from Cloud Storage: storage.buckets.get on the Cloud Storage bucket storage.objects.get on the Cloud Storage bucket Your administrator might also be able to give the Knowledge Catalog service account of the project containing the data quality scan these permissions with custom roles or other predefined roles .
 - Read BigQuery table data: BigQuery Data Viewer ( roles/bigquery.dataViewer ) on BigQuery tables to be scanned and any other tables referenced in rules Export scan results to a BigQuery table: BigQuery Data Editor ( roles/bigquery.dataEditor ) on the results dataset and table Scan BigQuery data organized in a Knowledge Catalog lake: Dataplex Metadata Reader ( roles/dataplex.metadataReader ) on Dataplex resources Dataplex Viewer ( roles/dataplex.viewer ) on Dataplex resources Scan a BigQuery external table from Cloud Storage: Storage Object Viewer ( roles/storage.objectViewer ) on the Cloud Storage bucket For more information about granting roles, see Manage access to projects, folders, and organizations .
+
+### Cloud Dataplex API \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/reference/rest](https://docs.cloud.google.com/dataplex/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- REST Resource: v1.organizations.locations.encryptionConfigs REST Resource: v1.organizations.locations.operations REST Resource: v1.projects.locations REST Resource: v1.projects.locations.aspectTypes REST Resource: v1.projects.locations.dataAttributeBindings REST Resource: v1.projects.locations.dataProducts REST Resource: v1.projects.locations.dataProducts.dataAssets REST Resource: v1.projects.locations.dataScans REST Resource: v1.projects.locations.dataScans.jobs REST Resource: v1.projects.locations.dataTaxonomies REST Resource: v1.projects.locations.dataTaxonomies.attributes REST Resource: v1.projects.locations.entryGroups REST Resource: v1.projects.locations.entryGroups.entries REST Resource: v1.projects.locations.entryGroups.entryLinks REST Resource: v1.projects.locations.entryTypes REST Resource: v1.projects.locations.glossaries REST Resource: v1.projects.locations.glossaries.categories REST Resource: v1.projects.locations.glossaries.terms REST Resource: v1.projects.locations.lakes REST Resource: v1.projects.locations.lakes.actions REST Resource: v1.projects.locations.lakes.environments REST Resource: v1.projects.locations.lakes.tasks REST Resource: v1.projects.locations.lakes.tasks.jobs REST Resource: v1.projects.locations.lakes.zones REST Resource: v1.projects.locations.lakes.zones.actions REST Resource: v1.projects.locations.lakes.zones.assets REST Resource: v1.projects.locations.lakes.zones.assets.actions REST Resource: v1.projects.locations.lakes.zones.entities REST Resource: v1.projects.locations.lakes.zones.entities.partitions REST Resource: v1.projects.locations.metadataFeeds REST Resource: v1.projects.locations.metadataJobs REST Resource: v1.projects.locations.operations Service: dataplex.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects.locations.dataScans Methods create POST /v1/{parent=projects/ /locations/ }/dataScans Creates a DataScan resource. delete DELETE /v1/{name=projects/ /locations/ /dataScans/ } Deletes a DataScan resource. generateDataQualityRules POST /v1/{name=projects/ /locations/ /dataScans/ }:generateDataQualityRules Generates recommended data quality rules based on the results of a data profiling scan. get GET /v1/{name=projects/ /locations/ /dataScans/ } Gets a DataScan resource. getIamPolicy GET /v1/{resource=projects/ /locations/ /dataScans/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ }/dataScans Lists DataScans. patch PATCH /v1/{dataScan.name=projects/ /locations/ /dataScans/ } Updates a DataScan resource. run POST /v1/{name=projects/ /locations/ /dataScans/ }:run Runs an on-demand execution of a DataScan setIamPolicy POST /v1/{resource=projects/ /locations/ /dataScans/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /dataScans/ }:testIamPermissions Returns permissions that a caller has on the specified resource.
+- REST Resource: v1.projects.locations.lakes.tasks Methods create POST /v1/{parent=projects/ /locations/ /lakes/ }/tasks Creates a task resource within a lake. delete DELETE /v1/{name=projects/ /locations/ /lakes/ /tasks/ } Delete the task resource. get GET /v1/{name=projects/ /locations/ /lakes/ /tasks/ } Get task resource. getIamPolicy GET /v1/{resource=projects/ /locations/ /lakes/ /tasks/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ /lakes/ }/tasks Lists tasks under the given lake. patch PATCH /v1/{task.name=projects/ /locations/ /lakes/ /tasks/ } Update the task resource. run POST /v1/{name=projects/ /locations/ /lakes/ /tasks/ }:run Run an on demand execution of a Task. setIamPolicy POST /v1/{resource=projects/ /locations/ /lakes/ /tasks/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /lakes/ /tasks/ }:testIamPermissions Returns permissions that a caller has on the specified resource.
+- REST Resource: v1.projects.locations.lakes Methods create POST /v1/{parent=projects/ /locations/ }/lakes Creates a lake resource. delete DELETE /v1/{name=projects/ /locations/ /lakes/ } Deletes a lake resource. get GET /v1/{name=projects/ /locations/ /lakes/ } Retrieves a lake resource. getIamPolicy GET /v1/{resource=projects/ /locations/ /lakes/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ }/lakes Lists lake resources in a project and location. patch PATCH /v1/{lake.name=projects/ /locations/ /lakes/ } Updates a lake resource. setIamPolicy POST /v1/{resource=projects/ /locations/ /lakes/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /lakes/ }:testIamPermissions Returns permissions that a caller has on the specified resource.
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:22:34.596Z"
+generated_at: "2026-04-12T12:12:49.606Z"
 product_name: "Cloud Translation"
 product_slug: "cloud-translation"
 feature_name: "Additional language support"
 feature_slug: "additional-language-support"
 latest_feature_date: "2022-09-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/translate/docs/advanced/batch-translation"
-  - "https://docs.cloud.google.com/translate/docs/release-notes"
   - "https://docs.cloud.google.com/translate/docs/advanced/glossary"
+  - "https://docs.cloud.google.com/translate/docs/advanced/custom-translations"
+  - "https://docs.cloud.google.com/translate/docs/languages"
 keywords:
   - "additional"
   - "language"
@@ -25,7 +26,7 @@ keywords:
 # Additional language support
 
 Product: Cloud Translation
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,13 +38,14 @@ Cloud Translation supports 24 additional languages for translation.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/translate/docs/advanced/batch-translation](https://docs.cloud.google.com/translate/docs/advanced/batch-translation)
-- [https://docs.cloud.google.com/translate/docs/release-notes](https://docs.cloud.google.com/translate/docs/release-notes)
 - [https://docs.cloud.google.com/translate/docs/advanced/glossary](https://docs.cloud.google.com/translate/docs/advanced/glossary)
+- [https://docs.cloud.google.com/translate/docs/advanced/custom-translations](https://docs.cloud.google.com/translate/docs/advanced/custom-translations)
+- [https://docs.cloud.google.com/translate/docs/languages](https://docs.cloud.google.com/translate/docs/languages)
 
 ## Supporting Pages
 
@@ -51,9 +53,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/translate/docs/advanced/batch-translation](https://docs.cloud.google.com/translate/docs/advanced/batch-translation)
 - Source ID: `site-iam-reference`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 205
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - TranslationServiceClient () Supported file types: https://cloud.google.com/translate/docs/supported-formats gcs source = { "input uri" : input uri } location = "us-central1" input configs element = { "gcs source" : gcs source , "mime type" : "text/plain" , # Can be "text/plain" or "text/html". } gcs destination = { "output uri prefix" : output uri } output config = { "gcs destination" : gcs destination } parent = f "projects/ { project id } /locations/ { location } " model path = "projects/ {} /locations/ {} /models/ {} " . format ( project id , location , model id # The location of AutoML model. ) Supported language codes: https://cloud.google.com/translate/docs/languages models = { "ja" : model path } # takes a target lang as key. operation = client . batch translate text ( request = { "parent" : parent , "source language code" : "en" , "target language codes" : [ "ja" ], # Up to 10 language codes here. "input configs" : [ input configs element ], "output config" : output config , "models" : models , } ) print ( "Waiting for operation to complete..." ) response = operation . result () Display the translation for each input text provided. print ( f "Total Characters: { response . total characters } " ) print ( f "Translated Characters: { response . translated characters } " ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
@@ -61,30 +63,45 @@ Evidence snippets:
 - TranslateTextGlossaryConfig ( glossary = glossary path ) glossaries = { "ja" : glossary config } # target lang as key operation = client . batch translate text ( request = { "parent" : parent , "source language code" : "en" , "target language codes" : target language codes , "input configs" : input configs , "output config" : output config , "models" : models , "glossaries" : glossaries , } ) print ( "Waiting for operation to complete..." ) response = operation . result () Display the translation for each input text provided print ( f "Total Characters: { response . total characters } " ) print ( f "Translated Characters: { response . translated characters } " ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
 - TranslateTextGlossaryConfig ( glossary = glossary path ) glossaries = { "ja" : glossary config } # target lang as key operation = client . batch translate text ( request = { "parent" : parent , "source language code" : "en" , "target language codes" : [ "ja" ], # Up to 10 language codes here. "input configs" : [ input configs element ], "glossaries" : glossaries , "output config" : output config , } ) print ( "Waiting for operation to complete..." ) response = operation . result ( timeout ) print ( f "Total Characters: { response . total characters } " ) print ( f "Translated Characters: { response . translated characters } " ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
 
-### Cloud Translation release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/translate/docs/release-notes](https://docs.cloud.google.com/translate/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- In addition to the features of Cloud Translation API v3beta1, Translation API - Advanced supports: User labels Audit logging Separate quotas for batch translation and for translation using AutoML models Client libraries for additional languages PHP, GO, C#, and Ruby Note: Existing users should pay careful attention to client library versions before updating.
-- October 25, 2017 Change The Neural Machine Translation (NMT) models for the following languages have been updated for improved translation quality: English (en) <-> French (fr) English (en) -> German (de) English (en) -> Spanish (es) For a list of all NMT supported languages, see Language Support for the Neural Machine Translation Model .
-- February 10, 2025 Change Translation LLM now supports translation between any of the supported source/target languages without English having to be either source or target.
-- September 15, 2017 Change The Translation API has added support for 70 new languages in the Neural Machine Translation (NMT) model.
-
 ### "Creating and using glossaries (Advanced) \_|\_ Cloud Translation \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/translate/docs/advanced/glossary](https://docs.cloud.google.com/translate/docs/advanced/glossary)
 - Source ID: `site-iam-reference`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 199
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION /glossaries/ GLOSSARY ID ?update mask=input config&update mask=display name" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID ", "metadata": { "@type": "type.googleapis.com/google.cloud.translation.v3.UpdateGlossaryMetadata", "glossary": { "name": "projects/ PROJECT NUMBER /locations/ LOCATION /glossaries/ GLOSSARY ID ", "languageCodesSet": { "languageCodes": [" LANGUAGE CODE ", ...] }, "inputConfig": { "gcsSource": { "inputUri": "gs:// GLOSSARY FILE PATH " } }, "entryCount": NUMBER OF ENTRIES , "submitTime": "2022-04-22T23:16:30.628806944Z", "endTime": "2022-04-22T23:41:15.115797Z", "displayName": " GLOSSARY ID " }, "state": "RUNNING", "submitTime": "2022-04-22T23:50:24.337964527Z" } } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
 - Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION /glossaries/ GLOSSARY ID /glossaryEntries/ GLOSSARY ENTRY ID " Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ PROJECT NUMBER /locations/ LOCATION /glossaries/ GLOSSARY ID /glossaryEntries/ GLOSSARY ENTRY ID ", "termsSet": { "terms": [ { "languageCode": " LANGUAGE CODE ", "text": " TERM " }, ... ] }, "description": " DESCRIPTION " } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
 - Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION /glossaries/ GLOSSARY ID /glossaryEntries" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ PROJECT NUMBER /locations/ LOCATION /glossaries/ GLOSSARY ID /glossaryEntries/ GLOSSARY ENTRY ID ", "termsSet": { "terms": [ { "languageCode": " LANGUAGE CODE ", "text": " TERM " }, ... ] }, "description": " DESCRIPTION " } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
 - Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method GET -Headers $headers -Uri "https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION /glossaries/ GLOSSARY ID /glossaryEntries" Select-Object -Expand Content You should receive a JSON response similar to the following: { "glossaryEntries": [ { "name": "projects/ PROJECT NUMBER /locations/ LOCATION /glossaries/ GLOSSARY ID /glossaryEntries/ GLOSSARY ENTRY ID ", "termsSet": { "terms": [ { "languageCode": " LANGUAGE CODE ", "text": " TERM " }, ... ] }, "description": " DESCRIPTION " }, ... ] } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
+
+### "Custom translations overview \_|\_ Cloud Translation \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/translate/docs/advanced/custom-translations](https://docs.cloud.google.com/translate/docs/advanced/custom-translations)
+- Source ID: `site-iam-reference`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Custom translations overview The default Google Neural Machine Translation (NMT) model covers a wide range of languages and works well for general-purpose text.
+- TSV For tab-separated files, each row has the following format: Source segment tab Translated segment Don't include a header row with language codes to identify the source and target languages.
+- Cloud Translation supports input files in a format based on TMX version 1.4 .
+- For language support, see Supported languages .
+
+### Language support \_|\_ Cloud Translation \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/translate/docs/languages](https://docs.cloud.google.com/translate/docs/languages)
+- Source ID: `site-docs-root`
+- Final score: 184
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Language name Language code Official Support Experimental Support Afrikaans af ✅ Albanian sq ✅ Amharic am ⚠️ Experimental support Arabic (Saudi Arabia) ar-SA ✅ Arabic ar ✅ Armenian hy ⚠️ Experimental support Azerbaijani az ✅ Basque eu ⚠️ Experimental support Belarusian be ✅ Bengali (India) bn-IN ✅ Bengali bn ✅ Bosnian (Cyrillic) bs-Cyrl ✅ Bosnian bs ✅ Bulgarian bg ✅ Burmese my ✅ Catalan ca ✅ Chinese (China) zh-CN ✅ Chinese (Hong Kong) zh-HK ✅ Chinese (Simplified) zh-Hans ✅ Chinese (Taiwan) zh-TW ✅ Chinese (Traditional) zh-Hant ✅ Chinese zh ✅ Croatian hr ✅ Czech cs ✅ Danish da ✅ Dutch (Belgium) nl-BE ✅ Dutch nl ✅ English (Australia) en-AU ✅ English (Canada) en-CA ✅ English (New Zealand) en-NZ ✅ English (Philippines) en-PH ✅ English (South Africa) en-ZA ✅ English (United Kingdom) en-GB ✅ English (United States) en-US ✅ English en ✅ Estonian et ✅ Filipino fil ✅ Finnish fi ✅ French (Canada) fr-CA ✅ French (Switzerland) fr-CH ✅ French fr ✅ Frisian fy ✅ Galician gl ✅ Georgian ka ✅ German de ✅ Greek el ✅ Guarani gn ✅ Gujarati gu ✅ Hausa ha ⚠️ Experimental support Hebrew he ✅ Hebrew iw ✅ Hindi hi ✅ Hungarian hu ✅ Icelandic is ✅ Igbo ig ⚠️ Experimental support Indonesian id ✅ Irish ga ⚠️ Experimental support Italian it ✅ Japanese ja ✅ Kannada kn ✅ Khmer km ✅ Korean ko ✅ Kyrgyz ky ✅ Lao lo ✅ Latvian lv ✅ Lingala ln ✅ Lithuanian lt ✅ Luxembourgish lb ⚠️ Experimental support Macedonian mk ✅ Malay ms ✅ Malayalam ml ✅ Maltese mt ⚠️ Experimental support Marathi mr ✅ Mongolian mn ⚠️ Experimental support Nepali ne ✅ Norwegian Bokmal nb ✅ Norwegian no ✅ Odia or ⚠️ Experimental support Persian fa ✅ Polish pl ✅ Portuguese (Brazil) pt-BR ✅ Portuguese (Portugal) pt-PT ✅ Portuguese pt ✅ Punjabi (Pakistan) pa-PK ✅ Punjabi pa ✅ Romanian ro ✅ Russian ru ✅ Scots Gaelic gd ⚠️ Experimental support Serbian sr ⚠️ Experimental support Slovak sk ✅ Slovenian sl ✅ Somali so ⚠️ Experimental support Spanish (Argentina) es-AR ✅ Spanish (Chile) es-CL ✅ Spanish (Colombia) es-CO ✅ Spanish (Costa Rica) es-CR ✅ Spanish (Ecuador) es-EC ✅ Spanish (El Salvador) es-SV ✅ Spanish (Guatemala) es-GT ✅ Spanish (Haiti) es-HT ✅ Spanish (Honduras) es-HN ✅ Spanish (Latin America) es-419 ✅ Spanish (Mexico) es-MX ✅ Spanish (Nicaragua) es-NI ✅ Spanish (Panama) es-PA ✅ Spanish (Paraguay) es-PY ✅ Spanish (Peru) es-PE ✅ Spanish (Puerto Rico) es-PR ✅ Spanish (Spain) es-ES ✅ Spanish (United States) es-US ✅ Spanish (Uruguay) es-UY ✅ Spanish (Venezuela) es-VE ✅ Spanish es ✅ Swahili sw ✅ Swedish sv ✅ Tagalog tl ✅ Tajik tg ⚠️ Experimental support Tamil ta ✅ Telugu te ✅ Thai th ✅ Turkish tr ✅ Ukrainian uk ✅ Urdu ur ✅ Uzbek uz ✅ Vietnamese vi ✅ Welsh cy ✅ Zulu zu ✅ Neural Machine Translation model The Translation API's recognition engine supports a wide variety of languages for the Neural Machine Translation (NMT) model.
+- Language ISO-639 code Romanization Transliteration Arabic ar Amharic am Bengali bn Belarusian be Gujarati gu Hindi hi Japanese ja Kannada kn Myanmar my Russian ru Serbian sr Tamil ta Telugu te Ukrainian uk Custom models For Cloud Translation - Advanced, AutoML Translation supports the following language pairs for custom models.
+- Languages supported by Translation LLM are also supported for Adaptive Translation.
+- A supported language means that Google has an existing Neural Machine Translation (NMT) model for that language, which AutoML Translation uses as a base to create a custom model during training.
 

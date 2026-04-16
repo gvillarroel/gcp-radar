@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.402Z"
+generated_at: "2026-04-15T12:06:50.449Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Thinking level configuration"
@@ -9,8 +9,9 @@ latest_feature_date: "2026-01-19"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings"
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment"
 keywords:
   - "thinking"
   - "level"
@@ -18,8 +19,8 @@ keywords:
   - "lets"
   - "you"
   - "adjust"
-  - "the"
   - "reasoning"
+  - "depth"
 ---
 
 # Thinking level configuration
@@ -37,34 +38,42 @@ Lets you adjust the reasoning depth for supported Gemini models.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings)
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment)
 
 ## Supporting Pages
 
-### Configure your Google Cloud project for Mainframe Assessment Tool | Google Cloud Documentation
+### Configure settings \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings)
+- Source ID: `site-docs-reference`
+- Final score: 107
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can configure Mainframe Assessment Tool to use a different model from the following available options: Gemini 3.1 Pro ( Preview ) Gemini 3 Flash ( Preview ) Gemini 2.5 Flash-Lite Gemini 2.5 Flash Gemini 2.5 Pro For models that support Thinking level configuration, Thinking level can be selected on the Thinking level drop-down.
+- Configure default AI features for new assessments Mainframe Assessment Tool lets you customize the default parameters for AI insights in your assessments.
+- To generate paragraph-level summaries for COBOL code, select Detailed summaries .
+- For more information, see Request a quota adjustment .
+
+### "Configure your Google Cloud project for Mainframe Assessment Tool \_|\_\
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- Source ID: `site-docs-root`
-- Final score: 47
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference`
+- Final score: 56
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- Configure your Google Cloud project for Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project This page describes the process to set up and configure your Google Cloud project to work with Mainframe Assessment Tool.
+### "Configure your Google Cloud project for Mainframe Assessment Tool \_|\_\
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 35
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/prepare-for-assessment)
+- Source ID: `site-docs-reference`
+- Final score: 56
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

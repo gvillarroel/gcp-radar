@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:28:07.835Z"
+generated_at: "2026-04-12T12:12:50.389Z"
 product_name: "Cloud Vision API Product Search"
 product_slug: "cloud-vision-api-product-search"
 feature_name: "general-v1 product category support"
 feature_slug: "general-v1-product-category-support"
 latest_feature_date: "2019-09-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/vision/product-search/docs/searching"
   - "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products"
   - "https://docs.cloud.google.com/vision/product-search/docs/product-categories"
+  - "https://docs.cloud.google.com/vision/product-search/docs/csv-format"
 keywords:
   - "general"
   - "v1"
@@ -26,7 +27,7 @@ keywords:
 # general-v1 product category support
 
 Product: Cloud Vision API Product Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Product Search supports the general-v1 product category for general retail use c
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/vision/product-search/docs/searching](https://docs.cloud.google.com/vision/product-search/docs/searching)
 - [https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products](https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products)
 - [https://docs.cloud.google.com/vision/product-search/docs/product-categories](https://docs.cloud.google.com/vision/product-search/docs/product-categories)
+- [https://docs.cloud.google.com/vision/product-search/docs/csv-format](https://docs.cloud.google.com/vision/product-search/docs/csv-format)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/vision/product-search/docs/searching](https://docs.cloud.google.com/vision/product-search/docs/searching)
 - Source ID: `site-docs-root`
-- Final score: 234
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 290
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Response { "responses": [ { "productSearchResults" : { "indexTime": "2019-09-04T21:03:35.662099907Z", "results": [ { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id65 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.38946953, "image": "projects/ project-id /locations/ location-id /products/product id65/referenceImages/ image65 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id35 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.3847863, "image": "projects/ project-id /locations/ location-id /products/product id35/referenceImages/ image35 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id34 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.33896044, "image": "projects/ project-id /locations/ location-id /products/product id34/referenceImages/ image34 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id62 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.32509044, "image": "projects/ project-id /locations/ location-id /products/product id62/referenceImages/ image62 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id32 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.3237155, "image": "projects/ project-id /locations/ location-id /products/product id32/referenceImages/image32" } ], "productGroupedResults" : [ { "boundingPoly": { "normalizedVertices": [ { "x": 0.00458825, "y": 0.11000001 }, { "x": 0.988353, "y": 0.11000001 }, { "x": 0.988353, "y": 0.9290588 }, { "x": 0.00458825, "y": 0.9290588 } ] }, "results": [ { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id65 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.41785678, "image": "projects/ project-id /locations/ location-id /products/product id65/referenceImages/ image65 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id35 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.3803885, "image": "projects/ project-id /locations/ location-id /products/product id35/referenceImages/ image35 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id34 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.36055994, "image": "projects/ project-id /locations/ location-id /products/product id34/referenceImages/ image34 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id93 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "shoe" }, { "key": "kids", "value": "true" } ] }, "score": 0.33286288, "image": "projects/ project-id /locations/ location-id /products/product id93/referenceImages/ image93 " }, { "product": { "name": "projects/ project-id /locations/ location-id /products/ product id62 ", "displayName": " ", "productCategory": "apparel", "productLabels": [ { "key": "style", "value": "women" }, { "key": "category", "value": "dress" } ] }, "score": 0.32263064, "image": "projects/ project-id /locations/ location-id /products/product id62/referenceImages/ image62 " } ], "objectAnnotations": [ { "mid": "/m/01d40f", "name": "Dress", "score": 0.95488 } ] } ] } } ] } Go To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products](https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products)
 - Source ID: `site-docs-root`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 279
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Change the following values in the request JSON to match your project's information: PROJECT ID LOCATION ID PRODUCT SET ID search request.json { "requests": [ { "image": { "source": { "gcsImageUri": "gs://cloud-ai-vision-data/product-search-tutorial/images/468f782e70ba11e8941fd20059124800.jpg" } }, "features": [ { "type": "PRODUCT SEARCH" } ], "imageContext": { "productSearchParams": { "productSet": "projects/ PROJECT ID /locations/ LOCATION ID /productSets/ PRODUCT SET ID ", "productCategories": [ "apparel-v2" ], "filter": "style=womens OR style=women" } } } ] } After creating the request JSON file, send the request: curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "x-goog-user-project: PROJECT ID " \ -H "Content-Type: application/json; charset=utf-8" \ -d @search request.json \ https://vision.googleapis.com/v1/images:annotate A successful request returns a list of matching products, indicated by their product ID.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision/product-search/docs/product-categories](https://docs.cloud.google.com/vision/product-search/docs/product-categories)
 - Source ID: `site-docs-root`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 254
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Vision API Product Search then detects and maps the appropriate product category to the product for you.
 - General general-v1 N/A This classification allows you a more generalized category option for products.
 - For better scalability and the same functionality as Product Search, use the Vision Warehouse .
 - Product Category productCategory productCategory (legacy/deprecated) Description Home goods homegoods-v2 homegoods Home goods are products you find around the house: appliances, furniture, furnishings, etc.
+
+### "Formatting a bulk import CSV \_|\_ Vision API Product Search \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/vision/product-search/docs/csv-format](https://docs.cloud.google.com/vision/product-search/docs/csv-format)
+- Source ID: `site-docs-root`
+- Final score: 251
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If a product-id already exists on bulk import then product-category , product-display , and labels are ignored for that line entry. product-category : Allowed values are homegoods-v2 , apparel-v2 , toys-v2 , packagedgoods-v1 , and general-v1 ; the category for the product identified by the reference image.
+- Thus, you could express bounding boxes in 1000 pixel by 1000 pixel images in the following way: gs://example-reference-images/10001-001/10001-001 A.jpg,img001,sample-set-summer,sample-product-123,tan summer bag,apparel-v2,"style=womens,color=tan",100,150,450,150,450,550,100,550 gs://example-reference-images/10001-001/10001-001 A.jpg,img001,sample-set-summer,sample-product-456,blue summer bag,apparel-v2,"style=womens,color=blue",670,790,980,790,980,920,670,920 gs://example-reference-images/10002-002/10002-002 B.jpg,img002,sample-set-summer,sample-product-123,apparel-v2,,, Note: You can use Vision API's Object Localizer feature to get bounding box coordinates for generalized objects in images.
+- Legacy productCategory codes: Legacy categories ( homegoods , apparel , and toys ) are still supported, but the updated -v2 categories should be used for new products. product-display-name : Optional .
+- For example: "category=shoes" "color=black,style=formal" Vision API Product Search also allows you to provide multiple values for a single key.
 

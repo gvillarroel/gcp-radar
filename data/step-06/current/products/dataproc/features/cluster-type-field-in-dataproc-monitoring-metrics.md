@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.054Z"
+generated_at: "2026-04-14T00:23:22.614Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "cluster_type field in Dataproc monitoring metrics"
 feature_slug: "cluster-type-field-in-dataproc-monitoring-metrics"
 latest_feature_date: "2022-02-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
-  - "https://docs.cloud.google.com/dataproc-metastore/docs/monitoring"
-  - "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics"
+  - "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
 keywords:
   - "cluster"
   - "type"
   - "field"
-  - "in"
   - "dataproc"
   - "monitoring"
   - "metrics"
   - "job"
+  - "operation"
 ---
 
 # cluster_type field in Dataproc monitoring metrics
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Dataproc job and operation metrics in Cloud Monitoring include a cluster_type fi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig)
-- [https://docs.cloud.google.com/dataproc-metastore/docs/monitoring](https://docs.cloud.google.com/dataproc-metastore/docs/monitoring)
-- [https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster](https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster)
+- [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics)
+- [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient)
 
 ## Supporting Pages
 
@@ -52,41 +52,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig)
 - Source ID: `site-docs-reference`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 175
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - JSON representation { "clusterType" : enum ( ClusterType ) , "clusterTier" : enum ( ClusterTier ) , "configBucket" : string , "tempBucket" : string , "gceClusterConfig" : { object ( GceClusterConfig ) } , "masterConfig" : { object ( InstanceGroupConfig ) } , "workerConfig" : { object ( InstanceGroupConfig ) } , "secondaryWorkerConfig" : { object ( InstanceGroupConfig ) } , "softwareConfig" : { object ( SoftwareConfig ) } , "initializationActions" : [ { object ( NodeInitializationAction ) } ] , "encryptionConfig" : { object ( EncryptionConfig ) } , "autoscalingConfig" : { object ( AutoscalingConfig ) } , "securityConfig" : { object ( SecurityConfig ) } , "lifecycleConfig" : { object ( LifecycleConfig ) } , "endpointConfig" : { object ( EndpointConfig ) } , "metastoreConfig" : { object ( MetastoreConfig ) } , "dataprocMetricConfig" : { object ( DataprocMetricConfig ) } , "auxiliaryNodeGroups" : [ { object ( AuxiliaryNodeGroup ) } ] } Fields clusterType enum ( ClusterType ) Optional.
 - JSON representation ClusterType ClusterTier GceClusterConfig JSON representation PrivateIpv6GoogleAccess ReservationAffinity JSON representation Type NodeGroupAffinity JSON representation ShieldedInstanceConfig JSON representation ConfidentialInstanceConfig JSON representation SoftwareConfig JSON representation Component NodeInitializationAction JSON representation EncryptionConfig JSON representation AutoscalingConfig JSON representation SecurityConfig JSON representation KerberosConfig JSON representation IdentityConfig JSON representation LifecycleConfig JSON representation EndpointConfig JSON representation DataprocMetricConfig JSON representation Metric JSON representation MetricSource AuxiliaryNodeGroup JSON representation The cluster config.
-- When this key resource name is provided, the following job arguments of the following job types submitted to the cluster are encrypted using CMEK: FlinkJob args HadoopJob args SparkJob args SparkRJob args PySparkJob args SparkSqlJob scriptVariables and queryList.queries HiveJob scriptVariables and queryList.queries PigJob scriptVariables and queryList.queries PrestoJob scriptVariables and queryList.queries AutoscalingConfig Autoscaling Policy config associated with the cluster.
 - If this source is enabled, Dataproc enables the monitoring agent in Compute Engine, and collects monitoring agent metrics, which are published with an agent.googleapis.com prefix.
+- JSON representation { "idleDeleteTtl" : string , "idleStopTtl" : string , "idleStartTime" : string , // Union field ttl can be only one of the following: "autoDeleteTime" : string , "autoDeleteTtl" : string // End of list of possible types for union field ttl . // Union field stop ttl can be only one of the following: "autoStopTime" : string , "autoStopTtl" : string // End of list of possible types for union field stop ttl . } Fields idleDeleteTtl string ( Duration format) Optional.
 
-### Cloud Monitoring \_|\_ Dataproc Metastore \_|\_ Google Cloud Documentation
+### Managed Service for Apache Spark metrics \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/monitoring](https://docs.cloud.google.com/dataproc-metastore/docs/monitoring)
-- Source ID: `site-docs-root-2`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Console In the Google Cloud console, go to the Cloud Monitoring > Metrics explorer page: Go to the Metrics explorer page From the "Find resource type and metric" drop-down list, select the resource Dataproc Metastore Service .
-- Use Monitoring alerts You can create a Monitoring alert that notifies you when a Dataproc Metastore service or job metric crosses a specified threshold.
-- Build a custom Monitoring dashboard You can build a custom Monitoring dashboard that displays charts of selected Dataproc Metastore service metrics.
-- Access service metrics in Monitoring Dataproc Metastore service resource metrics are automatically enabled on Dataproc Metastore services.
-
-### "Run a Spark job on Google Kubernetes Engine \_|\_ Managed Service for Apache\
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster](https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster)
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json ` -Uri "https://dataproc.googleapis.com/v1/projects/ project-id /regions/ region /clusters" Select-Object -Expand Content You should receive a JSON response similar to the following: { "projectId":" PROJECT ", "clusterName":" DP CLUSTER ", "status":{ "state":"RUNNING", "stateStartTime":"2022-04-01T19:16:39.865716Z" }, "clusterUuid":"98060b77-...", "statusHistory":[ { "state":"CREATING", "stateStartTime":"2022-04-01T19:14:27.340544Z" } ], "labels":{ "goog-dataproc-cluster-name":" DP CLUSTER ", "goog-dataproc-cluster-uuid":"98060b77-...", "goog-dataproc-location":" REGION ", "goog-dataproc-environment":"prod" }, "virtualClusterConfig":{ "stagingBucket":" BUCKET ", "kubernetesClusterConfig":{ "kubernetesNamespace":"dp-cluster", "gkeClusterConfig":{ "gkeClusterTarget":"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER ", "nodePoolTarget":[ { "nodePool":"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER /nodePools/ NODE POOL ", "roles":[ "DEFAULT" ] } ] }, "kubernetesSoftwareConfig":{ "componentVersion":{ "SPARK":"3.1-..." }, "properties":{ "dpgke:dpgke.unstable.outputOnly.endpoints.sparkHistoryServer":"https://...", "spark:spark.eventLog.dir":"gs:// BUCKET /.../spark-job-history", "spark:spark.eventLog.enabled":"true" } } }, "auxiliaryServicesConfig":{ "sparkHistoryServerConfig":{ "dataprocCluster":"projects/ PROJECT /regions/ REGION /clusters/ PHS CLUSTER " } } } Submit a Spark job After your Managed Service for Apache Spark on GKE virtual cluster is running, submit a Spark job using the Google Cloud console, gcloud CLI , or the Managed Service for Apache Spark jobs.submit API (by using direct HTTP requests or the Cloud Client Libraries ).
-- Note: In the following examples, the job jars are pre-installed and run "locally" on the Managed Service for Apache Spark virtual cluster. gcloud CLI Spark job example: gcloud dataproc jobs submit spark \ --region=${REGION} \ --cluster=${DP CLUSTER} \ --class=org.apache.spark.examples.SparkPi \ --jars=local:///usr/lib/spark/examples/jars/spark-examples.jar \ -- 1000 gcloud CLI PySpark job example: gcloud dataproc jobs submit pyspark \ --region=${REGION} \ --cluster=${DP CLUSTER} \ local:///usr/lib/spark/examples/src/main/python/pi.py \ -- 10 gcloud CLI SparkR job example: gcloud dataproc jobs submit spark-r \ --region=${REGION} \ --cluster=${DP CLUSTER} \ local:///usr/lib/spark/examples/src/main/r/dataframe.R Clean up Delete any of the following resources used in this quickstart that you do not want to continue to use.
-- Save the request body in a file named request.json , and execute the following command: curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://dataproc.googleapis.com/v1/projects/ project-id /regions/ region /clusters" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .
-- HTTP method and URL: POST https://dataproc.googleapis.com/v1/projects/ project-id /regions/ region /clusters Request JSON body: { "clusterName":" DP CLUSTER ", "projectId":" PROJECT ", "virtualClusterConfig":{ "auxiliaryServicesConfig":{ "sparkHistoryServerConfig":{ "dataprocCluster":"projects/ PROJECT /regions/ REGION /clusters/ PHS CLUSTER " } }, "kubernetesClusterConfig":{ "gkeClusterConfig":{ "gkeClusterTarget":"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER ", "nodePoolTarget":[ { "nodePool":"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER /nodePools/ NODE POOL ", "roles":[ "DEFAULT" ] } ] }, "kubernetesSoftwareConfig":{ "componentVersion":{ "SPARK":"latest" } } }, "stagingBucket":" BUCKET " } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Managed Service for Apache Spark resource metric collection Cloud Monitoring collects metrics related to the following Managed Service for Apache Spark resources: Cloud Dataproc Cluster Cloud Dataproc Job Cloud Dataproc Batch Cloud Dataproc Session Managed Service for Apache Spark resource metrics are collected in the following format: dataproc.googleapis.com/ RESOURCE / METRIC , and include the collection of several OSS metrics.
+- Google Cloud Observability collects and ingests metrics, events, and metadata from Managed Service for Apache Spark clusters, including per-cluster HDFS, YARN, job, and operation metrics, to generate insights via dashboards and charts (see Cloud Monitoring Managed Service for Apache Spark metrics ).
+- Disk agent.googleapis.com/disk/bytes used agent.googleapis.com/disk/io time agent.googleapis.com/disk/merged operations agent.googleapis.com/disk/operation count agent.googleapis.com/disk/operation time agent.googleapis.com/disk/pending operations agent.googleapis.com/disk/percent used agent.googleapis.com/disk/read bytes count Swap agent.googleapis.com/swap/bytes used agent.googleapis.com/swap/io agent.googleapis.com/swap/percent used Memory agent.googleapis.com/memory/bytes used agent.googleapis.com/memory/percent used Processes - Some attributes follow unique quota policies . agent.googleapis.com/processes/count by state agent.googleapis.com/processes/cpu time agent.googleapis.com/processes/disk/read bytes count agent.googleapis.com/processes/disk/write bytes count agent.googleapis.com/processes/fork count agent.googleapis.com/processes/rss usage agent.googleapis.com/processes/vm usage Interface agent.googleapis.com/interface/errors agent.googleapis.com/interface/packets agent.googleapis.com/interface/traffic Network agent.googleapis.com/network/tcp connections Build a Monitoring dashboard You can build a Monitoring dashboard that displays charts of selected Managed Service for Apache Spark metrics.
+- Enable custom metric collection You can use the gcloud CLI or the Dataproc API to enable the collection of custom metrics from one or more metric sources. gcloud CLI Custom metric collection Use the gcloud dataproc clusters create --metric-sources flag to enable the collection of custom metrics from one or more metric sources. gcloud dataproc clusters create cluster-name \ --metric-sources= METRIC SOURCE(s) \ ... other flags Notes: --metric-sources : Required to enable custom metric collection.
+
+### "Class ClusterControllerAsyncClient (5.26.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 155
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- UpdateClusterRequest ( project id="project id value", region="region value", cluster name="cluster name value", cluster=cluster, ) Make the request operation = client. update cluster (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.UpdateClusterRequest , dict]] The request object.
+- DiagnoseClusterRequest ( project id="project id value", region="region value", cluster name="cluster name value", ) Make the request operation = client. diagnose cluster (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.DiagnoseClusterRequest , dict]] The request object.
+- DeleteClusterRequest ( project id="project id value", region="region value", cluster name="cluster name value", ) Make the request operation = client. delete cluster (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.DeleteClusterRequest , dict]] The request object.
+- StartClusterRequest ( project id="project id value", region="region value", cluster name="cluster name value", ) Make the request operation = client. start cluster (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.StartClusterRequest , dict]] The request object.
 

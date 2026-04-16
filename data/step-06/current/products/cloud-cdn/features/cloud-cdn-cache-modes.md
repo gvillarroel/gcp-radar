@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:27:19.901Z"
+generated_at: "2026-04-14T14:23:30.367Z"
 product_name: "Cloud CDN"
 product_slug: "cloud-cdn"
 feature_name: "Cloud CDN cache modes"
 feature_slug: "cloud-cdn-cache-modes"
 latest_feature_date: "2020-09-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/cdn/docs/using-cache-modes"
-  - "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
-  - "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+  - "https://docs.cloud.google.com/cdn/docs/caching"
+  - "https://docs.cloud.google.com/cdn/docs/dynamic-compression"
 keywords:
-  - "cdn"
-  - "cache"
-  - "modes"
+  - "automatically"
   - "introduces"
-  - "for"
+  - "common"
+  - "modes"
   - "backend"
   - "buckets"
-  - "and"
+  - "cache"
 ---
 
 # Cloud CDN cache modes
 
 Product: Cloud CDN
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +37,21 @@ Cloud CDN introduces cache modes for backend buckets and backend services to aut
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/cdn/docs/using-cache-modes](https://docs.cloud.google.com/cdn/docs/using-cache-modes)
-- [https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring](https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring)
-- [https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket](https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket)
+- [https://docs.cloud.google.com/cdn/docs/caching](https://docs.cloud.google.com/cdn/docs/caching)
+- [https://docs.cloud.google.com/cdn/docs/dynamic-compression](https://docs.cloud.google.com/cdn/docs/dynamic-compression)
 
 ## Supporting Pages
 
 ### Change cache modes \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/cdn/docs/using-cache-modes](https://docs.cloud.google.com/cdn/docs/using-cache-modes)
-- Source ID: `site-docs-root`
-- Final score: 218
+- Source ID: `site-docs-reference-2`
+- Final score: 214
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -62,31 +61,31 @@ Evidence snippets:
 - Setting the cache mode To configure cache modes for a Cloud CDN-enabled backend, do the following: Console In the Google Cloud console, go to the Load Balancing page.
 - Home Documentation Networking Cloud CDN Guides Send feedback Change cache modes Stay organized with collections Save and categorize content based on your preferences.
 
-### "Logs and metrics for backend services \_|\_ Cloud CDN \_|\_ Google Cloud\
+### Caching overview \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring](https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring)
-- Source ID: `site-docs-root-2`
-- Final score: 186
+- URL: [https://docs.cloud.google.com/cdn/docs/caching](https://docs.cloud.google.com/cdn/docs/caching)
+- Source ID: `site-docs-reference-2`
+- Final score: 166
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Multiple queries are sent to the same backend for different chunks of data to support a single client request. proxy continent Continent of the HTTP(S) GFE that terminated the HTTP(S) connection—for example, America , Europe , Asia protocol Protocol used by the client, one of HTTP/1.0 , HTTP/1.1 , HTTP/2.0 , QUIC/HTTP/2.0 , UNKNOWN . response code The HTTP status code of the request. response code class The HTTP status code class of the request: 200 , 300 , 400 , 500 or 0 for none. cache result Cache result for serving HTTP request by proxy: HIT , MISS , DISABLED , PARTIAL HIT (for a request served partially from cache and partially from backend), or UNKNOWN . client country Country of the client that issued the HTTP request—for example, United States or Germany . load balancing scheme The load balancing scheme used.
-- Home Documentation Networking Cloud CDN Guides Send feedback Logs and metrics for backend services Stay organized with collections Save and categorize content based on your preferences.
-- 2 XX byte range caching forwarded backend response The load balancer previously received a response indicating that the resource was cacheable and supported byte ranges.
-- This can happen when Cloud CDN has served the request partially from its cache and has also sent one or more byte range requests to the backend.
+- Use one of the following API calls: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets/ BACKEND BUCKET POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/ BACKEND SERVICE Add the following snippet to the JSON request body: "cdnPolicy": { "fields": "bypassCacheOnRequestHeaders" } What's next To understand how cache modes make it easier to cache content, see Using cache modes .
+- For backend services, use the gcloud compute backend-services create or gcloud compute backend-services update command with the --bypass-cache-on-request-headers flag. gcloud compute backend-buckets (create update) BACKEND BUCKET NAME --bypass-cache-on-request-headers= BYPASS REQUEST HEADER gcloud compute backend-services (create update) BACKEND SERVICE NAME --bypass-cache-on-request-headers= BYPASS REQUEST HEADER For example: gcloud compute backend-services update my-backend-service --bypass-cache-on-request-headers=Pragma --bypass-cache-on-request-headers=Authorization API For backend buckets, use the Method: backendBuckets.insert , Method: backendBuckets.update , or Method: backendBuckets.patch API call.
+- For example: PATCH https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets Add the following snippet to the JSON request body: "cdnPolicy": { "bypassCacheOnRequestHeaders": [ { "headerName": string } ] } Disable cache bypass gcloud For backend buckets, use the gcloud compute backend-buckets create or gcloud compute backend-buckets update command with the --no-bypass-cache-on-request-headers flag.
+- For backend services, use the gcloud compute backend-services create or gcloud compute backend-services update command with the --no-bypass-cache-on-request-headers flag. gcloud compute backend-services (create update) ( BACKEND SERVICE NAME BACKEND BUCKET NAME ) --no-bypass-cache-on-request-headers API For backend buckets, use the Method: backendBuckets.insert or Method: backendBuckets.update API call.
 
-### Set up a backend bucket \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
+### Enable dynamic compression \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket](https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket)
-- Source ID: `site-docs-root`
-- Final score: 178
+- URL: [https://docs.cloud.google.com/cdn/docs/dynamic-compression](https://docs.cloud.google.com/cdn/docs/dynamic-compression)
+- Source ID: `site-docs-reference-2`
+- Final score: 132
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Cloud CDN controls include, for example, cache modes, signed URLs, and invalidation.
-- For an classic Application Load Balancer, use load-balancing-scheme=EXTERNAL . gcloud compute forwarding-rules create http-lb-forwarding-rule \ --load-balancing-scheme= LOAD BALANCING SCHEME \ --network-tier=PREMIUM \ --address=example-ip \ --global \ --target-http-proxy=http-lb-proxy \ --ports=80 Terraform Configure the backend To configure the backend, use the google compute backend bucket resource . backend bucket with CDN policy with default ttl settings resource "google compute backend bucket" "default" { name = "cat-backend-bucket" description = "Contains beautiful images" bucket name = google storage bucket.default.name enable cdn = true cdn policy { cache mode = "CACHE ALL STATIC" client ttl = 3600 default ttl = 3600 max ttl = 86400 negative caching = true serve while stale = 86400 } } Configure the URL map To configure the backend, use the google compute url map resource . url map resource "google compute url map" "default" { name = "http-lb" default service = google compute backend bucket.default.id } Configure the target proxy To configure the target proxy, use the google compute target http proxy resource or the google compute target https proxy resource . http proxy resource "google compute target http proxy" "default" { name = "http-lb-proxy" url map = google compute url map.default.id } Configure the forwarding rule To configure the forwarding rule, use the google compute global forwarding rule resource . forwarding rule resource "google compute global forwarding rule" "default" { name = "http-lb-forwarding-rule" ip protocol = "TCP" load balancing scheme = "EXTERNAL" port range = "80" target = google compute target http proxy.default.id ip address = google compute global address.default.id } For a global external Application Load Balancer, use with load balancing scheme="EXTERNAL MANAGED" .
-- The example uses the following resources: The default Virtual Private Cloud (VPC) network A default URL map A reserved external IP address A Cloud Storage bucket as the backend A single load balancer backend bucket that acts as a wrapper around the Cloud Storage bucket A backend bucket supports the following: Cloud Storage buckets of any storage class , including multi-region buckets Cloud CDN policies for caching content at Google's global edge To learn how Cloud CDN works, see the Cloud CDN overview .
-- It's referred to as IP ADDRESS . gcloud Configure the backend gcloud compute backend-buckets create cat-backend-bucket \ --gcs-bucket-name= BUCKET NAME \ --enable-cdn \ --cache-mode= CACHE MODE Set the cache mode by replacing CACHE MODE with one of the following: CACHE ALL STATIC or USE ORIGIN HEADERS : Uses the headers set according to cache control metadata in Cloud Storage.
+- For a new backend service, use the create command: gcloud compute backend-services create BACKEND SERVICE NAME \ --compression-mode=AUTOMATIC For an existing backend service, use the update command: gcloud compute backend-services update BACKEND SERVICE NAME \ --compression-mode=AUTOMATIC For a new backend bucket, use the create command: gcloud compute backend-buckets create BACKEND BUCKET NAME --compression-mode=AUTOMATIC For an existing backend bucket, use the update command: gcloud compute backend-buckets update BACKEND BUCKET NAME --compression-mode=AUTOMATIC The compression-mode can be one of the following: AUTOMATIC : Automatically uses the best compression based on the Accept-Encoding header sent by the client.
+- Use one of the following commands: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/ BACKEND SERVICE POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets/ BACKEND BUCKET Add the following snippet to the JSON request body: "compressionMode": AUTOMATIC The compression-mode can be one of the following: AUTOMATIC (recommended): Automatically uses the best compression based on the Accept-Encoding header sent by the client.
+- Logging The Cloud CDN logs include a compressionStatus field in the jsonPayload indicating whether the response was compressed by the load balancer as well as the compression type. { insertId: "1c02hw9g3gjay67" jsonPayload: { @type: "type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry" statusDetails: "response sent by backend" cacheId: "IAD-862d661f" compressionStatus: "br" } } Billing When a response is compressed by Cloud CDN or Cloud Load Balancing, the relevant outbound cache data transfer or outbound internet data transfer (respectively) is measured against the final compressed bytes sent to the client.
+- For backend buckets, use the gcloud compute backend-buckets create command or the gcloud compute backend-buckets update command with the --compression-mode flag.
 

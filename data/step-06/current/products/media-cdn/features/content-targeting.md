@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:43.703Z"
+generated_at: "2026-04-12T12:17:51.024Z"
 product_name: "Media CDN"
 product_slug: "media-cdn"
 feature_name: "Content targeting"
@@ -9,8 +9,9 @@ latest_feature_date: "2024-05-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product"
-  - "https://docs.cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheKeysets/list"
+  - "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation"
+  - "https://docs.cloud.google.com/media-cdn/docs/caching"
+  - "https://docs.cloud.google.com/media-cdn/docs/configuration"
   - "https://docs.cloud.google.com/media-cdn/docs/overview"
 keywords:
   - "content"
@@ -38,49 +39,68 @@ Media CDN can cache and deliver assets customized to end-user context using devi
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product](https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product)
-- [https://docs.cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheKeysets/list](https://docs.cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheKeysets/list)
+- [https://docs.cloud.google.com/media-cdn/docs/cache-invalidation](https://docs.cloud.google.com/media-cdn/docs/cache-invalidation)
+- [https://docs.cloud.google.com/media-cdn/docs/caching](https://docs.cloud.google.com/media-cdn/docs/caching)
+- [https://docs.cloud.google.com/media-cdn/docs/configuration](https://docs.cloud.google.com/media-cdn/docs/configuration)
 - [https://docs.cloud.google.com/media-cdn/docs/overview](https://docs.cloud.google.com/media-cdn/docs/overview)
 
 ## Supporting Pages
 
-### Choose a CDN product | Media CDN | Google Cloud Documentation
+### Invalidate cached content \_|\_ Media CDN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product](https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product)
+- URL: [https://docs.cloud.google.com/media-cdn/docs/cache-invalidation](https://docs.cloud.google.com/media-cdn/docs/cache-invalidation)
 - Source ID: `site-docs-root`
-- Final score: 136
+- Final score: 251
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Choose a CDN product Media CDN Google Cloud Documentation Source URL: https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product Cloud CDN is optimized for serving a mix of static and dynamic latency-sensitive web assets, such as CSS, JavaScript, HTML, and image files.
-- Media CDN is Google Cloud&#x27;s media delivery CDN platform that complements Cloud CDN.
+- Media CDN supports multiple ways of selecting content to be invalidated, as follows: Host and URL path URL prefix (wildcard) Cache tags, including built-in tags for status , origin , and content-type You can combine these invalidation parameters to target specific cached responses and minimize origin load on the subsequent cache fill.
+- Click Invalidate and then click Confirm to indicate that you want Media CDN to invalidate the content matching the host. gcloud gcloud edge-cache services invalidate-cache SERVICE NAME \ --host= HOST Replace the following: SERVICE NAME with the name of the Edge Cache service.
+- For example: gcloud edge-cache services invalidate-cache SERVICE NAME \ --tags="status=404,content-type=text/plain" Invalidation latency Cache invalidation across Media CDN's thousands of locations typically completes within one minute globally.
+- For example: gcloud edge-cache services invalidate-cache SERVICE NAME \ --host="media.example.com" Invalidating all content associated with a host can be risky and impact performance.
 
-### Method: projects.locations.edgeCacheKeysets.list | Media CDN | Google Cloud Documentation
+### Configure caching behavior \_|\_ Media CDN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheKeysets/list](https://docs.cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheKeysets/list)
-- Source ID: `site-docs-reference`
-- Final score: 130
+- URL: [https://docs.cloud.google.com/media-cdn/docs/caching](https://docs.cloud.google.com/media-cdn/docs/caching)
+- Source ID: `site-docs-root`
+- Final score: 221
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To maximize client performance and origin offload, Media CDN can serve the requested individual byte ranges from its cache, consolidating them into a single response with an HTTP 206 Partial Response status code to the client with the Content-Type set to multipart/byteranges .
+- Routes without an explicit cdnPolicy configured behave as if they have the following configuration: cdnPolicy : cacheMode : CACHE ALL STATIC defaultTtl : 3600s cacheKeyPolicy : includeProtocol : false excludeHost : false excludeQueryString : false signedRequestMode : DISABLED negativeCaching : false Cacheable responses A cacheable response is an HTTP response that Media CDN can store and quickly retrieve, thus allowing for faster load times.
+- Static content MIME types The CACHE ALL STATIC cache mode allows Media CDN to automatically cache common static content such as video, audio, images, and common web assets based on the MIME type returned in the Content-Type HTTP response header.
+- Cache keys You can reduce the number of times Media CDN needs to contact your origin by considering what uniquely identifies a request, and removing components that might often change between requests.
+
+### Configuration overview \_|\_ Media CDN \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/media-cdn/docs/configuration](https://docs.cloud.google.com/media-cdn/docs/configuration)
+- Source ID: `site-docs-root`
+- Final score: 219
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Method: projects.locations.edgeCacheKeysets.list Media CDN Google Cloud Documentation Source URL: https://docs.cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheKeysets/list Documentation · Networking · Media CDN · Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · JSON representation · Authorization scopes · Lists EdgeCacheKeysets in a given project and location.
+- Media CDN offers content delivery, cache off-load, origin shielding, request authorization and integration with Google Cloud external Application Load Balancers, Logging, and Monitoring platforms.
+- IPv4, IPv6, logging enabled (default), and a managed SSL certificate configured The following example shows the gcloud output for this configuration: gcloud edge-cache origins describe prod-media-origin id: "2295067926314745283" creationTimestamp: "2019-11-13T09:53:48.757-08:00" name: "prod-media-origin" description: "" originAddress: "gs://bucket name/" failoverOrigin: "s3-origin" retryConditions: [HTTP 5XX, NOT FOUND] originProtocol: HTTP2 timeouts: connectTimeout: 5s maxAttemptsTimeout: 10 responseTimeout: 6s id: "2295067926314745283" creationTimestamp: "2019-11-13T09:53:48.757-08:00" name: "s3-origin" description: "" originAddress: "media.example.com.s3.amazonaws.com" retryConditions: [HTTP 5XX, NOT FOUND] originProtocol: HTTP2 gcloud edge-cache keysets describe prod-keyset id: "2295067926314745283" creationTimestamp: "2019-11-13T09:53:48.757-08:00" name: "prod-keyset" publicKeys: - name: "sept-2020-key" value: "DThVLjhAKm3VYOvLBAwFZ5XbjVyF98Ias8NZU0WEM9w=" - name: "aug-2020-key" value: "3nQa82ScYgDDAxJrKCqumSEg60VNODGR5dGAveJWsw4=" gcloud edge-cache services describe prod-media-service name: "prod-media-service" edgeSslCertificates: - "media-example-com-cert" - "video-serving-example-com-cert" requireTls: true routing: hostRules: - description: "prod hostnames" hosts: - "media.example.com" - "video-serving.example.net" pathMatcher: "routes" pathMatchers: - name: "routes" routeRules: - priority: 1 description: "prod video segments" origin: "prod-media-origin" matchRules: - pathTemplateMatch: "/ .ts" # HLS segments - pathTemplateMatch: "/ .m4s" # DASH / CMAF segments routeAction: cdnPolicy: cacheMode: "FORCE CACHE ALL" clientTtl: 3600s defaultTtl: 86400s signedRequestMode: REQUIRE SIGNATURES signedRequestKeySet: "prod-keyset" headerAction: responseHeadersToAdd: - headerName: cache-status headerValue: "{cdn cache status}" - headerName: proxy-status headerValue: "{proxy status}" - priority: 2 description: "prod manifest endpoints" origin: "prod-media-origin" matchRules: - pathTemplateMatch: "/ .m3u8" # HLS playlists - pathTemplateMatch: "/ .mpd" # DASH manifests routeAction: urlRewrite: pathPrefixRewrite: "/output/manifests" cdnPolicy: cacheMode: "CACHE ALL STATIC" clientTtl: 10s defaultTtl: 30s maxTtl: 120s headerAction: responseHeadersToAdd: - headerName: cache-status headerValue: "{cdn cache status}" - headerName: proxy-status headerValue: "{proxy status}" - priority: 3 # catch all routes should be the lowest priority route description: "catch all route" origin: "prod-media-origin" matchRules: - prefixMatch: / headerAction: responseHeadersToAdd: - headerName: cache-status headerValue: "{cdn cache status}" - headerName: proxy-status headerValue: "{proxy status}" Configuration options for Media CDN To configure Media CDN, you can use the following tools: Google Cloud console Imported YAML or JSON files The APIs directly Use the Google Cloud console Go to Media CDN For instructions that describe how to configure Media CDN in the Google Cloud console, see the quickstart .
+- For example, if you configure a logConfig.sampleRate without also setting logConfig.enable = true , you can expect the following error to be returned: gcloud edge-cache operations describe operation-1611525680496-5b9ac8fbb7f58-90a7a822-f0c1e8c6 done: true error: message: "Logs sample rate must not be specified without enabling logging." name: projects/my-project/locations/global/operations/operation-1611525680496-5b9ac8fbb7f58-90a7a822-f0c1e8c6 To view all recent operations, their status, and completion, you can run the following command: gcloud edge-cache operations list END TIME ID TARGET DONE operation-1611095421009-5b9486244bf21-cc6b5924-628b8e2a True operation-1611096056610-5b94888273fe6-2da85286-8c810f8e True operation-1611095551517-5b9486a0c251e-c2e1bbbb-de4aa8a5 True Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Media CDN provides several REST API resources: EdgeCacheService , responsible for client-facing configuration (TLS, IP addressing), routing, CDN configuration (cache modes, TTLs, signing), and security policies .
 
-### Media CDN overview | Google Cloud Documentation
+### Media CDN overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/media-cdn/docs/overview](https://docs.cloud.google.com/media-cdn/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 114
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Source ID: `site-docs-reference`
+- Final score: 215
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Media CDN uses Google Cloud Armor to allow or deny access to content.
-- Media CDN overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/media-cdn/docs/overview Media CDN supports Cloud Armor edge security policies.
-- Cloud Armor supports IP address allowlists and denylists, geographic and layer 7 header filtering controls, and decorate ...
+- Media CDN supports the following ways of invalidating content: By host and URL path By URL prefix and wildcard By cache tags, including built-in tags for status, origin, and media type You can combine the invalidation parameters to target specific cached responses and to minimize origin load on the subsequent cache fill.
+- You can use Media CDN with your existing origin infrastructure, whether the content is hosted within Cloud Storage, in another cloud, or within your on-premises infrastructure.
+- Home Documentation Networking Media CDN Guides Send feedback Media CDN overview Stay organized with collections Save and categorize content based on your preferences.
+- Using a route lets you optimize behavior based on the type of content, client attributes, and your freshness requirements for each route you define with Media CDN.
 

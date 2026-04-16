@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.910Z"
+generated_at: "2026-04-14T15:34:54.489Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Direct VPC egress Secure Web Proxy support"
 feature_slug: "direct-vpc-egress-secure-web-proxy-support"
 latest_feature_date: "2024-09-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
   - "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+  - "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service"
 keywords:
-  - "direct"
-  - "vpc"
-  - "egress"
-  - "secure"
-  - "web"
   - "proxy"
-  - "can"
+  - "secure"
   - "route"
+  - "direct"
+  - "egress"
 ---
 
 # Direct VPC egress Secure Web Proxy support
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,53 @@ Direct VPC egress can route Cloud Run traffic through Secure Web Proxy.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run](https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run)
 - [https://docs.cloud.google.com/run/docs/tutorials/secure-services](https://docs.cloud.google.com/run/docs/tutorials/secure-services)
+- [https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run](https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service)
 
 ## Supporting Pages
-
-### Cloud Run release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 154
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 17, 2024 Feature The Direct VPC egress feature of Cloud Run now supports Secure Web Proxy .
-- March 22, 2024 Feature Direct VPC egress (Preview) is now available in the following additional regions : africa-south1 asia-south1 asia-southeast2 australia-southeast2 europe-central2 europe-west2 europe-west6 europe-west8 europe-west9 europe-west10 me-central1 me-central2 southamerica-west1 us-east5 us-west2 us-west3 us-west8 Feature Cloud Run services can now connect to Vertex AI to access generative AI models using integrations (Preview).
-- November 11, 2025 Feature You can set a task timeout up to 168 hours (7 days) for Cloud Run jobs. (GA) November 06, 2025 Feature Use dual-stack subnets with IPv6 to let your Cloud Run resources send IPv4 and internal IPv6 traffic to a VPC network with Direct VPC egress, and send external IPv6 traffic to the public internet. (GA) October 31, 2025 Feature Support for Java 25 runtime is in Preview .
-- January 24, 2025 Feature You can now use dual-stack subnets with internal IPv6 to let your Cloud Run services and jobs send IPv4 and internal IPv6 traffic to a VPC network with Direct VPC egress. (Preview) January 22, 2025 Feature The Cloud Run Builder ( roles/run.builder ) IAM role is now available in preview.
-
-### Migrate Node.js apps from Heroku to Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run](https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run)
-- Source ID: `site-docs-root`
-- Final score: 118
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Deploy the sample app to Cloud Run In Cloud Shell, configure serverless vpc access to allow private traffic from Cloud Run to Cloud SQL: gcloud compute networks subnets create serverless-connector-subnet \ --network=default \ --range=10.0.0.0/28 \ --region=us-central1 gcloud compute networks vpc-access connectors create serverless-connector \ --region=us-central1 \ --subnet=serverless-connector-subnet In Cloud Shell, create an environment variable that holds the connection name of the Cloud SQL instance that you created: export DB CONN NAME=$(gcloud sql instances describe $CLOUDSQL DB NAME --format='value(connectionName)') Create an environment variable called DATABASE URL to hold the connection string to connect to the Cloud SQL Proxy over a UNIX port. export DATABASE URL="socket:/cloudsql/${DB CONN NAME}?db=postgres&user=postgres&password= POSTGRES PASSWORD " Create a service account for Cloud Run with an IAM role to connect to the database: gcloud iam service-accounts create sa-run-db-client gcloud projects add-iam-policy-binding PROJECT ID \ --member=serviceAccount:sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \ --role=roles/cloudsql.client Deploy the web app to Cloud Run: gcloud run deploy tasksapp- PROJECT ID \ --image=$IMAGE NAME \ --service-account=sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \ --set-env-vars=DATABASE URL=$DATABASE URL \ --add-cloudsql-instances $DB CONN NAME \ --vpc-connector serverless-connector \ --allow-unauthenticated The preceding command also links your Cloud Run container to the Cloud SQL database instance that you created.
-- When prompted for your password, enter the value of your API key that you copied from the Heroku console, not the password you use to sign in to the console. heroku login --interactive Clone the source repository In Cloud Shell, clone the sample Tasks app GitHub repository: git clone https://github.com/GoogleCloudPlatform/migrate-webapp-heroku-to-cloudrun-node.git Change directories to the directory created by cloning the repository: cd migrate-webapp-heroku-to-cloudrun-node The directory contains the following files: A Node.js script called index.js with the code for the routes served by the web app. package.json and package-lock.json files that outline the web app's dependencies.
-- A views directory, with the HTML content served by the web app on the "/" route.
-- The database doesn't need to have external IP addresses approved because all the communication that it receives is from the proxy using secure TCP.
 
 ### Secure Cloud Run services tutorial \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/tutorials/secure-services](https://docs.cloud.google.com/run/docs/tutorials/secure-services)
 - Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: N/A
+- Final score: 101
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Terraform To learn how to apply or remove a Terraform configuration, see Basic Terraform commands . resource "google cloud run v2 service" "renderer" { name = "renderer" location = "us-central1" deletion protection = false # set to "true" in production template { containers { Replace with the URL of your Secure Services > Renderer image. gcr.io/<PROJECT ID>/renderer image = "us-docker.pkg.dev/cloudrun/container/hello" } service account = google service account.renderer.email } } Try out the private Markdown rendering service Private services cannot be directly loaded by a web browser.
-- Cloud Run is available in the following regions: Subject to Tier 1 pricing asia-east1 (Taiwan) asia-northeast1 (Tokyo) asia-northeast2 (Osaka) asia-south1 (Mumbai, India) asia-southeast3 (Bangkok) europe-north1 (Finland) Low CO 2 europe-north2 (Stockholm) Low CO 2 europe-southwest1 (Madrid) Low CO 2 europe-west1 (Belgium) Low CO 2 europe-west4 (Netherlands) Low CO 2 europe-west8 (Milan) europe-west9 (Paris) Low CO 2 me-west1 (Tel Aviv) northamerica-south1 (Mexico) us-central1 (Iowa) Low CO 2 us-east1 (South Carolina) us-east4 (Northern Virginia) us-east5 (Columbus) us-south1 (Dallas) Low CO 2 us-west1 (Oregon) Low CO 2 Subject to Tier 2 pricing africa-south1 (Johannesburg) asia-east2 (Hong Kong) asia-northeast3 (Seoul, South Korea) asia-southeast1 (Singapore) asia-southeast2 (Jakarta) asia-south2 (Delhi, India) australia-southeast1 (Sydney) australia-southeast2 (Melbourne) europe-central2 (Warsaw, Poland) europe-west10 (Berlin) europe-west12 (Turin) europe-west2 (London, UK) Low CO 2 europe-west3 (Frankfurt, Germany) europe-west6 (Zurich, Switzerland) Low CO 2 me-central1 (Doha) me-central2 (Dammam) northamerica-northeast1 (Montreal) Low CO 2 northamerica-northeast2 (Toronto) Low CO 2 southamerica-east1 (Sao Paulo, Brazil) Low CO 2 southamerica-west1 (Santiago, Chile) Low CO 2 us-west2 (Los Angeles) us-west3 (Salt Lake City) us-west4 (Las Vegas) If you already created a Cloud Run service, you can view the region in the Cloud Run dashboard in the Google Cloud console .
 - Remove the gcloud default configurations you added during tutorial setup. gcloud config unset run / region Remove the project configuration: gcloud config unset project Delete other Google Cloud resources created in this tutorial: Delete the editor container image named REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /editor from Artifact Registry Delete the render container image named REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /renderer from Artifact Registry Delete the editor service account editor-identity@PROJECT ID.iam.gserviceaccount.com Delete the render service account renderer-identity@PROJECT ID.iam.gserviceaccount.com What's next Further secure your project by walking through the using IAM securely checklist Extend this sample application to track Markdown usage with Cloud Monitoring custom metrics Review the Pub/Sub tutorial for an approach to secure, asynchronous microservices Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 - Deploy the editor service: resource "google cloud run v2 service" "editor" { name = "editor" location = "us-central1" deletion protection = false # set to "true" in production template { containers { Replace with the URL of your Secure Services > Editor image. gcr.io/<PROJECT ID>/editor image = "us-docker.pkg.dev/cloudrun/container/hello" env { name = "EDITOR UPSTREAM RENDER URL" value = google cloud run v2 service.renderer.uri } } service account = google service account.editor.email } } Grant allUsers permission to invoke the service: data "google iam policy" "noauth" { binding { role = "roles/run.invoker" members = [ "allUsers" , ] } } resource "google cloud run service iam policy" "noauth" { location = google cloud run v2 service.editor.location project = google cloud run v2 service.editor.project service = google cloud run v2 service.editor.name policy data = data.google iam policy.noauth.policy data } Understand the HTTPS traffic There are three HTTP requests involved in rendering markdown using these services.
+- Request () target audience = url id token = google . oauth2 . id token . fetch id token ( auth req , target audience ) req . add header ( "Authorization" , f "Bearer { id token } " ) response = urllib . request . urlopen ( req ) return response . read () Parse the markdown from JSON and send it to the Renderer service to be transformed into HTML. @app . route ( "/render" , methods = [ "POST" ]) def render handler (): """Parse the markdown from JSON and send it to the Renderer service to be transformed into HTML. """ body = request . get json ( silent = True ) if not body : return "Error rendering markdown: Invalid JSON" , 400 data = body [ "data" ] try : parsed markdown = render . new request ( data ) return parsed markdown , 200 except Exception as err : return f "Error rendering markdown: { err } " , 500 Go RenderService creates authenticated requests to private services.
+
+### Migrate Node.js apps from Heroku to Cloud Run \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run](https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run)
+- Source ID: `site-docs-root`
+- Final score: 89
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- When prompted for your password, enter the value of your API key that you copied from the Heroku console, not the password you use to sign in to the console. heroku login --interactive Clone the source repository In Cloud Shell, clone the sample Tasks app GitHub repository: git clone https://github.com/GoogleCloudPlatform/migrate-webapp-heroku-to-cloudrun-node.git Change directories to the directory created by cloning the repository: cd migrate-webapp-heroku-to-cloudrun-node The directory contains the following files: A Node.js script called index.js with the code for the routes served by the web app. package.json and package-lock.json files that outline the web app's dependencies.
+- The database doesn't need to have external IP addresses approved because all the communication that it receives is from the proxy using secure TCP.
+- A views directory, with the HTML content served by the web app on the "/" route.
+- Deploy the sample app to Cloud Run In Cloud Shell, configure serverless vpc access to allow private traffic from Cloud Run to Cloud SQL: gcloud compute networks subnets create serverless-connector-subnet \ --network=default \ --range=10.0.0.0/28 \ --region=us-central1 gcloud compute networks vpc-access connectors create serverless-connector \ --region=us-central1 \ --subnet=serverless-connector-subnet In Cloud Shell, create an environment variable that holds the connection name of the Cloud SQL instance that you created: export DB CONN NAME=$(gcloud sql instances describe $CLOUDSQL DB NAME --format='value(connectionName)') Create an environment variable called DATABASE URL to hold the connection string to connect to the Cloud SQL Proxy over a UNIX port. export DATABASE URL="socket:/cloudsql/${DB CONN NAME}?db=postgres&user=postgres&password= POSTGRES PASSWORD " Create a service account for Cloud Run with an IAM role to connect to the database: gcloud iam service-accounts create sa-run-db-client gcloud projects add-iam-policy-binding PROJECT ID \ --member=serviceAccount:sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \ --role=roles/cloudsql.client Deploy the web app to Cloud Run: gcloud run deploy tasksapp- PROJECT ID \ --image=$IMAGE NAME \ --service-account=sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \ --set-env-vars=DATABASE URL=$DATABASE URL \ --add-cloudsql-instances $DB CONN NAME \ --vpc-connector serverless-connector \ --allow-unauthenticated The preceding command also links your Cloud Run container to the Cloud SQL database instance that you created.
+
+### Quickstart: Deploy a Python (Flask) web app to Google Cloud with Cloud Run | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 89
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- AI use cases in Cloud Run Get started Overview Deploy a sample web service Deploy a sample container Deploy from a git repository Deploy a Hello World service from source code Go Node.js Python Flask FastAPI Gradio LangChain Smolagents Streamlit Agent Development Kit (ADK) for Python Java Kotlin C# C++ PHP Ruby Other Frameworks Overview Angular SSR Next.js Nuxt.js SvelteKit Deploy a sample function Deploy a function using the console Deploy a function using gcloud Execute a sample job Execute a job Execute a job from source code Go Node.js Python Java Shell Deploy a sample worker pool Develop Set up your environment Plan and prepare your service Develop your service Containerize your code Connect to Google Cloud services Install a system package in your container Run gcloud commands within your container Plan and prepare your function Overview Compare Cloud Run functions Write Cloud Run functions Runtimes Overview Node.js Overview Node.js dependencies Python Overview Python dependencies Go Overview Go dependencies Java Overview Java dependencies .NET Ruby PHP Local functions development Function triggers Tutorials Create a function that returns BigQuery results Create a function that returns Spanner results Integrate with Cloud databases Codelabs Build and test Build sources to containers Build functions to containers Local testing Serve HTTP requests Deploy services Deploy container images Continuous deployment from git Deploy from source code Deploy from Compose Deploy functions Serve web traffic Mapping custom domains Serving static assets with CDN Serving traffic from multiple regions Deploy a multi-region app with service health Enable session affinity Frontend proxying using Nginx Manage services View, copy, or delete services View or delete revisions Traffic migration, gradual rollouts, rollbacks Configure services Overview Capacity Memory limits CPU limits GPU GPU configuration GPU performance best practices Request timeout Maximum concurrent requests About maximum concurrent requests per instance Configure maximum concurrent requests Billing Optimize service configurations with Recommender Environment Container port and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes CIFS/SMB Execution environment Container health checks HTTP/2 requests Secrets Service identity Scaling About instance autoscaling for services Maximum instances About maximum instances for services Configure maximum instances Minimum instances Manual scaling Metadata Description Labels Tags Source deploy configurations Supported language runtimes and base images Configure automatic base image updates Build environment variables Build service account Build worker pools Invoke and trigger services Invoke with HTTPS requests Host a webhook target Stream with WebSockets Overview Build a WebSocket Chat service tutorial Invoke asynchronously Invoke services on a schedule Create a workflow Invoke services as part of a Workflow Connect a series of services from Cloud Functions and Cloud Run tutorial Execute asynchronous tasks Call a service from a Pub/Sub push subscription Trigger service from Pub/Sub Integrate image processing into Pub/Sub sample tutorial Trigger from events Create triggers with Eventarc Pub/Sub triggers Create Pub/Sub Eventarc triggers Trigger functions from Pub/Sub using Eventarc Trigger functions from routed log entries Cloud Storage triggers Create triggers with Cloud Storage Trigger services from Cloud Storage using Eventarc Trigger functions from Cloud Storage using Eventarc Firestore triggers Create triggers with Firestore Trigger functions from events in a Firestore database Connect with other services using gRPC Best practices General development tips for services Cost optimization Optimize Java services Optimize Python services Optimize Node.js services Load testing best practices Understand zonal redundancy Functions best practices Overview Configure event-driven function retries Execute job tasks to completion Create jobs Execute jobs Execute jobs Execute scheduled jobs Execute jobs from Workflows Configure jobs Container entrypoint CPU limits Memory limits GPU GPU configuration GPU best practices Environment variables Container health checks Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Labels Maximum retries Parallelism Secrets Service identity Task timeout Tags Manage jobs View or delete jobs View or stop job executions Best practices Jobs retries and checkpoints Cost optimization Perform continuous background work Deploy worker pools Deploy worker pools Deploy worker pools from source code Manage worker pools View or delete worker pools View or delete worker pool revisions Instance splits and rollbacks Configure worker pools Capacity Memory limits CPU limits GPU GPU configuration GPU best practices Environment Container and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Container health checks Secrets Service identity Instance count Metadata Description Labels Scale based on external metrics Autoscale worker pools with external metrics Kafka autoscaler Host GitHub runners with worker pools Autoscale worker pools based on Prometheus metrics Autoscale worker pools with Pub/Sub pull subscriptions Automate scaling with Workflows Cost optimization Configure networking Best practices for Cloud Run networking Configure private networking Send traffic to VPC network Overview Direct VPC Register private IPs for worker pools using Cloud DNS Dual-stack (IPv4 and IPv6) Migrate standard VPC connector to Direct VPC VPC connectors Send traffic to Shared VPC network Overview Direct VPC Migrate Shared VPC connector to Direct VPC Connectors in service projects Connectors in host project Static outbound IP address Network security Restrict endpoint ingress (services) Use VPC Service Controls (VPC SC) Cloud Service Mesh Secure Security design overview Authenticate requests Overview Allow public access Custom audiences Authenticate developers Service-to-service Authenticate users End user authentication tutorial Secure your resources Access control with IAM Configure IAP for Cloud Run Introduction to service identity Protect services with Cloud Armor Use Binary Authorization Use Cloud Run Threat Detection Use customer managed encryption keys Manage custom constraints for projects View software supply chain security insights Secure Cloud Run services tutorial Multi-tenant platforms running untrusted code Monitor and log Monitoring and logging overview View built-in metrics Write Prometheus metrics Write OpenTelemetry metrics Log and view logs Audit logging Error reporting Use distributed tracing for services Run AI solutions Overview Explore resources AI agents Overview Build and deploy A2A agents Overview Deploy A2A agents Build and deploy ADK agents Build and deploy n8n agents MCP servers Overview Build and deploy a remote MCP server Tools Code execution Browser automation Inference with GPUs Overview Services Run LLM inference on Cloud Run GPUs with Ollama Run agents with Gemma 4 models on Cloud Run Run LLM inference on Cloud Run GPUs with vLLM Run OpenCV on Cloud Run with GPU acceleration Run LLM inference on Cloud Run GPUs with Hugging Face Transformers.js Run LLM inference on Cloud Run GPUs with Hugging Face TGI Jobs Fine tune LLMs using GPUs with Cloud Run jobs Run batch inference using GPUs with Cloud Run jobs GPU-accelerated video transcoding with FFmpeg AI-assisted development and vibe coding Introduction to Cloud Run for AI-assisted developers Cookbook Migrate An existing web service From App Engine From Cloud Run functions (1st gen) From AWS Lambda From Heroku From Cloud Foundry Migration overview Choose an OCI-compliant-strategy Migrate to OCI containers Migrate configuration Sample migration: Spring Music From VMWare Tanzu From a VM using Migrate to Containers From Kubernetes To GKE Troubleshoot Introduction Troubleshoot errors Local troubleshooting tutorial Known issues Samples All Cloud Run code samples All Cloud Run functions code samples Code samples for all products AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application hosting Cloud Run Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Write the sample application To write an application in Python: Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named main.py and paste the following code into it: import os from flask import Flask app = Flask ( __name__ ) @app . route ( "/" ) def hello_world (): """Example Hello World route.""" name = os . environ . get ( "NAME" , "World" ) return f "Hello { name } !" if __name__ == "__main__" : app . run ( debug = True , host = "0.0.0.0" , port = int ( os . environ . get ( "PORT" , 8080 ))) This code responds to requests with our "Hello World" greeting.
+- When directly invoked for local use, this code creates a basic web server that listens on the port defined by the PORT environment variable .
+- To deploy from source: In your source code directory, deploy the current folder using the following command: gcloud run deploy --source .
 

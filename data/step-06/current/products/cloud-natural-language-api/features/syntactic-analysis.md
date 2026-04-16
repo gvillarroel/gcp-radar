@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T23:00:15.648Z"
+generated_at: "2026-04-12T12:11:52.621Z"
 product_name: "Cloud Natural Language API"
 product_slug: "cloud-natural-language-api"
 feature_name: "Syntactic Analysis"
 feature_slug: "syntactic-analysis"
 latest_feature_date: "2019-04-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/natural-language/docs/morphology"
   - "https://docs.cloud.google.com/natural-language/docs/languages"
   - "https://docs.cloud.google.com/natural-language/docs/basics"
+  - "https://docs.cloud.google.com/natural-language/docs/analyzing-syntax"
 keywords:
   - "syntactic"
   - "analysis"
@@ -26,7 +27,7 @@ keywords:
 # Syntactic Analysis
 
 Product: Cloud Natural Language API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Syntactic Analysis adds support for Russian; Syntactic Analysis adds full suppor
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/natural-language/docs/morphology](https://docs.cloud.google.com/natural-language/docs/morphology)
 - [https://docs.cloud.google.com/natural-language/docs/languages](https://docs.cloud.google.com/natural-language/docs/languages)
 - [https://docs.cloud.google.com/natural-language/docs/basics](https://docs.cloud.google.com/natural-language/docs/basics)
+- [https://docs.cloud.google.com/natural-language/docs/analyzing-syntax](https://docs.cloud.google.com/natural-language/docs/analyzing-syntax)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/natural-language/docs/morphology](https://docs.cloud.google.com/natural-language/docs/morphology)
 - Source ID: `site-iam-reference`
-- Final score: 116
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 178
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Parsing a syntactic analysis response The following pseudo-code provides a common pattern to use when performing iterative operations on the syntactic analysis response: index = 0 for sentence in self.sentences: content = sentence['text']['content'] sentence begin = sentence['text']['beginOffset'] sentence end = sentence begin + len(content) - 1 while index Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/natural-language/docs/languages](https://docs.cloud.google.com/natural-language/docs/languages)
 - Source ID: `site-api-reference`
-- Final score: 104
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 162
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Content classification V2 Model Language ISO-639-1 Code Chinese (Simplified) zh Chinese (Traditional) zh-Hant Dutch nl English en French fr German de Italian it Japanese ja Korean ko Portuguese (Brazilian & Continental) pt Russian ru Spanish es V1 Model Language ISO-639-1 Code English en Syntactic analysis Language ISO-639-1 Code Chinese (Simplified) zh Chinese (Traditional) zh-Hant English en French fr German de Italian it Japanese ja Korean ko Portuguese (Brazilian & Continental) pt Russian ru Spanish es Entity analysis Language ISO-639-1 Code Chinese (Simplified) zh Chinese (Traditional) zh-Hant English en French fr German de Italian it Japanese ja Korean ko Portuguese (Brazilian & Continental) pt Russian ru Spanish es Sentiment analysis Language ISO-639-1 Code Arabic ar Chinese (Simplified) zh Chinese (Traditional) zh-Hant Dutch nl English en French fr German de Indonesian id Italian it Japanese ja Korean ko Portuguese (Brazilian & Continental) pt Spanish es Thai th Turkish tr Vietnamese vi Entity sentiment analysis Language ISO-639-1 Code English en Japanese ja Spanish es Text moderation Language ISO-639-1 Code Arabic ar Chinese (Simplified) zh Dutch nl English en French fr German de Hindi hi Indonesian id Italian it Japanese ja Korean ko Portuguese (Brazilian & Continental) pt Russian ru Spanish es language support is limited based on the type of text (eg. webpage, chat message, etc) for some attributes.
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/natural-language/docs/basics](https://docs.cloud.google.com/natural-language/docs/basics)
 - Source ID: `site-docs-root`
-- Final score: 100
+- Final score: 142
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,4 +90,18 @@ Evidence snippets:
 - Syntactic analysis requests Syntactic Analysis requests are sent to the Natural Language API through use of the analyzeSyntax method in the following form: { "document" : { "type" : "PLAIN TEXT" , "content" : "Ask not what your country can do for you, ask what you can do for your country." }, "encodingType" : "UTF8" } Syntactic analysis responses The Natural Language API processes the given text to extract sentences and tokens.
 - Array of tokens with token information ] } Sentence extraction When performing syntactic analysis, the Natural Language API returns an array of sentences extracted from the provided text, with each sentence containing the following fields within a text parent: beginOffset indicating the (zero-based) character offset within the given text where the sentence begins.
 - These features are listed below: extractDocumentSentiment performs sentiment analysis, as described in the Sentiment Analysis section. extractEntities performs entity analysis, as described in the Entity Analysis section. extractSyntax indicates that the given text should be processed to perform syntactic analysis, as described in the Syntactic Analysis section.
+
+### Analyzing Syntax \_|\_ Cloud Natural Language API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/natural-language/docs/analyzing-syntax](https://docs.cloud.google.com/natural-language/docs/analyzing-syntax)
+- Source ID: `site-docs-root`
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Analyzing Syntax in a String Here is an example of performing syntactic analysis on a text string sent directly to the Natural Language API: Protocol To analyze syntax in a document, make a POST request to the documents:analyzeSyntax REST method and provide the appropriate request body as shown in the following example.
+- Analyzing Syntax from Cloud Storage For your convenience, the Natural Language API can perform syntactic analysis directly on a file located in Cloud Storage, without the need to send the contents of the file in the body of your request.
+- Syntactic Analysis breaks up the given text into a series of sentences and tokens (generally, words) and provides linguistic information about those tokens.
+- Here is an example of performing syntactic analysis on a file located in Cloud Storage.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.775Z"
+generated_at: "2026-04-12T12:16:18.952Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Cloud Run for Anthos"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
 keywords:
   - "run"
   - "for"
@@ -38,13 +39,14 @@ A serverless platform for running Cloud Run workloads on Anthos clusters; A serv
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 162
+- Final score: 202
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 132
+- Final score: 174
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
 - Source ID: `site-iam-reference`
-- Final score: 128
+- Final score: 161
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - Application developers Application developers write the code for applications that eventually run on a cloud platform like Google Cloud.
 - Common role archetypes The following high-level areas of common user roles are often referenced in our content: Admins and architects Operators Developers Security specialists Networking specialists Data and AI specialists Storage specialists Admins and architects Admins and architects administer and architect cloud platforms and products.
 - The following common user roles are part of the high-level Operators area: Platform admins and operators App operators and site reliability engineering (SRE) DevOps This section explains the common user roles that are part of the Operators area.
+
+### "Reference architecture: Hybrid environment for Google Kubernetes Engine\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
+- Source ID: `site-docs-reference`
+- Final score: 123
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The diagram also shows some different user personas who interact with the services, such as application developers, application operators, platform developers and operators, and network operators.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback Reference architecture: Hybrid environment for Google Kubernetes Engine clusters Stay organized with collections Save and categorize content based on your preferences.
+- The complete reference architecture is provided as PDFs at the bottom of this page and shows you how to appropriately plan, deploy, and configure the required components for a GKE hybrid environment.
 

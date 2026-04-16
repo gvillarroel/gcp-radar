@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.133Z"
+generated_at: "2026-04-15T00:01:13.964Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "VM Instances dashboard operations menu"
 feature_slug: "vm-instances-dashboard-operations-menu"
 latest_feature_date: "2021-03-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
+  - "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation"
-  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services"
 keywords:
   - "vm"
   - "instances"
   - "dashboard"
   - "operations"
   - "menu"
-  - "the"
   - "compute"
   - "engine"
+  - "includes"
 ---
 
 # VM Instances dashboard operations menu
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ The Compute Engine VM Instances dashboard includes an Operations menu with short
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
+- [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/installation](https://docs.cloud.google.com/monitoring/agent/ops-agent/installation)
-- [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies)
+- [https://docs.cloud.google.com/monitoring/docs/application-monitoring-services](https://docs.cloud.google.com/monitoring/docs/application-monitoring-services)
 
 ## Supporting Pages
 
-### Monitoring release notes \_|\_ Google Cloud Documentation
+### Cloud Monitoring overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
+- URL: [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
 - Source ID: `site-docs-reference`
-- Final score: 168
+- Final score: 139
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- March 04, 2021 Feature Compute Engine's VM Instances dashboard now provides an Operations menu.
-- October 09, 2023 Change When you install the Ops Agent on a Compute Engine VM by using the Cloud Monitoring VM Instances dashboard or the Observability tab on a Compute Engine VM details page, the agent is now installed with an Ops Agent OS policy.
-- September 27, 2021 Feature You can now install the Ops Agent on one or more Compute Engine VMs from the Inventory tab of the Monitoring VM Instances dashboard.
-- June 08, 2020 Feature Enhancements to the pre-configured Compute Engine VM Instances dashboard.
+- For example, when a Google Cloud project contains multiple Compute Engine VM instances, the CPU utilization for each VM instance is a unique time series.
+- System and application metrics that the Ops Agent collects about system resources and applications running on Compute Engine instances.
+- Examples of monitored resources include Compute Engine instances and App Engine applications.
+- The following is an example of a resource field: "resource": { "type": "gce instance", "labels": { "instance id": "2708613220420473591", "zone": "us-east1-b", "project id": "sampleproject" } } The type field lists the monitored resource as a gce instance , which indicates that these measurements are taken on a Compute Engine VM instance.
 
 ### "Installing the Ops Agent on individual VMs \_|\_ Cloud Monitoring \_|\_\
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/installation](https://docs.cloud.google.com/monitoring/agent/ops-agent/installation)
 - Source ID: `site-iam-reference`
-- Final score: 166
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Compute Engine In the Google Cloud console, go to the VM instances page: Go to VM instances If you use the search bar to find this page, then select the result whose subheading is Compute Engine .
+- If you are running very old Compute Engine instances or if you created Compute Engine instances without the default credentials, then you might not have the proper credentials.
+- The Ops Agent collects logs and metrics on Compute Engine instances, sending your logs to Cloud Logging and your metrics to Cloud Monitoring.
 - Compute Engine VM instances generally have the correct credentials by default.
-- However, the status might be inaccurate if the VM lacks necessary access scopes or if the associated service account has insufficient IAM roles. gcpdiag : gcpdiag provides more reliable and robust information about agent status than the VM Instances dashboard, verifying both agent installation and transmission of telemetry from the VM.
-- Verify that the Ops Agent is running To verify that the Ops Agent is running, you can use either of the following: VM Instances dashboard : This dashboard lets you view the agent installation status across your VM fleet.
 
-### "Install and manage the Ops Agent by using VM Extension Manager policies\
+### Application Monitoring supported infrastructure \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies)
-- Source ID: `site-iam-reference`
-- Final score: 160
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring-services](https://docs.cloud.google.com/monitoring/docs/application-monitoring-services)
+- Source ID: `site-docs-reference`
+- Final score: 106
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Verify the installation of the Ops Agent This section describes how to do the following: Verify the status or version of an Ops Agent installation Verify that the Ops Agent is collecting telemetry Verify the status or version of an Ops Agent installation To determine the status or version of the Ops Agent, use one of the following Google Cloud console pages: Compute Engine In the Google Cloud console, go to the VM instances page: Go to VM instances If you use the search bar to find this page, then select the result whose subheading is Compute Engine .
-- Enter the following query and click Run query : severity>=DEBUG log id("GCEGuestAgentManager") "The agent config file is not valid" Linux Run the following command on the Linux Compute Engine VM: journalctl -u google-guest-agent-manager grep "The agent config file is not valid" Windows Run the following command on the Windows Compute Engine VM: Get-Eventlog -Source google guest agent manager -LogName Application Where-Object {$ .Message -like " The agent config file is not valid "} If you see logs containing the string The agent config file is not valid , then the custom configuration for the Ops Agent you provided when creating or updating the extension policy is invalid.
-- Enter the following query and click Run query : log id("GCEGuestAgentManager") Linux Run the following command on the Compute Engine VM: journalctl -u google-guest-agent-manager Windows Run the following command on the Compute Engine VM: Get-Eventlog -Source google guest agent manager -LogName Application If you see logs containing a string like Failed to install plugin "ops-agent-plugin" ... , or the query returns no logs, then the extension policy failed to install the Ops Agent.
-- Install the Ops Agent by creating VM extension policies Create VM extension policies to automatically install and manage the Ops Agent on a fleet of Compute Engine virtual machines (VMs).
+- Compute Engine MIGs (Regional and zonal) Traffic : instance/network/received bytes count Saturation : instance/cpu/utilization Dataproc Metastore service (Regional and multi-regional) Traffic : The metric depends on whether the service is single- or multi-region: Single: service/request count .
+- The dashboards that Application Monitoring creates display log and metric data, including the following golden signals, when that data includes application-specific labels: Traffic : Incoming request rates on the service or workload over the selected time period.
+- P95 latency : reasoning engine/request latencies Google Cloud MCP servers (Global) Traffic : mcp/request count Server error rate : The ratio of the number of requests with a response status of 5xx to the total number of requests.
+- Vertex AI Agent Engine agents (Regional) Traffic : reasoning engine/request count Server error rate : Ratio of requests whose response status is at least 500 and no more than 599 to the total number of requests.
 

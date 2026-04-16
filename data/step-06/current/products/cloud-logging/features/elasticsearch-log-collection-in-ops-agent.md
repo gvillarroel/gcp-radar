@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.553Z"
+generated_at: "2026-04-14T23:59:44.406Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Elasticsearch Log Collection in Ops Agent"
 feature_slug: "elasticsearch-log-collection-in-ops-agent"
 latest_feature_date: "2022-01-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
-  - "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
-  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/install-agent-vm-creation"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
 keywords:
   - "elasticsearch"
   - "log"
   - "collection"
-  - "in"
   - "ops"
   - "agent"
   - "can"
   - "collect"
+  - "logs"
 ---
 
 # Elasticsearch Log Collection in Ops Agent
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,54 @@ Ops Agent can collect Elasticsearch logs for Cloud Logging.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation](https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation)
-- [https://docs.cloud.google.com/logging/docs/agent/logging/installation](https://docs.cloud.google.com/logging/docs/agent/logging/installation)
-- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/install-agent-vm-creation](https://docs.cloud.google.com/logging/docs/agent/ops-agent/install-agent-vm-creation)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies)
 
 ## Supporting Pages
 
-### "Installing the Ops Agent on individual VMs \_|\_ Cloud Logging \_|\_ Google\
+### Elasticsearch 7.9+ \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation](https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation)
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch)
 - Source ID: `site-docs-root-2`
-- Final score: 288
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 195
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Documentation Observability Cloud Logging Guides Send feedback Installing the Ops Agent on individual VMs Stay organized with collections Save and categorize content based on your preferences.
-- Download the agent installation script: (New-Object Net.WebClient).DownloadFile("https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.ps1", "${env:UserProfile}\add-google-cloud-ops-agent-repo.ps1") When running the add-google-cloud-ops-agent-repo.ps1 script, you can also set the following flags: -Verbose : Turns on verbose logging during the script execution. -AlsoInstall : Installs the agent after adding the agent package repository. -Version : Sets the agent version for the script to install.
-- Download the agent installation script: curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh When running the add-google-cloud-ops-agent-repo.sh script, you can also set the following flags: --verbose : Turns on verbose logging during the script execution. --also-install : Installs the agent after adding the agent package repository. --version : Sets the agent version for the script to install.
-- The Ops Agent collects logs and metrics on Compute Engine instances, sending your logs to Cloud Logging and your metrics to Cloud Monitoring.
+- Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: Get-Service google-cloud-ops-agent Configure logs collection To ingest logs from Elasticsearch, you must create a receiver for the logs that Elasticsearch produces and then create a pipeline for the new receiver.
+- If empty, the receiver uses the system root CA. cert file Path to the TLS certificate to use for mTLS-required connections. collection interval 60s A time duration value, such as 30s or 5m . endpoint http://localhost:92002 The base URL for the Elasticsearch REST API. insecure true Sets whether or not to use a secure TLS connection.
+- The elasticsearch gc logs contain the following fields in the LogEntry : Field Type Description jsonPayload.gc run number The run of the garbage collector jsonPayload.message string Log message jsonPayload.type string The type of the log record severity string ( LogSeverity ) Log entry level (translated).
+- Configure the Ops Agent for Elasticsearch Following the guide to Configure the Ops Agent , add the required elements to collect telemetry from Elasticsearch instances, and restart the agent .
 
-### "Installing the Cloud Logging agent on individual VMs \_|\_ Google Cloud\
+### Elasticsearch 8.0+ and 9.0+ \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/agent/logging/installation](https://docs.cloud.google.com/logging/docs/agent/logging/installation)
-- Source ID: `site-docs-root`
-- Final score: 272
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9)
+- Source ID: `site-docs-root-2`
+- Final score: 195
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The Ops Agent, which combines the collection of metrics and logging into a single agent, is the eventual replacement for the legacy agents.
-- Home Documentation Observability Cloud Logging Guides Send feedback Installing the Cloud Logging agent on individual VMs Stay organized with collections Save and categorize content based on your preferences.
-- If the Ops Agent doesn't support your use case, then you can still use the Logging agent.
-- This sets the http proxy and https proxy environment variables so that the agent can send data using outbound HTTPS: setx http proxy http:// proxy-ip : proxy-port /m setx https proxy http:// proxy-ip : proxy-port /m setx no proxy 169.254.169.254 /m Determine the agent version To determine the version of the Logging agent on your system, run the following commands on your VM instance: DEBIAN / UBUNTU Run the following command on Debian or Ubuntu: dpkg-query --show --showformat ' ${ Package } ${ Version } ${ Architecture } ${ Status } \n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured SLES / SUSE Run the following command on SUSE: rpm --query --queryformat '%{NAME} %{VERSION} %{RELEASE} %{ARCH}\n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured WINDOWS Connect to your instance using RDP or a similar tool and login to Windows.
+- Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: Get-Service google-cloud-ops-agent Configure logs collection To ingest logs from Elasticsearch, you must create a receiver for the logs that Elasticsearch produces and then create a pipeline for the new receiver.
+- The elasticsearch json logs contain the following fields in the LogEntry : Field Type Description jsonPayload.ecs.version string ECS version jsonPayload.elasticsearch.cluster.name string The name of the cluster emitting the log record in ECS format jsonPayload.elasticsearch.cluster.uuid string The UUID of the cluster emitting the log record in ECS format jsonPayload.elasticsearch.node.name string The name of the node emitting the log record in ECS format jsonPayload.event string Event information in ECS format jsonPayload.log string Log details in ECS format jsonPayload.log.level string Log entry level in ECS format jsonPayload.log.logger string The logger component that emitted the log in ECS format jsonPayload.message string Log message jsonPayload.process.thread.name string The name of the thread that emitted the log in ECS format jsonPayload.service.name string The name of the service emitting the log in ECS format severity string ( LogSeverity ) Log entry severity level The elasticsearch gc logs contain the following fields in the LogEntry : Field Type Description jsonPayload.gc run number The run of the garbage collector jsonPayload.message string Log message jsonPayload.type string The type of the log record severity string ( LogSeverity ) Log entry level (translated).
+- If empty, the receiver uses the system root CA. cert file Path to the TLS certificate to use for mTLS-required connections. collection interval 60s A time duration value, such as 30s or 5m . endpoint https://localhost:9200 The base URL for the Elasticsearch REST API.
+- Configure the Ops Agent for Elasticsearch Following the guide to Configure the Ops Agent , add the required elements to collect telemetry from Elasticsearch instances, and restart the agent .
 
-### "Install the Ops Agent during VM creation \_|\_ Cloud Logging \_|\_ Google\
+### "Install and manage the Ops Agent by using VM Extension Manager policies\
 
-- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/install-agent-vm-creation](https://docs.cloud.google.com/logging/docs/agent/ops-agent/install-agent-vm-creation)
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies)
 - Source ID: `site-docs-root-2`
-- Final score: 264
+- Final score: 162
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Observability Cloud Logging Guides Send feedback Install the Ops Agent during VM creation Stay organized with collections Save and categorize content based on your preferences.
-- This label identifies the policy, template, and version: Label key, the identifier for the policy: goog-ops-agent-policy Label value, the policy template and version: v2-x86-template- 1-0-0 When you create a VM in the Google Cloud console, you can select the Install Ops Agent for Monitoring and Logging checkbox.
-- The Ops Agent OS policies then cover the following VMs based on the Ops Agent OS policy assignment IDs: OS Policy Assignment ID Covers VMs In: Covered VMs goog-ops-agent-v2-x86-template- 1-0-0 -us-central1-a us-central1-a instance-1 , instance-2 goog-ops-agent-v2-x86-template- 1-0-0 -us-east1-b us-east1-b instance-3 By default, instance-4 isn't covered because you didn't select Install Ops Agent for Monitoring and Logging , so it doesn't have the goog-ops-agent-policy:v2-x86-template- 1-0-0 label.
-- Before you click Create , select the Install Ops Agent for Monitoring and Logging checkbox: Note: When you select the Install Ops Agent for Monitoring and Logging checkbox during VM creation, the examples on the tabs in the Equivalent code flyout are updated to include the steps for creating the Ops Agent OS policy.
+- Home Documentation Observability Cloud Logging Guides Send feedback Install and manage the Ops Agent by using VM Extension Manager policies Stay organized with collections Save and categorize content based on your preferences.
+- Verify that the Ops Agent is collecting telemetry If the Ops Agent has been successfully installed and is running correctly, then it sends metrics to Cloud Monitoring and logs to Cloud Logging.
+- When the Ops Agent has been installed on the VM and is collecting logs and metrics, the agent's status is marked with a green checkmark next to the Ops Agent label.
+- For information about verifying collection of metrics, see Agent is running, but data is not ingested .
 

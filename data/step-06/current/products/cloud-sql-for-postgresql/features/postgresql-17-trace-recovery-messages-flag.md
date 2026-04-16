@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.313Z"
+generated_at: "2026-04-13T13:51:57.762Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "PostgreSQL 17 trace_recovery_messages flag"
 feature_slug: "postgresql-17-trace-recovery-messages-flag"
 latest_feature_date: "2024-10-23"
 deprecation_date: "2024-10-23"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/postgres/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/postgres/flags"
+  - "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages"
+  - "https://docs.cloud.google.com/sql/docs/error-messages"
 keywords:
-  - "postgresql"
-  - "17"
   - "trace"
-  - "recovery"
   - "messages"
-  - "flag"
-  - "the"
+  - "recovery"
   - "database"
+  - "flag"
 ---
 
 # PostgreSQL 17 trace_recovery_messages flag
 
 Product: Cloud SQL for PostgreSQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,54 @@ The trace_recovery_messages database flag for Cloud SQL PostgreSQL 17 is depreca
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
-- [https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users](https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
+- [https://docs.cloud.google.com/sql/docs/postgres/flags](https://docs.cloud.google.com/sql/docs/postgres/flags)
+- [https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages](https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages)
+- [https://docs.cloud.google.com/sql/docs/error-messages](https://docs.cloud.google.com/sql/docs/error-messages)
 
 ## Supporting Pages
 
-### Cloud SQL for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### Configure database flags | Cloud SQL for PostgreSQL | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/release-notes](https://docs.cloud.google.com/sql/docs/postgres/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/flags](https://docs.cloud.google.com/sql/docs/postgres/flags)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 224
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Configure database flags | Cloud SQL for PostgreSQL | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Cloud SQL PostgreSQL Start free Overview Guides Reference Samples Resources Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Cloud SQL editions overview Cloud SQL for PostgreSQL features Key terms Get started Free trial instances Free trial instance overview Create a free trial instance Quickstart: Create and query a database in the Cloud Console Create an instance in a private network and then import a database Connect from a Cloud Service Quickstart: Connect from Cloud Shell Quickstart: Connect from Cloud Run Quickstart: Connect from Google Kubernetes Engine Quickstart: Connect from App Engine standard environment Quickstart: Connect from App Engine flexible environment Quickstart: Connect from Compute Engine Quickstart: Connect using private IP Quickstart: Connect using the Cloud SQL Auth proxy Quickstart: Connect from your local computer Plan and prepare Overview Choose a Cloud SQL edition Choose a machine series Choose a storage option Region availability Data cache overview Create and manage Instances Create instances Edit instances Clone instances Start, stop, and restart instances Label instances Delete instances Prevent deletion of an instance Supported instance settings View instance information Configure database flags Configure PostgreSQL extensions Manage instance locations Manage connectivity tests Manage capacity About storage shrink Shrink instance storage capacity Manage maintenance updates Maintenance updates on instances View and set maintenance windows Perform self-service maintenance Upgrade Upgrade an instance to Cloud SQL Enterprise Plus edition Upgrade an instance by using in-place upgrade Upgrade an instance by using IP allowlists Upgrade an instance by using VPC peering Upgrade an instance to the new network architecture Upgrade the database major version Upgrade the database major version in-place Upgrade the database major version by migrating data Use best practices General best practices Operational guidelines Manage memory usage Databases Create and manage databases Execute SQL statements using the Cloud SQL Data API Users About PostgreSQL users Cloud SQL built-in database authentication Create and manage users Cloud SQL Studio Manage your data using Cloud SQL Studio Write SQL with Gemini assistance Manage your resources using Knowledge Catalog Secure and control access Overview About access control Data privacy strategies Data residency overview Use Secret Manager to handle secrets in Cloud SQL Organization policies Cloud SQL organization policies Add predefined organization policies Add custom organization policies Identity and Access Management (IAM) IAM authentication Roles and permissions Use IAM Conditions Configure instances for IAM database authentication Manage users with IAM database authentication Log in using IAM database authentication Fine-grained access control with tags Access control with Google Cloud tags Attach and manage tags on Cloud SQL instances Use encryption About client-side encryption About customer-managed encryption keys (CMEK) Use customer-managed encryption keys (CMEK) Configure VPC Service Controls Use Cloud SQL brute-force protection Connect Choose how to connect to Cloud SQL Authorize with authorized networks Connect to an instance using public IP Configure public IP Connect to an instance using private IP Learn about using private IP Configure private IP Configure private services access Connect to an instance using a write endpoint Private Service Connect overview Connect to an instance using Private Service Connect Configure both private services access and Private Service Connect Connect to your instance across Multiple VPCs Connect using SSL/TLS certificates Authorize with SSL/TLS certificates Configure SSL/TLS certificates Manage SSL/TLS certificates Use a customer-managed certificate authority (CA) Set up a custom DNS name Connect using Cloud SQL Language Connectors Cloud SQL Language Connectors overview Connect using the Cloud SQL Language Connectors Connect using the Cloud SQL Auth Proxy About the Cloud SQL Auth Proxy Connect using the Cloud SQL Auth Proxy Connect using Cloud SQL Proxy Operator Use Managed Connection Pooling Managed Connection Pooling overview Configure Managed Connection Pooling Connect from applications Connect using a psql client Connect from Cloud Run Connect from Cloud Functions Connect from App Engine (Standard) Connect from App Engine (Flexible) Connect from Compute Engine Connect from Kubernetes Engine Connect from Cloud Build Manage database connections Connect to an instance from outside its VPC Replicate About replication in Cloud SQL Create and manage replicas Create read replicas Manage read replicas Promote replicas for regional migration or disaster recovery Replication lag Create and manage read pools About read pools Create a read pool Read pool autoscaling Set up logical replication and decoding Configure external replicas Replicate from an external server About replicating from an external server Configure Cloud SQL and the external server for replication Use a managed import to set up replication from external databases About data migration in Cloud SQL Availability and disaster recovery (DR) Availability in Cloud SQL About high availability (HA) Enable and disable high availability (HA) on an instance About disaster recovery (DR) Use advanced disaster recovery (DR) Back up and restore Back up an instance Cloud SQL backups overview Choose your backup option Manage standard backups Manage enhanced backups Manage backups for deleted instances Restore an instance Overview Restore an instance using a backup Configure point-in-time recovery Perform point-in-time recovery Import and export Best practices for importing and exporting data Export and import using pg_dump, pg_dumpall, and pg_restore Export and import using SQL dump files Export and import using CSV files Export and import files in parallel Cancel the import and export of data Check the status of import and export operations Develop Build generative AI applications using Cloud SQL Overview Integrate Cloud SQL with Vertex AI Invoke online predictions Understand an example of an embedding workflow Build LLM-powered applications using LangChain Build LLM-powered applications using LlamaIndex Interact with custom models using model endpoint management Overview Register a model Generate embeddings Invoke predictions Model endpoint management reference Vector search Generate and manage vector embeddings Use Cloud SQL for PostgreSQL with agents Use the Cloud SQL remote MCP server Best practices for securing agent interactions with MCP Use saved queries Overview Create and manage saved queries Vector assist Overview Use Vector assist Vector assist reference Query database in natural language with QueryData Use context sets Context sets overview Build context sets using Gemini CLI Manage context sets in Cloud SQL Studio Query your agentic application data QueryData overview Test QueryData in Cloud SQL Studio Integrate QueryData with an application Monitor and optimize About database observability Monitor and troubleshoot with AI assistance Audit Audit logs Auditing for PostgreSQL using pgAudit Query performance Use query insights Use index advisor Monitor active queries System performance Monitor instances View instance logs Use system insights Find and fix Index inconsistencies Foreign key violations Apply recommendations Disable public IP Enable database auditing Enforce SSL/TLS encryption Improve instance reliability by enabling high availability Improve performance with AlloyDB for PostgreSQL Improve performance with Enterprise Plus Monitor disk availability Optimize high CPU usage Optimize high memory usage Optimize queries with high memory usage Prevent data loss by enabling automated backups Prevent data loss by increasing backup retention Prevent transaction ID wraparound Reduce idle Cloud SQL instances Reduce overprovisioned Cloud SQL instances Reduce underprovisioned Cloud SQL instances Remove authorized networks Remove broad public IP ranges Rotate server certificates Set instance password policies Set user password policies Use Looker with Cloud SQL Troubleshoot Troubleshoot slow queries with AI assistance Troubleshoot high database load with AI assistance Known issues Troubleshoot Error messages Debug connection issues Diagnose issues Overcome transaction ID (TXID) wraparound protection Issues updating storage capacity AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Databases Cloud SQL PostgreSQL Guides Send feedback Configure database flags Stay organized with collections Save and categorize content based on your preferences.
+- No trace_recovery_messages enumeration debug5 | debug4 | debug3 | debug2 | debug1 | log | notice | warning | error The default is log .
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest ` -Method PATCH ` -Headers $headers ` -ContentType: "application/json; charset=utf-8" ` -InFile request.json ` -Uri "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id " | Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "UPDATE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } REST v1beta4 To clear all flags for an existing instance: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { "settings": { "databaseFlags": [] } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest ` -Method GET ` -Headers $headers ` -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id " | Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "settings": { "authorizedGaeApplications": [], "tier": " machine-type ", "kind": "sql#settings", "availabilityType": "REGIONAL", "pricingPlan": "PER_USE", "replicationType": "SYNCHRONOUS", "activationPolicy": "ALWAYS", "ipConfiguration": { "privateNetwork": "projects/ project-id /global/networks/default", "authorizedNetworks": [], "ipv4Enabled": false }, "locationPreference": { "zone": " zone ", "kind": "sql#locationPreference" }, "databaseFlags": [ { "name": "general_log", "value": "on" } ], "dataDiskType": "PD_SSD", "maintenanceWindow": { "kind": "sql#maintenanceWindow", "hour": 0, "day": 0 }, "backupConfiguration": { "startTime": "03:00", "kind": "sql#backupConfiguration", "enabled": true, "binaryLogEnabled": true }, "settingsVersion": "54", "storageAutoResizeLimit": "0", "storageAutoResize": true, "dataDiskSizeGb": "10" } } In the output, look for the databaseFlags field.
+
+### "Cloud SQL Admin API error messages \_|\_ Cloud SQL for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages](https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages)
+- Source ID: `site-api-reference`
+- Final score: 121
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Databases Cloud SQL PostgreSQL Reference Send feedback Cloud SQL Admin API error messages Stay organized with collections Save and categorize content based on your preferences.
+- ERROR DISALLOWED DISABLED DATABASE REPLICATION ON REPLICA CREATION The database replication flag must be enabled when creating a read replica.
+- ERROR INVALID FLAG DATABASE TYPE The flag requested can't be set on this database type.
+- ERROR PITR BACKUP RUN NOT DELETABLE This upgrade backup cannot be deleted because it's within the point-in-time recovery retention period for the instance.
+
+### Cloud SQL error messages \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/error-messages](https://docs.cloud.google.com/sql/docs/error-messages)
 - Source ID: `site-docs-root`
-- Final score: 156
-- Re-rank relevance: N/A
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The following information applies to flags and extensions for PostgreSQL 17: Flags These flags are deprecated for PostgreSQL 17: old snapshot threshold trace recovery messages For more information, see Configure database flags .
-- The following information applies to flags and extensions for PostgreSQL 18: Flags The following new flags are available for PostgreSQL 18 only: autovacuum vacuum max threshold autovacuum worker slots enable distinct reordering enable self join elimitation io max concurrency io method io workers log lock failures max active replecation origins track cost delay timing vacuum max eager freeze failure rate vacuum truncate For more information, see Configure database flags .
-- May 19, 2023 Feature The following extensions , views , utilities , and flags are generally available: Extensions postgresql anonymizer: mask or replace personally identifiable information (PII) or sensitive data from a PostgreSQL database. pgtt: create, manage and use Oracle-style global temporary tables. rdkit: compare, manipulate, and identify molecular structures.
-- July 17, 2024 Feature You can now use the following optional flags when you export and import files into Cloud SQL instances: --clean : if you export files, then this flag enables you to include the DROP <object> SQL statement that's required to drop (clean) database objects before you import them.
-
-### "Manage users with IAM database authentication \_|\_ Cloud SQL for PostgreSQL\
-
-- URL: [https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users](https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users)
-- Source ID: `site-iam-reference`
-- Final score: 152
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Terraform To add IAM user and service accounts on an instance with IAM database authentication enabled, use a Terraform resource . resource "google sql database instance" "default" { name = "postgres-db-auth-instance-name-test" region = "us-west4" database version = "POSTGRES 14" settings { tier = "db-custom-2-7680" database flags { name = "cloudsql.iam authentication" value = "on" } } } Specify the email address of the IAM user to add to the instance This resource does not create a new IAM user account; this account must already exist resource "google sql user" "iam user" { name = "test-user@example.com" instance = google sql database instance.default.name type = "CLOUD IAM USER" } Specify the email address of the IAM service account to add to the instance This resource does not create a new IAM service account; this service account must already exist Create a new IAM service account resource "google service account" "default" { account id = "cloud-sql-postgres-sa" display name = "Cloud SQL for Postgres Service Account" } resource "google sql user" "iam service account user" { Note: for PostgreSQL only, Google Cloud requires that you omit the ".gserviceaccount.com" suffix from the service account email due to length limits on database usernames. name = trimsuffix(google service account.default.email, ".gserviceaccount.com") instance = google sql database instance.default.name type = "CLOUD IAM SERVICE ACCOUNT" } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.
-- For example, a log might have information similar to the following: { insertId: "..." logName: "projects/.../logs/cloudaudit.googleapis.com%2Fdata access" protoPayload: { @type: "type.googleapis.com/google.cloud.audit.AuditLog" authenticationInfo: { principalEmail: "..." } authorizationInfo: [ 0: { granted: true permission: "cloudsql.instances.login" resource: "instances/..." resourceAttributes: { } } ] methodName: "cloudsql.instances.login" request: { @type: "type.googleapis.com/google.cloud.sql.authorization.v1.InstancesLoginRequest" clientIpAddress: "..." database: "..." databaseSessionId: ... instance: "projects/.../locations/us-central1/instances/..." user: "..." } requestMetadata: { callerIp: "..." destinationAttributes: { } requestAttributes: { auth: { } time: "..." } } resourceName: "instances/..." serviceName: "cloudsql.googleapis.com" status: { } } receiveTimestamp: "..." resource: { labels: { database id: "...:..." project id: "..." region: "us-central" } type: "cloudsql database" } severity: "INFO" timestamp: "..." } Troubleshoot a login failure When an attempt to log in fails, PostgreSQL returns a minimal error message for security reasons.
-- Terraform To add IAM user and service accounts on an instance with IAM database authentication enabled, use a Terraform resource . resource "google sql database instance" "default" { name = "postgres-iam-group-auth-instance-name" region = "us-west4" database version = "POSTGRES 16" settings { tier = "db-custom-2-7680" database flags { name = "cloudsql.iam authentication" value = "on" } } } Specify the email address of the Cloud Identity group to add to the instance This resource does not create a Cloud Identity group; the group must already exist resource "google sql user" "iam group" { name = "example-group@example.com" instance = google sql database instance.default.name type = "CLOUD IAM GROUP" } data "google project" "project" { } resource "google project iam binding" "cloud sql user" { project = data.google project.project.project id role = "roles/cloudsql.instanceUser" members = [ "group:example-group@example.com" ] } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.
-- Assign database roles while adding an IAM account to an instance To create a custom database role in PostgreSQL, see Database roles . gcloud Create a user account Use the email, such as example-user@example.com , to identify the user. gcloud sql users create USERNAME \ --instance = INSTANCE NAME \ --type = cloud iam user \ --database-roles = ROLE 1 , ROLE 2 Replace the following: USERNAME : the email address for the user.
-
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following information applies to flags and extensions for PostgreSQL 17: Flags These flags are deprecated for PostgreSQL 17: old snapshot threshold trace recovery messages For more information, see Configure database flags .
-- July 17, 2024 Cloud SQL for PostgreSQL Feature You can now use the following optional flags when you export and import files into Cloud SQL instances: --clean : if you export files, then this flag enables you to include the DROP <object> SQL statement that's required to drop (clean) database objects before you import them.
-- The following information applies to flags and extensions for PostgreSQL 18: Flags The following new flags are available for PostgreSQL 18 only: autovacuum vacuum max threshold autovacuum worker slots enable distinct reordering enable self join elimitation io max concurrency io method io workers log lock failures max active replecation origins track cost delay timing vacuum max eager freeze failure rate vacuum truncate For more information, see Configure database flags .
-- Cloud SQL for PostgreSQL Feature The following extensions , views , utilities , and flags are generally available: Extensions postgresql anonymizer: mask or replace personally identifiable information (PII) or sensitive data from a PostgreSQL database. pgtt: create, manage and use Oracle-style global temporary tables. rdkit: compare, manipulate, and identify molecular structures.
+- Some error messages come from the database engines themselves, some from the Cloud SQL service, some from client applications, and some are returned by calls to the Cloud SQL Admin API.
+- Home Documentation Databases Cloud SQL Guides Send feedback Cloud SQL error messages Stay organized with collections Save and categorize content based on your preferences.
+- The temp file limit flag is set too low for your database usage.
+- See Configuring database flags .
 

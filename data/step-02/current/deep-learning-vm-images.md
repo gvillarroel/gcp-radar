@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 111
-Unique features: 210
+Unique features: 207
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -120,7 +120,6 @@ Unique features: 210
 | 2021-04-19 | Horovod |  | TensorFlow GPU Deep Learning VM Images include Horovod. |
 | 2021-03-31 | PyTorch 1.8 support |  | Deep Learning VM Images support PyTorch 1.8 in deep learning environments. |
 | 2021-03-31 | TensorFlow Enterprise MKL build fix |  | Deep Learning VM Images fix the scope allocator optimization issue in TensorFlow Enterprise 2.3 and 2.1 MKL builds. |
-| 2021-03-05 | DooD support |  | Dataflow notebooks container images support Docker outside of Docker. |
 | 2021-03-05 | tensorflow-cloud 0.1.13 |  | Deep Learning VM Images include tensorflow-cloud 0.1.13. |
 | 2021-02-19 | Fairness Indicators 0.27.0 |  | Deep Learning VM Images include Fairness Indicators 0.27.0. |
 | 2021-02-19 | Fast.ai book tutorials |  | PyTorch Deep Learning VM Images include Fast.ai book tutorials. |
@@ -167,7 +166,6 @@ Unique features: 210
 | 2019-10-11 | TensorFlow 2.0 images |  | TensorFlow 2.0 Deep Learning VM Images are generally available and no longer experimental. |
 | 2019-08-26 | JupyterLab 1.0 |  | Deep Learning VM Images include JupyterLab 1.0 on all images. |
 | 2019-08-26 | PyTorch 1.2 |  | Deep Learning VM Images include PyTorch 1.2. |
-| 2019-07-12 | Conda-independent R Notebooks |  | R Notebooks in Deep Learning VM Images no longer depend on a Conda environment. |
 | 2019-07-12 | Python 3.7 support for TensorFlow |  | TensorFlow Deep Learning VM Images support Python 3.7. |
 | 2019-07-12 | R 3.6 |  | Deep Learning VM Images include R 3.6. |
 | 2019-07-01 | What-If Tool |  | Deep Learning VM Images include the What-If Tool widget. |
@@ -198,7 +196,6 @@ Unique features: 210
 | 2019-01-14 | MXNet 1.3 experimental images |  | Deep Learning VM Images provide an experimental MXNet 1.3 image flavor. |
 | 2018-12-19 | AI Platform Deep Learning VM Image 1.0 |  | AI Platform Deep Learning VM Image 1.0 is generally available. |
 | 2018-12-19 | Bazel |  | TensorFlow Deep Learning VM Images preinstall Bazel. |
-| 2018-12-19 | BigQuery magic plugin |  | Deep Learning VM Images preload the BigQuery magic plugin by default. |
 | 2018-12-19 | Jupyter SQL integration |  | Deep Learning VM Images preinstall Jupyter SQL integration and preload the SQL plugin. |
 | 2018-12-19 | Python Dataproc client |  | Deep Learning VM Images preinstall the Python Dataproc client on all images. |
 | 2018-12-10 | Fast.AI 1.0.36 |  | Deep Learning VM Images include Fast.AI 1.0.36. |

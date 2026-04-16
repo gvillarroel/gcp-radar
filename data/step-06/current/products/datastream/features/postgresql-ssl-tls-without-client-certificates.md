@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:11:59.746Z"
+generated_at: "2026-04-12T12:14:04.321Z"
 product_name: "Datastream"
 product_slug: "datastream"
 feature_name: "PostgreSQL SSL/TLS without client certificates"
 feature_slug: "postgresql-ssl-tls-without-client-certificates"
 latest_feature_date: "2023-11-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles"
+  - "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
   - "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
 keywords:
@@ -26,7 +27,7 @@ keywords:
 # PostgreSQL SSL/TLS without client certificates
 
 Product: Datastream
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,11 +39,12 @@ Datastream supports SSL/TLS encryption for PostgreSQL source connections that do
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles](https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles)
+- [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles)
 - [https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient](https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient](https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient)
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles](https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles)
 - Source ID: `site-api-reference`
-- Final score: 174
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This value will be used during the SSL/TLS handshake, allowing the PostgreSQL server to authenticate the client's identity, i.e. identity of the Datastream. caCertificate string Required.
@@ -62,11 +64,25 @@ Evidence snippets:
 - This captures various options like no TLS encryption from client if server doesn't ask for it, only encryption without validation and both encryption as well as validation of server certificate. encryption setting can be only one of the following: encryptionNotEnforced object ( EncryptionNotEnforced ) If set, Datastream will not enforce encryption.
 - In case PostgresqlSslConfig is not set, the connection will use the default SSL mode, which is prefer (i.e. this mode will only use encryption if enabled from database side, otherwise will use unencrypted communication) PostgresqlSslConfig JSON representation { // Union field encryption setting can be only one of the following: "serverVerification" : { object ( ServerVerification ) } , "serverAndClientVerification" : { object ( ServerAndClientVerification ) } // End of list of possible types for union field encryption setting . } Fields Union field encryption setting .
 
+### "REST Resource: projects.locations.connectionProfiles \_|\_ Datastream \_\
+
+- URL: [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles)
+- Source ID: `site-api-reference`
+- Final score: 220
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This value will be used during the SSL/TLS handshake, allowing the PostgreSQL server to authenticate the client's identity, i.e. identity of the Datastream. caCertificate string Required.
+- This captures various SSL mode supported by PostgreSQL, which includes TLS encryption with server verification, TLS encryption with both server and client verification and no TLS encryption. encryption setting can be only one of the following: serverVerification object ( ServerVerification ) If this field is set, the communication will be encrypted with TLS encryption and the server identity will be authenticated. serverAndClientVerification object ( ServerAndClientVerification ) If this field is set, the communication will be encrypted with TLS encryption and both the server identity and the client identity will be authenticated.
+- This captures various options like no TLS encryption from client if server doesn't ask for it, only encryption without validation and both encryption as well as validation of server certificate. encryption setting can be only one of the following: encryptionNotEnforced object ( EncryptionNotEnforced ) If set, Datastream will not enforce encryption.
+- Resource: ConnectionProfile JSON representation OracleProfile JSON representation OracleSslConfig JSON representation OracleAsmConfig JSON representation GcsProfile JSON representation MysqlProfile JSON representation MysqlSslConfig JSON representation BigQueryProfile PostgresqlProfile JSON representation PostgresqlSslConfig JSON representation ServerVerification JSON representation ServerAndClientVerification JSON representation SqlServerProfile JSON representation SqlServerSslConfig JSON representation EncryptionNotEnforced BasicEncryption EncryptionAndServerValidation JSON representation SalesforceProfile JSON representation UserCredentials JSON representation Oauth2ClientCredentials JSON representation MongodbProfile JSON representation HostAddress JSON representation MongodbSslConfig JSON representation SrvConnectionFormat StandardConnectionFormat JSON representation SpannerProfile JSON representation StaticServiceIpConnectivity ForwardSshTunnelConnectivity JSON representation PrivateConnectivity JSON representation Methods Resource: ConnectionProfile A set of reusable connection configurations to be used as a source or destination for a stream.
+
 ### "Class DatastreamAsyncClient (1.18.0) \_|\_ Python client libraries \_|\_\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient](https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 164
+- Final score: 185
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +95,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient](https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient)
 - Source ID: `site-python-reference`
-- Final score: 164
+- Final score: 185
 - Re-rank relevance: N/A
 
 Evidence snippets:

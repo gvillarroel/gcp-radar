@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:24.017Z"
+generated_at: "2026-04-14T09:47:34.448Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "RHEL 7.7 image availability on Bare Metal Solution"
 feature_slug: "rhel-7-7-image-availability-on-bare-metal-solution"
 latest_feature_date: "2021-08-30"
 deprecation_date: "2021-08-30"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
   - "https://docs.cloud.google.com/bare-metal/docs/bms-planning"
+  - "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+  - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
 keywords:
   - "deprecates"
   - "availability"
   - "image"
   - "rhel"
-  - "solution"
-  - "metal"
-  - "bare"
-  - "on"
+  - "servers"
 ---
 
 # RHEL 7.7 image availability on Bare Metal Solution
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,52 @@ Deprecates the RHEL 7.7 image for Bare Metal Solution servers, with availability
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
 - [https://docs.cloud.google.com/bare-metal/docs/bms-planning](https://docs.cloud.google.com/bare-metal/docs/bms-planning)
+- [https://docs.cloud.google.com/sap/docs/netweaver-planning-guide](https://docs.cloud.google.com/sap/docs/netweaver-planning-guide)
+- [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
 
 ## Supporting Pages
 
 ### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- Source ID: `site-docs-root`
-- Final score: 254
+- Source ID: `site-docs-reference`
+- Final score: 108
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For more information, see the launch stage descriptions . gcloud alpha bms instances update SERVER NAME --region REGION --os-image= OS IMAGE --kms-crypto-key-version= KMS CRYPTO KEY VERSION --ssh-keys= KEY 1 , KEY 2 Example: gcloud alpha bms instances update server1 --region europe-west3 --os-image= OS IMAGE --kms-crypto-key-version=projects/bmaas-testing/locations/global/keyRings/e2e-test/cryptoKeys/e2e-test-key/cryptoKeyVersions/1 --ssh-keys=e2e-test-key-1,e2e-test-key-2 API To update an OS image on your Bare Metal Solution server, enter your project ID, region, server name, and OS image, then issue the following curl command.
-- Example: gcloud bms os-images describe OEL8x --project=test-project Following is a sample output: applicableInstanceTypes: - o2-highmem-224-metal - o2-standard-112-metal - o2-standard-16-metal - o2-standard-32-metal - o2-standard-48-metal code: OEL8x description: Oracle Linux 8.8 [5.4.17-2136.324.5.3.el8uek.x86 64] name: projects/bmaas-testing/locations/global/osImages/OEL8x supportedNetworkTemplates: - s200-bondaa-bondaa - s400-bondaa-bondaa Change the OS for a server You can reimage a Bare Metal Solution server with a different OS image.
-- For the OS image code, see Operating systems . curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME ?updateMask=os image" -d "{ 'osImage' : ' OS IMAGE ' }" Because this change takes awhile to complete, you can check the status by following the steps in View the status of a long-running operation .
-- For a Bare Metal Solution network, we recommend that you create VLAN attachments in pairs for high availability.
-
-### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- Source ID: `site-docs-root-2`
-- Final score: 252
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The availability of Bare Metal Solution is transitioning to a specialized, allowlist-only model.
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
-- Figure 1 : Components for using Backup and DR with Oracle databases in a Bare Metal Solution environment As you can see in the diagram, this solution requires the following components: Bare Metal Solution regional extension– Allows you to run Oracle databases in a third-party data center adjacent to a Google Cloud data center, and use your existing on-premises software licenses.
+- Go to Servers The Servers page lists all your servers with the following details: Field Description Example Status Indicates the availability of a server A green circle with a check mark indicates that the server is provisioned and available.
+- ProjectsClient () bms client = BareMetalSolutionClient () output = [] errors = [] try : for project in get projects ( parent , folders client , projects client ): volumes list request = ListVolumesRequest ( parent = "projects/" + project + "/locations/global" , filter = filter , ) try : for volume in bms client . list volumes ( request = volumes list request ): output . append ( f " - { volume . name } " ) This could happen because BMS API is not enabled in a certain project. except PermissionDenied as e : errors . append ( f "Unable to list bms resources for project { project } : { e } " ) except PermissionDenied as e : errors . append ( f "Unable to access folder or project: { e } " ) return " \n " . join ( output ), " \n " . join ( errors ) def main ( : Sequence [ str ]): if ORGANIZATION ID . value is not None and FOLDER ID . value is not None : raise Exception ( "Only one of organization ID or folder ID must be provided" ) elif ORGANIZATION ID . value is None and FOLDER ID . value is None : raise Exception ( "Either one of organization ID or folder ID must be provided" ) elif ORGANIZATION ID . value is not None : parent = f "organizations/ { ORGANIZATION ID . value } " else : parent = f "folders/ { FOLDER ID . value } " volumes , errors = get volumes list ( parent , filter = FILTER . value ) print ( "=================== Flat list of volumes in the folder or organization" " ===================" ) print ( volumes ) print ( "=================== List of folders or projects with errors" " ===================" ) print ( errors ) if name == " main " : app . run ( main ) Manage servers You can manage the servers in your Bare Metal Solution environment in the following ways: View servers Organize servers by using labels Rename a server Retrieve the initial password for a server View OS details Change the OS for a server Enable hyperthreading on a server View servers To view the details of your Bare Metal Solution servers, follow these steps: Console Go to the Servers page.
+- To list the servers in your Bare Metal Solution environment and see their status, enter your project ID and region into the following curl command, copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances" To get network and storage information for a server in your Bare Metal Solution environment, issue the following command: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME " Organize servers by using labels To help organize your servers, you can use labels.
+- To clear all reservations, replace the end of the command with the following: -d "{ 'reservations' : [] }" Manage storage You can manage the storage in your Bare Metal Solution environment in the following ways: View storage volumes Organize storage volumes by using labels Rename a storage volume Provision storage volume resources Remove storage volume resources View boot volume snapshots and their details Create a boot volume snapshot Delete a boot volume snapshot Restore a boot volume snapshot View storage volumes Paying attention to your storage resources in the Bare Metal Solution environment helps you determine if your servers have enough storage capacity for applications and workloads.
 
 ### Plan for Bare Metal Solution \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-planning](https://docs.cloud.google.com/bare-metal/docs/bms-planning)
-- Source ID: `site-docs-root`
-- Final score: 240
+- Source ID: `site-docs-reference`
+- Final score: 108
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - OS version OS image code Machine series Machine type Lifecycle stage EOL and image deprecation date RHEL 7.7 for SAP LAMBRHEL77SAP o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers End of Life August 2023 RHEL 7.9 RHEL7x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA June 2024 RHEL 8.4 (Minor version locked) RHEL84 o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life May 2023 RHEL 8 (Latest minor release) RHEL8x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA May 2029 RHEL 8.0 for SAP RHEL80SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life December 2020 RHEL 8.1 for SAP RHEL81SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life November 2023 RHEL 9.4 (Minor version locked) RHEL94 o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life May 2023 RHEL 9 (Latest minor release) RHEL9x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA May 2032 OEL 7.9 OEL7x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA July 2024 OEL 8 (Latest minor release) OEL8x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA July 2029 OEL 8.8 (Minor version locked) OEL88 o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA June 2025 OEL 9 OEL9x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA June 2032 SLES 15 SP1 SLES15SPx o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life January 2024 SLES 12 SP4 for SAP SLES12SP4SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal o2-ultramem-896-metal General-purpose & Memory-optimized servers End of Life June 2023 SLES 12 SP5 for SAP SLES12SP5SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal o2-ultramem-896-metal General-purpose & Memory-optimized servers End of Support October 2027 SLES 15 for SAP SLES15SAP o2-standard-48-metal o2-standard-32-metal o2-standard-112-metal o2-standard-16-metal o2-highmem-224-metal General-purpose End of Life December 2022 SLES 15 SP1 for SAP SLES15SPxSAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal o2-ultramem-896-metal General-purpose & Memory-optimized servers End of Support January 2024 SLES 15 SP2 for SAP LAMBSLES15SP2SAP o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers GA December 2024 Bring Your Own Image (BYOI) The Bare Metal Solution servers are certified to run only the OS images of the following distributions: Red Hat Enterprise Linux (RHEL) Oracle Linux (OL) SUSE Linux Enterprise Server (SLES) Any other OS hasn't been tested or certified to run on the Bare Metal Solution servers.
-- Regional availability Bare Metal Solution is available in the following Google Cloud regions : Region Location asia-northeast1 Tokyo, Japan, APAC asia-northeast3 Seoul, South Korea, APAC asia-southeast1 Jurong West, Singapore, APAC europe-west2 London, England, Europe europe-west3 Frankfurt, Germany, Europe europe-west4 Eemshaven, Netherlands, Europe northamerica-northeast1 Montréal, Québec, Canada, North America northamerica-northeast2 Toronto, Ontario, Canada, North America southamerica-east1 Osasco, São Paulo, Brazil, South America us-central1 Council Bluffs, Iowa, USA, North America us-east4 Ashburn, Virginia, USA, North America us-west2 Los Angeles, California, USA, North America If you don't see the region that you need in the preceding table, then contact Google Cloud Sales .
-- Installing BYOI OS image To install your BYOI OS image on Bare Metal Solution, do the following: Ensure that your OS image meets all the OS image technical specifications .
-- Consequently, the OS image you previously used may differ from the one available when reimaging or provisioning a new Bare Metal Solution server.
+- For example, when Red Hat releases RHEL 8.10 , the existing RHEL 8.9 OS image is updated to RHEL 8.10 as part of the patch process.
+- Available OS images You can request the installation of the following OS images on your Bare Metal Solution servers.
+- General information Firmware version Machine series Machine type Lifecycle stage EOL and firmware deprecation date BIOS PUR043.45.00.002 (TS54) o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA To be determined BIOS PUR043.37.14.021 (TS24.02) o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life April 2024 BIOS PUR043.37.16.023 (TS24.05) o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life April 2024 3.50.58 o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers GA March 2024 3.80.24 o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers GA To be determined Features Firmware version Features BIOS PUR043.45.00.002 (TS54) Support for interactive serial console.
+
+### "SAP NetWeaver planning guide \_|\_ SAP on Google Cloud \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sap/docs/netweaver-planning-guide](https://docs.cloud.google.com/sap/docs/netweaver-planning-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 106
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If you use the following RHEL or SLES "for SAP" OS images that Google Cloud provides, then Google Cloud's Agent for SAP is packaged with the OS images: RHEL: all "for SAP" images SLES: SLES 15 SP4 for SAP and later versions Scale-out of SAP NetWeaver application servers SAP supports a scale-out architecture that uses multiple application servers, which supports a higher workload.
+- To see the available versions in each image family, see the operating system details: Red Hat Enterprise Linux (RHEL) SUSE Linux Enterprise Server (SLES) Windows Server SQL Server Enterprise For more information about the support status of the operating system versions that are certified for SAP, see OS support for SAP NetWeaver on Google Cloud .
+- Regional availability of SAP-certified Bare Metal Solution machines The Bare Metal Solution servers that are certified for SAP applications are available only in Bare Metal Solution region extensions, which are not available for every Google Cloud region.
+- Important : SLES and RHEL are premium images, and all prices for premium images are in addition to charges for using a machine type.
 

@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.608Z"
+generated_at: "2026-04-12T12:07:33.851Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB Omni Arm architecture support"
 feature_slug: "alloydb-omni-arm-architecture-support"
 latest_feature_date: "2024-06-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention"
+  - "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
   - "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
 keywords:
   - "ARM architecture"
@@ -25,7 +27,7 @@ keywords:
 # AlloyDB Omni Arm architecture support
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,35 +39,46 @@ AlloyDB Omni now supports Arm-based architectures.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention)
+- [https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration](https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration)
 - [https://docs.cloud.google.com/alloydb/docs/reference/extensions](https://docs.cloud.google.com/alloydb/docs/reference/extensions)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Class QuantityBasedRetention (0.7.0) \_|\_ Python client libraries \_|\_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention)
+- Source ID: `site-python-reference`
+- Final score: 50
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Class TimeBasedRetention (0.7.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention)
+- Source ID: `site-python-reference`
+- Final score: 50
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Manage your AlloyDB resources using Knowledge Catalog \_|\_ AlloyDB for\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration](https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration)
+- Source ID: `site-iam-reference`
+- Final score: 48
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- This version includes the following: Compatibility with PostgreSQL server version 15 A command-line interface for easier installation and maintenance of AlloyDB Omni Integration with Vertex AI Guides for data protection using Barman and pglogical Various bug fixes and query performance improvements Feature A separate Technology Preview edition of AlloyDB Omni is available.
-- March 16, 2026 Feature AlloyDB now supports the 2 vCPU C4A machine type ( c4a-highmem-2-lssd ), which is powered by Google Axion, Google's custom Arm-based processor.
-- AlloyDB continuously replicates transactions to the standby node to keep caches warm and to ensure that the node is ready to take over quickly during a failover.
-- September 11, 2025 Feature AlloyDB supports C4A Arm VMs on Google's custom-built Axion processors.
 
 ### "Supported database extensions \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/reference/extensions](https://docs.cloud.google.com/alloydb/docs/reference/extensions)
 - Source ID: `site-api-reference`
-- Final score: 22
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 48
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - You can use materialized views to make incremental changes to the views instead of recomputing the contents from scratch. pg partman Enables you to create and manage time-based and serial-based table partition sets. pg prewarm Provides a convenient way to load relation data into either the operating system buffer cache or the PostgreSQL buffer cache.

@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:56:30.359Z",
+  "generated_at": "2026-04-12T21:47:30.147Z",
   "product_name": "Service Directory",
   "product_slug": "service-directory",
   "step02_source_path": "data/step-02/current/service-directory.md",
@@ -8,6 +8,66 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 7,
+    "source_row_count": 7,
+    "top_phrases": [
+      "service directory external tcp udp load balancer configuration",
+      "service directory internal tcp udp load balancer configuration",
+      "service directory internal load balancer configuration",
+      "service directory network load balancer configuration",
+      "service directory integration with traffic director",
+      "service directory private network access",
+      "service directory",
+      "service directory supports configuring internal tcp udp load balancers in ga",
+      "service directory supports configuring an external tcp udp load balancer",
+      "service directory now supports configuring an internal load balancer",
+      "service directory supports configuring network load balancers in ga",
+      "service directory now supports private network access"
+    ],
+    "top_tokens": [
+      "directory",
+      "service",
+      "supports",
+      "balancer",
+      "configuration",
+      "configuring",
+      "load",
+      "now",
+      "balancers",
+      "internal",
+      "network",
+      "services",
+      "tcp",
+      "udp",
+      "access",
+      "and",
+      "applications",
+      "available",
+      "beta",
+      "cloud",
+      "connect",
+      "directly",
+      "director",
+      "enables",
+      "exposing",
+      "external",
+      "gateways",
+      "google",
+      "integrated",
+      "integration",
+      "mesh",
+      "networks",
+      "preview",
+      "private",
+      "registered",
+      "supported",
+      "traffic",
+      "vpc",
+      "with"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "service-directory",
   "dominant_python_slug": "",
   "dominant_java_slug": "google-cloud-servicedirectory",
@@ -24,6 +84,20 @@
       "round": 1,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Service Directory\" official documentation OR site:developers.google.com \"service directory\" official documentation",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Service Directory\" \"service directory external tcp udp load balancer configuration\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Service Directory\" \"service directory network load balancer configuration\"",
       "official_result_count": 0,
       "results": []
     },
@@ -104,15 +178,15 @@
           "rank": 5
         },
         {
-          "title": "Service Directory client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-directory/docs/reference/libraries",
-          "description": "# Imports the Google Cloud client library require &quot;google/cloud/service_directory&quot; # Your Google Cloud Platform project ID project = ENV[&quot;GOOGLE_CLOUD_PROJECT&quot;] # Location of the Service Directory Namespace location = &quot;us-central1&quot; # Initialize a client registration_service = Google::Cloud::ServiceDirectory.registration_service # The resource name of the project location_name = registration_service.location_path( project: project, location: location ) # Request list of namespaces in the project response = registration_service.list_namespaces parent: location_name # List all namespaces for your project puts &quot;Namespaces: &quot; response.each do |namespace| puts namespace.name end",
-          "rank": 6
-        },
-        {
           "title": "Key terms | Service Directory | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/service-directory/docs/key-terms",
           "description": "For Service Directory, <strong>an endpoint can only exist within a service and is identified with an endpoint name that is a string identifier that is unique to that service</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Service Directory client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-directory/docs/reference/libraries",
+          "description": "# Imports the Google Cloud client library require &quot;google/cloud/service_directory&quot; # Your Google Cloud Platform project ID project = ENV[&quot;GOOGLE_CLOUD_PROJECT&quot;] # Location of the Service Directory Namespace location = &quot;us-central1&quot; # Initialize a client registration_service = Google::Cloud::ServiceDirectory.registration_service # The resource name of the project location_name = registration_service.location_path( project: project, location: location ) # Request list of namespaces in the project response = registration_service.list_namespaces parent: location_name # List all namespaces for your project puts &quot;Namespaces: &quot; response.each do |namespace| puts namespace.name end",
           "rank": 7
         },
         {
@@ -153,6 +227,20 @@
     },
     {
       "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Service Directory\" \"service directory internal tcp udp load balancer configuration\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Service Directory\" \"service directory integration with traffic director\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Service Directory\" \"access control\"",
       "official_result_count": 3,
@@ -184,15 +272,15 @@
       "official_result_count": 3,
       "results": [
         {
-          "title": "Service Directory client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-directory/docs/reference/libraries",
-          "description": "Start writing code for Service Directory in C++, Go, Java, Node.js, PHP, Python, Ruby, C#.",
-          "rank": 1
-        },
-        {
           "title": "Java client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-servicedirectory/latest/overview",
           "description": "Service Directory Description: <strong>Allows the registration and lookup of service endpoints</strong>. In order to use this library, you first need to go through the following steps: ... To ensure that your project uses compatible versions of the libraries ...",
+          "rank": 1
+        },
+        {
+          "title": "Service Directory client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-directory/docs/reference/libraries",
+          "description": "Start writing code for Service Directory in C++, Go, Java, Node.js, PHP, Python, Ruby, C#.",
           "rank": 2
         },
         {
@@ -246,15 +334,15 @@
           "rank": 6
         },
         {
-          "title": "Invoke a private endpoint using Service Directory's service registry | Workflows | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/workflows/docs/invoke-private-endpoint-vpc",
-          "description": "<strong>This lets you provide your workflow with a Service Directory service name. Your workflow execution uses the information retrieved from the service registry to send the appropriate HTTP request, without egressing to a public network. This document shows you how to register a virtual machine (VM) in a Virtual Private Cloud</strong> ...",
+          "title": "Create service | Service Directory | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-directory/docs/samples/servicedirectory-create-service",
+          "description": "To authenticate to Service Directory, set up Application Default Credentials. For more information, see Set up authentication for a local development environment. # project = &quot;Your Google Cloud project ID&quot; # location = &quot;The Google Cloud region containing the namespace&quot; # namespace = &quot;The name of the parent namespace&quot; # service = &quot;The name of the service you are creating&quot; require &quot;google/cloud/service_directory&quot; # Initialize the client registration_service = Google::Cloud::ServiceDirectory.registration_service # The parent path of the service parent = registration_service.namespace_path( project: project, location: location, namespace: namespace ) # Use the Service Directory API to create the service response = registration_service.create_service parent: parent, service_id: service puts &quot;Created service: #{response.name}&quot;",
           "rank": 7
         },
         {
-          "title": "Service Directory client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-directory/docs/reference/libraries",
-          "description": "# Imports the Google Cloud client library require &quot;google/cloud/service_directory&quot; # Your Google Cloud Platform project ID project = ENV[&quot;GOOGLE_CLOUD_PROJECT&quot;] # Location of the Service Directory Namespace location = &quot;us-central1&quot; # Initialize a client registration_service = Google::Cloud::ServiceDirectory.registration_service # The resource name of the project location_name = registration_service.location_path( project: project, location: location ) # Request list of namespaces in the project response = registration_service.list_namespaces parent: location_name # List all namespaces for your project puts &quot;Namespaces: &quot; response.each do |namespace| puts namespace.name end",
+          "title": "Invoke a private endpoint using Service Directory's service registry | Workflows | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/workflows/docs/invoke-private-endpoint-vpc",
+          "description": "<strong>This lets you provide your workflow with a Service Directory service name. Your workflow execution uses the information retrieved from the service registry to send the appropriate HTTP request, without egressing to a public network. This document shows you how to register a virtual machine (VM) in a Virtual Private Cloud</strong> ...",
           "rank": 8
         }
       ]
@@ -290,6 +378,20 @@
       "round": 3,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Service Directory\" overview OR site:developers.google.com \"service directory\" overview",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Service Directory\" \"service directory internal load balancer configuration\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Service Directory\" \"service directory private network access\"",
       "official_result_count": 0,
       "results": []
     },
@@ -357,21 +459,21 @@
           "rank": 5
         },
         {
+          "title": "Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-servicedirectory/latest/overview",
+          "description": "Service Directory Description: <strong>Allows the registration and lookup of service endpoints</strong>. In order to use this library, you first need to go through the following steps: ... To ensure that your project uses compatible versions of the libraries ...",
+          "rank": 6
+        },
+        {
           "title": ".NET client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.ServiceDirectory.V1/latest",
           "description": "Google.Cloud.ServiceDirectory.V1 is a.NET client library for the Service Directory API.",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "Service Directory and load balancers | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/service-directory/docs/sd-lb-overview",
           "description": "Register load balancers directly and automatically in Service Directory providing a single repository for all your services in Google Cloud.",
-          "rank": 7
-        },
-        {
-          "title": "Key terms | Service Directory | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-directory/docs/key-terms",
-          "description": "For Service Directory, <strong>an endpoint can only exist within a service and is identified with an endpoint name that is a string identifier that is unique to that service</strong>.",
           "rank": 8
         }
       ]
@@ -419,6 +521,22 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "services",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -429,8 +547,20 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "services",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 100,
       "keep": true
@@ -456,6 +586,22 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "access",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -465,9 +611,21 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 5,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "access",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 100,
       "keep": true
@@ -493,43 +651,23 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "configuring",
+          "and",
+          "cloud",
+          "director",
+          "google",
+          "with"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Key terms | Service Directory | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-directory/docs/key-terms",
-      "description": "For Service Directory, <strong>an endpoint can only exist within a service and is identified with an endpoint name that is a string identifier that is unique to that service</strong>.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Service Directory\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Service Directory\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Service Directory\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 100,
-      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -539,9 +677,22 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "configuring",
+          "and",
+          "cloud",
+          "director",
+          "google",
+          "with"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 100,
       "keep": false
@@ -553,8 +704,8 @@
       "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Directory\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Service Directory\" \"access control\"",
         "site:docs.cloud.google.com \"Service Directory\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Service Directory\" \"access control\"",
         "site:docs.cloud.google.com \"Service Directory\" Google Cloud introduction reference"
       ],
       "intent_hits": [
@@ -569,6 +720,23 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "supports",
+          "services",
+          "and",
+          "cloud",
+          "connect",
+          "director"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -578,9 +746,22 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 5,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "supports",
+          "services",
+          "and",
+          "cloud",
+          "connect",
+          "director"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 100,
       "keep": true
@@ -589,13 +770,12 @@
       "title": "Service Directory client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/service-directory/docs/reference/libraries",
       "description": "# Imports the Google Cloud client library require &quot;google/cloud/service_directory&quot; # Your Google Cloud Platform project ID project = ENV[&quot;GOOGLE_CLOUD_PROJECT&quot;] # Location of the Service Directory Namespace location = &quot;us-central1&quot; # Initialize a client registration_service = Google::Cloud::ServiceDirectory.registration_service # The resource name of the project location_name = registration_service.location_path( project: project, location: location ) # Request list of namespaces in the project response = registration_service.list_namespaces parent: location_name # List all namespaces for your project puts &quot;Namespaces: &quot; response.each do |namespace| puts namespace.name end",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Directory\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Service Directory\" \"Java client libraries\"",
-        "site:docs.cloud.google.com \"Service Directory\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Service Directory\" \"API reference\"",
-        "site:docs.cloud.google.com \"Service Directory\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com \"Service Directory\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"Service Directory\" \"API reference\""
       ],
       "intent_hits": [
         "product_docs",
@@ -607,9 +787,23 @@
         2,
         3
       ],
-      "best_rank": 1,
+      "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 27,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -620,8 +814,18 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "cloud",
+          "director",
+          "google"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 100,
       "keep": false
@@ -647,6 +851,23 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "services",
+          "and",
+          "cloud",
+          "connect",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -657,8 +878,21 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "services",
+          "and",
+          "cloud",
+          "connect",
+          "director",
+          "google"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 100,
       "keep": true
@@ -670,8 +904,8 @@
       "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Directory\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Service Directory\" \"access control\"",
         "site:docs.cloud.google.com \"Service Directory\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Service Directory\" \"access control\"",
         "site:docs.cloud.google.com \"Service Directory\" Google Cloud introduction reference"
       ],
       "intent_hits": [
@@ -686,6 +920,23 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "balancer",
+          "load",
+          "balancers",
+          "services",
+          "and",
+          "cloud"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -695,12 +946,89 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "balancer",
+          "load",
+          "balancers",
+          "services",
+          "and",
+          "cloud"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 100,
       "keep": false
+    },
+    {
+      "title": "Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-servicedirectory/latest/overview",
+      "description": "Service Directory Description: <strong>Allows the registration and lookup of service endpoints</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Service Directory\"",
+        "site:docs.cloud.google.com \"Service Directory\" \"Java client libraries\"",
+        "site:docs.cloud.google.com \"Service Directory\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "java_client",
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "java_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "keep": true,
+        "rationale": "Matched Step 2 features: service directory"
+      },
+      "final_score": 100,
+      "keep": true
     },
     {
       "title": "APIs and reference | Service Directory | Google Cloud Documentation",
@@ -721,6 +1049,23 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "access",
+          "and",
+          "beta",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -730,35 +1075,64 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 5,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "access",
+          "and",
+          "beta",
+          "cloud",
+          "director",
+          "google"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 95,
       "keep": true
     },
     {
-      "title": "Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-servicedirectory/latest/overview",
-      "description": "Service Directory Description: <strong>Allows the registration and lookup of service endpoints</strong>.",
-      "rank": 1,
+      "title": "Key terms | Service Directory | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-directory/docs/key-terms",
+      "description": "For Service Directory, <strong>an endpoint can only exist within a service and is identified with an endpoint name that is a string identifier that is unique to that service</strong>.",
+      "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Service Directory\"",
-        "site:docs.cloud.google.com \"Service Directory\" \"Java client libraries\""
+        "site:docs.cloud.google.com \"Service Directory\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Service Directory\" Google Cloud docs overview"
       ],
       "intent_hits": [
-        "java_client"
+        "product_docs"
       ],
       "round_hits": [
         1,
         2
       ],
-      "best_rank": 1,
+      "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 118,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "and",
+          "cloud",
+          "director",
+          "google",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "java_reference",
+        "classification": "supporting_page",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
@@ -766,11 +1140,82 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "and",
+          "cloud",
+          "director",
+          "google",
+          "with"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 95,
-      "keep": true
+      "keep": false
+    },
+    {
+      "title": "Create service | Service Directory | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-directory/docs/samples/servicedirectory-create-service",
+      "description": "To authenticate to Service Directory, set up Application Default Credentials. For more information, see Set up authentication for a local development environment. # project = &quot;Your Google Cloud project ID&quot; # location = &quot;The Google Cloud region containing the namespace&quot; # namespace = &quot;The name of the parent namespace&quot; # service = &quot;The name of the service you are creating&quot; require &quot;google/cloud/service_directory&quot; # Initialize the client registration_service = Google::Cloud::ServiceDirectory.registration_service # The parent path of the service parent = registration_service.namespace_path( project: project, location: location, namespace: namespace ) # Use the Service Directory API to create the service response = registration_service.create_service parent: parent, service_id: service puts &quot;Created service: #{response.name}&quot;",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Directory\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Service Directory\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 27,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: service directory"
+      },
+      "final_score": 95,
+      "keep": false
     },
     {
       "title": "Service Directory roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
@@ -791,6 +1236,22 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "access",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -800,9 +1261,21 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 5,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "access",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 95,
       "keep": true
@@ -826,6 +1299,23 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 26,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "configuration",
+          "cloud",
+          "director",
+          "google",
+          "vpc",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -836,8 +1326,21 @@
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 0,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "configuration",
+          "cloud",
+          "director",
+          "google",
+          "vpc",
+          "with"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 95,
       "keep": false
@@ -861,6 +1364,23 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 26,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "configuration",
+          "cloud",
+          "director",
+          "google",
+          "vpc",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -871,43 +1391,23 @@
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 3,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "configuration",
+          "cloud",
+          "director",
+          "google",
+          "vpc",
+          "with"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Create service | Service Directory | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-directory/docs/samples/servicedirectory-create-service",
-      "description": "To authenticate to Service Directory, set up Application Default Credentials. For more information, see Set up authentication for a local development environment. # project = &quot;Your Google Cloud project ID&quot; # location = &quot;The Google Cloud region containing the namespace&quot; # namespace = &quot;The name of the parent namespace&quot; # service = &quot;The name of the service you are creating&quot; require &quot;google/cloud/service_directory&quot; # Initialize the client registration_service = Google::Cloud::ServiceDirectory.registration_service # The parent path of the service parent = registration_service.namespace_path( project: project, location: location, namespace: namespace ) # Use the Service Directory API to create the service response = registration_service.create_service parent: parent, service_id: service puts &quot;Created service: #{response.name}&quot;",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Service Directory\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
       "keep": false
     },
     {
@@ -927,6 +1427,22 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "services",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -937,8 +1453,20 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "services",
+          "and",
+          "cloud",
+          "director",
+          "google"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 90,
       "keep": true
@@ -960,6 +1488,21 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "beta",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -969,9 +1512,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "beta",
+          "cloud",
+          "director",
+          "google"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 90,
       "keep": false
@@ -980,7 +1534,7 @@
       "title": ".NET client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.ServiceDirectory.V1/latest",
       "description": "Google.Cloud.ServiceDirectory.V1 is a.NET client library for the Service Directory API.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Directory\" Google Cloud introduction reference"
       ],
@@ -990,9 +1544,23 @@
       "round_hits": [
         3
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 27,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "cloud",
+          "director",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1002,9 +1570,19 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "cloud",
+          "director",
+          "google"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 90,
       "keep": false
@@ -1013,7 +1591,7 @@
       "title": "Invoke a private endpoint using Service Directory's service registry | Workflows | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/workflows/docs/invoke-private-endpoint-vpc",
       "description": "<strong>This lets you provide your workflow with a Service Directory service name. Your workflow execution uses the information retrieved from the service registry to send the appropriate HTTP request, without egressing to a public network. This document shows you how to register a virtual machine (VM) in a Virtual Private Cloud</strong> ...",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Directory\" Google Cloud docs overview"
       ],
@@ -1023,9 +1601,26 @@
       "round_hits": [
         2
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "service directory"
+        ],
+        "matched_tokens": [
+          "directory",
+          "service",
+          "network",
+          "cloud",
+          "director",
+          "google",
+          "private",
+          "vpc"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1035,9 +1630,22 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "service directory"
+        ],
+        "matched_feature_tokens": [
+          "directory",
+          "service",
+          "network",
+          "cloud",
+          "director",
+          "google",
+          "private",
+          "vpc"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: service directory"
       },
       "final_score": 90,
       "keep": false

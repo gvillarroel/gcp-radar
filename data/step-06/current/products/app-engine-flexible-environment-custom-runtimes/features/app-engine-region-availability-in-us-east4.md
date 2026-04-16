@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:39:03.562Z"
+generated_at: "2026-04-14T23:21:29.621Z"
 product_name: "App Engine flexible environment custom runtimes"
 product_slug: "app-engine-flexible-environment-custom-runtimes"
 feature_name: "App Engine region availability in us-east4"
 feature_slug: "app-engine-region-availability-in-us-east4"
 latest_feature_date: "2017-05-09"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/application-security"
 keywords:
-  - "N. Virginia (us-east4)"
-  - "North Virginia region"
-  - "App Engine in us-east4"
-  - "App Engine location support"
-  - "region availability update"
-  - "us-east-4"
-  - "us-east4"
-  - "App Engine regional availability"
+  - "app"
+  - "engine"
+  - "region"
+  - "availability"
+  - "us"
+  - "east4"
+  - "became"
+  - "available"
 ---
 
 # App Engine region availability in us-east4
 
 Product: App Engine flexible environment custom runtimes
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ App Engine became available in the us-east4 (North Virginia) region.
 
 App Engine became available in the us-east4 (North Virginia) region.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/flexible/quotas](https://docs.cloud.google.com/appengine/docs/flexible/quotas)
+- [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
+- [https://docs.cloud.google.com/appengine/docs/flexible/application-security](https://docs.cloud.google.com/appengine/docs/flexible/application-security)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Quotas and limits \_|\_ App Engine flexible environment \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/quotas](https://docs.cloud.google.com/appengine/docs/flexible/quotas)
+- Source ID: `site-docs-reference-2`
+- Final score: 75
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Resource or API call Description System Limit Shared Centi Memcache Compute Units Per Region Per Minute For each project per region and minute, the available centi-MCUs, which are 1/100ths of an Memcache Compute Unit .
+- In the Go API, the appengine.IsOverQuota function reports whether an error represents an API call failure due to insufficient available quota.
+- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
+- Resource Daily limit Maximum rate UrlFetch API calls 860,000,000 calls 660,000 calls/minute UrlFetch data sent 4.5 TB 3,600 MB/minute UrlFetch data received 4.5 TB 3,600 MB/minute Networking limits The following networking limits apply to App Engine: Outbound connections per second per instance: 500 (cannot be increased) Outbound DNS resolutions per second per instance: 100 (cannot be increased) Maximum packets per second per instance: 80,000 Maximum bits per second per instance: 100,000,000 Maximum worker connections in Nginx per instance: 4,096 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Quickstart: Create a .NET app in the App Engine flexible environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
+- Source ID: `site-docs-reference`
+- Final score: 71
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- App Engine locations App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .
+- You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.
+- Additional prerequisites Initialize your App Engine app with your project and choose its region: gcloud app create --project=[YOUR PROJECT ID] When prompted, select the region where you want to locate your App Engine application.
+- Create a .NET app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app.
+
+### "Overview of app security \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/application-security](https://docs.cloud.google.com/appengine/docs/flexible/application-security)
+- Source ID: `site-docs-reference`
+- Final score: 65
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- REGION ID .r.appspot.com To target specific resources in your App Engine app, use the -dot- syntax to separate each resource you want to target, for example: https:// VERSION -dot- SERVICE -dot- PROJECT ID .
+- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
+- Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.
+- Security scanner The Google Cloud Web Security Scanner discovers vulnerabilities by crawling your App Engine app, following all that links within the scope of your starting URLs, and attempting to exercise as many user inputs and event handlers as possible.
 

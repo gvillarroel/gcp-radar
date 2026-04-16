@@ -5,565 +5,289 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 130
-Unique features: 555
+Unique features: 279
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
-| 2025-12-21 | Data Boundary for ITAR support for Backup for GKE |  | The Data Boundary for ITAR now supports Backup for GKE. |
-| 2025-12-21 | Data Boundary for ITAR support for Certificate Manager |  | The Data Boundary for ITAR now supports Certificate Manager. |
-| 2025-12-21 | Data Boundary for ITAR support for Cloud Build |  | The Data Boundary for ITAR now supports Cloud Build. |
-| 2025-12-21 | Data Boundary for ITAR support for Cloud Service Mesh |  | The Data Boundary for ITAR now supports Cloud Service Mesh. |
-| 2025-12-21 | Data Boundary for ITAR support for Dataplex Universal Catalog |  | The Data Boundary for ITAR now supports Dataplex Universal Catalog. |
-| 2025-12-21 | Data Boundary for ITAR support for Firestore |  | The Data Boundary for ITAR now supports Firestore. |
-| 2025-12-21 | Data Boundary for ITAR support for GKE |  | The Data Boundary for ITAR now supports GKE. |
-| 2025-12-21 | Data Boundary for ITAR support for Identity Service |  | The Data Boundary for ITAR now supports Identity Service. |
-| 2025-12-21 | Data Boundary for ITAR support for Internal passthrough |  | The Data Boundary for ITAR now supports Internal passthrough. |
-| 2025-12-21 | Data Boundary for ITAR support for Key Access Justifications |  | The Data Boundary for ITAR now supports Key Access Justifications. |
-| 2025-12-21 | Data Boundary for ITAR support for Network Load Balancer |  | The Data Boundary for ITAR now supports Network Load Balancer. |
-| 2025-12-21 | Data Boundary for ITAR support for Security Command Center Premium |  | The Data Boundary for ITAR now supports Security Command Center Premium. |
-| 2025-12-21 | Data Boundary for ITAR support for VM Manager |  | The Data Boundary for ITAR now supports VM Manager. |
-| 2025-12-15 | Assured Workloads Brazil Data Boundary |  | Assured Workloads adds support for a Brazil Data Boundary that includes Agent Assist, App Hub, Cloud Domains, Compliance Manager, Data Security Posture Management, and Security Command Center. |
-| 2025-12-15 | Assured Workloads EU Data Boundary |  | Assured Workloads adds support for an EU Data Boundary that includes Agent Assist, App Hub, Cloud Domains, Compliance Manager, Data Security Posture Management, and Security Command Center. |
-| 2025-12-15 | Assured Workloads Japan Data Boundary |  | Assured Workloads adds support for a Japan Data Boundary that includes Agent Assist, App Hub, Cloud Domains, Compliance Manager, Data Security Posture Management, and Security Command Center. |
-| 2025-12-15 | Assured Workloads Qatar Data Boundary |  | Assured Workloads adds support for a Qatar Data Boundary that includes Agent Assist, App Hub, Cloud Domains, Compliance Manager, Data Security Posture Management, and Security Command Center. |
-| 2025-12-15 | Assured Workloads South Africa Data Boundary |  | Assured Workloads adds support for a South Africa Data Boundary that includes Agent Assist, App Hub, Cloud Domains, Compliance Manager, Data Security Posture Management, and Security Command Center. |
-| 2025-12-15 | Assured Workloads South Korea Data Boundary |  | Assured Workloads adds support for a South Korea Data Boundary that includes Agent Assist, App Hub, Cloud Domains, Compliance Manager, Data Security Posture Management, and Security Command Center. |
-| 2025-12-15 | Assured Workloads UK Data Boundary |  | Assured Workloads adds support for a UK Data Boundary that includes Agent Assist, App Hub, Cloud Domains, Compliance Manager, Data Security Posture Management, and Security Command Center. |
-| 2025-12-15 | Assured Workloads US Data Boundary |  | Assured Workloads adds support for a US Data Boundary that includes Agent Assist, App Hub, Cloud Domains, Compliance Manager, Data Security Posture Management, and Security Command Center. |
-| 2025-12-15 | Data Boundary for Australia support for Agent Assist |  | The Data Boundary for Australia now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Australia support for App Hub |  | The Data Boundary for Australia now supports App Hub. |
-| 2025-12-15 | Data Boundary for Australia support for Cloud Domains |  | The Data Boundary for Australia now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Australia support for Compliance Manager |  | The Data Boundary for Australia now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Australia support for Data Security Posture Management |  | The Data Boundary for Australia now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Australia support for Security Command Center |  | The Data Boundary for Australia now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for Canada Protected B support for Agent Assist |  | The Data Boundary for Canada Protected B now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Canada Protected B support for App Hub |  | The Data Boundary for Canada Protected B now supports App Hub. |
-| 2025-12-15 | Data Boundary for Canada Protected B support for Cloud Domains |  | The Data Boundary for Canada Protected B now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Canada Protected B support for Compliance Manager |  | The Data Boundary for Canada Protected B now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Canada Protected B support for Data Security Posture Management |  | The Data Boundary for Canada Protected B now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Canada Protected B support for Security Command Center |  | The Data Boundary for Canada Protected B now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for Canada support for Agent Assist |  | The Data Boundary for Canada now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Canada support for App Hub |  | The Data Boundary for Canada now supports App Hub. |
-| 2025-12-15 | Data Boundary for Canada support for Cloud Domains |  | The Data Boundary for Canada now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Canada support for Compliance Manager |  | The Data Boundary for Canada now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Canada support for Data Security Posture Management |  | The Data Boundary for Canada now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Canada support for Security Command Center |  | The Data Boundary for Canada now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for Chile support for Agent Assist |  | The Data Boundary for Chile now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Chile support for App Hub |  | The Data Boundary for Chile now supports App Hub. |
-| 2025-12-15 | Data Boundary for Chile support for Cloud Domains |  | The Data Boundary for Chile now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Chile support for Compliance Manager |  | The Data Boundary for Chile now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Chile support for Data Security Posture Management |  | The Data Boundary for Chile now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Chile support for Security Command Center |  | The Data Boundary for Chile now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for Hong Kong support for Agent Assist |  | The Data Boundary for Hong Kong now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Hong Kong support for App Hub |  | The Data Boundary for Hong Kong now supports App Hub. |
-| 2025-12-15 | Data Boundary for Hong Kong support for Cloud Domains |  | The Data Boundary for Hong Kong now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Hong Kong support for Compliance Manager |  | The Data Boundary for Hong Kong now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Hong Kong support for Data Security Posture Management |  | The Data Boundary for Hong Kong now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Hong Kong support for Security Command Center |  | The Data Boundary for Hong Kong now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for India support for Agent Assist |  | The Data Boundary for India now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for India support for App Hub |  | The Data Boundary for India now supports App Hub. |
-| 2025-12-15 | Data Boundary for India support for Cloud Domains |  | The Data Boundary for India now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for India support for Compliance Manager |  | The Data Boundary for India now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for India support for Data Security Posture Management |  | The Data Boundary for India now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for India support for Security Command Center |  | The Data Boundary for India now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for Indonesia support for Agent Assist |  | The Data Boundary for Indonesia now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Indonesia support for App Hub |  | The Data Boundary for Indonesia now supports App Hub. |
-| 2025-12-15 | Data Boundary for Indonesia support for Cloud Domains |  | The Data Boundary for Indonesia now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Indonesia support for Compliance Manager |  | The Data Boundary for Indonesia now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Indonesia support for Data Security Posture Management |  | The Data Boundary for Indonesia now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Indonesia support for Security Command Center |  | The Data Boundary for Indonesia now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for Israel support for Agent Assist |  | The Data Boundary for Israel now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Israel support for App Hub |  | The Data Boundary for Israel now supports App Hub. |
-| 2025-12-15 | Data Boundary for Israel support for Cloud Domains |  | The Data Boundary for Israel now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Israel support for Compliance Manager |  | The Data Boundary for Israel now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Israel support for Data Security Posture Management |  | The Data Boundary for Israel now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Israel support for Security Command Center |  | The Data Boundary for Israel now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for Singapore support for Agent Assist |  | The Data Boundary for Singapore now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Singapore support for App Hub |  | The Data Boundary for Singapore now supports App Hub. |
-| 2025-12-15 | Data Boundary for Singapore support for Cloud Domains |  | The Data Boundary for Singapore now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Singapore support for Compliance Manager |  | The Data Boundary for Singapore now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Singapore support for Data Security Posture Management |  | The Data Boundary for Singapore now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Singapore support for Security Command Center |  | The Data Boundary for Singapore now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for Switzerland support for Agent Assist |  | The Data Boundary for Switzerland now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Switzerland support for App Hub |  | The Data Boundary for Switzerland now supports App Hub. |
-| 2025-12-15 | Data Boundary for Switzerland support for Cloud Domains |  | The Data Boundary for Switzerland now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Switzerland support for Compliance Manager |  | The Data Boundary for Switzerland now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Switzerland support for Data Security Posture Management |  | The Data Boundary for Switzerland now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Switzerland support for Security Command Center |  | The Data Boundary for Switzerland now supports Security Command Center. |
-| 2025-12-15 | Data Boundary for Taiwan support for Agent Assist |  | The Data Boundary for Taiwan now supports Agent Assist. |
-| 2025-12-15 | Data Boundary for Taiwan support for App Hub |  | The Data Boundary for Taiwan now supports App Hub. |
-| 2025-12-15 | Data Boundary for Taiwan support for Cloud Domains |  | The Data Boundary for Taiwan now supports Cloud Domains. |
-| 2025-12-15 | Data Boundary for Taiwan support for Compliance Manager |  | The Data Boundary for Taiwan now supports Compliance Manager. |
-| 2025-12-15 | Data Boundary for Taiwan support for Data Security Posture Management |  | The Data Boundary for Taiwan now supports Data Security Posture Management. |
-| 2025-12-15 | Data Boundary for Taiwan support for Security Command Center |  | The Data Boundary for Taiwan now supports Security Command Center. |
-| 2025-12-12 | Assured Workloads CJIS Data Boundary |  | Assured Workloads adds support for a CJIS Data Boundary that includes Application Integration, Certificate Manager, Cloud Domains, Compliance Manager, Data Security Posture Management, GKE, Image streaming, Security Command Center Premium, VM Manager, Vertex AI Batch prediction, Vertex AI Online prediction, Vertex AI Pipelines, and Vertex AI Training. |
-| 2025-10-31 | Assured Workloads IL4 Data Boundary |  | Assured Workloads adds support for an IL4 Data Boundary that includes Cloud External Key Manager (Cloud EKM), Connect Agent, GKE, Identity Service, Gemini Enterprise, and Vertex AI Search. |
-| 2025-10-31 | Assured Workloads IL5 Data Boundary |  | Assured Workloads adds support for an IL5 Data Boundary that includes Cloud External Key Manager (Cloud EKM), Connect Agent, GKE, Identity Service, Gemini Enterprise, and Vertex AI Search. |
-| 2025-10-27 | Assured Workloads EU Data Boundary with Access Justifications |  | Assured Workloads adds an EU Data Boundary with Access Justifications and support for Binary Authorization. |
-| 2025-10-27 | Assured Workloads Kingdom of Saudi Arabia Data Boundary with Access Justifications support for Personalized Service Health |  | The Kingdom of Saudi Arabia Data Boundary with Access Justifications in Assured Workloads now supports Personalized Service Health. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for AutoML Tables |  | The Canada Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for Certificate Manager |  | The Canada Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for Cloud Deploy |  | The Canada Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for Customer Experience Insights |  | The Canada Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for Dialogflow CX |  | The Canada Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for GKE |  | The Canada Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Canada Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for Image streaming |  | The Canada Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for Secret Manager |  | The Canada Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads Canada Data Boundary support for VM Manager |  | The Canada Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for AutoML Tables |  | The EU Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for Certificate Manager |  | The EU Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for Cloud Deploy |  | The EU Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for Customer Experience Insights |  | The EU Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for Dialogflow CX |  | The EU Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for GKE |  | The EU Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The EU Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for Image streaming |  | The EU Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for Secret Manager |  | The EU Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads EU Data Boundary support for VM Manager |  | The EU Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for AutoML Tables |  | The Hong Kong Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for Certificate Manager |  | The Hong Kong Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for Cloud Deploy |  | The Hong Kong Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for Customer Experience Insights |  | The Hong Kong Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for Dialogflow CX |  | The Hong Kong Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for GKE |  | The Hong Kong Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Hong Kong Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for Image streaming |  | The Hong Kong Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for Secret Manager |  | The Hong Kong Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads Hong Kong Data Boundary support for VM Manager |  | The Hong Kong Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for AutoML Tables |  | The India Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for Certificate Manager |  | The India Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for Cloud Deploy |  | The India Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for Customer Experience Insights |  | The India Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for Dialogflow CX |  | The India Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for GKE |  | The India Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The India Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for Image streaming |  | The India Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for Secret Manager |  | The India Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads India Data Boundary support for VM Manager |  | The India Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for AutoML Tables |  | The Indonesia Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for Certificate Manager |  | The Indonesia Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for Cloud Deploy |  | The Indonesia Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for Customer Experience Insights |  | The Indonesia Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for Dialogflow CX |  | The Indonesia Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for GKE |  | The Indonesia Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Indonesia Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for Image streaming |  | The Indonesia Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for Secret Manager |  | The Indonesia Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads Indonesia Data Boundary support for VM Manager |  | The Indonesia Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for AutoML Tables |  | The Israel Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for Certificate Manager |  | The Israel Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for Cloud Deploy |  | The Israel Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for Customer Experience Insights |  | The Israel Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for Dialogflow CX |  | The Israel Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for GKE |  | The Israel Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Israel Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for Image streaming |  | The Israel Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for Secret Manager |  | The Israel Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads Israel Data Boundary support for VM Manager |  | The Israel Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for AutoML Tables |  | The Japan Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for Certificate Manager |  | The Japan Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for Cloud Deploy |  | The Japan Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for Customer Experience Insights |  | The Japan Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for Dialogflow CX |  | The Japan Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for GKE |  | The Japan Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Japan Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for Image streaming |  | The Japan Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for Secret Manager |  | The Japan Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads Japan Data Boundary support for VM Manager |  | The Japan Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for AutoML Tables |  | The Singapore Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for Certificate Manager |  | The Singapore Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for Cloud Deploy |  | The Singapore Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for Customer Experience Insights |  | The Singapore Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for Dialogflow CX |  | The Singapore Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for GKE |  | The Singapore Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Singapore Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for Image streaming |  | The Singapore Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for Secret Manager |  | The Singapore Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads Singapore Data Boundary support for VM Manager |  | The Singapore Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for AutoML Tables |  | The South Africa Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for Certificate Manager |  | The South Africa Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for Cloud Deploy |  | The South Africa Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for Customer Experience Insights |  | The South Africa Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for Dialogflow CX |  | The South Africa Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for GKE |  | The South Africa Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The South Africa Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for Image streaming |  | The South Africa Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for Secret Manager |  | The South Africa Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads South Africa Data Boundary support for VM Manager |  | The South Africa Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for AutoML Tables |  | The South Korea Data Boundary in Assured Workloads now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for Certificate Manager |  | The South Korea Data Boundary in Assured Workloads now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for Cloud Deploy |  | The South Korea Data Boundary in Assured Workloads now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for Customer Experience Insights |  | The South Korea Data Boundary in Assured Workloads now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for Dialogflow CX |  | The South Korea Data Boundary in Assured Workloads now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for GKE |  | The South Korea Data Boundary in Assured Workloads now supports GKE. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The South Korea Data Boundary in Assured Workloads now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for Image streaming |  | The South Korea Data Boundary in Assured Workloads now supports Image streaming. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for Secret Manager |  | The South Korea Data Boundary in Assured Workloads now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads South Korea Data Boundary support for VM Manager |  | The South Korea Data Boundary in Assured Workloads now supports VM Manager. |
-| 2025-10-24 | Assured Workloads: Australia Data Boundary support for AutoML Tables |  | The Australia Data Boundary now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads: Australia Data Boundary support for Certificate Manager |  | The Australia Data Boundary now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads: Australia Data Boundary support for Cloud Deploy |  | The Australia Data Boundary now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads: Australia Data Boundary support for Customer Experience Insights |  | The Australia Data Boundary now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads: Australia Data Boundary support for Dialogflow CX |  | The Australia Data Boundary now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads: Australia Data Boundary support for GKE Image streaming |  | The Australia Data Boundary now supports GKE Image streaming. |
-| 2025-10-24 | Assured Workloads: Australia Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Australia Data Boundary now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads: Australia Data Boundary support for Secret Manager |  | The Australia Data Boundary now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads: Australia Data Boundary support for VM Manager |  | The Australia Data Boundary now supports VM Manager. |
-| 2025-10-24 | Assured Workloads: Brazil Data Boundary support for AutoML Tables |  | The Brazil Data Boundary now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads: Brazil Data Boundary support for Certificate Manager |  | The Brazil Data Boundary now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads: Brazil Data Boundary support for Cloud Deploy |  | The Brazil Data Boundary now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads: Brazil Data Boundary support for Customer Experience Insights |  | The Brazil Data Boundary now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads: Brazil Data Boundary support for Dialogflow CX |  | The Brazil Data Boundary now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads: Brazil Data Boundary support for GKE Image streaming |  | The Brazil Data Boundary now supports GKE Image streaming. |
-| 2025-10-24 | Assured Workloads: Brazil Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Brazil Data Boundary now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads: Brazil Data Boundary support for Secret Manager |  | The Brazil Data Boundary now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads: Brazil Data Boundary support for VM Manager |  | The Brazil Data Boundary now supports VM Manager. |
-| 2025-10-24 | Assured Workloads: Chile Data Boundary support for AutoML Tables |  | The Chile Data Boundary now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads: Chile Data Boundary support for Certificate Manager |  | The Chile Data Boundary now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads: Chile Data Boundary support for Cloud Deploy |  | The Chile Data Boundary now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads: Chile Data Boundary support for Customer Experience Insights |  | The Chile Data Boundary now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads: Chile Data Boundary support for Dialogflow CX |  | The Chile Data Boundary now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads: Chile Data Boundary support for GKE Image streaming |  | The Chile Data Boundary now supports GKE Image streaming. |
-| 2025-10-24 | Assured Workloads: Chile Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Chile Data Boundary now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads: Chile Data Boundary support for Secret Manager |  | The Chile Data Boundary now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads: Chile Data Boundary support for VM Manager |  | The Chile Data Boundary now supports VM Manager. |
-| 2025-10-24 | Assured Workloads: Data Boundary for Canada Protected B support for AutoML Tables |  | The Data Boundary for Canada Protected B now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads: Data Boundary for Canada Protected B support for Certificate Manager |  | The Data Boundary for Canada Protected B now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads: Data Boundary for Canada Protected B support for Cloud Deploy |  | The Data Boundary for Canada Protected B now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads: Data Boundary for Canada Protected B support for Customer Experience Insights |  | The Data Boundary for Canada Protected B now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads: Data Boundary for Canada Protected B support for Dialogflow CX |  | The Data Boundary for Canada Protected B now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads: Data Boundary for Canada Protected B support for GKE Image streaming |  | The Data Boundary for Canada Protected B now supports GKE Image streaming. |
-| 2025-10-24 | Assured Workloads: Data Boundary for Canada Protected B support for Google Cloud Managed Service for Apache Kafka |  | The Data Boundary for Canada Protected B now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads: Data Boundary for Canada Protected B support for Secret Manager |  | The Data Boundary for Canada Protected B now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads: Data Boundary for Canada Protected B support for VM Manager |  | The Data Boundary for Canada Protected B now supports VM Manager. |
-| 2025-10-24 | Assured Workloads: Qatar Data Boundary support for AutoML Tables |  | The Qatar Data Boundary now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads: Qatar Data Boundary support for Certificate Manager |  | The Qatar Data Boundary now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads: Qatar Data Boundary support for Cloud Deploy |  | The Qatar Data Boundary now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads: Qatar Data Boundary support for Customer Experience Insights |  | The Qatar Data Boundary now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads: Qatar Data Boundary support for Dialogflow CX |  | The Qatar Data Boundary now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads: Qatar Data Boundary support for GKE Image streaming |  | The Qatar Data Boundary now supports GKE Image streaming. |
-| 2025-10-24 | Assured Workloads: Qatar Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Qatar Data Boundary now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads: Qatar Data Boundary support for Secret Manager |  | The Qatar Data Boundary now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads: Qatar Data Boundary support for VM Manager |  | The Qatar Data Boundary now supports VM Manager. |
-| 2025-10-24 | Assured Workloads: Switzerland Data Boundary support for AutoML Tables |  | The Switzerland Data Boundary now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads: Switzerland Data Boundary support for Certificate Manager |  | The Switzerland Data Boundary now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads: Switzerland Data Boundary support for Cloud Deploy |  | The Switzerland Data Boundary now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads: Switzerland Data Boundary support for Customer Experience Insights |  | The Switzerland Data Boundary now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads: Switzerland Data Boundary support for Dialogflow CX |  | The Switzerland Data Boundary now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads: Switzerland Data Boundary support for GKE Image streaming |  | The Switzerland Data Boundary now supports GKE Image streaming. |
-| 2025-10-24 | Assured Workloads: Switzerland Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Switzerland Data Boundary now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads: Switzerland Data Boundary support for Secret Manager |  | The Switzerland Data Boundary now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads: Switzerland Data Boundary support for VM Manager |  | The Switzerland Data Boundary now supports VM Manager. |
-| 2025-10-24 | Assured Workloads: Taiwan Data Boundary support for AutoML Tables |  | The Taiwan Data Boundary now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads: Taiwan Data Boundary support for Certificate Manager |  | The Taiwan Data Boundary now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads: Taiwan Data Boundary support for Cloud Deploy |  | The Taiwan Data Boundary now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads: Taiwan Data Boundary support for Customer Experience Insights |  | The Taiwan Data Boundary now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads: Taiwan Data Boundary support for Dialogflow CX |  | The Taiwan Data Boundary now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads: Taiwan Data Boundary support for GKE Image streaming |  | The Taiwan Data Boundary now supports GKE Image streaming. |
-| 2025-10-24 | Assured Workloads: Taiwan Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The Taiwan Data Boundary now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads: Taiwan Data Boundary support for Secret Manager |  | The Taiwan Data Boundary now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads: Taiwan Data Boundary support for VM Manager |  | The Taiwan Data Boundary now supports VM Manager. |
-| 2025-10-24 | Assured Workloads: US Data Boundary support for AutoML Tables |  | The US Data Boundary now supports AutoML Tables. |
-| 2025-10-24 | Assured Workloads: US Data Boundary support for Certificate Manager |  | The US Data Boundary now supports Certificate Manager. |
-| 2025-10-24 | Assured Workloads: US Data Boundary support for Cloud Deploy |  | The US Data Boundary now supports Cloud Deploy. |
-| 2025-10-24 | Assured Workloads: US Data Boundary support for Customer Experience Insights |  | The US Data Boundary now supports Customer Experience Insights. |
-| 2025-10-24 | Assured Workloads: US Data Boundary support for Dialogflow CX |  | The US Data Boundary now supports Dialogflow CX. |
-| 2025-10-24 | Assured Workloads: US Data Boundary support for GKE Image streaming |  | The US Data Boundary now supports GKE Image streaming. |
-| 2025-10-24 | Assured Workloads: US Data Boundary support for Google Cloud Managed Service for Apache Kafka |  | The US Data Boundary now supports Google Cloud Managed Service for Apache Kafka. |
-| 2025-10-24 | Assured Workloads: US Data Boundary support for Secret Manager |  | The US Data Boundary now supports Secret Manager. |
-| 2025-10-24 | Assured Workloads: US Data Boundary support for VM Manager |  | The US Data Boundary now supports VM Manager. |
-| 2025-10-13 | Assured Workloads: EU Data Boundary and Support Stockholm (europe-north2) availability |  | EU Data Boundary and Support now supports the Stockholm (europe-north2) region in Assured Workloads. |
-| 2025-10-13 | Assured Workloads: EU Data Boundary Stockholm (europe-north2) availability |  | EU Data Boundary now supports the Stockholm (europe-north2) region in Assured Workloads. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 4 (IL4) support for External passthrough Network Load Balancer |  | The Data Boundary for Impact Level 4 (IL4) in Assured Workloads now supports External passthrough Network Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 4 (IL4) support for Identity-Aware Proxy (IAP) |  | The Data Boundary for Impact Level 4 (IL4) in Assured Workloads now supports Identity-Aware Proxy (IAP). |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 4 (IL4) support for Internal passthrough Network Load Balancer |  | The Data Boundary for Impact Level 4 (IL4) in Assured Workloads now supports Internal passthrough Network Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 4 (IL4) support for Regional external Application Load Balancer |  | The Data Boundary for Impact Level 4 (IL4) in Assured Workloads now supports Regional external Application Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 4 (IL4) support for Regional external proxy Network Load Balancer |  | The Data Boundary for Impact Level 4 (IL4) in Assured Workloads now supports Regional external proxy Network Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 4 (IL4) support for Regional internal Application Load Balancer |  | The Data Boundary for Impact Level 4 (IL4) in Assured Workloads now supports Regional internal Application Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 4 (IL4) support for Regional internal proxy Network Load Balancer |  | The Data Boundary for Impact Level 4 (IL4) in Assured Workloads now supports Regional internal proxy Network Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 4 (IL4) support for Speech-to-Text |  | The Data Boundary for Impact Level 4 (IL4) in Assured Workloads now supports Speech-to-Text. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 5 (IL5) support for External passthrough Network Load Balancer |  | The Data Boundary for Impact Level 5 (IL5) in Assured Workloads now supports External passthrough Network Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 5 (IL5) support for Identity-Aware Proxy (IAP) |  | The Data Boundary for Impact Level 5 (IL5) in Assured Workloads now supports Identity-Aware Proxy (IAP). |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 5 (IL5) support for Internal passthrough Network Load Balancer |  | The Data Boundary for Impact Level 5 (IL5) in Assured Workloads now supports Internal passthrough Network Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 5 (IL5) support for Regional external Application Load Balancer |  | The Data Boundary for Impact Level 5 (IL5) in Assured Workloads now supports Regional external Application Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 5 (IL5) support for Regional external proxy Network Load Balancer |  | The Data Boundary for Impact Level 5 (IL5) in Assured Workloads now supports Regional external proxy Network Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 5 (IL5) support for Regional internal Application Load Balancer |  | The Data Boundary for Impact Level 5 (IL5) in Assured Workloads now supports Regional internal Application Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 5 (IL5) support for Regional internal proxy Network Load Balancer |  | The Data Boundary for Impact Level 5 (IL5) in Assured Workloads now supports Regional internal proxy Network Load Balancer. |
-| 2025-09-05 | Assured Workloads: Data Boundary Impact Level 5 (IL5) support for Speech-to-Text |  | The Data Boundary for Impact Level 5 (IL5) in Assured Workloads now supports Speech-to-Text. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for App Hub |  | The IRS 1075 control package in Assured Workloads now supports App Hub. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Cloud Asset Inventory |  | The IRS 1075 control package in Assured Workloads now supports Cloud Asset Inventory. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Cloud Deploy |  | The IRS 1075 control package in Assured Workloads now supports Cloud Deploy. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Database Center |  | The IRS 1075 control package in Assured Workloads now supports Database Center. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Key Access Justifications |  | The IRS 1075 control package in Assured Workloads now supports Key Access Justifications. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Model Armor |  | The IRS 1075 control package in Assured Workloads now supports Model Armor. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Network Connectivity Center |  | The IRS 1075 control package in Assured Workloads now supports Network Connectivity Center. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Vertex AI Batch prediction |  | The IRS 1075 control package in Assured Workloads now supports Vertex AI Batch prediction. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Vertex AI Model Monitoring |  | The IRS 1075 control package in Assured Workloads now supports Vertex AI Model Monitoring. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Vertex AI Model Registry |  | The IRS 1075 control package in Assured Workloads now supports Vertex AI Model Registry. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Vertex AI Online prediction |  | The IRS 1075 control package in Assured Workloads now supports Vertex AI Online prediction. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Vertex AI Pipelines |  | The IRS 1075 control package in Assured Workloads now supports Vertex AI Pipelines. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Vertex AI Training |  | The IRS 1075 control package in Assured Workloads now supports Vertex AI Training. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Web Risk |  | The IRS 1075 control package in Assured Workloads now supports Web Risk. |
-| 2025-09-05 | Assured Workloads: IRS 1075 control package support for Workforce Identity Federation |  | The IRS 1075 control package in Assured Workloads now supports Workforce Identity Federation. |
-| 2025-08-15 | Assured Workloads Australia Data Boundary and Support control package |  | Assured Workloads now supports the Australia Data Boundary and Support control package for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads Australia Data Boundary control package |  | Assured Workloads now supports the Australia Data Boundary control package for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads Canada Protected B Data Boundary control package |  | Assured Workloads now supports the Canada Protected B Data Boundary control package for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads EU Data Boundary and Support control package |  | Assured Workloads now supports the EU Data Boundary and Support control package for Binary Authorization, Cloud Asset Inventory, Database Center, Google Agentspace, Model Armor, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads India Data Boundary control package |  | Assured Workloads now supports the India Data Boundary control package for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads Indonesia Data Boundary control package |  | Assured Workloads now supports the Indonesia Data Boundary control package for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads Israel Data Boundary control package |  | Assured Workloads now supports the Israel Data Boundary control package for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads Japan Data Boundary control package |  | Assured Workloads now supports the Japan Data Boundary control package for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads South Africa Data Boundary control package |  | Assured Workloads now supports the South Africa Data Boundary control package for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads Taiwan Data Boundary control package |  | Assured Workloads now supports the Taiwan Data Boundary control package for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads US Data Boundary and Support control package |  | Assured Workloads now supports the US Data Boundary and Support control package for Binary Authorization, Cloud Asset Inventory, Database Center, Google Agentspace, Model Armor, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Binary Authorization |  | The Canada Data Boundary and Support control package now supports Binary Authorization in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Cloud Asset Inventory |  | The Canada Data Boundary and Support control package now supports Cloud Asset Inventory in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Database Center |  | The Canada Data Boundary and Support control package now supports Database Center in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Text-to-Speech |  | The Canada Data Boundary and Support control package now supports Text-to-Speech in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Vertex AI Batch prediction |  | The Canada Data Boundary and Support control package now supports Vertex AI Batch prediction in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Vertex AI Model Monitoring |  | The Canada Data Boundary and Support control package now supports Vertex AI Model Monitoring in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Vertex AI Model Registry |  | The Canada Data Boundary and Support control package now supports Vertex AI Model Registry in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Vertex AI Online prediction |  | The Canada Data Boundary and Support control package now supports Vertex AI Online prediction in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Vertex AI Pipelines |  | The Canada Data Boundary and Support control package now supports Vertex AI Pipelines in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Vertex AI Training |  | The Canada Data Boundary and Support control package now supports Vertex AI Training in Assured Workloads. |
-| 2025-08-15 | Assured Workloads: Canada Data Boundary and Support control package support for Web Risk |  | The Canada Data Boundary and Support control package now supports Web Risk in Assured Workloads. |
-| 2025-08-15 | Brazil Data Boundary control package |  | Assured Workloads introduced the Brazil Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | Canada Data Boundary control package |  | Assured Workloads introduced the Canada Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | Chile Data Boundary control package |  | Assured Workloads introduced the Chile Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | EU Data Boundary control package |  | Assured Workloads introduced the EU Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Google Agentspace, Model Armor, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | Hong Kong Data Boundary control package |  | Assured Workloads introduced the Hong Kong Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | Israel Data Boundary and Support control package |  | Assured Workloads introduced the Israel Data Boundary and Support control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | Qatar Data Boundary control package |  | Assured Workloads introduced the Qatar Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | Singapore Data Boundary control package |  | Assured Workloads introduced the Singapore Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | South Korea Data Boundary control package |  | Assured Workloads introduced the South Korea Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | Switzerland Data Boundary control package |  | Assured Workloads introduced the Switzerland Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | UK Data Boundary control package |  | Assured Workloads introduced the UK Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-08-15 | US Data Boundary control package |  | Assured Workloads introduced the US Data Boundary control package, adding support for Binary Authorization, Cloud Asset Inventory, Database Center, Google Agentspace, Model Armor, Text-to-Speech, and Vertex AI Batch prediction, Model Monitoring, Model Registry, Online prediction, Pipelines, Training, plus Web Risk. |
-| 2025-07-17 | Assured Workloads Data Boundary for Impact Level 4 (IL4) |  | Assured Workloads now supports the Data Boundary for Impact Level 4 (IL4) for Certificate Authority Service, Cloud Build, Cloud NAT, GKE Hub, Memorystore for Redis, Secret Manager, and Sensitive Data Protection. |
-| 2025-07-17 | Assured Workloads Data Boundary for Impact Level 5 (IL5) |  | Assured Workloads now supports the Data Boundary for Impact Level 5 (IL5) for Certificate Authority Service, Cloud Build, Cloud VPN, GKE Hub, Memorystore for Redis, Secret Manager, and Sensitive Data Protection. |
-| 2025-06-20 | IRS 1075 control package support for Access Transparency |  | The IRS 1075 control package now supports Access Transparency. |
-| 2025-06-20 | IRS 1075 control package support for Backup for GKE |  | The IRS 1075 control package now supports Backup for GKE. |
-| 2025-06-20 | IRS 1075 control package support for Cloud Healthcare API |  | The IRS 1075 control package now supports Cloud Healthcare API. |
-| 2025-06-20 | IRS 1075 control package support for Cloud OS Login API |  | The IRS 1075 control package now supports Cloud OS Login API. |
-| 2025-06-20 | IRS 1075 control package support for Cloud Workstations |  | The IRS 1075 control package now supports Cloud Workstations. |
-| 2025-06-20 | IRS 1075 control package support for Conversational Agents |  | The IRS 1075 control package now supports Conversational Agents. |
-| 2025-06-20 | IRS 1075 control package support for Conversational Insights |  | The IRS 1075 control package now supports Conversational Insights. |
-| 2025-06-20 | IRS 1075 control package support for Dataplex Universal Catalog |  | The IRS 1075 control package now supports Dataplex Universal Catalog. |
-| 2025-06-20 | IRS 1075 control package support for Document AI |  | The IRS 1075 control package now supports Document AI. |
-| 2025-06-20 | IRS 1075 control package support for Essential Contacts |  | The IRS 1075 control package now supports Essential Contacts. |
-| 2025-06-20 | IRS 1075 control package support for Eventarc |  | The IRS 1075 control package now supports Eventarc. |
-| 2025-06-20 | IRS 1075 control package support for External passthrough Network Load Balancer |  | The IRS 1075 control package now supports External passthrough Network Load Balancer. |
-| 2025-06-20 | IRS 1075 control package support for Generative AI on Vertex AI |  | The IRS 1075 control package now supports Generative AI on Vertex AI. |
-| 2025-06-20 | IRS 1075 control package support for Google Agentspace |  | The IRS 1075 control package now supports Google Agentspace. |
-| 2025-06-20 | IRS 1075 control package support for Google Cloud Armor |  | The IRS 1075 control package now supports Google Cloud Armor. |
-| 2025-06-20 | IRS 1075 control package support for Google Cloud NetApp Volumes |  | The IRS 1075 control package now supports Google Cloud NetApp Volumes. |
-| 2025-06-20 | IRS 1075 control package support for Google Security Operations (Google SecOps) SOAR |  | The IRS 1075 control package now supports Google Security Operations (Google SecOps) SOAR. |
-| 2025-06-20 | IRS 1075 control package support for Identity and Access Management (IAM) |  | The IRS 1075 control package now supports Identity and Access Management (IAM). |
-| 2025-06-20 | IRS 1075 control package support for Infrastructure Manager |  | The IRS 1075 control package now supports Infrastructure Manager. |
-| 2025-06-20 | IRS 1075 control package support for Integration Connectors |  | The IRS 1075 control package now supports Integration Connectors. |
-| 2025-06-20 | IRS 1075 control package support for Internal passthrough Network Load Balancer |  | The IRS 1075 control package now supports Internal passthrough Network Load Balancer. |
-| 2025-06-20 | IRS 1075 control package support for Jurisdictional Cloud Console |  | The IRS 1075 control package now supports Jurisdictional Cloud Console. |
-| 2025-06-20 | IRS 1075 control package support for Looker (Google Cloud core) |  | The IRS 1075 control package now supports Looker (Google Cloud core). |
-| 2025-06-20 | IRS 1075 control package support for Organization Policy Service |  | The IRS 1075 control package now supports Organization Policy Service. |
-| 2025-06-20 | IRS 1075 control package support for Regional external Application Load Balancer |  | The IRS 1075 control package now supports Regional external Application Load Balancer. |
-| 2025-06-20 | IRS 1075 control package support for Regional external proxy Network Load Balancer |  | The IRS 1075 control package now supports Regional external proxy Network Load Balancer. |
-| 2025-06-20 | IRS 1075 control package support for Regional internal Application Load Balancer |  | The IRS 1075 control package now supports Regional internal Application Load Balancer. |
-| 2025-06-20 | IRS 1075 control package support for Regional internal proxy Network Load Balancer |  | The IRS 1075 control package now supports Regional internal proxy Network Load Balancer. |
-| 2025-06-20 | IRS 1075 control package support for Storage Transfer Service |  | The IRS 1075 control package now supports Storage Transfer Service. |
-| 2025-06-20 | IRS 1075 control package support for Virtual Private Cloud (VPC) |  | The IRS 1075 control package now supports Virtual Private Cloud (VPC). |
-| 2025-06-20 | IRS 1075 control package support for VPC Service Controls |  | The IRS 1075 control package now supports VPC Service Controls. |
-| 2025-06-06 | FedRAMP High control package support for Agent Assist |  | The FedRAMP High control package now supports Agent Assist. |
-| 2025-06-06 | FedRAMP High control package support for Looker (Google Cloud core) |  | The FedRAMP High control package now supports Looker (Google Cloud core). |
-| 2025-06-06 | FedRAMP High control package support for Vertex AI Vector Search |  | The FedRAMP High control package now supports Vertex AI Vector Search. |
-| 2025-06-06 | FedRAMP Moderate control package support for Agent Assist |  | The FedRAMP Moderate control package now supports Agent Assist. |
-| 2025-06-06 | FedRAMP Moderate control package support for Looker (Google Cloud core) |  | The FedRAMP Moderate control package now supports Looker (Google Cloud core). |
-| 2025-06-06 | FedRAMP Moderate control package support for Vertex AI Vector Search |  | The FedRAMP Moderate control package now supports Vertex AI Vector Search. |
-| 2025-06-06 | IL2 control package support for Agent Assist |  | The IL2 control package now supports Agent Assist. |
-| 2025-06-06 | IL2 control package support for Binary Authorization |  | The IL2 control package now supports Binary Authorization. |
-| 2025-06-06 | IL2 control package support for Certificate Authority Service |  | The IL2 control package now supports Certificate Authority Service. |
-| 2025-06-06 | IL2 control package support for Conversational Agents (Dialogflow CX) |  | The IL2 control package now supports Conversational Agents (Dialogflow CX). |
-| 2025-06-06 | IL2 control package support for Identity-Aware Proxy (IAP) |  | The IL2 control package now supports Identity-Aware Proxy (IAP). |
-| 2025-06-06 | IL2 control package support for Looker (Google Cloud core) |  | The IL2 control package now supports Looker (Google Cloud core). |
-| 2025-06-06 | IL2 control package support for Vertex AI Vector Search |  | The IL2 control package now supports Vertex AI Vector Search. |
-| 2025-05-23 | Canada Protected B control package availability |  | The Canada Protected B control package is now generally available. |
-| 2025-05-07 | Assured Workloads regional control packages support for Cloud Build |  | Cloud Build is now supported by the listed regional Assured Workloads control packages. |
-| 2025-05-07 | Assured Workloads regional control packages support for Cloud OS Login API |  | Cloud OS Login API is now supported by the listed regional Assured Workloads control packages. |
-| 2025-05-07 | Assured Workloads regional control packages support for Cloud SQL for PostgreSQL |  | Cloud SQL for PostgreSQL is now supported by the listed regional Assured Workloads control packages. |
-| 2025-05-07 | Assured Workloads regional control packages support for Cloud Workstations |  | Cloud Workstations is now supported by the listed regional Assured Workloads control packages. |
-| 2025-05-07 | Assured Workloads regional control packages support for Document AI |  | Document AI is now supported by the listed regional Assured Workloads control packages. |
-| 2025-05-07 | Assured Workloads regional control packages support for Firebase Security Rules |  | Firebase Security Rules is now supported by the listed regional Assured Workloads control packages. |
-| 2025-05-07 | Assured Workloads regional control packages support for Google Security Operations (Google SecOps) SOAR |  | Google Security Operations (Google SecOps) SOAR is now supported by the listed regional control packages. |
-| 2025-05-07 | Assured Workloads regional control packages support for Storage Transfer Service |  | Storage Transfer Service is now supported by the listed regional Assured Workloads control packages. |
-| 2025-05-07 | Assured Workloads selected control packages support for Google Cloud NetApp Volumes |  | Google Cloud NetApp Volumes is now supported by the listed Canada, EU, Singapore, and US regional control packages. |
-| 2025-05-02 | ITAR control package support for Service Directory |  | The ITAR control package now supports Service Directory. |
-| 2025-05-02 | Sovereign Controls for EU control package support for Access Context Manager |  | The Sovereign Controls for EU control package now supports Access Context Manager. |
-| 2025-05-02 | Sovereign Controls for EU control package support for Certificate Authority Service |  | The Sovereign Controls for EU control package now supports Certificate Authority Service. |
-| 2025-05-02 | Sovereign Controls for EU control package support for Cloud Service Mesh |  | The Sovereign Controls for EU control package now supports Cloud Service Mesh. |
-| 2025-05-02 | Sovereign Controls for EU control package support for Connect GKE Hub |  | The Sovereign Controls for EU control package now supports Connect GKE Hub. |
-| 2025-05-02 | Sovereign Controls for EU control package support for MemoryStore for Redis |  | The Sovereign Controls for EU control package now supports MemoryStore for Redis. |
-| 2025-05-02 | Sovereign Controls for EU control package support for Speech-to-Text |  | The Sovereign Controls for EU control package now supports Speech-to-Text. |
-| 2025-05-02 | Sovereign Controls for Kingdom of Saudi Arabia control package support for Access Context Manager |  | The Sovereign Controls for Kingdom of Saudi Arabia control package now supports Access Context Manager. |
-| 2025-05-02 | Sovereign Controls for Kingdom of Saudi Arabia control package support for Certificate Authority Service |  | The Sovereign Controls for Kingdom of Saudi Arabia control package now supports Certificate Authority Service. |
-| 2025-05-02 | Sovereign Controls for Kingdom of Saudi Arabia control package support for Connect GKE Hub |  | The Sovereign Controls for Kingdom of Saudi Arabia control package now supports Connect GKE Hub. |
-| 2025-05-02 | Sovereign Controls for Kingdom of Saudi Arabia control package support for GKE Identity Service |  | The Sovereign Controls for Kingdom of Saudi Arabia control package now supports GKE Identity Service. |
-| 2025-04-17 | CJIS control package support for Access Transparency |  | The CJIS control package now supports Access Transparency. |
-| 2025-04-17 | CJIS control package support for Cloud OS Login API |  | The CJIS control package now supports Cloud OS Login API. |
-| 2025-04-17 | CJIS control package support for Cloud Tasks |  | The CJIS control package now supports Cloud Tasks. |
-| 2025-04-17 | CJIS control package support for Eventarc |  | The CJIS control package now supports Eventarc. |
-| 2025-04-17 | CJIS control package support for Firebase Security Rules |  | The CJIS control package now supports Firebase Security Rules. |
-| 2025-04-17 | CJIS control package support for Generative AI on Vertex AI |  | The CJIS control package now supports Generative AI on Vertex AI. |
-| 2025-03-28 | CJIS control package support for Bigtable |  | The CJIS control package now supports Bigtable. |
-| 2025-03-28 | CJIS control package support for Cloud Armor |  | The CJIS control package now supports Cloud Armor. |
-| 2025-03-28 | CJIS control package support for Cloud Workstations |  | The CJIS control package now supports Cloud Workstations. |
-| 2025-03-28 | CJIS control package support for Storage Transfer Service |  | The CJIS control package now supports Storage Transfer Service. |
-| 2025-03-21 | ITAR control package support for Cloud Composer |  | The ITAR control package now supports Cloud Composer. |
-| 2025-03-14 | FedRAMP High control package support for Generative AI on Vertex AI |  | The FedRAMP High control package now supports Generative AI on Vertex AI. |
-| 2025-03-14 | FedRAMP High control package support for Vertex AI Search |  | The FedRAMP High control package now supports Vertex AI Search. |
-| 2025-03-14 | FedRAMP Moderate control package support for Generative AI on Vertex AI |  | The FedRAMP Moderate control package now supports Generative AI on Vertex AI. |
-| 2025-03-14 | FedRAMP Moderate control package support for Vertex AI Search |  | The FedRAMP Moderate control package now supports Vertex AI Search. |
-| 2025-03-14 | IL2 control package support for Generative AI on Vertex AI |  | The IL2 control package now supports Generative AI on Vertex AI. |
-| 2025-03-14 | IL2 control package support for Vertex AI Search |  | The IL2 control package now supports Vertex AI Search. |
-| 2025-03-07 | Assured Workloads regional control package support for Looker (Google Cloud core) |  | Looker (Google Cloud core) is now supported in regional Assured Workloads control packages. |
-| 2025-02-28 | Assured Workloads IL4 and IL5 control package support for Artifact Registry |  | The IL4 and IL5 control packages now support Artifact Registry in Assured Workloads. |
-| 2025-02-28 | Assured Workloads IL4 and IL5 control package support for Cloud Composer |  | The IL4 and IL5 control packages now support Cloud Composer in Assured Workloads. |
-| 2025-02-28 | Assured Workloads IL4 and IL5 control package support for Cloud Run |  | The IL4 and IL5 control packages now support Cloud Run in Assured Workloads. |
-| 2025-02-28 | Assured Workloads IL4 and IL5 control package support for Cloud Tasks |  | The IL4 and IL5 control packages now support Cloud Tasks in Assured Workloads. |
-| 2025-02-28 | Assured Workloads IL4 and IL5 control package support for Spanner |  | The IL4 and IL5 control packages now support Spanner in Assured Workloads. |
-| 2025-01-31 | Assured Workloads regional control package support for Cloud Service Mesh |  | Cloud Service Mesh is now supported in Assured Workloads regional control packages. |
-| 2025-01-31 | Assured Workloads regional control package support for Connect |  | Connect is now supported in Assured Workloads regional control packages. |
-| 2025-01-31 | Assured Workloads regional control package support for Generative AI on Vertex AI |  | Generative AI on Vertex AI is now supported in Assured Workloads regional control packages. |
-| 2025-01-31 | Assured Workloads regional control package support for Resource Manager |  | Resource Manager is now supported in Assured Workloads regional control packages. |
-| 2025-01-31 | Assured Workloads regional control package support for Secure Source Manager |  | Secure Source Manager is now supported in Assured Workloads regional control packages. |
-| 2024-12-13 | Assured Workloads CJIS control package support for AlloyDB for PostgreSQL |  | The CJIS control package now supports AlloyDB for PostgreSQL. |
-| 2024-12-13 | Assured Workloads CJIS control package support for Cloud Data Fusion |  | The CJIS control package now supports Cloud Data Fusion. |
-| 2024-12-13 | Assured Workloads CJIS control package support for Cloud Vision API |  | The CJIS control package now supports Cloud Vision API. |
-| 2024-12-13 | Assured Workloads CJIS control package support for Speech-to-Text |  | The CJIS control package now supports Speech-to-Text. |
-| 2024-12-13 | Assured Workloads CJIS control package support for Vertex AI Search |  | The CJIS control package now supports Vertex AI Search. |
-| 2024-12-13 | Assured Workloads CJIS control package support for Vertex AI Workbench Notebooks |  | The CJIS control package now supports Vertex AI Workbench Notebooks. |
-| 2024-12-13 | Assured Workloads regional control package support for Apigee |  | Apigee is now supported in Assured Workloads regional control packages. |
-| 2024-12-13 | Assured Workloads regional control package support for Cloud Vision API |  | Cloud Vision API is now supported in Assured Workloads regional control packages. |
-| 2024-12-13 | Assured Workloads regional control package support for GKE Identity Service |  | GKE Identity Service is now supported in Assured Workloads regional control packages. |
-| 2024-12-13 | Assured Workloads regional control package support for Spanner |  | Spanner support was added to Assured Workloads control packages with availability in specific listed regions. |
-| 2024-12-13 | Assured Workloads regional control package support for Traffic Director |  | Traffic Director is now supported in Assured Workloads regional control packages. |
-| 2024-12-13 | Assured Workloads regional control package support for Vertex AI Search |  | Vertex AI Search is now supported in Assured Workloads regional control packages. |
-| 2024-11-18 | Assured Workloads Sovereign Controls for EU support for BigQuery Data Transfer Service |  | The Sovereign Controls for EU control package now supports BigQuery Data Transfer Service. |
-| 2024-11-18 | Assured Workloads Sovereign Controls for EU support for GKE Identity Service |  | The Sovereign Controls for EU control package now supports GKE Identity Service. |
-| 2024-11-18 | Assured Workloads Sovereign Controls for EU support for Google Cloud Armor |  | The Sovereign Controls for EU control package now supports Google Cloud Armor. |
-| 2024-11-18 | Assured Workloads Sovereign Controls for EU support for Resource Manager |  | The Sovereign Controls for EU control package now supports Resource Manager. |
-| 2024-11-18 | Assured Workloads Sovereign Controls for EU support for Secret Manager |  | The Sovereign Controls for EU control package now supports Secret Manager. |
-| 2024-11-18 | Assured Workloads Sovereign Controls for EU support for Sensitive Data Protection |  | The Sovereign Controls for EU control package now supports Sensitive Data Protection. |
-| 2024-11-18 | Assured Workloads Sovereign Controls for Kingdom of Saudi Arabia support for Google Cloud Armor |  | The Sovereign Controls for Kingdom of Saudi Arabia control package now supports Google Cloud Armor. |
-| 2024-11-18 | Assured Workloads Sovereign Controls for Kingdom of Saudi Arabia support for Secret Manager |  | The Sovereign Controls for Kingdom of Saudi Arabia control package now supports Secret Manager. |
-| 2024-11-18 | Assured Workloads Sovereign Controls for Kingdom of Saudi Arabia support for Sensitive Data Protection |  | The Sovereign Controls for Kingdom of Saudi Arabia control package now supports Sensitive Data Protection. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Access Context Manager |  | The CJIS control package now supports Access Context Manager. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Apigee |  | The CJIS control package now supports Apigee. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Cloud Build |  | The CJIS control package now supports Cloud Build. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Cloud EKM |  | The CJIS control package now supports Cloud EKM. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Cloud Interconnect |  | The CJIS control package now supports Cloud Interconnect. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Cloud NAT |  | The CJIS control package now supports Cloud NAT. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Cloud Router |  | The CJIS control package now supports Cloud Router. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Cloud Service Mesh |  | The CJIS control package now supports Cloud Service Mesh. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Cloud VPN |  | The CJIS control package now supports Cloud VPN. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Firestore |  | The CJIS control package now supports Firestore. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Identity-Aware Proxy (IAP) |  | The CJIS control package now supports Identity-Aware Proxy (IAP). |
-| 2024-11-15 | Assured Workloads CJIS control package support for Memorystore for Redis |  | The CJIS control package now supports Memorystore for Redis. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Resource Manager |  | The CJIS control package now supports Resource Manager. |
-| 2024-11-15 | Assured Workloads CJIS control package support for Sensitive Data Protection |  | The CJIS control package now supports Sensitive Data Protection. |
-| 2024-10-21 | Assured Workloads IRS Publication 1075 control package generally availability |  | The IRS Publication 1075 control package is now generally available in Assured Workloads. |
-| 2024-10-21 | Assured Workloads IRS Publication 1075 control package support for Binary Authorization |  | The IRS Publication 1075 control package now supports Binary Authorization. |
-| 2024-10-21 | Assured Workloads IRS Publication 1075 control package support for Cloud Logging |  | The IRS Publication 1075 control package now supports Cloud Logging. |
-| 2024-10-09 | Assured Workloads workload update viewing and application |  | Assured Workloads users can now view and apply workload updates to adopt the latest control package configuration, initially in Preview. |
-| 2024-10-03 | Assured Workloads EU and KSA control package support for Cloud Run |  | Cloud Run is now supported by the EU Regions with Sovereignty Controls and Sovereign Controls for Kingdom of Saudi Arabia control packages. |
-| 2024-10-03 | Assured Workloads EU and KSA control package support for Filestore |  | Filestore is now supported by the EU Regions with Sovereignty Controls and Sovereign Controls for Kingdom of Saudi Arabia control packages. |
-| 2024-10-03 | Assured Workloads regional control package support for Access Context Manager |  | Access Context Manager is now supported in Assured Workloads regional control packages. |
-| 2024-10-03 | Assured Workloads regional control package support for Eventarc |  | Eventarc is now supported in Assured Workloads regional control packages. |
-| 2024-10-03 | Assured Workloads regional control package support for GKE Hub |  | GKE Hub is now supported in Assured Workloads regional control packages. |
-| 2024-10-03 | Assured Workloads regional control package support for Secret Manager |  | Secret Manager is now supported in select Assured Workloads regional control packages, including EU, Israel, and US regions. |
-| 2024-10-03 | Assured Workloads regional control package support for Speech-to-Text |  | Speech-to-Text is now supported in Assured Workloads regional control packages. |
-| 2024-03-28 | Assured Workloads Australia Regions with Assured Support program support for Access Transparency |  | Assured Workloads adds support for Access Transparency under the Australia Regions with Assured Support compliance program. |
-| 2024-03-28 | Assured Workloads Canada Regions and Support program support for Access Transparency |  | Assured Workloads adds support for Access Transparency under the Canada Regions and Support compliance program. |
-| 2024-03-28 | Assured Workloads EU Regions and Support program support for Access Approval |  | Assured Workloads adds support for Access Approval under the EU Regions and Support compliance program. |
-| 2024-03-28 | Assured Workloads FedRAMP Moderate program support for Artifact Registry |  | Assured Workloads adds support for Artifact Registry under the FedRAMP Moderate compliance program. |
-| 2024-03-28 | Assured Workloads FedRAMP Moderate program support for Certificate Authority Service |  | Assured Workloads adds support for Certificate Authority Service under the FedRAMP Moderate compliance program. |
-| 2024-03-28 | Assured Workloads FedRAMP Moderate program support for Cloud Firestore |  | Assured Workloads adds support for Cloud Firestore under the FedRAMP Moderate compliance program. |
-| 2024-03-28 | Assured Workloads FedRAMP Moderate program support for Cloud Monitoring |  | Assured Workloads adds support for Cloud Monitoring under the FedRAMP Moderate compliance program. |
-| 2024-03-28 | Assured Workloads FedRAMP Moderate program support for Cloud Run |  | Assured Workloads adds support for Cloud Run under the FedRAMP Moderate compliance program. |
-| 2024-03-28 | Assured Workloads FedRAMP Moderate program support for Cloud Workstations |  | Assured Workloads adds support for Cloud Workstations under the FedRAMP Moderate compliance program. |
-| 2024-03-28 | Assured Workloads FedRAMP Moderate program support for Sensitive Data Protection |  | Assured Workloads adds support for Sensitive Data Protection under the FedRAMP Moderate compliance program. |
-| 2024-03-28 | Assured Workloads Israel Regions and Support program support for Dataflow |  | Assured Workloads adds support for Dataflow under the Israel Regions and Support compliance program. |
-| 2024-03-28 | Assured Workloads Israel Regions and Support program support for Memorystore for Redis |  | Assured Workloads adds support for Memorystore for Redis under the Israel Regions and Support compliance program. |
-| 2024-03-28 | Assured Workloads Japan Regions program support for Access Approval |  | Assured Workloads adds support for Access Approval under the Japan Regions compliance program. |
-| 2024-03-28 | Assured Workloads Japan Regions program support for Access Transparency |  | Assured Workloads adds support for Access Transparency under the Japan Regions compliance program. |
-| 2024-03-28 | Assured Workloads US Regions and Support program support for Access Transparency |  | Assured Workloads adds support for Access Transparency under the US Regions and Support compliance program. |
-| 2023-11-16 | Assured Workloads IL4 program support for Cloud DNS |  | Assured Workloads adds support for Cloud DNS under the IL4 compliance program. |
-| 2023-11-16 | Assured Workloads IL4 program support for Cloud Interconnect |  | Assured Workloads adds support for Cloud Interconnect under the IL4 compliance program. |
-| 2023-11-16 | Assured Workloads IL4 program support for Cloud Monitoring |  | Assured Workloads adds support for Cloud Monitoring under the IL4 compliance program. |
-| 2023-11-16 | Assured Workloads IL4 program support for Cloud Router |  | Assured Workloads adds support for Cloud Router under the IL4 compliance program. |
-| 2023-11-16 | Assured Workloads IL4 program support for Cloud SQL |  | Assured Workloads adds support for Cloud SQL under the IL4 compliance program. |
-| 2023-11-16 | Assured Workloads IL4 program support for Cloud VPN |  | Assured Workloads adds support for Cloud VPN under the IL4 compliance program. |
-| 2023-11-16 | Assured Workloads IL4 program support for Pub/Sub |  | Assured Workloads adds support for Pub/Sub under the IL4 compliance program. |
-| 2023-10-27 | Assured Workloads Japan Regions compliance program general availability |  | The Japan Regions compliance program is now generally available in Assured Workloads. |
-| 2023-09-28 | Assured Workloads IL2 compliance program general availability |  | The IL2 compliance program is now generally available in Assured Workloads. |
-| 2023-09-22 | Assured Workloads CJIS program support for Cloud Identity |  | Assured Workloads adds support for Cloud Identity under the CJIS compliance program. |
-| 2023-09-22 | Assured Workloads CJIS program support for Cloud Run |  | Assured Workloads adds support for Cloud Run under the CJIS compliance program. |
-| 2023-09-22 | Assured Workloads CJIS program support for Google Workspace Admin Console |  | Assured Workloads adds support for Google Workspace Admin Console under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads CJIS program support for Cloud Composer |  | Assured Workloads adds support for Cloud Composer under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads CJIS program support for Cloud Dataflow |  | Assured Workloads adds support for Cloud Dataflow under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads CJIS program support for Cloud DNS |  | Assured Workloads adds support for Cloud DNS under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads CJIS program support for Cloud HSM |  | Assured Workloads adds support for Cloud HSM under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads CJIS program support for Cloud Logging |  | Assured Workloads adds support for Cloud Logging under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads CJIS program support for Cloud NAT |  | Assured Workloads adds support for Cloud NAT under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads CJIS program support for Cloud Router |  | Assured Workloads adds support for Cloud Router under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads CJIS program support for Cloud SQL |  | Assured Workloads adds support for Cloud SQL under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads CJIS program support for Network Connectivity Center |  | Assured Workloads adds support for Network Connectivity Center under the CJIS compliance program. |
-| 2023-09-15 | Assured Workloads IL5 program support for Cloud Logging |  | Assured Workloads adds support for Cloud Logging under the IL5 compliance program. |
-| 2023-09-15 | Assured Workloads IL5 program support for Dataflow |  | Assured Workloads adds support for Dataflow under the IL5 compliance program. |
-| 2023-09-15 | Assured Workloads IL5 program support for Google Kubernetes Engine |  | Assured Workloads adds support for Google Kubernetes Engine under the IL5 compliance program. |
-| 2023-09-15 | Assured Workloads pre-migration compliance analysis |  | Assured Workloads adds the ability to analyze a project for compliance before migrating it to an Assured Workloads folder. |
-| 2023-09-01 | Assured Workloads Japan Regions compliance program preview |  | The Japan Regions compliance program for Assured Workloads is now available in Preview. |
-| 2023-08-04 | Assured Workloads EU Regions and Support with Sovereignty Controls support for Cloud Bigtable |  | Assured Workloads adds support for Cloud Bigtable under the EU Regions and Support with Sovereignty Controls compliance program. |
-| 2023-08-04 | Assured Workloads EU Regions and Support with Sovereignty Controls support for Cloud Spanner |  | Assured Workloads adds support for Cloud Spanner under the EU Regions and Support with Sovereignty Controls compliance program. |
-| 2023-08-04 | Assured Workloads EU Regions and Support with Sovereignty Controls support for Dataflow |  | Assured Workloads adds support for Dataflow under the EU Regions and Support with Sovereignty Controls compliance program. |
-| 2023-07-10 | Assured Workloads Australia Regions with Assured Support program support for Certificate Authority Service |  | Assured Workloads adds support for Certificate Authority Service under the Australia Regions with Assured Support compliance program. |
-| 2023-07-10 | Assured Workloads Australia Regions with Assured Support program support for Cloud Composer |  | Assured Workloads adds support for Cloud Composer under the Australia Regions with Assured Support compliance program. |
-| 2023-07-10 | Assured Workloads Australia Regions with Assured Support program support for Cloud Data Loss Prevention |  | Assured Workloads adds support for Cloud Data Loss Prevention under the Australia Regions with Assured Support compliance program. |
-| 2023-07-10 | Assured Workloads Canada Protected B program support for Certificate Authority Service |  | Assured Workloads adds support for Certificate Authority Service under the Canada Protected B compliance program. |
-| 2023-07-10 | Assured Workloads Canada Protected B program support for Cloud Composer |  | Assured Workloads adds support for Cloud Composer under the Canada Protected B compliance program. |
-| 2023-07-10 | Assured Workloads Canada Protected B program support for Cloud Data Loss Prevention |  | Assured Workloads adds support for Cloud Data Loss Prevention under the Canada Protected B compliance program. |
-| 2023-07-10 | Assured Workloads Canada Regions and Support program support for Certificate Authority Service |  | Assured Workloads adds support for Certificate Authority Service under the Canada Regions and Support compliance program. |
-| 2023-07-10 | Assured Workloads Canada Regions and Support program support for Cloud Composer |  | Assured Workloads adds support for Cloud Composer under the Canada Regions and Support compliance program. |
-| 2023-07-10 | Assured Workloads Canada Regions and Support program support for Cloud Data Loss Prevention |  | Assured Workloads adds support for Cloud Data Loss Prevention under the Canada Regions and Support compliance program. |
-| 2023-07-10 | Assured Workloads Israel Regions and Support program support for Certificate Authority Service |  | Assured Workloads adds support for Certificate Authority Service under the Israel Regions and Support compliance program. |
-| 2023-07-10 | Assured Workloads Israel Regions and Support program support for Cloud Composer |  | Assured Workloads adds support for Cloud Composer under the Israel Regions and Support compliance program. |
-| 2023-07-10 | Assured Workloads Israel Regions and Support program support for Cloud Data Loss Prevention |  | Assured Workloads adds support for Cloud Data Loss Prevention under the Israel Regions and Support compliance program. |
-| 2023-07-10 | Assured Workloads US Regions and Support program support for Certificate Authority Service |  | Assured Workloads adds support for Certificate Authority Service under the US Regions and Support compliance program. |
-| 2023-07-10 | Assured Workloads US Regions and Support program support for Cloud Composer |  | Assured Workloads adds support for Cloud Composer under the US Regions and Support compliance program. |
-| 2023-07-10 | Assured Workloads US Regions and Support program support for Cloud Data Loss Prevention |  | Assured Workloads adds support for Cloud Data Loss Prevention under the US Regions and Support compliance program. |
-| 2023-06-30 | Assured Workloads EU Regions and Support with Sovereignty Controls support for Artifact Registry |  | Assured Workloads adds support for Artifact Registry under the EU Regions and Support with Sovereignty Controls compliance program. |
-| 2023-06-30 | Assured Workloads EU Regions and Support with Sovereignty Controls support for BigQuery |  | Assured Workloads adds support for BigQuery under the EU Regions and Support with Sovereignty Controls compliance program. |
-| 2023-06-30 | Assured Workloads EU Regions and Support with Sovereignty Controls support for Cloud Composer |  | Assured Workloads adds support for Cloud Composer under the EU Regions and Support with Sovereignty Controls compliance program. |
-| 2023-06-30 | Assured Workloads EU Regions and Support with Sovereignty Controls support for Dataproc |  | Assured Workloads adds support for Dataproc under the EU Regions and Support with Sovereignty Controls compliance program. |
-| 2023-06-30 | Assured Workloads IL5 compliance program |  | The IL5 compliance program became generally available in Assured Workloads. |
-| 2023-06-29 | Assured Workloads ITAR compliance program |  | The ITAR compliance program now supports BigQuery in Assured Workloads. |
-| 2023-04-20 | Assured Workloads Australia Regions with Assured Support compliance regime |  | The Australia Regions with Assured Support compliance regime now supports additional Assured Workloads services, including Artifact Registry, Cloud Bigtable, Cloud DNS, Cloud HSM, Cloud Interconnect, Cloud KMS, Cloud Load Balancing, Cloud NAT, Cloud Router, Cloud Run, Cloud VPN, Firestore, IAM, IAP, Network Connectivity Center, Pub/Sub, and VPC Service Controls; The Australia Regions with Assured Support compliance regime became generally available in Assured Workloads. |
-| 2023-04-20 | Assured Workloads Canada Protected B compliance regime |  | The Canada Protected B compliance regime now supports additional Assured Workloads services, including Artifact Registry, Cloud Bigtable, Cloud DNS, Cloud HSM, Cloud Interconnect, Cloud KMS, Cloud Load Balancing, Cloud NAT, Cloud Router, Cloud Run, Cloud VPN, Firestore, IAM, IAP, Network Connectivity Center, Pub/Sub, and VPC Service Controls. |
-| 2023-04-20 | Assured Workloads Canada Regions and Support compliance regime |  | The Canada Regions and Support compliance regime now supports additional Assured Workloads services, including Artifact Registry, Cloud Bigtable, Cloud DNS, Cloud HSM, Cloud Interconnect, Cloud KMS, Cloud Load Balancing, Cloud NAT, Cloud Router, Cloud Run, Cloud VPN, Firestore, IAM, IAP, Network Connectivity Center, Pub/Sub, and VPC Service Controls; Assured Workloads launched the Canada Regions and Support compliance regime for general availability. |
-| 2023-04-20 | Assured Workloads FedRAMP Moderate compliance regime |  | The FedRAMP Moderate compliance regime now supports additional Assured Workloads services, including Access Approval, Cloud Asset Inventory, GKE Hub, and Traffic Director. |
-| 2023-04-20 | Assured Workloads Israel Regions and Support compliance regime |  | The Israel Regions and Support compliance regime now supports additional Assured Workloads services, including Artifact Registry, Cloud Bigtable, Cloud DNS, Cloud HSM, Cloud Interconnect, Cloud KMS, Cloud Load Balancing, Cloud NAT, Cloud Router, Cloud Run, Cloud VPN, Firestore, IAM, IAP, Network Connectivity Center, Pub/Sub, and VPC Service Controls; The Israel Regions and Support compliance regime became generally available in Assured Workloads. |
-| 2023-04-20 | Assured Workloads US Regions and Support compliance regime |  | The US Regions and Support compliance regime now supports additional Assured Workloads services, including Artifact Registry, Cloud Bigtable, Cloud DNS, Cloud HSM, Cloud Interconnect, Cloud KMS, Cloud Load Balancing, Cloud NAT, Cloud Router, Cloud Run, Cloud VPN, Firestore, IAM, IAP, Network Connectivity Center, Pub/Sub, and VPC Service Controls. |
-| 2023-04-06 | Assured Workloads EU Regions and Support compliance regime |  | The EU Regions and Support compliance regime now supports additional Assured Workloads services, including Cloud DNS, Cloud Interconnect, Cloud Load Balancing, Cloud NAT, Cloud Router, Cloud VPN, IAP, Network Connectivity Center, and VPC Service Controls; Assured Workloads made the EU Regions and Support compliance regime available generally. |
-| 2023-04-06 | Assured Workloads EU Regions and Support with Sovereignty Controls compliance regime |  | The EU Regions and Support with Sovereignty Controls compliance regime now supports additional Assured Workloads services, including Cloud DNS, Cloud Interconnect, Cloud Load Balancing, Cloud NAT, Cloud Router, Cloud VPN, IAP, Network Connectivity Center, VPC Service Controls, and related identity/governance services; The EU Regions and Support with Sovereignty Controls compliance regime became generally available in Assured Workloads. |
-| 2022-12-16 | Assured Workloads ITAR compliance regime |  | The ITAR compliance regime became generally available in Assured Workloads. |
-| 2022-11-17 | Assured Workloads Impact Level 4 (IL4) compliance regime |  | The Impact Level 4 (IL4) compliance regime became generally available in Assured Workloads. |
-| 2022-10-20 | Assured Workloads Australia Regions and Support compliance regime |  | Assured Workloads added an Australia Regions option in the Assured Support compliance regime. |
-| 2022-09-19 | Assured Workloads workload move compatibility analysis |  | Assured Workloads added a preview analysis that evaluates hypothetical workload moves for compatibility between source and destination workloads. |
-| 2022-06-15 | Assured Workloads global security configuration data-residency restriction |  | Assured Workloads made globally scoped security configuration resource creation restrictable to satisfy data residency requirements; Assured Workloads introduced a preview capability to enforce data-residency controls on global security configuration resource creation using organization policies. |
-| 2021-01-19 | Assured Workloads existing-folder deployment support |  | Assured Workloads added support for creating an Assured Workloads environment inside an existing Google Cloud folder. |
-| 2021-01-19 | Assured Workloads Premium Subscription offline contract billing |  | Assured Workloads enabled purchasing Premium Subscriptions through offline contracts for customers and resellers. |
-| 2021-01-19 | Assured Workloads premium support service |  | Assured Workloads added a premium support option delivered from a U.S. person in a U.S. location with a 24/7 coverage model. |
-| 2021-01-19 | Assured Workloads US Regions and Support platform control |  | Assured Workloads added a US Regions and Support platform control to provide first-level U.S. person support and U.S. data locality. |
-| 2020-09-01 | Assured Workloads for Government |  | Assured Workloads for Government was made generally available for the FedRAMP Moderate compliance regime; Assured Workloads for Government began with an initial private beta release. |
+| 2025-12-21 | ITAR data boundary |  | An Assured Workloads data boundary for ITAR compliance. |
+| 2025-12-15 | Australia data boundary |  | An Assured Workloads data boundary for Australia; An Assured Workloads data boundary for Australia. |
+| 2025-12-15 | Brazil data boundary |  | An Assured Workloads data boundary for Brazil; An Assured Workloads data boundary for Brazil. |
+| 2025-12-15 | Canada data boundary |  | An Assured Workloads data boundary for Canada; An Assured Workloads data boundary for Canada. |
+| 2025-12-15 | Canada Protected B data boundary |  | An Assured Workloads data boundary for Canada Protected B; An Assured Workloads data boundary for Canada Protected B. |
+| 2025-12-15 | Chile data boundary |  | An Assured Workloads data boundary for Chile; An Assured Workloads data boundary for Chile. |
+| 2025-12-15 | EU data boundary |  | An Assured Workloads data boundary for the European Union; An Assured Workloads data boundary for the European Union. |
+| 2025-12-15 | Hong Kong data boundary |  | An Assured Workloads data boundary for Hong Kong; An Assured Workloads data boundary for Hong Kong. |
+| 2025-12-15 | India data boundary |  | An Assured Workloads data boundary for India; An Assured Workloads data boundary for India. |
+| 2025-12-15 | Indonesia data boundary |  | An Assured Workloads data boundary for Indonesia; An Assured Workloads data boundary for Indonesia. |
+| 2025-12-15 | Israel data boundary |  | An Assured Workloads data boundary for Israel; An Assured Workloads data boundary for Israel. |
+| 2025-12-15 | Japan data boundary |  | An Assured Workloads data boundary for Japan; An Assured Workloads data boundary for Japan. |
+| 2025-12-15 | Qatar data boundary |  | An Assured Workloads data boundary for Qatar; An Assured Workloads data boundary for Qatar. |
+| 2025-12-15 | Singapore data boundary |  | An Assured Workloads data boundary for Singapore; An Assured Workloads data boundary for Singapore. |
+| 2025-12-15 | South Africa data boundary |  | An Assured Workloads data boundary for South Africa; An Assured Workloads data boundary for South Africa. |
+| 2025-12-15 | South Korea data boundary |  | An Assured Workloads data boundary for South Korea; An Assured Workloads data boundary for South Korea. |
+| 2025-12-15 | Switzerland data boundary |  | An Assured Workloads data boundary for Switzerland; An Assured Workloads data boundary for Switzerland. |
+| 2025-12-15 | Taiwan data boundary |  | An Assured Workloads data boundary for Taiwan; An Assured Workloads data boundary for Taiwan. |
+| 2025-12-15 | UK data boundary |  | An Assured Workloads data boundary for the United Kingdom; An Assured Workloads data boundary for the United Kingdom. |
+| 2025-12-15 | US data boundary |  | An Assured Workloads data boundary for the United States; An Assured Workloads data boundary for the United States. |
+| 2025-12-12 | CJIS data boundary |  | An Assured Workloads data boundary for CJIS compliance. |
+| 2025-10-31 | Impact Level 4 (IL4) data boundary |  | An Assured Workloads data boundary for Impact Level 4 compliance; An Assured Workloads data boundary for Impact Level 4 compliance. |
+| 2025-10-31 | Impact Level 5 (IL5) data boundary |  | An Assured Workloads data boundary for Impact Level 5 compliance; An Assured Workloads data boundary for Impact Level 5 compliance. |
+| 2025-10-27 | EU data boundary with Access Justifications |  | An Assured Workloads EU data boundary that includes Access Justifications. |
+| 2025-10-27 | Kingdom of Saudi Arabia data boundary with Access Justifications |  | An Assured Workloads data boundary for the Kingdom of Saudi Arabia that includes Access Justifications. |
+| 2025-10-13 | EU data boundary and support |  | An Assured Workloads EU data boundary package that includes support controls. |
+| 2025-09-05 | IRS 1075 control package |  | An Assured Workloads control package for IRS 1075 compliance; The IRS 1075 control package supports Access Transparency, Backup for GKE, Cloud Healthcare API, Cloud OS Login API, Cloud Workstations, Conversational Agents, Conversational Insights, Dataplex Universal Catalog, Document AI, Essential Contacts, Eventarc, external and internal passthrough Network Load Balancers, Generative AI on Vertex AI, Google Agentspace, Google Cloud Armor, Google Cloud NetApp Volumes, Google Security Operations SOAR, IAM, Infrastructure Manager, Integration Connectors, Jurisdictional Cloud Console, Looker, Organization Policy Service, regional Application Load Balancers, regional proxy Network Load Balancers, Storage Transfer Service, VPC Service Controls, and VPC. |
+| 2025-08-15 | Australia Data Boundary and Support control package |  | The Australia Data Boundary and Support control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Australia Data Boundary control package |  | The Australia Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Brazil Data Boundary control package |  | The Brazil Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Canada data boundary and support |  | An Assured Workloads Canada data boundary package that includes support controls. |
+| 2025-08-15 | Canada Data Boundary control package |  | The Canada Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Data Boundary for Canada Protected B control package |  | The Data Boundary for Canada Protected B control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | EU Data Boundary and Support control package |  | The EU Data Boundary and Support control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Google Agentspace, Model Armor, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | EU Data Boundary control package |  | The EU Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Google Agentspace, Model Armor, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Hong Kong Data Boundary control package |  | The Hong Kong Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | India Data Boundary control package |  | The India Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Indonesia Data Boundary control package |  | The Indonesia Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Israel Data Boundary and Support control package |  | The Israel Data Boundary and Support control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Israel Data Boundary control package |  | The Israel Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Japan Data Boundary control package |  | The Japan Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Singapore Data Boundary control package |  | The Singapore Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | South Africa Data Boundary control package |  | The South Africa Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | South Korea Data Boundary control package |  | The South Korea Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Switzerland Data Boundary control package |  | The Switzerland Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | Taiwan Data Boundary control package |  | The Taiwan Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | UK Data Boundary control package |  | The UK Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | US Data Boundary and Support control package |  | The US Data Boundary and Support control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Google Agentspace, Model Armor, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-08-15 | US Data Boundary control package |  | The US Data Boundary control package supports Binary Authorization, Cloud Asset Inventory, Database Center, Google Agentspace, Model Armor, Text-to-Speech, Vertex AI Batch prediction, Vertex AI Model Monitoring, Vertex AI Model Registry, Vertex AI Online prediction, Vertex AI Pipelines, Vertex AI Training, and Web Risk. |
+| 2025-07-17 | Data Boundary for Impact Level 4 (IL4) control package |  | The Data Boundary for Impact Level 4 (IL4) control package supports Certificate Authority Service, Cloud Build, Cloud NAT, GKE Hub, Memorystore for Redis, Secret Manager, and Sensitive Data Protection. |
+| 2025-07-17 | Data Boundary for Impact Level 5 (IL5) control package |  | The Data Boundary for Impact Level 5 (IL5) control package supports Certificate Authority Service, Cloud Build, Cloud NAT, Cloud VPN, GKE Hub, Memorystore for Redis, Secret Manager, and Sensitive Data Protection. |
+| 2025-06-06 | FedRAMP High control package |  | The FedRAMP High control package supports Agent Assist, Looker, and Vertex AI Vector Search; The FedRAMP High control package supports Vertex AI Search and Generative AI on Vertex AI. |
+| 2025-06-06 | FedRAMP Moderate control package |  | The FedRAMP Moderate control package supports Agent Assist, Looker, and Vertex AI Vector Search; The FedRAMP Moderate control package supports Vertex AI Search and Generative AI on Vertex AI. |
+| 2025-06-06 | IL2 control package |  | The IL2 control package supports Agent Assist, Binary Authorization, Certificate Authority, Conversational Agents (Dialogflow CX), Identity-Aware Proxy (IAP), Looker, and Vertex AI Vector Search; The IL2 control package supports Vertex AI Search and Generative AI on Vertex AI. |
+| 2025-05-23 | Canada Protected B control package |  | The Canada Protected B control package is generally available; The Canada Protected B control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, and Storage Transfer Service. |
+| 2025-05-07 | Australia Regions control package |  | The Australia Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | Australia Regions with Assured Support control package |  | The Australia Regions with Assured Support control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR; The Australia Regions with Assured Support control package supports Access Transparency. |
+| 2025-05-07 | Brazil Regions control package |  | The Brazil Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | Canada Regions and Support control package |  | The Canada Regions and Support control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, and Storage Transfer Service; The Canada Regions and Support control package supports Access Transparency. |
+| 2025-05-07 | Canada Regions control package |  | The Canada Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Cloud NetApp Volumes. |
+| 2025-05-07 | Chile Regions control package |  | The Chile Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | EU Regions and Support control package |  | The EU Regions and Support control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, and Storage Transfer Service; The EU Regions and Support control package supports Access Approval, Certificate Authority Service, Cloud Monitoring, Cloud Run, Firestore, and Sensitive Data Protection. |
+| 2025-05-07 | EU Regions control package |  | The EU Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Cloud NetApp Volumes. |
+| 2025-05-07 | Hong Kong Regions control package |  | The Hong Kong Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | India Regions control package |  | The India Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | Indonesia Regions control package |  | The Indonesia Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | Israel Regions and Support control package |  | The Israel Regions and Support control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR; The Israel Regions and Support control package supports Dataflow and Memorystore for Redis. |
+| 2025-05-07 | Israel Regions control package |  | The Israel Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | Japan Regions control package |  | The Japan Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR; The Japan Regions control package supports Access Approval and Access Transparency. |
+| 2025-05-07 | Qatar Regions control package |  | The Qatar Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | Singapore Regions control package |  | The Singapore Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, Google Cloud NetApp Volumes, and Google Security Operations SOAR. |
+| 2025-05-07 | South Africa Regions control package |  | The South Africa Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | South Korea Regions control package |  | The South Korea Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | Switzerland Regions control package |  | The Switzerland Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | Taiwan Regions control package |  | The Taiwan Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | UK Regions control package |  | The UK Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR. |
+| 2025-05-07 | US Regions and Support control package |  | The US Regions and Support control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, and Google Security Operations SOAR; The US Regions and Support control package supports Access Transparency. |
+| 2025-05-07 | US Regions control package |  | The US Regions control package supports Cloud Build, Cloud SQL for PostgreSQL, Cloud Workstations, Document AI, Firebase Security Rules, Cloud OS Login API, Storage Transfer Service, Google Cloud NetApp Volumes, and Google Security Operations SOAR. |
+| 2025-05-02 | ITAR control package |  | The ITAR control package supports Service Directory; The ITAR control package supports Cloud Composer. |
+| 2025-05-02 | Sovereign Controls for EU control package |  | The Sovereign Controls for EU control package supports Access Context Manager, Certificate Authority Service, Cloud Service Mesh, Connect, Memorystore for Redis, Speech-to-Text, and GKE Hub; The Sovereign Controls for EU control package supports BigQuery Data Transfer Service, Sensitive Data Protection, GKE Identity Service, Google Cloud Armor, Resource Manager, and Secret Manager. |
+| 2025-05-02 | Sovereign Controls for Kingdom of Saudi Arabia control package |  | The Sovereign Controls for Kingdom of Saudi Arabia control package supports Access Context Manager, Certificate Authority Service, Connect, GKE Hub, and GKE Identity Service; The Sovereign Controls for Kingdom of Saudi Arabia control package supports Sensitive Data Protection, Google Cloud Armor, and Secret Manager. |
+| 2025-04-17 | CJIS control package |  | The CJIS control package supports Access Transparency, Cloud Tasks, Cloud OS Login API, Eventarc, Firebase Security Rules, and Generative AI on Vertex AI; The CJIS control package supports Bigtable, Cloud Armor, Cloud Workstations, and Storage Transfer Service. |
+| 2025-03-07 | Looker (Google Cloud core) support across regional control packages |  | Looker (Google Cloud core) is supported in the Australia, Brazil, Canada, Chile, EU, Hong Kong, India, Indonesia, Israel, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US Regions and Support control packages. |
+| 2025-02-28 | IL4 control package |  | The IL4 control package supports Artifact Registry, Cloud Composer, Cloud Run, Cloud Tasks, and Spanner. |
+| 2025-02-28 | IL5 control package |  | The IL5 control package supports Artifact Registry, Cloud Composer, Cloud Run, Cloud Tasks, and Spanner. |
+| 2025-01-31 | Connect |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Cloud Service Mesh, Connect, Generative AI on Vertex AI, Resource Manager, and Secure Source Manager. |
+| 2025-01-31 | Generative AI on Vertex AI |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Cloud Service Mesh, Connect, Generative AI on Vertex AI, Resource Manager, and Secure Source Manager. |
+| 2025-01-31 | Regional |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Cloud Service Mesh, Connect, Generative AI on Vertex AI, Resource Manager, and Secure Source Manager; Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Apigee, Cloud Vision API, GKE Identity Service, Traffic Director, and Vertex AI Search. |
+| 2025-01-31 | Resource Manager |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Cloud Service Mesh, Connect, Generative AI on Vertex AI, Resource Manager, and Secure Source Manager. |
+| 2025-01-31 | sovereign control package support for Cloud Service Mesh |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Cloud Service Mesh, Connect, Generative AI on Vertex AI, Resource Manager, and Secure Source Manager. |
+| 2024-12-13 | Cloud Vision API |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Apigee, Cloud Vision API, GKE Identity Service, Traffic Director, and Vertex AI Search. |
+| 2024-12-13 | GKE Identity Service |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Apigee, Cloud Vision API, GKE Identity Service, Traffic Director, and Vertex AI Search. |
+| 2024-12-13 | sovereign control package support for Apigee |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Apigee, Cloud Vision API, GKE Identity Service, Traffic Director, and Vertex AI Search. |
+| 2024-12-13 | Spanner support in assured support control packages |  | Spanner is supported in the Australia with Assured Support, Canada and Support, EU and Support, Israel and Support, Japan, and US and Support control packages. |
+| 2024-12-13 | Traffic Director |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, Hong Kong, India, Indonesia, Israel, Israel and Support, Japan, Qatar, Singapore, South Africa, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Apigee, Cloud Vision API, GKE Identity Service, Traffic Director, and Vertex AI Search. |
+| 2024-10-21 | IRS Publication 1075 control package |  | The IRS Publication 1075 control package is generally available and supports Binary Authorization and Cloud Logging. |
+| 2024-10-09 | Workload updates |  | Workload updates let you view and apply updates so workloads use the most recent control package configuration, and the feature is in Preview. |
+| 2024-10-03 | EU Regions and Support with Sovereignty Controls control package |  | The EU Regions and Support with Sovereignty Controls control package supports Cloud Run and Filestore. |
+| 2024-10-03 | Eventarc |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, India, Indonesia, Israel, Israel and Support, Japan, Singapore, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Access Context Manager, Eventarc, GKE Hub, and Speech-to-Text. |
+| 2024-10-03 | GKE Hub |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, India, Indonesia, Israel, Israel and Support, Japan, Singapore, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Access Context Manager, Eventarc, GKE Hub, and Speech-to-Text. |
+| 2024-10-03 | Secret Manager support in support control packages |  | Secret Manager is supported in the EU Regions and Support, Israel Regions and Support, and US Regions and Support control packages. |
+| 2024-10-03 | support control package support for Access Context Manager |  | Australia, Australia with Assured Support, Brazil, Canada, Canada and Support, Chile, EU, EU and Support, India, Indonesia, Israel, Israel and Support, Japan, Singapore, South Korea, Switzerland, Taiwan, UK, US, and US and Support control packages now support Access Context Manager, Eventarc, GKE Hub, and Speech-to-Text. |
+| 2023-11-16 | IL4 compliance program |  | The IL4 compliance program supports Cloud DNS, Cloud Interconnect, Cloud Monitoring, Cloud Router, Cloud SQL, Cloud VPN, and Pub/Sub. |
+| 2023-10-27 | Japan Regions compliance program |  | The Japan Regions compliance program is generally available; The Japan Regions compliance program is available in Preview in Assured Workloads. |
+| 2023-09-28 | IL2 compliance program |  | The IL2 compliance program is generally available. |
+| 2023-09-22 | CJIS support for Cloud Identity |  | The CJIS compliance program supports Cloud Identity in Assured Workloads. |
+| 2023-09-22 | CJIS support for Cloud Run |  | The CJIS compliance program supports Cloud Run in Assured Workloads. |
+| 2023-09-22 | CJIS support for Google Workspace Admin Console |  | The CJIS compliance program supports Google Workspace Admin Console in Assured Workloads. |
+| 2023-09-15 | CJIS support for Cloud Composer |  | The CJIS compliance program supports Cloud Composer in Assured Workloads. |
+| 2023-09-15 | CJIS support for Cloud Dataflow |  | The CJIS compliance program supports Cloud Dataflow in Assured Workloads. |
+| 2023-09-15 | CJIS support for Cloud DNS |  | The CJIS compliance program supports Cloud DNS in Assured Workloads. |
+| 2023-09-15 | CJIS support for Cloud HSM |  | The CJIS compliance program supports Cloud HSM in Assured Workloads. |
+| 2023-09-15 | CJIS support for Cloud Logging |  | The CJIS compliance program supports Cloud Logging in Assured Workloads. |
+| 2023-09-15 | CJIS support for Cloud NAT |  | The CJIS compliance program supports Cloud NAT in Assured Workloads. |
+| 2023-09-15 | CJIS support for Cloud Router |  | The CJIS compliance program supports Cloud Router in Assured Workloads. |
+| 2023-09-15 | CJIS support for Cloud SQL |  | The CJIS compliance program supports Cloud SQL in Assured Workloads. |
+| 2023-09-15 | CJIS support for Network Connectivity Center |  | The CJIS compliance program supports Network Connectivity Center in Assured Workloads. |
+| 2023-09-15 | IL5 support for Cloud Logging |  | The IL5 compliance program supports Cloud Logging in Assured Workloads. |
+| 2023-09-15 | IL5 support for Dataflow |  | The IL5 compliance program supports Dataflow in Assured Workloads. |
+| 2023-09-15 | IL5 support for Google Kubernetes Engine |  | The IL5 compliance program supports Google Kubernetes Engine in Assured Workloads. |
+| 2023-09-15 | Project migration compliance analysis |  | Assured Workloads can analyze a project for compliance before migrating it to an Assured Workloads folder. |
+| 2023-08-04 | EU Regions and Support with Sovereignty Controls support for Cloud Bigtable |  | The EU Regions and Support with Sovereignty Controls compliance program supports Cloud Bigtable in Assured Workloads. |
+| 2023-08-04 | EU Regions and Support with Sovereignty Controls support for Cloud Spanner |  | The EU Regions and Support with Sovereignty Controls compliance program supports Cloud Spanner in Assured Workloads. |
+| 2023-08-04 | EU Regions and Support with Sovereignty Controls support for Dataflow |  | The EU Regions and Support with Sovereignty Controls compliance program supports Dataflow in Assured Workloads. |
+| 2023-07-10 | Australia Regions with Assured Support support for Certificate Authority Service |  | The Australia Regions with Assured Support compliance program supports Certificate Authority Service in Assured Workloads. |
+| 2023-07-10 | Australia Regions with Assured Support support for Cloud Composer |  | The Australia Regions with Assured Support compliance program supports Cloud Composer in Assured Workloads. |
+| 2023-07-10 | Australia Regions with Assured Support support for Cloud Data Loss Prevention |  | The Australia Regions with Assured Support compliance program supports Cloud Data Loss Prevention in Assured Workloads. |
+| 2023-07-10 | Canada Protected B support for Certificate Authority Service |  | The Canada Protected B compliance program supports Certificate Authority Service in Assured Workloads. |
+| 2023-07-10 | Canada Protected B support for Cloud Composer |  | The Canada Protected B compliance program supports Cloud Composer in Assured Workloads. |
+| 2023-07-10 | Canada Protected B support for Cloud Data Loss Prevention |  | The Canada Protected B compliance program supports Cloud Data Loss Prevention in Assured Workloads. |
+| 2023-07-10 | Canada Regions and Support support for Certificate Authority Service |  | The Canada Regions and Support compliance program supports Certificate Authority Service in Assured Workloads. |
+| 2023-07-10 | Canada Regions and Support support for Cloud Composer |  | The Canada Regions and Support compliance program supports Cloud Composer in Assured Workloads. |
+| 2023-07-10 | Canada Regions and Support support for Cloud Data Loss Prevention |  | The Canada Regions and Support compliance program supports Cloud Data Loss Prevention in Assured Workloads. |
+| 2023-07-10 | Israel Regions and Support support for Certificate Authority Service |  | The Israel Regions and Support compliance program supports Certificate Authority Service in Assured Workloads. |
+| 2023-07-10 | Israel Regions and Support support for Cloud Composer |  | The Israel Regions and Support compliance program supports Cloud Composer in Assured Workloads. |
+| 2023-07-10 | Israel Regions and Support support for Cloud Data Loss Prevention |  | The Israel Regions and Support compliance program supports Cloud Data Loss Prevention in Assured Workloads. |
+| 2023-07-10 | US Regions and Support support for Certificate Authority Service |  | The US Regions and Support compliance program supports Certificate Authority Service in Assured Workloads. |
+| 2023-07-10 | US Regions and Support support for Cloud Composer |  | The US Regions and Support compliance program supports Cloud Composer in Assured Workloads. |
+| 2023-07-10 | US Regions and Support support for Cloud Data Loss Prevention |  | The US Regions and Support compliance program supports Cloud Data Loss Prevention in Assured Workloads. |
+| 2023-06-30 | EU Regions and Support with Sovereignty Controls support for Artifact Registry |  | The EU Regions and Support with Sovereignty Controls compliance program supports Artifact Registry in Assured Workloads. |
+| 2023-06-30 | EU Regions and Support with Sovereignty Controls support for BigQuery |  | The EU Regions and Support with Sovereignty Controls compliance program supports BigQuery in Assured Workloads. |
+| 2023-06-30 | EU Regions and Support with Sovereignty Controls support for Cloud Composer |  | The EU Regions and Support with Sovereignty Controls compliance program supports Cloud Composer in Assured Workloads. |
+| 2023-06-30 | EU Regions and Support with Sovereignty Controls support for Dataproc |  | The EU Regions and Support with Sovereignty Controls compliance program supports Dataproc in Assured Workloads. |
+| 2023-06-30 | IL5 compliance program |  | The IL5 compliance program is generally available in Assured Workloads. |
+| 2023-06-29 | ITAR support for BigQuery |  | The ITAR compliance program supports BigQuery in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Artifact Registry |  | The Australia Regions with Assured Support compliance regime supports Artifact Registry in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud Bigtable |  | The Australia Regions with Assured Support compliance regime supports Cloud Bigtable in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud DNS |  | The Australia Regions with Assured Support compliance regime supports Cloud DNS in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud HSM |  | The Australia Regions with Assured Support compliance regime supports Cloud HSM in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud Interconnect |  | The Australia Regions with Assured Support compliance regime supports Cloud Interconnect in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud Key Management Service |  | The Australia Regions with Assured Support compliance regime supports Cloud Key Management Service in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud Load Balancing |  | The Australia Regions with Assured Support compliance regime supports Cloud Load Balancing in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud Monitoring |  | The Australia Regions with Assured Support compliance regime supports Cloud Monitoring in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud NAT |  | The Australia Regions with Assured Support compliance regime supports Cloud NAT in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud Router |  | The Australia Regions with Assured Support compliance regime supports Cloud Router in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud Run |  | The Australia Regions with Assured Support compliance regime supports Cloud Run in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Cloud VPN |  | The Australia Regions with Assured Support compliance regime supports Cloud VPN in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Firestore |  | The Australia Regions with Assured Support compliance regime supports Firestore in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Identity and Access Management |  | The Australia Regions with Assured Support compliance regime supports Identity and Access Management in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Identity-Aware Proxy |  | The Australia Regions with Assured Support compliance regime supports Identity-Aware Proxy in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Network Connectivity Center |  | The Australia Regions with Assured Support compliance regime supports Network Connectivity Center in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Pub/Sub |  | The Australia Regions with Assured Support compliance regime supports Pub/Sub in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for Virtual Private Cloud |  | The Australia Regions with Assured Support compliance regime supports Virtual Private Cloud in Assured Workloads. |
+| 2023-04-20 | Australia Regions with Assured Support support for VPC Service Controls |  | The Australia Regions with Assured Support compliance regime supports VPC Service Controls in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Artifact Registry |  | The Canada Protected B compliance regime supports Artifact Registry in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud Bigtable |  | The Canada Protected B compliance regime supports Cloud Bigtable in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud DNS |  | The Canada Protected B compliance regime supports Cloud DNS in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud HSM |  | The Canada Protected B compliance regime supports Cloud HSM in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud Interconnect |  | The Canada Protected B compliance regime supports Cloud Interconnect in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud Key Management Service |  | The Canada Protected B compliance regime supports Cloud Key Management Service in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud Load Balancing |  | The Canada Protected B compliance regime supports Cloud Load Balancing in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud Monitoring |  | The Canada Protected B compliance regime supports Cloud Monitoring in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud NAT |  | The Canada Protected B compliance regime supports Cloud NAT in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud Router |  | The Canada Protected B compliance regime supports Cloud Router in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud Run |  | The Canada Protected B compliance regime supports Cloud Run in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Cloud VPN |  | The Canada Protected B compliance regime supports Cloud VPN in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Firestore |  | The Canada Protected B compliance regime supports Firestore in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Identity and Access Management |  | The Canada Protected B compliance regime supports Identity and Access Management in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Identity-Aware Proxy |  | The Canada Protected B compliance regime supports Identity-Aware Proxy in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Network Connectivity Center |  | The Canada Protected B compliance regime supports Network Connectivity Center in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Pub/Sub |  | The Canada Protected B compliance regime supports Pub/Sub in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for Virtual Private Cloud |  | The Canada Protected B compliance regime supports Virtual Private Cloud in Assured Workloads. |
+| 2023-04-20 | Canada Protected B support for VPC Service Controls |  | The Canada Protected B compliance regime supports VPC Service Controls in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Artifact Registry |  | The Canada Regions and Support compliance regime supports Artifact Registry in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud Bigtable |  | The Canada Regions and Support compliance regime supports Cloud Bigtable in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud DNS |  | The Canada Regions and Support compliance regime supports Cloud DNS in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud HSM |  | The Canada Regions and Support compliance regime supports Cloud HSM in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud Interconnect |  | The Canada Regions and Support compliance regime supports Cloud Interconnect in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud Key Management Service |  | The Canada Regions and Support compliance regime supports Cloud Key Management Service in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud Load Balancing |  | The Canada Regions and Support compliance regime supports Cloud Load Balancing in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud Monitoring |  | The Canada Regions and Support compliance regime supports Cloud Monitoring in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud NAT |  | The Canada Regions and Support compliance regime supports Cloud NAT in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud Router |  | The Canada Regions and Support compliance regime supports Cloud Router in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud Run |  | The Canada Regions and Support compliance regime supports Cloud Run in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Cloud VPN |  | The Canada Regions and Support compliance regime supports Cloud VPN in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Firestore |  | The Canada Regions and Support compliance regime supports Firestore in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Identity and Access Management |  | The Canada Regions and Support compliance regime supports Identity and Access Management in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Identity-Aware Proxy |  | The Canada Regions and Support compliance regime supports Identity-Aware Proxy in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Network Connectivity Center |  | The Canada Regions and Support compliance regime supports Network Connectivity Center in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Pub/Sub |  | The Canada Regions and Support compliance regime supports Pub/Sub in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for Virtual Private Cloud |  | The Canada Regions and Support compliance regime supports Virtual Private Cloud in Assured Workloads. |
+| 2023-04-20 | Canada Regions and Support support for VPC Service Controls |  | The Canada Regions and Support compliance regime supports VPC Service Controls in Assured Workloads. |
+| 2023-04-20 | FedRAMP Moderate support for Access Approval |  | The FedRAMP Moderate compliance regime supports Access Approval in Assured Workloads. |
+| 2023-04-20 | FedRAMP Moderate support for Cloud Asset Inventory |  | The FedRAMP Moderate compliance regime supports Cloud Asset Inventory in Assured Workloads. |
+| 2023-04-20 | FedRAMP Moderate support for GKE Hub |  | The FedRAMP Moderate compliance regime supports GKE Hub in Assured Workloads. |
+| 2023-04-20 | FedRAMP Moderate support for Traffic Director |  | The FedRAMP Moderate compliance regime supports Traffic Director in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Artifact Registry |  | The Israel Regions and Support compliance regime supports Artifact Registry in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud Bigtable |  | The Israel Regions and Support compliance regime supports Cloud Bigtable in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud DNS |  | The Israel Regions and Support compliance regime supports Cloud DNS in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud HSM |  | The Israel Regions and Support compliance regime supports Cloud HSM in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud Interconnect |  | The Israel Regions and Support compliance regime supports Cloud Interconnect in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud Key Management Service |  | The Israel Regions and Support compliance regime supports Cloud Key Management Service in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud Load Balancing |  | The Israel Regions and Support compliance regime supports Cloud Load Balancing in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud Monitoring |  | The Israel Regions and Support compliance regime supports Cloud Monitoring in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud NAT |  | The Israel Regions and Support compliance regime supports Cloud NAT in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud Router |  | The Israel Regions and Support compliance regime supports Cloud Router in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud Run |  | The Israel Regions and Support compliance regime supports Cloud Run in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Cloud VPN |  | The Israel Regions and Support compliance regime supports Cloud VPN in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Firestore |  | The Israel Regions and Support compliance regime supports Firestore in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Identity and Access Management |  | The Israel Regions and Support compliance regime supports Identity and Access Management in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Identity-Aware Proxy |  | The Israel Regions and Support compliance regime supports Identity-Aware Proxy in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Network Connectivity Center |  | The Israel Regions and Support compliance regime supports Network Connectivity Center in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Pub/Sub |  | The Israel Regions and Support compliance regime supports Pub/Sub in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for Virtual Private Cloud |  | The Israel Regions and Support compliance regime supports Virtual Private Cloud in Assured Workloads. |
+| 2023-04-20 | Israel Regions and Support support for VPC Service Controls |  | The Israel Regions and Support compliance regime supports VPC Service Controls in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Artifact Registry |  | The US Regions and Support compliance regime supports Artifact Registry in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud Bigtable |  | The US Regions and Support compliance regime supports Cloud Bigtable in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud DNS |  | The US Regions and Support compliance regime supports Cloud DNS in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud HSM |  | The US Regions and Support compliance regime supports Cloud HSM in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud Interconnect |  | The US Regions and Support compliance regime supports Cloud Interconnect in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud Key Management Service |  | The US Regions and Support compliance regime supports Cloud Key Management Service in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud Load Balancing |  | The US Regions and Support compliance regime supports Cloud Load Balancing in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud Monitoring |  | The US Regions and Support compliance regime supports Cloud Monitoring in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud NAT |  | The US Regions and Support compliance regime supports Cloud NAT in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud Router |  | The US Regions and Support compliance regime supports Cloud Router in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud Run |  | The US Regions and Support compliance regime supports Cloud Run in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Cloud VPN |  | The US Regions and Support compliance regime supports Cloud VPN in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Firestore |  | The US Regions and Support compliance regime supports Firestore in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Identity and Access Management |  | The US Regions and Support compliance regime supports Identity and Access Management in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Identity-Aware Proxy |  | The US Regions and Support compliance regime supports Identity-Aware Proxy in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Network Connectivity Center |  | The US Regions and Support compliance regime supports Network Connectivity Center in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Pub/Sub |  | The US Regions and Support compliance regime supports Pub/Sub in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for Virtual Private Cloud |  | The US Regions and Support compliance regime supports Virtual Private Cloud in Assured Workloads. |
+| 2023-04-20 | US Regions and Support support for VPC Service Controls |  | The US Regions and Support compliance regime supports VPC Service Controls in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for Cloud DNS |  | The EU Regions and Support compliance regime supports Cloud DNS in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for Cloud Interconnect |  | The EU Regions and Support compliance regime supports Cloud Interconnect in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for Cloud Load Balancing |  | The EU Regions and Support compliance regime supports Cloud Load Balancing in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for Cloud NAT |  | The EU Regions and Support compliance regime supports Cloud NAT in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for Cloud Router |  | The EU Regions and Support compliance regime supports Cloud Router in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for Cloud VPN |  | The EU Regions and Support compliance regime supports Cloud VPN in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for Identity-Aware Proxy |  | The EU Regions and Support compliance regime supports Identity-Aware Proxy in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for Network Connectivity Center |  | The EU Regions and Support compliance regime supports Network Connectivity Center in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for Virtual Private Cloud |  | The EU Regions and Support compliance regime supports Virtual Private Cloud in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support support for VPC Service Controls |  | The EU Regions and Support compliance regime supports VPC Service Controls in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for Cloud DNS |  | The EU Regions and Support with Sovereignty Controls compliance regime supports Cloud DNS in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for Cloud Interconnect |  | The EU Regions and Support with Sovereignty Controls compliance regime supports Cloud Interconnect in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for Cloud Load Balancing |  | The EU Regions and Support with Sovereignty Controls compliance regime supports Cloud Load Balancing in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for Cloud NAT |  | The EU Regions and Support with Sovereignty Controls compliance regime supports Cloud NAT in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for Cloud Router |  | The EU Regions and Support with Sovereignty Controls compliance regime supports Cloud Router in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for Cloud VPN |  | The EU Regions and Support with Sovereignty Controls compliance regime supports Cloud VPN in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for Identity-Aware Proxy |  | The EU Regions and Support with Sovereignty Controls compliance regime supports Identity-Aware Proxy in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for Network Connectivity Center |  | The EU Regions and Support with Sovereignty Controls compliance regime supports Network Connectivity Center in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for Virtual Private Cloud |  | The EU Regions and Support with Sovereignty Controls compliance regime supports Virtual Private Cloud in Assured Workloads. |
+| 2023-04-06 | EU Regions and Support with Sovereignty Controls support for VPC Service Controls |  | The EU Regions and Support with Sovereignty Controls compliance regime supports VPC Service Controls in Assured Workloads. |
+| 2023-03-30 | Australia Regions with Assured Support compliance regime |  | The Australia Regions with Assured Support compliance regime is generally available in Assured Workloads; The Australia Regions with Assured Support compliance regime is available in Preview in Assured Workloads. |
+| 2023-01-31 | Israel Regions and Support compliance regime |  | The Israel Regions and Support compliance regime is generally available in Assured Workloads; The Israel Regions and Support compliance regime is available in Preview in Assured Workloads. |
+| 2022-12-22 | EU Regions and Support with Sovereignty Controls compliance regime |  | The EU Regions and Support with Sovereignty Controls compliance regime is generally available in Assured Workloads; The EU Regions and Support with Sovereignty Controls compliance regime is available in Preview in Assured Workloads. |
+| 2022-12-16 | ITAR compliance regime |  | The ITAR compliance regime is generally available in Assured Workloads. |
+| 2022-11-17 | Impact Level 4 compliance regime |  | The Impact Level 4 compliance regime is generally available in Assured Workloads. |
+| 2022-10-17 | Canada Regions and Support compliance regime |  | The Canada Regions and Support compliance regime is generally available in Assured Workloads. |
+| 2022-09-19 | Hypothetical workload move analysis |  | Assured Workloads can analyze a hypothetical move from a project or project-based workload to a folder-based workload for compatibility issues. |
+| 2022-06-15 | Global security configuration resource location restriction |  | Assured Workloads can restrict creation of global security configuration resources to meet data residency requirements; Assured Workloads can restrict creation of global security configuration resources by using organization policies to meet data residency requirements. |
+| 2021-12-16 | EU Regions and Support compliance regime |  | The EU Regions and Support compliance regime is generally available in Assured Workloads. |
+| 2021-01-19 | Existing folder support |  | Assured Workloads environments can be created inside an existing folder. |
+| 2021-01-19 | Offline contract purchase for Assured Workloads Premium Subscriptions |  | Assured Workloads Premium Subscriptions can be purchased through offline contracts by customers and resellers. |
+| 2021-01-19 | US Regions and Support platform control |  | The US Regions and Support platform control provides first-level US Person support and US data location in Assured Workloads. |
+| 2021-01-19 | US-person Premium Support for Assured Workloads |  | Assured Workloads can provide 24/7 Premium Support from a US Person in a US location. |
+| 2020-09-01 | Assured Workloads for Government for FedRAMP Moderate |  | Assured Workloads for Government is generally available for the FedRAMP Moderate compliance regime. |
+| 2020-07-14 | Assured Workloads for Government |  | Assured Workloads for Government is available in initial private beta. |
 
 Source file slug: `assured-workloads.md`
 

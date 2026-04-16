@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:56:14.420Z"
+generated_at: "2026-04-15T00:53:15.585Z"
 product_name: "Google SecOps SIEM"
 product_slug: "google-secops-siem"
 feature_name: "Generate Signed URL for Modifying Cloud Function Code"
 feature_slug: "generate-signed-url-for-modifying-cloud-function-code"
 latest_feature_date: "2025-03-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/soar/release-notes"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini"
   - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
 keywords:
   - "generate"
   - "signed"
   - "url"
-  - "for"
   - "modifying"
-  - "function"
   - "code"
-  - "this"
+  - "hacktool"
+  - "rule"
+  - "detects"
 ---
 
 # Generate Signed URL for Modifying Cloud Function Code
 
 Product: Google SecOps SIEM
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,66 +38,53 @@ This Cloud Hacktool rule detects persistence via generation of a signed URL to m
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
+- [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
+- [https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini](https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini)
 - [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 
 ## Supporting Pages
 
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
+### "Cloud Threats category overview \_|\_ Google Security Operations \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
 - Source ID: `site-api-reference`
-- Final score: 152
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Collection: Set GCP Cloud Storage Bucket to Public Discovery: Cloud Run Enumeration Discovery: CloudFunctions Enumeration of GCP Cloud Functions Discovery: CloudKMS Enumeration of GCP Cloud KMS Discovery: CloudResourceManager Resource Manager Enumeration Discovery: Compute Enumeration Discovery: GCP Cloud IAM Enumeration Discovery: Secret Manager Cloud Secrets Enumeration Discovery: Storage Cloud Storage Enumeration Exfiltration: Download Cloud Function Code Exfiltration: Export a Compute Image Instance Persistence: Generate Signed URL for Modifying Cloud Function Code Privilege Escalation: Compute Set Instance or Project Metadata to Enable OS Login Feature URL indicators are now available for matching as part of Applied Threat Intelligence.
-- January 23, 2025 Feature The following new YARA-L 2.0 functions are available in Rules and Search: arrays.concat arrays.join string arrays.max arrays.min arrays.size arrays.index to int cast.as bool cast.as float math.ceil math.floor math.geo distance math.is increasing math.pow math.random strings.contains strings.count substrings strings.extract domain strings.extract hostname strings.from hex strings.ltrim strings.reverse strings.rtrim strings.trim strings.url decode timestamp.as unix seconds timestamp.now The following new YARA-L 2.0 functions are available in Rules: hash.sha256 window.avg window.first window.last window.median window.mode window.stddev window.variance Details on function signatures and behavior can be found in YARA-L2.0 Function Syntax Reference Documentation Change The Google SecOps team identified that a cloud threat detection rule pack (azure-defender-for-cloud-vm-extensions) was inadvertently made available to all customers.
-- This change should not remove any prior detections for customers who have enabled this rule pack and do not meet the licensing requirements but the rules themselves will now be unavailable and no new detections will generate.
-- You can periodically check this page for announcements about new or updated features, bug fixes, known issues, and deprecated functionality.
+- The following export filter exports Google Cloud Cloud Run ( GCP RUN ) logs, in addition to the default logs both through the direct ingestion mechanism as well as through Cloud Storage and Sinks : log id("run.googleapis.com/stdout") OR log id("run.googleapis.com/stderr") OR log id("run.googleapis.com/requests") OR log id("run.googleapis.com/varlog/system) Curated detections for AWS rule sets AWS rule sets in this category help identify threats in AWS environments using event and context data, and includes the following rule sets: AWS - Compute : Detects anomalous activity surrounding AWS compute resources, including EC2 and Lambda.
+- Curated detections for Office 365 data Office 365 rule sets in this category help identify threats in Office 365 environments using event and context data, and includes the following rule sets: Office 365 - Administrative : Detects malicious, suspicious and high-risk activities in Office 365, including backup policy changes, Microsoft Purview, and ATP detections.
+- Supported devices and required log types for Okta These rule sets have been tested and are supported with the following data sources, listed by product name and Google SecOps ingestion label : Tune alerts returned by rule sets You can reduce the number of detections a rule or rule set generates using rule exclusions .
+- Cloud Threats category overview Supported in: Google secops SIEM This document provides an overview of the rule sets in the Cloud Threats category, the required data sources, and configuration you can use to tune the alerts generated by each rule set.
 
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
+### "Generate a YARA-L 2.0 rule using Gemini \_|\_ Google Security Operations\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 152
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Collection: Set GCP Cloud Storage Bucket to Public Discovery: Cloud Run Enumeration Discovery: CloudFunctions Enumeration of GCP Cloud Functions Discovery: CloudKMS Enumeration of GCP Cloud KMS Discovery: CloudResourceManager Resource Manager Enumeration Discovery: Compute Enumeration Discovery: GCP Cloud IAM Enumeration Discovery: Secret Manager Cloud Secrets Enumeration Discovery: Storage Cloud Storage Enumeration Exfiltration: Download Cloud Function Code Exfiltration: Export a Compute Image Instance Persistence: Generate Signed URL for Modifying Cloud Function Code Privilege Escalation: Compute Set Instance or Project Metadata to Enable OS Login Feature URL indicators are now available for matching as part of Applied Threat Intelligence.
-- September 09, 2024 Feature The following new YARA-L 2.0 functions are available in Rules and Search: arrays.concat arrays.join string arrays.max arrays.min arrays.size arrays.index to int cast.as bool cast.as float math.ceil math.floor math.geo distance math.is increasing math.pow math.random strings.contains strings.count substrings strings.extract domain strings.extract hostname strings.from hex strings.ltrim strings.reverse strings.rtrim strings.trim strings.url decode timestamp.as unix seconds timestamp.now The following new YARA-L 2.0 functions are available in Rules: hash.sha256 window.avg window.first window.last window.median window.mode window.stddev window.variance Details on function signatures and behavior can be found in YARA-L2.0 Function Syntax Reference Documentation September 06, 2024 Change Burst limits will be rolling out over the next 90 days.
-- April 27, 2022 Change Chronicle now supports the following functions in Detection Engine rules: strings.concat(a, b) strings.to lower(stringText) strings.to upper(stringText) strings.base64 decode(encodedString) re.capture(stringText, regex) re.replace(stringText, replaceRegex, replacementText) timestamp.get minute(unix seconds [, time zone]) timestamp.get hour(unix seconds [, time zone]) timestamp.get day of week(unix seconds [, time zone]) timestamp.get week(unix seconds [, time zone]) timestamp.current seconds() math.abs(intExpression) For more information about these functions, see YARA-L 2.0 language syntax.
-- This change should not remove any prior detections for customers who have enabled this rule pack and do not meet the licensing requirements but the rules themselves will now be unavailable and no new detections will generate.
-
-### Google Security Operations SOAR release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 128
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini](https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini)
+- Source ID: `site-docs-root`
+- Final score: 121
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- It is now possible to configure alerts to be dropped if the source environment doesn't exist. (ID #00180834) July 12, 2023 Fixed Release Notes 6.2.30: Playbooks not always saved correctly within Platform (ID #00243484) amic include /release-notes/ chronicle-soar %} Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- You can periodically check this page for announcements about new or updated features, bug fixes, known issues, and deprecated functionality.
-- You can take advantage of this feature by setting a filter for cases and putting the newly created URL in an external dashboard.
-- This functionality provides more precise control and flexible, calendar-like scheduling for your scripts.
+- For example, using the previous rule prompt, Gemini could generate the following rule: rule gemini rule { meta: author = "Gemini in Google SecOps" description = "Prompt: Create a rule to count how many DNS responses were truncated per principal asset host." events: $e.metadata.event type = "NETWORK DNS" $e.network.dns.response = true $e.network.dns.truncated = true $ph principal asset hostname = $e.principal.asset.hostname match: $ph principal asset hostname over 1h outcome: $event count = count($e.metadata.id) condition: $e } To activate the rule, click Save New Rule .
+- Generate a YARA-L 2.0 rule using Gemini Supported in: Google secops SIEM On the Gemini pane, use a natural language prompt to generate a rule (for example, Create a rule to count how many DNS responses were truncated per principal asset host. ), and then click Enter .
+- Gemini generates a rule to detect the behavior you've searched for in the Gemini pane.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]
 
 ### "Search for events and alerts \_|\_ Google Security Operations \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 - Source ID: `site-api-reference`
-- Final score: 126
+- Final score: 111
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- This feature is designed for teams that require external analysis processing or audit trails where you must preserve the relationship between normalized data and original ingestion.
-- When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url .
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
-- Search for events and alerts Supported in: Google secops SIEM The search function lets you find Unified Data Model (UDM) events and alerts in your Google Security Operations instance using YARA-L 2.0 syntax .
+- When searching Values , UDM Lookup does not return matches in the following cases: Matches in the following UDM fields: metadata.product log id network.session id security result.rule id network.parent session id Matches in UDM fields with a full path that ends in one of the following values: .pid For example target.process.pid . .asset id For example principal.asset id . .product specific process id For example principal.process.product specific process id . .resource.id For example principal.resource.id .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]
+- Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

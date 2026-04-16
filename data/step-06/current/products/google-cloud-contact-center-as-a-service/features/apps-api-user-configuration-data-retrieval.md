@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.673Z"
+generated_at: "2026-04-15T13:50:47.052Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Apps API user configuration data retrieval"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-02-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Developer_Resources"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide"
 keywords:
   - "apps"
-  - "api"
   - "user"
   - "configuration"
   - "retrieval"
-  - "the"
   - "can"
   - "now"
+  - "used"
+  - "retrieve"
 ---
 
 # Apps API user configuration data retrieval
@@ -42,48 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities](https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Developer_Resources](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Developer_Resources)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Developer Resources \_|\_ Google Cloud Contact Center as a Service \_|\_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 148
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Developer_Resources](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Developer_Resources)
+- Source ID: `site-docs-reference`
+- Final score: 127
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Example Request URL: http://{​{subdomain}​}.{​{domain}​}/apps/api/v1/wait times Parameters ID Field Name Type Required Description Values Notes 1 menu id id No Response will filter all menus (queues) in that menu's sub-menu, including that menu Root Menu (default) Specific menu If nothing is passed, will return whole queue structure 2 channel type enum No Returns menus of a specific channel voice call chat Optional param 3 menu type enum No Returns menus of specific types ivr menu mobile menu web menu All (default) optional 4 wait[from] int No Returns records if they have a wait greater than the value Validation:Positive Int only 5 wait[to] int No Returns records if they have a wait less than the value Validation:Positive Int only 6 lang enum Yes Queue structure to retrieve the ewt Ex: "en" "es" "fr" "de" "it" "ja" "ko" "pt" "pt-BR" "sv" Responses ID Field Name Type Required Description 1 menu id id yes Foreign key to the /menus manager api endpoint 2 wait INT yes Wait time in minutes 3 Materialized path String Yes Materialized path as found in the /menus api Example http://{​{subdomain}​}.{​{domain}​}apps/api/v1/wait times?lang=en&menu id=10 [ { "menu id" : 10 , "menu type" : "ivr menu" , "voice call" : 120 , "materialized path" : "Subscription" , "logged in agents" : 3 , "available agents" : 0 , "breakthrough agents" : 1 } ] Status Code: 200 Menu ID 10 estimated wait time is 120 seconds (or two minutes) Multiple Mobile Apps (MMA) Overview Allow the mobile (Pro) SDK to be integrated into multiple, distinct mobile apps.
+- This can be used for custom support channel EWT displays on web pages or mobile apps outside of the Contact Center AI Platform (CCAI Platform) SDK, or for custom notifications or triggers.
+- Important: If you don't need to update your existing app configuration or if you support multiple mobile apps, Google recommends against updating your mobile app configuration.
+- At least one identifier (OS or Android) needs to be defined The same identifier can be used for both iOS and Android The same identifier can not be the same across mobile apps.
+
+### "Salesforce integration guide \_|\_ Google Cloud Contact Center as a Service\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Get user configuration data using the Apps API You can now use the Apps API to get user configuration data.
-- Feature Use the admin user for CRM API calls with Salesforce Using Salesforce, you can now use the admin user for all CRM API calls for record creation and updating, while still allowing agents to retain ownership of CRM-specific actions.
-- Feature New force logout endpoint in the Apps API You can now do a force logout on agents, using agent ID or IP address, by making a POST call to a new Apps API endpoint: POST /apps/api/v1/agent statuses/force logout .
-- Depending on configuration the DNC list can block direct, manual, and outbound calls as well as outbound and scheduled calls created by the Apps API.
+- No Case: ability to connect the CCAI Platform Custom Session object directly to any Salesforce account object, bypassing the need to create a case This builds on two related features: Option to look-up end users in Person Account object (instead of Contact ( default )) Option to leverage our CCAI Platform Session Object which stores all assets and data related to a single session in optimized CCAI Platform Session object Configuration availability requirements The configuration options for Account Lookup and Session Data are only available if the following conditions are met: Account Lookup configuration To configure custom account lookup settings, the following is required: Logged in Agent - at least one agent needs to be logged into a CCAI Platform adapter in Salesforce.
+- Case owner and assignment After the default administrator is enabled, the default administrator is used as the owner for the following: Ticket/case and contact creation when a new chat is initiated before an agent is assigned to the chat Voicemail tickets/cases before receiving a callback call Call ticket/cases for abandoned calls (if enabled) Note: If the default user is not configured, CCAI Platform uses a random Agent When a call/chat is transferred: CCAI Platform assigns the case to the agent who the call is transferred to.
+- Installation and configuration requirements Salesforce and CCAI Platform access required CCAI Platform: Ask your internal CCAI Platform contact or administrator for a CCAI Platform user account with both adminstrator and agent roles assigned The Admin role gives you access to developer settings The Agent role gives you access to the agent adapter to utilize and test the agent status capability.
+- The following configuration options are available: Account Lookup: ability to perform account lookup against any Salesforce end-user based account object Session Data Location : map session data to an Account object (Contact, Person Account, Account, Lead, or Task rather than a Case.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "iOS SDK guide \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 116
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide)
+- Source ID: `site-docs-reference`
+- Final score: 119
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- Direct queues to a visual message Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Android SDK With the CCAI Platform Android SDK, you can create seamless voice and chat support experiences for users of your Android apps.
-- Important: If you configure private access ( Preview ), you restrict public access to your CCAI Platform instance from the internet (end-users can still contact your contact center as they normally would).
-- Instant web calls: Provide visitors with an estimated wait time and automatically initiate an outbound call to a site visitor when their place in the support queue is reached Scheduled calls: Allow site visitors to schedule a time to talk with your support team Queue deflection: Automatically route end users to a message or page on your site Chat support: Provide live chat support directly from your website Proactive triggers : Display a contact bubble for web calls and chats automatically based on visitor behavior.
-
-### "Locations \_|\_ Google Cloud Contact Center as a Service \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities](https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities)
-- Source ID: `site-docs-root`
-- Final score: 36
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- CCAI Platform telephony is available in the following locations: Country Google Cloud managed Bring your own carrier (BYOC) Australia ✔ Austria ✔ ✔ Belgium ✔ ✔ Brazil ✔ Canada ✔ ✔ Colombia ✔ ✔ France ✔ ✔ Germany ✔ ✔ Indonesia ✔ Ireland ✔ ✔ Italy ✔ ✔ Japan ✔ ✔ Mexico ✔ ✔ Netherlands ✔ ✔ New Zealand ✔ Portugal ✔ ✔ South Korea ✔ Spain ✔ ✔ Sweden ✔ ✔ Switzerland ✔ ✔ Turkey ✔ United Kingdom ✔ ✔ United States ✔ ✔ Note: Additional regional services terms apply.
-- Bring your own carrier (BYOC) : You can use CCAI Platform with the phone numbers and telephony carrier of your choice.
-- Google Cloud regions CCAI Platform can be deployed in the following Google Cloud regions.
-- Cloud region Location CCaaS Advanced reporting WFM Americas northamerica-northeast1 (Montréal) ✔ ✔ ✔ Americas northamerica-northeast2 (Toronto) ✔ ✔ Americas us-central1 (Iowa) ✔ ✔ ✔ Americas us-east1 (South Carolina) ✔ ✔ ✔ Americas us-east4 (Virginia) ✔ ✔ Americas us-west1 (Oregon) ✔ ✔ ✔ Americas southamerica-east1 (Sao Paulo) ✔ ✔ Europe europe-west1 (Belgium) ✔ ✔ Europe europe-west2 (London) ✔ ✔ ✔ Europe europe-west3 (Frankfurt) ✔ ✔ Europe europe-west4 (Eemshaven) ✔ ✔ Europe europe-west6 (Zurich) ✔ ✔ Middle East me-west1 (Tel Aviv) ✔ ✔ Asia Pacific asia-northeast1 (Tokyo) ✔ ✔ ✔ Asia Pacific asia-northeast3 (Seoul) ✔ ✔ Asia Pacific asia-south1 (Mumbai) ✔ ✔ Asia Pacific asia-southeast1 (Singapore) ✔ ✔ Asia Pacific asia-southeast2 (Jakarta) ✔ ✔ Asia Pacific australia-southeast1 (Sydney) ✔ ✔ ✔ For more information about regions and multi-regions, see Geography and regions .
+- For example, if the user selected Spanish Cuba as the language in the device and the app does not support Spanish Cuba but supports parent dialect Spanish, then Spanish language will be used.
+- PKPushRegistry voipRegistry = [[ PKPushRegistry alloc ] initWithQueue : dispatch get main queue () ] ; voipRegistry . delegate = self ; voipRegistry . desiredPushTypes = [ NSSet setWithObject : PKPushTypeVoIP ] ; Add the following delegate methods in implementing UIApplicationDelegate protocol file: Please print your device token to test push notifications. // PKPushRegistryDelegate - ( void ) pushRegistry :( PKPushRegistry ) registry didUpdatePushCredentials :( PKPushCredentials ) credentials forType :( NSString ) type { [ UJET updatePushToken : credentials . token type : UjetPushTypeVoIP ] ; } - ( void ) pushRegistry :( PKPushRegistry ) registry didReceiveIncomingPushWithPayload :( PKPushPayload ) payload forType :( PKPushType ) type withCompletionHandler :( void ( ^ )( void )) completion { if ( payload . dictionaryPayload [ @ "ujet" ] ) { [ UjetreceivedNotification : payload . dictionaryPayload completion : completion ] ; } else { completion (); } } // UIApplicationDelegate - ( void ) application :( UIApplication ) application didRegisterForRemoteNotificationsWithDeviceToken :( NSData ) deviceToken { [ UjetupdatePushToken : deviceToken type : UjetPushTypeAPN ] ; } - ( void ) application :( UIApplication ) application didReceiveRemoteNotification :( NSDictionary ) userInfo fetchCompletionHandler :( void ( ^ )( UIBackgroundFetchResult )) completionHandler { if ( userInfo [ @ "ujet" ] ) { [ UJET receivedNotification : userInfo completion : nil ] ; } } // UserNotificationsDelegate overrides [UIApplicationDelegate didReceiveRemoteNotification:] - ( void ) userNotificationCenter :( UNUserNotificationCenter ) center willPresentNotification :( UNNotification ) notification withCompletionHandler :( void ( ^ )( UNNotificationPresentationOptions )) completionHandler { NSDictionary userInfo = notification . request . content . userInfo ; if ( userInfo [ @ "ujet" ] != nil ) { [ UJET receivedNotification : userInfo completion : nil ] ; } } - ( void ) userNotificationCenter :( UNUserNotificationCenter ) center didReceiveNotificationResponse :( UNNotificationResponse ) response withCompletionHandler :( void ( ^ )( void )) completionHandler { NSDictionary userInfo = response . notification . request . content . userInfo ; if ( userInfo [ @ "ujet" ] != nil ) { [ UJET receivedNotification : userInfo completion : nil ] ; } } Enable push notifications Select your target and open Capabilities tab.
+- In the delegate method, make sure to only call [UJET start] when the URL paths and parameters in the universal link or custom URL are specific for CCAI Platform. - ( BOOL ) application :( UIApplication ) app continueUserActivity :( nonnull NSUserActivity ) userActivity restorationHandler :( nonnull void ( ^ )( NSArray Nullable )) restorationHandler { ... if ( [ NSUserActivityTypeBrowsingWeb isEqualToString : userActivity . activityType ] ) { NSURL url = userActivity . webpageURL ; NSArray availableSchema = @ [ @ "your-company" , // custom URL scheme @ "https" // universal link ] ; NSArray availableHostAndPath = @ [ @ "ujet" , // custom URL scheme @ "your-comany.com/ujet" // universal link ] ; if ( ![ availableSchema containsObject : url . scheme ] ) { return NO ; } NSString hostAndPath = [ NSString stringWithFormat : @ "%@%@" , url . host , url . path ] ; if ( ![ availableHostAndPath containsObject : hostAndPath ] ) { return NO ; } // your-company://ujet?call id={call id}&nonce={nonce} // https://your-company.com/ujet?call id={call id}&nonce={nonce} NSURLComponents urlComponents = [ NSURLComponents componentsWithURL : url resolvingAgainstBaseURL : NO ] ; NSArray queryItems = urlComponents . queryItems ; NSString callId = [ self valueForKey : @ "call id" fromQueryItems : queryItems ] ; // validate call id if ( ![ self isValidCallId : callId ] ) { return NO ; } NSString nonce = [ self valueForKey : @ "nonce" fromQueryItems : queryItems ] ; UJETStartOptions options = [[ UJETStartOptions alloc ] initWithCallId : callId nonce : nonce ] ; [ UJET startWithOptions : options ] ; } ... } If your app adopts UIWindowSceneDelegate , then add this code snippet: class SceneDelegate: UIResponder, UIWindowSceneDelegate { var window: UIWindow? func scene ( scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions ) { //if app is called with universal Link and started from cold if connectionOptions.urlContexts.first ! = nil { self.scene ( scene, openURLContexts: connectionOptions.urlContexts ) } guard let = ( scene as?
+- In UJETObject.h from example project: @import UJETKit ; @interface UJETObject : NSObject <UJETDelegate> Implement signPayload : payloadType : success: failure: delegate method. - ( void ) signPayload: ( NSDictionary ) payload payloadType: ( UjetPayloadType ) payloadType success: ( void ( ^ )( NSString )) success failure: ( void ( ^ )( NSError )) failure { if ( payloadType == UjetPayloadAuthToken ) { [ self signAuthTokenInLocal:payload success:success failure:failure ] ; } } - ( void ) signAuthTokenInLocal: ( NSDictionary ) payload success: ( void ( ^ )( NSString )) success failure: ( void ( ^ )( NSError )) failure { NSMutableDictionary payloadData = [ payload mutableCopy ] ; NSDictionary userData = [[ NSUserDefaults standardUserDefaults ] objectForKey:@ "user-data" ] ; [ payloadData addEntriesFromDictionary:userData ] ; payloadData [ @ "iat" ] = [ NSNumber numberWithDouble: [[ NSDate date ] timeIntervalSince1970 ]] ; // required payloadData [ @ "exp" ] = [ NSNumber numberWithDouble: ([[ NSDate date ] timeIntervalSince1970 ] + 600 )] ; // required NSString signedToken = [ self encodeJWT:payloadData ] ; if ( signedToken.length > 0 ) { success ( signedToken ) ; } else { NSDictionary userInfo = @ { NSLocalizedDescriptionKey: @ "Failed to sign token" } ; NSError error = [ NSError errorWithDomain:@ "ExampleApp" code:0 userInfo:userInfo ] ; failure ( error ) ; } } - ( NSString ) encodeJWT: ( NSDictionary ) payload { id<JWTAlgorithm> algorithm = [ JWTAlgorithmHSBase algorithm384 ] ; NSString secret = NSBundle.mainBundle.infoDictionary [ @ "UJETCompanySecret" ] ; return [ JWTBuilder encodePayload:payload ] .secret () .algorithm ( algorithm ) .encode ; } We strongly recommend signing the payload from your application server, not in the client.
 

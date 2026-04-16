@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:13.090Z"
+generated_at: "2026-04-12T12:20:09.432Z"
 product_name: "Virtual Private Cloud"
 product_slug: "virtual-private-cloud"
 feature_name: "Subnet IP address utilization reporting"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-10-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/vpc/docs/release-notes"
-  - "https://docs.cloud.google.com/vpc/docs/subnets"
+  - "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip"
   - "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+  - "https://docs.cloud.google.com/vpc/docs/byoip-planning"
+  - "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
 keywords:
   - "subnet"
   - "ip"
@@ -38,52 +39,66 @@ You can now view free and allocated IP address counts when listing or describing
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
-- [https://docs.cloud.google.com/vpc/docs/subnets](https://docs.cloud.google.com/vpc/docs/subnets)
+- [https://docs.cloud.google.com/vpc/docs/bring-your-own-ip](https://docs.cloud.google.com/vpc/docs/bring-your-own-ip)
 - [https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks](https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks)
+- [https://docs.cloud.google.com/vpc/docs/byoip-planning](https://docs.cloud.google.com/vpc/docs/byoip-planning)
+- [https://docs.cloud.google.com/vpc/docs/access-apis-external-ip](https://docs.cloud.google.com/vpc/docs/access-apis-external-ip)
 
 ## Supporting Pages
 
-### VPC release notes \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
+### "Bring your own IP addresses \_|\_ Virtual Private Cloud \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 132
+- URL: [https://docs.cloud.google.com/vpc/docs/bring-your-own-ip](https://docs.cloud.google.com/vpc/docs/bring-your-own-ip)
+- Source ID: `site-docs-root-2`
+- Final score: 205
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- October 24, 2025 Feature You can view IP address utilization when you list or describe subnets.
-- You can migrate individual workloads and instances from the on-premises subnet to the VPC subnet over time without needing to change IP addresses.
-- February 09, 2026 Feature You can bring your own IPv6 global unicast addresses (GUAs) to assign to a subnet's internal IPv6 address range .
-- May 28, 2025 Feature You can assign IPv6 bring your own IP (BYOIP) addresses to a subnet's external address range.
-
-### Subnets \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/vpc/docs/subnets](https://docs.cloud.google.com/vpc/docs/subnets)
-- Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Privately used public IP address ranges Privately used public IPv4 addresses Privately used public IPv4 addresses: Are IPv4 addresses that are normally routable on the internet, but that are used privately in a VPC network Cannot belong to a prohibited subnet range When you use these addresses as subnet ranges, Google Cloud does not announce these routes to the internet and does not route traffic from the internet to them.
-- Before you can use Google-provided ULA addresses as an internal IPv6 subnet range, you must first assign a /48 ULA range to the VPC network .
-- Subnets with IPv6 address ranges have the following limitations: You can't change the IPv6 access type (internal or external) of a subnet.
-- If a VM interface is connected to a subnet that has an IPv6 subnet range, you can configure IPv6 addresses on the VM .
+- Configuration Regional (v2) Regional internal (v2) Regional (v1) Global (v1) Availability Recommended regional configuration Used for internal IPv6 addresses Not recommended for new regional configurations Must request adding your project to an allowlist Public advertised prefix provisioning time Approximately 2 weeks Immediate Approximately 4 weeks Approximately 4 weeks Public delegated prefix provisioning time A few minutes Immediate 4 weeks Can overlap with public advertised prefix provisioning time 4 weeks Can overlap with public advertised prefix provisioning time Sub-prefix provisioning time A few minutes Immediate A few minutes A few minutes BGP announcement The public advertised prefix is not automatically announced when it is provisioned.
+- Anyone who has the appropriate IAM permissions in the project can use the IP addresses: compute.addresses. for regional IP addresses compute.globalAddresses. for global IP addresses Bring your own IP configurations The following tables summarize the available bring your own IP configurations.
+- You can use IPv6 BYOIP addresses in the following ways, depending on the sub-prefix: For external access sub-prefixes, you must choose one of the following mutually exclusive modes: Forwarding rules for external passthrough Network Load Balancers or external protocol forwarding.
+- For information about using addresses in an internal IPv6 range, see Internal IPv6 specifications When you create IP addresses from a public delegated prefix or sub-prefix, the IP addresses can be used only within the project and scope that they are allocated to.
 
 ### "Quickstart: Create and manage VPC networks \_|\_ Virtual Private Cloud \_\
 
 - URL: [https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks](https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 166
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - To list all subnets in a region and include their IP address utilization, make the following GET request: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks?views=WITH UTILIZATION Describe a subnet You can view the details of an existing subnet—such as its primary IPv4 ranges, secondary IP ranges, IPv6 ranges, IP address utilization, and region—by following the steps in this section.
 - List subnets You can see all the subnets that exist for a project or VPC network, including details about IP address utilization.
-- Virtual Private Cloud Start free Overview Guides Reference Resources More Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Virtual Private Cloud overview Get started VPC networks Subnets IPv6 support Create and manage VPC networks Add networking features Add IP addresses Overview Reserve internal IP addresses Reserve external IP addresses Move an external IPv4 address to a different project Add alias IP ranges Overview Configure alias IP ranges Bring your own IP addresses (BYOIP) Overview Planning and architecture Create a public advertised prefix Create public delegated prefixes Create IPv4 sub-prefixes and IP addresses Create and use IPv6 sub-prefixes Manage BGP announcement Deprovision BYOIP Add routes Routes overview Static routes overview Use routes Add policy-based routes Overview Use policy-based-routes Change MTU Overview Change MTU of a VPC network Create and verify a jumbo frame MTU network Access IPv4 destinations from IPv6-only instances Overview Configure IPv6-only subnets and instances with DNS64 and NAT64 Configure VMs Add network tags Add VMs with multiple network interfaces Overview Create VMs with multiple network interfaces Configure Dynamic NICs Add Dynamic NICs Delete Dynamic NICs Configure routing for an additional network interface Troubleshoot Add capabilities Network Connectivity Center VPC Network Peering Overview About peering connections Set up and manage VPC Network Peering Peer two VPC networks Shared VPC Overview Provision Shared VPC Deprovision Shared VPC Hybrid Subnets About migrating to Google Cloud with Hybrid Subnets Prepare for Hybrid Subnets connectivity Migrate to Google Cloud with Hybrid Subnets Disable hybrid subnet routing Internal ranges Overview Create and use internal ranges Network profiles for specific use cases Overview RDMA network profiles Create a VPC network for RDMA NICs View network profiles Access APIs and services Choose a private access option Private Service Connect Overview Compatibility Deployment patterns Architecture Security Create and access your own service Overview Create a load-balanced service Make the service accessible to other VPC networks Access the service from another VPC network Service consumers Endpoints Published services About accessing published services Access published services Manage endpoints that access published services Global Google APIs About accessing global Google APIs Access global Google APIs Regional Google APIs About accessing regional Google APIs Access regional Google APIs About propagated connections Backends About backends Create a backend Access published services Access regional Google APIs Access global Google APIs Network attachments About network attachments Create network attachments Configure security Service connection policies About service connectivity automation About service connection policies Configure connectivity to services Configure service connection policies Deploy service instances Manage consumer security Service producers Published services About published services About controlling access to published services Publish services Manage published services DNS configuration for services Private Service Connect health About Private Service Connect health Configure Private Service Connect health for failover View, update, and delete Private Service Connect health configurations Port mapping About port mapping Create port mapping services Update port mapping services Migrate peering services to Private Service Connect About migrating peering services Migrate peering services Interfaces About interfaces Create interfaces Configure routing Configure security Manage destination overlap Manage producer security Monitor connections Private Google Access Overview Configure Private Google Access Private Google Access for on-premises hosts Overview Configure Private Google Access for on-premises hosts Access APIs from VMs with external IP addresses Private services access Overview Configure private services access Send serverless traffic to a VPC network Overview Configure serverless traffic Monitor VPC Flow Logs Overview About VPC Flow Logs records About traffic flows Configure VPC Flow Logs Configure organization policy constraints Access flow logs Audit logging VPC audit logging Private services access audit logging Serverless VPC Access audit logging Packet Mirroring Overview Use Packet Mirroring Monitor Packet Mirroring Packet Mirroring partner providers Control access Manage resources by using custom constraints Create and manage tags for VPC resources Troubleshoot Troubleshoot internal connectivity between VMs Troubleshoot policy and access problems Advanced topics Advanced VPC concepts Legacy networks Overview Manage legacy networks AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Create networks Create an auto mode VPC network Create a custom mode VPC network with IPv4-only subnets Create a custom mode VPC network with a dual-stack subnet Create a custom mode VPC network with IPv6-only subnets About firewall rules View networks Work with subnets List subnets Describe a subnet Add an IPv4-only subnet Add a dual-stack subnet Add an IPv6-only subnet Change an IPv4-only subnet to dual-stack Change a dual-stack subnet to IPv4 only Add a subnet that uses an IPv6 BYOIP address range Add a subnet that uses a reserved IPv4 internal range Delete a subnet Expand a primary IPv4 range Edit secondary IPv4 ranges Modify networks Convert an auto mode VPC network to custom mode Assign an internal IPv6 ULA range to a network Change the dynamic routing mode Change the MTU of a network Delete a network Monitor your VPC network Migrate VMs Troubleshooting Can't delete a VPC network that was used with Serverless VPC Access Error: Constraint constraints/compute.requireVpcFlowLogs violated Resource not found error Resource already exists What's next Home Documentation Networking Virtual Private Cloud Guides Was this helpful?
-- Send feedback On this page Create networks Create an auto mode VPC network Create a custom mode VPC network with IPv4-only subnets Create a custom mode VPC network with a dual-stack subnet Create a custom mode VPC network with IPv6-only subnets About firewall rules View networks Work with subnets List subnets Describe a subnet Add an IPv4-only subnet Add a dual-stack subnet Add an IPv6-only subnet Change an IPv4-only subnet to dual-stack Change a dual-stack subnet to IPv4 only Add a subnet that uses an IPv6 BYOIP address range Add a subnet that uses a reserved IPv4 internal range Delete a subnet Expand a primary IPv4 range Edit secondary IPv4 ranges Modify networks Convert an auto mode VPC network to custom mode Assign an internal IPv6 ULA range to a network Change the dynamic routing mode Change the MTU of a network Delete a network Monitor your VPC network Migrate VMs Troubleshooting Can't delete a VPC network that was used with Serverless VPC Access Error: Constraint constraints/compute.requireVpcFlowLogs violated Resource not found error Resource already exists What's next Create and manage VPC networks Stay organized with collections Save and categorize content based on your preferences.
+- Edit secondary IPv4 ranges You can add secondary IPv4 ranges to subnets, or you can remove any secondary IPv4 range as long as no resources are using IP addresses in it. gcloud To add a new secondary IPv4 range to a subnet, use the subnets update command . gcloud compute networks subnets update SUBNET \ --region= REGION \ --add-secondary-ranges= SECONDARY RANGE NAME = SECONDARY RANGE Replace the following: SUBNET : the name of the subnet.
+- To describe the subnet and view its IP address utilization, send the following request: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks/ SUBNET ?views=WITH UTILIZATION Add an IPv4-only subnet When you create a subnet, you set a name, a region, and at least a primary IPv4 address range according to the name and IPv4 subnet range limitations.
+
+### "Planning for bring your own IP addresses \_|\_ Virtual Private Cloud \_\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/byoip-planning](https://docs.cloud.google.com/vpc/docs/byoip-planning)
+- Source ID: `site-docs-root-2`
+- Final score: 164
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- BYOIP address administration without an organization If you use a project that does not belong to an organization, you can't create a separate project for BYOIP address administration.
+- If you anticipate needing BYOIP addresses in a region, complete the public delegated prefix provisioning process in advance, so you can later fulfill addressing needs on-demand.
+- You can manage prefixes centrally in a project distinct from the ultimate destinations of the IP addresses.
+- You can delegate BYOIP addresses to a Shared VPC host project, but not to a Shared VPC service project.
+
+### "Access APIs from VMs with external IP addresses \_|\_ Virtual Private Cloud\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/access-apis-external-ip](https://docs.cloud.google.com/vpc/docs/access-apis-external-ip)
+- Source ID: `site-docs-root-2`
+- Final score: 163
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- IPv6 support for private.googleapis.com and restricted.googleapis.com The following IPv6 address ranges can be used to direct traffic from IPv6 clients to Google APIs and services: private.googleapis.com : 2600:2d00:0002:2000::/56 restricted.googleapis.com : 2600:2d00:0002:1000::/56 Consider configuring the IPv6 addresses if you want to use the private.googleapis.com or restricted.googleapis.com domain, and you have clients that use IPv6 addresses.
+- DNS configuration For connectivity to Google APIs and services, you can choose to send packets to the IP addresses associated with the private.googleapis.com or restricted.googleapis.com VIP.
+- Various IP address ranges—you can determine a set of IP ranges that contains the possible addresses used by the default domains by referencing IP addresses for default domains .
+- You can use the following Python script to create a list of IP address ranges that include those used by the default domains for Google APIs and services.
 

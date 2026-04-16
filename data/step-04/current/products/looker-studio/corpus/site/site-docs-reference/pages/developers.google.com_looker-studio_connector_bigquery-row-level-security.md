@@ -5,7 +5,7 @@ url: https://developers.google.com/looker-studio/connector/bigquery-row-level-se
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://developers.google.com/looker-studio/connector/advanced-services
+entrypoint: https://developers.google.com/looker-studio/connector
 source_metadata:
   url: https://developers.google.com/looker-studio/connector/bigquery-row-level-security
   title: "BigQuery row-level security with Advanced Services \_|\_ Community Connectors\

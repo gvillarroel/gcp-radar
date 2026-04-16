@@ -1,89 +1,90 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:11:44.471Z"
+generated_at: "2026-04-14T15:27:31.070Z"
 product_name: "Assured Workloads"
 product_slug: "assured-workloads"
 feature_name: "Assured Workloads for Government"
 feature_slug: "assured-workloads-for-government"
-latest_feature_date: "2020-09-01"
+latest_feature_date: "2020-07-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/assured-workloads/docs/release-notes"
-  - "https://docs.cloud.google.com/assured-workloads/docs/control-packages/us-data-boundary-healthcare-life-sciences"
-  - "https://docs.cloud.google.com/assured-workloads/docs/overview"
+  - "https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest"
+  - "https://docs.cloud.google.com/certificate-authority-service/docs/faqs"
+  - "https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest/google.cloud.assuredworkloads_v1.services.assured_workloads_service.AssuredWorkloadsServiceAsyncClient"
 keywords:
-  - "government"
-  - "was"
-  - "made"
-  - "generally"
-  - "available"
-  - "workloads"
   - "assured"
-  - "for"
+  - "workloads"
+  - "government"
+  - "available"
+  - "initial"
+  - "private"
+  - "beta"
 ---
 
 # Assured Workloads for Government
 
 Product: Assured Workloads
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Assured Workloads for Government was made generally available for the FedRAMP Moderate compliance regime; Assured Workloads for Government began with an initial private beta release.
+Assured Workloads for Government is available in initial private beta.
 
 ## Extended Definition
 
-Assured Workloads for Government was made generally available for the FedRAMP Moderate compliance regime; Assured Workloads for Government began with an initial private beta release.
+Assured Workloads for Government is available in initial private beta.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/assured-workloads/docs/release-notes](https://docs.cloud.google.com/assured-workloads/docs/release-notes)
-- [https://docs.cloud.google.com/assured-workloads/docs/control-packages/us-data-boundary-healthcare-life-sciences](https://docs.cloud.google.com/assured-workloads/docs/control-packages/us-data-boundary-healthcare-life-sciences)
-- [https://docs.cloud.google.com/assured-workloads/docs/overview](https://docs.cloud.google.com/assured-workloads/docs/overview)
+- [https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest](https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest)
+- [https://docs.cloud.google.com/certificate-authority-service/docs/faqs](https://docs.cloud.google.com/certificate-authority-service/docs/faqs)
+- [https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest/google.cloud.assuredworkloads_v1.services.assured_workloads_service.AssuredWorkloadsServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest/google.cloud.assuredworkloads_v1.services.assured_workloads_service.AssuredWorkloadsServiceAsyncClient)
 
 ## Supporting Pages
 
-### Assured Workloads release notes \_|\_ Google Cloud Documentation
+### Python client libraries \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/assured-workloads/docs/release-notes](https://docs.cloud.google.com/assured-workloads/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 174
+- URL: [https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest](https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest)
+- Source ID: `site-python-reference`
+- Final score: 106
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- September 01, 2020 v1beta1 Feature Assured Workloads for Government is now generally available for the FedRAMP Moderate compliance regime.
-- See Supported products for more information: Cloud Logging Dataflow Google Kubernetes Engine v1 Feature The ability to analyze a project for compliance before migrating it to an Assured Workloads folder is now generally available.
-- See supported products for more information: Apigee, Cloud Vision API, GKE Identity Service, Traffic Director, Vertex AI Search: Australia Regions Australia Regions with Assured Support Brazil Regions Canada Regions Canada Regions and Support Chile Regions EU Regions EU Regions and Support Hong Kong Regions India Regions Indonesia Regions Israel Regions Israel Regions and Support Japan Regions Qatar Regions Singapore Regions South Africa Regions South Korea Regions Switzerland Regions Taiwan Regions UK Regions US Regions US Regions and Support Spanner: Australia Regions with Assured Support Canada Regions and Support EU Regions and Support Israel Regions and Support Japan Regions US Regions and Support November 22, 2024 v1 Announcement The following regional control packages are now generally available: Hong Kong Regions Qatar Regions South Africa Regions November 18, 2024 v1 Feature The Sovereign Controls for Kingdom of Saudi Arabia control package now supports the following products.
-- However, areas with potential impact include the following: Using the REST API and gcloud : Use REGIONAL CONTROLS instead of FREE REGIONS when calling organizations.locations.workloads.create to create a new Assured Workloads folder/workload Expect REGIONAL CONTROLS as the return value for ComplianceRegime from calls to organizations.locations.workloads.get and organizations.locations.workloads.list Using Terraform: Use REGIONAL CONTROLS instead of FREE REGIONS April 01, 2024 v1 Announcement The following new control packages are now available in Preview .
+- Mac/Linux python3 -m venv <your-env> source <your-env>/bin/activate pip install google-cloud-assured-workloads Windows py -m venv <your-env> .\<your-env>\Scripts\activate pip install google-cloud-assured-workloads Next Steps Read the Client Library Documentation for Assured Workloads for Government to see other available methods on the client.
+- Version latest keyboard arrow down 2.2.0 (latest) 2.1.0 2.0.0 1.15.2 1.14.0 1.13.1 1.12.5 1.11.0 1.10.3 1.9.1 1.8.1 1.7.0 1.6.1 1.5.0 1.4.2 1.3.0 1.2.3 1.1.0 1.0.0 0.8.0 0.7.2 0.6.0 0.5.0 0.4.2 0.3.1 0.2.1 0.1.0 Python Client for Assured Workloads for Government Assured Workloads for Government : allows you to secure your government workloads and accelerate your path to running compliant workloads on Google Cloud with Assured Workloads for Government.
+- Read the Assured Workloads for Government Product documentation to learn more about the product and see How-to Guides.
+- Enable the Assured Workloads for Government.
 
-### "US Data Boundary for Healthcare and Life Sciences \_|\_ Assured Workloads\
+### "Frequently asked questions \_|\_ Certificate Authority Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/assured-workloads/docs/control-packages/us-data-boundary-healthcare-life-sciences](https://docs.cloud.google.com/assured-workloads/docs/control-packages/us-data-boundary-healthcare-life-sciences)
-- Source ID: `site-docs-root-2`
-- Final score: 152
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- What's next Learn how to create an Assured Workloads folder Learn about the US Data Boundary for Healthcare and Life Sciences with Support control package Understand Assured Workloads pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Prerequisites To remain compliant as a user of the US Data Boundary for Healthcare and Life Sciences control package, verify that you satisfy and adhere to the following prerequisites: Create a US Data Boundary for Healthcare and Life Sciences folder using Assured Workloads and deploy your HIPAA or HITRUST workloads only in that folder.
-- Support : Technical support services for US Data Boundary for Healthcare and Life Sciences workloads are available with Standard, Enhanced, or Premium Cloud Customer Care subscriptions.
-- These split boundaries are accessible by Google personnel for technical support and debugging purposes, and are not subject to administrative access data controls in Assured Workloads.
-
-### Overview of Assured Workloads \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/assured-workloads/docs/overview](https://docs.cloud.google.com/assured-workloads/docs/overview)
-- Source ID: `site-docs-reference`
-- Final score: 152
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/certificate-authority-service/docs/faqs](https://docs.cloud.google.com/certificate-authority-service/docs/faqs)
+- Source ID: `site-docs-reference-3`
+- Final score: 69
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For example, Assured Workloads lets the following organizations meet their compliance obligations: Organizations with strict regulations for data storage, key management, and access (such as financial services, healthcare, and governmental bodies).
-- As improvements are made to available control packages, you can evaluate whether your deployed Assured Workloads folder configurations are the same as the most recently available version.
-- Assured Workloads control packages are available for the following control types: regional data boundaries, regulatory data boundaries, and Sovereign Controls by Partners .
-- Assured Support for Assured Workloads is an additional Google Cloud Customer Care feature available with Enhanced Support or Premium Support .
+- Certificate Authority Service is a highly available, scalable Google Cloud service that enables customers to simplify, automate, and customize the deployment, management, and security of private certificate authorities (CAs) while staying in control of their private keys.
+- The preview APIs are accessible through the https://privateca.googleapis.com/v1beta1/ endpoint.
+- For more information about gcloud privateca beta commands, see gcloud privateca beta .
+- The preview gcloud commands are accessible through gcloud privateca beta .
+
+### "Class AssuredWorkloadsServiceAsyncClient (2.2.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest/google.cloud.assuredworkloads_v1.services.assured_workloads_service.AssuredWorkloadsServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest/google.cloud.assuredworkloads_v1.services.assured_workloads_service.AssuredWorkloadsServiceAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 65
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import assuredworkloads v1 async def sample restrict allowed resources(): Create a client client = assuredworkloads v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import assuredworkloads v1 async def sample acknowledge violation(): Create a client client = assuredworkloads v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import assuredworkloads v1 async def sample create workload(): Create a client client = assuredworkloads v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import assuredworkloads v1 async def sample delete workload(): Create a client client = assuredworkloads v1 .
 

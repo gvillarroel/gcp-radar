@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:19:31.152Z"
+generated_at: "2026-04-14T11:56:59.874Z"
 product_name: "Channel Services"
 product_slug: "channel-services"
 feature_name: "ListCustomers Filtering"
 feature_slug: "listcustomers-filtering"
 latest_feature_date: "2022-02-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers"
-  - "https://docs.cloud.google.com/channel/docs/release-notes"
-  - "https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse"
+  - "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements"
+  - "https://docs.cloud.google.com/channel/docs/reference/rpc"
 keywords:
   - "listcustomers"
   - "filtering"
+  - "customers"
+  - "selected"
   - "filters"
-  - "so"
   - "method"
   - "adds"
-  - "the"
-  - "to"
 ---
 
 # ListCustomers Filtering
 
 Product: Channel Services
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +37,13 @@ Adds filters to the ListCustomers method so selected customers can be excluded f
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers](https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers)
-- [https://docs.cloud.google.com/channel/docs/release-notes](https://docs.cloud.google.com/channel/docs/release-notes)
-- [https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse](https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse)
+- [https://docs.cloud.google.com/channel/docs/guides/manage-entitlements](https://docs.cloud.google.com/channel/docs/guides/manage-entitlements)
+- [https://docs.cloud.google.com/channel/docs/reference/rpc](https://docs.cloud.google.com/channel/docs/reference/rpc)
 
 ## Supporting Pages
 
@@ -52,40 +51,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers](https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers)
 - Source ID: `site-docs-reference`
-- Final score: 160
+- Final score: 128
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- Syntax: <domain org display name> : <value> Example: domain : "uw.com " AND org display name : "prefix " Examples of filters with logical operators Cloud Channel API filters support the use of AND and OR logical operators.
 - Home Technology areas Channel Services Guides Send feedback Set up a customer filter using the ListCustomers API Stay organized with collections Save and categorize content based on your preferences.
 - If you need to find information about a specific customer, you can use the Cloud Channel API filter parameter through the customers.list method .
+- Exact match syntax Exact match filters will only find customers that contain the same fields as those in the submitted string.
+- Available filters Strings for the filter parameter support exact match, or exact match plus prefix filtering.
 
-### Channel Services release notes \_|\_ Google Cloud Documentation
+### "Manage Google Workspace and Google Chrome entitlements \_|\_ Channel Services\
 
-- URL: [https://docs.cloud.google.com/channel/docs/release-notes](https://docs.cloud.google.com/channel/docs/release-notes)
+- URL: [https://docs.cloud.google.com/channel/docs/guides/manage-entitlements](https://docs.cloud.google.com/channel/docs/guides/manage-entitlements)
+- Source ID: `site-docs-reference`
+- Final score: 64
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- QueryEligibleBillingAccountsRequest { "customer" : "accounts/123/customers/abc" , "skus" : [ "products/product id/skus/sku id1" ] } QueryEligibleBillingAccountsResponse { "skuPurchaseGroups" : [ { "skus" : [ "products/product id/skus/sku id1" ], "billingAccountPurchaseInfos" : [ { "billingAccount" : { "name" : "accounts/123/billingAccounts/billing account id1" , "displayName" : "Google Workspace USD US 1" , "currencyCode" : "USD" , "regionCode" : "US" } }, { "billingAccount" : { "name" : "accounts/123/billingAccounts/billing account id2" , "displayName" : "Google Workspace CAD CA 1" , "currencyCode" : "CAD" , "regionCode" : "CA" } } ] } ] } With the selected PurchasableSku and BillingAccount, use the listPurchasableOffers method to find the available PurchasableOffer ListPurchasableOffersRequest { "customer": "accounts/123/customers/abc", "createEntitlementPurchase": { "sku": "products/product id/skus/sku id1", "billingAccount": "accounts/123/billingAccounts/billing account id2" } } ListPurchasableOffersResponse { "purchasableOffers": [ { "offer": { "name": "accounts/123/offers/offer id1", }, "sku": { "name": "products/product id/skus/sku id1", }, "plan": { "paymentPlan": "FLEXIBLE", "paymentCycle": { "duration": 1, "periodType": "MONTH" } }, "priceReferenceId": "price reference id 123" } ], } At this point you should have the BillingAccount that will pay for the Entitlement and the PurchasableOffer.
+- To create entitlement, follow these steps: With the Customer name, call listPurchasableSkus to retrieve a list of PurchasableSkus ListPurchasableSkusRequest { "customer": "accounts/123/customers/abc", "createEntitlementPurchase": { "product": "products/-" } } ListPurchasableSkusResponse { "purchasableSkus": [ { "sku": { "name": "products/product id/skus/sku id1", "product": { "name": "products/product id", } } }, { "sku": { "name": "products/product id/skus/sku id2", "product": { "name": "products/product id", }, } } ] } With the selected PurchasableSku, use the queryEligibleBillingAccounts method to find a set of Google Workspace BillingAccount that can be used to pay for the entitlement.
+- QueryEligibleBillingAccountsRequest { "customer" : "accounts/123/customers/abc" , "skus" : [ "products/product id/skus/voice sku id1" , "products/product id/skus/google workspace sku id2" , "google workspace chrome sku id3" ] } QueryEligibleBillingAccountsResponse { "skuPurchaseGroups" : [ { "skus" : [ "products/product id/skus/voice sku id1" ], "billingAccountPurchaseInfos" : [ { "billingAccount" : { "name" : "accounts/123/billingAccounts/voice billing account id1" , "displayName" : "Google Workspace Voice USD US 1" , "currencyCode" : "USD" , "regionCode" : "US" } } ] }, { "skus" : [ "products/product id/skus/google workspace sku id2" , "google workspace chrome sku id3" ], "billingAccountPurchaseInfos" : [ { "billingAccount" : { "name" : "accounts/123/billingAccounts/gw billing account id1" , "displayName" : "Google Workspace USD US 1" , "currencyCode" : "USD" , "regionCode" : "US" } }, { "billingAccount" : { "name" : "accounts/123/billingAccounts/gw billing account id2" , "displayName" : "Google Workspace CAD CA 1" , "currencyCode" : "CAD" , "regionCode" : "CA" } } ] } ] } ``` For each TransferableSku and BillingAccount pairs, use the listTransferableOffers method to find available TransferableOffers .
+- QueryEligibleBillingAccountsRequest { "customer" : "accounts/123/customers/abc" , "skus" : [ "products/product id/skus/sku id1" ] } QueryEligibleBillingAccountsResponse { "skuPurchaseGroups" : [ { "skus" : [ "products/product id/skus/sku id1" ], "billingAccountPurchaseInfos" : [ { "billingAccount" : { "name" : "accounts/123/billingAccounts/billing account id1" , "displayName" : "Google Workspace USD US 1" , "currencyCode" : "USD" , "regionCode" : "US" } }, { "billingAccount" : { "name" : "accounts/123/billingAccounts/billing account id2" , "displayName" : "Google Workspace CAD CA 1" , "currencyCode" : "CAD" , "regionCode" : "CA" } } ] } ] } With the Entitlement and BillingAccount, use the listPurchasableOffers method to find any PurchasableOffer.
+
+### Cloud Channel API \_|\_ Channel Services \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/channel/docs/reference/rpc](https://docs.cloud.google.com/channel/docs/reference/rpc)
 - Source ID: `site-docs-root`
-- Final score: 108
+- Final score: 53
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For Google Cloud Platform offers, you can use this field to map an offer to the Reseller Billing Account name from Cloud Console. v1 Change In the CheckCloudIdentityAccountsExist method, CloudIdentityAccounts now returns an empty list instead of a 404 error if the domain does not match an existing Cloud Identity.
-- Read an overview of rebilling Learn about enabling your rebilling data export February 14, 2022 v1 Feature This release adds filters to ListCustomers.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- Get started with using multiple Google Workspace billing accounts Manage your Google Workspace and Google Chrome entitlements May 08, 2023 v1 Change The following fields are now available in the Channel Services API: In the Entitlement resource, the billingAccount field includes the Cloud Billing account that was used to pay for that entitlement.
-
-### ListOperationsResponse \_|\_ Channel Services \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse](https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse)
-- Source ID: `site-api-reference`
-- Final score: 106
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-12-03 UTC."],[],[]]
-- JSON representation { "operations" : [ { object ( Operation ) } ] , "nextPageToken" : string , "unreachable" : [ string ] } Fields operations[] object ( Operation ) A list of operations that matches the specified filter in the request. nextPageToken string The standard List next-page token. unreachable[] string Unordered list of unreachable resources.
-- JSON representation Operation JSON representation Status JSON representation The response message for Operations.ListOperations .
-- If the original method returns no data on success, such as Delete , the response is google.protobuf.Empty .
+- ListCustomers List Customer s.
+- ListCustomers List Customer s.
+- RunReportJob (deprecated) Begins generation of data for a given report. google.cloud.channel.v1alpha1.CloudChannelService Methods ActivateEntitlement Activates a previously suspended entitlement.
+- RunReportJob (deprecated) Begins generation of data for a given report. google.cloud.channel.v1.CloudChannelService Methods ActivateEntitlement Activates a previously suspended entitlement.
 

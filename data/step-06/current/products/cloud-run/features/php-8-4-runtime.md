@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.898Z"
+generated_at: "2026-04-14T15:34:54.439Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "PHP 8.4 runtime"
@@ -9,18 +9,14 @@ latest_feature_date: "2025-06-17"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/container-contract"
-  - "https://docs.cloud.google.com/run/docs/reference/container-contract"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service"
+  - "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+  - "https://docs.cloud.google.com/python/docs/reference/run/latest"
 keywords:
-  - "php"
-  - "runtime"
-  - "run"
-  - "supports"
-  - "the"
-  - "for"
-  - "deployed"
   - "workloads"
+  - "deployed"
+  - "runtime"
+  - "supports"
 ---
 
 # PHP 8.4 runtime
@@ -38,52 +34,41 @@ Cloud Run supports the PHP 8.4 runtime for deployed workloads; Cloud Run support
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service)
+- [https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api](https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api)
+- [https://docs.cloud.google.com/python/docs/reference/run/latest](https://docs.cloud.google.com/python/docs/reference/run/latest)
 
 ## Supporting Pages
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### Authenticate to Cloud Run Admin API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 188
+- URL: [https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api](https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api)
+- Source ID: `site-docs-reference`
+- Final score: 34
 - Re-rank relevance: N/A
 
+### "Quickstart: Build and deploy a PHP web app to Google Cloud with Cloud Run\
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service)
+- Source ID: `site-docs-reference-2`
+- Final score: 31
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
 Evidence snippets:
-- August 21, 2024 Feature Cloud Run now provides security updates for services that are deployed from source when you specify the runtime base image (Preview).
-- September 23, 2024 Change The runtime support schedule for some PHP runtimes has been extended to match PHP's public support schedule .
-- June 17, 2025 Feature Support for the PHP 8.4 runtime is in General Availability (GA) .
-- Feature Support for the PHP 8.4 runtime is in Preview .
+- The .dockerignore file excludes files from the container build process. https://docs.docker.com/engine/reference/builder/#dockerignore-file Exclude locally vendored dependencies. vendor/ Exclude "build-time" ignore files. .dockerignore .gcloudignore Exclude git history and configuration. .gitignore Your app is finished and ready to be deployed.
+- If you are under a domain restriction organization policy restricting unauthenticated invocations for your project, you will need to access your deployed service as described under Testing private services .
+- OK Clean up To avoid additional charges to your Google Cloud account, delete all the resources you deployed with this quickstart.
+- Delete your repository Cloud Run doesn't charge you when your deployed service isn't in use.
 
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+### "Python Client for Cloud Run \_|\_ Python client libraries \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 166
+- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest](https://docs.cloud.google.com/python/docs/reference/run/latest)
+- Source ID: `site-python-reference`
+- Final score: 26
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.
-- Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.
-- Cloud Run specifically supports the Linux x86 64 ABI format.
-- The following table lists some of the available metadata server information: Path Description /computeMetadata/v1/project/project-id Project ID of the project the Cloud Run resource belongs to. /computeMetadata/v1/project/numeric-project-id Project number of the project the Cloud Run resource belongs to. /computeMetadata/v1/instance/region Region of this Cloud Run resource, returns projects/ PROJECT-NUMBER /regions/ REGION /computeMetadata/v1/instance/id Unique identifier of the instance (also available in logs ). /computeMetadata/v1/instance/service-accounts/default/email Email for the service identity of this Cloud Run resource. /computeMetadata/v1/instance/service-accounts/default/token Generates an OAuth2 access token for the service account of this Cloud Run resource .
-
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.
-- Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.
-- Cloud Run specifically supports the Linux x86 64 ABI format.
-- The following table lists some of the available metadata server information: Path Description /computeMetadata/v1/project/project-id Project ID of the project the Cloud Run resource belongs to. /computeMetadata/v1/project/numeric-project-id Project number of the project the Cloud Run resource belongs to. /computeMetadata/v1/instance/region Region of this Cloud Run resource, returns projects/ PROJECT-NUMBER /regions/ REGION /computeMetadata/v1/instance/id Unique identifier of the instance (also available in logs ). /computeMetadata/v1/instance/service-accounts/default/email Email for the service identity of this Cloud Run resource. /computeMetadata/v1/instance/service-accounts/default/token Generates an OAuth2 access token for the service account of this Cloud Run resource .
 

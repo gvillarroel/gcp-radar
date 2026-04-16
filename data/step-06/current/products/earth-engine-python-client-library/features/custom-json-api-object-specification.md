@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:10:51.820Z"
+generated_at: "2026-04-14T14:11:56.866Z"
 product_name: "Earth Engine Python Client Library"
 product_slug: "earth-engine-python-client-library"
 feature_name: "Custom JSON API object specification"
 feature_slug: "custom-json-api-object-specification"
 latest_feature_date: "2013-03-14"
 deprecation_date: "2013-03-14"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/docs/release-notes"
-  - "https://developers.google.com/earth-engine/guides/playground"
-  - "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff"
+  - "https://developers.google.com/earth-engine/guides/app_engine_intro"
+  - "https://developers.google.com/earth-engine/guides/debugging"
+  - "https://developers.google.com/earth-engine/guides/python_install"
 keywords:
+  - "specification"
+  - "specifying"
+  - "structures"
   - "custom"
   - "json"
-  - "api"
-  - "object"
-  - "specification"
   - "deprecated"
-  - "specifying"
+  - "object"
   - "objects"
 ---
 
 # Custom JSON API object specification
 
 Product: Earth Engine Python Client Library
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,54 @@ Deprecated specifying API objects with custom JSON structures; deprecated on 201
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
-- [https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff)
+- [https://developers.google.com/earth-engine/guides/app_engine_intro](https://developers.google.com/earth-engine/guides/app_engine_intro)
+- [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
+- [https://developers.google.com/earth-engine/guides/python_install](https://developers.google.com/earth-engine/guides/python_install)
 
 ## Supporting Pages
 
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
+### Debugging guide | Google Earth Engine | Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 156
+- URL: [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
+- Source ID: `site-docs-reference-required-6-http`
+- Final score: 93
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Debugging guide | Google Earth Engine | Google for Developers Skip to main content Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Home Guides Reference Support Community Data Catalog Earth Engine Home Guides Reference Support Community Data Catalog Discover Product overview BigQuery integrations Get started Earth Engine access Authentication and initialization Quickstarts Python client JavaScript Code Editor Video tutorials Development environments Earth Engine Code Editor Python installation Concepts Client versus server Processing environments Computation overview Deferred execution Scale Projections Resampling and reducing resolution Analyze data Objects and methods overview Image Image overview Image visualization Image information and metadata Mathematical operations Relational, conditional and boolean operations Convolutions Morphological operations Gradients Edge detection Spectral transformations Texture Object-based methods Cumulative cost mapping Registering images ImageCollection ImageCollection overview ImageCollection visualization ImageCollection information and metadata Filtering an ImageCollection Mapping over an ImageCollection Reducing an ImageCollection Compositing and mosaicking Iterating over an ImageCollection Geometry Geometry overview Geodesic versus planar geometries Geometry visualization and information Geometric operations Feature & FeatureCollection Feature overview FeatureCollection overview Feature and FeatureCollection visualization FeatureCollection information and metadata Filtering a FeatureCollection Mapping over a FeatureCollection Reducing a FeatureCollection Vector to raster interpolation Read tables from BigQuery FeatureView FeatureView overview FeatureView optimization FeatureView styling Reducer Reducer overview ImageCollection reductions Image reductions Statistics of an image region Statistics of image regions Statistics of image neighborhoods Statistics of FeatureCollection columns Raster to vector conversion Vector to raster conversion Grouped reductions and zonal statistics Weighted reductions Linear regression Join Join overview Simple joins Inverted joins Inner joins Save-all joins Save-best joins Save-first joins Spatial joins Array Array overview Array and array images Array transformations Eigen analysis Array sorting and reducing Visualize data Earth Engine Code Editor Charts Chart overview Feature and FeatureCollection charts Image charts ImageCollection charts Array and list charts DataTable charts Chart styling Earth Engine apps About Earth Engine apps User interface API overview Widgets Panels and layouts Events Machine learning Overview of ML in Earth Engine Supervised classification Unsupervised classification Custom Models in Vertex AI Custom models overview Hosting a model in Vertex AI Prediction payload formats Image predictions Property predictions Example workflows notebooks TFRecord data format Cloud AI Platform Migration Guide Import data Importing raster data Image manifest upload Importing table data Table manifest upload Export data Overview Exporting images Exporting table and vector data Exporting video and animations Exporting map tiles Exporting to BigQuery Extracting image data programmatically Manage Control access to resources Managing assets Usage quota and limits Monitoring usage Cost controls Computation benchmarks Service accounts Audit logs Troubleshoot Coding best practices Debugging Archive Custom applications App Engine and Earth Engine overview App Engine example apps NPM installation Samples Overview Introduction to JavaScript for Earth Engine Introduction Earth Engine objects and methods Functional programming concepts The Earth Engine API Introduction Visualizing images and image bands Computations using images Image collections Compositing, masking, and mosaicking NDVI, mapping a function over a collection, quality mosaicking Exporting charts and images Global forest change Introduction Introduction to Hansen global forest change data Quantifying forest change Charting yearly forest loss Introduction to forest monitoring for action (FORMA) data Global Surface Water Introduction Water occurrence (1984-2015) Water occurrence change intensity Water class transition Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone.
+- Image ( 'USGS/SRTMGL1_003' ); var nonsense = image + 2 ; // You can print this, but it's not what you were hoping for. print ( nonsense ); // Error: g.eeObject.name is not a function Map . addLayer ( nonsense ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) # Don't mix EE objects and Python objects. image = ee .
+- Scaling errors Though a script may be syntactically correct, without logical errors, and represent a valid set of instructions for the server, in parallelizing and executing the computation, the resultant objects may be too big, too numerous, or take too long to compute.
+- If it not obvious where the error originates, a good initial strategy is to print or visualize intermediate objects and inspect them to ensure the structure of the object is consistent with the logic in your script.
+
+### App Engine & Earth Engine Overview | Google Earth Engine | Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/app_engine_intro](https://developers.google.com/earth-engine/guides/app_engine_intro)
+- Source ID: `site-docs-root-2-http`
+- Final score: 92
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- App Engine & Earth Engine Overview | Google Earth Engine | Google for Developers Skip to main content Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Home Guides Reference Support Community Data Catalog Earth Engine Home Guides Reference Support Community Data Catalog Discover Product overview BigQuery integrations Get started Earth Engine access Authentication and initialization Quickstarts Python client JavaScript Code Editor Video tutorials Development environments Earth Engine Code Editor Python installation Concepts Client versus server Processing environments Computation overview Deferred execution Scale Projections Resampling and reducing resolution Analyze data Objects and methods overview Image Image overview Image visualization Image information and metadata Mathematical operations Relational, conditional and boolean operations Convolutions Morphological operations Gradients Edge detection Spectral transformations Texture Object-based methods Cumulative cost mapping Registering images ImageCollection ImageCollection overview ImageCollection visualization ImageCollection information and metadata Filtering an ImageCollection Mapping over an ImageCollection Reducing an ImageCollection Compositing and mosaicking Iterating over an ImageCollection Geometry Geometry overview Geodesic versus planar geometries Geometry visualization and information Geometric operations Feature & FeatureCollection Feature overview FeatureCollection overview Feature and FeatureCollection visualization FeatureCollection information and metadata Filtering a FeatureCollection Mapping over a FeatureCollection Reducing a FeatureCollection Vector to raster interpolation Read tables from BigQuery FeatureView FeatureView overview FeatureView optimization FeatureView styling Reducer Reducer overview ImageCollection reductions Image reductions Statistics of an image region Statistics of image regions Statistics of image neighborhoods Statistics of FeatureCollection columns Raster to vector conversion Vector to raster conversion Grouped reductions and zonal statistics Weighted reductions Linear regression Join Join overview Simple joins Inverted joins Inner joins Save-all joins Save-best joins Save-first joins Spatial joins Array Array overview Array and array images Array transformations Eigen analysis Array sorting and reducing Visualize data Earth Engine Code Editor Charts Chart overview Feature and FeatureCollection charts Image charts ImageCollection charts Array and list charts DataTable charts Chart styling Earth Engine apps About Earth Engine apps User interface API overview Widgets Panels and layouts Events Machine learning Overview of ML in Earth Engine Supervised classification Unsupervised classification Custom Models in Vertex AI Custom models overview Hosting a model in Vertex AI Prediction payload formats Image predictions Property predictions Example workflows notebooks TFRecord data format Cloud AI Platform Migration Guide Import data Importing raster data Image manifest upload Importing table data Table manifest upload Export data Overview Exporting images Exporting table and vector data Exporting video and animations Exporting map tiles Exporting to BigQuery Extracting image data programmatically Manage Control access to resources Managing assets Usage quota and limits Monitoring usage Cost controls Computation benchmarks Service accounts Audit logs Troubleshoot Coding best practices Debugging Archive Custom applications App Engine and Earth Engine overview App Engine example apps NPM installation Samples Overview Introduction to JavaScript for Earth Engine Introduction Earth Engine objects and methods Functional programming concepts The Earth Engine API Introduction Visualizing images and image bands Computations using images Image collections Compositing, masking, and mosaicking NDVI, mapping a function over a collection, quality mosaicking Exporting charts and images Global forest change Introduction Introduction to Hansen global forest change data Quantifying forest change Charting yearly forest loss Introduction to forest monitoring for action (FORMA) data Global Surface Water Introduction Water occurrence (1984-2015) Water occurrence change intensity Water class transition Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone.
+- If installation fails, check that a recent version of Node.js is installed . const ee = require ( '@google/earthengine' ); ee . data . authenticateViaPrivateKey ( '.private-key.json' ); ee . initialize (); OAuth 2.0 Client ID If you want users to authenticate as themselves (rather than using a service account), you need to set up an OAuth Client ID from your Cloud Project.
+- This doc provides instructions for how to set up and deploy the examples or custom apps you create.
+- Google App Engine lets you build and run your own custom applications on Google’s servers.
+
+### Python Installation | Google Earth Engine | Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/python_install](https://developers.google.com/earth-engine/guides/python_install)
+- Source ID: `site-docs-reference-required-5-http`
+- Final score: 67
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- March 14, 2013 Earth Engine JavaScript Client Library 0.0.5 Deprecated Deprecated specifying API objects using custom JSON (e.g. specifying error margins using {type: 'ErrorMargin', value: 5} ).
-- Earth Engine Python Client Library 0.0.5 Deprecated Deprecated specifying API objects using custom JSON (e.g. specifying error margins using {type: 'ErrorMargin', value: 5} ).
-- Change Gave all API objects eq () and hash () Earth Engine Server Feature Added a few helper methods to Projection : Projection.atScale(projection, meters) Projection.crs(projection) Projection.scale(projection, x, y) Projection.transform(projection) Projection.translate(projection, x, y) Projection.wkt(projection) June 06, 2014 Earth Engine Server Change Added List.zip(other) function. exportImage() can now create TERRAIN assets when exporting to Google Maps Engine.
-- Earth Engine Python Client Library 0.1.1 Breaking EE objects can no longer be initialized by providing JSON blocks (except GeoJSON).
-
-### Earth Engine Code Editor \_|\_ Google Earth Engine \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
-- Source ID: `site-docs-root`
-- Final score: 88
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Console Tab When you print() something from your script, such as text, objects or charts, the result will be displayed in the Console .
-- The cursor location and zoom level are displayed along with pixel values and a list of objects on the map.
-- The console is interactive, so you can expand printed objects to get more details about them.
-- Users can manage tasks, search datasets, visualize data on the map, and inspect map objects.
-
-### "Cloud GeoTiff-Backed Earth Engine Assets \_|\_ Google Earth Engine \_|\_\
-
-- URL: [https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff)
-- Source ID: `site-docs-reference`
-- Final score: 80
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Assign the following roles: "Storage Legacy Bucket Reader" (provides storage.buckets.get and other bucket-level read permissions). "Storage Legacy Object Reader" (provides storage.objects.get ). (Alternatively, you could create a new custom role with just the storage.buckets.get and storage.objects.get permissions and assign that.) Save 2.
-- Send the request Make the POST request to the Earth Engine projects.images.importExternal endpoint. url = f 'https://earthengine.googleapis.com/v1alpha/projects/ { ee project } /image:importExternal' response = session . post ( url = url , data = json . dumps ( request ) ) pprint ( json . loads ( response . content )) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Specifically, collaborators must have the following permissions: storage.buckets.get on the bucket (to retrieve bucket metadata and location, allowing Earth Engine to properly resolve the asset's source). storage.objects.get on the bucket (to read the actual COG-backed asset data).
-- Share the Earth Engine asset for reading After ensuring your collaborators have the necessary permissions on the underlying GCS bucket and objects, you must also share the Earth Engine asset itself.
+- Python Installation | Google Earth Engine | Google for Developers Skip to main content Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Home Guides Reference Support Community Data Catalog Earth Engine Home Guides Reference Support Community Data Catalog Discover Product overview BigQuery integrations Get started Earth Engine access Authentication and initialization Quickstarts Python client JavaScript Code Editor Video tutorials Development environments Earth Engine Code Editor Python installation Concepts Client versus server Processing environments Computation overview Deferred execution Scale Projections Resampling and reducing resolution Analyze data Objects and methods overview Image Image overview Image visualization Image information and metadata Mathematical operations Relational, conditional and boolean operations Convolutions Morphological operations Gradients Edge detection Spectral transformations Texture Object-based methods Cumulative cost mapping Registering images ImageCollection ImageCollection overview ImageCollection visualization ImageCollection information and metadata Filtering an ImageCollection Mapping over an ImageCollection Reducing an ImageCollection Compositing and mosaicking Iterating over an ImageCollection Geometry Geometry overview Geodesic versus planar geometries Geometry visualization and information Geometric operations Feature & FeatureCollection Feature overview FeatureCollection overview Feature and FeatureCollection visualization FeatureCollection information and metadata Filtering a FeatureCollection Mapping over a FeatureCollection Reducing a FeatureCollection Vector to raster interpolation Read tables from BigQuery FeatureView FeatureView overview FeatureView optimization FeatureView styling Reducer Reducer overview ImageCollection reductions Image reductions Statistics of an image region Statistics of image regions Statistics of image neighborhoods Statistics of FeatureCollection columns Raster to vector conversion Vector to raster conversion Grouped reductions and zonal statistics Weighted reductions Linear regression Join Join overview Simple joins Inverted joins Inner joins Save-all joins Save-best joins Save-first joins Spatial joins Array Array overview Array and array images Array transformations Eigen analysis Array sorting and reducing Visualize data Earth Engine Code Editor Charts Chart overview Feature and FeatureCollection charts Image charts ImageCollection charts Array and list charts DataTable charts Chart styling Earth Engine apps About Earth Engine apps User interface API overview Widgets Panels and layouts Events Machine learning Overview of ML in Earth Engine Supervised classification Unsupervised classification Custom Models in Vertex AI Custom models overview Hosting a model in Vertex AI Prediction payload formats Image predictions Property predictions Example workflows notebooks TFRecord data format Cloud AI Platform Migration Guide Import data Importing raster data Image manifest upload Importing table data Table manifest upload Export data Overview Exporting images Exporting table and vector data Exporting video and animations Exporting map tiles Exporting to BigQuery Extracting image data programmatically Manage Control access to resources Managing assets Usage quota and limits Monitoring usage Cost controls Computation benchmarks Service accounts Audit logs Troubleshoot Coding best practices Debugging Archive Custom applications App Engine and Earth Engine overview App Engine example apps NPM installation Samples Overview Introduction to JavaScript for Earth Engine Introduction Earth Engine objects and methods Functional programming concepts The Earth Engine API Introduction Visualizing images and image bands Computations using images Image collections Compositing, masking, and mosaicking NDVI, mapping a function over a collection, quality mosaicking Exporting charts and images Global forest change Introduction Introduction to Hansen global forest change data Quantifying forest change Charting yearly forest loss Introduction to forest monitoring for action (FORMA) data Global Surface Water Introduction Water occurrence (1984-2015) Water occurrence change intensity Water class transition Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone.
+- Initialize ( project = 'my-project' ) Interactive exploration with geemap The geemap library is used for displaying map tiles and printing rich representations of Earth Engine objects.
+- Call getInfo() on Earth Engine objects to get the desired object from the server to the client: # Load a Landsat image. img = ee .
+- Printing objects Printing an Earth Engine object in Python prints the serialized request for the object, not the object itself.
 

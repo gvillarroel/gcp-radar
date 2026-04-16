@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 121
-Unique features: 236
+Unique features: 233
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -28,7 +28,6 @@ Unique features: 236
 | 2025-08-29 | Vertex AI Workbench instance provisioning with proxy access disabled |  | Vertex AI Workbench instances were patched so that provisioning no longer stalls when proxy access is disabled. |
 | 2025-08-05 | Compute Engine reservations for Vertex AI Workbench instances |  | Vertex AI Workbench instances can now consume Compute Engine zonal reservations to increase the likelihood that required resources are available for job execution. |
 | 2025-06-26 | BigQuery JupyterLab plugin |  | The BigQuery JupyterLab plugin was added to Vertex AI Workbench instances. |
-| 2025-06-26 | GOOGLE_CLOUD_REGION environment variable defaulting |  | Vertex AI Workbench now sets the GOOGLE_CLOUD_REGION environment variable by default. |
 | 2025-06-10 | Reservations with Vertex AI Workbench instances |  | Vertex AI Workbench instances now support consuming Compute Engine zonal reservations in Preview. |
 | 2025-03-26 | Back up and restore data on Vertex AI Workbench instances |  | Vertex AI Workbench instances now support backing up and restoring instance data as a generally available capability. |
 | 2025-03-12 | Vertex AI Workbench instances |  | The M128 release provides miscellaneous package updates for Vertex AI Workbench instances; Vertex AI Workbench instances are now generally available, combining managed and user-managed notebook capabilities into a data science environment. |
@@ -154,7 +153,6 @@ Unique features: 236
 | 2023-03-16 | curl SSL certificate path detection in Vertex AI Workbench user-managed notebooks |  | A bug was fixed where curl could not detect the correct SSL certificate path by default in user-managed notebooks. |
 | 2023-03-16 | Jupyter Gateway Client metadata configuration |  | Vertex AI Workbench user-managed notebooks now supports accessing the Jupyter Gateway Client configuration via the `notebook-enable-gateway-client` and `gateway-client-url` metadata tags. |
 | 2023-03-16 | Jupyter user metadata handling in Vertex AI Workbench user-managed notebooks |  | The M104 user-managed notebooks update fixed a regression where `jupyter-user` metadata values were ignored. |
-| 2023-03-16 | Preinstalled libraries in Vertex AI Workbench user-managed notebook image |  | The M104 user-managed notebook release added new preinstalled packages, including `google-cloud-artifact-registry`, `google-cloud-bigquery-storage`, `google-cloud-language`, `keyring`, and `keyrings.google-artifactregistry-auth`. |
 | 2023-02-21 | Kernel display in Vertex AI Workbench managed notebooks |  | The M104 managed notebook update fixed a bug that prevented local and remote kernels from displaying when remote kernels were not accessible. |
 | 2023-02-09 | Vertex AI Workbench managed notebooks executor network selection experience |  | Vertex AI Workbench enhanced the network selection user experience within managed notebooks executor. |
 | 2023-02-09 | Vertex AI Workbench managed notebooks single-user instance security patch |  | Vertex AI Workbench fixed a security vulnerability affecting single-user managed notebook instances. |
@@ -162,7 +160,6 @@ Unique features: 236
 | 2023-01-30 | Vertex AI Workbench user-managed notebooks PyTorch runtime upgrade |  | Vertex AI Workbench upgraded the PyTorch runtime version to 1.13.1 for user-managed notebooks. |
 | 2022-12-15 | Vertex AI Workbench PyTorch 1.13 support |  | Vertex AI Workbench now supports PyTorch 1.13 in user-managed notebooks. |
 | 2022-12-15 | Vertex AI Workbench TensorFlow 2.11 support |  | Vertex AI Workbench now supports TensorFlow 2.11 in user-managed notebooks. |
-| 2022-12-09 | Vertex AI Workbench Notebooks API allowed domains |  | Vertex AI Workbench updated Notebooks API access requirements by adding *.notebooks.cloud.google.com and removing *.datalab.cloud.google.com. |
 | 2022-12-09 | Vertex AI Workbench TensorFlow 1.15 deprecation | 2022-12-09 | Vertex AI Workbench deprecated TensorFlow 1.15 for user-managed notebooks; deprecated on 2022-12-09. |
 | 2022-12-09 | Vertex AI Workbench TensorFlow patch updates |  | Vertex AI Workbench updated TensorFlow patch versions to 2.8.4, 2.9.3, and 2.10.1 in user-managed notebooks. |
 | 2022-11-08 | Vertex AI Workbench GPU instance startup |  | A fix enables Vertex AI Workbench instances with GPUs to start correctly. |

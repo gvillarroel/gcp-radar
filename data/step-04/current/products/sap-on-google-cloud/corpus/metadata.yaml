@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-10T00:19:34+00:00'
-updated_at: '2026-04-11T18:05:50+00:00'
+updated_at: '2026-04-15T03:59:46+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/sap/docs
   created_at: '2026-04-11T18:01:27+00:00'
-  updated_at: '2026-04-11T18:03:15+00:00'
+  updated_at: '2026-04-15T03:54:34+00:00'
   update_command: know sync site https://docs.cloud.google.com/sap/docs --key corpus
     --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 1
     max_pages: 30
     compact_output: true
-  last_synced_at: '2026-04-11T18:03:15+00:00'
+  last_synced_at: '2026-04-15T03:54:34+00:00'
 - type: site
   id: site-docs-reference
   title: https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp
   created_at: '2026-04-11T18:01:28+00:00'
-  updated_at: '2026-04-11T18:04:33+00:00'
+  updated_at: '2026-04-15T03:55:53+00:00'
   update_command: know sync site https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
@@ -34,12 +34,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-11T18:04:33+00:00'
+  last_synced_at: '2026-04-15T03:55:53+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/sap/docs/security-for-sap/iam-for-sap
   created_at: '2026-04-11T18:01:28+00:00'
-  updated_at: '2026-04-11T18:05:50+00:00'
+  updated_at: '2026-04-15T03:57:13+00:00'
   update_command: know sync site https://docs.cloud.google.com/sap/docs/security-for-sap/iam-for-sap
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -48,4 +48,32 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-11T18:05:50+00:00'
+  last_synced_at: '2026-04-15T03:57:12+00:00'
+- type: site
+  id: site-docs-reference-required-2
+  title: https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles
+  created_at: '2026-04-15T03:34:07+00:00'
+  updated_at: '2026-04-15T03:58:28+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-15T03:58:28+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment
+  created_at: '2026-04-15T03:34:07+00:00'
+  updated_at: '2026-04-15T03:59:46+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-15T03:59:46+00:00'

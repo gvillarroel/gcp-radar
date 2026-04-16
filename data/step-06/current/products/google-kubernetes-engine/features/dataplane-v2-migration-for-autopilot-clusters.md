@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:33.310Z"
+generated_at: "2026-04-14T04:42:56.815Z"
 product_name: "Google Kubernetes Engine"
 product_slug: "google-kubernetes-engine"
 feature_name: "Dataplane V2 migration for Autopilot clusters"
 feature_slug: "dataplane-v2-migration-for-autopilot-clusters"
 latest_feature_date: "2022-12-14"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
 keywords:
   - "dataplane"
   - "v2"
   - "migration"
-  - "for"
   - "autopilot"
   - "clusters"
   - "gke"
   - "can"
+  - "migrate"
 ---
 
 # Dataplane V2 migration for Autopilot clusters
 
 Product: Google Kubernetes Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ GKE Autopilot clusters can migrate their datapath provider to Dataplane V2 durin
 
 GKE Autopilot clusters can migrate their datapath provider to Dataplane V2 during control plane upgrades.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Run workloads in Autopilot mode in Standard clusters \_|\_ Google Kubernetes\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters)
+- Source ID: `site-docs-reference-2`
+- Final score: 169
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If you specify this field in a ComputeClass that you deploy to an Autopilot cluster, GKE ignores the field. priorities : defines an array of three different N4 machine family configurations. activeMigration : lets GKE migrate Pods to configurations that are higher in the list of priorities when resources become available.
+- Create a new custom Autopilot ComputeClass Save one of the following example ComputeClass manifests: Select specific machines : apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : n4-class spec : autopilot : enabled : true priorities : - machineFamily : n4 spot : true minCores : 16 - machineFamily : n4 spot : true - machineFamily : n4 spot : false activeMigration : optimizeRulePriority : true This manifest includes the following fields: autopilot : enables Autopilot mode for the ComputeClass.
+- Verify that the ComputeClass exists: kubectl get computeclasses The output is similar to the following: NAME AGE n4-class 3s Enable Autopilot for an existing custom ComputeClass Best Practice : To migrate your workloads to Autopilot mode in stages, or to immediately start node creation, create a new Autopilot ComputeClass and recreate specific workloads to select the new ComputeClass.
+- For more information about the implications of running an Autopilot workload in your Standard clusters, including differences that you might notice when you deploy those workloads, see About Autopilot mode workloads in GKE Standard .
+
+### "GKE Autopilot overview \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview)
+- Source ID: `site-iam-reference`
+- Final score: 133
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Network policy enforcement is available with GKE Dataplane V2, which is enabled by default in Autopilot clusters.
+- Autopilot clusters collect the following types of logs and metrics automatically, adhering to Google's best practices for telemetry collection: Logs for Cloud Logging System logs Workload logs Admin Activity audit logs Data Access audit logs Metrics for Cloud Monitoring System metrics Workload metrics (from Google Cloud Managed Service for Prometheus) No additional configuration is required to enable logging and monitoring.
+- Pricing Autopilot pricing uses different models depending on the type of hardware that your Pods use, as follows: General-purpose Autopilot Pods : the following types of Pods use a Pod-based billing model and are categorized as general-purpose Pods : Pods that run on the container-optimized compute platform in Autopilot clusters or Standard clusters.
+- Run workloads that require minimal disruptions, such as game servers or work queues In Autopilot clusters only, specify the cluster-autoscaler.kubernetes.io/safe-to-evict=false annotation in the Pod specification.
+
+### "Migrate your MySQL data from Persistent Disk to Hyperdisk by using Backup\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke)
+- Source ID: `site-docs-root-2`
+- Final score: 126
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create a restore plan by using these transformation rules: gcloud beta container backup-restore restore-plans create main-restore \ --project = ${ PROJECT ID } \ --location = us-central1 \ --backup-plan = projects/ ${ PROJECT ID } /locations/us-central1/backupPlans/main-plan \ --cluster = projects/ ${ PROJECT ID } /locations/ ${ ZONE } /clusters/ ${ TARGET CLUSTER PREFIX } -cluster \ --namespaced-resource-restore-mode = merge-replace-on-conflict \ --all-namespaces \ --cluster-resource-conflict-policy = use-existing-version \ --cluster-resource-scope-selected-group-kinds = cluster-resource-scope-all-group-kinds \ --volume-data-restore-policy = restore-volume-data-from-backup \ --transformation-rules-file = manifests/03-transformation-rule/volume.yaml Perform the restore: gcloud beta container backup-restore restores create first-restore \ --project = ${ PROJECT ID } \ --location = us-central1 \ --restore-plan = main-restore \ --backup = projects/ ${ PROJECT ID } /locations/us-central1/backupPlans/main-plan/backups/first-backup Verify the migration Verify that the applications are running on the new cluster and the data is intact.
+- Autopilot Standard This tutorial demonstrates how to migrate stateful applications in GKE from older generation machine types, such as N2, with attached Persistent Disk volumes, to newer generation machine types, such as N4, with attached Hyperdisk volumes by using Backup for GKE .
+- The root password is set to migration : apiVersion : v1 kind : Service metadata : name : mysql-b labels : app : mysql spec : ports : - port : 3306 selector : app : mysql clusterIP : None --- apiVersion : v1 kind : PersistentVolumeClaim metadata : name : mysql-b-pv-claim labels : app : mysql spec : accessModes : - ReadWriteOnce resources : requests : storage : 30Gi storageClassName : premium-rwo --- apiVersion : apps/v1 kind : Deployment metadata : name : existing-mysql-b labels : app : mysql spec : selector : matchLabels : app : mysql strategy : type : Recreate template : metadata : labels : app : mysql spec : containers : - image : mysql:8.0 name : mysql env : - name : MYSQL ROOT PASSWORD value : migration - name : MYSQL DATABASE value : mysql - name : MYSQL USER value : app - name : MYSQL PASSWORD value : migration ports : - containerPort : 3306 name : mysql-b volumeMounts : - name : mysql-persistent-storage mountPath : /var/lib/mysql affinity : nodeAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 preference : matchExpressions : - key : "node.kubernetes.io/instance-type" operator : In values : - "n2-standard-4" volumes : - name : mysql-persistent-storage persistentVolumeClaim : claimName : mysql-b-pv-claim Deploy a MySQL client Pod to upload sample datasets: kubectl apply -f manifests/02-mysql/mysql-client.yaml kubectl wait pods mysql-client --for condition = Ready --timeout = 300s The following manifest deploys a MySQL client Pod: apiVersion : v1 kind : Pod metadata : name : mysql-client spec : containers : - name : main image : mysql:8.0 command : [ "sleep" , "360000" ] resources : requests : memory : 1Gi cpu : 500m limits : memory : 1Gi cpu : "1" env : - name : MYSQL ROOT PASSWORD value : migration Connect to the client Pod: kubectl exec -it mysql-client -- bash Inside the Pod, download the Sakila and World sample datasets: curl --output dataset.tgz "https://downloads.mysql.com/docs/sakila-db.tar.gz" tar -xvzf dataset.tgz -C ./ curl --output world-db.tar.gz "https://downloads.mysql.com/docs/world-db.tar.gz" tar xvzf world-db.tar.gz -C ./ Import the Sakila dataset into the mysql-a database: mysql -u root -h mysql-a.namespace-a -p Enter password: migration SOURCE /sakila-db/sakila-schema.sql ; SOURCE /sakila-db/sakila-data.sql ; Verify the imported Sakila data: USE sakila ; SELECT table name , table rows FROM INFORMATION SCHEMA .
+- The root password is set to migration : apiVersion : v1 kind : Service metadata : name : mysql-a labels : app : mysql spec : ports : - port : 3306 selector : app : mysql clusterIP : None --- apiVersion : v1 kind : PersistentVolumeClaim metadata : name : mysql-a-pv-claim labels : app : mysql spec : accessModes : - ReadWriteOnce resources : requests : storage : 30Gi storageClassName : premium-rwo --- apiVersion : apps/v1 kind : Deployment metadata : name : existing-mysql-a labels : app : mysql spec : selector : matchLabels : app : mysql strategy : type : Recreate template : metadata : labels : app : mysql spec : containers : - image : mysql:8.0 name : mysql env : - name : MYSQL ROOT PASSWORD value : migration - name : MYSQL DATABASE value : mysql - name : MYSQL USER value : app - name : MYSQL PASSWORD value : migration ports : - containerPort : 3306 name : mysql-a volumeMounts : - name : mysql-persistent-storage mountPath : /var/lib/mysql affinity : nodeAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 preference : matchExpressions : - key : "node.kubernetes.io/instance-type" operator : In values : - "n2-standard-4" volumes : - name : mysql-persistent-storage persistentVolumeClaim : claimName : mysql-a-pv-claim Deploy the mysql-b-deployment.yaml file: kubectl apply -f manifests/02-mysql/mysql-b-deployment.yaml -n namespace-b The following manifest creates a MySQL Pod in namespace-b with dynamically provisioned Persistent Disk SSD disks on the regular-pool nodes.
 

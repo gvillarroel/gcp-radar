@@ -1,32 +1,27 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:23.981Z"
+generated_at: "2026-04-14T09:47:34.413Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "Bare Metal Solution server OS details view"
 feature_slug: "bare-metal-solution-server-os-details-view"
 latest_feature_date: "2024-02-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+  - "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics"
   - "https://docs.cloud.google.com/bare-metal/docs/bms-setup"
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices"
+  - "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
 keywords:
   - "details"
-  - "os"
   - "server"
-  - "solution"
   - "view"
-  - "you"
-  - "metal"
-  - "bare"
 ---
 
 # Bare Metal Solution server OS details view
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +33,54 @@ You can now view the operating-system details of a Bare Metal Solution server.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
+- [https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics](https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics)
 - [https://docs.cloud.google.com/bare-metal/docs/bms-setup](https://docs.cloud.google.com/bare-metal/docs/bms-setup)
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices)
+- [https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys](https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys)
 
 ## Supporting Pages
 
-### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
+### View Bare Metal Solution metrics \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- Source ID: `site-docs-root-2`
-- Final score: 256
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics](https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics)
+- Source ID: `site-docs-reference`
+- Final score: 109
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
-- Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution Overview To provide resiliency for your Oracle databases inside a Bare Metal Solution environment, you need to have a clear strategy for database backups and disaster recovery.
-- Host project– Lets you create regional subnets in a shared VPC that can connect the Bare Metal Solution regional extension to the Backup and DR Service, the backup/recovery appliance, your Cloud Storage buckets, and your Compute Engine VMs.
+- All servers have the following basic metrics available: Network traffic totals Network traffic logical interface The following additional insights are available upon installing the Ops Agent: CPU utilization Memory utilization Disk space utilization Disk throughput To view metrics for your server, follow these steps: In the Google Cloud console, go to the Compute Engine > Bare Metal Solution > Servers page.
+- View storage volume and LUN metrics The metrics for a storage volume and its LUNs are collected only when the storage volume is attached to a server.
+- View server metrics Bare Metal Solution collects server metrics at the network switch level.
+- To view metrics for the LUNs of the storage volume, click the Show LUN details toggle.
 
 ### "Quickstart: Set up Google Cloud to work with your Bare Metal Solution environment\
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-setup](https://docs.cloud.google.com/bare-metal/docs/bms-setup)
 - Source ID: `site-docs-root`
-- Final score: 242
+- Final score: 95
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- They are both in the us-central1 region. gcloud compute interconnects attachments partner create my-attachment \ --region us-central1 \ --router my-router-1 \ --edge-availability-domain availability-domain-1 \ --admin-enabled gcloud compute interconnects attachments partner create my-attachment \ --region us-central1 \ --router my-router-2 \ --edge-availability-domain availability-domain-2 \ --admin-enabled Run the gcloud compute interconnects attachments describe command to view the details of the VLAN attachment. gcloud compute interconnects attachments describe my-attachment \ --region us-central1 adminEnabled: false edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 creationTimestamp: '2017-12-01T08:29:09.886-08:00' id: '7976913826166357434' kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: my-attachment region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/my-router selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/interconnectAttachments/my-attachment state: PENDING PARTNER type: PARTNER The state of the VLAN attachment is PENDING PARTNER until Google Cloud completes your VLAN attachment configuration.
+- Installing http server sudo yum install httpd sudo systemctl restart httpd Testing curl http://127.0.0.1:80 Create an instance group. gcloud compute instance-groups unmanaged create INSTANCE GROUP NAME --project= PROJECT ID --zone= ZONE Replace the following: INSTANCE GROUP NAME : the name of the instance group PROJECT ID : the ID of the project ZONE : the zone in which to create the instance group Add the VM to the instance group. gcloud compute instance-groups unmanaged add-instances INSTANCE GROUP NAME --project= PROJECT ID --zone= ZONE --instances= VM NAME Replace the following: INSTANCE GROUP NAME : the name of the instance group PROJECT ID : the ID of the project ZONE : the zone in which to create the instance group VM NAME : the name of the VM Create an internal passthrough Network Load Balancer: Start your configuration In the Google Cloud console, go to the Load balancing page.
+- The following example, adds the 0.0.0.0/0 custom IP to the Cloud Router's advertisements: gcloud compute routers update-bgp-peer router-name \ --peer-name bgp-session-name \ --add-advertisement-ranges 0.0.0.0/0 Optionally, set the VPC Network Dynamic Routing Mode to global If you have Bare Metal Solution servers in two different regions, consider enabling global routing mode on the VPC network to have your Bare Metal Solution regions talk to each other directly over the VPC network.
+- You can choose from the following methods to set up access depending on various factors, including your business requirements and existing infrastructure: Note: Cloud NAT feature doesn't support transitive endpoints thus it can not be used standalone to provide the internet access to the BMS server.
+
+### "Set up encryption keys for a server \_|\_ Bare Metal Solution \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys](https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys)
+- Source ID: `site-docs-reference`
+- Final score: 95
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- On the jump host VM instance, open a command-line terminal and confirm that you can reach your Bare Metal Solution server: ping bare-metal-ip If your ping is unsuccessful, check and correct the following: Your VLAN attachments are active with a Status of Up .
-- From the jump host VM instance, SSH into the Bare Metal Solution server by using the customeradmin user ID and the IP address of the server: ssh customeradmin@ bare-metal-ip When prompted, enter the password provided to you by Google Cloud.
-- After you have created a firewall rule to allow traffic into your VPC network from the Bare Metal Solution environment, you can connect to your server by using a jump host VM instance.
-- Logging in to a Bare Metal Solution server for the first time Linux Connect to your jump host VM instance .
-
-### Best practices for Oracle on Bare Metal Solution \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices)
-- Source ID: `site-docs-root`
-- Final score: 238
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- To configure jumbo frames on Bare Metal Solution servers for Oracle RAC: View the settings of your Bare Metal Solution private network to confirm that jumbo frames have been configured: gcloud bms networks describe NETWORK NAME -- project = PROJECT ID -- region = REGION grep jumboFramesEnabled Sample output: jumboFramesEnabled : true Identify the network interfaces and their mtu size: ip link show grep mtu Sample output: 1 : lo : < LOOPBACK , UP , LOWER UP > mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000 2 : enp55s0f1 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 3 : enp55s0f2 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 4 : enp55s0f3 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 5 : enp17s0f0 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000 6 : enp17s0f1 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond1 state UP mode DEFAULT group default qlen 1000 7 : enp173s0f0 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000 8 : enp173s0f1 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond1 state UP mode DEFAULT group default qlen 1000 9 : bond1 : < BROADCAST , MULTICAST , MASTER , UP , LOWER UP > mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000 10 : bond1 .
-- Use a uniform LUN size Create no more than two ASM disk groups Stripe ASM disk groups across all LUNs in all volumes Use LUNs and volumes with the same performance characteristics in the same disk group Do not share storage volumes across multiple RAC clusters Know the required IOPS and throughput capacity before you create ASM disk groups Leave the multipath configuration as-is Configure important settings for ASM Create your ASM disk group with external redundancy Reboot your Bare Metal Solution servers after ASM disk creation Use a uniform LUN size The LUN size you select should be representative of the unit of growth.
-- Note: If you choose to use a public time source, you need to configure a NAT gateway on a Compute Engine VM to provide connectivity between your Bare Metal Solution environment and the NTP server.
-- Use a name server as a substitute for Cloud DNS If you don't want to use the Cloud DNS, then install your own name server to resolve host IP addresses on the Bare Metal Solution server.
+- On the Server details page, view the encryption key in Password encryption key field.
+- To assign these roles, use the gcloud projects add-iam-policy-binding command. gcloud projects add-iam-policy-binding KMS PROJECT ID \ --member serviceAccount:service- PROJECT NUMBER @gcp-sa-bms.iam.gserviceaccount.com \ --role roles/cloudkms.publicKeyViewer gcloud projects add-iam-policy-binding KMS PROJECT ID \ --member serviceAccount:service- PROJECT NUMBER @gcp-sa-bms.iam.gserviceaccount.com \ --role roles/cloudkms.viewer Replace the following: KMS PROJECT ID : the project that contains your Cloud KMS key PROJECT NUMBER : the project that contains your Bare Metal Solution server Create an asymmetric decryption key .
+- To view user accounts and their corresponding encrypted passwords, go to the User Accounts section. gcloud Use the gcloud alpha bms instances auth-info command: gcloud alpha bms instances auth-info SERVER NAME --project= PROJECT ID --region= REGION Replace the following: SERVER NAME : the name of the Bare Metal Solution server PROJECT ID : the ID of the project REGION : the region of the Bare Metal Solution server Decrypt a password To obtain the raw password, follow these steps: Obtain the ciphertext.
+- Set up encryption keys for a server Preview This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
 

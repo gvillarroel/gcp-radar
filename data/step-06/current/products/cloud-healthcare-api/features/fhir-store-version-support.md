@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:31.491Z"
+generated_at: "2026-04-15T00:44:19.135Z"
 product_name: "Cloud Healthcare API"
 product_slug: "cloud-healthcare-api"
 feature_name: "FHIR store version support"
 feature_slug: "fhir-store-version-support"
 latest_feature_date: "2020-02-10"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+  - "https://docs.cloud.google.com/healthcare-api/docs/fhir"
+  - "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub"
 keywords:
   - "fhir"
   - "store"
   - "version"
   - "healthcare"
-  - "api"
   - "stores"
   - "now"
-  - "the"
+  - "major"
+  - "release"
 ---
 
 # FHIR store version support
 
 Product: Cloud Healthcare API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Cloud Healthcare API FHIR stores now support the major FHIR release versions DST
 
 Cloud Healthcare API FHIR stores now support the major FHIR release versions DSTU2, STU3, and R4 during creation.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir](https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir)
+- [https://docs.cloud.google.com/healthcare-api/docs/fhir](https://docs.cloud.google.com/healthcare-api/docs/fhir)
+- [https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub](https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Creating and managing FHIR stores \_|\_ Cloud Healthcare API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir](https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir)
+- Source ID: `site-docs-root`
+- Final score: 183
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the FHIR store's parent dataset FHIR STORE ID : the FHIR store ID PUBSUB TOPIC ID : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID \ --dataset = DATASET ID \ --location = LOCATION \ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID You should receive a response similar to the following: Response Updated fhirStore [ FHIR STORE ID ]. name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC ID version: FHIR STORE VERSION REST To edit a FHIR store, use the projects.locations.datasets.fhirStores.patch method.
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery api version = "v1" service name = "healthcare" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the dataset's location dataset id = 'my-dataset' # replace with your dataset ID fhir store id = 'my-fhir-store' # replace with the FHIR store's ID pubsub topic = 'projects/{project id}/topics/{topic id}' # replace with your Pub/Sub topic fhir store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) fhir store name = f " { fhir store parent } /fhirStores/ { fhir store id } " patch = { "notificationConfigs" : [{ "pubsubTopic" : pubsub topic }] if pubsub topic else [] } request = ( client . projects () . locations () . datasets () . fhirStores () . patch ( name = fhir store name , updateMask = "notificationConfigs" , body = patch ) ) response = request . execute () print ( f "Patched FHIR store { fhir store id } with Cloud Pub/Sub topic: { pubsub topic or 'None' } " ) return response Getting FHIR store details The following samples show how to get details about a FHIR store.
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery Imports Python's built-in "json" module import json api version = "v1" service name = "healthcare" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the parent dataset's ID fhir store id = 'my-fhir-store' # replace with the FHIR store ID fhir store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) fhir store name = f " { fhir store parent } /fhirStores/ { fhir store id } " fhir stores = client . projects () . locations () . datasets () . fhirStores () response = fhir stores . fhir () . capabilities ( name = fhir store name ) . execute () print ( json . dumps ( response , indent = 2 )) return response Setting the base resource validation level By default, all resources in your FHIR store have base resource validation applied to them.
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery Imports Python's built-in "json" module import json api version = "v1" service name = "healthcare" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the FHIR store's parent dataset fhir store id = 'my-fhir-store' # replace with the FHIR store's ID fhir store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) fhir store name = f " { fhir store parent } /fhirStores/ { fhir store id } " fhir stores = client . projects () . locations () . datasets () . fhirStores () fhir store = fhir stores . get ( name = fhir store name ) . execute () print ( json . dumps ( fhir store , indent = 2 )) return fhir store Listing the FHIR stores in a dataset The following samples show how to list the FHIR stores in a dataset.
+
+### "FHIR conformance statement \_|\_ Cloud Healthcare API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/fhir](https://docs.cloud.google.com/healthcare-api/docs/fhir)
+- Source ID: `site-api-reference`
+- Final score: 169
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The v1 API supports the following versions: R5 version 5.0.0 (Release 5) R4 version 4.0.1 (Release 4) STU3 version 3.0.1 (Release 3 - Standard for Trial Use) DSTU2 version 1.0.2 (Draft Standard for Trial Use) When you create a FHIR store, you specify the FHIR version as a parameter to the fhirStores.create method.
+- FHIR stores within the Cloud Healthcare API support multiple versions of the Fast Healthcare Interoperability Resources ( FHIR ) specification published by Health Level 7 International ( HL7 ).
+- This notification mechanism is common across all Cloud Healthcare API stores and isn't intended to replace FHIR Subscription ( DSTU2 , STU3 , R4 , and R5 )) functionality.
+- Functionality added in later FHIR versions is available in stores using earlier FHIR versions if it doesn't create incompatibility.
+
+### "FHIR Pub/Sub notifications \_|\_ Cloud Healthcare API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub](https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub)
+- Source ID: `site-docs-root-2`
+- Final score: 153
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project PUBSUB SUBSCRIPTION ID : the ID of the subscription attached to the Pub/Sub topic configured in the FHIR store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud pubsub subscriptions pull \ projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID \ --auto-ack \ --format = json Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud pubsub subscriptions pull projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID --auto-ack ` --format = json Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud pubsub subscriptions pull ^ projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID ^ --auto-ack ^ --format = json You should receive a response similar to the following: [ { "ackId": "RFAGFixdRkhRNxkIaFEOT14jPzUgKEUaAggUBXx9cEFLdVhUcGhRDRlyfWB9bQ5GAgpGWixfURsHaE5tdR", "ackStatus": "SUCCESS", "message": { "attributes": { "action": "CreateResource", "lastUpdatedTime": "Mon, 01 Jan 2020 00:00:00 UTC", "payloadType": "FullResource", "resourceType": "Patient", "storeName": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ", "versionId": "MTY4MzA2MDQzOTI5NjIxMDAwMA" }, "data": "wogICJiaXJ0aERhdGUiOiAiMTk3MC0wMS0wMSIsCiAgImdlbmRlciI6ICJmZW1hbGUiLAogICJpZCI6ICIyYmMwODg4Yi00MGRmLTQwYzctOWRhYi0wMzc4YTFiZWE0MGIiLAogICJtZXRhIjogewogICAgImxhc3RVcGRhdGVkIjogIjIwMjMtMDUtMDJUMjA6NDc6MTkuMjk2MjEwKzAwOjAwIiwKICAgICJ2ZXJzaW9uSWQiOiAiTVRZNE16QTJNRFF6T1RJNU5qSXhNREF3TUEiCiAgfSwKICAibmFtZSI6IFsKICAgIHsKICAgICAgImZhbWlseSI6ICJTbWl0aCIsCiAgICAgICJnaXZlbiI6IFsKICAgICAgICAiRGFyY3kiCiAgICAgIF0sCiAgICAgICJ1c2UiOiAib2ZmaWNpYWwiCiAgICB9CiAgXSwKICAicmVzb3VyY2VUeXBlIjogIlBhdGllbnQiCn0=", "messageId": "7586159156345265", "publishTime": " YYYY-MM-DDTHH:MM:SS+ZZ:ZZ " } } ] Behavior when a FHIR resource is too large or traffic is high If the size of a FHIR resource is too large, or the Cloud Healthcare API servers are experiencing high traffic, the attributes field might only contain the resource name instead of the full resource contents.
+- Run the following command in the terminal to create or overwrite this file in the current directory: @' { "notificationConfigs": [ { "pubsubTopic": "projects/ PROJECT ID /topics/ PUBSUB TOPIC ID ", "sendFullResource": true, "sendPreviousResourceOnDelete": true } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ?updateMask=notificationConfigs" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ", "version": "R4", "notificationConfigs": [ { "pubsubTopic": "projects/ PROJECT ID /topics/ PUBSUB TOPIC ID ", "sendFullResource": true, "sendPreviousResourceOnDelete": true } ] } Create a FHIR resource Create a FHIR resource in the FHIR store.
+- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -Uri "https://pubsub.googleapis.com/v1/projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID :pull?maxMessages=10" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "receivedMessages": [ { "ackId": "RFAGFixdRkhRNxkIaFEOT14jPzUgKEUaAggUBXx9cEFLdVhUcGhRDRlyfWB9bQ5GAgpGWixfURsHaE5tdR", "message": { "data": "wogICJiaXJ0aERhdGUiOiAiMTk3MC0wMS0wMSIsCiAgImdlbmRlciI6ICJmZW1hbGUiLAogICJpZCI6ICIyYmMwODg4Yi00MGRmLTQwYzctOWRhYi0wMzc4YTFiZWE0MGIiLAogICJtZXRhIjogewogICAgImxhc3RVcGRhdGVkIjogIjIwMjMtMDUtMDJUMjA6NDc6MTkuMjk2MjEwKzAwOjAwIiwKICAgICJ2ZXJzaW9uSWQiOiAiTVRZNE16QTJNRFF6T1RJNU5qSXhNREF3TUEiCiAgfSwKICAibmFtZSI6IFsKICAgIHsKICAgICAgImZhbWlseSI6ICJTbWl0aCIsCiAgICAgICJnaXZlbiI6IFsKICAgICAgICAiRGFyY3kiCiAgICAgIF0sCiAgICAgICJ1c2UiOiAib2ZmaWNpYWwiCiAgICB9CiAgXSwKICAicmVzb3VyY2VUeXBlIjogIlBhdGllbnQiCn0=", "attributes": { "storeName": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ", "action": "CreateResource", "versionId": "MTY4MzA2MDQzOTI5NjIxMDAwMA", "resourceType": "Patient", "lastUpdatedTime": "Mon, 01 Jan 2020 00:00:00 UTC", "payloadType": "FullResource" }, "messageId": "7586159156345265", "publishTime": " YYYY-MM-DDTHH:MM:SS+ZZ:ZZ " } } ] } gcloud To view the message published to the Pub/Sub topic, run the gcloud pubsub subscriptions pull command.
+- When you view the notification, the message object looks similar to the following: { "message": { "attributes": { "action": " {CreateResource PatchResource UpdateResource DeleteResource} ", "lastUpdatedTime": " RFC 1123 FORMAT DATETIME ", "payloadType": "NameOnly", "resourceType": " FHIR RESOURCE TYPE ", "storeName": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ", "versionId": " VERSION ID " }, "data": " BASE64 ENCODED FHIR RESOURCE NAME ", "messageId": " MESSAGE ID ", "publishTime": " YYYY-MM-DDTHH:MM:SS+ZZ:ZZ " } } Note the following in the notification: The payloadType field is set to NameOnly to indicate the following about the request: For create, update, and patch operations, sendFullResource is set to false .
 

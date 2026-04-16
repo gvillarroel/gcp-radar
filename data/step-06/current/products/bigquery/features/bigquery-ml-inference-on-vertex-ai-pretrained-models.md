@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.631Z"
+generated_at: "2026-04-15T12:48:36.562Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery ML inference on Vertex AI pretrained models"
@@ -9,16 +9,18 @@ latest_feature_date: "2023-08-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/ai-application-overview"
+  - "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet"
+  - "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial"
+  - "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet"
 keywords:
-  - "Vision NLP Translation inference"
-  - "NLP API integration"
-  - "ML inferencing"
-  - "pretrained Vertex AI models"
-  - "pretrained models"
-  - "Cloud Natural Language API"
-  - "Cloud Vision API"
-  - "Cloud Translation API"
+  - "bigquery"
+  - "ml"
+  - "inference"
+  - "vertex"
+  - "ai"
+  - "pretrained"
+  - "models"
+  - "functions"
 ---
 
 # BigQuery ML inference on Vertex AI pretrained models
@@ -28,32 +30,62 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-BigQuery ML inference functions now support Vertex AI pretrained models for NLP, translation, and computer vision via Cloud Vision, Cloud Natural Language, and Cloud Translation APIs.
+BigQuery ML functions can run inference on Vertex AI pretrained models for natural language processing, translation, and computer vision tasks.
 
 ## Extended Definition
 
-BigQuery ML supports inference via remote models that reference external Google Cloud AI APIs. For task-specific inference, you can create a remote model and set the remote service type to CLOUD AI NATURAL LANGUAGE V1, CLOUD AI TRANSLATE V3, or CLOUD AI VISION V1 to run natural language, translation, or computer vision workloads respectively. The provided evidence does not explicitly state that this pathway is “Vertex AI pretrained model” inference.
+BigQuery ML functions can run inference on Vertex AI pretrained models for natural language processing, translation, and computer vision tasks.
 
 ## Evidence Summary
 
-The page details BigQuery AI integration using remote models and shows which remote service types map to Cloud Natural Language, Cloud Translation, and Cloud Vision inference tasks.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/ai-application-overview](https://docs.cloud.google.com/bigquery/docs/ai-application-overview)
+- [https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet](https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet)
+- [https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial](https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial)
+- [https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet](https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet)
 
 ## Supporting Pages
 
-### Task-specific solutions overview \_|\_ BigQuery \_|\_ Google Cloud Documentation
+### "Make predictions with remote models on Vertex AI \_|\_ BigQuery \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/ai-application-overview](https://docs.cloud.google.com/bigquery/docs/ai-application-overview)
-- Source ID: `site-docs-root-2`
-- Final score: 36
-- Re-rank relevance: STRONG
-- Re-rank rationale: It explicitly states BigQuery ML can use remote models over Vertex AI/Cloud AI services, with inference occurring in Vertex AI across NLP and translation scenarios.
+- URL: [https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial](https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial)
+- Source ID: `site-docs-reference`
+- Final score: 132
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- To perform natural language tasks, you can create a reference to the Cloud Natural Language API by creating a remote model and specifying CLOUD AI NATURAL LANGUAGE V1 for the REMOTE SERVICE TYPE value.
-- To perform machine translation tasks, you can create a reference to the Cloud Translation API by creating a remote model and specifying CLOUD AI TRANSLATE V3 for the REMOTE SERVICE TYPE value.
-- To perform computer vision tasks, you can create a reference to the Cloud Vision API by creating a remote model and specifying CLOUD AI VISION V1 for the REMOTE SERVICE TYPE value.
+- Import the model to the Vertex AI Model Registry In this tutorial you use a pretrained TensorFlow model that is available in Cloud Storage at gs://cloud-samples-data/bigquery/ml/remote model tutorial/ .
+- Home Documentation Data analytics BigQuery Guides Send feedback Make predictions with remote models on Vertex AI Stay organized with collections Save and categorize content based on your preferences.
+- In the Connection type list, select Vertex AI remote models, remote functions and BigLake (Cloud Resource) .
+- Click the Vertex AI Models: BigQuery Federation solution card.
+
+### "Tutorial: Run inference on an object table by using a classification model\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet](https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet)
+- Source ID: `site-docs-reference-2`
+- Final score: 129
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery.
+- In the Connection type list, select Vertex AI remote models, remote functions, BigLake and Spanner (Cloud Resource) .
+- Click the Vertex AI Models: BigQuery Federation solution card.
+- Go to BigQuery In the Editor pane, run the following SQL statement: CREATE EXTERNAL TABLE resnet inference test . vision images WITH CONNECTION us.lake-connection OPTIONS ( object metadata = 'SIMPLE' , uris = [ 'gs://cloud-samples-data/vision/ .jpg' ] ); bq In Cloud Shell, run the bq mk command to create the connection: bq mk --table \ --external table definition='gs://cloud-samples-data/vision/ .jpg@us.lake-connection' \ --object metadata=SIMPLE \ resnet inference test . vision images Upload the model to Cloud Storage Get the model files and make them available in Cloud Storage: Download the ResNet 50 model to your local machine.
+
+### "Tutorial: Run inference on an object table by using a feature vector model\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet](https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet)
+- Source ID: `site-docs-reference-2`
+- Final score: 129
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery.
+- In the Connection type list, select Vertex AI remote models, remote functions, BigLake and Spanner (Cloud Resource) .
+- Click the Vertex AI Models: BigQuery Federation solution card.
+- Go to BigQuery In the Editor pane, run the following SQL statement: CREATE EXTERNAL TABLE mobilenet inference test . sample images WITH CONNECTION us.lake-connection OPTIONS ( object metadata = 'SIMPLE' , uris = [ 'gs:// BUCKET NAME /flowers/ ' ] ); Replace BUCKET NAME with the name of the bucket you previously created. bq In Cloud Shell, run the bq mk command to create the connection: bq mk --table \ --external table definition = 'gs:// BUCKET NAME /flowers/ @us.lake-connection' \ --object metadata = SIMPLE \ mobilenet inference test.sample images Replace BUCKET NAME with the name of the bucket you previously created.
 

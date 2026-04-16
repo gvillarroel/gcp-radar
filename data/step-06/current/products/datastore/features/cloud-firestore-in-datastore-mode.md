@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.876Z"
+generated_at: "2026-04-12T12:14:02.793Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Cloud Firestore in Datastore mode"
 feature_slug: "cloud-firestore-in-datastore-mode"
 latest_feature_date: "2019-01-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial"
   - "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore"
+  - "https://docs.cloud.google.com/datastore/docs/reference/admin/rest/Shared.Types/DatastoreFirestoreMigrationMetadata"
   - "https://docs.cloud.google.com/datastore/docs/tools/indexconfig"
 keywords:
   - "firestore"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Firestore in Datastore mode
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Cloud Firestore in Datastore mode provides Datastore API compatibility on the Cl
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
 - [https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore](https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore)
+- [https://docs.cloud.google.com/datastore/docs/reference/admin/rest/Shared.Types/DatastoreFirestoreMigrationMetadata](https://docs.cloud.google.com/datastore/docs/reference/admin/rest/Shared.Types/DatastoreFirestoreMigrationMetadata)
 - [https://docs.cloud.google.com/datastore/docs/tools/indexconfig](https://docs.cloud.google.com/datastore/docs/tools/indexconfig)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
 - Source ID: `site-iam-reference`
-- Final score: 240
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 303
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This page provides a short exercise in building a command-line TaskList application with the Firestore in Datastore mode API.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore](https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore)
 - Source ID: `site-iam-reference`
-- Final score: 236
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 301
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Datastore API Read of entity value Read of index Global Query Eventual consistency Eventual consistency Keys-only Global Query N/A Eventual consistency Ancestor Query Strong consistency Strong consistency Lookup by key (get()) Strong consistency N/A Table 1: Datastore queries/get calls and possible consistency behaviors Datastore queries without an ancestor are known as global queries and are designed to work with an eventual consistency model.
@@ -76,13 +78,27 @@ Evidence snippets:
 - The different varieties of Datastore query APIs and their corresponding consistency models are shown in Table 1.
 - Providing a Consistent User Experience and Leveraging the Eventual Consistency Model to Scale to Large Datasets This document discusses achieving strong consistency for a positive user experience, while embracing Datastore’s eventual consistency model for handling large quantities of data and users.
 
+### DatastoreFirestoreMigrationMetadata \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/reference/admin/rest/Shared.Types/DatastoreFirestoreMigrationMetadata](https://docs.cloud.google.com/datastore/docs/reference/admin/rest/Shared.Types/DatastoreFirestoreMigrationMetadata)
+- Source ID: `site-docs-reference`
+- Final score: 291
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This singleton resource can be accessed at: "projects/{projectId}/operations/datastore-firestore-migration" JSON representation { "migrationState" : enum ( MigrationState ) , "migrationStep" : enum ( MigrationStep ) } Fields migrationState enum ( MigrationState ) The current state of migration from Cloud Datastore to Cloud Firestore in Datastore mode. migrationStep enum ( MigrationStep ) The current step of migration from Cloud Datastore to Cloud Firestore in Datastore mode.
+- Home Documentation Databases Datastore Reference Send feedback DatastoreFirestoreMigrationMetadata Stay organized with collections Save and categorize content based on your preferences.
+- The DatastoreFirestoreMigration operation is not started by the end-user via an explicit "creation" method.
+- JSON representation Metadata for Datastore to Firestore migration operations.
+
 ### Composite Index Configuration \_|\_ Datastore \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/datastore/docs/tools/indexconfig](https://docs.cloud.google.com/datastore/docs/tools/indexconfig)
 - Source ID: `site-docs-root`
-- Final score: 218
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 279
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Datastore mode provides built-in indexes automatically, but needs to know in advance which composite indexes the application will require.

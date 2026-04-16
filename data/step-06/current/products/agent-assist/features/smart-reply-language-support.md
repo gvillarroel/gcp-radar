@@ -1,29 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:58:55.444Z"
+generated_at: "2026-04-14T03:50:35.081Z"
 product_name: "Agent Assist"
 product_slug: "agent-assist"
 feature_name: "Smart Reply language support"
 feature_slug: "smart-reply-language-support"
 latest_feature_date: "2022-11-30"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+  - "https://docs.cloud.google.com/agent-assist/docs/faq"
+  - "https://docs.cloud.google.com/agent-assist/docs/ai-coach-best-practices"
 keywords:
-  - "Smart Reply fr-ca"
-  - "additional Smart Reply language"
-  - "Smart Reply locales"
-  - "Smart Reply locale"
-  - "Smart Reply language support"
-  - "fr-CA support"
-  - "French (Canada)"
+  - "addition"
+  - "include"
+  - "french"
+  - "canada"
+  - "reply"
+  - "language"
+  - "expanded"
+  - "smart"
 ---
 
 # Smart Reply language support
 
 Product: Agent Assist
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +36,57 @@ Smart Reply support is expanded to include French (Canada) in addition to Englis
 
 Smart Reply support is expanded to include French (Canada) in addition to English (United States).
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist](https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist)
+- [https://docs.cloud.google.com/agent-assist/docs/faq](https://docs.cloud.google.com/agent-assist/docs/faq)
+- [https://docs.cloud.google.com/agent-assist/docs/ai-coach-best-practices](https://docs.cloud.google.com/agent-assist/docs/ai-coach-best-practices)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Generative knowledge assist \_|\_ Agent Assist \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist](https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 123
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- ParticipantsClient () participant path = client . participant path ( project id , conversation id , participant id ) text input = { "text" : text , "language code" : "en-US" } response = client . analyze content ( participant = participant path , text input = text input ) print ( "AnalyzeContent Response:" ) print ( f "Reply Text: { response . reply text } " ) for suggestion result in response . human agent suggestion results : if suggestion result . error is not None : print ( f "Error: { suggestion result . error . message } " ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f "Article Suggestion Answer: { answer . title } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f "Faq Answer: { answer . answer } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f "Smart Reply: { answer . reply } " ) print ( f "Answer Record: { answer . answer record } " ) for suggestion result in response . end user suggestion results : if suggestion result . error : print ( f "Error: { suggestion result . error . message } " ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f "Article Suggestion Answer: { answer . title } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f "Faq Answer: { answer . answer } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f "Smart Reply: { answer . reply } " ) print ( f "Answer Record: { answer . answer record } " ) return response Add a message from the user for suggestions In response to the agent, the user says "When can I get my return refund?" This time, the API response contains a suggested query and the generative AI answer based on the knowledge documents.
+- ParticipantsClient () participant path = client . participant path ( project id , conversation id , participant id ) text input = { "text" : text , "language code" : "en-US" } response = client . analyze content ( participant = participant path , text input = text input ) print ( "AnalyzeContent Response:" ) print ( f "Reply Text: { response . reply text } " ) for suggestion result in response . human agent suggestion results : if suggestion result . error is not None : print ( f "Error: { suggestion result . error . message } " ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f "Article Suggestion Answer: { answer . title } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f "Faq Answer: { answer . answer } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f "Smart Reply: { answer . reply } " ) print ( f "Answer Record: { answer . answer record } " ) for suggestion result in response . end user suggestion results : if suggestion result . error : print ( f "Error: { suggestion result . error . message } " ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f "Article Suggestion Answer: { answer . title } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f "Faq Answer: { answer . answer } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f "Smart Reply: { answer . reply } " ) print ( f "Answer Record: { answer . answer record } " ) return response Complete the conversation When the conversation ends, use the API to complete the conversation.
+- You can also use the following configurations as part of your SearchKnowledge request: querySource : Set this field to indicate whether an agent typed the query or proactive generative knowledge assist automatically suggested it. exactSearch : Set this field to indicate whether to search the exact input query without query rewrite. endUserMetadata : Set this field to include additional information about the end user that improves the generated answer.
+- The refund amount should be for the full value of the items returned, but doesn't include shipping & service fees.", "generativeSource": { "snippets": [ { "title": "Returns & refunds - Help", "uri": "https://example.com/", "text": "When the package with your return arrives at the seller's return center, it may take up to 7 additional business days to process.
+
+### FAQ assist \_|\_ Agent Assist \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/agent-assist/docs/faq](https://docs.cloud.google.com/agent-assist/docs/faq)
+- Source ID: `site-docs-root`
+- Final score: 99
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- ParticipantsClient () participant path = client . participant path ( project id , conversation id , participant id ) text input = { "text" : text , "language code" : "en-US" } response = client . analyze content ( participant = participant path , text input = text input ) print ( "AnalyzeContent Response:" ) print ( f "Reply Text: { response . reply text } " ) for suggestion result in response . human agent suggestion results : if suggestion result . error is not None : print ( f "Error: { suggestion result . error . message } " ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f "Article Suggestion Answer: { answer . title } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f "Faq Answer: { answer . answer } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f "Smart Reply: { answer . reply } " ) print ( f "Answer Record: { answer . answer record } " ) for suggestion result in response . end user suggestion results : if suggestion result . error : print ( f "Error: { suggestion result . error . message } " ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f "Article Suggestion Answer: { answer . title } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f "Faq Answer: { answer . answer } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f "Smart Reply: { answer . reply } " ) print ( f "Answer Record: { answer . answer record } " ) return response Add a message from the end-user and get suggestions In response to the agent, the end-user asks "How do I sign up?".
+- ParticipantsClient () participant path = client . participant path ( project id , conversation id , participant id ) text input = { "text" : text , "language code" : "en-US" } response = client . analyze content ( participant = participant path , text input = text input ) print ( "AnalyzeContent Response:" ) print ( f "Reply Text: { response . reply text } " ) for suggestion result in response . human agent suggestion results : if suggestion result . error is not None : print ( f "Error: { suggestion result . error . message } " ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f "Article Suggestion Answer: { answer . title } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f "Faq Answer: { answer . answer } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f "Smart Reply: { answer . reply } " ) print ( f "Answer Record: { answer . answer record } " ) for suggestion result in response . end user suggestion results : if suggestion result . error : print ( f "Error: { suggestion result . error . message } " ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f "Article Suggestion Answer: { answer . title } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f "Faq Answer: { answer . answer } " ) print ( f "Answer Record: { answer . answer record } " ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f "Smart Reply: { answer . reply } " ) print ( f "Answer Record: { answer . answer record } " ) return response Complete the conversation When the conversation ends, use the API to complete the conversation.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /conversations/ CONVERSATION ID /participants/ PARTICIPANT ID :analyzeContent" Select-Object -Expand Content You should receive a JSON response similar to the following: { "message": { "name": "projects/ PROJECT ID /conversations/fiiJBeHnQIa6Zx DUKNlEg/messages/Rjv8ErKYS yIqVR9SW4CpA", "content": "How may I help you?", "languageCode": "en-US", "participant": "PaZQyeiTQgCOyliHkZjs0Q", "participantRole": "HUMAN AGENT", "createTime": "1970-01-01T00:00:00Z" }, "humanAgentSuggestionResults": [ { "suggestFaqAnswersResponse": { "faqAnswers": [ { "answer": "Sign up for Cloud Storage by turning on the Cloud Storage service in the Google Cloud Platform Console.", "confidence": 0.07266401, "question": "How do I sign up?", "source": "projects/ PROJECT ID /knowledgeBases/NjQ2MzI1MDQwNTQ2MjYzODU5Mg/documents/NTMxOTA4MTAxMzQxMjg4ODU3Ng", "metadata": { "document display name": "my-document-display-name" }, "answerRecord": "projects/ PROJECT ID /answerRecords/MTU0MzE0NDQwOTAwNzEyODU3NjA" }, { "answer": "Consider storing your data in a multi-regional or dual-regional bucket location if high availability is a top requirement.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /conversations/ CONVERSATION ID /participants/ PARTICIPANT ID :analyzeContent" Select-Object -Expand Content You should receive a JSON response similar to the following: { "message": { "name": "projects/ PROJECT ID /conversations/ CONVERSATION ID /messages/ MESSAGE ID ", "content": "How may I help you?", "languageCode": "en-US", "participant": " PARTICIPANT ID ", "participantRole": "HUMAN AGENT", "createTime": "2020-02-13T00:01:30.683Z" }, "humanAgentSuggestionResults": [ { "suggestArticlesResponse": { "latestMessage": "projects/ PROJECT ID /conversations/ CONVERSATION ID /messages/ MESSAGE ID ", "contextSize": 1 } } ] } } ] } Python To authenticate to Agent Assist, set up Application Default Credentials.
+
+### AI coach: Best practices \_|\_ Agent Assist \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/agent-assist/docs/ai-coach-best-practices](https://docs.cloud.google.com/agent-assist/docs/ai-coach-best-practices)
+- Source ID: `site-docs-reference`
+- Final score: 94
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The following detailed example illustrates how lightweight examples (highlighted) can be used: display title: smartwatch recommendation display detail: see Smartwatch Catalog for a relevant smartwatch condition: the customer recently purchased phones agent action: recommend a specific smartwatch from the section titled "Smartwatch Catalog"; the recommendation should match the recently purchased phones from the section titled "Recent Purchases".
+- To optimize the feature's performance, ensure your AI coach generator configuration includes the following details: Clear instructions Defined tool structure Overarching guidance Define the function tool A tool definition specifies the set of instructions for the data to be extracted.
+- Key takeaways from the interaction include the following: Intent detection : In turn 1, AI coach immediately identifies the customer's goal: update address.
+- Each of these fields will include a DuplicateCheckResult message to provide information about potential duplicates found in the history.
 

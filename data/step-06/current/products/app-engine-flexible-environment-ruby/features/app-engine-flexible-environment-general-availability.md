@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:48:27.807Z"
+generated_at: "2026-04-12T20:50:31.512Z"
 product_name: "App Engine flexible environment Ruby"
 product_slug: "app-engine-flexible-environment-ruby"
 feature_name: "App Engine flexible environment general availability"
 feature_slug: "app-engine-flexible-environment-general-availability"
 latest_feature_date: "2017-03-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml"
-  - "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
-  - "https://docs.cloud.google.com/appengine/docs/flexible/configuration-files"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/cloud-profiler"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/configuring-your-app-with-app-yaml"
 keywords:
-  - "99.95% SLA"
-  - "Node.js runtime"
-  - "GA launch"
-  - "General Availability announcement"
-  - "App Engine flexible environment GA"
-  - "GA"
-  - "Python runtime"
-  - "Java runtime"
+  - "app"
+  - "engine"
+  - "flexible"
+  - "environment"
+  - "availability"
+  - "reached"
+  - "99"
+  - "95"
 ---
 
 # App Engine flexible environment general availability
 
 Product: App Engine flexible environment Ruby
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,57 +34,56 @@ App Engine flexible environment reached general availability with a 99.95% SLA a
 
 ## Extended Definition
 
-The provided excerpts do not explicitly document a standalone “App Engine flexible environment GA” announcement; they describe operational documentation for App Engine Flexible Environment, including app.yaml configuration options (health checks, networking, skipped files) and runtime-specific guidance patterns (notably Python and Java references). The authentication page adds context on user identity options for flexible apps but ties the cited 99.95% SLA to Identity Platform features, not directly to a flexible-environment GA milestone.
+App Engine flexible environment reached general availability with a 99.95% SLA and support for Node.js, Ruby, Python, Java, and Go runtimes.
 
 ## Evidence Summary
 
-These official pages provide flexible environment configuration and authentication documentation, but they do not provide direct evidence confirming the GA launch date, exact supported runtime set, or a GA SLA claim for App Engine flexible environment.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml](https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml)
-- [https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users](https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users)
-- [https://docs.cloud.google.com/appengine/docs/flexible/configuration-files](https://docs.cloud.google.com/appengine/docs/flexible/configuration-files)
+- [https://docs.cloud.google.com/appengine/docs/flexible/cloud-profiler](https://docs.cloud.google.com/appengine/docs/flexible/cloud-profiler)
+- [https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled)
+- [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/configuring-your-app-with-app-yaml](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/configuring-your-app-with-app-yaml)
 
 ## Supporting Pages
 
-### "app.yaml Configuration File \_|\_ App Engine flexible environment \_|\_\
+### "Understand performance with Cloud Profiler \_|\_ App Engine flexible environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml](https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml)
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/cloud-profiler](https://docs.cloud.google.com/appengine/docs/flexible/cloud-profiler)
 - Source ID: `site-docs-reference`
-- Final score: 46
-- Re-rank relevance: WEAK
-- Re-rank rationale: The page is a generic app.yaml reference for App Engine flexible environment and mentions runtimes (including Ruby), but it does not discuss GA status, SLA, or formal launch availability.
+- Final score: 74
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Note that this value must be greater than timeout sec. failure threshold 4 checks 1-10 An instance is unhealthy after failing this number of consecutive checks. success threshold 2 checks 1-10 An unhealthy instance becomes healthy again after successfully responding to this number of consecutive checks. initial delay sec 300 seconds 0-3600 The delay, in seconds, after the instance starts during which health check responses are ignored.
-- For example, if you want to forward TCP traffic from port 2222 : In the network settings of your app.yaml , include: network : forwarded ports : - 2222/tcp If you use the Python runtime, modify the app.yaml to include: entrypoint: gunicorn -b :$PORT -b :2222 main:app Specify a firewall rule in the Google Cloud console or using gcloud compute firewall-rules create to allow traffic from any source ( 0.0.0.0/0 ) and from tcp:2222 .
-- For example, to skip files whose names end in .bak , add a skip files section like the following: skip files : - ^. \.bak$ Runtime-specific settings See the Python runtime page to learn more about specifying a Python interpreter using the runtime config settings.
-- Home Documentation Application hosting App Engine Flexible environment Reference Send feedback app.yaml Configuration File Stay organized with collections Save and categorize content based on your preferences.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Understand performance with Cloud Profiler Stay organized with collections Save and categorize content based on your preferences.
 
-### "Authenticating users \_|\_ App Engine flexible environment \_|\_ Google\
+### "How requests are handled \_|\_ App Engine flexible environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users](https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users)
-- Source ID: `site-docs-root`
-- Final score: 34
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled)
+- Source ID: `site-docs-reference`
+- Final score: 62
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Identity Platform Identity Platform is a customer identity and access management (CIAM) platform that lets organizations customize identity and authentication for user sign-up and sign-in in their applications.
-- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
-- The recommended method when starting a new project, so you can use the capabilities of Identity Platform as well as the legacy features from Firebase Authentication .
-- It offers enterprise features including multi-factor authentication, OIDC and SAML SSO support, multi-tenancy, 99.95% SLA, and more.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How requests are handled Stay organized with collections Save and categorize content based on your preferences.
+- Unsupported HTTP requests The following features are not supported by App Engine flexible environment: HTTP/2 traffic to the backend service.
+- When deploying to Google App Engine, a webserver process such as Gunicorn will serve the app. app . run ( host = "127.0.0.1" , port = 8080 , debug = True ) Quotas and limits App Engine automatically allocates resources to your application as traffic increases.
+- However, this is bound by the following restrictions: App Engine reserves automatic scaling capacity for applications with low latency, where the application responds to requests in less than one second.
 
-### "Structuring web services in App Engine \_|\_ App Engine flexible environment\
+### "Configuring your app with app.yaml \_|\_ App Engine flexible environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/configuration-files](https://docs.cloud.google.com/appengine/docs/flexible/configuration-files)
-- Source ID: `site-docs-root`
-- Final score: 34
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/configuring-your-app-with-app-yaml](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/configuring-your-app-with-app-yaml)
+- Source ID: `site-docs-reference`
+- Final score: 58
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Note: For the Java runtime, the file organization depends on which Java runtime you are using.
-- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Structuring web services in App Engine Stay organized with collections Save and categorize content based on your preferences.
-- For the Java runtime , configuration files are in the YAML format.
-- See the appropriate Java runtime developer guide for details.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Configuring your app with app.yaml Stay organized with collections Save and categorize content based on your preferences.
+- The following example demonstrates what a simple Custom Runtime app might require in the flexible environment: You can specify a unique name for your app.yaml files, but then you must specify the file name with the deployment command as well.
+- An App Engine app is configured using an app.yaml file, that contains CPU, memory, network and disk resources, scaling, and other general settings including environment variables.
+- For example, if you name your app.yaml file service-name-app.yaml or app.flexible.yaml , then you must deploy your app using either: gcloud app deploy service-name-app.yaml gcloud app deploy app.flexible.yaml All configuration elements For a complete list of all the supported elements in this configuration file, see the app.yaml reference .
 

@@ -1,0 +1,128 @@
+---
+title: "CAPACITY_COMMITMENTS view \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/bigquery/docs/information-schema-capacity-commitments
+knowledge_key: corpus
+source_id: site-api-reference-required-3
+source_type: site
+entrypoint: https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest
+source_metadata:
+  url: https://docs.cloud.google.com/bigquery/docs/information-schema-capacity-commitments
+  title: "CAPACITY_COMMITMENTS view \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Data analytics
+BigQuery
+Reference
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+CAPACITY_COMMITMENTS view
+The INFORMATION_SCHEMA.CAPACITY_COMMITMENTS view contains a near real-time
+list of all current capacity commitments within the administration project. Each
+row represents a single, current capacity commitment. A current capacity
+commitment is either pending or active and has not been deleted. For more
+information about reservation, see Slot commitments .
+Note: The view names INFORMATION_SCHEMA.CAPACITY_COMMITMENTS and
+INFORMATION_SCHEMA.CAPACITY_COMMITMENTS_BY_PROJECT are synonymous and can be
+used interchangeably.
+Required permission
+To query the INFORMATION_SCHEMA.CAPACITY_COMMITMENTS view,
+you need the bigquery.capacityCommitments.list Identity and Access Management (IAM)
+permission for the project.
+Each of the following predefined IAM roles includes the required
+permission:
+roles/bigquery.resourceAdmin
+roles/bigquery.resourceEditor
+roles/bigquery.resourceViewer
+roles/bigquery.user
+roles/bigquery.admin
+For more information about BigQuery permissions, see
+Access control with IAM
+Schema
+The INFORMATION_SCHEMA.CAPACITY_COMMITMENTS view has the
+following schema:
+Column name
+Data type
+Value
+ddl
+STRING
+The DDL statement used to create this capacity commitment.
+project_id
+STRING
+ID of the administration project.
+project_number
+INTEGER
+Number of the administration project.
+capacity_commitment_id
+STRING
+ID that uniquely identifies the capacity commitment.
+commitment_plan
+STRING
+Commitment plan of the capacity commitment.
+state
+STRING
+State the capacity commitment is in. Can be PENDING or
+ACTIVE .
+slot_count
+INTEGER
+Slot count associated with the capacity commitment.
+edition
+STRING
+The edition associated with this reservation. For more information about editions, see Introduction to BigQuery editions .
+is_flat_rate
+BOOL
+Whether the commitment is associated with the legacy flat-rate capacity model or an edition. If FALSE , the current commitment is associated with an edition. If TRUE , the commitment is the legacy flat-rate capacity model.
+renewal_plan
+STRING
+New commitment plan after the end of current commitment plan. You can change the renewal plan for a commitment at any time until it expires.
+For stability, we recommend that you explicitly list columns in your information schema queries instead of
+using a wildcard ( SELECT * ). Explicitly listing columns prevents queries from
+breaking if the underlying schema changes.
+Scope and syntax
+Queries against this view must include a region qualifier .
+If you don't specify a regional qualifier, metadata is retrieved from all
+regions. The following table explains the region scope for this view:
+View name
+Resource scope
+Region scope
+[ PROJECT_ID .]`region- REGION `.INFORMATION_SCHEMA.CAPACITY_COMMITMENTS[_BY_PROJECT]
+Project level
+REGION
+Replace the following:
+Optional: PROJECT_ID : the ID of your
+Google Cloud project. If not specified, the default project is used.
+REGION : any dataset region name .
+For example, `region-us` .
+Note: You must use a region qualifier
+to query INFORMATION_SCHEMA views. The location of the query
+execution must match the region of the INFORMATION_SCHEMA view.
+Example
+The following example returns a list of active capacity commitments for the
+current project:
+SELECT
+capacity_commitment_id ,
+slot_count
+FROM
+`region-us` . INFORMATION_SCHEMA . CAPACITY_COMMITMENTS
+WHERE
+state = 'ACTIVE' ;
+The result is similar to the following:
++------------------------+------------+
+| capacity_commitment_id | slot_count |
++------------------------+------------+
+| my_commitment_05 | 1000 |
+| my_commitment_06 | 1000 |
+| my_commitment_07 | 1500 |
+| my_commitment_08 | 2000 |
++------------------------+------------+
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-14 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

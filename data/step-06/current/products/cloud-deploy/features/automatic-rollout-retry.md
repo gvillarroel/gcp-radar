@@ -1,0 +1,92 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T12:48:42.664Z"
+product_name: "Cloud Deploy"
+product_slug: "cloud-deploy"
+feature_name: "Automatic rollout retry"
+feature_slug: "automatic-rollout-retry"
+latest_feature_date: "2024-10-16"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/deploy/docs/deployment-strategies/manage-rollout"
+  - "https://docs.cloud.google.com/deploy/docs/automation-rules"
+  - "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types"
+keywords:
+  - "automatic"
+  - "rollout"
+  - "retry"
+  - "re"
+  - "attempts"
+  - "failed"
+  - "rollouts"
+  - "without"
+---
+
+# Automatic rollout retry
+
+Product: Cloud Deploy
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Automatic rollout retry re-attempts failed rollouts without manual intervention.
+
+## Extended Definition
+
+Automatic rollout retry re-attempts failed rollouts without manual intervention.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/deploy/docs/deployment-strategies/manage-rollout](https://docs.cloud.google.com/deploy/docs/deployment-strategies/manage-rollout)
+- [https://docs.cloud.google.com/deploy/docs/automation-rules](https://docs.cloud.google.com/deploy/docs/automation-rules)
+- [https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types](https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types)
+
+## Supporting Pages
+
+### Manage rollouts \_|\_ Cloud Deploy \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/deploy/docs/deployment-strategies/manage-rollout](https://docs.cloud.google.com/deploy/docs/deployment-strategies/manage-rollout)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- SUCCEEDED When a job run finishes successfully, without failing or being terminated by a user, it's put into a SUCCEEDED state, which Manage your rollout Using the Google Cloud console or the Google Cloud SDK, you can do the following with a Cloud Deploy rollout: Advance the rollout Cancel the rollout Terminate a job run Ignore a job Retry a failed job If you're using parallel deployment with a canary deployment strategy, see how to manage parallel canary rollouts .
+- After you terminate a job run, the job is considered failed and you can do any of the following: Leave it that way and disregard the failed rollout Retry the job Ignore the job and continue with the next job or phase in the rollout Note: When you're using a parallel deployment , you can terminate job runs on child rollouts only—not controller rollouts.
+- To retry a failed job: gcloud gcloud deploy rollouts retry - job JOB NAME \ -- release = RELEASE NAME \ -- delivery - pipeline = PIPELINE NAME \ -- rollout = ROLLOUT NAME \ -- phase = PHASE ID \ -- region = REGION Where: JOB NAME is the name of the job that you're retrying.
+- You can resume a halted controller rollout by doing any of the following: Cancel the controller rollout Retry or ignore any failed jobs on child rollouts IN PROGRESS A job run is processing.
+
+### Using automation rules \_|\_ Cloud Deploy \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/deploy/docs/automation-rules](https://docs.cloud.google.com/deploy/docs/automation-rules)
+- Source ID: `site-docs-reference-2`
+- Final score: 157
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Abort a repairRolloutRule automation run If you run any of the following commands on your rollout, the repairRolloutRule automation is aborted: Retry job Cancel rollout Ignore job Terminate job run Example The following is an example of an automation configuration with a repairRolloutRule : apiVersion : deploy.cloud.google.com/v1 kind : Automation metadata : name : regular-repair/regular description : repair regular rollouts suspended : false serviceAccount : (REDACTED) selector : targets : - id : t1 rules : - repairRolloutRule : id : "repair-rollout" repairPhases : - retry : attempts : 3 wait : 1m backoffMode : LINEAR - rollback : destinationPhase : "stable" In this automation, if a rollout fails on the identified target, that rollout is retried up to 3 times, with a one-minute wait between retry attempt.
+- Available automation rules The following automation rules are available in Cloud Deploy: Rule Description timedPromoteReleaseRule Automatically promote from one target to the next based on a cron schedule. promoteReleaseRule Automatically promotes a release into the indicated target after successful rollout in the previous target in the progression. advanceRolloutRule Automatically advances a rollout from the indicated phase to the next phase. repairRolloutRule Automatically retry the failed job or jobs in the rollout a specified number of times, and roll back if all retries fail.
+- For example, if WAIT TIME is 1m, and backoffMode is set to EXPONENTIAL , then the time between the failure and the first retry is 1 minute, the time between the first and second retries is 2 minutes, and the time between the second and third retries is 4 minutes. rollback Optional, whether or not to roll back the failed rollout after all retry attempts are exhausted. [PHASE NAME] Is the name of a specific phase you want to roll back to.
+- This is optional, and the default is all jobs. [NUMBER OF ATTEMPTS] Optional, the number of times to retry the rollout before considering it failed. [WAIT TIME] Is the amount of time to wait between retry attempts.
+
+### "Package types (2.10.0) \_|\_ Python client libraries \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types](https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types)
+- Source ID: `site-python-reference`
+- Final score: 149
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- RepairRolloutRule The RepairRolloutRule automation rule will automatically repair a failed Rollout .
+- Setting any member of the oneof automatically clears all other members. .. oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields RepairRolloutOperation Contains the information for an automated repair rollout operation.
+- ChildRolloutJobs ChildRollouts job composition CloudRunConfig CloudRunConfig contains the Cloud Run runtime configuration.
+- AdvanceRolloutRule The AdvanceRollout automation rule will automatically advance a successful Rollout to the next phase.
+

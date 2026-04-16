@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.089Z"
+generated_at: "2026-04-12T12:11:20.311Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer default DAG serialization settings"
 feature_slug: "cloud-composer-default-dag-serialization-settings"
 latest_feature_date: "2019-10-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/composer-2/override-airflow-configurations"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac"
   - "https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database"
 keywords:
   - "composer"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer default DAG serialization settings
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Cloud Composer added default Airflow configuration values and environment variab
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization](https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/composer-2/override-airflow-configurations](https://docs.cloud.google.com/composer/docs/composer-2/override-airflow-configurations)
+- [https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac](https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac)
 - [https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database](https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization](https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization)
 - Source ID: `site-iam-reference`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 260
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To enable DAG serialization, override the following Airflow configuration options: Section Key Value core store serialized dags True core store dag code True core min serialized dag update interval 30 scheduler dag dir list interval 30 The min serialized dag update interval Airflow configuration option controls how frequently serialized DAGs are updated in the database.
@@ -62,24 +64,38 @@ Evidence snippets:
 - You can enable and disable DAG serialization in new and existing environments by overriding Airflow configuration options , as described in the following sections.
 - The DAG serialization and storing DAG code in Airflow Metadata Database is by default turned on in Airflow 2.x and you cannot switch it on or off.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### "Override Airflow configuration options \_|\_ Cloud Composer \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- URL: [https://docs.cloud.google.com/composer/docs/composer-2/override-airflow-configurations](https://docs.cloud.google.com/composer/docs/composer-2/override-airflow-configurations)
 - Source ID: `site-docs-root`
-- Final score: 190
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following example overrides two specific Airflow configuration options: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.softwareConfig.airflowConfigOverrides.webserver-dag default view, // config.softwareConfig.airflowConfigOverrides.webserver-dag orientation { "config" : { "softwareConfig" : { "airflowConfigOverrides" : { "webserver-dag default view" : "graph" , "webserver-dag orientation" : "RL" } } } } Terraform The airflow config overrides block in the software config block controls overrides of Airflow configuration options for your environment: resource "google composer environment" "example" { config { ...
+- For example: gcloud composer environments update example-environment \ --location us-central1 \ --update-airflow-configs = webserver-dag default view = graph,webserver-dag orientation = RL API To override Airflow configuration options for an existing environment: Construct an environments.patch API request.
+- For example: Section Key Value webserver dag orientation RL gcloud Following arguments override Airflow configuration options for an existing environment: --update-airflow-configs adds or changes specified Airflow configuration overrides. --remove-airflow-configs removes specified Airflow configuration overrides. --clear-airflow-configs removes all Airflow configuration overrides. gcloud composer environments update ENVIRONMENT NAME \ --location LOCATION \ --update-airflow-configs = KEY = VALUE,KEY = VALUE,...
+- Other environment configuration parameters config { software config { airflow config overrides = { webserver-dag default view = "graph" webserver-dag orientation = "RL" } } } } What's next Blocked Airflow configurations Update environments Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Using Airflow UI Access Control \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac](https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac)
+- Source ID: `site-iam-reference`
+- Final score: 229
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Change New versions of Cloud Composer images: composer-1.15.0-airflow-1.10.14 composer-1.15.0-airflow-1.10.12 (default) composer-1.15.0-airflow-1.10.10 Change When creating new environments, enabling asynchronous DAG loading disables DAG serialization.
-- Added default Airflow config and environment variables for DAG serialization.
-- Change (Airflow 1.10.15) Upgraded apache-beam and google provider packages to version 2022.6.1: Support impersonation chain parameter for Dataflow runner in Apache Beam operators Added missing project id parameter for wait for job method in the Dataflow operators Added key secret project id parameter which specifies a project with KeyFile Change Cloud Composer 1.18.12 and 2.0.16 images are available: composer-1.18.12-airflow-1.10.15 (default) composer-1.18.12-airflow-2.1.4 composer-1.18.12-airflow-2.2.5 composer-2.0.16-airflow-2.1.4 composer-2.0.16-airflow-2.2.5 June 01, 2022 Feature Web server restarting is available in Preview in Cloud Composer 2.
-- Change Cloud Composer 1.18.11 and 2.0.15 images are available: composer-1.18.11-airflow-1.10.15 (default) composer-1.18.11-airflow-2.1.4 composer-1.18.11-airflow-2.2.5 composer-2.0.15-airflow-2.1.4 composer-2.0.15-airflow-2.2.5 May 26, 2022 Deprecated (Airflow 2) If your DAGs use the google-ads package version 14.0.0 or earlier, please upgrade your environment to Cloud Composer version 2.0.14 so that your environment uses Google Ads API v10 .
+- In Airflow 2 and 3, override the following Airflow configuration option: Section Key Value webserver rbac user registration role UserNoDags In Airflow 1, override the following Airflow configuration option: Section Key Value webserver rbac user registration role NoDags Make sure that users are registered in Airflow .
+- What's next Override Airflow configuration options Security overview Cloud Composer access control Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Auto-assign DAGs to per-folder roles To auto-assign DAGs to per-folder roles: Override the following Airflow configuration option: Section Key Value webserver rbac autoregister per folder roles True Change the new user registration role to a role without access to any DAGs.
+- Overview of Airflow UI access control in Cloud Composer Access to Airflow UI and DAG UI and visibility of data and operations in those UIs is controlled at two levels in Cloud Composer: Access to the Airflow UI and DAG UI in Cloud Composer is controlled by IAM .
 
 ### Clean up the Airflow database \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database](https://docs.cloud.google.com/composer/docs/composer-1/cleanup-airflow-database)
 - Source ID: `site-iam-reference`
-- Final score: 186
+- Final score: 229
 - Re-rank relevance: N/A
 
 Evidence snippets:

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:18.325Z"
+generated_at: "2026-04-15T12:09:42.695Z"
 product_name: "Error Reporting"
 product_slug: "error-reporting"
 feature_name: "Ruby support"
@@ -9,9 +9,9 @@ latest_feature_date: "2016-09-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1"
-  - "https://googleapis.dev/python/clouderroreporting/latest/usage.html"
-  - "https://googleapis.dev/python/clouderrorreporting/latest"
+  - "https://docs.cloud.google.com/error-reporting/docs/setup/ruby"
+  - "https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine"
+  - "https://docs.cloud.google.com/error-reporting/docs/setup/ec2"
 keywords:
   - "ruby"
   - "error"
@@ -40,43 +40,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1](https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1)
-- [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
-- [https://googleapis.dev/python/clouderrorreporting/latest](https://googleapis.dev/python/clouderrorreporting/latest)
+- [https://docs.cloud.google.com/error-reporting/docs/setup/ruby](https://docs.cloud.google.com/error-reporting/docs/setup/ruby)
+- [https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine](https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine)
+- [https://docs.cloud.google.com/error-reporting/docs/setup/ec2](https://docs.cloud.google.com/error-reporting/docs/setup/ec2)
 
 ## Supporting Pages
 
-### Error Reporting API v1beta1 - Package cloud.google.com/go/errorreporting/apiv1beta1 (v0.4.0) | Go client libraries | Google Cloud Documentation
+### Instrument Ruby apps for Error Reporting \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1](https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1)
-- Source ID: `site-api-reference`
-- Final score: 127
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Error Reporting API v1beta1 - Package cloud.google.com/go/errorreporting/apiv1beta1 (v0.4.0) Go client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1 Package errorreporting is an auto-generated package for the Error Reporting API.
-- Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors.
-
-### Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation
-
-- URL: [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
-- Source ID: `site-python-reference`
-- Final score: 122
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/error-reporting/docs/setup/ruby](https://docs.cloud.google.com/error-reporting/docs/setup/ruby)
+- Source ID: `site-docs-root`
+- Final score: 101
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation Source URL: https://googleapis.dev/python/clouderroreporting/latest/usage.html Errors can also be reported to Stackdriver Error Reporting outside the context of an exception.
-- The library will include the file path, function name, and line number of the location where the error was reported. from google.cloud import error reporting client = error reporting.Client() client.report(&quot;Found an error!&quot;)
+- To enable Error Reporting in development mode, add the following: Add this to config/environments/development.rb Rails . application . configure do config config . google cloud . use error reporting = true end Using instrumentation configuration interface To use the Error Reporting library for Ruby in other Rack-based applications, provide the parameters through the configuration interface: require "google/cloud/error reporting" Google :: Cloud . configure do config Stackdriver Error Reporting specific parameters config . error reporting . project id = "YOUR-PROJECT-ID" config . error reporting . keyfile = "/path/to/service-account.json" end You can also set shared configuration for all Google Cloud Observability gems using the following: require "stackdriver" Google :: Cloud . configure do config Stackdriver Shared parameters config . project id = "YOUR-PROJECT-ID" config . keyfile = "/path/to/service-account.json" end App Engine flexible environment App Engine grants the Error Reporting Writer role ( roles/errorreporting.writer ) to your default service account automatically.
+- To enable Error Reporting in development mode, add the following: Add this to config/environments/development.rb Rails . application . configure do config config . google cloud . use error reporting = true end Using instrumentation configuration interface To use the Error Reporting library for Ruby in other Rack-based applications, provide the parameters through the configuration interface: require "google/cloud/error reporting" Google :: Cloud . configure do config Stackdriver Error Reporting specific parameters config . error reporting . project id = "YOUR-PROJECT-ID" config . error reporting . keyfile = "/path/to/service-account.json" end You can also set shared configuration for all Google Cloud Observability gems using the following: require "stackdriver" Google :: Cloud . configure do config Stackdriver Shared parameters config . project id = "YOUR-PROJECT-ID" config . keyfile = "/path/to/service-account.json" end View error groups In the Google Cloud console, go to the Error Reporting page: Go to Error Reporting You can also find this page by using the search bar.
+- Other Rack-based applications can use the Rack Middleware provided by the library: require "google/cloud/error reporting" use Google :: Cloud :: ErrorReporting :: Middleware For more information on installation, read the documentation for the Error Reporting library for Ruby.
+- Install the client library The Error Reporting library for Ruby lets you monitor and view error events reported by Ruby applications running nearly anywhere.
 
-### Python Client for Error Reporting API — google-cloud-error-reporting documentation
+### Setting up Error Reporting on Amazon EC2 \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/clouderrorreporting/latest](https://googleapis.dev/python/clouderrorreporting/latest)
-- Source ID: `site-python-reference`
-- Final score: 118
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/error-reporting/docs/setup/ec2](https://docs.cloud.google.com/error-reporting/docs/setup/ec2)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 49
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Python Client for Error Reporting API — google-cloud-error-reporting documentation Source URL: https://googleapis.dev/python/clouderrorreporting/latest Error Reporting API: counts, analyzes and aggregates the crashes in your running cloud services.
-- A centralized error management interface displays the results with sorting and filtering capabilities.
-- A dedicated view shows the error details: time chart, occurrences, affected user count, first ...
+- Using client libraries Libraries exist in a limited number of languages to help you call the Error Reporting API from your application: ASP.NET Go Java Node.js Ruby Python PHP Samples ASP.NET The ASP.NET NuGet package reports uncaught exceptions from ASP.NET web applications to Error Reporting.
+- Using Logging to report errors To connect your EC2 applications to Error Reporting, send your exceptions or other errors to Logging.
+- You can send errors from your EC2 applications to Error Reporting in one of two ways: By logging to Cloud Logging .
+- Ruby See Setting up Error Reporting for Ruby .
+
+### Setting up on Compute Engine \_|\_ Error Reporting \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine](https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 49
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Using client libraries Libraries exist in a limited number of languages to help you call the Error Reporting API from your application: ASP.NET Go Java Node.js Ruby Python PHP Samples ASP.NET The ASP.NET NuGet package reports uncaught exceptions from ASP.NET web applications to Error Reporting.
+- Using Logging to report errors To connect your Compute Engine applications to Error Reporting, send your exceptions or other errors to Logging.
+- You can send errors from your Compute Engine applications to Error Reporting in one of two ways: By logging to Cloud Logging .
+- Ruby See Setting up Error Reporting for Ruby .
 

@@ -5,7 +5,7 @@ url: https://developers.google.com/maps/documentation/navigation/android-sdk/con
 knowledge_key: corpus
 source_id: site-docs-root-2
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/navigation/android-sdk
+entrypoint: https://developers.google.com/maps/documentation/navigation/android-sdk/overview
 source_metadata:
   url: https://developers.google.com/maps/documentation/navigation/android-sdk/controls
   title: "Modify the navigation UI \_|\_ Navigation SDK for Android \_|\_ Google for\
@@ -521,8 +521,10 @@ for each feature independently.
 Note: Traffic lights may also appear on the map during non-navigation modes. The
 option to configure the display of traffic lights by using DisplayOptions only
 affects traffic lights in active navigation mode.
+The following example shows hiding traffic lights and stop signs:
 DisplayOptions displayOptions =
 new DisplayOptions (). showTrafficLights ( true ). showStopSigns ( true );
+The showTrafficLights(boolean) and showStopSigns(boolean) methods are deprecated and will be removed in the next major release, and traffic lights and stop signs will be displayed by default.
 Add custom markers
 Navigation SDK for Android now uses Google Maps APIs for markers. Go to the
 Maps API documentation
@@ -666,7 +668,7 @@ the compass is hidden to avoid UI conflicts.
 The compass supports day and night modes, as well as dark mode.
 The compass is enabled by default. You can set whether the compass is enabled
 using the
-comapassEnabled
+compassEnabled
 method on the GoogleMapOptions class.
 Turn off 3D buildings
 For performance-constrained devices, you can turn off the display of 3D
@@ -683,6 +685,6 @@ API
 section of the Configure real-time-disruptions page.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-02-18 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-18 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

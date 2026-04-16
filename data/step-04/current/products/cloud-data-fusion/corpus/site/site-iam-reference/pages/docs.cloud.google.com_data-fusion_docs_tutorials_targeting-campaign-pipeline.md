@@ -125,13 +125,13 @@ Create an instance
 Click the name of your instance.
 Make a note of the default Dataproc Service Account . The instance
 details page contains this information.
-The following is the format of the Dataproc service account
+The following is the format of the Managed Service for Apache Spark service account
 name:
 CUSTOMER_PROJECT_NUMBER -compute@developer.gserviceaccount.com .
-Learn more about Dataproc service accounts .
+Learn more about Managed Service for Apache Spark service accounts .
 Go to the IAM page:
 Go to the Roles page
-In the Filter bar, enter the name of your default Dataproc
+In the Filter bar, enter the name of your default Managed Service for Apache Spark
 service account.
 For your default Compute Engine service account, click
 edit Edit .
@@ -209,7 +209,7 @@ data. You can now create a batch pipeline to run transformations on your entire
 dataset.
 Cloud Data Fusion translates the pipeline that you build in the Studio
 into an Apache Spark program that executes transformations in
-parallel on an ephemeral Dataproc cluster. This process lets you
+parallel on an ephemeral Managed Service for Apache Spark cluster. This process lets you
 execute complex transformations over vast quantities of data in a scalable,
 reliable manner, without having to handle the infrastructure.
 On the Wrangler page, click Create a pipeline .
@@ -355,6 +355,6 @@ What's next
 Learn more about Cloud Data Fusion .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

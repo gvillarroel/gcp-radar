@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:32.312Z"
+generated_at: "2026-04-15T12:05:49.348Z"
 product_name: "Google Distributed Cloud (software only) for bare metal"
 product_slug: "google-distributed-cloud-software-only-for-bare-metal"
 feature_name: "Red Hat Enterprise Linux 9.2 support"
 feature_slug: "red-hat-enterprise-linux-9-2-support"
 latest_feature_date: "2023-12-15"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
 keywords:
   - "red"
   - "hat"
   - "enterprise"
   - "linux"
   - "adds"
-  - "for"
   - "running"
   - "clusters"
+  - "version"
 ---
 
 # Red Hat Enterprise Linux 9.2 support
 
 Product: Google Distributed Cloud (software only) for bare metal
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Adds support for running clusters on Red Hat Enterprise Linux version 9.2.
 
 Adds support for running clusters on Red Hat Enterprise Linux version 9.2.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Network requirements \_|\_ Google Distributed Cloud (software only) for\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs)
+- Source ID: `site-docs-reference`
+- Final score: 146
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Known issue for firewalld When running Google Distributed Cloud with firewalld enabled on Red Hat Enterprise Linux (RHEL), changes to firewalld can remove the Cilium iptables chains on the host network.
+- Supplemental configuration for RHEL 9.2 and 9.4 Red Hat Enterprise Linux (RHEL) version 9.2 and 9.4 are supported as GA in versions 1.29.400 and higher.
+- Control plane nodes Version 1.33 and later Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Inbound 2382 - 2384 etcd-events server client API, metrics and health kube-apiserver and etcd-events TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 9192 (default, but can be configured ) Node Agent port (applies only for clusters using Node Agent) (applies to version 1.33 and higher) node-agent-port TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 10257 kube-controller-manager (port number change for version 1.28 and higher) Self TCP Inbound 10259 kube-scheduler (port number change for version 1.28 and higher) Self TCP Inbound 11002 GKE Identity Service core container binds to port through hostPort (applies to version 1.29 and higher) Self TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Version 1.29-1.32 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Inbound 2382 - 2384 etcd-events server client API, metrics and health kube-apiserver and etcd-events TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 10257 kube-controller-manager (port number change for version 1.28 and higher) Self TCP Inbound 10259 kube-scheduler (port number change for version 1.28 and higher) Self TCP Inbound 11002 GKE Identity Service core container binds to port through hostPort (applies to version 1.29 and higher) Self TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Version 1.28 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Inbound 2382 - 2384 etcd-events server client API, metrics and health kube-apiserver and etcd-events TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 8444 GKE Identity Service core container binds to port through hostPort (applies to version 1.28 only) All TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 10257 kube-controller-manager (port number change for version 1.28 and higher) Self TCP Inbound 10259 kube-scheduler (port number change for version 1.28 and higher) Self TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Version 1.16 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Inbound 2382 - 2384 etcd-events server client API, metrics and health (applies to version 1.16 and higher) kube-apiserver and etcd-events TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 9100 Serve metrics node-exporter TCP Inbound 9443 Serve/proxy metrics for control plane components (This port requirement is for cluster version 1.16 and lower.) kube-control-plane-metrics-proxy TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10251 kube-scheduler Self TCP Inbound 10252 kube-controller-manager Self TCP Inbound 10256 Node health check All TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Version 1.15 and lower Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 9100 Serve metrics node-exporter TCP Inbound 9443 Serve/proxy metrics for control plane components (This port requirement is for cluster version 1.16 and lower.) kube-control-plane-metrics-proxy TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10251 kube-scheduler Self TCP Inbound 10252 kube-controller-manager Self TCP Inbound 10256 Node health check All TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Worker nodes Version 1.33 and later Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 9192 (default, but can be configured ) Node Agent port (applies only for clusters using Node Agent) (applies to version 1.33 and higher) node-agent-port TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Version 1.29-1.32 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Version 1.28 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Version 1.16 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 Serve metrics node-exporter TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Version 1.15 and lower Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 Serve metrics node-exporter TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Load balancer nodes Version 1.33 and later Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Inbound 443 Cluster management This port can be configured in the cluster configuration file with the controlPlaneLBPort field.
+- Control plane node example configuration The following block of commands shows an example of how you can open the needed ports on servers running control plane nodes: firewall-cmd --permanent --zone = public --add-port = 22 /tcp firewall-cmd --permanent --zone = public --add-port = 4240 /tcp firewall-cmd --permanent --zone = public --add-port = 6444 /tcp firewall-cmd --permanent --zone = public --add-port = 6081 /udp firewall-cmd --permanent --zone = public --add-port = 10256 /tcp firewall-cmd --permanent --zone = public --add-port = 10257 /tcp firewall-cmd --permanent --zone = public --add-port = 10259 /tcp firewall-cmd --permanent --zone = public --add-port = 2379 -2380/tcp firewall-cmd --permanent --zone = public --add-port = 443 /tcp firewall-cmd --permanent --zone = public --add-port = 30000 -32767/tcp firewall-cmd --permanent --new-zone = k8s-pods firewall-cmd --permanent --zone = k8s-pods --add-source PODS CIDR firewall-cmd --permanent --zone = k8s-pods --set-target = ACCEPT firewall-cmd --reload For the specific port requirements for the cluster version you intend to use, see the preceding Port usage section.
+
+### "Deploy clusters on the edge \_|\_ Google Distributed Cloud (software only)\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile)
+- Source ID: `site-iam-reference`
+- Final score: 136
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Notice that the lines that were updated are highlighted: GSA Key used for provisioning (result of running ./scripts/create-primary-gsa.sh) LOCAL GSA FILE =$ ( pwd ) / build - artifacts / consumer - edge - gsa . json export LOCAL GSA FILE GCP Project ID export PROJECT ID = "abm-edge-project" Bucket to store cluster snapshot information export SNAPSHOT GCS = "abm-edge-project-cluster-snapshots" GCP Project Region (Adjust as desired) export REGION = "us-central1" GCP Project Zone (Adjust as desired) export ZONE = "us-central1-a" Gitlab Personal Access Token credentials (generated in Quick Start step 2) export SCM TOKEN USER = "LarryPage" export SCM TOKEN TOKEN = "oo901Sp-FHuzmz dgl0393atkf69c8L" Default Root Repo setup for multiple locations export ROOT REPO URL = "https://github.com/LarryPage/anthos-samples" export ROOT REPO BRANCH = "main" export ROOT REPO DIR = "/anthos-bm-edge-deployment/acm-config-sink" OIDC Configuration (off by default) export OIDC CLIENT ID = "" # Optional, requires GCP API setup work export OIDC CLIENT SECRET = "" # Optional export OIDC USER = "" # Optional export OIDC ENABLED = "false" # Flip to true IF implementing OIDC on cluster Create Compute Engine instances: ./scripts/cloud/create-cloud-gce-baseline.sh -c " $GCE COUNT " \ tee ./build-artifacts/gce-info Install a bare metal cluster with Ansible The script used in this guide creates clusters in groups of three Compute Engine instances.
+- You can also try updating the cluster configurations in your forked repository to selectively apply different versions of the point of sale application to the two clusters, cnuc-1 and cnuc-4 , using ClusterSelectors .
+- Get the IP address of the Load balancer type Kubernetes service: ABM INTERNAL IP = $( kubectl get services api-server-lb -n pos awk '{print $4}' tail -n 1 ) Update the template configuration file with the fetched IP address: sudo sh -c "sed 's/<K8 LB IP>/ ${ ABM INTERNAL IP } /g' \ /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf" Restart NGINX to make sure that the new configuration is applied: sudo systemctl restart nginx Check and verify the status of the NGINX server reports "active (running)": sudo systemctl status nginx When NGINX is running successfully, it produces an output like the following example: ● nginx.service - A high performance web server and a reverse proxy server Loaded: loaded ( /lib/systemd/system/nginx.service ; enabled ; vendor preset: enabled ) Active: active ( running ) since Fri 2021 -09-17 02 :41:01 UTC ; 2s ago Docs: man:nginx ( 8 ) Process: 92571 ExecStartPre = /usr/sbin/nginx -t -q -g daemon on ; master process on ; ( code = exited, status = 0 /SUCCESS ) Process: 92572 ExecStart = /usr/sbin/nginx -g daemon on ; master process on ; ( code = exited, status = 0 /SUCCESS ) Main PID: 92573 ( nginx ) Tasks: 17 ( limit: 72331 ) Memory: 13 .2M CGroup: /system.slice/nginx.service ├─92573 nginx: master process /usr/sbin/nginx -g daemon on ; master process on ; ├─92574 nginx: worker process ├─92575 nginx: worker process ├─92577 nginx: .... ... ...
+- On your workstation, initialize the environment variables in a new shell instance: export PROJECT ID = " PROJECT ID " export REGION = "us-central1" export ZONE = "us-central1-a" port on the admin Compute Engine instance you use to set up an nginx proxy this allows to reach the workloads inside the cluster via the VM IP export PROXY PORT = "8082" should be a multiple of 3 since N/3 clusters are created with each having 3 nodes export GCE COUNT = "3" url to the fork of: https://github.com/GoogleCloudPlatform/anthos-samples export ROOT REPO URL = "https://github.com/ GITHUB USERNAME /anthos-samples" this is the username used to authenticate to your fork of this repository export SCM TOKEN USER = " GITHUB USERNAME " access token created in the earlier step export SCM TOKEN TOKEN = " ACCESS TOKEN " Replace the following values: PROJECT ID : your Google Cloud project ID.
+
+### "Google Distributed Cloud (software only) for bare metal overview \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal)
+- Source ID: `site-docs-reference`
+- Final score: 136
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Preflight checks on installation With Google Distributed Cloud, your clusters run on open source and enterprise Linux systems, and on a minimal hardware infrastructure, which creates flexibility in your environment.
+- You can find archived documentation for version 1.16 and earlier by adding the minor version number in the following URL: https://cloud.google.com/anthos/clusters/docs/bare-metal/ VERSION / Replace VERSION with a minor version from 1.6 to 1.16 and copy the URL to the address bar in your browser.
+- Cluster creators and developers use these tools and artifacts to manage their on-premises clusters, with appropriate permissions: Running bmctl from the admin workstation lets you create and update clusters and perform some other administrative tasks.
+- Running Google Distributed Cloud software on bare metal takes advantage of your existing enterprise infrastructure and helps you modernize applications throughout their lifecycle.
 

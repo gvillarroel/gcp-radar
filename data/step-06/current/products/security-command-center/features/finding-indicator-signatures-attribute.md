@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.231Z"
+generated_at: "2026-04-14T13:09:49.003Z"
 product_name: "Security Command Center"
 product_slug: "security-command-center"
 feature_name: "Finding.indicator.signatures attribute"
@@ -9,18 +9,17 @@ latest_feature_date: "2022-06-30"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center"
-  - "https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview"
-  - "https://docs.cloud.google.com/security-command-center/docs/ciem-overview?hl=en"
+  - "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+  - "https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview"
 keywords:
   - "finding"
   - "indicator"
   - "signatures"
   - "attribute"
-  - "the"
   - "lists"
   - "matched"
-  - "that"
+  - "indicate"
+  - "process"
 ---
 
 # Finding.indicator.signatures attribute
@@ -42,39 +41,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center](https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center)
-- [https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview](https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview)
-- [https://docs.cloud.google.com/security-command-center/docs/ciem-overview?hl=en](https://docs.cloud.google.com/security-command-center/docs/ciem-overview?hl=en)
+- [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview)
+- [https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview)
 
 ## Supporting Pages
 
-### Use Security Command Center in the Google Cloud console | Google Cloud Documentation
+### Security Command Center release notes \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center](https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center)
-- Source ID: `site-docs-root`
-- Final score: 31
+- URL: [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview)
+- Source ID: `site-docs-reference`
+- Final score: 226
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Use Security Command Center in the Google Cloud console Google Cloud Documentation Source URL: https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center Overview of using Security Command Center in the Google Cloud console, including navigation and top-level pages.
+- The indicator.signatures[] attribute lists matched signatures that indicate that a given process is present in the environment.
+- June 30, 2022 Feature The contacts and indicator.signatures attributes were added to the Finding object.
+- These new attributes provide additional context about the principals that are associated with a finding. uris , a new attribute within the indicator attribute, lists any malicious URIs that are associated with a finding.
+- May 27, 2022 Feature The compliances , exfiltration , and processes attributes were added to the Finding object.
 
-### Overview of activating Security Command Center | Google Cloud Documentation
+### "Integrate Amazon GuardDuty with Google SecOps \_|\_ Google Security Operations\
 
-- URL: [https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview](https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview)
-- Source ID: `site-docs-root`
-- Final score: 24
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty)
+- Source ID: `site-docs-root-2`
+- Final score: 83
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Table Columns: Finding ID Title Description Type Severity Count Resource ID Created at Updated at Account ID General Get all Trusted IP lists Description Get all trusted IP lists (IPSets) of the GuardDuty service specified by the detector ID.
+- Reason: {0}''.format(error.Stacktrace) General List Findings for a Detector Lists all Amazon GuardDuty findings for the specified detector ID.
+- Sort By String N/A No Represents the finding attribute (for example, accountId) to sort findings by.
+- Max Findings To Fetch Integer 50 No Number of findings to process per one connector iteration.
+
+### "Container Threat Detection overview \_|\_ Security Command Center \_|\_\
+
+- URL: [https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview)
+- Source ID: `site-docs-reference`
+- Final score: 77
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Overview of activating Security Command Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview Activating Security Command Center at the organization level is considered a best practice because it provides the most complete protection for your business by allowing Security Command Center to access and scan resources and assets across all of the folders and projects in the organization.
-
-### Overview of Cloud Infrastructure Entitlement Management | Security Command Center | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/security-command-center/docs/ciem-overview?hl=en](https://docs.cloud.google.com/security-command-center/docs/ciem-overview?hl=en)
-- Source ID: `site-docs-root`
-- Final score: 24
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Overview of Cloud Infrastructure Entitlement Management Security Command Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/security-command-center/docs/ciem-overview?hl=en With CIEM, Security Command Center presents Google Cloud, AWS, and Microsoft Azure (Preview) identity and access findings categorically on the Identity and access findings card of the Security Command Center Risk Overview page.
+- Execution: Possible Arbitrary Command Execution through CUPS (CVE-2024-47076) POSSIBLE ARBITRARY COMMAND EXECUTION THROUGH CUPS This rule detects the footmatic-rip process executing common shell programs, which may indicate that an attacker has exploited CVE-2024-47076.
+- Impact: Remove Bulk Data From Disk REMOVE BULK DATA FROM DISK A process was detected performing bulk data deletion operations, which may indicate an attempt to erase evidence, disrupt services, or execute a data-wiping attack within the container environment.
+- The detector checks URLs that are observed in the argument list of running processes against the lists of unsafe web resources that are maintained by the Google Safe Browsing service.
+- If a process is launched from an in-memory file, it may indicate that an attacker is trying to bypass other methods of detection in order to execute malicious code.
 

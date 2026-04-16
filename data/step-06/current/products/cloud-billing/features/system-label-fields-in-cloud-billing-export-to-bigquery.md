@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.369Z"
+generated_at: "2026-04-14T13:57:37.648Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "System label fields in Cloud Billing export to BigQuery"
 feature_slug: "system-label-fields-in-cloud-billing-export-to-bigquery"
 latest_feature_date: "2018-09-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage"
-  - "https://docs.cloud.google.com/billing/docs/how-to/reports"
-  - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage"
+  - "https://docs.cloud.google.com/billing/docs/how-to/bq-examples"
+  - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/cud-export"
 keywords:
   - "system"
   - "label"
   - "fields"
-  - "in"
   - "billing"
   - "export"
-  - "to"
+  - "bigquery"
   - "now"
+  - "includes"
 ---
 
 # System label fields in Cloud Billing export to BigQuery
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Cloud Billing export to BigQuery now includes additional system label fields, in
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
-- [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
-- [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage)
+- [https://docs.cloud.google.com/billing/docs/how-to/bq-examples](https://docs.cloud.google.com/billing/docs/how-to/bq-examples)
+- [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/cud-export](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/cud-export)
 
 ## Supporting Pages
 
@@ -52,39 +52,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
 - Source ID: `site-docs-root-2`
-- Final score: 230
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- SELECT t . project . id AS consumer project id , t . sku . description AS sku description , CASE WHEN t . resource . global name NOT LIKE '%instances/%' THEN 'Unused Capacity' WHEN t . resource . name IS NOT NULL AND t . resource . name != '' THEN 'Instance Usage' ELSE 'Other Reservation Cost' END AS usage category , SUM ( t . usage . amount ) AS total usage amount , t . usage . unit AS usage unit , SUM ( t . cost ) AS total cost usd FROM project - ID . dataset . gcp billing export resource v1 X AS t LEFT JOIN UNNEST ( t . system labels ) AS sl reservation ON sl reservation . key = 'compute.googleapis.com/reservation name' LEFT JOIN UNNEST ( t . system labels ) AS sl project id ON sl project id . key = 'compute.googleapis.com/reservation project id' WHERE t . service . id = '6F81-5844-456A' AND DATE ( TIMESTAMP TRUNC ( t .
-- SELECT invoice . month AS invoice month , ROUND (( SUM ( CAST ( cost AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS NUMERIC )) FROM UNNEST ( credits ) AS c ), 0 ))), 2 ) AS net cost FROM project - ID . dataset . gcp billing export v1 XXXXXX - XXXXXX - XXXXXX WHERE "color" NOT IN ( SELECT key FROM UNNEST ( tags )) GROUP BY invoice month ORDER BY invoice month ; For example, the result of the preceding query might be: Row invoice month net cost 1 202202 0 2 202203 16.81 3 202204 54.09 4 202205 55.82 5 202206 54.09 6 202207 55.83 7 202208 31.49 Query using system labels System labels for Google Cloud reservations provide enhanced visibility into your reservation usage.
-- SELECT t . sku . description AS sku description , t . usage start time AS usage start time , t . usage end time AS usage end time , SUM ( t . usage . amount ) AS total usage amount FROM project - ID . dataset . gcp billing export resource v1 X AS t LEFT JOIN UNNEST ( t . system labels ) AS sl reservation ON sl reservation . key = 'compute.googleapis.com/reservation name' LEFT JOIN UNNEST ( t . system labels ) AS sl project id ON sl project id . key = 'compute.googleapis.com/reservation project id' WHERE TRUE AND t . service . id = '6F81-5844-456A' AND t . invoice . month = '202602' AND EXISTS ( SELECT 1 FROM UNNEST ( t .
-- SELECT t . project . id AS consumer project id , t . sku . description AS sku description , t . usage . unit AS usage unit , SUM ( t . usage . amount ) AS total usage amount FROM project - ID . dataset . gcp billing export resource v1 X AS t LEFT JOIN UNNEST ( t . system labels ) AS sl reservation ON sl reservation . key = 'compute.googleapis.com/reservation name' LEFT JOIN UNNEST ( t . system labels ) AS sl project id ON sl project id . key = 'compute.googleapis.com/reservation project id' WHERE TRUE AND t . service . id = '6F81-5844-456A' AND EXISTS ( SELECT 1 FROM UNNEST ( t .
-
-### "Analyze billing data and cost trends with Reports \_|\_ Cloud Billing \_\
-
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
-- Source ID: `site-docs-root`
-- Final score: 226
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- These system delays also impact budget alerts, anomaly detection, and billing data exported to BigQuery.
-- Related topics Export Cloud Billing data to BigQuery Understand your savings with cost breakdown reports View your cost and payment history Create, modify, or close your Cloud Billing account Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- FROM - The full path to the data table that contains the Cloud Billing data exported to BigQuery , specified using three values separated by dots: project-ID.BQ dataset name.BQ table name WHERE - Equivalent to the Report's Time range setting and includes any specific, non-default filter settings you selected on the report.
-- Prerequisites to generate and run a query To generate a query from a Cloud Billing Report , ensure you and your Cloud Billing account meet the following requirements: On your Cloud Billing account, Cloud Billing data export to BigQuery must be enabled, for either the standard usage cost data or detailed usage cost data .
-
-### "Structure of Standard data export \_|\_ Cloud Billing \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage)
-- Source ID: `site-docs-root-2`
-- Final score: 226
+- Final score: 384
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Standard SQL SELECT invoice . month , cost type , SUM ( cost ) + SUM ( IFNULL (( SELECT SUM ( c . amount ) FROM UNNEST ( credits ) c ), 0 )) AS total , ( SUM ( CAST ( cost 1000000 AS int64 )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount 1000000 as int64 )) FROM UNNEST ( credits ) c ), 0 ))) / 1000000 AS total exact FROM project . dataset . gcp billing export v1 XXXXXX XXXXXX XXXXXX GROUP BY 1 , 2 ORDER BY 1 ASC , 2 ASC ; For example, the result of the preceding query might be: Row month cost type total total exact 1 201901 regular $1000.501209987994782 $1000.50 2 201901 rounding error –$0.500489920049387 –$0.50 3 201901 tax $10.000329958477891 $10.00 4 201901 adjustment –$5.002572999387045 –$5.00 Query examples with labels Note: Certain fields such as labels and credits are repeated.
-- Row name project labels total cost total credits 1 CTG - Dev [{"key":"ctg p env","value":"dev"}] 79.140979 -4.763796 2 CTG - Prod [{"key":"ctg p env","value":"prod"},{"key":"ctg team","value":"eng"}] 32.466272 -3.073356 3 CTG - Sandbox [{"key":"ctg p env","value":"dev"}] 0 0 4 CTG - Storage [{"key":"ctg p env","value":"prod"},{"key":"ctg team","value":"data"}] 7.645793 -0.003761 Related topics Topics related to exported Cloud Billing data Set up Cloud Billing data export to BigQuery Example queries for Cloud Billing data export to BigQuery Visualize spend over time with Looker Studio Cost and pricing reports available in the Google Cloud console View your Cloud Billing reports and cost trends View and download the cost details of your invoice or statement View and download prices for Google's cloud services Understand your savings with cost breakdown reports Analyze the effectiveness of your committed use discounts View your cost and payment history Previous arrow back Understand the billing data tables in BigQuery Next Structure of Detailed data export arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Standard SQL SELECT labels . value as environment , SUM ( cost ) as cost FROM project . dataset . gcp billing export v1 XXXXXX XXXXXX XXXXXX LEFT JOIN UNNEST ( labels ) as labels ON labels . key = "environment" GROUP BY environment ; Legacy SQL SELECT labels . value as environment , SUM ( cost ) as cost FROM [ project : dataset . gcp billing export v1 XXXXXX XXXXXX XXXXXX ] WHERE labels . key = "environment" OR labels . key IS NULL GROUP BY environment ; Row environment cost 1 prod $15 2 dev $5 3 null $4 TOTAL $24 Note: The total cost should add up to the same amount as a group by label map query.
-- Standard SQL SELECT labels . key as key , labels . value as value , SUM ( cost ) as cost FROM project . dataset . gcp billing export v1 XXXXXX XXXXXX XXXXXX LEFT JOIN UNNEST ( labels ) as labels GROUP BY key , value ; Legacy SQL SELECT labels . key as key , labels . value as value , SUM ( cost ) FROM [ project : dataset . gcp billing export v1 XXXXXX XXXXXX XXXXXX ] GROUP BY key , value ; Row key value cost 1 null null $4 2 app chocolate-masher $9 3 app grapefruit-squeezer $11 4 environment dev $5 5 environment prod $15 TOTAL $44 Note that the total sum is greater than your bill.
+- Additional fields available to detailed usage cost data export resource Struct The fields that describe the structure and value of information relevant to service resources (like a virtual machine or a SSD) that generate usage. resource.global name String A globally unique service identifier for the resource that generated relevant usage. resource.name String A service-specific identifier for the resource that generated relevant usage.
+- Before you begin To query using system labels, you must have Cloud Billing export to BigQuery enabled, specifically the Detailed usage cost data export.
+- The detailed export includes granular cost information about the following services: AlloyDB for PostgreSQL App Engine BigQuery Bigtable Cloud Data Fusion Cloud Deploy Cloud Run functions Cloud Logging Cloud Run Cloud SQL Cloud Storage Compute Engine Dataflow Managed Service for Apache Spark Metastore Firestore and Datastore Google Kubernetes Engine (GKE) To view a breakdown of GKE cluster costs in a detailed data export, you must also enable cost allocation for GKE .
+- Note: Some network data transfer, Cloud SQL backups in specific locations, and Storage Snapshot costs aren't included in the granular Cloud SQL instance costs in Cloud Billing export to BigQuery.
+
+### Example queries for Cloud Billing data export \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/bq-examples](https://docs.cloud.google.com/billing/docs/how-to/bq-examples)
+- Source ID: `site-docs-root-2`
+- Final score: 208
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Before you begin To query using system labels, you must have Cloud Billing export to BigQuery enabled, specifically the Detailed usage cost data export.
+- SELECT DATE ( TIMESTAMP TRUNC ( usage start time , Day , 'US/Pacific' )) AS Day , service . description AS Service Description , SUM ( CAST ( cost at list AS NUMERIC )) AS List cost , SUM ( CAST ( cost AS NUMERIC )) - SUM ( CAST ( cost at list AS NUMERIC )) AS Negotiated savings , SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS numeric )) FROM UNNEST ( credits ) c WHERE c . type IN ( 'SUSTAINED USAGE DISCOUNT' , 'DISCOUNT' , 'SPENDING BASED DISCOUNT' , 'COMMITTED USAGE DISCOUNT' , 'FREE TIER' , 'COMMITTED USAGE DISCOUNT DOLLAR BASE' , 'SUBSCRIPTION BENEFIT' , 'RESELLER MARGIN' )), 0 )) AS Discounts , SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS numeric )) FROM UNNEST ( credits ) c WHERE c . type IN ( 'CREDIT TYPE UNSPECIFIED' , 'PROMOTION' )), 0 )) AS Promotions and others , SUM ( CAST ( cost at list AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS numeric )) FROM UNNEST ( credits ) c WHERE c . type IN ( 'SUSTAINED USAGE DISCOUNT' , 'DISCOUNT' , 'SPENDING BASED DISCOUNT' , 'COMMITTED USAGE DISCOUNT' , 'FREE TIER' , 'COMMITTED USAGE DISCOUNT DOLLAR BASE' , 'SUBSCRIPTION BENEFIT' , 'RESELLER MARGIN' )), 0 )) + SUM ( CAST ( cost AS NUMERIC )) - SUM ( CAST ( cost at list AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS numeric )) FROM UNNEST ( credits ) c WHERE c . type IN ( 'CREDIT TYPE UNSPECIFIED' , 'PROMOTION' )), 0 )) AS Subtotal FROM project - ID . dataset . gcp billing export v1 XXXXXX - XXXXXX - XXXXXX WHERE invoice . month = '202403' AND DATE ( TIMESTAMP TRUNC ( usage start time , Day , 'US/Pacific' )) '2024-03-01' GROUP BY Day , service . description ORDER BY Day DESC , Subtotal DESC ; For example, the result of the preceding query might be: Row Day Service Description List cost Negotiated savings Discounts Promotions and others Subtotal 1 2024-02-29 Compute Engine 4.39916 0 -1.00916 0 3.39000 2 2024-02-29 Support 0.131969 0 0 0 0.131969 3 2024-02-29 BigQuery 0.005502 0 0 0 0.005502 4 2024-02-29 Networking 0.010972 0 -0.006691 0 0.004281 Detailed usage cost query examples This section provides examples of how to query the Cloud Billing detailed usage cost data exported to BigQuery.
+- These query examples also work with the detailed usage cost data exported to BigQuery, although they aren't written to retrieve any of the resource-level information that's provided with the detailed usage cost export option.
+- The following examples demonstrate how to query the BigQuery billing export to analyze reservation consumption using system labels.
+
+### "Structure of CUD metadata export \_|\_ Cloud Billing \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/cud-export](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/cud-export)
+- Source ID: `site-docs-root-2`
+- Final score: 89
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Field Type Description billing account id String The 18-character, alphanumeric billing account ID associated with the CUD data, for example, 010101-F0FFF0-10XX01 . cud product.id String The subscription definition ID, for example 344fffc1-17f9-4e34-abf2-cfffff409fa2 . cud product.display name String The friendly name of the product associated with the commitment, for example Flexible CUD . cud product.type String The type of product commitment, for example Spend-Based . consumption model.id String The ID of the consumption model used by the CUD, for example 5515-81A8-03A2 . consumption model.description String The description of the consumption model for the CUD, for example Cloud Spanner CUD - 1 Year . subscription.entitlement scope String The scope of the entitlement for the CUD, for example, an account-scoped entitlement might be billingAccounts/010101-F0FFF0-10XX01 . subscription.instance id String The subscription instance ID which is a GUID, for example 769c55ea-c50f-4258-bcf5-04b6688fa5fa . subscription.display name String The display name for the CUD, defined by the customer at time of purchase, for example Recommended Cloud Run CUD commitment in us-central1 on Sep 3, 2023 . region String The region associated with the CUD, for example us-central1 . commitent amount.unit String The measurement unit of resource consumption for the commitment, for example, $/hr . commitent amount.value Numeric The commitment amount purchased, for example 100 or 0.05 . term String The term of the commitment in ISO 8601 duration format, where P1Y represents one year, and P3Y represents three years. start time Timestamp The start timestamp for the commitment, for example 2024-09-27 18:08:20 UTC . end time Timestamp The end timestamp for the commitment, for example 2025-02-18 12:11:20 UTC . state String The state of the commitment, for example Active or Expired .
+- Related topics Topics related to exported Cloud Billing data Set up Cloud Billing data export to BigQuery Example queries for Cloud Billing data export to BigQuery Visualize spend over time with Looker Studio Cost and pricing reports available in the Google Cloud console View your Cloud Billing reports and cost trends View and download the cost details of your invoice or statement View and download prices for Google's cloud services Understand your savings with cost breakdown reports Analyze the effectiveness of your committed use discounts View your cost and payment history Previous arrow back Structure of Pricing data export Next Example queries for Cloud Billing arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- This export provides a daily snapshot of your spend-based CUDs commitment metadata to a BigQuery table, which you can join with other billing data exports for better CUD management and reporting.
+- This document provides reference information for the schema of Cloud Billing committed use discount (CUD) metadata that's exported daily to each table in BigQuery.
 

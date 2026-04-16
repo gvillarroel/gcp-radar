@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.930Z"
+generated_at: "2026-04-14T15:34:54.622Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Custom revision names"
@@ -9,18 +9,17 @@ latest_feature_date: "2020-01-07"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsClient"
-  - "https://docs.cloud.google.com/run/docs/release-notes"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-c-plus-plus-service"
+  - "https://docs.cloud.google.com/run/docs/authenticating/overview"
 keywords:
-  - "custom"
-  - "revision"
-  - "names"
-  - "run"
-  - "supports"
-  - "through"
-  - "the"
   - "suffix"
+  - "names"
+  - "flag"
+  - "revision"
+  - "custom"
+  - "through"
+  - "supports"
 ---
 
 # Custom revision names
@@ -38,54 +37,49 @@ Cloud Run supports custom revision names through the revision suffix flag.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsClient)
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
+- [https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console](https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-c-plus-plus-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-c-plus-plus-service)
+- [https://docs.cloud.google.com/run/docs/authenticating/overview](https://docs.cloud.google.com/run/docs/authenticating/overview)
 
 ## Supporting Pages
 
-### "Class RevisionsAsyncClient (0.16.0) \_|\_ Python client libraries \_|\_\
+### "Quickstart: Deploy a Cloud Run function using the Google Cloud console \_\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 async def sample delete revision(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 async def sample list revisions(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 async def sample get revision(): Create a client client = run v2 .
-- DeleteRevisionRequest ( name="name value", ) Make the request operation = client. delete revision (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.run v2.types.DeleteRevisionRequest , dict]] The request object.
-
-### "Class RevisionsClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.revisions.RevisionsClient)
-- Source ID: `site-python-reference`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console](https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console)
+- Source ID: `site-docs-reference-2`
+- Final score: 39
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 def sample delete revision(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 def sample list revisions(): Create a client client = run v2 .
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import run v2 def sample get revision(): Create a client client = run v2 .
-- DeleteRevisionRequest ( name="name value", ) Make the request operation = client. delete revision (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.run v2.types.DeleteRevisionRequest , dict] The request object.
+- You might also be able to get the required permissions through custom roles or other predefined roles .
+- This deletes all revisions of the service. gcloud To delete a service, run the following command: gcloud run services delete SERVICE --region REGION Replace the following: SERVICE : name of your service.
+- Service names must only begin with a letter, and contain up to 49 characters or less, including letters, numbers, or hyphens.
+- When you created this project, you might have created a custom project ID that you want to use in the future.
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### Authentication overview \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/run/docs/authenticating/overview](https://docs.cloud.google.com/run/docs/authenticating/overview)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Quickstart: Build and deploy a C++ web app to Google Cloud with Cloud Run\
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-c-plus-plus-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-c-plus-plus-service)
+- Source ID: `site-docs-reference-2`
+- Final score: 37
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Feature Use custom revision names with the --revision-suffix command line flag.
-- March 16, 2020 Feature Cloud Run (fully managed) now supports deploying container images from Cloud Artifact Registry February 12, 2020 Feature Cloud Run (fully managed) now supports rollbacks, gradual rollouts (blue/green deployments), and other traffic migration manipulations between revisions.
-- May 12, 2021 Feature Cloud Run now provides UI, command line, and YAML support for referencing Secret Manager Secrets . (Available in public preview.) Feature Customer managed encryption keys are now available for use with Cloud Run. (Available in public preview.) Feature Recommender now provides recommendations for securing Cloud Run services by creating dedicated service accounts. (Available in public preview.) Feature Committed use discounts are now available for Cloud Run . (Available in public preview.) Feature You can now use Binary authorization with Cloud Run to enforce policy-based deployment of Cloud Run services. (Available in public preview.) May 03, 2021 Feature You can now use Identity-aware Proxy with Cloud Run to use identity and context to guard access to your applications. (Available in public preview.) Change By default, the memory allocated to each container instance of a new service is 512MiB.
-- October 23, 2020 Feature Cloud Run services can now be triggered using Eventarc (available in public preview) October 19, 2020 Feature Cloud Run is now available in the following regions: asia-east2 (Hong Kong) asia-northeast3 (Seoul, South Korea) asia-southeast2 (Jakarta) asia-south1 (Mumbai, India) europe-west2 (London, UK) europe-west3 (Frankfurt, Germany) europe-west6 (Zurich, Switzerland) southamerica-east1 (Sao Paulo, Brazil) Feature You can now purchase a custom domain via Cloud Domains using the Cloud Run user interface.
+- You might also be able to get the required permissions through custom roles or other predefined roles .
+- Write the sample application To write an application in C++: Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a new file named CMakeLists.txt and paste the following code into it: cmake minimum required ( VERSION 3.20 ) Define the project name and where to report bugs. set ( PACKAGE BUGREPORT "https://github.com/GoogleCloudPlatform/cpp-samples/issues" ) project ( cpp - samples - cloud - run - hello - world CXX ) find package ( functions framework cpp REQUIRED ) find package ( Threads ) add executable ( cloud run hello cloud run hello . cc ) target compile features ( cloud run hello PRIVATE cxx std 17 ) target link libraries ( cloud run hello functions - framework - cpp :: framework ) include ( GNUInstallDirs ) install ( TARGETS cloud run hello RUNTIME DESTINATION $ { CMAKE INSTALL BINDIR }) Create a new file named vcpkg.json and paste the following code into it: { "name" : "cpp-samples-cloud-run-hello-world" , "version-string" : "unversioned" , "homepage" : "https://github.com/GoogleCloudPlatform/cpp-samples/" , "description" : [ "Shows how to deploy a C++ application to Cloud Run." ], "dependencies" : [ "functions-framework-cpp" ] } Create a new file named cloud run hello.cc and paste the following code into it: #include <google/cloud/functions/framework.h> #include <cstdlib> namespace gcf = :: google :: cloud :: functions ; auto hello world http () { return gcf :: MakeFunction ([]( gcf :: HttpRequest const & / request / ) { std :: string greeting = "Hello " ; auto const target = std :: getenv ( "TARGET" ); greeting += target == nullptr ? "World" : target ; greeting += " \n " ; return gcf :: HttpResponse {} . set header ( "Content-Type" , "text/plain" ) . set payload ( greeting ); }); } int main ( int argc , char argv []) { return gcf :: Run ( argc , argv , hello world http ()); } This code creates a basic web server that listens on the port defined by the PORT environment variable .
+- This deletes all revisions of the service. gcloud To delete a service, run the following command: gcloud run services delete SERVICE --region REGION Replace the following: SERVICE : name of your service.
+- When you created this project, you might have created a custom project ID that you want to use in the future.
 

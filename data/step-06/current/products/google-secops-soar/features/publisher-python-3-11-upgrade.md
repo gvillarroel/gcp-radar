@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:35.187Z"
+generated_at: "2026-04-12T12:17:22.832Z"
 product_name: "Google SecOps SOAR"
 product_slug: "google-secops-soar"
 feature_name: "Publisher Python 3.11 upgrade"
 feature_slug: "publisher-python-3-11-upgrade"
 latest_feature_date: "2023-10-24"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere"
+  - "https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc"
 keywords:
   - "publisher"
   - "python"
@@ -24,7 +27,7 @@ keywords:
 # Publisher Python 3.11 upgrade
 
 Product: Google SecOps SOAR
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,68 @@ The Publisher Python version has been upgraded to Python 3.11.
 
 The Publisher Python version has been upgraded to Python 3.11.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines](https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere)
+- [https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc](https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Response integrations community contribution guidelines \_|\_ Google Security\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines](https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines)
+- Source ID: `site-docs-root-2`
+- Final score: 114
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Always use the latest supported version of Python during development (Python 3.11).
+- You should validate the logo on the following pages: Response > Integration Setup Response > Playbooks > Playbook Designer Cases > Alert > Alert Playbook View The following is an example of an SVG logo, designed to match our style guide: <?xml version="1.0" encoding="UTF-8"?><svg id="Layer 1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 23"> <defs> <style> .cls-1 { stroke-width: 0px; } </style> </defs> <path class="cls-1" d="M15.51,4.79H5.49c-.4,0-.72.32-.72.72v5.75c0,2.3,1.71,4.15,3.69,5.38.54.34,1.1.62,1.66.86l.09.04c.06.02.12.05.18.06.03,0,.07,0,.1,0,.1,0,.19-.03.28-.07l.09-.04c.76-.33,2.22-1.03,3.46-2.24,1.24-1.22,1.89-2.6,1.89-4v-5.75c0-.4-.32-.72-.72-.72ZM14.32,11.26c0,.88-.44,1.77-1.32,2.63-.65.64-1.55,1.22-2.5,1.68-.95-.46-1.84-1.04-2.5-1.68-.88-.86-1.32-1.75-1.32-2.63v-4.55h7.64v4.55ZM20.28,0H.72c-.4,0-.72.32-.72.72v10.77c0,2.56,1.18,4.99,3.51,7.21,2.29,2.18,5.12,3.56,6.61,4.2l.09.04s.1.04.15.05c.04,0,.09.01.13.01.1,0,.19-.02.28-.06l.09-.04c.53-.23,1.23-.55,2.02-.97,1.42-.75,3.11-1.82,4.59-3.23,2.33-2.22,3.51-4.64,3.51-7.21V.72c0-.4-.32-.72-.72-.72ZM16.17,17.31c-1.9,1.81-4.24,3.04-5.67,3.69-1.43-.65-3.77-1.88-5.67-3.69-1.94-1.84-2.92-3.8-2.92-5.82V1.92h17.18v9.57c0,2.02-.98,3.98-2.92,5.82Z"/></svg> Be sure to encode the SVG before adding it to the integration definition file, as can be found in other integrations in the Content Hub.
+- The description for the parameter should explain to the user what impact that parameter has on the connector execution.
+- The description for the parameter should explain to the user what impact that parameter has on the action execution.
+
+### "Integrate Amazon GuardDuty with Google SecOps \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty)
+- Source ID: `site-api-reference`
+- Final score: 102
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Brute force attacks are used to gain unauthorized access to your instance by guessing the RDP password." , "Id" : " ID " , "Partition" : "aws" , "Region" : "us-east-1" , "Resource" : { "InstanceDetails" : { "AvailabilityZone" : "us-east-1e" , "ImageId" : "ami- IMAGE ID " , "InstanceId" : "i- INSTANCE ID " , "InstanceState" : "running" , "InstanceType" : "t2.micro" , "LaunchTime" : "2020-05-27T08:54:03Z" , "NetworkInterfaces" : [{ "Ipv6Addresses" : [], "NetworkInterfaceId" : "eni-012d9b8a1a3b4e40a" , "PrivateDnsName" : "ip-192.0.2.1.ec2.internal" , "PrivateIpAddress" : "192.0.2.1" , "PrivateIpAddresses" : [{ "PrivateDnsName" : "ip-192.0.2.1.ec2.internal" , "PrivateIpAddress" : "192.0.2.1" }], "PublicDnsName" : "ec2-54-234-69-236.compute-1.amazonaws.com" , "PublicIp" : "198.51.100.236" , "SecurityGroups" : [{ "GroupId" : "sg-0fa42e04e9cd15407" , "GroupName" : "Windows Server 2016" }], "SubnetId" : "subnet-2edddf10" , "VpcId" : "vpc-48a7ac32" }], "Platform" : "windows" , "ProductCodes" : [], "Tags" : [{ "Key" : "Name" , "Value" : "CiscoAMP-win2012" }]}, "ResourceType" : "Instance" }, "SchemaVersion" : "2.0" , "Service" : { "Action" : { "ActionType" : "NETWORK CONNECTION" , "NetworkConnectionAction" : { "Blocked" : false , "ConnectionDirection" : "INBOUND" , "LocalPortDetails" : { "Port" : 3389 , "PortName" : "RDP" }, "Protocol" : "TCP" , "LocalIpDetails" : { "IpAddressV4" : "192.0.2.1" }, "RemoteIpDetails" : { "IpAddressV4" : "203.0.113.9" , "Organization" : { "Asn" : "24875" , "AsnOrg" : "Example Inc." , "Isp" : "Example Inc." , "Org" : "Example Inc." }}, "RemotePortDetails" : { "Port" : 1549 , "PortName" : "Unknown" }}}, "Archived" : false , "Count" : 5 , "DetectorId" : " DETECTOR ID " , "EventFirstSeen" : "2020-10-06T05:10:58Z" , "EventLastSeen" : "2020-10-06T05:46:59Z" , "ResourceRole" : "TARGET" , "ServiceName" : "guardduty" }, "Severity" : 2 , "Title" : "203.0.113.9 is performing RDP brute force attacks against i- INSTANCE ID ." , "Type" : "UnauthorizedAccess:EC2/RDPBruteForce" , "UpdatedAt" : "2020-10-06T06:01:46.380Z" }] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If "ErrorCode" is reported (is success=false): "Action wasn't able to get Findings details.
+- Action results Script result Script result name Value options Example is success True or False is success=False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: Is successful: "The detector <new detector ID> has been created." If the detector is not created (is success=false): "Action wasn't able to create a detector.
+- Error: {}".format(ErrorMessage)" If the detector is successfully deleted (is success=true): "The detector <detector ID> has been deleted." The action should fail and stop a playbook execution: Invalid detector ID should raise an exception as well, stop the playbook and set is success to false.
+- Error: {}".format(ErrorMessage)" If the detector is successfully updated (is success=true): "The detector <detector ID> has been updated." The action should fail and stop a playbook execution: Invalid detector ID should raise an exception as well, stop the playbook and set is success to false.
+
+### "Integrate LevelBlue USM Anywhere with Google SecOps \_|\_ Google Security\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere)
+- Source ID: `site-api-reference`
+- Final score: 98
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Action results Script result Script result name Value options Example is success True or False is success:False JSON result { "rep device fqdn" : "192.0.2.30" , "sorce name" : "192.0.2.30" , "tag" : "pdate-esp-kernelmodle.sh" , "timestamp occred" : "1596541223000" , "destination address" : "198.51.100.130" , "rep dev canonical" : "192.0.2.30" , "destination name" : "198.51.100.130" , "received from" : "Centos7-001" , "timestamp occred iso8601" : "2020-08-04T11:40:23.000Z" , "id" : "f52dd545-ff14-5576-3b70-47f10f528f53" , "needs enrichment" : True , "rep device asset id" : "256fa9b1-a066-c9eb-561a-c2110035978a" , "timestamp received" : "1596541223152" , "sorce canonical" : "256fa9b1-a066-c9eb-561a-c2110035978a" , "destination fqdn" : "198.51.100.130" , " links" : { "self" : { "href" : " URL " } }, "has alarm" : False , "rep device address" : "192.0.2.30" , "event name" : "pdate-esp-kernelmodle.sh event" , "sed hint" : False , "transient" : False , "packet type" : "log" , "was fzzied" : True , "sppressed" : False , "log" : "<13>Ag 4 14:40:23 Centos7-001 pdate-esp-kernelmodle.sh: McAfeeESPFileAccess installed in this system is - 198.51.100.130" , "sorce asset id" : "256fa9b1-a066-c9eb-561a-c2110035978a" , "timestamp received iso8601" : "2020-08-04T11:40:23.152Z" , "destination canonical" : "198.51.100.130" , "time offset" : "Z" } Case wall Result type Description Type Output message In case of general error: "Action didn't complete due to error: {error}", result value should be set to false and the action should fail.
+- If the action is completed successfully: "Successfully returned {len(events)} AlienVault Anywhere events" If the action failed to run: "Failed to list Endgame AlienVault Anywhere events!" When Product version parameter is set to V1: "Action should fail with clear message that is supported in V2." General CSV Table Table Title: Events Table Columns: ID Name Occurred Time Received Time Suppressed Severity Category Sub Category Access Control Outcome Destination Destination Port Source Source Port Values: id= uuid name = event name Occurred Time=timestamp occurred iso8601 Received Time=timestamp received iso8601 Suppressed =suppressed Severity = event severity Category = event category Sub Category = event subcategory Access Control Outcome = access control outcome Destination = destination name Destination Port = destination port Source = source name Source Port= source port General Ping Test connectivity.
+- The AlienVault USM Anywhere Connector has two parameters, allowing smart filtering of the alerts being ingested into Google SecOps, regarding the suppressed attribute that those alerts have: Use Suppressed Filter : This parameter determines whether to filter the incoming alerts using the Show Suppressed filter or not.
+- Api Root String N/A Yes Example: https://<instance>.alienvault.com Script Timeout (Seconds) String 60 Yes The timeout limit, in seconds, for the Python process that runs the current script.
+
+### "SOAR table of contents \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc](https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc)
+- Source ID: `site-docs-root-2`
+- Final score: 93
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Google SecOps SOAR Product overview Getting started Release Plan for Google SecOps Onboard Google SecOps SOAR Manage user preferences Your Workdesk Workdesk overview Fill out a request from the workdesk Respond to pending actions from the workdesk View cases from the workdesk Investigating cases and alerts Working with cases Cases overview Explore the cases page layout and options Explore the case queue header Review case-level data in the Overview tab Create custom fields (Admin) Case Wall tab Instant messaging on a case Track tasks in cases Manage tags in cases and alerts Perform a manual action Take actions on a case Create a test case Resolve and close cases Use custom fields in the Close Case dialog Define a default view for cases (Admin) Gemini Summary Add or delete case stages (Admin) Alert Options menu in the Cases screen View the original SIEM data in a case Explore entities and alerts (Investigation) Supported entity types Navigate the Entity Explorer screen Perform a batch action on several cases at once Measure how long security analysts take to close or raise a Case Customize the Close Case dialog (Admin) Name a case (Admin) Create a manual case Move a case to a new environment Add or edit entity properties Apply and save filters Entity selection Working with alerts Alert Overview tab Alert Playbooks tab Change alert priority instead of case priority Alert events tab Alert grouping mechanism overview (Admin) Rerun playbooks How to configure the alert overflow mechanism (Admin) Define the default Alert view (Admin) Handle large alerts Search Use SOAR Search Ingest data Connectors Ingest your data using connectors View connector logs ElasticSearch connector: Map a custom date and time Define environments in connectors Webhooks Set up a Webhook Respond to alerts Work with Playbooks Explore the Playbooks page Use triggers in playbooks Manage actions in playbooks Use flows in playbooks Use the Expression Builder Work with the Playbook Simulator Use the Playbook Navigator Work with playbook blocks Automate tasks with Playbook Loops Increase Playbook resilience with automatic retries Specify an instance in dynamic mode Overview of playbook monitoring Define custom alert views using Playbook Designer Use alert type triggers in a playbook Bulk actions and filters in playbooks Use the HTML widget Expression Builder use cases Assign actions and playbook blocks Configure timeouts for playbook async actions Manage playbook permissions Assign approval links in actions Use parallel actions Use predefined widgets in playbook view Prevent users from changing playbooks Explore playbook use cases Create a fallback playbook Create an enrichment playbook block Create playbooks with Gemini Integrated development environment (IDE) Use the IDE Custom transformation functions and logical operators Create a custom action Develop a new integration (Video) Build a custom integration Write jobs Test integrations in staging mode Integrations Setup Configure integrations Roll back response integration version Upgrade the Python version to 3.11 Support multiple instances Work with an external vault system Create your first custom integration Requirements for publishing integrations Create your first action My first automation (Playbook) Develop your first email connector Develop the connector Configure the connector Test a connector Map and model alerts Create your first use case Google SecOps Marketplace Use the Google SecOps Marketplace Run use cases Power Ups Connectors Email utilities Enrichment File utilities Functions GitSync TemplateEngine Insights Lists Tools Monitor and report Dashboards SOAR Dashboards overview Add SOAR dashboard widgets Explore the SOAR Dashboards page Reports Explore SOAR reports Use Looker Explores in SOAR reports SOAR APIs Google SecOps SOAR APIs Settings Environments Work with environments Create environment groups (SOAR only) Use dynamic parameters in environments Use dynamic parameters (Video) Permissions Manage permission groups Locate your customer ID Manage roles and workloads Manage API keys Let Google Support access your instance Define a landing page Work with users (SOAR only) Manage users and roles Work with a Collaborator user Create a user with view-only permission Disable or delete a user account in SOAR Types of users Create a managed user Work with Collaborator user groups Work with Managed and Managed Plus user groups Email invitation prerequisites Manage password settings Case management federation (SOAR only) SAML overview (SOAR only) Authenticate users using SSO Configure SAML for Google Workspace Configure SAML for Microsoft Azure Configure Okta in Google SecOps SOAR Configure just-in-time provisioning Map IdP groups to SOAR roles Configure multiple SAML providers Troubleshoot SAML issues in Google SecOps SOAR Ontology Ontology overview Visual families Configure mapping and assign visual families Work with entity delimiters Create entities (Mapping & Modeling) Configuration tasks Create a blocklist to exclude entities from alerts Create custom lists Create email HTML templates Create email templates Define domains for MSSPs Manage environment load balancing Create user requests Manage networks Set the service-level agreement (SLA) Use dynamic variables in email HTML templates Advanced tasks Migrate to Google Cloud Open a ticket for Google Support Collect SOAR logs Control access to Google SecOps platform Define system data retention Monitor user activities Rebranding Set the time zone for all users (Admin) Set up your email View and change service limits Manage property metadata Retrieve raw Python logs Clean up after removing SOAR Remote Agents Overview of remote agents Requirements and prerequisites Remote agents architecture Remote agents scaling strategy Manage remote agents Create an agent with Docker Create an agent with the installer for Debian Create an agent with the installer on RHEL Create an agent with the installer on CentOS Upgrade agent Docker image Upgrade agent with installer for RHEL Upgrade agent with installer for CentOS Edit remote agent Redeploy remote agent Installer and Docker agent configuration Data flows and protocols Set up integrations and connectors Test agents Upgrade remote agents Deploy high availability for remote agents Troubleshooting Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- SOAR table of contents Click at the top of each SOAR document to return to this table of contents.
+- For details, see the Google Developers Site Policies .
 

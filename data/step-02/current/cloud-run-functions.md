@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 154
-Unique features: 137
+Unique features: 135
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -24,7 +24,6 @@ Unique features: 137
 | 2025-07-30 | Go 1.24 runtime |  | Cloud Run functions supports the Go 1.24 runtime; Cloud Run functions supports the Go 1.24 runtime. |
 | 2025-06-17 | PHP 8.4 runtime |  | Cloud Run functions supports the PHP 8.4 runtime; Cloud Run functions supports the PHP 8.4 runtime. |
 | 2025-06-17 | Ruby 3.4 runtime |  | Cloud Run functions supports the Ruby 3.4 runtime; Cloud Run functions supports the Ruby 3.4 runtime. |
-| 2025-05-30 | Java execution ID logging |  | Java functions using Functions Framework 1.4.0 or later can add a unique execution ID to logs with java.util.logging.Logger. |
 | 2025-05-13 | Label propagation to Cloud Run |  | Labels set on Cloud Run functions propagate to Cloud Run when functions are deployed there. |
 | 2025-05-05 | Python 3.13 runtime |  | Cloud Run functions supports the Python 3.13 runtime; Cloud Run functions supports the Python 3.13 runtime. |
 | 2025-03-03 | Go 1.23 runtime |  | Cloud Run functions supports the Go 1.23 runtime; Cloud Run functions supports the Go 1.23 runtime. |
@@ -54,7 +53,6 @@ Unique features: 137
 | 2023-07-31 | Region availability: us-south1 |  | Cloud Run functions is available in the us-south1 region. |
 | 2023-06-26 | Node.js 20 runtime |  | Cloud Run functions supports the Node.js 20 runtime; Cloud Run functions supports the Node.js 20 runtime. |
 | 2023-06-23 | Java Maven wrapper support |  | Cloud Run functions Java runtime supports projects that use Maven wrappers. |
-| 2023-06-16 | Deterministic URLs |  | Cloud Run functions 2nd gen supports deterministic cloudfunctions.net URLs, including retroactive assignment for existing functions. |
 | 2023-06-09 | Serverless VPC Access connector creation from console |  | Cloud Run functions lets users create and configure a Serverless VPC Access connector directly from the Google Cloud console create form. |
 | 2023-06-01 | Pnpm package manager support |  | Cloud Run functions supports using the Pnpm package manager for Node.js runtime dependencies. |
 | 2023-05-16 | Deployment restriction by product generation |  | Cloud Run functions supports restricting new deployments by 1st gen or 2nd gen product generation. |

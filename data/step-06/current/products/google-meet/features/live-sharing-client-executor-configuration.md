@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:41:32.750Z"
+generated_at: "2026-04-12T12:17:10.837Z"
 product_name: "Google Meet"
 product_slug: "google-meet"
 feature_name: "Live Sharing client executor configuration"
 feature_slug: "live-sharing-client-executor-configuration"
 latest_feature_date: "2022-05-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
   - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces"
-  - "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
-  - "https://developers.google.com/workspace/meet/api/guides/participants"
+  - "https://developers.google.com/workspace/meet/api/guides/quickstart/java"
+  - "https://developers.google.com/workspace/meet/api/guides/quickstart/nodejs"
 keywords:
   - "live"
   - "sharing"
@@ -27,7 +27,7 @@ keywords:
 # Live Sharing client executor configuration
 
 Product: Google Meet
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +39,14 @@ The client factory adds an overload that lets consumers supply executor services
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
 - [https://developers.google.com/workspace/meet/api/guides/meeting-spaces](https://developers.google.com/workspace/meet/api/guides/meeting-spaces)
-- [https://developers.google.com/workspace/meet/api/guides/authenticate-authorize](https://developers.google.com/workspace/meet/api/guides/authenticate-authorize)
-- [https://developers.google.com/workspace/meet/api/guides/participants](https://developers.google.com/workspace/meet/api/guides/participants)
+- [https://developers.google.com/workspace/meet/api/guides/quickstart/java](https://developers.google.com/workspace/meet/api/guides/quickstart/java)
+- [https://developers.google.com/workspace/meet/api/guides/quickstart/nodejs](https://developers.google.com/workspace/meet/api/guides/quickstart/nodejs)
 
 ## Supporting Pages
 
@@ -54,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
 - Source ID: `site-docs-root`
-- Final score: 62
+- Final score: 63
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -67,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces](https://developers.google.com/workspace/meet/api/guides/meeting-spaces)
 - Source ID: `site-docs-root`
-- Final score: 54
+- Final score: 56
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -76,29 +76,31 @@ Evidence snippets:
 - The following code sample shows how to update a meeting space: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/spacesservice/updatespace/AsyncUpdateSpace.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.Space ; import com.google.apps.meet.v2.SpacesServiceClient ; import com.google.apps.meet.v2.UpdateSpaceRequest ; import com.google.protobuf.FieldMask ; public class AsyncUpdateSpace { public static void main ( String [] args ) throws Exception { asyncUpdateSpace (); } public static void asyncUpdateSpace () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( SpacesServiceClient spacesServiceClient = SpacesServiceClient . create ()) { UpdateSpaceRequest request = UpdateSpaceRequest . newBuilder () . setSpace ( Space . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . build (); ApiFuture<Space> future = spacesServiceClient . updateSpaceCallable (). futureCall ( request ); // Do something.
 - The following code sample shows how to retrieve a meeting space: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/spacesservice/getspace/AsyncGetSpace.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.GetSpaceRequest ; import com.google.apps.meet.v2.Space ; import com.google.apps.meet.v2.SpaceName ; import com.google.apps.meet.v2.SpacesServiceClient ; public class AsyncGetSpace { public static void main ( String [] args ) throws Exception { asyncGetSpace (); } public static void asyncGetSpace () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( SpacesServiceClient spacesServiceClient = SpacesServiceClient . create ()) { GetSpaceRequest request = GetSpaceRequest . newBuilder (). setName ( SpaceName . of ( "[SPACE]" ). toString ()). build (); ApiFuture<Space> future = spacesServiceClient . getSpaceCallable (). futureCall ( request ); // Do something.
 
-### "Authenticate and authorize Meet REST API requests \_|\_ Google Meet \_|\_\
+### Java quickstart \_|\_ Google Meet \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/workspace/meet/api/guides/authenticate-authorize](https://developers.google.com/workspace/meet/api/guides/authenticate-authorize)
+- URL: [https://developers.google.com/workspace/meet/api/guides/quickstart/java](https://developers.google.com/workspace/meet/api/guides/quickstart/java)
 - Source ID: `site-docs-root`
-- Final score: 52
-- Re-rank relevance: N/A
+- Final score: 53
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
-- Authenticate and authorize using domain-wide delegation If you're a domain administrator, you can grant domain-wide delegation of authority to authorize an application's service account to access your users' data without requiring each user to give consent.
-- Restricted The Usage column in the table indicates the sensitivity of each scope, according to the following definitions: Non-sensitive : These scopes provide the smallest scope of authorization access and only require basic app verification.
-- Important terminology The following is a list of terms related to authentication and authorization: Authentication The act of ensuring that a principal , which can be a user or an app acting on behalf of a user, is who they say they are.
+- Files . exists ( pathFor ( id ))) { return ; } Files . delete ( pathFor ( id )); } }; / Initialize a UserAuthorizer for local authorization. @param callbackUri @return / private static UserAuthorizer getAuthorizer ( URI callbackUri ) throws IOException { // Load client secrets. try ( InputStream in = MeetQuickstart . class . getResourceAsStream ( CREDENTIALS FILE PATH )) { if ( in == null ) { throw new FileNotFoundException ( "Resource not found: " + CREDENTIALS FILE PATH ); } ClientId clientId = ClientId . fromStream ( in ); UserAuthorizer authorizer = UserAuthorizer . newBuilder () . setClientId ( clientId ) . setCallbackUri ( callbackUri ) . setScopes ( SCOPES ) . setPKCEProvider ( new DefaultPKCEProvider () { // Temporary fix for https://github.com/googleapis/google-auth-library-java/issues/1373 @Override public String getCodeChallenge () { return super . getCodeChallenge (). split ( "=" ) [ 0 ] ; } }) . setTokenStore ( TOKEN STORE ). build (); return authorizer ; } } / Run the OAuth2 flow for local/installed app. @return An authorized Credential object. @throws IOException If the credentials.json file cannot be found. / private static Credentials getCredentials () throws Exception { LocalServerReceiver receiver = new LocalServerReceiver .
+- Include the following code in your new Java file: meet/quickstart/src/main/java/MeetQuickstart.java View on GitHub import java.awt.Desktop ; import java.io.FileNotFoundException ; import java.io.IOException ; import java.io.InputStream ; import java.net.URI ; import java.net.URL ; import java.nio.file.Files ; import java.nio.file.Path ; import java.nio.file.Paths ; import java.util.Collections ; import java.util.List ; import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver ; import com.google.api.gax.core.FixedCredentialsProvider ; import com.google.apps.meet.v2.CreateSpaceRequest ; import com.google.apps.meet.v2.Space ; import com.google.apps.meet.v2.SpacesServiceClient ; import com.google.apps.meet.v2.SpacesServiceSettings ; import com.google.auth.Credentials ; import com.google.auth.oauth2.ClientId ; import com.google.auth.oauth2.DefaultPKCEProvider ; import com.google.auth.oauth2.TokenStore ; import com.google.auth.oauth2.UserAuthorizer ; / class to demonstrate use of Drive files list API / public class MeetQuickstart { / Directory to store authorization tokens for this application. / private static final String TOKENS DIRECTORY PATH = "tokens" ; / Global instance of the scopes required by this quickstart.
+- Credentials credentials = getCredentials (); SpacesServiceSettings settings = SpacesServiceSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( credentials )) . build (); try ( SpacesServiceClient spacesServiceClient = SpacesServiceClient . create ( settings )) { CreateSpaceRequest request = CreateSpaceRequest . newBuilder () . setSpace ( Space . newBuilder (). build ()) . build (); Space response = spacesServiceClient . createSpace ( request ); System . out . printf ( "Space created: %s\n" , response . getMeetingUri ()); } catch ( IOException e ) { // TODO(developer): Handle errors e . printStackTrace (); } } } Run the sample Run the sample: gradle run The first time you run the sample, it prompts you to authorize access: If you're not already signed in to your Google Account, sign in when prompted.
+- Open the default build.gradle file and replace its contents with the following code: meet/quickstart/build.gradle View on GitHub apply plugin: 'java' apply plugin: 'application' mainClassName = 'MeetQuickstart' sourceCompatibility = 11 targetCompatibility = 11 version = '1.0' repositories { mavenCentral () } dependencies { implementation 'com.google.cloud:google-cloud-meet:0.3.0' implementation 'com.google.auth:google-auth-library-oauth2-http:1.19.0' implementation 'com.google.oauth-client:google-oauth-client-jetty:1.34.1' } Set up the sample In the src/main/java/ directory, create a new Java file with a name that matches the mainClassName value in your build.gradle file.
 
-### Work with participants \_|\_ Google Meet \_|\_ Google for Developers
+### Node.js quickstart \_|\_ Google Meet \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/workspace/meet/api/guides/participants](https://developers.google.com/workspace/meet/api/guides/participants)
+- URL: [https://developers.google.com/workspace/meet/api/guides/quickstart/nodejs](https://developers.google.com/workspace/meet/api/guides/quickstart/nodejs)
 - Source ID: `site-docs-root`
-- Final score: 46
-- Re-rank relevance: N/A
+- Final score: 53
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The following code sample shows how to list all participant sessions in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listparticipantsessions/AsyncListParticipantSessions.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListParticipantSessionsRequest ; import com.google.apps.meet.v2.ParticipantName ; import com.google.apps.meet.v2.ParticipantSession ; public class AsyncListParticipantSessions { public static void main ( String [] args ) throws Exception { asyncListParticipantSessions (); } public static void asyncListParticipantSessions () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListParticipantSessionsRequest request = ListParticipantSessionsRequest . newBuilder () . setParent ( ParticipantName . of ( "[CONFERENCE RECORD]" , "[PARTICIPANT]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . setFilter ( "filter-1274492040" ) . build (); ApiFuture<ParticipantSession> future = conferenceRecordsServiceClient . listParticipantSessionsPagedCallable (). futureCall ( request ); // Do something. for ( ParticipantSession element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list participant sessions.js View on GitHub // Copyright 2026 Google LLC // // Licensed under the Apache License, Version 2.0 (the "License"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // // https://www.apache.org/licenses/LICENSE-2.0 // // Unless required by applicable law or agreed to in writing, software // distributed under the License is distributed on an "AS IS" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. // See the License for the specific language governing permissions and // limitations under the License. // // This file is automatically generated by gapic-generator-typescript. // https://github.com/googleapis/gapic-generator-typescript // All changes to this file may be overwritten. 'use strict' ; function main ( parent ) { / This snippet has been automatically generated and should be regarded as a code template only.
-- The following code sample shows how to list all participants in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listparticipants/AsyncListParticipants.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordName ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListParticipantsRequest ; import com.google.apps.meet.v2.Participant ; public class AsyncListParticipants { public static void main ( String [] args ) throws Exception { asyncListParticipants (); } public static void asyncListParticipants () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListParticipantsRequest request = ListParticipantsRequest . newBuilder () . setParent ( ConferenceRecordName . of ( "[CONFERENCE RECORD]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . setFilter ( "filter-1274492040" ) . build (); ApiFuture<Participant> future = conferenceRecordsServiceClient . listParticipantsPagedCallable (). futureCall ( request ); // Do something. for ( Participant element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list participants.js View on GitHub / This snippet has been automatically generated and should be regarded as a code template only.
-- The following code sample shows how to retrieve a specific participant session: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/getparticipantsession/AsyncGetParticipantSession.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.GetParticipantSessionRequest ; import com.google.apps.meet.v2.ParticipantSession ; import com.google.apps.meet.v2.ParticipantSessionName ; public class AsyncGetParticipantSession { public static void main ( String [] args ) throws Exception { asyncGetParticipantSession (); } public static void asyncGetParticipantSession () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { GetParticipantSessionRequest request = GetParticipantSessionRequest . newBuilder () . setName ( ParticipantSessionName . of ( "[CONFERENCE RECORD]" , "[PARTICIPANT]" , "[PARTICIPANT SESSION]" ) . toString ()) . build (); ApiFuture<ParticipantSession> future = conferenceRecordsServiceClient . getParticipantSessionCallable (). futureCall ( request ); // Do something.
-- The following code sample shows how to retrieve a specific participant: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/getparticipant/AsyncGetParticipant.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.GetParticipantRequest ; import com.google.apps.meet.v2.Participant ; import com.google.apps.meet.v2.ParticipantName ; public class AsyncGetParticipant { public static void main ( String [] args ) throws Exception { asyncGetParticipant (); } public static void asyncGetParticipant () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { GetParticipantRequest request = GetParticipantRequest . newBuilder () . setName ( ParticipantName . of ( "[CONFERENCE RECORD]" , "[PARTICIPANT]" ). toString ()) . build (); ApiFuture<Participant> future = conferenceRecordsServiceClient . getParticipantCallable (). futureCall ( request ); // Do something.
+- In the file, paste the following code: meet/quickstart/index.js View on GitHub import path from 'node:path' ; import process from 'node:process' ; import { SpacesServiceClient } from '@google-apps/meet' ; import { authenticate } from '@google-cloud/local-auth' ; // The scope for creating a new meeting space. const SCOPES = [ 'https://www.googleapis.com/auth/meetings.space.created' ]; // The path to the credentials file. const CREDENTIALS PATH = path . join ( process . cwd (), 'credentials.json' ); / Creates a new meeting space. / async function createSpace () { // Authenticate with Google and get an authorized client. const authClient = await authenticate ({ scopes : SCOPES , keyfilePath : CREDENTIALS PATH , }); // Create a new Meet API client. const meetClient = new SpacesServiceClient ({ authClient , }); // Construct the request to create a new space.
+- The request body is empty. const request = {}; // Run the request to create the space. const response = await meetClient . createSpace ( request ); // Print the URL of the new meeting. console . log ( Meet URL: ${ response [ 0 ]. meetingUri } ); } await createSpace (); Run the sample In your working directory, run the sample: node .
+- Next steps Try the Google Workspace APIs in the APIs explorer Google Meet API Client on GitHub Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Install the client library Install the libraries using npm: npm install @google-apps/meet @google-cloud/local-auth@2.1.0 --save Set up the sample In your working directory, create a file named index.js .
 

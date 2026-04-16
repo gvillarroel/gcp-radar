@@ -1,16 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.598Z"
+generated_at: "2026-04-12T12:07:33.843Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB outbound public IP connectivity"
 feature_slug: "alloydb-outbound-public-ip-connectivity"
 latest_feature_date: "2024-09-30"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
-  - "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+  - "https://docs.cloud.google.com/alloydb/docs/cluster-create"
+  - "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
+  - "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+  - "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect"
 keywords:
   - "public egress connectivity"
   - "outbound network access"
@@ -25,7 +27,7 @@ keywords:
 # AlloyDB outbound public IP connectivity
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,39 +35,47 @@ AlloyDB outbound public IP connectivity is generally available on primary and se
 
 ## Extended Definition
 
-AlloyDB outbound public IP connectivity is a feature of AlloyDB for PostgreSQL that provides outbound public network egress using public IP on AlloyDB instances. The feature is generally available for both primary and secondary instances.
+AlloyDB outbound public IP connectivity is generally available on primary and secondary instances.
 
 ## Evidence Summary
 
-The AlloyDB release notes explicitly state that outbound public IP connectivity on primary and secondary instances reached GA on September 30, 2024; the Kubernetes quickstart page documents instance setup/connection steps but does not add additional evidence about outbound public IP behavior.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- [https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes](https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes)
+- [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
+- [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
 
 ## Supporting Pages
 
-### "Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \_\
+### "Create a cluster and its primary instance \_|\_ AlloyDB for PostgreSQL \_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes](https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes)
-- Source ID: `site-docs-root`
-- Final score: 24
+- URL: [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
+- Source ID: `site-docs-reference-2`
+- Final score: 70
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- To deploy the AlloyDB primary instance, run the following: gcloud alloydb instances create INSTANCE ID \ --instance-type = PRIMARY \ --cpu-count = NUM CPU \ --region = REGION \ --cluster = CLUSTER ID \ --project = PROJECT ID Replace the following: INSTANCE ID with the name of the AlloyDB instance of your choice, such as alloydb-primary .
-- Get the instance connection INSTANCE URI for the AlloyDB primary instance you want AlloyDB proxy to connect to: gcloud alloydb instances describe INSTANCE ID \ --cluster = CLUSTER ID \ --region = REGION \ --format = "value(name)" Replace the following: INSTANCE ID : name for the instance, such as alloydb-primary .
-- Adjust this value based on your application's requirements. cpu : "1" Replace INSTANCE URI with the path to your AlloyDB primary instance from step 1, such as projects/ PROJECT ID /locations/ REGION /clusters/ CLUSTER ID /instances/ INSTANCE ID .
-- Get the instance connection INSTANCE URI for the AlloyDB primary instance: In the Google Cloud console, go to the Clusters page.
+### "Monitor the health of your clusters and instances \_|\_ AlloyDB for PostgreSQL\
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 20
+- URL: [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- Source ID: `site-docs-reference-2`
+- Final score: 70
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- September 30, 2024 Feature AlloyDB outbound public IP connectivity on primary and secondary instances is generally available ( GA ).
+### "Create and query an AlloyDB database using the Google Cloud console \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- Source ID: `site-docs-root`
+- Final score: 64
+- Re-rank relevance: N/A
+
+### "Private Service Connect overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
+- Source ID: `site-docs-root`
+- Final score: 62
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

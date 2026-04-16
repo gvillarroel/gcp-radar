@@ -1,30 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:40.923Z"
+generated_at: "2026-04-14T05:04:10.353Z"
 product_name: "Apigee Monetization"
 product_slug: "apigee-monetization"
 feature_name: "Monetization Rate Plan Management in Apigee Cloud Console"
 feature_slug: "monetization-rate-plan-management-in-apigee-cloud-console"
 latest_feature_date: "2024-07-26"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+  - "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
 keywords:
-  - "rate plan management UI"
-  - "Apigee Cloud Console UI"
-  - "API product rate plan"
-  - "create rate plan"
-  - "edit rate plan"
-  - "Cloud Console"
-  - "monetization console"
-  - "rate plans"
+  - "management"
+  - "operations"
+  - "console"
+  - "plan"
+  - "such"
+  - "rate"
 ---
 
 # Monetization Rate Plan Management in Apigee Cloud Console
 
 Product: Apigee Monetization
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,55 +32,59 @@ Monetization operations such as creating and managing rate plans for API Product
 
 ## Extended Definition
 
-Monetization rate plan management in Apigee Cloud Console is the UI-based process for working with API product rate plans via the Apigee > Distribution > Monetization page, including opening the Rate plans page and creating rate plans. In this workflow, a rate plan can configure billing-related behavior for an API product (such as billing frequency, currency, setup fees, consumption pricing, recurring fees, active dates, and revenue sharing), and Apigee allows multiple rate plans per API product but only one active plan at a time.
+Monetization operations such as creating and managing rate plans for API Products are now available in the Apigee Cloud Console UI.
 
 ## Evidence Summary
 
-The referenced Monetization documentation page explicitly links rate plan management to the Apigee Cloud Console Monetization UI and lists the configurable elements and constraints of API product rate plans.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans](https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
+- [https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub](https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub)
 
 ## Supporting Pages
 
-### Managing rate plans for API products \_|\_ Apigee \_|\_ Google Cloud Documentation
+### Managing rate plans for API products | Apigee | Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans](https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 200
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Provision API hub Provision using Cloud console Provision using Command line Provision using Terraform Get started with API hub Quickstarts Overview Auto-register Apigee proxies Register an API Create an API version Create and edit attributes Create an Eventarc trigger API resources Overview Register an API Register MCP APIs Manage API resources Auto-register APIs View API resource insights View security scores for APIs Manage API resources Versions Overview Manage versions Operations and MCP tools Overview Manage operations Manage MCP tools Specifications Overview Manage specifications Deployments Overview Manage deployments API supply chain Overview Create a dependency Manage dependencies API observations in API hub Overview Configure API observations in API hub Manage API observations in API hub Advanced API security for multiple Apigee organizations and gateways Advanced API security for multi-gateway projects Configure Advanced API security for multi-gateway projects View security scores across all projects and gateways Manage security profiles for multi-gateway assessments Manage monitoring conditions for multi-gateway assessments Advanced API security advisor tool API insights Overview Configure API insights in API hub API insights dashboards Add-on management Manage add-ons Validate OpenAPI specification Search APIs using semantic search Specification boost Settings Overview Manage attributes Manage project associations Plugins Overview Manage Google Cloud plugins and plugin instances Manage third-party plugins and plugin instances Manage custom plugins and plugin instances Create plugin instances Manage plugins instances Curations Overview Create curations Manage curations Actions Overview Manage Agent Registry integration Deprovision API hub Audit logging for API hub Access Control Predefined IAM roles Add IAM conditions Attach and manage tags VPC Service Controls for API hub gcloud CLI for API hub API hub locations Tutorials Enrich API data with custom curation in API hub Ingest Azure API data into API hub Reference Limits REST Reference v1 Overview Resources REST Resources projects.locations Overview collectApiData get list lookupRuntimeProjectAttachment retrieveApiViews searchResources projects.locations.addons Overview get list manageConfig projects.locations.apiHubInstances Overview create delete get lookup projects.locations.apis Overview create delete get list patch projects.locations.apis.versions Overview create delete get list patch projects.locations.apis.versions.definitions Overview get projects.locations.apis.versions.operations Overview create delete get list patch projects.locations.apis.versions.specs Overview create delete fetchAdditionalSpecContent get getContents lint list patch projects.locations.attributes Overview create delete get list patch projects.locations.curations Overview create delete get list patch projects.locations.dependencies Overview create delete get list patch projects.locations.deployments Overview create delete get list patch projects.locations.discoveredApiObservations Overview get list projects.locations.discoveredApiObservations.discoveredApiOperations Overview get list projects.locations.externalApis Overview create delete get list patch projects.locations.hostProjectRegistrations Overview create get list projects.locations.operations Overview cancel delete get list projects.locations.plugins Overview create delete disable enable get getStyleGuide list updateStyleGuide projects.locations.plugins.instances Overview create delete disableAction enableAction executeAction get list manageSourceData patch projects.locations.plugins.styleGuide Overview getContents projects.locations.runtimeProjectAttachments Overview create delete get list Types AggregationFunction AllowedValue AttributeValues AuthType CollectApiDataResponse ConfigValueOption DisablePluginInstanceActionResponse Documentation EnablePluginInstanceActionResponse EnumerateExtendedApisRequest EnumerateExtendedApisResponse ExecutePluginInstanceActionResponse GoogleServiceAccountConfig HttpOperation InitializeSystemOwnedPluginRequest InitializeSystemOwnedPluginResponse InsightsMetric OperationMetadata Owner QueryApiMetricsRequest QueryApiMetricsResponse QueryDependencyMetricsRequest QueryDependencyMetricsResponse RemoveSystemOwnedPluginRequest RemoveSystemOwnedPluginResponse SourceMetadata StyleGuide StyleGuideContents WaitOperationRequest RPC Reference Overview google.cloud.apihub.v1 google.cloud.apihub.v1main google.cloud.common google.cloud.location google.longrunning google.rpc Client libraries Overview C# Go Java Node.js PHP Python Release notes Envoy Adapter v2.0.x Concepts Getting started Native Envoy example for Apigee and hybrid Apigee hybrid example with Kubernetes Operation Reference Troubleshooting v1.4.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.3.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.2.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.1.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.0.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting Release notes HYBRID RUNTIME Supported platforms and versions Kubernetes and custom resources used by Apigee v1.16 What is Apigee hybrid?
+- Managing rate plans for API products | Apigee | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Apigee Start free Overview Guides Reference Support Resources Technology areas More Overview Guides Reference Support Resources Cross-product tools More Console DISCOVER What is Apigee?
+- Managing API products Managing client applications Organizing client app ownership Controlling developer access to your apps App access overview Registering app developers Importing existing consumer keys and secrets Developer portal solutions API design overview Building your integrated portal Introduction How portal users interact with your portal Getting started Tutorial: Building your first portal Overview Step 1: Create a portal Step 2: Customize the color palette Step 3: Customize the logo Step 4: Edit page content Step 5: Set up navigation Step 6: Publish an API Quick tips for customizing the sample portal Best practices for building your portal Building and publishing your portal Steps to build your portal Managing your portals Managing the pages in your portal Developing portal content Customizing your theme Setting up navigation Publishing your APIs Managing access to your APIs using API keys Managing the default visibility Managing your assets Customizing your domain Configuring email Configure a content security policy Configuring analytics tracking Adding custom scripts Publishing your portal content Viewing your live portal Creating a custom search page Managing user account creation and sign-in experience Configuring the user account creation and sign-in experience Configuring identity providers Managing user accounts Managing developer teams Managing audiences Reference Cookies Markdown syntax Building your portal using Drupal Introduction Drupal-based developer portal in Cloud Marketplace Overview Get started Customize your portal Support resources Choosing a hosting provider Support process for Apigee Drupal modules MONETIZE Overview of Apigee monetization Steps to use Apigee monetization Enabling Apigee monetization Enforcing monetization limits in API proxies Enforcing monetization quotas in API products Managing prepaid account balances Managing rate plans for API products Integrating monetization in Drupal portal Purchasing API product subscriptions using API Debugging monetization using the Debug tool Capturing monetization data Generating monetization reports ADMINISTER Users, roles, and access Users and roles Apigee roles Managing users, roles, and permissions using APIs Managing users in the UI Managing access in Google Cloud Access Apigee using Workforce Identity Federation Adding IAM Conditions to policies Apigee Spaces Apigee Spaces overview Apigee Spaces roles and permissions Create and manage Apigee Spaces Manage API resources with Apigee Spaces Move API resources in Apigee Spaces IAM permission hierarchy in Apigee Spaces Network Configuration Peering ranges Using multiple regions Managing instances Changing instance IPs Recreating an Apigee instance with zero downtime Using shared VPC networks Southbound networking patterns Northbound networking with Private Service Connect Migrate northbound routing to Private Service Connect Configure active health check for regional failover with Private Service Connect Client IP resolution Security administration TLS Options for configuring TLS Accessing TLS connection information in an API proxy Working with references SAML Using VPC Service Controls About the encryption keys Provisioning NAT IPs Performance considerations for Apigee Cloud NAT Calculating static NAT IP requirements Preventing DoS attacks Integrate Apigee with your SIEM solution Integrate Apigee with Google SecOps Managing data collectors Backups Switching between organizations Manage maintenance updates Overview Manage instance maintenance windows View maintenance logs ANALYZE Analytics overview Using the analytics dashboards API metrics API proxy performance Error code analysis Latency analysis Cache performance Target performance Developer analysis Developer engagement Traffic composition End user analysis Devices Geomap Custom reports Creating and managing custom reports Analytics metrics, dimensions, and filters reference Operations anomalies Operations anomalies overview View and investigate anomalies Create anomaly alerts Collecting custom data with the DataCapture policy Exporting data from analytics Obfuscate user data for analytics Data Studio integration Using the API Using the asynchronous custom reports API Using the metrics API Metrics API examples Troubleshooting Troubleshooting with analytics What does an analytics entity named 'not set' mean?
+- Obfuscating user data for analytics Logging Logging overview View logs Logging with HTTP proxy forwarding enabled Cassandra logs MART logs Runtime logs Synchronizer logs UDCA logs Audit logging information Metrics collection Metrics collection overview Cluster monitoring guidelines Configuring metrics collection Viewing metrics Other data collection Pod metrics annotations details Using the Diagnostic collector Runtime services Runtime service configuration overview Managing runtime plane components Cassandra admin Expanding Cassandra persistent volumes Scaling Cassandra pods Storing Cassandra secrets in Hashicorp Vault Environments About environments Managing environments Creating environments Deleting environments Configuring virtual hosts Configuring proxy forwarding Generating self-signed TLS certificates Configuring TLS and mTLS on the ingress gateway DNS setup quickstart Synchronizer Apigee connect Configure the MART service account Service accounts About service accounts Service account validation Ingress gateway Managing Apigee Ingress Migrating to Apigee Ingress Enabling non-SNI and HTTP clients Obtain TLS credentials: An example Running cert-manager in a custom namespace Cluster management Configuring Kubernetes network policies Securing the runtime installation Data encryption Enabling Workload Identity with Helm charts Enabling Workload Identity with apigeectl Storing data in a Kubernetes secret Multi-region deployments Adding multiple hybrid orgs to a cluster Migrating an org to another cluster Scale and autoscale services Decommission a hybrid region Decommission a hybrid org Use a private image repository with helm charts Use a private image repository with apigeectl Apigee deployment services Rolling updates Using Kubernetes Tolerations Manage process ID limits Cassandra backup and restore Backup overview CSI backup and restore Non-CSI backup and restore Scheduling backups in Cloud Storage Scheduling backups in a remote server Monitoring backups Restoring Cassandra backups Restore overview Restoring in a single region Restoring in multiple regions Viewing restore logs Reference Configuration property reference Apigee hybrid Helm charts reference apigee-pull-push.sh apigeectl common.sh create-service-account dump_kubernetes.sh Upgrading hybrid Migrate to Helm Charts from apigeectl v1.10 What is Apigee hybrid?
+
+### Get started with the Apigee Extension Processor \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
 - Source ID: `site-docs-reference`
-- Final score: 86
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page explicitly details creating, updating, publishing, cloning, deleting, and viewing rate plans in the Apigee Cloud Console Monetization UI.
+- Final score: 112
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Using rate plans, API product owners can monetize their API products by configuring the following: Billing account model Currency used for billing Frequency at which customers are billed (monthly only) Initial setup fees for using an API product Consumption-based charges for using an API product Any recurring fees not based on consumption, such as monthly fees for access to your API product Time interval during which the rate plan is in effect for an API product (rate plan activation and expiration times) Revenue sharing with developer partners Note: You can associate multiple rate plans with the same API product but only one rate plan can be active at any point of time.
-- The following provides an example of the response output: { "name": "4403a3a5-b366-44f0-aa4d-bd54dcfd3239", "apiproduct": "HelloworldProduct", "displayName": "myrateplan5", "billingPeriod": "MONTHLY", "currencyCode": "USD", "setupFee": { "currencyCode": "USD", "units": "10" }, "consumptionPricingType": "FIXED PER UNIT", "consumptionPricingRates": [ { "fee": { "currencyCode": "USD", "units": "3" } } ], "revenueShareType": "FIXED", "revenueShareRates": [ { "sharePercentage": 1 } ], "state": "DRAFT" } For more information, see the Create rate plan API Previewing your rate plan in the UI In the Google Cloud console, go to the Distribution > Monetization page.
-- To access the Rate plans page: In the Google Cloud console, go to the Apigee > Distribution > Monetization page.
-- Creating rate plans Create rate plans as described in the following sections.
-
-### "Enrich API data with custom curation in API hub \_|\_ Apigee \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data](https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data)
-- Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Download the following prebuilt integration JSON file and use it for the purpose of this tutorial: Integration file Download link enrich-with-spec-yaml.json Click to download Create and upload an integration To begin, you'll create a new integration in Application Integration and then upload the downloaded JSON file to define the curation logic: In the Google Cloud console, go to the Application Integration page.
-- Click to download To upload the API specification files into your Cloud Storage bucket, do the following: In the Google Cloud console, go to the Cloud Storage Buckets page.
-- To edit the curation settings of the existing Apigee and hybrid plugin instance, do the following: In the Google Cloud console, go to the API hub page.
-- To configure a Cloud Storage connection, do the following: In the Google Cloud console, go to the Integration Connectors page.
+- Go to the VPC Networks page in the Google Cloud console: Go to VPC Networks Required roles To get the permissions that you need to install the Apigee Extension Processor, ask your administrator to grant you the following IAM roles: Create and manage service accounts: Service Account Admin ( roles/iam.serviceAccountAdmin ) on organization Create and manage service extensions: Service Extensions Admin ( roles/networkservices.serviceExtensionsAdmin ) on organization Create and manage network endpoint groups (NEGs): Compute Instance Admin ( roles/compute.instanceAdmin ) on organization Create and manage networking resources: Compute Network Admin ( roles/compute.networkAdmin ) on organization Create and manage backend services: Compute Load Balancer Admin ( roles/compute.loadBalancerAdmin ) on organization Create and manage Apigee resources: Apigee Org Admin ( roles/apigee.admin ) on organization Create and manage traffic extensions: Apigee APIM Service Extension Admin ( roles/apigee.apimServiceExtensionAdmin ) on organization View traffic extensions: Apigee APIM Service Extension Viewer ( roles/apigee.apimServiceExtensionViewer ) on organization Manage long-running operations: Apigee APIM Service Extension Service Agent ( roles/apigee.apimServiceExtensionServiceAgent ) on the service agent in the Google Cloud project For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Create a developer App and App credentials To create a developer App and App credentials for the newly created API product: Go to the Apigee API management page in the Google Cloud console: Apigee API management Create a developer: Select Distribution > Developers .
+- Follow the steps in Operations to add an API operation set to the API product, according to the following specifications: Source: In the Google Cloud console, go to the Apigee > Distribution > API Products page.
+- Add the AssignMessage policy for Google authentication If you want to use your Extension Processor to provide API management for a Google-authenticated service, you can inject a Google access token or Google ID token into requests sent to the backend service using the AssignMessage policy .
 
 ### "Ingest Microsoft Azure API data into API hub \_|\_ Apigee \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub](https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub)
 - Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: N/A
+- Final score: 108
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
+- The following diagram illustrates the workflow you'll be setting up: Objectives In this tutorial, you will complete the following steps: Step 1: Create an Azure App Step 2: Configure Google Cloud resources Step 3: Create and publish an integration in Application Integration Step 4: Execute the integration to ingest API data from Azure APIM to API hub Step 5: Verify and view the ingested API data in API hub Costs In this document, you use the following billable components of Google Cloud: Application Integration To generate a cost estimate based on your projected usage, use the pricing calculator .
 - Make sure that you have the following role or roles on the project: API hub Admin ( roles/apihub.admin ) Application Integration Admin ( roles/integrations.admin ) Service Account Admin ( roles/iam.serviceAccountAdmin ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Check for the roles In the Google Cloud console, go to the IAM page.
-- Ensure that you do the following in your Google Cloud console: In the Google Cloud console, on the project selector page, select or create a Google Cloud project.
-- Go to the Application Integration page in the Google Cloud console and click the azure-apim-plugin integration to view its components and structure.
-- To verify that the ingestion was successful, go to the APIs page in API hub in the Google Cloud console.
+- For Each Parallel Task taskId: 19 For each API ID in $api id-list$ , runs a sub-integration ( api trigger/INTEGRATION NAME API 5 ) in parallel to gather detailed metadata for that API, including operations, revisions, specifications, and deployments.
+- Data Mapping Task taskId: 31 Extracts deployment properties such as $deploymenturl$ , $publisherEmail$ , $publisherName$ , $deploymentenvironment$ , $deploymentcreatedAt$ , and $deploymentlastUpdatedTime$ from the response.
 

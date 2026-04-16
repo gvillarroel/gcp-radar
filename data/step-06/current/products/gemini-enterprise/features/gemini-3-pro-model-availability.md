@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:21.379Z"
+generated_at: "2026-04-12T12:16:13.688Z"
 product_name: "Gemini Enterprise"
 product_slug: "gemini-enterprise"
 feature_name: "Gemini 3 Pro model availability"
 feature_slug: "gemini-3-pro-model-availability"
 latest_feature_date: "2025-11-18"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
 keywords:
   - "gemini"
   - "pro"
@@ -24,7 +27,7 @@ keywords:
 # Gemini 3 Pro model availability
 
 Product: Gemini Enterprise
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Gemini Enterprise supports Gemini 3 Pro in preview when enabled by an administra
 
 Gemini Enterprise supports Gemini 3 Pro in preview when enabled by an administrator.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider](https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete](https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Configure identity provider \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider](https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider)
+- Source ID: `site-docs-root`
+- Final score: 248
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Third-party identity provider When you only connect Gemini Enterprise to third-party data sources, and you are already using a third-party identity provider that supports OIDC or SAML 2.0, such as Microsoft Entra ID, Active Directory Federation Services (AD FS), Okta, and others, you must use Workforce Identity Federation.
+- Gemini Enterprise supports the following options: Identity provider type When to use Google Identity When you connect Gemini Enterprise to Google Workspace data sources, you must use Google Identity .
+- For example, if your organization uses both email and principal name as user identifiers across different applications, and the principal name is set as the preferred username in your third-party identity provider, you can map it to Gemini Enterprise using the Workforce Identity Federation attribute mapping (for example, attribute.as user identifier 1=assertion.preferred username ).
+- Connect identity provider To specify an identity provider for Gemini Enterprise and turn on data source access control, follow these steps: In the Google Cloud console, go to the Gemini Enterprise page.
+
+### "Connect to data from AlloyDB for PostgreSQL (Preview) \_|\_ Gemini Enterprise\
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data)
+- Source ID: `site-docs-root`
+- Final score: 240
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following example: curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/ LOCATION /collections/default collection/dataStores?dataStoreId= DATA STORE ID " -d '{ "displayName": " DATA STORE NAME ", "federatedSearchConfig": { "alloyDbConfig": { "alloydbConnectionConfig": { "instance": " INSTANCE PATH ", "database": " DATABASE NAME ", "user": " DATABASE USER NAME ", "password": " DATABASE USER PASSWORD ", "authMode": "AUTH MODE SERVICE ACCOUNT" }, "alloydb ai nl config": { "nlConfigId": " NL CONFIG ID " } } }, "industryVertical": "GENERIC", "solutionTypes": ["SOLUTION TYPE SEARCH"] }' Replace the following: PROJECT ID : the ID of your project where you use Gemini Enterprise.
+- For example: CREATE ROLE USER NAME WITH LOGIN PASSWORD ' PASSWORD ' ; GRANT SELECT ON TABLE "public" . " TABLE NAME 1 " TO USER NAME ; GRANT SELECT ON TABLE "public" . " TABLE NAME 2 " TO USER NAME ; When linking Gemini Enterprise with AlloyDB, provide the username and password in the User and Password fields of alloydbConnectionConfig .
+- Grant the Cloud AlloyDB Database User role to the following principal: service- PROJECT NUMBER @gcp-sa-discoveryengine.iam.gserviceaccount.com Replace PROJECT NUMBER with the Google Cloud project number where you use Gemini Enterprise.
+- Home Documentation AI and ML Gemini Enterprise Send feedback Connect to data from AlloyDB for PostgreSQL (Preview) Stay organized with collections Save and categorize content based on your preferences.
+
+### "Set up a Confluence Data Center data store \_|\_ Gemini Enterprise \_|\_\
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store)
+- Source ID: `site-docs-root`
+- Final score: 237
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Before you begin Note: To enforce data source access control and secure data in Google Gemini Enterprise, ensure that you have configured your identity provider .
+- In the Connected projects section, select the checkbox next to the Gemini Enterprise tenant project for the data store, and then click Accept project .
+- Note: The Gemini Enterprise tenant project ID ends in -tp .
+- Gemini Enterprise Select or create a Google Cloud project.
+
+### Configure autocomplete \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete](https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete)
+- Source ID: `site-docs-root`
+- Final score: 237
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- DataStoreName ; public class SyncCompleteQuery { public static void main ( String [] args ) throws Exception { syncCompleteQuery (); } public static void syncCompleteQuery () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CompletionServiceClient completionServiceClient = CompletionServiceClient . create ()) { CompleteQueryRequest request = CompleteQueryRequest . newBuilder () . setDataStore ( DataStoreName . ofProjectLocationDataStoreName ( "[PROJECT]" , "[LOCATION]" , "[DATA STORE]" ) . toString ()) . setQuery ( "query107944136" ) . setQueryModel ( "queryModel-184930495" ) . setUserPseudoId ( "userPseudoId-1155274652" ) . setIncludeTailSuggestions ( true ) . build (); CompleteQueryResponse response = completionServiceClient . completeQuery ( request ); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Gemini Enterprise quickstart using client libraries .
+- Example command and result curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: my-project-123" \ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=numUniqueUsersThreshold \ -d '{ "name": "projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig", "numUniqueUsersThreshold": 6 }' { "name": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig", "matchingOrder": "exact-prefix", "maxSuggestions": 20, "minPrefixLength": 1, "queryModel": "automatic", "enableMode": "AUTOMATIC", "numUniqueUsersThreshold": 6, "queryFrequencyThreshold": 30 } Update completable field annotations in schema To turn on autocomplete for fields in structured data schema, follow these steps: Console In the Google Cloud console, go to the Gemini Enterprise page.
+- Gemini Enterprise provides an advanced data model for autocomplete.
+- Autocomplete features Gemini Enterprise supports the following autocomplete features to show the most helpful predictions during search: Feature Description Example or more information Correct typos Correct word spellings that are typos.
 

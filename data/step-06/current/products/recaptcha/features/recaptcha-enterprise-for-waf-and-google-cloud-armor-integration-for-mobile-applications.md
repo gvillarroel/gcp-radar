@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:52.185Z"
+generated_at: "2026-04-12T12:18:11.459Z"
 product_name: "reCAPTCHA"
 product_slug: "recaptcha"
 feature_name: "reCAPTCHA Enterprise for WAF and Google Cloud Armor integration for mobile applications"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-12-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceSettings"
+  - "https://docs.cloud.google.com/recaptcha/docs/choose-key-type"
 keywords:
   - "recaptcha"
   - "enterprise"
@@ -38,44 +39,70 @@ This integration is available for mobile applications with Google Cloud Armor.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient](https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceSettings](https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceSettings)
+- [https://docs.cloud.google.com/recaptcha/docs/choose-key-type](https://docs.cloud.google.com/recaptcha/docs/choose-key-type)
 
 ## Supporting Pages
 
-### Class RecaptchaEnterpriseServiceClient (1.29.0) | Python client libraries | Google Cloud Documentation
+### "Class RecaptchaEnterpriseServiceAsyncClient (1.29.0) \_|\_ Python client\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient](https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient)
+- URL: [https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 151
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Class RecaptchaEnterpriseServiceClient (1.29.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise v1.services.recaptcha enterprise service.RecaptchaEnterpriseServiceClient RecaptchaEnterpriseServiceClient( , credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Optional[typing.Union[str, google.cloud.recaptchaenterprise v1.services.recaptcha enterprise service.transports.base.RecaptchaEnterpriseServiceTransport, typing.Callable[[...], google.cloud.recaptchaenterprise v1.services.recaptcha enterprise service.transports.base.RecaptchaEnterpriseServiceTransport]]] = None, client options: typing.Optional[typing.Union[google.api core.client options.ClientOptions, dict]] = None, client info: google.api core.gapic v1.client info.ClientInfo = &lt;google.api core.gapic v1.client info.ClientInfo object&gt;)
-
-### Class RecaptchaEnterpriseServiceClient (3.75.0) | Java client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient)
-- Source ID: `site-java-reference`
-- Final score: 144
+- Final score: 280
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Class RecaptchaEnterpriseServiceClient (3.75.0) Java client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient.create()) { ProjectName parent = ProjectName.of(&quot;[PROJECT]&quot;); Assessment assessment = Assessment.newBuilder().build(); Assessment response = recaptchaEnterpriseServiceClient.createAssessment(parent, assessment); }
+- SearchRelatedAccountGroupMembershipsRequest ( project="project value", ) Make the request page result = client. search related account group memberships (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.recaptchaenterprise v1.types.SearchRelatedAccountGroupMembershipsRequest , dict]] The request object.
+- ListRelatedAccountGroupMembershipsRequest ( parent="parent value", ) Make the request page result = client. list related account group memberships (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.recaptchaenterprise v1.types.ListRelatedAccountGroupMembershipsRequest , dict]] The request object.
+- ListRelatedAccountGroupsRequest ( parent="parent value", ) Make the request page result = client. list related account groups (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.recaptchaenterprise v1.types.ListRelatedAccountGroupsRequest , dict]] The request object.
+- ListFirewallPoliciesRequest ( parent="parent value", ) Make the request page result = client. list firewall policies (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.recaptchaenterprise v1.types.ListFirewallPoliciesRequest , dict]] The request object.
 
-### Class RecaptchaEnterpriseServiceSettings (3.75.0) | Java client libraries | Google Cloud Documentation
+### "Class RecaptchaEnterpriseServiceClient (1.29.0) \_|\_ Python client libraries\
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceSettings](https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceSettings)
-- Source ID: `site-java-reference`
-- Final score: 131
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient](https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient)
+- Source ID: `site-python-reference`
+- Final score: 280
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Class RecaptchaEnterpriseServiceSettings (3.75.0) Java client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceSettings Settings class to configure an instance of RecaptchaEnterpriseServiceClient.
+- SearchRelatedAccountGroupMembershipsRequest ( project="project value", ) Make the request page result = client. search related account group memberships (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.recaptchaenterprise v1.types.SearchRelatedAccountGroupMembershipsRequest , dict] The request object.
+- ListRelatedAccountGroupMembershipsRequest ( parent="parent value", ) Make the request page result = client. list related account group memberships (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.recaptchaenterprise v1.types.ListRelatedAccountGroupMembershipsRequest , dict] The request object.
+- ListRelatedAccountGroupsRequest ( parent="parent value", ) Make the request page result = client. list related account groups (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.recaptchaenterprise v1.types.ListRelatedAccountGroupsRequest , dict] The request object.
+- ListFirewallPoliciesRequest ( parent="parent value", ) Make the request page result = client. list firewall policies (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.recaptchaenterprise v1.types.ListFirewallPoliciesRequest , dict] The request object.
+
+### "Class RecaptchaEnterpriseServiceClient (3.85.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient)
+- Source ID: `site-java-reference`
+- Final score: 240
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example: To customize credentials: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library RecaptchaEnterpriseServiceSettings recaptchaEnterpriseServiceSettings = RecaptchaEnterpriseServiceSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( myCredentials )) . build (); RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ( recaptchaEnterpriseServiceSettings ); To customize the endpoint: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library RecaptchaEnterpriseServiceSettings recaptchaEnterpriseServiceSettings = RecaptchaEnterpriseServiceSettings . newBuilder (). setEndpoint ( myEndpoint ). build (); RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ( recaptchaEnterpriseServiceSettings ); Please refer to the GitHub repository's samples for more quickstart code snippets.
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ()) { ListRelatedAccountGroupMembershipsRequest request = ListRelatedAccountGroupMembershipsRequest . newBuilder () . setParent ( RelatedAccountGroupName . of ( "[PROJECT]" , "[RELATEDACCOUNTGROUP]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . build (); ApiFuture<RelatedAccountGroupMembership> future = recaptchaEnterpriseServiceClient . listRelatedAccountGroupMembershipsPagedCallable () . futureCall ( request ); // Do something. for ( RelatedAccountGroupMembership element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListRelatedAccountGroupMembershipsRequest , ListRelatedAccountGroupMembershipsPagedResponse > listRelatedAccountGroups(ListRelatedAccountGroupsRequest request) public final RecaptchaEnterpriseServiceClient .
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ()) { ListRelatedAccountGroupsRequest request = ListRelatedAccountGroupsRequest . newBuilder () . setParent ( ProjectName . of ( "[PROJECT]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . build (); ApiFuture<RelatedAccountGroup> future = recaptchaEnterpriseServiceClient . listRelatedAccountGroupsPagedCallable () . futureCall ( request ); // Do something. for ( RelatedAccountGroup element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListRelatedAccountGroupsRequest , ListRelatedAccountGroupsPagedResponse > migrateKey(MigrateKeyRequest request) public final Key migrateKey ( MigrateKeyRequest request ) Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ()) { ListFirewallPoliciesRequest request = ListFirewallPoliciesRequest . newBuilder () . setParent ( ProjectName . of ( "[PROJECT]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . build (); ApiFuture<FirewallPolicy> future = recaptchaEnterpriseServiceClient . listFirewallPoliciesPagedCallable (). futureCall ( request ); // Do something. for ( FirewallPolicy element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListFirewallPoliciesRequest , ListFirewallPoliciesPagedResponse > listIpOverrides(KeyName parent) public final RecaptchaEnterpriseServiceClient .
+
+### Choose the appropriate key type \_|\_ reCAPTCHA \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/recaptcha/docs/choose-key-type](https://docs.cloud.google.com/recaptcha/docs/choose-key-type)
+- Source ID: `site-iam-reference`
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Score-based keys SCORE Checkbox keys CHECKBOX Policy-based challenge keys POLICY BASED CHALLENGE mobile For integration with Android and iOS apps. reCAPTCHA keys for Android SCORE reCAPTCHA keys for iOS SCORE WAF For web pages and APIs served through WAF or Edge compute servers. action-token keys SCORE and CHECKBOX session-token keys SCORE challenge-page keys INVISIBLE API For integration with APIs or clients like IoT devices that do not support the reCAPTCHA JavaScript or mobile SDKs. express keys SCORE Choose a reCAPTCHA key type for web To verify user interactions on websites, reCAPTCHA provides score-based keys , which don't trigger CAPTCHA challenges, checkbox keys, which trigger non-deterministic CAPTCHA challenges, and policy-based challenge keys, which trigger deterministic CAPTCHA challenges.
+- Choose reCAPTCHA key types for WAF reCAPTCHA for Google Cloud Armor integrations support action-tokens, session-tokens and challenge page.
+- Supported reCAPTCHA version reCAPTCHA score-based and checkbox keys reCAPTCHA score-based keys reCAPTCHA challenge-based keys embedded in an interstitial page Choose reCAPTCHA express keys for APIs Use reCAPTCHA express when your environment does not support a reCAPTCHA client integration like the JavaScript API or the mobile SDKs. reCAPTCHA express is suitable for APIs, websites, mobile applications, and IoT devices such as TVs and gaming consoles, but can also be used to protect websites or mobile applications when a client-side integration is infeasible.
+- The following table shows a brief comparison of the available reCAPTCHA for Google Cloud Armor features: Note: Only reCAPTCHA action-tokens are supported for the integration of mobile applications with Google Cloud Armor.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:51.120Z"
+generated_at: "2026-04-12T12:18:07.795Z"
 product_name: "Policy Intelligence"
 product_slug: "policy-intelligence"
 feature_name: "Policy Simulator for Organization Policy"
@@ -10,8 +10,9 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/policy-intelligence/docs/iam-simulator-overview"
-  - "https://docs.cloud.google.com/policy-intelligence/docs/simulate-iam-policies"
-  - "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview"
+  - "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview"
+  - "https://docs.cloud.google.com/policy-intelligence/docs/deny-simulator-overview"
+  - "https://docs.cloud.google.com/policy-intelligence/docs/overview"
 keywords:
   - "policy"
   - "simulator"
@@ -38,46 +39,70 @@ Policy Simulator for Organization Policy lets users simulate organization policy
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/policy-intelligence/docs/iam-simulator-overview](https://docs.cloud.google.com/policy-intelligence/docs/iam-simulator-overview)
-- [https://docs.cloud.google.com/policy-intelligence/docs/simulate-iam-policies](https://docs.cloud.google.com/policy-intelligence/docs/simulate-iam-policies)
-- [https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview](https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview)
+- [https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview](https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview)
+- [https://docs.cloud.google.com/policy-intelligence/docs/deny-simulator-overview](https://docs.cloud.google.com/policy-intelligence/docs/deny-simulator-overview)
+- [https://docs.cloud.google.com/policy-intelligence/docs/overview](https://docs.cloud.google.com/policy-intelligence/docs/overview)
 
 ## Supporting Pages
 
-### Policy Simulator for allow policies | Policy Intelligence | Google Cloud Documentation
+### "Policy Simulator for allow policies \_|\_ Policy Intelligence \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/policy-intelligence/docs/iam-simulator-overview](https://docs.cloud.google.com/policy-intelligence/docs/iam-simulator-overview)
-- Source ID: `site-iam-reference`
-- Final score: 142
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Policy Simulator for allow policies Policy Intelligence Google Cloud Documentation Source URL: https://docs.cloud.google.com/policy-intelligence/docs/iam-simulator-overview Policy Simulator for allow policies helps you determine what impact a change to an allow policy might have for your users.
-
-### Test role changes with Policy Simulator | Policy Intelligence | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/policy-intelligence/docs/simulate-iam-policies](https://docs.cloud.google.com/policy-intelligence/docs/simulate-iam-policies)
-- Source ID: `site-iam-reference`
-- Final score: 130
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Test role changes with Policy Simulator Policy Intelligence Google Cloud Documentation Source URL: https://docs.cloud.google.com/policy-intelligence/docs/simulate-iam-policies To get the permissions that you need to run a simulation, ask your administrator to grant you the Simulator Admin (roles/policysimulator.admin) IAM role on the host resource.
-
-### Overview of organization policy recommendations | Policy Intelligence | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview](https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 285
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Overview of organization policy recommendations Policy Intelligence Google Cloud Documentation Source URL: https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview An overview of organization policy recommendations, which analyze existing organization policy configurations to provide recommendations to improve your security posture.
+- To learn how to simulate other policy types, see the following: Policy Simulator for deny policies Policy Simulator for organization policies Policy Simulator for principal access boundary policies How Policy Simulator for allow policies works Policy Simulator for allow policies helps you determine what impact a change to an allow policy might have for your users.
+- Supported resource types Policy Simulator supports only the following resource types: Service Supported resource types Cloud Storage buckets Pub/Sub snapshots subscriptions topics Cloud SQL backupRuns databases instances sslCerts users Spanner backups backupOperations databases databaseOperations instanceConfigs instanceOperations instances sessions Resource Manager folders organizations projects Compute Engine instances Unsupported resource types Unsupported resource types are resource types that Policy Simulator cannot retrieve access logs for.
+- Example: Policy inheritance Imagine that you want to simulate a change to an allow policy for a folder, Engineering , in an organization with the following structure: Note that Engineering has a parent resource, the organization example.com , that it inherits allow policies from.
+- Where these logs are collected from depends on the resource whose allow policy you're simulating: If you are simulating an allow policy for a project or organization, Policy Simulator retrieves the access logs for that project or organization.
+
+### "Policy Simulator for principal access boundary policies \_|\_ Policy Intelligence\
+
+- URL: [https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview](https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview)
+- Source ID: `site-iam-reference`
+- Final score: 269
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To learn how to simulate changes to other policy types, see the following: Policy Simulator for allow policies Policy Simulator for deny policies Policy Simulator for organization policies How Policy Simulator for principal access boundary policies works Policy Simulator for principal access boundary policies helps you determine how a change to a principal access boundary policy or policy binding affects access for principals in your organization.
+- When you run a simulation for a principal access boundary policy or policy binding, Policy Simulator does the following: Reviews access logs from the organization that were generated during the replay period in the context of the current principal access boundary policies and bindings and the simulated principal access boundary policy or binding.
+- Policy Simulator calculates access changes using the following information: The result of the most recent access attempt The impact of the current principal access boundary policies and bindings The impact of the proposed principal access boundary policies and bindings For access to be gained , all of the following must be true: The most recent access attempt was blocked Access is blocked by the current principal access boundary policies and bindings Access is not blocked by the proposed principal access boundary policies and bindings For access to be revoked , all of the following must be true: The most recent access attempt was not blocked Access is not blocked by the current principal access boundary policies and bindings Access is blocked by the proposed principal access boundary policies and bindings A set of principal access boundary policies and bindings block a principal's access if all of the following are true: principal access boundary policies do affect the principal's access.
+- Policy Simulator for principal access boundary (PAB) policies lets you see how a change to a principal access boundary policy or binding might affect your principals' access before you commit to making the change.
+
+### "Policy Simulator for deny policies \_|\_ Policy Intelligence \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/policy-intelligence/docs/deny-simulator-overview](https://docs.cloud.google.com/policy-intelligence/docs/deny-simulator-overview)
+- Source ID: `site-iam-reference`
+- Final score: 265
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To learn how to simulate other policy types, see the following: Policy Simulator for organization policies Policy Simulator for allow policies Policy Simulator for principal access boundary policies How Policy Simulator for deny policies works Policy Simulator for deny policies helps you determine whether a change to a deny policy will block access that your principals are using.
+- Supported principal types Policy Simulator for deny policies only reviews access logs for the following types of principals: Google Workspace Accounts Service accounts Service account principal sets for projects, folders, and organizations Service agents Service agent principal sets for projects, folders, and organizations When simulating deny policies, Policy Simulator doesn't review access logs for any other principal types, including those based on federated identities in a workload identity pool.
+- Policy Simulator reports that access is revoked if the following are true: The principal's most recent attempt to access the resource was successful The proposed changes or another deny policy block the principal's access to the resource For each access change, Policy Simulator also reports the following information: The principal, resource, and permission involved in the access attempt.
+- When you run a simulation for a deny policy, Policy Simulator does the following: Retrieves access logs for the organization that were generated during the replay period .
+
+### Policy Intelligence overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/policy-intelligence/docs/overview](https://docs.cloud.google.com/policy-intelligence/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 241
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Test organization policy changes Policy Simulator for Organization Policy lets you preview the impact of a new custom constraint or organization policy that enforces a custom constraint before it is enforced on your production environment.
+- Test changes to access-related policies To let you see how a change to an access-related policy might affect your principals' access, Policy Intelligence provides the following policy simulators: Policy Simulator for allow policies Policy Simulator for deny policies Policy Simulator for principal access boundary policies Each of these simulators lets you see how a change to a policy of that type would affect access for your principals before you commit to making the change.
+- To learn how to manage role recommendations, see one of the following guides: Review and apply role recommendations for projects, folders, and organizations Review and apply role recommendations for Cloud Storage buckets Review and apply role recommendations for BigQuery datasets Prevent policy misconfigurations There are several Policy Intelligence tools that you can use to see how changes to policies will impact your organization.
+- Policy Simulator provides a list of resources that violate the proposed policy before it is enforced, allowing you to reconfigure those resources, request exceptions, or change the scope of your organization policy, all without disrupting your developers or bringing down your environment.
 

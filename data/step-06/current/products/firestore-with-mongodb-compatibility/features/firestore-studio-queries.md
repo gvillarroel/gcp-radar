@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.721Z"
+generated_at: "2026-04-12T12:16:03.667Z"
 product_name: "Firestore with MongoDB compatibility"
 product_slug: "firestore-with-mongodb-compatibility"
 feature_name: "Firestore Studio queries"
 feature_slug: "firestore-studio-queries"
 latest_feature_date: "2025-10-08"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries"
+  - "https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library"
+  - "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+  - "https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library"
 keywords:
   - "firestore"
   - "studio"
@@ -24,7 +27,7 @@ keywords:
 # Firestore Studio queries
 
 Product: Firestore with MongoDB compatibility
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Lets you create, save, and manage queries in Firestore Studio.
 
 Lets you create, save, and manage queries in Firestore Studio.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries)
+- [https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library](https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library)
+- [https://docs.cloud.google.com/firestore/native/docs/query-data/queries](https://docs.cloud.google.com/firestore/native/docs/query-data/queries)
+- [https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library](https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Create and manage saved queries \_|\_ Firestore with MongoDB compatibility\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries)
+- Source ID: `site-iam-reference`
+- Final score: 313
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Required permissions To create, view, modify, and delete saved queries, you need the following IAM permissions at the project level: Action Required IAM permissions Create saved queries databasesconsole.studioQueries.create View saved queries databasesconsole.studioQueries.search databasesconsole.locations.get databasesconsole.locations.list Modify saved queries databasesconsole.studioQueries.update Delete saved queries databasesconsole.studioQueries.delete Administer saved queries (Only for use by administrators) databasesConsole.studioQueries.list databasesconsole.locations.list Note: Having access to saved queries doesn't automatically mean that you have permissions to run the query.
+- When you write queries in Firestore Studio , you can save and manage those queries.
+- Required roles To get the permissions that you need to use saved queries, ask your administrator to grant you the following Identity and Access Management (IAM) roles on the project: To view saved queries: Cloud Datastore Viewer ( roles/datastore.viewer ) To view, create, modify, and delete saved queries: Cloud Datastore User ( roles/datastore.user ) To administer, view, create, modify, and delete saved queries: Cloud Datastore Owner ( roles/datastore.owner ).
+- Open and run a saved query To open a saved query as a new query, follow these steps: In the Explorer pane on the Firestore Studio page, navigate to the Queries section.
+
+### "Quickstart: Create a Firestore database by using a web or mobile client\
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library](https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library)
+- Source ID: `site-docs-root-2`
+- Final score: 217
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Swift Note: This product is not available on watchOS and App Clip targets. import FirebaseCore import FirebaseFirestore FirebaseApp . configure () let db = Firestore . firestore () AppDelegate . swift Objective-C Note: This product is not available on watchOS and App Clip targets. @import FirebaseCore ; @import FirebaseFirestore ; // Use Firebase library to configure APIs [ FIRApp configure ]; FIRFirestore defaultFirestore = [ FIRFirestore firestore ]; AppDelegate . m Kotlin Android // Access a Firestore instance from your Activity val db = Firebase . firestore DocSnippets . kt Java Android // Access a Firestore instance from your Activity FirebaseFirestore db = FirebaseFirestore . getInstance (); DocSnippets . java Dart db = FirebaseFirestore . instance ; C++ // Make sure the call to Create() happens some time before you call Firestore::GetInstance().
+- Add the Firebase and Firestore libraries to your app: <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script> <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script> The Firestore SDK is also available as an npm package. npm install firebase @8.10.1 -- save You'll need to manually require both Firebase and Firestore. const firebase = require ( "firebase" ); // Required for side - effects require ( "firebase/firestore" ); Apple platforms Follow the instructions to add Firebase to your Apple app .
+- Create a Firestore database by using a web or mobile client library This quickstart shows you how to set up Firestore, add data, and read data by using the Android, Apple platforms, Web, Unity, or C++ client library.
+- Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+
+### "Query and filter data \_|\_ Firestore in Native mode \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/query-data/queries](https://docs.cloud.google.com/firestore/native/docs/query-data/queries)
+- Source ID: `site-docs-root-2`
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Types ; namespace GoogleCloudSamples { public class QueryData { public static string Usage = @"Usage: C:\> dotnet run command YOUR PROJECT ID Where command is one of query-create-examples create-query-state create-query-capital simple-queries array-contains-query array-contains-any-query in-query in-query-array collection-group-query subcollection-query chained-query composite-index-chained-query range-query multiple-inequalities " ; private static async Task QueryCreateExamples ( string project ) { FirestoreDb db = FirestoreDb .
+- For example, you can create a landmarks collection group by adding a landmarks subcollection to each city: Web version 9 import { collection , addDoc } from "firebase/firestore" ; const citiesRef = collection ( db , 'cities' ); await Promise . all ([ addDoc ( collection ( citiesRef , 'SF' , 'landmarks' ), { name : 'Golden Gate Bridge' , type : 'bridge' }), addDoc ( collection ( citiesRef , 'SF' , 'landmarks' ), { name : 'Legion of Honor' , type : 'museum' }), addDoc ( collection ( citiesRef , 'LA' , 'landmarks' ), { name : 'Griffith Park' , type : 'park' }), addDoc ( collection ( citiesRef , 'LA' , 'landmarks' ), { name : 'The Getty' , type : 'museum' }), addDoc ( collection ( citiesRef , 'DC' , 'landmarks' ), { name : 'Lincoln Memorial' , type : 'memorial' }), addDoc ( collection ( citiesRef , 'DC' , 'landmarks' ), { name : 'National Air and Space Museum' , type : 'museum' }), addDoc ( collection ( citiesRef , 'TOK' , 'landmarks' ), { name : 'Ueno Park' , type : 'park' }), addDoc ( collection ( citiesRef , 'TOK' , 'landmarks' ), { name : 'National Museum of Nature and Science' , type : 'museum' }), addDoc ( collection ( citiesRef , 'BJ' , 'landmarks' ), { name : 'Jingshan Park' , type : 'park' }), addDoc ( collection ( citiesRef , 'BJ' , 'landmarks' ), { name : 'Beijing Ancient Observatory' , type : 'museum' }) ]); fs collection group query data setup . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. var citiesRef = db . collection ( 'cities' ); var landmarks = Promise . all ([ citiesRef . doc ( 'SF' ). collection ( 'landmarks' ). doc (). set ({ name : 'Golden Gate Bridge' , type : 'bridge' }), citiesRef . doc ( 'SF' ). collection ( 'landmarks' ). doc (). set ({ name : 'Legion of Honor' , type : 'museum' }), citiesRef . doc ( 'LA' ). collection ( 'landmarks' ). doc (). set ({ name : 'Griffith Park' , type : 'park' }), citiesRef . doc ( 'LA' ). collection ( 'landmarks' ). doc (). set ({ name : 'The Getty' , type : 'museum' }), citiesRef . doc ( 'DC' ). collection ( 'landmarks' ). doc (). set ({ name : 'Lincoln Memorial' , type : 'memorial' }), citiesRef . doc ( 'DC' ). collection ( 'landmarks' ). doc (). set ({ name : 'National Air and Space Museum' , type : 'museum' }), citiesRef . doc ( 'TOK' ). collection ( 'landmarks' ). doc (). set ({ name : 'Ueno Park' , type : 'park' }), citiesRef . doc ( 'TOK' ). collection ( 'landmarks' ). doc (). set ({ name : 'National Museum of Nature and Science' , type : 'museum' }), citiesRef . doc ( 'BJ' ). collection ( 'landmarks' ). doc (). set ({ name : 'Jingshan Park' , type : 'park' }), citiesRef . doc ( 'BJ' ). collection ( 'landmarks' ). doc (). set ({ name : 'Beijing Ancient Observatory' , type : 'museum' }) ]); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. let citiesRef = db . collection ( "cities" ) var data = [ "name" : "Golden Gate Bridge" , "type" : "bridge" ] citiesRef . document ( "SF" ). collection ( "landmarks" ). addDocument ( data : data ) data = [ "name" : "Legion of Honor" , "type" : "museum" ] citiesRef . document ( "SF" ). collection ( "landmarks" ). addDocument ( data : data ) data = [ "name" : "Griffith Park" , "type" : "park" ] citiesRef . document ( "LA" ). collection ( "landmarks" ). addDocument ( data : data ) data = [ "name" : "The Getty" , "type" : "museum" ] citiesRef . document ( "LA" ). collection ( "landmarks" ). addDocument ( data : data ) data = [ "name" : "Lincoln Memorial" , "type" : "memorial" ] citiesRef . document ( "DC" ). collection ( "landmarks" ). addDocument ( data : data ) data = [ "name" : "National Air and Space Museum" , "type" : "museum" ] citiesRef . document ( "DC" ). collection ( "landmarks" ). addDocument ( data : data ) data = [ "name" : "Ueno Park" , "type" : "park" ] citiesRef . document ( "TOK" ). collection ( "landmarks" ). addDocument ( data : data ) data = [ "name" : "National Museum of Nature and Science" , "type" : "museum" ] citiesRef . document ( "TOK" ). collection ( "landmarks" ). addDocument ( data : data ) data = [ "name" : "Jingshan Park" , "type" : "park" ] citiesRef . document ( "BJ" ). collection ( "landmarks" ). addDocument ( data : data ) data = [ "name" : "Beijing Ancient Observatory" , "type" : "museum" ] citiesRef . document ( "BJ" ). collection ( "landmarks" ). addDocument ( data : data ) ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets.
+- WriteLine ( "Added example cities data to the cities collection." ); Program . cs Ruby cities ref = firestore . col collection path cities ref . doc ( "SF" ) . set ( { name : "San Francisco" , state : "CA" , country : "USA" , capital : false , density : 18 000 , population : 860 000 , regions : [ "west coast" , "norcal" ] } ) cities ref . doc ( "LA" ) . set ( { name : "Los Angeles" , state : "CA" , country : "USA" , capital : false , density : 8 300 , population : 3 900 000 , regions : [ "west coast" , "socal" ] } ) cities ref . doc ( "DC" ) . set ( { name : "Washington D.C." , state : nil , country : "USA" , capital : true , density : 11 300 , population : 680 000 , regions : [ "east coast" ] } ) cities ref . doc ( "TOK" ) . set ( { name : "Tokyo" , state : nil , country : "Japan" , capital : true , density : 16 000 , population : 9 000 000 , regions : [ "kanto" , "honshu" ] } ) cities ref . doc ( "BJ" ) . set ( { name : "Beijing" , state : nil , country : "China" , capital : true , density : 3 500 , population : 21 500 000 , regions : [ "jingjinji" , "hebei" ] } ) query data . rb Simple queries The following query returns all cities with state CA : Web version 9 // Create a reference to the cities collection import { collection , query , where } from "firebase/firestore" ; const citiesRef = collection ( db , "cities" ); // Create a query against the collection. const q = query ( citiesRef , where ( "state" , "==" , "CA" )); simple queries . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. // Create a reference to the cities collection var citiesRef = db . collection ( "cities" ); // Create a query against the collection. var query = citiesRef . where ( "state" , "==" , "CA" ); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. // Create a reference to the cities collection let citiesRef = db . collection ( "cities" ) // Create a query against the collection. let query = citiesRef . whereField ( "state" , isEqualTo : "CA" ) ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. // Create a reference to the cities collection FIRCollectionReference citiesRef = [ self . db collectionWithPath : @"cities" ]; // Create a query against the collection.
+- WriteLine ( $"{document.Reference.Path}: {document.GetValue<string>(" Name ")}" ); } Program . cs Ruby museums = firestore . collection group ( "landmarks" ) . where ( "type" , "==" , "museum" ) museums . get do museum puts " #{ museum [ :type ] } name is #{ museum [ :name ] } ." end query data . rb Before using a collection group query, you must create an index that supports your collection group query.
+
+### "Quickstart: Create a Firestore database by using a server client library\
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library](https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library)
+- Source ID: `site-docs-root-2`
+- Final score: 204
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Python Add the Firestore Python library to your app: Note: We recommend that you use a virtual Python environment to install the Firestore Python library: pip install virtualenv virtualenv env source env/bin/activate pip install -- upgrade google - cloud - firestore Node.js Add the Firestore Node.js library to your app: npm install -- save @ google - cloud / firestore Go Install the Firestore Go library: go get cloud . google . com / go / firestore Add the Firestore Go library to your app: import "cloud.google.com/go/firestore" PHP Install and enable the gRPC extension for PHP, which you will need to use the client library.
+- Create a Firestore database by using a server client library This quickstart shows you how to set up Firestore, add data, and read data by using the C#, Go, Java, Node.js, PHP, Python, or Ruby server client library.
+- Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Firestore creates collections and documents implicitly the first time you add data to the document.
 

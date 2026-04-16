@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.833Z"
+generated_at: "2026-04-13T22:42:27.160Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Cloud Run remote functions for Spanner GoogleSQL queries"
@@ -9,18 +9,15 @@ latest_feature_date: "2026-02-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures"
-  - "https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
+  - "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function"
+  - "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+  - "https://docs.cloud.google.com/spanner/docs/information-schema"
 keywords:
-  - "run"
+  - "call"
   - "remote"
   - "functions"
-  - "for"
-  - "spanner"
   - "googlesql"
   - "queries"
-  - "can"
 ---
 
 # Cloud Run remote functions for Spanner GoogleSQL queries
@@ -38,44 +35,53 @@ Spanner can call user-defined remote functions hosted on Cloud Run directly from
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures](https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures)
-- [https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions](https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
+- [https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function](https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function)
+- [https://docs.cloud.google.com/spanner/docs/change-streams/details](https://docs.cloud.google.com/spanner/docs/change-streams/details)
+- [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
 
 ## Supporting Pages
 
-### Stored system procedures for GoogleSQL | Spanner | Google Cloud Documentation
+### Spanner remote functions \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures](https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures)
+- URL: [https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function](https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function)
+- Source ID: `site-docs-root`
+- Final score: 143
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- MAX LOSSLESS = 9007199254740992 @functions framework . http def batch add ( request ): try : return value = [] request json = request . get json () calls = request json [ 'calls' ] for call in calls : return value . append ( sum ([ int ( x ) if isinstance ( x , str ) else x for x in call if x is not None ])) replies = [ str ( x ) if x > MAX LOSSLESS or x < - MAX LOSSLESS else x for x in return value ] return json = jsonify ( { "replies" : replies } ) return return json except Exception as e : return jsonify ( { "errorMessage" : str ( e ) } ), 400 Assuming that the function is deployed in the project PROJECT ID in region us-east1 as the function name remote add , it can be accessed using the endpoint https://us-east1- PROJECT ID .cloudfunctions.net/remote add .
+- Note // that the order of the values within replies field matches the calls field from // the request. { "replies" : [ 3 , // 1 + 2 = 3 7 // 3 + 4 = 7 ] } An example of a failed response: { // The error message returned by your Cloud Run functions to indicate an error. // In this sample, the error message states that an overflow occurred when summing two numbers. "errorMessage" : "Overflow detected when calculating sum of two numbers." } HTTPS response code Your endpoint returns a 200 HTTPS code for a successful response.
+- Required roles To ensure that your Spanner agent service account (service- PROJECT ID @gcp-sa-spanner.iam.gserviceaccount.com) has the necessary permissions to use Spanner remote functions, ask your administrator to grant the Spanner API Service Agent ( roles/spanner.serviceAgent ) IAM role to your Spanner agent service account (service- PROJECT ID @gcp-sa-spanner.iam.gserviceaccount.com) on the project.
+- This request // has two calls batched together into a single request. { "requestId" : "124ab1c" , "calls" : [ [ 1 , 2 ], [ 3 , 4 ] ] } Output format Spanner expects the endpoint to return an HTTPS response in the following format; otherwise, Spanner can't consume the response and the query fails calling the remote function.
+
+### "Change stream partitions, records, and queries \_|\_ Spanner \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/change-streams/details](https://docs.cloud.google.com/spanner/docs/change-streams/details)
+- Source ID: `site-docs-root`
+- Final score: 121
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Change stream read functions and query syntax GoogleSQL To query change streams, use the ExecuteStreamingSql API.
+- The two accounts are in separate change stream partitions. "data change record" : { "commit timestamp" : "2022-09-27T12:30:00.123456Z" , // record sequence is unique and monotonically increasing within a // transaction, across all partitions. "record sequence" : "00000000" , "server transaction id" : "6329047911" , "is last record in transaction in partition" : true , "table name" : "AccountBalance" , "column types" : [ { "name" : "AccountId" , "type" : { "code" : "STRING" }, "is primary key" : true , "ordinal position" : 1 }, { "name" : "LastUpdate" , "type" : { "code" : "TIMESTAMP" }, "is primary key" : false , "ordinal position" : 2 }, { "name" : "Balance" , "type" : { "code" : "INT" }, "is primary key" : false , "ordinal position" : 3 } ], "mods" : [ { "keys" : { "AccountId" : "Id1" }, "new values" : { "LastUpdate" : "2022-09-27T12:30:00.123456Z" , "Balance" : 1000 }, "old values" : { "LastUpdate" : "2022-09-26T11:28:00.189413Z" , "Balance" : 1500 }, } ], "mod type" : "UPDATE" , // options are INSERT, UPDATE, DELETE "value capture type" : "OLD AND NEW VALUES" , "number of records in transaction" : 2 , "number of partitions in transaction" : 2 , "transaction tag" : "app=banking,env=prod,action=update" , "is system transaction" : false , } "data change record" : { "commit timestamp" : "2022-09-27T12:30:00.123456Z" , "record sequence" : "00000001" , "server transaction id" : "6329047911" , "is last record in transaction in partition" : true , "table name" : "AccountBalance" , "column types" : [ { "name" : "AccountId" , "type" : { "code" : "STRING" }, "is primary key" : true , "ordinal position" : 1 }, { "name" : "LastUpdate" , "type" : { "code" : "TIMESTAMP" }, "is primary key" : false , "ordinal position" : 2 }, { "name" : "Balance" , "type" : { "code" : "INT" }, "is primary key" : false , "ordinal position" : 3 } ], "mods" : [ { "keys" : { "AccountId" : "Id2" }, "new values" : { "LastUpdate" : "2022-09-27T12:30:00.123456Z" , "Balance" : 2000 }, "old values" : { "LastUpdate" : "2022-01-20T11:25:00.199915Z" , "Balance" : 1500 }, }, ... ], "mod type" : "UPDATE" , // options are INSERT, UPDATE, DELETE "value capture type" : "OLD AND NEW VALUES" , "number of records in transaction" : 2 , "number of partitions in transaction" : 2 , "transaction tag" : "app=banking,env=prod,action=update" , "is system transaction" : false , } The following data change record is an example of a record with the value capture type NEW VALUES .
+- This value capture type captures the new value and old value of LastUpdate . "data change record" : { "commit timestamp" : "2022-09-27T12:30:00.123456Z" , // record sequence is unique and monotonically increasing within a // transaction, across all partitions. "record sequence" : "00000000" , "server transaction id" : "6329047911" , "is last record in transaction in partition" : true , "table name" : "AccountBalance" , "column types" : [ { "name" : "AccountId" , "type" : { "code" : "STRING" }, "is primary key" : true , "ordinal position" : 1 }, { "name" : "LastUpdate" , "type" : { "code" : "TIMESTAMP" }, "is primary key" : false , "ordinal position" : 2 }, { "name" : "Balance" , "type" : { "code" : "INT" }, "is primary key" : false , "ordinal position" : 3 } ], "mods" : [ { "keys" : { "AccountId" : "Id1" }, "new values" : { "LastUpdate" : "2022-09-27T12:30:00.123456Z" , "Balance" : 1000 }, "old values" : { "LastUpdate" : "2022-09-26T11:28:00.189413Z" } } ], "mod type" : "UPDATE" , // options are INSERT, UPDATE, DELETE "value capture type" : "NEW ROW AND OLD VALUES" , "number of records in transaction" : 1 , "number of partitions in transaction" : 1 , "transaction tag" : "app=banking,env=prod,action=update" , "is system transaction" : false } Heartbeat records When a heartbeat record is returned, it indicates that all changes with commit timestamp less than or equal to the heartbeat record's timestamp have been returned, and future data records in this partition must have higher commit timestamps than that returned by the heartbeat record.
+- Only the LastUpdate column was modified, but all tracked columns are returned. "data change record" : { "commit timestamp" : "2022-09-27T12:30:00.123456Z" , // record sequence is unique and monotonically increasing within a // transaction, across all partitions. "record sequence" : "00000000" , "server transaction id" : "6329047911" , "is last record in transaction in partition" : true , "table name" : "AccountBalance" , "column types" : [ { "name" : "AccountId" , "type" : { "code" : "STRING" }, "is primary key" : true , "ordinal position" : 1 }, { "name" : "LastUpdate" , "type" : { "code" : "TIMESTAMP" }, "is primary key" : false , "ordinal position" : 2 }, { "name" : "Balance" , "type" : { "code" : "INT" }, "is primary key" : false , "ordinal position" : 3 } ], "mods" : [ { "keys" : { "AccountId" : "Id1" }, "new values" : { "LastUpdate" : "2022-09-27T12:30:00.123456Z" , "Balance" : 1000 }, "old values" : {} } ], "mod type" : "UPDATE" , // options are INSERT, UPDATE, DELETE "value capture type" : "NEW ROW" , "number of records in transaction" : 1 , "number of partitions in transaction" : 1 , "transaction tag" : "app=banking,env=prod,action=update" , "is system transaction" : false } The following data change record is an example of a record with the value capture type NEW ROW AND OLD VALUES .
+
+### "Information schema for GoogleSQL-dialect databases \_|\_ Spanner \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
 - Source ID: `site-docs-reference`
-- Final score: 94
+- Final score: 108
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Stored system procedures for GoogleSQL Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/standard-sql/stored-procedures Documentation · Databases · Spanner · Reference · Send feedback · This section describes stored system procedures for Spanner.
-- A stored system procedure contains SQL code that you can reuse.
-
-### Supported PostgreSQL functions | Spanner | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions](https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions)
-- Source ID: `site-docs-reference`
-- Final score: 89
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Supported PostgreSQL functions Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions Documentation · Databases · Spanner · Reference · Send feedback · This page defines the functions supported for PostgreSQL-dialect databases in Spanner.
-
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 85
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- All other principals can see only parameters for change stream read functions on which the EXECUTE fine-grained access control privilege is granted to the current database role, to roles of which the current database role is a member, or to public .
+- All other principals can see only options for change stream read functions on which the EXECUTE fine-grained access control privilege is granted to the current database role, to roles of which the current database role is a member, or to public .
+- All other principals can see only change stream read functions on which the EXECUTE fine-grained access control privilege is granted to the current database role, to roles of which the current database role is a member, or to public .
+- Home Documentation Databases Spanner Reference Send feedback Information schema for GoogleSQL-dialect databases Stay organized with collections Save and categorize content based on your preferences.
 

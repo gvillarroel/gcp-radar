@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:15.337Z"
+generated_at: "2026-04-12T12:14:33.441Z"
 product_name: "Earth"
 product_slug: "earth"
 feature_name: "Data layer styling"
 feature_slug: "data-layer-styling"
 latest_feature_date: "2025-10-17"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+  - "https://developers.google.com/earth-engine/guides/landsat"
+  - "https://developers.google.com/earth-engine/guides/playground"
+  - "https://docs.cloud.google.com/iam/docs/roles-overview"
 keywords:
   - "layer"
   - "styling"
@@ -24,7 +27,7 @@ keywords:
 # Data layer styling
 
 Product: Earth
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Data layers now support uniform, categorical, and numerical styling options in t
 
 Data layers now support uniform, categorical, and numerical styling options in the inspector panel.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/iam/docs/federated-identity-supported-services](https://docs.cloud.google.com/iam/docs/federated-identity-supported-services)
+- [https://developers.google.com/earth-engine/guides/landsat](https://developers.google.com/earth-engine/guides/landsat)
+- [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
+- [https://docs.cloud.google.com/iam/docs/roles-overview](https://docs.cloud.google.com/iam/docs/roles-overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Identity federation: products and limitations \_|\_ Identity and Access\
+
+- URL: [https://docs.cloud.google.com/iam/docs/federated-identity-supported-services](https://docs.cloud.google.com/iam/docs/federated-identity-supported-services)
+- Source ID: `site-iam-reference`
+- Final score: 115
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Google Cloud API: The following methods don't support identity federtation: UpdateCatalog ImportCompletionData TuneModel ImportProducts PurgeProducts ImportUserEvents ImportUserEvents PurgeUserEvents RejoinUserEvents Other: No known limitations Secret Manager GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Secure Source Manager GA Console (federated): No known limitations Google Cloud API: Identity federation users must sign in through the Secure Source Manager instance web interface before running any of the following commands: Git CLI commands API calls to data plane endpoints Identity federation users must sign in through the Secure Source Manager instance web interface after every session expiry to continue using Git SSH CLI commands with user SSH keys.
+- Other: No known limitations AlloyDB for PostgreSQL GA Console (federated): The following fleet health features aren't supported while using Workforce Identity Federation: Performance and Backups summary cards Data in the clusters table, such as CPU percentage and Memory Available Google Cloud API: No known limitations Other: No known limitations Anti Money Laundering AI GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations API Gateway GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Apigee GA Console (federated): Features in Preview aren't supported for Workforce Identity Federation users.
+- Other: No known limitations Cloud Build GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud CDN GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Code Unsupported Alternatives: No alternatives available Cloud Composer GA Console (federated): No known limitations Google Cloud API: No known limitations Other: Cloud Composer supports Workforce Identity Federation only for environments created in Composer version 2.1.11 or later and Airflow version 2.4.3 or later.
+- Assured Workloads GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Backup and DR Service GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Batch GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations BigQuery GA Console (federated): Saving queries isn't supported.
+
+### Landsat Algorithms \_|\_ Google Earth Engine \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/landsat](https://developers.google.com/earth-engine/guides/landsat)
+- Source ID: `site-docs-reference`
+- Final score: 92
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Landsat . simpleCloudScore ( cloudy scene ) Create a mask from the cloud score and combine it with the image mask. mask = scored . select ([ 'cloud' ]) . lte ( 20 ) Apply the mask to the image and display the result. masked = cloudy scene . updateMask ( mask ) m . add layer ( masked , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 0.4 }, 'masked' ) m If you run this example in the Code Editor, try toggling the visibility of the TOA layers to compare the difference between the masked and unmasked imagery. (See the Layer Manager section of the Code Editor docs for instructions on how to do that).
+- Landsat . simpleCloudScore ( cloudy scene ); // Create a mask from the cloud score and combine it with the image mask. var mask = scored . select ([ 'cloud' ]). lte ( 20 ); // Apply the mask to the image and display the result. var masked = cloudy scene . updateMask ( mask ); Map . addLayer ( masked , { bands : [ 'B4' , 'B3' , 'B2' ], max : 0.4 }, 'masked' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a cloudy Landsat scene and display it. cloudy scene = ee .
+- Map . setCenter ( - 122.3578 , 37.7726 , 10 ); Map . addLayer ( composite , { bands : [ 'B4' , 'B3' , 'B2' ], max : 128 }, 'TOA composite' ); Map . addLayer ( customComposite , { bands : [ 'B4' , 'B3' , 'B2' ], max : 128 }, 'Custom TOA composite' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a raw Landsat 5 ImageCollection for a single year. collection = ee .
+- Landsat . simpleCloudScore ( mosaic ); Map . addLayer ( scored mosaic , { bands : [ 'B4' , 'B3' , 'B2' ], max : 0.4 }, 'TOA mosaic' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a Landsat 8 TOA collection, make 15-day mosaic, set SENSOR ID property. mosaic = ( ee .
+
+### Earth Engine Code Editor \_|\_ Google Earth Engine \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/playground](https://developers.google.com/earth-engine/guides/playground)
+- Source ID: `site-docs-root`
+- Final score: 78
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- When the URL is visited by someone with an Earth Engine account, the browser will navigate to the Code Editor and replicate the environment as it was when the link was created, including code, imports, map layers, and map position.
+- Interactive tools like the Layer Manager, Inspector tab, Console, and Profiler help with visualizing data, querying map layers, viewing output, and diagnosing script performance issues.
+- For drawing points, use the placemark icon , for drawing lines, use the line icon , for drawing polygons, use the polygon icon , for drawing rectangles use the rectangle icon . (Note that rectangles are planar geometries, so they cannot be placed on a layer with geodesic geometries like lines and polygons.) Using any of the drawing tools will automatically create a new geometry layer and add an import for that layer to the Imports section.
+- When the Inspector tab is activated, the cursor becomes a crosshair which will display the location and layer values under the cursor when you click on the map.
+
+### "Roles and permissions \_|\_ Identity and Access Management (IAM) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/iam/docs/roles-overview](https://docs.cloud.google.com/iam/docs/roles-overview)
+- Source ID: `site-iam-reference`
+- Final score: 75
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For a list of permissions in the Writer role, see the role details in the Google Cloud console: Go to Writer role Admin ( roles/admin ) All of the permissions in the Writer role, plus permissions for actions like the following: Completing sensitive tasks, like managing tag bindings for Compute Engine resources Managing roles and permissions for a project and all resources within the project Setting up billing for a project The Admin role doesn't contain all permissions for all Google Cloud resources.
+- For a list of permissions in the Editor role, see the role details in the Google Cloud console: Go to Editor role Owner ( roles/owner ) All Editor permissions, plus permissions for actions like the following: Completing sensitive tasks, like managing tag bindings for Compute Engine resources Managing roles and permissions for a project and all resources within the project Setting up billing for a project The Owner role doesn't contain all permissions for all Google Cloud resources.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- The following table summarizes the permissions that the Admin, Writer, and Reader give principals across all Google Cloud services: Note: Cloud Storage convenience values and BigQuery special group membership don't give permissions to principals with the Admin, Writer, or Reader roles.
 

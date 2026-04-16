@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.470Z"
+generated_at: "2026-04-15T12:06:50.504Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "PDF export"
@@ -9,18 +9,17 @@ latest_feature_date: "2024-05-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction"
 keywords:
   - "pdf"
   - "export"
   - "exports"
   - "reports"
-  - "to"
-  - "with"
   - "improved"
   - "rendering"
+  - "compression"
 ---
 
 # PDF export
@@ -42,41 +41,46 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
 
 ## Supporting Pages
 
-### Mainframe Assessment Tool release notes | Google Cloud Documentation
+### "Export assessment results \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 61
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results)
+- Source ID: `site-docs-reference`
+- Final score: 56
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes Mainframe Assessment Tool version 2.8.0 is available with the following new features and improvements: Added an option to export the assessment static analysis data to Neo4j.
-- For more information, see Export assessment data to your Neo4j database.
+- You can export results in the following ways: Export HTML report Export JSON report Export assessment data to your Neo4j database Export HTML report Download your assessment report as a zip file in HTML format to view the report offline or share it with others.
+- Export assessment data to your Neo4j database You can export your assessment data to a Neo4j database to analyze and query the complex relationships between your mainframe application components.
+- Home Documentation Migration Mainframe Assessment Tool Guides Send feedback Export assessment results Stay organized with collections Save and categorize content based on your preferences.
+- Export JSON report Download your assessment report as a zip file in JSON format to use the assessment data in other tools or for custom analysis.
 
-### Configure your Google Cloud project for Mainframe Assessment Tool | Google Cloud Documentation
+### "Extract business rules \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- Source ID: `site-docs-root`
-- Final score: 53
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- Source ID: `site-docs-reference`
+- Final score: 30
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Configure your Google Cloud project for Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project This page describes the process to set up and configure your Google Cloud project to work with Mainframe Assessment Tool.
+- Exporting business rules lets you use the rules as input with tools such as Gemini CLI for modernization and analysis, share them with stakeholders, or perform offline analysis.
+- To export business rules, follow these steps: In the Business rules table, select the rules that you want to export.
+- To export the agent configuration in Markdown for use with Gemini CLI, click Export for Gemini Modernization .
+- Export business rules : export the extracted rules to a file for further analysis or modernization.
 
-### Mainframe Assessment Tool MCP server | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
-- Source ID: `site-docs-root`
-- Final score: 53
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- Source ID: `site-docs-reference`
+- Final score: 29
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool MCP server Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server This page describes how to set up and interact with Mainframe Assessment Tool assessments by using MCP clients such as Gemini CLI or AI agents through the Model Context Protocol (MCP).
-- You can use natural language prompts to get insights into your mainframe assessments.
+- This data is also available in the exported HTML and JSON reports.
+- What's next Learn how to export assessment results .
 

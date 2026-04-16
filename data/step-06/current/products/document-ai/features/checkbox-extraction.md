@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.465Z"
+generated_at: "2026-04-12T12:14:31.937Z"
 product_name: "Document AI"
 product_slug: "document-ai"
 feature_name: "Checkbox extraction"
 feature_slug: "checkbox-extraction"
 latest_feature_date: "2023-09-21"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr"
+  - "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+  - "https://docs.cloud.google.com/document-ai/docs/handle-response"
+  - "https://docs.cloud.google.com/document-ai/docs/processors-list"
 keywords:
   - "checkbox"
   - "extraction"
@@ -24,7 +27,7 @@ keywords:
 # Checkbox extraction
 
 Product: Document AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,68 @@ Checkbox extraction detects and returns marked or unmarked checkbox status in OC
 
 Checkbox extraction detects and returns marked or unmarked checkbox status in OCR responses.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/document-ai/docs/process-documents-ocr](https://docs.cloud.google.com/document-ai/docs/process-documents-ocr)
+- [https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr](https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr)
+- [https://docs.cloud.google.com/document-ai/docs/handle-response](https://docs.cloud.google.com/document-ai/docs/handle-response)
+- [https://docs.cloud.google.com/document-ai/docs/processors-list](https://docs.cloud.google.com/document-ai/docs/processors-list)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Enterprise Document OCR \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/process-documents-ocr](https://docs.cloud.google.com/document-ai/docs/process-documents-ocr)
+- Source ID: `site-docs-root`
+- Final score: 176
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Checkbox extraction : Detect checkboxes and extract their status (marked/unmarked) in Enterprise Document OCR response.
+- Selection mark extraction If enabled, the model attempts to extract all checkboxes and radio buttons in the document, along with bounding box coordinates.
+- Need to detect and recognize math formulas, receive font-style information, or enable checkbox extraction.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process" Select-Object -Expand Content If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format.
+
+### Enterprise Document OCR \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr](https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr)
+- Source ID: `site-docs-root-2`
+- Final score: 176
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Checkbox extraction : Detect checkboxes and extract their status (marked/unmarked) in Enterprise Document OCR response.
+- Selection mark extraction If enabled, the model attempts to extract all checkboxes and radio buttons in the document, along with bounding box coordinates.
+- Need to detect and recognize math formulas, receive font-style information, or enable checkbox extraction.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process" Select-Object -Expand Content If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format.
+
+### Handle processing response \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/handle-response](https://docs.cloud.google.com/document-ai/docs/handle-response)
+- Source ID: `site-docs-root-2`
+- Final score: 158
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Document . from batch process operation ( location = "us" , operation name = batch process operation ) wrapped document = wrapped documents [ 0 ] else : raise ValueError ( "No document source provided." ) For all properties and methods, refer to: https://cloud.google.com/python/docs/reference/documentai-toolbox/latest/google.cloud.documentai toolbox.wrappers.document.Document print ( "Document Successfully Loaded!" ) print ( f " \t Number of Pages: { len ( wrapped document . pages ) } " ) print ( f " \t Number of Entities: { len ( wrapped document . entities ) } " ) for page in wrapped document . pages : print ( f "Page { page . page number } " ) for block in page . blocks : print ( block . text ) for paragraph in page . paragraphs : print ( paragraph . text ) for line in page . lines : print ( line . text ) for token in page . tokens : print ( token . text ) Only supported with Form Parser processor https://cloud.google.com/document-ai/docs/form-parser for form field in page . form fields : print ( f " { form field . field name } : { form field . field value } " ) Only supported with Enterprise Document OCR version pretrained-ocr-v2.0-2023-06-02 https://cloud.google.com/document-ai/docs/process-documents-ocr#enable symbols for symbol in page . symbols : print ( symbol . text ) Only supported with Enterprise Document OCR version pretrained-ocr-v2.0-2023-06-02 https://cloud.google.com/document-ai/docs/process-documents-ocr#math ocr for math formula in page . math formulas : print ( math formula . text ) Only supported with Entity Extraction processors https://cloud.google.com/document-ai/docs/processors-list for entity in wrapped document . entities : print ( f " { entity . type } : { entity . mention text } " ) if entity . normalized text : print ( f " \t Normalized Text: { entity . normalized text } " ) Only supported with Layout Parser for chunk in wrapped document . chunks : print ( f "Chunk { chunk . chunk id } : { chunk . content } " ) for block in wrapped document . document layout blocks : print ( f "Document Layout Block { block . block id } " ) if block . text block : print ( f " { block . text block . type } : { block . text block . text } " ) if block . list block : print ( f " { block . list block . type } : { block . list block . list entries } " ) if block . table block : print ( block . table block . header rows , block . table block . body rows ) Tables from google.cloud.documentai toolbox import document TODO(developer): Uncomment these variables before running the sample.
+- The first page is page 1. { "pages:" [ { "pageNumber" : 1 , "dimension" : { "width" : 679.0 , "height" : 460.0 , "unit" : "pixels" }, } ] } The pages[].detectedLanguages[] field contains the languages found on a given page, along with the confidence score. { "pages" : [ { "detectedLanguages" : [ { "confidence" : 0.98009938 , "languageCode" : "en" }, { "confidence" : 0.01990064 , "languageCode" : "und" } ] } ] } OCR data Document AI OCR detects text with various granularity or organization in the page, such as the text blocks, paragraphs, tokens and symbols (symbol level is optional, if configured to output symbol level data).
+- Non-text visual elements (such as checkboxes) are also at the page level. { "pages" : [ { "paragraphs" : [ { "layout" : { "textAnchor" : { "textSegments" : [ { "endIndex" : "16" } ] }, "confidence" : 0.9939527 , "boundingPoly" : { "vertices" : [ ... ], "normalizedVertices" : [ ... ] }, "orientation" : "PAGE UP" } } ] } ] } The raw text is referred to in the textAnchor object which is indexed into the main text string with startIndex and endIndex . startIndex might be omitted if the text string begins at the beginning of the main text string.
+- Highlighting the square boxes having checkmarks over the UI and unicode ✓ in the JSON. "pages:" [ { "tables" : [ { "layout" : { ... }, "headerRows" : [ { "cells" : [ { "layout" : { ... }, "rowSpan" : 1 , "colSpan" : 1 }, { "layout" : { ... }, "rowSpan" : 1 , "colSpan" : 1 } ] } ], "bodyRows" : [ { "cells" : [ { "layout" : { ... }, "rowSpan" : 1 , "colSpan" : 1 }, { "layout" : { ... }, "rowSpan" : 1 , "colSpan" : 1 } ] } ] } ] } ] } In tables, checkboxes appear as Unicode characters like ✓ (checked) or ☐ (unchecked).
+
+### Processor list \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/processors-list](https://docs.cloud.google.com/document-ai/docs/processors-list)
+- Source ID: `site-docs-root`
+- Final score: 144
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Category Extract Functions OCR, Form Parsing, Entity Extraction Release stage General availability Access status Public lock open Type in API FORM PARSER PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Belarusian be Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Korean ko Kore Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Additional fields detected Description pretrained-form-parser-v1.0-2020-09-23 Stable GA None Legacy version.
+- Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API INVOICE PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported German de Latn English en Latn Spanish es Latn Estonian et Latn French fr Latn Italian it Latn Latvian lv Latn Lithuanian lt Latn Dutch nl Latn Portuguese (Portugal & Brazil) pt Latn Romanian ro Latn Swedish sv Latn Processor versions Version ID Release Channel Release Maturity Additional languages supported Description pretrained-invoice-v1.1-2021-04-09 Stable GA None pretrained-invoice-v1.2-2022-02-18 Stable GA None Deprecation is planned soon. pretrained-invoice-v1.3-2022-07-15 Stable GA it : Italian pt : Portuguese (Portugal & Brazil) ro : Romanian sv : Swedish et : Estonian lv : Latvian lt : Lithuanian Uptrainable processor version.
+- Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API EXPENSE PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported German de Latn English en Latn Spanish es Latn French fr Latn Japanese ja Jpan Dutch nl Latn Processor versions Version ID Release Channel Release Maturity Additional fields detected Additional languages supported Description pretrained-expense-v1.1-2021-04-09 Stable GA None None Fine-tuned version of the v1.0 processor.
+- Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Limited security Type in API UTILITY PROCESSOR Supported languages Language Name BCP 47 Tag Script Handwriting supported English en Latn Processor versions Version ID Release Channel Release Maturity Description pretrained-utility-v1.1-2021-04-09 Stable GA Note: Will be discontinued starting June 30, 2026. pretrained-utility-v1.2-2022-12-15 Release Candidate Public Preview Note: Will be discontinued starting June 30, 2026.
 

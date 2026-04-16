@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:00.999Z"
+generated_at: "2026-04-12T12:12:51.973Z"
 product_name: "Cloud Workstations"
 product_slug: "cloud-workstations"
 feature_name: "GPU support"
 feature_slug: "gpu-support"
 latest_feature_date: "2024-03-22"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/workstations/docs/available-gpus"
+  - "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console"
+  - "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
 keywords:
   - "gpu"
   - "workstations"
@@ -24,7 +27,7 @@ keywords:
 # GPU support
 
 Product: Cloud Workstations
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Cloud Workstations supports GPUs for workstation configurations; Cloud Workstati
 
 Cloud Workstations supports GPUs for workstation configurations; Cloud Workstations supports GPUs through the API.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/workstations/docs/available-gpus](https://docs.cloud.google.com/workstations/docs/available-gpus)
+- [https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console](https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console)
+- [https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient](https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient](https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Available GPUs \_|\_ Cloud Workstations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/workstations/docs/available-gpus](https://docs.cloud.google.com/workstations/docs/available-gpus)
+- Source ID: `site-docs-root-2`
+- Final score: 298
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Limitations A workstation configuration may specify GPUs, subject to the following limitations: Cloud Workstations only supports GPUs for configurations that specify machine types in the N1 machine series , the A2 machine series , or the A3 machine series .
+- A100 40GB H100 T4 V100 P100 P4 Clear all Zones Location GPU platforms asia-east1-a Taiwan P100, T4 asia-east1-b Taiwan asia-east1-c Taiwan H100, P100, T4, V100 asia-east2-a Hong Kong T4 asia-east2-b Hong Kong asia-east2-c Hong Kong T4 asia-northeast1-a Tokyo A100 40GB, T4 asia-northeast1-b Tokyo H100 asia-northeast1-c Tokyo A100 40GB, T4 asia-northeast3-a Seoul A100 40GB, H100 asia-northeast3-b Seoul A100 40GB, T4 asia-northeast3-c Seoul H100, T4 asia-south1-a asia-south1-b Mumbai T4 asia-south1-c Mumbai H100 asia-southeast1-a Singapore T4 asia-southeast1-b asia-southeast1-c Singapore A100 40GB, H100, P4, T4 australia-southeast1-a Sydney P4, T4 australia-southeast1-b Sydney P100, P4 australia-southeast1-c Sydney H100, T4 australia-southeast2-a australia-southeast2-b australia-southeast2-c Melbourne europe-central2-a Warsaw europe-central2-b europe-central2-c Warsaw T4 europe-north1-a europe-north1-b Finland europe-north1-c Finland H100 europe-southwest1-a europe-southwest1-b europe-southwest1-c Madrid europe-west1-b Belgium H100, P100, T4 europe-west1-c Belgium H100, T4 europe-west1-d Belgium P100, T4 europe-west12-a europe-west12-b Turin europe-west2-a London T4 europe-west2-b London H100, T4 europe-west2-c London europe-west3-a Frankfurt H100 europe-west3-b Frankfurt T4 europe-west3-c Frankfurt H100 europe-west4-a Netherlands A100 40GB, P100, T4, V100 europe-west4-b Netherlands A100 40GB, H100, P4, T4, V100 europe-west4-c Netherlands H100, P4, T4, V100 europe-west6-a europe-west6-b europe-west6-c Zurich europe-west8-a europe-west8-b Milan europe-west8-c Milan H100 europe-west9-a europe-west9-b Paris europe-west9-c Paris H100 me-central2-a me-central2-b me-central2-c Dammam me-west1-a Tel Aviv A100 40GB me-west1-b Tel Aviv T4 me-west1-c Tel Aviv A100 40GB, T4 northamerica-northeast1-a northamerica-northeast1-b Montréal P4 northamerica-northeast1-c Montréal P4, T4 southamerica-east1-a São Paulo T4 southamerica-east1-b São Paulo southamerica-east1-c São Paulo T4 southamerica-west1-a southamerica-west1-b southamerica-west1-c Santiago us-central1-a Iowa A100 40GB, H100, P4, T4, V100 us-central1-b Iowa A100 40GB, H100, T4, V100 us-central1-c Iowa A100 40GB, H100, P100, P4, T4, V100 us-central1-f Iowa A100 40GB, P100, T4, V100 us-east1-b South Carolina A100 40GB, P100 us-east1-c South Carolina P100, T4, V100 us-east1-d South Carolina T4 us-east4-a us-east4-b us-east4-c Northern Virginia H100, P4, T4 us-east5-a Columbus H100 us-east5-b us-east5-c Columbus us-west1-a Oregon H100, P100, T4, V100 us-west1-b Oregon A100 40GB, H100, P100, T4, V100 us-west1-c Oregon us-west4-a Las Vegas H100, T4 us-west4-b Las Vegas A100 40GB, T4 us-west4-c Las Vegas What's next Specify GPUs using the Cloud Workstations API .
+- Now that you have selected a GPU model and compatible machine type, update the configuration: For NVIDIA A100 40GB GPUs, run this command to update your configuration: gcloud beta workstations configs update \ --project = PROJECT ID \ --region = LOCATION \ --cluster = CLUSTER NAME \ CONFIG NAME \ --machine-type = A2 MACHINE TYPE Replace A2 MACHINE TYPE with the chosen A2 machine type determined in the previous step (for example, a2-highgpu-1g ).
+- For NVIDIA A100 40GB GPUs run this command to create your configuration: gcloud beta workstations configs create \ --project = PROJECT ID \ --region = LOCATION \ --cluster = CLUSTER NAME \ CONFIG NAME \ --replica-zones = REPLICA ZONES \ --machine-type = A2 MACHINE TYPE Replace the following: PROJECT ID : the ID of the project that will contain the new workstation configuration.
+
+### "Quickstart: Set up workstations \_|\_ Cloud Workstations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console](https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console)
+- Source ID: `site-docs-root-2`
+- Final score: 227
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Delete a Google Cloud project: gcloud projects delete PROJECT ID For more information about deleting other resources, such as workstation clusters, workstation configurations, and workstations, see Delete resources .
+- Enable the API Required roles To get the permissions that you need to manage and use workstations, ask your administrator to grant you the following IAM roles: Create and manage workstation clusters and configurations: Cloud Workstations Admin ( roles/workstations.admin ) on the project Create workstations using a configuration: Cloud Workstations Creator ( roles/workstations.workstationCreator ) on the project or the workstation configuration Use a workstation: Cloud Workstations User ( roles/workstations.user ) on the workstation.
+- To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin This guide covers steps for administrators to set up Cloud Workstations and for developers to use the workstations.
+- For more information about creating a workstation configuration with the options that were skipped in this quickstart, see the detailed section about workstation configurations .
+
+### "Class WorkstationsAsyncClient (0.8.0) \_|\_ Python client libraries \_|\_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient](https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 223
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Workstation configurations act as templates for workstations.
+- Workstation configurations act as templates for workstations.
+- Workstation configurations act as templates for workstations.
+- Workstation configurations act as templates for workstations.
+
+### "Class WorkstationsClient (0.8.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient](https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient)
+- Source ID: `site-python-reference`
+- Final score: 223
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Workstation configurations act as templates for workstations.
+- Workstation configurations act as templates for workstations.
+- Workstation configurations act as templates for workstations.
+- Workstation configurations act as templates for workstations.
 

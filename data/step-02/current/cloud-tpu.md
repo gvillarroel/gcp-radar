@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 23
-Unique features: 29
+Unique features: 28
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -22,7 +22,6 @@ Unique features: 29
 | 2020-08-20 | Hardsigmoid support in PyTorch/XLA |  | PyTorch/XLA 1.6 adds support for the Hardsigmoid operation. |
 | 2020-08-20 | max_unpool2d support in PyTorch/XLA |  | PyTorch/XLA 1.6 adds support for the max_unpool2d operation. |
 | 2020-08-20 | max_unpool3d support in PyTorch/XLA |  | PyTorch/XLA 1.6 adds support for the max_unpool3d operation. |
-| 2020-08-20 | Native torch wheels on Colab and Kaggle |  | PyTorch/XLA 1.6 supports native torch wheels on Colab and Kaggle without requiring the env-setup.py script. |
 | 2020-08-20 | PyTorch 1.6 support via PyTorch/XLA |  | Cloud TPU supports PyTorch 1.6 through PyTorch/XLA integration for training supported models on TPUs. |
 | 2020-08-20 | ReplicationPad1d support in PyTorch/XLA |  | PyTorch/XLA 1.6 adds support for the ReplicationPad1d operation. |
 | 2020-08-20 | ReplicationPad2d support in PyTorch/XLA |  | PyTorch/XLA 1.6 adds support for the ReplicationPad2d operation. |

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:28:55.736Z"
+generated_at: "2026-04-12T12:11:54.312Z"
 product_name: "Cloud Router"
 product_slug: "cloud-router"
 feature_name: "Named sets for BGP route policies"
 feature_slug: "named-sets-for-bgp-route-policies"
 latest_feature_date: "2026-03-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes"
   - "https://docs.cloud.google.com/network-connectivity/docs/router/quotas"
   - "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions"
+  - "https://docs.cloud.google.com/network-connectivity/docs/router/resources/troubleshooting"
 keywords:
   - "named"
   - "sets"
@@ -26,7 +27,7 @@ keywords:
 # Named sets for BGP route policies
 
 Product: Cloud Router
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Named sets let you group BGP communities or prefixes so they can be managed and 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes](https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes)
 - [https://docs.cloud.google.com/network-connectivity/docs/router/quotas](https://docs.cloud.google.com/network-connectivity/docs/router/quotas)
 - [https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions](https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions)
+- [https://docs.cloud.google.com/network-connectivity/docs/router/resources/troubleshooting](https://docs.cloud.google.com/network-connectivity/docs/router/resources/troubleshooting)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes](https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes)
 - Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 222
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Check for inactive custom learned routes If you are unable to reach an on-premises destination using a configured custom learned route, do the following: Check that the route is configured properly on the BGP session.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/quotas](https://docs.cloud.google.com/network-connectivity/docs/router/quotas)
 - Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 220
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Maximum number of BGP peers for each Cloud Router in a given VPC network and region 128 The BGP peer can be any of the following: A Cloud VPN tunnel using dynamic routing A VLAN attachment for any of the following: Dedicated Interconnect Partner Interconnect Cross-Cloud Interconnect A Router appliance within Network Connectivity Center Maximum number of prefixes that Cloud Router accepts from a single BGP peer 5,000 If a BGP peer advertises more than 5,000 prefixes, Cloud Router resets the BGP session.
@@ -80,9 +82,23 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions](https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions)
 - Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 217
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This IPv6 address is used as the BGP peering address with Cloud Router for a HA VPN tunnel or a Dedicated Interconnect VLAN attachment. bgpPeers.ipAddress is an IPv6 address assigned to the interface of the Cloud Router and matches the value configured as the peer BGP IP address on your on-premises router. bgpPeers.peerAsn matches the ASN of your on-premises router. bgp.asn matches the peer ASN configured on your on-premises router.
+- For additional troubleshooting information, see the following: Troubleshoot BGP peering Troubleshoot BGP routes and route selection Troubleshoot Cloud Router log messages BGP session failed to establish Check that the settings on your on-premises BGP router and the settings on your Cloud Router are correct.
+- BGP resets that originate from Google Cloud appear on your router Cloud Router tasks are software processes in the Google Cloud control plane that are normally migrated from machine to machine.
+- Cloud Logging adds entries for the affected router when BGP resets occur.
+
+### Troubleshoot BGP sessions \_|\_ Cloud Router \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/router/resources/troubleshooting](https://docs.cloud.google.com/network-connectivity/docs/router/resources/troubleshooting)
+- Source ID: `site-docs-reference`
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This IPv6 address is used as the BGP peering address with Cloud Router for a HA VPN tunnel or a Dedicated Interconnect VLAN attachment. bgpPeers.ipAddress is an IPv6 address assigned to the interface of the Cloud Router and matches the value configured as the peer BGP IP address on your on-premises router. bgpPeers.peerAsn matches the ASN of your on-premises router. bgp.asn matches the peer ASN configured on your on-premises router.

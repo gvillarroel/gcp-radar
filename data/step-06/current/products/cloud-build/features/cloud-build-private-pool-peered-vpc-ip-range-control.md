@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.721Z"
+generated_at: "2026-04-15T00:42:40.850Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Cloud Build private pool peered VPC IP range control"
 feature_slug: "cloud-build-private-pool-peered-vpc-ip-range-control"
 latest_feature_date: "2023-01-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network"
   - "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network"
   - "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network"
 keywords:
-  - "build"
-  - "private"
-  - "pool"
   - "peered"
-  - "vpc"
-  - "ip"
   - "range"
   - "control"
+  - "pool"
+  - "private"
 ---
 
 # Cloud Build private pool peered VPC IP range control
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +35,7 @@ Cloud Build private pools can now set peeredNetworkIpRange to consume fewer IP a
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,41 +49,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network)
 - Source ID: `site-docs-root-2`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 147
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Allocate an internal IP range in the VPC that the Cloud Build producer network can use to allocate to VMs maintaining a connection with private repositories.
+- To learn how to run builds using a private pool, see Running builds in a private pool .
+- If you have not created a private pool, see create a new private pool .
 - Allocate a named IP range in the VPC network for your peered network.
-- Build repositories from Bitbucket Data Center in a private network If your Bitbucket Data Center instance is hosted in a private network and not reachable over a public internet connection, you must create a private connection between your VPC network and the service producer network .
-- To create a Bitbucket Data Center trigger to build in a private network: Create a private connection between the VPC network and your service producer network by completing the following steps: Create a new VPC network or select an existing VPC network .
 
 ### "Build repositories from Bitbucket Server in a private network \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network)
 - Source ID: `site-docs-root-2`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 147
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- This is to accommodate, at a minimum, both your triggers and your worker pools, because each service connection tries to claim an IP range with a prefix length of /24 .
 - Allocate an internal IP range in the VPC that the Cloud Build producer network can use to allocate to VMs maintaining a connection with private repositories.
-- Allocate a named IP range in the VPC network for your peered network.
-- Building repositories from Bitbucket Server in a private network If your Bitbucket Server instance is hosted in a private network and not reachable over a public internet connection, you must create a private connection between your VPC network and the service producer network .
-- To create a Bitbucket Server trigger to build in a private network: Create a private connection between the VPC network and your service producer network by completing the following steps: Create a new VPC network or select an existing VPC network .
+- Enable the APIs If you have not created a private pool, follow the instructions in Create and manage private pools to create a private pool.
+- To learn how to run builds using a private pool, see Running builds in a private pool .
 
 ### "Build repositories from GitHub Enterprise in a private network \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network](https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network)
 - Source ID: `site-docs-root-2`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 135
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Enable the APIs If you have not created a private pool, follow the instructions in Create and manage private pools to create a private pool.
+- Additionally, your private network needs to be configured to route this range through the Cloud VPN or Cloud Interconnect connection.
+- If your connection uses a Cloud Router, you can configure your connection to communicate the range to your private network.
 - You will need a private pool to build in a private network.
-- Build repositories from GitHub Enterprise in a private network Complete the following steps to connect your GitHub Enterprise instance to Cloud Build from a private network: Grant Service Directory access to the Cloud Build service agent: export PROJECT NUMBER = $( gcloud projects describe PROJECT ID --format = "value(projectNumber)" ) export CLOUD BUILD SERVICE AGENT = "service- $PROJECT NUMBER @gcp-sa-cloudbuild.iam.gserviceaccount.com" gcloud projects add-iam-policy-binding PROJECT ID CONTAINING SERVICE DIRECTORY \ --member = "serviceAccount: $CLOUD BUILD SERVICE AGENT " \ --role = "roles/servicedirectory.viewer" Replace the following: PROJECT ID is your Cloud Build project ID.
-- Grant VPC network resource access to the Cloud Build service agent: export PROJECT NUMBER = $( gcloud projects describe PROJECT ID --format = "value(projectNumber)" ) export CLOUD BUILD SERVICE AGENT = "service- $PROJECT NUMBER @gcp-sa-cloudbuild.iam.gserviceaccount.com" gcloud projects add-iam-policy-binding PROJECT ID CONTAINING NETWORK RESOURCE \ --member = "serviceAccount: $CLOUD BUILD SERVICE AGENT " \ --role = "roles/servicedirectory.pscAuthorizedService" Replace the following: PROJECT ID is your Cloud Build project ID.
-- Use Cloud Load Balancing to reach hosts outside Google Cloud If your network configuration does not allow you to route the Service Directory IP address range 35.199.192.0/19 to the Cloud VPN or Cloud Interconnect, you can create a load balancer using Cloud Load Balancing that directs traffic to your host.
 

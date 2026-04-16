@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:17:26.783Z"
+generated_at: "2026-04-12T12:11:23.487Z"
 product_name: "Cloud Deploy"
 product_slug: "cloud-deploy"
 feature_name: "Release configuration file comparison in Cloud Console"
 feature_slug: "release-configuration-file-comparison-in-cloud-console"
 latest_feature_date: "2022-07-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/deploy/docs/deploy-app-in-console"
   - "https://docs.cloud.google.com/deploy/docs/deploy-app-hooks"
+  - "https://docs.cloud.google.com/deploy/docs/deploy-app-analysis"
   - "https://docs.cloud.google.com/deploy/docs/deploy-app-run"
 keywords:
   - "release"
@@ -26,7 +27,7 @@ keywords:
 # Release configuration file comparison in Cloud Console
 
 Product: Cloud Deploy
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Cloud Deploy added the ability to view and compare Kubernetes and Skaffold confi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/deploy/docs/deploy-app-in-console](https://docs.cloud.google.com/deploy/docs/deploy-app-in-console)
 - [https://docs.cloud.google.com/deploy/docs/deploy-app-hooks](https://docs.cloud.google.com/deploy/docs/deploy-app-hooks)
+- [https://docs.cloud.google.com/deploy/docs/deploy-app-analysis](https://docs.cloud.google.com/deploy/docs/deploy-app-analysis)
 - [https://docs.cloud.google.com/deploy/docs/deploy-app-run](https://docs.cloud.google.com/deploy/docs/deploy-app-run)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/deploy/docs/deploy-app-in-console](https://docs.cloud.google.com/deploy/docs/deploy-app-in-console)
 - Source ID: `site-docs-root-2`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 258
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - GKE clusters are externally accessible by default. gcloud container clusters create - auto quickstart - cluster - for - console - staging \ -- project = PROJECT ID \ -- region = us - central1 && \ gcloud container clusters create - auto quickstart - cluster - for - console - prod \ -- project = PROJECT ID \ -- region = us - central1 Create a delivery pipeline and two targets You can use Cloud Deploy to create a delivery pipeline and targets based on configuration specified in one or more YAML files.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/deploy/docs/deploy-app-hooks](https://docs.cloud.google.com/deploy/docs/deploy-app-hooks)
 - Source ID: `site-docs-root-2`
-- Final score: 188
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 244
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Delete the GKE cluster or Cloud Run service: GKE gcloud container clusters delete deploy - hooks - cluster -- region = us - central1 -- project = PROJECT ID Cloud Run gcloud run services delete my - hooks - run - service -- region = us - central1 -- project = PROJECT ID Delete the delivery pipeline, target, release, and rollout: gcloud deploy delete -- file = clouddeploy . yaml -- force -- region = us - central1 -- project = PROJECT ID Delete the Cloud Storage buckets that Cloud Deploy created.
@@ -76,13 +78,27 @@ Evidence snippets:
 - View the results in Google Cloud console After a few minutes, your release is deployed into your target runtime.
 - GKE mkdir deploy-hooks-gke-quickstart cd deploy-hooks-gke-quickstart Cloud Run mkdir deploy-hooks-run-quickstart cd deploy-hooks-run-quickstart Create your delivery pipeline and target definition: GKE In the deploy-hooks-gke-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion : deploy . cloud . google . com / v1 kind : DeliveryPipeline metadata : name : deploy - hooks - demo - app - gke - 1 description : main application pipeline serialPipeline : stages : - targetId : hooks - staging profiles : [] strategy : standard : predeploy : tasks : - type : container image : ubuntu command : [ "/bin/sh" ] args : [ "-c" , ' echo "this is a predeploy action" ' ] postdeploy : tasks : - type : container image : ubuntu command : [ "/bin/sh" ] args : [ "-c" , ' echo "this is a postdeploy action" ' ] --- apiVersion : deploy . cloud . google . com / v1 kind : Target metadata : name : hooks - staging description : hooks staging cluster gke : cluster : projects / PROJECT ID / locations / us - central1 / clusters / deploy - hooks - cluster Cloud Run In the deploy-hooks-run-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion : deploy . cloud . google . com / v1 kind : DeliveryPipeline metadata : name : deploy - hooks - demo - app - run - 1 description : main application pipeline serialPipeline : stages : - targetId : hooks - staging profiles : [] strategy : standard : predeploy : tasks : - type : container image : ubuntu command : [ "/bin/sh" ] args : [ "-c" , ' echo "this is a predeploy action" ' ] postdeploy : tasks : - type : container image : ubuntu command : [ "/bin/sh" ] args : [ "-c" , ' echo "this is a postdeploy action" ' ] --- apiVersion : deploy . cloud . google . com / v1 kind : Target metadata : name : hooks - staging description : staging Run service run : location : projects / PROJECT ID / locations / us - central1 Note: In this file, the target is included with the delivery pipeline, but you can define targets in a separate file or multiple separate files.
 
+### "Quickstart: Run analysis on your application after deploying it \_|\_ Cloud\
+
+- URL: [https://docs.cloud.google.com/deploy/docs/deploy-app-analysis](https://docs.cloud.google.com/deploy/docs/deploy-app-analysis)
+- Source ID: `site-docs-root-2`
+- Final score: 241
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In the deploy-analysis-run-quickstart directory, create a file called policy.yaml , with the following contents: displayName : Cloud Run service uptime check userLabels : policy-for : analysis-run-pipeline combiner : OR conditions : - displayName : Failure of uptime check UPTIME ID conditionThreshold : filter : metric.type="monitoring.googleapis.com/uptime check/check passed" AND metric.label.check id=" UPTIME ID " AND resource.type="cloud run revision" aggregations : - alignmentPeriod : 60s crossSeriesReducer : REDUCE COUNT FALSE groupByFields : - resource.label. perSeriesAligner : ALIGN NEXT OLDER comparison : COMPARISON GT duration : 60s thresholdValue : 1.0 Replace UPTIME ID with the ID of the uptime check you created before .
+- Delete the Cloud Run service: gcloud run services delete my-analysis-run-service \ --region = us-central1 \ --project = PROJECT ID To delete the delivery pipeline, target, release, and rollout, run the following command from the directory containing your delivery pipeline definition: gcloud deploy delete --file = clouddeploy.yaml \ --force \ --region = us-central1 \ --project = PROJECT ID Delete the Google Cloud Observability alert policy: gcloud monitoring policies delete ALERT POLICY ID Delete the Cloud Storage buckets that Cloud Deploy created.
+- Create a new directory and navigate into it. mkdir deploy-analysis-run-quickstart cd deploy-analysis-run-quickstart Create a file named skaffold.yaml with the following contents: apiVersion : skaffold/v4beta7 kind : Config manifests : rawYaml : - service.yaml deploy : cloudrun : {} See the skaffold.yaml reference for more information about this configuration file.
+- Prepare your Skaffold configuration and service definition In this quickstart, you create a skaffold.yaml file, which identifies the manifest to be used to deploy the sample Cloud Run service, and you also define the service.yaml file that defines the Cloud Run itself.
+
 ### "Quickstart: Deploy an app to Cloud Run using Cloud Deploy \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/deploy/docs/deploy-app-run](https://docs.cloud.google.com/deploy/docs/deploy-app-run)
 - Source ID: `site-docs-root`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 240
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Delete the deploy-qs-dev Cloud Run service, job, or worker pool: Services gcloud run services delete deploy - run - service - dev -- region = us - central1 -- project = PROJECT ID Jobs gcloud run jobs delete deploy - run - job - dev -- region = us - central1 -- project = PROJECT ID Worker pools (Preview) gcloud beta run worker-pools delete deploy-run-worker-pool-dev --region=us-central1 --project= PROJECT ID Delete the deploy-qs-prod service, job, or worker pool: Services gcloud run services delete deploy - run - service - prod -- region = us - central1 -- project = PROJECT ID Jobs gcloud run jobs delete deploy - run - job - prod -- region = us - central1 -- project = PROJECT ID Worker pools (Preview) gcloud beta run worker - pools delete deploy - run - worker - pool - prod -- region = us - central1 -- project = PROJECT ID Delete the delivery pipeline, targets, release and rollouts: gcloud deploy delete -- file = clouddeploy . yaml -- force -- region = us - central1 -- project = PROJECT ID Delete the Cloud Storage buckets that Cloud Deploy created.

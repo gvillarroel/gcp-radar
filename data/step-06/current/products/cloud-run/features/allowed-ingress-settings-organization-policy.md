@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.918Z"
+generated_at: "2026-04-14T15:34:54.519Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Allowed ingress settings organization policy"
 feature_slug: "allowed-ingress-settings-organization-policy"
 latest_feature_date: "2021-07-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
   - "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run"
+  - "https://docs.cloud.google.com/run/docs/deploy-functions"
   - "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
 keywords:
-  - "allowed"
-  - "ingress"
-  - "settings"
+  - "permitted"
   - "organization"
+  - "settings"
+  - "allowed"
   - "policy"
-  - "the"
-  - "controls"
   - "which"
+  - "ingress"
+  - "controls"
 ---
 
 # Allowed ingress settings organization policy
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,35 +38,23 @@ The Allowed ingress settings organization policy controls which ingress settings
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
 - [https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run](https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run)
+- [https://docs.cloud.google.com/run/docs/deploy-functions](https://docs.cloud.google.com/run/docs/deploy-functions)
 - [https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy](https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy)
 
 ## Supporting Pages
-
-### Cloud Run release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 134
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature The following organization policies are now at General Availability (GA): Cloud Run Allowed ingress settings and Allowed VPC egress settings .
-- March 05, 2021 Feature You can now use VPC Service Controls with Cloud Run to set up a secure perimeter to guard against data exfiltration. (Available in public preview.) March 03, 2021 Feature Cloud Run reports a new Cloud Monitoring metric: Instance count , which counts the number of container instances that exist, broken down by state (active or idle).
-- March 23, 2020 Fixed You can now restrict which regions are available to deploy Cloud Run (fully managed) services using an organization policy with a resource locations constraint .
-- May 12, 2021 Feature Cloud Run now provides UI, command line, and YAML support for referencing Secret Manager Secrets . (Available in public preview.) Feature Customer managed encryption keys are now available for use with Cloud Run. (Available in public preview.) Feature Recommender now provides recommendations for securing Cloud Run services by creating dedicated service accounts. (Available in public preview.) Feature Committed use discounts are now available for Cloud Run . (Available in public preview.) Feature You can now use Binary authorization with Cloud Run to enforce policy-based deployment of Cloud Run services. (Available in public preview.) May 03, 2021 Feature You can now use Identity-aware Proxy with Cloud Run to use identity and context to guard access to your applications. (Available in public preview.) Change By default, the memory allocated to each container instance of a new service is 512MiB.
 
 ### Configure IAP for Cloud Run \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run](https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run)
 - Source ID: `site-docs-root`
-- Final score: 124
-- Re-rank relevance: N/A
+- Final score: 150
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Before you begin Enable the IAP API: Enable the IAP API Required roles To get the permissions that you need to enable IAP, ask your administrator to grant you the following IAM roles: Cloud Run Admin ( roles/run.admin ) on the project Grant access to the IAP-enabled service: IAP Policy Admin ( roles/iap.admin ) on the project Create an IAP-enabled service or update an existing service to enable IAP: Artifact Registry Reader ( roles/artifactregistry.reader ) on the deployed container images Service Account User ( roles/iam.serviceAccountUser ) on the service identity Grant access to users not part of a Google organization: IAP Settings Admin ( roles/iap.settingsAdmin ) on the project Grant access to users from outside an organization or not part of an organization: OAuth Config Editor ( roles/oauthconfig.editor ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .
@@ -78,13 +66,26 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy](https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy)
 - Source ID: `site-api-reference`
-- Final score: 104
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 116
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - JSON representation An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources.
 - JSON example: { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } YAML example: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 For a description of IAM and its features, see the IAM documentation .
 - For example, if the bindings grant 50 different roles to user:alice@example.com , and not to any other principal, then you can add another 1,450 principals to the bindings in the Policy . auditConfigs[] object ( AuditConfig ) Specifies cloud audit logging configuration for this policy. etag string ( bytes format) etag is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other.
 - This requirement applies to the following operations: Getting a policy that includes a conditional role binding Adding a conditional role binding to a policy Changing a conditional role binding in a policy Removing any role binding, with or without a condition, from a policy that includes conditions Important: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy .
+
+### Deploy a Cloud Run function \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/deploy-functions](https://docs.cloud.google.com/run/docs/deploy-functions)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 112
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Enable the Artifact Registry, Cloud Build, Cloud Run Admin API, and Cloud Logging APIs: gcloud services enable artifactregistry.googleapis.com \ cloudbuild.googleapis.com \ run.googleapis.com \ logging.googleapis.com Optionally, enable the Eventarc API to use event triggers: gcloud services enable eventarc.googleapis.com If you are under a domain restriction organization policy restricting unauthenticated invocations for your project, you will need to access your deployed service as described under Testing private services .
+- Note: The iam.automaticIamGrantsForDefaultServiceAccounts organization policy constraint prevents the Editor role from being automatically granted to default service accounts.
+- Worker pool flags for specifying which worker pool to use in VPC Service Controls secured build context.
+- Set the Ingress control settings as needed.
 

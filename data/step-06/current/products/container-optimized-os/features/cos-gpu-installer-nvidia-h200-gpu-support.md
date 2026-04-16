@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:04.413Z"
+generated_at: "2026-04-15T13:37:11.068Z"
 product_name: "Container Optimized OS"
 product_slug: "container-optimized-os"
 feature_name: "cos-gpu-installer NVIDIA H200 GPU Support"
 feature_slug: "cos-gpu-installer-nvidia-h200-gpu-support"
 latest_feature_date: "2024-12-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/concepts/supported-filesystems"
 keywords:
   - "cos"
   - "gpu"
@@ -17,14 +19,13 @@ keywords:
   - "nvidia"
   - "h200"
   - "enables"
-  - "to"
   - "gpus"
 ---
 
 # cos-gpu-installer NVIDIA H200 GPU Support
 
 Product: Container Optimized OS
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,22 +37,44 @@ Enables cos-gpu-installer to support NVIDIA H200 GPUs; Enables cos-gpu-installer
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed](https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed)
+- [https://docs.cloud.google.com/container-optimized-os/docs/concepts/supported-filesystems](https://docs.cloud.google.com/container-optimized-os/docs/concepts/supported-filesystems)
 
 ## Supporting Pages
 
-### Container-Optimized OS über den Quellcode erstellen | Container-Optimized OS | Google Cloud Documentation
+### "Running instances with GPU accelerators \_|\_ Container-Optimized OS \_\
 
-- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
-- Source ID: `site-docs-root`
-- Final score: 24
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
+- Source ID: `site-docs-reference`
+- Final score: 109
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Container-Optimized OS über den Quellcode erstellen Container-Optimized OS Google Cloud Documentation Source URL: https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de Zum Erstellen eines Container-Optimized ... erstellen.
-- Mit dem in depot tools enthaltenen Tool cros sdk können Sie eine für die Kompilierung des Container-Optimized OS geeignete chroot erstellen und aufrufen....
+- For A3 Ultra accelerator-optimized machine types, NVIDIA H200 141GB GPUs are attached.
+- End-to-end: Running a GPU application on Container-Optimized OS The following end-to-end example shows you how to use cloud-init to configure Container-Optimized OS VM instances that provision a GPU application container myapp:latest after the GPU driver has been installed: #cloud-config users : - name : myuser uid : 2000 write files : - path : /etc/systemd/system/install-gpu.service permissions : 0644 owner : root content : [Unit] Description=Install GPU drivers Wants=gcr-online.target docker.socket After=gcr-online.target docker.socket [Service] User=root Type=oneshot ExecStart=cos-extensions install gpu StandardOutput=journal+console StandardError=journal+console - path : /etc/systemd/system/myapp.service permissions : 0644 owner : root content : [Unit] Description=Run a myapp GPU application container Requires=install-gpu.service After=install-gpu.service [Service] User=root Type=oneshot RemainAfterExit=true ExecStart=/usr/bin/docker run --rm -u 2000 --name=myapp --device /dev/nvidia0:/dev/nvidia0 myapp:latest StandardOutput=journal+console StandardError=journal+console runcmd : - systemctl daemon-reload - systemctl start install-gpu.service - systemctl start myapp.service About the NVIDIA CUDA-X libraries CUDA® is NVIDIA's parallel computing platform and programming model for GPUs.
+- For N1 general-purpose machine types, you can attach the following GPUs: NVIDIA T4 NVIDIA V100 NVIDIA P100 NVIDIA P4 GPUs provide compute power to drive deep-learning tasks such as image recognition and natural language processing, as well as other compute-intensive tasks such as video transcoding and image processing.
+- Make the driver installation path executable by re-mounting it. sudo mount --bind /var/lib/nvidia /var/lib/nvidia sudo mount -o remount,exec /var/lib/nvidia /var/lib/nvidia/bin/nvidia-smi Configure containers to consume GPUs After the GPU drivers are installed, you can configure containers to consume GPUs.
+
+### "Scanning COS images with Oval vulnerability feed \_|\_ Container-Optimized\
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed](https://docs.cloud.google.com/container-optimized-os/docs/how-to/scanning-with-oval-vulnerability-feed)
+- Source ID: `site-docs-reference`
+- Final score: 22
+- Re-rank relevance: N/A
+
+### Supported filesystems \_|\_ Container-Optimized OS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/concepts/supported-filesystems](https://docs.cloud.google.com/container-optimized-os/docs/concepts/supported-filesystems)
+- Source ID: `site-docs-reference`
+- Final score: 21
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Container-Optimized OS enables the following EXT4-related features: Support for the EXT4 filesystem in kernel : The Linux kernel in Container-Optimized OS has the most commonly used EXT4 features enabled: CONFIG EXT4 FS=y CONFIG EXT4 USE FOR EXT2=y CONFIG EXT4 FS POSIX ACL=y CONFIG EXT4 FS SECURITY=y CONFIG JBD2=y e2fsprogs package : The e2fsprogs package contains several critical user space utilities available for the EXT4 filesystem (for example, mkfs and fsck ).
+- Container-Optimized OS enables the following XFS-related features: Support for the XFS filesystem in kernel : The Linux kernel in Container-Optimized OS has the most commonly used XFS features enabled: CONFIG XFS FS=y CONFIG XFS SUPPORT V4=y CONFIG XFS QUOTA=y CONFIG XFS POSIX ACL=y xfsprogs package : The xfsprogs package contains several critical user space utilities available for the XFS filesystem (for example, mkfs and fsck ).
 

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.530Z"
+generated_at: "2026-04-14T23:59:44.340Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Duet AI log entry summarization"
 feature_slug: "duet-ai-log-entry-summarization"
 latest_feature_date: "2023-11-01"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/samples/logging-write-log-entry"
-  - "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator"
+  - "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries.LogEntry"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntry.Builder"
 keywords:
   - "duet"
   - "ai"
@@ -26,7 +26,7 @@ keywords:
 # Duet AI log entry summarization
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,55 @@ Duet AI can summarize Cloud Logging log entries for faster analysis; Duet AI can
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/samples/logging-write-log-entry](https://docs.cloud.google.com/logging/docs/samples/logging-write-log-entry)
-- [https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry](https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging](https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator](https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator)
+- [https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries.LogEntry](https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries.LogEntry)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntry.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntry.Builder)
 
 ## Supporting Pages
 
-### Write structured logs \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
+### "Class LogEntry (3.15.0) \_|\_ Python client libraries \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/logging/docs/samples/logging-write-log-entry](https://docs.cloud.google.com/logging/docs/samples/logging-write-log-entry)
-- Source ID: `site-docs-root`
-- Final score: 208
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- For more information, see Set up authentication for a local development environment . const { Logging } = require ( ' @google-cloud/logging ' ); const logging = new Logging (); / TODO(developer): Uncomment the following line and replace with your values. / // const logName = 'my-log'; const log = logging . log ( logName ); // A text log entry const text entry = log . entry ( 'Hello world!' ); // A json log entry with additional context const metadata = { severity : ' WARNING ' , labels : { foo : 'bar' , }, // A default log resource is added for some GCP environments // This log resource can be overwritten per spec: // https://cloud.google.com/logging/docs/reference/v2/rest/v2/MonitoredResource resource : { type : 'global' , }, }; const message = { name : 'King Arthur' , quest : 'Find the Holy Grail' , favorite color : 'Blue' , }; const json Entry = log . entry ( metadata , message ); async function writeLogEntry () { // Asynchronously write the log entry await log . write ( text entry ); // Asynchronously batch write the log entries await log . write ([ text entry , json Entry ]); // Let the logging library dispatch logs log . write ( text entry ); console . log ( Wrote to ${ logName } ); } writeLogEntry (); PHP To learn how to install and use the client library for Logging, see Logging client libraries .
-- Severity ; import com.google.common.collect.ImmutableMap ; import java.util.Collections ; import java.util.Map ; public class WriteLogEntry { public static void main ( String [] args ) throws Exception { // TODO(developer): Optionally provide the logname as an argument String logName = args . length > 0 ? args [ 0 ] : "test-log" ; // Instantiates a client try ( Logging logging = LoggingOptions . getDefaultInstance (). getService ()) { Map<String , String > payload = ImmutableMap . of ( "name" , "King Arthur" , "quest" , "Find the Holy Grail" , "favorite color" , "Blue" ); LogEntry entry = LogEntry . newBuilder ( JsonPayload . of ( payload )) . setSeverity ( Severity .
-- The struct can be any JSON-serializable dictionary. logger . log struct ( { "name" : "King Arthur" , "quest" : "Find the Holy Grail" , "favorite color" : "Blue" , }, severity = "INFO" , ) print ( "Wrote logs to {} ." . format ( logger . name )) Ruby To learn how to install and use the client library for Logging, see Logging client libraries .
-- For more information, see Set up authentication for a local development environment . use Google\Cloud\Logging\LoggingClient; use Google\Cloud\Logging\Logger; / Write a log message via the Stackdriver Logging API. @param string $projectId The Google project ID. @param string $loggerName The name of the logger. @param string $message The log message. / function write log($projectId, $loggerName, $message) { $logging = new LoggingClient(['projectId' => $projectId]); $logger = $logging->logger($loggerName, [ 'resource' => [ 'type' => 'gcs bucket', 'labels' => [ 'bucket name' => 'my bucket' ] ] ]); $entry = $logger->entry($message, [ 'severity' => Logger::INFO ]); $logger->write($entry); printf("Wrote a log to a logger '%s'." .
-
-### LogEntry \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry](https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
-- Source ID: `site-docs-reference`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries.LogEntry](https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries.LogEntry)
+- Source ID: `site-python-reference`
+- Final score: 70
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- JSON representation { "logName" : string , "resource" : { object ( MonitoredResource ) } , "timestamp" : string , "receiveTimestamp" : string , "severity" : enum ( LogSeverity ) , "insertId" : string , "httpRequest" : { object ( HttpRequest ) } , "labels" : { string : string , ... } , "metadata" : { object ( MonitoredResourceMetadata ) } , "operation" : { object ( LogEntryOperation ) } , "trace" : string , "spanId" : string , "traceSampled" : boolean , "sourceLocation" : { object ( LogEntrySourceLocation ) } , "split" : { object ( LogSplit ) } , "errorGroups" : [ { object ( LogErrorGroup ) } ] , "apphub" : { object ( AppHub ) } , "apphubDestination" : { object ( AppHub ) } , "apphubSource" : { object ( AppHub ) } , "otel" : { object } , // Union field payload can be only one of the following: "protoPayload" : { "@type" : string , field1 : ... , ... } , "textPayload" : string , "jsonPayload" : { object } // End of list of possible types for union field payload . } Fields logName string Required.
-- The following protocol buffer types are supported; user-defined types are not supported: "type.googleapis.com/google.cloud.audit.AuditLog" "type.googleapis.com/google.appengine.logging.v1.RequestLog" An object containing fields of an arbitrary type.
-- Contains the OpenTelemetry Resource, Instrumentation Scope, and Entities attributes for this log as they are defined in the OTLP specification, and any other fields that do not have a direct analog in the LogEntry.
-- The log entry payload, which can be one of multiple types. payload can be only one of the following: protoPayload object The log entry payload, represented as a protocol buffer.
+- Methods LogEntry LogEntry ( log name = None , labels = None , insert id = None , severity = None , http request = None , timestamp = None , resource = Resource ( type = "global" , labels = {}), trace = None , span id = None , trace sampled = None , source location = None , operation = None , logger = None , payload = None , ) Create new instance of LogEntry(log name, labels, insert id, severity, http request, timestamp, resource, trace, span id, trace sampled, source location, operation, logger, payload) from api repr from api repr ( resource , client , , loggers = None ) Construct an entry given its API representation Parameters Name Description resource dict text entry resource representation returned from the API client logging v2.client.Client Client which holds credentials and project configuration. loggers Optional[dict] A mapping of logger fullnames -> loggers.
+- Parameters Name Description log name str The name of the logger used to post the entry. labels Optional[dict] Mapping of labels for the entry insert id Optional[str] The ID used to identify an entry uniquely. severity Optional[str] The severity of the event being logged. http request Optional[dict] Info about HTTP request associated with the entry. timestamp Optional[datetime.datetime] Timestamp for the entry. resource Optional[ google.cloud.logging v2.resource.Resource ] Monitored resource of the entry. trace Optional[str] Trace ID to apply to the entry. span id Optional[str] Span ID within the trace for the log entry.
+- Specify the trace parameter if span id is set. trace sampled Optional[bool] The sampling decision of the trace associated with the log entry. source location Optional[dict] Location in source code from which the entry was emitted. operation Optional[dict] Additional information about a potentially long-running operation associated with the log entry. logger logging v2.logger.Logger See: https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry the logger used to write the entry.
+- Returns Type Description google.cloud.logging.entries.LogEntry Log entry parsed from resource . to api repr to api repr () API repr (JSON format) for entry.
 
-### "Interface Logging (3.29.0) \_|\_ Java client libraries \_|\_ Google Cloud\
+### "Class LogEntry.Builder (3.29.0) \_|\_ Java client libraries \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging](https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging)
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntry.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntry.Builder)
 - Source ID: `site-java-reference`
-- Final score: 198
-- Re-rank relevance: N/A
+- Final score: 70
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- LogEntryServerStream stream = logging . tailLogEntries ( TailOption . project ( "my project id" )); Iterator<LogEntry> it = stream . iterator (); while ( it . hasNext ()) { // do something with entry // call stream.cancel(); to stop streaming } Parameter Name Description options TailOption [] Returns Type Description LogEntryServerStream update(Exclusion exclusion) public abstract Exclusion update ( Exclusion exclusion ) Updates one or more properties of an existing exclusion.
-- Parameter Name Description synchronicity Synchronicity tailLogEntries(Logging.TailOption[] options) public abstract LogEntryServerStream tailLogEntries ( Logging .
-- String logName = "my log name" ; List<LogEntry> entries = new ArrayList <> (); entries . add ( LogEntry . of ( StringPayload . of ( "Entry payload" ))); Map<String , Object > jsonMap = new HashMap <> (); jsonMap . put ( "key" , "value" ); entries . add ( LogEntry . of ( JsonPayload . of ( jsonMap ))); logging . write ( entries , WriteOption . logName ( logName ), WriteOption . resource ( MonitoredResource . newBuilder ( "global" ). build ())); Parameters Name Description logEntries Iterable < LogEntry > options WriteOption [] Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- String logName = "my log name" ; ApiFuture<Boolean> future = logging . deleteLogAsync ( logName ); // ... boolean deleted = future . get (); if ( deleted ) { // the log was deleted } else { // the log was not found } Parameter Name Description log String Returns Type Description ApiFuture < Boolean > deleteLogAsync(String log, LogDestinationName destination) public default ApiFuture<Boolean> deleteLogAsync ( String log , LogDestinationName destination ) Sends a request for deleting a log and all its log entries for given log destination (see 'logName' parameter in https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry ).
+- Builder setReceiveTimestamp ( Instant receiveTimestamp ) Sets the time the log entry was received by Cloud Logging.
+- If omitted, the Logging service will set the time at which the log entry is received.
+- If omitted, the Logging service will set the time at which the log entry is received.
+- If omitted, the Logging service will use the time at which the log entry is received.
+
+### "Class LogEntryIterator (3.29.0) \_|\_ Java client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator](https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator)
+- Source ID: `site-java-reference`
+- Final score: 70
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Inheritance java.lang.Object > LogEntryIterator Implements Iterator<LogEntry> Inherited Members Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods hasNext() public boolean hasNext () Returns Type Description boolean next() public LogEntry next () Returns Type Description LogEntry Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- 3.29.0 (latest) 3.28.0 3.26.0 3.24.0 3.23.10 3.22.6 3.21.4 3.20.7 3.19.0 3.18.0 3.17.2 3.16.2 3.15.17 3.14.9 3.13.7 3.12.1 3.11.10 3.10.7 3.9.0 3.8.0 3.7.6 3.6.4 3.5.3 public class LogEntryIterator implements Iterator<LogEntry> The class implements {@see Iterator} interface over {@see LogEntry} by iterating through {@see TailLogEntriesResponse} streamed by BidiStream .
+- Home Documentation Developer tools Java Client libraries Send feedback Class LogEntryIterator (3.29.0) Stay organized with collections Save and categorize content based on your preferences.
+- This class is instantiated by {@see LogEntryServerStream} and is not intended to be used explicitly.
 

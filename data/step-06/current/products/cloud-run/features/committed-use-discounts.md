@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.919Z"
+generated_at: "2026-04-14T15:34:54.522Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Committed use discounts"
 feature_slug: "committed-use-discounts"
 latest_feature_date: "2021-07-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
+  - "https://docs.cloud.google.com/run/docs/resources"
   - "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
-  - "https://docs.cloud.google.com/run/docs/container-contract"
+  - "https://docs.cloud.google.com/run/docs/tutorials/pubsub"
 keywords:
-  - "committed"
-  - "use"
-  - "discounts"
-  - "let"
-  - "run"
-  - "workloads"
-  - "receive"
   - "discounted"
+  - "receive"
+  - "committed"
+  - "discounts"
+  - "workloads"
 ---
 
 # Committed use discounts
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,52 @@ Committed use discounts let Cloud Run workloads receive discounted pricing throu
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
+- [https://docs.cloud.google.com/run/docs/resources](https://docs.cloud.google.com/run/docs/resources)
 - [https://docs.cloud.google.com/run/docs/tutorials/eventarc](https://docs.cloud.google.com/run/docs/tutorials/eventarc)
-- [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
+- [https://docs.cloud.google.com/run/docs/tutorials/pubsub](https://docs.cloud.google.com/run/docs/tutorials/pubsub)
 
 ## Supporting Pages
-
-### Cloud Run release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- May 12, 2021 Feature Cloud Run now provides UI, command line, and YAML support for referencing Secret Manager Secrets . (Available in public preview.) Feature Customer managed encryption keys are now available for use with Cloud Run. (Available in public preview.) Feature Recommender now provides recommendations for securing Cloud Run services by creating dedicated service accounts. (Available in public preview.) Feature Committed use discounts are now available for Cloud Run . (Available in public preview.) Feature You can now use Binary authorization with Cloud Run to enforce policy-based deployment of Cloud Run services. (Available in public preview.) May 03, 2021 Feature You can now use Identity-aware Proxy with Cloud Run to use identity and context to guard access to your applications. (Available in public preview.) Change By default, the memory allocated to each container instance of a new service is 512MiB.
-- The set of packages and features provided by Sovereign Controls by Partners lets you use Cloud Run while meeting digital sovereignty requirements and managing your workloads with data sovereignty guarantees.
-- Feature Compute flexible committed use discounts (CUDs) have expanded to also cover your Cloud Billing account's spend across Cloud Run services with request-based billing and Cloud Run functions.
-- November 01, 2021 Feature Committed use discount recommender now automatically generates recommendations to purchase Cloud Run committed use discounts based on historical usage.
 
 ### "Use Eventarc to receive events from Cloud Storage \_|\_ Cloud Run \_|\_\
 
 - URL: [https://docs.cloud.google.com/run/docs/tutorials/eventarc](https://docs.cloud.google.com/run/docs/tutorials/eventarc)
 - Source ID: `site-docs-root-2`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 71
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To get the permissions that you need to complete this tutorial, ask your administrator to grant you the following IAM roles on your project: Cloud Build Editor ( roles/cloudbuild.builds.editor ) Cloud Run Admin ( roles/run.admin ) Cloud Run Source Developer ( roles/run.sourceDeveloper ) Eventarc Admin ( roles/eventarc.admin ) Logs View Accessor ( roles/logging.viewAccessor ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Service Account Admin ( roles/iam.serviceAccountAdmin ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Grant the Eventarc Event Receiver role ( roles/eventarc.eventReceiver ) on the project to the Compute Engine default service account so that the Eventarc trigger can receive events from event providers. gcloud projects add-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \ --role = roles/eventarc.eventReceiver Optional role for the Pub/Sub service agent If you enabled the Cloud Pub/Sub service agent on or before April 8, 2021, to support authenticated Pub/Sub push requests, grant the Service Account Token Creator role ( roles/iam.serviceAccountTokenCreator ) to the service agent.
 - Home Documentation Application hosting Cloud Run Guides Send feedback Use Eventarc to receive events from Cloud Storage Stay organized with collections Save and categorize content based on your preferences.
-- If you are not using Cloud Shell, update the Google Cloud CLI components and log in using your account: gcloud components update gcloud auth login Enable the APIs: gcloud services enable artifactregistry.googleapis.com \ cloudbuild.googleapis.com \ eventarc.googleapis.com \ run.googleapis.com \ storage.googleapis.com Set the configuration variables used in this tutorial: export REGION = us-central1 gcloud config set run/region ${ REGION } gcloud config set run/platform managed gcloud config set eventarc/location ${ REGION } You or your administrator must grant the deployer account, the trigger identity, and optionally, the Pub/Sub service agent the following IAM roles.
-- Delete your container image What's next Create Eventarc triggers for other event types Build containers Develop Cloud Run services Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- This tutorial shows you how to deploy a containerized application using an authenticated Cloud Run service that receives events through Eventarc.
+- Success: You deployed a containerized application using an authenticated Cloud Run service that receives events through Eventarc.
 
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+### Resources \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 128
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/run/docs/resources](https://docs.cloud.google.com/run/docs/resources)
+- Source ID: `site-api-reference`
+- Final score: 69
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- In services that use the second generation execution environment, we recommend installing a SIGTERM handler on your container to receive a warning when Cloud Run is about to shut down an instance.
-- For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.
-- If a workload-processing instance must be shut down, Cloud Run gives tasks in-process tasks time to complete and routes new workloads to other instances.
-- Typical uses of memory include: Code loaded into memory to run the service Writing to the file system Extra processes running in the container such as an nginx server In-memory caching systems such as the PHP OpCache Per request memory usage Shared in-memory volumes GPU You can configure a container in a Cloud Run instance to access a GPU.
+- Compute flexible committed use discounts Flexible CUD details for Cloud Run.
+
+### Use Pub/Sub with Cloud Run tutorial \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/pubsub](https://docs.cloud.google.com/run/docs/tutorials/pubsub)
+- Source ID: `site-docs-root`
+- Final score: 51
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Buffer . from ( pubSubMessage . data , 'base64' ). toString (). trim () : 'World' ; console . log ( Hello ${ name } ! ); res . status ( 204 ). send (); }); Python @app . route ( "/" , methods = [ "POST" ]) def index (): """Receive and parse Pub/Sub messages.""" envelope = request . get json () if not envelope : msg = "no Pub/Sub message received" print ( f "error: { msg } " ) return f "Bad Request: { msg } " , 400 if not isinstance ( envelope , dict ) or "message" not in envelope : msg = "invalid Pub/Sub message format" print ( f "error: { msg } " ) return f "Bad Request: { msg } " , 400 pubsub message = envelope [ "message" ] name = "World" if isinstance ( pubsub message , dict ) and "data" in pubsub message : name = base64 . b64decode ( pubsub message [ "data" ]) . decode ( "utf-8" ) . strip () print ( f "Hello { name } !" ) return ( "" , 204 ) Go // WrappedMessage is the payload of a Pub/Sub event. // // For more information about receiving messages from a Pub/Sub event // see: https://cloud.google.com/pubsub/docs/push#receive push type WrappedMessage struct { Message struct { Data [] byte json:"data,omitempty" ID string json:"id" } json:"message" Subscription string json:"subscription" } // HelloPubSub receives and processes a Pub/Sub push message. func HelloPubSub ( w http .
+- Node.js app . post ( '/' , ( req , res ) = > { if ( ! req . body ) { const msg = 'no Pub/Sub message received' ; console . error ( error: ${ msg } ); res . status ( 400 ). send ( Bad Request: ${ msg } ); return ; } if ( ! req . body . message ) { const msg = 'invalid Pub/Sub message format' ; console . error ( error: ${ msg } ); res . status ( 400 ). send ( Bad Request: ${ msg } ); return ; } const pubSubMessage = req . body . message ; const name = pubSubMessage . data ?
+- POST ) public ResponseEntity<String> receiveMessage ( @RequestBody Body body ) { // Get PubSub message from request body.
+- New customers also get $300 in free credits to run, test, and deploy workloads.
 

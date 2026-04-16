@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:11:59.759Z"
+generated_at: "2026-04-12T12:14:04.329Z"
 product_name: "Datastream"
 product_slug: "datastream"
 feature_name: "Resource tags support"
 feature_slug: "resource-tags-support"
 latest_feature_date: "2022-06-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration"
   - "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
   - "https://docs.cloud.google.com/datastream/docs/create-connection-profiles"
+  - "https://docs.cloud.google.com/datastream/docs/access-control-with-tags"
 keywords:
   - "resource"
   - "tags"
@@ -26,7 +27,7 @@ keywords:
 # Resource tags support
 
 Product: Datastream
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Datastream supports tags on private connectivity configurations, connection prof
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration](https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration)
 - [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles)
 - [https://docs.cloud.google.com/datastream/docs/create-connection-profiles](https://docs.cloud.google.com/datastream/docs/create-connection-profiles)
+- [https://docs.cloud.google.com/datastream/docs/access-control-with-tags](https://docs.cloud.google.com/datastream/docs/access-control-with-tags)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration](https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration)
 - Source ID: `site-docs-root`
-- Final score: 250
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 294
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Datastream automatically deletes private connectivity configurations that haven't been used for a period of six consecutive months.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles)
 - Source ID: `site-api-reference`
-- Final score: 220
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 266
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Resource: ConnectionProfile JSON representation OracleProfile JSON representation OracleSslConfig JSON representation OracleAsmConfig JSON representation GcsProfile JSON representation MysqlProfile JSON representation MysqlSslConfig JSON representation BigQueryProfile PostgresqlProfile JSON representation PostgresqlSslConfig JSON representation ServerVerification JSON representation ServerAndClientVerification JSON representation SqlServerProfile JSON representation SqlServerSslConfig JSON representation EncryptionNotEnforced BasicEncryption EncryptionAndServerValidation JSON representation SalesforceProfile JSON representation UserCredentials JSON representation Oauth2ClientCredentials JSON representation MongodbProfile JSON representation HostAddress JSON representation MongodbSslConfig JSON representation SrvConnectionFormat StandardConnectionFormat JSON representation SpannerProfile JSON representation StaticServiceIpConnectivity ForwardSshTunnelConnectivity JSON representation PrivateConnectivity JSON representation Methods Resource: ConnectionProfile A set of reusable connection configurations to be used as a source or destination for a stream.
@@ -80,13 +82,26 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/create-connection-profiles](https://docs.cloud.google.com/datastream/docs/create-connection-profiles)
 - Source ID: `site-docs-root`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 256
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Private connectivity: this method lets you establish secure connectivity between Datastream and the source database, internally within Google Cloud, or with external sources connected over VPN or Interconnect.
 - Private connectivity: this method lets you establish secure connectivity between Datastream and the source database, internally within Google Cloud, or with external sources connected over VPN or Interconnect.
 - Private connectivity: this method lets you establish secure connectivity between Datastream and the source database, internally within Google Cloud, or with external sources connected over VPN or Interconnect.
 - Private connectivity: this method lets you establish secure connectivity between Datastream and the source database, internally within Google Cloud, or with external sources connected over VPN or Interconnect.
+
+### Access control with tags \_|\_ Datastream \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastream/docs/access-control-with-tags](https://docs.cloud.google.com/datastream/docs/access-control-with-tags)
+- Source ID: `site-docs-root-2`
+- Final score: 239
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Tags are attached to resources, such as a project or a Datastream private connectivity configuration, connection profile, or stream, through the Resource Manager , which is used across Google Cloud.
+- These resources include private connectivity configurations, connection profiles, and streams.
+- Restrictions Tags have the following restrictions: Organization policies can conditionally reference tags inherited from the project level and higher, but don't support tags that are directly attached to Datastream resources.
+- Cloud Audit logs show the creation and deletion of tags, but entries are not generated for attaching tags and viewing tag bindings on Datastream resources.
 

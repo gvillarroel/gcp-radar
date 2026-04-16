@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2025-11-14 | Cost optimization in Cloud Hub | LOW | [source](https://docs.cloud.google.com/hub/docs/optimize)<br>[source](https://docs.cloud.google.com/hub/docs/setup-cloud-hub)<br>[source](https://docs.cloud.google.com/hub/docs/troubleshooting) | Cloud Hub provides visibility into Active Assist cost optimization recommendations; Cloud Hub provides visibility into Active Assist cost optimization recommendations. |
+| 2025-11-14 | Cost optimization in Cloud Hub | MEDIUM | [source](https://docs.cloud.google.com/hub/docs/optimize)<br>[source](https://docs.cloud.google.com/hub/docs/setup-cloud-hub)<br>[source](https://docs.cloud.google.com/hub/docs/troubleshooting)<br>[source](https://docs.cloud.google.com/hub/docs/overview) | Cloud Hub provides visibility into Active Assist cost optimization recommendations; Cloud Hub provides visibility into Active Assist cost optimization recommendations. |
 

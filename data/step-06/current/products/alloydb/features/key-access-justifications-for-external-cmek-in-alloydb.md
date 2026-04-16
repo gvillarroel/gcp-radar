@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.625Z"
+generated_at: "2026-04-12T12:07:33.866Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "Key Access Justifications for external CMEK in AlloyDB"
 feature_slug: "key-access-justifications-for-external-cmek-in-alloydb"
 latest_feature_date: "2024-03-04"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables"
+  - "https://docs.cloud.google.com/alloydb/docs/about-private-services-access"
+  - "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
+  - "https://docs.cloud.google.com/alloydb/docs/overview"
 keywords:
   - "key access justification workflow"
   - "external customer-managed encryption key"
@@ -24,7 +27,7 @@ keywords:
 # Key Access Justifications for external CMEK in AlloyDB
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,26 +35,50 @@ AlloyDB now supports Key Access Justifications for external CMEK keys to view an
 
 ## Extended Definition
 
-AlloyDB for PostgreSQL introduced Key Access Justifications for workloads using external customer-managed encryption keys (external CMEK). This feature enables users to view and manage external key access requests through a key access justification workflow.
+AlloyDB now supports Key Access Justifications for external CMEK keys to view and manage key access requests.
 
 ## Evidence Summary
 
-The AlloyDB release notes dated March 4, 2024 state that Key Access Justifications is available for external CMEK keys and that it lets users view and manage external key access requests.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
+- [https://docs.cloud.google.com/alloydb/docs/about-private-services-access](https://docs.cloud.google.com/alloydb/docs/about-private-services-access)
+- [https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration](https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration)
+- [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Generate and manage auto vector embeddings for large tables \_|\_ AlloyDB\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
+- Source ID: `site-docs-reference-2`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Private services access overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/about-private-services-access](https://docs.cloud.google.com/alloydb/docs/about-private-services-access)
 - Source ID: `site-docs-root`
-- Final score: 20
-- Re-rank relevance: N/A
+- Final score: 100
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- March 04, 2024 Feature You can now use Key Access Justifications when working with external CMEK keys .
-- This lets you view and manage external key access requests.
+### "Manage your AlloyDB resources using Knowledge Catalog \_|\_ AlloyDB for\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration](https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration)
+- Source ID: `site-iam-reference`
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### AlloyDB overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

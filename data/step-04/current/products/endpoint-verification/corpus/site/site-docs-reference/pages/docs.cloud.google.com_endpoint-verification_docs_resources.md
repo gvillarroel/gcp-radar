@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/endpoint-verification/docs/resources
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
 source_metadata:
   url: https://docs.cloud.google.com/endpoint-verification/docs/resources
   title: "Resources \_|\_ Endpoint Verification \_|\_ Google Cloud Documentation"

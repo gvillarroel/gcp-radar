@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:20.453Z"
+generated_at: "2026-04-12T12:16:09.640Z"
 product_name: "Gemini"
 product_slug: "gemini"
 feature_name: "Local codebase awareness configuration"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-06-18"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/gemini/enterprise/docs/iam-policy-for-apps"
-  - "https://docs.cloud.google.com/gemini/docs/discover/works"
-  - "https://docs.cloud.google.com/gemini/docs/overview"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/configure-local-codebase-awareness"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer"
+  - "https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls"
 keywords:
   - "local"
   - "codebase"
@@ -38,46 +39,69 @@ You can configure how Gemini Code Assist uses local codebase awareness in VS Cod
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/gemini/enterprise/docs/iam-policy-for-apps](https://docs.cloud.google.com/gemini/enterprise/docs/iam-policy-for-apps)
-- [https://docs.cloud.google.com/gemini/docs/discover/works](https://docs.cloud.google.com/gemini/docs/discover/works)
-- [https://docs.cloud.google.com/gemini/docs/overview](https://docs.cloud.google.com/gemini/docs/overview)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/configure-local-codebase-awareness](https://docs.cloud.google.com/gemini/docs/codeassist/configure-local-codebase-awareness)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete](https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer](https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer)
+- [https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls](https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls)
 
 ## Supporting Pages
 
-### Configure access controls for apps | Gemini Enterprise | Google Cloud Documentation
+### "Configure local codebase awareness \_|\_ Gemini for Google Cloud \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/iam-policy-for-apps](https://docs.cloud.google.com/gemini/enterprise/docs/iam-policy-for-apps)
-- Source ID: `site-iam-reference`
-- Final score: 36
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Configure access controls for apps Gemini Enterprise Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/enterprise/docs/iam-policy-for-apps To restrict a user to specific apps, you must remove the role from their project-level permissions and then grant the role at the app-level.
-- Note: Users with app-level IAM permissions for a Gemini Enterprise app can access and use only that ...
-
-### How Gemini for Google Cloud works | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/gemini/docs/discover/works](https://docs.cloud.google.com/gemini/docs/discover/works)
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/configure-local-codebase-awareness](https://docs.cloud.google.com/gemini/docs/codeassist/configure-local-codebase-awareness)
 - Source ID: `site-docs-root`
-- Final score: 36
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- How Gemini for Google Cloud works Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/discover/works Gemini for Google Cloud doesn&#x27;t use your prompts or generated responses for training or fine-tuning our underlying models.
-- Any data sent to the Gemini for Google Cloud models is used strictly for serving a response to the request, and unless instructed by you, isn&#x27;t stored.
-
-### Gemini for Google Cloud overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/gemini/docs/overview](https://docs.cloud.google.com/gemini/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 26
+- Final score: 290
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Gemini for Google Cloud overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/overview Learn how Gemini for Google Cloud uses your data.
+- Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Configure local codebase awareness Stay organized with collections Save and categorize content based on your preferences.
+- By default, local codebase awareness is enabled, but you can exclude files from Gemini Code Assist use , and VS Code users can disable local codebase awareness entirely.
+- To disable local codebase awareness entirely, perform the following steps: VS Code In your IDE, navigate to Settings > Extensions Gemini Code Assist .
+- IntelliJ Local codebase awareness configuration settings aren't supported in Gemini Code Assist for IntelliJ and other JetBrains IDEs.
+
+### Configure autocomplete \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete](https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete)
+- Source ID: `site-iam-reference`
+- Final score: 184
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information, see Set up authentication for a local development environment . using Google.Cloud.DiscoveryEngine.V1 ; public sealed partial class GeneratedCompletionServiceClientSnippets { /// <summary>Snippet for CompleteQuery</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void CompleteQueryRequestObject () { // Create client CompletionServiceClient completionServiceClient = CompletionServiceClient .
+- DataStoreName ; public class SyncCompleteQuery { public static void main ( String [] args ) throws Exception { syncCompleteQuery (); } public static void syncCompleteQuery () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CompletionServiceClient completionServiceClient = CompletionServiceClient . create ()) { CompleteQueryRequest request = CompleteQueryRequest . newBuilder () . setDataStore ( DataStoreName . ofProjectLocationDataStoreName ( "[PROJECT]" , "[LOCATION]" , "[DATA STORE]" ) . toString ()) . setQuery ( "query107944136" ) . setQueryModel ( "queryModel-184930495" ) . setUserPseudoId ( "userPseudoId-1155274652" ) . setIncludeTailSuggestions ( true ) . build (); CompleteQueryResponse response = completionServiceClient . completeQuery ( request ); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Gemini Enterprise quickstart using client libraries .
+- Make sure each denylist entry is in a new line with no line breaks. { "inlineSource" : { "entries" : [ { "blockPhrase" : " TERM 1 " , "matchOperator" : " MATCH OPERATOR 1 " }, { "blockPhrase" : " TERM 2 " , "matchOperator" : " MATCH OPERATOR 2 " } ] } } Make a POST request to the suggestionDenyListEntries:import method, providing the name of your JSON file. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ --data @ DENYLIST FILE \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/dataStores/ DATA STORE ID /suggestionDenyListEntries:import" Replace the following: DENYLIST FILE : the local path of the JSON file containing the denylist terms.
+- Make a POST request to the suggestionDenyListEntries:import method, including the gcsSource object. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ --data @ GCS SOURCE FILE \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/dataStores/ DATA STORE ID /suggestionDenyListEntries:import" Replace the following: GCS SOURCE FILE : the local path of the file containing the gcsSource object that points to your denylist.
+
+### "Use the Gemini Code Assist agent mode \_|\_ Gemini for Google Cloud \_|\_\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer](https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer)
+- Source ID: `site-docs-root-2`
+- Final score: 175
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following example mcp.json file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in IntelliJ. { "mcpServers" : { "github" : { "command" : "npx" , "args" : [ "-y" , "@modelcontextprotocol/server-github" ], "env" : { "GITHUB PERSONAL ACCESS TOKEN" : "ghp example personal access token12345" } }, "gitlab" : { "command" : "npx" , "args" : [ "mcp-remote" , "https://your-gitlab-instance.com/api/v4/mcp" ] }, "cloudflare-observability" : { "command" : "npx" , "args" : [ "mcp-remote" , "https://observability.mcp.cloudflare.com/sse" ] }, "cloudflare-bindings" : { "command" : "npx" , "args" : [ "mcp-remote" , "https://bindings.mcp.cloudflare.com/sse" ] } } } Your configured MCP servers are available for the agent to use in agent mode.
+- The following example Gemini settings JSON file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in VS Code. { "mcpServers" : { "github" : { "command" : "npx" , "args" : [ "-y" , "@modelcontextprotocol/server-github" ], "env" : { "GITHUB PERSONAL ACCESS TOKEN" : "ghp example personal access token12345" } }, "gitlab" : { "command" : "npx" , "args" : [ "mcp-remote" , "https://your-gitlab-instance.com/api/v4/mcp" ] }, "cloudflare-observability" : { "command" : "npx" , "args" : [ "mcp-remote" , "https://observability.mcp.cloudflare.com/sse" ] }, "cloudflare-bindings" : { "command" : "npx" , "args" : [ "mcp-remote" , "https://bindings.mcp.cloudflare.com/sse" ] } } } Open the command palette and select Developer: Reload Window .
+- VS Code You can use the following built-in Gemini CLI commands in agent mode: /tools : Displays a list of tools that are available in your agent mode session. /mcp : Lists configured Model Context Protocol (MCP) servers, their connection status, server details, and available tools. /deploy : Deploys a web application to Cloud Run.
+- This document describes how to configure and use Gemini Code Assist agent mode as a pair programmer in your integrated development environment (IDE).
+
+### "Configure VPC Service Controls for Gemini \_|\_ Gemini for Google Cloud\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls](https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls)
+- Source ID: `site-docs-root-2`
+- Final score: 164
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Caution: Failure to properly configure firewall rules can leave your services vulnerable to data exfiltration.
+- Configure VPC networks You need to configure your VPC networks so that the requests sent to the regular googleapis.com virtual IP are automatically routed to the restricted virtual IP (VIP) range , 199.36.153.4/30 ( restricted.googleapis.com ), where your Gemini service is serving.
+- Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Configure VPC Service Controls for Gemini Stay organized with collections Save and categorize content based on your preferences.
+- Additional configurations Depending on the Google Cloud products that you use with Gemini, you must consider the following: Client machines connected to the perimeter.
 

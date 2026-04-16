@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:10:13.948Z"
+generated_at: "2026-04-14T11:46:27.770Z"
 product_name: "Capacity Planner"
 product_slug: "capacity-planner"
 feature_name: "Capacity Planner gcloud command generation for future reservation requests"
 feature_slug: "capacity-planner-gcloud-command-generation-for-future-reservation-requests"
 latest_feature_date: "2024-07-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method"
-  - "https://docs.cloud.google.com/capacity-planner/docs/view-data"
-  - "https://docs.cloud.google.com/capacity-planner/docs/release-notes"
 keywords:
-  - "generation"
-  - "command"
-  - "gcloud"
-  - "reservation"
-  - "future"
-  - "capacity"
-  - "planner"
-  - "for"
+  - "reservation request CLI output"
+  - "future reservation command generation"
+  - "folder-level GPU usage"
+  - "generate gcloud commands"
+  - "folder-level VM usage"
+  - "future reservation requests"
+  - "forecasted VM usage"
+  - "Capacity Planner preview"
 ---
 
 # Capacity Planner gcloud command generation for future reservation requests
 
 Product: Capacity Planner
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,17 +32,15 @@ Capacity Planner preview can generate gcloud CLI commands to create future reser
 
 ## Extended Definition
 
-Capacity Planner preview can generate gcloud CLI commands to create future reservation requests from folder-level actual or forecasted VM and GPU usage.
+Capacity Planner’s future reservation request feature allows users to create future Compute Engine reservation requests and, for batch scenarios, generate corresponding gcloud CLI commands. In this flow, users select capacity usage data (for instances or GPUs from usage/forecast sources) and create one or more requests; the generated commands can then be optionally edited to customize per-request values. The documented permissions and roles indicate the feature is scoped by project, folder, or organization and uses forecasted/actual capacity data to support planning decisions.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+The Capacity Planner page documents how to create future reservation requests, including bulk gcloud CLI command generation and required permissions/data-scope details for forecasted and actual VM/GPU usage views.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/capacity-planner/docs/choose-request-method](https://docs.cloud.google.com/capacity-planner/docs/choose-request-method)
-- [https://docs.cloud.google.com/capacity-planner/docs/view-data](https://docs.cloud.google.com/capacity-planner/docs/view-data)
-- [https://docs.cloud.google.com/capacity-planner/docs/release-notes](https://docs.cloud.google.com/capacity-planner/docs/release-notes)
 
 ## Supporting Pages
 
@@ -52,39 +48,20 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/capacity-planner/docs/choose-request-method](https://docs.cloud.google.com/capacity-planner/docs/choose-request-method)
 - Source ID: `site-docs-root`
-- Final score: 222
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: The page confirms that Capacity Planner can generate gcloud CLI commands for future reservation requests, but only notes this as a workaround and does not frame the feature as a core, general command-generation flow.
 
 Evidence snippets:
-- Choose one of the following methods based on how many machine types you want to reserve capacity for at once, and whether you want to edit a future reservation request before creating it: Recommended: Generate gcloud CLI commands This method is useful for creating one or more future reservation requests at once for various machine types.
 - To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create future reservation requests: To create future reservation requests: compute.futureReservations.create on the owner project To let Compute Engine auto-create reservations: compute.reservations.create on the owner project To view the forecasted usage of your instances or GPUs: capacityplanner.forecasts.list on the project, folder, or organization To view the actual usage of your instances or GPUs: capacityplanner.usageHistories.list on the project, folder, or organization To summarize the actual usage of your instances or GPUs: capacityplanner.usageHistories.summarize on the project, folder, or organization You might also be able to get these permissions with custom roles or other predefined roles .
 - Create future reservation requests After you select a Compute Engine resource and its usage data in the previous section using the Google Cloud console, you can create future reservation requests for one or more machine types by completing the following steps: Specify the request name, name prefix, and auto-delete option Specify the number of instances to reserve Specify the share type Create draft requests and submit them Specify the request name, name prefix, and auto-delete option If you're creating multiple future reservation requests at once by generating gcloud CLI commands, then the following properties will have matching values across all requests: Auto-delete option Name prefix Reservation period You can optionally customize these values for individual requests by editing the generated gcloud CLI commands.
 - Required roles To get the permissions that you need to create future reservation requests, ask your administrator to grant you the following IAM roles: To access and view Capacity Planner: Capacity Planner Viewer ( roles/capacityplanner.viewer ) on the project, folder, or organization To create future reservation requests: Compute Future Reservation User ( roles/compute.futureReservationUser ) on the owner project For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Specifically, future reservation requests help ensure that your Google Cloud project, folder, or organization has sufficient capacity during expected growth in a specific zone, such as in the following scenarios: Peak scale events Large-scale migrations Compliance requirements When you create a future reservation request, and Google Cloud approves it, you commit to pay for the requested resources for the entire reservation period and regardless of usage.
 
-### View usage and forecast data \_|\_ Capacity Planner \_|\_ Google Cloud Documentation
+### "APIs and reference \_|\_ Identity and Access Management (IAM) \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/capacity-planner/docs/view-data](https://docs.cloud.google.com/capacity-planner/docs/view-data)
-- Source ID: `site-docs-root`
-- Final score: 184
+- URL: [https://docs.cloud.google.com/iam/docs/apis](https://docs.cloud.google.com/iam/docs/apis)
+- Source ID: `site-iam-reference`
+- Final score: 50
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- Data availability and updates When you view usage and forecast data in Capacity Planner, consider the following: Capacity Planner data is available as follows: Historical usage data : historical usage data is available for up to the past two years with the following exceptions: For reservations, historical usage data isn't available before August 1, 2024.
-- In the Capacity Planner API, use the startDate , endDate , and generationDate fields to specify the required date and time in ISO 8601 format ( YYYY-MM-DDTHH:MM:SS.sssZ ).
-- Capacity Planner updates the calculated future reservations data every 60 minutes.
-- REST methods Query historical usage timeseries project-level query: v1beta projects.locations.usageHistories.query method folder-level query: v1beta folders.locations.usageHistories.query method organization-level query: v1beta organizations.locations.usageHistories.query method Query forecast timeseries project-level query: v1beta projects.locations.forecasts.query method folder-level query: v1beta folders.locations.forecasts.query method organization-level query: v1beta organizations.locations.forecasts.query method Query reservations timeseries project-level query: v1beta projects.locations.reservations.query method folder-level query: v1beta folders.locations.reservations.query method organization-level query: v1beta organizations.locations.reservations.query method What's next Export usage and forecast data Enable the quota adjuster Request capacity from actual or forecasted usage Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-
-### Capacity Planner release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/capacity-planner/docs/release-notes](https://docs.cloud.google.com/capacity-planner/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 180
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For more information, see the following: Capacity Planner overview View usage and forecast data in Capacity Planner Export usage and forecast with the Google Cloud console Export usage and forecast with the Capacity Planner API Reserve capacity in Capacity Planner December 19, 2024 Feature Preview : You can create future reservation requests for VMs of a single machine type using the Google Cloud console.
-- Feature Preview : You can generate gcloud CLI commands to create future reservation requests of Compute Engine zonal resources based on the actual or forecasted usage of your VMs.
-- Generate gcloud CLI commands to create future reservation requests based on the actual or forecasted usage data of your VMs or GPUs by folder.
-- Generate gcloud CLI commands to create future reservation requests based on the actual or forecasted usage data of your VMs by organization.
 

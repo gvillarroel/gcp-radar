@@ -4,7 +4,7 @@ url: https://developers.google.com/maps/documentation/places/android-sdk/routing
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/places/android-sdk
+entrypoint: https://developers.google.com/maps/documentation/places/android-sdk/overview
 source_metadata:
   url: https://developers.google.com/maps/documentation/places/android-sdk/routing-summary
   title: "Places SDK for Android \_|\_ Google for Developers"
@@ -164,6 +164,6 @@ Duration duration = legs . get ( 0 ). getDuration ();
 });
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-09 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["To calculate travel duration and distance to places, use `RoutingParameters` with `setOrigin()`. Include `.setRoutingSummariesIncluded(true)` in the request object. This applies to both `Text Search (New)` and `Nearby Search (New)`. The response provides `duration` and `distanceMeters` via `RoutingSummary` and `Leg` objects. Customize travel by setting the travel mode (e.g., `DRIVE`, `BICYCLE`) with `setTravelMode()` and specify preferences like avoiding highways with `setRouteModifiers()`. Note: the response doesn't include the actual route.\n"]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],["To calculate travel duration and distance to places, use `RoutingParameters` with `setOrigin()`. Include `.setRoutingSummariesIncluded(true)` in the request object. This applies to both `Text Search (New)` and `Nearby Search (New)`. The response provides `duration` and `distanceMeters` via `RoutingSummary` and `Leg` objects. Customize travel by setting the travel mode (e.g., `DRIVE`, `BICYCLE`) with `setTravelMode()` and specify preferences like avoiding highways with `setRouteModifiers()`. Note: the response doesn't include the actual route.\n"]]

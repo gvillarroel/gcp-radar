@@ -1,44 +1,66 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:44:03.335Z"
+generated_at: "2026-04-14T06:50:21.214Z"
 product_name: "App Engine standard environment Java"
 product_slug: "app-engine-standard-environment-java"
 feature_name: "TLS 1.1 and earlier support"
 feature_slug: "tls-1-1-and-earlier-support"
 latest_feature_date: "2025-08-07"
 deprecation_date: "March 2025"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
 keywords:
-  - "March 2025 TLS deprecation"
-  - "obsolete TLS versions"
-  - "TLS 1.0 support deprecation"
-  - "move to TLS 1.2+"
-  - "TLS 1.1 support removal"
-  - "legacy TLS versions"
-  - "TLS 1.1 deprecated"
-  - "legacy TLS"
+  - "earlier"
+  - "previously"
 ---
 
 # TLS 1.1 and earlier support
 
 Product: App Engine standard environment Java
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Support for TLS versions 1.1 and earlier is deprecated, and applications should move to TLS 1.2+ with secure cipher suites; deprecated on March 2025.
+App Engine standard environment Java previously allowed use of TLS 1.1 and earlier protocol versions; deprecated on March 2025.
 
 ## Extended Definition
 
-Support for TLS versions 1.1 and earlier is deprecated, and applications should move to TLS 1.2+ with secure cipher suites; deprecated on March 2025.
+App Engine standard environment Java previously allowed use of TLS 1.1 and earlier protocol versions; deprecated on March 2025.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/standard/java/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java/config/appref)
+- [https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- Source ID: `site-docs-reference`
+- Final score: 56
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+### "App Engine app.yaml reference \_|\_ App Engine standard environment \_|\_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java/config/appref)
+- Source ID: `site-docs-reference-4`
+- Final score: 54
+- Re-rank relevance: N/A
+
+### "App Engine app.yaml reference \_|\_ App Engine standard environment \_|\_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref)
+- Source ID: `site-docs-reference-4`
+- Final score: 54
+- Re-rank relevance: N/A
 

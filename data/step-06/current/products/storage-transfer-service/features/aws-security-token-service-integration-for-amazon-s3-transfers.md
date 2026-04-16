@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.859Z"
+generated_at: "2026-04-15T11:56:47.652Z"
 product_name: "Storage Transfer Service"
 product_slug: "storage-transfer-service"
 feature_name: "AWS Security Token Service integration for Amazon S3 transfers"
 feature_slug: "aws-security-token-service-integration-for-amazon-s3-transfers"
 latest_feature_date: "2021-12-13"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+  - "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec"
+  - "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
 keywords:
   - "aws"
   - "security"
   - "token"
   - "integration"
-  - "for"
   - "amazon"
   - "s3"
   - "transfers"
+  - "storage"
 ---
 
 # AWS Security Token Service integration for Amazon S3 transfers
 
 Product: Storage Transfer Service
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Storage Transfer Service introduces general availability for AWS Security Token 
 
 Storage Transfer Service introduces general availability for AWS Security Token Service (STS) integration, enabling Amazon S3 transfers using temporary credentials instead of long-term AWS credentials.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/storage-transfer/docs/create-transfers](https://docs.cloud.google.com/storage-transfer/docs/create-transfers)
+- [https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec](https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec)
+- [https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws](https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Create transfers \_|\_ Storage Transfer Service \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage-transfer/docs/create-transfers](https://docs.cloud.google.com/storage-transfer/docs/create-transfers)
+- Source ID: `site-docs-root`
+- Final score: 144
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Storage Transfer Service is able to transfer data from the following Microsoft Azure Storage regions: Americas: East US, East US 2, West US, West US 2, West US 3, Central US, North Central US, South Central US, West Central US, Canada Central, Canada East, Brazil South Asia-Pacific: Australia Central, Australia East, Australia Southeast, Central India, South India, West India, Southeast Asia, East Asia, Japan East, Japan West, Korea South, Korea Central Europe, Middle East, Africa (EMEA): France Central, Germany West Central, Norway East, Sweden Central, Switzerland North, North Europe, West Europe, UK South, UK West, Qatar Central, UAE North, South Africa North Request using transferJobs create : POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { "description" : "YOUR DESCRIPTION" , "status" : "ENABLED" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 14 , "month" : 2 , "year" : 2020 }, "scheduleEndDate" : { "day" : 14 "month" : 2 , "year" : 2020 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "azureBlobStorageDataSource" : { "storageAccount" : "AZURE SOURCE NAME" , "azureCredentials" : { "sasToken" : "AZURE SAS TOKEN" , }, "container" : "AZURE CONTAINER" , }, "gcsDataSink" : { "bucketName" : "GCS SINK NAME" } } } Response: 200 OK { "transferJob" : [ { "creationTime" : "2020-02-14T01:01:00.000000000Z" , "description" : "YOUR DESCRIPTION" , "name" : "transferJobs/JOB ID" , "status" : "ENABLED" , "lastModificationTime" : "2020-02-14T01:01:00.000000000Z" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 14 "month" : 2 , "year" : 2020 }, "scheduleEndDate" : { "day" : 14 , "month" : 2 , "year" : 2020 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "azureBlobStorageDataSource" : { "storageAccount" : "AZURE SOURCE NAME" , "azureCredentials" : { "sasToken" : "AZURE SAS TOKEN" , }, "container" : "AZURE CONTAINER" , }, "objectConditions" : {}, "transferOptions" : {} } } ] } Transfer from a file system See Transfer from a file system to Cloud Storage .
+- For more information, see Set up authentication for a local development environment . // Imports the Google Cloud client library const { StorageTransferServiceClient , } = require ( ' @google-cloud/storage-transfer ' ); / TODO(developer): Uncomment the following lines before running the sample. / // The ID of the Google Cloud Platform Project that owns the job // projectId = 'my-project-id' // A useful description for your transfer job // description = 'My transfer job' // Azure Storage Account name // azureStorageAccount = 'accountname' // Azure Storage Account name // azureSourceContainer = 'my-azure-source-bucket' // Azure Shared Access Signature token // azureSASToken = '?sv=...' // Google Cloud Storage destination bucket name // gcsSinkBucket = 'my-gcs-destination-bucket' // Creates a client const client = new StorageTransferServiceClient (); / Creates a one-time transfer job from Azure Blob Storage to Google Cloud Storage. / async function transferFromBlobStorage () { // Setting the start date and the end date as the same time creates a // one-time transfer const now = new Date (); const oneTimeSchedule = { day : now . getDate (), month : now . getMonth () + 1 , year : now . getFullYear (), }; // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , description , status : ' ENABLED ' , schedule : { scheduleStartDate : oneTimeSchedule , scheduleEndDate : oneTimeSchedule , }, transferSpec : { azureBlobStorageDataSource : { azureCredentials : { sasToken : azureSASToken , }, container : azureSourceContainer , storageAccount : azureStorageAccount , }, gcsDataSink : { bucketName : gcsSinkBucket , }, }, }, }); console . log ( Created and ran a transfer job from ' ${ azureSourceContainer } ' to ' ${ gcsSinkBucket } ' with name ${ transferJob . name } ` ); } transferFromBlobStorage (); Python To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .
+- TransferSpec ; import java.io.IOException ; import java.util.concurrent.ExecutionException ; public class TransferFromAzure { public static void main ( String [] args ) throws IOException , ExecutionException , InterruptedException { // TODO(developer): Replace these variables before running the sample. // Your Google Cloud Project ID String projectId = "my-project-id" ; // Your Azure Storage Account name String azureStorageAccount = "my-azure-account" ; // The Azure source container to transfer data from String azureSourceContainer = "my-source-container" ; // The GCS bucket to transfer data to String gcsSinkBucket = "my-sink-bucket" ; transferFromAzureBlobStorage ( projectId , azureStorageAccount , azureSourceContainer , gcsSinkBucket ); } / Creates and runs a transfer job to transfer all data from an Azure container to a GCS bucket. / public static void transferFromAzureBlobStorage ( String projectId , String azureStorageAccount , String azureSourceContainer , String gcsSinkBucket ) throws IOException , ExecutionException , InterruptedException { // Your Azure SAS token, should be accessed via environment variable String azureSasToken = System . getenv ( "AZURE SAS TOKEN" ); TransferSpec transferSpec = TransferSpec . newBuilder () . setAzureBlobStorageDataSource ( AzureBlobStorageData . newBuilder () . setAzureCredentials ( AzureCredentials . newBuilder (). setSasToken ( azureSasToken ). build ()) . setContainer ( azureSourceContainer ) . setStorageAccount ( azureStorageAccount )) . setGcsDataSink ( GcsData . newBuilder (). setBucketName ( gcsSinkBucket ). build ()) . build (); TransferJob transferJob = TransferJob . newBuilder () . setProjectId ( projectId ) . setStatus ( Status .
+- Request using transferJobs create : POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { "description" : "YOUR DESCRIPTION" , "status" : "ENABLED" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 1 , "month" : 1 , "year" : 2015 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "gcsDataSource" : { "bucketName" : "GCS SOURCE NAME" }, "gcsDataSink" : { "bucketName" : "GCS SINK NAME" }, "transferOptions" : { "deleteObjectsFromSourceAfterTransfer" : true } } } Response: 200 OK { "transferJob" : [ { "creationTime" : "2015-01-01T01:01:00.000000000Z" , "description" : "YOUR DESCRIPTION" , "name" : "transferJobs/JOB ID" , "status" : "ENABLED" , "lastModificationTime" : "2015-01-01T01:01:00.000000000Z" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 1 , "month" : 1 , "year" : 2015 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "gcsDataSource" : { "bucketName" : "GCS SOURCE NAME" , }, "gcsDataSink" : { "bucketName" : "GCS NEARLINE SINK NAME" }, "objectConditions" : { "minTimeElapsedSinceLastModification" : "2592000.000s" }, "transferOptions" : { "deleteObjectsFromSourceAfterTransfer" : true } } } ] } Transfer from Amazon S3 to Cloud Storage See Transfer from Amazon S3 to Cloud Storage .
+
+### TransferSpec \_|\_ Storage Transfer Service \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec](https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec)
+- Source ID: `site-api-reference`
+- Final score: 132
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Union field intermediate data location . intermediate data location can be only one of the following: gcsIntermediateDataLocation object ( GcsData ) For transfers between file systems, specifies a Cloud Storage bucket to be used as an intermediate location through which to transfer data.
+- This network is shared between other users of Storage Transfer Service. privateNetworkService string Service Directory Service to be used as the endpoint for transfers from a customer-managed private network.
+- Home Documentation Storage Storage Transfer Service Reference Send feedback TransferSpec Stay organized with collections Save and categorize content based on your preferences.
+- Example: https://s3.region.amazonaws.com/bucket-name/key-name NetworkProtocol The agent network protocol to access the storage service.
+
+### "Event-driven transfers from AWS S3 \_|\_ Storage Transfer Service \_|\_\
+
+- URL: [https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws](https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws)
+- Source ID: `site-docs-root`
+- Final score: 119
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Should be accessed via environment variable for security. // awsSecretAccessKey = 'HEAoMK2.../...ku8' // Creates a client const client = new StorageTransferServiceClient (); / Creates an event driven transfer that tracks an SQS queue. / async function createEventDrivenAwsTransfer () { const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , status : ' ENABLED ' , transferSpec : { awsS3DataSource : { bucketName : s3SourceBucket , awsAccessKey : { accessKeyId : awsAccessKeyId , secretAccessKey : awsSecretAccessKey , }, }, gcsDataSink : { bucketName : gcsSinkBucket , }, }, eventStream : { name : sqsQueueArn , }, }, }); console . log ( Created an event driven transfer from ' ${ s3SourceBucket } ' to ' ${ gcsSinkBucket } ' with name ${ transferJob . name } ); } createEventDrivenAwsTransfer (); Python To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .
+- For more information, see Set up authentication for a local development environment . // Imports the Google Cloud client library const { StorageTransferServiceClient , } = require ( ' @google-cloud/storage-transfer ' ); / TODO(developer): Uncomment the following lines before running the sample. / // The ID of the Google Cloud Platform Project that owns the job // projectId = 'my-project-id' // AWS S3 source bucket name // s3SourceBucket = 'my-s3-source-bucket' // Google Cloud Storage destination bucket name // gcsSinkBucket = 'my-gcs-destination-bucket' // The ARN of the SQS queue to subscribe to // sqsQueueArn = 'arn:aws:sqs:us-east-1:1234567891011:s3-notification-queue' // AWS Access Key ID.
+- TransferJob , error ) { // Your Google Cloud Project ID. // projectID := "my-project-id" // The name of the source AWS S3 bucket. // s3SourceBucket := "my-source-bucket" // The name of the GCS bucket to transfer objects to. // gcsSinkBucket := "my-sink-bucket" // The Amazon Resource Name (ARN) of the AWS SNS queue to subscribe the event driven transfer to. // sqsQueueARN := "arn:aws:sqs:us-east-1:1234567891011:s3-notification-queue" // The AWS access key credential, should be accessed via environment variable for security awsAccessKeyID := os .
+- StorageTransferServiceClient () The ID of the Google Cloud Platform Project that owns the job project id = 'my-project-id' A description of this job description = 'Creates an event-driven transfer that tracks an SQS queue' AWS S3 source bucket name source s3 bucket = 'my-s3-source-bucket' Google Cloud Storage destination bucket name sink gcs bucket = 'my-gcs-destination-bucket' The ARN of the SQS queue to subscribe to pubsub id = 'arn:aws:sqs:us-east-1:1234567891011:s3-notification-queue' AWS Access Key ID.
 

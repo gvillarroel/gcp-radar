@@ -1,6 +1,6 @@
 {
   "schema_version": "step-06-extended-feature-definitions-v1",
-  "generated_at": "2026-04-11T19:51:30.559Z",
+  "generated_at": "2026-04-12T12:18:47.856Z",
   "product_name": "Service Health",
   "product_slug": "service-health",
   "inputs": {
@@ -10,8 +10,8 @@
   "thresholds": {
     "min_base_score": 18,
     "min_final_score": 20,
-    "max_candidate_pages": 6,
-    "max_definition_pages": 3
+    "max_candidate_pages": 10,
+    "max_definition_pages": 4
   },
   "corpus_page_count": 66,
   "source_row_count": 2,
@@ -34,97 +34,16 @@
         "now",
         "supports"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Service Health now supports viewing incidents related to App Hub applications directly in Cloud Hub.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
         "https://docs.cloud.google.com/service-health/docs/reference/event-logs/rpc/google.cloud.servicehealth.logging.v1",
-        "https://docs.cloud.google.com/service-health/docs/view-events",
-        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support"
+        "https://docs.cloud.google.com/service-health/docs/overview",
+        "https://docs.cloud.google.com/service-health/docs/view-events"
       ],
       "candidate_pages": [
-        {
-          "page_id": "bf99f759c26c1440503a57ba263f8f6d2ac4f77049170507bc0447171476e5d1",
-          "url": "https://docs.cloud.google.com/service-health/docs/reference/event-logs/rpc/google.cloud.servicehealth.logging.v1",
-          "title": "\"Package google.cloud.servicehealth.logging.v1 \\_|\\_ Personalized Service\\",
-          "source_id": "site-api-reference",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
-          "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
-          "base_score": 152,
-          "matched_phrases": [
-            {
-              "phrase": "in",
-              "title_hits": 1,
-              "url_hits": 1,
-              "body_hits": 73
-            },
-            {
-              "phrase": "incident",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 14
-            },
-            {
-              "phrase": "health",
-              "title_hits": 1,
-              "url_hits": 2,
-              "body_hits": 3
-            },
-            {
-              "phrase": "now",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 5
-            },
-            {
-              "phrase": "app",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 3
-            }
-          ]
-        },
-        {
-          "page_id": "fbe181a3cb60ab83eb01c0ee07781be383005fdab2589a5259f7828075fded13",
-          "url": "https://docs.cloud.google.com/service-health/docs/view-events",
-          "title": "\"Quickstart: View service health events in the Google Cloud console \\_|\\_\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_service-health_docs_view-events.md",
-          "relative_markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_view-events.md",
-          "base_score": 148,
-          "matched_phrases": [
-            {
-              "phrase": "in",
-              "title_hits": 1,
-              "url_hits": 0,
-              "body_hits": 147
-            },
-            {
-              "phrase": "incident",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 51
-            },
-            {
-              "phrase": "health",
-              "title_hits": 1,
-              "url_hits": 1,
-              "body_hits": 24
-            },
-            {
-              "phrase": "app",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 7
-            },
-            {
-              "phrase": "now",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 5
-            }
-          ]
-        },
         {
           "page_id": "373133e437f2fd45207be3bb88beadb1a2ca8defe1f19cbfc51aa67422687461",
           "url": "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
@@ -132,7 +51,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_custom-roles-permissions-support.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_custom-roles-permissions-support.md",
-          "base_score": 146,
+          "base_score": 193,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -173,13 +92,54 @@
           ]
         },
         {
+          "page_id": "bf99f759c26c1440503a57ba263f8f6d2ac4f77049170507bc0447171476e5d1",
+          "url": "https://docs.cloud.google.com/service-health/docs/reference/event-logs/rpc/google.cloud.servicehealth.logging.v1",
+          "title": "\"Package google.cloud.servicehealth.logging.v1 \\_|\\_ Personalized Service\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
+          "base_score": 180,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 73
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 14
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 2,
+              "body_hits": 3
+            },
+            {
+              "phrase": "now",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
           "page_id": "688e408a175956861a3d78fb43755d0eafed8431d397be56156bb3a0d02bdd99",
           "url": "https://docs.cloud.google.com/service-health/docs/overview",
           "title": "Personalized Service Health overview \\_|\\_ Google Cloud Documentation",
           "source_id": "site-api-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_overview.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_overview.md",
-          "base_score": 138,
+          "base_score": 180,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -220,13 +180,54 @@
           ]
         },
         {
+          "page_id": "fbe181a3cb60ab83eb01c0ee07781be383005fdab2589a5259f7828075fded13",
+          "url": "https://docs.cloud.google.com/service-health/docs/view-events",
+          "title": "\"Quickstart: View service health events in the Google Cloud console \\_|\\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_service-health_docs_view-events.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_view-events.md",
+          "base_score": 176,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 147
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 51
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 24
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "now",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
           "page_id": "4a1677fd7dec63c921db13a00ae9c75b12460ad3b88337827e16e3ae96e814d8",
           "url": "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
           "title": "\"Permissions supported in deny policies \\_|\\_ Identity and Access Management\\",
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_deny-permissions-support.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_deny-permissions-support.md",
-          "base_score": 132,
+          "base_score": 174,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -267,13 +268,101 @@
           ]
         },
         {
+          "page_id": "e0f42a296faba8d66bd407cc0438cbf09ca11c2b0f0c800f8800100134183ac1",
+          "url": "https://docs.cloud.google.com/service-health/docs/reference/libraries",
+          "title": "\"Service Health client libraries \\_|\\_ Personalized Service Health \\_|\\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_reference_libraries.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_libraries.md",
+          "base_score": 158,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 199
+            },
+            {
+              "phrase": "health",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 66
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "hub",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "e617403979a34dba0ef4ea6bcd4e0f02787c8e342fcab8b534e0e7707b34dbec",
+          "url": "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+          "title": "\"Identity federation: products and limitations \\_|\\_ Identity and Access\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_federated-identity-supported-services.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_federated-identity-supported-services.md",
+          "base_score": 147,
+          "matched_phrases": [
+            {
+              "phrase": "now",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 327
+            },
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 289
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "supports",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "hub",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "health",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
           "page_id": "8e6857c2dc5994551d91a030d181d86dbd085b5e4372253539c44adad135711c",
           "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-servicehealth/latest/google.cloud.servicehealth_v1.services.service_health.ServiceHealthAsyncClient",
           "title": "\"Class ServiceHealthAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
           "source_id": "site-python-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthAsyncClient.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthAsyncClient.md",
-          "base_score": 122,
+          "base_score": 142,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -300,114 +389,88 @@
               "body_hits": 2
             }
           ]
+        },
+        {
+          "page_id": "cd99ff3292bb1a244b2a0b9c55b8052ab3b42e2f31b285cdc83d6736369cb5b1",
+          "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/servicehealth",
+          "title": "\"Personalized Service Health roles and permissions \\_|\\_ Identity and Access\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_roles-permissions_servicehealth.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_roles-permissions_servicehealth.md",
+          "base_score": 139,
+          "matched_phrases": [
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 52
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 33
+            },
+            {
+              "phrase": "hub",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 33
+            },
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 22
+            }
+          ]
+        },
+        {
+          "page_id": "f74b0f58208b918b4686683b6b710ef8a71d76191fa310bcb37dcbd3eab78612",
+          "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-servicehealth/latest/google.cloud.servicehealth_v1.services.service_health.ServiceHealthClient",
+          "title": "\"Class ServiceHealthClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthClient.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthClient.md",
+          "base_score": 138,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 340
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 89
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
         }
       ],
       "supporting_pages": [
-        {
-          "url": "https://docs.cloud.google.com/service-health/docs/reference/event-logs/rpc/google.cloud.servicehealth.logging.v1",
-          "title": "\"Package google.cloud.servicehealth.logging.v1 \\_|\\_ Personalized Service\\",
-          "source_id": "site-api-reference",
-          "markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
-          "base_score": 152,
-          "final_score": 148,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
-          "matched_phrases": [
-            {
-              "phrase": "in",
-              "title_hits": 1,
-              "url_hits": 1,
-              "body_hits": 73
-            },
-            {
-              "phrase": "incident",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 14
-            },
-            {
-              "phrase": "health",
-              "title_hits": 1,
-              "url_hits": 2,
-              "body_hits": 3
-            },
-            {
-              "phrase": "now",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 5
-            },
-            {
-              "phrase": "app",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 3
-            }
-          ],
-          "evidence_snippets": [
-            "All further updates will be published to the parent event. update time Timestamp The time when the event was last modified. start time Timestamp The start time of the event, if applicable. end time Timestamp The end time of the event, if applicable. next update time Timestamp Incident-only field.",
-            "The incident does not have a resolution because no action or investigation happened.",
-            "Fields title string Brief description for the event. description string Free-form, human-readable description. category EventCategory Identifies the category of the event. detailed category DetailedCategory The detailed category of the event. state State The current state of the event. detailed state DetailedState The current detailed state of the event. impacted products string Google Cloud products known to be affected by the event, in JSON serialized format.",
-            "Index EventLog (message) EventLog.DetailedCategory (enum) EventLog.DetailedState (enum) EventLog.EventCategory (enum) EventLog.Relevance (enum) EventLog.State (enum) EventLog Message describing the payload of service health logs."
-          ]
-        },
-        {
-          "url": "https://docs.cloud.google.com/service-health/docs/view-events",
-          "title": "\"Quickstart: View service health events in the Google Cloud console \\_|\\_\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_view-events.md",
-          "base_score": 148,
-          "final_score": 144,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
-          "matched_phrases": [
-            {
-              "phrase": "in",
-              "title_hits": 1,
-              "url_hits": 0,
-              "body_hits": 147
-            },
-            {
-              "phrase": "incident",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 51
-            },
-            {
-              "phrase": "health",
-              "title_hits": 1,
-              "url_hits": 1,
-              "body_hits": 24
-            },
-            {
-              "phrase": "app",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 7
-            },
-            {
-              "phrase": "now",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 5
-            }
-          ],
-          "evidence_snippets": [
-            "Find the Service Health dashboard on a mobile device To view Google Cloud incidents on your mobile device: Install the Google Cloud mobile application from https://cloud.google.com/app .",
-            "Impacted products and locations : A list of all Google Cloud products and locations known to be affected by the incident, including products and locations you may not be using.",
-            "View Google Cloud incidents Note: If Personalized Service Health itself is experiencing an issue, navigate to Google Cloud Service Health for status and updates.",
-            "The Service Health dashboard lets you view active and closed Google Cloud incidents relevant to the selected Google Cloud project."
-          ]
-        },
         {
           "url": "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
           "title": "\"Support levels for permissions in custom roles \\_|\\_ Identity and Access\\",
           "source_id": "site-iam-reference",
           "markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_custom-roles-permissions-support.md",
-          "base_score": 146,
-          "final_score": 142,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 193,
+          "final_score": 201,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",
@@ -452,6 +515,156 @@
             "Home Documentation Security IAM Reference Send feedback Support levels for permissions in custom roles Stay organized with collections Save and categorize content based on your preferences.",
             "Each permission has one of the following support levels for use in custom roles: Support level Description SUPPORTED The permission is fully supported in custom roles."
           ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/service-health/docs/reference/event-logs/rpc/google.cloud.servicehealth.logging.v1",
+          "title": "\"Package google.cloud.servicehealth.logging.v1 \\_|\\_ Personalized Service\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
+          "base_score": 180,
+          "final_score": 188,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 73
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 14
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 2,
+              "body_hits": 3
+            },
+            {
+              "phrase": "now",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "All further updates will be published to the parent event. update time Timestamp The time when the event was last modified. start time Timestamp The start time of the event, if applicable. end time Timestamp The end time of the event, if applicable. next update time Timestamp Incident-only field.",
+            "The incident does not have a resolution because no action or investigation happened.",
+            "Fields title string Brief description for the event. description string Free-form, human-readable description. category EventCategory Identifies the category of the event. detailed category DetailedCategory The detailed category of the event. state State The current state of the event. detailed state DetailedState The current detailed state of the event. impacted products string Google Cloud products known to be affected by the event, in JSON serialized format.",
+            "Index EventLog (message) EventLog.DetailedCategory (enum) EventLog.DetailedState (enum) EventLog.EventCategory (enum) EventLog.Relevance (enum) EventLog.State (enum) EventLog Message describing the payload of service health logs."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/service-health/docs/overview",
+          "title": "Personalized Service Health overview \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_overview.md",
+          "base_score": 180,
+          "final_score": 188,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 69
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 35
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 14
+            },
+            {
+              "phrase": "hub",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "supports",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "This feature supports incidents that meet both of the following conditions: Relate to products that support App Hub and Gemini Cloud Assist.",
+            "If needed, ensure that you have the following permissions: servicehealth.events.list apphub.applications.get on the specific application apphub.applications.list If needed, enable the App Hub API .",
+            "View Google Cloud incidents for your applications If you manage Google Cloud resources using App Hub , Cloud Hub lets you view Google Cloud incidents for your applications.",
+            "If you don't have an application set up, do the following to display incidents in Cloud Hub: Configure a folder for application management ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/service-health/docs/view-events",
+          "title": "\"Quickstart: View service health events in the Google Cloud console \\_|\\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_view-events.md",
+          "base_score": 176,
+          "final_score": 184,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 147
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 51
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 24
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "now",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "Find the Service Health dashboard on a mobile device To view Google Cloud incidents on your mobile device: Install the Google Cloud mobile application from https://cloud.google.com/app .",
+            "Impacted products and locations : A list of all Google Cloud products and locations known to be affected by the incident, including products and locations you may not be using.",
+            "View Google Cloud incidents Note: If Personalized Service Health itself is experiencing an issue, navigate to Google Cloud Service Health for status and updates.",
+            "The Service Health dashboard lets you view active and closed Google Cloud incidents relevant to the selected Google Cloud project."
+          ]
         }
       ]
     },
@@ -470,13 +683,14 @@
         "allows",
         "users"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Service Health now allows users to ask Gemini Cloud Assist for active incidents, incident impact, and update information.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
         "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
-        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-health/docs/overview"
       ],
       "candidate_pages": [
         {
@@ -486,7 +700,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_custom-roles-permissions-support.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_custom-roles-permissions-support.md",
-          "base_score": 142,
+          "base_score": 185,
           "matched_phrases": [
             {
               "phrase": "health",
@@ -533,7 +747,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_deny-permissions-support.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_deny-permissions-support.md",
-          "base_score": 122,
+          "base_score": 160,
           "matched_phrases": [
             {
               "phrase": "health",
@@ -580,7 +794,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_federated-identity-supported-services.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_federated-identity-supported-services.md",
-          "base_score": 102,
+          "base_score": 140,
           "matched_phrases": [
             {
               "phrase": "now",
@@ -621,13 +835,48 @@
           ]
         },
         {
+          "page_id": "688e408a175956861a3d78fb43755d0eafed8431d397be56156bb3a0d02bdd99",
+          "url": "https://docs.cloud.google.com/service-health/docs/overview",
+          "title": "Personalized Service Health overview \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_overview.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_overview.md",
+          "base_score": 114,
+          "matched_phrases": [
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 35
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            },
+            {
+              "phrase": "gemini",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "assist",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
           "page_id": "bf99f759c26c1440503a57ba263f8f6d2ac4f77049170507bc0447171476e5d1",
           "url": "https://docs.cloud.google.com/service-health/docs/reference/event-logs/rpc/google.cloud.servicehealth.logging.v1",
           "title": "\"Package google.cloud.servicehealth.logging.v1 \\_|\\_ Personalized Service\\",
           "source_id": "site-api-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
-          "base_score": 94,
+          "base_score": 110,
           "matched_phrases": [
             {
               "phrase": "incident",
@@ -656,7 +905,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_service-health_docs_view-events.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_view-events.md",
-          "base_score": 92,
+          "base_score": 108,
           "matched_phrases": [
             {
               "phrase": "incident",
@@ -685,7 +934,7 @@
           "source_id": "site-python-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthAsyncClient.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthAsyncClient.md",
-          "base_score": 90,
+          "base_score": 100,
           "matched_phrases": [
             {
               "phrase": "health",
@@ -700,6 +949,75 @@
               "body_hits": 2
             }
           ]
+        },
+        {
+          "page_id": "f74b0f58208b918b4686683b6b710ef8a71d76191fa310bcb37dcbd3eab78612",
+          "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-servicehealth/latest/google.cloud.servicehealth_v1.services.service_health.ServiceHealthClient",
+          "title": "\"Class ServiceHealthClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthClient.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthClient.md",
+          "base_score": 100,
+          "matched_phrases": [
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 89
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "e0f42a296faba8d66bd407cc0438cbf09ca11c2b0f0c800f8800100134183ac1",
+          "url": "https://docs.cloud.google.com/service-health/docs/reference/libraries",
+          "title": "\"Service Health client libraries \\_|\\_ Personalized Service Health \\_|\\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_reference_libraries.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_libraries.md",
+          "base_score": 88,
+          "matched_phrases": [
+            {
+              "phrase": "health",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 66
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "a8e870291555c27451ef18774a619285472381b2556cdbd94fb96bd9333ef890",
+          "url": "https://docs.cloud.google.com/service-health/docs/project-events",
+          "title": "\"Manage events for a project \\_|\\_ Personalized Service Health \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_service-health_docs_project-events.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_project-events.md",
+          "base_score": 84,
+          "matched_phrases": [
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 11
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
         }
       ],
       "supporting_pages": [
@@ -708,10 +1026,10 @@
           "title": "\"Support levels for permissions in custom roles \\_|\\_ Identity and Access\\",
           "source_id": "site-iam-reference",
           "markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_custom-roles-permissions-support.md",
-          "base_score": 142,
-          "final_score": 138,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 185,
+          "final_score": 193,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "health",
@@ -759,10 +1077,10 @@
           "title": "\"Permissions supported in deny policies \\_|\\_ Identity and Access Management\\",
           "source_id": "site-iam-reference",
           "markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_deny-permissions-support.md",
-          "base_score": 122,
-          "final_score": 118,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 160,
+          "final_score": 168,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "health",
@@ -813,10 +1131,10 @@
           "title": "\"Identity federation: products and limitations \\_|\\_ Identity and Access\\",
           "source_id": "site-iam-reference",
           "markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_federated-identity-supported-services.md",
-          "base_score": 102,
-          "final_score": 102,
-          "rerank_relevance": "",
-          "rerank_rationale": "",
+          "base_score": 140,
+          "final_score": 148,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "now",
@@ -861,6 +1179,48 @@
             "Google Cloud API: No known limitations Other: The following features don't support Workforce Identity Federation with BigQuery: Connected Sheets Google Drive Recommendations Slot estimator The following operations don't support Workforce Identity Federation: Loading data from Amazon S3 , Apache Spark , or Azure Blob Storage through the Connection API Loading data from Google Drive Bigtable GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Binary Authorization GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Blockchain Analytics GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Blockchain Node Engine GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Carbon Footprint GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Certificate Authority Service GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Certificate Manager GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Channel Services GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Asset Inventory GA Console (federated): In the IAM policy tab, the Analyze Full Access button is unavailable for Workforce Identity Federation users.",
             "Other: No known limitations Cloud Domains GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Endpoints Unsupported Alternatives: No alternatives available Cloud Fleet Routing GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Healthcare API GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud HSM GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Intrusion Detection System GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Key Management Service GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Load Balancing GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Logging GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Mobile App Unsupported Alternatives: No alternatives available Cloud Monitoring GA Console (federated): No known limitations Google Cloud API: No known limitations Other: The legacy Cloud Monitoring agent doesn't support sending metrics with identity federation."
           ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/service-health/docs/overview",
+          "title": "Personalized Service Health overview \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_overview.md",
+          "base_score": 114,
+          "final_score": 122,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 35
+            },
+            {
+              "phrase": "incident",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            },
+            {
+              "phrase": "gemini",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "assist",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "This feature supports incidents that meet both of the following conditions: Relate to products that support App Hub and Gemini Cloud Assist.",
+            "Check for incidents impacting your organization You can see active incidents impacting Google Cloud products and services using the following: Organization Views : Provides a unified view of service health incidents affecting any project within your Google Cloud organization.",
+            "View active and past Google Cloud incidents in the Service Health dashboard The Service Health dashboard in the Google Cloud console shows incidents that are relevant to your project, their state, and the impacted Google Cloud products and locations.",
+            "How Personalized Service Health fits into Google Cloud Incident Communication Personalized Service Health is your primary channel for incident information and service health events relevant to your projects."
+          ]
         }
       ]
     },
@@ -879,12 +1239,13 @@
         "experience",
         "the"
       ],
-      "coverage_status": "LOW",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Service Health introduces a personalized Service Health experience in the Google Cloud mobile app.",
-      "evidence_summary": "Fallback definition because synthesis failed.",
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
       "source_links": [
         "https://docs.cloud.google.com/service-health/docs/view-events",
         "https://docs.cloud.google.com/service-health/docs/overview",
+        "https://docs.cloud.google.com/service-health/docs/reference/event-logs/rpc/google.cloud.servicehealth.logging.v1",
         "https://docs.cloud.google.com/service-health/docs/reference/libraries"
       ],
       "candidate_pages": [
@@ -895,7 +1256,7 @@
           "source_id": "site-docs-root",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_service-health_docs_view-events.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_view-events.md",
-          "base_score": 178,
+          "base_score": 228,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -942,7 +1303,7 @@
           "source_id": "site-api-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_overview.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_overview.md",
-          "base_score": 166,
+          "base_score": 216,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -989,7 +1350,7 @@
           "source_id": "site-api-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
-          "base_score": 150,
+          "base_score": 195,
           "matched_phrases": [
             {
               "phrase": "the",
@@ -1030,7 +1391,7 @@
           "source_id": "site-api-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_reference_libraries.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_libraries.md",
-          "base_score": 150,
+          "base_score": 193,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1071,7 +1432,7 @@
           "source_id": "site-iam-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_iam_docs_roles-permissions_servicehealth.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-iam-reference/pages/docs.cloud.google.com_iam_docs_roles-permissions_servicehealth.md",
-          "base_score": 148,
+          "base_score": 191,
           "matched_phrases": [
             {
               "phrase": "health",
@@ -1106,13 +1467,130 @@
           ]
         },
         {
+          "page_id": "4ef606a607ecf095e014d36ce91d1f34936b8b228bcb231255129cd3c2451d49",
+          "url": "https://docs.cloud.google.com/service-health/docs/reference/rest",
+          "title": "\"Service Health API \\_|\\_ Personalized Service Health \\_|\\_ Google Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_service-health_docs_reference_rest.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_rest.md",
+          "base_score": 179,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 55
+            },
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "health",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 13
+            },
+            {
+              "phrase": "personalized",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "b35e14972f37190aef214a2c3e3afca492396a062e032230c3c613ebfe9c9dbc",
+          "url": "https://docs.cloud.google.com/service-health/docs/configure-alerts-dashboard",
+          "title": "\"Quickstart: Set up an alert \\_|\\_ Personalized Service Health \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_service-health_docs_configure-alerts-dashboard.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_configure-alerts-dashboard.md",
+          "base_score": 173,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 53
+            },
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 45
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 13
+            },
+            {
+              "phrase": "personalized",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "5707e0e6c726ced74fe9a92f3a30d3444247e9e2a4b9acf5e1acfcdf92610156",
+          "url": "https://docs.cloud.google.com/service-health/docs/organization-events",
+          "title": "\"Access organization events with the Personalized Service Health API \\_|\\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_service-health_docs_organization-events.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_organization-events.md",
+          "base_score": 168,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 87
+            },
+            {
+              "phrase": "the",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 66
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 16
+            },
+            {
+              "phrase": "personalized",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
           "page_id": "8e6857c2dc5994551d91a030d181d86dbd085b5e4372253539c44adad135711c",
           "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-servicehealth/latest/google.cloud.servicehealth_v1.services.service_health.ServiceHealthAsyncClient",
           "title": "\"Class ServiceHealthAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
           "source_id": "site-python-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthAsyncClient.md",
           "relative_markdown_path": "products/service-health/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthAsyncClient.md",
-          "base_score": 136,
+          "base_score": 168,
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1139,6 +1617,41 @@
               "body_hits": 3
             }
           ]
+        },
+        {
+          "page_id": "f74b0f58208b918b4686683b6b710ef8a71d76191fa310bcb37dcbd3eab78612",
+          "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-servicehealth/latest/google.cloud.servicehealth_v1.services.service_health.ServiceHealthClient",
+          "title": "\"Class ServiceHealthClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\service-health\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthClient.md",
+          "relative_markdown_path": "products/service-health/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_google-cloud-servicehealth_latest_google.cloud.servicehealth_v1.services.service_health.ServiceHealthClient.md",
+          "base_score": 166,
+          "matched_phrases": [
+            {
+              "phrase": "in",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 340
+            },
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 192
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 89
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
         }
       ],
       "supporting_pages": [
@@ -1147,10 +1660,10 @@
           "title": "\"Quickstart: View service health events in the Google Cloud console \\_|\\_\\",
           "source_id": "site-docs-root",
           "markdown_path": "products/service-health/corpus/site/site-docs-root/pages/docs.cloud.google.com_service-health_docs_view-events.md",
-          "base_score": 178,
-          "final_score": 174,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 228,
+          "final_score": 236,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1201,10 +1714,10 @@
           "title": "Personalized Service Health overview \\_|\\_ Google Cloud Documentation",
           "source_id": "site-api-reference",
           "markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_overview.md",
-          "base_score": 166,
-          "final_score": 162,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "base_score": 216,
+          "final_score": 224,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",
@@ -1251,14 +1764,62 @@
           ]
         },
         {
+          "url": "https://docs.cloud.google.com/service-health/docs/reference/event-logs/rpc/google.cloud.servicehealth.logging.v1",
+          "title": "\"Package google.cloud.servicehealth.logging.v1 \\_|\\_ Personalized Service\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_event-logs_rpc_google.cloud.servicehealth.logging.v1.md",
+          "base_score": 195,
+          "final_score": 203,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 82
+            },
+            {
+              "phrase": "in",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 73
+            },
+            {
+              "phrase": "health",
+              "title_hits": 1,
+              "url_hits": 2,
+              "body_hits": 3
+            },
+            {
+              "phrase": "app",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "personalized",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "All further updates will be published to the parent event. update time Timestamp The time when the event was last modified. start time Timestamp The start time of the event, if applicable. end time Timestamp The end time of the event, if applicable. next update time Timestamp Incident-only field.",
+            "Index EventLog (message) EventLog.DetailedCategory (enum) EventLog.DetailedState (enum) EventLog.EventCategory (enum) EventLog.Relevance (enum) EventLog.State (enum) EventLog Message describing the payload of service health logs.",
+            "Home Documentation Security Personalized Service Health Reference Send feedback Package google.cloud.servicehealth.logging.v1 Stay organized with collections Save and categorize content based on your preferences.",
+            "The incident does not have a resolution because no action or investigation happened."
+          ]
+        },
+        {
           "url": "https://docs.cloud.google.com/service-health/docs/reference/libraries",
           "title": "\"Service Health client libraries \\_|\\_ Personalized Service Health \\_|\\_\\",
           "source_id": "site-api-reference",
           "markdown_path": "products/service-health/corpus/site/site-api-reference/pages/docs.cloud.google.com_service-health_docs_reference_libraries.md",
-          "base_score": 150,
-          "final_score": 150,
-          "rerank_relevance": "",
-          "rerank_rationale": "",
+          "base_score": 193,
+          "final_score": 201,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
           "matched_phrases": [
             {
               "phrase": "in",

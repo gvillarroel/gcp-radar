@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:04:48.105Z"
+generated_at: "2026-04-14T04:11:52.467Z"
 product_name: "API Gateway"
 product_slug: "api-gateway"
 feature_name: "Cloud Run gRPC backend support in API Gateway"
@@ -9,16 +9,13 @@ latest_feature_date: "2021-01-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/api-gateway/docs/tutorials"
+  - "https://docs.cloud.google.com/api-gateway/docs/creating-api-config"
+  - "https://docs.cloud.google.com/api-gateway/docs/deployment-model"
+  - "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway"
 keywords:
-  - "backend protocol support"
-  - "Cloud Run backend"
-  - "Cloud Run service"
-  - "Cloud Run gRPC"
-  - "gRPC integration"
-  - "gRPC backend"
-  - "grpc backend"
-  - "Gateway to Cloud Run"
+  - "backend"
+  - "grpc"
+  - "supports"
 ---
 
 # Cloud Run gRPC backend support in API Gateway
@@ -32,26 +29,57 @@ API Gateway now supports using Cloud Run backend services with gRPC.
 
 ## Extended Definition
 
-API Gateway documentation includes tutorials for using API Gateway with a Cloud Run backend, including a Cloud Run gRPC backend service, indicating support for Cloud Run integration. These guides describe API Gateway as the control plane for managing and securing traffic to those Cloud Run services.
+API Gateway now supports using Cloud Run backend services with gRPC.
 
 ## Evidence Summary
 
-The linked API Gateway tutorials index provides evidence that Google Cloud documents API Gateway usage with Cloud Run backend services, including gRPC-based backends, through “Getting started” tutorials.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/api-gateway/docs/tutorials](https://docs.cloud.google.com/api-gateway/docs/tutorials)
+- [https://docs.cloud.google.com/api-gateway/docs/creating-api-config](https://docs.cloud.google.com/api-gateway/docs/creating-api-config)
+- [https://docs.cloud.google.com/api-gateway/docs/deployment-model](https://docs.cloud.google.com/api-gateway/docs/deployment-model)
+- [https://docs.cloud.google.com/api-gateway/docs/about-api-gateway](https://docs.cloud.google.com/api-gateway/docs/about-api-gateway)
 
 ## Supporting Pages
 
-### Tutorials \_|\_ API Gateway \_|\_ Google Cloud Documentation
+### Create an API config \_|\_ API Gateway \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/api-gateway/docs/tutorials](https://docs.cloud.google.com/api-gateway/docs/tutorials)
-- Source ID: `site-iam-reference`
-- Final score: 20
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/api-gateway/docs/creating-api-config](https://docs.cloud.google.com/api-gateway/docs/creating-api-config)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 77
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Getting started with API Gateway and Cloud Run for gRPC Learn how to use API Gateway to manage and secure traffic to a Cloud Run gRPC backend service.
-- Getting started with API Gateway and Cloud Run Learn how to use API Gateway to manage and secure traffic to a Cloud Run backend service.
+- API Gateway also supports the use of gRPC service definitions and configurations for gRPC services on Cloud Run.
+- Note: API Gateway supports creation of API definitions as OpenAPI specs for all available backend services.
+- Validate the project ID returned from the following command to make sure that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace PROJECT ID with the Google Cloud project ID in which you want to create the service: gcloud config set project PROJECT ID View help for the api-configs create command: gcloud api-gateway api-configs create --help Run the following command to create the API config: gcloud api-gateway api-configs create CONFIG ID \ --api= API ID --openapi-spec= API DEFINITION \ --project= PROJECT ID --backend-auth-service-account= SERVICE ACCOUNT EMAIL where: CONFIG ID specifies the ID of the new API config.
+- On successful completion, you can use the following command to view details about the new API config: gcloud api-gateway api-configs describe CONFIG ID \ --api= API ID This command returns the following: createTime: '2020-02-04T18:33:11.882707149Z' displayName: CONFIG ID gatewayConfig: backendConfig: googleServiceAccount: 1111111@developer.gserviceaccount.com labels: '' name: projects/ PROJECT ID /locations/global/apis/ API ID /configs/ CONFIG ID serviceRollout: rolloutId: 2020-02-04r2 state: ACTIVE updateTime: '2020-02-04T18:33:12.219323647Z' Enable the API using the managed service name of the API.
+
+### API Gateway Deployment Model \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/api-gateway/docs/deployment-model](https://docs.cloud.google.com/api-gateway/docs/deployment-model)
+- Source ID: `site-docs-root-required-2`
+- Final score: 73
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- API Gateway supports the following Google Cloud regions for deployment: asia-northeast1 australia-southeast1 europe-west1 europe-west2 us-east1 us-east4 us-central1 us-west2 us-west3 us-west4 Define the endpoint of the deployed API config When you deploy an API config to a gateway, API Gateway creates a unique URL for the gateway in the gateway.dev domain.
+- In addition to the roles necessary to access the backend service, the service account is required to be granted the following permissions: The iam.serviceAccounts.actAs permission.
+- For example, if your backend is implemented as a Cloud Function, then the service account should at the least be assigned to the role of Cloud Functions Invoker .
+- If you later edit the API definition in the OpenAPI spec or gRPC service definition, and then upload the edited API definition, you create a new API config.
+
+### Sobre o gateway de API | API Gateway | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/api-gateway/docs/about-api-gateway](https://docs.cloud.google.com/api-gateway/docs/about-api-gateway)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 65
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Sobre o gateway de API | API Gateway | Google Cloud Documentation Ir para o conteúdo principal Áreas de tecnologia close IA e ML Desenvolvimento de aplicativos Hospedagem de aplicativos Computação Pipelines e análises de dados Bancos de dados Distribuído, híbrido e multicloud Soluções por setor Migração Rede Observabilidade e monitoramento Segurança Storage Ferramentas de vários produtos close Gerenciamento de recursos e acesso Gerenciamento de custos e uso Infraestrutura como código SDK, linguagens, frameworks e ferramentas / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Fazer login API Gateway Comece sem custos financeiros Visão geral Guias Referência Suporte Recursos Áreas de tecnologia Mais Visão geral Guias Referência Suporte Recursos Ferramentas de vários produtos Mais Console API Gateway Guias de início rápido Todos os guias de início rápido Guia de início rápido: usar a ferramenta de linha de comando gcloud Guia de início rápido: usar o console do Cloud Tutoriais Todos os tutoriais Introdução ao gateway de API e ao App Engine Começar a usar o gateway de API e o Cloud Run Começar a usar o gateway de API e o Cloud Run para gRPC Começar a usar o gateway de API e o Cloud Functions Introdução ao balanceamento de carga para o gateway de API Começar a centralizar APIs com o hub de APIs Guias de instruções Todos os guias de instruções Criar e implantar uma API Sobre o ambiente de desenvolvimento Configurar o ambiente de desenvolvimento Criar uma API Criar uma configuração de API Configurar um serviço gRPC Implantar uma API em um gateway Transferir dados para e do serviço de back-end Solução de problemas e monitoramento Solução de problemas Monitorar sua API Rastrear sua API ao máximo.
+- Acessar registros da plataforma Autenticação e chaves de API Escolher um método de autenticação Autenticar usuários Usar o JWT para autenticar usuários Usar o Firebase para autenticar usuários Usar o Auth0 para autenticar usuários Usar o Okta para autenticar usuários Usar tokens de ID do Google para autenticar usuários Autenticação entre serviços Proteger serviços de back-end Usar chaves de API Gerenciar o acesso à API Limitar solicitações de API Sobre cotas Usar domínios personalizados Criar implantações multirregionais Implantar APIs do Cloud Endpoints Centralizar APIs usando o hub de APIs Visão geral Conectar o API Gateway ao hub de API Ver APIs do API Gateway no hub de APIs Remover uma conexão do API Gateway do hub de API Conceitos Todos os conceitos Sobre o gateway de API Arquitetura do gateway de API Modelo de implantação do gateway de API OpenAPI Visão geral da OpenAPI Modificar um gateway para usar o OpenAPI 3.x Extensões da OpenAPI 2.0 Extensões OpenAPI 3.x Limitações de recursos da OpenAPI 2.0 Limitações de recursos da OpenAPI 3.x Visão geral do gRPC Balanceamento de carga para o API Gateway Modelos de caminho Conformidade com CMEK no API Gateway Glossário IA e ML Desenvolvimento de aplicativos Hospedagem de aplicativos Computação Pipelines e análises de dados Bancos de dados Distribuído, híbrido e multicloud Soluções por setor Migração Rede Observabilidade e monitoramento Segurança Storage Gerenciamento de recursos e acesso Gerenciamento de custos e uso Infraestrutura como código SDK, linguagens, frameworks e ferramentas Home Documentation Application development API Gateway Guias Envie comentários Mantenha tudo organizado com as coleções Salve e categorize o conteúdo com base nas suas preferências.
 

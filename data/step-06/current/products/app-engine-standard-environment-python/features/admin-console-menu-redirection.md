@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.175Z"
+generated_at: "2026-04-12T20:57:08.293Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "Admin Console menu redirection"
 feature_slug: "admin-console-menu-redirection"
 latest_feature_date: "2015-08-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
   - "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started"
   - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
 keywords:
-  - "redirection"
-  - "redirect"
-  - "menus"
-  - "menu"
-  - "console"
-  - "users"
   - "admin"
+  - "console"
+  - "menu"
+  - "redirection"
+  - "menus"
   - "now"
+  - "redirect"
+  - "users"
 ---
 
 # Admin Console menu redirection
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Admin Console menus now redirect users to Cloud Console while key services, such
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -51,9 +51,10 @@ Fallback definition because synthesis failed.
 ### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
-- Source ID: `site-docs-root`
-- Final score: 70
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference-required-2`
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This solution is best if you want to authenticate users based on their Google Account, or if you are using Google Admin console for your domain.
@@ -64,10 +65,10 @@ Evidence snippets:
 ### "An Overview of the Admin API \_|\_ App Engine Admin API \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
-- Source ID: `site-docs-root`
-- Final score: 68
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-required-2`
+- Final score: 92
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The Admin API provides programmatic access to several of the App Engine administrative operations that are found in the Google Cloud console .
@@ -78,8 +79,8 @@ Evidence snippets:
 ### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
-- Source ID: `site-docs-root`
-- Final score: 58
+- Source ID: `site-docs-reference-required-2`
+- Final score: 79
 - Re-rank relevance: N/A
 
 Evidence snippets:

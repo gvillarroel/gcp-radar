@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:32.323Z"
+generated_at: "2026-04-15T12:05:49.355Z"
 product_name: "Google Distributed Cloud (software only) for bare metal"
 product_slug: "google-distributed-cloud-software-only-for-bare-metal"
 feature_name: "cluster.gkeHubRegistrationStatus"
 feature_slug: "cluster-gkehubregistrationstatus"
 latest_feature_date: "2021-12-10"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/quickstart"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api"
 keywords:
   - "cluster"
   - "gkehubregistrationstatus"
-  - "the"
   - "field"
   - "shows"
   - "membership"
   - "status"
-  - "in"
+  - "gke"
+  - "hub"
 ---
 
 # cluster.gkeHubRegistrationStatus
 
 Product: Google Distributed Cloud (software only) for bare metal
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ The cluster.gkeHubRegistrationStatus field shows a cluster's membership status i
 
 The cluster.gkeHubRegistrationStatus field shows a cluster's membership status in GKE Hub.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/quickstart](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/quickstart)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Cluster configuration field reference \_|\_ Google Distributed Cloud (software\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref)
+- Source ID: `site-docs-root`
+- Final score: 151
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following example shows a Prometheus configuration that uses basic authentication: apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : cluster1 namespace : cluster-cluster1 annotations : preview.baremetal.cluster.gke.io/vertical-pod-autoscaler : enable spec : ... other cluster spec fields verticalPodAutoscaling : ... # other vertical Pod autoscaling fields prometheus : url : "http://prometheus.prometheus.svc.cluster.local:9090" auth : basicAuth : usernameRef : name : prom-basic-creds key : username passwordRef : name : prom-basic-creds key : password For more information, see Use Prometheus as a persistent history provider .
+- The table also shows which fields are mutable, meaning which fields can be changed after a cluster has been created.
+- For example: apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : cluster1 namespace : cluster-cluster1 annotations : preview.baremetal.cluster.gke.io/vertical-pod-autoscaler : enable spec : ... other cluster spec fields verticalPodAutoscaling : Set to true for automated updates enableUpdater : true Set to true to reduce recommender memory usage enableMemorySaver : true You can update your cluster at any time to enable, disable, or configure vertical Pod autoscaling.
+- The following list shows the launch stage per version for configuring a node-level private registry: 1.30 and later: GA 1.29: Preview Cluster resource Optional Mutable nodeConfig.privateRegistries.caCertSecretRef When applicable, use this section to specify the name and namespace of the Secret that was created to store the CA certificate (server root CA) for the private registry.
+
+### "Create basic clusters \_|\_ Google Distributed Cloud (software only) for\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/quickstart](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/quickstart)
+- Source ID: `site-docs-reference`
+- Final score: 149
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Verify that your cluster was created and is running: kubectl --kubeconfig bmctl-workspace/ ADMIN CLUSTER NAME / ADMIN CLUSTER NAME -kubeconfig \ get nodes If your cluster is running, the response looks something like this: NAME STATUS ROLES AGE VERSION node-01 Ready control-plane 16h v1.25.7-gke.1000 To grant your user account the Kubernetes clusterrole/cluster-admin role on the cluster, run the following gcloud command: gcloud container fleet memberships generate-gateway-rbac \ --membership = ADMIN CLUSTER NAME \ --role = clusterrole/cluster-admin \ --users = GOOGLE ACCOUNT EMAIL \ --project = PROJECT ID \ --kubeconfig = bmctl-workspace/ ADMIN CLUSTER NAME / ADMIN CLUSTER NAME -kubeconfig \ --context = ADMIN CLUSTER NAME -admin@ ADMIN CLUSTER NAME \ --apply The output of this command is similar to the following, which is truncated for readability: Validating input arguments.
+- In this guide, the file is called main.tf . mkdir DIRECTORY && cd DIRECTORY && touch main.tf Verify the user cluster Terraform resource: The following Terraform resource example is filled in with the values that you entered in the planning table in the preceding section. resource "google gkeonprem bare metal cluster" "cluster-basic" { provider = google-beta name = " USER CLUSTER NAME " project = " PROJECT ID " location = "us-central1" admin cluster membership = "projects/ PROJECT ID /locations/global/memberships/ ADMIN CLUSTER NAME " bare metal version = " CLUSTER VERSION " network config { island mode cidr { service address cidr blocks = [ " 10.96.0.0/20 " ] pod address cidr blocks = [ " 192.168.0.0/16 " ] } } control plane { control plane node pool config { node pool config { labels = {} operating system = "LINUX" node configs { labels = {} node ip = " USER CP NODE IP " } } } } load balancer { port config { control plane load balancer port = 443 } vip config { control plane vip = " USER CP VIP " ingress vip = " USER INGRESS VIP " } metal lb config { address pools { pool = "pool1" addresses = [ " START IP - END IP " ] avoid buggy ips = true manual assign = true } } } storage { lvp share config { lvp config { path = "/mnt/localpv-share" storage class = "local-shared" } shared path pv count = 5 } lvp node mounts config { path = "/mnt/localpv-disk" storage class = "local-disks" } } security config { authorization { admin users { username = " GOOGLE ACCOUNT EMAIL " } } } } resource "google gkeonprem bare metal node pool" "node-pool-default" { provider = google-beta name = "node-pool-1" bare metal cluster = google gkeonprem bare metal cluster.cluster-basic.name project = " PROJECT ID " location = "us-central1" node pool config { operating system = "LINUX" node configs { node ip = " USER WORKER NODE IP " } } } Copy the Terraform resource to main.tf and save the file.
+- Among other things, this field lets you sign in to your cluster in the Google Cloud console to see more cluster details. --- apiVersion : v1 kind : Namespace metadata : name : cluster- USER CLUSTER NAME --- apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : USER CLUSTER NAME namespace : cluster- USER CLUSTER NAME spec : type : user profile : default anthosBareMetalVersion : CLUSTER VERSION gkeConnect : projectID : PROJECT ID controlPlane : nodePoolSpec : nodes : - address : USER CP NODE IP clusterNetwork : pods : cidrBlocks : - 192.168.0.0/16 services : cidrBlocks : - 10.96.0.0/20 loadBalancer : mode : bundled ports : controlPlaneLBPort : 443 vips : controlPlaneVIP : USER CP VIP ingressVIP : USER INGRESS VIP addressPools : - name : pool1 addresses : - START IP - END IP clusterOperations : projectID : PROJECT ID location : us-central1 clusterSecurity : authorization : clusterAdmin : gcpAccounts : - GOOGLE ACCOUNT EMAIL storage : lvpNodeMounts : path : /mnt/localpv-disk storageClassName : local-disks lvpShare : path : /mnt/localpv-share storageClassName : local-shared numPVUnderSharedPath : 5 nodeConfig : podDensity : maxPodsPerNode : 250 GKEOnPremAPI (Optional) Specify if you wish to explicitly enable/disable the cloud hosted gkeonprem API to enable/disable cluster lifecycle management from gcloud UI and Terraform. gkeOnPremAPI: enabled: false location is the Cloud location for the cluster resource metadata where the cluster will be enrolled. location: us-central1 --- apiVersion : baremetal.cluster.gke.io/v1 kind : NodePool metadata : name : node-pool-1 namespace : cluster- USER CLUSTER NAME spec : clusterName : USER CLUSTER NAME nodes : - address : USER WORKER NODE IP Replace the contents of the generated configuration file on your admin workstation with the contents from the preceding sample.
+- Run the following command to create a user cluster: gcloud container bare-metal clusters create USER CLUSTER NAME \ --project= PROJECT ID \ --location=us-central1 \ --admin-cluster-membership= ADMIN CLUSTER NAME \ --admin-cluster-membership-project= PROJECT ID \ --admin-cluster-membership-location=global \ --version= CLUSTER VERSION \ --admin-users= GOOGLE ACCOUNT EMAIL \ --island-mode-service-address-cidr-blocks= 10.96.0.0/20 \ --island-mode-pod-address-cidr-blocks= 192.168.0.0/16 \ --metal-lb-address-pools='pool=lb-pool-1,manual-assign=True,addresses= START IP - END IP ' \ --control-plane-node-configs='node-ip= USER CP NODE IP ' \ --control-plane-vip= USER CP VIP \ --control-plane-load-balancer-port=443 \ --ingress-vip= USER INGRESS VIP \ --lvp-share-path=/mnt/localpv-share \ --lvp-share-storage-class=local-shared \ --lvp-node-mounts-config-path=/mnt/localpv-disk \ --lvp-node-mounts-config-storage-class=local-disks The output from the command is similar to the following: Waiting for operation [projects/example-project-12345/locations/us-west1/operations/operation-1679543737105-5f7893fd5bae9-942b3f97-75e59179] to complete.
+
+### "Create a user cluster using GKE On-Prem API clients \_|\_ Google Distributed\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api)
+- Source ID: `site-docs-reference-2`
+- Final score: 147
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- MetalLB This example shows how to create a user cluster with the bundled MetalLB load balancer. gcloud container bare-metal clusters create USER CLUSTER NAME \ --project= FLEET HOST PROJECT ID \ --admin-cluster-membership= ADMIN CLUSTER NAME \ --admin-cluster-membership-project= FLEET HOST PROJECT ID \ --admin-cluster-membership-location= ADMIN CLUSTER REGION \ --location= REGION \ --version= VERSION \ --admin-users= YOUR EMAIL ADDRESS \ --admin-users= ANOTHER EMAIL ADDRESS \ --metal-lb-address-pools='pool= NAME ,avoid-buggy-ips= True False ,manual-assign= True False ,addresses= IP ADDRESS RANGE 1 ; IP ADDRESS RANGE 2 ;...' \ --control-plane-node-configs='node-ip= CP IP ADDRESS 1 ,labels= CP KEY 1.1 = CP VALUE 1.1 ; CP KEY 1.2 = CP VALUE 1.2 ;...' \ --control-plane-vip= CONTROL PLANE VIP \ --control-plane-load-balancer-port= CONTROL PLANE LB PORT \ --ingress-vip= INGRESS VIP \ --island-mode-service-address-cidr-blocks= SERVICE CIDR BLOCK \ --island-mode-pod-address-cidr-blocks= POD CIDR BLOCK \ --lvp-share-path=/mnt/localpv-share \ --lvp-share-storage-class=local-shared \ --lvp-node-mounts-config-path=/mnt/localpv-disk \ --lvp-node-mounts-config-storage-class=local-disks Replace the following: USER CLUSTER NAME : A name of your choice for your user cluster.
+- Be sure to scroll over if needed to fill in the ADMIN CLUSTER NAME placeholder for the --admin-cluster-membership flag. gcloud container bare-metal clusters create USER CLUSTER NAME \ --project= FLEET HOST PROJECT ID \ --admin-cluster-membership= ADMIN CLUSTER NAME \ --admin-cluster-membership-project= FLEET HOST PROJECT ID \ --admin-cluster-membership-location= ADMIN CLUSTER REGION \ --location= REGION \ --version= VERSION \ --admin-users= YOUR EMAIL ADDRESS \ --admin-users= ANOTHER EMAIL ADDRESS \ --enable-manual-lb \ --control-plane-node-configs='node-ip= CP IP ADDRESS 1 ,labels= CP KEY 1.1 = CP VALUE 1.1 ; CP KEY 1.2 = CP VALUE 1.2 ;...' \ --control-plane-vip= CONTROL PLANE VIP \ --control-plane-load-balancer-port= CONTROL PLANE LB PORT \ --ingress-vip= INGRESS VIP \ --island-mode-service-address-cidr-blocks= SERVICE CIDR BLOCK \ --island-mode-pod-address-cidr-blocks= POD CIDR BLOCK \ --lvp-share-path=/mnt/localpv-share \ --lvp-share-storage-class=local-shared \ --lvp-node-mounts-config-path=/mnt/localpv-disk \ --lvp-node-mounts-config-storage-class=local-disks Replace the following: USER CLUSTER NAME : A name of your choice for your user cluster.
+- If there is a problem with the configuration, the console displays an error message that should be clear enough for you to fix the configuration issue and try again to create the cluster. gcloud CLI You use the following command to create a user cluster: gcloud container bare-metal clusters create After creating the cluster, you need to create at least one node pool using the following command: gcloud container bare-metal node-pools create Most of the flags for creating the cluster and the node pool correspond to the fields in the user cluster configuration file .
+- Get a list of available versions to install on the user cluster: gcloud container bare-metal clusters query-version-config \ --admin-cluster-membership= ADMIN CLUSTER NAME \ --admin-cluster-membership-project= FLEET HOST PROJECT ID \ --admin-cluster-membership-location= ADMIN CLUSTER REGION \ --location= REGION Replace the following: ADMIN CLUSTER NAME : The name of the admin cluster.
 

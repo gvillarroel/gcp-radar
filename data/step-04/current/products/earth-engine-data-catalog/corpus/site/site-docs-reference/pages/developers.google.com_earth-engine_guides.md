@@ -4,7 +4,7 @@ url: https://developers.google.com/earth-engine/guides
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://developers.google.com/earth-engine/guides/getstarted
+entrypoint: https://developers.google.com/earth-engine/apidocs
 source_metadata:
   url: https://developers.google.com/earth-engine/guides
   title: "About Google Earth Engine \_|\_ Google for Developers"

@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.748Z"
+generated_at: "2026-04-15T00:42:40.878Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Build triggers with VPC Service Controls"
 feature_slug: "build-triggers-with-vpc-service-controls"
 latest_feature_date: "2021-09-01"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts"
   - "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run"
-  - "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection"
 keywords:
-  - "build"
-  - "triggers"
-  - "with"
-  - "vpc"
-  - "controls"
-  - "can"
-  - "run"
+  - "perimeters"
   - "inside"
+  - "controls"
+  - "triggers"
 ---
 
 # Build triggers with VPC Service Controls
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +34,13 @@ Cloud Build build triggers can run inside VPC Service Controls perimeters.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts](https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts)
 - [https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run](https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run)
-- [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection)
 
 ## Supporting Pages
 
@@ -52,40 +48,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts](https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts)
 - Source ID: `site-docs-root`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 73
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Create a build trigger with the config file created in the previous step: Open the Triggers page: Go to the Triggers page Click Create Trigger .
 - Continuous deployment You can automate the deployment of your software to Cloud Run by creating Cloud Build triggers.
-- To automate your deployment: In your repository root, add a config file named cloudbuild.yaml with steps to build the image, push the image to Artifact Registry, and then invoke the gcloud run deploy command: steps : Build the image - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' , '.' ] Push the image to Artifact Registry - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' ] Deploy image to Cloud Run - name : 'gcr.io/google.com/cloudsdktool/cloud-sdk' entrypoint : gcloud args : - 'run' - 'deploy' - ' SERVICE NAME ' - '--image' - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' - '--region' - ' SERVICE REGION ' images : - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' Where: REPOSITORY is the name of the Artifact Registry repository from where you deploy your image.
-- Navigate to your project root directory and run the following command, where LOCATION is one of the supported build regions to run the build: gcloud builds submit -- region = LOCATION After successful completion, a success message is displayed along with the URL of the deployed service.
-- Home Documentation Application development Cloud Build Guides Send feedback Deploying to Cloud Run using Cloud Build Stay organized with collections Save and categorize content based on your preferences.
+- If you're using VPC Service Controls, then set up a private pool in the VPC Service Controls perimeter .
+- For more information on creating Cloud Build triggers, see Creating and managing build triggers .
 
 ### Deploying to Cloud Run using Cloud Build \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run](https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run)
 - Source ID: `site-docs-root`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 73
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Create a build trigger with the config file created in the previous step: Open the Triggers page: Go to the Triggers page Click Create Trigger .
 - Continuous deployment You can automate the deployment of your software to Cloud Run by creating Cloud Build triggers.
-- To automate your deployment: In your repository root, add a config file named cloudbuild.yaml with steps to build the image, push the image to Artifact Registry, and then invoke the gcloud run deploy command: steps : Build the image - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' , '.' ] Push the image to Artifact Registry - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' ] Deploy image to Cloud Run - name : 'gcr.io/google.com/cloudsdktool/cloud-sdk' entrypoint : gcloud args : - 'run' - 'deploy' - ' SERVICE NAME ' - '--image' - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' - '--region' - ' SERVICE REGION ' images : - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' Where: REPOSITORY is the name of the Artifact Registry repository from where you deploy your image.
-- Navigate to your project root directory and run the following command, where LOCATION is one of the supported build regions to run the build: gcloud builds submit -- region = LOCATION After successful completion, a success message is displayed along with the URL of the deployed service.
-- Home Documentation Application development Cloud Build Guides Send feedback Deploying to Cloud Run using Cloud Build Stay organized with collections Save and categorize content based on your preferences.
+- If you're using VPC Service Controls, then set up a private pool in the VPC Service Controls perimeter .
+- For more information on creating Cloud Build triggers, see Creating and managing build triggers .
 
-### Create and manage build triggers \_|\_ Cloud Build \_|\_ Google Cloud Documentation
+### "Class CloudBuildClient.ListBuildTriggersFixedSizeCollection (3.90.0) \_\
 
-- URL: [https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers](https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers)
-- Source ID: `site-docs-root-2`
-- Final score: 182
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection)
+- Source ID: `site-java-reference`
+- Final score: 69
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- If you're using GitHub pull request triggers, any user with read access to the repository can submit a pull request, which may execute a build that includes changes to the code in the pull request.
-- To create a trigger if your source code is in GitHub : gcloud builds triggers create github \ -- name = TRIGGER NAME \ -- region = REGION \ -- repo - name = REPO NAME \ -- repo - owner = REPO OWNER \ -- branch - pattern = BRANCH PATTERN \ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \ -- service - account = SERVICE ACCOUNT \ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger.
-- Keep in mind the following security implications when using build triggers: A user with no access to your Cloud project, but with write access to the repository associated with build triggers in the project will have permissions to change the code being built.
-- Home Documentation Application development Cloud Build Guides Send feedback Create and manage build triggers Stay organized with collections Save and categorize content based on your preferences.
+- ListBuildTriggersFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > CloudBuildClient.ListBuildTriggersFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<CloudBuildClient.ListBuildTriggersPage> pages, int collectionSize) protected CloudBuildClient .
+- ListBuildTriggersPage > pages , int collectionSize ) Parameters Name Description pages List < ListBuildTriggersPage > collectionSize int Returns Type Description CloudBuildClient.ListBuildTriggersFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Developer tools Java Client libraries Send feedback Class CloudBuildClient.ListBuildTriggersFixedSizeCollection (3.90.0) Stay organized with collections Save and categorize content based on your preferences.
+- ListBuildTriggersFixedSizeCollection extends AbstractFixedSizeCollection<ListBuildTriggersRequest , ListBuildTriggersResponse , BuildTrigger , CloudBuildClient .
 

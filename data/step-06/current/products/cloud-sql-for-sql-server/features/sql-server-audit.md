@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:58:32.880Z"
+generated_at: "2026-04-15T11:57:14.571Z"
 product_name: "Cloud SQL for SQL Server"
 product_slug: "cloud-sql-for-sql-server"
 feature_name: "SQL Server Audit"
 feature_slug: "sql-server-audit"
 latest_feature_date: "2022-06-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging"
   - "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups"
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
 keywords:
   - "sql"
   - "server"
   - "audit"
   - "tracks"
-  - "and"
   - "logs"
   - "level"
   - "database"
+  - "events"
 ---
 
 # SQL Server Audit
 
 Product: Cloud SQL for SQL Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,37 +38,37 @@ SQL Server Audit support tracks and logs server-level and database-level events 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging](https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging)
 - [https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups](https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups)
-- [https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases](https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics](https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics)
 
 ## Supporting Pages
 
 ### Cloud SQL for SQL Server audit logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging](https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging)
-- Source ID: `site-iam-reference`
-- Final score: 240
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-required-4`
+- Final score: 165
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Permission type Methods ADMIN READ cloudsql.backupRuns.get cloudsql.backupRuns.list cloudsql.backups.list cloudsql.instances.get (LRO) cloudsql.instances.list cloudsql.instances.listServerCas cloudsql.operations.get cloudsql.operations.list cloudsql.sslCerts.get cloudsql.sslCerts.list ADMIN WRITE cloudsql.backupRuns.create (LRO) cloudsql.backupRuns.delete (LRO) cloudsql.backups.create (LRO) cloudsql.backups.delete (LRO) cloudsql.backups.update (LRO) cloudsql.instances.addServerCa (LRO) cloudsql.instances.clone (LRO) cloudsql.instances.connect cloudsql.instances.create (LRO) cloudsql.instances.delete (LRO) cloudsql.instances.demoteMaster (LRO) cloudsql.instances.failover (LRO) cloudsql.instances.migrate (LRO) cloudsql.instances.promoteReplica (LRO) cloudsql.instances.reencrypt (LRO) cloudsql.instances.resetSslConfig (LRO) cloudsql.instances.restart (LRO) cloudsql.instances.restoreBackup (LRO) cloudsql.instances.rotateServerCa (LRO) cloudsql.instances.startReplica (LRO) cloudsql.instances.stopReplica (LRO) cloudsql.instances.truncateLog (LRO) cloudsql.instances.update (LRO) cloudsql.sslCerts.create (LRO) cloudsql.sslCerts.delete (LRO) DATA READ cloudsql.databases.get cloudsql.databases.list cloudsql.instances.export (LRO) cloudsql.users.get cloudsql.users.list DATA WRITE cloudsql.databases.create (LRO) cloudsql.databases.delete (LRO) cloudsql.databases.update (LRO) cloudsql.instances.executeSql cloudsql.instances.import (LRO) cloudsql.instances.login cloudsql.users.create (LRO) cloudsql.users.delete (LRO) cloudsql.users.update (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud SQL. cloudsql.backupRuns The following audit logs are associated with methods belonging to cloudsql.backupRuns . create Method : cloudsql.backupRuns.create Audit log type : Admin activity Permissions : cloudsql.backupRuns.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.backupRuns.create" delete Method : cloudsql.backupRuns.delete Audit log type : Admin activity Permissions : cloudsql.backupRuns.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.backupRuns.delete" get Method : cloudsql.backupRuns.get Audit log type : Data access Permissions : cloudsql.backupRuns.get - ADMIN READ Method is a long-running or streaming operation : No.
 - Filter for this method : protoPayload.methodName="cloudsql.databases.list" update Method : cloudsql.databases.update Audit log type : Data access Permissions : cloudsql.databases.update - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.databases.update" cloudsql.instances The following audit logs are associated with methods belonging to cloudsql.instances . addServerCa Method : cloudsql.instances.addServerCa Audit log type : Admin activity Permissions : cloudsql.instances.addServerCa - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.addServerCa" clone Method : cloudsql.instances.clone Audit log type : Admin activity Permissions : cloudsql.instances.clone - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.clone" connect Method : cloudsql.instances.connect Audit log type : Admin activity Permissions : cloudsql.instances.connect - ADMIN WRITE Method is a long-running or streaming operation : No.
-- Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Cloud SQL for SQL Server audit logging Stay organized with collections Save and categorize content based on your preferences.
 - Filter for this method : protoPayload.methodName="cloudsql.instances.query" reencrypt Method : cloudsql.instances.reencrypt Audit log type : Admin activity Permissions : cloudsql.instances.reencrypt - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.reencrypt" resetSslConfig Method : cloudsql.instances.resetSslConfig Audit log type : Admin activity Permissions : cloudsql.instances.resetSslConfig - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.resetSslConfig" restart Method : cloudsql.instances.restart Audit log type : Admin activity Permissions : cloudsql.instances.restart - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.restart" restoreBackup Method : cloudsql.instances.restoreBackup Audit log type : Admin activity Permissions : cloudsql.instances.restoreBackup - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.restoreBackup" rotateServerCa Method : cloudsql.instances.rotateServerCa Audit log type : Admin activity Permissions : cloudsql.instances.rotateServerCa - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.rotateServerCa" startReplica Method : cloudsql.instances.startReplica Audit log type : Admin activity Permissions : cloudsql.instances.startReplica - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.startReplica" stopReplica Method : cloudsql.instances.stopReplica Audit log type : Admin activity Permissions : cloudsql.instances.stopReplica - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.stopReplica" truncateLog Method : cloudsql.instances.truncateLog Audit log type : Admin activity Permissions : cloudsql.instances.truncateLog - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.truncateLog" update Method : cloudsql.instances.update Audit log type : Admin activity Permissions : cloudsql.instances.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.update" cloudsql.operations The following audit logs are associated with methods belonging to cloudsql.operations . get Method : cloudsql.operations.get Audit log type : Data access Permissions : cloudsql.instances.get - ADMIN READ Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="cloudsql.backups.list" update Method : cloudsql.backups.update Audit log type : Admin activity Permissions : cloudsql.backupRuns.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.backups.update" cloudsql.databases The following audit logs are associated with methods belonging to cloudsql.databases . create Method : cloudsql.databases.create Audit log type : Data access Permissions : cloudsql.databases.create - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.databases.create" delete Method : cloudsql.databases.delete Audit log type : Data access Permissions : cloudsql.databases.delete - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.databases.delete" get Method : cloudsql.databases.get Audit log type : Data access Permissions : cloudsql.databases.get - DATA READ Method is a long-running or streaming operation : No.
 
 ### "View audit logs for automated backups \_|\_ Cloud SQL for SQL Server \_\
 
 - URL: [https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups](https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups)
-- Source ID: `site-iam-reference`
-- Final score: 234
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-required-4`
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation Databases Cloud SQL SQL Server Guides Send feedback View audit logs for automated backups Stay organized with collections Save and categorize content based on your preferences.
@@ -76,17 +76,17 @@ Evidence snippets:
 - HTTP method and URL: POST https://logging.googleapis.com/v2/entries:list Request JSON body: { "resourceNames": [ "projects/ PROJECT ID " ], "pageSize": 5, "filter": "logName=projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event AND protoPayload.methodName = cloudsql.instances.automatedBackup AND resource.type=cloudsql database", "orderBy": "timestamp desc" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 - Click the metadata field. gcloud To filter for audit logs for automated backups of Cloud SQL instances, run the following query: gcloud logging read \ "logName=projects/ PROJECT NAME /logs/cloudaudit.googleapis.com%2Fsystem event AND protoPayload.methodName=cloudsql.instances.automatedBackup AND resource.type=cloudsql database" \ --project = PROJECT NAME Replace PROJECT NAME with your Google Cloud project's name.
 
-### "Create and manage databases \_|\_ Cloud SQL for SQL Server \_|\_ Google\
+### Cloud SQL metrics \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases](https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-databases)
-- Source ID: `site-docs-root`
-- Final score: 216
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics](https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics)
+- Source ID: `site-api-reference`
+- Final score: 119
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID database-name : The name of a database inside the Cloud SQL instance HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /databases Request JSON body: { "project": " project-id ", "instance": " instance-id ", "name": " database-name " } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
-- Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID database-name : The name of a database inside the Cloud SQL instance HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /databases Request JSON body: { "project": " project-id ", "instance": " instance-id ", "name": " database-name " } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
-- Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID database-name : The name of a database inside the Cloud SQL instance HTTP method and URL: DELETE https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /databases/ database-name To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
-- Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID database-name : The name of a database inside the Cloud SQL instance HTTP method and URL: DELETE https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /databases/ database-name To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- GAUGE , INT64 , By cloudsql database Tracks the size in bytes of stored SQLServer XEvents files on an instance.
+- GAUGE , INT64 , By cloudsql database Tracks the size in bytes of stored SQLServer audit files on an instance.
+- After sampling, data is not visible for up to 165 seconds. upload status : Upload status of latest audit file. database/sqlserver/connections/connection reset count GA (project) Connection resets DELTA , INT64 , 1 cloudsql database Total number of logins started from the connection pool since the last restart of SQL Server service.
+- After sampling, data is not visible for up to 165 seconds. state : State of replication:"Running" - Replication is active and running;"Stopped" - Replication is inactive and stopped;"Error" - There is an error happening and replication is stopped. database/sqlserver/audits size GA (project) Size of stored audit files.
 

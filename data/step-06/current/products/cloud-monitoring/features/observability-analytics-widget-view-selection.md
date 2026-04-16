@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.084Z"
+generated_at: "2026-04-15T00:01:13.791Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Observability Analytics widget view selection"
 feature_slug: "observability-analytics-widget-view-selection"
 latest_feature_date: "2025-02-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
   - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
-  - "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+  - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
 keywords:
   - "observability"
   - "analytics"
@@ -19,14 +19,14 @@ keywords:
   - "view"
   - "selection"
   - "widgets"
-  - "on"
   - "custom"
+  - "dashboards"
 ---
 
 # Observability Analytics widget view selection
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ Observability Analytics widgets on custom dashboards can query additional log vi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
 - [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
-- [https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring](https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
+- [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 200
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- February 20, 2025 Feature When you add an Observability Analytics widget to a custom Cloud Monitoring dashboard, you can now select other log views and analytics views to query in the Views & Schema section.
-- To learn more, see the following: Application Monitoring overview View application telemetry Find and explore traces Telemetry (OTLP) API overview June 02, 2025 Feature You can now add treemap widgets to your custom dashboards.
-- December 18, 2023 Feature On your custom dashboards, you can group widgets into a single-view widget or into a collapsible group.
-- November 03, 2022 Feature You can now add table widgets to custom dashboards that let you limit the number of table rows, persiste specific columns, display only those rows with the highest, or lowest values, and that display a visual indicator of the value as compared to the range of possible values.
 
 ### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
-- Source ID: `site-docs-reference`
-- Final score: 196
+- Source ID: `site-docs-reference-2`
+- Final score: 163
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - This is the project that you use to view your application's telemetry data: To get the permissions that you need to view log and metric data, and to create alerting policies and customize dashboards, ask your administrator to grant you the following IAM roles: Logs Viewer ( roles/logging.viewer ) on your App Hub host project or management project and any other projects listed in its default log scope.
 - Home Documentation Observability Cloud Monitoring Guides Send feedback View application telemetry Stay organized with collections Save and categorize content based on your preferences.
-- To save the chart or logs panel to a custom dashboard, open the widget's Actions menu, select Save to dashboard , and then complete the dialog.
-- Filter a dashboard You can add filters to a dashboard that apply to all widgets on the dashboard.
+- View topology To see a dynamic view of your application's services and dashboards, incidents, and traffic, on the dashboard for the application, select the Topology tab.
+- View aggregated telemetry To view log, metric, trace, and incidents information for your application, on the dashboard for the application, select the Dashboards tab.
 
-### "Set up Google Cloud Observability for Application Monitoring \_|\_ Google\
+### Cloud Monitoring overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring](https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring)
+- URL: [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
 - Source ID: `site-docs-reference`
-- Final score: 152
+- Final score: 135
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Only configure scopes To get the permissions that you need to configure the observability scope, ask your administrator to grant you the following IAM roles: Observability Editor ( roles/observability.editor ) on your App Hub host project or management project Logs Configuration Writer ( roles/logging.configWriter ) on your App Hub host project or management project Monitoring admin ( roles/monitoring.admin ) on your App Hub host project or management project and on each project that you want to add to the metrics scope Cloud Trace User ( roles/cloudtrace.user ) on your App Hub host project or management project App Hub viewer ( roles/apphub.viewer ) on your App Hub host project or management project For more information about granting roles, see Manage access to projects, folders, and organizations .
-- To view all of the telemetry generated by your application through a single interface, such as through the dashboards that Application Monitoring provides, you must configure Google Cloud Observability.
-- Configure and set the default trace scope Do the following: For each project that will store your application's trace data, we recommend that you enable the Observability API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.
-- Configure the metrics scope Make sure that the metrics scope for your App Hub host project or management project lists all projects that store your application's metric data: For app-enabled folders, Google Cloud Observability attempts to synchronize the list of projects in your app-enabled folder with the list of projects in the metrics scope.
+- Home Documentation Observability Cloud Monitoring Guides Send feedback Cloud Monitoring overview Stay organized with collections Save and categorize content based on your preferences.
+- To complete these tasks, you can use the dashboard and charting services: To control what data you view and the display format for that data, create a custom dashboard .
+- Your custom dashboards can display the following.
+- Query languages for Cloud Monitoring When you create an alerting policy or a chart, you must provide a query that describes the data that you want to monitor or chart: Google Cloud console: You can build your query by making selections from menus, or you can write a query.
+
+### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
+- Source ID: `site-docs-reference`
+- Final score: 124
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Unused billable metrics represent possible observability gaps that might be filled by creating custom dashboards or alerting policies, or opportunities to reduce costs by excluding the metric entirely.
+- To view alerting policies or custom dashboards for a metric in your metrics scope but defined in a different project, use the project picker to select the Google Cloud project that stores the metric.
+- You can use the Metrics Management page to do the following: View metric usage at a glance : See how your metrics are being used in queries , custom dashboards , or alerting policies .
+- To view custom dashboards for a metric in your metrics scope but defined in a different project, use the project picker to select the Google Cloud project that stores the metric.
 

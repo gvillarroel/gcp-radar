@@ -1,92 +1,90 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.942Z"
+generated_at: "2026-04-15T12:48:36.917Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
-feature_name: "BigQuery public datasets"
+feature_name: "BigQuery Public Datasets"
 feature_slug: "bigquery-public-datasets"
 latest_feature_date: "2016-03-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console"
-  - "https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui"
-  - "https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries"
+  - "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+  - "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
 keywords:
-  - "public dataset browsing"
-  - "Cloud Console public datasets"
-  - "public datasets project"
-  - "Google Cloud public data"
-  - "BigQuery Public Datasets"
-  - "bigquery-public-data"
-  - "Public BigQuery data"
-  - "Public Datasets"
+  - "bigquery"
+  - "public"
+  - "datasets"
+  - "provides"
+  - "access"
+  - "shared"
+  - "can"
+  - "queried"
 ---
 
-# BigQuery public datasets
+# BigQuery Public Datasets
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-BigQuery announced the availability of BigQuery Public Datasets.
+BigQuery Public Datasets provides access to shared public datasets that can be queried directly in BigQuery.
 
 ## Extended Definition
 
-BigQuery announced the availability of BigQuery Public Datasets.
+BigQuery Public Datasets provides access to shared public datasets that can be queried directly in BigQuery.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console](https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console)
-- [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui)
-- [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries)
+- [https://docs.cloud.google.com/bigquery/docs/visualize-jupyter](https://docs.cloud.google.com/bigquery/docs/visualize-jupyter)
+- [https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui](https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
 
 ## Supporting Pages
 
-### Try BigQuery using the sandbox \_|\_ Google Cloud Documentation
+### "Visualize geospatial analytics data using a Colab notebook \_|\_ BigQuery\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console](https://docs.cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console)
+- URL: [https://docs.cloud.google.com/bigquery/docs/visualize-jupyter](https://docs.cloud.google.com/bigquery/docs/visualize-jupyter)
 - Source ID: `site-docs-root`
-- Final score: 54
+- Final score: 170
 - Re-rank relevance: MODERATE
-- Re-rank rationale: The page explains that users can try BigQuery by querying public datasets and references the Google Cloud Public Dataset Program.
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The BigQuery sandbox does not support several BigQuery features, including the following: Streaming data Data manipulation language (DML) statements BigQuery Data Transfer Service View a public dataset BigQuery public datasets are available by default in BigQuery Studio in a project named bigquery-public-data .
-- Google Cloud offers public datasets that are stored in BigQuery and made available to the general public through the Google Cloud Public Dataset Program .
-- For more information about working with public datasets, see BigQuery public datasets .
-- In the query editor , enter the following query: SELECT start station name , start station latitude , start station longitude , ST GEOGPOINT ( start station longitude , start station latitude ) AS geo location , COUNT ( ) AS num trips FROM bigquery-public-data.new york.citibike trips GROUP BY 1 , 2 , 3 ORDER BY num trips DESC LIMIT 100 ; If the query is valid, then a check mark appears along with the amount of data that the query processes.
+- This tutorial uses the following BigQuery public datasets : San Francisco Ford GoBike Share San Francisco Neighborhoods San Francisco Police Department (SFPD) Reports For information on accessing these public datasets, see Access public datasets in the Google Cloud console .
+- This code uses the %%bigquery magic function to run the query and return the results in a DataFrame: Query the neighborhood name and geometry from the San Francisco neighborhoods dataset. %% bigquery gdf sanfrancisco neighborhoods -- project { GCP PROJECT ID } -- use geodataframe geometry SELECT neighborhood , neighborhood geom AS geometry FROM bigquery - public - data . san francisco neighborhoods . boundaries Click play circle filled Run cell .
+- You use the public datasets to create the following visualizations: A scatter plot of all bike share stations from the Ford GoBike Share dataset Polygons in the San Francisco Neighborhoods dataset A choropleth map of the number of bike share stations by neighborhood A heatmap of incidents from the San Francisco Police Department Reports dataset Objectives Set up authentication with Google Cloud and, optionally, Google Maps.
+- They are decomposed components of the geometry. %% bigquery gdf sf bikestations -- project { GCP PROJECT ID } -- use geodataframe station geom SELECT station id , name , short name , station geom FROM bigquery - public - data . san francisco bikeshare . bikeshare station info Click play circle filled Run cell .
 
-### Try BigQuery using the sandbox \_|\_ Google Cloud Documentation
+### Explore BigQuery in the Google Cloud console \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui)
-- Source ID: `site-docs-root-2`
-- Final score: 54
-- Re-rank relevance: MODERATE
-- Re-rank rationale: The page refers to Google Cloud Public Dataset Program and using a public dataset in the sandbox, which provides supporting context for public dataset availability.
-
-Evidence snippets:
-- The BigQuery sandbox does not support several BigQuery features, including the following: Streaming data Data manipulation language (DML) statements BigQuery Data Transfer Service View a public dataset BigQuery public datasets are available by default in BigQuery Studio in a project named bigquery-public-data .
-- Google Cloud offers public datasets that are stored in BigQuery and made available to the general public through the Google Cloud Public Dataset Program .
-- For more information about working with public datasets, see BigQuery public datasets .
-- In the query editor , enter the following query: SELECT start station name , start station latitude , start station longitude , ST GEOGPOINT ( start station longitude , start station latitude ) AS geo location , COUNT ( ) AS num trips FROM bigquery-public-data.new york.citibike trips GROUP BY 1 , 2 , 3 ORDER BY num trips DESC LIMIT 100 ; If the query is valid, then a check mark appears along with the amount of data that the query processes.
-
-### "Query a public dataset with the BigQuery client libraries \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries](https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries)
-- Source ID: `site-docs-root`
-- Final score: 44
-- Re-rank relevance: MODERATE
-- Re-rank rationale: The page directly demonstrates querying a public dataset with client libraries, which is useful context for how BigQuery public datasets are accessed.
+- URL: [https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui](https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui)
+- Source ID: `site-docs-reference-5`
+- Final score: 138
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Learn more about BigQuery public datasets .
-- String projectId = "MY PROJECT ID" ; simpleApp ( projectId ); } public static void simpleApp ( String projectId ) { try { BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); QueryJobConfiguration queryConfig = QueryJobConfiguration . newBuilder ( "SELECT CONCAT('https://stackoverflow.com/questions/', " + "CAST(id as STRING)) as url, view count " + "FROM bigquery-public-data.stackoverflow.posts questions " + "WHERE tags like '%google-bigquery%' " + "ORDER BY view count DESC " + "LIMIT 10" ) // Use standard SQL syntax for queries. // See: https://cloud.google.com/bigquery/sql-reference/ . setUseLegacySql ( false ) . build (); JobId jobId = JobId . newBuilder (). setProject ( projectId ). build (); Job queryJob = bigquery . create ( JobInfo . newBuilder ( queryConfig ). setJobId ( jobId ). build ()); // Wait for the query to complete. queryJob = queryJob . waitFor (); // Check for errors if ( queryJob == null ) { throw new RuntimeException ( "Job no longer exists" ); } else if ( queryJob . getStatus (). getExecutionErrors () != null && queryJob . getStatus (). getExecutionErrors (). size () > 0 ) { // TODO(developer): Handle errors here.
-- To create a query against the bigquery-public-data.stackoverflow dataset that returns the top 10 most viewed Stack Overflow pages and their view counts, copy the following code into the app.js file: // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); async function queryStackOverflow () { // Queries a public Stack Overflow dataset. // Create a client const bigqueryClient = new BigQuery (); // The SQL query to run const sqlQuery = SELECT CONCAT( 'https://stackoverflow.com/questions/', CAST(id as STRING)) as url, view count FROM \bigquery-public-data.stackoverflow.posts questions\ WHERE tags like '%google-bigquery%' ORDER BY view count DESC LIMIT 10 ; const options = { query : sqlQuery , // Location must match that of the dataset(s) referenced in the query. location : 'US' , }; // Run the query const [ rows ] = await bigqueryClient . query ( options ); console . log ( 'Query Results:' ); rows . forEach ( row = > { const url = row [ 'url' ]; const viewCount = row [ 'view count' ]; console . log ( url: ${ url } , ${ viewCount } views ); }); } queryStackOverflow (); Click Open Terminal .
-- To create a query against the bigquery-public-data.stackoverflow dataset that returns the top 10 most viewed Stack Overflow pages and their view counts, copy the following code into the app.php file: < ?php ... require DIR . '/vendor/autoload.php'; use Google\Cloud\BigQuery\BigQueryClient; $bigQuery = new BigQueryClient(); $query = <<<ENDSQL SELECT CONCAT( 'https://stackoverflow.com/questions/', CAST(id as STRING)) as url, view count FROM bigquery-public-data.stackoverflow.posts questions WHERE tags like '%google-bigquery%' ORDER BY view count DESC LIMIT 10; ENDSQL; $queryJobConfig = $bigQuery->query($query); $queryResults = $bigQuery->runQuery($queryJobConfig); if ($queryResults->isComplete()) { $i = 0; $rows = $queryResults->rows(); foreach ($rows as $row) { printf('--- Row %s ---' .
+- BigQuery public datasets are stored in BigQuery and made available to the general public through the Google Cloud Public Dataset Program.
+- Go to the bigquery-public-data project, click arrow right Toggle node to expand it, and then click Datasets .
+- After you select a data source, you can do the following based on the capabilities available for your data source: Set up BigQuery table over external data ( federation ) : enables BigQuery to access external data without ingesting it into BigQuery.
+- Explore the Studio page The Studio page BigQuery is the central point for viewing your BigQuery resources and for performing common tasks such as creating datasets and creating and running notebooks.
+
+### "Data definition language (DDL) statements in GoogleSQL \_|\_ BigQuery \_\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- Source ID: `site-docs-reference`
+- Final score: 132
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can use DDL commands to create, alter, and delete resources, such as the following: Datasets Tables Table schemas Table clones Table snapshots Views Connections User-defined functions (UDFs) Indexes Capacity commitments and reservations Row-level access policies Default configuration settings Required permissions To create a job that runs a DDL statement, you must have the bigquery.jobs.create permission for the project where you are running the job.
+- For more information, see Set up authentication for client libraries . // Import the Google Cloud client library and create a client const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function ddlCreateView () { // Creates a view via a DDL query / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = "my project" // const datasetId = "my dataset" // const tableId = "my new view" const query = CREATE VIEW \ ${ projectId } . ${ datasetId } . ${ tableId } \ OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name="new view", description="a view that expires in 2 days", labels=[("org unit", "development")] ) AS SELECT name, state, year, number FROM \bigquery-public-data.usa names.usa 1910 current\ WHERE state LIKE 'W%' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query const options = { query : query , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); job . on ( 'complete' , metadata = > { console . log ( Created new view ${ tableId } via job ${ metadata . id } ); }); } Python Call the Client.query() method to start a query job.
+- The table schema contains 2 columns: transaction id: An integer transaction date: A date The table option list specifies the: Partition expiration: Three days Description: A table partitioned by transaction date Creating a partitioned table from the result of a query The following example creates a partitioned table named days with rain in mydataset using a DATE column: CREATE TABLE mydataset . days with rain PARTITION BY date OPTIONS ( partition expiration days = 365 , description = "weather stations with precipitation, partitioned by day" ) AS SELECT DATE ( CAST ( year AS INT64 ), CAST ( mo AS INT64 ), CAST ( da AS INT64 )) AS date , ( SELECT ANY VALUE ( name ) FROM bigquery-public-data.noaa gsod.stations AS stations WHERE stations . usaf = stn ) AS station name , -- Stations can have multiple names prcp FROM bigquery-public-data.noaa gsod.gsod2017 AS weather WHERE prcp != 99.9 -- Filter unknown values AND prcp > 0 -- Filter stations/days with no precipitation If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table .
+- Examples The following table function takes an INT64 parameter that is used to filter the results of a query: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example specifies the return TABLE type in the RETURNS clause: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) RETURNS TABLE<name STRING , year INT64 , total INT64 > AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example computes total sales for items with the name item name from the orders table: CREATE TABLE FUNCTION mydataset . compute sales ( orders TABLE<item STRING , sales INT64 > , item name STRING ) AS ( SELECT SUM ( sales ) AS total sales , item FROM orders WHERE item = item name GROUP BY item ); CREATE PROCEDURE statement Creates a new procedure , which is a block of statements that can be called from other queries.
 

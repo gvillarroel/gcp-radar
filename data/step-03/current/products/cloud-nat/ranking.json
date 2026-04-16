@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:50:50.968Z",
+  "generated_at": "2026-04-12T21:39:31.191Z",
   "product_name": "Cloud NAT",
   "product_slug": "cloud-nat",
   "step02_source_path": "data/step-02/current/cloud-nat.md",
@@ -8,6 +8,124 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 15,
+    "source_row_count": 28,
+    "top_phrases": [
+      "cloud nat provides managed network address translation for outbound connectivity from private resources",
+      "private nat lets cloud run use supported private network address translation resources",
+      "cloud nat provides monitoring capabilities for observing service behavior and usage",
+      "hybrid nat provides network address translation for hybrid connectivity scenarios",
+      "cloud nat supports organization policy constraints for governance control",
+      "cloud nat gateways can enable or disable endpoint independent mapping",
+      "public nat gateways support ipv6 to ipv4 network address translation",
+      "cloud nat can dynamically allocate ports for translations",
+      "cloud nat provides logging for nat traffic and operations",
+      "cloud nat supports standard tier egress traffic",
+      "cloud nat supports inter vpc communications",
+      "hybrid nat for cloud interconnect",
+      "organization policy constraints",
+      "standard tier egress support",
+      "private nat for cloud run",
+      "dynamic port allocation",
+      "nat ip address draining",
+      "cloud nat monitoring",
+      "nat64 in public nat",
+      "cloud nat logging",
+      "cloud nat rules",
+      "cloud nat rules define how cloud nat traffic is translated and support source nat based on destination address",
+      "cloud nat rules define how cloud nat traffic is translated and used for internet connectivity",
+      "cloud nat can drain nat ip addresses to transition traffic away from selected addresses",
+      "public nat gateways support source based nat rules for ipv4 addresses",
+      "hybrid nat supports traffic over cloud interconnect",
+      "source based nat rules for public nat ipv4",
+      "endpoint independent mapping control",
+      "based nat rules for public nat ipv4",
+      "inter vpc communications support",
+      "independent mapping control",
+      "vpc communications support"
+    ],
+    "top_tokens": [
+      "nat",
+      "cloud",
+      "for",
+      "address",
+      "support",
+      "traffic",
+      "network",
+      "provides",
+      "supports",
+      "translation",
+      "and",
+      "can",
+      "connectivity",
+      "gateways",
+      "addresses",
+      "based",
+      "control",
+      "from",
+      "hybrid",
+      "ipv4",
+      "private",
+      "public",
+      "resources",
+      "rules",
+      "source",
+      "allocate",
+      "allocation",
+      "away",
+      "behavior",
+      "capabilities",
+      "communications",
+      "constraints",
+      "define",
+      "destination",
+      "disable",
+      "drain",
+      "draining",
+      "dynamic",
+      "dynamically",
+      "egress",
+      "enable",
+      "endpoint",
+      "governance",
+      "how",
+      "independent",
+      "inter",
+      "interconnect",
+      "internet",
+      "ipv6",
+      "lets",
+      "logging",
+      "managed",
+      "mapping",
+      "monitoring",
+      "nat64",
+      "observing",
+      "operations",
+      "organization",
+      "outbound",
+      "over",
+      "policy",
+      "port",
+      "ports",
+      "run",
+      "scenarios",
+      "selected",
+      "service",
+      "standard",
+      "supported",
+      "tier",
+      "transition",
+      "translated",
+      "translations",
+      "usage",
+      "use",
+      "used",
+      "vpc"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "nat",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
@@ -58,7 +176,7 @@
         },
         {
           "title": "Private Service Connect - Using PSC Backends to Access a Producer Service | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/cloudnet-l7psc-xlb-gcp?hl=en&authuser=2",
+          "url": "https://codelabs.developers.google.com/cloudnet-l7psc-xlb-gcp?authuser=2",
           "description": "gcloud compute networks subnets ... used for PSC services. You are not able to deploy workloads into this subnet. <strong>A Cloud NAT is required to install the proper packages for our producer services</strong>....",
           "rank": 6
         },
@@ -75,6 +193,20 @@
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud NAT\" \"cloud nat provides managed network address translation for outbound connectivity from private resources\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud NAT\" \"hybrid nat provides network address translation for hybrid connectivity scenarios\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 1,
@@ -142,7 +274,7 @@
         {
           "title": "Public NAT | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/nat/docs/public-nat",
-          "description": "The existence of an external IP address on an interface always takes precedence and always performs one-to-one NAT, without using Public NAT. An alias IP range assigned to the VM&#x27;s network interface: even if the network interface has an external IP address assigned to it, you can configure a Cloud NAT gateway for Public NAT to provide NAT for packets whose sources come from an alias IP range of the interface.",
+          "description": "For NAT44, Public NAT can provide NAT for outbound packets sent from the following: The VM&#x27;s network interface&#x27;s primary internal IP address, provided that the network interface doesn&#x27;t have an external IP address assigned to it: if the network interface has an external IP address assigned to it, Google Cloud automatically performs one-to-one NAT for packets whose sources match the interface&#x27;s primary internal IP address because the network interface meets the Google Cloud internet access requirements.",
           "rank": 6
         },
         {
@@ -152,9 +284,9 @@
           "rank": 7
         },
         {
-          "title": "Cloud NAT rules | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/nat/docs/nat-rules-overview",
-          "description": "If a packet originates from IP address 10.1.1.2 or IP range 10.2.1.0/24, the VM must use NAT IP address 203.0.113.30 to send traffic to any internet destination. Cloud NAT configuration with two source-based rules (click to enlarge).",
+          "title": "APIs and reference | Cloud NAT | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/nat/docs/apis",
+          "description": "Cloud NAT is configured using new Cloud Router commands and parameters. Existing Cloud Router commands can be found in the Google Cloud CLI interface documentation.",
           "rank": 8
         }
       ]
@@ -241,6 +373,20 @@
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud NAT\" \"private nat lets cloud run use supported private network address translation resources\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud NAT\" \"cloud nat supports organization policy constraints for governance control\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 2,
@@ -389,18 +535,32 @@
           "rank": 6
         },
         {
-          "title": "Using Private Service Connect for Google APIs to Access Gemini over a Hybrid Connection | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/cloudnet-psc-hybridGemini",
-          "description": "In that VPC, an HA-VPN will be configured to the on-prem VPC, which mimics an on-prem environment. The HA-VPN will be configured as a Hybrid Spoke in the NCC hub. In the on-prem VPC, you will create a subnet where a Workbench Instance will be hosted. You&#x27;ll also create a Cloud NAT to be used for downloading packages on the Workbench instance.",
-          "rank": 7
-        },
-        {
           "title": "Private Service Connect Interface | Google Codelabs",
           "url": "https://codelabs.developers.google.com/codelabs/psc-interface",
           "description": "Cloud NAT <strong>enables VMs with private IP addresses to access the internet</strong>.",
+          "rank": 7
+        },
+        {
+          "title": "Using Private Service Connect for Google APIs to Access Gemini over a Hybrid Connection | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/cloudnet-psc-hybridGemini",
+          "description": "In that VPC, an HA-VPN will be configured to the on-prem VPC, which mimics an on-prem environment. The HA-VPN will be configured as a Hybrid Spoke in the NCC hub. In the on-prem VPC, you will create a subnet where a Workbench Instance will be hosted. You&#x27;ll also create a Cloud NAT to be used for downloading packages on the Workbench instance.",
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud NAT\" \"cloud nat provides monitoring capabilities for observing service behavior and usage\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud NAT\" \"cloud nat gateways can enable or disable endpoint independent mapping\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 3,
@@ -472,15 +632,15 @@
           "rank": 5
         },
         {
-          "title": "Cloud NAT rules | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/nat/docs/nat-rules-overview",
-          "description": "The following example shows how you can use source-based NAT rules. By default, when a Cloud NAT gateway is configured for IPv4 traffic in a subnet, the gateway provides NAT for the primary internal IP address and alias IP ranges of any VM instance in that subnet.",
-          "rank": 6
-        },
-        {
           "title": "Public NAT | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/nat/docs/public-nat",
           "description": "The existence of an external IP address on an interface always takes precedence and always performs one-to-one NAT, without using Public NAT. An alias IP range assigned to the VM&#x27;s network interface: even if the network interface has an external IP address assigned to it, you can configure a Cloud NAT gateway for Public NAT to provide NAT for packets whose sources come from an alias IP range of the interface.",
+          "rank": 6
+        },
+        {
+          "title": "Cloud NAT rules | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/nat/docs/nat-rules-overview",
+          "description": "The following example shows how you can use source-based NAT rules. By default, when a Cloud NAT gateway is configured for IPv4 traffic in a subnet, the gateway provides NAT for the primary internal IP address and alias IP ranges of any VM instance in that subnet.",
           "rank": 7
         },
         {
@@ -521,6 +681,21 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "support",
+          "network",
+          "provides",
+          "translation"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -531,6 +706,73 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "support",
+          "network",
+          "provides",
+          "translation"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "APIs and reference | Cloud NAT | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/nat/docs/apis",
+      "description": "Cloud NAT is configured using new Cloud Router commands and parameters. Existing Cloud Router commands can be found in the Google Cloud CLI interface documentation.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud NAT\" \"APIs and reference\"",
+        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "api_reference"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "and",
+          "can"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "and",
+          "can"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -558,6 +800,19 @@
       "best_rank": 5,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "and",
+          "addresses",
+          "private"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -567,49 +822,21 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "and",
+          "addresses",
+          "private"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
       "keep": true
-    },
-    {
-      "title": "Cloud NAT rules | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/nat/docs/nat-rules-overview",
-      "description": "If a packet originates from IP address 10.1.1.2 or IP range 10.2.1.0/24, the VM must use NAT IP address 203.0.113.30 to send traffic to any internet destination. Cloud NAT configuration with two source-based rules (click to enlarge).",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 100,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
     },
     {
       "title": "Cloud NAT overview | Google Cloud Documentation",
@@ -632,6 +859,19 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "network",
+          "and",
+          "define"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -642,6 +882,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "network",
+          "and",
+          "define"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -669,43 +918,21 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "network",
+          "and",
+          "can",
+          "addresses",
+          "public"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Public NAT | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/nat/docs/public-nat",
-      "description": "The existence of an external IP address on an interface always takes precedence and always performs one-to-one NAT, without using Public NAT. An alias IP range assigned to the VM&#x27;s network interface: even if the network interface has an external IP address assigned to it, you can configure a Cloud NAT gateway for Public NAT to provide NAT for packets whose sources come from an alias IP range of the interface.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 100,
-      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -715,7 +942,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "network",
+          "and",
+          "can",
+          "addresses",
+          "public"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -743,6 +981,21 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "network",
+          "translation",
+          "and",
+          "addresses"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -752,7 +1005,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "network",
+          "translation",
+          "and",
+          "addresses"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -760,40 +1024,128 @@
       "keep": false
     },
     {
-      "title": "APIs and reference | Cloud NAT | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/nat/docs/apis",
-      "description": "Stay organized with collections Save and categorize content based on your preferences. This page describes individual resources that can be used with Cloud NAT. <strong>The Cloud NAT APIs and gcloud commands are part of Compute Engine</strong>.",
-      "rank": 1,
+      "title": "Public NAT | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/nat/docs/public-nat",
+      "description": "For NAT44, Public NAT can provide NAT for outbound packets sent from the following: The VM&#x27;s network interface&#x27;s primary internal IP address, provided that the network interface doesn&#x27;t have an external IP address assigned to it: if the network interface has an external IP address assigned to it, Google Cloud automatically performs one-to-one NAT for packets whose sources match the interface&#x27;s primary internal IP address because the network interface meets the Google Cloud internet access requirements.",
+      "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NAT\" \"APIs and reference\"",
+        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "api_reference",
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 100,
+      "product_fit_score": 28,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "network",
+          "can",
+          "from",
+          "public"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "network",
+          "can",
+          "from",
+          "public"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Cloud NAT rules | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/nat/docs/nat-rules-overview",
+      "description": "This page provides an overview of Cloud NAT rules for Public NAT.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
         2,
         3
       ],
-      "best_rank": 1,
+      "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [
+          "cloud nat rules"
+        ],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "provides",
+          "public",
+          "rules"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "product_reference",
+        "classification": "supporting_page",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "cloud nat rules"
+        ],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "provides",
+          "public",
+          "rules"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: cloud nat rules"
       },
       "final_score": 95,
-      "keep": true
+      "keep": false
     },
     {
       "title": "globalAddresses()",
@@ -814,6 +1166,21 @@
       "best_rank": 8,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "network",
+          "and",
+          "gateways",
+          "addresses"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -823,7 +1190,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "network",
+          "and",
+          "gateways",
+          "addresses"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -849,6 +1227,19 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "and",
+          "addresses"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -859,6 +1250,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "and",
+          "addresses"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -882,6 +1282,23 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "cloud nat rules"
+        ],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "traffic",
+          "and",
+          "from",
+          "rules",
+          "source"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -891,9 +1308,22 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "cloud nat rules"
+        ],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "traffic",
+          "and",
+          "from",
+          "rules",
+          "source"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: cloud nat rules"
       },
       "final_score": 90,
       "keep": false
@@ -915,6 +1345,21 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "traffic",
+          "can",
+          "gateways",
+          "addresses"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -924,7 +1369,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "traffic",
+          "can",
+          "gateways",
+          "addresses"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -948,6 +1404,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "network",
+          "and",
+          "connectivity",
+          "addresses"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -957,7 +1428,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "address",
+          "network",
+          "and",
+          "connectivity",
+          "addresses"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -981,6 +1463,18 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "and",
+          "can"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -991,6 +1485,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "and",
+          "can"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1014,6 +1516,19 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "support",
+          "and",
+          "can"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1024,6 +1539,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "for",
+          "support",
+          "and",
+          "can"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1047,16 +1571,42 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "traffic",
+          "network",
+          "and",
+          "can",
+          "control"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "traffic",
+          "network",
+          "and",
+          "can",
+          "control"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1080,6 +1630,21 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 28,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "traffic",
+          "network",
+          "translation",
+          "and",
+          "addresses"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1089,7 +1654,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "nat",
+          "cloud",
+          "address",
+          "traffic",
+          "network",
+          "translation",
+          "and",
+          "addresses"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1115,20 +1691,38 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": -28,
-      "deterministic_score": 58,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "for",
+          "network",
+          "and"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 70,
       "api_score": {
         "classification": "iam_reference",
-        "score": 58,
+        "score": 70,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 3,
+        "parent_page_likelihood": 4,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "for",
+          "network",
+          "and"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 59,
+      "final_score": 70,
       "keep": false
     }
   ]

@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.204Z"
+generated_at: "2026-04-14T09:35:01.934Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Backup and recovery job log reporting in Cloud Logging"
 feature_slug: "backup-and-recovery-job-log-reporting-in-cloud-logging"
 latest_feature_date: "2024-02-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide"
 keywords:
   - "reporting"
-  - "job"
-  - "log"
   - "logging"
   - "recovery"
-  - "backup"
-  - "and"
-  - "in"
+  - "added"
 ---
 
 # Backup and recovery job log reporting in Cloud Logging
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +34,53 @@ Backup and DR Service added comprehensive job reporting access via backup and re
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts](https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide)
 
 ## Supporting Pages
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Backup/recovery appliance event logs \_|\_ Backup and DR \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 218
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events)
+- Source ID: `site-docs-reference`
+- Final score: 100
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature You can now view comprehensive job related reporting data through backup and recovery job logs in Cloud Logging.
-- Security This release fixes the following Kernel vulnerabilities: CRITICAL Kernel issues: CVE-2023-25775 CVE-2019-15505 MEDIUM Kernel issues CVE-2019-13631 CVE-2020-25656 CVE-2020-26555 CVE-2020-36777 CVE-2021-3753 CVE-2021-46909 CVE-2021-46939 CVE-2021-47171 CVE-2022-38096 CVE-2022-48743 CVE-2023-1192 CVE-2023-4133 CVE-2023-5090 CVE-2023-6121 CVE-2023-6176 CVE-2023-6240 CVE-2023-6622 CVE-2023-6915 CVE-2023-24023 CVE-2023-31083 CVE-2023-37453 CVE-2023-38409 CVE-2023-39189 CVE-2023-39192 CVE-2023-39193 CVE-2023-39194 CVE-2023-39198 CVE-2023-42754 CVE-2023-42755 CVE-2023-45863 CVE-2023-52448 CVE-2023-52463 CVE-2023-52471 CVE-2024-0340 CVE-2024-21140 CVE-2024-21145 CVE-2024-25739 CVE-2024-26583 CVE-2024-26584 CVE-2024-26585 CVE-2024-26586 CVE-2024-26602 CVE-2024-26603 CVE-2024-26901 CVE-2024-26908 CVE-2024-27014 CVE-2024-27019 CVE-2024-36270 CVE-2024-36489 CVE-2024-38598 CVE-2024-39472 CVE-2024-39476 HIGH Kernel issues: CVE-2019-25162 CVE-2021-4204 CVE-2021-33631 CVE-2021-47624 CVE-2022-0500 CVE-2022-3565 CVE-2022-23222 CVE-2022-45884 CVE-2022-45886 CVE-2022-45919 CVE-2022-45934 CVE-2023-2163 CVE-2023-3567 CVE-2023-3812 CVE-2023-4244 CVE-2023-5178 CVE-2023-6546 CVE-2023-6931 CVE-2023-6932 CVE-2023-28464 CVE-2023-51042 CVE-2023-51780 CVE-2023-52340 CVE-2023-52434 CVE-2023-52439 CVE-2023-52445 CVE-2023-52451 CVE-2023-52464 CVE-2023-52469 CVE-2024-0565 CVE-2024-0841 CVE-2024-1086 CVE-2024-21147 CVE-2024-23307 CVE-2024-25744 CVE-2024-26593 CVE-2024-26907 CVE-2024-26933 CVE-2024-26934 CVE-2024-27020 CVE-2024-36971 CVE-2024-36978 CVE-2024-36979 CVE-2024-38538 CVE-2024-38555 CVE-2024-38627 CVE-2024-39487 Fixed This release fixes an issue where SAP HANA database and log backup jobs using Persistent Disk snapshots would complete with a warning status due to metadata upload failures to Google Cloud Storage for disaster recovery.
-- October 21, 2025 Fixed Resolved a problem with timestamp conversions during recovery range calculations in SAP HANA Fixed a bug that prevented the identification of persistent disk names in some SAP HANA environments Fixed DB2 restore issue wrt pre-flight checks and instances with a large number of archive logs Fixed a logging issue during Postgres upgrades where an incorrect version was displayed after a rollback Resolved a restore failure when using a combination of full and incremental backups for SAP ASE Fixed a connection leak and an issue with executor service shutdown in the VMware hypervisor integration, improving reliability.
-- Feature This release introduces enhanced logging and alerting capabilities for backup/recovery appliances , enabling proactive monitoring of their health and status.
+- Console In the Google Cloud console, you can use the Logs Explorer to retrieve the Backup and DR event log entries for your backup/recovery appliances: In the Google Cloud console, go to the Logging > Logs Explorer .
+- This page explains how to view the event logs created on a backup/recovery appliance in Cloud Logging .
+- The following sample is an example log entry logged on a backup/recovery appliance ba-1-52973 for a failed snapshot job. { "insertId" : "aop2oko38hsami1c" , "jsonPayload" : { "appName" : "instance-2" , "srcid" : "111428" , "jobName" : "Job 0110906c" , "appType" : "GCPInstance" , "eventId" : 43901 , "component" : "udp" , "eventTime" : "2023-02-06T20:24:52.450Z" , "errorMessage" : "Failed snapshot Job 0110906c for application instance-2 on host instance-2, Error: 1249: Failed to get VM details , sltname: pd snaps, slpname: ba-1-52973 Profile. " }, "resource" : { "type" : "backupdr.googleapis.com/BackupRecoveryAppliance" , "labels" : { "backup recovery appliance id" : "test-backup-recovery-appliances" , "resource container" : "projects/1234567" , "management server id" : "abcd-efgh-1234-5678-6789" , "location" : "" } }, "timestamp" : "2023-02-06T20:24:55.275029393Z" , "severity" : "ERROR" , "logName" : "projects/project1/logs/backupdr.googleapis.com %2F backup recovery appliance events" , "receiveTimestamp" : "2023-02-06T20:24:56.388937247Z" } Note: Event logs are not generated for successfully completed backup jobs.
+- Event log format Backup and DR event log entries include the following fields: appName : This field displays the name of the application associated with the event. srcid : This field displays a unique ID of the event occurring in the backup/recovery appliance. jobName : This field displays the name of the job associated with the event. appType : This field displays the type of the application associated with the event. eventId : This field displays a unique ID associated with the error. component : This field displays the source of the event. eventTime : This field displays the time when the event was reported. errorMessage : This field describes the detailed error associated with the event.
 
-### "Monitor jobs in the appliance management console \_|\_ Backup and DR \_\
+### "Configure log-based alerts for a backup/recovery appliance \_|\_ Backup\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs](https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs)
-- Source ID: `site-docs-root`
-- Final score: 216
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts](https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts)
+- Source ID: `site-docs-reference`
+- Final score: 88
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If your alert policy includes or excludes specific event IDs then you need to modify the event ID as well: "entries" : [ { "jsonPayload" : { "eventId" : 10046 , "errorMessage" : "this is a manually generated error message created for testing" }, "resource" : { "type" : "backupdr.googleapis.com/BackupRecoveryAppliance" , }, "severity" : "ERROR" , "logName" : "projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events" , } ] Copy the log entry you configured previously.
+- Policyname = 'Backup/DR event has occurred' Notification rate limit = 6 hr logName = "projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events" AND NOT jsonPayload . eventId = ( 10085 OR 10229 OR 42356 OR 43901 ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Policyname = 'Snapshot job has failed' Notification rate limit = 30 min logName = "projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events" AND jsonPayload . eventId = 43901 Events that are less urgent and hence require less frequent notifications.
+- The following is the sample query to get notified on an event with a specific event ID. logName = "projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events" jsonPayload . eventId = 10046 In the header of the Query results pane, click Create alert .
+
+### "Deploy a backup/recovery appliance \_|\_ Backup and DR \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide)
+- Source ID: `site-docs-reference`
+- Final score: 85
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- To perform on-demand log replication of just the database log to a remote backup/recovery appliance, select the Replicate Logs menu command described in Running On-Demand Database Log Replication .
-- Each backup/recovery appliance reserves a pool of slots for all various categories of jobs: data access, expiration, log replication, log OnVault, on-demand, OnVault, snapshot, streamsnap.
-- To manually initiate database logs replication to the remote backup/recovery appliance: Click the App Manager tab and select the Applications option from the drop-down list.
-- Run on-demand database log replication In some cases, you might need to manually initiate log replication to the remote backup/recovery appliance for a database image.
-
-### "Backup plans in the appliance management console overview \_|\_ Backup and\
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan)
-- Source ID: `site-docs-root`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Where the backup data is retained (local backup/recovery appliance, remote backup/recovery appliance or OnVault storage location) By mixing and matching policies within a template you can create a single template that defines the shortterm and longterm retention of data, as well as where the data will be retained and how long the replicated data will be retained.
-- To identify job retries all four jobs will have the same Job number in the following format in this order: Job xxxxx (Status: Retried) Job xxxxxa (Status: Retried; queued after a 4 minute holdoff) Job xxxxxb (Status: Retried; queued after a 16 minute holdoff) Job xxxxxc (Status: Failed; queued after a 64 minute holdoff) The next time a backup job for this application is attempted is according to the policy's schedule.
-- What's next Create a backup template Create a backup policy Create a resource profile Configure advanced policy settings of an application backed up by the policy Apply a backup plan to an application Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Specifically, the policies define the following: The types of data backup operation (e.g., snapshot, replication) The frequency of the application data backup operation How long to retain the application data backups The advanced settings related to the application data backup operation Whether to truncate logs.
+- It is in this format: projects/test-project/locations/us-central1/operations/operationID The output is displayed as: Terraform You can use the following Terraform resource links to deploy an appliance management console and a backup/recovery appliance: Deploy a appliance management console using Terraform resource Deploy a backup/recovery appliance using Terraform resource Caution: When deploying multiple backup/recovery appliances using Terraform, each appliance must be associated with a unique Service Account.
+- Resizing the appliance or changing its machine configuration—changing the series, CPU, memory—can make the backup/recovery appliance unusable. gcloud You can use gcloud CLI to create an appliance management console.
+- Home Documentation Storage Backup and DR Guides Send feedback Deploy a backup/recovery appliance Stay organized with collections Save and categorize content based on your preferences.
+- Warning: After the backup/recovery appliance has been deployed, the Compute Engine VM instances listing page shows a recommendation to save money by resizing the instance.
 

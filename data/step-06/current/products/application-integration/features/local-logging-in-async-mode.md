@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.464Z"
+generated_at: "2026-04-14T07:40:14.470Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Local logging in async mode"
 feature_slug: "local-logging-in-async-mode"
 latest_feature_date: "2024-10-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
+  - "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+  - "https://docs.cloud.google.com/application-integration/docs/quotas"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
 keywords:
+  - "writing"
   - "local"
   - "async"
+  - "enabled"
   - "mode"
   - "logging"
+  - "default"
   - "integrations"
-  - "new"
-  - "for"
-  - "in"
 ---
 
 # Local logging in async mode
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,54 @@ Local logging for new integrations is enabled by default in async mode, writing 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event](https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
+- [https://docs.cloud.google.com/application-integration/docs/cloud-logging](https://docs.cloud.google.com/application-integration/docs/cloud-logging)
+- [https://docs.cloud.google.com/application-integration/docs/quotas](https://docs.cloud.google.com/application-integration/docs/quotas)
+- [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
 
 ## Supporting Pages
 
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
+### "View logs in Cloud Logging \_|\_ Application Integration \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- Source ID: `site-docs-root`
-- Final score: 208
+- URL: [https://docs.cloud.google.com/application-integration/docs/cloud-logging](https://docs.cloud.google.com/application-integration/docs/cloud-logging)
+- Source ID: `site-docs-reference-2`
+- Final score: 133
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- If local logging is disabled, the execution logs are not sent to Cloud Logging even if Cloud Logging is enabled.
+- By default, Cloud Logging is disabled for integrations.
+- Sample queries You can use the following queries to view logs in Cloud Logging: To view all integration execution logs: resource.type="integrations.googleapis.com/IntegrationVersion" You can view integration execution logs for a specific execution ID: Searches only the parents executions with the given execution ID: resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.executionId=" EXECUTION ID " Searches for both parent and child executions launched from the given execution ID: resource.type="integrations.googleapis.com/IntegrationVersion" " EXECUTION ID " To view integration execution logs for a specific integration: resource.type="integrations.googleapis.com/IntegrationVersion" " INTEGRATION NAME " Or resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.integration=" INTEGRATION NAME " To view failed integration executions for a specific integration: resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.integrationExecutionDetails.integrationExecutionState="FAILED" jsonPayload.integration=" INTEGRATION NAME " To view logs with specific request param name.
+- Logs are displayed for the last three hours for the following default query: resource.type=integrations.googleapis.com/IntegrationVersion To understand the log format of Application Integration logs , see the log entries payload .
+
+### Quotas and limits \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/quotas](https://docs.cloud.google.com/application-integration/docs/quotas)
+- Source ID: `site-api-reference`
+- Final score: 114
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- 50 Data Mapping task Maximum size of an array data type variable 100000 elements Maximum size of a JSON data type variable 20 MB Maximum size of a string data type variable 20 MB Data Transformer task Maximum memory available for script evaluation 300 MB JavaScript task Maximum request size for the script 25 MB Send Email task Maximum recipient count for the task 30 Data processing limits We don't recommend using integrations in the following scenarios: Integration requires movement of bulk data or focus on extract, transform, and load (ETL) processes Cumulative size of all the integration data is greater than 10 MB during execution When calculating the cumulative data size, add the size of all types of data such as input variables, output variables, and other intermediate task variables Caution: If the data size exceeds 10 MB, Application Integration runs the integration, but disables local logging .
+- It uses caches throughout the system that may take time to clear and refresh 10 minutes Maximum numbers of integrations per project 1000 Maximum number of tasks in an integration If there is a need for more tasks, it is recommended that you split your integration into multiple integrations 100 Maximum versions allowed for an integration 100 Number of days an integration execution can last, including the pause during the approval task 31 days API trigger Maximum characters for TRIGGER NAME in Trigger ID Trigger ID format: api trigger/ TRIGGER NAME 64 characters Apps Script task Maximum active deployments for an Apps Script 50 Queries per second (QPS) for API executables 5000 per minute Queries per second (QPS) for Webapp deployments 5000 per minute Latency for API executables 1.5 seconds Latency for Webapp 2.5 seconds Maximum cumulative size of all the integration variables in an Apps Script 15 MB Call REST Endpoint task Maximum number of concurrent REST calls 100 Maximum size of the request from the REST endpoint 25 MB Maximum size of the response from the REST endpoint 25 MB Call Integration task Maximum number of sub-integrations that can run from the main integration 10000 Connectors task Timeout for Connector task execution 3 minutes Maximum size of the response from the connector 20 MB Execute Custom Query: Maximum timeout 180 seconds Execute Custom Query: Maximum number of rows 50,000 While Loop task and For Each Loop task Maximum cumulative size of data processed 20 MB Maximum number of iterations 8000 Maximum cumulative size of data collected from each sub-integration call 50 MB For Each Parallel task Maximum cumulative size of data processed 20 MB Maximum number of iterations 10000 Maximum number of parallel executions To increase this limit, you must request an increase for the Default concurrent executions per project quota.
+- Resource Quota Value Integration execution Default concurrent executions per project 50 Number of integration execution requests per minute 24000 Integration Connectors See Integration Connectors limits Integration execution logs and monitoring Number of read executions requests per minute 18000 Integrations page (This page lists all the available integrations in your project) Number of read integration requests per minute 12000 Integration editor page (This page loads a whole integration including all the integration versions and configured task entities) Number of read task entity requests per minute 12000 Number of read integration version requests per minute 12000 Number of write integration version requests per minute 12000 Authentication profiles page (This page lists all the available authentication profiles in your project) Number of read requests per minute 12000 Number of write requests per minute 12000 Salesforce trigger Number of read Salesforce channel requests per minute 12000 Number of write Salesforce channel requests per minute 12000 Number of read Salesforce instance requests per minute 12000 Number of write Salesforce instance requests per minute 12000 Request a quota increase To adjust most quotas, use the Google Cloud console.
+- Examples of external system calls include, calling external endpoints, calling Salesforce using connectors, and calling Google Cloud functions 2 minutes Timeout for asynchronous (ASYNC) integration executions If your sub-integration takes longer than 2 minutes to run, consider executing your integration in ASYNC mode 10 minutes Maximum time till which an older version of the integration can run after publishing the new version (system consistency) This is because Application Integration is a distributed system that provides eventual consistency .
+
+### Data Transformer task \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 112
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In Default Value , enter the following JSON: [{ "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" }, { "orderId" : "2" , "customerName" : "Tim Harvey" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "Los Angeles" , "country" : "USA" , "zipcode" : "210738" }, "items" : [{ "itemid" : "222-333-444" , "itemName" : "Laptop" , "itemPrice" : 5999.0 , "quantity" : 1.0 }], "paymentDetails" : { "mode" : "Online Payment" , "status" : "Success" }, "expectedDelivery" : "21 Feb 2023" }] In this sample JSON object, replace both occurrences of YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- In Default Value , enter the following JSON. { "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" } In this sample JSON object, replace YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- To create a new input variable, perform the following steps: Click last page (Toggle panel) in the designer navigation bar to bring up the Variables pane.
-- See Enable new region for more information.
-
-### "Invoke an integration for a Salesforce Change Data Capture (CDC) event \_\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event](https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Test the Cloud SQL task by logging in to the Salesforce instance and changing an opportunity status to "closed." Test the Pub/Sub task by logging in to the Salesforce instance and changing another detail about the opportunity, but leave the status of the opportunity "open." For more information about testing, see Test and publish integrations .
-- Click + Add new variable and create the following output variables: Output variable name Data type OpportunityIsClosed Boolean OpportunityId String PubSubMessage String Create the following mapping between the SalesforceTriggerCdcPayload variable and the Connector input payload variables as shown in the following table: Input Output SalesforceTriggerCdcPayload.GET PROPERTY("IsClosed").TO BOOLEAN() OpportunityIsClosed SalesforceTriggerCdcPayload.GET PROPERTY("Id").TO STRING() OpportunityId OpportunityId.TO DOUBLE() connectorInputPayload.ID(Insert row to Cloud SQL) SalesforceTriggerCdcPayload.GET PROPERTY("Name").TO STRING() connectorInputPayload.NAME(Insert row to Cloud SQL) SalesforceTriggerCdcSnapshot.GET PROPERTY("Amount").TO DOUBLE() connectorInputPayload.AMOUNT(Insert row to Cloud SQL) SalesforceTriggerCdcSnapshot.GET PROPERTY("CloseDate").TO STRING() connectorInputPayload.DT CLOSE(Insert row to Cloud SQL) OpportunityId.CONCAT(" is still open") PubSubMessage PubSubMessage connectorInputPayload.message(Publish to cloud pub/sub) Once your mapping is complete, close the pane.
-- Add an edge connection from the Data Mapping element to the Insert row to Cloud SQL Connector element with the following edge condition: $OpportunityIsClosed$ = TRUE Add another edge connection from the Data Mapping element to the Cloud Pub/Sub Connector element with the following edge condition: $OpportunityIsClosed$ = FALSE Test the integration To test the new integration: Click Test in the integration designer toolbar, and then select the Salesforce Trigger .
-- Create a new integration To create a new integration, perform the following steps: In the Google Cloud console, go to the Application Integration page.
-
-### Application Integration release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 188
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Learn how to do the following: Create test cases Configure test cases Manage test cases Run test cases Upload and download test cases Feature Local logging in async mode ( Generally available (GA) ) By default, local logging for new integrations is now enabled in async mode.
-- November 29, 2023 Change The Database persistence feature is now renamed to Local logging , which also supports logging in ASYNC mode.
-- Change Control HTTP call access by region in Application Integration Application Integration now offers a new control within the Regions page to enable or disable HTTP calls for integrations on a per-region basis.
-- For more information, see Local logging .
+- To perform data transformations in your integration by writing, editing, and evaluating custom Jsonnet templates, go to the script mode by clicking Script .
+- In the Data Transformer (preview) Task Editor page, select one of the following options: By default, the Diagram mode opens.
+- By default, the Diagram mode is open.
+- Jsonnet script local f = impor t "functions" ; // Import predefined Data Transformer function library local s tr 1 = f .ex t Var( "inputVar1" ); // Access integration input variable "Inputstr1" with value "Hello" local s tr 2 = f .ex t Var( "inputVar2" ); // Access integration input variable "Inputstr2" with value "World" { Ou t pu t Var : s tr 1 + " " + s tr 2 + "!" , // Write to Jsonnet output variable "OutputVar" "output-str-var" : s tr 1 + " Integration " + s tr 2 + "!" , // Write to Jsonnet output variable "output-str-var" } Output Jsonnet usage reference Jsonnet is a purely functional language and its programs are composed of expressions.
 

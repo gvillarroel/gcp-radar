@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:23.986Z"
+generated_at: "2026-04-14T09:47:34.415Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "Bare Metal Solution server activity status monitoring"
 feature_slug: "bare-metal-solution-server-activity-status-monitoring"
 latest_feature_date: "2023-09-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+  - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
   - "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring"
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices"
+  - "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
 keywords:
   - "activity"
   - "status"
   - "monitoring"
   - "server"
-  - "solution"
-  - "metal"
-  - "now"
-  - "bare"
 ---
 
 # Bare Metal Solution server activity status monitoring
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +34,21 @@ Bare Metal Solution now provides a Google Cloud console view of server activity 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
+- [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
 - [https://docs.cloud.google.com/bare-metal/docs/bms-monitoring](https://docs.cloud.google.com/bare-metal/docs/bms-monitoring)
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices)
+- [https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide](https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide)
 
 ## Supporting Pages
-
-### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- Source ID: `site-docs-root-2`
-- Final score: 216
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
-- Number of processors used The Bare Metal Solution servers come in several sizes .
-- Figure 1 : Components for using Backup and DR with Oracle databases in a Bare Metal Solution environment As you can see in the diagram, this solution requires the following components: Bare Metal Solution regional extension– Allows you to run Oracle databases in a third-party data center adjacent to a Google Cloud data center, and use your existing on-premises software licenses.
 
 ### Monitoring in a Bare Metal Solution environment \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-monitoring](https://docs.cloud.google.com/bare-metal/docs/bms-monitoring)
 - Source ID: `site-docs-root-2`
-- Final score: 196
+- Final score: 97
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +57,29 @@ Evidence snippets:
 - The following is a list of infrastructure devices in a Bare Metal Solution environment that we monitor: Compute infrastructure Server hardware Storage infrastructure Storage devices SAN switches Network infrastructure Routers Switches Interconnect infrastructure Google Cloud also keeps track of the data center environment, including server room temperature and humidity.
 - We hope that this summary of our monitoring capabilities helps you to be confident in the Bare Metal Solution environment as you migrate your infrastructure and applications to the cloud.
 
-### Best practices for Oracle on Bare Metal Solution \_|\_ Google Cloud Documentation
+### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices)
-- Source ID: `site-docs-root`
-- Final score: 194
+- URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
+- Source ID: `site-docs-reference`
+- Final score: 92
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- To configure jumbo frames on Bare Metal Solution servers for Oracle RAC: View the settings of your Bare Metal Solution private network to confirm that jumbo frames have been configured: gcloud bms networks describe NETWORK NAME -- project = PROJECT ID -- region = REGION grep jumboFramesEnabled Sample output: jumboFramesEnabled : true Identify the network interfaces and their mtu size: ip link show grep mtu Sample output: 1 : lo : < LOOPBACK , UP , LOWER UP > mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000 2 : enp55s0f1 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 3 : enp55s0f2 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 4 : enp55s0f3 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 5 : enp17s0f0 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000 6 : enp17s0f1 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond1 state UP mode DEFAULT group default qlen 1000 7 : enp173s0f0 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000 8 : enp173s0f1 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond1 state UP mode DEFAULT group default qlen 1000 9 : bond1 : < BROADCAST , MULTICAST , MASTER , UP , LOWER UP > mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000 10 : bond1 .
-- Use a uniform LUN size Create no more than two ASM disk groups Stripe ASM disk groups across all LUNs in all volumes Use LUNs and volumes with the same performance characteristics in the same disk group Do not share storage volumes across multiple RAC clusters Know the required IOPS and throughput capacity before you create ASM disk groups Leave the multipath configuration as-is Configure important settings for ASM Create your ASM disk group with external redundancy Reboot your Bare Metal Solution servers after ASM disk creation Use a uniform LUN size The LUN size you select should be representative of the unit of growth.
-- 118 @ bond0 : < BROADCAST , MULTICAST , UP , LOWER UP > mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000 13 : virbr0 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default qlen 1000 14 : virbr0 - nic : < BROADCAST , MULTICAST > mtu 1500 qdisc pfifo fast master virbr0 state DOWN mode DEFAULT group default qlen 1000 Using root-level privileges, add MTU=9000 to the interface configuration file for all servers in the Bare Metal Solution environment that use jumbo frames.
-- In this case, 192.x.x.x is your Bare Metal Solution server. restrict 192.x.x.x mask 255.255.255.0 nomodify notrap server 10.x.x.x prefer To start syncing, update the time server to start syncing. ntpdate -qu SERVER NAME Run root script on one node at a time Run the root script root.sh on one node at a time.
+- If you don't want to enable the Pod column, you can view the pod of a server by clicking the server name. asia-southeast1-pod1 Server Type Server specifications o2-standard-32-metal Client IP Server IP address that connects to your Google Virtual Private Cloud 10.200.0.5 Private IP Server IP address that connects to other Bare Metal Solution environment resources 192.168.2.5 Labels Displays any labels that you added to this server You can use labels to filter the console output by copying the text of a label and pasting it in the Filter box just above the Status field. environment:test Server activity Informs about any Bare Metal Solution infrastructure issue that might impact your workload.
+- You can use either the NFS share name or ID as the NFS SHARE variable: gcloud bms nfs-shares describe NFS SHARE --project= PROJECT ID --region= REGION The output provides details about the allowed clients, NFS settings, the NFS server and its state, and the storage volume. allowedClients: – allowDev: true allowedClientsCidr: 192.168.1.1/32 mountPermissions: READ WRITE network: projects/ PROJECT ID /locations/ REGION /networks/at-1111111-vlan001 noRootSquash: true shareIp: 192.168.1.240 name: projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS SHARE nfsShareId: at-2222222-nfs001 state: PROVISIONED volume: projects/ PROJECT ID /locations/ REGION /volumes/at-2222222-nfs001-vol000 API To view the status of your NFS file storage within theBare Metal Solution environment, including allowed clients and NFS properties, enter your project ID and region into the following curl command.
+- To list the servers in your Bare Metal Solution environment and see their status, enter your project ID and region into the following curl command, copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances" To get network and storage information for a server in your Bare Metal Solution environment, issue the following command: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME " Organize servers by using labels To help organize your servers, you can use labels.
+- Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares" To view the status of a specific NFS file storage device, enter your project ID, region, and NFS server name or ID, then issue the following command: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS SHARE " Organize NFS file storage by using labels To help organize your NFS file storage, you can use labels.
+
+### "Deployment Manager: SAP HANA scale-up high-availability cluster configuration\
+
+- URL: [https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide](https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 85
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- RHEL [root@example-ha-vm1 ]# df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 0 126G 0% /dev tmpfs 126G 54M 126G 1% /dev/shm tmpfs 126G 25M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda2 30G 5.4G 25G 18% / /dev/sda1 200M 6.9M 193M 4% /boot/efi /dev/mapper/vg hana-shared 251G 52G 200G 21% /hana/shared /dev/mapper/vg hana-sap 32G 477M 32G 2% /usr/sap /dev/mapper/vg hana-data 426G 9.8G 417G 3% /hana/data /dev/mapper/vg hana-log 125G 7.0G 118G 6% /hana/log /dev/mapper/vg hanabackup-backup 512G 9.3G 503G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/899 tmpfs 26G 0 26G 0% /run/user/1003 SLES example-ha-vm1: # df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 8.0K 126G 1% /dev tmpfs 189G 54M 189G 1% /dev/shm tmpfs 126G 34M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda3 30G 5.4G 25G 18% / /dev/sda2 20M 2.9M 18M 15% /boot/efi /dev/mapper/vg hana-shared 251G 50G 202G 20% /hana/shared /dev/mapper/vg hana-sap 32G 281M 32G 1% /usr/sap /dev/mapper/vg hana-data 426G 8.0G 418G 2% /hana/data /dev/mapper/vg hana-log 125G 4.3G 121G 4% /hana/log /dev/mapper/vg hanabackup-backup 512G 6.4G 506G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/473 tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/0 tmpfs 26G 0 26G 0% /run/user/1003 Check the status of the new cluster by entering the status command that is specific to your operating system: RHEL pcs status SLES crm status You should see results similar to the following the example, in which both VM instances are started and example-ha-vm1 is the active primary instance: RHEL [root@example-ha-vm1 ]# pcs status Cluster name: hacluster Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.3-5.el8 2.4-4b1f869f0f) - partition with quorum Last updated: Wed Jul 7 23:05:11 2021 Last change: Wed Jul 7 23:04:43 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:fence gce): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:fence gce): Started example-ha-vm1 Resource Group: g-primary: rsc healthcheck HA1 (service:haproxy): Started example-ha-vm2 rsc vip HA1 00 (ocf::heartbeat:IPaddr2): Started example-ha-vm2 Clone Set: SAPHanaTopology HA1 00-clone [SAPHanaTopology HA1 00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: SAPHana HA1 00-clone [SAPHana HA1 00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] Failed Resource Actions: rsc healthcheck HA1 start 0 on example-ha-vm1 'error' (1): call=29, status='complete', exitreason='', last-rc-change='2021-07-07 21:07:35Z', queued=0ms, exec=2097ms SAPHana HA1 00 monitor 61000 on example-ha-vm1 'not running' (7): call=44, status='complete', exitreason='', last-rc-change='2021-07-07 21:09:49Z', queued=0ms, exec=0ms Daemon Status: corosync: active/enabled pacemaker: active/enabled pcsd: active/enabled SLES example-ha-vm1: # crm status Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.4+20200616.2deceaa3a-3.9.1-2.0.4+20200616.2deceaa3a) - partition with quorum Last updated: Wed Jul 7 22:57:59 2021 Last change: Wed Jul 7 22:57:03 2021 by root via crm attribute on example-ha-vm1 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:external/gcpstonith): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:external/gcpstonith): Started example-ha-vm1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started example-ha-vm1 rsc vip hc-primary (ocf::heartbeat:anything): Started example-ha-vm1 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: msl SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ example-ha-vm1 ] Slaves: [ example-ha-vm2 ] Change to the SAP admin user by replacing SID LC in the following command with the SID value that you specified in the configuration file template.
+- RHEL [root@example-ha-vm1 ]# pcs status Cluster name: hacluster Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.3-5.el8 2.3-4b1f869f0f) - partition with quorum Last updated: Fri Mar 19 21:22:07 2021 Last change: Fri Mar 19 21:21:28 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:fence gce): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:fence gce): Started example-ha-vm1 Resource Group: g-primary: rsc healthcheck HA1 (service:haproxy): Started example-ha-vm2 rsc vip HA1 00 (ocf::heartbeat:IPaddr2): Started example-ha-vm2 Clone Set: SAPHanaTopology HA1 00-clone [SAPHanaTopology HA1 00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: SAPHana HA1 00-clone [SAPHana HA1 00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] SLES example-ha-vm2: # Cluster Summary: Stack: corosync Current DC: example-ha-vm2 (version 2.0.4+20200616.2deceaa3a-3.9.1-2.0.4+20200616.2deceaa3a) - partition with quorum Last updated: Thu Jul 8 17:33:44 2021 Last change: Thu Jul 8 17:33:07 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:external/gcpstonith): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:external/gcpstonith): Started example-ha-vm1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started example-ha-vm2 rsc vip hc-primary (ocf::heartbeat:anything): Started example-ha-vm2 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: msl SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] On the Load balancer details page in the console, confirm that the new active primary instance shows "1/1" in the Healthy column.
+- INFO - Running command: select from dummy DUMMY "X" 1 row selected (overall time 4124 usec; server time 130 usec) INFO - Running command: ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'SYSTEM') SET ('persistence', 'basepath persistent memory volumes') = '/hana/tmpfs0/TST;/hana/tmpfs1/TST;' 0 rows affected (overall time 3570 usec; server time 2239 usec) INFO - Running command: ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'SYSTEM') SET ('persistent memory', 'table unload action') = 'retain'; 0 rows affected (overall time 4308 usec; server time 2441 usec) INFO - Running command: ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') SET ('persistent memory', 'table default') = 'ON'; 0 rows affected (overall time 3422 usec; server time 2152 usec) Connect to SAP HANA Note that because these instructions don't use an external IP address for SAP HANA, you can only connect to the SAP HANA instances through the bastion instance using SSH or through the Windows server through SAP HANA Studio.
+- In the overview pane, check the availability and content of the following fields for the correct end-to-end setup of the SAP and Google monitoring infrastructure: Cloud Provider : Google Cloud Platform Enhanced Monitoring Access : TRUE Enhanced Monitoring Details : ACTIVE Set up monitoring for SAP HANA Optionally, you can monitor your SAP HANA instances using Google Cloud's Agent for SAP.
 

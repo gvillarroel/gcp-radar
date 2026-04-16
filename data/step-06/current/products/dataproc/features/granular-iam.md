@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.105Z"
+generated_at: "2026-04-14T00:23:22.669Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Granular IAM"
 feature_slug: "granular-iam"
 latest_feature_date: "2018-09-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control"
-  - "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-iam"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/grant-access"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/iam-roles"
 keywords:
   - "granular"
   - "iam"
@@ -19,14 +19,14 @@ keywords:
   - "users"
   - "assign"
   - "roles"
-  - "and"
   - "permissions"
+  - "per"
 ---
 
 # Granular IAM
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,55 @@ Granular IAM lets users assign IAM roles and permissions on a per-cluster basis;
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control](https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control)
-- [https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-iam](https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-iam)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/grant-access](https://docs.cloud.google.com/dataproc-metastore/docs/grant-access)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/iam-roles](https://docs.cloud.google.com/dataproc-metastore/docs/iam-roles)
 
 ## Supporting Pages
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 27, 2017 Feature Cloud Dataproc Granular IAM (Beta) – Now you can set IAM roles and their corresponding permissions on a per-cluster basis.
-- March 22, 2018 Feature Granular IAM permissions are now available for Cloud Dataproc jobs, operations, and workflow templates in Beta.
-- Cloud Dataproc IAM permissions allow users to perform specific actions on Cloud Dataproc clusters, jobs, and operations.
-- This feature allows you to set IAM roles and their corresponding permissions on a per-cluster basis.
 
 ### Dataproc Metastore: Access control with IAM \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control](https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control)
 - Source ID: `site-docs-root-2`
-- Final score: 164
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 130
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Access control options for users To give users the ability to create and manage your Dataproc Metastore resources, you can add users as team members to your project or to specific resources and grant them permissions using IAM roles .
-- Google Cloud offers Identity and Access Management (IAM) , which lets you give more granular access to specific Google Cloud resources and prevents unwanted access to other resources.
 - For example, for a given resource, such as a project, you can assign the roles/metastore.admin role to a Google Account and that account can control Dataproc Metastore resources in the project, but cannot manage other resources.
-- To see a list of capabilities of each Dataproc Metastore role and API methods that a specific role grants permission to, review Dataproc Metastore IAM roles .
+- Google Cloud offers Identity and Access Management (IAM) , which lets you give more granular access to specific Google Cloud resources and prevents unwanted access to other resources.
+- An IAM policy lets you manage IAM roles on those resources instead of, or in addition to, managing roles at the project level.
 
-### "Google Kubernetes Engine Identity and Access Management roles and identity\
+### Grant basic Dataproc Metastore IAM roles to users \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-iam](https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-iam)
-- Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/grant-access](https://docs.cloud.google.com/dataproc-metastore/docs/grant-access)
+- Source ID: `site-docs-root-2`
+- Final score: 105
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- When you create the Managed Service for Apache Spark on GKE cluster, add the following properties for Managed Service for Apache Spark to use your GSA instead of the default GSA: --properties "dataproc:dataproc.gke.agent.google-service-account=${DPGKE GSA}" \ --properties "dataproc:dataproc.gke.spark.driver.google-service-account=${DPGKE GSA}" \ --properties "dataproc:dataproc.gke.spark.executor.google-service-account=${DPGKE GSA}" \ Run the following commands to assign necessary Workload Identity permissions to the service accounts: Assign your GSA the dataproc.worker role to allow it to act as agent: gcloud projects add-iam-policy-binding \ --role=roles/dataproc.worker \ --member="serviceAccount:${DPGKE GSA}" \ "${PROJECT}" Assign the agent KSA the iam.workloadIdentityUser role to allow it to act as your GSA: gcloud iam service-accounts add-iam-policy-binding \ --role=roles/iam.workloadIdentityUser \ --member="serviceAccount:${PROJECT}.svc.id.goog[${DPGKE NAMESPACE}/agent]" \ "${DPGKE GSA}" Grant the spark-driver KSA the iam.workloadIdentityUser role to allow it to act as your GSA: gcloud iam service-accounts add-iam-policy-binding \ --role=roles/iam.workloadIdentityUser \ --member="serviceAccount:${PROJECT}.svc.id.goog[${DPGKE NAMESPACE}/spark-driver]" \ "${DPGKE GSA}" Grant the spark-executor KSA the iam.workloadIdentityUser role to allow it to act as your GSA: gcloud iam service-accounts add-iam-policy-binding \ --role=roles/iam.workloadIdentityUser \ --member="serviceAccount:${PROJECT}.svc.id.goog[${DPGKE NAMESPACE}/spark-executor]" \ "${DPGKE GSA}" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Example: The following command assigns roles to the default Managed Service for Apache Spark VM service account to allow Spark workloads running on Managed Service for Apache Spark on GKE cluster VMs to access Cloud Storage buckets and BigQuery data sets in the project. gcloud projects add-iam-policy-binding \ --role=roles/storage.objectAdmin \ --role=roles/bigquery.dataEditor \ --member=" project-number -compute@developer.gserviceaccount.com" \ "${PROJECT}" Custom IAM configuration Managed Service for Apache Spark on GKE uses GKE workload identity to link the default Managed Service for Apache Spark VM service account (data plane identity) to the three GKE service accounts (KSAs) .
-- Assign roles Grant permissions to the Managed Service for Apache Spark VM service account to allow the spark-driver and spark-executor to access project resources, data sources, data sinks, and any other services required by your workload.
-- To create and use a different Google service account (GSA) to link to the KSAs: Create the GSA (see Creating and managing service accounts ). gcloud CLI example: gcloud iam service-accounts create "dataproc-${USER}" \ --description "Used by Managed Service for Apache Spark on GKE workloads." Notes: The example sets the GSA name as "dataproc-${USER}", but you can use a different name.
+- Enable the API Required Roles You must have the roles/owner (Owner) basic IAM role in the Google Cloud project you are using, or a role that grants these permissions: resourcemanager.projects.get resourcemanager.projects.getIamPolicy resourcemanager.projects.setIamPolicy To gain these permissions while following the principle of least privilege, ask your administrator to grant you the roles/resourcemanager.projectIamAdmin (Project IAM Admin) role.
+- Depending on the scope of control you want the account to have, you grant it one of these predefined IAM roles: roles/metastore.editor to grant full control of Dataproc Metastore resources roles/metastore.admin to grant full control of Dataproc Metastore resources, including updating IAM permissions.
+- Home Documentation Data analytics Dataproc Metastore Guides Send feedback Grant basic Dataproc Metastore IAM roles to users Stay organized with collections Save and categorize content based on your preferences.
+- For detailed information about the specific IAM permissions these roles provide, see Dataproc Metastore IAM roles .
+
+### Dataproc Metastore IAM roles \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/iam-roles](https://docs.cloud.google.com/dataproc-metastore/docs/iam-roles)
+- Source ID: `site-docs-root-2`
+- Final score: 101
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can create custom IAM roles and assign the role one or more permissions.
+- Role Permissions Dataproc Metastore Admin ( roles/ metastore.admin ) Full access to all Dataproc Metastore resources. metastore.backups. metastore.backups.create metastore.backups.delete metastore.backups.get metastore.backups.getIamPolicy metastore.backups.list metastore.backups.setIamPolicy metastore.backups.use metastore.federations. metastore.federations.create metastore. federations. createTagBinding metastore.federations.delete metastore. federations. deleteTagBinding metastore.federations.get metastore. federations. getIamPolicy metastore.federations.list metastore. federations. listEffectiveTags metastore. federations. listTagBindings metastore. federations. setIamPolicy metastore.federations.update metastore.federations.use metastore.imports. metastore.imports.create metastore.imports.get metastore.imports.list metastore.imports.update metastore.locations. metastore.locations.get metastore.locations.list metastore.migrations. metastore.migrations.cancel metastore.migrations.complete metastore.migrations.delete metastore.migrations.get metastore.migrations.list metastore.migrations.start metastore.operations. metastore.operations.cancel metastore.operations.delete metastore.operations.get metastore.operations.list metastore.services.create metastore. services. createTagBinding metastore.services.delete metastore. services. deleteTagBinding metastore.services.export metastore.services.get metastore. services. getIamPolicy metastore.services.list metastore. services. listEffectiveTags metastore. services. listTagBindings metastore.services.restore metastore. services. setIamPolicy metastore.services.update resourcemanager.projects.get resourcemanager.projects.list Dataproc Metastore Editor ( roles/ metastore.editor ) Read and write access to all Dataproc Metastore resources. metastore.backups.create metastore.backups.delete metastore.backups.get metastore.backups.list metastore.backups.use metastore.federations.create metastore.federations.delete metastore.federations.get metastore.federations.list metastore. federations. listEffectiveTags metastore. federations. listTagBindings metastore.federations.update metastore.imports. metastore.imports.create metastore.imports.get metastore.imports.list metastore.imports.update metastore.locations. metastore.locations.get metastore.locations.list metastore.migrations. metastore.migrations.cancel metastore.migrations.complete metastore.migrations.delete metastore.migrations.get metastore.migrations.list metastore.migrations.start metastore.operations. metastore.operations.cancel metastore.operations.delete metastore.operations.get metastore.operations.list metastore.services.create metastore. services. createTagBinding metastore.services.delete metastore. services. deleteTagBinding metastore.services.export metastore.services.get metastore. services. getIamPolicy metastore.services.list metastore. services. listEffectiveTags metastore. services. listTagBindings metastore.services.restore metastore.services.update resourcemanager.projects.get resourcemanager.projects.list Metastore Viewer ( roles/ metastore.viewer ) Viewer role for metastore metastore.backups.get metastore.backups.getIamPolicy metastore.backups.list metastore.backups.use metastore.databases.get metastore. databases. getIamPolicy metastore.databases.list metastore.federations.get metastore. federations. getIamPolicy metastore.federations.list metastore. federations. listEffectiveTags metastore. federations. listTagBindings metastore.imports.get metastore.imports.list metastore.locations. metastore.locations.get metastore.locations.list metastore.migrations.get metastore.migrations.list metastore.operations.get metastore.operations.list metastore.services.export metastore.services.get metastore. services. getIamPolicy metastore.services.list metastore. services. listEffectiveTags metastore. services. listTagBindings metastore.tables.get metastore.tables.getIamPolicy metastore.tables.list resourcemanager.projects.get resourcemanager.projects.list Metastore Federation Accessor ( roles/ metastore.federationAccessor ) Access to the Metastore Federation resource. metastore.federations.use Dataproc Metastore Metadata Editor ( roles/ metastore.metadataEditor ) Access to read and modify the metadata of databases and tables under those databases. metastore.databases.create metastore.databases.delete metastore.databases.get metastore. databases. getIamPolicy metastore.databases.list metastore.databases.update metastore.services.get metastore.services.use metastore.tables.create metastore.tables.delete metastore.tables.get metastore.tables.getIamPolicy metastore.tables.list metastore.tables.update Dataproc Metastore Metadata Mutate Admin ( roles/ metastore.metadataMutateAdmin ) Access to mutate metadata from a Dataproc Metastore service's underlying metadata store. metastore. services. mutateMetadata Dataproc Metastore Metadata Operator ( roles/ metastore.metadataOperator ) Read-only access to Dataproc Metastore resources with additional metadata operations permission. metastore.backups.create metastore.backups.delete metastore.backups.get metastore.backups.list metastore.backups.use metastore.imports. metastore.imports.create metastore.imports.get metastore.imports.list metastore.imports.update metastore.locations. metastore.locations.get metastore.locations.list metastore.operations.get metastore.operations.list metastore.services.export metastore.services.get metastore. services. getIamPolicy metastore.services.list metastore. services. listEffectiveTags metastore. services. listTagBindings metastore.services.restore resourcemanager.projects.get resourcemanager.projects.list Dataproc Metastore Data Owner ( roles/ metastore.metadataOwner ) Full access to the metadata of databases and tables under those databases. metastore.databases. metastore.databases.create metastore.databases.delete metastore.databases.get metastore. databases. getIamPolicy metastore.databases.list metastore. databases. setIamPolicy metastore.databases.update metastore.services.get metastore. services. getIamPolicy metastore.services.list metastore. services. listEffectiveTags metastore. services. listTagBindings metastore.services.use metastore.tables. metastore.tables.create metastore.tables.delete metastore.tables.get metastore.tables.getIamPolicy metastore.tables.list metastore.tables.setIamPolicy metastore.tables.update Dataproc Metastore Metadata Query Admin ( roles/ metastore.metadataQueryAdmin ) Access to query metadata from a Dataproc Metastore service's underlying metadata store. metastore. services. queryMetadata Dataproc Metastore Metadata User ( roles/ metastore.metadataUser ) Access to the Dataproc Metastore gRPC endpoint metastore.databases.get metastore.databases.list metastore.services.get metastore.services.use Dataproc Metastore Metadata Viewer ( roles/ metastore.metadataViewer ) Access to read the metadata of databases and tables under those databases metastore.databases.get metastore. databases. getIamPolicy metastore.databases.list metastore.services.get metastore.services.use metastore.tables.get metastore.tables.getIamPolicy metastore.tables.list Dataproc Metastore Managed Migration Admin ( roles/ metastore.migrationAdmin ) Access to Dataproc Metastore Managed Migration resources and workflow. cloudsql.instances.connect cloudsql.instances.get cloudsql.instances.login compute.autoscalers.create compute.autoscalers.delete compute.disks.create compute.disks.delete compute.forwardingRules.create compute.forwardingRules.delete compute.forwardingRules.use compute. instanceGroupManagers. create compute. instanceGroupManagers. delete compute. instanceGroupManagers. use compute.instanceGroups.delete compute.instanceGroups.use compute. instanceTemplates. create compute. instanceTemplates. delete compute.instanceTemplates.get compute. instanceTemplates. useReadOnly compute.instances.create compute.instances.delete compute.instances.get compute.instances.setMetadata compute.machineTypes.list compute. regionBackendServices. create compute. regionBackendServices. delete compute. regionBackendServices. use compute. regionHealthChecks. create compute. regionHealthChecks. delete compute.regionHealthChecks.use compute. regionHealthChecks. useReadOnly compute. serviceAttachments. create compute. serviceAttachments. delete compute.subnetworks.get compute.subnetworks.use compute.zones.list datastream. connectionProfiles. create datastream. connectionProfiles. delete datastream.objects. datastream.objects.get datastream.objects.list datastream. objects. startBackfillJob datastream. objects. stopBackfillJob datastream.operations.get datastream. privateConnections. create datastream. privateConnections. delete datastream.streams.create datastream.streams.delete datastream.streams.get datastream.streams.update Dataproc Metastore Viewer ( roles/ metastore.user ) Read-only access to all Dataproc Metastore resources. metastore.backups.get metastore.backups.list metastore.federations.get metastore. federations. getIamPolicy metastore.federations.list metastore. federations. listEffectiveTags metastore. federations. listTagBindings metastore.imports.get metastore.imports.list metastore.locations. metastore.locations.get metastore.locations.list metastore.operations.get metastore.operations.list metastore.services.export metastore.services.get metastore. services. getIamPolicy metastore.services.list metastore. services. listEffectiveTags metastore. services. listTagBindings resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents .
+- The following table lists all Dataproc Metastore roles and the permissions associated with each role: Note: The databases and tables permissions are used with gRPC-enabled Dataproc Metastore services.
+- Role Permissions Dataproc Metastore Service Agent ( roles/ metastore.serviceAgent ) Gives the Dataproc Metastore service account access to managed resources.
 

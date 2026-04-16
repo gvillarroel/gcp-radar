@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:53:35.713Z",
+  "generated_at": "2026-04-12T21:43:20.799Z",
   "product_name": "Geocoding API",
   "product_slug": "geocoding-api",
   "step02_source_path": "data/step-02/current/geocoding-api.md",
@@ -8,10 +8,44 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 2,
+    "source_row_count": 2,
+    "top_phrases": [
+      "address descriptors",
+      "navigation points",
+      "navigation points is an experimental feature that returns a list of points useful for navigating to a place"
+    ],
+    "top_tokens": [
+      "feature",
+      "that",
+      "address",
+      "adds",
+      "and",
+      "areas",
+      "context",
+      "descriptors",
+      "experimental",
+      "extra",
+      "for",
+      "landmarks",
+      "list",
+      "location",
+      "navigating",
+      "navigation",
+      "place",
+      "points",
+      "preview",
+      "returns",
+      "useful",
+      "using"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "apigee",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
-  "candidates_scored_by_api": 12,
+  "candidates_scored_by_api": 13,
   "search_runs": [
     {
       "round": 1,
@@ -45,15 +79,15 @@
           "rank": 3
         },
         {
-          "title": "Geocoding Service | Maps JavaScript API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/javascript/geocoding",
-          "description": "<strong>Your use of the Geocoding service must be in accordance with the Policies for Geocoding API</strong>. Accessing the Geocoding service is asynchronous, requiring a call to an external server.",
+          "title": "Geocoding request and response | Geocoding API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/geocoding/guides-v3/requests-geocoding",
+          "description": "The rest of this page describes geocoding and reverse geocoding separately, because different parameters are available for each type of request. All reserved characters (for example the plus sign &quot;+&quot;) must be URL-encoded. ... key — Your application&#x27;s API key.",
           "rank": 4
         },
         {
-          "title": "Geocoding request and response | Geocoding API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/geocoding/requests-geocoding",
-          "description": "<strong>Geocoding results can be biased</strong> ... is officially launched. Note that biasing only prefers results for a specific domain; if more relevant results exist outside of this domain, they may be included.",
+          "title": "Geocoding Service | Maps JavaScript API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/javascript/geocoding",
+          "description": "<strong>Your use of the Geocoding service must be in accordance with the Policies for Geocoding API</strong>. Accessing the Geocoding service is asynchronous, requiring a call to an external server.",
           "rank": 5
         },
         {
@@ -75,6 +109,13 @@
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Geocoding API\" \"address descriptors\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 1,
@@ -143,15 +184,15 @@
           "rank": 3
         },
         {
-          "title": "Get Started with the Geocoding API v3 | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/geocoding/start",
-          "description": "Following are examples of geocoding and reverse geocoding requests. The following example requests the latitude and longitude of &quot;1600 Amphitheatre Parkway, Mountain View, CA&quot;, and specifies that the output must be in JSON format. https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;key=YOUR_API_KEY",
-          "rank": 4
-        },
-        {
           "title": "Geocoding Service | Maps JavaScript API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/javascript/geocoding",
           "description": "Also see the Maps JavaScript API Reference: Geocoder",
+          "rank": 4
+        },
+        {
+          "title": "Get Started with the Geocoding API v3 | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/geocoding/start",
+          "description": "Following are examples of geocoding and reverse geocoding requests. The following example requests the latitude and longitude of &quot;1600 Amphitheatre Parkway, Mountain View, CA&quot;, and specifies that the output must be in JSON format. https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;key=YOUR_API_KEY",
           "rank": 5
         },
         {
@@ -161,18 +202,25 @@
           "rank": 6
         },
         {
-          "title": "PlusCode | Geocoding API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/PlusCode",
-          "description": "Plus code (http://plus.codes) is a location reference with two formats: global code defining a 14mx14m (1/8000th of a degree) or smaller rectangle, and compound code, replacing the prefix with a reference location.",
-          "rank": 7
-        },
-        {
           "title": "Method: geocode.address.geocodeAddress | Geocoding API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4beta/geocode.address/geocodeAddress",
           "description": "GET https://geocode.googleapis.com/v4beta/geocode/address",
+          "rank": 7
+        },
+        {
+          "title": "Reverse geocoding (address lookup) request and response | Geocoding API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/geocoding/guides-v3/requests-reverse-geocoding",
+          "description": "If the geocoder doesn&#x27;t find a match, it returns zero results. The following example filters the addresses returned to include only those with a location type of ROOFTOP and an address type of street_address. https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452 &amp;location_type=ROOFTOP&amp;result_type=street_address&amp;key=YOUR_API_KEY",
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Geocoding API\" \"navigation points\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 2,
@@ -222,15 +270,15 @@
           "rank": 1
         },
         {
-          "title": "Get Started with the Geocoding API v3 | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/geocoding/start",
-          "description": "Geocoding is <strong>the process of converting addresses (like a street address) into geographic coordinates (like latitude and longitude), which you can use to place markers on a map, or position the map</strong>.",
-          "rank": 2
-        },
-        {
           "title": "Geocoding API v4 overview | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-overview",
           "description": "The Geocoding API is <strong>a service that accepts a place as an address, latitude and longitude coordinates, or Place ID</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Get Started with the Geocoding API v3 | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/geocoding/start",
+          "description": "Geocoding is <strong>the process of converting addresses (like a street address) into geographic coordinates (like latitude and longitude), which you can use to place markers on a map, or position the map</strong>.",
           "rank": 3
         },
         {
@@ -264,6 +312,13 @@
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Geocoding API\" \"navigation points is an experimental feature that returns a list of points useful for navigating to a place\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 3,
@@ -316,6 +371,18 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "and",
+          "for",
+          "location",
+          "place"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -326,6 +393,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "and",
+          "for",
+          "location",
+          "place"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -353,6 +428,16 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "for",
+          "place"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -362,49 +447,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "for",
+          "place"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
       "keep": true
-    },
-    {
-      "title": "Geocoding request and response | Geocoding API | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/geocoding/requests-geocoding",
-      "description": "<strong>Geocoding results can be biased</strong> ... is officially launched. Note that biasing only prefers results for a specific domain; if more relevant results exist outside of this domain, they may be included.",
-      "rank": 5,
-      "query_hits": [
-        "site:developers.google.com \"Geocoding API\" official documentation OR site:developers.google.com \"geocoding api\" official documentation",
-        "site:developers.google.com \"Geocoding API\" reference OR site:developers.google.com \"geocoding api\" reference",
-        "site:developers.google.com \"Geocoding API\" overview OR site:developers.google.com \"geocoding api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 100,
-      "product_fit_score": 130,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
     },
     {
       "title": "Get Started with the Geocoding API v3 | Google for Developers",
@@ -427,6 +481,17 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "that",
+          "address",
+          "and",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -437,6 +502,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "that",
+          "address",
+          "and",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -447,7 +519,7 @@
       "title": "Geocoding Service | Maps JavaScript API | Google for Developers",
       "url": "https://developers.google.com/maps/documentation/javascript/geocoding",
       "description": "<strong>Your use of the Geocoding service must be in accordance with the Policies for Geocoding API</strong>. Accessing the Geocoding service is asynchronous, requiring a call to an external server.",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:developers.google.com \"Geocoding API\" official documentation OR site:developers.google.com \"geocoding api\" official documentation",
         "site:developers.google.com \"Geocoding API\" reference OR site:developers.google.com \"geocoding api\" reference",
@@ -464,6 +536,14 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -474,6 +554,10 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -496,9 +580,21 @@
         1,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "and",
+          "for",
+          "location",
+          "place"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -509,6 +605,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "and",
+          "for",
+          "location",
+          "place"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -534,6 +638,16 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": -7,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "for",
+          "place"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -544,6 +658,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "for",
+          "place"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -569,9 +689,19 @@
       "best_rank": 7,
       "consistency_score": 67,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "feature",
+          "experimental",
+          "for"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
@@ -579,6 +709,65 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "feature",
+          "experimental",
+          "for"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Geocoding request and response | Geocoding API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/geocoding/requests-geocoding",
+      "description": "Zero or more &lt;result&gt; elements, ... set of geocoded address information and geometry information. The XML response is considerably longer than the JSON response. For that reason, we recommend that you use json as the preferred output flag unless your service requires xml for some reason. Additionally, processing XML trees requires some care, so that you reference proper nodes ...",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Geocoding API\" reference OR site:developers.google.com \"geocoding api\" reference",
+        "site:developers.google.com \"Geocoding API\" overview OR site:developers.google.com \"geocoding api\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "that",
+          "address",
+          "and",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "that",
+          "address",
+          "and",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -602,6 +791,16 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "for",
+          "using"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -612,6 +811,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "for",
+          "using"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -619,22 +824,31 @@
       "keep": false
     },
     {
-      "title": "PlusCode | Geocoding API | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/PlusCode",
-      "description": "Plus code (http://plus.codes) is a location reference with two formats: global code defining a 14mx14m (1/8000th of a degree) or smaller rectangle, and compound code, replacing the prefix with a reference location.",
-      "rank": 7,
+      "title": "Geocoding request and response | Geocoding API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/geocoding/guides-v3/requests-geocoding",
+      "description": "The rest of this page describes geocoding and reverse geocoding separately, because different parameters are available for each type of request. All reserved characters (for example the plus sign &quot;+&quot;) must be URL-encoded. ... key — Your application&#x27;s API key.",
+      "rank": 4,
       "query_hits": [
-        "site:developers.google.com \"Geocoding API\" reference OR site:developers.google.com \"geocoding api\" reference"
+        "site:developers.google.com \"Geocoding API\" official documentation OR site:developers.google.com \"geocoding api\" official documentation"
       ],
       "intent_hits": [
         "developers_docs"
       ],
       "round_hits": [
-        2
+        1
       ],
-      "best_rank": 7,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -645,6 +859,11 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -652,9 +871,9 @@
       "keep": false
     },
     {
-      "title": "Method: geocode.address.geocodeAddress | Geocoding API | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4beta/geocode.address/geocodeAddress",
-      "description": "GET https://geocode.googleapis.com/v4beta/geocode/address",
+      "title": "Reverse geocoding (address lookup) request and response | Geocoding API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/geocoding/guides-v3/requests-reverse-geocoding",
+      "description": "If the geocoder doesn&#x27;t find a match, it returns zero results. The following example filters the addresses returned to include only those with a location type of ROOFTOP and an address type of street_address. https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452 &amp;location_type=ROOFTOP&amp;result_type=street_address&amp;key=YOUR_API_KEY",
       "rank": 8,
       "query_hits": [
         "site:developers.google.com \"Geocoding API\" reference OR site:developers.google.com \"geocoding api\" reference"
@@ -668,6 +887,18 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 130,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "and",
+          "for",
+          "location",
+          "returns"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -678,6 +909,61 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "and",
+          "for",
+          "location",
+          "returns"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: geocode.address.geocodeAddress | Geocoding API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4beta/geocode.address/geocodeAddress",
+      "description": "GET https://geocode.googleapis.com/v4beta/geocode/address",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Geocoding API\" reference OR site:developers.google.com \"geocoding api\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 130,
+      "feature_coverage": {
+        "score": -10,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -701,6 +987,15 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 58,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "address",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -711,6 +1006,11 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "address",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },

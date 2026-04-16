@@ -1,0 +1,92 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T00:15:29.082Z"
+product_name: "AlloyDB"
+product_slug: "alloydb"
+feature_name: "Parallel SELECT for INSERT INTO ... SELECT"
+feature_slug: "parallel-select-for-insert-into-select"
+latest_feature_date: "2025-11-11"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies"
+  - "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
+keywords:
+  - "partitioned"
+  - "parallel"
+  - "select"
+  - "insert"
+  - "tables"
+  - "improves"
+  - "performance"
+  - "into"
+---
+
+# Parallel SELECT for INSERT INTO ... SELECT
+
+Product: AlloyDB
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Parallel SELECT for INSERT INTO ... SELECT improves performance for partitioned tables and complex queries by parallelizing the SELECT portion of insert-select operations.
+
+## Extended Definition
+
+Parallel SELECT for INSERT INTO ... SELECT improves performance for partitioned tables and complex queries by parallelizing the SELECT portion of insert-select operations.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
+- [https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies](https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies)
+- [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+
+## Supporting Pages
+
+### "Generate and manage auto vector embeddings for large tables \_|\_ AlloyDB\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables](https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables)
+- Source ID: `site-docs-reference`
+- Final score: 191
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- For large datasets, you can improve performance by refreshing embeddings for distinct partitions in parallel from different database connections: To refresh the entire table, run the following: CALL ai . refresh embeddings ( table name = > 'documents' , -- This is the root partitioned table embedding column = > 'content embeddings' ); To refresh a single partition, run the following: CALL ai . refresh embeddings ( table name = > 'documents eu' , embedding column = > 'content embeddings' ); Refresh embeddings for newly added or attached partitions The auto-embedding feature supports generating embeddings for partitions that are incorporated into your main table after the initial setup.
+- To check the progress, run the following query: SELECT table name , content column , embedding column , model id , percent progress , status , elapsed time , rows processed , partition root FROM ai . embedding progress view ; The view provides the following information: Column Description table name The name of the table or partition being processed. content column The column containing the source content for the embedding. embedding column The column where the embeddings are being stored. model id The model being used for generation. percent progress The percentage of the operation that is complete. status The current status of the operation (e.g., running, success). elapsed time The time that has passed since the operation began. rows processed The number of rows processed so far. partition root The name of the root partitioned table.
+- For example, the following function defines a custom batch input transform for a model that requires an output dimensionality of 768: CREATE OR REPLACE FUNCTION google ml . vertexai text embedding batch input transform with 768 dims ( model id VARCHAR ( 100 ), input list TEXT []) RETURNS JSON LANGUAGE SQL AS $$ SELECT pg catalog . json build object ( 'instances' , pg catalog . json agg ( pg catalog . json build object ( 'content' , content )), 'parameters' , pg catalog . json build object ( 'outputDimensionality' , 768 ) ) FROM unnest ( input list ) AS content ; $$ ; Use JSONB optimization with custom models You can use the JSONB data type in your custom output transform functions for improved performance.
+- To let a user manage auto embedding generation, grant INSERT , UPDATE , and DELETE permissions on the google ml.embed gen progress and google ml.embed gen settings tables: GRANT INSERT , UPDATE , DELETE ON google ml . embed gen progress TO ' USER NAME ' ; Replace the following: USER NAME : the name of the user for whom the permissions are granted.
+
+### "AlloyDB database indexing strategies \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies](https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies)
+- Source ID: `site-api-reference`
+- Final score: 165
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The following example demonstrates using a test table and a regular B-tree index: CREATE TABLE public . bloom test ( emp id int , dept id int , id2 int , id3 int , id4 int , id5 int , id6 int , id7 int , details text , location code int ); INSERT INTO public . bloom test SELECT ( random () 1000000 ):: int , ( random () 1000000 ):: int , ( random () 1000000 ):: int ,( random () 1000000 ):: int ,( random () 1000000 ):: int ,( random () 1000000 ):: int , ( random () 1000000 ):: int ,( random () 1000000 ):: int , md5 ( g :: text ), floor ( random () ( 20000 - 9999 + 1 ) + 9999 ) FROM generate series ( 1 , 100 1 e4 ) g ; CREATE INDEX idx btree bloom test ON public . bloom test ( emp id , dept id , id2 , id3 , id4 , id5 , id6 , location code ); SELECT from public . bloom test WHERE id5 = 564804 AND id6 = 797758 ; QUERY PLAN -------------------------------------------------------------------------------------------------------- Index Scan using idx btree bloom test on public . bloom test ( cost = 0 .
+- To check parallelism during an index build, issue the following query: SELECT query , leader pid , array agg ( pid ) filter ( WHERE leader pid != pid ) AS members FROM pg stat activity WHERE leader pid IS NOT NULL GROUP BY query , leader pid ; To determine the complete status of an index build, issue the following query: SELECT FROM pg stat progress create index ; Build partitioned indexes in parallel All the same principles of building indexes in parallel also work against partitions.
+- Hash indexes are best optimized for workloads that use SELECT and UPDATE heavily, and use equality scans on larger tables that are always lossy and require index matches to recheck the heap for validity.
+- 0 AS value FROM generate series ( 1 , 1000000 ) a ; Use a B-tree index to sum up correlated data and inspect the performance: SELECT SUM ( value ) FROM brin test WHERE sequential BETWEEN 0 .
+
+### "Optimize database performance by comparing performance snapshots \_|\_ AlloyDB\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- Source ID: `site-docs-reference-2`
+- Final score: 144
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Example report The following is an abridged example of a generated performance snapshot report: Example performance snapshot report $ psql -d postgres -U alloydbsuperuser postgres=> select perfsnap.report(22, 23); report -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- PGSNAP DB Report for: Snapshot details -------------------------------------- Host i841-sr-primary-2a34f46e-06bc Release 14.12 Startup Time 2024-10-08 03:23:15+00 Snap Id Snap Time ------------ ---------- ------------------------ Begin Snap: 22 24.10.2024 04:33:56 (UTC) Automatic snapshot End Snap: 23 25.10.2024 04:38:56 (UTC) Automatic snapshot Elapsed: 1 day 00:04:59.979321 Database Cache sizes Shared Buffers: 31 GB Block Size: 8192 Effective Cache Size: 25 GB WAL Buffers: 16384 Host CPU %User %Nice %System %Idle %WIO %IRQ %SIRQ %Steal %Guest ------- ------- ------- ------- ------- ------- ------- ------- ------- 1.07 0.22 0.91 97.40 0.09 0.00 0.31 0.00 0.00 Host Memory Total Memory: 63 GB Available Memory: 11 GB Free Memory: 726 MB Buffers Memory: 3706 MB Load profile (in bytes) Per Second Per Transaction ------------ --------------- Redo size: 63083.64 4489.93 Logical reads: 1961.21 139.59 ...
+- Name Collation Limit Tablespace DB Size Growth -------------------- ------------- ------- -------------------- ---------- ---------- bench C.UTF-8 -1 pg default 80 GB 0 bytes postgres C.UTF-8 -1 pg default 135 MB 0 bytes Backend Wait Event Histogram Event Class Waits For information about report fields and performance optimization recommendations, see Database performance optimization recommendations .
+- Generate a performance snapshot report To generate a report that captures the difference between two snapshots, for example, snapshots 1 and 2, run: SELECT perfsnap.report(1,2) The second snapshot in a differential operation doesn't need to immediately follow the first snapshot.
+- Using the performance snapshot report, you compare the metrics to a performance baseline to gain insights into workload performance metrics, which you can use to optimize or troubleshoot database performance.
+

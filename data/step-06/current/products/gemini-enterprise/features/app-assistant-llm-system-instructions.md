@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:21.397Z"
+generated_at: "2026-04-12T12:16:13.716Z"
 product_name: "Gemini Enterprise"
 product_slug: "gemini-enterprise"
 feature_name: "App assistant LLM system instructions"
 feature_slug: "app-assistant-llm-system-instructions"
 latest_feature_date: "2025-07-15"
 deprecation_date: "2025-07-15"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-assistant"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app"
 keywords:
   - "app"
   - "assistant"
@@ -24,7 +27,7 @@ keywords:
 # App assistant LLM system instructions
 
 Product: Gemini Enterprise
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ The LLM system instructions configuration was removed from Agentspace Enterprise
 
 The LLM system instructions configuration was removed from Agentspace Enterprise assistant configurations; deprecated on 2025-07-15.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-assistant](https://docs.cloud.google.com/gemini/enterprise/docs/configure-assistant)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat](https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls](https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app](https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Configure the assistant \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-assistant](https://docs.cloud.google.com/gemini/enterprise/docs/configure-assistant)
+- Source ID: `site-docs-root`
+- Final score: 177
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- In the Additional LLM system instructions section, select Customize .
+- Enter the additional LLM system instructions.
+- Note: Configuration of the assistant requires the Gemini Enterprise Plus edition.
+- In the Enable location context section, use the toggle switch to enable or disable the feature: Switch the toggle on to allow the Gemini Enterprise app to use location data to improve the quality of responses.
+
+### Chat with the assistant \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat](https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat)
+- Source ID: `site-docs-root-2`
+- Final score: 147
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- File formats and size limitations The following table lists the file formats and size limitations for files that you can upload to the assistant: File type Description Images Maximum image size: 30 MB Supported file extensions: .png , .jpeg , .svg Documents Maximum document size: .pdf : 100 MB .xlsx : 50 MB The .xlsx limit applies to the size of the file after it's decompressed. .csv : 7 MB .docx : 3 MB .pptx : 100 MB .txt : 7 MB .md : 2 MB .json : 1 MB .js : 1 MB .html : 0.5 MB .css : 1 MB .java : 1 MB .py : 2 MB Supported file extensions: .pdf , .xlsx , .csv , .docx , .pptx , .txt , .md , .json , .js , .html , .css , .java , .py Video Maximum document size: 200 MB Supported file extensions: .mp4 Audio Maximum document size: 200 MB Supported file extensions: .mp3 Add context with mentions You can mention an agent, person, or uploaded file in your chat with the assistant by typing @ in the chat box.
+- Limitations The following limitations apply when using the assistant with the listed data sources: Data source Limitation Microsoft Outlook The following search queries are not supported: Searching for most recent or oldest emails.
+- In your app, you can chat about search results and uploaded content with the assistant.
+- If you try to upload a file without this consent, you may encounter an error when signing in to Microsoft Entra ID: "Please ask an admin to grant permission to this app before you can use it." If you encounter this error, copy the URL from your browser's address bar and share it with your administrator, so that they can provide consent on behalf of your organization.
+
+### Configure serving controls \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls](https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls)
+- Source ID: `site-docs-root`
+- Final score: 145
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [" USE CASE "], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": FULL MATCH } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ] }, "promoteAction": { "dataStore": " DATA STORE RESOURCE PATH ", "searchLinkPromotion": { "document": " DOCUMENT RESOURCE PATH ", "title": " TITLE ", "uri": " URI ", "description": " URI DESCRIPTION " } } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
+- Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [ " USE CASE " ], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": FULL MATCH } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ] }, "boostAction": { "boost": BOOST VALUE , "filter": " FILTER ", "dataStore": " DATA STORE RESOURCE PATH " } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
+- Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [" USE CASE "], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": FULL MATCH } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ] }, "synonymsAction": { "synonyms": [" SYNONYMS 1 "," SYNONYMS 2 "] } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
+- Run the following curl commands to create your controls. curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID " \ -d '{ "displayName": " DISPLAY NAME ", "solutionType": "SOLUTION TYPE SEARCH", "useCases": [" USE CASE "], "conditions": { "queryTerms": [ { "value": " VALUE ", "fullMatch": FULL MATCH } ], "activeTimeRange": [ { "startTime": " START TIMESTAMP ", "endTime": " END TIMESTAMP " } ] }, "redirectAction": { "redirectURI": " REDIRECT URI " } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.
+
+### Configure the mobile app \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app](https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app)
+- Source ID: `site-docs-root`
+- Final score: 131
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, the following XML is used to configure an iOS application in GEM: <dict> <key>config id</key> <string>123</string> <key>location</key> <string>global</string> </dict> Microsoft Entra ID If your Gemini Enterprise uses Microsoft Entra ID as an identity provider, the mobile deeplink looks like this: https://vertexaisearch.cloud.google.com/mobile?cid=123 &cid location=global &idp=locations/global/workforcePools/PROJECT/providers/entra &tenant id=111 &client id=222 &project id=ge-project Extract the parameters from the deeplink URL, and use them to fill in the app configuration in your MDM administrator console: Deeplink parameter MDM configuration key MDM configuration name Example value cid config id Configuration ID 123 cid location location Location global idp identity provider Identity Provider locations/global/workforcePools/PROJECT/providers/entra tenant id tenant id Entra tenant ID 111 client id client id Entra client ID 222 project id project id Project ID ge-project Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Google Identity If your Gemini Enterprise uses Google as an identity provider, the mobile deeplink looks like this: https://vertexaisearch.cloud.google.com/mobile?cid=123&cid location=global Extract the parameters from the deeplink URL, and use them to fill in the app configuration in your MDM administrator console: Deeplink parameter MDM configuration key MDM configuration name Example value cid config id Configuration ID 123 cid location location Location global Leave all other fields empty.
+- Note: When you configure the Android app in Google Endpoint Management (GEM), use the MDM configuration name in the managed configuration form.
+- This page explains how to configure the Gemini Enterprise mobile app on devices managed by a mobile device management (MDM) solution, such as Google Endpoint Management (GEM) or Microsoft Intune.
 

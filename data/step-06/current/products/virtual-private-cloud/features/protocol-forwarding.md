@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:13.183Z"
+generated_at: "2026-04-12T12:20:09.506Z"
 product_name: "Virtual Private Cloud"
 product_slug: "virtual-private-cloud"
 feature_name: "Protocol Forwarding"
@@ -9,8 +9,9 @@ latest_feature_date: "2013-12-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/vpc/docs/release-notes"
+  - "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services"
   - "https://docs.cloud.google.com/vpc/docs/routes"
+  - "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records"
   - "https://docs.cloud.google.com/vpc/docs/subnets"
 keywords:
   - "protocol"
@@ -38,34 +39,35 @@ Introduced protocol forwarding, which allows forwarding traffic to a single VM i
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
+- [https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services](https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services)
 - [https://docs.cloud.google.com/vpc/docs/routes](https://docs.cloud.google.com/vpc/docs/routes)
+- [https://docs.cloud.google.com/vpc/docs/about-flow-logs-records](https://docs.cloud.google.com/vpc/docs/about-flow-logs-records)
 - [https://docs.cloud.google.com/vpc/docs/subnets](https://docs.cloud.google.com/vpc/docs/subnets)
 
 ## Supporting Pages
 
-### VPC release notes \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
+### "About published services \_|\_ Virtual Private Cloud \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services](https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services)
+- Source ID: `site-docs-root-2`
+- Final score: 190
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Protocol forwarding provides support for these additional features: AH : IP Authentication Header protocol ESP : IP Encapsulating Security Payload protocol SCTP : Stream Control Transmission protocol Feature Added support for new Target Instance resources , which allows for non-NAT'ed traffic to be forwarded to a single virtual machine instance.
-- Forwarding rules allows you to forward traffic to a single virtual machine instance, using a target.instance.
-- Change Introduced new default firewall rule that will be created with each new project. default-allow-icmp - Allows ICMP traffic from any source to any instance on the network.
-- New projects will have the same default firewalls but with the following new names: default-allow-internal - Allows network connections of any protocol and port between any two instances. default-allow-ssh - Allows TCP connections from any source to any instance on the network, over port 22.
+- Producer type Producer configuration (published service) Supported producer backends PROXY protocol (TCP traffic only) IP version Cross-region internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups IPv4 Internal passthrough Network Load Balancer GCE VM IP zonal NEGs Instance groups IPv4 IPv6 Internal protocol forwarding (target instance) Not applicable IPv4 IPv6 Port mapping services Port mapping NEG IPv4 IPv6 Regional internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups Regional internet NEGs IPv4 Regional internal proxy Network Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Private Service Connect NEGs Instance groups IPv4 Secure Web Proxy Not applicable IPv4 Different load balancers support different port configurations; some load balancers support a single port, some support a range of ports, and some support all ports.
+- Producer type Producer configuration (published service) Supported producer backends Forwarding rule protocols Forwarding rule ports PROXY protocol IP version Private Service Connect health support Cross-region internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups TCP HTTP HTTPS HTTP/2 gRPC Supports one, multiple, or all ports IPv4 Internal passthrough Network Load Balancer GCE VM IP zonal NEGs Instance groups TCP See Producer port configuration IPv4 Regional internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups HTTP HTTPS HTTP/2 Supports a single port IPv4 Regional internal proxy Network Load Balancer Note: Connections from consumer global external Application Load Balancers aren't supported.
+- Target producer Consumer configuration (endpoint) Consumer global access Hybrid access Automatic DNS configuration (IPv4-only) VPC Network Peering access NCC connection propagation (IPv4 only) Supported target services for IPv4 endpoints Supported target services for IPv6 endpoints Cross-region internal Application Load Balancer IPv4 services IPv4 services Internal passthrough Network Load Balancer Only if global access is enabled on the load balancer ( known issue ) IPv4 services IPv4 services IPv6 services Internal protocol forwarding (target instance) Only if global access is enabled on the producer forwarding rule ( known issue ) IPv4 services IPv4 services IPv6 services Port mapping services Only if global access is enabled on the producer forwarding rule IPv4 services IPv4 services IPv6 services Regional internal Application Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Regional internal proxy Network Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Secure Web Proxy IPv4 services IPv4 services Producer configuration This table summarizes the supported configuration options and capabilities of published services that are accessed by endpoints.
+- Original target service New target service Internal passthrough Network Load Balancer Internal protocol forwarding (target instance) Port mapping services Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Cross-region internal Application Load Balancer Secure Web Proxy Internal passthrough Network Load Balancer Internal protocol forwarding (target instance) Port mapping services Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Cross-region internal Application Load Balancer Secure Web Proxy Shared VPC Service Project Admins can create service attachments in Shared VPC service projects that connect to resources in Shared VPC networks .
 
 ### Routes \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/vpc/docs/routes](https://docs.cloud.google.com/vpc/docs/routes)
 - Source ID: `site-docs-root`
-- Final score: 140
+- Final score: 182
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +76,24 @@ Evidence snippets:
 - The absence of a default route doesn't necessarily isolate your network from the internet because special routing paths for external passthrough Network Load Balancers and external protocol forwarding don't depend on a default route.
 - Packet protocol and source port don't have to match the forwarding rule's protocol and port specification.
 
+### "About VPC Flow Logs records \_|\_ Virtual Private Cloud \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/about-flow-logs-records](https://docs.cloud.google.com/vpc/docs/about-flow-logs-records)
+- Source ID: `site-docs-root-2`
+- Final score: 174
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example, the connection field is of the IpConnection format, which contains the source and destination IP address and port, plus the protocol, in a single field.
+- The reporter of the Private Service Connect traffic is a producer and is using an internal passthrough Network Load Balancer or internal protocol forwarding.
+- Metadata load balancing LoadBalancingDetails If the flow passes through a load balancer in one of the following configurations, this field is populated with Cloud Load Balancing details: The reporter of the flow is the client of the load balancer, and the load balancer type is APPLICATION LOAD BALANCER , PROXY NETWORK LOAD BALANCER , PASSTHROUGH NETWORK LOAD BALANCER , or PROTOCOL FORWARDING .
+- Can be APPLICATION LOAD BALANCER , PROXY NETWORK LOAD BALANCER , PASSTHROUGH NETWORK LOAD BALANCER , or PROTOCOL FORWARDING . scheme string Load balancer scheme.
+
 ### Subnets \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/vpc/docs/subnets](https://docs.cloud.google.com/vpc/docs/subnets)
 - Source ID: `site-docs-root`
-- Final score: 136
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:

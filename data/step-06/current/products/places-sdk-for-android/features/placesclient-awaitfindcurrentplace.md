@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:50.450Z"
+generated_at: "2026-04-12T12:18:06.783Z"
 product_name: "Places SDK for Android"
 product_slug: "places-sdk-for-android"
 feature_name: "PlacesClient.awaitFindCurrentPlace()"
 feature_slug: "placesclient-awaitfindcurrentplace"
 latest_feature_date: "2025-09-25"
 deprecation_date: "2025-09-25"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places"
+  - "https://developers.google.com/maps/documentation/places/android-sdk/support"
+  - "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete"
+  - "https://developers.google.com/maps/documentation/places/android-sdk/text-search"
 keywords:
   - "placesclient"
   - "awaitfindcurrentplace"
@@ -24,7 +27,7 @@ keywords:
 # PlacesClient.awaitFindCurrentPlace()
 
 Product: Places SDK for Android
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ The awaitFindCurrentPlace() API and its related request class are deprecated in 
 
 The awaitFindCurrentPlace() API and its related request class are deprecated in favor of the newer search flow; deprecated on 2025-09-25.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places](https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places)
+- [https://developers.google.com/maps/documentation/places/android-sdk/support](https://developers.google.com/maps/documentation/places/android-sdk/support)
+- [https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete](https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete)
+- [https://developers.google.com/maps/documentation/places/android-sdk/text-search](https://developers.google.com/maps/documentation/places/android-sdk/text-search)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Places SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places](https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places)
+- Source ID: `site-docs-reference`
+- Final score: 155
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Summary Public methods static void addInternalUsageAttributionId ( String internalUsageAttributionId) Adds a usage attribution ID to the initializer, which helps Google understand which libraries and samples are helpful to developers, such as usage of a marker clustering library. synchronized static PlacesClient createClient ( Context context) Gets an instance of PlacesClient for a given Context . synchronized static void deinitialize () Deinitializes Places . static void initialize ( Context applicationContext, String apiKey) This method is deprecated.
+- You may call this method again to update the API key and locale used; if you do so, all widgets and instances of PlacesClient will now use these new values.
+- You may call this method again to update the API key and locale used; if you do so, all widgets and instances of PlacesClient will now use these new values.
+- You may call this method again to update the API key used; if so, all widgets and instances of PlacesClient will now use this new key.
+
+### Support Options for Places SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/support](https://developers.google.com/maps/documentation/places/android-sdk/support)
+- Source ID: `site-docs-reference`
+- Final score: 152
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Members of the Google Maps and Google Places APIs team monitor several Google Maps and Google Places related tags on Stack Overflow.
+- Contact Billing Support as a Billing Admin The Billing Admin role does not grant permissions to create support cases on its billing account, because access to Support (Tech or Billing) is based on project permissions, and is granted to Project Owners , Project Editors , or Tech Support Editors on a project tied to the billing account.
+- Ask a new question Report an issue or feature request If you think you may have found a bug, or if you have a feature request that you would like to share with the Google Maps Platform APIs team, please file a bug or feature request in our issue tracker .
+- Since you are the Project Owner for this new project, you have access to Google Maps Platform API support case creation from that new project and can make inquiries about the billing account attached to it.
+
+### Autocomplete (New) \_|\_ Places SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete](https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete)
+- Source ID: `site-docs-root`
+- Final score: 151
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following example specifies a query string of "Soccer" and uses the primary types parameter to restrict results to establishments of type "sporting goods store" : Places.initializeWithNewPlacesApiEnabled(context, apiKey); final List<Field> placeFields = getPlaceFields(); final List<Place.Field> primaryTypes = Arrays.asList("sporting goods store"); LatLng center = new LatLng(37.7749, -122.4194); CircularBounds circle = CircularBounds.newInstance(center, / radius = / 5000); final FindAutocompletePredictionsRequest autocompletePlacesRequest = FindAutocompletePredictionsRequest.builder() .setQuery("Soccer") .setIncludedPrimaryTypes(primaryTypes) .setLocationBias(circle) .build()); placesClient.findAutocompletePredictions(autoCompletePlacesRequest) .addOnSuccessListener( (response) -> { List<AutocompletePrediction> predictions = response.getResult().getAutocompletePredictions(); } ).addOnFailureListener( exception -> { Log.e(TAG, "some exception happened" + exception.getMessage()); }) ); If you omit the primary types parameter, the results can include establishments of a type that you may not want, such as "athletic field" .
+- The next example changes the previous request to use location bias: Places.initializeWithNewPlacesApiEnabled(context, apiKey); final List<Field> placeFields = getPlaceFields(); LatLng center = new LatLng(37.7749, -122.4194); CircularBounds circle = CircularBounds.newInstance(center, / radius = / 5000); final FindAutocompletePredictionsRequest autocompletePlacesRequest = FindAutocompletePredictionsRequest.builder() .setQuery("Amoeba") .setLocationBias(circle) .build()); placesClient.findAutocompletePredictions(autoCompletePlacesRequest) .addOnSuccessListener( (response) -> { List<AutocompletePrediction> predictions = response.getResult().getAutocompletePredictions(); } ).addOnFailureListener( exception -> { Log.e(TAG, "some exception happened" + exception.getMessage()); }) ); Use primary types Use the primary types parameter to restrict results from a request to be of a certain type as listed in Table A and Table B .
+- BrandedTheme ) . build ()) . build ( this ); placeAutocompleteActivityResultLauncher . launch ( placeAutocompleteIntent ); Get place predictions programmatically Your app can get a list of predicted place names and/or addresses from the autocomplete API by calling PlacesClient.findAutocompletePredictions() , passing a FindAutocompletePredictionsRequest object.
+- The following example uses location restriction to limit the request to a circular location restriction with a 5000-meter radius centered on San Francisco: Places.initializeWithNewPlacesApiEnabled(context, apiKey); final List<Field> placeFields = getPlaceFields(); LatLng center = new LatLng(37.7749, -122.4194); CircularBounds circle = CircularBounds.newInstance(center, / radius = / 5000); final FindAutocompletePredictionsRequest autocompletePlacesRequest = FindAutocompletePredictionsRequest.builder() .setQuery("Amoeba") .setLocationRestriction(circle) .build()); placesClient.findAutocompletePredictions(autoCompletePlacesRequest) .addOnSuccessListener( (response) -> { List<AutocompletePrediction> predictions = response.getResult().getAutocompletePredictions(); } ).addOnFailureListener( exception -> { Log.e(TAG, "some exception happened" + exception.getMessage()); }) ); With location bias, the location serves as a bias which means results around the specified location can be returned, including results outside the specified area.
+
+### Text Search (New) \_|\_ Places SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/android-sdk/text-search](https://developers.google.com/maps/documentation/places/android-sdk/text-search)
+- Source ID: `site-docs-root`
+- Final score: 149
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- NAME )). setMaxResultCount ( 10 ). build (); // using pagination object (Preferred) placesClient . searchByText ( searchByTextRequest ) . addOnSuccessListener (( response ) - > { List<Place> places = response . getPlaces (); Log . i ( TAG , "Places result: " + places ); Pagination pagination = response . getPagination (); if ( pagination . hasNextPage ()) { pagination . setPageSize ( 20 ); // change the page size from 10 to 20 pagination . fetchNextPage () . addOnSuccessListener (( nextPageResponse ) - > { List<Place> nextPagePlaces = nextPageResponse . getPlaces (); Log . i ( TAG , "Next page places result: " + nextPagePlaces ); }); } }) . addOnFailureListener (( exception ) - > { if ( exception instanceof ApiException ) { // Handle error with given status code } }); Required parameters The required parameters for SearchByTextRequest are: Field list Specify which place data fields to return.
+- LatLng southWest = new LatLng ( 37.38816277477739 , - 122.08813770258874 ); LatLng northEast = new LatLng ( 37.39580487866437 , - 122.07702325966572 ); // Use the builder to create a SearchByTextRequest object. final SearchByTextRequest searchByTextRequest = SearchByTextRequest . builder ( "Spicy Vegetarian Food" , placeFields ) . setMaxResultCount ( 10 ) . setLocationRestriction ( RectangularBounds . newInstance ( southWest , northEast )). build (); // Call PlacesClient.searchByText() to perform the search. // Define a response handler to process the returned List of Place objects. placesClient . searchByText ( searchByTextRequest ) . addOnSuccessListener ( response -> { List<Place> places = response . getPlaces (); }); In this example, you: Set the field list to include only Place.Field.ID and Place.Field.DISPLAY NAME .
+- NAME )) { maxResultCount = 10 } // using pagination object (Preferred) placesClient . searchByText ( searchByTextRequest ) . addOnSuccessListener { response : SearchByTextResponse - > val places = response . places val pagination = response . pagination if ( pagination . hasNextPage ()) { pagination . setPageSize ( 20 ) pagination . fetchNextPage () . addOnSuccessListener { nextPageResponse - > val nextPagePlaces = nextPageResponse . getPlaces () } . addOnFailureListener { // Handle error with given status code} } } . addOnFailureListener { // TODO: Handle error with given status code. exception - > { exception . printStackTrace (); } } Java SearchByTextRequest searchByTextRequest = SearchByTextRequest . builder ( "restaurants" , Arrays . asList ( Place .
+- LatLng searchCenter = new LatLng ( 37.38816277477739 , - 122.08813770258874 ); // Use the builder to create a SearchByTextRequest object. // Set the radius of the search area to 500.0 meters. final SearchByTextRequest searchByTextRequest = SearchByTextRequest . builder ( "Spicy Vegetarian Food" , placeFields ) . setMaxResultCount ( 10 ) . setLocationBias ( CircularBounds . newInstance ( searchCenter , 500.0 )). build (); A rectangle is a latitude-longitude viewport, represented as two diagonally opposite low and high points.
 

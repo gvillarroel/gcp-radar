@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:26:36.714Z"
+generated_at: "2026-04-12T12:12:50.269Z"
 product_name: "Cloud Vision"
 product_slug: "cloud-vision"
 feature_name: "Safe Search multi-regional support"
 feature_slug: "safe-search-multi-regional-support"
 latest_feature_date: "2021-10-01"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/vision/docs/handwriting"
-  - "https://docs.cloud.google.com/vision/docs/release-notes"
+  - "https://docs.cloud.google.com/vision/docs/pdf"
+  - "https://docs.cloud.google.com/vision/docs/python-client-migration"
   - "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient"
 keywords:
   - "safe"
@@ -26,7 +27,7 @@ keywords:
 # Safe Search multi-regional support
 
 Product: Cloud Vision
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Safe Search supports multi-regional processing in the US and EU.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/vision/docs/handwriting](https://docs.cloud.google.com/vision/docs/handwriting)
-- [https://docs.cloud.google.com/vision/docs/release-notes](https://docs.cloud.google.com/vision/docs/release-notes)
+- [https://docs.cloud.google.com/vision/docs/pdf](https://docs.cloud.google.com/vision/docs/pdf)
+- [https://docs.cloud.google.com/vision/docs/python-client-migration](https://docs.cloud.google.com/vision/docs/python-client-migration)
 - [https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient](https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient)
 
 ## Supporting Pages
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/vision/docs/handwriting](https://docs.cloud.google.com/vision/docs/handwriting)
 - Source ID: `site-docs-root`
-- Final score: 142
+- Final score: 184
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,26 +63,40 @@ Evidence snippets:
 - REST Before using any of the request data, make the following replacements: REGION ID : One of the valid regional location identifiers: us : USA country only eu : The European Union CLOUD STORAGE IMAGE URI : the path to a valid image file in a Cloud Storage bucket.
 - Setting the location using the API The Vision API supports a global API endpoint ( vision.googleapis.com ) and also two region-based endpoints: a European Union endpoint ( eu-vision.googleapis.com ) and United States endpoint ( us-vision.googleapis.com ).
 
-### Vision release notes \_|\_ Cloud Vision API \_|\_ Google Cloud Documentation
+### "Detect text in files (PDF/TIFF) \_|\_ Cloud Vision API \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/vision/docs/release-notes](https://docs.cloud.google.com/vision/docs/release-notes)
+- URL: [https://docs.cloud.google.com/vision/docs/pdf](https://docs.cloud.google.com/vision/docs/pdf)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 158
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature New multi-regional support for features The Vision API now offers multi-regional support ( us and eu ) for the LABEL DETECTION and SAFE SEARCH features.
-- December 13, 2019 Feature Regional endpoints available for OCR The Vision API now offers multi-regional support ( us and eu ) for the OCR feature.
-- December 19, 2024 Change Safe Search model update We will be updating the SAFE SEARCH DETECTION feature model to improve quality.
-- You can find more information in the Multi-regional support section of the feature pages.
+- For more information, see the API Reference documentation . { "inputConfig": { "gcsSource": { "uri": "gs://cloud-samples-data/vision/pdf tiff/census2010.pdf" }, "mimeType": "application/pdf" }, "responses": [ { "fullTextAnnotation": { "pages": [ { "property": { "detectedLanguages": [ { "languageCode": "en", "confidence": 0.94 } ] }, "width": 612, "height": 792, "blocks": [ { "boundingBox": { "normalizedVertices": [ { "x": 0.12908497, "y": 0.10479798 }, ... { "x": 0.12908497, "y": 0.1199495 } ] }, "paragraphs": [ { ... }, "words": [ { ... }, "symbols": [ { ... "text": "C", "confidence": 0.99 }, { "property": { "detectedLanguages": [ { "languageCode": "en" } ] }, "text": "O", "confidence": 0.99 }, ... } ] } ], "text": "CONTENTS\n.\n1-1\nII-1\nIII-1\nList of Statistical Tables... \nHow to Use This Census Report ..\nTable Finding Guide .\nUser Notes .......\nStatistical Tables.........\nAppendixes \nA Geographic Terms and Concepts .........\nB Definitions of Subject Characteristics.\nData Collection and Processing Procedures... \nQuestionnaire. ........\nE Maps .................\nF Operational Overview and accuracy of the Data.......\nG Residence Rule and Residence Situations for the \n2010 Census of the United States... \nH Acknowledgments .....\nE\n Appendix may be found in the separate volume, CPH-1-A, Summary Population and\nHousing Characteristics, Selected Appendixes, on the Internet at <www.census.gov\n/prod/cen2010/cph-1-a.pdf>.\nContents\n" }, "context": { "uri": "gs://cloud-samples-data/vision/pdf tiff/census2010.pdf", "pageNumber": 1 } } ] } Go Before trying this sample, follow the Go setup instructions in the Vision quickstart using client libraries .
+- For more information, see the API Reference documentation . { "inputConfig": { "gcsSource": { "uri": "gs://cloud-samples-data/vision/pdf tiff/census2010.pdf" }, "mimeType": "application/pdf" }, "responses": [ { "fullTextAnnotation": { "pages": [ { "property": { "detectedLanguages": [ { "languageCode": "en", "confidence": 0.94 } ] }, "width": 612, "height": 792, "blocks": [ { "boundingBox": { "normalizedVertices": [ { "x": 0.12908497, "y": 0.10479798 }, ... { "x": 0.12908497, "y": 0.1199495 } ] }, "paragraphs": [ { ... }, "words": [ { ... }, "symbols": [ { ... "text": "C", "confidence": 0.99 }, { "property": { "detectedLanguages": [ { "languageCode": "en" } ] }, "text": "O", "confidence": 0.99 }, ... } ] } ], "text": "CONTENTS\n.\n1-1\nII-1\nIII-1\nList of Statistical Tables... \nHow to Use This Census Report ..\nTable Finding Guide .\nUser Notes .......\nStatistical Tables.........\nAppendixes \nA Geographic Terms and Concepts .........\nB Definitions of Subject Characteristics.\nData Collection and Processing Procedures... \nQuestionnaire. ........\nE Maps .................\nF Operational Overview and accuracy of the Data.......\nG Residence Rule and Residence Situations for the \n2010 Census of the United States... \nH Acknowledgments .....\nE\n Appendix may be found in the separate volume, CPH-1-A, Summary Population and\nHousing Characteristics, Selected Appendixes, on the Internet at <www.census.gov\n/prod/cen2010/cph-1-a.pdf>.\nContents\n" }, "context": { "uri": "gs://cloud-samples-data/vision/pdf tiff/census2010.pdf", "pageNumber": 1 } } ] } Go Before trying this sample, follow the Go setup instructions in the Vision quickstart using client libraries .
+- GcsSource gcsSource = GcsSource . newBuilder (). setUri ( gcsSourcePath ). build (); // Create the configuration with the specified MIME (Multipurpose Internet Mail Extensions) // types InputConfig inputConfig = InputConfig . newBuilder () . setMimeType ( "application/pdf" ) // Supported MimeTypes: "application/pdf", "image/tiff" . setGcsSource ( gcsSource ) . build (); // Set the GCS destination path for where to save the results.
+- After completing all of your requests, call // the "close" method on the client to safely clean up any remaining background resources. try ( ImageAnnotatorClient client = ImageAnnotatorClient . create ()) { List<AsyncAnnotateFileRequest> requests = new ArrayList <> (); // Set the GCS source path for the remote file.
+
+### "Migrating to Python Client Library v0.25.1 \_|\_ Cloud Vision API \_|\_\
+
+- URL: [https://docs.cloud.google.com/vision/docs/python-client-migration](https://docs.cloud.google.com/vision/docs/python-client-migration)
+- Source ID: `site-api-reference`
+- Final score: 157
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Image ( content = content ) response = client . safe search detection ( image = image ) safe = response . safe search annotation Names of likelihood from google.cloud.vision.enums likelihood name = ( "UNKNOWN" , "VERY UNLIKELY" , "UNLIKELY" , "POSSIBLE" , "LIKELY" , "VERY LIKELY" , ) print ( "Safe search:" ) print ( f "adult: { likelihood name [ safe . adult ] } " ) print ( f "medical: { likelihood name [ safe . medical ] } " ) print ( f "spoofed: { likelihood name [ safe . spoof ] } " ) print ( f "violence: { likelihood name [ safe . violence ] } " ) print ( f "racy: { likelihood name [ safe . racy ] } " ) if response . error . message : raise Exception ( " {} \n For more info on error messages, check: " "https://cloud.google.com/apis/design/errors" . format ( response . error . message ) ) Making a text detection request and processing the response Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) texts = image . detect text () for text in texts : print ( ' \n " {} "' . format ( text . description )) vertices = ([ '( {} , {} )' . format ( bound . x coordinate , bound . y coordinate ) for bound in text . bounds . vertices ]) print ( 'bounds: {} ' . format ( ',' . join ( vertices ))) Python Client Library v0.25.1: with open ( path , "rb" ) as image file : content = image file . read () image = vision .
+- LOGO DETECTION }], } response = client . annotate image ( request = request ) logos = response . logo annotations print ( "Logos:" ) for logo in logos : print ( logo . description ) if response . error . message : raise Exception ( " {} \n For more info on error messages, check: " "https://cloud.google.com/apis/design/errors" . format ( response . error . message ) ) Making a SafeSearch detection request and processing the response SafeSearch likelihoods are now returned as enumerations.
+- To specify a specific library version, edit the requirements.txt file as shown: google - cloud - vision == 0.25 Removed Modules The following modules were removed in the Python Client Library v0.25.1 package. google.cloud.vision.annotations google.cloud.vision.batch google.cloud.vision.client google.cloud.vision.color google.cloud.vision.crop hint google.cloud.vision.entity google.cloud.vision.face google.cloud.vision.feature google.cloud.vision.geometry google.cloud.vision.image google.cloud.vision.likelihood google.cloud.vision.safe search google.cloud.vision.text google.cloud.vision.web Required Code Changes Imports Include the new google.cloud.vision.types module in order to access the new types in the Python Client Library v0.25.1.
+- Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) safe = image . detect safe search () print ( 'Safe search:' ) print ( 'adult: {} ' . format ( safe . adult )) print ( 'medical: {} ' . format ( safe . medical )) print ( 'spoofed: {} ' . format ( safe . spoof )) print ( 'violence: {} ' . format ( safe . violence )) Python Client Library v0.25.1: with open ( path , "rb" ) as image file : content = image file . read () image = vision .
 
 ### "Class ProductSearchAsyncClient (3.13.0) \_|\_ Python client libraries \_\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient](https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 116
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 155
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import vision v1 async def sample remove product from product set(): Create a client client = vision v1 .

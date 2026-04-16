@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.157Z"
+generated_at: "2026-04-12T20:57:08.285Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "App Engine XMPP service"
 feature_slug: "app-engine-xmpp-service"
 latest_feature_date: "2016-10-27"
 deprecation_date: "October 31, 2017"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api"
+  - "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml"
+  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/standard/configuring-warmup-requests"
 keywords:
-  - "xmpp"
-  - "deprecated"
-  - "engine"
-  - "was"
-  - "and"
-  - "is"
-  - "the"
   - "app"
+  - "engine"
+  - "xmpp"
+  - "was"
+  - "deprecated"
+  - "scheduled"
+  - "shutdown"
+  - "october"
 ---
 
 # App Engine XMPP service
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ The App Engine XMPP service was deprecated and is scheduled for shutdown; deprec
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api)
+- [https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml](https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml)
+- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/standard/configuring-warmup-requests](https://docs.cloud.google.com/appengine/docs/standard/configuring-warmup-requests)
 
 ## Supporting Pages
 
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
+### "Scheduling jobs with cron.yaml \_|\_ App Engine standard environment \_\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- Source ID: `site-docs-root`
-- Final score: 234
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Create a new folder called go-app for your Go service: mkdir go-app In your go-app/ folder, create a file called app.yaml , and add the following contents: runtime : go126 # or another supported version This is the simplest configuration for an App Engine app.
-- Deploy your web service on App Engine In your go-app directory where your app.yaml file is located, deploy your web service to App Engine using the following command: gcloud app deploy To launch your browser and view your web service at https:// PROJECT ID .
-- To confirm service creation and version deployment: View your App Engine services in the Google Cloud console: View services You should see one service listed, named default .
-- When your app is running on App Engine, the PORT environment variable is set for you, but when testing your app locally, you can set PORT to any preferred value.
-
-### "Build a Java app on App Engine \_|\_ App Engine standard environment \_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app)
-- Source ID: `site-docs-root`
-- Final score: 234
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The tasks on this page walk you through the basics of App Engine, guiding you through the development process.
-- This guide helps you get started with App Engine and become familiar with deploying and managing an app.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Build a Java app on App Engine Stay organized with collections Save and categorize content based on your preferences.
-
-### "Package com.google.appengine.api (5.0.0) \_|\_ App Engine standard environment\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml](https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml)
 - Source ID: `site-docs-reference`
-- Final score: 230
+- Final score: 59
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- When a namespace aware class (e.g., com.google.appengine.api.datastore.Key , com.google.appengine.api.datastore.Query and com.google.appengine.api.memcache.MemcacheService ) is constructed, it determines which namespace will be used by calling NamespaceManager#get() if it is otherwise unspecified.
-- Classes LifecycleManager NamespaceManager Provides functions for manipulating the current namespace used for App Engine APIs.
-- See Also: Multitenancy and the Namespaces Java API in the Google App Engine Developer's Guide .
-- Example: NamespaceManager . #set ("a-namespace"); MemcacheService memcache = MemcacheServiceFactory.getMemcacheService(); // Store record in namespace "a-namespace" memcache.put("key1", "value1"); NamespaceManager . #set ("other-namespace"); // Store record in namespace "other-namespace" memcache.put("key2", "value2"); MemcacheService boundMemcache = MemcacheServiceFactory.getMemcacheService("specific-namespace"); NamespaceManager . #set ("whatever-namespace"); // The record is still stored in namespace "specific-namespace". boundMemcache.put("key3", "value3"); MemcacheService memcache (in the above example) uses the current namespace and key1 will be stored in namespace "a-namespace" , while key2 is stored in namespace "other-namespace" .
+- On the first day of January, April, July, and October, it runs one time at 00:00: schedule : 1 of jan,april,july,oct 00:00 Specifying retries If a cron job's request handler returns a status code that is not in the range 200–299 (inclusive) App Engine considers that job to have failed.
+- The Cron service is designed to provide "at least once" delivery; that is, if a job is scheduled, App Engine sends the job request at least one time.
+- For the Java, a cron.yaml file in the WEB-INF directory of your application (alongside apppengine-web.xml ) configures scheduled tasks for your app.
+- The App Engine Cron Service allows you to configure regularly scheduled tasks that operate at defined times or regular intervals.
+
+### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 56
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.
+- The Users API allows an App Engine app to perform the following tasks: Detect whether the current user is signed in using a Google Account.
+- IAP doesn't protect against activity within a project, such as one App Engine service accessing another service in the same project.
+
+### "Configuring warmup requests to improve performance \_|\_ App Engine standard\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/configuring-warmup-requests](https://docs.cloud.google.com/appengine/docs/standard/configuring-warmup-requests)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 56
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Configuring warmup requests to improve performance Stay organized with collections Save and categorize content based on your preferences.
+- If warmup requests are enabled for your application, App Engine attempts to detect when your application needs a new instance and initiates a warmup request to initialize a new instance.
+- Enabling warmup requests Warmup requests are used by the App Engine scheduler, which controls the auto scaling of instances based on user-supplied configuration.
+- When deploying to Google App Engine, a webserver process such as Gunicorn will serve the app.
 

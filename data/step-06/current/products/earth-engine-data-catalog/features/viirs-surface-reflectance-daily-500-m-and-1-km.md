@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.441Z"
+generated_at: "2026-04-14T15:13:19.473Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "VIIRS Surface Reflectance Daily 500 m and 1 km"
 feature_slug: "viirs-surface-reflectance-daily-500-m-and-1-km"
 latest_feature_date: "2024-06-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/satellite-imagery"
   - "https://developers.google.com/earth-engine/datasets/tags/geophysical"
-  - "https://developers.google.com/earth-engine/datasets/tags/landuse-landcover"
+  - "https://developers.google.com/earth-engine/datasets/tags/fire"
 keywords:
   - "viirs"
   - "surface"
   - "reflectance"
   - "daily"
   - "500"
-  - "and"
   - "km"
   - "dataset"
+  - "resolution"
 ---
 
 # VIIRS Surface Reflectance Daily 500 m and 1 km
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ A VIIRS surface reflectance daily dataset at 500 m and 1 km resolution.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - [https://developers.google.com/earth-engine/datasets/tags/geophysical](https://developers.google.com/earth-engine/datasets/tags/geophysical)
-- [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
+- [https://developers.google.com/earth-engine/datasets/tags/fire](https://developers.google.com/earth-engine/datasets/tags/fire)
 
 ## Supporting Pages
 
@@ -52,38 +52,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - Source ID: `site-docs-root-3`
-- Final score: 192
+- Final score: 168
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- These images contain 5 visible and near-infrared (VNIR) bands and 2 short-wave infrared (SWIR) bands processed to orthorectified surface reflectance, and one thermal … cfmask cloud fmask global l9sr landsat VNP09GA: VIIRS Surface Reflectance Daily 500m and 1km The Visible Infrared Imaging Radiometer Suite (VIIRS) daily surface reflectance (VNP09GA) product provides an estimate of land surface reflectance from the Suomi National Polar-Orbiting Partnership (S-NPP) VIIRS sensor.
+- Wavelengths between 1340-1445 nm and 1790-1955 nm are set to … airborne forest hyperspectral neon neon-prod-earthengine publisher-dataset NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Africa This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Americas This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Asia This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NOAA CDR AVHRR: Surface Reflectance, Version 5 The NOAA Climate Data Record (CDR) of AVHRR Surface Reflectance contains gridded daily surface reflectance and brightness temperatures derived from the Advanced Very High Resolution Radiometer (AVHRR) sensors onboard seven NOAA polar orbiting satellites.
 - Data are provided for three imagery bands (I1, I2, I3) at nominal 500 meter resolution ( 463 meter) … daily nasa noaa npp reflectance satellite-imagery VNP09H1: VIIRS Surface Reflectance 8-Day L3 Global 500m The 8-day Visible Infrared Imaging Radiometer Suite (VIIRS) Surface Reflectance (VNP09H1) Version 1 composite product provides an estimate of land surface reflectance from the Suomi National Polar-orbiting Partnership (Suomi NPP) VIIRS sensor for three imagery bands (I1, I2, I3) at nominal 500m resolution ( 463m).
-- The mosaic consists of pan-sharpened normalized surface reflectance scenes (Landsat ETM+ bands 1, 2, 3, and … antarctica ice landsat-derived lima mosaic satellite-imagery MCD19A1.061: Land Surface BRF Daily L2G Global 500m and 1km The MCD19A1 Version 6.1 data product is a Moderate Resolution Imaging Spectroradiometer (MODIS) Terra and Aqua combined Land Surface Bidirectional Reflectance Factor (BRF) gridded Level 2 product produced daily at 500 meter and 1 kilometer resolution.
 - The VNP43IA2 product is produced daily using 16 days of VIIRS … land nasa noaa satellite-imagery surface viirs VNP43IA4: BRDF/Albedo Quality Daily L3 Global 500m SIN Grid The NASA/NOAA Suomi National Polar-orbiting Partnership (Suomi NPP) Visible Infrared Imaging Radiometer Suite (VIIRS) Nadir Bidirectional Reflectance Distribution Function (BRDF) Adjusted Reflectance (NBAR) Version 2 product provides NBAR estimates at 500 meter resolution.
+- The VNP43IA1 product is produced daily using 16 days of VIIRS … land nasa noaa satellite-imagery surface viirs VNP43IA2: BRDF/Albedo Quality Daily L3 Global 500m SIN Grid The Suomi National Polar-Orbiting Partnership (Suomi NPP) NASA Visible Infrared Imaging Radiometer Suite (VIIRS) Bidirectional Reflectance Distribution Function (BRDF) and Albedo Quality (VNP43IA2) Version 1 product provides BRDF and Albedo quality at 500m resolution.
 
 ### "Datasets tagged geophysical in Earth Engine \_|\_ Earth Engine Data Catalog\
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/geophysical](https://developers.google.com/earth-engine/datasets/tags/geophysical)
 - Source ID: `site-docs-root`
-- Final score: 184
+- Final score: 160
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - The Harmonized Landsat Sentinel-2 (HLS) project offers a consistent, harmonized, 30m, daily surface reflectance dataset from Landsat 8/9 and Sentinel-2 A/B satellites.
-- Compared to other coarser resolution (≥ 1km) satellite fire detection products, the improved 375 m data provide greater response over fires of relatively small … eosdis fire firms geophysical hotspot lance VNP14IMGTDL NRT Daily Raster: VIIRS (S-NPP) Band 375m Active Fire Suomi NPP Visible Infrared Imaging Radiometer Suite (VIIRS) Active Fire detection product is based on the instrument's 375m nominal resolution data.
-- The Integrated Multi-satellitE Retrievals for GPM (IMERG) is the unified algorithm that provides rainfall estimates combining data from all passive-microwave instruments in the GPM … climate geophysical gpm imerg jaxa monthly GRIDMET DROUGHT: CONUS Drought Indices This dataset contains drought indices derived from the 4-km daily Gridded Surface Meteorological (GRIDMET) dataset.
-- This climate projection dataset contains global, daily gridded data for the observational (1983-2016) and projection (2030 and 2050) periods to be used in the identification and … climate geophysical precipitation ucsb weather US Lithology The Lithology dataset provides classes of the general types of parent material of soil on the surface.
+- 2020) is a quasi global, high-resolution gridded dataset (0.05° × 0.05° resolution, 60°S - 70°N) that provides daily minimum (Tmin) and maximum 2-meter temperatures (Tmax) and four derived variables: saturation vapor … chg climate daily era5 geophysical reanalysis Canadian Digital Elevation Model The Canadian Digital Elevation Model (CDEM) is part of Natural Resources Canada's (NRCan) altimetry system and stems from the existing Canadian Digital Elevation Data (CDED).
+- The 3DEP data holdings serve as the elevation layer of The National Map and provide foundational elevation information for earth science studies and mapping applications in the United … 3dep dem elevation elevation-topography geophysical topography VJ114IMGTDL NRT Daily Raster: VIIRS (NOAA-20) Band 375m Active Fire NOAA-20 (JPSS-1) Visible Infrared Imaging Radiometer Suite (VIIRS) Active Fire detection product is based on the instrument's 375m nominal resolution data.
+- CHIRPS v3 combines satellite-based thermal infrared rainfall estimates with in-situ station observations … chc climate geophysical precipitation ucsb weather CHIRPS Precipitation Daily Reanalysis: Climate Hazards Center InfraRed Precipitation With Station Data (Version 3.0, ERA5-based) The Climate Hazards Center Infrared Precipitation with Stations (CHIRPS v3) is a 40+ year, high-resolution quasi-global rainfall dataset.
 
-### "Datasets tagged landuse-landcover in Earth Engine \_|\_ Earth Engine Data\
+### "Datasets tagged fire in Earth Engine \_|\_ Earth Engine Data Catalog \_\
 
-- URL: [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
+- URL: [https://developers.google.com/earth-engine/datasets/tags/fire](https://developers.google.com/earth-engine/datasets/tags/fire)
 - Source ID: `site-docs-root-3`
-- Final score: 178
+- Final score: 152
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- These data support the National Land Cover Database (NLCD) project, which is managed by the US Geological … forest gtac landuse-landcover redcastle-resources usda usfs VNP22Q2: Land Surface Phenology Yearly L3 Global 500m SIN Grid The Suomi National Polar-Orbiting Partnership (Suomi NPP) NASA Visible Infrared Imaging Radiometer Suite (VIIRS) Land Cover Dynamics data product provides global land surface phenology (GLSP) metrics at yearly intervals.
-- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
-- Designed to continuously represent Earth's terrestrial surface as a proportion of basic vegetation traits, it provides a gradation of three surface cover components: percent tree cover, percent … annual geophysical global landuse-landcover modis nasa MapBiomas Land Use and Land Cover - Bolivia V1.0 MapBiomas Land Use and Land Cover (LULC) dataset for Bolivia is produced annually by the MapBiomas Project using Landsat satellite imagery and machine learning classification techniques.
-- This data was converted from its categorical format, which has a ≈500 meter resolution, to a fractional product indicating the integer percentage (0-100) of the output … landcover landuse-landcover map RCMAP Rangeland Component Timeseries (1985-2023), v06 'The RCMAP (Rangeland Condition Monitoring Assessment and Projection) dataset quantifies the percent cover of rangeland components across western North America using Landsat imagery from 1985-2023.
+- The VNP14A1 data product is a global, 1km gridded composite of fire pixels detected from … fire land nasa noaa surface viirs VNP14IMGTDL NRT Daily Raster: VIIRS (S-NPP) Band 375m Active Fire Suomi NPP Visible Infrared Imaging Radiometer Suite (VIIRS) Active Fire detection product is based on the instrument's 375m nominal resolution data.
+- Compared to other coarser resolution (≥ 1km) satellite fire detection products, the improved 375 m data provide greater response over fires of relatively small … eosdis fire firms geophysical hotspot lance VNP64A1.002: Burned Area Monthly L4 Global 500m SIN Grid The daily Suomi National Polar-Orbiting Partnership (Suomi NPP) NASA Visible Infrared Imaging Radiometer Suite (VIIRS) Burned Area (VNP64A1) Version 2 data product is a monthly, global gridded 500m product containing per-pixel burned area and quality information.
+- Compared to other coarser resolution (≥ 1km) satellite fire detection products, the improved 375 m data provide greater response over fires of relatively small … eosdis fire firms geophysical hotspot lance VNP14A1.002: Thermal Anomalies/Fire Daily L3 Global 1km SIN Grid The daily Suomi National Polar-Orbiting Partnership NASA Visible Infrared Imaging Radiometer Suite (VIIRS) Thermal Anomalies/Fire (VNP14A1) Version 1 data product provides daily information about active fires and other thermal anomalies.
+- The VNP64 burned area mapping approach employs 750m VIIRS … burn change-detection fire land nasa surface VNP64A1: Burned Area Monthly L4 Global 500m SIN Grid The daily Suomi National Polar-Orbiting Partnership (Suomi NPP) NASA Visible Infrared Imaging Radiometer Suite (VIIRS) Burned Area (VNP64A1) Version 1 data product is a monthly, global gridded 500m product containing per-pixel burned area and quality information.
 

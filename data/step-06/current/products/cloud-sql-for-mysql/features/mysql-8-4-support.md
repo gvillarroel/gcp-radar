@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.832Z"
+generated_at: "2026-04-15T11:56:51.910Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "MySQL 8.4 support"
@@ -9,18 +9,17 @@ latest_feature_date: "2024-10-01"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion"
-  - "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases"
+  - "https://docs.cloud.google.com/sql/docs/editions-intro"
+  - "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+  - "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups"
 keywords:
   - "mysql"
   - "sql"
-  - "for"
   - "supports"
-  - "as"
   - "generally"
   - "available"
   - "database"
+  - "version"
 ---
 
 # MySQL 8.4 support
@@ -38,55 +37,52 @@ Cloud SQL for MySQL supports MySQL 8.4 as a generally available database version
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion)
-- [https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases](https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases)
+- [https://docs.cloud.google.com/sql/docs/editions-intro](https://docs.cloud.google.com/sql/docs/editions-intro)
+- [https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect](https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect)
+- [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups)
 
 ## Supporting Pages
 
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
+### "Cloud SQL backups overview \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 276
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- July 29, 2024 Feature Migrating your external MySQL 5.7 and 8.0 databases into Cloud SQL for MySQL by using Percona XtraBackup physical files is now generally available (GA).
-- July 08, 2021 Feature IAM database authentication for Cloud SQL for MySQL is now generally available.
-- June 20, 2024 Feature You can now use the gcloud sql instances describe command or the SQL Admin API to retrieve a list of database versions that are available to your MySQL instance for upgrade.
-- July 31, 2024 Feature Gemini in Databases assistance in Cloud SQL for MySQL is now available in Preview for query insights, system insights, index advisor, and active queries.
-
-### SqlDatabaseVersion \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion)
-- Source ID: `site-api-reference`
-- Final score: 264
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups)
+- Source ID: `site-docs-reference-3`
+- Final score: 22
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Databases Cloud SQL MySQL Reference Send feedback SqlDatabaseVersion Stay organized with collections Save and categorize content based on your preferences.
-- MYSQL 8 0 18 The database major version is MySQL 8.0 and the minor version is 18.
-- MYSQL 8 0 26 The database major version is MySQL 8.0 and the minor version is 26.
-- MYSQL 8 0 27 The database major version is MySQL 8.0 and the minor version is 27.
+- Relevant log files include: cloudsql.googlapis.com/mysql-general.log cloudsql.googleapis.com/mysql.err If Cloud Audit Logs is enabled and you have the required permissions to view them, cloudaudit.googleapis.com/activity may also be available.
+- To upgrade to a later version, perform an in-place major version upgrade , use the Database Migration Service , or export and then import your database to a new Cloud SQL instance.
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL backups overview Stay organized with collections Save and categorize content based on your preferences.
+- You can only restore from a backup to an instance with the same database version as when the backup was taken.
 
-### "Create and manage databases \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
+### "Cloud SQL editions overview \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases](https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases)
-- Source ID: `site-docs-root`
-- Final score: 248
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/sql/docs/editions-intro](https://docs.cloud.google.com/sql/docs/editions-intro)
+- Source ID: `site-docs-reference-3`
+- Final score: 22
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /databases" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "CREATE DATABASE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } mysql Client For reference information, see CREATE DATABASE in the MySQL documentation.
-- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method DELETE -Headers $headers -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /databases/ database-name " Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "kind": "sql#operation", "targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ", "status": "PENDING", "user": "user@example.com", "insertTime": "2020-01-21T22:43:37.981Z", "operationType": "DELETE DATABASE", "name": " operation-id ", "targetId": " instance-id ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ", "targetProject": " project-id " } mysql Client For reference information, see DROP DATABASE in the MySQL documentation.
-- If you don't specify a custom character set and collation when you create your database, then the database has the following default values: MySQL 5.6, 5.7 : (created with Google Cloud console, Cloud SQL Admin API, gcloud CLI , Terraform, or mysql client) Character set: utf8 Collation: utf8 general ci MySQL 8.0.x and later (created with the Google Cloud console) Character set: utf8 Collation: utf8 general ci MySQL 8.0.x and later (created with the Cloud SQL Admin API, gcloud CLI , Terraform, or mysql client) Character set: utf8mb4 Collation: utf8mb4 0900 ai ci If you need to modify the character set or collation configuration of your database after creation, then see Update the character set and collation for a database .
-- Examples of such files are #sql- files created from interrupted ALTER TABLE operations in MySQL 5.6 and MySQL 5.7. gcloud For reference information, see gcloud sql databases delete . gcloud sql databases delete DATABASE NAME \ --instance = INSTANCE NAME Note: Deleting a database removes all files in the database's directory, including any files not directly used by the database.
+- Cloud SQL editions features The following table provides an overview of key features enhancements available for Cloud SQL Enterprise Plus edition when compared to Cloud SQL Enterprise edition: Cloud SQL Enterprise Plus edition Cloud SQL Enterprise edition Database versions MySQL 8.0, 8.4 Note: If the database version for your instance is MySQL 8.4, then the default Cloud SQL edition is Enterprise Plus.
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL editions overview Stay organized with collections Save and categorize content based on your preferences.
+- Cloud SQL Enterprise edition supports all existing capabilities of Cloud SQL available as of July 12, 2023, at the same price.
+- MySQL 5.6, 5.7, 8.0, 8.4 Availability SLA 99.99% (includes maintenance) 99.95% (excludes maintenance) Performance Machine series N2 C4A General purpose shared core General purpose dedicated core N4 Machine configuration limits N2 machine series Up to 128 vCPU Up to 864 GB RAM 1:8 core:memory ratio C4A machine series Up to 72 vCPU Up to 576 GB RAM 1:8 core:memory ratio General purpose shared core 1 vCPU Up to 1.7 GB RAM 1:6.5 core:memory ratio General purpose dedicated core Up to 96 vCPU Up to 624 GB RAM 1:6.5 core:memory ratio N4 machine series Up to 80 vCPU Up to 624 GB RAM 1:8 core:memory ratio Data cache Yes No Optimized writes Yes No Point-in-time log retention Up to 35 days Up to 7 days Read pools Yes No Availability Maintenance downtime Planned operations downtime Sub-second downtime Few minutes Advanced disaster recovery (DR) Yes No Write endpoint for advanced disaster recovery (DR) Yes No Write endpoint connectivity Yes No Managed Connection Pooling Yes No Observability AI-assisted troubleshooting Yes No Query insights 30 day metric retention 1 MB query length 200 query plan sample maximum Wait event analysis Index advisor recommendations 7 day metric retention 4500 bytes query length 20 query plan sample maximum Enhanced recommenders Yes No Cloud SQL Enterprise Plus edition enhancements Cloud SQL Enterprise Plus edition is ideal for applications that require the best performance, availability, and observability.
+
+### "Private Service Connect overview \_|\_ Cloud SQL for MySQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect](https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect)
+- Source ID: `site-docs-reference-3`
+- Final score: 22
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Private Service Connect overview Stay organized with collections Save and categorize content based on your preferences.
+- The supported serving ports for MySQL are as follows: TCP port 3306 for direct connections to MySQL database server (including when using Managed Connection Pooling ).
+- You can use outbound connectivity to migrate data from an external server within your network, or do a homogeneous migration using Database Migration Service.
+- MySQL PostgreSQL SQL Server This page describes concepts associated with Private Service Connect.
 

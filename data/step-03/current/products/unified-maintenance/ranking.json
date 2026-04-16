@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-11T20:08:45.611Z",
+  "generated_at": "2026-04-12T21:48:19.501Z",
   "product_name": "Unified Maintenance",
   "product_slug": "unified-maintenance",
   "step02_source_path": "data/step-02/current/unified-maintenance.md",
@@ -232,9 +232,9 @@
           "rank": 7
         },
         {
-          "title": "Supported services | Unified Maintenance | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
-          "description": "Review the services Unified Maintenance supports.",
+          "title": "Maintenance API | Unified Maintenance | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/unified-maintenance/docs/reference/rest",
+          "description": "It offers users visibility into upcoming, ongoing, and completed maintenance, along with controls to manage certain maintenance activities, such as mainteance windows, rescheduling, and on-demand updates. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests. A Discovery Document is a machine-readable specification for describing and consuming REST APIs.",
           "rank": 8
         }
       ]
@@ -281,7 +281,7 @@
         {
           "title": "Quickstart: Using client libraries | Unified Maintenance | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/unified-maintenance/docs/quickstart-client-libraries",
-          "description": "// Sample pubsub-quickstart creates a Google Cloud Pub/Sub topic. package main import ( &quot;context&quot; &quot;fmt&quot; &quot;log&quot; &quot;cloud.google.com/go/pubsub/v2&quot; &quot;cloud.google.com/go/pubsub/v2/apiv1/pubsubpb&quot; ) func main() { ctx := context.Background() // Sets your Google Cloud Platform project ID. projectID := &quot;YOUR_PROJECT_ID&quot; // Creates a client. client, err := pubsub.NewClient(ctx, projectID) if err != nil { log.Fatalf(&quot;Failed to create client: %v&quot;, err) } defer client.Close() // Sets the id for the new topic. topicID := &quot;my-topic&quot; pbTopic := &amp;pubsubpb.Topic{ Name: fmt.Sprintf(&quot;projects/%s/topics/%s&quot;, projectID, topicID), } // Creates the new topic. topic, err := client.TopicAdminClient.CreateTopic(ctx, pbTopic) if err != nil { log.Fatalf(&quot;Failed to create topic: %v&quot;, err) } fmt.Printf(&quot;Topic %v created.\\n&quot;, topic) } For more information, see the Unified Maintenance Java API reference documentation.",
+          "description": "For more information, see Set up authentication for a local development environment. from google.cloud import pubsub_v1 # TODO(developer) # project_id = &quot;your-project-id&quot; # topic_id = &quot;your-topic-id&quot; publisher = pubsub_v1.PublisherClient() topic_path = publisher.topic_path(project_id, topic_id) topic = publisher.create_topic(request={&quot;name&quot;: topic_path}) print(f&quot;Created topic: {topic.name}&quot;) For more information, see the Unified Maintenance Ruby API reference documentation.",
           "rank": 2
         },
         {
@@ -892,6 +892,7 @@
       "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com/unified-maintenance/docs \"Unified Maintenance\"",
+        "site:docs.cloud.google.com \"Unified Maintenance\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Unified Maintenance\" Google Cloud introduction reference"
       ],
       "intent_hits": [
@@ -1004,7 +1005,7 @@
     {
       "title": "Quickstart: Using client libraries | Unified Maintenance | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/unified-maintenance/docs/quickstart-client-libraries",
-      "description": "// Sample pubsub-quickstart creates a Google Cloud Pub/Sub topic. package main import ( &quot;context&quot; &quot;fmt&quot; &quot;log&quot; &quot;cloud.google.com/go/pubsub/v2&quot; &quot;cloud.google.com/go/pubsub/v2/apiv1/pubsubpb&quot; ) func main() { ctx := context.Background() // Sets your Google Cloud Platform project ID. projectID := &quot;YOUR_PROJECT_ID&quot; // Creates a client. client, err := pubsub.NewClient(ctx, projectID) if err != nil { log.Fatalf(&quot;Failed to create client: %v&quot;, err) } defer client.Close() // Sets the id for the new topic. topicID := &quot;my-topic&quot; pbTopic := &amp;pubsubpb.Topic{ Name: fmt.Sprintf(&quot;projects/%s/topics/%s&quot;, projectID, topicID), } // Creates the new topic. topic, err := client.TopicAdminClient.CreateTopic(ctx, pbTopic) if err != nil { log.Fatalf(&quot;Failed to create topic: %v&quot;, err) } fmt.Printf(&quot;Topic %v created.\\n&quot;, topic) } For more information, see the Unified Maintenance Java API reference documentation.",
+      "description": "For more information, see Set up authentication for a local development environment. from google.cloud import pubsub_v1 # TODO(developer) # project_id = &quot;your-project-id&quot; # topic_id = &quot;your-topic-id&quot; publisher = pubsub_v1.PublisherClient() topic_path = publisher.topic_path(project_id, topic_id) topic = publisher.create_topic(request={&quot;name&quot;: topic_path}) print(f&quot;Created topic: {topic.name}&quot;) For more information, see the Unified Maintenance Ruby API reference documentation.",
       "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com/unified-maintenance/docs \"set up\" \"Unified Maintenance\"",
@@ -1028,14 +1029,15 @@
       "consistency_score": 67,
       "product_fit_score": 176,
       "feature_coverage": {
-        "score": 15,
+        "score": 18,
         "matched_phrases": [],
         "matched_tokens": [
           "maintenance",
           "unified",
           "for",
           "cloud",
-          "google"
+          "google",
+          "environment"
         ],
         "user_facing_alignment": 0
       },
@@ -1055,7 +1057,8 @@
           "unified",
           "for",
           "cloud",
-          "google"
+          "google",
+          "environment"
         ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
@@ -1519,12 +1522,10 @@
       "description": "The following table is a listing of services that are supported by <strong>Unified Maintenance</strong>.",
       "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com/unified-maintenance/docs \"Unified Maintenance\"",
-        "site:docs.cloud.google.com \"Unified Maintenance\" Google Cloud documentation"
+        "site:docs.cloud.google.com/unified-maintenance/docs \"Unified Maintenance\""
       ],
       "intent_hits": [
-        "canonical_docs",
-        "product_docs"
+        "canonical_docs"
       ],
       "round_hits": [
         1

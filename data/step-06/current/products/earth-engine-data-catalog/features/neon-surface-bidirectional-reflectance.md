@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.415Z"
+generated_at: "2026-04-14T15:13:19.443Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "NEON Surface Bidirectional Reflectance"
 feature_slug: "neon-surface-bidirectional-reflectance"
 latest_feature_date: "2024-08-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/satellite-imagery"
   - "https://developers.google.com/earth-engine/datasets/catalog"
@@ -24,7 +24,7 @@ keywords:
 # NEON Surface Bidirectional Reflectance
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,7 +36,7 @@ A NEON hyperspectral surface bidirectional reflectance dataset.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -50,7 +50,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - Source ID: `site-docs-root-3`
-- Final score: 154
+- Final score: 184
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -63,7 +63,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 138
+- Final score: 168
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -76,9 +76,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/highres](https://developers.google.com/earth-engine/datasets/tags/highres)
 - Source ID: `site-docs-root`
-- Final score: 110
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 152
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The digital camera is part of a suite of instruments on the NEON Airborne Observation Platform (AOP) that also includes a … airborne forest highres neon neon-prod-earthengine orthophoto NEON Surface Bidirectional Reflectance The NEON AOP Surface Bidirectional Reflectance is a hyperspectral VSWIR (visible to shortwave infrared) data product, containing 426 bands spanning wavelengths from 380 nm to 2510 nm.

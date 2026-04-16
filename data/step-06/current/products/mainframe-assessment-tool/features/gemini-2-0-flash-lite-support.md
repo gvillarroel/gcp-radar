@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.425Z"
+generated_at: "2026-04-15T12:06:50.462Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Gemini 2.0 Flash-Lite support"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-05-12"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction"
 keywords:
   - "gemini"
   - "flash"
   - "lite"
   - "uses"
-  - "as"
   - "default"
   - "ai"
   - "insight"
+  - "model"
 ---
 
 # Gemini 2.0 Flash-Lite support
@@ -42,43 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
 
 ## Supporting Pages
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
+### Configure settings \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 118
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings)
+- Source ID: `site-docs-reference`
+- Final score: 181
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- By default, Mainframe Assessment Tool uses Gemini 2.5 Flash-Lite and 2.5 Flash, adaptively.
+- You can configure Mainframe Assessment Tool to use a different model from the following available options: Gemini 3.1 Pro ( Preview ) Gemini 3 Flash ( Preview ) Gemini 2.5 Flash-Lite Gemini 2.5 Flash Gemini 2.5 Pro For models that support Thinking level configuration, Thinking level can be selected on the Thinking level drop-down.
+- If you run large assessments and change the default model, we recommend that you increase the quota for that model to help enable faster assessment completion.
+- Configure default AI features for new assessments Mainframe Assessment Tool lets you customize the default parameters for AI insights in your assessments.
+
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- Source ID: `site-docs-reference`
+- Final score: 88
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
+- Supported AI models: Gemini 3.1 Pro Preview and Gemini 3 Flash Preview.
+- Mainframe Assessment Tool uses the Gemini 3 Pro Image Preview for domain image generation.
+- For scheduler configuration assets, such as BMC Control-M, Mainframe Assessment Tool provides AI-generated insights that help you visualize the scheduler workflow, including a listing of scheduled jobs, timelines for daily, weekly, or monthly schedules, and dependency graphs showing job relationships.
+- View AI-generated insights for assets The Assets page provides a summary, detailed logic, and code suggestions for a program or job in your mainframe application.
 
-### Mainframe Assessment Tool release notes | Google Cloud Documentation
+### "Extract business rules \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 114
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- Source ID: `site-docs-reference`
+- Final score: 80
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes Mainframe Assessment Tool version 2.8.0 is available with the following new features and improvements: Added an option to export the assessment static analysis data to Neo4j.
-- For more information, see Export assessment data to your Neo4j database.
-
-### Mainframe Assessment Tool MCP server | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
-- Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Mainframe Assessment Tool MCP server Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server This page describes how to set up and interact with Mainframe Assessment Tool assessments by using MCP clients such as Gemini CLI or AI agents through the Model Context Protocol (MCP).
-- You can use natural language prompts to get insights into your mainframe assessments.
+- Note: Business rules extraction uses Gemini 3 Flash ( Preview ).
+- Click the Change status menu and then select one of the following statuses: Awaiting review: the default status for all rules.
+- Start a business rules extraction job Mainframe Assessment Tool uses Gemini-powered agents to analyze your code.
+- Gemini 3 Flash is only available through the global endpoint and might not be available in all regions.
 

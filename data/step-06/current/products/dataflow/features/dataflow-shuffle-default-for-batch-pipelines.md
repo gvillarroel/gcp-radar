@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.834Z"
+generated_at: "2026-04-15T12:05:13.823Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Dataflow Shuffle default for batch pipelines"
 feature_slug: "dataflow-shuffle-default-for-batch-pipelines"
 latest_feature_date: "2021-05-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/common-errors"
   - "https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines"
-  - "https://docs.cloud.google.com/dataflow/docs/release-notes"
 keywords:
   - "dataflow"
   - "shuffle"
   - "default"
-  - "for"
   - "batch"
   - "pipelines"
-  - "this"
+  - "feature"
   - "makes"
+  - "execution"
 ---
 
 # Dataflow Shuffle default for batch pipelines
 
 Product: Dataflow
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,68 +38,55 @@ This feature makes Dataflow Shuffle the default execution mode for batch pipelin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices](https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices)
-- [https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime](https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime)
+- [https://docs.cloud.google.com/dataflow/docs/guides/common-errors](https://docs.cloud.google.com/dataflow/docs/guides/common-errors)
 - [https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines](https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines)
-- [https://docs.cloud.google.com/dataflow/docs/release-notes](https://docs.cloud.google.com/dataflow/docs/release-notes)
 
 ## Supporting Pages
+
+### Troubleshoot Dataflow errors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/common-errors](https://docs.cloud.google.com/dataflow/docs/guides/common-errors)
+- Source ID: `site-docs-reference-2`
+- Final score: 169
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- CONTAINER ID = nerdctl ps grep sdk-0-0 awk '{print $1}' Start a shell in the running container. nerdctl exec --privileged -it $CONTAINER ID /bin/bash Inspect python processes in the running container. ps -A grep python PYTHON PID = $( ps -A grep python head -1 awk '{print $1}' ) Use pystack to retrieve stacktraces from the python process. pip install pystack pystack remote --native $PYTHON PID Find which thread holds the GIL and inspect the stacktrace. pystack remote --native $PYTHON PID grep -iF "Has the GIL" -A 100 Alternately, use inspect with gdb. apt update && apt install -y gdb gdb --quiet \ --eval-command = "set pagination off" \ --eval-command = "thread apply all bt" \ --eval-command "set confirm off" \ --eval-command = "quit" -p $PYTHON PID In Python pipelines, in the default configuration, Dataflow assumes that each Python process running on the workers efficiently uses one vCPU core.
+- Java --workerDiskType=pd-ssd Python --worker disk type=pd-ssd Go disk type=pd-ssd No space left on device When a job runs out of disk space, the following error might appear in the worker logs: No space left on device This error can occur for one of the following reasons: The worker persistent storage runs out of free space, which can occur for one of the following reasons: A job downloads large dependencies at runtime A job uses large custom containers A job writes many temporary data to local disk When using Dataflow Shuffle , Dataflow sets lower default disk size .
+- The following example demonstrates the Google Cloud CLI command: gcloud compute firewall-rules create FIREWALL RULE NAME \ --network NETWORK \ --action allow \ --direction IN \ --target-tags dataflow \ --source-tags dataflow \ --priority 0 \ --rules tcp:12345-12346 Replace the following: FIREWALL RULE NAME : the name of your firewall rule NETWORK : the name of your network Your job is shuffle-bound .
+- Review your organization policy constraints Go to the Organization policies page Review the constraints for any that might limit VM instance creation for either the account you're using (by default, the Dataflow service account ) or in the zone that you're targeting.
 
 ### "Best practices for large batch pipelines \_|\_ Cloud Dataflow \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices](https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices)
-- Source ID: `site-docs-root-2`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-2`
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Best practices for large batch pipelines Stay organized with collections Save and categorize content based on your preferences.
-- This document explains how to minimize the impact of job failures for large batch pipelines.
 - Use speculative execution to avoid stragglers For batch pipelines, you can enable speculative execution , a feature to mitigate the impact of slow-running or stuck tasks.
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Best practices for large batch pipelines Stay organized with collections Save and categorize content based on your preferences.
 - By default, Dataflow retries these failed tasks four times in batch mode and an unlimited number of times in streaming mode.
-
-### Use Dataflow Prime \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime](https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime)
-- Source ID: `site-docs-root`
-- Final score: 172
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Dataflow Prime Dataflow Runner v2 Default feature with no option to turn off for batch jobs and optional for streaming jobs Default feature with an option to turn off for batch jobs and optional for streaming jobs Dataflow Shuffle for batch jobs Default feature with an option to turn off Default feature with an option to turn off Streaming Engine for streaming jobs Optional feature for Java pipelines and always on for Python pipelines Optional feature for Java pipelines and always on for Python pipelines since 2.45.0 Horizontal Autoscaling Default feature with option to turn off Default feature with option to turn off Vertical Autoscaling Default feature with option to turn off Not applicable Right fitting Optional feature Optional feature Billing Serverless billing Standard billing What's next Read about Dataflow quotas .
-- By default, Dataflow Prime uses Dataflow Shuffle and Dataflow Runner v2 for batch pipelines.
-- For supported Apache Beam SDK versions , enable the following flag: Java --dataflowServiceOptions = enable prime Python Apache Beam Python SDK version 2.29.0 or later: --dataflow service options = enable prime Apache Beam Python SDK version 2.21.0 to 2.28.0: --experiments = enable prime Go --dataflow service options = enable prime Disable Dataflow Prime Sometimes, such as with certain Google-provided templates, Dataflow Prime might be enabled by default.
-- Java pipelines that meet the following requirements can use the MapState and SetState classes: use Streaming Engine use Apache Beam SDK versions 2.58.0 and later don't use Runner v2 All pipeline options not explicitly mentioned previously or in the feature comparison table work the same for Dataflow and Dataflow Prime.
+- Speculative execution can help pipelines complete faster by providing an alternative execution path for work items that are experiencing delays due to slow worker machines or other transient issues such as nondeterministic bugs, resource throttling, or connectivity issues.
 
 ### Work with Dataflow data pipelines \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines](https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines)
-- Source ID: `site-docs-root`
-- Final score: 172
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-required-3`
+- Final score: 160
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Data pipeline roles For Dataflow data pipeline operations to succeed, you need the necessary IAM roles, as follows: You need the appropriate role to perform operations: Datapipelines.admin : Can perform all data pipeline operations Datapipelines.viewer : Can view data pipelines and jobs Datapipelines.invoker : Can invoke a data pipeline job run (this role can be enabled using the API) The service account used by Cloud Scheduler needs to have the roles/iam.serviceAccountUser role, whether the service account is user-specified or the default Compute Engine service account.
-- For Worker machine type , the pipeline processes the initial set of files matching the gs:// BUCKET ID /inputs/file01.csv pattern and any additional files matching this pattern that you upload to the inputs/ folder If the size of CSV files exceeds several GB, to avoid possible out-of-memory errors, select a machine type with higher memory than the default 4 vCPU machine type, such as an 8 vCPU high-memory machine type (for example, n4-highmem-8 ).
+- Create a data pipeline You can create a Dataflow data pipeline in two ways: Import a job , or Create a data pipeline The data pipelines setup page: When you first access the Dataflow pipelines feature in the Google Cloud console, a setup page opens.
 - Note: You can report Dataflow data pipelines issues and request new features at google-data-pipelines-feedback ." Overview You can use Dataflow data pipelines for the following tasks: Create recurrent job schedules.
-- Recurring batch pipelines For an initial analysis of the health of your pipeline, on the Pipeline info page in the Google Cloud console, use the Individual job status and Thread time per step graphs.
-
-### Dataflow release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/release-notes](https://docs.cloud.google.com/dataflow/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- May 11, 2021 Feature Dataflow Shuffle is now the default mode for all batch pipelines.
-- October 07, 2019 Feature Cloud Dataflow Shuffle and Streaming Engine are now available in two additional regions: us-west1 (Oregon) asia-east1 (Taiwan) September 03, 2019 Feature Automatic hot key detection is now enabled in batch pipelines for Apache Beam SDK 2.15.0 or higher.
-- September 15, 2016 Change The default autoscaling ceiling for batch pipelines using the Cloud Dataflow SDK for Java 1.6 or newer has been raised to 10 worker VMs.
-- August 18, 2016 Change Autoscaling for batch pipelines using the Cloud Dataflow SDK for Java 1.6 or higher is now being enabled by default.
+- You can also run a batch pipeline on demand using the Run button in the Dataflow Pipelines console.
 

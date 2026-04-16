@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.780Z"
+generated_at: "2026-04-14T12:39:34.323Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "Terraform support for discovery scan configurations"
@@ -9,18 +9,14 @@ latest_feature_date: "2024-06-28"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/manage-scan-configurations"
+  - "https://docs.cloud.google.com/security-command-center/docs/activate-sensitive-data-discovery"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/common-discovery-configurations"
 keywords:
   - "terraform"
-  - "for"
+  - "configurations"
   - "discovery"
   - "scan"
-  - "configurations"
-  - "you"
-  - "can"
-  - "now"
 ---
 
 # Terraform support for discovery scan configurations
@@ -42,40 +38,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/manage-scan-configurations](https://docs.cloud.google.com/sensitive-data-protection/docs/manage-scan-configurations)
+- [https://docs.cloud.google.com/security-command-center/docs/activate-sensitive-data-discovery](https://docs.cloud.google.com/security-command-center/docs/activate-sensitive-data-discovery)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/common-discovery-configurations](https://docs.cloud.google.com/sensitive-data-protection/docs/common-discovery-configurations)
 
 ## Supporting Pages
 
-### Learn about your data through discovery and inspection | Sensitive Data Protection | Google Cloud Documentation
+### "Manage discovery scan configurations \_|\_ Sensitive Data Protection \_\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
-- Source ID: `site-docs-root`
-- Final score: 71
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/manage-scan-configurations](https://docs.cloud.google.com/sensitive-data-protection/docs/manage-scan-configurations)
+- Source ID: `site-docs-reference-3`
+- Final score: 172
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Create a scan configuration For information about how to create an organization-level or project-level discovery scan configuration, see the following pages: Discovery type Create an organization-level scan configuration Create a project-level scan configuration 1 Discovery for BigQuery data Profile BigQuery data in an organization or folder Profile BigQuery data in a single project Discovery for Cloud SQL data Profile Cloud SQL data in an organization or folder Profile Cloud SQL data in a single project Discovery for Cloud Storage data Profile Cloud Storage data in an organization or folder Profile Cloud Storage data in a single project Discovery for Vertex AI data Profile Vertex AI data in an organization or folder Profile Vertex AI data in a single project Discovery for Amazon S3 data Discovery for Amazon S3 data Not applicable Discovery for Azure Blob Storage data Discovery for Azure Blob Storage data Not applicable Secrets discovery (no profiles generated) Configure secrets discovery at the organization level Configure secrets discovery at the project level 1 Not suitable for customers who have an organization-level discovery subscription, such as one provided through Security Command Center View a scan configuration Go to the discovery scan configurations list.
+- Go to discovery scan configurations Make sure you're viewing the correct organization or project: To manage a discovery scan configuration that you created at the organization or folder level, view the organization.
+- Go to discovery scan configurations Make sure you're viewing the correct organization or project: To manage a discovery scan configuration that you created at the organization or folder level, view the organization.
+- Go to discovery scan configurations Make sure you're viewing the correct organization or project: To manage a discovery scan configuration that you created at the organization or folder level, view the organization.
+
+### "Enable sensitive data discovery \_|\_ Security Command Center \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/security-command-center/docs/activate-sensitive-data-discovery](https://docs.cloud.google.com/security-command-center/docs/activate-sensitive-data-discovery)
+- Source ID: `site-docs-reference-2`
+- Final score: 128
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Customize the scan configurations Each discovery type that you enable has a discovery scan configuration that you can customize .
+- Set up permissions To get the permissions that you need to configure sensitive data discovery, ask your administrator to grant you the following IAM roles on the organization: Purpose Predefined role Relevant permissions Create a discovery scan configuration and view data profiles DLP Administrator ( roles/dlp.admin ) dlp.columnDataProfiles.list dlp.fileStoreProfiles.list dlp.inspectTemplates.create dlp.jobs.create dlp.jobs.list dlp.jobTriggers.create dlp.jobTriggers.list dlp.projectDataProfiles.list dlp.tableDataProfiles.list Create a project to be used as the service agent container 1 Project Creator ( roles/resourcemanager.projectCreator ) resourcemanager.organizations.get resourcemanager.projects.create Grant discovery access 2 One of the following: Organization Administrator ( roles/resourcemanager.organizationAdmin ) Security Admin ( roles/iam.securityAdmin ) resourcemanager.organizations.getIamPolicy resourcemanager.organizations.setIamPolicy 1 If you don't have the Project Creator ( roles/resourcemanager.projectCreator ) role, you can still create a scan configuration, but the service agent container that you use must be an existing project.
+- Enable discovery with default settings in an organization To enable discovery, you create a discovery configuration for each data source that you want to scan.
+- Subsequently, Sensitive Data Protection generates findings in Security Command Center within a few minutes after the discovery service scans your resources.
+
+### "Common discovery enablement scenarios \_|\_ Sensitive Data Protection \_\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/common-discovery-configurations](https://docs.cloud.google.com/sensitive-data-protection/docs/common-discovery-configurations)
+- Source ID: `site-api-reference-required-2`
+- Final score: 116
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Learn about your data through discovery and inspection Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data This page describes and compares two Sensitive Data Protection services that help you understand your data and enable data governance workflows: the discovery service and the inspection service.
-
-### Overview of sensitive data discovery | Sensitive Data Protection | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- Source ID: `site-docs-root`
-- Final score: 34
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Overview of sensitive data discovery Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles The Sensitive Data Protection discovery service (sometimes called data profiler) continuously monitors the data resources in your organization, folder, or project.
-
-### Method types | Sensitive Data Protection | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types)
-- Source ID: `site-docs-root`
-- Final score: 32
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Method types Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types Sensitive Data Protection includes different types of methods that you can use to inspect, transform (de-identify), discover, and classify data.
-- Using these methods, you can scan data both on and off Google Cloud and optimize the behavior of ...
+- This page provides high-level instructions on how to set up your discovery scan configuration for common organization-level enablement scenarios.
+- Project-level discovery configurations aren't included in your organization-level subscription and are billed separately.
+- For information about how to create or edit a scan configuration, see Manage scan configurations .
+- Home Documentation Security Sensitive Data Protection Guides Send feedback Common discovery enablement scenarios Stay organized with collections Save and categorize content based on your preferences.
 

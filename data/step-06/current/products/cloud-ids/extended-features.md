@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2022-12-14 | IDS Threat Exceptions | LOW | [source](https://docs.cloud.google.com/intrusion-detection-system/docs/configuring-ids)<br>[source](https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient)<br>[source](https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient) | IDS Threat Exceptions lets you disable specific noisy or unnecessary threat IDs when creating or updating a Cloud IDS endpoint. |
+| 2022-12-14 | IDS Threat Exceptions | MEDIUM | [source](https://docs.cloud.google.com/intrusion-detection-system/docs/configuring-ids)<br>[source](https://docs.cloud.google.com/intrusion-detection-system/docs/overview)<br>[source](https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient)<br>[source](https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient) | IDS Threat Exceptions lets you disable specific noisy or unnecessary threat IDs when creating or updating a Cloud IDS endpoint. |
 

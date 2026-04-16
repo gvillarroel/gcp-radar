@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.905Z"
+generated_at: "2026-04-14T15:34:54.460Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Functions deployment in Cloud Run"
@@ -9,18 +9,15 @@ latest_feature_date: "2025-02-19"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/deploying"
-  - "https://docs.cloud.google.com/run/docs/container-contract"
+  - "https://docs.cloud.google.com/run/docs/securing/service-identity"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service"
+  - "https://docs.cloud.google.com/run/docs/tutorials/codelabs"
 keywords:
+  - "deploying"
   - "functions"
   - "deployment"
-  - "in"
-  - "run"
-  - "supports"
-  - "deploying"
-  - "as"
   - "workloads"
+  - "supports"
 ---
 
 # Functions deployment in Cloud Run
@@ -38,54 +35,52 @@ Cloud Run supports deploying functions as Cloud Run workloads.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/deploying](https://docs.cloud.google.com/run/docs/deploying)
-- [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
+- [https://docs.cloud.google.com/run/docs/securing/service-identity](https://docs.cloud.google.com/run/docs/securing/service-identity)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service)
+- [https://docs.cloud.google.com/run/docs/tutorials/codelabs](https://docs.cloud.google.com/run/docs/tutorials/codelabs)
 
 ## Supporting Pages
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### Cloud Run functions codelabs \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- March 16, 2020 Feature Cloud Run (fully managed) now supports deploying container images from Cloud Artifact Registry February 12, 2020 Feature Cloud Run (fully managed) now supports rollbacks, gradual rollouts (blue/green deployments), and other traffic migration manipulations between revisions.
-- May 03, 2023 Feature CPU allocation recommender now automatically recommends CPU allocation changes based on traffic received by your Cloud Run service over the past month. (In Preview) April 26, 2023 Announcement Cloud Run source deployment now supports Ubuntu 22 LTS base images.
-- November 19, 2025 Feature You can deploy source artifacts directly to Cloud Run , bypassing the Cloud Build step. (Preview) November 17, 2025 Feature Cloud Run and Cloud Run functions source deployments support pyproject.toml file for managing dependencies.
-- February 17, 2026 Feature Cloud Run source deployment supports Ubuntu 24 LTS base images in General Availability .
-
-### Deploying container images to Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/deploying](https://docs.cloud.google.com/run/docs/deploying)
-- Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/run/docs/tutorials/codelabs](https://docs.cloud.google.com/run/docs/tutorials/codelabs)
+- Source ID: `site-docs-root-2`
+- Final score: 31
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- YAML To disable the deployment health check, add the run.googleapis.com/health-check-disabled annotation with value 'true' to spec.template.metadata.annotations . apiVersion : serving.knative.dev/v1 kind : Service metadata : name : SERVICE spec : template : metadata : annotations : run.googleapis.com/health-check-disabled : 'true' Terraform To disable the deployment health check, set the health check disabled argument to true in the template block. resource "google cloud run v2 service" "default" { name = "SERVICE" ... template { health check disabled = true ... } } What's next After you deploy a new service, you can do the following: Gradual rollouts, rollback revisions, traffic migration View service logs Monitor service performances Set memory limits Set environment variables Change service concurrency Manage the service Manage service revisions Cloud Run OpenTelemetry sidecar example Deploy only trusted images with Binary Authorization ( Preview ) You can automate the builds and deployments of your Cloud Run services using Cloud Build Triggers: Set up Continuous Deployment You can also use Cloud Deploy to set up a continuous-delivery pipeline to deploy Cloud Run services to multiple environments: Deploy an app to Cloud Run using Cloud Deploy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Use cases Use cases for sidecars in a Cloud Run service include: Application monitoring, logging and tracing Using Nginx , Envoy or Apache2 as a proxy in front of your application container Adding authentication and authorization filters (for example, Open Policy Agent) Running outbound connection proxies such as the Alloy DB Auth proxy Deploying a service with sidecar containers You can deploy multiple sidecars to a Cloud Run service using the Google Cloud console, the Google Cloud CLI, YAML, or Terraform.
-- Verify that root containers are compatible with user namespaces Test your changes locally or in a VM by evaluating your code when running under user namespaces, such as when using Docker's userns-remap feature, running your container in rootless Podman , or deploying those changes to VMs running the Container-Optimized OS from Google with the --userns-remap=default argument in the docker run command.
-- If it is not needed or to increase deployment speed, the deployment health check can be disabled: gcloud To disable the deployment health check, use the --no-deploy-health-check flag: gcloud run deploy --image IMAGE URL --no-deploy-health-check Replace the following: IMAGE URL : a reference to the container image, for example, us-docker.pkg.dev/cloudrun/container/hello:latest .
+- Trigger event processing from Cloud Storage using Eventarc and Cloud Run functions In this codelab, you'll learn how to use Cloud Storage bucket events and Eventarc to trigger and process events, and analyze data and process images using Cloud Run functions.
+- Get started with event driven Cloud Run functions In this codelab, you'll learn how to deploy a CloudEvents Cloud Run function that is triggered whenever an object is uploaded to a Cloud Storage bucket.
+- Home Documentation Application hosting Cloud Run Guides Send feedback Cloud Run functions codelabs Stay organized with collections Save and categorize content based on your preferences.
+- Use revisions in Cloud Run functions for traffic splitting, gradual rollouts, and rollbacks This codelab shows how to use revisions to manage traffic to your Cloud Run function.
 
-### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
+### Introduction to service identity \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
-- Source ID: `site-docs-root`
-- Final score: 166
+- URL: [https://docs.cloud.google.com/run/docs/securing/service-identity](https://docs.cloud.google.com/run/docs/securing/service-identity)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 29
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If your Cloud Run code uses Cloud Client Libraries , you configure service identity in Cloud Run by assigning a service account at deployment or execution.
+- Note that you cannot query this server directly from your local machine as the metadata server is only available for workloads running on Google Cloud.
+
+### Quickstart: Deploy a Python (FastAPI) web app to Google Cloud with Cloud Run | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 22
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.
-- If a workload-processing instance must be shut down, Cloud Run gives tasks in-process tasks time to complete and routes new workloads to other instances.
-- 8080 K SERVICE The name of the Cloud Run service being run. hello-world K REVISION The name of the Cloud Run revision being run. hello-world.1 K CONFIGURATION The name of the Cloud Run configuration that created the revision. hello-world Environment variables for jobs For Cloud Run jobs, the following environment variables are set: Name Description Example CLOUD RUN JOB The name of the Cloud Run job being run. hello-world CLOUD RUN EXECUTION The name of the Cloud Run execution being run. hello-world-abc CLOUD RUN TASK INDEX The index of this task.
-- 1 Environment variables for worker pools Cloud Run sets the following environment variables for worker pools: Name Description Example CLOUD RUN WORKER POOL The name of the running Cloud Run worker pool. hello-world CLOUD RUN WORKER POOL REVISION The name of the running Cloud Run worker pool revision. hello-world.1 Request and response header requirements (services) For services, Cloud Run restricts header names to printable non-whitespace ASCII, and cannot contain colons.
+- AI use cases in Cloud Run Get started Overview Deploy a sample web service Deploy a sample container Deploy from a git repository Deploy a Hello World service from source code Go Node.js Python Flask FastAPI Gradio LangChain Smolagents Streamlit Agent Development Kit (ADK) for Python Java Kotlin C# C++ PHP Ruby Other Frameworks Overview Angular SSR Next.js Nuxt.js SvelteKit Deploy a sample function Deploy a function using the console Deploy a function using gcloud Execute a sample job Execute a job Execute a job from source code Go Node.js Python Java Shell Deploy a sample worker pool Develop Set up your environment Plan and prepare your service Develop your service Containerize your code Connect to Google Cloud services Install a system package in your container Run gcloud commands within your container Plan and prepare your function Overview Compare Cloud Run functions Write Cloud Run functions Runtimes Overview Node.js Overview Node.js dependencies Python Overview Python dependencies Go Overview Go dependencies Java Overview Java dependencies .NET Ruby PHP Local functions development Function triggers Tutorials Create a function that returns BigQuery results Create a function that returns Spanner results Integrate with Cloud databases Codelabs Build and test Build sources to containers Build functions to containers Local testing Serve HTTP requests Deploy services Deploy container images Continuous deployment from git Deploy from source code Deploy from Compose Deploy functions Serve web traffic Mapping custom domains Serving static assets with CDN Serving traffic from multiple regions Deploy a multi-region app with service health Enable session affinity Frontend proxying using Nginx Manage services View, copy, or delete services View or delete revisions Traffic migration, gradual rollouts, rollbacks Configure services Overview Capacity Memory limits CPU limits GPU GPU configuration GPU performance best practices Request timeout Maximum concurrent requests About maximum concurrent requests per instance Configure maximum concurrent requests Billing Optimize service configurations with Recommender Environment Container port and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes CIFS/SMB Execution environment Container health checks HTTP/2 requests Secrets Service identity Scaling About instance autoscaling for services Maximum instances About maximum instances for services Configure maximum instances Minimum instances Manual scaling Metadata Description Labels Tags Source deploy configurations Supported language runtimes and base images Configure automatic base image updates Build environment variables Build service account Build worker pools Invoke and trigger services Invoke with HTTPS requests Host a webhook target Stream with WebSockets Overview Build a WebSocket Chat service tutorial Invoke asynchronously Invoke services on a schedule Create a workflow Invoke services as part of a Workflow Connect a series of services from Cloud Functions and Cloud Run tutorial Execute asynchronous tasks Call a service from a Pub/Sub push subscription Trigger service from Pub/Sub Integrate image processing into Pub/Sub sample tutorial Trigger from events Create triggers with Eventarc Pub/Sub triggers Create Pub/Sub Eventarc triggers Trigger functions from Pub/Sub using Eventarc Trigger functions from routed log entries Cloud Storage triggers Create triggers with Cloud Storage Trigger services from Cloud Storage using Eventarc Trigger functions from Cloud Storage using Eventarc Firestore triggers Create triggers with Firestore Trigger functions from events in a Firestore database Connect with other services using gRPC Best practices General development tips for services Cost optimization Optimize Java services Optimize Python services Optimize Node.js services Load testing best practices Understand zonal redundancy Functions best practices Overview Configure event-driven function retries Execute job tasks to completion Create jobs Execute jobs Execute jobs Execute scheduled jobs Execute jobs from Workflows Configure jobs Container entrypoint CPU limits Memory limits GPU GPU configuration GPU best practices Environment variables Container health checks Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Labels Maximum retries Parallelism Secrets Service identity Task timeout Tags Manage jobs View or delete jobs View or stop job executions Best practices Jobs retries and checkpoints Cost optimization Perform continuous background work Deploy worker pools Deploy worker pools Deploy worker pools from source code Manage worker pools View or delete worker pools View or delete worker pool revisions Instance splits and rollbacks Configure worker pools Capacity Memory limits CPU limits GPU GPU configuration GPU best practices Environment Container and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Container health checks Secrets Service identity Instance count Metadata Description Labels Scale based on external metrics Autoscale worker pools with external metrics Kafka autoscaler Host GitHub runners with worker pools Autoscale worker pools based on Prometheus metrics Autoscale worker pools with Pub/Sub pull subscriptions Automate scaling with Workflows Cost optimization Configure networking Best practices for Cloud Run networking Configure private networking Send traffic to VPC network Overview Direct VPC Register private IPs for worker pools using Cloud DNS Dual-stack (IPv4 and IPv6) Migrate standard VPC connector to Direct VPC VPC connectors Send traffic to Shared VPC network Overview Direct VPC Migrate Shared VPC connector to Direct VPC Connectors in service projects Connectors in host project Static outbound IP address Network security Restrict endpoint ingress (services) Use VPC Service Controls (VPC SC) Cloud Service Mesh Secure Security design overview Authenticate requests Overview Allow public access Custom audiences Authenticate developers Service-to-service Authenticate users End user authentication tutorial Secure your resources Access control with IAM Configure IAP for Cloud Run Introduction to service identity Protect services with Cloud Armor Use Binary Authorization Use Cloud Run Threat Detection Use customer managed encryption keys Manage custom constraints for projects View software supply chain security insights Secure Cloud Run services tutorial Multi-tenant platforms running untrusted code Monitor and log Monitoring and logging overview View built-in metrics Write Prometheus metrics Write OpenTelemetry metrics Log and view logs Audit logging Error reporting Use distributed tracing for services Run AI solutions Overview Explore resources AI agents Overview Build and deploy A2A agents Overview Deploy A2A agents Build and deploy ADK agents Build and deploy n8n agents MCP servers Overview Build and deploy a remote MCP server Tools Code execution Browser automation Inference with GPUs Overview Services Run LLM inference on Cloud Run GPUs with Ollama Run agents with Gemma 4 models on Cloud Run Run LLM inference on Cloud Run GPUs with vLLM Run OpenCV on Cloud Run with GPU acceleration Run LLM inference on Cloud Run GPUs with Hugging Face Transformers.js Run LLM inference on Cloud Run GPUs with Hugging Face TGI Jobs Fine tune LLMs using GPUs with Cloud Run jobs Run batch inference using GPUs with Cloud Run jobs GPU-accelerated video transcoding with FFmpeg AI-assisted development and vibe coding Introduction to Cloud Run for AI-assisted developers Cookbook Migrate An existing web service From App Engine From Cloud Run functions (1st gen) From AWS Lambda From Heroku From Cloud Foundry Migration overview Choose an OCI-compliant-strategy Migrate to OCI containers Migrate configuration Sample migration: Spring Music From VMWare Tanzu From a VM using Migrate to Containers From Kubernetes To GKE Troubleshoot Introduction Troubleshoot errors Local troubleshooting tutorial Known issues Samples All Cloud Run code samples All Cloud Run functions code samples Code samples for all products AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application hosting Cloud Run Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Delete a Google Cloud project: gcloud projects delete PROJECT_ID What's next For more information on building a container from code source and pushing to a repository, see: Developing Cloud Run services Building Containers Test a Cloud Run service locally Deploying from source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For more information on how the Python buildpack determines the default entrypoint for Cloud Run source deployments, see Build a Python application .
+- New customers also get $300 in free credits to run, test, and deploy workloads.
 

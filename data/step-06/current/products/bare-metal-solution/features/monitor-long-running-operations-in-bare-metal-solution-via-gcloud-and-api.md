@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:24.002Z"
+generated_at: "2026-04-14T09:47:34.433Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "Monitor long-running operations in Bare Metal Solution via gcloud and API"
 feature_slug: "monitor-long-running-operations-in-bare-metal-solution-via-gcloud-and-api"
 latest_feature_date: "2022-03-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
   - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
-  - "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring"
+  - "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide"
+  - "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
 keywords:
   - "operations"
   - "long"
   - "monitor"
   - "running"
-  - "solution"
-  - "metal"
-  - "bare"
-  - "in"
 ---
 
 # Monitor long-running operations in Bare Metal Solution via gcloud and API
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +34,54 @@ Adds visibility of long-running operations via gcloud and API commands.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
 - [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- [https://docs.cloud.google.com/bare-metal/docs/bms-monitoring](https://docs.cloud.google.com/bare-metal/docs/bms-monitoring)
+- [https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide](https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide)
+- [https://docs.cloud.google.com/sap/docs/netweaver-planning-guide](https://docs.cloud.google.com/sap/docs/netweaver-planning-guide)
 
 ## Supporting Pages
-
-### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- Source ID: `site-docs-root`
-- Final score: 256
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- To use the operations ID and view the status, see View the status of a long-running operation . { "name": "operations/5c0c8b3f-5edc-4117-be9f-812af9740aaf" } While the server reboots, you cannot use ping or SSH from your jump host VM instance to reach the Bare Metal Solution server.
-- Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares" -d \ '{ "name": "projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ", "labels": { "nfsKey1": "some value", "key2": "another value", }, "requestedSizeGib": " SIZE GIB ", "storageType": " STORAGE TYPE ", "allowedClients": [ { "network": "projects/ PROJECT ID /locations/ REGION /networks/ NETWORK NAME ", "allowedClientsCidr": " IP ADDRESS RANGE ", "mountPermissions": " MOUNT PERMISSIONS ", "allowDev": ALLOW DEV , "allowSuid": ALLOW SUID , "noRootSquash": ENABLE ROOT SQUASH , } ], }' Because creating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .
-- Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ?updateMask=allowed clients%2Clabels" -d \ '{ "name": "projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ", "labels": { "newKey": "newVal", }, "allowedClients": [ { "network": "projects/ PROJECT ID /locations/ REGION /networks/ NFS VOLUME NAME ", "allowedClientsCidr": " IP ADDRESS RANGE ", "mountPermissions": " MOUNT PERMISSIONS ", "allowDev": ALLOW DEV , "allowSuid": ALLOW SUID , "noRootSquash": ENABLE ROOT SQUASH , } ], }' Because updating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .
-- Add true for the hyperthreading value if you want to enable it or false to disable it. curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME ?updateMask=hyperthreading enabled" -d "{ 'hyperthreadingEnabled' : ' HYPERTHREADING VALUE ' }" Because this change takes awhile to complete, you can check the status by following the steps in View the status of a long-running operation .
 
 ### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
 - Source ID: `site-docs-root-2`
-- Final score: 252
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Architecture Figure 1 shows a simplified view of the infrastructure that you need to build when you deploy Backup and DR to protect Oracle databases running in a Bare Metal Solution environment.
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
-- Figure 1 : Components for using Backup and DR with Oracle databases in a Bare Metal Solution environment As you can see in the diagram, this solution requires the following components: Bare Metal Solution regional extension– Allows you to run Oracle databases in a third-party data center adjacent to a Google Cloud data center, and use your existing on-premises software licenses.
-
-### Monitoring in a Bare Metal Solution environment \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/bms-monitoring](https://docs.cloud.google.com/bare-metal/docs/bms-monitoring)
-- Source ID: `site-docs-root-2`
-- Final score: 227
+- Final score: 118
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Monitoring data At a high level, our monitoring data comes from the following sources: SNMP traps Syslog messages Messages from dedicated management software Intelligent Platform Management Interface (IPMI) Common metrics of the monitored devices: CPU utilization Network Interface: Bandwidth utilization Packet discards Errors Alerting Google Cloud conducted extensive normalization and validation activities for the specific requirements of the Bare Metal Solution environment.
-- The following is a list of infrastructure devices in a Bare Metal Solution environment that we monitor: Compute infrastructure Server hardware Storage infrastructure Storage devices SAN switches Network infrastructure Routers Switches Interconnect infrastructure Google Cloud also keeps track of the data center environment, including server room temperature and humidity.
-- We hope that this summary of our monitoring capabilities helps you to be confident in the Bare Metal Solution environment as you migrate your infrastructure and applications to the cloud.
-- Monitoring in a Bare Metal Solution environment Bare Metal Solution lets you run specialized workloads in regional extensions located near Google Cloud data centers.
+- Monitor job progress and success You can monitor the running job by going to the Monitor > Jobs page. https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#jobs The page shows the status and job type.
+- The following output example shows that the Backup and DR agent service is running correctly: [root@test2 ]# service udsagent status Redirecting to /bin/systemctl status udsagent.service udsagent.service - Google Cloud Backup and DR service Loaded: loaded (/usr/lib/systemd/system/udsagent.service; enabled; vendor preset: disabled) Active: active (running) since Wed 2022-12-28 05:05:45 UTC; 2 days ago Process: 46753 ExecStop=/act/initscripts/udsagent.init stop (code=exited, status=0/SUCCESS) Process: 46770 ExecStart=/act/initscripts/udsagent.init start (code=exited, status=0/SUCCESS) Main PID: 46789 (udsagent) Tasks: 8 (limit: 48851) Memory: 74.0M CGroup: /system.slice/udsagent.service ├─46789 /opt/act/bin/udsagent start └─60570 /opt/act/bin/udsagent start Dec 30 05:11:30 test2 su[150713]: pam unix(su:session): session closed for user oracle Dec 30 05:11:30 test2 su[150778]: (to oracle) root on none Log messages from your backups can help you diagnose issues.
+- Please use b010502a8f383cae5a076d4ac9e868777657cebd0000000063abee83 (valid for 2 hrs) to register this host. -- A new secret key can be generated later by running: '/opt/act/bin/udsagent secret --reset --restart If you use the iptables command, open the ports for the backup agent firewall (TCP 5106) and Oracle services (TCP 1521): sudo iptables -A INPUT -p tcp --dport 5106 -j ACCEPT sudo iptables -A INPUT -p tcp --dport 1521 -j ACCEPT sudo firewall-cmd --permanent --add-port=5106/tcp sudo firewall-cmd --permanent --add-port=1521/tcp sudo firewall-cmd --reload Add hosts to Backup and DR In the Backup and DR management console, go to Manage > Hosts . https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#hosts Click +Add Host .
+- Go to the Monitor > Jobs menu to monitor the progress of the job being unmounted and confirm that the job completes. https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#jobs If you accidentally delete the Oracle database manually, or shutdown the database before you run the Unmount and Delete job, perform the Unmount and Delete job again and select the Force Unmount option on the confirmation screen.
+
+### "SAP HANA high-availability planning guide \_|\_ SAP on Google Cloud \_|\_\
+
+- URL: [https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide](https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 113
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- For example: primitive rsc SAPHanaTopology HA1 HDB00 ocf:suse:SAPHanaTopology \ operations \$id="rsc sap2 HA1 HDB00-operations" \ op monitor interval="10" timeout="600" \ op start interval="0" timeout="600" \ op stop interval="0" timeout="300" \ params SID="HA1" InstanceNumber="00" clone cln SAPHanaTopology HA1 HDB00 rsc SAPHanaTopology HA1 HDB00 \ meta is-managed="true" clone-node-max="1" target-role="Started" interleave="true" The timeout values affect each of the resource operations differently, as explained in the following table.
+- As a starting point, the following list shows some HA cluster resources and the associated permissions that they require: Fencing compute.instances.list compute.instances.get compute.instances.reset compute.instances.stop compute.instances.start logging.logEntries.create compute.zones.list VIP implemented by using an alias IP compute.instances.list compute.instances.get compute.zones.list logging.logEntries.create compute.instances.updateNetworkInterface compute.zoneOperations.get logging.logEntries.create VIP implemented by using static routes compute.instances.list compute.instances.get compute.zones.list logging.logEntries.create compute.routes.get compute.routes.create compute.routes.delete compute.routes.update compute.routes.list compute.networks.updatePolicy compute.networks.get compute.globalOperations.get logging.logEntries.create VIP implemented by using an internal load balancer No specific permissions required - the load balancer operates on health check statuses that does not require the cluster to interact with or change resources in Google Cloud Virtual IP implementation on Google Cloud A high-availability cluster uses a floating or virtual IP address (VIP) to move its workload from one cluster node to another in the event of an unexpected failure or for scheduled maintenance.
+- Parameter Recommended value Impact of changing the value secauth off Disables authentication and encryption of all totem messages. join 60 (ms) Increases how long the node waits for join messages in the membership protocol. max messages 20 Increases the maximum number of messages that might be sent by the node after receiving the token. token 20000 (ms) Increases how long the node waits for a totem protocol token before the node declares a token loss, assumes a node failure, and starts taking action.
+- The service account that a fence agent uses must be granted a role that includes the following permissions: compute.instances.get compute.instances.list compute.instances.reset compute.instances.start compute.instances.stop compute.zoneOperations.get logging.logEntries.create compute.zoneOperations.list The predefined Compute Instance Admin role contains all of the required permissions.
+
+### "SAP NetWeaver planning guide \_|\_ SAP on Google Cloud \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sap/docs/netweaver-planning-guide](https://docs.cloud.google.com/sap/docs/netweaver-planning-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 109
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Related security documents Refer to the following additional security resources for your SAP environment on Google Cloud: Securely Connecting to VM Instances Security Center Compliance in the Google Cloud Google Cloud security whitepaper Google Infrastructure security design Monitoring For support and monitoring, Google Cloud provides the Agent for SAP , for SAP workloads running on Compute Engine instances and Bare Metal Solution servers.
+- For more details on administration of VMs and monitoring, see the SAP NetWeaver on Google Cloud Operations Guide .
+- For general guidance about how to plan for disaster recovery using Google Cloud, see: How to Design a Disaster Recovery Plan Disaster Recovery Cookbook For information about SAP HANA backup and recovery, see the SAP HANA on Google Cloud Operations Guide .
+- The following diagram provides a high-level overview of SAP NetWeaver running on Google Cloud: Here are some important things to notice in the diagram: The system uses some number of Compute Engine instances and persistent disks.
 

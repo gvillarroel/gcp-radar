@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.446Z"
+generated_at: "2026-04-13T14:23:05.219Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "ConfigConnector kubectl Age and Healthy columns"
@@ -9,17 +9,16 @@ latest_feature_date: "2021-09-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
-  - "https://docs.cloud.google.com/config-connector/docs/overview"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/install-manually"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced"
 keywords:
-  - "configconnector"
   - "kubectl"
-  - "age"
-  - "and"
   - "healthy"
   - "columns"
   - "tabular"
+  - "configconnector"
+  - "configconnectorcontext"
   - "output"
 ---
 
@@ -42,40 +41,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember)
-- [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install](https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/install-manually](https://docs.cloud.google.com/config-connector/docs/how-to/install-manually)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced](https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced)
 
 ## Supporting Pages
 
-### StorageNotification | Config Connector | Google Cloud Documentation
+### Install Config Connector manually \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification)
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/install-manually](https://docs.cloud.google.com/config-connector/docs/how-to/install-manually)
 - Source ID: `site-docs-reference`
-- Final score: 67
-- Re-rank relevance: N/A
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- StorageNotification Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagenotification Documentation · Access and resource management · Config Connector · API and reference · Send feedback · Stay organized with collections Save and categorize content based on your preferences.
+- To create a ConfigConnectorContext , complete the following steps: Create a manifest named configconnectorcontext.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnectorContext metadata : you need one ConfigConnectorContext per namespace name : configconnectorcontext.core.cnrm.cloud.google.com namespace : NAMESPACE spec : googleServiceAccount : " NAMESPACE GSA @ HOST PROJECT ID .iam.gserviceaccount.com" stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnectorcontext.yaml Verify that the Config Connector operator created a Kubernetes service account for your namespace by running the following command: kubectl get serviceaccount/cnrm-controller-manager- NAMESPACE -n cnrm-system Verify that the Config Connector controller Pod is running for your namespace: kubectl wait -n cnrm-system \ --for = condition = Ready pod \ -l cnrm.cloud.google.com/component = cnrm-controller-manager \ -l cnrm.cloud.google.com/scoped-namespace = NAMESPACE If the Config Connector controller is running, the output is similar to: cnrm-controller-manager-abcdefghijk-0 condition met.
+- Uninstall Config Connector To uninstall Config Connector, complete the following steps: To remove the Config Connector CRDs and controller components, run the following command: kubectl delete ConfigConnectorContext --all -A –wait = false kubectl delete ConfigConnector configconnector.core.cnrm.cloud.google.com \ --wait = true To uninstall the Config Connector operator, run the following command: kubectl delete -f operator-system/configconnector-operator.yaml --wait = true Install in cluster mode You might prefer to install and manage Config Connector in cluster mode if you want to manage resources within a single project and don't require the permission separation that namespaced mode provides.
+- Delete the ConfigConnectorContext object in your namespace. kubectl delete -n NAMESPACE ConfigConnectorContext configconnectorcontext.core.cnrm.cloud.google.com Important: Don't delete the ConfigConnectorContext object until all Config Connector-managed resources are deleted.
+- Extract the tar file: tar zxvf release-bundle.tar.gz Install the Config Connector operator on your cluster: Autopilot kubectl apply -f operator-system/autopilot-configconnector-operator.yaml Standard kubectl apply -f operator-system/configconnector-operator.yaml To configure the Config Connector operator to run in namespaced mode, complete the following steps: Create a manifest named configconnector.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnector metadata : the name is restricted to ensure that there is only ConfigConnector resource installed in your cluster name : configconnector.core.cnrm.cloud.google.com spec : mode : namespaced stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnector.yaml Install Config Connector in namespaced mode Note: You must perform these steps for every namespace that you want Config Connector to create resources from.
 
-### IAMPolicyMember | Config Connector | Google Cloud Documentation
+### Install Config Connector manually \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember)
-- Source ID: `site-iam-reference`
-- Final score: 24
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install](https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install)
+- Source ID: `site-docs-reference`
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- IAMPolicyMember Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember See the License for the specific language governing permissions and # limitations under the License. # Replace ${PROJECT ID?} and ${ORG ID?} below with your desired project and # organization IDs respectively. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicyMember metadata: name: iampolicymember-sample-orglevel spec: member: serviceAccount:iampolicymember-dep-orglevel@${PROJECT ID?}.iam.gserviceaccount.com role: roles/storage.admin resourceRef: kind: Organization external: &quot;${ORG ID?}&quot; --- # Replace ${PROJECT ID?} below with your desired project ID.
+- To create a ConfigConnectorContext , complete the following steps: Create a manifest named configconnectorcontext.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnectorContext metadata : you need one ConfigConnectorContext per namespace name : configconnectorcontext.core.cnrm.cloud.google.com namespace : NAMESPACE spec : googleServiceAccount : " NAMESPACE GSA @ HOST PROJECT ID .iam.gserviceaccount.com" stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnectorcontext.yaml Verify that the Config Connector operator created a Kubernetes service account for your namespace by running the following command: kubectl get serviceaccount/cnrm-controller-manager- NAMESPACE -n cnrm-system Verify that the Config Connector controller Pod is running for your namespace: kubectl wait -n cnrm-system \ --for = condition = Ready pod \ -l cnrm.cloud.google.com/component = cnrm-controller-manager \ -l cnrm.cloud.google.com/scoped-namespace = NAMESPACE If the Config Connector controller is running, the output is similar to: cnrm-controller-manager-abcdefghijk-0 condition met.
+- Uninstall Config Connector To uninstall Config Connector, complete the following steps: To remove the Config Connector CRDs and controller components, run the following command: kubectl delete ConfigConnectorContext --all -A –wait = false kubectl delete ConfigConnector configconnector.core.cnrm.cloud.google.com \ --wait = true To uninstall the Config Connector operator, run the following command: kubectl delete -f operator-system/configconnector-operator.yaml --wait = true Install in cluster mode You might prefer to install and manage Config Connector in cluster mode if you want to manage resources within a single project and don't require the permission separation that namespaced mode provides.
+- Delete the ConfigConnectorContext object in your namespace. kubectl delete -n NAMESPACE ConfigConnectorContext configconnectorcontext.core.cnrm.cloud.google.com Important: Don't delete the ConfigConnectorContext object until all Config Connector-managed resources are deleted.
+- Extract the tar file: tar zxvf release-bundle.tar.gz Install the Config Connector operator on your cluster: Autopilot kubectl apply -f operator-system/autopilot-configconnector-operator.yaml Standard kubectl apply -f operator-system/configconnector-operator.yaml To configure the Config Connector operator to run in namespaced mode, complete the following steps: Create a manifest named configconnector.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnector metadata : the name is restricted to ensure that there is only ConfigConnector resource installed in your cluster name : configconnector.core.cnrm.cloud.google.com spec : mode : namespaced stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnector.yaml Install Config Connector in namespaced mode Note: You must perform these steps for every namespace that you want Config Connector to create resources from.
 
-### Config Connector overview | Google Cloud Documentation
+### Install Config Connector manually \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced](https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced)
 - Source ID: `site-docs-root`
-- Final score: 22
-- Re-rank relevance: N/A
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The Config Connector CRDs allow Kubernetes to create and manage Google Cloud resources when you configure and apply Objects to your cluster.
-- Config Connector overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/overview Config Connector provides a collection of Kubernetes Custom Resource Definitions (CRDs) and controllers.
+- To create a ConfigConnectorContext , complete the following steps: Create a manifest named configconnectorcontext.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnectorContext metadata : you need one ConfigConnectorContext per namespace name : configconnectorcontext.core.cnrm.cloud.google.com namespace : NAMESPACE spec : googleServiceAccount : " NAMESPACE GSA @ HOST PROJECT ID .iam.gserviceaccount.com" stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnectorcontext.yaml Verify that the Config Connector operator created a Kubernetes service account for your namespace by running the following command: kubectl get serviceaccount/cnrm-controller-manager- NAMESPACE -n cnrm-system Verify that the Config Connector controller Pod is running for your namespace: kubectl wait -n cnrm-system \ --for = condition = Ready pod \ -l cnrm.cloud.google.com/component = cnrm-controller-manager \ -l cnrm.cloud.google.com/scoped-namespace = NAMESPACE If the Config Connector controller is running, the output is similar to: cnrm-controller-manager-abcdefghijk-0 condition met.
+- Uninstall Config Connector To uninstall Config Connector, complete the following steps: To remove the Config Connector CRDs and controller components, run the following command: kubectl delete ConfigConnectorContext --all -A –wait = false kubectl delete ConfigConnector configconnector.core.cnrm.cloud.google.com \ --wait = true To uninstall the Config Connector operator, run the following command: kubectl delete -f operator-system/configconnector-operator.yaml --wait = true Install in cluster mode You might prefer to install and manage Config Connector in cluster mode if you want to manage resources within a single project and don't require the permission separation that namespaced mode provides.
+- Delete the ConfigConnectorContext object in your namespace. kubectl delete -n NAMESPACE ConfigConnectorContext configconnectorcontext.core.cnrm.cloud.google.com Important: Don't delete the ConfigConnectorContext object until all Config Connector-managed resources are deleted.
+- Extract the tar file: tar zxvf release-bundle.tar.gz Install the Config Connector operator on your cluster: Autopilot kubectl apply -f operator-system/autopilot-configconnector-operator.yaml Standard kubectl apply -f operator-system/configconnector-operator.yaml To configure the Config Connector operator to run in namespaced mode, complete the following steps: Create a manifest named configconnector.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnector metadata : the name is restricted to ensure that there is only ConfigConnector resource installed in your cluster name : configconnector.core.cnrm.cloud.google.com spec : mode : namespaced stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnector.yaml Install Config Connector in namespaced mode Note: You must perform these steps for every namespace that you want Config Connector to create resources from.
 

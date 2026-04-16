@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 299
-Unique features: 336
+Unique features: 335
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -256,7 +256,6 @@ Unique features: 336
 | 2020-05-20 | Incident management experience |  | Cloud Monitoring provides an improved incident management experience with better performance, summary statistics, and richer filtering. |
 | 2020-05-08 | Monitoring Query Language | 2024-10-22 | Monitoring Query Language is a query language for Cloud Monitoring metrics and dashboards; Monitoring Query Language is a text-based interface for querying Cloud Monitoring time-series data in the console and API; deprecated on 2024-10-22. |
 | 2020-04-28 | Cloud Monitoring agent for Linux 5.x | 2020-04-28 | Version 5.x of the Cloud Monitoring agent for Linux provided the prior Linux agent release line; deprecated on 2020-04-28. |
-| 2020-04-28 | Cloud Monitoring agent Linux installation scripts | 2020-04-28 | The stack-install.sh and install-monitoring-agent.sh scripts were used to install the Cloud Monitoring agent for Linux; deprecated on 2020-04-28. |
 | 2020-03-30 | High-frequency custom and Prometheus metric writes |  | Custom and Prometheus metrics can be written at up to one data point every 10 seconds. |
 | 2020-02-24 | Stackdriver Monitoring agent 6.0.0 |  | Stackdriver Monitoring agent version 6.0.0 is available for CentOS 7, Ubuntu 16.04 and 18.04, Ubuntu Minimal 16.04 and 18.04, and Amazon Linux AMI; Stackdriver Monitoring agent version 6.0.0 introduces a new release built on a fork of collectd 5.8.1. |
 | 2020-02-19 | Stackdriver Monitoring agent on Ubuntu 19.10 |  | Stackdriver Monitoring agent version 6.0.0 is available for Ubuntu 19.10. |

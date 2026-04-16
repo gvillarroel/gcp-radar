@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:10:13.944Z"
+generated_at: "2026-04-14T11:46:27.768Z"
 product_name: "Capacity Planner"
 product_slug: "capacity-planner"
 feature_name: "Capacity Planner reservation availability view"
 feature_slug: "capacity-planner-reservation-availability-view"
 latest_feature_date: "2024-09-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "HIGH"
 source_links:
+  - "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/QueryReservationsResponse"
   - "https://docs.cloud.google.com/capacity-planner/docs/view-data"
   - "https://docs.cloud.google.com/capacity-planner/docs/overview"
-  - "https://docs.cloud.google.com/capacity-planner/docs/release-notes"
 keywords:
-  - "availability"
-  - "reservation"
-  - "adds"
-  - "of"
-  - "view"
-  - "capacity"
-  - "preview"
-  - "planner"
+  - "reservation availability by region"
+  - "available on-demand reservations"
+  - "reservation availability planning"
+  - "future reservation requests visibility"
+  - "reservation availability view"
+  - "reservation availability"
+  - "availability view"
 ---
 
 # Capacity Planner reservation availability view
 
 Product: Capacity Planner
-Coverage: LOW
+Coverage: HIGH
 
 ## Step 02 Summary
 
@@ -34,17 +33,17 @@ Capacity Planner preview adds a view of available on-demand reservations and fut
 
 ## Extended Definition
 
-Capacity Planner preview adds a view of available on-demand reservations and future reservation requests for planning purposes.
+In Capacity Planner, the reservation availability view is a usage-and-forecast workload view that lets users inspect reservations data for compute resources, including current on-demand reservations and past/current future reservation requests. For instances and GPUs, this view can be filtered by region, and it exposes both historical/forecasted context and reservation-related details together for capacity planning. The API representation for this planning surface also includes reservation aggregation plus future reservation request data (`usedReservationValues` and `futureReservations`) in `QueryReservationsResponse`.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+The overview and view-data pages describe what reservation and future reservation request data is shown (including on-demand and filtering behavior), while the REST reference page confirms those data elements are returned in the reservations query API response.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/QueryReservationsResponse](https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/QueryReservationsResponse)
 - [https://docs.cloud.google.com/capacity-planner/docs/view-data](https://docs.cloud.google.com/capacity-planner/docs/view-data)
 - [https://docs.cloud.google.com/capacity-planner/docs/overview](https://docs.cloud.google.com/capacity-planner/docs/overview)
-- [https://docs.cloud.google.com/capacity-planner/docs/release-notes](https://docs.cloud.google.com/capacity-planner/docs/release-notes)
 
 ## Supporting Pages
 
@@ -52,39 +51,22 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/capacity-planner/docs/view-data](https://docs.cloud.google.com/capacity-planner/docs/view-data)
 - Source ID: `site-docs-root`
-- Final score: 194
+- Final score: 78
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- Data availability and updates When you view usage and forecast data in Capacity Planner, consider the following: Capacity Planner data is available as follows: Historical usage data : historical usage data is available for up to the past two years with the following exceptions: For reservations, historical usage data isn't available before August 1, 2024.
-- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to view the usage and forecast data of your resources: To view forecast data: capacityplanner.forecasts.list on the project, folder, or organization To view historical usage data: capacityplanner.usageHistories.list on the project, folder, or organization To summarize the historical usage data: capacityplanner.usageHistories.summarize on the project, folder, or organization You might also be able to get these permissions with custom roles or other predefined roles .
-- View the forecast and usage of your resources View the usage and forecast data about the compute instances, Persistent Disk volumes, GPUs, and TPUs in your project, folder, or organization by using the following methods: View the forecast and usage of your resources using the Google Cloud console (Recommended) View the forecast and usage of your resources using the Capacity Planner API View the forecast and usage of your resources using the Google Cloud console To view the forecast and usage of your resources using the Google Cloud console, complete the following steps.
-- To view usage and forecast data for specific types of resources in specific regions and zones, review the pages in the Usage & forecast section as follows: In the Usage & forecast section of the Capacity Planner navigation menu, select a page based on the type of resource that you want to view data for: To view data for instances, open the Virtual machine page.
 
 ### Capacity Planner overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/capacity-planner/docs/overview](https://docs.cloud.google.com/capacity-planner/docs/overview)
 - Source ID: `site-api-reference`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 76
+- Re-rank relevance: STRONG
+- Re-rank rationale: The page includes on-demand reservations and past/future reservation requests for instances and GPUs, which directly supports planning with reservation availability.
 
-Evidence snippets:
-- You can use Capacity Planner to view the current and forecasted usage of the following resources in your Google Cloud project, folder, or organization: Compute Engine instances Persistent Disk and Hyperdisk volumes GPUs TPUs Cloud Storage buckets Use cases Capacity Planner helps you plan for future capacity and quota needs by letting you do the following: View data that helps you predict the future requirements for resources and allocation quotas across your project, folder, or organization.
-- Capacity Planner also provides an overview that summarizes the overall resource usage of your project, folder, or organization.
-- This document gives an overview of Capacity Planner.
-- For example, if you want to start learning how to use Capacity Planner by viewing usage and forecast data, consider requesting the Capacity Planner Viewer ( roles/capacityplanner.viewer ) role on the project.
+### QueryReservationsResponse \_|\_ Capacity Planner \_|\_ Google Cloud Documentation
 
-### Capacity Planner release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/capacity-planner/docs/release-notes](https://docs.cloud.google.com/capacity-planner/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 182
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For more information, see the following: Capacity Planner overview View usage and forecast data in Capacity Planner Export usage and forecast with the Google Cloud console Export usage and forecast with the Capacity Planner API Reserve capacity in Capacity Planner December 19, 2024 Feature Preview : You can create future reservation requests for VMs of a single machine type using the Google Cloud console.
-- For more information, see the following: Export usage and forecast with the Google Cloud console Export usage and forecast with the Capacity Planner API View usage and forecast data in Capacity Planner September 05, 2024 Feature Preview : You can use the Capacity Planner API to export usage and forecast data of the VMs, Persistent Disk volumes, or GPUs in your project, folder, or organization.
-- For more information, see the following pages: About Capacity Planner Export usage and forecast data in Capacity Planner View actual and forecasted usage in Capacity Planner March 28, 2024 Feature Preview : Capacity planner supports the following for data aggregated by organization ID: View and export the actual and forecasted usage data of the VMs and persistent disks in your organization.
-- For more information, see the following pages: About Capacity Planner Export usage and forecast data in Capacity Planner Reserve capacity from actual or forecasted usage View actual and forecasted usage in Capacity Planner July 01, 2024 Feature Preview : Capacity Planner displays GPU usage and forecasts of the GPUs in your Google Cloud project or organization.
+- URL: [https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/QueryReservationsResponse](https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/QueryReservationsResponse)
+- Source ID: `site-api-reference`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: The page defines the `QueryReservationsResponse` structure, including reservation and future reservation entities, which is foundational context for APIs that can drive an availability-style reservations view.
 

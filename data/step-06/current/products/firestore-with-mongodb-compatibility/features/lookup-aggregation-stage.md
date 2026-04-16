@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.721Z"
+generated_at: "2026-04-12T12:16:03.667Z"
 product_name: "Firestore with MongoDB compatibility"
 product_slug: "firestore-with-mongodb-compatibility"
 feature_name: "$lookup aggregation stage"
 feature_slug: "lookup-aggregation-stage"
 latest_feature_date: "2025-09-17"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80"
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source"
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences"
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
 keywords:
   - "lookup"
   - "aggregation"
@@ -24,7 +27,7 @@ keywords:
 # $lookup aggregation stage
 
 Product: Firestore with MongoDB compatibility
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ Supports the from, localField, foreignField, and as fields in $lookup; Supports 
 
 Supports the from, localField, foreignField, and as fields in $lookup; Supports the $lookup aggregation stage, limited to _id in foreignField matches.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Supported features: 8.0 \_|\_ Firestore with MongoDB compatibility \_|\_\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80)
+- Source ID: `site-docs-root`
+- Final score: 135
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Operator Supported $abs Yes $add Yes $ceil Yes $divide Yes $exp Yes $floor Yes $ln Yes $log Yes $log10 Yes $mod Yes $multiply Yes $pow Yes $round Yes $sqrt Yes $subtract Yes $trunc Yes Array operators Operator Supported $arrayElemAt Yes $arrayToObject Yes $concatArrays Yes $filter Yes $firstN Yes $in Yes $indexOfArray Yes $isArray Yes $lastN Yes $map Yes $maxN Yes $minN Yes $objectToArray Yes $range Yes $reduce Yes $reverseArray Yes $size Yes $slice Yes $sortArray Yes $zip Yes Boolean operators Operator Supported $and Yes $not Yes $or Yes Comparison operators Operator Supported $cmp Yes $eq Yes $gt Yes $gte Yes $lt Yes $lte Yes $ne Yes Conditional expression operators Operator Supported $cond Yes $ifNull Yes $switch Yes Data size operators Operator Supported $binarySize Yes $bsonSize Yes Date operators Operator Supported $dateAdd Yes $dateDiff Yes $dateFromParts Yes $dateFromString Yes $dateSubtract Yes $dateToParts Yes $dateToString Yes $dateTrunc Yes $dayOfMonth Yes $dayOfWeek Yes $dayOfYear Yes $hour Yes $isoDayOfWeek Yes $isoWeek Yes $isoWeekYear Yes $millisecond Yes $minute Yes $month Yes $second Yes $toDate Yes $week Yes $year Yes Timestamp operators Operator Supported $tsIncrement No $tsSecond No Miscellaneous operators Operator Supported $getField Yes $natural Yes (ascending) $rand Yes $sampleRate No $toHashedIndexKey No Literal expression operators Operator Supported $literal Yes Object operators Operator Supported $mergeObjects Yes $objectToArray Yes $setField No Set operators Operator Supported $allElementsTrue Yes $anyElementTrue Yes $setDifference Yes $setEquals Yes $setIntersection Yes $setIsSubset Yes $setUnion Yes Stage operators Operator Supported $addFields Yes $bucket Yes $bucketAuto No $changeStream No $collStats No $count Yes $currentOp No $documents Yes $facet Yes $geoNear No $graphLookup No $group Yes $indexStats No $limit Yes $listLocalSessions No $listSessions No $lookup Yes $match Yes $merge No $out No $planCacheStats No $project Yes $redact No $replaceRoot Yes $replaceWith Yes $sample Yes $set Yes $search No $setWindowFields No $skip Yes $sort Yes $sortByCount Yes $unionWith Yes $unset Yes $unwind Yes String operators Operator Supported $concat Yes $dateFromString Yes $dateToString Yes $indexOfBytes Yes $indexOfCP Yes $ltrim Yes $regexFind Yes $regexFindAll Yes $regexMatch Yes $replaceAll Yes $replaceOne Yes $rtrim Yes $split Yes $strcasecmp Yes $strLenBytes Yes $strLenCP Yes $substr Yes $substrBytes Yes $substrCP Yes $toLower Yes $toString Yes $toUpper Yes $trim Yes System variables Variable Supported $$CLUSTERTIME No $$CURRENT No $$DESCEND No $$KEEP No $$NOW Yes $$PRUNE No $$REMOVE Yes $$ROOT Yes Text operators Operator Supported $meta No Trigonometry operators Operator Supported $acos No $acosh No $asin No $asinh No $atan No $atan2 No $atanh No $cos No $cosh No $degreesToRadians No $radiansToDegrees No $sin No $sinh No $tan No $tanh No Type operators Operator Supported $convert Yes $isNumber Yes $toBool Yes $toDate Yes $toDecimal Yes $toDouble Yes $toInt Yes $toLong Yes $toObjectId Yes $toString Yes $type Yes Variable operators Operator Supported $let Yes Geospatial Firestore with MongoDB compatibility supports the following Geospatial operators.
+- Aggregation Command Supported aggregate Yes count Yes distinct Yes group No The $group stage in aggregations is supported whereas the group command isn't. mapReduce No Authentication Command Supported authenticate No getnonce No logout No Query and write operations Command Supported watch (Change Streams) No delete Yes eval No find Yes findAndModify Yes getLastError Yes getMore Yes getPrevError No GridFS No insert Yes parallelCollectionScan No replaceOne No The replaceOne driver method is supported with the update command. resetError No update Yes Session commands Command Supported abortTransaction Yes commitTransaction Yes endSessions Yes killAllSessions No killAllSessionsByPattern No killSessions No refreshSessions No startSession Sessions can be started using the startSession driver method.
+- Array operators Operator Supported $ Yes $[] Yes $[<identifier>] Yes $addToSet Yes $percentile Yes $pop Yes $pull Yes $pullAll Yes $push Yes Bitwise operators Operator Supported $bit Yes Field operators Operator Supported $currentDate Yes $inc Yes $max Yes $min Yes $mul Yes $rename Yes $set Yes $setOnInsert Yes $unset Yes Update modifiers Modifier Supported $each Yes $position Yes $slice Yes $sort Yes Aggregation pipeline operators Firestore with MongoDB compatibility supports the following aggregation pipeline operators.
+- Query and projection operators Firestore with MongoDB compatibility supports the following query and projection operators: Array operators Operator Supported $all Yes $elemMatch Yes $size Yes Bitwise operators Operator Supported $bitsAllClear No $bitsAllSet No $bitsAnyClear No $bitsAnySet No Comment operator Operator Supported $comment No Comparison operators Operator Supported $eq Yes $gt Yes $gte Yes $in Yes $lt Yes $lte Yes $ne Yes $nin Yes Element operators Operator Supported $exists Yes $type Yes Evaluation query operators Operator Supported $expr Yes $jsonSchema No $mod Yes $regex Yes $text No $where No Logical operators Operator Supported $and Yes $nor Yes $not Yes $or Yes Projection operators Operator Supported $ Yes $elemMatch Yes $meta Partial (supports textScore) $slice Yes Update operators Firestore with MongoDB compatibility supports the following update operators.
+
+### "Import from the source Mongo database \_|\_ Firestore with MongoDB compatibility\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source)
+- Source ID: `site-iam-reference`
+- Final score: 105
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Import from the source Mongo database This page describes the first stage of the migration process where you use a Datastream stream to capture the contents of your MongoDB-compatible source database and transfer them into a Cloud Storage bucket.
+- As the stream begins pulling data and streaming changes from the Mongo source, you can observe new directories and files created in the Cloud Storage bucket, under the path configured in the connection profile and the stream.
+- The following command examples create these files and populate them with values from the environment variables that you've set earlier.
+- For example, to migrate only the collections users and chats use the following: includeObjects: databases: - database: ${ MONGODB DATABASE NAME } collections: - collection: users - collection: chats Create a Datastream stream Next, create a stream that connects the source and the destination: gcloud datastream streams create " $DATASTREAM NAME " \ --display-name = " $DATASTREAM NAME " \ --location = " $LOCATION " \ --source = " $SRC CONNECTION PROFILE NAME " \ --destination = " $DST CONNECTION PROFILE NAME " \ --mongodb-source-config = ./mongo source config.yaml \ --gcs-destination-config = ./gcs dst config.yaml \ --backfill-all For more information about monitoring the Datastream stream creation, see Troubleshooting .
+
+### "Behavior differences \_|\_ Firestore with MongoDB compatibility \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences)
+- Source ID: `site-iam-reference`
+- Final score: 95
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The $lookup stage does not support the let and pipeline fields.
+- Read concern Firestore with MongoDB compatibility supports the snapshot , majority , and linearizable read concerns.
+- The $facet stage does not support $rand or $sample in the input stages because it's a volatile expression.
+- See the commands section for a complete list of supported stages and operators.
+
+### "Configure environment variables \_|\_ Firestore with MongoDB compatibility\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars)
+- Source ID: `site-iam-reference`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Set the following variables before proceeding with other commands in this guide: General parameters PROJECT ID = " PROJECT ID " LOCATION = " LOCATION " Datastream connection parameters SRC CONNECTION PROFILE NAME = " SRC CONNECTION PROFILE NAME " DST CONNECTION PROFILE NAME = " DST CONNECTION PROFILE NAME " DATASTREAM NAME = " DATASTREAM NAME " Datastream data placement parameters GCS BUCKET NAME = " GCS BUCKET NAME " GCS BUCKET ROOT PATH = " GCS BUCKET ROOT PATH " GCS BUCKET SUB PATH = " GCS BUCKET SUB PATH " Dataflow template parameters GCS BUCKET TEMPLATE PATH = " GCS BUCKET TEMPLATE PATH " NUM WORKERS = NUM WORKERS MAX WORKERS = MAX WORKERS WORKER TYPE = " WORKER TYPE " Additional Dataflow template parameters: these are initialized from parameters above and don't require further customization INPUT FILE LOCATION = "gs:// ${ GCS BUCKET NAME } / ${ GCS BUCKET ROOT PATH } / ${ GCS BUCKET SUB PATH } /" TEMP OUTPUT LOCATION = "gs:// ${ GCS BUCKET NAME } / ${ GCS BUCKET ROOT PATH } /tmp" DLQ LOCATION = "gs:// ${ GCS BUCKET NAME } / ${ GCS BUCKET ROOT PATH } /dql" STAGING LOCATION = "gs:// ${ GCS BUCKET NAME } / ${ GCS BUCKET ROOT PATH } /staging" Firestore connection parameters FIRESTORE CONNECTION URI = " FIRESTORE CONNECTION URI " FIRESTORE DATABASE NAME = " FIRESTORE DATABASE NAME " Replace the following: General parameters: PROJECT ID : a Project ID of the Google Cloud project where the migration pipeline will run.
+- BASTION IP ADDRESS : the external IP address of the EC2 instance that allows SSH access from a public network, and also provides internal connectivity to the DocumentDB cluster within your Amazon VPC.
+- This can be the MongoDB server itself, or a designated Bastion host that allows SSH access from a public network, and also provides internal connectivity to the actual MongoDB server.
+- Dataflow template parameters for managing the pipeline that will copy data from the Cloud Storage bucket into your Firestore with MongoDB compatibility database.
 

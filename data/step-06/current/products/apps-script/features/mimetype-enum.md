@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:29:46.797Z"
+generated_at: "2026-04-15T11:53:34.641Z"
 product_name: "Apps Script"
 product_slug: "apps-script"
 feature_name: "MimeType enum"
@@ -10,16 +10,17 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/apps-script/releases"
-  - "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses"
-  - "https://developers.google.com/apps-script/api/reference/rest/v1/File"
+  - "https://developers.google.com/apps-script/reference/content"
+  - "https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type"
 keywords:
-  - "constants"
   - "mimetype"
-  - "mime"
   - "enum"
+  - "was"
+  - "added"
+  - "provide"
+  - "named"
+  - "mime"
   - "type"
-  - "adds"
-  - "for"
 ---
 
 # MimeType enum
@@ -29,11 +30,11 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Adds a MimeType enum for MIME-type constants.
+The MimeType enum was added to provide named MIME type declarations.
 
 ## Extended Definition
 
-Adds a MimeType enum for MIME-type constants.
+The MimeType enum was added to provide named MIME type declarations.
 
 ## Evidence Summary
 
@@ -42,8 +43,8 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 ## Source Links
 
 - [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
-- [https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses](https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses)
-- [https://developers.google.com/apps-script/api/reference/rest/v1/File](https://developers.google.com/apps-script/api/reference/rest/v1/File)
+- [https://developers.google.com/apps-script/reference/content](https://developers.google.com/apps-script/reference/content)
+- [https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type](https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type)
 
 ## Supporting Pages
 
@@ -51,38 +52,40 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
 - Source ID: `site-docs-root`
-- Final score: 136
+- Final score: 158
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Added a MimeType enum , which provides access to MIME -type declarations without typing the strings explicitly.
-- The new classes and methods include: BandingTheme Banding BooleanCondition BooleanCriteria ConditionalFormatRuleBuilder ConditionalFormatRule Dimension Direction FilterCriteriaBuilder FilterCriteria Filter GradientCondition InterpolationType PivotFilter PivotGroup PivotTableSummarizeFunction PivotTable PivotTableDisplayType PivotValue RangeList RelativeDate Selection TextDirection TextRotation TextToColumnsDelimiter WrapStrategy EmbeddedChartBuilder.setHiddenDimensionStrategy(strategy) (also in each of the type-specific chart builder classes) EmbeddedChartBuilder.setNumHeaders(headers) (also in each of the type-specific chart builder classes) EmbeddedChartBuilder.setMergeStrategy(mergeStrategy) (also in each of the type-specific chart builder classes) EmbeddedChartBuilder.setTransposeRowsAndColumns(transpose) (also in each of the type-specific chart builder classes) Range.activateAsCurrentCell() Range.applyColumnBanding() Range.applyColumnBanding(bandingTheme) Range.applyColumnBanding(bandingTheme, showHeader, showFooter) Range.applyRowBanding() Range.applyRowBanding(bandingTheme) Range.applyRowBanding(bandingTheme, showHeader, showFooter) Range.createFilter() Range.createPivotTable(sourceData) Range.deleteCells(shiftDimension) Range.getBandings() Range.getNextDataCell(direction) Range.getTextDirection() Range.getTextDirections() Range.getTextRotation() Range.getTextRotations() Range.getWrapStrategies() Range.getWrapStrategy() Range.insertCells(shiftDimension) Range.setShowHyperlink(showHyperlink) Range.setTextDirection(direction) Range.setTextDirections(directions) Range.setTextRotation(degrees) Range.setTextRotation(rotation) Range.setTextRotations(rotations) Range.setVerticalText(isVertical) Range.setWrapStrategies(strategies) Range.setWrapStrategy(strategy) Range.setTextToColumns() Range.setTextToColumns(delimiter) Range.setTextToColumns(delimiter) Sheet.autoResizeColumns(startColumns, numColumns) Sheet.autoResizeRows(startRows, numRows) Sheet.clearConditionalFormatRules() Sheet.getActiveRangeList() Sheet.getBandings() Sheet.getConditionalFormatRules() Sheet.getCurrentCell() Sheet.getFilter() Sheet.getPivotTables() Sheet.getRangeList(a1Notations) Sheet.getSelection() Sheet.hasHiddenGridlines() Sheet.isRightToLeft() Sheet.setActiveRangeList(rangeList) Sheet.setColumnWidths(startColumn numColumns, width) Sheet.setConditionalFormatRules(rules) Sheet.setCurrentCell(cell) Sheet.setHiddenGridlines(hideGridlines) Sheet.setRightToLeft(rightToLeft) Sheet.setRowHeights(startRow, numRows, height) Spreadsheet.getActiveRangeList() Spreadsheet.getBandings() Spreadsheet.getCurrentCell() Spreadsheet.getRangeList(a1Notations) Spreadsheet.getSelection() Spreadsheet.setActiveRangeList(rangeList) Spreadsheet.setCurrentCell(cell) Feature The Charts service has been extended to support EmbeddedCharts in Google Sheets with the enums ChartHiddenDimensionStrategy and ChartMergeStrategy .
-- February 13, 2018 Feature The Slides service has been extended with the following new methods: Layout.insertGroup(group) Layout.insertImage(image) Layout.insertLine(line) Layout.insertPageElement(pageElement) Layout.insertShape(shape) Layout.insertSheetsChart(sheetsChart) Layout.insertTable(table) Layout.insertVideo(video) Layout.insertWordArt(wordArt) Master.insertGroup(group) Master.insertImage(image) Master.insertLine(line) Master.insertPageElement(pageElement) Master.insertShape(shape) Master.insertSheetsChart(sheetsChart) Master.insertTable(table) Master.insertVideo(video) Master.insertWordArt(wordArt) Page.insertGroup(group) Page.insertImage(image) Page.insertLine(line) Page.insertPageElement(pageElement) Page.insertShape(shape) Page.insertSheetsChart(sheetsChart) Page.insertTable(table) Page.insertVideo(video) Page.insertWordArt(wordArt) Presentation.appendSlide(slide) Presentation.insertSlide(insertionIndex, slide) Slide.insertGroup(group) Slide.insertImage(image) Slide.insertLine(line) Slide.insertPageElement(pageElement) Slide.insertShape(shape) Slide.insertSheetsChart(sheetsChart) Slide.insertTable(table) Slide.insertVideo(video) Slide.insertWordArt(wordArt) TextRange.appendRange(textRange) TextRange.appendRange(textRange, matchSourceFormatting) TextRange.insertRange(startOffset, textRange) TextRange.insertRange(startOffset, textRange, matchSourceFormatting) The Spreadsheet service has been extended with the following new enum class and method: CopyPasteType , an enum class describing paste types.
-- For more information, refer to the following documentation: Enum EventTransparency Class CalendarEvent Class CalendarEventSeries November 27, 2024 Feature The Calendar service now has a getEventType() method that lets developers differentiate regular events from other types of events like out-of-office and working location events.
+- The Card service has been extended with the following classes and methods that provide new widgets and event responses: CalendarEventActionResponse CalendarEventActionResponseBuilder DatePicker DateTimePicker DisplayStyle DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder FixedFooter SwitchControlType TimePicker CardBuilder.setDisplayStyle(displayStyle) CardBuilder.setFixedFooter(fixedFooter) CardBuilder.setPeekCardHeader(peekCardHeader) CardService.newCalendarEventActionResponseBuilder() CardService.newDatePicker() CardService.newDateTimePicker() CardService.newDriveItemsSelectedActionResponseBuilder() CardService.newFixedFooter() CardService.newTimePicker() Switch.setControlType(controlType) The Conference Data service has been added to Apps Script.
+- Feature Added the following class, enum, and methods to the Spreadsheet service, to give precise control over protected sheets and ranges: Protection ProtectionType Range.canEdit() Range.isEndColumnBounded() Range.isEndRowBounded() Range.isStartColumnBounded() Range.isStartRowBounded() Range.protect() Sheet.getProtections(type) Sheet.protect() Spreadsheet.getProtections(type) Fixed Issue 4617 : HTML service pages that use the new IFRAME sandbox mode now render correctly in Firefox.
+- Added several new ScriptApp methods, classes, and enums to support installable triggers in add-ons: AuthorizationInfo : An object used to determine whether the user needs to authorize this script to use one or more services, and to provide the URL for an authorization dialog.
 
-### "Method: processes.listScriptProcesses \_|\_ Apps Script \_|\_ Google for\
+### Content Service \_|\_ Apps Script \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses](https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses)
-- Source ID: `site-api-reference`
-- Final score: 79
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- JSON representation { "deploymentId" : string , "functionName" : string , "startTime" : string , "endTime" : string , "types" : [ enum ( ProcessType ) ] , "statuses" : [ enum ( ProcessStatus ) ] , "userAccessLevels" : [ enum ( UserAccessLevel ) ] } Fields deploymentId string Optional field used to limit returned processes to those originating from projects with a specific deployment ID. functionName string Optional field used to limit returned processes to those originating from a script function with the given function name. startTime string ( Timestamp format) Optional field used to limit returned processes to those that were started on or after the given timestamp.
-- Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z" . types[] enum ( ProcessType ) Optional field used to limit returned processes to those having one of the specified process types. statuses[] enum ( ProcessStatus ) Optional field used to limit returned processes to those having one of the specified process statuses. userAccessLevels[] enum ( UserAccessLevel ) Optional field used to limit returned processes to those having one of the specified user access levels.
-- The ListScriptProcessesFilter object allows for filtering processes by deployment ID, function name, start and end time, process types, statuses, and user access levels.
-- List information about a script's executed processes, such as process type and current status.
-
-### File \_|\_ Apps Script \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/apps-script/api/reference/rest/v1/File](https://developers.google.com/apps-script/api/reference/rest/v1/File)
-- Source ID: `site-api-reference`
-- Final score: 79
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/apps-script/reference/content](https://developers.google.com/apps-script/reference/content)
+- Source ID: `site-docs-reference-3`
+- Final score: 110
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- JSON representation { "name" : string , "type" : enum ( FileType ) , "source" : string , "lastModifyUser" : { object ( User ) } , "createTime" : string , "updateTime" : string , "functionSet" : { object ( FunctionSet ) } } Fields name string The name of the file.
-- The file extension is not part of the file name, which can be identified from the type field. type enum ( FileType ) The type of the file. source string The file content. lastModifyUser object ( User ) The user who modified the file most recently.
-- Files can be of different types, such as server-side Javascript, HTML, or JSON for the project's manifest.
-- Enums ENUM TYPE UNSPECIFIED Undetermined file type; never actually used.
+- MimeType Properties Property Type Description CSV Enum CSV Mime Type ICAL Enum ICAL Mime Type JAVASCRIPT Enum JAVASCRIPT Mime Type JSON Enum JSON Mime Type TEXT Enum TEXT Mime Type VCARD Enum VCARD Mime Type TextOutput Methods Method Return type Brief description append(addedContent) Text Output Appends new content to the content that will be served. clear() Text Output Clears the current content. download As File(filename) Text Output Tells browsers to download rather than display this content. get Content() String Gets the content that will be served. get File Name() String Returns the file name to download this file as, or null if it should be displayed rather than downloaded. get Mime Type() Mime Type Get the mime type this content will be served with. set Content(content) Text Output Sets the content that will be served. set Mime Type(mimeType) Text Output Sets the mime type for content that will be served.
+- The MimeType enum defines the various mime types that can be served from a script.
+- Mime Type An enum for mime types that can be served from a script.
+- ContentService Properties Property Type Description Mime Type Mime Type Methods Method Return type Brief description create Text Output() Text Output Create a new Text Output object. create Text Output(content) Text Output Create a new Text Output object that can serve the given content.
+
+### Enum BasicDataType \_|\_ Apps Script \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type](https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type)
+- Source ID: `site-docs-reference-3`
+- Final score: 97
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Google Workspace Apps Script Reference Send feedback Enum BasicDataType Stay organized with collections Save and categorize content based on your preferences.
+- GOOGLE USER Enum A user of the Google services, in the format of “users/encoded GAIA ID” FILE Enum A file type.
+- Properties Property Type Description BASIC TYPE UNSPECIFIED Enum Default value.
+- BasicDataType An enum that represents the basic generic data types.
 

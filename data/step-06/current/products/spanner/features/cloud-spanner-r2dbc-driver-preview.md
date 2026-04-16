@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.027Z"
+generated_at: "2026-04-13T22:42:27.316Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Cloud Spanner R2DBC Driver (Preview)"
@@ -9,18 +9,17 @@ latest_feature_date: "2021-08-31"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
-  - "https://docs.cloud.google.com/spanner/docs/instances"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
+  - "https://docs.cloud.google.com/spanner/docs/use-oss-r2dbc"
+  - "https://docs.cloud.google.com/spanner/docs/drivers-overview"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-drivers"
 keywords:
-  - "spanner"
+  - "reactive"
   - "r2dbc"
+  - "fully"
   - "driver"
-  - "preview"
   - "introduced"
-  - "an"
-  - "in"
-  - "that"
+  - "enables"
+  - "preview"
 ---
 
 # Cloud Spanner R2DBC Driver (Preview)
@@ -38,46 +37,55 @@ Cloud Spanner introduced an R2DBC driver in Preview that enables fully reactive 
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
+- [https://docs.cloud.google.com/spanner/docs/use-oss-r2dbc](https://docs.cloud.google.com/spanner/docs/use-oss-r2dbc)
+- [https://docs.cloud.google.com/spanner/docs/drivers-overview](https://docs.cloud.google.com/spanner/docs/drivers-overview)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-drivers](https://docs.cloud.google.com/spanner/docs/jdbc-drivers)
 
 ## Supporting Pages
 
-### django_spanner.operations — google-cloud-spanner-django documentation
+### Use the open-source R2DBC driver \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- Source ID: `site-python-reference`
-- Final score: 222
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
-
-### Instances overview | Spanner | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
-- Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/spanner/docs/use-oss-r2dbc](https://docs.cloud.google.com/spanner/docs/use-oss-r2dbc)
+- Source ID: `site-docs-reference`
+- Final score: 110
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Instances overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/instances Once an instance is created, you can list, edit, or delete it.
-- Spanner is a fully managed database service which oversees its own underlying tasks and resources, including monitoring and restarting processes when necessary with zero downtime.
+- Your application can make use of the reactive database connectivity with Spanner by using the Spanner R2DBC driver.
+- Use the Spanner R2DBC driver To add only the Spanner R2DBC driver to your application, add the following dependency: <dependency> <groupId>com.google.cloud</groupId> <artifactId>cloud-spanner-r2dbc</artifactId> <version>1.3.0</version> </dependency> For more information, see the Spanner R2DBC driver GitHub repository and the sample code .
+- The driver is a transitive dependency of the dialect. <dependency> <groupId>com.google.cloud</groupId> <artifactId>cloud-spanner-spring-data-r2dbc</artifactId> <version>1.2.2</version> </dependency> To learn how to use its template and repositories, see the Spring Data R2DBC reference .
+- Home Documentation Databases Spanner Reference Send feedback Use the open-source R2DBC driver Stay organized with collections Save and categorize content based on your preferences.
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### Overview of drivers \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 162
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/spanner/docs/drivers-overview](https://docs.cloud.google.com/spanner/docs/drivers-overview)
+- Source ID: `site-docs-reference`
+- Final score: 72
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- GoogleSQL drivers and ORMs Feature database/sql GORM Spanner JDBC Hibernate Spring Data R2DBC ADO.NET Entity Framework Active Record SQLAlchemy Django Language Go Go Java Java Java Java C# C# Ruby Python Python Statement hints † Mutations Batch DML Batch DDL Stale reads Interleaved tables Partitioned DML Session labeling Request priority JSON type Request tagging Google SQL dialect PostgreSQL dialect Limitations View View View View View View This column describes R2DBC when used specifically with Spring Data. † Available only when sending literal SQL queries, by using the Spring Data @Query annotation.
+- Home Documentation Databases Spanner Reference Send feedback Overview of drivers Stay organized with collections Save and categorize content based on your preferences.
+- The following tables list all the open-source ORMs and drivers that are supported for Spanner and the features that each one supports.
+- This page describes the drivers that are supported for Spanner for GoogleSQL-dialect databases and PostgreSQL-dialect databases.
+
+### JDBC drivers \_|\_ Spanner \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-drivers](https://docs.cloud.google.com/spanner/docs/jdbc-drivers)
+- Source ID: `site-docs-reference`
+- Final score: 57
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Spanner JDBC driver PostgreSQL JDBC driver Download Maven Central Maven Central Written by Google PostgreSQL Support Google Google Open source Yes; Apache license Yes; BSD 2-Clause Note: Spanner previously supported the Simba JDBC driver.
+- Spanner supports the following JDBC drivers: The Spanner JDBC driver, which is an open-source JDBC driver that is written, provided, and supported by Google, similar to the Cloud Client Libraries .
+- Home Documentation Databases Spanner Reference Send feedback JDBC drivers Stay organized with collections Save and categorize content based on your preferences.
+- This page describes the JDBC drivers that Spanner supports for GoogleSQL-dialect databases and PostgreSQL-dialect databases.
 

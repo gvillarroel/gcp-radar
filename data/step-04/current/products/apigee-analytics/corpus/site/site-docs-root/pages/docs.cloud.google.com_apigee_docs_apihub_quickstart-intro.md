@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/apigee/docs/apihub/quickstart-intro
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://docs.cloud.google.com/apigee/docs/api-platform/analytics/export-data
+entrypoint: https://docs.cloud.google.com/apigee/docs/api-platform/analytics/using-performance-metrics
 source_metadata:
   url: https://docs.cloud.google.com/apigee/docs/apihub/quickstart-intro
   title: "Quickstarts \_|\_ Apigee \_|\_ Google Cloud Documentation"

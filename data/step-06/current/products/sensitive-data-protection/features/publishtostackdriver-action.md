@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.825Z"
+generated_at: "2026-04-14T12:39:34.477Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "PublishToStackdriver action"
@@ -9,18 +9,17 @@ latest_feature_date: "2019-11-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/Action"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage"
 keywords:
   - "publishtostackdriver"
+  - "stackdriver"
+  - "summary"
   - "action"
-  - "the"
+  - "published"
   - "dlpjob"
   - "findings"
-  - "summary"
-  - "can"
-  - "be"
 ---
 
 # PublishToStackdriver action
@@ -42,43 +41,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions](https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview](https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/Action](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/Action)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage](https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage)
 
 ## Supporting Pages
 
-### Method types | Sensitive Data Protection | Google Cloud Documentation
+### Action \_|\_ Sensitive Data Protection \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/Action](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/Action)
+- Source ID: `site-api-reference`
+- Final score: 186
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON representation { // Union field action can be only one of the following: "saveFindings" : { object ( SaveFindings ) } , "pubSub" : { object ( PublishToPubSub ) } , "publishSummaryToCscc" : { object ( PublishSummaryToCscc ) } , "publishFindingsToCloudDataCatalog" : { object ( PublishFindingsToCloudDataCatalog ) } , "publishFindingsToDataplexCatalog" : { object ( PublishFindingsToDataplexCatalog ) } , "deidentify" : { object ( Deidentify ) } , "jobNotificationEmails" : { object ( JobNotificationEmails ) } , "publishToStackdriver" : { object ( PublishToStackdriver ) } // End of list of possible types for union field action . } Fields Union field action .
+- JSON representation SaveFindings JSON representation OutputStorageConfig JSON representation OutputSchema PublishToPubSub JSON representation PublishSummaryToCscc PublishFindingsToCloudDataCatalog PublishFindingsToDataplexCatalog Deidentify JSON representation TransformationConfig JSON representation TransformationDetailsStorageConfig JSON representation JobNotificationEmails PublishToStackdriver A task to execute on the completion of a job.
+- Extra events to execute after the job has finished. action can be only one of the following: saveFindings object ( SaveFindings ) Save resulting findings in a provided location. pubSub object ( PublishToPubSub ) Publish a notification to a Pub/Sub topic. publishSummaryToCscc object ( PublishSummaryToCscc ) Publish summary to Cloud Security Command Center (Alpha). publishFindingsToCloudDataCatalog (deprecated) object ( PublishFindingsToCloudDataCatalog ) This item is deprecated!
+- The email goes to IAM project owners and technical Essential Contacts . publishToStackdriver object ( PublishToStackdriver ) Enable Stackdriver metric dlp.googleapis.com/findingCount.
+
+### "Inspect Google Cloud storage and databases for sensitive data \_|\_ Sensitive\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage](https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage)
+- Source ID: `site-docs-reference-3`
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Using these methods, you can scan data both on and off Google Cloud and optimize the behavior of ...
-- Method types Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types Sensitive Data Protection includes different types of methods that you can use to inspect, transform (de-identify), discover, and classify data.
+- For more information, see Set up authentication for a local development environment . use Google\Cloud\Dlp\V2\Action; use Google\Cloud\Dlp\V2\Action\PublishToPubSub; use Google\Cloud\Dlp\V2\Client\DlpServiceClient; use Google\Cloud\Dlp\V2\CreateDlpJobRequest; use Google\Cloud\Dlp\V2\DatastoreOptions; use Google\Cloud\Dlp\V2\DlpJob\JobState; use Google\Cloud\Dlp\V2\GetDlpJobRequest; use Google\Cloud\Dlp\V2\InfoType; use Google\Cloud\Dlp\V2\InspectConfig; use Google\Cloud\Dlp\V2\InspectConfig\FindingLimits; use Google\Cloud\Dlp\V2\InspectJobConfig; use Google\Cloud\Dlp\V2\KindExpression; use Google\Cloud\Dlp\V2\Likelihood; use Google\Cloud\Dlp\V2\PartitionId; use Google\Cloud\Dlp\V2\StorageConfig; use Google\Cloud\PubSub\PubSubClient; / Inspect Datastore, using Pub/Sub for job status notifications. @param string $callingProjectId The project ID to run the API call under @param string $dataProjectId The project ID containing the target Datastore @param string $topicId The name of the Pub/Sub topic to notify once the job completes @param string $subscriptionId The name of the Pub/Sub subscription to use when listening for job @param string $kind The datastore kind to inspect @param string $namespaceId The ID namespace of the Datastore document to inspect @param int $maxFindings (Optional) The maximum number of findings to report per request (0 = server maximum) / function inspect datastore( string $callingProjectId, string $dataProjectId, string $topicId, string $subscriptionId, string $kind, string $namespaceId, int $maxFindings = 0 ): void { // Instantiate clients $dlp = new DlpServiceClient(); $pubsub = new PubSubClient(); $topic = $pubsub->topic($topicId); // The infoTypes of information to match $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $infoTypes = [$personNameInfoType, $phoneNumberInfoType]; // The minimum likelihood required before returning a match $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // Specify finding limits $limits = (new FindingLimits()) ->setMaxFindingsPerRequest($maxFindings); // Construct items to be inspected $partitionId = (new PartitionId()) ->setProjectId($dataProjectId) ->setNamespaceId($namespaceId); $kindExpression = (new KindExpression()) ->setName($kind); $datastoreOptions = (new DatastoreOptions()) ->setPartitionId($partitionId) ->setKind($kindExpression); // Construct the inspect config object $inspectConfig = (new InspectConfig()) ->setInfoTypes($infoTypes) ->setMinLikelihood($minLikelihood) ->setLimits($limits); // Construct the storage config object $storageConfig = (new StorageConfig()) ->setDatastoreOptions($datastoreOptions); // Construct the action to run when job completes $pubSubAction = (new PublishToPubSub()) ->setTopic($topic->name()); $action = (new Action()) ->setPubSub($pubSubAction); // Construct inspect job config to run $inspectJob = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig) ->setActions([$action]); // Listen for job notifications via an existing topic/subscription. $subscription = $topic->subscription($subscriptionId); // Submit request $parent = "projects/$callingProjectId/locations/global"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setInspectJob($inspectJob); $job = $dlp->createDlpJob($createDlpJobRequest); // Poll Pub/Sub using exponential backoff until job finishes // Consider using an asynchronous execution model such as Cloud Functions $attempt = 1; $startTime = time(); do { foreach ($subscription->pull() as $message) { if ( isset($message->attributes()['DlpJobName']) && $message->attributes()['DlpJobName'] === $job->getName() ) { $subscription->acknowledge($message); // Get the updated job.
+- For more information, see Set up authentication for a local development environment . use Google\Cloud\Dlp\V2\Action; use Google\Cloud\Dlp\V2\Action\PublishToPubSub; use Google\Cloud\Dlp\V2\BigQueryOptions; use Google\Cloud\Dlp\V2\BigQueryTable; use Google\Cloud\Dlp\V2\Client\DlpServiceClient; use Google\Cloud\Dlp\V2\CreateDlpJobRequest; use Google\Cloud\Dlp\V2\DlpJob\JobState; use Google\Cloud\Dlp\V2\GetDlpJobRequest; use Google\Cloud\Dlp\V2\InfoType; use Google\Cloud\Dlp\V2\InspectConfig; use Google\Cloud\Dlp\V2\InspectConfig\FindingLimits; use Google\Cloud\Dlp\V2\InspectJobConfig; use Google\Cloud\Dlp\V2\Likelihood; use Google\Cloud\Dlp\V2\StorageConfig; use Google\Cloud\PubSub\PubSubClient; / Inspect a BigQuery table , using Pub/Sub for job status notifications. @param string $callingProjectId The project ID to run the API call under @param string $dataProjectId The project ID containing the target Datastore @param string $topicId The name of the Pub/Sub topic to notify once the job completes @param string $subscriptionId The name of the Pub/Sub subscription to use when listening for job @param string $datasetId The ID of the dataset to inspect @param string $tableId The ID of the table to inspect @param int $maxFindings (Optional) The maximum number of findings to report per request (0 = server maximum) / function inspect bigquery( string $callingProjectId, string $dataProjectId, string $topicId, string $subscriptionId, string $datasetId, string $tableId, int $maxFindings = 0 ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $pubsub = new PubSubClient(); $topic = $pubsub->topic($topicId); // The infoTypes of information to match $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $creditCardNumberInfoType = (new InfoType()) ->setName('CREDIT CARD NUMBER'); $infoTypes = [$personNameInfoType, $creditCardNumberInfoType]; // The minimum likelihood required before returning a match $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // Specify finding limits $limits = (new FindingLimits()) ->setMaxFindingsPerRequest($maxFindings); // Construct items to be inspected $bigqueryTable = (new BigQueryTable()) ->setProjectId($dataProjectId) ->setDatasetId($datasetId) ->setTableId($tableId); $bigQueryOptions = (new BigQueryOptions()) ->setTableReference($bigqueryTable); $storageConfig = (new StorageConfig()) ->setBigQueryOptions($bigQueryOptions); // Construct the inspect config object $inspectConfig = (new InspectConfig()) ->setMinLikelihood($minLikelihood) ->setLimits($limits) ->setInfoTypes($infoTypes); // Construct the action to run when job completes $pubSubAction = (new PublishToPubSub()) ->setTopic($topic->name()); $action = (new Action()) ->setPubSub($pubSubAction); // Construct inspect job config to run $inspectJob = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig) ->setActions([$action]); // Listen for job notifications via an existing topic/subscription. $subscription = $topic->subscription($subscriptionId); // Submit request $parent = "projects/$callingProjectId/locations/global"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setInspectJob($inspectJob); $job = $dlp->createDlpJob($createDlpJobRequest); // Poll Pub/Sub using exponential backoff until job finishes // Consider using an asynchronous execution model such as Cloud Functions $attempt = 1; $startTime = time(); do { foreach ($subscription->pull() as $message) { if (isset($message->attributes()['DlpJobName']) && $message->attributes()['DlpJobName'] === $job->getName()) { $subscription->acknowledge($message); // Get the updated job.
+- DlpServiceClient (); const pubsub = new PubSub (); // The project ID to run the API call under // const projectId = 'my-project'; // The project ID the target Datastore is stored under // This may or may not equal the calling project ID // const dataProjectId = 'my-project'; // (Optional) The ID namespace of the Datastore document to inspect. // To ignore Datastore namespaces, set this to an empty string ('') // const namespaceId = ''; // The kind of the Datastore entity to inspect. // const kind = 'Person'; // The minimum likelihood required before returning a match // const minLikelihood = 'LIKELIHOOD UNSPECIFIED'; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; // The infoTypes of information to match // const infoTypes = [{ name: 'PHONE NUMBER' }, { name: 'EMAIL ADDRESS' }, { name: 'CREDIT CARD NUMBER' }]; // The customInfoTypes of information to match // const customInfoTypes = [{ infoType: { name: 'DICT TYPE' }, dictionary: { wordList: { words: ['foo', 'bar', 'baz']}}}, // { infoType: { name: 'REGEX TYPE' }, regex: {pattern: '\\(\\d{3}\\) \\d{3}-\\d{4}'}}]; // The name of the Pub/Sub topic to notify once the job completes // TODO(developer): create a Pub/Sub topic to use for this // const topicId = 'MY-PUBSUB-TOPIC' // The name of the Pub/Sub subscription to use when listening for job // completion notifications // TODO(developer): create a Pub/Sub subscription to use for this // const subscriptionId = 'MY-PUBSUB-SUBSCRIPTION' async function inspectDatastore () { // Construct items to be inspected const storageItems = { datastoreOptions : { partitionId : { projectId : dataProjectId , namespaceId : namespaceId , }, kind : { name : kind , }, }, }; // Construct request for creating an inspect job const request = { parent : projects/ ${ projectId } /locations/global , inspectJob : { inspectConfig : { infoTypes : infoTypes , customInfoTypes : customInfoTypes , minLikelihood : minLikelihood , limits : { maxFindingsPerRequest : maxFindings , }, }, storageConfig : storageItems , actions : [ { pubSub : { topic : projects/ ${ projectId } /topics/ ${ topicId } , }, }, ], }, }; // Run inspect-job creation request const [ topicResponse ] = await pubsub . topic ( topicId ). get (); // Verify the Pub/Sub topic and listen for job notifications via an // existing subscription. const subscription = await topicResponse . subscription ( subscriptionId ); const [ jobsResponse ] = await dlp . createDlpJob ( request ); const jobName = jobsResponse . name ; // Watch the Pub/Sub topic until the DLP job finishes await new Promise (( resolve , reject ) = > { const messageHandler = message = > { if ( message . attributes && message . attributes .
+- DlpServiceClient (); const pubsub = new PubSub (); // The project ID to run the API call under // const projectId = 'my-project'; // The project ID the table is stored under // This may or (for public datasets) may not equal the calling project ID // const dataProjectId = 'my-project'; // The ID of the dataset to inspect, e.g. 'my dataset' // const datasetId = 'my dataset'; // The ID of the table to inspect, e.g. 'my table' // const tableId = 'my table'; // The minimum likelihood required before returning a match // const minLikelihood = 'LIKELIHOOD UNSPECIFIED'; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; // The infoTypes of information to match // const infoTypes = [{ name: 'PHONE NUMBER' }, { name: 'EMAIL ADDRESS' }, { name: 'CREDIT CARD NUMBER' }]; // The customInfoTypes of information to match // const customInfoTypes = [{ infoType: { name: 'DICT TYPE' }, dictionary: { wordList: { words: ['foo', 'bar', 'baz']}}}, // { infoType: { name: 'REGEX TYPE' }, regex: {pattern: '\\(\\d{3}\\) \\d{3}-\\d{4}'}}]; // The name of the Pub/Sub topic to notify once the job completes // TODO(developer): create a Pub/Sub topic to use for this // const topicId = 'MY-PUBSUB-TOPIC' // The name of the Pub/Sub subscription to use when listening for job // completion notifications // TODO(developer): create a Pub/Sub subscription to use for this // const subscriptionId = 'MY-PUBSUB-SUBSCRIPTION' async function inspectBigquery () { // Construct item to be inspected const storageItem = { bigQueryOptions : { tableReference : { projectId : dataProjectId , datasetId : datasetId , tableId : tableId , }, }, }; // Construct request for creating an inspect job const request = { parent : projects/ ${ projectId } /locations/global , inspectJob : { inspectConfig : { infoTypes : infoTypes , customInfoTypes : customInfoTypes , minLikelihood : minLikelihood , limits : { maxFindingsPerRequest : maxFindings , }, }, storageConfig : storageItem , actions : [ { pubSub : { topic : projects/ ${ projectId } /topics/ ${ topicId } , }, }, ], }, }; // Run inspect-job creation request const [ topicResponse ] = await pubsub . topic ( topicId ). get (); // Verify the Pub/Sub topic and listen for job notifications via an // existing subscription. const subscription = await topicResponse . subscription ( subscriptionId ); const [ jobsResponse ] = await dlp . createDlpJob ( request ); const jobName = jobsResponse . name ; // Watch the Pub/Sub topic until the DLP job finishes await new Promise (( resolve , reject ) = > { const messageHandler = message = > { if ( message . attributes && message . attributes .
 
-### Sensitive Data Protection IAM permissions | Google Cloud Documentation
+### "Enable inspection or risk analysis actions \_|\_ Sensitive Data Protection\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions](https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 27
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Note: If you are using Sensitive Data Protection to scan critical resources, such as those protected by additional custom Identity and Access Management roles, you must assign those additional IAM roles to the Cloud Data Loss Prevention Service Agent.
-- Sensitive Data Protection IAM permissions Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions The Cloud Data Loss Prevention Service Agent is automatically granted common permissions on the project that are needed for inspecting resources and is listed in the IAM section of the Google Cloud console.
-- The service agent exists indefinitely with the project and is only deleted when the project is deleted.
-
-### Sensitive Data Protection overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview](https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview)
-- Source ID: `site-docs-root`
-- Final score: 22
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions)
+- Source ID: `site-api-reference-required-2`
+- Final score: 121
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Through the DLP API, you can inspect data from inside and outside Google Cloud and build custom workloads on or off cloud.
-- Sensitive Data Protection overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview The Cloud Data Loss Prevention API lets you use the Sensitive Data Protection services programmatically.
+- Available actions When you run a Sensitive Data Protection job, a summary of its findings are saved by default within Sensitive Data Protection.
+- Action BigQuery inspection Cloud Storage inspection Datastore inspection Hybrid inspection Risk analysis Save findings to BigQuery ✓ ✓ ✓ ✓ ✓ Save findings to Cloud Storage ✓ ✓ ✓ ✓ Publish to Pub/Sub ✓ ✓ ✓ ✓ ✓ Publish to Security Command Center ✓ ✓ ✓ Publish to Knowledge Catalog ✓ Publish to Data Catalog ( Deprecated ) ✓ Notify by email ✓ ✓ ✓ ✓ ✓ Publish to Cloud Monitoring ✓ ✓ ✓ ✓ De-identify findings ✓ Specify actions You can specify one or more actions when you configure a job: When you create a new inspection or risk analysis job using Sensitive Data Protection in the Google Cloud console, specify actions in the Add actions section of the job creation workflow.
+- Set the action of these jobs to publish a Pub/Sub notification to the topic "projects/foo/scan notifications." Create a Cloud Function that listens for incoming messages on "projects/foo/scan notifications." This Cloud Function will receive the name of the Sensitive Data Protection job every 24 hours, call Sensitive Data Protection to get summary results from this job, and, if it finds any Social Security numbers, it can change settings in BigQuery or Identity and Access Management (IAM) to restrict access to the table.
+- You can also retrieve summary information in the DLP API by using the projects.dlpJobs.get method.
 

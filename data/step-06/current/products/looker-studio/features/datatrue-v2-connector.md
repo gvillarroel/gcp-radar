@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.953Z"
+generated_at: "2026-04-15T13:44:17.134Z"
 product_name: "Looker Studio"
 product_slug: "looker-studio"
 feature_name: "DataTrue v2 connector"
 feature_slug: "datatrue-v2-connector"
 latest_feature_date: "2025-11-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker-studio/docs/release-notes"
+  - "https://developers.google.com/looker-studio/connector/publish-connector"
+  - "https://developers.google.com/looker-studio/connector/use"
+  - "https://developers.google.com/looker-studio/connector/pscc-requirements"
 keywords:
   - "datatrue"
   - "v2"
@@ -17,13 +19,12 @@ keywords:
   - "connects"
   - "looker"
   - "studio"
-  - "to"
 ---
 
 # DataTrue v2 connector
 
 Product: Looker Studio
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,24 +36,52 @@ Connects Looker Studio to DataTrue data.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker-studio/docs/release-notes](https://docs.cloud.google.com/looker-studio/docs/release-notes)
+- [https://developers.google.com/looker-studio/connector/publish-connector](https://developers.google.com/looker-studio/connector/publish-connector)
+- [https://developers.google.com/looker-studio/connector/use](https://developers.google.com/looker-studio/connector/use)
+- [https://developers.google.com/looker-studio/connector/pscc-requirements](https://developers.google.com/looker-studio/connector/pscc-requirements)
 
 ## Supporting Pages
 
-### Looker Studio release notes | Google Cloud Documentation
+### "Publish a Community Connector \_|\_ Community Connectors \_|\_ Google for\
 
-- URL: [https://docs.cloud.google.com/looker-studio/docs/release-notes](https://docs.cloud.google.com/looker-studio/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 111
+- URL: [https://developers.google.com/looker-studio/connector/publish-connector](https://developers.google.com/looker-studio/connector/publish-connector)
+- Source ID: `site-docs-reference`
+- Final score: 77
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker Studio release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker-studio/docs/release-notes The Looker connector can now connect to a private IP (private services access) only Looker (Google Cloud core) instance or to a private IP (Private Service Connect) Looker (Google Cloud core) instance using the Looker instance ID. ...
-- For Looker Studio Pro subscriptions that are created on or after June 3, 2025, Gemini in Looker is enabled automatically.
-- The Assets: search API endpoint now includes a previousPageToken attribute in its response.
-- This token allows API users to paginate forwards and backwards through the result set. ...
+- Page Summary outlined flag Publishing your Community Connector in the Looker Studio Connector Gallery increases its visibility and allows all Looker Studio users to easily find and use it.
+- Publishing will let all Looker Studio users easily find your connector and provide visibility to your connector based on connector name, description, and listed data sources.
+- Remove your published connector from the gallery To remove your Community Connector from the gallery, send a removal request to looker-studio-developer-feedback@google.com .
+- Home Products Looker Studio Community Connectors Publish a Community Connector Stay organized with collections Save and categorize content based on your preferences.
+
+### "Use and test a Community Connector \_|\_ Community Connectors \_|\_ Google\
+
+- URL: [https://developers.google.com/looker-studio/connector/use](https://developers.google.com/looker-studio/connector/use)
+- Source ID: `site-docs-reference`
+- Final score: 75
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To load your connector in Looker Studio, replace the HEAD DEPLOYMENT ID placeholder in the following link with your connector’s Head Deployment ID and follow the link in your browser: https://lookerstudio.google.com/datasources/create?connectorId= HEAD DEPLOYMENT ID For more information on deployments, view the Deploy a Community Connector guide.
+- Home Products Looker Studio Community Connectors Use and test a Community Connector Stay organized with collections Save and categorize content based on your preferences.
+- As you develop your Community Connector, you can use and test it in Looker Studio using the Head Deployment.
+
+### "Partner Connector requirements \_|\_ Community Connectors \_|\_ Google for\
+
+- URL: [https://developers.google.com/looker-studio/connector/pscc-requirements](https://developers.google.com/looker-studio/connector/pscc-requirements)
+- Source ID: `site-docs-reference`
+- Final score: 71
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Products Looker Studio Community Connectors Partner Connector requirements Stay organized with collections Save and categorize content based on your preferences.
+- The verification process is a different process from the connector review and is handled by a separate team, not Looker Studio.
+- Apps Script Before submitting your connector for review, complete the following in Apps Script: Share view access of your Apps Script project with the following: data-studio-contrib-qa@googlegroups.com data-studio-contrib@google.com Create a deployment named Production and update the Production deployment to the version of code you intend to publish.
+- View the Community Connector manifest reference for more information. dataStudio description should provide information and instructions for a basic understanding of the connector and how to use it.
 

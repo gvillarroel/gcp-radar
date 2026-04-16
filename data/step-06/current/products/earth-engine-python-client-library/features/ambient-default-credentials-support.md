@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:10:51.807Z"
+generated_at: "2026-04-14T14:11:56.796Z"
 product_name: "Earth Engine Python Client Library"
 product_slug: "earth-engine-python-client-library"
 feature_name: "Ambient default credentials support"
 feature_slug: "ambient-default-credentials-support"
 latest_feature_date: "2023-12-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/guides/auth"
-  - "https://developers.google.com/earth-engine/docs/release-notes"
-  - "https://developers.google.com/earth-engine/guides/command_line"
 keywords:
   - "ambient"
-  - "default"
-  - "credentials"
-  - "makes"
-  - "ee"
-  - "initialize"
-  - "use"
   - "auth"
+  - "credentials"
+  - "default"
+  - "makes"
+  - "initialize"
 ---
 
 # Ambient default credentials support
 
 Product: Earth Engine Python Client Library
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +34,52 @@ Makes ee.Initialize() use ambient google.auth.default() credentials when availab
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/guides/auth](https://developers.google.com/earth-engine/guides/auth)
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- [https://developers.google.com/earth-engine/guides/command_line](https://developers.google.com/earth-engine/guides/command_line)
 
 ## Supporting Pages
 
-### "Authentication and Initialization \_|\_ Google Earth Engine \_|\_ Google\
+### Authentication and Initialization | Google Earth Engine | Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/guides/auth](https://developers.google.com/earth-engine/guides/auth)
-- Source ID: `site-docs-root-2`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-required-3-http`
+- Final score: 163
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Project Needed Scopes Settable Local CLI Needed Project Owner localhost local Y Y N N colab remote Y N N N gcloud both Y Y N N notebook both Y Y N Y Credentials for Service Accounts and Compute Engine ee.Initialize() will use Earth Engine credentials (which ee.Authenticate() stores in /.config/earthengine/credentials ) or retrieve credentials from google.auth.default() , but if necessary you can pass a credentials= argument to use credentials from elsewhere, bypassing these defaults.
+- Project Needed Scopes Settable Local CLI Needed Project Owner localhost local Y Y N N colab remote Y N N N gcloud both Y Y N N notebook both Y Y N Y Credentials for Service Accounts and Compute Engine ee.Initialize() will use Earth Engine credentials (which ee.Authenticate() stores in ~/.config/earthengine/credentials ) or retrieve credentials from google.auth.default() , but if necessary you can pass a credentials= argument to use credentials from elsewhere, bypassing these defaults.
 - These are then available through google.auth.default() and used by ee.Initialize() . localhost : credentials are passed from the browser to a port on your local machine.
+- Google Cloud VMs, App Engine, and other environments provide usable "ambient credentials," and gcloud auth application-default login will also create them.
 - Python and Command Line Prior to using the Earth Engine Python client library, you need to authenticate (verify your identity) and use the resultant credentials to initialize the Python client.
-- Details on modes auth mode=colab . ee.Authenticate() will create or obtain the default credentials supported by Colab, by running colab.auth.authenticate user() if necessary.
 
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
+### App Engine & Earth Engine Overview | Google Earth Engine | Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 136
+- URL: [https://developers.google.com/earth-engine/guides/app_engine_intro](https://developers.google.com/earth-engine/guides/app_engine_intro)
+- Source ID: `site-docs-root-2-http`
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If installation fails, check that a recent version of Node.js is installed . const ee = require ( '@google/earthengine' ); ee . data . authenticateViaPrivateKey ( '.private-key.json' ); ee . initialize (); OAuth 2.0 Client ID If you want users to authenticate as themselves (rather than using a service account), you need to set up an OAuth Client ID from your Cloud Project.
+- Set up credentials Service Account A service account may be used to authorize requests to Earth Engine on behalf of whomever is using your app.
+- App Engine & Earth Engine Overview | Google Earth Engine | Google for Developers Skip to main content Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Home Guides Reference Support Community Data Catalog Earth Engine Home Guides Reference Support Community Data Catalog Discover Product overview BigQuery integrations Get started Earth Engine access Authentication and initialization Quickstarts Python client JavaScript Code Editor Video tutorials Development environments Earth Engine Code Editor Python installation Concepts Client versus server Processing environments Computation overview Deferred execution Scale Projections Resampling and reducing resolution Analyze data Objects and methods overview Image Image overview Image visualization Image information and metadata Mathematical operations Relational, conditional and boolean operations Convolutions Morphological operations Gradients Edge detection Spectral transformations Texture Object-based methods Cumulative cost mapping Registering images ImageCollection ImageCollection overview ImageCollection visualization ImageCollection information and metadata Filtering an ImageCollection Mapping over an ImageCollection Reducing an ImageCollection Compositing and mosaicking Iterating over an ImageCollection Geometry Geometry overview Geodesic versus planar geometries Geometry visualization and information Geometric operations Feature & FeatureCollection Feature overview FeatureCollection overview Feature and FeatureCollection visualization FeatureCollection information and metadata Filtering a FeatureCollection Mapping over a FeatureCollection Reducing a FeatureCollection Vector to raster interpolation Read tables from BigQuery FeatureView FeatureView overview FeatureView optimization FeatureView styling Reducer Reducer overview ImageCollection reductions Image reductions Statistics of an image region Statistics of image regions Statistics of image neighborhoods Statistics of FeatureCollection columns Raster to vector conversion Vector to raster conversion Grouped reductions and zonal statistics Weighted reductions Linear regression Join Join overview Simple joins Inverted joins Inner joins Save-all joins Save-best joins Save-first joins Spatial joins Array Array overview Array and array images Array transformations Eigen analysis Array sorting and reducing Visualize data Earth Engine Code Editor Charts Chart overview Feature and FeatureCollection charts Image charts ImageCollection charts Array and list charts DataTable charts Chart styling Earth Engine apps About Earth Engine apps User interface API overview Widgets Panels and layouts Events Machine learning Overview of ML in Earth Engine Supervised classification Unsupervised classification Custom Models in Vertex AI Custom models overview Hosting a model in Vertex AI Prediction payload formats Image predictions Property predictions Example workflows notebooks TFRecord data format Cloud AI Platform Migration Guide Import data Importing raster data Image manifest upload Importing table data Table manifest upload Export data Overview Exporting images Exporting table and vector data Exporting video and animations Exporting map tiles Exporting to BigQuery Extracting image data programmatically Manage Control access to resources Managing assets Usage quota and limits Monitoring usage Cost controls Computation benchmarks Service accounts Audit logs Troubleshoot Coding best practices Debugging Archive Custom applications App Engine and Earth Engine overview App Engine example apps NPM installation Samples Overview Introduction to JavaScript for Earth Engine Introduction Earth Engine objects and methods Functional programming concepts The Earth Engine API Introduction Visualizing images and image bands Computations using images Image collections Compositing, masking, and mosaicking NDVI, mapping a function over a collection, quality mosaicking Exporting charts and images Global forest change Introduction Introduction to Hansen global forest change data Quantifying forest change Charting yearly forest loss Introduction to forest monitoring for action (FORMA) data Global Surface Water Introduction Water occurrence (1984-2015) Water occurrence change intensity Water class transition Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone.
+- Run locally Once your service account is registered for Earth Engine access , you can use it to authenticate (see config.py ) when you test the examples.
+
+### Python Installation | Google Earth Engine | Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/python_install](https://developers.google.com/earth-engine/guides/python_install)
+- Source ID: `site-docs-reference-required-5-http`
+- Final score: 60
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Earth Engine Python Client Library 0.1.383 Feature Updated ee.Authenticate() and ee.Initialize() to support colab mode, added new gcloud mode for remote machines (which makes the --quiet flag no longer necessary), and introduced localhost mode. ee.Initialize() now uses ambient google.auth.default() credentials if present. ee.Authenticate(force=True) forces a refresh, but by default will now reuse existing credentials.
-- June 24, 2025 Earth Engine Data Catalog Feature Added ECMWF/NRT FORECAST/IFS/SCWV : ECMWF Near-Realtime IFS Wave (Short-Cutoff) Forecasts Added ECMWF/NRT FORECAST/IFS/WAVE : ECMWF Near-Realtime IFS Wave Forecasts Added NASA/TEMPO/HCHO L3 : TEMPO gridded HCHO vertical columns V03 Added NASA/TEMPO/HCHO L3 QA : TEMPO gridded HCHO (QA filtered) vertical columns V03 June 17, 2025 Earth Engine Data Catalog Feature Added GOOGLE/SATELLITE EMBEDDING/V1/ANNUAL : Satellite Embedding V1 Added projects/forestdatapartnership/assets/cocoa/model 2025a : Cocoa Probability model 2025a Added projects/forestdatapartnership/assets/coffee/model 2025a : Coffee Probability model 2025a Added projects/forestdatapartnership/assets/palm/model 2025a : Palm Probability model 2025a Added projects/forestdatapartnership/assets/rubber/model 2025a : Rubber Tree Probability model 2025a June 10, 2025 Earth Engine Data Catalog Feature Added projects/edf-methanesat-ee/assets/public-preview/L4area v2 : MethaneSAT L4 Area Sources Public Preview V2.0.0 June 03, 2025 Earth Engine Data Catalog Feature Added JAXA/ALOS/AW3D30/V4 1 : ALOS DSM: Global 30m v4.1 Added UCSB/CHC/CMIP6/v1 : The Climate Hazards Center (CHC) Coupled Model Intercomparison Project Phase 6 (CHC-CMIP6) Added UMD/hansen/global forest change 2024 v1 12 : Hansen Global Forest Change v1.12 (2000-2024) Added projects/landandcarbon/assets/wri gdm drivers forest loss 1km/v1 1 2001 2023 : WRI/Google DeepMind Global Drivers of Forest Loss 2001-2023 v1.1 Added projects/landandcarbon/assets/wri gdm drivers forest loss 1km/v1 2001 2022 : WRI/Google DeepMind Global Drivers of Forest Loss 2001-2022 v1.0 Added projects/landandcarbon/assets/wri gdm drivers forest loss 1km/v1 2 2001 2024 : WRI/Google DeepMind Global Drivers of Forest Loss 2001-2024 v1.2 May 27, 2025 Earth Engine Data Catalog Feature Added NASA/TEMPO/NO2 L3 QA : TEMPO gridded NO2 (QA filtered) tropospheric and stratospheric columns V03 May 13, 2025 Earth Engine Data Catalog Feature Added USGS/NLCD RELEASES/2023 REL/TCC/v2023-5 : USFS Tree Canopy Cover v2023-5 (CONUS and OCONUS) May 06, 2025 Earth Engine Data Catalog Feature Added USFS/GTAC/LCMS/v2024-10 : USFS Landscape Change Monitoring System v2024.10 (CONUS and OCONUS) April 29, 2025 Earth Engine Data Catalog Feature Added ISRIC/SoilGrids250m/v2 0 : SoilGrids250m 2.0 - Volumetric Water Content Added NASA/TEMPO/NO2 L3 : TEMPO gridded NO2 tropospheric and stratospheric columns V03 Added UMN/PGC/ArcticDEM/V4/2m mosaic : ArcticDEM Mosaic V4.1 April 22, 2025 Earth Engine JavaScript Client Library 1.5.12 Change Added the Google Drive main OAuth scope , https://www.googleapis.com/auth/drive , to the default list of scopes to use for authorization.
-- Added the cloud-platform scope to the default scopes used by ee.Authenticate() .
-- April 22, 2021 Earth Engine JavaScript Client Library 0.1.262 Feature Added a mechanism for overriding the default OAuth2 scopes requested in ee.data.authenticateViaOauth() and ee.data.authenticateViaPrivateKey() .
-
-### Command Line Tool \_|\_ Google Earth Engine \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/guides/command_line](https://developers.google.com/earth-engine/guides/command_line)
-- Source ID: `site-docs-reference`
-- Final score: 104
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Authenticate () Command execution To run command line utilities, like the Earth Engine CLI, you need to prepend command calls with an exclamation point. !earthengine -h Set a Cloud project Use the --project option to set a Cloud project for each individual earthengine command. !earthengine --project my-project <command> Alternatively, set a default project to be used by all earthengine calls using the set project command.
-- Set a default project for each new Colab session or if the virtual machine expires from inactivity (credentials are not saved across sessions). !earthengine set project my-project Command Reference authenticate Authenticates the command line tool and Python client library to Earth Engine.
-- To get help on a specific command, use: earthengine command -h When you first install the Python API you need to sign in using the authenticate command described below.
-- Authentication is required to use the tool and can be done using the authenticate command or service account credentials.
+- It must be imported and initialized for each new Python session and script: import ee Authentication and Initialization Prior to using the Earth Engine Python client library, you need to authenticate and use the resultant credentials to initialize the Python client.
+- From a terminal or command prompt: pip install earthengine-api Once installed, you can import, authenticate and initialize the Earth Engine API as described here .
+- Initialize ( project = 'my-project' ) See the authentication guide for troubleshooting and to learn more about authentication modes and Cloud projects.
+- After installation, import the API with `import ee`, authenticate using `ee.Authenticate()`, and initialize with `ee.Initialize(project='my-project')`.
 

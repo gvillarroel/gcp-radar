@@ -1,30 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:36.642Z"
+generated_at: "2026-04-14T04:45:01.551Z"
 product_name: "Apigee API hub"
 product_slug: "apigee-api-hub"
 feature_name: "Force option for API deletion with child resources"
 feature_slug: "force-option-for-api-deletion-with-child-resources"
 latest_feature_date: "2024-06-11"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/reference/limits"
 keywords:
-  - "single-step API deletion"
-  - "child resources removal"
-  - "force delete option"
-  - "cascade API deletion"
-  - "delete API and child resources"
-  - "force delete API"
-  - "recursive delete"
-  - "cascade delete"
+  - "deletion"
+  - "option"
+  - "force"
+  - "child"
+  - "resources"
+  - "supports"
 ---
 
 # Force option for API deletion with child resources
 
 Product: Apigee API hub
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +34,55 @@ API hub now supports a force delete option to remove an API and its child resour
 
 API hub now supports a force delete option to remove an API and its child resources in a single step.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/apigee/docs/release/known-issues](https://docs.cloud.google.com/apigee/docs/release/known-issues)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/limits](https://docs.cloud.google.com/apigee/docs/api-platform/reference/limits)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Apigee known issues \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/release/known-issues](https://docs.cloud.google.com/apigee/docs/release/known-issues)
+- Source ID: `site-docs-reference`
+- Final score: 113
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Execute: kubectl delete crd $(cat istio-crd.csv) Update clusterrole Get the current apigee-ingressgateway-manager clusterrole: kubectl get clusterrole apigee-ingressgateway-manager-apigee -o yaml > apigee-ingressgateway-manager-apigee-clusterrole.yaml Copy the clusterrole to a new location: cp apigee-ingressgateway-manager-apigee-clusterrole.yaml apigee-ingressgateway-manager-apigee-clusterrole-added-istio-permissions.yaml Add the following additional permissions to the end of the file: - apiGroups: - gateway.networking.k8s.io resources: - gatewayclasses - gateways - grpcroutes - httproutes - referencegrants verbs: - get - list - watch - apiGroups: - networking.istio.io resources: - sidecars - destinationrules - gateways - virtualservices - envoyfilters - workloadentries - serviceentries - workloadgroups - proxyconfigs verbs: - get - list - watch - apiGroups: - security.istio.io resources: - peerauthentications - authorizationpolicies - requestauthentications verbs: - get - list - watch - apiGroups: - telemetry.istio.io resources: - telemetries verbs: - get - list - watch - apiGroups: - extensions.istio.io resources: - wasmplugins verbs: - get - list - watch Apply the role: kubectl -n APIGEE NAMESPACE apply -f apigee-ingressgateway-manager-apigee-clusterrole-added-istio-permissions.yaml After you have completed the above options, you will need to restart your apigee-ingressgateway-manager pods.
+- For example, from the helm-charts/ directory: ls apigee-org/templates/ Output: apigee-org-guardrails.yaml mart-sa.yaml apigee-proxy-chaining-certificate.yaml mint-task-scheduler-gsa-secret.yaml apigee-proxy-chaining-route.yaml mint-task-scheduler-sa.yaml ax-hash-salt-secret.yaml NOTES.txt connect-agent-gsa-secret.yaml organization.yaml connect-agent-sa.yaml udca-gsa-secret.yaml data-encryption-secret.yaml udca-sa.yaml encryption-keys-secret.yaml watcher-gsa-secret.yaml helpers.tpl watcher-sa.yaml mart-gsa-secret.yaml (Optional:) cp apigee-org/templates/mint-task-scheduler-gsa-secret.yaml /tmp/ cp apigee-org/templates/mint-task-scheduler-sa.yaml /tmp/ rm apigee-org/templates/mint-task-scheduler-gsa-secret.yaml rm apigee-org/templates/mint-task-scheduler-sa.yaml ls apigee-org/templates/ Output: apigee-org-guardrails.yaml mart-gsa-secret.yaml apigee-proxy-chaining-certificate.yaml mart-sa.yaml apigee-proxy-chaining-route.yaml NOTES.txt ax-hash-salt-secret.yaml organization.yaml connect-agent-gsa-secret.yaml udca-gsa-secret.yaml connect-agent-sa.yaml udca-sa.yaml data-encryption-secret.yaml watcher-gsa-secret.yaml encryption-keys-secret.yaml watcher-sa.yaml helpers.tpl 451375397 hybrid 1.14.3 FIXED in hybrid 1.15.1 The apigee-pull-push.sh script can return a No such image error message, for example: Error response from daemon: No such image: gcr.io/apigee-release/hybrid/apigee-stackdriver-logging-agent:latest Workaround: Edit the HELM CHARTS DIR /apigee-operator/etc/tools/apigee-pull-push.sh script to change line 114 in the docker tag() function from: docker tag "${source}/$i" "${dest}/$i:${TAG}" To: docker tag "${source}/$i:${TAG}" "${dest}/$i:${TAG}" 405936071 hybrid 1.15.0 FIXED in hybrid 1.15.1 When metrics.serviceAccountRef or metrics.serviceAccountSecretProviderClass is specified in the overrides.yaml file, the telemetry role will target the wrong service account.
+- Find the - apiGroups: apiregistration.k8s.io block, and add the apiservices/finalizers resource to the list of resources: - apiGroups: - apiregistration.k8s.io resources: - apiservices - apiservices/finalizers verbs: - create - delete - get - patch - update Find the - apiGroups: authorization.k8s.io block, and add the - apiGroups: apigee.cloud.google.com block after the end of the block with the following text: - apiGroups: - apigee.cloud.google.com resources: - apigeetelemetries/finalizers verbs: - get - patch - update For example: - apiGroups: - authorization.k8s.io resources: - subjectaccessreviews verbs: - create - get - list - apiGroups: - apigee.cloud.google.com resources: - apigeetelemetries/finalizers verbs: - get - patch - update Apply the changes to the apigee-operator chart: Dry run: helm upgrade operator apigee-operator/ \ --install \ --namespace APIGEE NAMESPACE \ --atomic \ -f OVERRIDES FILE \ --dry-run=server upgrade the chart: helm upgrade operator apigee-operator/ \ --install \ --namespace APIGEE NAMESPACE \ --atomic \ -f OVERRIDES FILE \ 402739748 Apigee OPEN APIproducts are limited to 50 paths.
+- Configuration property Default value metrics.aggregator.resources.requests.memory : 512Mi metrics.aggregator.resources.limits.memory : 3Gi metrics.app.resources.requests.memory : 512Mi metrics.app.resources.limits.memory : 1Gi metrics.appStackdriverExporter.resources.requests.memory : 512Mi metrics.appStackdriverExporter.resources.limits.memory : 1Gi metrics.proxy.resources.requests.memory : 512Mi metrics.proxy.resources.limits.memory : 1Gi metrics.proxyStackdriverExporter.resources.requests.memory : 512Mi metrics.proxyStackdriverExporter.resources.limits.memory : 1Gi Apply the changes with apigeectl apply with the ‑‑telemetry flag: apigeectl apply --telemetry -f overrides.yaml 260324159 Apigee 1-9-0-apigee-16 FIXED API proxy and shared flow deployments taking up to 30 minutes.
+
+### Get started with Apigee and MCP \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 83
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The target mcp.apigee.internal is also supported for backward compatibility. (Optional) Add a security policy to the MCP Discovery Proxy Before deploying your MCP Discovery Proxy, you can add security policies to enforce security requirements.
+- See Protocol version header in the MCP specification for more information. (Optional) TOKEN : OAuth 2.0 access token The method returns all the tools that the MCP endpoint supports.
+- See Version Negotiation in the MCP specification for more information. (Optional) TOKEN : OAuth 2.0 access token A successful response looks similar to the following: { "id":1, "jsonrpc":"2.0", "result": { "capabilities": { "tools": { "listChanged":false } }, "protocolVersion":"2025-11-25", "serverInfo": { "name":"cymbal.products.com", "version":"1.0.0" } } } List available MCP tools In this step, you send a request to the tools/list method to confirm the list of tools available in your MCP endpoint.
+- MCP in Apigee supports the following OpenAPI versions: 3.0.0 3.0.1 3.0.2 3.0.3 This quickstart uses a sample OpenAPI 3.0.x specification with three API operations: GET /artists : Returns a list of artists.
+
+### Limits \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/limits](https://docs.cloud.google.com/apigee/docs/api-platform/reference/limits)
+- Source ID: `site-docs-reference`
+- Final score: 82
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Yes Yes Quota Distributed quota synchronization interval = 10 seconds Yes Planned Max Quota Interval 1 year Planned Planned Min Quota Interval 1 minute Planned Planned SpikeArrest Rate Per second maximum: 4,000 Per minute maximum: 240,000 Planned Planned Persistence: Cache, KVM, Property sets Caches at the environment scope 100 Planned Planned Cache key size 2 KB Yes Planned Cache value size 256 KB Yes Planned Cache expiration =1 second, Yes Yes Cache resource deletion rate 1 per minute Yes Planned Items in cache 10 million in each cache Planned Planned Items in KVMs across all KVMs in the organization 5 million Planned Planned Key Value Maps (KVMs) at the organization scope 100 Planned Yes Key Value Maps (KVMs) at the environment scope 900 Planned Planned Key Value Maps (KVMs) at the proxy scope 4,250 or 6,000 (the maximum number of API proxies that can be deployed in an organization) Planned Planned Key Value Map (KVM) key size 2 KB Planned Planned Key Value Map (KVM) value size 10 KB Planned Planned Environment-scoped property sets per environment 10 Planned Planned Proxy-scoped property sets per environment 50 Planned Planned Size of property set file 110 KB Planned Planned Keys, Developers, Apps Consumer key (API key) size 2 KB Yes Planned Consumer secret size 2 KB Yes Planned Custom attributes you can set on developers, developer apps, API products, OAuth access tokens, and other Apigee entities Note: Within an API product, the maximum custom attribute count for proxies, proxy operation groups, gRPC operation groups, and GraphQL operation groups is 3 attributes each.
+- 18 Yes Yes Custom attribute name size 1 KB Yes Planned Custom attribute value size 2 KB Yes Planned Developers per organization 1 million Planned Yes API Keys per app 10 Planned Planned Apps per developer 100 Planned Planned Apps per organization 1 million Planned Yes Apps per AppGroup 30,000 Planned Planned AppGroups per organization 1 million Planned Planned API products per API Key 50 Planned Planned API products per app 100 Planned Planned API products per organization 5,000 Planned Yes API Products API Resources > Proxies 100 Planned Planned API Resources > Paths 25 Planned Planned REST and GraphQL Operations 50 Yes Yes Environments 85 Planned Planned OAuth OAuth access token expiration = 180 seconds, Yes Yes OAuth refresh token expiration = 1 day, Yes Yes OAuth access and refresh token size 2 KB Yes Planned External OAuth access token size 2 KB Yes Planned Custom attributes you can set on OAuth tokens 18 Yes Planned Custom attribute name size 1 KB Yes Planned Custom attribute value size 2 KB Yes Planned Environment and Organization Environments per organization Apigee: Up to 85, but depends on contract Apigee hybrid: 85 Yes Yes Environment groups per organization Apigee: Up to 85 Apigee hybrid: 85 Yes Yes Environment group attachments per org 100 Yes Yes Instances per organization Note: The maximum number of Cassandra pods per organization is 150.
+- 10 KB Yes Yes Analytics APIs Maximum time range that can be queried via synchronous report 14 days for hybrid and 92 days for Apigee Asyncronous queries enforce a 365 day maximum Yes Yes Calls to the Analytics Metrics API 100 calls per minute Yes Yes Calls to the Asynchronous Query API 300 calls per day Yes Yes Calls to the Data Export API 500 calls per day Yes Yes API Monitoring Data retention period 6 weeks Yes Yes Maximum latency observed 60 seconds Yes Yes Pay-as-you-go Max Base environments per org 5 Yes N/A Max Intermediate environments per org 5 Yes N/A Max Comprehensive environments per org 85 Yes N/A Max proxy deployments per Base environment per region 20 Yes N/A Max proxy deployments per Intermediate environment per region 50 Yes N/A Max proxy deployments per Comprehensive environment per region 100 included Ability to purchase up to 6000 Yes N/A Max shared flow deployments , subject to restrictions per environment type 75 Yes N/A Apigee Spaces Max number of Apigee Spaces per organization 20 Yes Yes Max number of queries per second (QPS) for list operations for API proxy, API product, and shared flow endpoints 10 Yes Yes MCP in Apigee Number of MCP tools per organization 1000 Yes N/A The information above represents current product limits.
+- As and when we automate limit enforcement for a limit currently not enforced, we will use commercially reasonable efforts to notify affected customers so they can take corrective actions in advance of such enforcement.
 

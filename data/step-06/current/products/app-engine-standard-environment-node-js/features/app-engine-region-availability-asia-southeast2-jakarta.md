@@ -1,29 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T22:04:50.072Z"
+generated_at: "2026-04-12T20:56:05.578Z"
 product_name: "App Engine standard environment Node.js"
 product_slug: "app-engine-standard-environment-node-js"
 feature_name: "App Engine region availability: asia-southeast2 (Jakarta)"
 feature_slug: "app-engine-region-availability-asia-southeast2-jakarta"
 latest_feature_date: "2020-06-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/java/sdk-gcloud-migration"
+  - "https://docs.cloud.google.com/appengine/docs/locations"
+  - "https://docs.cloud.google.com/appengine/docs/standard/application-security"
+  - "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine"
 keywords:
-  - "asia-southeast2 launch"
-  - "App Engine in asia-southeast2"
-  - "new Jakarta region support"
-  - "asia-southeast2 availability"
-  - "asia-southeast2"
-  - "Jakarta region"
-  - "Jakarta"
+  - "app"
+  - "engine"
+  - "region"
+  - "availability"
+  - "asia"
+  - "southeast2"
+  - "jakarta"
+  - "became"
 ---
 
 # App Engine region availability: asia-southeast2 (Jakarta)
 
 Product: App Engine standard environment Node.js
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,24 +38,53 @@ App Engine became available in the asia-southeast2 (Jakarta) region.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/java/sdk-gcloud-migration](https://docs.cloud.google.com/appengine/docs/standard/java/sdk-gcloud-migration)
+- [https://docs.cloud.google.com/appengine/docs/locations](https://docs.cloud.google.com/appengine/docs/locations)
+- [https://docs.cloud.google.com/appengine/docs/standard/application-security](https://docs.cloud.google.com/appengine/docs/standard/application-security)
+- [https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine)
 
 ## Supporting Pages
 
-### "Upgrade an existing application \_|\_ App Engine standard environment \_\
+### "App Engine locations \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/sdk-gcloud-migration](https://docs.cloud.google.com/appengine/docs/standard/java/sdk-gcloud-migration)
+- URL: [https://docs.cloud.google.com/appengine/docs/locations](https://docs.cloud.google.com/appengine/docs/locations)
+- Source ID: `site-docs-reference-4`
+- Final score: 51
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.
+- App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .
+- The following App Engine app locations create databases that are multi-region: Apps located in us-central create a database in the nam5 multi-region.
+- The following App Engine app locations create buckets that are multi-region: Apps located in us-central create a bucket in the US multi-region.
+
+### "Overview of app security \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/application-security](https://docs.cloud.google.com/appengine/docs/standard/application-security)
 - Source ID: `site-docs-reference`
-- Final score: 30
+- Final score: 45
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For example: <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app 6 1.xsd" version="6.1"> ... </web-app> Rename your application servlets and dependencies from javax.servlet. to jakarta.servlet. : import jakarta.servlet.ServletException ; import jakarta.servlet.annotation.WebServlet ; import jakarta.servlet.http.Cookie ; import jakarta.servlet.http.HttpServlet ; import jakarta.servlet.http.HttpServletRequest ; import jakarta.servlet.http.HttpServletResponse ; @WebServlet ( name = "viewer" , urlPatterns = { "/view" }) public class MyServlet extends HttpServlet { ......
-- For example: <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app 6 0.xsd" version="6.0"> ... </web-app> Rename your application servlets and dependencies from javax.servlet. to jakarta.servlet. : import jakarta.servlet.ServletException ; import jakarta.servlet.annotation.WebServlet ; import jakarta.servlet.http.Cookie ; import jakarta.servlet.http.HttpServlet ; import jakarta.servlet.http.HttpServletRequest ; import jakarta.servlet.http.HttpServletResponse ; @WebServlet ( name = "viewer" , urlPatterns = { "/view" }) public class MyServlet extends HttpServlet { ......
-- Upgrade Java on a compatible Enterprise Edition (EE) version To use Java 25 on Enterprise Edition 11 (EE 11) , or Java 21 on Enterprise Edition 10 (EE 10) , upgrade your application servlets and dependencies in your Maven and Gradle files to include the Jakarta namespace: Java 25 (EE 11) To use Java 25 on Enterprise Edition 11 (EE 11) , follow these steps: Change the version number in your web.xml configuration file to version=6.1 .
-- APIs and requires you to update your applications and third-party dependencies to use newer Java artifacts like the Jakarta namespace.
+- REGION ID .r.appspot.com To target specific resources in your App Engine app, use the -dot- syntax to separate each resource you want to target, for example: https:// VERSION -dot- SERVICE -dot- PROJECT ID .
+- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
+- Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.
+- Security scanner The Google Cloud Web Security Scanner discovers vulnerabilities by crawling your App Engine app, following all that links within the scope of your starting URLs, and attempting to exercise as many user inputs and event handlers as possible.
+
+### An overview of App Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine)
+- Source ID: `site-docs-reference`
+- Final score: 37
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- When you create your App Engine app, all your resources are created in the region that you choose, including your app code along with a collection of settings, credentials, and your app's metadata.
+- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
+- For example, an app that handles your customer requests might include separate services that each handle different tasks, such as: API requests from mobile devices Internal, administration-type requests Backend processing such as billing pipelines and data analysis Each service in App Engine consists of the source code from your app and the corresponding App Engine configuration files.
+- In this diagram, the app has two services that contain multiple versions, and two of those versions are actively running on multiple instances: Other Google Cloud services, for example Datastore, are shared across your App Engine app.
 

@@ -1,19 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.944Z"
+generated_at: "2026-04-14T16:02:18.783Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "Product Centric Feed Management"
 feature_slug: "product-centric-feed-management"
 latest_feature_date: "2025-06-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
+  - "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
 keywords:
-  - "product"
   - "centric"
   - "feed"
   - "management"
@@ -21,12 +20,13 @@ keywords:
   - "can"
   - "configure"
   - "multiple"
+  - "log"
 ---
 
 # Product Centric Feed Management
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Users can configure multiple log-type feeds for the same product type on a singl
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/chronicle/docs/administration/feed-management](https://docs.cloud.google.com/chronicle/docs/administration/feed-management)
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
+- [https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users](https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users)
+- [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
 
 ## Supporting Pages
 
@@ -52,39 +52,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/administration/feed-management](https://docs.cloud.google.com/chronicle/docs/administration/feed-management)
 - Source ID: `site-docs-reference`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 181
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Manage feeds After you configure your data feeds, use the management tools to monitor ingestion health, modify existing parameters, and manage the feed lifecycle.
 - Configure multiple feeds for a product family (Google SecOps customers only) You can configure multiple feeds per product family, based on log type.
+- When finished, go to the Feed Management page to view a detailed summary of all configured log types.
 - Send multiple events in a single webhook request The following code sample shows how to format a single request body with multiple, newline-separated JSON objects after the curl --location item: --header 'Content-Type: application/json' \ --header 'X-goog-api-key: API KEY' \ --header 'X-Webhook-Access-Key: SECRET' \ --data '{"principal": {"asset id": "asset 123"}, "metadata": {"event type": "GENERIC EVENT", "product name": "Product Acme"}} {"principal": {"asset id": "asset 123"}, "metadata": {"event type": "GENERIC EVENT", "product name": "Product Acme"}}' Create an HTTPS webhook feed In the Google SecOps menu, select Settings , and then click Feeds .
-- Monitor the feed status You can monitor the status of the feed on the initial Feeds page, where feeds can have the following statuses: Active : Feed is configured and ready to ingest data into your Google SecOps account.
-- For example, for CrowdStrike Falcon, you can create multiple unique feeds under both required and optional log types to make sure there's enough comprehensive data coverage.
 
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
+### "Configure data RBAC for users \_|\_ Google Security Operations \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 170
+- URL: [https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users](https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users)
+- Source ID: `site-docs-reference`
+- Final score: 139
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Configure data RBAC for users Supported in: Google secops SIEM This page describes how data role-based access control ( data RBAC ) administrators can configure data RBAC within Google Security Operations.
+- To add scopes to the role, we recommend the following: Select Name in Condition type , the operator in Operator , and enter the scope name in Value . /<scopename> To assign multiple scopes, add more conditions using the OR operator.
+- In Define scope access with labels > Allow access , do the following: To select the labels and their corresponding values that you want to grant users the access to, click Allow certain labels .
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Cloud Threats category overview \_|\_ Google Security Operations \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
+- Source ID: `site-docs-reference`
+- Final score: 125
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Updated permissions for accessing product-centric feeds If you have assigned Custom IAM Roles , you can now grant access to the product-centric feeds by adding the following permissions to the role: chronicle.feedPacks.get chronicle.feedPacks.list To learn more about how to configure feeds using the product-centric feeds UI, see Configure feeds by product.
-- You can now configure multiple log-type feeds for the same product type on a single page.
-- These feeds can be used to get context on AWS resources such as EC2 instances and users in identity and access management (IAM).
-- Feature Product Centric Feed Management This feature is currently in Preview.
-
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 170
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- August 10, 2025 Feature Updated permissions for accessing product-centric feeds If you have assigned Custom IAM Roles , you can now grant access to the product-centric feeds by adding the following permissions to the role: chronicle.feedPacks.get chronicle.feedPacks.list To learn more about how to configure feeds using the product-centric feeds UI, see Configure feeds by product.
-- You can now configure multiple log-type feeds for the same product type on a single page.
-- June 23, 2025 Announcement New parser documentation now available New parser documentation is available to help you ingest and normalize logs from the following sources: Collect BeyondTrust BeyondInsight logs Collect BloxOne Threat Defense logs Collect BlueCat Edge DNS Resolver logs Collect Cambium Networks logs Collect Check Point Audit logs Collect Check Point EDR logs Collect Check Point SmartDefense logs Collect Commvault logs Collect Comodo AV logs Collect Cylance PROTECT logs Collect Cyolo OT logs Collect Delinea PAM logs Collect Dell CyberSense logs Collect Dell EMC Data Domain logs Collect Dell EMC Isilon NAS logs Collect Dell EMC PowerStore logs Collect Dell OpenManage logs Collect Endpoint Protector DLP logs Collect ESET AV logs Collect ESET EDR logs Collect F5 AFM logs Collect F5 ASM logs Collect FileZilla FTP logs Collect Forescout NAC logs Collect ForgeRock OpenAM logs Collect HAProxy logs Collect Kaseya Datto File Protection logs Collect ManageEngine AD360 logs Collect Palo Alto Cortex XDR Events logs Collect Snowflake logs Collect Trellix DLP logs Collect Trellix ePO logs Collect Trend Micro DDI logs Collect Trend Micro Email Security logs Collect Trend Micro Vision One Activity logs Collect Trend Micro Vision One Audit logs Collect Trend Micro Vision One Container Vulnerability logs Collect Trend Micro Vision One Detections logs Collect Trend Micro Vision One Observed Attack Techniques logs Collect Trend Micro Vision One Workbench logs June 19, 2025 Feature Product Centric Feed Management This feature is currently in Preview.
-- These feeds can be used to get context on AWS resources such as EC2 instances and users in identity and access management (IAM).
+- Google Workspace-related rule sets The following rule sets detect patterns in Google Workspace data: Potential Insider Data Exfiltration from Chrome Potential Insider Data Exfiltration from Drive Potential Insider Data Exfiltration from Gmail Potential Workspace Account Compromise Suspicious Workspace Administrative Actions These rule sets require the following log types, listed by product name and Google SecOps ingestion label: Workspace Activities ( WORKSPACE ACTIVITY ) Workspace Alerts ( WORKSPACE ALERTS ) Workspace ChromeOS Devices ( WORKSPACE CHROMEOS ) Workspace Mobile Devices ( WORKSPACE MOBILE ) Workspace Users ( WORKSPACE USERS ) Google Chrome Browser Cloud Management ( CHROME MANAGEMENT ) Gmail logs ( GMAIL LOGS ) To ingest the required data, do the following: Collect the data listed in the All rule sets section of this document.
+- Azure - Identity : Detects activity related to authentication and authorization, indicating unusual behavior, including concurrent access from multiple geographic locations, overly permissive access management policies, or Azure RBAC activity from suspicious tools.
+- Configure a Google SecOps Feed to ingest data from either Amazon S3 or Amazon SQS See Ingest AWS logs into Google SecOps for the detailed steps required to configure AWS services and configure a Google SecOps Feed to ingest AWS data.
+- CDIR SCC Enhanced rule sets All rule sets that begin with the name CDIR SCC Enhanced use Security Command Center Premium findings contextualized with several other Google Cloud log sources, including the following: Cloud Audit Logs Cloud DNS logs Identity and Access Management (IAM) analysis Sensitive Data Protection context BigQuery context Compute Engine context To use the CDIR SCC Enhanced rule sets, we recommend that you collect the following Google Cloud data: Log data listed in the All rule sets section.
 

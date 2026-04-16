@@ -5,238 +5,221 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 190
-Unique features: 228
+Unique features: 211
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
-| 2026-04-03 | gcloud beta alloydb connect command |  | The new gcloud beta AlloyDB connect command provides a simplified, secure way to connect to AlloyDB instances using the AlloyDB Auth Proxy and psql. |
-| 2026-03-31 | AlloyDB hot standby |  | Hot standby for AlloyDB high availability improves failover speed by continuously replicating transactions to a standby node so caches remain warm and ready. |
-| 2026-03-30 | AlloyDB conversational analytics |  | Conversational analytics for AlloyDB enables natural-language querying of operational data through the Conversational Analytics API. |
-| 2026-03-25 | AlloyDB AI hybrid_search function |  | AlloyDB AI now includes the ai.hybrid_search() function, which blends multiple search result types into one ranked list using Reciprocal Rank Fusion. |
-| 2026-03-25 | AlloyDB PostgreSQL 18 compatibility |  | AlloyDB now supports PostgreSQL 18 compatibility, allowing creation of PG18-compatible clusters and one-click upgrades from PostgreSQL 14 through 17; AlloyDB now supports creating clusters with PostgreSQL 18 database server compatibility. |
-| 2026-03-25 | AlloyDB RUM extension support |  | AlloyDB now supports the rum extension for complex full-text search, adding positional index data to accelerate phrase search and relevance ranking. |
-| 2026-03-20 | AlloyDB node-level metrics |  | AlloyDB now exposes node-level metrics in Cloud Console and Metrics Explorer for troubleshooting read pool performance and identifying regression-causing nodes. |
-| 2026-03-16 | AlloyDB C4A machine type support |  | AlloyDB now supports the 2 vCPU c4a-highmem-2-lssd Axion machine type for greater scaling flexibility on Arm-based instances. |
-| 2026-03-16 | AlloyDB enhanced backups |  | AlloyDB enhanced backups are generally available, adding support for selecting the Enhanced tier, using project-level tiered backup tabs, and deleting enhanced backups; AlloyDB enhanced backups are generally available, adding support for selecting the Enhanced tier, using project-level tiered backup tabs, and deleting enhanced backups. |
-| 2026-03-03 | AlloyDB AI SQL functions |  | AlloyDB AI generally adds SQL functions such as ai.if, ai.rank, ai.generate, and ai.forecast for semantic filtering, ranking, generation, and forecasting in SQL. |
-| 2026-03-03 | AlloyDB auto vector embeddings |  | Auto vector embeddings for AlloyDB AI is now generally available, providing managed lifecycle handling and incremental refresh of vector embeddings for large datasets. |
-| 2026-02-23 | Gemini Cloud Assist investigation in AlloyDB |  | Gemini Cloud Assist investigation capabilities are now supported in AlloyDB to assist with troubleshooting and query investigation. |
-| 2026-02-19 | AlloyDB integration with Database Center |  | AlloyDB now integrates with Cloud Database Center to show prioritized health risks and provide one-click guidance to diagnostics and remediation. |
-| 2026-02-17 | AlloyDB AI function call array batching |  | AlloyDB now supports bulk AI function calls using array-based processing instead of row-by-row execution. |
-| 2026-02-17 | AlloyDB performance snapshot read pool node support |  | AlloyDB performance snapshot and reports now include observability for read pool instance nodes. |
-| 2026-02-17 | AlloyDB remote MCP server |  | The AlloyDB remote MCP server enables easy interaction with AlloyDB clusters from LLMs, AI applications, and AI-enabled development platforms. |
-| 2026-02-05 | AlloyDB virtual columns for expressions |  | The columnar engine now supports virtual columns for expressions, caching repeated expression results to improve analytic performance. |
-| 2026-01-20 | AlloyDB Bangkok region availability |  | AlloyDB cluster instances can now be created in the Bangkok region (asia-southeast3). |
-| 2026-01-19 | AlloyDB Z3 machine series support |  | AlloyDB now supports the Z3 machine series for storage-intensive workloads with larger compute and memory capacities. |
-| 2025-12-18 | AlloyDB managed connection pooling |  | Managed connection pooling is generally available in AlloyDB to improve workload scalability and reliability; AlloyDB managed connection pooling is available in Preview to improve workload reliability, scalability, and performance. |
-| 2025-12-18 | AlloyDB SQL Report in performance snapshot |  | AlloyDB performance snapshot reports now include an SQL Report section listing the top 50 queries by elapsed time and related I/O metrics. |
-| 2025-12-17 | AlloyDB data agents |  | AlloyDB now supports building data agents that use conversational language interfaces to interact with database data. |
-| 2025-12-17 | Gemini 3.0 Flash for AlloyDB AI functions |  | AlloyDB now supports using the Gemini 3.0 Flash preview model when invoking generative AI functions like AI.GENERATE. |
-| 2025-12-11 | AlloyDB C4 machine series support |  | AlloyDB now supports the C4 machine series with larger vCPU and RAM options for very demanding workloads. |
-| 2025-12-08 | AlloyDB Studio Gemini query error fixing |  | AlloyDB Studio now supports using Gemini in the query editor to help fix query errors. |
-| 2025-12-05 | AlloyDB query plan management |  | AlloyDB query plan management adds plan monitoring, capture, and enforcement so only approved query plans are used to prevent regressions. |
-| 2025-11-20 | AlloyDB read pool horizontal autoscaling |  | AlloyDB now supports horizontal autoscaling for read pool instances. |
-| 2025-11-19 | AlloyDB self-service maintenance |  | AlloyDB now offers self-service maintenance workflows to apply updates earlier, install patches, and configure deny periods. |
-| 2025-11-18 | Gemini 3.0 for AlloyDB generative AI functions |  | AlloyDB now supports calling Gemini 3.0 in generative AI functions such as AI.GENERATE. |
-| 2025-11-13 | AlloyDB AI native vector search accelerator |  | AlloyDB AI native vector search accelerator is now generally available. |
-| 2025-11-13 | alloydb_scann vector index creation metrics |  | The alloydb_scann extension now provides new vector index creation metrics via the pg_stat_ann_index_creation view. |
-| 2025-11-13 | google_columnar_engine auto vector data recommendation |  | The google_columnar_engine extension now automatically recommends data suitable for vector search so manual vector column setup is reduced. |
-| 2025-11-11 | Dataplex Universal Catalog integration for AlloyDB |  | AlloyDB now integrates with Dataplex Universal Catalog (preview) to discover, search, and manage AlloyDB clusters, databases, and tables. |
-| 2025-11-11 | Parallel SELECT execution for INSERT INTO ... SELECT |  | AlloyDB now supports parallel execution for the SELECT phase of INSERT INTO ... SELECT queries to improve performance on partitioned and complex workloads. |
-| 2025-11-10 | AlloyDB AI auto embedding generation |  | AlloyDB AI introduces preview automatic large-scale embedding generation for semantic search and RAG use cases. |
-| 2025-11-10 | Cloud SQL for PostgreSQL to AlloyDB PostgreSQL 17 migration |  | AlloyDB now supports migrating from Cloud SQL for PostgreSQL to AlloyDB for PostgreSQL 17 using Cloud SQL backups up to 15 TB. |
-| 2025-10-30 | AlloyDB enhanced backups with Backup and DR Service |  | AlloyDB enhanced backups (preview) integrate with Google Cloud Backup and DR Service to support vaulted backups, retention lock, and centralized policy management. |
-| 2025-10-27 | AlloyDB Authorized Networks without CIDR restrictions |  | AlloyDB now allows configuring Authorized Networks for Public IP without CIDR-range restrictions, with governance through custom organization policies. |
-| 2025-10-23 | AlloyDB time-series forecasting |  | AlloyDB now supports time-series forecasting on historical data, including TimesFM models, to predict future trends. |
-| 2025-10-06 | AlloyDB support for tds_fdw |  | AlloyDB now supports the tds_fdw extension to access TDS protocol databases, such as Microsoft SQL Server and Sybase, through foreign data wrappers. |
-| 2025-09-30 | Cache-aware query planning in AlloyDB for PostgreSQL |  | AlloyDB for PostgreSQL adds the alloydb.enable_cache_aware_costing setting to enable cache-aware query planning and improve index-scan performance while reducing I/O costs. |
-| 2025-09-24 | Query plan patches in AlloyDB |  | AlloyDB now allows users to create and manage query plan patches to specify execution-plan details for their queries. |
-| 2025-09-23 | Gemini CLI extensions for AlloyDB |  | AlloyDB introduces dedicated Gemini CLI extensions for provisioning, managing, and querying AlloyDB databases, including schema exploration and troubleshooting. |
-| 2025-09-22 | AlloyDB available memory metric with OS page cache |  | AlloyDB's available memory metric now includes usable OS page cache memory, improving accuracy and potentially lowering reported available memory values, especially on PostgreSQL 17+. |
-| 2025-09-22 | AlloyDB PostgreSQL 17 compatibility |  | AlloyDB now supports creating clusters with general availability PostgreSQL 17 server compatibility; AlloyDB adds Preview support for creating clusters with PostgreSQL 17 compatibility. |
-| 2025-09-11 | AlloyDB support for C4A Axion machine series |  | AlloyDB now supports C4A Arm VMs on Axion processors with predefined machine configurations ranging from 1 to 72 vCPUs. |
-| 2025-09-04 | AlloyDB AI natural language |  | AlloyDB AI natural language now provides secure, accurate natural-language answers using fragment-based templates, autogenerated concept types, and SQL summaries; AlloyDB AI natural language is in Preview and provides secure, accurate natural-language responses for end-user queries. |
-| 2025-09-04 | Parameterized secure views in AlloyDB for PostgreSQL |  | AlloyDB for PostgreSQL now supports parameterized secure views to improve data security and row-level access control when using SQL; Parameterized secure views in AlloyDB for PostgreSQL provide a secure SQL interface for developers with improved row-level access control and are in Preview. |
-| 2025-09-02 | Custom organization constraints for AlloyDB resources |  | You can create organization policies with custom constraints for AlloyDB backups, clusters, and instance fields. |
-| 2025-08-20 | Saved SQL scripts in AlloyDB Studio |  | AlloyDB Studio now supports creating and managing saved SQL scripts for users to store reusable SQL in the database environment. |
-| 2025-07-14 | Configurable AlloyDB instance IP address range |  | AlloyDB now allows users to create an instance with a specific IP address range and override range allocations during cluster creation. |
-| 2025-06-17 | Columnar engine for filtered vector similarity search |  | AlloyDB introduces a columnar engine to improve KNN vector similarity search performance when combined with highly selective predicate filtering. |
-| 2025-06-02 | Automatic Private Service Connect endpoint creation for AlloyDB |  | AlloyDB can automatically create Private Service Connect endpoints for authorized projects based on configured service connection policies. |
-| 2025-06-02 | Private Service Connect cluster creation in AlloyDB |  | AlloyDB enables creating clusters with Private Service Connect through the Google Cloud console. |
-| 2025-05-29 | AlloyDB instance start/stop/restart controls |  | AlloyDB now supports starting, stopping, and restarting primary and read pool instances via the Google Cloud console and Cloud CLI. |
-| 2025-05-22 | pg_ivm extension support |  | AlloyDB for PostgreSQL supports the pg_ivm extension to provide incremental view maintenance for materialized views. |
-| 2025-05-21 | AlloyDB AI query engine |  | AlloyDB AI query engine introduces AI SQL capabilities including ai.if, ai.rank, and ai.generate with multimodal and text embedding model integration; AlloyDB AI query engine is in Preview and enables SQL with AI operators plus Vertex AI multimodal and ranking models for filtering, joining, ranking, and summarization. |
-| 2025-05-08 | IAM authentication in AlloyDB Studio |  | AlloyDB Studio now supports IAM-based authentication for database access. |
-| 2025-05-07 | Dataflow vector embedding ETL for AlloyDB |  | AlloyDB supports building a Dataflow-based vector embedding ETL pipeline to generate and ingest embeddings into AlloyDB. |
-| 2025-05-07 | Deny maintenance periods for AlloyDB clusters |  | AlloyDB adds the ability to configure deny-maintenance periods on clusters running the latest version. |
-| 2025-05-07 | Migration from Cloud SQL for PostgreSQL to AlloyDB |  | AlloyDB supports migration from Cloud SQL for PostgreSQL using Cloud SQL backups and the Google Cloud CLI. |
-| 2025-04-25 | AlloyDB backup plans recommender |  | AlloyDB backup plans recommender is generally available. |
-| 2025-04-25 | AlloyDB backup retention recommender |  | AlloyDB backup retention recommender is generally available. |
-| 2025-04-25 | AlloyDB cluster storage quota recommender |  | AlloyDB cluster storage quota recommender is generally available. |
-| 2025-04-25 | AlloyDB database auditing recommender |  | AlloyDB database auditing recommender is generally available. |
-| 2025-04-25 | AlloyDB high availability recommender |  | AlloyDB high availability recommender is generally available. |
-| 2025-04-25 | AlloyDB password policy recommender |  | AlloyDB password policy recommender is generally available. |
-| 2025-04-25 | AlloyDB SSL/TLS encryption enforcement recommender |  | AlloyDB SSL/TLS encryption enforcement recommender is generally available. |
-| 2025-04-25 | AlloyDB underprovisioned instances optimizer |  | AlloyDB underprovisioned instances optimization recommender is generally available. |
-| 2025-04-09 | AlloyDB AI-assisted troubleshooting |  | AlloyDB AI-assisted troubleshooting helps resolve complex performance issues like slow queries and high load and is available in Preview. |
-| 2025-04-09 | AlloyDB for PostgreSQL 1 vCPU machine type |  | AlloyDB for PostgreSQL now supports a 1 vCPU, 8GB configuration suitable for development and sandbox environments, in Preview. |
-| 2025-04-09 | AlloyDB support for C4A Arm VMs |  | AlloyDB supports C4A Arm VMs on Google Axiom processors, with predefined configurations from 1 to 72 vCPUs, in Preview. |
-| 2025-03-19 | In-place major version upgrade for AlloyDB clusters |  | AlloyDB now supports generally available in-place major version upgrades of clusters to higher supported PostgreSQL versions. |
-| 2025-03-18 | AlloyDB query recall evaluator |  | AlloyDB includes a Preview query recall evaluator to measure and tune vector query recall for a given configuration. |
-| 2025-03-17 | AlloyDB mandatory tagging with organization policies |  | AlloyDB can enforce mandatory tags on cluster and backup resources via custom organization policies in Preview. |
-| 2025-03-17 | AlloyDB outbound connectivity for Private Service Connect clusters |  | AlloyDB now has generally available outbound connectivity for Private Service Connect-enabled clusters to support secure outbound operations such as migrations and FDW. |
-| 2025-03-12 | Automatic CMEK creation with Cloud KMS Autokey for AlloyDB |  | AlloyDB now supports automatically creating customer-managed encryption keys for AlloyDB resources using Cloud KMS Autokey. |
-| 2025-03-04 | AlloyDB for PostgreSQL availability in europe-north2 |  | AlloyDB for PostgreSQL was added as a supported region in europe-north2 (Stockholm). |
-| 2025-02-27 | AlloyDB cross-region replication with up to five secondary regions |  | Cross-region replication in AlloyDB now supports up to five secondary regions for disaster recovery and geographic workload distribution. |
-| 2025-02-21 | AlloyDB API-based data import for clusters |  | You can import data into AlloyDB for PostgreSQL clusters through an API, with capabilities to cancel and check the status of imports. |
-| 2025-02-21 | In-place major version upgrades to PostgreSQL 16 |  | AlloyDB clusters can now perform in-place major upgrades from PostgreSQL 14 or 15 to PostgreSQL 16. |
-| 2025-02-14 | AlloyDB active queries |  | AlloyDB for PostgreSQL now supports active query functionality as a generally available feature. |
-| 2025-02-14 | AlloyDB advanced query insights |  | AlloyDB for PostgreSQL now supports advanced query insights as a generally available capability. |
-| 2025-02-14 | AlloyDB index advisor |  | AlloyDB for PostgreSQL now includes an index advisor feature that is generally available; The AlloyDB index advisor feature reached general availability. |
-| 2024-12-18 | AlloyDB API-based data export from clusters |  | You can export data from AlloyDB clusters via API, including the ability to cancel an export operation. |
-| 2024-12-12 | AlloyDB System insights unified monitoring dashboard |  | AlloyDB now includes a unified, customizable System insights monitoring dashboard with predefined and Cloud Monitoring metrics. |
-| 2024-12-05 | AlloyDB database performance snapshots |  | AlloyDB now offers database performance snapshot reports that compare system metrics between two points in time. |
-| 2024-11-21 | AlloyDB cluster provisioning from Cloud SQL for PostgreSQL backup |  | AlloyDB clusters can be set up using a copy of an existing Cloud SQL for PostgreSQL backup. |
-| 2024-11-21 | Model endpoint management in AlloyDB and AlloyDB Omni |  | Model endpoint management is now generally available in AlloyDB and AlloyDB Omni, including registering and calling remote AI models with sample templates. |
-| 2024-11-15 | AlloyDB free trial clusters |  | AlloyDB free trial clusters are now available in all AlloyDB regions; AlloyDB free trial clusters are available, offering up to 30 days of usage with primary/read pool instances and automatic storage scaling up to 1 TB. |
-| 2024-11-12 | AlloyDB cluster storage capacity |  | AlloyDB now supports up to 128 TiB of storage per cluster in every supported region; AlloyDB now supports up to 64 TiB of storage per cluster across all locations. |
-| 2024-10-28 | AlloyDB in-place major version upgrade |  | AlloyDB for PostgreSQL now supports in-place major-version upgrades, including PostgreSQL 14 to PostgreSQL 15. |
-| 2024-10-23 | AlloyDB for PostgreSQL 16 compatibility |  | AlloyDB now supports database clusters using PostgreSQL 16 as a generally available compatibility option; AlloyDB now supports AlloyDB clusters with PostgreSQL 16 compatibility in Preview. |
-| 2024-10-23 | Homogeneous PostgreSQL migration to AlloyDB for PostgreSQL 16 |  | Database Migration Service can perform homogeneous migrations from PostgreSQL to AlloyDB for PostgreSQL version 16. |
-| 2024-10-10 | AlloyDB read pool node restart |  | AlloyDB now supports restarting one or more nodes in a read pool. |
-| 2024-10-02 | alloydb_scann vector extension |  | The alloydb_scann (formerly postgres_scann) extension is now generally available in AlloyDB for vector storage and index tuning use cases. |
-| 2024-09-30 | AlloyDB outbound public IP connectivity |  | AlloyDB outbound public IP connectivity is generally available on primary and secondary instances. |
-| 2024-09-25 | AlloyDB free trial cluster creation from Cloud SQL PostgreSQL backups |  | AlloyDB free trial clusters can be created using a copy of a Cloud SQL for PostgreSQL backup. |
-| 2024-09-18 | AlloyDB Omni operator on Google Distributed Cloud connected |  | The AlloyDB Omni operator is available in Preview for Google Distributed Cloud (GDC) Connected deployments. |
-| 2024-09-17 | Predefined CMEK organization policy for AlloyDB |  | AlloyDB now supports applying the predefined CMEK organization policy to AlloyDB clusters and backups. |
-| 2024-09-16 | GKE Autopilot to AlloyDB connection setup guidance |  | A tutorial was added to show how to connect applications running on Google Kubernetes Engine Autopilot to AlloyDB instances. |
-| 2024-08-29 | BigQuery query federation for AlloyDB |  | BigQuery can run queries directly against data stored in AlloyDB databases through query federation. |
-| 2024-08-16 | AlloyDB Omni Kubernetes Operator load balancer annotation support |  | The AlloyDB Omni Kubernetes Operator supports configuring load balancers by using Kubernetes annotations. |
-| 2024-08-14 | AlloyDB Omni database pod scheduling for balanced node distribution |  | The AlloyDB Omni Kubernetes Operator can schedule new database Pods across nodes to balance cluster distribution and optimize performance. |
-| 2024-08-08 | Query Insights and active queries for read pool instances |  | Enhanced Query Insights and active query visibility are available in preview for AlloyDB read pool instances. |
-| 2024-08-05 | AlloyDB admin password secret persistence |  | When creating an AlloyDB cluster, the admin password secret is no longer deleted after being specified. |
-| 2024-08-05 | AlloyDB Omni dedicated backup server |  | AlloyDB Omni introduces a dedicated backup server to streamline backup operations. |
-| 2024-08-05 | AlloyDB Omni support for Red Hat OpenShift |  | AlloyDB Omni adds support for Red Hat OpenShift Container Platform 4.14 and later in preview. |
-| 2024-08-05 | Configurable auto-failover threshold in AlloyDB Omni HA |  | AlloyDB Omni HA now lets users set the number of failed health checks that trigger automatic failover. |
-| 2024-08-05 | Cross-data center replication for automated disaster recovery |  | Cross-data center replication now supports automated disaster recovery setup in AlloyDB Omni. |
-| 2024-08-05 | postgres_ann extension rename to alloydb_scann |  | The PostgreSQL extension named postgres_ann has been renamed to alloydb_scann in AlloyDB Omni. |
-| 2024-08-05 | Variable read pool instance node count |  | AlloyDB Omni now allows a variable number of nodes per read pool instance. |
-| 2024-07-31 | Gemini in Databases assistance for AlloyDB for PostgreSQL |  | Gemini in Databases assistance is available in preview for standard and enhanced query insights, system insights, index advisor, and active queries in AlloyDB for PostgreSQL. |
-| 2024-07-22 | Organization policies with custom constraints in AlloyDB |  | AlloyDB now supports creating organization policies using custom constraints. |
-| 2024-07-22 | Public IP support for AlloyDB instances |  | AlloyDB instances now support public IP address configuration. |
-| 2024-07-16 | Cross-region backup location support |  | AlloyDB now supports storing backups in cross-region backup locations. |
-| 2024-07-10 | Cloud Billing export queries by resource-level tags and names |  | AlloyDB can query exported Cloud Billing data using resource-level tags and resource names. |
-| 2024-07-09 | Zero-data-loss switchover in cross-region replication |  | AlloyDB supports zero-data-loss switchover in cross-region replication configurations for disaster recovery testing or migration. |
-| 2024-06-25 | AlloyDB Omni Arm architecture support |  | AlloyDB Omni now supports Arm-based architectures. |
-| 2024-06-25 | AlloyDB Omni Podman support on RHEL |  | AlloyDB Omni now supports using the Podman container tool on Red Hat Enterprise Linux. |
-| 2024-06-25 | AlloyDB Omni simplified installation method |  | The simplified installation method for AlloyDB Omni is generally available for use; The simplified installation method for AlloyDB Omni is available in preview. |
-| 2024-05-22 | BigQuery and AlloyDB query federation |  | BigQuery can now query data stored in AlloyDB through query federation. |
-| 2024-05-10 | AlloyDB Omni Docker environment variable compatibility |  | The AlloyDB Omni simplified installation method now supports all environment variables from the official PostgreSQL Docker image. |
-| 2024-05-10 | Model endpoint management |  | Model endpoint management is available in preview for AlloyDB and AlloyDB Omni; AlloyDB Omni now supports preview model endpoint management, enabling a per-project model endpoint registry. |
-| 2024-05-07 | AlloyDB Omni sidecar containers |  | AlloyDB Omni Kubernetes Operator now supports adding sidecar containers to a database cluster. |
-| 2024-05-07 | AlloyDB Private Service Connect |  | Private Service Connect is generally available for AlloyDB for PostgreSQL to enable access from multiple VPC networks. |
-| 2024-05-06 | AlloyDB local database user password policies |  | Password policies can now be configured for AlloyDB local database users. |
-| 2024-05-01 | AlloyDB maintenance event email notifications |  | Users can opt in to receive email notifications for upcoming AlloyDB maintenance events. |
-| 2024-05-01 | AlloyDB maintenance windows |  | AlloyDB users can schedule maintenance windows so non-emergency maintenance runs only during selected weekly periods. |
-| 2024-04-09 | Active query monitoring |  | AlloyDB now supports monitoring active queries to troubleshoot running database activity. |
-| 2024-04-09 | AlloyDB Omni natural language query |  | AlloyDB Omni supports querying the database using natural language. |
-| 2024-04-09 | AlloyDB Studio |  | AlloyDB Studio enables authorized users to interact with the database and run SQL queries from the Google Cloud console. |
-| 2024-04-09 | Database Center |  | Database Center provides a centralized, AI-assisted dashboard for managing AlloyDB fleet operations. |
-| 2024-04-09 | Enhanced Query Insights |  | Enhanced Query Insights provides near real-time diagnostic capabilities for database and query performance issues. |
-| 2024-04-09 | Index advisor |  | A fully managed index advisor is available to analyze frequent query patterns and recommend indexes. |
-| 2024-04-09 | Parameterized secure views for natural language queries |  | AlloyDB Omni adds parameterized secure views to limit data scope for natural-language queries. |
-| 2024-04-09 | postgres_ann extension |  | The postgres_ann extension is available in AlloyDB Omni for scalable nearest-neighbor indexing with the ScaNN algorithm. |
-| 2024-04-09 | Query Insights four-week metric retention |  | Query Insights now retains query metrics for four weeks in its dashboard. |
-| 2024-04-09 | Query Insights recommendations |  | AlloyDB provides additional database insight recommendations through Query Insights. |
-| 2024-04-08 | AlloyDB Omni Kubernetes Operator 1.0.0 GA |  | The AlloyDB Omni Kubernetes Operator version 1.0.0 is generally available. |
-| 2024-04-08 | Asynchronous read pool instances in AlloyDB Omni |  | AlloyDB Omni supports creating asynchronous read pool instances. |
-| 2024-04-08 | Cross-cluster physical replication in AlloyDB Omni |  | AlloyDB Omni supports physical replication between primary and secondary clusters on separate Kubernetes clusters. |
-| 2024-04-08 | Expanded AlloyDB Omni metrics visibility |  | AlloyDB Omni now exposes a broader set of database and system metrics. |
-| 2024-04-08 | Failover connection compatibility in AlloyDB Omni HA |  | High-availability failover in AlloyDB Omni no longer requires connection parameter changes. |
-| 2024-04-08 | Logical replication configuration in AlloyDB Omni |  | Users can enable and configure logical replication in AlloyDB Omni. |
-| 2024-04-08 | Multiple standby replicas for AlloyDB Omni HA clusters |  | AlloyDB Omni high-availability clusters can include more than one standby replica. |
-| 2024-04-08 | pg_squeeze extension included in AlloyDB Omni |  | AlloyDB Omni includes the pg_squeeze extension at version 1.0. |
-| 2024-04-08 | Pod node affinity controls for AlloyDB Omni |  | AlloyDB Omni can restrict pods to run only on specific Kubernetes nodes. |
-| 2024-04-08 | Point-in-time recovery for AlloyDB Omni backups |  | AlloyDB Omni backups now support point-in-time recovery (PITR). |
-| 2024-04-08 | Read-only HA standby replicas in AlloyDB Omni |  | AlloyDB Omni allows an HA standby replica to be used as a read-only instance. |
-| 2024-04-02 | AlloyDB Studio Explorer pane and enhanced query editor |  | AlloyDB Studio now includes an Explorer pane integrated with an enhanced query editor for browsing, querying, and modifying databases. |
-| 2024-04-02 | AlloyDB Studio generally available |  | AlloyDB Studio is now generally available. |
-| 2024-03-13 | Continuous backup and recovery in AlloyDB |  | AlloyDB now supports continuous backup and recovery capabilities. |
-| 2024-03-13 | Scheduled backups on AlloyDB secondary clusters |  | AlloyDB supports scheduled backups on secondary clusters and automatically copies primary backup plans when a secondary cluster is created. |
-| 2024-03-12 | AlloyDB Language Connectors GA |  | AlloyDB Language Connectors are now generally available with automated mTLS and IAM-based authorization, including automated IAM authentication. |
-| 2024-03-04 | Key Access Justifications for external CMEK in AlloyDB |  | AlloyDB now supports Key Access Justifications for external CMEK keys to view and manage key access requests. |
-| 2024-02-29 | AlloyDB Omni PostgreSQL compatibility level 15.5 |  | AlloyDB Omni updated its core PostgreSQL compatibility to version 15.5. |
-| 2024-02-29 | Automated failover for AlloyDB Omni HA Kubernetes clusters |  | AlloyDB Omni now offers automated failover for highly available Kubernetes-based clusters in preview. |
-| 2024-02-29 | Configurable TCP port for AlloyDB Omni installation |  | AlloyDB Omni installation via command-line can now specify the instance TCP port. |
-| 2024-02-29 | New PostgreSQL extensions in AlloyDB Omni 15.5.0 |  | AlloyDB Omni 15.5.0 added the autoinc, insert_username, moddatetime, and tcn extensions. |
-| 2024-02-29 | Updated PostgreSQL extensions in AlloyDB Omni 15.5.0 |  | AlloyDB Omni 15.5.0 updates major extensions including pg_cron, pg_repack, pgfincore, pglogical, and pgvector. |
-| 2024-02-28 | Google Cloud tags on AlloyDB resources |  | AlloyDB now supports Google Cloud tags on cluster and backup resources to support granular IAM permissions. |
-| 2024-02-27 | Automatic IAM Authentication in AlloyDB Language Connectors |  | AlloyDB now supports Automatic IAM Authentication with AlloyDB Language Connectors in preview. |
-| 2024-02-20 | Expanded AlloyDB node capacity |  | AlloyDB instances can now be configured with up to 128 vCPUs and 864 GB RAM per node. |
-| 2024-02-09 | Public IP support for AlloyDB Language Connectors |  | AlloyDB Language Connectors in preview now support use of public IP for cluster connections. |
-| 2024-01-29 | AlloyDB Public IP availability |  | AlloyDB Public IP is available in preview so instances can accept connections from authorized external IP ranges. |
-| 2024-01-25 | AlloyDB Language Connectors preview |  | AlloyDB Language Connectors are now available in preview with automated mTLS, IAM-based authorization, and automated IAM authentication. |
-| 2024-01-24 | AlloyDB events timeline region support |  | AlloyDB now generally supports Cloud regions in its events timeline functionality. |
-| 2024-01-22 | Cross-project restoration |  | AlloyDB supports restoring a cluster to a new cluster in a different Google Cloud project. |
-| 2023-12-20 | AlloyDB Omni 15.4.0 availability |  | AlloyDB Omni version 15.4.0 is now available. |
-| 2023-12-20 | AlloyDB Omni Kubernetes Operator v0.3.0 preview |  | The AlloyDB Omni Kubernetes Operator version 0.3.0 is now available in preview with bug fixes and improvements. |
-| 2023-12-20 | pgvector 0.5.0 in AlloyDB Omni |  | AlloyDB Omni now includes pgvector updated to version 0.5.0. |
-| 2023-12-20 | PostgreSQL 15.4 in AlloyDB Omni |  | AlloyDB Omni now runs PostgreSQL version 15.4. |
-| 2023-12-18 | Incremental automated and continuous backups |  | AlloyDB automated and continuous backups now use incremental backups to reduce storage usage and improve backup speed. |
-| 2023-12-15 | AlloyDB monitoring dashboards and metrics |  | AlloyDB for PostgreSQL supports monitoring through AlloyDB System Insights, Cloud Monitoring, and the cluster Overview metrics view. |
-| 2023-12-14 | 64TiB per-cluster storage support |  | AlloyDB now supports up to 64 TiB of storage per cluster in selected regions. |
-| 2023-11-28 | AlloyDB columnar engine array column support |  | The AlloyDB columnar engine now supports columns of the array data type. |
-| 2023-11-15 | AlloyDB Auth Proxy IAM-based login automation |  | The AlloyDB Auth Proxy can be configured to automatically authenticate IAM-based database logins. |
-| 2023-11-15 | AlloyDB Omni Kubernetes Operator v0.2.0 preview |  | The AlloyDB Omni Kubernetes Operator version 0.2.0 is available in preview and adds support for AlloyDB Omni version 15.2.2 with bug fixes and improvements. |
-| 2023-11-15 | OAuth 2.0 access token scoping for AlloyDB |  | AlloyDB now allows restricting an OAuth 2.0 access token to be valid only for AlloyDB authentication. |
-| 2023-11-08 | oracle_fdw extension support in AlloyDB |  | The oracle_fdw extension is now supported by AlloyDB to provide foreign data wrapper access to Oracle databases. |
-| 2023-10-11 | AlloyDB Omni Kubernetes Operator |  | The AlloyDB Omni Kubernetes Operator enables deploying and managing AlloyDB Omni on Kubernetes clusters. |
-| 2023-09-28 | AlloyDB secondary cluster read pool instances |  | AlloyDB now allows secondary clusters to use read pool instances. |
-| 2023-09-21 | AlloyDB basic instances |  | AlloyDB basic instances provide single-node, one-zone primary instances as a lower-cost non-HA option. |
-| 2023-09-21 | AlloyDB PostgreSQL 15 compatibility |  | AlloyDB supports database clusters with PostgreSQL 15 compatibility. |
-| 2023-09-15 | Low-downtime maintenance for HA primary instances |  | Maintenance operations on highly available primary instances now complete with under one second of downtime for most workloads. |
-| 2023-09-13 | Cloud External Key Manager support for AlloyDB encryption keys |  | AlloyDB supports using and managing data-encryption keys stored outside Google Cloud via Cloud External Key Manager. |
-| 2023-09-08 | Configurable private services access IP range |  | AlloyDB cluster creation now allows optionally specifying a private services access IP range. |
-| 2023-08-29 | AlloyDB AI |  | AlloyDB AI is a generative AI feature set available for both AlloyDB and AlloyDB Omni. |
-| 2023-08-29 | AlloyDB ML extension embedding function |  | The AlloyDB machine learning extension adds an embedding SQL function for creating vector embeddings from text. |
-| 2023-08-29 | AlloyDB Omni 15.2.0 Preview |  | AlloyDB Omni version 15.2.0 is available in preview. |
-| 2023-08-29 | AlloyDB Omni command-line interface |  | AlloyDB Omni includes a command-line interface to simplify installation and maintenance. |
-| 2023-08-29 | AlloyDB Omni data protection guidance with Barman and pglogical |  | AlloyDB Omni includes guidance for data protection using Barman and pglogical in Vertex AI-integrated workflows. |
-| 2023-08-29 | AlloyDB Omni PostgreSQL 15 compatibility |  | AlloyDB Omni 15.2.0 includes compatibility with PostgreSQL server version 15. |
-| 2023-08-29 | AlloyDB Omni Technology Preview edition |  | A separate Technology Preview edition of AlloyDB Omni is available for experimenting with AlloyDB AI using included models. |
-| 2023-08-29 | AlloyDB pgvector support |  | AlloyDB includes pgvector support with performance improvements for vector queries, including scalar-quantized vector indexes. |
-| 2023-08-22 | AlloyDB connector-based connection enforcement |  | AlloyDB supports enforcing database access through AlloyDB connectors, such as the Auth Proxy, to improve connection security. |
-| 2023-08-22 | SSL enforcement mode for AlloyDB instances |  | AlloyDB instances can be configured to require SSL for all database connections. |
-| 2023-08-16 | AlloyDB committed use discounts for compute |  | AlloyDB offers committed use discounts on compute resources, with 25% discount for one-year commitments and 52% for three-year commitments. |
-| 2023-08-16 | AlloyDB high-capacity node machine type |  | AlloyDB instance machine-type configuration now includes an option of 96 vCPUs and 768 GB of RAM per node. |
-| 2023-08-08 | AlloyDB Omni PostgreSQL 15.2 preview release |  | AlloyDB Omni introduced version alloydb-omni-0.3.0-preview-postgresql-15.2, which adds PostgreSQL 15 support along with bug fixes and query performance improvements. |
-| 2023-07-28 | Cloud Asset Inventory support for AlloyDB |  | Cloud Asset Inventory support for AlloyDB is generally available. |
-| 2023-07-18 | AlloyDB data residency |  | AlloyDB support for Data Residency is generally available. |
-| 2023-07-18 | AlloyDB resource location policies |  | AlloyDB now supports setting resource location policies to constrain where new in-scope resources can be created. |
-| 2023-07-05 | pgvector extension support in AlloyDB |  | AlloyDB has added support for the pgvector PostgreSQL extension. |
-| 2023-06-30 | AlloyDB fault injection |  | AlloyDB introduced fault injection to simulate active-node outages and validate automatic standby failover via high availability. |
-| 2023-06-30 | AlloyDB vectorized joins |  | AlloyDB made vectorized joins available in preview as part of its columnar engine to improve join performance for qualifying queries. |
-| 2023-06-27 | AlloyDB columnar engine data type support |  | The AlloyDB columnar engine added support for boolean, bytea, enum, and uuid column data types. |
-| 2023-06-27 | AlloyDB IAM authentication |  | AlloyDB introduced IAM authentication preview support, allowing IAM users or service accounts to be authorized as database users. |
-| 2023-06-21 | AlloyDB cross-region replication |  | AlloyDB cross-region replication reached general availability; AlloyDB Cross-Region Replication replicates primary cluster data and resources to other regions for disaster recovery readiness. |
-| 2023-06-12 | AlloyDB cluster storage quota management |  | Users can manage AlloyDB cluster storage quotas through the Quotas page. |
-| 2023-06-12 | AlloyDB quota increase requests |  | AlloyDB supports submitting quota increase requests through the AlloyDB quotas page. |
-| 2023-06-01 | AlloyDB continuous backup and recovery |  | AlloyDB continuous backup and recovery reached general availability; AlloyDB Continuous Backup and Recovery enables point-in-time restoration from any moment within a configurable window to protect clusters from data-loss events. |
-| 2023-05-17 | AlloyDB FORCE_APPLY update policy |  | The FORCE_APPLY update policy became available in preview to apply AlloyDB database flag updates faster, typically within 1 to 2 minutes. |
-| 2023-05-12 | AlloyDB Admin API user-management methods |  | AlloyDB Admin API added user-management methods so users can manage cluster roles with gcloud in addition to existing PostgreSQL role functions. |
-| 2023-05-11 | AlloyDB cluster storage limit increase |  | AlloyDB increased the maximum storage capacity per cluster to 32 TiB. |
-| 2023-05-10 | AlloyDB columnar engine JSON and JSONB support |  | The AlloyDB columnar engine added support for columns with json and jsonb data types. |
-| 2023-05-05 | AlloyDB Omni 0.2.0-preview-postgresql-14.4 release |  | AlloyDB Omni version 0.2.0-preview-postgresql-14.4 became available with reduced memory requirements plus bug fixes and query performance improvements. |
-| 2023-04-24 | AlloyDB read pool node health metrics |  | Three read pool node health metrics were introduced in preview to help monitor and troubleshoot read pool node activity. |
-| 2023-03-29 | AlloyDB Omni preview availability |  | AlloyDB Omni became available in preview as a downloadable, containerized AlloyDB PostgreSQL edition. |
-| 2023-03-06 | Cloud client libraries for AlloyDB Admin API |  | Cloud client libraries for the AlloyDB Admin API entered preview with support for C++, C#, Go, and Java. |
-| 2022-12-01 | AlloyDB Clusters Page Health Dashboard |  | The AlloyDB Clusters page in Google Cloud Console now shows summary cards and a resource table for real-time database fleet monitoring. |
-| 2022-09-15 | AlloyDB as Datastream Source |  | Datastream support for AlloyDB enables AlloyDB clusters to be used as PostgreSQL sources for change data capture and replication workflows. |
-| 2022-09-15 | Database Migration Service Support for AlloyDB |  | Google Cloud Database Migration Service can migrate existing PostgreSQL data and workloads into AlloyDB clusters. |
-| 2022-08-25 | AlloyDB Customer-Managed Encryption Keys (CMEK) |  | AlloyDB supports customer-managed encryption keys, allowing customers to use their own keys to satisfy compliance and regulatory requirements. |
-| 2022-08-24 | AlloyDB Primary and Standby VM Zone Visibility |  | Users can view which availability zones host active and standby virtual machines for a primary AlloyDB instance. |
-| 2022-07-12 | AlloyDB Small Instance Machine Sizes |  | Primary and read-pool instances can be created or scaled to a minimum machine size of 2 vCPUs and 16 GB of RAM. |
-| 2022-05-31 | VPC Service Controls for AlloyDB |  | AlloyDB is available with VPC Service Controls, helping reduce the risk of data exfiltration through perimeter-based protection. |
+| 2026-04-03 | gcloud beta alloydb connect |  | The gcloud beta alloydb connect command provides a simplified way to connect securely to AlloyDB instances by using the AlloyDB Auth Proxy and psql. |
+| 2026-03-31 | Hot standby |  | Hot standby improves AlloyDB high availability by keeping the standby node ready for faster failover and consistent post-failover performance. |
+| 2026-03-30 | Conversational analytics |  | Conversational analytics lets users query AlloyDB operational data using natural language through the Conversational Analytics API. |
+| 2026-03-25 | ai.hybrid_search() |  | The ai.hybrid_search() function combines results from multiple search types into a single ranked list using Reciprocal Rank Fusion. |
+| 2026-03-25 | PostgreSQL 18 compatibility |  | PostgreSQL 18 compatibility lets you create AlloyDB clusters on PostgreSQL 18 and upgrade existing clusters from earlier major versions; PostgreSQL 18 compatibility lets you create AlloyDB clusters with PostgreSQL 18 compatibility. |
+| 2026-03-25 | RUM extension |  | The RUM extension enables faster phrase searches and relevance ranking for complex full-text search workloads by storing positional information in the index. |
+| 2026-03-20 | Node-level metrics |  | Node-level metrics let you monitor AlloyDB read pool nodes in Google Cloud console and Metrics Explorer for detailed troubleshooting. |
+| 2026-03-16 | C4A 2 vCPU machine type support |  | C4A 2 vCPU machine type support adds the c4a-highmem-2-lssd Axion-based instance option for smaller AlloyDB deployments. |
+| 2026-03-16 | Enhanced backups |  | Enhanced backups add an enhanced backup tier with project-level backup management and deletion capabilities for AlloyDB clusters; Enhanced backups add an enhanced backup tier with project-level backup management and deletion capabilities for AlloyDB clusters. |
+| 2026-03-03 | AI functions |  | AI functions bring LLM-powered filtering, semantic ranking, generation, and forecasting directly into AlloyDB SQL workflows. |
+| 2026-03-03 | Array-based AI functions |  | Array-based AI functions enable batch processing of natural language prompts in SQL for higher-performance large-scale AI operations; Array-based AI functions let you make AlloyDB AI function calls in bulk instead of row by row to scale intelligent workflows faster. |
+| 2026-03-03 | Auto vector embeddings |  | Auto vector embeddings automate the lifecycle of vector embeddings for large-scale datasets and keep embeddings synchronized with transactional data. |
+| 2026-02-23 | Gemini Cloud Assist investigation capabilities |  | Gemini Cloud Assist investigation capabilities help troubleshoot AlloyDB issues such as slow queries with AI assistance. |
+| 2026-02-19 | Database Center integration |  | Database Center integration provides prioritized health monitoring and recommended fixes for AlloyDB in the Google Cloud console. |
+| 2026-02-17 | AlloyDB remote MCP server |  | The AlloyDB remote MCP server lets LLMs, AI applications, and AI-enabled development platforms interact with AlloyDB clusters. |
+| 2026-02-17 | Performance snapshots and reports for read pool nodes |  | Performance snapshots and reports for read pool nodes provide observability into read operations and replica-specific performance issues. |
+| 2026-02-05 | Virtual columns for expressions |  | Virtual columns for expressions cache results of frequently used expressions in the columnar engine to improve query performance and reduce CPU usage. |
+| 2026-01-20 | Bangkok region support |  | Bangkok region support lets you create AlloyDB cluster instances in the asia-southeast3 region. |
+| 2026-01-19 | Z3 machine series support |  | Z3 machine series support adds AlloyDB instances powered by 4th generation Intel x86 processors with Titanium SSD for storage-intensive workloads. |
+| 2025-12-18 | Managed connection pooling |  | Managed connection pooling optimizes resource usage to improve AlloyDB workload scalability and reliability; Managed connection pooling improves workload reliability, scalability, and performance by optimizing connection resource usage on AlloyDB instances. |
+| 2025-12-18 | SQL Report in performance snapshot reports |  | The SQL Report section in database performance snapshot reports lists the top 50 queries by key execution metrics to help optimize resource-intensive queries. |
+| 2025-12-17 | Data agents |  | Data agents let you build conversational agents that interact with AlloyDB data and can be used as tools in applications. |
+| 2025-12-17 | Gemini 3.0 Flash support for generative AI functions |  | Gemini 3.0 Flash support lets AlloyDB generative AI functions use the gemini-3-flash-preview model. |
+| 2025-12-11 | C4 machine series support |  | C4 machine series support adds AlloyDB instances powered by 6th generation Intel Xeon Granite Rapids processors for extremely demanding workloads. |
+| 2025-12-08 | Gemini query error assistance in AlloyDB Studio |  | Gemini query error assistance helps fix query errors in the AlloyDB Studio query editor. |
+| 2025-12-05 | Query plan management |  | Query plan management helps ensure query plan stability by monitoring, capturing, and controlling approved execution plans. |
+| 2025-11-20 | Horizontal autoscaling for read pool instances |  | Horizontal autoscaling for read pool instances automatically scales AlloyDB read pools to match workload demand. |
+| 2025-11-19 | Self-service maintenance |  | Self-service maintenance lets you apply the latest AlloyDB updates to clusters on demand and set deny periods. |
+| 2025-11-18 | Gemini 3.0 support for generative AI functions |  | Gemini 3.0 support lets AlloyDB generative AI functions use Gemini 3.0 models such as AI.GENERATE. |
+| 2025-11-13 | AlloyDB AI native vector search accelerator |  | AlloyDB AI native vector search accelerator improves vector search performance and management in AlloyDB. |
+| 2025-11-13 | Automatic vector data recommendation |  | Automatic vector data recommendation updates google_columnar_engine to recommend data for searches without manually adding vector columns to a table. |
+| 2025-11-13 | Vector index creation metrics |  | Vector index creation metrics add visibility into vector index builds through the pg_stat_ann_index_creation view. |
+| 2025-11-11 | Dataplex Universal Catalog integration |  | Dataplex Universal Catalog integration lets you discover, search, and manage AlloyDB metadata across clusters, databases, and tables. |
+| 2025-11-11 | Parallel SELECT for INSERT INTO ... SELECT |  | Parallel SELECT for INSERT INTO ... SELECT improves performance for partitioned tables and complex queries by parallelizing the SELECT portion of insert-select operations. |
+| 2025-11-10 | Auto embedding generation |  | Auto embedding generation creates large-scale embeddings in AlloyDB for semantic search and retrieval-augmented generation workloads. |
+| 2025-11-10 | Cloud SQL backup migration with PostgreSQL 17 support |  | Cloud SQL backup migration with PostgreSQL 17 support lets you migrate from Cloud SQL for PostgreSQL to AlloyDB using backups, with operations supported up to 15 TB. |
+| 2025-10-27 | Authorized Networks without CIDR restrictions |  | Authorized Networks without CIDR restrictions let AlloyDB Public IP configurations use unrestricted authorized network definitions governed by custom organization policies. |
+| 2025-10-23 | Time-series forecasting |  | Time-series forecasting lets AlloyDB predict future trends from historical data by using forecasting models such as TimesFM. |
+| 2025-10-06 | tds_fdw extension support |  | Tds_fdw extension support lets AlloyDB access external databases such as Microsoft SQL Server and Sybase through the Tabular Data Stream protocol. |
+| 2025-09-30 | Cache-aware costing |  | Cache-aware costing improves query planning for index scans by making the AlloyDB query planner aware of cache effects to reduce I/O costs. |
+| 2025-09-24 | Query plan patches |  | Query plan patches let you specify execution plan details for queries in AlloyDB. |
+| 2025-09-23 | Gemini CLI extensions for AlloyDB |  | Gemini CLI extensions for AlloyDB provide database provisioning, management, querying, schema exploration, and troubleshooting from the command line. |
+| 2025-09-22 | Available memory metric enhancement |  | The available memory metric enhancement makes the AlloyDB metric account for usable memory from the OS page cache for more accurate reporting. |
+| 2025-09-22 | PostgreSQL 17 compatibility |  | PostgreSQL 17 compatibility lets you create AlloyDB clusters with PostgreSQL 17 compatibility; PostgreSQL 17 compatibility lets you create AlloyDB clusters with PostgreSQL 17 compatibility. |
+| 2025-09-11 | C4A machine series support |  | C4A machine series support adds AlloyDB support for Arm-based Axion processors in predefined configurations across limited regions. |
+| 2025-09-04 | AlloyDB AI natural language |  | AlloyDB AI natural language provides secure and accurate responses to end-user natural language questions with templates, autogenerated concept types, and SQL summaries; AlloyDB AI natural language delivers secure and accurate responses to end-user natural language questions. |
+| 2025-09-04 | Parameterized secure views |  | Parameterized secure views enhance AlloyDB data security and row access control by providing a secure SQL interface for application developers; Parameterized secure views provide a secure SQL interface that improves data security and row access control for application developers. |
+| 2025-09-02 | Custom constraints for AlloyDB organization policies |  | Custom constraints for AlloyDB organization policies let you define organization policy constraints for backups, clusters, and instance fields; AlloyDB supports organization policies that use custom constraints. |
+| 2025-08-20 | Saved queries in AlloyDB Studio |  | Saved queries in AlloyDB Studio let you save and manage SQL scripts directly in the Studio interface. |
+| 2025-07-14 | Custom instance IP address range |  | Custom instance IP address range lets you create AlloyDB instances with a specific IP address range and override cluster-level IP range allocations. |
+| 2025-06-17 | Columnar engine acceleration for filtered KNN vector search |  | The columnar engine can accelerate K-Nearest Neighbor vector similarity searches when combined with highly selective predicate filtering. |
+| 2025-06-02 | Automatic Private Service Connect endpoint creation |  | AlloyDB can automatically create Private Service Connect endpoints for authorized projects based on a defined service connection policy. |
+| 2025-06-02 | Private Service Connect cluster creation in Google Cloud console |  | AlloyDB clusters with Private Service Connect can be created through the Google Cloud console. |
+| 2025-05-29 | Instance lifecycle controls |  | AlloyDB lets you start, stop, and restart primary and read pool instances through the Google Cloud console and Google Cloud CLI. |
+| 2025-05-22 | pg_ivm extension support |  | AlloyDB for PostgreSQL supports the pg_ivm extension for incremental view maintenance on materialized views. |
+| 2025-05-21 | AlloyDB AI query engine |  | AlloyDB AI query engine lets you combine natural language with SQL by using AI operators such as ai.if, ai.rank, and ai.generate; AlloyDB AI query engine extends model endpoint management with AI operators and support for Vertex AI multimodal and ranking models. |
+| 2025-05-08 | IAM authentication in AlloyDB Studio |  | AlloyDB Studio supports IAM authentication as a database authentication method. |
+| 2025-05-07 | Cloud SQL backup migration to AlloyDB |  | AlloyDB supports migration from Cloud SQL for PostgreSQL by using a Cloud SQL backup, including Google Cloud CLI support; AlloyDB supports setting up clusters by using a copy of a Cloud SQL for PostgreSQL backup. |
+| 2025-05-07 | Deny maintenance period |  | AlloyDB lets you configure a deny maintenance period on clusters running the latest version. |
+| 2025-05-07 | Vector embedding ETL pipeline with Dataflow |  | AlloyDB supports building vector embedding ETL pipelines with Dataflow to generate and ingest embeddings from files or real-time sources. |
+| 2025-04-25 | Backup plan recommender |  | The Backup plan recommender helps identify opportunities to enable backup plans for AlloyDB resources. |
+| 2025-04-25 | Backup retention recommender |  | The Backup retention recommender helps identify opportunities to increase AlloyDB backup retention. |
+| 2025-04-25 | Cluster storage quota recommender |  | The Cluster storage quota recommender helps identify opportunities to increase AlloyDB cluster storage quota. |
+| 2025-04-25 | Database auditing recommender |  | The Database auditing recommender helps identify opportunities to enable database auditing in AlloyDB. |
+| 2025-04-25 | High availability recommender |  | The High availability recommender helps identify opportunities to enable high availability for AlloyDB deployments. |
+| 2025-04-25 | Password policy recommender |  | The Password policy recommender helps identify opportunities to enable password policies in AlloyDB. |
+| 2025-04-25 | SSL/TLS enforcement recommender |  | The SSL/TLS enforcement recommender helps identify opportunities to enforce SSL or TLS encryption for AlloyDB. |
+| 2025-04-25 | Underprovisioned instance recommender |  | The Underprovisioned instance recommender helps identify AlloyDB instances that need more capacity. |
+| 2025-04-09 | 1 vCPU instance configuration |  | AlloyDB for PostgreSQL supports a 1 vCPU and 8 GB memory configuration for development and sandbox environments. |
+| 2025-04-09 | AI-assisted troubleshooting |  | AI-assisted troubleshooting helps resolve complex AlloyDB database performance issues such as slow queries and high load. |
+| 2025-04-09 | C4A Arm VM support |  | AlloyDB supports C4A Arm VMs on Google's custom-built Axiom processors in predefined configurations. |
+| 2025-03-19 | In-place major version upgrade |  | AlloyDB supports in-place major version upgrades of clusters to higher supported PostgreSQL versions; AlloyDB supports in-place major version upgrades to PostgreSQL 16 from PostgreSQL 14 or 15. |
+| 2025-03-18 | Query recall evaluator |  | The query recall evaluator measures vector query recall for a configuration and helps tune parameters to reach desired recall results. |
+| 2025-03-17 | Mandatory tag enforcement with custom organization policies |  | AlloyDB can enforce required tags on cluster and backup resources through custom organization policies. |
+| 2025-03-17 | Outbound connectivity for Private Service Connect-enabled clusters |  | Outbound connectivity for Private Service Connect-enabled AlloyDB clusters enables secure outbound connections for operations such as migrations and foreign data wrappers. |
+| 2025-03-12 | Cloud KMS Autokey CMEK creation |  | AlloyDB can automatically create customer-managed encryption keys by using Cloud KMS Autokey to protect resources. |
+| 2025-02-27 | Cross-region replication with up to five secondary regions |  | AlloyDB cross-region replication supports up to five secondary regions for stronger disaster recovery and geographically distributed workloads. |
+| 2025-02-21 | Data import API |  | AlloyDB provides an API to import data into clusters and to cancel or check the status of import operations. |
+| 2025-02-14 | Active queries |  | Active queries provides visibility into currently running queries in AlloyDB. |
+| 2025-02-14 | Advanced query insights |  | Advanced query insights provides enhanced visibility into AlloyDB query performance and behavior. |
+| 2025-02-14 | Index advisor |  | Index advisor recommends database indexes to improve AlloyDB query performance; Index advisor is a fully managed recommendation feature that tracks recurring database queries. |
+| 2024-12-20 | Additional monitoring metrics in Cloud Monitoring dashboard |  | AlloyDB exposes additional preview monitoring metrics in Cloud Monitoring for cache performance and node health analysis. |
+| 2024-12-18 | Data export API |  | AlloyDB provides an API to export data from clusters and to cancel export operations. |
+| 2024-12-12 | AlloyDB System insights |  | AlloyDB System insights provides a unified and customizable database monitoring dashboard with predefined and Google Cloud metrics. |
+| 2024-12-05 | Database performance snapshot reports |  | Database performance snapshot reports compare system metrics across two points in time to help optimize database performance. |
+| 2024-11-21 | Model endpoint management |  | Model endpoint management lets AlloyDB register and call remote AI model endpoints by using sample templates; Model endpoint management lets AlloyDB and AlloyDB Omni register and call remote AI models. |
+| 2024-11-15 | Free trial clusters |  | AlloyDB offers free trial clusters across all available regions. |
+| 2024-11-12 | 128 TiB cluster storage capacity |  | AlloyDB supports up to 128 TiB of storage per cluster in all available regions. |
+| 2024-10-23 | PostgreSQL 16 compatibility |  | AlloyDB supports PostgreSQL 16 compatibility for new clusters and homogeneous migrations from PostgreSQL; AlloyDB supports preview PostgreSQL 16 compatibility for creating new clusters. |
+| 2024-10-10 | Read pool node restart |  | AlloyDB lets you restart one or more specific nodes in a read pool. |
+| 2024-10-02 | alloydb_scann extension |  | The alloydb_scann extension supports vector embedding storage, indexing, and tuning for faster vector query performance and recall; AlloyDB Omni uses the alloydb_scann extension as the renamed ScaNN-based nearest-neighbor indexing extension. |
+| 2024-09-30 | Outbound public IP connectivity |  | AlloyDB supports outbound public IP connectivity on primary and secondary instances. |
+| 2024-09-25 | Free trial cluster migration from Cloud SQL backup |  | AlloyDB free trial clusters can be set up by using a copy of a Cloud SQL for PostgreSQL backup. |
+| 2024-09-18 | AlloyDB Omni operator for Google Distributed Cloud connected |  | The AlloyDB Omni operator is available on Google Distributed Cloud connected for Kubernetes-based deployments. |
+| 2024-09-17 | Predefined CMEK organization policy |  | AlloyDB supports a predefined organization policy to require customer-managed encryption keys for clusters and backups. |
+| 2024-08-29 | BigQuery query federation |  | BigQuery query federation lets BigQuery query data stored in AlloyDB databases. |
+| 2024-08-16 | AlloyDB Omni Kubernetes Operator load balancer annotations |  | AlloyDB Omni Kubernetes Operator version 1.1.0 supports configuring a load balancer by using annotations. |
+| 2024-08-14 | AlloyDB Omni Kubernetes Operator pod scheduling for balanced node distribution |  | AlloyDB Omni Kubernetes Operator version 1.0.0 and later can schedule matching new database pods to balance node distribution across the cluster. |
+| 2024-08-08 | Active queries for read pool instances |  | Active queries monitoring can be used on AlloyDB read pool instances. |
+| 2024-08-08 | Enhanced Query Insights for read pool instances |  | Enhanced Query Insights can be used on AlloyDB read pool instances. |
+| 2024-08-05 | Configurable auto-failover check threshold |  | High availability configurations can customize how many failed checks occur before auto-failover starts. |
+| 2024-08-05 | Cross-data center replication |  | AlloyDB Omni supports cross-data center replication for automated disaster recovery setup. |
+| 2024-08-05 | Dedicated backup server |  | AlloyDB Omni supports a dedicated backup server for streamlined backup operations. |
+| 2024-08-05 | OpenShift support for AlloyDB Omni Kubernetes Operator |  | The AlloyDB Omni Kubernetes Operator supports Red Hat OpenShift 4.14 and later. |
+| 2024-08-05 | Persistent admin password secret |  | AlloyDB Omni no longer deletes the admin password secret after cluster creation when you specify it. |
+| 2024-08-05 | Variable read pool node count |  | AlloyDB Omni read pool instances can be configured with a variable number of nodes. |
+| 2024-07-31 | Gemini in Databases assistance |  | Gemini in Databases assistance helps monitor and troubleshoot AlloyDB resources across insights and advisor surfaces. |
+| 2024-07-22 | Public IP for AlloyDB instances |  | AlloyDB instances can be configured with public IP addresses; AlloyDB instances can be configured with a public IP address and accept connections from authorized external IP addresses. |
+| 2024-07-16 | Cross-region backup location |  | AlloyDB lets you store backups in a cross-region backup location. |
+| 2024-07-10 | Cloud Billing export queries with tags and resource names |  | AlloyDB supports querying exported Cloud Billing data by using resource-level tags and resource names. |
+| 2024-07-09 | Zero-data-loss switchover for cross-region replication |  | Cross-region replication supports switchover with zero data loss for disaster recovery testing and workload migration. |
+| 2024-07-01 | AlloyDB free trial clusters |  | AlloyDB free trial clusters provide time-limited access to most AlloyDB features with fixed compute and auto-scaling storage. |
+| 2024-06-25 | Arm architecture support for AlloyDB Omni |  | AlloyDB Omni supports Arm-based architectures. |
+| 2024-06-25 | Podman support for AlloyDB Omni |  | AlloyDB Omni supports the Podman container tool on Red Hat Enterprise Linux. |
+| 2024-06-25 | Simplified installation method for AlloyDB Omni |  | AlloyDB Omni can be installed and managed with common container-management tools such as Docker; AlloyDB Omni can be installed and run with portable open-source tools such as the Docker CLI. |
+| 2024-05-22 | BigQuery query federation with AlloyDB |  | BigQuery can query data stored in AlloyDB databases through query federation. |
+| 2024-05-10 | PostgreSQL Docker environment variable compatibility for AlloyDB Omni |  | The simplified AlloyDB Omni installation method supports all environment variables supported by the official PostgreSQL Docker image. |
+| 2024-05-07 | Private Service Connect |  | Private Service Connect lets clients connect to an AlloyDB instance from multiple VPC networks across groups, projects, or organizations. |
+| 2024-05-07 | Sidecar containers for AlloyDB Omni database clusters |  | The AlloyDB Omni Kubernetes Operator can add sidecar containers to a database cluster. |
+| 2024-05-06 | Password policies for local database users |  | AlloyDB lets you enforce password policies for local database users. |
+| 2024-05-01 | Maintenance event email notifications |  | AlloyDB can send email notifications about upcoming maintenance events. |
+| 2024-05-01 | Maintenance windows |  | AlloyDB clusters can be configured with weekly maintenance windows for non-emergency maintenance events. |
+| 2024-04-29 | 64 TiB cluster storage capacity |  | AlloyDB supports up to 64 TiB of storage per cluster; AlloyDB supports up to 64 TiB of storage per cluster in selected regions. |
+| 2024-04-09 | 4-week query metric retention |  | The Query Insights dashboard retains query metrics for four weeks. |
+| 2024-04-09 | Active queries monitoring |  | Active queries monitoring helps monitor and troubleshoot queries currently running in a database. |
+| 2024-04-09 | AlloyDB Studio |  | AlloyDB Studio lets authorized users run SQL queries and interact with databases from the Google Cloud console; AlloyDB Studio provides a single interface with an Explorer pane and enhanced query editor to browse, query, and modify databases. |
+| 2024-04-09 | Database Center |  | Database Center provides an AI-assisted dashboard with a centralized view across a database fleet. |
+| 2024-04-09 | Database insight recommendations |  | Gemini in Databases adds new database insight recommendations for database operations. |
+| 2024-04-09 | Enhanced Query Insights |  | Enhanced Query Insights provides assistive diagnostics to detect and troubleshoot database and query performance problems. |
+| 2024-04-09 | Natural language querying |  | AlloyDB Omni can query databases by using natural language. |
+| 2024-04-09 | postgres_ann extension |  | The postgres_ann extension provides a configurable nearest-neighbor index powered by the ScaNN algorithm. |
+| 2024-04-08 | Asynchronous read pool instances |  | AlloyDB Omni supports creating asynchronous read pool instances. |
+| 2024-04-08 | Database and system metrics for AlloyDB Omni |  | AlloyDB Omni exposes database and system metrics for monitoring. |
+| 2024-04-08 | Logical replication for AlloyDB Omni |  | AlloyDB Omni can enable and configure logical replication. |
+| 2024-04-08 | Multiple HA standby replicas |  | High availability AlloyDB Omni clusters can have more than one standby replica. |
+| 2024-04-08 | Node placement controls for AlloyDB Omni pods |  | AlloyDB Omni pods can be restricted to run on specific Kubernetes nodes. |
+| 2024-04-08 | pg_squeeze extension support |  | AlloyDB Omni includes the pg_squeeze extension. |
+| 2024-04-08 | Physical replication across Kubernetes clusters |  | AlloyDB Omni supports physical replication between primary and secondary clusters on separate Kubernetes clusters. |
+| 2024-04-08 | Point-in-time recovery for AlloyDB Omni backups |  | AlloyDB Omni backups support point-in-time recovery. |
+| 2024-04-08 | Read-only HA standby replicas |  | An AlloyDB Omni HA standby replica can be used as a read-only instance. |
+| 2024-04-08 | Stable connection parameters during HA failover |  | High availability AlloyDB Omni clusters can fail over without requiring connection parameter changes. |
+| 2024-03-13 | Automatic backup plan copy to secondary clusters |  | Backup plans on a primary cluster are automatically copied when a secondary cluster is created. |
+| 2024-03-13 | Continuous backup and recovery on secondary clusters |  | AlloyDB secondary clusters support continuous backup and recovery. |
+| 2024-03-13 | Scheduled backups on secondary clusters |  | AlloyDB secondary clusters support scheduled backups. |
+| 2024-03-12 | AlloyDB Language Connectors |  | AlloyDB Language Connectors provide mutual TLS, IAM-based authorization, and automatic IAM authentication for connections; AlloyDB Language Connectors are client libraries that provide mutual TLS, IAM-based authorization, and automatic IAM authentication. |
+| 2024-03-04 | Key Access Justifications for external CMEK keys |  | AlloyDB supports Key Access Justifications for external CMEK keys so you can view and manage external key access requests. |
+| 2024-02-29 | autoinc extension support |  | AlloyDB Omni includes support for the autoinc extension. |
+| 2024-02-29 | Automated failover for HA Kubernetes clusters |  | AlloyDB Omni supports automated failover for highly available Kubernetes-based clusters. |
+| 2024-02-29 | Configurable TCP port for AlloyDB Omni |  | AlloyDB Omni installations can specify the TCP port used for database connections. |
+| 2024-02-29 | insert_username extension support |  | AlloyDB Omni includes support for the insert_username extension. |
+| 2024-02-29 | moddatetime extension support |  | AlloyDB Omni includes support for the moddatetime extension. |
+| 2024-02-29 | tcn extension support |  | AlloyDB Omni includes support for the tcn extension. |
+| 2024-02-28 | Google Cloud tags for AlloyDB resources |  | AlloyDB supports Google Cloud tags on cluster and backup resources for granular IAM control. |
+| 2024-02-27 | Automatic IAM Authentication with AlloyDB Language Connectors |  | AlloyDB Language Connectors support Automatic IAM Authentication for cluster connections. |
+| 2024-02-20 | 128 vCPU instance configuration |  | AlloyDB instances can be configured with 128 vCPUs and 864 GB of RAM per node. |
+| 2024-02-09 | Public IP with AlloyDB Language Connectors |  | AlloyDB Language Connectors support connecting to clusters over public IP. |
+| 2024-01-24 | Cloud regions in events timeline |  | AlloyDB events timeline supports Cloud region information. |
+| 2024-01-22 | Cross-project restoration |  | AlloyDB can restore a cluster to a new cluster in a different Google Cloud project. |
+| 2023-12-18 | Incremental backups |  | AlloyDB automated and continuous backups now use incremental backups to reduce storage use and improve backup speed. |
+| 2023-12-15 | AlloyDB instance monitoring |  | AlloyDB instances can be monitored through System Insights, Cloud Monitoring, and cluster overview metrics. |
+| 2023-11-28 | Array type support in columnar engine |  | The AlloyDB columnar engine supports columns that use the array data type. |
+| 2023-11-15 | AlloyDB-scoped OAuth 2.0 access tokens |  | OAuth 2.0 access tokens can be restricted so they work only for AlloyDB authentication. |
+| 2023-11-15 | Automatic IAM database login with AlloyDB Auth Proxy |  | The AlloyDB Auth Proxy can automatically authenticate IAM-based database logins for the proxy's IAM account. |
+| 2023-11-08 | oracle_fdw extension support |  | AlloyDB supports the oracle_fdw extension for accessing Oracle databases through a foreign data wrapper. |
+| 2023-10-11 | AlloyDB Omni Kubernetes Operator |  | The AlloyDB Omni Kubernetes Operator extends the Kubernetes API to deploy and manage AlloyDB Omni clusters. |
+| 2023-09-28 | Read pool instances on secondary clusters |  | AlloyDB secondary clusters support read pool instances. |
+| 2023-09-21 | Basic instances |  | AlloyDB basic instances provide a lower-cost single-node primary instance option for non-production use cases. |
+| 2023-09-21 | PostgreSQL 15 compatibility |  | AlloyDB clusters can be created with PostgreSQL 15 compatibility. |
+| 2023-09-15 | Low-downtime maintenance for HA primary instances |  | Maintenance operations on highly available AlloyDB primary instances now typically complete with less than one second of downtime. |
+| 2023-09-13 | Cloud External Key Manager integration |  | AlloyDB can use and manage data encryption keys stored outside Google Cloud through Cloud External Key Manager. |
+| 2023-09-08 | Private services access IP range selection |  | AlloyDB lets you specify a private services access IP range when creating a cluster. |
+| 2023-08-29 | AlloyDB AI |  | AlloyDB AI is a suite of features for building generative AI applications in AlloyDB and AlloyDB Omni. |
+| 2023-08-29 | AlloyDB ML extension embedding function |  | The AlloyDB machine learning extension provides an embedding SQL function that creates vector embeddings from text using ML models. |
+| 2023-08-29 | AlloyDB Omni 15 compatibility |  | AlloyDB Omni version 15.2.0 adds compatibility with PostgreSQL server version 15. |
+| 2023-08-29 | AlloyDB Omni command-line interface |  | AlloyDB Omni version 15.2.0 introduces a command-line interface for easier installation and maintenance. |
+| 2023-08-29 | AlloyDB Omni Technology Preview edition |  | A separate Technology Preview edition of AlloyDB Omni is available for experimenting with AlloyDB AI functionality. |
+| 2023-08-29 | pgvector support |  | AlloyDB supports the pgvector extension with performance enhancements for vector queries and vector indexing using scalar quantization; AlloyDB supports the pgvector extension for working with vector data. |
+| 2023-08-29 | Vertex AI integration |  | AlloyDB Omni version 15.2.0 adds integration with Vertex AI. |
+| 2023-08-22 | Connector enforcement |  | AlloyDB can require applications to connect through AlloyDB connectors such as the Auth Proxy. |
+| 2023-08-22 | SSL enforcement mode |  | AlloyDB lets you enforce SSL encryption for all database connections to an instance. |
+| 2023-08-16 | 96 vCPU machine type |  | AlloyDB instance machine-type configuration adds an option with 96 vCPUs and 768 GB of RAM per node. |
+| 2023-08-16 | Committed use discounts |  | AlloyDB offers committed use discounts on compute resources for one-year and three-year terms. |
+| 2023-08-08 | AlloyDB Omni PostgreSQL 15 support |  | AlloyDB Omni version alloydb-omni-0.3.0-preview-postgresql-15.2 introduces PostgreSQL 15 support. |
+| 2023-07-28 | Cloud Asset Inventory support |  | AlloyDB integrates with Cloud Asset Inventory. |
+| 2023-07-18 | Data Residency support |  | AlloyDB supports Data Residency controls. |
+| 2023-07-18 | Resource location policies |  | AlloyDB supports resource location policies to constrain where new in-scope resources can be created. |
+| 2023-06-30 | Fault injection |  | Fault injection lets you simulate an outage on a cluster's primary instance to test high availability failover. |
+| 2023-06-30 | Vectorized join |  | Vectorized join is a columnar engine capability that improves qualifying join performance through vectorized processing. |
+| 2023-06-27 | bytea |  | The AlloyDB columnar engine supports boolean, bytea, enum, and uuid column data types. |
+| 2023-06-27 | Columnar engine boolean |  | The AlloyDB columnar engine supports boolean, bytea, enum, and uuid column data types. |
+| 2023-06-27 | enum |  | The AlloyDB columnar engine supports boolean, bytea, enum, and uuid column data types. |
+| 2023-06-27 | IAM authentication |  | IAM authentication lets IAM users and service accounts log into AlloyDB instances as database users. |
+| 2023-06-21 | Cross-region replication |  | AlloyDB cross-region replication replicates cluster data and resources to another region for disaster recovery; AlloyDB cross-region replication makes primary cluster data and resources available in other regions for disaster recovery. |
+| 2023-06-12 | Quota increase requests |  | AlloyDB quotas can be increased by submitting a request through the Quotas page. |
+| 2023-06-12 | Storage quota management |  | AlloyDB lets you manage cluster storage quotas through the Quotas page. |
+| 2023-06-01 | Continuous backup and recovery |  | Continuous backup and recovery lets you restore cluster data from any point within a configurable recovery window; Continuous backup and recovery lets you recover cluster data from any moment within a configurable window. |
+| 2023-05-17 | FORCE_APPLY update policy |  | The FORCE_APPLY update policy lets AlloyDB apply database flag changes and updates faster to an instance. |
+| 2023-05-12 | Admin API user management |  | The AlloyDB Admin API includes user-management methods for managing cluster user roles with gcloud. |
+| 2023-05-11 | 32 TiB cluster storage limit |  | AlloyDB increases the storage limit per cluster to 32 TiB. |
+| 2023-05-10 | Columnar engine json and jsonb support |  | The AlloyDB columnar engine supports json and jsonb column data types. |
+| 2023-05-05 | AlloyDB Omni 2 GB memory requirement |  | AlloyDB Omni version alloydb-omni-0.2.0-preview-postgresql-14.4 reduces the memory requirement to 2 GB of RAM. |
+| 2023-04-24 | Read pool node health metrics |  | AlloyDB provides metrics for monitoring individual read pool node health and troubleshooting read pool queries. |
+| 2023-03-29 | AlloyDB Omni |  | AlloyDB Omni is a downloadable edition of AlloyDB for PostgreSQL that runs a containerized AlloyDB database engine in your own environment. |
+| 2023-03-06 | AlloyDB Admin API client libraries |  | Cloud Client Libraries are available for the AlloyDB Admin API in C++, C#, Go, and Java. |
+| 2022-12-01 | Clusters page health overview |  | The AlloyDB Clusters page shows summary cards and a resource table for monitoring database fleet health and performance. |
+| 2022-09-15 | Database Migration Service support |  | Google Cloud Database Migration Service supports migrations to AlloyDB. |
+| 2022-09-15 | Datastream source support |  | AlloyDB databases can be used as source databases for Datastream. |
+| 2022-08-25 | Customer-managed encryption keys |  | AlloyDB supports customer-managed encryption keys as an alternative to Google-managed encryption. |
+| 2022-08-24 | Primary instance zone visibility |  | AlloyDB lets you view which zones host a primary instance's active and standby VMs. |
+| 2022-07-12 | 2 vCPU machine size |  | AlloyDB supports primary and read-pool instance machine sizes as small as 2 vCPUs with 16 GB of RAM. |
+| 2022-05-31 | VPC Service Controls support |  | AlloyDB supports VPC Service Controls to help mitigate data exfiltration risk. |
 
 Source file slug: `alloydb.md`
 

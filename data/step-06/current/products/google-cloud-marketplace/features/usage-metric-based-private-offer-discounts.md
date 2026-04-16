@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:31.015Z"
+generated_at: "2026-04-12T12:16:28.828Z"
 product_name: "Google Cloud Marketplace"
 product_slug: "google-cloud-marketplace"
 feature_name: "Usage-metric-based private offer discounts"
 feature_slug: "usage-metric-based-private-offer-discounts"
 latest_feature_date: "2022-09-15"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements"
+  - "https://docs.cloud.google.com/marketplace/docs/billing"
+  - "https://docs.cloud.google.com/marketplace/docs/access-control"
+  - "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type"
 keywords:
   - "usage"
   - "metric"
@@ -24,7 +27,7 @@ keywords:
 # Usage-metric-based private offer discounts
 
 Product: Google Cloud Marketplace
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Vendors can set more granular discounts on usage metrics in private offers.
 
 Vendors can set more granular discounts on usage metrics in private offers.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements](https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements)
+- [https://docs.cloud.google.com/marketplace/docs/billing](https://docs.cloud.google.com/marketplace/docs/billing)
+- [https://docs.cloud.google.com/marketplace/docs/access-control](https://docs.cloud.google.com/marketplace/docs/access-control)
+- [https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type](https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "REST Resource: providers.entitlements \_|\_ Google Cloud Marketplace Partners\
+
+- URL: [https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements](https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements)
+- Source ID: `site-api-reference`
+- Final score: 151
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If the entitlement is in the state ENTITLEMENT PENDING PLAN CHANGE APPROVAL or ENTITLEMENT PENDING PLAN CHANGE: If the entitlement's pricing model is usage based and the associated offer is a private offer whose term has ended, then this field reflects the ACTUAL end time of the entitlement's associated offer (in the past), even though the entitlement associated with this private offer does not terminate at the end of that private offer's term.
+- JSON representation { "name" : string , "account" : string , "provider" : string , "product" : string , "quoteExternalName" : string , "productExternalName" : string , "plan" : string , "offer" : string , "newPendingOffer" : string , "newOfferStartTime" : string , "offerDuration" : string , "newPendingOfferDuration" : string , "offerEndTime" : string , "newOfferEndTime" : string , "newPendingPlan" : string , "state" : enum ( EntitlementState ) , "inputProperties" : { object } , "updateTime" : string , "createTime" : string , "usageReportingId" : string , "messageToUser" : string , "consumers" : [ { object ( Consumer ) } ] , "subscriptionEndTime" : string , "orderId" : string , "entitlementBenefitIds" : [ string ] , "cancellationReason" : string } Fields name string Output only.
+- If the entitlement is in the state ENTITLEMENT ACTIVE, ENTITLEMENT PENDING CANCELLATION, ENTITLEMENT PENDING PLAN CHANGE, or ENTITLEMENT PENDING PLAN CHANGE APPROVAL, and the current offer doesn't have a specified end date, then this field contains the duration of the current offer.
+- If the entitlement is in the state ENTITLEMENT ACTIVE, ENTITLEMENT PENDING CANCELLATION, ENTITLEMENT PENDING PLAN CHANGE, or ENTITLEMENT PENDING PLAN CHANGE APPROVAL, this field is populated with the current offer.
+
+### Billing for Google Cloud Marketplace products \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/marketplace/docs/billing](https://docs.cloud.google.com/marketplace/docs/billing)
+- Source ID: `site-iam-reference`
+- Final score: 139
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Vendors can create private offers that let you purchase their products at a discount.
+- How you're charged for software Vendors offering Cloud Marketplace products choose how they set up their products' pricing plans.
+- For more information about accepting private offers for Cloud Marketplace products, see Accept a private offer from a vendor .
+- When you get a product from a private offer, you see the pricing in the offer before you accept it.
+
+### "Access control with IAM \_|\_ Google Cloud Marketplace \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/marketplace/docs/access-control](https://docs.cloud.google.com/marketplace/docs/access-control)
+- Source ID: `site-docs-root`
+- Final score: 128
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Role Permissions Commerce Business Enablement Configuration Admin Beta ( roles/ commercebusinessenablement.admin ) Admin of Various Provider Configuration resources bigquery.datasets.create bigquery.datasets.get bigquery.datasets.update commercebusinessenablement. leadgenConfig. commercebusinessenablement. leadgenConfig. get commercebusinessenablement. leadgenConfig. update commercebusinessenablement. partnerAccounts. commercebusinessenablement. partnerAccounts. get commercebusinessenablement. partnerAccounts. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. resellerConfig. commercebusinessenablement. resellerConfig. get commercebusinessenablement. resellerConfig. update commercebusinessenablement. resellerRestrictions. commercebusinessenablement. resellerRestrictions. list commercebusinessenablement. resellerRestrictions. update resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list serviceusage.operations.get serviceusage.services.enable serviceusage.services.get Commerce Business Enablement Configuration Viewer Beta ( roles/ commercebusinessenablement.viewer ) Viewer of Various Provider Configuration resource commercebusinessenablement. leadgenConfig. get commercebusinessenablement. partnerAccounts. commercebusinessenablement. partnerAccounts. get commercebusinessenablement. partnerAccounts. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. resellerConfig. get commercebusinessenablement. resellerRestrictions. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Commerce Business Enablement PaymentConfig Admin Beta ( roles/ commercebusinessenablement.paymentConfigAdmin ) Administration of Payment Configuration resource commercebusinessenablement. partnerInfo. get commercebusinessenablement. paymentConfig. commercebusinessenablement. paymentConfig. get commercebusinessenablement. paymentConfig. update resourcemanager.projects.get resourcemanager.projects.list Commerce Business Enablement PaymentConfig Viewer Beta ( roles/ commercebusinessenablement.paymentConfigViewer ) Viewer of Payment Configuration resource commercebusinessenablement. partnerInfo. get commercebusinessenablement. paymentConfig. get resourcemanager.projects.get resourcemanager.projects.list Commerce Business Enablement Rebates Admin Beta ( roles/ commercebusinessenablement.rebatesAdmin ) Provides admin access to rebates commercebusinessenablement. operations. commercebusinessenablement. operations. cancel commercebusinessenablement. operations. delete commercebusinessenablement. operations. get commercebusinessenablement. operations. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. refunds. commercebusinessenablement. refunds. cancel commercebusinessenablement. refunds. create commercebusinessenablement. refunds. delete commercebusinessenablement. refunds. get commercebusinessenablement. refunds. list commercebusinessenablement. refunds. start commercebusinessenablement. refunds. update Commerce Business Enablement Rebates Viewer Beta ( roles/ commercebusinessenablement.rebatesViewer ) Provides read-only access to rebates commercebusinessenablement. operations. get commercebusinessenablement. operations. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. refunds. get commercebusinessenablement. refunds. list Commerce Business Enablement Reseller Discount Admin Beta ( roles/ commercebusinessenablement.resellerDiscountAdmin ) Provides admin access to reseller discount offers commercebusinessenablement. partnerAccounts. commercebusinessenablement. partnerAccounts. get commercebusinessenablement. partnerAccounts. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. resellerConfig. get commercebusinessenablement. resellerDiscountConfig. get commercebusinessenablement. resellerDiscountOffers. commercebusinessenablement. resellerDiscountOffers. cancel commercebusinessenablement. resellerDiscountOffers. create commercebusinessenablement. resellerDiscountOffers. list commercebusinessenablement. resellerPrivateOfferPlans. commercebusinessenablement. resellerPrivateOfferPlans. cancel commercebusinessenablement. resellerPrivateOfferPlans. create commercebusinessenablement. resellerPrivateOfferPlans. delete commercebusinessenablement. resellerPrivateOfferPlans. get commercebusinessenablement. resellerPrivateOfferPlans. list commercebusinessenablement. resellerPrivateOfferPlans. publish commercebusinessenablement. resellerPrivateOfferPlans. update resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Commerce Business Enablement Reseller Discount Viewer Beta ( roles/ commercebusinessenablement.resellerDiscountViewer ) Provides read-only access to reseller discount offers commercebusinessenablement. partnerAccounts. commercebusinessenablement. partnerAccounts. get commercebusinessenablement. partnerAccounts. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. resellerConfig. get commercebusinessenablement. resellerDiscountConfig. get commercebusinessenablement. resellerDiscountOffers. list commercebusinessenablement. resellerPrivateOfferPlans. get commercebusinessenablement. resellerPrivateOfferPlans. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Granting IAM roles to users From the roles in the table above, the consumerprocurement.orderAdmin and consumerprocurement.orderViewer roles must be assigned at the billing account or organization level, and the consumerprocurement.entitlementManager and consumerprocurement.entitlementViewer roles must be assigned at the project or organization level.
+- Minimal permissions for specific products The following products can operate on a different set of permissions to access SSO capabilities: Apache Kafka on Confluent Cloud DataStax Astra for Apache Cassandra Elastic Cloud Neo4j Aura Professional Redis Enterprise Cloud For these products, you can use the following minimal permissions: consumerprocurement.entitlements.get consumerprocurement.entitlements.list serviceusage.services.get serviceusage.services.list resourcemanager.projects.get These permissions are typically granted with the roles/consumerprocurement.entitlementManager or roles/consumerprocurement.entitlementViewer roles.
+- Billing account You must have the billing.admin role to assign roles at the billing account level. gcloud beta billing accounts set-iam-policy account-id \ policy-file The placeholder values are: account-id : Your billing account ID, which you can get from the Manage billing accounts page . policy-file : An IAM policy file , in JSON or YAML format.
+- Product-specific requirements To use the following services in a Google Cloud project, you must have the Project Editor role: Google Cloud Dataprep by Trifacta Neo4j Aura Professional Redis Enterprise Cloud List of IAM roles and permissions You can grant users one or more of the following IAM roles.
+
+### Pricing plans for Google Cloud Marketplace products \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type](https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type)
+- Source ID: `site-iam-reference`
+- Final score: 119
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Vendors offering Cloud Marketplace products can choose how they want to set up their products' pricing plans.
+- Usage fees, based on the resources in your deployment, such as the number of vCPUs, the amount of memory, or the number of GPUs in your deployment.
+- Pricing plans for Kubernetes apps The types of plans for Kubernetes apps include: Usage fees, based on measurements set by the vendor.
+- Usage-based , based on measurements set by the vendor.
 

@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.355Z"
+generated_at: "2026-04-14T11:18:28.008Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Cloud Bigtable committed use discounts"
 feature_slug: "cloud-bigtable-committed-use-discounts"
 latest_feature_date: "2023-07-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
-  - "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users"
+  - "https://docs.cloud.google.com/bigtable/docs/cuds"
+  - "https://docs.cloud.google.com/bigtable/docs/resources"
   - "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
 keywords:
   - "committed"
   - "discounts"
-  - "use"
+  - "year"
   - "generally"
   - "available"
-  - "bigtable"
-  - "are"
-  - "for"
 ---
 
 # Cloud Bigtable committed use discounts
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,51 @@ Committed use discounts are generally available for Cloud Bigtable with one-year
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users](https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users)
-- [https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users](https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users)
+- [https://docs.cloud.google.com/bigtable/docs/cuds](https://docs.cloud.google.com/bigtable/docs/cuds)
+- [https://docs.cloud.google.com/bigtable/docs/resources](https://docs.cloud.google.com/bigtable/docs/resources)
 - [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient)
 
 ## Supporting Pages
 
-### Bigtable for Cassandra users \_|\_ Google Cloud Documentation
+### Committed use discounts \_|\_ Bigtable \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users](https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users)
-- Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- In a blog post (2012) , Ilya Grigorik writes the following: "An SSTable is a simple abstraction to efficiently store large numbers of key-value pairs while optimizing for high throughput, sequential read or write workloads." The following table outlines and describes shared concepts and the corresponding terminology that each product uses: Cassandra Bigtable primary key : a unique single or multi-field value that determines data placement and ordering. partition key : a single or multi-field value that determines data placement by consistent hash. clustering column : a single or multi-field value that determines the lexicographical data sorting within a partition. row key : a unique, single byte string that determines the placement of data by a lexicographical sort.
-- Bigtable handles keyspace concerns transparently. map : a Cassandra collection type that holds key-value pairs. column family : a user-specified namespace that groups column qualifiers for more efficient reads and writes.
-- If Bigtable identifies that range-assignment rebalancing is required for a dataset, the data ranges for a processing node are straightforward to change because the storage layer is separated from the processing layer.
-- This document is for software developers and database administrators who want to migrate existing applications or design new applications for use with Bigtable as a database.
-
-### Bigtable for Aerospike users \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users](https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users)
-- Source ID: `site-docs-root-2`
-- Final score: 188
+- URL: [https://docs.cloud.google.com/bigtable/docs/cuds](https://docs.cloud.google.com/bigtable/docs/cuds)
+- Source ID: `site-docs-reference-2`
+- Final score: 125
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Data types limits The following table compares the limits for data types used by Aerospike and Bigtable: Aerospike Bigtable namespace : The maximum number of namespaces for the Enterprise Edition is 32. table : An instance can have up to 1,000 tables.
-- Performance considerations Because Aerospike and Bigtable treat read and write operations differently, they have performance differences which are important to consider.
-- Home Technology areas Bigtable Guides Send feedback Bigtable for Aerospike users Stay organized with collections Save and categorize content based on your preferences.
-- The following table outlines and describes shared concepts and the corresponding terminology that each product uses: Aerospike Bigtable No directly corresponding item. instance : a managed group of clusters in different Google Cloud zones or regions between which replication and connection routing occur. cluster : an Aerospike deployment consisting of a collection of nodes. cluster : a group of nodes in the same geographic Google Cloud zones. node : a server providing compute and owning its storage. node : a server providing compute only.
+- From the pricing page , see the price in the column labeled Cost per node with 1-year committed use discounts to calculate the approximate hourly commitment cost: Expenditure in us-central1 : 10 nodes $0.52 per node per hour = $5.20 per hour Expenditure in us-west2 : 20 nodes $0.624 per node per hour = $12.48 per hour Total expenditure across all regions: $6.50 + $15.60 = $17.68 per hour ($12,906.40 per month or $154,876.80 per year).
+- Committed use discounts (CUDs) for Bigtable provide discounted prices in exchange for your commitment to continuously spend a minimum hourly amount on Bigtable capacity for a year or longer.
+- Important: This page explains the new and improved committed use discounts (CUDs) program, which applies to any customers who purchase their first CUDs on or after July 15, 2025 .
+- Bigtable CUD pricing Bigtable offers two levels of discounts, depending on the commitment period: 20% discount : You get this by committing to a 1-year term.
+
+### Resources \_|\_ Bigtable \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigtable/docs/resources](https://docs.cloud.google.com/bigtable/docs/resources)
+- Source ID: `site-docs-reference`
+- Final score: 59
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Committed use discounts Discounts for Bigtable nodes when you make a commitment to continuously spend a certain amount for one year or three years.
+- Locations Locations where Bigtable is available.
 
 ### "Class BigtableTableAdminAsyncClient (2.35.0) \_|\_ Python client libraries\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 172
+- Final score: 58
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.bigtable import admin v2 async def sample restore table(): Create a client client = admin v2.BigtableTableAdminAsyncClient() Initialize request argument(s) request = admin v2.RestoreTableRequest( backup="backup value", parent="parent value", table id="table id value", ) Make the request operation = await client.restore table(request=request) print("Waiting for operation to complete...") response = await operation.result() Handle the response print(response) Handle LRO2 optimize operation = await operation.optimize restore table operation() if optimize operation: print("Waiting for table optimization to complete...") response = await optimize operation.result() Parameters Name Description request Union[ google.cloud.bigtable admin v2.types.RestoreTableRequest , dict] The request object.
-- CreateTableFromSnapshotRequest ( parent="parent value", table id="table id value", source snapshot="source snapshot value", ) Make the request operation = client. create table from snapshot (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.bigtable admin v2.types.CreateTableFromSnapshotRequest , dict]] The request object.
-- CreateSchemaBundleRequest ( parent="parent value", schema bundle id="schema bundle id value", schema bundle=schema bundle, ) Make the request operation = client. create schema bundle (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.bigtable admin v2.types.CreateSchemaBundleRequest , dict]] The request object.
-- CreateAuthorizedViewRequest ( parent="parent value", authorized view id="authorized view id value", ) Make the request operation = client. create authorized view (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.bigtable admin v2.types.CreateAuthorizedViewRequest , dict]] The request object.
+- Union [ str , bytes ]]] = () ) - > bool Blocks until the mutations for the specified Table that have been made before the call have been replicated or reads using an app profile with DataBoostIsolationReadOnly can see all writes committed before the token was created.
+- If the data boost read local writes mode is specified in the request object, returns True after reads using an app profile with DataBoostIsolationReadOnly can see all writes committed before the token was created.
+- Generally, you only need to set this if you're developing your own client library.
+- This feature is not currently available to most Cloud Bigtable customers.
 

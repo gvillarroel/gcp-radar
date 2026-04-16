@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.837Z"
+generated_at: "2026-04-12T12:17:49.240Z"
 product_name: "Mainframe Connector"
 product_slug: "mainframe-connector"
 feature_name: "bq query split_sql optimization"
 feature_slug: "bq-query-split-sql-optimization"
 latest_feature_date: "2024-03-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-connector/docs/release-notes"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/api-reference"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/reference"
 keywords:
   - "bq"
   - "query"
@@ -24,7 +27,7 @@ keywords:
 # bq query split_sql optimization
 
 Product: Mainframe Connector
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,23 +39,67 @@ The bq query command uses split_sql by default to split multiple SQL statements 
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-connector/docs/release-notes](https://docs.cloud.google.com/mainframe-connector/docs/release-notes)
+- [https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference)
+- [https://docs.cloud.google.com/mainframe-connector/docs/api-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-reference)
+- [https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding](https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding)
+- [https://docs.cloud.google.com/mainframe-connector/docs/reference](https://docs.cloud.google.com/mainframe-connector/docs/reference)
 
 ## Supporting Pages
 
-### Mainframe Connector release notes | Google Cloud Documentation
+### Mainframe Connector command-line reference \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-connector/docs/release-notes](https://docs.cloud.google.com/mainframe-connector/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 42
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference)
+- Source ID: `site-docs-reference`
+- Final score: 212
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Connector release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-connector/docs/release-notes Supports configuring the maximum time you want Mainframe Connector to wait for a BigQuery job to complete using a new flag max polling interval ms with the bq load command.
-- For more granular control over data transfer, you can now specify chunk sizes below 64MiB using the maxChunkSize flag with the gsutil cp command. ...
-- The default value is 60000 milliseconds (1 minute).
+- The bq query command uses the following flags and arguments: --project id = ID Specify the project to use to execute this command. --allow large results (Optional) Use large destination table sizes for legacy SQL queries. --append table (Optional) Append the loaded data to the existing data in the destination table. --batch (Optional) Run the query in batch mode. --clustering fields = FIELDS (Optional) Specify a comma-separated list of up to four column names that specify the fields to use for table clustering.
+- The bq export command uses the following flags and arguments: --project id = ID Specify the project to use to execute this command. --allow large results (Optional) Use large destination table sizes for legacy SQL queries. --batch (Optional) Run the query in batch mode. --bucket = BUCKET (Optional) Specify a location within Cloud Storage to write the command's output.
+- Synopsis bq mk [options] Flags and arguments The bq mk command uses the following flags and arguments: --project id = ID Specify the project to use to execute this command. --tablespec = TABLE Specify the destination table for the data.
+- The default value is 20. --use cache = {true false} (Optional) To cache the query results, set to true. --use legacy sql (Optional) Use legacy SQL instead of standard SQL. bq load Load data into a BigQuery table.
+
+### Mainframe Connector API commands \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/api-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-reference)
+- Source ID: `site-docs-reference`
+- Final score: 186
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- No bq query Use this command to create a query job that runs the specified SQL query.
+- Query file SELECT FROM bigquery-public-data.samples.wikipedia WHERE title = @mytitle AND num characters > @min chars; Execution example bq query \ --project id=mainframe-connector-dev \ --location="US" \ --parameters=mytitle::Hippocrates,min chars:INT64:42600 Perform a dry run of the gsutil cp command The gsutil cp command decodes a QSAM file using a COBOL copybook, and generates an ORC file on Cloud Storage.
+- The bq mk command provides the following configuration options to support this feature: --schema from copybook : Specifies the copybook to use to create the table. --dry run : (Optional) When enabled, the command only prints the generated CREATE TABLE SQL command without executing it.
+- If you execute the gsutil cp or bq export commands with the --remote flag to perform remote transcoding , Mainframe Connector uses the local value set for the BQSH FEATURE CUSTOM CHARSET environment variable.
+
+### "Move data transcoded locally on the mainframe to Google Cloud \_|\_ Mainframe\
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding](https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding)
+- Source ID: `site-docs-root`
+- Final score: 159
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If your input dataset is a Queued Sequential Access Method (QSAM) file with fixed or variable record length, use the following command: //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //STDIN DD BUCKET= BUCKET NAME qsam decode --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG dd:INFILE gs://$BUCKET/tablename / If your input dataset is a Virtual Storage Access Method (VSAM) file with fixed or variable record length, use the following command: //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //STDIN DD BUCKET= BUCKET NAME vsam decode --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG dd:INFILE gs://$BUCKET/tablename / Replace BUCKET NAME with the name of the Cloud Storage bucket to which you want to copy mainframe data.
+- You can modify the default behavior of the Mainframe Connector transcoding process by providing a transcoder configuration file using the --transcode-configuration argument. //STEP04 EXEC BQSH //OUTFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT=PROJECT NAME qsam encode \ dd:QUERY dd:OUTFILE --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG --input-format=BIGQUERY \ --input-parameter project id= PROJECT NAME \ --input-parameter location= LOCATION / / Replace the following: PROJECT NAME : the name of the project in which you want to execute the query.
+- Example JCL //STEP04 EXEC BQSH //OUTFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT= PROJECT NAME DATASET ID= DATASET ID DESTINATION TABLE= DESTINATION TABLE bq export --project id=$PROJECT \ --dataset id=$DATASET ID \ --destination table=$DESTINATION TABLE \ --location="US" \ --remoteHost <mainframe-connector-url>.a.run.app \ --remotePort 443 / Replace the following: PROJECT NAME : The name of the project in which you want to execute the query.
+- Move data transcoded locally on the mainframe to Google Cloud To transcode data locally on a mainframe and then move it to BigQuery, you must perform the following tasks: Read and transcode a dataset on a mainframe, and upload it to Cloud Storage in the ORC format (for other formats supported only by the qsam or vsam commands, see TranscodeFormat ).
+
+### Mainframe Connector reference \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/reference](https://docs.cloud.google.com/mainframe-connector/docs/reference)
+- Source ID: `site-docs-reference`
+- Final score: 147
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- CREATE TABLE [PROJECT ID].[DATASET NAME].[TABLE NAME] ( timestamp TIMESTAMP, job id STRING, job name STRING, job date DATE, job time TIME, job step name STRING, job type STRING, source STRING, destination STRING, job json STRING, rows read INT64, rows written INT64, rows affected INT64, rows inserted INT64, rows deleted INT64, rows updated INT64, rows unmodified INT64, rows before merge INT64, rows loaded INT64, bq job id STRING, bq job project STRING, bq job location STRING, statement type STRING, query STRING, execution ms INT64, queued ms INT64, bytes processed INT64, slot ms INT64, slot utilization rate FLOAT64, slot ms to total bytes ratio FLOAT64, shuffle bytes FLOAT64, shuffle bytes to total bytes ratio FLOAT64, shuffle spill bytes FLOAT64, shuffle spill bytes to shuffle bytes ratio FLOAT64, shuffle spill bytes to total bytes ratio FLOAT64, shuffle spill gb FLOAT64, bq stage count INT64, bq step count INT64, bq sub step count INT64, bq stage summary STRING) PARTITION BY job date CLUSTER BY job name, job id, job step name OPTIONS ( partition expiration days=1000, description="Log table for mainframe jobs", require partition filter=true) Replace the following: PROJECT NAME : the name of the project in which you want to execute the command.
+- To enable the load statistics feature, create a table using the following command and add the flag --stats table TABLE NAME to the cp command, where TABLE NAME is the name of the SQL table.
+- Enable load statistics The load statistics feature logs every command that you execute using Mainframe Connector in a SQL table.
+- Dataset names You can use the following dataset definition (DD) files in your BQSH JCL procedure.
 

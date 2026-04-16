@@ -116,6 +116,25 @@ To get the latest product updates delivered to you, add the URL of this page to 
 feed
 reader , or add the
 feed URL directly.
+April 13, 2026
+Change
+The validation of the HealthCheckPolicy custom resource from the
+GKE Gateway API is more rigorous in GKE
+version 1.34 and later. Existing HealthCheckPolicy resources that already
+contain mismatched type fields in the config are exempted and continue to
+function. However, updates to any existing policy must not introduce a
+mismatched type field in the config or change currently mismatched
+fields to new invalid values.
+When the HealthCheckPolicy custom resource is validated, the type field
+is now verified against the specified health check. For example, if
+type: TCP is specified but httpHealthCheck is configured, then the fields
+are mismatched and kubectl rejects the policy. However, for this same example,
+if type: TCP is specified and tcpHealthCheck is configured, then the
+fields are valid.
+Earlier versions of GKE accept custom resources that don't have matching fields. If you use an earlier version, the type field is used
+and the configuration in the health check field is ignored.
+For more details, see
+Configure health checks .
 April 09, 2026
 Change
 (2026-R14) Version updates
@@ -27568,6 +27587,6 @@ explicitly, set autoUpgrade to false in the NodeManagement
 object.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

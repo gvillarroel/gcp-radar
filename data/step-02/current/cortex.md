@@ -5,14 +5,13 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 11
-Unique features: 20
+Unique features: 19
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
 | 2025-12-17 | Data Mesh | 2025-12-17 | Data Mesh provides metadata-driven data governance capabilities within Cortex Framework for SAP deployments; deprecated on 2025-12-17. |
 | 2025-09-19 | GLDocumentsHdr view | 2025-09-19 | GLDocumentsHdr is a Cortex SAP reporting view for header-level general ledger document data; deprecated on 2025-09-19. |
 | 2025-09-19 | RegionsMD view | 2025-09-19 | RegionsMD is a Cortex SAP reporting view for regional master data; deprecated on 2025-09-19. |
-| 2025-04-22 | CATGAP | 2025-04-22 | CATGAP is a Cortex accelerator for category gap analysis use cases; CATGAP is a Cortex accelerator for category gap analysis use cases; deprecated on 2025-04-22. |
 | 2025-04-22 | Cortex for Meridian |  | Cortex for Meridian supplies ready data models and automated Meridian model execution workflows for marketing mix modeling on Google Cloud. |
 | 2025-04-22 | SAP Machine Learning models | 2025-04-22 | SAP Machine Learning models provide prebuilt ML capabilities for Cortex SAP scenarios; deprecated on 2025-04-22. |
 | 2025-04-22 | Task Dependent DAGs |  | Task Dependent DAGs provide out-of-the-box and customizable task dependency configurations for SAP ECC and S/4 reporting pipelines. |

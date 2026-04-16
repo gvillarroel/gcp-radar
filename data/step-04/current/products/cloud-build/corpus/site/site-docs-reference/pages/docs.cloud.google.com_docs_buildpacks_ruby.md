@@ -1,0 +1,86 @@
+---
+title: "Building a Ruby application \_|\_ Buildpacks \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/docs/buildpacks/ruby
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/docs/buildpacks/build-application
+source_metadata:
+  url: https://docs.cloud.google.com/docs/buildpacks/ruby
+  title: "Building a Ruby application \_|\_ Buildpacks \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Application hosting
+Buildpacks
+Guides
+Send feedback
+Building a Ruby application
+Stay organized with collections
+Save and categorize content based on your preferences.
+Specifying Versions of Ruby
+The buildpacks project provides support for the current release and Active LTS release of Ruby. Older releases of Ruby are available but may not be actively maintained by the project.
+Using Gemfile.lock
+If your application uses bundler, you should have Gemfile.lock at the root of your repo. Ruby buildpacks will automatically use a version that's locked in your Gemfile.lock.
+For example, if your Gemfile.lock has the following:
+RUBY VERSION
+ruby 3 . 0 . 3 p0
+The buildpacks will automatically use Ruby 3.0.3, with the latest patch level.
+Using GOOGLE_RUNTIME_VERSION
+If you're not using bundler, you can specify a ruby version using the environment variable as follows:
+pack build --builder = gcr.io/buildpacks/builder \
+sample-ruby \
+--env GOOGLE_RUNTIME_VERSION = 3 .0.3
+You can also use a project.toml project descriptor to encode
+the environment variable alongside your project files. See instructions on
+building the application with environment variables .
+If you're using bundler, GOOGLE_RUNTIME_VERSION can't be used to override the specified version in Gemfile.lock
+under RUBY VERSION .
+Installing Dependencies
+Using Bundler
+Bundler is the default package manager
+Commit Gemfile.lock to your repo since we use the lock file to build the app
+By default only production dependencies are installed
+Bundler Version
+Bundler has known compatibility issues .
+If your application uses bundler, due to various compatibility issues with Ruby and Rubygems, we update
+the Gemfile.lock in the built app to use one of the two supported versions.
+All applications using bundler 1.* and 2.* in BUNDLED WITH are normalized to use bundler 1.17.3 and 2.3.15.
+Specifying an Entrypoint
+Using Procfile
+You can specify an entrypoint, a command that runs when the container starts, using Procfile.
+For example, with the following in your Procfile at the root of your app:
+web : ruby main . rb
+The Ruby buildpack will use the command ruby main.rb as the entrypoint of the built container.
+By default the web target from the Procfile is used.
+To use a different entrypoint, you can specify a different target from your
+Procfile as an argument.
+With a Procfile containing the following:
+web: ruby main.rb
+custom: ruby custom.rb
+You can use the custom Procfile target by passing it as an argument:
+bash
+pack build --builder=gcr.io/buildpacks/builder \
+sample-ruby \
+--entrypoint=custom
+Using GOOGLE_ENTRYPOINT
+If you're not using a Procfile or want to override the Procfile, you can specify an entrypoint
+using the GOOGLE_ENTRYPOINT environment variable. Here's an example:
+pack build --builder = gcr.io/buildpacks/builder \
+sample-ruby \
+--env GOOGLE_ENTRYPOINT = "ruby custom.rb"
+Environment Variables
+The Ruby buildpack supports the following environment variables to customize your container
+BUNDLE_
+See bundler documentation .
+Example: BUNDLE_TIMEOUT=60 sets --timeout=60 for bundle commands.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-14 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

@@ -65,10 +65,10 @@ Lets admins and users move content to the trash.
 Learn more about managing unused content with the Enhanced Content Cleanup preview feature .
 Dataplex Lineage
 This preview feature is disabled by default.
-Share Looker (Google Cloud core) metadata with Dataplex Universal Catalog to power data lineage. To use lineage, ensure that the following are also enabled:
-the Dataplex Universal Catalog integration for Looker
+Share Looker (Google Cloud core) metadata with Knowledge Catalog to power data lineage. To use lineage, ensure that the following are also enabled:
+the Knowledge Catalog integration for Looker
 the Data Lineage API
-the service-level lineage integration in your Dataplex Universal Catalog settings.
+the service-level lineage integration in your Knowledge Catalog settings.
 This feature is available only for Looker (Google Cloud core) instances.
 Granular Dashboard Sizing
 Note: This feature is temporarily unavailable for some Looker instances.
@@ -89,10 +89,6 @@ dashboards. These themes, which are distinct from the themes that are used for
 embedded dashboards, Explores, and
 Looks , can be managed by users who have the
 manage_internal_themes permission.
-New Looker Explore and Merge Query Experience
-This preview feature is disabled by default.
-When enabled, the New Looker Explore and Merge Query Experience feature lets individual users have the option to try the redesigned Looker Explore and Merge Query interfaces. The streamlined interfaces let Looker users find connections and gain insights from their data more quickly. For an AI-assisted experience, enable additional options on the Gemini in Looker page in the Platform section of the Admin panel.
-Learn more about the new Explore and Merge Query experience .
 New Looker Explore and Merge Query Experience
 This preview feature is disabled by default.
 When enabled, the New Looker Explore and Merge Query Experience feature lets individual users have the option to try the redesigned Looker Explore and Merge Query interfaces. The streamlined interfaces let Looker users find connections and gain insights from their data more quickly. For an AI-assisted experience, enable additional options on the Gemini in Looker page in the Platform section of the Admin panel.
@@ -171,6 +167,6 @@ Disabling this feature enables legacy support
 access .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

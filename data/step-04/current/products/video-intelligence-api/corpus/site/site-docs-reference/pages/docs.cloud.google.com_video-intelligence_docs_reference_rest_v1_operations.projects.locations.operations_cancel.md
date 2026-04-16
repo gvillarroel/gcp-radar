@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/ope
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/video-intelligence/docs/apis
+entrypoint: https://docs.cloud.google.com/video-intelligence/docs/reference/api-overview
 source_metadata:
   url: https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/operations.projects.locations.operations/cancel
   title: "Method: operations.projects.locations.operations.cancel \_|\_ Video Intelligence\

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:23.446Z"
+generated_at: "2026-04-12T15:57:29.229Z"
 product_name: "Access Approval"
 product_slug: "access-approval"
 feature_name: "Access Approval support for Cloud External Key Manager"
 feature_slug: "access-approval-support-for-cloud-external-key-manager"
 latest_feature_date: "2021-06-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview"
-  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys"
-  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/key-access-justifications"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/CryptoKeyVersion"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform"
+  - "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient"
 keywords:
   - "external key manager access approvals"
   - "Cloud External Key Management Service"
@@ -26,7 +27,7 @@ keywords:
 # Access Approval support for Cloud External Key Manager
 
 Product: Access Approval
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,22 +39,24 @@ Access Approval support for Cloud External Key Manager was added in Preview stag
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview](https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview)
-- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys](https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys)
-- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/key-access-justifications](https://docs.cloud.google.com/assured-workloads/access-approval/docs/key-access-justifications)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/CryptoKeyVersion](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/CryptoKeyVersion)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform](https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform)
+- [https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient](https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient)
 
 ## Supporting Pages
 
 ### Overview of Access Approval \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview](https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 58
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To use your own signing key, you can either create an asymmetric signing key using Cloud Key Management Service or use Cloud External Key Manager to host an externally-managed signing key.
@@ -61,25 +64,26 @@ Evidence snippets:
 - For the limitations related to asymmetric signing keys supported by Cloud EKM, see Restrictions for asymmetric signing keys .
 - For more information about using Cloud EKM for managing keys that aren't stored in Google Cloud, see Cloud EKM overview .
 
-### "Review and approve access requests using a custom signing key \_|\_ Access\
+### CryptoKeyVersion \_|\_ Access Approval \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys](https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys)
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/CryptoKeyVersion](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/CryptoKeyVersion)
+- Source ID: `site-api-reference`
+- Final score: 86
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Enabling Access Approval using Terraform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform](https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform)
 - Source ID: `site-docs-root`
-- Final score: 26
+- Final score: 82
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- If you have Cloud EKM enabled, you can choose an externally-managed signing key.
-- For information about using external keys, see Cloud EKM overview .
+### "Class AccessApprovalClient (1.19.0) \_|\_ Python client libraries \_|\_\
 
-### "Introduction to Key Access Justifications \_|\_ Access Approval \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/key-access-justifications](https://docs.cloud.google.com/assured-workloads/access-approval/docs/key-access-justifications)
-- Source ID: `site-docs-root-2`
-- Final score: 24
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Using Key Access Justifications with Cloud External Key Manager provides visibility into requests for encryption keys that allows data to change state from at-rest to in-use.
-- Introduction to Key Access Justifications Key Access Justifications provides a justification for every request to access keys stored in an external key manager.
+- URL: [https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient](https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient)
+- Source ID: `site-python-reference`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

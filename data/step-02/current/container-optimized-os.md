@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 452
-Unique features: 199
+Unique features: 187
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -14,15 +14,11 @@ Unique features: 199
 | 2026-03-23 | 8th generation TPU device support |  | Container-Optimized OS supports 8th generation TPU devices. |
 | 2026-03-17 | GVNIC DQO-QPL larger ring sizes |  | Container-Optimized OS supports larger ring sizes for the GVNIC driver in DQO-QPL mode; Container-Optimized OS supports larger ring sizes for the GVNIC driver in DQO-QPL mode. |
 | 2026-03-17 | systemd-resolved stub resolver default |  | Container-Optimized OS uses the systemd-resolved stub resolver by default for DNS resolution. |
-| 2026-02-24 | 570.211.01 |  | Container-Optimized OS supports NVIDIA driver versions 535.288.01, 570.211.01, and 580.126.09; Container-Optimized OS supports NVIDIA driver versions 535.288.01, 570.211.01, and 580.126.09. |
-| 2026-02-24 | and 580.126.09 support |  | Container-Optimized OS supports NVIDIA driver versions 535.288.01, 570.211.01, and 580.126.09; Container-Optimized OS supports NVIDIA driver versions 535.288.01, 570.211.01, and 580.126.09. |
 | 2026-02-24 | NVIDIA driver versions 535.288.01 |  | Container-Optimized OS supports NVIDIA driver versions 535.288.01, 570.211.01, and 580.126.09; Container-Optimized OS supports NVIDIA driver versions 535.288.01, 570.211.01, and 580.126.09. |
-| 2026-02-24 | NVIDIA RTX PRO 6000 driver 590.44.01 and 590.48.01 support |  | Container-Optimized OS supports NVIDIA driver versions 590.44.01 and 590.48.01 for NVIDIA_RTX_PRO_6000 GPUs; Container-Optimized OS supports NVIDIA driver versions 590.44.01 and 590.48.01 for NVIDIA_RTX_PRO_6000 GPUs. |
 | 2026-02-20 | AMD SEV-SNP SVSM vTPM and configfs-tsm support |  | Container-Optimized OS includes backported support for the AMD SEV-SNP SVSM vTPM driver and configfs-tsm for extended attestation. |
 | 2026-02-20 | Automatic RDMA kernel module loading for CX-8 devices |  | Container-Optimized OS automatically loads RDMA kernel modules when CX-8 devices are detected. |
 | 2026-02-20 | Btrfs kernel module |  | Container-Optimized OS enables the Btrfs kernel module; Enables the Btrfs kernel module on Container-Optimized OS. |
 | 2026-02-20 | CASFS kernel module support |  | Container-Optimized OS supports CASFS as a kernel module. |
-| 2026-02-20 | cloud-final.service dependency removal from multi-user.target |  | Container-Optimized OS removes the cloud-final.service dependency on multi-user.target to avoid indefinite delays in cloud-init user-data scripts. |
 | 2026-02-20 | ConnectX-8 RDMA support |  | Container-Optimized OS supports ConnectX-8 RDMA; Adds RDMA support for ConnectX-8 networking hardware. |
 | 2026-02-20 | cos-extensions GB200 and GB300 device detection fix |  | Container-Optimized OS fixes cos-extensions device detection for GB200 and GB300 devices so Imex channels are created by default. |
 | 2026-02-20 | cos-gpu-installer R580 default drivers |  | Container-Optimized OS configures cos-gpu-installer to use R580 drivers as the default GPU drivers. |
@@ -34,7 +30,6 @@ Unique features: 199
 | 2026-02-20 | GB300 support in cos-extensions |  | Container-Optimized OS adds GB300 support to cos-extensions; cos-extensions supports GB300 devices. |
 | 2026-02-20 | GDRCopy kernel module for NVIDIA drivers |  | Container-Optimized OS adds the GDRCopy kernel module for NVIDIA drivers; Container-Optimized OS provides the GDRCopy kernel module for NVIDIA drivers. |
 | 2026-02-20 | google-guest-agent network management |  | Container-Optimized OS enables the google-guest-agent network management functionality; Enables the network management functionality of google-guest-agent. |
-| 2026-02-20 | Hardware-optimized SHA256 algorithms |  | Container-Optimized OS enables hardware-optimized SHA256 algorithms on supported x86 and ARM64 machines; Container-Optimized OS supports hardware-optimized SHA256 acceleration on eligible x86 and ARM64 machines. |
 | 2026-02-20 | HTCP TCP congestion control module |  | Container-Optimized OS enables the HTCP TCP congestion control algorithm as a module. |
 | 2026-02-20 | IDPF transmit timeout handling |  | Container-Optimized OS includes patches to handle IDPF transmit timeouts; Container-Optimized OS includes patches to handle IDPF transmit timeouts. |
 | 2026-02-20 | IPv6 support for IDPF driver |  | Container-Optimized OS supports IPv6 on machines using the IDPF driver. |
@@ -70,7 +65,6 @@ Unique features: 199
 | 2025-09-08 | DNSSEC default disablement for COS TPU VMs |  | Disables DNSSEC by default for Container-Optimized OS TPU virtual machines; Disables DNSSEC by default for Container-Optimized OS TPU virtual machines. |
 | 2025-09-08 | iRDMA Linux kernel support |  | Adds Linux kernel support for iRDMA devices on Container-Optimized OS; Adds Linux kernel support for iRDMA devices on Container-Optimized OS. |
 | 2025-09-08 | NVIDIA GPU driver R580 branch |  | Adds the NVIDIA GPU driver R580 branch and updates the latest GPU driver label to version 580.65.06; Adds the NVIDIA GPU driver R580 branch and updates the latest GPU driver label to version 580.65.06. |
-| 2025-08-25 | cloud-final.service startup dependency removal |  | Removes the cloud-final.service dependency on multi-user.target to avoid indefinite delays in cloud-init user-data scripts; Removes the cloud-final.service dependency on multi-user.target to avoid indefinite delays in cloud-init user-data scripts. |
 | 2025-08-18 | AMD SEV-SNP SVSM vTPM driver support |  | Backports support for the AMD SEV-SNP SVSM vTPM driver; Backports support for the AMD SEV-SNP SVSM vTPM driver. |
 | 2025-08-18 | configfs-tsm extended attestation protocol support |  | Adds configfs-tsm support for the extended attestation protocol; Adds configfs-tsm support for the extended attestation protocol. |
 | 2025-08-18 | containerd metric collection reliability |  | Fixes a containerd issue that could break metric collection. |
@@ -178,7 +172,6 @@ Unique features: 199
 | 2024-03-25 | NVIDIA GPU drivers R525 branch | 2024-03-25 | The R525 branch of NVIDIA GPU drivers was deprecated and removed from Container-Optimized OS; The R525 branch of NVIDIA GPU drivers was deprecated and removed from Container-Optimized OS; deprecated on 2024-03-25. |
 | 2024-03-25 | protected stateful partition integrity tags in memory |  | A kernel command-line option can move protected stateful partition integrity tags into memory; Container-Optimized OS adds a kernel command-line option to move protected stateful partition integrity tags into memory. |
 | 2024-03-25 | sosreport GPU Installer logs |  | Sosreport can include GPU Installer logs for diagnostics; Sosreport now includes GPU Installer logs in its collected diagnostics. |
-| 2024-03-25 | systemd named service sequencing |  | The named service can be ordered before nss-lookup.target in systemd startup sequencing. |
 | 2024-03-25 | TDX guest support |  | The Linux kernel in Container-Optimized OS supports Intel TDX guests; Container-Optimized OS enables TDX guest support in the Linux kernel. |
 | 2024-03-25 | tmpfs user.* xattr support |  | Tmpfs supports extended attributes in the user.* namespace; Container-Optimized OS supports user.* extended attributes on tmpfs. |
 | 2024-03-11 | cos-gpu-installer cached driver installation |  | Cos-gpu-installer supports cached driver installation when networking is disabled; cos-gpu-installer supports cached driver installation when networking is disabled. |
@@ -186,10 +179,7 @@ Unique features: 199
 | 2024-03-11 | NVIDIA kernel module load ordering |  | Container-Optimized OS uses corrected load ordering for the nvidia-modeset and nvidia-drm kernel modules; Container-Optimized OS uses corrected load ordering for the nvidia-modeset and nvidia-drm kernel modules. |
 | 2024-01-31 | iptables-nft kernel compatibility |  | Container-Optimized OS adds kernel compatibility for iptables-nft; Container-Optimized OS adds kernel compatibility for iptables-nft. |
 | 2023-10-30 | lsof in SOS reports |  | Container-Optimized OS includes lsof in SOS reports; Container-Optimized OS includes lsof in SOS reports. |
-| 2023-10-30 | named service ordering before nss-lookup.target |  | Container-Optimized OS sequences the named service before nss-lookup.target. |
 | 2023-10-24 | GPUDirect-TCPX |  | Container-Optimized OS syncs updates for GPUDirect-TCPX support; Container-Optimized OS adds support for GPUDirect-TCPX. |
-| 2023-09-07 | Trusted IMA certificate loading |  | Container-Optimized OS supports loading trusted IMA certificates from /etc/ima/pubkey.x509; Container-Optimized OS supports loading trusted IMA certificates from /etc/ima/pubkey.x509. |
-| 2023-08-14 | AMD IOMMU and INET_DIAG_DESTROY kernel configs |  | Container-Optimized OS enables the CONFIG_AMD_IOMMU, CONFIG_AMD_IOMMU_V2, and INET_DIAG_DESTROY kernel configurations. |
 | 2023-08-14 | Custom Fluent Bit configuration |  | Container-Optimized OS allows Fluent Bit to use customized configuration. |
 | 2023-08-14 | Fluent Bit for Stackdriver logging |  | Container-Optimized OS installs Fluent Bit for Stackdriver logging on x86 images. |
 | 2023-08-14 | Fluent Bit logging agent selection via metadata |  | Container-Optimized OS can use the Fluent Bit logging agent when the google-logging-use-fluentbit metadata key is enabled. |
@@ -199,14 +189,12 @@ Unique features: 199
 | 2023-08-14 | NVIDIA Container Toolkit |  | Container-Optimized OS includes nvidia-container-toolkit version 1.13.5. |
 | 2023-08-14 | Permanent systemd-networkd restart retries |  | Container-Optimized OS retries starting systemd-networkd indefinitely after failures. |
 | 2023-08-14 | Protected stateful partition wait timeout |  | Container-Optimized OS increases the /dev/stateful wait timeout when using a protected stateful partition. |
-| 2023-08-14 | Restricted /etc/resolv.conf bind mount options |  | Container-Optimized OS adds noexec, nodev, and nosuid mount options to the /etc/resolv.conf bind mount; Container-Optimized OS adds noexec, nodev, and nosuid mount options to the /etc/resolv.conf bind mount. |
 | 2023-08-14 | SquashFS and RAID kernel modules |  | Container-Optimized OS adds kernel modules for SquashFS, RAID1, and DM RAID. |
 | 2023-08-14 | Toolbox registry compatibility |  | Toolbox is compatible with both Artifact Registry and Google Container Registry. |
 | 2023-08-14 | VRF and GRE kernel modules |  | Container-Optimized OS enables the vrf, ip_gre, and ip6_gre kernel modules. |
 | 2023-08-01 | Executable GPU driver installation path via cos-extensions |  | Container-Optimized OS simplifies GPU driver installation by remounting the driver installation path as executable through cos-extensions. |
 | 2023-05-01 | Compatible GPU driver fallback installation |  | Container-Optimized OS can fall back to installing compatible GPU drivers for certain devices when incompatible drivers are requested; Container-Optimized OS can fall back to installing compatible GPU drivers for certain devices when incompatible drivers are requested. |
 | 2023-04-27 | Cached prebuilt GPU driver module installation |  | Container-Optimized OS fixes cached driver installation for prebuilt GPU driver modules. |
-| 2023-04-27 | INET_DIAG_DESTROY kernel configuration |  | Support for the INET_DIAG_DESTROY kernel configuration is enabled in Container-Optimized OS. |
 | 2023-04-27 | L4 GPU support in cos-gpu-installer |  | Cos-gpu-installer supports L4 GPUs. |
 
 Source file slug: `container-optimized-os.md`

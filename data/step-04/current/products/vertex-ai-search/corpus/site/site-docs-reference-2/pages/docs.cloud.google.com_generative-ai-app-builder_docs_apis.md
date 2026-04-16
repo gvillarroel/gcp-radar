@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/generative-ai-app-builder/docs/apis
 knowledge_key: corpus
 source_id: site-docs-reference-2
 source_type: site
-entrypoint: https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control
+entrypoint: https://docs.cloud.google.com/generative-ai-app-builder/docs/apis
 source_metadata:
   url: https://docs.cloud.google.com/generative-ai-app-builder/docs/apis
   title: "APIs and reference \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation"

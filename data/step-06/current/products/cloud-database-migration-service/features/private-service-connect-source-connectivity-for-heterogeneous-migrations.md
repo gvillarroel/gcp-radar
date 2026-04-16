@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:10:29.902Z"
+generated_at: "2026-04-12T12:11:22.232Z"
 product_name: "Cloud Database Migration Service"
 product_slug: "cloud-database-migration-service"
 feature_name: "Private Service Connect source connectivity for heterogeneous migrations"
 feature_slug: "private-service-connect-source-connectivity-for-heterogeneous-migrations"
 latest_feature_date: "2025-10-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/database-migration/docs/release-notes"
+  - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job"
+  - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs"
   - "https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview"
   - "https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview"
 keywords:
@@ -26,7 +27,7 @@ keywords:
 # Private Service Connect source connectivity for heterogeneous migrations
 
 Product: Cloud Database Migration Service
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,48 @@ Heterogeneous Oracle and SQL Server migration scenarios now support Private Serv
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/database-migration/docs/release-notes](https://docs.cloud.google.com/database-migration/docs/release-notes)
+- [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
+- [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
 - [https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview)
 - [https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview)
 
 ## Supporting Pages
 
-### Database Migration Service release notes \_|\_ Google Cloud Documentation
+### "MCP Tools Reference: datamigration \_|\_ Database Migration Service \_|\_\
 
-- URL: [https://docs.cloud.google.com/database-migration/docs/release-notes](https://docs.cloud.google.com/database-migration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
+- Source ID: `site-api-reference`
+- Final score: 212
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For more information, see the following pages: Source connectivity methods for Oracle to Cloud SQL for PostgreSQL Source connectivity methods for Oracle to AlloyDB for PostgreSQL Source connectivity methods for SQL Server to Cloud SQL for PostgreSQL Source connectivity methods for SQL Server to AlloyDB for PostgreSQL September 15, 2025 Announcement Gemini-powered conversion features for heterogeneous migrations in Database Migration Service are now generally available ( GA ).
-- For more information on known limitations, see: Known limitations for Oracle to Cloud SQL for PostgreSQL Known limitations for Oracle to AlloyDB for PostgreSQL July 03, 2024 Feature Database Migration Service for heterogeneous Oracle migrations to AlloyDB for PostgreSQL now supports network connectivity with Private Service Connect for AlloyDB clusters with Private Service Connect enabled.
-- October 30, 2025 Feature Database Migration Service now supports Private Service Connect interfaces for source network connectivity in all heterogeneous migration scenarios.
-- August 14, 2025 Feature Database Migration Service now supports Private Service Connect interfaces for network connectivity in homogeneous Cloud SQL for MySQL, Cloud SQL for PostgreSQL, and AlloyDB for PostgreSQL migrations.
+- MigrationJob JSON representation { "name" : string , "createTime" : string , "updateTime" : string , "labels" : { string : string , ... } , "displayName" : string , "state" : enum ( State ) , "phase" : enum ( Phase ) , "type" : enum ( Type ) , "dumpPath" : string , "dumpFlags" : { object ( DumpFlags ) } , "source" : string , "destination" : string , "duration" : string , "error" : { object ( Status ) } , "sourceDatabase" : { object ( DatabaseType ) } , "destinationDatabase" : { object ( DatabaseType ) } , "endTime" : string , "conversionWorkspace" : { object ( ConversionWorkspaceInfo ) } , "filter" : string , "cmekKeyName" : string , "performanceConfig" : { object ( PerformanceConfig ) } , "postgresHomogeneousConfig" : { object ( PostgresHomogeneousConfig ) } , "sqlserverHomogeneousMigrationJobConfig" : { object ( SqlServerHomogeneousMigrationJobConfig ) } , "dumpType" : enum ( DumpType ) , "objectsConfig" : { object ( MigrationJobObjectsConfig ) } , "purpose" : enum ( Purpose ) , "originalMigrationName" : string , // Union field connectivity can be only one of the following: "reverseSshConnectivity" : { object ( ReverseSshConnectivity ) } , "vpcPeeringConnectivity" : { object ( VpcPeeringConnectivity ) } , "staticIpConnectivity" : { object ( StaticIpConnectivity ) } // End of list of possible types for union field connectivity . // Union field config can be only one of the following: "oracleToPostgresConfig" : { object ( OracleToPostgresConfig ) } , "sqlserverToPostgresConfig" : { object ( SqlServerToPostgresConfig ) } , "postgresToSqlserverConfig" : { object ( PostgresToSqlServerConfig ) } // End of list of possible types for union field config . // Union field satisfies pzs can be only one of the following: "satisfiesPzs" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: "satisfiesPzi" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}. createTime string ( Timestamp format) Output only.
+- OracleSourceConfig JSON representation { // Union field max concurrent full dump connections can be only one of the // following: "maxConcurrentFullDumpConnections" : integer // End of list of possible types for union field // max concurrent full dump connections . // Union field max concurrent cdc connections can be only one of the // following: "maxConcurrentCdcConnections" : integer // End of list of possible types for union field // max concurrent cdc connections . // Union field skip full dump can be only one of the following: "skipFullDump" : boolean // End of list of possible types for union field skip full dump . // Union field cdc start position can be only one of the following: "cdcStartPosition" : string // End of list of possible types for union field cdc start position . // Union field cdc method can be only one of the following: "logMiner" : { object ( LogMiner ) } , "binaryLogParser" : { object ( BinaryLogParser ) } // End of list of possible types for union field cdc method . } Fields Union field max concurrent full dump connections . max concurrent full dump connections can be only one of the following: maxConcurrentFullDumpConnections integer Optional.
+- Configuration for migration. config can be only one of the following: oracleToPostgresConfig object ( OracleToPostgresConfig ) Configuration for heterogeneous Oracle to Cloud SQL for PostgreSQL and Oracle to AlloyDB for PostgreSQL migrations. sqlserverToPostgresConfig object ( SqlServerToPostgresConfig ) Configuration for heterogeneous SQL Server to Cloud SQL for PostgreSQL migrations. postgresToSqlserverConfig object ( PostgresToSqlServerConfig ) Configuration for heterogeneous failback migrations from PostgreSQL to SQL Server .
+- SqlServerSourceConfig JSON representation { // Union field max concurrent full dump connections can be only one of the // following: "maxConcurrentFullDumpConnections" : integer // End of list of possible types for union field // max concurrent full dump connections . // Union field max concurrent cdc connections can be only one of the // following: "maxConcurrentCdcConnections" : integer // End of list of possible types for union field // max concurrent cdc connections . // Union field skip full dump can be only one of the following: "skipFullDump" : boolean // End of list of possible types for union field skip full dump . // Union field cdc start position can be only one of the following: "cdcStartPosition" : string // End of list of possible types for union field cdc start position . } Fields Union field max concurrent full dump connections . max concurrent full dump connections can be only one of the following: maxConcurrentFullDumpConnections integer Optional.
+
+### "MCP Tools Reference: datamigration \_|\_ Database Migration Service \_|\_\
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
+- Source ID: `site-api-reference`
+- Final score: 212
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- MigrationJob JSON representation { "name" : string , "createTime" : string , "updateTime" : string , "labels" : { string : string , ... } , "displayName" : string , "state" : enum ( State ) , "phase" : enum ( Phase ) , "type" : enum ( Type ) , "dumpPath" : string , "dumpFlags" : { object ( DumpFlags ) } , "source" : string , "destination" : string , "duration" : string , "error" : { object ( Status ) } , "sourceDatabase" : { object ( DatabaseType ) } , "destinationDatabase" : { object ( DatabaseType ) } , "endTime" : string , "conversionWorkspace" : { object ( ConversionWorkspaceInfo ) } , "filter" : string , "cmekKeyName" : string , "performanceConfig" : { object ( PerformanceConfig ) } , "postgresHomogeneousConfig" : { object ( PostgresHomogeneousConfig ) } , "sqlserverHomogeneousMigrationJobConfig" : { object ( SqlServerHomogeneousMigrationJobConfig ) } , "dumpType" : enum ( DumpType ) , "objectsConfig" : { object ( MigrationJobObjectsConfig ) } , "purpose" : enum ( Purpose ) , "originalMigrationName" : string , // Union field connectivity can be only one of the following: "reverseSshConnectivity" : { object ( ReverseSshConnectivity ) } , "vpcPeeringConnectivity" : { object ( VpcPeeringConnectivity ) } , "staticIpConnectivity" : { object ( StaticIpConnectivity ) } // End of list of possible types for union field connectivity . // Union field config can be only one of the following: "oracleToPostgresConfig" : { object ( OracleToPostgresConfig ) } , "sqlserverToPostgresConfig" : { object ( SqlServerToPostgresConfig ) } , "postgresToSqlserverConfig" : { object ( PostgresToSqlServerConfig ) } // End of list of possible types for union field config . // Union field satisfies pzs can be only one of the following: "satisfiesPzs" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: "satisfiesPzi" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}. createTime string ( Timestamp format) Output only.
+- OracleSourceConfig JSON representation { // Union field max concurrent full dump connections can be only one of the // following: "maxConcurrentFullDumpConnections" : integer // End of list of possible types for union field // max concurrent full dump connections . // Union field max concurrent cdc connections can be only one of the // following: "maxConcurrentCdcConnections" : integer // End of list of possible types for union field // max concurrent cdc connections . // Union field skip full dump can be only one of the following: "skipFullDump" : boolean // End of list of possible types for union field skip full dump . // Union field cdc start position can be only one of the following: "cdcStartPosition" : string // End of list of possible types for union field cdc start position . // Union field cdc method can be only one of the following: "logMiner" : { object ( LogMiner ) } , "binaryLogParser" : { object ( BinaryLogParser ) } // End of list of possible types for union field cdc method . } Fields Union field max concurrent full dump connections . max concurrent full dump connections can be only one of the following: maxConcurrentFullDumpConnections integer Optional.
+- Configuration for migration. config can be only one of the following: oracleToPostgresConfig object ( OracleToPostgresConfig ) Configuration for heterogeneous Oracle to Cloud SQL for PostgreSQL and Oracle to AlloyDB for PostgreSQL migrations. sqlserverToPostgresConfig object ( SqlServerToPostgresConfig ) Configuration for heterogeneous SQL Server to Cloud SQL for PostgreSQL migrations. postgresToSqlserverConfig object ( PostgresToSqlServerConfig ) Configuration for heterogeneous failback migrations from PostgreSQL to SQL Server .
+- SqlServerSourceConfig JSON representation { // Union field max concurrent full dump connections can be only one of the // following: "maxConcurrentFullDumpConnections" : integer // End of list of possible types for union field // max concurrent full dump connections . // Union field max concurrent cdc connections can be only one of the // following: "maxConcurrentCdcConnections" : integer // End of list of possible types for union field // max concurrent cdc connections . // Union field skip full dump can be only one of the following: "skipFullDump" : boolean // End of list of possible types for union field skip full dump . // Union field cdc start position can be only one of the following: "cdcStartPosition" : string // End of list of possible types for union field cdc start position . } Fields Union field max concurrent full dump connections . max concurrent full dump connections can be only one of the following: maxConcurrentFullDumpConnections integer Optional.
 
 ### "Oracle to AlloyDB for PostgreSQL migration overview \_|\_ Database Migration\
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview)
 - Source ID: `site-api-reference`
-- Final score: 166
+- Final score: 204
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +93,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview)
 - Source ID: `site-api-reference`
-- Final score: 166
+- Final score: 204
 - Re-rank relevance: N/A
 
 Evidence snippets:

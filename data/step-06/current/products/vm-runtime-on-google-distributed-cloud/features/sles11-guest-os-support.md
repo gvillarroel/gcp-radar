@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:13.770Z"
+generated_at: "2026-04-12T12:20:09.740Z"
 product_name: "VM Runtime on Google Distributed Cloud"
 product_slug: "vm-runtime-on-google-distributed-cloud"
 feature_name: "SLES11 guest OS support"
 feature_slug: "sles11-guest-os-support"
 latest_feature_date: "2023-04-27"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
 keywords:
   - "sles11"
   - "guest"
@@ -24,7 +27,7 @@ keywords:
 # SLES11 guest OS support
 
 Product: VM Runtime on Google Distributed Cloud
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ Adds support for SLES11 as a guest operating system.
 
 Adds support for SLES11 as a guest operating system.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Verified guest operating systems for VM Runtime on GDC \_|\_ Google Distributed\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os)
+- Source ID: `site-docs-reference`
+- Final score: 233
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Verified guest operating systems for VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences.
+- This document lists the guest operating systems (OSes) that have been tested by Google and verified to work with VM Runtime on GDC.
+- Verified guest operating systems: RHEL 7 ( Extended Life Cycle Support available through June 2028 ) RHEL 8 ( Extended Update Support available through May 2025 ) Rocky Linux 8 ( reaches End of Life May 2029 ) Ubuntu 18.04 ( Expanded Security Maintenance ends April 2028 ) Ubuntu 20.04 ( Expanded Security Maintenance ends April 2030 ) Ubuntu 22.04 ( Expanded Security Maintenance ends March 2032 ) Windows Server 2016 ( extended support ends January 2027 ) Windows Server 2019 ( extended support ends January 2029 ) Windows Server 2022 ( extended support ends October 2031 ) Windows 10 Professional ( support ends October 2025 ) What's next To get started, Create a VM in Google Distributed Cloud .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+
+### "Connect to VMs that use VM Runtime on GDC \_|\_ Google Distributed Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms)
+- Source ID: `site-docs-reference`
+- Final score: 141
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Check your VirtualMachine custom resource to confirm it's configured to enable the guest agent: kubectl get gvm VM NAME -o yaml --kubeconfig KUBECONFIG The spec.osType field should be set to the operating system of your VM, Linux or Windows .
+- Windows guest OS Use the following steps to reset a password for an existing user or create the initial password for a new user: Enable the guest agent in your Windows VM: Configure the VM to enable the guest agent .
+- Enable the guest agent To enable the guest agent: Note: For Windows guest operating systems, there are additional steps required to start the guest agent, initially.
+- The process for creating initial user credentials differs for Linux and Windows guest operating systems.
+
+### "Create and use storage classes in VM Runtime on GDC \_|\_ Google Distributed\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes)
+- Source ID: `site-docs-root`
+- Final score: 136
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following example output shows that the cluster has four storage classes and associated profiles: $ kubectl get storageprofiles NAME AGE anthos-system 11d node-disk 11d standard 11d nfs 11d To edit a storage profile and change the access mode or volume mode, complete the following steps: Edit the StorageProfile custom resource for editing: kubectl edit storageprofile STORAGE PROFILE NAME Replace STORAGE PROFILE NAME with the StorageProfile you want to edit.
+- Different storage classes might map to a different type of storage hardware, file system, or performance.
+- To use a specific, already-defined StorageClass when you create a VirtualMachineDisk , complete the following steps: Create a VirtualMachineDisk manifest, such as my-disk.yaml , in the editor of your choice: nano my-disk.yaml Copy and paste the following YAML manifest: apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachineDisk metadata : name : DISK NAME spec : size : 10Gi storageClassName : STORAGE CLASS NAME Replace the following values: DISK NAME : the name for your disk.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+
+### "Role-based access control (RBAC) for VM Runtime on GDC \_|\_ Google Distributed\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac)
+- Source ID: `site-docs-root`
+- Final score: 129
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Here are examples of the command output for each of the four predefined ClusterRoles: kubevm.admin apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : "2022-10-11T21:10:31Z" labels : kubevm : kubevm.admin rbac.authorization.k8s.io/aggregate-to-admin : "true" name : kubevm.admin resourceVersion : "16654950" uid : 3296c279-6e85-4ea6-b250-548bf0c3e935 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - delete - create - update - patch - list - watch - deletecollection - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - delete - create - update - patch - list - watch - deletecollection kubevm.edit apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : "2022-10-11T21:10:31Z" labels : kubevm : kubevm.edit rbac.authorization.k8s.io/aggregate-to-edit : "true" name : kubevm.edit resourceVersion : "16654951" uid : 237bf9ae-b2c8-4303-94dc-e6425a2df331 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - delete - create - update - patch - list - watch - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - delete - create - update - patch - list - watch kubevm.view apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : "2022-10-11T21:10:31Z" labels : kubevm : kubevm.view rbac.authorization.k8s.io/aggregate-to-view : "true" name : kubevm.view resourceVersion : "16654953" uid : b5b54e2d-0097-4698-abbd-aeac212d0a34 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - list - watch - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - list - watch kubevm.cluster.view apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : "2022-10-11T21:10:31Z" labels : kubevm : kubevm.cluster.view name : kubevm.cluster.view resourceVersion : "16654956" uid : b25dde64-67da-488b-81d2-1a08f9a4a7c1 rules : - apiGroups : - vm.cluster.gke.io resources : - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - list - watch - apiGroups : - networking.gke.io resources : - networks verbs : - get - list - watch Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Resource Generated Cluster-wise kubevm.admin kubevm.view kubevm.edit kubevm.cluster.view virtualmachineaccessrequests – – Full Read Read/Write – virtualmachinedisks – – Full Read Read/Write – virtualmachines – – Full Read Read/Write – gpuallocations – – Full Read Read/Write – guestenvironmentdata Yes – Full Read Read/Write – vmruntimes – Yes Full Read Read/Write Read virtualmachinetypes – Yes Full Read Read/Write Read vmhighavailabilitypolicies – Yes Full Read Read/Write Read networkinterfaces Yes – Full Read Read/Write – networks – Yes Full Read Read/Write Read KubeVirt resources VM Runtime on GDC is based on the KubeVirt open source project .
+- Use the resource information in the following table if you want to create your own, customized roles: Resource Generated Cluster-wise pods Yes – services – – persistentvolumeclaims – – secrets – – nodes – Yes storageclasses – Yes configmaps – – ClusterRole YAML examples You can retrieve YAML for the ClusterRoles with the following kubectl command: kubectl get ClusterRole CLUSTERROLE NAME -o yaml --kubeconfig KUBECONFIG PATH Replace the following: CLUSTERROLE NAME : the name of the ClusterRole, such as kubevm.cluster.view .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
 

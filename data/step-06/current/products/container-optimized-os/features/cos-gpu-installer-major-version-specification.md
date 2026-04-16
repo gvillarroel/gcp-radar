@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:04.435Z"
+generated_at: "2026-04-15T13:37:11.092Z"
 product_name: "Container Optimized OS"
 product_slug: "container-optimized-os"
 feature_name: "cos-gpu-installer major version specification"
 feature_slug: "cos-gpu-installer-major-version-specification"
 latest_feature_date: "2024-03-25"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance"
 keywords:
   - "cos"
   - "gpu"
@@ -24,7 +26,7 @@ keywords:
 # cos-gpu-installer major version specification
 
 Product: Container Optimized OS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ Cos-gpu-installer supports selecting the major version of the GPU driver to inst
 
 Cos-gpu-installer supports selecting the major version of the GPU driver to install; cos-gpu-installer supports selecting the major version of the GPU driver to install.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning](https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance](https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Versioning scheme \_|\_ Container-Optimized OS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning](https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning)
+- Source ID: `site-docs-reference`
+- Final score: 101
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Choosing the right Container-Optimized OS version On Compute Engine, the image families for Container-Optimized OS can guide you in selecting the correct image for your intended purpose.
+- A tiered testing setup like this should help to minimize issues when rolling out newer major versions of Container-Optimized OS images to your production environment.
+- Milestones and Build Numbers Major versions of Container-Optimized OS images are identified using what we call milestones .
+- The following table provides a summary of Container-Optimized OS releases available on Compute Engine: Active Milestones OS version Image project x86 image family Arm image family Built by End of support Release notes COS 133 DEV cos-cloud cos-dev cos-arm64-dev Google To Be Defined dev COS 129 BETA cos-cloud cos-beta cos-arm64-beta Google To Be Defined milestone 129 COS 125 LTS cos-cloud cos-125-lts cos-arm64-125-lts Google Sept 2027 milestone 125 COS 121 LTS cos-cloud cos-121-lts cos-arm64-121-lts Google March 2027 milestone 121 COS 117 LTS cos-cloud cos-117-lts cos-arm64-117-lts Google Sept 2026 milestone 117 COS 113 LTS cos-cloud cos-113-lts cos-arm64-113-lts Google March 2026 milestone 113 Deprecated Milestones OS version Image project x86 image family Arm image family Built by Deprecation date Release notes COS 109 LTS cos-cloud cos-109-lts cos-arm64-109-lts Google Sept 2025 milestone 109 COS 105 LTS cos-cloud cos-105-lts cos-arm64-105-lts Google March 2025 milestone 105 COS 101 LTS cos-cloud cos-101-lts N/A Google Oct 2024 milestone 101 COS 97 LTS cos-cloud cos-97-lts N/A Google April 2024 milestone 97 COS 93 LTS cos-cloud cos-93-lts N/A Google October 2023 milestone 93 COS 89 LTS cos-cloud cos-89-lts N/A Google March 2023 milestone 89 COS 85 LTS cos-cloud cos-85-lts N/A Google September 2022 milestone 85 COS 81 LTS cos-cloud cos-81-lts N/A Google September 2021 1 milestone 81 COS 77 LTS cos-cloud cos-77-lts N/A Google April 2021 1 milestone 77 COS 73 LTS cos-cloud cos-73-lts N/A Google June 2020 milestone 73 COS 69 LTS cos-cloud cos-69-lts N/A Google December 2019 milestone 69 COS 77 LTS and COS 81 LTS, when bundled with GKE, have slightly longer support durations.
+
+### "Running instances with GPU accelerators \_|\_ Container-Optimized OS \_\
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
+- Source ID: `site-docs-reference`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For a complete list of supported versions, see the release notes of the major Container-Optimized OS LTS milestones.
+- Be aware that this might introduce compatibility changes due to potential major version updates across COS releases.
+- You may also check all the GPU driver versions supported by the GPU on your Container-Optimized OS VM instance by running the following command: sudo cos-extensions list Identify the required CUDA toolkit version If your applications use CUDA , install NVIDIA's CUDA toolkit in your containers.
+- To install a specific GPU driver version, run the following command: sudo cos-extensions install gpu -- -version= DRIVER VERSION Replace DRIVER VERSION with one of the following options: default : Installs the default driver designated by the Container-Optimized OS release.
+
+### "Configuring and Checking CIS Compliance \_|\_ Container-Optimized OS \_\
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance](https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance)
+- Source ID: `site-docs-reference`
+- Final score: 35
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If any of the CIS Level 1 or Level 2 scans fail, the textproto file will contain the list of all failing checks, such as in the following example: cat /var/lib/google/cis scanner scan result.textproto Output start time: { seconds: 1648241700 nanos: 763152171 } end time: { seconds: 1648241700 nanos: 812992527 } scanner version: "1.1.4.3" benchmark version: "1.0.0" status: { status: SUCCEEDED } non compliant benchmarks: { id: "etc-passwd-permissions" compliance occurrence: { non compliant files: { path: "/etc/passwd" reason: "File permission is 0664, expected the following bits to be set: 0444 and the following bits to be clear: 0133" } } } compliant benchmarks: { id: "etc-passwd-permissions" compliance occurrence: {} } To mitigate the failed checks, use the CIS Benchmark and follow the steps in the Remediation section for the failing check to make the instance compliant.
+- The systemd service supports all of the CIS Level 2 recommendations except for the following: 4.1.1.2 Ensure Logging is running (ID: logging-service-running) This recommendation is opted-out by default but can be re-enabled by deleting the ID from the opted-out list which can be found in the /etc/cis-scanner/env vars file.
+- Level 1 Recommendations at this level are meant to be applicable to the majority of environments.
 

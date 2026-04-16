@@ -1,0 +1,89 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T12:48:36.258Z"
+product_name: "BigQuery"
+product_slug: "bigquery"
+feature_name: "MATCH_RECOGNIZE"
+feature_slug: "match-recognize"
+latest_feature_date: "2025-11-05"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/pipe-syntax"
+keywords:
+  - "match"
+  - "recognize"
+  - "lets"
+  - "sql"
+  - "queries"
+  - "filter"
+  - "aggregate"
+  - "row"
+---
+
+# MATCH_RECOGNIZE
+
+Product: BigQuery
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+MATCH_RECOGNIZE lets SQL queries filter and aggregate row-pattern matches across rows in a table.
+
+## Extended Definition
+
+MATCH_RECOGNIZE lets SQL queries filter and aggregate row-pattern matches across rows in a table.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/pipe-syntax](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/pipe-syntax)
+
+## Supporting Pages
+
+### Query syntax | BigQuery | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax)
+- Source ID: `feature-recovery-http`
+- Final score: 330
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Example The following query selects approximately 10% of a table's data: SELECT * FROM dataset . my_table TABLESAMPLE SYSTEM ( 10 PERCENT ) MATCH_RECOGNIZE clause FROM from_item MATCH_RECOGNIZE ( [ PARTITION BY partition_expr [, ... ] ] ORDER BY order_expr [{ ASC | DESC }] [{ NULLS FIRST | NULLS LAST }] [, ...] MEASURES { measures_expr [AS] alias } [, ... ] [ AFTER MATCH SKIP { PAST LAST ROW | TO NEXT ROW } ] PATTERN ( pattern ) DEFINE symbol AS boolean_expr [, ... ] [ OPTIONS ( [ use_longest_match = { TRUE | FALSE } ] ) ] ) Description The MATCH_RECOGNIZE clause is an optional sub-clause of the FROM clause, used to filter and aggregate based on matches.
+- SELECT * FROM Sales MATCH_RECOGNIZE ( PARTITION BY customer ORDER BY sale_date MEASURES MATCH_NUMBER () AS match_number , ARRAY_AGG ( STRUCT ( MATCH_ROW_NUMBER () AS row , CLASSIFIER () AS symbol , sale_date , product_category )) AS sales PATTERN ( low + mid + high + ) DEFINE low AS amount < 50 , mid AS amount > = 50 AND amount < = 100 , high AS amount > 100 ); /*----------+--------------+-----------+--------------+-----------------+------------------------+ | customer | match_number | sales.row | sales.symbol | sales.sale_date | sales.product_category | +----------+--------------+-----------+--------------+-----------------+------------------------+ | Ian | 1 | 1 | low | 2024-02-01 | Books | | | | 2 | low | 2024-02-08 | Clothing | | | | 3 | mid | 2024-02-10 | Clothing | | | | 4 | high | 2024-03-15 | Electronics | | | | 5 | high | 2024-03-15 | Electronics | | Ian | 2 | 1 | low | 2024-03-21 | Software | | | | 2 | mid | 2024-04-07 | Books | | | | 3 | high | 2024-07-07 | Clothing | +----------+--------------+-----------+--------------+-----------------+------------------------*/ The following example is similar to the previous one, except it allows overlapping matches: SELECT * FROM Sales MATCH_RECOGNIZE ( PARTITION BY customer ORDER BY sale_date MEASURES MATCH_NUMBER () AS match_number , ARRAY_AGG ( STRUCT ( MATCH_ROW_NUMBER () AS row , CLASSIFIER () AS symbol , sale_date , product_category )) AS sales AFTER MATCH SKIP TO NEXT ROW PATTERN ( low + mid + high + ) DEFINE low AS amount < 50 , mid AS amount > = 50 AND amount < = 100 , high AS amount > 100 ); /*----------+--------------+-----------+--------------+-----------------+------------------------+ | customer | match_number | sales.row | sales.symbol | sales.sale_date | sales.product_category | +----------+--------------+-----------+--------------+-----------------+------------------------+ | Ian | 1 | 1 | low | 2024-02-01 | Books | | | | 2 | low | 2024-02-08 | Clothing | | | | 3 | mid | 2024-02-10 | Clothing | | | | 4 | high | 2024-03-15 | Electronics | | | | 5 | high | 2024-03-15 | Electronics | | Ian | 2 | 1 | low | 2024-02-08 | Clothing | | | | 2 | mid | 2024-02-10 | Clothing | | | | 3 | high | 2024-03-15 | Electronics | | | | 4 | high | 2024-03-15 | Electronics | | Ian | 3 | 1 | low | 2024-03-21 | Software | | | | 2 | mid | 2024-04-07 | Books | | | | 3 | high | 2024-07-07 | Clothing | +----------+--------------+-----------+--------------+-----------------+------------------------*/ Best practices To scale the performance of queries that contain the MATCH_RECOGNIZE clause, use the following best practices: Use the PARTITION BY clause.
+- The MEASURES clause aggregates the data in each match and computes total sales and software sales: SELECT * FROM Sales MATCH_RECOGNIZE ( PARTITION BY customer ORDER BY sale_date MEASURES ARRAY_AGG ( STRUCT ( sale_date , product_category , amount )) AS sales , SUM ( amount ) AS total_sale_amount , SUM ( software . amount ) AS software_sale_amount PATTERN ( electronics + any_category * ? software + ) DEFINE electronics AS product_category = 'Electronics' , software AS product_category = 'Software' , any_category AS TRUE ); /*----------+-----------------+------------------------+--------------+-------------------+----------------------+ | customer | sales.sale_date | sales.product_category | sales.amount | total_sale_amount | software_sale_amount | +----------+-----------------+------------------------+--------------+-------------------+----------------------+ | Daisy | 2024-01-03 | Electronics | 500 | 570 | 70 | | | 2024-01-04 | Software | 30 | | | | | 2024-03-15 | Software | 40 | | | | Daisy | 2024-06-28 | Electronics | 400 | 530 | 30 | | | 2024-06-29 | Clothing | 100 | | | | | 2024-06-30 | Software | 30 | | | | Ian | 2024-03-15 | Electronics | 300 | 730 | 30 | | | 2024-03-15 | Electronics | 400 | | | | | 2024-03-21 | Software | 30 | | | +----------+-----------------+------------------------+--------------+-------------------+----------------------*/ The following example, like the previous example, matches electronics purchases that were eventually followed by software purchases.
+- Order-sensitive aggregate functions If an aggregate expression contains a function that depends on the order of input, such as ARRAY_AGG or STRING_AGG , the inputs are ordered according to the ORDER BY clause of the MATCH_RECOGNIZE clause, unless they include the keyword DISTINCT or an explicit ordering.
+
+### Pipe query syntax | BigQuery | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/pipe-syntax](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/pipe-syntax)
+- Source ID: `feature-recovery-http`
+- Final score: 268
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Example ( SELECT 'kale' as product , 55 AS Q1 , 45 AS Q2 UNION ALL SELECT 'apple' , 8 , 10 ) | > UNPIVOT ( sales FOR quarter IN ( Q1 , Q2 )); /*---------+-------+---------+ | product | sales | quarter | +---------+-------+---------+ | kale | 55 | Q1 | | kale | 45 | Q2 | | apple | 8 | Q1 | | apple | 10 | Q2 | +---------+-------+---------*/ MATCH_RECOGNIZE pipe operator |> MATCH_RECOGNIZE ( [ PARTITION BY partition_expr [, ... ] ] ORDER BY order_expr [ { ASC | DESC } ] [ { NULLS FIRST | NULLS LAST } ] [, ...] MEASURES { measures_expr [ AS ] alias } [, ... ] [ AFTER MATCH SKIP { PAST LAST ROW | TO NEXT ROW } ] PATTERN ( pattern ) DEFINE symbol AS boolean_expr [, ... ] [ OPTIONS ( [ use_longest_match = { TRUE | FALSE } ] ) ] ) Description Filters and aggregates rows based on matches.
+- MATCH_RECOGNIZE Filters and aggregates rows based on matches.
+- Example ( SELECT 1 as x UNION ALL SELECT 2 UNION ALL SELECT 3 ) | > MATCH_RECOGNIZE ( ORDER BY x MEASURES ARRAY_AGG ( high . x ) AS high_agg , ARRAY_AGG ( low . x ) AS low_agg AFTER MATCH SKIP TO NEXT ROW PATTERN ( low | high ) DEFINE low AS x < = 2 , high AS x > = 2 ); /*----------+---------+ | high_agg | low_agg | +----------+---------+ | NULL | [1] | | NULL | [2] | | [3] | NULL | +----------+---------*/ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Matching rows works similarly to matching with regular expressions, but instead of matching characters in a string, the MATCH_RECOGNIZE operator finds matches across rows in a table.
+
+### "Introduction to BigLake external tables \_|\_ BigQuery \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/biglake-intro](https://docs.cloud.google.com/bigquery/docs/biglake-intro)
+- Source ID: `site-docs-reference-5`
+- Final score: 70
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Queries with a large number of files and with Apache Hive partition filters benefit the most from metadata caching.
+- Consider the following query as an example: SELECT FROM bigquery dataset . bigquery table AS clients WHERE clients . sales rep IN ( SELECT id FROM aws dataset . aws table1 AS employees INNER JOIN aws dataset . aws table2 AS active employees ON employees . id = active employees . id WHERE employees . level > 3 ); This example has two transfers: one from an employees table (with a level filter) and one from an active employees table.
+- For example, the following diagram demonstrates how the BigQuery Storage API lets users access authorized data using open source query engines such as Apache Spark: For more information about connectors supported by BigQuery, see BigQuery connectors .
+- Caution: Data analysts should not have the following: The ability to read objects directly from Cloud Storage (see the Storage Object Viewer IAM role ), which lets data analysts circumvent access controls placed by data warehouse administrators.
+

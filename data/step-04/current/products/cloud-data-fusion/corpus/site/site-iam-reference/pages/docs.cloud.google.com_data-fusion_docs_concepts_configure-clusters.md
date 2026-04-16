@@ -1,6 +1,6 @@
 ---
-title: "Dataproc cluster configuration \_|\_ Cloud Data Fusion \_|\_ Google Cloud\
-  \ Documentation"
+title: "Managed Service for Apache Spark cluster configuration \_|\_ Cloud Data Fusion\
+  \ \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters
 knowledge_key: corpus
 source_id: site-iam-reference
@@ -8,8 +8,8 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/data-fusion/docs/access-control
 source_metadata:
   url: https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters
-  title: "Dataproc cluster configuration \_|\_ Cloud Data Fusion \_|\_ Google Cloud\
-    \ Documentation"
+  title: "Managed Service for Apache Spark cluster configuration \_|\_ Cloud Data\
+    \ Fusion \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
@@ -22,18 +22,18 @@ Data analytics
 Cloud Data Fusion
 Guides
 Send feedback
-Dataproc cluster configuration
+Managed Service for Apache Spark cluster configuration
 Stay organized with collections
 Save and categorize content based on your preferences.
 In Cloud Data Fusion, cluster configuration refers to defining how your
 data processing pipelines utilize computational resources when running Spark
-jobs on Dataproc. This page describes the main approaches to
+jobs on Managed Service for Apache Spark. This page describes the main approaches to
 cluster configuration.
 Default ephemeral clusters (recommended)
 Using the default clusters is the recommended approach for
 Cloud Data Fusion pipelines.
 Cloud Data Fusion automatically provisions and manages ephemeral
-Dataproc clusters for each pipeline execution. It creates a
+Managed Service for Apache Spark clusters for each pipeline execution. It creates a
 cluster at the beginning of the pipeline run, and then deletes it after the
 pipeline run completes.
 Benefits of ephemeral clusters:
@@ -41,7 +41,7 @@ Simplicity : you don't need to manually configure or manage the
 cluster.
 Cost-effectiveness : you only pay for the resources used during
 pipeline execution.
-Note: Cloud Data Fusion, by default, uses Dataproc
+Note: Cloud Data Fusion, by default, uses Managed Service for Apache Spark
 Autoscaling compute profile which creates ephemeral clusters as per the
 default configurations.
 To adjust clusters and tune performance, see Cluster sizing .
@@ -59,9 +59,9 @@ However, static clusters require more manual configuration and involve managing
 the cluster lifecycle yourself.
 To use a static cluster, you must set the following
 properties
-on the Dataproc cluster:
-dataproc : dataproc . conscrypt . provider . enable = false
-capacity - scheduler : yarn . scheduler . capacity . resource - calculator = "org.apache.hadoop.yarn.util.resource.DefaultResourceCalculator"
+on the Managed Service for Apache Spark cluster:
+dataproc:dataproc.conscrypt.provider.enable=false
+capacity-scheduler:yarn.scheduler.capacity.resource-calculator="org.apache.hadoop.yarn.util.resource.DefaultResourceCalculator"
 Cluster configuration options for static clusters
 If you choose to use static clusters, Cloud Data Fusion offers
 configuration options for the following aspects:
@@ -69,7 +69,7 @@ Worker machine type : specify the virtual machine type for the worker
 nodes in your cluster. This determines the vCPUs and memory available for
 each worker.
 Number of workers : define the initial number of worker nodes in your
-cluster. Dataproc might still autoscale this number, based on
+cluster. Managed Service for Apache Spark might still autoscale this number, based on
 workload.
 Zone : select your cluster's Google Cloud zone. Location can affect
 data locality and network performance.
@@ -93,11 +93,11 @@ Enables YARN to check for virtual memory limits and kill containers if
 they go beyond physical memory.
 Recommended value: false
 dataproc.scheduler.driver-size-mb
-The average memory footprint of the driver makes Dataproc queue the job if the master node lacks sufficient memory to run the driver process. This can impact job concurrency but can be mitigated by using a master node with more memory.
+The average memory footprint of the driver makes Managed Service for Apache Spark queue the job if the master node lacks sufficient memory to run the driver process. This can impact job concurrency but can be mitigated by using a master node with more memory.
 Recommended value: 2048
-For more information, see Run a pipeline against an existing Dataproc cluster .
+For more information, see Run a pipeline against an existing Managed Service for Apache Spark cluster .
 Reusing clusters
-You can reuse Dataproc clusters between runs to improve
+You can reuse Managed Service for Apache Spark clusters between runs to improve
 processing time. Cluster reuse is implemented in a model similar to connection
 pooling or thread pooling. Any cluster is kept up and running for a specified
 time after the run is finished. When a new run is started, it will try to find
@@ -109,7 +109,7 @@ provisioning model, a cluster runs a single pipeline run at a time. A
 cluster is reused only if it is idle .
 If you enable cluster reuse for all your runs, the necessary number of
 clusters to process all your runs will be created as needed. Similar to the
-ephemeral Dataproc provisioner, there is no direct control on
+ephemeral Managed Service for Apache Spark provisioner, there is no direct control on
 the number of clusters created. You can still use Google Cloud quotes
 to manage resources. For example, if you run 100 runs with 7 maximum
 parallel runs, you will have up to 7 clusters at a given point of time.
@@ -137,18 +137,18 @@ consider the cost versus cluster availability for reuse. The higher the
 value of Max Idle Time, the more clusters sit idle, ready for a run.
 Troubleshoot: Version compatibility
 Problem : The version of your Cloud Data Fusion environment might
-not be compatible with the version of your Dataproc cluster.
+not be compatible with the version of your Managed Service for Apache Spark cluster.
 Recommended : Upgrade to the latest Cloud Data Fusion version and
-use one of the supported Dataproc versions .
+use one of the supported Managed Service for Apache Spark versions .
 Earlier versions of Cloud Data Fusion are only compatible with
-unsupported versions of Dataproc .
-Dataproc does not provide updates and support for clusters
+unsupported versions of Managed Service for Apache Spark .
+Managed Service for Apache Spark does not provide updates and support for clusters
 created with these versions. Although you can continue running a cluster that
 was created with an unsupported version, we recommend replacing it with one
 created with a
 supported version .
 Cloud Data Fusion version
-Dataproc version
+Managed Service for Apache Spark version
 6.11.1
 2.3, 2.2 *** , 2.1
 6.10.1.1
@@ -165,21 +165,21 @@ Dataproc version
 1.3 **
 * Cloud Data Fusion versions 6.4 and later
 are compatible with
-supported versions of Dataproc . Unless specific OS features
+supported versions of Managed Service for Apache Spark . Unless specific OS features
 are needed, the recommended practice is to specify the
 major.minor image version .
-To specify the OS version used in your Dataproc cluster, the OS
-version must be compatible with one of the supported Dataproc
+To specify the OS version used in your Managed Service for Apache Spark cluster, the OS
+version must be compatible with one of the supported Managed Service for Apache Spark
 versions for your Cloud Data Fusion in the preceding table.
 ** Cloud Data Fusion versions 6.1 to 6.6 are
 compatible with
-unsupported Dataproc version 1.3 .
+unsupported Managed Service for Apache Spark version 1.3 .
 *** Certain
-issues are detected with this image version. This Dataproc
+issues are detected with this image version. This Managed Service for Apache Spark
 image version is not recommended for production use.
 Troubleshoot: Container exited with a non-zero exit code 3
 Problem : An autoscaling policy isn't used, and the static
-Dataproc clusters are encountering memory pressure, causing an
+Managed Service for Apache Spark clusters are encountering memory pressure, causing an
 out of memory exception to appear in the logs: Container exited with a non-zero
 exit code 3 .
 Recommended : Increase the executor memory.
@@ -189,9 +189,9 @@ to 4096 MB:
 "task.executor.system.resources.memory": 4096
 For more information, see Cluster sizing .
 What's next
-Refer to the How to change Dataproc image version .
+Refer to the How to change Managed Service for Apache Spark image version .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

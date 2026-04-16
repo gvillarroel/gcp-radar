@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.838Z"
+generated_at: "2026-04-12T12:14:02.768Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Managed bulk delete service"
 feature_slug: "managed-bulk-delete-service"
 latest_feature_date: "2024-11-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastore/docs/bulk-delete"
   - "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+  - "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
   - "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial"
 keywords:
   - "managed"
@@ -25,7 +26,7 @@ keywords:
 # Managed bulk delete service
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,12 +38,13 @@ The managed bulk delete service deletes entities in bulk.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastore/docs/bulk-delete](https://docs.cloud.google.com/datastore/docs/bulk-delete)
 - [https://docs.cloud.google.com/datastore/docs/export-import-entities](https://docs.cloud.google.com/datastore/docs/export-import-entities)
+- [https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console](https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console)
 - [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
 
 ## Supporting Pages
@@ -51,9 +53,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastore/docs/bulk-delete](https://docs.cloud.google.com/datastore/docs/bulk-delete)
 - Source ID: `site-docs-root`
-- Final score: 242
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 324
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Bulk delete data A bulk delete operation first finds all applicable entities in your database and deletes them in batches.
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastore/docs/export-import-entities](https://docs.cloud.google.com/datastore/docs/export-import-entities)
 - Source ID: `site-docs-root`
-- Final score: 160
+- Final score: 189
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +76,24 @@ Evidence snippets:
 - An alert reports the success or failure of your managed export request. gcloud Use the gcloud firestore export command to export all entities in your database. gcloud firestore export gs:// bucket-name --async --database= DATABASE where bucket-name is the name of your Cloud Storage bucket and an optional prefix, for example, bucket-name /datastore-exports/export-name .
 - This command won't delete export files from Cloud Storage. gcloud datastore operations delete operation-name Billing and pricing for managed exports and imports You are required to enable billing for your Google Cloud project before you use the managed export and import service.
 
+### Datastore Admin \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console](https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console)
+- Source ID: `site-docs-root`
+- Final score: 180
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Backup and restore considerations The backup and restore feature is intended to help you recover from accidental deletes of data or to enable you to export data.
+- Firestore in Datastore mode previously supported the ability to enable Datastore Admin, an optional module with bulk delete and backup features.
+- The bulk delete feature was replaced by the Bulk Delete Entities template for Dataflow .
+- Disable Datastore Admin access Run the following command, replacing PROJECT ID with the ID of your Google Cloud project: curl -X DELETE -H "Authorization: Bearer $(gcloud auth print-access-token)" \ https://appengine.googleapis.com/v1/apps/ PROJECT ID /services/default/versions/ah-builtin-python-bundle Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
 ### "Getting started with the Firestore in Datastore mode API \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial](https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial)
 - Source ID: `site-iam-reference`
-- Final score: 142
+- Final score: 164
 - Re-rank relevance: N/A
 
 Evidence snippets:

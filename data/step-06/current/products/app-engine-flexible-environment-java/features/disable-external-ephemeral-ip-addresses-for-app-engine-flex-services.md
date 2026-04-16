@@ -1,29 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:43:43.848Z"
+generated_at: "2026-04-14T23:21:33.462Z"
 product_name: "App Engine flexible environment Java"
 product_slug: "app-engine-flexible-environment-java"
 feature_name: "Disable external ephemeral IP addresses for App Engine Flex services"
 feature_slug: "disable-external-ephemeral-ip-addresses-for-app-engine-flex-services"
 latest_feature_date: "2022-05-23"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/java/disable-external-ip"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/known-issues"
 keywords:
-  - "disable external ephemeral IP addresses"
-  - "external IP assignment disabled"
-  - "disable external ephemeral IP"
-  - "external ephemeral IP addresses"
-  - "ephemeral IP disabled"
-  - "flex services external IP"
-  - "external IP off"
+  - "disable"
+  - "external"
+  - "ephemeral"
+  - "ip"
+  - "addresses"
+  - "app"
+  - "engine"
+  - "flex"
 ---
 
 # Disable external ephemeral IP addresses for App Engine Flex services
 
 Product: App Engine flexible environment Java
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +36,57 @@ App Engine Flexible services can be configured to disable external ephemeral IP 
 
 App Engine Flexible services can be configured to disable external ephemeral IP addresses.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip](https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip)
+- [https://docs.cloud.google.com/appengine/docs/flexible/java/disable-external-ip](https://docs.cloud.google.com/appengine/docs/flexible/java/disable-external-ip)
+- [https://docs.cloud.google.com/appengine/docs/flexible/known-issues](https://docs.cloud.google.com/appengine/docs/flexible/known-issues)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Configure private internal-only services \_|\_ App Engine flexible environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip](https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip)
+- Source ID: `site-docs-reference`
+- Final score: 187
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Limitations Disabling ephemeral external IP addresses has the following limitations: Services with custom domains: To send requests to App Engine services with custom domains you must configure Cloud NAT .
+- Legacy networks: Legacy networks cannot use Private Google Access, and thus cannot disable ephemeral external IP addresses.
+- Before you begin To deploy flexible environment apps without external IP addresses, you must enable Private Google Access on the target subnetwork.
+- The ephemeral external IP address allows your service to send requests to App Engine services with custom domains, and resources on the internet.
+
+### "Configure private internal-only services \_|\_ App Engine flexible environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/java/disable-external-ip](https://docs.cloud.google.com/appengine/docs/flexible/java/disable-external-ip)
+- Source ID: `site-docs-reference-2`
+- Final score: 187
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Limitations Disabling ephemeral external IP addresses has the following limitations: Services with custom domains: To send requests to App Engine services with custom domains you must configure Cloud NAT .
+- Legacy networks: Legacy networks cannot use Private Google Access, and thus cannot disable ephemeral external IP addresses.
+- Before you begin To deploy flexible environment apps without external IP addresses, you must enable Private Google Access on the target subnetwork.
+- The ephemeral external IP address allows your service to send requests to App Engine services with custom domains, and resources on the internet.
+
+### Known issues in the App Engine flexible environment \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/known-issues](https://docs.cloud.google.com/appengine/docs/flexible/known-issues)
+- Source ID: `site-docs-reference-2`
+- Final score: 124
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If there is an organization policy on your project that restricts access to external IPs, you won't be able to deploy an App Engine flexible environment app with external IP addresses.
+- The global external Application Load Balancer sends requests to a service in the App Engine flexible environment regardless of the health of individual instances.
+- Some events that may affect App Engine flexible environment minimum number of instances are: Rolling out updates to flexible environment instances Zonal failure (Stockout issues, such as when your region is at capacity for your selected CPU, etc.) App Engine flexible environment uses 3 zones to distribute your instances and in such a configuration, we recommend provisioning 50% more instances than required.
+- Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Known issues in the App Engine flexible environment Stay organized with collections Save and categorize content based on your preferences.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:38.953Z"
+generated_at: "2026-04-12T12:17:32.227Z"
 product_name: "Integration Connectors"
 product_slug: "integration-connectors"
 feature_name: "Apache Kafka connector Confluent Cloud support"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-04-12"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/custom-connectors"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure"
 keywords:
   - "apache"
   - "kafka"
@@ -37,45 +38,68 @@ The Apache Kafka connector supports Confluent Cloud configuration.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure)
 
 ## Supporting Pages
 
-### Google Drive connector | Integration Connectors | Google Cloud Documentation
+### Apache Kafka \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- Source ID: `site-docs-root`
-- Final score: 92
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 276
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- A sample response of the PublishMessage action is as follows: {Success: true, PartitionWritten: 1, OffsetWritten: 22301, KeyWritten: "dGVzdA==", TimestampWritten: 1690806748} Configuration for Confluent Cloud Configuration for the Confluent Cloud differs slightly from the previously documented steps for Apache Kafka.
+- When creating this connection by using Terraform, you must set the following variables in your Terraform configuration file: Parameter name Data type Required Description type detection scheme ENUM True The scheme used for authentication with the Apache Kafka broker.
+- Supported versions The Apache Kafka connector leverages the native client libraries to establish a connection to a given Kafka cluster, and the connector works with client version 3.3.1.
+- In the Connection Details step, provide details about the new Apache Kafka connection: Connector version: Choose an available version of the Apache Kafka connector from the list.
+
+### Apache Cassandra \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 186
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Google Drive connector Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc google drive/overview If the action is successful, the connector task&#x27;s connectorOutputPayload response parameter will have a value similar to the following: ...
-- The following example shows how to configure the SubscribeToFileChanges action in Application Integration:
+- PSC connection type Field name Details Location us-central1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn-psc Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database DATABASE NAME Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 SSL Configuration No Destination Type Host address Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 SSL connection type Field name Details Location us-central1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database testgcp Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (under SSL Configuration) Yes Choose Trust Model (under Trust Store) Private Custom Trust Store CUSTOM TRUST STORE Secret version 1 Client Certificate (under Key Store) CLIENT CERT Secret version 1 Client Private Key (under Key Store) CLIENT PRIVATE KEY Secret version 1 Destination Type Host address Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 Multinode connectivity type Field name Details Location europe-west1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn-multinode1 Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database test-google-cloud Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (under SSL Configuration) No Destination Type Host address Host 192.0.2.0 Port PORT Host 192.0.2.0 Port PORT Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 To use a multinode connection type, SSL must be disabled in the Cassandra instance and you must use the username and password to authenticate.
+- Connection configuration samples Basic authentication connection type Fieldname Details Location us-central1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database test-google-cloud Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (SSL Configuration) No Destination Type Host address Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 If SSL is disabled in the Cassandra instance, you cannot use basic authentication with username and password.
+- Multinode with SSL connection type Field name Details Location europe-west1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn-multinode1 Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com/td> Database test-google-cloud Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (under SSL Configuration) Yes Choose Trust Model (under Trust Store) Private Custom Trust Store CUSTOM TRUST STORE Secret version 1 Client Certificate (under Key Store) CLIENT CERT Secret version 1 Client Private Key (under Key Store) CLIENT PRIVATE KEY Secret version 1 Destination Type Host address Host 192.0.2.1 Port PORT Host 192.0.2.2 Port PORT Host 3 192.0.2.3 Port PORT Username USERNAME Password PASSWORD Secret version 1 For information about configuring SSL for Apache Cassandra, see Setting up a Cassandra cluster with SSL For information about configuring Cassandra on a single node, see Installing Cassandra or Installing Apache Cassandra on CentOS 7 .
+- When creating this connection by using Terraform, you must set the following variables in your Terraform configuration file: Parameter name Data type Required Description keyspace STRING True Cassandra Keyspace Get help from the Google Cloud community You can post your questions and discuss this connector in the Google Cloud community at Cloud Forums .
 
-### Marketplace connectors overview | Integration Connectors | Google Cloud Documentation
+### Apache CouchDB \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- Source ID: `site-docs-root`
-- Final score: 86
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 174
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Marketplace connectors overview Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview As a partner, when you publish a custom connector as a Marketplace connector, it enhances the visibility and reach of the connector.
-- As a Marketplace consumer, you can use the trusted Google Cloud Marketplace platform to discover and purchase connectors required to build integrations in Application ...
+- Basic authentication connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-vm-connection Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views Yes Flexible Schema Yes Minimum number of nodes 2 Maximum number of nodes 50 Destination Type(Server) Host address Host address http://198.51.100.0 Username USERNAME Password PASSWORD Secret version 1 Proxy connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-proxy-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views No Flexible Schema No Proxy use proxy Proxy Auth Scheme Digest Proxy User PROXY USER Proxy Password PROXY PASSWORD Minimum number of nodes 2 Maximum number of nodes 50 Destination Type(Server) Host address Host address http://198.51.100.0 Username USERNAME Password PASSWORD Secret version 1 SSL connection (insecure) connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-ssl-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views No Flexible Schema No Minimum number of nodes 2 Maximum number of nodes 50 Trust store (choose the trust model) Insecure Connection Destination Type(Server) Host address Host address http://198.51.100.0 Username USERNAME Password PASSWORD Secret version 1 SSL connection (private) connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-proxy-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views No Flexible Schema No Minimum number of nodes 2 Maximum number of nodes 50 Trust store (choose the trust model) Private Custom Trust store Self-signed certificate.
+- Secret Version 1 Destination Type(Server) Host address Host address https://198.51.100.0 Username USERNAME Password PASSWORD Secret version 1 JWT Authentication connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-vm-jwt-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views No Flexible Schema No Proxy No Minimum number of nodes 2 Maximum number of nodes 50 Destination Type(Server) Host address Host address http://203.0.113.0 JWT Subject admin JWT Algorithm HS256 JWT Key Type Symmetric JWT Key JWT KEY Secret version 1 Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.
+- System limitations The Apache CouchDB connector can process a maximum of 5 transactions per second, per node , and throttles any transactions beyond this limit.
+- Before you begin Before using the Apache CouchDB connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up.
 
-### Custom connectors | Integration Connectors | Google Cloud Documentation
+### Cloud Storage \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- Source ID: `site-docs-root`
-- Final score: 80
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 146
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Custom connectors Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/custom-connectors This page provides an overview of the custom connectors feature in Integration Connectors, and assumes that you are familiar with the following concepts:
+- Examples This examples in this section describe the following operations: List all objects List all objects in a bucket List objects using the LIKE filter for name List all buckets Download an object Download a binary object Upload a binary object to a bucket Upload an object to a bucket Upload an object to a folder Copy an object Move an object Delete an object Create a signed URL for an object The following table lists the sample scenarios and the corresponding configuration in the Connectors task: Task Configuration List all objects In the Configure connector task dialog, click Entities .
+- Actions The Google Cloud Storage connection supports the following actions: DownloadObject UploadObject CopyObject MoveObject DeleteObject SignURL Note: The results of all the entity operations and actions will be available as a JSON response in the Connectors task's connectorOutputPayload response parameter after you run your integration.
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter the following in the Default Value field: { "BucketSource" : "bucket 01" , "ObjectSource" : "folderA/logfile.txt" , "BucketDestination" : "bucket 02" , "ObjectDestination" : "folderB/logfile.txt" } This example copies the folderA/logfile.txt file from bucket 01 to folderB/logfile.txt in bucket 02 .
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter the following in the Default Value field: { "BucketSource" : "bucket 01" , "ObjectSource" : "folderA/logfile.txt" , "BucketDestination" : "bucket 02" , "ObjectDestination" : "folderB/logfile.txt" } This example moves the folderA/logfile.txt file from bucket 01 to folderB/logfile.txt in bucket 02 .
 

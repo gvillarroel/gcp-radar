@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.803Z"
+generated_at: "2026-04-14T15:13:20.039Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "NOAA Climate Forecast System Reanalysis (CFSR)"
 feature_slug: "noaa-climate-forecast-system-reanalysis-cfsr"
 latest_feature_date: "2019-05-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/climate"
   - "https://developers.google.com/earth-engine/datasets/tags/geophysical"
@@ -25,7 +25,7 @@ keywords:
 # NOAA Climate Forecast System Reanalysis (CFSR)
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,7 +37,7 @@ A NOAA climate forecast system reanalysis dataset.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -51,7 +51,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
 - Source ID: `site-docs-root`
-- Final score: 184
+- Final score: 202
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -64,7 +64,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/geophysical](https://developers.google.com/earth-engine/datasets/tags/geophysical)
 - Source ID: `site-docs-root`
-- Final score: 158
+- Final score: 174
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -77,7 +77,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/precipitation](https://developers.google.com/earth-engine/datasets/tags/precipitation)
 - Source ID: `site-docs-root-3`
-- Final score: 158
+- Final score: 174
 - Re-rank relevance: N/A
 
 Evidence snippets:

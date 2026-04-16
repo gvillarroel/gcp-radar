@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T22:04:50.082Z"
+generated_at: "2026-04-12T20:56:05.584Z"
 product_name: "App Engine standard environment Node.js"
 product_slug: "app-engine-standard-environment-node-js"
 feature_name: "Custom `gcp-build` deployment script"
 feature_slug: "custom-gcp-build-deployment-script"
 latest_feature_date: "2018-08-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step"
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes"
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs"
   - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies"
+  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step"
 keywords:
-  - "deploy-time build hook"
-  - "npm run gcp-build"
-  - "`gcp-build` script"
-  - "package.json gcp-build"
-  - "App Engine deployment script"
-  - "custom build step"
-  - "custom build hook"
-  - "gcp-build"
+  - "custom"
+  - "gcp"
+  - "build"
+  - "deployment"
+  - "script"
+  - "app"
+  - "engine"
+  - "now"
 ---
 
 # Custom `gcp-build` deployment script
 
 Product: App Engine standard environment Node.js
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,62 +38,55 @@ App Engine now executes a `gcp-build` script from `package.json` at deployment t
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step](https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step)
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes](https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes)
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs](https://docs.cloud.google.com/appengine/docs/standard/nodejs)
 - [https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime](https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies](https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies)
+- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step](https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step)
 
 ## Supporting Pages
-
-### "Running a custom build step \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step](https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step)
-- Source ID: `site-docs-reference`
-- Final score: 80
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Note the gcp-build script: { "name" : "appengine-typescript" , "description" : "An example TypeScript app running on Google App Engine." , "version" : "0.0.1" , "private" : true , "license" : "Apache Version 2.0" , "author" : "Google Inc." , "engines" : { "node" : "20.x" }, "scripts" : { "prepare" : "npm run gcp-build" , "pretest" : "npm run gcp-build" , "test" : "c8 mocha -p -j 2 test/ .test.js --exit" , "lint" : "gts lint" , "start" : "node ./index.js" , "deploy" : "gcloud app deploy" , "clean" : "gts clean" , "compile" : "tsc -p ." , "fix" : "gts fix" , "build" : "tsc -p ." , "gcp-build" : "tsc -p ." }, "dependencies" : { "@typescript-eslint/parser" : "^8.0.0" , "express" : "^4.16.3" }, "devDependencies" : { "@types/express" : "^4.17.17" , "@types/node" : "^20.0.0" , "c8" : "^10.0.0" , "chai" : "^4.5.0" , "gts" : "^5.0.0" , "mocha" : "^10.2.0" , "typescript" : "^5.0.0" , "wait-port" : "^1.0.0" } } Serving static files When you generate or copy files during the custom build step, App Engine does not serve these static files directly from your app using either the static dir or static files elements defined in the app.yaml file.
-- To prevent your build from running the npm run build script, you must either: Add a gcp-build script with an empty value in your package.json file: "gcp-build":"" .
-- Custom build steps can be executed by adding gcp-build in your package.json file.
-- After executing your custom build step, App Engine removes and regenerates the node modules folder by only installing the production dependencies declared in the dependencies field of your package.json file.
-
-### "App Engine standard environment for Node.js release notes \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes](https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 30
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- August 10, 2018 Feature Added support for a custom build step: If a script named gcp-build is present in package.json , this script will be executed at deployment time alongside dependencies declared in devDependencies .
-- Important : To prevent your build from running the npm run build script, you must either: Add a gcp-build script with an empty value in your package.json file: "gcp-build":"" .
-
-### "Node.js Runtime Environment \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs](https://docs.cloud.google.com/appengine/docs/standard/nodejs)
-- Source ID: `site-docs-reference`
-- Final score: 30
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- If you require additional control over your build steps before starting your application, you can provide a custom build step by adding a gcp-build script to your package.json file.
-- To prevent your build from running the npm run build script, you must either: Add a gcp-build script with an empty value in your package.json file: "gcp-build":"" .
 
 ### "Node.js Runtime Environment \_|\_ App Engine standard environment \_|\_\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime](https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime)
-- Source ID: `site-docs-reference`
-- Final score: 30
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-root`
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - If you require additional control over your build steps before starting your application, you can provide a custom build step by adding a gcp-build script to your package.json file.
-- To prevent your build from running the npm run build script, you must either: Add a gcp-build script with an empty value in your package.json file: "gcp-build":"" .
+- NPM build script By default, when you deploy the app in App Engine, the Node.js runtime executes npm run build if a build script is detected in package.json .
+- Add the GOOGLE NODE RUN SCRIPTS build environment variable with an empty value in your app.yaml file. build env variables : GOOGLE NODE RUN SCRIPTS : '' For details about specifying build environment variables see build env variables section in the app.yaml file.
+- Environment variables The following environment variables are set by the runtime: Environment variable Description GAE APPLICATION The ID of your App Engine application.
+
+### Specifying dependencies | App Engine standard environment | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies](https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies)
+- Source ID: `feature-recovery-http`
+- Final score: 200
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Specifying dependencies | App Engine standard environment | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in App Engine Standard environment Start free Overview Guides Reference Resources App Engine environments App Engine standard environment Learn about the standard environment App Engine flexible environment Learn about the flexible environment App Engine Migration Center Learn how to migrate to the latest supported versions Technology areas More Overview Guides Reference Resources App Engine environments More Cross-product tools More Console App Engine standard environment App Engine home Standard environment overview Choose a language and environment Discover standard environment runtimes Go runtime Overview Build an app Upgrade an existing app Migrate from the first-generation to the second-generation runtimes Java runtime Overview Build an app Overview Create your project Write your web service Deploy your web service Upgrade an existing app Re-package a WAR file Migrate from the first-generation to the second-generation runtimes Node.js runtime Overview Build an app Overview Create your project Write your web service Deploy your web service Update your web service View logs PHP runtime Overview Build an app Upgrade an existing app Migrate from the first-generation to the second-generation runtimes Python runtime Overview Build an app Overview Create your project Write your web service Deploy your web service Handle data Add Firebase Authenticate users Personalize data Clean up Upgrade an existing app Overview Migrate from the first-generation to the second-generation runtimes Migrate to Python 3 runtime Migrate legacy bundled services Prepare configuration files for the Python 3 environment Test and deploy your app Ruby runtime Overview Create an app Get started Set up your environment Set up your development environment Set up optional tools for Java Apache Maven Using Maven and the App Engine plugin Maven Plugin goals and parameters Gradle Use the App Engine plugin Tasks and properties Set up your Cloud project Grant access Set up access control View roles that grant access to App Engine Configure service accounts Google-managed service agent Design your app Structure web services Host a static website Communicate between your services Handle requests Route requests Define configuration files Go Define runtime settings Specify dependencies Java Define runtime settings Specify dependencies Node.js Define runtime settings Specify dependencies Run a custom build step PHP Define runtime settings Specify dependencies Python Define runtime settings Specify dependencies Ruby Define runtime settings Specify dependencies Test and deploy your app Test on the local development server Using the local development server Command options Configure your app Set up networking Map custom domains Secure custom domains with SSL Secure your app with minimum TLS Virtual private cloud (VPC) Connect to a VPC network Connect to a Shared VPC network Shared VPC with connectors in service projects Shared VPC with connectors in the host project Set up a static outbound IP address Store data and files Overview Use Cloud Firestore in Datastore mode Use Cloud SQL Use Cloud Storage (cloud file hosting) Store and serve static files Read and write temporary files Cache data with Memorystore Create triggers Write and respond to Pub/Sub messages Send messages with third-party services Secure your app Overview Specify Ingress and Egress settings Understand firewalls Create firewall rules Authenticate users Operate and maintain Manage instances Label resources Manage your app's traffic Migrate traffic Split traffic Schedule cron jobs Run asynchronous tasks Configure warmup requests Automate tasks Get started with the Admin API Monitor, log, and debug Access audit logs Write and view logs Monitor and alerts latency Understand Performance with Cloud Profiler Access legacy bundled services Overview Go 1.12+ Java 11+ PHP 7/8 Python 3 Overview Blobstore overview Deferred overview Mail overview Available APIs Overview App Identity Blobstore Capabilities Datastore Overview Client library concepts API overview Asynchronous operation Callbacks Creating, retrieving, updating, and deleting entities Creating and using entity keys Entity, properties and keys Entity property reference Indexes Metadata Projection queries Queries Query cursors Query data consistency Query restrictions Retrieving query results Statistics Structuring data for strong consistency Transactions Managing Datastore from the Console Overview Viewing Datastore Statistics Configuring Datastore indexes Images Mail Mail API Overview Bulk mail guidelines Sending mail Receiving mail Receiving bounce notification Mail with headers or attachments Memcache Memcache Overview Using Memcache Memcache Examples Memcache Audit Logs Modules Namespaces API Namespaces API Overview Multitenancy with Namespaces NDB Client Library for Cloud Datastore Overview Administration Asynchronous operation Caching Creating, retrieving, updating, and deleting entities Creating entity models Creating and using entity keys Configuring Datastore indexes Projection queries Queries Transactions Writing property subclasses NDB Client Library Reference Entity Property Reference Context Exceptions Functions Future Key Metadata Model PolyModel Query Search Documents and indexes Query strings Query and sorting options Handling search results Faceted search Best practices Using the local development server Reference for Python Cursor Document Facet Classes FacetOptions FacetRange FacetRefinement FacetResult FacetResultValue Field Classes FieldExpression GeoPoint GetResponse Index MatchScorer Query QueryOptions RescoringMatchScorer ScoredDocument SearchResults SortExpression SortOptions Functions Exceptions Task Queues Task Queue Overview Using Push Queues Using Push Queues Creating Push Queues Creating Push Tasks Creating Task Handlers Deleting Tasks and Queues Retrying Failed Push Tasks Testing Push Queues in the Development Server Using Pull Queues Using Pull Queues Creating Pull Queues Creating Pull Tasks Leasing Pull Tasks URL Fetch Outbound requests Issue HTTP(S) requests Users Overview User objects Login URLs Admin users Migration center Migration resources Troubleshoot Introduction Deployment Serving Elevated latency Connectivity Community resources AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools App Engine standard environment App Engine flexible environment App Engine Migration Center Home Documentation Application hosting App Engine Standard environment Guides Send feedback Specifying dependencies Stay organized with collections Save and categorize content based on your preferences.
+- The start script should be lightweight and exclude build steps for the best performance because the script runs each time a new instance of your application is created.
+- By default, App Engine caches fetched dependencies to reduce build times.
+- To install an uncached version of the dependency, use the command: gcloud app deploy -- no - cache Support and limitations for the package.json file in the standard environment: You can use any Linux-compatible Node.js package with App Engine, including packages that require native (C) extensions.
+
+### Running a custom build step | App Engine standard environment | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step](https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step)
+- Source ID: `feature-recovery-http`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Running a custom build step | App Engine standard environment | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in App Engine Standard environment Start free Overview Guides Reference Resources App Engine environments App Engine standard environment Learn about the standard environment App Engine flexible environment Learn about the flexible environment App Engine Migration Center Learn how to migrate to the latest supported versions Technology areas More Overview Guides Reference Resources App Engine environments More Cross-product tools More Console App Engine standard environment App Engine home Standard environment overview Choose a language and environment Discover standard environment runtimes Go runtime Overview Build an app Upgrade an existing app Migrate from the first-generation to the second-generation runtimes Java runtime Overview Build an app Overview Create your project Write your web service Deploy your web service Upgrade an existing app Re-package a WAR file Migrate from the first-generation to the second-generation runtimes Node.js runtime Overview Build an app Overview Create your project Write your web service Deploy your web service Update your web service View logs PHP runtime Overview Build an app Upgrade an existing app Migrate from the first-generation to the second-generation runtimes Python runtime Overview Build an app Overview Create your project Write your web service Deploy your web service Handle data Add Firebase Authenticate users Personalize data Clean up Upgrade an existing app Overview Migrate from the first-generation to the second-generation runtimes Migrate to Python 3 runtime Migrate legacy bundled services Prepare configuration files for the Python 3 environment Test and deploy your app Ruby runtime Overview Create an app Get started Set up your environment Set up your development environment Set up optional tools for Java Apache Maven Using Maven and the App Engine plugin Maven Plugin goals and parameters Gradle Use the App Engine plugin Tasks and properties Set up your Cloud project Grant access Set up access control View roles that grant access to App Engine Configure service accounts Google-managed service agent Design your app Structure web services Host a static website Communicate between your services Handle requests Route requests Define configuration files Go Define runtime settings Specify dependencies Java Define runtime settings Specify dependencies Node.js Define runtime settings Specify dependencies Run a custom build step PHP Define runtime settings Specify dependencies Python Define runtime settings Specify dependencies Ruby Define runtime settings Specify dependencies Test and deploy your app Test on the local development server Using the local development server Command options Configure your app Set up networking Map custom domains Secure custom domains with SSL Secure your app with minimum TLS Virtual private cloud (VPC) Connect to a VPC network Connect to a Shared VPC network Shared VPC with connectors in service projects Shared VPC with connectors in the host project Set up a static outbound IP address Store data and files Overview Use Cloud Firestore in Datastore mode Use Cloud SQL Use Cloud Storage (cloud file hosting) Store and serve static files Read and write temporary files Cache data with Memorystore Create triggers Write and respond to Pub/Sub messages Send messages with third-party services Secure your app Overview Specify Ingress and Egress settings Understand firewalls Create firewall rules Authenticate users Operate and maintain Manage instances Label resources Manage your app's traffic Migrate traffic Split traffic Schedule cron jobs Run asynchronous tasks Configure warmup requests Automate tasks Get started with the Admin API Monitor, log, and debug Access audit logs Write and view logs Monitor and alerts latency Understand Performance with Cloud Profiler Access legacy bundled services Overview Go 1.12+ Java 11+ PHP 7/8 Python 3 Overview Blobstore overview Deferred overview Mail overview Available APIs Overview App Identity Blobstore Capabilities Datastore Overview Client library concepts API overview Asynchronous operation Callbacks Creating, retrieving, updating, and deleting entities Creating and using entity keys Entity, properties and keys Entity property reference Indexes Metadata Projection queries Queries Query cursors Query data consistency Query restrictions Retrieving query results Statistics Structuring data for strong consistency Transactions Managing Datastore from the Console Overview Viewing Datastore Statistics Configuring Datastore indexes Images Mail Mail API Overview Bulk mail guidelines Sending mail Receiving mail Receiving bounce notification Mail with headers or attachments Memcache Memcache Overview Using Memcache Memcache Examples Memcache Audit Logs Modules Namespaces API Namespaces API Overview Multitenancy with Namespaces NDB Client Library for Cloud Datastore Overview Administration Asynchronous operation Caching Creating, retrieving, updating, and deleting entities Creating entity models Creating and using entity keys Configuring Datastore indexes Projection queries Queries Transactions Writing property subclasses NDB Client Library Reference Entity Property Reference Context Exceptions Functions Future Key Metadata Model PolyModel Query Search Documents and indexes Query strings Query and sorting options Handling search results Faceted search Best practices Using the local development server Reference for Python Cursor Document Facet Classes FacetOptions FacetRange FacetRefinement FacetResult FacetResultValue Field Classes FieldExpression GeoPoint GetResponse Index MatchScorer Query QueryOptions RescoringMatchScorer ScoredDocument SearchResults SortExpression SortOptions Functions Exceptions Task Queues Task Queue Overview Using Push Queues Using Push Queues Creating Push Queues Creating Push Tasks Creating Task Handlers Deleting Tasks and Queues Retrying Failed Push Tasks Testing Push Queues in the Development Server Using Pull Queues Using Pull Queues Creating Pull Queues Creating Pull Tasks Leasing Pull Tasks URL Fetch Outbound requests Issue HTTP(S) requests Users Overview User objects Login URLs Admin users Migration center Migration resources Troubleshoot Introduction Deployment Serving Elevated latency Connectivity Community resources AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools App Engine standard environment App Engine flexible environment App Engine Migration Center Home Documentation Application hosting App Engine Standard environment Guides Send feedback Running a custom build step Stay organized with collections Save and categorize content based on your preferences.
+- Note the gcp-build script: { "name" : "appengine-typescript" , "description" : "An example TypeScript app running on Google App Engine." , "version" : "0.0.1" , "private" : true , "license" : "Apache Version 2.0" , "author" : "Google Inc." , "engines" : { "node" : "20.x" }, "scripts" : { "prepare" : "npm run gcp-build" , "pretest" : "npm run gcp-build" , "test" : "c8 mocha -p -j 2 test/*.test.js --exit" , "lint" : "gts lint" , "start" : "node ./index.js" , "deploy" : "gcloud app deploy" , "clean" : "gts clean" , "compile" : "tsc -p ." , "fix" : "gts fix" , "build" : "tsc -p ." , "gcp-build" : "tsc -p ." }, "dependencies" : { "@typescript-eslint/parser" : "^8.0.0" , "express" : "^4.16.3" }, "devDependencies" : { "@types/express" : "^4.17.17" , "@types/node" : "^20.0.0" , "c8" : "^10.0.0" , "chai" : "^4.5.0" , "gts" : "^5.0.0" , "mocha" : "^10.2.0" , "typescript" : "^5.0.0" , "wait-port" : "^1.0.0" } } Serving static files When you generate or copy files during the custom build step, App Engine does not serve these static files directly from your app using either the static_dir or static_files elements defined in the app.yaml file.
+- After executing your custom build step, App Engine removes and regenerates the node_modules folder by only installing the production dependencies declared in the dependencies field of your package.json file.
+- Example A custom build script can be used for pre-processing tasks, such as pre-processing CSS, minifying client side JavaScript, or running tools, such as webpack or gulp .
 

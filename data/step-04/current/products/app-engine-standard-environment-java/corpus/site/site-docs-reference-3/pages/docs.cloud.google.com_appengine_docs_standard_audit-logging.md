@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/standard/audit-logging
 knowledge_key: corpus
 source_id: site-docs-reference-3
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/configuring-your-app-with-app-yaml
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/writing-web-service
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/standard/audit-logging
   title: "App Engine audit logging information \_|\_ App Engine standard environment\

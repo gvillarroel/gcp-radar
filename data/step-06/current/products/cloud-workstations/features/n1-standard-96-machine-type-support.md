@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:01.012Z"
+generated_at: "2026-04-12T12:12:51.979Z"
 product_name: "Cloud Workstations"
 product_slug: "cloud-workstations"
 feature_name: "n1-standard-96 machine type support"
 feature_slug: "n1-standard-96-machine-type-support"
 latest_feature_date: "2023-05-05"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/workstations/docs/available-machine-types"
+  - "https://docs.cloud.google.com/workstations/docs/available-gpus"
+  - "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+  - "https://docs.cloud.google.com/workstations/docs/create-configuration"
 keywords:
   - "n1"
   - "standard"
@@ -24,7 +27,7 @@ keywords:
 # n1-standard-96 machine type support
 
 Product: Cloud Workstations
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ Cloud Workstations supports the n1-standard-96 machine type.
 
 Cloud Workstations supports the n1-standard-96 machine type.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/workstations/docs/available-machine-types](https://docs.cloud.google.com/workstations/docs/available-machine-types)
+- [https://docs.cloud.google.com/workstations/docs/available-gpus](https://docs.cloud.google.com/workstations/docs/available-gpus)
+- [https://docs.cloud.google.com/workstations/docs/customize-development-environment](https://docs.cloud.google.com/workstations/docs/customize-development-environment)
+- [https://docs.cloud.google.com/workstations/docs/create-configuration](https://docs.cloud.google.com/workstations/docs/create-configuration)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Available machine types \_|\_ Cloud Workstations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/workstations/docs/available-machine-types](https://docs.cloud.google.com/workstations/docs/available-machine-types)
+- Source ID: `site-docs-root-2`
+- Final score: 274
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Workstation machine type Virtual CPUs Memory Confidential compute GPU acceleration Persistent Storage n1-standard-1 1 3.75 GB n1-standard-2 2 7.5 GB n1-standard-4 4 15 GB n1-standard-8 8 30 GB n1-standard-16 16 60 GB n1-standard-32 32 120 GB n1-standard-64 64 240 GB n1-standard-96 96 360 GB N2 machine types For more information, see the Compute Engine description of the N2 machine series .
+- Workstation machine type Virtual CPUs Memory in GB Confidential compute GPU acceleration Persistent Storage e2-medium 2 4 GB e2-standard-2 2 8 GB e2-standard-4 4 16 GB e2-standard-8 8 32 GB e2-standard-16 16 64 GB e2-standard-32 32 128 GB N1 machine types For more information, see the Compute Engine description of the N1 machine series .
+- Workstation machine type Virtual CPUs Memory Confidential compute GPU acceleration Persistent Storage n2d-highmem-2 2 16 GB n2d-highmem-4 4 32 GB n2d-highmem-8 8 64 GB n2d-highmem-16 16 128 GB n2d-highmem-32 32 256 GB n2d-highmem-48 48 384 GB n2d-highmem-64 64 512 GB n2d-highmem-80 80 640 GB n2d-highmem-96 96 768 GB Tau T2D machine types For more information, see the Compute Engine description of the Tau T2D machine series .
+- Workstation machine type Virtual CPUs Memory Confidential compute GPU acceleration Persistent Storage n2d-standard-2 2 8 GB n2d-standard-4 4 16 GB n2d-standard-8 8 32 GB n2d-standard-16 16 64 GB n2d-standard-32 32 128 GB N2D high-mem machine types For more information, see the Compute Engine description of the N2D machine series and select N2D high-mem .
+
+### Available GPUs \_|\_ Cloud Workstations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/workstations/docs/available-gpus](https://docs.cloud.google.com/workstations/docs/available-gpus)
+- Source ID: `site-docs-root-2`
+- Final score: 213
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For all other GPU models, run this command: gcloud beta workstations configs update \ --project = PROJECT ID \ --region = LOCATION \ --cluster = CLUSTER NAME \ CONFIG NAME \ --machine-type = N1 MACHINE TYPE \ --accelerator-type = ACCELERATOR TYPE \ --accelerator-count = ACCELERATOR COUNT Replace the following: N1 MACHINE TYPE : the chosen machine type from the N1 series (for example, n1-standard-2 ).
+- Limitations A workstation configuration may specify GPUs, subject to the following limitations: Cloud Workstations only supports GPUs for configurations that specify machine types in the N1 machine series , the A2 machine series , or the A3 machine series .
+- If you chose the NVIDIA A100 40GB GPU model in the previous step, your configuration must use the A2 machine series: gcloud compute machine-types list \ --format = "table(name,zone,guestCpus:sort=1)" \ --filter = "name:a2-highgpu- OR name:a2-megagpu-" \ --zones = ZONES \ --project = PROJECT ID If you chose any other GPU model in the previous step, your configuration must use the N1 machine series: gcloud compute machine-types list \ --format = "table(name,zone,guestCpus:sort=1)" \ --filter = "name:n1-standard-" \ --zones = ZONES \ --project = PROJECT ID Choose a machine type that is listed twice in the table, indicating it is available in both replica zones .
+- For all other GPU models, run this command to create your configuration: gcloud beta workstations configs create \ --project = PROJECT ID \ --region = LOCATION \ --cluster = CLUSTER NAME \ CONFIG NAME \ --replica-zones = REPLICA ZONES \ --machine-type = N1 MACHINE TYPE \ --accelerator-type = ACCELERATOR TYPE \ --accelerator-count = ACCELERATOR COUNT Replace the following: PROJECT ID : the ID of the project that will contain the new workstation configuration.
+
+### "Customize your development environment \_|\_ Cloud Workstations \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/workstations/docs/customize-development-environment](https://docs.cloud.google.com/workstations/docs/customize-development-environment)
+- Source ID: `site-docs-root-2`
+- Final score: 193
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information about machine types that Cloud Workstations supports, see the list of available machine types . serviceAccount string Optional.
+- For more information about machine types that Cloud Workstations supports, see the list of available machine types .
+- Machine Type : nested virtualization can only be enabled on workstation configurations that specify a machineType in the N1 or N2 machine series. shieldedInstanceConfig object ( GceShieldedInstanceConfig ) Optional.
+- Machine Type : nested virtualization can only be enabled on boost configurations that specify a machineType in the N1 or N2 machine series. poolSize integer Optional.
+
+### "Create a workstation configuration \_|\_ Cloud Workstations \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/workstations/docs/create-configuration](https://docs.cloud.google.com/workstations/docs/create-configuration)
+- Source ID: `site-docs-root`
+- Final score: 156
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- A workstation configuration acts as a template for the creation of consistent workstations for multiple developers, and specifies configuration settings such as machine type, zones, disk size, tools, and preinstalled libraries.
+- For example, if you select the N1 machine type and want to use GPUs, be sure to select two zones where the chosen GPU type is listed as available in the GPU availability by region and zone table.
+- Machine Type : nested virtualization can only be enabled on workstation configurations that specify machine types in the N1 or N2 machine series.
+- This section explains the four steps of creating a workstation configuration: Configure basics Define machine settings Customize the environment Add users To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin Before you begin using Cloud Workstations, be sure that you have the required permissions and that you complete these required setup steps.
 

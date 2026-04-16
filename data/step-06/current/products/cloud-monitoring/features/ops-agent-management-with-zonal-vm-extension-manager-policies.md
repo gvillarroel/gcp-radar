@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.076Z"
+generated_at: "2026-04-15T00:01:13.767Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Ops Agent management with zonal VM Extension Manager policies"
@@ -10,17 +10,17 @@ deprecation_date: ""
 coverage_status: "LOW"
 source_links:
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
-  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation"
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies"
+  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview"
 keywords:
   - "ops"
   - "agent"
   - "management"
-  - "with"
   - "zonal"
   - "vm"
   - "extension"
   - "manager"
+  - "policies"
 ---
 
 # Ops Agent management with zonal VM Extension Manager policies
@@ -38,13 +38,13 @@ Cloud Monitoring supports installing and managing the Ops Agent in a specified z
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies)
-- [https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation](https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation)
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies)
+- [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview)
 
 ## Supporting Pages
 
@@ -52,40 +52,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies)
 - Source ID: `site-iam-reference`
-- Final score: 282
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Troubleshoot extension policies This section provides information about troubleshooting the use of extension policies to manage the Ops Agent: gcloud beta compute zone-vm-extension-policies commands fail The extension policy is created, but the Ops Agent status is "not detected" Linux systemctl and Windows Service Manager don't work with the Ops Agent For information about troubleshooting the Ops Agent, see Troubleshoot the Ops Agent . gcloud beta compute zone-vm-extension-policies commands fail When a gcloud beta compute zone-vm-extension-policies command fails, the response includes troubleshooting suggestions.
-- Therefore, you can't stop or start the Ops Agent manually, and commands like the following don't work with the Ops Agent: Linux: sudo systemctl [stop start restart] Windows: Stop-Service , Start-Service , Restart-Service To stop or restart an Ops Agent managed by VM Extension Manager, you must uninstall the agent by deleting the extension policy.
-- Restart an Ops Agent installed by an extension policy When the Ops Agent is installed and managed by VM Extension Manager, the Ops Agent isn't managed by the system-management service of the operating system, that is, systemd on Linux or the Windows Service Manager on Windows.
-- Home Documentation Observability Cloud Monitoring Guides Send feedback Install and manage the Ops Agent by using VM Extension Manager policies Stay organized with collections Save and categorize content based on your preferences.
-
-### "Install the Ops Agent during VM creation \_|\_ Cloud Monitoring \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation](https://docs.cloud.google.com/monitoring/agent/ops-agent/install-agent-vm-creation)
-- Source ID: `site-iam-reference`
-- Final score: 206
+- Final score: 46
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- When you create instance-1 , VM Manager creates an Ops Agent OS policy for the us-central1-a zone and an OS policy assignment with the ID goog-ops-agent-v2-x86-template- 1-0-0 -us-central1-a .
-- When you use the Google Cloud console to create a VM with the Ops Agent installed, the VM Manager adds another label to the VM, which looks like goog-ops-agent-policy:v2-x86-template- 1-0-0 .
-- When you create instance-3 , VM Manager creates an Ops Agent OS policy for the us-east1-b zone and an OS policy assignment with the ID goog-ops-agent-v2-x86-template- 1-0-0 -us-east1-b .
-- By default, when VM Manager is enabled because you've created a VM with the Ops Agent automatically installed, VM Manager is enabled in the limited mode.
+- Troubleshoot extension policies This section provides information about troubleshooting the use of extension policies to manage the Ops Agent: gcloud beta compute zone-vm-extension-policies commands fail The extension policy is created, but the Ops Agent status is "not detected" Linux systemctl and Windows Service Manager don't work with the Ops Agent For information about troubleshooting the Ops Agent, see Troubleshoot the Ops Agent . gcloud beta compute zone-vm-extension-policies commands fail When a gcloud beta compute zone-vm-extension-policies command fails, the response includes troubleshooting suggestions.
+- Zonal Use the --inclusion-labels option to the gcloud beta compute zone-vm-extension-policies create command to specify a comma-separated list of key-value pairs: gcloud beta compute zone-vm-extension-policies create POLICY NAME \ --project= PROJECT ID \ --zone= ZONE \ --extensions=ops-agent --inclusion-labels= KEY1 = VALUE1 , KEY2 = VALUE2 Replace the following variables in the command: POLICY NAME : A name for the VM extension policy.
+- Zonal Use the --config-from-file option to the gcloud beta compute zone-vm-extension-policies create command to specify a configuration file: gcloud beta compute zone-vm-extension-policies create POLICY NAME \ --project= PROJECT ID \ --zone= ZONE \ --extensions=ops-agent --config-from-file=ops-agent=" OPS AGENT CONFIG PATH " Replace the following variables in the command: POLICY NAME : A name for the VM extension policy.
+- For example, a Google Cloud CLI command might look like the following: Zonal gcloud beta compute zone-vm-extension-policies create POLICY NAME \ --project= PROJECT ID \ --zone= ZONE \ --extensions=ops-agent \ --inclusion-labels=status=failed \ --priority=500 \ --config-from-file=ops-agent=/usr/ops-agent-config.yaml Replace the following variables in the command: POLICY NAME : A name for the VM extension policy.
 
 ### Use agent policies (beta) \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies)
 - Source ID: `site-iam-reference`
-- Final score: 188
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 42
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - For new policies, we recommend that you use VM Extension Manager policies for fleet-wide installation and management of the Ops Agent.
-- With VM extension policies, you can provide and manage custom configuration for the Ops Agent and manage version control, including auto-upgrades and version pinning.
-- Here is an example of a phased rollout plan for Debian 11 VMs in a project called my project : Phase 1: Create a policy named ops-agents-policy-safe-rollout to install the Ops Agent on all VMs with the labels env=test and app=myproduct . gcloud beta compute instances \ ops - agents policies create ops - agents - policy - safe - rollout \ -- agent - rules = "type=ops-agent,version=current-major,package-state=installed,enable-autoupgrade=true" \ -- os - types = short - name = debian , version = 11 \ -- group - labels = env = test , app = myproduct \ -- project = my project For more information about specifying the operating system, see gcloud beta compute instances ops-agents policies create .
 - Agent policies use the VM Manager suite of tools in Compute Engine to manage OS policies , which can automate the deployment and maintenance of software configurations like the Google Cloud Observability agents: the Ops Agent, the legacy Monitoring agent, and the legacy Logging agent.
+- With VM extension policies, you can provide and manage custom configuration for the Ops Agent and manage version control, including auto-upgrades and version pinning.
+- Extension policies can be applied zonally or globally, across all zones in a Google Cloud project.
+
+### "Overview of agent policies for the Ops Agent \_|\_ Cloud Monitoring \_|\_\
+
+- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview)
+- Source ID: `site-iam-reference`
+- Final score: 40
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Global or zonal application of agent policies within a Google Cloud project Beta agent policies are globally applied to all instances selected by the policy criteria within your Google Cloud project.
+- The biggest behavioral difference between beta and GA agent policies is that GA policies are zonal, and beta agent policies are global within a project.
+- Supported operating systems You can apply an agent policy to Compute Engine VM instances running the operating systems shown in the following table: Operating system Ops Agent (GA & beta † policies) Logging agent (beta † policies only) Monitoring agent (beta † policies only) CentOS 8 Rocky Linux 8 RHEL 6 RHEL 7: rhel-7, rhel-7-6-sap-ha, rhel-7-7-sap-ha, rhel-7-9-sap-ha ‡ RHEL 8: rhel-8, rhel-8-4-sap-ha, rhel-8-6-sap-ha, rhel-8-8-sap-ha ‡ Debian 9 (Stretch) Debian 11 (Bullseye) Deep Learning VM Images based on Debian 11 (Bullseye) Ubuntu LTS 18.04 (Bionic Beaver): ubuntu-1804-lts, ubuntu-minimal-1804-lts Ubuntu LTS 20.04 (Focal Fossa): ubuntu-2004-lts, ubuntu-minimal-2004-lts Ubuntu LTS 22.04 (Jammy Jellyfish): buntu-2204-lts, ubuntu-minimal-2204-lts SLES 12: sles-12, sles-12-sp5-sap SLES 15: sles-15, sles-15-sp2-sap, sles-15-sp3-sap, sles-15-sp4-sap, sles-15-sp5-sap, sles-15-sp6-sap OpenSUSE Leap 15: opensuse-leap (opensuse-leap-15-3- , opensuse-leap-15-4- ) Windows Server: 2016, 2019, 2022, Core 2016, Core 2019, Core 2022 † In beta agent policies, the agent columns map to an agent type specified to the gcloud beta compute instances ops-agents policies create invocation: Ops Agent maps to agent type ops-agent .
+- The beta and GA policies are also structurally different: Policies created by using gcloud beta compute instances ops-agents policies describe agent policies by passing individual options to the commands, for example: gcloud beta compute instances ops-agents policies create ops-agents-test-policy \ --agent-rules = "type=logging,enable-autoupgrade=false;type=metrics,enable-autoupgrade=false" \ --description = "A test policy." \ --os-types = short-name = centos,version = 7 \ --instances = zones/us-central1-a/instances/test-instance \ --project PROJECT ID The agent-policy Terraform module provides the same capabilities.
 

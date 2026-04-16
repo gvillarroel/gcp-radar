@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.333Z"
+generated_at: "2026-04-14T13:57:37.625Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Cloud Billing commitment dashboard"
 feature_slug: "cloud-billing-commitment-dashboard"
 latest_feature_date: "2020-08-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/reports"
-  - "https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds"
-  - "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible"
+  - "https://docs.cloud.google.com/billing/docs/how-to/finops-hub"
+  - "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
 keywords:
   - "billing"
   - "commitment"
   - "dashboard"
-  - "the"
   - "now"
   - "displays"
   - "spend"
   - "based"
+  - "cud"
 ---
 
 # Cloud Billing commitment dashboard
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ The Cloud Billing commitment dashboard now displays a spend-based CUD summary an
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
-- [https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds](https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds)
-- [https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible](https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible)
+- [https://docs.cloud.google.com/billing/docs/how-to/finops-hub](https://docs.cloud.google.com/billing/docs/how-to/finops-hub)
+- [https://docs.cloud.google.com/billing/docs/how-to/cost-table](https://docs.cloud.google.com/billing/docs/how-to/cost-table)
 
 ## Supporting Pages
 
@@ -52,40 +52,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
 - Source ID: `site-docs-root`
-- Final score: 190
+- Final score: 122
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Legacy spend-based CUD credits : For spend-based committed use discounts (CUDs) that aren't part of the new pricing model, this is the credit earned in exchange for your commitment to spend a minimum amount for a service in a particular region.
 - A notification in the Billing Overview page shows the date when we will begin the automatic migration from the legacy spend-based CUD model using credits, to the new spend-based CUD model using discounts.
+- Analyze Resource-based CUD credits and Legacy spend-based CUD credits When analyzing your Google Cloud costs, it's useful to understand how your purchased commitments are impacting your costs.
 - Resource-based and Legacy spend-based CUDs consist of three components using a balance sheet format on your bill: Commitment fee is the discounted cost of your covered usage.
-- About the default Cloud Billing report Based on your report filters and other settings, the report chart displays a stacked bar chart where each bar plots costs over time.
 
-### "Analyze the effectiveness of your CUDs \_|\_ Cloud Billing \_|\_ Google\
+### Optimize costs with FinOps hub \_|\_ Cloud Billing \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds](https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds)
-- Source ID: `site-docs-root-2`
-- Final score: 164
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/finops-hub](https://docs.cloud.google.com/billing/docs/how-to/finops-hub)
+- Source ID: `site-docs-root`
+- Final score: 116
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Stacked bar chart The stacked bar chart appears below the summary cards and above the summary table, and shows the following details for the selected commitment type: Commitment-covered costs : The average daily costs at on-demand eligible rates covered by CUDs (lower part of the bar, using blue for resource-based CUDs credits and green for spend-based CUDs discounts).
-- For more information, see the Resource-based CUDs documentation Spend-based CUDs : You get a discount in exchange for your commitment to spend a minimum amount for eligible services for a specified time duration.
-- It has the capability to show the utilization for the following: Each spend-based commitment (each purchase), which is only available for CUDs in the new model, otherwise this granularity is unavailable.
-- Commitment cost : The commitment fee for resource based CUDs (and also for spend-based commitments that use the legacy spend-based model).
+- Name Recommender ID Short Description Committed Use Discounts (CUDs) recommenders Committed use discount recommender google.compute.commitment.UsageCommitmentRecommender Reduce costs through purchasing resource-based commitments Committed use discount recommender google.cloudbilling.commitment.SpendBasedCommitmentRecommender Reduce costs through purchasing spend-based and Compute flexible commitments Compute Engine recommenders Idle custom image recommender google.compute.image.IdleResourceRecommender Remove unused images Idle IP address recommender google.compute.address.IdleResourceRecommender Remove unused IPs Idle persistent disk recommender google.compute.disk.IdleResourceRecommender Backup and remove unused disks Idle VM recommender google.compute.instance.IdleResourceRecommender Remove unused VMs Idle reservations recommender google.compute.IdleResourceRecommender Remove unused reservations Managed instance group machine type recommender google.compute.instanceGroupManager.MachineTypeRecommender Right-size MIG machine types Underutilized reservations recommender google.compute.RightSizeResourceRecommender Right-size underutilized reservations VM machine type recommender google.compute.instance.MachineTypeRecommender Note: Recommendations of this type indicating an underutilized VM (those with a negative costs savings or cost increase) are shown on the Utilization insights dashboard but not on the FinOps Recommendations dashboard.
+- The FinOps hub automatically generates the dashboard based on historical usage metrics gathered by Cloud Billing and Recommender , including recent usage and current commitments.
+- The score is a calculation based on how you follow optimization best practices, including the following: Monitoring spend by actively logging in and using Cloud Billing tools.
+- Access the FinOps hub To access the FinOps hub for a Cloud Billing account, and view all available recommendations, the FinOps score, CUDs optimization metrics, and utilization insights, you need one of the following predefined Cloud Billing IAM roles on your Cloud Billing account: Billing Account Viewer Billing Account Administrator If you prefer to use a custom role to access the FinOps hub, you need a role with the following permissions on your Cloud Billing account: billing.accounts.get billing.accounts.getSpendingInformation billing.finOpsBenchmarkInformation.get billing.finOpsHealthInformation.get recommender.costRecommendations.listAll View details of a recommendation and apply the recommendation To view the details and apply a recommendation, you need recommender-specific permissions on the billing account or project.
 
-### "Calculate savings with Compute flexible commitments \_|\_ Cloud Billing\
+### "View and download the cost details of your invoice or statement \_|\_ Cloud\
 
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible](https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible)
-- Source ID: `site-docs-root-2`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/cost-table](https://docs.cloud.google.com/billing/docs/how-to/cost-table)
+- Source ID: `site-docs-root`
+- Final score: 110
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Open Cloud Billing Reports View Compute flexible commitments You can review your Compute flexible commitments in your Cloud Billing report by setting specific report filters : In the Credits filter, select Committed use discounts (spend based) .
-- Example of usage equaling the committed spend amount This example uses a Cloud Billing account where the spend-based CUD equals the usage commitment for the one-hour period.
-- Example of using more than the committed spend amount This example uses a Cloud Billing account where the actual usage is more than the spend-based commitment purchased.
-- TABLE LEFT JOIN UNNEST ( credits ) AS credits WHERE credits . full name LIKE 'Committed use discount - dollar based: GCE Commitments%' GROUP BY 1 ; To view both your credits drawn down by all-usage SKUs and commitment fees, use the following sample query: Standard SQL SELECT FROM project . dataset . gcp billing export v1 XXXXXX XXXXXX XXXXXX LEFT JOIN UNNEST ( credits ) AS credits WHERE credits . full name LIKE 'Committed use discount - dollar based: GCE Commitments%' OR sku . description LIKE "%GCE for 1 year%" OR sku . description LIKE "%GCE for 3 year%" ; Calculate your overall flexible CUDs savings The total effective savings from flexible CUDs vary depending on the resources used in a given month and the on-demand pricing of those resources.
+- COMMITTED USAGE DISCOUNT DOLLAR BASE : For legacy spend-based committed use discounts (CUDs) that aren't part of the new pricing model , this is the credit earned in exchange for your commitment to spend a minimum amount for a service in a particular region.
+- Note that in the Cloud Billing reports available in the Google Cloud console, the discount credit type is listed as Spending-based discounts .
+- Permissions required to access the Cost table report To view the Cost table report for your Cloud Billing account, you need a role that includes the following permission on your Cloud Billing account: billing.accounts.getSpendingInformation to view costs and usage for a billing account.
+- The totals in the footer include taxes (for each tax type), invoice corrections and billing modifications , and rounding errors (if applicable to your Cloud Billing account), as well as the total of the costs in the table, based on the selected filters.
 

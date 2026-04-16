@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.090Z"
+generated_at: "2026-04-12T12:11:20.312Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer environment update timeout extension"
 feature_slug: "cloud-composer-environment-update-timeout-extension"
 latest_feature_date: "2019-10-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard"
   - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
+  - "https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient"
 keywords:
   - "composer"
   - "environment"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer environment update timeout extension
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer extended environment update timeouts to better support migrating 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard](https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard)
 - [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
+- [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 180
+- Final score: 228
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +63,24 @@ Evidence snippets:
 - Versions with disabled upgrades For some versions of Cloud Composer images, it is not possible to upgrade an environment to a later version: composer-1.7.7-airflow-1.10.2 composer-1.7.7-airflow-1.10.1 composer-1.7.7-airflow-1.9.0 If you use a version with disabled upgrades, we recommend to create a new environment side-by-side, then migrate all your DAGs to the new environment.
 - Extended upgrade timeline versions have the following differences compared to regular versions: You can upgrade your environment to this version for 18 months after the release date.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Use the monitoring dashboard \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- URL: [https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard](https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard)
 - Source ID: `site-docs-root`
-- Final score: 166
+- Final score: 199
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Fixed (Cloud Composer 2) Fixed the issue where environment create and update operations could fail in rare cases because of the scheduler probe timeouts.
-- Environment update timeout has been extended to facilitate migrating large databases.
-- Changes compared to version 6.8.0 : Breaking changes: Upgrade to support Google Ads v10 ( #22965 ) Features: [FEATURE] google provider - BigQueryInsertJobOperator log query ( #23648 ) [FEATURE] google provider - split GkeStartPodOperator execute ( #23518 ) Add exportContext.offload flag to CLOUD SQL EXPORT VALIDATION. ( #23614 ) Create links for BiqTable operators ( #23164 ) implements #22859 - Add .sql as templatable extension ( #22920 ) GCSFileTransformOperator : New templated fields 'source object', 'destination object' ( #23328 ) Bug Fixes Fix PostgresToGCSOperator does not allow nested JSON ( #23063 ) Fix GCSToGCSOperator ignores replace parameter when there is no wildcard ( #23340 ) update processor to fix broken download URLs ( #23299 ) LookerStartPdtBuildOperator , LookerCheckPdtBuildSensor : fix empty materialization id handling ( #23025 ) Change ComputeSSH to throw provider import error instead paramiko ( #23035 ) Fix cancel on kill after execution timeout for DataprocSubmitJobOperator ( #22955 ) Fix select query xcom push for BigQueryGetDataOperator ( #22936 ) MSSQLToGCSOperator fails: datetime is not JSON Serializable ( #22882 ) Update credentials when using ADC in Compute Engine #23773 Misc changes Add Stackdriver assets and migrate system tests to AIP-47 ( #23320 ) CloudTasks assets & system tests migration (AIP-47) ( #23282 ) TextToSpeech assets & system tests migration (AIP-47) ( #23247 ) Fix code-snippets in google provider ( #23438 ) BigQuery assets ( #23165 ) Remove redundant docstring in BigQueryUpdateTableSchemaOperator ( #23349 ) Migrate gcs to new system tests design ( #22778 ) add missing docstring in 'BigQueryHook.create empty table' ( #23270 ) Cleanup Google provider CHANGELOG.rst ( #23390 ) migrate system test gcs to bigquery into new design ( #22753 ) Add example DAG for demonstrating usage of GCS sensors ( #22808 ) Change (Airflow 1) The google-cloud-bigquery package is upgraded from 1.28.0 to 2.13.0.
-- Change New versions of Cloud Composer images: composer-1.16.10-airflow-1.10.15 (default) composer-1.16.10-airflow-1.10.14 composer-1.16.10-airflow-1.10.12 composer-1.17.0-preview.6-airflow-2.0.1 composer-1.17.0-preview.6-airflow-2.0.2 July 08, 2021 Change New versions of Cloud Composer images: composer-1.17.0-preview.5-airflow-2.0.1 composer-1.16.9-airflow-1.10.15 (default) composer-1.16.9-airflow-1.10.14 composer-1.16.9-airflow-1.10.12 Fixed When PyPI modules installation fails with certain error types in VPC SC environments, an additional attempt to perform the environment update operation is made using an in-cluster build.
+- What's next Monitor Cloud Composer environments Troubleshooting scheduling Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Difference between DAG parse time and DAG execution time The monitoring dashboard of an environment displays the total time required to parse all DAGs in your Cloud Composer environment and the average time it takes to execute a DAG.
+- Access the monitoring dashboard The monitoring dashboard contains metrics and charts for monitoring trends in the DAG runs in your environment, and identifing issues with Airflow components and Cloud Composer resources.
+- View a metric from the monitoring dashboard in Metrics explorer (click to enlarge) Metric descriptions Each Cloud Composer environment has its own monitoring dashboard.
 
 ### "Cross-project environment monitoring with Terraform \_|\_ Cloud Composer\
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 164
+- Final score: 196
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - The dashboard then displays a project name and resource: In case a metric exceeds a predefined threshold, an incident is raised and a respective alert is shown in a chart corresponding to this metric: List of monitored metrics A complete list of monitored metrics: Cloud Composer environment health (based on Monitoring DAG) Database health Web Server Health Scheduler Heartbeats CPU and Memory utilization for all Workers CPU and Memory utilization for the Airflow database CPU and Memory utilization for the Web Server (only available in Cloud Composer 2) CPU and Memory utilization for Airflow Schedulers Proportion of Queued, Scheduled, Queued or Scheduled tasks in an environment (useful to spot Airflow concurrency configuration issues) DAG Parsing time Current versus minimal number of Workers - useful to understand Worker stability issues or scaling problems Worker Pod evictions Number of errors thrown in Logs by Workers, Schedulers, Web Server or other components (individual charts) Note: You don't need to modify the dashboard when Cloud Composer environments are added or removed as long as the list of monitored projects stays the same.
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Cross-project environment monitoring with Terraform Stay organized with collections Save and categorize content based on your preferences.
 - Replace the list of projects to monitor with your list of projects with Cloud Composer environments to be monitored in the "for each" parameter of the "Add Monitored Projects to the Monitoring project" section 4.
+
+### "Class EnvironmentsAsyncClient (1.19.0) \_|\_ Python client libraries \_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient](https://docs.cloud.google.com/python/docs/reference/composer/latest/google.cloud.orchestration.airflow.service_v1.services.environments.EnvironmentsAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 187
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Request to load a snapshot into a Cloud Composer environment. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- Request to create a snapshot of a Cloud Composer environment. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- The resource name of the ConfigMap to get, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsConfigMaps/{userWorkloadsConfigMapId}" This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- The resource name of the Secret to get, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsSecrets/{userWorkloadsSecretId}" This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
 

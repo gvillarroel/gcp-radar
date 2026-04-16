@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.300Z"
+generated_at: "2026-04-14T15:13:19.229Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "SPOT Multispectral Imagery"
 feature_slug: "spot-multispectral-imagery"
 latest_feature_date: "2026-03-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_MS_V1"
   - "https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_MS_NC_V1"
@@ -19,14 +19,14 @@ keywords:
   - "provides"
   - "10"
   - "20"
-  - "for"
   - "brazil"
+  - "2007"
 ---
 
 # SPOT Multispectral Imagery
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Provides 10-20 m multispectral imagery for Brazil from 2007 to 2009.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,41 +52,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_MS_V1](https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_MS_V1)
 - Source ID: `site-docs-root-2`
-- Final score: 292
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 269
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Dataset Availability 2007-01-01T00:00:00Z–2009-11-26T23:59:59Z Dataset Producer Google/CNES Earth Engine Snippet ee.ImageCollection("AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/MS/V1") open in new Tags brazil forest-code google multispectral satellite-imagery spot Description This collection provides 2008-era raw multispectral imagery from the SPOT 2, 4, and 5 satellites over the country of Brazil.
-- Filter . eq ( 'system:index' , image . id ())). first (); Map . addLayer ( maskedImage , visParams , 'SPOT 5 Cloud Masked' ); Open in Code Editor SPOT Multispectral Imagery 10-20m, Brazil This collection provides 2008-era raw multispectral imagery from the SPOT 2, 4, and 5 satellites over the country of Brazil.
 - SPOT 2 and 4 utilized HRV and HRVIR "pushbroom" sensors with a 60 … AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/MS/V1, brazil,forest-code,google,multispectral,satellite-imagery,spot 2007-01-01T00:00:00Z/2009-11-26T23:59:59Z -34 -74 6 -34 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+- Filter . eq ( 'system:index' , image . id ())). first (); Map . addLayer ( maskedImage , visParams , 'SPOT 5 Cloud Masked' ); Open in Code Editor SPOT Multispectral Imagery 10-20m, Brazil This collection provides 2008-era raw multispectral imagery from the SPOT 2, 4, and 5 satellites over the country of Brazil.
 - Home Earth Engine Data Catalog All Datasets Send feedback SPOT Multispectral Imagery 10-20m, Brazil Stay organized with collections Save and categorize content based on your preferences.
 
 ### "SPOT Multispectral Pseudo Natural Color Imagery 10-20m, Brazil \_|\_ Earth\
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_MS_NC_V1](https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_MS_NC_V1)
 - Source ID: `site-docs-root-2`
-- Final score: 262
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 223
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Point ( - 45.2 , - 19.5 )); var image = collection . first (); // Apply Google cloud mask band to image. image = image . updateMask ( image . select ( 'cloud mask' )); Map . centerObject ( image , 12 ); Map . addLayer ( image , { bands : [ 'R' , 'G' , 'B' ], min : 0 , max : 255 }, 'RGB' ); Open in Code Editor SPOT Multispectral Pseudo Natural Color Imagery 10-20m, Brazil This collection contains 2008-era "pseudo natural color" RGB images derived from the native multispectral bands of SPOT 2, 4, and 5 for Brazil.
 - Dataset Availability 2007-01-01T00:00:00Z–2009-11-26T23:59:59Z Dataset Producer Google/CNES Earth Engine Snippet ee.ImageCollection("AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/MS NC/V1") open in new Tags brazil forest-code google rgb satellite-imagery spot Description This collection contains 2008-era "pseudo natural color" RGB images derived from the native multispectral bands of SPOT 2, 4, and 5 for Brazil.
-- Home Earth Engine Data Catalog All Datasets Send feedback SPOT Multispectral Pseudo Natural Color Imagery 10-20m, Brazil Stay organized with collections Save and categorize content based on your preferences.
 - Because the HRV and HRG sensors did not include a native blue band, this product synthesizes an RGB representation to approximate a natural appearance for visual land … AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/MS NC/V1, brazil,forest-code,google,rgb,satellite-imagery,spot 2007-01-01T00:00:00Z/2009-11-26T23:59:59Z -34 -74 6 -34 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+- Point ( - 45.2 , - 19.5 )); var image = collection . first (); // Apply Google cloud mask band to image. image = image . updateMask ( image . select ( 'cloud mask' )); Map . centerObject ( image , 12 ); Map . addLayer ( image , { bands : [ 'R' , 'G' , 'B' ], min : 0 , max : 255 }, 'RGB' ); Open in Code Editor SPOT Multispectral Pseudo Natural Color Imagery 10-20m, Brazil This collection contains 2008-era "pseudo natural color" RGB images derived from the native multispectral bands of SPOT 2, 4, and 5 for Brazil.
+- Home Earth Engine Data Catalog All Datasets Send feedback SPOT Multispectral Pseudo Natural Color Imagery 10-20m, Brazil Stay organized with collections Save and categorize content based on your preferences.
 
 ### "SPOT Pansharpened Pseudo Natural Color Imagery 5-10m, Brazil \_|\_ Earth\
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_PMS_NC_V1](https://developers.google.com/earth-engine/datasets/catalog/AIRBUS_SPOT_2_4_5_BRAZIL_2007_2009_PMS_NC_V1)
 - Source ID: `site-docs-root-2`
-- Final score: 238
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 203
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Filter . eq ( 'satellite' , 'SPOT5' )). first (); // Apply Google cloud mask band to the image. image = image . updateMask ( image . select ( 'cloud mask' )); Map . centerObject ( image , 12 ); Map . addLayer ( image , { bands : [ 'R' , 'G' , 'B' ], min : 0 , max : 200 }, 'Pansharpened RGB' ); Open in Code Editor SPOT Pansharpened Pseudo Natural Color Imagery 5-10m, Brazil This collection provides high-resolution pansharpened pseudo-natural color SPOT imagery satellites 2, 4, and 5 for Brazil circa 2008.
 - Dataset Availability 2007-01-01T00:00:00Z–2009-11-26T23:59:59Z Dataset Producer Google/CNES Earth Engine Snippet ee.ImageCollection("AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/PMS NC/V1") open in new Tags brazil forest-code google rgb satellite-imagery spot Description This collection provides high-resolution pansharpened pseudo-natural color SPOT imagery satellites 2, 4, and 5 for Brazil circa 2008.
 - This raw … AIRBUS/SPOT 2 4 5/BRAZIL/2007 2009/PMS NC/V1, brazil,forest-code,google,rgb,satellite-imagery,spot 2007-01-01T00:00:00Z/2009-11-26T23:59:59Z -34 -74 6 -34 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+- Filter . eq ( 'satellite' , 'SPOT5' )). first (); // Apply Google cloud mask band to the image. image = image . updateMask ( image . select ( 'cloud mask' )); Map . centerObject ( image , 12 ); Map . addLayer ( image , { bands : [ 'R' , 'G' , 'B' ], min : 0 , max : 200 }, 'Pansharpened RGB' ); Open in Code Editor SPOT Pansharpened Pseudo Natural Color Imagery 5-10m, Brazil This collection provides high-resolution pansharpened pseudo-natural color SPOT imagery satellites 2, 4, and 5 for Brazil circa 2008.
 - Possible values: "accept", "reject for cloud", "reject for other", "not evaluated", or absent if QA has not been performed. percent valid pixels DOUBLE Google-added property denoting the percent of viable pixels after cloud and cloud shadow removal Terms of Use Terms of Use Use of this dataset is subject to the Brazil Forest Imagery Dataset 2008 license agreement and requires the following attribution: “Google LLC, Brazil Forest Imagery Dataset 2008 created from circa 2008 SPOT images acquired by CNES's Spot World Heritage Programme.” Contains modified imagery from SPOT satellites made available by the CNES SPOT World Heritage Programme (https://regards.cnes.fr/html/swh/Home-swh3.html).
 

@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:51.526Z"
+generated_at: "2026-04-12T12:18:10.330Z"
 product_name: "Pub/Sub"
 product_slug: "pub-sub"
 feature_name: "Pub/Sub batch request support"
 feature_slug: "pub-sub-batch-request-support"
 latest_feature_date: "2014-11-01"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/pubsub/docs/publisher"
+  - "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console"
+  - "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+  - "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
 keywords:
   - "pub"
   - "sub"
@@ -24,7 +27,7 @@ keywords:
 # Pub/Sub batch request support
 
 Product: Pub/Sub
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ Pub/Sub added batch Publish and Pull request support.
 
 Pub/Sub added batch Publish and Pull request support.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/pubsub/docs/publisher](https://docs.cloud.google.com/pubsub/docs/publisher)
+- [https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console](https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console)
+- [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription)
+- [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Publish messages to topics \_|\_ Pub/Sub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/publisher](https://docs.cloud.google.com/pubsub/docs/publisher)
+- Source ID: `site-docs-root`
+- Final score: 284
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Click Publish . gcloud To publish a message with an ordering key, use the gcloud pubsub topics publish command and the --ordering-key flag: gcloud pubsub topics publish TOPIC ID \ --message= MESSAGE DATA \ --ordering-key= ORDERING KEY Replace the following: TOPIC ID : the ID of the topic MESSAGE DATA : a string with the message data ORDERING KEY : a string with an ordering key REST To publish a message with an ordering key, send a POST request like the following: POST https://pubsub.googleapis.com/v1/projects/ PROJECT ID /topics/ TOPIC ID :publish Content-Type: application/json Authorization: Bearer $(gcloud auth application-default print-access-token) Replace the following: PROJECT ID : the project ID of the project with the topic TOPIC ID : the ID of the topic Specify the following fields in the request body: { "messages": [ { "attributes": { " KEY ": " VALUE ", ... }, "data": " MESSAGE DATA ", "ordering key": " ORDERING KEY ", } ] } Replace the following: KEY : the key of a message attribute VALUE : the value for the key of the message attribute MESSAGE DATA : a base64-encoded string with the message data ORDERING KEY : a string with an ordering key The message must contain either a non-empty data field or at least one attribute.
+- Click Publish . gcloud To publish a message, use the gcloud pubsub topics publish command: gcloud pubsub topics publish TOPIC ID \ --message= MESSAGE DATA \ [--attribute= KEY =" VALUE ",...] Replace the following: TOPIC ID : the ID of the topic MESSAGE DATA : a string with the message data KEY : the key of a message attribute VALUE : the value for the key of the message attribute REST To publish a message, send a POST request like the following: POST https://pubsub.googleapis.com/v1/projects/ PROJECT ID /topics/ TOPIC ID :publish Content-Type: application/json Authorization: Bearer $(gcloud auth application-default print-access-token) Replace the following: PROJECT ID : the project ID of the project with the topic TOPIC ID : the ID of the topic Specify the following fields in the request body: { "messages": [ { "attributes": { " KEY ": " VALUE ", ... }, "data": " MESSAGE DATA ", } ] } Replace the following: KEY : the key of a message attribute VALUE : the value for the key of the message attribute MESSAGE DATA : a base64-encoded string with the message data The message must contain either a non-empty data field or at least one attribute.
+- String projectId = "your-project-id" ; String topicId = "your-topic-id" ; publishWithErrorHandlerExample ( projectId , topicId ); } public static void publishWithErrorHandlerExample ( String projectId , String topicId ) throws IOException , InterruptedException { TopicName topicName = TopicName . of ( projectId , topicId ); Publisher publisher = null ; try { // Create a publisher instance with default settings bound to the topic publisher = Publisher . newBuilder ( topicName ). build (); List<String> messages = Arrays . asList ( "first message" , "second message" ); for ( final String message : messages ) { ByteString data = ByteString . copyFromUtf8 ( message ); PubsubMessage pubsubMessage = PubsubMessage . newBuilder (). setData ( data ). build (); // Once published, returns a server-assigned message id (unique within the topic) ApiFuture<String> future = publish er . publish ( pubsubMessage ); // Add an asynchronous callback to handle success / failure ApiFutures . addCallback ( future , new ApiFutureCallback<String> () { @Override public void onFailure ( Throwable throwable ) { if ( throwable instanceof ApiException ) { ApiException apiException = (( ApiException ) throwable ); // details on the API exception System . out . println ( apiException . getStatusCode (). getCode ()); System . out . println ( apiException . isRetryable ()); } System . out . println ( "Error publishing message : " + message ); } @Override public void onSuccess ( String messageId ) { // Once published, returns server-assigned message ids (unique within the topic) System . out . println ( "Published message ID: " + messageId ); } }, MoreExecutors . directExecutor ()); } } finally { if ( publisher != null ) { // When finished with the publisher, shutdown to free up resources. publisher . shutdown (); publisher . awaitTermination ( 1 , TimeUnit .
+- For more information, see the Pub/Sub Node.js API reference documentation . / TODO(developer): Uncomment these variables before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // const data = JSON.stringify({foo: 'bar'}); // const orderingKey = 'key1'; // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub ({ // Sending messages to the same region ensures they are received in order // even when multiple publishers are used. apiEndpoint : 'us-east1-pubsub.googleapis.com:443' , }); async function publishOrderedMessage ( topicNameOrId , data , orderingKey ) { // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject) const dataBuffer = Buffer . from ( data ); // Be sure to set an ordering key that matches other messages // you want to receive in order, relative to each other. const message = { data : dataBuffer , orderingKey : orderingKey , }; // Cache topic objects (publishers) and reuse them. // // Pub/Sub's ordered delivery guarantee only applies when publishes for an ordering // key are in the same region.
+
+### "Quickstart: Publish and receive messages in Pub/Sub using the Google Cloud\
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console](https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console)
+- Source ID: `site-docs-root`
+- Final score: 277
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Publish and receive messages in Pub/Sub using the Google Cloud console This page shows you how to perform basic tasks in Pub/Sub using the Google Cloud console.
+- Home Documentation Data analytics Pub/Sub Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Pull the messages from the subscription In the Google Cloud console, go to the Pub/Sub subscriptions page.
+- Publish a message to the topic In the Google Cloud console, go to the Pub/Sub topics page.
+
+### "MCP Tools Reference: pubsub.googleapis.com \_|\_ Pub/Sub \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription)
+- Source ID: `site-api-reference`
+- Final score: 268
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The subscription name, message id, and publish time fields are put in their own fields while all other message properties other than data (for example, an ordering key, if present) are added as entries in the attributes map. useTopicSchema boolean Optional.
+- The subscription name, message id, and publish time fields are put in their own fields while all other message properties other than data (for example, an ordering key, if present) are added as entries in the attributes map. useTopicSchema boolean Optional.
+- The subscription name, message id, and publish time fields are put in their own columns while all other message properties (other than data) are written to a JSON object in the attributes column. dropUnknownFields boolean Optional.
+- The subscription name, message id, and publish time fields are put in their own columns while all other message properties (other than data) are written to a JSON object in the attributes column. dropUnknownFields boolean Optional.
+
+### "MCP Tools Reference: pubsub.googleapis.com \_|\_ Pub/Sub \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription)
+- Source ID: `site-api-reference`
+- Final score: 268
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The subscription name, message id, and publish time fields are put in their own fields while all other message properties other than data (for example, an ordering key, if present) are added as entries in the attributes map. useTopicSchema boolean Optional.
+- The subscription name, message id, and publish time fields are put in their own fields while all other message properties other than data (for example, an ordering key, if present) are added as entries in the attributes map. useTopicSchema boolean Optional.
+- The subscription name, message id, and publish time fields are put in their own columns while all other message properties (other than data) are written to a JSON object in the attributes column. dropUnknownFields boolean Optional.
+- The subscription name, message id, and publish time fields are put in their own columns while all other message properties (other than data) are written to a JSON object in the attributes column. dropUnknownFields boolean Optional.
 

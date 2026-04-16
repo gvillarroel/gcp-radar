@@ -1,14 +1,15 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.841Z"
+generated_at: "2026-04-12T12:12:49.013Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Trace UI scatter plots"
 feature_slug: "trace-ui-scatter-plots"
 latest_feature_date: "2017-02-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder"
@@ -26,7 +27,7 @@ keywords:
 # Trace UI scatter plots
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +39,36 @@ The Stackdriver Trace UI includes a scatter-plot selection tool for identifying,
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder)
 
 ## Supporting Pages
 
+### "Class TraceServiceClient (2.88.0) \_|\_ Java client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient)
+- Source ID: `site-java-reference`
+- Final score: 164
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( TraceServiceClient traceServiceClient = TraceServiceClient . create ()) { ListTracesRequest request = ListTracesRequest . newBuilder () . setProjectId ( "projectId-894832108" ) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . setStartTime ( Timestamp . newBuilder (). build ()) . setEndTime ( Timestamp . newBuilder (). build ()) . setFilter ( "filter-1274492040" ) . setOrderBy ( "orderBy-1207110587" ) . build (); ApiFuture<Trace> future = traceServiceClient . listTracesPagedCallable (). futureCall ( request ); // Do something. for ( Trace element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListTracesRequest , ListTracesPagedResponse > patchTraces(PatchTracesRequest request) public final void patchTraces ( PatchTracesRequest request ) Sends new traces to Stackdriver Trace or updates existing traces.
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( TraceServiceClient traceServiceClient = TraceServiceClient . create ()) { PatchTracesRequest request = PatchTracesRequest . newBuilder () . setProjectId ( "projectId-894832108" ) . setTraces ( Traces . newBuilder (). build ()) . build (); traceServiceClient . patchTraces ( request ); } Parameter Name Description request PatchTracesRequest The request object containing all of the parameters for the API call. patchTraces(String projectId, Traces traces) public final void patchTraces ( String projectId , Traces traces ) Sends new traces to Stackdriver Trace or updates existing traces.
+- For example: To customize credentials: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library TraceServiceSettings traceServiceSettings = TraceServiceSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( myCredentials )) . build (); TraceServiceClient traceServiceClient = TraceServiceClient . create ( traceServiceSettings ); To customize the endpoint: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library TraceServiceSettings traceServiceSettings = TraceServiceSettings . newBuilder (). setEndpoint ( myEndpoint ). build (); TraceServiceClient traceServiceClient = TraceServiceClient . create ( traceServiceSettings ); To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over the wire: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library TraceServiceSettings traceServiceSettings = TraceServiceSettings . newHttpJsonBuilder (). build (); TraceServiceClient traceServiceClient = TraceServiceClient . create ( traceServiceSettings ); Please refer to the GitHub repository's samples for more quickstart code snippets.
+- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( TraceServiceClient traceServiceClient = TraceServiceClient . create ()) { PatchTracesRequest request = PatchTracesRequest . newBuilder () . setProjectId ( "projectId-894832108" ) . setTraces ( Traces . newBuilder (). build ()) . build (); ApiFuture<Empty> future = traceServiceClient . patchTracesCallable (). futureCall ( request ); // Do something. future . get (); } Returns Type Description UnaryCallable < PatchTracesRequest , Empty > shutdown() public void shutdown () shutdownNow() public void shutdownNow () Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
 ### "Class TraceServiceSettings.Builder (2.88.0) \_|\_ Java client libraries\
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder)
 - Source ID: `site-java-reference`
-- Final score: 138
+- Final score: 156
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder)
 - Source ID: `site-java-reference`
-- Final score: 138
+- Final score: 156
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +94,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder)
 - Source ID: `site-java-reference`
-- Final score: 138
+- Final score: 156
 - Re-rank relevance: N/A
 
 Evidence snippets:

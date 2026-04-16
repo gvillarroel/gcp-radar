@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.834Z"
+generated_at: "2026-04-12T12:12:49.003Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Trace exemplars in Cloud Monitoring"
 feature_slug: "trace-exemplars-in-cloud-monitoring"
 latest_feature_date: "2020-08-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/agent/monitoring/installation"
   - "https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring"
-  - "https://docs.cloud.google.com/trace/docs/finding-traces"
+  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
 keywords:
   - "trace"
   - "exemplars"
@@ -26,7 +27,7 @@ keywords:
 # Trace exemplars in Cloud Monitoring
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,37 +39,24 @@ Cloud Monitoring can display Cloud Trace exemplars alongside charted metrics dat
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/agent/monitoring/installation](https://docs.cloud.google.com/monitoring/agent/monitoring/installation)
 - [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
-- [https://docs.cloud.google.com/trace/docs/finding-traces](https://docs.cloud.google.com/trace/docs/finding-traces)
+- [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring](https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring](https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring)
 
 ## Supporting Pages
-
-### "Installing the Cloud Monitoring agent on individual VMs \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/monitoring/agent/monitoring/installation](https://docs.cloud.google.com/monitoring/agent/monitoring/installation)
-- Source ID: `site-iam-reference`
-- Final score: 182
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- This sets the HTTP PROXY and HTTPS PROXY environment variables so that the agent can send data using outbound HTTPS: setx HTTP PROXY http:// proxy-ip : proxy-port /m setx HTTPS PROXY http:// proxy-ip : proxy-port /m setx no proxy 169.254.169.254 /m Determine the agent version To determine the version of the Monitoring agent on your system, run the following commands on your VM instance: DEBIAN / UBUNTU Run the following command on Debian or Ubuntu: dpkg-query --show --showformat ' ${ Package } ${ Version } ${ Architecture } ${ Status } \n' stackdriver-agent SLES / SUSE Run the following command on SUSE: rpm --query --queryformat '%{NAME} %{VERSION} %{RELEASE} %{ARCH}\n' stackdriver-agent WINDOWS There is presently no way to determine the version of the Monitoring agent running on Windows.
-- Run the following PowerShell commands: (New-Object Net.WebClient).DownloadFile("https://repo.stackdriver.com/windows/StackdriverMonitoring-GCM-46.exe", "${env:UserProfile}\StackdriverMonitoring-GCM-46.exe") & "${env:UserProfile}\StackdriverMonitoring-GCM-46.exe" Alternatively, you can browse to the following URL to download and run the agent's installer: https://repo.stackdriver.com/windows/StackdriverMonitoring-GCM-46.exe Caution: You must download the installer to a non-system directory, such as C:\Users\[USERNAME] .
-- Download the agent installation script: curl -sSO https://dl.google.com/cloudagents/add-monitoring-agent-repo.sh When running the add-monitoring-agent-repo.sh script, you can also set the following flags: --verbose : Turns on verbose logging during the script execution. --also-install : Installs the agent after adding the agent package repository. --version : Sets the agent version for the script to install.
-- To install a specific version of the agent, run: sudo bash add-monitoring-agent-repo.sh --also-install \ --version= MAJOR VERSION.MINOR VERSION.PATCH VERSION Start the agent service sudo service stackdriver-agent start You can delete the installation script after it runs successfully.
 
 ### "Instrument an application for Application Monitoring \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
 - Source ID: `site-iam-reference`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Metric data from instrumentation you added to your applications can include the following metric labels: metric.labels.apphub application {container,id,location} metric.labels.apphub workload {criticality type,environment type,id} Trace spans generated by instrumentation you added to your applications can include the following resource attributes: gcp.apphub.application.{container,id,location} gcp.apphub.{workload,service}.{criticality type,environment type,id} About OpenTelemetry HTTP server metrics There are no system metrics for workloads that run on Google Kubernetes Engine that can report the traffic level, server error rate, or the latency for HTTP requests.
@@ -76,16 +64,45 @@ Evidence snippets:
 - With instrumentation, metrics and traces written by your application can include these labels.
 - Resource detectors can help you set the previous attributes: resourcedetectionprocessor Go: Google Cloud resource detector Java: opentelemetry-java-contrib/gcp-resources Node.js: resource-detector-gcp Python: opentelemetry-resourcedetector-gcp Attributes for Google Kubernetes Engine workloads For a Google Kubernetes Engine workload, configure your collector or your instrumentation to do the following: Extract metadata, like the namespace , from the environment.
 
-### Find and explore traces \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
+### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/trace/docs/finding-traces](https://docs.cloud.google.com/trace/docs/finding-traces)
-- Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- Source ID: `site-iam-reference`
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- View aggregated trace data To view the aggregated information about your trace data, do the following: In the Google Cloud console, go to the Trace explorer page: Go to Trace explorer You can also find this page by using the search bar.
-- If you don't have the permission to view trace data for a project, then the Google Cloud console displays a warning message and the data from that project isn't displayed.
-- If you don't see any trace data displayed after waiting a few minutes, then your project might not have any data to display or there might be a configuration issue.
-- Explore a trace This section provides information about how you can explore a span in the context of its trace: Open and configure the Trace Explorer page.
+- Use dashboard options to explore telemetry The Application Monitoring dashboards display log, metric, trace, and incident information.
+- The following screenshot illustrates the dashboard for a workload: The registration status of a service or workload affects what data Application Monitoring displays on the dashboard for the service or workload: Registered : Application Monitoring uses the application-specific labels and attributes that supported infrastructure and instrumented applications attach to the telemetry they generate.
+- The App Hub Type column displays the App Hub registration type : Service ( ) Workload ( ) The Functional Type column displays the App Hub functional type : Agent ( robot 2 ) MCP server ( ) From the Services and Workloads tab, you can do all of the following: Modify the data the table displays by using the view column Columns button.
+- Explore trace data Note: If your dashboards aren't displaying the trace data that you expect, then you might need to configure the default trace scope or you might need additional Identity and Access Management permissions.
+
+### "Set up Google Cloud Observability for Application Monitoring \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring](https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring)
+- Source ID: `site-iam-reference`
+- Final score: 218
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Only configure scopes To get the permissions that you need to configure the observability scope, ask your administrator to grant you the following IAM roles: Observability Editor ( roles/observability.editor ) on your App Hub host project or management project Logs Configuration Writer ( roles/logging.configWriter ) on your App Hub host project or management project Monitoring admin ( roles/monitoring.admin ) on your App Hub host project or management project and on each project that you want to add to the metrics scope Cloud Trace User ( roles/cloudtrace.user ) on your App Hub host project or management project App Hub viewer ( roles/apphub.viewer ) on your App Hub host project or management project For more information about granting roles, see Manage access to projects, folders, and organizations .
+- These labels identify your application and your service or workload: apphub application location apphub application id apphub service id or apphub workload id You can also add user labels to an alerting policy by using the Google Cloud CLI, Terraform, or the Cloud Monitoring API.
+- If you deploy workloads on Google Kubernetes Engine and want the traffic, latency, and error rate golden signals displayed on your Application Monitoring dashboards, then instrument your application with OpenTelemetry.
+- The metrics scope Configure this scope so that your charts, for example, those you create by using the Metrics Explorer page, and alerting policies can display or monitor your application's metric data.
+
+### Troubleshoot Application Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring](https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring)
+- Source ID: `site-iam-reference`
+- Final score: 218
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- These labels identify your application and your service or workload: apphub application location apphub application id apphub service id or apphub workload id You can also add user labels to an alerting policy by using the Google Cloud CLI, Terraform, or the Cloud Monitoring API.
+- You don't see edges in your application topology map You can see your application services and workloads visualised in the Application Monitoring topology map, but you don't see any edges connecting them.
+- Known issues This section lists known issues related to Application Monitoring: Trace latency isn't available in Application Monitoring.
+- This document contains information that might help you understand the what data is displayed on the Application monitoring page.
 

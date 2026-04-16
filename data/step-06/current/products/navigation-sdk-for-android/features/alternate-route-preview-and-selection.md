@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:47.025Z"
+generated_at: "2026-04-12T12:18:00.690Z"
 product_name: "Navigation SDK for Android"
 product_slug: "navigation-sdk-for-android"
 feature_name: "Alternate route preview and selection"
 feature_slug: "alternate-route-preview-and-selection"
 latest_feature_date: "2022-10-25"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/controls"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/overview"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/route"
 keywords:
   - "alternate"
   - "route"
@@ -24,7 +27,7 @@ keywords:
 # Alternate route preview and selection
 
 Product: Navigation SDK for Android
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ The SDK supports previewing alternate routes before navigation and choosing how 
 
 The SDK supports previewing alternate routes before navigation and choosing how many are shown.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/controls](https://developers.google.com/maps/documentation/navigation/android-sdk/controls)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/overview](https://developers.google.com/maps/documentation/navigation/android-sdk/overview)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav](https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/route](https://developers.google.com/maps/documentation/navigation/android-sdk/route)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Modify the navigation UI \_|\_ Navigation SDK for Android \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/controls](https://developers.google.com/maps/documentation/navigation/android-sdk/controls)
+- Source ID: `site-docs-root`
+- Final score: 204
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- LOCATION PERMISSION MISSING : displayMessage ( "Error loading Navigation SDK: Location permission " + "is missing." ); break ; default : displayMessage ( "Error loading Navigation SDK: " + errorCode ); } } }); } / Customizes the navigation UI and the map . / private void customizeNavigationUI () { // Set custom colors for the navigator . mNavFragment . setStylingOptions ( new StylingOptions () . primaryDayModeThemeColor ( 0xff1A237E ) . secondaryDayModeThemeColor ( 0xff3F51B5 ) . primaryNightModeThemeColor ( 0xff212121 ) . secondaryNightModeThemeColor ( 0xff424242 ) . headerLargeManeuverIconColor ( 0xffffff00 ) . headerSmallManeuverIconColor ( 0xffffa500 ) . headerNextStepTypefacePath ( "/system/fonts/NotoSerif-BoldItalic.ttf" ) . headerNextStepTextColor ( 0xff00ff00 ) . headerNextStepTextSize ( 20 f ) . headerDistanceTypefacePath ( "/system/fonts/NotoSerif-Italic.ttf" ) . headerDistanceValueTextColor ( 0xff00ff00 ) . headerDistanceUnitsTextColor ( 0xff0000ff ) . headerDistanceValueTextSize ( 20 f ) . headerDistanceUnitsTextSize ( 18 f ) . headerInstructionsTypefacePath ( "/system/fonts/NotoSerif-BoldItalic.ttf" ) . headerInstructionsTextColor ( 0xffffff00 ) . headerInstructionsFirstRowTextSize ( 24 f ) . headerInstructionsSecondRowTextSize ( 20 f ) . headerGuidanceRecommendedLaneColor ( 0xffffa500 )); mMap . setTrafficEnabled ( false ); // Place a marker at the final destination . if ( mNavigator . getCurrentRouteSegment () != null ) { LatLng destinationLatLng = mNavigator . getCurrentRouteSegment () . getDestinationLatLng (); Bitmap destinationMarkerIcon = BitmapFactory . decodeResource ( getResources (), R . drawable . ic person pin 48dp ); mMap . addMarker ( new MarkerOptions () . position ( destinationLatLng ) . icon ( BitmapDescriptorFactory . fromBitmap ( destinationMarkerIcon )) . title ( "Destination marker" )); // Listen for a tap on the marker . mMap . setOnMarkerClickListener ( new GoogleMap .
+- View the code Show/Hide the Java code for the navigation activity. package com . example . navsdkcustomization ; import android.content.pm.PackageManager ; import android.graphics.Bitmap ; import android.graphics.BitmapFactory ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.gms.maps.OnMapReadyCallback ; import com.google.android.gms.maps.model.BitmapDescriptorFactory ; import com.google.android.gms.maps.model.LatLng ; import com.google.android.gms.maps.model.Marker ; import com.google.android.gms.maps.model.MarkerOptions ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.StylingOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.Waypoint ; / An activity that displays a map and a customized navigation UI . / public class NavigationActivityCustomization extends AppCompatActivity { private static final String TAG = NavigationActivityCustomization . class . getSimpleName (); private Navigator mNavigator ; private SupportNavigationFragment mNavFragment ; private GoogleMap mMap ; // Define the Sydney Opera House by specifying its place ID . private static final String SYDNEY OPERA HOUSE = "ChIJ3S-JXmauEmsRUcIaWtf4MzE" ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Starts the Navigation SDK and sets the camera to follow the device 's location.
+- DEBUG ) { mNavigator . getSimulator () . simulateLocationsAlongExistingRoute ( new SimulationOptions () . speedMultiplier ( 5 )); } // Start turn - by - turn guidance along the current route . mNavigator . startGuidance (); break ; // Handle error conditions returned by the navigator . case NO ROUTE FOUND : displayMessage ( "Error starting navigation: No route found." ); break ; case NETWORK ERROR : displayMessage ( "Error starting navigation: Network error." ); break ; case ROUTE CANCELED : displayMessage ( "Error starting navigation: Route canceled." ); break ; default : displayMessage ( "Error starting navigation: " + String . valueOf ( code )); } } }); } / Handles the result of the request for location permissions . / @Override public void onRequestPermissionsResult ( int requestCode , @NonNull String [] permissions , @NonNull int [] grantResults ) { mLocationPermissionGranted = false ; switch ( requestCode ) { case PERMISSIONS REQUEST ACCESS FINE LOCATION : { // If request is canceled , the result arrays are empty . if ( grantResults . length > 0 && grantResults [ 0 ] == PackageManager .
+- NavigatorListener () { / Sets up the navigation UI when the navigator is ready for use . / @Override public void onNavigatorReady ( Navigator navigator ) { displayMessage ( "Navigator ready." ); mNavigator = navigator ; mNavFragment = ( SupportNavigationFragment ) getSupportFragmentManager () . findFragmentById ( R . id . navigation fragment ); // Get the map . mNavFragment . getMapAsync ( new OnMapReadyCallback () { @Override public void onMapReady ( GoogleMap map ) { mMap = map ; // Navigate to a place , specified by Place ID . navigateToPlace ( SYDNEY OPERA HOUSE ); } }); } / Handles errors from the Navigation SDK . @param errorCode The error code returned by the navigator . / @Override public void onError ( @NavigationApi .
+
+### "Navigation SDK overview \_|\_ Navigation SDK for Android \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/overview](https://developers.google.com/maps/documentation/navigation/android-sdk/overview)
+- Source ID: `site-docs-root`
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Page Summary outlined flag The Navigation SDK enables integrating Google Maps turn-by-turn navigation directly into your mobile apps, offering UI customization and advanced route configuration.
+- Businesses can leverage the SDK to personalize the navigation experience with custom branding, optimize routes, and gain valuable data-driven insights from trip data.
+- The SDK offers UI customization for brand look and feel and advanced route configuration.
+- For information on the maps API and functionality differences between the Maps SDK and the Navigation SDK, see the Overview page in the Reference section Navigation Experience : Add the navigation experience using the, which includes the turn-by-turn navigation overlay, turn cards, and additional UI elements.
+
+### "The Google navigation experience \_|\_ Navigation SDK for Android \_|\_\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav](https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav)
+- Source ID: `site-docs-root`
+- Final score: 179
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Modification Details Modified navigation guidance: show/hide headers, colors and fonts, directions, alternate routes, and trip progress Map UI controls Modify the navigation header Display directions list Hide alternate routes Display trip progress Adjust traffic information and speed limit information Turn off traffic layer Enable traffic lights and stop signs Display the speedometer Change the map experience UI and adjust the camera.
+- For example, the navigation experience shows a standard Google maps layer, with visuals like turn guidance cards, traffic layers, alternate routes, and speed limits.
+- The Google navigation experience refers to using the Navigation SDK to embed a turn-by-turn navigation experience that uses Google-provided UI elements and visuals, which are similar to the navigation experience within the Google Maps apps.
+- As an alternative, if you need more customization than is available with the Google navigation experience, you can request a turn-by-turn navigation feed from the Navigation SDK and then provide and manage your own UI elements.
+
+### "Navigate a single-destination route \_|\_ Navigation SDK for Android \_\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/route](https://developers.google.com/maps/documentation/navigation/android-sdk/route)
+- Source ID: `site-docs-reference`
+- Final score: 176
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Set the last digit of the car's license plate to get // route restrictions for supported countries. // mNavigator.setLicensePlateRestrictionInfo(getLastDigit(), "BZ"); // Set the camera to follow the device location with 'TILTED' driving view. mNavFragment.getCamera().followMyLocation(Camera.Perspective.TILTED); // Set the travel mode (DRIVING, WALKING, CYCLING, TWO WHEELER, or TAXI). mRoutingOptions = new RoutingOptions(); mRoutingOptions.travelMode(RoutingOptions.TravelMode.DRIVING); // Navigate to a place, specified by Place ID. navigateToPlace(SYDNEY OPERA HOUSE, mRoutingOptions); } / Handles errors from the Navigation SDK. @param errorCode The error code returned by the navigator. / @Override public void onError(@NavigationApi.ErrorCode int errorCode) { switch (errorCode) { case NavigationApi.ErrorCode.NOT AUTHORIZED: displayMessage("Error loading Navigation SDK: Your API key is " + "invalid or not authorized to use the Navigation SDK."); break; case NavigationApi.ErrorCode.TERMS NOT ACCEPTED: displayMessage("Error loading Navigation SDK: User did not accept " + "the Navigation Terms of Use."); break; case NavigationApi.ErrorCode.NETWORK ERROR: displayMessage("Error loading Navigation SDK: Network error."); break; case NavigationApi.ErrorCode.LOCATION PERMISSION MISSING: displayMessage("Error loading Navigation SDK: Location permission " + "is missing."); break; default: displayMessage("Error loading Navigation SDK: " + errorCode); } } }); Set a destination The Navigator class provides control over configuring, starting, and stopping a navigation journey.
+- Page Summary outlined flag This guide provides instructions on integrating the Google Maps Navigation SDK into your Android application for route plotting and navigation.
+- Follow this guide to plot a route within your app using the Navigation SDK for Android.
+- See the code Show or hide Java code for a single-destination navigation activity. package com . example . navsdksingledestination ; import android.content.pm.PackageManager ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.RoutingOptions ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.Waypoint ; / An activity that displays a map and a navigation UI , guiding the user from their current location to a single , given destination . / public class NavigationActivitySingleDestination extends AppCompatActivity { private static final String TAG = NavigationActivitySingleDestination . class . getSimpleName (); private Navigator mNavigator ; private SupportNavigationFragment mNavFragment ; private RoutingOptions mRoutingOptions ; // Define the Sydney Opera House by specifying its place ID . private static final String SYDNEY OPERA HOUSE = "ChIJ3S-JXmauEmsRUcIaWtf4MzE" ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Starts the Navigation SDK and sets the camera to follow the device 's location.
 

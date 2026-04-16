@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.731Z"
+generated_at: "2026-04-14T15:13:19.911Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "LANDFIRE Percent Low-severity Fire"
 feature_slug: "landfire-percent-low-severity-fire"
 latest_feature_date: "2020-07-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/datasets/catalog"
   - "https://developers.google.com/earth-engine/datasets/tags/fire"
+  - "https://developers.google.com/earth-engine/datasets/catalog"
   - "https://developers.google.com/earth-engine/datasets/tags/landcover"
 keywords:
   - "landfire"
@@ -19,14 +19,13 @@ keywords:
   - "severity"
   - "fire"
   - "provides"
-  - "the"
   - "percentage"
 ---
 
 # LANDFIRE Percent Low-severity Fire
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,47 +37,47 @@ Provides the percentage of low-severity fire in LANDFIRE.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - [https://developers.google.com/earth-engine/datasets/tags/fire](https://developers.google.com/earth-engine/datasets/tags/fire)
+- [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 
 ## Supporting Pages
-
-### Earth Engine Data Catalog \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- Source ID: `site-docs-root`
-- Final score: 154
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PLS (Percent Low-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
-- Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PRS (Percent of Replacement-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
-- Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PMS (Percent of Mixed-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
-- Mosaicked burn severity images are compiled annually for each year by US State and the … eros fire forest gtac landcover landsat-derived Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density : Daily, Multi-Year Reprocessed Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density is an oceanographic product that provides daily, global, and gap-free Level-4 (L4) analyses of Sea Surface Salinity (SSS) and Sea Surface Density (SSD) at a high resolution of 1/8 degree.
 
 ### "Datasets tagged fire in Earth Engine \_|\_ Earth Engine Data Catalog \_\
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/fire](https://developers.google.com/earth-engine/datasets/tags/fire)
 - Source ID: `site-docs-root-3`
-- Final score: 152
+- Final score: 141
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PLS (Percent Low-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
 - Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PRS (Percent of Replacement-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
 - Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PMS (Percent of Mixed-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
-- Below NBR stands for "Normalized Burn Ratio", while dNBR stands … eros fire gtac mtbs table usda MYD14A1.061: Aqua Thermal Anomalies & Fire Daily Global 1km The MYD14A1 V6.1 dataset provides daily fire mask composites at 1km resolution derived from the MODIS 4- and 11-micrometer radiances.
+- Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PLS (Percent Low-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
+- Compared to other coarser resolution (≥ 1km) satellite fire detection products, the improved 375 m data provide greater response over fires of relatively small … eosdis fire firms geophysical hotspot lance VNP14A1.002: Thermal Anomalies/Fire Daily L3 Global 1km SIN Grid The daily Suomi National Polar-Orbiting Partnership NASA Visible Infrared Imaging Radiometer Suite (VIIRS) Thermal Anomalies/Fire (VNP14A1) Version 1 data product provides daily information about active fires and other thermal anomalies.
+
+### Earth Engine Data Catalog \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
+- Source ID: `site-docs-root`
+- Final score: 129
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PRS (Percent of Replacement-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
+- Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PMS (Percent of Mixed-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
+- Landfire (LF) Historical fire regimes, intervals, and … doi fire landfire nature-conservancy usda usgs LANDFIRE PLS (Percent Low-severity Fire) v1.2.0 LANDFIRE (LF), Landscape Fire and Resource Management Planning Tools, is a shared program between the wildland fire management programs of the U.S.
+- Mosaicked burn severity images are compiled annually for each year by US State and the … eros fire forest gtac landcover landsat-derived Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density : Daily, Multi-Year Reprocessed Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density is an oceanographic product that provides daily, global, and gap-free Level-4 (L4) analyses of Sea Surface Salinity (SSS) and Sea Surface Density (SSD) at a high resolution of 1/8 degree.
 
 ### "Datasets tagged landcover in Earth Engine \_|\_ Earth Engine Data Catalog\
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 - Source ID: `site-docs-root`
-- Final score: 126
+- Final score: 113
 - Re-rank relevance: N/A
 
 Evidence snippets:

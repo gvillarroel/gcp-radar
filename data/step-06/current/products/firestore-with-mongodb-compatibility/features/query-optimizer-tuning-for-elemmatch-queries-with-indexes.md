@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.773Z"
+generated_at: "2026-04-12T12:16:03.710Z"
 product_name: "Firestore with MongoDB compatibility"
 product_slug: "firestore-with-mongodb-compatibility"
 feature_name: "Query optimizer tuning for $elemMatch queries with indexes"
 feature_slug: "query-optimizer-tuning-for-elemmatch-queries-with-indexes"
 latest_feature_date: "2025-07-10"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview"
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries"
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80"
 keywords:
   - "query"
   - "optimizer"
@@ -24,7 +27,7 @@ keywords:
 # Query optimizer tuning for $elemMatch queries with indexes
 
 Product: Firestore with MongoDB compatibility
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ Query optimizer tuning improves $elemMatch queries with indexes in Preview.
 
 Query optimizer tuning improves $elemMatch queries with indexes in Preview.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/firestore/native/docs/query-data/queries](https://docs.cloud.google.com/firestore/native/docs/query-data/queries)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Query and filter data \_|\_ Firestore in Native mode \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/query-data/queries](https://docs.cloud.google.com/firestore/native/docs/query-data/queries)
+- Source ID: `site-docs-root-2`
+- Final score: 167
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Id ); } Program . cs Ruby cities ref = firestore . col collection path query = cities ref . where "capital" , "=" , true query . get do city puts "Document #{ city . document id } returned by query capital=true." end query data . rb Execute a query After creating a query object, use the get() function to retrieve the results: Web version 9 import { collection , query , where , getDocs } from "firebase/firestore" ; const q = query ( collection ( db , "cities" ), where ( "capital" , "==" , true )); const querySnapshot = await getDocs ( q ); querySnapshot . forEach (( doc ) = > { // doc.data() is never undefined for query doc snapshots console . log ( doc . id , " => " , doc . data ()); }); get multiple . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. db . collection ( "cities" ). where ( "capital" , "==" , true ) . get () . then (( querySnapshot ) = > { querySnapshot . forEach (( doc ) = > { // doc.data() is never undefined for query doc snapshots console . log ( doc . id , " => " , doc . data ()); }); }) . catch (( error ) = > { console . log ( "Error getting documents: " , error ); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. do { let querySnapshot = try await db . collection ( "cities" ). whereField ( "capital" , isEqualTo : true ) . getDocuments () for document in querySnapshot . documents { print ( " \( document . documentID ) => \( document . data ()) " ) } } catch { print ( "Error getting documents: \( error ) " ) } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. [[[ self . db collectionWithPath : @"cities" ] queryWhereField : @"capital" isEqualTo : @( YES ) ] getDocumentsWithCompletion : ^ ( FIRQuerySnapshot snapshot , NSError error ) { if ( error != nil ) { NSLog ( @"Error getting documents: %@" , error ); } else { for ( FIRDocumentSnapshot document in snapshot . documents ) { NSLog ( @"%@ => %@" , document . documentID , document . data ); } } }]; ViewController . m Kotlin Android db . collection ( "cities" ) . whereEqualTo ( "capital" , true ) . get () . addOnSuccessListener { documents - > for ( document in documents ) { Log . d ( TAG , " ${ document . id } => ${ document . data } " ) } } . addOnFailureListener { exception - > Log . w ( TAG , "Error getting documents: " , exception ) } DocSnippets . kt Java Android db . collection ( "cities" ) . whereEqualTo ( "capital" , true ) . get () . addOnCompleteListener ( new OnCompleteListener<QuerySnapshot> () { @Override public void onComplete ( @NonNull Task<QuerySnapshot> task ) { if ( task . isSuccessful ()) { for ( QueryDocumentSnapshot document : task . getResult ()) { Log . d ( TAG , document . getId () + " => " + document . getData ()); } } else { Log . d ( TAG , "Error getting documents: " , task . getException ()); } } }); DocSnippets . java Dart db . collection ( "cities" ). where ( "capital" , isEqualTo: true ). get (). then ( ( querySnapshot ) { print ( "Successfully completed" ); for ( var docSnapshot in querySnapshot . docs ) { print ( ' ${ docSnapshot . id } => ${ docSnapshot . data () } ' ); } }, onError: ( e ) = > print ( "Error completing: $ e " ), ); firestore . dart Java // asynchronously retrieve multiple documents ApiFuture<QuerySnapshot> future = db . collection ( "cities" ). whereEqualTo ( "capital" , true ). get (); // future.get() blocks on response List<QueryDocumentSnapshot> documents = future . get (). getDocuments (); for ( DocumentSnapshot document : documents ) { System . out . println ( document . getId () + " => " + document . toObject ( City . class )); } RetrieveDataSnippets . java Python Note: Use of CollectionRef stream() is prefered to get() docs = ( db . collection ( "cities" ) . where ( filter = FieldFilter ( "capital" , "==" , True )) . stream () ) for doc in docs : print ( f " { doc . id } => { doc . to dict () } " ) snippets . py Python (Async) Note: Use of CollectionRef stream() is prefered to get() docs = ( db . collection ( "cities" ) . where ( filter = FieldFilter ( "capital" , "==" , True )) . stream () ) async for doc in docs : print ( f " { doc . id } => { doc . to dict () } " ) snippets . py C++ db - > Collection ( "cities" ) .
+- For example, this collection group query retrieves all museum landmarks across all cities: Web version 9 import { collectionGroup , query , where , getDocs } from "firebase/firestore" ; const museums = query ( collectionGroup ( db , 'landmarks' ), where ( 'type' , '==' , 'museum' )); const querySnapshot = await getDocs ( museums ); querySnapshot . forEach (( doc ) = > { console . log ( doc . id , ' => ' , doc . data ()); }); fs collection group query . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. var museums = db . collectionGroup ( 'landmarks' ). where ( 'type' , '==' , 'museum' ); museums . get (). then (( querySnapshot ) = > { querySnapshot . forEach (( doc ) = > { console . log ( doc . id , ' => ' , doc . data ()); }); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. db . collectionGroup ( "landmarks" ). whereField ( "type" , isEqualTo : "museum" ). getDocuments { ( snapshot , error ) in // ... } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. [[[ self . db collectionGroupWithID : @"landmarks" ] queryWhereField : @"type" isEqualTo : @"museum" ] getDocumentsWithCompletion : ^ ( FIRQuerySnapshot snapshot , NSError error ) { // ... }]; ViewController . m Kotlin Android db . collectionGroup ( "landmarks" ). whereEqualTo ( "type" , "museum" ). get () . addOnSuccessListener { queryDocumentSnapshots - > // ... } DocSnippets . kt Java Android db . collectionGroup ( "landmarks" ). whereEqualTo ( "type" , "museum" ). get () . addOnSuccessListener ( new OnSuccessListener<QuerySnapshot> () { @Override public void onSuccess ( QuerySnapshot queryDocumentSnapshots ) { // ... } }); DocSnippets . java Dart db . collectionGroup ( "landmarks" ) . where ( "type" , isEqualTo: "museum" ) . get () . then ( ( res ) = > print ( "Successfully completed" ), onError: ( e ) = > print ( "Error completing: $ e " ), ); firestore . dart Java final Query museums = db . collectionGroup ( "landmarks" ). whereEqualTo ( "type" , "museum" ); final ApiFuture<QuerySnapshot> querySnapshot = museums . get (); for ( DocumentSnapshot document : querySnapshot . get (). getDocuments ()) { System . out . println ( document . getId ()); } QueryDataSnippets . java Python museums = db . collection group ( "landmarks" ) . where ( filter = FieldFilter ( "type" , "==" , "museum" ) ) docs = museums . stream () for doc in docs : print ( f " { doc . id } => { doc . to dict () } " ) snippets . py Python (Async) museums = db . collection group ( "landmarks" ) . where ( filter = FieldFilter ( "type" , "==" , "museum" ) ) docs = museums . stream () async for doc in docs : print ( f " { doc . id } => { doc . to dict () } " ) snippets . py C++ db - > CollectionGroup ( "landmarks" ) .
+- WriteLine ( "Added example cities data to the cities collection." ); Program . cs Ruby cities ref = firestore . col collection path cities ref . doc ( "SF" ) . set ( { name : "San Francisco" , state : "CA" , country : "USA" , capital : false , density : 18 000 , population : 860 000 , regions : [ "west coast" , "norcal" ] } ) cities ref . doc ( "LA" ) . set ( { name : "Los Angeles" , state : "CA" , country : "USA" , capital : false , density : 8 300 , population : 3 900 000 , regions : [ "west coast" , "socal" ] } ) cities ref . doc ( "DC" ) . set ( { name : "Washington D.C." , state : nil , country : "USA" , capital : true , density : 11 300 , population : 680 000 , regions : [ "east coast" ] } ) cities ref . doc ( "TOK" ) . set ( { name : "Tokyo" , state : nil , country : "Japan" , capital : true , density : 16 000 , population : 9 000 000 , regions : [ "kanto" , "honshu" ] } ) cities ref . doc ( "BJ" ) . set ( { name : "Beijing" , state : nil , country : "China" , capital : true , density : 3 500 , population : 21 500 000 , regions : [ "jingjinji" , "hebei" ] } ) query data . rb Simple queries The following query returns all cities with state CA : Web version 9 // Create a reference to the cities collection import { collection , query , where } from "firebase/firestore" ; const citiesRef = collection ( db , "cities" ); // Create a query against the collection. const q = query ( citiesRef , where ( "state" , "==" , "CA" )); simple queries . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. // Create a reference to the cities collection var citiesRef = db . collection ( "cities" ); // Create a query against the collection. var query = citiesRef . where ( "state" , "==" , "CA" ); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. // Create a reference to the cities collection let citiesRef = db . collection ( "cities" ) // Create a query against the collection. let query = citiesRef . whereField ( "state" , isEqualTo : "CA" ) ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. // Create a reference to the cities collection FIRCollectionReference citiesRef = [ self . db collectionWithPath : @"cities" ]; // Create a query against the collection.
+- For example: Web version 9 import { query , where } from "firebase/firestore" ; const q = query ( citiesRef , where ( 'regions' , 'in' , [[ 'west coast' ], [ 'east coast' ]])); in filter with array . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. citiesRef . where ( 'regions' , 'in' , [[ 'west coast' ], [ 'east coast' ]]); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. citiesRef . whereField ( "regions" , in : [[ "west coast" ], [ "east coast" ]]) ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. [ citiesRef queryWhereField : @"regions" in : @[@[ @"west coast" ] , @[ @"east coast" ]] ]; ViewController . m Kotlin Android citiesRef . whereIn ( "regions" , listOf ( arrayOf ( "west coast" ), arrayOf ( "east coast" ))) DocSnippets . kt Java Android citiesRef . whereIn ( "regions" , Arrays . asList ( new String [] { "west coast" }, new String [] { "east coast" })); DocSnippets . java Dart final citiesRef = db . collection ( "cities" ); final cities = citiesRef . where ( "regions" , whereIn: [ [ "west coast" ], [ "east coast" ] ]); firestore . dart Java CollectionReference citiesRef = db . collection ( "cities" ); Query query = citiesRef . whereIn ( "regions" , Arrays . asList ( Arrays . asList ( "west coast" ), Arrays . asList ( "east coast" ))); QueryDataSnippets . java Python cities ref = db . collection ( "cities" ) query = cities ref . where ( filter = FieldFilter ( "regions" , "in" , [[ "west coast" ], [ "east coast" ]]) ) return query snippets . py Python (Async) cities ref = db . collection ( "cities" ) query = cities ref . where ( filter = FieldFilter ( "regions" , "in" , [[ "west coast" ], [ "east coast" ]]) ) return query snippets . py C++ cities ref .
+
+### "Indexes overview \_|\_ Firestore with MongoDB compatibility \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview)
+- Source ID: `site-iam-reference`
+- Final score: 163
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, the following indexes are two distinct indexes and not interchangeable: Collection Fields cities country (ascending), population (descending) cities population (descending), country (ascending), When creating an index to support a query, include the fields in the same order as your query.
+- Indexes overview This page describes indexing for Firestore with MongoDB compatibility.
+- To improve database performance, create indexes for your most commonly used queries.
+- For example, regular indexes can filter values within a range more efficiently.
+
+### "Create and manage saved queries \_|\_ Firestore with MongoDB compatibility\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-manage-saved-queries)
+- Source ID: `site-iam-reference`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Required permissions To create, view, modify, and delete saved queries, you need the following IAM permissions at the project level: Action Required IAM permissions Create saved queries databasesconsole.studioQueries.create View saved queries databasesconsole.studioQueries.search databasesconsole.locations.get databasesconsole.locations.list Modify saved queries databasesconsole.studioQueries.update Delete saved queries databasesconsole.studioQueries.delete Administer saved queries (Only for use by administrators) databasesConsole.studioQueries.list databasesconsole.locations.list Note: Having access to saved queries doesn't automatically mean that you have permissions to run the query.
+- Open and run a saved query To open a saved query as a new query, follow these steps: In the Explorer pane on the Firestore Studio page, navigate to the Queries section.
+- Update a saved query To update an existing saved query, follow these steps: In the Explorer pane on the Firestore Studio page, navigate to the Queries section.
+- Because a saved query is a child of a project, as long as you have the required role, you can view all saved queries in the project from any database.
+
+### "Supported features: 8.0 \_|\_ Firestore with MongoDB compatibility \_|\_\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80)
+- Source ID: `site-docs-root`
+- Final score: 141
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Command Supported cloneCollectionAsCapped No collMod No collMod: expireAfterSeconds No convertToCapped No copydb No create Yes createIndex Yes createIndexes Yes createView No currentOp No drop No dropDatabase No To delete a database, see Delete a database . dropIndex Yes To delete indexes, see Manage indexes . dropIndexes No filemd5 No getAuditConfig No killCursors Yes killOp No listCollections Yes listDatabases Yes listIndexes Yes reIndex No renameCollection No setAuditConfig No Diagnostic commands Command Supported buildInfo Yes collStats No connectionStatus Yes connPoolStats No dataSize No dbHash No dbStats No explain Yes For behavior differences and limitations, see Query Explain features No hello Yes hostInfo Yes listCommands No profiler No serverStatus No top No whatsmyuri No Role management commands To manage database access, Firestore with MongoDB compatibility supports Identity and Access Management roles and permissions .
+- Query and projection operators Firestore with MongoDB compatibility supports the following query and projection operators: Array operators Operator Supported $all Yes $elemMatch Yes $size Yes Bitwise operators Operator Supported $bitsAllClear No $bitsAllSet No $bitsAnyClear No $bitsAnySet No Comment operator Operator Supported $comment No Comparison operators Operator Supported $eq Yes $gt Yes $gte Yes $in Yes $lt Yes $lte Yes $ne Yes $nin Yes Element operators Operator Supported $exists Yes $type Yes Evaluation query operators Operator Supported $expr Yes $jsonSchema No $mod Yes $regex Yes $text No $where No Logical operators Operator Supported $and Yes $nor Yes $not Yes $or Yes Projection operators Operator Supported $ Yes $elemMatch Yes $meta Partial (supports textScore) $slice Yes Update operators Firestore with MongoDB compatibility supports the following update operators.
+- Geometry specifiers Specifier Supported $box No $center No $centerSphere No $geometry No $maxDistance No $minDistance No $polygon No $uniqueDocs No Query selectors Selector Supported $geoIntersects No $geoWithin No $near No $nearSphere No $nearSphere No $uniqueDocs No Indexes and index properties Firestore with MongoDB compatibility supports the following indexes and index operators.
+- Aggregation Command Supported aggregate Yes count Yes distinct Yes group No The $group stage in aggregations is supported whereas the group command isn't. mapReduce No Authentication Command Supported authenticate No getnonce No logout No Query and write operations Command Supported watch (Change Streams) No delete Yes eval No find Yes findAndModify Yes getLastError Yes getMore Yes getPrevError No GridFS No insert Yes parallelCollectionScan No replaceOne No The replaceOne driver method is supported with the update command. resetError No update Yes Session commands Command Supported abortTransaction Yes commitTransaction Yes endSessions Yes killAllSessions No killAllSessionsByPattern No killSessions No refreshSessions No startSession Sessions can be started using the startSession driver method.
 

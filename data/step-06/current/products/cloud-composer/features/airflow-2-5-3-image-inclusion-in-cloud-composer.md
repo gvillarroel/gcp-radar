@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.012Z"
+generated_at: "2026-04-12T12:11:19.211Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Airflow 2.5.3 image inclusion in Cloud Composer"
 feature_slug: "airflow-2-5-3-image-inclusion-in-cloud-composer"
 latest_feature_date: "2024-04-18"
 deprecation_date: "2024-04-18"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
   - "https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/audit-logging"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface"
 keywords:
   - "airflow"
   - "image"
@@ -26,7 +27,7 @@ keywords:
 # Airflow 2.5.3 image inclusion in Cloud Composer
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Airflow 2.5.3 is no longer included in Cloud Composer images; deprecated on 2024
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/composer-1/audit-logging](https://docs.cloud.google.com/composer/docs/composer-1/audit-logging)
+- [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - Source ID: `site-iam-reference`
-- Final score: 204
+- Final score: 251
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-cli)
 - Source ID: `site-iam-reference`
-- Final score: 200
+- Final score: 242
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,30 @@ Evidence snippets:
 - Triggering DAGs through Google Cloud CLI might cause your environment to reach the quota limit, and as a result, Airflow CLI commands will no longer be executed.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Cloud Composer audit logging \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 198
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/audit-logging](https://docs.cloud.google.com/composer/docs/composer-1/audit-logging)
+- Source ID: `site-iam-reference`
+- Final score: 241
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- ListImageVersions Method : google.cloud.orchestration.airflow.service.v1beta1.ImageVersions.ListImageVersions Audit log type : Data access Permissions : composer.imageversions.list - ADMIN READ Method is a long-running or streaming operation : No.
+- ListImageVersions Method : google.cloud.orchestration.airflow.service.v1.ImageVersions.ListImageVersions Audit log type : Data access Permissions : composer.imageversions.list - ADMIN READ Method is a long-running or streaming operation : No.
+- Permission type Methods ADMIN READ google.cloud.orchestration.airflow.service.v1.Environments.FetchDatabaseProperties google.cloud.orchestration.airflow.service.v1.Environments.GetEnvironment google.cloud.orchestration.airflow.service.v1.Environments.GetUserWorkloadsConfigMap google.cloud.orchestration.airflow.service.v1.Environments.GetUserWorkloadsSecret google.cloud.orchestration.airflow.service.v1.Environments.ListEnvironments google.cloud.orchestration.airflow.service.v1.Environments.ListUserWorkloadsConfigMaps google.cloud.orchestration.airflow.service.v1.Environments.ListUserWorkloadsSecrets google.cloud.orchestration.airflow.service.v1.Environments.ListWorkloads google.cloud.orchestration.airflow.service.v1.ImageVersions.ListImageVersions google.cloud.orchestration.airflow.service.v1beta1.Environments.FetchDatabaseProperties google.cloud.orchestration.airflow.service.v1beta1.Environments.GetEnvironment google.cloud.orchestration.airflow.service.v1beta1.Environments.GetUserWorkloadsConfigMap google.cloud.orchestration.airflow.service.v1beta1.Environments.GetUserWorkloadsSecret google.cloud.orchestration.airflow.service.v1beta1.Environments.ListEnvironments google.cloud.orchestration.airflow.service.v1beta1.Environments.ListUserWorkloadsConfigMaps google.cloud.orchestration.airflow.service.v1beta1.Environments.ListUserWorkloadsSecrets google.cloud.orchestration.airflow.service.v1beta1.Environments.ListWorkloads google.cloud.orchestration.airflow.service.v1beta1.ImageVersions.ListImageVersions ADMIN WRITE google.cloud.orchestration.airflow.service.v1.Environments.CheckUpgrade (LRO) google.cloud.orchestration.airflow.service.v1.Environments.CreateEnvironment (LRO) google.cloud.orchestration.airflow.service.v1.Environments.CreateUserWorkloadsConfigMap google.cloud.orchestration.airflow.service.v1.Environments.CreateUserWorkloadsSecret google.cloud.orchestration.airflow.service.v1.Environments.DatabaseFailover (LRO) google.cloud.orchestration.airflow.service.v1.Environments.DeleteEnvironment (LRO) google.cloud.orchestration.airflow.service.v1.Environments.DeleteUserWorkloadsConfigMap google.cloud.orchestration.airflow.service.v1.Environments.DeleteUserWorkloadsSecret google.cloud.orchestration.airflow.service.v1.Environments.ExecuteAirflowCommand google.cloud.orchestration.airflow.service.v1.Environments.LoadSnapshot (LRO) google.cloud.orchestration.airflow.service.v1.Environments.PollAirflowCommand google.cloud.orchestration.airflow.service.v1.Environments.SaveSnapshot (LRO) google.cloud.orchestration.airflow.service.v1.Environments.StopAirflowCommand google.cloud.orchestration.airflow.service.v1.Environments.UpdateEnvironment (LRO) google.cloud.orchestration.airflow.service.v1.Environments.UpdateUserWorkloadsConfigMap google.cloud.orchestration.airflow.service.v1.Environments.UpdateUserWorkloadsSecret google.cloud.orchestration.airflow.service.v1beta1.Environments.CheckUpgrade (LRO) google.cloud.orchestration.airflow.service.v1beta1.Environments.CreateEnvironment (LRO) google.cloud.orchestration.airflow.service.v1beta1.Environments.CreateUserWorkloadsConfigMap google.cloud.orchestration.airflow.service.v1beta1.Environments.CreateUserWorkloadsSecret google.cloud.orchestration.airflow.service.v1beta1.Environments.DatabaseFailover (LRO) google.cloud.orchestration.airflow.service.v1beta1.Environments.DeleteEnvironment (LRO) google.cloud.orchestration.airflow.service.v1beta1.Environments.DeleteUserWorkloadsConfigMap google.cloud.orchestration.airflow.service.v1beta1.Environments.DeleteUserWorkloadsSecret google.cloud.orchestration.airflow.service.v1beta1.Environments.ExecuteAirflowCommand google.cloud.orchestration.airflow.service.v1beta1.Environments.LoadSnapshot (LRO) google.cloud.orchestration.airflow.service.v1beta1.Environments.PollAirflowCommand google.cloud.orchestration.airflow.service.v1beta1.Environments.RestartWebServer (LRO) google.cloud.orchestration.airflow.service.v1beta1.Environments.SaveSnapshot (LRO) google.cloud.orchestration.airflow.service.v1beta1.Environments.StopAirflowCommand google.cloud.orchestration.airflow.service.v1beta1.Environments.UpdateEnvironment (LRO) google.cloud.orchestration.airflow.service.v1beta1.Environments.UpdateUserWorkloadsConfigMap google.cloud.orchestration.airflow.service.v1beta1.Environments.UpdateUserWorkloadsSecret google.longrunning.Operations.DeleteOperation API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud Composer. google.cloud.orchestration.airflow.service.v1.Environments The following audit logs are associated with methods belonging to google.cloud.orchestration.airflow.service.v1.Environments .
+- Filter for this method : protoPayload.methodName="google.cloud.orchestration.airflow.service.v1beta1.Environments.CreateUserWorkloadsSecret" DatabaseFailover Method : google.cloud.orchestration.airflow.service.v1beta1.Environments.DatabaseFailover Audit log type : Admin activity Permissions : composer.environments.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.orchestration.airflow.service.v1beta1.Environments.DatabaseFailover" DeleteEnvironment Method : google.cloud.orchestration.airflow.service.v1beta1.Environments.DeleteEnvironment Audit log type : Admin activity Permissions : composer.environments.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="google.cloud.orchestration.airflow.service.v1beta1.Environments.DeleteEnvironment" DeleteUserWorkloadsConfigMap Method : google.cloud.orchestration.airflow.service.v1beta1.Environments.DeleteUserWorkloadsConfigMap Audit log type : Admin activity Permissions : composer.userworkloadsconfigmaps.delete - ADMIN WRITE Method is a long-running or streaming operation : No.
+
+### "Access the Airflow web interface \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface)
+- Source ID: `site-iam-reference`
+- Final score: 238
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Change New versions of Cloud Composer images: composer-1.17.0-airflow-2.1.2 composer-1.17.0-airflow-2.0.2 composer-1.17.0-airflow-1.10.15 (default) composer-1.17.0-airflow-1.10.14 composer-1.17.0-airflow-1.10.12 composer-2.0.0-preview.1-airflow-2.1.2 composer-2.0.0-preview.1-airflow-2.0.2 Deprecated Airflow 2.1.1 is no longer included in Cloud Composer images.
-- Change Cloud Composer 1.19.15 and 2.0.32 images are available: composer-1.19.15-airflow-1.10.15 (default) composer-1.19.15-airflow-2.1.4 composer-1.19.15-airflow-2.2.5 composer-1.19.15-airflow-2.3.4 composer-2.0.32-airflow-2.1.4 composer-2.0.32-airflow-2.2.5 composer-2.0.32-airflow-2.3.4 Deprecated Airflow 2.3.3 is no longer included in Cloud Composer images.
-- Change Cloud Composer 2.1.10 and 1.20.10 images are available: composer-2.1.10-airflow-2.4.3 (default) composer-2.1.10-airflow-2.3.4 composer-1.20.10-airflow-1.10.15 composer-1.20.10-airflow-2.4.3 composer-1.20.10-airflow-2.3.4 Deprecated Airflow 2.2.5 is no longer included in Cloud Composer images.
-- April 29, 2021 Change New versions of Cloud Composer images: composer-1.16.3-airflow-1.10.15 composer-1.16.3-airflow-1.10.14 (default) composer-1.16.3-airflow-1.10.12 Fixed When Airflow configuration is updated, an erroneous log message about a web server update failure no longer appears in logs.
+- Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.webServerNetworkAccessControl { "config" : { "webServerNetworkAccessControl" : { "allowedIpRanges" : [ { "value" : "192.0.2.0/24" , "description" : "example range" }, { "value" : "192.0.4.0/24" , "description" : "example range 2" } ] } } } Terraform In the allowed ip range block, in the web server network access control specify IP ranges that can access web server. resource "google composer environment" "example" { provider = google-beta name = " ENVIRONMENT NAME " region = " LOCATION " config { web server network access control { allowed ip range { value = " WS IP RANGE " description = " WS RANGE DESCRIPTION " } } } } Replace the following: WS IP RANGE : the IP range, in the CIDR notation, that can access the Airflow UI.
+- Example: resource "google composer environment" "example" { provider = google-beta name = "example-environment" region = "us-central1" config { web server network access control { allowed ip range { value = "192.0.2.0/24" description = "example range" }, allowed ip range { value = "192.0.4.0/24" description = "example range 2" } } } What's next Airflow UI Access Control Troubleshooting Airflow web server issues Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- To ensure that web server remains accessible regardless of DAG load time, you can configure asynchronous DAG loading to parse and load DAGs in the background at a pre-configured interval (available in composer-1.7.1-airflow-1.10.2 and later versions).
+- Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 Apache Airflow includes a web user interface called Airflow UI , which you can use to manage Airflow DAGs, view DAG run logs, monitor Airflow, and perform administrative actions.
 

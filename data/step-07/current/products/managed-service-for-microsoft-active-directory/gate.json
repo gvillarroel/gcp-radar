@@ -1,0 +1,445 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-15T12:12:25.171Z",
+  "product_name": "Managed Service for Microsoft Active Directory",
+  "product_slug": "managed-service-for-microsoft-active-directory",
+  "input_file": "data/step-06/current/products/managed-service-for-microsoft-active-directory/extended-features.json",
+  "feature_count": 24,
+  "passed_feature_count": 24,
+  "failed_feature_count": 0,
+  "warned_feature_count": 1,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "LDAPS",
+      "feature_slug": "ldaps",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/reference/rest/v1/LDAPSSettings",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/audit-logging",
+        "https://docs.cloud.google.com/managed-microsoft-ad/reference/rest"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "Managed Microsoft AD regional availability",
+      "feature_slug": "managed-microsoft-ad-regional-availability",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Workforce identity federation for Managed Microsoft AD",
+      "feature_slug": "workforce-identity-federation-for-managed-microsoft-ad",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support"
+      ]
+    },
+    {
+      "feature_name": "Automated domain join for Managed Microsoft AD",
+      "feature_slug": "automated-domain-join-for-managed-microsoft-ad",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/automated-domain-join-gke",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/quickstart-domain-join-windows",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/quickstart-domain-join-linux"
+      ]
+    },
+    {
+      "feature_name": "Managed Microsoft AD audit log event IDs",
+      "feature_slug": "managed-microsoft-ad-audit-log-event-ids",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/audit-logging",
+        "https://docs.cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/faq"
+      ]
+    },
+    {
+      "feature_name": "Microsoft security baselines for Managed Microsoft AD VMs",
+      "feature_slug": "microsoft-security-baselines-for-managed-microsoft-ad-vms",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/hardening",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/managedidentities",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support"
+      ]
+    },
+    {
+      "feature_name": "Schema extensions for Managed Microsoft AD",
+      "feature_slug": "schema-extensions-for-managed-microsoft-ad",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/backup-restore",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/faq",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/audit-logging"
+      ]
+    },
+    {
+      "feature_name": "User migration to Managed Microsoft AD",
+      "feature_slug": "user-migration-to-managed-microsoft-ad",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-migration",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/enable-migrate-permissions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust"
+      ]
+    },
+    {
+      "feature_name": "Virus and malware protection",
+      "feature_slug": "virus-and-malware-protection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/hardening",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/deploy-adfs"
+      ]
+    },
+    {
+      "feature_name": "Domain peering",
+      "feature_slug": "domain-peering",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-peering",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/quickstart-domain-peering",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain"
+      ]
+    },
+    {
+      "feature_name": "LDAPS",
+      "feature_slug": "ldaps",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/reference/rest/v1/LDAPSSettings",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/audit-logging",
+        "https://docs.cloud.google.com/managed-microsoft-ad/reference/rest"
+      ]
+    },
+    {
+      "feature_name": "Schema extensions",
+      "feature_slug": "schema-extensions",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/faq",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/backup-restore",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/audit-logging"
+      ]
+    },
+    {
+      "feature_name": "Backup and restore",
+      "feature_slug": "backup-and-restore",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/backup-restore",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/audit-logging",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/faq"
+      ]
+    },
+    {
+      "feature_name": "Regional availability",
+      "feature_slug": "regional-availability",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory"
+      ]
+    },
+    {
+      "feature_name": "Domain tags",
+      "feature_slug": "domain-tags",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/managedidentities",
+        "https://docs.cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains.backups"
+      ]
+    },
+    {
+      "feature_name": "Audit logging",
+      "feature_slug": "audit-logging",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/audit-logging",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/faq",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/troubleshooting"
+      ]
+    },
+    {
+      "feature_name": "Cloud SQL integration",
+      "feature_slug": "cloud-sql-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/access-control",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/audit-logging",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/managedidentities"
+      ]
+    },
+    {
+      "feature_name": "Fine-grained password policies",
+      "feature_slug": "fine-grained-password-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/how-to-use-delegated-admin",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/troubleshooting",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support"
+      ]
+    },
+    {
+      "feature_name": "Terraform support",
+      "feature_slug": "terraform-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "feature_name": "Managed Microsoft AD SLA",
+      "feature_slug": "managed-microsoft-ad-sla",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "feature_name": "VPC Service Controls integration",
+      "feature_slug": "vpc-service-controls-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "feature_name": "Default domain functional level for new domains",
+      "feature_slug": "default-domain-functional-level-for-new-domains",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain"
+      ]
+    },
+    {
+      "feature_name": "Domain controller regional deployment",
+      "feature_slug": "domain-controller-regional-deployment",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain"
+      ]
+    },
+    {
+      "feature_name": "Domain controllers in up to four regions per domain",
+      "feature_slug": "domain-controllers-in-up-to-four-regions-per-domain",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Multi-regional VPC access to domain controllers",
+      "feature_slug": "multi-regional-vpc-access-to-domain-controllers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    }
+  ]
+}

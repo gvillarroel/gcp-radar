@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.399Z"
+generated_at: "2026-04-12T12:13:45.753Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Workspace compilation overrides"
 feature_slug: "workspace-compilation-overrides"
 latest_feature_date: "2023-03-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataform/docs/configure-compilation"
   - "https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1"
+  - "https://docs.cloud.google.com/dataform/docs/best-practices-repositories"
 keywords:
   - "workspace"
   - "compilation"
@@ -26,7 +27,7 @@ keywords:
 # Workspace compilation overrides
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Workspace compilation overrides let users override compilation settings in a Dat
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataform/docs/configure-compilation](https://docs.cloud.google.com/dataform/docs/configure-compilation)
 - [https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle](https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1)
+- [https://docs.cloud.google.com/dataform/docs/best-practices-repositories](https://docs.cloud.google.com/dataform/docs/best-practices-repositories)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataform/docs/configure-compilation](https://docs.cloud.google.com/dataform/docs/configure-compilation)
 - Source ID: `site-docs-root-2`
-- Final score: 190
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 267
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Delete workspace compilation overrides To delete Dataform workspace compilation overrides, follow these steps: In your repository, go to Settings .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle](https://docs.cloud.google.com/dataform/docs/managing-code-lifecycle)
 - Source ID: `site-docs-root-2`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 263
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - In workflow settings.yaml , configure the following settings: defaultProject : enterprise-dev defaultDataset : analytics In dataform.json , configure the following settings: { de fault Schema : "analytics" , de fault Da ta base : "enterprise-dev" } Workspace overrides Schema suffix: "${workspaceName}" staging release configuration Git commitish: "main" Google Cloud project ID: "enterprise-staging" prod release configuration Git commitish: "prod" Google Cloud project ID: "enterprise-prod" To schedule runs of staging and production compilation results, create two separate workflow configurations with custom schedules that best fit your needs.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1)
 - Source ID: `site-java-reference`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 237
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Workspace Compilation Overrides Configures workspace compilation overrides for a repository. com. google. cloud. dataform. v1.
 - Builder Configures workspace compilation overrides for a repository. com. google. cloud. dataform. v1.
 - Workspace Compilation Overrides Or Builder com. google. cloud. dataform. v1.
 - Workspace Compilation Overrides.
+
+### Best practices for repositories \_|\_ Dataform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/best-practices-repositories](https://docs.cloud.google.com/dataform/docs/best-practices-repositories)
+- Source ID: `site-docs-root-2`
+- Final score: 233
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Execution environments in a single repository You can create isolated execution environments such as development, staging, and production in a single Dataform repository with workspace compilation overrides and release configurations .
+- With workspace compilation overrides , you can configure compilation overrides for all the workspaces in your repository, creating custom compilation results of each workspace.
+- To customize compilation and execution in each copy of the repository, use workspace compilation overrides , release configurations , and workflow configurations .
+- You can configure custom compilation results with release configurations and workspace compilation overrides.
 

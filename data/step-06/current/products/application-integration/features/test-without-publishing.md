@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.491Z"
+generated_at: "2026-04-14T07:40:14.494Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Test without publishing"
 feature_slug: "test-without-publishing"
 latest_feature_date: "2022-12-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email"
-  - "https://docs.cloud.google.com/application-integration/docs/retrieve-api-payload-send-email"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-salesforce-trigger"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task"
+  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
 keywords:
   - "validating"
   - "without"
+  - "before"
   - "running"
   - "test"
   - "publishing"
   - "allows"
-  - "an"
-  - "and"
 ---
 
 # Test without publishing
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +37,53 @@ Test without publishing allows running and validating an integration before publ
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email](https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email)
-- [https://docs.cloud.google.com/application-integration/docs/retrieve-api-payload-send-email](https://docs.cloud.google.com/application-integration/docs/retrieve-api-payload-send-email)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
+- [https://docs.cloud.google.com/application-integration/docs/configure-salesforce-trigger](https://docs.cloud.google.com/application-integration/docs/configure-salesforce-trigger)
+- [https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task](https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task)
+- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
 
 ## Supporting Pages
 
-### "Listen to Cloud Pub/Sub topic and send an email \_|\_ Application Integration\
+### Salesforce trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email](https://docs.cloud.google.com/application-integration/docs/listen-pub-sub-topic-send-email)
-- Source ID: `site-docs-root`
-- Final score: 112
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Upon successfully publishing your integration, you can view and inspect the execution logs of the published integration.
-- This quickstart tests the integration's ability to listen to the topic and perform tasks when triggered.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- Before you begin Assign the following Identity and Access Management (IAM) roles to the Application Integration Service Agent ( service- PROJECT NUMBER @gcp-sa-integrations.iam.gserviceaccount.com ) in your Google Cloud project: Pub/Sub Editor Application Integration Invoker For more information about assigning IAM roles, see IAM roles and permissions .
-
-### "Retrieve API payload and send an email \_|\_ Application Integration \_\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/retrieve-api-payload-send-email](https://docs.cloud.google.com/application-integration/docs/retrieve-api-payload-send-email)
-- Source ID: `site-docs-root`
-- Final score: 108
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-salesforce-trigger](https://docs.cloud.google.com/application-integration/docs/configure-salesforce-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 83
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- For this quickstart, enter the name my-test-integration and the description Integration for quickstart .
-- For more information about testing, see Test and publish integrations .
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- The email sent by the integration should contain a body similar to the following: [{ "project": "en.wikipedia", "article": "Tree", "granularity": "monthly", "timestamp": "2020100100", "access": "desktop", "agent": "user", "views": 33828.0 }] In addition to verifying the contents of the email, you can inspect the logs to view the status and payload of a given integration.
+- Prerequisite steps to use Platform events Before configuring your Application Integration trigger to use Platform events, complete the following steps in Salesforce: Create a Platform Event Update permissions for the Platform Event Create a Platform event To create a Platform event, perform the following steps: Log in to your Salesforce instance with your sysadmin credentials.
+- The following steps must be completed before configuring any Salesforce-related task or trigger in Application Integration: Set up an integration user Configure a permission set Set up a security token Create a connected app Note : To complete these steps, system administration access to your Salesforce instance is required.
+- Before you begin This section outlines the steps required to connect and configure a Salesforce instance to use Change Data Capture (CDC) or Platform events to stream changes to your Application Integration in a pub/sub manner.
+- Prerequisite steps to use CDC events Before configuring your Application Integration trigger to use CDC events, make sure to add a configured object to CDC in Salesforce: Log in to Salesforce as a sysadmin .
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 106
+- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
+- Source ID: `site-docs-reference-2`
+- Final score: 74
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- December 26, 2022 Feature Test without publishing an integration You can now test your integration without the need to publish or create a new integration version.
-- Feature Test cases ( Preview ) You can now test if your integration is working as intended by creating and running test cases on your complex integrations.
-- Learn how to do the following: Create test cases Configure test cases Manage test cases Run test cases Upload and download test cases Feature Local logging in async mode ( Generally available (GA) ) By default, local logging for new integrations is now enabled in async mode.
-- May 05, 2025 Change Cloud Function Task adds support for Cloud Functions v2 API The Cloud Function task in Application Integration now lets you create, link, and run the latest generation of serverless functions, called Cloud Run functions, using the Cloud Functions v2 API.
+- Verify and validate the integration (including the variables) before running it.
+- The following diagram shows the Create an integration with Gemini pane with the suggestions provided by Gemini: Use the navigate before Previous and navigate next Next buttons to view the suggestions provided.
+- You can leverage these recommendations to directly replace your existing tasks or modify them without the need of going through any manual configuration process.
+- You can leverage these recommendations to directly replace your existing tasks or modify them without the need of going through any manual configuration process.
+
+### Apps Script task \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task](https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task)
+- Source ID: `site-docs-root-2`
+- Final score: 74
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Test your Apps Script Before publishing your integration, you can test your script using the testRun function available in the Test.gs file.
+- The following sample shows the usage of AppsScriptTaskTest library functions. function testRun (){ // Create a new request let req = AppsScriptTaskTest . createNewTestRequest ( 'myCustomTest' ); // Add a task parameter that references an integration variable with the value 5 AppsScriptTaskTest . setIntegrationVariableAndCreateReference ( req , 'input' , '$input$' , 5 ); // Add a task parameter that references an integration variable AppsScriptTaskTest . createReference ( req , 'output' , '$output$' ); // Run the task ( assuming the task increments the input by 1 ) and get the response let res = AppsScriptTaskTest . runTest ( req , executeScript ); // Check the response for the expected integration variable and its corresponding values AppsScriptTaskTest . containsIntegrationVariable ( res , 'output' , true ); AppsScriptTaskTest . containsIntegrationVariable ( res , 'someOtherIntegrtionVariable' , false ); AppsScriptTaskTest . containsIntegrationVariableWithValue ( res , 'output' , 6 ); } The following sample shows you how to access JSON and array variables in the testRun method: function testRun (){ // Create a new request let req = AppsScriptTaskTest . createNewTestRequest ( 'json-test' ); // Add a task parameter that references a JSON integration variable AppsScriptTaskTest . setIntegrationVariableAndCreateReference ( req , "emp" , "employee" , { name : "snape" , age : 35 }); // Add a task parameter that references an array integration variable AppsScriptTaskTest . setIntegrationVariableAndCreateReference ( req , "arr" , "array" , [ "A" , "B" , "C" ]); // Run the task and get the response // Assume that the run method increases the age of the employee by 5 and appends a new element in the array let res = AppsScriptTaskTest . runTest ( req , executeScript ); // Check the response for the expected integration variable and its corresponding values AppsScriptTaskTest . containsIntegrationVariableWithValue ( res , "employee" , { name : "snape" , age : 40 }); AppsScriptTaskTest . containsIntegrationVariable ( res , "array" , true ); AppsScriptTaskTest . containsIntegrationVariableWithValue ( res , "array" , [ "A" , "B" , "C" , "D" ]); } After running the test cases, you can view the assertions in the Execution log .
+- Before you begin Before using the Apps Script task, make sure you complete the following steps: Enable AppsScript API Create OAuth 2.0 Client ID Set up an authentication profile Ensure that VPC Service Controls is NOT setup for Application Integration in your Google Cloud project.
+- To view all the functions available in the AppsScriptTaskTest library, hover over the AppsScriptTaskTest menu item in your Apps Script editor, click More more vert > Open in a new tab .
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:50:16.323Z"
+generated_at: "2026-04-12T12:18:03.674Z"
 product_name: "Network Service Tiers"
 product_slug: "network-service-tiers"
 feature_name: "Network Service Tiers"
 feature_slug: "network-service-tiers"
 latest_feature_date: "2019-03-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/network-tiers/docs/overview"
   - "https://docs.cloud.google.com/network-tiers/docs/set-network-tier"
   - "https://docs.cloud.google.com/network-tiers/docs/apis"
+  - "https://docs.cloud.google.com/network-tiers/docs/getting-support"
 keywords:
   - "network"
   - "tiers"
@@ -26,7 +27,7 @@ keywords:
 # Network Service Tiers
 
 Product: Network Service Tiers
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Network Service Tiers lets you choose between Standard and Premium tiers for Goo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/network-tiers/docs/overview](https://docs.cloud.google.com/network-tiers/docs/overview)
 - [https://docs.cloud.google.com/network-tiers/docs/set-network-tier](https://docs.cloud.google.com/network-tiers/docs/set-network-tier)
 - [https://docs.cloud.google.com/network-tiers/docs/apis](https://docs.cloud.google.com/network-tiers/docs/apis)
+- [https://docs.cloud.google.com/network-tiers/docs/getting-support](https://docs.cloud.google.com/network-tiers/docs/getting-support)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/network-tiers/docs/overview](https://docs.cloud.google.com/network-tiers/docs/overview)
 - Source ID: `site-docs-reference`
-- Final score: 234
+- Final score: 307
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-tiers/docs/set-network-tier](https://docs.cloud.google.com/network-tiers/docs/set-network-tier)
 - Source ID: `site-docs-reference`
-- Final score: 220
+- Final score: 285
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-tiers/docs/apis](https://docs.cloud.google.com/network-tiers/docs/apis)
 - Source ID: `site-docs-reference`
-- Final score: 186
+- Final score: 247
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - Regional external IP addresses can use either Standard or Premium Tier. gcloud API Forwarding rules Used to create, edit, and manage forwarding rules in your Virtual Private Cloud (VPC) network.
 - Home Documentation Networking Network Service Tiers Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
 - The Network Service Tiers APIs and gcloud commands are part of Compute Engine. gcloud CLI and API reference Addresses Used to create, edit, and manage internal and external IP address resources that can be assigned to virtual machine (VM) instances and forwarding rules for load balancers.
+
+### Getting support \_|\_ Network Service Tiers \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-tiers/docs/getting-support](https://docs.cloud.google.com/network-tiers/docs/getting-support)
+- Source ID: `site-docs-root`
+- Final score: 221
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Networking Network Service Tiers Resources Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Discuss Network Service Tiers Visit the Google Cloud Slack community to discuss Network Service Tiers and other Google Cloud products.
+- Your comments are reviewed by the Network Service Tiers team.
+- File bugs or feature requests From the Network Service Tiers documentation, click Send feedback near the top right of the page or at the bottom of the page.
 

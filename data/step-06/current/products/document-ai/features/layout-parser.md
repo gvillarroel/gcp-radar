@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.461Z"
+generated_at: "2026-04-12T12:14:31.931Z"
 product_name: "Document AI"
 product_slug: "document-ai"
 feature_name: "Layout Parser"
 feature_slug: "layout-parser"
 latest_feature_date: "2024-06-04"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk"
+  - "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart"
+  - "https://docs.cloud.google.com/document-ai/docs/processors-list"
+  - "https://docs.cloud.google.com/document-ai/docs/fields"
 keywords:
   - "layout"
   - "parser"
@@ -24,7 +27,7 @@ keywords:
 # Layout Parser
 
 Product: Document AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ Layout Parser is generally available and turns documents into structured content
 
 Layout Parser is generally available and turns documents into structured content with context-aware chunks.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk](https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk)
+- [https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart](https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart)
+- [https://docs.cloud.google.com/document-ai/docs/processors-list](https://docs.cloud.google.com/document-ai/docs/processors-list)
+- [https://docs.cloud.google.com/document-ai/docs/fields](https://docs.cloud.google.com/document-ai/docs/fields)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Process documents with Gemini layout parser \_|\_ Document AI \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk](https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk)
+- Source ID: `site-docs-root-2`
+- Final score: 262
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Process documents with Gemini layout parser The Document AI layout parser is an advanced text parsing and document understanding service that converts unstructured content from complex files into highly structured, precise and machine-readable information.
+- How it Works Gemini layout parser processes documents in a multi-stage pipeline designed to preserve semantic meaning: Parse and Structure: The document is ingested.
+- Release Candidate January 13, 2026 Key capabilities Going forward in this documentation, Gemini layout parser refers to Gemini based pretrained layout parser processor versions, such as pretrained-layout-parser-v1.5-2025-08-25 and pretrained-layout-parser-v1.5-pro-2025-08-25 .
+- Release Candidate August 25, 2025 pretrained-layout-parser-v1.5-pro-2025-08-25 Preview version powered by Gemini 2.5 Pro LLM for better layout analysis on PDF files. v1.5-pro has higher latency than v1.5.
+
+### Layout parser Quickstart \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart](https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart)
+- Source ID: `site-docs-root`
+- Final score: 250
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ pretrained-layout-parser-v1.5-2025-08-25 :process Request JSON body: { "gcsDocument": { "gcsUri": " GCS FILE PATH ", "mimeType": " MIME TYPE " }, "processOptions": { "layoutConfig": { "enableTableAnnotation": "true", "enableImageAnnotation": "true", "chunkingConfig": { "chunkSize": " CHUNK SIZE ", "includeAncestorHeadings": " INCLUDE ANCESTOR HEADINGS ", } } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- ProcessRequest ( name = name , gcs document = gcs document , process options = process options , ) Process the document result = client . process document ( request = request ) document = result . document print ( f "Document processing complete. \n " ) print ( "--- RAG-Ready Chunks (with context) ---" ) for i , chunk in enumerate ( document . chunked document . chunks ): print ( f " \n --- Chunk {i} ---" ) Print the chunk's content print ( f "Text: {chunk.content}" ) return result Batch process documents with layout parser Use the following procedure to parse and chunk multiple documents in a single request.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json ` -Uri "https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ pretrained-layout-parser-v1.5-2025-08-25 :process" Select-Object -Expand Content You should receive a successful status code (2xx) and an empty response.
+- Save the request body in a file named request.json , and execute the following command: curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ pretrained-layout-parser-v1.5-2025-08-25 :process" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .
+
+### Processor list \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/processors-list](https://docs.cloud.google.com/document-ai/docs/processors-list)
+- Source ID: `site-docs-root`
+- Final score: 220
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-layout-parser-v1.0-2024-06-03 Stable GA General availability version for document layout analysis.
+- Note: If it's used for non-PDF files, it will have the same behavior as the stable pretrained-layout-parser-v1.0-2024-06-03 . pretrained-layout-parser-v1.5-pro-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Pro LLM for better layout analysis on PDF files. v1.5-pro has higher latency than v1.5.
+- Category Extract Functions Layout Parsing, Document Chunking Release stage General availability Access status Public lock open Type in API LAYOUT PARSER PROCESSOR Notes This parser supports PDF, HTML, DOCX, PPTX, and XLSX/XLSM files.
+- This is the default pre-trained processor version. pretrained-layout-parser-v1.5-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Flash LLM for better layout analysis on PDF files.
+
+### Processor list \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/fields](https://docs.cloud.google.com/document-ai/docs/fields)
+- Source ID: `site-docs-reference`
+- Final score: 210
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-layout-parser-v1.0-2024-06-03 Stable GA General availability version for document layout analysis.
+- Note: If it's used for non-PDF files, it will have the same behavior as the stable pretrained-layout-parser-v1.0-2024-06-03 . pretrained-layout-parser-v1.5-pro-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Pro LLM for better layout analysis on PDF files. v1.5-pro has higher latency than v1.5.
+- Category Extract Functions Layout Parsing, Document Chunking Release stage General availability Access status Public lock open Type in API LAYOUT PARSER PROCESSOR Notes This parser supports PDF, HTML, DOCX, PPTX, and XLSX/XLSM files.
+- This is the default pre-trained processor version. pretrained-layout-parser-v1.5-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Flash LLM for better layout analysis on PDF files.
 

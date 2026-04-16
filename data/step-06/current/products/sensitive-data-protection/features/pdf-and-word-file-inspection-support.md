@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.817Z"
+generated_at: "2026-04-14T12:39:34.439Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "PDF and Word file inspection support"
@@ -9,18 +9,17 @@ latest_feature_date: "2020-04-16"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/dlp"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text"
 keywords:
-  - "pdf"
-  - "and"
+  - "inspecting"
   - "word"
+  - "byte"
   - "file"
   - "inspection"
+  - "types"
   - "adds"
-  - "for"
-  - "inspecting"
 ---
 
 # PDF and Word file inspection support
@@ -42,40 +41,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/dlp](https://docs.cloud.google.com/iam/docs/roles-permissions/dlp)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage](https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text](https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text)
 
 ## Supporting Pages
 
-### Learn about your data through discovery and inspection | Sensitive Data Protection | Google Cloud Documentation
+### "Supported file types and scanning modes \_|\_ Sensitive Data Protection\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types)
+- Source ID: `site-docs-reference-3`
+- Final score: 209
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Structured parsing De-identify content PDF pdf PDF limits Intelligent document parsing Text asc, brf, c, c++, cc, cpp, cs, css, cxx, dart, eml, go, h, h++, hh, hpp, hs, htm, html, hxx, ini, java, js, json, jsonl, lhs, m, markdown, md, mkd, ml, mli, ocaml, php, pht, phtml, pl, pm, py, pyw, rb, rbw, rc, rs, scala, sh, shtm, shtml, sql, tex, text, txt, vcard, vcs, wml, xhtml, xml, xsd, xsl, yaml, yml Plain text De-identify content Microsoft Word docm, docx, dotm, dotx Word limits Intelligent document parsing Microsoft Excel xlsm, xlsx, xltm, xltx Excel limits Intelligent document parsing Microsoft Powerpoint potm, potx, pptm, pptx Powerpoint limits Intelligent document parsing Image bmp, gif, jpe, jpeg, jpg, png OCR Image content detection Image content classification Redaction Binary Unrecognized file types and images that can't be scanned using optical character recognition (OCR), image content detection, or image content classification.
+- That is, when the following file types are scanned in OCR or intelligent document parsing mode, Sensitive Data Protection ignores any settings that you apply to limit the bytes scanned per file.
+- Supported file types in inspection and de-identification operations The following table shows the types of files that Sensitive Data Protection can inspect and transform ( de-identify ).
+- In this example, increasing the sample size (specified by bytesLimitPerFile or bytesLimitPerFilePercent ) to 2.05 MB helps prevent the inspection from reverting to binary parsing mode.
+
+### "Inspect Google Cloud storage and databases for sensitive data \_|\_ Sensitive\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage](https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage)
+- Source ID: `site-docs-reference-3`
+- Final score: 185
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The scan starts from a random location in the dataset and only includes text files under 200 bytes. @param string $callingProjectId The project ID to run the API call under. @param string $gcsUri Google Cloud Storage file url. @param string $topicId The ID of the Pub/Sub topic to notify once the job completes. @param string $subscriptionId The ID of the Pub/Sub subscription to use when listening for job. / function inspect gcs with sampling( // TODO(developer): Replace sample parameters before running the code. string $callingProjectId, string $gcsUri = 'gs://GOOGLE STORAGE BUCKET NAME/dlp sample.csv', string $topicId = 'dlp-pubsub-topic', string $subscriptionId = 'dlp subcription' ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $pubsub = new PubSubClient(); $topic = $pubsub->topic($topicId); // Construct the items to be inspected. $cloudStorageOptions = (new CloudStorageOptions()) ->setFileSet((new FileSet()) ->setUrl($gcsUri)) ->setBytesLimitPerFile(200) ->setFilesLimitPercent(90) ->setSampleMethod(SampleMethod::RANDOM START); $storageConfig = (new StorageConfig()) ->setCloudStorageOptions($cloudStorageOptions); // Specify the type of info the inspection will look for. $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $emailAddressInfoType = (new InfoType()) ->setName('EMAIL ADDRESS'); $cardNumberInfoType = (new InfoType()) ->setName('CREDIT CARD NUMBER'); $infoTypes = [$phoneNumberInfoType, $emailAddressInfoType, $cardNumberInfoType]; // Specify how the content should be inspected. $inspectConfig = (new InspectConfig()) ->setInfoTypes($infoTypes) ->setIncludeQuote(true); // Construct the action to run when job completes. $action = (new Action()) ->setPubSub((new PublishToPubSub()) ->setTopic($topic->name())); // Construct inspect job config to run. $inspectJob = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig) ->setActions([$action]); // Listen for job notifications via an existing topic/subscription. $subscription = $topic->subscription($subscriptionId); // Submit request. $parent = "projects/$callingProjectId/locations/global"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setInspectJob($inspectJob); $job = $dlp->createDlpJob($createDlpJobRequest); // Poll Pub/Sub using exponential backoff until job finishes. // Consider using an asynchronous execution model such as Cloud Functions. $attempt = 1; $startTime = time(); do { foreach ($subscription->pull() as $message) { if ( isset($message->attributes()['DlpJobName']) && $message->attributes()['DlpJobName'] === $job->getName() ) { $subscription->acknowledge($message); // Get the updated job.
+- DlpServiceClient (); const pubsub = new PubSub (); // The project ID to run the API call under // const projectId = 'my-project'; // The name of the bucket where the file resides. // const bucketName = 'YOUR-BUCKET'; // The path to the file within the bucket to inspect. // Can contain wildcards, e.g. "my-image. " // const fileName = 'my-image.png'; // The minimum likelihood required before returning a match // const minLikelihood = 'LIKELIHOOD UNSPECIFIED'; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; // The infoTypes of information to match // const infoTypes = [{ name: 'PHONE NUMBER' }, { name: 'EMAIL ADDRESS' }, { name: 'CREDIT CARD NUMBER' }]; // The customInfoTypes of information to match // const customInfoTypes = [{ infoType: { name: 'DICT TYPE' }, dictionary: { wordList: { words: ['foo', 'bar', 'baz']}}}, // { infoType: { name: 'REGEX TYPE' }, regex: {pattern: '\\(\\d{3}\\) \\d{3}-\\d{4}'}}]; // The name of the Pub/Sub topic to notify once the job completes // TODO(developer): create a Pub/Sub topic to use for this // const topicId = 'MY-PUBSUB-TOPIC' // The name of the Pub/Sub subscription to use when listening for job // completion notifications // TODO(developer): create a Pub/Sub subscription to use for this // const subscriptionId = 'MY-PUBSUB-SUBSCRIPTION' async function inspectGCSFile () { // Get reference to the file to be inspected const storageItem = { cloudStorageOptions : { fileSet : { url : gs:// ${ bucketName } / ${ fileName } }, }, }; // Construct request for creating an inspect job const request = { parent : projects/ ${ projectId } /locations/global , inspectJob : { inspectConfig : { infoTypes : infoTypes , customInfoTypes : customInfoTypes , minLikelihood : minLikelihood , limits : { maxFindingsPerRequest : maxFindings , }, }, storageConfig : storageItem , actions : [ { pubSub : { topic : projects/ ${ projectId } /topics/ ${ topicId } , }, }, ], }, }; // Create a GCS File inspection job and wait for it to complete const [ topicResponse ] = await pubsub . topic ( topicId ). get (); // Verify the Pub/Sub topic and listen for job notifications via an // existing subscription. const subscription = await topicResponse . subscription ( subscriptionId ); const [ jobsResponse ] = await dlp . createDlpJob ( request ); // Get the job's ID const jobName = jobsResponse . name ; // Watch the Pub/Sub topic until the DLP job finishes await new Promise (( resolve , reject ) = > { const messageHandler = message = > { if ( message . attributes && message . attributes .
+- DlpServiceClient (); const pubsub = new PubSub (); // The project ID to run the API call under // const projectId = 'my-project'; // The gcs file path // const gcsUri = 'gs://" + "your-bucket-name" + "/path/to/your/file.txt'; // Specify the type of info the inspection will look for. // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types // const infoTypes = [{ name: 'PERSON NAME' }]; // The name of the Pub/Sub topic to notify once the job completes // TODO(developer): create a Pub/Sub topic to use for this // const topicId = 'MY-PUBSUB-TOPIC' // The name of the Pub/Sub subscription to use when listening for job // completion notifications // TODO(developer): create a Pub/Sub subscription to use for this // const subscriptionId = 'MY-PUBSUB-SUBSCRIPTION' // DLP Job max time (in milliseconds) const DLP JOB WAIT TIME = 15 1000 60 ; async function inspectGcsFileSampling () { // Specify the GCS file to be inspected and sampling configuration const storageItemConfig = { cloudStorageOptions : { fileSet : { url : gcsUri }, bytesLimitPerFile : 200 , filesLimitPercent : 90 , fileTypes : [ DLP . protos . google . privacy . dlp . v2 .
+- JSON input: POST https://dlp.googleapis.com/v2/projects/[PROJECT-ID]/dlpJobs?key={YOUR API KEY} { "inspectJob":{ "storageConfig":{ "cloudStorageOptions":{ "fileSet":{ "url":"gs://[BUCKET-NAME]/ " }, "bytesLimitPerFile":"1073741824" }, "timespanConfig":{ "startTime":"2017-11-13T12:34:29.965633345Z", "endTime":"2018-01-05T04:45:04.240912125Z" } }, "inspectConfig":{ "infoTypes":[ { "name":"PHONE NUMBER" } ], "excludeInfoTypes":false, "includeQuote":true, "minLikelihood":"LIKELY" }, "actions":[ { "saveFindings":{ "outputConfig":{ "table":{ "projectId":"[PROJECT-ID]", "datasetId":"[DATASET-ID]" } } } } ] } } JSON output: { "name" : "projects/[PROJECT-ID]/dlpJobs/[JOB-ID]" , "type" : "INSPECT JOB" , "state" : "PENDING" , "inspectDetails" :{ "requestedOptions" :{ "snapshotInspectTemplate" :{ }, "jobConfig" :{ "storageConfig" :{ "cloudStorageOptions" :{ "fileSet" :{ "url" : "gs://[BUCKET-NAME]/ " }, "bytesLimitPerFile" : "1073741824" }, "timespanConfig" :{ "startTime" : "2017-11-13T12:34:29.965633345Z" , "endTime" : "2018-01-05T04:45:04.240912125Z" } }, "inspectConfig" :{ "infoTypes" :[ { "name" : "PHONE NUMBER" } ], "minLikelihood" : "LIKELY" , "limits" :{ }, "includeQuote" : true }, "actions" :[ { "saveFindings" :{ "outputConfig" :{ "table" :{ "projectId" : "[PROJECT-ID]" , "datasetId" : "[DATASET-ID]" , "tableId" : "[NEW-TABLE-ID]" } } } } ] } } }, "createTime" : "2018-11-07T18:01:14.225Z" } Java To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+
+### "Inspecting text for sensitive data \_|\_ Sensitive Data Protection \_|\_\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text](https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text)
 - Source ID: `site-docs-root`
-- Final score: 62
-- Re-rank relevance: N/A
+- Final score: 179
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Learn about your data through discovery and inspection Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data This page describes and compares two Sensitive Data Protection services that help you understand your data and enable data governance workflows: the discovery service and the inspection service.
-
-### Sensitive Data Protection roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/dlp](https://docs.cloud.google.com/iam/docs/roles-permissions/dlp)
-- Source ID: `site-iam-reference`
-- Final score: 51
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Sensitive Data Protection roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/dlp This page lists the IAM roles and permissions for Sensitive Data Protection.
-
-### Overview of sensitive data discovery | Sensitive Data Protection | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- Source ID: `site-docs-root`
-- Final score: 32
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Overview of sensitive data discovery Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles The Sensitive Data Protection discovery service (sometimes called data profiler) continuously monitors the data resources in your organization, folder, or project.
-- It classifies the data into infoTypes, and assesses the data sensitivity and ...
+- Can be a text, JPG, or PNG file. // const filepath = 'path/to/image.png'; // The minimum likelihood required before returning a match // const minLikelihood = 'LIKELIHOOD UNSPECIFIED'; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; // The infoTypes of information to match // const infoTypes = [{ name: 'PHONE NUMBER' }, { name: 'EMAIL ADDRESS' }, { name: 'CREDIT CARD NUMBER' }]; // The customInfoTypes of information to match // const customInfoTypes = [{ infoType: { name: 'DICT TYPE' }, dictionary: { wordList: { words: ['foo', 'bar', 'baz']}}}, // { infoType: { name: 'REGEX TYPE' }, regex: {pattern: '\\(\\d{3}\\) \\d{3}-\\d{4}'}}]; // Whether to include the matching string // const includeQuote = true; async function inspectFile () { // Construct file data to inspect const fileTypeConstant = [ 'image/jpeg' , 'image/bmp' , 'image/png' , 'image/svg' ]. indexOf ( mime . getType ( filepath ) ) + 1 ; const fileBytes = Buffer . from ( fs . readFileSync ( filepath )). toString ( 'base64' ); const item = { byteItem : { type : fileTypeConstant , data : fileBytes , }, }; // Construct request const request = { parent : projects/ ${ projectId } /locations/global , inspectConfig : { infoTypes : infoTypes , customInfoTypes : customInfoTypes , minLikelihood : minLikelihood , includeQuote : includeQuote , limits : { maxFindingsPerRequest : maxFindings , }, }, item : item , }; // Run request const [ response ] = await dlp . inspectContent ( request ); const findings = response . result . findings ; if ( findings . length > 0 ) { console . log ( 'Findings:' ); findings . forEach ( finding = > { if ( includeQuote ) { console . log ( \tQuote: ${ finding . quote } ); } console . log ( \tInfo type: ${ finding . infoType . name } ); console . log ( \tLikelihood: ${ finding . likelihood } ); }); } else { console . log ( 'No findings.' ); } } Python To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+- MimeTypes () . guess type ( filename ) mime type = mime guess [ 0 ] Select the content type index from the list of supported types. https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto / message ByteContentItem supported content types = { None : 0 , # "Unspecified" or BYTES TYPE UNSPECIFIED "image/jpeg" : 1 , # IMAGE JPEG "image/bmp" : 2 , # IMAGE BMP "image/png" : 3 , # IMAGE PNG "image/svg" : 4 , # IMAGE SVG - Adjusted to "image/svg+xml" for correct MIME type "text/plain" : 5 , # TEXT UTF8 Note: No specific MIME type for general "image", mapping to IMAGE for any image type not specified "image" : 6 , # IMAGE - Any image type "application/msword" : 7 , # WORD DOCUMENT "application/pdf" : 8 , # PDF "application/powerpoint" : 9 , # POWERPOINT DOCUMENT "application/msexcel" : 10 , # EXCEL DOCUMENT "application/avro" : 11 , # AVRO "text/csv" : 12 , # CSV "text/tsv" : 13 , # TSV } content type index = supported content types . get ( mime type , 0 ) Construct the item, containing the file's byte data. with open ( filename , mode = "rb" ) as f : item = { "byte item" : { "type " : content type index , "data" : f . read ()}} Convert the project id into a full resource id. parent = f "projects/ { project } " Call the API. response = dlp . inspect content ( request = { "parent" : parent , "inspect config" : inspect config , "item" : item } ) Print out the results. if response . result . findings : for finding in response . result . findings : try : print ( f "Quote: { finding . quote } " ) except AttributeError : pass print ( f "Info type: { finding . info type . name } " ) print ( f "Likelihood: { finding . likelihood } " ) else : print ( "No findings." ) Ruby To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+- JSON Input: POST https : // dlp . googleapis . com / v2 / projects /[ PROJECT ID ]/ content : inspect ? key = { YOUR API KEY } { "item" :{ "value" : "My phone number is (415) 555-0890" } , "inspectConfig" :{ "includeQuote" : true , "minLikelihood" : "POSSIBLE" , "infoTypes" :{ "name" : "PHONE NUMBER" } } } JSON Output: { "result":{ "findings":[ { "quote":"(415) 555-0890", "infoType":{ "name":"PHONE NUMBER" }, "likelihood":"VERY LIKELY", "location":{ "byteRange":{ "start":"19", "end":"33" }, "codepointRange":{ "start":"19", "end":"33" } }, "createTime":"2018-11-13T19:29:15.412Z" } ] } } Inspecting a text file The code samples below demonstrate how to check a text file for sensitive content.
+- For more information, see Set up authentication for a local development environment . project id = "Your Google Cloud project ID" filename = "The file path to the file to inspect" max findings = "Maximum number of findings to report per request (0 = server maximum)" require "google/cloud/dlp" dlp = Google :: Cloud :: Dlp . dlp service inspect config = { The types of information to match info types : [ { name : "PERSON NAME" }, { name : "PHONE NUMBER" } ] , Only return results above a likelihood threshold (0 for all) min likelihood : :POSSIBLE , Limit the number of findings (0 for no limit) limits : { max findings per request : max findings }, Whether to include the matching string in the response include quote : true } The item to inspect file = File . open filename , "rb" item to inspect = { byte item : { type : :BYTES TYPE UNSPECIFIED , data : file . read } } Run request parent = "projects/ #{ project id } /locations/global" response = dlp . inspect content parent : parent , inspect config : inspect config , item : item to inspect Print the results if response . result . findings . empty? puts "No findings" else response . result . findings . each do finding puts "Quote: #{ finding . quote } " puts "Info type: #{ finding . info type . name } " puts "Likelihood: #{ finding . likelihood } " end end What's next Work through the Redacting Sensitive Data with Sensitive Data Protection codelab.
 

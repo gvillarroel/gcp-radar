@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-08T23:56:52+00:00'
-updated_at: '2026-04-10T21:02:24+00:00'
+updated_at: '2026-04-15T11:09:11+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/load-balancing/docs
   created_at: '2026-04-10T20:56:18+00:00'
-  updated_at: '2026-04-10T20:58:41+00:00'
+  updated_at: '2026-04-15T03:38:58+00:00'
   update_command: know sync site https://docs.cloud.google.com/load-balancing/docs
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,26 +20,12 @@ sources:
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-10T20:58:41+00:00'
-- type: site
-  id: site-docs-reference
-  title: https://docs.cloud.google.com/vpc/docs/apis
-  created_at: '2026-04-10T20:56:19+00:00'
-  updated_at: '2026-04-10T21:00:27+00:00'
-  update_command: know sync site https://docs.cloud.google.com/vpc/docs/apis --key
-    corpus --compact
-  delete_command: know del --key corpus site-docs-reference
-  config:
-    url: https://docs.cloud.google.com/vpc/docs/apis
-    max_depth: 2
-    max_pages: 32
-    compact_output: true
-  last_synced_at: '2026-04-10T21:00:27+00:00'
+  last_synced_at: '2026-04-15T03:38:58+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/load-balancing/docs/access-control
   created_at: '2026-04-10T20:56:20+00:00'
-  updated_at: '2026-04-10T21:02:24+00:00'
+  updated_at: '2026-04-15T03:45:28+00:00'
   update_command: know sync site https://docs.cloud.google.com/load-balancing/docs/access-control
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -48,4 +34,74 @@ sources:
     max_depth: 2
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-10T21:02:24+00:00'
+  last_synced_at: '2026-04-15T03:45:28+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/appengine/docs/flexible/go/release-notes
+  created_at: '2026-04-14T03:04:02+00:00'
+  updated_at: '2026-04-15T03:40:51+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/flexible/go/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/flexible/go/release-notes
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T03:40:51+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/appengine/docs/flexible/java/release-notes
+  created_at: '2026-04-14T03:04:02+00:00'
+  updated_at: '2026-04-15T03:43:26+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/flexible/java/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/flexible/java/release-notes
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T03:43:26+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring
+  created_at: '2026-04-15T02:39:07+00:00'
+  updated_at: '2026-04-15T03:47:33+00:00'
+  update_command: know sync site https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T03:47:33+00:00'
+- type: site
+  id: site-docs-reference-required-4
+  title: https://docs.cloud.google.com/load-balancing/docs/internal
+  created_at: '2026-04-15T03:07:36+00:00'
+  updated_at: '2026-04-15T03:49:39+00:00'
+  update_command: know sync site https://docs.cloud.google.com/load-balancing/docs/internal
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/load-balancing/docs/internal
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T03:49:39+00:00'
+- type: site
+  id: site-docs-reference-required-5
+  title: https://docs.cloud.google.com/load-balancing/docs/features
+  created_at: '2026-04-15T11:07:29+00:00'
+  updated_at: '2026-04-15T11:09:11+00:00'
+  update_command: know sync site https://docs.cloud.google.com/load-balancing/docs/features
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
+  config:
+    url: https://docs.cloud.google.com/load-balancing/docs/features
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T11:09:11+00:00'

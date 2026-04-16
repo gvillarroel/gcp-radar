@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:19:31.142Z"
+generated_at: "2026-04-14T11:56:59.866Z"
 product_name: "Channel Services"
 product_slug: "channel-services"
 feature_name: "ListSkuGroups API"
 feature_slug: "listskugroups-api"
 latest_feature_date: "2023-06-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers"
-  - "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery"
-  - "https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse"
+  - "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations"
+  - "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview"
+  - "https://docs.cloud.google.com/channel/docs/reference/rpc"
 keywords:
   - "listskugroups"
+  - "groups"
   - "public"
   - "list"
   - "introduces"
   - "rebilling"
-  - "api"
-  - "the"
-  - "to"
 ---
 
 # ListSkuGroups API
 
 Product: Channel Services
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +36,54 @@ Introduces the ListSkuGroups public API to list rebilling-supported SKU groups t
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers](https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers)
-- [https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery](https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery)
-- [https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse](https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse)
+- [https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations](https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations)
+- [https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview](https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview)
+- [https://docs.cloud.google.com/channel/docs/reference/rpc](https://docs.cloud.google.com/channel/docs/reference/rpc)
 
 ## Supporting Pages
 
-### "Set up a customer filter using the ListCustomers API \_|\_ Channel Services\
+### "Create and manage repricing configurations \_|\_ Channel Services \_|\_\
 
-- URL: [https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers](https://docs.cloud.google.com/channel/docs/concepts/google-cloud/filter-customers)
+- URL: [https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations](https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations)
 - Source ID: `site-docs-reference`
-- Final score: 154
+- Final score: 97
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Home Technology areas Channel Services Guides Send feedback Set up a customer filter using the ListCustomers API Stay organized with collections Save and categorize content based on your preferences.
-- If you need to find information about a specific customer, you can use the Cloud Channel API filter parameter through the customers.list method .
-- Syntax: <domain org display name> : <value> Example: domain : "uw.com " AND org display name : "prefix " Examples of filters with logical operators Cloud Channel API filters support the use of AND and OR logical operators.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- The resulting data in Rebilling BQ Export looks like the following: sku list price cost customer cost credit.type credit.amount credit.customer amount Partner Cost (cost + SUM(credit.amount)) End Customer Cost (customer cost + SUM(credit.customer amount)) Compute 120 100 99.6 (120 .83) RESELLER MARGIN COMMITTED USAGE DISCOUNT -10 -10 0 (margin hidden) 0 (hidden due to list price) 80 99.6 BigQuery 120 100 120 (100 1.2) RESELLER MARGIN COMMITTED USAGE DISCOUNT -10 -10 0 (margin hidden) -12 (DCC+20%) 80 108 Note: If an entitlement does not have any repricing configuration specified, then it defaults to Direct Customer Cost + 0% , which implies no modifications to the cost (except removal of RESELLER MARGIN).
+- You can use custom repricing configurations to markup or discount direct customer costs, list prices, and specific SKU groups by a set percentage.
+- You can also export SKU groups using the API, with the List SKU groups and List billable SKUs in a SKU group endpoints.
+- Export SKU groups If you want a general overview of the SKU groups available per platform across all of your customers, you can export CSV file from the Repricing section of the Customers page.
 
-### Export Channel Services data to BigQuery \_|\_ Google Cloud Documentation
+### Rebilling overview \_|\_ Channel Services \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery](https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery)
+- URL: [https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview](https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview)
 - Source ID: `site-docs-reference`
-- Final score: 140
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Rebilling consists of two main features: Repricing configurations BigQuery exports BigQuery exports You can export a comprehensive report of your customers' billing usage and cost data to a BigQuery dataset that you own.
+- Home Technology areas Channel Services Guides Send feedback Rebilling overview Stay organized with collections Save and categorize content based on your preferences.
+- While viewing the list of repricing configurations for a customer, you can click Manage repricing to view and modify the configurations for a specific entitlement.
+- The rebilling system assigns Google Cloud product costs to a customer or channel partner and applies a repricing configuration to adjust the final cost.
+
+### Cloud Channel API \_|\_ Channel Services \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/channel/docs/reference/rpc](https://docs.cloud.google.com/channel/docs/reference/rpc)
+- Source ID: `site-docs-root`
+- Final score: 76
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Uses the format: accounts/{account}/channelPartnerLinks/{channelPartner} . channel partner cost Numeric (Distributors only) The cost to the channel partner, identified by channel partner name , after applying an existing ChannelPartnerRepricingConfig . customer name String The resource name of the reseller's customer who consumed this usage in the format accounts/{account}/customers/{customer} customer cost Numeric The cost to the reseller's customer identified by the customer name column, after applying the CustomerRepricingConfig , if one exists. cost at list Numeric Cost at list price per the default consumption model . customer repricing config name String The resource name of the Cloud Channel API CustomerRepricingConfig .
-- For example, the base unit for standard storage is byte-seconds . usage.amount in pricing unit Numeric The quantity of usage.pricing unit usage. usage.pricing unit String The units for measuring resource usage. credits Struct, Repeated Contains fields that describe the structure and value of credits. credits.id String If populated, indicates that a credit is associated with the product SKU. credits.full name String The name of the credit associated with the product SKU. credits.type String This field describes the purpose or origin of the credits.id . credits.name String A description of the credit applied to the usage. credits.amount Numeric The amount of the credit applied to the usage. credits.channel partner amount Numeric The amount of the credit applied to the usage, after rebilling markups and discounts.
-- Note: For Google Cloud, the first full month of data with price fields is February 2024. cost at effective price default Numeric Cost per the default consumption model inclusive of any negotiated discounts reflected in the custom pricing in the contract linked to your Cloud Billing account (if applicable). cost at list consumption model Numeric Cost per the applicable consumption model before any negotiated discounts reflected in the custom pricing in the contract linked to your Cloud Billing account (if applicable). consumption model Struct Fields that describe the applicable consumption model . consumption model.id String The ID of the consumption model . consumption model.description String The description of the consumption model .
-- The following columns or fields don't apply to offline order billing exports: project labels system labels location resource credits entitlement name channel partner name channel partner cost customer name customer cost cost at list customer repricing config name channel partner repricing config name tags price.effective price price.tier start amount price.list price price.effective price default price.list price consumption model transaction type seller name consumption model Other notes about Google Workspace export There are several special behaviors with Google Workspace exports: Google Workspace data doesn't contain the reseller's own usage.
-
-### ListOperationsResponse \_|\_ Channel Services \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse](https://docs.cloud.google.com/channel/docs/reference/rest/Shared.Types/ListOperationsResponse)
-- Source ID: `site-api-reference`
-- Final score: 134
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- JSON representation { "operations" : [ { object ( Operation ) } ] , "nextPageToken" : string , "unreachable" : [ string ] } Fields operations[] object ( Operation ) A list of operations that matches the specified filter in the request. nextPageToken string The standard List next-page token. unreachable[] string Unordered list of unreachable resources.
-- Home Technology areas Channel Services APIs & Reference Send feedback ListOperationsResponse Stay organized with collections Save and categorize content based on your preferences.
-- JSON representation Operation JSON representation Status JSON representation The response message for Operations.ListOperations .
-- Populated when the request sets ListOperationsRequest.return partial success and reads across collections.
+- ListSkuGroups Lists the Rebilling supported SKU groups the account is authorized to sell.
+- ListSkuGroups Lists the Rebilling supported SKU groups the account is authorized to sell.
+- ListProvisionableCloudIdentityTypes Returns the Google Workspace customer types you can create for the given domain, and shows if this requires a transfer.
+- ListSubscribers Lists service accounts with subscriber privileges on the Pub/Sub topic created for this Channel Services account or integrator.
 

@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/deployment-manager/docs/apis
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/deployment-manager/docs/apis
+entrypoint: https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment
 source_metadata:
   url: https://docs.cloud.google.com/deployment-manager/docs/apis
   title: "Deployment Manager APIs and Reference \_|\_ Google Cloud Documentation"

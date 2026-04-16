@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.023Z"
+generated_at: "2026-04-14T00:23:22.587Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Gemini-assisted troubleshooting for Serverless Spark"
 feature_slug: "gemini-assisted-troubleshooting-for-serverless-spark"
 latest_feature_date: "2024-04-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark"
-  - "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/network-access"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
 keywords:
   - "gemini"
   - "assisted"
   - "troubleshooting"
-  - "for"
   - "serverless"
   - "spark"
   - "dataproc"
   - "includes"
+  - "workloads"
 ---
 
 # Gemini-assisted troubleshooting for Serverless Spark
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +38,23 @@ Dataproc Serverless for Spark includes Gemini-assisted troubleshooting for suppo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark](https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark)
-- [https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements](https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/network-access](https://docs.cloud.google.com/dataproc-metastore/docs/network-access)
+- [https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies](https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies)
 
 ## Supporting Pages
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 172
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- April 09, 2024 Feature Dataproc Serverless for Spark: The preview release of Advanced troubleshooting , including Gemini-assisted troubleshooting , is now available for Spark workloads submitted with the following or later-released runtime versions: 1.1.55 1.2.0-RC1 2.0.63 2.1.42 2.2.0-RC15 Feature Dataproc Serverless for Spark : Announcing the preview release of Autotuning Spark workloads .
-- Change New Dataproc on Compute Engine subminor image versions : 2.0.142-debian10, 2.0.142-rocky8, 2.0.142-ubuntu18 2.1.90-debian11, 2.1.90-rocky8, 2.1.90-ubuntu20, 2.1.90-ubuntu20-arm 2.2.58-debian12, 2.2.58-rocky9, 2.2.58-ubuntu22 May 22, 2025 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.104 1.2.48 2.2.48 May 15, 2025 Change New Dataproc on Compute Engine subminor image versions : 2.0.141-debian10, 2.0.141-rocky8, 2.0.141-ubuntu18 2.1.89-debian11, 2.1.89-rocky8, 2.1.89-ubuntu20, 2.1.89-ubuntu20-arm 2.2.57-debian12, 2.2.57-rocky9, 2.2.57-ubuntu22 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.103 1.2.47 2.2.47 May 12, 2025 Feature Dataproc Serverless for Spark: Spark UI for Dataproc Serverless batches and interactive sessions , which lets you monitor and debug your serverless Spark workloads, now features Event Timeline and Task Quantile views for enhanced troubleshooting.
-- August 22, 2022 Announcement Announcing Dataproc Serverless for Spark preview runtime version 2.0.0-RC1 , which includes the following components: Spark 3.3.0 Cloud Storage Connector 2.2.7 Java 17 Conda 4.13 Python 3.10 R 4.1 Scala 2.13 Change Dataproc Serverless for Spark now uses runtime version 1.0.16 , which upgrades the following components to the following versions: Spark 3.2.2 Avro 1.11.1 Hadoop 3.3.4 Jetty 9.4.48.v20220622 ORC 1.7.5 RoaringBitmap 0.9.31 Scala 2.12.16 August 13, 2022 Change New sub-minor versions of Dataproc images: 1.5.73-debian10 , 1.5.73-rocky8 , 1.5.73-ubuntu18 2.0.47-debian10 , 2.0.47-rocky8, 2.0.47-ubuntu18 Change Dataproc on Compute Engine images now have master VM memory protection enabled by default.
-- January 27, 2023 Announcement Announcing the General Availability (GA) release of Dataproc Serverless for Spark runtime version 1.1 , which includes the following components: Spark 3.3.1 BigQuery Spark Connector 0.28.0 Cloud Storage Connector 2.2.9 Conda 22.11 Java 11 Python 3.10 R 4.2 Scala 2.12 Announcement New Dataproc Serverless for Spark runtime versions : 1.0.28 1.1.0 2.0.8 Change Dataproc Serverless for Spark runtime version 1.0 changed to non-LTS because of the release of backward-compatible Dataproc Serverless for Spark runtime version 1.1 LTS .
 
 ### Managed Service for Apache Spark \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark](https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark)
 - Source ID: `site-docs-root`
-- Final score: 156
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 142
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
@@ -75,16 +62,31 @@ Evidence snippets:
 - Run the following command to submit the job to your Managed Service for Apache Spark cluster: gcloud dataproc jobs submit spark --cluster = CLUSTER NAME --class = com.customer.app.PostgresToMySql \ --jars = BUCKET /postgres-to-mysql-migration- VERSION .jar \ -- POSTGRES TABLE MYSQL-TABLE \ POSTGRES SECRET MYSQL-SECRET COLUMN BATCH SIZE Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 - Gemini CLI generates a transform hive to bigquery.py file that is similar to the following: import argparse from pyspark.sql import SparkSession from data transformer import add insertion time column def transform hive to bigquery ( spark : SparkSession , hive database : str , hive table : str , bq table : str , bq temp gcs bucket : str ): """ Reads a Hive table, adds an insertion time column, and writes to a BigQuery table.
 
-### "Managed Service for Apache Spark Spark performance enhancements \_|\_ Google\
+### "Manage Java and Scala dependencies for Apache Spark \_|\_ Managed Service\
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements](https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements)
-- Source ID: `site-iam-reference`
-- Final score: 154
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies](https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies)
+- Source ID: `site-docs-root`
+- Final score: 105
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
-- PROPERTIES : To enable Spark optimization enhancements, specify: spark.dataproc.enhanced.optimizer.enabled = true To enable Spark execution enhancements, specify: spark.dataproc.enhanced.execution.enabled = true To enable Spark optimization and execution enhancements, specify: spark.dataproc.enhanced.optimizer.enabled = true,spark.dataproc.enhanced.execution.enabled = true API Specify the following properties for a SparkJob , PySparkJob , SparkSqlJob , or SparkRJob as part of a jobs.submit request: To enable Spark optimization enhancements, specify: "spark.dataproc.enhanced.optimizer.enabled=true" To enable Spark execution enhancements, specify: "spark.dataproc.enhanced.execution.enabled=true" To enable Spark optimization and execution enhancements, specify: "spark.dataproc.enhanced.execution.enabled=true,spark.dataproc.enhanced.optimizer.enabled=true" Note: You can click Equivalent Command Line or Equivalent REST at the bottom of the left panel of the Create a Managed Service for Apache Spark cluster page in the Google Cloud console to have the console construct an equivalent gcloud tool command or API REST request that you can use from the command line or in your code to create a cluster.
-- PROPERTIES : To enable Spark optimization enhancements, specify: spark:spark.dataproc.enhanced.optimizer.enabled = true To enable Spark execution enhancements, specify: spark:spark.dataproc.enhanced.execution.enabled = true To enable Spark optimization and execution enhancements, specify: spark:spark.dataproc.enhanced.optimizer.enabled = true,spark:spark.dataproc.enhanced.execution.enabled = true API Specify the following SoftwareConfig.properties as part of a clusters.create request: To enable Spark optimization enhancements, specify: "spark:spark.dataproc.enhanced.optimizer.enabled" : "true" To enable Spark execution enhancements, specify: "spark:spark.dataproc.enhanced.execution.enabled" : "true" To enable Spark optimization and execution enhancements, specify: "spark:spark.dataproc.enhanced.optimizer.enabled" : "true" , "spark:spark.dataproc.enhanced.execution.enabled" : "true" Enable or disable enhancements at job submission You can use the Google Cloud console, Google Cloud CLI, and the Managed Service for Apache Spark API to enable or disable Spark performance enhancements on a Spark job submitted to Managed Service for Apache Spark.
-- Managed Service for Apache Spark Spark performance enhancements include: Spark Optimizer enhancements: Optimizer rules written for better Spark plans Improved performance of the Managed Service for Apache Spark BigQuery connector when used in Spark jobs Spark Execution enhancements: Spark execution engine improvements Other Managed Service for Apache Spark performance improvements: See Managed Service for Apache Spark cluster caching , which helps reduce the amount of time spent accessing data in Cloud Storage.
+- Example: gcloud dataproc jobs submit spark \ --cluster=my-cluster \ --region= region \ --properties=spark.jars.packages='com.google.cloud:google-cloud-translate:1.35.0,org.apache.bahir:spark-streaming-pubsub 2.11:2.2.0' When submitting a job directly on your cluster use the spark-submit command with the --packages=[DEPENDENCIES] parameter.
+- Here are recommended approaches to including these dependencies when you submit a Spark job to a Managed Service for Apache Spark cluster: When submitting a job from your local machine with the gcloud dataproc jobs submit command, use the --properties spark.jars.packages=[DEPENDENCIES] flag.
+- This configuration instructs Maven to rename the com.google.common package to repackaged.com.google.common and to update all references to the classes from the original package. < ? xml version = "1.0" encoding = "UTF-8" ? > < project xmlns = "http://maven.apache.org/POM/4.0.0" xmlns : xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi : schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" > < modelVersion>4 .0.0 < / modelVersion > < properties > < maven . compiler . source>1 .8 < / maven . compiler . source > < maven . compiler . target>1 .8 < / maven . compiler . target > < / properties > < groupId >< ! -- YOUR GROUP ID --></ groupId > < artifactId >< ! -- YOUR ARTIFACT ID --></ artifactId > < version >< ! -- YOUR PACKAGE VERSION --></ version > < dependencies > < dependency > < groupId>org . apache . spark < / groupId > < artifactId>spark - sql 2 .11 < / artifactId > < version >< ! -- YOUR SPARK VERSION --></ version > < scope>provided < / scope > < / dependency > < ! -- YOUR DEPENDENCIES -- > < / dependencies > < build > < plugins > < plugin > < groupId>net . alchim31 . maven < / groupId > < artifactId>scala - maven - plugin < / artifactId > < executions > < execution > < goals > < goal>compile < / goal > < goal>testCompile < / goal > < / goals > < / execution > < / executions > < configuration > < scalaVersion >< ! -- YOUR SCALA VERSION --></ scalaVersion > < / configuration > < / plugin > < plugin > < groupId>org . apache . maven . plugins < / groupId > < artifactId>maven - shade - plugin < / artifactId > < executions > < execution > < phase>package < / phase > < goals > < goal>shade < / goal > < / goals > < configuration > < transformers > < transformer implementation = "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer" > < mainClass >< ! -- YOUR APPLICATION MAIN CLASS --></ mainClass > < / transformer > < ! -- This is needed if you have dependencies that use Service Loader .
+
+### Configuring Network Access for Dataproc Metastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/network-access](https://docs.cloud.google.com/dataproc-metastore/docs/network-access)
+- Source ID: `site-docs-root-2`
+- Final score: 103
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Refer to General Troubleshooting: For more detailed network diagnostics, refer to: Troubleshooting Managed Service for Apache Spark Cluster Creation Failures Troubleshooting Managed Service for Apache Spark Batch Creation Failures Troubleshooting Dataproc Metastore Connectivity What's next Learn more about Dataproc Metastore .
+- Egress Rule from Workload to Metastore: Verify that an egress firewall rule allows outbound TCP traffic from your Managed Service for Apache Spark cluster or Managed Service for Apache Spark workloads to the IP address range of your Dataproc Metastore instance on port 9083 .
+- Correct network setup is essential for Managed Service for Apache Spark clusters and Managed Service for Apache Spark workloads to securely and privately communicate with your managed Dataproc Metastore service.
+- Check Cloud Logging: Examine Cloud Logging for your Dataproc Metastore instance and related Managed Service for Apache Spark workloads for network-related error messages or connection timeouts.
 

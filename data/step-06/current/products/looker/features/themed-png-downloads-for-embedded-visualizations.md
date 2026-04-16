@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.566Z"
+generated_at: "2026-04-15T13:43:38.544Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Themed PNG downloads for embedded visualizations"
@@ -9,18 +9,18 @@ latest_feature_date: "2023-06-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
-  - "https://docs.cloud.google.com/looker/docs/data-modeling"
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+  - "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards"
 keywords:
   - "themed"
   - "png"
   - "downloads"
-  - "for"
   - "embedded"
   - "visualizations"
-  - "from"
   - "explores"
+  - "looks"
+  - "dashboards"
 ---
 
 # Themed PNG downloads for embedded visualizations
@@ -42,41 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- [https://docs.cloud.google.com/looker/docs/data-modeling](https://docs.cloud.google.com/looker/docs/data-modeling)
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- [https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards](https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards)
 
 ## Supporting Pages
 
-### Looker (Google Cloud core) overview | Google Cloud Documentation
+### Admin settings - Roles \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 23
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- Source ID: `site-docs-reference`
+- Final score: 147
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
+- Users who have the save content permission but not the embed save shared space permission will only have the option to save content to their personal embed folder . manage embed settings None Instance Wide CM Users can edit embed settings on the Embed page in the Platform section of the Admin menu. manage themes None Instance Wide CM Users can configure theme settings for embedded dashboards, Looks, and Explores on the Themes page in the Platform section of the Admin menu.
+- This permission is available only if the Access Content Certification preview feature has been enabled for your instance. clear cache refresh access data Model Specific Users can clear cache and refresh internal and embedded dashboards, dashboard tiles, Looks, and Explores.
+- They can also view and edit that data source's configuration in Looker Studio. create table calculations explore Instance Wide NN Users can view, edit, or add table calculations create custom fields explore Instance Wide NN Users can view, edit, or add custom fields ; users who have only the explore permission can only view custom fields. can create forecast explore Instance Wide NN Users can create and edit forecasts in visualizations; users who don't have this permission can only view existing forecasts in the content to which they have access. can override vis config explore Instance Wide NN Users can access the Chart Config Editor , which lets them modify the Highchart API JSON values of a visualization and customize the visualization appearance and format. save content see looks Instance Wide NN This permission is a parent permission of save dashboards , save looks , and create public looks .
+- This permission is applied to individual models or model sets, rather than across the entire Looker instance. send to integration see looks Model Specific Users can deliver any Looks, dashboards, and queries with visualizations to which they have data access to the third-party services integrated with Looker using the Looker Action Hub.
 
-### Get ready for development | Looker | Google Cloud Documentation
+### Admin settings - General settings \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/data-modeling](https://docs.cloud.google.com/looker/docs/data-modeling)
-- Source ID: `site-docs-root`
-- Final score: 22
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-settings](https://docs.cloud.google.com/looker/docs/admin-panel-general-settings)
+- Source ID: `site-docs-reference`
+- Final score: 107
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Get ready for development Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/data-modeling To unlock the magic of Looker, data experts at each organization describe their data in a lightweight modeling language called LookML.
+- This setting lets Looker admins define the email domains to which your users can deliver Looker content — Looks, dashboards, queries with visualizations — or alert notifications through email.
+- Note: Setting a new default color collection will update all visualizations on Looks and dashboards that use the default color collection.
+- When Visual Drilling is enabled, the drill overlays for Looks and Explores consider the underlying data to select the best visualization type, which can be a table visualization or some other visualization type.
+- This applies both to existing LookML dashboards and LookML Explores and any LookML dashboards or LookML Explores created in the future.
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### "Downloading or delivering dashboards in rendered formats \_|\_ Looker \_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 20
+- URL: [https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards](https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards)
+- Source ID: `site-docs-reference`
+- Final score: 102
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
+- Important : Starting in Looker 26.4, table charts, scatterplot charts, and Google Maps charts that have increased row limits are subject to the following limitations when you download, send, or schedule dashboards in PDF format: The query results for each table chart on a dashboard will display up to 50,000 rows, to a maximum total limit of 200,000 cells per dashboard.
+- Home Documentation Data analytics Looker Best Practices Send feedback Downloading or delivering dashboards in rendered formats Stay organized with collections Save and categorize content based on your preferences.
+- Expand tables to show all rows : This setting lets you choose whether to display all rows of any table visualizations in the dashboard — rather than just those rows that display in the dashboard tile thumbnails.
+- Notice that the wide table, Orders by State and Category , is cut off — not all columns are rendered: Here is what the delivery looks like when the Table resolution setting is set to Wide .
 

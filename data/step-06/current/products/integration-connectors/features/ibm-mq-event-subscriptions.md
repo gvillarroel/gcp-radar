@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:38.943Z"
+generated_at: "2026-04-12T12:17:32.219Z"
 product_name: "Integration Connectors"
 product_slug: "integration-connectors"
 feature_name: "IBM MQ event subscriptions"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-11-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/custom-connectors"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions"
 keywords:
   - "ibm"
   - "mq"
@@ -38,45 +39,66 @@ The IBM MQ connector supports event subscriptions through a new trigger in Appli
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/reference/rest](https://docs.cloud.google.com/integration-connectors/docs/reference/rest)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions](https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions)
 
 ## Supporting Pages
 
-### Google Drive connector | Integration Connectors | Google Cloud Documentation
+### IBM Db2 \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- Source ID: `site-docs-root`
-- Final score: 98
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 165
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Google Drive connector Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc google drive/overview If the action is successful, the connector task&#x27;s connectorOutputPayload response parameter will have a value similar to the following: ...
-- The following example shows how to configure the SubscribeToFileChanges action in Application Integration:
+- Supported data types The following are the data types supported by the IBM DB2 connector: DOUBLE LONGVARCHAR(n) TIME SMALLINT DECIMAL(p, s) INTEGER TIMESTAMP DATE FLOAT BLOB CHAR(n) VARCHAR(n) REAL VARBINARY BOOLEAN GRAPHIC VARGRAPHIC BIGINT Create connections using Terraform You can use the Terraform resource to create a new connection.
+- Before you begin Before using the IBM DB2 connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up.
+- System limitations The IBM DB2 connector can process 40 transactions per second, per node , and throttles any transactions beyond this limit.
+- This connector supports IBM Db2 for LUW (Linux, Unix, and Windows) and IBM Db2 for iSeries (AS/400) but does not support IBM Db2 for z/OS.
 
-### Marketplace connectors overview | Integration Connectors | Google Cloud Documentation
+### Azure AD (Entra ID) \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- Source ID: `site-docs-root`
-- Final score: 92
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 146
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Marketplace connectors overview Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview As a partner, when you publish a custom connector as a Marketplace connector, it enhances the visibility and reach of the connector.
-- As a Marketplace consumer, you can use the trusted Google Cloud Marketplace platform to discover and purchase connectors required to build integrations in Application ...
+- Selecting this, displays the following options: Enable event subscription with entity and actions : Select this option to use the connection for both event subscription and connector operations (entities and actions).
+- To enable data enrichment, you must configure the connection for both event subscription and connector operations (entities and actions).
+- Action: An action is a first class function that is made available to the integration through the connector interface.
+- To use the connection for event subscriptions, select Enable event subscription .
 
-### Custom connectors | Integration Connectors | Google Cloud Documentation
+### Connectors API \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- Source ID: `site-docs-root`
-- Final score: 86
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/reference/rest](https://docs.cloud.google.com/integration-connectors/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 146
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Custom connectors Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/custom-connectors This page provides an overview of the custom connectors feature in Integration Connectors, and assumes that you are familiar with the following concepts:
+- REST Resource: v1.projects.locations REST Resource: v1.projects.locations.connections REST Resource: v1.projects.locations.connections.connectionSchemaMetadata REST Resource: v1.projects.locations.connections.eventSubscriptions REST Resource: v1.projects.locations.connections.runtimeActionSchemas REST Resource: v1.projects.locations.connections.runtimeEntitySchemas REST Resource: v1.projects.locations.customConnectors REST Resource: v1.projects.locations.customConnectors.customConnectorVersions REST Resource: v1.projects.locations.endpointAttachments REST Resource: v1.projects.locations.global REST Resource: v1.projects.locations.global.customConnectors REST Resource: v1.projects.locations.global.customConnectors.customConnectorVersions REST Resource: v1.projects.locations.global.managedZones REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.providers REST Resource: v1.projects.locations.providers.connectors REST Resource: v1.projects.locations.providers.connectors.versions REST Resource: v1.projects.locations.providers.connectors.versions.eventtypes Service: connectors.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects.locations.connections Methods create POST /v1/{parent=projects/ /locations/ }/connections Creates a new Connection in a given project and location. delete DELETE /v1/{name=projects/ /locations/ /connections/ } Deletes a single Connection. get GET /v1/{name=projects/ /locations/ /connections/ } Gets details of a single Connection. getConnectionSchemaMetadata GET /v1/{name=projects/ /locations/ /connections/ /connectionSchemaMetadata} Gets schema metadata of a connection. getIamPolicy GET /v1/{resource=projects/ /locations/ /connections/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ }/connections Lists Connections in a given project and location. patch PATCH /v1/{connection.name=projects/ /locations/ /connections/ } Updates the parameters of a single Connection. repairEventing POST /v1/{name=projects/ /locations/ /connections/ }:repairEventing RepaiEventing tries to repair eventing related event subscriptions. search GET /v1/{name=projects/ /locations/ /connections}:search Returns Top matching Connections for a given query. setIamPolicy POST /v1/{resource=projects/ /locations/ /connections/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /connections/ }:testIamPermissions Returns permissions that a caller has on the specified resource.
+- REST Resource: v1.projects.locations.connections.eventSubscriptions Methods create POST /v1/{parent=projects/ /locations/ /connections/ }/eventSubscriptions Creates a new EventSubscription in a given project,location and connection. delete DELETE /v1/{name=projects/ /locations/ /connections/ /eventSubscriptions/ } Deletes a single EventSubscription. get GET /v1/{name=projects/ /locations/ /connections/ /eventSubscriptions/ } Gets details of a single EventSubscription. list GET /v1/{parent=projects/ /locations/ /connections/ }/eventSubscriptions List EventSubscriptions in a given project,location and connection. patch PATCH /v1/{eventSubscription.name=projects/ /locations/ /connections/ /eventSubscriptions/ } Updates the parameters of a single EventSubscription. retry POST /v1/{name=projects/ /locations/ /connections/ /eventSubscriptions/ }:retry RetryEventSubscription retries the registration of Subscription.
+- REST Resource: v1.projects.locations.global.customConnectors.customConnectorVersions Methods create POST /v1/{parent=projects/ /locations/global/customConnectors/ }/customConnectorVersions Creates a new CustomConnectorVersion in a given project and location. get GET /v1/{name=projects/ /locations/global/customConnectors/ /customConnectorVersions/ } Gets details of a single CustomConnectorVersion. list GET /v1/{parent=projects/ /locations/global/customConnectors/ }/customConnectorVersions List CustomConnectorVersions in a given project REST Resource: v1.projects.locations.global.managedZones Methods create POST /v1/{parent=projects/ /locations/global}/managedZones Creates a new ManagedZone in a given project and location. delete DELETE /v1/{name=projects/ /locations/global/managedZones/ } Deletes a single ManagedZone. get GET /v1/{name=projects/ /locations/global/managedZones/ } Gets details of a single ManagedZone. list GET /v1/{parent=projects/ /locations/global}/managedZones List ManagedZones in a given project patch PATCH /v1/{managedZone.name=projects/ /locations/global/managedZones/ } Updates the parameters of a single ManagedZone.
+
+### "IAM roles and permissions for Integration Connectors \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions](https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions)
+- Source ID: `site-docs-root-2`
+- Final score: 142
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following table lists all the predefined IAM roles for Integration Connectors: Role Permissions Connector Admin ( roles/ connectors.admin ) Full access to all resources of Connectors Service. connectors.actions. connectors.actions.execute connectors.actions.list connectors.connections.create connectors.connections.delete connectors. connections. executeSqlQuery connectors. connections. generateOpenAPISpec connectors.connections.get connectors. connections. getConnectionSchemaMetadata connectors. connections. getIamPolicy connectors. connections. getRuntimeActionSchema connectors. connections. getRuntimeEntitySchema connectors.connections.list connectors. connections. setIamPolicy connectors.connections.update connectors.connectors. connectors.connectors.get connectors.connectors.list connectors. customConnectorVersions. connectors. customConnectorVersions. create connectors. customConnectorVersions. delete connectors. customConnectorVersions. get connectors. customConnectorVersions. getIamPolicy connectors. customConnectorVersions. list connectors. customConnectorVersions. setIamPolicy connectors. customConnectorVersions. update connectors.customConnectors. connectors. customConnectors. create connectors. customConnectors. delete connectors. customConnectors. get connectors. customConnectors. getIamPolicy connectors. customConnectors. list connectors. customConnectors. setIamPolicy connectors. customConnectors. update connectors. endpointAttachments. connectors. endpointAttachments. create connectors. endpointAttachments. delete connectors. endpointAttachments. get connectors. endpointAttachments. getIamPolicy connectors. endpointAttachments. list connectors. endpointAttachments. setIamPolicy connectors. endpointAttachments. update connectors.entities. connectors.entities.create connectors.entities.delete connectors. entities. deleteEntitiesWithConditions connectors.entities.get connectors.entities.list connectors.entities.update connectors. entities. updateEntitiesWithConditions connectors.entityTypes.list connectors. eventSubscriptions. connectors. eventSubscriptions. create connectors. eventSubscriptions. delete connectors. eventSubscriptions. get connectors. eventSubscriptions. list connectors. eventSubscriptions. update connectors.eventtypes. connectors.eventtypes.get connectors.eventtypes.list connectors.locations. connectors.locations.get connectors.locations.list connectors.managedZones. connectors.managedZones.create connectors.managedZones.delete connectors.managedZones.get connectors. managedZones. getIamPolicy connectors.managedZones.list connectors. managedZones. setIamPolicy connectors.managedZones.update connectors.operations. connectors.operations.cancel connectors.operations.delete connectors.operations.get connectors.operations.list connectors.providers. connectors.providers.get connectors.providers.list connectors.regionalSettings. connectors. regionalSettings. get connectors. regionalSettings. update connectors.runtimeconfig.get connectors. schemaMetadata. refresh connectors.settings. connectors.settings.get connectors.settings.update connectors.versions. connectors.versions.get connectors.versions.list resourcemanager.projects.get resourcemanager.projects.list secretmanager. secrets. getIamPolicy Connectors Viewer ( roles/ connectors.viewer ) Read-only access to Connectors all resources. connectors. connections. generateOpenAPISpec connectors.connections.get connectors. connections. getConnectionSchemaMetadata connectors. connections. getIamPolicy connectors. connections. getRuntimeActionSchema connectors. connections. getRuntimeEntitySchema connectors.connections.list connectors.connectors. connectors.connectors.get connectors.connectors.list connectors. customConnectorVersions. get connectors. customConnectorVersions. getIamPolicy connectors. customConnectorVersions. list connectors. customConnectors. get connectors. customConnectors. getIamPolicy connectors. customConnectors. list connectors. endpointAttachments. get connectors. endpointAttachments. getIamPolicy connectors. endpointAttachments. list connectors. eventSubscriptions. get connectors. eventSubscriptions. list connectors.eventtypes. connectors.eventtypes.get connectors.eventtypes.list connectors.locations. connectors.locations.get connectors.locations.list connectors.managedZones.get connectors. managedZones. getIamPolicy connectors.managedZones.list connectors.operations.get connectors.operations.list connectors.providers. connectors.providers.get connectors.providers.list connectors. regionalSettings. get connectors.runtimeconfig.get connectors.settings.get connectors.versions. connectors.versions.get connectors.versions.list resourcemanager.projects.get resourcemanager.projects.list Custom Connectors Admin ( roles/ connectors.customConnectorAdmin ) Custom Connector is a global resource which creates custom connector within the given target project.
+- This role grants Read-only access to Event Subscription resources. connectors. eventSubscriptions. get connectors. eventSubscriptions. list Connector Invoker ( roles/ connectors.invoker ) Full Access to invoke all operations on Connections. connectors.actions. connectors.actions.execute connectors.actions.list connectors. connections. executeSqlQuery connectors.entities. connectors.entities.create connectors.entities.delete connectors. entities. deleteEntitiesWithConditions connectors.entities.get connectors.entities.list connectors.entities.update connectors. entities. updateEntitiesWithConditions connectors.entityTypes.list Connector Event Listener ( roles/ connectors.listener ) Full Access to listen events by connections. connectors. connections. listenEvent Connectors Managed Zone Admin ( roles/ connectors.managedZoneAdmin ) Managed Zone is a global resource which creates Cloud DNS Peering Zone with the given target project.
+- This role grants Admin access to Connectors Subscription resources connectors. eventSubscriptions. connectors. eventSubscriptions. create connectors. eventSubscriptions. delete connectors. eventSubscriptions. get connectors. eventSubscriptions. list connectors. eventSubscriptions. update Connectors Event Subscriptions Viewer ( roles/ connectors.eventSubscriptionViewer ) Event Subscription is a regional resource which creates subscriptions on events for a given connection within the given target project.
+- This role grants Read-only access to Connectors Endpoint Attachment resources connectors. endpointAttachments. get connectors. endpointAttachments. getIamPolicy connectors. endpointAttachments. list connectors.locations. connectors.locations.get connectors.locations.list Connectors Event Subscriptions Admin ( roles/ connectors.eventSubscriptionAdmin ) Event Subscription is a regional resource which creates subscriptions on events for a given connection within the given target project.
 

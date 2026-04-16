@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.137Z"
+generated_at: "2026-04-12T20:57:08.276Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "App Engine regional availability: europe-west6"
 feature_slug: "app-engine-regional-availability-europe-west6"
 latest_feature_date: "2019-04-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app"
+  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started"
 keywords:
-  - "west6"
-  - "europe"
-  - "availability"
-  - "regional"
-  - "added"
-  - "engine"
-  - "for"
   - "app"
+  - "engine"
+  - "regional"
+  - "availability"
+  - "europe"
+  - "west6"
+  - "added"
+  - "zurich"
 ---
 
 # App Engine regional availability: europe-west6
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,50 @@ App Engine added support for the europe-west6 (Zurich, Switzerland) region.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app)
+- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler](https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
 
 ## Supporting Pages
 
-### "Package com.google.appengine.api (5.0.0) \_|\_ App Engine standard environment\
+### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/com.google.appengine.api)
-- Source ID: `site-docs-reference`
-- Final score: 172
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 34
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The Task Queue com.google.appengine.api.taskqueue.Queue#add methods will forward the NamespaceManager settings into the task being added causing the added task to be executed with the same current namespace as the task creator.
-- Classes LifecycleManager NamespaceManager Provides functions for manipulating the current namespace used for App Engine APIs.
-- When a namespace aware class (e.g., com.google.appengine.api.datastore.Key , com.google.appengine.api.datastore.Query and com.google.appengine.api.memcache.MemcacheService ) is constructed, it determines which namespace will be used by calling NamespaceManager#get() if it is otherwise unspecified.
-- Home Documentation Application hosting App Engine Standard environment Reference Send feedback Package com.google.appengine.api (5.0.0) Stay organized with collections Save and categorize content based on your preferences.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.
+- The Users API allows an App Engine app to perform the following tasks: Detect whether the current user is signed in using a Google Account.
+- IAP doesn't protect against activity within a project, such as one App Engine service accessing another service in the same project.
 
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
+### "Understand performance with Cloud Profiler \_|\_ App Engine standard environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- Source ID: `site-docs-root`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler](https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 34
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Understand performance with Cloud Profiler Stay organized with collections Save and categorize content based on your preferences.
+
+### "An Overview of the Admin API \_|\_ App Engine Admin API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 26
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create a new folder called go-app for your Go service: mkdir go-app In your go-app/ folder, create a file called app.yaml , and add the following contents: runtime : go126 # or another supported version This is the simplest configuration for an App Engine app.
-- When your app is running on App Engine, the PORT environment variable is set for you, but when testing your app locally, you can set PORT to any preferred value.
-- Write a basic web service for App Engine Learn how to write a web service and declare runtime settings.
-- For apps created after February 2020, REGION ID .r is included in App Engine URLs.
-
-### "Build a Java app on App Engine \_|\_ App Engine standard environment \_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app)
-- Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Build a Java app on App Engine Stay organized with collections Save and categorize content based on your preferences.
-- Getting started Learn how to build a simple web app and deploy it on App Engine: Create a Google Cloud project Learn how to create a Google Cloud project to hold your App Engine app's resources.
-- Deploy your service on App Engine Learn how to deploy your Java code on App Engine and view your live web service.
-- The tasks on this page walk you through the basics of App Engine, guiding you through the development process.
+- Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.
+- The Admin API provides programmatic access to several of the App Engine administrative operations that are found in the Google Cloud console .
+- The App Engine Admin API is a RESTful API for managing your App Engine applications regardless of programming language.
+- With the Admin API, you can manage your App Engine applications in manners that best suit your environment or process.
 

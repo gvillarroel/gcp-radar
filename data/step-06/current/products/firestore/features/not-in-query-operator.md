@@ -1,31 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.437Z"
+generated_at: "2026-04-15T13:50:17.900Z"
 product_name: "Firestore"
 product_slug: "firestore"
 feature_name: "not-in query operator"
 feature_slug: "not-in-query-operator"
 latest_feature_date: "2020-09-30"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
-  - "https://docs.cloud.google.com/firestore/docs/release-notes"
-  - "https://docs.cloud.google.com/firestore/native/docs/reference/libraries"
+  - "https://docs.cloud.google.com/firestore/native/docs/editions-overview"
+  - "https://docs.cloud.google.com/firestore/native/docs/enterprise-optimize-query-performance"
+  - "https://docs.cloud.google.com/firestore/native/docs/dataflow-connector"
 keywords:
   - "not"
-  - "in"
   - "query"
   - "operator"
   - "firestore"
   - "supports"
-  - "the"
 ---
 
 # not-in query operator
 
 Product: Firestore
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -41,42 +39,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- [https://docs.cloud.google.com/firestore/docs/release-notes](https://docs.cloud.google.com/firestore/docs/release-notes)
-- [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
+- [https://docs.cloud.google.com/firestore/native/docs/editions-overview](https://docs.cloud.google.com/firestore/native/docs/editions-overview)
+- [https://docs.cloud.google.com/firestore/native/docs/enterprise-optimize-query-performance](https://docs.cloud.google.com/firestore/native/docs/enterprise-optimize-query-performance)
+- [https://docs.cloud.google.com/firestore/native/docs/dataflow-connector](https://docs.cloud.google.com/firestore/native/docs/dataflow-connector)
 
 ## Supporting Pages
 
-### Class FirestoreAdminClient (2.22.0) | Python client libraries | Google Cloud Documentation
+### "Optimize query performance \_|\_ Firestore in Native mode \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- Source ID: `site-python-reference`
-- Final score: 149
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Class FirestoreAdminClient (2.22.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore admin v1.services.firestore admin.client.FirestoreAdminClient Project, Database, Namespace, Collection, Collection Group, and Document are used as defined in the Google Cloud Firestore API.
-
-### Firestore release notes | Firestore in Native mode | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/firestore/docs/release-notes](https://docs.cloud.google.com/firestore/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 137
+- URL: [https://docs.cloud.google.com/firestore/native/docs/enterprise-optimize-query-performance](https://docs.cloud.google.com/firestore/native/docs/enterprise-optimize-query-performance)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 43
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Firestore release notes Firestore in Native mode Google Cloud Documentation Source URL: https://docs.cloud.google.com/firestore/docs/release-notes Support for Firestore point-in-time recovery (PITR) feature that provides protection against accidental deletion or writes is now generally available (GA). ...
-- For documents with many fields that don&#x27;t require indexing, you can now add collection-level index exemptions on all fields in a collection ...
+- Use forceIndex with Query Explain You can use Query Explain , especially with the analyze option, to observe the effects of forceIndex : Verify that Firestore in Native Mode used the specified index in forceIndex by checking the leaf nodes of the execution tree for the index ID.
+- Optimize query performance Preview — Firestore in Native mode (with Pipeline Operations) for Enterprise Edition This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- You can use the forceIndex option on any input stage in Pipeline operations to override Firestore in Native Mode's default query plan and specify an index to use, or to force a table scan.
+- Best practices for forceIndex While forceIndex provides more control over query execution, Firestore in Native Mode's query optimizer is generally efficient for most use cases.
 
-### Firestore client libraries | Firestore in Native mode | Google Cloud Documentation
+### "Firestore editions overview \_|\_ Firestore in Native mode \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
-- Source ID: `site-docs-reference`
-- Final score: 119
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/firestore/native/docs/editions-overview](https://docs.cloud.google.com/firestore/native/docs/editions-overview)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 41
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Firestore client libraries Firestore in Native mode Google Cloud Documentation Source URL: https://docs.cloud.google.com/firestore/native/docs/reference/libraries API Reference Documentation · Source Code · GitHub Issue Tracker · Stack Overflow · The Firebase Admin SDKs bundle the Google Cloud client libraries for Firestore alongside client libraries and SDKs for several other Firebase features.
-- Using one of the Admin SDKs, you can initialize access to Firestore and several other services from a single SDK.
+- Automatic, basic indexing on all document fields Change data capture Triggers Triggers Observability Cloud Monitoring Query Explain Query Insights Database Center Cloud Monitoring Query Explain Query Insights Database Center Data protection Scheduled backups Point-in-time recovery Scheduled backups Point-in-time recovery Encryption Google-owned and Google-managed encryption key Customer-managed encryption keys Google-owned and Google-managed encryption key Customer-managed encryption keys Storage SSD Hybrid storage (SSD & HDD) Performance Best Good Committed Use Discounts 20% for 1 year; 40% for 3 years 20% for 1 year; 40% for 3 years Data access modes Firestore supports the following data access modes to read and write data: Firestore with MongoDB compatibility mode : this interface supports Firestore with MongoDB compatibility and lets you re-use existing MongoDB drivers, tools, and open-source ecosystem integrations with Firestore.
+- Document Size Limits 4 MiB with MongoDB compatibility 1 MiB with Firestore in Native mode 1 MiB Supports Firestore with MongoDB compatibility Yes No Supports Firestore in Native mode: server-side, web, and mobile SDKs with real-time and offline support Yes (Preview) Yes Indexing Fully customizable, with support for advanced indexes like unique, dense, and sparse.
+- Editions features The following table summarizes the features available for each edition: Enterprise Standard Query Engine Advanced query engine More than 180 stages and operators, including support for aggregations, arithmetic, arrays, sets, type conversions, and joining data.
+- Firestore in Native mode : this interface supports all of the latest and most innovative capabilities of Firestore, including real-time synchronization and offline caching in the Firestore client libraries.
+
+### "Process data in bulk with Dataflow \_|\_ Firestore in Native mode \_|\_\
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/dataflow-connector](https://docs.cloud.google.com/firestore/native/docs/dataflow-connector)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 39
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Example Write pipeline The following example creates documents in the cities-beam-sample collection: public class ExampleFirestoreBeamWrite { private static final FirestoreOptions FIRESTORE OPTIONS = FirestoreOptions . getDefaultInstance (); public static void main ( String [] args ) { runWrite ( args , "cities-beam-sample" ); } public static void runWrite ( String [] args , String collectionId ) { // create pipeline options from the passed in arguments PipelineOptions options = PipelineOptionsFactory . fromArgs ( args ). withValidation (). as ( PipelineOptions . class ); Pipeline pipeline = Pipeline . create ( options ); RpcQosOptions rpcQosOptions = RpcQosOptions . newBuilder () . withHintMaxNumWorkers ( options . as ( DataflowPipelineOptions . class ). getMaxNumWorkers ()) . build (); // create some writes Write write1 = Write . newBuilder () . setUpdate ( Document . newBuilder () // resolves to // projects/<projectId>/databases/<databaseId>/documents/<collectionId>/NYC . setName ( createDocumentName ( collectionId , "NYC" )) . putFields ( "name" , Value . newBuilder (). setStringValue ( "New York City" ). build ()) . putFields ( "state" , Value . newBuilder (). setStringValue ( "New York" ). build ()) . putFields ( "country" , Value . newBuilder (). setStringValue ( "USA" ). build ())) . build (); Write write2 = Write . newBuilder () . setUpdate ( Document . newBuilder () // resolves to // projects/<projectId>/databases/<databaseId>/documents/<collectionId>/TOK . setName ( createDocumentName ( collectionId , "TOK" )) . putFields ( "name" , Value . newBuilder (). setStringValue ( "Tokyo" ). build ()) . putFields ( "country" , Value . newBuilder (). setStringValue ( "Japan" ). build ()) . putFields ( "capital" , Value . newBuilder (). setBooleanValue ( true ). build ())) . build (); // batch write the data pipeline . apply ( Create . of ( write1 , write2 )) . apply ( FirestoreIO . v1 (). write (). batchWrite (). withRpcQosOptions ( rpcQosOptions ). build ()); // run the pipeline pipeline . run (). waitUntilFinish (); } private static String createDocumentName ( String collectionId , String cityDocId ) { String documentPath = String . format ( "projects/%s/databases/%s/documents" , FIRESTORE OPTIONS . getProjectId (), FIRESTORE OPTIONS . getDatabaseId ()); return documentPath + "/" + collectionId + "/" + cityDocId ; } } ExampleFirestoreBeamWrite . java The example uses the following arguments to configure and run a pipeline: GOOGLE CLOUD PROJECT= project-id REGION= region TEMP LOCATION=gs:// temp-bucket /temp/ NUM WORKERS= number-workers MAX NUM WORKERS= max-number-workers Example Read Pipeline The following example pipeline reads documents from the cities-beam-sample collection, applies a filter for documents where field country is set to USA , and returns the names of the matching documents. public class ExampleFirestoreBeamRead { public static void main ( String [] args ) { runRead ( args , "cities-beam-sample" ); } public static void runRead ( String [] args , String collectionId ) { FirestoreOptions firestoreOptions = FirestoreOptions . getDefaultInstance (); PipelineOptions options = PipelineOptionsFactory . fromArgs ( args ). withValidation (). as ( PipelineOptions . class ); Pipeline pipeline = Pipeline . create ( options ); RpcQosOptions rpcQosOptions = RpcQosOptions . newBuilder () . withHintMaxNumWorkers ( options . as ( DataflowPipelineOptions . class ). getMaxNumWorkers ()) . build (); pipeline . apply ( Create . of ( collectionId )) . apply ( new FilterDocumentsQuery ( firestoreOptions . getProjectId (), firestoreOptions . getDatabaseId ())) . apply ( FirestoreIO . v1 (). read (). runQuery (). withRpcQosOptions ( rpcQosOptions ). build ()) . apply ( ParDo . of ( // transform each document to its name new DoFn<RunQueryResponse , String > () { @ProcessElement public void processElement ( ProcessContext c ) { c . output ( Objects . requireNonNull ( c . element ()). getDocument (). getName ()); } })) . apply ( ParDo . of ( // print the document name new DoFn<String , Void > () { @ProcessElement public void processElement ( ProcessContext c ) { System . out . println ( c . element ()); } })); pipeline . run (). waitUntilFinish (); } private static final class FilterDocumentsQuery extends PTransform<PCollection<String> , PCollection<RunQueryRequest> > { private final String projectId ; private final String databaseId ; public FilterDocumentsQuery ( String projectId , String databaseId ) { this . projectId = projectId ; this . databaseId = databaseId ; } @Override public PCollection<RunQueryRequest> expand ( PCollection<String> input ) { return input . apply ( ParDo . of ( new DoFn<String , RunQueryRequest > () { @ProcessElement public void processElement ( ProcessContext c ) { // select from collection "cities-collection-<uuid>" StructuredQuery .
+- EQUAL )) . buildPartial (); RunQueryRequest runQueryRequest = RunQueryRequest . newBuilder () . setParent ( DocumentRootName . format ( projectId , databaseId )) . setStructuredQuery ( StructuredQuery . newBuilder () . addFrom ( collection ) . setWhere ( countryFilter ) . build ()) . build (); c . output ( runQueryRequest ); } })); } } } ExampleFirestoreBeamRead . java The example uses the following arguments to configure and run a pipeline: GOOGLE CLOUD PROJECT= project-id REGION= region TEMP LOCATION=gs:// temp-bucket /temp/ NUM WORKERS= number-workers MAX NUM WORKERS= max-number-workers Pricing Running a Firestore workload in Dataflow incurs costs for Firestore usage and Dataflow usage.
+- Apache Beam supports a connector for Firestore.
+- FieldReference . newBuilder () . setFieldPath ( "country" ) . build ()) . setValue ( Value . newBuilder (). setStringValue ( "USA" ). build ()) . setOp ( StructuredQuery .
 

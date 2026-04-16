@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.952Z"
+generated_at: "2026-04-14T16:02:18.800Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "Chrome Enterprise Threats category"
 feature_slug: "chrome-enterprise-threats-category"
 latest_feature_date: "2025-04-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
   - "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
 keywords:
   - "chrome"
@@ -26,7 +26,7 @@ keywords:
 # Chrome Enterprise Threats category
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +38,12 @@ Curated Detections adds a preview detection category for extension and browser t
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
+- [https://docs.cloud.google.com/chronicle/docs/detection/curated-detections](https://docs.cloud.google.com/chronicle/docs/detection/curated-detections)
 - [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
 
 ## Supporting Pages
@@ -52,9 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category)
 - Source ID: `site-docs-reference`
-- Final score: 194
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 272
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Supported devices and log types The rule sets in the Chrome Enterprise Premium Threats category require logs from the following Google Security Operations data sources: Chrome Management Logs ( CHROME MANAGEMENT ) To feed these logs to Google SecOps, follow the steps in Collect Google Chrome logs .
@@ -62,26 +62,27 @@ Evidence snippets:
 - Overview of Chrome Enterprise Premium Threats Category Supported in: Google secops SIEM Note: This feature is covered by Pre-GA Offerings Terms of the Google Security Operations Service Specific Terms.
 - Rule sets in the Chrome Enterprise Premium Threats category help identify threats in the Google Cloud environment using Chrome Enterprise Premium Management logs.
 
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
+### "Use the curated detections page \_|\_ Google Security Operations \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 172
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/curated-detections](https://docs.cloud.google.com/chronicle/docs/detection/curated-detections)
+- Source ID: `site-docs-root`
+- Final score: 224
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Google SecOps has introduced a new detection category, Chrome Enterprise Threats , as part of the Curated Detections feature.
-- July 29, 2024 Feature Curated Detections has been enhanced with new detection content for Cloud Threats to include rule packs covering Microsoft Entra ID, Entra ID Audit and Azure Compute and are in public preview for customers with a Google Security Operations or Enterprise Plus license.
-- April 18, 2025 Feature Chrome Enterprise Threats Category This feature is currently in Preview.
-- October 27, 2025 Announcement New rules for Chrome Enterprise Premium Curated Detections has been enhanced with additional Chrome Enterprise Premium Browser Threat detections.
+- Before you begin For information about predefined threat detection policies, see the following: Overview of Cloud Threats category Overview of Chrome Enterprise Threats category Overview of Windows Threats category Overview of Linux Threats category Overview of macOS Threats category Overview of Risk Analytics for UEBA category Overview of Applied Threat Intelligence category To verify that data required for each policy is in the correct format, see Verify log data ingestion using test rules .
+- As part of these curated detections, GCTI provides and manages a set of YARA-L rules to help customers identify threats to their enterprise.
+- Curated detections features The following are some of the key curated detections features: Curated Detection: curated detection created and managed by GCTI for Google SecOps customers.
+- Open the curated detections page and rule sets To open the curated detections page, complete the following steps: Select Rules from the main menu.
 
 ### "Cloud Threats category overview \_|\_ Google Security Operations \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category](https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category)
 - Source ID: `site-docs-reference`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 216
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following export filter exports Google Cloud Cloud Run ( GCP RUN ) logs, in addition to the default logs both through the direct ingestion mechanism as well as through Cloud Storage and Sinks : log id("run.googleapis.com/stdout") OR log id("run.googleapis.com/stderr") OR log id("run.googleapis.com/requests") OR log id("run.googleapis.com/varlog/system) Curated detections for AWS rule sets AWS rule sets in this category help identify threats in AWS environments using event and context data, and includes the following rule sets: AWS - Compute : Detects anomalous activity surrounding AWS compute resources, including EC2 and Lambda.

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:58:32.607Z"
+generated_at: "2026-04-15T11:57:14.537Z"
 product_name: "Cloud SQL for SQL Server"
 product_slug: "cloud-sql-for-sql-server"
 feature_name: "Custom subject alternative name configuration"
 feature_slug: "custom-subject-alternative-name-configuration"
 latest_feature_date: "2025-05-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl"
 keywords:
   - "custom"
   - "subject"
@@ -26,7 +26,7 @@ keywords:
 # Custom subject alternative name configuration
 
 Product: Cloud SQL for SQL Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Custom subject alternative name configuration lets you assign custom DNS names t
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/sql/docs/sqlserver/create-instance](https://docs.cloud.google.com/sql/docs/sqlserver/create-instance)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting](https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl](https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl)
 
 ## Supporting Pages
 
@@ -52,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/sql/docs/sqlserver/create-instance](https://docs.cloud.google.com/sql/docs/sqlserver/create-instance)
 - Source ID: `site-docs-root`
-- Final score: 170
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,29 +61,30 @@ Evidence snippets:
 - Custom SAN Add a custom subject alternative name (SAN) --custom-subject-alternative-names= DNS NAMES If you want to use a custom DNS name to connect to a Cloud SQL instance instead of using an IP address, then configure the custom subject alternative name (SAN) setting while creating the instance.
 - Set the password for the user: gcloud sql users set-password sqlserver no-host --instance =[ INSTANCE NAME ] \ --password =[ PASSWORD ] Terraform To create an instance, use a Terraform resource . resource "google sql database instance" "default" { name = "sqlserver-instance" region = "us-central1" database version = "SQLSERVER 2019 STANDARD" root password = "INSERT-PASSWORD-HERE" settings { tier = "db-custom-2-7680" } } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.
 
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
+### Troubleshoot \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting](https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting)
 - Source ID: `site-docs-root`
-- Final score: 164
+- Final score: 137
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Cloud SQL for PostgreSQL Feature You can now use a custom DNS name to connect to your Cloud SQL instances by adding a custom subject alternative name (SAN) to your Cloud SQL instances.
-- Cloud SQL for SQL Server Feature You can now use a custom DNS name to connect to your Cloud SQL instances by adding a custom subject alternative name (SAN) to your Cloud SQL instances.
-- Feature You can now use a custom DNS name to connect to your Cloud SQL instances by adding a custom subject alternative name (SAN) to your Cloud SQL instances.
-- May 02, 2025 Cloud SQL for MySQL Feature You can now set up custom DNS names by configuring the custom subject alternative name (SAN) for your instance.
+- Error message: More than 3 subject alternative names are not allowed.
+- Error message: Subject alternative names %s is too long.
+- Error message: Subject alternative name %s is invalid.
+- You're trying to use a custom SAN to add more than three DNS names to the server certificate of a Cloud SQL instance.
 
-### Cloud SQL for SQL Server release notes \_|\_ Google Cloud Documentation
+### "Authorize with SSL/TLS certificates \_|\_ Cloud SQL for SQL Server \_|\_\
 
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl](https://docs.cloud.google.com/sql/docs/sqlserver/authorize-ssl)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 129
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- February 11, 2025 Feature You can now use a custom DNS name to connect to your Cloud SQL instances by adding a custom subject alternative name (SAN) to your Cloud SQL instances.
-- May 02, 2025 Feature You can now set up custom DNS names by configuring the custom subject alternative name (SAN) for your instance.
-- After you set up DNS name resolution, you can connect to your Cloud SQL instance using the custom DNS name instead of using an IP address.
-- Among the new features, there's support for: Metrics and tracing with Cloud Monitoring and Cloud Trace Support for Prometheus Service account impersonation Separate Dialer functionality released as the Cloud SQL Go Connector Configuration with environment variables Fully POSIX-compliant flags We recommend all customers upgrade to v2 and have released a migration guide .
+- Subject Alternative Name (SAN) field in server certificates The SAN field contains the hostname (DNS name of the instance) only for instances enabled with Private Service Connect .
+- Service connection limitations If your instance uses the shared CA ( GOOGLE MANAGED CAS CA ) or customer-managed CA ( CUSTOMER MANAGED CAS CA ) option for its serverCaMode configuration, then the instance can't support connections from the following Google Cloud services: App Engine standard environment App Engine flexible environment Cloud Run services that run in a first generation execution environment What's next Configure SSL/TLS on your Cloud SQL instance.
+- Whether you use the per-instance CA, the shared CA, or the customer-managed CA server mode, you can reset the SSL configuration of your Cloud SQL instance at any time.
+- Customer-managed CAs This server CA mode lets you set up your own CA hierarchy in CA Service.
 

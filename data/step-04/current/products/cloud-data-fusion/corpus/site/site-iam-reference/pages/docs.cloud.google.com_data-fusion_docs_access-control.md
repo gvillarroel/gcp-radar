@@ -66,7 +66,7 @@ Cloud Data Fusion API. It's used for all instances in your project.
 The service agent has the following responsibilities:
 Communicating with other services, such as Cloud Storage,
 BigQuery, or Datastream during pipeline design.
-Enabling execution by provisioning Dataproc clusters and
+Enabling execution by provisioning Managed Service for Apache Spark clusters and
 submitting pipeline jobs.
 Roles for the Cloud Data Fusion Service Account
 By default, the Cloud Data Fusion service account has only the
@@ -87,7 +87,7 @@ Associated services:
 BigQuery
 Bigtable
 Compute Engine
-Dataproc
+Managed Service for Apache Spark
 Cloud DNS
 Firebase
 Cloud Monitoring
@@ -108,9 +108,9 @@ Compute Engine default service account or custom service account
 The Compute Engine service account is the default account that
 Cloud Data Fusion uses to deploy and run jobs that access other
 Google Cloud resources. By default, it attaches to a
-Dataproc cluster VM to let Cloud Data Fusion access
-Dataproc resources during a pipeline run.
-You can choose a custom service account to attach to the Dataproc
+Managed Service for Apache Spark cluster VM to let Cloud Data Fusion access
+Managed Service for Apache Spark resources during a pipeline run.
+You can choose a custom service account to attach to the Managed Service for Apache Spark
 cluster when creating a Cloud Data Fusion instance or by creating new
 Compute Profiles in the Cloud Data Fusion web interface.
 For more information, see
@@ -124,8 +124,8 @@ problems with other Google Cloud services.
 You can set up a user-managed custom service account for
 Cloud Data Fusion instances and grant a role to this account. Afterwards,
 you can choose this service account when creating new instances.
-Note: If you launch Dataproc clusters in a different
-Google Cloud project, grant the roles in the project where Dataproc is running .
+Note: If you launch Managed Service for Apache Spark clusters in a different
+Google Cloud project, grant the roles in the project where Managed Service for Apache Spark is running .
 By default, you grant them in the project containing the
 Cloud Data Fusion instance.
 Cloud Data Fusion Runner role
@@ -142,12 +142,12 @@ tenant project
 datafusion.instances.runtime
 Service Account User role
 On the default or user-managed service account in the project where
-Dataproc clusters are launched when you run pipelines, grant the
+Managed Service for Apache Spark clusters are launched when you run pipelines, grant the
 Cloud Data Fusion Service Account the Service Account User role
 ( roles/iam.serviceAccountUser ).
 For more information, see Grant service account permission .
 Dataproc Worker role
-To run the jobs on Dataproc clusters, grant the Dataproc Worker
+To run the jobs on Managed Service for Apache Spark clusters, grant the Dataproc Worker
 role ( roles/dataproc.worker ) to the default or user-managed service
 accounts used by your Cloud Data Fusion pipelines.
 Roles for users
@@ -218,9 +218,9 @@ Access resources in another project at execution time
 This section describes access control on resources that are located in a
 different Google Cloud project than your Cloud Data Fusion instance at
 execution time.
-At execution time, you execute the pipeline on a Dataproc
+At execution time, you execute the pipeline on a Managed Service for Apache Spark
 cluster, which may access resources in other projects. By default, the
-Dataproc cluster itself is launched in the same project as
+Managed Service for Apache Spark cluster itself is launched in the same project as
 the Cloud Data Fusion instance, but you can use clusters in another
 project.
 To access the resources in other Google Cloud projects, follow these
@@ -242,7 +242,7 @@ account as a principal in the project where the target resource exists.
 Add appropriate roles to access the resource.
 Note: For more information, see the related
 use case for
-running Dataproc clusters in another project. This use case has
+running Managed Service for Apache Spark clusters in another project. This use case has
 a service account that's defined in the other project and has access
 to BigQuery resources in that project. You can elaborate on the
 use case for other scenarios.
@@ -288,6 +288,6 @@ What's next
 Learn more about access control between multiple projects .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

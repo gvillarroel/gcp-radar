@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.350Z"
+generated_at: "2026-04-12T12:11:19.567Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer Airflow metrics in Cloud Monitoring"
 feature_slug: "cloud-composer-airflow-metrics-in-cloud-monitoring"
 latest_feature_date: "2023-03-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
   - "https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac"
+  - "https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag"
 keywords:
   - "composer"
   - "airflow"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer Airflow metrics in Cloud Monitoring
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer added five new Airflow metrics to Cloud Monitoring; Cloud Compose
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - [https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard](https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac](https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac)
+- [https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag](https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 208
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 273
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The dashboard then displays a project name and resource: In case a metric exceeds a predefined threshold, an incident is raised and a respective alert is shown in a chart corresponding to this metric: List of monitored metrics A complete list of monitored metrics: Cloud Composer environment health (based on Monitoring DAG) Database health Web Server Health Scheduler Heartbeats CPU and Memory utilization for all Workers CPU and Memory utilization for the Airflow database CPU and Memory utilization for the Web Server (only available in Cloud Composer 2) CPU and Memory utilization for Airflow Schedulers Proportion of Queued, Scheduled, Queued or Scheduled tasks in an environment (useful to spot Airflow concurrency configuration issues) DAG Parsing time Current versus minimal number of Workers - useful to understand Worker stability issues or scaling problems Worker Pod evictions Number of errors thrown in Logs by Workers, Schedulers, Web Server or other components (individual charts) Note: You don't need to modify the dashboard when Cloud Composer environments are added or removed as long as the list of monitored projects stays the same.
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard](https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard)
 - Source ID: `site-docs-root`
-- Final score: 182
+- Final score: 227
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -75,16 +77,29 @@ Evidence snippets:
 - Metrics displayed on a monitoring dashboard for a particular environment only track the DAG runs, Airflow components, and environment details for this environment only.
 - To navigate there from the Cloud Composer monitoring dashboard, click the three dots in the upper-right corner of a metric card and select View in Metrics explorer .
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### "Using Airflow UI Access Control \_|\_ Cloud Composer \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 176
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac](https://docs.cloud.google.com/composer/docs/composer-1/airflow-rbac)
+- Source ID: `site-iam-reference`
+- Final score: 205
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Change New images are available in Cloud Composer 2: composer-2.13.9-airflow-2.10.5 (default) composer-2.13.9-airflow-2.9.3 Feature (Airflow 2.10.5 only) Added task-level resource consumption Airflow metrics to Cloud Composer. composer.googleapis.com/workflow/task/cpu usage : percentage of CPU used by a task. composer.googleapis.com/workflow/task/mem usage : percentage of memory used by a task.
-- November 24, 2025 Issue We discovered an issue that might impact the reporting of metrics in the following recently released Cloud Composer versions: composer-2.15.4-airflow- composer-3-airflow-2.10.5-build.20 composer-3-airflow-2.9.3-build.40 composer-3-airflow-3.1.0-build.3 To prevent additional environments from being affected, we have disabled the ability to upgrade existing environments to these versions and to create new environments using these versions.
-- May 26, 2025 Feature (Cloud Composer 3) New metrics that show the number of active Airflow components are now available for Cloud Composer 3 environments: The number of active schedulers The number of active DAG processors The number of active triggerers The number of active web servers Fixed (Cloud Composer 3) It's now possible to override the default scopes of access tokens in all regions supported by Cloud Composer 3.
-- New metrics have been added to monitor web server CPU and memory usage: CPU usage time CPU reserved cores Memory bytes used Memory quota During environment creation and updates, Composer will now verify whether you have chosen a region compliant with any location restriction organization policies.
+- Register users in the Airflow UI New users are automatically registered when they open the Airflow UI of a Cloud Composer environment for the first time.
+- To preregister a user with a custom role through Google Cloud CLI, run the following Airflow CLI command : gcloud composer environments run ENVIRONMENT NAME \ --location LOCATION \ users create -- \ -r ROLE \ -e USER EMAIL \ -u USER EMAIL \ -f FIRST NAME \ -l LAST NAME \ --use-random-password # The password value is required, but is not used Replace the following: ENVIRONMENT NAME : the name of the environment LOCATION : the region where the environment is located ROLE : an Airflow role for the user, for example, Op USER EMAIL : the user's email address FIRST NAME and LAST NAME : user's first name and last name Example: gcloud composer environments run example-environment \ --location us-central1 \ users create -- \ -r Op \ -e "example-user@example.com" \ -u "example-user@example.com" \ -f "Name" \ -l "Surname" \ --use-random-password Remove users Deleting a user from Airflow does not revoke access for that user, because they are automatically registered again next time they access the Airflow UI.
+- Auto-assign DAGs to per-folder roles To auto-assign DAGs to per-folder roles: Override the following Airflow configuration option: Section Key Value webserver rbac autoregister per folder roles True Change the new user registration role to a role without access to any DAGs.
+- Overview of Airflow UI access control in Cloud Composer Access to Airflow UI and DAG UI and visibility of data and operations in those UIs is controlled at two levels in Cloud Composer: Access to the Airflow UI and DAG UI in Cloud Composer is controlled by IAM .
+
+### "Quickstart: Run an Apache Airflow DAG in Cloud Composer\_3 \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag](https://docs.cloud.google.com/composer/docs/latest/run-apache-airflow-dag)
+- Source ID: `site-docs-root`
+- Final score: 204
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The list of DAGs displays the composer quickstart DAG (click to enlarge) Note: The airflow monitoring DAG is used by Cloud Composer to monitor the health of your environment.
+- Save a copy of the quickstart.py file on your local machine: import datetime from airflow import models from airflow.operators import bash If you are running Airflow in more than one time zone see https://airflow.apache.org/docs/apache-airflow/stable/timezone.html for best practices YESTERDAY = datetime . datetime . now () - datetime . timedelta ( days = 1 ) default args = { "owner" : "Composer Example" , "depends on past" : False , "email" : [ "" ], "email on failure" : False , "email on retry" : False , "retries" : 1 , "retry delay" : datetime . timedelta ( minutes = 5 ), "start date" : YESTERDAY , } with models .
+- Run an Apache Airflow DAG in Cloud Composer 3 Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 This quickstart guide shows you how to create a Cloud Composer environment and run an Apache Airflow DAG in Cloud Composer 3.
+- DAG ( "composer quickstart" , catchup = False , default args = default args , schedule interval = datetime . timedelta ( days = 1 ), ) as dag : Print the dag run id from the Airflow logs print dag run conf = bash .
 

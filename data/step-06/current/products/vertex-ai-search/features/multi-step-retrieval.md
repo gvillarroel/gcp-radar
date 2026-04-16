@@ -1,17 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.889Z"
+generated_at: "2026-04-14T17:29:36.994Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Multi-step retrieval"
 feature_slug: "multi-step-retrieval"
 latest_feature_date: "2024-06-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
 keywords:
   - "multi"
@@ -21,13 +20,13 @@ keywords:
   - "public"
   - "preview"
   - "capability"
-  - "in"
+  - "vertex"
 ---
 
 # Multi-step retrieval
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,48 +38,21 @@ Multi-step retrieval remains a public preview capability in Vertex AI Search.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings](https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations)
 
 ## Supporting Pages
 
-### Get search results \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
-- Source ID: `site-iam-reference`
-- Final score: 120
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- String searchQuery = "Google" ; search ( projectId , location , collectionId , dataStoreId , servingConfigId , searchQuery ); } / Performs a search on a given datastore. / public static void search ( String projectId , String location , String collectionId , String dataStoreId , String servingConfigId , String searchQuery ) throws IOException , ExecutionException { // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store String endpoint = ( location . equals ( "global" )) ?
-- String searchQuery = "Google" ; search ( projectId , location , collectionId , dataStoreId , servingConfigId , searchQuery ); } / Performs a search on a given datastore. / public static void search ( String projectId , String location , String collectionId , String dataStoreId , String servingConfigId , String searchQuery ) throws IOException , ExecutionException { // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store String endpoint = ( location . equals ( "global" )) ?
-- Get search results for an app with website data Console To use the Google Cloud console to preview search results for an app with website data, follow these steps: In the Google Cloud console, go to the AI Applications page.
-- To use the Google Cloud console to preview search results for an app with structured or unstructured data, follow these steps: Open the Preview page in the console.
-
-### Use custom embeddings \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings](https://docs.cloud.google.com/generative-ai-app-builder/docs/bring-embeddings)
-- Source ID: `site-api-reference`
-- Final score: 120
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- REST To update your schema using the API, follow these steps: Following the REST instructions in Update a schema , specify the key property mapping and the number of dimensions for each embedding field: "keyPropertyMapping": "embedding vector" "dimension": NUMBER OF DIMENSIONS For example, here is a formatted JSON schema with 768 dimensions for the field example embedding vector : { "$schema" : "https://json-schema.org/draft/2020-12/schema" , "type" : "object" , "properties" : { "example embedding vector" : { "type" : "array" , "keyPropertyMapping" : 'embeddi n g vec t or' , "dimension" : 768 , "items" : { "type" : "number" } } } } In an update schema request, this formatted JSON would be included as a JSON string: "jsonSchema" : "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"object\",\"properties\":{\"example embedding vector\":{\"type\":\"array\",\"keyPropertyMapping\":\"embedding vector\",\"dimension\":768,\"items\":{\"type\":\"number\"}}}}" After updating your schema, it can take up to 24 hours to re-index depending on the size of your data store.
-- However, if you've created your own embeddings for your data, you might prefer to use them instead of those generated by Vertex AI Search, especially if your custom embeddings contain additional context that can enrich your search retrieval and ranking.
-- For example: Your embeddings have been trained on custom words, such as internal terms whose semantic similarity wouldn't be captured by training on public data—for example, organization-specific terms that appear only in private documents.
-- For this feature, you can process personal data as outlined in the Cloud Data Processing Addendum , subject to applicable restrictions and obligations in the Agreement (as defined in the Preview Terms).
-
 ### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- Source ID: `site-api-reference`
-- Final score: 114
+- Source ID: `site-docs-reference`
+- Final score: 131
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -89,16 +61,29 @@ Evidence snippets:
 - Additional information about the methodology used to aggregate the data is available upon request.\n\n## Contributors\n\nDavid Michael Tinsley Senior Economist, Bank of America Institute Joe Wadford Economist, Bank of America Institute Taylor Bowley Economist, Bank of America Institute Liz Everett Krisberg Head of Bank of America Institute\n\n## Sources\n\nLi Wei Director, Global Risk Analytics Kimberly Warren Director, Global Risk Analytics Ana Maxim Senior Vice President, Consumer and Small Business Mel Roasa Vice President, Digital and MarketingBANK OF AMERICA INSTITUTE11 March 2024 7", "relevanceScore": 0.3, "documentMetadata": { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/719bfb7c1c0cde3888debd43542aabfe", "uri": "gs://yipeiw multimodal 0827/rzilleruelo multimodal datasets/20240806/Document Understanding Evaluation Dataset/Bank of America/1odEo6QRllsURLZRDwHNruCXK9bsWmhtR.pdf", "title": "1odEo6QRllsURLZRDwHNruCXK9bsWmhtR", "pageIdentifier": "6" } } } ], "steps": [ { "state": "SUCCEEDED", "description": "Rephrase the query and search.", "actions": [ { "searchAction": { "query": "Rank generations from highest to lowest based on their spending on holiday items using cards." }, "observation": { "searchResults": [ { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/935c4e1f18ccff2b5fa51d6d00e40dc4", "uri": "gs://yipeiw multimodal 0827/rzilleruelo multimodal datasets/20240806/Document Understanding Evaluation Dataset/Bank of America/1baMNJuizoK7u3P2-gYRwpVz 46-uOhn4.pdf", "title": "1baMNJuizoK7u3P2-gYRwpVz 46-uOhn4", "snippetInfo": [ { "snippet": "## Exhibit 6: Credit and debit \u003cb\u003ecard spending\u003c/b\u003e per household on \u003cb\u003eholiday items\u003c/b\u003e by \u003cb\u003egeneration\u003c/b\u003e (index, Aug-Sep average=100 for each year, 7- day moving average) ...", "snippetStatus": "SUCCESS" } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/0b4c8cfb6f5ed9ef0df70ffcd79fe2c0", "uri": "gs://yipeiw multimodal 0827/rzilleruelo multimodal datasets/20240806/Document Understanding Evaluation Dataset/Bank of America/1pVkzcMDNAy-p7AlrE0LRlhpbbDzCNndJ.pdf", "title": "1pVkzcMDNAy-p7AlrE0LRlhpbbDzCNndJ", "snippetInfo": [ { "snippet": "Consumer \u003cb\u003espending\u003c/b\u003e finished solidly in 2023, \u003cb\u003ewith\u003c/b\u003e total \u003cb\u003ecard spending\u003c/b\u003e per household increasing by 0.2% year-over-year (YoY) in December, according to Bank of ...", "snippetStatus": "SUCCESS" } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/f8d7887862167c5daf6c7a30e1d464e0", "uri": "gs://yipeiw multimodal 0827/rzilleruelo multimodal datasets/20240806/Document Understanding Evaluation Dataset/Bank of America/1WkoquhDpqHphSnqIVKX45iers7kvmGjZ.pdf", "title": "1WkoquhDpqHphSnqIVKX45iers7kvmGjZ", "snippetInfo": [ { "snippet": "This could be due to an increasing customer \u003cb\u003ebase\u003c/b\u003e or inactive customers \u003cb\u003eusing their cards\u003c/b\u003e more frequently.
 - Ultimately, the best database for a particular use case will depend on the specific requirements of the application. \n", "steps": [ { "state": "SUCCEEDED", "description": "Rephrase the query and search.", "actions": [ { "searchAction": { "query": " What is the performance of BigQuery? " }, "observation": { "searchResults": [ { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/9ab3ef91bcfde1fcd091efe9df7c699c", "uri": "https://cloud.google.com/bigquery/docs/best-practices-performance-overview", "title": "Introduction to optimizing query performance BigQuery Google Cloud", "snippetInfo": [ { "snippet": "After a query begins execution, \u003cb\u003eBigQuery\u003c/b\u003e calculates how many slots each query stage uses based on the stage size and complexity and the number of slots ...", "snippetStatus": "SUCCESS" } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/4e545c5cb69b06b251265114d9099cb4", "uri": "https://cloud.google.com/bigquery/docs/query-insights", "title": "Get query performance insights BigQuery Google Cloud", "snippetInfo": [ { "snippet": "This document describes how to use the query execution graph to diagnose query \u003cb\u003eperformance\u003c/b\u003e issues, and to see query \u003cb\u003eperformance\u003c/b\u003e insights. \u003cb\u003eBigQuery\u003c/b\u003e offers ...", "snippetStatus": "SUCCESS" } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d34672d877eefe596f9c7d1a3d7076b1", "uri": "https://cloud.google.com/bigquery/docs/best-practices-performance-compute", "title": "Optimize query computation BigQuery Google Cloud", "snippetInfo": [ { "snippet": "After addressing the query \u003cb\u003eperformance\u003c/b\u003e insights, you can further optimize your query by performing the following tasks: Reduce data that is to be processed ...", "snippetStatus": "SUCCESS" } ] }, ... { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/75ce2f05833683e60ddc21a11ce0466f", "uri": "https://cloud.google.com/blog/products/data-analytics/troubleshoot-and-optimize-your-bigquery-analytics-queries-with-query-execution-graph/", "title": "Troubleshoot and optimize your BigQuery analytics queries with query execution graph Google Cloud Blog", "snippetInfo": [ { "snippet": "Since query \u003cb\u003eperformance\u003c/b\u003e is multi-faceted, \u003cb\u003eperformance\u003c/b\u003e insights might only provide a partial picture of the overall query \u003cb\u003eperformance\u003c/b\u003e.
 
+### Get search results \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
+- Source ID: `site-iam-reference`
+- Final score: 124
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- String searchQuery = "Google" ; search ( projectId , location , collectionId , dataStoreId , servingConfigId , searchQuery ); } / Performs a search on a given datastore. / public static void search ( String projectId , String location , String collectionId , String dataStoreId , String servingConfigId , String searchQuery ) throws IOException , ExecutionException { // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store String endpoint = ( location . equals ( "global" )) ?
+- String searchQuery = "Google" ; search ( projectId , location , collectionId , dataStoreId , servingConfigId , searchQuery ); } / Performs a search on a given datastore. / public static void search ( String projectId , String location , String collectionId , String dataStoreId , String servingConfigId , String searchQuery ) throws IOException , ExecutionException { // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store String endpoint = ( location . equals ( "global" )) ?
+- Get search results for an app with website data Console To use the Google Cloud console to preview search results for an app with website data, follow these steps: In the Google Cloud console, go to the AI Applications page.
+- To use the Google Cloud console to preview search results for an app with structured or unstructured data, follow these steps: Open the Preview page in the console.
+
 ### "Create a custom recommendations data store \_|\_ Vertex AI Search \_|\_\
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations](https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations)
 - Source ID: `site-docs-root`
-- Final score: 110
+- Final score: 114
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( "[PROJECT]" , "[LOCATION]" , "[DATA STORE]" , "[BRANCH]" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( "idField1629396127" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .
 - FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( "[PROJECT]" , "[LOCATION]" , "[DATA STORE]" , "[BRANCH]" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( "idField1629396127" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .
-- DataStoreServiceClient ; public class SyncCreateDataStore { public static void main ( String [] args ) throws Exception { syncCreateDataStore (); } public static void syncCreateDataStore () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient . create ()) { CreateDataStoreRequest request = CreateDataStoreRequest . newBuilder () . setParent ( CollectionName . of ( "[PROJECT]" , "[LOCATION]" , "[COLLECTION]" ). toString ()) . setDataStore ( DataStore . newBuilder (). build ()) . setDataStoreId ( "dataStoreId929489618" ) . setCreateAdvancedSiteSearch ( true ) . setSkipDefaultSchemaCreation ( true ) . build (); DataStore response = dataStoreServiceClient . createDataStoreAsync ( request ). get (); } } } Import documents import com.google.cloud.discoveryengine.v1.
-- DataStoreServiceClient ; public class SyncCreateDataStore { public static void main ( String [] args ) throws Exception { syncCreateDataStore (); } public static void syncCreateDataStore () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient . create ()) { CreateDataStoreRequest request = CreateDataStoreRequest . newBuilder () . setParent ( CollectionName . of ( "[PROJECT]" , "[LOCATION]" , "[COLLECTION]" ). toString ()) . setDataStore ( DataStore . newBuilder (). build ()) . setDataStoreId ( "dataStoreId929489618" ) . setCreateAdvancedSiteSearch ( true ) . setSkipDefaultSchemaCreation ( true ) . build (); DataStore response = dataStoreServiceClient . createDataStoreAsync ( request ). get (); } } } Import documents import com.google.cloud.discoveryengine.v1.
+- Note: If you are importing structured data and want to specify a schema instead of letting Vertex AI auto-detect the schema for you, do the steps in Provide your own schema as a JSON object and then begin the following procedure at step 2.
+- Console To use the Google Cloud console to create a connector that periodically syncs data from a BigQuery dataset to Vertex AI Search, follow these steps: In the Google Cloud console, go to the AI Applications page.
 

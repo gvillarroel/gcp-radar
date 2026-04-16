@@ -1,31 +1,17 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T20:12:18+00:00'
-updated_at: '2026-04-09T15:40:43+00:00'
+updated_at: '2026-04-13T17:13:36+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
   export: know export --key corpus
 sources:
 - type: site
-  id: site-docs-root
-  title: https://docs.cloud.google.com/access-context-manager/docs/concepts
-  created_at: '2026-04-09T15:36:37+00:00'
-  updated_at: '2026-04-09T15:38:17+00:00'
-  update_command: know sync site https://docs.cloud.google.com/access-context-manager/docs/concepts
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-root
-  config:
-    url: https://docs.cloud.google.com/access-context-manager/docs/concepts
-    max_depth: 1
-    max_pages: 30
-    compact_output: true
-  last_synced_at: '2026-04-09T15:38:17+00:00'
-- type: site
   id: site-api-reference
   title: https://docs.cloud.google.com/access-context-manager/docs/reference/rest
   created_at: '2026-04-09T15:36:38+00:00'
-  updated_at: '2026-04-09T15:39:30+00:00'
+  updated_at: '2026-04-13T17:10:44+00:00'
   update_command: know sync site https://docs.cloud.google.com/access-context-manager/docs/reference/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
@@ -34,12 +20,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-09T15:39:30+00:00'
+  last_synced_at: '2026-04-13T17:10:44+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/access-context-manager/docs/overview
   created_at: '2026-04-09T15:36:39+00:00'
-  updated_at: '2026-04-09T15:40:43+00:00'
+  updated_at: '2026-04-13T17:11:57+00:00'
   update_command: know sync site https://docs.cloud.google.com/access-context-manager/docs/overview
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -48,4 +34,46 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-09T15:40:43+00:00'
+  last_synced_at: '2026-04-13T17:11:57+00:00'
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/access-context-manager/docs
+  created_at: '2026-04-13T17:08:28+00:00'
+  updated_at: '2026-04-13T17:09:30+00:00'
+  update_command: know sync site https://docs.cloud.google.com/access-context-manager/docs
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/access-context-manager/docs
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-13T17:09:30+00:00'
+- type: site
+  id: site-python-reference
+  title: https://googleapis.dev/python/accesscontextmanager/latest
+  created_at: '2026-04-13T17:08:28+00:00'
+  updated_at: '2026-04-13T17:12:19+00:00'
+  update_command: know sync site https://googleapis.dev/python/accesscontextmanager/latest
+    --key corpus --compact
+  delete_command: know del --key corpus site-python-reference
+  config:
+    url: https://googleapis.dev/python/accesscontextmanager/latest
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-13T17:12:19+00:00'
+- type: site
+  id: site-api-reference-required-2
+  title: https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage
+  created_at: '2026-04-13T17:08:28+00:00'
+  updated_at: '2026-04-13T17:13:36+00:00'
+  update_command: know sync site https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-13T17:13:36+00:00'

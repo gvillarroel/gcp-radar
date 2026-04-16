@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:51:31.495Z",
+  "generated_at": "2026-04-12T21:40:25.477Z",
   "product_name": "Cloud Tasks",
   "product_slug": "cloud-tasks",
   "step02_source_path": "data/step-02/current/cloud-tasks.md",
@@ -8,6 +8,120 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 12,
+    "source_row_count": 18,
+    "top_phrases": [
+      "cloud tasks integrates with organization policy constraints to help enforce cmek usage across an organization",
+      "cloud tasks resources can be discovered and managed through cloud asset inventory",
+      "cloud tasks supports customer managed encryption keys for protecting service data",
+      "cloud tasks supports vpc service controls for service perimeter protection",
+      "cloud tasks supports dispatching tasks to http endpoints",
+      "internal ingress to cloud run and cloud functions",
+      "cmek organization policy constraints integration",
+      "queue tombstone retention period configuration",
+      "resource location organization policy support",
+      "queue task retention period configuration",
+      "cloud asset inventory support",
+      "vpc service controls support",
+      "regional availability",
+      "buffertask api",
+      "http targets",
+      "cloud tasks lets queues configure how long task tombstones are retained for de duplication with the tombstonettl field",
+      "cloud tasks lets queues define routing for http target tasks so individual tasks do not need routing configuration",
+      "cloud tasks supports resource location organization policies to control allowed deployment locations",
+      "cloud tasks provides the buffertask method to create tasks by sending an http request to a queue",
+      "cloud tasks lets queues configure the maximum retention time for tasks with the taskttl field",
+      "cloud tasks supports internal ingress when invoking cloud run and cloud functions targets",
+      "customer managed encryption keys",
+      "queue level http target routing",
+      "level http target routing",
+      "managed encryption keys"
+    ],
+    "top_tokens": [
+      "cloud",
+      "tasks",
+      "for",
+      "supports",
+      "queue",
+      "configuration",
+      "http",
+      "lets",
+      "queues",
+      "support",
+      "the",
+      "with",
+      "and",
+      "configure",
+      "field",
+      "managed",
+      "organization",
+      "period",
+      "policy",
+      "retention",
+      "service",
+      "targets",
+      "task",
+      "across",
+      "additional",
+      "allowed",
+      "api",
+      "are",
+      "asset",
+      "availability",
+      "available",
+      "buffertask",
+      "can",
+      "cmek",
+      "constraints",
+      "control",
+      "controls",
+      "create",
+      "customer",
+      "data",
+      "define",
+      "deployment",
+      "discovered",
+      "dispatching",
+      "duplication",
+      "encryption",
+      "endpoints",
+      "enforce",
+      "functions",
+      "google",
+      "help",
+      "how",
+      "individual",
+      "ingress",
+      "integrates",
+      "integration",
+      "internal",
+      "inventory",
+      "invoking",
+      "keys",
+      "level",
+      "location",
+      "locations",
+      "long",
+      "maximum",
+      "method",
+      "need",
+      "not",
+      "perimeter",
+      "policies",
+      "protecting",
+      "protection",
+      "provides",
+      "regional",
+      "regions",
+      "request",
+      "resource",
+      "resources",
+      "retained",
+      "routing"
+    ],
+    "inventory_profile": "api_heavy"
+  },
   "dominant_doc_family": "tasks",
   "dominant_python_slug": "cloudtasks",
   "dominant_java_slug": "google-cloud-tasks",
@@ -78,6 +192,20 @@
     },
     {
       "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud Tasks\" \"cloud tasks integrates with organization policy constraints to help enforce cmek usage across an organization\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud Tasks\" \"cloud tasks supports vpc service controls for service perimeter protection\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Cloud Tasks\" \"roles and permissions\"",
       "official_result_count": 1,
@@ -109,15 +237,15 @@
           "rank": 2
         },
         {
-          "title": "Class CloudTasksClient (2.80.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2beta2.CloudTasksClient",
-          "description": "Service Description: Cloud Tasks <strong>allows developers to manage the execution of background work in their applications</strong>.",
-          "rank": 3
-        },
-        {
           "title": "Class Task.Builder (2.85.0) | Java client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2beta3.Task.Builder",
           "description": "The time that the task was created. create_time will be truncated to the nearest second. ... Output only. The number of attempts dispatched. This count includes attempts which have been dispatched but haven&#x27;t received a response. ... The deadline for requests sent to the worker. If the worker does not respond by this deadline then the request is cancelled and the attempt is marked as a DEADLINE_EXCEEDED failure. <strong>Cloud Tasks</strong> will retry the task according to the RetryConfig.",
+          "rank": 3
+        },
+        {
+          "title": "Class CloudTasksClient (2.80.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2beta2.CloudTasksClient",
+          "description": "Service Description: Cloud Tasks <strong>allows developers to manage the execution of background work in their applications</strong>.",
           "rank": 4
         },
         {
@@ -165,27 +293,27 @@
           "rank": 4
         },
         {
-          "title": "Create HTTP tasks | Cloud Tasks | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/tasks/docs/samples/cloud-tasks-create-http-task?hl=en",
-          "description": "Creates tasks to send to a Cloud Run, Cloud Function, or external URL.",
-          "rank": 5
-        },
-        {
           "title": "Cloud Tasks release notes | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/tasks/docs/release-notes",
           "description": "You can now create tasks by sending an HTTP request to your queue. To learn more, read about the new BufferTask method to Create tasks. This feature is in Preview. ... Support for resource location organization policies for Cloud Tasks is now at General Availability.",
-          "rank": 6
+          "rank": 5
         },
         {
-          "title": "Package cloud_tasks (2.21.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks",
-          "description": "Cloud Tasks allows developers to manage the execution of background work in their applications. API documentation for tasks_v2.services.cloud_tasks.pagers module.",
-          "rank": 7
+          "title": "Create HTTP tasks | Cloud Tasks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/tasks/docs/samples/cloud-tasks-create-http-task",
+          "description": "Creates tasks to send to a Cloud Run, Cloud Function, or external URL.",
+          "rank": 6
         },
         {
           "title": "Cloud Tasks client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/tasks/docs/reference/libraries",
           "description": "This page shows how to get started with the Cloud Client Libraries for the Cloud Tasks API. Client libraries make it easier to access Google Cloud APIs from a supported language.",
+          "rank": 7
+        },
+        {
+          "title": "Trigger Cloud Run functions using Cloud Tasks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/tasks/docs/tutorial-gcf",
+          "description": "Second generation (2nd gen) functions: set the role to Cloud Run Invoker · Click SAVE. Create a queue using the following gcloud command: gcloud tasks queues create my-queue --location=LOCATION",
           "rank": 8
         }
       ]
@@ -267,14 +395,14 @@
       "official_result_count": 8,
       "results": [
         {
-          "title": "Buffer HTTP requests with Cloud Tasks | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/cloud-easy-http-cloud-tasks",
-          "description": "Create a queue with a routing configuration with HTTP URI override to the second Cloud Run service. QUEUE2=http-queue-uri-override gcloud beta tasks queues create $QUEUE2 \\ --http-uri-override=host:$SERVICE2_HOST \\ --location=$LOCATION · Note that the URI override refers to the second Cloud ...",
+          "title": "cloudtasks: Google.Apis.CloudTasks.v2beta3.Data.AppEngineHttpRequest Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta3/csharp/latest/classGoogle_1_1Apis_1_1CloudTasks_1_1v2beta3_1_1Data_1_1AppEngineHttpRequest.html",
+          "description": "Headers can be set when the task is created. Repeated headers are not supported but a header value can contain commas. ... User-Agent: By default, this header is &quot;AppEngine-Google; (+http://code.google.com/appengine)&quot;. This header can be modified, but Cloud Tasks will append &quot;AppEngine-Google; (+http://code.google.com/appengine)&quot; to the modified User-Agent.",
           "rank": 1
         },
         {
-          "title": "cloudtasks: Google.Apis.CloudTasks.v2beta3.Data.AppEngineHttpRequest Class Reference",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta3/csharp/latest/classGoogle_1_1Apis_1_1CloudTasks_1_1v2beta3_1_1Data_1_1AppEngineHttpRequest.html",
+          "title": "cloudtasks: Google.Apis.CloudTasks.v2beta2.Data.AppEngineHttpRequest Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta2/csharp/latest/classGoogle_1_1Apis_1_1CloudTasks_1_1v2beta2_1_1Data_1_1AppEngineHttpRequest.html",
           "description": "Headers can be set when the task is created. Repeated headers are not supported but a header value can contain commas. ... User-Agent: By default, this header is &quot;AppEngine-Google; (+http://code.google.com/appengine)&quot;. This header can be modified, but Cloud Tasks will append &quot;AppEngine-Google; (+http://code.google.com/appengine)&quot; to the modified User-Agent.",
           "rank": 2
         },
@@ -285,9 +413,9 @@
           "rank": 3
         },
         {
-          "title": "cloudtasks: Google.Apis.CloudTasks.v2beta2.Data.AppEngineHttpRequest Class Reference",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta2/csharp/latest/classGoogle_1_1Apis_1_1CloudTasks_1_1v2beta2_1_1Data_1_1AppEngineHttpRequest.html",
-          "description": "Headers can be set when the task is created. Repeated headers are not supported but a header value can contain commas. ... User-Agent: By default, this header is &quot;AppEngine-Google; (+http://code.google.com/appengine)&quot;. This header can be modified, but Cloud Tasks will append &quot;AppEngine-Google; (+http://code.google.com/appengine)&quot; to the modified User-Agent.",
+          "title": "Buffer HTTP requests with Cloud Tasks | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-easy-http-cloud-tasks",
+          "description": "Create a queue with a routing configuration with HTTP URI override to the second Cloud Run service. QUEUE2=http-queue-uri-override gcloud beta tasks queues create $QUEUE2 \\ --http-uri-override=host:$SERVICE2_HOST \\ --location=$LOCATION · Note that the URI override refers to the second Cloud ...",
           "rank": 4
         },
         {
@@ -315,6 +443,20 @@
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud Tasks\" \"cloud tasks resources can be discovered and managed through cloud asset inventory\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud Tasks\" \"cloud tasks supports dispatching tasks to http endpoints\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 2,
@@ -399,9 +541,9 @@
           "rank": 3
         },
         {
-          "title": "Package google.cloud.tasks.v2 | Cloud Tasks | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/tasks/docs/reference/rpc/google.cloud.tasks.v2",
-          "description": "503 (Service Unavailable) is considered ... cause Cloud Tasks&#x27; traffic congestion control to temporarily throttle the queue&#x27;s dispatches. Unlike other types of task targets, a 429 (Too Many Requests) response from an app handler does not cause traffic congestion control to throttle the queue. App Engine Routing. Defines routing characteristics specific to App Engine - service, version, and instance. For more information about services, versions, and instances see An Overview of App Engine, ...",
+          "title": "Queue workflow executions using Cloud Tasks | Workflows | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/workflows/docs/create-http-task",
+          "description": "You can use Cloud Tasks to queue a workflow and execute it asynchronously.",
           "rank": 4
         },
         {
@@ -411,9 +553,9 @@
           "rank": 5
         },
         {
-          "title": "Queue workflow executions using Cloud Tasks | Workflows | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/workflows/docs/create-http-task",
-          "description": "You can use Cloud Tasks to queue a workflow and execute it asynchronously.",
+          "title": "Package google.cloud.tasks.v2 | Cloud Tasks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/tasks/docs/reference/rpc/google.cloud.tasks.v2",
+          "description": "503 (Service Unavailable) is considered an App Engine system error instead of an application error and will cause Cloud Tasks&#x27; traffic congestion control to temporarily throttle the queue&#x27;s dispatches. Unlike other types of task targets, a 429 (Too Many Requests) response from an app handler does not cause traffic congestion control to throttle the queue. App Engine Routing. Defines routing characteristics specific to App Engine - service, version, and instance. For more information about services, versions, and instances see An Overview of App Engine, Microservices Architecture on Google App Engine, App Engine Standard request routing, and App Engine Flex request routing.",
           "rank": 6
         },
         {
@@ -506,7 +648,7 @@
         },
         {
           "title": "Create HTTP tasks | Cloud Tasks | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/tasks/docs/samples/cloud-tasks-create-http-task?hl=en",
+          "url": "https://docs.cloud.google.com/tasks/docs/samples/cloud-tasks-create-http-task",
           "description": "To learn how to install and use the client library for Cloud Tasks, see Cloud Tasks client libraries. For more information, see the Cloud Tasks Node.js API reference documentation.",
           "rank": 4
         },
@@ -543,15 +685,15 @@
       "official_result_count": 8,
       "results": [
         {
-          "title": "Buffer HTTP requests with Cloud Tasks | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/cloud-easy-http-cloud-tasks",
-          "description": "The offloaded task is added to a queue, which persists the task until it is successfully executed or gets a failure. Based on the configuration, the queue can also act as a dispatch flow control. You create and configure the queue which is then managed by the Cloud Tasks service.",
-          "rank": 1
-        },
-        {
           "title": "Task (Cloud Tasks API v2beta3 (Rev. 33) 1.25.0)",
           "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta3/java/latest/com/google/api/services/cloudtasks/v2beta3/model/Task.html",
           "description": "The deadline must be in the interval [15 seconds, 30 minutes]. * For App Engine tasks, 0 indicates that the request has the default deadline. The default deadline depends on the [scaling type](https://cloud.google.com/appengine/docs/standard/go /how-instances-are-managed#instance_scaling) of the service: 10 minutes for standard apps with automatic scaling, 24 hours for standard apps with manual and basic scaling, and 60 minutes for flex apps.",
+          "rank": 1
+        },
+        {
+          "title": "Buffer HTTP requests with Cloud Tasks | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-easy-http-cloud-tasks",
+          "description": "The offloaded task is added to a queue, which persists the task until it is successfully executed or gets a failure. Based on the configuration, the queue can also act as a dispatch flow control. You create and configure the queue which is then managed by the Cloud Tasks service.",
           "rank": 2
         },
         {
@@ -573,15 +715,15 @@
           "rank": 5
         },
         {
-          "title": "CloudTasks.Projects.Locations.Queues.Tasks.List (Cloud Tasks API v2beta2 (Rev. 90) 1.25.0)",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta2/java/latest/com/google/api/services/cloudtasks/v2beta2/CloudTasks.Projects.Locations.Queues.Tasks.List.html",
-          "description": "The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks...",
-          "rank": 6
-        },
-        {
           "title": "CloudTasks.Projects (Cloud Tasks API v2beta3 (Rev. 33) 1.25.0)",
           "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta3/java/latest/com/google/api/services/cloudtasks/v2beta3/CloudTasks.Projects.html",
           "description": "CloudTasks cloudtasks = new CloudTasks(...); CloudTasks.Locations.List request = cloudtasks.locations().list(parameters ...) Returns: the resource collection · Skip navigation links · Overview · Package · Class · Use · Tree · Deprecated · Index · Help ·",
+          "rank": 6
+        },
+        {
+          "title": "CloudTasks.Projects.Locations.Queues.Tasks.List (Cloud Tasks API v2beta2 (Rev. 90) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta2/java/latest/com/google/api/services/cloudtasks/v2beta2/CloudTasks.Projects.Locations.Queues.Tasks.List.html",
+          "description": "The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks...",
           "rank": 7
         },
         {
@@ -591,6 +733,20 @@
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud Tasks\" \"cloud tasks supports customer managed encryption keys for protecting service data\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud Tasks\" \"internal ingress to cloud run and cloud functions\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 3,
@@ -730,9 +886,9 @@
           "rank": 7
         },
         {
-          "title": "Types for Cloud Tasks API Client — google-cloud-tasks 0.1.0 documentation",
-          "url": "https://googleapis.dev/python/cloudtasks/1.1.0/gapic/v2beta3/types.html",
-          "description": "If response_time is unset, then the task has not been attempted or is currently running and the response_status field is meaningless. ... Associates members with a role. ... Role that is assigned to members. For example, roles/viewer, roles/editor, or roles/owner. Required ... Specifies the identities requesting access for a Cloud ...",
+          "title": "Client for Cloud Tasks API — google-cloud-tasks 0.1.0 documentation",
+          "url": "https://googleapis.dev/python/cloudtasks/1.2.0/gapic/v2beta2/api.html",
+          "description": "The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires cloudtasks.tasks.fullView Google IAM &lt;https://cloud.google.com/iam/&gt;`___ permission on the ``Task` resource.",
           "rank": 8
         }
       ]
@@ -760,6 +916,19 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "with",
+          "and",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -770,6 +939,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "with",
+          "and",
+          "task"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -797,6 +975,21 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "lets",
+          "the",
+          "and",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -806,7 +999,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "lets",
+          "the",
+          "and",
+          "task"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -834,6 +1038,18 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -844,6 +1060,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "task"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -854,7 +1078,7 @@
       "title": "Cloud Tasks client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/tasks/docs/reference/libraries",
       "description": "This page shows how to get started with the Cloud Client Libraries for the Cloud Tasks API. Client libraries make it easier to access Google Cloud APIs from a supported language.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Tasks\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud Tasks\" Google Cloud docs overview",
@@ -871,6 +1095,21 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "support",
+          "the",
+          "with",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -881,6 +1120,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "support",
+          "the",
+          "with",
+          "task"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -906,6 +1156,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "with",
+          "and"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -916,6 +1181,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "with",
+          "and"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -941,6 +1217,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api",
+          "are"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -951,6 +1242,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api",
+          "are"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -959,9 +1261,9 @@
     },
     {
       "title": "Create HTTP tasks | Cloud Tasks | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/tasks/docs/samples/cloud-tasks-create-http-task?hl=en",
+      "url": "https://docs.cloud.google.com/tasks/docs/samples/cloud-tasks-create-http-task",
       "description": "Creates tasks to send to a Cloud Run, Cloud Function, or external URL.",
-      "rank": 5,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Tasks\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud Tasks\" \"API reference\""
@@ -977,6 +1279,18 @@
       "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "task",
+          "create"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -987,6 +1301,76 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "task",
+          "create"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Trigger Cloud Run functions using Cloud Tasks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/tasks/docs/tutorial-gcf",
+      "description": "Second generation (2nd gen) functions: set the role to Cloud Run Invoker · Click SAVE. Create a queue using the following gcloud command: gcloud tasks queues create my-queue --location=LOCATION",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Tasks\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud Tasks\" \"access control\""
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "and",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "and",
+          "task"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1012,6 +1396,20 @@
       "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 17,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1022,6 +1420,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task",
+          "available"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1032,7 +1440,7 @@
       "title": "Class Task.Builder (2.85.0) | Java client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2beta3.Task.Builder",
       "description": "The time that the task was created. create_time will be truncated to the nearest second. ... Output only. The number of attempts dispatched. This count includes attempts which have been dispatched but haven&#x27;t received a response. ... The deadline for requests sent to the worker. If the worker does not respond by this deadline then the request is cancelled and the attempt is marked as a DEADLINE_EXCEEDED failure. <strong>Cloud Tasks</strong> will retry the task according to the RetryConfig.",
-      "rank": 4,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Cloud Tasks\"",
         "site:docs.cloud.google.com \"Cloud Tasks\" \"Java client libraries\""
@@ -1047,6 +1455,21 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task",
+          "are"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1057,6 +1480,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task",
+          "are"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1084,6 +1518,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
@@ -1094,6 +1543,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1119,6 +1579,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -1129,6 +1604,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1142,12 +1628,10 @@
       "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Cloud Tasks\"",
-        "site:docs.cloud.google.com \"Cloud Tasks\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud Tasks\" \"Python client libraries\""
       ],
       "intent_hits": [
-        "python_client",
-        "product_docs"
+        "python_client"
       ],
       "round_hits": [
         1,
@@ -1156,6 +1640,19 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1166,6 +1663,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1191,6 +1697,19 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1201,6 +1720,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1226,6 +1754,19 @@
       "best_rank": 5,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1236,6 +1777,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1261,6 +1811,21 @@
       "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "managed"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1270,7 +1835,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "managed"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1293,9 +1869,24 @@
         1,
         2
       ],
-      "best_rank": 4,
+      "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "support",
+          "the",
+          "task",
+          "api",
+          "are"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1305,7 +1896,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "support",
+          "the",
+          "task",
+          "api",
+          "are"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1331,6 +1933,19 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "service",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1340,7 +1955,16 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "service",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1363,9 +1987,24 @@
         1,
         2
       ],
-      "best_rank": 2,
+      "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "support",
+          "the",
+          "task",
+          "api",
+          "are"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1375,7 +2014,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "support",
+          "the",
+          "task",
+          "api",
+          "are"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1401,6 +2051,19 @@
       "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "service",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1410,7 +2073,16 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "service",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1433,9 +2105,24 @@
         1,
         3
       ],
-      "best_rank": 2,
+      "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "managed"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1445,7 +2132,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "managed"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1471,6 +2169,20 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1481,6 +2193,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1506,6 +2228,21 @@
       "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "the",
+          "and",
+          "task",
+          "can"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1515,7 +2252,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "the",
+          "and",
+          "task",
+          "can"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1541,6 +2289,21 @@
       "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 44,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1550,7 +2313,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1574,6 +2348,21 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "service"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1583,7 +2372,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "service"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1607,6 +2407,21 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "configure",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1616,7 +2431,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "configure",
+          "task"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1640,6 +2466,20 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "task",
+          "api",
+          "create"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1649,7 +2489,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "task",
+          "api",
+          "create"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1673,6 +2523,21 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -1683,6 +2548,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "task",
+          "api"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1706,6 +2582,21 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "and"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1716,6 +2607,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "and"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1725,8 +2627,8 @@
     {
       "title": "Package google.cloud.tasks.v2 | Cloud Tasks | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/tasks/docs/reference/rpc/google.cloud.tasks.v2",
-      "description": "503 (Service Unavailable) is considered ... cause Cloud Tasks&#x27; traffic congestion control to temporarily throttle the queue&#x27;s dispatches. Unlike other types of task targets, a 429 (Too Many Requests) response from an app handler does not cause traffic congestion control to throttle the queue. App Engine Routing. Defines routing characteristics specific to App Engine - service, version, and instance. For more information about services, versions, and instances see An Overview of App Engine, ...",
-      "rank": 4,
+      "description": "503 (Service Unavailable) is considered an App Engine system error instead of an application error and will cause Cloud Tasks&#x27; traffic congestion control to temporarily throttle the queue&#x27;s dispatches. Unlike other types of task targets, a 429 (Too Many Requests) response from an app handler does not cause traffic congestion control to throttle the queue. App Engine Routing. Defines routing characteristics specific to App Engine - service, version, and instance. For more information about services, versions, and instances see An Overview of App Engine, Microservices Architecture on Google App Engine, App Engine Standard request routing, and App Engine Flex request routing.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Tasks\" Google Cloud docs overview"
       ],
@@ -1736,9 +2638,24 @@
       "round_hits": [
         2
       ],
-      "best_rank": 4,
+      "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "and",
+          "service"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1748,7 +2665,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "and",
+          "service"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1759,7 +2687,7 @@
       "title": "Cloud Tasks release notes | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/tasks/docs/release-notes",
       "description": "You can now create tasks by sending an HTTP request to your queue. To learn more, read about the new BufferTask method to Create tasks. This feature is in Preview. ... Support for resource location organization policies for Cloud Tasks is now at General Availability.",
-      "rank": 6,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Tasks\" Google Cloud documentation"
       ],
@@ -1769,19 +2697,45 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "support",
+          "the",
+          "organization"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "support",
+          "the",
+          "organization"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1805,6 +2759,21 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1814,7 +2783,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1838,6 +2818,21 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1847,7 +2842,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "task"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1871,6 +2877,21 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1880,7 +2901,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "with",
+          "and",
+          "task"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1904,6 +2936,20 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1913,41 +2959,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Trigger Cloud Run functions using Cloud Tasks | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/tasks/docs/tutorial-gcf",
-      "description": "Note: You can manage Cloud Run functions from both the Firebase and Google Cloud console. Writing and deploying from the FirebaseUI can be replicated; however the function code needs to match the Firebase functions framework. Learn more about getting started with Firebase functions and HTTP triggers. Set access control for the function to only allow authenticated users.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Tasks\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1970,6 +2993,23 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "customer managed encryption keys"
+        ],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1979,7 +3019,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "customer managed encryption keys"
+        ],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service",
+          "task"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2003,6 +3056,19 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2013,6 +3079,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2036,6 +3111,20 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 17,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2046,6 +3135,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task",
+          "available"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2056,7 +3155,7 @@
       "title": "Class CloudTasksClient (2.80.0) | Java client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2beta2.CloudTasksClient",
       "description": "Service Description: Cloud Tasks <strong>allows developers to manage the execution of background work in their applications</strong>.",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Cloud Tasks\""
       ],
@@ -2066,9 +3165,22 @@
       "round_hits": [
         1
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2079,6 +3191,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2102,6 +3223,19 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "field",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2112,6 +3246,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "field",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2135,6 +3278,19 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2145,6 +3301,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2168,6 +3333,20 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 17,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "with",
+          "and",
+          "task",
+          "can"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2178,6 +3357,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "with",
+          "and",
+          "task",
+          "can"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2201,6 +3390,21 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "and",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2211,6 +3415,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "and",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2234,6 +3449,21 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "and",
+          "service"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2244,6 +3474,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "and",
+          "service"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2267,6 +3508,21 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "and",
+          "configure"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2277,6 +3533,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "and",
+          "configure"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2300,6 +3567,19 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2310,6 +3590,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2320,7 +3609,7 @@
       "title": "CloudTasks.Projects.Locations.Queues.Tasks.List (Cloud Tasks API v2beta2 (Rev. 90) 1.25.0)",
       "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta2/java/latest/com/google/api/services/cloudtasks/v2beta2/CloudTasks.Projects.Locations.Queues.Tasks.List.html",
       "description": "The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks...",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:developers.google.com \"Cloud Tasks\" overview OR site:developers.google.com \"cloud tasks\" overview"
       ],
@@ -2330,9 +3619,24 @@
       "round_hits": [
         3
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "service"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2342,7 +3646,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "service"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2366,6 +3681,17 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2376,6 +3702,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2399,6 +3732,17 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2409,6 +3753,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2416,9 +3767,9 @@
       "keep": false
     },
     {
-      "title": "Types for Cloud Tasks API Client — google-cloud-tasks 0.1.0 documentation",
-      "url": "https://googleapis.dev/python/cloudtasks/1.1.0/gapic/v2beta3/types.html",
-      "description": "If response_time is unset, then the task has not been attempted or is currently running and the response_status field is meaningless. ... Associates members with a role. ... Role that is assigned to members. For example, roles/viewer, roles/editor, or roles/owner. Required ... Specifies the identities requesting access for a Cloud ...",
+      "title": "Client for Cloud Tasks API — google-cloud-tasks 0.1.0 documentation",
+      "url": "https://googleapis.dev/python/cloudtasks/1.2.0/gapic/v2beta2/api.html",
+      "description": "The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires cloudtasks.tasks.fullView Google IAM &lt;https://cloud.google.com/iam/&gt;`___ permission on the ``Task` resource.",
       "rank": 8,
       "query_hits": [
         "site:googleapis.dev/python \"Cloud Tasks\""
@@ -2432,17 +3783,43 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "task",
+          "api",
+          "data"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "iam_reference",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "task",
+          "api",
+          "data"
+        ],
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -2465,6 +3842,21 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2474,7 +3866,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2498,6 +3901,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -2508,11 +3926,22 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
-      "keep": false
+      "keep": true
     },
     {
       "title": "google.cloud.tasks_v2.types.cloudtasks — google-cloud-tasks documentation",
@@ -2531,6 +3960,21 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2541,6 +3985,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "with"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2564,6 +4019,21 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2574,6 +4044,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2597,6 +4078,20 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2607,6 +4102,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2630,6 +4135,20 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2640,6 +4159,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "service",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2663,6 +4192,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -2672,7 +4216,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2696,6 +4251,21 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2705,7 +4275,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "managed",
+          "service"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2729,6 +4310,21 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "service",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2738,7 +4334,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "service",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2762,6 +4369,18 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "task"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2772,6 +4391,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "http",
+          "the",
+          "task"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2795,20 +4422,46 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 44,
-      "deterministic_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "task",
+          "api",
+          "create"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 92,
+        "score": 100,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "task",
+          "api",
+          "create"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 83,
+      "final_score": 90,
       "keep": false
     },
     {
@@ -2828,20 +4481,46 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 44,
-      "deterministic_score": 89,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 97,
       "api_score": {
         "classification": "supporting_page",
-        "score": 89,
+        "score": 97,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 4,
+        "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "and",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 81,
+      "final_score": 87,
       "keep": false
     },
     {
@@ -2861,53 +4540,46 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 44,
-      "deterministic_score": 86,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "task",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 94,
       "api_score": {
         "classification": "supporting_page",
-        "score": 86,
+        "score": 94,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 4,
+        "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "the",
+          "task",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 78,
-      "keep": false
-    },
-    {
-      "title": "cloudtasks: Google.Apis.CloudTasks.v2beta2.Data.CreateTaskRequest Class Reference",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta2/csharp/latest/classGoogle_1_1Apis_1_1CloudTasks_1_1v2beta2_1_1Data_1_1CreateTaskRequest.html",
-      "description": "Google.Apis.CloudTasks.v2beta2.Data.CreateTaskRequest Class Reference · Request message for CreateTask. More... Inheritance diagram for Google.Apis.CloudTasks.v2beta2.Data.CreateTaskRequest: Request message for CreateTask. The ETag of the item. The response_view specifies which subset of the Task will be returned.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Cloud Tasks\" reference OR site:developers.google.com \"cloud tasks\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 83,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 83,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 4,
-        "product_match": 4,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 76,
+      "final_score": 85,
       "keep": false
     },
     {
@@ -2927,20 +4599,105 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 44,
-      "deterministic_score": 84,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 92,
       "api_score": {
         "classification": "supporting_page",
-        "score": 84,
+        "score": 92,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 4,
+        "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "queue",
+          "http",
+          "queues",
+          "the",
+          "with"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 76,
+      "final_score": 83,
+      "keep": false
+    },
+    {
+      "title": "cloudtasks: Google.Apis.CloudTasks.v2beta2.Data.CreateTaskRequest Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtasks/v2beta2/csharp/latest/classGoogle_1_1Apis_1_1CloudTasks_1_1v2beta2_1_1Data_1_1CreateTaskRequest.html",
+      "description": "Google.Apis.CloudTasks.v2beta2.Data.CreateTaskRequest Class Reference · Request message for CreateTask. More... Inheritance diagram for Google.Apis.CloudTasks.v2beta2.Data.CreateTaskRequest: Request message for CreateTask. The ETag of the item. The response_view specifies which subset of the Task will be returned.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Tasks\" reference OR site:developers.google.com \"cloud tasks\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 44,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "task",
+          "api",
+          "create"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 91,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 91,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 4,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "tasks",
+          "for",
+          "http",
+          "the",
+          "task",
+          "api",
+          "create"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 82,
       "keep": false
     }
   ]

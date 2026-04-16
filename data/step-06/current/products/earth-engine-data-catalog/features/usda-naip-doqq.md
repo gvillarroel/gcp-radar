@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:59.131Z"
+generated_at: "2026-04-14T15:13:20.374Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "USDA/NAIP/DOQQ"
 feature_slug: "usda-naip-doqq"
 latest_feature_date: "2014-07-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://developers.google.com/earth-engine/datasets/catalog/USDA_NAIP_DOQQ"
   - "https://developers.google.com/earth-engine/datasets/catalog"
-  - "https://developers.google.com/earth-engine/datasets/tags/agriculture"
-  - "https://developers.google.com/earth-engine/datasets/tags/fire"
+  - "https://developers.google.com/earth-engine/datasets/tags/satellite-imagery"
 keywords:
   - "usda"
   - "naip"
   - "doqq"
-  - "this"
   - "dataset"
   - "provides"
   - "orthorectified"
   - "aerial"
+  - "imagery"
 ---
 
 # USDA/NAIP/DOQQ
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ This dataset provides NAIP orthorectified aerial imagery.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://developers.google.com/earth-engine/datasets/catalog/USDA_NAIP_DOQQ](https://developers.google.com/earth-engine/datasets/catalog/USDA_NAIP_DOQQ)
 - [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- [https://developers.google.com/earth-engine/datasets/tags/agriculture](https://developers.google.com/earth-engine/datasets/tags/agriculture)
-- [https://developers.google.com/earth-engine/datasets/tags/fire](https://developers.google.com/earth-engine/datasets/tags/fire)
+- [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 
 ## Supporting Pages
+
+### NAIP: National Agriculture Imagery Program | Earth Engine Data Catalog | Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/datasets/catalog/USDA_NAIP_DOQQ](https://developers.google.com/earth-engine/datasets/catalog/USDA_NAIP_DOQQ)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 313
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Dataset Availability 2002-06-15T00:00:00Z–2023-11-17T00:00:00Z Dataset Producer USDA Farm Production and Conservation - Business Center, Geospatial Enterprise Operations Earth Engine Snippet ee.ImageCollection("USDA/NAIP/DOQQ") open_in_new Tags agriculture highres imagery orthophotos usda aerial fpac naip Description The National Agriculture Imagery Program (NAIP) acquires aerial imagery during the agricultural growing seasons in the continental U.S.
+- 2008 was a transition year, and a … USDA/NAIP/DOQQ, agriculture,highres,imagery,orthophotos,usda 2002-06-15T00:00:00Z/2023-11-17T00:00:00Z 24.42 -124.84 49.72 -64.82 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] GitHub Earth Engine on GitHub Medium Follow our blog on Medium GIS Stack Exchange Ask questions using the google-earth-engine tag Twitter Follow @googleearth on Twitter Videos Earth Engine on YouTube Connect Blog Bluesky Instagram LinkedIn X (Twitter) YouTube Programs Google Developer Program Google Developer Groups Google Developer Experts Accelerators Google Cloud & NVIDIA Developer consoles Google API Console Google Cloud Platform Console Google Play Console Firebase Console Actions on Google Console Cast SDK Developer Console Chrome Web Store Dashboard Google Home Developer Console Android Chrome Firebase Google Cloud Platform Google AI All products Terms Privacy Manage cookies English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어
+- ImageCollection ( 'USDA/NAIP/DOQQ' ) . filter ( ee .
+- Filter . date ( '2017-01-01' , '2018-12-31' )); var trueColor = dataset . select ([ 'R' , 'G' , 'B' ]); var trueColorVis = { min : 0 , max : 255 , }; Map . setCenter ( - 73.9958 , 40.7278 , 15 ); Map . addLayer ( trueColor , trueColorVis , 'True Color' ); Open in Code Editor NAIP: National Agriculture Imagery Program The National Agriculture Imagery Program (NAIP) acquires aerial imagery during the agricultural growing seasons in the continental U.S.
 
 ### Earth Engine Data Catalog \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 150
+- Final score: 158
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Digital orthophotos are digitally corrected aerial photos and show all objects that are visible from the air at the time of recording in … orthophotos Brazil Forest Imagery Dataset 2008: Analytic Basemap This dataset provides up to a 10-meter resolution multispectral (green, red, and near-infrared) basemap of Brazil, primarily captured in 2008, to support implementation of the Brazil Forest Code.
-- 2012) and across two of the four greenhouse … cag climate cmip5 gddp geophysical ipcc NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Africa This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Americas This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Asia This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NLCD 2019: USGS National Land Cover Database, 2019 release NLCD (the National Land Cover Database) is a 30-m Landsat-based land cover database spanning 8 epochs (2001, 2004, 2006, 2008, 2011, 2013, 2016, and 2019).
-- Total emissions for the survey … atmosphere climate edf emissions ghg methane MethaneAIR L4 Point Sources V1.1.0 This dataset provides data for high-emitting methane point source detections (kg/hr) over 13 oil and gas or coal extraction areas from Colorado, New Mexico, and Texas in the west to Pennsylvania, Ohio, and West Virginia in the east, plus three urban areas (New York City, … atmosphere climate edf edf-methanesat-ee emissions ghg MethaneAIR L4 Point Sources v1 This dataset provides data for high-emitting methane point source detections (kg/hr) over 13 oil and gas or coal extraction areas from Colorado, New Mexico, and Texas in the west to Pennsylvania, Ohio, and West Virginia in the east, plus three urban areas (New York City, … atmosphere climate edf emissions ghg methane MethaneSAT L3 Concentration Public Preview V1.0.0 This early "Public Preview" dataset provides geospatial data for the column-averaged dry-air mole fraction of methane in the atmosphere, "XCH4", retrieved from measurements by the MethaneSAT imaging spectrometer.
 - Real-time data is any data that relates to a time that is no … climate forecast gcp-public-data-weathernext precipitation publisher-dataset temperature Wildfire Risk to Communities v0 This dataset depicts components of wildfire risk for all lands in the United States that: 1) are landscape-wide (i.e., measurable at every pixel across the landscape); and 2) represent in situ risk - risk at the location where the adverse effects take place on the … burn fire usda wildfire World Settlement Footprint 2015 The World Settlement Footprint (WSF) 2015 is a 10m resolution binary mask outlining the extent of human settlements globally derived by means of 2014-2015 multitemporal Landsat-8 and Sentinel-1 imagery (of which 217,000 and 107,000 scenes have been processed, respectively).
+- Ice cover was mapped using a combination of orthorectified panchromatic (band 8) imagery from the Landsat 7 Enhanced Thematic Mapper Plus (ETM+), distributed by the USGS, and … arctic cryosphere gimp greenland ice nasa Gridded GEDI Vegetation Structure Metrics and Biomass Density with COUNTS metrics, 12KM pixel size This dataset consists of near-global, analysis-ready, multi-resolution gridded vegetation structure metrics derived from NASA Global Ecosystem Dynamics Investigation (GEDI) Level 2 and 4A products associated with 25-m diameter lidar footprints.
+- Each 10-meter pixel in this dataset is a 64-dimensional representation, or "embedding vector," that encodes temporal trajectories of surface conditions at and around that pixel as measured by various Earth observation … annual global google landsat-derived satellite-imagery sentinel1-derived Sentinel-1 SAR GRD: C-band Synthetic Aperture Radar Ground Range Detected, log scaling The Sentinel-1 mission provides data from a dual-polarization C-band Synthetic Aperture Radar (SAR) instrument at 5.405GHz (C band).
 
-### "Datasets tagged agriculture in Earth Engine \_|\_ Earth Engine Data Catalog\
+### "Datasets tagged satellite-imagery in Earth Engine \_|\_ Earth Engine Data\
 
-- URL: [https://developers.google.com/earth-engine/datasets/tags/agriculture](https://developers.google.com/earth-engine/datasets/tags/agriculture)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The TPP dataset provides 4 different estimates … agriculture fao forest global plant-productivity population UN FAO Drained Organic Soils Area (Annual) 1.0 The two related FAO datasets on Drained Organic Soils provide estimates of: DROSA-A: area of Organic Soils (in hectares) drained for agricultural activities (cropland and grazed grassland) DROSE-A: carbon (C) and nitrous oxide (N2O) estimates (in gigagrams) from the agricultural drainage of organic soils under … agriculture climate climate-change emissions fao ghg USDA NASS Cropland Data Layers The Cropland Data Layer (CDL) is a crop-specific land cover data layer created annually for the continental United States using moderate resolution satellite imagery and extensive agricultural ground truth.
-- Actual Evapotranspiration for Australia (CMRSET Landsat V2.2) This dataset provides accurate actual evapotranspiration (AET or ETa) for Australia using the CMRSET algorithm.
-- 2008 was … agriculture highres imagery orthophotos usda Palm Probability model 2025a Note: This dataset is not yet peer-reviewed.
-- This first … agriculture landcover landuse landuse-landcover tsinghua Drained Organic Soils Emissions (Annual) 1.0 The two related FAO datasets on Drained Organic Soils provide estimates of: DROSA-A: area of Organic Soils (in hectares) drained for agricultural activities (cropland and grazed grassland) DROSE-A: carbon (C) and nitrous oxide (N2O) estimates (in gigagrams) from the agricultural drainage of organic soils under … agriculture climate climate-change emissions fao ghg ESA WorldCereal 10 m v100 The European Space Agency (ESA) WorldCereal 10 m 2021 product suite consists of global-scale annual and seasonal crop maps and their related confidence.
-
-### "Datasets tagged fire in Earth Engine \_|\_ Earth Engine Data Catalog \_\
-
-- URL: [https://developers.google.com/earth-engine/datasets/tags/fire](https://developers.google.com/earth-engine/datasets/tags/fire)
+- URL: [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - Source ID: `site-docs-root-3`
-- Final score: 118
+- Final score: 136
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The VNP64 burned area mapping approach employs 750m VIIRS … burn change-detection fire land nasa noaa Wildfire Risk to Communities v0 This dataset depicts components of wildfire risk for all lands in the United States that: 1) are landscape-wide (i.e., measurable at every pixel across the landscape); and 2) represent in situ risk - risk at the location where the adverse effects take place on the … burn fire usda wildfire Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
-- Below NBR stands for "Normalized Burn Ratio", while dNBR stands … eros fire gtac mtbs table usda MYD14A1.061: Aqua Thermal Anomalies & Fire Daily Global 1km The MYD14A1 V6.1 dataset provides daily fire mask composites at 1km resolution derived from the MODIS 4- and 11-micrometer radiances.
-- The fire detection strategy is based on absolute detection of a fire (when the fire strength is sufficient to detect), and on detection relative to … daily fire global modis nasa terra MOD14A2.061: Terra Thermal Anomalies & Fire 8-Day Global 1km The MOD14A2 V6.1 dataset provides 8-day fire mask composites at 1km resolution.
-- The fire detection strategy is based on absolute detection of a fire (when the fire strength is sufficient to detect), and on detection relative to … aqua daily fire global modis nasa MYD14A2.061: Aqua Thermal Anomalies & Fire 8-Day Global 1km The MYD14A2 V6.1 dataset provides 8-day fire mask composites at 1km resolution.
+- Each 10-meter pixel in this dataset is a 64-dimensional representation, or "embedding vector," that encodes temporal trajectories of surface conditions at and around that pixel as measured by various Earth observation … annual global google landsat-derived satellite-imagery sentinel1-derived Sentinel-1 SAR GRD: C-band Synthetic Aperture Radar Ground Range Detected, log scaling The Sentinel-1 mission provides data from a dual-polarization C-band Synthetic Aperture Radar (SAR) instrument at 5.405GHz (C band).
+- The Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER) is a multispectral imager that … aster imagery nasa nir radiance satellite-imagery Brazil Forest Imagery Dataset 2008: Analytic Basemap This dataset provides up to a 10-meter resolution multispectral (green, red, and near-infrared) basemap of Brazil, primarily captured in 2008, to support implementation of the Brazil Forest Code.
+- Since JAXA expects these emergency observation data to be extremely useful for disaster management, JAXA decided to open these data on … alos2 eroc jaxa palsar2 radar sar ALOS/AVNIR-2 ORI This dataset is contains orthorectified imagery from the Advanced Visible and Near Infrared Radiometer type 2 (AVNIR-2) sensor on-board the Advanced Land Observing Satellite (ALOS) "DAICHI".
+- It serves as a higher-resolution … brazil forest-code google imagery multispectral satellite-imagery Brazil Forest Imagery Dataset 2008: Visual Basemap This dataset provides a visual imagery basemap of Brazil with up to 5-meter resolution, primarily captured in 2008, to support implementation of the Brazil Forest Code.
 

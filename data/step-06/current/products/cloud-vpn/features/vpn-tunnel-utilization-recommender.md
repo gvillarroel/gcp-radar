@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T05:21:46.879Z"
+generated_at: "2026-04-12T12:12:51.046Z"
 product_name: "Cloud VPN"
 product_slug: "cloud-vpn"
 feature_name: "VPN tunnel utilization recommender"
 feature_slug: "vpn-tunnel-utilization-recommender"
 latest_feature_date: "2021-06-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes"
+  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies"
+  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn"
 keywords:
   - "vpn"
   - "tunnel"
@@ -26,7 +27,7 @@ keywords:
 # VPN tunnel utilization recommender
 
 Product: Cloud VPN
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,36 @@ Cloud VPN provides a recommender that identifies VPN tunnel overutilization.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes](https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes)
+- [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies)
+- [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn)
 
 ## Supporting Pages
 
-### Cloud VPN release notes \_|\_ Google Cloud Documentation
+### View logs and metrics \_|\_ Cloud VPN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes](https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes)
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics)
 - Source ID: `site-docs-root`
-- Final score: 128
-- Re-rank relevance: N/A
+- Final score: 143
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- June 08, 2021 Feature You can check for VPN tunnel overutilization using the VPN tunnel utilization recommender.
-- October 14, 2020 Deprecated Classic VPN partial deprecation Starting on October 31, 2021, you will no longer be able to do the following: Create new Classic VPN tunnels using static routing (route based or policy based) that connect to another Classic VPN gateway Create new Classic VPN tunnels using static routing (route based or policy based) that connect a Google Cloud Virtual Private Cloud (VPC) network to another cloud provider's network Create new Classic VPN tunnels using dynamic routing (all configurations) You can continue to create the following types of connections and get support for them: VPN tunnels using static routing from Classic VPN gateways to on-premises VPN gateways and from on-premises VPN gateways to Classic VPN gateways VPN tunnels using static routing from a Classic VPN gateway to and from a Compute Engine virtual machine (VM) acting as a VPN gateway Although Google will not proactively disable existing connections on the deprecation date, deprecated Classic VPN configurations will no longer receive regular updates or maintenance.
-- October 05, 2021 Deprecated Classic VPN partial deprecation update Starting on March 31, 2022, you will no longer be able to create new Classic VPN tunnels that use dynamic routing (BGP) unless you are creating a specifically supported configuration.
-- On or after March 31, 2022, you can still create the following Classic VPN configurations: Classic VPN tunnels that use dynamic routing and connect to VPN gateway software running inside a Compute Engine VM.
+- For example, if you want to view traffic bandwidth traversing the VPN tunnel between Google Cloud and the on-premises network, expand the entities until you see that VPN tunnel connection.
+- Setting 50% alerting policies on your Cloud VPN tunnel bandwidth usage helps to ensure that you have sufficient capacity in the event of tunnel failover.
+- The Monitoring tab includes various metrics that help you quickly monitor the selected Cloud VPN tunnel.
+- To monitor VPN tunnel utilization, you can define alerts for VPN tunnel bandwidth .
 
 ### Create an HA VPN gateway to a peer VPN gateway \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 - Source ID: `site-docs-root`
-- Final score: 120
+- Final score: 140
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies)
 - Source ID: `site-docs-root`
-- Final score: 116
+- Final score: 140
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +89,17 @@ Evidence snippets:
 - Configure for 99.9% availability SLA To help ensure 99.9% availability SLA if the VPN gateways are in different regions, configure each HA VPN gateway with two tunnels so that both of the following are true: Tunnel 0 connects interface 0 on one HA VPN gateway to interface 0 on the other HA VPN gateway.
 - The following example does not provide 99.99% availability SLA: HA VPN interface 0 to peer interface 0 A topology that doesn't provide high availability (click to enlarge) Active-active and active-passive routing options for HA VPN If a Cloud VPN tunnel goes down, it restarts automatically.
 - To help ensure 99.99% availability SLA, configure each HA VPN gateway with two tunnels so that both of the following are true: Tunnel 0 connects interface 0 on one HA VPN gateway to interface 0 on the other HA VPN gateway.
+
+### Move from Classic VPN to HA VPN \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn)
+- Source ID: `site-docs-root`
+- Final score: 132
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Verify that the new tunnels are working , and check the configuration of your HA VPN gateway for high availability.
+- Migration steps To move from Classic VPN to HA VPN gateways and tunnels, perform the following steps: Create a new HA VPN gateway, Cloud Router, and VPN tunnels to connect your Virtual Private Cloud network to your peer network.
+- Create Cloud Routers When configuring a new HA VPN gateway, you can create a new Cloud Router, or you can use an existing Cloud Router with existing Cloud VPN tunnels or VLAN attachments.
+- If the previous VPN tunnel or tunnels were policy-based or route-based, remove any leftover custom static routes .
 

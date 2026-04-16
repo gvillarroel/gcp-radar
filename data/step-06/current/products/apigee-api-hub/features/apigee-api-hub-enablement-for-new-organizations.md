@@ -1,30 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:36.634Z"
+generated_at: "2026-04-14T04:45:01.540Z"
 product_name: "Apigee API hub"
 product_slug: "apigee-api-hub"
 feature_name: "Apigee API hub enablement for new organizations"
 feature_slug: "apigee-api-hub-enablement-for-new-organizations"
 latest_feature_date: "2025-06-03"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+  - "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on"
 keywords:
-  - "first-time org onboarding"
-  - "no additional cost"
-  - "automatic organization enablement"
-  - "new-org auto enablement"
-  - "automatic API hub enablement"
-  - "new Apigee organizations"
-  - "hybrid organizations"
-  - "supported regions"
+  - "automatically"
+  - "available"
+  - "enablement"
+  - "organizations"
+  - "regions"
 ---
 
 # Apigee API hub enablement for new organizations
 
 Product: Apigee API hub
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +33,56 @@ Apigee API hub is now available automatically for new Apigee organizations in su
 
 Apigee API hub is now available automatically for new Apigee organizations in supported regions, including hybrid organizations, with no additional cost.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/apigee/docs/release/known-issues](https://docs.cloud.google.com/apigee/docs/release/known-issues)
+- [https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery](https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on](https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Apigee known issues \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/release/known-issues](https://docs.cloud.google.com/apigee/docs/release/known-issues)
+- Source ID: `site-docs-reference`
+- Final score: 95
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- List the ingress-manager pods to reinstall or recreate: kubectl get deployments -n APIGEE NAMESPACE Example output: NAME READY UP-TO-DATE AVAILABLE AGE apigee-controller-manager 1/1 1 1 32d apigee-ingressgateway-manager 2/2 2 2 32d Restart the ingress-manager pods: kubectl rollout restart deployment -n APIGEE NAMESPACE apigee-ingressgateway-manager After a few minutes, monitor the apigee-ingressgateway-manager pods: watch -n 10 kubectl -n APIGEE NAMESPACE get pods -l app=apigee-ingressgateway-manager Example output: NAME READY STATUS RESTARTS AGE apigee-ingressgateway-manager-12345abcde-678wx 3/3 Running 0 10m apigee-ingressgateway-manager-12345abcde-901yz 3/3 Running 0 10m 414499328 hybrid 1.14.1 FIXED in hybrid 1.14.3 and hybrid 1.15.0 ApigeeTelemetry can become stuck in creating state.
+- 310191899 Apigee Apigee hybrid OPEN Timeouts when deploying API proxies and shared flows The following endpoints may experience timeouts when used with a high volume of queries per second (QPS): organizations.environments.apis.revisions. deployments.deploy organizations.environments.apis.revisions. deployments.undeploy organizations.environments.sharedflows.revisions. deployments.deploy organizations.environments.sharedflows.revisions. deployments.undeploy To reduce the likelihood of timeouts, we recommend setting a target of 1 QPS when using these endpoints or checking the status of a deployment before attempting another deployment.
+- MCP infrastructure deployment may be subject to capacity limitations in the following regions: asia-east2 asia-northeast3 asia-southeast2 australia-southeast1 europe-central2 europe-west12 europe-west9 me-central2 us-central2 If you see an error related to load balancer provisioning failure, or the provisioning status never changes to Deployed , it might be due to temporary infrastructure capacity limits in the selected region.
+- 355714868 Monetization Apigee hybrid FIXED in hybrid 1.14.3, hybrid 1.15.1, hybrid 1.16.0 Recurring, setup, and top-up fee data not captured or billed for hybrid organizations For hybrid organizations with monetization, the recurring (RECURRING FEE), setup fee (SETUP FEE) and top-up fee (TOPUP FEE) data is not captured or billed for post-paid billing.
+
+### Shadow API Discovery overview \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery](https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery)
+- Source ID: `site-docs-reference-2`
+- Final score: 89
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- See Manage Advanced API Security for Pay-as-you-go organizations Shadow API Discovery is not available for Apigee eval environments.
+- The following regions are currently supported for API observation and Shadow APIs: australia-southeast1 europe-west2 europe-west9 us-central1 us-east1 us-west1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Within your centralized Apigee API hub instance, you can attach those projects to view the results of those jobs and automatically compare them to "known" APIs documented in API hub.
+- Enable Shadow API Discovery Shadow API Discovery is part of the Advanced API Security add-on and is available for Google Cloud projects with or without Apigee provisioning.
+
+### "Manage the Advanced API Security add-on \_|\_ Apigee \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on](https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on)
+- Source ID: `site-docs-reference`
+- Final score: 88
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To disable the Advanced API Security add-on using the Apigee API, enter the following command: curl -X POST \ https://apigee.googleapis.com/v1/organizations/ ORG NAME /environments/ ENV NAME /addonsConfig:setAddonEnablement \ -H "Authorization: Bearer $token" \ -H "Content-type: application/json" \ -d '{"apiSecurityEnabled":false}' Where: ORG NAME is the name of the Apigee Pay-as-you-go organization where you want to disable Advanced API Security in eligible environments.
+- To enable the Advanced API Security add-on using the Apigee API, enter the following command: curl -X POST \ https://apigee.googleapis.com/v1/organizations/ ORG NAME /environments/ ENV NAME /addonsConfig:setAddonEnablement \ -H "Authorization: Bearer $token" \ -H "Content-type: application/json" \ -d '{"apiSecurityEnabled":true}' Where: ORG NAME is the name of the Apigee Pay-as-you-go organization where you want to add Advanced API Security to eligible environments.
+- To view the status of the Advanced API Security add-on in an environment using the Apigee API, enter the following command: curl -X GET \ https://apigee.googleapis.com/v1/organizations/ ORG NAME /environments/ ENV NAME /addonsConfig \ -H "Authorization: Bearer $token" \ -H "Content-type: application/json" Where: ORG NAME is the name of the Apigee Pay-as-you-go organization.
+- Once enablement completes, click Advanced API Security to view page options for using your security data, including Risk assessment , Abuse detection , Security reports , and Security actions .
 

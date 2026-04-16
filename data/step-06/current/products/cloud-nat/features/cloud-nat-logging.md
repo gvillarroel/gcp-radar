@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:57:06.738Z"
+generated_at: "2026-04-12T12:11:52.331Z"
 product_name: "Cloud NAT"
 product_slug: "cloud-nat"
 feature_name: "Cloud NAT logging"
 feature_slug: "cloud-nat-logging"
 latest_feature_date: "2019-06-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/nat/docs/monitoring"
   - "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation"
   - "https://docs.cloud.google.com/nat/docs/overview"
+  - "https://docs.cloud.google.com/nat/docs/troubleshooting"
 keywords:
   - "nat"
   - "logging"
@@ -25,7 +26,7 @@ keywords:
 # Cloud NAT logging
 
 Product: Cloud NAT
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,13 +38,14 @@ Cloud NAT provides logging for NAT traffic and operations; Cloud NAT provides lo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
 - [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - [https://docs.cloud.google.com/nat/docs/overview](https://docs.cloud.google.com/nat/docs/overview)
+- [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
 
 ## Supporting Pages
 
@@ -51,9 +53,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/nat/docs/monitoring](https://docs.cloud.google.com/nat/docs/monitoring)
 - Source ID: `site-docs-root`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 235
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Click Save . gcloud Use the gcloud compute routers nats update command . gcloud compute routers nats update NAT GATEWAY \ --router= ROUTER NAME \ --region= REGION \ --no-enable-logging Replace the following: NAT GATEWAY : the name of the NAT gateway ROUTER NAME : the name of the Cloud Router that hosts the NAT gateway REGION : the region of the Cloud Router Determine logging status To determine the status for logging, do the following: Console In the Google Cloud console, go to the Cloud NAT page.
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/nat/docs/set-up-network-address-translation](https://docs.cloud.google.com/nat/docs/set-up-network-address-translation)
 - Source ID: `site-docs-root`
-- Final score: 152
+- Final score: 191
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/nat/docs/overview](https://docs.cloud.google.com/nat/docs/overview)
 - Source ID: `site-docs-reference`
-- Final score: 140
+- Final score: 181
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - Logging For Cloud NAT traffic, you can trace the connections and bandwidth for compliance, debugging, analytics, and accounting purposes.
 - From a VPC network to a network outside of Google Cloud Private NAT supports the following options for traffic between VPC networks and on-premises or other cloud provider networks: Private-to-private NAT for networks connected through NCC hybrid spokes.
 - In this scenario, you create a Cloud NAT gateway for Private NAT that translates traffic between the subnets in your source VPC network and the nonoverlapping subnets of the other network.
+
+### Troubleshoot configuration \_|\_ Cloud NAT \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/nat/docs/troubleshooting](https://docs.cloud.google.com/nat/docs/troubleshooting)
+- Source ID: `site-docs-root`
+- Final score: 175
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Increase the value for TCP Transitory Connection Idle Timeout, so that external endpoints that receive traffic (initiated by Google Cloud resources) through a Cloud NAT gateway get more time to respond and to establish the connection.
+- When a Cloud NAT gateway provides NAT for a VM, it reserves source address and source port tuples according to the port reservation procedure .
+- The destination for your traffic might not be handled by NAT.
+- Packets dropped with reason: out of resources If you see packet loss from VMs that use Cloud NAT, this might be because there are not enough available NAT source IP address and source port tuples for the VM to use at the time of the packet loss (port exhaustion).
 

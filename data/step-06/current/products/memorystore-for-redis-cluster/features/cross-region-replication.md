@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:44.694Z"
+generated_at: "2026-04-12T12:17:52.724Z"
 product_name: "Memorystore for Redis Cluster"
 product_slug: "memorystore-for-redis-cluster"
 feature_name: "Cross-region replication"
 feature_slug: "cross-region-replication"
 latest_feature_date: "2024-12-12"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication"
+  - "https://docs.cloud.google.com/memorystore/docs/cluster"
+  - "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+  - "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster"
 keywords:
   - "cross"
   - "region"
@@ -21,7 +24,7 @@ keywords:
 # Cross-region replication
 
 Product: Memorystore for Redis Cluster
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -31,11 +34,70 @@ The service supports cross-region replication; The service supports cross-region
 
 The service supports cross-region replication; The service supports cross-region replication.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication](https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication)
+- [https://docs.cloud.google.com/memorystore/docs/cluster](https://docs.cloud.google.com/memorystore/docs/cluster)
+- [https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster](https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster)
+- [https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "About cross-region replication \_|\_ Memorystore for Redis Cluster \_|\_\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication](https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication)
+- Source ID: `site-docs-root`
+- Final score: 261
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Benefits Benefits of cross-region replication on Memorystore for Redis Cluster include the following: Disaster recovery : If the primary cluster's region becomes unavailable, then you can detach or switch over to a secondary cluster in another region to serve read and write requests.
+- How to manage cross-region replication Cross-region replication involves the following tasks: Create a secondary cluster : create a secondary cluster that replicates data from your primary cluster continuously.
+- Even though this diagram shows the same number of replicas in all regions, cross-region replication lets you have varying numbers of replicas according to your requirements.
+- Architecture example for cross-region replication This diagram shows a primary cluster in the us-east1 region and secondary clusters in the us-west1 and asia-east1 regions.
+
+### Memorystore for Redis Cluster documentation \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/cluster](https://docs.cloud.google.com/memorystore/docs/cluster)
+- Source ID: `site-api-reference`
+- Final score: 119
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Documentation resources Find quickstarts and guides, review key references, and get help with common issues. format list numbered Guides Memorystore for Redis Cluster overview High availability and replicas Single-zone instances Cluster and node specification Client library connection code samples Best practices Operational guidelines Client library code samples Supported and blocked commands Create instances Connect to an instance Configure an instance Supported instance configurations About cross-region replication Networking About IAM authentication Manage IAM authentication Access control with IAM About in-transit encryption Persistence overview About RDB persistence About AOF persistence About maintenance find in page Reference Python reference REST API reference gcloud reference Terraform reference info Resources Locations Pricing Quotas and limits Release notes Service Level Agreement Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Memorystore for Redis Cluster is based on and is compatible with open-source Redis versions 7.2 and earlier and supports a subset of the total Redis command library.
+- Memorystore is based on and is compatible with open-source Redis versions 7.2 and earlier and supports a subset of the total Redis command library.
+- Last updated 2026-04-08 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+
+### "MCP Tools Reference: redis.googleapis.com \_|\_ Memorystore for Redis Cluster\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster](https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster)
+- Source ID: `site-api-reference`
+- Final score: 113
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- However, for scenarios, where the primary cluster is unavailable(e.g. regional outage), a GetCluster request can be sent to any other member cluster and this field will list all the member clusters participating in cross cluster replication.
+- This config will be used to determine how the customer wants us to distribute cluster resources within the region. crossClusterReplicationConfig object ( CrossClusterReplicationConfig ) Optional.
+- Cluster JSON representation { "name" : string , "createTime" : string , "state" : enum ( State ) , "uid" : string , "authorizationMode" : enum ( AuthorizationMode ) , "transitEncryptionMode" : enum ( TransitEncryptionMode ) , "pscConfigs" : [ { object ( PscConfig ) } ] , "discoveryEndpoints" : [ { object ( DiscoveryEndpoint ) } ] , "pscConnections" : [ { object ( PscConnection ) } ] , "stateInfo" : { object ( StateInfo ) } , "nodeType" : enum ( NodeType ) , "persistenceConfig" : { object ( ClusterPersistenceConfig ) } , "redisConfigs" : { string : string , ... } , "zoneDistributionConfig" : { object ( ZoneDistributionConfig ) } , "crossClusterReplicationConfig" : { object ( CrossClusterReplicationConfig ) } , "pscServiceAttachments" : [ { object ( PscServiceAttachment ) } ] , "clusterEndpoints" : [ { object ( ClusterEndpoint ) } ] , "automatedBackupConfig" : { object ( AutomatedBackupConfig ) } , "encryptionInfo" : { object ( EncryptionInfo ) } , "availableMaintenanceVersions" : [ string ] , "allowFewerZonesDeployment" : boolean , "labels" : { string : string , ... } , "aclPolicy" : string , // Union field import sources can be only one of the following: "gcsSource" : { object ( GcsBackupSource ) } , "managedBackupSource" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: "replicaCount" : integer // End of list of possible types for union field replica count . // Union field size gb can be only one of the following: "sizeGb" : integer // End of list of possible types for union field size gb . // Union field shard count can be only one of the following: "shardCount" : integer // End of list of possible types for union field shard count . // Union field precise size gb can be only one of the following: "preciseSizeGb" : number // End of list of possible types for union field precise size gb . // Union field deletion protection enabled can be only one of the following: "deletionProtectionEnabled" : boolean // End of list of possible types for union field deletion protection enabled . // Union field maintenance policy can be only one of the following: "maintenancePolicy" : { object ( ClusterMaintenancePolicy ) } // End of list of possible types for union field maintenance policy . // Union field maintenance schedule can be only one of the following: "maintenanceSchedule" : { object ( ClusterMaintenanceSchedule ) } // End of list of possible types for union field maintenance schedule . // Union field satisfies pzs can be only one of the following: "satisfiesPzs" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: "satisfiesPzi" : boolean // End of list of possible types for union field satisfies pzi . // Union field simulate maintenance event can be only one of the following: "simulateMaintenanceEvent" : boolean // End of list of possible types for union field simulate maintenance event . // Union field backup collection can be only one of the following: "backupCollection" : string // End of list of possible types for union field backup collection . // Union field kms key can be only one of the following: "kmsKey" : string // End of list of possible types for union field kms key . // Union field ondemand maintenance can be only one of the following: "ondemandMaintenance" : boolean // End of list of possible types for union field ondemand maintenance . // Union field async cluster endpoints deletion enabled can be only one of the // following: "asyncClusterEndpointsDeletionEnabled" : boolean // End of list of possible types for union field // async cluster endpoints deletion enabled . // Union field maintenance version can be only one of the following: "maintenanceVersion" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: "effectiveMaintenanceVersion" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: "serverCaMode" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: "serverCaPool" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: "rotateServerCertificate" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy in sync can be only one of the following: "aclPolicyInSync" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Required.
+- The role of the cluster in cross cluster replication. primaryCluster object ( RemoteCluster ) Details of the primary cluster that is used as the replication source for this secondary cluster.
+
+### "MCP Tools Reference: redis.googleapis.com \_|\_ Memorystore for Redis Cluster\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster)
+- Source ID: `site-api-reference`
+- Final score: 113
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- However, for scenarios, where the primary cluster is unavailable(e.g. regional outage), a GetCluster request can be sent to any other member cluster and this field will list all the member clusters participating in cross cluster replication.
+- This config will be used to determine how the customer wants us to distribute cluster resources within the region. crossClusterReplicationConfig object ( CrossClusterReplicationConfig ) Optional.
+- Cluster JSON representation { "name" : string , "createTime" : string , "state" : enum ( State ) , "uid" : string , "authorizationMode" : enum ( AuthorizationMode ) , "transitEncryptionMode" : enum ( TransitEncryptionMode ) , "pscConfigs" : [ { object ( PscConfig ) } ] , "discoveryEndpoints" : [ { object ( DiscoveryEndpoint ) } ] , "pscConnections" : [ { object ( PscConnection ) } ] , "stateInfo" : { object ( StateInfo ) } , "nodeType" : enum ( NodeType ) , "persistenceConfig" : { object ( ClusterPersistenceConfig ) } , "redisConfigs" : { string : string , ... } , "zoneDistributionConfig" : { object ( ZoneDistributionConfig ) } , "crossClusterReplicationConfig" : { object ( CrossClusterReplicationConfig ) } , "pscServiceAttachments" : [ { object ( PscServiceAttachment ) } ] , "clusterEndpoints" : [ { object ( ClusterEndpoint ) } ] , "automatedBackupConfig" : { object ( AutomatedBackupConfig ) } , "encryptionInfo" : { object ( EncryptionInfo ) } , "availableMaintenanceVersions" : [ string ] , "allowFewerZonesDeployment" : boolean , "labels" : { string : string , ... } , "aclPolicy" : string , // Union field import sources can be only one of the following: "gcsSource" : { object ( GcsBackupSource ) } , "managedBackupSource" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: "replicaCount" : integer // End of list of possible types for union field replica count . // Union field size gb can be only one of the following: "sizeGb" : integer // End of list of possible types for union field size gb . // Union field shard count can be only one of the following: "shardCount" : integer // End of list of possible types for union field shard count . // Union field precise size gb can be only one of the following: "preciseSizeGb" : number // End of list of possible types for union field precise size gb . // Union field deletion protection enabled can be only one of the following: "deletionProtectionEnabled" : boolean // End of list of possible types for union field deletion protection enabled . // Union field maintenance policy can be only one of the following: "maintenancePolicy" : { object ( ClusterMaintenancePolicy ) } // End of list of possible types for union field maintenance policy . // Union field maintenance schedule can be only one of the following: "maintenanceSchedule" : { object ( ClusterMaintenanceSchedule ) } // End of list of possible types for union field maintenance schedule . // Union field satisfies pzs can be only one of the following: "satisfiesPzs" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: "satisfiesPzi" : boolean // End of list of possible types for union field satisfies pzi . // Union field simulate maintenance event can be only one of the following: "simulateMaintenanceEvent" : boolean // End of list of possible types for union field simulate maintenance event . // Union field backup collection can be only one of the following: "backupCollection" : string // End of list of possible types for union field backup collection . // Union field kms key can be only one of the following: "kmsKey" : string // End of list of possible types for union field kms key . // Union field ondemand maintenance can be only one of the following: "ondemandMaintenance" : boolean // End of list of possible types for union field ondemand maintenance . // Union field async cluster endpoints deletion enabled can be only one of the // following: "asyncClusterEndpointsDeletionEnabled" : boolean // End of list of possible types for union field // async cluster endpoints deletion enabled . // Union field maintenance version can be only one of the following: "maintenanceVersion" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: "effectiveMaintenanceVersion" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: "serverCaMode" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: "serverCaPool" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: "rotateServerCertificate" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy in sync can be only one of the following: "aclPolicyInSync" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Required.
+- The role of the cluster in cross cluster replication. primaryCluster object ( RemoteCluster ) Details of the primary cluster that is used as the replication source for this secondary cluster.
 

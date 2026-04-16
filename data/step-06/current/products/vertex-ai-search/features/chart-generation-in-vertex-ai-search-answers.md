@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.846Z"
+generated_at: "2026-04-14T17:29:36.923Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Chart generation in Vertex AI Search answers"
 feature_slug: "chart-generation-in-vertex-ai-search-answers"
 latest_feature_date: "2025-03-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/AdvancedCompleteQueryResponse"
 keywords:
   - "chart"
   - "generation"
-  - "in"
   - "vertex"
   - "ai"
   - "search"
   - "answers"
   - "can"
+  - "automatically"
 ---
 
 # Chart generation in Vertex AI Search answers
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,68 +38,53 @@ Vertex AI Search can automatically generate and return charts in answer response
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/AdvancedCompleteQueryResponse](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/AdvancedCompleteQueryResponse)
 
 ## Supporting Pages
-
-### "Vertex AI APIs for building search and RAG experiences \_|\_ Vertex AI Search\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- Source ID: `site-api-reference`
-- Final score: 254
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Retrieval Choose the best retrieval method for your needs: Vertex AI Search: Vertex AI Search is a Google Search-quality information retrieval engine that can be a component of any generative AI application that uses your enterprise data.
-- Vertex AI Vector Search is a retrieval engine that can search from billions of semantically similar or semantically related items at scale, with high queries per second (QPS), high recall, low latency, and cost efficiency.
-- Model Garden: If you want full control and the model of your choice, you can use any of the models in Vertex AI Model Garden for generation.
-- Vertex AI offers a suite of APIs to help you build Retrieval-Augmented Generation (RAG) applications or a search engine.
 
 ### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- Source ID: `site-api-reference`
-- Final score: 236
+- Source ID: `site-docs-reference`
+- Final score: 135
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Personalize answers If there is specific information about the user available—for example, data in a profile, you can specify that information in the endUserMetadata object so that the query results can be personalized for the user.
-- Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Show only relevant answers Vertex AI Search can assess how relevant the results are to a query.
-- Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Get related questions The answer method can suggest related questions, which your users can choose instead of entering their own questions.
 - Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Return grounding support scores The following command shows how to return grounding support scores for answers and claims.
+- Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Set the answer language code The following command shows how to set the language code for answers.
+- Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Show only relevant answers Vertex AI Search can assess how relevant the results are to a query.
 
-### "Introduction to custom search \_|\_ Vertex AI Search \_|\_ Google Cloud\
+### "AdvancedCompleteQueryResponse \_|\_ Vertex AI Search \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search)
-- Source ID: `site-api-reference`
-- Final score: 230
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/AdvancedCompleteQueryResponse](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/AdvancedCompleteQueryResponse)
+- Source ID: `site-docs-reference-2`
+- Final score: 80
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Data ingestion : Vertex AI Search offers different types of ingestion for data from different sources, such as: Crawling for website data Ingesting structured and unstructured data from Cloud Storage and BigQuery or through the REST API Search and browse configuration : Field settings : Control how fields are configured for search and answer generation, such as searchable, retrievable, or indexable.
-- Different components of custom search The components of Vertex AI Search for custom search can be explained as follows: Data store : Your content from different data sources is stored in a Vertex AI Search data store.
-- Vertex AI Search for custom apps is a powerful, Google-quality search and content discovery engine that you can integrate into your applications that contain website data and other structured or unstructured data.
-- Search results : Use Vertex AI Search to do the following: Get answers and follow-ups .
+- Home Documentation AI and ML Vertex AI Search Reference Send feedback AdvancedCompleteQueryResponse Stay organized with collections Save and categorize content based on your preferences.
+- JSON representation { "querySuggestions" : [ { object ( QuerySuggestion ) } ] , "tailMatchTriggered" : boolean , "peopleSuggestions" : [ { object ( PersonSuggestion ) } ] , "contentSuggestions" : [ { object ( ContentSuggestion ) } ] , "recentSearchSuggestions" : [ { object ( RecentSearchSuggestion ) } ] } Fields querySuggestions[] object ( QuerySuggestion ) Results of the matched query suggestions.
+- JSON representation QuerySuggestion JSON representation PersonSuggestion JSON representation PersonType ContentSuggestion JSON representation ContentType RecentSearchSuggestion JSON representation Response message for CompletionService.AdvancedCompleteQuery method.
+- JSON representation { "suggestion" : string , "recentSearchTime" : string , "score" : number } Fields suggestion string The suggestion for the query. recentSearchTime string ( Timestamp format) The time when this recent rearch happened.
 
 ### "MCP Tools Reference: discoveryengine.googleapis.com \_|\_ Vertex AI Search\
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search)
 - Source ID: `site-docs-reference-2`
-- Final score: 222
+- Final score: 78
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - AnswerGenerationSpec JSON representation { "modelSpec" : { object ( ModelSpec ) } , "promptSpec" : { object ( PromptSpec ) } , "includeCitations" : boolean , "answerLanguageCode" : string , "ignoreAdversarialQuery" : boolean , "ignoreNonAnswerSeekingQuery" : boolean , "ignoreJailBreakingQuery" : boolean , "multimodalSpec" : { object ( MultimodalSpec ) } , // Union field ignore low relevant content can be only one of the following: "ignoreLowRelevantContent" : boolean // End of list of possible types for union field ignore low relevant content . } Fields modelSpec object ( ModelSpec ) Answer generation model specification. promptSpec object ( PromptSpec ) Answer generation prompt specification. includeCitations boolean Specifies whether to include citation metadata in the answer.
-- This is supposed to be the main content of the document that can be long and comprehensive. extractiveSegments[] object ( ExtractiveSegment ) List of extractive segments. extractiveAnswers[] (deprecated) object ( ExtractiveAnswer ) This item is deprecated!
-- Home Documentation AI and ML Vertex AI Search Reference Send feedback MCP Tools Reference: discoveryengine.googleapis.com Stay organized with collections Save and categorize content based on your preferences.
-- Filtering in Vertex AI Search is done by mapping the LHS filter key to a key property defined in the Vertex AI Search backend -- this mapping is defined by the customer in their schema.
+- AnswerQueryRequest JSON representation { "servingConfig" : string , "query" : { object ( Query ) } , "session" : string , "safetySpec" : { object ( SafetySpec ) } , "relatedQuestionsSpec" : { object ( RelatedQuestionsSpec ) } , "groundingSpec" : { object ( GroundingSpec ) } , "answerGenerationSpec" : { object ( AnswerGenerationSpec ) } , "searchSpec" : { object ( SearchSpec ) } , "queryUnderstandingSpec" : { object ( QueryUnderstandingSpec ) } , "asynchronousMode" : boolean , "userPseudoId" : string , "userLabels" : { string : string , ... } , "endUserSpec" : { object ( EndUserSpec ) } } Fields servingConfig string Required.
+- Format: projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist answer} This field must be a UTF-8 encoded string with a length limit of 1024 characters. state enum ( State ) State of the answer generation. replies[] object ( Reply ) Replies of the assistant. assistSkippedReasons[] enum ( AssistSkippedReason ) Reasons for not answering the assist call. customerPolicyEnforcementResult object ( CustomerPolicyEnforcementResult ) Optional.
+- Grounding supports. references[] object ( Reference ) References. blobAttachments[] object ( BlobAttachment ) List of blob attachments in the answer. relatedQuestions[] string Suggested related questions. steps[] object ( Step ) Answer generation steps. queryUnderstandingInfo object ( QueryUnderstandingInfo ) Query understanding information. answerSkippedReasons[] enum ( AnswerSkippedReason ) Additional answer-skipped reasons.
 

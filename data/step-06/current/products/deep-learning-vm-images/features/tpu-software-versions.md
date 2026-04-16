@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:13.422Z"
+generated_at: "2026-04-15T00:52:27.181Z"
 product_name: "Deep Learning VM Images"
 product_slug: "deep-learning-vm-images"
 feature_name: "TPU software versions"
 feature_slug: "tpu-software-versions"
 latest_feature_date: "2022-11-02"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance"
+  - "https://docs.cloud.google.com/deep-learning-vm/docs/images"
+  - "https://docs.cloud.google.com/deep-learning-vm/docs/framework-support-policy"
 keywords:
   - "tpu"
   - "software"
   - "versions"
   - "were"
   - "updated"
-  - "for"
   - "tensorflow"
-  - "and"
+  - "10"
+  - "deep"
 ---
 
 # TPU software versions
 
 Product: Deep Learning VM Images
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ TPU versions were updated for TensorFlow 2.8, 2.9, and 2.10 Deep Learning VMs.
 
 TPU versions were updated for TensorFlow 2.8, 2.9, and 2.10 Deep Learning VMs.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance](https://docs.cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance)
+- [https://docs.cloud.google.com/deep-learning-vm/docs/images](https://docs.cloud.google.com/deep-learning-vm/docs/images)
+- [https://docs.cloud.google.com/deep-learning-vm/docs/framework-support-policy](https://docs.cloud.google.com/deep-learning-vm/docs/framework-support-policy)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Create a TensorFlow Deep Learning VM instance \_|\_ Deep Learning VM Images\
+
+- URL: [https://docs.cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance](https://docs.cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance)
+- Source ID: `site-docs-reference`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To provision a Deep Learning VM instance with one or more GPUs: export IMAGE FAMILY = "tf-ent-latest-gpu" export ZONE = "us-west1-b" export INSTANCE NAME = "my-instance" gcloud compute instances create $ INSTANCE NAME \ -- zone =$ ZONE \ -- image - family =$ IMAGE FAMILY \ -- image - project = deeplearning - platform - release \ -- maintenance - policy = TERMINATE \ -- accelerator = "type=nvidia-tesla-v100,count=1" \ -- metadata = "install-nvidia-driver=True" Options: --image-family must be one of the following: tf-ent-latest-gpu to get the latest TensorFlow Enterprise 2 image An earlier TensorFlow or TensorFlow Enterprise image family name (see Choosing an image ) --image-project must be deeplearning-platform-release . --maintenance-policy must be TERMINATE .
+- Without GPUs To provision a Deep Learning VM instance without a GPU: export IMAGE FAMILY = "tf-ent-latest-cpu" export ZONE = "us-west1-b" export INSTANCE NAME = "my-instance" gcloud compute instances create $ INSTANCE NAME \ -- zone =$ ZONE \ -- image - family =$ IMAGE FAMILY \ -- image - project = deeplearning - platform - release Options: --image-family must be one of the following: tf-ent-latest-cpu to get the latest TensorFlow Enterprise 2 image An earlier TensorFlow or TensorFlow Enterprise image family name (see Choosing an image ) --image-project must be deeplearning-platform-release .
+- Creating a TensorFlow Deep Learning VM instance from the command line To use the Google Cloud CLI to create a new Deep Learning VM instance, you must first install and initialize the Google Cloud CLI : Download and install the Google Cloud CLI using the instructions given on Installing Google Cloud CLI .
+- Creating a TensorFlow Deep Learning VM instance from the Cloud Marketplace To create a TensorFlow Deep Learning VM instance from the Cloud Marketplace, complete the following steps: Go to the Deep Learning VM Cloud Marketplace page in the Google Cloud console.
+
+### "Deep Learning VM framework support policy \_|\_ Deep Learning VM Images\
+
+- URL: [https://docs.cloud.google.com/deep-learning-vm/docs/framework-support-policy](https://docs.cloud.google.com/deep-learning-vm/docs/framework-support-policy)
+- Source ID: `site-docs-reference`
+- Final score: 72
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For Deep Learning VM, the support policy revolves around two key dates: End-of-patch and support date: After this date, Deep Learning VM will no longer publish new image versions for that specific framework version.
+- While Deep Learning VM regularly publishes new versions of images to address security vulnerabilities, you are responsible for tasks such as the following: Manually upgrading to the latest version.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- Home Documentation Compute Compute Engine Deep Learning VM Images Resources Send feedback Deep Learning VM framework support policy Stay organized with collections Save and categorize content based on your preferences.
+
+### Choose an image \_|\_ Deep Learning VM Images \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/deep-learning-vm/docs/images](https://docs.cloud.google.com/deep-learning-vm/docs/images)
+- Source ID: `site-docs-reference`
+- Final score: 72
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- ML framework version Current patch version Supported accelerators End of patch and support date End of availability date Image family name Base-cu129 (Python 3.12 / Ubuntu 24.04) CUDA 12.9 GPU (CUDA 12.9) August 4, 2028 August 4, 2028 common-cu129-ubuntu-2404-nvidia-580- VERSION DATE Base-cu129 (Python 3.12 / Ubuntu 22.04) CUDA 12.9 GPU (CUDA 12.9) August 4, 2028 August 4, 2028 common-cu129-ubuntu-2204-nvidia-580- VERSION DATE Base-cu128 (Python 3.10 / Ubuntu 22.04) CUDA 12.8 GPU (CUDA 12.8) April 13, 2026 April 13, 2027 common-cu128-ubuntu-2204-nvidia-570- VERSION DATE Base-CPU (Python 3.10 / Debian 11) Not applicable (N/A) CPU only Jul 1, 2024 Jul 1, 2025 common-cpu- VERSION DATE -debian-11 Base-cu124 (Python 3.10) CUDA 12.4 GPU (CUDA 12.4) April 1, 2025 April 1, 2026 common-cu124- VERSION DATE -debian-11-py310 Base-cu123 (Python 3.10) CUDA 12.3 GPU (CUDA 12.3) Oct 19, 2024 Oct 19, 2025 common-cu123- VERSION DATE -debian-11-py310 Base-cu122 (Python 3.10) CUDA 12.2 GPU (CUDA 12.2) June 28, 2024 June 28, 2025 common-cu122- VERSION DATE -debian-11-py310 Base-cu121 (Python 3.10) CUDA 12.1 GPU (CUDA 12.1) Feb 28, 2024 Feb 28, 2025 common-cu121- VERSION DATE -debian-11-py310 Base-cu118 (Python 3.10) CUDA 11.8 GPU (CUDA 11.8) Jul 1, 2024 Jul 1, 2025 common-cu118- VERSION DATE -debian-11-py310 Base-cu113 (Python 3.10) CUDA 11.3 GPU (CUDA 11.3) Jan 1, 2024 Jan 1, 2025 common-cu113- VERSION DATE -debian-11-py310 Base-cu113 (Python 3.7) CUDA 11.3 GPU (CUDA 11.3) Sep 1, 2023 Sep 1, 2024 common-cu113- VERSION DATE -py37 Base-cu110 (Python 3.7) CUDA 11.0 GPU (CUDA 11.0) Sep 1, 2023 Sep 1, 2024 common-cu110- VERSION DATE -py37 Base-CPU (Python 3.7) Not applicable (N/A) CPU only Sep 1, 2023 Sep 1, 2024 common-cpu- VERSION DATE -debian-10 PyTorch versions ML framework version Current patch version Supported accelerators End of patch and support date End of availability date Image family name 2.9 (Python 3.12 / Ubuntu 24.04) 2.9.0 CUDA 12.9 August 4, 2028 August 4, 2028 pytorch-2-9-cu129-ubuntu-2404-nvidia-580- VERSION DATE 2.9 (Python 3.12 / Ubuntu 22.04) 2.9.0 CUDA 12.9 August 4, 2028 August 4, 2028 pytorch-2-9-cu129-ubuntu-2204-nvidia-580- VERSION DATE 2.7 (Python 3.10) 2.7.1 CUDA 12.8 April 13, 2026 April 13, 2027 pytorch-2-7-cu128-ubuntu-2204-nvidia-570- VERSION DATE 2.4 (Python 3.10) 2.4.0 CUDA 12.4 Jul 24, 2025 Jul 24, 2026 pytorch-2-4- VERSION DATE -py310 2.3 (Python 3.10) 2.3.0 CUDA 12.1 Apr 24, 2025 Apr 24, 2026 pytorch-2-3- VERSION DATE -py310 2.2 (Python 3.10) 2.2.0 CUDA 12.1 Jan 30, 2025 Jan 30, 2026 pytorch-2-2- VERSION DATE -py310 2.1 (Python 3.10) 2.1.0 CUDA 12.1 Oct 4, 2024 Oct 4, 2025 pytorch-2-1- VERSION DATE -py310 2.0 (Python 3.10) 2.0.0 CUDA 11.8 Mar 15, 2024 Mar 15, 2025 pytorch-2-0- VERSION DATE -py310 1.13 (Python 3.10) 1.13.1 CUDA 11.3 Dec 8, 2023 Dec 8, 2024 pytorch-1-13- VERSION DATE -py310 1.13 1.13.1 CUDA 11.3 Dec 8, 2023 Dec 8, 2024 pytorch-1-13- VERSION DATE -py37 1.12 1.12.1 CUDA 11.3 Sep 1, 2023 Sep 1, 2024 pytorch-1-12- VERSION DATE -py310 TensorFlow versions All TensorFlow images have been deprecated.
+- List all available versions using gcloud CLI You can also list all available Deep Learning VM images using the following gcloud CLI command: gcloud compute images list \ --project deeplearning-platform-release \ --format="value(NAME)" \ --no-standard-images Note: The output of this command includes some image family framework types that aren't mentioned in the previous table of family names .
+- Supported framework versions Deep Learning VM supports each framework version based on a schedule to minimize security vulnerabilities.
+- To create a Deep Learning VM instance that uses a deprecated image, see the following example gcloud CLI command: gcloud compute instances create deprecated-tf-vm \ --image = projects/deeplearning-platform-release/global/images/ IMAGE NAME \ --machine-type = n1-standard-4 \ --zone = us-east1-c Replace IMAGE NAME with the name of the image, as follows: To use a specific image in the image family, use the image name, for example: pytorch-2-9-cu129-ubuntu-2204-nvidia-580-v20260416 .
 

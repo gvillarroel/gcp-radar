@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.962Z"
+generated_at: "2026-04-14T16:02:18.824Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "User Preferences"
 feature_slug: "user-preferences"
 latest_feature_date: "2025-02-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/soar/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
+  - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+  - "https://docs.cloud.google.com/chronicle/docs/administration/rbac"
 keywords:
   - "user"
   - "preferences"
-  - "the"
   - "dialog"
   - "centralizes"
   - "time"
   - "zone"
   - "date"
+  - "notification"
 ---
 
 # User Preferences
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,54 @@ The User Preferences dialog centralizes time zone, date and time, notification, 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
+- [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
+- [https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp](https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp)
+- [https://docs.cloud.google.com/chronicle/docs/administration/rbac](https://docs.cloud.google.com/chronicle/docs/administration/rbac)
 
 ## Supporting Pages
 
-### Google Security Operations SOAR release notes \_|\_ Google Cloud Documentation
+### "Search for events and alerts \_|\_ Google Security Operations \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
+- URL: [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 - Source ID: `site-docs-reference-2`
-- Final score: 164
+- Final score: 150
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Configure user preferences The ability to manage platform time zones, date/time settings, and notifications have moved to the new User Preferences dialog, accessible from your avatar.
-- New API for Logs: Admin users can now retrieve raw python logs directly from the platform using the following API: POST/api/external/v1/logging/python Fixed Release Notes 6.2.31 Importing a custom integration on top of an existing commercial integration causes the connector to not work properly (ID #00243798) Specific Integration showing incorrect update available (ID #00181718) SDK call siemplify.current alert.creation time returns 0 (ID #00226591) In rare situations, unable to access several cases via the Platform or via API (ID #00243878) When changing the Case Stage under the Cases tab, the drop down list of stages does not follow the same numerical order as defined in the Settings (ID #44453181) Entities that should be internal are created as external if ingested using the environment alias (ID #00225318) In certain situations, alerts are ingested into the platform for environments that don't exist yet in the platform and as soon as the environments are created - the cases are opened and playbooks run.
-- Fixed lastLoginTime returns wrong date for SAML users (ID #00278010) Fixed Playbooks with async actions longer than 7 days can't be saved even though time set to 14 days in IDE (ID #00269032) Fixed Wrong error message returned for environment alias duplicates (ID #00271405) Fixed Clicking on events configuration opens the wrong mapping & modeling rules Fixed Incident Manager appearing in navigation even though user doesn"t have license (ID #49062139) March 15, 2024 Announcement Release 6.2.5.0 is now in General Availability.
-- Fixed Issue with Siemplify Create or Update Entity action. (ID #53053446) Fixed The search everything database is displaying incorrect entity values. (ID #52746256) Fixed CaseSearchEverything API time zone discrepancies. (ID #52558921) October 06, 2024 Announcement Release 6.3.20 is now in General Availability.
+- The User Preferences dialog appears.
+- For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = "USER RESOURCE UPDATE CONTENT" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.
+- Supported fields You can download the following fields to a CSV file from the platform: user hostname process name event type timestamp raw log (valid only when raw logs are enabled for the customer) All fields starting with udm.additional Valid field types You can download the following field types to a CSV file: double float int32 uint32 int64 uint64 bool string enum bytes google.protobuf.Timestamp google.protobuf.Duration Unsupported fields Fields that start with "udm" (not udm.additional) and meet either of the following conditions cannot be downloaded to CSV: The nesting of the field is more than 10 deep in udm proto.
+- Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.
 
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
+### "Role-Based Access Control (RBAC) User Guide \_|\_ Google Security Operations\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 156
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Manage user preferences The ability to manage platform time zones, date/time settings, and notifications has been relocated to the new User Preferences dialog, accessible from your avatar.
-- Accenture Synthetic ( ACCENTURE SYNTHETIC ) Adyen Platform ( ADYEN ) AliCloud ActionTrail ( ALICLOUD ACTIONTRAIL ) Apache LOG4J Java Application Log ( LOG4J ) AppSmith Audit ( APPSMITH AUDIT ) Arctic Security Arctic Node ( ARCTIC NODE ) Arista CorvilNet DANZ Integration ( ARISTA CORVILNET ) Arista Extensible Operating System ( ARISTA EOS ) AvePoint EnPower ( AVEPOINT ENPOWER ) Avigilon Alta Cloud Security ( AVIGILON ALTA CLOUD SECURITY ) Avigilon Ava Security Camera ( AVIGILON AVA SECURITY CAMERA ) AWS Dasha ( AWS DASHA ) AWS Elastic Kubernetes Service ( AWS EKS ) Azure Network Security Group Event ( AZURE NSG EVENT ) Azure Windows Virtual Desktop Connections Logs ( AZURE WVD CONNECTIONS ) Azure Windows Virtual Desktop Management Logs ( AZURE WVD MANAGEMENT ) Barracuda Load Balancer ADC ( BARRACUDA LOAD BALANCER ) Broadcom Edge Secure Web Gateway ( BROADCOM EDGE SWG ) Celonis Audit Logs ( CELONIS ) Chopin PrePay Solutions ( CHOPIN PPS ) Cisco Duo Authentication Proxy ( DUO AUTH PROXY ) Cloudflare CASB Findings ( CLOUDFLARE CASB FINDINGS ) Cloudflare Device posture results ( CLOUDFLARE DEVICE POSTURE RESULTS ) Cloudflare DLP Forensic Copies ( CLOUDFLARE DLP FORENSIC COPIES ) Cloudflare DNS Firewall Logs ( CLOUDFLARE DNS FIREWALL LOGS ) Cloudflare DNS logs ( CLOUDFLARE DNS LOGS ) Cloudflare Email Security Alerts ( CLOUDFLARE EMAIL SECURITY ALERTS ) Cloudflare Firewall Events ( CLOUDFLARE FIREWALL EVENTS ) Cloudflare Gateway DNS ( CLOUDFLARE GATEWAY DNS ) Cloudflare Gateway HTTP ( CLOUDFLARE GATEWAY HTTP ) Cloudflare Gateway Network ( CLOUDFLARE GATEWAY NETWORK ) Cloudflare HTTP requests ( CLOUDFLARE HTTP REQUESTS ) Cloudflare Magic IDS Detections ( CLOUDFLARE MAGIC IDS DETECTIONS ) Cloudflare NEL reports ( CLOUDFLARE NEL REPORTS ) Cloudflare Sinkhole HTTP Logs ( CLOUDFLARE SINKHOLE HTTP LOGS ) Cloudflare SSH Logs ( CLOUDFLARE SSH LOGS ) Cloudflare Workers Trace Events ( CLOUDFLARE WORKERS TRACE EVENTS ) Cloudflare Zero Trust Network Session ( CLOUDFLARE ZERO TRUST NETWORK SESSION ) CloudWave Honeypot ( CLOUDWAVE HONEYPOT ) ColorTokens ( COLORTOKENS ) Contrast Security ( CONTRAST SECURITY ) Conversational Agents and Dialogflow ( CONVERSATIONAL AGENT ) Corero SmartWall One ( CORERO SMARTWALL ONE ) Cytracom Control One ( CYTRACOM CONTROL ONE ) Datadog Application Security Management ( DATADOG ASM ) Express NodeJS ( EXPRESS NODEJS ) F5 Distributed Cloud WAF ( F5 DCS WAF ) Figma Developers ( FIGMA ) FIS Trax Payment Factory ( TRAX ) Fortinet FortiDeceptor ( FORTINET FORTIDECEPTOR ) Fortinet FortiSASE ( FORTINET FORTISASE ) Gemini Code Assist ( GEMINI CODE ASSIST ) Genea Access Control ( GENEA ACCESS CONTROL ) Genetec Synergis ( GENETEC SYNERGIS ) GL TRADE ( GL TRADE ) HP Inc MFP ( HP INC MFP ) HP Tandem ( HP TANDEM ) Huawei Versatile Routing Platform ( HUAWEI VRP ) Human Security ( HUMAN SECURITY ) iManage Threat Manager ( IMANAGE THREAT MANAGER ) Indefend DLP ( INDEFEND DLP ) Invicti ( INVICTI ) Isonline ISL Light ( ISL LIGHT ) Itential Pronghorn ( ITENTIAL PRONGHORN ) Jit ( JIT ) Kodem Security ( KODEM SECURITY ) Konica Minolta YSoft SafeQ ( YSOFT SAFEQ ) LayerX ( LAYERX ) LinOTP ( LIN OTP ) Magento Cloud ( MAGENTO CLOUD ) Mandiant Advantage Security Validation ( MA SV ) NetApp ONTAP Audit ( NETAPP ONTAP AUDIT ) Netscout Arbor Threat Mitigation System ( NETSCOUT TMS ) Netwrix Privilege Secure ( NETWRIX PRIVILEGE SECURE ) NeuVector SUSE ( NEUVECTOR ) Novidea Insurance Management System ( NOVIDEA CLAIM HISTORY ) OneTrust ( ONETRUST ) Openpath Context ( OPENPATH CONTEXT ) Oracle Audit Vault Database Firewall ( ORACLE AVDF ) Oracle CPQ ( ORACLE CPQ ) Oracle Exadata Database Machine ( ORACLE EXADATA ) Palo Alto Prisma Cloud Workload Protection ( PAN PRISMA CWP ) Palo Alto Prisma Dig Cloud DSPM ( PAN PRISMA DIG CLOUD DSPM ) Panorays ( PANORAYS ) Pathlock Identity Security Platform ( PATHLOCK ) Procore ( PROCORE ) ProofPoint Email Protection ( PROOFPOINT EMAIL PROTECTION ) Radiantone ( RADIANTONE ) Radware Cloud WAF Service Access ( RADWARE ACCESS ) Reblaze Web Application Firewall ( REBLAZE WAF ) Red Access Browsing Security ( RED ACCESS ) SafeNet Network HSM ( SAFENET HSM ) Salesforce Marketing Cloud Audit ( SALESFORCE MARKETING CLOUD AUDIT ) Salesforce Shield ( SALESFORCE SHIELD ) Sangfor IAG ( SANGFOR IAG ) SAP Leasing ( SAP LEASING ) SAS Institute ( SAS INSTITUTE ) Securden ( SECURDEN ) SecurEnvoy SecurAccess ( SECURENVOY MFA ) Securesoft Sniper IPS ( SECURESOFT SNIPER IPS ) Sentra Data Loss Prevention ( SENTRA DLP ) Shield IoT ( SHIELD IOT ) Siemens Simatic S7 PLC SNMP ( SIEMENS S7 PLC SNMP ) Siemens Simatic S7 PLC SYSLOG ( SIEMENS S7 PLC SYSLOG ) Smartsheet User Context ( SMARTSHEET USER CONTEXT ) Snowflake Access ( SNOWFLAKE ACCESS ) SOCRadar Incidents ( SOCRADAR INCIDENTS ) Strata Maverics Identity Orchestration Platform ( STRATA MAVERICS ) Stripe Payments ( STRIPE ) Suridata ( SURIDATA ) Teradata Access ( TERADATA ACCESS ) Thales payShield 10K HSM ( THALES PS10K HSM ) Trend Micro TippingPoint Security Management System ( TREND MICRO TIPPING POINT ) Valence Security ( VALENCE ) Vertica Audit ( VERTICA AUDIT ) Windows NTP ( WINDOWS NTP ) Winget Autoupdate ( WINGET AUTOUPDATE ) Wiz Runtime Execution Data ( WIZ RUNTIME EXECUTION DATA ) Workiva Wdesk ( WORKIVA WDESK ) XL Release ( XLR ) Yugabyte Database ( YUGABYTE DATABASE ) For a list of supported log types and details about default parser changes, see Supported log types and default parsers .
-- January 14, 2025 Change The following rules have been removed from their associated rule packs in Curated Detections due to high alert volume across the Google SecOps customer base: Cloud Threats - CDIR SCC Enhanced Defense Evasion Alerts: SCC: Modify VPC Service Control with GCE Activity from the Restricted Resource SCC: Modify VPC Service Control with Activity from the Restricted Service Linux Threats - OS Privilege Escalation Tools: Sensitive File Discovery Last Login Users Whoami Commands Windows Threats - Initial Access: NetLogon AD System Event Risk Analytics for UEBA - Login to an Application Never Before Seen for a User Group: First Time User Login Activity to Application for Manager Peer Group Risk Analytics for UEBA - Login from Country Never Before Seen for a User Group: First Time User Login Activity from Country for Manager Peer Group The rule "SCC: Unexpected Child Shell" has been moved from the rule pack "Cloud Threats - CDIR SCC Enhanced Malware Alerts" to "Cloud Threats - CDIR SCC Enhanced Execution Alerts" January 11, 2025 Change Playbook names must now be unique across all SOAR environments, as part of updates to support future features.
-- In addition, a new accessibility option in the User Preferences dialog lets you define how long feedback messages remain on the screen.
-
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 152
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/chronicle/docs/administration/rbac](https://docs.cloud.google.com/chronicle/docs/administration/rbac)
+- Source ID: `site-docs-reference`
+- Final score: 144
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- February 16, 2025 Feature Manage user preferences The ability to manage platform time zones has been relocated to the new User Preferences dialog, accessible from your avatar.
-- Accenture Synthetic ( ACCENTURE SYNTHETIC ) Adyen Platform ( ADYEN ) AliCloud ActionTrail ( ALICLOUD ACTIONTRAIL ) Apache LOG4J Java Application Log ( LOG4J ) AppSmith Audit ( APPSMITH AUDIT ) Arctic Security Arctic Node ( ARCTIC NODE ) Arista CorvilNet DANZ Integration ( ARISTA CORVILNET ) Arista Extensible Operating System ( ARISTA EOS ) AvePoint EnPower ( AVEPOINT ENPOWER ) Avigilon Alta Cloud Security ( AVIGILON ALTA CLOUD SECURITY ) Avigilon Ava Security Camera ( AVIGILON AVA SECURITY CAMERA ) AWS Dasha ( AWS DASHA ) AWS Elastic Kubernetes Service ( AWS EKS ) Azure Network Security Group Event ( AZURE NSG EVENT ) Azure Windows Virtual Desktop Connections Logs ( AZURE WVD CONNECTIONS ) Azure Windows Virtual Desktop Management Logs ( AZURE WVD MANAGEMENT ) Barracuda Load Balancer ADC ( BARRACUDA LOAD BALANCER ) Broadcom Edge Secure Web Gateway ( BROADCOM EDGE SWG ) Celonis Audit Logs ( CELONIS ) Chopin PrePay Solutions ( CHOPIN PPS ) Cisco Duo Authentication Proxy ( DUO AUTH PROXY ) Cloudflare CASB Findings ( CLOUDFLARE CASB FINDINGS ) Cloudflare Device posture results ( CLOUDFLARE DEVICE POSTURE RESULTS ) Cloudflare DLP Forensic Copies ( CLOUDFLARE DLP FORENSIC COPIES ) Cloudflare DNS Firewall Logs ( CLOUDFLARE DNS FIREWALL LOGS ) Cloudflare DNS logs ( CLOUDFLARE DNS LOGS ) Cloudflare Email Security Alerts ( CLOUDFLARE EMAIL SECURITY ALERTS ) Cloudflare Firewall Events ( CLOUDFLARE FIREWALL EVENTS ) Cloudflare Gateway DNS ( CLOUDFLARE GATEWAY DNS ) Cloudflare Gateway HTTP ( CLOUDFLARE GATEWAY HTTP ) Cloudflare Gateway Network ( CLOUDFLARE GATEWAY NETWORK ) Cloudflare HTTP requests ( CLOUDFLARE HTTP REQUESTS ) Cloudflare Magic IDS Detections ( CLOUDFLARE MAGIC IDS DETECTIONS ) Cloudflare NEL reports ( CLOUDFLARE NEL REPORTS ) Cloudflare Sinkhole HTTP Logs ( CLOUDFLARE SINKHOLE HTTP LOGS ) Cloudflare SSH Logs ( CLOUDFLARE SSH LOGS ) Cloudflare Workers Trace Events ( CLOUDFLARE WORKERS TRACE EVENTS ) Cloudflare Zero Trust Network Session ( CLOUDFLARE ZERO TRUST NETWORK SESSION ) CloudWave Honeypot ( CLOUDWAVE HONEYPOT ) ColorTokens ( COLORTOKENS ) Contrast Security ( CONTRAST SECURITY ) Conversational Agents and Dialogflow ( CONVERSATIONAL AGENT ) Corero SmartWall One ( CORERO SMARTWALL ONE ) Cytracom Control One ( CYTRACOM CONTROL ONE ) Datadog Application Security Management ( DATADOG ASM ) Express NodeJS ( EXPRESS NODEJS ) F5 Distributed Cloud WAF ( F5 DCS WAF ) Figma Developers ( FIGMA ) FIS Trax Payment Factory ( TRAX ) Fortinet FortiDeceptor ( FORTINET FORTIDECEPTOR ) Fortinet FortiSASE ( FORTINET FORTISASE ) Gemini Code Assist ( GEMINI CODE ASSIST ) Genea Access Control ( GENEA ACCESS CONTROL ) Genetec Synergis ( GENETEC SYNERGIS ) GL TRADE ( GL TRADE ) HP Inc MFP ( HP INC MFP ) HP Tandem ( HP TANDEM ) Huawei Versatile Routing Platform ( HUAWEI VRP ) Human Security ( HUMAN SECURITY ) iManage Threat Manager ( IMANAGE THREAT MANAGER ) Indefend DLP ( INDEFEND DLP ) Invicti ( INVICTI ) Isonline ISL Light ( ISL LIGHT ) Itential Pronghorn ( ITENTIAL PRONGHORN ) Jit ( JIT ) Kodem Security ( KODEM SECURITY ) Konica Minolta YSoft SafeQ ( YSOFT SAFEQ ) LayerX ( LAYERX ) LinOTP ( LIN OTP ) Magento Cloud ( MAGENTO CLOUD ) Mandiant Advantage Security Validation ( MA SV ) NetApp ONTAP Audit ( NETAPP ONTAP AUDIT ) Netscout Arbor Threat Mitigation System ( NETSCOUT TMS ) Netwrix Privilege Secure ( NETWRIX PRIVILEGE SECURE ) NeuVector SUSE ( NEUVECTOR ) Novidea Insurance Management System ( NOVIDEA CLAIM HISTORY ) OneTrust ( ONETRUST ) Openpath Context ( OPENPATH CONTEXT ) Oracle Audit Vault Database Firewall ( ORACLE AVDF ) Oracle CPQ ( ORACLE CPQ ) Oracle Exadata Database Machine ( ORACLE EXADATA ) Palo Alto Prisma Cloud Workload Protection ( PAN PRISMA CWP ) Palo Alto Prisma Dig Cloud DSPM ( PAN PRISMA DIG CLOUD DSPM ) Panorays ( PANORAYS ) Pathlock Identity Security Platform ( PATHLOCK ) Procore ( PROCORE ) ProofPoint Email Protection ( PROOFPOINT EMAIL PROTECTION ) Radiantone ( RADIANTONE ) Radware Cloud WAF Service Access ( RADWARE ACCESS ) Reblaze Web Application Firewall ( REBLAZE WAF ) Red Access Browsing Security ( RED ACCESS ) SafeNet Network HSM ( SAFENET HSM ) Salesforce Marketing Cloud Audit ( SALESFORCE MARKETING CLOUD AUDIT ) Salesforce Shield ( SALESFORCE SHIELD ) Sangfor IAG ( SANGFOR IAG ) SAP Leasing ( SAP LEASING ) SAS Institute ( SAS INSTITUTE ) Securden ( SECURDEN ) SecurEnvoy SecurAccess ( SECURENVOY MFA ) Securesoft Sniper IPS ( SECURESOFT SNIPER IPS ) Sentra Data Loss Prevention ( SENTRA DLP ) Shield IoT ( SHIELD IOT ) Siemens Simatic S7 PLC SNMP ( SIEMENS S7 PLC SNMP ) Siemens Simatic S7 PLC SYSLOG ( SIEMENS S7 PLC SYSLOG ) Smartsheet User Context ( SMARTSHEET USER CONTEXT ) Snowflake Access ( SNOWFLAKE ACCESS ) SOCRadar Incidents ( SOCRADAR INCIDENTS ) Strata Maverics Identity Orchestration Platform ( STRATA MAVERICS ) Stripe Payments ( STRIPE ) Suridata ( SURIDATA ) Teradata Access ( TERADATA ACCESS ) Thales payShield 10K HSM ( THALES PS10K HSM ) Trend Micro TippingPoint Security Management System ( TREND MICRO TIPPING POINT ) Valence Security ( VALENCE ) Vertica Audit ( VERTICA AUDIT ) Windows NTP ( WINDOWS NTP ) Winget Autoupdate ( WINGET AUTOUPDATE ) Wiz Runtime Execution Data ( WIZ RUNTIME EXECUTION DATA ) Workiva Wdesk ( WORKIVA WDESK ) XL Release ( XLR ) Yugabyte Database ( YUGABYTE DATABASE ) For a list of supported log types and details about default parser changes, see Supported log types and default parsers .
-- In addition, a new accessibility option in the User Preferences dialog lets you define how long feedback messages remain on the screen.
-- January 14, 2025 Change The following rules have been removed from their associated rule packs in Curated Detections due to high alert volume across the Google SecOps customer base: Cloud Threats - CDIR SCC Enhanced Defense Evasion Alerts: SCC: Modify VPC Service Control with GCE Activity from the Restricted Resource SCC: Modify VPC Service Control with Activity from the Restricted Service Linux Threats - OS Privilege Escalation Tools: Sensitive File Discovery Last Login Users Whoami Commands Windows Threats - Initial Access: NetLogon AD System Event Risk Analytics for UEBA - Login to an Application Never Before Seen for a User Group: First Time User Login Activity to Application for Manager Peer Group Risk Analytics for UEBA - Login from Country Never Before Seen for a User Group: First Time User Login Activity from Country for Manager Peer Group The rule "SCC: Unexpected Child Shell" has been moved from the rule pack "Cloud Threats - CDIR SCC Enhanced Malware Alerts" to "Cloud Threats - CDIR SCC Enhanced Execution Alerts" January 07, 2025 Announcement The following parser documentation is now available: Collect Microsoft Defender for Endpoint logs Zscaler parsers overview Collect Zscaler DNS logs Collect Zscaler Firewall logs Collect Zscaler Internet Access logs Collect Zscaler Webproxy logs Collect Linux auditd and AIX systems logs Collect CircleCI audit logs Collect CloudPassage Halo logs Collect JFrog Artifactory logs Collect Apple macOS syslog data Collect Netskope web proxy logs Collect Onfido logs Collect OPNsense firewall logs Collect Rapid7 InsightIDR logs Collect Sysdig logs Collect Thinkst Canary logs Collect VMware Workspace ONE UEM logs Collect Workday HCM logs December 27, 2024 Change Google SecOps has added a new rule set to Applied Threat Intelligence (ATI), called Inbound IP Address Authentication, that identifies IP addresses that are authenticating to local infrastructure in an inbound network direction.
+- Update the time zone You can update the time zone as follows: Locate the Time Settings section on your profile and click Edit .
+- Note: Some user interface elements display only UTC time, such as the time values on the prevalence graph in Domain view, which are labeled as UTC .
+- Similarly, downloaded results are always displayed in UTC, regardless of the configured time zone.
+- From this dialog you can complete the following tasks: Assign a new user or users to a role.
+
+### "SOAR migration overview \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp](https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp)
+- Source ID: `site-api-reference`
+- Final score: 140
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Migration stage 1 for Google SecOps unified customers Check your in-product notification for your Stage 1 migration date and the included Google Form to confirm the time slot.
+- Provide the Google Cloud project ID in the Google form in the in-product notification and confirm the migration date and time slot before you submit the form.
+- Landing page The landing page will move from the Permissions page to the User Preferences menu, accessible from your avatar.
+- Each time a user signs in to the platform, they are automatically added to Settings > Organization > User Management page.
 

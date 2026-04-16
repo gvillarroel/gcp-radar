@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.393Z"
+generated_at: "2026-04-12T12:13:45.748Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "SSH authentication for remote repositories"
 feature_slug: "ssh-authentication-for-remote-repositories"
 latest_feature_date: "2023-08-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataform/docs/connect-repository"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1"
   - "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes"
   - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
 keywords:
@@ -26,7 +27,7 @@ keywords:
 # SSH authentication for remote repositories
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,11 +39,12 @@ SSH authentication lets Dataform connect to GitHub, GitLab, and Bitbucket Cloud 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataform/docs/connect-repository](https://docs.cloud.google.com/dataform/docs/connect-repository)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1)
 - [https://docs.cloud.google.com/dataform/docs/restrict-git-remotes](https://docs.cloud.google.com/dataform/docs/restrict-git-remotes)
 - [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataform/docs/connect-repository](https://docs.cloud.google.com/dataform/docs/connect-repository)
 - Source ID: `site-docs-root-2`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 250
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following table lists supported Git providers and connection methods that are available for their repositories: Git provider Connection method Azure DevOps Services SSH Bitbucket SSH GitHub SSH or HTTPS GitLab SSH or HTTPS Important: To connect your remote Git repository to Dataform, verify that your Git host has a public IP address .
@@ -62,13 +64,27 @@ Evidence snippets:
 - Required roles To get the permissions that you need to connect a Dataform repository to a remote Git repository, ask your administrator to grant you the Dataform Admin ( roles/dataform.admin ) IAM role on repositories.
 - To connect a remote repository to a Dataform repository through SSH, follow these steps: In your Git provider, do the following: Azure DevOps Services In Azure DevOps Services, create a private SSH key .
 
+### "Package com.google.cloud.dataform.v1 (0.87.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1)
+- Source ID: `site-java-reference`
+- Final score: 243
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Ssh Authentication Config Configures fields for performing SSH authentication. com. google. cloud. dataform. v1.
+- Builder Configures fields for performing SSH authentication. com. google. cloud. dataform. v1.
+- Ssh Authentication Config Or Builder com. google. cloud. dataform. v1.
+- Builder Builder for projects/{project}/locations/{location}/repositories/{repository}/workflowInvocations/{workflow invocation}. com. google. cloud. dataform. v1.
+
 ### Restrict remote repositories \_|\_ Dataform \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataform/docs/restrict-git-remotes](https://docs.cloud.google.com/dataform/docs/restrict-git-remotes)
 - Source ID: `site-docs-root-2`
-- Final score: 192
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following is a request to apply the dataform.restrictGitRemotes constraint to an organization where Dataform repositories can connect to only the selected remote Git repositories, and the constraints/dataform.restrictGitRemotes policy is already set: PATCH https://orgpolicy.googleapis.com/v2/projects/ PROJECT ID OR NUMBER /policies/dataform.restrictGitRemotes The request body contains the desired organization policy for this constraint: { "name": "projects/ PROJECT ID OR NUMBER /policies/dataform.restrictGitRemotes", "spec": { "rules": [ { "values": { "allowedValues": ["https://github.com/example/allowed-repository.git"] } } ] } } Replace PROJECT ID OR NUMBER with the project ID or project number for this request.
@@ -80,9 +96,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 190
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 229
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 async def sample fetch remote branches(): Create a client client = dataform v1 .

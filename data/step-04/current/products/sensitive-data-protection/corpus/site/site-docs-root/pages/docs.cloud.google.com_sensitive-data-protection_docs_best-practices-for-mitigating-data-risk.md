@@ -46,7 +46,7 @@ As a service, discovery acts as a source of truth about your data
 assets and can automatically report metrics for audit reports. Additionally,
 discovery can connect to other Google Cloud services like
 Security Command Center, Google Security Operations, and
-Dataplex Universal Catalog to enrich security operations and data management.
+Knowledge Catalog to enrich security operations and data management.
 The discovery service runs continuously and detects new data as your
 organization operates and grows. For example, if someone in your organization
 creates a new project and uploads a large amount of new data, the
@@ -77,11 +77,11 @@ of a security threat or vulnerability that might put your sensitive data at
 risk. You can automatically export data profiles to the following:
 Security Command Center
 Google SecOps
-Publish the data profiles to Dataplex Universal Catalog or an inventory system to track
+Publish the data profiles to Knowledge Catalog or an inventory system to track
 the data profile metrics along with any other appropriate business metadata.
 For information about automatically exporting data profiles to
-Dataplex Universal Catalog, see
-Add Dataplex Universal Catalog aspects based on insights from data profiles .
+Knowledge Catalog, see
+Add Knowledge Catalog aspects based on insights from data profiles .
 Scenario 2: Sensitive data was found and isn't properly protected
 If discovery finds sensitive data in a resource that isn't properly
 secured by access controls, then consider the recommendations described in this
@@ -168,7 +168,7 @@ Run discovery at the organization, folder, or project level.
 You found sensitive data in a resource that is already protected.
 Continuously monitor that resource by running discovery and
 automatically exporting profiles to Security Command Center,
-Google SecOps, and Dataplex Universal Catalog.
+Google SecOps, and Knowledge Catalog.
 You found sensitive data in a resource that isn't protected.
 Hide or display data based on who is viewing it; use IAM,
 column-level security, or row-level security. You can also use the
@@ -182,6 +182,6 @@ content methods of the DLP API, which process data
 in near real time.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

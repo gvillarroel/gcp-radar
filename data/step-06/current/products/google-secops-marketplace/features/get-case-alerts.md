@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:34.384Z"
+generated_at: "2026-04-12T12:17:17.667Z"
 product_name: "Google SecOps Marketplace"
 product_slug: "google-secops-marketplace"
 feature_name: "Get Case Alerts"
 feature_slug: "get-case-alerts"
 latest_feature_date: "2025-11-12"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server"
 keywords:
   - "get"
   - "case"
@@ -24,7 +27,7 @@ keywords:
 # Get Case Alerts
 
 Product: Google SecOps Marketplace
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Adds an action that retrieves alerts for a case in Siemplify.
 
 Adds an action that retrieves alerts for a case in Siemplify.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere)
+- [https://docs.cloud.google.com/chronicle/docs/detection/composite-detections](https://docs.cloud.google.com/chronicle/docs/detection/composite-detections)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Integrate LevelBlue USM Anywhere with Google SecOps \_|\_ Google Security\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere)
+- Source ID: `site-docs-root`
+- Final score: 201
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message In case of error: "Failed to get details about AlienVault Anywhere alarm!
+- Action results Script result Script result name Value options Example is success True or False is success:False JSON result { "rep device fqdn" : "192.0.2.30" , "sorce name" : "192.0.2.30" , "tag" : "pdate-esp-kernelmodle.sh" , "timestamp occred" : "1596541223000" , "destination address" : "198.51.100.130" , "rep dev canonical" : "192.0.2.30" , "destination name" : "198.51.100.130" , "received from" : "Centos7-001" , "timestamp occred iso8601" : "2020-08-04T11:40:23.000Z" , "id" : "f52dd545-ff14-5576-3b70-47f10f528f53" , "needs enrichment" : True , "rep device asset id" : "256fa9b1-a066-c9eb-561a-c2110035978a" , "timestamp received" : "1596541223152" , "sorce canonical" : "256fa9b1-a066-c9eb-561a-c2110035978a" , "destination fqdn" : "198.51.100.130" , " links" : { "self" : { "href" : " URL " } }, "has alarm" : False , "rep device address" : "192.0.2.30" , "event name" : "pdate-esp-kernelmodle.sh event" , "sed hint" : False , "transient" : False , "packet type" : "log" , "was fzzied" : True , "sppressed" : False , "log" : "<13>Ag 4 14:40:23 Centos7-001 pdate-esp-kernelmodle.sh: McAfeeESPFileAccess installed in this system is - 198.51.100.130" , "sorce asset id" : "256fa9b1-a066-c9eb-561a-c2110035978a" , "timestamp received iso8601" : "2020-08-04T11:40:23.152Z" , "destination canonical" : "198.51.100.130" , "time offset" : "Z" } Case wall Result type Description Type Output message In case of general error: "Action didn't complete due to error: {error}", result value should be set to false and the action should fail.
+- If the action is completed successfully: "Successfully returned {len(events)} AlienVault Anywhere events" If the action failed to run: "Failed to list Endgame AlienVault Anywhere events!" When Product version parameter is set to V1: "Action should fail with clear message that is supported in V2." General CSV Table Table Title: Events Table Columns: ID Name Occurred Time Received Time Suppressed Severity Category Sub Category Access Control Outcome Destination Destination Port Source Source Port Values: id= uuid name = event name Occurred Time=timestamp occurred iso8601 Received Time=timestamp received iso8601 Suppressed =suppressed Severity = event severity Category = event category Sub Category = event subcategory Access Control Outcome = access control outcome Destination = destination name Destination Port = destination port Source = source name Source Port= source port General Ping Test connectivity.
+- Error is {}. action should fail." Action pass successfully: "Successfully returned AlienVault Anywhere alarm {} details" When Product version parameter is set to V1: "Action should fail with clear message that is supported in V2." General CSV Table Columns: ID Priority Occurred Time Received Time Source Source Organization Source Country Destination Rule Attack ID Rule Strategy Rule ID Rule Attack Tactic Rule Attack Technique Rule Intent General List Events Search for AlienVault events.
+
+### "Composite detections \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/composite-detections](https://docs.cloud.google.com/chronicle/docs/detection/composite-detections)
+- Source ID: `site-docs-reference`
+- Final score: 169
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- By setting a rule to detect only and then plotting its detections in a dashboard widget, you can track trends, identify outliers, and gain a high-level audit view of the activity without being overwhelmed by individual alerts.
+- For example, if multiple rules share the same meta label tactic: exfiltration , you can have a composite rule that targets any detection where the tactic label has the value exfiltration .
+- Detect data exfiltration attempts This involves correlating several distinct user actions that, when combined, might indicate an attempt to exfiltrate data.
+- Meta labels are particularly flexible because they let you categorize rules so that a composite rule can target any detection with that label.
+
+### "AWS Identity and Access Management (IAM) \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam)
+- Source ID: `site-docs-root`
+- Final score: 166
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result { "PolicyName" : "S3-read-only-bucket" , "PolicyId" : "ANPAYPE7MW7AFKUDK3HD7" , "Arn" : "arn:aws:iam::582302349248:policy/S3-read-only-bucket" , "Path" : "/" , "DefaultVersionId" : "v1" , "AttachmentCount" : 0 , "PermissionsBoundaryUsageCount" : 0 , "IsAttachable" : true , "CreateDate" : "2020-12-6T17:16:45" , "UpdateDate" : "2020-12-6T17:16:45" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print "<Policy name> policy was successfully created" The action should fail and stop a playbook execution: If error - Policy already exists: Print "Could not create <policy name> policy.
+- Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ "Arn" : "arn:aws:iam::582302349248:group/ZivGroup" , "CreateDate" : "2020-12-05 16:18:36+00:00" , "Path" : "/" , "GroupId" : "AGPAYPE7MW7AMKCWMJPMX" , "GroupName" : "ZivGroup" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print "Successfully listed available groups in AWS IAM" If no data available: Print "No Groups found in AWS IAM" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, If 'Max Groups'> 1000): print "Error executing action 'List Groups'.
+- Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ "Arn" : "arn:aws:iam::582302349248:user/ziv" , "CreateDate" : "2020-12-03T12:12:20" , "Path" : "/" , "UserId" : "AIDAYPE7MW7AFMHK4WCHS" , "UserName" : "ziv" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print "Successfully listed available users in AWS IAM" If no data available: Print "No users found in AWS IAM" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, if max>10000): print "Error executing action 'List Users'.
+- Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print "Successfully connected to the AWS IAM server with the provided connection parameters!" The action should fail and stop a playbook execution: if not successful: print "Failed to connect to the AWS IAM server!
+
+### "Integrate Atlassian Confluence Server with Google SecOps \_|\_ Google Security\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server)
+- Source ID: `site-docs-root`
+- Final score: 164
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON result { "id" : " PAGE ID " , "type" : "page" , "status" : "current" , "title" : "title" , "body" : { "storage" : { "value" : "<p>test page</p><p>11</p><p>aa</p><p>aa</p><p>aa</p><p><br /></p><p><br /></p>" , "representation" : "storage" , " expandable" : { "content" : "/rest/api/content/ PAGE ID " } }, " expandable" : { "editor" : "" , "view" : "" , "export view" : "" , "styled view" : "" , "anonymous export view" : "" } }, "extensions" : { "position" : "none" }, " links" : { "webui" : "/display/SIEM/111" , "edit" : "/pages/resumedraft.action?draftId= PAGE ID &draftShareId=cf8b3a21-8e36-4a83-a696-51fcb4428d1c" , "tinyui" : "/x/TIAB" , "collection" : "/rest/api/content" , "base" : "http://192.0.2.45:8090" , "context" : "" , "self" : "http://192.0.2.45:8090/rest/api/content/ PAGE ID " }, " expandable" : { "container" : "/rest/api/space/SIEM" , "metadata" : "" , "operations" : "" , "children" : "/rest/api/content/ PAGE ID /child" , "restrictions" : "/rest/api/content/ PAGE ID /restriction/byOperation" , "history" : "/rest/api/content/ PAGE ID /history" , "ancestors" : "" , "version" : "" , "descendants" : "/rest/api/content/ PAGE ID /descendant" , "space" : "/rest/api/space/SIEM" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: If page is found (is success = true): print "Successfully fetched page information with id: <id>" If data is not available (is success=false): print "The following page id was not found in the Atlassian Confluence Server: <page id>" The action should fail and stop a playbook execution: If fatal error, like wrong credentials, no connection to server, other: "Error executing action "<Action name>".
+- JSON result { "results" : [ { "id" : " PAGE ID " , "type" : "page" , "status" : "current" , "title" : "Tell people what you think in a comment (step 8 of 9)" , "space" : { "id" : 131073 , "key" : "ds" , "name" : "Demonstration Space" , "type" : "global" , " links" : { "webui" : "/display/ds" , "self" : "http://192.0.2.45:8090/rest/api/space/ds" }, " expandable" : { "metadata" : "" , "icon" : "" , "description" : "" , "retentionPolicy" : "" , "homepage" : "/rest/api/content/ PAGE ID " } }, "extensions" : { "position" : 7 }, " links" : { "webui" : "/pages/viewpage.action?pageId= PAGE ID " , "edit" : "/pages/resumedraft.action?draftId= DRAFT ID " , "tinyui" : "/x/AYAB" , "self" : "http://192.0.2.45:8090/rest/api/content/ PAGE ID " }, " expandable" : { "container" : "/rest/api/space/ds" , "metadata" : "" , "operations" : "" , "children" : "/rest/api/content/ PAGE ID /child" , "restrictions" : "/rest/api/content/ PAGE ID /restriction/byOperation" , "history" : "/rest/api/content/ PAGE ID /history" , "ancestors" : "" , "body" : "" , "version" : "" , "descendants" : "/rest/api/content/ PAGE ID /descendant" } }, ... ], "start" : 0 , "limit" : 5 , "size" : 5 , " links" : { "self" : "http://192.0.2.45:8090/rest/api/content?expand=space" , "next" : "/rest/api/content?expand=space&limit=5&start=5" , "base" : "http://192.0.2.45:8090" , "context" : "" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: If data is available(is success = true): print "Successfully found pages for the provided criteria in Atlassian Confluence Server".
+- JSON result { "results" : [ { "id" : " ID " , "type" : "comment" , "status" : "current" , "title" : "Re: 111" , "body" : { "storage" : { "value" : "<p>comment1</p>" , "representation" : "storage" , " expandable" : { "content" : "/rest/api/content/ ID " } }, " expandable" : { "editor" : "" , "view" : "" , "export view" : "" , "styled view" : "" , "anonymous export view" : "" } }, "extensions" : { "location" : "footer" , " expandable" : { "resolution" : "" } }, " links" : { "webui" : "/display/SIEM/111?focusedCommentId=98387#comment- ID " , "self" : "http://203.0.113.1:8090/rest/api/content/ ID " }, " expandable" : { "container" : "/rest/api/content/ ID " , "metadata" : "" , "operations" : "" , "children" : "/rest/api/content/ ID /child" , "restrictions" : "/rest/api/content/ ID /restriction/byOperation" , "history" : "/rest/api/content/ ID /history" , "ancestors" : "" , "version" : "" , "descendants" : "/rest/api/content/ ID /descendant" , "space" : "/rest/api/space/SIEM" } }, ... ], "start" : 0 , "limit" : 10 , "size" : 2 , " links" : { "self" : "http://203.0.113.1:8090/rest/api/content/ ID /child/comment?expand=body.storage" , "base" : "http://203.0.113.1:8090" , "context" : "" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: If data is available(is success = true): print "Successfully fetched page comments for the provided Atlassian Confluence Server page id: <page id>".
+- JSON result { "results" : [ { "id" : " PAGE ID " , "type" : "page" , "status" : "current" , "title" : "test child page!" , "extensions" : { "position" : "none" }, " links" : { "webui" : "/pages/viewpage.action?pageId= PAGE ID " , "edit" : "/pages/resumedraft.action?draftId= PAGE ID &draftShareId=799fd068-5053-4889-9120-c1a3c970fdbd" , "tinyui" : "/x/T4AB" , "self" : "http://192.0.2.45:8090/rest/api/content/ PAGE ID " }, " expandable" : { "container" : "/rest/api/space/SIEM" , "metadata" : "" , "operations" : "" , "children" : "/rest/api/content/ PAGE ID /child" , "restrictions" : "/rest/api/content/ PAGE ID /restriction/byOperation" , "history" : "/rest/api/content/ PAGE ID /history" , "ancestors" : "" , "body" : "" , "version" : "" , "descendants" : "/rest/api/content/ PAGE ID /descendant" , "space" : "/rest/api/space/SIEM" } } ], "start" : 0 , "limit" : 1 , "size" : 1 , " links" : { "self" : "http://192.0.2.45:8090/rest/api/content/ PAGE ID /child/page" , "base" : "http://192.0.2.45:8090" , "context" : "" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: if data is available (is success = true): print "Successfully found child pages for the provided Atlassian Confluence Server page id: <page id>".
 

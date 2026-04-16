@@ -1,0 +1,86 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T01:49:39.133Z"
+product_name: "Dataproc"
+product_slug: "dataproc"
+feature_name: "Dataproc regional availability in europe-west8"
+feature_slug: "dataproc-regional-availability-in-europe-west8"
+latest_feature_date: "2022-04-20"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/regions"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore"
+keywords:
+  - "west8"
+  - "milan"
+  - "italy"
+  - "availability"
+  - "europe"
+  - "available"
+  - "regional"
+---
+
+# Dataproc regional availability in europe-west8
+
+Product: Dataproc
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Dataproc is available in the europe-west8 (Milan, Italy) region.
+
+## Extended Definition
+
+Dataproc is available in the europe-west8 (Milan, Italy) region.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/dataproc-metastore/docs/regions](https://docs.cloud.google.com/dataproc-metastore/docs/regions)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/quotas](https://docs.cloud.google.com/dataproc-metastore/docs/quotas)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore](https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore)
+
+## Supporting Pages
+
+### Dataproc Metastore regions \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/regions](https://docs.cloud.google.com/dataproc-metastore/docs/regions)
+- Source ID: `site-docs-root-2`
+- Final score: 64
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Asia Pacific Tokyo Region description Region name Taiwan asia-east1 Hong Kong asia-east2 Tokyo asia-northeast1 Seoul asia-northeast3 Mumbai asia-south1 Delhi asia-south2 Singapore asia-southeast1 Jakarta asia-southeast2 Sydney australia-southeast1 Melbourne australia-southeast2 Europe Region description Region name Warsaw europe-central2 Finland europe-north1 Madrid europe-southwest1 Belgium europe-west1 London europe-west2 Frankfurt europe-west3 Netherlands europe-west4 Zürich europe-west6 Milan europe-west8 Paris europe-west9 Turin europe-west12 Middle East Region description Region name Tel Aviv me-west1 Dammam me-central2 Dataproc Metastore services created in me-central2 can't be attached to Managed Service for Apache Spark clusters.
+- Feature Supported Administrator Interface ✓ Artifacts Cloud Storage bucket ✓ Auxiliary versions ✓ Backup/Restore ✓ CMEK config ✓ Database type Spanner/MySQL Data Catalog sync ✓ Endpoint protocol (Thrift/gRPC) ✓ IAM policies on individual tables/databases ✓ Import/Export ✓ Kerberos ✓ Private Service Connect ✓ Release channels ✓ Scaling config ✓ VPC-SC ✓ Single region services Dataproc Metastore is available in the following regions.
+
+### Quotas and limits \_|\_ Dataproc Metastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/quotas](https://docs.cloud.google.com/dataproc-metastore/docs/quotas)
+- Source ID: `site-docs-root-2`
+- Final score: 55
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example, you might have sufficient quota to create a new regional, external IP address in the us-central1 region, but that would not be possible if there were no available external IP addresses in that region.
+- Resource availability Each quota represents a maximum number for a particular type of resource that you can create, provided that resource is available.
+- Situations where resources are unavailable in an entire region are rare; however, resources within a zone can be depleted from time to time, typically without impact to the service level agreement (SLA) for the type of resource.
+- Even if you have available quota, you won't be able to create a new resource if it is not available.
+
+### Disaster recovery for Dataproc Metastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore](https://docs.cloud.google.com/dataproc-metastore/docs/disaster-recovery-for-dataproc-metastore)
+- Source ID: `site-docs-root-2`
+- Final score: 53
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create Hive data storage In Cloud Shell, create a dual-regional bucket to host the Hive data: gcloud storage buckets create gs:// ${ WAREHOUSE BUCKET } --location=NAM4 Copy some sample data to the Hive data bucket: gcloud storage cp gs://retail csv gs:// ${ WAREHOUSE BUCKET } /retail --recursive Create storage for metadata backups In Cloud Shell, create a dual-region bucket to host the DPMS metadata backups: gcloud storage buckets create gs:// ${ BACKUP BUCKET } --location=NAM4 Deploying compute resources in the primary region In this section, you deploy all the compute resources in the primary region, including the DPMS instance and the Managed Service for Apache Spark cluster.
+- Create a Managed Service for Apache Spark cluster In Cloud Shell, create a Managed Service for Apache Spark cluster and attach it to the DPMS instance: gcloud dataproc clusters create ${ HADOOP PRIMARY } \ --dataproc-metastore=projects/ ${ PROJECT } /locations/ ${ DPMS PRIMARY REGION } /services/ ${ DPMS PRIMARY INSTANCE } \ --region= ${ DPMS PRIMARY REGION } \ --image-version=2.0 Specify the cluster image as version 2.0 , which is the latest version available as of June 2021.
+- Managed Service for Apache Spark Metastore is a fully-managed, highly-available, auto-scaled, auto-healing, OSS-native metastore service that greatly simplifies technical metadata management.
+- Because the backup files are stored in a dual-regional bucket, they are accessible even if your primary region (region A) goes down.
+

@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T22:04:50.079Z"
+generated_at: "2026-04-12T20:56:05.582Z"
 product_name: "App Engine standard environment Node.js"
 product_slug: "app-engine-standard-environment-node-js"
 feature_name: "App Engine Standard environment availability in europe-west6"
 feature_slug: "app-engine-standard-environment-availability-in-europe-west6"
 latest_feature_date: "2019-04-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes"
-  - "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed"
-  - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc"
+  - "https://docs.cloud.google.com/appengine/docs/locations"
+  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started"
 keywords:
-  - "europe-west-6"
-  - "europe-west6"
-  - "Zurich region"
-  - "region launch"
-  - "Zurich"
-  - "Standard environment availability"
-  - "App Engine Standard"
+  - "app"
+  - "engine"
+  - "standard"
+  - "environment"
+  - "availability"
+  - "europe"
+  - "west6"
+  - "became"
 ---
 
 # App Engine Standard environment availability in europe-west6
 
 Product: App Engine standard environment Node.js
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,65 +38,52 @@ App Engine Standard became available in the Zurich (europe-west6) region.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes](https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes)
-- [https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed](https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed)
-- [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc)
+- [https://docs.cloud.google.com/appengine/docs/locations](https://docs.cloud.google.com/appengine/docs/locations)
+- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
 
 ## Supporting Pages
 
-### "App Engine standard environment for Node.js release notes \_|\_ Google Cloud\
+### "App Engine locations \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes](https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 48
+- URL: [https://docs.cloud.google.com/appengine/docs/locations](https://docs.cloud.google.com/appengine/docs/locations)
+- Source ID: `site-docs-reference-4`
+- Final score: 39
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Resources Send feedback App Engine standard environment for Node.js release notes Stay organized with collections Save and categorize content based on your preferences.
-- Update your application settings in the App Engine standard environment to use TLS version 1.2 and later, along with a corresponding secure set of cipher suites (Preview).
-- March 26, 2021 Feature App Engine standard environment provides a new metric, CPU Utilization , which indicates the CPU utilization average over all active instances.
-- June 30, 2021 Change Requests from newly created or updated App Engine Cron jobs sent to the App Engine standard environment now come from 0.1.0.2 .
+- Home Documentation Application hosting App Engine Standard environment Resources Send feedback App Engine locations Stay organized with collections Save and categorize content based on your preferences.
+- Note: Two locations, which are called europe-west and us-central in App Engine commands and in the Google Cloud console, are called europe-west1 and us-central1 , respectively, elsewhere in Google documentation.
+- See Manage projects, applications, and billing for details in your language for either the standard or flexible environment.
+- You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.
 
-### "How instances are managed \_|\_ App Engine standard environment \_|\_ Google\
+### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed](https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed)
-- Source ID: `site-docs-reference-2`
-- Final score: 40
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- One of the benefits App Engine standard environment's "pay for only what you need" platform as described earlier in Scaling Down is that the system autoscales the number of instances down to zero when there is no traffic.
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback How instances are managed Stay organized with collections Save and categorize content based on your preferences.
-- NTP with App Engine standard environment The App Engine standard environment has network time protocol (NTP) services which use Google NTP servers.
-- Note: If your service is infrequently used, App Engine standard environment scales to zero instances.
-
-### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
 - Source ID: `site-docs-reference`
-- Final score: 36
+- Final score: 30
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- However, if you create a connector in a service project and the connector targets a Shared VPC network in the host project, you must add firewall rules to allow necessary traffic for the connector's operation from the following ranges: Serverless infrastructure IP range : 35.199.224.0/19 Health check probe IP ranges : 35.191.0.0/16 , 35.191.192.0/18 , and 130.211.0.0/22 These ranges are used by the Google infrastructure underlying Cloud Run, Cloud Run functions, and App Engine standard environment.
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Connecting to a VPC network Stay organized with collections Save and categorize content based on your preferences.
-- Learn how to connect to Memorystore from the App Engine standard environment.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.
+- The Users API allows an App Engine app to perform the following tasks: Detect whether the current user is signed in using a Google Account.
+- IAP doesn't protect against activity within a project, such as one App Engine service accessing another service in the same project.
 
-### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
+### "An Overview of the Admin API \_|\_ App Engine Admin API \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc)
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
 - Source ID: `site-docs-reference`
-- Final score: 36
+- Final score: 22
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- However, if you create a connector in a service project and the connector targets a Shared VPC network in the host project, you must add firewall rules to allow necessary traffic for the connector's operation from the following ranges: Serverless infrastructure IP range : 35.199.224.0/19 Health check probe IP ranges : 35.191.0.0/16 , 35.191.192.0/18 , and 130.211.0.0/22 These ranges are used by the Google infrastructure underlying Cloud Run, Cloud Run functions, and App Engine standard environment.
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Connecting to a VPC network Stay organized with collections Save and categorize content based on your preferences.
-- Learn how to connect to Memorystore from the App Engine standard environment.
+- With the Admin API, you can manage your App Engine applications in manners that best suit your environment or process.
+- Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.
+- The Admin API provides programmatic access to several of the App Engine administrative operations that are found in the Google Cloud console .
+- The App Engine Admin API is a RESTful API for managing your App Engine applications regardless of programming language.
 

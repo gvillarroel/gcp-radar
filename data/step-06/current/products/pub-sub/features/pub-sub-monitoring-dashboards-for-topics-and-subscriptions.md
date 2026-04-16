@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:51.510Z"
+generated_at: "2026-04-12T12:18:10.313Z"
 product_name: "Pub/Sub"
 product_slug: "pub-sub"
 feature_name: "Pub/Sub monitoring dashboards for topics and subscriptions"
 feature_slug: "pub-sub-monitoring-dashboards-for-topics-and-subscriptions"
 latest_feature_date: "2022-09-20"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/pubsub/docs/monitoring"
+  - "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription"
+  - "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription"
+  - "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions"
 keywords:
   - "pub"
   - "sub"
@@ -24,7 +27,7 @@ keywords:
 # Pub/Sub monitoring dashboards for topics and subscriptions
 
 Product: Pub/Sub
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Pub/Sub includes new monitoring dashboards for topics and subscriptions in the c
 
 Pub/Sub includes new monitoring dashboards for topics and subscriptions in the console.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/pubsub/docs/monitoring](https://docs.cloud.google.com/pubsub/docs/monitoring)
+- [https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription](https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription)
+- [https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription](https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription)
+- [https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions](https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Monitor Pub/Sub in Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/monitoring](https://docs.cloud.google.com/pubsub/docs/monitoring)
+- Source ID: `site-docs-root`
+- Final score: 294
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, the following PromQL query triggers an alerting policy when any Pub/Sub quota exceeds 80% usage: sum by (quota metric, location) ( increase({ " name "="serviceruntime.googleapis.com/quota/rate/net usage", "monitored resource"="consumer quota", "service"="pubsub.googleapis.com" }[1m]) ) / max by (quota metric, location) ( max over time({ " name "="serviceruntime.googleapis.com/quota/limit", "monitored resource"="consumer quota", "service"="pubsub.googleapis.com" }[1m]) ) 0.8 For more customized monitoring and alerting on quota metrics, see Using quota metrics .
+- Replace the placeholder values for $PROJECT NAME and $SUBSCRIPTION NAME with your actual project and topic identifiers. sum( increase({ " name "="pubsub.googleapis.com/subscription/sent message count", "monitored resource"="pubsub subscription", "project id"="$PROJECT NAME", "subscription id"="$SUBSCRIPTION NAME" }[10m]) ) Monitor push subscriptions For push subscriptions, monitor these metrics: subscription/push request count Group the metric by response code and subscription id .
+- To search for the existing Pub/Sub dashboard, in the filter for All Dashboards , select the Name property and enter Pub/Sub .
+- You can also attach a subscription to the dead-letter topic and then monitor the forwarded undeliverable messages on this subscription using the following metrics: subscription/num unacked messages by region the number of forwarded messages that have accumulated in the subscription subscription/oldest unacked message age by region the age of the oldest forwarded message in the subscription Maintain a healthy publisher The primary goal of a publisher is to persist message data quickly.
+
+### Create BigQuery subscriptions \_|\_ Pub/Sub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription](https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription)
+- Source ID: `site-docs-root-2`
+- Final score: 279
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Cross-project subscriptions If you create a subscription in one project for a topic in another project, you must have pubsub.subscriptions.create permission on the project in which you are creating the subscription, and pubsub.topics.attachSubscription permission on the topic.
+- For more information, see the Pub/Sub Ruby API reference documentation . project id = "your-project-id" topic id = "your-topic-id" subscription id = "your-subscription-id" bigquery table id = "my-project:dataset-id.table-id" pubsub = Google :: Cloud :: PubSub . new project id : project id subscription admin = pubsub . subscription admin subscription = subscription admin . create subscription \ name : pubsub . subscription path ( subscription id ), topic : pubsub . topic path ( topic id ), bigquery config : { table : bigquery table id , write metadata : true } puts "BigQuery subscription created: #{ subscription id } ." puts "Table for subscription is: #{ bigquery table id } " Monitor a BigQuery subscription Cloud Monitoring provides a number of metrics to monitor subscriptions .
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create a BigQuery subscription: pubsub.subscriptions.create on the project pubsub.topics.attachSubscription on the topic You might also be able to get these permissions with custom roles or other predefined roles .
+- For a list of all the available metrics related to Pub/Sub and their descriptions, see the Monitoring documentation for Pub/Sub .
+
+### Create Cloud Storage subscriptions \_|\_ Pub/Sub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription](https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription)
+- Source ID: `site-docs-root-2`
+- Final score: 279
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Cross-project subscriptions If you create a subscription in one project for a topic in another project, you must have pubsub.subscriptions.create permission on the project in which you are creating the subscription, and pubsub.topics.attachSubscription permission on the topic.
+- To create a Cloud Storage subscription, run the gcloud pubsub subscriptions create command . gcloud pubsub subscriptions create SUBSCRIPTION ID \ --topic = TOPIC ID \ --cloud-storage-bucket = BUCKET NAME \ --cloud-storage-file-prefix = CLOUD STORAGE FILE PREFIX \ --cloud-storage-file-suffix = CLOUD STORAGE FILE SUFFIX \ --cloud-storage-file-datetime-format = CLOUD STORAGE FILE DATETIME FORMAT \ --cloud-storage-max-duration = CLOUD STORAGE MAX DURATION \ --cloud-storage-max-bytes = CLOUD STORAGE MAX BYTES \ --cloud-storage-max-messages = CLOUD STORAGE MAX MESSAGES \ --cloud-storage-output-format = CLOUD STORAGE OUTPUT FORMAT \ --cloud-storage-write-metadata --cloud-storage-use-topic-schema If you want to use a custom service account, provide it as an additional argument: gcloud pubsub subscriptions create SUBSCRIPTION ID \ --topic = TOPIC ID \ --cloud-storage-bucket = BUCKET NAME \ --cloud-storage-file-prefix = CLOUD STORAGE FILE PREFIX \ --cloud-storage-file-suffix = CLOUD STORAGE FILE SUFFIX \ --cloud-storage-file-datetime-format = CLOUD STORAGE FILE DATETIME FORMAT \ --cloud-storage-max-duration = CLOUD STORAGE MAX DURATION \ --cloud-storage-max-bytes = CLOUD STORAGE MAX BYTES \ --cloud-storage-max-messages = CLOUD STORAGE MAX MESSAGES \ --cloud-storage-output-format = CLOUD STORAGE OUTPUT FORMAT \ --cloud-storage-write-metadata --cloud-storage-use-topic-schema --cloud-storage-service-account-email = SERVICE ACCOUNT NAME In the command, only SUBSCRIPTION ID , the --topic flag, and the --cloud-storage-bucket flag are required.
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create a Cloud Storage subscription: pubsub.subscriptions.create on the project pubsub.topics.attachSubscription on the topic You might also be able to get these permissions with custom roles or other predefined roles .
+- For a list of all the available metrics related to Pub/Sub and their descriptions, see the Monitoring documentation for Pub/Sub .
+
+### Authentication for push subscriptions \_|\_ Pub/Sub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions](https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions)
+- Source ID: `site-docs-root-2`
+- Final score: 267
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Data analytics Pub/Sub Guides Send feedback Authentication for push subscriptions Stay organized with collections Save and categorize content based on your preferences.
+- SC BAD REQUEST ); } } private Message getMessage ( HttpServletRequest request ) throws IOException { String requestBody = request . getReader (). lines (). collect ( Collectors . joining ( "\n" )); JsonElement jsonRoot = JsonParser . parseString ( requestBody ). getAsJsonObject (); String messageStr = jsonRoot . getAsJsonObject (). get ( "message" ). toString (); Message message = gson . fromJson ( messageStr , Message . class ); // decode from base64 String decoded = decode ( message . getData ()); message . setData ( decoded ); return message ; } private String decode ( String data ) { return new String ( Base64 . getDecoder (). decode ( data )); } PubSubAuthenticatedPush ( MessageRepository messageRepository ) { this . messageRepository = messageRepository ; } public PubSubAuthenticatedPush () { this ( MessageRepositoryImpl . getInstance ()); } } Node.js app . post ( '/pubsub/authenticated-push' , jsonBodyParser , async ( req , res ) = > { // Verify that the request originates from the application. if ( req . query . token !== PUBSUB VERIFICATION TOKEN ) { res . status ( 400 ). send ( 'Invalid request' ); return ; } // Verify that the push request originates from Cloud Pub/Sub. try { // Get the Cloud Pub/Sub-generated JWT in the "Authorization" header. const bearer = req . header ( 'Authorization' ); const [, token ] = bearer . match ( /Bearer (. )/ ); tokens . push ( token ); // Verify and decode the JWT. // Note: For high volume push requests, it would save some network // overhead if you verify the tokens offline by decoding them using // Google's Public Cert; caching already seen tokens works best when // a large volume of messages have prompted a single push server to // handle them, in which case they would all share the same token for // a limited time window. const ticket = await authClient . verifyIdToken ({ idToken : token , audience : 'example.com' , }); const claim = ticket . getPayload (); // IMPORTANT: you should validate claim details not covered // by signature and audience verification above, including: // - Ensure that claim.email is equal to the expected service // account set up in the push subscription settings. // - Ensure that claim.email verified is set to true. claims . push ( claim ); } catch ( e ) { res . status ( 400 ). send ( 'Invalid token' ); return ; } // The message is a unicode string encoded in base64. const message = Buffer . from ( req . body . message . data , 'base64' ). toString ( 'utf-8' ); messages . push ( message ); res . status ( 200 ). send (); }); Python @app . route ( "/push-handlers/receive messages" , methods = [ "POST" ]) def receive messages handler (): Verify that the request originates from the application. if request . args . get ( "token" , "" ) != current app . config [ "PUBSUB VERIFICATION TOKEN" ]: return "Invalid request" , 400 Verify that the push request originates from Cloud Pub/Sub. try : Get the Cloud Pub/Sub-generated JWT in the "Authorization" header. bearer token = request . headers . get ( "Authorization" ) token = bearer token . split ( " " )[ 1 ] TOKENS . append ( token ) Verify and decode the JWT. verify oauth2 token verifies the JWT signature, the aud claim, and the exp claim.
+- CLAIMS . append ( claim ) except Exception as e : return f "Invalid token: { e } \n " , 400 envelope = json . loads ( request . data . decode ( "utf-8" )) payload = base64 . b64decode ( envelope [ "message" ][ "data" ]) MESSAGES . append ( payload ) Returning any 2xx status indicates successful receipt of the message. return "OK" , 200 Ruby post "/pubsub/authenticated-push" do halt 400 if params [ :token ] != PUBSUB VERIFICATION TOKEN begin bearer = request . env [ "HTTP AUTHORIZATION" ] token = /Bearer (. )/ . match ( bearer ) [ 1 ] claim = Google :: Auth :: IDTokens . verify oidc token , aud : "example.com" IMPORTANT: you should validate claim details not covered by signature and audience verification above, including: - Ensure that claim["email"] is equal to the expected service account set up in the push subscription settings. - Ensure that claim["email verified"] is set to true. claims . push claim rescue Google :: Auth :: IDTokens :: VerificationError = > e puts "VerificationError: #{ e . message } " halt 400 , "Invalid token" end message = JSON . parse request . body . read payload = Base64 . decode64 message [ "message" ][ "data" ] messages . push payload end For information on the environment variable PUBSUB VERIFICATION TOKEN used in the code samples above, see Writing and responding to Pub/Sub messages .
+- Payload { [JsonProperty("email")] public string Email { get ; set ; } [JsonProperty("email verified")] public string EmailVerified { get ; set ; } } /// <summary> /// Handle authenticated push request coming from pubsub. /// See the full sample in https://github.com/GoogleCloudPlatform/dotnet-docs-samples/blob/main/appengine/flexible/Pubsub/Pubsub.Sample/Controllers/HomeController.cs /// </summary> [HttpPost] [Route("/AuthPush")] public async Task<IActionResult> AuthPushAsync ([ FromBody ] PushBody body , [ FromQuery ] string token ) { // Get the Cloud Pub/Sub-generated "Authorization" header. string authorizaionHeader = HttpContext .
 

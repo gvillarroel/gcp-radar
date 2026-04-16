@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/standard/apis
 knowledge_key: corpus
 source_id: site-docs-reference-4
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/writing-web-service
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/standard/apis
   title: "APIs & Reference \_|\_ App Engine standard environment \_|\_ Google Cloud\

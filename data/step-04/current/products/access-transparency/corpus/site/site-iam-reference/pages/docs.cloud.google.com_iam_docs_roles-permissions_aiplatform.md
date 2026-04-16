@@ -474,52 +474,184 @@ aiplatform. tuningJobs. validateReinforcementTuningReward
 aiplatform. tuningJobs. vertexTune
 resourcemanager.projects.get
 resourcemanager.projects.list
-Vertex AI Agent Sandbox Service Agent
-( roles/ aiplatform.agentSandboxServiceAgent )
-Vertex AI Service Agent used to access Agent Sandbox managed resources in consumer project with restricted permissions.
-Warning: Do not grant service agent roles to any principals except
-service agents .
-artifactregistry. repositories. downloadArtifacts
-logging.logEntries.create
-logging.logEntries.route
-serviceusage.services.use
-storage.objects.create
-storage.objects.delete
-storage.objects.get
-storage.objects.list
-Vertex AI Batch Prediction Service Agent
-( roles/ aiplatform.batchPredictionServiceAgent )
-Vertex AI Batch Prediction Service Agent for serving batch prediction requests.
-Warning: Do not grant service agent roles to any principals except
-service agents .
-bigquery.datasets.create
-bigquery.datasets.get
-bigquery.jobs.create
-bigquery.jobs.get
-bigquery.models.create
-bigquery.models.export
-bigquery.models.getData
-bigquery.readsessions.create
-bigquery.readsessions.getData
-bigquery.tables.create
-bigquery.tables.createSnapshot
-bigquery.tables.deleteSnapshot
-bigquery.tables.export
-bigquery.tables.get
-bigquery.tables.getData
-bigquery. tables. restoreSnapshot
-bigquery.tables.update
-bigquery.tables.updateData
-storage.buckets.create
-storage.buckets.delete
-storage.buckets.get
-storage.buckets.list
-storage.buckets.update
-storage.objects.create
-storage.objects.delete
-storage.objects.get
-storage.objects.list
-storage.objects.update
+Vertex AI Viewer
+( roles/ aiplatform.viewer )
+Grants access to view all resource in Vertex AI
+aiplatform.agentExamples.get
+aiplatform.agentExamples.list
+aiplatform.agents.get
+aiplatform.agents.list
+aiplatform.annotationSpecs.get
+aiplatform. annotationSpecs. list
+aiplatform.annotations.get
+aiplatform.annotations.list
+aiplatform.apps.get
+aiplatform.apps.list
+aiplatform.artifacts.get
+aiplatform.artifacts.list
+aiplatform. batchPredictionJobs. get
+aiplatform. batchPredictionJobs. list
+aiplatform.cacheConfigs.get
+aiplatform.cachedContents.get
+aiplatform.cachedContents.list
+aiplatform.consents.get
+aiplatform.contexts.get
+aiplatform.contexts.list
+aiplatform. contexts. queryContextLineageSubgraph
+aiplatform.customJobs.get
+aiplatform.customJobs.list
+aiplatform.dataItems.get
+aiplatform.dataItems.list
+aiplatform. dataLabelingJobs. get
+aiplatform. dataLabelingJobs. list
+aiplatform.datasetVersions.get
+aiplatform. datasetVersions. list
+aiplatform.datasets.get
+aiplatform.datasets.list
+aiplatform. deploymentResourcePools. get
+aiplatform. deploymentResourcePools. list
+aiplatform. deploymentResourcePools. queryDeployedModels
+aiplatform. edgeDeploymentJobs. get
+aiplatform. edgeDeploymentJobs. list
+aiplatform. edgeDeviceDebugInfo. get
+aiplatform.edgeDevices.get
+aiplatform.edgeDevices.list
+aiplatform.endpoints.get
+aiplatform.endpoints.list
+aiplatform.entityTypes.get
+aiplatform.entityTypes.list
+aiplatform. evaluationExperiments. get
+aiplatform. evaluationExperiments. list
+aiplatform.evaluationItems.get
+aiplatform. evaluationItems. list
+aiplatform.evaluationRuns.get
+aiplatform.evaluationRuns.list
+aiplatform.evaluationSets.get
+aiplatform.evaluationSets.list
+aiplatform.exampleStores.get
+aiplatform.exampleStores.list
+aiplatform. exampleStores. readExample
+aiplatform.executions.get
+aiplatform.executions.list
+aiplatform. executions. queryExecutionInputsAndOutputs
+aiplatform.extensions.get
+aiplatform.extensions.list
+aiplatform.featureGroups.get
+aiplatform.featureGroups.list
+aiplatform. featureMonitorJobs. get
+aiplatform. featureMonitorJobs. list
+aiplatform.featureMonitors.get
+aiplatform. featureMonitors. list
+aiplatform. featureOnlineStores. get
+aiplatform. featureOnlineStores. list
+aiplatform.featureViewSyncs.*
+aiplatform. featureViewSyncs. get
+aiplatform. featureViewSyncs. list
+aiplatform. featureViews. fetchFeatureValues
+aiplatform.featureViews.get
+aiplatform.featureViews.list
+aiplatform. featureViews. searchNearestEntities
+aiplatform.features.get
+aiplatform.features.list
+aiplatform.featurestores.get
+aiplatform.featurestores.list
+aiplatform.humanInTheLoops.get
+aiplatform. humanInTheLoops. list
+aiplatform. hyperparameterTuningJobs. get
+aiplatform. hyperparameterTuningJobs. list
+aiplatform.indexEndpoints.get
+aiplatform.indexEndpoints.list
+aiplatform. indexEndpoints. queryVectors
+aiplatform.indexes.get
+aiplatform.indexes.list
+aiplatform.locations.get
+aiplatform.locations.list
+aiplatform.memories.get
+aiplatform.memories.list
+aiplatform.memoryRevisions.get
+aiplatform. memoryRevisions. list
+aiplatform.metadataSchemas.get
+aiplatform. metadataSchemas. list
+aiplatform.metadataStores.get
+aiplatform.metadataStores.list
+aiplatform. modelDeploymentMonitoringJobs. get
+aiplatform. modelDeploymentMonitoringJobs. list
+aiplatform. modelDeploymentMonitoringJobs. searchStatsAnomalies
+aiplatform. modelEvaluationSlices. get
+aiplatform. modelEvaluationSlices. list
+aiplatform. modelEvaluations. get
+aiplatform. modelEvaluations. list
+aiplatform. modelMonitoringJobs. get
+aiplatform. modelMonitoringJobs. list
+aiplatform.modelMonitors.get
+aiplatform.modelMonitors.list
+aiplatform. modelMonitors. searchModelMonitoringAlerts
+aiplatform. modelMonitors. searchModelMonitoringStats
+aiplatform.models.get
+aiplatform.models.list
+aiplatform.nasJobs.get
+aiplatform.nasJobs.list
+aiplatform.nasTrialDetails.*
+aiplatform.nasTrialDetails.get
+aiplatform. nasTrialDetails. list
+aiplatform. notebookExecutionJobs. get
+aiplatform. notebookExecutionJobs. list
+aiplatform. notebookRuntimeTemplates. get
+aiplatform. notebookRuntimeTemplates. list
+aiplatform. notebookRuntimes. get
+aiplatform. notebookRuntimes. list
+aiplatform.operations.list
+aiplatform. persistentResources. get
+aiplatform. persistentResources. list
+aiplatform.pipelineJobs.get
+aiplatform.pipelineJobs.list
+aiplatform. provisionedThroughputRevisions.*
+aiplatform. provisionedThroughputRevisions. get
+aiplatform. provisionedThroughputRevisions. list
+aiplatform. provisionedThroughputs. get
+aiplatform. provisionedThroughputs. list
+aiplatform.ragCorpora.get
+aiplatform.ragCorpora.list
+aiplatform.ragCorpora.query
+aiplatform. ragEngineConfigs. get
+aiplatform.ragFiles.get
+aiplatform.ragFiles.list
+aiplatform. reasoningEngines. get
+aiplatform. reasoningEngines. list
+aiplatform. reasoningEngines. query
+aiplatform. sandboxEnvironments. get
+aiplatform. sandboxEnvironments. list
+aiplatform.schedules.get
+aiplatform.schedules.list
+aiplatform. semanticGovernancePolicies. get
+aiplatform. semanticGovernancePolicies. list
+aiplatform. semanticGovernancePolicyEngine. get
+aiplatform.sessionEvents.list
+aiplatform.sessions.get
+aiplatform.sessions.list
+aiplatform.specialistPools.get
+aiplatform. specialistPools. list
+aiplatform. specialistPools. update
+aiplatform.studies.get
+aiplatform.studies.list
+aiplatform. tensorboardExperiments. get
+aiplatform. tensorboardExperiments. list
+aiplatform.tensorboardRuns.get
+aiplatform. tensorboardRuns. list
+aiplatform. tensorboardTimeSeries. batchRead
+aiplatform. tensorboardTimeSeries. get
+aiplatform. tensorboardTimeSeries. list
+aiplatform. tensorboardTimeSeries. read
+aiplatform.tensorboards.get
+aiplatform.tensorboards.list
+aiplatform. trainingPipelines. get
+aiplatform. trainingPipelines. list
+aiplatform.trials.get
+aiplatform.trials.list
+aiplatform.tuningJobs.get
+aiplatform.tuningJobs.list
+resourcemanager.projects.get
+resourcemanager.projects.list
 Colab Enterprise Admin
 ( roles/ aiplatform.colabEnterpriseAdmin )
 Admin role of using colab enterprise.
@@ -689,6 +821,1039 @@ dataform.repositories.create
 dataform.repositories.list
 resourcemanager.projects.get
 resourcemanager.projects.list
+Vertex AI Feature Store EntityType owner
+( roles/ aiplatform.entityTypeOwner )
+Provides full access to all permissions for a particular entity type resource.
+Lowest-level resources where you can grant this role:
+Entity type
+aiplatform.entityTypes.delete
+aiplatform. entityTypes. deleteFeatureValues
+aiplatform. entityTypes. exportFeatureValues
+aiplatform.entityTypes.get
+aiplatform. entityTypes. getIamPolicy
+aiplatform. entityTypes. importFeatureValues
+aiplatform. entityTypes. readFeatureValues
+aiplatform. entityTypes. setIamPolicy
+aiplatform. entityTypes. streamingReadFeatureValues
+aiplatform.entityTypes.update
+aiplatform. entityTypes. writeFeatureValues
+aiplatform.featureGroups.get
+aiplatform.featureGroups.list
+aiplatform. featureMonitorJobs. get
+aiplatform. featureMonitorJobs. list
+aiplatform.featureMonitors.get
+aiplatform. featureMonitors. list
+aiplatform. featureOnlineStores. get
+aiplatform. featureOnlineStores. list
+aiplatform.featureViewSyncs.*
+aiplatform. featureViewSyncs. get
+aiplatform. featureViewSyncs. list
+aiplatform. featureViews. fetchFeatureValues
+aiplatform.featureViews.get
+aiplatform.featureViews.list
+aiplatform. featureViews. searchNearestEntities
+aiplatform.features.*
+aiplatform.features.create
+aiplatform.features.delete
+aiplatform.features.get
+aiplatform.features.list
+aiplatform.features.update
+aiplatform. featurestores. batchReadFeatureValues
+resourcemanager.projects.get
+resourcemanager.projects.list
+Vertex AI Platform Express Admin
+Beta
+( roles/ aiplatform.expressAdmin )
+Grants admin access to Vertex AI Express
+aiplatform. batchPredictionJobs.*
+aiplatform. batchPredictionJobs. cancel
+aiplatform. batchPredictionJobs. create
+aiplatform. batchPredictionJobs. delete
+aiplatform. batchPredictionJobs. get
+aiplatform. batchPredictionJobs. list
+aiplatform.datasetVersions.*
+aiplatform. datasetVersions. create
+aiplatform. datasetVersions. delete
+aiplatform.datasetVersions.get
+aiplatform. datasetVersions. list
+aiplatform. datasetVersions. restore
+aiplatform.datasets.create
+aiplatform.datasets.delete
+aiplatform.datasets.get
+aiplatform.datasets.list
+aiplatform.datasets.update
+aiplatform.endpoints.predict
+aiplatform. locations. evaluateInstances
+aiplatform.memories.*
+aiplatform.memories.create
+aiplatform.memories.delete
+aiplatform.memories.generate
+aiplatform.memories.get
+aiplatform.memories.list
+aiplatform.memories.retrieve
+aiplatform.memories.update
+aiplatform.operations.list
+aiplatform.reasoningEngines.*
+aiplatform. reasoningEngines. create
+aiplatform. reasoningEngines. delete
+aiplatform. reasoningEngines. get
+aiplatform. reasoningEngines. list
+aiplatform. reasoningEngines. query
+aiplatform. reasoningEngines. update
+aiplatform. sandboxEnvironments.*
+aiplatform. sandboxEnvironments. create
+aiplatform. sandboxEnvironments. delete
+aiplatform. sandboxEnvironments. execute
+aiplatform. sandboxEnvironments. get
+aiplatform. sandboxEnvironments. list
+aiplatform.sessionEvents.*
+aiplatform. sessionEvents. append
+aiplatform.sessionEvents.list
+aiplatform.sessions.create
+aiplatform.sessions.delete
+aiplatform.sessions.get
+aiplatform.sessions.list
+aiplatform.sessions.update
+Vertex AI Platform Express User
+Beta
+( roles/ aiplatform.expressUser )
+Grants user access to Vertex AI Express
+aiplatform.datasetVersions.*
+aiplatform. datasetVersions. create
+aiplatform. datasetVersions. delete
+aiplatform.datasetVersions.get
+aiplatform. datasetVersions. list
+aiplatform. datasetVersions. restore
+aiplatform.datasets.create
+aiplatform.datasets.delete
+aiplatform.datasets.get
+aiplatform.datasets.list
+aiplatform.datasets.update
+aiplatform.endpoints.predict
+aiplatform. locations. evaluateInstances
+aiplatform.memories.*
+aiplatform.memories.create
+aiplatform.memories.delete
+aiplatform.memories.generate
+aiplatform.memories.get
+aiplatform.memories.list
+aiplatform.memories.retrieve
+aiplatform.memories.update
+aiplatform.operations.list
+aiplatform.reasoningEngines.*
+aiplatform. reasoningEngines. create
+aiplatform. reasoningEngines. delete
+aiplatform. reasoningEngines. get
+aiplatform. reasoningEngines. list
+aiplatform. reasoningEngines. query
+aiplatform. reasoningEngines. update
+aiplatform. sandboxEnvironments.*
+aiplatform. sandboxEnvironments. create
+aiplatform. sandboxEnvironments. delete
+aiplatform. sandboxEnvironments. execute
+aiplatform. sandboxEnvironments. get
+aiplatform. sandboxEnvironments. list
+aiplatform.sessionEvents.*
+aiplatform. sessionEvents. append
+aiplatform.sessionEvents.list
+aiplatform.sessions.create
+aiplatform.sessions.delete
+aiplatform.sessions.get
+aiplatform.sessions.list
+aiplatform.sessions.update
+Vertex AI Feature Store Admin
+( roles/ aiplatform.featurestoreAdmin )
+Grants full access to all resources in Vertex AI Feature Store
+Lowest-level resources where you can grant this role:
+Entity type
+aiplatform.entityTypes.*
+aiplatform.entityTypes.create
+aiplatform.entityTypes.delete
+aiplatform. entityTypes. deleteFeatureValues
+aiplatform. entityTypes. exportFeatureValues
+aiplatform.entityTypes.get
+aiplatform. entityTypes. getIamPolicy
+aiplatform. entityTypes. importFeatureValues
+aiplatform.entityTypes.list
+aiplatform. entityTypes. readFeatureValues
+aiplatform. entityTypes. setIamPolicy
+aiplatform. entityTypes. streamingReadFeatureValues
+aiplatform.entityTypes.update
+aiplatform. entityTypes. writeFeatureValues
+aiplatform.featureGroups.*
+aiplatform. featureGroups. create
+aiplatform. featureGroups. delete
+aiplatform.featureGroups.get
+aiplatform. featureGroups. getIamPolicy
+aiplatform.featureGroups.list
+aiplatform. featureGroups. setIamPolicy
+aiplatform. featureGroups. update
+aiplatform. featureMonitorJobs.*
+aiplatform. featureMonitorJobs. create
+aiplatform. featureMonitorJobs. get
+aiplatform. featureMonitorJobs. list
+aiplatform.featureMonitors.*
+aiplatform. featureMonitors. create
+aiplatform. featureMonitors. delete
+aiplatform.featureMonitors.get
+aiplatform. featureMonitors. list
+aiplatform. featureMonitors. update
+aiplatform. featureOnlineStores.*
+aiplatform. featureOnlineStores. create
+aiplatform. featureOnlineStores. delete
+aiplatform. featureOnlineStores. get
+aiplatform. featureOnlineStores. getIamPolicy
+aiplatform. featureOnlineStores. list
+aiplatform. featureOnlineStores. setIamPolicy
+aiplatform. featureOnlineStores. update
+aiplatform.featureViewSyncs.*
+aiplatform. featureViewSyncs. get
+aiplatform. featureViewSyncs. list
+aiplatform.featureViews.*
+aiplatform.featureViews.create
+aiplatform.featureViews.delete
+aiplatform. featureViews. directWrite
+aiplatform. featureViews. fetchFeatureValues
+aiplatform.featureViews.get
+aiplatform. featureViews. getIamPolicy
+aiplatform.featureViews.list
+aiplatform. featureViews. searchNearestEntities
+aiplatform. featureViews. setIamPolicy
+aiplatform.featureViews.sync
+aiplatform.featureViews.update
+aiplatform.features.*
+aiplatform.features.create
+aiplatform.features.delete
+aiplatform.features.get
+aiplatform.features.list
+aiplatform.features.update
+aiplatform.featurestores.*
+aiplatform. featurestores. batchReadFeatureValues
+aiplatform. featurestores. create
+aiplatform. featurestores. delete
+aiplatform. featurestores. exportFeatures
+aiplatform.featurestores.get
+aiplatform. featurestores. getIamPolicy
+aiplatform. featurestores. importFeatures
+aiplatform.featurestores.list
+aiplatform. featurestores. readFeatures
+aiplatform. featurestores. setIamPolicy
+aiplatform. featurestores. update
+aiplatform. featurestores. writeFeatures
+aiplatform.operations.list
+resourcemanager.projects.get
+resourcemanager.projects.list
+Vertex AI Feature Store Data Viewer
+( roles/ aiplatform.featurestoreDataViewer )
+This role provides permissions to read Feature data.
+Lowest-level resources where you can grant this role:
+Entity type
+aiplatform. entityTypes. exportFeatureValues
+aiplatform.entityTypes.get
+aiplatform. entityTypes. readFeatureValues
+aiplatform. entityTypes. streamingReadFeatureValues
+aiplatform.featureGroups.get
+aiplatform.featureGroups.list
+aiplatform. featureMonitorJobs. get
+aiplatform. featureMonitorJobs. list
+aiplatform.featureMonitors.get
+aiplatform. featureMonitors. list
+aiplatform. featureOnlineStores. get
+aiplatform. featureOnlineStores. list
+aiplatform.featureViewSyncs.*
+aiplatform. featureViewSyncs. get
+aiplatform. featureViewSyncs. list
+aiplatform. featureViews. fetchFeatureValues
+aiplatform.featureViews.get
+aiplatform.featureViews.list
+aiplatform. featureViews. searchNearestEntities
+aiplatform.features.get
+aiplatform.features.list
+aiplatform. featurestores. batchReadFeatureValues
+resourcemanager.projects.get
+resourcemanager.projects.list
+Vertex AI Feature Store Data Writer
+( roles/ aiplatform.featurestoreDataWriter )
+This role provides permissions to read and write Feature data.
+Lowest-level resources where you can grant this role:
+Entity type
+aiplatform. entityTypes. deleteFeatureValues
+aiplatform. entityTypes. exportFeatureValues
+aiplatform.entityTypes.get
+aiplatform. entityTypes. importFeatureValues
+aiplatform. entityTypes. readFeatureValues
+aiplatform. entityTypes. streamingReadFeatureValues
+aiplatform. entityTypes. writeFeatureValues
+aiplatform.featureGroups.get
+aiplatform.featureGroups.list
+aiplatform. featureMonitorJobs. get
+aiplatform. featureMonitorJobs. list
+aiplatform.featureMonitors.get
+aiplatform. featureMonitors. list
+aiplatform. featureOnlineStores. get
+aiplatform. featureOnlineStores. list
+aiplatform.featureViewSyncs.*
+aiplatform. featureViewSyncs. get
+aiplatform. featureViewSyncs. list
+aiplatform. featureViews. fetchFeatureValues
+aiplatform.featureViews.get
+aiplatform.featureViews.list
+aiplatform. featureViews. searchNearestEntities
+aiplatform.features.get
+aiplatform.features.list
+aiplatform. featurestores. batchReadFeatureValues
+resourcemanager.projects.get
+resourcemanager.projects.list
+Vertex AI Feature Store Instance Creator
+( roles/ aiplatform.featurestoreInstanceCreator )
+Administrator of Featurestore resources, but not the child resources under Featurestores.
+Lowest-level resources where you can grant this role:
+Featurestore
+aiplatform. featurestores. create
+aiplatform. featurestores. delete
+aiplatform.featurestores.get
+aiplatform.featurestores.list
+aiplatform. featurestores. update
+Vertex AI Feature Store Resource Viewer
+( roles/ aiplatform.featurestoreResourceViewer )
+Viewer of all resources in Vertex AI Feature Store but cannot make changes.
+Lowest-level resources where you can grant this role:
+Entity type
+aiplatform.entityTypes.get
+aiplatform.entityTypes.list
+aiplatform.featureGroups.get
+aiplatform.featureGroups.list
+aiplatform. featureMonitorJobs. get
+aiplatform. featureMonitorJobs. list
+aiplatform.featureMonitors.get
+aiplatform. featureMonitors. list
+aiplatform. featureOnlineStores. get
+aiplatform. featureOnlineStores. list
+aiplatform.featureViewSyncs.*
+aiplatform. featureViewSyncs. get
+aiplatform. featureViewSyncs. list
+aiplatform.featureViews.get
+aiplatform.featureViews.list
+aiplatform.features.get
+aiplatform.features.list
+aiplatform.featurestores.get
+aiplatform.featurestores.list
+aiplatform.operations.list
+resourcemanager.projects.get
+resourcemanager.projects.list
+Vertex AI Feature Store User
+Beta
+( roles/ aiplatform.featurestoreUser )
+Deprecated. Use featurestoreAdmin instead.
+aiplatform.entityTypes.*
+aiplatform.entityTypes.create
+aiplatform.entityTypes.delete
+aiplatform. entityTypes. deleteFeatureValues
+aiplatform. entityTypes. exportFeatureValues
+aiplatform.entityTypes.get
+aiplatform. entityTypes. getIamPolicy
+aiplatform. entityTypes. importFeatureValues
+aiplatform.entityTypes.list
+aiplatform. entityTypes. readFeatureValues
+aiplatform. entityTypes. setIamPolicy
+aiplatform. entityTypes. streamingReadFeatureValues
+aiplatform.entityTypes.update
+aiplatform. entityTypes. writeFeatureValues
+aiplatform.features.*
+aiplatform.features.create
+aiplatform.features.delete
+aiplatform.features.get
+aiplatform.features.list
+aiplatform.features.update
+aiplatform.featurestores.*
+aiplatform. featurestores. batchReadFeatureValues
+aiplatform. featurestores. create
+aiplatform. featurestores. delete
+aiplatform. featurestores. exportFeatures
+aiplatform.featurestores.get
+aiplatform. featurestores. getIamPolicy
+aiplatform. featurestores. importFeatures
+aiplatform.featurestores.list
+aiplatform. featurestores. readFeatures
+aiplatform. featurestores. setIamPolicy
+aiplatform. featurestores. update
+aiplatform. featurestores. writeFeatures
+aiplatform.operations.list
+resourcemanager.projects.get
+resourcemanager.projects.list
+Vertex AI Agent Engine Memory Editor Role
+( roles/ aiplatform.memoryEditor )
+Grants edit access to Memory for Agent Engine.
+aiplatform.memories.create
+aiplatform.memories.delete
+aiplatform.memories.generate
+aiplatform.memories.update
+aiplatform. memoryRevisions. rollback
+Vertex AI Agent Engine Memory User Role
+( roles/ aiplatform.memoryUser )
+Grants full user access to Memory for Agent Engine.
+aiplatform.memories.*
+aiplatform.memories.create
+aiplatform.memories.delete
+aiplatform.memories.generate
+aiplatform.memories.get
+aiplatform.memories.list
+aiplatform.memories.retrieve
+aiplatform.memories.update
+aiplatform.memoryRevisions.*
+aiplatform.memoryRevisions.get
+aiplatform. memoryRevisions. list
+aiplatform. memoryRevisions. rollback
+Vertex AI Agent Engine Memory Viewer Role
+( roles/ aiplatform.memoryViewer )
+Grants viewer access to Memory for Agent Engine.
+aiplatform.memories.get
+aiplatform.memories.list
+aiplatform.memories.retrieve
+aiplatform.memoryRevisions.get
+aiplatform. memoryRevisions. list
+Vertex AI Migration Service User
+( roles/ aiplatform.migrator )
+Grants access to use migration service in Vertex AI
+aiplatform. migratableResources.*
+aiplatform. migratableResources. migrate
+aiplatform. migratableResources. search
+Notebook Executor User
+Beta
+( roles/ aiplatform.notebookExecutorUser )
+Grants users full access to schedules and notebook execution jobs.
+aiplatform. notebookExecutionJobs.*
+aiplatform. notebookExecutionJobs. create
+aiplatform. notebookExecutionJobs. delete
+aiplatform. notebookExecutionJobs. get
+aiplatform. notebookExecutionJobs. list
+aiplatform.operations.list
+aiplatform.pipelineJobs.create
+aiplatform.schedules.*
+aiplatform.schedules.create
+aiplatform.schedules.delete
+aiplatform.schedules.get
+aiplatform.schedules.list
+aiplatform.schedules.update
+Notebook Runtime Admin
+( roles/ aiplatform.notebookRuntimeAdmin )
+Grants full access to all runtime templates and runtimes in Notebook Service.
+aiplatform.locations.get
+aiplatform. notebookRuntimeTemplates.*
+aiplatform. notebookRuntimeTemplates. apply
+aiplatform. notebookRuntimeTemplates. create
+aiplatform. notebookRuntimeTemplates. delete
+aiplatform. notebookRuntimeTemplates. get
+aiplatform. notebookRuntimeTemplates. getIamPolicy
+aiplatform. notebookRuntimeTemplates. list
+aiplatform. notebookRuntimeTemplates. setIamPolicy
+aiplatform. notebookRuntimeTemplates. update
+aiplatform.notebookRuntimes.*
+aiplatform. notebookRuntimes. assign
+aiplatform. notebookRuntimes. delete
+aiplatform. notebookRuntimes. get
+aiplatform. notebookRuntimes. list
+aiplatform. notebookRuntimes. start
+aiplatform. notebookRuntimes. update
+aiplatform. notebookRuntimes. upgrade
+aiplatform.operations.list
+compute.reservations.get
+compute.reservations.list
+Notebook Runtime User
+( roles/ aiplatform.notebookRuntimeUser )
+Grants users permissions to create runtime resources using a runtime template and manage the runtime resources they created.
+aiplatform.locations.get
+aiplatform. notebookRuntimeTemplates. apply
+aiplatform. notebookRuntimeTemplates. get
+aiplatform. notebookRuntimeTemplates. getIamPolicy
+aiplatform. notebookRuntimeTemplates. list
+aiplatform. notebookRuntimes. assign
+aiplatform. notebookRuntimes. get
+aiplatform. notebookRuntimes. list
+aiplatform.operations.list
+Vertex AI Platform Provisioned Throughput Admin
+Beta
+( roles/ aiplatform.provisionedThroughputAdmin )
+Grants access to use all resources related to Vertex AI Provisioned Throughput
+aiplatform. provisionedThroughputRevisions.*
+aiplatform. provisionedThroughputRevisions. get
+aiplatform. provisionedThroughputRevisions. list
+aiplatform. provisionedThroughputs.*
+aiplatform. provisionedThroughputs. cancel
+aiplatform. provisionedThroughputs. create
+aiplatform. provisionedThroughputs. get
+aiplatform. provisionedThroughputs. list
+aiplatform. provisionedThroughputs. split
+aiplatform. provisionedThroughputs. update
+Vertex AI Platform Publisher Provisioned Throughput Admin
+Beta
+( roles/ aiplatform.publisherProvisionedThroughputAdmin )
+Grants Publisher access to use all resources related to Vertex AI Provisioned Throughput Orders
+Vertex AI Platform Publisher Provisioned Throughput Viewer
+Beta
+( roles/ aiplatform.publisherProvisionedThroughputViewer )
+Grants Publisher access to view all resources related to Vertex AI Provisioned Throughput Orders
+Vertex AI Agent Engine Session Editor Role
+( roles/ aiplatform.sessionEditor )
+Grants edit access to Session for Agent Engine.
+aiplatform. sessionEvents. append
+aiplatform.sessions.create
+aiplatform.sessions.delete
+aiplatform.sessions.update
+Vertex AI Agent Engine Session User Role
+( roles/ aiplatform.sessionUser )
+Grants full user access to Session for Agent Engine.
+aiplatform.sessionEvents.*
+aiplatform. sessionEvents. append
+aiplatform.sessionEvents.list
+aiplatform.sessions.create
+aiplatform.sessions.delete
+aiplatform.sessions.get
+aiplatform.sessions.list
+aiplatform.sessions.update
+Vertex AI Agent Engine Session Viewer Role
+( roles/ aiplatform.sessionViewer )
+Grants viewer access to Session for Agent Engine.
+aiplatform.sessionEvents.list
+aiplatform.sessions.get
+aiplatform.sessions.list
+Vertex AI Tensorboard Web App User
+Beta
+( roles/ aiplatform.tensorboardWebAppUser )
+Grants access to the Vertex AI TensorBoard web app.
+aiplatform. tensorboards. recordAccess
+Vertex AI User
+( roles/ aiplatform.user )
+Grants access to use all resource in Vertex AI
+aiplatform.agentExamples.*
+aiplatform. agentExamples. create
+aiplatform. agentExamples. delete
+aiplatform.agentExamples.get
+aiplatform.agentExamples.list
+aiplatform. agentExamples. update
+aiplatform.agents.*
+aiplatform.agents.create
+aiplatform.agents.delete
+aiplatform.agents.get
+aiplatform.agents.list
+aiplatform.agents.update
+aiplatform.annotationSpecs.*
+aiplatform. annotationSpecs. create
+aiplatform. annotationSpecs. delete
+aiplatform.annotationSpecs.get
+aiplatform. annotationSpecs. list
+aiplatform. annotationSpecs. update
+aiplatform.annotations.*
+aiplatform.annotations.create
+aiplatform.annotations.delete
+aiplatform.annotations.get
+aiplatform.annotations.list
+aiplatform.annotations.update
+aiplatform.apps.*
+aiplatform.apps.create
+aiplatform.apps.delete
+aiplatform.apps.get
+aiplatform.apps.list
+aiplatform.apps.update
+aiplatform.artifacts.*
+aiplatform.artifacts.create
+aiplatform.artifacts.delete
+aiplatform.artifacts.get
+aiplatform.artifacts.list
+aiplatform.artifacts.update
+aiplatform. batchPredictionJobs.*
+aiplatform. batchPredictionJobs. cancel
+aiplatform. batchPredictionJobs. create
+aiplatform. batchPredictionJobs. delete
+aiplatform. batchPredictionJobs. get
+aiplatform. batchPredictionJobs. list
+aiplatform.cacheConfigs.get
+aiplatform.cachedContents.*
+aiplatform. cachedContents. create
+aiplatform. cachedContents. delete
+aiplatform.cachedContents.get
+aiplatform.cachedContents.list
+aiplatform. cachedContents. update
+aiplatform.consents.get
+aiplatform.contexts.*
+aiplatform. contexts. addContextArtifactsAndExecutions
+aiplatform. contexts. addContextChildren
+aiplatform.contexts.create
+aiplatform.contexts.delete
+aiplatform.contexts.get
+aiplatform.contexts.list
+aiplatform. contexts. queryContextLineageSubgraph
+aiplatform.contexts.update
+aiplatform.customJobs.*
+aiplatform.customJobs.cancel
+aiplatform.customJobs.create
+aiplatform.customJobs.delete
+aiplatform.customJobs.get
+aiplatform.customJobs.list
+aiplatform.dataItems.*
+aiplatform.dataItems.create
+aiplatform.dataItems.delete
+aiplatform.dataItems.get
+aiplatform.dataItems.list
+aiplatform.dataItems.update
+aiplatform.dataLabelingJobs.*
+aiplatform. dataLabelingJobs. cancel
+aiplatform. dataLabelingJobs. create
+aiplatform. dataLabelingJobs. delete
+aiplatform. dataLabelingJobs. get
+aiplatform. dataLabelingJobs. list
+aiplatform.datasetVersions.*
+aiplatform. datasetVersions. create
+aiplatform. datasetVersions. delete
+aiplatform.datasetVersions.get
+aiplatform. datasetVersions. list
+aiplatform. datasetVersions. restore
+aiplatform.datasets.*
+aiplatform.datasets.create
+aiplatform.datasets.delete
+aiplatform.datasets.export
+aiplatform.datasets.get
+aiplatform.datasets.import
+aiplatform.datasets.list
+aiplatform.datasets.update
+aiplatform. deploymentResourcePools.*
+aiplatform. deploymentResourcePools. create
+aiplatform. deploymentResourcePools. delete
+aiplatform. deploymentResourcePools. get
+aiplatform. deploymentResourcePools. list
+aiplatform. deploymentResourcePools. queryDeployedModels
+aiplatform. deploymentResourcePools. update
+aiplatform. edgeDeploymentJobs.*
+aiplatform. edgeDeploymentJobs. create
+aiplatform. edgeDeploymentJobs. delete
+aiplatform. edgeDeploymentJobs. get
+aiplatform. edgeDeploymentJobs. list
+aiplatform. edgeDeviceDebugInfo. get
+aiplatform.edgeDevices.*
+aiplatform.edgeDevices.create
+aiplatform.edgeDevices.delete
+aiplatform.edgeDevices.get
+aiplatform.edgeDevices.list
+aiplatform.edgeDevices.update
+aiplatform.endpoints.create
+aiplatform.endpoints.delete
+aiplatform.endpoints.deploy
+aiplatform.endpoints.explain
+aiplatform.endpoints.get
+aiplatform.endpoints.list
+aiplatform.endpoints.predict
+aiplatform.endpoints.undeploy
+aiplatform.endpoints.update
+aiplatform.entityTypes.create
+aiplatform.entityTypes.delete
+aiplatform. entityTypes. deleteFeatureValues
+aiplatform. entityTypes. exportFeatureValues
+aiplatform.entityTypes.get
+aiplatform. entityTypes. importFeatureValues
+aiplatform.entityTypes.list
+aiplatform. entityTypes. readFeatureValues
+aiplatform. entityTypes. streamingReadFeatureValues
+aiplatform.entityTypes.update
+aiplatform. entityTypes. writeFeatureValues
+aiplatform. evaluationExperiments.*
+aiplatform. evaluationExperiments. create
+aiplatform. evaluationExperiments. delete
+aiplatform. evaluationExperiments. get
+aiplatform. evaluationExperiments. list
+aiplatform. evaluationExperiments. update
+aiplatform.evaluationItems.*
+aiplatform. evaluationItems. create
+aiplatform. evaluationItems. delete
+aiplatform.evaluationItems.get
+aiplatform. evaluationItems. list
+aiplatform. evaluationItems. update
+aiplatform.evaluationRuns.*
+aiplatform. evaluationRuns. cancel
+aiplatform. evaluationRuns. create
+aiplatform. evaluationRuns. delete
+aiplatform. evaluationRuns. execute
+aiplatform.evaluationRuns.get
+aiplatform.evaluationRuns.list
+aiplatform. evaluationRuns. update
+aiplatform.evaluationSets.*
+aiplatform. evaluationSets. create
+aiplatform. evaluationSets. delete
+aiplatform.evaluationSets.get
+aiplatform.evaluationSets.list
+aiplatform. evaluationSets. update
+aiplatform.exampleStores.*
+aiplatform. exampleStores. create
+aiplatform. exampleStores. delete
+aiplatform.exampleStores.get
+aiplatform.exampleStores.list
+aiplatform. exampleStores. readExample
+aiplatform. exampleStores. update
+aiplatform. exampleStores. writeExample
+aiplatform.executions.*
+aiplatform. executions. addExecutionEvents
+aiplatform.executions.create
+aiplatform.executions.delete
+aiplatform.executions.get
+aiplatform.executions.list
+aiplatform. executions. queryExecutionInputsAndOutputs
+aiplatform.executions.update
+aiplatform.extensions.*
+aiplatform.extensions.delete
+aiplatform.extensions.execute
+aiplatform.extensions.get
+aiplatform.extensions.import
+aiplatform.extensions.list
+aiplatform.extensions.update
+aiplatform. featureGroups. create
+aiplatform. featureGroups. delete
+aiplatform.featureGroups.get
+aiplatform.featureGroups.list
+aiplatform. featureGroups. update
+aiplatform. featureMonitorJobs.*
+aiplatform. featureMonitorJobs. create
+aiplatform. featureMonitorJobs. get
+aiplatform. featureMonitorJobs. list
+aiplatform.featureMonitors.*
+aiplatform. featureMonitors. create
+aiplatform. featureMonitors. delete
+aiplatform.featureMonitors.get
+aiplatform. featureMonitors. list
+aiplatform. featureMonitors. update
+aiplatform. featureOnlineStores. create
+aiplatform. featureOnlineStores. delete
+aiplatform. featureOnlineStores. get
+aiplatform. featureOnlineStores. list
+aiplatform. featureOnlineStores. update
+aiplatform.featureViewSyncs.*
+aiplatform. featureViewSyncs. get
+aiplatform. featureViewSyncs. list
+aiplatform.featureViews.create
+aiplatform.featureViews.delete
+aiplatform. featureViews. directWrite
+aiplatform. featureViews. fetchFeatureValues
+aiplatform.featureViews.get
+aiplatform.featureViews.list
+aiplatform. featureViews. searchNearestEntities
+aiplatform.featureViews.sync
+aiplatform.featureViews.update
+aiplatform.features.*
+aiplatform.features.create
+aiplatform.features.delete
+aiplatform.features.get
+aiplatform.features.list
+aiplatform.features.update
+aiplatform. featurestores. batchReadFeatureValues
+aiplatform. featurestores. create
+aiplatform. featurestores. delete
+aiplatform. featurestores. exportFeatures
+aiplatform.featurestores.get
+aiplatform. featurestores. importFeatures
+aiplatform.featurestores.list
+aiplatform. featurestores. readFeatures
+aiplatform. featurestores. update
+aiplatform. featurestores. writeFeatures
+aiplatform.humanInTheLoops.*
+aiplatform. humanInTheLoops. cancel
+aiplatform. humanInTheLoops. create
+aiplatform. humanInTheLoops. delete
+aiplatform.humanInTheLoops.get
+aiplatform. humanInTheLoops. list
+aiplatform. humanInTheLoops. queryAnnotationStats
+aiplatform. humanInTheLoops. send
+aiplatform. humanInTheLoops. update
+aiplatform. hyperparameterTuningJobs.*
+aiplatform. hyperparameterTuningJobs. cancel
+aiplatform. hyperparameterTuningJobs. create
+aiplatform. hyperparameterTuningJobs. delete
+aiplatform. hyperparameterTuningJobs. get
+aiplatform. hyperparameterTuningJobs. list
+aiplatform.indexEndpoints.*
+aiplatform. indexEndpoints. create
+aiplatform. indexEndpoints. delete
+aiplatform. indexEndpoints. deploy
+aiplatform.indexEndpoints.get
+aiplatform.indexEndpoints.list
+aiplatform. indexEndpoints. queryVectors
+aiplatform. indexEndpoints. undeploy
+aiplatform. indexEndpoints. update
+aiplatform.indexes.*
+aiplatform.indexes.create
+aiplatform.indexes.delete
+aiplatform.indexes.get
+aiplatform.indexes.list
+aiplatform.indexes.update
+aiplatform.locations.*
+aiplatform. locations. evaluateInstances
+aiplatform.locations.get
+aiplatform.locations.list
+aiplatform.memories.*
+aiplatform.memories.create
+aiplatform.memories.delete
+aiplatform.memories.generate
+aiplatform.memories.get
+aiplatform.memories.list
+aiplatform.memories.retrieve
+aiplatform.memories.update
+aiplatform.memoryRevisions.*
+aiplatform.memoryRevisions.get
+aiplatform. memoryRevisions. list
+aiplatform. memoryRevisions. rollback
+aiplatform.metadataSchemas.*
+aiplatform. metadataSchemas. create
+aiplatform. metadataSchemas. delete
+aiplatform.metadataSchemas.get
+aiplatform. metadataSchemas. list
+aiplatform.metadataStores.*
+aiplatform. metadataStores. create
+aiplatform. metadataStores. delete
+aiplatform.metadataStores.get
+aiplatform.metadataStores.list
+aiplatform. modelDeploymentMonitoringJobs.*
+aiplatform. modelDeploymentMonitoringJobs. create
+aiplatform. modelDeploymentMonitoringJobs. delete
+aiplatform. modelDeploymentMonitoringJobs. get
+aiplatform. modelDeploymentMonitoringJobs. list
+aiplatform. modelDeploymentMonitoringJobs. pause
+aiplatform. modelDeploymentMonitoringJobs. resume
+aiplatform. modelDeploymentMonitoringJobs. searchStatsAnomalies
+aiplatform. modelDeploymentMonitoringJobs. update
+aiplatform. modelEvaluationSlices.*
+aiplatform. modelEvaluationSlices. get
+aiplatform. modelEvaluationSlices. import
+aiplatform. modelEvaluationSlices. list
+aiplatform.modelEvaluations.*
+aiplatform. modelEvaluations. exportEvaluatedDataItems
+aiplatform. modelEvaluations. get
+aiplatform. modelEvaluations. import
+aiplatform. modelEvaluations. list
+aiplatform. modelMonitoringJobs.*
+aiplatform. modelMonitoringJobs. create
+aiplatform. modelMonitoringJobs. delete
+aiplatform. modelMonitoringJobs. get
+aiplatform. modelMonitoringJobs. list
+aiplatform.modelMonitors.*
+aiplatform. modelMonitors. create
+aiplatform. modelMonitors. delete
+aiplatform.modelMonitors.get
+aiplatform.modelMonitors.list
+aiplatform. modelMonitors. searchModelMonitoringAlerts
+aiplatform. modelMonitors. searchModelMonitoringStats
+aiplatform. modelMonitors. update
+aiplatform.models.*
+aiplatform.models.delete
+aiplatform.models.export
+aiplatform.models.get
+aiplatform.models.list
+aiplatform.models.update
+aiplatform.models.upload
+aiplatform.nasJobs.*
+aiplatform.nasJobs.cancel
+aiplatform.nasJobs.create
+aiplatform.nasJobs.delete
+aiplatform.nasJobs.get
+aiplatform.nasJobs.list
+aiplatform.nasTrialDetails.*
+aiplatform.nasTrialDetails.get
+aiplatform. nasTrialDetails. list
+aiplatform. notebookExecutionJobs.*
+aiplatform. notebookExecutionJobs. create
+aiplatform. notebookExecutionJobs. delete
+aiplatform. notebookExecutionJobs. get
+aiplatform. notebookExecutionJobs. list
+aiplatform. notebookRuntimeTemplates. apply
+aiplatform. notebookRuntimeTemplates. create
+aiplatform. notebookRuntimeTemplates. delete
+aiplatform. notebookRuntimeTemplates. get
+aiplatform. notebookRuntimeTemplates. list
+aiplatform. notebookRuntimeTemplates. update
+aiplatform.notebookRuntimes.*
+aiplatform. notebookRuntimes. assign
+aiplatform. notebookRuntimes. delete
+aiplatform. notebookRuntimes. get
+aiplatform. notebookRuntimes. list
+aiplatform. notebookRuntimes. start
+aiplatform. notebookRuntimes. update
+aiplatform. notebookRuntimes. upgrade
+aiplatform.operations.list
+aiplatform. persistentResources. get
+aiplatform. persistentResources. list
+aiplatform.pipelineJobs.*
+aiplatform.pipelineJobs.cancel
+aiplatform.pipelineJobs.create
+aiplatform.pipelineJobs.delete
+aiplatform.pipelineJobs.get
+aiplatform.pipelineJobs.list
+aiplatform. provisionedThroughputRevisions.*
+aiplatform. provisionedThroughputRevisions. get
+aiplatform. provisionedThroughputRevisions. list
+aiplatform. provisionedThroughputs. get
+aiplatform. provisionedThroughputs. list
+aiplatform.ragCorpora.*
+aiplatform.ragCorpora.create
+aiplatform.ragCorpora.delete
+aiplatform.ragCorpora.get
+aiplatform.ragCorpora.list
+aiplatform.ragCorpora.query
+aiplatform.ragCorpora.update
+aiplatform. ragEngineConfigs. get
+aiplatform.ragFiles.*
+aiplatform.ragFiles.delete
+aiplatform.ragFiles.get
+aiplatform.ragFiles.import
+aiplatform.ragFiles.list
+aiplatform.ragFiles.upload
+aiplatform.reasoningEngines.*
+aiplatform. reasoningEngines. create
+aiplatform. reasoningEngines. delete
+aiplatform. reasoningEngines. get
+aiplatform. reasoningEngines. list
+aiplatform. reasoningEngines. query
+aiplatform. reasoningEngines. update
+aiplatform. sandboxEnvironments.*
+aiplatform. sandboxEnvironments. create
+aiplatform. sandboxEnvironments. delete
+aiplatform. sandboxEnvironments. execute
+aiplatform. sandboxEnvironments. get
+aiplatform. sandboxEnvironments. list
+aiplatform.schedules.*
+aiplatform.schedules.create
+aiplatform.schedules.delete
+aiplatform.schedules.get
+aiplatform.schedules.list
+aiplatform.schedules.update
+aiplatform. semanticGovernancePolicies.*
+aiplatform. semanticGovernancePolicies. create
+aiplatform. semanticGovernancePolicies. delete
+aiplatform. semanticGovernancePolicies. get
+aiplatform. semanticGovernancePolicies. list
+aiplatform. semanticGovernancePolicies. update
+aiplatform. semanticGovernancePolicyEngine.*
+aiplatform. semanticGovernancePolicyEngine. get
+aiplatform. semanticGovernancePolicyEngine. update
+aiplatform.sessionEvents.*
+aiplatform. sessionEvents. append
+aiplatform.sessionEvents.list
+aiplatform.sessions.*
+aiplatform.sessions.create
+aiplatform.sessions.delete
+aiplatform.sessions.get
+aiplatform.sessions.list
+aiplatform.sessions.run
+aiplatform.sessions.update
+aiplatform.specialistPools.*
+aiplatform. specialistPools. create
+aiplatform. specialistPools. delete
+aiplatform.specialistPools.get
+aiplatform. specialistPools. list
+aiplatform. specialistPools. update
+aiplatform.studies.*
+aiplatform.studies.create
+aiplatform.studies.delete
+aiplatform.studies.get
+aiplatform.studies.list
+aiplatform.studies.update
+aiplatform. tensorboardExperiments.*
+aiplatform. tensorboardExperiments. create
+aiplatform. tensorboardExperiments. delete
+aiplatform. tensorboardExperiments. get
+aiplatform. tensorboardExperiments. list
+aiplatform. tensorboardExperiments. update
+aiplatform. tensorboardExperiments. write
+aiplatform.tensorboardRuns.*
+aiplatform. tensorboardRuns. batchCreate
+aiplatform. tensorboardRuns. create
+aiplatform. tensorboardRuns. delete
+aiplatform.tensorboardRuns.get
+aiplatform. tensorboardRuns. list
+aiplatform. tensorboardRuns. update
+aiplatform. tensorboardRuns. write
+aiplatform. tensorboardTimeSeries.*
+aiplatform. tensorboardTimeSeries. batchCreate
+aiplatform. tensorboardTimeSeries. batchRead
+aiplatform. tensorboardTimeSeries. create
+aiplatform. tensorboardTimeSeries. delete
+aiplatform. tensorboardTimeSeries. get
+aiplatform. tensorboardTimeSeries. list
+aiplatform. tensorboardTimeSeries. read
+aiplatform. tensorboardTimeSeries. update
+aiplatform.tensorboards.create
+aiplatform.tensorboards.delete
+aiplatform.tensorboards.get
+aiplatform.tensorboards.list
+aiplatform.tensorboards.update
+aiplatform.trainingPipelines.*
+aiplatform. trainingPipelines. cancel
+aiplatform. trainingPipelines. create
+aiplatform. trainingPipelines. delete
+aiplatform. trainingPipelines. get
+aiplatform. trainingPipelines. list
+aiplatform.trials.*
+aiplatform.trials.create
+aiplatform.trials.delete
+aiplatform.trials.get
+aiplatform.trials.list
+aiplatform.trials.update
+aiplatform.tuningJobs.*
+aiplatform.tuningJobs.cancel
+aiplatform.tuningJobs.create
+aiplatform.tuningJobs.delete
+aiplatform.tuningJobs.get
+aiplatform.tuningJobs.list
+aiplatform. tuningJobs. optimizePrompt
+aiplatform. tuningJobs. validateReinforcementTuningReward
+aiplatform. tuningJobs. vertexTune
+resourcemanager.projects.get
+resourcemanager.projects.list
+Service agent roles
+Service agent roles should only be granted to service agents .
+Role
+Permissions
+Vertex AI Agent Sandbox Service Agent
+( roles/ aiplatform.agentSandboxServiceAgent )
+Vertex AI Service Agent used to access Agent Sandbox managed resources in consumer project with restricted permissions.
+Warning: Do not grant service agent roles to any principals except
+service agents .
+artifactregistry. repositories. downloadArtifacts
+logging.logEntries.create
+logging.logEntries.route
+serviceusage.services.use
+storage.objects.create
+storage.objects.delete
+storage.objects.get
+storage.objects.list
+Vertex AI Batch Prediction Service Agent
+( roles/ aiplatform.batchPredictionServiceAgent )
+Vertex AI Batch Prediction Service Agent for serving batch prediction requests.
+Warning: Do not grant service agent roles to any principals except
+service agents .
+bigquery.datasets.create
+bigquery.datasets.get
+bigquery.jobs.create
+bigquery.jobs.get
+bigquery.models.create
+bigquery.models.export
+bigquery.models.getData
+bigquery.readsessions.create
+bigquery.readsessions.getData
+bigquery.tables.create
+bigquery.tables.createSnapshot
+bigquery.tables.deleteSnapshot
+bigquery.tables.export
+bigquery.tables.get
+bigquery.tables.getData
+bigquery. tables. restoreSnapshot
+bigquery.tables.update
+bigquery.tables.updateData
+storage.buckets.create
+storage.buckets.delete
+storage.buckets.get
+storage.buckets.list
+storage.buckets.update
+storage.objects.create
+storage.objects.delete
+storage.objects.get
+storage.objects.list
+storage.objects.update
 Vertex AI Colab Service Agent
 ( roles/ aiplatform.colabServiceAgent )
 Gives Vertex AI Colab the proper permissions to function.
@@ -1271,146 +2436,6 @@ storage.objects.delete
 storage.objects.get
 storage.objects.list
 storage.objects.update
-Vertex AI Feature Store EntityType owner
-( roles/ aiplatform.entityTypeOwner )
-Provides full access to all permissions for a particular entity type resource.
-Lowest-level resources where you can grant this role:
-Entity type
-aiplatform.entityTypes.delete
-aiplatform. entityTypes. deleteFeatureValues
-aiplatform. entityTypes. exportFeatureValues
-aiplatform.entityTypes.get
-aiplatform. entityTypes. getIamPolicy
-aiplatform. entityTypes. importFeatureValues
-aiplatform. entityTypes. readFeatureValues
-aiplatform. entityTypes. setIamPolicy
-aiplatform. entityTypes. streamingReadFeatureValues
-aiplatform.entityTypes.update
-aiplatform. entityTypes. writeFeatureValues
-aiplatform.featureGroups.get
-aiplatform.featureGroups.list
-aiplatform. featureMonitorJobs. get
-aiplatform. featureMonitorJobs. list
-aiplatform.featureMonitors.get
-aiplatform. featureMonitors. list
-aiplatform. featureOnlineStores. get
-aiplatform. featureOnlineStores. list
-aiplatform.featureViewSyncs.*
-aiplatform. featureViewSyncs. get
-aiplatform. featureViewSyncs. list
-aiplatform. featureViews. fetchFeatureValues
-aiplatform.featureViews.get
-aiplatform.featureViews.list
-aiplatform. featureViews. searchNearestEntities
-aiplatform.features.*
-aiplatform.features.create
-aiplatform.features.delete
-aiplatform.features.get
-aiplatform.features.list
-aiplatform.features.update
-aiplatform. featurestores. batchReadFeatureValues
-resourcemanager.projects.get
-resourcemanager.projects.list
-Vertex AI Platform Express Admin
-Beta
-( roles/ aiplatform.expressAdmin )
-Grants admin access to Vertex AI Express
-aiplatform. batchPredictionJobs.*
-aiplatform. batchPredictionJobs. cancel
-aiplatform. batchPredictionJobs. create
-aiplatform. batchPredictionJobs. delete
-aiplatform. batchPredictionJobs. get
-aiplatform. batchPredictionJobs. list
-aiplatform.datasetVersions.*
-aiplatform. datasetVersions. create
-aiplatform. datasetVersions. delete
-aiplatform.datasetVersions.get
-aiplatform. datasetVersions. list
-aiplatform. datasetVersions. restore
-aiplatform.datasets.create
-aiplatform.datasets.delete
-aiplatform.datasets.get
-aiplatform.datasets.list
-aiplatform.datasets.update
-aiplatform.endpoints.predict
-aiplatform. locations. evaluateInstances
-aiplatform.memories.*
-aiplatform.memories.create
-aiplatform.memories.delete
-aiplatform.memories.generate
-aiplatform.memories.get
-aiplatform.memories.list
-aiplatform.memories.retrieve
-aiplatform.memories.update
-aiplatform.operations.list
-aiplatform.reasoningEngines.*
-aiplatform. reasoningEngines. create
-aiplatform. reasoningEngines. delete
-aiplatform. reasoningEngines. get
-aiplatform. reasoningEngines. list
-aiplatform. reasoningEngines. query
-aiplatform. reasoningEngines. update
-aiplatform. sandboxEnvironments.*
-aiplatform. sandboxEnvironments. create
-aiplatform. sandboxEnvironments. delete
-aiplatform. sandboxEnvironments. execute
-aiplatform. sandboxEnvironments. get
-aiplatform. sandboxEnvironments. list
-aiplatform.sessionEvents.*
-aiplatform. sessionEvents. append
-aiplatform.sessionEvents.list
-aiplatform.sessions.create
-aiplatform.sessions.delete
-aiplatform.sessions.get
-aiplatform.sessions.list
-aiplatform.sessions.update
-Vertex AI Platform Express User
-Beta
-( roles/ aiplatform.expressUser )
-Grants user access to Vertex AI Express
-aiplatform.datasetVersions.*
-aiplatform. datasetVersions. create
-aiplatform. datasetVersions. delete
-aiplatform.datasetVersions.get
-aiplatform. datasetVersions. list
-aiplatform. datasetVersions. restore
-aiplatform.datasets.create
-aiplatform.datasets.delete
-aiplatform.datasets.get
-aiplatform.datasets.list
-aiplatform.datasets.update
-aiplatform.endpoints.predict
-aiplatform. locations. evaluateInstances
-aiplatform.memories.*
-aiplatform.memories.create
-aiplatform.memories.delete
-aiplatform.memories.generate
-aiplatform.memories.get
-aiplatform.memories.list
-aiplatform.memories.retrieve
-aiplatform.memories.update
-aiplatform.operations.list
-aiplatform.reasoningEngines.*
-aiplatform. reasoningEngines. create
-aiplatform. reasoningEngines. delete
-aiplatform. reasoningEngines. get
-aiplatform. reasoningEngines. list
-aiplatform. reasoningEngines. query
-aiplatform. reasoningEngines. update
-aiplatform. sandboxEnvironments.*
-aiplatform. sandboxEnvironments. create
-aiplatform. sandboxEnvironments. delete
-aiplatform. sandboxEnvironments. execute
-aiplatform. sandboxEnvironments. get
-aiplatform. sandboxEnvironments. list
-aiplatform.sessionEvents.*
-aiplatform. sessionEvents. append
-aiplatform.sessionEvents.list
-aiplatform.sessions.create
-aiplatform.sessions.delete
-aiplatform.sessions.get
-aiplatform.sessions.list
-aiplatform.sessions.update
 Vertex AI Extension Custom Code Service Agent
 ( roles/ aiplatform.extensionCustomCodeServiceAgent )
 Gives Vertex AI Extension that executes custom code the permissions it needs to function.
@@ -1467,263 +2492,6 @@ logging.logEntries.create
 logging.logEntries.route
 serviceusage.services.use
 storage.objects.get
-Vertex AI Feature Store Admin
-( roles/ aiplatform.featurestoreAdmin )
-Grants full access to all resources in Vertex AI Feature Store
-Lowest-level resources where you can grant this role:
-Entity type
-aiplatform.entityTypes.*
-aiplatform.entityTypes.create
-aiplatform.entityTypes.delete
-aiplatform. entityTypes. deleteFeatureValues
-aiplatform. entityTypes. exportFeatureValues
-aiplatform.entityTypes.get
-aiplatform. entityTypes. getIamPolicy
-aiplatform. entityTypes. importFeatureValues
-aiplatform.entityTypes.list
-aiplatform. entityTypes. readFeatureValues
-aiplatform. entityTypes. setIamPolicy
-aiplatform. entityTypes. streamingReadFeatureValues
-aiplatform.entityTypes.update
-aiplatform. entityTypes. writeFeatureValues
-aiplatform.featureGroups.*
-aiplatform. featureGroups. create
-aiplatform. featureGroups. delete
-aiplatform.featureGroups.get
-aiplatform. featureGroups. getIamPolicy
-aiplatform.featureGroups.list
-aiplatform. featureGroups. setIamPolicy
-aiplatform. featureGroups. update
-aiplatform. featureMonitorJobs.*
-aiplatform. featureMonitorJobs. create
-aiplatform. featureMonitorJobs. get
-aiplatform. featureMonitorJobs. list
-aiplatform.featureMonitors.*
-aiplatform. featureMonitors. create
-aiplatform. featureMonitors. delete
-aiplatform.featureMonitors.get
-aiplatform. featureMonitors. list
-aiplatform. featureMonitors. update
-aiplatform. featureOnlineStores.*
-aiplatform. featureOnlineStores. create
-aiplatform. featureOnlineStores. delete
-aiplatform. featureOnlineStores. get
-aiplatform. featureOnlineStores. getIamPolicy
-aiplatform. featureOnlineStores. list
-aiplatform. featureOnlineStores. setIamPolicy
-aiplatform. featureOnlineStores. update
-aiplatform.featureViewSyncs.*
-aiplatform. featureViewSyncs. get
-aiplatform. featureViewSyncs. list
-aiplatform.featureViews.*
-aiplatform.featureViews.create
-aiplatform.featureViews.delete
-aiplatform. featureViews. directWrite
-aiplatform. featureViews. fetchFeatureValues
-aiplatform.featureViews.get
-aiplatform. featureViews. getIamPolicy
-aiplatform.featureViews.list
-aiplatform. featureViews. searchNearestEntities
-aiplatform. featureViews. setIamPolicy
-aiplatform.featureViews.sync
-aiplatform.featureViews.update
-aiplatform.features.*
-aiplatform.features.create
-aiplatform.features.delete
-aiplatform.features.get
-aiplatform.features.list
-aiplatform.features.update
-aiplatform.featurestores.*
-aiplatform. featurestores. batchReadFeatureValues
-aiplatform. featurestores. create
-aiplatform. featurestores. delete
-aiplatform. featurestores. exportFeatures
-aiplatform.featurestores.get
-aiplatform. featurestores. getIamPolicy
-aiplatform. featurestores. importFeatures
-aiplatform.featurestores.list
-aiplatform. featurestores. readFeatures
-aiplatform. featurestores. setIamPolicy
-aiplatform. featurestores. update
-aiplatform. featurestores. writeFeatures
-aiplatform.operations.list
-resourcemanager.projects.get
-resourcemanager.projects.list
-Vertex AI Feature Store Data Viewer
-( roles/ aiplatform.featurestoreDataViewer )
-This role provides permissions to read Feature data.
-Lowest-level resources where you can grant this role:
-Entity type
-aiplatform. entityTypes. exportFeatureValues
-aiplatform.entityTypes.get
-aiplatform. entityTypes. readFeatureValues
-aiplatform. entityTypes. streamingReadFeatureValues
-aiplatform.featureGroups.get
-aiplatform.featureGroups.list
-aiplatform. featureMonitorJobs. get
-aiplatform. featureMonitorJobs. list
-aiplatform.featureMonitors.get
-aiplatform. featureMonitors. list
-aiplatform. featureOnlineStores. get
-aiplatform. featureOnlineStores. list
-aiplatform.featureViewSyncs.*
-aiplatform. featureViewSyncs. get
-aiplatform. featureViewSyncs. list
-aiplatform. featureViews. fetchFeatureValues
-aiplatform.featureViews.get
-aiplatform.featureViews.list
-aiplatform. featureViews. searchNearestEntities
-aiplatform.features.get
-aiplatform.features.list
-aiplatform. featurestores. batchReadFeatureValues
-resourcemanager.projects.get
-resourcemanager.projects.list
-Vertex AI Feature Store Data Writer
-( roles/ aiplatform.featurestoreDataWriter )
-This role provides permissions to read and write Feature data.
-Lowest-level resources where you can grant this role:
-Entity type
-aiplatform. entityTypes. deleteFeatureValues
-aiplatform. entityTypes. exportFeatureValues
-aiplatform.entityTypes.get
-aiplatform. entityTypes. importFeatureValues
-aiplatform. entityTypes. readFeatureValues
-aiplatform. entityTypes. streamingReadFeatureValues
-aiplatform. entityTypes. writeFeatureValues
-aiplatform.featureGroups.get
-aiplatform.featureGroups.list
-aiplatform. featureMonitorJobs. get
-aiplatform. featureMonitorJobs. list
-aiplatform.featureMonitors.get
-aiplatform. featureMonitors. list
-aiplatform. featureOnlineStores. get
-aiplatform. featureOnlineStores. list
-aiplatform.featureViewSyncs.*
-aiplatform. featureViewSyncs. get
-aiplatform. featureViewSyncs. list
-aiplatform. featureViews. fetchFeatureValues
-aiplatform.featureViews.get
-aiplatform.featureViews.list
-aiplatform. featureViews. searchNearestEntities
-aiplatform.features.get
-aiplatform.features.list
-aiplatform. featurestores. batchReadFeatureValues
-resourcemanager.projects.get
-resourcemanager.projects.list
-Vertex AI Feature Store Instance Creator
-( roles/ aiplatform.featurestoreInstanceCreator )
-Administrator of Featurestore resources, but not the child resources under Featurestores.
-Lowest-level resources where you can grant this role:
-Featurestore
-aiplatform. featurestores. create
-aiplatform. featurestores. delete
-aiplatform.featurestores.get
-aiplatform.featurestores.list
-aiplatform. featurestores. update
-Vertex AI Feature Store Resource Viewer
-( roles/ aiplatform.featurestoreResourceViewer )
-Viewer of all resources in Vertex AI Feature Store but cannot make changes.
-Lowest-level resources where you can grant this role:
-Entity type
-aiplatform.entityTypes.get
-aiplatform.entityTypes.list
-aiplatform.featureGroups.get
-aiplatform.featureGroups.list
-aiplatform. featureMonitorJobs. get
-aiplatform. featureMonitorJobs. list
-aiplatform.featureMonitors.get
-aiplatform. featureMonitors. list
-aiplatform. featureOnlineStores. get
-aiplatform. featureOnlineStores. list
-aiplatform.featureViewSyncs.*
-aiplatform. featureViewSyncs. get
-aiplatform. featureViewSyncs. list
-aiplatform.featureViews.get
-aiplatform.featureViews.list
-aiplatform.features.get
-aiplatform.features.list
-aiplatform.featurestores.get
-aiplatform.featurestores.list
-aiplatform.operations.list
-resourcemanager.projects.get
-resourcemanager.projects.list
-Vertex AI Feature Store User
-Beta
-( roles/ aiplatform.featurestoreUser )
-Deprecated. Use featurestoreAdmin instead.
-aiplatform.entityTypes.*
-aiplatform.entityTypes.create
-aiplatform.entityTypes.delete
-aiplatform. entityTypes. deleteFeatureValues
-aiplatform. entityTypes. exportFeatureValues
-aiplatform.entityTypes.get
-aiplatform. entityTypes. getIamPolicy
-aiplatform. entityTypes. importFeatureValues
-aiplatform.entityTypes.list
-aiplatform. entityTypes. readFeatureValues
-aiplatform. entityTypes. setIamPolicy
-aiplatform. entityTypes. streamingReadFeatureValues
-aiplatform.entityTypes.update
-aiplatform. entityTypes. writeFeatureValues
-aiplatform.features.*
-aiplatform.features.create
-aiplatform.features.delete
-aiplatform.features.get
-aiplatform.features.list
-aiplatform.features.update
-aiplatform.featurestores.*
-aiplatform. featurestores. batchReadFeatureValues
-aiplatform. featurestores. create
-aiplatform. featurestores. delete
-aiplatform. featurestores. exportFeatures
-aiplatform.featurestores.get
-aiplatform. featurestores. getIamPolicy
-aiplatform. featurestores. importFeatures
-aiplatform.featurestores.list
-aiplatform. featurestores. readFeatures
-aiplatform. featurestores. setIamPolicy
-aiplatform. featurestores. update
-aiplatform. featurestores. writeFeatures
-aiplatform.operations.list
-resourcemanager.projects.get
-resourcemanager.projects.list
-Vertex AI Agent Engine Memory Editor Role
-( roles/ aiplatform.memoryEditor )
-Grants edit access to Memory for Agent Engine.
-aiplatform.memories.create
-aiplatform.memories.delete
-aiplatform.memories.generate
-aiplatform.memories.update
-aiplatform. memoryRevisions. rollback
-Vertex AI Agent Engine Memory User Role
-( roles/ aiplatform.memoryUser )
-Grants full user access to Memory for Agent Engine.
-aiplatform.memories.*
-aiplatform.memories.create
-aiplatform.memories.delete
-aiplatform.memories.generate
-aiplatform.memories.get
-aiplatform.memories.list
-aiplatform.memories.retrieve
-aiplatform.memories.update
-aiplatform.memoryRevisions.*
-aiplatform.memoryRevisions.get
-aiplatform. memoryRevisions. list
-aiplatform. memoryRevisions. rollback
-Vertex AI Agent Engine Memory Viewer Role
-( roles/ aiplatform.memoryViewer )
-Grants viewer access to Memory for Agent Engine.
-aiplatform.memories.get
-aiplatform.memories.list
-aiplatform.memories.retrieve
-aiplatform.memoryRevisions.get
-aiplatform. memoryRevisions. list
-Vertex AI Migration Service User
-( roles/ aiplatform.migrator )
-Grants access to use migration service in Vertex AI
-aiplatform. migratableResources.*
-aiplatform. migratableResources. migrate
-aiplatform. migratableResources. search
 Vertex AI Model Monitoring Service Agent
 ( roles/ aiplatform.modelMonitoringServiceAgent )
 Gives Vertex AI Model Monitoring the permissions it needs to function.
@@ -1755,59 +2523,6 @@ storage.objects.delete
 storage.objects.get
 storage.objects.list
 storage.objects.update
-Notebook Executor User
-Beta
-( roles/ aiplatform.notebookExecutorUser )
-Grants users full access to schedules and notebook execution jobs.
-aiplatform. notebookExecutionJobs.*
-aiplatform. notebookExecutionJobs. create
-aiplatform. notebookExecutionJobs. delete
-aiplatform. notebookExecutionJobs. get
-aiplatform. notebookExecutionJobs. list
-aiplatform.operations.list
-aiplatform.pipelineJobs.create
-aiplatform.schedules.*
-aiplatform.schedules.create
-aiplatform.schedules.delete
-aiplatform.schedules.get
-aiplatform.schedules.list
-aiplatform.schedules.update
-Notebook Runtime Admin
-( roles/ aiplatform.notebookRuntimeAdmin )
-Grants full access to all runtime templates and runtimes in Notebook Service.
-aiplatform.locations.get
-aiplatform. notebookRuntimeTemplates.*
-aiplatform. notebookRuntimeTemplates. apply
-aiplatform. notebookRuntimeTemplates. create
-aiplatform. notebookRuntimeTemplates. delete
-aiplatform. notebookRuntimeTemplates. get
-aiplatform. notebookRuntimeTemplates. getIamPolicy
-aiplatform. notebookRuntimeTemplates. list
-aiplatform. notebookRuntimeTemplates. setIamPolicy
-aiplatform. notebookRuntimeTemplates. update
-aiplatform.notebookRuntimes.*
-aiplatform. notebookRuntimes. assign
-aiplatform. notebookRuntimes. delete
-aiplatform. notebookRuntimes. get
-aiplatform. notebookRuntimes. list
-aiplatform. notebookRuntimes. start
-aiplatform. notebookRuntimes. update
-aiplatform. notebookRuntimes. upgrade
-aiplatform.operations.list
-compute.reservations.get
-compute.reservations.list
-Notebook Runtime User
-( roles/ aiplatform.notebookRuntimeUser )
-Grants users permissions to create runtime resources using a runtime template and manage the runtime resources they created.
-aiplatform.locations.get
-aiplatform. notebookRuntimeTemplates. apply
-aiplatform. notebookRuntimeTemplates. get
-aiplatform. notebookRuntimeTemplates. getIamPolicy
-aiplatform. notebookRuntimeTemplates. list
-aiplatform. notebookRuntimes. assign
-aiplatform. notebookRuntimes. get
-aiplatform. notebookRuntimes. list
-aiplatform.operations.list
 Vertex AI Notebook Service Agent
 ( roles/ aiplatform.notebookServiceAgent )
 Vertex AI Service Agent used to run Notebook managed resources in user project with restricted permissions.
@@ -1844,28 +2559,6 @@ gkehub.memberships.get
 gkehub. memberships. getIamPolicy
 gkehub.memberships.list
 serviceusage.services.get
-Vertex AI Platform Provisioned Throughput Admin
-Beta
-( roles/ aiplatform.provisionedThroughputAdmin )
-Grants access to use all resources related to Vertex AI Provisioned Throughput
-aiplatform. provisionedThroughputRevisions.*
-aiplatform. provisionedThroughputRevisions. get
-aiplatform. provisionedThroughputRevisions. list
-aiplatform. provisionedThroughputs.*
-aiplatform. provisionedThroughputs. cancel
-aiplatform. provisionedThroughputs. create
-aiplatform. provisionedThroughputs. get
-aiplatform. provisionedThroughputs. list
-aiplatform. provisionedThroughputs. split
-aiplatform. provisionedThroughputs. update
-Vertex AI Platform Publisher Provisioned Throughput Admin
-Beta
-( roles/ aiplatform.publisherProvisionedThroughputAdmin )
-Grants Publisher access to use all resources related to Vertex AI Provisioned Throughput Orders
-Vertex AI Platform Publisher Provisioned Throughput Viewer
-Beta
-( roles/ aiplatform.publisherProvisionedThroughputViewer )
-Grants Publisher access to view all resources related to Vertex AI Provisioned Throughput Orders
 Vertex AI RAG Data Service Agent
 ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent used by Vertex RAG to access user imported data, Vertex AI, Document AI processors, and Vector Search in the project
@@ -2642,30 +3335,6 @@ storage.objects.delete
 storage.objects.get
 storage.objects.list
 storage.objects.update
-Vertex AI Agent Engine Session Editor Role
-( roles/ aiplatform.sessionEditor )
-Grants edit access to Session for Agent Engine.
-aiplatform. sessionEvents. append
-aiplatform.sessions.create
-aiplatform.sessions.delete
-aiplatform.sessions.update
-Vertex AI Agent Engine Session User Role
-( roles/ aiplatform.sessionUser )
-Grants full user access to Session for Agent Engine.
-aiplatform.sessionEvents.*
-aiplatform. sessionEvents. append
-aiplatform.sessionEvents.list
-aiplatform.sessions.create
-aiplatform.sessions.delete
-aiplatform.sessions.get
-aiplatform.sessions.list
-aiplatform.sessions.update
-Vertex AI Agent Engine Session Viewer Role
-( roles/ aiplatform.sessionViewer )
-Grants viewer access to Session for Agent Engine.
-aiplatform.sessionEvents.list
-aiplatform.sessions.get
-aiplatform.sessions.list
 Vertex AI Telemetry Service Agent
 ( roles/ aiplatform.telemetryServiceAgent )
 Allows Vertex AI Telemetry Service Agent to access telemetry data.
@@ -2684,11 +3353,6 @@ monitoring.timeSeries.*
 monitoring.timeSeries.create
 monitoring.timeSeries.list
 servicemanagement. services. report
-Vertex AI Tensorboard Web App User
-Beta
-( roles/ aiplatform.tensorboardWebAppUser )
-Grants access to the Vertex AI TensorBoard web app.
-aiplatform. tensorboards. recordAccess
 Vertex AI Tuning Service Agent
 ( roles/ aiplatform.tuningServiceAgent )
 Vertex AI Service Agent used for tuning in user project.
@@ -2795,666 +3459,6 @@ storage.objects.get
 storage.objects.getIamPolicy
 storage.objects.list
 storage.objects.update
-Vertex AI User
-( roles/ aiplatform.user )
-Grants access to use all resource in Vertex AI
-aiplatform.agentExamples.*
-aiplatform. agentExamples. create
-aiplatform. agentExamples. delete
-aiplatform.agentExamples.get
-aiplatform.agentExamples.list
-aiplatform. agentExamples. update
-aiplatform.agents.*
-aiplatform.agents.create
-aiplatform.agents.delete
-aiplatform.agents.get
-aiplatform.agents.list
-aiplatform.agents.update
-aiplatform.annotationSpecs.*
-aiplatform. annotationSpecs. create
-aiplatform. annotationSpecs. delete
-aiplatform.annotationSpecs.get
-aiplatform. annotationSpecs. list
-aiplatform. annotationSpecs. update
-aiplatform.annotations.*
-aiplatform.annotations.create
-aiplatform.annotations.delete
-aiplatform.annotations.get
-aiplatform.annotations.list
-aiplatform.annotations.update
-aiplatform.apps.*
-aiplatform.apps.create
-aiplatform.apps.delete
-aiplatform.apps.get
-aiplatform.apps.list
-aiplatform.apps.update
-aiplatform.artifacts.*
-aiplatform.artifacts.create
-aiplatform.artifacts.delete
-aiplatform.artifacts.get
-aiplatform.artifacts.list
-aiplatform.artifacts.update
-aiplatform. batchPredictionJobs.*
-aiplatform. batchPredictionJobs. cancel
-aiplatform. batchPredictionJobs. create
-aiplatform. batchPredictionJobs. delete
-aiplatform. batchPredictionJobs. get
-aiplatform. batchPredictionJobs. list
-aiplatform.cacheConfigs.get
-aiplatform.cachedContents.*
-aiplatform. cachedContents. create
-aiplatform. cachedContents. delete
-aiplatform.cachedContents.get
-aiplatform.cachedContents.list
-aiplatform. cachedContents. update
-aiplatform.consents.get
-aiplatform.contexts.*
-aiplatform. contexts. addContextArtifactsAndExecutions
-aiplatform. contexts. addContextChildren
-aiplatform.contexts.create
-aiplatform.contexts.delete
-aiplatform.contexts.get
-aiplatform.contexts.list
-aiplatform. contexts. queryContextLineageSubgraph
-aiplatform.contexts.update
-aiplatform.customJobs.*
-aiplatform.customJobs.cancel
-aiplatform.customJobs.create
-aiplatform.customJobs.delete
-aiplatform.customJobs.get
-aiplatform.customJobs.list
-aiplatform.dataItems.*
-aiplatform.dataItems.create
-aiplatform.dataItems.delete
-aiplatform.dataItems.get
-aiplatform.dataItems.list
-aiplatform.dataItems.update
-aiplatform.dataLabelingJobs.*
-aiplatform. dataLabelingJobs. cancel
-aiplatform. dataLabelingJobs. create
-aiplatform. dataLabelingJobs. delete
-aiplatform. dataLabelingJobs. get
-aiplatform. dataLabelingJobs. list
-aiplatform.datasetVersions.*
-aiplatform. datasetVersions. create
-aiplatform. datasetVersions. delete
-aiplatform.datasetVersions.get
-aiplatform. datasetVersions. list
-aiplatform. datasetVersions. restore
-aiplatform.datasets.*
-aiplatform.datasets.create
-aiplatform.datasets.delete
-aiplatform.datasets.export
-aiplatform.datasets.get
-aiplatform.datasets.import
-aiplatform.datasets.list
-aiplatform.datasets.update
-aiplatform. deploymentResourcePools.*
-aiplatform. deploymentResourcePools. create
-aiplatform. deploymentResourcePools. delete
-aiplatform. deploymentResourcePools. get
-aiplatform. deploymentResourcePools. list
-aiplatform. deploymentResourcePools. queryDeployedModels
-aiplatform. deploymentResourcePools. update
-aiplatform. edgeDeploymentJobs.*
-aiplatform. edgeDeploymentJobs. create
-aiplatform. edgeDeploymentJobs. delete
-aiplatform. edgeDeploymentJobs. get
-aiplatform. edgeDeploymentJobs. list
-aiplatform. edgeDeviceDebugInfo. get
-aiplatform.edgeDevices.*
-aiplatform.edgeDevices.create
-aiplatform.edgeDevices.delete
-aiplatform.edgeDevices.get
-aiplatform.edgeDevices.list
-aiplatform.edgeDevices.update
-aiplatform.endpoints.create
-aiplatform.endpoints.delete
-aiplatform.endpoints.deploy
-aiplatform.endpoints.explain
-aiplatform.endpoints.get
-aiplatform.endpoints.list
-aiplatform.endpoints.predict
-aiplatform.endpoints.undeploy
-aiplatform.endpoints.update
-aiplatform.entityTypes.create
-aiplatform.entityTypes.delete
-aiplatform. entityTypes. deleteFeatureValues
-aiplatform. entityTypes. exportFeatureValues
-aiplatform.entityTypes.get
-aiplatform. entityTypes. importFeatureValues
-aiplatform.entityTypes.list
-aiplatform. entityTypes. readFeatureValues
-aiplatform. entityTypes. streamingReadFeatureValues
-aiplatform.entityTypes.update
-aiplatform. entityTypes. writeFeatureValues
-aiplatform. evaluationExperiments.*
-aiplatform. evaluationExperiments. create
-aiplatform. evaluationExperiments. delete
-aiplatform. evaluationExperiments. get
-aiplatform. evaluationExperiments. list
-aiplatform. evaluationExperiments. update
-aiplatform.evaluationItems.*
-aiplatform. evaluationItems. create
-aiplatform. evaluationItems. delete
-aiplatform.evaluationItems.get
-aiplatform. evaluationItems. list
-aiplatform. evaluationItems. update
-aiplatform.evaluationRuns.*
-aiplatform. evaluationRuns. cancel
-aiplatform. evaluationRuns. create
-aiplatform. evaluationRuns. delete
-aiplatform. evaluationRuns. execute
-aiplatform.evaluationRuns.get
-aiplatform.evaluationRuns.list
-aiplatform. evaluationRuns. update
-aiplatform.evaluationSets.*
-aiplatform. evaluationSets. create
-aiplatform. evaluationSets. delete
-aiplatform.evaluationSets.get
-aiplatform.evaluationSets.list
-aiplatform. evaluationSets. update
-aiplatform.exampleStores.*
-aiplatform. exampleStores. create
-aiplatform. exampleStores. delete
-aiplatform.exampleStores.get
-aiplatform.exampleStores.list
-aiplatform. exampleStores. readExample
-aiplatform. exampleStores. update
-aiplatform. exampleStores. writeExample
-aiplatform.executions.*
-aiplatform. executions. addExecutionEvents
-aiplatform.executions.create
-aiplatform.executions.delete
-aiplatform.executions.get
-aiplatform.executions.list
-aiplatform. executions. queryExecutionInputsAndOutputs
-aiplatform.executions.update
-aiplatform.extensions.*
-aiplatform.extensions.delete
-aiplatform.extensions.execute
-aiplatform.extensions.get
-aiplatform.extensions.import
-aiplatform.extensions.list
-aiplatform.extensions.update
-aiplatform. featureGroups. create
-aiplatform. featureGroups. delete
-aiplatform.featureGroups.get
-aiplatform.featureGroups.list
-aiplatform. featureGroups. update
-aiplatform. featureMonitorJobs.*
-aiplatform. featureMonitorJobs. create
-aiplatform. featureMonitorJobs. get
-aiplatform. featureMonitorJobs. list
-aiplatform.featureMonitors.*
-aiplatform. featureMonitors. create
-aiplatform. featureMonitors. delete
-aiplatform.featureMonitors.get
-aiplatform. featureMonitors. list
-aiplatform. featureMonitors. update
-aiplatform. featureOnlineStores. create
-aiplatform. featureOnlineStores. delete
-aiplatform. featureOnlineStores. get
-aiplatform. featureOnlineStores. list
-aiplatform. featureOnlineStores. update
-aiplatform.featureViewSyncs.*
-aiplatform. featureViewSyncs. get
-aiplatform. featureViewSyncs. list
-aiplatform.featureViews.create
-aiplatform.featureViews.delete
-aiplatform. featureViews. directWrite
-aiplatform. featureViews. fetchFeatureValues
-aiplatform.featureViews.get
-aiplatform.featureViews.list
-aiplatform. featureViews. searchNearestEntities
-aiplatform.featureViews.sync
-aiplatform.featureViews.update
-aiplatform.features.*
-aiplatform.features.create
-aiplatform.features.delete
-aiplatform.features.get
-aiplatform.features.list
-aiplatform.features.update
-aiplatform. featurestores. batchReadFeatureValues
-aiplatform. featurestores. create
-aiplatform. featurestores. delete
-aiplatform. featurestores. exportFeatures
-aiplatform.featurestores.get
-aiplatform. featurestores. importFeatures
-aiplatform.featurestores.list
-aiplatform. featurestores. readFeatures
-aiplatform. featurestores. update
-aiplatform. featurestores. writeFeatures
-aiplatform.humanInTheLoops.*
-aiplatform. humanInTheLoops. cancel
-aiplatform. humanInTheLoops. create
-aiplatform. humanInTheLoops. delete
-aiplatform.humanInTheLoops.get
-aiplatform. humanInTheLoops. list
-aiplatform. humanInTheLoops. queryAnnotationStats
-aiplatform. humanInTheLoops. send
-aiplatform. humanInTheLoops. update
-aiplatform. hyperparameterTuningJobs.*
-aiplatform. hyperparameterTuningJobs. cancel
-aiplatform. hyperparameterTuningJobs. create
-aiplatform. hyperparameterTuningJobs. delete
-aiplatform. hyperparameterTuningJobs. get
-aiplatform. hyperparameterTuningJobs. list
-aiplatform.indexEndpoints.*
-aiplatform. indexEndpoints. create
-aiplatform. indexEndpoints. delete
-aiplatform. indexEndpoints. deploy
-aiplatform.indexEndpoints.get
-aiplatform.indexEndpoints.list
-aiplatform. indexEndpoints. queryVectors
-aiplatform. indexEndpoints. undeploy
-aiplatform. indexEndpoints. update
-aiplatform.indexes.*
-aiplatform.indexes.create
-aiplatform.indexes.delete
-aiplatform.indexes.get
-aiplatform.indexes.list
-aiplatform.indexes.update
-aiplatform.locations.*
-aiplatform. locations. evaluateInstances
-aiplatform.locations.get
-aiplatform.locations.list
-aiplatform.memories.*
-aiplatform.memories.create
-aiplatform.memories.delete
-aiplatform.memories.generate
-aiplatform.memories.get
-aiplatform.memories.list
-aiplatform.memories.retrieve
-aiplatform.memories.update
-aiplatform.memoryRevisions.*
-aiplatform.memoryRevisions.get
-aiplatform. memoryRevisions. list
-aiplatform. memoryRevisions. rollback
-aiplatform.metadataSchemas.*
-aiplatform. metadataSchemas. create
-aiplatform. metadataSchemas. delete
-aiplatform.metadataSchemas.get
-aiplatform. metadataSchemas. list
-aiplatform.metadataStores.*
-aiplatform. metadataStores. create
-aiplatform. metadataStores. delete
-aiplatform.metadataStores.get
-aiplatform.metadataStores.list
-aiplatform. modelDeploymentMonitoringJobs.*
-aiplatform. modelDeploymentMonitoringJobs. create
-aiplatform. modelDeploymentMonitoringJobs. delete
-aiplatform. modelDeploymentMonitoringJobs. get
-aiplatform. modelDeploymentMonitoringJobs. list
-aiplatform. modelDeploymentMonitoringJobs. pause
-aiplatform. modelDeploymentMonitoringJobs. resume
-aiplatform. modelDeploymentMonitoringJobs. searchStatsAnomalies
-aiplatform. modelDeploymentMonitoringJobs. update
-aiplatform. modelEvaluationSlices.*
-aiplatform. modelEvaluationSlices. get
-aiplatform. modelEvaluationSlices. import
-aiplatform. modelEvaluationSlices. list
-aiplatform.modelEvaluations.*
-aiplatform. modelEvaluations. exportEvaluatedDataItems
-aiplatform. modelEvaluations. get
-aiplatform. modelEvaluations. import
-aiplatform. modelEvaluations. list
-aiplatform. modelMonitoringJobs.*
-aiplatform. modelMonitoringJobs. create
-aiplatform. modelMonitoringJobs. delete
-aiplatform. modelMonitoringJobs. get
-aiplatform. modelMonitoringJobs. list
-aiplatform.modelMonitors.*
-aiplatform. modelMonitors. create
-aiplatform. modelMonitors. delete
-aiplatform.modelMonitors.get
-aiplatform.modelMonitors.list
-aiplatform. modelMonitors. searchModelMonitoringAlerts
-aiplatform. modelMonitors. searchModelMonitoringStats
-aiplatform. modelMonitors. update
-aiplatform.models.*
-aiplatform.models.delete
-aiplatform.models.export
-aiplatform.models.get
-aiplatform.models.list
-aiplatform.models.update
-aiplatform.models.upload
-aiplatform.nasJobs.*
-aiplatform.nasJobs.cancel
-aiplatform.nasJobs.create
-aiplatform.nasJobs.delete
-aiplatform.nasJobs.get
-aiplatform.nasJobs.list
-aiplatform.nasTrialDetails.*
-aiplatform.nasTrialDetails.get
-aiplatform. nasTrialDetails. list
-aiplatform. notebookExecutionJobs.*
-aiplatform. notebookExecutionJobs. create
-aiplatform. notebookExecutionJobs. delete
-aiplatform. notebookExecutionJobs. get
-aiplatform. notebookExecutionJobs. list
-aiplatform. notebookRuntimeTemplates. apply
-aiplatform. notebookRuntimeTemplates. create
-aiplatform. notebookRuntimeTemplates. delete
-aiplatform. notebookRuntimeTemplates. get
-aiplatform. notebookRuntimeTemplates. list
-aiplatform. notebookRuntimeTemplates. update
-aiplatform.notebookRuntimes.*
-aiplatform. notebookRuntimes. assign
-aiplatform. notebookRuntimes. delete
-aiplatform. notebookRuntimes. get
-aiplatform. notebookRuntimes. list
-aiplatform. notebookRuntimes. start
-aiplatform. notebookRuntimes. update
-aiplatform. notebookRuntimes. upgrade
-aiplatform.operations.list
-aiplatform. persistentResources. get
-aiplatform. persistentResources. list
-aiplatform.pipelineJobs.*
-aiplatform.pipelineJobs.cancel
-aiplatform.pipelineJobs.create
-aiplatform.pipelineJobs.delete
-aiplatform.pipelineJobs.get
-aiplatform.pipelineJobs.list
-aiplatform. provisionedThroughputRevisions.*
-aiplatform. provisionedThroughputRevisions. get
-aiplatform. provisionedThroughputRevisions. list
-aiplatform. provisionedThroughputs. get
-aiplatform. provisionedThroughputs. list
-aiplatform.ragCorpora.*
-aiplatform.ragCorpora.create
-aiplatform.ragCorpora.delete
-aiplatform.ragCorpora.get
-aiplatform.ragCorpora.list
-aiplatform.ragCorpora.query
-aiplatform.ragCorpora.update
-aiplatform. ragEngineConfigs. get
-aiplatform.ragFiles.*
-aiplatform.ragFiles.delete
-aiplatform.ragFiles.get
-aiplatform.ragFiles.import
-aiplatform.ragFiles.list
-aiplatform.ragFiles.upload
-aiplatform.reasoningEngines.*
-aiplatform. reasoningEngines. create
-aiplatform. reasoningEngines. delete
-aiplatform. reasoningEngines. get
-aiplatform. reasoningEngines. list
-aiplatform. reasoningEngines. query
-aiplatform. reasoningEngines. update
-aiplatform. sandboxEnvironments.*
-aiplatform. sandboxEnvironments. create
-aiplatform. sandboxEnvironments. delete
-aiplatform. sandboxEnvironments. execute
-aiplatform. sandboxEnvironments. get
-aiplatform. sandboxEnvironments. list
-aiplatform.schedules.*
-aiplatform.schedules.create
-aiplatform.schedules.delete
-aiplatform.schedules.get
-aiplatform.schedules.list
-aiplatform.schedules.update
-aiplatform. semanticGovernancePolicies.*
-aiplatform. semanticGovernancePolicies. create
-aiplatform. semanticGovernancePolicies. delete
-aiplatform. semanticGovernancePolicies. get
-aiplatform. semanticGovernancePolicies. list
-aiplatform. semanticGovernancePolicies. update
-aiplatform. semanticGovernancePolicyEngine.*
-aiplatform. semanticGovernancePolicyEngine. get
-aiplatform. semanticGovernancePolicyEngine. update
-aiplatform.sessionEvents.*
-aiplatform. sessionEvents. append
-aiplatform.sessionEvents.list
-aiplatform.sessions.*
-aiplatform.sessions.create
-aiplatform.sessions.delete
-aiplatform.sessions.get
-aiplatform.sessions.list
-aiplatform.sessions.run
-aiplatform.sessions.update
-aiplatform.specialistPools.*
-aiplatform. specialistPools. create
-aiplatform. specialistPools. delete
-aiplatform.specialistPools.get
-aiplatform. specialistPools. list
-aiplatform. specialistPools. update
-aiplatform.studies.*
-aiplatform.studies.create
-aiplatform.studies.delete
-aiplatform.studies.get
-aiplatform.studies.list
-aiplatform.studies.update
-aiplatform. tensorboardExperiments.*
-aiplatform. tensorboardExperiments. create
-aiplatform. tensorboardExperiments. delete
-aiplatform. tensorboardExperiments. get
-aiplatform. tensorboardExperiments. list
-aiplatform. tensorboardExperiments. update
-aiplatform. tensorboardExperiments. write
-aiplatform.tensorboardRuns.*
-aiplatform. tensorboardRuns. batchCreate
-aiplatform. tensorboardRuns. create
-aiplatform. tensorboardRuns. delete
-aiplatform.tensorboardRuns.get
-aiplatform. tensorboardRuns. list
-aiplatform. tensorboardRuns. update
-aiplatform. tensorboardRuns. write
-aiplatform. tensorboardTimeSeries.*
-aiplatform. tensorboardTimeSeries. batchCreate
-aiplatform. tensorboardTimeSeries. batchRead
-aiplatform. tensorboardTimeSeries. create
-aiplatform. tensorboardTimeSeries. delete
-aiplatform. tensorboardTimeSeries. get
-aiplatform. tensorboardTimeSeries. list
-aiplatform. tensorboardTimeSeries. read
-aiplatform. tensorboardTimeSeries. update
-aiplatform.tensorboards.create
-aiplatform.tensorboards.delete
-aiplatform.tensorboards.get
-aiplatform.tensorboards.list
-aiplatform.tensorboards.update
-aiplatform.trainingPipelines.*
-aiplatform. trainingPipelines. cancel
-aiplatform. trainingPipelines. create
-aiplatform. trainingPipelines. delete
-aiplatform. trainingPipelines. get
-aiplatform. trainingPipelines. list
-aiplatform.trials.*
-aiplatform.trials.create
-aiplatform.trials.delete
-aiplatform.trials.get
-aiplatform.trials.list
-aiplatform.trials.update
-aiplatform.tuningJobs.*
-aiplatform.tuningJobs.cancel
-aiplatform.tuningJobs.create
-aiplatform.tuningJobs.delete
-aiplatform.tuningJobs.get
-aiplatform.tuningJobs.list
-aiplatform. tuningJobs. optimizePrompt
-aiplatform. tuningJobs. validateReinforcementTuningReward
-aiplatform. tuningJobs. vertexTune
-resourcemanager.projects.get
-resourcemanager.projects.list
-Vertex AI Viewer
-( roles/ aiplatform.viewer )
-Grants access to view all resource in Vertex AI
-aiplatform.agentExamples.get
-aiplatform.agentExamples.list
-aiplatform.agents.get
-aiplatform.agents.list
-aiplatform.annotationSpecs.get
-aiplatform. annotationSpecs. list
-aiplatform.annotations.get
-aiplatform.annotations.list
-aiplatform.apps.get
-aiplatform.apps.list
-aiplatform.artifacts.get
-aiplatform.artifacts.list
-aiplatform. batchPredictionJobs. get
-aiplatform. batchPredictionJobs. list
-aiplatform.cacheConfigs.get
-aiplatform.cachedContents.get
-aiplatform.cachedContents.list
-aiplatform.consents.get
-aiplatform.contexts.get
-aiplatform.contexts.list
-aiplatform. contexts. queryContextLineageSubgraph
-aiplatform.customJobs.get
-aiplatform.customJobs.list
-aiplatform.dataItems.get
-aiplatform.dataItems.list
-aiplatform. dataLabelingJobs. get
-aiplatform. dataLabelingJobs. list
-aiplatform.datasetVersions.get
-aiplatform. datasetVersions. list
-aiplatform.datasets.get
-aiplatform.datasets.list
-aiplatform. deploymentResourcePools. get
-aiplatform. deploymentResourcePools. list
-aiplatform. deploymentResourcePools. queryDeployedModels
-aiplatform. edgeDeploymentJobs. get
-aiplatform. edgeDeploymentJobs. list
-aiplatform. edgeDeviceDebugInfo. get
-aiplatform.edgeDevices.get
-aiplatform.edgeDevices.list
-aiplatform.endpoints.get
-aiplatform.endpoints.list
-aiplatform.entityTypes.get
-aiplatform.entityTypes.list
-aiplatform. evaluationExperiments. get
-aiplatform. evaluationExperiments. list
-aiplatform.evaluationItems.get
-aiplatform. evaluationItems. list
-aiplatform.evaluationRuns.get
-aiplatform.evaluationRuns.list
-aiplatform.evaluationSets.get
-aiplatform.evaluationSets.list
-aiplatform.exampleStores.get
-aiplatform.exampleStores.list
-aiplatform. exampleStores. readExample
-aiplatform.executions.get
-aiplatform.executions.list
-aiplatform. executions. queryExecutionInputsAndOutputs
-aiplatform.extensions.get
-aiplatform.extensions.list
-aiplatform.featureGroups.get
-aiplatform.featureGroups.list
-aiplatform. featureMonitorJobs. get
-aiplatform. featureMonitorJobs. list
-aiplatform.featureMonitors.get
-aiplatform. featureMonitors. list
-aiplatform. featureOnlineStores. get
-aiplatform. featureOnlineStores. list
-aiplatform.featureViewSyncs.*
-aiplatform. featureViewSyncs. get
-aiplatform. featureViewSyncs. list
-aiplatform. featureViews. fetchFeatureValues
-aiplatform.featureViews.get
-aiplatform.featureViews.list
-aiplatform. featureViews. searchNearestEntities
-aiplatform.features.get
-aiplatform.features.list
-aiplatform.featurestores.get
-aiplatform.featurestores.list
-aiplatform.humanInTheLoops.get
-aiplatform. humanInTheLoops. list
-aiplatform. hyperparameterTuningJobs. get
-aiplatform. hyperparameterTuningJobs. list
-aiplatform.indexEndpoints.get
-aiplatform.indexEndpoints.list
-aiplatform. indexEndpoints. queryVectors
-aiplatform.indexes.get
-aiplatform.indexes.list
-aiplatform.locations.get
-aiplatform.locations.list
-aiplatform.memories.get
-aiplatform.memories.list
-aiplatform.memoryRevisions.get
-aiplatform. memoryRevisions. list
-aiplatform.metadataSchemas.get
-aiplatform. metadataSchemas. list
-aiplatform.metadataStores.get
-aiplatform.metadataStores.list
-aiplatform. modelDeploymentMonitoringJobs. get
-aiplatform. modelDeploymentMonitoringJobs. list
-aiplatform. modelDeploymentMonitoringJobs. searchStatsAnomalies
-aiplatform. modelEvaluationSlices. get
-aiplatform. modelEvaluationSlices. list
-aiplatform. modelEvaluations. get
-aiplatform. modelEvaluations. list
-aiplatform. modelMonitoringJobs. get
-aiplatform. modelMonitoringJobs. list
-aiplatform.modelMonitors.get
-aiplatform.modelMonitors.list
-aiplatform. modelMonitors. searchModelMonitoringAlerts
-aiplatform. modelMonitors. searchModelMonitoringStats
-aiplatform.models.get
-aiplatform.models.list
-aiplatform.nasJobs.get
-aiplatform.nasJobs.list
-aiplatform.nasTrialDetails.*
-aiplatform.nasTrialDetails.get
-aiplatform. nasTrialDetails. list
-aiplatform. notebookExecutionJobs. get
-aiplatform. notebookExecutionJobs. list
-aiplatform. notebookRuntimeTemplates. get
-aiplatform. notebookRuntimeTemplates. list
-aiplatform. notebookRuntimes. get
-aiplatform. notebookRuntimes. list
-aiplatform.operations.list
-aiplatform. persistentResources. get
-aiplatform. persistentResources. list
-aiplatform.pipelineJobs.get
-aiplatform.pipelineJobs.list
-aiplatform. provisionedThroughputRevisions.*
-aiplatform. provisionedThroughputRevisions. get
-aiplatform. provisionedThroughputRevisions. list
-aiplatform. provisionedThroughputs. get
-aiplatform. provisionedThroughputs. list
-aiplatform.ragCorpora.get
-aiplatform.ragCorpora.list
-aiplatform.ragCorpora.query
-aiplatform. ragEngineConfigs. get
-aiplatform.ragFiles.get
-aiplatform.ragFiles.list
-aiplatform. reasoningEngines. get
-aiplatform. reasoningEngines. list
-aiplatform. reasoningEngines. query
-aiplatform. sandboxEnvironments. get
-aiplatform. sandboxEnvironments. list
-aiplatform.schedules.get
-aiplatform.schedules.list
-aiplatform. semanticGovernancePolicies. get
-aiplatform. semanticGovernancePolicies. list
-aiplatform. semanticGovernancePolicyEngine. get
-aiplatform.sessionEvents.list
-aiplatform.sessions.get
-aiplatform.sessions.list
-aiplatform.specialistPools.get
-aiplatform. specialistPools. list
-aiplatform. specialistPools. update
-aiplatform.studies.get
-aiplatform.studies.list
-aiplatform. tensorboardExperiments. get
-aiplatform. tensorboardExperiments. list
-aiplatform.tensorboardRuns.get
-aiplatform. tensorboardRuns. list
-aiplatform. tensorboardTimeSeries. batchRead
-aiplatform. tensorboardTimeSeries. get
-aiplatform. tensorboardTimeSeries. list
-aiplatform. tensorboardTimeSeries. read
-aiplatform.tensorboards.get
-aiplatform.tensorboards.list
-aiplatform. trainingPipelines. get
-aiplatform. trainingPipelines. list
-aiplatform.trials.get
-aiplatform.trials.list
-aiplatform.tuningJobs.get
-aiplatform.tuningJobs.list
-resourcemanager.projects.get
-resourcemanager.projects.list
 Vertex AI permissions
 Permission
 Included in roles
@@ -3467,9 +3471,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. agentExamples. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3479,16 +3483,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.agentExamples.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -3496,29 +3500,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.agentExamples.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. agentExamples. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3528,9 +3532,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.agents.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3540,9 +3544,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.agents.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3552,16 +3556,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.agents.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -3569,29 +3573,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.agents.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.agents.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3601,9 +3605,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. annotationSpecs. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3613,9 +3617,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. annotationSpecs. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3625,16 +3629,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.annotationSpecs.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -3642,29 +3646,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. annotationSpecs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. annotationSpecs. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3674,9 +3678,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.annotations.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3686,9 +3690,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.annotations.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3698,16 +3702,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.annotations.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -3715,29 +3719,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.annotations.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.annotations.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3747,9 +3751,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.apps.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3759,9 +3763,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.apps.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3771,16 +3775,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.apps.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -3788,29 +3792,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.apps.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.apps.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3820,9 +3824,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.artifacts.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3832,10 +3836,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.artifacts.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3845,57 +3849,57 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.artifacts.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Security Auditor ( roles/ iam.securityAuditor )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.artifacts.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.artifacts.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3905,10 +3909,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. batchPredictionJobs. cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3919,10 +3923,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. batchPredictionJobs. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3933,11 +3937,11 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. batchPredictionJobs. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -3948,65 +3952,65 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. batchPredictionJobs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Center Admin ( roles/ securitycenter.admin )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Security Auditor ( roles/ iam.securityAuditor )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. batchPredictionJobs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Security Center Admin ( roles/ securitycenter.admin )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.cacheConfigs.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4014,9 +4018,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.cacheConfigs.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4034,9 +4038,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. cachedContents. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4046,16 +4050,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.cachedContents.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4063,29 +4067,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.cachedContents.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. cachedContents. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4095,16 +4099,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.consents.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4112,9 +4116,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.consents.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4132,10 +4136,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. contexts. addContextChildren
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4145,10 +4149,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.contexts.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4158,10 +4162,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.contexts.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4171,17 +4175,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.contexts.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4189,39 +4193,39 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.contexts.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. contexts. queryContextLineageSubgraph
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4229,10 +4233,10 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.contexts.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4242,10 +4246,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.customJobs.cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4255,10 +4259,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.customJobs.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4268,10 +4272,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.customJobs.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4281,57 +4285,57 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.customJobs.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Security Auditor ( roles/ iam.securityAuditor )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.customJobs.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.dataItems.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4341,9 +4345,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.dataItems.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4353,16 +4357,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.dataItems.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4370,32 +4374,32 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.dataItems.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent )
 Security Center Service Agent ( roles/ securitycenter.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.dataItems.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4405,9 +4409,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. dataLabelingJobs. cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4417,9 +4421,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. dataLabelingJobs. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4429,9 +4433,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. dataLabelingJobs. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4441,16 +4445,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. dataLabelingJobs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4458,29 +4462,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. dataLabelingJobs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. datasetVersions. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4492,9 +4496,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. datasetVersions. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4506,18 +4510,18 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.datasetVersions.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4525,31 +4529,31 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. datasetVersions. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. datasetVersions. restore
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4561,9 +4565,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.datasets.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4575,9 +4579,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.datasets.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4589,9 +4593,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.datasets.export
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4601,34 +4605,34 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.datasets.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Center Admin ( roles/ securitycenter.admin )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Security Auditor ( roles/ iam.securityAuditor )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.datasets.import
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4638,38 +4642,38 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.datasets.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Security Center Admin ( roles/ securitycenter.admin )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent )
 Security Center Service Agent ( roles/ securitycenter.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.datasets.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4681,9 +4685,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. deploymentResourcePools. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4693,9 +4697,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. deploymentResourcePools. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4705,16 +4709,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. deploymentResourcePools. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4722,36 +4726,36 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. deploymentResourcePools. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. deploymentResourcePools. queryDeployedModels
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4759,9 +4763,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. deploymentResourcePools. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4771,9 +4775,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. edgeDeploymentJobs. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4783,9 +4787,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. edgeDeploymentJobs. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4795,16 +4799,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. edgeDeploymentJobs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4812,36 +4816,36 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. edgeDeploymentJobs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. edgeDeviceDebugInfo. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4849,9 +4853,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.edgeDevices.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4861,9 +4865,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.edgeDevices.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4873,16 +4877,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.edgeDevices.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -4890,29 +4894,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.edgeDevices.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.edgeDevices.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4922,9 +4926,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.endpoints.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4934,11 +4938,11 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.endpoints.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4948,10 +4952,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.endpoints.deploy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4961,11 +4965,11 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.endpoints.explain
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -4977,28 +4981,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.endpoints.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Security Auditor ( roles/ iam.securityAuditor )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
@@ -5008,16 +5013,15 @@ Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.service
 Dialogflow Service Agent ( roles/ dialogflow.serviceAgent )
 Cloud Spanner API Service Agent ( roles/ spanner.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. endpoints. getIamPolicy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-ML Engineer ( roles/ iam.mlEngineer )
 Security Admin ( roles/ iam.securityAdmin )
-Security Auditor ( roles/ iam.securityAuditor )
 Security Reviewer ( roles/ iam.securityReviewer )
+ML Engineer ( roles/ iam.mlEngineer )
+Security Auditor ( roles/ iam.securityAuditor )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
@@ -5027,28 +5031,28 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Cloud Spanner API Service Agent ( roles/ spanner.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.endpoints.predict
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5062,6 +5066,7 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Extension Service Agent ( roles/ aiplatform.extensionServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Rapid Eval Service Agent ( roles/ aiplatform.rapidevalServiceAgent )
@@ -5076,12 +5081,11 @@ Cloud Spanner API Service Agent ( roles/ spanner.serviceAgent )
 Vector Search Service Agent ( roles/ vectorsearch.serviceAgent )
 Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. endpoints. setIamPolicy
 Owner ( roles/ owner )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-ML Engineer ( roles/ iam.mlEngineer )
 Security Admin ( roles/ iam.securityAdmin )
+ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
@@ -5094,10 +5098,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.endpoints.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5107,10 +5111,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.entityTypes.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5122,9 +5126,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.entityTypes.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5137,9 +5141,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. entityTypes. deleteFeatureValues
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5153,9 +5157,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. entityTypes. exportFeatureValues
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5172,14 +5176,15 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.entityTypes.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
@@ -5187,7 +5192,6 @@ Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -5195,21 +5199,21 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. entityTypes. getIamPolicy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
@@ -5227,33 +5231,33 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.entityTypes.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. entityTypes. readFeatureValues
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5270,17 +5274,17 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. entityTypes. setIamPolicy
 Owner ( roles/ owner )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
@@ -5300,9 +5304,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.entityTypes.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5315,9 +5319,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. entityTypes. writeFeatureValues
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5331,9 +5335,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationExperiments. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5343,9 +5347,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationExperiments. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5355,16 +5359,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationExperiments. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -5372,29 +5376,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationExperiments. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationExperiments. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5404,9 +5408,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationItems. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5416,9 +5420,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationItems. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5428,16 +5432,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.evaluationItems.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -5445,29 +5449,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationItems. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationItems. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5477,9 +5481,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationRuns. cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5489,9 +5493,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationRuns. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5501,10 +5505,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationRuns. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5514,9 +5518,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationRuns. execute
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5526,16 +5530,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.evaluationRuns.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -5543,30 +5547,30 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.evaluationRuns.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationRuns. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5576,9 +5580,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationSets. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5588,9 +5592,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationSets. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5600,16 +5604,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.evaluationSets.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -5617,29 +5621,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.evaluationSets.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. evaluationSets. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5649,9 +5653,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. exampleStores. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5661,9 +5665,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. exampleStores. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5673,16 +5677,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.exampleStores.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -5690,36 +5694,36 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.exampleStores.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. exampleStores. readExample
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -5727,9 +5731,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. exampleStores. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5739,9 +5743,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. exampleStores. writeExample
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5751,9 +5755,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. executions. addExecutionEvents
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5763,9 +5767,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.executions.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5775,10 +5779,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.executions.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5788,62 +5792,62 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.executions.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Security Auditor ( roles/ iam.securityAuditor )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.executions.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. executions. queryExecutionInputsAndOutputs
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -5851,9 +5855,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.executions.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5863,10 +5867,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.extensions.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5876,10 +5880,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.extensions.execute
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5889,19 +5893,19 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Dialogflow Service Agent ( roles/ dialogflow.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.extensions.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -5909,12 +5913,12 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Dialogflow Service Agent ( roles/ dialogflow.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.extensions.import
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5924,31 +5928,31 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.extensions.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.extensions.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5958,10 +5962,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureGroups. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5972,9 +5976,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureGroups. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -5985,21 +5989,21 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.featureGroups.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6007,19 +6011,19 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureGroups. getIamPolicy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
@@ -6029,32 +6033,32 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureGroups. setIamPolicy
 Owner ( roles/ owner )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
@@ -6068,9 +6072,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureMonitorJobs. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6081,21 +6085,21 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureMonitorJobs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6103,34 +6107,34 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureMonitorJobs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureMonitors. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6141,9 +6145,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureMonitors. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6154,21 +6158,21 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.featureMonitors.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6176,34 +6180,34 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureMonitors. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureMonitors. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6214,9 +6218,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureOnlineStores. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6227,9 +6231,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureOnlineStores. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6240,21 +6244,21 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureOnlineStores. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6262,19 +6266,19 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureOnlineStores. getIamPolicy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
@@ -6284,32 +6288,32 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureOnlineStores. setIamPolicy
 Owner ( roles/ owner )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
@@ -6323,21 +6327,21 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureViewSyncs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6345,34 +6349,34 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureViewSyncs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.featureViews.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6383,9 +6387,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.featureViews.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6396,9 +6400,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureViews. directWrite
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6409,20 +6413,20 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureViews. fetchFeatureValues
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6430,21 +6434,21 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.featureViews.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6452,20 +6456,20 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureViews. getIamPolicy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
@@ -6475,38 +6479,38 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureViews. searchNearestEntities
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
 Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6514,15 +6518,15 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featureViews. setIamPolicy
 Owner ( roles/ owner )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
@@ -6536,10 +6540,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.featureViews.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6550,10 +6554,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.features.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6566,9 +6570,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.features.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6581,14 +6585,15 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.features.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
@@ -6596,7 +6601,6 @@ Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6604,14 +6608,17 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.features.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store EntityType owner ( roles/ aiplatform.entityTypeOwner )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer )
@@ -6619,20 +6626,17 @@ Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.features.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6645,9 +6649,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featurestores. batchReadFeatureValues
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6664,9 +6668,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featurestores. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6679,9 +6683,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featurestores. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6694,9 +6698,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featurestores. exportFeatures
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6708,20 +6712,20 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.featurestores.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Instance Creator ( roles/ aiplatform.featurestoreInstanceCreator )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6729,21 +6733,21 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featurestores. getIamPolicy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
@@ -6759,34 +6763,34 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.featurestores.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store Instance Creator ( roles/ aiplatform.featurestoreInstanceCreator )
 Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featurestores. readFeatures
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6800,16 +6804,16 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featurestores. setIamPolicy
 Owner ( roles/ owner )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
 Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin )
 Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
@@ -6825,9 +6829,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. featurestores. writeFeatures
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6839,9 +6843,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. humanInTheLoops. cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6851,9 +6855,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. humanInTheLoops. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6863,9 +6867,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. humanInTheLoops. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6875,16 +6879,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.humanInTheLoops.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -6892,29 +6896,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. humanInTheLoops. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. humanInTheLoops. queryAnnotationStats
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6926,9 +6930,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. humanInTheLoops. send
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6938,9 +6942,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. humanInTheLoops. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6950,9 +6954,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. hyperparameterTuningJobs. cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6962,9 +6966,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. hyperparameterTuningJobs. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6974,9 +6978,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. hyperparameterTuningJobs. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -6986,16 +6990,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. hyperparameterTuningJobs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7003,31 +7007,31 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. hyperparameterTuningJobs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. indexEndpoints. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7037,10 +7041,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. indexEndpoints. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7050,10 +7054,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. indexEndpoints. deploy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7063,17 +7067,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.indexEndpoints.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7081,38 +7085,38 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.indexEndpoints.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. indexEndpoints. queryVectors
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7120,10 +7124,10 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. indexEndpoints. undeploy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7133,10 +7137,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. indexEndpoints. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7146,10 +7150,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.indexes.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7159,10 +7163,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.indexes.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7172,17 +7176,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.indexes.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7190,31 +7194,31 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.indexes.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.indexes.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7224,10 +7228,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. locations. evaluateInstances
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7241,22 +7245,22 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.locations.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin )
 Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 BigQuery Studio Admin ( roles/ bigquery.studioAdmin )
 BigQuery Studio User ( roles/ bigquery.studioUser )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
@@ -7266,32 +7270,32 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Extension Service Agent ( roles/ aiplatform.extensionServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 SecLM Service Agent ( roles/ seclm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.locations.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.memories.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7305,10 +7309,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.memories.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7322,10 +7326,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.memories.generate
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7339,21 +7343,21 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.memories.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI Agent Engine Memory User Role ( roles/ aiplatform.memoryUser )
 Vertex AI Agent Engine Memory Viewer Role ( roles/ aiplatform.memoryViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7361,35 +7365,35 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.memories.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI Agent Engine Memory User Role ( roles/ aiplatform.memoryUser )
 Vertex AI Agent Engine Memory Viewer Role ( roles/ aiplatform.memoryViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.memories.retrieve
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7405,10 +7409,10 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.memories.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7422,19 +7426,19 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.memoryRevisions.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Agent Engine Memory User Role ( roles/ aiplatform.memoryUser )
 Vertex AI Agent Engine Memory Viewer Role ( roles/ aiplatform.memoryViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7442,31 +7446,31 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. memoryRevisions. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Agent Engine Memory User Role ( roles/ aiplatform.memoryUser )
 Vertex AI Agent Engine Memory Viewer Role ( roles/ aiplatform.memoryViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. memoryRevisions. rollback
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7478,9 +7482,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. metadataSchemas. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7490,10 +7494,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. metadataSchemas. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7503,17 +7507,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.metadataSchemas.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7521,32 +7525,32 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. metadataSchemas. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. metadataStores. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7556,10 +7560,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. metadataStores. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7569,17 +7573,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.metadataStores.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7587,33 +7591,33 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.metadataStores.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. migratableResources. migrate
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7643,9 +7647,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelDeploymentMonitoringJobs. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7655,16 +7659,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelDeploymentMonitoringJobs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7672,29 +7676,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelDeploymentMonitoringJobs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelDeploymentMonitoringJobs. pause
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7704,9 +7708,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelDeploymentMonitoringJobs. resume
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7716,16 +7720,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelDeploymentMonitoringJobs. searchStatsAnomalies
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7733,9 +7737,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelDeploymentMonitoringJobs. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7745,16 +7749,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelEvaluationSlices. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7762,9 +7766,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelEvaluationSlices. import
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7774,29 +7778,29 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelEvaluationSlices. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelEvaluations. exportEvaluatedDataItems
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7806,16 +7810,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelEvaluations. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7823,9 +7827,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelEvaluations. import
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7835,30 +7839,30 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelEvaluations. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelMonitoringJobs. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7868,9 +7872,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelMonitoringJobs. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7880,16 +7884,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelMonitoringJobs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7897,29 +7901,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelMonitoringJobs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelMonitors. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7929,9 +7933,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelMonitors. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -7941,16 +7945,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.modelMonitors.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7958,36 +7962,36 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.modelMonitors.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelMonitors. searchModelMonitoringAlerts
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -7995,16 +7999,16 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelMonitors. searchModelMonitoringStats
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -8012,9 +8016,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. modelMonitors. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8024,9 +8028,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.models.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8036,9 +8040,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.models.export
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8048,28 +8052,29 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.models.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Security Auditor ( roles/ iam.securityAuditor )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
@@ -8079,27 +8084,27 @@ Dialogflow Service Agent ( roles/ dialogflow.serviceAgent )
 Cloud Spanner API Service Agent ( roles/ spanner.serviceAgent )
 Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.models.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
@@ -8107,7 +8112,6 @@ Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgen
 Security Center Service Agent ( roles/ securitycenter.serviceAgent )
 Cloud Spanner API Service Agent ( roles/ spanner.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.models.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8117,10 +8121,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.models.upload
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8130,10 +8134,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.nasJobs.cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8143,9 +8147,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.nasJobs.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8155,9 +8159,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.nasJobs.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8167,16 +8171,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.nasJobs.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -8184,36 +8188,36 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.nasJobs.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.nasTrialDetails.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -8221,119 +8225,119 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. nasTrialDetails. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookExecutionJobs. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Notebooks Admin ( roles/ notebooks.admin )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Notebooks Admin ( roles/ notebooks.admin )
 Notebooks Runner ( roles/ notebooks.runner )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Colab Service Agent ( roles/ aiplatform.colabServiceAgent )
 Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Colab Service Agent ( roles/ aiplatform.colabServiceAgent )
 aiplatform. notebookExecutionJobs. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Notebooks Admin ( roles/ notebooks.admin )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Notebooks Admin ( roles/ notebooks.admin )
 Notebooks Runner ( roles/ notebooks.runner )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookExecutionJobs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Notebooks Admin ( roles/ notebooks.admin )
+Notebooks Editor ( roles/ notebooks.editor )
+Notebooks Viewer ( roles/ notebooks.viewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
-Notebooks Admin ( roles/ notebooks.admin )
-Notebooks Editor ( roles/ notebooks.editor )
 Notebooks Runner ( roles/ notebooks.runner )
-Notebooks Viewer ( roles/ notebooks.viewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookExecutionJobs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Notebooks Admin ( roles/ notebooks.admin )
+Notebooks Editor ( roles/ notebooks.editor )
+Notebooks Viewer ( roles/ notebooks.viewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Notebooks Admin ( roles/ notebooks.admin )
-Notebooks Editor ( roles/ notebooks.editor )
 Notebooks Runner ( roles/ notebooks.runner )
-Notebooks Viewer ( roles/ notebooks.viewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimeTemplates. apply
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8351,9 +8355,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimeTemplates. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8366,9 +8370,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimeTemplates. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8381,20 +8385,20 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimeTemplates. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin )
 Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 BigQuery Studio Admin ( roles/ bigquery.studioAdmin )
 BigQuery Studio User ( roles/ bigquery.studioUser )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
@@ -8404,15 +8408,17 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimeTemplates. getIamPolicy
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin )
@@ -8421,9 +8427,7 @@ BigQuery Studio Admin ( roles/ bigquery.studioAdmin )
 BigQuery Studio User ( roles/ bigquery.studioUser )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
@@ -8433,36 +8437,36 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin )
 Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 BigQuery Studio Admin ( roles/ bigquery.studioAdmin )
 BigQuery Studio User ( roles/ bigquery.studioUser )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimeTemplates. setIamPolicy
 Owner ( roles/ owner )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Security Admin ( roles/ iam.securityAdmin )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin )
 BigQuery Studio Admin ( roles/ bigquery.studioAdmin )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
@@ -8478,9 +8482,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimes. assign
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8496,9 +8500,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimes. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8511,20 +8515,20 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimes. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin )
 Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 BigQuery Studio Admin ( roles/ bigquery.studioAdmin )
 BigQuery Studio User ( roles/ bigquery.studioUser )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
@@ -8534,36 +8538,36 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimes. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin )
 Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 BigQuery Studio Admin ( roles/ bigquery.studioAdmin )
 BigQuery Studio User ( roles/ bigquery.studioUser )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimes. start
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8576,9 +8580,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimes. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8591,9 +8595,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. notebookRuntimes. upgrade
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8606,14 +8610,18 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.operations.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Notebooks Admin ( roles/ notebooks.admin )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
@@ -8625,27 +8633,23 @@ Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin )
 Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 BigQuery Studio Admin ( roles/ bigquery.studioAdmin )
 BigQuery Studio User ( roles/ bigquery.studioUser )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Notebooks Admin ( roles/ notebooks.admin )
 Notebooks Runner ( roles/ notebooks.runner )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. persistentResources. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8667,8 +8671,8 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -8676,29 +8680,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. persistentResources. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.pipelineJobs.cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8708,27 +8712,27 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.pipelineJobs.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Notebooks Admin ( roles/ notebooks.admin )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Notebooks Admin ( roles/ notebooks.admin )
 Notebooks Runner ( roles/ notebooks.runner )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.pipelineJobs.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8738,16 +8742,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.pipelineJobs.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -8755,39 +8759,39 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.pipelineJobs.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. provisionedThroughputRevisions. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Platform Provisioned Throughput Admin ( roles/ aiplatform.provisionedThroughputAdmin )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -8795,30 +8799,30 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. provisionedThroughputRevisions. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Platform Provisioned Throughput Admin ( roles/ aiplatform.provisionedThroughputAdmin )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. provisionedThroughputs. cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8842,9 +8846,9 @@ Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Platform Provisioned Throughput Admin ( roles/ aiplatform.provisionedThroughputAdmin )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -8852,30 +8856,30 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. provisionedThroughputs. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Platform Provisioned Throughput Admin ( roles/ aiplatform.provisionedThroughputAdmin )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. provisionedThroughputs. split
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8903,10 +8907,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.ragCorpora.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8916,17 +8920,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.ragCorpora.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -8934,40 +8938,40 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 SecLM Service Agent ( roles/ seclm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.ragCorpora.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 SecLM Service Agent ( roles/ seclm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.ragCorpora.query
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -8975,12 +8979,12 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Extension Service Agent ( roles/ aiplatform.extensionServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 SecLM Service Agent ( roles/ seclm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.ragCorpora.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -8990,17 +8994,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. ragEngineConfigs. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9008,9 +9012,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. ragEngineConfigs. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9028,17 +9032,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.ragFiles.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9046,10 +9050,10 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.ragFiles.import
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9059,31 +9063,31 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.ragFiles.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.ragFiles.upload
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9093,10 +9097,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. reasoningEngines. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9108,10 +9112,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. reasoningEngines. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9123,19 +9127,19 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. reasoningEngines. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9143,42 +9147,42 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. reasoningEngines. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. reasoningEngines. query
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9186,10 +9190,10 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. reasoningEngines. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9201,10 +9205,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. sandboxEnvironments. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9216,9 +9220,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. sandboxEnvironments. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9230,9 +9234,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. sandboxEnvironments. execute
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9244,18 +9248,18 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. sandboxEnvironments. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9263,138 +9267,138 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. sandboxEnvironments. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.schedules.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Notebooks Admin ( roles/ notebooks.admin )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Notebooks Admin ( roles/ notebooks.admin )
 Notebooks Runner ( roles/ notebooks.runner )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.schedules.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Notebooks Admin ( roles/ notebooks.admin )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Notebooks Admin ( roles/ notebooks.admin )
 Notebooks Runner ( roles/ notebooks.runner )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.schedules.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Notebooks Admin ( roles/ notebooks.admin )
+Notebooks Editor ( roles/ notebooks.editor )
+Notebooks Viewer ( roles/ notebooks.viewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
-Notebooks Admin ( roles/ notebooks.admin )
-Notebooks Editor ( roles/ notebooks.editor )
 Notebooks Runner ( roles/ notebooks.runner )
-Notebooks Viewer ( roles/ notebooks.viewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.schedules.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Notebooks Admin ( roles/ notebooks.admin )
+Notebooks Editor ( roles/ notebooks.editor )
+Notebooks Viewer ( roles/ notebooks.viewer )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Notebooks Admin ( roles/ notebooks.admin )
-Notebooks Editor ( roles/ notebooks.editor )
 Notebooks Runner ( roles/ notebooks.runner )
-Notebooks Viewer ( roles/ notebooks.viewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.schedules.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Notebooks Admin ( roles/ notebooks.admin )
 Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin )
 Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser )
 Notebook Executor User ( roles/ aiplatform.notebookExecutorUser )
 Vertex AI User ( roles/ aiplatform.user )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Notebooks Admin ( roles/ notebooks.admin )
 Notebooks Runner ( roles/ notebooks.runner )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. semanticGovernancePolicies. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9404,9 +9408,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. semanticGovernancePolicies. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9416,16 +9420,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. semanticGovernancePolicies. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9433,29 +9437,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. semanticGovernancePolicies. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. semanticGovernancePolicies. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9465,16 +9469,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. semanticGovernancePolicyEngine. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9482,9 +9486,9 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. semanticGovernancePolicyEngine. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9494,9 +9498,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. sessionEvents. append
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9510,35 +9514,35 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.sessionEvents.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI Agent Engine Session User Role ( roles/ aiplatform.sessionUser )
 Vertex AI Agent Engine Session Viewer Role ( roles/ aiplatform.sessionViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.sessions.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9552,10 +9556,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.sessions.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9569,21 +9573,21 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.sessions.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI Agent Engine Session User Role ( roles/ aiplatform.sessionUser )
 Vertex AI Agent Engine Session Viewer Role ( roles/ aiplatform.sessionViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9591,35 +9595,35 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.sessions.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
+Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
 Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin )
 Vertex AI Platform Express User ( roles/ aiplatform.expressUser )
 Vertex AI Agent Engine Session User Role ( roles/ aiplatform.sessionUser )
 Vertex AI Agent Engine Session Viewer Role ( roles/ aiplatform.sessionViewer )
 Vertex AI User ( roles/ aiplatform.user )
-Vertex AI Viewer ( roles/ aiplatform.viewer )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.sessions.run
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9629,9 +9633,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.sessions.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9645,10 +9649,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Reasoning Engine Service Agent ( roles/ aiplatform.reasoningEngineServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. specialistPools. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9658,9 +9662,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. specialistPools. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9670,16 +9674,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.specialistPools.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9687,44 +9691,44 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. specialistPools. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. specialistPools. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.studies.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9734,9 +9738,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.studies.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9746,16 +9750,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.studies.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9763,29 +9767,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.studies.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.studies.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9795,9 +9799,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardExperiments. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9807,10 +9811,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardExperiments. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9820,17 +9824,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardExperiments. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9838,31 +9842,31 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardExperiments. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardExperiments. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9872,10 +9876,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardExperiments. write
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9885,10 +9889,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardRuns. batchCreate
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9898,10 +9902,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardRuns. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9911,10 +9915,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardRuns. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9924,17 +9928,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tensorboardRuns.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -9942,31 +9946,31 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardRuns. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardRuns. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9976,10 +9980,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardRuns. write
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -9989,10 +9993,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardTimeSeries. batchCreate
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10002,17 +10006,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardTimeSeries. batchRead
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -10020,10 +10024,10 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardTimeSeries. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10033,10 +10037,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardTimeSeries. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10046,17 +10050,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardTimeSeries. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -10064,38 +10068,38 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardTimeSeries. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardTimeSeries. read
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -10103,10 +10107,10 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboardTimeSeries. update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10116,10 +10120,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tensorboards.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10129,10 +10133,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tensorboards.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10142,17 +10146,17 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tensorboards.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -10160,33 +10164,33 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tensorboards.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tensorboards. recordAccess
 Owner ( roles/ owner )
 Vertex AI Administrator ( roles/ aiplatform.admin )
@@ -10204,10 +10208,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. trainingPipelines. cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10217,9 +10221,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. trainingPipelines. create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10229,9 +10233,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. trainingPipelines. delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10241,16 +10245,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. trainingPipelines. get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -10258,32 +10262,32 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. trainingPipelines. list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.trials.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10293,9 +10297,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.trials.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10305,16 +10309,16 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.trials.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
@@ -10322,29 +10326,29 @@ ML Engineer ( roles/ iam.mlEngineer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.trials.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.trials.update
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10354,9 +10358,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tuningJobs.cancel
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10366,10 +10370,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tuningJobs.create
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10379,10 +10383,10 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tuningJobs.delete
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10392,57 +10396,57 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tuningJobs.get
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Security Auditor ( roles/ iam.securityAuditor )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform.tuningJobs.list
 Owner ( roles/ owner )
 Editor ( roles/ editor )
 Viewer ( roles/ viewer )
 Vertex AI Administrator ( roles/ aiplatform.admin )
-Vertex AI User ( roles/ aiplatform.user )
 Vertex AI Viewer ( roles/ aiplatform.viewer )
+Security Admin ( roles/ iam.securityAdmin )
+Security Reviewer ( roles/ iam.securityReviewer )
+Security Center Admin ( roles/ securitycenter.admin )
+Vertex AI User ( roles/ aiplatform.user )
 DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver )
 DLP Project Data Profiles Driver ( roles/ dlp.projectdriver )
 Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
-Security Admin ( roles/ iam.securityAdmin )
 Security Auditor ( roles/ iam.securityAuditor )
-Security Reviewer ( roles/ iam.securityReviewer )
 Support User ( roles/ iam.supportUser )
-Security Center Admin ( roles/ securitycenter.admin )
 Security Center Admin Editor ( roles/ securitycenter.adminEditor )
 Security Center Admin Viewer ( roles/ securitycenter.adminViewer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 DSPM Service Agent ( roles/ dspm.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tuningJobs. optimizePrompt
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10452,9 +10456,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tuningJobs. validateReinforcementTuningReward
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10464,9 +10468,9 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 aiplatform. tuningJobs. vertexTune
 Owner ( roles/ owner )
 Editor ( roles/ editor )
@@ -10476,12 +10480,12 @@ Data Scientist ( roles/ iam.dataScientist )
 ML Engineer ( roles/ iam.mlEngineer )
 Service agent roles
 Warning: Don't grant service agent roles to any principals except service agents .
+Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Vertex AI Service Agent ( roles/ aiplatform.serviceAgent )
 Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent )
 Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent )
-Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent )
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

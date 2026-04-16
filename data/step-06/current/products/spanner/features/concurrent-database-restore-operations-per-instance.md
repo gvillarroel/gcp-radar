@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.003Z"
+generated_at: "2026-04-13T22:42:27.292Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Concurrent database restore operations per instance"
@@ -9,18 +9,17 @@ latest_feature_date: "2022-12-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
-  - "https://docs.cloud.google.com/spanner/docs/instances"
-  - "https://docs.cloud.google.com/spanner/docs/reference/libraries"
+  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient"
+  - "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
 keywords:
-  - "concurrent"
-  - "database"
-  - "restore"
-  - "operations"
-  - "per"
-  - "instance"
   - "increased"
-  - "the"
+  - "concurrent"
+  - "restore"
+  - "maximum"
+  - "operations"
+  - "database"
+  - "instance"
 ---
 
 # Concurrent database restore operations per instance
@@ -38,44 +37,55 @@ Increased the maximum number of concurrent Spanner database restore operations p
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
-- [https://docs.cloud.google.com/spanner/docs/reference/libraries](https://docs.cloud.google.com/spanner/docs/reference/libraries)
+- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient)
+- [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
 
 ## Supporting Pages
 
-### django_spanner.operations — google-cloud-spanner-django documentation
+### "Class DatabaseAdminAsyncClient (3.63.0) \_|\_ Python client libraries \_\
 
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
+- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 110
-- Re-rank relevance: N/A
+- Final score: 172
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
+- ClientInfo ) Cloud Spanner Database Admin API The Cloud Spanner Database Admin API can be used to: create, drop, and list databases update the schema of pre-existing databases create, delete, copy and list backups for a database restore a database from an existing backup Properties api endpoint Return the API endpoint used by the client instance.
+- The returned database [long-running operation][google.longrunning.Operation] has a name of the format projects/<project>/instances/<instance>/databases/<database>/operations/<operation id> , and can be used to track the progress of the operation, and to cancel it.
+- The returned [long-running operation][google.longrunning.Operation] will have a name of the format projects/<project>/instances/<instance>/databases/<database>/operations/<operation id> and can be used to track the database modification.
+- This corresponds to the database id field on the request instance; if request is provided, this should not be set. backup str Name of the backup from which to restore.
 
-### Instances overview | Spanner | Google Cloud Documentation
+### "Class DatabaseAdminClient (3.63.0) \_|\_ Python client libraries \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
+- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient)
+- Source ID: `site-python-reference`
+- Final score: 172
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- ClientInfo ) Cloud Spanner Database Admin API The Cloud Spanner Database Admin API can be used to: create, drop, and list databases update the schema of pre-existing databases create, delete, copy and list backups for a database restore a database from an existing backup Properties api endpoint Return the API endpoint used by the client instance.
+- The returned database [long-running operation][google.longrunning.Operation] has a name of the format projects/<project>/instances/<instance>/databases/<database>/operations/<operation id> , and can be used to track the progress of the operation, and to cancel it.
+- The returned [long-running operation][google.longrunning.Operation] will have a name of the format projects/<project>/instances/<instance>/databases/<database>/operations/<operation id> and can be used to track the database modification.
+- This corresponds to the database id field on the request instance; if request is provided, this should not be set. backup str Name of the backup from which to restore.
+
+### "Best practices for using Spanner as a gaming database \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database](https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database)
 - Source ID: `site-docs-root`
-- Final score: 50
-- Re-rank relevance: N/A
+- Final score: 137
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Instances overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/instances Once an instance is created, you can list, edit, or delete it.
-- Spanner is a fully managed database service which oversees its own underlying tasks and resources, including monitoring and restarting processes when necessary with zero downtime.
-
-### Spanner client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/libraries](https://docs.cloud.google.com/spanner/docs/reference/libraries)
-- Source ID: `site-docs-reference`
-- Final score: 50
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Spanner client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/libraries Imports the Google Cloud client library require &quot;google/cloud/spanner&quot; # Your Google Cloud Platform project ID project id = &quot;YOUR PROJECT ID&quot; # Instantiates a client spanner = Google::Cloud::Spanner.new project: project id # Your Cloud Spanner instance ID instance id = &quot;my-instance&quot; # Your Cloud Spanner database ID database id = &quot;my-database&quot; # Gets a reference to a Cloud Spanner instance database database client = spanner.client instance id, database id # Execute a simple SQL statement results = database client.execute query &quot;SELECT 1&quot; results.rows.each do row puts row end
+- This strategy can also optimize the time it takes to backup or restore a tenant's data, because these operations are performed on an entire database at once.
+- With the scalability of Spanner, it means that data doesn't need to be sharded into separate database instances when more performance or storage is needed; instead, you can add more nodes.
+- Size the database to testing and production needs During development, a single-node Spanner instance is likely sufficient for most activities, including functional testing.
+- Depending on the type of game, the database can struggle with the number of operations required to handle the player load as well as the amount of stored data.
 

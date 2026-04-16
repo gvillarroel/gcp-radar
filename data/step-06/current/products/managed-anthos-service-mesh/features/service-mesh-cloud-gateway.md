@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:42.132Z"
+generated_at: "2026-04-12T12:17:49.455Z"
 product_name: "Managed Anthos Service Mesh"
 product_slug: "managed-anthos-service-mesh"
 feature_name: "Service mesh cloud gateway"
 feature_slug: "service-mesh-cloud-gateway"
 latest_feature_date: "2023-01-18"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial"
+  - "https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility"
+  - "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+  - "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls"
 keywords:
   - "mesh"
   - "gateway"
@@ -24,7 +27,7 @@ keywords:
 # Service mesh cloud gateway
 
 Product: Managed Anthos Service Mesh
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Service mesh cloud gateway lets you configure Anthos Service Mesh ingress gatewa
 
 Service mesh cloud gateway lets you configure Anthos Service Mesh ingress gateway with Cloud Load Balancing through the Kubernetes Gateway API; Service mesh cloud gateway lets you configure Anthos Service Mesh ingress gateway with Cloud Load Balancing through the Kubernetes Gateway API.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial](https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial)
+- [https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility](https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility)
+- [https://docs.cloud.google.com/service-mesh/docs/tutorials/authz](https://docs.cloud.google.com/service-mesh/docs/tutorials/authz)
+- [https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls](https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial \_|\_\
+
+- URL: [https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial](https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial)
+- Source ID: `site-docs-reference`
+- Final score: 252
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Download credentials so that you can connect to the cluster with kubectl: gcloud container clusters get-credentials cluster1 Verify that the gateway nodes have the correct taint: kubectl get nodes -l cloud.google.com/gke-nodepool = gateway -o yaml \ -o = custom-columns = 'name:metadata.name,taints:spec.taints[?(@.key=="dedicated")]' The output is similar to the following: name taints gke-cluster1-gateway-9d65b410-cffs map[effect:NoSchedule key:dedicated value:gateway] Installing and setting up Cloud Service Mesh Follow one of the installation guides for Cloud Service Mesh: Managed Cloud Service Mesh In-cluster Cloud Service Mesh Once you have installed Cloud Service Mesh, stop and return to this tutorial without installing ingress or egress gateways.
+- First check the access log for the proxy sidecar deployed with the test application: kubectl -n team-x logs -f $( kubectl -n team-x get pod -l app = test \ -o jsonpath ={ .items..metadata.name } ) istio-proxy For each request you send, you see a log entry similar to the following: [2020-09-14T17:37:08.045Z] "HEAD / HTTP/1.1" 200 - "-" "-" 0 0 5 4 "-" "curl/7.67.0" "d57ea5ad-90e9-46d9-8b55-8e6e404a8f9b" "example.com" "10.1.4.12:8080" outbound 80 istio-egressgateway.istio-egress.svc.cluster.local 10.1.0.17:42140 93.184.216.34:80 10.1.0.17:60326 - - Also check the egress gateway access log: kubectl -n istio-egress logs -f $( kubectl -n istio-egress get pod -l istio = egressgateway \ -o jsonpath = "{.items[0].metadata.name}" ) istio-proxy For each request you send, you see an egress gateway access log entry similar to the following: [2020-09-14T17:37:08.045Z] "HEAD / HTTP/2" 200 - "-" "-" 0 0 4 3 "10.1.0.17" "curl/7.67.0" "095711e6-64ef-4de0-983e-59158e3c55e7" "example.com" "93.184.216.34:80" outbound 80 example.com 10.1.4.12:37636 10.1.4.12:8080 10.1.0.17:44404 outbound .80 .target-egress-gateway-mTLS .istio-egressgateway.istio-egress.svc.cluster.local - Configure different routing for a second namespace Configure routing for a second external host to learn how different external connectivity can be configured for different teams.
+- Create a default (low priority) firewall rule to deny all egress from the VPC network: gcloud compute firewall-rules create global-deny-egress-all \ --action DENY \ --direction EGRESS \ --rules all \ --destination-ranges 0 .0.0.0/0 \ --network vpc-network \ --priority 65535 \ --description "Default rule to deny all egress from the network." Create a rule to allow only those nodes with the gateway service account to reach the internet: gcloud compute firewall-rules create gateway-allow-egress-web \ --action ALLOW \ --direction EGRESS \ --rules tcp:80,tcp:443 \ --target-service-accounts sa-gateway-nodes@ ${ PROJECT ID } .iam.gserviceaccount.com \ --network vpc-network \ --priority 1000 \ --description "Allow the nodes running the egress gateways to connect to the web" Allow nodes to the reach the Kubernetes control plane: gcloud compute firewall-rules create allow-egress-to-api-server \ --action ALLOW \ --direction EGRESS \ --rules tcp:443,tcp:10250 \ --target-service-accounts sa-application-nodes@ ${ PROJECT ID } .iam.gserviceaccount.com,sa-gateway-nodes@ ${ PROJECT ID } .iam.gserviceaccount.com \ --destination-ranges 10 .5.0.0/28 \ --network vpc-network \ --priority 1000 \ --description "Allow nodes to reach the Kubernetes API server." Optional: This firewall rule is not needed if you use Managed Cloud Service Mesh.
+- Home Documentation Networking Cloud Service Mesh Guides Send feedback Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial Stay organized with collections Save and categorize content based on your preferences.
+
+### "Data plane extensibility with EnvoyFilter \_|\_ Cloud Service Mesh \_|\_\
+
+- URL: [https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility](https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility)
+- Source ID: `site-docs-reference`
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Apply the default injection label to the namespace: kubectl label namespace asm-ingress \ istio.io/rev- istio-injection = enabled --overwrite Deploy the example gateway in the anthos-service-mesh-samples repository: kubectl apply -n asm-ingress \ -f docs/shared/asm-ingress-gateway Expected output: serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Deploy the Online Boutique sample application If you haven't, set the current context for kubectl to the cluster: gcloud container clusters get-credentials CLUSTER NAME \ --project= PROJECT ID \ --zone= CLUSTER LOCATION Create the namespace for the sample application: kubectl create namespace onlineboutique Label the onlineboutique namespace to automatically inject Envoy proxies: kubectl label namespace onlineboutique \ istio.io/rev- istio-injection=enabled --overwrite Deploy the sample app, the VirtualService for the frontend, and service accounts for the workloads.
+- Clone the repository: git clone https://github.com/GoogleCloudPlatform/anthos-service-mesh-samples cd anthos-service-mesh-samples Deploy an ingress gateway Set the current context for kubectl to the cluster: Note: Use --region instead of --zone , if the cluster is a regional cluster. gcloud container clusters get-credentials CLUSTER NAME \ --project= PROJECT ID \ --zone= CLUSTER LOCATION Create a namespace for your ingress gateway: kubectl create namespace asm-ingress Enable the namespace for injection.
+- In Cloud Shell, delete the project: gcloud projects delete PROJECT ID Delete the resources If you want to keep your cluster and remove the Online Boutique sample: Delete the application namespaces: kubectl delete namespace onlineboutique Expected output: namespace "onlineboutique" deleted Delete the Ingress Gateway namespace: kubectl delete namespace asm-ingress Expected output: namespace "asm-ingress" deleted If you want to prevent additional charges, delete the cluster: gcloud container clusters delete CLUSTER NAME \ --project= PROJECT ID \ --zone= CLUSTER LOCATION Troubleshooting See Resolving data plane extensibility issues .
+- Get the external IP, and set it to a variable: kubectl get services -n asm-ingress export FRONTEND IP=$(kubectl --namespace asm-ingress \ get service --output jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}' \ ) You see output similar to the following: NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE asm-ingressgateway LoadBalancer 10.19.247.233 35.239.7.64 80:31380/TCP,443:31390/TCP,31400:31400/TCP 27m Visit the EXTERNAL-IP address in your web browser.
+
+### Cloud Service Mesh by example: Authorization \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/service-mesh/docs/tutorials/authz](https://docs.cloud.google.com/service-mesh/docs/tutorials/authz)
+- Source ID: `site-docs-reference`
+- Final score: 226
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In the following command, REVISION LABEL is the value of the istiod revision label that you noted in the previous step. kubectl label namespace asm-ingress \ istio-injection- istio.io/rev = REVISION LABEL --overwrite Deploy the example gateway in the anthos-service-mesh-samples repository: kubectl apply -n asm-ingress \ -f docs/shared/asm-ingress-gateway Expected output: serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Deploy the Online Boutique sample application If you haven't, set the current context for kubectl to the cluster: gcloud container clusters get-credentials CLUSTER NAME \ --project= PROJECT ID \ --zone= CLUSTER LOCATION Create the namespace for the sample application: kubectl create namespace onlineboutique Label the onlineboutique namespace to automatically inject Envoy proxies: kubectl label namespace onlineboutique \ istio.io/rev- istio-injection=enabled --overwrite Deploy the sample app, the VirtualService for the frontend, and service accounts for the workloads.
+- There are various supported setup methods: Fleet API and a managed control plane on Google Cloud asmcli and an unmanaged, in-cluster control plane off Google Cloud Clone the repo: git clone https://github.com/GoogleCloudPlatform/anthos-service-mesh-samples cd anthos-service-mesh-samples Deploy an ingress gateway Set the current context for kubectl to the cluster: Note: Use --region instead of --zone , if the cluster is a regional cluster. gcloud container clusters get-credentials CLUSTER NAME \ --project= PROJECT ID \ --zone= CLUSTER LOCATION Create a namespace for your ingress gateway: kubectl create namespace asm-ingress Enable the namespace for injection.
+- In Cloud Shell, delete the project: gcloud projects delete PROJECT ID Delete the resources If you want to keep your cluster and remove the Online Boutique sample: Delete the application namespaces: kubectl delete namespace onlineboutique Expected output: namespace "onlineboutique" deleted Delete the Ingress Gateway namespace: kubectl delete namespace asm-ingress Expected output: namespace "asm-ingress" deleted If you want to prevent additional charges, delete the cluster: gcloud container clusters delete CLUSTER NAME \ --project= PROJECT ID \ --zone= CLUSTER LOCATION What's next For a general guide on configuring PeerAuthentication policies, see Configuring transport security .
+- Managed (TD) Apply the default injection label to the namespace: kubectl label namespace asm-ingress \ istio.io/rev- istio-injection = enabled --overwrite Managed (Istiod) Recommended: Run the following command to apply the default injection label to the namespace: kubectl label namespace asm-ingress \ istio.io/rev- istio-injection = enabled --overwrite If you are an existing user with the Managed Istiod control plane: We recommend that you use default injection, but revision-based injection is supported.
+
+### Cloud Service Mesh by example: mTLS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls](https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls)
+- Source ID: `site-docs-reference`
+- Final score: 226
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Apply the revision label to the namespace: kubectl label namespace asm-ingress \ istio-injection- istio.io/rev = REVISION LABEL --overwrite Deploy the example gateway in the anthos-service-mesh-samples repository: kubectl apply -n asm-ingress \ -f docs/shared/asm-ingress-gateway Expected output: serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Deploy the Online Boutique sample application If you haven't, set the current context for kubectl to the cluster: gcloud container clusters get-credentials CLUSTER NAME \ --project= PROJECT ID \ --zone= CLUSTER LOCATION Create the namespace for the sample application: kubectl create namespace onlineboutique Label the onlineboutique namespace to automatically inject Envoy proxies.
+- There are various supported setup methods: Fleet API and a managed control plane on Google Cloud asmcli and an unmanaged, in-cluster control plane off Google Cloud Clone the repository: git clone https://github.com/GoogleCloudPlatform/anthos-service-mesh-samples cd anthos-service-mesh-samples Deploy an ingress gateway Set the current context for kubectl to the cluster: Note: Use --region instead of --zone , if the cluster is a regional cluster. gcloud container clusters get-credentials CLUSTER NAME \ --project= PROJECT ID \ --zone= CLUSTER LOCATION Create a namespace for your ingress gateway: kubectl create namespace asm-ingress Enable the namespace for injection.
+- If you deployed the default ingress gateway, the namespace is istio-system . kubectl get service GATEWAY NAME -n GATEWAY NAMESPACE Open another tab in your browser and visit the application using the external IP address of the ingress gateway: http:// INGRESS GATEWAY EXTERNAL IP / Run the following command to curl the frontend service with plain HTTP from another Pod.
+- Visit the application in your browser using the external IP address of the frontend-external service: http : // FRONTEND EXTERNAL IP / Cloud Service Mesh provides you the ability to deploy an ingress gateway.
 

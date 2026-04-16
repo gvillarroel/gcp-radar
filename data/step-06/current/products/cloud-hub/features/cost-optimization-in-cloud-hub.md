@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:39:16.572Z"
+generated_at: "2026-04-12T12:11:29.115Z"
 product_name: "Cloud Hub"
 product_slug: "cloud-hub"
 feature_name: "Cost optimization in Cloud Hub"
 feature_slug: "cost-optimization-in-cloud-hub"
 latest_feature_date: "2025-11-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/hub/docs/optimize"
   - "https://docs.cloud.google.com/hub/docs/setup-cloud-hub"
   - "https://docs.cloud.google.com/hub/docs/troubleshooting"
+  - "https://docs.cloud.google.com/hub/docs/overview"
 keywords:
   - "cost"
   - "optimization"
@@ -26,7 +27,7 @@ keywords:
 # Cost optimization in Cloud Hub
 
 Product: Cloud Hub
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Hub provides visibility into Active Assist cost optimization recommendatio
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/hub/docs/optimize](https://docs.cloud.google.com/hub/docs/optimize)
 - [https://docs.cloud.google.com/hub/docs/setup-cloud-hub](https://docs.cloud.google.com/hub/docs/setup-cloud-hub)
 - [https://docs.cloud.google.com/hub/docs/troubleshooting](https://docs.cloud.google.com/hub/docs/troubleshooting)
+- [https://docs.cloud.google.com/hub/docs/overview](https://docs.cloud.google.com/hub/docs/overview)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/hub/docs/optimize](https://docs.cloud.google.com/hub/docs/optimize)
 - Source ID: `site-docs-reference`
-- Final score: 172
+- Final score: 221
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/hub/docs/setup-cloud-hub](https://docs.cloud.google.com/hub/docs/setup-cloud-hub)
 - Source ID: `site-docs-reference`
-- Final score: 146
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/hub/docs/troubleshooting](https://docs.cloud.google.com/hub/docs/troubleshooting)
 - Source ID: `site-docs-reference`
-- Final score: 130
+- Final score: 169
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - Deployments Application Health & troubleshooting Application or project Security & compliance Application or project Optimization Application or project Maintenance Project only Quotas & reservations Project only Support Project only Some APIs such as Cloud Logging and Cloud Monitoring are enabled by default when you create a project.
 - Page is not viewable When you try to open a page, you see one of the following messages: Page not viewable for projects Page not viewable for folders Some Cloud Hub pages only display data for projects or only display data for applications.
 - Missing required APIs and permissions If some or all data is missing from a Cloud Hub page, the cause might be that a required API is not enabled or that you are missing permissions to view the data.
+
+### Cloud Hub overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/hub/docs/overview](https://docs.cloud.google.com/hub/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 149
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Cloud Hub provides DevOps and SRE teams with a centralized view of operations data and insights for your Google Cloud applications and resources.
+- Find the information you need Cloud Hub displays groups of related data on the following main pages: Home Brings together top items from each of the categories of information in Cloud Hub so that you can get a summary of the health and performance of your Google Cloud resources on a single page.
+- You can use App Hub to create applications from existing Google Cloud workloads or use Application Design Center to design and deploy new Google Cloud resources, which automatically provision App Hub applications.
+- By organizing your resources as App Hub applications, you can better understand resource interactions and analyze, monitor, manage, and troubleshoot in an application-centric way.
 

@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.399Z"
+generated_at: "2026-04-12T12:13:45.752Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Cloud Logging integration"
 feature_slug: "cloud-logging-integration"
 latest_feature_date: "2023-04-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataform/docs/overview"
+  - "https://docs.cloud.google.com/dataform/docs/cmek"
   - "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform"
   - "https://docs.cloud.google.com/dataform/docs/monitor-runs"
 keywords:
@@ -25,7 +26,7 @@ keywords:
 # Cloud Logging integration
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,11 +38,12 @@ Cloud Logging integration makes Dataform logs available in Cloud Logging.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataform/docs/overview](https://docs.cloud.google.com/dataform/docs/overview)
+- [https://docs.cloud.google.com/dataform/docs/cmek](https://docs.cloud.google.com/dataform/docs/cmek)
 - [https://docs.cloud.google.com/dataform/docs/javascript-in-dataform](https://docs.cloud.google.com/dataform/docs/javascript-in-dataform)
 - [https://docs.cloud.google.com/dataform/docs/monitor-runs](https://docs.cloud.google.com/dataform/docs/monitor-runs)
 
@@ -51,7 +53,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataform/docs/overview](https://docs.cloud.google.com/dataform/docs/overview)
 - Source ID: `site-docs-root`
-- Final score: 116
+- Final score: 155
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -60,13 +62,26 @@ Evidence snippets:
 - Dataform lets you manage data transformation in the Extraction, Loading, and Transformation (ELT) process for data integration.
 - The following code sample shows you how to reference a table in a SQLX file with the ref function. config { type : "table" } SELECT order date AS date , order id AS order id , order status AS order status , SUM ( item count ) AS item count , SUM ( amount ) AS revenue FROM ${ ref ( "store clean" ) } GROUP BY 1 , 2 , 3 The output is similar to the following: CREATE OR REPLACE TABLE Dataform . orders AS SELECT order date AS date , order id AS order id , order status AS order status , SUM ( item count ) AS item count , SUM ( amount ) AS revenue FROM Dataform stg . store clean GROUP BY 1 , 2 , 3 For more information on additional dependency management, for example, executing code conditionally, using other Dataform core built-in functions, see the Dataform core reference .
 
+### Use customer-managed encryption keys \_|\_ Dataform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/cmek](https://docs.cloud.google.com/dataform/docs/cmek)
+- Source ID: `site-docs-root-2`
+- Final score: 149
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This integration lets you specify the following encryption compliance requirements for Dataform repositories in your organization: Require CMEKs for all new Dataform repositories Restrict Cloud KMS keys for a Dataform project Considerations when applying organization policies Before applying any CMEK organization policies, you should be aware of the following.
+- How an unavailable key status is handled In rare scenarios, such as during periods when Cloud KMS is unavailable, Dataform might be unable to retrieve the status of your key from Cloud KMS.
+- Logging You can audit the requests that Dataform sends to Cloud KMS on your behalf in Cloud Logging, if you have enabled audit logging for the Cloud KMS API in your project.
+- Click Save to apply the role to the service account. gcloud You can use the Google Cloud CLI to assign the role: gcloud kms keys add-iam-policy-binding \ --project= KMS PROJECT ID \ --member serviceAccount: SERVICE AGENT \ --role roles/cloudkms.cryptoKeyEncrypterDecrypter \ --location= KMS KEY LOCATION \ --keyring= KMS KEY RING \ KMS KEY Replace the following: KMS PROJECT ID : the ID of your Google Cloud project that is running Cloud KMS SERVICE AGENT : the email address of your default Dataform service agent KMS KEY LOCATION : the location name of your Cloud KMS key KMS KEY RING : the key ring name of your Cloud KMS key KMS KEY : the key name of your Cloud KMS key Apply a CMEK organization policy Dataform is integrated with two organization policy constraints to help ensure CMEK usage across an organization: constraints/gcp.restrictNonCmekServices is used to require CMEK protection. constraints/gcp.restrictCmekCryptoKeyProjects is used to limit which Cloud KMS keys are used for CMEK protection.
+
 ### Use JavaScript in Dataform \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataform/docs/javascript-in-dataform](https://docs.cloud.google.com/dataform/docs/javascript-in-dataform)
 - Source ID: `site-docs-root-2`
-- Final score: 114
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - You can create your own custom package in Dataform or use one of the open-source Dataform packages, available on the GitHub open-source Dataform page .
@@ -78,8 +93,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataform/docs/monitor-runs](https://docs.cloud.google.com/dataform/docs/monitor-runs)
 - Source ID: `site-docs-root-2`
-- Final score: 110
-- Re-rank relevance: N/A
+- Final score: 144
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Log format Dataform sends workflow invocation log messages in the following format: { "insertId" : "14ip1tza5" , "jsonPayload" : { "terminalState" : "SUCCEEDED" , "workflowInvocationId" : "1678383230-ac4ed48c-eb70-4555-b2b0-cda54d13edfa" , "@type" : "type.googleapis.com/google.cloud.dataform.logging.v1.WorkflowInvocationCompletionLogEntry" }, "resource" : { "type" : "dataform.googleapis.com/Repository" , "labels" : { "repository id" : "repository-name-example" , "resource container" : " PROJECT ID " , "location" : "us-central1" } }, "timestamp" : "2023-03-09T17:34:06.965981805Z" , "severity" : "INFO" , "logName" : "projects/project-name-example/logs/dataform.googleapis.com%2Fworkflow invocation completion" , "receiveTimestamp" : "2023-03-09T17:34:07.362371980Z" } What is logged Dataform log entries contain information that is useful for monitoring and debugging your workflow invocations.

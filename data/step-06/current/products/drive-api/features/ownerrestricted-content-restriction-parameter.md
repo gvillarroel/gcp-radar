@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:41:51.892Z"
+generated_at: "2026-04-12T12:14:32.796Z"
 product_name: "Drive API"
 product_slug: "drive-api"
 feature_name: "ownerRestricted content restriction parameter"
 feature_slug: "ownerrestricted-content-restriction-parameter"
 latest_feature_date: "2023-07-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/drive/api/guides/content-restrictions"
   - "https://developers.google.com/workspace/drive/api/guides/create-file"
   - "https://developers.google.com/workspace/drive/api/guides/manage-comments"
+  - "https://developers.google.com/workspace/drive/api/guides/enable-sdk"
 keywords:
   - "ownerrestricted"
   - "content"
@@ -26,7 +27,7 @@ keywords:
 # ownerRestricted content restriction parameter
 
 Product: Drive API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ This content restriction parameter lets only the file owner modify the restricti
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/drive/api/guides/content-restrictions](https://developers.google.com/workspace/drive/api/guides/content-restrictions)
 - [https://developers.google.com/workspace/drive/api/guides/create-file](https://developers.google.com/workspace/drive/api/guides/create-file)
 - [https://developers.google.com/workspace/drive/api/guides/manage-comments](https://developers.google.com/workspace/drive/api/guides/manage-comments)
+- [https://developers.google.com/workspace/drive/api/guides/enable-sdk](https://developers.google.com/workspace/drive/api/guides/enable-sdk)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/content-restrictions](https://developers.google.com/workspace/drive/api/guides/content-restrictions)
 - Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 181
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following code sample shows how to add a content restriction for file owners only: Java File updatedFile = new File () . setContentRestrictions ( ImmutableList . of ( new ContentRestriction (). setReadOnly ( true ). setOwnerRestricted ( true ). setReason ( "Finalized contract." )); File response = driveService . files (). update ( " FILE ID " , updatedFile ). setFields ( "contentRestrictions" ). execute (); Python content restriction = { 'readOnly' : True , 'ownerRestricted' : True , 'reason' : 'Finalized contract.' } response = drive service . files () . update ( fileId = " FILE ID " , body = { 'contentRestrictions' : [ content restriction ]}, fields = "contentRestrictions" ) . execute (); Node.js / Set an owner restricted content restriction on a file. @return{obj} updated file / async function addOwnerRestrictedContentRestriction () { // Get credentials and build service // TODO (developer) - Use appropriate auth mechanism for your app const { GoogleAuth } = require ( 'google-auth-library' ); const { google } = require ( 'googleapis' ); const auth = new GoogleAuth ({ scopes : 'https://www.googleapis.com/auth/drive' }); const service = google . drive ({ version : 'v3' , auth }); const contentRestriction = { 'readOnly' : True , 'ownerRestricted' : True , 'reason' : 'Finalized contract.' , }; const updatedFile = { 'contentRestrictions' : [ contentRestriction ], }; try { const response = await service . files . update ({ fileId : ' FILE ID ' , resource : updatedFile , fields : 'contentRestrictions' , }); return response ; } catch ( err ) { // TODO (developer) - Handle error throw err ; } } Replace FILE ID with the fileId of the file that you want to modify.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/create-file](https://developers.google.com/workspace/drive/api/guides/create-file)
 - Source ID: `site-docs-root`
-- Final score: 106
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 127
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/manage-comments](https://developers.google.com/workspace/drive/api/guides/manage-comments)
 - Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - POST https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID /replies?fields=id,comment Request body { "action": "resolve", "content": "This comment has been resolved." } Get a comment To get a comment on a file, use the get method on the comments resource with the fileId and commentId parameters.
 - PATCH https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID ?fields=id,comment Request body { "content": "This comment is now updated." } Delete a comment To delete a comment on a file, use the delete method on the comments resource with the fileId and commentId parameters.
 - DELETE https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID Related topics Files and folders overview Manage file revisions Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 - POST https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID /replies?fields=id,comment Request body { "content": "This is a reply to a comment." } Resolve a comment A comment can only be resolved by posting a reply to a comment.
+
+### Configure a Drive UI integration \_|\_ Google Drive \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/drive/api/guides/enable-sdk](https://developers.google.com/workspace/drive/api/guides/enable-sdk)
+- Source ID: `site-docs-root`
+- Final score: 114
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- This parameter contains a JSON-encoded string with template variables and data about the request to your app.
+- By default, a state query parameter is appended to this URL to pass data from the Drive UI to your app.
+- By default, a state query parameter is appended to this URL to pass data from the Drive UI to your app.
 

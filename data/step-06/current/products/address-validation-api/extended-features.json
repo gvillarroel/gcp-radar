@@ -1,6 +1,6 @@
 {
   "schema_version": "step-06-extended-feature-definitions-v1",
-  "generated_at": "2026-04-11T20:03:33.668Z",
+  "generated_at": "2026-04-14T03:44:24.356Z",
   "product_name": "Address Validation API",
   "product_slug": "address-validation-api",
   "inputs": {
@@ -13,11 +13,11 @@
     "max_candidate_pages": 6,
     "max_definition_pages": 3
   },
-  "corpus_page_count": 39,
+  "corpus_page_count": 42,
   "source_row_count": 3,
   "feature_count": 4,
-  "covered_feature_count": 2,
-  "features_without_supporting_pages": 2,
+  "covered_feature_count": 4,
+  "features_without_supporting_pages": 0,
   "features": [
     {
       "latest_feature_date": "2025-06-18",
@@ -25,75 +25,62 @@
       "deprecation_date": "",
       "feature_summary": "The Address Validation API now includes a `hasSpellCorrectedComponents` field in the verdict to indicate whether address components were spell-corrected.",
       "keywords": [
-        "component spell correction indicator",
-        "spell-corrected components flag",
-        "address component correction flag",
-        "spell corrected components",
-        "verdict.hasSpellCorrectedComponents",
-        "hasSpellCorrectedComponents field",
-        "hasSpellCorrectedComponents",
-        "spellCorrectedComponents"
+        "hasspellcorrectedcomponents",
+        "includes",
+        "indicate",
+        "verdict",
+        "field"
       ],
-      "coverage_status": "HIGH",
-      "extended_definition": "`hasSpellCorrectedComponents` is a boolean field in Address Validation API verdict data for the `validateAddress` response that indicates whether any address components were spell-corrected. When the field is `true`, at least one component had spelling correction; when `false`, no spell corrections were made. The field is used in validation-flow logic to decide when to ask users to confirm corrected addresses.",
-      "evidence_summary": "These pages define the field as a response boolean in validation results and explicitly state its truth meaning (`true` = spell corrections made, `false` = none), plus show how it is used in client-side validation branching.",
+      "coverage_status": "MEDIUM",
+      "extended_definition": "The Address Validation API now includes a `hasSpellCorrectedComponents` field in the verdict to indicate whether address components were spell-corrected.",
+      "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality.",
       "source_links": [
+        "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
         "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
-        "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress"
+        "https://developers.google.com/maps/documentation/address-validation/understand-response"
       ],
       "candidate_pages": [
         {
-          "page_id": "f91ef1c54e6554d431a27d225b542afdf7986c1fdf78ecb3a3e3a50ee25ae7a2",
-          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
-          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-root\\pages\\developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
-          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
-          "base_score": 46,
-          "matched_phrases": [
-            {
-              "phrase": "hasspellcorrectedcomponents",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 3
-            },
-            {
-              "phrase": "spellcorrectedcomponents",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 3
-            },
-            {
-              "phrase": "hasspellcorrectedcomponents field",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 2
-            },
-            {
-              "phrase": "verdict.hasspellcorrectedcomponents",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 1
-            }
-          ]
-        },
-        {
-          "page_id": "030e242f2c5f956c3a92edd2475fd699daa8f1f13373a0bc6c5714d9cacaa4ff",
+          "page_id": "69101fc19960036c2cecd6a75f6177ee97d43f05c93b1d73a598fcd3d0bb0f37",
           "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
-          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
-          "source_id": "site-api-reference",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
-          "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
-          "base_score": 26,
+          "title": "Method: validateAddress | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "",
+          "relative_markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 241,
           "matched_phrases": [
             {
-              "phrase": "hasspellcorrectedcomponents",
+              "phrase": "field",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 2
+              "body_hits": 41
             },
             {
-              "phrase": "spellcorrectedcomponents",
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 30
+            },
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 4
+            },
+            {
+              "phrase": "includes",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "hasspellcorrectedcomponents",
               "title_hits": 0,
               "url_hits": 0,
               "body_hits": 2
@@ -101,142 +88,86 @@
           ]
         },
         {
-          "page_id": "7a5e593b9206a0bf5c182d9a8cdcc1eb246cd5e9f39c0138883aca05ffb3b826",
-          "url": "https://developers.google.com/maps/documentation/address-validation/accept-address-example",
-          "title": "\"Accept address - examples \\_|\\_ Address Validation API \\_|\\_ Google for\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-root\\pages\\developers.google.com_maps_documentation_address-validation_accept-address-example.md",
-          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_accept-address-example.md",
-          "base_score": 18,
-          "matched_phrases": [
-            {
-              "phrase": "hasspellcorrectedcomponents",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 1
-            },
-            {
-              "phrase": "spellcorrectedcomponents",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 1
-            }
-          ]
-        }
-      ],
-      "supporting_pages": [
-        {
+          "page_id": "a788d6f05c08e15ae6abf0c71875212bf024a7d1df04e407d6a238eb6947e82d",
           "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
           "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
-          "base_score": 46,
-          "final_score": 42,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "The page mentions using address component changes as a signal but does not explicitly document a `hasSpellCorrectedComponents` verdict field.",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "base_score": 185,
           "matched_phrases": [
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 29
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            },
             {
               "phrase": "hasspellcorrectedcomponents",
               "title_hits": 0,
               "url_hits": 0,
               "body_hits": 3
-            },
-            {
-              "phrase": "spellcorrectedcomponents",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 3
-            },
-            {
-              "phrase": "hasspellcorrectedcomponents field",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 2
-            },
-            {
-              "phrase": "verdict.hasspellcorrectedcomponents",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 1
             }
-          ],
-          "evidence_snippets": [
-            "For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX or verdict.validationGranularity == OTHER or verdict.validationGranularity == ROUTE) Prompt customer to fix their address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt customer to add a unit number. else if (verdict.possibleNextAction == CONFIRM or verdict.validationGranularity == PREMISE PROXIMITY or verdict.hasSpellCorrectedComponents or verdict.hasReplacedComponents or verdict.hasInferredComponents) Prompt customer to confirm their address. else Proceed with the returned address.",
-            "Spell corrections When the hasSpellCorrectedComponents field is true , the API corrected the spelling of some misspelled components.",
-            "No spell corrections When the hasSpellCorrectedComponents field is false , you know that no spell corrections have been made."
           ]
         },
         {
-          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
-          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
-          "source_id": "site-api-reference",
-          "markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
-          "base_score": 26,
-          "final_score": 22,
-          "rerank_relevance": "WEAK",
-          "rerank_rationale": "The page is the validateAddress API reference and mentions validation flags, but this excerpt does not explicitly name or describe `hasSpellCorrectedComponents`.",
+          "page_id": "92b562b5082b6aff248db61b62cf7cc402dbef36f1296e05fe4a6e8d24d11b86",
+          "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
+          "title": "\"Understand a basic address validation response \\_|\\_ Address Validation\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_understand-response.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_understand-response.md",
+          "base_score": 168,
           "matched_phrases": [
             {
-              "phrase": "hasspellcorrectedcomponents",
+              "phrase": "verdict",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 2
+              "body_hits": 21
             },
             {
-              "phrase": "spellcorrectedcomponents",
+              "phrase": "indicate",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 2
+              "body_hits": 7
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
             }
-          ],
-          "evidence_snippets": [
-            "JSON representation { \"inputGranularity\" : enum ( Granularity ) , \"validationGranularity\" : enum ( Granularity ) , \"geocodeGranularity\" : enum ( Granularity ) , \"addressComplete\" : boolean , \"hasUnconfirmedComponents\" : boolean , \"hasInferredComponents\" : boolean , \"hasReplacedComponents\" : boolean , \"possibleNextAction\" : enum ( PossibleNextAction ) , \"hasSpellCorrectedComponents\" : boolean } Fields inputGranularity enum ( Granularity ) The granularity of the input address.",
-            "See Build your validation logic for more details. hasSpellCorrectedComponents boolean At least one address component was spell-corrected, see google.maps.addressvalidation.v1.Address.address components for details."
           ]
-        }
-      ]
-    },
-    {
-      "latest_feature_date": "2025-06-18",
-      "feature_name": "Address Validation API verdict possibleNextAction field",
-      "deprecation_date": "",
-      "feature_summary": "The Address Validation API now includes a `possibleNextAction` field in the verdict to indicate recommended next steps after receiving a validation response.",
-      "keywords": [
-        "next action recommendation",
-        "recommended next action",
-        "next action suggestion",
-        "possible_next_action",
-        "possible next action",
-        "post-validation action",
-        "verdict.possibleNextAction",
-        "possibleNextAction field"
-      ],
-      "coverage_status": "HIGH",
-      "extended_definition": "The `verdict.possibleNextAction` feature in Address Validation API exposes an enum (`PossibleNextAction`) in the validation verdict that indicates the recommended next step after a validation attempt, such as prompting to fix an address, add sub-premises, confirm it, or continue with the returned address. It is intended to be used by client-side validation logic to determine post-validation flow for end users. The API reference also labels this field as a Preview (pre-GA) feature.",
-      "evidence_summary": "The cited Pages define `verdict.possibleNextAction` as an enum-based action recommendation in the verdict, show sample decision logic that consumes it, and explicitly mark the feature as Preview in the API reference.",
-      "source_links": [
-        "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
-        "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1",
-        "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress"
-      ],
-      "candidate_pages": [
+        },
         {
-          "page_id": "f91ef1c54e6554d431a27d225b542afdf7986c1fdf78ecb3a3e3a50ee25ae7a2",
-          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
-          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-root\\pages\\developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
-          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
-          "base_score": 34,
+          "page_id": "6421573afb1ecc4fbb5285cbc5c660fda4a69fd6db88b1845ea5e2af4ce62290",
+          "url": "https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example",
+          "title": "\"Add subpremises to address - examples (US only) \\_|\\_ Address Validation\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_add-subpremises-address-example.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_add-subpremises-address-example.md",
+          "base_score": 121,
           "matched_phrases": [
             {
-              "phrase": "verdict.possiblenextaction",
+              "phrase": "verdict",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 17
+              "body_hits": 4
             },
             {
-              "phrase": "possiblenextaction field",
+              "phrase": "indicate",
               "title_hits": 0,
               "url_hits": 0,
               "body_hits": 1
@@ -250,121 +181,592 @@
           "source_id": "site-api-reference",
           "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
           "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
-          "base_score": 26,
+          "base_score": 106,
           "matched_phrases": [
             {
-              "phrase": "possible next action",
+              "phrase": "field",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 3
+              "body_hits": 34
             },
             {
-              "phrase": "verdict.possiblenextaction",
+              "phrase": "indicate",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 1
+              "body_hits": 31
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "includes",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
             }
           ]
         },
         {
-          "page_id": "030e242f2c5f956c3a92edd2475fd699daa8f1f13373a0bc6c5714d9cacaa4ff",
-          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
-          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
-          "source_id": "site-api-reference",
-          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
-          "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
-          "base_score": 18,
+          "page_id": "1814209fa80e6b61ababf95b07659898c764ada460e81f70b08ca851166abda8",
+          "url": "https://developers.google.com/maps/documentation/address-validation/confirm-address-example",
+          "title": "\"Confirm address - examples \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_confirm-address-example.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_confirm-address-example.md",
+          "base_score": 66,
           "matched_phrases": [
             {
-              "phrase": "possible next action",
+              "phrase": "verdict",
               "title_hits": 0,
               "url_hits": 0,
-              "body_hits": 2
+              "body_hits": 6
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
             }
           ]
         }
       ],
       "supporting_pages": [
         {
-          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
-          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
-          "source_id": "site-docs-root",
-          "markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
-          "base_score": 34,
-          "final_score": 52,
-          "rerank_relevance": "STRONG",
-          "rerank_rationale": "The page explicitly centers on using `verdict.possibleNextAction` to decide Fix, Confirm, or Accept handling logic in address validation workflows.",
-          "matched_phrases": [
-            {
-              "phrase": "verdict.possiblenextaction",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 17
-            },
-            {
-              "phrase": "possiblenextaction field",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 1
-            }
-          ],
-          "evidence_snippets": [
-            "Customize your validation logic While you can use the results from the verdict.possibleNextAction field to determine how your system proceeds with the API response, you might also consider building custom logic, such as to handle business-specific needs.",
-            "For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX or verdict.validationGranularity == OTHER or verdict.validationGranularity == ROUTE) Prompt customer to fix their address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt customer to add a unit number. else if (verdict.possibleNextAction == CONFIRM or verdict.validationGranularity == PREMISE PROXIMITY or verdict.hasSpellCorrectedComponents or verdict.hasReplacedComponents or verdict.hasInferredComponents) Prompt customer to confirm their address. else Proceed with the returned address.",
-            "The following pseudocode illustrates a possible flow. if (verdict.possibleNextAction == FIX) Prompt the user to fix the address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt the user to add a unit number. else if (verdict.possibleNextAction == CONFIRM) Confirm with the user that the address is correct. else Continue with the address returned by the API.",
-            "For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX) Prompt customer to fix their address. else if (verdict.hasReplacedComponents) Prompt customer to confirm their address. else Proceed with the returned address."
-          ]
-        },
-        {
-          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1",
-          "title": "\"Package google.maps.addressvalidation.v1 \\_|\\_ Address Validation API \\_\\",
-          "source_id": "site-api-reference",
-          "markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
-          "base_score": 26,
-          "final_score": 26,
-          "rerank_relevance": "",
-          "rerank_rationale": "",
-          "matched_phrases": [
-            {
-              "phrase": "possible next action",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 3
-            },
-            {
-              "phrase": "verdict.possiblenextaction",
-              "title_hits": 0,
-              "url_hits": 0,
-              "body_hits": 1
-            }
-          ],
-          "evidence_snippets": [
-            "See missing component types , unresolved tokens or unexpected fields for more details. has unconfirmed components bool At least one address component cannot be categorized or validated, see google.maps.addressvalidation.v1.Address.address components for details. has inferred components bool At least one address component was inferred (added) that wasn't in the input, see google.maps.addressvalidation.v1.Address.address components for details. has replaced components bool At least one address component was replaced, see google.maps.addressvalidation.v1.Address.address components for details. possible next action PossibleNextAction Preview: This feature is in Preview (pre-GA).",
-            "Possible next actions that could be taken, based on the API response.",
-            "Enums POSSIBLE NEXT ACTION UNSPECIFIED Default value.",
-            "Index AddressValidation (interface) Address (message) AddressComponent (message) AddressComponent.ConfirmationLevel (enum) AddressMetadata (message) ComponentName (message) Geocode (message) LanguageOptions (message) PlusCode (message) ProvideValidationFeedbackRequest (message) ProvideValidationFeedbackRequest.ValidationConclusion (enum) ProvideValidationFeedbackResponse (message) UspsAddress (message) UspsData (message) ValidateAddressRequest (message) ValidateAddressResponse (message) ValidationResult (message) Verdict (message) Verdict.Granularity (enum) Verdict.PossibleNextAction (enum) AddressValidation The service for validating addresses."
-          ]
-        },
-        {
           "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
-          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
-          "source_id": "site-api-reference",
-          "markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
-          "base_score": 18,
-          "final_score": 26,
-          "rerank_relevance": "MODERATE",
-          "rerank_rationale": "The page is the authoritative response schema reference and explicitly references `PossibleNextAction` as part of the validation result structures, supporting documentation for this feature.",
+          "title": "Method: validateAddress | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 241,
+          "final_score": 237,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
           "matched_phrases": [
             {
-              "phrase": "possible next action",
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 41
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 30
+            },
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 4
+            },
+            {
+              "phrase": "includes",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "hasspellcorrectedcomponents",
               "title_hits": 0,
               "url_hits": 0,
               "body_hits": 2
             }
           ],
           "evidence_snippets": [
-            "Possible next actions that could be taken, based on the API response.",
-            "Enums POSSIBLE NEXT ACTION UNSPECIFIED Default value."
+            "Method: validateAddress | Address Validation API | Google for Developers Skip to main content Maps Platform Overview Products Pricing Documentation Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users Blog Community GitHub YouTube LinkedIn Discord Innovators Issue Tracker / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Web Services Address Validation API Get Started Contact sales Guides Reference Resources Maps Platform Overview Products Pricing Documentation More Guides Reference Resources Blog Community More REST reference Overview v1 TopLevel provideValidationFeedback validateAddress RPC Reference Overview google.geo.type google.maps.addressvalidation.v1 google.type Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users GitHub YouTube LinkedIn Discord Innovators Issue Tracker Home Products Google Maps Platform Documentation Web Services Address Validation API Reference Send feedback Method: validateAddress Stay organized with collections Save and categorize content based on your preferences.",
+            "JSON representation { \"verdict\" : { object ( Verdict ) } , \"address\" : { object ( Address ) } , \"geocode\" : { object ( Geocode ) } , \"metadata\" : { object ( AddressMetadata ) } , \"uspsData\" : { object ( UspsData ) } , \"englishLatinAddress\" : { object ( Address ) } } Fields verdict object ( Verdict ) Overall verdict flags address object ( Address ) Information about the address itself as opposed to the geocode. geocode object ( Geocode ) Information about the location and place that the address geocoded to. metadata object ( AddressMetadata ) Other information relevant to deliverability. metadata is not guaranteed to be fully populated for every address sent to the Address Validation API. uspsData object ( UspsData ) Extra deliverability flags provided by USPS.",
+            "JSON representation { \"inputGranularity\" : enum ( Granularity ) , \"validationGranularity\" : enum ( Granularity ) , \"geocodeGranularity\" : enum ( Granularity ) , \"addressComplete\" : boolean , \"hasUnconfirmedComponents\" : boolean , \"hasInferredComponents\" : boolean , \"hasReplacedComponents\" : boolean , \"possibleNextAction\" : enum ( PossibleNextAction ) , \"hasSpellCorrectedComponents\" : boolean } Fields inputGranularity enum ( Granularity ) The granularity of the input address.",
+            "If successful, the response body contains data with the following structure: JSON representation { \"result\" : { object ( ValidationResult ) } , \"responseId\" : string } Fields result object ( ValidationResult ) The result of the address validation. responseId string The UUID that identifies this response."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "base_score": 185,
+          "final_score": 181,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 29
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "hasspellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX or verdict.validationGranularity == OTHER or verdict.validationGranularity == ROUTE) Prompt customer to fix their address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt customer to add a unit number. else if (verdict.possibleNextAction == CONFIRM or verdict.validationGranularity == PREMISE PROXIMITY or verdict.hasSpellCorrectedComponents or verdict.hasReplacedComponents or verdict.hasInferredComponents) Prompt customer to confirm their address. else Proceed with the returned address.",
+            "Add subpremises address examples CONFIRM signals You confirm an address when the verdict indicates that the Address Validation API either inferred or made changes to address components in order to produce a validated address.",
+            "The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address has major issues, and what those issues are.",
+            "The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address has minor issues, and what those issues are."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
+          "title": "\"Understand a basic address validation response \\_|\\_ Address Validation\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_understand-response.md",
+          "base_score": 168,
+          "final_score": 164,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 21
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": [
+            "The Address Validation API provides a response body as a JSON object that contains two top-level properties: result , an object of type ValidationResult responseID { \"result\" : { // Validation verdict. \"verdict\" : {}, // Address details determined by the API. \"address\" : {}, // The geocode generated for the input address. \"geocode\" : {}, // Information indicating if the address is a business, residence, etc. \"metadata\" : {}, // Information about the address from the US Postal Service // (\"US\" and \"PR\" addresses only). \"uspsData\" : {}, }, // A unique identifier generated for every request to the API. \"responseId\" : \"ID\" } This document focuses on the result object.",
+            "Page Summary outlined flag The Address Validation API response contains a result object with properties like verdict , address , geocode , metadata , and uspsData to provide detailed information about the validated address.",
+            "This property might not be populated for every address processed by the Address Validation API, but indicates if the address is of type residential, business, or a PO Box.",
+            "The verdict property returns these granularity signals: inputGranularity — Describes the level of detail captured from the address sent to the Address Validation API."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-06-18",
+      "feature_name": "Address Validation API verdict possibleNextAction field",
+      "deprecation_date": "",
+      "feature_summary": "The Address Validation API now includes a `possibleNextAction` field in the verdict to indicate recommended next steps after receiving a validation response.",
+      "keywords": [
+        "possiblenextaction",
+        "includes",
+        "indicate",
+        "verdict",
+        "field"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "The Address Validation API now includes a `possibleNextAction` field in the verdict to indicate recommended next steps after receiving a validation response.",
+      "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality.",
+      "source_links": [
+        "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+        "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+        "https://developers.google.com/maps/documentation/address-validation/understand-response"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "69101fc19960036c2cecd6a75f6177ee97d43f05c93b1d73a598fcd3d0bb0f37",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "",
+          "relative_markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 253,
+          "matched_phrases": [
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 41
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 30
+            },
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 4
+            },
+            {
+              "phrase": "includes",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "a788d6f05c08e15ae6abf0c71875212bf024a7d1df04e407d6a238eb6947e82d",
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "base_score": 193,
+          "matched_phrases": [
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 29
+            },
+            {
+              "phrase": "possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ]
+        },
+        {
+          "page_id": "92b562b5082b6aff248db61b62cf7cc402dbef36f1296e05fe4a6e8d24d11b86",
+          "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
+          "title": "\"Understand a basic address validation response \\_|\\_ Address Validation\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_understand-response.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_understand-response.md",
+          "base_score": 185,
+          "matched_phrases": [
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 21
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "6421573afb1ecc4fbb5285cbc5c660fda4a69fd6db88b1845ea5e2af4ce62290",
+          "url": "https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example",
+          "title": "\"Add subpremises to address - examples (US only) \\_|\\_ Address Validation\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_add-subpremises-address-example.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_add-subpremises-address-example.md",
+          "base_score": 136,
+          "matched_phrases": [
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "f65177c3eef63bd3f11b1017e3ac32f9aef4063efbb763e12d9677fb62f4bfee",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1",
+          "title": "\"Package google.maps.addressvalidation.v1 \\_|\\_ Address Validation API \\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
+          "base_score": 127,
+          "matched_phrases": [
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 34
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 31
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "includes",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "1814209fa80e6b61ababf95b07659898c764ada460e81f70b08ca851166abda8",
+          "url": "https://developers.google.com/maps/documentation/address-validation/confirm-address-example",
+          "title": "\"Confirm address - examples \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_confirm-address-example.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_confirm-address-example.md",
+          "base_score": 91,
+          "matched_phrases": [
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 253,
+          "final_score": 249,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 41
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 30
+            },
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 4
+            },
+            {
+              "phrase": "includes",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "Method: validateAddress | Address Validation API | Google for Developers Skip to main content Maps Platform Overview Products Pricing Documentation Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users Blog Community GitHub YouTube LinkedIn Discord Innovators Issue Tracker / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Web Services Address Validation API Get Started Contact sales Guides Reference Resources Maps Platform Overview Products Pricing Documentation More Guides Reference Resources Blog Community More REST reference Overview v1 TopLevel provideValidationFeedback validateAddress RPC Reference Overview google.geo.type google.maps.addressvalidation.v1 google.type Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users GitHub YouTube LinkedIn Discord Innovators Issue Tracker Home Products Google Maps Platform Documentation Web Services Address Validation API Reference Send feedback Method: validateAddress Stay organized with collections Save and categorize content based on your preferences.",
+            "JSON representation { \"verdict\" : { object ( Verdict ) } , \"address\" : { object ( Address ) } , \"geocode\" : { object ( Geocode ) } , \"metadata\" : { object ( AddressMetadata ) } , \"uspsData\" : { object ( UspsData ) } , \"englishLatinAddress\" : { object ( Address ) } } Fields verdict object ( Verdict ) Overall verdict flags address object ( Address ) Information about the address itself as opposed to the geocode. geocode object ( Geocode ) Information about the location and place that the address geocoded to. metadata object ( AddressMetadata ) Other information relevant to deliverability. metadata is not guaranteed to be fully populated for every address sent to the Address Validation API. uspsData object ( UspsData ) Extra deliverability flags provided by USPS.",
+            "See missingComponentTypes , unresolvedTokens or unexpected fields for more details. hasUnconfirmedComponents boolean At least one address component cannot be categorized or validated, see google.maps.addressvalidation.v1.Address.address_components for details. hasInferredComponents boolean At least one address component was inferred (added) that wasn't in the input, see google.maps.addressvalidation.v1.Address.address_components for details. hasReplacedComponents boolean At least one address component was replaced, see google.maps.addressvalidation.v1.Address.address_components for details. possibleNextAction enum ( PossibleNextAction ) Preview: This feature is in Preview (pre-GA).",
+            "HTTP request Request body JSON representation Response body JSON representation PostalAddress JSON representation LanguageOptions JSON representation ValidationResult JSON representation Verdict JSON representation Granularity PossibleNextAction Address JSON representation AddressComponent JSON representation ComponentName JSON representation ConfirmationLevel Geocode JSON representation LatLng JSON representation PlusCode JSON representation Viewport JSON representation AddressMetadata JSON representation UspsData JSON representation UspsAddress JSON representation Validates an address."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "base_score": 193,
+          "final_score": 189,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 29
+            },
+            {
+              "phrase": "possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ],
+          "evidence_snippets": [
+            "The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address has major issues, and what those issues are.",
+            "The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address has minor issues, and what those issues are.",
+            "The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address is likely missing a subpremises.",
+            "The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address is of acceptable quality."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
+          "title": "\"Understand a basic address validation response \\_|\\_ Address Validation\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_understand-response.md",
+          "base_score": 185,
+          "final_score": 181,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "verdict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 21
+            },
+            {
+              "phrase": "indicate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Completeness of the address The verdict returns the addressComplete property as a signal for a high-quality address, which means specifically that it has no missing, unresolved, or unexpected components: \"verdict\" : { \"inputGranularity\" : \"PREMISE\" , \"validationGranularity\" : \"PREMISE\" , \"geocodeGranularity\" : \"PREMISE\" , \"addressComplete\" : true , \"possibleNextAction\" : \"ACCEPT\" } When the address has missing, unresolved, or unexpected components, the field is set to false .",
+            "For example, the following shows the verdict property of an address of good quality, which returns 4 fields for this particular request: \"verdict\" : { \"inputGranularity\" : \"PREMISE\" , \"validationGranularity\" : \"PREMISE\" , \"geocodeGranularity\" : \"PREMISE\" , \"addressComplete\" : true , \"possibleNextAction\" : \"ACCEPT\" } The following sections summarize all fields in the verdict property.",
+            "The Address Validation API provides a response body as a JSON object that contains two top-level properties: result , an object of type ValidationResult responseID { \"result\" : { // Validation verdict. \"verdict\" : {}, // Address details determined by the API. \"address\" : {}, // The geocode generated for the input address. \"geocode\" : {}, // Information indicating if the address is a business, residence, etc. \"metadata\" : {}, // Information about the address from the US Postal Service // (\"US\" and \"PR\" addresses only). \"uspsData\" : {}, }, // A unique identifier generated for every request to the API. \"responseId\" : \"ID\" } This document focuses on the result object.",
+            "Possible next action The possibleNextAction property offers an interpretive summary of the rest of the API response, with the goal of helping you determine whether or not you should prompt your customer to review or make edits to their address."
           ]
         }
       ]
@@ -375,21 +777,306 @@
       "deprecation_date": "",
       "feature_summary": "The Address Validation API now supports session-based pricing when used with the Autocomplete (New) API.",
       "keywords": [
-        "Autocomplete New pricing",
-        "session-based pricing",
-        "session pricing model",
-        "session-based billing",
-        "per-session pricing",
-        "Address Validation session pricing",
-        "Autocomplete (New)",
-        "session pricing"
+        "autocomplete",
+        "session",
+        "pricing",
+        "based",
+        "supports"
       ],
-      "coverage_status": "NONE",
+      "coverage_status": "MEDIUM",
       "extended_definition": "The Address Validation API now supports session-based pricing when used with the Autocomplete (New) API.",
-      "evidence_summary": "",
-      "source_links": [],
-      "candidate_pages": [],
-      "supporting_pages": []
+      "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality.",
+      "source_links": [
+        "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+        "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+        "https://developers.google.com/maps/documentation/address-validation/understand-response"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "030e242f2c5f956c3a92edd2475fd699daa8f1f13373a0bc6c5714d9cacaa4ff",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
+          "base_score": 203,
+          "matched_phrases": [
+            {
+              "phrase": "session",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 15
+            },
+            {
+              "phrase": "autocomplete",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 2
+            },
+            {
+              "phrase": "based",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "pricing",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "da0df38dbfeae7a49400f49269a69b6e1c501a1195090c11aa1642f7a0ecc0f9",
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "Build your validation logic | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "",
+          "relative_markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 137,
+          "matched_phrases": [
+            {
+              "phrase": "pricing",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "based",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "ed14b37ff2cb9ae9898a8302a06fb212a3f590a6afcc018bf4cfbbb4c75da5a5",
+          "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
+          "title": "Understand a basic address validation response | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "",
+          "relative_markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 126,
+          "matched_phrases": [
+            {
+              "phrase": "pricing",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "based",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "6421573afb1ecc4fbb5285cbc5c660fda4a69fd6db88b1845ea5e2af4ce62290",
+          "url": "https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example",
+          "title": "\"Add subpremises to address - examples (US only) \\_|\\_ Address Validation\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_add-subpremises-address-example.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_add-subpremises-address-example.md",
+          "base_score": 103,
+          "matched_phrases": [
+            {
+              "phrase": "based",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "f65177c3eef63bd3f11b1017e3ac32f9aef4063efbb763e12d9677fb62f4bfee",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1",
+          "title": "\"Package google.maps.addressvalidation.v1 \\_|\\_ Address Validation API \\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
+          "base_score": 101,
+          "matched_phrases": [
+            {
+              "phrase": "validateaddress",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "session",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "autocomplete",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "based",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "pricing",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "fb74a1669ed931e73534ef0c059c3021ec3441955444df2368ad8aae314d8dd7",
+          "url": "https://developers.google.com/maps/documentation",
+          "title": "Google Maps Platform Documentation \\_|\\_ Google for Developers",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-root\\pages\\developers.google.com_maps_documentation.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation.md",
+          "base_score": 42,
+          "matched_phrases": [
+            {
+              "phrase": "autocomplete",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "based",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "pricing",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
+          "base_score": 203,
+          "final_score": 203,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "session",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 15
+            },
+            {
+              "phrase": "autocomplete",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 2
+            },
+            {
+              "phrase": "based",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "pricing",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Home Products Google Maps Platform Documentation Web Services Address Validation API Reference Send feedback Method: validateAddress Stay organized with collections Save and categorize content based on your preferences.",
+            "The session begins when the user makes an Autocomplete query, and concludes when they select a place and a call to Place Details or Address Validation is made.",
+            "Each session can have multiple Autocomplete queries, followed by one Place Details or Address Validation request.",
+            "Note: Address Validation can only be used in sessions with the Autocomplete (New) API, not the Autocomplete API."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "Build your validation logic | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 137,
+          "final_score": 133,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "pricing",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "based",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Build your validation logic | Address Validation API | Google for Developers Skip to main content Maps Platform Overview Products Pricing Documentation Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users Blog Community GitHub YouTube LinkedIn Discord Innovators Issue Tracker / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Web Services Address Validation API Get Started Contact sales Guides Reference Resources Maps Platform Overview Products Pricing Documentation More Guides Reference Resources Blog Community More Address Validation API Overview Try the demo Address Validation API essentials Set up the Address Validation API Send an address validation request Understand a basic response Use address validation in your workflow Handle the validation response Build your validation logic Fix address - examples Add subpremises - examples (US only) Confirm address - examples Accept address - examples Handle US addresses Handle updated addresses Convert addresses into English Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users GitHub YouTube LinkedIn Discord Innovators Issue Tracker Home Products Google Maps Platform Documentation Web Services Address Validation API Send feedback Build your validation logic Stay organized with collections Save and categorize content based on your preferences.",
+            "Confirm address examples ACCEPT signals You might accept an address when the Address Validation API API response provides a high degree of confidence that the address is deliverable and can be used without further customer interaction in the downstream process.",
+            "Fix address examples CONFIRM_ADD_SUBPREMISES signals (US addresses only) You prompt your customer to review the address and consider adding a unit number when the Address Validation API response indicates the address might be missing a subpremises.",
+            "Add subpremises address examples CONFIRM signals You confirm an address when the verdict indicates that the Address Validation API either inferred or made changes to address components in order to produce a validated address."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
+          "title": "Understand a basic address validation response | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 126,
+          "final_score": 122,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "pricing",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "based",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Understand a basic address validation response | Address Validation API | Google for Developers Skip to main content Maps Platform Overview Products Pricing Documentation Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users Blog Community GitHub YouTube LinkedIn Discord Innovators Issue Tracker / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Web Services Address Validation API Get Started Contact sales Guides Reference Resources Maps Platform Overview Products Pricing Documentation More Guides Reference Resources Blog Community More Address Validation API Overview Try the demo Address Validation API essentials Set up the Address Validation API Send an address validation request Understand a basic response Use address validation in your workflow Handle the validation response Build your validation logic Fix address - examples Add subpremises - examples (US only) Confirm address - examples Accept address - examples Handle US addresses Handle updated addresses Convert addresses into English Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users GitHub YouTube LinkedIn Discord Innovators Issue Tracker Home Products Google Maps Platform Documentation Web Services Address Validation API Send feedback Understand a basic address validation response Stay organized with collections Save and categorize content based on your preferences.",
+            "The Address Validation API provides a response body as a JSON object that contains two top-level properties: result , an object of type ValidationResult responseID { \"result\" : { // Validation verdict. \"verdict\" : {}, // Address details determined by the API. \"address\" : {}, // The geocode generated for the input address. \"geocode\" : {}, // Information indicating if the address is a business, residence, etc. \"metadata\" : {}, // Information about the address from the US Postal Service // (\"US\" and \"PR\" addresses only). \"uspsData\" : {}, }, // A unique identifier generated for every request to the API. \"responseId\" : \"ID\" } This document focuses on the result object.",
+            "For example, an address with an inputGranularity below PREMISE below level does not typically result in a validationGranularity to a PREMISE level. validationGranularity — The granularity level that the Address Validation API can fully validate the address to.",
+            "Page Summary outlined_flag The Address Validation API response contains a result object with properties like verdict , address , geocode , metadata , and uspsData to provide detailed information about the validated address."
+          ]
+        }
+      ]
     },
     {
       "latest_feature_date": "2023-06-22",
@@ -397,21 +1084,324 @@
       "deprecation_date": "",
       "feature_summary": "The Address Validation API now supports returning validated addresses in English in API responses as a preview capability.",
       "keywords": [
-        "English response format preview",
-        "address output language: English",
-        "return addresses in English",
-        "English address response format",
-        "English output format",
-        "validated address in English",
-        "English response preview",
-        "English-formatted address"
+        "returning",
+        "english",
+        "format",
+        "response",
+        "supports"
       ],
-      "coverage_status": "NONE",
+      "coverage_status": "MEDIUM",
       "extended_definition": "The Address Validation API now supports returning validated addresses in English in API responses as a preview capability.",
-      "evidence_summary": "",
-      "source_links": [],
-      "candidate_pages": [],
-      "supporting_pages": []
+      "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality.",
+      "source_links": [
+        "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+        "https://developers.google.com/maps/documentation/address-validation/understand-response",
+        "https://developers.google.com/maps/documentation/address-validation/build-validation-logic"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "69101fc19960036c2cecd6a75f6177ee97d43f05c93b1d73a598fcd3d0bb0f37",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "",
+          "relative_markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 213,
+          "matched_phrases": [
+            {
+              "phrase": "format",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 44
+            },
+            {
+              "phrase": "response",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 25
+            },
+            {
+              "phrase": "english",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "ed14b37ff2cb9ae9898a8302a06fb212a3f590a6afcc018bf4cfbbb4c75da5a5",
+          "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
+          "title": "Understand a basic address validation response | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "",
+          "relative_markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 191,
+          "matched_phrases": [
+            {
+              "phrase": "response",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 14
+            },
+            {
+              "phrase": "format",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "english",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "da0df38dbfeae7a49400f49269a69b6e1c501a1195090c11aa1642f7a0ecc0f9",
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "Build your validation logic | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "",
+          "relative_markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 165,
+          "matched_phrases": [
+            {
+              "phrase": "response",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 21
+            },
+            {
+              "phrase": "format",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "english",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "6421573afb1ecc4fbb5285cbc5c660fda4a69fd6db88b1845ea5e2af4ce62290",
+          "url": "https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example",
+          "title": "\"Add subpremises to address - examples (US only) \\_|\\_ Address Validation\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_add-subpremises-address-example.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_add-subpremises-address-example.md",
+          "base_score": 118,
+          "matched_phrases": [
+            {
+              "phrase": "format",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "response",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "d7a403d2e344c6f6c1264463e59da9df2d42c963aca9b7706374a2e30ca875a9",
+          "url": "https://developers.google.com/maps/documentation/address-validation/convert-addresses-english",
+          "title": "\"Convert addresses into English \\_|\\_ Address Validation API \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-reference\\pages\\developers.google.com_maps_documentation_address-validation_convert-addresses-english.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-reference/pages/developers.google.com_maps_documentation_address-validation_convert-addresses-english.md",
+          "base_score": 113,
+          "matched_phrases": [
+            {
+              "phrase": "english",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 41
+            },
+            {
+              "phrase": "format",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "response",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "f65177c3eef63bd3f11b1017e3ac32f9aef4063efbb763e12d9677fb62f4bfee",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1",
+          "title": "\"Package google.maps.addressvalidation.v1 \\_|\\_ Address Validation API \\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
+          "base_score": 103,
+          "matched_phrases": [
+            {
+              "phrase": "format",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 39
+            },
+            {
+              "phrase": "response",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 33
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "english",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 213,
+          "final_score": 209,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "format",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 44
+            },
+            {
+              "phrase": "response",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 25
+            },
+            {
+              "phrase": "english",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "validateaddress",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "Method: validateAddress | Address Validation API | Google for Developers Skip to main content Maps Platform Overview Products Pricing Documentation Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users Blog Community GitHub YouTube LinkedIn Discord Innovators Issue Tracker / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Web Services Address Validation API Get Started Contact sales Guides Reference Resources Maps Platform Overview Products Pricing Documentation More Guides Reference Resources Blog Community More REST reference Overview v1 TopLevel provideValidationFeedback validateAddress RPC Reference Overview google.geo.type google.maps.addressvalidation.v1 google.type Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users GitHub YouTube LinkedIn Discord Innovators Issue Tracker Home Products Google Maps Platform Documentation Web Services Address Validation API Reference Send feedback Method: validateAddress Stay organized with collections Save and categorize content based on your preferences.",
+            "JSON representation { \"verdict\" : { object ( Verdict ) } , \"address\" : { object ( Address ) } , \"geocode\" : { object ( Geocode ) } , \"metadata\" : { object ( AddressMetadata ) } , \"uspsData\" : { object ( UspsData ) } , \"englishLatinAddress\" : { object ( Address ) } } Fields verdict object ( Verdict ) Overall verdict flags address object ( Address ) Information about the address itself as opposed to the geocode. geocode object ( Geocode ) Information about the location and place that the address geocoded to. metadata object ( AddressMetadata ) Other information relevant to deliverability. metadata is not guaranteed to be fully populated for every address sent to the Address Validation API. uspsData object ( UspsData ) Extra deliverability flags provided by USPS.",
+            "Enables the Address Validation API to include additional information in the response. sessionToken string Optional.",
+            "Enables the Address Validation API to include additional information in the response."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/understand-response",
+          "title": "Understand a basic address validation response | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 191,
+          "final_score": 187,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "response",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 14
+            },
+            {
+              "phrase": "format",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "english",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Understand a basic address validation response | Address Validation API | Google for Developers Skip to main content Maps Platform Overview Products Pricing Documentation Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users Blog Community GitHub YouTube LinkedIn Discord Innovators Issue Tracker / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Web Services Address Validation API Get Started Contact sales Guides Reference Resources Maps Platform Overview Products Pricing Documentation More Guides Reference Resources Blog Community More Address Validation API Overview Try the demo Address Validation API essentials Set up the Address Validation API Send an address validation request Understand a basic response Use address validation in your workflow Handle the validation response Build your validation logic Fix address - examples Add subpremises - examples (US only) Confirm address - examples Accept address - examples Handle US addresses Handle updated addresses Convert addresses into English Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users GitHub YouTube LinkedIn Discord Innovators Issue Tracker Home Products Google Maps Platform Documentation Web Services Address Validation API Send feedback Understand a basic address validation response Stay organized with collections Save and categorize content based on your preferences.",
+            "The Address Validation API provides a response body as a JSON object that contains two top-level properties: result , an object of type ValidationResult responseID { \"result\" : { // Validation verdict. \"verdict\" : {}, // Address details determined by the API. \"address\" : {}, // The geocode generated for the input address. \"geocode\" : {}, // Information indicating if the address is a business, residence, etc. \"metadata\" : {}, // Information about the address from the US Postal Service // (\"US\" and \"PR\" addresses only). \"uspsData\" : {}, }, // A unique identifier generated for every request to the API. \"responseId\" : \"ID\" } This document focuses on the result object.",
+            "Page Summary outlined_flag The Address Validation API response contains a result object with properties like verdict , address , geocode , metadata , and uspsData to provide detailed information about the validated address.",
+            "Note: This document describes the basic elements of an address validation response for an address of high quality."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "Build your validation logic | Address Validation API | Google for Developers",
+          "source_id": "feature-recovery-direct-http",
+          "markdown_path": "products/address-validation-api/corpus/http/feature-recovery-direct.md",
+          "base_score": 165,
+          "final_score": 161,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "response",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 21
+            },
+            {
+              "phrase": "format",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "english",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Build your validation logic | Address Validation API | Google for Developers Skip to main content Maps Platform Overview Products Pricing Documentation Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users Blog Community GitHub YouTube LinkedIn Discord Innovators Issue Tracker / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Web Services Address Validation API Get Started Contact sales Guides Reference Resources Maps Platform Overview Products Pricing Documentation More Guides Reference Resources Blog Community More Address Validation API Overview Try the demo Address Validation API essentials Set up the Address Validation API Send an address validation request Understand a basic response Use address validation in your workflow Handle the validation response Build your validation logic Fix address - examples Add subpremises - examples (US only) Confirm address - examples Accept address - examples Handle US addresses Handle updated addresses Convert addresses into English Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users GitHub YouTube LinkedIn Discord Innovators Issue Tracker Home Products Google Maps Platform Documentation Web Services Address Validation API Send feedback Build your validation logic Stay organized with collections Save and categorize content based on your preferences.",
+            "Confirm address examples ACCEPT signals You might accept an address when the Address Validation API API response provides a high degree of confidence that the address is deliverable and can be used without further customer interaction in the downstream process.",
+            "Fix address examples CONFIRM_ADD_SUBPREMISES signals (US addresses only) You prompt your customer to review the address and consider adding a unit number when the Address Validation API response indicates the address might be missing a subpremises.",
+            "The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address has major issues, and what those issues are."
+          ]
+        }
+      ]
     }
   ]
 }

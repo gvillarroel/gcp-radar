@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/standard/configuration-files
 knowledge_key: corpus
 source_id: site-docs-root-2
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/overview
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/standard/configuration-files
   title: "Structuring web services in App Engine \_|\_ App Engine standard environment\

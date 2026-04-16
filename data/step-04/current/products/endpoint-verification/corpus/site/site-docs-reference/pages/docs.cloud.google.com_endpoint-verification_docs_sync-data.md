@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/endpoint-verification/docs/sync-data
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
 source_metadata:
   url: https://docs.cloud.google.com/endpoint-verification/docs/sync-data
   title: "Sync device information manually \_|\_ Endpoint Verification \_|\_ Google\

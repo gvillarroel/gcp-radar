@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.755Z"
+generated_at: "2026-04-15T00:42:40.885Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Cloud Build Secret Manager environment variables"
 feature_slug: "cloud-build-secret-manager-environment-variables"
 latest_feature_date: "2021-02-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
-  - "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildClient"
+  - "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
 keywords:
-  - "build"
-  - "secret"
   - "manager"
+  - "secret"
   - "environment"
-  - "variables"
-  - "can"
-  - "be"
   - "configured"
+  - "access"
+  - "variables"
 ---
 
 # Cloud Build Secret Manager environment variables
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +36,13 @@ Cloud Build can be configured to access secrets stored in Secret Manager through
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/build/docs/automate-builds-webhook-events](https://docs.cloud.google.com/build/docs/automate-builds-webhook-events)
-- [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildAsyncClient](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildClient](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildClient)
+- [https://docs.cloud.google.com/docs/buildpacks/set-environment-variables](https://docs.cloud.google.com/docs/buildpacks/set-environment-variables)
+- [https://docs.cloud.google.com/appengine/docs/standard/java/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java/config/appref)
 
 ## Supporting Pages
 
@@ -52,40 +50,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/build/docs/automate-builds-webhook-events](https://docs.cloud.google.com/build/docs/automate-builds-webhook-events)
 - Source ID: `site-docs-root-2`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 164
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Use the following command to invoke a webhook event: curl -X POST -H "Content-type: application/json" "https://cloudbuild.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ REGION } /triggers/ ${ TRIGGER NAME } :webhook?key= ${ API KEY } & secret= ${ SECRET VALUE } & trigger= ${ TRIGGER NAME } & projectId= ${ PROJECT ID } " -d "{}" After completing these steps, the Secret Manager Secret Accessor role will automatically be granted to your Cloud Build service agent, service-${PROJECT NUMBER}@gcp-sa-cloudbuild.iam.gserviceaccount.com .
+- To learn how to restrict your key, see Applying API key restrictions . (Optional) Grant Secret Manager role to your service account Cloud Build automatically grants the Secret Manager Secret Accessor role to service accounts that require the role during secret configuration.
 - If you use an existing secret, you may need to manually grant the Secret Manager Secret Accessor role to your Cloud Build service account, service-${PROJECT NUMBER}@gcp-sa-cloudbuild.iam.gserviceaccount.com .
-- Repository triggers that use Cloud Build repositories (2nd gen) can be configured programmatically and are natively integrated with source providers, including support for GitHub and GitLab.
-- Repository triggers let you filter incoming events and post build status back to the source provider, and can also be configured to work with a private network.
+- In the Assign roles section, select Secret Manager > Secret Manager Secret Accessor .
 
-### "Class CloudBuildAsyncClient (3.35.0) \_|\_ Python client libraries \_|\_\
+### "Set environment variables to configure builds \_|\_ Buildpacks \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildAsyncClient](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 180
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Fields can include the following variables, which will be expanded when the build is created: - $PROJECT ID: the project ID of the build. - $PROJECT NUMBER: the project number of the build. - $LOCATION: the location/region of the build. - $BUILD ID: the autogenerated ID of the build. - $REPO NAME: the source repository name specified by RepoSource. - $BRANCH NAME: the branch name specified by RepoSource. - $TAG NAME: the tag name specified by RepoSource. - $REVISION ID or $COMMIT SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. - $SHORT SHA: first 7 characters of $REVISION ID or $COMMIT SHA. secret version path secret version path ( project : str , secret : str , version : str ) - > str Returns a fully-qualified secret version string. service account path service account path ( project : str , service account : str ) - > str Returns a fully-qualified service account string. subscription path subscription path ( project : str , subscription : str ) - > str Returns a fully-qualified subscription string. topic path topic path ( project : str , topic : str ) - > str Returns a fully-qualified topic string. update build trigger update build trigger ( request : typing .
-- Fields can include the following variables, which will be expanded when the build is created: - $PROJECT ID: the project ID of the build. - $PROJECT NUMBER: the project number of the build. - $LOCATION: the location/region of the build. - $BUILD ID: the autogenerated ID of the build. - $REPO NAME: the source repository name specified by RepoSource. - $BRANCH NAME: the branch name specified by RepoSource. - $TAG NAME: the tag name specified by RepoSource. - $REVISION ID or $COMMIT SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. - $SHORT SHA: first 7 characters of $REVISION ID or $COMMIT SHA. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create build create build ( request : typing .
-- Fields can include the following variables, which will be expanded when the build is created: - $PROJECT ID: the project ID of the build. - $PROJECT NUMBER: the project number of the build. - $LOCATION: the location/region of the build. - $BUILD ID: the autogenerated ID of the build. - $REPO NAME: the source repository name specified by RepoSource. - $BRANCH NAME: the branch name specified by RepoSource. - $TAG NAME: the tag name specified by RepoSource. - $REVISION ID or $COMMIT SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. - $SHORT SHA: first 7 characters of $REVISION ID or $COMMIT SHA. build path build path ( project : str , build : str ) - > str Returns a fully-qualified build string. build trigger path build trigger path ( project : str , trigger : str ) - > str Returns a fully-qualified build trigger string. cancel build cancel build ( request : typing .
-- Fields can include the following variables, which will be expanded when the build is created: - $PROJECT ID: the project ID of the build. - $PROJECT NUMBER: the project number of the build. - $LOCATION: the location/region of the build. - $BUILD ID: the autogenerated ID of the build. - $REPO NAME: the source repository name specified by RepoSource. - $BRANCH NAME: the branch name specified by RepoSource. - $TAG NAME: the tag name specified by RepoSource. - $REVISION ID or $COMMIT SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. - $SHORT SHA: first 7 characters of $REVISION ID or $COMMIT SHA. create build trigger create build trigger ( request : typing .
-
-### "Class CloudBuildClient (3.35.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildClient](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildClient)
-- Source ID: `site-python-reference`
-- Final score: 180
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/docs/buildpacks/set-environment-variables](https://docs.cloud.google.com/docs/buildpacks/set-environment-variables)
+- Source ID: `site-docs-reference`
+- Final score: 159
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Fields can include the following variables, which will be expanded when the build is created: - $PROJECT ID: the project ID of the build. - $PROJECT NUMBER: the project number of the build. - $LOCATION: the location/region of the build. - $BUILD ID: the autogenerated ID of the build. - $REPO NAME: the source repository name specified by RepoSource. - $BRANCH NAME: the branch name specified by RepoSource. - $TAG NAME: the tag name specified by RepoSource. - $REVISION ID or $COMMIT SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. - $SHORT SHA: first 7 characters of $REVISION ID or $COMMIT SHA. secret version path secret version path ( project : str , secret : str , version : str ) - > str Returns a fully-qualified secret version string. service account path service account path ( project : str , service account : str ) - > str Returns a fully-qualified service account string. subscription path subscription path ( project : str , subscription : str ) - > str Returns a fully-qualified subscription string. topic path topic path ( project : str , topic : str ) - > str Returns a fully-qualified topic string. update build trigger update build trigger ( request : typing .
-- Fields can include the following variables, which will be expanded when the build is created: - $PROJECT ID: the project ID of the build. - $PROJECT NUMBER: the project number of the build. - $LOCATION: the location/region of the build. - $BUILD ID: the autogenerated ID of the build. - $REPO NAME: the source repository name specified by RepoSource. - $BRANCH NAME: the branch name specified by RepoSource. - $TAG NAME: the tag name specified by RepoSource. - $REVISION ID or $COMMIT SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. - $SHORT SHA: first 7 characters of $REVISION ID or $COMMIT SHA. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create build create build ( request : typing .
-- Fields can include the following variables, which will be expanded when the build is created: - $PROJECT ID: the project ID of the build. - $PROJECT NUMBER: the project number of the build. - $LOCATION: the location/region of the build. - $BUILD ID: the autogenerated ID of the build. - $REPO NAME: the source repository name specified by RepoSource. - $BRANCH NAME: the branch name specified by RepoSource. - $TAG NAME: the tag name specified by RepoSource. - $REVISION ID or $COMMIT SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. - $SHORT SHA: first 7 characters of $REVISION ID or $COMMIT SHA. build path build path ( project : str , build : str ) - > str Returns a fully-qualified build string. build trigger path build trigger path ( project : str , trigger : str ) - > str Returns a fully-qualified build trigger string. cancel build cancel build ( request : typing .
-- Fields can include the following variables, which will be expanded when the build is created: - $PROJECT ID: the project ID of the build. - $PROJECT NUMBER: the project number of the build. - $LOCATION: the location/region of the build. - $BUILD ID: the autogenerated ID of the build. - $REPO NAME: the source repository name specified by RepoSource. - $BRANCH NAME: the branch name specified by RepoSource. - $TAG NAME: the tag name specified by RepoSource. - $REVISION ID or $COMMIT SHA: the commit SHA specified by RepoSource or resolved from the specified branch or tag. - $SHORT SHA: first 7 characters of $REVISION ID or $COMMIT SHA. create build trigger create build trigger ( request : typing .
+- Optional: Download a sample application Clone the sample repository to your local machine: git clone https://github.com/GoogleCloudPlatform/buildpack-samples.git Change to the directory that contains the application sample code: Go cd buildpack-samples/sample-go Java cd buildpack-samples/sample-java-gradle Node.js cd buildpack-samples/sample-node PHP cd buildpack-samples/sample-php Python cd buildpack-samples/sample-python Ruby cd buildpack-samples/sample-ruby .NET cd buildpack-samples/sample-dotnet Build the application with environment variables In the root directory of your service, create or update your project.toml project descriptor to include the [[build.env]] section and any of the supported environment variable : [[ build.env ]] name = " ENVIRONMENT VARIABLE NAME " value = " ENVIRONMENT VARIABLE VALUE " Replace: ENVIRONMENT VARIABLE NAME with the name of a supported environment variable .
+- Example To set the GOOGLE ENTRYPOINT="gunicorn -p :8080 main:app" environment variable in your container image, you run the following command: pack build my-app \ --builder gcr.io/buildpacks/builder:v1 \ --env GOOGLE ENTRYPOINT = "gunicorn -p :8080 main:app" --env MY-LOCAL-ENV-VARIABLE Remote builds To set environment variables for remote builds, you use the project.toml project descriptor .
+- You can use one or more of the environment variables that are supported by your runtime . pack build SERVICE NAME \ --env ENVIRONMENT VARIABLE Replace: SERVICE NAME with the name of the service for your application or function.
+- Home Documentation Application hosting Buildpacks Guides Send feedback Set environment variables to configure builds Stay organized with collections Save and categorize content based on your preferences.
+
+### "App Engine app.yaml reference \_|\_ App Engine standard environment \_|\_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java/config/appref)
+- Source ID: `site-docs-reference-2`
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you are using a runtime that supports buildpacks , you can define build environment variables in your app.yaml file.
+- Environment variables that are prefixed with GAE are reserved for system use and not allowed in the app.yaml file.
+- See the list of runtime environment variables that cannot be overwritten. error handlers Optional.
+- You can define environment variables in your app.yaml file to make them available to your app.
 

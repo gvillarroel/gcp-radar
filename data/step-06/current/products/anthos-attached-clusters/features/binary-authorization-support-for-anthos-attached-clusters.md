@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.692Z"
+generated_at: "2026-04-15T00:04:29.449Z"
 product_name: "Anthos Attached Clusters"
 product_slug: "anthos-attached-clusters"
 feature_name: "Binary Authorization support for Anthos attached clusters"
@@ -11,16 +11,13 @@ coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/enable-binary-authorization"
   - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/enable-binary-authorization"
-  - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached"
+  - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster"
 keywords:
-  - "deploy-time security control"
-  - "attach cluster image signing"
-  - "container image attestation"
-  - "image policy enforcement"
-  - "signature validation"
-  - "binary auth"
-  - "Binary Authorization"
-  - "Binauthz"
+  - "introduced"
+  - "deploy"
+  - "time"
+  - "authorization"
+  - "binary"
 ---
 
 # Binary Authorization support for Anthos attached clusters
@@ -34,17 +31,17 @@ Introduced Binary Authorization as a deploy-time security control to enforce ima
 
 ## Extended Definition
 
-Binary Authorization support for GKE attached clusters allows you to enable Binary Authorization when registering or updating an attached cluster (including EKS and AKS). Google Cloud docs specify that enabling it requires enabling the Binary Authorization API and granting the `roles/binaryauthorization.policyEvaluator` role to the `gke-system/binauthz-agent` Kubernetes service account, with manual policy binding no longer required from Kubernetes 1.28 onward.
+Introduced Binary Authorization as a deploy-time security control to enforce image signing and signature validation for attached clusters.
 
 ## Evidence Summary
 
-The cited pages confirm how to enable Binary Authorization for attached clusters, including required API and IAM role setup and a version-specific note that manual policy binding is not needed starting with Kubernetes 1.28.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/enable-binary-authorization](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/enable-binary-authorization)
 - [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/enable-binary-authorization](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/enable-binary-authorization)
-- [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached)
+- [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster)
 
 ## Supporting Pages
 
@@ -52,9 +49,8 @@ The cited pages confirm how to enable Binary Authorization for attached clusters
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/enable-binary-authorization](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/enable-binary-authorization)
 - Source ID: `site-docs-root`
-- Final score: 116
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is dedicated to enabling Binary Authorization for attached clusters and provides the required API, IAM permissions, and attach/update command flags to enforce policy evaluation.
+- Final score: 131
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Grant the binaryauthorization.policyEvaluator role to the Kubernetes service account associated with the Binary Authorization agent: gcloud projects add-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT ID .svc.id.goog [ gke-system/binauthz-agent ] \ --role = "roles/binaryauthorization.policyEvaluator" Enable Binary Authorization when registering or updating a cluster.
@@ -66,9 +62,8 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/enable-binary-authorization](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/enable-binary-authorization)
 - Source ID: `site-docs-root`
-- Final score: 116
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is a step-by-step guide to enabling Binary Authorization on attached clusters, including API enablement, IAM role binding, and required registration/update flags.
+- Final score: 131
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Grant the binaryauthorization.policyEvaluator role to the Kubernetes service account associated with the Binary Authorization agent: gcloud projects add-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT ID .svc.id.goog [ gke-system/binauthz-agent ] \ --role = "roles/binaryauthorization.policyEvaluator" Enable Binary Authorization when registering or updating a cluster.
@@ -76,13 +71,17 @@ Evidence snippets:
 - Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE attached clusters Guides Send feedback Enable Binary Authorization Stay organized with collections Save and categorize content based on your preferences.
 - Note: Starting with Kubernetes version 1.28, manual policy binding to authorize the service account for Binary Authorization is no longer necessary.
 
-### GKE attached clusters documentation \_|\_ Google Cloud Documentation
+### "Connect to your CNCF conformant cluster \_|\_ GKE attached clusters \_|\_\
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached)
+- URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster)
 - Source ID: `site-docs-root`
-- Final score: 24
-- Re-rank relevance: N/A
+- Final score: 56
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Documentation resources Find quickstarts and guides, review key references, and get help with common issues. info EKS clusters (AWS) Attach your EKS cluster Connect to your EKS cluster Install Config Management Install Cloud Service Mesh Install logging for EKS attached clusters Install monitoring for EKS attached clusters Enable Binary Authorization for EKS attached clusters Get support info AKS clusters (Azure) Attach your AKS cluster Connect to your AKS cluster Install Config Management Install Cloud Service Mesh Install logging for AKS attached clusters Install monitoring for AKS attached clusters Enable Binary Authorization for AKS attached clusters Get support info Other cluster distributions Attach other Kubernetes clusters Connect to your cluster Install Config Management Install Cloud Service Mesh Install logging for attached clusters Install monitoring for attached clusters Get support Impact of temporary disconnection from Google Cloud Pricing Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For example, the following manifest grants the Google Group cluster-admin-team the role of cluster administrator: apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRoleBinding metadata : name : gateway-cluster-admin-group subjects : - kind : Group name : cluster-admin-team@example.com roleRef : kind : ClusterRole name : cluster-admin apiGroup : rbac.authorization.k8s.io Save the manifest to a file and apply it to the cluster by running the following command: kubectl apply -kubeconfig = KUBECONFIG PATH -f FILENAME Replace the following: KUBECONFIG PATH : the path to your kubeconfig file.
+- Using Google Groups to grant cluster access is more efficient than creating separate authorizations for individual users.
+- Method #2, however, saves you time because you only need to create RBAC rules for three Google groups.
+- For details, see Using RBAC Authorization .
 

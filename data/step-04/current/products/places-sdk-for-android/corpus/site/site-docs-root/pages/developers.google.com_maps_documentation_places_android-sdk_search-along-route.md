@@ -4,7 +4,7 @@ url: https://developers.google.com/maps/documentation/places/android-sdk/search-
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/places/android-sdk
+entrypoint: https://developers.google.com/maps/documentation/places/android-sdk/overview
 source_metadata:
   url: https://developers.google.com/maps/documentation/places/android-sdk/search-along-route
   title: "Places SDK for Android \_|\_ Google for Developers"
@@ -118,6 +118,6 @@ In the APIs Explorer panel, select the fullscreen icon
 fullscreen to expand the APIs Explorer window.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-09 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["To search along a route using Text Search (New), first calculate a route with the Routes API, ensuring it returns an encoded polyline. Then, use `SearchAlongRouteParameters.setPolyline()` to pass this polyline to Text Search, biasing results to places near the route. By default, the search covers the entire route, but an alternative origin can be set with `RoutingParameters` to search along a portion of the route. Initiate the search by constructing the `SearchByTextRequest` object with the polyline and other optional parameters, then by calling the `searchByText` function.\n"]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],["To search along a route using Text Search (New), first calculate a route with the Routes API, ensuring it returns an encoded polyline. Then, use `SearchAlongRouteParameters.setPolyline()` to pass this polyline to Text Search, biasing results to places near the route. By default, the search covers the entire route, but an alternative origin can be set with `RoutingParameters` to search along a portion of the route. Initiate the search by constructing the `SearchByTextRequest` object with the polyline and other optional parameters, then by calling the `searchByText` function.\n"]]

@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.930Z"
+generated_at: "2026-04-14T16:02:18.747Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "joins in YARA-L Search queries"
 feature_slug: "joins-in-yara-l-search-queries"
 latest_feature_date: "2025-09-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
   - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+  - "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact"
+  - "https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc"
 keywords:
   - "joins"
-  - "in"
   - "yara"
   - "search"
   - "queries"
   - "preview"
-  - "that"
+  - "feature"
   - "lets"
+  - "statistical"
 ---
 
 # joins in YARA-L Search queries
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,51 @@ A preview feature that lets statistical Search queries use joins to correlate da
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
 - [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
+- [https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact](https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact)
+- [https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc](https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc)
 
 ## Supporting Pages
-
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 168
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 27, 2025 Feature Use joins in YARA-L Search queries These changes are currently in Preview.
-- Deduplicate events in searches and dashboards The new dedup section lets you remove duplicate events after the match clause in both standard UDM searches and YARA-L 2.0 queries.
-- You can now use joins in statistical Search queries that include a match section to correlate data from multiple sources.
-- March 19, 2025 Announcement The following parser documentation is now available: Collect AWS Config logs Collect AWS Elastic Load Balancing logs Collect AWS Route 53 logs Collect AWS S3 server access logs Collect AWS WAF logs Collect Azure Application Gateway logs Collect Carbon Black App Control logs Collect Carbon Black EDR logs Collect Delinea Secret Server logs Collect Radware WAF logs Collect AWS Aurora logs Collect AWS CloudWatch logs Collect AWS Control Tower logs Collect AWS Elastic MapReduce logs Collect AWS Key Management Service logs Collect AWS Macie logs Collect AWS Network Firewall logs Collect AWS Security Hub logs Collect AWS Session Manager logs Collect Zscaler DLP logs Collect Zscaler Tunnel logs Collect Zscaler VPN logs Collect Zscaler ZPA Audit logs Collect Zscaler ZPA logs Collect Zscaler CASB logs Collect Azure AD Sign-In logs Collect Azure API Management logs Collect Azure APP Service logs Collect Azure Firewall logs Collect Azure VPN logs Collect AWS VPN logs Collect Azure Storage Audit logs Collect Azure WAF logs Collect Cloud IoT logs Collect Cloud Run logs Collect Cloud Compute logs Collect CrowdStrike Falcon Stream logs Collect SentinelOne Deep Visibility logs Collect Cloud VPC Flow Logs Collect Cloud Compute context logs Collect Cloud Intrusion Detection System (Cloud IDS) logs Collect Cloud Next Generation Firewall Enterprise logs Collect Cloud Storage context logs Collect Cloud Identity and Access Management (IAM) Analysis logs Collect Cloud Identity Devices logs Collect Cloud Identity Device Users logs Collect Cloud Security Command Center Error logs Collect Cloud Security Command Center Observation logs Collect Cloud Security Command Center Posture Violation logs Collect Cloud Security Command Center Toxic Combination logs Collect Cloud Security Command Center Unspecified logs Collect Cloud Secure Web Proxy logs March 18, 2025 Feature Statistics and aggregations in UDM search using YARA-L 2.0 You can now run statistical queries on UDM events and group the results for analysis using YARA-L 2.0.
-
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 168
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 27, 2025 Feature Use joins in YARA-L Search queries These changes are currently in Preview.
-- Deduplicate events in searches and dashboards The new dedup section lets you remove duplicate events after the match clause in both standard UDM searches and YARA-L 2.0 queries.
-- You can now use joins in statistical Search queries that include a match section to correlate data from multiple sources.
-- November 07, 2025 Change MITRE ATT&CK coverage dashboard is now available The new MITRE ATT&CK coverage dashboard lets you measure your security posture against the MITRE ATT&CK framework, helping you: Assess threat coverage Identify gaps Prioritize security efforts October 31, 2025 Feature Search usability enhancements Google SecOps has introduced the following capabilities to improve usability, performance, and customization in search results: Improved performance for large result sets : For broad queries, Google SecOps now provides paginated search results.
 
 ### "Search for events and alerts \_|\_ Google Security Operations \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 - Source ID: `site-docs-reference-2`
-- Final score: 164
+- Final score: 169
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Feature Programmatic access limit Web interface limit QPH limit 2,000 1,000 Simple query concurrency 40 40 Complex query concurrency 10 10 Concurrency limits Concurrency limits define the number of simultaneous search operations allowed per tenant: Simple queries: Queries that span less than one day, use a single data source, and don't include stats.
 - Search for events and alerts Supported in: Google secops SIEM The search function lets you find Unified Data Model (UDM) events and alerts in your Google Security Operations instance using YARA-L 2.0 syntax .
-- The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = "USER LOGIN" and target.hostname = "finance-svr" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = "NETWORK CONNECTION" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = "PROCESS LAUNCH" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields.
-- For example: additional.fields["key"]="value" Examples of searches using specific key-value pairs in the additional and labels fields: Search for events containing specified key-value pairs: additional.fields["pod name"] = "kube-scheduler" metadata.ingestion labels["MetadataKeyDeletion"] = "startup-script" Use the AND operator with key-value pair searches: additional.fields["pod name"] = "kube-scheduler" AND additional.fields["pod name1"] = "kube-scheduler1" Search for all events that contain the specified key, regardless of the value: additional.fields["pod name"] != "" Search for events that contain a specific key, using a regular expression: additional.fields.value.string value = "mystring" Note: You can also use value.bool value or value.number value for boolean and numeric matches.
+- Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.
+- Search limits and quotas Google SecOps enforces limits on search queries to ensure platform stability and consistent performance across programmatic and web interface.
+
+### "Impact of data RBAC on Google SecOps features \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact](https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact)
+- Source ID: `site-docs-reference`
+- Final score: 123
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Can view and use unscoped list Yes Yes Can run UDM search and dashboard queries with unscoped reference lists Yes Yes Can run UDM search and dashboard queries with scoped reference lists Yes Yes (if there is at least one matching scope between the user and the reference list) For example, a user with scope A can run UDM search queries with reference lists with scopes A, B, and C, but not with reference lists with scopes B and C.
+- Can view and use unscoped data table Yes Yes Can run search queries with unscoped data tables Yes Yes Can run search queries with scoped data tables Yes Yes (if there's at least one matching scope between the user and the data table) For example, a user with scope A can run search queries with data tables with scopes A, B, and C, but not with data tables with scopes B and C.
+- Impact of data RBAC on Google SecOps features Supported in: Google secops SIEM Data role-based access control ( data RBAC ) is a security model that restricts user access to data based on individual user roles within an organization.
+- Entity details across Google SecOps The following fields, which describe an asset or a user, appear on multiple pages in Google SecOps, such as the Entity Context panel in UDM Search.
+
+### "SIEM table of contents \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc](https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc)
+- Source ID: `site-api-reference`
+- Final score: 114
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Google SecOps SIEM Product overview Sign in to Google SecOps Quickstart: Conduct a search Quickstart: Investigate an alert Configure user preferences (SIEM only) Onboarding to Google SecOps Overview of the process Understand your Google SecOps billing components Configure Google Cloud project for Google SecOps Configure an identity provider Configure a Google Cloud identity provider Configure a third-party identity provider Configure feature access control using IAM Configure data RBAC using IAM RBAC user guide for applications not using IAM Google SecOps permissions in IAM Link Google SecOps to Google Cloud services Ingest data Ingest entity data Overview of data ingestion Supported data sets and default parsers Ingest data to Google SecOps Ingest logs from specific sources Install and configure forwarders Overview of Google SecOps forwarders Google SecOps forwarder for Linux Google SecOps forwarder for Windows on Docker Google SecOps forwarder executable for Windows Manage forwarder configurations through Google SecOps Troubleshoot common Linux forwarder issues Set up data feeds Feed management overview Create and manage feeds using the feed management UI Create an Azure Event Hub feed Create and manage feeds using the feed management API Use ingestion scripts deployed as Cloud Functions Use the Ingestion API DataTap Configuration API Use the Bindplane agent Customer Management API Data Export API Data Export API (Enhanced) Monitor data ingestion Use Data Ingestion and Health dashboard Use Cloud Monitoring for ingestion notifications View your billed ingestion volume Work with Google SecOps parsers Overview of log parsing Overview of the Unified Data Model Manage prebuilt and custom parsers Request prebuilt and create custom log types Parser extensions Parser extension examples Important UDM fields for parser data mapping Tips and troubleshooting when writing parsers Format log data as UDM Enrichment UDM enrichment and aliasing overview Aliasing Enrichment How Google SecOps enriches event and entity data Block enrichment from specific flows Using the Entity Context Graph (ECG) Auto Extraction overview Detecting threats View alerts and IOCs Review potential security threats Single event rules Multiple event rules Composite detections Overview of composite detections Monitor for events using rules View rules in the Rules Dashboard Manage unified rules Troubleshoot rule runtime errors Understand rule quotas Understand rule quotas Risk-based alerting with entity only rules Understand threat coverage with the MITRE ATT&CK matrix View previous versions of a rule Archive rules Download events Run a rule against live data Run a rule against historical data Optimize detection and reporting performance Understand rule replays and MTTD Understand rule detection delays Manage your rule run schedule Configure customized schedules for rules Understand rule run scheduling Detection limits Rule errors Create context-aware analytics Overview of context-aware analytics Use Cloud Sensitive Data Protection data in context-aware analytics Use context-enriched data in rules Use default detection rules Risk analytics Risk Analytics Quickstart guide Overview of Risk Analytics Use the Risk Analytics dashboard Metric functions for Risk Analytics rules Watchlist Quickstart guide Specify entity risk score in rules Watchlists FAQ Risk Analytics FAQ Work with curated detections Use curated detections to identify threats Use curated detection rules for third-party vendor alerts Use the curated detections UI Cloud Threats category overview Composite Rules category overview Non-prioritized IoC Matching threats category overview Chrome Enterprise Threats category overview Linux Threats category overview macOS Threats category overview Mandiant Hunting Rules category overview Risk Analytics for UEBA category overview Windows Threats category overview Applied Threat Intelligence curated detections overview Verify data ingestion using test rules Configure rule exclusions Rules capacity Manage noisy alerts Configure alert suppression Manage rule exclusion using API Applied Threat Intelligence Applied Threat Intelligence overview Applied Threat Intelligence prioritization View IOCs using Applied Threat Intelligence IC score overview Applied Threat Intelligence fusion feed overview Emerging Threats Center Emerging Threats Center detail view Answer Threat Intelligence questions with Gemini Gemini documentation summaries Use Triage and Investigation Agent to investigate alerts Triage and Investigation Agent dashboard YARA-L 2.0 Get Started Syntax Meta section Events section Match section Outcome section Conditions section Options section Expressions, operators, and other constructs Nested if statements Use OR syntax in the condition section Use N OF syntax with event variables Repeated fields Reference list syntax Detection event sampling YARA-L 2.0 windowing logic Functions Functions for Dashboards Query and investigate Statistics and aggregations Use conditions in Search and Dashboards Create and save visualizations in Search Use metrics in Search Use deduplication in Search and Dashboards Create multi-stage queries Develop detection rules Use context-enriched data in rules Context-aware analysis overview Specify entity risk score in rules Use metric functions for Risk Analytics rules Applied Threat Intelligence fusion feed overview Composite detections overview Construct composite detection rules Rule structure and best practices Manage and troubleshoot Run a rule against historical data Configure rule exclusions View and troubleshoot rule errors Known issues and limitations Reference: Query libraries and transitions YARA-L 2.0 query reference library YARA-L 2.0 dashboard query library Transition from SPL to YARA-L 2.0 Generate search queries with Gemini Generate a YARA-L 2.0 rule using Gemini Investigating threats View Alerts Overview Manage alerts Investigate a GCTI alert Investigate alerts and entity context Searching for data Search for UDM event Use context-enriched fields in UDM search Use UDM Search to investigate an entity Use UDM Search time range and manage queries Use conditions in search and dashboards Use deduplication in search and dashboards Metrics in UDM search using YARA-L 2.0 Use joins in Search YARA-L 2.0 statistics and aggregations Use aggregations in YARA-L 2.0 queries Generate UDM search queries with Gemini UDM search best practices Conduct a raw log search Search raw logs using Raw Log Scan Filter data in raw log search Create a reference list Using investigative views Use investigative views Investigate an asset Work with asset namespaces Investigate a domain Investigate an IP address Investigate a user Investigate a file View information from VirusTotal Filtering data in investigative views Overview of procedural filtering Filter data in User view Filter data in Asset view Filter data in Domain view Filter data in IP Address view Filter data in Hash view Reporting Use context-enriched data in reports Dashboards overview Work with custom dashboards Create a custom dashboard Add a chart to a dashboard Share a personal dashboard Schedule dashboard reports Import and export Google SecOps dashboards Work with Dashboards Dashboards overview Curated Dashboards Manage Native Dashboards Manage charts in Native Dashboards Native Dashboard filters Visualizations in search Configure scheduled reports Data export Export to a Google-managed BigQuery project (legacy) Export to self-managed BigQuery project Stream Data with Advanced BigQuery Export Understand BigQuery data schema Export raw logs to self-managed Google Cloud Storage bucket Administration Close alerts in bulk using the API.
+- Administer users Configure feature access control using IAM Configure VPC Service Controls Configure VPC Service Controls for Google SecOps Configure data access control Overview of data RBAC Data RBAC impact on features Configure data RBAC for users Configure data RBAC for data tables Configure data RBAC for reference lists Set up data feeds Feed management user guide CLI user guide Configure audit logs Data retention Google Analytics in Google SecOps Deprovision Self-service deprovisioning for Google SecOps Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

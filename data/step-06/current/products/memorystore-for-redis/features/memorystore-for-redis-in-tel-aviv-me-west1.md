@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:44.353Z"
+generated_at: "2026-04-12T12:17:52.273Z"
 product_name: "Memorystore for Redis"
 product_slug: "memorystore-for-redis"
 feature_name: "Memorystore for Redis in Tel Aviv (me-west1)"
 feature_slug: "memorystore-for-redis-in-tel-aviv-me-west1"
 latest_feature_date: "2022-10-05"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/pricing"
 keywords:
   - "memorystore"
   - "for"
@@ -24,7 +27,7 @@ keywords:
 # Memorystore for Redis in Tel Aviv (me-west1)
 
 Product: Memorystore for Redis
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Memorystore for Redis is available in the Tel Aviv region.
 
 Memorystore for Redis is available in the Tel Aviv region.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform](https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform)
+- [https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis](https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis)
+- [https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows](https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows)
+- [https://docs.cloud.google.com/memorystore/docs/redis/pricing](https://docs.cloud.google.com/memorystore/docs/redis/pricing)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Quickstart: Create a Memorystore for Redis instance by using Terraform \_\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform](https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform)
+- Source ID: `site-docs-root-2`
+- Final score: 330
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Replace VARIABLES with appropriate values. telnet INSTANCE IP ADDRESS 6379 If you can connect to the instance, then the command returns this result: Trying INSTANCE IP ADDRESS … Connected to INSTANCE IP ADDRESS In the telnet session, enter some Redis commands: Enter: PING Result: PONG Enter SET HELLO WORLD Result: +OK Enter: GET HELLO Result: $5 WORLD Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, follow these steps.
+- Required roles To get the permissions that you need to create a Memorystore for Redis instance, ask your administrator to grant you the following IAM roles on the project: Cloud Memorystore Redis Admin ( roles/redis.admin ) Compute Instance Admin (v1) ( roles/compute.instanceAdmin.v1 ) Service Account User ( roles/iam.serviceAccountUser ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Add the following resource to your Terraform configuration file: resource "google redis instance" "my memorystore redis instance" { name = "myinstance" tier = "BASIC" memory size gb = 2 region = "us-central1" redis version = "REDIS 6 X" } Add the following output value to your Terraform configuration file to print the IP address of the instance.
+- Connect to the Memorystore for Redis instance from a Compute Engine VM You can connect to the Memorystore for Redis instance from any Compute Engine VM that uses the instance's authorized network with a supported RFC 1918 IP address .
+
+### High availability for Memorystore for Redis \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis](https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis)
+- Source ID: `site-docs-root`
+- Final score: 330
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- How a failover affects your application When the primary instance fails over to the replica, Memorystore for Redis drops existing connections to the primary endpoint of the instance.
+- For information about the metrics that Cloud Monitoring provides for Memorystore for Redis, see Monitor Redis Instances and Supported monitoring metrics for Memorystore for Redis .
+- During a failover, if there are connections to the read endpoint, then Memorystore for Redis drops the connections to the replica that's being promoted to the primary instance.
+- Memorystore for Redis uses the asynchronous replication protocol to copy any changes that you make to the data on the primary instance to the replicas.
+
+### "Find and set maintenance windows \_|\_ Memorystore for Redis \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows](https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows)
+- Source ID: `site-docs-root-2`
+- Final score: 328
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Reschedule planned maintenance Caution: if you programmatically reschedule maintenance in bulk requests (not natively supported by Memorystore for Redis), limit batch reschedule sizes to 100 instances per batch.
+- Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Find and set maintenance windows Stay organized with collections Save and categorize content based on your preferences.
+- Find scheduled maintenance If maintenance has been scheduled for your instance, you can view it using the following instructions: Console Go to the Memorystore for Redis page in the Google Cloud console.
+- Set a preferred window for maintenance on an instance Console Go to the Memorystore for Redis page in the Google Cloud console.
+
+### Memorystore for Redis | Google Cloud
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/pricing](https://docs.cloud.google.com/memorystore/docs/redis/pricing)
+- Source ID: `site-docs-root`
+- Final score: 320
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To see Basic Tier and Standard Tier pricing, select a region from the drop-down list above the following table: Iowa (us-central1) Johannesburg (africa-south1) Taiwan (asia-east1) Hong Kong (asia-east2) Tokyo (asia-northeast1) Osaka (asia-northeast2) Seoul (asia-northeast3) Mumbai (asia-south1) Delhi (asia-south2) Singapore (asia-southeast1) Jakarta (asia-southeast2) Bangkok (asia-southeast3) Sydney (australia-southeast1) Melbourne (australia-southeast2) Warsaw (europe-central2) Finland (europe-north1) Stockholm (europe-north2) Madrid (europe-southwest1) Belgium (europe-west1) Berlin (europe-west10) Turin (europe-west12) London (europe-west2) Frankfurt (europe-west3) Netherlands (europe-west4) Zurich (europe-west6) Milan (europe-west8) Paris (europe-west9) Doha (me-central1) Dammam (me-central2) Tel Aviv (me-west1) Montreal (northamerica-northeast1) Toronto (northamerica-northeast2) Mexico (northamerica-south1) Sao Paulo (southamerica-east1) Santiago (southamerica-west1) Iowa (us-central1) Oklahoma (us-central2) South Carolina (us-east1) Northern Virginia (us-east4) Columbus (us-east5) Alabama (us-east7) Dallas (us-south1) Oregon (us-west1) Los Angeles (us-west2) Salt Lake City (us-west3) Las Vegas (us-west4) Phoenix (us-west8) Show discount options Hourly Hourly Monthly Monthly Service tier Capacity tier Minimum network performance Default (USD) info Consumption model ID: 7754-699E-0EBF Memorystore for Redis CUD - 1 Year (USD) info Consumption model ID: DD5B-8EB3-C48D Memorystore for Redis CUD - 3 Year (USD) info Consumption model ID: 8E4B-B283-45D8 Basic M1 (1 to 4 GiB) 10 Gbps $0.049 / 1 gibibyte hour - - M2 (5 to 10 GiB) 10 Gbps $0.027 / 1 gibibyte hour $0.0216 / 1 gibibyte hour $0.0162 / 1 gibibyte hour M3 (11 to 35 GiB) 10 Gbps $0.023 / 1 gibibyte hour $0.0184 / 1 gibibyte hour $0.0138 / 1 gibibyte hour M4 (36 to 100 GiB) 16 Gbps $0.019 / 1 gibibyte hour $0.0152 / 1 gibibyte hour $0.0114 / 1 gibibyte hour M5 (> 100 GiB) 16 Gbps $0.016 / 1 gibibyte hour $0.0128 / 1 gibibyte hour $0.0096 / 1 gibibyte hour Standard M1 (1 to 4 GiB) 10 Gbps $0.064 / 1 gibibyte hour - - M2 (5 to 10 GiB) 10 Gbps $0.054 / 1 gibibyte hour $0.0432 / 1 gibibyte hour $0.0324 / 1 gibibyte hour M3 (11 to 35 GiB) 10 Gbps $0.046 / 1 gibibyte hour $0.0368 / 1 gibibyte hour $0.0276 / 1 gibibyte hour M4 (36 to 100 GiB) 16 Gbps $0.035 / 1 gibibyte hour $0.028 / 1 gibibyte hour $0.021 / 1 gibibyte hour M5 (> 100 GiB) 16 Gbps $0.03 / 1 gibibyte hour $0.024 / 1 gibibyte hour $0.018 / 1 gibibyte hour Each consumption model has a unique ID.
+- The following table lists the prices for nodes when read replicas are enabled for your instance: Iowa (us-central1) Johannesburg (africa-south1) Taiwan (asia-east1) Hong Kong (asia-east2) Tokyo (asia-northeast1) Osaka (asia-northeast2) Seoul (asia-northeast3) Mumbai (asia-south1) Delhi (asia-south2) Singapore (asia-southeast1) Jakarta (asia-southeast2) Bangkok (asia-southeast3) Sydney (australia-southeast1) Melbourne (australia-southeast2) Warsaw (europe-central2) Finland (europe-north1) Stockholm (europe-north2) Madrid (europe-southwest1) Belgium (europe-west1) Berlin (europe-west10) Turin (europe-west12) London (europe-west2) Frankfurt (europe-west3) Netherlands (europe-west4) Zurich (europe-west6) Milan (europe-west8) Paris (europe-west9) Doha (me-central1) Dammam (me-central2) Tel Aviv (me-west1) Montreal (northamerica-northeast1) Toronto (northamerica-northeast2) Mexico (northamerica-south1) Sao Paulo (southamerica-east1) Santiago (southamerica-west1) Iowa (us-central1) Oklahoma (us-central2) South Carolina (us-east1) Northern Virginia (us-east4) Columbus (us-east5) Alabama (us-east7) Dallas (us-south1) Oregon (us-west1) Los Angeles (us-west2) Salt Lake City (us-west3) Las Vegas (us-west4) Phoenix (us-west8) Show discount options Hourly Hourly Monthly Monthly Service tier Capacity tier 1 Minimum network performance Default (USD) info Consumption model ID: 7754-699E-0EBF Memorystore for Redis CUD - 1 Year (USD) info Consumption model ID: DD5B-8EB3-C48D Memorystore for Redis CUD - 3 Year (USD) info Consumption model ID: 8E4B-B283-45D8 Standard M2 (5 to 10 GiB) 10 Gbps $0.027 / 1 gibibyte hour $0.0216 / 1 gibibyte hour $0.0162 / 1 gibibyte hour M3 (11 to 35 GiB) 10 Gbps $0.023 / 1 gibibyte hour $0.0184 / 1 gibibyte hour $0.0138 / 1 gibibyte hour M4 (36 to 100 GiB) 16 Gbps $0.019 / 1 gibibyte hour $0.0152 / 1 gibibyte hour $0.0114 / 1 gibibyte hour M5 (> 100 GiB) 2 16 Gbps $0.016 / 1 gibibyte hour $0.0128 / 1 gibibyte hour $0.0096 / 1 gibibyte hour Each consumption model has a unique ID.
+- Google Cloud partners Learn about the ecosystem and resources. close Overview arrow forward Solutions arrow forward Products arrow forward Pricing arrow forward Resources arrow forward Docs Support Console Accelerate your digital transformation Learn more Key benefits Why Google Cloud AI and ML Multicloud Global infrastructure Data Cloud Modern Infrastructure Cloud Security Productivity and collaboration Reports and insights Executive insights Analyst reports Whitepapers Customer stories Industry Solutions Retail Consumer Packaged Goods Financial Services Healthcare and Life Sciences Media and Entertainment Telecommunications Games Manufacturing Supply Chain and Logistics Government Education See all industry solutions See all solutions Application Modernization CAMP Modernize Traditional Applications Migrate from PaaS: Cloud Foundry, Openshift Migrate from Mainframe Modernize Software Delivery DevOps Best Practices SRE Principles Platform Engineering Run Applications at the Edge Architect for Multicloud Go Serverless Artificial Intelligence Customer Engagement Suite with Google AI Document AI Vertex AI Search for commerce Google Cloud with Gemini Generative AI on Google Cloud APIs and Applications New Business Channels Using APIs Unlocking Legacy Applications Using APIs Open Banking APIx Data Analytics Data Migration Data Lakehouse Real-time Analytics Marketing Analytics Datasets Business Intelligence AI for Data Analytics Geospatial Analytics Databases Database Migration Database Modernization Databases for Games Google Cloud Databases Migrate Oracle workloads to Google Cloud Open Source Databases SQL Server on Google Cloud Gemini for Databases Infrastructure Modernization Application Migration SAP on Google Cloud High Performance Computing Windows on Google Cloud Data Center Migration Active Assist Virtual Desktops Rapid Migration and Modernization Program Backup and Disaster Recovery Red Hat on Google Cloud Cross-Cloud Network Observability Productivity and Collaboration Google Workspace Google Workspace Essentials Cloud Identity Chrome Enterprise Security Agentic SOC Web App and API Protection Security and Resilience Framework Risk and compliance as code (RCaC) Software Supply Chain Security Security Foundation Google Cloud Cybershield™ Startups and SMB Startup Program Small and Medium Business Software as a Service Featured Products Compute Engine Cloud Storage BigQuery Cloud Run Google Kubernetes Engine Vertex AI Looker Apigee API Management Cloud SQL Gemini Enterprise Cloud CDN See all products (100+) AI and Machine Learning Vertex AI Platform Vertex AI Studio Vertex AI Agent Builder Conversational Agents Vertex AI Search Speech-to-Text Text-to-Speech Translation AI Gemini Enterprise Vision AI Contact Center as a Service See all AI and machine learning products Business Intelligence Looker Looker Studio Compute Compute Engine App Engine Cloud GPUs Migrate to Virtual Machines Spot VMs Batch Sole-Tenant Nodes Bare Metal Recommender VMware Engine Cloud Run See all compute products Containers Google Kubernetes Engine Cloud Run Cloud Build Artifact Registry Cloud Code Cloud Deploy Migrate to Containers Deep Learning Containers Knative Data Analytics BigQuery Looker Dataflow Pub/Sub Dataproc Google Cloud Serverless for Apache Spark Cloud Composer BigLake Dataplex Universal Catalog BigQuery Migration Services Managed Service for Apache Kafka See all data analytics products Databases AlloyDB for PostgreSQL Cloud SQL Firestore Spanner Bigtable Datastream Database Migration Service Bare Metal Solution Memorystore Developer Tools Artifact Registry Cloud Code Cloud Build Cloud Deploy Cloud Deployment Manager Cloud SDK Cloud Scheduler Cloud Source Repositories Infrastructure Manager Cloud Workstations Gemini Code Assist See all developer tools Distributed Cloud Google Distributed Cloud Connected Google Distributed Cloud Air-gapped Hybrid and Multicloud Google Kubernetes Engine Apigee API Management Migrate to Containers Cloud Build Observability Cloud Service Mesh Google Distributed Cloud Industry Specific Anti Money Laundering AI Cloud Healthcare API Device Connect for Fitbit Telecom Network Automation Telecom Data Fabric Telecom Subscriber Insights Spectrum Access System (SAS) Integration Services Application Integration Workflows Apigee API Management Cloud Tasks Cloud Scheduler Dataproc Cloud Data Fusion Cloud Composer Pub/Sub Eventarc Management Tools Cloud Shell Cloud console Cloud Endpoints Cloud IAM Cloud APIs Service Catalog Cost Management Observability Carbon Footprint Config Connector Active Assist See all management tools Maps and Geospatial Earth Engine Google Maps Platform Media Services Cloud CDN Live Stream API OpenCue Transcoder API Video Stitcher API Migration Migration Center Application Migration Migrate to Virtual Machines Cloud Foundation Toolkit Database Migration Service Migrate to Containers BigQuery Migration Services Rapid Migration and Modernization Program Transfer Appliance Storage Transfer Service VMware Engine Mixed Reality Immersive Stream for XR Networking Cloud Armor Cloud CDN and Media CDN Cloud DNS Cloud Load Balancing Cloud NAT Cloud Connectivity Network Connectivity Center Network Intelligence Center Network Service Tiers Virtual Private Cloud Private Service Connect See all networking products Operations Cloud Logging Cloud Monitoring Error Reporting Managed Service for Prometheus Cloud Trace Cloud Profiler Cloud Quotas Productivity and Collaboration AppSheet Gemini Enterprise Google Workspace Google Workspace Essentials Cloud Identity Chrome Enterprise Security and Identity Cloud IAM Sensitive Data Protection Mandiant Managed Defense Google Threat Intelligence Security Command Center Cloud Key Management Mandiant Incident Response Chrome Enterprise Premium Assured Workloads Google Security Operations Mandiant Consulting See all security and identity products Serverless Cloud Run Cloud Functions App Engine Workflows API Gateway Storage Cloud Storage Block Storage Filestore Persistent Disk Cloud Storage for Firebase Local SSD Storage Transfer Service Google Cloud Managed Lustre Google Cloud NetApp Volumes Backup and DR Service Web3 Blockchain Node Engine Blockchain RPC Save money with our transparent approach to pricing Request a quote Pricing overview and tools Google Cloud pricing Pricing calculator Google Cloud free tier Cost optimization framework Cost management tools Product-specific Pricing Compute Engine Cloud SQL Google Kubernetes Engine Cloud Storage BigQuery See full price list with 100+ products Learn & build Google Cloud Free Program Solution Generator Quickstarts Blog Learning Hub Google Cloud certification Cloud computing basics Cloud Architecture Center Connect Innovators Developer Center Events and webinars Google Cloud Community Consulting and Partners Google Cloud Consulting Google Cloud Marketplace Find a partner Google Cloud partners Why Google Choosing Google Cloud Trust and security Modern Infrastructure Cloud Multicloud Global infrastructure Locations Customers and case studies Analyst reports Whitepapers Blog Products and pricing Google Cloud pricing Google Workspace pricing See all products Solutions Infrastructure modernization Databases Application modernization Smart analytics Artificial Intelligence Security Productivity & work transformation Industry solutions DevOps solutions Small business solutions See all solutions Resources Google Cloud Affiliate Program Google Cloud documentation Google Cloud quickstarts Google Cloud Marketplace Learn about cloud computing Support Code samples Cloud Architecture Center Training Certifications Google for Developers Google Cloud for Startups System status Release Notes Engage Contact sales Find a Partner Become a Partner Events Podcasts Developer Center Press Corner Google Cloud on YouTube Google Cloud Tech on YouTube Follow on X Join User Research We're hiring.
+- When accessing a Memorystore instance from a client in a different region, Memorystore charges you for network egress traffic from Redis instances to your client application.
 

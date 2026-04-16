@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.034Z"
+generated_at: "2026-04-12T12:15:59.662Z"
 product_name: "Filestore"
 product_slug: "filestore"
 feature_name: "NFS datastore support for Google Cloud VMware Engine"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-03-10"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/filestore/docs/filestore-for-gke"
-  - "https://docs.cloud.google.com/filestore/docs"
-  - "https://docs.cloud.google.com/filestore/docs/access-control"
+  - "https://docs.cloud.google.com/filestore/docs/creating-instances"
+  - "https://docs.cloud.google.com/filestore/docs/mounting-fileshares"
+  - "https://docs.cloud.google.com/filestore/docs/overview"
+  - "https://docs.cloud.google.com/filestore/docs/getting-instance-information"
 keywords:
   - "nfs"
   - "datastore"
@@ -38,47 +39,67 @@ Filestore can be used as an NFS datastore for Google Cloud VMware Engine.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/filestore/docs/filestore-for-gke](https://docs.cloud.google.com/filestore/docs/filestore-for-gke)
-- [https://docs.cloud.google.com/filestore/docs](https://docs.cloud.google.com/filestore/docs)
-- [https://docs.cloud.google.com/filestore/docs/access-control](https://docs.cloud.google.com/filestore/docs/access-control)
+- [https://docs.cloud.google.com/filestore/docs/creating-instances](https://docs.cloud.google.com/filestore/docs/creating-instances)
+- [https://docs.cloud.google.com/filestore/docs/mounting-fileshares](https://docs.cloud.google.com/filestore/docs/mounting-fileshares)
+- [https://docs.cloud.google.com/filestore/docs/overview](https://docs.cloud.google.com/filestore/docs/overview)
+- [https://docs.cloud.google.com/filestore/docs/getting-instance-information](https://docs.cloud.google.com/filestore/docs/getting-instance-information)
 
 ## Supporting Pages
 
-### About Filestore support for Google Kubernetes Engine | Google Cloud Documentation
+### Create an instance \_|\_ Filestore \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/filestore/docs/filestore-for-gke](https://docs.cloud.google.com/filestore/docs/filestore-for-gke)
+- URL: [https://docs.cloud.google.com/filestore/docs/creating-instances](https://docs.cloud.google.com/filestore/docs/creating-instances)
 - Source ID: `site-docs-root`
-- Final score: 152
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- About Filestore support for Google Kubernetes Engine Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/filestore-for-gke Filestore · Start free · Home ... instances are fully managed file servers on Google Cloud that you can use as durable storage with ReadWriteMany access for your Google Kubernetes Engine (GKE) clusters....
-
-### Filestore documentation | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/filestore/docs](https://docs.cloud.google.com/filestore/docs)
-- Source ID: `site-docs-root`
-- Final score: 82
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Filestore documentation Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs Filestore instances are fully managed NFS file servers on Google Cloud for use with applications running on Compute Engine virtual machine (VM) instances, Google Kubernetes Engine clusters, external datastores such as Google Cloud VMware Engine, ...
-
-### Access control | Filestore | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/filestore/docs/access-control](https://docs.cloud.google.com/filestore/docs/access-control)
-- Source ID: `site-iam-reference`
-- Final score: 74
+- Final score: 214
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control Filestore Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/access-control With the NFSv4.1 protocol, you can use Kerberos for securing access to Filestore instances.
-- Alternatively, you can use the Linux options to control NFS access and Identity and Access Management (IAM) to control access to instance operations, such as creating, editing, viewing, and deleting instances.
-- For more information, see About supported protocols.
+- Use Filestore instances as external datastores for VMware ESXi hosts in VMware Engine .
+- The following table shows the instance sizes available for each tier: Tier Minimum size Maximum size Incremental step size Zonal 1 TiB 9.75 TiB 256 GiB Zonal 10 TiB 100 TiB 2.5 TiB Regional 100 GiB or 1 TiB 10,239 GiB or 9.75 TiB 1 GiB or 256 GiB Regional 10 TiB 100 TiB 2.5 TiB Basic HDD 1 TiB 63.9 TiB 1 GiB Basic SSD 2.5 TiB 63.9 TiB 1 GiB Enterprise 1 TiB 10 TiB 256 GiB Depending on the access to the small capacity instances feature, the lower capacity range for Filestore regional instances can be either 100 GiB to 10,239 GiB or 1 TiB to 9.75 TiB.
+- Scales up or down in increments of 256 GiB Regional (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Scales up or down in increments of 256 GiB Performance Basic HDD : Static Basic SSD : Performance step at 10 TiB Configurable Configurable Scales linearly with capacity Protocol NFSv3 NFSv3, NFSv4.1 NFSv3, NFSv4.1 NFSv3, NFSv4.1 Create operations for zonal, regional, and enterprise instances can take anywhere between 15 minutes and one hour to complete, depending on instance size.
+- For the best performance and to avoid cross-regional networking charges, ensure that the Filestore instance is located in the same region as the Compute Engine VMs that need to access them.
+
+### "Mounting file shares on Compute Engine clients \_|\_ Filestore \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/filestore/docs/mounting-fileshares](https://docs.cloud.google.com/filestore/docs/mounting-fileshares)
+- Source ID: `site-docs-root`
+- Final score: 213
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To reduce the possibility of I/O disruptions when the Filestore instance reboots, we recommend using the hard mount option for both Linux and Windows clients. timeo=600 The NFS client waits 600 deciseconds (60 seconds) before retrying an NFS request. retrans=3 The NFS client attempts NFS requests three times before taking further recovery action. rsize=524288 The NFS client can receive a maximum of 524,288 bytes from the NFS server per READ request.
+- Install NFS: Debian/Ubuntu Use the following commands to install NFS on Debian or Ubuntu. sudo apt-get -y update && sudo apt-get install nfs-common RHEL/CentOS Use the following commands to install NFS on Red Hat Enterprise Linux or CentOS. sudo yum update && sudo yum install nfs-utils SUSE Use the following commands to install NFS on SUSE. sudo zypper update && sudo zypper -n install nfs-client Make a local directory to map to the Filestore file share: sudo mkdir -p mount-point-directory where mount-point-directory is the directory to create, for example /mnt/filedir .
+- Install NFS: Debian/Ubuntu Use the following commands to install NFS on Debian or Ubuntu. sudo apt-get -y update && sudo apt-get install nfs-common RHEL/CentOS Use the following commands to install NFS on Red Hat Enterprise Linux or CentOS. sudo yum update && sudo yum install nfs-utils SUSE Use the following commands to install NFS on SUSE. sudo zypper update && sudo zypper -n install nfs-client Make a local directory to map to the Filestore file share: sudo mkdir -p mount-point-directory where mount-point-directory is the directory to create, for example /mnt/filedir .
+- For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect . ip-address is the IP address for the Filestore instance. file-share is the name of the file share on the instance.
+
+### Filestore overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/filestore/docs/overview](https://docs.cloud.google.com/filestore/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 210
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Filestore instances are fully managed file servers on Google Cloud that can be connected to a number of client types: Compute Engine VMs Google Kubernetes Engine (GKE) clusters External datastores such as Google Cloud VMware Engine On-premises machines Cloud Run services Once provisioned, you can scale the capacity of your instances according to need without any downtime.
+- For details, see the following resources: Benefits of NFSv4.1 Encryption in Transit in Google Cloud Access control You can control the level of access that a client has on Filestore instance data based on the client's IP address.
+- For Google Kubernetes Engine users, for example, Filestore provides multiple reader, multiple writer access, letting you mount your GKE PersistentVolumes as read-write by many nodes.
+- While NFS data access continues without interruption, operations through the Google Cloud console or the Filestore API might be unavailable for several hours during a zone failure.
+
+### Get instance information \_|\_ Filestore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/filestore/docs/getting-instance-information](https://docs.cloud.google.com/filestore/docs/getting-instance-information)
+- Source ID: `site-docs-root`
+- Final score: 208
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Go to the Filestore instances page Click the instance ID to open the instance details page. gcloud Get information about a Filestore instance by running the instances describe command: gcloud filestore instances describe instance-id --project= project-id --location= location The response to the instances describe command is similar to the following: createTime: '2021-10-11T17:28:23.340943077Z' customPerformanceSupported: true fileShares: - capacityGb: '1024' name: vol1 kmsKeyName: projects/example-project/locations/us-central1/keyRings/example-ring/cryptoKeys/example-key labels: key:val name: projects/yourproject/locations/us-central1/instances/nfs-server networks: - ipAddresses: - 10.0.0.2 network: default reservedIpRange: 10.0.0.0/26 performanceConfig: iopsPerTb: maxIopsPerTb: '17000' performanceLimits: maxIops: '17000' maxReadIops: '17000' maxReadThroughputBps: '417792000' maxWriteIops: '5100' maxWriteThroughputBps: '139264000' state: READY tier: REGIONAL These fields represent the following values: createTime : The time the instance was created, in RFC 3339 format. fileShares : capacityGb : The size of the Filestore file share in binary gigabytes ( GB ), where 1 GB = 1024 3 bytes. name : The name of the Filestore file share.
+- List the mount points for an instance You can list all mount points where a Filestore instance is mounted by running: sudo showmount -a INSTANCE IP Example The following command lists all mount points for a Filestore instance with the IP address 10.77.67.226 : sudo showmount -a 10.77.67.226 The response looks similar to the following: All mount points on 10 .77.67.226: 10 .128.0.1:/fileshare 10 .128.0.2:/fileshare 10 .128.0.3:/fileshare Get the number of mount points for an instance You can get the total number of mount points for a Filestore instance by running: sudo showmount -a INSTANCE IP --no-headers wc -l Example The following command displays the number of mount points for an instance with the IP address 10.77.67.226 : sudo showmount -a 10.77.67.226 --no-headers wc -l What's next Create another instance .
+- Example The following command provides information about the test-nfs instance in project myproject , in region us-central1 . gcloud filestore instances describe test-nfs --project=myproject --region=us-central1 REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.
+- View all instances in a project Google Cloud console You can get information about your Filestore instances, and view all instances in a project, by going to the Filestore instances page: Go to the Filestore instances page gcloud You can get information about your Filestore instances, and view all instances in a project, by running the instances list command: gcloud filestore instances list --project= project-id --zone= zone where: project-id is the project ID of the Google Cloud project that contains the Filestore instance.
 

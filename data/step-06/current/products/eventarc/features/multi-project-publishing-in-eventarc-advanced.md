@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:18.665Z"
+generated_at: "2026-04-12T12:15:58.522Z"
 product_name: "Eventarc"
 product_slug: "eventarc"
 feature_name: "Multi-project publishing in Eventarc Advanced"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-09-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient"
-  - "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.PublisherClient"
+  - "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+  - "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/overview"
 keywords:
   - "multi"
   - "project"
@@ -38,47 +39,70 @@ Eventarc Advanced can publish events from multiple projects.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient](https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient)
-- [https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc](https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.PublisherClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.PublisherClient)
+- [https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1](https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1)
+- [https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing](https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/overview)
 
 ## Supporting Pages
 
-### Eventarc Publishing v1 API - Class PublisherClient (2.0.0-beta08) | .NET client libraries | Google Cloud Documentation
+### "Package google.cloud.eventarc.publishing.v1 \_|\_ Eventarc \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient](https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient)
-- Source ID: `site-docs-reference`
-- Final score: 242
+- URL: [https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1](https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1)
+- Source ID: `site-api-reference`
+- Final score: 310
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Eventarc Publishing v1 API - Class PublisherClient (2.0.0-beta08) .NET client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient Reference documentation and code samples for the Eventarc Publishing v1 API class PublisherClient.
+- Home Documentation Application development Eventarc Reference Send feedback Package google.cloud.eventarc.publishing.v1 Stay organized with collections Save and categorize content based on your preferences.
+- Index Publisher (interface) CloudEvent (message) CloudEvent.CloudEventAttributeValue (message) PublishChannelConnectionEventsRequest (message) PublishChannelConnectionEventsResponse (message) PublishEventsRequest (message) PublishEventsResponse (message) PublishRequest (message) PublishResponse (message) Publisher Eventarc processes events generated by an event provider and delivers them to a subscriber.
+- PublishChannelConnectionEvents rpc PublishChannelConnectionEvents( PublishChannelConnectionEventsRequest ) returns ( PublishChannelConnectionEventsResponse ) Publish events to a ChannelConnection in a partner's project.
+- Specification can be found here: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/protobuf-format.md json message string The JSON format of the CloudEvent being published.
 
-### Eventarc Publishing API | Google Cloud Documentation
+### "Eventarc Publishing audit logging \_|\_ Eventarc Standard \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc](https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc)
-- Source ID: `site-docs-reference`
-- Final score: 163
+- URL: [https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing](https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing)
+- Source ID: `site-iam-reference`
+- Final score: 272
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Eventarc Publishing API Google Cloud Documentation Source URL: https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc Documentation · Application development · Eventarc · Reference · Send feedback · Processes events generated by an event provider and delivers them to a subscriber.
-- The Service name eventarcpublishing.googleapis.com is needed to create RPC client stubs.
+- Filter for this method : protoPayload.methodName="google.cloud.eventarc.publishing.v1.Publisher.Publish" Methods that don't produce audit logs A method might not produce audit logs for one or more of the following reasons: It is a high volume method involving significant log generation and storage costs.
+- Filter for this service: protoPayload . serviceName = "eventarcpublishing.googleapis.com" Methods by permission type Each IAM permission has a type property, whose value is an enum that can be one of four values: ADMIN READ , ADMIN WRITE , DATA READ , or DATA WRITE .
+- Advanced Standard This document describes audit logging for Eventarc Publishing.
+- Permission type Methods DATA WRITE google.cloud.eventarc.publishing.v1.Publisher.Publish API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Eventarc Publishing. google.cloud.eventarc.publishing.v1.Publisher The following audit logs are associated with methods belonging to google.cloud.eventarc.publishing.v1.Publisher .
 
-### Class PublisherClient (0.81.0) | Java client libraries | Google Cloud Documentation
+### "Package com.google.cloud.eventarc.publishing.v1 (0.88.0) \_|\_ Java client\
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.PublisherClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.PublisherClient)
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1)
 - Source ID: `site-java-reference`
-- Final score: 161
+- Final score: 269
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Class PublisherClient (0.81.0) Java client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.PublisherClient Service Description: Eventarc processes events generated by an event provider and delivers them to a subscriber.
+- Home Documentation Developer tools Java Client libraries Send feedback Package com.google.cloud.eventarc.publishing.v1 (0.88.0) Stay organized with collections Save and categorize content based on your preferences.
+- Publish Channel Connection Events Response The response message for the PublishChannelConnectionEvents method. com. google. cloud. eventarc. publishing. v1.
+- Publish Channel Connection Events Request The request message for the PublishChannelConnectionEvents method. com. google. cloud. eventarc. publishing. v1.
+- Cloud Event CloudEvent represents a vendor-neutral specification for defining the format of event data. com. google. cloud. eventarc. publishing. v1.
+
+### "google-cloud-eventarc-publishing overview (0.88.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/overview)
+- Source ID: `site-java-reference`
+- Final score: 267
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Eventarc Publishing Product Reference GitHub Repository Maven artifact Getting Started In order to use this library, you first need to go through the following steps: Install a JDK (Java Development Kit) Select or create a Cloud Platform project Enable billing for your project Enable the API Set up authentication Use the Eventarc Publishing for Java To ensure that your project uses compatible versions of the libraries and their component artifacts, import com.google.cloud:libraries-bom and use the BOM to specify dependency versions.
+- 0.88.0 (latest) 0.87.0 0.85.0 0.83.0 0.82.0 0.81.0 0.80.0 0.78.0 0.76.0 0.75.0 0.74.0 0.73.0 0.72.0 0.70.0 0.68.0 0.67.0 0.64.0 0.63.0 0.62.0 0.60.0 0.59.0 0.58.0 0.57.0 0.56.0 0.55.0 0.54.0 0.53.0 0.52.0 0.51.0 0.49.0 0.48.0 0.47.0 0.46.0 0.45.0 0.44.0 0.43.0 0.42.0 0.41.0 0.40.0 0.39.0 0.37.0 0.36.0 0.35.0 0.34.0 0.33.0 0.32.0 0.31.0 0.30.0 0.29.0 0.28.0 0.27.0 0.24.0 0.23.0 0.22.0 0.21.0 0.20.0 0.19.0 0.18.0 0.17.0 0.16.0 0.15.0 0.14.0 0.13.0 0.12.0 0.11.0 0.9.0 0.8.0 0.7.0 0.6.0 0.5.0 0.4.0 Key Reference Links Eventarc Publishing Description: Lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes.
+- The example below demonstrates how you would import the BOM and include the google-cloud-eventarc-publishing artifact. <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.79.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-eventarc-publishing</artifactId> </dependency> </dependencies> Gradle BOMs are supported by default in Gradle 5.x or later.
+- The example below demonstrates how you would import the BOM and include the google-cloud-eventarc-publishing artifact. implementation ( platform ( "com.google.cloud:libraries-bom:26.79.0" )) implementation ( "com.google.cloud:google-cloud-eventarc-publishing" ) The platform and enforcedPlatform keywords supply dependency versions declared in a BOM.
 

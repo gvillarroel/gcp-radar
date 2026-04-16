@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-impor
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/deploying-with-admin-console
+entrypoint: https://docs.cloud.google.com/endpoint-verification/docs/creating-device-access-level
 source_metadata:
   url: https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-import-issues
   title: "Troubleshoot device import issues \_|\_ Endpoint Verification \_|\_ Google\

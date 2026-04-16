@@ -4,7 +4,7 @@ url: https://developers.google.com/earth-engine/apidocs/ee-algorithms-houghtrans
 knowledge_key: corpus
 source_id: site-docs-reference-2
 source_type: site
-entrypoint: https://developers.google.com/earth-engine/apidocs
+entrypoint: https://developers.google.com/earth-engine/apidocs/ee-data-computefeatures
 source_metadata:
   url: https://developers.google.com/earth-engine/apidocs/ee-algorithms-houghtransform
   title: "ee.Algorithms.HoughTransform \_|\_ Google Earth Engine \_|\_ Google for\

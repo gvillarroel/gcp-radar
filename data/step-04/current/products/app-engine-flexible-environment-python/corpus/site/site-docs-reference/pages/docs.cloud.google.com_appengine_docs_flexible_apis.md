@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/flexible/apis
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/flexible/apis
+entrypoint: https://docs.cloud.google.com/appengine/docs/flexible/python/configuring-your-app-with-app-yaml
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/flexible/apis
   title: "APIs & Reference \_|\_ App Engine flexible environment \_|\_ Google Cloud\

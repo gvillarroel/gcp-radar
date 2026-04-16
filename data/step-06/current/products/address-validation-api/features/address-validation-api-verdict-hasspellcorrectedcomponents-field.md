@@ -1,31 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:33.670Z"
+generated_at: "2026-04-14T03:44:24.361Z"
 product_name: "Address Validation API"
 product_slug: "address-validation-api"
 feature_name: "Address Validation API verdict hasSpellCorrectedComponents field"
 feature_slug: "address-validation-api-verdict-hasspellcorrectedcomponents-field"
 latest_feature_date: "2025-06-18"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/maps/documentation/address-validation/build-validation-logic"
   - "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress"
+  - "https://developers.google.com/maps/documentation/address-validation/build-validation-logic"
+  - "https://developers.google.com/maps/documentation/address-validation/understand-response"
 keywords:
-  - "component spell correction indicator"
-  - "spell-corrected components flag"
-  - "address component correction flag"
-  - "spell corrected components"
-  - "verdict.hasSpellCorrectedComponents"
-  - "hasSpellCorrectedComponents field"
-  - "hasSpellCorrectedComponents"
-  - "spellCorrectedComponents"
+  - "hasspellcorrectedcomponents"
+  - "includes"
+  - "indicate"
+  - "verdict"
+  - "field"
 ---
 
 # Address Validation API verdict hasSpellCorrectedComponents field
 
 Product: Address Validation API
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,41 +31,59 @@ The Address Validation API now includes a `hasSpellCorrectedComponents` field in
 
 ## Extended Definition
 
-`hasSpellCorrectedComponents` is a boolean field in Address Validation API verdict data for the `validateAddress` response that indicates whether any address components were spell-corrected. When the field is `true`, at least one component had spelling correction; when `false`, no spell corrections were made. The field is used in validation-flow logic to decide when to ask users to confirm corrected addresses.
+The Address Validation API now includes a `hasSpellCorrectedComponents` field in the verdict to indicate whether address components were spell-corrected.
 
 ## Evidence Summary
 
-These pages define the field as a response boolean in validation results and explicitly state its truth meaning (`true` = spell corrections made, `false` = none), plus show how it is used in client-side validation branching.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://developers.google.com/maps/documentation/address-validation/build-validation-logic](https://developers.google.com/maps/documentation/address-validation/build-validation-logic)
 - [https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress](https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress)
+- [https://developers.google.com/maps/documentation/address-validation/build-validation-logic](https://developers.google.com/maps/documentation/address-validation/build-validation-logic)
+- [https://developers.google.com/maps/documentation/address-validation/understand-response](https://developers.google.com/maps/documentation/address-validation/understand-response)
 
 ## Supporting Pages
+
+### Method: validateAddress | Address Validation API | Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress](https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 237
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Method: validateAddress | Address Validation API | Google for Developers Skip to main content Maps Platform Overview Products Pricing Documentation Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users Blog Community GitHub YouTube LinkedIn Discord Innovators Issue Tracker / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Web Services Address Validation API Get Started Contact sales Guides Reference Resources Maps Platform Overview Products Pricing Documentation More Guides Reference Resources Blog Community More REST reference Overview v1 TopLevel provideValidationFeedback validateAddress RPC Reference Overview google.geo.type google.maps.addressvalidation.v1 google.type Get Started Get Started with Google Maps Platform Capabilities Explorer Pricing & Billing Security & Compliance Reporting & Monitoring FAQ Support and Resources Customer Care Incident Management Maps Maps JavaScript API Maps SDK for Android Maps SDK for iOS Google Maps for Flutter Maps Embed API Maps Static API Street View Insights Street View Static API Maps URLs Aerial View API Elevation API Map Tiles API Maps Datasets API Web Components Routes Routes API Navigation SDK for Android Navigation SDK for iOS Navigation for Flutter Navigation for React Native Roads API Route Optimization API Analytics Google Earth Places Insights Imagery Insights Roads Management Insights Places Places API Places SDK for Android Places SDK for iOS Places Library, Maps JavaScript API Geocoding API Geolocation API Address Validation API Time Zone API Places Aggregate API Environment Air Quality API Pollen API Solar API Weather API Solutions Maps Builder agent Industry solutions Mobility services Additional Resources API Security Best Practices Digital Signature Guide Map Coverage Details Optimization Guide Mobile OS and software support Launch stages Legacy products Deprecations URL Encoding WordPress Users GitHub YouTube LinkedIn Discord Innovators Issue Tracker Home Products Google Maps Platform Documentation Web Services Address Validation API Reference Send feedback Method: validateAddress Stay organized with collections Save and categorize content based on your preferences.
+- JSON representation { "verdict" : { object ( Verdict ) } , "address" : { object ( Address ) } , "geocode" : { object ( Geocode ) } , "metadata" : { object ( AddressMetadata ) } , "uspsData" : { object ( UspsData ) } , "englishLatinAddress" : { object ( Address ) } } Fields verdict object ( Verdict ) Overall verdict flags address object ( Address ) Information about the address itself as opposed to the geocode. geocode object ( Geocode ) Information about the location and place that the address geocoded to. metadata object ( AddressMetadata ) Other information relevant to deliverability. metadata is not guaranteed to be fully populated for every address sent to the Address Validation API. uspsData object ( UspsData ) Extra deliverability flags provided by USPS.
+- JSON representation { "inputGranularity" : enum ( Granularity ) , "validationGranularity" : enum ( Granularity ) , "geocodeGranularity" : enum ( Granularity ) , "addressComplete" : boolean , "hasUnconfirmedComponents" : boolean , "hasInferredComponents" : boolean , "hasReplacedComponents" : boolean , "possibleNextAction" : enum ( PossibleNextAction ) , "hasSpellCorrectedComponents" : boolean } Fields inputGranularity enum ( Granularity ) The granularity of the input address.
+- If successful, the response body contains data with the following structure: JSON representation { "result" : { object ( ValidationResult ) } , "responseId" : string } Fields result object ( ValidationResult ) The result of the address validation. responseId string The UUID that identifies this response.
 
 ### "Build your validation logic \_|\_ Address Validation API \_|\_ Google for\
 
 - URL: [https://developers.google.com/maps/documentation/address-validation/build-validation-logic](https://developers.google.com/maps/documentation/address-validation/build-validation-logic)
-- Source ID: `site-docs-root`
-- Final score: 42
+- Source ID: `site-docs-reference`
+- Final score: 181
 - Re-rank relevance: WEAK
-- Re-rank rationale: The page mentions using address component changes as a signal but does not explicitly document a `hasSpellCorrectedComponents` verdict field.
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX or verdict.validationGranularity == OTHER or verdict.validationGranularity == ROUTE) Prompt customer to fix their address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt customer to add a unit number. else if (verdict.possibleNextAction == CONFIRM or verdict.validationGranularity == PREMISE PROXIMITY or verdict.hasSpellCorrectedComponents or verdict.hasReplacedComponents or verdict.hasInferredComponents) Prompt customer to confirm their address. else Proceed with the returned address.
-- Spell corrections When the hasSpellCorrectedComponents field is true , the API corrected the spelling of some misspelled components.
-- No spell corrections When the hasSpellCorrectedComponents field is false , you know that no spell corrections have been made.
+- Add subpremises address examples CONFIRM signals You confirm an address when the verdict indicates that the Address Validation API either inferred or made changes to address components in order to produce a validated address.
+- The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address has major issues, and what those issues are.
+- The following fields of the Address Validation API response can be used in addition to verdict.possibleNextAction to determine if an address has minor issues, and what those issues are.
 
-### Method: validateAddress \_|\_ Address Validation API \_|\_ Google for Developers
+### "Understand a basic address validation response \_|\_ Address Validation\
 
-- URL: [https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress](https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress)
-- Source ID: `site-api-reference`
-- Final score: 22
+- URL: [https://developers.google.com/maps/documentation/address-validation/understand-response](https://developers.google.com/maps/documentation/address-validation/understand-response)
+- Source ID: `site-docs-reference`
+- Final score: 164
 - Re-rank relevance: WEAK
-- Re-rank rationale: The page is the validateAddress API reference and mentions validation flags, but this excerpt does not explicitly name or describe `hasSpellCorrectedComponents`.
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- JSON representation { "inputGranularity" : enum ( Granularity ) , "validationGranularity" : enum ( Granularity ) , "geocodeGranularity" : enum ( Granularity ) , "addressComplete" : boolean , "hasUnconfirmedComponents" : boolean , "hasInferredComponents" : boolean , "hasReplacedComponents" : boolean , "possibleNextAction" : enum ( PossibleNextAction ) , "hasSpellCorrectedComponents" : boolean } Fields inputGranularity enum ( Granularity ) The granularity of the input address.
-- See Build your validation logic for more details. hasSpellCorrectedComponents boolean At least one address component was spell-corrected, see google.maps.addressvalidation.v1.Address.address components for details.
+- The Address Validation API provides a response body as a JSON object that contains two top-level properties: result , an object of type ValidationResult responseID { "result" : { // Validation verdict. "verdict" : {}, // Address details determined by the API. "address" : {}, // The geocode generated for the input address. "geocode" : {}, // Information indicating if the address is a business, residence, etc. "metadata" : {}, // Information about the address from the US Postal Service // ("US" and "PR" addresses only). "uspsData" : {}, }, // A unique identifier generated for every request to the API. "responseId" : "ID" } This document focuses on the result object.
+- Page Summary outlined flag The Address Validation API response contains a result object with properties like verdict , address , geocode , metadata , and uspsData to provide detailed information about the validated address.
+- This property might not be populated for every address processed by the Address Validation API, but indicates if the address is of type residential, business, or a PO Box.
+- The verdict property returns these granularity signals: inputGranularity — Describes the level of detail captured from the address sent to the Address Validation API.
 

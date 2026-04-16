@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.464Z"
+generated_at: "2026-04-14T07:40:14.470Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Replay failed executions"
 feature_slug: "replay-failed-executions"
 latest_feature_date: "2024-10-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
-  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+  - "https://docs.cloud.google.com/application-integration/docs/cancel-executions"
+  - "https://docs.cloud.google.com/application-integration/docs/reference/rest"
+  - "https://docs.cloud.google.com/application-integration/docs/reference/rest/v1"
 keywords:
   - "replay"
+  - "same"
   - "executions"
   - "failed"
   - "execution"
-  - "application"
-  - "integration"
-  - "using"
-  - "can"
 ---
 
 # Replay failed executions
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,55 @@ Application Integration can replay a failed integration execution using the same
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/cloud-logging](https://docs.cloud.google.com/application-integration/docs/cloud-logging)
-- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
+- [https://docs.cloud.google.com/application-integration/docs/cancel-executions](https://docs.cloud.google.com/application-integration/docs/cancel-executions)
+- [https://docs.cloud.google.com/application-integration/docs/reference/rest](https://docs.cloud.google.com/application-integration/docs/reference/rest)
+- [https://docs.cloud.google.com/application-integration/docs/reference/rest/v1](https://docs.cloud.google.com/application-integration/docs/reference/rest/v1)
 
 ## Supporting Pages
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### Cancel executions \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 218
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change Enhancements to Replay Execution Application Integration Replay Execution now provides the following enhancements: Modify input parameters on replay: You can now modify the input parameters of an integration execution when initiating a replay.
-- May 09, 2023 Feature Cloud logs support for Connectors tasks You can now view the execution logs of a failed Connectors task in Application Integration.
-- Feature Replay execution ( Preview ) You can now rerun a failed integration with the same parameters as the previous execution.
-- October 10, 2025 Feature Manage Application Integration resources using custom constraints You can now use custom constraints with Organization Policy to provide more granular control over specific fields for some Application Integration resources.
-
-### "View logs in Cloud Logging \_|\_ Application Integration \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/cloud-logging](https://docs.cloud.google.com/application-integration/docs/cloud-logging)
-- Source ID: `site-iam-reference`
-- Final score: 170
+- URL: [https://docs.cloud.google.com/application-integration/docs/cancel-executions](https://docs.cloud.google.com/application-integration/docs/cancel-executions)
+- Source ID: `site-docs-reference-2`
+- Final score: 125
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Sample queries You can use the following queries to view logs in Cloud Logging: To view all integration execution logs: resource.type="integrations.googleapis.com/IntegrationVersion" You can view integration execution logs for a specific execution ID: Searches only the parents executions with the given execution ID: resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.executionId=" EXECUTION ID " Searches for both parent and child executions launched from the given execution ID: resource.type="integrations.googleapis.com/IntegrationVersion" " EXECUTION ID " To view integration execution logs for a specific integration: resource.type="integrations.googleapis.com/IntegrationVersion" " INTEGRATION NAME " Or resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.integration=" INTEGRATION NAME " To view failed integration executions for a specific integration: resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.integrationExecutionDetails.integrationExecutionState="FAILED" jsonPayload.integration=" INTEGRATION NAME " To view logs with specific request param name.
-- In the Log settings , click the Enable Cloud Logging toggle and then from the Severity list, select the severity type of the logs that you want to store in Cloud Logging: Info : Select this option to capture all execution statuses: SUCCEEDED , FAILED , PROCESSING , PENDING , SUSPENDED , RETRY ON HOLD , and CANCELLED .
-- View logs in Cloud Logging In Cloud Logging, you can view the Integration execution logs containing integration details, such as status, performance, integration version, request and response parameters, and the trigger and task configurations.
-- Go to Application Integration To view the integration execution logs in Cloud Logging, use one of the following methods: In the navigation menu, click Logs , and then, click View Cloud Logs .
+- API Call the projects.locations.integrations.executions.cancel method and provide the ID of the execution that you want to cancel: curl -X POST https://integrations.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /integrations/ INTEGRATION NAME /executions/ EXECUTION ID :cancel -H "Authorization: Bearer $TOKEN" Limitations Cancel execution is subject to the following limitations: Canceling an execution that is triggered by a Schedule trigger isn't supported.
+- You can't cancel an integration execution if the integration is in one of the following states: In process Succeeded Failed Canceled What's next Learn about logs in Application Integration .
+- Cancel executions If you have an execution that is suspended due to an approval task or a technical issue, you can choose to cancel the execution.
+- Add the reason to replay the execution.
 
-### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
+### Application Integration API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 162
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/application-integration/docs/reference/rest](https://docs.cloud.google.com/application-integration/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 95
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Supported tasks and triggers Gemini can assist you to add the following tasks and triggers: Triggers Tasks API trigger Cloud Pub/Sub trigger Salesforce trigger Jira Cloud ServiceNow Zendesk Cloud Scheduler trigger Data mapper task Approval task Suspend task Javascript task Cloud Run functions Timer task Return task Send email task Connectors task Call REST endpoint task Doc AI - Process task Gemini also assists you to create the following control flow tasks but can't generate sub-integrations: For Each Loop task For Each Parallel task While Loop task Call Integration task Create an integration Gemini assists you to create and build integrations using your natural language statements (or prompts ) as input.
-- In Application Integration, Gemini Code Assist can assist you to do the following: Create integrations Configure connector tasks in an integration Configure Call REST API tasks in an integration Add edge conditions and append additional tasks to an integration Configure JavaScript tasks ( Preview ) Generate integration description For detailed information about Gemini for Google Cloud, see Gemini for Google Cloud overview .
-- Configure Call REST API tasks If you have API Hub enabled in your project, then Gemini in Application Integration can assist you in providing contextually appropriate Call REST Endpoint task and task configuration recommendations based on the logical flow of your existing integration.
-- If you plan to create an integration using Apigee API Hub APIs that are in a host project, ensure that you have provisioned the API Hub in your project and that the Application Integration service account has the required role to access the APIs in the other project.
+- REST Resource: v1.projects.locations.clients Methods changeConfig POST /v1/{parent=projects/ /locations/ }/clients:changeConfig Updates the client customer configuration for the given project and location resource name provision POST /v1/{parent=projects/ /locations/ }/clients:provision Perform the provisioning steps to enable a user GCP project to use IP. provisionClientPostProcessor POST /v1/{parent=projects/ /locations/ }/clients:provisionClientPostProcessor Perform post provisioning steps after client is provisioned. switchVariableMasking POST /v1/{parent=projects/ /locations/ }/clients:switchVariableMasking Update variable masking for provisioned client toggleHttp POST /v1/{parent=projects/ /locations/ }/clients:toggleHttp Enable/Disable http call for provisioned client REST Resource: v1.projects.locations.integrations Methods execute POST /v1/{name=projects/ /locations/ /integrations/ }:execute Executes integrations synchronously by passing the trigger id in the request body. list GET /v1/{parent=projects/ /locations/ }/integrations Returns the list of all integrations in the specified project. schedule POST /v1/{name=projects/ /locations/ /integrations/ }:schedule Schedules an integration for execution by passing the trigger id and the scheduled time in the request body. search GET /v1/{parent=projects/ /locations/ }/integrations:search Searches and returns the list of integrations in the specified project. test POST /v1/{integrationVersion.name=projects/ /locations/ /integrations/ }:test Execute the integration in draft state REST Resource: v1.projects.locations.integrations.executions Methods cancel POST /v1/{name=projects/ /locations/ /integrations/ /executions/ }:cancel Cancellation of an execution and associated sub-executions. list GET /v1/{parent=projects/ /locations/ /integrations/ }/executions Lists the results of all the integration executions. replay POST /v1/{name=projects/ /locations/ /integrations/ /executions/ }:replay Re-execute an existing execution, with same request parameters and execution strategy.
+- REST Resource: v2.projects.locations.integrations.executions Methods list GET /v2/{parent=projects/ /locations/ /integrations/ }/executions Lists the results of all the integration executions. troubleshoot GET /v2/{name=projects/ /locations/ /integrations/ /executions/ }:troubleshoot View detailed explanation of why an integration execution failed, using LLM REST Resource: v2.projects.locations.integrations.executions.taskExecutions Methods get GET /v2/{name=projects/ /locations/ /integrations/ /executions/ /taskExecutions/ } Get a TaskExecution in the specified project.
+- REST Resource: v2.projects.locations.integrations REST Resource: v2.projects.locations.integrations.executions REST Resource: v2.projects.locations.integrations.executions.taskExecutions REST Resource: v1.projects.locations.authConfigs REST Resource: v1.projects.locations.certificates REST Resource: v1.projects.locations.clients REST Resource: v1.projects.locations.integrations REST Resource: v1.projects.locations.integrations.executions REST Resource: v1.projects.locations.integrations.executions.suspensions REST Resource: v1.projects.locations.integrations.versions REST Resource: v1.projects.locations.integrations.versions.testCases REST Resource: v1.projects.locations.sfdcInstances REST Resource: v1.projects.locations.sfdcInstances.sfdcChannels REST Resource: v1.projects.locations.templates Service: integrations.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects.locations.integrations.executions.suspensions Methods lift POST /v1/{name=projects/ /locations/ /integrations/ /executions/ /suspensions/ }:lift Lifts suspension for the Suspension task. list GET /v1/{parent=projects/ /locations/ /integrations/ /executions/ }/suspensions Lists suspensions associated with a specific execution. resolve POST /v1/{name=projects/ /locations/ /integrations/ /executions/ /suspensions/ }:resolve Resolves (lifts/rejects) any number of suspensions.
+
+### Application Integration API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/reference/rest/v1](https://docs.cloud.google.com/application-integration/docs/reference/rest/v1)
+- Source ID: `site-docs-root`
+- Final score: 95
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- REST Resource: v1.projects.locations.clients Methods changeConfig POST /v1/{parent=projects/ /locations/ }/clients:changeConfig Updates the client customer configuration for the given project and location resource name provision POST /v1/{parent=projects/ /locations/ }/clients:provision Perform the provisioning steps to enable a user GCP project to use IP. provisionClientPostProcessor POST /v1/{parent=projects/ /locations/ }/clients:provisionClientPostProcessor Perform post provisioning steps after client is provisioned. switchVariableMasking POST /v1/{parent=projects/ /locations/ }/clients:switchVariableMasking Update variable masking for provisioned client toggleHttp POST /v1/{parent=projects/ /locations/ }/clients:toggleHttp Enable/Disable http call for provisioned client REST Resource: v1.projects.locations.integrations Methods execute POST /v1/{name=projects/ /locations/ /integrations/ }:execute Executes integrations synchronously by passing the trigger id in the request body. list GET /v1/{parent=projects/ /locations/ }/integrations Returns the list of all integrations in the specified project. schedule POST /v1/{name=projects/ /locations/ /integrations/ }:schedule Schedules an integration for execution by passing the trigger id and the scheduled time in the request body. search GET /v1/{parent=projects/ /locations/ }/integrations:search Searches and returns the list of integrations in the specified project. test POST /v1/{integrationVersion.name=projects/ /locations/ /integrations/ }:test Execute the integration in draft state REST Resource: v1.projects.locations.integrations.executions Methods cancel POST /v1/{name=projects/ /locations/ /integrations/ /executions/ }:cancel Cancellation of an execution and associated sub-executions. list GET /v1/{parent=projects/ /locations/ /integrations/ }/executions Lists the results of all the integration executions. replay POST /v1/{name=projects/ /locations/ /integrations/ /executions/ }:replay Re-execute an existing execution, with same request parameters and execution strategy.
+- REST Resource: v2.projects.locations.integrations.executions Methods list GET /v2/{parent=projects/ /locations/ /integrations/ }/executions Lists the results of all the integration executions. troubleshoot GET /v2/{name=projects/ /locations/ /integrations/ /executions/ }:troubleshoot View detailed explanation of why an integration execution failed, using LLM REST Resource: v2.projects.locations.integrations.executions.taskExecutions Methods get GET /v2/{name=projects/ /locations/ /integrations/ /executions/ /taskExecutions/ } Get a TaskExecution in the specified project.
+- REST Resource: v2.projects.locations.integrations REST Resource: v2.projects.locations.integrations.executions REST Resource: v2.projects.locations.integrations.executions.taskExecutions REST Resource: v1.projects.locations.authConfigs REST Resource: v1.projects.locations.certificates REST Resource: v1.projects.locations.clients REST Resource: v1.projects.locations.integrations REST Resource: v1.projects.locations.integrations.executions REST Resource: v1.projects.locations.integrations.executions.suspensions REST Resource: v1.projects.locations.integrations.versions REST Resource: v1.projects.locations.integrations.versions.testCases REST Resource: v1.projects.locations.sfdcInstances REST Resource: v1.projects.locations.sfdcInstances.sfdcChannels REST Resource: v1.projects.locations.templates Service: integrations.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects.locations.integrations.executions.suspensions Methods lift POST /v1/{name=projects/ /locations/ /integrations/ /executions/ /suspensions/ }:lift Lifts suspension for the Suspension task. list GET /v1/{parent=projects/ /locations/ /integrations/ /executions/ }/suspensions Lists suspensions associated with a specific execution. resolve POST /v1/{name=projects/ /locations/ /integrations/ /executions/ /suspensions/ }:resolve Resolves (lifts/rejects) any number of suspensions.
 

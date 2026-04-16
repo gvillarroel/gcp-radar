@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.488Z"
+generated_at: "2026-04-14T07:40:14.491Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Return task"
 feature_slug: "return-task"
 latest_feature_date: "2023-05-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database"
-  - "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-return-task"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task"
 keywords:
   - "customizing"
   - "mappings"
+  - "http"
   - "message"
   - "return"
   - "error"
   - "allows"
   - "task"
-  - "the"
 ---
 
 # Return task
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,54 @@ The Return task allows customizing error message mappings for HTTP response code
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database](https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database)
-- [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
+- [https://docs.cloud.google.com/application-integration/docs/configure-return-task](https://docs.cloud.google.com/application-integration/docs/configure-return-task)
+- [https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task](https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task)
+- [https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task](https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task)
 
 ## Supporting Pages
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### Return task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 130
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-return-task](https://docs.cloud.google.com/application-integration/docs/configure-return-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 248
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Return task The Return task lets you customize the error messages corresponding to the HTTP response codes that are returned during an integration execution failure.
-- October 28, 2024 Feature Add failure policy ( Generally available (GA) ) You can now configure more complicated retry strategies for tasks , such as retries based on the error codes or the variable values during the execution: Configure multiple ordered conditional failure policies for each task.
-- Feature Error catcher trigger The Error Catcher trigger lets you invoke an error catcher that is defined or customized to handle the failure of an identified trigger, task, or edge condition in your integration.
-- When you delete an integration, you permanently delete all the versions of that integration, including all the integration variables, configured triggers, tasks, and data mappings.
+- You can modify or customize error messages for the following HTTP response codes: HTTP code Canonical code 400 INVALID ARGUMENT 400 OUT OF RANGE 401 UNAUTHENTICATED 403 PERMISSION DENIED 404 NOT FOUND 409 ALREADY EXISTS 429 RESOURCE EXHAUSTED 499 CANCELLED Configure the Return task To configure the Return task: In the Google Cloud console, go to the Application Integration page.
+- Return task The Return task lets you customize the error messages corresponding to the HTTP response codes that are returned during an integration execution failure.
+- Customized return message String The custom error message for the specified HTTP code.
+- Property Data type Description HTTP code Integer The 4XX HTTP code for which you want to customize the error message.
 
-### "Perform CRUD operations on a MySQL database \_|\_ Application Integration\
+### Cloud Function task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database](https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database)
-- Source ID: `site-docs-root`
-- Final score: 92
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task](https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task)
+- Source ID: `site-docs-root-2`
+- Final score: 154
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- This should return an error for the specified entity ID.
-- In Connector output payload , the following output is displayed: [ { "employee id": 1.0, "employee first name": "Peter", "employee last name": "Dilliard", "employee emailID": "test-01@test.com" }, { "employee id": 2.0, "employee first name": "Meaghan", "employee last name": "Webb", "employee emailID": "test-02@test.com" } ] Perform other operations on your MySQL database table When you configure a Connectors task in your integration, you can select any one of the following operations: List Get Create Update Delete You've already used the List operation to view all the rows in the employee table.
-- To view this information in your MySQL table, execute the following command from your MySQL client: SELECT FROM employee WHERE employee id=2; The following table row is displayed: +-------------+---------------------+--------------------+------------------+ employee id employee first name employee last name employee emailID +-------------+---------------------+--------------------+------------------+ 2 Meaghan Webb test-02@test.com +-------------+---------------------+--------------------+------------------+ Add a row to a table The Create operation allows you to add a row in a table.
-- Select the Google Cloud project and perform the following tasks: Grant the following roles to the service account that you want to use to create the connection: roles/secretmanager.viewer roles/secretmanager.secretAccessor Enable the following services: secretmanager.googleapis.com (Secret Manager API) connectors.googleapis.com (Connectors API) If these services have not been enabled for your project previously, you are prompted to enable them when creating the connection .
+- Returns: Parameter value. """ value = param [ 'value' ] if len ( value ) != 1 : raise RuntimeError ( 'param does not have size of 1' ) for value name in VALUE NAME : if value name in value : if value name == 'protoValue' and value [ value name ][ '@type' ] == VALUE TYPE URL : return value [ value name ][ 'value' ] return value [ value name ] for array value name in ARRAY VALUE NAME : if array value name in value : return value [ array value name ][ ARRAY VALUE NAME [ array value name ]] raise RuntimeError ( 'Cannot get value from param ' + str ( param )) def set error ( self ): """Set the cloud function error to event parameters in order for user to see on IP.""" self . set ( CLOUD FUNCTION EXCEPTION KEY , traceback . format exc ()) def log ( self , message ): self . log . append ( str ( message )) def get response ( self ): """Get the response that can be returned to IP.
+- For example, if you have an integration variable named EmployeeName that you want to use in your Cloud Function source file, define the following task parameters: Key : EmployeeKey Value : EmployeeName The following sample script shows the usage of set and get functions to access the defined integration variables. def run ( event ): Read the integration variable EmployeeName using the reference variable EmployeeKey value = event . get ( ' EmployeeKey ' ); Change the integration variable EmployeeName value using the reference variable EmployeeKey event . set ( ' EmployeeKey ' , ' XYZ ' ); The new value of the integration variable is retained throughout the Cloud Function task. return Error handling strategy An error handling strategy for a task specifies the action to take if the task fails due to a temporary error .
+- Returns: The response text or any set of values that can be turned into a Response object using make response <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make response>. """ try : request json = request . get json ( silent = True ) event = Event ( request json ) run ( event ) except : event . set error () return event . get response () requirements.txt Function dependencies, for example: package>=version For more information about response format, see ValueType .
+- Ensure that the response follows the supported JSON format as described in the sample: use Psr\Http\Message\ServerRequestInterface; function execute function(ServerRequestInterface $request) { return '{"eventParameters":{"parameters":[{"key":"input","value":{"stringValue":"2"}}]}}'; } For more information about response format, see ValueType .
 
-### "All triggers and tasks \_|\_ Application Integration \_|\_ Google Cloud\
+### "Call REST Endpoint task \_|\_ Application Integration \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
-- Source ID: `site-docs-root`
-- Final score: 84
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task](https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task)
+- Source ID: `site-docs-root-2`
+- Final score: 146
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Triggers API trigger Private trigger Cloud Pub/Sub trigger Schedule trigger Salesforce trigger Cloud Scheduler trigger Error Catcher trigger Connector Event triggers Apache Kafka trigger HL7 trigger IBM MQ trigger Jira Cloud trigger Jira Server Data Center trigger HubSpot trigger Rabbit MQ trigger SAP Gateway trigger SAP ERP trigger ServiceNow trigger Solace trigger TIBCO EMS trigger Webhook trigger Zendesk trigger Tasks for Google Cloud services AI Platform - Prediction task Apps Script task Cloud Function task Cloud KMS - decrypt Cloud KMS - encrypt Dataflow - Create Job task Drive - List task Doc AI - Batch Process task Doc AI - Operation task Doc AI - Process task Firestore - Batch Get task Firestore - Batch Write task Firestore - Document Get task Language - Annotate Text task Language - Classify Text task Secret Manager - Access task Sheets - Append task Sheets - Batch Get task Sheets - Get task Translate - Document task Translate - Text task Vertex AI - Predict task Workflows - Execute task Integration tasks Data Mapping task Call Integration task For Each Parallel task For Each Loop task While Loop task Approval task Send Email task Suspend task Timer task JavaScript task Return task Connectors task Call REST Endpoint task Data transformer script task Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- All triggers and tasks This page introduces the various configurable triggers and tasks available in Application Integration.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- For details, see the Google Developers Site Policies .
+- For other HTTP response codes, return error code and error message in the response.
+- Task should fail on HTTP error Boolean Exception handling strategy when the REST API call fails.
+- But returns the error code and the error message in the response.
+- Note: For errors that are not related to REST API call, such as incorrect URL, the task always fail irrespective of what this option is set to.
 

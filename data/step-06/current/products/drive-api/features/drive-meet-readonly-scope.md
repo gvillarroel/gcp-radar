@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:41:51.890Z"
+generated_at: "2026-04-12T12:14:32.795Z"
 product_name: "Drive API"
 product_slug: "drive-api"
 feature_name: "drive.meet.readonly scope"
 feature_slug: "drive-meet-readonly-scope"
 latest_feature_date: "2024-07-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/drive/api/guides/api-specific-auth"
   - "https://developers.google.com/workspace/drive/api/guides/content-restrictions"
   - "https://developers.google.com/workspace/drive/api/guides/file-metadata"
+  - "https://developers.google.com/workspace/drive/api/reference/rest/v2/changes/list"
 keywords:
   - "drive"
   - "meet"
@@ -26,7 +27,7 @@ keywords:
 # drive.meet.readonly scope
 
 Product: Drive API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ This restricted scope lets you view Drive files created or edited by Google Meet
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/drive/api/guides/api-specific-auth](https://developers.google.com/workspace/drive/api/guides/api-specific-auth)
 - [https://developers.google.com/workspace/drive/api/guides/content-restrictions](https://developers.google.com/workspace/drive/api/guides/content-restrictions)
 - [https://developers.google.com/workspace/drive/api/guides/file-metadata](https://developers.google.com/workspace/drive/api/guides/file-metadata)
+- [https://developers.google.com/workspace/drive/api/reference/rest/v2/changes/list](https://developers.google.com/workspace/drive/api/reference/rest/v2/changes/list)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/api-specific-auth](https://developers.google.com/workspace/drive/api/guides/api-specific-auth)
 - Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 206
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Restricted scopes Scope code Description https://www.googleapis.com/auth/drive View and manage all your Drive files. https://www.googleapis.com/auth/drive.readonly View and download all your Drive files. https://www.googleapis.com/auth/drive.activity View and add to the activity record of files in your Drive. https://www.googleapis.com/auth/drive.activity.readonly View the activity record of files in your Drive. https://www.googleapis.com/auth/drive.meet.readonly View Drive files created or edited by Google Meet. https://www.googleapis.com/auth/drive.metadata View and manage metadata of files in your Drive. https://www.googleapis.com/auth/drive.metadata.readonly View metadata for files in your Drive. https://www.googleapis.com/auth/drive.scripts Modify your Google Apps Script scripts' behavior.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/content-restrictions](https://developers.google.com/workspace/drive/api/guides/content-restrictions)
 - Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 176
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following code sample shows how to add a content restriction for file owners only: Java File updatedFile = new File () . setContentRestrictions ( ImmutableList . of ( new ContentRestriction (). setReadOnly ( true ). setOwnerRestricted ( true ). setReason ( "Finalized contract." )); File response = driveService . files (). update ( " FILE ID " , updatedFile ). setFields ( "contentRestrictions" ). execute (); Python content restriction = { 'readOnly' : True , 'ownerRestricted' : True , 'reason' : 'Finalized contract.' } response = drive service . files () . update ( fileId = " FILE ID " , body = { 'contentRestrictions' : [ content restriction ]}, fields = "contentRestrictions" ) . execute (); Node.js / Set an owner restricted content restriction on a file. @return{obj} updated file / async function addOwnerRestrictedContentRestriction () { // Get credentials and build service // TODO (developer) - Use appropriate auth mechanism for your app const { GoogleAuth } = require ( 'google-auth-library' ); const { google } = require ( 'googleapis' ); const auth = new GoogleAuth ({ scopes : 'https://www.googleapis.com/auth/drive' }); const service = google . drive ({ version : 'v3' , auth }); const contentRestriction = { 'readOnly' : True , 'ownerRestricted' : True , 'reason' : 'Finalized contract.' , }; const updatedFile = { 'contentRestrictions' : [ contentRestriction ], }; try { const response = await service . files . update ({ fileId : ' FILE ID ' , resource : updatedFile , fields : 'contentRestrictions' , }); return response ; } catch ( err ) { // TODO (developer) - Handle error throw err ; } } Replace FILE ID with the fileId of the file that you want to modify.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/file-metadata](https://developers.google.com/workspace/drive/api/guides/file-metadata)
 - Source ID: `site-docs-root`
-- Final score: 128
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 151
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The drive.metadata scope lets you view and manage file metadata, while drive.metadata.readonly is read-only.
 - For example, a user might own a file with full permissions, but the Drive API will block attempts to modify or download the file if your app only has the drive.metadata.readonly scope.
 - The Drive API offers two restricted metadata scopes: drive.metadata and drive.metadata.readonly .
 - GET https://www.googleapis.com/drive/v3/files/q=mimeType='application/vnd.google-apps.spreadsheet'&fields=files(id,name,mimeType,thumbnailLink) Related topics Store application-specific data Add custom file properties Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Method: changes.list \_|\_ Google Drive \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/drive/api/reference/rest/v2/changes/list](https://developers.google.com/workspace/drive/api/reference/rest/v2/changes/list)
+- Source ID: `site-docs-reference`
+- Final score: 148
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/docs https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.apps.readonly https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.meet.readonly https://www.googleapis.com/auth/drive.metadata https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/drive.photos.readonly https://www.googleapis.com/auth/drive.readonly Some scopes are restricted and require a security assessment for your app to use them.
+- If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier. includeCorpusRemovals boolean Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file. includeDeleted boolean Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access. includeItemsFromAllDrives boolean Whether both My Drive and shared drive items should be included in results. includeSubscribed boolean Whether to include changes outside the My Drive hierarchy in the result.
+- If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. kind string This is always drive#changeList . etag string The ETag of the list. newStartPageToken string The starting page token for future changes.
+- Home Google Workspace Google Drive Reference Send feedback Method: changes.list Stay organized with collections Save and categorize content based on your preferences.
 

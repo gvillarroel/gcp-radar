@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.854Z"
+generated_at: "2026-04-15T12:05:13.847Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Python streaming support"
@@ -9,19 +9,18 @@ latest_feature_date: "2019-10-08"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime"
-  - "https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/gae-mapreduce-migration"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/io-connector-best-practices"
+  - "https://docs.cloud.google.com/python/docs/reference/dataflow/latest"
 keywords:
   - "python"
   - "streaming"
   - "dataflow"
   - "supports"
   - "pipelines"
-  - "with"
   - "apache"
   - "beam"
+  - "sdk"
 ---
 
 # Python streaming support
@@ -39,69 +38,55 @@ Dataflow supports Python streaming pipelines with Apache Beam SDK 2.16 or higher
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
-- [https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk](https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk)
-- [https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime](https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime)
-- [https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status](https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status)
+- [https://docs.cloud.google.com/dataflow/docs/guides/gae-mapreduce-migration](https://docs.cloud.google.com/dataflow/docs/guides/gae-mapreduce-migration)
+- [https://docs.cloud.google.com/dataflow/docs/guides/io-connector-best-practices](https://docs.cloud.google.com/dataflow/docs/guides/io-connector-best-practices)
+- [https://docs.cloud.google.com/python/docs/reference/dataflow/latest](https://docs.cloud.google.com/python/docs/reference/dataflow/latest)
 
 ## Supporting Pages
 
-### "Develop Apache Beam notebooks with the interactive runner \_|\_ Cloud Dataflow\
+### "Python Client for Dataflow \_|\_ Python client libraries \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
-- Source ID: `site-docs-root`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The following notebooks are available: Word Count Streaming Word Count Streaming NYC Taxi Ride Data Apache Beam SQL in notebooks with comparisons to pipelines Apache Beam SQL in notebooks with the Dataflow Runner Apache Beam SQL in notebooks Dataflow Word Count Interactive Flink at Scale RunInference Use GPUs with Apache Beam Visualize Data The Tutorials folder contains additional tutorials that explain the fundamentals of Apache Beam.
-- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Develop Apache Beam notebooks with the interactive runner Stay organized with collections Save and categorize content based on your preferences.
-- Use the Apache Beam interactive runner with JupyterLab notebooks to complete the following tasks: Iteratively develop pipelines.
-- To launch the notebooks on the Dataflow service, export the pipelines created in your Apache Beam notebook.
-
-### Install the Apache Beam SDK \_|\_ Cloud Dataflow \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk](https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk)
-- Source ID: `site-docs-root`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/python/docs/reference/dataflow/latest](https://docs.cloud.google.com/python/docs/reference/dataflow/latest)
+- Source ID: `site-python-reference`
+- Final score: 31
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To upgrade an existing installation of apache-beam, use the --upgrade flag: pip install --upgrade 'apache-beam[gcp]' As of October 7, 2020, Dataflow no longer supports Python 2 pipelines.
-- You define these pipelines with an Apache Beam program and can choose a runner, such as Dataflow, to execute your pipeline.
-- Set up your development environment For information about setting up your Google Cloud project and development environment to use Dataflow, follow one of the tutorials: Create a Dataflow pipeline using Java Create a Dataflow pipeline using Python Create a Dataflow pipeline using Go Source code and examples The Apache Beam source code is available in the Apache Beam repository on GitHub.
-- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Install the Apache Beam SDK Stay organized with collections Save and categorize content based on your preferences.
+- Mac/Linux python3 -m venv <your-env> source <your-env>/bin/activate pip install google-cloud-dataflow-client Windows py -m venv <your-env> .\<your-env>\Scripts\activate pip install google-cloud-dataflow-client Next Steps Read the Client Library Documentation for Dataflow to see other available methods on the client.
+- Home Documentation Developer tools Python Client libraries Send feedback Python Client for Dataflow Stay organized with collections Save and categorize content based on your preferences.
+- The Google-specific logging configurations (default handlers for environment-based configuration; not propagating logging events to the root logger) get executed the first time any client library is instantiated in your application, and only if the affected loggers have not been previously configured. (This is the reason for 2.i. above.) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Environment-Based Examples Enabling the default handler for all Google-based loggers export GOOGLE SDK PYTHON LOGGING SCOPE=google Enabling the default handler for a specific Google module (for a client library called library v1 ): export GOOGLE SDK PYTHON LOGGING SCOPE=google.cloud.library v1 Advanced, code-based configuration You can also configure a valid logging scope using Python’s standard logging mechanism.
 
-### Use Dataflow Prime \_|\_ Google Cloud Documentation
+### "Apache Beam I/O connector best practices \_|\_ Cloud Dataflow \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime](https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime)
-- Source ID: `site-docs-root`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Feature Dataflow Prime Dataflow Runner v2 Default feature with no option to turn off for batch jobs and optional for streaming jobs Default feature with an option to turn off for batch jobs and optional for streaming jobs Dataflow Shuffle for batch jobs Default feature with an option to turn off Default feature with an option to turn off Streaming Engine for streaming jobs Optional feature for Java pipelines and always on for Python pipelines Optional feature for Java pipelines and always on for Python pipelines since 2.45.0 Horizontal Autoscaling Default feature with option to turn off Default feature with option to turn off Vertical Autoscaling Default feature with option to turn off Not applicable Right fitting Optional feature Optional feature Billing Serverless billing Standard billing What's next Read about Dataflow quotas .
-- Java --dataflowServiceOptions = enable prime = false Python Apache Beam Python SDK version 2.29.0 or later: --dataflow service options = enable prime = false Apache Beam Python SDK version 2.21.0 to 2.28.0: --experiments = enable prime = false Go --dataflow service options = enable prime = false Use Dataflow Prime with templates If you're using Dataflow templates, you can choose to enable Dataflow Prime in one of the following ways: For jobs launched from the Create job from template page: Go to the Create job from template page.
-- For supported Apache Beam SDK versions , enable the following flag: Java --dataflowServiceOptions = enable prime Python Apache Beam Python SDK version 2.29.0 or later: --dataflow service options = enable prime Apache Beam Python SDK version 2.21.0 to 2.28.0: --experiments = enable prime Go --dataflow service options = enable prime Disable Dataflow Prime Sometimes, such as with certain Google-provided templates, Dataflow Prime might be enabled by default.
-- Java pipelines that meet the following requirements can use the MapState and SetState classes: use Streaming Engine use Apache Beam SDK versions 2.58.0 and later don't use Runner v2 All pipeline options not explicitly mentioned previously or in the feature comparison table work the same for Dataflow and Dataflow Prime.
-
-### SDK version support status \_|\_ Cloud Dataflow \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status](https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status)
-- Source ID: `site-docs-root`
-- Final score: 194
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/io-connector-best-practices](https://docs.cloud.google.com/dataflow/docs/guides/io-connector-best-practices)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 30
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Known issue: Pipelines that read data from Cloud Storage by using GcsIO, either directly or indirectly, such as with BigQueryIO, might experience data corruption on the Apache Beam Python SDK versions 2.53.0 to 2.58.1.
-- Known issue: Pipelines that read data from Cloud Storage by using GcsIO, either directly or indirectly, such as with BigQueryIO, might experience data corruption on the Apache Beam Python SDK versions 2.53.0 to 2.58.1.
-- Known issue: Pipelines that read data from Cloud Storage by using GcsIO, either directly or indirectly, such as with BigQueryIO, might experience data corruption on the Apache Beam Python SDK versions 2.53.0 to 2.58.1.
-- Known issue: Pipelines that read data from Cloud Storage by using GcsIO, either directly or indirectly, such as with BigQueryIO, might experience data corruption on the Apache Beam Python SDK versions 2.53.0 to 2.58.1.
+- I/O connector name Java Python Go AvroIO Supported Supported Supported BigQueryIO Supported Supported Supported BigTableIO Supported Sink supported Sink supported DatastoreIO Supported Supported Supported FhirIO (healthcare) Supported Not available Supported FileIO Supported Supported Supported GcsFileSystem Supported Supported Supported JdbcIO Supported Cross-language support Cross-language support KafkaIO Supported Cross-language support Cross-language support LocalFileSystem Supported Supported Supported ParquetIO Supported Supported Supported PubSubIO Supported Supported Supported SpannerIO Supported Cross-language support Supported TextIO Supported Supported Supported TFRecordIO Supported Supported Not available What's next Read the Apache Beam documentation for I/O connectors .
+- Best practices for individual I/O connectors The following topics list best practices for individual I/O connectors: I/O connector Read Write Apache Iceberg Read from Apache Iceberg Write to Apache Iceberg Apache Kafka Read from Apache Kafka Write to Apache Kafka BigQuery Read from BigQuery Write to BigQuery Bigtable Read from Bigtable Write to Bigtable Cloud Storage Read from Cloud Storage Write to Cloud Storage Pub/Sub Read from Pub/Sub Write to Pub/Sub Google-supported I/O connectors The following table lists the Apache Beam I/O connectors supported by Dataflow.
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Apache Beam I/O connector best practices Stay organized with collections Save and categorize content based on your preferences.
+- For an example of performance benchmarks in a Dataflow streaming pipeline, see Performance characteristics of Pub/Sub to BigQuery pipelines .
+
+### "Migrate from App Engine MapReduce to Apache Beam and Dataflow \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/gae-mapreduce-migration](https://docs.cloud.google.com/dataflow/docs/guides/gae-mapreduce-migration)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 30
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use Apache Beam to create complex pipelines for both batch and streaming and run them on Dataflow.
+- Getting started with Dataflow and Apache Beam To get started, follow the quickstart of your choice: Using Java and Apache Maven Using Python Using Go Creating and running a pipeline When using App Engine MapReduce, you create data processing classes, add the MapReduce library, and once the job's specification and settings are defined, you create and start the job in one step using the static start() method on the appropriate job class.
+- Write ( s , "wordcounts.txt" , formatted ) Additional Apache Beam and Dataflow benefits If you choose to migrate your App Engine MapReduce jobs to Apache Beam pipelines, you will benefit from several features that Apache Beam and Dataflow have to offer.
+- Migration cases The following are some example cases where you could benefit from migrating from App Engine MapReduce to Apache Beam and Dataflow: Store your Datastore database application data in a BigQuery data warehouse for analytical processing using SQL.
 

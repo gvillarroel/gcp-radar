@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.763Z"
+generated_at: "2026-04-12T12:16:03.699Z"
 product_name: "Firestore with MongoDB compatibility"
 product_slug: "firestore-with-mongodb-compatibility"
 feature_name: "Firestore Enterprise billing metrics"
 feature_slug: "firestore-enterprise-billing-metrics"
 latest_feature_date: "2025-08-26"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases"
+  - "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import"
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete"
 keywords:
   - "firestore"
   - "enterprise"
@@ -24,7 +27,7 @@ keywords:
 # Firestore Enterprise billing metrics
 
 Product: Firestore with MongoDB compatibility
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,68 @@ New Cloud Monitoring billing metrics help attribute Firestore Enterprise costs t
 
 New Cloud Monitoring billing metrics help attribute Firestore Enterprise costs to database and RPC methods.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases)
+- [https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import](https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Create and manage databases \_|\_ Firestore with MongoDB compatibility \_\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases)
+- Source ID: `site-docs-root`
+- Final score: 142
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Learn about Cloud Monitoring metrics for Firestore with MongoDB compatibility .
+- For example: --tags=123/environment=production,123/costCenter=marketing --tags=tagKeys/333=tagValues/444 Terraform Use the google firestore database resource and set database edition to ENTERPRISE resource "google firestore database" "database" { name = " DATABASE ID " location id = " LOCATION " type = "FIRESTORE NATIVE" database edition = "ENTERPRISE" // Optional delete protection state = " DELETE PROTECTION STATE " } Replace the following: DATABASE ID : a valid database ID .
+- Firebase CLI firebase firestore:databases:create --edition EDITION DATABASE ID \ --location= LOCATION gcloud CLI Use the gcloud firestore databases create command and set --edition=enterprise . gcloud firestore databases create \ --database= DATABASE ID \ --location= LOCATION \ --edition=enterprise \ --enable-mongodb-compatible-data-access Replace the following: DATABASE ID : a valid database ID .
+- This setting is disabled by default. gcloud firestore databases create \ --database= DATABASE ID \ --location= LOCATION \ --edition=enterprise \ --delete-protection To add tags to the database, use the --tags flag.
+
+### "Exporting and importing data \_|\_ Firestore in Native mode \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import](https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import)
+- Source ID: `site-docs-root-2`
+- Final score: 137
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- In the navigation menu, click Import/Export . gcloud Use the operations describe command to show the status of an export or import operation. gcloud firestore operations describe [OPERATION NAME] Estimate the completion time A request for the status of a long-running operation returns the metrics workEstimated and workCompleted .
+- This command will not delete export files from Cloud Storage. gcloud firestore operations delete [OPERATION NAME] Billing and pricing for export and import operations You are required to enable billing for your Google Cloud project before you use the managed export and import service.
+- In the Cloud Billing reports page , you can use this label to view costs related to import and export operations: Note: Export and import operations executed before September 8th, 2020 did not apply the goog-firestoremanaged label.
+- In the New principals field, enter the name of your Firestore service agent.
+
+### "Manage Firestore with MongoDB compatibility resources using custom constraints\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints)
+- Source ID: `site-iam-reference`
+- Final score: 131
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Databases must use the specified Database Edition . name : organizations/ ORGANIZATION ID /customConstraints/custom.enterpriseEditionRequired resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE - UPDATE condition : "resource.databaseEdition == " ENTERPRISE"" actionType : ALLOW displayName : Firestore Enterprise Edition Required description : Only allow the creation and updating of databases with Enterprise Edition.
+- Note that the format of a database name in custom organization policies is projects/ project-id /databases/ database-id while only database-id is specified in database management operations. name : organizations/ ORGANIZATION ID /customConstraints/custom.nameSuffixMobile resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE condition : "resource.name.endsWith('-mobile')" actionType : ALLOW displayName : Firestore database names end with "-mobile" description : Only allow the creation of database names ending with suffix "-mobile" Databases can only be created in specified locations . name : organizations/ ORGANIZATION ID /customConstraints/custom.locationUsCentral1 resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE condition : "resource.locationId == 'us-central1'" actionType : ALLOW displayName : Firestore database location id us-central1 description : Only allow the creation of databases in region us-central1 Databases must enable point-in-time-recovery . name : organizations/ ORGANIZATION ID /customConstraints/custom.pitrEnforce resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE - UPDATE condition : "resource.pointInTimeRecoveryEnablement == " POINT IN TIME RECOVERY ENABLED"" actionType : ALLOW displayName : Firestore database enables PiTR description : Only allow the creation and updating of a databases if PiTR is enabled.
+- Set up the custom constraint at the organization level: gcloud org-policies set-custom-constraint deleteProtectionRequired.yaml Test the policy Try to create a database without setting the --delete-protection flag in a project in the organization: gcloud firestore database create \ --project = PROJECT ID \ --database = DATABASE ID \ The output is the following: Operation denied by custom org policies: ["customConstraints/custom.deleteProtectionRequired": "To ensure the data security, Delete Protection is required to be enabled for Firestore databases"] Test and analyze organization policy changes We recommend that you test and dry-run all changes to your organization policies, to better understand the state of your environment and how changes affect it.
+- Test the custom organization policy Before you begin, you must know the following: Your organization ID Create the deleteProtectionRequired.yaml file as follows: name : organizations/ ORGANIZATION ID /customConstraints/custom.deleteProtectionRequired resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE - UPDATE condition : "resource.deleteProtectionState == \"DELETE PROTECTION ENABLED\"" actionType : ALLOW displayName : Firestore with MongoDB compatibility Delete Protection Required description : To ensure the data security, Delete Protection is required to be enabled for Firestore databases.
+
+### "Bulk delete data \_|\_ Firestore with MongoDB compatibility \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete)
+- Source ID: `site-iam-reference`
+- Final score: 124
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- List all bulk delete operations gcloud Use the operations list command to see all running and recently completed operations, including bulk delete operations: gcloud firestore operations list Check operation status gcloud Use the operations describe command to show the status of a bulk delete operation. gcloud firestore operations describe [OPERATION NAME] Estimate the completion time A request for the status of a long-running operation returns the metrics workEstimated and workCompleted .
+- To cancel a running operation, use the earlier cancellation operation. gcloud firestore operations delete [OPERATION NAME] Billing and pricing for bulk delete operations You are required to enable billing for your Google Cloud project before you use the managed bulk delete service.
+- Bulk delete operations are charged for document reads and deletes at the rates listed in Firestore Enterprise edition pricing .
+- The operation deletes only the collection groups with the given IDs. gcloud firestore bulk-delete \ --collection-ids= [COLLECTION GROUP ID 1 OR KIND 1] , [COLLECTION GROUP ID 2 OR KIND 2] , [SUBCOLLECTION GROUP ID 1 OR KIND 3] \ --database= [DATABASE] For example, consider multiple documents that represent restaurants in the restaurants collection of the cymbal database.
 

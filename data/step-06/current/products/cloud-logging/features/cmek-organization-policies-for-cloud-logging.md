@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.547Z"
+generated_at: "2026-04-14T23:59:44.393Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "CMEK Organization Policies for Cloud Logging"
@@ -9,18 +9,18 @@ latest_feature_date: "2022-03-25"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/release-notes"
-  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies-overview"
-  - "https://docs.cloud.google.com/logging/docs/agent/logging/managing-agent-policies"
+  - "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings"
+  - "https://docs.cloud.google.com/logging/docs/reference/v2/rpc"
+  - "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
 keywords:
   - "cmek"
   - "organization"
   - "policies"
-  - "for"
   - "logging"
   - "supports"
-  - "that"
   - "enforce"
+  - "customer"
+  - "managed"
 ---
 
 # CMEK Organization Policies for Cloud Logging
@@ -38,53 +38,54 @@ Cloud Logging supports organization policies that enforce customer-managed encry
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
-- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies-overview](https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies-overview)
-- [https://docs.cloud.google.com/logging/docs/agent/logging/managing-agent-policies](https://docs.cloud.google.com/logging/docs/agent/logging/managing-agent-policies)
+- [https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings](https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings)
+- [https://docs.cloud.google.com/logging/docs/reference/v2/rpc](https://docs.cloud.google.com/logging/docs/reference/v2/rpc)
+- [https://docs.cloud.google.com/logging/docs/reference/v2/rest](https://docs.cloud.google.com/logging/docs/reference/v2/rest)
 
 ## Supporting Pages
 
-### Logging release notes \_|\_ Google Cloud Documentation
+### Cloud Logging API \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
+- URL: [https://docs.cloud.google.com/logging/docs/reference/v2/rpc](https://docs.cloud.google.com/logging/docs/reference/v2/rpc)
 - Source ID: `site-docs-root`
-- Final score: 190
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- GetCmekSettings Gets the Logging CMEK settings for the given resource.
+- UpdateLogMetric Creates or updates a logs-based metric. google.logging.v2.RoutingConfigService Methods google.longrunning.Operations Methods CancelOperation Starts asynchronous cancellation on a long-running operation.
+- TestIamPermissions Returns permissions that a caller has on the specified resource. google.logging.v2.ConfigServiceV2 Methods CopyLogEntries Copies a set of log entries from a log bucket to a Cloud Storage bucket.
+- Service: logging.googleapis.com The Service name logging.googleapis.com is needed to create RPC client stubs. google.iam.v1.IAMPolicy Methods GetIamPolicy Gets the access control policy for a resource.
+
+### Settings \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings](https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings)
+- Source ID: `site-docs-reference`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- See Configure CMEK for Cloud Logging for more information. kmsServiceAccountId string Output only.
+- See Configure CMEK for Cloud Logging for more information. storageLocation string Optional.
+- KMS key name format: "projects/[PROJECT ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]" For example: "projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key" To enable CMEK, set this field to a valid kmsKeyName for which the associated service account has the required roles/cloudkms.cryptoKeyEncrypterDecrypter role assigned for the key.
+- JSON representation { "name" : string , "kmsKeyName" : string , "kmsServiceAccountId" : string , "storageLocation" : string , "disableDefaultSink" : boolean , "defaultSinkConfig" : { object ( DefaultSinkConfig ) } , "loggingServiceAccountId" : string } Fields name string Output only.
+
+### Cloud Logging API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/logging/docs/reference/v2/rest](https://docs.cloud.google.com/logging/docs/reference/v2/rest)
+- Source ID: `site-docs-reference`
+- Final score: 30
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- March 25, 2022 Feature Cloud Logging now supports organization policies that can enforce CMEK protection.
-- April 18, 2023 Feature You can now configure Log Analytics on Cloud Logging buckets and BigQuery linked datasets by using the following Terraform modules: google logging project bucket config google logging linked dataset April 11, 2023 Change The Logging Query Language now supports a built-in SEARCH function that you can use to find strings in your log data.
-- For a list of Cloud Logging permissions that are supported by deny policies, see Permissions supported in deny policies .
-- For more information, see Configure default settings for organizations and folders and Configure CMEK for Cloud Logging .
-
-### "Overview of agent policies for the Ops Agent \_|\_ Cloud Logging \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies-overview](https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies-overview)
-- Source ID: `site-docs-root-2`
-- Final score: 152
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The beta and GA policies are also structurally different: Policies created by using gcloud beta compute instances ops-agents policies describe agent policies by passing individual options to the commands, for example: gcloud beta compute instances ops-agents policies create ops-agents-test-policy \ --agent-rules = "type=logging,enable-autoupgrade=false;type=metrics,enable-autoupgrade=false" \ --description = "A test policy." \ --os-types = short-name = centos,version = 7 \ --instances = zones/us-central1-a/instances/test-instance \ --project PROJECT ID The agent-policy Terraform module provides the same capabilities.
-- The following example creates a file called config.yaml that contains a policy that matches the label applied in the previous step: cat > config.yaml << EOF agentsRule: packageState: installed version: 2 .47.0 instanceFilter: inclusionLabels: - labels: KEY : VALUE EOF For more information about describing GA agent policies, see Configuration files for agent policies .
-- Delete the beta agent policy by running the following command: gcloud beta compute instances ops-agents policies delete POLICY ID --project PROJECT ID You might not be able to write a GA agent policy for the Ops Agent that is exactly the same as an existing beta agent policy.
-- Create a GA agent policy in each zone that has VMs with the new label: gcloud compute instances ops-agents policies create POLICY ID \ --zone ZONE \ --file config.yaml --project PROJECT ID For more information about creating GA agent policies, see Create an agent policy .
-
-### Use agent policies \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/logging/docs/agent/logging/managing-agent-policies](https://docs.cloud.google.com/logging/docs/agent/logging/managing-agent-policies)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- To enable the APIs, grant the necessary roles to the default service account, and enable the OS Config metadata for a project, run the script as follows: bash set-permissions.sh --project= PROJECT ID To additionally grant one of the OS Config roles to a user who does not have the Owner ( roles/owner ) role on the project, run the script as follows: bash set-permissions.sh --project= PROJECT ID \ --iam-user= USER EMAIL \ --iam-permission-role=guestPolicy [Admin Editor Viewer] To additionally grant one of the OS Config roles to a non-default service account, run the script as follows: bash set-permissions.sh --project= PROJECT ID \ --iam-service-account= SERVICE ACCT EMAIL \ --iam-permission-role=guestPolicy [Admin Editor Viewer] The diagnose.sh script Given a project ID, a Compute Engine instance ID, and the agent policy ID, the diagnose.sh script automatically collects the necessary information to help diagnose issues with the policy: The OS Config agent version The underlying OS Config guest policy The policies that are applicable to this Compute Engine instance The agent package repositories that are pulled on to this Compute Engine instance To invoke the script, run the following command: bash diagnose.sh --project-id= PROJECT ID \ --gce-instance-id= INSTANCE ID \ --policy-id= POLICY ID Terraform integration To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .
-- Here is an example of a phased rollout plan for Debian 11 VMs in a project called my project : Phase 1: Create a policy named ops-agents-policy-safe-rollout to install the legacy Logging agent and Monitoring agent on all VMs with the labels env=test and app=myproduct . gcloud beta compute instances \ ops - agents policies create ops - agents - policy - safe - rollout \ -- agent - rules = "type=logging,version=current-major,package-state=installed,enable-autoupgrade=true;type=metrics,version=current-major,package-state=installed,enable-autoupgrade=true" \ -- os - types = short - name = debian , version = 11 \ -- group - labels = env = test , app = myproduct \ -- project = my project For more information about specifying the operating system, see gcloud beta compute instances ops-agents policies create .
-- To verify that the OS Config metadata is enabled, you can run the following command: gcloud compute project-info describe \ --project PROJECT ID \ grep "enable-osconfig\ enable-guest-attributes" -A 1 The expected output follows: - key: enable-guest-attributes value: 'TRUE' - key: enable-osconfig value: 'TRUE' Observability agents are installed, but not functioning properly For information about debugging specific agents, see the following documents: Troubleshoot the Ops Agent Troubleshoot the legacy Logging agent Troubleshoot the legacy Monitoring agent Enable debug-level logs for the OS Config agent It can be useful to enable debug-level logging in the OS Config agent when reporting an issue.
-- Best practices for using agent policies To control the impact to production systems during rollout, we recommend that you use instance labels and zones to filter the instances that the policy applies to.
+- REST Resource: v2.organizations Methods getCmekSettings GET /v2/{name=organizations/ }/cmekSettings Gets the Logging CMEK settings for the given resource. getSettings GET /v2/{name=organizations/ }/settings Gets the settings for the given resource. updateCmekSettings PATCH /v2/{name=organizations/ }/cmekSettings Updates the Log Router CMEK settings for the given resource. updateSettings PATCH /v2/{name=organizations/ }/settings Updates the settings for the given resource.
+- REST Resource: v2 REST Resource: v2.billingAccounts REST Resource: v2.billingAccounts.exclusions REST Resource: v2.billingAccounts.locations.buckets REST Resource: v2.billingAccounts.locations.buckets.links REST Resource: v2.billingAccounts.locations.buckets.views REST Resource: v2.billingAccounts.locations.buckets.views.logs REST Resource: v2.billingAccounts.locations.operations REST Resource: v2.billingAccounts.locations.recentQueries REST Resource: v2.billingAccounts.locations.savedQueries REST Resource: v2.billingAccounts.logs REST Resource: v2.billingAccounts.sinks REST Resource: v2.entries REST Resource: v2.exclusions REST Resource: v2.folders REST Resource: v2.folders.exclusions REST Resource: v2.folders.locations.buckets REST Resource: v2.folders.locations.buckets.links REST Resource: v2.folders.locations.buckets.views REST Resource: v2.folders.locations.buckets.views.logs REST Resource: v2.folders.locations.logScopes REST Resource: v2.folders.locations.operations REST Resource: v2.folders.locations.recentQueries REST Resource: v2.folders.locations.savedQueries REST Resource: v2.folders.logs REST Resource: v2.folders.sinks REST Resource: v2.locations.buckets REST Resource: v2.locations.buckets.links REST Resource: v2.locations.buckets.views REST Resource: v2.locations.operations REST Resource: v2.logs REST Resource: v2.monitoredResourceDescriptors REST Resource: v2.organizations REST Resource: v2.organizations.exclusions REST Resource: v2.organizations.locations.buckets REST Resource: v2.organizations.locations.buckets.links REST Resource: v2.organizations.locations.buckets.views REST Resource: v2.organizations.locations.buckets.views.logs REST Resource: v2.organizations.locations.logScopes REST Resource: v2.organizations.locations.operations REST Resource: v2.organizations.locations.recentQueries REST Resource: v2.organizations.locations.savedQueries REST Resource: v2.organizations.logs REST Resource: v2.organizations.sinks REST Resource: v2.projects REST Resource: v2.projects.exclusions REST Resource: v2.projects.locations.buckets REST Resource: v2.projects.locations.buckets.links REST Resource: v2.projects.locations.buckets.views REST Resource: v2.projects.locations.buckets.views.logs REST Resource: v2.projects.locations.logScopes REST Resource: v2.projects.locations.operations REST Resource: v2.projects.locations.recentQueries REST Resource: v2.projects.locations.savedQueries REST Resource: v2.projects.logs REST Resource: v2.projects.metrics REST Resource: v2.projects.sinks REST Resource: v2.sinks Service: logging.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://logging.googleapis.com REST Resource: v2 Methods getCmekSettings GET /v2/{name= / }/cmekSettings Gets the Logging CMEK settings for the given resource. getSettings GET /v2/{name= / }/settings Gets the settings for the given resource. updateCmekSettings PATCH /v2/{name= / }/cmekSettings Updates the Log Router CMEK settings for the given resource. updateSettings PATCH /v2/{name= / }/settings Updates the settings for the given resource.
+- REST Resource: v2.folders Methods getCmekSettings GET /v2/{name=folders/ }/cmekSettings Gets the Logging CMEK settings for the given resource. getSettings GET /v2/{name=folders/ }/settings Gets the settings for the given resource. updateSettings PATCH /v2/{name=folders/ }/settings Updates the settings for the given resource.
 

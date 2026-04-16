@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:28:55.740Z"
+generated_at: "2026-04-12T12:11:54.316Z"
 product_name: "Cloud Router"
 product_slug: "cloud-router"
 feature_name: "BGP keepalive interval updates"
 feature_slug: "bgp-keepalive-interval-updates"
 latest_feature_date: "2021-06-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
   - "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions"
+  - "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details"
 keywords:
   - "bgp"
   - "keepalive"
@@ -26,7 +27,7 @@ keywords:
 # BGP keepalive interval updates
 
 Product: Cloud Router
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ BGP keepalive interval updates let you modify the keepalive interval for Cloud R
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 - [https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions](https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions)
+- [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network)
 - Source ID: `site-docs-root`
-- Final score: 114
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 163
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To create a Cloud Router that's associated with a region of a VPC network, use the following request: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /routers { "name": " ROUTER NAME ", "network": " NETWORK ", "encryptedInterconnectRouter": True False, "bgp": { "asn": " ASN NUMBER ", "advertiseMode": " ADVERTISEMENT MODE ", "advertisedGroups": [ALL SUBNETS], "advertisedIpRanges": [ { "range": CUSTOM ADVERTISED RANGE , "description": CUSTOM ADVERTISED RANGE DESCRIPTION }, ... ], "identifierRange": ROUTER IDENTIFIER RANGE , "keepaliveInterval": KEEPALIVE TIMER } } Replace the following: ROUTER NAME : the name of the Cloud Router PROJECT ID : the project ID for the project that contains the Cloud Router NETWORK : the VPC network that contains the Cloud Router REGION : the region that contains the Cloud Router ASN NUMBER : any private ASN ( 64512 - 65534 , 4200000000 - 4294967294 ) that you aren't already using in the on-premises network Cloud Router requires you to use a private ASN, but your on-premises ASN can be public or private.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 - Source ID: `site-docs-root`
-- Final score: 112
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 150
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For the second VPN tunnel Add a second interface to the Cloud Router. gcloud compute routers add-interface ROUTER NAME \ --interface-name= ROUTER INTERFACE NAME 1 \ --vpn-tunnel= TUNNEL NAME 1 \ --region= REGION Add a BGP peer configuration to the second interface for the second tunnel . gcloud compute routers add-bgp-peer ROUTER NAME \ --peer-name= PEER NAME 1 \ --peer-asn= PEER ASN \ --interface= ROUTER INTERFACE NAME 1 \ --region= REGION \ --enable-ipv6 \ --ipv6-nexthop-address= IPV6 NEXTHOP ADDRESS \ --peer-ipv6-nexthop-address= PEER IPV6 NEXTHOP ADDRESS In the commands, replace the following: PEER NAME 1 with a name for the peer VPN interface PEER ASN with the ASN configured for the peer VPN gateway IPV6 NEXTHOP ADDRESS : the next hop address for IPv6 routes that are advertised by Cloud Router PEER IPV6 NEXTHOP ADDRESS : the next hop address for IPv6 routes learned by the Cloud Router from the BGP peer API To create BGP sessions, follow these steps: To create a Cloud Router interface, make one of the following requests: PATCH : Use the routers.patch method UPDATE : Use the routers.update method The PATCH request updates only the parameters that you include, whereas the UPDATE request updates all the parameters of a Cloud Router.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions](https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions)
 - Source ID: `site-docs-root`
-- Final score: 102
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 137
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This IPv6 address is used as the BGP peering address with Cloud Router for a HA VPN tunnel or a Dedicated Interconnect VLAN attachment. bgpPeers.ipAddress is an IPv6 address assigned to the interface of the Cloud Router and matches the value configured as the peer BGP IP address on your on-premises router. bgpPeers.peerAsn matches the ASN of your on-premises router. bgp.asn matches the peer ASN configured on your on-premises router.
 - For additional troubleshooting information, see the following: Troubleshoot BGP peering Troubleshoot BGP routes and route selection Troubleshoot Cloud Router log messages BGP session failed to establish Check that the settings on your on-premises BGP router and the settings on your Cloud Router are correct.
 - Run the following command: gcloud compute routers describe ROUTER-NAME In the command output, check the following values: bgpPeers.peerIpAddress is an IPv6 address assigned to the external interface on your on-premises router.
 - IPv6 BGP session fails to establish If you are experiencing difficulty establishing a connection with your IPv6 BGP peer, do the following: Verify that the corresponding VLAN attachment or HA VPN tunnel is connected.
+
+### View router details \_|\_ Cloud Router \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details)
+- Source ID: `site-docs-root`
+- Final score: 135
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- View the BGP sessions section to see the details of your Cloud Router's BGP sessions. gcloud Run the describe command and pass the name of the Cloud Router. gcloud compute routers describe ROUTER NAME \ --project PROJECT ID \ --region REGION Replace the following: ROUTER NAME : the name of the Cloud Router PROJECT ID : the project that contains your Cloud Router REGION : the region where the Cloud Router is located In the output, view the bgpPeers section: bgp: advertiseMode: DEFAULT asn: 65001 keepaliveInterval: 120 bgpPeers: — advertiseMode: DEFAULT bfd: minReceiveInterval: 1000 minTransmitInterval: 1000 mode: ACTIVE multiplier: 5 enable: 'TRUE' enableIpv6: true interfaceName: if-mysession2 ipAddress: 169.254.0.1 ipv6NexthopAddress: 2600:2d00:0:0:0:0:1:5 name: mysession2 peerAsn: 65002 peerIpAddress: 169.254.0.2 peerIpv6NexthopAddress: 2600:2d00:0:0:0:0:1:6 creationTimestamp: '2019-03-15T13:48:12.433-07:00' description: '' id: '1234567890123456789' interfaces: — ipRange: 169.254.0.1/30 linkedVpnTunnel: https://www.googleapis.com/compute/projects/ PROJECT ID /regions/us-central1/vpnTunnels/vpn-1-tunnel-1 name: if-mysession2 kind: compute#router name: ROUTER NAME network: https://www.googleapis.com/compute/projects/ PROJECT ID /global/networks/network-a region: https://www.googleapis.com/compute/projects/ PROJECT ID /regions/us-central1 selfLink: https://www.googleapis.com/compute/projects/ PROJECT ID /regions/us-central1/routers/ ROUTER NAME selfLinkWithId: https://www.googleapis.com/compute/projects/ PROJECT ID /regions/us-central1/routers/7114728016518951267 API Use the routers.get method: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /routers/ ROUTER NAME Replace the following: PROJECT ID : the project that contains the Cloud Router REGION : the region where the Cloud Router is located ROUTER NAME : the name of the Cloud Router The bgpPeers[] field in the output contains the configuration for each BGP session.
+- The command returns the router's status, advertised routes, and learned routes. gcloud compute routers get-status ROUTER NAME \ --project= PROJECT ID \ --region= REGION Replace the following: ROUTER NAME : the name of the Cloud Router PROJECT ID : the project that contains your Cloud Router REGION : the region that contains your Cloud Router The output is similar to the following: kind: compute#routerStatusResponse result: bestRoutes: — creationTimestamp: '2019-04-17T07:16:12.789-07:00' destRange: 192.168.1.0/24 kind: compute#route nextHopIp: 169.254.0.2 priority: 100 — creationTimestamp: '2019-04-17T07:16:12.789-07:00' destRange: 192.168.2.0/24 kind: compute#route nextHopIp: 169.254.0.2 priority: 338 bestRoutesForRouter: — creationTimestamp: '2019-04-17T07:15:42.012-07:00' destRange: 192.168.1.0/24 kind: compute#route nextHopIp: 169.254.0.2 priority: 100 — creationTimestamp: '2019-04-17T07:15:42.014-07:00' destRange: 192.168.2.0/24 kind: compute#route nextHopIp: 169.254.0.2 priority: 338 bgpPeerStatus: — advertisedRoutes: — destRange: 10.0.1.0/24 kind: compute#route nextHopIp: 169.254.0.1 priority: 100 — destRange: 10.0.2.0/24 kind: compute#route nextHopIp: 169.254.0.1 priority: 340 bfdStatus: bfdSessionInitializationMode: ACTIVE configUpdateTimestampMicros: '1615561369012381' controlPacketCounts: numRx: 64014 numRxRejected: 0 numRxSuccessful: 64014 numTx: 63994 controlPacketIntervals: — avgMs: '263' duration: MINUTE maxMs: '299' minMs: '225' numIntervals: '227' type: TRANSMIT — avgMs: '262' duration: MAX maxMs: '4467' minMs: '0' numIntervals: '63993' type: TRANSMIT — avgMs: '261' duration: MINUTE maxMs: '1000' minMs: '176' numIntervals: '228' type: RECEIVE localDiagnostic: NO DIAGNOSTIC localState: UP negotiatedLocalControlTxIntervalMs: 1000 rxPacket: authenticationPresent: false controlPlaneIndependent: false demand: false diagnostic: NO DIAGNOSTIC final: false length: 24 minEchoRxIntervalMs: 0 minRxIntervalMs: 1000 minTxIntervalMs: 1000 multiplier: 5 multipoint: false myDiscriminator: 313496190 poll: false state: UP version: 1 yourDiscriminator: 369987665 txPacket: authenticationPresent: false controlPlaneIndependent: false demand: false diagnostic: NO DIAGNOSTIC final: false length: 24 minEchoRxIntervalMs: 0 minRxIntervalMs: 1000 minTxIntervalMs: 1000 multiplier: 5 multipoint: false myDiscriminator: 369987665 poll: false state: UP version: 1 yourDiscriminator: 313496190 uptimeMs: '16812601' enableIpv6: true ipAddress: 169.254.0.1 ipv6NexthopAddress: 2600:2d00:0:0:0:0:1:5 linkedVpnTunnel: https://www.googleapis.com/compute/projects/ PROJECT ID /regions/us-central1/vpnTunnels/vpn-1-tunnel-1 name: mysession2 numLearnedRoutes: 2 peerIpAddress: 169.254.0.2 peerIpv6NexthopAddress: 2600:2d00:0:0:0:0:1:4 state: Established status: UP uptime: 2 days, 3 hours, 37 minutes, 0 seconds uptimeSeconds: '185820' network: https://www.googleapis.com/compute/kind: compute#routerStatusResponse result.bestRoutes lists the best dynamic routes for this Cloud Router's VPC network in the same region as this Cloud Router.
+- Determine the BGP peer keepalive interval setting In the Google Cloud console, go to the Cloud Routers page.
+- View the setting on the Router details page under BGP peer keepalive interval .
 

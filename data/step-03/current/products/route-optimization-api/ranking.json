@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:56:11.290Z",
+  "generated_at": "2026-04-12T21:47:01.891Z",
   "product_name": "Route Optimization API",
   "product_slug": "route-optimization-api",
   "step02_source_path": "data/step-02/current/route-optimization-api.md",
@@ -8,6 +8,31 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 1,
+    "source_row_count": 1,
+    "top_phrases": [
+      "route tokens",
+      "the route optimization api can generate route tokens that can be passed to the navigation sdk to guide vehicle routing"
+    ],
+    "top_tokens": [
+      "api",
+      "can",
+      "generate",
+      "guide",
+      "navigation",
+      "optimization",
+      "passed",
+      "route",
+      "routing",
+      "sdk",
+      "that",
+      "the",
+      "tokens",
+      "vehicle"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "go",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
@@ -63,18 +88,25 @@
           "rank": 6
         },
         {
-          "title": "Interpret the response | Route Optimization API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/route-optimization/interpret-response",
-          "description": "The Route Optimization API <strong>returns optimized routes for vehicles, assigning shipments and potentially skipping some based on constraints and costs</strong>.",
-          "rank": 7
-        },
-        {
           "title": "Package google.maps.routeoptimization.v1 | Route Optimization API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/route-optimization/reference/rpc/google.maps.routeoptimization.v1",
           "description": "<strong>Key actions include defining `Shipment`s (pickup/delivery), `Vehicle`s (capacities/limits), `BreakRule`s, and `ShipmentType` relationships</strong>. `OptimizeTours` optimizes a single model, while `BatchOptimizeTours` handles multiple asynchronously, ...",
+          "rank": 7
+        },
+        {
+          "title": "Interpret the response | Route Optimization API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/route-optimization/interpret-response",
+          "description": "The Route Optimization API <strong>returns optimized routes for vehicles, assigning shipments and potentially skipping some based on constraints and costs</strong>.",
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Route Optimization API\" \"route tokens\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 1,
@@ -176,6 +208,13 @@
     },
     {
       "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Route Optimization API\" \"the route optimization api can generate route tokens that can be passed to the navigation sdk to guide vehicle routing\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Route Optimization API\" \"access control\"",
       "official_result_count": 0,
@@ -223,15 +262,15 @@
       "official_result_count": 8,
       "results": [
         {
-          "title": "Google Maps Platform Documentation | Route Optimization API | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/route-optimization",
-          "description": "The Route Optimization API <strong>assigns tasks and routes to a vehicle fleet, optimizing against the objectives and constraints that you supply for your transportation goals</strong>.",
-          "rank": 1
-        },
-        {
           "title": "What is the Route Optimization API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/route-optimization/overview",
           "description": "Route Optimization API <strong>leverages Google Maps data and custom parameters to generate efficient routes for fleets, considering factors like time, cost, and vehicle capacity</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Google Maps Platform Documentation | Route Optimization API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/route-optimization",
+          "description": "The Route Optimization API <strong>assigns tasks and routes to a vehicle fleet, optimizing against the objectives and constraints that you supply for your transportation goals</strong>.",
           "rank": 2
         },
         {
@@ -271,6 +310,13 @@
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Route Optimization API\" \"route tokens\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 3,
@@ -337,6 +383,17 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 158,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -347,6 +404,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -374,6 +438,19 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "that",
+          "the",
+          "vehicle"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -384,6 +461,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "that",
+          "the",
+          "vehicle"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -408,9 +494,22 @@
         2,
         3
       ],
-      "best_rank": 2,
+      "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the",
+          "vehicle"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -421,6 +520,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the",
+          "vehicle"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -448,6 +556,18 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": -1,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -458,6 +578,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -485,6 +613,17 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": -4,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -494,7 +633,14 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -520,6 +666,18 @@
       "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -530,6 +688,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -555,6 +721,17 @@
       "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -565,6 +742,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -588,6 +772,18 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -598,6 +794,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -608,7 +812,7 @@
       "title": "Interpret the response | Route Optimization API | Google for Developers",
       "url": "https://developers.google.com/maps/documentation/route-optimization/interpret-response",
       "description": "The Route Optimization API <strong>returns optimized routes for vehicles, assigning shipments and potentially skipping some based on constraints and costs</strong>.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:developers.google.com \"Route Optimization API\" official documentation OR site:developers.google.com \"route optimization api\" official documentation"
       ],
@@ -618,9 +822,21 @@
       "round_hits": [
         1
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the",
+          "vehicle"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -631,6 +847,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the",
+          "vehicle"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -654,6 +878,16 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": -7,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -663,7 +897,13 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -687,6 +927,18 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": -1,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the",
+          "vehicle"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -696,7 +948,15 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "the",
+          "vehicle"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -720,6 +980,16 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": -7,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -729,7 +999,13 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -740,7 +1016,7 @@
       "title": "Package google.maps.routeoptimization.v1 | Route Optimization API | Google for Developers",
       "url": "https://developers.google.com/maps/documentation/route-optimization/reference/rpc/google.maps.routeoptimization.v1",
       "description": "<strong>Key actions include defining `Shipment`s (pickup/delivery), `Vehicle`s (capacities/limits), `BreakRule`s, and `ShipmentType` relationships</strong>. `OptimizeTours` optimizes a single model, while `BatchOptimizeTours` handles multiple asynchronously, ...",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:developers.google.com \"Route Optimization API\" official documentation OR site:developers.google.com \"route optimization api\" official documentation"
       ],
@@ -750,9 +1026,20 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "vehicle"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -763,6 +1050,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "vehicle"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -786,9 +1080,21 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
@@ -796,6 +1102,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -819,6 +1133,20 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 136,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "routing",
+          "the",
+          "vehicle"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -829,6 +1157,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "can",
+          "optimization",
+          "route",
+          "routing",
+          "the",
+          "vehicle"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -852,6 +1190,19 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "that",
+          "the",
+          "vehicle"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -862,6 +1213,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "optimization",
+          "route",
+          "that",
+          "the",
+          "vehicle"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.645Z"
+generated_at: "2026-04-15T13:50:47.036Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Audit Log dashboard"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-10-30"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide"
 keywords:
   - "audit"
   - "log"
   - "dashboard"
-  - "that"
   - "shows"
   - "configuration"
   - "changes"
-  - "to"
+  - "instance"
+  - "including"
 ---
 
 # Audit Log dashboard
@@ -42,48 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Real-time dashboards and monitoring pages \_|\_ Google Cloud Contact Center\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 172
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- Source ID: `site-docs-reference`
+- Final score: 136
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature New Audit Log dashboard We've added a new Audit log dashboard to help you track changes to the configuration of your instance.
-- Fixed an issue that caused a Custom roles permissions is invalid error when attempting to save a change to the Audit Dashboard permission in a custom role.
-- Feature Update to the Virtual agent dashboard for wait-time virtual agent metrics The Virtual agent dashboard includes the following new tiles to measure the activity of wait-time virtual agents while end-users wait in queue: Total VA In-Queue Interactions (calls only): the number of calls where wait-time virtual agents were active while end-users were in a queue Total VA In-Queue Time (calls only): the total time that wait-time virtual agents were active while end-users were in a queue Avg VA In-Queue Time (calls only): the average time that wait-time virtual agents were active while end-users were in a queue For more information, see Virtual agent dashboards .
-- A new Upload audio recording option appears in the call adapter in the following locations: Options > Agent Deflections > After hours deflection Options > Agent Deflections > Overcapacity deflection Options > Agent Deflections > Automatic redirections If you make changes to an agent's after-hours deflection settings, overcapacity deflection settings, or automatic redirection settings, you can now revert to the settings that the agent selected in the call adapter.
+- See Virtual Agent Platform statuses in Virtual Agent configuration Inactive: Virtual Agent is turned off Explorable metrics in real-time call and chat dashboards Overview Drill-down on explorable metrics in the Call and Chat Real time Dashboards to obtain additional insight into performance and details about the metric.
+- The dashboard can be filtered for various configurations, and you can drill into data by clicking to see filtered pages of Connected, Queued, or Completed chats , or the Agent Monitoring page.
+- Overview The Call dashboard shows both real-time and aggregated data related to your contact center calls.
+- Up to 5 queues show at a time and the volume shows everything including abandoned interactions.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Salesforce integration guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 102
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 117
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create a CCAI Platform instance To create a CCAI Platform instance, follow these steps: In the Google Cloud console, go to the project selector dashboard and select the project that contains your instance.
-- To check the version number of your instance, follow these steps: In the Google Cloud console, go to the project selector dashboard and select the project that contains your instance.
-- Recommended headset features Binaural - Audio in both ears cuts down on background noise Noise-canceling microphone Noise-canceling headset USB connection Brands of headsets our customers use Jabra Logitech Plantronics Sennheiser What's next Configure a sample contact center Private Service Connect Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Billing depending on which of the following charging models is assigned to your instance: Concurrent agents : the maximum number of concurrent users with the agent role that are signed in during the month period Named agents : the maximum number of users in the instance that have the agent role during the month period Minutes used : the number of minutes that users with the agent role are signed in during the month period Note: Telephony charges are charged according to consumption.
+- CRM sends agent status update When Agent is not Offline in CCAI Platform, CRM status changes will be made in CCAI Platform based on status mapping When Agent is in Offline in CCAI Platform, CRM status changes will be ignored When the CRM status changes while on an active session/call CCAI Platform treats this status change the same as the agent Next Status feature and when the session is complete, after Wrap-up, the next status is governed by the new CRM status If the agent has defined their Next Status and a CRM status change request is also received, the agent's next status will be set to the latest received status Salesforce Configuration Configure omni-channel If your org has already configured Omni-Channel, skip this section.
+- V 1.16 - supporting sessions, transfers, actions, files URL: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4M000000syZQ&isdtp=p1 V 1.17 - added Email field in Account object (UJET Email c) URL: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4M000000kkWd&isdtp=p1 Salesforce configuration updates The following configuration changes are required in Salesforce.
+- Required Salesforce permission sets configuration Account object and field permission changes are required.
+- Sample UI of multiple CCAI Platform sessions related to a case CCAI Platform session object data hierarchy The session object is organized as follows: Session(s) related list: the list of session(s) related to a case or account object Session Detail : presents the core session object details Core session fields: lists any associated transfers and files File list: any files that have been uploaded or created as part of the session File detail: all details about a file, including access to file itself Actions: a list of actions that occurred during the session Action detail: additional info about a specific action Transfers: complete list of transfers that occurred during the session Transfer detail: displays all fields and data associated with a single transfer events CCAI Platform session overview After opening a session, the following view will be provided, listing all associated CCAI Platform session actions, attached files, and transfers.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "iOS SDK guide \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 56
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide)
+- Source ID: `site-docs-reference`
+- Final score: 112
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- CCAI Platform is a unified contact center platform that accelerates the organization's ability to leverage and deploy Gemini Enterprise for CX without relying on multiple technology providers.
-- Contact Center AI Platform (CCAI Platform) is an AI-driven Contact Center as a Service platform that is built natively on Google Cloud and uses the other Gemini Enterprise for Customer Experience products at its core.
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- Delivers AI-based omni-channel routing, intelligent Virtual Agent, Agent Assist, and Insights capabilities that enables organizations to streamline customer experiences.
+- Project configurations The following sections outline the changes needed to configure the project.
+- Do this by either using the json file (see the form card property ) or by using the UJETChatFormCardTheme class. func customizeChatTheme () throws { guard let file = Bundle.main.path ( forResource: "chat-theme-custom" , ofType: "json" ) else { return } let json = try String.init ( contentsOfFile: file, encoding: .utf8 ) let chatTheme = UJETChatTheme.init ( jsonString: json ) let formCardTheme = UJETChatFormCardTheme () formCardTheme.backgroundColor = UJETColorRef ( assetName: "agent message background color" ) formCardTheme.cornerRadius = 16 let formCardFontTheme = UJETFontTheme () formCardFontTheme.family = "Arial Rounded MT Bold" formCardFontTheme.size = 18 formCardTheme.font = formCardFontTheme let formCardBorder = UJETBorderTheme () formCardBorder.width = 1 formCardBorder.color = UJETColorRef ( assetName: "agent message border color" ) formCardTheme.border = formCardBorder let titleFontTheme = UJETFontTheme () titleFontTheme.family = "Arial Rounded MT Bold" titleFontTheme.size = 18 formCardTheme.title = titleFontTheme // The font family is inherited from the formCardFontTheme let subtitleFontTheme = UJETFontTheme () subtitleFontTheme.size = 12 formCardTheme.subtitle = subtitleFontTheme chatTheme?.formCard = formCardTheme let globalTheme = UJETGlobalTheme () globalTheme.chatTheme = chatTheme globalTheme.defaultAgentImage = UIImage ( named: "agent avatar image" ) globalTheme.font = UIFont ( name: "Arial Rounded MT Bold" , size: 14 ) UJET.setGlobalTheme ( globalTheme ) } Web form configuration To configure the web form capability, implement the ujetWebFormDidReceive method of the UJETDelegate protocol.
+- And the object of custom data is value of custom data key. { "iat" : 1537399656 , "exp" : 1537400256 , "custom data" : { "location" : { "label" : "Location" , "value" : "1000 Stockton St, San Francisco, CA, United States" , "type" : "string" }, "dashboard url" : { "label" : "Dashboard URL" , "value" : "http://(company name)/dashboard/device user ID" , "type" : "url" }, "contact date" : { "label" : "Contact Date" , "value" : 1537399655992 , "type" : "date" }, "membership number" : { "label" : "Membership Number" , "value" : 62303 , "type" : "number" }, "model" : { "label" : "Model" , "value" : "iPhone" , "type" : "string" }, "os version" : { "label" : "OS Version" , "value" : "12.0" , "type" : "string" }, "last transaction id" : { "label" : "Last Transaction ID" , "value" : "243324DE-01A1-4F71-BABC-3572B77AC487" , "type" : "string" }, "battery" : { "label" : "Battery" , "value" : "-100%" , "type" : "string" }, "bluetooth" : { "label" : "Bluetooth" , "value" : "Bluetooth not supported" , "type" : "string" }, "wifi" : { "label" : "Wi-Fi" , "value" : "Wi-Fi not connected" , "type" : "string" }, "ssn" : { "invisible to agent" : true , "label" : "Social Security Number" , "value" : "102-186-1837" , "type" : "string" } } } Each data is similar to JSON object format and should contain the key, value, type, and label.
+- HTTPMethod = @ "POST" ; NSError error ; // Make client's custom data UJETCustomData customData = [[ UJETCustomData alloc ] init ] ; [ customData set : @ "name" label : @ "Name" stringValue : @ "USER NAME" ] ; [ customData set : @ "os version" label : @ "OS Version" stringValue : [[ UIDevice currentDevice ] systemVersion ]] ; [ customData set : @ "model" label : @ "Model number" numberValue : [ NSNumber numberWithInteger : 1234 ]] ; [ customData set : @ "temperature" label : @ "Temperature" numberValue : [ NSNumber numberWithFloat : 70.5 ]] ; [ customData set : @ "purchase date" label : @ "Purchase Date" dateValue : [ NSDate date ]] ; [ customData set : @ "dashboard url" label : @ "Dashboard" urlValue : [ NSURL URLWithString : @ "http://internal.dashboard.com/1234" ]] ; NSDictionary data = @ { @ "custom data" : [ customData getData ] }; mutableRequest .
 

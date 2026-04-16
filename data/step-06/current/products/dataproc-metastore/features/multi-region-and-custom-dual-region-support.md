@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:49:01.294Z"
+generated_at: "2026-04-12T12:14:00.716Z"
 product_name: "Dataproc Metastore"
 product_slug: "dataproc-metastore"
 feature_name: "Multi-region and custom dual region support"
 feature_slug: "multi-region-and-custom-dual-region-support"
 latest_feature_date: "2026-01-13"
 deprecation_date: "2026-01-13"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc-metastore/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc-metastore/docs/access-service"
   - "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/cmek"
 keywords:
   - "multi"
   - "region"
@@ -26,7 +27,7 @@ keywords:
 # Multi-region and custom dual region support
 
 Product: Dataproc Metastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +39,24 @@ This capability lets Dataproc Metastore services run in multi-region and custom 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc-metastore/docs/release-notes](https://docs.cloud.google.com/dataproc-metastore/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc-metastore/docs/access-service](https://docs.cloud.google.com/dataproc-metastore/docs/access-service)
 - [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface](https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/cmek](https://docs.cloud.google.com/dataproc-metastore/docs/cmek)
 
 ## Supporting Pages
-
-### Dataproc Metastore release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/release-notes](https://docs.cloud.google.com/dataproc-metastore/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- January 13, 2026 v1 & v1beta1 Deprecated Multi-region and custom dual region support for Dataproc Metastore is deprecated.
-- You can no longer create new multi-region or custom dual region services.
-- April 22, 2025 v1beta1 Feature Dataproc Metastore multi-regional services now support the use of customer-managed encryption keys (CMEKs) -- (in preview ).
-- October 31, 2023 v1 Feature Dataproc Metastore is available in the following multi-regional configurations , nam11 and eur5 .
 
 ### Dataproc Metastore networking overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/access-service](https://docs.cloud.google.com/dataproc-metastore/docs/access-service)
 - Source ID: `site-iam-reference`
-- Final score: 112
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 164
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - When creating the first Dataproc Metastore service in a region, Dataproc Metastore allocates a /17 range and a /20 range in the customer's network for all future Dataproc Metastore services usage in that region and network.
@@ -79,13 +68,40 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
 - Source ID: `site-docs-root`
-- Final score: 102
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 146
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Provisioning the service might take a few minutes. gcloud CLI To create a metastore, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \ --location= LOCATION \ --instance-size= INSTANCE SIZE \ --scaling-factor= SCALING FACTOR \ --port= PORT \ --tier= TIER \ --endpoint-protocol= ENDPOINT PROTOCOL \ --database-type= DATABASE TYPE \ --hive-metastore-version= HIVE METASTORE VERSION \ --data-catalog-sync= DATA CATALOG SYNC \ --release-channel= RELEASE CHANNEL \ --hive-metastore-configs= METADATA OVERRIDE \ --labels= LABELS \ --auxiliary-versions= AUXILIARY VERSION \ --network= NETWORK \ --consumer-subnetworks="projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET1 , projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET2 " \ --kerberos-principal= KERBEROS PRINCIPAL \ --krb5-config= KRB5 CONFIG \ --keytab= CLOUD SECRET \ --encryption-kms-key= KMS KEY Replace the following: Service settings : SERVICE : The name of your new Dataproc Metastore service.
 - Caution: This IAM policy change grants Dataproc Metastore users with the metastore.services.create permission in the service project to indirectly create addresses and peerings in the network project. gcloud projects add-iam-policy-binding NETWORK PROJECT ID \ --role "roles/metastore.serviceAgent" \ --member "serviceAccount:service- SERVICE PROJECT NUMBER @gcp-sa-metastore.iam.gserviceaccount.com" Note: If you have never created a Dataproc Metastore service in the service project, then the gcloud projects add-iam-policy-binding command might fail with an error message containing Service account [SERVICE ACCOUNT NAME] does not exist.
 - Return to the Dataproc Metastore page, and verify that your service was successfully created. gcloud CLI To create a Dataproc Metastore service with a Hive override, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \ --location= LOCATION \ --hive-metastore-configs="hive.metastore.warehouse.dir= CUSTOMER DIR " Replace the following: SERVICE : The name of your new Dataproc Metastore service.
 - What's next Attach a Managed Service for Apache Spark cluster Update and delete a service Import metadata into a service Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Dataproc Metastore administrator interface \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface](https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface)
+- Source ID: `site-iam-reference`
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following example shows a sample command that moves a table called test-table2 to a new Cloud Storage bucket. curl -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ -X POST -d '{"resource name": "databases/testdb1/tables/test-table2", "location uri":"gs://gcs-bucket-dpms1-9425bd83-b794-4f1c-9e79-2d833f758cc1/empty"}' https://metastore.googleapis.com/projects/dpms/locations/us-central1/services/dpms1:alterLocation Alter table properties This operation lets you alter the properties of a table, such as a custom key-value pair that you're using to store data.
+- In this example the existing key-value pair, properties.customerID 1 is updated to the new value properties.customerID 2 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" -X POST -d '{"table name": "databases/default/tables/test-table", "update mask":{"paths":"properties.customerID 1"}, "properties":{"customerID 1":"customerID 2"}}' https://metastore.googleapis.com/projects/dpms-p Move a table to another database This operation lets you move an internal table (managed table) to another database.
+- The following example shows a sample command that moves a database called called testdb1 to a different database called testdb2 . curl -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" -X POST -d '{"table name": "testtb1", "db name": "testdb1", "destination db name": "testdb2"}' https://metastore.googleapis.com/projects/dpms/locations/asia-northeast2/services/dpms1:moveTableToDatabase What's next Export metadata Update a metastore Back up a metastore Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For example, you can change a key-value pair of properties.customerID 1 to properties.customerID 2 . gcloud CLI To alter a table properties, run the following gcloud metastore services alter-table-properties command: gcloud metastore services alter-table-properties SERVICE \ --location= LOCATION \ --table-name= TABLE NAME \ --update-mask= UPDATE MASK \ --properties= PROPERTIES Replace the following: SERVICE : the name of your Dataproc Metastore service.
+
+### "Encrypt data with customer-managed encryption keys \_|\_ Dataproc Metastore\
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/cmek](https://docs.cloud.google.com/dataproc-metastore/docs/cmek)
+- Source ID: `site-iam-reference`
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Grant Cloud KMS key permissions Use the following commands to grant Cloud KMS key permissions for Dataproc Metastore: Grant permissions to the Dataproc Metastore Service Agent service account: gcloud kms keys add-iam-policy-binding KEY NAME \ --location LOCATION \ --keyring KEY RING \ --member=serviceAccount:$(gcloud beta services identity create \ --service=metastore.googleapis.com 2>&1 awk '{print $4}') \ --role=roles/cloudkms.cryptoKeyEncrypterDecrypter Grant permissions to the Cloud Storage service account: gcloud storage service-agent --authorize-cmek projects/ KEY PROJECT /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys/ KEY NAME Create a single-region service with a CMEK key Use the following steps to configure CMEK encryption for a single-region Dataproc Metastore service.
+- Under the Configuration tab, verify that the details show CMEK is enabled. gcloud To create a single-region service with CMEK encryption, run the Google Cloud gcloud metastore services create command: gcloud metastore services create SERVICE \ --encryption-kms-key= KMS KEY Replace the following: SERVICE : the name of the new service.
+- What's next Import metadata into a service Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Import and export data from and to a CMEK-enabled service If you want your data to remain encrypted with a customer-managed key during an import, you must set CMEK on the Cloud Storage bucket before importing data from it.
 

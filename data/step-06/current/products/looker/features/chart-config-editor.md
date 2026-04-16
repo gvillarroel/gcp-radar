@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.486Z"
+generated_at: "2026-04-15T13:43:38.499Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Chart Config Editor"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-01-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
+  - "https://docs.cloud.google.com/looker/docs/chart-config-editor"
+  - "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor"
+  - "https://docs.cloud.google.com/looker/docs/best-practices/treemap"
 keywords:
   - "chart"
   - "config"
   - "editor"
-  - "the"
   - "now"
   - "supports"
   - "conditional"
   - "formatters"
+  - "comparing"
 ---
 
 # Chart Config Editor
@@ -42,42 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
+- [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
+- [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- [https://docs.cloud.google.com/looker/docs/best-practices/treemap](https://docs.cloud.google.com/looker/docs/best-practices/treemap)
 
 ## Supporting Pages
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### Menyesuaikan visualisasi menggunakan Editor Konfigurasi Diagram | Looker | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 44
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
-
-### Using the API Explorer | Looker | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 44
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 375
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Using the API Explorer Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-explorer There may also be Ruby and Java ... languages.
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
+- Menyimpan template Saat mengedit JSON HighCharts di editor Konfigurasi Diagram, Anda dapat menyimpan kode sebagai template dengan mengikuti langkah-langkah berikut: Di dialog Chart Config Editor, klik Simpan sebagai template .
+- Menghapus template Untuk menghapus template, ikuti langkah-langkah berikut: Di dialog Chart Config Editor, klik Saved templates .
+- Untuk melaporkan bug atau masalah terkait fitur ini, isi formulir Looker Chart Config Editor Saved Templates - Preview Issues .
+- Mengedit template Untuk mengedit template, ikuti langkah-langkah berikut: Di dialog Chart Config Editor, klik Saved templates .
 
-### Getting started with the Looker API | Google Cloud Documentation
+### "Customizing visualizations using the Chart Config Editor \_|\_ Looker \_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 40
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- Source ID: `site-docs-reference`
+- Final score: 335
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
+- Conditional formatting with series formatters The Chart Config Editor accepts most valid HighCharts JSON.
+- The following articles provide examples of some of the visualizations that you can design with the Chart Config Editor: Creating a bullet chart with the Chart Config Editor Creating a solid gauge chart with the Chart Config Editor Creating a streamgraph chart with the Chart Config Editor Creating a treemap chart with the Chart Config Editor Creating a Sankey chart with the Chart Config Editor Creating a dependency wheel chart with the Chart Config Editor Creating a Venn diagram with the Chart Config Editor Creating a sunburst chart with the Chart Config Editor Creating an item chart with the Chart Config Editor Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Data analytics Looker Guides Send feedback Customizing visualizations using the Chart Config Editor Stay organized with collections Save and categorize content based on your preferences.
+- Save a template While editing HighCharts JSON in the Chart Config editor, you can save your code as a template by following these steps: In the Chart Config Editor dialog, click Save as template .
+
+### "Creating a treemap chart with the Chart Config Editor \_|\_ Looker \_|\_\
+
+- URL: [https://docs.cloud.google.com/looker/docs/best-practices/treemap](https://docs.cloud.google.com/looker/docs/best-practices/treemap)
+- Source ID: `site-docs-reference`
+- Final score: 97
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Note: Starting in Looker 24.10, the Chart Config Editor supports the creation of treemap charts.
+- Home Documentation Data analytics Looker Guides Send feedback Creating a treemap chart with the Chart Config Editor Stay organized with collections Save and categorize content based on your preferences.
+- Using the Chart Config Editor , you can create treemap charts by starting from a column chart in Looker.
+- Prerequisites To access the Chart Config Editor, you must have the can override vis config permission .
 

@@ -1,16 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.559Z"
+generated_at: "2026-04-12T12:07:33.811Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB conversational analytics"
 feature_slug: "alloydb-conversational-analytics"
 latest_feature_date: "2026-03-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/ai/context-sets-overview"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb"
 keywords:
   - "operational analytics"
   - "Conversational Analytics API"
@@ -25,7 +27,7 @@ keywords:
 # AlloyDB conversational analytics
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,37 +39,43 @@ Conversational analytics for AlloyDB enables natural-language querying of operat
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/ai/context-sets-overview](https://docs.cloud.google.com/alloydb/docs/ai/context-sets-overview)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent)
+- [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
+- [https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow](https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow)
+- [https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb](https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb)
 
 ## Supporting Pages
 
-### Context sets overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+### Test QueryData \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/context-sets-overview](https://docs.cloud.google.com/alloydb/docs/ai/context-sets-overview)
-- Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent)
+- Source ID: `site-docs-root-2`
+- Final score: 90
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- Context sets for databases is only used by the QueryData endpoint in the Conversational Analytics API.
-- If not set, this value defaults to the natural language query. manifest : A generalized, auto-generated form of the intent. parameterized intent : A templated, auto-generated form of the intent, with entity values replaced by parameters. parameterized sql : A templated, auto-generated form of the SQL query that corresponds to the parameterized intent.
-- The main components of the query template JSON object are as follows: nl query : An example of a natural language query that tools such as QueryData handle. sql : The SQL query for the natural language query. intent : The goal or purpose of the natural language query.
+### "Database performance snapshot report reference \_|\_ AlloyDB for PostgreSQL\
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 24
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
+- Source ID: `site-api-reference`
+- Final score: 82
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- This feature is powered by the Conversational Analytics API , which can help you translate complex human dialog into precise database queries to provide actionable insights.
-- March 30, 2026 Feature AlloyDB now offers conversational analytics, which lets users query their operational data using natural language.
-- For more information, see Conversational analytics for AlloyDB overview .
+### "Build realtime vector embedding pipeline for AlloyDB with Dataflow \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow](https://docs.cloud.google.com/alloydb/docs/ai/build-etl-pipeline-alloydb-dataflow)
+- Source ID: `site-docs-root`
+- Final score: 78
+- Re-rank relevance: N/A
+
+### "Migrate data from a vector database to AlloyDB \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb](https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb)
+- Source ID: `site-docs-root-2`
+- Final score: 78
+- Re-rank relevance: N/A
 

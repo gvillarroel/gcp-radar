@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:38.925Z"
+generated_at: "2026-04-12T12:17:32.207Z"
 product_name: "Integration Connectors"
 product_slug: "integration-connectors"
 feature_name: "Jira Cloud connector OAuth 2.0 authorization code authentication"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-07-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview"
-  - "https://docs.cloud.google.com/integration-connectors/docs/custom-connectors"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure"
+  - "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure"
 keywords:
   - "jira"
   - "connector"
@@ -38,45 +39,70 @@ The Jira Cloud connector now supports OAuth 2.0 authorization code authenticatio
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure)
 
 ## Supporting Pages
 
-### Google Drive connector | Integration Connectors | Google Cloud Documentation
+### BigQuery \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview](https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_drive/overview)
-- Source ID: `site-docs-root`
-- Final score: 92
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Google Drive connector Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc google drive/overview If the action is successful, the connector task&#x27;s connectorOutputPayload response parameter will have a value similar to the following: ...
-- The following example shows how to configure the SubscribeToFileChanges action in Application Integration:
-
-### Marketplace connectors overview | Integration Connectors | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview](https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview)
-- Source ID: `site-docs-root`
-- Final score: 86
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 228
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Marketplace connectors overview Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/marketplace/marketplace-connector-overview As a partner, when you publish a custom connector as a Marketplace connector, it enhances the visibility and reach of the connector.
-- As a Marketplace consumer, you can use the trusted Google Cloud Marketplace platform to discover and purchase connectors required to build integrations in Application ...
+- Select whether to authenticate with OAuth 2.0 - Authorization code or to proceed without authentication.
+- Verify the OAuth 2.0 - Authorization code details in the Authentication section.
+- Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in BigQuery, you must re-authorize your BigQuery connection.
+- Authorize the connection If you use OAuth 2.0 - authorization code to authenticate the connection, complete the following tasks after you create the connection.
 
-### Custom connectors | Integration Connectors | Google Cloud Documentation
+### Apigee API hub \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/integration-connectors/docs/custom-connectors](https://docs.cloud.google.com/integration-connectors/docs/custom-connectors)
-- Source ID: `site-docs-root`
-- Final score: 80
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 220
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Custom connectors Integration Connectors Google Cloud Documentation Source URL: https://docs.cloud.google.com/integration-connectors/docs/custom-connectors This page provides an overview of the custom connectors feature in Integration Connectors, and assumes that you are familiar with the following concepts:
+- The following authentication types are supported by the Apigee API hub connection: OAuth 2.0 - Authorization code Service account authentication To understand how to configure these authentication types, see Configure authentication .
+- Verify the OAuth 2.0 - Authorization code details in the Authentication section.
+- Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in the Apigee API hub, you must re-authorize your Apigee API hub connection.
+- Authorize the connection If you use OAuth 2.0 - authorization code to authenticate the connection, complete the following tasks after you create the connection.
+
+### Azure Synapse \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 212
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Additional steps after connection creation If you selected OAuth 2.0 - Authorization code for authentication, you must do the following additional steps after creating the connection: In the Connections page , locate the newly created connection.
+- Verify the OAuth 2.0 - Authorization code details in the Authentication section.
+- Re-authorization for authorization code If you are using Authorization code authentication type and have made any cofiguration changes in your Azure Synapse application, you must re-authorize your Azure Synapse connection.
+- In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { "employeeCode" : "5100" , "startDate" : "2010-01-01 00:00:00.0" , "country" : "US" } If the integration is successful, the connector task's connectorOutputPayload field will have the response of the create operation.
+
+### Confluence \_|\_ Integration Connectors \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure)
+- Source ID: `site-docs-root-2`
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Additional steps after connection creation If you selected OAuth 2.0 - Authorization code for authentication, you must do the following additional steps after creating the connection: In the Connections page , locate the newly created connection.
+- Verify the OAuth 2.0 - Authorization code details in the Authentication section.
+- Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in your Confluence application, you must re-authorize your Confluence connection.
+- The following authentication types are supported by the Confluence connector: Basic APIToken OAuth2.0 To understand how to configure these authentication types, see Configure authentication .
 

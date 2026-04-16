@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.646Z"
+generated_at: "2026-04-12T12:07:33.889Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "pgvector extension support in AlloyDB"
 feature_slug: "pgvector-extension-support-in-alloydb"
 latest_feature_date: "2023-07-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
-  - "https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/run-hybrid-vector-similarity-search"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/create-hnsw-index"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting"
 keywords:
   - "vector similarity search"
   - "CREATE EXTENSION pgvector"
@@ -26,7 +27,7 @@ keywords:
 # pgvector extension support in AlloyDB
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ AlloyDB has added support for the pgvector PostgreSQL extension.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall](https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- [https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy](https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy)
+- [https://docs.cloud.google.com/alloydb/docs/ai/run-hybrid-vector-similarity-search](https://docs.cloud.google.com/alloydb/docs/ai/run-hybrid-vector-similarity-search)
+- [https://docs.cloud.google.com/alloydb/docs/ai/create-hnsw-index](https://docs.cloud.google.com/alloydb/docs/ai/create-hnsw-index)
+- [https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting](https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall](https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall)
 - Source ID: `site-docs-root-2`
-- Final score: 66
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Inverted File with Flat Compression (IVFFLAT) and Inverted File Flat (IVF): types of vector indexes that are used for ANN searches, particularly in databases like the PostgreSQL pgvector extension.
@@ -62,30 +64,38 @@ Evidence snippets:
 - If the pgvector extension isn't installed, install the vector extension version 0.8.0.google-3 or later to store generated embeddings as vector values.
 - If the pgvector extension is already installed, upgrade the vector extension to version 0.8.0.google-3 or later to get recall evaluator capabilities.
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Run a hybrid vector similarity search \_|\_ AlloyDB for PostgreSQL \_|\_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/run-hybrid-vector-similarity-search](https://docs.cloud.google.com/alloydb/docs/ai/run-hybrid-vector-similarity-search)
+- Source ID: `site-docs-reference-2`
+- Final score: 99
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- INSERT INTO documents ( doc id , content ) VALUES ( 'doc1' , 'AlloyDB is a fully managed, PostgreSQL-compatible database service.' ), ( 'doc2' , 'It offers enterprise-grade performance, availability, and security.' ), ( 'doc3' , 'You can use it for demanding transactional and analytical workloads.' ), ( 'doc4' , 'AlloyDB integrates with Google Cloud services like Vertex AI.' ), ( 'doc5' , 'The database supports vector embeddings for semantic search.' ), ( 'doc6' , 'alloydb scann is an AlloyDB specific extension that provides scann index for vector search.' ), ( 'doc7' , 'alloydb scann extension depends upon pgvector extension ' ), ( 'doc8' , 'With alloydb scann extension' ), ( 'doc9' , 'customers can create scann index' ), ( 'doc10' , 'to speed up their vector search workloads' ); Create indexes to accelerate search performance.
+- You can create vector indexes like ScaNN or HNSW for vector similarity search.
+- Enable preview AI functions: SET google ml integration . enable preview ai functions = true ; Run a similarity search with text and vector input To perform a hybrid search in AlloyDB, you create a vector index and a text search index on your table.
+- Explanation of the Hybrid Search Query and related Common Table Expression (CTE): vector search CTE: Performs a standard vector similarity search, ordering results by cosine distance and assigning a rank.
+
+### Create indexes \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/create-hnsw-index](https://docs.cloud.google.com/alloydb/docs/ai/create-hnsw-index)
 - Source ID: `site-docs-root`
-- Final score: 66
+- Final score: 87
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- What's next Create a ScaNN index Run vector similarity searches Tune vector query performance Vector index metrics Learn how to build a smart shopping assistant with AlloyDB, pgvector, and model endpoint management .
+- CREATE EXTENSION IF NOT EXISTS vector ; Create an HNSW index AlloyDB supports creating a graph-based hnsw index available with stock pgvector using the AlloyDB pgvector extension.
+- You apply the vector to one of the pgvector nearest-neighbor operators, <-> for L2 distance, to find the database rows with the most semantically similar embeddings.
+- Because embedding() returns a real array, you must explicitly cast the embedding() call to vector in order to use these values with pgvector operators.
+
+### "Perform time-series forecasting \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting](https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting)
+- Source ID: `site-docs-reference-2`
+- Final score: 78
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- AlloyDB support for the pgvector extension brings performance enhancements for vector queries that run up to ten times faster than standard PostgreSQL, including an optimization that lets you create indexes of stored vector data using scalar quantization .
-- This version includes the following changes: pgvector is updated to version 0.5.0 PostgreSQL is updated to version 15.4 Feature The AlloyDB Omni Kubernetes Operator version 0.3.0 is now available in Preview , and includes bug fixes and improvements to the operator.
-- On every node that you enable transparent huge pages on, run the following command: echo within size > /sys/kernel/mm/transparent hugepage/shmem enabled April 05, 2024 Change The extension pgvector is updated to version 0.6.0.
-- June 17, 2025 Feature You can use the columnar engine to improve the performance of vector similarity searches, specifically K-Nearest Neighbor (KNN) searches, when combined with highly-selective predicate filtering.
-
-### "Choose a vector index in AlloyDB AI \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy](https://docs.cloud.google.com/alloydb/docs/ai/choose-index-strategy)
-- Source ID: `site-docs-root`
-- Final score: 40
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Choose a vector index in AlloyDB AI Stay organized with collections Save and categorize content based on your preferences.
-- When you create a vector index in AlloyDB for PostgreSQL, it typically uses ANN, which might partition vectors according to similarity to facilitate faster retrieval.
-- Google recommends that you create a vector index to optimize performance on your vector search queries.
-- When you create a vector index, AlloyDB AI uses ANN, which provides better performance than KNN.
 

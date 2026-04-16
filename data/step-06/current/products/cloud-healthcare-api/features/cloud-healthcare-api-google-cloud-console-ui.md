@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:31.498Z"
+generated_at: "2026-04-15T00:44:19.149Z"
 product_name: "Cloud Healthcare API"
 product_slug: "cloud-healthcare-api"
 feature_name: "Cloud Healthcare API Google Cloud Console UI"
 feature_slug: "cloud-healthcare-api-google-cloud-console-ui"
 latest_feature_date: "2019-04-04"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+  - "https://docs.cloud.google.com/healthcare-api/docs/datasets"
+  - "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
 keywords:
   - "healthcare"
-  - "api"
   - "console"
   - "ui"
-  - "the"
   - "gained"
   - "user"
   - "interface"
+  - "managing"
+  - "datasets"
 ---
 
 # Cloud Healthcare API Google Cloud Console UI
 
 Product: Cloud Healthcare API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ The Google Cloud Console gained a user interface for managing Cloud Healthcare d
 
 The Google Cloud Console gained a user interface for managing Cloud Healthcare datasets and stores, permissions, and long-running operations.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources](https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources)
+- [https://docs.cloud.google.com/healthcare-api/docs/datasets](https://docs.cloud.google.com/healthcare-api/docs/datasets)
+- [https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom](https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Creating and managing FHIR resources \_|\_ Cloud Healthcare API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources](https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources)
+- Source ID: `site-docs-root`
+- Final score: 121
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), headers : { 'Content-Type' : 'application/json-patch+json' }, }); async function patchFhirResource () { // TODO(developer): replace patchOptions with your desired JSON patch body const patchOptions = [{ op : 'replace' , path : '/active' , value : false }]; // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const resourceType = 'Patient'; // const resourceId = '16e8a860-33b3-49be-9b03-de979feed14a'; const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } /fhir/ ${ resourceType } / ${ resourceId } ; const request = { name , requestBody : patchOptions , }; await healthcare . projects . locations . datasets . fhirStores . fhir . patch ( request ); console . log ( Patched ${ resourceType } resource ); } patchFhirResource (); Python Imports the types Dict and Any for runtime type hints. from typing import Any , Dict # noqa: E402 def patch resource ( project id : str , location : str , dataset id : str , fhir store id : str , resource type : str , resource id : str , ) - > Dict [ str , Any ]: """Updates part of an existing FHIR resource by applying the operations specified in a JSON Patch document.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), headers : { 'Content-Type' : 'application/fhir+json' }, }); async function createFhirResource () { // Replace the following body with the data for the resource you want to // create. const body = { name : [{ use : 'official' , family : 'Smith' , given : [ 'Darcy' ]}], gender : 'female' , birthDate : '1970-01-01' , resourceType : 'Patient' , }; // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const resourceType = 'Patient'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } ; const request = { parent , type : resourceType , requestBody : body }; const resource = await healthcare . projects . locations . datasets . fhirStores . fhir . create ( request ); console . log ( Created FHIR resource with ID ${ resource . data . id } ); console . log ( resource . data ); } createFhirResource (); Python Imports the types Dict and Any for runtime type hints. from typing import Any , Dict # noqa: E402 def create patient ( project id : str , location : str , dataset id : str , fhir store id : str , ) - > Dict [ str , Any ]: """Creates a new Patient resource in a FHIR store.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const getFhirResourceHistory = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const resourceType = 'Patient'; // const resourceId = '16e8a860-33b3-49be-9b03-de979feed14a'; // const versionId = 'MTU2NPg3NDgyNDAxMDc4OTAwMA'; const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } /fhir/ ${ resourceType } / ${ resourceId } / history/ ${ versionId } ; const request = { name }; const resource = await healthcare . projects . locations . datasets . fhirStores . fhir . vread ( request ); console . log ( JSON . stringify ( resource . data , null , 2 )); }; getFhirResourceHistory (); Python Imports the types Dict and Any for runtime type hints. from typing import Any , Dict # noqa: E402 def get resource history ( project id : str , location : str , dataset id : str , fhir store id : str , resource type : str , resource id : str , version id : str , ) - > Dict [ str , Any ]: """Gets the contents of a version (current or historical) of a FHIR resource by version ID.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), responseType : 'json' , }); const getFhirResource = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const resourceType = 'Patient'; // const resourceId = '16e8a860-33b3-49be-9b03-de979feed14a'; const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } /fhir/ ${ resourceType } / ${ resourceId } ; const request = { name }; try { const resource = await healthcare . projects . locations . datasets . fhirStores . fhir . read ( request ); console . log ( Got ${ resourceType } resource:\n , resource . data ); } catch ( error ) { console . error ( Error getting ${ resourceType } resource: , error . message error ); } }; getFhirResource (); Python Imports the types Dict and Any for runtime type hints. from typing import Any , Dict # noqa: E402 def get resource ( project id : str , location : str , dataset id : str , fhir store id : str , resource type : str , resource id : str , ) - > Dict [ str , Any ]: """Gets the contents of a FHIR resource.
+
+### "Create and manage datasets \_|\_ Cloud Healthcare API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/datasets](https://docs.cloud.google.com/healthcare-api/docs/datasets)
+- Source ID: `site-docs-root-2`
+- Final score: 115
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Response { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID ", "metadata": { "@type": "type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata", "apiMethodName": "google.cloud.healthcare.v1.dataset.DatasetService.CreateDataset", "createTime": " YYYY-MM-DDTHH:MM:SS+ZZ:ZZ ", "endTime": " YYYY-MM-DDTHH:MM:SS+ZZ:ZZ ", "logsUrl": "https://console.cloud.google.com/ CLOUD LOGGING URL " "counter": { "success": " SUCCESS COUNT ", // If there were any failures, they display in the failure field. "failure": " FAILURE COUNT " } }, "done": true, // The response field only displays if there were no errors. "response": { "@type": "type.googleapis.com/google.cloud.healthcare.v1.dataset.Dataset", "name": " PROJECT ID /locations/ LOCATION /datasets/ DATASET ID ", }, // If there were any errors, an error field displays instead of a response field. // See Troubleshooting long-running operations for a list of response codes. "error": { "code": ERROR CODE , "message": " DESCRIPTION ", "details": [ { "@type": "...", FIELD1 : ..., ... } ] } } Go import ( "context" "fmt" "io" "time" healthcare "google.golang.org/api/healthcare/v1" ) // createDataset creates a dataset. func createDataset ( w io .
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const patchDataset = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const timeZone = 'UTC'; const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } ; const request = { name , updateMask : 'timeZone' , resource : { timeZone : timeZone }, }; await healthcare . projects . locations . datasets . patch ( request ); console . log ( Dataset ${ datasetId } patched with time zone ${ timeZone } ); }; patchDataset (); Python Imports the Dict type for runtime type hints. from typing import Dict def patch dataset ( project id : str , location : str , dataset id : str , time zone : str ) - > Dict [ str , str ]: """Updates dataset metadata.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const getDataset = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } ; const request = { name : parent }; const dataset = await healthcare . projects . locations . datasets . get ( request ); console . log ( dataset . data ); }; getDataset (); Python Imports the Dict type for runtime type hints. from typing import Dict def get dataset ( project id : str , location : str , dataset id : str ) - > Dict [ str , str ]: """Gets any metadata associated with a dataset.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const createDataset = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } ; const request = { parent , datasetId }; await healthcare . projects . locations . datasets . create ( request ); console . log ( Created dataset: ${ datasetId } ); }; createDataset (); Python Imports the Dict type for runtime type hints. from typing import Dict def create dataset ( project id : str , location : str , dataset id : str ) - > Dict [ str , str ]: """Creates a Cloud Healthcare API dataset.
+
+### "Creating and managing DICOM stores \_|\_ Cloud Healthcare API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom](https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom)
+- Source ID: `site-docs-root`
+- Final score: 105
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery Imports Python's built-in "json" module import json api version = "v1" service name = "healthcare" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID dicom store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) dicom store name = f " { dicom store parent } /dicomStores/ { dicom store id } " dicom stores = client . projects () . locations () . datasets () . dicomStores () dicom store = dicom stores . get ( name = dicom store name ) . execute () print ( json . dumps ( dicom store , indent = 2 )) return dicom store Listing the DICOM stores in a dataset The following samples show how to list the DICOM stores in a dataset: Console To view the data stores in a dataset: In the Google Cloud console, go to the Datasets page.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const patchDicomStore = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const pubsubTopic = 'my-topic' const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const request = { name , updateMask : 'notificationConfig' , resource : { notificationConfig : { pubsubTopic : projects/ ${ projectId } /topics/ ${ pubsubTopic } , }, }, }; await healthcare . projects . locations . datasets . dicomStores . patch ( request ); console . log ( Patched DICOM store ${ dicomStoreId } with Cloud Pub/Sub topic ${ pubsubTopic } ); }; patchDicomStore (); Python def patch dicom store ( project id , location , dataset id , dicom store id , pubsub topic ): """Updates the DICOM store.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const createDicomStore = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } ; const request = { parent , dicomStoreId }; await healthcare . projects . locations . datasets . dicomStores . create ( request ); console . log ( Created DICOM store: ${ dicomStoreId } ); }; createDicomStore (); Python def create dicom store ( project id , location , dataset id , dicom store id ): """Creates a new DICOM store within the parent dataset.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const deleteDicomStore = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const request = { name }; await healthcare . projects . locations . datasets . dicomStores . delete ( request ); console . log ( Deleted DICOM store: ${ dicomStoreId } ); }; deleteDicomStore (); Python def delete dicom store ( project id , location , dataset id , dicom store id ): """Deletes the specified DICOM store.
 

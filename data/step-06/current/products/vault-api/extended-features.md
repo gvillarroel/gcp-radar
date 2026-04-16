@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2020-06-01 | Team Drive-related fields in Vault API | LOW | [source](https://developers.google.com/workspace/vault/release-notes)<br>[source](https://developers.google.com/workspace/vault/reference/rest/v1/Query)<br>[source](https://developers.google.com/workspace/vault/reference/rest/v1/matters.exports) | Support for Team Drive-related fields in the Vault API is deprecated and removed from the API; deprecated on 2020-06-01. |
+| 2020-06-01 | Team Drive-related fields in Vault API | MEDIUM | [source](https://developers.google.com/workspace/vault/reference/rest/v1/Query)<br>[source](https://developers.google.com/workspace/vault/reference/rest/v1/matters.holds)<br>[source](https://developers.google.com/workspace/vault/reference/rest/v1/matters.exports)<br>[source](https://developers.google.com/workspace/vault/guides/saved-queries) | Support for Team Drive-related fields in the Vault API is deprecated and removed from the API; deprecated on 2020-06-01. |
 

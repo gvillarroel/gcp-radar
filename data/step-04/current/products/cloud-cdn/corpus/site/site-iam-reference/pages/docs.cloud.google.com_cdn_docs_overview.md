@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/cdn/docs/overview
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage
+entrypoint: https://docs.cloud.google.com/cdn/docs/invalidating-cached-content
 source_metadata:
   url: https://docs.cloud.google.com/cdn/docs/overview
   title: "Cloud CDN overview \_|\_ Google Cloud Documentation"
@@ -44,8 +44,10 @@ How Cloud CDN works
 When a user requests content from an external Application Load Balancer, the request
 arrives at a GFE that is at the edge of Google's
 network as close as possible to the user.
-If the load balancer's URL map routes traffic to a backend service or backend
+If the load balancer URL map routes traffic to a backend service or backend
 bucket that has Cloud CDN configured, the GFE uses Cloud CDN.
+Backend services can use Compute Engine, GKE Ingress,
+or GKE Gateway backends.
 Cache hits and cache misses
 A cache is a group of servers that stores and manages content so that
 future requests for that content can be served faster. The cached content is a
@@ -70,6 +72,9 @@ cacheable , Cloud CDN stores the
 response in the Cloud CDN cache for future requests.
 Data transfer from a cache to a client is called cache egress .
 Data transfer to a cache is called cache fill .
+Cache hit and cache miss behavior is consistent across all supported backend
+types, including Compute Engine, backend buckets, GKE Ingress,
+and GKE Gateway.
 Figure 2 shows a cache hit and a cache miss:
 Origin servers running on VM instances send HTTP(S) responses.
 The external Application Load Balancer distributes the responses to Cloud CDN.
@@ -214,14 +219,23 @@ Additionally, you can run your plugins on the request path or the response
 path from your server.
 For more information, see
 Use Service Extensions for edge compute .
+Integration with GKE Gateway
+For workloads running on GKE, you can configure
+Cloud CDN by using the Gateway API. Cloud CDN caching behavior
+is defined using the GCPHTTPFilter resources that are attached to the
+HTTPRoute resources. For traffic routed through the Gateway, these filters let you configure cache policies, including cache modes and TTL settings.
+For more information, see Configure Cloud CDN for Gateway .
 What's next
 To enable Cloud CDN for your HTTP(S) load balanced instances and
 storage buckets, see Using Cloud CDN .
-To use Cloud CDN with Google Kubernetes Engine, see
-Configure Cloud CDN through Ingress .
+GKE Ingress: To use Cloud CDN with
+GKE Ingress controller, see
+Configure Cloud CDN through Ingress
+GKE Gateway API: To use Cloud CDN with
+Gateway API and GCPHTTPFilter , see Configure Cloud CDN for Gateway
 To find GFE points of presence, see Cache locations .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.479Z"
+generated_at: "2026-04-14T07:40:14.483Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Cloud Monitoring integration for Application Integration"
 feature_slug: "cloud-monitoring-integration-for-application-integration"
 latest_feature_date: "2023-06-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
-  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing"
-  - "https://docs.cloud.google.com/application-integration/docs/build-cicd"
+  - "https://docs.cloud.google.com/application-integration/docs/cloud-monitoring"
+  - "https://docs.cloud.google.com/application-integration/docs/alerts"
+  - "https://docs.cloud.google.com/application-integration/docs/autoscaling"
 keywords:
+  - "performance"
   - "monitoring"
   - "integrates"
+  - "alerts"
   - "usage"
-  - "application"
-  - "integration"
-  - "with"
-  - "now"
-  - "for"
 ---
 
 # Cloud Monitoring integration for Application Integration
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,53 @@ Application Integration now integrates with Cloud Monitoring for usage, performa
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
-- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing)
-- [https://docs.cloud.google.com/application-integration/docs/build-cicd](https://docs.cloud.google.com/application-integration/docs/build-cicd)
+- [https://docs.cloud.google.com/application-integration/docs/cloud-monitoring](https://docs.cloud.google.com/application-integration/docs/cloud-monitoring)
+- [https://docs.cloud.google.com/application-integration/docs/alerts](https://docs.cloud.google.com/application-integration/docs/alerts)
+- [https://docs.cloud.google.com/application-integration/docs/autoscaling](https://docs.cloud.google.com/application-integration/docs/autoscaling)
 
 ## Supporting Pages
 
-### "Automate Salesforce opportunity to BigQuery order \_|\_ Application Integration\
+### Use Cloud Monitoring \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
-- Source ID: `site-docs-root`
-- Final score: 198
+- URL: [https://docs.cloud.google.com/application-integration/docs/cloud-monitoring](https://docs.cloud.google.com/application-integration/docs/cloud-monitoring)
+- Source ID: `site-docs-root-2`
+- Final score: 102
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors BigQuery Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier .
-- Home Documentation Application development Application Integration Guides Send feedback Automate Salesforce opportunity to BigQuery order Stay organized with collections Save and categorize content based on your preferences.
-- The following edge condition controls the flow of the integration based on the validation of the account information: Add an edge connection from the Check account task to the Mapping for Account Creation task with the following edge condition: $account exists$ = False Add another edge connection from the Check account task to the Mapping for Order Creation task with the following edge condition: $account exists$ = True Sample integration flow The following figure shows a sample layout of the integration created using this tutorial.
-- During validation, if the account information doesn't exist in BigQuery, the integration will automatically create a new entry in both the BigQuery table and the attached ServiceNow instance using Integration Connectors.
+- This means that for all your published integrations, the integration metrics, usage data, and alerts are automatically ingested during the execution of your integrations.
+- All the performance metric data that is diaplayed in the Monitoring dashboards are for informational purpose only.
+- Access metrics using custom dashboards To create custom monitoring dashboards for your Application Integration resources in your Google Cloud project, do the following: In the Google Cloud console, go to the Cloud Monitoring > Dashboard Overview page: Go to Dashboard Overview page Click Create dashboard .
+- To create a chart using the Application Integration resource metrics, do the following: In the Google Cloud console, go to the Cloud Monitoring > Metrics explorer page: Go to Metrics explorer page In the Select a metric pane, expand the Metric menu and select Integration Version as the Active resource .
 
-### "Automate Salesforce case routing assignments \_|\_ Application Integration\
+### Configure alerts \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing)
-- Source ID: `site-docs-root`
-- Final score: 186
+- URL: [https://docs.cloud.google.com/application-integration/docs/alerts](https://docs.cloud.google.com/application-integration/docs/alerts)
+- Source ID: `site-docs-root-2`
+- Final score: 84
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier .
-- Home Documentation Application development Application Integration Guides Send feedback Automate Salesforce case routing assignments Stay organized with collections Save and categorize content based on your preferences.
-- The following edge condition controls the flow of the integration based on the type of the Salesforce case: Add an edge connection from the Get case type task to the Mapping for issue creation task with the following edge condition: $sf case type$ = "Engineering" Add another edge connection from the Get case type task to the Mapping for incident creation task with the following edge condition: $sf case type$ = "Sales" Sample integration flow The following figure shows a sample layout of the integration created using this tutorial.
-- Connect to ServiceNow Perform the following steps to configure a Connectors task that create a new incident to your ServiceNow instance: In the integration editor, click Tasks to display a list of available tasks.
+- You can set alerts in the following two ways: Alerts in Cloud Monitoring Alerts in Cloud Logging Alerts in Cloud Monitoring You can create and configure Cloud Monitoring alerts to notify you when an Application Integration resource exceeds a specified threshold.
+- Create an alert You can create log-based alerts from the Logs Explorer page in the Google Cloud console or by using the Monitoring API.
+- For detailed instructions, see the following sections: Create a log-based alert by using the Logs Explorer Create a log-based alert by using the Monitoring API Note: You may incur additional charges for using Cloud Monitoring API directly.
+- Alerts in Cloud Logging You can create and configure log-based alerts to notify you whenever a specific message appears in your included logs.
 
-### "Build CICD for your integration \_|\_ Application Integration \_|\_ Google\
+### About autoscaling in Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/build-cicd](https://docs.cloud.google.com/application-integration/docs/build-cicd)
-- Source ID: `site-iam-reference`
-- Final score: 186
+- URL: [https://docs.cloud.google.com/application-integration/docs/autoscaling](https://docs.cloud.google.com/application-integration/docs/autoscaling)
+- Source ID: `site-docs-root-2`
+- Final score: 72
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud Free cloud features and trial offer .
-- Home Documentation Application development Application Integration Guides Send feedback Build CICD for your integration Stay organized with collections Save and categorize content based on your preferences.
-- Promote integration across environments To promote your integration across environments, you can use the integrationcli tool, which is an open-source tool that lets you interact with Application Integration APIs and Integration Connectors APIs .
-- Tip: To learn how to store integration and connector assets to a source code repository, promote changes across environments, and how such deployments can be automated, see the CICD for Application Integration blog.
+- Observability and monitoring Application Integration automatically exports a rich set of metrics to Cloud Monitoring, providing deep insights into the usage, performance, and health of your integrations.
+- Benefits The autoscaling features of Application Integration provide the following advantages: Performance at scale: Automatically adjust to changes in traffic and usage.
+- While a single, pre-built dashboard for all metrics across projects isn't directly available within the Application Integration platform, you can leverage Cloud Monitoring to create custom dashboards tailored to your specific needs.
+- To ensure smooth and reliable performance during anticipated traffic surges (such as marketing campaigns or seasonal peaks), it's recommended to plan ahead and request resource scaling in advance.
 

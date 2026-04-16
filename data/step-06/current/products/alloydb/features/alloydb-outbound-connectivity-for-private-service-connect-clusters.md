@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.590Z"
+generated_at: "2026-04-12T12:07:33.836Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB outbound connectivity for Private Service Connect clusters"
@@ -9,7 +9,10 @@ latest_feature_date: "2025-03-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-psql"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-gcloud"
+  - "https://docs.cloud.google.com/alloydb/docs/about-private-services-access"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
 keywords:
   - "migration over PSC"
   - "PSC egress"
@@ -32,29 +35,49 @@ AlloyDB now has generally available outbound connectivity for Private Service Co
 
 ## Extended Definition
 
-For AlloyDB, outbound connectivity for Private Service Connect is the capability to allow an AlloyDB instance to initiate connections to resources in a consumer project via a Private Service Connect network attachment. The docs state that to enable this, you must create a network attachment in the consumer project’s VPC, and that these consumer networks create and manage the PSC network attachments. Evidence also notes a limitation: outbound connectivity cannot be enabled on AlloyDB instances created before March 1, 2025.
+AlloyDB now has generally available outbound connectivity for Private Service Connect-enabled clusters to support secure outbound operations such as migrations and FDW.
 
 ## Evidence Summary
 
-The referenced AlloyDB Private Service Connect overview page provides the enabling mechanism (consumer-managed PSC network attachments) and a key availability constraint tied to instance creation date for outbound connectivity.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
+- [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
+- [https://docs.cloud.google.com/alloydb/docs/connect-gcloud](https://docs.cloud.google.com/alloydb/docs/connect-gcloud)
+- [https://docs.cloud.google.com/alloydb/docs/about-private-services-access](https://docs.cloud.google.com/alloydb/docs/about-private-services-access)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
 
 ## Supporting Pages
 
-### "Private Service Connect overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+### "Connect from Compute Engine \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
 - Source ID: `site-docs-root`
-- Final score: 46
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page explicitly explains outbound PSC connectivity in AlloyDB, including secure outbound operations such as migration and foreign data wrappers.
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- To enable outbound connectivity from an AlloyDB instance to your consumer project, you need to create a network attachment within that VPC and project.
-- Network attachment Note: You can't enable outbound connectivity on AlloyDB instances created prior to March 01, 2025.
-- For outbound connectivity, consumer networks create and manage Private Service Connect network attachments.
-- For more information about alternative approaches, see Update an instance for outbound connectivity .
+### "Connect using gcloud CLI \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-gcloud](https://docs.cloud.google.com/alloydb/docs/connect-gcloud)
+- Source ID: `site-docs-reference-2`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Private services access overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/about-private-services-access](https://docs.cloud.google.com/alloydb/docs/about-private-services-access)
+- Source ID: `site-docs-root`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 86
+- Re-rank relevance: N/A
 

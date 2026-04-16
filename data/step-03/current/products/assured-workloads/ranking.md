@@ -1,31 +1,32 @@
 # Assured Workloads Step 03 URL Ranking
 
 This file lists the official Google documentation URLs selected and scored for this product.
+Step 2 feature inventory: 555 features, profile: user facing.
 
-| Final score | Keep | Classification | URL | Query coverage | Rationale |
-| ---: | --- | --- | --- | ---: | --- |
-| 100 | yes | product_root | https://docs.cloud.google.com/assured-workloads/docs | 4 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/key-concepts | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | yes | product_root | https://docs.cloud.google.com/assured-workloads/docs/overview | 4 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | supporting_page | https://developers.google.com/api-client-library/dotnet/apis/assuredworkloads/v1 | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/access-transparency/docs/assured-workloads | 4 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/control-packages | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/create-folder | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/getting-support | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | yes | python_reference | https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/access-approval/docs/assured-workloads | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/assured-workloads | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 95 | yes | iam_reference | https://docs.cloud.google.com/chronicle/docs/onboard | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 95 | yes | iam_reference | https://docs.cloud.google.com/iam/docs/roles-permissions/assuredworkloads | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | yes | product_reference | https://docs.cloud.google.com/assured-workloads/docs/apis | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/docs/apply-updates | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/docs/iam-roles | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/docs/migrate-workload | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/docs/monitor-folder | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/personnel-access-data-controls | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/resources | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/supported-products | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://developers.google.com/api-client-library/dotnet/apis?hl=he | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | product_root | https://docs.cloud.google.com/assured-workloads/access-approval/docs | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/cloud-provider-access-management/docs/administrative-access | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| Final score | Keep | Classification | URL | Query coverage | Feature overlap | Rationale |
+| ---: | --- | --- | --- | ---: | --- | --- |
+| 100 | yes | product_root | https://docs.cloud.google.com/assured-workloads/docs | 6 | assured workloads | Matched Step 2 features: assured workloads |
+| 100 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/key-concepts | 4 | assured workloads | Matched Step 2 features: assured workloads |
+| 100 | yes | product_root | https://docs.cloud.google.com/assured-workloads/docs/overview | 5 | assured workloads | Matched Step 2 features: assured workloads |
+| 100 | no | supporting_page | https://developers.google.com/api-client-library/dotnet/apis/assuredworkloads/v1 | 3 | assured workloads | Heuristic tail scoring was applied outside the API-ranked set. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/access-transparency/docs/assured-workloads | 5 | assured workloads | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/control-packages | 3 | assured workloads | Matched Step 2 features: assured workloads |
+| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/create-folder | 2 | assured workloads | Matched Step 2 features: assured workloads |
+| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/getting-support | 2 | assured workloads | Matched Step 2 features: assured workloads |
+| 95 | yes | api_reference | https://docs.cloud.google.com/assured-workloads/docs/reference/rest | 3 | assured workloads | Matched Step 2 features: assured workloads |
+| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/reference/rest/Shared.Types/Workload | 3 | assured workloads | Matched Step 2 features: assured workloads |
+| 95 | yes | python_reference | https://docs.cloud.google.com/python/docs/reference/assuredworkloads/latest | 2 | assured workloads | Matched Step 2 features: assured workloads |
+| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/access-approval/docs/assured-workloads | 3 | assured workloads | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/assured-workloads | 3 | assured workloads | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | yes | iam_reference | https://docs.cloud.google.com/chronicle/docs/onboard | 2 | assured workloads | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | yes | iam_reference | https://docs.cloud.google.com/iam/docs/roles-permissions/assuredworkloads | 2 | assured workloads | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | yes | product_reference | https://docs.cloud.google.com/assured-workloads/docs/apis | 1 | assured workloads | Matched Step 2 features: assured workloads |
+| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/docs/apply-updates | 1 | assured workloads | Matched Step 2 features: assured workloads |
+| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/docs/iam-roles | 1 | assured workloads | Matched Step 2 features: assured workloads |
+| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/docs/migrate-workload | 1 | assured workloads | Matched Step 2 features: assured workloads |
+| 90 | no | iam_reference | https://docs.cloud.google.com/assured-workloads/docs/monitor-folder | 1 | assured workloads | Matched Step 2 features: assured workloads |
+| 90 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/personnel-access-data-controls | 1 | assured workloads | Matched Step 2 features: assured workloads |
+| 90 | yes | product_reference | https://docs.cloud.google.com/assured-workloads/docs/release-notes | 1 | assured workloads | Matched Step 2 features: assured workloads |
+| 90 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/resources | 1 | assured workloads | Matched Step 2 features: assured workloads |
+| 90 | no | supporting_page | https://docs.cloud.google.com/assured-workloads/docs/supported-products | 2 | assured workloads | Matched Step 2 features: assured workloads |
+| 90 | no | supporting_page | https://developers.google.com/api-client-library/dotnet/apis | 1 | assured workloads | Heuristic tail scoring was applied outside the API-ranked set. |

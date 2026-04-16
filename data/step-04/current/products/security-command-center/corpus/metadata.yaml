@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-10T00:22:14+00:00'
-updated_at: '2026-04-11T18:29:14+00:00'
+updated_at: '2026-04-14T05:59:46+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -49,3 +49,59 @@ sources:
     max_pages: 42
     compact_output: true
   last_synced_at: '2026-04-11T18:29:14+00:00'
+- type: site
+  id: site-docs-root-2
+  title: https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations
+  created_at: '2026-04-14T05:50:03+00:00'
+  updated_at: '2026-04-14T05:53:12+00:00'
+  update_command: know sync site https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations
+    max_depth: 2
+    max_pages: 52
+    compact_output: true
+  last_synced_at: '2026-04-14T05:53:12+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/security-command-center/docs/release-notes
+  created_at: '2026-04-14T05:50:04+00:00'
+  updated_at: '2026-04-14T05:55:53+00:00'
+  update_command: know sync site https://docs.cloud.google.com/security-command-center/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/security-command-center/docs/release-notes
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T05:55:53+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/database-center/docs/release-notes
+  created_at: '2026-04-14T05:50:04+00:00'
+  updated_at: '2026-04-14T05:57:20+00:00'
+  update_command: know sync site https://docs.cloud.google.com/database-center/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/database-center/docs/release-notes
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T05:57:20+00:00'
+- type: site
+  id: site-docs-reference-3
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/release-notes
+  created_at: '2026-04-14T05:50:04+00:00'
+  updated_at: '2026-04-14T05:59:46+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-3
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/release-notes
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T05:59:46+00:00'

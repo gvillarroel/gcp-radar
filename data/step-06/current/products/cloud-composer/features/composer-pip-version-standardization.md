@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.077Z"
+generated_at: "2026-04-12T12:11:20.295Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Composer Pip version standardization"
 feature_slug: "composer-pip-version-standardization"
 latest_feature_date: "2020-03-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments"
 keywords:
   - "composer"
   - "pip"
@@ -26,7 +27,7 @@ keywords:
 # Composer Pip version standardization
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ Composer now uses Pip 19.0.2 for both Python 2 and Python 3 Airflow environments
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines](https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
 
 ## Supporting Pages
-
-### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
-- Source ID: `site-iam-reference`
-- Final score: 186
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
-- Support for Google Display and Video 360 Operators Google Display and Video 360 Operators in Cloud Composer versions earlier than 2.1.13 are based on the Display and Video 360 v1.1 API that is deprecated and its sunset date is April 27, 2023.
-- Support for Google Campaign Manager 360 Operators Google Campaign Manager Operators in Cloud Composer versions earlier than 2.1.13 are based on the Campaign Manager 360 v3.5 API that is deprecated and its sunset date is May 1, 2023 .
-- Non-RFC 1918 address ranges are partially supported for Pods and Services Cloud Composer depends on GKE to deliver support for non-RFC 1918 addresses for Pods and Services.
 
 ### Cloud Composer version list \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 184
+- Final score: 221
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +63,42 @@ Evidence snippets:
 - In Google Cloud CLI, API, or Terraform, you can upgrade an existing environment to the latest supported versions, three previous versions of Cloud Composer 2, the last patch version of the previous minor version, and to versions with an extended upgrade timeline.
 - Example of upgrade choices for Google Cloud CLI, API, and Terraform: Latest versions: composer-2.11.5-airflow- Three previous Cloud Composer 2 versions: composer-2.11.4-airflow- , composer-2.11.3-airflow- , composer-2.11.2-airflow- .
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 170
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- Source ID: `site-iam-reference`
+- Final score: 214
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- You can now set the core.store serialized dags property to False after setting it to True . (Previously it was not possible to switch back.) Composer now uses Pip version 19.0.2 for both Python 2 and Python 3 Airflow environments.
-- Feature Private IP environments can now be creating using non-rfc 1918 CGN ranges (100.64.0.0/10) New PyPi packages have been added for Composer version composer-1.11.0-airflow-1.10.6.
-- Change New images are available in Cloud Composer 2: composer-2.13.1-airflow-2.10.5 (default) composer-2.13.1-airflow-2.9.3 Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.5-build.3 (default) composer-3-airflow-2.9.3-build.23 Change The following Cloud Composer versions have an extended upgrade timeline: composer-3-airflow-2.10.5-build.3 composer-3-airflow-2.9.3-build.23 composer-2.13.1-airflow-2.10.5 composer-2.13.1-airflow-2.9.3 May 07, 2025 Feature Data lineage in Cloud Composer now uses OpenLineage in all regions supported by Cloud Composer.
-- Change Cloud Composer 1.19.12 and 2.0.29 images are available: composer-1.19.12-airflow-1.10.15 (default) composer-1.19.12-airflow-2.1.4 composer-1.19.12-airflow-2.2.5 composer-1.19.12-airflow-2.3.3 composer-2.0.29-airflow-2.1.4 composer-2.0.29-airflow-2.2.5 composer-2.0.29-airflow-2.3.3 October 06, 2022 Announcement Starting from January 2023, the default version for new Cloud Composer environments changes from Cloud Composer 1 to Cloud Composer 2.
+- Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
+- Support for Google Display and Video 360 Operators Google Display and Video 360 Operators in Cloud Composer versions earlier than 2.1.13 are based on the Display and Video 360 v1.1 API that is deprecated and its sunset date is April 27, 2023.
+- Support for Google Campaign Manager 360 Operators Google Campaign Manager Operators in Cloud Composer versions earlier than 2.1.13 are based on the Campaign Manager 360 v3.5 API that is deprecated and its sunset date is May 1, 2023 .
+- Non-RFC 1918 address ranges are partially supported for Pods and Services Cloud Composer depends on GKE to deliver support for non-RFC 1918 addresses for Pods and Services.
+
+### Launch Dataflow pipelines with Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines](https://docs.cloud.google.com/composer/docs/composer-1/launch-dataflow-pipelines)
+- Source ID: `site-iam-reference`
+- Final score: 191
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more info on zones where Dataflow is available see: https://cloud.google.com/dataflow/docs/resources/locations bucket path - Google Cloud Storage bucket where you've stored the User Defined Function (.js), the input file (.txt), and the JSON schema (.json). """ import datetime from airflow import models from airflow.providers.google.cloud.operators.dataflow import ( DataflowTemplatedJobStartOperator , ) from airflow.utils.dates import days ago bucket path = "{{var.value.bucket path}}" project id = "{{var.value.project id}}" gce zone = "{{var.value.gce zone}}" default args = { Tell airflow to start one day ago, so that it runs as soon as you upload it "start date" : days ago ( 1 ), "dataflow default options" : { "project" : project id , Set to your zone "zone" : gce zone , This is a subfolder for storing temporary files, like the staged pipeline job. "tempLocation" : bucket path + "/tmp/" , }, } Define a DAG (directed acyclic graph) of tasks.
+- Learn more about the difference between the two here: https://cloud.google.com/compute/docs/regions-zones bucket path - Google Cloud Storage bucket where you've stored the User Defined Function (.js), the input file (.txt), and the JSON schema (.json). """ import datetime from airflow import models from airflow.contrib.operators.dataflow operator import DataflowTemplateOperator from airflow.utils.dates import days ago bucket path = "{{var.value.bucket path}}" project id = "{{var.value.project id}}" gce zone = "{{var.value.gce zone}}" default args = { Tell airflow to start one day ago, so that it runs as soon as you upload it "start date" : days ago ( 1 ), "dataflow default options" : { "project" : project id , Set to your zone "zone" : gce zone , This is a subfolder for storing temporary files, like the staged pipeline job. "tempLocation" : bucket path + "/tmp/" , }, } Define a DAG (directed acyclic graph) of tasks.
+- For versions in non-production environments, use the subfolder 'latest' https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#gcstexttobigquery template = "gs://dataflow-templates/latest/GCS Text to BigQuery" , Use the link above to specify the correct parameters for your template. parameters = { "javascriptTextTransformFunctionName" : "transformCSVtoJSON" , "JSONPath" : bucket path + "/jsonSchema.json" , "javascriptTextTransformGcsPath" : bucket path + "/transformCSVtoJSON.js" , "inputFilePattern" : bucket path + "/inputFile.txt" , "outputTable" : project id + ":average weather.average weather" , "bigQueryLoadingTemporaryDirectory" : bucket path + "/tmp/" , }, ) Airflow 1 """Example Airflow DAG that creates a Cloud Dataflow workflow which takes a text file and adds the rows to a BigQuery table.
+- For versions in non-production environments, use the subfolder 'latest' https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#gcstexttobigquery template = "gs://dataflow-templates/latest/GCS Text to BigQuery" , Use the link above to specify the correct parameters for your template. parameters = { "javascriptTextTransformFunctionName" : "transformCSVtoJSON" , "JSONPath" : bucket path + "/jsonSchema.json" , "javascriptTextTransformGcsPath" : bucket path + "/transformCSVtoJSON.js" , "inputFilePattern" : bucket path + "/inputFile.txt" , "outputTable" : project id + ":average weather.average weather" , "bigQueryLoadingTemporaryDirectory" : bucket path + "/tmp/" , }, ) Upload the DAG to Cloud Storage Upload your DAG to the /dags folder in your environment's bucket.
+
+### "REST Resource: projects.locations.environments \_|\_ Cloud Composer \_|\_\
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments)
+- Source ID: `site-docs-reference`
+- Final score: 183
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- When enabled, IPs from public (non-RFC1918) ranges can be used for IPAllocationPolicy.cluster ipv4 cidr block and IPAllocationPolicy.service ipv4 cidr block . cloudComposerConnectionSubnetwork string Optional.
+- EncryptionConfig The encryption options for the Cloud Composer environment and its dependencies.Supported for Cloud Composer environments in versions composer-1. . -airflow- . . .
+- This field is supported for Cloud Composer environments in versions composer-1. . -airflow-2. . . cloudDataLineageIntegration object ( CloudDataLineageIntegration ) Optional.
+- This field is supported for Cloud Composer environments in versions composer-3-airflow- . . -build. and newer. privateClusterConfig object ( PrivateClusterConfig ) Optional.
 

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.804Z"
+generated_at: "2026-04-14T15:13:20.042Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Sentinel-2 Surface Reflectance"
 feature_slug: "sentinel-2-surface-reflectance"
 latest_feature_date: "2019-04-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://developers.google.com/earth-engine/datasets/tags/satellite-imagery"
   - "https://developers.google.com/earth-engine/datasets/tags/surface-ground-water"
   - "https://developers.google.com/earth-engine/datasets/tags/atmosphere"
-  - "https://developers.google.com/earth-engine/datasets/tags/satellite-imagery"
 keywords:
   - "sentinel"
   - "surface"
@@ -22,7 +22,7 @@ keywords:
 # Sentinel-2 Surface Reflectance
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,13 +34,13 @@ A Sentinel-2 surface reflectance dataset.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - [https://developers.google.com/earth-engine/datasets/tags/surface-ground-water](https://developers.google.com/earth-engine/datasets/tags/surface-ground-water)
 - [https://developers.google.com/earth-engine/datasets/tags/atmosphere](https://developers.google.com/earth-engine/datasets/tags/atmosphere)
-- [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 
 ## Supporting Pages
 
@@ -48,7 +48,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/surface-ground-water](https://developers.google.com/earth-engine/datasets/tags/surface-ground-water)
 - Source ID: `site-docs-root-3`
-- Final score: 115
+- Final score: 125
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,7 +61,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/atmosphere](https://developers.google.com/earth-engine/datasets/tags/atmosphere)
 - Source ID: `site-docs-root`
-- Final score: 110
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,7 +74,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/satellite-imagery](https://developers.google.com/earth-engine/datasets/tags/satellite-imagery)
 - Source ID: `site-docs-root-3`
-- Final score: 110
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:

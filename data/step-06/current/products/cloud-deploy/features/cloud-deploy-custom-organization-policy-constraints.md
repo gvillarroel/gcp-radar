@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:17:26.744Z"
+generated_at: "2026-04-12T12:11:23.473Z"
 product_name: "Cloud Deploy"
 product_slug: "cloud-deploy"
 feature_name: "Cloud Deploy custom organization policy constraints"
 feature_slug: "cloud-deploy-custom-organization-policy-constraints"
 latest_feature_date: "2025-09-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/deploy/docs/custom-org-policy"
   - "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient"
+  - "https://docs.cloud.google.com/deploy/docs/deploy-app-policy"
 keywords:
   - "deploy"
   - "custom"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Deploy custom organization policy constraints
 
 Product: Cloud Deploy
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Deploy now supports using custom Organization Policy constraints for addit
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/deploy/docs/custom-org-policy](https://docs.cloud.google.com/deploy/docs/custom-org-policy)
 - [https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient](https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient](https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient)
+- [https://docs.cloud.google.com/deploy/docs/deploy-app-policy](https://docs.cloud.google.com/deploy/docs/deploy-app-policy)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/deploy/docs/custom-org-policy](https://docs.cloud.google.com/deploy/docs/custom-org-policy)
 - Source ID: `site-docs-root-2`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 270
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: clouddeploy.googleapis.com/Automation clouddeploy.googleapis.com/CustomTargetType clouddeploy.googleapis.com/DeliveryPipeline clouddeploy.googleapis.com/DeployPolicy clouddeploy.googleapis.com/Release clouddeploy.googleapis.com/Rollout clouddeploy.googleapis.com/Target To learn more about Organization Policy, see Custom organization policies .
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient](https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 154
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient](https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient)
 - Source ID: `site-python-reference`
-- Final score: 154
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +89,17 @@ Evidence snippets:
 - Returns Type Description google.cloud.deploy v1.types.CancelRolloutResponse The response object from CancelRollout. cluster path cluster path ( project : str , location : str , cluster : str ) - > str Returns a fully-qualified cluster string. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. config path config path ( project : str , location : str ) - > str Returns a fully-qualified config string. create automation create automation ( request : typing .
 - CreateCustomTargetTypeRequest ( parent="parent value", custom target type id="custom target type id value", custom target type=custom target type, ) Make the request operation = client. create custom target type (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.deploy v1.types.CreateCustomTargetTypeRequest , dict] The request object.
 - Returns Type Description google.cloud.deploy v1.types.RollbackTargetResponse The response object from RollbackTarget. rollout path rollout path ( project : str , location : str , delivery pipeline : str , release : str , rollout : str ) - > str Returns a fully-qualified rollout string. service path service path ( project : str , location : str , service : str ) - > str Returns a fully-qualified service string. set iam policy set iam policy ( request : typing .
+
+### "Quickstart: Use a deploy policy to restrict rollouts \_|\_ Cloud Deploy\
+
+- URL: [https://docs.cloud.google.com/deploy/docs/deploy-app-policy](https://docs.cloud.google.com/deploy/docs/deploy-app-policy)
+- Source ID: `site-docs-root-2`
+- Final score: 186
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create your delivery pipeline and target definition: GKE In the deploy-policy-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion : deploy . cloud . google . com / v1 kind : DeliveryPipeline metadata : name : deploy - policy - pipeline serialPipeline : stages : - targetId : prod - target --- apiVersion : deploy . cloud . google . com / v1 kind : Target metadata : name : prod - target description : production cluster gke : cluster : projects / PROJECT ID /locations/us-central1/clusters/ quickstart - cluster - qsprod Cloud Run In the deploy-policy-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion : deploy . cloud . google . com / v1 kind : DeliveryPipeline metadata : name : deploy - policy - pipeline serialPipeline : stages : - targetId : prod - target --- apiVersion : deploy . cloud . google . com / v1 kind : Target metadata : name : prod - target description : production Run service run : location : projects / PROJECT ID /locations/ us - central1 Note: In this file, the target is included with the delivery pipeline, but you can define targets in a separate file or multiple separate files.
+- To do so, you create a new rollout against this release, this time including the --override-deploy-policies option: GKE Run the following command from the deploy-policy-quickstart directory to create the release: gcloud deploy releases promote -- release = test - release - 001 \ -- project = PROJECT ID \ -- region = us - central1 \ -- delivery - pipeline = deploy - policy - pipeline \ -- to - target = prod - target \ -- override - deploy - policies = quickstart - deploy - policy Cloud Run Run the following command from the deploy-policy-quickstart directory to create the release: gcloud deploy releases promote -- release = test - release - 001 \ -- project = PROJECT ID \ -- region = us - central1 \ -- delivery - pipeline = deploy - policy - pipeline \ -- to - target = prod - target \ -- override - deploy - policies = quickstart - deploy - policy Because you included --override-deploy-policies=quickstart-deploy-policy , and because you have the roles/clouddeploy.policyAdmin role, Cloud Deploy ignores the deploy policy you created and creates the rollout to the prod-target .
+- For GKE: gcloud projects add-iam-policy-binding PROJECT ID \ --member=serviceAccount:$(gcloud projects describe PROJECT ID \ --format="value(projectNumber)")-compute@developer.gserviceaccount.com \ --role="roles/container.developer" For Cloud Run: gcloud projects add-iam-policy-binding PROJECT ID \ --member=serviceAccount:$(gcloud projects describe PROJECT ID \ --format="value(projectNumber)")-compute@developer.gserviceaccount.com \ --role="roles/run.developer" Add the iam.serviceAccountUser role, which includes the actAs permission to deploy to the runtime: gcloud iam service-accounts add-iam-policy-binding $(gcloud projects describe PROJECT ID \ --format="value(projectNumber)")-compute@developer.gserviceaccount.com \ --member=serviceAccount:$(gcloud projects describe PROJECT ID \ --format="value(projectNumber)")-compute@developer.gserviceaccount.com \ --role="roles/iam.serviceAccountUser" \ --project= PROJECT ID Create your runtime environment If you're deploying to Cloud Run, you can skip this command .
+- Delete the GKE cluster or Cloud Run service: GKE gcloud container clusters delete quickstart - cluster - qsprod -- region = us - central1 -- project = PROJECT ID Cloud Run gcloud run services delete my - deploy - policy - run - service -- region = us - central1 -- project = PROJECT ID Delete the deploy policy: gcloud deploy delete -- file = deploypolicy . yaml -- region = us - central1 -- project = PROJECT ID Delete the delivery pipeline, target, release, and rollout: gcloud deploy delete -- file = clouddeploy . yaml -- force -- region = us - central1 -- project = PROJECT ID Delete both of the Cloud Storage buckets that Cloud Deploy created.
 

@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals
+entrypoint: https://docs.cloud.google.com/dataproc/docs/concepts/iam/iam
 source_metadata:
   url: https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage
   title: "Enable Hive data lineage \_|\_ Managed Service for Apache Spark \_|\_ Google\
@@ -44,11 +44,11 @@ using an initialization action
 when you create a cluster .
 When you enable Hive Data lineage
 on a cluster, Hive jobs that you submit to the cluster capture data
-lineage events and publish them to Dataplex Universal Catalog .
+lineage events and publish them to Knowledge Catalog .
 Visualize lineage information
 A Data lineage graph displays relationships between your project
 resources and the processes that created them. You can access lineage graphs
-using Dataplex Universal Catalog ,
+using Knowledge Catalog ,
 BigQuery Studio , and
 Vertex AI
 in the Google Cloud console.
@@ -70,7 +70,7 @@ To get the permissions that
 you need to use data lineage in Managed Service for Apache Spark,
 ask your administrator to grant you the
 following IAM roles on the Managed Service for Apache Spark cluster VM service account :
-View data lineage in Dataplex Universal Catalog or use the Data Lineage API:
+View data lineage in Knowledge Catalog or use the Data Lineage API:
 Data Lineage Viewer ( roles/datalineage.viewer )
 Produce data lineage manually using the API:
 Data Lineage Events Producer ( roles/datalineage.producer )
@@ -118,7 +118,7 @@ When you submit a Hive job
 to a Managed Service for Apache Spark cluster that was created with
 Hive data lineage enabled ,
 Managed Service for Apache Spark captures and reports the data lineage information to
-Dataplex Universal Catalog.
+Knowledge Catalog.
 gcloud CLI Hive job submission example:
 gcloud dataproc jobs submit hive \
 --cluster = CLUSTER_NAME \
@@ -140,7 +140,7 @@ HIVE_QUERY : The Hive query to submit to the cluster.
 Instead of specifying a query, you can replace the --execute HIVE_QUERY
 flag with a --file SQL_FILE flag to specify the location of a file that contains
 the query.
-View lineage in Dataplex Universal Catalog
+View lineage in Knowledge Catalog
 A lineage graph displays relationships between your project
 resources and the processes that created them. You can
 view data lineage information
@@ -224,6 +224,6 @@ What's next
 Learn more about data lineage .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

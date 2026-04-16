@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:47.372Z"
+generated_at: "2026-04-12T12:18:01.305Z"
 product_name: "Navigation SDK for iOS"
 product_slug: "navigation-sdk-for-ios"
 feature_name: "Counted turns and railway crossings in voice guidance"
 feature_slug: "counted-turns-and-railway-crossings-in-voice-guidance"
 latest_feature_date: "2025-09-08"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info"
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance"
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView"
+  - "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav"
 keywords:
   - "counted"
   - "turns"
@@ -24,7 +27,7 @@ keywords:
 # Counted turns and railway crossings in voice guidance
 
 Product: Navigation SDK for iOS
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Guidance messages include counted turns and railway crossing mentions.
 
 Guidance messages include counted turns and railway crossing mentions.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info](https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance](https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView](https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav](https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Get route information \_|\_ Navigation SDK for iOS \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info](https://developers.google.com/maps/documentation/navigation/ios-sdk/get-route-info)
+- Source ID: `site-docs-root`
+- Final score: 121
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- OK else { print ( "Handle route statuses that are not OK." ) return } self . mapView . navigator ? . isGuidanceActive = true self . mapView . cameraMode = . following self . mapView . locationSimulator ? . simulateLocationsAlongExistingRoute () } mapView . roadSnappedLocationProvider ? . startUpdatingLocation () } func getTimeToNextDestination () { if let navigator = mapView . navigator { let time = navigator . timeToNextDestination let minutes = floor ( time / 60 ) let seconds = round ( time - minutes 60 ) print ( "Time to next destination: \(minutes):\(seconds)" ) } } func getDistanceToNextDestination () { if let navigator = mapView . navigator { let distance = navigator . distanceToNextDestination let miles = distance 0.00062137 print ( "Distance to next destination: \(miles) miles." ) } } func getCurrentRouteLeg () { if let navigator = mapView . navigator { let currentLeg = navigator . currentRouteLeg let nextDestination = currentLeg ? . destinationWaypoint ? . title ?? "Not Available" let lat = currentLeg ? . destinationCoordinate . latitude . description ?? "Not Available" let lng = currentLeg ? . destinationCoordinate . longitude . description ?? "Not Available" print ( "Destination: \(nextDestination) at (\(lat),\(lng)" ) } } func getTraveledPath () { if let navigator = mapView . navigator { let latestPath = navigator . traveledPath if latestPath . count () > 0 { let begin : CLLocationCoordinate2D = latestPath . coordinate ( at : 0 ) let current : CLLocationCoordinate2D = latestPath . coordinate ( at : latestPath . count () - 1 ) print ( "Path from (\(begin.latitude),\(begin.longitude)) to (\(current.latitude),\(current.longitude))" ) } } } // Add some buttons to the view . func makeButtons () { // Start navigation . let navButton = UIButton ( frame : CGRect ( x : 5 , y : 150 , width : 200 , height : 35 )) navButton . backgroundColor = . blue navButton . alpha = 0.5 navButton . setTitle ( "Start navigation" , for : . normal ) navButton . addTarget ( self , action : #selector(startNav), for: .touchUpInside) self . mapView . addSubview ( navButton ) // Get the time to the next destination . let timeButton = UIButton ( frame : CGRect ( x : 5 , y : 190 , width : 200 , height : 35 )) timeButton . backgroundColor = . blue timeButton . alpha = 0.5 timeButton . setTitle ( "Time to next destination" , for : . normal ) timeButton . addTarget ( self , action : #selector(getTimeToNextDestination), for: .touchUpInside) self . mapView . addSubview ( timeButton ) // Get the distance to the next destination . let distanceButton = UIButton ( frame : CGRect ( x : 5 , y : 230 , width : 200 , height : 35 )) distanceButton . backgroundColor = . blue distanceButton . alpha = 0.5 distanceButton . setTitle ( "Distance to next destination" , for : . normal ) distanceButton . addTarget ( self , action : #selector(getDistanceToNextDestination), for: .touchUpInside) self . mapView . addSubview ( distanceButton ) // Get the current route leg . let routeButton = UIButton ( frame : CGRect ( x : 5 , y : 270 , width : 200 , height : 35 )) routeButton . backgroundColor = . blue routeButton . alpha = 0.5 routeButton . setTitle ( "Get current route leg" , for : . normal ) routeButton . addTarget ( self , action : #selector(getCurrentRouteLeg), for: .touchUpInside) self . mapView . addSubview ( routeButton ) // Get the most recently traveled path . let pathButton = UIButton ( frame : CGRect ( x : 5 , y : 310 , width : 200 , height : 35 )) pathButton . backgroundColor = . blue pathButton . alpha = 0.5 pathButton . setTitle ( "Get traveled path" , for : . normal ) pathButton . addTarget ( self , action : #selector(getTraveledPath), for: .touchUpInside) self . mapView . addSubview ( pathButton ) } } Show/Hide the Objective-C code to get route information. / Copyright 2017 Google Inc.
+- NSString companyName = @"Ride Sharing Co." ; [ GMSNavigationServices showTermsAndConditionsDialogIfNeededWithCompanyName : companyName callback : ^ ( BOOL termsAccepted ) { if ( termsAccepted ) { // Enable navigation if the user accepts the terms. mapView . navigationEnabled = YES ; // Request authorization to use location services. [ locationManager requestAlwaysAuthorization ]; } else { // Handle the case when the user rejects the terms and conditions. } }]; self . view = mapView ; [ self makeButtons ]; } // Create a route and start guidance. - ( void ) startNav { NSArray<GMSNavigationWaypoint > destinations = @[ [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @"ChIJnUYTpNASkFQR gSty5kyoUk" title : @"PCC Natural Market" ], [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @"ChIJJ326ROcSkFQRBfUzOL2DSbo" title : @"Marina Park" ] ] ; [ mapView . navigator setDestinations : destinations callback : ^ ( GMSRouteStatus routeStatus ){ mapView . navigator . guidanceActive = YES ; mapView . cameraMode = GMSNavigationCameraModeFollowing ; [ mapView . locationSimulator simulateLocationsAlongExistingRoute ]; }]; [ mapView . roadSnappedLocationProvider startUpdatingLocation ]; } - ( void ) getTimeToNextDestination { NSTimeInterval time = mapView . navigator . timeToNextDestination ; int minutes = floor ( time / 60 ); int seconds = round ( time - minutes 60 ); NSLog ( @"%@" , [ NSString stringWithFormat : @"Time to next destination: %i:%i." , minutes , seconds ]); } - ( void ) getDistanceToNextDestination { CLLocationDistance distance = mapView . navigator . distanceToNextDestination ; double miles = distance 0.00062137 ; NSLog ( @"%@" , [ NSString stringWithFormat : @"Distance to next destination: %.2f." , miles ]); } - ( void ) getCurrentRouteLeg { GMSRouteLeg currentSegment = mapView . navigator . currentRouteLeg ; NSString nextDestination = currentSegment . destinationWaypoint . title ; CLLocationDegrees lat = currentSegment . destinationCoordinate . latitude ; CLLocationDegrees lng = currentSegment . destinationCoordinate . longitude ; NSLog ( @"%@" , [ NSString stringWithFormat : @"%@, %f/%f" , nextDestination , lat , lng ]); } - ( void ) getTraveledPath { GMSPath latestPath = mapView . navigator . traveledPath ; if ( latestPath . count > 0 ) { CLLocationCoordinate2D begin = [ latestPath coordinateAtIndex : 0 ]; CLLocationCoordinate2D current = [ latestPath coordinateAtIndex : latestPath . count - 1 ]; NSLog ( @"Path from %f/%f to %f/%f" , begin . latitude , begin . longitude , current . latitude , current . longitude ); } } #pragma mark - Buttons and things // Add some buttons to the view. - ( void ) makeButtons { // Start navigation.
+- See the License for the specific language governing permissions and limitations under the License . / import GoogleNavigation import UIKit class ViewController : UIViewController { var mapView : GMSMapView ! var locationManager : CLLocationManager ! override func loadView () { locationManager = CLLocationManager () let camera = GMSCameraPosition . camera ( withLatitude : 47.67 , longitude : - 122.20 , zoom : 14 ) mapView = GMSMapView . map ( withFrame : CGRect . zero , camera : camera ) // Show the terms and conditions . let companyName = "Ride Sharing Co." GMSNavigationServices . showTermsAndConditionsDialogIfNeeded ( withCompanyName : companyName ) { termsAccepted in guard termsAccepted else { // Handle the case when the user rejects the terms and conditions . return } // Enable navigation after the user accepts the terms . self . mapView . isNavigationEnabled = true // Request authorization to use location services . self . locationManager . requestAlwaysAuthorization () } self . view = mapView makeButtons () } // Create a route and start guidance . func startNav () { var destinations = GMSNavigationWaypoint destinations . append ( GMSNavigationWaypoint . init ( placeID : "ChIJnUYTpNASkFQR gSty5kyoUk" , title : "PCC Natural Market" ) ! ) destinations . append ( GMSNavigationWaypoint . init ( placeID : "ChIJJ326ROcSkFQRBfUzOL2DSbo" , title : "Marina Park" ) ! ) mapView . navigator ? . setDestinations ( destinations ) { routeStatus in guard routeStatus == .
+- The following example shows evaluating the result and logging a traffic message: Swift if let navigator = mapView . navigator { // insert sample for evaluating traffic value let delay = navigator . delayCategoryToNextDestination let traffic = "unavailable" switch delay { case . noData : traffic = "unavailable" case . heavy : traffic = "heavy" case . medium : traffic = "moderate" case . light : traffic = "light" default : traffic = "unavailable" } print ( "Traffic is \( traffic ) ." ) } Objective-C GMSNavigationDelayCategory delay = mapView . navigator . delayCategoryToNextDestination ; NSString traffic = @"" ; switch ( delayCategory ) { case GMSNavigationDelayCategoryNoData : traffic = @"No Data" ; break ; case GMSNavigationDelayCategoryHeavy : traffic = @"Heavy" ; break ; case GMSNavigationDelayCategoryMedium : traffic = @"Medium" ; break ; case GMSNavigationDelayCategoryLight : traffic = @"Light" ; break ; default : NSLog ( @"Invalid delay category: %zd" , delayCategory ); } NSLog ( @"%@" , [ NSString stringWithFormat : @"Traffic is %@." , traffic ]); Getting information about the current leg To get information about the current route leg, call currentRouteLeg .
+
+### "Create customized guidance \_|\_ Navigation SDK for iOS \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance](https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance)
+- Source ID: `site-docs-root`
+- Final score: 110
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The code then adds an overview map configured to show the current road-snapped location. // Create the navigation session. navigationSession = [ GMSNavigationServices createNavigationSession ]; GMSRoadSnappedLocationProvider roadSnappedLocationProvider = navigationSession . roadSnappedLocationProvider ; [ roadSnappedLocationProvider startUpdatingLocation ]; GMSNavigator navigator = navigationSession . navigator ; [ navigator addListener : self ]; navigator . voiceGuidance = GMSNavigationVoiceGuidanceSilent ; navigator . sendsBackgroundNotifications = NO ; navigationSession . started = YES ; ​​ [ navigator setDestinations : @[ destination ] callback : ^ ( GMSRouteStatus routeStatus ) { // …handle changes in route status. }]; // Add an overview map. mapView = [[ GMSMapView alloc ] initWithFrame : CGRectZero ]; [ self . mainStackView addArrangedSubview : mapView ]; [ self . mainStackView setNeedsLayout ]; mapView . settings . compassButton = YES ; mapView . delegate = self ; mapView . myLocationEnabled = YES ; mapView . roadSnappedMyLocationSource = roadSnappedLocationProvider ; Passing navigation from a custom experience to the Google experience This code snippet illustrates how your app can allow the user to enter the Google navigation experience from a custom navigation experience.
+- Implement the GMSNavigatorListener protocol to receive and utilize detailed guidance information for your custom UI elements.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["The core process involves creating a navigation session independently using GMSNavigationService.createNavigationSession, distinct from route navigation.
+- UIButton button = [ UIButton buttonWithType : UIButtonTypePlain ]; [ button addTarget : self action : @selector ( didTapEnterGoogleNavigationButton : ) forControlState :[ directionsButton addTarget : self ]; … [ mapView enableNavigationWithSession : navigationSession ]; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "GoogleNavigation Framework Reference \_|\_ Navigation SDK for iOS \_|\_\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView](https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView)
+- Source ID: `site-docs-reference`
+- Final score: 88
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Declaration Swift var isNavigationEnabled : Bool { get set } Objective-C @property ( nonatomic , assign , unsafe unretained , readwrite , getter = isNavigationEnabled ) BOOL navigationEnabled ; navigator The navigator for this GMSMapView which allows routes to be requested and turn-by-turn guidance to be started.
+- Declaration Swift var lightingMode : GMSNavigationLightingMode { get set } Objective-C @property ( nonatomic ) GMSNavigationLightingMode lightingMode ; shouldDisplaySpeedLimit Determines whether the speed limit should be displayed when guidance is active and speed limit data is available.
+- Declaration Swift @NSCopying var camera : GMSCameraPosition { get set } Objective-C @property ( nonatomic , copy ) GMSCameraPosition Nonnull camera ; projection Returns a GMSProjection object that you can use to convert between screen coordinates and latitude/longitude coordinates.
+- It offers functionalities for feature layers, accessory view management, and navigation including route requests, turn-by-turn guidance, and camera control.
+
+### "Custom navigation experience \_|\_ Navigation SDK for iOS \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav](https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav)
+- Source ID: `site-docs-root`
+- Final score: 83
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- See the demo: The download of the Navigation SDK contains a demo you can run to see an example of a navigation experience that switches between turn-by-turn guidance through standard navigation to a navigation experience that shows only the device location moving along a road polyline.
+- A custom navigation experience refers to anything from eliminating turn guidance entirely with and running navigation only as a background process, to projecting a highly customized guidance experience to a screen separate from the device that runs the navigation.
+- Instead of handing off guidance to the built-in event manager of the Navigation SDK, you set up a listener for detailed turn-by-turn guidance by implementing the GMSNavigatorListener protocol, and then implement event handlers.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],[]]
 

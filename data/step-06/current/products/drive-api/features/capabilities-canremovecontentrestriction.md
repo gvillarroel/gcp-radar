@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:41:51.891Z"
+generated_at: "2026-04-12T12:14:32.796Z"
 product_name: "Drive API"
 product_slug: "drive-api"
 feature_name: "capabilities.canRemoveContentRestriction"
 feature_slug: "capabilities-canremovecontentrestriction"
 latest_feature_date: "2023-07-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/drive/api/guides/content-restrictions"
   - "https://developers.google.com/workspace/drive/api/guides/delete"
   - "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access"
+  - "https://developers.google.com/workspace/drive/api/guides/about-files"
 keywords:
   - "capabilities"
   - "canremovecontentrestriction"
@@ -26,7 +27,7 @@ keywords:
 # capabilities.canRemoveContentRestriction
 
 Product: Drive API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ This capability indicates whether a content restriction can be removed.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/drive/api/guides/content-restrictions](https://developers.google.com/workspace/drive/api/guides/content-restrictions)
 - [https://developers.google.com/workspace/drive/api/guides/delete](https://developers.google.com/workspace/drive/api/guides/delete)
 - [https://developers.google.com/workspace/drive/api/guides/limited-expansive-access](https://developers.google.com/workspace/drive/api/guides/limited-expansive-access)
+- [https://developers.google.com/workspace/drive/api/guides/about-files](https://developers.google.com/workspace/drive/api/guides/about-files)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/content-restrictions](https://developers.google.com/workspace/drive/api/guides/content-restrictions)
 - Source ID: `site-docs-root`
-- Final score: 144
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 174
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Content restrictions contain the following capabilities : capabilities.canModifyEditorContentRestriction : Whether the current user can add or modify a content restriction . capabilities.canModifyOwnerContentRestriction : Whether the current user can add or modify an owner content restriction . capabilities.canRemoveContentRestriction : Whether the current user can remove the applied content restriction (if present).
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/delete](https://developers.google.com/workspace/drive/api/guides/delete)
 - Source ID: `site-docs-root`
-- Final score: 68
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 81
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following fields are populated for all files: capabilities.canTrash : Whether the current user can move this file to trash. capabilities.canUntrash : Whether the current user can restore this file from trash. capabilities.canDelete : Whether the current user can delete this file. capabilities.canRemoveChildren : Whether the current user can remove children from this folder.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/drive/api/guides/limited-expansive-access](https://developers.google.com/workspace/drive/api/guides/limited-expansive-access)
 - Source ID: `site-docs-root`
-- Final score: 64
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 77
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Related topics Share files, folders, and drives How file access works in shared drives Learn about folders with limited access Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 - This feature better aligns the sharing behavior of items in both My Drive and shared drives, letting you organize folders with sensitive content alongside more broadly shared content.
 - This permission grants access to both folder contents and metadata like any other permission.
 - Verify permission to limit access on a folder To check if you can limit access to a folder or not, inspect the boolean values of the capabilities.canDisableInheritedPermissions and capabilities.canEnableInheritedPermissions fields on the files resource.
+
+### Files and folders overview \_|\_ Google Drive \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/drive/api/guides/about-files](https://developers.google.com/workspace/drive/api/guides/about-files)
+- Source ID: `site-docs-root`
+- Final score: 71
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- This list shows all available file types: Blob A file that contains text or binary content such as images, videos, and PDFs.
+- File characteristics This list shows some characteristics of a Drive file: Access proposal A proposal from a requester to an approver to grant a recipient access to a Drive item.
+- Home Google Workspace Google Drive Guides Send feedback Files and folders overview Stay organized with collections Save and categorize content based on your preferences.
 

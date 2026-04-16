@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:40:46.206Z"
+generated_at: "2026-04-12T12:11:29.265Z"
 product_name: "Cloud IDS"
 product_slug: "cloud-ids"
 feature_name: "IDS Threat Exceptions"
 feature_slug: "ids-threat-exceptions"
 latest_feature_date: "2022-12-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/intrusion-detection-system/docs/configuring-ids"
+  - "https://docs.cloud.google.com/intrusion-detection-system/docs/overview"
   - "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient"
 keywords:
@@ -26,7 +27,7 @@ keywords:
 # IDS Threat Exceptions
 
 Product: Cloud IDS
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,11 +39,12 @@ IDS Threat Exceptions lets you disable specific noisy or unnecessary threat IDs 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/intrusion-detection-system/docs/configuring-ids](https://docs.cloud.google.com/intrusion-detection-system/docs/configuring-ids)
+- [https://docs.cloud.google.com/intrusion-detection-system/docs/overview](https://docs.cloud.google.com/intrusion-detection-system/docs/overview)
 - [https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient](https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient](https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient)
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/intrusion-detection-system/docs/configuring-ids](https://docs.cloud.google.com/intrusion-detection-system/docs/configuring-ids)
 - Source ID: `site-docs-root`
-- Final score: 130
+- Final score: 173
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,11 +63,24 @@ Evidence snippets:
 - This flag interacts with other flags that are applied in this order: --flatten , --sort-by , --filter , --limit . --uri Print a list of resource URIs instead of the default output. --threat-exceptions A comma-separated list of threat IDs to exempt from alerting on this endpoint.
 - Configure Cloud IDS endpoints The following sections explain how to create Cloud IDS endpoints, attach them to a Packet Mirroring policy, view the Cloud IDS endpoints, delete the Cloud IDS endpoints, and how to configure threat exceptions.
 
+### "Cloud IDS overview \_|\_ Cloud Intrusion Detection System \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/intrusion-detection-system/docs/overview](https://docs.cloud.google.com/intrusion-detection-system/docs/overview)
+- Source ID: `site-docs-root`
+- Final score: 145
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Threat exceptions If you decide that Cloud IDS generates alerts on more threats than is necessary, you can disable noisy or otherwise unnecessary threat IDs by using the --threat-exceptions flag.
+- When Cloud IDS detects malicious traffic leaving your network from infected hosts, it generates an alert that is saved in the threat log and shown in the Google Cloud console.
+- Go to IDS Threats Default signature set Cloud IDS provides a default set of threat signatures that you can use immediately to protect your network from threats.
+- Cloud IDS is an intrusion detection service that provides threat detection for intrusions, malware, spyware, and command-and-control attacks on your network.
+
 ### "Class IDSAsyncClient (1.13.0) \_|\_ Python client libraries \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient](https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 120
+- Final score: 142
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +93,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient](https://docs.cloud.google.com/python/docs/reference/ids/latest/google.cloud.ids_v1.services.ids.IDSClient)
 - Source ID: `site-python-reference`
-- Final score: 120
+- Final score: 142
 - Re-rank relevance: N/A
 
 Evidence snippets:

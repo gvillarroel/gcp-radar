@@ -1,21 +1,22 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.014Z"
+generated_at: "2026-04-14T00:17:30.308Z"
 product_name: "Dialogflow"
 product_slug: "dialogflow"
 feature_name: "Code blocks"
 feature_slug: "code-blocks"
 latest_feature_date: "2025-04-24"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library"
+  - "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls"
+  - "https://docs.cloud.google.com/dialogflow/es/docs/access-control"
 keywords:
   - "code"
   - "blocks"
   - "playbooks"
   - "now"
-  - "for"
   - "finer"
   - "control"
 ---
@@ -23,7 +24,7 @@ keywords:
 # Code blocks
 
 Product: Dialogflow
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +34,57 @@ Playbooks now support code blocks for finer control.
 
 Playbooks now support code blocks for finer control.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library)
+- [https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls](https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls)
+- [https://docs.cloud.google.com/dialogflow/es/docs/access-control](https://docs.cloud.google.com/dialogflow/es/docs/access-control)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Code block system library \_|\_ Dialogflow CX \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library)
+- Source ID: `site-docs-reference`
+- Final score: 122
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This reference documentation describes the classes, variables, and functions that you can use for code blocks .
+- Overrides are queued in order (first added is first to be executed), and can be added at any point inside handlers and actions, but only take effect once the current action/handler has returned, like so: @BeforeActionTrigger : Queued overrides are executed in order, before the triggering next action (the one that triggered the handler) is executed. @PlaybookStart / BeforeModelTrigger : Queued overrides are executed in order, before operation shifts back to the LLM selecting the next action. @Action : The action itself reports its output, then after that the queued overrides are executed in order.
+- Sample: Playbook with provided inputs. add override ( playbooks . troubleshooting , { PRECEDING CONVERSATION SUMMARY : "phone is broken" , "device" : "phone" }) Playbook with provided empty inputs. add override ( playbooks . troubleshooting , {}) Flow with generated inputs. add override ( flows . billing ) Tool use. add override ( tools . weather api . get weather , { "location" : "San Francisco" }) Just like add override, this stacks on top of previously added overrides. respond ( "Hello" ) cancel Override the next action to have this playbook return a cancelled state.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+
+### Compliance and security controls \_|\_ Dialogflow \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls](https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls)
+- Source ID: `site-docs-root-2`
+- Final score: 79
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Certifications Dialogflow CX is compliant with the following: Compliance Certification Dialogflow CX (including generative features ) Dialogflow ES HIPAA ✔ ✔ ISO 27001 , ISO 27017 , ISO 27018 , and ISO 27701 ✔ ✔ SOC 1 , SOC 2 , SOC 3 ✔ ✔ Security controls Dialogflow CX provides the following security controls: Security controls compliance Dialogflow CX (including generative features ) Dialogflow ES Data Residency Regionalization and location settings Regionalization and data residency Customer-managed encryption keys (CMEK) Customer-managed encryption keys (CMEK) - VPC Service Controls (VPC-SC) Using VPC Service Controls Using VPC Service Controls Access Transparency Access Transparency - Government authorizations Dialogflow CX has received the following authorizations: Authorization Dialogflow CX (including generative features ) Dialogflow ES FedRAMP High Authorization - Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- Home Documentation AI and ML Dialogflow Resources Send feedback Compliance and security controls Stay organized with collections Save and categorize content based on your preferences.
+- This page provides information on compliance certifications and security controls that are supported by Dialogflow CX.
+
+### Access control \_|\_ Dialogflow ES \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/es/docs/access-control](https://docs.cloud.google.com/dialogflow/es/docs/access-control)
+- Source ID: `site-iam-reference`
+- Final score: 78
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- When implementing your own client and using OAuth , you must use the following OAuth scope: https://www.googleapis.com/auth/cloud-platform (access to all project resources) Previous arrow back Training Next Using multiple projects arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation AI and ML Dialogflow Dialogflow ES Send feedback Access control Stay organized with collections Save and categorize content based on your preferences.
+- When using a Google client library and IAM roles, see the Cloud Storage access control guide for information on Cloud Storage roles.
 

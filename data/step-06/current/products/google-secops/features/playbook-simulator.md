@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.941Z"
+generated_at: "2026-04-14T16:02:18.776Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "Playbook Simulator"
 feature_slug: "playbook-simulator"
 latest_feature_date: "2025-07-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
-  - "https://docs.cloud.google.com/chronicle/docs/soar/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis"
 keywords:
   - "playbook"
   - "simulator"
   - "can"
   - "visualize"
-  - "and"
   - "debug"
   - "playbooks"
-  - "that"
+  - "contain"
+  - "loops"
 ---
 
 # Playbook Simulator
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Playbook Simulator can visualize and debug playbooks that contain loops, with up
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen](https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen)
-- [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis)
 
 ## Supporting Pages
 
@@ -52,9 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen](https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen)
 - Source ID: `site-docs-reference-2`
-- Final score: 188
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 180
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For more information about the Playbooks page and how to collaborate with it, see the following: Define custom alert views from Playbook Designer Work with the Playbook Simulator Understand playbook monitoring Use the Playbook Navigator Playbook icons legend The following icons appear on the Cases > Playbooks tab when a playbook is attached.
@@ -62,29 +62,31 @@ Evidence snippets:
 - Menu : Click edit Edit and select the required playbooks or blocks before using Menu to perform bulk actions: New Folder : Add a new playbooks folder; the playbook automatically inherits any changes made to its associated environment groups.
 - Explore the Playbooks page Supported in: Google secops SOAR A playbook is built on triggers, actions, and flows, working together to automate incident response and other security operations tasks.
 
-### Google Security Operations SOAR release notes \_|\_ Google Cloud Documentation
+### "Integrate AlgoSec with Google SecOps \_|\_ Google Security Operations \_\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 156
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 27, 2025 Feature Playbook Simulator enhancements for loops The Playbook Simulator now supports visualization and debugging of playbooks that contain loops.
-- New API for Logs: Admin users can now retrieve raw python logs directly from the platform using the following API: POST/api/external/v1/logging/python Fixed Release Notes 6.2.31 Importing a custom integration on top of an existing commercial integration causes the connector to not work properly (ID #00243798) Specific Integration showing incorrect update available (ID #00181718) SDK call siemplify.current alert.creation time returns 0 (ID #00226591) In rare situations, unable to access several cases via the Platform or via API (ID #00243878) When changing the Case Stage under the Cases tab, the drop down list of stages does not follow the same numerical order as defined in the Settings (ID #44453181) Entities that should be internal are created as external if ingested using the environment alias (ID #00225318) In certain situations, alerts are ingested into the platform for environments that don't exist yet in the platform and as soon as the environments are created - the cases are opened and playbooks run.
-- If several playbooks have run on an alert, and those playbooks have customized views, you can now select and display any of those customized views for that alert.
-- Fixed Parse case wall email doesn't work in playbook simulator (ID #00260679) Fixed Tagged user is not highlighted or hyperlinked on the Case Wall page & Notification popup Fixed Custom List import error not propagated to the user (ID #1032784) Fixed Events tab lists all artifacts even though they are part of different events (ID #49103838) Fixed Issues with Login (ID #00283928) Fixed Advanced Text Editor text formatting not working (ID #00274952) Fixed Playbooks not visible due to missing categoryId and categoryName values (ID #00274872) Fixed Unable to create advanced reports when a specific environment is selected (ID #49898167) April 12, 2024 Announcement Release 6.2.53 is now in General Availability.
-
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 152
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec)
+- Source ID: `site-api-reference`
+- Final score: 71
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- July 27, 2025 Feature Playbook Simulator enhancements for loops The Playbook Simulator now supports visualization and debugging of playbooks that contain loops.
-- If several playbooks have run on an alert, and those playbooks have customized views, you can now select and display any of those customized views for that alert.
-- Customer authoring of rules Customer development of response playbooks Curated views for Investigation and triage Insights : Applied Threat Intelligence provides curated views that show valuable associations between an indicator and threat actor, threat campaign, or malware, statistics about a threat observed in customer environments.
-- It contains the following placeholders HostUrl CurrentUserEmail CurrentUserID CurrentUserFullName CurrentUserRole Note that the Current User placeholders cannot be used in playbooks or jobs.
+- After you configure an integration instance, you can use it in playbooks.
+- Action results Script result Script result name Value options Example is success True or False is success=False JSON result Option 1 { "status" : "Success" , "messages" : [], "data" : { "id" : 10 , "fields" : [ { "name" : "Owner" , "values" : [ "admin@example.com>" ] }, { "name" : "Creator" , "values" : [ "admin<user@siemplify.co>" ] }, { "name" : "Due" , "values" : [ "2021-08-31 00:00:00" ] }, { "name" : "LastUpdated" , "values" : [ "2021-08-13 12:31:23" ] }, { "name" : "Requestor" , "values" : [ "admin@example.com>" ] } ], "originalTraffic" : [ { "source" : { "items" : [ { "value" : "all" } ] }, "destination" : { "items" : [ { "value" : "192.0.2.3" } ] }, "service" : { "items" : [ { "value" : "ALL" } ] }, "application" : { "items" : [ { "value" : "any" } ] }, "user" : { "items" : [ { "value" : "any" } ] }, "action" : "Allow" } ], "plannedTraffic" : [ { "source" : { "items" : [ { "value" : "0.0.0.0-255.255.255.255" } ] }, "destination" : { "items" : [ { "value" : "192.0.2.3" } ] }, "service" : { "items" : [ { "value" : "tcp/ " }, { "value" : "udp/ " }, { "value" : "ospf" }, { "value" : "icmp/ " }, { "value" : "gre" }, { "value" : "ipsec 50" }, { "value" : "ipsec 51" } ] }, "application" : { "items" : [ { "value" : "any" } ] }, "user" : { "items" : [ { "value" : "any" } ] }, "action" : "Allow" } ] } } Option 2 { "status" : "Success" , "messages" : [], "data" : { "changeRequestId" : 37 , "redirectUrl" : "https://192.0.2.120/FireFlow/Ticket/Display.html?id=37" } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If the 200 status code is reported and if for second request the 404 status code is reported (is success=true): "Successfully created a traffic change request to allow traffic to the provided entities in AlgoSec.".
+- Action results Script result Script result name Value options Example is success True or False is success=False JSON result Option 1 { "status" : "Success" , "messages" : [], "data" : { "id" : 10 , "fields" : [ { "name" : "Owner" , "values" : [ "admin@example.com>" ] }, { "name" : "Creator" , "values" : [ "admin@example.com>" ] }, { "name" : "Due" , "values" : [ "2021-08-31 00:00:00" ] }, { "name" : "LastUpdated" , "values" : [ "2021-08-13 12:31:23" ] }, { "name" : "Requestor" , "values" : [ "admin@example.com>" ] } ], "originalTraffic" : [ { "source" : { "items" : [ { "value" : "all" } ] }, "destination" : { "items" : [ { "value" : "192.0.2.3" } ] }, "service" : { "items" : [ { "value" : "ALL" } ] }, "application" : { "items" : [ { "value" : "any" } ] }, "user" : { "items" : [ { "value" : "any" } ] }, "action" : "Allow" } ], "plannedTraffic" : [ { "source" : { "items" : [ { "value" : "0.0.0.0-255.255.255.255" } ] }, "destination" : { "items" : [ { "value" : "192.0.2.3" } ] }, "service" : { "items" : [ { "value" : "tcp/ " }, { "value" : "udp/ " }, { "value" : "ospf" }, { "value" : "icmp/ " }, { "value" : "gre" }, { "value" : "ipsec 50" }, { "value" : "ipsec 51" } ] }, "application" : { "items" : [ { "value" : "any" } ] }, "user" : { "items" : [ { "value" : "any" } ] }, "action" : "Block" } ] } } Option 2 { "status" : "Success" , "messages" : [], "data" : { "changeRequestId" : 37 , "redirectUrl" : "https://192.0.2.120/FireFlow/Ticket/Display.html?id=37" } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If the 200 status code is reported even if for second request the 404 status code is reported (is success=true): "Successfully created a traffic change request to block traffic to the provided entities in AlgoSec.".
+- Action results Script result Script result name Value options Example is success True or False is success=False JSON result { "status" : "Success" , "messages" : [], "data" : { "id" : 6 , "subChangeRequests" : [ 12 ], "fields" : [ { "name" : "Risk Level" , "values" : [ "No Risk" ] }, { "name" : "Owner" , "values" : [ "admin@example.com>" ] }, { "name" : "Creator" , "values" : [ "admin@example.com>" ] }, { "name" : "LastUpdated" , "values" : [ "2021-08-13 13:50:58" ] }, { "name" : "Requestor" , "values" : [ "admin@example.com>" ] }, { "name" : "Form Type" , "values" : [ "Traffic Change" ] }, { "name" : "Risks Number" , "values" : [ "0" ] }, { "name" : "Initial Plan status" , "values" : [ "Result OK" ] }, { "name" : "Workflow" , "values" : [ "Basic" ] }, { "name" : "Subject" , "values" : [ "1" ] }, { "name" : "status" , "values" : [ "open" ] } ], "originalTraffic" : [ { "source" : { "items" : [ { "value" : "all" } ] }, "destination" : { "items" : [ { "value" : "192.0.2.2" } ] }, "service" : { "items" : [ { "value" : "tcp/80" } ] }, "application" : { "items" : [ { "value" : "any" } ] }, "user" : { "items" : [ { "value" : "any" } ] }, "action" : "Allow" } ], "plannedTraffic" : [ { "source" : { "items" : [ { "value" : "0.0.0.0-255.255.255.255" } ] }, "destination" : { "items" : [ { "value" : "192.0.2.2" } ] }, "service" : { "items" : [ { "value" : "tcp/80" } ] }, "application" : { "items" : [ { "value" : "any" } ] }, "user" : { "items" : [ { "value" : "any" } ] }, "action" : "Allow" } ] } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If found results (is success=true): "Status of the change request with ID {id} was updated to status: {status}.
+
+### "Integrate Armis with Google SecOps \_|\_ Google Security Operations \_|\_\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis)
+- Source ID: `site-iam-reference`
+- Final score: 71
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This process ensures that every entity is correctly indexed as a unique asset, making it fully searchable and actionable in playbooks.
+- After you configure an integration instance, you can use it in playbooks.
+- Run on This action runs on the following entities: IP Address Mac Address Action results Script result Script result name Value options Example is success True/False is success:False JSON result { "accessSwitch" : null , "category" : "Computers" , "dataSources" : [ { "firstSeen" : "2021-03-07T04:04:22.562873+00:00" , "lastSeen" : "2021-03-07T04:04:22.562873+00:00" , "name" : "Example" , "types" : [ "Asset & System Management" , "Virtualization" ] }, { "firstSeen" : "2021-03-07T04:04:22.562873+00:00" , "lastSeen" : "2021-03-07T04:04:22.562873+00:00" , "name" : "Armis Smart Scanner" , "types" : [ "Vulnerability Management" ] } ], "firstSeen" : "2021-03-07T04:04:22.562873+00:00" , "id" : 1616 , "ipAddress" : "192.0.2.120" , "ipv6" : null , "lastSeen" : "2021-03-21T08:05:40.244960+00:00" , "macAddress" : "01:23:45:ab:cd:ef" , "manufacturer" : "VMware" , "model" : "VMware Virtual Platform" , "name" : "Example" , "operatingSystem" : "CentOS" , "operatingSystemVersion" : "6.6" , "purdueLevel" : 4.0 , "riskLevel" : 5 , "sensor" : { "name" : "North conference room" , "type" : "Physical Sensor" }, "site" : { "location" : "Palo Alto" , "name" : "Palo Alto Offices" }, "tags" : [ "Discover" , "Example" ], "type" : "Virtual Machines" , "user" : "" , "visibility" : "Full" } Entity enrichment Enrichment field name Logic - When to apply category When available in JSON id When available in JSON ipAddress When available in JSON macAddress When available in JSON name When available in JSON os When available in JSON purdue level When available in JSON risk level When available in JSON tags When available in JSON type When available in JSON user When available in JSON visibility When available in JSON site When available in JSON link When available in JSON Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: if enriched some(is success = true): "Successfully enriched the following entities using Armis:\n".format(entity.identifier) If didn't enrich some (is success = true): "Action wasn't able to enriche the following entities using Armis:\n".format(entity.identifier) If didn't enrich all (is success = false): "No entities were enriched".
+- Action results Script result Script result name Value options Example is success True/False is success:False JSON result { "band" : null , "channel" : null , "dhcpAuthenticationDuration" : null , "duration" : 12339 , "endTimestamp" : "2021-03-18T20:19:31.562873+00:00" , "id" : 33355 , "inboundTraffic" : 12412512 , "outboundTraffic" : 19626489 , "protocol" : "Bluetooth" , "radiusAuthenticationDuration" : null , "risk" : "Medium" , "rssi" : null , "sensor" : { "name" : "EXAMPLE" , "type" : "Switch" }, "site" : { "location" : "Location" , "name" : "Location HQ" }, "snr" : null , "sourceId" : 2097 , "startTimestamp" : "2021-03-18T16:53:52.562873+00:00" , "targetId" : 217 , "title" : "Connection between Example and user's iPhone" , "totalAssociationDuration" : null , "traffic" : 32039001 , "wlanAssociationDuration" : null } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: if 200 and data is available (is success = true): "Successfully returned connections related to the alert {alertId} based on the provided criteria in Armis." If 200 and no data is available (is success=false): "No connections were found related to the alert {alertId} based on the provided criteria in Armis." The action should fail and stop a playbook execution: if fatal error, like wrong credentials, no connection to server, other: "Error executing action "List Alert Connections".
 

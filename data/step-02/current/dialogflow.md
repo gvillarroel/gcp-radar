@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 277
-Unique features: 329
+Unique features: 320
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -99,7 +99,6 @@ Unique features: 329
 | 2024-04-30 | EU multi-region support for agent apps |  | Vertex AI Agents agent apps support the EU multi-region. |
 | 2024-04-30 | Expanded language support for agent apps |  | Vertex AI Agents agent apps support all languages available in Vertex AI generative models. |
 | 2024-04-30 | Session ID built-in parameter |  | Dialogflow CX exposes the session ID through built-in parameters. |
-| 2024-04-23 | US multi-region for Dialogflow CX |  | Dialogflow CX is available in the US multi-region through the usa-dialogflow.googleapis.com hostname. |
 | 2024-04-18 | Conversation history API |  | Dialogflow CX offers a Conversation History API in public preview. |
 | 2024-04-04 | Cross-language data stores for agents |  | Vertex AI Conversation can connect a data store created in one language to an agent that uses different languages. |
 | 2024-04-03 | Language auto-detect for chat |  | Dialogflow CX chat conversations can automatically detect an end-user's language and respond in the same language. |
@@ -110,7 +109,6 @@ Unique features: 329
 | 2024-03-25 | DTMF for telephony integrations |  | Dialogflow CX telephony integrations support DTMF input in preview. |
 | 2024-03-25 | Gemini Pro 1.0 for Vertex AI Conversation data stores |  | Vertex AI Conversation data stores support Gemini Pro 1.0 in general availability with optimized prompting. |
 | 2024-03-25 | Request-level speech model override |  | Dialogflow CX can override the speech model specified in a runtime API request through advanced speech settings. |
-| 2024-03-19 | $request.user-utterance request-scoped parameter |  | Dialogflow CX request-scoped parameters support $request.user-utterance to reference the end-user utterance. |
 | 2024-03-19 | Filter and userMetadata example parameters for data store tools |  | Vertex AI Conversation data store tools support filter and userMetadata example parameters. |
 | 2024-03-19 | Offers and deals prebuilt component |  | Dialogflow CX provides a prebuilt component for offers and deals use cases. |
 | 2024-03-18 | Cancel order prebuilt component |  | Dialogflow CX provides a prebuilt component for cancel order workflows. |
@@ -237,7 +235,6 @@ Unique features: 329
 | 2021-10-19 | Continuous testing and deployment |  | Dialogflow CX provides a preview feature for continuous testing and deployment. |
 | 2021-10-15 | Flow version comparison |  | Dialogflow CX provides side-by-side comparison of flow versions. |
 | 2021-08-11 | Experiments |  | Dialogflow CX provides experiments to compare flow version performance against a control version using live traffic. |
-| 2021-07-02 | sys.long-utterance built-in event |  | Dialogflow CX provides the sys.long-utterance built-in event to handle user queries that exceed the maximum length. |
 | 2021-06-30 | Versions and environments API |  | Dialogflow ES API provides methods to manage versions and environments. |
 | 2021-06-25 | System functions |  | Dialogflow CX provides system functions for use in expressions and conversational logic. |
 | 2021-06-15 | Dialogflow V1 API | 2021-07-12 | Dialogflow V1 API supports bot requests for legacy Dialogflow integrations; The Dialogflow V1 API is undergoing a gradual shutdown; deprecated on 2021-07-12. |
@@ -276,8 +273,6 @@ Unique features: 329
 | 2020-07-30 | Facebook Workplace integration |  | Dialogflow includes an integration with Facebook Workplace. |
 | 2020-07-30 | Mega agents |  | Mega agents combine multiple sub-agents into a single agent configuration; Mega agents combine multiple sub-agents into a single mega agent. |
 | 2020-07-27 | Dialogflow Messenger |  | Dialogflow Messenger provides a customizable chat dialog that can be embedded in a website. |
-| 2020-07-23 | Amazon Alexa exporter | 2020-07-23 | The Amazon Alexa exporter is no longer supported; deprecated on 2020-07-23. |
-| 2020-07-23 | Amazon Alexa importer | 2020-07-23 | The Amazon Alexa importer is no longer supported; deprecated on 2020-07-23. |
 | 2020-07-06 | Analytics page |  | The Dialogflow Console includes an improved Analytics page with new metrics and data views. |
 | 2020-05-08 | Voximplant telephony integration |  | Dialogflow includes a one-click integration with the Voximplant telephony partner. |
 | 2020-05-05 | Auto speech adaptation |  | Dialogflow provides auto speech adaptation for speech recognition tuning; Auto Speech Adaptation improves agent speech recognition accuracy. |
@@ -287,8 +282,6 @@ Unique features: 329
 | 2020-02-19 | Agent validation |  | Dialogflow includes agent validation to check agents for quality and correctness; Dialogflow includes agent validation to check agents for quality and correctness. |
 | 2020-02-19 | Fulfillment settings API updates |  | Dialogflow allows fulfillment settings to be updated through the API. |
 | 2020-02-19 | Versions and environments |  | Dialogflow supports versions and environments for managing agent releases; Versions and Environments let you manage agent versions and deployment environments. |
-| 2020-01-06 | Kik integration | 2020-01-06 | The built-in Kik integration is deprecated and scheduled for shutdown; deprecated on 2020-01-06. |
-| 2020-01-06 | Skype integration | 2020-01-06 | The built-in Skype integration is deprecated and scheduled for shutdown; deprecated on 2020-01-06. |
 | 2020-01-06 | Spark integration | 2020-01-06 | The built-in Spark integration is deprecated and scheduled for shutdown; deprecated on 2020-01-06. |
 | 2020-01-06 | Twilio IP Messaging integration | 2020-01-06 | The built-in Twilio IP Messaging integration is deprecated and scheduled for shutdown; deprecated on 2020-01-06. |
 | 2020-01-06 | Twilio Text Messaging integration | 2020-01-06 | The built-in Twilio Text Messaging integration is deprecated and scheduled for shutdown; deprecated on 2020-01-06. |
@@ -324,12 +317,10 @@ Unique features: 329
 | 2018-05-08 | Negative Examples |  | Negative Examples let you add mismatched phrases to the Default Fallback Intent to improve intent matching. |
 | 2018-05-08 | Stackdriver Logging for Fulfillment |  | Stackdriver Logging for fulfillment lets you enable and view logs for fulfillment execution. |
 | 2018-03-29 | Additional System Entities for Hindi |  | Additional system entities were added for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian. |
-| 2018-03-29 | and Norwegian |  | Additional system entities were added for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian; Dialogflow added broader language support for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian. |
 | 2018-03-29 | Danish |  | Additional system entities were added for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian; Dialogflow added broader language support for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian. |
 | 2018-03-29 | Indonesian |  | Additional system entities were added for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian; Dialogflow added broader language support for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian. |
 | 2018-03-29 | Swedish |  | Additional system entities were added for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian; Dialogflow added broader language support for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian. |
 | 2018-03-29 | Thai |  | Additional system entities were added for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian; Dialogflow added broader language support for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian. |
-| 2018-02-22 | and Dutch |  | Machine learning support was added for Brazilian Portuguese, Korean, and Dutch. |
 | 2018-02-22 | Expanded Language Support for Hindi |  | Dialogflow added broader language support for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian. |
 | 2018-02-22 | Korean |  | Machine learning support was added for Brazilian Portuguese, Korean, and Dutch. |
 | 2018-02-22 | Machine Learning Support for Brazilian Portuguese |  | Machine learning support was added for Brazilian Portuguese, Korean, and Dutch. |

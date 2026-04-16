@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:28:55.742Z"
+generated_at: "2026-04-12T12:11:54.318Z"
 product_name: "Cloud Router"
 product_slug: "cloud-router"
 feature_name: "VPC dynamic routing mode"
 feature_slug: "vpc-dynamic-routing-mode"
 latest_feature_date: "2017-10-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network"
   - "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes"
   - "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes"
+  - "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes"
 keywords:
   - "vpc"
   - "dynamic"
@@ -26,7 +27,7 @@ keywords:
 # VPC dynamic routing mode
 
 Product: Cloud Router
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ VPC dynamic routing mode determines whether Cloud Router advertises and propagat
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network)
 - [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes)
 - [https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes](https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes)
+- [https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes](https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network)
 - Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 228
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The "advertisedGroups": [ALL SUBNETS] flag is valid only when bgp.advertiseMode: CUSTOM , when bgp.advertisedGroups: [ALL SUBNETS] , the router-level advertisements include local subnet ranges according to the dynamic routing mode of the VPC network.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 222
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Dynamic routing mode effects on learned routes Create a Cloud Router to connect a VPC network to a peer network Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes](https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes)
 - Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 212
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - A custom IP address range is ignored if it exactly matches a subnet route that a Cloud Router advertises according to the dynamic routing mode of its VPC network.
 - Cloud Router uses the configured base advertised priority plus an inter-regional cost to advertise subnet ranges that come from regions that don't match the region of the Cloud Router when both of the following conditions are met: The dynamic routing mode of VPC network that contains the Cloud Router is global dynamic routing mode.
 - Cloud Router can advertise the following routes: Local subnet ranges NCC-imported subnet ranges NCC-imported transit dynamic routes Custom IPv4 and IPv6 prefixes Advertisement modes The advertisement mode of a Cloud Router controls whether it advertises subnet routes, custom prefixes, or both.
 - With this option, note the following: Which subnet ranges are advertised and their advertised MEDs depends on the dynamic routing mode of the VPC network that contains the Cloud Router, as described in Subnet range advertisement .
+
+### "Route exchange with VPC spokes \_|\_ Network Connectivity Center \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes](https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes)
+- Source ID: `site-iam-reference`
+- Final score: 204
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The dynamic routing mode of a routing VPC network determines in which regions the NCC dynamic routes are programmed in the VPC spokes: If the dynamic routing mode is regional, NCC dynamic routes from its hybrid spokes are only programmed in the same region as each hybrid spoke.
+- To establish connectivity between hybrid spokes and VPC spokes: Network administrators for the routing VPC networks must first review the Cloud Router path selection and dynamic routing mode: NCC hybrid spokes only support the Cloud Router legacy best path selection mode.
+- The dynamic routing mode and best path selection mode of the workload VPC network aren't relevant because the workload VPC network doesn't contain the Cloud Router resources that manage the BGP sessions for the VLAN attachments.
+- This example shows how the multi-exit discriminator (MED) value, dynamic routing mode, and Cloud Router best path selection algorithm control the creation of dynamic routes in both the routing VPC network and in VPC spokes.
 

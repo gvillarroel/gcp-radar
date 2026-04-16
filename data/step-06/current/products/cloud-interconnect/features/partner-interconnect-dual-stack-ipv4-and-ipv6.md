@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:34.028Z"
+generated_at: "2026-04-12T12:11:29.569Z"
 product_name: "Cloud Interconnect"
 product_slug: "cloud-interconnect"
 feature_name: "Partner Interconnect dual-stack IPv4 and IPv6"
@@ -11,7 +11,8 @@ coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview"
   - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-overview"
-  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/modifying-vlans"
+  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting"
+  - "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview"
 keywords:
   - "partner"
   - "interconnect"
@@ -38,21 +39,22 @@ Partner Interconnect supports dual-stack IPv4 and IPv6 connectivity; Partner Int
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview)
 - [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-overview)
-- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/modifying-vlans](https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/modifying-vlans)
+- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting](https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting)
+- [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview)
 
 ## Supporting Pages
 
 ### Partner Cross-Cloud Interconnect for OCI overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview)
-- Source ID: `site-iam-reference`
-- Final score: 220
+- Source ID: `site-docs-root`
+- Final score: 273
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -65,8 +67,8 @@ Evidence snippets:
 ### Partner Interconnect overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-overview)
-- Source ID: `site-iam-reference`
-- Final score: 212
+- Source ID: `site-docs-root`
+- Final score: 265
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -76,17 +78,30 @@ Evidence snippets:
 - IPv6 support Partner Interconnect supports IPv6 traffic for both Layer 2 and Layer 3 connectivity.
 - You have the option to create an IPv4 and IPv6 (dual stack) VLAN attachment.
 
-### Modify VLAN attachments \_|\_ Cloud Interconnect \_|\_ Google Cloud Documentation
+### Troubleshooting \_|\_ Cloud Interconnect \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/modifying-vlans](https://docs.cloud.google.com/network-connectivity/docs/interconnect/how-to/partner/modifying-vlans)
-- Source ID: `site-iam-reference`
-- Final score: 194
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting](https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting)
+- Source ID: `site-docs-root`
+- Final score: 215
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The output is similar to the following when changing the stack type from IPV4 ONLY to IPV4 IPV6 : adminEnabled: true edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 bandwidth: BPS 1G cloudRouterIpAddress: 169.254.67.201/29 cloudRouterIpv6Address: 2600:2d00:0:1::1/125 creationTimestamp: '2017-12-01T08:31:11.580-08:00' customerRouterIpAddress: 169.254.67.202/29 customerRouterIpv6Address: 2600:2d00:0:1::2/125 description: Interconnect for location 1 id: '7193021941765913888' interconnect: https://www.googleapis.com/compute/alpha/projects/partner-project/global/interconnects/lga-2 kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: partner-attachment partnerMetadata: interconnectName: New York (2) partnerName: Partner Inc portalUrl: https://partner-portal.com region: https://www.googleapis.com/compute/alpha/projects/partner-project/regions/ REGION selfLink: https://www.googleapis.com/compute/alpha/projects/partner-project/regions/ REGION /interconnectAttachments/ ATTACHMENT NAME stackType: STACK TYPE state: ACTIVE type: PARTNER vlanTag8021q: 1000 The output is similar to the following when changing the stack type from IPV4 IPV6 to IPV4 ONLY : adminEnabled: true edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 bandwidth: BPS 1G cloudRouterIpAddress: 169.254.67.201/29 creationTimestamp: '2017-12-01T08:31:11.580-08:00' customerRouterIpAddress: 169.254.67.202/29 description: Interconnect for location 1 id: '7193021941765913888' interconnect: https://www.googleapis.com/compute/alpha/projects/partner-project/global/interconnects/lga-2 kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: partner-attachment partnerMetadata: interconnectName: New York (2) partnerName: Partner Inc portalUrl: https://partner-portal.com region: https://www.googleapis.com/compute/alpha/projects/partner-project/regions/ REGION selfLink: https://www.googleapis.com/compute/alpha/projects/partner-project/regions/ REGION /interconnectAttachments/ ATTACHMENT NAME stackType: STACK TYPE state: ACTIVE type: PARTNER vlanTag8021q: 1000 Add custom IP address ranges when upgrading to dual stack When you update your stack type from IPv4 only to dual stack on a Layer 2 connection, you can provide custom IPv6 address ranges by using the --candidate-cloud-router-ipv6-address and --candidate-customer-router-ipv6-address flags. gcloud compute interconnects attachments partner update ATTACHMENT NAME \ --project= PROJECT ID \ --region= REGION \ --router= ROUTER NAME \ --stack-type=IPV4 IPV6 \ --candidate-cloud-router-ipv6-address= CANDIDATE CLOUD ROUTER IP ADDRESS \ --candidate-customer-router-ipv6-address= CANDIDATE CUSTOMER ROUTER IP ADDRESS Replace the following: ATTACHMENT NAME : the name of your VLAN attachment PROJECT ID : the ID of your Google Cloud project REGION : the region of your VLAN attachment ROUTER NAME : the name of the Cloud Router CANDIDATE CLOUD ROUTER IP ADDRESS : the IPv6 CIDR address that you want to assign to the Cloud Router end of your VLAN attachment; for example, 2001:db8::1/125 CANDIDATE CUSTOMER ROUTER IP ADDRESS : the IPv6 CIDR address that you want to assign to the customer router end If you use a Layer 3 connection, your service provider can configure custom IP addresses when you upgrade the stack type.
-- In the IP stack type section, select the IP stack type, either IPv4 (single-stack) or IPv4 and IPv6 (dual-stack) . (Optional): You can specify custom IP address ranges when you change your attachment's stack type.
-- Modifying the stack type from IPv4 and IPv6 (dual stack) to IPv4 only (single stack) removes the IPv6 BGP session from the associated Cloud Router, and removes the IPv6 address from the VLAN attachment.
-- Modifying the stack type from IPv4 and IPv6 (dual stack) to IPv4 only (single stack) removes the BGP session from the associated Cloud Router, and removes the IPv6 address from the VLAN attachment.
+- IPv6 traffic isn't working after changing an attachment's stack type to dual stack View Cloud Router status and verify that status: UP is displayed.
+- This troubleshooting guide can help you solve common issues that you might encounter when using Cloud Interconnect: General troubleshooting Dedicated Interconnect Partner Interconnect HA VPN over Cloud Interconnect MACsec for Cloud Interconnect Cross-Cloud Interconnect For answers to common questions about Cloud Interconnect architecture and features, see the Cloud Interconnect FAQ .
+- Unable to delete an encrypted VLAN attachment You receive the following error when you try to delete an encrypted VLAN attachment for Dedicated Interconnect or Partner Interconnect: ResourceInUseByAnotherResourceException To fix this issue, make sure that you have first deleted all the HA VPN gateways and tunnels associated with the encrypted VLAN attachment.
+- Can't send and learn MED values over an L3 Partner Interconnect connection If you are using a Partner Interconnect connection where a Layer 3 service provider handles BGP for you, Cloud Router can't learn MED values from your on-premises router or send MED values to that router.
+
+### Dedicated Interconnect overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview](https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview)
+- Source ID: `site-docs-root`
+- Final score: 213
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create VLAN attachments Dual-stack IPv4 and IPv6 VLAN attachments A Dedicated Interconnect VLAN attachment that is configured with the dual-stack (IPv4 and IPv6) stack type can support both IPv4 and IPv6 traffic.
+- Single stack (IPv4 only) Dual stack (IPv4 and IPv6) The stack type that you select for your VLAN attachment determines what version of IP traffic is supported by your Dedicated Interconnect connection.
+- To support IPv6 traffic in a Dedicated Interconnect, do the following: Configure your VPC networks to use either IPv4 and IPv6 (dual stack) or IPv6-only subnets .
+- Stack type Supported BGP sessions IPv4 only IPv4 BGP IPv4 and IPv6 IPv4 BGP, with or without MP-BGP IPv6 BGP, with or without MP-BGP Both IPv4 BGP and IPv6 BGP, no MP-BGP For more information about BGP sessions, see Establish BGP sessions in the Cloud Router documentation.
 

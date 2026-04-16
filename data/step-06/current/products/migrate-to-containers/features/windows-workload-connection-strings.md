@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:45.643Z"
+generated_at: "2026-04-14T15:21:10.853Z"
 product_name: "Migrate to Containers"
 product_slug: "migrate-to-containers"
 feature_name: "Windows workload connection strings"
 feature_slug: "windows-workload-connection-strings"
 latest_feature_date: "2021-08-17"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/wordpress/wordpress-customizing-a-migration-plan"
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan"
 keywords:
   - "windows"
   - "workload"
   - "connection"
   - "strings"
   - "migration"
-  - "of"
   - "can"
   - "specify"
+  - "net"
 ---
 
 # Windows workload connection strings
 
 Product: Migrate to Containers
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ Migration of a Windows workload can specify connection strings for a .NET Framew
 
 Migration of a Windows workload can specify connection strings for a .NET Framework data provider.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan)
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/wordpress/wordpress-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/wordpress/wordpress-customizing-a-migration-plan)
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Customize migration plan for Windows IIS services \_|\_ Migrate to Containers\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 224
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The next sections discuss this structure, explain what each part is, and how to modify it. globalSettings : globalIis : enablegmsa : string apppools : - enable32bitapponwin64 : bool identitytype : string managedruntimeversion : string name : string connectionStrings : add : - connectionstring : string name : string providername : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string image : extraFeatures : - string target : baseVersion : string requirements : - string warnings : - string msvcRuntimes : - string pathEnvVarAdditionalEntries : - string images : - name : string probes : enabled : bool livenessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] readinessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] useractions : files : - source : string target : string registry : currentcontrolset : - path : string software : - path : string workloads : sites : site : - applications : - applicationpool : string path : string virtualdirectories : - path : string physicalpath : string bindings : - port : int protocol : string sslflags : int connectionstrings : - connectionstring : string name : string providername : string name : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string serverautostart : bool version : string The globalSettings section The globalSettings section describes basic requirements for pods running IIS sites from this VM.
+- To add a connection string to a site, edit the site definition in the migration plan to set the connectionstrings property: sites : site : Add the site connection strings here. connectionstrings : - name : connectionname1 providername : System.Data.SqlClient connectionstring : Database=connectedDB1;Password=Welcome1;User=admin; - name : connectionname2 providername : System.Data.OleDb connectionstring : Database=connectedDB2;Password=Welcome2;User=admin; - applications : - path : / virtualdirectories : ...
+- Some connection strings might not be detected and should be added by editing the migration plan as shown preceding. (For example, if the connection strings are in an encrypted section of the applicationhost.config file).
+- Connection string external dependencies Connection strings can contain dependencies, such as a reference to a file at or to a Windows user associated with the site.
+
+### Create a migration plan \_|\_ Migrate to Containers \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 120
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create a migration plan for WordPress workloads To perform the analysis, run the following command: ./m2c analyze \ -s PATH TO COPIED FILESYSTEM \ -p wordpress-container \ -o ANALYSIS OUTPUT PATH Replace the following: PATH TO COPIED FILESYSTEM : the path to copied file system directory ANALYSIS OUTPUT PATH : the path to the folder where you want the analysis output to be created After the analysis is complete, a new directory is created in the specified output path which contains the migration plan, config.yaml .
+- Create a migration plan for Apache workloads To perform the analysis, run the following command: ./m2c analyze \ -s PATH TO COPIED FILESYSTEM \ -p apache-container \ -o ANALYSIS OUTPUT PATH Replace the following: PATH TO COPIED FILESYSTEM : the path to copied file system directory ANALYSIS OUTPUT PATH : the path to the folder where you want the analysis output to be created After the analysis is complete, a new directory is created in the specified output path which contains the migration plan, config.yaml .
+- What's next Learn how to customize the migration plan for the following: Linux VMs Tomcat WebSphere Liberty WebSphere traditional JBoss Apache WordPress Windows IIS services Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Create a migration plan for Windows IIS services To perform the analysis, run the following command: ./m2c analyze -s PATH TO IMAGE -p windows-iis-container -o ANALYSIS OUTPUT PATH Replace the following: PATH TO IMAGE : the path to source machine disk image.
+
+### "Customize migration plan for WordPress sites \_|\_ Migrate to Containers\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/wordpress/wordpress-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/wordpress/wordpress-customizing-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you want to change the Docker community image, or provide your own docker image, you can modify the fromImage tag in your migration plan using the following format: Parent WordPress image for the generated container image. fromImage : wordpress:6.1-php7.4-apache Specify the database connection configuration The databaseValues section contains the database connection configuration extracted from the VM.
+- Data migration plan structure The data migration plan for a WordPress workload has the following structure: volumes : - deploymentPvcName : wordpress - pvc folders : - / var / www / html / wp - content newPvc : spec : accessModes : - ReadWriteOnce resources : requests : storage : 10 G The uploaded content, plugins, and themes that reside in the wp-content folder in your WordPress VM are exported to a persistent volume claim (PVC).
+- 4 - apache WordPress root directory. rootDirectory : / var / www / html / Database connection values. databaseValues : - name : DB NAME value : database name here - name : DB USER value : username here - name : DB PASSWORD value : password here - name : DB HOST value : host here To add information as needed, review your migration plan details and guiding comments.
+- Migration plan structure The migration plan for a WordPress workload has the following structure, which you can customize as described in the following sections. sites : - # Image name.
 

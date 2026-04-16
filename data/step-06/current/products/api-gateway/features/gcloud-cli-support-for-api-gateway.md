@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:04:48.107Z"
+generated_at: "2026-04-14T04:11:52.468Z"
 product_name: "API Gateway"
 product_slug: "api-gateway"
 feature_name: "gcloud CLI support for API Gateway"
 feature_slug: "gcloud-cli-support-for-api-gateway"
 latest_feature_date: "2021-01-21"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/api-gateway/docs/creating-api"
-  - "https://docs.cloud.google.com/api-gateway/docs/creating-api-config"
+  - "https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg"
   - "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud"
+  - "https://docs.cloud.google.com/api-gateway/docs/quickstart"
 keywords:
-  - "Cloud SDK commands"
-  - "manage gateways with gcloud"
-  - "gcloud api-gateway commands"
-  - "gcloud command group"
-  - "Cloud SDK"
-  - "Google Cloud CLI"
-  - "gcloud API Gateway"
-  - "gcloud api-gateway"
+  - "command"
+  - "group"
+  - "been"
+  - "added"
+  - "gcloud"
 ---
 
 # gcloud CLI support for API Gateway
 
 Product: API Gateway
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,59 +31,59 @@ API Gateway has been added to the gcloud command group so it can be managed thro
 
 ## Extended Definition
 
-API Gateway supports management through the Google Cloud CLI via the `gcloud api-gateway` command group. The provided documentation shows CLI workflows for creating, listing, describing, updating, and deleting gateway resources, including API resources, API configurations, and gateways, with related options such as label/display-name updates and project scoping.
+API Gateway has been added to the gcloud command group so it can be managed through the Google Cloud CLI.
 
 ## Evidence Summary
 
-These official API Gateway pages provide direct examples of `gcloud api-gateway` commands, confirming that API creation, API config operations, and gateway deployment/update tasks are performed through Google Cloud CLI.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/api-gateway/docs/creating-api](https://docs.cloud.google.com/api-gateway/docs/creating-api)
-- [https://docs.cloud.google.com/api-gateway/docs/creating-api-config](https://docs.cloud.google.com/api-gateway/docs/creating-api-config)
+- [https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg](https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg)
 - [https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud](https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud)
+- [https://docs.cloud.google.com/api-gateway/docs/quickstart](https://docs.cloud.google.com/api-gateway/docs/quickstart)
 
 ## Supporting Pages
 
-### Create an API \_|\_ API Gateway \_|\_ Google Cloud Documentation
+### Getting started with load balancing for API Gateway \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/api-gateway/docs/creating-api](https://docs.cloud.google.com/api-gateway/docs/creating-api)
-- Source ID: `site-docs-root`
-- Final score: 66
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page explicitly documents creating APIs with `gcloud api-gateway apis create`, including command help, required parameters, and output, showing direct CLI support for API Gateway operations.
-
-Evidence snippets:
-- Google Cloud CLI Determine the list of API Gateways associated with the API: gcloud api-gateway gateways list --filter='apiConfig:"projects/ PROJECT ID /locations/global/apis/ API ID "' Delete each API config associated with the API: gcloud api-gateway api-configs delete CONFIG ID --api= API ID Delete the API: gcloud api-gateway apis delete API ID What's next Create an API config Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Google Cloud CLI Use the following gcloud options to update an existing API: --display-name --update-labels --clear-labels --remove-labels For example: gcloud api-gateway apis update API ID \ --update-labels=a=1,b=2 Use the following command to view all update options: gcloud api-gateway apis update --help Delete an API Note: If you deployed an API config to a gateway, then deleting the API causes the gateway to stop serving traffic.
-- Go to API Gateway Google Cloud CLI gcloud api-gateway apis list This command returns output in the form: NAME DISPLAY NAME MANAGED SERVICE STATE projects/ PROJECT ID /locations/global/apis/ API ID API ID MANAGED SERVICE NAME .apigateway.
-- Google Cloud CLI To create an API, review the following sections: Steps to create an API Google Cloud CLI options Domain-scoped projects Steps to create an API Validate the project ID returned from the following command to make sure that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace PROJECT ID with the Google Cloud project ID in which you want to create the service: gcloud config set project PROJECT ID If your project ID contains a colon ( : ), see Domain-scoped projects for additional details about creating an API in your project.
-
-### Create an API config \_|\_ API Gateway \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/api-gateway/docs/creating-api-config](https://docs.cloud.google.com/api-gateway/docs/creating-api-config)
-- Source ID: `site-docs-root`
-- Final score: 66
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page provides concrete gcloud CLI instructions for creating API configs and notes CLI prerequisites, showing direct support for managing API Gateway via the Cloud CLI.
+- URL: [https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg](https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg)
+- Source ID: `site-docs-root-required-2`
+- Final score: 101
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Google Cloud CLI To list API configs for a specific project: gcloud api-gateway api-configs list This command returns the following: NAME DISPLAY NAME ROLLOUT ID STATE CREATE TIME projects/ PROJECT ID /locations/global/apis/ API ID /configs/ CONFIG ID CONFIG ID 2020-02-04r0 ACTIVE 2020-02-04T16:18:02.369859863Z To list API configs for a specific API in a project: gcloud api-gateway api-configs list --api= API ID Use the API and config IDs to obtain detailed information about the API config: gcloud api-gateway api-configs describe CONFIG ID \ --api= API ID Update an API config You cannot modify an existing API config other than to update its labels and its display name.
-- Google Cloud CLI Use the following gcloud to update an existing API config: --display-name --update-labels --clear-labels --remove-labels For example: gcloud api-gateway api-configs update CONFIG ID \ --api= API ID \ --update-labels=a=1,b=2 Use the following command to view all update options: gcloud api-gateway api-configs update --help Delete an API config Warning: If you deployed the API config to a gateway, the API config may not be deleted until the gateway is no longer using that API config.
-- Google Cloud CLI Use the following gcloud CLIcommand to delete an existing API config: gcloud api-gateway api-configs delete CONFIG ID --api= API ID --project= PROJECT ID What's next Deploy an API to a gateway Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Validate the project ID returned from the following command to make sure that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace PROJECT ID with the Google Cloud project ID in which you want to create the service: gcloud config set project PROJECT ID View help for the api-configs create command: gcloud api-gateway api-configs create --help Run the following command to create the API config: gcloud api-gateway api-configs create CONFIG ID \ --api= API ID --openapi-spec= API DEFINITION \ --project= PROJECT ID --backend-auth-service-account= SERVICE ACCOUNT EMAIL where: CONFIG ID specifies the ID of the new API config.
+- Run the following command, replacing PROJECT ID with your project ID: gcloud projects delete PROJECT ID Delete individual resources Delete each component in the load balancer: Delete the forwarding rules: gcloud compute forwarding-rules delete HTTPS FORWARDING RULE NAME --global Delete the global external IP addresses: gcloud compute addresses delete IP ADDRESSES --global Delete the target proxy: gcloud compute target-https-proxies delete TARGET HTTP PROXY NAME Delete the URL map: gcloud compute url-maps delete URL MAP NAME Delete the backend services: gcloud compute backend-services delete BACKEND SERVICE NAME --global (Optional) Delete the SSL certificate: gcloud compute ssl-certificates delete SSL CERTIFICATE NAME Delete the serverless NEG: gcloud compute network-endpoint-groups delete SERVERLESS NEG NAME --region= REGION Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- REGION ID is the deployment region for the serverless NEG (this should match the gateway region). gcloud compute backend-services add-backend BACKEND SERVICE NAME \ --global \ --network-endpoint-group= SERVERLESS NEG NAME \ --network-endpoint-group-region= REGION ID For example: gcloud compute backend-services add-backend api-gateway-backend-service \ --global \ --network-endpoint-group= api-gateway-serverless-neg \ --network-endpoint-group-region= us-central1 Create a URL map to route incoming requests to the backend service, as shown in the figure below: To create the URL map, run the following command, where: URL MAP NAME is the name of the URL map to create.
+- REGION ID is the deployment region for the serverless NEG (this should match the gateway region). gcloud beta compute network-endpoint-groups create SERVERLESS NEG NAME \ --region= REGION ID \ --network-endpoint-type=serverless \ --serverless-deployment-platform=apigateway.googleapis.com \ --serverless-deployment-resource= GATEWAY ID For example: gcloud beta compute network-endpoint-groups create api-gateway-serverless-neg \ --region= us-central1 \ --network-endpoint-type=serverless \ --serverless-deployment-platform=apigateway.googleapis.com \ --serverless-deployment-resource= my-gateway Create a backend service to define how the global external Application Load Balancer distributes traffic.
+- To create a Google-managed SSL certificate resource: gcloud compute ssl-certificates create SSL CERTIFICATE NAME \ --domains DOMAIN To create a self-managed SSL certificate resource: gcloud compute ssl-certificates create SSL CERTIFICATE NAME \ --certificate CRT FILE PATH \ --private-key KEY FILE PATH Create a target HTTP(S) proxy to route requests to your URL map, as shown in the figure below: To create the target proxy, use the following command, where: TARGET HTTPS PROXY NAME is the name of the target HTTP(S) proxy to create.
 
 ### "Quickstart: Secure traffic to a service with the gcloud CLI \_|\_ API Gateway\
 
 - URL: [https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud](https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud)
-- Source ID: `site-api-reference`
-- Final score: 64
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is a quickstart that walks through deploying and securing an API using gcloud, directly confirming CLI-based management for API Gateway.
+- Source ID: `site-docs-reference`
+- Final score: 95
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- For example: gcloud api-gateway gateways create my-gateway \ --api= my-api --api-config= my-config \ --location= us-central1 On successful completion, use the following command to view details about the gateway: gcloud api-gateway gateways describe GATEWAY ID \ --location= GCP REGION For example: gcloud api-gateway gateways describe my-gateway \ --location= us-central1 This command returns the following: apiConfig : projects /my-project/locations/global/apis/my-api/configs/ my - config createTime : '2020-02-05T13:44:12.997862831Z' defaultHostname : my - gateway - a12bcd345e67f89g0h . uc . gateway . dev displayName : my - gateway name : projects /my-project/locations/us-central1/gateways/ my - gateway serviceAccount : email : 0000000000000 - compute @ developer.gserviceaccount.com state : ACTIVE updateTime : '2020-02-05T13:45:00.844705087Z' Note the value of the defaultHostname property.
 - Create a new API config with the modified OpenAPI spec using the following command: gcloud api-gateway api-configs create NEW CONFIG ID \ --api= API ID --openapi-spec= NEW API DEFINITION \ --backend-auth-service-account= SERVICE ACCOUNT EMAIL For example: gcloud api-gateway api-configs create my-config-key \ --api= my-api --openapi-spec= openapi2-functions.yaml \ --project= my-project --backend-auth-service-account= 0000000000000compute@developer.gserviceaccount.com Run the following command to update your existing gateway with the new API config: gcloud api-gateway gateways update GATEWAY ID \ --api= API ID --api-config= NEW CONFIG ID \ --location= GCP REGION For example: gcloud api-gateway gateways update my-gateway \ --api= my-api --api-config= my-config-key \ --location= us-central1 Test your API key Once you have created and deployed the modified API, try making a request to it.
+- For example: gcloud api-gateway gateways create my-gateway \ --api= my-api --api-config= my-config \ --location= us-central1 On successful completion, use the following command to view details about the gateway: gcloud api-gateway gateways describe GATEWAY ID \ --location= GCP REGION For example: gcloud api-gateway gateways describe my-gateway \ --location= us-central1 This command returns the following: apiConfig: projects/my-project/locations/global/apis/my-api/configs/my-config createTime: '2020-02-05T13:44:12.997862831Z' defaultHostname: my-gateway-a12bcd345e67f89g0h.uc.gateway.dev displayName: my-gateway name: projects/my-project/locations/us-central1/gateways/my-gateway serviceAccount: email: 0000000000000-compute@developer.gserviceaccount.com state: ACTIVE updateTime: '2020-02-05T13:45:00.844705087Z' Note the value of the defaultHostname property.
+- After the API config is created, you can view its details by running this command: gcloud api-gateway api-configs describe CONFIG ID \ --api= API ID For example: gcloud api-gateway api-configs describe my-config \ --api= my-api The output shows your API config details, including name and state, as shown in the following example: createTime: '2020-02-07T18:17:01.839180746Z' displayName: my-config gatewayConfig: backendConfig: googleServiceAccount: 0000000000000-compute@developer.gserviceaccount.com name: projects/my-project/locations/global/apis/my-api/configs/my-config serviceRollout: rolloutId: 2020-02-07r0 state: ACTIVE updateTime: '2020-02-07T18:17:02.173778118Z' Create a gateway Now deploy the API config on a gateway.
+- See API ID requirements for API naming guidelines. gcloud api-gateway apis create API ID For example: gcloud api-gateway apis create my-api On successful completion, you can use the following command to view details about the new API: gcloud api-gateway apis describe API ID For example: gcloud api-gateway apis describe my-api This command returns the following: createTime: '2020-02-29T21:52:20.297426875Z' displayName: my-api managedService: my-api-123abc456def1.apigateway.my-project.cloud.goog name: projects/ my-project /locations/global/apis/ my-api state: ACTIVE updateTime: '2020-02-29T21:52:20.647923711Z' Copy the value of the managedService property.
+
+### "Quickstart: Secure traffic to a service with the gcloud CLI \_|\_ API Gateway\
+
+- URL: [https://docs.cloud.google.com/api-gateway/docs/quickstart](https://docs.cloud.google.com/api-gateway/docs/quickstart)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 85
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Create a new API config with the modified OpenAPI spec using the following command: gcloud api-gateway api-configs create NEW CONFIG ID \ --api= API ID --openapi-spec= NEW API DEFINITION \ --backend-auth-service-account= SERVICE ACCOUNT EMAIL For example: gcloud api-gateway api-configs create my-config-key \ --api= my-api --openapi-spec= openapi2-functions.yaml \ --project= my-project --backend-auth-service-account= 0000000000000compute@developer.gserviceaccount.com Run the following command to update your existing gateway with the new API config: gcloud api-gateway gateways update GATEWAY ID \ --api= API ID --api-config= NEW CONFIG ID \ --location= GCP REGION For example: gcloud api-gateway gateways update my-gateway \ --api= my-api --api-config= my-config-key \ --location= us-central1 Test your API key Once you have created and deployed the modified API, try making a request to it.
+- For example: gcloud api-gateway gateways create my-gateway \ --api= my-api --api-config= my-config \ --location= us-central1 On successful completion, use the following command to view details about the gateway: gcloud api-gateway gateways describe GATEWAY ID \ --location= GCP REGION For example: gcloud api-gateway gateways describe my-gateway \ --location= us-central1 This command returns the following: apiConfig: projects/my-project/locations/global/apis/my-api/configs/my-config createTime: '2020-02-05T13:44:12.997862831Z' defaultHostname: my-gateway-a12bcd345e67f89g0h.uc.gateway.dev displayName: my-gateway name: projects/my-project/locations/us-central1/gateways/my-gateway serviceAccount: email: 0000000000000-compute@developer.gserviceaccount.com state: ACTIVE updateTime: '2020-02-05T13:45:00.844705087Z' Note the value of the defaultHostname property.
 - After the API config is created, you can view its details by running this command: gcloud api-gateway api-configs describe CONFIG ID \ --api= API ID For example: gcloud api-gateway api-configs describe my-config \ --api= my-api The output shows your API config details, including name and state, as shown in the following example: createTime: '2020-02-07T18:17:01.839180746Z' displayName: my-config gatewayConfig: backendConfig: googleServiceAccount: 0000000000000-compute@developer.gserviceaccount.com name: projects/my-project/locations/global/apis/my-api/configs/my-config serviceRollout: rolloutId: 2020-02-07r0 state: ACTIVE updateTime: '2020-02-07T18:17:02.173778118Z' Create a gateway Now deploy the API config on a gateway.
 - See API ID requirements for API naming guidelines. gcloud api-gateway apis create API ID For example: gcloud api-gateway apis create my-api On successful completion, you can use the following command to view details about the new API: gcloud api-gateway apis describe API ID For example: gcloud api-gateway apis describe my-api This command returns the following: createTime: '2020-02-29T21:52:20.297426875Z' displayName: my-api managedService: my-api-123abc456def1.apigateway.my-project.cloud.goog name: projects/ my-project /locations/global/apis/ my-api state: ACTIVE updateTime: '2020-02-29T21:52:20.647923711Z' Copy the value of the managedService property.
 

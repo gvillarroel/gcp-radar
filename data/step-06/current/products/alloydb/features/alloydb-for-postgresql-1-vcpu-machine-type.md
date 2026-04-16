@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.588Z"
+generated_at: "2026-04-12T12:07:33.834Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB for PostgreSQL 1 vCPU machine type"
@@ -9,8 +9,10 @@ latest_feature_date: "2025-04-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
-  - "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+  - "https://docs.cloud.google.com/alloydb/docs/choose-machine-type"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/build-context-gemini-cli"
 keywords:
   - "small development tier"
   - "development environment sizing"
@@ -32,38 +34,49 @@ AlloyDB for PostgreSQL now supports a 1 vCPU, 8GB configuration suitable for dev
 
 ## Extended Definition
 
-AlloyDB for PostgreSQL includes a 1 vCPU machine type as an instance sizing option, with dedicated documentation for operational considerations. The available snippets show this configuration is tied to the C4A Axion-based machine series and governed by region and limitation guidance. Because only references and links are provided, this definition reflects documented support, but not full rollout or feature-state details (for example, general availability vs. preview).
+AlloyDB for PostgreSQL now supports a 1 vCPU, 8GB configuration suitable for development and sandbox environments, in Preview.
 
 ## Evidence Summary
 
-The release notes page links to specific ‘Considerations when using the 1 vCPU machine type’ guidance, and the scaling guide references the 1 vCPU option within C4A Axion-based machine series documentation, confirming the machine type is a documented AlloyDB configuration.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- [https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale](https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale)
+- [https://docs.cloud.google.com/alloydb/docs/choose-machine-type](https://docs.cloud.google.com/alloydb/docs/choose-machine-type)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- [https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting](https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting)
+- [https://docs.cloud.google.com/alloydb/docs/ai/build-context-gemini-cli](https://docs.cloud.google.com/alloydb/docs/ai/build-context-gemini-cli)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Choose an AlloyDB machine type \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/choose-machine-type](https://docs.cloud.google.com/alloydb/docs/choose-machine-type)
+- Source ID: `site-docs-reference-2`
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
+- Source ID: `site-api-reference`
+- Final score: 92
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- For more information, see Considerations when using the 1 vCPU machine type .
-- For information about 1 vCPU supported regions and limitations, see Considerations when using 1 vCPU .
+### "Perform time-series forecasting \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
-### Scale an instance \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale](https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting](https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting)
+- Source ID: `site-docs-reference-2`
+- Final score: 90
 - Re-rank relevance: MODERATE
-- Re-rank rationale: The page confirms C4A supports a 1 vCPU machine type, though it does not include the specific SKU, RAM size, or preview-status wording.
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- For more information about using the C4A Axion-based machine series, including the 1 vCPU machine type, see Considerations when using the C4A Axion-based machine series .
+### "Build context sets using Gemini CLI \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/build-context-gemini-cli](https://docs.cloud.google.com/alloydb/docs/ai/build-context-gemini-cli)
+- Source ID: `site-docs-root`
+- Final score: 86
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

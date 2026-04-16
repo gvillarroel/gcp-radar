@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T17:49:26.930Z"
+generated_at: "2026-04-14T08:39:49.494Z"
 product_name: "Artifact Registry"
 product_slug: "artifact-registry"
 feature_name: "On-Demand Scanning for Go packages"
 feature_slug: "on-demand-scanning-for-go-packages"
 latest_feature_date: "2022-02-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
-  - "https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications"
-  - "https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+  - "https://docs.cloud.google.com/artifact-registry/docs/analysis"
 keywords:
   - "packages"
   - "demand"
+  - "generally"
   - "scanning"
-  - "go"
-  - "on"
-  - "artifact"
-  - "for"
-  - "in"
+  - "available"
 ---
 
 # On-Demand Scanning for Go packages
 
 Product: Artifact Registry
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ On-Demand Scanning for Go packages in Artifact Registry is generally available f
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr](https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr)
-- [https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications](https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications)
-- [https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins](https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1)
+- [https://docs.cloud.google.com/artifact-registry/docs/analysis](https://docs.cloud.google.com/artifact-registry/docs/analysis)
 
 ## Supporting Pages
 
@@ -52,41 +49,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr](https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr)
 - Source ID: `site-docs-root`
-- Final score: 260
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 104
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - On-demand scanning The Google Cloud CLI command gcloud artifacts docker images scan scans for vulnerabilities in local images or images in the Container Registry.
 - On-demand scanning The Google Cloud CLI command gcloud artifacts docker images scan scans for vulnerabilities in local images or images in the Artifact Registry.
 - Metadata storage and analysis with Artifact Analysis Scans for OS and language package vulnerabiities with on-demand scanning in images with a supported OS.
-- Feature Container Registry Artifact Registry Supported formats Container images only Multiple artifact formats , including container images, language packages, and OS packages.
+- Scans for OS and lanaguage package vulnerabiities with both on-demand and automatic scanning.
 
-### "Configure monitoring notifications for repository growth \_|\_ Artifact\
+### "Package com.google.devtools.artifactregistry.v1 (1.87.0) \_|\_ Java client\
 
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications](https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications)
-- Source ID: `site-docs-root-2`
-- Final score: 250
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Home Documentation Application development Artifact Registry Guides Send feedback Configure monitoring notifications for repository growth Stay organized with collections Save and categorize content based on your preferences.
-- Before you begin To get the permissions that you need to create and modify alerting policies by using the Google Cloud console, ask your administrator to grant you the Monitoring Editor ( roles/monitoring.editor ) IAM role on your project.
-- These instructions are for the Google Cloud console.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-
-### Integrating with Jenkins \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins](https://docs.cloud.google.com/artifact-registry/docs/configure-jenkins)
-- Source ID: `site-docs-root-2`
-- Final score: 242
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1)
+- Source ID: `site-java-reference`
+- Final score: 91
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Console To create a cluster using Google Cloud console, perform the following steps: Visit the Artifact Registry menu in Google Cloud console.
-- Run the following command to list packages in the repository: gcloud artifacts packages list --repository = mvn-jenkins --location = LOCATION The output looks similar to the following example: Listing items under project {YOUR PROJECT}, repository mvn-jenkins.
-- Home Documentation Application development Artifact Registry Guides Send feedback Integrating with Jenkins Stay organized with collections Save and categorize content based on your preferences.
-- Configuring access to your repository Create a dedicated service account for Jenkins to use with Artifact Registry.
+- Vulnerability Scanning Config Config on whether to perform vulnerability scanning for resources in this repository, as well as output fields describing current state. com. google. devtools. artifactregistry. v1.
+- Builder Config on whether to perform vulnerability scanning for resources in this repository, as well as output fields describing current state. com. google. devtools. artifactregistry. v1.
+- Enablement State Describes the state of vulnerability scanning in this repository, including both repository enablement and API enablement. com. google. devtools. artifactregistry. v1.
+- Public Repository Publicly available Apt repositories constructed from a common repository base and a custom repository path. com. google. devtools. artifactregistry. v1.
+
+### "Artifact analysis and vulnerability scanning \_|\_ Artifact Registry \_\
+
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/analysis](https://docs.cloud.google.com/artifact-registry/docs/analysis)
+- Source ID: `site-docs-root-2`
+- Final score: 87
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- On-Demand scanning This service is not continual; you must run a command to manually initiate the scan.
+- To learn more, see on-demand scanning .
+- GKE workload vulnerability scanning - advanced vulnerability insights Caution: Starting on June 16, 2025 Advanced Vulnerability Insights is deprecated and is scheduled for shutdown on June 16, 2026 as part of the deprecation of various GKE security posture dashboard features.
+- Registry scanning This section outlines Artifact Analysis vulnerability scanning features based in Artifact Registry, and lists related Google Cloud products where you can enable complementary capabilities to support your security posture.
 

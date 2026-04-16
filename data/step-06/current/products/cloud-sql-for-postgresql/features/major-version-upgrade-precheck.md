@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.282Z"
+generated_at: "2026-04-13T13:51:57.746Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "Major version upgrade precheck"
 feature_slug: "major-version-upgrade-precheck"
 latest_feature_date: "2025-10-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
   - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances"
   - "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
 keywords:
-  - "major"
-  - "version"
-  - "upgrade"
   - "precheck"
   - "assesses"
+  - "ready"
   - "whether"
-  - "an"
+  - "upgrade"
+  - "major"
   - "instance"
+  - "version"
 ---
 
 # Major version upgrade precheck
 
 Product: Cloud SQL for PostgreSQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Major version upgrade precheck assesses whether an instance is ready for a major
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances](https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances)
 - Source ID: `site-api-reference`
-- Final score: 182
+- Final score: 176
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +65,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances](https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances)
 - Source ID: `site-iam-reference`
-- Final score: 178
+- Final score: 163
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +78,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/sql/docs/postgres/create-instance](https://docs.cloud.google.com/sql/docs/postgres/create-instance)
 - Source ID: `site-docs-root`
-- Final score: 158
+- Final score: 152
 - Re-rank relevance: N/A
 
 Evidence snippets:

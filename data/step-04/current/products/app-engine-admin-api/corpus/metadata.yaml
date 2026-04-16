@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:24:24+00:00'
-updated_at: '2026-04-10T15:07:11+00:00'
+updated_at: '2026-04-12T19:55:54+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/appengine/docs/admin-api/overview
   created_at: '2026-04-10T15:02:11+00:00'
-  updated_at: '2026-04-10T15:02:33+00:00'
+  updated_at: '2026-04-12T19:46:39+00:00'
   update_command: know sync site https://docs.cloud.google.com/appengine/docs/admin-api/overview
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,46 +20,88 @@ sources:
     max_depth: 1
     max_pages: 36
     compact_output: true
-  last_synced_at: '2026-04-10T15:02:33+00:00'
+  last_synced_at: '2026-04-12T19:46:39+00:00'
+- type: site
+  id: site-api-reference
+  title: https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions.instances/list
+  created_at: '2026-04-12T04:49:30+00:00'
+  updated_at: '2026-04-12T19:54:22+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions.instances/list
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions.instances/list
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-12T19:54:22+00:00'
 - type: site
   id: site-docs-reference
-  title: https://docs.cloud.google.com/appengine/docs/admin-api/apis
-  created_at: '2026-04-10T15:02:11+00:00'
-  updated_at: '2026-04-10T15:04:04+00:00'
-  update_command: know sync site https://docs.cloud.google.com/appengine/docs/admin-api/apis
+  title: https://docs.cloud.google.com/appengine/docs/legacy/standard/python/tools/built-in-libraries-27
+  created_at: '2026-04-12T13:40:38+00:00'
+  updated_at: '2026-04-12T19:48:15+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/legacy/standard/python/tools/built-in-libraries-27
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/legacy/standard/python/tools/built-in-libraries-27
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-12T19:48:15+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/appengine/docs/admin-api/apis
+  created_at: '2026-04-12T13:40:39+00:00'
+  updated_at: '2026-04-12T19:49:47+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/admin-api/apis
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
   config:
     url: https://docs.cloud.google.com/appengine/docs/admin-api/apis
     max_depth: 1
     max_pages: 26
     compact_output: true
-  last_synced_at: '2026-04-10T15:04:04+00:00'
+  last_synced_at: '2026-04-12T19:49:47+00:00'
 - type: site
-  id: site-api-reference
-  title: https://cloud.google.com/appengine/docs/admin-api/reference/rest
-  created_at: '2026-04-10T15:02:12+00:00'
-  updated_at: '2026-04-10T15:05:44+00:00'
-  update_command: know sync site https://cloud.google.com/appengine/docs/admin-api/reference/rest
+  id: site-docs-reference-3
+  title: https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc
+  created_at: '2026-04-12T14:09:19+00:00'
+  updated_at: '2026-04-12T19:51:17+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc
     --key corpus --compact
-  delete_command: know del --key corpus site-api-reference
+  delete_command: know del --key corpus site-docs-reference-3
   config:
-    url: https://cloud.google.com/appengine/docs/admin-api/reference/rest
+    url: https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc
     max_depth: 1
     max_pages: 26
     compact_output: true
-  last_synced_at: '2026-04-10T15:05:44+00:00'
+  last_synced_at: '2026-04-12T19:51:17+00:00'
 - type: site
-  id: site-iam-reference
-  title: https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging
-  created_at: '2026-04-10T15:02:12+00:00'
-  updated_at: '2026-04-10T15:07:11+00:00'
-  update_command: know sync site https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging
+  id: site-docs-reference-4
+  title: https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1
+  created_at: '2026-04-12T14:09:19+00:00'
+  updated_at: '2026-04-12T19:52:52+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1
     --key corpus --compact
-  delete_command: know del --key corpus site-iam-reference
+  delete_command: know del --key corpus site-docs-reference-4
   config:
-    url: https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging
+    url: https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1
     max_depth: 1
     max_pages: 26
     compact_output: true
-  last_synced_at: '2026-04-10T15:07:11+00:00'
+  last_synced_at: '2026-04-12T19:52:52+00:00'
+- type: site
+  id: site-docs-reference-required-5
+  title: https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search
+  created_at: '2026-04-12T14:30:12+00:00'
+  updated_at: '2026-04-12T19:55:54+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-12T19:55:54+00:00'

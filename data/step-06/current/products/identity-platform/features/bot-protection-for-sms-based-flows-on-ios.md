@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:37.689Z"
+generated_at: "2026-04-12T12:17:29.940Z"
 product_name: "Identity Platform"
 product_slug: "identity-platform"
 feature_name: "Bot protection for SMS-based flows on iOS"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-12-03"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-access-control"
-  - "https://docs.cloud.google.com/identity-platform/docs/concepts-authentication"
-  - "https://docs.cloud.google.com/identity-platform/docs/access-control"
+  - "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+  - "https://docs.cloud.google.com/identity-platform/docs/reference/rest"
+  - "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse"
+  - "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse"
 keywords:
   - "bot"
   - "protection"
@@ -38,48 +39,70 @@ Identity Platform's reCAPTCHA Enterprise integration adds bot protection for SMS
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-access-control](https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-access-control)
-- [https://docs.cloud.google.com/identity-platform/docs/concepts-authentication](https://docs.cloud.google.com/identity-platform/docs/concepts-authentication)
-- [https://docs.cloud.google.com/identity-platform/docs/access-control](https://docs.cloud.google.com/identity-platform/docs/access-control)
+- [https://docs.cloud.google.com/identity-platform/docs/error-codes](https://docs.cloud.google.com/identity-platform/docs/error-codes)
+- [https://docs.cloud.google.com/identity-platform/docs/reference/rest](https://docs.cloud.google.com/identity-platform/docs/reference/rest)
+- [https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse](https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse)
+- [https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse](https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse)
 
 ## Supporting Pages
 
-### Access control for tenants | Identity Platform | Google Cloud Documentation
+### Error codes \_|\_ Identity Platform \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-access-control](https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-access-control)
-- Source ID: `site-iam-reference`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/identity-platform/docs/error-codes](https://docs.cloud.google.com/identity-platform/docs/error-codes)
+- Source ID: `site-api-reference`
+- Final score: 171
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Access control for tenants Identity Platform Google Cloud Documentation Source URL: https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-access-control Identity Platform provides Admin APIs to manage your tenants, users, and authentication tokens.
+- E.164 phone numbers are written in the format: [+][country code][subscriber number including area code] . auth/missing-verification-code ERROR MISSING VERIFICATION CODE ERROR MISSING VERIFICATION CODE FirebaseAuthInvalidCredentialsException 17043 The phone auth credential was created with an empty SMS verification code. auth/invalid-verification-code ERROR INVALID VERIFICATION CODE ERROR INVALID VERIFICATION CODE FirebaseAuthInvalidCredentialsException 17044 The SMS verification code used to create the phone auth credential is invalid.
+- Phone authentication error codes Web error code iOS error code Android error code Android exception ID and description auth/missing-phone-number ERROR MISSING PHONE NUMBER ERROR MISSING PHONE NUMBER FirebaseAuthInvalidCredentialsException 17041 To send verification codes, provide a phone number for the recipient. auth/invalid-phone-number ERROR INVALID PHONE NUMBER ERROR INVALID PHONE NUMBER FirebaseAuthInvalidCredentialsException 17042 The format of the phone number provided is incorrect.
+- Authorization error codes Web error code iOS error code Android error code Android exception ID and description auth/app-not-authorized ERROR APP NOT AUTHORIZED ERROR APP NOT AUTHORIZED FirebaseAuthException 17028 This app is not authorized to use Identity Platform.
+- Home Documentation Access and resource management Identity Platform Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
 
-### Authentication | Identity Platform | Google Cloud Documentation
+### Identity Toolkit API \_|\_ Identity Platform \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/identity-platform/docs/concepts-authentication](https://docs.cloud.google.com/identity-platform/docs/concepts-authentication)
-- Source ID: `site-docs-root`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/identity-platform/docs/reference/rest](https://docs.cloud.google.com/identity-platform/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 171
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Authentication Identity Platform Google Cloud Documentation Source URL: https://docs.cloud.google.com/identity-platform/docs/concepts-authentication Identity Platform allows users to authenticate to your apps and services, like multi-tenant SaaS apps, mobile/web apps, games, APIs and more.
-- Identity Platform provides secure, easy-to-use authentication if you&#x27;re building a service on Google ...
+- REST Resource: v1.accounts Methods createAuthUri POST /v1/accounts:createAuthUri If an email identifier is specified, checks and returns if any user account is registered with the email. delete POST /v1/accounts:delete Deletes a user's account. issueSamlResponse POST /v1/accounts:issueSamlResponse Experimental lookup POST /v1/accounts:lookup Gets account information for all matched accounts. resetPassword POST /v1/accounts:resetPassword Resets the password of an account either using an out-of-band code generated by sendOobCode or by specifying the email and password of the account to be modified. sendOobCode POST /v1/accounts:sendOobCode Sends an out-of-band confirmation code for an account. sendVerificationCode POST /v1/accounts:sendVerificationCode Sends a SMS verification code for phone number sign-in. signInWithCustomToken POST /v1/accounts:signInWithCustomToken Signs in or signs up a user by exchanging a custom Auth token. signInWithEmailLink POST /v1/accounts:signInWithEmailLink Signs in or signs up a user with a out-of-band code from an email link. signInWithGameCenter POST /v1/accounts:signInWithGameCenter Signs in or signs up a user with iOS Game Center credentials. signInWithIdp POST /v1/accounts:signInWithIdp Signs in or signs up a user using credentials from an Identity Provider (IdP). signInWithPassword POST /v1/accounts:signInWithPassword Signs in a user with email and password. signInWithPhoneNumber POST /v1/accounts:signInWithPhoneNumber Completes a phone number authentication attempt. signUp POST /v1/accounts:signUp Signs up a new email and password user or anonymous user, or upgrades an anonymous user to email and password. update POST /v1/accounts:update Updates account-related information for the specified user by setting specific fields or applying action codes. verifyIosClient POST /v1/accounts:verifyIosClient Verifies an iOS client is a real iOS device.
+- REST Resource: v1.projects.tenants.accounts Methods batchCreate POST /v1/projects/{targetProjectId}/tenants/{tenantId}/accounts:batchCreate Uploads multiple accounts into the Google Cloud project. batchDelete POST /v1/projects/{targetProjectId}/tenants/{tenantId}/accounts:batchDelete Batch deletes multiple accounts. batchGet GET /v1/projects/{targetProjectId}/tenants/{tenantId}/accounts:batchGet Download account information for all accounts on the project in a paginated manner. delete POST /v1/projects/{targetProjectId}/tenants/{tenantId}/accounts:delete Deletes a user's account. lookup POST /v1/projects/{targetProjectId}/tenants/{tenantId}/accounts:lookup Gets account information for all matched accounts. query POST /v1/projects/{targetProjectId}/tenants/{tenantId}/accounts:query Looks up user accounts within a project or a tenant based on conditions in the request. sendOobCode POST /v1/projects/{targetProjectId}/tenants/{tenantId}/accounts:sendOobCode Sends an out-of-band confirmation code for an account. update POST /v1/projects/{targetProjectId}/tenants/{tenantId}/accounts:update Updates account-related information for the specified user by setting specific fields or applying action codes.
+- REST Resource: v1.projects.accounts Methods batchCreate POST /v1/projects/{targetProjectId}/accounts:batchCreate Uploads multiple accounts into the Google Cloud project. batchDelete POST /v1/projects/{targetProjectId}/accounts:batchDelete Batch deletes multiple accounts. batchGet GET /v1/projects/{targetProjectId}/accounts:batchGet Download account information for all accounts on the project in a paginated manner. delete POST /v1/projects/{targetProjectId}/accounts:delete Deletes a user's account. lookup POST /v1/projects/{targetProjectId}/accounts:lookup Gets account information for all matched accounts. query POST /v1/projects/{targetProjectId}/accounts:query Looks up user accounts within a project or a tenant based on conditions in the request. sendOobCode POST /v1/projects/{targetProjectId}/accounts:sendOobCode Sends an out-of-band confirmation code for an account. update POST /v1/projects/{targetProjectId}/accounts:update Updates account-related information for the specified user by setting specific fields or applying action codes.
+- REST Resource: v1.projects Methods accounts POST /v1/projects/{targetProjectId}/accounts Signs up a new email and password user or anonymous user, or upgrades an anonymous user to email and password. createSessionCookie POST /v1/projects/{targetProjectId}:createSessionCookie Creates a session cookie for the given Identity Platform ID token. queryAccounts POST /v1/projects/{targetProjectId}:queryAccounts Looks up user accounts within a project or a tenant based on conditions in the request.
 
-### Access control with IAM | Identity Platform | Google Cloud Documentation
+### CreateSessionCookieResponse \_|\_ Identity Platform \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/identity-platform/docs/access-control](https://docs.cloud.google.com/identity-platform/docs/access-control)
-- Source ID: `site-iam-reference`
-- Final score: 120
+- URL: [https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse](https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse)
+- Source ID: `site-api-reference`
+- Final score: 167
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Access control with IAM Identity Platform Google Cloud Documentation Source URL: https://docs.cloud.google.com/identity-platform/docs/access-control Identity Platform provides Admin APIs to manage your users and authentication tokens.
-- To prevent unwanted access to your users and tokens through these APIs, Identity Platform leverages IAM to manage permission to specific Identity Platform APIs.
+- Home Documentation Access and resource management Identity Platform Reference Send feedback CreateSessionCookieResponse Stay organized with collections Save and categorize content based on your preferences.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-05-30 UTC."],[],[]]
+- JSON representation { "sessionCookie" : string } Fields sessionCookie string The session cookie that has been created from the Identity Platform ID token specified in the request.
+- JSON representation Response message for projects.createSessionCookie.
+
+### GetAccountInfoResponse \_|\_ Identity Platform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse](https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse)
+- Source ID: `site-api-reference`
+- Final score: 167
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Access and resource management Identity Platform Reference Send feedback GetAccountInfoResponse Stay organized with collections Save and categorize content based on your preferences.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-05-30 UTC."],[],[]]
+- JSON representation { "kind" : string , "users" : [ { object ( UserInfo ) } ] } Fields kind (deprecated) string This item is deprecated! users[] object ( UserInfo ) The information of specific user account(s) matching the parameters in the request.
+- JSON representation Response message for accounts.lookup.
 

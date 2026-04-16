@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:49.749Z"
+generated_at: "2026-04-12T12:18:06.046Z"
 product_name: "Places API"
 product_slug: "places-api"
 feature_name: "nextOpenTime"
 feature_slug: "nextopentime"
 latest_feature_date: "2024-11-07"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places"
+  - "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1"
+  - "https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place"
+  - "https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby"
 keywords:
   - "nextopentime"
   - "field"
@@ -24,7 +27,7 @@ keywords:
 # nextOpenTime
 
 Product: Places API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ A field that returns the next time a place opens.
 
 A field that returns the next time a place opens.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places)
+- [https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1](https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1)
+- [https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place](https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place)
+- [https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby](https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### REST Resource: places \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places)
+- Source ID: `site-api-reference`
+- Final score: 203
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- JSON representation { "periods" : [ { object ( Period ) } ] , "weekdayDescriptions" : [ string ] , "secondaryHoursType" : enum ( SecondaryHoursType ) , "specialDays" : [ { object ( SpecialDay ) } ] , "nextOpenTime" : string , "nextCloseTime" : string , "openNow" : boolean } Fields periods[] object ( Period ) The periods that this place is open during the week.
+- JSON representation { "open" : { object ( Point ) } , "close" : { object ( Point ) } } Fields open object ( Point ) The time that the place starts to be open. close object ( Point ) The time that the place starts to be closed.
+- JSON representation { "name" : string , "relativePublishTimeDescription" : string , "text" : { object ( LocalizedText ) } , "originalText" : { object ( LocalizedText ) } , "rating" : number , "authorAttribution" : { object ( AuthorAttribution ) } , "publishTime" : string , "flagContentUri" : string , "googleMapsUri" : string , "visitDate" : { object ( Date ) } } Fields name string A reference representing this place review which may be used to look up this place review again (also called the API "resource" name: places/{placeId}/reviews/{review} ). relativePublishTimeDescription string A string of formatted recent time, expressing the review time relative to the current time in a form appropriate for the language and country. text object ( LocalizedText ) The localized text of the review. originalText object ( LocalizedText ) The review text in its original language. rating number A number between 1.0 and 5.0, also called the number of stars. authorAttribution object ( AuthorAttribution ) This review's author. publishTime string ( Timestamp format) Timestamp for the review.
+- This field is only populated if the business status is FUTURE OPENING. priceLevel enum ( PriceLevel ) Price level of the place. attributions[] object ( Attribution ) A set of data provider that must be shown with this result. iconMaskBaseUri string A truncated URL to an icon mask.
+
+### Package google.maps.places.v1 \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1](https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1)
+- Source ID: `site-api-reference`
+- Final score: 194
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Fields open Point The time that the place starts to be open. close Point The time that the place starts to be closed.
+- Fields name string A reference representing this place review which may be used to look up this place review again (also called the API "resource" name: places/{place id}/reviews/{review} ). relative publish time description string A string of formatted recent time, expressing the review time relative to the current time in a form appropriate for the language and country. text LocalizedText The localized text of the review. original text LocalizedText The review text in its original language. rating double A number between 1.0 and 5.0, also called the number of stars. author attribution AuthorAttribution This review's author. publish time Timestamp Timestamp for the review. flag content uri string A link where users can flag a problem with the review. google maps uri string A link to show the review on Google Maps. visit date Date The date when the author visited the place.
+- Fields type EVConnectorType The connector type of this aggregation. max charge rate kw double The static max charging rate in kw of each connector in the aggregation. count int32 Number of connectors in this aggregation. availability last update time Timestamp The timestamp when the connector availability information in this aggregation was last updated. available count int32 Number of connectors in this aggregation that are currently available. out of service count int32 Number of connectors in this aggregation that are currently out of service.
+- Fields places[] Place A list of places that meets user's requirements like places types, number of places and specific location restriction. routing summaries[] RoutingSummary A list of routing summaries where each entry associates to the corresponding place in the same index in the places field.
+
+### Find Place (Legacy) \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place](https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place)
+- Source ID: `site-docs-root-2`
+- Final score: 186
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- A Find Place (Legacy) request returns a subset of the fields that are returned by a Place Details (Legacy) request.
+- Left unencoded, the + prefix would be decoded to a space on the server, resulting in an invalid phone number lookup. curl curl -L -X GET 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=%2B16502530000&inputtype=phonenumber&fields=formatted address%2Cname%2Crating%2Copening hours%2Cgeometry&key=YOUR API KEY' HTTP https://maps.googleapis.com/maps/api/place/findplacefromtext/json ?fields=formatted address%2Cname%2Crating%2Copening hours%2Cgeometry &input=%2B16502530000 &inputtype=phonenumber &key=YOUR API KEY Find Place (Legacy) responses A Find Place (Legacy) response contains only the data types that were specified using the fields parameter, plus html attributions .
+- This is a whole number, ranging from 1 to 5. relative time description required string The time that the review was submitted in text, relative to the current time. time required number The time that the review was submitted, measured in the number of seconds since since midnight, January 1, 1970 UTC. author url optional string The URL to the user's Google Maps Local Guides profile, if available. language optional string An IETF language code indicating the language of the returned review.This field contains the main language tag only, and not the secondary tag indicating country or region.
+- For example, for places in Sydney, Australia during daylight saving time this would be 660 (+11 hours from UTC), and for places in California outside of daylight saving time this would be -480 (-8 hours from UTC). vicinity optional string For establishment ( types:["establishment", ...]) results only, the vicinity field contains a simplified address for the place, including the street name, street number, and locality, but not the province/state, postal code, or country.
+
+### Nearby Search (Legacy) \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby](https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby)
+- Source ID: `site-docs-root-2`
+- Final score: 178
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Values in this field are combined with values in the keyword field and passed as part of the same search string. opennow Returns only those places that are open for business at the time the query is sent.
+- This is a whole number, ranging from 1 to 5. relative time description required string The time that the review was submitted in text, relative to the current time. time required number The time that the review was submitted, measured in the number of seconds since since midnight, January 1, 1970 UTC. author url optional string The URL to the user's Google Maps Local Guides profile, if available. language optional string An IETF language code indicating the language of the returned review.This field contains the main language tag only, and not the secondary tag indicating country or region.
+- For example, for places in Sydney, Australia during daylight saving time this would be 660 (+11 hours from UTC), and for places in California outside of daylight saving time this would be -480 (-8 hours from UTC). vicinity optional string For establishment ( types:["establishment", ...]) results only, the vicinity field contains a simplified address for the place, including the street name, street number, and locality, but not the province/state, postal code, or country.
+- Applications must link to or embed this page on any screen that shows detailed results about the place to the user. user ratings total optional number The total number of reviews, with or without text, for this place. utc offset optional number Contains the number of minutes this place’s current timezone is offset from UTC.
 

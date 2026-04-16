@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:27:19.920Z"
+generated_at: "2026-04-14T14:23:30.379Z"
 product_name: "Cloud CDN"
 product_slug: "cloud-cdn"
 feature_name: "Cloud CDN cache invalidation for a single host"
@@ -10,17 +10,16 @@ deprecation_date: ""
 coverage_status: "LOW"
 source_links:
   - "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview"
-  - "https://docs.cloud.google.com/cdn/docs/invalidating-cached-content"
-  - "https://docs.cloud.google.com/cdn/docs/release-notes"
+  - "https://docs.cloud.google.com/cdn/docs/caching"
+  - "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
 keywords:
-  - "cdn"
-  - "cache"
-  - "invalidation"
-  - "for"
+  - "invalidating"
   - "single"
   - "host"
+  - "invalidation"
+  - "cached"
   - "supports"
-  - "invalidating"
+  - "cache"
 ---
 
 # Cloud CDN cache invalidation for a single host
@@ -38,54 +37,53 @@ Cloud CDN supports invalidating cached objects scoped to a single host.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview](https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview)
-- [https://docs.cloud.google.com/cdn/docs/invalidating-cached-content](https://docs.cloud.google.com/cdn/docs/invalidating-cached-content)
-- [https://docs.cloud.google.com/cdn/docs/release-notes](https://docs.cloud.google.com/cdn/docs/release-notes)
+- [https://docs.cloud.google.com/cdn/docs/caching](https://docs.cloud.google.com/cdn/docs/caching)
+- [https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring](https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring)
 
 ## Supporting Pages
 
 ### Cache invalidation overview \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview](https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview)
-- Source ID: `site-docs-root`
-- Final score: 196
+- Source ID: `site-docs-reference-2`
+- Final score: 33
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Cloud CDN supports the use of cache tags and invalidation matchers, such as host and URL path, for invalidation requests.
 - Invalidation for a single host Cache invalidation invalidates the path for all your hostnames.
-- Cache invalidations can be issued only by principals who have the Identity and Access Management (IAM) roles for configuring load balancer resources in the frontend projects—for example, the Compute Network Admin role ( roles/compute.networkAdmin ).
-- Service administrators, who control provisioning of the backend services in a separate project, can work with the load balancer administrator of the frontend project to issue cache invalidation for their cross-project services.
+- Consider an example with the following cached objects: Cached object #1 with URL https://staging.example.com/img/cat.jpg and tag a Cached object #2 with URL https://example.com/img/cat.jpg and tag a Cached object #3 with URL https://staging.example.com/js/cat.js and tag a Cached object #4 with URL https://staging.example.com/img/logo.jpg and tag b When you issue a request to invalidate objects where the host is staging.example.com , the path /img/ , and the tag a , only object #1 is invalidated.
+- You can combine these invalidation parameters to target specific cached responses and minimize backend load on the subsequent cache fill.
 
-### Invalidate cached content \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
+### Caching overview \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/cdn/docs/invalidating-cached-content](https://docs.cloud.google.com/cdn/docs/invalidating-cached-content)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/urlMaps/ URL MAP NAME /invalidateCache Replace the following: PROJECT ID : your Google Cloud console project ID URL MAP NAME : the name of the URL map To specify a URL path for invalidation, use the following sample JSON request body: { "path": "/ " } To invalidate the URL path for only one host, use the following sample JSON request body: { "host": "host1.com", "path": "/ " } See the status of your invalidation request Cloud CDN emits two log lines per invalidation, one when the invalidation is accepted and the other when it's complete.
-- POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/urlMaps/ URL MAP NAME /invalidateCache Replace the following: PROJECT ID : your Google Cloud console project ID URL MAP NAME : the name of the URL map To specify a file for invalidation, use the following sample JSON request body: { "path": "/images/file.jpg" } To invalidate the file for only one host, use the following sample JSON request body: { "host": "host1.com", "path": "/images/file.jpg" } Invalidate the whole directory Console In the Google Cloud console, go to the Cloud CDN page.
-- POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/urlMaps/ URL MAP NAME /invalidateCache Replace the following: PROJECT ID : your Google Cloud console project ID URL MAP NAME : the name of the URL map To specify a directory for invalidation, use the following sample JSON request body: { "path": "/images/ " } To invalidate a directory for only one host, use the following sample JSON request body: { "host": "host1.com", "path": "/images/ " } Invalidate by cache tags Console In the Google Cloud console, go to the Cloud CDN page.
-- To invalidate for only one host, add the --host flag—for example, --host host1.com . gcloud compute url-maps invalidate-cdn-cache URL MAP NAME \ --host host1.com \ --path "/images/file.jpg" By default, the Google Cloud CLI waits until the invalidation has completed.
-
-### Cloud CDN release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/cdn/docs/release-notes](https://docs.cloud.google.com/cdn/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 162
+- URL: [https://docs.cloud.google.com/cdn/docs/caching](https://docs.cloud.google.com/cdn/docs/caching)
+- Source ID: `site-docs-reference-2`
+- Final score: 33
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 13, 2025 Feature Cloud CDN supports invalidation by using cache tags with faster performance and higher rate limits in Preview .
-- January 19, 2017 Feature Support for cache invalidation for a single host is available in General Availability .
-- December 08, 2020 Feature The Google Terraform provider now supports the latest Cloud CDN features, including cache modes , TTL overrides, and custom response headers.
-- May 19, 2025 Feature Cloud CDN supports content targeting , which helps you cache and deliver assets that are customized for your end-user contexts.
+- To learn about invalidating caches, see Cache invalidation overview .
+- Request type Default behavior Configurable Benefits of collapsing Chunk requests Enabled No Can significantly reduce origin bandwidth Item requests Enabled Yes Can reduce origin request volume To disable item request collapsing using the Google Cloud CLI for a backend bucket that references a Cloud Storage bucket: Note: Google Cloud CLI support for the --request-coalescing flag was introduced in Google Cloud CLI version 330.0.0 . gcloud Use the gcloud compute backend-services or backend-buckets command: gcloud compute backend-services update BACKEND SERVICE NAME \ --no-request-coalescing To enable item request collapsing on a backend bucket using the Google Cloud CLI: gcloud Use the gcloud compute backend-buckets command: gcloud compute backend-buckets update BACKEND BUCKET NAME \ --request-coalescing To enable item request collapsing using the Google Cloud CLI for a backend service, including VM groups and external backends: gcloud Use the gcloud compute backend-services command: gcloud compute backend-services update BACKEND SERVICE NAME \ --request-coalescing Requests initiated by Cloud CDN When your origin server supports byte range requests , Cloud CDN can send multiple requests to your origin server in reaction to a single client request.
+- Cloud CDN doesn't allow the following headers to be included in the list of headers: Accept Accept-Encoding Authority , because this is controlled by configuration ( cdnPolicy.includeHost ) Authorization , typically per-user as in OAuth Bearer tokens CDN-Loop Connection Content-MD5 Content-Type Cookie Date Forwarded , often per-client or per-proxy From Host , because this is controlled by configuration ( cdnPolicy.includeHost ) If-Match , If-Modified-Since , or If-None-Match Origin Proxy-Authorization Range Referer (or Referrer ) User-Agent Want-Digest X-CSRFToken and X-CSRF-Token as used by Django and Ruby on Rails X-Forwarded-For , often per-client or per-proxy X-User-IP Any header starting with the following: Access-Control- , such as Access-Control-Request-Headers and Access-Control-Request-Method Sec-Fetch- Sec-GFE- Sec-Google- X-Amz- X-GFE- X-Goog- X-Google- Use custom variables with request headers Cache keys are helpful when you need to serve content differently based on each user's device and location.
+- Thus, for a given backend bucket, the following URIs resolve to the same cached object: http://example.com/images/cat.jpg https://example.com/images/cat.jpg https://example.com/images/cat.jpg?user=user1 http://example.com/images/cat.jpg?user=user1 https://example.com/images/cat.jpg?user=user2 https://media.example.com/images/cat.jpg https://www.example.com/images/cat.jpg You can change which parts of the URI are used in the cache key.
+
+### "Logs and metrics for backend services \_|\_ Cloud CDN \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring](https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring)
+- Source ID: `site-docs-root-2`
+- Final score: 32
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Multiple queries are sent to the same backend for different chunks of data to support a single client request. proxy continent Continent of the HTTP(S) GFE that terminated the HTTP(S) connection—for example, America , Europe , Asia protocol Protocol used by the client, one of HTTP/1.0 , HTTP/1.1 , HTTP/2.0 , QUIC/HTTP/2.0 , UNKNOWN . response code The HTTP status code of the request. response code class The HTTP status code class of the request: 200 , 300 , 400 , 500 or 0 for none. cache result Cache result for serving HTTP request by proxy: HIT , MISS , DISABLED , PARTIAL HIT (for a request served partially from cache and partially from backend), or UNKNOWN . client country Country of the client that issued the HTTP request—for example, United States or Germany . load balancing scheme The load balancing scheme used.
+- Any cacheable response code is possible. response from cache validated The return code was set from a Cloud CDN cached entry that was validated by a backend.
+- To finish editing the load balancer, click Update . gcloud Create a backend service and enable logging by using the gcloud compute backend-services create command . gcloud compute backend-services create BACKEND SERVICE \ --global \ --enable-logging \ --logging-sample-rate= VALUE \ --load-balancing-scheme=EXTERNAL MANAGED \ --logging-optional= LOGGING OPTIONAL MODE \ --logging-optional-fields= OPTIONAL FIELDS The gcloud compute backend-services create command supports the following fields: --global indicates that the backend service is global.
+- This information is only available for global external Application Load Balancers using custom error responses . string Optional The cachePolicySource field holds the source of the caching policy that governs the caching behavior for a specific request: CACHE POLICY SOURCE ROUTE : A cache policy can be applied at different levels of the URL map, and that allows for more granular control over caching.
 

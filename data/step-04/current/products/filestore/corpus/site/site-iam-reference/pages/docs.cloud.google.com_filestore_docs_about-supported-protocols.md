@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/filestore/docs/about-supported-protocols
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/filestore/docs/create-instance-console
+entrypoint: https://docs.cloud.google.com/filestore/docs/access-control
 source_metadata:
   url: https://docs.cloud.google.com/filestore/docs/about-supported-protocols
   title: "About supported file system protocols \_|\_ Filestore \_|\_ Google Cloud\

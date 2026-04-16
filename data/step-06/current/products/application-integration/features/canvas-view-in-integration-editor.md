@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.466Z"
+generated_at: "2026-04-14T07:40:14.471Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Canvas view in Integration editor"
 feature_slug: "canvas-view-in-integration-editor"
 latest_feature_date: "2024-08-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
   - "https://docs.cloud.google.com/application-integration/docs/canvas-view"
+  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
 keywords:
   - "introduces"
+  - "improved"
   - "canvas"
   - "view"
+  - "building"
   - "editor"
-  - "integration"
-  - "new"
-  - "the"
-  - "in"
+  - "flows"
 ---
 
 # Canvas view in Integration editor
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +37,54 @@ The integration editor introduces a new Canvas view for building integration flo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
 - [https://docs.cloud.google.com/application-integration/docs/canvas-view](https://docs.cloud.google.com/application-integration/docs/canvas-view)
+- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
+- [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
 
 ## Supporting Pages
-
-### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 270
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Alternatively, on the Create Integration page, create a new integration and then on the integration editor , click pen spark Create integration flows with Gemini to use Gemini.
-- To do so, follow these steps: In the integration, click the JavaScript element on the canvas to view the JavaScript task configuration pane.
-- In the integration editor , select the edge for which you want to add the edge condition or from which you want to append a new task.
-- In the navigation bar, click the New canvas view (Preview) toggle to the on position.
-
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- Source ID: `site-docs-root`
-- Final score: 246
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- To add and configure the API trigger, perform the following steps: In the integration editor, click Triggers to view the list of available triggers.
-- To add and configure a Data Mapping task, perform the following steps: In the integration editor, click Tasks to view the list of available tasks.
-- Add an API trigger in the main integration In the integration editor, click Triggers to view the list of available tasks and triggers.
-- In Default Value , enter the following JSON: [{ "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" }, { "orderId" : "2" , "customerName" : "Tim Harvey" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "Los Angeles" , "country" : "USA" , "zipcode" : "210738" }, "items" : [{ "itemid" : "222-333-444" , "itemName" : "Laptop" , "itemPrice" : 5999.0 , "quantity" : 1.0 }], "paymentDetails" : { "mode" : "Online Payment" , "status" : "Success" }, "expectedDelivery" : "21 Feb 2023" }] In this sample JSON object, replace both occurrences of YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
 
 ### Use the canvas view \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/canvas-view](https://docs.cloud.google.com/application-integration/docs/canvas-view)
-- Source ID: `site-iam-reference`
-- Final score: 236
+- Source ID: `site-docs-reference-2`
+- Final score: 155
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
+- Benefits The canvas view offers the following benefits: Improved responsiveness of the canvas interaction: With the canvas view, you can smoothly move tasks and triggers, making it easier to create complex workflows.
 - Hotkeys The following hotkeys are available in the canvas view: Key Function Ctrl + C Copy Ctrl + V Paste Ctrl + Z Undo Shift + Ctrl + Z Redo Delete Delete selected element What's next Learn about the Integration editor layout .
-- Easier to build integrations: The canvas view provides an intuitive method to add a new child task with a connecting edge or create a new edge to an existing task in your integration.
-- Use the canvas view To use the canvas view, follow these steps: Open the integration editor.
 - Use the canvas view The canvas view provides an intuitive and user-friendly interface for managing your integration workflows.
+- Use the canvas view To use the canvas view, follow these steps: Open the integration editor.
+
+### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
+- Source ID: `site-docs-reference-2`
+- Final score: 115
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Alternatively, on the Create Integration page, create a new integration and then on the integration editor , click pen spark Create integration flows with Gemini to use Gemini.
+- To do so, follow these steps: In the integration, click the JavaScript element on the canvas to view the JavaScript task configuration pane.
+- Click the JavaScript element on the canvas to view the JavaScript task configuration pane.
+- Click the JavaScript element on the canvas to view the JavaScript task configuration pane.
+
+### Data Transformer task \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 83
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- In the Diagram mode, you use a visual mapping canvas, called the Data Transformer editor, to perform data assignments and mappings in your integration.
+- In the Data Transformer (preview) Task Editor page, select one of the following options: By default, the Diagram mode opens.
+- In the integration editor navigation bar, click Tasks to view the list of available tasks and connectors.
+- The following image shows the sample layout of the Data Transformer Script editor : Access integration variables To read an existing integration variable from the Data Transformer Script editor use the extVar function from the predefined functions library.
 

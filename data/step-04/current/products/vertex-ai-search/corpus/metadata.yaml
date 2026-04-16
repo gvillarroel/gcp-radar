@@ -1,7 +1,7 @@
 version: 1
 name: corpus
-created_at: '2026-04-10T00:35:32+00:00'
-updated_at: '2026-04-11T20:40:18+00:00'
+created_at: '2026-04-14T16:56:17+00:00'
+updated_at: '2026-04-14T17:07:45+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -10,8 +10,8 @@ sources:
 - type: site
   id: site-docs-root
   title: https://docs.cloud.google.com/generative-ai-app-builder/docs
-  created_at: '2026-04-11T18:31:58+00:00'
-  updated_at: '2026-04-11T18:37:49+00:00'
+  created_at: '2026-04-14T16:56:17+00:00'
+  updated_at: '2026-04-14T16:58:48+00:00'
   update_command: know sync site https://docs.cloud.google.com/generative-ai-app-builder/docs
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T18:37:49+00:00'
+  last_synced_at: '2026-04-14T16:58:48+00:00'
 - type: site
   id: site-docs-root-2
   title: https://docs.cloud.google.com/generative-ai-app-builder/docs/about-media
-  created_at: '2026-04-11T18:31:59+00:00'
-  updated_at: '2026-04-11T18:40:30+00:00'
+  created_at: '2026-04-14T16:56:18+00:00'
+  updated_at: '2026-04-14T17:01:25+00:00'
   update_command: know sync site https://docs.cloud.google.com/generative-ai-app-builder/docs/about-media
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root-2
@@ -34,26 +34,40 @@ sources:
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T18:40:30+00:00'
+  last_synced_at: '2026-04-14T17:01:25+00:00'
 - type: site
-  id: site-api-reference
-  title: https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis
-  created_at: '2026-04-11T18:32:00+00:00'
-  updated_at: '2026-04-11T18:46:40+00:00'
-  update_command: know sync site https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control
+  created_at: '2026-04-14T16:56:18+00:00'
+  updated_at: '2026-04-14T17:03:31+00:00'
+  update_command: know sync site https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control
     --key corpus --compact
-  delete_command: know del --key corpus site-api-reference
+  delete_command: know del --key corpus site-docs-reference
   config:
-    url: https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis
+    url: https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control
     max_depth: 2
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-11T18:46:40+00:00'
+  last_synced_at: '2026-04-14T17:03:31+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/generative-ai-app-builder/docs/apis
+  created_at: '2026-04-14T16:56:18+00:00'
+  updated_at: '2026-04-14T17:05:39+00:00'
+  update_command: know sync site https://docs.cloud.google.com/generative-ai-app-builder/docs/apis
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/generative-ai-app-builder/docs/apis
+    max_depth: 2
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-14T17:05:39+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/generative-ai-app-builder/docs/authentication
-  created_at: '2026-04-11T18:32:01+00:00'
-  updated_at: '2026-04-11T18:48:43+00:00'
+  created_at: '2026-04-14T16:56:19+00:00'
+  updated_at: '2026-04-14T17:07:45+00:00'
   update_command: know sync site https://docs.cloud.google.com/generative-ai-app-builder/docs/authentication
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -62,32 +76,4 @@ sources:
     max_depth: 2
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-11T18:48:43+00:00'
-- type: site
-  id: site-docs-reference
-  title: https://docs.cloud.google.com/generative-ai-app-builder/docs/apis
-  created_at: '2026-04-11T20:36:23+00:00'
-  updated_at: '2026-04-11T20:38:21+00:00'
-  update_command: know sync site https://docs.cloud.google.com/generative-ai-app-builder/docs/apis
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-reference
-  config:
-    url: https://docs.cloud.google.com/generative-ai-app-builder/docs/apis
-    max_depth: 2
-    max_pages: 32
-    compact_output: true
-  last_synced_at: '2026-04-11T20:38:21+00:00'
-- type: site
-  id: site-docs-reference-2
-  title: https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control
-  created_at: '2026-04-11T20:36:24+00:00'
-  updated_at: '2026-04-11T20:40:18+00:00'
-  update_command: know sync site https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-reference-2
-  config:
-    url: https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control
-    max_depth: 2
-    max_pages: 32
-    compact_output: true
-  last_synced_at: '2026-04-11T20:40:18+00:00'
+  last_synced_at: '2026-04-14T17:07:45+00:00'

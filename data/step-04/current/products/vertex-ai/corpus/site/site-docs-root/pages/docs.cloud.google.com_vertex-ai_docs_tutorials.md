@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/vertex-ai/docs/tutorials
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://docs.cloud.google.com/vertex-ai/docs
+entrypoint: https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform
 source_metadata:
   url: https://docs.cloud.google.com/vertex-ai/docs/tutorials
   title: "Tutorials overview \_|\_ Vertex AI \_|\_ Google Cloud Documentation"

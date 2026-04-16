@@ -1,33 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T18:48:08.252Z"
+generated_at: "2026-04-13T08:20:50.975Z"
 product_name: "Gmail API"
 product_slug: "gmail-api"
 feature_name: "messages.import labelIds parameter"
 feature_slug: "messages-import-labelids-parameter"
 latest_feature_date: "2015-01-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import"
+  - "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get"
   - "https://developers.google.com/workspace/gmail/api/guides/list-messages"
-  - "https://developers.google.com/workspace/gmail/api/guides/uploads"
-  - "https://developers.google.com/workspace/gmail/api/guides/sending"
-  - "https://developers.google.com/workspace/gmail/api/guides/smime_certs"
 keywords:
-  - "messages"
-  - "import"
-  - "labelids"
-  - "parameter"
-  - "the"
-  - "method"
-  - "can"
   - "automatically"
+  - "labelids"
+  - "apply"
+  - "parameter"
+  - "import"
+  - "messages"
+  - "method"
 ---
 
 # messages.import labelIds parameter
 
 Product: Gmail API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,22 +37,49 @@ The messages.import method can automatically apply labels from message.labelIds.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import](https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import)
+- [https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get](https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get)
 - [https://developers.google.com/workspace/gmail/api/guides/list-messages](https://developers.google.com/workspace/gmail/api/guides/list-messages)
-- [https://developers.google.com/workspace/gmail/api/guides/uploads](https://developers.google.com/workspace/gmail/api/guides/uploads)
-- [https://developers.google.com/workspace/gmail/api/guides/sending](https://developers.google.com/workspace/gmail/api/guides/sending)
-- [https://developers.google.com/workspace/gmail/api/guides/smime_certs](https://developers.google.com/workspace/gmail/api/guides/smime_certs)
 
 ## Supporting Pages
+
+### Method: users.messages.import \_|\_ Gmail \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import](https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 197
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Home Google Workspace Gmail Reference Send feedback Method: users.messages.import Stay organized with collections Save and categorize content based on your preferences.
+- HTTP request Upload URI, for media upload requests: POST https://gmail.googleapis.com/upload/gmail/v1/users/{userId}/messages/import Metadata URI, for metadata-only requests: POST https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/import The URL uses gRPC Transcoding syntax.
+- This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing.
+- Query parameters Parameters internalDateSource enum ( InternalDateSource ) Source for Gmail's internal date of the message. neverMarkSpam boolean Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox. processForCalendar boolean Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user. deleted boolean Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator.
+
+### Method: users.messages.get \_|\_ Gmail \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get](https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 121
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Home Google Workspace Gmail Reference Send feedback Method: users.messages.get Stay organized with collections Save and categorize content based on your preferences.
+- The ID is also contained in the result when a message is inserted ( messages.insert ) or imported ( messages.import ).
+- Query parameters Parameters format enum ( Format ) The format to return the message in. metadataHeaders[] string When given and format is METADATA , only include headers specified.
+- HTTP request GET https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/{id} The URL uses gRPC Transcoding syntax.
 
 ### List Gmail messages \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/workspace/gmail/api/guides/list-messages](https://developers.google.com/workspace/gmail/api/guides/list-messages)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 80
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -63,45 +88,4 @@ Evidence snippets:
 - List messages The messages.list method supports several query parameters to filter the messages: maxResults : Maximum number of messages to return (defaults to 100, maximum 500). pageToken : Token to retrieve a specific page of results. q : Query string to filter messages, such as from:someuser@example.com is:unread . labelIds : Only return messages with labels that match all specified label IDs. includeSpamTrash : Include messages from SPAM and TRASH in the results.
 - The code handles pagination to retrieve all messages matching the query. gmail/snippet/list messages.py View on GitHub import os.path from google.auth.transport.requests import Request from google.oauth2.credentials import Credentials from google auth oauthlib.flow import InstalledAppFlow from googleapiclient.discovery import build from googleapiclient.errors import HttpError If modifying these scopes, delete the file token.json.
 - To fetch the full message content and metadata, use the message.id field to call the messages.get method.
-
-### Upload attachments \_|\_ Gmail \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/workspace/gmail/api/guides/uploads](https://developers.google.com/workspace/gmail/api/guides/uploads)
-- Source ID: `site-docs-root`
-- Final score: 128
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- POST /upload/gmail/v1/users/ userId /messages/send?uploadType=multipart HTTP/1.1 Host: www.googleapis.com Authorization: Bearer your auth token Content-Type: multipart/related; boundary=foo bar baz Content-Length: number of bytes in entire request body --foo bar baz Content-Type: application/json; charset=UTF-8 { "id" : string , "threadId" : string , "labelIds" : [ string ], "snippet" : string , "historyId" : unsigned long , "payload" : { "partId" : string , "mimeType" : string , "filename" : string , "headers" : [ { "name" : string , "value" : string } ], "body" : users . messages . attachments Resource , "parts" : [ ( MessagePart ) ] }, "sizeEstimate" : integer , "raw" : bytes } --foo bar baz Content-Type: message/rfc822 Email Message data --foo bar baz-- If the request succeeds, the server returns the HTTP 200 OK status code along with any metadata: HTTP/1.1 200 Content-Type: application/json { "id" : string , "threadId" : string , "labelIds" : [ string ], "snippet" : string , "historyId" : unsigned long , "payload" : { "partId" : string , "mimeType" : string , "filename" : string , "headers" : [ { "name" : string , "value" : string } ], "body" : users . messages . attachments Resource , "parts" : [ ( MessagePart ) ] }, "sizeEstimate" : integer , "raw" : bytes } Resumable upload To upload data files more reliably, you can use the resumable upload protocol.
-- POST /upload/gmail/v1/users/ userId /messages/send?uploadType=media HTTP/1.1 Host: www.googleapis.com Content-Type: message/rfc822 Content-Length: number of bytes in file Authorization: Bearer your auth token Email Message data If the request succeeds, the server returns the HTTP 200 OK status code along with any metadata: HTTP/1.1 200 Content-Type: application/json { "id" : string , "threadId" : string , "labelIds" : [ string ], "snippet" : string , "historyId" : unsigned long , "payload" : { "partId" : string , "mimeType" : string , "filename" : string , "headers" : [ { "name" : string , "value" : string } ], "body" : users . messages . attachments Resource , "parts" : [ ( MessagePart ) ] }, "sizeEstimate" : integer , "raw" : bytes } Multipart upload If you have metadata that you want to send along with the data to upload, you can make a single multipart/related request.
-- Step 1: Start a resumable session To initiate a resumable upload, make a POST or PUT request to the method's /upload URI and add the query parameter uploadType=resumable , for example: POST https://www.googleapis.com/upload/gmail/v1/users/ userId /messages/send?uploadType=resumable For this initiating request, the body is either empty or it contains the metadata only; you'll transfer the actual contents of the file you want to upload in subsequent requests.
-- To use multipart upload, make a POST or PUT request to the method's /upload URI and add the query parameter uploadType=multipart , for example: POST https://www.googleapis.com/upload/gmail/v1/users/ userId /messages/send?uploadType=multipart The top-level HTTP headers to use when making a multipart upload request include: Content-Type .
-
-### Create and send email messages \_|\_ Gmail \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/workspace/gmail/api/guides/sending](https://developers.google.com/workspace/gmail/api/guides/sending)
-- Source ID: `site-docs-root`
-- Final score: 122
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Send messages Once you have created a message, you can send it by supplying it in the request body of the messages.send method, as shown in the following examples: Java gmail/snippets/src/main/java/SendMessage.java View on GitHub import com.google.api.client.googleapis.json.GoogleJsonError ; import com.google.api.client.googleapis.json.GoogleJsonResponseException ; import com.google.api.client.http.HttpRequestInitializer ; import com.google.api.client.http.javanet.NetHttpTransport ; import com.google.api.client.json.gson.GsonFactory ; import com.google.api.services.gmail.Gmail ; import com.google.api.services.gmail.GmailScopes ; import com.google.api.services.gmail.model.Message ; import com.google.auth.http.HttpCredentialsAdapter ; import com.google.auth.oauth2.GoogleCredentials ; import java.io.ByteArrayOutputStream ; import java.io.IOException ; import java.util.Properties ; import javax.mail.MessagingException ; import javax.mail.Session ; import javax.mail.internet.InternetAddress ; import javax.mail.internet.MimeMessage ; import org.apache.commons.codec.binary.Base64 ; / Class to demonstrate the use of Gmail Send Message API / public class SendMessage { / Send an email from the user's mailbox to its recipient. @param fromEmailAddress - Email address to appear in the from: header @param toEmailAddress - Email address of the recipient @return the sent message, {@code null} otherwise. @throws MessagingException - if a wrongly formatted address is encountered. @throws IOException - if service account credentials file not found. / public static Message sendEmail ( String fromEmailAddress , String toEmailAddress ) throws MessagingException , IOException { / Load pre-authorized user credentials from the environment.
-- There are two ways to send email using the Gmail API: You can send it directly using the messages.send method.
-- TO , new InternetAddress ( toEmailAddress )); email . setSubject ( messageSubject ); MimeBodyPart mimeBodyPart = new MimeBodyPart (); mimeBodyPart . setContent ( bodyText , "text/plain" ); Multipart multipart = new MimeMultipart (); multipart . addBodyPart ( mimeBodyPart ); mimeBodyPart = new MimeBodyPart (); DataSource source = new FileDataSource ( file ); mimeBodyPart . setDataHandler ( new DataHandler ( source )); mimeBodyPart . setFileName ( file . getName ()); multipart . addBodyPart ( mimeBodyPart ); email . setContent ( multipart ); // Encode and wrap the MIME message into a gmail message ByteArrayOutputStream buffer = new ByteArrayOutputStream (); email . writeTo ( buffer ); byte [] rawMessageBytes = buffer . toByteArray (); String encodedEmail = Base64 . encodeBase64URLSafeString ( rawMessageBytes ); Message message = new Message (); message . setRaw ( encodedEmail ); try { // Create the draft message Draft draft = new Draft (); draft . setMessage ( message ); draft = service . users (). drafts (). create ( "me" , draft ). execute (); System . out . println ( "Draft id: " + draft . getId ()); System . out . println ( draft . toPrettyString ()); return draft ; } catch ( GoogleJsonResponseException e ) { // TODO(developer) - handle error appropriately GoogleJsonError error = e . getDetails (); if ( error . getCode () == 403 ) { System . err . println ( "Unable to create draft: " + e . getDetails ()); } else { throw e ; } } return null ; } } Python Similar to the create messages example, this example also handles encoding the message to base64URL and assigning it to the raw field of the messages resource. gmail/snippet/send mail/create draft with attachment.py View on GitHub import base64 import mimetypes import os from email.message import EmailMessage from email.mime.audio import MIMEAudio from email.mime.base import MIMEBase from email.mime.image import MIMEImage from email.mime.text import MIMEText import google.auth from googleapiclient.discovery import build from googleapiclient.errors import HttpError def gmail create draft with attachment (): """Create and insert a draft email with attachment.
-- The encoding and assignment steps are the same as create messages . gmail/snippets/src/main/java/CreateDraftWithAttachment.java View on GitHub import com.google.api.client.googleapis.json.GoogleJsonError ; import com.google.api.client.googleapis.json.GoogleJsonResponseException ; import com.google.api.client.http.HttpRequestInitializer ; import com.google.api.client.http.javanet.NetHttpTransport ; import com.google.api.client.json.gson.GsonFactory ; import com.google.api.services.gmail.Gmail ; import com.google.api.services.gmail.GmailScopes ; import com.google.api.services.gmail.model.Draft ; import com.google.api.services.gmail.model.Message ; import com.google.auth.http.HttpCredentialsAdapter ; import com.google.auth.oauth2.GoogleCredentials ; import java.io.ByteArrayOutputStream ; import java.io.File ; import java.io.IOException ; import java.util.Properties ; import javax.activation.DataHandler ; import javax.activation.DataSource ; import javax.activation.FileDataSource ; import javax.mail.MessagingException ; import javax.mail.Multipart ; import javax.mail.Session ; import javax.mail.internet.InternetAddress ; import javax.mail.internet.MimeBodyPart ; import javax.mail.internet.MimeMessage ; import javax.mail.internet.MimeMultipart ; import org.apache.commons.codec.binary.Base64 ; / Class to demonstrate the use of Gmail Create Draft with attachment API / public class CreateDraftWithAttachment { / Create a draft email with attachment. @param fromEmailAddress - Email address to appear in the from: header. @param toEmailAddress - Email address of the recipient. @param file - Path to the file to be attached. @return the created draft, {@code null} otherwise. @throws MessagingException - if a wrongly formatted address is encountered. @throws IOException - if service account credentials file not found. / public static Draft createDraftMessageWithAttachment ( String fromEmailAddress , String toEmailAddress , File file ) throws MessagingException , IOException { / Load pre-authorized user credentials from the environment.
-
-### Manage S/MIME certificates with the Gmail API \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/workspace/gmail/api/guides/smime_certs](https://developers.google.com/workspace/gmail/api/guides/smime_certs)
-- Source ID: `site-docs-root`
-- Final score: 120
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- TODO(developer) - See https://developers.google.com/identity for guides on implementing OAuth2 for the application. """ creds , = google . auth . default () try : create gmail api client service = build ( "gmail" , "v1" , credentials = creds ) user id = "gduser1@workspacesamples.dev" smime info = create smime info . create smime info ( cert filename = "xyz" , cert password = "xyz" ) send as email = None if not send as email : send as email = user id pylint: disable=maybe-no-member results = ( service . users () . settings () . sendAs () . smimeInfo () . insert ( userId = user id , sendAsEmail = send as email , body = smime info ) . execute () ) print ( f 'Inserted certificate; id: { results [ "id" ] } ' ) except HttpError as error : print ( f "An error occurred: { error } " ) results = None return results if name == " main " : insert smime info () Manage multiple users' certificates These code samples show how to manage certificates for multiple users in an organization in one batch call: Insert certificates from a CSV file The following is a sample CSV file that lists user IDs and the path to each user's certificate: $ cat certificates.csv user1@example.com,/path/to/user1 cert.p12,cert password 1 user2@example.com,/path/to/user2 cert.p12,cert password 2 user3@example.com,/path/to/user3 cert.p12,cert password 3 Java You can use the CreateSmimeInfo and InsertSmimeInfo samples to upload the certificates for the users specified in a CSV file: gmail/snippets/src/main/java/InsertCertFromCsv.java View on GitHub import com.google.api.services.gmail.model.SmimeInfo ; import java.io.File ; import org.apache.commons.csv.CSVFormat ; import org.apache.commons.csv.CSVParser ; import org.apache.commons.csv.CSVRecord ; / Class to demonstrate the use of Gmail Insert Certificate from CSV File / public class InsertCertFromCsv { / Upload S/MIME certificates based on the contents of a CSV file. <p>Each row of the CSV file should contain a user ID, path to the certificate, and the certificate password. @param csvFilename Name of the CSV file. / public static void insertCertFromCsv ( String csvFilename ) { try { File csvFile = new File ( csvFilename ); CSVParser parser = CSVParser . parse ( csvFile , java . nio . charset .
-- Returns : Smime object, including smime information """ smime info = None try : with open ( cert filename , "rb" ) as cert : smime info = {} data = cert . read () . encode ( "UTF-8" ) smime info [ "pkcs12" ] = base64 . urlsafe b64encode ( data ) . decode () if cert password and len ( cert password ) > 0 : smime info [ "encryptedKeyPassword" ] = cert password except ( OSError , IOError ) as error : print ( f "An error occurred while reading the certificate file: { error } " ) smime info = None return smime info if name == " main " : print ( create smime info ( cert filename = "xyz" , cert password = "xyz" )) Upload an S/MIME certificate To upload a certificate, call the settings.sendAs.smimeInfo.insert method and supply the settings.sendAs.smimeInfo resource in the body of the request: Java gmail/snippets/src/main/java/InsertSmimeInfo.java View on GitHub import com.google.api.client.http.HttpRequestInitializer ; import com.google.api.client.http.javanet.NetHttpTransport ; import com.google.api.client.json.gson.GsonFactory ; import com.google.api.services.gmail.Gmail ; import com.google.api.services.gmail.GmailScopes ; import com.google.api.services.gmail.model.SmimeInfo ; import com.google.auth.http.HttpCredentialsAdapter ; import com.google.auth.oauth2.GoogleCredentials ; import java.io.IOException ; / Class to demonstrate the use of Gmail Insert Smime Certificate API / public class InsertSmimeInfo { / Upload an S/MIME certificate for the user. @param userId User's email address. @param sendAsEmail The "send as" email address, or null if it should be the same as userId. @param smimeInfo The SmimeInfo object containing the user's S/MIME certificate. @return An SmimeInfo object with details about the uploaded certificate, {@code null} otherwise. @throws IOException - if service account credentials file not found. / public static SmimeInfo insertSmimeInfo ( String userId , String sendAsEmail , SmimeInfo smimeInfo ) throws IOException { / Load pre-authorized user credentials from the environment.
-- DEFAULT ); for ( CSVRecord record : parser ) { String userId = record . get ( 0 ); String certFilename = record . get ( 1 ); String certPassword = record . get ( 2 ); SmimeInfo smimeInfo = CreateSmimeInfo . createSmimeInfo ( certFilename , certPassword ); if ( smimeInfo != null ) { InsertSmimeInfo . insertSmimeInfo ( userId , userId , smimeInfo ); } else { System . err . printf ( "Unable to read certificate file for userId: %s\n" , userId ); } } } catch ( Exception e ) { System . err . printf ( "An error occured while reading the CSV file: %s" , e ); } } } Python You can use the create smime info and insert smime info samples to upload the certificates for the users specified in a CSV file: gmail/snippet/smime snippets/insert cert from csv.py View on GitHub import csv import create smime info import insert smime info def insert cert from csv ( csv filename ): """Upload S/MIME certificates based on the contents of a CSV file.
-- Code samples The following code samples show how to use the Gmail API to manage S/MIME certificates for an organization with multiple users: Create an smimeInfo resource for an S/MIME certificate This code sample shows how to read a certificate from a file, encode it to a Base64URL string, and assign it to the pkcs12 field on the settings.sendAs.smimeInfo resource: Java gmail/snippets/src/main/java/CreateSmimeInfo.java View on GitHub import com.google.api.services.gmail.model.SmimeInfo ; import java.io.File ; import java.io.FileInputStream ; import java.io.IOException ; import java.io.InputStream ; import java.util.Base64 ; / Class to demonstrate the use of Gmail Create SmimeInfo API / public class CreateSmimeInfo { / Create an SmimeInfo resource for a certificate from file. @param filename Name of the file containing the S/MIME certificate. @param password Password for the certificate file, or null if the file is not password-protected. @return An SmimeInfo object with the specified certificate. / public static SmimeInfo createSmimeInfo ( String filename , String password ) { SmimeInfo smimeInfo = null ; InputStream in = null ; try { File file = new File ( filename ); in = new FileInputStream ( file ); byte [] fileContent = new byte [ ( int ) file . length () ] ; in . read ( fileContent ); smimeInfo = new SmimeInfo (); smimeInfo . setPkcs12 ( Base64 . getUrlEncoder (). encodeToString ( fileContent )); if ( password != null && password . length () > 0 ) { smimeInfo . setEncryptedKeyPassword ( password ); } } catch ( Exception e ) { System . out . printf ( "An error occured while reading the certificate file: %s\n" , e ); } finally { try { if ( in != null ) { in . close (); } } catch ( IOException ioe ) { System . out . printf ( "An error occured while closing the input stream: %s\n" , ioe ); } } return smimeInfo ; } } Python gmail/snippet/smime snippets/create smime info.py View on GitHub import base64 def create smime info ( cert filename , cert password ): """Create an smimeInfo resource for a certificate from file.
 

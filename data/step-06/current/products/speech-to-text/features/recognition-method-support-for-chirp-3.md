@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.483Z"
+generated_at: "2026-04-12T12:19:11.982Z"
 product_name: "Speech-to-Text"
 product_slug: "speech-to-text"
 feature_name: "Recognition method support for chirp_3"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-10-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/speech-to-text/docs/samples/speech-quickstart"
-  - "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-speech-v2/latest/Google-Cloud-Speech-V2-RecognitionFeatures"
-  - "https://docs.cloud.google.com/python/docs/reference/speech/latest"
+  - "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3"
+  - "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2"
+  - "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+  - "https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.types"
 keywords:
   - "recognition"
   - "method"
@@ -38,46 +39,66 @@ Chirp 3: Transcription added support for StreamingRecognize, Recognize, and Batc
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/speech-to-text/docs/samples/speech-quickstart](https://docs.cloud.google.com/speech-to-text/docs/samples/speech-quickstart)
-- [https://docs.cloud.google.com/ruby/docs/reference/google-cloud-speech-v2/latest/Google-Cloud-Speech-V2-RecognitionFeatures](https://docs.cloud.google.com/ruby/docs/reference/google-cloud-speech-v2/latest/Google-Cloud-Speech-V2-RecognitionFeatures)
-- [https://docs.cloud.google.com/python/docs/reference/speech/latest](https://docs.cloud.google.com/python/docs/reference/speech/latest)
+- [https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3](https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3)
+- [https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2](https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2)
+- [https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig](https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig)
+- [https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.types](https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.types)
 
 ## Supporting Pages
 
-### Make an audio transcription request | Cloud Speech-to-Text | Google Cloud Documentation
+### "Chirp 3 Transcription: Enhanced multilingual accuracy \_|\_ Cloud Speech-to-Text\
 
-- URL: [https://docs.cloud.google.com/speech-to-text/docs/samples/speech-quickstart](https://docs.cloud.google.com/speech-to-text/docs/samples/speech-quickstart)
+- URL: [https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3](https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3)
 - Source ID: `site-docs-root`
-- Final score: 67
+- Final score: 227
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For more information, see Set up authentication for a local development environment. // Imports the Google Cloud client library import com.google.cloud.speech.v1.RecognitionAudio; import com.google.cloud.speech.v1.RecognitionConfig; import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding; import com.google.cloud.speech.v1.RecognizeResponse; import com.google.cloud.speech.v1.SpeechClient; import com.google.cloud.speech.v1.SpeechRecognitionAlternative; import com.google.cloud.speech.v1.SpeechRecognitionResult; import java.util.List; public class QuickstartSample { / Demonstrates using the Speech API to transcribe an audio file.
-- Make an audio transcription request Cloud Speech-to-Text Google Cloud Documentation Source URL: https://docs.cloud.google.com/speech-to-text/docs/samples/speech-quickstart For more information, see the Cloud STT Java API reference documentation.
+- Model Model identifier Chirp 3 chirp 3 API methods Not all recognition methods support the same language availability sets, because Chirp 3 is available in the Speech-to-Text API V2, it supports the following recognition methods: API version API method Support V2 Speech.StreamingRecognize (good for streaming and real-time audio) Supported V2 Speech.Recognize (good for audio shorter than one minute) Supported V2 Speech.BatchRecognize (good for long audio 1 minute to 1 hour in general, but up to 20 minutes with word-level timestamp enabled) Supported Note: You can always find the latest list of supported locales and features for each transcription model, using the locations API as explained here.
+- Language availability for transcription Chirp 3 supports transcription in StreamingRecognize , Recognize , and BatchRecognize in the following languages: Language BCP-47 Code Launch Readiness Catalan (Spain) ca-ES GA Chinese (Simplified, China) cmn-Hans-CN GA Croatian (Croatia) hr-HR GA Danish (Denmark) da-DK GA Dutch (Netherlands) nl-NL GA English (Australia) en-AU GA English (India) en-IN GA English (United Kingdom) en-GB GA English (United States) en-US GA Finnish (Finland) fi-FI GA French (Canada) fr-CA GA French (France) fr-FR GA German (Germany) de-DE GA Greek (Greece) el-GR GA Hindi (India) hi-IN GA Italian (Italy) it-IT GA Japanese (Japan) ja-JP GA Korean (Korea) ko-KR GA Polish (Poland) pl-PL GA Portuguese (Brazil) pt-BR GA Portuguese (Portugal) pt-PT GA Romanian (Romania) ro-RO GA Russian (Russia) ru-RU GA Spanish (Spain) es-ES GA Spanish (United States) es-US GA Swedish (Sweden) sv-SE GA Turkish (Turkey) tr-TR GA Ukrainian (Ukraine) uk-UA GA Vietnamese (Vietnam) vi-VN GA Afrikaans (South Africa) af-ZA Preview Albanian (Albania) sq-AL Preview Amharic (Ethiopia) am-ET Preview Arabic (Algeria) ar-DZ Preview Arabic (Bahrain) ar-BH Preview Arabic (Egypt) ar-EG Preview Arabic (Israel) ar-IL Preview Arabic (Jordan) ar-JO Preview Arabic (Kuwait) ar-KW Preview Arabic (Lebanon) ar-LB Preview Arabic (Mauritania) ar-MR Preview Arabic (Morocco) ar-MA Preview Arabic (Oman) ar-OM Preview Arabic (Qatar) ar-QA Preview Arabic (Saudi Arabia) ar-SA Preview Arabic (State of Palestine) ar-PS Preview Arabic (Syria) ar-SY Preview Arabic (Tunisia) ar-TN Preview Arabic (United Arab Emirates) ar-AE Preview Arabic (Yemen) ar-YE Preview Arabic ar-XA Preview Armenian (Armenia) hy-AM Preview Assamese (India) as-IN Preview Asturian (Spain) ast-ES Preview Azerbaijani (Azerbaijan) az-AZ Preview Basque (Spain) eu-ES Preview Bengali (Bangladesh) bn-BD Preview Bengali (India) bn-IN Preview Bulgarian (Bulgaria) bg-BG Preview Burmese (Myanmar) my-MM Preview Central Kurdish (Iraq) ar-IQ Preview Chinese, Cantonese (Traditional Hong Kong) yue-Hant-HK Preview Chinese, Mandarin (Traditional, Taiwan) cmn-Hant-TW Preview Czech (Czech Republic) cs-CZ Preview English (Philippines) en-PH Preview Estonian (Estonia) et-EE Preview Filipino (Philippines) fil-PH Preview Galician (Spain) gl-ES Preview Georgian (Georgia) ka-GE Preview Gujarati (India) gu-IN Preview Hausa (Nigeria) ha-NG Preview Hebrew (Israel) iw-IL Preview Hungarian (Hungary) hu-HU Preview Icelandic (Iceland) is-IS Preview Indonesian (Indonesia) id-ID Preview Javanese (Indonesia) jv-ID Preview Kannada (India) kn-IN Preview Kazakh (Kazakhstan) kk-KZ Preview Khmer (Cambodia) km-KH Preview Kyrgyz (Kyrgyzstan) ky-KG Preview Lao (Laos) lo-LA Preview Latvian (Latvia) lv-LV Preview Lithuanian (Lithuania) lt-LT Preview Luxembourgish (Luxembourg) lb-LU Preview Macedonian (North Macedonia) mk-MK Preview Malay (Malaysia) ms-MY Preview Malayalam (India) ml-IN Preview Maltese (Malta) mt-MT Preview Maori (New Zealand) mi-NZ Preview Marathi (India) mr-IN Preview Mongolian (Mongolia) mn-MN Preview Nepali (Nepal) ne-NP Preview Northern Sotho (South Africa) nso-ZA Preview Norwegian (Norway) no-NO Preview Oriya (India) or-IN Preview Persian (Iran) fa-IR Preview Punjabi (Gurmukhi India) pa-Guru-IN Preview Serbian (Serbia) sr-RS Preview Slovak (Slovakia) sk-SK Preview Slovenian (Slovenia) sl-SI Preview Spanish (Mexico) es-MX Preview Swahili (Kenya) sw-KE Preview Swahili sw Preview Tamil (India) ta-IN Preview Telugu (India) te-IN Preview Thai (Thailand) th-TH Preview Uzbek (Uzbekistan) uz-UZ Preview Welsh (United Kingdom) cy-GB Preview Wolof (Senegal) wo-SN Preview Xhosa (South Africa) xh-ZA Preview Yoruba (Nigeria) yo-NG Preview Zulu (South Africa) zu-ZA Preview Language availability for diarization Chirp 3 supports transcription and diarization only in BatchRecognize and Recognize in the following languages: Language BCP-47 Code Chinese (Simplified, China) cmn-Hans-CN German (Germany) de-DE English (United Kingdom) en-GB English (India) en-IN English (United States) en-US Spanish (Spain) es-ES Spanish (United States) es-US French (Canada) fr-CA French (France) fr-FR Hindi (India) hi-IN Italian (Italy) it-IT Japanese (Japan) ja-JP Korean (Korea) ko-KR Portuguese (Brazil) pt-BR Feature support and limitations Chirp 3 supports the following features: Feature Description Launch stage Automatic punctuation Automatically generated by the model and can be optionally disabled.
+- StreamingRecognizeRequest ( audio = chunk ) start time = time . time () print ( f "Streaming audio to { region } -speech.googleapis.com..." ) for response in client . streaming recognize ( requests = request generator ()): if response . results : for result in response . results : if result . is final : print ( f "Transcript: { result . alternatives [ 0 ] . transcript } " ) print ( f "Time taken: { time . time () - start time : .3f } s" ) def main () - > None : TODO: Replace with your Project ID and File Path PROJECT ID = "your-project-id" AUDIO FILE PATH = "path/to/your/audio.wav" transcribe streaming ( project id = PROJECT ID , audio file = AUDIO FILE PATH ) if name == " main " : main () Use Chirp 3 in the Google Cloud console Sign up for a Google Cloud account, and create a project.
+- RecognitionConfig , audio : list ) - > list : yield config yield from audio Transcribes the audio into text responses iterator = client . streaming recognize ( requests = requests ( config request , audio requests ) ) responses = [] for response in responses iterator : responses . append ( response ) for result in response . results : print ( f "Transcript: { result . alternatives [ 0 ] . transcript } " ) return responses Perform synchronous speech recognition Python import os from google.cloud.speech v2 import SpeechClient from google.cloud.speech v2.types import cloud speech from google.api core.client options import ClientOptions PROJECT ID = os . getenv ( "GOOGLE CLOUD PROJECT" ) REGION = "us" def transcribe sync chirp3 ( audio file : str ) - > cloud speech .
 
-### Cloud Speech-to-Text V2 API - Class Google::Cloud::Speech::V2::RecognitionFeatures (v1.7.1) | Ruby client libraries | Google Cloud Documentation
+### "Chirp 2: Enhanced multilingual accuracy \_|\_ Cloud Speech-to-Text \_|\_\
 
-- URL: [https://docs.cloud.google.com/ruby/docs/reference/google-cloud-speech-v2/latest/Google-Cloud-Speech-V2-RecognitionFeatures](https://docs.cloud.google.com/ruby/docs/reference/google-cloud-speech-v2/latest/Google-Cloud-Speech-V2-RecognitionFeatures)
-- Source ID: `site-docs-reference`
-- Final score: 42
+- URL: [https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2](https://docs.cloud.google.com/speech-to-text/docs/models/chirp-2)
+- Source ID: `site-docs-root`
+- Final score: 211
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Cloud Speech-to-Text V2 API - Class Google::Cloud::Speech::V2::RecognitionFeatures (v1.7.1) Ruby client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/ruby/docs/reference/google-cloud-speech-v2/latest/Google-Cloud-Speech-V2-RecognitionFeatures Reference documentation and code samples for the Cloud Speech-to-Text V2 API class Google::Cloud::Speech::V2::RecognitionFeatures.
+- Model Model identifier Chirp 2 chirp 2 API methods As Chirp 2 is exclusively available within the Speech-to-Text API V2, it supports the following recognition methods: Model Model identifier Language support V2 Speech.StreamingRecognize (good for streaming and real-time audio) Limited V2 Speech.Recognize (good for short audio < 1 min) On par with Chirp V2 Speech.BatchRecognize (good for long audio 1 min to 8 hrs) On par with Chirp You can always find the latest list of supported languages and features for each transcription model, using the locations API .
+- Language availability for transcription Chirp 2 supports transcription in StreamingRecognize , Recognize and BatchRecognize recognition methods.
+- InlineOutputConfig (), ), ) Transcribes the audio into text operation = client . batch recognize ( request = request ) print ( "Waiting for operation to complete..." ) response = operation . result ( timeout = 120 ) for result in response . results [ audio uri ] . transcript . results : print ( f "Transcript: { result . alternatives [ 0 ] . transcript } " ) return response . results [ audio uri ] . transcript Using Chirp 2 Features Explore how you can use the latest features, with code examples: Perform a language-agnostic transcription import os from google.cloud.speech v2 import SpeechClient from google.cloud.speech v2.types import cloud speech from google.api core.client options import ClientOptions PROJECT ID = os . getenv ( "GOOGLE CLOUD PROJECT" ) def transcribe sync chirp2 auto detect language ( audio file : str ) - > cloud speech .
+- RecognitionConfig , audio : list ) - > list : yield config yield from audio Transcribes the audio into text responses iterator = client . streaming recognize ( requests = requests ( config request , audio requests ) ) responses = [] for response in responses iterator : responses . append ( response ) for result in response . results : print ( f "Transcript: { result . alternatives [ 0 ] . transcript } " ) return responses Perform synchronous speech recognition import os from google.cloud.speech v2 import SpeechClient from google.cloud.speech v2.types import cloud speech from google.api core.client options import ClientOptions PROJECT ID = os . getenv ( "GOOGLE CLOUD PROJECT" ) def transcribe sync chirp2 ( audio file : str ) - > cloud speech .
 
-### Python Client for Cloud Speech | Python client libraries | Google Cloud Documentation
+### RecognitionConfig \_|\_ Cloud Speech-to-Text \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/speech/latest](https://docs.cloud.google.com/python/docs/reference/speech/latest)
+- URL: [https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig](https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig)
+- Source ID: `site-api-reference`
+- Final score: 151
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- JSON representation { "interactionType" : enum ( InteractionType ) , "industryNaicsCodeOfAudio" : integer , "microphoneDistance" : enum ( MicrophoneDistance ) , "originalMediaType" : enum ( OriginalMediaType ) , "recordingDeviceType" : enum ( RecordingDeviceType ) , "recordingDeviceName" : string , "originalMimeType" : string , "audioTopic" : string } Fields interactionType enum ( InteractionType ) The use case most closely describing the audio content to be recognized. industryNaicsCodeOfAudio integer ( uint32 format) The industry vertical to which this speech recognition request most closely applies.
+- JSON representation AudioEncoding SpeechAdaptation JSON representation ABNFGrammar JSON representation TranscriptNormalization JSON representation Entry JSON representation SpeechContext JSON representation SpeakerDiarizationConfig JSON representation RecognitionMetadata JSON representation InteractionType MicrophoneDistance OriginalMediaType RecordingDeviceType Provides information to the recognizer that specifies how to process the request.
+- JSON representation { "enableSpeakerDiarization" : boolean , "minSpeakerCount" : integer , "maxSpeakerCount" : integer , "speakerTag" : integer } Fields enableSpeakerDiarization boolean If 'true', enables speaker detection for each recognized word in the top alternative of the recognition result using a speakerLabel provided in the WordInfo. minSpeakerCount integer Minimum number of speakers in the conversation.
+- To perform independent recognition on each channel set enableSeparateRecognitionPerChannel to 'true'. enableSeparateRecognitionPerChannel boolean This needs to be set to true explicitly and audioChannelCount > 1 to get each channel recognized separately.
+
+### "Package types (2.38.0) \_|\_ Python client libraries \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.types](https://docs.cloud.google.com/python/docs/reference/speech/latest/google.cloud.speech_v1.types)
 - Source ID: `site-python-reference`
-- Final score: 39
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 145
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Python Client for Cloud Speech Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/speech/latest Cloud Speech: enables easy integration of Google speech recognition technologies into developer applications.
-- Send audio and receive a text transcription from the Speech-to-Text API service.
+- StreamingRecognizeRequest The top-level message sent by the client for the StreamingRecognize method.
+- Setting any member of the oneof automatically clears all other members. .. oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields RecognitionConfig Provides information to the recognizer that specifies how to process the request.
+- TranscriptOutputConfig Specifies an optional destination for the recognition results. .. oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields UpdateCustomClassRequest Message sent by the client for the UpdateCustomClass method.
+- For StreamingRecognize, this normalization only applies to stable partial transcripts (stability > 0.8) and final transcripts.
 

@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.740Z"
+generated_at: "2026-04-15T00:42:40.869Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Cloud Build attestors"
 feature_slug: "cloud-build-attestors"
 latest_feature_date: "2022-05-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events"
-  - "https://docs.cloud.google.com/build/docs/create-custom-build-steps"
-  - "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+  - "https://docs.cloud.google.com/appengine/docs/quotas"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+  - "https://docs.cloud.google.com/docs/buildpacks/base-images"
 keywords:
-  - "build"
   - "attestors"
-  - "are"
-  - "available"
-  - "to"
   - "secure"
-  - "image"
   - "deployments"
+  - "image"
+  - "artifact"
+  - "through"
+  - "available"
 ---
 
 # Cloud Build attestors
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +37,55 @@ Cloud Build attestors are available to secure image deployments through artifact
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events](https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events)
-- [https://docs.cloud.google.com/build/docs/create-custom-build-steps](https://docs.cloud.google.com/build/docs/create-custom-build-steps)
-- [https://docs.cloud.google.com/build/docs/automate-builds-webhook-events](https://docs.cloud.google.com/build/docs/automate-builds-webhook-events)
+- [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- [https://docs.cloud.google.com/appengine/docs/standard/java/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java/config/appref)
+- [https://docs.cloud.google.com/docs/buildpacks/base-images](https://docs.cloud.google.com/docs/buildpacks/base-images)
 
 ## Supporting Pages
 
-### "Automate builds in response to Pub/Sub events \_|\_ Cloud Build \_|\_ Google\
+### "App Engine app.yaml reference \_|\_ App Engine standard environment \_|\_\
 
-- URL: [https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events](https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events)
-- Source ID: `site-docs-root-2`
-- Final score: 194
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Creating a build trigger that responds to Artifact Registry events You can create a Pub/Sub trigger that responds to Artifact Registry events such as when images are pushed, tagged, or deleted.
-- In the example below, the trigger is configured to respond to builds with a tag matching prod and an action matching INSERT based on the specified payload as defined by the substitution variable, IMAGE TAG . gcloud builds triggers create pubsub \ -- name = TRIGGER NAME \ -- topic = projects / PROJECT ID / topics / TOPIC NAME \ -- build - config = BUILD CONFIG \ # or -- inline - config = INLINE BUILD CONFIG -- substitutions = \ ' IMAGE TAG = "$(body.message.data.tag)" , ' \ ' ACTION = "$(body.message.data.action)" ' \ -- subscription - filter = ' IMAGE TAG != "" && ACTION == "INSERT" ' \ -- repo = REPO NAME \ -- repo - type = REPO TYPE \ -- tag = TAG NAME # or -- branch = BRANCH NAME Where: TRIGGER NAME is the name of your trigger.
-- Click Create to create your build trigger. gcloud To create a trigger that listens for a new tag pushed to an existing image in Artifact Registry using the gcloud commands: Open a terminal window.
-- If your build config type is a Dockerfile or a buildpack, you will need to provide a name for the resulting image and optionally, a timeout for your build.
-
-### "Using community-contributed builders and custom builders \_|\_ Cloud Build\
-
-- URL: [https://docs.cloud.google.com/build/docs/create-custom-build-steps](https://docs.cloud.google.com/build/docs/create-custom-build-steps)
-- Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/config/appref](https://docs.cloud.google.com/appengine/docs/standard/java/config/appref)
+- Source ID: `site-docs-reference-2`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Using community-contributed builders Prebuilt images are not available for community-contributed builders; to use these builders in a Cloud Build config file, you must first build the image and push it to Artifact Registry in your project.
-- Creating a custom builder If the task you want to perform requires capabilities that are not provided by a public image, a supported builder, or a community-contributed builder , you can build your own image and use it in a build step.
-- If the task you want to perform requires capabilities that are not provided by an existing image, you can build your own custom image and use it in a build step.
-- Some examples of when you might want to use a custom builder image are: Downloading source code or packages from external locations.
+- Example The following is an example of an app.yaml file: runtime : java25 instance class : F2 env variables : BUCKET NAME : "example-gcs-bucket" handlers : - url : /stylesheets static dir : stylesheets - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description build env variables Optional.
+- For more information about the possible MIME media types, see the IANA MIME Media Types website . redirect http response code Optional. redirect http response code is used with the secure setting to set the HTTP response code returned when performing a redirect required by how the secure setting is configured. redirect http response code element has the following possible values: 301 Moved Permanently response code.
+- The following values are available depending on your service's scaling : Automatic scaling F1 , F2 , F4 , F4 1G Default: F1 Optionally use the automatic scaling element to change default settings for automatic scaling, such as minimum and maximum number of instances, latency, and concurrent connections.
+- This prevents a user from accidentally submitting query data over a non-secure connection that was intended for a secure connection. always Requests for a URL that match this handler that do not use HTTPS are automatically redirected to the HTTPS URL with the same path.
 
-### "Automate builds in response to webhook events \_|\_ Cloud Build \_|\_ Google\
+### "Quotas and limits \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/build/docs/automate-builds-webhook-events](https://docs.cloud.google.com/build/docs/automate-builds-webhook-events)
-- Source ID: `site-docs-root-2`
-- Final score: 170
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- Source ID: `site-docs-reference-2`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Repository triggers that use Cloud Build repositories (2nd gen) can be configured programmatically and are natively integrated with source providers, including support for GitHub and GitLab.
-- If your build config type is a Dockerfile or a buildpack, you will need to provide a name for the resulting image and optionally, a timeout for your build.
-- Repository : From the list of available repositories, select the repository from which you want to build.
-- Builds are executed each time a change to a pull request is made.
+- Effective March 18, 2025, Container Registry is shut down, and writing images to Container Registry is unavailable.
+- When you deploy, Cloud Build builds a container image, and stores the image in the Artifact Registry .
+- This includes: data received by the application in secure requests and non-secure requests uploads to the Blobstore data received in response to HTTP requests by the URL fetch service Secure outgoing bandwidth The amount of data sent by the application over a secure connection in response to requests.
+- This includes: data served in response to both secure requests and non-secure requests by application servers, static file servers, or the Blobstore data sent in email messages data in outgoing HTTP requests sent by the URL fetch service.
+
+### Base images \_|\_ Buildpacks \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/docs/buildpacks/base-images](https://docs.cloud.google.com/docs/buildpacks/base-images)
+- Source ID: `site-docs-reference`
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Security and maintenance updates to these base images are made available through routine updates.
+- Base images are hosted in every region where Artifact Registry is available.
+- Google Cloud's buildpacks publishes base images with multiple configurations of the available system packages and languages.
+- You can customize the base image path by replacing the first portion of the URI with your region of choice: REGION -docker.pkg.dev/serverless-runtimes/ STACK /runtimes/ RUNTIME ID Replace: REGION with the preferred region, for example us-central1 .
 

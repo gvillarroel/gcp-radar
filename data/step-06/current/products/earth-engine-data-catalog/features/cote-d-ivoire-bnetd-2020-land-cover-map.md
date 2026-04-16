@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.401Z"
+generated_at: "2026-04-14T15:13:19.420Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Cote d'Ivoire BNETD 2020 Land Cover Map"
 feature_slug: "cote-d-ivoire-bnetd-2020-land-cover-map"
 latest_feature_date: "2024-09-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/catalog/BNETD_land_cover_v1"
   - "https://developers.google.com/earth-engine/datasets/tags/landuse-landcover"
@@ -20,13 +20,12 @@ keywords:
   - "land"
   - "cover"
   - "map"
-  - "for"
 ---
 
 # Cote d'Ivoire BNETD 2020 Land Cover Map
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +37,7 @@ A 2020 land cover map for Cote d'Ivoire from BNETD.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,9 +51,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/BNETD_land_cover_v1](https://developers.google.com/earth-engine/datasets/catalog/BNETD_land_cover_v1)
 - Source ID: `site-docs-root-2`
-- Final score: 328
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 339
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Dataset Availability 2020-01-01T00:00:00Z–2021-01-01T00:00:00Z Dataset Producer BNETD-CIGN Earth Engine Snippet ee.ImageCollection("BNETD/land cover/v1") open in new Cadence 1 Year Tags classification deforestation forest landcover landuse-landcover Description The Cote d'Ivoire BNETD 2020 Land Cover Map was produced by the Ivorian Government through a national institution, the Center for Geographic Information and Digital from the National Study Office Techniques and Development (BNETD-CIGN), with technical and financial support from the European Union.
@@ -66,20 +65,20 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
 - Source ID: `site-docs-root-3`
-- Final score: 224
+- Final score: 233
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - The Dynamic Land Cover map at … copernicus eea esa eu landcover landuse-landcover Cote d'Ivoire BNETD 2020 Land Cover Map The Cote d'Ivoire BNETD 2020 Land Cover Map was produced by the Ivorian Government through a national institution, the Center for Geographic Information and Digital from the National Study Office Techniques and Development (BNETD-CIGN), with technical and financial support from the European Union.
 - Regional and national land cover datasets are available for specific areas like Europe (CORINE, LUCAS), North America (Land Cover of North America, NLCD, RCMAP), Cote d'Ivoire, China, and Iran.
 - The RCMAP product suite consists of ten fractional components: annual herbaceous, bare ground, herbaceous, litter, non-sagebrush shrub, perennial herbaceous, sagebrush, … climate-change disturbance landsat-derived landuse-landcover nlcd rangeland SBTN Natural Lands Map v1 The SBTN Natural Lands Map v1 is a 2020 baseline map of natural and non-natural land covers intended for use by companies setting science-based targets for nature, specifically the SBTN Land target #1: no conversion of natural ecosystems. "Natural" and "non-natural" definitions were adapted from … ecosystems landcover landuse-landcover wri SBTN Natural Lands Map v1.1 The SBTN Natural Lands Map v1.1 is a 2020 baseline map of natural and non-natural land covers intended for use by companies setting science-based targets for nature, specifically the SBTN Land target #1: no conversion of natural ecosystems. "Natural" and "non-natural" definitions were adapted from … ecosystems landcover landuse-landcover wri TUBerlin/BigEarthNet/v1 BigEarthNet is a new large-scale Sentinel-2 benchmark archive, consisting of 590,326 Sentinel-2 image patches.
-- The WorldCover product comes with 11 land cover classes and has been generated in the framework of … esa landcover landuse landuse-landcover sentinel1-derived sentinel2-derived Farmscapes 2020 The Farmscapes 2020 dataset provides high-resolution (25cm) probability maps for three key semi-natural features within England's agricultural landscapes: hedgerows, woodland, and stone walls.
+- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
 
 ### "Datasets tagged landcover in Earth Engine \_|\_ Earth Engine Data Catalog\
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 - Source ID: `site-docs-root`
-- Final score: 204
+- Final score: 213
 - Re-rank relevance: N/A
 
 Evidence snippets:

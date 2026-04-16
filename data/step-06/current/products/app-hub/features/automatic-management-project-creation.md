@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:03:36.814Z"
+generated_at: "2026-04-15T00:05:19.015Z"
 product_name: "App Hub"
 product_slug: "app-hub"
 feature_name: "Automatic management project creation"
 feature_slug: "automatic-management-project-creation"
 latest_feature_date: "2025-11-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/app-hub/docs/enabled-apis"
-  - "https://docs.cloud.google.com/app-hub/docs/register-resources"
-  - "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application"
+  - "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project"
+  - "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder"
 keywords:
   - "folder"
   - "when"
@@ -19,14 +19,13 @@ keywords:
   - "creation"
   - "project"
   - "management"
-  - "is"
-  - "app"
+  - "enabled"
 ---
 
 # Automatic management project creation
 
 Product: App Hub
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +37,55 @@ When a folder is app-enabled, App Hub creates a dedicated management project to 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/app-hub/docs/enabled-apis](https://docs.cloud.google.com/app-hub/docs/enabled-apis)
-- [https://docs.cloud.google.com/app-hub/docs/register-resources](https://docs.cloud.google.com/app-hub/docs/register-resources)
-- [https://docs.cloud.google.com/app-hub/docs/quickstart-create-application](https://docs.cloud.google.com/app-hub/docs/quickstart-create-application)
+- [https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project](https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project)
+- [https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder](https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder)
 
 ## Supporting Pages
 
 ### Enable APIs on the management project \_|\_ App Hub \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/app-hub/docs/enabled-apis](https://docs.cloud.google.com/app-hub/docs/enabled-apis)
-- Source ID: `site-iam-reference`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-root-2`
+- Final score: 177
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - API Required or recommended More information App Hub API ( apphub.googleapis.com ) Organize existing resources into applications Required App Hub pricing VPC Service Controls App Design Center API ( designcenter.googleapis.com ) Design, deploy, and update applications Required App Design Center pricing Cloud Asset API ( cloudasset.googleapis.com ) Manage the global metadata inventory of Google Cloud resources and other assets Required Cloud Asset Inventory pricing VPC Service Controls Cloud Resource Manager API ( cloudresourcemanager.googleapis.com ) Manage container resources such as organizations, folders, and projects Required Cloud Resource Manager API pricing VPC Service Controls Infrastructure Manager API ( config.googleapis.com ) Automate deployment and management of Google Cloud infrastructure resources Required Infra Manager pricing VPC Service Controls Cloud Build API ( cloudbuild.googleapis.com ) Run builds for Infra Manager deployments Required Cloud Build pricing VPC Service Controls Cloud Storage API ( storage.googleapis.com ) Store data for Google Cloud services, including App Design Center and Cloud Logging Required Cloud Storage pricing VPC Service Controls Google Cloud Observability APIs The following APIs provide capabilities for observability features.
-- API Required or recommended More information Gemini for Google Cloud API ( cloudaicompanion.googleapis.com ) Recommended Gemini Cloud Assist pricing VPC Service Controls Enable recommended APIs To enable recommended APIs after application management setup, follow these steps: To get the permissions that you need to enable APIs, ask your administrator to grant you the Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) role on the management project.
-- Home Documentation Application development App Hub Guides Send feedback Enable APIs on the management project Stay organized with collections Save and categorize content based on your preferences.
-- You can perform the following tasks at no charge and without linking a billing account to the management project: Use App Hub to organize your existing resources into applications.
+- Your costs for services in the management project depend on which services are enabled and the features that you use.
+- When you set up application management , the management project centralizes your application operations.
+- All required APIs are automatically enabled on this project to provide basic, core application features.
 
-### "Register existing resources to an application \_|\_ App Hub \_|\_ Google\
+### Set up a single project \_|\_ App Hub \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/app-hub/docs/register-resources](https://docs.cloud.google.com/app-hub/docs/register-resources)
-- Source ID: `site-iam-reference`
-- Final score: 182
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Register services Get information about a service using its URI: data "google apphub discovered service" "my-service" { location = " REGION " service uri = " SERVICE URI " } Register the discovered service to your application, for example: resource "google apphub service" "example" { project = "my-project-id" location = "us-central1" application id = google apphub application.example.application id service id = "frontend-load-balancer" discovered service = data.google apphub discovered service.my-forwarding-rule.name display name = "Frontend Load Balancer" description = "The primary load balancer for the frontend." } Register workloads Get information about a workload using its URI: data "google apphub discovered workload" "my-workload" { location = " REGION " workload uri = " WORKLOAD URI " } Register the discovered workload to your application, for example: resource "google apphub workload" "example" { project = "my-project-id" location = "us-central1" application id = google apphub application.example.application id workload id = "frontend-instance-group" discovered workload = data.google apphub discovered workload.my-mig.name display name = "Frontend Instance Group" description = "The managed instance group for the frontend." } The registration status of services and workloads registered to an application might change to detached if you move a project or folder out of your application management boundary or delete the underlying resource.
-- The following example creates a regional application in us-central1 with defined criticality, environment, and owner attributes: resource "google apphub application" "example" { project = "my-project-id" location = "us-central1" application id = "my-application" display name = "My Application" description = "This application represents our platform." scope { type = "REGIONAL" } attributes { criticality { type = "MISSION CRITICAL" } environment { type = "PRODUCTION" } business owners { display name = "Alice" email = "alice@example.com" } developer owners { display name = "Bob" email = "bob@example.com" } operator owners { display name = "Charlie" email = "charlie@example.com" } } } Register services and workloads App Hub lets you select supported resources located within your application management boundary to register them as services and workloads.
-- List the registered services in your application: gcloud apphub applications services list \ --application = APPLICATION NAME --project = PROJECT ID \ --location = REGION You must obtain an output similar to the following for each registered service: ID DISPLAY NAME SERVICE REFERENCE CREATE TIME SERVICE NAME SERVICE DISPLAY NAME { 'uri' : '//compute.googleapis.com/projects/ PROJECT NUMBER /regions/ REGION /forwardingRules/forwarding-rule' } 2023 -11-01T21:38:08 Register workloads List the available workloads that you can register to an application: gcloud apphub discovered-workloads list \ --project = PROJECT ID \ --location = REGION \ --filter = FILTER EXPRESSION For required and optional flags, replace the following: Required: PROJECT ID : the ID of the management project.
-- List the registered workloads in your application: gcloud apphub applications workloads list \ --application = APPLICATION NAME --project = PROJECT ID \ --location = REGION You must obtain an output similar to the following for each registered workload: ID DISPLAY NAME WORKLOAD REFERENCE CREATE TIME WORKLOAD NAME WORKLOAD DISPLAY NAME { 'uri' : '//compute.googleapis.com/projects/ PROJECT NUMBER /regions/ REGION /instanceGroups/mig-name' } 2023 -11-01T21:38:08 Terraform To use Terraform to register Google Cloud resources within your application management boundary as services or workloads in an application, use the google apphub discovered service and google apphub discovered workload data sources to dynamically retrieve information about the resources you want to register.
-
-### "Quickstart: Create an application from existing resources \_|\_ App Hub\
-
-- URL: [https://docs.cloud.google.com/app-hub/docs/quickstart-create-application](https://docs.cloud.google.com/app-hub/docs/quickstart-create-application)
-- Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project](https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project)
+- Source ID: `site-docs-root-2`
+- Final score: 177
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Compute Engine API ( compute.googleapis.com ) Infrastructure Manager API ( config.googleapis.com ) Enable APIs Required roles To get the permissions that you need to enable required APIs and create a sample application from existing resources, ask your administrator to grant you the following IAM roles on the management project: To enable required APIs: Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) To get full access to required services: App Hub Admin ( roles/apphub.admin ) Cloud Run Admin ( roles/run.admin ) Compute Admin ( roles/compute.admin ) Cloud Infrastructure Manager Admin ( roles/config.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
-- When you set up a management project, most of the APIs you need for this quickstart are enabled automatically.
-- When the application is created, the Applications page displays its details, including the resources you registered as services. gcloud Create the application: gcloud apphub applications create my-global-app \ --location = global \ --display-name = "My Global Application" \ --project = ${ PROJECT ID } Discover the IDs for the forwarding rule and the Cloud Run service in the appropriate region: gcloud apphub discovered-services list \ --location = global \ --project = ${ PROJECT ID } gcloud apphub discovered-services list \ --location = ${ REGION } \ --project = ${ PROJECT ID } Note the ID of the forwarding rule and the Cloud Run service.
-- This quickstart assumes you have defined an application management boundary and creates an application using the management project .
+- Confirm the attachment status: gcloud apphub boundary describe \ --project = PROJECT ID \ --location = global You obtain an output similar to the following example: name: projects/ PROJECT ID /locations/ LOCATION /boundary crmNode: projects/ PROJECT ID createTime: 2025 -08-28T19:04:47Z updateTime: 2025 -08-28T19:04:47Z type: AUTOMATIC When you finish configuring the management project, the required APIs for application management are enabled, and you can start using App Hub to group services and workloads in applications.
+- Required roles To get the permissions that you need to configure a single project for application management, ask your administrator to grant you the following IAM roles on the project that you want to configure as the standalone management project: Manage resources, permissions, and billing on the project: Project Owner ( roles/owner ) Manage all application components on the project: App Hub Admin ( roles/apphub.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Enable the App Hub API: gcloud services enable apphub.googleapis.com \ --project PROJECT ID Attach the project to itself to create an application management boundary: gcloud apphub boundary update \ --crm-node = projects/ PROJECT ID \ --project = PROJECT ID \ --location = global This command configures the project as its own management project, letting App Hub automatically discover all supported resources within it.
+- When you disable application management on the project, the project is detached from its application management boundary .
+
+### Set up a folder \_|\_ App Hub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder](https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder)
+- Source ID: `site-docs-root-2`
+- Final score: 155
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- App-enabled folders contain a management project and support all Application-centric Google Cloud features, including application design in Application Design Center, insights in Cloud Hub, and assistance from Gemini Cloud Assist.
+- Manage projects in your app-enabled folder App-enabled folders automatically make infrastructure resources from all descendant projects and folders available to group into an application.
+- If a project or folder containing services and workloads that you have grouped in an application is moved out of the app-enabled folder, the application will continue to exist in the app-enabled folder, but the registration status of services and workloads from that project or folder will change to detached .
+- To control which resources are available, you can create, move, or delete projects and folders in the app-enabled folder: Create a project Shutting down (deleting) projects Moving a project Moving a folder It is important to understand the resource hierarchy in your app-enabled folder.
 

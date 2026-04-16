@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:18.699Z"
+generated_at: "2026-04-12T12:15:58.546Z"
 product_name: "Eventarc"
 product_slug: "eventarc"
 feature_name: "Path pattern filtering"
@@ -9,9 +9,10 @@ latest_feature_date: "2022-02-22"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal"
-  - "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient"
-  - "https://docs.cloud.google.com/eventarc/docs/overview"
+  - "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb"
+  - "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+  - "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub"
+  - "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry"
 keywords:
   - "path"
   - "pattern"
@@ -38,47 +39,66 @@ Eventarc supports path pattern matching in trigger filters.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal](https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal)
-- [https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient](https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient)
-- [https://docs.cloud.google.com/eventarc/docs/overview](https://docs.cloud.google.com/eventarc/docs/overview)
+- [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb)
+- [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway)
+- [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub)
+- [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry)
 
 ## Supporting Pages
 
-### Roles and permissions for an internal HTTP endpoint in a VPC network | Eventarc Standard | Google Cloud Documentation
+### "Route AlloyDB for PostgreSQL events to GKE \_|\_ Eventarc Standard \_|\_\
 
-- URL: [https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal](https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal)
+- URL: [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb)
 - Source ID: `site-iam-reference`
-- Final score: 132
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Roles and permissions for an internal HTTP endpoint in a VPC network Eventarc Standard Google Cloud Documentation Source URL: https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal This document shows you how to grant Identity and Access Management (IAM) roles and permissions to support routing events from Google Cloud to an internal HTTP endpoint in a Virtual Private Cloud (VPC) network using Eventarc.
-
-### Eventarc Publishing v1 API - Class PublisherClient (2.0.0-beta08) | .NET client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient](https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient)
-- Source ID: `site-docs-reference`
-- Final score: 106
+- Final score: 197
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Eventarc Publishing v1 API - Class PublisherClient (2.0.0-beta08) .NET client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Eventarc.Publishing.V1/latest/Google.Cloud.Eventarc.Publishing.V1.PublisherClient Reference documentation and code samples for the Eventarc Publishing v1 API class PublisherClient.
+- For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \ --location = LOCATION \ --destination-gke-cluster = DESTINATION GKE CLUSTER \ --destination-gke-location = DESTINATION GKE LOCATION \ --destination-gke-namespace = DESTINATION GKE NAMESPACE \ --destination-gke-service = DESTINATION GKE SERVICE \ --destination-gke-path = DESTINATION GKE PATH \ --event-filters = "type= EVENT FILTER TYPE " \ --event-filters = " COLLECTION ID = RESOURCE ID " \ --event-filters-path-pattern = " COLLECTION ID = PATH PATTERN " \ --event-data-content-type = " EVENT DATA CONTENT TYPE " \ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com " Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.
+- Example: gcloud eventarc triggers create helloworld-trigger \ --location=us-central1 \ --destination-gke-cluster=gke-events-cluster \ --destination-gke-location=us-central1-a \ --destination-gke-namespace=default \ --destination-gke-service=helloworld-events \ --destination-gke-path=/ \ --event-filters="type=google.cloud.alloydb.cluster.v1.updated" \ --event-filters-path-pattern="cluster=my-cluster- " \ --service-account=${SERVICE ACCOUNT NAME}@${PROJECT ID}.iam.gserviceaccount.com This command creates a trigger called helloworld-trigger for the event identified as google.cloud.alloydb.cluster.v1.updated and matches events for cluster IDs starting with my-cluster- .
+- PATH PATTERN : the path pattern to apply when filtering for the resource.
+- To sort your triggers, beside any supported column heading, click arrow upward Sort . gcloud Run the following command to list your triggers: gcloud eventarc triggers list --location = - This command lists your triggers in all locations, and includes details such as names, types, destinations, and statuses.
 
-### Eventarc overview | Google Cloud Documentation
+### "Route API Gateway events to GKE \_|\_ Eventarc Standard \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/eventarc/docs/overview](https://docs.cloud.google.com/eventarc/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 83
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway)
+- Source ID: `site-iam-reference`
+- Final score: 197
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Both editions offer a scalable, serverless, and fully managed eventing solution that lets you asynchronously route messages from sources to targets using loosely coupled services that are triggered by and react to state changes known as events.
-- Eventarc overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/eventarc/docs/overview Eventarc is offered in two editions: Eventarc Advanced and Eventarc Standard.
-- Both editions support a range of event providers and destinations—including Google Cloud services, custom applications, SaaS applications, and third-party services—while managing delivery, security, authorization, observability, and error-handling for you.
+- For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \ --location = LOCATION \ --destination-gke-cluster = DESTINATION GKE CLUSTER \ --destination-gke-location = DESTINATION GKE LOCATION \ --destination-gke-namespace = DESTINATION GKE NAMESPACE \ --destination-gke-service = DESTINATION GKE SERVICE \ --destination-gke-path = DESTINATION GKE PATH \ --event-filters = "type= EVENT FILTER TYPE " \ --event-filters = " COLLECTION ID = RESOURCE ID " \ --event-filters-path-pattern = " COLLECTION ID = PATH PATTERN " \ --event-data-content-type = " EVENT DATA CONTENT TYPE " \ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com " Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.
+- Example: gcloud eventarc triggers create helloworld-trigger \ --location=us-central1 \ --destination-gke-cluster=gke-events-cluster \ --destination-gke-location=us-central1-a \ --destination-gke-namespace=default \ --destination-gke-service=helloworld-events \ --destination-gke-path=/ \ --event-filters="type=google.cloud.apigateway.gateway.v1.updated" \ --event-filters-path-pattern="gateway=my-gateway- " \ --service-account=${SERVICE ACCOUNT NAME}@${PROJECT ID}.iam.gserviceaccount.com This command creates a trigger called helloworld-trigger for the event identified as google.cloud.apigateway.gateway.v1.updated and matches events for gateway IDs starting with my-gateway- .
+- PATH PATTERN : the path pattern to apply when filtering for the resource.
+- To sort your triggers, beside any supported column heading, click arrow upward Sort . gcloud Run the following command to list your triggers: gcloud eventarc triggers list --location = - This command lists your triggers in all locations, and includes details such as names, types, destinations, and statuses.
+
+### "Route Apigee API hub events to GKE \_|\_ Eventarc Standard \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-api-hub)
+- Source ID: `site-iam-reference`
+- Final score: 197
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \ --location = LOCATION \ --destination-gke-cluster = DESTINATION GKE CLUSTER \ --destination-gke-location = DESTINATION GKE LOCATION \ --destination-gke-namespace = DESTINATION GKE NAMESPACE \ --destination-gke-service = DESTINATION GKE SERVICE \ --destination-gke-path = DESTINATION GKE PATH \ --event-filters = "type= EVENT FILTER TYPE " \ --event-filters = " COLLECTION ID = RESOURCE ID " \ --event-filters-path-pattern = " COLLECTION ID = PATH PATTERN " \ --event-data-content-type = " EVENT DATA CONTENT TYPE " \ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com " Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.
+- Example: gcloud eventarc triggers create helloworld-trigger \ --location=us-central1 \ --destination-gke-cluster=gke-events-cluster \ --destination-gke-location=us-central1-a \ --destination-gke-namespace=default \ --destination-gke-service=helloworld-events \ --destination-gke-path=/ \ --event-filters="type=google.cloud.apihub.deployment.v1.updated" \ --event-filters-path-pattern="deployment=my-deployment- " \ --service-account=${SERVICE ACCOUNT NAME}@${PROJECT ID}.iam.gserviceaccount.com This command creates a trigger called helloworld-trigger for the event identified as google.cloud.apihub.deployment.v1.updated and matches events for deployment IDs starting with my-deployment- .
+- PATH PATTERN : the path pattern to apply when filtering for the resource.
+- To sort your triggers, beside any supported column heading, click arrow upward Sort . gcloud Run the following command to list your triggers: gcloud eventarc triggers list --location = - This command lists your triggers in all locations, and includes details such as names, types, destinations, and statuses.
+
+### "Route Apigee Registry events to GKE \_|\_ Eventarc Standard \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry](https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry)
+- Source ID: `site-iam-reference`
+- Final score: 197
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \ --location = LOCATION \ --destination-gke-cluster = DESTINATION GKE CLUSTER \ --destination-gke-location = DESTINATION GKE LOCATION \ --destination-gke-namespace = DESTINATION GKE NAMESPACE \ --destination-gke-service = DESTINATION GKE SERVICE \ --destination-gke-path = DESTINATION GKE PATH \ --event-filters = "type= EVENT FILTER TYPE " \ --event-filters = " COLLECTION ID = RESOURCE ID " \ --event-filters-path-pattern = " COLLECTION ID = PATH PATTERN " \ --event-data-content-type = " EVENT DATA CONTENT TYPE " \ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com " Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.
+- Example: gcloud eventarc triggers create helloworld-trigger \ --location=us-central1 \ --destination-gke-cluster=gke-events-cluster \ --destination-gke-location=us-central1-a \ --destination-gke-namespace=default \ --destination-gke-service=helloworld-events \ --destination-gke-path=/ \ --event-filters="type=google.cloud.apigeeregistry.apiDeployment.v1.updated" \ --event-filters-path-pattern="deployment=my-deployment- " \ --service-account=${SERVICE ACCOUNT NAME}@${PROJECT ID}.iam.gserviceaccount.com This command creates a trigger called helloworld-trigger for the event identified as google.cloud.apigeeregistry.apiDeployment.v1.updated and matches events for deployment IDs starting with my-deployment- .
+- PATH PATTERN : the path pattern to apply when filtering for the resource.
+- To sort your triggers, beside any supported column heading, click arrow upward Sort . gcloud Run the following command to list your triggers: gcloud eventarc triggers list --location = - This command lists your triggers in all locations, and includes details such as names, types, destinations, and statuses.
 

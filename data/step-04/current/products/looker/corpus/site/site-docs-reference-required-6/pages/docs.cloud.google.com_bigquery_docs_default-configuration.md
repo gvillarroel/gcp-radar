@@ -1,0 +1,631 @@
+---
+title: "Manage configuration settings \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/bigquery/docs/default-configuration
+knowledge_key: corpus
+source_id: site-docs-reference-required-6
+source_type: site
+entrypoint: https://docs.cloud.google.com/bigquery/docs/information-schema-jobs
+source_metadata:
+  url: https://docs.cloud.google.com/bigquery/docs/default-configuration
+  title: "Manage configuration settings \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Data analytics
+BigQuery
+Guides
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Manage configuration settings
+BigQuery administrators and project owners can manage
+configuration settings at the organization and project levels. You can set
+configurations to enforce security, control costs, and optimize query
+performance across your entire data infrastructure. By setting default values,
+you can ensure consistent compliance and operational efficiency, making it
+easier to manage your BigQuery environment.
+The following sections describe how to specify default configuration
+settings. Default settings are configured at an organization or project level
+but can be overridden at the session or job level.
+Required roles
+To get the permission that
+you need to specify a configuration setting,
+ask your administrator to grant you the
+BigQuery Admin ( roles/bigquery.admin )
+IAM role.
+For more information about granting roles, see Manage access to projects, folders, and organizations .
+This predefined role contains the
+bigquery.config.update
+permission,
+which is required to
+specify a configuration setting.
+You might also be able to get
+this permission
+with custom roles or
+other predefined roles .
+For more information on IAM roles and permissions in
+BigQuery, see
+Predefined roles and permissions .
+Specify global settings
+You can specify global settings at the organization or project level.
+Limitations
+Global configuration settings are subject to the following limitations:
+Global organization and project settings are not available in
+BigQuery Omni locations .
+When you modify the default_location global setting, it can take up to
+10 minutes to propagate. Until the setting is propagated, it is possible for
+eligible queries to be routed to the previous default location.
+Configure global organization settings
+If you don't explicitly specify a location ,
+the location is determined in one of the following ways:
+The location of the datasets referenced in the request. For example, if a
+query references a table or view in a dataset stored in the
+asia-northeast1 region, the query job runs in asia-northeast1 .
+The region specified for a connection referenced in a request.
+The location of a destination table.
+If the location isn't explicitly specified, and it can't be determined from the
+resources in the request, the default location is used. If default location
+isn't set, the job runs in the US multi-region.
+You can configure global settings at the organization level by using the
+ALTER ORGANIZATION SET OPTIONS DDL statement . The default
+location is the only global organization setting. The default location is used
+to run jobs when the location can't be inferred from the request.
+When you configure the default location, you don't specify a region where the
+setting applies. You can't mix global and regional settings in the same DDL
+statement.
+Note: When you modify the default_location global setting, it can take up to
+10 minutes to propagate. Until the setting is propagated, it is possible for
+eligible queries to be routed to the previous default location.
+To configure the default_location at the organization level, follow these
+steps:
+Console
+Go to the BigQuery page in the Google Cloud console.
+Go to BigQuery
+Click the query editor. This tab is labeled search_insights
+Untitled query .
+To configure the default_location , enter the following DDL statement
+into the Query editor :
+ALTER ORGANIZATION
+SET OPTIONS (
+`default_location` = ' LOCATION '
+);
+Replace LOCATION with a region or multi-region
+location . This value is the location used to
+run jobs when it can't be inferred from the request. For example, the
+default location is used if the location of the datasets in a query
+can't be determined.
+Alternatively, to clear the default_location organization-level global
+settings, enter the following DDL statement into the Query editor :
+ALTER ORGANIZATION
+SET OPTIONS (
+`default_location` = NULL
+);
+Click Run .
+bq
+To configure the default_location at the organization level, enter the
+bq query command
+and supply the following DDL statement as the query parameter. Set the
+use_legacy_sql flag to false .
+ALTER ORGANIZATION
+SET OPTIONS (
+`default_location` = ' LOCATION '
+);
+Replace LOCATION with a region or multi-region
+location . This value is the location used to run
+jobs when it can't be inferred from the request. For example, the default
+location is used if the location of the datasets in a query can't be
+determined.
+To clear the default_location at the organization level,
+enter the bq query
+command and supply the following DDL statement as the query parameter. Set
+the use_legacy_sql flag to false .
+ALTER ORGANIZATION
+SET OPTIONS (
+`default_location` = NULL
+);
+API
+Call the jobs.query method
+and supply the DDL statement in the request body's query property.
+Configure global project settings
+If you don't explicitly specify a location ,
+the location is determined in one of the following ways:
+The location of the datasets referenced in the request. For example, if a
+query references a table or view in a dataset stored in the
+asia-northeast1 region, the query job runs in asia-northeast1 .
+The region specified for a connection referenced in a request.
+The location of a destination table.
+If the location isn't explicitly specified, and it can't be determined from the
+resources in the request, the default location is used. If default location
+isn't set, the job runs in the US multi-region.
+You can configure global settings at the project level by using by using the
+ALTER PROJECT SET OPTIONS DDL statement .
+The ALTER PROJECT SET OPTIONS DDL statement optionally accepts the
+PROJECT_ID variable. If the PROJECT_ID is not specified, it defaults to the
+current project where you run the ALTER PROJECT DDL statement.
+The default location is the only global project setting. When you configure the
+default location, you don't specify a region where the setting applies. You
+can't mix global and regional settings in the same DDL statement.
+Project-level configurations override organization-level configurations.
+Project-level configurations can in turn be overridden by
+session-level configurations , which can
+be overridden by job-level configurations .
+To configure the default_location at the project level, follow these steps:
+Console
+Go to the BigQuery page in the Google Cloud console.
+Go to BigQuery
+Click the query editor. This tab is labeled search_insights
+Untitled query .
+To configure the default_location , enter the following DDL statement
+into the Query editor :
+ALTER PROJECT PROJECT_ID
+SET OPTIONS (
+`default_location` = ' LOCATION '
+);
+Replace the following:
+PROJECT_ID : the project ID.
+LOCATION : a region or multi-region
+location . This value is the location
+used to run jobs when it can't be inferred from the request. For
+example, the default location is used if the location of the
+datasets in a query can't be determined.
+Alternatively, to clear the default_location setting, enter the
+following DDL statement into the Query editor . If you
+clear the default_location at the project level, organization-level
+default settings are used, if they exist. Otherwise, the system default
+setting is used.
+ALTER PROJECT PROJECT_ID
+SET OPTIONS (
+`default_location` = NULL
+);
+Click Run .
+bq
+To configure the default_location at the project level, enter the
+bq query command
+and supply the following DDL statement as the query parameter. Set the
+use_legacy_sql flag to false .
+ALTER PROJECT PROJECT_ID
+SET OPTIONS (
+`default_location` = ' LOCATION '
+);
+Replace the following:
+PROJECT_ID : the project ID.
+LOCATION : a region or multi-region
+location . This value is the location used to
+run jobs when it can't be inferred from the request. For example, the
+default location is used if the location of the datasets in a query
+can't be determined.
+Alternatively, to clear the default_location at the project level,
+enter the bq query
+command and supply the following DDL statement as the query parameter. Set
+the use_legacy_sql flag to false . If you clear the default_location at
+the project level, organization-level default settings are used, if they
+exist. Otherwise, the system default setting is used.
+ALTER PROJECT PROJECT_ID
+SET OPTIONS (
+`default_location` = NULL
+);
+API
+Call the jobs.query method
+and supply the DDL statement in the request body's query property.
+Specify regional settings
+You can configure regional settings at the organization or project level.
+Configure regional organization settings
+You can configure regional settings at the organization level by using the
+ALTER ORGANIZATION SET OPTIONS DDL statement . You must
+specify the region where each organization setting applies. You can only use one
+region in a statement.
+To configure regional organization settings, follow these steps. The following
+example specifies several default regional configurations, including the
+following:
+Time zone: America/Chicago
+Cloud KMS key: a user-defined key
+Query timeout: 30 minutes (1,800,000 milliseconds)
+Interactive query queue timeout: 10 minutes (600,000 milliseconds)
+Batch query queue timeout: 20 minutes (1,200,000 milliseconds)
+INFORMATION_SCHEMA : enabled
+To see all regional organization settings, go to
+organization_set_options_list .
+Console
+Go to the BigQuery page in the Google Cloud console.
+Go to BigQuery
+Click the query editor. This tab is labeled search_insights
+Untitled query .
+To configure the regional organization settings, enter the following DDL
+statement into the Query editor :
+ALTER ORGANIZATION
+SET OPTIONS (
+`region- REGION .default_time_zone` = 'America/Chicago' ,
+-- Ensure all service accounts under the organization have permission to KMS_KEY
+`region- REGION .default_kms_key_name` = KMS_KEY ,
+`region- REGION .default_query_job_timeout_ms` = 1800000 ,
+`region- REGION .default_interactive_query_queue_timeout_ms` = 600000 ,
+`region- REGION .default_batch_query_queue_timeout_ms` = 1200000 ,
+`region- REGION .enable_info_schema_storage` = true );
+Replace the following:
+REGION : the
+region
+associated with your project or organization—for example, us or
+europe-west6 . The value for REGION must be the same for each option in
+the command.
+KMS_KEY : a user-defined Cloud KMS key. For
+more information, see
+Customer-managed Cloud KMS keys .
+Alternatively, to clear the regional organization settings, enter the
+following DDL statement into the Query editor :
+ALTER ORGANIZATION
+SET OPTIONS (
+`region- REGION .default_time_zone` = NULL ,
+`region- REGION .default_kms_key_name` = NULL ,
+`region- REGION .default_query_job_timeout_ms` = NULL ,
+`region- REGION .default_interactive_query_queue_timeout_ms` = NULL ,
+`region- REGION .default_batch_query_queue_timeout_ms` = NULL ,
+`region- REGION .enable_info_schema_storage` = NULL );
+Click Run .
+bq
+To configure the regional organization settings, enter the
+bq query command
+and supply the following DDL statement as the query parameter. Set the
+use_legacy_sql flag to false .
+ALTER ORGANIZATION
+SET OPTIONS (
+`region- REGION .default_time_zone` = 'America/Chicago' ,
+-- Ensure all service accounts under the organization have permission to KMS_KEY
+`region- REGION .default_kms_key_name` = KMS_KEY ,
+`region- REGION .default_query_job_timeout_ms` = 1800000 ,
+`region- REGION .default_interactive_query_queue_timeout_ms` = 600000 ,
+`region- REGION .default_batch_query_queue_timeout_ms` = 1200000 );
+Replace the following:
+REGION : the
+region
+associated with your project or organization—for example, us or
+europe-west6 . The value for REGION must be the same for each option in
+the command.
+KMS_KEY : a user-defined Cloud KMS key. For
+more information, see
+Customer-managed Cloud KMS keys .
+Alternatively, to clear the regional organization settings, enter the
+bq query command
+and supply the following DDL statement as the query parameter. Set the
+use_legacy_sql flag to false :
+ALTER ORGANIZATION
+SET OPTIONS (
+`region- REGION .default_time_zone` = NULL ,
+`region- REGION .default_kms_key_name` = NULL ,
+`region- REGION .default_query_job_timeout_ms` = NULL ,
+`region- REGION .default_interactive_query_queue_timeout_ms` = NULL ,
+`region- REGION .default_batch_query_queue_timeout_ms` = NULL ,
+`region- REGION .default_storage_billing_model` = NULL ,
+`region- REGION .default_max_time_travel_hours` = NULL ,
+`region- REGION .default_cloud_resource_connection_id` = NULL ,
+`region- REGION .default_sql_dialect_option` = NULL ,
+`region- REGION .enable_reservation_based_fairness` = NULL ,
+`region- REGION .enable_global_queries_execution` = NULL ,
+`region- REGION .enable_global_queries_data_access` = NULL );
+API
+Call the jobs.query method
+and supply the DDL statement in the request body's query property.
+Configure regional project settings
+You can configure regional settings at the project level by using the
+ALTER PROJECT SET OPTIONS DDL statement .
+When you specify the configuration, you must specify the region where it
+applies. You can only use one region in each statement.
+Project-level configurations override organization-level configurations.
+Project-level configurations can in turn be overridden by
+session-level configurations , which can
+be overridden by job-level configurations .
+The ALTER PROJECT SET OPTIONS DDL statement optionally accepts the
+PROJECT_ID variable. If the PROJECT_ID variable is not specified, it
+defaults to the current project where you run the ALTER PROJECT DDL statement.
+The following example specifies several regional, project-level settings,
+including the following:
+Time zone: America/Los_Angeles
+Cloud KMS key: an example key
+Query timeout: 1 hour (1,800,000 milliseconds)
+Interactive query queue timeout: 10 minutes (600,000 milliseconds)
+Batch query queue timeout: 20 minutes (1,200,000 milliseconds)
+Reservation-based fairness: enabled
+Global queries: enabled for running and for accessing data
+INFORMATION_SCHEMA : enabled
+To see all regional project settings, go to
+project_set_options_list .
+Console
+Go to the BigQuery page in the Google Cloud console.
+Go to BigQuery
+Click the query editor. This tab is labeled search_insights
+Untitled query .
+To configure the regional project settings, enter the following DDL
+statement into the Query editor :
+ALTER PROJECT PROJECT_ID
+SET OPTIONS (
+`region- REGION .default_time_zone` = 'America/Los_Angeles' ,
+-- Ensure all service accounts under the project have permission to KMS_KEY
+`region- REGION .default_kms_key_name` = KMS_KEY ,
+`region- REGION .default_query_job_timeout_ms` = 3600000 ,
+`region- REGION .default_interactive_query_queue_timeout_ms` = 600000 ,
+`region- REGION .default_batch_query_queue_timeout_ms` = 1200000 ,
+`region- REGION .enable_reservation_based_fairness` = true ,
+`region- REGION .enable_global_queries_execution` = true ,
+`region- REGION .enable_global_queries_data_access` = true ,
+`region- REGION .enable_info_schema_storage` = true );
+Replace the following:
+PROJECT_ID : the project ID.
+REGION : the
+region
+associated with your project or organization—for example, us or
+europe-west6 . The value for REGION must be the same for each option
+in the command.
+KMS_KEY : a user-defined Cloud KMS
+key. For more information, see
+Customer-managed Cloud KMS keys .
+Alternatively, to clear the regional project settings, enter the
+following DDL statement into the Query editor :
+ALTER PROJECT PROJECT_ID
+SET OPTIONS (
+`region- REGION .default_time_zone` = NULL ,
+`region- REGION .default_kms_key_name` = NULL ,
+`region- REGION .default_query_job_timeout_ms` = NULL ,
+`region- REGION .default_interactive_query_queue_timeout_ms` = NULL ,
+`region- REGION .default_batch_query_queue_timeout_ms` = NULL ,
+`region- REGION .enable_reservation_based_fairness` = false ,
+`region- REGION .enable_info_schema_storage` = NULL );
+Click Run .
+bq
+To configure the regional project settings, enter the
+bq query command
+and supply the following DDL statement as the query parameter. Set the
+use_legacy_sql flag to false .
+ALTER PROJECT PROJECT_ID
+SET OPTIONS (
+`region- REGION .default_time_zone` = 'America/Chicago' ,
+-- Ensure all service accounts under the organization have permission to KMS_KEY
+`region- REGION .default_kms_key_name` = KMS_KEY ,
+`region- REGION .default_query_job_timeout_ms` = 1800000 ,
+`region- REGION .default_interactive_query_queue_timeout_ms` = 600000 ,
+`region- REGION .default_batch_query_queue_timeout_ms` = 1200000 ,
+`region- REGION .enable_reservation_based_fairness` = true );
+Replace the following:
+PROJECT_ID : the project ID.
+REGION : the
+region
+associated with your project or organization—for example, us or
+europe-west6 . The value for REGION must be the same for each option in
+the command.
+KMS_KEY : a user-defined Cloud KMS key. For
+more information, see
+Customer-managed Cloud KMS keys .
+Alternatively, to clear the regional project settings, enter the
+bq query command
+and supply the following DDL statement as the query parameter. Set the
+use_legacy_sql flag to false :
+ALTER ORGANIZATION
+SET OPTIONS (
+`region- REGION .default_time_zone` = NULL ,
+`region- REGION .default_kms_key_name` = NULL ,
+`region- REGION .default_query_job_timeout_ms` = NULL ,
+`region- REGION .default_interactive_query_queue_timeout_ms` = NULL ,
+`region- REGION .default_batch_query_queue_timeout_ms` = NULL ,
+`region- REGION .enable_reservation_based_fairness` = false ,
+`region- REGION .enable_global_queries_execution` = NULL ,
+`region- REGION .enable_global_queries_data_access` = NULL );
+API
+Call the jobs.query method
+and supply the DDL statement in the request body's query property.
+Retrieve configuration settings
+You can view the configuration settings for an organization or project
+by using the following INFORMATION_SCHEMA
+views:
+INFORMATION_SCHEMA.PROJECT_OPTIONS :
+the configurations applied to a project.
+INFORMATION_SCHEMA.EFFECTIVE_PROJECT_OPTIONS :
+the effective configurations applied to a project. Effective configurations
+include all configurations set at the project level as well as all settings
+inherited by the project from an organization.
+INFORMATION_SCHEMA.ORGANIZATION_OPTIONS :
+the configurations applied to an organization.
+It may take a few minutes for new configurations to become effective and
+reflected within the INFORMATION_SCHEMA view.
+Required roles
+To get the permission that
+you need to retrieve configuration settings,
+ask your administrator to grant you the
+BigQuery Job User ( roles/bigquery.jobUser )
+IAM role on the specified project.
+For more information about granting roles, see Manage access to projects, folders, and organizations .
+This predefined role contains the
+bigquery.config.get
+permission,
+which is required to
+retrieve configuration settings.
+You might also be able to get
+this permission
+with custom roles or
+other predefined roles .
+For more information on IAM roles and permissions in
+BigQuery, see
+Predefined roles and permissions .
+Examples
+Use the following query examples to retrieve your project and organization
+settings from the INFORMATION_SCHEMA views.
+View global settings
+To view all global organization settings, run the following query:
+SELECT * FROM INFORMATION_SCHEMA . ORGANIZATION_OPTIONS ;
+To view just the default location organization setting, run the following query:
+SELECT
+option_value
+FROM INFORMATION_SCHEMA . ORGANIZATION_OPTIONS
+WHERE option_name = 'default_location'
+To view all effective global configurations for your default project, run the
+following query:
+SELECT * FROM INFORMATION_SCHEMA . EFFECTIVE_PROJECT_OPTIONS ;
+To view just the default location effective global configuration for your
+default project, run the following query:
+SELECT
+option_value
+FROM INFORMATION_SCHEMA . EFFECTIVE_PROJECT_OPTIONS
+WHERE option_name = 'default_location'
+To view all global configurations for your default project, run the
+following query:
+SELECT * FROM INFORMATION_SCHEMA . PROJECT_OPTIONS ;
+To view just the default location setting for your default project, run the
+following query:
+SELECT
+option_value
+FROM INFORMATION_SCHEMA . PROJECT_OPTIONS
+WHERE option_name = 'default_location'
+View regional settings
+To view the configurations under an organization in the us region, run the
+following query:
+SELECT * FROM region - us . INFORMATION_SCHEMA . ORGANIZATION_OPTIONS ;
+To view the effective configurations under your default project in the us
+region, run the following query:
+SELECT * FROM region - us . INFORMATION_SCHEMA . EFFECTIVE_PROJECT_OPTIONS ;
+To view the configurations under your default project in the us region,
+run the following query:
+SELECT * FROM region - us . INFORMATION_SCHEMA . PROJECT_OPTIONS ;
+Configuration settings
+The following sections describe the configuration settings that you can specify.
+Query and job execution settings
+Use the following settings to control how queries are executed, timed, and
+queued.
+default_batch_query_queue_timeout_ms : The default amount of time, in
+milliseconds, that a batch query is
+queued . If unset, the default is 24
+hours. The minimum value is 1 millisecond. The maximum value is 48 hours.
+To turn off batch query queueing, set the value to -1 .
+default_interactive_query_queue_timeout_ms : The default amount of time,
+in milliseconds, that an interactive query is
+queued . If unset, the default
+is six hours. The minimum value is 1 millisecond. The maximum value is 48
+hours. To turn off interactive query queueing, set the value to -1 .
+default_query_job_timeout_ms : The default time after which a query job
+times out, including the time the job is queued and the time spent running.
+The timeout period must be between 5 minutes and 48 hours. This timeout
+only applies to individual query jobs and the child jobs of scripts. To set
+a timeout for script jobs, you should use the jobs.insert
+API method and set the jobTimeoutMs field.
+Note: The default_query_job_timeout_ms setting also applies to
+continuous query jobs. To
+override this project-level setting for an individual continuous query,
+assign a
+job timeout
+to the continuous query in question. Continuous queries still adhere to
+maximum runtimes .
+default_location : The default_location configuration setting
+is used to run jobs when the location isn't set or can't be determined .
+If default_location isn't set, the job runs in the US multi-region.
+enable_reservation_based_fairness : The option that determines how idle
+slots are shared. The default value is false, which means idle slots are
+equally distributed across all query projects. If enabled, the idle slots
+are shared equally across all reservations first, and then across projects
+within the reservation. For more information, see
+reservation-based fairness . This option is
+only supported at the project level. You can't specify it at the
+organization or job level.
+default_time_zone : The default time zone to use in time zone-dependent
+GoogleSQL functions, when a time zone is not specified as an
+argument. This configuration does not apply to
+time-unit column partitioned tables
+(which use UTC as the time zone), the
+Storage Transfer Service schedule transfers ,
+or loading data with the bq command-line tool .
+For more information, see
+time zones .
+Note: If you want to set a default time zone, ensure any existing queries
+that use DATETIME literals aren't affected. This includes queries with the
+explicit DATETIME keyword, implicitly converted string literals passed as
+a parameter to time functions like DATETIME_DIFF('2022-10-01', ...) , the
+PARSE_DATETIME() function, and more. For this reason, it is safer to only
+set the default_time_zone parameter on new projects.
+default_query_optimizer_options : The history-based query optimizations.
+This option can be one of the following:
+'adaptive=on' : Use history-based query optimizations.
+'adaptive=off' : Don't use history-based query optimizations.
+NULL (default): Use the default history-based query optimizations
+setting, which is equivalent to 'adaptive=on' .
+default_sql_dialect_option : The default SQL query dialect for executing
+query jobs using the bq command-line tool or BigQuery API. Changing this setting
+doesn't affect the default dialect in the console. This option can be one of
+the following:
+'default_legacy_sql' (default): Use legacy SQL if the query dialect
+isn't specified at the job level.
+'default_google_sql' : Use GoogleSQL if the query dialect
+isn't specified at the job level.
+'only_google_sql' : Use GoogleSQL if the query dialect isn't
+specified at the job level. Reject jobs with query dialect set to legacy
+SQL.
+NULL : Use the default query dialect setting, which is equivalent to
+'default_legacy_sql' .
+enable_global_queries_execution : The option that determines if
+global queries can be run. The default
+value is FALSE , which means that global queries are not enabled.
+enable_global_queries_data_access : The option that determines if
+global queries can access data stored in
+the region. The default value is FALSE , which means that global queries
+can't copy data from this region regardless of the project in which they
+run.
+Data management settings
+Use the following settings to define rules for data creation, security, and
+lifecycle.
+default_column_name_character_map : The default scope and handling of
+characters in column names. If unset, load jobs that use unsupported
+characters in column names fail with an error message. Some older
+tables might be set to replace unsupported characters in column names.
+For more information, see
+load_option_list .
+default_kms_key_name : The default Cloud Key Management Service key for encrypting table
+data, including temporary or anonymous tables. For more information, see
+Customer-managed Cloud KMS keys .
+Note: to set a default Cloud KMS key, you must grant the
+Encrypter/Decrypter role to all BigQuery service accounts that
+are used within the project or organization. If a service account within the
+project or organization doesn't have appropriate permissions, all queries
+run by the service account fail. For information about assigning the
+Encrypter/Decrypter role, see
+Assign the Encrypter/Decrypter role .
+If you set a default Cloud KMS key without first assigning the
+appropriate roles, you can clear the default key by setting the value to
+NULL . For examples, see
+Configure organization settings and
+Configure project settings .
+default_max_time_travel_hours : The default time travel window in hours for
+new datasets. This duration must be within the range of 48 to 168,
+inclusive, and must be divisible by 24. Changing the default max time travel
+hours does not affect existing datasets. For more information, see
+Time Travel and data retention .
+enable_info_schema_storage : The option that provides access to
+INFORMATION_SCHEMA.TABLE_STORAGE
+and SEARCH_INDEXES
+views and their variants. By default, this option is not enabled. If you
+query these views for the first time without setting this option to TRUE ,
+the query fails and provides instructions to enable it. After this option is
+enabled, queries succeed immediately and return data generated from that
+point forward. A complete backfill of historical data can take approximately
+one day to become available in the views. If you used these
+views before this setting was introduced, this option is already enabled.
+Cost and resource settings
+Use the following settings to determine how resources are billed and connected.
+default_storage_billing_model : The default storage billing model for new
+datasets. Set the value to PHYSICAL to use physical bytes when calculating storage
+charges or to LOGICAL to use logical bytes.
+Note that changing the default storage billing model does not affect existing datasets.
+For more information, see Storage billing models .
+default_cloud_resource_connection_id : The default connection to use when
+creating tables and models. Only specify the connection's ID or name, and
+exclude the attached project ID and region prefixes. Using
+default connections can cause the permissions granted to the connection's
+service account to be updated, depending on the type of table or model you're
+creating. For more information, see the Default connection
+overview .
+Pricing
+There is no additional charge to use the BigQuery configuration
+service. For more information, see Pricing .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-14 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

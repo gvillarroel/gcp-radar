@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.902Z"
+generated_at: "2026-04-14T15:34:54.450Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Gemini Cloud Assist in Cloud Run"
 feature_slug: "gemini-cloud-assist-in-cloud-run"
 latest_feature_date: "2025-04-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service"
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+  - "https://docs.cloud.google.com/run/docs/ai"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service"
 keywords:
+  - "assistance"
+  - "optimize"
   - "gemini"
   - "assist"
-  - "in"
-  - "run"
-  - "provides"
-  - "product"
+  - "design"
   - "chat"
-  - "assistance"
+  - "provides"
 ---
 
 # Gemini Cloud Assist in Cloud Run
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +37,51 @@ Gemini Cloud Assist provides in-product chat assistance to design, optimize, and
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service)
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/mapping-custom-domains](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
+- [https://docs.cloud.google.com/run/docs/ai](https://docs.cloud.google.com/run/docs/ai)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service)
 
 ## Supporting Pages
 
 ### "Quickstart: Build and deploy a Python (LangChain) web app to Cloud Run \_\
 
 - URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-2`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Write the sample application To write an application in Python: Create a new directory named langchain-gemini-fastapi-app and change directory into it: mkdir langchain-gemini-fastapi-app cd langchain-gemini-fastapi-app Create a file named main.py and paste the following code into it: import os import uvicorn from fastapi import FastAPI , HTTPException from pydantic import BaseModel from langchain google genai import ChatGoogleGenerativeAI from langchain core.prompts import ChatPromptTemplate from langchain core.output parsers import StrOutputParser Initialize FastAPI app = FastAPI ( title = "LangChain Gemini Cloud Run App" ) 1.
 - Define Endpoint @app . post ( "/chat" ) async def chat ( request : QueryRequest ): try : response = await chain . ainvoke ({ "topic" : request . topic }) return { "response" : response } except Exception as e : raise HTTPException ( status code = 500 , detail = str ( e )) @app . get ( "/" ) def health check (): return { "status" : "ok" , "service" : "Gemini-FastAPI" } Create a file named requirements.txt and paste the following code into it: fastapi uvicorn langchain langchain-google-genai python-dotenv Deploy to Cloud Run from source Deploy from source automatically builds a container image from source code and deploys it.
-- Test your Cloud Run service Test your service by sending a query to the agent using the following curl command: curl -X POST YOUR-SERVICE-URL /chat \ -H "Content-Type: application/json" \ -H "Authorization: Bearer $(gcloud auth print-identity-token)" \ -d '{"topic": "What is the capital of France?"}' Replace YOUR-SERVICE-URL with your service's URL.
-- To deploy from source using the following command: gcloud run deploy gemini-fastapi-service \ --source . \ --region us-central1 \ --no-allow-unauthenticated \ --set-env-vars GEMINI API KEY = API KEY Replace API KEY with your Google AI Studio API key .
+- Setup Gemini Model We expect GOOGLE API KEY to be set in the environment variables llm = ChatGoogleGenerativeAI ( model = "gemini-2.5-flash" , temperature = 0.7 ) 2.
+- Define the Chain prompt = ChatPromptTemplate . from template ( "You are a helpful assistant.
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### AI/ML orchestration on Cloud Run documentation \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
+- URL: [https://docs.cloud.google.com/run/docs/ai](https://docs.cloud.google.com/run/docs/ai)
 - Source ID: `site-docs-root`
-- Final score: 138
+- Final score: 60
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Documentation resources Find quickstarts and guides, review key references, and get help with common issues. info Run AI solutions Concept Explore AI use cases Concept Host AI agents How-to Host A2A agents How-to Deploy A2A agents How-to Host MCP servers Tutorial Build and deploy a remote MCP server Concept Code execution Concept Browser and OS automation info Inference with GPUs Tutorial Run LLM inference on Cloud Run GPUs with Gemma 3 and Ollama How-to Run Gemma 3 models on Cloud Run Tutorial Run LLM inference on Cloud Run GPUs with Hugging Face Best practice Best practices: Cloud Run services with GPUs Tutorial Fine tune LLMs using GPUs with Cloud Run jobs Tutorial GPU-accelerated video transcoding with FFmpeg on Cloud Run jobs Best practice Best practices: Cloud Run jobs with GPUs Best practice Best practices: Cloud Run worker pools with GPUs info Troubleshoot Concept Cloud Run troubleshooting strategies How-to Troubleshoot all Cloud Run issues How-to Troubleshoot with Gemini Cloud Assist How-to Troubleshoot with Gemini Cloud Assist investigations Related resources Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services.
+- Model Packaging Cloud Storage FUSE Best Practices Large Models Use case Use cases Package and deploy your machine learning models to Google Cloud with Cog Use the Cog framework that is optimized for ML serving to simplify packaging and deployment of containers to Cloud Run.
+- This guide emphasizes scale-to-zero and provides deployment steps for models like Gemma 2 with Ollama.
+- Explore our tutorials and best practices to see how Cloud Run can optimize your AI/ML workloads.
+
+### Quickstart: Deploy a Python (FastAPI) web app to Google Cloud with Cloud Run | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 57
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- You can use the chat panel to design , optimize , and troubleshoot your Cloud Run apps with Gemini assistance.
-- April 09, 2025 Feature Gemini Cloud Assist in Cloud Run is supported in Preview .
-- May 12, 2021 Feature Cloud Run now provides UI, command line, and YAML support for referencing Secret Manager Secrets . (Available in public preview.) Feature Customer managed encryption keys are now available for use with Cloud Run. (Available in public preview.) Feature Recommender now provides recommendations for securing Cloud Run services by creating dedicated service accounts. (Available in public preview.) Feature Committed use discounts are now available for Cloud Run . (Available in public preview.) Feature You can now use Binary authorization with Cloud Run to enforce policy-based deployment of Cloud Run services. (Available in public preview.) May 03, 2021 Feature You can now use Identity-aware Proxy with Cloud Run to use identity and context to guard access to your applications. (Available in public preview.) Change By default, the memory allocated to each container instance of a new service is 512MiB.
-- This execution environment provides better performance and the ability to use network file systems. (Available in public preview.) Feature Cloud Run now supports network file systems such as NFS, NDB, 9P, CIFS/Samba, and Ceph , as well as Cloud Filestore and Cloud Storage FUSE . (Available in public preview.) September 28, 2021 Feature Binary Authorization for Cloud Run is now at generally availability (GA).
-
-### Mapping custom domains \_|\_ Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/mapping-custom-domains](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
-- Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- You can set up a custom domain rather than the default address that Cloud Run provides for a deployed service.
-- To create a Cloud Run service, add the following to your existing main.tf file: resource "google cloud run v2 service" "default" { name = "custom-domain" # Replace with your service name location = "us-central1" deletion protection = false # set to true to prevent destruction of the resource template { containers { image = "us-docker.pkg.dev/cloudrun/container/hello" # Replace with your container image } } } Replace: custom-domain with your Cloud Run service name. us-docker.pkg.dev/cloudrun/container/hello with a reference to your container image.
-- Map your Cloud Run service to the custom domain: data "google project" "project" {} resource "google cloud run domain mapping" "default" { name = "verified-domain.com" location = google cloud run v2 service.default.location metadata { namespace = data.google project.project.project id } spec { route name = google cloud run v2 service.default.name } } Replace verified-domain.com with your custom verified domain, for example, example.com or subdomain.example.com .
-- Retrieve the DNS record information for your domain mappings using the following: Console Go to the Cloud Run domain mappings page: Domain mappings page Click the three-dot vertical ellipse icon to the right of your service, then click DNS RECORDS to display all the DNS records: gcloud gcloud beta run domain-mappings describe --domain [ DOMAIN ] Replace [DOMAIN] with your custom domain, for example, example.com or subdomain.example.com .
+- AI use cases in Cloud Run Get started Overview Deploy a sample web service Deploy a sample container Deploy from a git repository Deploy a Hello World service from source code Go Node.js Python Flask FastAPI Gradio LangChain Smolagents Streamlit Agent Development Kit (ADK) for Python Java Kotlin C# C++ PHP Ruby Other Frameworks Overview Angular SSR Next.js Nuxt.js SvelteKit Deploy a sample function Deploy a function using the console Deploy a function using gcloud Execute a sample job Execute a job Execute a job from source code Go Node.js Python Java Shell Deploy a sample worker pool Develop Set up your environment Plan and prepare your service Develop your service Containerize your code Connect to Google Cloud services Install a system package in your container Run gcloud commands within your container Plan and prepare your function Overview Compare Cloud Run functions Write Cloud Run functions Runtimes Overview Node.js Overview Node.js dependencies Python Overview Python dependencies Go Overview Go dependencies Java Overview Java dependencies .NET Ruby PHP Local functions development Function triggers Tutorials Create a function that returns BigQuery results Create a function that returns Spanner results Integrate with Cloud databases Codelabs Build and test Build sources to containers Build functions to containers Local testing Serve HTTP requests Deploy services Deploy container images Continuous deployment from git Deploy from source code Deploy from Compose Deploy functions Serve web traffic Mapping custom domains Serving static assets with CDN Serving traffic from multiple regions Deploy a multi-region app with service health Enable session affinity Frontend proxying using Nginx Manage services View, copy, or delete services View or delete revisions Traffic migration, gradual rollouts, rollbacks Configure services Overview Capacity Memory limits CPU limits GPU GPU configuration GPU performance best practices Request timeout Maximum concurrent requests About maximum concurrent requests per instance Configure maximum concurrent requests Billing Optimize service configurations with Recommender Environment Container port and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes CIFS/SMB Execution environment Container health checks HTTP/2 requests Secrets Service identity Scaling About instance autoscaling for services Maximum instances About maximum instances for services Configure maximum instances Minimum instances Manual scaling Metadata Description Labels Tags Source deploy configurations Supported language runtimes and base images Configure automatic base image updates Build environment variables Build service account Build worker pools Invoke and trigger services Invoke with HTTPS requests Host a webhook target Stream with WebSockets Overview Build a WebSocket Chat service tutorial Invoke asynchronously Invoke services on a schedule Create a workflow Invoke services as part of a Workflow Connect a series of services from Cloud Functions and Cloud Run tutorial Execute asynchronous tasks Call a service from a Pub/Sub push subscription Trigger service from Pub/Sub Integrate image processing into Pub/Sub sample tutorial Trigger from events Create triggers with Eventarc Pub/Sub triggers Create Pub/Sub Eventarc triggers Trigger functions from Pub/Sub using Eventarc Trigger functions from routed log entries Cloud Storage triggers Create triggers with Cloud Storage Trigger services from Cloud Storage using Eventarc Trigger functions from Cloud Storage using Eventarc Firestore triggers Create triggers with Firestore Trigger functions from events in a Firestore database Connect with other services using gRPC Best practices General development tips for services Cost optimization Optimize Java services Optimize Python services Optimize Node.js services Load testing best practices Understand zonal redundancy Functions best practices Overview Configure event-driven function retries Execute job tasks to completion Create jobs Execute jobs Execute jobs Execute scheduled jobs Execute jobs from Workflows Configure jobs Container entrypoint CPU limits Memory limits GPU GPU configuration GPU best practices Environment variables Container health checks Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Labels Maximum retries Parallelism Secrets Service identity Task timeout Tags Manage jobs View or delete jobs View or stop job executions Best practices Jobs retries and checkpoints Cost optimization Perform continuous background work Deploy worker pools Deploy worker pools Deploy worker pools from source code Manage worker pools View or delete worker pools View or delete worker pool revisions Instance splits and rollbacks Configure worker pools Capacity Memory limits CPU limits GPU GPU configuration GPU best practices Environment Container and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Container health checks Secrets Service identity Instance count Metadata Description Labels Scale based on external metrics Autoscale worker pools with external metrics Kafka autoscaler Host GitHub runners with worker pools Autoscale worker pools based on Prometheus metrics Autoscale worker pools with Pub/Sub pull subscriptions Automate scaling with Workflows Cost optimization Configure networking Best practices for Cloud Run networking Configure private networking Send traffic to VPC network Overview Direct VPC Register private IPs for worker pools using Cloud DNS Dual-stack (IPv4 and IPv6) Migrate standard VPC connector to Direct VPC VPC connectors Send traffic to Shared VPC network Overview Direct VPC Migrate Shared VPC connector to Direct VPC Connectors in service projects Connectors in host project Static outbound IP address Network security Restrict endpoint ingress (services) Use VPC Service Controls (VPC SC) Cloud Service Mesh Secure Security design overview Authenticate requests Overview Allow public access Custom audiences Authenticate developers Service-to-service Authenticate users End user authentication tutorial Secure your resources Access control with IAM Configure IAP for Cloud Run Introduction to service identity Protect services with Cloud Armor Use Binary Authorization Use Cloud Run Threat Detection Use customer managed encryption keys Manage custom constraints for projects View software supply chain security insights Secure Cloud Run services tutorial Multi-tenant platforms running untrusted code Monitor and log Monitoring and logging overview View built-in metrics Write Prometheus metrics Write OpenTelemetry metrics Log and view logs Audit logging Error reporting Use distributed tracing for services Run AI solutions Overview Explore resources AI agents Overview Build and deploy A2A agents Overview Deploy A2A agents Build and deploy ADK agents Build and deploy n8n agents MCP servers Overview Build and deploy a remote MCP server Tools Code execution Browser automation Inference with GPUs Overview Services Run LLM inference on Cloud Run GPUs with Ollama Run agents with Gemma 4 models on Cloud Run Run LLM inference on Cloud Run GPUs with vLLM Run OpenCV on Cloud Run with GPU acceleration Run LLM inference on Cloud Run GPUs with Hugging Face Transformers.js Run LLM inference on Cloud Run GPUs with Hugging Face TGI Jobs Fine tune LLMs using GPUs with Cloud Run jobs Run batch inference using GPUs with Cloud Run jobs GPU-accelerated video transcoding with FFmpeg AI-assisted development and vibe coding Introduction to Cloud Run for AI-assisted developers Cookbook Migrate An existing web service From App Engine From Cloud Run functions (1st gen) From AWS Lambda From Heroku From Cloud Foundry Migration overview Choose an OCI-compliant-strategy Migrate to OCI containers Migrate configuration Sample migration: Spring Music From VMWare Tanzu From a VM using Migrate to Containers From Kubernetes To GKE Troubleshoot Introduction Troubleshoot errors Local troubleshooting tutorial Known issues Samples All Cloud Run code samples All Cloud Run functions code samples Code samples for all products AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application hosting Cloud Run Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
 

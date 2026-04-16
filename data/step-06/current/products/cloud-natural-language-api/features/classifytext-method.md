@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T23:00:15.648Z"
+generated_at: "2026-04-12T12:11:52.621Z"
 product_name: "Cloud Natural Language API"
 product_slug: "cloud-natural-language-api"
 feature_name: "classifyText method"
 feature_slug: "classifytext-method"
 latest_feature_date: "2017-11-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/natural-language/docs/basics"
   - "https://docs.cloud.google.com/natural-language/docs/classifying-text"
+  - "https://docs.cloud.google.com/natural-language/docs/classify-text-tutorial"
   - "https://docs.cloud.google.com/natural-language/docs/categories"
 keywords:
   - "classifytext"
@@ -26,7 +27,7 @@ keywords:
 # classifyText method
 
 Product: Cloud Natural Language API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ The classifyText method analyzes text and returns a content category; The classi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/natural-language/docs/basics](https://docs.cloud.google.com/natural-language/docs/basics)
 - [https://docs.cloud.google.com/natural-language/docs/classifying-text](https://docs.cloud.google.com/natural-language/docs/classifying-text)
+- [https://docs.cloud.google.com/natural-language/docs/classify-text-tutorial](https://docs.cloud.google.com/natural-language/docs/classify-text-tutorial)
 - [https://docs.cloud.google.com/natural-language/docs/categories](https://docs.cloud.google.com/natural-language/docs/categories)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/natural-language/docs/basics](https://docs.cloud.google.com/natural-language/docs/basics)
 - Source ID: `site-docs-root`
-- Final score: 180
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 246
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Syntactic analysis requests Syntactic Analysis requests are sent to the Natural Language API through use of the analyzeSyntax method in the following form: { "document" : { "type" : "PLAIN TEXT" , "content" : "Ask not what your country can do for you, ask what you can do for your country." }, "encodingType" : "UTF8" } Syntactic analysis responses The Natural Language API processes the given text to extract sentences and tokens.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/natural-language/docs/classifying-text](https://docs.cloud.google.com/natural-language/docs/classifying-text)
 - Source ID: `site-docs-root`
-- Final score: 172
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 238
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Classifying Content from Cloud Storage Here is an example of classifying content stored in a text file on Cloud Storage: Protocol To classify content from a document stored in Cloud Storage, make a POST request to the documents:classifyText REST method and provide the appropriate request body with the path to the document as shown in the following example. curl -X POST \ -H "Authorization: Bearer " $( gcloud auth application-default print-access-token ) \ -H "Content-Type: application/json; charset=utf-8" \ --data "{ 'document':{ 'type':'PLAIN TEXT', 'gcsContentUri':'gs:// <bucket-name> / <object-name> ' } 'classificationModelOptions': { 'v1Model': { } } }" "https://language.googleapis.com/v1/documents:classifyText" Go To learn how to install and use the client library for Natural Language, see Natural Language client libraries .
@@ -76,13 +78,27 @@ Evidence snippets:
 - You can choose which model to use for the classifyText method by setting the optional classificationModelOptions field: The V2 model is a newer model with better performance that supports both Version 1 content categories and Version 2 content categories .
 - Content Classification analyzes a document and returns a list of content categories that apply to the text found in the document.
 
+### "Content Classification Tutorial \_|\_ Cloud Natural Language API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/natural-language/docs/classify-text-tutorial](https://docs.cloud.google.com/natural-language/docs/classify-text-tutorial)
+- Source ID: `site-iam-reference`
+- Final score: 206
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The classify function in the tutorial calls the Natural Language API classifyText method, by first creating an instance of the LanguageServiceClient class, and then calling the classify text method of the LanguageServiceClient instance.
+- You've installed the Google Cloud Client Library for Python Overview This tutorial walks you through a basic Natural Language application, using classifyText requests, which classifies content into categories along with a confidence score, such as: category: "/Internet & Telecom/Mobile & Wireless/Mobile Apps & Add-Ons" confidence: 0.6499999761581421 To see the list of all available category labels, see Categories .
+- Category: /Internet & Telecom, confidence: 0.509999990463 Category: /Computers & Electronics/Software, confidence: 0.550000011921 Most similar 3 indexed texts: Filename: android.txt Similarity: 0.600579500049 Filename: google.txt Similarity: 0.401314790229 Filename: gcp.txt Similarity: 0.38772339779 What's next With the content classification API you can create other applications.
+- The tutorial query function is similar to the query category function, with the added step of making a classifyText request for the text input, and using the results to query the index file.
+
 ### Content Categories \_|\_ Cloud Natural Language API \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/natural-language/docs/categories](https://docs.cloud.google.com/natural-language/docs/categories)
 - Source ID: `site-api-reference`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 204
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - A complete list of content categories returned for the classifyText method is provided.

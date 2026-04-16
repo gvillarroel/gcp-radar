@@ -1,17 +1,15 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.501Z"
+generated_at: "2026-04-14T15:13:19.539Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "GHSL Global building volume (GHS_BUILT_V)"
 feature_slug: "ghsl-global-building-volume-ghs-built-v"
 latest_feature_date: "2023-08-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/datasets/catalog"
-  - "https://developers.google.com/earth-engine/datasets/tags/population"
-  - "https://developers.google.com/earth-engine/docs/release-notes"
+  - "https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_BUILT_V"
 keywords:
   - "ghsl"
   - "global"
@@ -26,7 +24,7 @@ keywords:
 # GHSL Global building volume (GHS_BUILT_V)
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +36,32 @@ GHSL Global building volume estimates building volume globally for the 1975 to 2
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- [https://developers.google.com/earth-engine/datasets/tags/population](https://developers.google.com/earth-engine/datasets/tags/population)
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
+- [https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_BUILT_V](https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_BUILT_V)
 
 ## Supporting Pages
+
+### GHSL: Global building volume 1975-2030 (P2023A) | Earth Engine Data Catalog | Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_BUILT_V](https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_BUILT_V)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 420
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- GHSL: Global building volume 1975-2030 (P2023A) | Earth Engine Data Catalog | Google for Developers التخطّي إلى المحتوى الرئيسي Earth Engine Data Catalog / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 تسجيل الدخول الصفحة الرئيسية الفئات جميع مجموعات البيانات جميع العلامات Landsat MODIS Sentinel الناشر منتدى مستندات واجهة برمجة التطبيقات حالة مجموعة البيانات سجلّ التغييرات Earth Engine Data Catalog الصفحة الرئيسية الفئات جميع مجموعات البيانات جميع العلامات Landsat MODIS Sentinel الناشر منتدى مستندات واجهة برمجة التطبيقات حالة مجموعة البيانات سجلّ التغييرات الصفحة الرئيسية Earth Engine Data Catalog جميع مجموعات البيانات إرسال ملاحظات GHSL: Global building volume 1975-2030 (P2023A) تنظيم صفحاتك في مجموعات يمكنك حفظ المحتوى وتصنيفه حسب إعداداتك المفضّلة. مدى توفّر مجموعة البيانات 1975-01-01T00:00:00Z–2030-12-31T00:00:00Z الجهة المنتجة لمجموعة البيانات مركز الأبحاث المشترك التابع للمفوضية الأوروبية مقتطف Earth Engine ee.ImageCollection("JRC/GHSL/P2023A/GHS_BUILT_V") open_in_new العلامات alos building built-environment copernicus dem ghsl jrc population sdg sentinel2-derived srtm urban الوصف تعرض مجموعة بيانات الصور النقطية هذه التوزيع العالمي لحجم المباني، معبّرًا عنه بالأمتار المكعبة لكل خلية شبكية تبلغ مساحتها 100 متر. تقيس مجموعة البيانات إجمالي حجم المبنى وحجم المبنى المخصّص لخلايا الشبكة التي يغلب عليها الاستخدام غير السكني (NRES). تستند التقديرات إلى منتجَي المساحة المبنية و ارتفاع المبنى . يمكنك الاطّلاع على مزيد من المعلومات حول منتجات بيانات GHSL في تقرير حزمة بيانات GHSL لعام 2023 . يحظى مشروع "طبقة المستوطنات البشرية العالمية" (GHSL) بدعم من المفوضية الأوروبية و"المركز المشترك للبحوث" و"المديرية العامة للسياسة الإقليمية والحضرية". النطاقات النطاقات حجم البكسل: 100 متر (جميع النطاقات) الاسم الوحدات حجم البكسل الوصف built_volume_total م^3 ‫100 متر إجمالي حجم المباني لكل خلية شبكة built_volume_nres م^3 ‫100 متر حجم المباني غير السكنية لكل خلية شبكية بنود الاستخدام بنود الاستخدام تم إنتاج "الطبقة العالمية لتسوية السكان" (GHSL) من قِبل "مركز الأبحاث المشترك" التابع للمفوضية الأوروبية كبيانات مفتوحة ومجانية. يُسمح بإعادة الاستخدام، شرط الإشارة إلى المصدر. لمزيد من المعلومات، يُرجى قراءة شروط الاستخدام ( إشعار حقوق الطبع والنشر وإعادة الاستخدام الصادر عن المفوضية الأوروبية ). الاقتباسات المراجع مجموعة البيانات: "مارتينو بيساريسي" و"باناجيوتيس بوليتيس" (2023‏):GHS-BUILT-V R2023A - شبكات GHS لحجم المناطق المبنية، استنادًا إلى التقييم المشترك لبيانات Sentinel2 وLandsat وبيانات DEM العالمية، وصور متعددة للمناطق الجغرافية نفسها في أوقات مختلفة (1975-2030). المفوضية الأوروبية، المركز المشترك للبحوث (JRC) المعرّف الدائم: http://data.europa.eu/89h/ab2f107a-03cd-47a3-85e5-139d8ec63283 doi:10.2905/AB2F107A-03CD-47A3-85E5-139D8EC63283 المنهجية : Pesaresi, Martino, Marcello Schiavina, Panagiotis Politis, Sergio Freire, Katarzyna Krasnodebska, Johannes H.
+- Image ( 'JRC/GHSL/P2023A/GHS_BUILT_V/2020' ); var volume_total_1975 = image_1975 . select ( 'built_volume_total' ); var volume_total_2020 = image_2020 . select ( 'built_volume_total' ); var visParams = { min : 0 , max : 80000 , palette : [ '000004' , '51127c' , 'b73779' , 'fc8961' , 'fcfdbf' ], }; Map . setCenter ( 77.156 , 28.6532 , 10 ); Map . addLayer ( volume_total_1975 , visParams , 'Total building volume [m3], 1975' ); Map . addLayer ( volume_total_2020 , visParams , 'Total building volume [m3], 2020' ); فتح في "أداة تعديل الرموز" GHSL: Global building volume 1975-2030 (P2023A) تعرض مجموعة بيانات الصور النقطية هذه التوزيع العالمي لحجم المباني، معبّرًا عنه بالأمتار المكعبة لكل خلية شبكية تبلغ مساحتها 100 متر. تقيس مجموعة البيانات إجمالي حجم المبنى وحجم المبنى المخصّص لخلايا الشبكة التي يغلب عليها الاستخدام غير السكني (NRES). تستند التقديرات إلى منتجات المساحة المبنية وارتفاع المبنى. … JRC/GHSL/P2023A/GHS_BUILT_V, alos,building,built-environment,copernicus,dem,ghsl,jrc,population,sdg,sentinel2-derived,srtm,urban 1975-01-01T00:00:00Z/2030-12-31T00:00:00Z ‎-90 -180 90 180 Google Earth Engine https://developers.google.com/earth-engine/datasets https://doi.org/10.2905/AB2F107A-03CD-47A3-85E5-139D8EC63283 https://doi.org/10.2905/AB2F107A-03CD-47A3-85E5-139D8EC63283 هل تريد مشاركة ملاحظاتك معنا؟ [[["يسهُل فهم المحتوى.","easyToUnderstand","thumb-up"],["ساعَدني المحتوى في حلّ مشكلتي.","solvedMyProblem","thumb-up"],["غير ذلك","otherUp","thumb-up"]],[["لا يحتوي على المعلومات التي أحتاج إليها.","missingTheInformationINeed","thumb-down"],["الخطوات معقدة للغاية / كثيرة جدًا.","tooComplicatedTooManySteps","thumb-down"],["المحتوى قديم.","outOfDate","thumb-down"],["ثمة مشكلة في الترجمة.","translationIssue","thumb-down"],["مشكلة في العيّنات / التعليمات البرمجية","samplesCodeIssue","thumb-down"],["غير ذلك","otherDown","thumb-down"]],[],[],["The dataset, provided by EC JRC, details global building volume from 1975 to 2030, measured in cubic meters per 100m grid cell.
+- Accessible via Google Earth Engine with the snippet `ee.ImageCollection(\"JRC/GHSL/P2023A/GHS_BUILT_V\")`, it is free to use with proper citation.
+- Image ( 'JRC/GHSL/P2023A/GHS_BUILT_V/1975' ); var image_2020 = ee .
 
 ### Earth Engine Data Catalog \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 166
+- Final score: 82
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +74,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/population](https://developers.google.com/earth-engine/datasets/tags/population)
 - Source ID: `site-docs-root-3`
-- Final score: 156
+- Final score: 80
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -73,17 +82,4 @@ Evidence snippets:
 - Estimates are based on the built-up … alos building built-environment copernicus dem ghsl GHSL: Global built-up surface 10m (P2023A) This raster dataset depicts the distribution of built-up surfaces, expressed in square metres per 10 m grid cell, for 2018 as observed from the S2 image data.
 - More information about the GHSL data products can be found in the GHSL Data Package 2023 report … building built builtup copernicus ghsl height GPWv411: Adjusted to Match 2015 Revision of UN WPP Country Totals (Gridded Population of the World Version 4.11) This dataset contains estimates of the number of persons per 30 arc-second grid cell, consistent with national censuses and population registers with respect to relative spatial distribution but adjusted to match the 2015 Revision of UN World Population Prospects country totals.
 - Residential population estimates between 1975 and 2020 in 5-year intervals and projections to 2025 and 2030 derived from CIESIN GPWv4.11 were disaggregated from census or … ghsl jrc population sdg GHSL: Global settlement characteristics (10 m) 2018 (P2023A) This spatial raster dataset delineates human settlements at 10 m resolution, and describes their inner characteristics in terms of the functional and height-related components of the built environment.
-
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 134
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- August 22, 2023 Earth Engine Data Catalog Feature Added JRC/GHSL/P2023A/GHS BUILT C : GHSL: Global settlement characteristics (10 m) 2018 (P2023A) Added JRC/GHSL/P2023A/GHS BUILT V : GHSL: Global building volume 1975-2030 (P2023A) Added USGS/NLCD RELEASES/2019 REL/RCMAP/V5/TRENDS (no longer available) Added USGS/NLCD RELEASES/2019 REL/RCMAP/V5/TRENDS YEAR (no longer available) August 17, 2023 Earth Engine Server Breaking Added support for multidimensional arrays in Export.table.toBigQuery() .
-- August 14, 2018 Earth Engine Data Catalog Feature Added GLIMS/20171027 (no longer available) July 17, 2018 Earth Engine Data Catalog Feature Added CPOM/CryoSat2/ANTARCTICA DEM : CryoSat-2 Antarctica 1km DEM Added OSU/GIMP/2000 ICE OCEAN MASK : Greenland Ice & Ocean Mask - Greenland Mapping Project (GIMP) Added OSU/GIMP/2000 IMAGERY MOSAIC : 2000 Greenland Mosaic - Greenland Ice Mapping Project (GIMP) Added OSU/GIMP/DEM : Greenland DEM - Greenland Mapping Project (GIMP) Added OSU/GIMP/ICE VELOCITY OPT : MEaSUREs Greenland Ice Velocity: Selected Glacier Site Velocity Maps from Optical Images Version 2 Added TIGER/2016/Counties : TIGER: US Census Counties 2016 Added TIGER/2016/States : TIGER: US Census States 2016 Added USGS/LIMA/MOSAIC : Landsat Image Mosaic of Antarctica (LIMA) 16-Bit Pan-Sharpened Mosaic Added USGS/LIMA/SR : Landsat Image Mosaic of Antarctica (LIMA) - Processed Landsat Scenes (16 bit) July 10, 2018 Earth Engine Data Catalog Feature Added TRMM/3B43V7 : TRMM 3B43: Monthly Precipitation Estimates July 03, 2018 Earth Engine Data Catalog Feature Added CSP/ERGo/1 0/Global/ALOS CHILI : Global ALOS CHILI (Continuous Heat-Insolation Load Index) Added CSP/ERGo/1 0/Global/ALOS landforms : Global ALOS Landforms Added CSP/ERGo/1 0/Global/ALOS mTPI : Global ALOS mTPI (Multi-Scale Topographic Position Index) Added CSP/ERGo/1 0/Global/ALOS topoDiversity : Global ALOS Topographic Diversity Added CSP/ERGo/1 0/Global/SRTM CHILI : Global SRTM CHILI (Continuous Heat-Insolation Load Index) Added CSP/ERGo/1 0/Global/SRTM landforms : Global SRTM Landforms Added CSP/ERGo/1 0/Global/SRTM mTPI : Global SRTM mTPI (Multi-Scale Topographic Position Index) Added CSP/ERGo/1 0/Global/SRTM topoDiversity : Global SRTM Topographic Diversity Added CSP/ERGo/1 0/US/CHILI : US NED CHILI (Continuous Heat-Insolation Load Index) Added CSP/ERGo/1 0/US/landforms : US NED Landforms Added CSP/ERGo/1 0/US/lithology : US Lithology Added CSP/ERGo/1 0/US/mTPI : US NED mTPI (Multi-Scale Topographic Position Index) Added CSP/ERGo/1 0/US/physioDiversity : US NED Physiographic Diversity Added CSP/ERGo/1 0/US/physiography : US Physiography Added CSP/ERGo/1 0/US/topoDiversity : US NED Topographic Diversity Added JRC/GHSL/P2016/BUILT LDSMT GLOBE V1 (no longer available) Added JRC/GHSL/P2016/BUILT LDS GLOBE V1 (no longer available) Added JRC/GHSL/P2016/POP GPW GLOBE V1 (no longer available) Added JRC/GHSL/P2016/SMOD POP GLOBE V1 (no longer available) Added UMN/PGC/ArcticDEM/V2/2m (no longer available) Added UMN/PGC/ArcticDEM/V2/5m (no longer available) June 29, 2018 Earth Engine Server Fixed Added optional uniqueLabels parameter to ee.Algorithms.Image.Segmentation algorithms, which forces clusters to have unique IDs.
-- August 15, 2023 Earth Engine Data Catalog Feature Added JRC/GHSL/P2023A/GHS BUILT H : GHSL: Global building height 2018 (P2023A) Added JRC/GHSL/P2023A/GHS BUILT S : GHSL: Global built-up surface 1975-2030 (P2023A) Added Netherlands/Beeldmateriaal/LUCHTFOTO RGB : Netherlands orthophotos Added UMT/Climate/IrrMapper RF/v1 1 (no longer available) August 09, 2023 Earth Engine Code Editor Feature Launched Project-owned Apps feature to support app collaboration under a new project ID namespace.
-- October 22, 2024 Earth Engine Data Catalog Feature Added IUCN/GlobalEcosystemTypology/current : IUCN Global Ecosystem Typology Level 3: 1.0 Added LARSE/GEDI/GRIDDEDVEG 002/COUNTS/V1/12KM : Gridded GEDI Vegetation Structure Metrics and Biomass Density with COUNTS metrics, 12KM pixel size Added LARSE/GEDI/GRIDDEDVEG 002/COUNTS/V1/1KM : Gridded GEDI Vegetation Structure Metrics and Biomass Density with COUNTS metrics, 1KM pixel size Added LARSE/GEDI/GRIDDEDVEG 002/COUNTS/V1/6KM : Gridded GEDI Vegetation Structure Metrics and Biomass Density with COUNTS metrics, 6KM pixel size October 15, 2024 Earth Engine Data Catalog Feature Added JRC/GHSL/P2023A/GHS SMOD V2-0 : GHSL: Degree of Urbanization 1975-2030 V2-0 (P2023A) October 08, 2024 Earth Engine Data Catalog Feature Added UK/NHM/BII/V1 (no longer available) September 24, 2024 Earth Engine Data Catalog Feature Added BNETD/land cover/v1 : Cote d'Ivoire BNETD 2020 Land Cover Map Added GOOGLE/Research/open-buildings-temporal/v1 : Open Buildings Temporal V1 Added JRC/CEMS GLOFAS/FloodHazard/v1 (no longer available) September 03, 2024 Earth Engine Data Catalog Feature Added EDF/MethaneSAT/MethaneAIR/L3concentration : MethaneAIR L3 Concentration v1 Added EDF/OGIM/current : OGIM: Oil and Gas Infrastructure Mapping Database v2.5.1 Added NASA/EMIT/L2A/RFL : EMIT L2A Estimated Surface Reflectance and Uncertainty and Masks 60 m Added WRI/SBTN/naturalLands/v1 (no longer available) Earth Engine Python Client Library 0.1.419 Fixed Fixed a bug where the quota project wasn't being set when authenticating using the notebook auth mode.
 

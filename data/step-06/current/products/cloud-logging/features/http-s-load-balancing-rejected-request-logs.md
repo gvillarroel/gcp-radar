@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.573Z"
+generated_at: "2026-04-14T23:59:44.476Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "HTTP(S) load balancing rejected request logs"
 feature_slug: "http-s-load-balancing-rejected-request-logs"
 latest_feature_date: "2017-12-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/release-notes"
   - "https://docs.cloud.google.com/logging/docs/api/platform-logs"
   - "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
 keywords:
   - "http"
   - "load"
@@ -26,7 +26,7 @@ keywords:
 # HTTP(S) load balancing rejected request logs
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,35 +38,23 @@ HTTP(S) load balancing logging includes logs for rejected requests such as inval
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
 - [https://docs.cloud.google.com/logging/docs/api/platform-logs](https://docs.cloud.google.com/logging/docs/api/platform-logs)
 - [https://docs.cloud.google.com/logging/docs/agent/logging/configuration](https://docs.cloud.google.com/logging/docs/agent/logging/configuration)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis)
 
 ## Supporting Pages
-
-### Logging release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Google Cloud Platform HTTP(S) load balancing logging now includes logs for rejected requests , such as those due to invalid or expired URL signatures, and aligns httpRequest.requestSize with metrics from the Stackdriver Monitoring API .
-- For more information, see HTTP(S) Load Balancing Logging .
-- November 08, 2024 Change Audit Logging now populates the status.details field in the audit log with the google.rpc.ErrorInfo and google.rpc.Help proto payload types in cases where an API returns an error status and that status includes one of those types in the details field.
-- The Log Fields pane of the Logs Explorer now includes facets for application, service, and workload labels.
 
 ### Google Cloud platform logs \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/logging/docs/api/platform-logs](https://docs.cloud.google.com/logging/docs/api/platform-logs)
 - Source ID: `site-docs-reference`
-- Final score: 176
-- Re-rank relevance: N/A
+- Final score: 177
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - N/A DEFAULT Cloud Load Balancing Logging API service name: loadbalancing.googleapis.com Log ID Monitored resource Payload Labels Severities loadbalancing.googleapis.com%2Frequests internal http lb rule type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry N/A INFO WARNING ERROR loadbalancing.googleapis.com%2Fexternal regional requests http external regional lb rule type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry N/A INFO WARNING ERROR Cloud Locations Logging API service name: cloud.googleapis.com Log ID Monitored resource Payload Labels Severities cloud.googleapis.com%2Fipsec events vpn gateway VPN Tunnel logs from the VPN Gateway instance tunnel id DEBUG NOTICE Cloud Monitoring API Logging API service name: monitoring.googleapis.com Log ID Monitored resource Payload Labels Severities monitoring.googleapis.com%2Fuptime checks uptime url uptime url uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks gae app gae app uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks gce instance gce instance uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks aws ec2 instance aws ec2 instance uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks aws elb load balancer aws elb load balancer uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks k8s service k8s service uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks servicedirectory service servicedirectory service uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks cloud run revision cloud run revision uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE Cloud OS Config Logging API service name: osconfig.googleapis.com Log ID Monitored resource Payload Labels Severities osconfig.googleapis.com%2Fpatch job cloud osconfig patch job type.googleapis.com/google.cloud.osconfig.logging.PatchJobCompletedLog osconfig.googleapis.com/patch job INFO ERROR Cloud Run Logging API service name: run.googleapis.com Log ID Monitored resource Payload Labels Severities run.googleapis.com%2Fstdout cloud run revision Cloud Run stdout logs.
@@ -78,12 +66,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/logging/docs/agent/logging/configuration](https://docs.cloud.google.com/logging/docs/agent/logging/configuration)
 - Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
+- Final score: 167
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - If your log entry contains an exception stack trace, the exception stack trace should be set in this message JSON log field, so that the exception stack trace can be parsed and saved to Error Reporting. log (legacy Google Kubernetes Engine only) textPayload Only applies to legacy Google Kubernetes Engine: if, after moving special purpose fields, only a log field remains, then that field is saved as textPayload . httpRequest httpRequest A structured record in the format of the LogEntry HttpRequest field. "httpRequest":{"requestMethod":"GET"} time-related fields timestamp For more information, see Time-related fields . "time":"2020-10-12T07:20:50.52Z" logging.googleapis.com/insertId insertId For more information, see insertId on the LogEntry page. "logging.googleapis.com/insertId":"42" logging.googleapis.com/labels labels The value of this field must be a structured record.
 - JSON log field LogEntry field Cloud Logging agent function Example value severity severity The Logging agent attempts to match a variety of common severity strings, which includes the list of LogSeverity strings recognized by the Logging API. "severity":"ERROR" message textPayload (or part of jsonPayload ) The message that appears on the log entry line in the Logs Explorer. "message":"There was an error in the application." Note : message is saved as textPayload if it is the only field remaining after the Logging agent moves the other special-purpose fields and detect json wasn't enabled; otherwise message remains in jsonPayload . detect json is not applicable to managed logging environments like Google Kubernetes Engine.
 - For more information, see traceSampled on the LogEntry page. "logging.googleapis.com/trace sampled": false Time-related fields In general, time-related information about a log entry is stored in the timestamp field of the LogEntry object: { insertId: "1ad8d08f-6529-47ea-832e-467f869a2da4" ... resource: {2} timestamp: "2023-10-30T16:33:15.505196Z" } When the source for a log entry is structured data, the Logging agent uses the following rules to search the fields in the jsonPayload entry for time-related information: Search for a timestamp field that is a JSON object that includes the seconds and nanos fields, representing, respectively, a signed number of seconds from the UTC epoch and a nonnegative number of fractional seconds: jsonPayload: { ... "timestamp": { "seconds": CURRENT SECONDS, "nanos": CURRENT NANOS } } If the previous search fails, then search for a pair of timestampSeconds and timestampNanos fields: jsonPayload: { ... "timestampSeconds": CURRENT SECONDS, "timestampNanos": CURRENT NANOS } If the previous search fails, then search for a time field that is a string in RFC 3339 format: jsonPayload: { ... "time": CURRENT TIME RFC3339 } When time-related information is found, the Logging agent uses that information to set the value of the LogEntry.timestamp , and it doesn't copy that information from the structured record into the LogEntry.jsonPayload object.
 - To send logs via the fluentd in forward plugin, read the following instructions: Execute the following command on the VM with the Logging agent installed: echo '{"code": "send-log-via-fluent-cat", "message": "This is a log from in forward plugin."}' /opt/google-fluentd/embedded/bin/fluent-cat log-via-in-forward-plugin Check the Logs Explorer to see the ingested log entry: { insertId: "1kvvmhsg1ib4689" jsonPayload: { code: "send-log-via-fluent-cat" message: "This is a log from in forward plugin." } labels: { compute.googleapis.com/resource name: "add-structured-log-resource" } logName: "projects/my-sample-project-12345/logs/log-via-in-forward-plugin" receiveTimestamp: "2018-03-21T02:11:27.981020900Z" resource: { labels: { instance id: "5351724540900470204" project id: "my-sample-project-12345" zone: "us-central1-c" } type: "gce instance" } timestamp: "2018-03-21T02:11:22.717692494Z" } Streaming structured (JSON) log records from application code You can enable connectors in various languages to send structured logs from application code; for more information, review the fluentd documentation .
+
+### Internet Information Services \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis)
+- Source ID: `site-docs-root-2`
+- Final score: 163
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Detailed fields inside the LogEntry are as follows. iis access logs contain the following fields in the LogEntry : Field Type Description httpRequest.referer string Contents of the Referer header httpRequest.remoteIp string IP of the client that made the request httpRequest.requestMethod string HTTP method httpRequest.requestUrl string Request URL (typically just the path part of the URL) httpRequest.serverIp string The server's IP and port that was requested httpRequest.status number HTTP status code httpRequest.userAgent string Contents of the User-Agent header jsonPayload.sc substatus number The substatus error code jsonPayload.sc win32 status number The Windows status code jsonPayload.time taken number The length of time that the action took, in milliseconds jsonPayload.user string Authenticated username for the request timestamp string ( Timestamp ) Time the request was received Configure v1 metrics collection The Ops Agent on a Microsoft Windows VM automatically collects IIS v1 metrics.
+- Metric type Kind, Type Monitored resources Labels workload.googleapis.com/iis.connection.active GAUGE , INT64 gce instance workload.googleapis.com/iis.connection.anonymous CUMULATIVE , INT64 gce instance workload.googleapis.com/iis.connection.attempt.count CUMULATIVE , INT64 gce instance workload.googleapis.com/iis.network.blocked CUMULATIVE , INT64 gce instance workload.googleapis.com/iis.network.file.count CUMULATIVE , INT64 gce instance direction workload.googleapis.com/iis.network.io CUMULATIVE , INT64 gce instance direction workload.googleapis.com/iis.request.count CUMULATIVE , INT64 gce instance request workload.googleapis.com/iis.request.queue.age.max GAUGE , INT64 gce instance workload.googleapis.com/iis.request.queue.count GAUGE , INT64 gce instance workload.googleapis.com/iis.request.rejected CUMULATIVE , INT64 gce instance workload.googleapis.com/iis.thread.active GAUGE , INT64 gce instance workload.googleapis.com/iis.uptime GAUGE , INT64 gce instance Verify the configuration This section describes how to verify that you correctly configured the IIS receiver.
+- The following table shows the mapping of v1 metrics to v2 metrics: v1 metric ( agent.googleapis.com/iis/ ) v2 metric ( workload.googleapis.com/ ) current connections iis.connection.active network/transferred bytes count iis.network.io new connection count iis.connection.attempt.count request count iis.request.count Prerequisites To collect IIS telemetry, you must install the Ops Agent : For metrics v1, install version 1.0.0 or higher.
+- For v1 metrics, enter the following query in the editor, and then click Run query : {"agent.googleapis.com/iis/request count", monitored resource="gce instance"} For v2 metrics, enter the following query in the editor, and then click Run : {"workload.googleapis.com/iis.request.count", monitored resource="gce instance"} View dashboard To view your IIS metrics, you must have a chart or dashboard configured.
 

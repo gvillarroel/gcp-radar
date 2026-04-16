@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:23.974Z"
+generated_at: "2026-04-14T09:47:34.407Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "SLES12SP5SAP OS image support"
 feature_slug: "sles12sp5sap-os-image-support"
 latest_feature_date: "2025-12-29"
 deprecation_date: "2025-12-29"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
   - "https://docs.cloud.google.com/bare-metal/docs/bms-planning"
+  - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
+  - "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
 keywords:
   - "sles12sp5sap"
   - "image"
-  - "os"
   - "operating"
   - "system"
-  - "the"
-  - "for"
-  - "on"
 ---
 
 # SLES12SP5SAP OS image support
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +34,52 @@ Support for the SLES12SP5SAP operating-system image on Bare Metal Solution is de
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
 - [https://docs.cloud.google.com/bare-metal/docs/bms-planning](https://docs.cloud.google.com/bare-metal/docs/bms-planning)
+- [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
+- [https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide](https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide)
 
 ## Supporting Pages
-
-### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- Source ID: `site-docs-root`
-- Final score: 206
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For the OS image code, see Operating systems . curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME ?updateMask=os image" -d "{ 'osImage' : ' OS IMAGE ' }" Because this change takes awhile to complete, you can check the status by following the steps in View the status of a long-running operation .
-- For the OS image code, see Operating systems . gcloud bms instances update SERVER NAME --region REGION --os-image= OS IMAGE To set up SSH keys, encryption keys, or both, use the gcloud alpha bms instances update command.
-- To select one of the available OS images, visit Operating systems .
-- To get the OS image code for your OS, see Operating systems .
-
-### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- Source ID: `site-docs-root-2`
-- Final score: 196
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following output example shows that the Backup and DR agent service is running correctly: [root@test2 ]# service udsagent status Redirecting to /bin/systemctl status udsagent.service udsagent.service - Google Cloud Backup and DR service Loaded: loaded (/usr/lib/systemd/system/udsagent.service; enabled; vendor preset: disabled) Active: active (running) since Wed 2022-12-28 05:05:45 UTC; 2 days ago Process: 46753 ExecStop=/act/initscripts/udsagent.init stop (code=exited, status=0/SUCCESS) Process: 46770 ExecStart=/act/initscripts/udsagent.init start (code=exited, status=0/SUCCESS) Main PID: 46789 (udsagent) Tasks: 8 (limit: 48851) Memory: 74.0M CGroup: /system.slice/udsagent.service ├─46789 /opt/act/bin/udsagent start └─60570 /opt/act/bin/udsagent start Dec 30 05:11:30 test2 su[150713]: pam unix(su:session): session closed for user oracle Dec 30 05:11:30 test2 su[150778]: (to oracle) root on none Log messages from your backups can help you diagnose issues.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
-- Select the optimal machine type and Persistent Disk type When using a backup/recovery appliance with an application such as a file system or a database, you can measure performance based on how quickly the host instance's data transfers between the Compute Engine instances.
-- Note: When you set the Convert ASM Format to Filesystem Format field to Yes , you end up with the backup copy being created in a file system format, as opposed to an ASM disk format on the Backup and DR snapshot pool.
 
 ### Plan for Bare Metal Solution \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/bms-planning](https://docs.cloud.google.com/bare-metal/docs/bms-planning)
-- Source ID: `site-docs-root`
-- Final score: 192
+- Source ID: `site-docs-reference`
+- Final score: 88
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - OS version OS image code Machine series Machine type Lifecycle stage EOL and image deprecation date RHEL 7.7 for SAP LAMBRHEL77SAP o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers End of Life August 2023 RHEL 7.9 RHEL7x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA June 2024 RHEL 8.4 (Minor version locked) RHEL84 o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life May 2023 RHEL 8 (Latest minor release) RHEL8x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA May 2029 RHEL 8.0 for SAP RHEL80SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life December 2020 RHEL 8.1 for SAP RHEL81SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life November 2023 RHEL 9.4 (Minor version locked) RHEL94 o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life May 2023 RHEL 9 (Latest minor release) RHEL9x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA May 2032 OEL 7.9 OEL7x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA July 2024 OEL 8 (Latest minor release) OEL8x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA July 2029 OEL 8.8 (Minor version locked) OEL88 o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA June 2025 OEL 9 OEL9x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA June 2032 SLES 15 SP1 SLES15SPx o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life January 2024 SLES 12 SP4 for SAP SLES12SP4SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal o2-ultramem-896-metal General-purpose & Memory-optimized servers End of Life June 2023 SLES 12 SP5 for SAP SLES12SP5SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal o2-ultramem-896-metal General-purpose & Memory-optimized servers End of Support October 2027 SLES 15 for SAP SLES15SAP o2-standard-48-metal o2-standard-32-metal o2-standard-112-metal o2-standard-16-metal o2-highmem-224-metal General-purpose End of Life December 2022 SLES 15 SP1 for SAP SLES15SPxSAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal o2-ultramem-896-metal General-purpose & Memory-optimized servers End of Support January 2024 SLES 15 SP2 for SAP LAMBSLES15SP2SAP o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers GA December 2024 Bring Your Own Image (BYOI) The Bare Metal Solution servers are certified to run only the OS images of the following distributions: Red Hat Enterprise Linux (RHEL) Oracle Linux (OL) SUSE Linux Enterprise Server (SLES) Any other OS hasn't been tested or certified to run on the Bare Metal Solution servers.
 - Operating systems When you place an order for Bare Metal Solution, you can specify the operating system (OS) that you need installed on your servers.
-- For instructions, follow: Click the server On the Server details page click EDIT On Edit Server page select Reimage server Specify the OS image .
-- Remove any personally identifiable information (PII) from the OS image.
+- Configure the MTU on your Bare Metal Solution servers by using your server's operating system.
+- If you request a hypervisor, you must install any guest operating system yourself.
+
+### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
+- Source ID: `site-docs-reference`
+- Final score: 83
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For the OS image code, see Operating systems . curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME ?updateMask=os image" -d "{ 'osImage' : ' OS IMAGE ' }" Because this change takes awhile to complete, you can check the status by following the steps in View the status of a long-running operation .
+- View OS details To view the details of the operating system (OS) of your server, run the gcloud bms os-images describe command to view the OS details. gcloud bms os-images describe OS IMAGE --project= PROJECT ID Replace the following: OS IMAGE : The OS image code.
+- For the OS image code, see Operating systems . gcloud bms instances update SERVER NAME --region REGION --os-image= OS IMAGE To set up SSH keys, encryption keys, or both, use the gcloud alpha bms instances update command.
+- To select one of the available OS images, visit Operating systems .
+
+### "Deployment Manager: SAP HANA scale-up high-availability cluster configuration\
+
+- URL: [https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide](https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 81
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For example, host-project-id / subnetwork-name . linuxImage String The name of the Linux operating- system image or image family that you are using with SAP HANA.
+- For the OS image list, see Operating system details .
+- RHEL [root@example-ha-vm1 ]# df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 0 126G 0% /dev tmpfs 126G 54M 126G 1% /dev/shm tmpfs 126G 25M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda2 30G 5.4G 25G 18% / /dev/sda1 200M 6.9M 193M 4% /boot/efi /dev/mapper/vg hana-shared 251G 52G 200G 21% /hana/shared /dev/mapper/vg hana-sap 32G 477M 32G 2% /usr/sap /dev/mapper/vg hana-data 426G 9.8G 417G 3% /hana/data /dev/mapper/vg hana-log 125G 7.0G 118G 6% /hana/log /dev/mapper/vg hanabackup-backup 512G 9.3G 503G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/899 tmpfs 26G 0 26G 0% /run/user/1003 SLES example-ha-vm1: # df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 8.0K 126G 1% /dev tmpfs 189G 54M 189G 1% /dev/shm tmpfs 126G 34M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda3 30G 5.4G 25G 18% / /dev/sda2 20M 2.9M 18M 15% /boot/efi /dev/mapper/vg hana-shared 251G 50G 202G 20% /hana/shared /dev/mapper/vg hana-sap 32G 281M 32G 1% /usr/sap /dev/mapper/vg hana-data 426G 8.0G 418G 2% /hana/data /dev/mapper/vg hana-log 125G 4.3G 121G 4% /hana/log /dev/mapper/vg hanabackup-backup 512G 6.4G 506G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/473 tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/0 tmpfs 26G 0 26G 0% /run/user/1003 Check the status of the new cluster by entering the status command that is specific to your operating system: RHEL pcs status SLES crm status You should see results similar to the following the example, in which both VM instances are started and example-ha-vm1 is the active primary instance: RHEL [root@example-ha-vm1 ]# pcs status Cluster name: hacluster Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.3-5.el8 2.4-4b1f869f0f) - partition with quorum Last updated: Wed Jul 7 23:05:11 2021 Last change: Wed Jul 7 23:04:43 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:fence gce): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:fence gce): Started example-ha-vm1 Resource Group: g-primary: rsc healthcheck HA1 (service:haproxy): Started example-ha-vm2 rsc vip HA1 00 (ocf::heartbeat:IPaddr2): Started example-ha-vm2 Clone Set: SAPHanaTopology HA1 00-clone [SAPHanaTopology HA1 00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: SAPHana HA1 00-clone [SAPHana HA1 00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] Failed Resource Actions: rsc healthcheck HA1 start 0 on example-ha-vm1 'error' (1): call=29, status='complete', exitreason='', last-rc-change='2021-07-07 21:07:35Z', queued=0ms, exec=2097ms SAPHana HA1 00 monitor 61000 on example-ha-vm1 'not running' (7): call=44, status='complete', exitreason='', last-rc-change='2021-07-07 21:09:49Z', queued=0ms, exec=0ms Daemon Status: corosync: active/enabled pacemaker: active/enabled pcsd: active/enabled SLES example-ha-vm1: # crm status Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.4+20200616.2deceaa3a-3.9.1-2.0.4+20200616.2deceaa3a) - partition with quorum Last updated: Wed Jul 7 22:57:59 2021 Last change: Wed Jul 7 22:57:03 2021 by root via crm attribute on example-ha-vm1 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:external/gcpstonith): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:external/gcpstonith): Started example-ha-vm1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started example-ha-vm1 rsc vip hc-primary (ocf::heartbeat:anything): Started example-ha-vm1 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: msl SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ example-ha-vm1 ] Slaves: [ example-ha-vm2 ] Change to the SAP admin user by replacing SID LC in the following command with the SID value that you specified in the configuration file template.
+- To fix your deployments to a specific release of the scripts, comment out the type property above and uncomment the type property below. type: https://storage.googleapis.com/cloudsapdeploy/deploymentmanager/ yyyymmddhhmm /dm-templates/sap hana ha ilb/sap hana ha.py properties: primaryInstanceName: example-ha-vm1 secondaryInstanceName: example-ha-vm2 primaryZone: us-central1-a secondaryZone: us-central1-c instanceType: n2-highmem-32 network: example-network subnetwork: example-subnet-us-central1 linuxImage: family/sles-15-sp1-sap linuxImageProject: suse-sap-cloud SAP HANA parameters sap hana deployment bucket: my-hana-bucket sap hana sid: HA1 sap hana instance number: 00 sap hana sidadm password: TempPa55word sap hana system password: TempPa55word VIP parameters sap vip: 10.0.0.100 primaryInstanceGroupName: ig-example-ha-vm1 secondaryInstanceGroupName: ig-example-ha-vm2 loadBalancerName: lb-ha1 Additional optional properties networkTag: hana-ha-ntwk-tag serviceAccount: sap-deploy-example@example-project-123456.iam.gserviceaccount.com Create the instances: $ gcloud deployment-manager deployments create deployment-name --config template-name .yaml The above command invokes the Deployment Manager, which sets up the Google Cloud infrastructure and then hands control over to a script that installs and configures SAP HANA and the HA cluster.
 

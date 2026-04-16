@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:30.171Z"
+generated_at: "2026-04-12T12:16:28.704Z"
 product_name: "Google Cloud Managed Service for Apache Kafka"
 product_slug: "google-cloud-managed-service-for-apache-kafka"
 feature_name: "automatic broker scaling and capacity safety checks"
 feature_slug: "automatic-broker-scaling-and-capacity-safety-checks"
 latest_feature_date: "2025-07-15"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub"
+  - "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview"
+  - "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+  - "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/brokers"
 keywords:
   - "automatic"
   - "broker"
@@ -24,7 +27,7 @@ keywords:
 # automatic broker scaling and capacity safety checks
 
 Product: Google Cloud Managed Service for Apache Kafka
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ The service automatically creates new brokers based on cluster memory and vCPU s
 
 The service automatically creates new brokers based on cluster memory and vCPU settings and checks broker capacity when a cluster size changes.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub](https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub)
+- [https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview](https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview)
+- [https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations](https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations)
+- [https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/brokers](https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/brokers)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Choose Cloud Managed Service for Apache Kafka or Pub/Sub \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub](https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub)
+- Source ID: `site-iam-reference`
+- Final score: 157
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Open source Kafka compatibility for lift and shift No Yes Identity and Access Management and security Yes Yes Automatic network configuration Yes Yes Multi-cloud: identical across clouds No Yes Uptime SLA Yes Yes Data plane SLA Yes Not at this time Logging and monitoring Yes Yes Partition rebalancing across brokers Not applicable Yes Automatic capacity Pub/Sub dynamically adjusts capacity based on the incoming message rate and subscriber demand.
+- Automatic storage management Yes Yes Automatic software upgrades Yes Yes Customer support Yes Yes Kafka Connect Service Not applicable With user-provided Connect services Schema support Yes With user-provided schema registry Compatible with ks qIDB, KSQL No Yes Support for OSS connectors Yes for Kafka and Flink connectors No Integration with Data Lake and Data Warehouse Yes Yes Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- If you're already running Kafka and willing to rewrite your applications to get the benefits of a highly scalable, autoscaling, global service, Pub/Sub is a good recommendation.
+- However, you must manage the cluster size and configure several other properties based on the scaling needs of your topics.
+
+### "Managed Service for Apache Kafka overview \_|\_ Google Cloud Managed Service\
+
+- URL: [https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview](https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 147
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Scaling algorithm The number of brokers is determined by the cluster's total vCPU or memory capacity.
+- For example, if you configure a cluster with 70 vCPUs and 130 GiB RAM, along with a replication factor of 3, the following calculation determines the number of brokers: Calculate the number of brokers required to account for vCPUs: ceiling(70 vCPUs / 15 vCPUs) = 5 brokers Calculate the number of brokers required to account for memory: ceiling(130 GiB / 120 GiB) = 2 brokers In this scenario, the cluster has 5 brokers, because the number of brokers is determined by the number of vCPUs.
+- Simple sizing and scaling To size or scale a Managed Service for Apache Kafka cluster, you need only set the total vCPU count and RAM size for the cluster.
+- Broker provisioning When you configure the total vCPU and RAM size for the cluster, the service provisions new brokers and scales existing brokers.
+
+### "Managed Service for Apache Kafka overview \_|\_ Google Cloud Managed Service\
+
+- URL: [https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations](https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations)
+- Source ID: `site-docs-root`
+- Final score: 147
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Scaling algorithm The number of brokers is determined by the cluster's total vCPU or memory capacity.
+- For example, if you configure a cluster with 70 vCPUs and 130 GiB RAM, along with a replication factor of 3, the following calculation determines the number of brokers: Calculate the number of brokers required to account for vCPUs: ceiling(70 vCPUs / 15 vCPUs) = 5 brokers Calculate the number of brokers required to account for memory: ceiling(130 GiB / 120 GiB) = 2 brokers In this scenario, the cluster has 5 brokers, because the number of brokers is determined by the number of vCPUs.
+- Simple sizing and scaling To size or scale a Managed Service for Apache Kafka cluster, you need only set the total vCPU count and RAM size for the cluster.
+- Broker provisioning When you configure the total vCPU and RAM size for the cluster, the service provisions new brokers and scales existing brokers.
+
+### "Overview of brokers in Managed Service for Apache Kafka \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/brokers](https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/brokers)
+- Source ID: `site-iam-reference`
+- Final score: 138
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- When you create a Managed Service for Apache Kafka cluster, the service provisions a number of brokers based on the cluster's total vCPU and memory capacity.
+- For more information, see the following pages: View the brokers in a cluster Change a partition assignment Use quotas for load isolation Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- If you scale the cluster up or down, the service automatically scales the brokers, adding new brokers if needed.
+- You can also use the open source Apache Kafka APIs to view and configure brokers.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:06.151Z"
+generated_at: "2026-04-12T12:13:34.771Z"
 product_name: "Data Catalog"
 product_slug: "data-catalog"
 feature_name: "Search filtering by tag values"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates"
   - "https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search"
   - "https://docs.cloud.google.com/data-catalog/docs/how-to/search"
+  - "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
 keywords:
   - "search"
   - "filtering"
@@ -38,13 +39,14 @@ Data Catalog search can filter results based on tag values.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)
 - [https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search](https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search)
 - [https://docs.cloud.google.com/data-catalog/docs/how-to/search](https://docs.cloud.google.com/data-catalog/docs/how-to/search)
+- [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)
 - Source ID: `site-docs-root`
-- Final score: 210
+- Final score: 254
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search](https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search)
 - Source ID: `site-api-reference`
-- Final score: 202
+- Final score: 251
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/data-catalog/docs/how-to/search](https://docs.cloud.google.com/data-catalog/docs/how-to/search)
 - Source ID: `site-docs-root`
-- Final score: 198
+- Final score: 242
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -89,4 +91,18 @@ Evidence snippets:
 - For example, if you completed the Tag a BigQuery table by using Data Catalog quickstart, you can search for demo-dataset and select the trips table.
 - You can use the playlist add Customize menu to further refine results and filter by specific tag values.
 - You can search for the following data assets: BigQuery sharing (formerly Analytics Hub) linked datasets BigQuery datasets, tables, views, and models Bigtable instances, clusters, and tables (including column family details) Data Catalog tag templates, entry groups, and custom entries Dataplex Universal Catalog lakes, zones, tables, and filesets Dataproc Metastore services, databases, and tables Pub/Sub data streams Spanner instances, databases, tables, and views Vertex AI Models, Datasets, and Vertex AI Feature Store resources Assets in enterprise data silos connected to Data Catalog Search scope You might have different search results based on your permissions.
+
+### "Class DataCatalogAsyncClient (3.29.0) \_|\_ Python client libraries \_|\_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 238
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 async def sample rename tag template field enum value(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 async def sample create tag template field(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 async def sample delete tag template field(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 async def sample rename tag template field(): Create a client client = datacatalog v1 .
 

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.115Z"
+generated_at: "2026-04-14T00:23:22.678Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Minimum CPU platform selection"
 feature_slug: "minimum-cpu-platform-selection"
 latest_feature_date: "2017-12-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
   - "https://docs.cloud.google.com/dataproc-metastore/docs/create-service"
+  - "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
 keywords:
   - "minimum"
   - "cpu"
@@ -26,7 +26,7 @@ keywords:
 # Minimum CPU platform selection
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,47 +38,47 @@ Minimum CPU platform selection lets users choose a minimum CPU platform when cre
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig)
 - [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
+- [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig)
 
 ## Supporting Pages
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 140
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- December 20, 2017 Feature You can now select a minimum CPU platform when you create a Cloud Dataproc cluster.
-- Fixed Image 1.3, 1.4, 1.5 preview Fixed YARN container log links in Component Gateway March 16, 2020 Feature Announcing the General Availability (GA) release of Dataproc minimum CPU platform .
-- February 10, 2025 Announcement Dataproc on Compute Engine: To help diagnose Dataproc clusters, you can set the following cluster properties to true when you create a cluster : dataproc:diagnostic.capture.enabled : When set to true , enables the collection of checkpoint data in the cluster temp bucket . dataproc:dataproc.logging.extended.enabled : When set to true , enables the collection of logs for the Knox, Zeppelin, Solr, Trino, Presto, Ranger-usersync, Jupyter notebook components and the Spark History-Server in Cloud Logging . dataproc:dataproc.logging.syslog.enabled : When set to true , enables the collection of VM syslogs in Cloud Logging .
-- Change New sub-minor versions of Dataproc images: 1.2.93-debian9, 1.3.53-debian9, 1.4.24-debian9, 1.5.0-RC9-debian10, 1.3.53-ubuntu18, 1.4.24-ubuntu18, and 1.5.0-RC9-ubuntu18 Change Image 1.5 preview Preinstalled additional Python packages and Jupyter[Lab] extensions to align Jupyter notebook environment with AI Platforms Notebooks when Jupyter optional component is enabled.
 
 ### "InstanceGroupConfig \_|\_ Managed Service for Apache Spark \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig)
 - Source ID: `site-docs-reference`
-- Final score: 84
+- Final score: 98
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- List of instance selection options that the group will use when creating new VMs. instanceSelectionResults[] object ( InstanceSelectionResult ) Output only.
 - See Dataproc -> Minimum CPU Platform . minNumInstances integer Optional.
 - Specifies the minimum cpu platform for the Instance Group.
 - JSON representation { "numInstances" : integer , "instanceNames" : [ string ] , "imageUri" : string , "machineTypeUri" : string , "diskConfig" : { object ( DiskConfig ) } , "isPreemptible" : boolean , "preemptibility" : enum ( Preemptibility ) , "managedGroupConfig" : { object ( ManagedGroupConfig ) } , "accelerators" : [ { object ( AcceleratorConfig ) } ] , "minCpuPlatform" : string , "minNumInstances" : integer , "instanceFlexibilityPolicy" : { object ( InstanceFlexibilityPolicy ) } , "startupConfig" : { object ( StartupConfig ) } } Fields numInstances integer Optional.
-- List of instance selection options that the group will use when creating new VMs. instanceSelectionResults[] object ( InstanceSelectionResult ) Output only.
+
+### "ClusterConfig \_|\_ Managed Service for Apache Spark \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig)
+- Source ID: `site-docs-reference`
+- Final score: 91
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- When this key resource name is provided, the following job arguments of the following job types submitted to the cluster are encrypted using CMEK: FlinkJob args HadoopJob args SparkJob args SparkRJob args PySparkJob args SparkSqlJob scriptVariables and queryList.queries HiveJob scriptVariables and queryList.queries PigJob scriptVariables and queryList.queries PrestoJob scriptVariables and queryList.queries AutoscalingConfig Autoscaling Policy config associated with the cluster.
+- JSON representation { "userServiceAccountMapping" : { string : string , ... } } Fields userServiceAccountMapping map (key: string, value: string) Required.
+- The time when cluster became idle (most recent job finished) and became eligible for deletion due to idleness (see JSON representation of Timestamp ).
+- Minimum value is 5 minutes; maximum value is 14 days (see JSON representation of Duration ). idleStartTime string ( Timestamp format) Output only.
 
 ### Create a Dataproc Metastore service \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
 - Source ID: `site-docs-root-2`
-- Final score: 70
+- Final score: 91
 - Re-rank relevance: N/A
 
 Evidence snippets:

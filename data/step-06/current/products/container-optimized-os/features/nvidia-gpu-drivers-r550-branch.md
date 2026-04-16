@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:04.434Z"
+generated_at: "2026-04-15T13:37:11.089Z"
 product_name: "Container Optimized OS"
 product_slug: "container-optimized-os"
 feature_name: "NVIDIA GPU drivers R550 branch"
 feature_slug: "nvidia-gpu-drivers-r550-branch"
 latest_feature_date: "2024-04-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall"
 keywords:
   - "nvidia"
   - "gpu"
@@ -24,7 +26,7 @@ keywords:
 # NVIDIA GPU drivers R550 branch
 
 Product: Container Optimized OS
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,22 +38,52 @@ Container-Optimized OS provides NVIDIA GPU drivers from the R550 branch; Contain
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall](https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall)
 
 ## Supporting Pages
 
-### Container-Optimized OS über den Quellcode erstellen | Container-Optimized OS | Google Cloud Documentation
+### "Running instances with GPU accelerators \_|\_ Container-Optimized OS \_\
 
-- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
-- Source ID: `site-docs-root`
-- Final score: 184
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
+- Source ID: `site-docs-reference`
+- Final score: 98
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Container-Optimized OS über den Quellcode erstellen Container-Optimized OS Google Cloud Documentation Source URL: https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de Zum Erstellen eines Container-Optimized ... erstellen.
-- Mit dem in depot tools enthaltenen Tool cros sdk können Sie eine für die Kompilierung des Container-Optimized OS geeignete chroot erstellen und aufrufen....
+- End-to-end: Running a GPU application on Container-Optimized OS The following end-to-end example shows you how to use cloud-init to configure Container-Optimized OS VM instances that provision a GPU application container myapp:latest after the GPU driver has been installed: #cloud-config users : - name : myuser uid : 2000 write files : - path : /etc/systemd/system/install-gpu.service permissions : 0644 owner : root content : [Unit] Description=Install GPU drivers Wants=gcr-online.target docker.socket After=gcr-online.target docker.socket [Service] User=root Type=oneshot ExecStart=cos-extensions install gpu StandardOutput=journal+console StandardError=journal+console - path : /etc/systemd/system/myapp.service permissions : 0644 owner : root content : [Unit] Description=Run a myapp GPU application container Requires=install-gpu.service After=install-gpu.service [Service] User=root Type=oneshot RemainAfterExit=true ExecStart=/usr/bin/docker run --rm -u 2000 --name=myapp --device /dev/nvidia0:/dev/nvidia0 myapp:latest StandardOutput=journal+console StandardError=journal+console runcmd : - systemctl daemon-reload - systemctl start install-gpu.service - systemctl start myapp.service About the NVIDIA CUDA-X libraries CUDA® is NVIDIA's parallel computing platform and programming model for GPUs.
+- Restrictions Container-Optimized OS version restrictions Only Container-Optimized OS LTS release milestone 85 and later support the cos-extensions utility mentioned in the Installing NVIDIA GPU device drivers section.
+- If a Container-Optimized OS customer identifies an issue that's related to the NVIDIA GPU drivers, the customer must work directly with NVIDIA for support.
+- NVIDIA GPU drivers: You must install NVIDIA GPU drivers by yourself on your Container-Optimized OS VM instances.
+
+### Building Container-Optimized OS from source \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source)
+- Source ID: `site-docs-reference`
+- Final score: 34
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To build Container-Optimized OS, specify lakitu (x86 image) or lakitu-arm64 (Arm image) for the board name as follows: x86 image build packages --board = lakitu build image --board = lakitu test Arm image build packages --board = lakitu-arm64 build image --board = lakitu-arm64 test In addition to test , you can build either a base , or dev image by passing the appropriate parameter to the ./build image script command.
+- You can use the cros sdk tool included in depot tools to create and enter a chroot that's ready for Container-Optimized OS compilation by running the following command in the source directory that you created in the previous step: cd $HOME/cos-src cros sdk --enter Once inside chroot , you can build the disk image.
+- Prerequisites To build a Container-Optimized OS image, you'll need to install the following tools on your development machine: git and curl A package of Chromium scripts called depot tools that includes tools like repo and cros sdk .
+- Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Building Container-Optimized OS from source Stay organized with collections Save and categorize content based on your preferences.
+
+### "Configuring the host firewall \_|\_ Container-Optimized OS \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall](https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall)
+- Source ID: `site-docs-reference`
+- Final score: 26
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Consider the following cloud-init example: #cloud-config write files : - path : /etc/systemd/system/config-firewall.service permissions : 0644 owner : root content : [Unit] Description=Configures the host firewall [Service] Type=oneshot RemainAfterExit=true ExecStart=/sbin/iptables -A INPUT -p tcp --dport 80 -j ACCEPT - path : /etc/systemd/system/myhttp.service permissions : 0644 owner : root content : [Unit] Description=My HTTP service After=docker.service config-firewall.service Wants=docker.service config-firewall.service [Service] Restart=always ExecStart=/usr/bin/docker run --rm --name=%n --net=host nginx ExecStop=-/usr/bin/docker exec %n -s quit runcmd : - systemctl daemon-reload - systemctl start myhttp.service Using this cloud-init configuration with a VM running Container-Optimized OS will result in the following behaviors on every boot: The host firewall will be configured to allow incoming TCP connections on port 80.
+- Running containers in the host's network namespace If you are deploying a container on Container-Optimized OS that must be accessible over the network and you are using Docker's --net=host option, you must explicitly configure the host firewall yourself.
+- Running containers in Docker's default network namespace If you are deploying a container on Container-Optimized OS that must be accessible over the network and you are not using Docker's --net=host option, run your container with Docker's -p option.
+- Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Configuring the host firewall Stay organized with collections Save and categorize content based on your preferences.
 

@@ -1,29 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.276Z"
+generated_at: "2026-04-13T14:23:05.114Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "ComputeSecurityPolicy adaptive protection auto-deploy"
 feature_slug: "computesecuritypolicy-adaptive-protection-auto-deploy"
 latest_feature_date: "2023-02-21"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+  - "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/install-manually"
 keywords:
-  - "computesecuritypolicy"
   - "adaptive"
-  - "protection"
-  - "auto"
   - "deploy"
-  - "supports"
+  - "computesecuritypolicy"
+  - "protection"
   - "configuration"
+  - "auto"
+  - "supports"
 ---
 
 # ComputeSecurityPolicy adaptive protection auto-deploy
 
 Product: Config Connector
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +35,54 @@ ComputeSecurityPolicy supports adaptive protection auto-deploy configuration.
 
 ComputeSecurityPolicy supports adaptive protection auto-deploy configuration.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster)
+- [https://docs.cloud.google.com/config-connector/docs/troubleshooting](https://docs.cloud.google.com/config-connector/docs/troubleshooting)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/install-manually](https://docs.cloud.google.com/config-connector/docs/how-to/install-manually)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### ContainerCluster \_|\_ Config Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster)
+- Source ID: `site-docs-reference`
+- Final score: 86
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more details on how to debug and fix an issue which could lead to a permanent diff, please refer to the Config Connector Troubleshooting page Property Value Google Cloud Service Name Kubernetes Engine Google Cloud Service Documentation /kubernetes-engine/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpcontainercluster gcpcontainerclusters containercluster Config Connector Service Name container.googleapis.com Config Connector Resource Fully Qualified Name containerclusters.container.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/remove-default-node-pool Spec Schema addonsConfig : cloudrunConfig : disabled : boolean loadBalancerType : string configConnectorConfig : enabled : boolean dnsCacheConfig : enabled : boolean gcePersistentDiskCsiDriverConfig : enabled : boolean gcpFilestoreCsiDriverConfig : enabled : boolean gcsFuseCsiDriverConfig : enabled : boolean gkeBackupAgentConfig : enabled : boolean horizontalPodAutoscaling : disabled : boolean httpLoadBalancing : disabled : boolean istioConfig : auth : string disabled : boolean kalmConfig : enabled : boolean networkPolicyConfig : disabled : boolean allowNetAdmin : boolean authenticatorGroupsConfig : securityGroup : string binaryAuthorization : enabled : boolean evaluationMode : string clusterAutoscaling : autoProvisioningDefaults : bootDiskKMSKeyRef : external : string name : string namespace : string diskSize : integer imageType : string management : autoRepair : boolean autoUpgrade : boolean upgradeOptions : - autoUpgradeStartTime : string description : string minCpuPlatform : string oauthScopes : - string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean upgradeSettings : blueGreenSettings : nodePoolSoakDuration : string standardRolloutPolicy : batchNodeCount : integer batchPercentage : float batchSoakDuration : string maxSurge : integer maxUnavailable : integer strategy : string autoscalingProfile : string defaultComputeClassConfig : enabled : boolean enabled : boolean resourceLimits : - maximum : integer minimum : integer resourceType : string clusterIpv4Cidr : string clusterTelemetry : type : string confidentialNodes : enabled : boolean controlPlaneEndpointsConfig : dnsEndpointConfig : allowExternalTraffic : boolean enableK8sTokensViaDns : boolean ipEndpointsConfig : enabled : boolean costManagementConfig : enabled : boolean databaseEncryption : keyName : string state : string datapathProvider : string defaultMaxPodsPerNode : integer defaultSnatStatus : disabled : boolean description : string dnsConfig : clusterDns : string clusterDnsDomain : string clusterDnsScope : string enableAutopilot : boolean enableBinaryAuthorization : boolean enableCiliumClusterwideNetworkPolicy : boolean enableFqdnNetworkPolicy : boolean enableIntranodeVisibility : boolean enableK8sBetaApis : enabledApis : - string enableKubernetesAlpha : boolean enableL4IlbSubsetting : boolean enableLegacyAbac : boolean enableMultiNetworking : boolean enableShieldedNodes : boolean enableTpu : boolean gatewayApiConfig : channel : string identityServiceConfig : enabled : boolean initialNodeCount : integer ipAllocationPolicy : additionalPodRangesConfig : podRangeNames : - string clusterIpv4CidrBlock : string clusterSecondaryRangeName : string podCidrOverprovisionConfig : disabled : boolean servicesIpv4CidrBlock : string servicesSecondaryRangeName : string stackType : string location : string loggingConfig : enableComponents : - string loggingService : string maintenancePolicy : dailyMaintenanceWindow : duration : string startTime : string maintenanceExclusion : - endTime : string exclusionName : string exclusionOptions : scope : string startTime : string recurringWindow : endTime : string recurrence : string startTime : string masterAuth : clientCertificate : string clientCertificateConfig : issueClientCertificate : boolean clientKey : string clusterCaCertificate : string password : value : string valueFrom : secretKeyRef : key : string name : string username : string masterAuthorizedNetworksConfig : cidrBlocks : - cidrBlock : string displayName : string gcpPublicCidrsAccessEnabled : boolean meshCertificates : enableCertificates : boolean minMasterVersion : string monitoringConfig : advancedDatapathObservabilityConfig : - enableMetrics : boolean relayMode : string enableComponents : - string managedPrometheus : enabled : boolean monitoringService : string networkPolicy : enabled : boolean provider : string networkRef : external : string name : string namespace : string networkingMode : string nodeConfig : advancedMachineFeatures : enableNestedVirtualization : boolean threadsPerCore : integer bootDiskKMSCryptoKeyRef : external : string name : string namespace : string confidentialNodes : enabled : boolean diskSizeGb : integer diskType : string ephemeralStorageConfig : localSsdCount : integer ephemeralStorageLocalSsdConfig : localSsdCount : integer fastSocket : enabled : boolean gcfsConfig : enabled : boolean guestAccelerator : - count : integer gpuDriverInstallationConfig : gpuDriverVersion : string gpuPartitionSize : string gpuSharingConfig : gpuSharingStrategy : string maxSharedClientsPerGpu : integer type : string gvnic : enabled : boolean hostMaintenancePolicy : maintenanceInterval : string imageType : string kubeletConfig : cpuCfsQuota : boolean cpuCfsQuotaPeriod : string cpuManagerPolicy : string podPidsLimit : integer labels : string : string linuxNodeConfig : cgroupMode : string sysctls : string : string localNvmeSsdBlockConfig : localSsdCount : integer localSsdCount : integer loggingVariant : string machineType : string metadata : string : string minCpuPlatform : string nodeGroupRef : external : string name : string namespace : string oauthScopes : - string preemptible : boolean reservationAffinity : consumeReservationType : string key : string values : - string resourceLabels : string : string sandboxConfig : sandboxType : string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean soleTenantConfig : nodeAffinity : - key : string operator : string values : - string spot : boolean tags : - string taint : - effect : string key : string value : string workloadMetadataConfig : mode : string nodeMetadata : string nodeLocations : - string nodePoolAutoConfig : networkTags : tags : - string nodePoolDefaults : nodeConfigDefaults : gcfsConfig : enabled : boolean loggingVariant : string nodeVersion : string notificationConfig : pubsub : enabled : boolean filter : eventType : - string topicRef : external : string name : string namespace : string podSecurityPolicyConfig : enabled : boolean privateClusterConfig : enablePrivateEndpoint : boolean enablePrivateNodes : boolean masterGlobalAccessConfig : enabled : boolean masterIpv4CidrBlock : string peeringName : string privateEndpoint : string privateEndpointSubnetworkRef : external : string name : string namespace : string publicEndpoint : string privateIpv6GoogleAccess : string protectConfig : workloadConfig : auditMode : string workloadVulnerabilityMode : string releaseChannel : channel : string resourceID : string resourceUsageExportConfig : bigqueryDestination : datasetId : string enableNetworkEgressMetering : boolean enableResourceConsumptionMetering : boolean securityPostureConfig : mode : string vulnerabilityMode : string serviceExternalIpsConfig : enabled : boolean subnetworkRef : external : string name : string namespace : string verticalPodAutoscaling : enabled : boolean workloadIdentityConfig : identityNamespace : string workloadPool : string Fields addonsConfig Optional object The configuration for addons supported by GKE. addonsConfig.cloudrunConfig Optional object The status of the CloudRun addon.
+- If this is specified for a zonal cluster, omit the cluster's zone. nodeLocations[] Optional string nodePoolAutoConfig Optional object Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters. nodePoolAutoConfig.networkTags Optional object Collection of Compute Engine network tags that can be applied to a node's underlying VM instance. nodePoolAutoConfig.networkTags.tags Optional list (string) List of network tags applied to auto-provisioned node pools. nodePoolAutoConfig.networkTags.tags[] Optional string nodePoolDefaults Optional object The default nodel pool settings for the entire cluster. nodePoolDefaults.nodeConfigDefaults Optional object Subset of NodeConfig message that has defaults. nodePoolDefaults.nodeConfigDefaults.gcfsConfig Optional object GCFS configuration for this node. nodePoolDefaults.nodeConfigDefaults.gcfsConfig.enabled Required boolean Whether or not GCFS is enabled. nodePoolDefaults.nodeConfigDefaults.loggingVariant Optional string Type of logging agent that is used as the default value for node pools in the cluster.
+- Example: "3.5s". clusterAutoscaling.autoProvisioningDefaults.upgradeSettings.maxSurge Optional integer The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process. clusterAutoscaling.autoProvisioningDefaults.upgradeSettings.maxUnavailable Optional integer The maximum number of nodes that can be simultaneously unavailable during the upgrade process. clusterAutoscaling.autoProvisioningDefaults.upgradeSettings.strategy Optional string Update strategy of the node pool. clusterAutoscaling.autoscalingProfile Optional string Configuration options for the Autoscaling profile feature, which lets you choose whether the cluster autoscaler should optimize for resource utilization or resource availability when deciding to remove nodes from a cluster.
+- Valid values include SYSTEM COMPONENTS, APISERVER, SCHEDULER, CONTROLLER MANAGER, STORAGE, HPA, POD, DAEMONSET, DEPLOYMENT, STATEFULSET and WORKLOADS. monitoringConfig.enableComponents[] Optional string monitoringConfig.managedPrometheus Optional object Configuration for Google Cloud Managed Services for Prometheus. monitoringConfig.managedPrometheus.enabled Required boolean Whether or not the managed collection is enabled. monitoringService Optional string The monitoring service that the cluster should write metrics to.
+
+### Troubleshoot Config Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/troubleshooting](https://docs.cloud.google.com/config-connector/docs/troubleshooting)
+- Source ID: `site-docs-reference`
+- Final score: 70
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To verify if a service supports on-demand service identity creation before applying your configuration, run the following command: gcloud beta services identity create --service SERVICE NAME .googleapis.com Replace SERVICE NAME with the name of the service, for example spanner .
+- Type of issue Common issues Reconciliation Resource keeps updating every 5-15 mins Resource has no status KNV2005: syncer excessively updating resource Resource deleted by Config Connector Controller Pod OOMKilled Deletion Deletions of namespaces stuck at Terminating Deletions of resources stuck at DeleteFailed after project was deleted Permissions Compute Engine Metadata not defined Error 403: Request had insufficient authentication scopes 403 Forbidden: The caller does not have permission Error 403: Caller is missing IAM permission Update error with IAMPolicy, IAMPartialPolicy and IAMPolicyMember Installation and upgrades Version not supported in Config Connector add-on installations failed calling webhook PodSecurityPolicy prevents upgrades Configuration Cannot make changes to immutable fields No matches for kind "Foo" Labels are not propagated to the Google Cloud resource Error due to special characters in resource name Unable to remove fields from resource spec Reconciliation The following section lists common issues related to reconciliation of resources by Config Connector.
+- Pick a version from the list that meets the requirements . failed calling webhook Symptom You cannot uninstall Config Connector and receive an error similar to the following: error during reconciliation: error building deployment objects: error finalizing the deletion of Config Connector system components deployed by ConfigConnector controller: error waiting for CRDs to be deleted: error deleting CRD accesscontextmanageraccesslevels.accesscontextmanager.cnrm.cloud.google.com: Internal error occurred: failed calling webhook "abandon-on-uninstall.cnrm.cloud.google.com" : failed to call webhook: Post "https://abandon-on-uninstall.cnrm-system.svc:443/abandon-on-uninstall?timeout=3s" : service "abandon-on-uninstall" not found Cause This issue can occur when using the Config Connector add-on and disabling Config Connector before removing the Config Connector CRDs .
+- Check Config Connector status and conditions Check the version of Config Connector Run the following command to get the installed Config Connector version, and cross-reference the release notes to verify that the running version supports the features and resources that you want to use: kubectl get ns cnrm-system -o jsonpath = '{.metadata.annotations.cnrm\.cloud\.google\.com/version}' Check the resource's status and events Usually, you can determine the issue with your Config Connector resources by inspecting the state of your resources in Kubernetes .
+
+### Install Config Connector manually \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/install-manually](https://docs.cloud.google.com/config-connector/docs/how-to/install-manually)
+- Source ID: `site-docs-reference`
+- Final score: 58
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Run the following commands to remove Config Connector system non-CRD components: kubectl delete sts,deploy,po,svc,roles,clusterroles,clusterrolebindings --all-namespaces -l cnrm.cloud.google.com/system = true --wait = true kubectl delete validatingwebhookconfiguration abandon-on-uninstall.cnrm.cloud.google.com --ignore-not-found --wait = true kubectl delete validatingwebhookconfiguration validating-webhook.cnrm.cloud.google.com --ignore-not-found --wait = true kubectl delete mutatingwebhookconfiguration mutating-webhook.cnrm.cloud.google.com --ignore-not-found --wait = true Install Config Connector with the GKE add-on , or the operator .
+- Extract the tar file: tar zxvf release-bundle.tar.gz Install the Config Connector operator on your cluster: Autopilot kubectl apply -f operator-system/autopilot-configconnector-operator.yaml Standard kubectl apply -f operator-system/configconnector-operator.yaml To configure the Config Connector operator to run in namespaced mode, complete the following steps: Create a manifest named configconnector.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnector metadata : the name is restricted to ensure that there is only ConfigConnector resource installed in your cluster name : configconnector.core.cnrm.cloud.google.com spec : mode : namespaced stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnector.yaml Install Config Connector in namespaced mode Note: You must perform these steps for every namespace that you want Config Connector to create resources from.
+- Create an IAM policy binding between the IAM service account and the predefined Kubernetes service account that Config Connector runs: gcloud iam service-accounts add-iam-policy-binding \ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \ --member = "serviceAccount: PROJECT ID .svc.id.goog[cnrm-system/cnrm-controller-manager]" \ --role = "roles/iam.workloadIdentityUser" Configure Config Connector To complete the installation, create a configuration file for the ConfigConnector CustomResource , then apply it using the kubectl apply command.
+- Apply the configuration to your cluster with kubectl apply : kubectl apply -f configconnector.yaml Specifying where to create your resources Config Connector can organize resources by project, folder, or organization, which is the same way you would organize resources with Google Cloud.
 

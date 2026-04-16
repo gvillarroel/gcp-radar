@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.832Z"
+generated_at: "2026-04-12T12:12:49.001Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Ops Agent OTLP receiver"
 feature_slug: "ops-agent-otlp-receiver"
 latest_feature_date: "2023-05-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/trace/docs/otlp"
   - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
-  - "https://docs.cloud.google.com/monitoring/agent/monitoring/installation"
+  - "https://docs.cloud.google.com/trace/docs/setup"
+  - "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
 keywords:
   - "ops"
   - "agent"
@@ -26,7 +27,7 @@ keywords:
 # Ops Agent OTLP receiver
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The Ops Agent includes an OTLP receiver for collecting custom traces and metrics
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/trace/docs/otlp](https://docs.cloud.google.com/trace/docs/otlp)
 - [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
-- [https://docs.cloud.google.com/monitoring/agent/monitoring/installation](https://docs.cloud.google.com/monitoring/agent/monitoring/installation)
+- [https://docs.cloud.google.com/trace/docs/setup](https://docs.cloud.google.com/trace/docs/setup)
+- [https://docs.cloud.google.com/trace/docs/setup/sample-overview](https://docs.cloud.google.com/trace/docs/setup/sample-overview)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/trace/docs/otlp](https://docs.cloud.google.com/trace/docs/otlp)
 - Source ID: `site-docs-root-2`
-- Final score: 250
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 338
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: Get-Service google-cloud-ops-agent Collect OTLP metrics When you use the OTLP receiver to collect metrics from your OpenTelemetry applications, the primary configuration choice for the receiver is the API that you want to use to ingest the metrics.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 - Source ID: `site-iam-reference`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Prometheus prometheus.googleapis.com Samples Metrics collected by using Google Cloud Managed Service for Prometheus , or by using the Ops Agent and the Prometheus receiver or the OTLP receiver .
@@ -76,17 +78,31 @@ Evidence snippets:
 - For lists of these metrics, see Ops Agent metrics and Legacy Monitoring and Logging metrics .
 - The following table includes regular expressions that might be useful for excluding metrics from statsd or similar dynamically named metrics: Block metrics with names containing Regex more than one underscore in a row . {2,}. more than 7 digits in a row (likely timestamp) . \d{7,}. really long segments (likely label-parsing errors) . [a-zA-Z0-9]{20,}. hexadecimal substrings, including GUIDs . [A-F0-9]{10,}.
 
-### "Installing the Cloud Monitoring agent on individual VMs \_|\_ Google Cloud\
+### Instrument for Cloud Trace \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/monitoring/agent/monitoring/installation](https://docs.cloud.google.com/monitoring/agent/monitoring/installation)
-- Source ID: `site-iam-reference`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/trace/docs/setup](https://docs.cloud.google.com/trace/docs/setup)
+- Source ID: `site-docs-root-2`
+- Final score: 198
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The List view on the Inventory tab on the dashboard lists all VMs and includes a status column for your agent, as shown in the following screenshot: The Agent column reports the following values: Not detected : Either you don't have an agent installed or it is not running.
-- Instead, we recommend that you use the Ops Agent for new Google Cloud workloads and eventually transition your existing Compute Engine VMs to use the Ops Agent.
-- The Ops Agent, which combines the collection of metrics and logging into a single agent, is the eventual replacement for the legacy agents.
-- See Migrating from the legacy agents to the Ops Agent for information on transitioning to the Ops Agent.
+- If you are writing applications that run on Compute Engine, then you can use the Ops Agent and the OpenTelemetry Protocol (OTLP) receiver to collect traces and metrics from your application.
+- For more information, see Use the Ops Agent and OTLP and Ops Agent overview .
+- The Ops Agent can also collect logs, but not by using OTLP.
+- For information about how to use a direct export of trace data and to send that data to the Telemetry API, see Migrate from the Trace exporter to the OTLP endpoint .
+
+### "Overview of collector-based instrumentation samples \_|\_ Cloud Trace \_\
+
+- URL: [https://docs.cloud.google.com/trace/docs/setup/sample-overview](https://docs.cloud.google.com/trace/docs/setup/sample-overview)
+- Source ID: `site-docs-root-2`
+- Final score: 192
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use the Ops Agent and OpenTelemetry Protocol (OTLP) describes how you can configure the Ops Agent and an OTLP receiver to collect metrics and traces from an application.
+- The same receiver, otlp , is used for metrics and traces.
+- The instrumentation in these samples, which includes using the OpenTelemetry SDK and the SDK's in-process OTLP exporter, is vendor neutral.
+- Required permissions To get the permissions that you need to for the sample applications to write log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Writer ( roles/logging.logWriter ) Monitoring Metric Writer ( roles/monitoring.metricWriter ) Cloud Telemetry Traces Writer ( roles/telemetry.tracesWriter ) If you run the samples in the Cloud Shell, on Google Cloud resources, or on a local development environment, then the previous permissions are sufficient to write log, metric, and trace data.
 

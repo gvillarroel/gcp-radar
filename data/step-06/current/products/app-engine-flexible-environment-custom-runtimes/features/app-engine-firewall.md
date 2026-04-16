@@ -1,74 +1,92 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:39:03.559Z"
+generated_at: "2026-04-15T12:30:30.394Z"
 product_name: "App Engine flexible environment custom runtimes"
 product_slug: "app-engine-flexible-environment-custom-runtimes"
-feature_name: "App Engine Firewall"
+feature_name: "App Engine firewall"
 feature_slug: "app-engine-firewall"
-latest_feature_date: "2017-08-23"
+latest_feature_date: "2017-10-11"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls"
   - "https://docs.cloud.google.com/appengine/docs/flexible/application-security"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/creating-firewalls"
 keywords:
-  - "create firewall rules"
-  - "App Engine firewall feature"
-  - "App Engine firewall rules"
-  - "Application Firewall"
-  - "beta App Engine Firewall"
-  - "App Engine Firewall"
-  - "App Engine firewall"
+  - "app"
+  - "engine"
+  - "firewall"
+  - "lets"
+  - "you"
+  - "control"
+  - "inbound"
+  - "traffic"
 ---
 
-# App Engine Firewall
+# App Engine firewall
 
 Product: App Engine flexible environment custom runtimes
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The App Engine Firewall feature entered beta release.
+App Engine firewall lets you control inbound traffic to App Engine services; App Engine firewall lets you control inbound traffic to App Engine services.
 
 ## Extended Definition
 
-App Engine Firewall is a feature in App Engine flexible environment that controls access to an app through an ordered list of firewall rules that allow or deny requests based on specified IP addresses or ranges. It is used to block abusive or malicious traffic (including DoS-like abuse) and can be configured with rules such as allowing only traffic forwarded from an external WAF.
+App Engine firewall lets you control inbound traffic to App Engine services; App Engine firewall lets you control inbound traffic to App Engine services.
 
 ## Evidence Summary
 
-The cited pages define App Engine Firewall’s behavior (allow/deny IP-based rules and ordered rule evaluation) and provide operational context for security use cases and required IAM roles to create or modify rules.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls)
 - [https://docs.cloud.google.com/appengine/docs/flexible/application-security](https://docs.cloud.google.com/appengine/docs/flexible/application-security)
+- [https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls)
+- [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/creating-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/creating-firewalls)
 
 ## Supporting Pages
-
-### "Creating App Engine firewall rules \_|\_ App Engine flexible environment\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls)
-- Source ID: `site-docs-root`
-- Final score: 92
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page provides detailed instructions, constraints, and IAM requirements for creating and managing App Engine firewall rules, which directly defines the feature’s operation.
-
-Evidence snippets:
-- Before you begin Before you can create App Engine firewall rules for your app, you must have one of the following App Engine IAM roles , which include the necessary privileges for creating or modifying firewall rules: App Engine Admin Editor Owner Creating firewall rules Use one of the following methods to create a firewall rule.
-- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating App Engine firewall rules Stay organized with collections Save and categorize content based on your preferences.
-- Understanding App Engine firewall rules An App Engine firewall consists of an ordered list of rules that can allow or deny access from the specified IP address or range to your app.
-- Note: If you set up port forwarding , remember that all requests through that forwarded port bypass the App Engine firewall.
 
 ### "Overview of app security \_|\_ App Engine flexible environment \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/flexible/application-security](https://docs.cloud.google.com/appengine/docs/flexible/application-security)
-- Source ID: `site-docs-root`
-- Final score: 38
+- Source ID: `site-docs-reference`
+- Final score: 135
 - Re-rank relevance: MODERATE
-- Re-rank rationale: The page provides security guidance for App Engine, including mentions of App Engine Firewall, HTTPS, and access control, which helps describe how the feature is used.
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Ingress controls You can use Ingress controls to restrict inbound traffic to your App Engine app.
 - Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.
-- For example, if you use a third-party Web Application Firewall (WAF) to proxy requests directed at your app, you can create firewall rules to deny all requests except those that are forwarded from your WAF.
 - App Engine firewall The App Engine firewall enables you to control access to your App Engine app through a set of rules that can either allow or deny requests from the specified ranges of IP addresses.
+- You can then create and modify your firewall rules to control the scope of access throughout your release process, allowing only certain organizations, either within your company or externally, to access your app as it makes its way to public availability.
+
+### "Creating App Engine firewall rules \_|\_ App Engine flexible environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls)
+- Source ID: `site-docs-reference`
+- Final score: 133
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Examples: Use the following examples to help you create your firewall: Add a rule that allows an IPv6 address and subnet mask, and then test that rule to ensure it gets evaluated prior to your other rules: gcloud app firewall-rules create 123 --source-range fe80::3636:3bff:fecc:8778/128 --action allow gcloud app firewall-rules test-ip fe80::3636:3bff:fecc:8778 Add a rule to deny an IPv4 address and subnet mask, and then test that rule to ensure that it gets appropriately evaluated: gcloud app firewall-rules create 123456 --source-range "74.125.0.0/16" --action deny gcloud app firewall-rules test-ip 74 .125.0.8 Update and then test the default rule to ensure that it restricts all IP addresses that don't match any other rules: gcloud app firewall-rules update default --action deny gcloud app firewall-rules test-ip 123 .456.7.89 API To programmatically create firewall rules for your App Engine app, you can use the apps.firewall.ingressRules methods in the Admin API.
+- Before you begin Before you can create App Engine firewall rules for your app, you must have one of the following App Engine IAM roles , which include the necessary privileges for creating or modifying firewall rules: App Engine Admin Editor Owner Creating firewall rules Use one of the following methods to create a firewall rule.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating App Engine firewall rules Stay organized with collections Save and categorize content based on your preferences.
+- Understanding App Engine firewall rules An App Engine firewall consists of an ordered list of rules that can allow or deny access from the specified IP address or range to your app.
+
+### "Creating App Engine firewall rules \_|\_ App Engine flexible environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/creating-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/creating-firewalls)
+- Source ID: `site-docs-reference-2`
+- Final score: 133
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Examples: Use the following examples to help you create your firewall: Add a rule that allows an IPv6 address and subnet mask, and then test that rule to ensure it gets evaluated prior to your other rules: gcloud app firewall-rules create 123 --source-range fe80::3636:3bff:fecc:8778/128 --action allow gcloud app firewall-rules test-ip fe80::3636:3bff:fecc:8778 Add a rule to deny an IPv4 address and subnet mask, and then test that rule to ensure that it gets appropriately evaluated: gcloud app firewall-rules create 123456 --source-range "74.125.0.0/16" --action deny gcloud app firewall-rules test-ip 74 .125.0.8 Update and then test the default rule to ensure that it restricts all IP addresses that don't match any other rules: gcloud app firewall-rules update default --action deny gcloud app firewall-rules test-ip 123 .456.7.89 API To programmatically create firewall rules for your App Engine app, you can use the apps.firewall.ingressRules methods in the Admin API.
+- Before you begin Before you can create App Engine firewall rules for your app, you must have one of the following App Engine IAM roles , which include the necessary privileges for creating or modifying firewall rules: App Engine Admin Editor Owner Creating firewall rules Use one of the following methods to create a firewall rule.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating App Engine firewall rules Stay organized with collections Save and categorize content based on your preferences.
+- Understanding App Engine firewall rules An App Engine firewall consists of an ordered list of rules that can allow or deny access from the specified IP address or range to your app.
 

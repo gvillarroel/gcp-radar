@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.472Z"
+generated_at: "2026-04-14T07:40:14.476Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Custom connectors"
 feature_slug: "custom-connectors"
 latest_feature_date: "2024-01-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/using-integration-connectors"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
   - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
 keywords:
+  - "openapi"
   - "connectors"
-  - "on"
   - "custom"
   - "based"
-  - "application"
   - "supports"
-  - "integration"
-  - "now"
 ---
 
 # Custom connectors
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +35,52 @@ Application Integration now supports custom connectors based on the OpenAPI spec
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/using-integration-connectors](https://docs.cloud.google.com/application-integration/docs/using-integration-connectors)
+- [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
+- [https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger](https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger)
 - [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
 
 ## Supporting Pages
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### Connectors task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 296
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- January 24, 2024 Feature Custom connectors [Preview] Application Integration now supports custom connectors.
-- December 20, 2024 Change Dynamic Backend Authentication support for Connectors Application Integration now supports dynamic backend authentication for connectors.
-- The canvas view offers the following benefits: Improved responsiveness of the canvas interaction Clearer view of your integration Minimap view Easier to build integrations August 18, 2024 Feature In the Application Integration editor, you can now search, browse, and select tasks and connectors in the Tasks list.
-- July 20, 2023 Feature Connector Event triggers ( Preview ) Application Integration introduces Connector Event triggers ; specialized triggers that let you invoke an integration based on the event subscriptions created in various business applications using Integration Connectors .
-
-### "Use Integration Connectors \_|\_ Application Integration \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/using-integration-connectors](https://docs.cloud.google.com/application-integration/docs/using-integration-connectors)
-- Source ID: `site-docs-root`
-- Final score: 286
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 118
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Application development Application Integration Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
-- These connectors let you quickly and securely connect to the Google Cloud services and other business applications from your integrations.
-- Supported connectors For the list of all the supported connectors for Application Integration, see Integration Connectors reference .
-- Integration Connectors pricing You will be charged separately for connectors based on your usage.
+- Configure task input and output variables The Connectors task configuration pane displays Task Input and Task Output variables that are automatically generated based on the Entity and Operation or Action selected in the Configure connector task dialog.
+- Action: Execute custom SQL query To create a custom query, follow these steps: Follow the detailed instructions to add a connectors task .
+- If the connector supports custom SQL queries, you can select the Execute custom query option from the Actions list.
+- The following example shows the JSON snippet of a row data to be added in a table: { "employee first name": "John", "employee emailID": "test-05@test.com" } In this example, employee first name and employee emailID are the column names with the corresponding values John and test-05@test.com . filterClause String Restricts the result of the operations based on a condition.
 
 ### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 278
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-2`
+- Final score: 92
+- Re-rank relevance: N/A
 
 Evidence snippets:
+- Note: Gemini provides connector- and API Hub-based recommendations or suggestions for your integrations using the configured connections in Integration Connectors and APIs in Apigee API Hub .
 - Supported tasks and triggers Gemini can assist you to add the following tasks and triggers: Triggers Tasks API trigger Cloud Pub/Sub trigger Salesforce trigger Jira Cloud ServiceNow Zendesk Cloud Scheduler trigger Data mapper task Approval task Suspend task Javascript task Cloud Run functions Timer task Return task Send email task Connectors task Call REST endpoint task Doc AI - Process task Gemini also assists you to create the following control flow tasks but can't generate sub-integrations: For Each Loop task For Each Parallel task While Loop task Call Integration task Create an integration Gemini assists you to create and build integrations using your natural language statements (or prompts ) as input.
 - Configure Call REST API tasks If you have API Hub enabled in your project, then Gemini in Application Integration can assist you in providing contextually appropriate Call REST Endpoint task and task configuration recommendations based on the logical flow of your existing integration.
-- Note: Gemini provides connector- and API Hub-based recommendations or suggestions for your integrations using the configured connections in Integration Connectors and APIs in Apigee API Hub .
-- Home Documentation Application development Application Integration Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Note: Gemini suggests one or more integration flows that qualifies your prompt: If you have enabled API Hub and Integration Connectors and met all prerequisites , then recommendations will contain Call REST Endpoint and Connectors tasks.
+
+### SAP ERP trigger \_|\_ Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger](https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger)
+- Source ID: `site-docs-reference-2`
+- Final score: 92
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Call API method: connectors.projects.locations.connections.listenEvent CALL METHOD lo client->listen event connections EXPORTING iv p projects id = lv p projects id iv p locations id = lv p locations id iv p connections id = lv p connections id is input = ls input IMPORTING es raw = es output = DATA(ls output) ev ret code = DATA(lv ret code) ev err text = DATA(lv err text) es err resp = DATA(ls err resp).
+- The ls event payload field changes based on your requirements: &--------------------------------------------------------------------- & Report ZR TEST INT CONNECTOR &--------------------------------------------------------------------- & &--------------------------------------------------------------------- REPORT zr test int connector.
+- Before you begin If you plan to create or configure a new connection for the SAP ERP trigger , make sure that you have the following IAM role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access .
+- Custom read table functions The connector includes a custom read-table RFC, Z CUSTOM READ TABLE that is similar to the SAP RFC READ TABLE , but with a larger buffer to address the DATA BUFFER EXCEEDED problem and bypass RFC READ TABLE limitations.
 

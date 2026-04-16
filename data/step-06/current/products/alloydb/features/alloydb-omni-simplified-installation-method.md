@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.609Z"
+generated_at: "2026-04-12T12:07:33.852Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB Omni simplified installation method"
@@ -9,7 +9,10 @@ latest_feature_date: "2024-06-25"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+  - "https://docs.cloud.google.com/alloydb/docs/user-grant-access"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases"
 keywords:
   - "quick install path"
   - "quick start"
@@ -32,27 +35,48 @@ The simplified installation method for AlloyDB Omni is generally available for u
 
 ## Extended Definition
 
-The AlloyDB Omni simplified installation method is a simplified setup path for installing AlloyDB Omni, as referenced in official AlloyDB for PostgreSQL release notes. Those release notes state that this method was first announced/available in Preview and that a later release marked it as generally available.
+The simplified installation method for AlloyDB Omni is generally available for use; The simplified installation method for AlloyDB Omni is available in preview.
 
 ## Evidence Summary
 
-The cited AlloyDB release notes provide lifecycle evidence for the feature, including preview availability and a later GA announcement.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- [https://docs.cloud.google.com/alloydb/docs/user-grant-access](https://docs.cloud.google.com/alloydb/docs/user-grant-access)
+- [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- [https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases](https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Use the AlloyDB remote MCP server \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp](https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp)
+- Source ID: `site-docs-reference-2`
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Grant access to other users \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/user-grant-access](https://docs.cloud.google.com/alloydb/docs/user-grant-access)
 - Source ID: `site-docs-root`
-- Final score: 22
+- Final score: 80
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- This version includes the following features and changes: The simplified installation method for AlloyDB Omni is now generally available ( GA ).
-- May 10, 2024 Feature Version 15.5.3 of the simplified installation method for AlloyDB Omni is now available in Preview .
-- April 08, 2024 Feature You can preview a simplified installation method for AlloyDB Omni .
+### "Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- Source ID: `site-docs-reference-2`
+- Final score: 80
+- Re-rank relevance: N/A
+
+### "Build generative AI applications \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases](https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases)
+- Source ID: `site-docs-root`
+- Final score: 72
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

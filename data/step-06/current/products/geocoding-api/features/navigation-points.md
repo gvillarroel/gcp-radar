@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:44:37.280Z"
+generated_at: "2026-04-12T12:16:18.810Z"
 product_name: "Geocoding API"
 product_slug: "geocoding-api"
 feature_name: "Navigation points"
 feature_slug: "navigation-points"
 latest_feature_date: "2024-12-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/maps/documentation/geocoding/search-for-destinations"
   - "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations"
+  - "https://developers.google.com/maps/documentation/geocoding/search-for-destinations"
   - "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate"
+  - "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens"
 keywords:
   - "navigation"
   - "points"
@@ -26,7 +27,7 @@ keywords:
 # Navigation points
 
 Product: Geocoding API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +39,36 @@ Navigation points is an experimental feature that returns a list of points usefu
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/maps/documentation/geocoding/search-for-destinations](https://developers.google.com/maps/documentation/geocoding/search-for-destinations)
 - [https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations)
+- [https://developers.google.com/maps/documentation/geocoding/search-for-destinations](https://developers.google.com/maps/documentation/geocoding/search-for-destinations)
 - [https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate](https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate)
+- [https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens](https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens)
 
 ## Supporting Pages
+
+### "Method: geocode.destinations.searchDestinations \_|\_ Geocoding API \_|\_\
+
+- URL: [https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations)
+- Source ID: `site-api-reference`
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Note: compared to the SubDestination returned by the Places API, this list of sub-destinations is more exhaustive, and each sub-destination contains more information. landmarks[] object ( Landmark ) Landmarks that can be used to communicate where the destination is or help with arrival. entrances[] object ( Entrance ) Entrances for this destination. navigationPoints[] object ( NavigationPoint ) Navigation points for this destination.
+- HTTP request Request body JSON representation Response body JSON representation Authorization scopes SearchDestinationsRequest.AddressQuery JSON representation SearchDestinationsRequest.LocationQuery JSON representation SearchDestinationsRequest.LocationQuery.PlaceFilter JSON representation PlaceView.StructureType SearchDestinationsRequest.LocationQuery.PlaceFilter.Addressability NavigationPoint.TravelMode Destination JSON representation PlaceView JSON representation Landmark JSON representation Landmark.Tag Entrance JSON representation Entrance.Tag NavigationPoint JSON representation NavigationPoint.Usage This method performs a destination lookup and returns a list of destinations.
+- JSON representation { "primary" : { object ( PlaceView ) } , "containingPlaces" : [ { object ( PlaceView ) } ] , "subDestinations" : [ { object ( PlaceView ) } ] , "landmarks" : [ { object ( Landmark ) } ] , "entrances" : [ { object ( Entrance ) } ] , "navigationPoints" : [ { object ( NavigationPoint ) } ] } Fields primary object ( PlaceView ) The primary place identified by the primary query in the request. containingPlaces[] object ( PlaceView ) The less precise places that the primary place is contained by.
+- Request body The request body contains data with the following structure: JSON representation { "travelModes" : [ enum ( NavigationPoint.TravelMode ) ] , "languageCode" : string , "regionCode" : string , // Union field primary query can be only one of the following: "place" : string , "addressQuery" : { object ( SearchDestinationsRequest.AddressQuery ) } , "locationQuery" : { object ( SearchDestinationsRequest.LocationQuery ) } // End of list of possible types for union field primary query . } Fields travelModes[] enum ( NavigationPoint.TravelMode ) Optional.
 
 ### Search for destinations \_|\_ Geocoding API \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/maps/documentation/geocoding/search-for-destinations](https://developers.google.com/maps/documentation/geocoding/search-for-destinations)
 - Source ID: `site-docs-root`
-- Final score: 158
+- Final score: 176
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,25 +77,11 @@ Evidence snippets:
 - For example, the below request will return only the entrances, navigation points, and place ID of the primary destination. curl -X POST -d '{"place": "places/ChIJG3kh4hq6j4AR XuFQnV0 t8"}' \ -H "X-Goog-Api-Key: API KEY " \ -H "Content-Type: application/json" \ -H "X-Goog-FieldMask: destinations.entrances,destinations.navigationPoints,destinations.primary.place" \ https://geocode.googleapis.com/v4/geocode/destinations There is no default list of returned fields in the response.
 - The point is intentionally slightly offset from the road's centerline to clearly mark the side of the road where the place is located. travelModes is a list of travel modes that the navigation point is accessible from: "DRIVE" is the travel mode corresponding to driving directions. "WALK" is the travel mode corresponding to walking directions. usages is a list of usages supported by the navigation point.
 
-### "Method: geocode.destinations.searchDestinations \_|\_ Geocoding API \_|\_\
-
-- URL: [https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations)
-- Source ID: `site-api-reference`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Note: compared to the SubDestination returned by the Places API, this list of sub-destinations is more exhaustive, and each sub-destination contains more information. landmarks[] object ( Landmark ) Landmarks that can be used to communicate where the destination is or help with arrival. entrances[] object ( Entrance ) Entrances for this destination. navigationPoints[] object ( NavigationPoint ) Navigation points for this destination.
-- HTTP request Request body JSON representation Response body JSON representation Authorization scopes SearchDestinationsRequest.AddressQuery JSON representation SearchDestinationsRequest.LocationQuery JSON representation SearchDestinationsRequest.LocationQuery.PlaceFilter JSON representation PlaceView.StructureType SearchDestinationsRequest.LocationQuery.PlaceFilter.Addressability NavigationPoint.TravelMode Destination JSON representation PlaceView JSON representation Landmark JSON representation Landmark.Tag Entrance JSON representation Entrance.Tag NavigationPoint JSON representation NavigationPoint.Usage This method performs a destination lookup and returns a list of destinations.
-- JSON representation { "primary" : { object ( PlaceView ) } , "containingPlaces" : [ { object ( PlaceView ) } ] , "subDestinations" : [ { object ( PlaceView ) } ] , "landmarks" : [ { object ( Landmark ) } ] , "entrances" : [ { object ( Entrance ) } ] , "navigationPoints" : [ { object ( NavigationPoint ) } ] } Fields primary object ( PlaceView ) The primary place identified by the primary query in the request. containingPlaces[] object ( PlaceView ) The less precise places that the primary place is contained by.
-- Request body The request body contains data with the following structure: JSON representation { "travelModes" : [ enum ( NavigationPoint.TravelMode ) ] , "languageCode" : string , "regionCode" : string , // Union field primary query can be only one of the following: "place" : string , "addressQuery" : { object ( SearchDestinationsRequest.AddressQuery ) } , "locationQuery" : { object ( SearchDestinationsRequest.LocationQuery ) } // End of list of possible types for union field primary query . } Fields travelModes[] enum ( NavigationPoint.TravelMode ) Optional.
-
 ### Migrate from Geocoding v3 to v4 \_|\_ Geocoding API \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate](https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate)
 - Source ID: `site-docs-root`
-- Final score: 132
+- Final score: 150
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +89,17 @@ Evidence snippets:
 - Note that most navigation points will have an UNKNOWN usage, but that does not necessarily mean the navigation point's usage is restricted in any way.
 - For example, the following API request sets the field mask to receive all fields required to get the entrances, navigation points, building outlines, and grounds of a destination: curl -X POST -d '{"place": "places/ChIJG3kh4hq6j4AR XuFQnV0 t8"}' \ -H "X-Goog-Api-Key: API KEY " \ -H "Content-Type: application/json" \ -H "X-Goog-FieldMask: destinations.entrances,destinations.navigationPoints,destinations.primary,destinations.containingPlaces,destinations.subDestinations" \ https://geocode.googleapis.com/v4/geocode/destinations Security considerations The Geocoding API v4 is designed as a server-to-server API.
 - Migrate from Geocoding Hyperlocal Data to Destinations The following features in the Geocoding API v3 are being replaced by the SearchDestinations method of the Geocoding API v4: Entrances Navigation points Building outlines Grounds If you were using the Geocoding API v3 for the above features, use this document to help you use the SearchDestinations method instead to get these features.
+
+### "Route using navigation point tokens \_|\_ Geocoding API \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens](https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens)
+- Source ID: `site-docs-root`
+- Final score: 146
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- When a consumer opens the consumer app, the app calls the Destinations method of the Geocoding API and provides the consumer with a selection of potential navigation points: The user chooses their preferred point, which is one in the array of navigationPoints in the response body of a SearchDestinations request: "navigationPoints" : [ { "navigationPointToken" : < e n coded na viga t io n poi nt t oke n > , "displayName" : "South Entrance" , "travelModes" : [ "DRIVE" ], "usages" : [ "PICKUP" , "DROPOFF" ], "location" : { "lat" : 37.3940894 , "lng" : -122.0788389 } } ] The navigation point token from the response is passed to a mobile driver app that uses the Navigation SDK for Android or iOS to create a waypoint to route the driver to the correct pickup point.
+- To create and pass a navigation point token, use the Destinations method of the Geocoding API to allow your users to select a preferred location from a list of navigation points .
+- You can then pass the navigation point token, which contains both the destination coordinates as well as contextual information, to the Navigation SDK for Android or the Navigation SDK for iOS , where a waypoint is created for precise routing.
+- This image shows examples of a consumer rideshare app where the navigation point is selected, and a driver app using the Navigation SDK for Android to precisely route the driver.
 

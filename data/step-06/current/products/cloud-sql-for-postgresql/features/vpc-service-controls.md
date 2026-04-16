@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:45:01.438Z"
+generated_at: "2026-04-13T13:51:57.824Z"
 product_name: "Cloud SQL for PostgreSQL"
 product_slug: "cloud-sql-for-postgresql"
 feature_name: "VPC Service Controls"
 feature_slug: "vpc-service-controls"
 latest_feature_date: "2019-12-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls"
   - "https://docs.cloud.google.com/sql/docs/postgres/admin-api/configure-service-controls"
   - "https://docs.cloud.google.com/sql/docs/mysql/admin-api"
 keywords:
-  - "vpc"
-  - "controls"
-  - "sql"
-  - "supports"
-  - "to"
   - "protect"
-  - "the"
+  - "host"
+  - "project"
+  - "controls"
   - "admin"
+  - "supports"
 ---
 
 # VPC Service Controls
 
 Product: Cloud SQL for PostgreSQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +36,7 @@ Cloud SQL supports VPC Service Controls to protect the Cloud SQL Admin API and h
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,41 +50,41 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls](https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls)
 - Source ID: `site-docs-root`
-- Final score: 276
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To add Cloud SQL and Cloud Storage APIs as restricted services: Console In the Google Cloud console navigation menu, click Security , and then click VPC Service Controls .
+- Note: If you're using Shared VPC , we recommend that you include the host project in a service perimeter along with any projects that belong to the Shared VPC.
 - Enable the API Add the Identity and Access Management (IAM) roles to the user or service account you are using to set up and administer VPC Service Controls.
 - Create a service perimeter During this procedure, you select the Cloud SQL projects that you want the VPC service perimeter to protect.
-- Click Save . gcloud gcloud access-context-manager perimeters update PERIMETER ID \ --policy = POLICY ID \ --add-restricted-services = sqladmin.googleapis.com,storage.googleapis.com Where: PERIMETER ID is the ID of the perimeter or the fully qualified identifier for the perimeter.
+- For this scenario, when you enable VPC-SC, you must add the KMS key hosting project to the security perimeter.
 
 ### "Configure VPC Service Controls \_|\_ Cloud SQL for PostgreSQL \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/sql/docs/postgres/admin-api/configure-service-controls](https://docs.cloud.google.com/sql/docs/postgres/admin-api/configure-service-controls)
 - Source ID: `site-docs-reference`
-- Final score: 266
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To add Cloud SQL and Cloud Storage APIs as restricted services: Console In the Google Cloud console navigation menu, click Security , and then click VPC Service Controls .
+- Note: If you're using Shared VPC , we recommend that you include the host project in a service perimeter along with any projects that belong to the Shared VPC.
 - Enable the API Add the Identity and Access Management (IAM) roles to the user or service account you are using to set up and administer VPC Service Controls.
 - Create a service perimeter During this procedure, you select the Cloud SQL projects that you want the VPC service perimeter to protect.
-- Click Save . gcloud gcloud access-context-manager perimeters update PERIMETER ID \ --policy = POLICY ID \ --add-restricted-services = sqladmin.googleapis.com,storage.googleapis.com Where: PERIMETER ID is the ID of the perimeter or the fully qualified identifier for the perimeter.
+- For this scenario, when you enable VPC-SC, you must add the KMS key hosting project to the security perimeter.
 
 ### "Use the Cloud SQL Admin API \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api](https://docs.cloud.google.com/sql/docs/mysql/admin-api)
 - Source ID: `site-docs-reference`
-- Final score: 250
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Use VPC Service Controls with the Cloud SQL Admin API VPC Service Controls let you create a service perimeter around the Cloud SQL Admin API to help mitigate data exfiltration.
-- Before adding VPC Service Controls, it is recommended that you enable private IP and disable public IP on the Cloud SQL instances that you plan to add to the service perimeter.
+- At the command line, provide the path to the file, preceded by the @ character, as the --data parameter: --data @<path-to-file>/<filename> For example, to create a database user, you could create a file named data.json with the following content: {"host": "%", "name": "user1", "password": "abc123"} Then you would use the following cURL command at the command line: curl --header "Authorization: Bearer ${ ACCESS TOKEN } " \ --header 'Content-Type: application/json' \ --data @./data.json \ -X POST \ https://www.googleapis.com/sql/v1beta4/projects/myProject/instances/myInstance/users Work with long-running API calls Some API calls, such as object creation, can take some time to complete.
 - Select Continue . gcloud Enter the following to display the project IDs for your Google Cloud projects: gcloud projects list Set your default project: gcloud config set project YOUR PROJECT ID Enable the Cloud SQL Admin API: gcloud services enable sqladmin.googleapis.com Authorize requests Your application needs to identify itself every time it sends a request to the Cloud SQL Admin API, by including an API key with each request.
+- Use VPC Service Controls with the Cloud SQL Admin API VPC Service Controls let you create a service perimeter around the Cloud SQL Admin API to help mitigate data exfiltration.
 - Enable the API To use the Cloud SQL Admin API, you need to enable it: Console Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.
 

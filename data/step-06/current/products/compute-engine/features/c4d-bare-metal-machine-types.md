@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:01.901Z"
+generated_at: "2026-04-15T13:50:03.131Z"
 product_name: "Compute Engine"
 product_slug: "compute-engine"
 feature_name: "C4D bare metal machine types"
 feature_slug: "c4d-bare-metal-machine-types"
 latest_feature_date: "2025-07-21"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/compute/docs/machine-resource"
+  - "https://developers.google.com/compute/docs/gpus"
+  - "https://docs.cloud.google.com/compute/docs/gpus"
 keywords:
   - "c4d"
   - "bare"
   - "metal"
   - "machine"
   - "types"
-  - "the"
   - "series"
   - "adds"
+  - "amd"
 ---
 
 # C4D bare metal machine types
 
 Product: Compute Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ The C4D machine series adds AMD-based bare metal machine types with 384 vCPUs; T
 
 The C4D machine series adds AMD-based bare metal machine types with 384 vCPUs; The C4D machine series adds bare metal machine types with 384 vCPUs.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/compute/docs/machine-resource](https://docs.cloud.google.com/compute/docs/machine-resource)
+- [https://developers.google.com/compute/docs/gpus](https://developers.google.com/compute/docs/gpus)
+- [https://docs.cloud.google.com/compute/docs/gpus](https://docs.cloud.google.com/compute/docs/gpus)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### GPU machine types \_|\_ Compute Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/compute/docs/gpus](https://docs.cloud.google.com/compute/docs/gpus)
+- Source ID: `site-docs-root`
+- Final score: 172
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- A4X Max machine types (bare metal) A4X Max accelerator-optimized machine types use NVIDIA GB300 Grace Blackwell Ultra Superchips ( nvidia-gb300 ) and are ideal for foundation model training and serving.
+- A4X Max machine types are available as bare metal instances .
+- G4 machine series G4 accelerator-optimized machine types use NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs ( nvidia-rtx-pro-6000 ) and are suitable for NVIDIA Omniverse simulation workloads, graphics-intensive applications, video transcoding, and virtual desktops.
+- GPU machine types AI and ML workloads Graphics and visualization Other GPU workloads Accelerator-optimized A series machine types are designed for high performance computing (HPC), artificial intelligence (AI), and machine learning (ML) workloads.
+
+### GPU machine types \_|\_ Compute Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://developers.google.com/compute/docs/gpus](https://developers.google.com/compute/docs/gpus)
+- Source ID: `site-docs-root-3`
+- Final score: 172
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- A4X Max machine types (bare metal) A4X Max accelerator-optimized machine types use NVIDIA GB300 Grace Blackwell Ultra Superchips ( nvidia-gb300 ) and are ideal for foundation model training and serving.
+- A4X Max machine types are available as bare metal instances .
+- G4 machine series G4 accelerator-optimized machine types use NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs ( nvidia-rtx-pro-6000 ) and are suitable for NVIDIA Omniverse simulation workloads, graphics-intensive applications, video transcoding, and virtual desktops.
+- GPU machine types AI and ML workloads Graphics and visualization Other GPU workloads Accelerator-optimized A series machine types are designed for high performance computing (HPC), artificial intelligence (AI), and machine learning (ML) workloads.
+
+### "Machine families resource and comparison guide \_|\_ Compute Engine \_|\_\
+
+- URL: [https://docs.cloud.google.com/compute/docs/machine-resource](https://docs.cloud.google.com/compute/docs/machine-resource)
+- Source ID: `site-docs-root`
+- Final score: 171
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This document describes the machine families, machine series, and machine types that you can choose from to create a virtual machine (VM) instance or bare metal instance with the resources that you need.
+- Workload type Instance type CPU type Architecture vCPUs vCPU definition Memory Shared memory architecture Custom machine types Extended memory Sole tenancy Nested virtualization Confidential Computing Disk interface type Hyperdisk Balanced Hyperdisk Balanced HA Hyperdisk Extreme Hyperdisk ML Hyperdisk Throughput Local SSD Max Local SSD Standard PD Balanced PD SSD PD Extreme PD Network interfaces Network performance Tier 1 networking Max GPUs Sustained use discounts Resource-based committed use discounts (CUDs) Compute flexible CUDs Spot VM discounts Clear all C4 C4A C4D C3 C3D N4 N4A N4D N2 N2D N1 T2D T2A E2 Z3 H4D H3 C2 C2D X4 M4 M3 M2 M1 N1+GPU A4X Max A4X A4 A3 (H200) A3 (H100) A2 G4 G2 Workload type General-purpose General-purpose General-purpose General-purpose General-purpose General-purpose General-purpose General-purpose General-purpose General-purpose General-purpose General-purpose General-purpose Cost optimized Storage optimized Compute optimized Compute optimized Compute optimized Compute optimized Memory optimized Memory optimized Memory optimized Memory optimized Memory optimized Accelerator optimized Accelerator optimized Accelerator optimized Accelerator optimized Accelerator optimized Accelerator optimized Accelerator optimized Accelerator optimized Accelerator optimized Instance type VM and bare metal VM and bare metal VM and bare metal VM and bare metal VM VM VM VM VM VM VM VM VM VM VM and bare metal VM VM VM VM Bare metal VM VM VM VM VM Bare metal VM VM VM VM VM VM VM CPU type Intel Emerald Rapids and Granite Rapids Google Axion AMD EPYC Turin Intel Sapphire Rapids AMD EPYC Genoa Intel Emerald Rapids Google Axion AMD EPYC Turin Intel Cascade Lake and Ice Lake AMD EPYC Rome and EPYC Milan Intel Skylake, Broadwell, Haswell, Sandy Bridge, and Ivy Bridge AMD EPYC Milan Ampere Altra Intel Skylake, Broadwell, and Haswell, AMD EPYC Rome and EPYC Milan Intel Sapphire Rapids AMD EPYC Turin Intel Sapphire Rapids Intel Cascade Lake AMD EPYC Milan Intel Sapphire Rapids Intel Emerald Rapids Intel Ice Lake Intel Cascade Lake Intel Skylake and Broadwell Intel Skylake, Broadwell, Haswell, Sandy Bridge, and Ivy Bridge NVIDIA Grace NVIDIA Grace Intel Emerald Rapids Intel Emerald Rapids Intel Sapphire Rapids Intel Cascade Lake AMD EPYC Turin Intel Cascade Lake Architecture x86 Arm x86 x86 x86 x86 Arm x86 x86 x86 x86 x86 Arm x86 x86 x86 x86 x86 x86 x86 x86 x86 x86 x86 x86 Arm Arm x86 x86 x86 x86 x86 x86 vCPUs 2 to 288 1 to 96 2 to 384 4 to 176 4 to 360 2 to 80 1 to 64 2 to 96 2 to 128 2 to 224 1 to 96 1 to 60 1 to 48 0.25 to 32 8 to 192 192 88 4 to 60 2 to 112 480 to 1,920 16 to 224 32 to 128 208 to 416 40 to 160 1 to 96 144 140 224 224 208 12 to 96 6 to 384 4 to 96 vCPU definition Thread Core Thread Thread Thread Thread Core Thread Thread Thread Thread Core Core Thread Thread Core Core Thread Thread Thread Thread Thread Thread Thread Thread Core Core Thread Thread Thread Thread Thread Thread Memory 2 to 2,232 GB 1 to 768 GB 3 to 3,072 GB 8 to 1,408 GB 8 to 2,880 GB 2 to 640 GB 2 to 512 GB 2 to 768 GB 2 to 864 GB 2 to 896 GB 1.8 to 624 GB 4 to 240 GB 4 to 192 GB 1 to 128 GB 64 to 1,536 GB 720 to 1,488 GB 352 GB 16 to 240 GB 4 to 896 GB 6,144 to 32,768 GB 248 to 5,952 GB 976 to 3,904 GB 5,888 to 11,776 GB 961 to 3,844 GB 3.75 to 624 GB 960 GB 884 GB 3,968 GB 2,952 GB 1,872 GB 85 to 1,360 GB 22 to 1,440 GB 16 to 432 GB Shared memory architecture NUMA UMA NUMA NUMA NUMA — UMA — — — — — NUMA — NUMA NUMA NUMA NUMA NUMA — — — — — — — — — — — — — — Custom machine types — — — — — — — — — — — — — — — — — — — — — — — — Extended memory — — — — — — — — — — — — — — — — — — — — — — — — — — Sole tenancy — — — — — — — — — — — Nested virtualization — — — — — — — — — — — — — — — — — — — — — Confidential Computing — — AMD SEV Intel TDX AMD SEV — — — — AMD SEV , AMD SEV-SNP — — — — — — — — AMD SEV — — — — — — — — — — Intel TDX , NVIDIA Confidential Computing — — — Disk interface type NVMe NVMe NVMe NVMe NVMe NVMe NVMe NVMe SCSI (PD and Local SSD) NVMe (Local SSD) SCSI (PD and Local SSD) NVMe (Local SSD) SCSI (PD and Local SSD) NVMe (Local SSD) SCSI (PD and Local SSD) NVMe (Local SSD) NVMe SCSI NVMe NVMe NVMe SCSI (PD and Local SSD) NVMe (Local SSD) SCSI (PD and Local SSD) NVMe (Local SSD) NVMe NVMe NVMe SCSI SCSI (PD and Local SSD) NVMe (Local SSD) SCSI (PD and Local SSD) NVMe (Local SSD) NVMe NVMe NVMe NVMe NVMe SCSI (PD and Local SSD) NVMe (Local SSD) NVMe NVMe Hyperdisk Balanced — — — — — — — — — — — Hyperdisk Balanced HA — — — — — — — — — — — — — — — — — — — — — Hyperdisk Extreme — — — — — — — — — — — — — — — Hyperdisk ML — — — — — — — — — — — — — — — — — — — Hyperdisk Throughput — — — — — — — — — — — — — — — — Local SSD — — — — — — — — — — Max Local SSD 18 TiB 6 TiB 12 TiB 12 TiB 12 TiB 0 0 0 9 TiB 9 TiB 9 TiB 0 0 0 36 TiB (VM), 72 TiB (Metal) 3 TiB 0 3 TiB 3 TiB 0 0 3 TiB 0 3 TiB 9 TiB 12 TiB 12 TiB 12 TiB 12 TiB 6 TiB 3 TiB 12 TiB 3 TiB Standard PD — — — — — — — — Zonal and Regional Zonal and Regional Zonal and Regional Zonal Zonal Zonal and Regional — — — Zonal Zonal — — — Zonal Zonal Zonal and Regional — — — — — Zonal — — Balanced PD — — — Zonal Zonal — — — Zonal and Regional Zonal and Regional Zonal and Regional Zonal Zonal Zonal and Regional Zonal — Zonal Zonal Zonal — — Zonal Zonal Zonal Zonal and Regional — — — — Zonal Zonal — Zonal SSD PD — — — Zonal Zonal — — — Zonal and Regional Zonal and Regional Zonal and Regional Zonal Zonal Zonal and Regional Zonal — — Zonal Zonal — — Zonal Zonal Zonal Zonal and Regional — — — — Zonal Zonal — Zonal Extreme PD — — — — — — — — — — — — — — — — — — — — — — — — — — — — — Network interfaces gVNIC and IDPF gVNIC and IDPF gVNIC and IDPF gVNIC and IDPF gVNIC gVNIC gVNIC gVNIC gVNIC and VirtIO-Net gVNIC and VirtIO-Net gVNIC and VirtIO-Net gVNIC and VirtIO-Net gVNIC gVNIC and VirtIO-Net gVNIC and IDPF gVNIC, IRDMA gVNIC gVNIC and VirtIO-Net gVNIC and VirtIO-Net IDPF gVNIC gVNIC gVNIC and VirtIO-Net gVNIC and VirtIO-Net gVNIC and VirtIO-Net IDPF and MRDMA gVNIC and MRDMA gVNIC and MRDMA gVNIC and MRDMA gVNIC gVNIC and VirtIO-Net gVNIC gVNIC and VirtIO-Net Network performance 10 to 100 Gbps 10 to 50 Gbps 10 to 100 Gbps 23 to 100 Gbps 20 to 100 Gbps 10 to 50 Gbps Up to 50 Gbps 10 to 50 Gbps 10 to 32 Gbps 10 to 32 Gbps 2 to 32 Gbps 10 to 32 Gbps 10 to 32 Gbps 1 to 16 Gbps 23 to 100 Gbps up to 200 Gbps up to 200 Gbps 10 to 32 Gbps 10 to 32 Gbps up to 100 Gbps 16 to 100 Gbps up to 32 Gbps up to 32 Gbps up to 32 Gbps 2 to 32 Gbps up to 3,600 Gbps up to 2,000 Gbps up to 3,600 Gbps up to 3,200 Gbps up to 1,800 Gbps 24 to 100 Gbps 20 to 400 Gbps 10 to 100 Gbps Tier 1 networking 50 to 200 Gbps 50 to 100 Gbps 50 to 200 Gbps 50 to 200 Gbps 50 to 200 Gbps — — — 50 to 100 Gbps 50 to 100 Gbps — — — — 50 to 200 Gbps — — 50 to 100 Gbps 50 to 100 Gbps — — 50 to 100 Gbps — — 50 to 100 Gbps — — — — — — — — Max GPUs 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 4 4 8 8 8 16 8 8 Sustained use discounts — — — — — — — — — — — — — — — — — — — — — — — — — — Resource-based committed use discounts (CUDs) discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts — discounts discounts discounts Only at GA discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts Compute flexible CUDs discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts discounts — discounts — discounts discounts discounts Only at GA and for the new CUD model discounts Only for the new CUD model discounts discounts discounts — discounts Only for the new CUD model discounts Only for the new CUD model discounts Only for the new CUD model discounts Only for the new CUD model discounts — discounts — discounts — discounts — discounts — discounts — discounts — discounts — discounts — discounts Spot VM discounts — — — GPUs and compute instances GPUs are used to accelerate workloads, and are supported for A4X Max, A4X, A4, A3, A2, G4, G2, and N1 instances.
+- Bare metal machine types Bare metal machine types are a special predefined machine type.
+- When you create a compute instance using one of the following machine types, Titanium SSD or Local SSD disks are automatically attached to the instance: -lssd : Available with the C4, C4A, C4D, C3, C3D, and H4D machine series, these machine types attach a predetermined number of 375 GiB Titanium SSD or Local SSD disks to the instance.
 

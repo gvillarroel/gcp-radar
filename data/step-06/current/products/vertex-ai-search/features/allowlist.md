@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.931Z"
+generated_at: "2026-04-14T17:29:37.064Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "allowlist)"
 feature_slug: "allowlist"
 latest_feature_date: "2024-01-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
 keywords:
   - "allowlist"
   - "introduces"
-  - "the"
   - "preview"
   - "only"
   - "checkgrounding"
-  - "api"
   - "which"
+  - "scores"
+  - "text"
 ---
 
 # allowlist)
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,13 +38,12 @@ Introduces the Preview, allowlist-only CheckGrounding API, which scores text gro
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
 
 ## Supporting Pages
@@ -54,46 +52,33 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
 - Source ID: `site-docs-reference-2`
-- Final score: 136
+- Final score: 167
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Note: this skips config cache and introduces dependency on databases, which could significantly increase the API latency.
 - A facet value which contains values. facet value can be only one of the following: value string Text value of a facet, such as "Black" for facet "colors". interval object ( Interval ) Interval value for a facet, such as [10, 20) for facet "price".
-- If any fields are specified in allowed field names, only the fields that are both marked as indexable in the schema and specified in the allowlist will be eligible for natural language filter extraction.
-- This field is only populated on SearchService.Search API. nextChunks[] object ( Chunk ) The next chunks of the current chunk.
+- Supported types: application/pdf (PDF, only native PDFs are supported for now) text/html (HTML) text/plain (TXT) application/xml or text/xml (XML) application/json (JSON) application/vnd.openxmlformats-officedocument.wordprocessingml.document (DOCX) application/vnd.openxmlformats-officedocument.presentationml.presentation (PPTX) application/vnd.openxmlformats-officedocument.spreadsheetml.sheet (XLSX) application/vnd.ms-excel.sheet.macroenabled.12 (XLSM) The following types are supported only if layout parser is enabled in the data store: image/bmp (BMP) image/gif (GIF) image/jpeg (JPEG) image/png (PNG) image/tiff (TIFF) See https://www.iana.org/assignments/media-types/media-types.xhtml .
+- SummaryWithMetadata JSON representation { "summary" : string , "citationMetadata" : { object ( CitationMetadata ) } , "references" : [ { object ( Reference ) } ] , "blobAttachments" : [ { object ( BlobAttachment ) } ] } Fields summary string Summary text with no citation information. citationMetadata object ( CitationMetadata ) Citation metadata for given summary. references[] object ( Reference ) Document References. blobAttachments[] object ( BlobAttachment ) Output only.
+- Only fields that are marked as retrievable are populated. chunk object ( Chunk ) The chunk data in the search response if the SearchRequest.ContentSearchSpec.search result mode is set to CHUNKS . modelScores map (key: string, value: object ( DoubleList )) Output only.
 
 ### Get search results \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
 - Source ID: `site-iam-reference`
-- Final score: 114
+- Final score: 134
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- To change or view the LLM model used in the Preview page of the UI (only supported for advanced search applications and healthcare applications).
+- CONDITION : a text filter expression to select the documents to which boost is applied.
+- CONDITION : a text filter expression to select the documents to which boost is applied.
 - For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'YOUR LOCATION'; // Options: 'global', 'us', 'eu' // const collectionId = 'default collection'; // Options: 'default collection' // const dataStoreId = 'YOUR DATA STORE ID' // Create in Cloud Console // const servingConfigId = 'default config'; // Options: 'default config' // const searchQuery = 'Google'; const { SearchServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1beta ; // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store const apiEndpoint = location === 'global' ? 'discoveryengine.googleapis.com' : ${ location } -discoveryengine.googleapis.com ; // Instantiates a client const client = new SearchServiceClient ({ apiEndpoint : apiEndpoint }); async function search () { // The full resource name of the search engine serving configuration. // Example: projects/{projectId}/locations/{location}/collections/{collectionId}/dataStores/{dataStoreId}/servingConfigs/{servingConfigId} // You must create a search engine in the Cloud Console first. const name = client . projectLocationCollectionDataStoreServingConfigPath ( projectId , location , collectionId , dataStoreId , servingConfigId ); const request = { pageSize : 10 , query : searchQuery , servingConfig : name , }; const IResponseParams = { ISearchResult : 0 , ISearchRequest : 1 , ISearchResponse : 2 , }; // Perform search request const response = await client . search ( request , { // Warning: Should always disable autoPaginate to avoid iterate through all pages. // // By default NodeJS SDK returns an iterable where you can iterate through all // search results instead of only the limited number of results requested on // pageSize, by sending multiple sequential search requests page-by-page while // iterating, until it exhausts all the search results.
-- For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'YOUR LOCATION'; // Options: 'global', 'us', 'eu' // const collectionId = 'default collection'; // Options: 'default collection' // const dataStoreId = 'YOUR DATA STORE ID' // Create in Cloud Console // const servingConfigId = 'default config'; // Options: 'default config' // const searchQuery = 'Google'; const { SearchServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1beta ; // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store const apiEndpoint = location === 'global' ? 'discoveryengine.googleapis.com' : ${ location } -discoveryengine.googleapis.com ; // Instantiates a client const client = new SearchServiceClient ({ apiEndpoint : apiEndpoint }); async function search () { // The full resource name of the search engine serving configuration. // Example: projects/{projectId}/locations/{location}/collections/{collectionId}/dataStores/{dataStoreId}/servingConfigs/{servingConfigId} // You must create a search engine in the Cloud Console first. const name = client . projectLocationCollectionDataStoreServingConfigPath ( projectId , location , collectionId , dataStoreId , servingConfigId ); const request = { pageSize : 10 , query : searchQuery , servingConfig : name , }; const IResponseParams = { ISearchResult : 0 , ISearchRequest : 1 , ISearchResponse : 2 , }; // Perform search request const response = await client . search ( request , { // Warning: Should always disable autoPaginate to avoid iterate through all pages. // // By default NodeJS SDK returns an iterable where you can iterate through all // search results instead of only the limited number of results requested on // pageSize, by sending multiple sequential search requests page-by-page while // iterating, until it exhausts all the search results.
-- For more information, see Set up authentication for a local development environment . using Google.Api.Gax ; using Google.Cloud.DiscoveryEngine.V1Beta ; using Google.Protobuf.WellKnownTypes ; using System ; public sealed partial class GeneratedSearchServiceClientSnippets { /// <summary>Snippet for Search</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void SearchRequestObject () { // Create client SearchServiceClient searchServiceClient = SearchServiceClient .
-- For more information, see Set up authentication for a local development environment . using Google.Api.Gax ; using Google.Cloud.DiscoveryEngine.V1Beta ; using Google.Protobuf.WellKnownTypes ; using System ; public sealed partial class GeneratedSearchServiceClientSnippets { /// <summary>Snippet for Search</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void SearchRequestObject () { // Create client SearchServiceClient searchServiceClient = SearchServiceClient .
-
-### "MCP Tools Reference: discoveryengine.googleapis.com \_|\_ Vertex AI Search\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search)
-- Source ID: `site-docs-reference-2`
-- Final score: 112
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- If any fields are specified in allowed field names, only the fields that are both marked as indexable in the schema and specified in the allowlist will be eligible for natural language filter extraction.
-- Only set if the answer generation (/answer API call) happened in this turn. detailedAnswer object ( Answer ) Output only.
-- DocumentMetadata JSON representation { // Union field document can be only one of the following: "document" : string // End of list of possible types for union field document . // Union field uri can be only one of the following: "uri" : string // End of list of possible types for union field uri . // Union field title can be only one of the following: "title" : string // End of list of possible types for union field title . // Union field page identifier can be only one of the following: "pageIdentifier" : string // End of list of possible types for union field page identifier . // Union field domain can be only one of the following: "domain" : string // End of list of possible types for union field domain . // Union field mime type can be only one of the following: "mimeType" : string // End of list of possible types for union field mime type . } Fields Union field document . document can be only one of the following: document string Document resource name.
-- Answer JSON representation { "name" : string , "state" : enum ( State ) , "answerText" : string , "citations" : [ { object ( Citation ) } ] , "groundingSupports" : [ { object ( GroundingSupport ) } ] , "references" : [ { object ( Reference ) } ] , "blobAttachments" : [ { object ( BlobAttachment ) } ] , "relatedQuestions" : [ string ] , "steps" : [ { object ( Step ) } ] , "queryUnderstandingInfo" : { object ( QueryUnderstandingInfo ) } , "answerSkippedReasons" : [ enum ( AnswerSkippedReason ) ] , "createTime" : string , "completeTime" : string , "safetyRatings" : [ { object ( SafetyRating ) } ] , // Union field grounding score can be only one of the following: "groundingScore" : number // End of list of possible types for union field grounding score . } Fields name string Immutable.
 
 ### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- Source ID: `site-api-reference`
-- Final score: 106
+- Source ID: `site-docs-reference`
+- Final score: 130
 - Re-rank relevance: N/A
 
 Evidence snippets:

@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.447Z"
+generated_at: "2026-04-14T15:13:19.486Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Google Global Landsat-based CCDC Segments"
 feature_slug: "google-global-landsat-based-ccdc-segments"
 latest_feature_date: "2024-05-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/landuse-landcover"
   - "https://developers.google.com/earth-engine/datasets/catalog"
@@ -26,7 +26,7 @@ keywords:
 # Google Global Landsat-based CCDC Segments
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ A global Landsat-based CCDC segments dataset covering 1999 to 2019.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
 - Source ID: `site-docs-root-3`
-- Final score: 158
+- Final score: 197
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +65,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 150
+- Final score: 189
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +78,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 - Source ID: `site-docs-root`
-- Final score: 138
+- Final score: 177
 - Re-rank relevance: N/A
 
 Evidence snippets:

@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T17:49:26.929Z"
+generated_at: "2026-04-14T08:39:49.494Z"
 product_name: "Artifact Registry"
 product_slug: "artifact-registry"
 feature_name: "Artifact Registry repository tagging"
 feature_slug: "artifact-registry-repository-tagging"
 latest_feature_date: "2022-03-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/artifact-registry/docs/release-notes"
-  - "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
   - "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+  - "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+  - "https://docs.cloud.google.com/artifact-registry/docs/docker/names"
 keywords:
   - "attaching"
   - "tagging"
   - "tags"
   - "repository"
   - "supports"
-  - "registry"
-  - "artifact"
-  - "now"
 ---
 
 # Artifact Registry repository tagging
 
 Product: Artifact Registry
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,53 @@ Artifact Registry now supports attaching tags to repositories for grouping repos
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/artifact-registry/docs/release-notes](https://docs.cloud.google.com/artifact-registry/docs/release-notes)
-- [https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr](https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr)
 - [https://docs.cloud.google.com/artifact-registry/docs/repositories](https://docs.cloud.google.com/artifact-registry/docs/repositories)
+- [https://docs.cloud.google.com/artifact-registry/docs/access-control](https://docs.cloud.google.com/artifact-registry/docs/access-control)
+- [https://docs.cloud.google.com/artifact-registry/docs/docker/names](https://docs.cloud.google.com/artifact-registry/docs/docker/names)
 
 ## Supporting Pages
-
-### Artifact Registry release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/release-notes](https://docs.cloud.google.com/artifact-registry/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 184
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- March 25, 2022 v1 Feature Artifact Registry support for attaching tags to repositories is now in Preview .
-- August 21, 2024 v1 Change The following Artifact Registry Cloud Audit Log method names have changed: Docker-EmptyTarBlob is renamed Docker-ServeBlob Docker-GetEmptyTags is renamed Docker-GetTags Docker-HeadEmptyTarBlob is renamed Docker-HeadBlob Kfp-UploadPackage-Redirect is renamed Kfp-UploadPackage Apt-ViewRemoteIndexFile is renamed to indicate the type of file requested: Apt-ViewIndexFile : when a repository metadata file is requested Apt-Contents : when the Contents index file for a specific repository component and architecture type is requested Apt-ViewArchIndexFile : when the Packages index file for a specific repository component and architecture type is requested Apt-ViewRemotePackageFile is renamed Apt-ViewPackageFile Yum-ViewUpstreamFile is renamed to indicate the type of file requested: Yum-ViewIndexKey : when the public key for signing Yum packages is requested Yum-ViewIndexFile : when one of a repository's index files is requested Yum-ViewPackageFile : when a Yum package file is requested For more information on Artifact Registry logs, see Audit Logging .
-- For more information, see Container scanning overview . v1 Feature Artifact Analysis now supports scanning for vulnerabilities in the following types of operating systems: AlmaLinux OS Chainguard Google Distroless Red Hat Universal Base Image (UBI) Rocky Linux SUSE Linux Enterprise Server (SLES) Wolfi If the Container Scanning API is enabled, it scans container images pushed to Artifact Registry addressing these new operating systems, in addition to already supported operating system and language package vulnerabilities.
-- October 21, 2024 v1 Feature Artifact Analysis now supports manual scans for vulnerabilities in the following types of packages: AlmaLinux OS Chainguard .NET Google Distroless NPM PHP Python Ruby Rust Red Hat Universal Base Image (UBI) Rocky Linux SUSE Linux Enterprise Server (SLES) Wolfi You can use the On-Demand Scanning API to manually scan container images locally on your computer or in your registry.
-
-### "Transition from Container Registry \_|\_ Artifact Registry \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr](https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Operation Container Registry Artifact Registry Create a repository Not applicable. gcloud artifacts repositories create Delete a repository Not applicable. gcloud artifacts repositories delete List images gcloud container images list gcloud artifacts docker images list List tags gcloud container images list-tags gcloud artifacts docker tags list Add a tag gcloud container images add-tag gcloud artifacts docker tags add Delete a tag gcloud container images untag gcloud artifacts docker tags delete Describe images gcloud container images describe gcloud artifacts docker images list --include-tags Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Cached Docker Hub images mirror.gcr.io is a pull-through cache that stores the most frequently requested Docker Hub images across all users. mirror.gcr.io is now hosted on Artifact Registry. mirror.gcr.io is now hosted on Artifact Registry.
-- Existing Container Registry images maintained by Google Most Google-owned images previously hosted on Container Registry are now hosted on Artifact Registry in gcr.io repositories.
-- Summary of new features Artifact Registry extends the capabilities of Container Registry with the following features: Repository-level access control .
 
 ### Repository overview \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/artifact-registry/docs/repositories](https://docs.cloud.google.com/artifact-registry/docs/repositories)
 - Source ID: `site-docs-root`
-- Final score: 166
+- Final score: 98
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- To create and apply cleanup policies to your repository, see Configure cleanup policies . gcr.io domain support Artifact Registry supports hosting of images on the gcr.io domain.
 - For example, given a repository containing the following artifacts: IMAGE: us-west1-docker.pkg.dev/my-project/release-xyz-v1 DIGEST: sha256:1b0a26bd07a3d17473d8d8468bea84015e27f87124b2831234581bce13f61370 TAGS: CREATE TIME: 2023 -06-19T18:59:09 UPDATE TIME: 2023 -06-19T18:59:10 IMAGE: us-west1-docker.pkg.dev/my-project/release-xyz-v2 DIGEST: sha256:6e494387c901caf429c1bf77bd92fb82b33a68c0e19f123456a3ac8d27a7049d TAGS: latest CREATE TIME: 2023 -06-19T18:59:09 UPDATE TIME: 2023 -06-19T18:59:09 IMAGE: us-west1-docker.pkg.dev/my-project/release-v2 DIGEST: sha256:6e494387c901caf429c1bf77bd92fb82b33a68c0e19f123456a3ac8d27a7049d TAGS: latest CREATE TIME: 2023 -06-19T18:59:09 UPDATE TIME: 2023 -06-19T18:59:09 If your Keep most recent versions policy is set to keep 3 versions of packages matching the Package prefixes : {release-xyz} , only release-xyz-v1 , and release-xyz-v2 are kept.
+- To create and apply cleanup policies to your repository, see Configure cleanup policies . gcr.io domain support Artifact Registry supports hosting of images on the gcr.io domain.
+- Restricting repository locations If you need to comply with regulations or policies that require you to store data in specific regions, you can include a resource locations constraint in your Google Cloud organization policy that only allows repository creation in compliant regions.
 - For example, if you developers team in Australia need to download artifacts from Artifact Registry to their local workstations, a repository in an Australian region will reduce latency and incur lower egress charges than a repository located on another continent.
-- Artifact Registry enables you to store different artifact types, create multiple repositories in a single project, and associate a specific regional or multi-regional location with each repository.
+
+### Repository and image names \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/docker/names](https://docs.cloud.google.com/artifact-registry/docs/docker/names)
+- Source ID: `site-docs-root-2`
+- Final score: 84
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- If an Artifact Registry repository is configured for immutable image tags, the following actions are not permitted: Delete a tagged image.
+- In Artifact Registry, you can configure a Docker repository to allow mutable image tags or enforce immutable image tags.
+- For example, consider an image with the following characteristics: Repository location: us-west1 Repository name: my-repo Project ID: my-project Image name: test Tag: staging Digest: sha256:4d11e24ba8a615cc85a535daa17b47d3c0219f7eeb2b8208896704ad7f88ae2d To identify the image with the tag, append :staging to the image name: us-west1-docker.pkg.dev/my-project/my-repo/test:staging To identify it with the digest, append @ to the image name, followed by the digest: us-west1 - docker . pkg . dev / my - project / my - repo / test @sha256 : 4 d11e24ba8a615cc85a535daa17b47d3c0219f7eeb2b8208896704ad7f88ae2d If your project ID contains a colon ( : ), see Domain-scoped projects .
+- For example, consider an image with the following characteristics: Repository location: us-west1 Repository format: docker Repository name: my-repo Project ID: my-project The repository is specified as: us-west1-docker.pkg.dev/my-project/my-repo Container image names The full name for a container image is one of the following formats: LOCATION -docker.pkg.dev/ PROJECT-ID / REPOSITORY / IMAGE or LOCATION -docker.pkg.dev/ PROJECT-ID / REPOSITORY / IMAGE : TAG or LOCATION -docker.pkg.dev/ PROJECT-ID / REPOSITORY / IMAGE @ IMAGE-DIGEST where: LOCATION is the regional or multi-regional location of the repository.
+
+### Access control with IAM \_|\_ Artifact Registry \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/artifact-registry/docs/access-control](https://docs.cloud.google.com/artifact-registry/docs/access-control)
+- Source ID: `site-docs-root`
+- Final score: 74
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Developers attaching tags to repositories Tagging repositories Integrating with Google Cloud services For most Google Cloud service accounts, configuring access to a registry only requires granting the appropriate IAM roles.
+- For example, to remove a policy binding for the role roles/artifactregistry.writer for the user write@gmail.com with the repository my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \ --location = us-west1 \ --member = user:write@gmail.com \ --role = roles/artifactregistry.writer To revoke public access to my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \ --location = us-west1 \ --member = allUsers \ --role = roles/artifactregistry.reader Granting conditional access with tags Project administrators can create tags for resources across Google Cloud and manage them in Resource Manager .
+- If you're new to using Terraform for Google Cloud, see the Get Started - Google Cloud page on the HashiCorp website. provider "google" { project = " PROJECT-ID " } resource "google artifact registry repository" "my-repo" { provider = google-beta location = " LOCATION " repository id = " REPOSITORY " description = " DESCRIPTION " format = " FORMAT " } resource "google service account" "repo-account" { provider = google-beta account id = " ACCOUNT-ID " display name = "Repository Service Account" } resource "google artifact registry repository iam member" "repo-iam" { provider = google-beta location = google artifact registry repository.my-repo.location repository = google artifact registry repository.my-repo.name role = "roles/artifactregistry.reader" member = "serviceAccount:${google service account.repo-account.email}" } ACCOUNT-ID is the ID of the service account.
+- For example, to add an IAM policy binding for the role roles/artifactregistry.writer for the user write@gmail.com with the repository my-repo in the location --us-west1 , run: gcloud artifacts repositories add-iam-policy-binding my-repo \ --location = us-west1 --member = user:write@gmail.com --role = roles/artifactregistry.writer To grant roles using a policy file, use the procedure described in Grant or revoke multiple roles programmatically with the gcloud artifacts repositories get-iam-policy and gcloud artifacts repositories set-iam-policy commands.
 

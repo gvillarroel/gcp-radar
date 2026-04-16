@@ -142,7 +142,6 @@ Stage 2 migration is generally available to all customers from January 26, 2026.
 The final deadline to complete the Stage 2 transition is September 30, 2026.
 Note: These procedures apply to both Google SecOps SOAR standalone customers and Google SecOps customers.
 Migrate SOAR permission groups to Google Cloud IAM
-Note: We are currently implementing upgrades to the Google Cloud IAM migration script to ensure a smoother transition of SOAR Permission groups to IAM. During this maintenance period, the migration script will be unavailable until April 12, 2026.
 Migrate the SOAR permission groups and permissions to IAM
 through a single-click of the migration script in Google Cloud.
 The script creates new custom roles for each permission group and assigns them to
@@ -163,7 +162,13 @@ You must update your scripts and integrations to replace the SOAR API endpoints 
 corresponding Chronicle API endpoints. The legacy SOAR API and API Keys
 will be available till September 30, 2026 after which they will no
 longer function.
-For more information, refer to Migrate endpoints to Chronicle API
+For more information, refer to Migrate endpoints to Chronicle API .
+Migrate webhooks
+You need to migrate SOAR webhooks to the Chronicle API by doing the following before September 30, 2026:
+Update the webhook URL on the client side by replacing the legacy siemplify-soar.com domain with the new googleapis.com domain using the new request format . The legacy siemplify-soar.com domain will continue to function until September 30, 2026.
+For example, a webhook defined on: https:// xxxx.siemplify-soar.com/api/external/v1 /webhooks/{webhook_id}?api_key=xxxx
+will need to be updated to: https:// us-chronicle.googleapis.com/v1alpha/projects/{project_id}/locations/{location}/instances/{instance/{instance_id} /webhooks/{webhook_id}?api_key=xxxx
+The authentication for webhooks remains unchanged. Webhooks continue to use the API key that was initially created alongside the webhook link.
 Migrate Remote Agents
 You can migrate the Remote Agents to Google Cloud by doing the following:
 Create a Service Account instead of an API key for the remote agent.
@@ -192,6 +197,6 @@ Frequently asked questions
 Need more help? Get answers from Community members and Google SecOps professionals.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.343Z"
+generated_at: "2026-04-14T15:13:19.310Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Global Ocean Colour Biogeochemical L4 Transparency Multi-Sensor 4 km"
 feature_slug: "global-ocean-colour-biogeochemical-l4-transparency-multi-sensor-4-km"
 latest_feature_date: "2025-08-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_OC_GLO_BGC_OPTICS_MULTI_4KM"
   - "https://developers.google.com/earth-engine/datasets/tags/oceans"
@@ -26,7 +26,7 @@ keywords:
 # Global Ocean Colour Biogeochemical L4 Transparency Multi-Sensor 4 km
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Transparency observations in a global ocean colour biogeochemical Level 4 multi-
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,9 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_OC_GLO_BGC_OPTICS_MULTI_4KM](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_OC_GLO_BGC_OPTICS_MULTI_4KM)
 - Source ID: `site-docs-root-2`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Filter . date ( '2025-03-01' , '2025-06-01' )); var CDM = dataset . select ( 'CDM' ); var CDMVis = { min : 0.003 , max : 0.109 , palette : [ 'D7F9D0' , '91CA85' , '5AB05D' , '129450' , '0F7347' , '195437' , '122414' ], }; Map . setCenter ( 71 , 52 , 2 ); Map . addLayer ( CDM , CDMVis , 'CDM' ); Open in Code Editor Global Ocean Colour: Bio-Geo-Chemical, L4, from Satellite Observations, Optics, Multi-Sensor 4KM The Global Ocean Colour (Copernicus-GlobColour) dataset is a Bio-Geo-Chemical (BGC) product developed by ACRI-ST.
@@ -66,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/oceans](https://developers.google.com/earth-engine/datasets/tags/oceans)
 - Source ID: `site-docs-root-3`
-- Final score: 182
+- Final score: 181
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +79,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 156
+- Final score: 153
 - Re-rank relevance: N/A
 
 Evidence snippets:

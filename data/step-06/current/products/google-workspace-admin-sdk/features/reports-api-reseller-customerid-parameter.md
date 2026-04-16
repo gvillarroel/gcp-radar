@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:57:36.643Z"
+generated_at: "2026-04-15T11:51:47.722Z"
 product_name: "Google Workspace Admin SDK"
 product_slug: "google-workspace-admin-sdk"
 feature_name: "Reports API reseller customerId parameter"
 feature_slug: "reports-api-reseller-customerid-parameter"
 latest_feature_date: "2013-12-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/admin-sdk/directory/reference/rest"
-  - "https://developers.google.com/admin-sdk/overview"
-  - "https://developers.google.com/admin-sdk/reference-overview"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile"
 keywords:
   - "reports"
-  - "api"
   - "reseller"
   - "customerid"
   - "parameter"
   - "resellers"
   - "can"
   - "use"
+  - "retrieve"
 ---
 
 # Reports API reseller customerId parameter
 
 Product: Google Workspace Admin SDK
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ Resellers can use a customerId parameter to retrieve usage reports and audit inf
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
-- [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile](https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile)
 
 ## Supporting Pages
 
-### Admin SDK: Directory API \_|\_ Admin console \_|\_ Google for Developers
+### "Reports API: Entities Usage Report \_|\_ Admin console \_|\_ Google for\
 
-- URL: [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
-- Source ID: `site-api-reference`
-- Final score: 82
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 116
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- REST Resource: chromeosdevices Methods action (deprecated) POST /admin/directory/v1/customer/{customerId}/devices/chromeos/{resourceId}/action Use BatchChangeChromeOsDeviceStatus instead. get GET /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId} Retrieves a Chrome OS device's properties. list GET /admin/directory/v1/customer/{customerId}/devices/chromeos Retrieves a paginated list of Chrome OS devices within an account. moveDevicesToOu POST /admin/directory/v1/customer/{customerId}/devices/chromeos/moveDevicesToOu Moves or inserts multiple Chrome OS devices to an organizational unit. patch PATCH /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId} Updates a device's updatable properties, such as annotatedUser , annotatedLocation , notes , orgUnitPath , or annotatedAssetId . update PUT /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId} Updates a device's updatable properties, such as annotatedUser , annotatedLocation , notes , orgUnitPath , or annotatedAssetId .
-- REST Resource: mobiledevices Methods action POST /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}/action Takes an action that affects a mobile device. delete DELETE /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId} Removes a mobile device. get GET /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId} Retrieves a mobile device's properties. list GET /admin/directory/v1/customer/{customerId}/devices/mobile Retrieves a paginated list of all user-owned mobile devices for an account.
-- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://admin.googleapis.com REST Resource: asps Methods delete DELETE /admin/directory/v1/users/{userKey}/asps/{codeId} Deletes an ASP issued by a user. get GET /admin/directory/v1/users/{userKey}/asps/{codeId} Gets information about an ASP issued by a user. list GET /admin/directory/v1/users/{userKey}/asps Lists the ASPs issued by a user.
-- The Admin SDK Directory API lets administrators of enterprise domains view and manage their organization's users, groups, devices, and related resources.
+- Example JSON response for entities report { "kind" : "reports#usageReports" , "nextPageToken" : "NjQ1OTgwODk0MzkxNDAwNjQ0OA" , "usageReports" : [ { "kind" : "admin#reports#usageReport" , "date" : "2017-12-11" , "entity" : { "type" : "OBJECT" , "customerId" : "C03az79cb" , "objectType" : "GPLUS COMMUNITY" , "objectId" : "1234" , }, "parameters" : [ { "name" : "gplus:community name" , "stringValue" : "My Community" }, { "name" : "gplus:num total members" , "intValue" : 37 }, { "name" : "gplus:num 7day active members" , "intValue" : 12 }, { "name" : "gplus:num 30day active members" , "intValue" : 17 }, ] } ] } Example JSON response for entities report with warnings One or more warnings may be returned in the response if the request cannot be fulfilled.
+- GET https://admin.googleapis.com/admin/reports/v1/usage/gplus communities/all/dates/2017-12-11 ?parameters=gplus:community name,gplus:num total members&filters=gplus:num total members>100 Retrieve a report for a specific entity To retrieve a report for a specific entity, use the following GET HTTP request and include the authorization token described in the authorization documentation .
+- In this example, the report is not available at the time the request is made. { "kind": "reports#usageReports", "warnings": [ { "code": "PARTIAL DATA AVAILABLE" "message": "Data for date 2017-12-11 for application gplus is not available right now, please try again after a few hours." "data": [ { "key": "date" "value": "2017-12-11" } ] } ], "usageReports": [], } Each entry in the warnings array has the following parameters: code : machine-readable warning code message : human-readable warning message data : list of key-value pairs which give detailed warning information Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For readability, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/usage/gplus communities/all/dates/ date ?parameters= applicationParameters &filters= parameterFilters &maxResults= maxResults The date value is the date the usage occurred and the timestamp is in the ISO 8601 format , yyyy-mm-dd.
 
-### Admin SDK API overview \_|\_ Admin console \_|\_ Google for Developers
+### Reports API: Users Usage Report \_|\_ Admin console \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- Source ID: `site-docs-root`
-- Final score: 70
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 116
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Reports API — Generate reports about customers and user usage.
-- You can programmatically integrate with IT infrastructure, create users, update settings, audit activity, and more.
-- Directory API — Manage your organization's users, connected devices, and third-party applications.
-- Data Transfer API — Move files from one user to another.
+- JSON response for user report { "kind" : "reports#usageReports" , "warnings" : [ { "code" : warning machine - readable code , "message" : warning human - readable message , "data" : [ { "key" : key for key - value pair that gives detailed warning information , "value" : value for key - value pair giving detailed warning information } ] } ], "nextPageToken" : "N:NNN:NNN:N:C03az79cb" , "usageReports" : [ { "kind" : "usageReport" , "date" : "2013-03-03" , "entity" : { "type" : "USER" , "customerId" : "C03az79cb" , "userEmail" : "liz@example.com" , "profileId" : " user's unique Google Workspace ID " }, "parameters" : [ { "name" : "accounts:is disabled" , "boolValue" : false }, { "name" : "accounts:disabled reason" , "stringValue" : " reason description " }, { "name" : "accounts:first name" , "stringValue" : "Liz" }, { "name" : "accounts:is 2sv enforced" , "boolValue" : false }, { "name" : "accounts:is 2sv enrolled" , "boolValue" : false }, { "name" : "accounts:last name" , "stringValue" : "Smith" }, { "name" : "accounts:creation time" , "datetimeValue" : "2010-10-28T10:26:35.000Z" }, { "name" : "accounts:last login time" , "datetimeValue" : "1970-01-01T00:00:00.000Z" }, { "name" : "accounts:last sso time" , "datetimeValue" : "1970-01-01T00:00:00.000Z" } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- GET https://admin.googleapis.com/admin/reports/v1/usage/users/all/dates/2013-03-03 ?parameters=accounts:last login time,accounts:is disabled" Retrieve a specific user's usage activities To retrieve a report of a specific user's activities in your account use the following GET HTTP request and include the authorization token described in the authorization documentation .
+- For readability, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/usage/users/ all /dates/ yyyy-mm-dd date ?parameters= application: user usage parameter ,... &filters= application: user usage parameter relational operator usage parameter's value ,... &maxResults= number of events listed on each page of the report The dates value is the date the usage occurred and the timestamp is in the ISO 8601 format , yyyy-mm-dd.
+- GET https://admin.googleapis.com/admin/reports/v1/usage/users/ userKey /dates/ yyyy-mm-dd date ?parameters= application: user usage parameter ,... &filters= application: user usage parameter relational operator usage parameter's value ,... &maxResults= number of events listed on each page of the report The userKey can be either the primary email address of the user in the report or the user's unique Google Workspace profileId .
 
-### Admin SDK API reference \_|\_ Admin console \_|\_ Google for Developers
+### "Reports API: Device Audit Activity Report \_|\_ Admin console \_|\_ Google\
 
-- URL: [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
-- Source ID: `site-docs-reference`
-- Final score: 68
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile](https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 114
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Reports API — Generate reports about customers and user usage.
-- You can programmatically integrate with IT infrastructure, create users, update settings, audit activity, and more.
-- Directory API — Manage your organization's users, connected devices, and third-party applications.
-- Data Transfer API — Move files from one user to another.
+- To do this, use a GET HTTP request in the following form: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ mobile ?maxResults= maximum number of events returned on a response page &eventName= name of the event &filters= event parameter relational operator parameter value The following example shows how to retrieve all suspicious activity events for Android users within the domain: GET https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/mobile?eventName=SUSPICIOUS ACTIVITY EVENT&filters=DEVICE TYPE==ANDROID&maxResults=25 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- GET https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/mobile?customerId=C03az79cb Retrieve device audit events by event name In some instances, you may want to retrieve specific events , such as suspicious activity events.
+- The customerId specifies which customer's report is retrieved.
+- For readability purposes, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ mobile ?endTime= end date &startTime= start date &maxResults= maximum number of events returned on a response page The following example gets a report on all of your account's device audit events for the past 180 days.
 

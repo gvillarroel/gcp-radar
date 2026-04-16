@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.152Z"
+generated_at: "2026-04-13T14:23:05.022Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "APIGatewayAPI"
@@ -9,18 +9,16 @@ latest_feature_date: "2025-07-30"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
 keywords:
   - "apigatewayapi"
-  - "config"
-  - "connector"
-  - "added"
-  - "beta"
-  - "direct"
   - "reconciler"
   - "resource"
+  - "direct"
+  - "added"
+  - "beta"
 ---
 
 # APIGatewayAPI
@@ -42,45 +40,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview](https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resources](https://docs.cloud.google.com/config-connector/docs/reference/resources)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids](https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids)
 
 ## Supporting Pages
 
-### Creating resource references | Config Connector | Google Cloud Documentation
+### APIGatewayAPI \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi)
 - Source ID: `site-docs-root`
-- Final score: 126
+- Final score: 217
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : apigateway.cnrm.cloud.google.com/v1beta1 kind : APIGatewayAPI metadata : name : apigatewayapi-sample spec : projectRef : external : projects/${PROJECT ID?} labels : name : "wrench" displayName : "Initial displayName" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- Property Value Google Cloud Service Name API Gateway Google Cloud Service Documentation /api-gateway/docs/ Google Cloud REST Resource Name apigateway/v1/projects.locations.apis Google Cloud REST Resource Documentation /api-gateway/docs/reference/rest/v1/projects.locations.apis Config Connector Resource Short Names gcpapigatewayapi gcpapigatewayapis apigatewayapi Config Connector Service Name apigateway.googleapis.com Config Connector Resource Fully Qualified Name apigatewayapis.apigateway.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema displayName : string labels : string : string managedService : string projectRef : external : string kind : string name : string namespace : string resourceID : string Fields displayName Optional string Optional.
+- The project that this resource belongs to. projectRef.external Optional string The projectID field of a project, when not managed by Config Connector. projectRef.kind Optional string The kind of the Project resource; optional but must be Project if provided. projectRef.name Optional string The name field of a Project resource. projectRef.namespace Optional string The namespace field of a Project resource. resourceID Optional string The APIGatewayAPI name.
+- Can be True, False, Unknown. conditions[].type string Type is the type of the condition. externalRef string A unique specifier for the APIGatewayAPI resource in GCP. observedGeneration integer ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller.
+
+### Config Connector resources \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resources](https://docs.cloud.google.com/config-connector/docs/reference/resources)
+- Source ID: `site-docs-reference`
+- Final score: 107
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Creating resource references Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references You can find out what format the ... documentation.
-- Config Connector allows resources ...
-- You can also go to an individual resource&#x27;s reference page (for example, PubSubTopic) and look at the value listed in the &quot;IAM External Reference Format&quot; row of the resource&#x27;s summary table.
-- The IAMPolicy, IAMPartialPolicy and IAMPolicyMember pages list the accepted format for all supported resources.
+- Google Cloud Product Config Connector Resource Name Access Context Manager AccessContextManagerAccessLevel Access Context Manager AccessContextManagerAccessPolicy Access Context Manager AccessContextManagerServicePerimeter Access Context Manager AccessContextManagerServicePerimeterResource AlloyDB for PostgreSQL AlloyDBBackup AlloyDB for PostgreSQL AlloyDBCluster AlloyDB for PostgreSQL AlloyDBInstance AlloyDB for PostgreSQL AlloyDBUser API Gateway APIGatewayAPI Apigee ApigeeEndpointAttachment Apigee ApigeeEnvgroup Apigee ApigeeEnvgroupAttachment Apigee ApigeeEnvironment Apigee ApigeeInstance Apigee ApigeeInstanceAttachment Apigee ApigeeOrganization App Hub AppHubApplication Artifact Registry ArtifactRegistryRepository BigQuery sharing BigQueryAnalyticsHubDataExchange BigQuery sharing BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection Backup and DR BackupDRBackupPlan Backup and DR BackupDRBackupPlanAssociation Backup and DR BackupDRBackupVault BigQuery BigQueryDataset BigQuery BigQueryJob BigQuery BigQueryRoutine BigQuery BigQueryTable BigQuery BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQuery Reservation BigQueryReservationReservation Cloud Billing Budget Bigtable BigtableAppProfile Bigtable BigtableGCPolicy Bigtable BigtableInstance Bigtable BigtableTable Cloud Billing Budget BillingBudgetsBudget Binary Authorization BinaryAuthorizationAttestor Binary Authorization BinaryAuthorizationPolicy Cloud Build CloudBuildTrigger Cloud Build CloudBuildWorkerPool Cloud Asset Inventory AssetFeed Cloud Asset Inventory AssetSavedQuery Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings Cloud Quotas APIQuotaPreference Cloud Run functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup Cloud Identity CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Certificate Manager CertificateManagerCertificate Certificate Manager CertificateManagerCertificateMap Certificate Manager CertificateManagerCertificateMapEntry Certificate Manager CertificateManagerDNSAuthorization Compute Engine ComputeAddress Compute Engine ComputeBackendBucket Compute Engine ComputeBackendService Compute Engine ComputeDisk Compute Engine ComputeExternalVPNGateway Compute Engine ComputeFirewall Compute Engine ComputeFirewallPolicy Compute Engine ComputeFirewallPolicyAssociation Compute Engine ComputeFirewallPolicyRule Compute Engine ComputeForwardingRule Compute Engine ComputeHealthCheck Compute Engine ComputeHTTPHealthCheck Compute Engine ComputeHTTPSHealthCheck Compute Engine ComputeImage Compute Engine ComputeInstance Compute Engine ComputeInstanceGroup Compute Engine ComputeInstanceGroupManager Compute Engine ComputeInstanceTemplate Compute Engine ComputeInterconnectAttachment Compute Engine ComputeManagedSSLCertificate Compute Engine ComputeNetwork Compute Engine ComputeNetworkEndpointGroup Compute Engine ComputeNetworkFirewallPolicy Compute Engine ComputeNetworkFirewallPolicyAssociation Compute Engine ComputeNetworkPeering Compute Engine ComputeNodeGroup Compute Engine ComputeNodeTemplate Compute Engine ComputePacketMirroring Compute Engine ComputeProjectMetadata Compute Engine ComputeRegionNetworkEndpointGroup Compute Engine ComputeReservation Compute Engine ComputeResourcePolicy Compute Engine ComputeRoute Compute Engine ComputeRouter Compute Engine ComputeRouterInterface Compute Engine ComputeRouterNAT Compute Engine ComputeRouterPeer Compute Engine ComputeSecurityPolicy Compute Engine ComputeServiceAttachment Compute Engine ComputeSharedVPCHostProject Compute Engine ComputeSharedVPCServiceProject Compute Engine ComputeSnapshot Compute Engine ComputeSSLCertificate Compute Engine ComputeSSLPolicy Compute Engine ComputeSubnetwork Compute Engine ComputeTargetGrpcProxy Compute Engine ComputeTargetHttpProxy Compute Engine ComputeTargetHttpsProxy Compute Engine ComputeTargetInstance Compute Engine ComputeTargetPool Compute Engine ComputeTargetSslProxy Compute Engine ComputeTargetTcpProxy Compute Engine ComputeTargetVPNGateway Compute Engine ComputeURLMap Compute Engine ComputeVPNGateway Compute Engine ComputeVPNTunnel Config Controller ConfigControllerInstance Artifact Analysis ContainerAnalysisNote Data Catalog DataCatalogPolicyTag Data Catalog DataCatalogTaxonomy Dataflow DataflowJob Dataflow DataflowFlexTemplateJob Dataform DataformRepository Cloud Data Fusion DatafusionInstance Managed Service for Apache Spark DataprocAutoscalingPolicy Managed Service for Apache Spark DataprocCluster Managed Service for Apache Spark DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Cloud Data Loss Prevention DLPDeidentifyTemplate Cloud Data Loss Prevention DLPInspectTemplate Cloud Data Loss Prevention DLPJobTrigger Cloud Data Loss Prevention DLPStoredInfoType Cloud DNS DNSManagedZone Cloud DNS DNSPolicy Cloud DNS DNSRecordSet Google Distributed Cloud EdgeContainerCluster Google Distributed Cloud EdgeContainerNodePool Google Distributed Cloud EdgeContainerVPNConnection Google Distributed Cloud EdgeNetworkNetwork Google Distributed Cloud EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact Eventarc EventarcTrigger Filestore FilestoreBackup Filestore FilestoreInstance Firestore FirestoreDatabase Firestore FirestoreIndex GKE attached clusters ContainerAttachedCluster GKE Hub GKEHubMembership GKE Hub GKEHubFeature GKE Hub GKEHubFeatureMembership Google Kubernetes Engine ContainerCluster Google Kubernetes Engine ContainerNodePool Identity and Access Management IAMAccessBoundaryPolicy Identity and Access Management IAMAuditConfig Identity and Access Management IAMCustomRole Identity and Access Management IAMPartialPolicy Identity and Access Management IAMPolicy Identity and Access Management IAMPolicyMember Identity and Access Management IAMServiceAccount Identity and Access Management IAMServiceAccountKey Identity and Access Management IAMWorkforcePool Identity and Access Management IAMWorkforcePoolProvider Identity and Access Management IAMWorkloadIdentityPool Identity and Access Management IAMWorkloadIdentityPoolProvider Identity-Aware Proxy IAPBrand Identity-Aware Proxy IAPIdentityAwareProxyClient Identity-Aware Proxy IAPSettings Identity Platform IdentityPlatformOAuthIDPConfig Identity Platform IdentityPlatformConfig Identity Platform IdentityPlatformTenant Identity Platform IdentityPlatformTenantOAuthIDPConfig Cloud Key Management Service KMSCryptoKey Cloud Key Management Service KMSKeyRing Cloud Key Management Service KMSAutokeyConfig Cloud Key Management Service KMSImportJob Cloud Key Management Service KMSKeyHandle Cloud Logging LoggingLink Cloud Logging LoggingLogBucket Cloud Logging LoggingLogExclusion Cloud Logging LoggingLogMetric Cloud Logging LoggingLogSink Cloud Logging LoggingLogView Google Cloud Managed Service for Apache Kafka ManagedKafkaCluster Google Cloud Managed Service for Apache Kafka ManagedKafkaTopic Memorystore for Memcached MemcacheInstance Memorystore for Valkey MemorystoreInstance Cloud Monitoring MonitoringAlertPolicy Cloud Monitoring MonitoringDashboard Cloud Monitoring MonitoringGroup Cloud Monitoring MonitoringMetricDescriptor Cloud Monitoring MonitoringMonitoredProject Cloud Monitoring MonitoringNotificationChannel Cloud Monitoring MonitoringService Cloud Monitoring MonitoringServiceLevelObjective Cloud Monitoring MonitoringUptimeCheckConfig Network Connectivity NetworkConnectivityHub Network Connectivity NetworkConnectivitySpoke Notebooks NotebooksInstance OS Config OSConfigGuestPolicy OS Config OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Private CA PrivateCACAPool Private CA PrivateCACertificate Private CA PrivateCACertificateAuthority Private CA PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema Pub/Sub PubSubSnapshot Pub/Sub PubSubSubscription Pub/Sub PubSubTopic Pub/Sub Lite PubSubLiteReservation Memorystore RedisCluster Memorystore RedisInstance reCAPTCHA RecaptchaEnterpriseKey Resource Manager Folder Resource Manager Project Resource Manager ResourceManagerLien Resource Manager ResourceManagerPolicy Cloud Run RunJob Cloud Run RunService Secret Manager SecretManagerSecret Secret Manager SecretManagerSecretVersion Secure Source Manager SecureSourceManagerInstance Secure Source Manager SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint Service Directory ServiceDirectoryNamespace Service Directory ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service Service Usage ServiceIdentity Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass Speech-to-Text SpeechPhraseSet Speech-to-Text SpeechRecognizer Spanner SpannerBackupSchedule Spanner SpannerDatabase Spanner SpannerInstance Cloud SQL SQLDatabase Cloud SQL SQLInstance Cloud SQL SSLCert Cloud SQL SQLUser Cloud Storage StorageAnywhereCache Cloud Storage StorageBucket Cloud Storage StorageBucketAccessControl Cloud Storage StorageDefaultObjectAccessControl Cloud Storage StorageNotification Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding Tags TagsTagBinding Tags TagsTagKey Tags TagsTagValue Cloud Service Mesh NetworkSecurityAuthorizationPolicy Cloud Service Mesh NetworkSecurityClientTLSPolicy Cloud Service Mesh NetworkSecurityServerTLSPolicy Cloud Service Mesh NetworkServicesEndpointPolicy Cloud Service Mesh NetworkServicesGateway Cloud Service Mesh NetworkServicesGRPCRoute Cloud Service Mesh NetworkServicesHTTPRoute Cloud Service Mesh NetworkServicesMesh Cloud Service Mesh NetworkServicesTCPRoute Cloud Service Mesh NetworkServicesTLSRoute Vertex AI VertexAIDataset Vertex AI VertexAIEndpoint Vertex AI VertexAIIndex Vertex AI VertexAIMetadataStore Google Cloud VMware Engine VMwareEngineExternalAddress Serverless VPC Access VPCAccessConnector Cloud Workstations WorkstationCluster Cloud Workstations WorkstationConfig Cloud Workstations Workstation The following resources are not supported in Config Connector starting from the corresponding version: Google Cloud Product Config Connector Resource Name Deprecation Version Game Servers Realm GameServicesRealm 1.101.0 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- If you are using a different version, you can find each version's Custom Resource Definitions in the GitHub repository.
+- All Config Connector resources have a Kubernetes API group of cnrm.cloud.google.com .
 
-### Organizing your resources | Config Connector | Google Cloud Documentation
+### "Managing resources with the resourceID field \_|\_ Config Connector \_|\_\
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview](https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview)
-- Source ID: `site-docs-root`
-- Final score: 125
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids](https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids)
+- Source ID: `site-docs-reference`
+- Final score: 98
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Organizing your resources Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview Config Connector · Start free ... on your preferences.
-- Config Connector can create and manage Google Cloud resources at the project-level, folder-level, or organization-level scope....
-
-### Access control with IAM | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 114
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
+- Acquiring a folder To acquire a folder using Config Connector with the resourceID field, complete the following steps: Copy the following contents into a file named folder.yaml . apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Folder metadata : annotations : cnrm.cloud.google.com/organization-id : ORG ID Remove the deletion-policy annotation if it is safe to delete the folder when the resource is deleted from your cluster. cnrm.cloud.google.com/deletion-policy : "abandon" name : folder-sample-for-acquisition spec : resourceID : ACQUIRED FOLDER ID displayName : ACQUIRED FOLDER DISPLAY NAME Replace the following: ORG ID with the numeric ID for your organization.
+- Copy the following contents into a file named bigquery-dataset.yaml . apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigquerydataset-sample-for-creation spec : resourceID : bigquerydataset sample with resourceid defaultTableExpirationMs : 3600000 description : "BigQuery Dataset Sample with the ResourceID Field" friendlyName : bigquerydataset-sample-with-resourceid location : US Apply the YAML file to your cluster. kubectl apply --namespace CC NAMESPACE -f bigquery-dataset.yaml Replace CC NAMESPACE with the namespace Config Connector manages resources from.
+- The name of the Config Connector resource is pubsub-topic-sample and the name of the Pub/Sub topic is pubsub-topic-id . apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : pubsub-topic-sample spec : resourceID : pubsub-topic-id Creating a resource with the resourceID field Note: When you manage a Google Cloud resource with the resourceID field, if the resource has a service-generated resource ID, Config Connector assumes the resource already exists and tries to acquire the resource.
+- Config Connector lets you explicitly specify the resource ID of a Google Cloud resource using the immutable but optional resourceID field to create or acquire the resource. "Immutable, but optional" means that you can choose to specify or not specify the resourceID field, but you can't make any changes to the value of the resourceID field after applying the manifest to your cluster.
 

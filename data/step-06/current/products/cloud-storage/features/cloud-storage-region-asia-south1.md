@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.865Z"
+generated_at: "2026-04-12T12:12:45.966Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "Cloud Storage region asia-south1"
 feature_slug: "cloud-storage-region-asia-south1"
 latest_feature_date: "2017-10-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/storage/docs/locations"
-  - "https://docs.cloud.google.com/storage/docs/release-notes"
   - "https://docs.cloud.google.com/storage/docs/access-monitoring"
+  - "https://docs.cloud.google.com/storage/docs/bandwidth-usage"
+  - "https://docs.cloud.google.com/storage/docs/creating-buckets"
 keywords:
   - "storage"
   - "region"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Storage region asia-south1
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Storage is available in the Mumbai region (asia-south1) for storing data.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
-- [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
 - [https://docs.cloud.google.com/storage/docs/access-monitoring](https://docs.cloud.google.com/storage/docs/access-monitoring)
+- [https://docs.cloud.google.com/storage/docs/bandwidth-usage](https://docs.cloud.google.com/storage/docs/bandwidth-usage)
+- [https://docs.cloud.google.com/storage/docs/creating-buckets](https://docs.cloud.google.com/storage/docs/creating-buckets)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - Source ID: `site-docs-root`
-- Final score: 190
+- Final score: 241
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,30 +63,43 @@ Evidence snippets:
 - Lowest storage price No replication charges No outbound data transfer charges when reading data inside the same region Highest storage price Replication charges apply on write No outbound data transfer charges when reading data within either region Higher storage price than regions, but lower than dual-regions Replication charges apply on write Outbound data transfer charges always apply when reading data Location recommendations Requirements Recommended bucket location Workload examples Ultra-low latency Ultra-high bandwidth and I/O High performance Zone 1 Artificial Intelligence (AI) and Machine Learning (ML) High-performance computing Data-intensive analytics Optimized latency and bandwidth Lowest data storage cost Cross-zone redundancy Region 2 Analytics Backup and archive Optimized latency and bandwidth Cross-region redundancy, with precise control of the locations where copies of data are stored Dual-region 3 Analytics Backup and archive Disaster recovery Cross-geography data access Cross-region redundancy Multi-region Content serving Zonal locations for buckets are only available through Rapid Bucket .
 - The following options are available when creating a bucket in a predefined dual-region: Predefined dual-region name Region Name Region Description ASIA1 ASIA-NORTHEAST1 + ASIA-NORTHEAST2 Tokyo + Osaka EUR4 EUROPE-NORTH1 + EUROPE-WEST4 Finland + Netherlands EUR5 EUROPE-WEST1 + EUROPE-WEST2 Belgium + London EUR7 EUROPE-WEST2 + EUROPE-WEST3 London + Frankfurt EUR8 EUROPE-WEST3 + EUROPE-WEST6 Frankfurt + Zürich NAM4 US-CENTRAL1 + US-EAST1 Iowa + South Carolina Request routing for dual-region buckets When you access data in a dual-region bucket from a resource that's located in one of the regions of the dual-region, the request is routed to that same region to provide the best performance.
 
-### Cloud Storage release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Java Changes for google-cloud-storage 2.45.0 (2024-11-18) Features Adds support for restore token ( aef367d ) Adds support for restore token ( #2768 ) ( 0394354 ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.49.0 ( aef367d ) deps: Update the Java code generator (gapic-generator-java) to 2.50.0 ( 281cccb ) Set default values for monitored resource ( #2809 ) ( 27829a4 ) Dependencies Update sdk-platform-java dependencies ( #2817 ) ( 9e961c4 ) November 18, 2024 Change Cloud Storage is now available in Querétaro, Mexico ( northamerica-south1 region).
-- Change The following regions are now generally available for dual-region storage: Mumbai ( asia-south1 ) Delhi ( asia-south2 ) Columbus ( us-east5 ) Dallas ( us-south1 ) Las Vegas ( us-west4 ) November 10, 2022 Feature You can now use the Google Cloud console to get role recommendations and policy insights for buckets.
-- Node.js Changes for @google-cloud/storage 7.10.2 (2024-04-26) Bug Fixes Use correct indices for file.from and fix tests to verify names ( #2449 ) ( d4240fa ) 7.10.1 (2024-04-22) Bug Fixes Change copyoptions type ( #2439 ) ( 2ebd7ac ) Expand types of custom metadata within FileMetadata ( #2442 ) ( 1d434a9 ) April 23, 2024 Change Default replication monitoring for multi-region and dual-region buckets in the Google Cloud console is now available for the following graphs: Percent of minutes out of RPO Percent of objects out of target Meeting RPO April 22, 2024 Libraries A weekly digest of client library updates from across the Cloud SDK .
-- August 25, 2025 Libraries Go 1.56.1 (2025-08-19) Bug Fixes storage: Fix redirect logic in MRD ( #12733 ) ( 9f369f9 ) storage: Pass all user options to NewService ( #12615 ) ( 77cdb83 ) storage: ZB Reader redirect support ( #12703 ) ( 3c7ea5c ) August 18, 2025 Libraries Python 3.3.0 (2025-08-05) Features Add support for bucket IP filter ( #1516 ) ( a29073c ) Bug Fixes Add logs on AssertionError for issue #1512 ( #1518 ) ( 6a9923e ) Documentation Update the documentation of move blob function ( #1507 ) ( 72252e9 ) August 12, 2025 Feature You can now use Anywhere Cache in the asia-south1-b and asia-south1-c zones.
-
 ### Access monitoring data in Cloud Storage \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/storage/docs/access-monitoring](https://docs.cloud.google.com/storage/docs/access-monitoring)
 - Source ID: `site-iam-reference`
-- Final score: 176
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 225
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - JSON API For information on programmatically retrieving time series information for non dual-region quotas, see the ListTimeSeries command , using the following values for filter : metric.type="serviceruntime.googleapis.com/quota/rate/net usage" resource.type="consumer quota" One of the following: metric.label.quota metric="storage.googleapis.com/google egress bandwidth" metric.label.quota metric="storage.googleapis.com/rapid zonal egress bandwidth" metric.label.quota metric="storage.googleapis.com/internet egress bandwidth" metric.label.quota metric="storage.googleapis.com/multiregion google egress bandwidth" metric.label.quota metric="storage.googleapis.com/multiregion internet egress bandwidth" For information on programmatically retrieving time series information for dual-region quotas, see the ListTimeSeries command , using the following values for filter : resource.type="storage.googleapis.com/Project" One of the following: metric.type="storage.googleapis.com/quota/dualregion google egress bandwidth/usage" metric.type="storage.googleapis.com/quota/dualregion internet egress bandwidth/usage" For information about bandwidth monitoring metrics and what data they represent, see Bandwidth monitoring metrics .
 - In the YAML response, look for the following: storage.googleapis.com/google egress bandwidth storage.googleapis.com/rapid zonal egress bandwidth storage.googleapis.com/dualregion google egress bandwidth storage.googleapis.com/multiregion google egress bandwidth storage.googleapis.com/internet egress bandwidth storage.googleapis.com/dualregion internet egress bandwidth storage.googleapis.com/multiregion internet egress bandwidth storage.googleapis.com/rapid zonal bytes For information about bandwidth monitoring metrics and what data they represent, see Bandwidth monitoring metrics .
 - For data egress from a Cloud Storage bucket to Google services: If the bucket is located in a region, the usage must be by resources located in the same region.
 - Open Cloud Storage Quotas and systems limits Google Egress Bandwidth per second per region Rapid Zonal Egress Bandwidth per second per zone Dualregion Google Egress Bandwidth per second per region per dualregion location MultiRegion Google Egress Bandwidth per second per region Internet Egress Bandwidth per second per region Dualregion Internet Egress Bandwidth per second per region per dualregion location Multiregion Internet Egress Bandwidth per second per region Rapid Zonal Bytes per zone You can also view the Google egress bandwidth usage of buckets in your project that are located in regions on the Cloud Storage monitoring page .
+
+### "Overview of bandwidth and storage usage in Cloud Storage \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/storage/docs/bandwidth-usage](https://docs.cloud.google.com/storage/docs/bandwidth-usage)
+- Source ID: `site-iam-reference`
+- Final score: 211
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Go to Browser In the Filter search bar, select the Metric property, then search for the metric for which you are requesting an increase: Use storage.googleapis.com/google egress bandwidth to increase Google egress for your buckets located in regions.
+- Bandwidth monitoring metrics The following bandwidth usage data is available for monitoring: Google egress bandwidth per second per region: monitors Google egress bandwidth usage for buckets in your project that are located in regions.
+- For the storage.googleapis.com/dualregion google egress bandwidth and storage.googleapis.com/dualregion internet egress bandwidth metrics, there must be non-zero historical usage of the metric before you can request an increase.
+- Monitoring alerts You can use Monitoring alerting policies to inform you when metrics such as storage.googleapis.com/google egress bandwidth , storage.googleapis.com/dualregion google egress bandwidth , and storage.googleapis.com/multiregion google egress bandwidth approach a quota limit.
+
+### Create a bucket \_|\_ Cloud Storage \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage/docs/creating-buckets](https://docs.cloud.google.com/storage/docs/creating-buckets)
+- Source ID: `site-docs-root`
+- Final score: 202
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The name of a storage class // See the StorageClass documentation for other valid storage classes: // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageClass.html // const storageClass = 'coldline'; // The name of a location // See this documentation for other valid locations: // http://g.co/cloud/storage/docs/locations#location-mr // const location = 'ASIA'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client // The bucket in the sample below will be created in the project associated with this client. // For more information, please see https://cloud.google.com/docs/authentication/production or https://googleapis.dev/nodejs/storage/latest/Storage.html const storage = new Storage (); async function createBucketWithStorageClassAndLocation () { // For default values see: https://cloud.google.com/storage/docs/locations and // https://cloud.google.com/storage/docs/storage-classes const [ bucket ] = await storage . createBucket ( bucketName , { location , [ storageClass ] : true , }); console . log ( ${ bucket . name } created with ${ storageClass } class in ${ location } ); } createBucketWithStorageClassAndLocation (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation .
+- COLDLINE ; // See this documentation for other valid locations: // http://g.co/cloud/storage/docs/bucket-locations#location-mr String location = "ASIA" ; Bucket bucket = storage . create ( BucketInfo . newBuilder ( bucketName ) . setStorageClass ( storageClass ) . setLocation ( location ) . build ()); System . out . println ( "Created bucket " + bucket . getName () + " in " + bucket . getLocation () + " with storage class " + bucket . getStorageClass ()); } } Node.js For more information, see the Cloud Storage Node.js API reference documentation .
+- Values include MULTI REGIONAL, /// REGIONAL, STANDARD, NEARLINE, COLDLINE, ARCHIVE, and DURABLE REDUCED AVAILABILITY. /// If this value is not specified when the bucket is created, it will default to /// STANDARD.</param> public Bucket CreateRegionalBucket ( string projectId = "your-project-id" , string bucketName = "your-unique-bucket-name" , string location = "us-west1" , string storageClass = "REGIONAL" ) { var storage = StorageClient .
+- Create new storage bucket in the US multi-region with coldline storage resource "random id" "bucket prefix" { byte length = 8 } resource "google storage bucket" "static" { name = "${random id.bucket prefix.hex}-new-bucket" location = "US" storage class = "COLDLINE" uniform bucket level access = true } REST APIs JSON API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.
 

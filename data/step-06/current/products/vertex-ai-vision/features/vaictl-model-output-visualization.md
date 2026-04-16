@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:22:59.244Z"
+generated_at: "2026-04-12T12:19:53.515Z"
 product_name: "Vertex AI Vision"
 product_slug: "vertex-ai-vision"
 feature_name: "vaictl model output visualization"
 feature_slug: "vaictl-model-output-visualization"
 latest_feature_date: "2024-07-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial"
   - "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial"
   - "https://docs.cloud.google.com/vision-ai/docs/face-blur-tutorial"
-  - "https://docs.cloud.google.com/vision-ai/docs/release-notes"
+  - "https://docs.cloud.google.com/vision-ai/docs/cloud-environment"
 keywords:
   - "vaictl"
   - "model"
@@ -27,7 +27,7 @@ keywords:
 # vaictl model output visualization
 
 Product: Vertex AI Vision
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +39,14 @@ The vaictl command-line tool now includes a visualization command to display Ver
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial](https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial)
 - [https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial](https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial)
 - [https://docs.cloud.google.com/vision-ai/docs/face-blur-tutorial](https://docs.cloud.google.com/vision-ai/docs/face-blur-tutorial)
-- [https://docs.cloud.google.com/vision-ai/docs/release-notes](https://docs.cloud.google.com/vision-ai/docs/release-notes)
+- [https://docs.cloud.google.com/vision-ai/docs/cloud-environment](https://docs.cloud.google.com/vision-ai/docs/cloud-environment)
 
 ## Supporting Pages
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial](https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial)
 - Source ID: `site-docs-reference`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 204
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Download the vaictl command-line tool In the SSH-in-browser window, download the Vertex AI Vision ( vaictl ) command-line tool using the following command: wget https://github.com/google/visionai/releases/download/v0.0.5/visionai 0.0-5 amd64.deb Install the command-line tool by running the following command: sudo apt install ./visionai 0.0-5 amd64.deb You can test the installation by running the following command: vaictl --help Ingest a video file into your app After you set up your VM environment, you can copy a sample video file and then use vaictl to stream the video data to your occupancy count app.
@@ -68,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial](https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial)
 - Source ID: `site-docs-reference`
-- Final score: 144
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Download the vaictl command-line tool In the SSH-in-browser window, download the Vertex AI Vision ( vaictl ) command-line tool using the following command: wget https://github.com/google/visionai/releases/download/v0.0.5/visionai 0.0-5 amd64.deb Install the command-line tool by running the following command: sudo apt install ./visionai 0.0-5 amd64.deb You can test the installation by running the following command: vaictl --help Ingest a video file into your app After you set up your VM environment, you can copy a sample video file and then use vaictl to stream the video data to your occupancy count app.
@@ -82,9 +82,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/face-blur-tutorial](https://docs.cloud.google.com/vision-ai/docs/face-blur-tutorial)
 - Source ID: `site-docs-reference`
-- Final score: 138
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Ingest video into the stream After you create a stream resource, you can use the vaictl command-line tool to send video data to the stream.
@@ -92,17 +92,17 @@ Evidence snippets:
 - To initialize the gcloud CLI, run the following command: gcloud init Installing the vaictl tool to ingest data into a stream (OS: Debian GNU/Linux, CPU architecture: x86 64): Note : You can also get a Docker image that has the Vertex AI Vision SDK and all its dependencies already pre-installed.
 - Download the required package: wget https://github.com/google/visionai/releases/download/v0.0.5/visionai 0.0-5 amd64.deb After downloading the package, run the following command in the directory you downloaded the file: sudo apt install ./visionai 0.0-5 amd64.deb Verify installation: vaictl --help Create a stream To create a streaming video analysis app, you must first create and register a stream resource.
 
-### Vertex AI Vision release notes \_|\_ Google Cloud Documentation
+### "Set up a project and a development environment \_|\_ Vertex AI Vision \_\
 
-- URL: [https://docs.cloud.google.com/vision-ai/docs/release-notes](https://docs.cloud.google.com/vision-ai/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 118
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/vision-ai/docs/cloud-environment](https://docs.cloud.google.com/vision-ai/docs/cloud-environment)
+- Source ID: `site-docs-reference`
+- Final score: 152
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- July 14, 2024 Feature Model output visualization tool in vaictl You can now visualize model output using the vaictl command line tool available through the Vertex AI Vision SDK .
-- Features: Visualize command added to vaictl command-line tool.
-- March 22, 2023 Feature Model event management with Cloud Functions and Pub/Sub The Vertex AI Vision event management feature lets you generate and send event notifications through Pub/Sub topics by: Enabling supported models to output to Cloud Function for data processing and events generation.
-- For more information, see the following documentation pages: Set up a project and a development environment Use the Face Blur model with the Python SDK May 02, 2023 Announcement Updated pricing structure begins Vertex AI Vision functionality is now available under an updated billing framework and discounting schedule.
+- Install the Debian package You have two options for using the vaictl command-line tool, which you need to work with I/O (stream data): Install the command-line tool locally (OS: Debian GNU/Linux, CPU architecture: x86 64) or Run the commands in a Docker image that has all dependencies installed.
+- Before you can install the vaictl command-line tool, you must delete any prior versions of the tool on your machine: sudo apt-get remove visionai Download the required package.
+- Use the following steps to get the vaictl command-line tool: Download package For direct installations, we currently only support Debian/Ubuntu distributions.
+- You can install them with the following command: apt-get install -y --no-install-recommends \ autoconf \ automake \ build-essential \ ca-certificates \ flex \ bison \ python3 \ nasm \ libjpeg-dev Get pre-built binaries The vaictl tool is the ready-made binary tool that can be used to control Vertex AI Vision, as well as to send and receive data that it processes.
 

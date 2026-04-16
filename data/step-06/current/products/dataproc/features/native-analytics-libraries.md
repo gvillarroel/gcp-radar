@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.141Z"
+generated_at: "2026-04-14T00:23:22.713Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Native analytics libraries"
 feature_slug: "native-analytics-libraries"
 latest_feature_date: "2015-11-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview"
+  - "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
   - "https://docs.cloud.google.com/dataproc/docs/reference/libraries"
 keywords:
   - "native"
@@ -26,7 +26,7 @@ keywords:
 # Native analytics libraries
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,48 +38,49 @@ Dataproc includes native Snappy, BLAS, LAPACK, and ARPACK libraries to support d
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview)
+- [https://docs.cloud.google.com/dataproc/docs/api-libraries-overview](https://docs.cloud.google.com/dataproc/docs/api-libraries-overview)
+- [https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies](https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies)
 - [https://docs.cloud.google.com/dataproc/docs/reference/libraries](https://docs.cloud.google.com/dataproc/docs/reference/libraries)
 
 ## Supporting Pages
 
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
+### "Overview of APIs and Client Libraries \_|\_ Managed Service for Apache Spark\
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- More Native Libraries - Cloud Dataproc now includes native Snappy libraries.
-- It also includes native BLAS, LAPACK and ARPACK libraries for Spark's MLlib.
-- March 31, 2025 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.97 1.2.41 2.2.41 March 28, 2025 Change Dataproc Serverless for Spark: Hadoop Native libraries are installed by default in all runtimes.
-- Upgraded Hadoop to 2.8.4. (Dataproc 1.2) July 31, 2018 Fixed Fixed issue breaking native Snappy compression in spark-shell ( SPARK-24018 ) and Zeppelin .
-
-### "google-cloud-dataproc overview (4.85.0) \_|\_ Java client libraries \_|\_\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview)
-- Source ID: `site-java-reference`
+- URL: [https://docs.cloud.google.com/dataproc/docs/api-libraries-overview](https://docs.cloud.google.com/dataproc/docs/api-libraries-overview)
+- Source ID: `site-docs-reference`
 - Final score: 86
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The example below demonstrates how you would import the BOM and include the google-cloud-dataproc artifact. <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.79.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-dataproc</artifactId> </dependency> </dependencies> Gradle BOMs are supported by default in Gradle 5.x or later.
-- Dataproc Product Reference GitHub Repository Maven artifact Getting Started In order to use this library, you first need to go through the following steps: Install a JDK (Java Development Kit) Select or create a Cloud Platform project Enable billing for your project Enable the API Set up authentication Use the Dataproc for Java To ensure that your project uses compatible versions of the libraries and their component artifacts, import com.google.cloud:libraries-bom and use the BOM to specify dependency versions.
-- The example below demonstrates how you would import the BOM and include the google-cloud-dataproc artifact. implementation ( platform ( "com.google.cloud:libraries-bom:26.79.0" )) implementation ( "com.google.cloud:google-cloud-dataproc" ) The platform and enforcedPlatform keywords supply dependency versions declared in a BOM.
-- Home Documentation Developer tools Java Client libraries Send feedback google-cloud-dataproc overview (4.85.0) Stay organized with collections Save and categorize content based on your preferences.
+- These "legacy" libraries access REST but not gRPC APIs (see Google API Client Libraries for additional information). gRPC : If a client library is not available for your programming language of choice, you can generate gRPC client libraries for Dataproc in any gRPC-supported language.
+- Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback Overview of APIs and Client Libraries Stay organized with collections Save and categorize content based on your preferences.
+- These are the available interfaces, in the order that we recommend using them: Google Cloud Client Libraries : Managed Service for Apache Spark ( alpha and beta release ) client libraries are available in multiple languages and are built on gRPC .
+- "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
+
+### "Manage Java and Scala dependencies for Apache Spark \_|\_ Managed Service\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies](https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies)
+- Source ID: `site-docs-root`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Most Google Cloud client libraries do . -- > < transformer implementation = "org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" / > < / transformers > < filters > < filter > < artifact > : </ artifact > < excludes > < exclude>META - INF / maven / </ exclude > < exclude>META - INF / .SF</exclude> <exclude>META-INF/ .DSA</exclude> <exclude>META-INF/ .RSA</exclude> </excludes> </filter> </filters> <relocations> <relocation> <pattern>com</pattern> <shadedPattern>repackaged.com.google.common</shadedPattern> <includes> <include>com.google.common. </ include > < / includes > < / relocation > < / relocations > < / configuration > < / execution > < / executions > < / plugin > < / plugins > < / build > < / project > To run the build: mvn package Notes about pom.xml : ManifestResourceTransformer processes attributes in the uber JAR's manifest file ( MANIFEST.MF ).
+- The next example shades the Guava and Protobuf libraries. < relocation > < pattern>com < / pattern > < shadedPattern>repackaged . com < / shadedPattern > < includes > < include>com . google . protobuf . </ include > < include>com . google . common . </ include > < / includes > < / relocation > Create a shaded uber JAR with SBT SBT is a tool for building Scala applications.
+- The next example shades the Guava and Protobuf libraries. assemblyShadeRules in assembly := Seq ( ShadeRule . rename ( "com.google.common. " - > "repackaged.com.google.common.@1" ). inAll , ShadeRule . rename ( "com.google.protobuf. " - > "repackaged.com.google.protobuf.@1" ). inAll ) Submit the uber JAR to Managed Service for Apache Spark After you have created a shaded uber JAR that contains your Spark applications and its dependencies, you are ready to submit a job to Managed Service for Apache Spark.
+- Example: gcloud dataproc jobs submit spark \ --cluster=my-cluster \ --region= region \ --properties=spark.jars.packages='com.google.cloud:google-cloud-translate:1.35.0,org.apache.bahir:spark-streaming-pubsub 2.11:2.2.0' When submitting a job directly on your cluster use the spark-submit command with the --packages=[DEPENDENCIES] parameter.
 
 ### Managed Service for Apache Spark client libraries \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/reference/libraries](https://docs.cloud.google.com/dataproc/docs/reference/libraries)
 - Source ID: `site-docs-reference`
-- Final score: 84
+- Final score: 72
 - Re-rank relevance: N/A
 
 Evidence snippets:

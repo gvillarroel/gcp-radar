@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:51:13.680Z",
+  "generated_at": "2026-04-12T21:39:58.470Z",
   "product_name": "Cloud Scheduler",
   "product_slug": "cloud-scheduler",
   "step02_source_path": "data/step-02/current/cloud-scheduler.md",
@@ -8,6 +8,95 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 10,
+    "source_row_count": 8,
+    "top_phrases": [
+      "cloud scheduler jobs that target the dataflow api can be secured with vpc service controls",
+      "cloud scheduler jobs that target cloud functions can be secured with vpc service controls",
+      "cloud scheduler jobs that target data pipelines can be secured with vpc service controls",
+      "cloud scheduler jobs that target cloud run can be secured with vpc service controls",
+      "vpc service controls support for cloud scheduler jobs targeting cloud functions",
+      "vpc service controls support for cloud scheduler jobs targeting data pipelines",
+      "vpc service controls support for cloud scheduler jobs targeting dataflow api",
+      "vpc service controls support for cloud scheduler jobs targeting cloud run",
+      "default deduplication headers for http and app engine targets",
+      "http and app engine target headers in cloud scheduler console",
+      "pub sub target message attributes in cloud scheduler console",
+      "vpc service controls support for cloud scheduler",
+      "retry configuration in cloud scheduler console",
+      "editing paused cloud scheduler jobs",
+      "cloud scheduler adds the x cloudscheduler jobname and x cloudscheduler scheduletime headers by default for appenginehttptarget and httptarget requests",
+      "cloud scheduler can be used within vpc service controls service perimeters to secure cron jobs",
+      "the cloud scheduler console supports configuring headers for http and app engine targets",
+      "the cloud scheduler console supports configuring message attributes for pub sub targets",
+      "the cloud scheduler console supports configuring retry settings for all target types",
+      "paused cloud scheduler jobs can be edited without resuming them first"
+    ],
+    "top_tokens": [
+      "cloud",
+      "scheduler",
+      "for",
+      "target",
+      "can",
+      "jobs",
+      "controls",
+      "service",
+      "support",
+      "the",
+      "vpc",
+      "secured",
+      "targeting",
+      "that",
+      "with",
+      "configuring",
+      "console",
+      "supports",
+      "targets",
+      "and",
+      "app",
+      "engine",
+      "headers",
+      "http",
+      "adds",
+      "all",
+      "api",
+      "appenginehttptarget",
+      "attributes",
+      "cloudscheduler",
+      "configuration",
+      "cron",
+      "data",
+      "dataflow",
+      "deduplication",
+      "default",
+      "edited",
+      "editing",
+      "first",
+      "functions",
+      "httptarget",
+      "jobname",
+      "message",
+      "paused",
+      "perimeters",
+      "pipelines",
+      "pub",
+      "requests",
+      "resuming",
+      "retry",
+      "run",
+      "scheduletime",
+      "secure",
+      "settings",
+      "sub",
+      "them",
+      "types",
+      "used",
+      "within",
+      "without"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "scheduler",
   "dominant_python_slug": "cloudscheduler",
   "dominant_java_slug": "google-cloud-scheduler",
@@ -51,15 +140,15 @@
           "rank": 4
         },
         {
-          "title": "Cloud Scheduler API Client Library for .NET | Google Developers",
-          "url": "https://developers.google.com/api-client-library/dotnet/apis/cloudscheduler/v1?hl=pl",
-          "description": "This page contains information about getting started with the Cloud Scheduler API using the Google API Client Library for .NET. In addition, you may be interested in the following documentation:",
-          "rank": 5
-        },
-        {
           "title": "google-api-java-client-services/clients/google-api-services-cloudscheduler/v1beta1 at main · googleapis/google-api-java-client-services",
           "url": "https://developers.google.com/api-client-library/java/apis/cloudscheduler/v1beta1",
           "description": "Interact with this API in your browser using the APIs Explorer for the Cloud Scheduler API ... &lt;project&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;com.google.apis&lt;/groupId&gt; &lt;artifactId&gt;google-api-services-cloudscheduler&lt;/artifactId&gt; &lt;version&gt;v1beta1-rev20210816-1.32.1&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;/project&gt; repositories { mavenCentral() } dependencies { compile &#x27;com.google.apis:google-api-services-cloudscheduler:v1beta1-rev20210816-1.32.1&#x27; }",
+          "rank": 5
+        },
+        {
+          "title": "Cloud Scheduler API Client Library for .NET | Google Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/cloudscheduler/v1",
+          "description": "This page contains information about getting started with the Cloud Scheduler API using the Google API Client Library for .NET. In addition, you may be interested in the following documentation:",
           "rank": 6
         },
         {
@@ -75,6 +164,20 @@
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud Scheduler\" \"cloud scheduler jobs that target the dataflow api can be secured with vpc service controls\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud Scheduler\" \"cloud scheduler jobs that target cloud run can be secured with vpc service controls\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 1,
@@ -171,21 +274,21 @@
           "rank": 5
         },
         {
-          "title": "Running services on a schedule | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/run/docs/triggering/using-scheduler",
-          "description": "RESOURCE_ID: Your Google Cloud project ID. PRINCIPAL: An identifier for the principal, or member, which usually has the following form: PRINCIPAL_TYPE:ID. For example, user:my-user@example.com. For a full list of the values that PRINCIPAL can have, see the Policy Binding reference. To learn how to apply or remove a Terraform configuration, see Basic Terraform commands. ... resource &quot;google_service_account&quot; &quot;default&quot; { account_id = &quot;scheduler-sa&quot; description = &quot;Cloud Scheduler service account; used to trigger scheduled Cloud Run jobs.&quot; display_name = &quot;scheduler-sa&quot; # Use an explicit depends_on",
-          "rank": 6
-        },
-        {
-          "title": "Schedule a Compute Engine VM to start or stop | Cloud Scheduler | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/scheduler/docs/start-and-stop-compute-engine-instances-on-a-schedule",
-          "description": "<strong>Create a set of jobs with Cloud Scheduler that schedule instances with a dev resource label to run 09:00-17:00, Monday-Friday to match typical business hours</strong>. In this document, you use the following billable components of Google Cloud:",
-          "rank": 7
-        },
-        {
           "title": "Set up your environment | Cloud Scheduler | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/scheduler/docs/setup",
           "description": "Use the following instructions to create or select a Google Cloud project and to enable the Cloud Scheduler API.",
+          "rank": 6
+        },
+        {
+          "title": "Running services on a schedule | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/triggering/using-scheduler",
+          "description": "RESOURCE_ID: Your Google Cloud project ID. PRINCIPAL: An identifier for the principal, or member, which usually has the following form: PRINCIPAL_TYPE:ID. For example, user:my-user@example.com. For a full list of the values that PRINCIPAL can have, see the Policy Binding reference. To learn how to apply or remove a Terraform configuration, see Basic Terraform commands. ... resource &quot;google_service_account&quot; &quot;default&quot; { account_id = &quot;scheduler-sa&quot; description = &quot;Cloud Scheduler service account; used to trigger scheduled Cloud Run jobs.&quot; display_name = &quot;scheduler-sa&quot; # Use an explicit depends_on",
+          "rank": 7
+        },
+        {
+          "title": "Quickstart: Schedule and run a cron job using the Google Cloud CLI | Cloud Scheduler | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/scheduler/docs/schedule-run-cron-job-gcloud",
+          "description": "Learn how to create, schedule, and run a cron job by using Cloud Scheduler.",
           "rank": 8
         }
       ]
@@ -282,9 +385,23 @@
     },
     {
       "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud Scheduler\" \"cloud scheduler jobs that target cloud functions can be secured with vpc service controls\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud Scheduler\" \"vpc service controls support for cloud scheduler jobs targeting cloud functions\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Cloud Scheduler\" \"access control\"",
-      "official_result_count": 3,
+      "official_result_count": 4,
       "results": [
         {
           "title": "Access control with IAM | Cloud Scheduler | Google Cloud Documentation",
@@ -299,10 +416,16 @@
           "rank": 2
         },
         {
+          "title": "Security design overview | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/securing/security",
+          "description": "If the job is triggered by another service, such as Cloud Scheduler, the service account or group that&#x27;s used must have the run.jobs.run permission on the job. To ensure that only members of your organization can execute a Cloud Run job, an organization administrator can set the Domain restricted sharing constraint. Organization administrators can also opt out specific Cloud Run jobs. Your Cloud Run services can be part of a VPC Service Controls perimeter so that you can use VPC Service Controls to gate access and mitigate exfiltration risk.",
+          "rank": 3
+        },
+        {
           "title": "ServiceNow audit logs | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/servicenow-audit",
           "description": "Click Grant access. ... Add principals: Enter the service account email (for example, servicenow-audit-collector-sa@PROJECT_ID.iam.gserviceaccount.com). Assign roles: Select Storage Object Admin. Click Save. Create a Pub/Sub topic that Cloud Scheduler will publish to and the Cloud Run function will subscribe to.",
-          "rank": 3
+          "rank": 4
         }
       ]
     },
@@ -387,15 +510,15 @@
           "rank": 5
         },
         {
-          "title": "Running services on a schedule | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/run/docs/triggering/using-scheduler",
-          "description": "RESOURCE_ID: Your Google Cloud project ID. PRINCIPAL: An identifier for the principal, or member, which usually has the following form: PRINCIPAL_TYPE:ID. For example, user:my-user@example.com. For a full list of the values that PRINCIPAL can have, see the Policy Binding reference. To learn how to apply or remove a Terraform configuration, see Basic Terraform commands. ... resource &quot;google_service_account&quot; &quot;default&quot; { account_id = &quot;scheduler-sa&quot; description = &quot;Cloud Scheduler service account; used to trigger scheduled Cloud Run jobs.&quot; display_name = &quot;scheduler-sa&quot; # Use an explicit depends_on",
-          "rank": 6
-        },
-        {
           "title": "Cloud Scheduler API | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/scheduler/docs/reference/rest",
           "description": "<strong>Creates and manages jobs run on a regular recurring schedule</strong>. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following ...",
+          "rank": 6
+        },
+        {
+          "title": "Running services on a schedule | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/triggering/using-scheduler",
+          "description": "RESOURCE_ID: Your Google Cloud project ID. PRINCIPAL: An identifier for the principal, or member, which usually has the following form: PRINCIPAL_TYPE:ID. For example, user:my-user@example.com. For a full list of the values that PRINCIPAL can have, see the Policy Binding reference. To learn how to apply or remove a Terraform configuration, see Basic Terraform commands. ... resource &quot;google_service_account&quot; &quot;default&quot; { account_id = &quot;scheduler-sa&quot; description = &quot;Cloud Scheduler service account; used to trigger scheduled Cloud Run jobs.&quot; display_name = &quot;scheduler-sa&quot; # Use an explicit depends_on",
           "rank": 7
         },
         {
@@ -498,6 +621,20 @@
     },
     {
       "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Cloud Scheduler\" \"cloud scheduler jobs that target data pipelines can be secured with vpc service controls\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Cloud Scheduler\" \"vpc service controls support for cloud scheduler jobs targeting data pipelines\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Cloud Scheduler\" IAM roles permissions",
       "official_result_count": 8,
@@ -527,21 +664,21 @@
           "rank": 4
         },
         {
+          "title": "Schedule an HTTP Cloud Run function | Cloud Scheduler | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/scheduler/docs/tut-gcf-http",
+          "description": "To get the permissions that you need to complete the tutorial, ask your administrator to grant you the following IAM roles on your project: Cloud Run Source Developer (roles/run.sourceDeveloper) <strong>Cloud Scheduler Admin (roles/cloudscheduler.admin)</strong>",
+          "rank": 5
+        },
+        {
           "title": "Quickstart: Schedule and run a cron job | Cloud Scheduler | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/scheduler/docs/schedule-run-cron-job",
           "description": "If you created a new project, then you already have the required permissions. Verify that billing is enabled for your Google Cloud project. Enable the Cloud Scheduler and Pub/Sub APIs. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
-          "rank": 5
+          "rank": 6
         },
         {
           "title": "Collect CloudM logs | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/cloudm",
           "description": "Click + Add another role. Search for and select Cloud Functions Invoker. Click Continue. Click Done. ... Go to Cloud Storage &gt; Buckets. Click on your bucket name (cloudm-audit-logs). Go to the Permissions tab. Click Grant access. ... Add principals: Enter the service account email (cloudm-audit-collector-sa@PROJECT_ID.iam.gserviceaccount.com) ... Click Save. Create a Pub/Sub topic that Cloud Scheduler ...",
-          "rank": 6
-        },
-        {
-          "title": "Schedule an HTTP Cloud Run function | Cloud Scheduler | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/scheduler/docs/tut-gcf-http",
-          "description": "To get the permissions that you need to complete the tutorial, ask your administrator to grant you the following IAM roles on your project: Cloud Run Source Developer (roles/run.sourceDeveloper) <strong>Cloud Scheduler Admin (roles/cloudscheduler.admin)</strong>",
           "rank": 7
         },
         {
@@ -584,15 +721,15 @@
           "rank": 3
         },
         {
-          "title": "Quickstart: Schedule and run a cron job | Cloud Scheduler | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/scheduler/docs/schedule-run-cron-job",
-          "description": "This quickstart shows you how to use the Google Cloud console to perform some basic operations using Cloud Scheduler.",
-          "rank": 4
-        },
-        {
           "title": "Schedule a workflow using Cloud Scheduler | Workflows | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/workflows/docs/schedule-workflow",
           "description": "In the Name field, enter a name for your Cloud Scheduler job. It must be unique across the jobs in the same region. In the Region list, select an appropriate region; for example, us-central1. In the Frequency field, specify a time interval that you define in a unix-cron format. For example, to schedule your workflow to execute every 5 minutes, type */5 * * * *.",
+          "rank": 4
+        },
+        {
+          "title": "Quickstart: Schedule and run a cron job | Cloud Scheduler | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/scheduler/docs/schedule-run-cron-job",
+          "description": "This quickstart shows you how to use the Google Cloud console to perform some basic operations using Cloud Scheduler.",
           "rank": 5
         },
         {
@@ -635,7 +772,7 @@
         },
         {
           "title": "Python client library | Google Cloud",
-          "url": "https://googleapis.dev/python/cloudscheduler/1.1.0/gapic/v1/types.html",
+          "url": "https://googleapis.dev/python/cloudscheduler/latest/scheduler_v1/types.html",
           "description": "Cloud Scheduler: <strong>lets you set up scheduled units of work to be executed at defined times or regular intervals</strong>. These work units are commonly known as cron jobs.",
           "rank": 3
         },
@@ -670,6 +807,19 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "that",
+          "http",
+          "all",
+          "data"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -680,6 +830,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "that",
+          "http",
+          "all",
+          "data"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -707,6 +866,21 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "service",
+          "the",
+          "that",
+          "and"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -716,7 +890,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "service",
+          "the",
+          "that",
+          "and"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -744,6 +929,20 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "the",
+          "with",
+          "http",
+          "cron"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -754,6 +953,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "the",
+          "with",
+          "http",
+          "cron"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -780,9 +989,21 @@
         2,
         3
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "and",
+          "http",
+          "cron"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -793,6 +1014,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "and",
+          "http",
+          "cron"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -803,7 +1032,7 @@
       "title": "Set up your environment | Cloud Scheduler | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/scheduler/docs/setup",
       "description": "Use the following instructions to create or select a Google Cloud project and to enable the Cloud Scheduler API.",
-      "rank": 8,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Scheduler\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud Scheduler\" Google Cloud docs overview",
@@ -817,9 +1046,22 @@
         2,
         3
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "and",
+          "http",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -830,8 +1072,80 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "and",
+          "http",
+          "api"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Cloud Scheduler API Client Library for .NET | Google Developers",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/cloudscheduler/v1",
+      "description": "This page contains information about getting started with the Cloud Scheduler API using the Google API Client Library for .NET. In addition, you may be interested in the following documentation:",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Scheduler\" official documentation OR site:developers.google.com \"cloud scheduler\" official documentation",
+        "site:developers.google.com \"Cloud Scheduler\" reference OR site:developers.google.com \"cloud scheduler\" reference",
+        "site:developers.google.com \"Cloud Scheduler\" overview OR site:developers.google.com \"cloud scheduler\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "the",
+          "with",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "the",
+          "with",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
       "keep": false
@@ -840,7 +1154,7 @@
       "title": "google-api-java-client-services/clients/google-api-services-cloudscheduler/v1beta1 at main · googleapis/google-api-java-client-services",
       "url": "https://developers.google.com/api-client-library/java/apis/cloudscheduler/v1beta1",
       "description": "Interact with this API in your browser using the APIs Explorer for the Cloud Scheduler API ... &lt;project&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;com.google.apis&lt;/groupId&gt; &lt;artifactId&gt;google-api-services-cloudscheduler&lt;/artifactId&gt; &lt;version&gt;v1beta1-rev20210816-1.32.1&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;/project&gt; repositories { mavenCentral() } dependencies { compile &#x27;com.google.apis:google-api-services-cloudscheduler:v1beta1-rev20210816-1.32.1&#x27; }",
-      "rank": 6,
+      "rank": 5,
       "query_hits": [
         "site:developers.google.com \"Cloud Scheduler\" official documentation OR site:developers.google.com \"cloud scheduler\" official documentation",
         "site:developers.google.com \"Cloud Scheduler\" reference OR site:developers.google.com \"cloud scheduler\" reference",
@@ -857,6 +1171,21 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "service",
+          "the",
+          "with",
+          "http",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -866,7 +1195,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "service",
+          "the",
+          "with",
+          "http",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -894,6 +1234,21 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "service",
+          "the",
+          "and",
+          "http"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -903,7 +1258,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "service",
+          "the",
+          "and",
+          "http"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -931,6 +1297,21 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "service",
+          "the",
+          "http",
+          "all"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -940,7 +1321,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "service",
+          "the",
+          "http",
+          "all"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -968,6 +1360,20 @@
       "best_rank": 5,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "service",
+          "and",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -978,6 +1384,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "service",
+          "and",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -988,7 +1404,7 @@
       "title": "Running services on a schedule | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/run/docs/triggering/using-scheduler",
       "description": "RESOURCE_ID: Your Google Cloud project ID. PRINCIPAL: An identifier for the principal, or member, which usually has the following form: PRINCIPAL_TYPE:ID. For example, user:my-user@example.com. For a full list of the values that PRINCIPAL can have, see the Policy Binding reference. To learn how to apply or remove a Terraform configuration, see Basic Terraform commands. ... resource &quot;google_service_account&quot; &quot;default&quot; { account_id = &quot;scheduler-sa&quot; description = &quot;Cloud Scheduler service account; used to trigger scheduled Cloud Run jobs.&quot; display_name = &quot;scheduler-sa&quot; # Use an explicit depends_on",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Scheduler\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud Scheduler\" Google Cloud docs overview",
@@ -1005,6 +1421,21 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "can",
+          "jobs",
+          "service",
+          "the",
+          "that"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1014,7 +1445,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "can",
+          "jobs",
+          "service",
+          "the",
+          "that"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1042,6 +1484,20 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "can",
+          "the",
+          "console",
+          "app",
+          "http"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1051,7 +1507,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "can",
+          "the",
+          "console",
+          "app",
+          "http"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1077,6 +1543,19 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "with",
+          "and",
+          "http"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1087,6 +1566,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "with",
+          "and",
+          "http"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1097,7 +1585,7 @@
       "title": "Cloud Scheduler API | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/scheduler/docs/reference/rest",
       "description": "<strong>Creates and manages jobs run on a regular recurring schedule</strong>. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following ...",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Scheduler\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Cloud Scheduler\" Google Cloud introduction reference"
@@ -1109,9 +1597,24 @@
         2,
         3
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "the",
+          "that",
+          "and",
+          "app"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -1122,11 +1625,80 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "the",
+          "that",
+          "and",
+          "app"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
       "keep": true
+    },
+    {
+      "title": "Quickstart: Schedule and run a cron job using the Google Cloud CLI | Cloud Scheduler | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/scheduler/docs/schedule-run-cron-job-gcloud",
+      "description": "Learn how to create, schedule, and run a cron job by using Cloud Scheduler.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Scheduler\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud Scheduler\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "and",
+          "http",
+          "cron"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "and",
+          "http",
+          "cron"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
     },
     {
       "title": "Class CloudSchedulerClient (2.80.0) | Java client libraries | Google Cloud Documentation",
@@ -1147,6 +1719,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "the",
+          "http",
+          "all",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1157,6 +1744,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "the",
+          "http",
+          "all",
+          "api"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1182,6 +1780,21 @@
       "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "the",
+          "http",
+          "all",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1192,6 +1805,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "the",
+          "http",
+          "all",
+          "api"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1217,6 +1841,21 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "the",
+          "http",
+          "all",
+          "api",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1227,6 +1866,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "the",
+          "http",
+          "all",
+          "api",
+          "cloudscheduler"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1252,6 +1902,18 @@
       "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": -1,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "the",
+          "http"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1262,6 +1924,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "the",
+          "http"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1287,6 +1957,18 @@
       "best_rank": 5,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": -1,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "the",
+          "http"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1297,6 +1979,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "the",
+          "http"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1322,6 +2012,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "the",
+          "http",
+          "all",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
@@ -1331,9 +2036,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "the",
+          "http",
+          "all",
+          "api"
+        ],
         "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
       "keep": true
@@ -1357,6 +2073,18 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": -1,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "http",
+          "all",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1366,7 +2094,15 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "http",
+          "all",
+          "cloudscheduler"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1392,6 +2128,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "the",
+          "http",
+          "cloudscheduler",
+          "cron"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -1401,47 +2152,23 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "the",
+          "http",
+          "cloudscheduler",
+          "cron"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": true
-    },
-    {
-      "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
-      "url": "https://developers.google.com/api-client-library/dotnet/apis/cloudscheduler/v1",
-      "description": "Cloud Scheduler API v1 · Google.Apis.CloudScheduler.v1beta1 · Cloud Scheduler API v1beta1 · Google.Apis.CloudSearch.v1 · Cloud Search API v1 · Google.Apis.CloudSecurityToken.v1 · Security Token Service API v1 · Google.Apis.CloudSecurityToken.v1beta · Security Token Service API v1beta ·",
-      "rank": 2,
-      "query_hits": [
-        "site:developers.google.com \"Cloud Scheduler\" reference OR site:developers.google.com \"cloud scheduler\" reference",
-        "site:developers.google.com \"Cloud Scheduler\" overview OR site:developers.google.com \"cloud scheduler\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 100,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
     },
     {
       "title": "Cloud Scheduler roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
@@ -1462,6 +2189,20 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "the",
+          "and",
+          "http",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1472,6 +2213,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "the",
+          "and",
+          "http",
+          "cloudscheduler"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1495,6 +2246,19 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "with",
+          "and",
+          "http"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1505,6 +2269,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "with",
+          "and",
+          "http"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1528,6 +2301,21 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "target",
+          "service",
+          "the",
+          "that",
+          "with",
+          "targets"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1537,7 +2325,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "target",
+          "service",
+          "the",
+          "that",
+          "with",
+          "targets"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1561,6 +2360,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "can",
+          "service",
+          "support",
+          "the",
+          "and"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1571,72 +2385,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Quickstart: Schedule and run a cron job using the Google Cloud CLI | Cloud Scheduler | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/scheduler/docs/schedule-run-cron-job-gcloud",
-      "description": "To get the permissions that you need to complete this quickstart, ask your administrator to grant you the following IAM roles on your project: <strong>Cloud Scheduler Admin (roles/cloudscheduler.admin)</strong>",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Scheduler\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Schedule a Compute Engine VM to start or stop | Cloud Scheduler | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/scheduler/docs/start-and-stop-compute-engine-instances-on-a-schedule",
-      "description": "<strong>Create a set of jobs with Cloud Scheduler that schedule instances with a dev resource label to run 09:00-17:00, Monday-Friday to match typical business hours</strong>. In this document, you use the following billable components of Google Cloud:",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Scheduler\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "can",
+          "service",
+          "support",
+          "the",
+          "and"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1647,7 +2406,7 @@
       "title": "Schedule an HTTP Cloud Run function | Cloud Scheduler | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/scheduler/docs/tut-gcf-http",
       "description": "To get the permissions that you need to complete the tutorial, ask your administrator to grant you the following IAM roles on your project: Cloud Run Source Developer (roles/run.sourceDeveloper) <strong>Cloud Scheduler Admin (roles/cloudscheduler.admin)</strong>",
-      "rank": 7,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Scheduler\" IAM roles permissions"
       ],
@@ -1657,9 +2416,22 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "that",
+          "http",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1670,41 +2442,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "that",
+          "http",
+          "cloudscheduler"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Cloud Scheduler API Client Library for .NET | Google Developers",
-      "url": "https://developers.google.com/api-client-library/dotnet/apis/cloudscheduler/v1?hl=pl",
-      "description": "This page contains information about getting started with the Cloud Scheduler API using the Google API Client Library for .NET. In addition, you may be interested in the following documentation:",
-      "rank": 5,
-      "query_hits": [
-        "site:developers.google.com \"Cloud Scheduler\" official documentation OR site:developers.google.com \"cloud scheduler\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 100,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1726,6 +2474,20 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1735,7 +2497,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "service",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1759,6 +2531,21 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "target",
+          "service",
+          "app",
+          "engine",
+          "http",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1768,7 +2555,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "target",
+          "service",
+          "app",
+          "engine",
+          "http",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1792,6 +2590,21 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "can",
+          "service",
+          "the",
+          "configuring",
+          "http",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1801,7 +2614,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "can",
+          "service",
+          "the",
+          "configuring",
+          "http",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1825,6 +2649,19 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1834,7 +2671,16 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1858,39 +2704,20 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 100,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "service",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Python client library | Google Cloud",
-      "url": "https://googleapis.dev/python/cloudscheduler/1.1.0/gapic/v1/types.html",
-      "description": "Cloud Scheduler: <strong>lets you set up scheduled units of work to be executed at defined times or regular intervals</strong>. These work units are commonly known as cron jobs.",
-      "rank": 3,
-      "query_hits": [
-        "site:googleapis.dev/python \"Cloud Scheduler\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1900,7 +2727,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "service",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1924,6 +2761,21 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "and",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1933,7 +2785,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "and",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1957,6 +2820,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -1967,6 +2845,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1990,6 +2879,21 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -1999,8 +2903,78 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler"
+        ],
         "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client library | Google Cloud",
+      "url": "https://googleapis.dev/python/cloudscheduler/latest/scheduler_v1/types.html",
+      "description": "Cloud Scheduler: <strong>lets you set up scheduled units of work to be executed at defined times or regular intervals</strong>. These work units are commonly known as cron jobs.",
+      "rank": 3,
+      "query_hits": [
+        "site:googleapis.dev/python \"Cloud Scheduler\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler",
+          "cron"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "jobs",
+          "the",
+          "http",
+          "api",
+          "cloudscheduler",
+          "cron"
+        ],
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -2010,7 +2984,7 @@
       "title": "Collect CloudM logs | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/cloudm",
       "description": "Click + Add another role. Search for and select Cloud Functions Invoker. Click Continue. Click Done. ... Go to Cloud Storage &gt; Buckets. Click on your bucket name (cloudm-audit-logs). Go to the Permissions tab. Click Grant access. ... Add principals: Enter the service account email (cloudm-audit-collector-sa@PROJECT_ID.iam.gserviceaccount.com) ... Click Save. Create a Pub/Sub topic that Cloud Scheduler ...",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Scheduler\" IAM roles permissions"
       ],
@@ -2020,9 +2994,24 @@
       "round_hits": [
         3
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "service",
+          "the",
+          "that",
+          "and",
+          "http"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2032,7 +3021,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "service",
+          "the",
+          "that",
+          "and",
+          "http"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2043,7 +3043,7 @@
       "title": "ServiceNow audit logs | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/servicenow-audit",
       "description": "Click Grant access. ... Add principals: Enter the service account email (for example, servicenow-audit-collector-sa@PROJECT_ID.iam.gserviceaccount.com). Assign roles: Select Storage Object Admin. Click Save. Create a Pub/Sub topic that Cloud Scheduler will publish to and the Cloud Run function will subscribe to.",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Scheduler\" \"access control\""
       ],
@@ -2053,9 +3053,24 @@
       "round_hits": [
         2
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "service",
+          "the",
+          "that",
+          "and",
+          "http"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2065,7 +3080,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "service",
+          "the",
+          "that",
+          "and",
+          "http"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2089,6 +3115,18 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "http",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2099,6 +3137,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "the",
+          "http",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2122,6 +3168,21 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "the",
+          "that",
+          "with",
+          "console"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2131,8 +3192,78 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "jobs",
+          "the",
+          "that",
+          "with",
+          "console"
+        ],
         "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Security design overview | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/securing/security",
+      "description": "If the job is triggered by another service, such as Cloud Scheduler, the service account or group that&#x27;s used must have the run.jobs.run permission on the job. To ensure that only members of your organization can execute a Cloud Run job, an organization administrator can set the Domain restricted sharing constraint. Organization administrators can also opt out specific Cloud Run jobs. Your Cloud Run services can be part of a VPC Service Controls perimeter so that you can use VPC Service Controls to gate access and mitigate exfiltration risk.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Scheduler\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "can",
+          "jobs",
+          "controls",
+          "service",
+          "the",
+          "vpc"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "can",
+          "jobs",
+          "controls",
+          "service",
+          "the",
+          "vpc"
+        ],
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -2155,6 +3286,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "can",
+          "the",
+          "and",
+          "http",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -2165,6 +3311,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "can",
+          "the",
+          "and",
+          "http",
+          "api"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2188,20 +3345,44 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 44,
-      "deterministic_score": 83,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "http",
+          "api",
+          "cloudscheduler",
+          "data"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 88,
       "api_score": {
         "classification": "supporting_page",
-        "score": 83,
+        "score": 88,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 4,
         "product_match": 4,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "scheduler",
+          "for",
+          "http",
+          "api",
+          "cloudscheduler",
+          "data"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 76,
+      "final_score": 80,
       "keep": false
     },
     {
@@ -2221,20 +3402,42 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": -28,
-      "deterministic_score": 39,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "cloud",
+          "service",
+          "the",
+          "with",
+          "http",
+          "data"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 57,
       "api_score": {
         "classification": "supporting_page",
-        "score": 39,
+        "score": 57,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 2,
+        "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "cloud",
+          "service",
+          "the",
+          "with",
+          "http",
+          "data"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 38,
+      "final_score": 53,
       "keep": false
     }
   ]

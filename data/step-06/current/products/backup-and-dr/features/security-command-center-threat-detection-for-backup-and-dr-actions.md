@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.208Z"
+generated_at: "2026-04-14T09:35:01.938Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Security Command Center threat detection for Backup and DR actions"
 feature_slug: "security-command-center-threat-detection-for-backup-and-dr-actions"
 latest_feature_date: "2023-10-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr"
+  - "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines"
 keywords:
   - "detection"
   - "security"
   - "command"
+  - "actions"
   - "threat"
   - "center"
-  - "backup"
-  - "for"
-  - "and"
 ---
 
 # Security Command Center threat detection for Backup and DR actions
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +36,53 @@ Security Command Center Premium added real-time Event Threat Detection coverage 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve](https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr](https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr)
+- [https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines](https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines)
 
 ## Supporting Pages
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Automate protection of Google Cloud VMware Engine \_|\_ Backup and DR \_\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve](https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve)
+- Source ID: `site-docs-reference`
+- Final score: 62
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Run manual auto protection Although the protection engine runs daily at 4:15 AM and 4:15 PM local time, you can also make an on-demand run of the Dynamic Protection engine using the following command steps: Set the appliance management console endpoint by entering a value that starts with 'https://bmc-' and ends with '.com'.
+- Known issues If a vCenter has more than one VM with the same name, protection is applied to only the first VM in alphabetical order.
+- To remove tags from VMs in vSphere, you should have vSphere tagging privileges on the root vCenter Server instance.
+- To assign tags to VMs in vSphere, you should have vSphere tagging privileges on the root vCenter Server instance.
+
+### Support matrix \_|\_ Backup and DR \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr](https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr)
 - Source ID: `site-docs-root`
-- Final score: 196
+- Final score: 62
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 28, 2025 Announcement Security Command Center adds threat detection support for Backup Vault, Backup Plans, and vaulted backups.
-- October 19, 2023 Feature Security Command Center Premium adds real-time threat detection for Google Cloud Backup and DR Service.
-- Event Threat Detection, a Security Command Center Premium service, released new rules for Google Cloud Backup and DR Service.
-- For more information, see Security Command Center Premium for Backup and DR Service .
+- SQL Server Version Windows Server Version SQL Server 2022 Standalone Windows Server 2025 Windows Server 2022 Windows Server 2019 Windows Server 2016 SQL Server 2022 Web Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2022 Standard Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2022 Enterprise Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2019 Web Windows Server 2025 Datacenter Windows Server 2022 Datacenter SQL Server 2019 Standalone Windows Server 2025 SQL Server 2019 Standard Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2019 Enterprise Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2017 Standalone Windows Server 2025 SQL Server 2017 Web Windows Server 2025 Datacenter Windows Server 2022 Datacenter SQL Server 2016 Web Windows Server 2025 Datacenter Windows Server 2022 Datacenter Note: No support for app-aware mounts into a SQL Server instance running on a Microsoft Failover Cluster if any of its nodes have been discovered as a Google Cloud VMware Engine VM.
+- Note: Protection of VMware View virtual machines not supported. vCenter 1, 6 7.0, 7.0 U1, 7.0 U2, 7.0 U3, 8.0, 8.0 U3 7 ESX Server 6 7.0, 7.0 U1, 7.0 U2, 7.0 U3, 8.0.3 starting with Backup and DR Service V11.0.17 Virtual Hardware 2 7 to 15 and 17 to 19 Guest OS All Google Cloud VMware Engine supported OSs Quiesce applications 3 Yes, based on VMware Tools vSAN Support 4 vSAN 7.0 U1, vSAN 7.0 U2, vSAN 7.0 U3 Change Block Tracking 5 Leverages VMware vSphere Storage APIs - Data Protection (formerly known as vStorage APIs for Data Protection or VADP) 1 This leverages VMware VDDK version 7.0.
+- Application Discovery : Backup and DR agent enables deep discovery of databases and file systems configured on a production host API integration : Where possible, Backup and DR agents integrate with the application specific APIs/commands for efficient capture of application data Change Block Tracking : In situations where the production applications don't have a built-in change block tracking, Backup and DR introduces change block tracking on select platforms Application aware recovery/mount : Backup and DR agents have built in application awareness.
+- Operating System Version Basic Backup and DR agent Support Change Block Tracking Support for SQL Server Windows Server 2025 Datacenter Yes Yes Windows Server 2025 Datacenter Core Yes Yes Windows Server 2022 Datacenter Yes Yes Windows Server 2022 Datacenter Core Yes Yes Windows Server 2019 Datacenter Yes Yes Windows Server 2019 Datacenter Core Yes Yes Windows Server 2016 Datacenter Yes Yes Windows Server 2016 Datacenter Core Yes Yes Linux operating system support Backup and DR agent supports the following Linux (x86) operating systems.
 
-### Backup and DR Service for PostgreSQL \_|\_ Google Cloud Documentation
+### "Accelerator-optimized machine family \_|\_ Compute Engine \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql)
-- Source ID: `site-api-reference`
-- Final score: 162
+- URL: [https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines](https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines)
+- Source ID: `site-docs-reference-2`
+- Final score: 60
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The quiesce or unquiesce command is run on the primary for a volume-level snapshot job: select pg start backup ( <label> ) ; select pg stop backup () ; The quiesce and unquiesce commands are run on a standby node for a volume-level snapshot job: If PostgreSQL version is 10.x or later: select pg wal replay pause () ; select pg wal replay resume () ; If PostgreSQL version is 9.x: select pg xlog replay pause () ; select pg xlog replay resume () ; How it works: file-based backup The following steps describe the process for how to perform data backup and recovery with file-based backup images: Backup and DR agent is deployed in the database server.
-- PostgreSQL backup API used by Backup and DR Volume level (Linux change block tracking and LVM snapshot) backups : Backup and DR uses the PostgreSQL pg start backup(label) and pg stop backup() commands when performing backups with Linux change block tracking and LVM snapshot.
-- What's next Prepare the database for Backup and DR Other documentation for Backup and DR for PostgreSQL Backup and DR for PostgreSQL Prepare the database for Backup and DR Add a PostgreSQL database host and discover databases Define policy templates and resource profiles Set application details and settings Check staging disk format and backup method Protect the PostgreSQL database and its logs Mount a PostgreSQL database Recover PostgreSQL Backups Create a PostgreSQL Backup and DR Workflow Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for PostgreSQL Stay organized with collections Save and categorize content based on your preferences.
-
-### "Backup and DR Service for Compute Engine for self-managed storage \_|\_\
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
-- Source ID: `site-api-reference`
-- Final score: 156
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The Backup and DR Compute Engine guide Check for the cloud credentials Discover and protect Compute Engine instances Mount backup images of Compute Engine instances Restore a Compute Engine instance Import Persistent Disk snapshot images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for Compute Engine for self-managed storage Stay organized with collections Save and categorize content based on your preferences.
-- If you don't specify a storage location for a snapshot, Backup and DR uses the default location , which stores your snapshot in a Cloud Storage multi-regional location closest to the region of the source disk.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- To configure NCCL, before you run your workloads, set the NCCL P2P LEVEL environment variable on your G4 instance based on the machine type: For G4 instances with 2 or 4 GPUs ( g4-standard-96 , g4-standard-192 ): set NCCL P2P LEVEL=PHB For G4 instances with 8 GPUs ( g4-standard-384 ): set NCCL P2P LEVEL=SYS Set the environment variable using one of the following options: On the command line, run the appropriate export command (for example, export NCCL P2P LEVEL=SYS ) in the shell session where you plan to run your application.
+- The following GPU sharing options are available for G4 instances: Fractional GPU (vGPU) support ( Preview ): this feature allows a single physical GPU to be shared by multiple virtual machine (VM) instances. vGPUs provide multi-tenant security isolation because each vGPU is a separate VM instance.
+- Enhanced networking For this machine type, RDMA over Converged Ethernet (RoCE) increases the network performance by combining NVIDIA ConnectX-7 network interface cards (NICs) with our datacenter-wide four-way rail-aligned network.
+- Enhanced networking with RoCE : RDMA over Converged Ethernet (RoCE) increases the network performance by combining NVIDIA ConnectX-7 network interface cards (NICs) with Google's datacenter-wide four-way rail-aligned network.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.202Z"
+generated_at: "2026-04-13T14:23:05.056Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "ComputeSecurityPolicy user IP request headers"
@@ -9,17 +9,14 @@ latest_feature_date: "2023-09-06"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/overview"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
+  - "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+  - "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser"
 keywords:
   - "computesecuritypolicy"
   - "user"
-  - "ip"
-  - "request"
   - "headers"
-  - "config"
-  - "connector"
+  - "request"
   - "added"
 ---
 
@@ -42,43 +39,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
+- [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields)
+- [https://docs.cloud.google.com/config-connector/docs/troubleshooting](https://docs.cloud.google.com/config-connector/docs/troubleshooting)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### Ignore unspecified fields \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 108
+- URL: [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields)
+- Source ID: `site-docs-reference`
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
+- Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Note that the only populating behavior CRDs added in version 1.114.0 and later follow is Absent regardless of the cnrm.cloud.google.com/state-into-spec annotation or the stateIntoSpec fields in the ConfigConnector CR or ConfigConnectorContext CR.
+- Both config management tools and Config Connector treat list fields as atomic, thus the added spec.bars[0].br2 is treated as a drift by config management tools and will be removed to correct the drift .
+- Specifically, it means when a GET response is sent as a PUT request to the same URL, the expected result is a HTTP 200 OK response with no change in the state of the underlying REST resource.
 
-### Config Connector overview | Google Cloud Documentation
+### AlloyDBUser \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser)
 - Source ID: `site-docs-root`
-- Final score: 96
+- Final score: 69
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBUser metadata : name : alloydbuser-sample-database spec : clusterRef : name : alloydbuser-dep-database databaseRoles : - pg monitor - pg signal backend userType : ALLOYDB BUILT IN password : value : pg-built-in --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbuser-dep-database spec : location : me-central1 networkConfig : networkRef : name : alloydbuser-dep-database projectRef : external : ${PROJECT ID?} --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbuser-dep-database spec : clusterRef : name : alloydbuser-dep-database instanceTypeRef : name : alloydbuser-dep-database databaseFlags : enable google adaptive autovacuum : "off" machineConfig : cpuCount : 2 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbuser-dep-database spec : location : global addressType : INTERNAL networkRef : name : alloydbuser-dep-database prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbuser-dep-database --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbuser-dep-database spec : networkRef : name : alloydbuser-dep-database reservedPeeringRanges : - external : alloydbuser-dep-database service : servicenetworking.googleapis.com IAM User Copyright 2023 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBUser metadata : name : alloydbuser-sample-iam spec : clusterRef : name : alloydbuser-dep-iam databaseRoles : - pg monitor - pg signal backend - alloydbiamuser userType : ALLOYDB IAM USER --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbuser-dep-iam spec : location : me-west1 networkConfig : networkRef : name : alloydbuser-dep-iam projectRef : external : ${PROJECT ID?} --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbuser-dep-iam spec : clusterRef : name : alloydbuser-dep-iam instanceTypeRef : name : alloydbuser-dep-iam databaseFlags : enable google adaptive autovacuum : "off" machineConfig : cpuCount : 2 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbuser-dep-iam spec : location : global addressType : INTERNAL networkRef : name : alloydbuser-dep-iam prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbuser-dep-iam --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbuser-dep-iam spec : networkRef : name : alloydbuser-dep-iam reservedPeeringRanges : - external : alloydbuser-dep-iam service : servicenetworking.googleapis.com Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- AlloyDBUser Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters.users Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters.users Config Connector Resource Short Names gcpalloydbuser gcpalloydbusers alloydbuser Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbusers.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema clusterRef : external : string name : string namespace : string databaseRoles : - string password : value : string valueFrom : secretKeyRef : key : string name : string resourceID : string userType : string Fields clusterRef Required object clusterRef.external Optional string Allowed value: The name field of an AlloyDBCluster resource. clusterRef.name Optional string Name of the referent.
+- Can be True, False, Unknown. conditions[].type string Type is the type of the condition. name string Name of the resource in the form of projects/{project}/locations/{location}/clusters/{cluster}/users/{user}. observedGeneration integer ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller.
+
+### Troubleshoot Config Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/troubleshooting](https://docs.cloud.google.com/config-connector/docs/troubleshooting)
+- Source ID: `site-docs-reference`
+- Final score: 68
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Config Connector overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/overview Config Connector provides a collection of Kubernetes Custom Resource Definitions (CRDs) and controllers.
-- The Config Connector CRDs allow Kubernetes to create and manage Google Cloud resources when you configure and apply Objects to your cluster.
-
-### IAMPolicy | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 94
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
+- Compute Engine metadata not defined Symptom Your Config Connector resource has an UpdateFailed status with a message stating that the Compute Engine metadata is not defined, similar to the following error: Update call failed: error fetching live state: error reading underlying resource: summary: Error when reading or editing SpannerInstance "my-project/my-spanner- instance": Get "https://spanner.googleapis.com/v1/projects/my-project/instances/my-spanner-instance?alt=json": metadata: Compute Engine metadata "instance/service-accounts/default/token? scopes=https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)compute%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSIN G)auth%!F(MISSING)cloud-platform%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)cloud-identity%!C(MISSING)https%!A(MISSING)%!F(MISS ING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)ndev.clouddns.readwrite%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSIN G)devstorage.full control%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)userinfo.email%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F (MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)drive.readonly" not defined, detail: Cause It is likely that the IAM service account used by Config Connector does not exist.
+- Type of issue Common issues Reconciliation Resource keeps updating every 5-15 mins Resource has no status KNV2005: syncer excessively updating resource Resource deleted by Config Connector Controller Pod OOMKilled Deletion Deletions of namespaces stuck at Terminating Deletions of resources stuck at DeleteFailed after project was deleted Permissions Compute Engine Metadata not defined Error 403: Request had insufficient authentication scopes 403 Forbidden: The caller does not have permission Error 403: Caller is missing IAM permission Update error with IAMPolicy, IAMPartialPolicy and IAMPolicyMember Installation and upgrades Version not supported in Config Connector add-on installations failed calling webhook PodSecurityPolicy prevents upgrades Configuration Cannot make changes to immutable fields No matches for kind "Foo" Labels are not propagated to the Google Cloud resource Error due to special characters in resource name Unable to remove fields from resource spec Reconciliation The following section lists common issues related to reconciliation of resources by Config Connector.
+- Update error with IAMPolicy, IAMPartialPolicy and IAMPolicyMember Symptom You see an UpdateFailed status with an error message indicating a 400 error because the service account does not exist: Update call failed: error setting policy member: error applying changes: summary: Request Create IAM Members roles/[MYROLE] serviceAccount:[NAME]@[PROJECT ID].iam.gserviceaccount.com for project \"projects/[PROJECT ID]\"` returned error: Error applying IAM policy for project \"projects/[PROJECT ID]\": Error setting IAM policy for project \"projects/[PROJECT ID]\": googleapi: Error 400: Service account [NAME]@[PROJECT ID].iam.gserviceaccount.com does not exist., badRequest Cause If you delete an IAMServiceAccount Config Connector resource before cleaning up IAMPolicy , IAMPartialPolicy , and IAMPolicyMember resources that depend on that service account, Config Connector cannot locate the service account referenced in those IAM resources during reconciliation.
+- For example, if you want to look for the initial delete requests for a BigQueryDataset resource named foo in namespace bar , you would run a query like the following: resource . type = "k8s cluster" resource . labels . project id = "my-project-id" resource . labels . cluster name = "my-cluster-name" protoPayload . methodName = "com.google.cloud.cnrm.bigquery.v1beta1.bigquerydatasets.delete" protoPayload . resourceName = "bigquery.cnrm.cloud.google.com/v1beta1/namespaces/bar/bigquerydatasets/foo" Using this query, you would look for the first delete request and then check authenticationInfo.principalEmail of that delete log message to determine the cause of the deletion.
 

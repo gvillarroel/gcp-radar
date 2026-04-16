@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.637Z"
+generated_at: "2026-04-12T12:07:33.879Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB PostgreSQL 15 compatibility"
 feature_slug: "alloydb-postgresql-15-compatibility"
 latest_feature_date: "2023-09-21"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/database-flags"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent"
 keywords:
   - "supported PostgreSQL versions"
   - "PG15"
@@ -23,7 +26,7 @@ keywords:
 # AlloyDB PostgreSQL 15 compatibility
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -31,28 +34,46 @@ AlloyDB supports database clusters with PostgreSQL 15 compatibility.
 
 ## Extended Definition
 
-AlloyDB for PostgreSQL supports creating and upgrading clusters with PostgreSQL 15 compatibility. The release notes also state that, after a March 29, 2024 fix, clusters created via the Google Cloud CLI, AlloyDB Admin API, or Terraform now default to PostgreSQL 15 compatibility instead of PostgreSQL 14 compatibility.
+AlloyDB supports database clusters with PostgreSQL 15 compatibility.
 
 ## Evidence Summary
 
-The AlloyDB release notes explicitly confirm PostgreSQL 15 compatibility for cluster creation/upgrade and document a default-setting correction that aligns CLI/API/Terraform-created clusters to PG15 compatibility.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
+- [https://docs.cloud.google.com/alloydb/docs/reference/database-flags](https://docs.cloud.google.com/alloydb/docs/reference/database-flags)
+- [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Monitor the health of your clusters and instances \_|\_ AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 48
+- URL: [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- Source ID: `site-docs-reference-2`
+- Final score: 74
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- March 29, 2024 Fixed Fixed the issue causing AlloyDB clusters created using the Google Cloud CLI, the AlloyDB Admin API, or Terraform to have PostgreSQL 14 compatibility by default, instead of PostgreSQL 15 compatibility.
-- AlloyDB clusters created using the Google Cloud CLI, the AlloyDB Admin API, or Terraform have PostgreSQL 14 compatibility by default, instead of PostgreSQL 15 compatibility.
-- You can create or upgrade a cluster with PostgreSQL 15 compatibility.
-- You can create a cluster with PostgreSQL 15 compatibility .
+### "Database performance snapshot report reference \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
+- Source ID: `site-api-reference`
+- Final score: 70
+- Re-rank relevance: N/A
+
+### "Supported database flags \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/database-flags](https://docs.cloud.google.com/alloydb/docs/reference/database-flags)
+- Source ID: `site-api-reference`
+- Final score: 70
+- Re-rank relevance: N/A
+
+### "Integrate QueryData with an application \_|\_ AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
+- Source ID: `site-docs-root-2`
+- Final score: 66
+- Re-rank relevance: N/A
 

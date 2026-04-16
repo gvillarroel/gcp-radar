@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:27:19.874Z"
+generated_at: "2026-04-14T14:23:30.356Z"
 product_name: "Cloud CDN"
 product_slug: "cloud-cdn"
 feature_name: "Serving stale content (serve-while-stale)"
 feature_slug: "serving-stale-content-serve-while-stale"
 latest_feature_date: "2021-01-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/cdn/docs/serving-stale-content"
   - "https://docs.cloud.google.com/cdn/docs/caching"
-  - "https://docs.cloud.google.com/cdn/docs/release-notes"
+  - "https://docs.cloud.google.com/cdn/docs/best-practices"
 keywords:
-  - "serving"
   - "stale"
-  - "content"
-  - "serve"
   - "while"
-  - "cdn"
-  - "can"
+  - "serving"
+  - "serve"
   - "cached"
+  - "content"
 ---
 
 # Serving stale content (serve-while-stale)
 
 Product: Cloud CDN
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +36,54 @@ Cloud CDN can serve stale cached content when the origin is unavailable or retur
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/cdn/docs/serving-stale-content](https://docs.cloud.google.com/cdn/docs/serving-stale-content)
 - [https://docs.cloud.google.com/cdn/docs/caching](https://docs.cloud.google.com/cdn/docs/caching)
-- [https://docs.cloud.google.com/cdn/docs/release-notes](https://docs.cloud.google.com/cdn/docs/release-notes)
+- [https://docs.cloud.google.com/cdn/docs/best-practices](https://docs.cloud.google.com/cdn/docs/best-practices)
 
 ## Supporting Pages
 
 ### Serve stale content \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/cdn/docs/serving-stale-content](https://docs.cloud.google.com/cdn/docs/serving-stale-content)
-- Source ID: `site-docs-root-2`
-- Final score: 254
+- Source ID: `site-docs-reference-2`
+- Final score: 235
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Use one of the following API calls: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets/ BACKEND BUCKET POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/ BACKEND SERVICE Add the following snippet to the JSON request body: "cdnPolicy": { "serveWhileStale": SECONDS } Disable serving stale content Console In the Google Cloud console, go to the Load balancing page.
 - Use one of the following API calls: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets/ BACKEND BUCKET POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/ BACKEND SERVICE Add the following snippet to the JSON request body: "cdnPolicy": { "serveWhileStale": 0 } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Cloud CDN offers the following two methods to control how long a stale object can be served while a revalidation request is sent to the origin: At the origin: You can specify the Cache-Control: stale-while-revalidate directive in the response header.
 - If a Cloud CDN edge cache does not have a cached copy of the object to serve stale, or the object has reached the maximum stale TTL, Cloud CDN synchronously revalidates the content with the origin.
+- Logging and User Agent The asynchronous requests made by Cloud CDN appear to your origin server exactly like the normal revalidation requests that occur when not serving stale content.
 
 ### Caching overview \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/cdn/docs/caching](https://docs.cloud.google.com/cdn/docs/caching)
-- Source ID: `site-docs-root`
-- Final score: 190
+- Source ID: `site-docs-reference-2`
+- Final score: 165
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- This behavior can be enabled for all responses by setting cdnPolicy.serveWhileStale on the backend. stale-if-error= SECONDS The stale-if-error request directive is ignored.
-- This can be overridden on a per-backend basis with the FORCE CACHE ALL cache mode. public N/A This directive is not required for cacheability, but it is a best practice to include it for content that should be cached by proxies. private N/A A response with the private directive isn't cached by Cloud CDN, even if the response is otherwise considered cacheable.
-- You can configure cache policies in URL maps when: a single backend serves different types of content different paths require different caching behavior you want to enable caching for specific routes only For details on how to configure cache policies in URL map, see Configure a Cloud CDN cache policy .
-- If some ranges of the content requested by the client are present in the cache, Cloud CDN serves whatever it can from the cache and sends byte range requests for only the missing ranges to your origin server.
+- Feature GKE ingress through backend configuration GKE gateway using GCPHTTPFilter Basic Caching (Modes/TTLs) Cache Key Customization Negative Caching Serve While Stale Dynamic Compression Signed URLs & Cookies Request Coalescing Cacheable content Cloud CDN caches responses that meet all of the requirements in this section.
+- This is done before serving the response, unless you enable serve-while-stale , in which case revalidation is performed asynchronously.
+- Serve While Stale 86400s Serves stale content for up to 24 hours if the origin is unreachable.
+- This limits the need to proactively invalidate content and aligns with modern web development workflows, where web frameworks and URLs use a hash of the content to avoid serving stale objects across deployments.
 
-### Cloud CDN release notes \_|\_ Google Cloud Documentation
+### Content delivery best practices \_|\_ Cloud CDN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/cdn/docs/release-notes](https://docs.cloud.google.com/cdn/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/cdn/docs/best-practices](https://docs.cloud.google.com/cdn/docs/best-practices)
+- Source ID: `site-docs-reference-2`
+- Final score: 145
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- You can configure how long Cloud CDN will serve content beyond expiry by setting the serveWhileStale value for each backend service or bucket.
-- Serving stale content lets Google's global cache continue to serve content to users when your origin server is unreachable or is returning errors to Cloud CDN.
-- January 31, 2021 Feature Cloud CDN now supports serving stale content and the ability to bypass the cache based on request header(s).
-- November 04, 2020 Announcement Added a new tutorial for configuring Cloud CDN with a serverless app: Setting up Cloud CDN with Cloud Run, Cloud Functions, or App Engine November 02, 2020 Feature You can now configure cache modes , cache TTLs and set custom response headers in the Cloud Console, in addition to the existing gcloud and REST API support.
+- Enable pod protection features when using GKE Gateway To help ensure availability in containerized environments where pods are transient, use the following GCPHTTPFilter settings: serveWhileStale : Set serveWhileStale to at least 24 hours to allow Cloud CDN to serve expired content if your GKE pods are restarting or temporarily unreachable. requestCoalescing : Enable requestCoalescing to combine multiple concurrent cache fill requests into a single request to your origin, preventing sudden traffic spikes that can impact Pod CPU and memory limits.
+- An external Application Load Balancer can deliver a mix of static and dynamically created content to users through one global IP address from the following types of backends: Instance groups Zonal network endpoint groups (NEGs) Serverless NEGs : One or more App Engine , Cloud Run , or Cloud Run functions services Internet NEGs for external backends Buckets in Cloud Storage Because of the seamless integration with Google Cloud, you have several options for deploying Cloud CDN and managing content.
+- This happens because Cloud CDN detects that the origin file has changed (because etag or last-modified changes), deletes any stale content, disconnects any in-progress downloads, and generates an error, which prompts the client to retry.
+- Use versioned URLs to update content Versioning content serves a different version of the same content, effectively removing it by showing users new content before the cache entry expires.
 

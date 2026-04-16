@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:04.451Z"
+generated_at: "2026-04-15T13:37:11.106Z"
 product_name: "Container Optimized OS"
 product_slug: "container-optimized-os"
 feature_name: "VRF and GRE kernel modules"
 feature_slug: "vrf-and-gre-kernel-modules"
 latest_feature_date: "2023-08-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+  - "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
 keywords:
   - "vrf"
-  - "and"
   - "gre"
   - "kernel"
   - "modules"
   - "container"
   - "optimized"
   - "os"
+  - "enables"
 ---
 
 # VRF and GRE kernel modules
 
 Product: Container Optimized OS
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,22 +38,52 @@ Container-Optimized OS enables the vrf, ip_gre, and ip6_gre kernel modules.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
+- [https://docs.cloud.google.com/container-optimized-os/docs/concepts/security](https://docs.cloud.google.com/container-optimized-os/docs/concepts/security)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance](https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance)
 
 ## Supporting Pages
 
-### Container-Optimized OS über den Quellcode erstellen | Container-Optimized OS | Google Cloud Documentation
+### "Running instances with GPU accelerators \_|\_ Container-Optimized OS \_\
 
-- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de](https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de)
-- Source ID: `site-docs-root`
-- Final score: 183
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus](https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus)
+- Source ID: `site-docs-reference`
+- Final score: 64
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Container-Optimized OS über den Quellcode erstellen Container-Optimized OS Google Cloud Documentation Source URL: https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source?hl=de Zum Erstellen eines Container-Optimized ... erstellen.
-- Mit dem in depot tools enthaltenen Tool cros sdk können Sie eine für die Kompilierung des Container-Optimized OS geeignete chroot erstellen und aufrufen....
+- Security Just like other kernel modules on Container-Optimized OS, GPU drivers are cryptographically signed and verified by keys that are built into the Container-Optimized OS kernel.
+- Unlike some other distros, Container-Optimized OS does not allow users to enroll their Machine Owner Key (MOK) and use the keys to sign custom kernel modules.
+- For example, on a COS VM, you could use the following command to install the NVIDIA driver and load the nvidia.ko kernel module with the NVreg EnableGpuFirmware=0 parameter. sudo cos-extensions install gpu -- --module-arg nvidia.NVreg EnableGpuFirmware=0 Preload the driver You can preload the GPU driver on your Container-Optimized OS instance even when no GPU device is attached.
+- This is to ensure the integrity of the Container-Optimized OS kernel and reduce the attack surface.
+
+### Security Overview \_|\_ Container-Optimized OS \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/concepts/security](https://docs.cloud.google.com/container-optimized-os/docs/concepts/security)
+- Source ID: `site-docs-reference`
+- Final score: 61
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Security-hardened kernel Container-Optimized OS enables several security-hardening kernel features, including Integrity Measurement Architecture (IMA), Audit, Kernel Page Table Isolation (KPTI), and some Linux Security Modules (LSMs) from Chromium OS.
+- Testing and qualification process Before we publish a new Container-Optimized OS image to Google Cloud, we test it at multiple levels—including kernel fuzz testing by syzkaller , cluster-level Kubernetes tests, integration testing with Compute Engine features, and several performance benchmarks.
+- Built from source at Google Each package in Container-Optimized OS, including the Linux kernel itself, is built from source from ChromiumOS code repositories.
+- Infrastructure Security In addition to various hardening features in the OS itself, the Container-Optimized OS team also takes the software supply chain seriously and prioritizes infrastructure security when developing, building, and deploying images, based on years of experience from both Chromium OS and Google in general.
+
+### "Creating and configuring instances \_|\_ Container-Optimized OS \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance](https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance)
+- Source ID: `site-docs-reference`
+- Final score: 54
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following entries in the /etc/chrony/chrony.conf configuration file show commented out default configuration values to help the administrator make any desired changes: cat /etc/chrony/chrony.conf Use custom NTP servers server metadata.google.internal prefer iburst Record the rate at which the system clock gains/losses time. driftfile /var/lib/chrony/drift Allow the system clock to be stepped in the first three updates if its offset is larger than 1 second. makestep 1.0 3 Enable kernel synchronization of the real-time clock (RTC). rtcsync The NTP server is set from eth0 's DHCP response, which is usually the Compute Engine's metadata server: networkctl status eth0 grep NTP NTP: 169.254.169.254 Changing the time zone The default time zone of Container-Optimized OS from Google is UTC0.
+- An alternative to systemctl enable is to use systemctl start , as in the example above. cloud-init modules such as write files and runcmd , which are typically run once-per-instance on other distros, are run on every boot on Container-Optimized OS.
+- You can also see all currently available releases on command line by running the following command: gcloud compute images list --project cos-cloud --no-standard-images The output is similar to the following: NAME PROJECT FAMILY DEPRECATED STATUS cos-69-10895-385-0 cos-cloud cos-69-lts READY cos-73-11647-534-0 cos-cloud cos-73-lts READY cos-77-12371-251-0 cos-cloud cos-77-lts READY cos-81-12871-103-0 cos-cloud cos-81-lts READY cos-beta-81-12871-44-0 cos-cloud cos-beta READY cos-dev-84-13078-0-0 cos-cloud cos-dev READY cos-stable-81-12871-103-0 cos-cloud cos-stable READY Note: The most current Container-Optimized OS images are now available under the project cos-cloud , and use the name prefix of cos .
+- Assuming the cloud-init file is called filename in the current directory, the following command creates a Container-Optimized OS instance and trigger cloud-init by assigning the contents of the file to the user-data key in the Instance Metadata: gcloud compute instances create instance-name \ --image image-name \ --image-project cos-cloud \ --metadata-from-file user-data= filename Replace the following: instance-name : the name of your VM instance. image-name : the name of the Container-Optimized OS image for the instance.
 

@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:47.008Z"
+generated_at: "2026-04-12T12:18:00.678Z"
 product_name: "Navigation SDK for Android"
 product_slug: "navigation-sdk-for-android"
 feature_name: "Incident reporting panel APIs"
 feature_slug: "incident-reporting-panel-apis"
 latest_feature_date: "2025-06-25"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/support"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/try-demo"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap"
 keywords:
   - "incident"
   - "reporting"
@@ -24,7 +27,7 @@ keywords:
 # Incident reporting panel APIs
 
 Product: Navigation SDK for Android
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ New APIs let apps check whether incident reporting is available and open the inc
 
 New APIs let apps check whether incident reporting is available and open the incident reporting panel programmatically.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/support](https://developers.google.com/maps/documentation/navigation/android-sdk/support)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/try-demo](https://developers.google.com/maps/documentation/navigation/android-sdk/try-demo)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions](https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap](https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Support Options for Navigation SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/support](https://developers.google.com/maps/documentation/navigation/android-sdk/support)
+- Source ID: `site-docs-reference`
+- Final score: 87
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you had opened a support case during the incident, you can make a request for an incident report on that case, rather than opening a new case.
+- Ask a new question Report an issue or feature request If you think you may have found a bug, or if you have a feature request that you would like to share with the Google Maps Platform team, please file a bug or feature request in our issue tracker .
+- Search existing questions When posting a new question, please consider the following: Be very clear about your question in the subject — it helps those trying to answer your question as well as those who may be looking for information in the future.
+- Page Summary outlined flag Get help with the Navigation SDK for Android through community support on Stack Overflow, reporting issues and feature requests on the Google Issue Tracker, or by contacting Google Maps Platform Support.
+
+### Try the demo \_|\_ Navigation SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/try-demo](https://developers.google.com/maps/documentation/navigation/android-sdk/try-demo)
+- Source ID: `site-docs-root`
+- Final score: 81
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Get the demo apps Google provides two apps to help you understand what the Navigation SDK offers on top of the Google Maps APIs, depending on your level of experience.
+- Developers new to both projects will find both apps helpful.
+- The primary difference is that the Navigation SDK demo lets the user choose which view class they'd like to test-run a demo on: NavigationView or MapView , where applicable.
+- Page Summary outlined flag The Navigation SDK for Android enables your app to provide dynamic navigation and data reporting beyond basic map linking.
+
+### Navigation SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions](https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions)
+- Source ID: `site-docs-root`
+- Final score: 75
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- GONE ); // Trigger the reporting flow if the button is clicked customReportIncidentButton . setOnClickListener ( v - > navigationView . showReportIncidentsPanel ()); Work with custom navigation UIs If your implementation of the Navigation SDK includes custom UI elements, you need to consider the real-time disruption elements in order to avoid conflicts.
+- Button customReportIncidentButton = findViewById ( R . id . custom reporting button ); // Check if reporting is available before displaying your button customReportIncidentButton . setVisibility ( navigationView . isReportingAvailable ?
+- When the user clicks the custom button, you can trigger the display of the reporting menu by calling the showReportIncidentsPanel method.
+- Show or hide the standard reporting button You can configure the visibility of the standard reporting button during active navigation using setReportIncidentButtonEnabled . // Enables the incident reporting button to show in situations where incident // reporting is possible. // Using the SupportNavigationFragment mNavFragment . setReportIncidentButtonEnabled ( true ); // Using the NavigationView navigationView . setReportIncidentButtonEnabled ( true ); Add a custom reporting button In place of the standard disruption reporting button, you can add a custom reporting button to the navigation UI.
+
+### GoogleMap \_|\_ Navigation SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap](https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap)
+- Source ID: `site-docs-reference`
+- Final score: 67
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Nested Class Summary @interface GoogleMap.CameraPerspective A CameraPerspective is a parameter given to the GoogleMap.followMyLocation(int) to specify the orientation of the camera. interface GoogleMap.CancelableCallback A callback interface for reporting when a task is complete or canceled. interface GoogleMap.InfoWindowAdapter Provides views for customized rendering of info windows. interface GoogleMap.OnCameraChangeListener This interface is deprecated.
+- Replaced by setOnCameraMoveStartedListener(GoogleMap.OnCameraMoveStartedListener) , setOnCameraMoveListener(GoogleMap.OnCameraMoveListener) , setOnCameraMoveCanceledListener(GoogleMap.OnCameraMoveCanceledListener) and setOnCameraIdleListener(GoogleMap.OnCameraIdleListener) . void setOnCameraIdleListener ( GoogleMap.OnCameraIdleListener listener) Sets a callback that is invoked when camera movement has ended. void setOnCameraMoveCanceledListener ( GoogleMap.OnCameraMoveCanceledListener listener) Sets a callback that is invoked when camera motion is stopped or interrupted by a new type of animation. void setOnCameraMoveListener ( GoogleMap.OnCameraMoveListener listener) Sets a callback that is invoked repeatedly while the camera is in motion. void setOnCameraMoveStartedListener ( GoogleMap.OnCameraMoveStartedListener listener) Sets a callback that's invoked when the camera starts moving or the reason for camera motion has changed. void setOnCircleClickListener ( GoogleMap.OnCircleClickListener listener) Sets a callback that's invoked when a circle is clicked. void setOnFollowMyLocationCallback ( GoogleMap.OnCameraFollowLocationCallback callback) Sets a callback to get notified about the events related to the state of the camera when it's following user's location. void setOnGroundOverlayClickListener ( GoogleMap.OnGroundOverlayClickListener listener) Sets a callback that's invoked when a ground overlay is clicked. void setOnIndoorStateChangeListener ( GoogleMap.OnIndoorStateChangeListener listener) Sets or clears the listener for indoor events. void setOnInfoWindowClickListener ( GoogleMap.OnInfoWindowClickListener listener) Sets a callback that's invoked when a marker info window is clicked. void setOnInfoWindowCloseListener ( GoogleMap.OnInfoWindowCloseListener listener) Sets a callback that's invoked when a marker's info window is closed. void setOnInfoWindowLongClickListener ( GoogleMap.OnInfoWindowLongClickListener listener) Sets a callback that's invoked when a marker's info window is long pressed. void setOnMapClickListener ( GoogleMap.OnMapClickListener listener) Sets a callback that's invoked when the map is tapped. void setOnMapLoadedCallback ( GoogleMap.OnMapLoadedCallback callback) Sets a callback that's invoked when this map has finished rendering. void setOnMapLongClickListener ( GoogleMap.OnMapLongClickListener listener) Sets a callback that's invoked when the map is long pressed. void setOnMarkerClickListener ( GoogleMap.OnMarkerClickListener listener) Sets a callback that's invoked when a marker is clicked. void setOnMarkerDragListener ( GoogleMap.OnMarkerDragListener listener) Sets a callback that's invoked when a marker is dragged. void setOnMyLocationButtonClickListener ( GoogleMap.OnMyLocationButtonClickListener listener) Sets a callback that's invoked when the my location button is clicked. void setOnMyLocationChangeListener ( GoogleMap.OnMyLocationChangeListener listener) This method is deprecated. use RoadSnappedLocationProvider or com.google.android.gms.location.FusedLocationProviderApi instead, depending on your needs.
+- UiSettings getUiSettings () Gets the user interface settings for the map. boolean isBuildingsEnabled () Returns whether 3D buildings layer is enabled. boolean isCameraFollowingMyLocation () Returns whether the camera is following current location or not. boolean isIndoorEnabled () Gets whether indoor maps are currently enabled. boolean isMyLocationEnabled () Gets the status of the my-location layer. boolean isTrafficEnabled () Checks whether the map is drawing traffic data. boolean isTransitEnabled () Checks whether the map is drawing transit data. void moveCamera ( CameraUpdate update) Repositions the camera according to the instructions defined in the update. void removeOnMapCapabilitiesChangedListener ( GoogleMap.OnMapCapabilitiesChangedListener listener) Removes a listener that's invoked when the map capabilities are changed. void resetMinMaxZoomPreference () Removes any previously specified upper and lower zoom bounds. void setBuildingsEnabled (boolean enabled) Turns the 3D buildings layer on or off. void setContentDescription (String description) Sets a contentDescription for the map. boolean setIndoorEnabled (boolean enabled) Sets whether indoor maps should be enabled. void setInfoWindowAdapter ( GoogleMap.InfoWindowAdapter adapter) Sets a custom renderer for the contents of info windows. void setLatLngBoundsForCameraTarget ( LatLngBounds bounds) Specifies a LatLngBounds to constrain the camera target, so that when users scroll and pan the map, the camera target does not move outside these bounds. void setLocationSource ( LocationSource source) Replaces the location source of the my-location layer. void setMapColorScheme (int mapColorScheme) Sets the map rendering color scheme to light, dark, or follow system settings after initialization. boolean setMapStyle ( MapStyleOptions style) Sets the styling of the base map. void setMapType (int type) Sets the type of map tiles that should be displayed. void setMaxZoomPreference (float maxZoomPreference) Sets a preferred upper bound for the camera zoom. void setMinZoomPreference (float minZoomPreference) Sets a preferred lower bound for the camera zoom. void setMyLocationEnabled (boolean enabled) Enables or disables the my-location layer. void setOnCameraChangeListener ( GoogleMap.OnCameraChangeListener listener) This method is deprecated.
+- The order in which the deprecated onCameraChange method will be called in relation to the methods in the new camera change listeners is undefined. interface GoogleMap.OnCameraFollowLocationCallback Callback interface to get updates related to camera entering or exiting follow mode. interface GoogleMap.OnCameraIdleListener Callback interface for when camera movement has ended. interface GoogleMap.OnCameraMoveCanceledListener Callback interface for when the camera's motion has been stopped or when the camera starts moving for a new reason. interface GoogleMap.OnCameraMoveListener Callback interface for when the camera changes position. interface GoogleMap.OnCameraMoveStartedListener Callback interface for when the camera motion starts. interface GoogleMap.OnCircleClickListener Callback interface for when a circle is clicked. interface GoogleMap.OnGroundOverlayClickListener Callback interface for when a ground overlay is clicked. interface GoogleMap.OnIndoorStateChangeListener A listener for when the indoor state changes. interface GoogleMap.OnInfoWindowClickListener Callback interface for click/tap events on a marker's info window. interface GoogleMap.OnInfoWindowCloseListener Callback interface for close events on a marker's info window. interface GoogleMap.OnInfoWindowLongClickListener Callback interface for when the user long presses on a marker's info window. interface GoogleMap.OnMapCapabilitiesChangedListener Listener interface for when the map capabilities are changed. interface GoogleMap.OnMapClickListener Callback interface for when the user taps on the map. interface GoogleMap.OnMapLoadedCallback Callback interface for when the map has finished rendering. interface GoogleMap.OnMapLongClickListener Callback interface for when the user long presses on the map. interface GoogleMap.OnMarkerClickListener Defines signatures for methods that are called when a marker is clicked or tapped. interface GoogleMap.OnMarkerDragListener Callback interface for drag events on markers. interface GoogleMap.OnMyLocationButtonClickListener Callback interface for when the My Location button is clicked. interface GoogleMap.OnMyLocationChangeListener This interface is deprecated. use RoadSnappedLocationProvider or com.google.android.gms.location.FusedLocationProviderApi instead, depending on your needs.
 

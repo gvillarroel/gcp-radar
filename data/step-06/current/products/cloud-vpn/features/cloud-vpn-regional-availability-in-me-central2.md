@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T05:21:46.870Z"
+generated_at: "2026-04-12T12:12:51.034Z"
 product_name: "Cloud VPN"
 product_slug: "cloud-vpn"
 feature_name: "Cloud VPN regional availability in me-central2"
 feature_slug: "cloud-vpn-regional-availability-in-me-central2"
 latest_feature_date: "2023-09-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
-  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes"
+  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/quotas"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn"
 keywords:
   - "vpn"
@@ -26,7 +27,7 @@ keywords:
 # Cloud VPN regional availability in me-central2
 
 Product: Cloud VPN
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +39,36 @@ Cloud VPN is available in the me-central2 region (Dammam, Saudi Arabia).
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
-- [https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes](https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes)
+- [https://docs.cloud.google.com/network-connectivity/docs/vpn/quotas](https://docs.cloud.google.com/network-connectivity/docs/vpn/quotas)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn)
 
 ## Supporting Pages
+
+### HA VPN topologies \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies)
+- Source ID: `site-docs-root`
+- Final score: 228
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- 99.99% HA VPN to Compute Engine VM instances in multiple zones Connect an HA VPN gateway to Compute Engine VM instances with external IP addresses 99.9% HA VPN to a single Compute Engine VM instance Connect an HA VPN gateway to only one Compute Engine VM instance with an external IP address The availability SLA is determined by the availability SLA provided for a single VM instance of memory-optimized machine family for Compute Engine.
+- HA VPN to one peer (on-premises) VPN gateway with one IP address (click to enlarge) Configure for 99.99% availability SLA To meet the 99.99% availability SLA on the Google Cloud side, there must be a tunnel from each of the two interfaces on the HA VPN gateway to the corresponding interfaces on the peer gateway.
+- Configuring only one tunnel from a single HA VPN interface to a single interface on the peer gateway doesn't provide enough redundancy to meet the availability SLA because there is an unused interface on the HA VPN gateway, which does not have a tunnel configured on it.
+- This document describes recommended topologies and the corresponding availability Service Level Agreement (SLA) for each HA VPN topology.
 
 ### Create an HA VPN gateway to a peer VPN gateway \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 - Source ID: `site-docs-root`
-- Final score: 184
+- Final score: 225
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,27 +77,27 @@ Evidence snippets:
 - In the following commands, replace the following: GOOGLE BGP IPV4 0 : the IPv4 address of the Cloud Router's interface for the tunnel on Cloud VPN gateway interface 0 ; PEER BGP IPV4 0 represents the IPv4 address of its BGP peer, matches with GOOGLE BGP IPV4 0 GOOGLE BGP IPV6 0 : the IPv6 address of the Cloud Router's interface for the tunnel on Cloud VPN gateway interface 0 ; PEER BGP IPV6 0 represents the IPv6 address of its BGP peer, matches with GOOGLE BGP IPV6 0 GOOGLE BGP IPV4 1 : the IPv4 address of the Cloud Router's interface for the tunnel on Cloud VPN gateway interface 1 ; PEER BGP IPV4 1 represents the IPv4 address of its BGP peer, matches with GOOGLE BGP IPV4 1 GOOGLE BGP IPV6 1 : the IPv6 address of the Cloud Router's interface for the tunnel on Cloud VPN gateway interface 1 ; PEER BGP IPV6 1 represents the IPv6 address of its BGP peer, matches with GOOGLE BGP IPV6 1 For the first VPN tunnel Add an interface with an IPv4 address to the Cloud Router; replace ROUTER INTERFACE NAME 0 ipv4 with a name for the interface: gcloud compute routers add-interface ROUTER NAME \ --interface-name= ROUTER INTERFACE NAME 0 ipv4 \ --vpn-tunnel= TUNNEL NAME 0 \ --ip-address= GOOGLE BGP IPV4 0 \ --mask-length 30 \ --region= REGION The command output looks similar to the following example: Updated [https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/us-central1/routers/router-a].
 - For the second VPN tunnel Add a second interface to the Cloud Router. gcloud compute routers add-interface ROUTER NAME \ --interface-name= ROUTER INTERFACE NAME 1 \ --vpn-tunnel= TUNNEL NAME 1 \ --region= REGION \ --ip-version=IPV6 Add a BGP peer configuration to the interface for the second tunnel . gcloud compute routers add-bgp-peer ROUTER NAME \ --peer-name= PEER NAME 1 \ --peer-asn= PEER ASN \ --interface= ROUTER INTERFACE NAME 1 \ --region= REGION \ --enable-ipv4 \ --ipv4-nexthop-address= IPV4 NEXTHOP ADDRESS \ --peer-ipv4-nexthop-address= PEER IPV4 NEXTHOP ADDRESS In the following commands, replace the following: PEER NAME 1 with a name for the peer VPN interface PEER ASN with the ASN configured for the peer VPN gateway IPV4 NEXTHOP ADDRESS : the next hop address for IPv4 routes that are advertised by Cloud Router; the address must be in the 169.254.0.0/16 IPv4 address range PEER IPV4 NEXTHOP ADDRESS : the next hop address for IPv4 routes that are learned by Cloud Router from the BGP peer; the address must be in the 169.254.0.0/16 IPv4 address range API To create BGP sessions, follow these steps: To create a Cloud Router interface and assign it an IPv6 address, make either a PATCH or UPDATE request by using the routers.patch method or the routers.update method .
 
-### Cloud VPN release notes \_|\_ Google Cloud Documentation
+### Quotas and limits \_|\_ Cloud VPN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes](https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes)
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/quotas](https://docs.cloud.google.com/network-connectivity/docs/vpn/quotas)
 - Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 224
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- September 19, 2023 Feature Cloud VPN is now available in region me-central2 (Dammam, Saudi Arabia).
-- September 03, 2021 Change Added Terraform examples to automate HA VPN gateway creation: HA VPN gateway between Google Cloud networks HA VPN gateway to a peer VPN gateway August 03, 2021 Feature Cloud VPN is now available in region northamerica-northeast2 (Toronto, Canada).
-- November 18, 2024 Feature Cloud VPN is now available in region northamerica-south1 (Queretaro, Mexico, North America).
-- June 13, 2024 Feature Cloud VPN support for IPv6-only HA VPN gateways is available in General Availability .
+- In this table, VPN tunnel means either a Classic VPN tunnel or an HA VPN tunnel.
+- Task Required role Check quotas for a project One of the following: Project Owner ( roles/owner ) Project Editor ( roles/editor ) Quota Viewer ( roles/servicemanagement.quotaViewer ) Modify quotas, request additional quota One of the following: Project Owner ( roles/owner ) Project Editor ( roles/editor ) Quota Administrator ( roles/servicemanagement.quotaAdmin ) A custom role with the serviceusage.quotas.update permission Check your quota Console In the Google Cloud console, go to the Quotas page.
+- Item Limit Notes Bandwidth per VPN tunnel 250,000 packets per second for the sum of ingress and egress 250,000 packets per second is roughly equivalent to 1 Gbps to 3 Gbps, depending on the average packet size within the tunnel.
+- Item Quota Notes VPN gateways Quota For HA VPN only External VPN gateways Quota For HA VPN only VPN tunnels Quota This quota represents the combined total number of Classic VPN tunnels and HA VPN tunnels.
 
 ### Move from Classic VPN to HA VPN \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn)
 - Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 217
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Create Cloud Routers When configuring a new HA VPN gateway, you can create a new Cloud Router, or you can use an existing Cloud Router with existing Cloud VPN tunnels or VLAN attachments.

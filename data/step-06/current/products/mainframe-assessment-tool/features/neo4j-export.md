@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.414Z"
+generated_at: "2026-04-15T12:06:50.455Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Neo4j export"
@@ -9,16 +9,15 @@ latest_feature_date: "2025-10-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
 keywords:
   - "neo4j"
   - "export"
   - "exports"
   - "static"
   - "analysis"
-  - "to"
 ---
 
 # Neo4j export
@@ -40,41 +39,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
 
 ## Supporting Pages
 
-### Mainframe Assessment Tool release notes | Google Cloud Documentation
+### "Export assessment results \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 74
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results)
+- Source ID: `site-docs-reference`
+- Final score: 106
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This page describes how to export assessment results for offline viewing, for analysis in other tools, or for graph analysis in Neo4j databases.
+- You can export results in the following ways: Export HTML report Export JSON report Export assessment data to your Neo4j database Export HTML report Download your assessment report as a zip file in HTML format to view the report offline or share it with others.
+- Export assessment data to your Neo4j database You can export your assessment data to a Neo4j database to analyze and query the complex relationships between your mainframe application components.
+- Export JSON report Download your assessment report as a zip file in JSON format to use the assessment data in other tools or for custom analysis.
+
+### "Extract business rules \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- Source ID: `site-docs-reference`
+- Final score: 54
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes Mainframe Assessment Tool version 2.8.0 is available with the following new features and improvements: Added an option to export the assessment static analysis data to Neo4j.
-- For more information, see Export assessment data to your Neo4j database.
+- Exporting business rules lets you use the rules as input with tools such as Gemini CLI for modernization and analysis, share them with stakeholders, or perform offline analysis.
+- Export business rules : export the extracted rules to a file for further analysis or modernization.
+- This status indicates the number of internal planning steps that the agent has successfully completed out of the total required for that specific analysis.
+- The job overview displays the configuration details, such as the description, the focus prompt, and the list of assets included in the analysis.
 
-### Mainframe Assessment Tool overview | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 49
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- Source ID: `site-docs-reference`
+- Final score: 42
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview Mainframe Assessment Tool helps assess your existing mainframe codebase and plan your migration to Google Cloud.
-- Mainframe Assessment Tool automates assessment, saving you time and resources.
-
-### Configure your Google Cloud project for Mainframe Assessment Tool | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- Source ID: `site-docs-root`
-- Final score: 47
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Configure your Google Cloud project for Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project This page describes the process to set up and configure your Google Cloud project to work with Mainframe Assessment Tool.
+- Discover and analyze source code The Discovery page provides an overview of analysis of the application source code that you uploaded for assessment.
+- The Summary page appears; this page provides an AI-generated summary of the asset, along with the business case, and the user interaction analysis.
+- Also, the analysis provides you with a summary of the program, which helps you understand the semantics of the program.
+- Missing Modules Shows modules used in the code but not found during input analysis.
 

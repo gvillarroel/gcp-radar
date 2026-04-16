@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.784Z"
+generated_at: "2026-04-12T12:16:18.959Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Anthos GKE on AWS"
@@ -9,9 +9,10 @@ latest_feature_date: "2020-05-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support"
 keywords:
   - "anthos"
   - "gke"
@@ -38,21 +39,35 @@ Anthos GKE on AWS runs Google-managed Kubernetes clusters on AWS infrastructure.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support)
 
 ## Supporting Pages
+
+### "Impact of temporary disconnection from Google Cloud \_|\_ Google Distributed\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
+- Source ID: `site-docs-reference`
+- Final score: 236
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- No impact Unlimited - Other network services Feature Connected behavior Temporary disconnection behavior Maximum disconnection tolerance Loss of connectivity workaround DNS The Kubernetes DNS server runs inside the cluster.
+- Zero None Support This section covers the scenarios that you might have to go through while interacting with Google Cloud support or your operating partner for a case related to your GKE on GDC clusters.
+- Action Connected behavior Temporary disconnection behavior Maximum disconnection tolerance Loss of connectivity workaround Cluster creation You use the bmctl or gkectl CLI tools to create clusters.
+- Unlimited - Viewing cluster status You can see information about your clusters in the console, in the list of Google Kubernetes Engine clusters.
 
 ### "GKE deployment options \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - Source ID: `site-docs-reference`
-- Final score: 198
+- Final score: 235
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -62,24 +77,11 @@ Evidence snippets:
 - This page shows the Google Cloud features that are available on each of the following environments: Google Kubernetes Engine (GKE) on Google Cloud Google Distributed Cloud (GKE on-premises): On VMware On bare metal Google Distributed Cloud connected deployments GKE Multi-Cloud: GKE on AWS GKE on Azure GKE attached clusters , which are third-party Kubernetes clusters registered to your fleet .
 - Feature Available on GKE standard clusters Available on Autopilot clusters Available without fleet membership Config Sync Policy Controller Config Controller Cloud Service Mesh in-cluster Managed Cloud Service Mesh Knative serving Migrate to Containers GKE Identity Service Binary Authorization Multi Cluster Ingress Cloud Logging and Cloud Monitoring for GKE system components Advanced security posture and compliance monitoring Node to node encryption FQDN network policies Features available on clusters outside of Google Cloud The following tables show which key Google Cloud and GKE features are available on clusters outside of Google Cloud.
 
-### "Impact of temporary disconnection from Google Cloud \_|\_ Google Distributed\
-
-- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
-- Source ID: `site-docs-reference`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- No impact Unlimited - Other network services Feature Connected behavior Temporary disconnection behavior Maximum disconnection tolerance Loss of connectivity workaround DNS The Kubernetes DNS server runs inside the cluster.
-- Zero None Support This section covers the scenarios that you might have to go through while interacting with Google Cloud support or your operating partner for a case related to your GKE on GDC clusters.
-- Action Connected behavior Temporary disconnection behavior Maximum disconnection tolerance Loss of connectivity workaround Cluster creation You use the bmctl or gkectl CLI tools to create clusters.
-- Unlimited - Viewing cluster status You can see information about your clusters in the console, in the list of Google Kubernetes Engine clusters.
-
 ### "Grant support read-only access to clusters \_|\_ Google Kubernetes Engine\
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 166
+- Final score: 206
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -88,4 +90,18 @@ Evidence snippets:
 - Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback Grant support read-only access to clusters Stay organized with collections Save and categorize content based on your preferences.
 - These clusters could be on bare metal, VMware, GDC connected, GKE on AWS, GKE on Azure, or GKE attached clusters.
 - If you need to install the Google Cloud CLI, see the installation guide . kubectl for running commands against Kubernetes clusters.
+
+### "Version and upgrade support \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support)
+- Source ID: `site-docs-reference`
+- Final score: 193
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- On AWS Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 1.31.6-gke.200 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 1.30.10-gke.200 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 On Azure Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 - 1.31 1.31.6-gke.200 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 1.30.10-gke.200 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 GKE attached clusters: Amazon Elastic Kubernetes Service (EKS) Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 - 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 - 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 GKE attached clusters: Azure Kubernetes Service (AKS) Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 - 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 - 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1 Connect, Cloud Logging, and Cloud Monitoring are supported on all cluster types.
+- GKE GKE on Google Cloud Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.33 - 1.33 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 - 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 Google Distributed Cloud On bare metal Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.34 1.34.200-gke.68 1.34 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 1.33 1.33.600-gke.39 1.33 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 1.32 1.32.1000-gke.57 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 On VMware Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.34 1.34.200-gke.68 1.34 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 1.33 1.33.600-gke.40 1.33 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 1.32 1.32.1000-gke.57 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 GKE Multi-Cloud Important: GKE on AWS and GKE on Azure are now in maintenance mode.
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback Version and upgrade support Stay organized with collections Save and categorize content based on your preferences.
+- This document shows which versions of Google Kubernetes Engine and GKE-related products 1 are compatible with each other and with each cluster type.
 

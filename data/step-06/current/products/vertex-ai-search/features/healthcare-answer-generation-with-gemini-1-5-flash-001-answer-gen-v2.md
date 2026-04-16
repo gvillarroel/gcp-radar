@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.853Z"
+generated_at: "2026-04-14T17:29:36.935Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Healthcare answer generation with Gemini 1.5 Flash 001 answer_gen/v2"
 feature_slug: "healthcare-answer-generation-with-gemini-1-5-flash-001-answer-gen-v2"
 latest_feature_date: "2025-01-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
 keywords:
   - "healthcare"
   - "answer"
   - "generation"
-  - "with"
   - "gemini"
   - "flash"
   - "001"
   - "gen"
+  - "v2"
 ---
 
 # Healthcare answer generation with Gemini 1.5 Flash 001 answer_gen/v2
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,13 +38,12 @@ Vertex AI Search added support for the gemini-1.5-flash-001/answer_gen/v2 model 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
 
 ## Supporting Pages
@@ -53,8 +51,8 @@ Fallback definition because synthesis failed.
 ### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
-- Source ID: `site-api-reference`
-- Final score: 204
+- Source ID: `site-docs-reference`
+- Final score: 174
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -66,40 +64,27 @@ Evidence snippets:
 ### "Answer generation model versions and lifecycle \_|\_ Vertex AI Search \_\
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models)
-- Source ID: `site-api-reference`
-- Final score: 188
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference`
+- Final score: 169
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - 128K June 17, 2026 gemini-2.0-flash-001/answer gen/v1 The gemini-2.0-flash-001 model.
-- Home Documentation AI and ML Vertex AI Search Send feedback Answer generation model versions and lifecycle Stay organized with collections Save and categorize content based on your preferences.
 - 128K N/A gemini-3-flash-preview/answer gen/v1 The gemini-3-flash-preview model.
 - The stable model specification points to gemini-2.5-flash/answer gen/v1 .
-
-### "MCP Tools Reference: discoveryengine.googleapis.com \_|\_ Vertex AI Search\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
-- Source ID: `site-docs-reference-2`
-- Final score: 120
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- By specifying the session name and this query ID in the Answer API call, the answer generation happens in the context of the search results from this search call.
-- Example #2 (coordination between /search API calls and /answer API calls): Call /answer API with the session ID generated in the first call.
-- For more information, see Answer generation model versions and lifecycle . preview : string. (Public preview) Uses a preview model.
-- If set to true , only queries with high relevance search results will generate answers. ignoreJailBreakingQuery boolean Optional.
+- 128K N/A gemini-2.5-flash/answer gen/v1 The gemini-2.5-flash model.
 
 ### "Vertex AI APIs for building search and RAG experiences \_|\_ Vertex AI Search\
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- Source ID: `site-api-reference`
-- Final score: 120
+- Source ID: `site-docs-reference`
+- Final score: 93
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Generation Choose the best generation method for your needs: Ground with your data : Generate well-grounded answers to a user's query.
 - The grounded generation API uses specialized, fine-tuned Gemini models and is an effective way to reduce hallucinations and provide responses grounded to your sources or third-party sources including references to grounding support content.
-- Google Search : When you use Grounding with Google Search for your Gemini model, then Gemini uses Google Search and generates output that is grounded to the relevant search results.
 - If you generated the answers using an answer generation model other than the Google models, you can check the grounding of these answers using the check grounding method.
+- Generation Choose the best generation method for your needs: Ground with your data : Generate well-grounded answers to a user's query.
+- Generate grounded answers based on the top-ranked chunks using the grounded generation API or using the generate content API .
 

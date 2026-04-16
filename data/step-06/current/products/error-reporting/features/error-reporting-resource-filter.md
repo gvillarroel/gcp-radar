@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:18.321Z"
+generated_at: "2026-04-15T12:09:42.687Z"
 product_name: "Error Reporting"
 product_slug: "error-reporting"
 feature_name: "Error Reporting resource filter"
@@ -9,18 +9,17 @@ latest_feature_date: "2022-12-06"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/clouderroreporting/latest/usage.html"
-  - "https://docs.cloud.google.com/error-reporting/docs/setup"
-  - "https://docs.cloud.google.com/error-reporting/docs/service-errors"
+  - "https://docs.cloud.google.com/error-reporting/docs/viewing-errors"
+  - "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceClient"
+  - "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient"
 keywords:
   - "error"
   - "reporting"
   - "resource"
   - "filter"
-  - "the"
   - "can"
   - "groups"
-  - "by"
+  - "type"
 ---
 
 # Error Reporting resource filter
@@ -42,45 +41,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
-- [https://docs.cloud.google.com/error-reporting/docs/setup](https://docs.cloud.google.com/error-reporting/docs/setup)
-- [https://docs.cloud.google.com/error-reporting/docs/service-errors](https://docs.cloud.google.com/error-reporting/docs/service-errors)
+- [https://docs.cloud.google.com/error-reporting/docs/viewing-errors](https://docs.cloud.google.com/error-reporting/docs/viewing-errors)
+- [https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceClient](https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceClient)
+- [https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient)
 
 ## Supporting Pages
 
-### Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation
+### View and filter error groups \_|\_ Error Reporting \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
+- URL: [https://docs.cloud.google.com/error-reporting/docs/viewing-errors](https://docs.cloud.google.com/error-reporting/docs/viewing-errors)
+- Source ID: `site-docs-root`
+- Final score: 138
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Filter error groups You can use the filters on the Error Reporting toolbar to filter by the status, the affected resources, and the region of the log buckets that store your log entries.
+- When you filter error groups by text, the bar graphs show grey bars to represent the number of error events that didn't match the text filter: For information on how Error Reporting organizes error events into error groups, see How error events are grouped .
+- Home Documentation Observability Error Reporting Guides Send feedback View and filter error groups Stay organized with collections Save and categorize content based on your preferences.
+- For example, if you have error groups for the Kubernetes Container Services resource, then you can filter first by service and then by version: To save your selections, click Apply .
+
+### "Class ErrorGroupServiceClient (1.15.0) \_|\_ Python client libraries \_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceClient](https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceClient)
 - Source ID: `site-python-reference`
-- Final score: 158
+- Final score: 111
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation Source URL: https://googleapis.dev/python/clouderroreporting/latest/usage.html Errors can also be reported to Stackdriver Error Reporting outside the context of an exception.
-- The library will include the file path, function name, and line number of the location where the error was reported. from google.cloud import error reporting client = error reporting.Client() client.report(&quot;Found an error!&quot;)
+- GetGroupRequest ( group name="group name value", ) Make the request response = client. get group (request=request) Handle the response print(response) Parameters Name Description request Union[ google.cloud.errorreporting v1beta1.types.GetGroupRequest , dict] The request object.
+- UpdateGroupRequest ( ) Make the request response = client. update group (request=request) Handle the response print(response) Parameters Name Description request Union[ google.cloud.errorreporting v1beta1.types.UpdateGroupRequest , dict] The request object.
+- Returns Type Description ErrorGroupServiceClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
+- Returns Type Description ErrorGroupServiceClient The constructed client. from service account info from service account info ( info : dict , args , kwargs ) Creates an instance of this client using the provided credentials info.
 
-### Collect error data by using Error Reporting | Google Cloud Documentation
+### "Class ErrorGroupServiceAsyncClient (1.15.0) \_|\_ Python client libraries\
 
-- URL: [https://docs.cloud.google.com/error-reporting/docs/setup](https://docs.cloud.google.com/error-reporting/docs/setup)
-- Source ID: `site-docs-root`
-- Final score: 150
+- URL: [https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 107
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Collect error data by using Error Reporting Google Cloud Documentation Source URL: https://docs.cloud.google.com/error-reporting/docs/setup This document lists the environments supported by Error Reporting and it links to language-specific guides for application developers.
-- We recommend that you use the language-specific client libraries or rely on automatically-collected log entries; however, you can write error data with the Cloud ...
-
-### Manage service error events | Error Reporting | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/error-reporting/docs/service-errors](https://docs.cloud.google.com/error-reporting/docs/service-errors)
-- Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Manage service error events Error Reporting Google Cloud Documentation Source URL: https://docs.cloud.google.com/error-reporting/docs/service-errors When Error Reporting determines that there is a service failure, it groups these error events and sets the type of error to Service error.
-- The Error Reporting overview displays the type of error along with other information about the error group:
+- GetGroupRequest ( group name="group name value", ) Make the request response = await client. get group (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.errorreporting v1beta1.types.GetGroupRequest , dict]] The request object.
+- UpdateGroupRequest ( ) Make the request response = await client. update group (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.errorreporting v1beta1.types.UpdateGroupRequest , dict]] The request object.
+- Returns Type Description ErrorGroupServiceAsyncClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
+- Returns Type Description ErrorGroupServiceAsyncClient The constructed client. from service account info from service account info ( info : dict , args , kwargs ) Creates an instance of this client using the provided credentials info.
 

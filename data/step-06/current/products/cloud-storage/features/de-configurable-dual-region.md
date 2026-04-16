@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.662Z"
+generated_at: "2026-04-12T12:12:45.888Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "DE configurable dual-region"
 feature_slug: "de-configurable-dual-region"
 latest_feature_date: "2025-03-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/storage/docs/release-notes"
   - "https://docs.cloud.google.com/storage/docs/locations"
   - "https://docs.cloud.google.com/storage/docs/bandwidth-usage"
+  - "https://docs.cloud.google.com/storage/docs/storage-classes"
+  - "https://docs.cloud.google.com/storage/docs/creating-buckets"
 keywords:
   - "de"
   - "configurable"
@@ -26,7 +27,7 @@ keywords:
 # DE configurable dual-region
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ Cloud Storage offers the DE configurable dual-region for buckets spanning europe
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
 - [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - [https://docs.cloud.google.com/storage/docs/bandwidth-usage](https://docs.cloud.google.com/storage/docs/bandwidth-usage)
+- [https://docs.cloud.google.com/storage/docs/storage-classes](https://docs.cloud.google.com/storage/docs/storage-classes)
+- [https://docs.cloud.google.com/storage/docs/creating-buckets](https://docs.cloud.google.com/storage/docs/creating-buckets)
 
 ## Supporting Pages
-
-### Cloud Storage release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 194
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- March 17, 2025 Libraries Go 1.51.0 (2025-03-12) Features storage/append: Support appends in w1r3. ( #11483 ) ( 48bb391 ) storage: Benchmark with experimental MRD. ( #11501 ) ( 7b49152 ) storage: Implement RetryChunkDeadline for grpc writes ( #11476 ) ( 03575d7 ) storage: Specify benchmark integrity check. ( #11465 ) ( da18845 ) storage: Use ReadHandle for faster re-connect ( #11510 ) ( cac52f7 ) storage: Wrap NotFound errors for buckets and objects ( #11519 ) ( 0dd7d3d ) Bug Fixes storage/append: Report progress for appends. ( #11503 ) ( 96dbb6c ) storage: Add a safety check for readhandle ( #11549 ) ( c9edb37 ) storage: Add universe domain to defaultSignBytesFunc ( #11521 ) ( 511608b ) storage: Clone the defaultRetry to avoid modifying it directly ( #11533 ) ( 7f8d69d ) storage: Fix adding multiple range on stream with same read id ( #11584 ) ( 0bb3434 ) storage: Modify the callback of mrd to return length of data read instead of limit. ( #11687 ) ( 9e359f0 ) storage: Propagate ctx from invoke to grpc upload reqs ( #11475 ) ( 9ad9d76 ) storage: Remove duplicate routing header ( #11534 ) ( 8eeb59c ) storage: Return sentinel ErrObjectNotExist for copy and compose ( #11369 ) ( 74d0c10 ), refs #10760 storage: Wait for XML read req to finish to avoid data races ( #11527 ) ( 782e12a ) Java 2.50.0 (2025-03-14) Features Next release from main branch is 2.50.0 ( #2968 ) ( 4a69fcc ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.54.0 ( 22e7e3d ) deps: Update the Java code generator (gapic-generator-java) to 2.55.1 ( 81c8c61 ) Improve 503 handling for json resumable uploads ( #2987 ) ( 9bc2b14 ) Update usages of String.format to explicitly pass Locale.US ( #2974 ) ( 8bcb2de ), closes #2972 Dependencies Update dependency com.google.apis:google-api-services-storage to v1-rev20250224-2.0.0 ( #2969 ) ( 80a40c4 ) Update googleapis/sdk-platform-java action to v2.55.1 ( #2985 ) ( e22a2de ) Update sdk-platform-java dependencies ( #2983 ) ( 9eeb82a ) Update sdk-platform-java dependencies ( #2986 ) ( 10b922a ) Feature Cloud Storage now offers the DE configurable dual-region code, which can be used when creating a dual-region bucket in europe-west3 (Frankfurt) and europe-west10 (Berlin).
-- Go Changes for storage/internal/apiv2 1.44.0 (2024-10-03) Features storage/dataflux: Add dataflux interface ( #10748 ) ( cb7b0a1 ) storage/dataflux: Add range splitter #10748 ( #10899 ) ( d49da26 ) storage/dataflux: Add worksteal algorithm to fast-listing ( #10913 ) ( 015b52c ) storage/internal: Add managed folder to testIamPermissions method ( 2f0aec8 ) storage/transfermanager: Add option to StripPrefix on directory download ( #10894 ) ( 607534c ) storage/transfermanager: Add SkipIfExists option ( #10893 ) ( 7daa1bd ) storage/transfermanager: Checksum full object downloads ( #10569 ) ( c366c90 ) storage: Add direct google access side-effect imports by default ( #10757 ) ( 9ad8324 ) storage: Add full object checksum to reader.Attrs ( #10538 ) ( 245d2ea ) storage: Add support for Go 1.23 iterators ( 84461c0 ) storage: Add update time in bucketAttrs ( #10710 ) ( 5f06ae1 ), refs #9361 storage: GA gRPC client ( #10859 ) ( c7a55a2 ) storage: Introduce gRPC client-side metrics ( #10639 ) ( 437bcb1 ) storage: Support IncludeFoldersAsPrefixes for gRPC ( #10767 ) ( 65bcc59 ) Bug Fixes storage/transfermanager: Correct Attrs.StartOffset for sharded downloads ( #10512 ) ( 01a5cbb ) storage: Add retryalways policy to encryption test ( #10644 ) ( 59cfd12 ), refs #10567 storage: Add unknown host to retriable errors ( #10619 ) ( 4ec0452 ) storage: Bump dependencies ( 2ddeb15 ) storage: Bump google.golang.org/grpc@v1.64.1 ( 8ecc4e9 ) storage: Check for grpc NotFound error in HMAC test ( #10645 ) ( 3c8e88a ) storage: Disable grpc metrics using emulator ( #10870 ) ( 35ad73d ) storage: Retry gRPC DEADLINE EXCEEDED errors ( #10635 ) ( 0018415 ) storage: Update dependencies ( 257c40b ) storage: Update google.golang.org/api to v0.191.0 ( 5b32644 ) Performance Improvements storage: GRPC zerocopy codec ( #10888 ) ( aeba28f ) Documentation storage/internal: Clarify possible objectAccessControl roles ( 2f0aec8 ) storage/internal: Update dual-region bucket link ( 2f0aec8 ) September 30, 2024 Libraries A weekly digest of client library updates from across the Cloud SDK .
-- Node.js Changes for @google-cloud/storage 7.11.2 (2024-06-07) Bug Fixes Support uint8array in file.save ( #2480 ) ( 1477fe1 ) Java Changes for google-cloud-storage 2.40.0 (2024-06-06) Features Promote google-cloud-storage-control to GA ( #2575 ) ( 129f188 ) Bug Fixes Reduce Java 21 Virtual Thread Pinning in IO operations ( #2553 ) ( 498fd0b ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.31.0 ( #2571 ) ( 67ce3d6 ) Update dependency net.jqwik:jqwik to v1.8.5 ( #2563 ) ( 88f7d86 ) Documentation Managed Folders samples ( #2562 ) ( 5ffc1f2 ) Update javadoc for createFrom ( #2522 ) ( dc31e95 ) June 06, 2024 Feature Cloud Storage now offers a new pre-defined dual region, EUROPE-WEST2 (London) and EUROPE-WEST1 (Belgium).
-- Node.js Changes for @google-cloud/storage 7.10.2 (2024-04-26) Bug Fixes Use correct indices for file.from and fix tests to verify names ( #2449 ) ( d4240fa ) 7.10.1 (2024-04-22) Bug Fixes Change copyoptions type ( #2439 ) ( 2ebd7ac ) Expand types of custom metadata within FileMetadata ( #2442 ) ( 1d434a9 ) April 23, 2024 Change Default replication monitoring for multi-region and dual-region buckets in the Google Cloud console is now available for the following graphs: Percent of minutes out of RPO Percent of objects out of target Meeting RPO April 22, 2024 Libraries A weekly digest of client library updates from across the Cloud SDK .
 
 ### Bucket locations \_|\_ Cloud Storage \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - Source ID: `site-docs-root`
-- Final score: 174
+- Final score: 220
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/storage/docs/bandwidth-usage](https://docs.cloud.google.com/storage/docs/bandwidth-usage)
 - Source ID: `site-iam-reference`
-- Final score: 168
+- Final score: 201
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +75,30 @@ Evidence snippets:
 - Monitoring alerts You can use Monitoring alerting policies to inform you when metrics such as storage.googleapis.com/google egress bandwidth , storage.googleapis.com/dualregion google egress bandwidth , and storage.googleapis.com/multiregion google egress bandwidth approach a quota limit.
 - Go to Browser In the Filter search bar, select the Metric property, then search for the metric for which you are requesting an increase: Use storage.googleapis.com/google egress bandwidth to increase Google egress for your buckets located in regions.
 - If the previous instructions don't work for you, or if you need bandwidth greater than 5 Tbps for egress from buckets in zones, regions, or dual-regions, contact your Technical Account Manager or Google representative.
+
+### Storage classes \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage/docs/storage-classes](https://docs.cloud.google.com/storage/docs/storage-classes)
+- Source ID: `site-docs-root`
+- Final score: 201
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Storage Class Name for APIs and CLIs Minimum storage duration Retrieval fees Typical monthly availability 1 Rapid storage 2 RAPID None None 99.95% in zones Standard storage STANDARD None None 99.99% in multi-regions and dual-regions 99.99% in regions Nearline storage NEARLINE 30 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions Coldline storage COLDLINE 90 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions Archive storage ARCHIVE 365 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions 1 See the class descriptions for the availability SLA for each storage class.
+- When used in a multi-region, Standard storage is appropriate for storing data that is accessed around the world, such as serving website content, streaming videos, executing interactive workloads, or serving data supporting mobile and gaming applications.
+- Availability The availability of Standard storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.95% 99.99% dual-region 99.95% 99.99% region 99.9% 99.99% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA .
+- Availability The availability of Nearline storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.9% 99.95% dual-region 99.9% 99.95% region 99.0% 99.9% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA .
+
+### Create a bucket \_|\_ Cloud Storage \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage/docs/creating-buckets](https://docs.cloud.google.com/storage/docs/creating-buckets)
+- Source ID: `site-docs-root`
+- Final score: 200
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Create new storage bucket in the US multi-region with coldline storage resource "random id" "bucket prefix" { byte length = 8 } resource "google storage bucket" "static" { name = "${random id.bucket prefix.hex}-new-bucket" location = "US" storage class = "COLDLINE" uniform bucket level access = true } REST APIs JSON API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.
+- For more information, see Set up authentication for client libraries . from google.cloud import storage def create bucket class location ( bucket name ): """ Create a new bucket in the US region with the coldline storage class """ bucket name = "your-new-bucket-name" storage client = storage .
+- Note: When creating a configurable dual-region , you must set the <LocationConstraint> element to be the location code associated with the underlying regions, and you must also include a <CustomPlacementConfig> element.
+- Note: When creating a configurable dual-region , you must set the --location flag to be the location code associated with the underlying regions, and you must use the --placement flag with a valid pair of regions.
 

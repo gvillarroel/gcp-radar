@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.346Z"
+generated_at: "2026-04-15T13:43:38.426Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "dedicated API-only service accounts"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-01-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
-  - "https://docs.cloud.google.com/looker/docs/api-4-ga"
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google"
+  - "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
 keywords:
   - "dedicated"
-  - "api"
   - "only"
   - "accounts"
   - "lets"
   - "admins"
   - "create"
-  - "for"
+  - "access"
+  - "migrate"
 ---
 
 # dedicated API-only service accounts
@@ -42,42 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- [https://docs.cloud.google.com/looker/docs/api-4-ga](https://docs.cloud.google.com/looker/docs/api-4-ga)
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google)
+- [https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation](https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation)
 
 ## Supporting Pages
 
-### Getting started with the Looker API | Google Cloud Documentation
+### Admin settings - Users \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 54
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
-
-### Looker API 4.0 Generally Available | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/api-4-ga](https://docs.cloud.google.com/looker/docs/api-4-ga)
-- Source ID: `site-api-reference`
-- Final score: 50
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- Source ID: `site-docs-reference`
+- Final score: 197
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Check out our API reference for detailed API 4.0 specs....
-- Looker API 4.0 Generally Available Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-4-ga We are excited to announce that ... changes and promotes multiple endpoints from Beta to Stable.
+- This is to ensure admins can either create or migrate service accounts from existing standard users if they require access to users' API credentials.
+- This is to ensure admins can either create or migrate service accounts from existing standard users if they require access to users' API credentials.
+- From the Edit User page you can do the following: Enable or disable the service account Edit the service account name Manage the service account API keys Assign different groups and Roles Edit the user attributes that are associated with the service account Migrating user accounts to service accounts Important: Starting with the Looker 26.8 release, the following changes will occur: Looker (original) admins will no longer be able to access or manage the API credentials of their standard users.
+- Creating an API-only service account You can create API-only accounts (often called service accounts ) from the Users page within a Looker instance.
 
-### Using the API Explorer | Looker | Google Cloud Documentation
+### Admin settings - Google authentication \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 50
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google)
+- Source ID: `site-docs-reference`
+- Final score: 170
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
-- Using the API Explorer Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-explorer There may also be Ruby and Java ... languages.
+- To add a user with an email address that is not in your Google Domain: Enable the Alternate login for admins and specified users option on the Google Auth page Create or modify an existing user role to add the login special email permission Go to Add Users from the users panel ( /admin/users/new ) Add the email address(es) you would like to include, and the roles those users should have, which must include a role with the login special email permission Those users are now able to sign in using https://mycompany.looker.com/login/email (hidden URL) Note: If a user has authenticated into the Looker instance using only Google, you can enable alternate login only by using the Looker API.
+- Note: If you have a permission that provides access to only select pages in the Admin panel, such as manage schedules , manage themes , or see admin , but you don't have the Admin role , the page or pages that are described here may not be visible to you in the Admin panel.
+- Warning: The following behaviors might affect your decision to use Google OAuth: When enabling Google OAuth, the Looker instance can merge existing user accounts with the Google-registered domain, but only for accounts whose email address matches the domain.
+- The Google Cloud console requires that you configure an OAuth consent screen , which lets your users choose how to grant access to their private data and provides a link to your organization's terms of service and privacy policy.
+
+### "Discontinuing the admin capability to create, view, and manage API credentials\
+
+- URL: [https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation](https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation)
+- Source ID: `site-docs-reference`
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Key changes As of January 12, 2026, admins can perform the following tasks: Create new service accounts and migrate existing users as service accounts Manage the API credentials of these service accounts Starting with the Looker 26.8 release, which will release in May 2026, the following changes will occur: Admins will no longer be able to access or manage the API credentials of their standard users Admins will be able to manage which users have access to individually owned API credentials Note: Starting with the Looker 26.8 release, users with access to API credentials will be able to access and manage their own API credentials.
+- This is to ensure that admins can either create or migrate service accounts from existing standard users if they require access to users' API credentials.
+- As of that date, admins can perform the following tasks: Create new service accounts Migrate existing users to service account Fully manage API credentials for service accounts We've provided additional information to help you understand this change.
+- Your custom workflow implementations are likely going to be impacted if they're using the following Looker APIs: create user credentials api3 delete user credentials api3 Action required Before your Looker instance is upgraded to the Looker 26.8 release, your admin must follow the steps in the Migrating users to service accounts section of the Admin settings - Users documentation page.
 

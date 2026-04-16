@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:44.355Z"
+generated_at: "2026-04-12T12:17:52.274Z"
 product_name: "Memorystore for Redis"
 product_slug: "memorystore-for-redis"
 feature_name: "Memorystore for Redis in Milan (europe-west8)"
 feature_slug: "memorystore-for-redis-in-milan-europe-west8"
 latest_feature_date: "2022-05-24"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/memorystore/docs/redis/pricing"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance_auth_string"
 keywords:
   - "memorystore"
   - "for"
@@ -24,7 +27,7 @@ keywords:
 # Memorystore for Redis in Milan (europe-west8)
 
 Product: Memorystore for Redis
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ Memorystore for Redis is available in the Milan region.
 
 Memorystore for Redis is available in the Milan region.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/memorystore/docs/redis/pricing](https://docs.cloud.google.com/memorystore/docs/redis/pricing)
+- [https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance](https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance)
+- [https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows](https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows)
+- [https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance_auth_string](https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance_auth_string)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Memorystore for Redis | Google Cloud
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/pricing](https://docs.cloud.google.com/memorystore/docs/redis/pricing)
+- Source ID: `site-docs-root`
+- Final score: 313
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To see Basic Tier and Standard Tier pricing, select a region from the drop-down list above the following table: Iowa (us-central1) Johannesburg (africa-south1) Taiwan (asia-east1) Hong Kong (asia-east2) Tokyo (asia-northeast1) Osaka (asia-northeast2) Seoul (asia-northeast3) Mumbai (asia-south1) Delhi (asia-south2) Singapore (asia-southeast1) Jakarta (asia-southeast2) Bangkok (asia-southeast3) Sydney (australia-southeast1) Melbourne (australia-southeast2) Warsaw (europe-central2) Finland (europe-north1) Stockholm (europe-north2) Madrid (europe-southwest1) Belgium (europe-west1) Berlin (europe-west10) Turin (europe-west12) London (europe-west2) Frankfurt (europe-west3) Netherlands (europe-west4) Zurich (europe-west6) Milan (europe-west8) Paris (europe-west9) Doha (me-central1) Dammam (me-central2) Tel Aviv (me-west1) Montreal (northamerica-northeast1) Toronto (northamerica-northeast2) Mexico (northamerica-south1) Sao Paulo (southamerica-east1) Santiago (southamerica-west1) Iowa (us-central1) Oklahoma (us-central2) South Carolina (us-east1) Northern Virginia (us-east4) Columbus (us-east5) Alabama (us-east7) Dallas (us-south1) Oregon (us-west1) Los Angeles (us-west2) Salt Lake City (us-west3) Las Vegas (us-west4) Phoenix (us-west8) Show discount options Hourly Hourly Monthly Monthly Service tier Capacity tier Minimum network performance Default (USD) info Consumption model ID: 7754-699E-0EBF Memorystore for Redis CUD - 1 Year (USD) info Consumption model ID: DD5B-8EB3-C48D Memorystore for Redis CUD - 3 Year (USD) info Consumption model ID: 8E4B-B283-45D8 Basic M1 (1 to 4 GiB) 10 Gbps $0.049 / 1 gibibyte hour - - M2 (5 to 10 GiB) 10 Gbps $0.027 / 1 gibibyte hour $0.0216 / 1 gibibyte hour $0.0162 / 1 gibibyte hour M3 (11 to 35 GiB) 10 Gbps $0.023 / 1 gibibyte hour $0.0184 / 1 gibibyte hour $0.0138 / 1 gibibyte hour M4 (36 to 100 GiB) 16 Gbps $0.019 / 1 gibibyte hour $0.0152 / 1 gibibyte hour $0.0114 / 1 gibibyte hour M5 (> 100 GiB) 16 Gbps $0.016 / 1 gibibyte hour $0.0128 / 1 gibibyte hour $0.0096 / 1 gibibyte hour Standard M1 (1 to 4 GiB) 10 Gbps $0.064 / 1 gibibyte hour - - M2 (5 to 10 GiB) 10 Gbps $0.054 / 1 gibibyte hour $0.0432 / 1 gibibyte hour $0.0324 / 1 gibibyte hour M3 (11 to 35 GiB) 10 Gbps $0.046 / 1 gibibyte hour $0.0368 / 1 gibibyte hour $0.0276 / 1 gibibyte hour M4 (36 to 100 GiB) 16 Gbps $0.035 / 1 gibibyte hour $0.028 / 1 gibibyte hour $0.021 / 1 gibibyte hour M5 (> 100 GiB) 16 Gbps $0.03 / 1 gibibyte hour $0.024 / 1 gibibyte hour $0.018 / 1 gibibyte hour Each consumption model has a unique ID.
+- The following table lists the prices for nodes when read replicas are enabled for your instance: Iowa (us-central1) Johannesburg (africa-south1) Taiwan (asia-east1) Hong Kong (asia-east2) Tokyo (asia-northeast1) Osaka (asia-northeast2) Seoul (asia-northeast3) Mumbai (asia-south1) Delhi (asia-south2) Singapore (asia-southeast1) Jakarta (asia-southeast2) Bangkok (asia-southeast3) Sydney (australia-southeast1) Melbourne (australia-southeast2) Warsaw (europe-central2) Finland (europe-north1) Stockholm (europe-north2) Madrid (europe-southwest1) Belgium (europe-west1) Berlin (europe-west10) Turin (europe-west12) London (europe-west2) Frankfurt (europe-west3) Netherlands (europe-west4) Zurich (europe-west6) Milan (europe-west8) Paris (europe-west9) Doha (me-central1) Dammam (me-central2) Tel Aviv (me-west1) Montreal (northamerica-northeast1) Toronto (northamerica-northeast2) Mexico (northamerica-south1) Sao Paulo (southamerica-east1) Santiago (southamerica-west1) Iowa (us-central1) Oklahoma (us-central2) South Carolina (us-east1) Northern Virginia (us-east4) Columbus (us-east5) Alabama (us-east7) Dallas (us-south1) Oregon (us-west1) Los Angeles (us-west2) Salt Lake City (us-west3) Las Vegas (us-west4) Phoenix (us-west8) Show discount options Hourly Hourly Monthly Monthly Service tier Capacity tier 1 Minimum network performance Default (USD) info Consumption model ID: 7754-699E-0EBF Memorystore for Redis CUD - 1 Year (USD) info Consumption model ID: DD5B-8EB3-C48D Memorystore for Redis CUD - 3 Year (USD) info Consumption model ID: 8E4B-B283-45D8 Standard M2 (5 to 10 GiB) 10 Gbps $0.027 / 1 gibibyte hour $0.0216 / 1 gibibyte hour $0.0162 / 1 gibibyte hour M3 (11 to 35 GiB) 10 Gbps $0.023 / 1 gibibyte hour $0.0184 / 1 gibibyte hour $0.0138 / 1 gibibyte hour M4 (36 to 100 GiB) 16 Gbps $0.019 / 1 gibibyte hour $0.0152 / 1 gibibyte hour $0.0114 / 1 gibibyte hour M5 (> 100 GiB) 2 16 Gbps $0.016 / 1 gibibyte hour $0.0128 / 1 gibibyte hour $0.0096 / 1 gibibyte hour Each consumption model has a unique ID.
+- To view a list of prices for network egress for Memorystore, see the following table: Traffic type Price Egress between Google Cloud regions within North America (per GiB) $0.02 Egress between Google Cloud regions within Europe (per GiB) $0.02 Egress between Google Cloud regions within Asia (per GiB) $0.08 Egress between Google Cloud regions within and Oceania (per GiB) $0.08 Egress to a Google Cloud region on another continent (excludes Indonesia and Oceania) (per GiB) $0.08 Indonesia and Oceania 1 to/from any Google Cloud region (per GiB) $0.15 If you pay in a currency other than USD, the prices listed in your currency on Cloud Platform SKUs apply.
+- When accessing a Memorystore instance from a client in a different region, Memorystore charges you for network egress traffic from Redis instances to your client application.
+
+### "Connect to a Redis instance \_|\_ Memorystore for Redis \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance](https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance)
+- Source ID: `site-docs-root`
+- Final score: 300
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Connect to a Redis instance from a Compute Engine VM using telnet You can connect to the Memorystore for Redis instance from any Compute Engine VM that uses the instance's authorized network with a supported RFC 1918 IP address .
+- Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Connect to a Redis instance Stay organized with collections Save and categorize content based on your preferences.
+- Note: If you are looking for the Memorystore for Redis Cluster documentation, see Connect to a Memorystore for Redis Cluster instance .
+- Make a new file in which to put Stunnel configuration information by running the following command: sudo vim /etc/stunnel/redis-client.conf Paste the following text in the file, replacing redis-instance-ip with the Redis instance's IP address: output=/tmp/stunnel.log CAfile=/tmp/server ca.pem client=yes pid=/var/run/stunnel.pid verifyChain=yes sslVersion=TLSv1.2 [redis] accept=127.0.0.1:6378 connect= redis-instance-ip :6378 Start stunnel by running the following command: sudo stunnel /etc/stunnel/redis-client.conf Verify that stunnel is running: ps aux grep stunnel Restart Stunnel by running the following commands: sudo systemctl restart stunnel4 Note: You can use the ps aux grep stunnel command before and after restarting stunnel to confirm that the restart was successful.
+
+### "Find and set maintenance windows \_|\_ Memorystore for Redis \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows](https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows)
+- Source ID: `site-docs-root-2`
+- Final score: 300
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Reschedule planned maintenance Caution: if you programmatically reschedule maintenance in bulk requests (not natively supported by Memorystore for Redis), limit batch reschedule sizes to 100 instances per batch.
+- Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Find and set maintenance windows Stay organized with collections Save and categorize content based on your preferences.
+- Find scheduled maintenance If maintenance has been scheduled for your instance, you can view it using the following instructions: Console Go to the Memorystore for Redis page in the Google Cloud console.
+- Set a preferred window for maintenance on an instance Console Go to the Memorystore for Redis page in the Google Cloud console.
+
+### "MCP Tools Reference: redis.googleapis.com \_|\_ Memorystore for Redis \_\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance_auth_string](https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance_auth_string)
+- Source ID: `site-api-reference`
+- Final score: 298
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Tool: get instance auth string Get the AUTH string for a Memorystore for Redis instance.
+- Curl Request curl --location 'https://redis.googleapis.com/mcp' \ --header 'content-type: application/json' \ --header 'accept: application/json, text/event-stream' \ --data '{ "method": "tools/call", "params": { "name": "get instance auth string", "arguments": { // provide these details according to the tool' s MCP specification } } , "jsonrpc" : "2.0" , "id" : 1 } ' Input Schema Request for GetInstanceAuthString .
+- Home Documentation Databases Memorystore Memorystore for Redis Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences.
+- Redis instance resource name using the form: projects/{project id}/locations/{location id}/instances/{instance id} where location id refers to a GCP region.
 

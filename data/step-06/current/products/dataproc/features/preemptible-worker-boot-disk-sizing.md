@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.125Z"
+generated_at: "2026-04-14T00:23:22.691Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Preemptible worker boot disk sizing"
 feature_slug: "preemptible-worker-boot-disk-sizing"
 latest_feature_date: "2016-09-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
   - "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
   - "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels"
 keywords:
   - "preemptible"
   - "worker"
@@ -26,7 +26,7 @@ keywords:
 # Preemptible worker boot disk sizing
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +38,21 @@ Preemptible worker boot disk sizing lets users set the boot disk size for preemp
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
 - [https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups](https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups)
 - [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig)
+- [https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels](https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels)
 
 ## Supporting Pages
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 156
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- March 10, 2020 Change Added the following flags to gcloud dataproc clusters create and gcloud dataproc workflow-templates set-managed-cluster commands: --num-secondary-workers --num-secondary-worker-local-ssds --secondary-worker-boot-disk-size --secondary-worker-boot-disk-type --secondary-worker-accelerator Deprecated The following flags to gcloud dataproc clusters create and gcloud dataproc workflow-templates set-managed-cluster commands have been deprecated: --num-preemptible-workers --num-preemptible-worker-local-ssds --preemptible-worker-boot-disk-size --preemptible-worker-boot-disk-type --preemptible-worker-accelerator See the related change, above, for the new flags to use in place of these deprecated flags.
-- Feature Preemptible boot disk sizes - The disk size for preemptible workers can now be set via the gcloud command-line tool at cluster creation, even when preemptibles are not added to a cluster using the commend --preemptible-worker-boot-disk-size .
-- Decreased job startup time for SparkSQL jobs with partitioned/nested directories by applying a patch for Spark ( SPARK-9926 ) Further optimized job startup time for any job with a lot of file inputs by applying a patch for Hadoop ( HADOOP-12810 ) Feature gcloud command-line tool Added the flag --preemptible-worker-boot-disk-size which can be used to adjust the boot disk size of preemptible workers.
-- The --preemptible-worker-boot-disk-size command no longer requires that you specify 0 preemptible workers if you do not want to add preemptible machines when you create a cluster.
 
 ### Managed Service for Apache Spark driver node groups \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups](https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups)
 - Source ID: `site-iam-reference`
-- Final score: 112
+- Final score: 131
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,12 +65,25 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig)
 - Source ID: `site-docs-reference`
-- Final score: 106
+- Final score: 116
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- JSON representation DiskConfig JSON representation AttachedDiskConfig JSON representation DiskType Preemptibility ManagedGroupConfig JSON representation AcceleratorConfig JSON representation InstanceFlexibilityPolicy JSON representation ProvisioningModelMix JSON representation InstanceSelection JSON representation InstanceSelectionResult JSON representation StartupConfig JSON representation The config settings for Compute Engine resources in an instance group, such as a master or worker group.
-- Disk option config settings. isPreemptible boolean Output only.
 - JSON representation { "numInstances" : integer , "instanceNames" : [ string ] , "imageUri" : string , "machineTypeUri" : string , "diskConfig" : { object ( DiskConfig ) } , "isPreemptible" : boolean , "preemptibility" : enum ( Preemptibility ) , "managedGroupConfig" : { object ( ManagedGroupConfig ) } , "accelerators" : [ { object ( AcceleratorConfig ) } ] , "minCpuPlatform" : string , "minNumInstances" : integer , "instanceFlexibilityPolicy" : { object ( InstanceFlexibilityPolicy ) } , "startupConfig" : { object ( StartupConfig ) } } Fields numInstances integer Optional.
+- JSON representation DiskConfig JSON representation AttachedDiskConfig JSON representation DiskType Preemptibility ManagedGroupConfig JSON representation AcceleratorConfig JSON representation InstanceFlexibilityPolicy JSON representation ProvisioningModelMix JSON representation InstanceSelection JSON representation InstanceSelectionResult JSON representation StartupConfig JSON representation The config settings for Compute Engine resources in an instance group, such as a master or worker group.
 - JSON representation { "bootDiskType" : string , "bootDiskSizeGb" : integer , "numLocalSsds" : integer , "localSsdInterface" : string , "attachedDiskConfigs" : [ { object ( AttachedDiskConfig ) } ] , "bootDiskProvisionedIops" : string , "bootDiskProvisionedThroughput" : string } Fields bootDiskType string Optional.
+- If one or more SSDs are attached, this runtime bulk data is spread across them, and the boot disk contains only basic config and installed binaries.
+
+### "Create and manage Labels \_|\_ Managed Service for Apache Spark \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels](https://docs.cloud.google.com/dataproc/docs/guides/creating-managing-labels)
+- Source ID: `site-docs-root`
+- Final score: 110
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Here is the JSON body of a cluster.create request that includes attaches a key1:value label to the cluster. { "clusterName":"cluster-1", "projectId":"my-project", "config":{ "configBucket":"", "gceClusterConfig":{ "networkUri":".../networks/default", "zoneUri":".../zones/us-central1-f" }, "masterConfig":{ "numInstances":1, "machineTypeUri":"..../machineTypes/n1-standard-4", "diskConfig":{ "bootDiskSizeGb":500, "numLocalSsds":0 } }, "workerConfig":{ "numInstances":2, "machineTypeUri":"...machineTypes/n1-standard-4", "diskConfig":{ "bootDiskSizeGb":500, "numLocalSsds":0 } } }, "labels":{ "key1":"value1" } } The clusters.list and jobs.list APIs can be used to list clusters or jobs that match a specified filter, using the following format: labels.<key=value> .
+- A cluster can contain either preemptible workers or non-preemptible secondary workers, but not both.
+- Label updates propagate to all preemptible secondary workers within 24 hours.
+- Label updates don't propagate to existing non-preemptible secondary workers.
 

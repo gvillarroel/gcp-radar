@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:01:35.366Z"
+generated_at: "2026-04-14T11:24:06.274Z"
 product_name: "Blockchain Node Engine"
 product_slug: "blockchain-node-engine"
 feature_name: "Full and archive node types"
@@ -9,18 +9,15 @@ latest_feature_date: "2023-06-05"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
   - "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes"
-  - "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get"
+  - "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas"
+  - "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
 keywords:
   - "types"
   - "archive"
-  - "blockchain"
+  - "both"
   - "supports"
   - "full"
-  - "engine"
-  - "and"
-  - "node"
 ---
 
 # Full and archive node types
@@ -38,13 +35,13 @@ Blockchain Node Engine supports both full and archive Ethereum node types.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1)
 - [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes)
-- [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get)
+- [https://docs.cloud.google.com/blockchain-node-engine/docs/quotas](https://docs.cloud.google.com/blockchain-node-engine/docs/quotas)
+- [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1)
 
 ## Supporting Pages
 
@@ -52,41 +49,37 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1)
 - Source ID: `site-api-reference`
-- Final score: 274
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 34
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Index BlockchainNodeEngine (interface) BlockchainNode (message) BlockchainNode.BlockchainType (enum) BlockchainNode.ConnectionInfo (message) BlockchainNode.ConnectionInfo.EndpointInfo (message) BlockchainNode.EthereumDetails (message) BlockchainNode.EthereumDetails.ConsensusClient (enum) BlockchainNode.EthereumDetails.EthereumEndpoints (message) BlockchainNode.EthereumDetails.ExecutionClient (enum) BlockchainNode.EthereumDetails.GethDetails (message) BlockchainNode.EthereumDetails.GethDetails.GarbageCollectionMode (enum) BlockchainNode.EthereumDetails.Network (enum) BlockchainNode.EthereumDetails.NodeType (enum) BlockchainNode.EthereumDetails.ValidatorConfig (message) BlockchainNode.State (enum) CreateBlockchainNodeRequest (message) DeleteBlockchainNodeRequest (message) GetBlockchainNodeRequest (message) ListBlockchainNodesRequest (message) ListBlockchainNodesResponse (message) OperationMetadata (message) UpdateBlockchainNodeRequest (message) BlockchainNodeEngine This service is the control plane API for Blockchain Node Engine, and can be used to create, read, and delete blockchain nodes.
-- Home Documentation Application hosting Blockchain Node Engine Reference Send feedback Package google.cloud.blockchainnodeengine.v1 Stay organized with collections Save and categorize content based on your preferences.
 - ARCHIVE Holds the same data as full node as well as all of the blockchain's history state data dating back to the Genesis Block.
-- A service attachment that exposes a node, and has the following format: projects/{project}/regions/{region}/serviceAttachments/{service attachment name} EndpointInfo Contains endpoint information through which to interact with a blockchain node.
+- This value can also be chosen when creating a full node in order to create a partial/recent archive node.
+- Only applicable when NodeType is FULL or ARCHIVE .
+- Operations that have been cancelled successfully have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1 , corresponding to Code.CANCELLED . api version string Output only.
 
 ### "REST Resource: projects.locations.blockchainNodes \_|\_ Blockchain Node\
 
 - URL: [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes)
 - Source ID: `site-api-reference`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 34
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Application hosting Blockchain Node Engine Reference Send feedback REST Resource: projects.locations.blockchainNodes Stay organized with collections Save and categorize content based on your preferences.
 - ARCHIVE Holds the same data as full node as well as all of the blockchain's history state data dating back to the Genesis Block.
-- Methods create Creates a new blockchain node in a given project and location. delete Deletes a single blockchain node. get Gets details of a single blockchain node. list Lists blockchain nodes in a given project and location. patch Updates the parameters of a single blockchain node.
-- A service attachment that exposes a node, and has the following format: projects/{project}/regions/{region}/serviceAttachments/{service attachment name} EndpointInfo Contains endpoint information through which to interact with a blockchain node.
+- This value can also be chosen when creating a full node in order to create a partial/recent archive node.
+- Only applicable when NodeType is FULL or ARCHIVE .
+- JSON representation { // Union field execution client details can be only one of the following: "gethDetails" : { object ( GethDetails ) } // End of list of possible types for union field execution client details . "network" : enum ( Network ) , "nodeType" : enum ( NodeType ) , "executionClient" : enum ( ExecutionClient ) , "consensusClient" : enum ( ConsensusClient ) , "apiEnableAdmin" : boolean , "apiEnableDebug" : boolean , "additionalEndpoints" : { object ( EthereumEndpoints ) } , "validatorConfig" : { object ( ValidatorConfig ) } } Fields Union field execution client details .
 
-### "Method: projects.locations.blockchainNodes.get \_|\_ Blockchain Node Engine\
+### Quotas and limits \_|\_ Blockchain Node Engine \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get](https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get)
-- Source ID: `site-api-reference`
-- Final score: 202
+- URL: [https://docs.cloud.google.com/blockchain-node-engine/docs/quotas](https://docs.cloud.google.com/blockchain-node-engine/docs/quotas)
+- Source ID: `site-docs-root`
+- Final score: 32
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Home Documentation Application hosting Blockchain Node Engine Reference Send feedback Method: projects.locations.blockchainNodes.get Stay organized with collections Save and categorize content based on your preferences.
-- IAM Permissions Requires the following IAM permission on the name resource: blockchainnodeengine.blockchainNodes.get For more information, see the IAM documentation .
-- HTTP request GET https://blockchainnodeengine.googleapis.com/v1/{name=projects/ /locations/ /blockchainNodes/ } The URL uses gRPC Transcoding syntax.
-- The fully qualified name of the blockchain node to fetch. e.g. projects/my-project/locations/us-central1/blockchainNodes/my-node .
+- Allocation quotas The following quotas don't reset over time and instead are released when you release the resource: Quotas Value Blockchain nodes per project per location 24 Ethereum archive nodes per project per location 12 Ethereum full nodes per project per location 16 Polygon sentry archive nodes per project per location 12 Polygon sentry full nodes per project per location 16 Rate quotas The following quotas apply to Blockchain Node Engine requests: Quota Value Blockchain node API per minute per project 38,400 Control plane API per minute per project 240 Request a quota increase To adjust most quotas, use the Google Cloud console.
+- Quotas apply to a range of resource types, including hardware, software, and network components.
 

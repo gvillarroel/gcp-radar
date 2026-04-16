@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.400Z"
+generated_at: "2026-04-14T11:18:28.049Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Cloud Bigtable regional replication (beta)"
 feature_slug: "cloud-bigtable-regional-replication-beta"
 latest_feature_date: "2018-04-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings"
+  - "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
 keywords:
+  - "replicating"
   - "replication"
+  - "automatically"
   - "regional"
   - "available"
-  - "bigtable"
   - "beta"
   - "became"
-  - "for"
-  - "in"
 ---
 
 # Cloud Bigtable regional replication (beta)
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +37,13 @@ Regional replication for Cloud Bigtable became available in beta, automatically 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings)
+- [https://docs.cloud.google.com/bigtable/docs/dynamodb-users](https://docs.cloud.google.com/bigtable/docs/dynamodb-users)
 
 ## Supporting Pages
 
@@ -52,7 +51,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 224
+- Final score: 110
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +64,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient](https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient)
 - Source ID: `site-python-reference`
-- Final score: 224
+- Final score: 110
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +73,16 @@ Evidence snippets:
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import bigtable admin v2 from google.iam.v1 import iam policy pb2 # type: ignore def sample test iam permissions(): Create a client client = bigtable admin v2.
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import bigtable admin v2 from google.iam.v1 import iam policy pb2 # type: ignore def sample get iam policy(): Create a client client = bigtable admin v2.
 
-### "Class BigtableInstanceAdminSettings (2.74.0) \_|\_ Java client libraries\
+### Migrate from DynamoDB to Bigtable \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings)
-- Source ID: `site-java-reference`
-- Final score: 196
+- URL: [https://docs.cloud.google.com/bigtable/docs/dynamodb-users](https://docs.cloud.google.com/bigtable/docs/dynamodb-users)
+- Source ID: `site-docs-reference-2`
+- Final score: 94
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Parameters Name Description hostname String port int Returns Type Description BigtableInstanceAdminSettings.Builder Methods getCredentialsProvider() public CredentialsProvider getCredentialsProvider () Gets the credentials provider to use for getting the credentials to make calls with.
-- Parameter Name Description port int Returns Type Description BigtableInstanceAdminSettings.Builder newBuilderForEmulator(String hostname, int port) public static BigtableInstanceAdminSettings .
-- Builder newBuilderForEmulator ( String hostname , int port ) Creates a new builder preconfigured to connect to the Bigtable emulator with host name and port number.
-- Returns Type Description BigtableInstanceAdminSettings.Builder newBuilderForEmulator(int port) public static BigtableInstanceAdminSettings .
+- Replication: A way to increase the availability and durability of your data by automatically propagating data changes across multiple regions or multiple zones within the same region.
+- Geographic replication Replication is used to support customer requirements for the following: High availability for business continuity in the event of a zonal or regional failure.
+- There are no network replication costs for regional replication across zones.
+- You don't have to use an UploadDate column or calculate a reverse timestamp and make that your sort key, either, because Bigtable timestamps give you the reverse chronologically ordered comments automatically.
 

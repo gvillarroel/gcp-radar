@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/filestore/docs/backups-best-practices
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/filestore/docs/create-instance-console
+entrypoint: https://docs.cloud.google.com/filestore/docs/access-control
 source_metadata:
   url: https://docs.cloud.google.com/filestore/docs/backups-best-practices
   title: "Best practices for creating backups \_|\_ Filestore \_|\_ Google Cloud Documentation"

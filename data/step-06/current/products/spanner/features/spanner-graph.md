@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.887Z"
+generated_at: "2026-04-13T22:42:27.216Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner Graph"
@@ -9,18 +9,17 @@ latest_feature_date: "2024-08-01"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/graph/overview"
-  - "https://docs.cloud.google.com/spanner/docs/reference/standard-sql/graph-intro"
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
+  - "https://docs.cloud.google.com/spanner/docs/graph/iso-standards"
+  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient"
 keywords:
-  - "spanner"
-  - "graph"
-  - "introduced"
-  - "in"
-  - "preview"
-  - "adding"
   - "purpose"
   - "built"
+  - "adding"
+  - "introduced"
+  - "database"
+  - "preview"
+  - "graph"
 ---
 
 # Spanner Graph
@@ -38,49 +37,53 @@ Introduced Spanner Graph in preview, adding purpose-built graph database capabil
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/graph/overview](https://docs.cloud.google.com/spanner/docs/graph/overview)
-- [https://docs.cloud.google.com/spanner/docs/reference/standard-sql/graph-intro](https://docs.cloud.google.com/spanner/docs/reference/standard-sql/graph-intro)
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
+- [https://docs.cloud.google.com/spanner/docs/graph/iso-standards](https://docs.cloud.google.com/spanner/docs/graph/iso-standards)
+- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient)
 
 ## Supporting Pages
 
-### Spanner Graph overview | Google Cloud Documentation
+### Spanner Graph and ISO standards \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/spanner/docs/graph/overview](https://docs.cloud.google.com/spanner/docs/graph/overview)
-- Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Spanner Graph overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/graph/overview Documentation · Databases · Spanner · Guides · Send feedback · PostgreSQL interface note: The examples in topics for Spanner Graph are intended for GoogleSQL-dialect databases.
-- Spanner Graph doesn&#x27;t support the PostgreSQL interface.
-- For more information, see the Spanner editions overview.
-- Note: This feature is available with the Spanner Enterprise edition and Enterprise Plus edition.
-
-### GQL overview | Spanner | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/standard-sql/graph-intro](https://docs.cloud.google.com/spanner/docs/reference/standard-sql/graph-intro)
+- URL: [https://docs.cloud.google.com/spanner/docs/graph/iso-standards](https://docs.cloud.google.com/spanner/docs/graph/iso-standards)
 - Source ID: `site-docs-reference`
-- Final score: 96
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 131
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- GQL overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/standard-sql/graph-intro Documentation · Databases · Spanner · Reference · Send feedback · Graph Query Language (GQL) is a language designed to query graph data.
-- In GQL, a statement refers to a complete unit of execution, and a clause represents a modifier to statements.
+- Spanner Graph is based on two ISO standards: ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) , Edition 1, 2023 ISO/IEC 39075:2024 - Information technology — Database languages — GQL , Edition 1, 2024 The following tables describe the high-level relationship between SQL/PGQ, GQL, and how Spanner Graph supports these standards.
+- Home Documentation Databases Spanner Reference Send feedback Spanner Graph and ISO standards Stay organized with collections Save and categorize content based on your preferences.
+- The page describes how Spanner Graph supports the ISO international standard query language for graph databases.
+- Standard SQL/PGQ GQL Spanner Graph Query Graph pattern matching capabilities Shares the core Graph Pattern Matching Language (GPML) functionalities with GQL.
 
-### django_spanner.operations — google-cloud-spanner-django documentation
+### "Class DatabaseAdminAsyncClient (3.63.0) \_|\_ Python client libraries \_\
 
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
+- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 92
+- Final score: 125
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
+- InternalUpdateGraphOperationRequest ( database="database value", operation id="operation id value", vm identity token="vm identity token value", ) Make the request response = await client. internal update graph operation (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.spanner admin database v1.types.InternalUpdateGraphOperationRequest , dict]] The request object.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import spanner admin database v1 async def sample internal update graph operation(): Create a client client = spanner admin database v1.
+- Returns Type Description google.cloud.spanner admin database v1.types.InternalUpdateGraphOperationResponse Internal response proto, do not use directly. list backup operations list backup operations ( request : typing .
+- InternalUpdateGraphOperationRequest , dict , ] ] = None , , database : typing .
+
+### "Class DatabaseAdminClient (3.63.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient)
+- Source ID: `site-python-reference`
+- Final score: 125
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import spanner admin database v1 def sample internal update graph operation(): Create a client client = spanner admin database v1.
+- InternalUpdateGraphOperationRequest ( database="database value", operation id="operation id value", vm identity token="vm identity token value", ) Make the request response = client. internal update graph operation (request=request) Handle the response print(response) Parameters Name Description request Union[ google.cloud.spanner admin database v1.types.InternalUpdateGraphOperationRequest , dict] The request object.
+- Returns Type Description google.cloud.spanner admin database v1.types.InternalUpdateGraphOperationResponse Internal response proto, do not use directly. list backup operations list backup operations ( request : typing .
+- InternalUpdateGraphOperationRequest , dict , ] ] = None , , database : typing .
 

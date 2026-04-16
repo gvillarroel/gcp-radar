@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.769Z"
+generated_at: "2026-04-12T12:16:18.949Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Anthos clusters on VMware"
@@ -9,9 +9,10 @@ latest_feature_date: "2022-06-01"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
 keywords:
   - "anthos"
   - "clusters"
@@ -38,21 +39,36 @@ A managed Anthos Kubernetes deployment for VMware vSphere; A managed Anthos Kube
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
 
 ## Supporting Pages
+
+### "Impact of temporary disconnection from Google Cloud \_|\_ Google Distributed\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
+- Source ID: `site-docs-reference`
+- Final score: 248
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This document outlines the impact of a loss of connectivity for clusters in a Distributed Cloud software-only deployment (on bare metal or on VMware), and which workarounds you can use in this event.
+- Unlimited - Viewing cluster status You can see information about your clusters in the console, in the list of Google Kubernetes Engine clusters.
+- Unlimited - Networking and network services This section covers the networking and network services for on-premises clusters, including how they are impacted by a temporary disconnection from Google Cloud.
+- Zero None Support This section covers the scenarios that you might have to go through while interacting with Google Cloud support or your operating partner for a case related to your GKE on GDC clusters.
 
 ### "GKE deployment options \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - Source ID: `site-docs-reference`
-- Final score: 206
+- Final score: 245
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -62,24 +78,11 @@ Evidence snippets:
 - This page shows the Google Cloud features that are available on each of the following environments: Google Kubernetes Engine (GKE) on Google Cloud Google Distributed Cloud (GKE on-premises): On VMware On bare metal Google Distributed Cloud connected deployments GKE Multi-Cloud: GKE on AWS GKE on Azure GKE attached clusters , which are third-party Kubernetes clusters registered to your fleet .
 - Feature Available on GKE standard clusters Available on Autopilot clusters Available without fleet membership Config Sync Policy Controller Config Controller Cloud Service Mesh in-cluster Managed Cloud Service Mesh Knative serving Migrate to Containers GKE Identity Service Binary Authorization Multi Cluster Ingress Cloud Logging and Cloud Monitoring for GKE system components Advanced security posture and compliance monitoring Node to node encryption FQDN network policies Features available on clusters outside of Google Cloud The following tables show which key Google Cloud and GKE features are available on clusters outside of Google Cloud.
 
-### "Impact of temporary disconnection from Google Cloud \_|\_ Google Distributed\
-
-- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
-- Source ID: `site-docs-reference`
-- Final score: 196
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- This document outlines the impact of a loss of connectivity for clusters in a Distributed Cloud software-only deployment (on bare metal or on VMware), and which workarounds you can use in this event.
-- Unlimited - Viewing cluster status You can see information about your clusters in the console, in the list of Google Kubernetes Engine clusters.
-- Unlimited - Networking and network services This section covers the networking and network services for on-premises clusters, including how they are impacted by a temporary disconnection from Google Cloud.
-- Zero None Support This section covers the scenarios that you might have to go through while interacting with Google Cloud support or your operating partner for a case related to your GKE on GDC clusters.
-
 ### "Grant support read-only access to clusters \_|\_ Google Kubernetes Engine\
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 192
+- Final score: 238
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -88,4 +91,18 @@ Evidence snippets:
 - For more information about support, see: Get support for clusters on bare metal Get support for clusters on VMware Before you begin Ensure that you have the following command line tools installed: Google Cloud CLI with an earliest version of 486.0.0 for enabling access.
 - If you need to install the Google Cloud CLI, see the installation guide . kubectl for running commands against Kubernetes clusters.
 - Manage Support access for the cluster To enable Support access for the cluster, you run a gcloud command that propagates a set of read-only Kubernetes role-based access control (RBAC) policies to the target cluster.
+
+### "Reference architecture: Hybrid environment for Google Kubernetes Engine\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment)
+- Source ID: `site-docs-reference`
+- Final score: 215
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback Reference architecture: Hybrid environment for Google Kubernetes Engine clusters Stay organized with collections Save and categorize content based on your preferences.
+- This page is for Cloud architects who want to design and build a a hybrid environment for Google Kubernetes Engine clusters.
+- This reference architecture focuses on the following aspects of an GKE hybrid environment that uses Google Distributed Cloud on VMware or bare metal: Architecture and components Example reference deployments Design prerequisites, including Google Cloud regions and sites, on-premises setup, and networking.
+- This reference architecture shows you how to integrate Google Cloud-based services with on-premises deployments of Google Distributed Cloud software only on VMware or bare metal.
 

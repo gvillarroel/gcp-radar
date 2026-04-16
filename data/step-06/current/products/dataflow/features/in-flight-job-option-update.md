@@ -1,20 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.810Z"
+generated_at: "2026-04-15T12:05:13.775Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "In-flight job option update"
 feature_slug: "in-flight-job-option-update"
 latest_feature_date: "2023-08-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development"
-  - "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3"
 keywords:
-  - "in"
   - "flight"
   - "job"
   - "option"
@@ -22,12 +20,13 @@ keywords:
   - "dataflow"
   - "lets"
   - "users"
+  - "streaming"
 ---
 
 # In-flight job option update
 
 Product: Dataflow
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,67 +38,55 @@ Dataflow lets users update streaming job options without stopping the running jo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
-- [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template)
-- [https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline](https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline)
-- [https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job](https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job)
+- [https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes](https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes)
+- [https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines](https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3)
 
 ## Supporting Pages
 
-### "Develop Apache Beam notebooks with the interactive runner \_|\_ Cloud Dataflow\
+### "Set the pipeline streaming mode \_|\_ Cloud Dataflow \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Leave the parameter list empty to return the recording status of all pipelines. ib . recordings . describe ( p ) The describe() method provides the following details: Total size (in bytes) of all of the recordings for the pipeline on disk Start time of when the background recording job started (in seconds from Unix epoch) Current pipeline status of the background recording job Python variable for the pipeline Launch Dataflow jobs from a pipeline created in your notebook Optional: Before using your notebook to run Dataflow jobs, restart the kernel, rerun all cells, and verify the output.
-- This step runs your job on the Dataflow service. runner = DataflowRunner () runner . run pipeline ( p , options = options ) p is a pipeline object from Creating your pipeline .
-- PipelineOptions () Set the project to the default project in your current Google Cloud environment. , options . view as ( GoogleCloudOptions ) . project = google . auth . default () Set the Google Cloud region to run Dataflow. options . view as ( GoogleCloudOptions ) . region = 'us-central1' Choose a Cloud Storage location. dataflow gcs location = 'gs://<change me>/dataflow' Set the staging location.
-- This location is used to store temporary files or intermediate results before outputting to the sink. options . view as ( GoogleCloudOptions ) . temp location = ' %s /temp' % dataflow gcs location If and only if you are using Apache Beam SDK built from source code, set the SDK location.
-
-### "Quickstart: Create a streaming pipeline using a Dataflow template \_|\_\
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes](https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes)
+- Source ID: `site-docs-reference-2`
+- Final score: 123
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Note: Unless specified through the network option, the Dataflow runner runs jobs in the default Virtual Private Cloud network.
-- To ensure that the Compute Engine default service account has the necessary permissions to run the Dataflow job, ask your administrator to grant the following IAM roles to the Compute Engine default service account on your project: Important: You must grant these roles to the Compute Engine default service account, not to your user account.
-- Delete the individual resources If you want to keep the Google Cloud project that you used in this quickstart, then delete the individual resources: Go to the Dataflow Jobs page.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Java --dataflowServiceOptions=streaming mode at least once Python --dataflow service options=streaming mode at least once Go --dataflow service options=streaming mode at least once If you don't specify the streaming mode at least once option, then Dataflow uses exactly-once streaming mode.
+- If you set the streaming mode at least once option, Dataflow automatically enables Streaming Engine with resource-based billing .
+- Google-provided Dataflow templates automatically enable this option when you use at-least-once streaming.
+- REST Use the additionalExperiments field in the FlexTemplateRuntimeEnvironment (Flex templates) or RuntimeEnvironment (classic templates) object. { addi t io nal Experime nts : [ "streaming mode at least once" ] ... } Custom templates If you create a custom template that supports at-least-once processing, add the following top-level fields to the template metadata file: { "streaming" : true , "supportsAtLeastOnce" : true , "supportsExactlyOnce" : true , "defaultStreamingMode" : "AT LEAST ONCE" } These metadata fields enable users to select the streaming mode when deploying the template in the Google Cloud console.
 
-### Deploy Dataflow pipelines \_|\_ Google Cloud Documentation
+### Develop and test Dataflow pipelines \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline](https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline)
-- Source ID: `site-docs-root`
-- Final score: 172
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- If you want to override the pipeline validation and launch your job with validation errors, use the following pipeline service option : Java --dataflowServiceOptions = enable preflight validation = false Python --dataflow service options = enable preflight validation = false Go --dataflow service options = enable preflight validation = false Set pipeline options You can control some aspects of how Dataflow runs your job by setting pipeline options in your Apache Beam pipeline code.
-- In your terminal, run the following command: python -m apache beam.examples.wordcount \ --region DATAFLOW REGION \ --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output gs:// STORAGE BUCKET /results/outputs \ --runner DataflowRunner \ --project PROJECT ID \ --temp location gs:// STORAGE BUCKET /tmp/ Replace the following: DATAFLOW REGION : the region where you want to deploy the Dataflow job—for example, europe-west1 The --region flag overrides the default region that is set in the metadata server, your local client, or environment variables.
-- Dataflow fully manages Google Cloud services for you, such as Compute Engine and Cloud Storage to run your Dataflow job, and automatically spins up and tears down necessary resources.
-- If the Cloud Resource Manager API is enabled for your project, the pipeline validation tests check whether you have the project-level configurations needed to run your Dataflow job.
-
-### "Create a custom job with the job builder \_|\_ Cloud Dataflow \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job](https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job)
-- Source ID: `site-docs-root-2`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines](https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 119
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Run the pipeline To run a pipeline from the job builder, perform the following steps: Optional: Set Dataflow job options.
-- The job builder lets you create custom batch and streaming Dataflow jobs.
-- Run the following command in your shell or terminal: gcloud dataflow yaml run my-job-builder-job --yaml-pipeline-file = YAML FILE PATH Replace YAML FILE PATH with the path of your YAML file, either locally or in Cloud Storage.
-- What's next Use the Dataflow job monitoring interface .
+- If you run the pipeline asynchronously, you can use the returned PipelineResult instance to cancel execution of the pipeline, as shown in the following code example: public interface StreamingIntegrationTestOptions extends DirectOptions , StreamingOptions , MyOtherPipelineOptions { ... } @Rule public final transient TestPipeline p = TestPipeline . create (); @Test @Category ( NeedsRunner . class ) public void testNonBlockingPipeline () { StreamingIntegrationTestOptions options = p . getOptions (). as ( StreamingIntegrationOptions . class ); options . setBlockOnRun ( false ); // Set non - blocking pipeline execution options . setStreaming ( true ); // Set streaming mode p . apply (...); // Apply pipeline transformations PipelineResult result = p . run (); // Run the pipeline // Generate input , verify output , etc ... // Later on , cancel the pipeline using the previously returned result . cancel (); } End-to-end tests End-to-end tests verify the correct operation of your end-to-end pipeline by running it on the Dataflow Runner under conditions that closely resemble production.
+- For streaming pipelines, you can also run end-to-end tests using generated data, for example, using the Dataflow Streaming Data Generator to emulate production-like data characteristics and volumes.
+- For system integration testing of streaming pipelines, you can use the setBlockOnRun method (defined in the DirectOptions interface) to have the Direct Runner run your pipeline asynchronously.
+- It's important to test and verify update procedures for streaming pipelines, particularly if you need to coordinate multiple steps, such as when running parallel pipelines to avoid downtime.
+
+### "Package com.google.dataflow.v1beta3 (0.92.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3)
+- Source ID: `site-java-reference`
+- Final score: 115
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Topology Config Global topology of the streaming Dataflow job, including all computations and their sharded locations. com. google. dataflow. v1beta3.
+- Stream Location Describes a stream of data, either as input to be processed or as output of a streaming Dataflow job. com. google. dataflow. v1beta3.
+- Streaming Stage Location Identifies the location of a streaming computation stage, for stage-to-stage communication. com. google. dataflow. v1beta3.
+- Pubsub Location Identifies a pubsub location to use for transferring data into or out of a streaming Dataflow job. com. google. dataflow. v1beta3.
 

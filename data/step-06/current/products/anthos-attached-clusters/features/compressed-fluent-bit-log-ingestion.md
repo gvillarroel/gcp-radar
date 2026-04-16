@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.692Z"
+generated_at: "2026-04-15T00:04:29.450Z"
 product_name: "Anthos Attached Clusters"
 product_slug: "anthos-attached-clusters"
 feature_name: "Compressed Fluent Bit log ingestion"
 feature_slug: "compressed-fluent-bit-log-ingestion"
 latest_feature_date: "2023-09-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/install-cloud-logging"
-  - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/install-cloud-logging"
-  - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/install-cloud-logging"
+  - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions"
+  - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster"
+  - "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/cluster-prerequisites"
 keywords:
-  - "Fluent Bit compression"
-  - "compressed log ingestion"
-  - "gzip compression"
-  - "workload logs"
-  - "control plane logs"
-  - "Fluent Bit"
-  - "gzip logs"
-  - "Cloud Logging"
+  - "compression"
+  - "compressed"
+  - "ingestion"
+  - "fluent"
+  - "gzip"
+  - "enabled"
 ---
 
 # Compressed Fluent Bit log ingestion
 
 Product: Anthos Attached Clusters
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,59 +32,46 @@ Enabled gzip compression for Fluent Bit log ingestion into Cloud Logging for bot
 
 ## Extended Definition
 
-The cited Google Cloud documentation pages describe configuring Cloud Logging for GKE attached clusters (CNCF conformant, AKS, and EKS) so that Kubernetes container logs are collected and viewable in Cloud Logging. They list included namespaces and show how to access/query logs via Logs Explorer, but they do not provide evidence that these logs are ingested with Fluent Bit gzip compression specifically.
+Enabled gzip compression for Fluent Bit log ingestion into Cloud Logging for both control plane and workload logs.
 
 ## Evidence Summary
 
-The pages support only general attached-cluster Cloud Logging setup and log access, and do not corroborate the specific "Compressed Fluent Bit log ingestion" claim.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/install-cloud-logging](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/install-cloud-logging)
-- [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/install-cloud-logging](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/install-cloud-logging)
-- [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/install-cloud-logging](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/install-cloud-logging)
+- [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions)
+- [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster)
+- [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/cluster-prerequisites](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/cluster-prerequisites)
 
 ## Supporting Pages
 
-### "Install Cloud Logging on CNCF conformant attached clusters \_|\_ GKE attached\
+### "Supported Kubernetes cluster versions \_|\_ GKE attached clusters \_|\_\
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/install-cloud-logging](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/install-cloud-logging)
-- Source ID: `site-docs-root`
-- Final score: 40
-- Re-rank relevance: WEAK
-- Re-rank rationale: The page notes that attached clusters use a Fluent Bit DaemonSet for logging, but it does not discuss compressed (e.g., gzip) ingestion for control plane or workload logs.
-
-Evidence snippets:
-- Example 1: Get the logs of the gke-connect-agent container for an Google Cloud cluster CLUSTER NAME : resource.type = "k8s container" resource.labels.cluster name = "attachedClusters/ CLUSTER NAME " resource.labels.container name = "gke-connect-agent" What's next Cloud Logging overview Using the Logs Explorer Building queries for Cloud Logging Create logs-based metrics Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Specifically, containers running in the following namespaces are included: gke-connect gke-system gmp-system asm-user-auth cnrm-system config-management-system gatekeeper-system gmp-public istio-system knative-serving Find your logs in the Cloud Logging user interface You can view your logs using the Logs Explorer in the Cloud Logging user interface.
-- Access your logs There are several ways to access your GKE attached clusters logs in Cloud Logging: Logs Explorer – You can see your logs directly from the Logs Explorer by using the logging filters to select the Kubernetes resources, such as cluster, node, namespace, pod, or container logs.
-- Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE attached clusters Guides Send feedback Install Cloud Logging on CNCF conformant attached clusters Stay organized with collections Save and categorize content based on your preferences.
-
-### "Install Cloud Logging on AKS attached clusters \_|\_ GKE attached clusters\
-
-- URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/install-cloud-logging](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/install-cloud-logging)
-- Source ID: `site-docs-root`
-- Final score: 38
-- Re-rank relevance: WEAK
-- Re-rank rationale: The page states that GKE attached clusters uses a Fluent Bit logging agent and describes log capture modes, but it does not mention any gzip/compression or other Fluent Bit ingestion optimization.
+- URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions)
+- Source ID: `site-docs-reference`
+- Final score: 62
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Example 1: Get the logs of the gke-connect-agent container for an Google Cloud cluster CLUSTER NAME : resource.type = "k8s container" resource.labels.cluster name = "attachedClusters/ CLUSTER NAME " resource.labels.container name = "gke-connect-agent" What's next Cloud Logging overview Using the Logs Explorer Building queries for Cloud Logging Create logs-based metrics Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Specifically, containers running in the following namespaces are included: gke-connect gke-system gmp-system asm-user-auth cnrm-system config-management-system gatekeeper-system gmp-public istio-system knative-serving Find your logs in the Cloud Logging user interface You can view your logs using the Logs Explorer in the Cloud Logging user interface.
-- Access your logs There are several ways to access your GKE attached clusters logs in Cloud Logging: Logs Explorer – You can see your logs directly from the Logs Explorer by using the logging filters to select the Kubernetes resources, such as cluster, node, namespace, pod, or container logs.
-- Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE attached clusters Guides Send feedback Install Cloud Logging on AKS attached clusters Stay organized with collections Save and categorize content based on your preferences.
+- For more information see: Customize system components on AKS clusters Customize system components on EKS clusters Customize system components on CNCF conformant clusters Security Fixes Fixed CVE-2023-4039 Fixed CVE-2024-13176 Fixed CVE-2024-26462 Fixed CVE-2025-0395 Fixed CVE-2025-1390 Fixed CVE-2025-24528 Fixed CVE-2025-31115 Fixed CVE-2025-4207 1.30.0-gke.6 Security Fixes Fixed CVE-2020-13529 Fixed CVE-2021-33560 Fixed CVE-2022-4899 Fixed CVE-2023-5678 Fixed CVE-2024-0727 Fixed CVE-2024-12133 Fixed CVE-2024-12243 Fixed CVE-2024-2511 Fixed CVE-2024-4741 Fixed CVE-2024-5535 Fixed CVE-2024-9143 Fixed CVE-2025-1094 1.30.0-gke.5 Security Fixes Fixed CVE-2024-10976 Fixed CVE-2024-10977 Fixed CVE-2024-10978 Fixed CVE-2024-10979 1.30.0-gke.4 Breaking Change: GKE attached clusters validate that the following required services are enabled when creating or updating attached clusters: cloudresourcemanager.googleapis.com , monitoring.googleapis.com .
+- Security Fixes: Fixed CVE-2023-47108 Fixed CVE-2024-28834 Fixed CVE-2024-28835 Fixed CVE-2024-9143 Fixed GHSA-87m9-rv8p-rgmg Fixed GHSA-mh55-gqvf-xfwm 1.30.0-gke.2 Security Fixes: Fixed CVE-2023-47108 Fixed CVE-2024-7348 1.30.0-gke.1 Security Fixes: Fixed CVE-2024-0553 Fixed CVE-2024-0567 Fixed CVE-2024-37370 Fixed CVE-2024-37371 Kubernetes 1.29 1.29.0-gke.9 Security Fixes Fixed CVE-2020-13529 Fixed CVE-2021-33560 Fixed CVE-2022-4899 Fixed CVE-2023-5678 Fixed CVE-2024-0727 Fixed CVE-2024-12133 Fixed CVE-2024-12243 Fixed CVE-2024-2511 Fixed CVE-2024-4741 Fixed CVE-2024-5535 Fixed CVE-2024-9143 Fixed CVE-2025-1094 1.29.0-gke.8 Security Fixes Fixed CVE-2024-10976 Fixed CVE-2024-10977 Fixed CVE-2024-10978 Fixed CVE-2024-10979 1.29.0-gke.7 Breaking Change: GKE attached clusters validate that the following required services are enabled when creating or updating attached clusters: cloudresourcemanager.googleapis.com , monitoring.googleapis.com .
+- For more information see: Customize system components on AKS clusters Customize system components on EKS clusters Customize system components on CNCF conformant clusters Security Fixes Fixed CVE-2023-4039 Fixed CVE-2024-13176 Fixed CVE-2024-26462 Fixed CVE-2025-0395 Fixed CVE-2025-1390 Fixed CVE-2025-24528 Fixed CVE-2025-31115 Fixed CVE-2025-4207 1.31.0-gke.3 Security Fixes Fixed CVE-2020-13529 Fixed CVE-2021-33560 Fixed CVE-2022-4899 Fixed CVE-2023-5678 Fixed CVE-2024-0727 Fixed CVE-2024-12133 Fixed CVE-2024-12243 Fixed CVE-2024-2511 Fixed CVE-2024-4741 Fixed CVE-2024-5535 Fixed CVE-2024-9143 Fixed CVE-2025-1094 1.31.0-gke.2 Security Fixes Fixed CVE-2024-10976 Fixed CVE-2024-10977 Fixed CVE-2024-10978 Fixed CVE-2024-10979 1.31.0-gke.1 Breaking Change: GKE attached clusters validate that the following required services are enabled when creating or updating attached clusters: anthos.googleapis.com .
+- Security Fixes Fixed CVE-2025-12817 Fixed CVE-2025-12818 Fixed CVE-2025-9230 Fixed CVE-2025-9232 1.33.0-gke.1 Security Fixes Fixed CVE-2025-32988 Fixed CVE-2025-32989 Fixed CVE-2025-32990 Fixed CVE-2025-3576 Fixed CVE-2025-4802 Fixed CVE-2025-6395 Fixed CVE-2025-8713 Fixed CVE-2025-8714 Fixed CVE-2025-8715 Kubernetes 1.32 1.32.0-gke.3 Breaking Change: GKE attached clusters no longer validate that the anthos.googleapis.com service is enabled when creating or updating a cluster.
 
-### "Install Cloud Logging on EKS attached clusters \_|\_ GKE attached clusters\
+### "Attach your CNCF conformant cluster \_|\_ GKE attached clusters \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/install-cloud-logging](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/install-cloud-logging)
+- URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster)
 - Source ID: `site-docs-root`
-- Final score: 38
-- Re-rank relevance: WEAK
-- Re-rank rationale: The page confirms attached clusters use a Fluent Bit Daemonset for log collection, but it does not mention gzip/compressed ingestion or control-plane/workload compression behavior.
+- Final score: 54
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- Example 1: Get the logs of the gke-connect-agent container for an Google Cloud cluster CLUSTER NAME : resource.type = "k8s container" resource.labels.cluster name = "attachedClusters/ CLUSTER NAME " resource.labels.container name = "gke-connect-agent" What's next Cloud Logging overview Using the Logs Explorer Building queries for Cloud Logging Create logs-based metrics Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Specifically, containers running in the following namespaces are included: gke-connect gke-system gmp-system asm-user-auth cnrm-system config-management-system gatekeeper-system gmp-public istio-system knative-serving Find your logs in the Cloud Logging user interface You can view your logs using the Logs Explorer in the Cloud Logging user interface.
-- Access your logs There are several ways to access your GKE attached clusters logs in Cloud Logging: Logs Explorer – You can see your logs directly from the Logs Explorer by using the logging filters to select the Kubernetes resources, such as cluster, node, namespace, pod, or container logs.
-- Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE attached clusters Guides Send feedback Install Cloud Logging on EKS attached clusters Stay organized with collections Save and categorize content based on your preferences.
+### "Prerequisites for your AKS attached cluster \_|\_ GKE attached clusters\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/cluster-prerequisites](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/cluster-prerequisites)
+- Source ID: `site-docs-reference`
+- Final score: 46
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

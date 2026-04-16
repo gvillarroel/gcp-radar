@@ -169,7 +169,7 @@ bqclient . create_dataset ( "bqml_tutorial" , exists_ok = True )
 Visualize the input data
 Before creating the model, you can optionally visualize your input
 time series data to get a sense of the distribution. You can do this by using
-Looker Studio.
+Data Studio.
 SQL
 The SELECT statement of the following query uses the
 EXTRACT function
@@ -186,9 +186,9 @@ FROM
 `bigquery-public-data.new_york.citibike_trips`
 GROUP BY date ;
 When the query completes, click Open in >
-Looker Studio . Looker Studio opens in
+Data Studio . Data Studio opens in
 a new tab. Complete the following steps in the new tab.
-In the Looker Studio, click Insert >
+In Data Studio, click Insert >
 Time series chart .
 In the Chart pane, choose the Setup tab.
 In the Metric section, add the num_trips field,
@@ -633,6 +633,6 @@ Learn how to hierarchically forecast multiple time series with a univariate mode
 For an overview of BigQuery ML, see Introduction to AI and ML in BigQuery .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

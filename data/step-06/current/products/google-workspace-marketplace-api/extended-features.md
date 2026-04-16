@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2026-01-08 | License notifications | LOW | [source](https://developers.google.com/workspace/marketplace/about-app-review)<br>[source](https://developers.google.com/workspace/marketplace/example-calls-marketplace-api)<br>[source](https://developers.google.com/workspace/marketplace/list-multiple-app-integrations) | The License notifications feature provided the licenseNotification resource and the licenseNotification.list method for retrieving licensing notifications for a given app; deprecated on 2026-01-08. |
+| 2026-01-08 | License notifications | MEDIUM | [source](https://developers.google.com/workspace/marketplace/about-app-review)<br>[source](https://developers.google.com/workspace/marketplace/example-calls-marketplace-api)<br>[source](https://developers.google.com/workspace/marketplace/list-multiple-app-integrations)<br>[source](https://developers.google.com/workspace/marketplace/reference/rest/v2/customerLicense) | The License notifications feature provided the licenseNotification resource and the licenseNotification.list method for retrieving licensing notifications for a given app; deprecated on 2026-01-08. |
 

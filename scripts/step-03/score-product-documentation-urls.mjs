@@ -258,6 +258,279 @@ const canonicalFamilies = {
       [/^\/java\/docs\/reference\/google-cloud-dataplex\/latest\/overview$/, "java_reference"],
     ],
   },
+  "google-kubernetes-engine": {
+    preferredPaths: [
+      "/kubernetes-engine/docs",
+      "/kubernetes-engine/docs/reference/mcp",
+      "/kubernetes-engine/docs/reference/api-organization",
+      "/kubernetes-engine/docs/reference/api-permissions",
+      "/kubernetes-engine/docs/how-to/provisioningrequest",
+      "/kubernetes-engine/docs/integrations/ai-infra",
+    ],
+    forbiddenPaths: [
+      "/apigee/",
+      "/appengine/",
+      "/dataproc/",
+      "/dialogflow/",
+      "/composer/",
+      "/alloydb/",
+    ],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/kubernetes-engine/docs "Google Kubernetes Engine" OR "GKE"',
+      () => 'site:docs.cloud.google.com/kubernetes-engine/docs/reference/mcp "MCP" OR "Model Context Protocol"',
+      () => 'site:docs.cloud.google.com/kubernetes-engine/docs/reference/api-organization "organization policies" OR "MCP use"',
+      () => 'site:docs.cloud.google.com/kubernetes-engine/docs/reference/api-permissions "permissions" OR "organization"',
+      () => 'site:docs.cloud.google.com/kubernetes-engine/docs/how-to/provisioningrequest "provisioning request"',
+      () => 'site:docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra "AI infra"',
+    ],
+    classifications: [
+      [/^\/kubernetes-engine\/docs(?:$|\/(?:learn|overview)\/?$)/, "product_root"],
+      [/^\/kubernetes-engine\/docs\/reference\/mcp(?:\/|$)/, "api_reference"],
+      [/^\/kubernetes-engine\/docs\/reference\/api-organization(?:\/|$)/, "product_reference"],
+      [/^\/kubernetes-engine\/docs\/reference\/api-permissions(?:\/|$)/, "iam_reference"],
+      [/^\/kubernetes-engine\/docs\/how-to\/provisioningrequest(?:\/|$)/, "product_reference"],
+      [/^\/kubernetes-engine\/docs\/integrations\/ai-infra(?:\/|$)/, "product_reference"],
+    ],
+  },
+  "dataproc": {
+    preferredPaths: [
+      "/dataproc/docs",
+      "/dataproc/docs/reference",
+      "/dataproc/docs/guides/gemini-spark",
+      "/dataproc/docs/guides/performance-enhancements",
+      "/dataproc/docs/guides/dataproc-images",
+      "/dataproc/docs/guides/dataproc-metrics",
+      "/dataproc/docs/guides/dpgke/dataproc-gke-versions",
+      "/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster",
+      "/dataproc/docs/guides/create-cluster",
+      "/dataproc/docs/quickstarts/update-cluster-gcloud",
+      "/dataproc/docs/quickstarts/create-cluster-client-libraries",
+      "/dataproc/docs/concepts/iam/dataproc-principals",
+    ],
+    forbiddenPaths: [
+      "/dataproc-metastore/",
+      "/dataplex/",
+      "/alloydb/",
+      "/composer/",
+    ],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/dataproc/docs "Dataproc"',
+      () => 'site:docs.cloud.google.com/dataproc/docs/guides/gemini-spark "Serverless Spark" OR "Gemini Spark"',
+      () => 'site:docs.cloud.google.com/dataproc/docs/guides/performance-enhancements "autoscaling version selection"',
+      () => 'site:docs.cloud.google.com/dataproc/docs/guides/dataproc-images "conscrypt" OR "Dataproc Agent high availability"',
+      () => 'site:docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics "auto diagnostics"',
+      () => 'site:docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions "Dataproc on GKE"',
+      () => 'site:docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud "Dataproc"',
+      () => 'site:docs.cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals "Dataproc principals"',
+    ],
+    classifications: [
+      [/^\/dataproc\/docs(?:$|\/(overview|guides|reference)(?:\/|$))/, "product_root"],
+      [/^\/dataproc\/docs\/guides\/.+/, "product_reference"],
+      [/^\/dataproc\/docs\/quickstarts\/.+/, "product_reference"],
+      [/^\/dataproc\/docs\/concepts\/iam\/dataproc-principals(?:\/|$)/, "iam_reference"],
+      [/^\/dataproc\/docs\/reference(?:\/|$)/, "api_reference"],
+    ],
+  },
+  "alloydb": {
+    preferredPaths: [
+      "/alloydb/docs",
+      "/alloydb/docs/ai",
+      "/alloydb/docs/ai/data-agent-overview",
+      "/alloydb/docs/ai/alloydb-ai-use-cases",
+      "/alloydb/docs/ai/adaptive-filtering",
+      "/alloydb/docs/ai/ai-query-engine-landing",
+      "/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables",
+      "/alloydb/docs/ai/generate-multimodal-embeddings",
+      "/alloydb/docs/ai/generate-sql-queries-natural-language",
+      "/alloydb/docs/ai/perform-vector-search",
+      "/alloydb/docs/ai/run-hybrid-vector-similarity-search",
+      "/alloydb/docs/ai/create-scann-index",
+      "/alloydb/docs/ai/best-practices-tuning-scann",
+      "/alloydb/docs/ai/configure-vertex-ai",
+      "/alloydb/docs/reference/ai/hybrid-search-function-parameters",
+      "/alloydb/docs/reference/query-tuning-and-optimization",
+      "/alloydb/docs/reference/iam-roles-permissions",
+      "/alloydb/docs/quickstart/create-and-connect",
+    ],
+    forbiddenPaths: [
+      "/release-notes/",
+      "/dataplex/",
+      "/appengine/",
+      "/apigee/",
+    ],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/alloydb/docs "AlloyDB" overview OR ai',
+      () => 'site:docs.cloud.google.com/alloydb/docs/ai "AlloyDB AI" OR "data agent"',
+      () => 'site:docs.cloud.google.com/alloydb/docs/ai "hybrid_search" OR "ai.hybrid_search"',
+      () => 'site:docs.cloud.google.com/alloydb/docs/ai "AI.GENERATE" OR "Gemini 3.0 Flash"',
+      () => 'site:docs.cloud.google.com/alloydb/docs/ai "data residency" OR "VPC Service Controls"',
+      () => 'site:docs.cloud.google.com/alloydb/docs/ai "conversational analytics" OR "cache-aware query planning"',
+      () => 'site:docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization "query tuning"',
+      () => 'site:docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect "create and connect"',
+    ],
+    classifications: [
+      [/^\/alloydb\/docs(?:$|\/(?:overview|ai)(?:\/|$))/, "product_root"],
+      [/^\/alloydb\/docs\/ai\/.+/, "product_reference"],
+      [/^\/alloydb\/docs\/reference\/ai\/hybrid-search-function-parameters(?:\/|$)/, "api_reference"],
+      [/^\/alloydb\/docs\/reference\/query-tuning-and-optimization(?:\/|$)/, "product_reference"],
+      [/^\/alloydb\/docs\/reference\/iam-roles-permissions(?:\/|$)/, "iam_reference"],
+      [/^\/alloydb\/docs\/quickstart\/create-and-connect(?:\/|$)/, "product_reference"],
+    ],
+  },
+  "dialogflow": {
+    preferredPaths: [
+      "/dialogflow/cx/docs",
+      "/dialogflow/cx/docs/concept/region",
+      "/dialogflow/cx/docs/reference/rest/v3-overview",
+      "/dialogflow/cx/docs/reference/rest/v3/ConversationTurn",
+      "/dialogflow/cx/docs/concept/flow",
+      "/dialogflow/cx/docs/concept/conversation-history",
+      "/dialogflow/cx/docs/concept/audit-logging",
+      "/dialogflow/cx/docs/concept/advanced-speech",
+      "/dialogflow/cx/docs/concept/console-conversational-agents",
+      "/dialogflow/cx/docs/concept/data-store",
+      "/dialogflow/cx/docs/concept/data-store/handler",
+      "/dialogflow/cx/docs/concept/data-store/settings",
+      "/dialogflow/cx/docs/concept/data-store/search-configure",
+      "/dialogflow/es/docs/access-control",
+      "/dialogflow/es/docs/entities-options",
+      "/dialogflow/es/docs/entities-regexp",
+      "/dialogflow/docs/intents-actions-parameters",
+    ],
+    forbiddenPaths: [
+      "/release-notes/",
+      "/python/docs/reference/",
+      "/java/docs/reference/",
+    ],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/dialogflow/cx/docs "Dialogflow CX" region flow conversation history',
+      () => 'site:docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview "Dialogflow API"',
+      () => 'site:docs.cloud.google.com/dialogflow/cx/docs/concept/flow "draw.io" OR "flow export"',
+      () => 'site:docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech "long-utterance"',
+      () => 'site:docs.cloud.google.com/dialogflow/es/docs/access-control "Dialogflow ES" access control',
+      () => 'site:docs.cloud.google.com/dialogflow/docs/intents-actions-parameters "request.user-utterance"',
+    ],
+    classifications: [
+      [/^\/dialogflow\/cx\/docs(?:$|\/(?:basics|concept\/console-conversational-agents|concept\/region|concept\/flow|concept\/conversation-history|concept\/audit-logging|concept\/advanced-speech|concept\/data-store(?:\/.*)?)?(?:\/|$))/, "product_root"],
+      [/^\/dialogflow\/cx\/docs\/reference\/rest\/v3-overview(?:\/|$)/, "api_reference"],
+      [/^\/dialogflow\/cx\/docs\/reference\/rest\/v3\/ConversationTurn(?:\/|$)/, "api_reference"],
+      [/^\/dialogflow\/es\/docs\/access-control(?:\/|$)/, "iam_reference"],
+      [/^\/dialogflow\/es\/docs\/entities-(options|regexp)(?:\/|$)/, "product_reference"],
+      [/^\/dialogflow\/docs\/intents-actions-parameters(?:\/|$)/, "product_reference"],
+    ],
+  },
+  "apigee-ui": {
+    preferredPaths: [
+      "/apigee/docs/api-platform/fundamentals/ui-overview",
+      "/apigee/docs/api-platform/system-administration/manage-users",
+      "/apigee/docs/api-platform/system-administration/manage-users-roles",
+      "/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec",
+      "/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-api-key-validation",
+      "/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+      "/apigee/docs/api-platform/tutorials/view-with-trace",
+      "/apigee/docs/api-platform/tutorials/add-spike-arrest",
+      "/apigee/docs/api-platform/local-development/vscode/tutorial-create-workspace",
+      "/apigee/docs/api-platform/local-development/vscode/tutorial-create-proxy",
+      "/apigee/docs/api-platform/local-development/vscode/tutorial-change-target-endpoint",
+      "/apigee/docs/api-platform/local-development/vscode/tutorial-deploy",
+      "/apigee/docs/api-platform/local-development/vscode/tutorial-deploy-apigee",
+      "/apigee/docs/api-platform/local-development/vscode/tutorial-promote",
+      "/apigee/docs/api-platform/local-development/vscode/tutorial-test",
+      "/apigee/docs/apigee-mcp/apigee-mcp-quickstart",
+      "/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+    ],
+    forbiddenPaths: ["/apihub/", "/hybrid/", "/envoy-adapter/"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/apigee/docs/api-platform "Apigee UI" OR "API Products" OR "Display Name"',
+      () => 'site:docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview "UI overview"',
+      () => 'site:docs.cloud.google.com/apigee/docs/api-platform/tutorials "Display Name" OR "Name" OR "API Products"',
+      () => 'site:docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode "Create workspace" OR "Deploy"',
+      () => 'site:docs.cloud.google.com/apigee/docs/apigee-mcp "Apigee MCP"',
+      () => 'site:docs.cloud.google.com/apigee/docs/api-platform/service-extensions "extension processor"',
+    ],
+    classifications: [
+      [/^\/apigee\/docs\/api-platform\/fundamentals\/ui-overview(?:\/|$)/, "product_root"],
+      [/^\/apigee\/docs\/api-platform\/system-administration\/manage-users(?:\/|$)/, "iam_reference"],
+      [/^\/apigee\/docs\/api-platform\/system-administration\/manage-users-roles(?:\/|$)/, "iam_reference"],
+      [/^\/apigee\/docs\/api-platform\/tutorials\/.+/, "product_reference"],
+      [/^\/apigee\/docs\/api-platform\/local-development\/vscode\/.+/, "product_reference"],
+      [/^\/apigee\/docs\/apigee-mcp\/apigee-mcp-quickstart(?:\/|$)/, "product_reference"],
+      [/^\/apigee\/docs\/api-platform\/service-extensions\/extension-processor-quickstart(?:\/|$)/, "product_reference"],
+    ],
+  },
+  "earth-engine-code-editor": {
+    preferredPaths: [
+      "/earth-engine/guides",
+      "/earth-engine/guides/playground",
+      "/earth-engine/guides/debugging",
+      "/earth-engine/guides/client_server",
+      "/earth-engine/guides/auth",
+      "/earth-engine/guides/best_practices",
+      "/earth-engine/guides/command_line",
+      "/earth-engine/guides/python_install",
+      "/earth-engine/guides/apps",
+      "/earth-engine/guides/charts_style",
+      "/earth-engine/guides/charts_datatable",
+      "/earth-engine/guides/ee-vertex-migrate",
+      "/earth-engine/apidocs",
+    ],
+    forbiddenPaths: ["/earth-engine/docs/data-catalog", "/earth-engine/docs/js-client-lib", "/earth-engine/docs/python-client-lib"],
+    queryFamilies: [
+      () => 'site:developers.google.com/earth-engine/guides "Earth Engine Code Editor" playground debugging client_server',
+      () => 'site:developers.google.com/earth-engine/guides/auth "Code Editor" auth',
+      () => 'site:developers.google.com/earth-engine/guides/apps "Code Editor" app management',
+      () => 'site:developers.google.com/earth-engine/guides/charts_style "Code Editor" charts',
+      () => 'site:developers.google.com/earth-engine/apidocs "Code Editor" UI',
+    ],
+    classifications: [
+      [/^\/earth-engine(?:$|\/guides$)/, "product_root"],
+      [/^\/earth-engine\/guides\/(playground|debugging|client_server|auth|best_practices|command_line|python_install|apps)(?:\/|$)/, "product_reference"],
+      [/^\/earth-engine\/guides\/(charts_style|charts_datatable|ee-vertex-migrate)(?:\/|$)/, "product_reference"],
+      [/^\/earth-engine\/apidocs(?:\/|$)/, "api_reference"],
+    ],
+  },
+  "cloud-composer": {
+    preferredPaths: [
+      "/composer/docs",
+      "/composer/docs/airflow-configurations",
+      "/composer/docs/concepts/airflow-configurations",
+      "/composer/docs/composer-versions",
+      "/composer/docs/latest/use-monitoring-dashboard",
+      "/composer/docs/composer-2/override-airflow-configurations",
+      "/composer/docs/composer-1/access-airflow-web-interface",
+      "/composer/docs/composer-1/dag-serialization",
+      "/composer/docs/composer-1/known-issues",
+      "/composer/docs/composer-1/access-control",
+      "/composer/docs/composer-1/security-practices",
+      "/composer/docs/composer-1/configure-private-ip",
+      "/composer/docs/composer-1/cross-project-environment-monitoring-terraform",
+      "/composer/docs/composer-1/environment-scaling",
+      "/composer/docs/composer-1/install-plugins",
+      "/composer/docs/composer-1/enable-the-service",
+      "/composer/docs/reference/rest",
+      "/composer/docs/reference/rest/v1/projects.locations.environments",
+      "/composer/docs/reference/rest/v1/projects.locations.environments.workloads",
+      "/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsConfigMaps",
+      "/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsSecrets",
+    ],
+    forbiddenPaths: ["/apigee/", "/dataproc/", "/alloydb/"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/composer/docs "Cloud Composer"',
+      () => 'site:docs.cloud.google.com/composer/docs/airflow-configurations "store_serialized_dags" OR "store_dag_code"',
+      () => 'site:docs.cloud.google.com/composer/docs/composer-versions "Cloud Composer versions"',
+      () => 'site:docs.cloud.google.com/composer/docs/composer-2/override-airflow-configurations "override Airflow configurations"',
+      () => 'site:docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard "worker id filtering"',
+      () => 'site:docs.cloud.google.com/composer/docs/composer-1/dag-serialization "dag serialization"',
+    ],
+    classifications: [
+      [/^\/composer\/docs(?:$|\/(?:airflow-configurations|concepts\/airflow-configurations|composer-versions)\/?$)/, "product_root"],
+      [/^\/composer\/docs\/latest\/use-monitoring-dashboard(?:\/|$)/, "product_reference"],
+      [/^\/composer\/docs\/composer-2\/override-airflow-configurations(?:\/|$)/, "product_reference"],
+      [/^\/composer\/docs\/composer-1\/(?:access-airflow-web-interface|dag-serialization|known-issues|access-control|security-practices|configure-private-ip|cross-project-environment-monitoring-terraform|environment-scaling|install-plugins|enable-the-service)(?:\/|$)/, "product_reference"],
+      [/^\/composer\/docs\/reference\/rest(?:\/|$)/, "api_reference"],
+      [/^\/composer\/docs\/reference\/rest\/v1\/projects\.locations\.environments(?:\/|$)/, "api_reference"],
+    ],
+  },
   "apps-script": {
     preferredPaths: ["/apps-script", "/apps-script/overview", "/apps-script/reference", "/apps-script/guides", "/apps-script/concepts/scopes", "/apps-script/guides/services/authorization"],
     forbiddenPaths: ["/error-reporting/", "/logging/", "/monitoring/", "/appengine/", "/eventarc/", "/apigee/"],
@@ -1074,23 +1347,49 @@ const canonicalFamilies = {
   },
   "google-workspace-admin-sdk": {
     preferredPaths: [
+      "/workspace/admin/sdk",
+      "/workspace/admin/directory/reference/rest",
+      "/workspace/admin/reports/reference/rest",
+      "/workspace/admin/reports/v1/guides/manage-audit-login",
+      "/workspace/admin/reports/v1/appendix/activity/login",
+      "/workspace/admin/directory/v1/guides/authorizing",
+      "/workspace/admin/reports/auth",
+      "/workspace/admin/reports/v1/guides/authorizing",
       "/admin-sdk/overview",
       "/admin-sdk/reference-overview",
       "/admin-sdk/directory/reference/rest",
       "/admin-sdk/reports/reference/rest",
+      "/admin-sdk/reports/v1/guides/manage-audit-login",
+      "/admin-sdk/reports/v1/appendix/activity/login",
       "/admin-sdk/directory/v1/guides/authorizing",
       "/admin-sdk/reports/auth",
       "/admin-sdk/reports/v1/guides/authorizing",
     ],
     forbiddenPaths: ["/integration-connectors/", "/application-integration/", "/gemini/enterprise/docs/connectors/", "/resources/api-libraries/documentation/"],
     queryFamilies: [
+      () => 'site:developers.google.com/workspace/admin "Admin SDK" OR "Admin console"',
+      () => 'site:developers.google.com/workspace/admin "directory/reference/rest" OR "reports/reference/rest"',
+      () => 'site:developers.google.com/workspace/admin/reports/v1/guides "manage-audit-login"',
+      () => 'site:developers.google.com/workspace/admin/reports/v1/appendix/activity "login"',
+      () => 'site:developers.google.com/workspace/admin "directory/v1/guides/authorizing" OR "reports/auth" OR "reports/v1/guides/authorizing"',
       () => 'site:developers.google.com/admin-sdk "Admin SDK API overview" OR "Google Workspace Admin SDK"',
       () => 'site:developers.google.com/admin-sdk "reference-overview" OR "directory/reference/rest" OR "reports/reference/rest"',
+      () => 'site:developers.google.com/admin-sdk/reports/v1/guides "manage-audit-login"',
+      () => 'site:developers.google.com/admin-sdk/reports/v1/appendix/activity "login"',
       () => 'site:developers.google.com/admin-sdk "directory/v1/guides/authorizing" OR "reports/auth" OR "reports/v1/guides/authorizing"',
     ],
     classifications: [
+      [/^\/workspace\/admin\/sdk(?:\/|$)/, "product_root"],
+      [/^\/workspace\/admin\/reports\/v1\/guides\/manage-audit-login(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/admin\/reports\/v1\/appendix\/activity\/login(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/admin\/(directory|reports)\/reference\/rest(?:\/|$)/, "api_reference"],
+      [/^\/workspace\/admin\/directory\/v1\/guides\/authorizing(?:\/|$)/, "iam_reference"],
+      [/^\/workspace\/admin\/reports\/auth(?:\/|$)/, "iam_reference"],
+      [/^\/workspace\/admin\/reports\/v1\/guides\/authorizing(?:\/|$)/, "iam_reference"],
       [/^\/admin-sdk\/overview(?:\/|$)/, "product_root"],
       [/^\/admin-sdk\/reference-overview(?:\/|$)/, "product_reference"],
+      [/^\/admin-sdk\/reports\/v1\/guides\/manage-audit-login(?:\/|$)/, "product_reference"],
+      [/^\/admin-sdk\/reports\/v1\/appendix\/activity\/login(?:\/|$)/, "product_reference"],
       [/^\/admin-sdk\/(directory|reports)\/reference\/rest(?:\/|$)/, "api_reference"],
       [/^\/admin-sdk\/directory\/v1\/guides\/authorizing(?:\/|$)/, "iam_reference"],
       [/^\/admin-sdk\/reports\/auth(?:\/|$)/, "iam_reference"],
@@ -1104,12 +1403,20 @@ const canonicalFamilies = {
       "/workspace/gmail/api/reference/rest",
       "/workspace/gmail/api/auth/scopes",
       "/workspace/gmail/api/auth/web-server",
+      "/workspace/gmail/markup/overview",
+      "/workspace/gmail/markup/reference",
+      "/workspace/gmail/markup/highlights",
+      "/workspace/gmail/markup/actions/actions-overview",
+      "/workspace/gmail/markup/actions/declaring-actions",
     ],
     forbiddenPaths: ["/release-notes", "/gemini/enterprise/docs/connectors/gmail/", "/resources/api-libraries/documentation/gmail/", "/workspace/gmail/api/reference$"],
     queryFamilies: [
       () => 'site:developers.google.com/workspace/gmail/api "Gmail API overview" OR guides',
       () => 'site:developers.google.com/workspace/gmail/api "reference/rest" OR "Gmail API"',
       () => 'site:developers.google.com/workspace/gmail/api "auth/scopes" OR "web-server"',
+      () => 'site:developers.google.com/workspace/gmail/markup "Gmail markup" overview OR highlights',
+      () => 'site:developers.google.com/workspace/gmail/markup/reference "Order" OR "Parcel Delivery" OR "Event Reservation"',
+      () => 'site:developers.google.com/workspace/gmail/markup/actions "one-click action" OR "go-to action"',
     ],
     classifications: [
       [/^\/workspace\/gmail\/api\/guides(?:\/|$)/, "product_root"],
@@ -1117,6 +1424,45 @@ const canonicalFamilies = {
       [/^\/workspace\/gmail\/api\/reference\/rest(?:\/|$)/, "product_reference"],
       [/^\/workspace\/gmail\/api\/auth\/scopes(?:\/|$)/, "iam_reference"],
       [/^\/workspace\/gmail\/api\/auth\/web-server(?:\/|$)/, "iam_reference"],
+      [/^\/workspace\/gmail\/markup\/overview(?:\/|$)/, "product_root"],
+      [/^\/workspace\/gmail\/markup\/highlights(?:\/|$)/, "product_root"],
+      [/^\/workspace\/gmail\/markup\/getting-started(?:\/|$)/, "product_root"],
+      [/^\/workspace\/gmail\/markup\/actions\/actions-overview(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/gmail\/markup\/actions\/declaring-actions(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/gmail\/markup\/reference(?:\/|$)/, "product_reference"],
+    ],
+  },
+  "workflows": {
+    preferredPaths: [
+      "/workflows/docs",
+      "/workflows/docs/overview",
+      "/workflows/docs/apis",
+      "/workflows/docs/reference/googleapis",
+      "/workflows/docs/reference/stdlib/overview",
+      "/workflows/docs/authentication",
+      "/workflows/docs/access-control",
+      "/python/docs/reference/workflows/latest",
+      "/java/docs/reference/google-cloud-workflows/latest/overview",
+      "/java/docs/reference/google-cloud-workflow-executions/latest/overview",
+    ],
+    forbiddenPaths: ["/display-video/", "/developers.google.com/", "/release-notes", "/orchestration-airflow/"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/workflows/docs "Workflows documentation" OR overview',
+      () => 'site:docs.cloud.google.com/workflows/docs/apis "Workflows APIs and reference"',
+      () => 'site:docs.cloud.google.com/workflows/docs/reference/stdlib overview "Workflows"',
+      () => 'site:docs.cloud.google.com/workflows/docs/reference/googleapis "Workflows connectors reference"',
+      () => 'site:docs.cloud.google.com/workflows/docs/authentication "cross-project service account" "Workflows"',
+      () => 'site:docs.cloud.google.com/workflows/docs/access-control "Workflows roles and permissions"',
+    ],
+    classifications: [
+      [/^\/workflows\/docs(?:\/|$)/, "product_root"],
+      [/^\/workflows\/docs\/overview(?:\/|$)/, "product_root"],
+      [/^\/workflows\/docs\/apis(?:\/|$)/, "product_reference"],
+      [/^\/workflows\/docs\/authentication(?:\/|$)/, "product_reference"],
+      [/^\/workflows\/docs\/reference\/(googleapis|stdlib\/overview)(?:\/|$)/, "api_reference"],
+      [/^\/workflows\/docs\/access-control(?:\/|$)/, "iam_reference"],
+      [/^\/python\/docs\/reference\/workflows\/latest(?:\/|$)/, "python_reference"],
+      [/^\/java\/docs\/reference\/google-cloud-(workflows|workflow-executions)\/latest\/overview(?:\/|$)/, "java_reference"],
     ],
   },
   "google-meet": {
@@ -1514,18 +1860,64 @@ function familyRulesFor(slug) {
   if (s === "config-controller") return make(["/kubernetes-engine/config-controller/docs"], ["/kubernetes-engine/enterprise/config-controller/"], false);
   if (s === "cloud-service-mesh") return make(["/service-mesh/docs"], ["/service-mesh/v"], false);
   if (s === "managed-cloud-service-mesh") return make(["/service-mesh/docs", "/service-mesh/v"], ["/service-mesh/legacy/"], false);
-  if (s === "apigee-api-hub") return make(["/apigee/docs/apihub/", "/apigee/docs/api-platform/api-hub/", "/apigee/docs/api-hub/"], ["/eventarc/", "/logging/", "/monitoring/"]);
+  if (s === "apigee-api-hub") return make([
+    "/apigee/docs/apihub/",
+    "/apigee/docs/apihub/provision",
+    "/apigee/docs/apihub/manage-api-deployments",
+    "/apigee/docs/apihub/manage-attributes",
+    "/apigee/docs/apihub/create-dependency",
+    "/apigee/docs/apihub/api-supply-chain",
+    "/apigee/docs/apihub/vpc-service-control",
+    "/apigee/docs/apihub/configure-api-insights",
+    "/apigee/docs/apihub/view-api-security-scores",
+    "/apigee/docs/apihub/manage-mcp-tools",
+    "/apigee/docs/apihub/register-mcp-apis",
+    "/apigee/docs/api-platform/api-hub/",
+    "/apigee/docs/api-hub/",
+  ], ["/eventarc/", "/logging/", "/monitoring/", "/tutorials/"], false);
   if (s === "apigee-analytics") return make(["/apigee/docs/api-platform/analytics/", "/apigee/docs/api-platform/reference/analytics/"], ["/billing/", "/eventarc/", "/logging/", "/monitoring/"]);
-  if (s === "apigee-hybrid") return make(["/apigee/docs/hybrid/"], ["/apihub/", "/publish/", "/envoy-adapter/"], false);
-  if (s === "apigee-x") return make(["/apigee/docs/api-platform/get-started/", "/apigee/docs/api-platform/fundamentals/", "/apigee/docs/api-platform/security/", "/apigee/docs/api-platform/fundamentals/organization-structure"], ["/apihub/", "/hybrid/", "/publish/", "/envoy-adapter/"], false);
+  if (s === "apigee-hybrid") return make([
+    "/apigee/docs/hybrid/",
+    "/apigee/docs/hybrid/v1.14/forward-proxy",
+    "/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+    "/apigee/docs/hybrid/v1.16/configure-large-payload-support",
+    "/apigee/docs/hybrid/v1.14/guardrails",
+    "/apigee/docs/hybrid/v1.14/apigee-pull-push",
+    "/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+    "/apigee/docs/hybrid/supported-platforms",
+  ], ["/apihub/", "/publish/", "/envoy-adapter/", "/tutorials/", "/service-extensions/"], false);
+  if (s === "apigee-x") return make([
+    "/apigee/docs/api-platform/get-started/",
+    "/apigee/docs/api-platform/fundamentals/",
+    "/apigee/docs/api-platform/fundamentals/ui-overview",
+    "/apigee/docs/api-platform/fundamentals/organization-structure",
+    "/apigee/docs/api-platform/reference/variables-reference",
+    "/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+    "/apigee/docs/api-platform/reference/endpoint-properties-reference",
+    "/apigee/docs/reference/apis/apigee/rest",
+    "/apigee/docs/reference/apis/apigee/rest/v1/organizations.apps",
+    "/apigee/docs/locations",
+    "/apigee/docs/api-platform/get-started/drz-concepts",
+    "/apigee/docs/deprecations/apigee-classic-ui",
+    "/apigee/docs/api-platform/security/",
+  ], ["/apihub/", "/hybrid/", "/publish/", "/envoy-adapter/", "/tutorials/", "/service-extensions/"], false);
   if (s === "apigee-advanced-api-security") return make(["/apigee/docs/api-platform/security/", "/apigee/docs/api-platform/reference/manage-security-add-on"], ["/apihub/", "/hybrid/", "/publish/", "/envoy-adapter/"], false);
-  if (s === "apigee-integrated-portal") return make(["/apigee/docs/api-platform/publish/", "/apigee/docs/api-platform/publish/portal/"], ["/apihub/", "/hybrid/", "/envoy-adapter/"], false);
+  if (s === "apigee-integrated-portal") return make(["/apigee/docs/api-platform/publish/", "/apigee/docs/api-platform/publish/portal/", "/apigee/docs/api-platform/publish/publishing-overview"], ["/apihub/", "/hybrid/", "/envoy-adapter/"], false);
   if (s === "apigee-monetization") return make(["/apigee/docs/api-platform/monetization/"], ["/apihub/", "/hybrid/", "/envoy-adapter/"], false);
-  if (s === "apigee-integration") return make(["/apigee/docs/api-platform/integration/", "/apigee/docs/reference/apis/integrations/rest"], ["/integration-connectors/", "/apihub/"], false);
+  if (s === "apigee-integration") return make([
+    "/application-integration/docs/",
+    "/application-integration/docs/all-triggers-tasks",
+    "/application-integration/docs/data-mapping-functions-reference",
+    "/application-integration/docs/vpc-service-controls",
+    "/application-integration/docs/gcp-tasks/",
+    "/apigee/docs/reference/apis/integrations/rest",
+  ], ["/integration-connectors/", "/apihub/", "/service-extensions/", "/tutorials/"], false);
   if (s === "apigee-apim-operator") return make(["/apigee/docs/api-platform/apigee-kubernetes/"], ["/release/"], false);
   if (s === "vertex-ai-workbench") return make(["/vertex-ai/docs/workbench/"], ["/vertex-ai/docs/general/access-control", "/vertex-ai/docs/workbench/instances/iam", "/apigee/", "/logging/", "/monitoring/"]);
   if (s === "google-secops-siem") return make(["/chronicle/docs/", "/security-operations/docs/", "/security-operations/"], ["/apigee/", "/eventarc/", "/logging/", "/monitoring/"]);
-  if (s === "access-context-manager") return make(["/access-context-manager/docs/"], ["/vpc-service-controls/"]);
+  if (s === "access-context-manager") return make(["/access-context-manager/docs/", "/access-context-manager/docs/reference/rest", "/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage"], ["/vpc-service-controls/"], false);
+  if (s === "api-gateway") return make(["/api-gateway/docs/", "/api-gateway/docs/about-api-gateway", "/api-gateway/docs/creating-api-config", "/api-gateway/docs/secure-traffic-gcloud", "/api-gateway/docs/reference"], ["/apigee/", "/api-hub/"], false);
+  if (s === "address-validation-api") return make(["/maps/documentation/address-validation/", "/maps/documentation/address-validation/reference/rest", "/maps/documentation/address-validation/build-validation-logic", "/maps/documentation/address-validation/understand-response"], ["/places/", "/geocoding/", "/routes/"], false);
   if (s === "cloud-monitoring") return make(["/monitoring/", "/python/docs/reference/monitoring/", "/java/docs/reference/google-cloud-monitoring/"], ["/logging/"]);
   if (s === "cloud-logging") return make(["/logging/", "/python/docs/reference/logging/", "/java/docs/reference/google-cloud-logging/"], ["/monitoring/"]);
   if (s === "places-api") return make(["/maps/documentation/places/", "/python/places/", "/python/docs/reference/places/", "/java/docs/reference/google-cloud-places/"], ["/service-usage/", "/compute/", "/appengine/"]);
@@ -1538,6 +1930,8 @@ function familyRulesFor(slug) {
   if (s === "google-workspace-events-api") return make(["/workspace/events"], [], true);
   if (s === "google-workspace-add-ons") return make(["/workspace/add-ons"], [], false);
   if (s === "vertex-ai-agent-builder") return make(["/agent-builder/", "/agent-builder/authentication", "/agent-builder/agent-engine/manage/access", "/agent-builder/agent-engine/agent-identity", "/agent-builder/agent-development-kit/overview", "/agent-builder/agent-engine/develop/overview"], ["/generative-ai-app-builder/", "/retail/"], false);
+  if (s === "agent-assist") return make(["/agent-assist/docs/", "/agent-assist/docs/features", "/agent-assist/docs/generative-knowledge-assist", "/agent-assist/docs/custom-events", "/agent-assist/docs/adaptation-model-guide", "/agent-assist/docs/article-suggestion", "/agent-assist/docs/faq"], ["/dialogflow/", "/contact-center/", "/generative-ai-app-builder/"], false);
+  if (s === "ai-hypercomputer") return make(["/ai-hypercomputer/docs/", "/ai-hypercomputer/docs/choose-strategy", "/ai-hypercomputer/docs/cluster-capabilities", "/ai-hypercomputer/docs/create/create-vm"], ["/gke/", "/vertex-ai/"], false);
   if (/^app-engine-(?:standard|flexible)-environment-/.test(s)) {
     const env = expectedAppEngineEnvironmentSegment(s);
     const runtime = expectedAppEngineRuntimeSegment(s);
@@ -1634,6 +2028,40 @@ function buildSearchTerms(productName, productSlug) {
     terms.add("Google Workspace Calendar API");
     terms.add("Calendar API v3");
   }
+  if (/^google-kubernetes-engine$/i.test(productSlug)) {
+    terms.add("Google Kubernetes Engine");
+    terms.add("GKE");
+    terms.add("Kubernetes Engine");
+    terms.add("MCP");
+    terms.add("FlowSchema");
+    terms.add("PriorityLevelConfiguration");
+    terms.add("ValidatingAdmissionPolicy");
+    terms.add("CephFS");
+    terms.add("RBD");
+  }
+  if (/^dataproc$/i.test(productSlug)) {
+    terms.add("Dataproc");
+    terms.add("Serverless Spark");
+    terms.add("Dataproc Agent");
+    terms.add("Gemini Spark");
+    terms.add("Dataproc on GKE");
+  }
+  if (/^alloydb$/i.test(productSlug)) {
+    terms.add("AlloyDB");
+    terms.add("AlloyDB AI");
+    terms.add("hybrid_search");
+    terms.add("AI.GENERATE");
+    terms.add("conversational analytics");
+    terms.add("VPC Service Controls");
+    terms.add("data residency");
+  }
+  if (/^dialogflow$/i.test(productSlug)) {
+    terms.add("Dialogflow CX");
+    terms.add("Dialogflow ES");
+    terms.add("ConversationTurn");
+    terms.add("request.user-utterance");
+    terms.add("long-utterance");
+  }
   if (/^address-validation-api$/i.test(productSlug)) terms.add("Google Maps Address Validation API");
   if (/^aerial-view-api$/i.test(productSlug)) terms.add("Google Maps Aerial View API");
   if (/^datasets-api$/i.test(productSlug)) terms.add("Google Maps Datasets API");
@@ -1664,9 +2092,27 @@ function buildSearchTerms(productName, productSlug) {
   if (/^earth-engine-code-editor$/i.test(productSlug)) {
     terms.add("Earth Engine Code Editor");
     terms.add("Google Earth Engine");
+    terms.add("ui.url");
+    terms.add("ui.root.onResize");
+    terms.add("ui.util.clear");
+    terms.add("ui.util.clearTimeout");
+    terms.add("ui.util.rateLimit");
+    terms.add("ui.util.setInterval");
+    terms.add("ui.util.setTimeout");
+    terms.add("ui.util.throttle");
   }
   if (/^transfer-appliance$/i.test(productSlug)) terms.add("Transfer Appliance");
   if (/^translation-hub$/i.test(productSlug)) terms.add("Translation Hub");
+  if (/^cloud-composer$/i.test(productSlug)) {
+    terms.add("Cloud Composer");
+    terms.add("Cloud Composer versions");
+    terms.add("store_dag_code");
+    terms.add("store_serialized_dags");
+    terms.add("override-airflow-configurations");
+    terms.add("worker id filtering");
+    terms.add("minimum supported version");
+    terms.add("image version aliases");
+  }
   if (/^vertex-ai-vision$/i.test(productSlug)) terms.add("Vertex AI Vision");
   if (/^vertex-ai-workbench$/i.test(productSlug)) terms.add("Vertex AI Workbench");
   if (/^oracle-database-google-cloud$/i.test(productSlug)) terms.add("Oracle Database@Google Cloud");
@@ -1697,6 +2143,16 @@ function buildSearchTerms(productName, productSlug) {
   if (/^earth-engine-python-client-library$/i.test(productSlug)) {
     terms.add("Earth Engine Python client library");
     terms.add("Google Earth Engine Python API");
+    terms.add("ee.data");
+    terms.add("ee.oauth");
+    terms.add("computeFeatures");
+    terms.add("computePixels");
+    terms.add("getPixels");
+    terms.add("listFeatures");
+    terms.add("client server");
+    terms.add("python install");
+    terms.add("debugging");
+    terms.add("data extraction");
   }
   if (/^cloud-product-registry-api$/i.test(productSlug)) {
     terms.add("Cloud Product Registry");
@@ -1718,6 +2174,35 @@ function buildSearchTerms(productName, productSlug) {
     terms.add("Manage users");
     terms.add("Manage access");
     terms.add("IAM-based API authentication");
+    terms.add("API Products");
+    terms.add("Display Name");
+    terms.add("Instance IP range");
+    terms.add("Data Collectors");
+    terms.add("private connection allowlist");
+  }
+  if (/^cloud-deployment-manager$/i.test(productSlug)) {
+    terms.add("Cloud Deployment Manager");
+    terms.add("supported GCP types");
+    terms.add("supported resource types");
+    terms.add("syntax reference");
+    terms.add("create basic configuration");
+    terms.add("create basic template");
+    terms.add("deploy your resources");
+    terms.add("Cloud Scheduler");
+    terms.add("App Engine resource type");
+    terms.add("cluster resource type");
+    terms.add("container cluster resource type");
+  }
+  if (/^cloud-run$/i.test(productSlug)) {
+    terms.add("Cloud Run buildpacks");
+    terms.add("automatic entrypoint detection");
+    terms.add("execution ID logging");
+    terms.add("Cloud Run v1alpha1");
+    terms.add("Python buildpack");
+    terms.add("Java function");
+    terms.add("deploy python service");
+    terms.add("deploy java service");
+    terms.add("authenticate to Cloud Run API");
   }
   if (/^cortex$/i.test(productSlug)) {
     terms.add("Google Cloud Cortex Framework");
@@ -1941,11 +2426,18 @@ function buildSearchTerms(productName, productSlug) {
     terms.add("Apigee integrated portal");
     terms.add("integrated portal");
     terms.add("developer portal solutions");
+    terms.add("classic ui");
+    terms.add("apps and teams");
+    terms.add("inactive user");
   }
   if (/^apigee-monetization$/i.test(productSlug)) {
     terms.add("Apigee monetization");
     terms.add("monetization");
     terms.add("rate plans");
+    terms.add("paymentFundingModel");
+    terms.add("recurring fees");
+    terms.add("fee-based values");
+    terms.add("data residency");
   }
   if (/^apigee-adapter-for-envoy$/i.test(productSlug)) {
     terms.add("Apigee Adapter for Envoy");
@@ -1973,6 +2465,26 @@ function buildSearchTerms(productName, productSlug) {
   if (/^apigee-advanced-api-security$/i.test(productSlug)) {
     terms.add("Apigee Advanced API Security");
     terms.add("Advanced API Security");
+    terms.add("security actions");
+    terms.add("security scores");
+    terms.add("abuse detection");
+    terms.add("detection rules");
+    terms.add("security alerts");
+    terms.add("shadow api discovery");
+    terms.add("manage security add-on");
+    terms.add("custom security profiles");
+    terms.add("data residency");
+  }
+  if (/^sensitive-data-protection$/i.test(productSlug)) {
+    terms.add("Sensitive Data Protection");
+    terms.add("content.redact");
+    terms.add("content de-identification");
+    terms.add("deidentify");
+    terms.add("redact");
+    terms.add("inspect");
+    terms.add("BigQuery inspection");
+    terms.add("Image findings redaction");
+    terms.add("US_STATE");
   }
   if (/^apigee-integration$/i.test(productSlug)) {
     terms.add("Apigee Integration");
@@ -2094,6 +2606,15 @@ function buildDynamicQueryFamilies(productName, productSlug, coverage = null) {
       () => 'site:developers.google.com/admin-sdk "Admin SDK API overview"',
       () => 'site:developers.google.com/admin-sdk "reference-overview" OR "reference/rest"',
       () => 'site:developers.google.com/admin-sdk "Directory API" OR "Reports API"',
+      () => 'site:developers.google.com/admin-sdk/reports/v1/guides "manage-audit-login"',
+      () => 'site:developers.google.com/admin-sdk/reports/v1/appendix/activity "login"',
+    ]]);
+  }
+  if (/^(app-engine-admin-api|app-engine-standard-environment-node-js)$/.test(productSlug)) {
+    families.push(["app_engine_legacy_feature_docs", [
+      () => 'site:docs.cloud.google.com/appengine "faceted search" "App Engine"',
+      () => 'site:docs.cloud.google.com/appengine pyamf "built-in libraries"',
+      () => 'site:docs.cloud.google.com/appengine "facet-search" OR "built-in-libraries-27"',
     ]]);
   }
   if (/games-dev-center/.test(productSlug)) {
@@ -2557,6 +3078,69 @@ function buildDynamicQueryFamilies(productName, productSlug, coverage = null) {
         () => 'site:docs.cloud.google.com/apigee/docs/api-platform/analytics metrics api reference',
       ]]);
     }
+    if (/^apigee-x$/.test(productSlug)) {
+      families.push(["apigee_x_exact_docs", [
+        () => 'site:docs.cloud.google.com/apigee/docs/api-platform/reference "variables-reference" "target.evaluated.url" OR "content.as.base64"',
+        () => 'site:docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1 "organizations.apps"',
+        () => 'site:docs.cloud.google.com/apigee/docs "ui-overview" OR "apigee-classic-ui" OR "drz-concepts" OR locations',
+      ]]);
+    }
+    if (/^apigee-hybrid$/.test(productSlug)) {
+      families.push(["apigee_hybrid_exact_docs", [
+        () => 'site:docs.cloud.google.com/apigee/docs/hybrid "forward-proxy" OR "allow-gcp-urls" OR "configure-large-payload-support"',
+        () => 'site:docs.cloud.google.com/apigee/docs/hybrid "guardrails" OR "apigee-pull-push" OR "using-data-residency-with-apigee-hybrid"',
+        () => 'site:docs.cloud.google.com/apigee/docs/hybrid "allowlist" OR "supported-platforms"',
+      ]]);
+    }
+    if (/^apigee-api-hub$/.test(productSlug)) {
+      families.push(["apigee_apihub_exact_docs", [
+        () => 'site:docs.cloud.google.com/apigee/docs/apihub provision deployments attributes dependency "API hub"',
+        () => 'site:docs.cloud.google.com/apigee/docs/apihub "vpc-service-control" OR "configure-api-insights" OR "view-api-security-scores"',
+        () => 'site:docs.cloud.google.com/apigee/docs/apihub "manage-mcp-tools" OR "register-mcp-apis"',
+      ]]);
+    }
+    if (/^apigee-integration$/.test(productSlug)) {
+      families.push(["apigee_application_integration_exact_docs", [
+        () => 'site:docs.cloud.google.com/application-integration/docs/gcp-tasks "Cloud KMS" OR Firestore OR Language OR Sheets OR Translate OR Workflows',
+        () => 'site:docs.cloud.google.com/application-integration/docs "all-triggers-tasks" OR "data-mapping-functions-reference" OR "vpc-service-controls"',
+        () => 'site:docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest "Application Integration"',
+      ]]);
+    }
+  }
+  if (productSlug === "address-validation-api") {
+    families.push(["address_validation_exact_docs", [
+      () => 'site:developers.google.com/maps/documentation/address-validation "validateAddress" OR "build-validation-logic"',
+      () => 'site:developers.google.com/maps/documentation/address-validation "understand-response" OR "possibleNextAction" OR "hasSpellCorrectedComponents"',
+      () => 'site:developers.google.com/maps/documentation/address-validation "add-subpremises-address-example"',
+    ]]);
+  }
+  if (productSlug === "api-gateway") {
+    families.push(["api_gateway_exact_docs", [
+      () => 'site:docs.cloud.google.com/api-gateway/docs "creating-api-config" OR "secure-traffic-gcloud"',
+      () => 'site:docs.cloud.google.com/api-gateway/docs reference "OpenAPI 3.0" OR host OR region',
+      () => 'site:docs.cloud.google.com/api-gateway/docs "about-api-gateway"',
+    ]]);
+  }
+  if (productSlug === "access-context-manager") {
+    families.push(["access_context_manager_exact_docs", [
+      () => 'site:docs.cloud.google.com/access-context-manager/docs/reference/rest "Access Context Manager"',
+      () => 'site:docs.cloud.google.com/access-context-manager/docs/reference/rest "LaunchStage"',
+      () => 'site:docs.cloud.google.com/access-context-manager/docs/api-reference',
+    ]]);
+  }
+  if (productSlug === "agent-assist") {
+    families.push(["agent_assist_exact_docs", [
+      () => 'site:docs.cloud.google.com/agent-assist/docs features "Agent Assist"',
+      () => 'site:docs.cloud.google.com/agent-assist/docs "generative-knowledge-assist" OR "custom-events" OR "adaptation-model-guide"',
+      () => 'site:docs.cloud.google.com/agent-assist/docs "article-suggestion" OR faq',
+    ]]);
+  }
+  if (productSlug === "ai-hypercomputer") {
+    families.push(["ai_hypercomputer_exact_docs", [
+      () => 'site:docs.cloud.google.com/ai-hypercomputer/docs "choose-strategy" OR "cluster-capabilities"',
+      () => 'site:docs.cloud.google.com/ai-hypercomputer/docs "create-vm" OR reservations',
+      () => 'site:docs.cloud.google.com/ai-hypercomputer/docs "future reservations"',
+    ]]);
   }
   return families;
 }
@@ -2596,8 +3180,16 @@ function pathScore(url) {
   if (/^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)\/reference$/.test(p)) s += 30;
   if (/^\/maps\/documentation\/[^/]+\/reference\/rest(?:\/[^/]+)?$/.test(p)) s += 34;
   if (/^\/maps\/documentation\/places\/web-service$/.test(p)) s += 36;
-  if (/^\/earth-engine(?:\/guides)?$/.test(p) || /^\/earth-engine\/apidocs$/.test(p)) s += 28;
+  if (/^\/earth-engine(?:\/guides)?$/.test(p) || /^\/earth-engine\/apidocs$/.test(p) || /^\/earth-engine\/guides\/(auth|client_server|python_install|debugging|data_extraction|access_control|playground|getstarted|best_practices|command_line|apps)$/.test(p)) s += 28;
   if (/^\/earth-engine\/docs\/(data-catalog|js-client-lib|python-client-lib)$/.test(p)) s += 32;
+  if (/^\/deployment-manager\/docs(?:$|\/(configuration\/supported-gcp-types|configuration\/supported-resource-types|configuration\/syntax-reference|configuration\/create-basic-configuration|configuration\/templates\/create-basic-template|manage-cloud-resources-deployment|step-by-step-guide\/deploy-your-resources|step-by-step-guide\/create-a-template|step-by-step-guide\/create-a-configuration))$/.test(p)) s += 36;
+  if (/^\/run\/docs\/(quickstarts\/build-and-deploy\/deploy-python-service|quickstarts\/build-and-deploy\/deploy-python-fastapi-service|quickstarts\/build-and-deploy\/deploy-python-gradio-service|quickstarts\/build-and-deploy\/deploy-python-adk-service|quickstarts\/build-and-deploy\/deploy-python-langchain-service|quickstarts\/build-and-deploy\/deploy-python-streamlit-service|quickstarts\/build-and-deploy\/deploy-java-service|reference\/about-api-versions|reference\/authenticate-to-cloud-run-api|deploying|configuring|deploy-functions|mapping-custom-domains|securing\/identity-aware-proxy-cloud-run)$/.test(p)) s += 34;
+  if (/^\/deployment-manager\/docs(?:$|\/(fundamentals|resources|support|troubleshooting|reference\/latest(?:\/(deployments|libraries|authorization))?|access-control|step-by-step-guide\/installation-and-setup))$/.test(p)) s += 32;
+  if (/^\/sensitive-data-protection\/docs(?:$|\/(sensitive-data-protection-overview|deidentify-sensitive-data|inspecting-storage|inspecting-images|redacting-sensitive-data-images|creating-job-triggers|create-inspection-template|common-discovery-configurations|control-access-based-on-data-sensitivity|classification-redaction|data-security|analyzing-and-reporting|analyze-data-profiles|compute-risk-analysis|inspect-sensitive-text|api-endpoints|auth|audit-logging|allow-discovery-vpcsc|secrets-discovery|reference\/rest|reference\/rest\/v2))$/.test(p)) s += 34;
+  if (/^\/sensitive-data-protection\/docs\/(deidentify-sensitive-data|inspecting-storage|inspecting-images|redacting-sensitive-data-images|creating-job-triggers|create-inspection-template|concepts-deidentify-storage|inspect-sensitive-text|classification-redaction|data-security|compute-risk-analysis|common-discovery-configurations|control-access-based-on-data-sensitivity)$/.test(p)) s += 36;
+  if (/^\/apigee\/docs\/api-security(?:$|\/|$)/.test(p) || /^\/apigee\/docs\/api-platform\/security\/(api-security|enable-security|security-actions|security-actions-api|security-scores|security-scores-api|abuse-detection|detection-rules|security-alerts)(?:\/|$)/.test(p) || /^\/apigee\/docs\/api-observation\/shadow-api-discovery(?:\/|$)/.test(p) || /^\/apigee\/docs\/api-platform\/reference\/manage-security-add-on$/.test(p)) s += 36;
+  if (/^\/apigee\/docs\/api-platform\/monetization\/(overview|manage-rate-plans)(?:\/|$)/.test(p)) s += 34;
+  if (/^\/apigee\/docs\/api-platform\/publish\/(intro-portals|portal\/publish-apis)(?:\/|$)/.test(p)) s += 34;
   if (/^\/product-registry\/overview$/.test(p)) s += 34;
   if (/^\/container-optimized-os\/docs$/.test(p)) s += 34;
   if (/^\/container-optimized-os\/docs\/concepts$/.test(p) || /^\/container-optimized-os\/docs\/concepts\/features-and-benefits$/.test(p)) s += 32;
@@ -2645,6 +3237,16 @@ function pathScore(url) {
   if (/^\/apigee\/docs\/api-platform\/envoy-adapter\/[^/]+\/reference$/.test(p)) s += 30;
   if (/^\/apigee\/docs\/hybrid\/(release-notes|v[\d.]+\/config-prop-ref|v[\d.]+\/install-before-begin|v[\d.]+\/data-collection-with-data-residency)$/.test(p)) s += 34;
   if (/^\/apigee\/docs\/hybrid\/v[\d.]+\/(sa-about|enable-workload-identity|sa-authentication-methods|install-sa-authentication)$/.test(p)) s += 30;
+  if (/^\/kubernetes-engine\/docs\/(reference\/mcp(?:\/.*)?|reference\/api-organization|reference\/api-permissions|how-to\/provisioningrequest|integrations\/ai-infra)(?:\/|$)/.test(p)) s += 36;
+  if (/^\/dataproc\/docs\/(guides\/gemini-spark|guides\/performance-enhancements|guides\/dataproc-images|guides\/dataproc-metrics|guides\/dpgke\/dataproc-gke-versions|guides\/dpgke\/dataproc-gke-diagnose-cluster|guides\/create-cluster|quickstarts\/update-cluster-gcloud|quickstarts\/create-cluster-client-libraries|concepts\/iam\/dataproc-principals)(?:\/|$)/.test(p)) s += 36;
+  if (/^\/alloydb\/docs\/(ai(?:\/|$)|reference\/ai\/hybrid-search-function-parameters|reference\/query-tuning-and-optimization|reference\/iam-roles-permissions|quickstart\/create-and-connect|release-notes)(?:\/|$)/.test(p)) s += 36;
+  if (/^\/dialogflow\/cx\/docs\/(concept\/region|reference\/rest\/v3-overview|reference\/rest\/v3\/ConversationTurn|concept\/flow|concept\/conversation-history|concept\/audit-logging|concept\/advanced-speech|concept\/console-conversational-agents|concept\/data-store(?:\/.*)?)(?:\/|$)/.test(p)) s += 36;
+  if (/^\/dialogflow\/es\/docs\/(access-control|entities-options|entities-regexp)(?:\/|$)/.test(p)) s += 34;
+  if (/^\/dialogflow\/docs\/intents-actions-parameters(?:\/|$)/.test(p)) s += 34;
+  if (/^\/apigee\/docs\/api-platform\/(fundamentals\/ui-overview|system-administration\/manage-users(?:-roles)?|tutorials\/create-api-proxy-openapi-spec|tutorials\/secure-calls-your-api-through-api-key-validation|tutorials\/secure-calls-your-api-through-oauth-20-client-credentials|tutorials\/view-with-trace|tutorials\/add-spike-arrest|local-development\/vscode\/tutorial-create-workspace|local-development\/vscode\/tutorial-create-proxy|local-development\/vscode\/tutorial-change-target-endpoint|local-development\/vscode\/tutorial-deploy(?:-apigee)?|local-development\/vscode\/tutorial-promote|local-development\/vscode\/tutorial-test|service-extensions\/extension-processor-quickstart)(?:\/|$)/.test(p)) s += 34;
+  if (/^\/apigee\/docs\/apigee-mcp\/apigee-mcp-quickstart(?:\/|$)/.test(p)) s += 34;
+  if (/^\/earth-engine\/(guides\/(playground|debugging|client_server|auth|best_practices|command_line|python_install|apps|charts_style|charts_datatable|ee-vertex-migrate)|apidocs)(?:\/|$)/.test(p)) s += 36;
+  if (/^\/composer\/docs\/(airflow-configurations|concepts\/airflow-configurations|composer-versions|latest\/use-monitoring-dashboard|composer-2\/override-airflow-configurations|composer-1\/access-airflow-web-interface|composer-1\/dag-serialization|composer-1\/known-issues|composer-1\/access-control|composer-1\/security-practices|composer-1\/configure-private-ip|composer-1\/cross-project-environment-monitoring-terraform|composer-1\/environment-scaling|composer-1\/install-plugins|composer-1\/enable-the-service|reference\/rest(?:\/v1\/projects\.locations\.environments(?:\.(workloads|userWorkloadsConfigMaps|userWorkloadsSecrets))?)?)(?:\/|$)/.test(p)) s += 36;
   if (/\/docs\/reference\/[^/]+\/rest$/.test(p)) s -= 18;
   if (/\/docs\/reference\/rest\/.+/.test(p)) s -= 32;
   if (/\/python\/docs\/reference\/[^/]+\/latest\/.+/.test(p)) s -= 28;
@@ -2734,7 +3336,166 @@ function classifyWithOverrides(candidate, productName, profile, hints, coverage 
     }
   }
   if (slug === "apigee-x") {
-    if (/^\/apigee\/docs\/api-platform\/fundamentals\/organization-structure$/.test(p)) {
+    if (/^\/apigee\/docs\/api-platform\/fundamentals\/ui-overview$/.test(p) || /^\/apigee\/docs\/locations$/.test(p) || /^\/apigee\/docs\/api-platform\/get-started\/drz-concepts$/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/api-platform\/reference\/(variables-reference|api-proxy-configuration-reference|endpoint-properties-reference)$/.test(p) || /^\/apigee\/docs\/api-platform\/fundamentals\/organization-structure$/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/reference\/apis\/apigee\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/deprecations\/apigee-classic-ui(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "google-kubernetes-engine") {
+    if (/^\/kubernetes-engine\/docs(?:$|\/(?:learn|overview)?(?:\/|$))/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/kubernetes-engine\/docs\/reference\/mcp(?:\/|$)/.test(p) || /^\/kubernetes-engine\/docs\/integrations\/ai-infra(?:\/|$)/.test(p) || /^\/kubernetes-engine\/docs\/how-to\/provisioningrequest(?:\/|$)/.test(p) || /^\/kubernetes-engine\/docs\/reference\/api-organization(?:\/|$)/.test(p)) {
+      scored.classification = /^\/kubernetes-engine\/docs\/reference\/mcp(?:\/|$)/.test(p) ? "api_reference" : "product_reference";
+      scored.keep = true;
+    } else if (/^\/kubernetes-engine\/docs\/reference\/api-permissions(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "dataproc") {
+    if (/^\/dataproc\/docs(?:$|\/(?:overview|guides|reference)(?:\/|$))/.test(p)) {
+      scored.classification = /^\/dataproc\/docs\/reference(?:\/|$)/.test(p) ? "api_reference" : "product_root";
+      scored.keep = true;
+    } else if (/^\/dataproc\/docs\/guides\/.+/.test(p) || /^\/dataproc\/docs\/quickstarts\/.+/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/dataproc\/docs\/concepts\/iam\/dataproc-principals(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "alloydb") {
+    if (/^\/alloydb\/docs(?:$|\/(?:overview|ai)(?:\/|$))/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/alloydb\/docs\/ai\/.+/.test(p) || /^\/alloydb\/docs\/quickstart\/create-and-connect(?:\/|$)/.test(p) || /^\/alloydb\/docs\/reference\/query-tuning-and-optimization(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/alloydb\/docs\/reference\/ai\/hybrid-search-function-parameters(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/alloydb\/docs\/reference\/iam-roles-permissions(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "dialogflow") {
+    if (/^\/dialogflow\/cx\/docs(?:$|\/(?:basics|concept\/console-conversational-agents|concept\/region|concept\/flow|concept\/conversation-history|concept\/audit-logging|concept\/advanced-speech|concept\/data-store(?:\/.*)?)?(?:\/|$))/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/dialogflow\/cx\/docs\/reference\/rest\/v3-overview(?:\/|$)/.test(p) || /^\/dialogflow\/cx\/docs\/reference\/rest\/v3\/ConversationTurn(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/dialogflow\/es\/docs\/access-control(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/dialogflow\/es\/docs\/entities-(options|regexp)(?:\/|$)/.test(p) || /^\/dialogflow\/docs\/intents-actions-parameters(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "apigee-ui") {
+    if (/^\/apigee\/docs\/api-platform\/fundamentals\/ui-overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/api-platform\/system-administration\/manage-users(?:-roles)?(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/api-platform\/tutorials\/.+/.test(p) || /^\/apigee\/docs\/api-platform\/local-development\/vscode\/.+/.test(p) || /^\/apigee\/docs\/apigee-mcp\/apigee-mcp-quickstart(?:\/|$)/.test(p) || /^\/apigee\/docs\/api-platform\/service-extensions\/extension-processor-quickstart(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "earth-engine-code-editor") {
+    if (/^\/earth-engine\/(?:$|guides(?:\/|$))/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/earth-engine\/guides\/(playground|debugging|client_server|auth|best_practices|command_line|python_install|apps)(?:\/|$)/.test(p) || /^\/earth-engine\/guides\/(charts_style|charts_datatable|ee-vertex-migrate)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/earth-engine\/apidocs(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "earth-engine-python-client-library") {
+    if (/^\/earth-engine\/(?:$|guides(?:\/|$))/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/earth-engine\/guides\/(auth|client_server|python_install|debugging|data_extraction|access_control|playground|best_practices|command_line|apps|getstarted)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/earth-engine\/apidocs(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "cloud-deployment-manager") {
+    if (/^\/deployment-manager\/docs(?:$|\/(?:fundamentals|resources|support|troubleshooting|release-notes)?(?:\/|$))/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/deployment-manager\/docs\/(configuration\/supported-gcp-types|configuration\/supported-resource-types|configuration\/syntax-reference|configuration\/create-basic-configuration|configuration\/templates\/create-basic-template|manage-cloud-resources-deployment|step-by-step-guide\/create-a-template|step-by-step-guide\/create-a-configuration|step-by-step-guide\/deploy-your-resources|step-by-step-guide\/installation-and-setup|step-by-step-guide\/using-multiple-templates|step-by-step-guide\/using-template-and-environment-variables)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/deployment-manager\/docs\/reference\/latest(?:\/|$)/.test(p) || /^\/deployment-manager\/docs\/reference\/latest\/deployments(?:\/|$)/.test(p) || /^\/deployment-manager\/docs\/reference\/latest\/libraries(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/deployment-manager\/docs\/access-control(?:\/|$)/.test(p) || /^\/deployment-manager\/docs\/reference\/latest\/authorization(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "apigee-advanced-api-security") {
+    if (/^\/apigee\/docs\/api-security(?:$|\/|$)/.test(p) || /^\/apigee\/docs\/api-platform\/security\/api-security(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/api-security\/(enable-security|security-actions|security-scores|abuse-detection|detection-rules|security-alerts)(?:\/|$)/.test(p) || /^\/apigee\/docs\/api-platform\/reference\/manage-security-add-on(?:\/|$)/.test(p) || /^\/apigee\/docs\/api-observation\/shadow-api-discovery(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/api-security\/(security-actions-api|security-scores-api|security-reports-api)(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/api-platform\/security\/iam\/iam-overview(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "apigee-monetization") {
+    if (/^\/apigee\/docs\/api-platform\/monetization\/overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/api-platform\/monetization\/manage-rate-plans(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "apigee-integrated-portal") {
+    if (/^\/apigee\/docs\/api-platform\/publish\/intro-portals(?:\/|$)/.test(p) || /^\/apigee\/docs\/api-platform\/publish\/build-integrated-portal(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/api-platform\/publish\/portal\/publish-apis(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "cloud-composer") {
+    if (/^\/composer\/docs(?:$|\/(?:airflow-configurations|concepts\/airflow-configurations|composer-versions)\/?$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/composer\/docs\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/composer\/docs\/(?:latest\/use-monitoring-dashboard|composer-2\/override-airflow-configurations|composer-1\/(?:access-airflow-web-interface|dag-serialization|known-issues|access-control|security-practices|configure-private-ip|cross-project-environment-monitoring-terraform|environment-scaling|install-plugins|enable-the-service))(?:\/|$)/.test(p)) {
       scored.classification = "product_reference";
       scored.keep = true;
     }
@@ -2752,7 +3513,7 @@ function classifyWithOverrides(candidate, productName, profile, hints, coverage 
     }
   }
   if (slug === "agent-assist") {
-    if (/^\/agent-assist\/docs\/(basics|backend-basics|quotas|generative-knowledge-assist|ui-modules-ai-coach-documentation)$/.test(p)) {
+    if (/^\/agent-assist\/docs\/(features|generative-knowledge-assist|custom-events|adaptation-model-guide|article-suggestion|faq|basics|backend-basics|quotas|ui-modules-ai-coach-documentation)$/.test(p)) {
       scored.classification = "product_reference";
       scored.keep = true;
     }
@@ -2781,6 +3542,10 @@ function classifyWithOverrides(candidate, productName, profile, hints, coverage 
       scored.classification = "product_reference";
       scored.family_forbidden = false;
       scored.keep = true;
+    } else if (/^\/run\/docs\/(deploying|configuring|deploy-functions|mapping-custom-domains|release-notes|quickstarts(?:\/build-and-deploy\/deploy-(python|java|nodejs|go|dotnet|php|ruby|kotlin)-service)|quickstarts\/build-and-deploy\/deploy-python-(fastapi|gradio|adk|langchain|streamlit)-service|quickstarts\/build-and-deploy\/cpp|quickstarts\/build-and-deploy\/c-sharp|quickstarts\/build-and-deploy\/deploy-c-plus-plus-service|quickstarts\/build-and-deploy\/deploy-dotnet-service|quickstarts\/build-and-deploy\/deploy-java-service|quickstarts\/build-and-deploy\/deploy-nodejs-service|quickstarts\/build-and-deploy\/deploy-python-service|quickstarts\/build-and-deploy\/deploy-php-service|quickstarts\/build-and-deploy\/deploy-ruby-service|quickstarts\/build-and-deploy\/deploy-kotlin-service|reference\/about-api-versions|reference\/authenticate-to-cloud-run-api|securing\/identity-aware-proxy-cloud-run|triggering\/https-request|triggering\/using-scheduler|triggering\/webhooks)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
     } else if (/^\/run\/docs\/reference\/cloud-run-admin-api-overview(?:\/|$)/.test(p)) {
       scored.classification = "api_reference";
       scored.family_forbidden = false;
@@ -2788,6 +3553,21 @@ function classifyWithOverrides(candidate, productName, profile, hints, coverage 
     } else if (/^\/run\/docs\/securing\/managing-access(?:\/|$)/.test(p) || /^\/iam\/docs\/roles-permissions\/run(?:\/|$)/.test(p)) {
       scored.classification = "iam_reference";
       scored.family_forbidden = false;
+      scored.keep = true;
+    }
+  }
+  if (slug === "sensitive-data-protection") {
+    if (/^\/sensitive-data-protection\/docs(?:$|\/(?:sensitive-data-protection-overview|api-endpoints|auth|audit-logging|allow-discovery-vpcsc|analyzing-and-reporting|analyze-data-profiles|best-practices-for-mitigating-data-risk|classification-redaction|compute-(k-anonymity|k-map|l-diversity|risk-analysis|stats|d-presence)|concepts-(actions|bucketing|date-shifting|deidentify-storage|hybrid-jobs|infotypes|job-triggers|method-types|risk-analysis|templates|text-redaction|image-redaction)|creating-job-triggers|create-inspection-template|creating-custom-infotypes(?:-(dictionary|likelihood|metadata-labels|regex|rules))?|create-wrapped-key|deidentify-bq-tutorial|deidentify-sensitive-data|inspect-sensitive-text|inspecting-(storage|images|structured-text|text)|infotypes-reference|quickstart-json|redacting-sensitive-data-images|reference-rest|reference-rpc|schedule-inspection-scan|data-profiles|data-security|resources|samples|reference\/rest\/v2)(?:\/|$))/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/sensitive-data-protection\/docs\/(deidentify-sensitive-data|inspecting-storage|inspecting-images|redacting-sensitive-data-images|creating-job-triggers|create-inspection-template|common-discovery-configurations|control-access-based-on-data-sensitivity|classification-redaction|data-security|analyzing-and-reporting|analyze-data-profiles|compute-risk-analysis|inspect-sensitive-text|deidentify-bq-tutorial|deidentify-bq-tutorial|allow-discovery-vpcsc|api-endpoints|auth|audit-logging|infotypes-reference|secrets-discovery)(?:\/|$)/.test(p) || /^\/sensitive-data-protection\/docs\/concepts-(deidentify-storage|actions|bucketing|date-shifting|hybrid-jobs|infotypes|job-triggers|method-types|risk-analysis|templates|text-redaction|image-redaction)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/sensitive-data-protection\/docs\/reference\/rest(?:\/|$)/.test(p) || /^\/sensitive-data-protection\/docs\/reference\/rest\/v2(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/sensitive-data-protection\/docs\/(auth|audit-logging|allow-discovery-vpcsc|add-aspects-inspection-job|compute-k-anonymity|compute-k-map|compute-l-diversity|compute-stats|compute-risk-analysis|create-custom-infotypes-metadata-labels|create-wrapped-key|creating-custom-infotypes(?:-(dictionary|likelihood|regex|rules))?|creating-job-triggers|create-inspection-template|deidentify-bq-tutorial)(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
       scored.keep = true;
     }
   }
@@ -2807,8 +3587,32 @@ function classifyWithOverrides(candidate, productName, profile, hints, coverage 
     }
   }
   if (slug === "ai-hypercomputer") {
-    if (/^\/ai-hypercomputer\/docs\/(create\/create-overview|cluster-capabilities|images|tutorials)$/.test(p)) {
+    if (/^\/ai-hypercomputer\/docs\/(choose-strategy|cluster-capabilities|create\/create-vm|create\/create-overview|images|tutorials)$/.test(p)) {
       scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "api-gateway") {
+    if (/^\/api-gateway\/docs\/about-api-gateway(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/api-gateway\/docs\/(creating-api-config|secure-traffic-gcloud|reference)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "access-context-manager") {
+    if (/^\/access-context-manager\/docs\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "address-validation-api") {
+    if (/^\/maps\/documentation\/address-validation\/(?:overview|build-validation-logic|understand-response)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/maps\/documentation\/address-validation\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
       scored.keep = true;
     }
   }
@@ -2912,9 +3716,32 @@ function classifyWithOverrides(candidate, productName, profile, hints, coverage 
     } else if (/^\/workspace\/gmail\/api\/auth\/(scopes|web-server)(?:\/|$)/.test(p)) {
       scored.classification = "iam_reference";
       scored.keep = true;
+    } else if (/^\/workspace\/gmail\/markup\/(overview|highlights|getting-started)(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/workspace\/gmail\/markup\/(reference|actions\/actions-overview|actions\/declaring-actions|reference\/(?:order|parcel-delivery|event-reservation|one-click-action|go-to-action))(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
     } else if (/^\/workspace\/gmail\/api\/reference(?:\/|$)/.test(p)) {
       scored.classification = "supporting_page";
       scored.keep = false;
+    }
+  }
+  if (slug === "workflows") {
+    const workflowHost = hostnameFor(candidate.url);
+    if ((workflowHost === "docs.cloud.google.com" || workflowHost === "cloud.google.com") && /^\/workflows\/docs(?:\/|$)/.test(p)) {
+      if (/^\/workflows\/docs\/(apis|reference\/googleapis|reference\/stdlib\/overview)(?:\/|$)/.test(p)) {
+        scored.classification = /^\/workflows\/docs\/apis(?:\/|$)/.test(p) ? "product_reference" : "api_reference";
+      } else if (/^\/workflows\/docs\/access-control(?:\/|$)/.test(p)) {
+        scored.classification = "iam_reference";
+      } else {
+        scored.classification = "product_root";
+      }
+      scored.keep = true;
+    } else if (workflowHost === "developers.google.com") {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+      scored.final_score = Math.min(scored.final_score, 5);
     }
   }
   if (slug === "sheets-api") {
@@ -3284,6 +4111,16 @@ function classifyWithOverrides(candidate, productName, profile, hints, coverage 
     } else if (/^\/appengine\/docs\/admin-api\/audit-logging(?:\/|$)/.test(p)) {
       scored.classification = "product_reference";
       scored.keep = true;
+    } else if (/^\/appengine\/docs\/(standard\/services\/search\/facet-search|legacy\/standard\/python\/tools\/built-in-libraries-27)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "app-engine-standard-environment-node-js") {
+    if (/^\/appengine\/docs\/(standard\/services\/search\/facet-search|legacy\/standard\/python\/tools\/built-in-libraries-27)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+      scored.family_forbidden = false;
     }
   }
   if (slug === "bare-metal-solution") {
@@ -3366,9 +4203,13 @@ function applyKeepBudget(scored, coverage = null) {
     const cls = item.api_score.classification;
     const pathText = pathnameFor(item.url);
     const familyScore = Number(item.api_score.family_score || 0);
+    const alwaysKeepPath = /^\/appengine\/docs\/(standard\/services\/search\/facet-search|legacy\/standard\/python\/tools\/built-in-libraries-27)(?:\/|$)/.test(pathText)
+      || /^\/admin-sdk\/reports\/v1\/(guides\/manage-audit-login|appendix\/activity\/login)(?:\/|$)/.test(pathText);
     const supportingAllowed = cls !== "supporting_page" || (item.final_score >= 90 && /\/docs\/(about-[^/]+|architecture-overview|developer-overview|concepts|features|configuration|manage|queries|models|clusters|pipelines|security|governance)$/.test(pathText) && !/\/(python|java)\/docs\/reference\//.test(pathText) && !/\/reference\/rest\/.+/.test(pathText));
     const featureAligned = (item.api_score.matched_feature_phrases || []).length > 0 || (item.api_score.matched_feature_tokens || []).length >= 2;
-    const canKeep = item.keep && familyScore >= 0 && supportingAllowed && kept < keepLimit && (((usage.get(cls) || 0) < (budgets.get(cls) || 0)) || (featureAligned && cls === "supporting_page" && (usage.get(cls) || 0) < ((budgets.get(cls) || 0) + 1)));
+    const canKeep = alwaysKeepPath
+      ? item.keep && familyScore >= -120 && kept < keepLimit
+      : item.keep && familyScore >= 0 && supportingAllowed && kept < keepLimit && (((usage.get(cls) || 0) < (budgets.get(cls) || 0)) || (featureAligned && cls === "supporting_page" && (usage.get(cls) || 0) < ((budgets.get(cls) || 0) + 1)));
     if (canKeep) {
       kept += 1;
       usage.set(cls, (usage.get(cls) || 0) + 1);

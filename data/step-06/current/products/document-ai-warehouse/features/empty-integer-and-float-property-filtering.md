@@ -1,30 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.788Z"
+generated_at: "2026-04-15T12:05:15.506Z"
 product_name: "Document AI Warehouse"
 product_slug: "document-ai-warehouse"
 feature_name: "Empty integer and float property filtering"
 feature_slug: "empty-integer-and-float-property-filtering"
 latest_feature_date: "2023-06-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+  - "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart"
+  - "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/UpdateOptions"
 keywords:
   - "empty"
   - "integer"
-  - "and"
   - "float"
   - "property"
   - "filtering"
   - "allows"
-  - "on"
+  - "properties"
 ---
 
 # Empty integer and float property filtering
 
 Product: Document AI Warehouse
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +35,57 @@ Allows filtering on empty integer and float properties.
 
 Allows filtering on empty integer and float properties.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document](https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document)
+- [https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart](https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart)
+- [https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/UpdateOptions](https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/UpdateOptions)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Document AI Warehouse \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document](https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document)
+- Source ID: `site-api-reference`
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON representation { "name" : string , // Union field values can be only one of the following: "integerValues" : { object ( IntegerArray ) } , "floatValues" : { object ( FloatArray ) } , "textValues" : { object ( TextArray ) } , "enumValues" : { object ( EnumArray ) } , "propertyValues" : { object ( PropertyArray ) } , "dateTimeValues" : { object ( DateTimeArray ) } , "mapProperty" : { object ( MapProperty ) } , "timestampValues" : { object ( TimestampArray ) } // End of list of possible types for union field values . } Fields name string Required.
+- Specific type value(s) obtained from Document AIs Property.mention text field. values can be only one of the following: integerValues object ( IntegerArray ) Integer property values. floatValues object ( FloatArray ) Float property values. textValues object ( TextArray ) String/text property values. enumValues object ( EnumArray ) Enum property values. propertyValues object ( PropertyArray ) Nested structured data property values. dateTimeValues object ( DateTimeArray ) date time property values.
+- JSON representation { "name" : string , "referenceId" : string , "displayName" : string , "title" : string , "displayUri" : string , "documentSchemaName" : string , "properties" : [ { object ( Property ) } ] , "updateTime" : string , "createTime" : string , "rawDocumentFileType" : enum ( RawDocumentFileType ) , "contentCategory" : enum ( ContentCategory ) , "textExtractionDisabled" : boolean , "textExtractionEnabled" : boolean , "creator" : string , "updater" : string , "dispositionTime" : string , "legalHold" : boolean , // Union field structured content can be only one of the following: "plainText" : string , "cloudAiDocument" : { object ( Document ) } // End of list of possible types for union field structured content . // Union field raw document can be only one of the following: "rawDocumentPath" : string , "inlineRawDocument" : string // End of list of possible types for union field raw document . } Fields name string The resource name of the document.
+- JSON representation { "text" : string , // Union field structured value can be only one of the following: "moneyValue" : { object ( Money ) } , "dateValue" : { object ( Date ) } , "datetimeValue" : { object ( DateTime ) } , "addressValue" : { object ( PostalAddress ) } , "booleanValue" : boolean , "integerValue" : integer , "floatValue" : number // End of list of possible types for union field structured value . } Fields text string Optional.
+
+### Quickstart \_|\_ Document AI Warehouse \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart](https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart)
+- Source ID: `site-iam-reference`
+- Final score: 59
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- String userId = "your-user-id" ; // Format is user:<user-id> quickStart ( projectId , location , userId ); } public static void quickStart ( String projectId , String location , String userId ) throws IOException , InterruptedException , ExecutionException , TimeoutException { String projectNumber = getProjectNumber ( projectId ); String endpoint = "contentwarehouse.googleapis.com:443" ; if ( ! "us" . equals ( location )) { endpoint = String . format ( "%s-%s" , location , endpoint ); } DocumentSchemaServiceSettings documentSchemaServiceSettings = DocumentSchemaServiceSettings . newBuilder (). setEndpoint ( endpoint ). build (); // Create a Schema Service client try ( DocumentSchemaServiceClient documentSchemaServiceClient = DocumentSchemaServiceClient . create ( documentSchemaServiceSettings )) { / The full resource name of the location, e.g.: projects/{project number}/locations/{location} / String parent = LocationName . format ( projectNumber , location ); / Create Document Schema with Text Type Property Definition More detail on managing Document Schemas: https://cloud.google.com/document-warehouse/docs/manage-document-schemas / DocumentSchema documentSchema = DocumentSchema . newBuilder () . setDisplayName ( "My Test Schema" ) . setDescription ( "My Test Schema's Description" ) . addPropertyDefinitions ( PropertyDefinition . newBuilder () . setName ( "test symbol" ) . setDisplayName ( "Searchable text" ) . setIsSearchable ( true ) . setTextTypeOptions ( TextTypeOptions . newBuilder (). build ()) . build ()). build (); // Define Document Schema request CreateDocumentSchemaRequest createDocumentSchemaRequest = CreateDocumentSchemaRequest . newBuilder () . setParent ( parent ) . setDocumentSchema ( documentSchema ). build (); // Create Document Schema DocumentSchema documentSchemaResponse = documentSchemaServiceClient . createDocumentSchema ( createDocumentSchemaRequest ); // Create Document Service Client Settings DocumentServiceSettings documentServiceSettings = DocumentServiceSettings . newBuilder (). setEndpoint ( endpoint ). build (); // Create Document Service Client and Document with relevant properties try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ( documentServiceSettings )) { TextArray textArray = TextArray . newBuilder (). addValues ( "Test" ). build (); Document document = Document . newBuilder () . setDisplayName ( "My Test Document" ) . setDocumentSchemaName ( documentSchemaResponse . getName ()) . setPlainText ( "This is a sample of a document's text." ) . addProperties ( Property . newBuilder () . setName ( documentSchema . getPropertyDefinitions ( 0 ). getName ()) . setTextValues ( textArray )). build (); // Define Request Metadata for enforcing access control RequestMetadata requestMetadata = RequestMetadata . newBuilder () . setUserInfo ( UserInfo . newBuilder () . setId ( userId ). build ()). build (); // Define Create Document Request CreateDocumentRequest createDocumentRequest = CreateDocumentRequest . newBuilder () . setParent ( parent ) . setDocument ( document ) . setRequestMetadata ( requestMetadata ) . build (); // Create Document CreateDocumentResponse createDocumentResponse = documentServiceClient . createDocument ( createDocumentRequest ); System . out . println ( createDocumentResponse . getDocument (). getName ()); System . out . println ( documentSchemaResponse . getName ()); } } } private static String getProjectNumber ( String projectId ) throws IOException { try ( ProjectsClient projectsClient = ProjectsClient . create ()) { ProjectName projectName = ProjectName . of ( projectId ); Project project = projectsClient . getProject ( projectName ); String projectNumber = project . getName (); // Format returned is projects/xxxxxx return projectNumber . substring ( projectNumber . lastIndexOf ( "/" ) + 1 ); } } } Node.js For more information, see the Document AI Warehouse Node.js API reference documentation .
+- For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. const projectNumber = 'YOUR PROJECT NUMBER'; const location = 'YOUR PROJECT LOCATION'; // Format is 'us' or 'eu' const userId = 'user:xxx@example.com'; // Format is "user:xxx@example.com" / // Import from google cloud const { DocumentSchemaServiceClient , DocumentServiceClient } = require ( ' @google-cloud/contentwarehouse ' ). v1 ; const apiEndpoint = location === 'us' ? 'contentwarehouse.googleapis.com' : ${ location } -contentwarehouse.googleapis.com ; // Create service client const schemaClient = new DocumentSchemaServiceClient ({ apiEndpoint : apiEndpoint , }); const serviceClient = new DocumentServiceClient ({ apiEndpoint : apiEndpoint }); // Get Document Schema async function quickstart () { // The full resource name of the location, e.g.: // projects/{project number}/locations/{location} const parent = projects/ ${ projectNumber } /locations/ ${ location } ; // Initialize request argument(s) const schemaRequest = { parent : parent , documentSchema : { displayName : 'My Test Schema' , propertyDefinitions : [ { name : 'testPropertyDefinitionName' , // Must be unique within a document schema (case insensitive) displayName : 'searchable text' , isSearchable : true , textTypeOptions : {}, }, ], }, }; // Create Document Schema const documentSchema = await schemaClient . createDocumentSchema ( schemaRequest ); const documentRequest = { parent : parent , document : { displayName : 'My Test Document' , documentSchemaName : documentSchema [ 0 ]. name , plainText : "This is a sample of a document's text." , properties : [ { name : 'testPropertyDefinitionName' , textValues : { values : [ 'GOOG' ]}, }, ], }, requestMetadata : { userInfo : { id : userId }}, }; // Make Request const response = serviceClient . createDocument ( documentRequest ); // Print out response response . then ( result = > console . log ( Document Created: ${ JSON . stringify ( result ) } ), error = > console . log ( error: ${ error } ) ); } Python For more information, see the Document AI Warehouse Python API reference documentation .
+- Document ( display name = "My Test Document" , document schema name = document schema . name , plain text = "This is a sample of a document's text." , properties = [ document property ], ) Define Request create document request = contentwarehouse .
+- DocumentSchema ( display name = "My Test Schema" , property definitions = [ property definition ], ), ) Create a Document schema document schema = document schema client . create document schema ( request = create document schema request ) Create a Document Service client document client = contentwarehouse .
+
+### UpdateOptions \_|\_ Document AI Warehouse \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/UpdateOptions](https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/UpdateOptions)
+- Source ID: `site-api-reference`
+- Final score: 55
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- UPDATE TYPE MERGE AND REPLACE OR INSERT PROPERTIES BY NAMES For each of the property, replaces the property if the it exists, otherwise inserts a new property.
+- UPDATE TYPE REPLACE PROPERTIES BY NAMES Replace the properties by names.
+- UPDATE TYPE INSERT PROPERTIES BY NAMES Inserts the properties by names.
+- UPDATE TYPE DELETE PROPERTIES BY NAMES Delete the properties by names.
 

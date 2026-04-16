@@ -31,7 +31,7 @@ Enable feedback
 Before collecting answer feedback,
 you must enable the following settings in the
 general agent settings :
-Enable interaction logging
+Enable conversation history
 Enable Answer Feedback
 Collect feedback with Dialogflow CX Messenger
 If you use
@@ -93,9 +93,9 @@ If you use Dialogflow CX Messenger ,
 you can set up custom feedback collection by defining your custom feedback component .
 Browse feedback using the Dialogflow CX console
 You can access and filter feedbacks using the Conversation history tool.
-Read feedback with BigQuery interaction logging
+Read feedback with BigQuery conversation history
 You can analyze the feedback data with
-BigQuery interaction logging .
+BigQuery conversation history .
 If you have already created your BigQuery table,
 you can alter your existing table with the following SQL command if it doesn't have the required bot_answer_feedback column:
 ALTER TABLE < your_dataset_name > . < your_table_name >
@@ -112,6 +112,6 @@ Validation
 arrow_forward
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

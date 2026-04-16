@@ -4,7 +4,7 @@ url: https://developers.google.com/maps/documentation/places/android-sdk/icons
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/places/android-sdk
+entrypoint: https://developers.google.com/maps/documentation/places/android-sdk/overview
 source_metadata:
   url: https://developers.google.com/maps/documentation/places/android-sdk/icons
   title: "Place Icons \_|\_ Places SDK for Android \_|\_ Google for Developers"
@@ -134,6 +134,6 @@ Hospital
 Police
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-09 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["Place icons, indicating different types of locations, can be accessed via URLs in PNG format along with their background colors. Requests for icons and colors require the `ICON_MASK_URL` and `ICON_BACKGROUND_COLOR` fields. The icon URL, obtained through `Place.Field.ICON_MASK_URL`, should be consistently referenced due to potential changes. `ICON_BACKGROUND_COLOR` returns the category's default color. The document then details various place categories and their associated icons and background colors. For example food and drink has the background color #FF9E67.\n"]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],["Place icons, indicating different types of locations, can be accessed via URLs in PNG format along with their background colors. Requests for icons and colors require the `ICON_MASK_URL` and `ICON_BACKGROUND_COLOR` fields. The icon URL, obtained through `Place.Field.ICON_MASK_URL`, should be consistently referenced due to potential changes. `ICON_BACKGROUND_COLOR` returns the category's default color. The document then details various place categories and their associated icons and background colors. For example food and drink has the background color #FF9E67.\n"]]

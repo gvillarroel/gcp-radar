@@ -1,58 +1,92 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:06:37.239Z"
+generated_at: "2026-04-14T04:07:01.312Z"
 product_name: "Anthos Config Management"
 product_slug: "anthos-config-management"
 feature_name: "K8sRequiredResources constraint template"
 feature_slug: "k8srequiredresources-constraint-template"
 latest_feature_date: "2022-06-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/cluster-requirements"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart"
 keywords:
-  - "K8s required resources"
-  - "resource requirement policy"
-  - "K8sRequiredResources constraint"
-  - "required resources template"
-  - "required resources"
-  - "K8sRequiredResources"
-  - "Constraint Template Library"
+  - "k8srequiredresources"
+  - "constraint"
+  - "template"
+  - "enforces"
+  - "required"
+  - "resource"
+  - "requests"
+  - "limits"
 ---
 
 # K8sRequiredResources constraint template
 
 Product: Anthos Config Management
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The constraint template library now includes the K8sRequiredResources template.
+This constraint template enforces required resource requests or limits on Kubernetes workloads.
 
 ## Extended Definition
 
-The constraint template library now includes the K8sRequiredResources template.
+This constraint template enforces required resource requests or limits on Kubernetes workloads.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/cluster-requirements](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/cluster-requirements)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart)
 
 ## Supporting Pages
 
-### Config Sync release notes \_|\_ Google Cloud Documentation
+### "REST Resource: projects.locations.fleetPackages \_|\_ Config Sync \_|\_\
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes)
-- Source ID: `site-docs-root-2`
-- Final score: 28
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages)
+- Source ID: `site-docs-reference`
+- Final score: 106
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- 1.12.0 Feature The constraint template library includes a new template: K8sRequiredResources .
-- 1.16.3 Change The constraint template library's K8sPSPAllowedUsers , K8sPSPAllowPrivilegeEscalationContainer , K8sPSPAutomountServiceAccountTokenPod , K8sPSPCapabilities , K8sPSPFlexVolumes , K8sPSPForbiddenSysctls , K8sPSPFSGroup , K8sPSPHostFilesystem , K8sPSPHostNamespace , K8sPSPHostNetworkingPorts , K8sPSPPrivilegedContainer , K8sPSPProcMount , K8sPSPReadOnlyRootFilesystem , K8sPSPSELinuxV2 , K8sPSPVolumeTypes , and K8sRequiredProbes no longer raise violations during updates of existing objects for immutable fields.
-- Those templates are: K8sPSPAllowPrivilegeEscalationContainer K8sPSPAppArmor K8sPSPCapabilities K8sContainerLimits K8sContainerRatios K8sPSPHostNetworkingPorts K8sImageDigests K8sPSPPrivilegedContainer K8sPSPProcMount K8sPSPReadOnlyRootFilesystem K8sPSPSeccomp K8sPSPSELinuxV2 K8sPSPAllowedUsers K8sContainerLimits 1.10.2 Feature The constraint template library includes new templates: K8sPSPAutomountServiceAccountTokenPod, RestrictNetworkExclusions, and K8sDisallowAnonymous.
-- This note was updated on January 10, 2024 1.17.0 Change The constraint template library's K8sNoExternalServices template now supports the "networking.gke.io/load-balancer-type": "Internal" annotation.
+- JSON representation { // Union field strategy can be only one of the following: "variantNameTemplate" : string // End of list of possible types for union field strategy . } Fields Union field strategy . strategy for selecting a variant. strategy can be only one of the following: variantNameTemplate string Required. variantNameTemplate is a template that can refer to variables containing cluster membership metadata such as location, name, and labels to generate the name of the variant for a target cluster.
+- Example: { "name": "wrench", "mass": "1.3kg", "count": "3" } . resourceBundleSelector object ( ResourceBundleSelector ) Required.
+- Format is projects/{p}/locations/{l}/resourceBundles/{r}. tag string Required.
+- JSON representation { "name" : string , "createTime" : string , "updateTime" : string , "labels" : { string : string , ... } , "resourceBundleSelector" : { object ( ResourceBundleSelector ) } , "target" : { object ( Target ) } , "rolloutStrategy" : { object ( RolloutStrategy ) } , "variantSelector" : { object ( VariantSelector ) } , "info" : { object ( FleetPackageInfo ) } , "deletionPropagationPolicy" : enum ( DeletionPropagationPolicy ) , "state" : enum ( State ) } Fields name string Identifier.
+
+### "Quickstart: Deploy Kubernetes resources across a fleet \_|\_ Config Sync\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart)
+- Source ID: `site-docs-root`
+- Final score: 97
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- In your Cloud Shell, create a file named fleet-package.yaml with the following content: resourceBundleSelector : cloudBuildRepository : name : projects/ PROJECT ID /locations/us-central1/connections/fleet-package-quickstart-connection/repositories/ REPOSITORY NAME tag : v1.0.0 serviceAccount : projects/ PROJECT ID /serviceAccounts/quickstart-service-account@ PROJECT ID . iam.gserviceaccount.com path : Match all files (including deployment.yaml) to generate variants variantsPattern : " .yaml" target : fleet : project : projects/ PROJECT ID rolloutStrategy : rolling : maxConcurrent : 1 variantSelector : Explicitly match the variant generated from "deployment.yaml" variantNameTemplate : "deployment" Replace REPOSITORY NAME with the repository name from Cloud Build.
+- Set up a service account for Cloud Build To create the service account and grant the required permissions to Cloud Build, complete the following steps: Create the service account: gcloud iam service-accounts create "quickstart-service-account" Grant the service account permission to fetch resources from your Git repository by adding an IAM policy binding for the Resource Bundle Publisher role: gcloud projects add-iam-policy-binding PROJECT ID \ --member = "serviceAccount:quickstart-service-account@ PROJECT ID .iam.gserviceaccount.com" \ --role = 'roles/configdelivery.resourceBundlePublisher' If prompted, select None as the condition for the policy.
+- You might also notice availability errors while Autopilot adjusts your resource requests for the new deployment.
+- Name your file deployment.yaml and paste the following contents into it: apiVersion : apps/v1 kind : Deployment metadata : name : nginx-deployment spec : replicas : 3 selector : matchLabels : app : nginx template : metadata : labels : app : nginx spec : containers : - image : nginx:1.14.2 name : nginx ports : - containerPort : 80 Click Commit changes...
+
+### Prepare your cluster for Config Sync \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/cluster-requirements](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/cluster-requirements)
+- Source ID: `site-docs-root`
+- Final score: 97
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Due to the way Autopilot modifies resource requests, Config Sync makes the following adjustments: Adjusts user-specified resource override limits to match requests .
+- Applies overrides only when there are one or more resource requests higher than the corresponding adjusted output declared in the annotation, or there are resource requests lower than the corresponding input declared in the annotation.
+- In organizations that enforce the iam.automaticIamGrantsForDefaultServiceAccounts organization policy constraint , the default Compute Engine service account won't automatically get the required permissions for GKE.
+- Resource requirements with Autopilot mode GKE Autopilot mode automatically modifies resource requests to maintain workload stability.
 

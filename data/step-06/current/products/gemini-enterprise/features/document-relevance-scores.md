@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:21.407Z"
+generated_at: "2026-04-12T12:16:13.726Z"
 product_name: "Gemini Enterprise"
 product_slug: "gemini-enterprise"
 feature_name: "Document-relevance scores"
 feature_slug: "document-relevance-scores"
 latest_feature_date: "2025-03-04"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
 keywords:
   - "document"
   - "relevance"
@@ -24,7 +27,7 @@ keywords:
 # Document-relevance scores
 
 Product: Gemini Enterprise
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,68 @@ Search results can include a relevance score for each document to support rankin
 
 Search results can include a relevance score for each document to support ranking or filtering.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls](https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores](https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete](https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/libraries](https://docs.cloud.google.com/gemini/enterprise/docs/libraries)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Configure serving controls \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls](https://docs.cloud.google.com/gemini/enterprise/docs/configure-serving-controls)
+- Source ID: `site-docs-root`
+- Final score: 174
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Serving control types The following types of serving controls are available: Control Description Available for Boost control Changes the returned order of results Search apps with data stores that support a schema, such as data stores that contain structured data or unstructured data with metadata Filter control Removes entries from returned results Search apps with data stores that support a schema, such as data stores that contain structured data or unstructured data with metadata Synonyms control Associates queries with each other Search apps with structured or unstructured data stores Redirect control Redirects to a specified URI All search apps Promote control Promotes a specified link for a query Search apps with structured or unstructured data stores About conditions When creating a control, you can optionally define a condition that determines when the control is applied.
+- For example, if the value of the query term is "support", you can set a redirect to your technical support page instead of returning (or failing to return) search results for "support".
+- The ID can contain [1-63] characters that can be letters, digits, hyphens, and underscores.
+- The ID can contain [1-63] characters that can be letters, digits, hyphens, and underscores.
+
+### About apps and data stores \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores](https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores)
+- Source ID: `site-docs-root`
+- Final score: 163
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Blended search allows the following fields in search requests : boostSpec contentSearchSpec dataStoreSpecs facetSpecs filter languageCode offset oneBoxPageSize orderBy query pageSize pageToken relevanceScoreSpec relevanceThreshold session sessionSpec spellCorrectionSpec userInfo userPseudoId Blended search allows the following fields in dataStoreSpecs : dataStore boostSpec : If there are boost specs specified for both SearchRequest and dataStoreSpecs , both boost specs are applied to search results filter : If there are filters specified for both SearchRequest and dataStoreSpecs , both filters are applied to search results Create, Read, Update, and Delete (CRUD) operations on serving configs are supported for blended apps.
+- When getting search results, you can either search across all data stores, or filter for results from a single data store.
+- Only the following fields can be added or updated in a serving config: boostControlIds displayName filterControlIds genericConfig : contentSearchSpec name solutionType synonymsControlIds CRUD operations on the following controls are supported for blended search apps: boostAction synonymAction filterAction There is a limit of 50 data stores per search app.
+- For example, a financial institution can enable search or recommendations over their private corpus of financial research publications, or a biotech company can enable search or recommendations over their private repository of medical research.
+
+### Configure autocomplete \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete](https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete)
+- Source ID: `site-docs-root`
+- Final score: 161
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can use this feature to reduce empty suggestion results and increase suggestion diversity, making this especially useful in cases where data sources (user event count, search history, and document topic coverage) is limited.
+- Example command and result curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \$ curl -X PATCH \ -H "X-Goog-User-Project: my-project-123" \t-access-token)" \ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=queryFrequencyThreshold \ -d '{ "name": "projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig", "queryFrequencyThreshold": 30 }' { "name": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig", "matchingOrder": "exact-prefix", "maxSuggestions": 20, "minPrefixLength": 1, "queryModel": "automatic", "enableMode": "AUTOMATIC", "queryFrequencyThreshold": 30 } Update the CompletionConfig.numUniqueUsersThreshold field: curl -X PATCH \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -H "X-Goog-User-Project: PROJECT ID " \ https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig?updateMask = numUniqueUsersThreshold \ -d '{ "name": "projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig", "numUniqueUsersThreshold": UNIQUE USERS }' Replace UNIQUE USERS with an integer value that represents the minimum number of unique users who must enter a given search query before it can be returned as an autocomplete suggestion.
+- If you use the search history or user events model and there is a likelihood of your users typing PII into the search bar, then you can reduce PII leaks by adjusting the following parameters: queryFrequencyThreshold : Before a query can be returned as an autocomplete suggestion, it must have been entered this many times. numUniqueUsersThreshold : Before a query can be returned as an autocomplete suggestion, it must have been entered by this many unique users.
+- Query suggestions model Data source Website data Structured data Unstructured data Document Imported by user ✔ (default) ✔ (default) Completable fields Imported by user ✔ Search history Automatically collected ✔ (default) ✔ ✔ User events Imported by user or automatically collected by widget ✔ ✔ ✔ : The document schema must contain title or description fields, or there must be fields that have been specified as title or description key properties.
+
+### Gemini Enterprise client libraries \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/libraries](https://docs.cloud.google.com/gemini/enterprise/docs/libraries)
+- Source ID: `site-docs-reference`
+- Final score: 142
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- SearchResult element : response . getResultsList ()) { System . out . println ( "Response content: " + element ); } } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'YOUR LOCATION'; // Options: 'global', 'us', 'eu' // const collectionId = 'default collection'; // Options: 'default collection' // const dataStoreId = 'YOUR DATA STORE ID' // Create in Cloud Console // const servingConfigId = 'default config'; // Options: 'default config' // const searchQuery = 'Google'; const { SearchServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1beta ; // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store const apiEndpoint = location === 'global' ? 'discoveryengine.googleapis.com' : ${ location } -discoveryengine.googleapis.com ; // Instantiates a client const client = new SearchServiceClient ({ apiEndpoint : apiEndpoint }); async function search () { // The full resource name of the search engine serving configuration. // Example: projects/{projectId}/locations/{location}/collections/{collectionId}/dataStores/{dataStoreId}/servingConfigs/{servingConfigId} // You must create a search engine in the Cloud Console first. const name = client . projectLocationCollectionDataStoreServingConfigPath ( projectId , location , collectionId , dataStoreId , servingConfigId ); const request = { pageSize : 10 , query : searchQuery , servingConfig : name , }; const IResponseParams = { ISearchResult : 0 , ISearchRequest : 1 , ISearchResponse : 2 , }; // Perform search request const response = await client . search ( request , { // Warning: Should always disable autoPaginate to avoid iterate through all pages. // // By default NodeJS SDK returns an iterable where you can iterate through all // search results instead of only the limited number of results requested on // pageSize, by sending multiple sequential search requests page-by-page while // iterating, until it exhausts all the search results.
+- This will be unexpected and // may cause high Search API usage and long wait time, especially when the matched // document numbers are huge. autoPaginate : false , }); const results = response [ IResponseParams .
+- You can iterate over elements, and API calls will be issued to fetch pages as needed. result . each do item Each element is of type ::Google::Cloud::DiscoveryEngine::V1beta::SearchResponse::SearchResult. p item end end Additional resources C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- ISearchResponse ]. results ; for ( const result of results ) { console . log ( result ); } } PHP use Google\ApiCore\ApiException; use Google\ApiCore\PagedListResponse; use Google\Cloud\DiscoveryEngine\V1beta\Client\SearchServiceClient; use Google\Cloud\DiscoveryEngine\V1beta\SearchRequest; use Google\Cloud\DiscoveryEngine\V1beta\SearchResponse\SearchResult; / Performs a search. @param string $formattedServingConfig The resource name of the Search serving config, such as projects/&#42;/locations/global/collections/default collection/engines/&#42;/servingConfigs/default serving config, or projects/&#42;/locations/global/collections/default collection/dataStores/default data store/servingConfigs/default serving config.
 

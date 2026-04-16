@@ -276,7 +276,6 @@ C2D
 C3
 C3D
 C4
-—
 C4A
 C4D
 —
@@ -339,7 +338,6 @@ N2D
 N4
 —
 N4A
-—
 —
 N4D
 —
@@ -430,23 +428,23 @@ Hyperdisk ML
 Available in all zones and regions
 Hyperdisk Throughput
 Available in all zones and regions
-Share Hyperdisk volumes between VMs
-You can share a Hyperdisk volume between multiple VMs by
-simultaneously attaching the same volume to multiple VMs.
+Share Hyperdisk volumes between instances
+You can share a Hyperdisk volume between multiple instances by
+simultaneously attaching the same volume to multiple instances.
 The following scenarios are supported:
-Concurrent read-write access to a single volume from multiple VMs.
+Concurrent read-write access to a single volume from multiple instances.
 Recommended for clustered file systems and highly available workloads like
 SQL Server Failover Cluster Infrastructure. Supported for the following
 Hyperdisk types:
 Hyperdisk Balanced
 Hyperdisk Extreme
 Hyperdisk Balanced High Availability
-Concurrent read-only access to a single volume from multiple VMs.
+Concurrent read-only access to a single volume from multiple instances.
 This is more cost effective than having multiple disks with the same data.
 Recommended for accelerator-optimized machine learning workloads.
 Supported for Hyperdisk ML volumes.
 To learn about disk sharing, see
-Share a disk between VMs .
+Share a disk between instances .
 High availability and disaster recovery protection for Hyperdisk volumes
 You can protect your data in the rare event of a zonal or regional outage by
 enabling replication, that is, maintaining a copy of the data in another zone or
@@ -594,6 +592,6 @@ Review Disk pricing information.
 Learn how to optimize performance of Hyperdisk .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-09 UTC.
+Last updated 2026-04-15 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-15 UTC."],[],[]]

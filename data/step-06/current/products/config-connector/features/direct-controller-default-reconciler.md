@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.169Z"
+generated_at: "2026-04-13T14:23:05.035Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "Direct Controller default reconciler"
@@ -9,18 +9,16 @@ latest_feature_date: "2024-06-18"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/getting-started"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/servicedirectory/servicedirectoryendpoint"
+  - "https://docs.cloud.google.com/config-connector/docs/known-issues"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
 keywords:
-  - "direct"
+  - "initialized"
+  - "made"
   - "controller"
   - "default"
   - "reconciler"
-  - "config"
-  - "connector"
-  - "made"
-  - "the"
+  - "direct"
 ---
 
 # Direct Controller default reconciler
@@ -42,45 +40,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/servicedirectory/servicedirectoryendpoint](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/servicedirectory/servicedirectoryendpoint)
+- [https://docs.cloud.google.com/config-connector/docs/known-issues](https://docs.cloud.google.com/config-connector/docs/known-issues)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit](https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### ServiceDirectoryEndpoint | Config Connector | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/servicedirectory/servicedirectoryendpoint](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/servicedirectory/servicedirectoryendpoint)
+- Source ID: `feature-recovery-http`
+- Final score: 201
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
+- ServiceDirectoryEndpoint | Config Connector | Google Cloud Documentation Skip to main content Áreas de tecnologia close IA e ML Desenvolvimento de aplicativos Hospedagem de aplicativos Computação Pipelines e análises de dados Bancos de dados Distribuído, híbrido e multicloud Soluções por setor Migração Rede Observabilidade e monitoramento Segurança Storage Ferramentas de vários produtos close Gerenciamento de recursos e acesso Gerenciamento de custos e uso Infraestrutura como código SDK, linguagens, frameworks e ferramentas / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Comece sem custos financeiros Visão geral Guias API e referência Recursos Áreas de tecnologia More Visão geral Guias API e referência Recursos Ferramentas de vários produtos More Console Config Connector Visão geral dos recursos da API AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup e DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig Reserva do BigQuery BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Inventário de recursos do Cloud AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cotas do Cloud APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Sistema de detecção de intrusões do Cloud CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Controlador de configuração ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore para Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig Configuração do SO OSConfigGuestPolicy OSConfigOSPolicyAssignment Política da organização OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Análise de contêiner ContainerAnalysisNote Contêiner anexado ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Contatos essenciais EssentialContactsContact Hub do GKE GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Conectividade de rede NetworkConnectivityHub NetworkConnectivitySpoke Segurança da rede NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Serviços de rede NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Pasta Projeto ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Diretório de serviços ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Rede de serviços ServiceNetworkingConnection Service Usage Serviço ServiceIdentity Serviço de transferência do Cloud Storage StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress Acesso à nuvem privada virtual VPCAccessConnector Estações de trabalho WorkstationCluster WorkstationConfig Estação de trabalho Anotações IA e ML Desenvolvimento de aplicativos Hospedagem de aplicativos Computação Pipelines e análises de dados Bancos de dados Distribuído, híbrido e multicloud Soluções por setor Migração Rede Observabilidade e monitoramento Segurança Storage Gerenciamento de recursos e acesso Gerenciamento de custos e uso Infraestrutura como código SDK, linguagens, frameworks e ferramentas Home Documentation Access and resource management Config Connector API e referência Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- ServiceDirectoryEndpoint Property Value Google Cloud Service Name Service Directory Google Cloud Service Documentation /service-directory/docs/ Google Cloud REST Resource Name v1beta1.projects.locations.namespaces.services.endpoints Google Cloud REST Resource Documentation /service-directory/docs/reference/rest/v1beta1/projects.locations.namespaces.services.endpoints Config Connector Resource Short Names gcpservicedirectoryendpoint gcpservicedirectoryendpoints servicedirectoryendpoint Config Connector Service Name servicedirectory.googleapis.com Config Connector Resource Fully Qualified Name servicedirectoryendpoints.servicedirectory.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema addressRef : external : string name : string namespace : string networkRef : external : string name : string namespace : string port : integer resourceID : string serviceRef : external : string name : string namespace : string Fields addressRef Optional object addressRef.external Optional string Allowed value: The `address` field of a `ComputeAddress` resource. addressRef.name Optional string Name of the referent.
+- When unset, the value of `metadata.name` is used as the default. serviceRef Required object The ServiceDirectoryService that this endpoint belongs to. serviceRef.external Optional string Allowed value: The `name` field of a `ServiceDirectoryService` resource. serviceRef.name Optional string Name of the referent.
+- Sample YAML(s) Typical Use Case # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : servicedirectory.cnrm.cloud.google.com/v1beta1 kind : ServiceDirectoryEndpoint metadata : name : servicedirectoryendpoint-sample labels : label-one : value-one spec : serviceRef : name : servicedirectoryendpoint-dep addressRef : name : servicedirectoryendpoint-dep port : 443 networkRef : external : projects/${PROJECT_NUMBER?}/locations/global/networks/servicedirectory-dep --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : servicedirectoryendpoint-dep labels : label-one : "value-one" spec : location : us-central1 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : labels : label-one : "value-one" name : servicedirectoryendpoint-dep spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : servicedirectory.cnrm.cloud.google.com/v1beta1 kind : ServiceDirectoryNamespace metadata : name : servicedirectoryendpoint-dep spec : location : us-central1 projectRef : external : ${PROJECT_ID?} --- apiVersion : servicedirectory.cnrm.cloud.google.com/v1beta1 kind : ServiceDirectoryService metadata : name : servicedirectoryendpoint-dep spec : namespaceRef : name : servicedirectoryendpoint-dep Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
 
-### Getting started with Config Connector | Google Cloud Documentation
+### "Configure the controller manager rate limit \_|\_ Config Connector \_|\_\
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
-- Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- By default, Config Connector deletes the PubSubTopic resource.
-- Getting started with Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/getting-started PROJECT ID: your Google Cloud project ID.
-- For example, to delete the PubSubTopic you created earlier, run kubectl delete with your pubsub-topic.yaml file: ...
-- NEW LABEL VALUE: an updated value for the label you added previously.
-
-### IAMPolicy | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 104
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit](https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit)
+- Source ID: `site-docs-reference`
+- Final score: 121
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
+- The usage is similar to the namespaced mode, but in this case, you should use the ControllerReconciler CR instead of NamespacedControllerReconciler , as in the following example: apiVersion : customize.core.cnrm.cloud.google.com/v1alpha1 kind : ControllerReconciler metadata : name : cnrm-controller-manager spec : rateLimit : qps : 80 # the default value is 20 burst : 40 # the default value is 30 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Create a file named configure-rate-limit.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : NamespacedControllerReconciler metadata : name : cnrm-controller-manager # name must not contain the namespace ID suffix namespace : NAMESPACE spec : rateLimit : qps : 80 # the default value is 20 burst : 40 # the default value is 30 Replace NAMESPACE with the name of your namespace.
+- Verify that the --qps and --burst flags are added to the cnrm-controller-manager controller's manager container by running the following command: kubectl describe statefulsets -n cnrm-system -l "cnrm.cloud.google.com/scoped-namespace= NAMESPACE " The output should contain the following: Containers : manager : Image : gcr.io/gke-release/cnrm/controller:fd4c42c Port : 23232/TCP Host Port : 0/TCP Command : /configconnector/manager Args : --qps=80 --burst=40 --scoped-namespace=config-control --prometheus-scrape-endpoint=:8888 Configure the rate limit in cluster mode Starting in version 1.125, if Config Connector is configured to run in cluster mode, you can configure the rate limit of the cnrm-controller-manager controller's Kubernetes client using the ControllerReconciler custom resource.
+- Use kubectl apply to apply the rate limit configuration to your cluster: kubectl apply -f configure-rate-limit.yaml Verify the configuration is successful by running the following command: kubectl get namespacedcontrollerreconciler cnrm-controller-manager -n NAMESPACE -o jsonpath='{.status.healthy}' The output should display status.healthy field set to true .
+
+### Known issues \_|\_ Config Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/known-issues](https://docs.cloud.google.com/config-connector/docs/known-issues)
+- Source ID: `site-docs-reference`
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- SecretManagerSecret "last-applied-configuration" error If you enable the direct reconciler for a SecretManagerSecret (using the alpha.cnrm.cloud.google.com/reconciler: direct annotation) in versions 1.131.0 through 1.133, reconciliation might fail with an API error: [kubectl.kubernetes.io/last-applied-configuration] must follow pattern [a-z0-9A-Z]+([ \.\-] [a-z0-9A-Z]+) ), be less than 64 characters, and must have a UTF encoding of less than 128 bytes This occurs because Config Connector incorrectly attempts to pass internal Kubernetes annotations as labels to the Secret Manager API.
+- Select your Config Connector version: 1.134.1 1.134 1.131 Kubernetes 1.19 Select your problem category: Installation Networking Resources Direct Reconciler Or, filter the known issues: Category Earliest identified version Fixed version Issue and workaround Resources 1.126.0 1.134.1 Fixed: Resource creation blocked by webhook TLS error: "x509: certificate signed by unknown authority" When attempting to create or apply new Config Connector resources, the Kubernetes API server rejects the request and blocks resource creation.
+- Duplicate controller name error In version 1.132.0, resources such as SpannerInstance and SecretManagerSecret might fail to reconcile with an error indicating that a controller with the same name already exists: error registering controller: error adding direct controller for SpannerInstance to a manager: error creating new controller: controller with name spannerinstance-controller already exists.
+- Direct Reconciler 1.131 1.134 Fixed: Issues with direct reconcilers Config Connector version 1.132.0 introduced issues affecting resources that use the direct reconciler.
 

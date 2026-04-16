@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.026Z"
+generated_at: "2026-04-13T22:42:27.314Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Request and transaction tags"
@@ -9,18 +9,17 @@ latest_feature_date: "2021-10-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/transactions"
-  - "https://docs.cloud.google.com/spanner/docs/rpc-endpoints"
-  - "https://docs.cloud.google.com/spanner/docs/instances"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+  - "https://docs.cloud.google.com/spanner/docs/use-ado-net"
 keywords:
-  - "request"
-  - "and"
-  - "transaction"
+  - "correlate"
   - "tags"
-  - "spanner"
-  - "introduces"
-  - "in"
+  - "code"
   - "application"
+  - "request"
+  - "introduces"
+  - "transaction"
 ---
 
 # Request and transaction tags
@@ -38,46 +37,55 @@ Spanner introduces request tags and transaction tags in application code to corr
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/transactions](https://docs.cloud.google.com/spanner/docs/transactions)
-- [https://docs.cloud.google.com/spanner/docs/rpc-endpoints](https://docs.cloud.google.com/spanner/docs/rpc-endpoints)
-- [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat)
+- [https://docs.cloud.google.com/spanner/docs/use-ado-net](https://docs.cloud.google.com/spanner/docs/use-ado-net)
 
 ## Supporting Pages
 
-### Transactions overview | Spanner | Google Cloud Documentation
+### "JDBC session management commands (GoogleSQL) \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/transactions](https://docs.cloud.google.com/spanner/docs/transactions)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- The following example shows how to use a read-only transaction to get consistent data for two reads at the same timestamp: void ReadOnlyTransaction(google::cloud::spanner::Client client) { namespace spanner = ::google::cloud::spanner; auto read only = spanner::MakeReadOnlyTransaction(); spanner::SqlStatement select( &quot;SELECT SingerId, AlbumId, AlbumTitle FROM Albums&quot;); using RowType = std::tuple&lt;std::int64 t, std::int64 t, std::string&gt;; // Read#1.
-- Transactions overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/transactions Spanner provides an interface for executing a body of work in the context of a read-only transaction, with retries for transaction aborts.
-
-### Global and regional service endpoints | Spanner | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/rpc-endpoints](https://docs.cloud.google.com/spanner/docs/rpc-endpoints)
-- Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands)
+- Source ID: `site-docs-reference`
+- Final score: 154
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Global and regional service endpoints Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/rpc-endpoints This page describes Spanner RPC global and regional endpoints.
+- You can also use a statement hint to add a statement tag: @ { STATEMENT TAG = 'my-tag' } SELECT FROM Albums For more information, see Troubleshoot with request tags and transaction tags .
+- For more information, see Troubleshoot with request tags and transaction tags .
+- Tags The following statements manage request and transaction tags .
+- Example: Transaction tags (Click to expand) The following example shows how to set transaction tags with the Spanner JDBC driver.
 
-### Instances overview | Spanner | Google Cloud Documentation
+### "JDBC session management commands (PostgreSQL) \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/spanner/docs/instances](https://docs.cloud.google.com/spanner/docs/instances)
-- Source ID: `site-docs-root`
-- Final score: 98
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat](https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat)
+- Source ID: `site-docs-reference`
+- Final score: 154
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Spanner is a fully managed database service which oversees its own underlying tasks and resources, including monitoring and restarting processes when necessary with zero downtime.
-- Instances overview Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/instances Once an instance is created, you can list, edit, or delete it.
+- You can also use a statement hint to add a statement tag: / @STATEMENT TAG='my-tag' / SELECT FROM Albums For more information, see Troubleshoot with request tags and transaction tags .
+- For more information, see Troubleshoot with request tags and transaction tags .
+- Tags The following statements manage request and transaction tags .
+- Example: Transaction tags (Click to expand) The following example shows how to set transaction tags with the Spanner JDBC driver.
+
+### Use the Spanner ADO.NET driver \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/use-ado-net](https://docs.cloud.google.com/spanner/docs/use-ado-net)
+- Source ID: `site-docs-reference`
+- Final score: 128
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Tags: Use request and transaction tags to troubleshoot .
+- DataProvider Use the Spanner ADO.NET driver To create a ADO.NET connection to a Spanner database, create a SpannerConnectionStringBuilder with a fully qualified database name as the connection string: GoogleSQL /// <summary> /// Create an ADO.NET connection to a Spanner database. /// </summary> /// <param name="connectionString"> /// A connection string in the format /// 'Data Source=projects/my-project/instances/my-instance/databases/my-database'. /// </param> public static async Task CreateConnection ( string connectionString ) { // Use a SpannerConnectionStringBuilder to construct a connection string. // The SpannerConnectionStringBuilder contains properties for the most // used connection string variables. var builder = new SpannerConnectionStringBuilder ( connectionString ) { // Sets the default isolation level that should be used for all // read/write transactions on this connection.
+- WriteLine ( $"Greeting from Spanner: {reader.GetString(0)}" ); } } PostgreSQL /// <summary> /// Create an ADO.NET connection to a Spanner PostgreSQL database. /// </summary> /// <param name="connectionString"> /// A connection string in the format /// 'Data Source=projects/my-project/instances/my-instance/databases/my-database'. /// </param> public static async Task CreateConnection ( string connectionString ) { // Use a SpannerConnectionStringBuilder to construct a connection string. // The SpannerConnectionStringBuilder contains properties for the most // used connection string variables. var builder = new SpannerConnectionStringBuilder ( connectionString ) { // Sets the default isolation level that should be used for all // read/write transactions on this connection.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 

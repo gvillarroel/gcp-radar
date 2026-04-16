@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.146Z"
+generated_at: "2026-04-15T00:01:14.009Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Minimal AWS Permissions"
 feature_slug: "minimal-aws-permissions"
 latest_feature_date: "2018-06-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
   - "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies"
+  - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies"
 keywords:
   - "minimal"
@@ -26,7 +26,7 @@ keywords:
 # Minimal AWS Permissions
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +38,21 @@ Documentation describes a reduced AWS permission set for using Monitoring with A
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
 - [https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies](https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies)
+- [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 170
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- June 19, 2018 Feature If you want to minimize the AWS permissions you give to Stackdriver, then see Minimal AWS Permissions .
-- Issue When installing the monitoring agent on an Amazon EC2 VM instance running Microsoft Windows, ignore the following error message if you get it only once after the service is started: "StackdriverAgent is running on an AWS instance but project ID is not set." March 17, 2016 Feature The Monitoring API v3 is now available.
-- Change Agent permissions in VM instances: The agent no longer needs the Project Editor IAM role; it only needs the Monitoring Metric Writer role ( roles/monitoring.metricWriter ).
-- Set up application monitoring describes how to configure an observability scope so that you have an aggregated view of your log, metric, and trace data.
 
 ### Use agent policies \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies](https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies)
 - Source ID: `site-iam-reference`
-- Final score: 114
+- Final score: 102
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +61,24 @@ Evidence snippets:
 - If you haven't done so already, install the beta component of the gcloud CLI: gcloud components install beta To check if you have the beta component for the installed, run: gcloud components list If you previously installed the beta component, ensure you have the latest version: gcloud components update Download and use the following script to enable the APIs and to set the proper permissions for using the Google Cloud CLI: set-permissions.sh .
 - Insufficient IAM permission If a gcloud beta compute instances ops-agents policies command fails with a permission error, then make sure you have run the set-permissions.sh script as described in Create an agent policy to set up the OS Config policy roles: GuestPolicy Admin ( roles/osconfig.guestPolicyAdmin ) : Provides full access to guest policies.
 
+### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
+- Source ID: `site-docs-reference-2`
+- Final score: 95
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This is the project that you use to view your application's telemetry data: To get the permissions that you need to view log and metric data, and to create alerting policies and customize dashboards, ask your administrator to grant you the following IAM roles: Logs Viewer ( roles/logging.viewer ) on your App Hub host project or management project and any other projects listed in its default log scope.
+- Explore trace data Note: If your dashboards aren't displaying the trace data that you expect, then you might need to configure the default trace scope or you might need additional Identity and Access Management permissions.
+- Explore log data Note: If your dashboards aren't displaying the log data that you expect, then you might need to configure the default log scope or you might need additional Identity and Access Management permissions.
+- You might also be able to get the required permissions through custom roles or other predefined roles .
+
 ### Use agent policies (beta) \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies)
 - Source ID: `site-iam-reference`
-- Final score: 106
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:

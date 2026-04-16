@@ -1,0 +1,89 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T12:48:36.351Z"
+product_name: "BigQuery"
+product_slug: "bigquery"
+feature_name: "GROUP BY ALL"
+feature_slug: "group-by-all"
+latest_feature_date: "2025-05-13"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+  - "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+  - "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet"
+keywords:
+  - "group"
+  - "all"
+  - "bigquery"
+  - "sql"
+  - "now"
+  - "generally"
+  - "supports"
+  - "clause"
+---
+
+# GROUP BY ALL
+
+Product: BigQuery
+Coverage: LOW
+
+## Step 02 Summary
+
+BigQuery SQL now generally supports the GROUP BY ALL clause; BigQuery supports the GROUP BY ALL clause to infer grouping keys from SELECT items.
+
+## Extended Definition
+
+BigQuery SQL now generally supports the GROUP BY ALL clause; BigQuery supports the GROUP BY ALL clause to infer grouping keys from SELECT items.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/bigquery/docs/api-sql-translator](https://docs.cloud.google.com/bigquery/docs/api-sql-translator)
+- [https://docs.cloud.google.com/bigquery/docs/batch-sql-translator](https://docs.cloud.google.com/bigquery/docs/batch-sql-translator)
+- [https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet](https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet)
+
+## Supporting Pages
+
+### "Migrate code with the batch SQL translator \_|\_ BigQuery \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/batch-sql-translator](https://docs.cloud.google.com/bigquery/docs/batch-sql-translator)
+- Source ID: `site-docs-reference-5`
+- Final score: 60
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following example shows a translation configuration YAML file for a Teradata to BigQuery translation: tasks: translation task: type: Teradata2BigQuery Translation translationDetails: sourceTargetMapping: - sourceSpec: baseUri: gs://bq-translations/input targetSpec: relativePath: output targetBaseUri: gs://bq-translations targetTypes: - sql sourceEnvironment: defaultDatabase: default db schemaSearchPath: - foo The following example shows a translation configuration JSON file for a Teradata to BigQuery translation: { "tasks" : { "translation task" : { "type" : "Teradata2BigQuery Translation" , "translationDetails" : { "sourceTargetMapping" : [ { "sourceSpec" : { "literal" : { "literalString" : "sel 1" , "relativePath" : "my input 1" } , "encoding" : "UTF-8" } } , { "sourceSpec" : { "literal" : { "literalString" : "sel 2" , "relativePath" : "my input 2" } , "encoding" : "UTF-8" } } ] , "targetReturnLiterals" : [ "sql/my input 1" , "sql/my input 2" ] } } } } Once the translation configuration is created, run the following command to run the translation job. bq mk --migration workflow --location = LOCATION --config file = CONFIG FILE NAME .json Replace the following: LOCATION : the location of the Google Cloud project that is running this translation job.
+- Required permissions You must have the following permissions on the project to enable the BigQuery Migration Service: resourcemanager.projects.get serviceusage.services.enable serviceusage.services.get You need the following permissions on the project to access and use the BigQuery Migration Service: bigquerymigration.workflows.create bigquerymigration.workflows.get bigquerymigration.workflows.list bigquerymigration.workflows.delete bigquerymigration.subtasks.get bigquerymigration.subtasks.list Alternatively, you can use the following roles to get the same permissions: bigquerymigration.viewer - Read only access. bigquerymigration.editor - Read/write access.
+- The batch SQL translator can translate the following SQL dialects into GoogleSQL: Amazon Redshift SQL Apache HiveQL and Beeline CLI IBM Netezza SQL and NZPLSQL Teradata and Teradata Vantage: SQL Basic Teradata Query (BTEQ) Teradata Parallel Transport (TPT) Additionally, translation of the following SQL dialects is supported in preview : Apache Impala SQL Apache Spark SQL Azure Synapse T-SQL GoogleSQL (BigQuery) Greenplum SQL IBM DB2 SQL MySQL SQL Oracle SQL, PL/SQL, Exadata PostgreSQL SQL Trino or PrestoSQL Snowflake SQL SQL Server T-SQL SQLite Vertica SQL Important: Translation is done on a best effort basis.
+- You can have all the above necessary Cloud Storage permissions from the following roles: roles/storage.objectAdmin roles/storage.admin Enable the BigQuery Migration API If your Google Cloud CLI project was created before February 15, 2022, enable the BigQuery Migration API as follows: In the Google Cloud console, go to the BigQuery Migration API page.
+
+### "Translate SQL queries with the translation API \_|\_ BigQuery \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/api-sql-translator](https://docs.cloud.google.com/bigquery/docs/api-sql-translator)
+- Source ID: `site-docs-reference-5`
+- Final score: 60
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If the task succeeds, you will find the translated SQL in the response message: { "name" : "projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00" , "tasks" : { "string" : { "id" : "0fedba98-7654-3210-1234-56789abcdef" , "type" : "HiveQL2BigQuery Translation" , / ... / "taskResult" : { "translationTaskResult" : { "translatedLiterals" : [ { "relativePath" : "sql/input file" , "literalString" : "-- Translation time: 2023-10-05T21:50:49.885839Z\n-- Translation job ID: projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00\n-- Source: input file\n-- Translated from: Hive\n-- Translated to: BigQuery\n\nSELECT\n 1\n;\n" } ], "reportLogMessages" : [ ... ] } }, / ... / } }, "state" : "COMPLETED" , "createTime" : "2023-10-05T21:50:49.543221Z" , "lastUpdateTime" : "2023-10-05T21:50:50.462758Z" } Explore the translation output After running the translation job, retrieve the results by specifying the translation job workflow ID using the following command: curl \ -H "Content-Type:application/json" \ -H "Authorization:Bearer TOKEN " -X GET https://bigquerymigration.googleapis.com/v2alpha/projects/ PROJECT ID /locations/ LOCATION /workflows/ WORKFLOW ID Replace the following: TOKEN : the token for authentication.
+- Supported task types The translation API can translate the following SQL dialects into GoogleSQL: Amazon Redshift SQL - Redshift2BigQuery Translation Apache HiveQL and Beeline CLI - HiveQL2BigQuery Translation Apache Impala - Impala2BigQuery Translation Apache Spark SQL - SparkSQL2BigQuery Translation Azure Synapse T-SQL - AzureSynapse2BigQuery Translation GoogleSQL (BigQuery) - Bigquery2Bigquery Translation Greenplum SQL - Greenplum2BigQuery Translation IBM Db2 SQL - Db22BigQuery Translation IBM Netezza SQL and NZPLSQL - Netezza2BigQuery Translation MySQL SQL - MySQL2BigQuery Translation Oracle SQL, PL/SQL, Exadata - Oracle2BigQuery Translation PostgreSQL SQL - Postgresql2BigQuery Translation Presto or Trino SQL - Presto2BigQuery Translation Snowflake SQL - Snowflake2BigQuery Translation SQLite - SQLite2BigQuery Translation SQL Server T-SQL - SQLServer2BigQuery Translation Teradata and Teradata Vantage - Teradata2BigQuery Translation Vertica SQL - Vertica2BigQuery Translation Handling unsupported SQL functions with helper UDFs When translating SQL from a source dialect to BigQuery, some functions might not have a direct equivalent.
+- The following example translates the Teradata SQL scripts located in the gs://my data bucket/teradata/input/ Cloud Storage directory and stores results in the Cloud Storage directory gs://my data bucket/teradata/output/ with additional AI suggestion: { "tasks" : { "task name" : { "type" : "Teradata2BigQuery Translation" , "translation details" : { "target base uri" : "gs://my data bucket/teradata/output/" , "source target mapping" : { "source spec" : { "base uri" : "gs://my data bucket/teradata/input/" } }, "target types" : "suggestion" , } } } } Note: To generate AI suggestions, the Cloud Storage source directory must contain at least one configuration YAML file with a suffix of .ai config.yaml .
+- The source target mapping field contains a list that maps the source directories to an optional relative path for the target output. curl -d "{ \"tasks\": { string: { \"type\": \" TYPE \", \"translation details\": { \"source target mapping\": { \"source spec\": { \"literal\": { \"relative path\": \" PATH \", \"literal string\": \" STRING \" } } }, \"target return literals\": \" TARGETS \", } } } }" \ -H "Content-Type:application/json" \ -H "Authorization: Bearer TOKEN " -X POST https://bigquerymigration.googleapis.com/v2alpha/projects/ PROJECT ID /locations/ LOCATION /workflows Replace the following: TYPE : the task type of the translation, which determines the source and target dialect.
+
+### "Tutorial: Run inference on an object table by using a classification model\
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet](https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet)
+- Source ID: `site-docs-reference-2`
+- Final score: 50
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Go to BigQuery In the Editor pane, run the following SQL statement: CREATE EXTERNAL TABLE resnet inference test . vision images WITH CONNECTION us.lake-connection OPTIONS ( object metadata = 'SIMPLE' , uris = [ 'gs://cloud-samples-data/vision/ .jpg' ] ); bq In Cloud Shell, run the bq mk command to create the connection: bq mk --table \ --external table definition='gs://cloud-samples-data/vision/ .jpg@us.lake-connection' \ --object metadata=SIMPLE \ resnet inference test . vision images Upload the model to Cloud Storage Get the model files and make them available in Cloud Storage: Download the ResNet 50 model to your local machine.
+- To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery.
+- To create the connection resource, you need the following permissions: bigquery.connections.create bigquery.connections.get To grant permissions to the connection's service account, you need the following permission: resourcemanager.projects.setIamPolicy To create the object table, you need the following permissions: bigquery.tables.create bigquery.tables.update bigquery.connections.delegate To create the bucket, you need the storage.buckets.create permission.
+- Go to BigQuery In the Editor pane, run the following SQL statement: CREATE MODEL resnet inference test.resnet OPTIONS ( model type = 'TENSORFLOW' , model path = 'gs:// BUCKET NAME / ' ); Replace BUCKET NAME with the name of the bucket you previously created.
+

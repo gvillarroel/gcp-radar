@@ -1,30 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:31.483Z"
+generated_at: "2026-04-15T00:44:19.114Z"
 product_name: "Cloud Healthcare API"
 product_slug: "cloud-healthcare-api"
 feature_name: "Healthcare API Consent Management API beta launch"
 feature_slug: "healthcare-api-consent-management-api-beta-launch"
 latest_feature_date: "2020-10-08"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/healthcare-api/docs/concepts/consent"
+  - "https://docs.cloud.google.com/healthcare-api/docs/concepts/consent-model"
+  - "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent"
 keywords:
   - "healthcare"
-  - "api"
   - "consent"
   - "management"
   - "beta"
   - "launch"
-  - "the"
   - "made"
+  - "available"
 ---
 
 # Healthcare API Consent Management API beta launch
 
 Product: Cloud Healthcare API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +35,54 @@ The Cloud Healthcare API made the Consent Management API available in beta.
 
 The Cloud Healthcare API made the Consent Management API available in beta.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/healthcare-api/docs/concepts/consent](https://docs.cloud.google.com/healthcare-api/docs/concepts/consent)
+- [https://docs.cloud.google.com/healthcare-api/docs/concepts/consent-model](https://docs.cloud.google.com/healthcare-api/docs/concepts/consent-model)
+- [https://docs.cloud.google.com/healthcare-api/docs/fhir-consent](https://docs.cloud.google.com/healthcare-api/docs/fhir-consent)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Consent and privacy overview \_|\_ Cloud Healthcare API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/concepts/consent](https://docs.cloud.google.com/healthcare-api/docs/concepts/consent)
+- Source ID: `site-docs-root-2`
+- Final score: 108
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Policy enforcement The Consent Management API supports policy enforcement within your consent and privacy architecture as follows: Processes access determination queries made by applications or policy enforcement points.
+- Consent Management API information flow The flow of consent and privacy information within the Consent Management API is as follows: Your application presents privacy options to a user, then creates or revises a consent record within the Consent Management API to represent that user's decision.
+- The Consent Management API performs this evaluation as follows: The Consent Management API receives an access determination request with request attribute values for the proposed use and either a target resource or a range of target resources described by user IDs or resource attribute values.
+- Policy representation Consent policies within the Consent Management API are composed of a set of resource attribute values that define what data that policy applies to and an authorization rule that defines the conditions under which that policy is valid.
+
+### "Consent Management API data model \_|\_ Cloud Healthcare API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/concepts/consent-model](https://docs.cloud.google.com/healthcare-api/docs/concepts/consent-model)
+- Source ID: `site-docs-root-2`
+- Final score: 102
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Industry solutions Cloud Healthcare API Guides Send feedback Consent Management API data model Stay organized with collections Save and categorize content based on your preferences.
+- Information about the resources being managed is contained within user data mappings, which allows the Consent Management API to make access determinations without requiring access to the managed resources themselves.
+- Managed resources The Consent Management API manages access for resources stored in various locations, either on Google Cloud, on-premises, or with another cloud provider.
+- Consent resources record the specific conditions for which a consent is valid and allow the Consent Management API to fulfill access determination requests.
+
+### "Control access to FHIR resources in the Cloud Healthcare API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/fhir-consent](https://docs.cloud.google.com/healthcare-api/docs/fhir-consent)
+- Source ID: `site-docs-root-2`
+- Final score: 70
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To view the FHIR Consent Viewer , complete the following steps: Permissions required for this task To perform this task, you must have been granted the following permissions or the following Identity and Access Management (IAM) roles: Permissions healthcare.fhirStores.get healthcare.fhirResources.get Roles Healthcare FHIR Store Viewer ( roles/healthcare.fhirStoreViewer ) Healthcare FHIR Resource Reader ( roles/healthcare.fhirResourceReader ) You can ask your administrator to grant you these Identity and Access Management roles.
+- Allows the FHIR implementation in the Cloud Healthcare API to include consent-aware access tokens as part of the Cloud Healthcare API management and permission model.
+- A Consent from Darcy to permit Jeffrey Brown using application App/123 to access her data collected by the Happy Hospital A Consent from Darcy to permit Jeffrey Brown to access any of her data for emergency treatment ( ETREAT ) A Consent from the Happy Hospital to permit Jeffrey Brown to access all data when doing biomedical research ( BIORCH ) with application App/golden cat > bundle.json { "resourceType": "Bundle", "type": "transaction", "entry": [ { "request": {"method": "PUT", "url": "Practitioner/12942879-f89f-41ae-aa80-0b911b649833"}, "resource": { "active": true, "birthDate": "1970-05-23", "gender": "male", "id": "12942879-f89f-41ae-aa80-0b911b649833", "name": [{ "family": "Brown", "given": ["Jeffrey"], "use": "official" }], "resourceType": "Practitioner" } }, { "request": {"method": "PUT", "url": "Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2"}, "resource": { "active": true, "birthDate": "1990-01-01", "gender": "female", "id": "3c6aa096-c054-4c22-b2b4-1e4a4d203de2", "name": [{ "family": "Smith", "given": ["Darcy"], "use": "official" }], "meta": { "tag": [{ "system": "http://terminology.hl7.org/CodeSystem/common-tags", "code": "employee" }] }, "resourceType": "Patient" } }, { "request": {"method": "PUT", "url": "Observation/7473784b-46a8-470c-b9a6-fe38a01025aa"}, "resource": { "id": "7473784b-46a8-470c-b9a6-fe38a01025aa", "meta": {"source": "http://example.com/HappyHospital"}, "code": { "coding": [{ "code": "718-7", "system": "http://loinc.org", "display": "Hemoglobin [Mass/volume] in Blood" }] }, "effectivePeriod": {"start": "2021-12-10T05:30:10+01:00"}, "issued": "2021-12-10T13:30:10+01:00", "resourceType": "Observation", "status": "final", "subject": {"reference": "Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2"}, "valueQuantity": { "code": "g/dL", "system": "http://unitsofmeasure.org", "unit": "g/dl", "value": 7.2 } } }, { "request": {"method": "PUT", "url": "Observation/68583624-9921-4158-8754-2a306c689abd"}, "resource": { "id": "68583624-9921-4158-8754-2a306c689abd", "code": { "coding": [{ "code": "15074-8", "system": "http://loinc.org", "display": "Glucose [Moles/volume] in Blood" }] }, "effectivePeriod": {"start": "2021-12-01T05:30:10+01:00"}, "issued": "2021-12-01T13:30:10+01:00", "resourceType": "Observation", "status": "final", "subject": {"reference": "Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2"}, "valueQuantity": { "code": "mmol/L", "system": "http://unitsofmeasure.org", "unit": "mmol/l", "value": 6.3 } } }, { "request": {"method": "PUT", "url": "Consent/10998b60-a252-405f-aa47-0702554ddc8e"}, "resource": { "category": [{ "coding": [{ "code": "59284-0", "system": "http://terminology.hl7.org/CodeSystem/consentcategorycodes" }] }], "id": "10998b60-a252-405f-aa47-0702554ddc8e", "patient": {"reference": "Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2"}, "policyRule": { "coding": [{ "code": "OPTIN", "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode" }] }, "provision": { "actor": [ { "reference": {"reference": "Practitioner/12942879-f89f-41ae-aa80-0b911b649833"}, "role": { "coding": [{ "code": "GRANTEE", "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode" }] } } ], "extension": [ { "url": "https://g.co/fhir/medicalrecords/Environment", "valueCodeableConcept": { "coding": [{ "code": "123", "system": "App" }] } }, { "url": "https://g.co/fhir/medicalrecords/DataSource", "valueUri": "http://example.com/HappyHospital" } ], "type": "permit" }, "resourceType": "Consent", "scope": { "coding": [{ "code": "patient-privacy", "system": "http://terminology.hl7.org/CodeSystem/consentscope" }] }, "status": "active" } }, { "request": {"method": "PUT", "url": "Consent/73c54e8d-2789-403b-9dee-13085c5d5e34"}, "resource": { "category": [{ "coding": [{ "code": "59284-0", "system": "http://terminology.hl7.org/CodeSystem/consentcategorycodes" }] }], "id": "73c54e8d-2789-403b-9dee-13085c5d5e34", "patient": {"reference": "Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2"}, "policyRule": { "coding": [{ "code": "OPTIN", "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode" }] }, "provision": { "actor": [ { "reference": {"reference": "Practitioner/12942879-f89f-41ae-aa80-0b911b649833"}, "role": { "coding": [{ "code": "GRANTEE", "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode" }] } } ], "purpose": [{ "code": "ETREAT", "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason" }], "type": "permit" }, "resourceType": "Consent", "scope": { "coding": [{ "code": "patient-privacy", "system": "http://terminology.hl7.org/CodeSystem/consentscope" }] }, "status": "active" } }, { "request": {"method": "PUT", "url": "Consent/5c8e3f8a-9fd5-480d-a08e-f29b89feccde"}, "resource": { "category": [{ "coding": [{ "code": "57017-6", "system": "http://loinc.org" }] }], "id": "5c8e3f8a-9fd5-480d-a08e-f29b89feccde", "patient": {}, "extension": [{ "url": "https://g.co/fhir/medicalrecords/ConsentAdminPolicy" }], "policyRule": { "coding": [{ "code": "OPTIN", "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode" }] }, "provision": { "actor": [ { "reference": {"reference": "Practitioner/12942879-f89f-41ae-aa80-0b911b649833"}, "role": { "coding": [{ "code": "GRANTEE", "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode" }] } } ], "purpose": [{ "code": "BIORCH", "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason" }], "extension": [ { "url": "https://g.co/fhir/medicalrecords/Environment", "valueCodeableConcept": { "coding": [{ "code": "golden", "system": "App" }] } } ], "type": "permit" }, "resourceType": "Consent", "scope": {}, "status": "active" } } ] } EOF curl -X POST \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/fhir+json; charset=utf-8" \ --data @bundle.json \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir" You should receive a JSON response similar to the following: { "entry": [ { "response": { "etag": "W/\" VERSION ID \"", "lastModified": "2022-09-01T17:31:40.423469+00:00", "location": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Practitioner/12942879-f89f-41ae-aa80-0b911b649833/ history/ VERSION ID ", "status": "201 Created" } }, { "response": { "etag": "W/\" VERSION ID \"", "lastModified": "2022-09-01T17:31:40.423469+00:00", "location": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2/ history/ VERSION ID ", "status": "201 Created" } }, { "response": { "etag": "W/\" VERSION ID \"", "lastModified": "2022-09-01T17:31:40.423469+00:00", "location": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation/7473784b-46a8-470c-b9a6-fe38a01025aa/ history/ VERSION ID ", "status": "201 Created" } }, { "response": { "etag": "W/\" VERSION ID \"", "lastModified": "2022-09-01T17:31:40.423469+00:00", "location": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation/68583624-9921-4158-8754-2a306c689abd/ history/ VERSION ID ", "status": "201 Created" } }, { "response": { "etag": "W/\" VERSION ID \"", "lastModified": "2022-09-01T17:31:40.423469+00:00", "location": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Consent/10998b60-a252-405f-aa47-0702554ddc8e/ history/ VERSION ID ", "status": "201 Created" } }, { "response": { "etag": "W/\" VERSION ID \"", "lastModified": "2022-09-01T17:31:40.423469+00:00", "location": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Consent/73c54e8d-2789-403b-9dee-13085c5d5e34/ history/ VERSION ID ", "status": "201 Created" } }, { "response": { "etag": "W/\" VERSION ID \"", "lastModified": "2022-09-01T17:31:40.423469+00:00", "location": "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Consent/5c8e3f8a-9fd5-480d-a08e-f29b89feccde/ history/ VERSION ID ", "status": "201 Created" } } ], "resourceType": "Bundle", "type": "transaction-response" } Following are more examples of R4 Consent resource that demonstrates how complex policies can be represented.
+- Get FHIR resources with consent scope Practitioner Jeffrey Brown (identified by Practitioner/12942879-f89f-41ae-aa80-0b911b649833 ) using application App/123 reads the hemoglobin measurement of the Patient (in this example, Observation/7473784b-46a8-470c-b9a6-fe38a01025aa ). curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "X-Consent-Scope: actor/Practitioner/12942879-f89f-41ae-aa80-0b911b649833 env/App/123" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation/7473784b-46a8-470c-b9a6-fe38a01025aa" Because the requestor was given consent, the response is the content of the Observation resource. { "code": { "coding": [ { "code": "718-7", "display": "Hemoglobin [Mass/volume] in Blood", "system": "http://loinc.org" } ] }, "effectivePeriod": { "start": "2021-12-10T05:30:10+01:00" }, "id": "7473784b-46a8-470c-b9a6-fe38a01025aa", "issued": "2021-12-10T13:30:10+01:00", "meta": { "lastUpdated": "2022-09-01T17:31:40.423469+00:00", "source": "http://example.com/HappyHospital", "versionId": " VERSION ID " }, "resourceType": "Observation", "status": "final", "subject": { "reference": "Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2" }, "valueQuantity": { "code": "g/dL", "system": "http://unitsofmeasure.org", "unit": "g/dl", "value": 7.2 } } Practitioner Jeffrey Brown (identified by Practitioner/12942879-f89f-41ae-aa80-0b911b649833 ) using unknown application App/unknown reads the hemoglobin measurement of the Patient (in this example, Observation/7473784b-46a8-470c-b9a6-fe38a01025aa ). curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "X-Consent-Scope: actor/Practitioner/12942879-f89f-41ae-aa80-0b911b649833 env/App/unknown" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation/7473784b-46a8-470c-b9a6-fe38a01025aa" Because the boundary access of the requestor (App/unknown) is not permitted by the Patient's consent, the request is denied. { "issue": [ { "code": "security", "details": { "text": "permission denied" }, "diagnostics": "Consent access denied or the resource being accessed does not exist", "severity": "error" } ], "resourceType": "OperationOutcome" } Practitioner Jeffrey Brown (identified by Practitioner/12942879-f89f-41ae-aa80-0b911b649833 ) doing biomedical research using application App/golden reads the Darcy's birthDate (in this example, Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2 ). curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "X-Consent-Scope: actor/Practitioner/12942879-f89f-41ae-aa80-0b911b649833 purp/v3/BIORCH env/App/golden" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Patient/3c6aa096-c054-4c22-b2b4-1e4a4d203de2" Because the requestor was given consent, the response is the content of the Patient resource. { "active": true, "birthDate": "1990-01-01", "gender": "female", "id": "3c6aa096-c054-4c22-b2b4-1e4a4d203de2", "meta": { "lastUpdated": "2022-09-01T17:31:40.423469+00:00", "versionId": " VERSION ID ", "tag": [{ "system": "http://terminology.hl7.org/CodeSystem/common-tags", "code": "employee" }] }, "name": [ { "family": "Smith", "given": [ "Darcy" ], "use": "official" } ], "resourceType": "Patient" } Practitioner Jeffrey Brown (identified by Practitioner/12942879-f89f-41ae-aa80-0b911b649833 ) requests emergency unauthorized access to a patient's record, using the "break-the-glass" protocol. (in this example, Observation/7473784b-46a8-470c-b9a6-fe38a01025aa ). curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "X-Consent-Scope: btg actor/Practitioner/12942879-f89f-41ae-aa80-0b911b649833" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation/7473784b-46a8-470c-b9a6-fe38a01025aa" Because the consent's authorization method is btg , the server skips consent checks.
 

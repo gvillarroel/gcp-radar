@@ -5,145 +5,131 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 128
-Unique features: 135
+Unique features: 121
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
-| 2025-08-21 | Config Sync support for Secure Source Manager Git repositories |  | Config Sync now supports syncing configuration from Secure Source Manager Git repositories. |
-| 2025-05-01 | nomos vet object threshold validation |  | The nomos vet command now supports a --threshold flag to validate repository object counts and prevent sync failures from etcd size limits. |
-| 2025-05-01 | RootSync and RepoSync deletion metadata cleanup |  | Deleting a RootSync or RepoSync now removes its management metadata from managed objects so resources can be adopted by other managers. |
-| 2024-12-05 | Config Sync custom OCI signature verification |  | Config Sync now supports custom signature verification for OCI repository-based configurations through an admission webhook. |
-| 2024-12-05 | Config Sync stopSyncing field |  | Config Sync introduces the spec.configSync.stopSyncing field to pause and resume syncing behavior. |
-| 2024-09-26 | Config Sync GitHub App authentication |  | Config Sync now supports GitHub App authentication for connecting to GitHub repositories. |
-| 2024-08-29 | Config Sync Kustomize directory rendering beyond root |  | Config Sync can load files from directories outside the Kustomize root during rendering. |
-| 2024-08-29 | Config Sync private registry image synchronization |  | Config Sync now automatically detects private registry settings and updates reconciler image references to private registry images. |
-| 2024-08-29 | Config Sync watch filtering with ApplySet labels |  | Config Sync uses ApplySet labels and annotations for watch filtering to reduce reconciler Deployment memory usage. |
-| 2024-05-02 | Config Sync CA certificate configuration for Helm and OCI sources |  | Config Sync now supports specifying CA certificates for Helm and OCI source types through caCertSecretRef on RootSync and RepoSync resources. |
-| 2024-03-21 | Config Sync constraint template K8sPSSRunAsNonRoot |  | The Constraint Template Library added the K8sPSSRunAsNonRoot template. |
-| 2024-02-22 | Config Sync Cloud Monitoring export simplification |  | Config Sync now simplifies exporting metrics to Cloud Monitoring. |
-| 2024-02-22 | K8sCronJobAllowedRepos constraint template |  | Added the K8sCronJobAllowedRepos constraint template to the Constraint Template Library. |
-| 2024-02-22 | K8sRestrictAdmissionController constraint template |  | Added the K8sRestrictAdmissionController constraint template to the Constraint Template Library. |
-| 2024-02-22 | k8sserviceaccount authentication for OCI and Helm sync |  | Added support for the k8sserviceaccount authentication type when syncing OCI images and Helm charts hosted in Artifact Registry. |
-| 2024-01-25 | K8sDisallowInteractiveTTY constraint template |  | Added the K8sDisallowInteractiveTTY constraint template to the Constraint Template Library. |
-| 2023-12-11 | K8sRequireAdmissionController constraint template |  | Added the K8sRequireAdmissionController constraint template to the Constraint Template Library. |
-| 2023-12-11 | known_hosts support for SSH in RootSync and RepoSync |  | Added known_hosts support for Git connections over SSH in the RootSync and RepoSync APIs. |
-| 2023-12-11 | NamespaceSelector CRD spec.mode field |  | Added the NamespaceSelector CRD field spec.mode as a preview feature to select namespace-scoped resources from both declared and dynamic cluster namespaces. |
-| 2023-12-11 | RootSync spec.override.namespaceStrategy field |  | Added the RootSync API field spec.override.namespaceStrategy to control implicit namespace creation behavior for missing Namespace configs. |
-| 2023-12-11 | RootSync spec.override.roleRefs field |  | Added the RootSync API field spec.override.roleRefs to allow customizing root reconciler permissions beyond cluster-admin. |
-| 2023-10-19 | K8sAvoidUseOfSystemMastersGroup constraint template |  | Added the K8sAvoidUseOfSystemMastersGroup constraint template to the Constraint Template Library. |
-| 2023-10-19 | K8sPSPWindowsHostProcess constraint template |  | Added the K8sPSPWindowsHostProcess constraint template to the Constraint Template Library. |
-| 2023-08-21 | Config Sync Helm chart version ranges |  | Config Sync now supports specifying RootSync and RepoSync spec.helm.version as a version range so the controller can pull the latest matching Helm chart version. |
-| 2023-08-21 | Config Sync metrics Cloud Monitoring service account email field |  | Config Sync adds the spec.configSync.metricsGcpServiceAccountEmail field in the gcloud apply spec to simplify exporting cluster metrics to Cloud Monitoring with Workload Identity. |
-| 2023-08-21 | configsync.gke.io/deletion-propagation-policy annotation |  | Added a preview configsync.gke.io/deletion-propagation-policy annotation for RootSync and RepoSync to configure foreground cascading deletion. |
-| 2023-08-21 | Policy Controller NIST SP 800-190 bundle |  | Policy Controller adds the new nist-sp-800-190 policy bundle to its constraint template library. |
-| 2023-08-21 | Policy Controller NIST SP 800-53-r5 bundle |  | Policy Controller adds the new nist-sp-800-53-r5 policy bundle to its constraint template library. |
-| 2023-08-21 | Policy Controller NSA-CISA Kubernetes v1.2 bundle |  | Policy Controller adds the new nsa-cisa-k8s-v1.2 policy bundle to its constraint template library. |
-| 2023-08-21 | RootSync and RepoSync Helm values file references |  | RootSync and RepoSync now support spec.helm.valuesFileRefs to specify Helm values files stored in ConfigMaps. |
-| 2023-08-21 | RootSync and RepoSync reconciler log level override |  | RootSync and RepoSync now support a spec.override.logLevels field for configuring reconciler Pod container logging levels. |
-| 2023-07-27 | Policy Controller template GkeSpotVMTerminationGrace |  | The Policy Controller constraint template library includes a new GkeSpotVMTerminationGrace template. |
-| 2023-07-27 | Policy Controller template K8sPodResourcesBestPractices |  | The Policy Controller constraint template library includes a new K8sPodResourcesBestPractices template. |
-| 2023-06-28 | Policy Controller template K8sRequireBinAuthZ |  | The Policy Controller constraint template library includes a new K8sRequireBinAuthZ template. |
-| 2023-06-28 | Policy Controller template K8sRestrictAutomountServiceAccountTokens |  | The Policy Controller constraint template library includes a new K8sRestrictAutomountServiceAccountTokens template. |
-| 2023-06-28 | Policy Controller template K8sRestrictRoleRules |  | The Policy Controller constraint template library includes a new K8sRestrictRoleRules template. |
-| 2023-05-25 | Policy Controller template K8sHorizontalPodAutoscaler |  | The Policy Controller constraint template library includes a new K8sHorizontalPodAutoscaler template. |
-| 2023-05-25 | RootSync Helm deploy namespace field |  | RootSync now supports the spec.helm.deployNamespace field to specify the namespace where the rendered Helm chart is deployed. |
-| 2023-05-05 | ConfigManagement spec.git fields | 2024-05-15 | The `spec.git` fields on the ConfigManagement object were deprecated and are scheduled for shutdown on or after May 15, 2024; deprecated on 2024-05-15. |
-| 2023-05-04 | Config Sync metric labels |  | Config Sync added new metric labels `commit` and `type` to make it easier to identify when errors are resolved. |
-| 2023-05-04 | K8sContainerEphemeralStorageLimit constraint template |  | The Constraint Template Library added a new template named `K8sContainerEphemeralStorageLimit`. |
-| 2023-05-04 | K8sDisallowedRepos constraint template |  | The Constraint Template Library added a new template named `K8sDisallowedRepos`. |
-| 2023-05-04 | K8sRestrictNfsUrls constraint template |  | The Constraint Template Library added a new template named `K8sRestrictNfsUrls`. |
-| 2023-05-04 | nomos status --name flag |  | The `nomos status` command added a `--name` flag to filter status output by RootSync or RepoSync name. |
-| 2023-03-23 | AssignImage mutator |  | The `AssignImage` mutator was introduced in alpha to allow mutation of Docker image paths. |
-| 2023-03-23 | VerifyDeprecatedAPI constraint template |  | The Constraint Template Library added a new template named `VerifyDeprecatedAPI`. |
-| 2022-12-08 | Config Sync apply_operations controller label |  | Config Sync apply_operations metrics now include a controller label to indicate whether the operation is from the applier or the remediator. |
-| 2022-12-08 | Config Sync last_sync_timestamp metric |  | Config Sync improved the last_sync_timestamp metric to prevent timeseries entries with empty commits. |
-| 2022-12-08 | Config Sync metric resource tags |  | Config Sync now adds resource tags to all metrics to identify the source component. |
-| 2022-12-08 | Config Sync parser/apply duration histogram bounds |  | Config Sync metrics now use expanded histogram distribution bounds for parser_duration_seconds and apply_duration_seconds to support longer durations. |
-| 2022-12-08 | Config Sync reconciler_errors errorclass label |  | Config Sync now correctly supports the errorclass label on reconciler_errors metrics. |
-| 2022-12-08 | K8sBlockAllIngress constraint template |  | The Constraint Template Library added the K8sBlockAllIngress template. |
-| 2022-12-08 | K8sBlockCreationWithDefaultServiceAccount constraint template |  | The Constraint Template Library added a new template named `K8sBlockCreationWithDefaultServiceAccount`. |
-| 2022-12-08 | K8sBlockObjectsOfType constraint template |  | The Constraint Template Library added the K8sBlockObjectsOfType template. |
-| 2022-12-08 | K8sEnforceCloudArmorBackendConfig constraint template |  | The Constraint Template Library added a new template named `K8sEnforceCloudArmorBackendConfig`. |
-| 2022-12-08 | K8sEnforceConfigManagement constraint template |  | The Constraint Template Library added the K8sEnforceConfigManagement template. |
-| 2022-12-08 | K8sRequireDaemonsets constraint template |  | The Constraint Template Library added the K8sRequireDaemonsets template. |
-| 2022-12-08 | K8sRequireDefaultDenyEgressPolicy constraint template |  | The Constraint Template Library added the K8sRequireDefaultDenyEgressPolicy template. |
-| 2022-12-08 | K8sRequireValidRangesForNetworks constraint template |  | The Constraint Template Library added a new template named `K8sRequireValidRangesForNetworks`. |
-| 2022-12-08 | K8sRestrictRbacSubjects constraint template |  | The Constraint Template Library added the K8sRestrictRbacSubjects template. |
-| 2022-12-08 | RootSync and RepoSync apiServerTimeout field |  | A new `spec.override.apiServerTimeout` field was added to `RootSync` and `RepoSync` to set API server request timeouts. |
-| 2022-10-27 | K8sBlockLoadBalancer constraint template |  | The Constraint Template Library added the K8sBlockLoadBalancer template. |
-| 2022-10-27 | RootSync and RepoSync Helm values override |  | RootSync and RepoSync now support the spec.helm.values field for overriding default Helm chart values. |
-| 2022-09-15 | Cloud Console Config Sync fleet sync status view |  | The Google Cloud Console now shows sync status for all fleet-registered syncs and supports drill-down to resource-level reconciliation status. |
-| 2022-09-15 | Config Sync private Helm repository sync (preview) |  | Config Sync supports syncing from private Helm repositories, including OCI-based repositories, as a preview feature. |
-| 2022-09-15 | Config Sync user-provided Git CA certificates |  | Config Sync now allows users to provide their own CA certificates to verify HTTPS connections to Git servers. |
-| 2022-09-15 | K8sStorageClass constraint template |  | The Constraint Template Library added the K8sStorageClass template (available in Anthos Config Management 1.12.1+). |
-| 2022-07-21 | K8sRequireCosNodeImage constraint template |  | The constraint template library now includes the K8sRequireCosNodeImage template. |
-| 2022-06-30 | Config Sync OCI image configuration sync (preview) |  | Config Sync supports syncing configurations stored as OCI images in Artifact Registry or Container Registry as a preview feature. |
-| 2022-06-30 | K8sRequiredResources constraint template |  | The constraint template library now includes the K8sRequiredResources template. |
-| 2022-06-30 | RootSync and RepoSync reconcile timeout override |  | Added the spec.override.reconcileTimeout field in RootSync and RepoSync to set the reconciliation timeout for an apply group. |
-| 2022-04-21 | Config Sync hidden Git metadata directory ignore list |  | Config Sync now ignores the .github and .gitlab hidden directories and the .gitlab-ci.yml hidden file. |
-| 2022-04-21 | Fleet Workload Identity Git authentication for Config Sync |  | Config Sync now supports using Fleet Workload Identity to authenticate to Git repositories in Cloud Source Repositories. |
-| 2022-04-21 | nomos bugreport --timeout flag |  | Added a --timeout option to the nomos bugreport command to control the cluster connection timeout. |
-| 2022-03-24 | Config Sync dependency enforcement for reconciliations |  | Adds dependency enforcement so Config Sync skips applying resources until all declared dependencies are successfully applied and reconciled. |
-| 2022-03-24 | config.kubernetes.io/depends-on annotation ordering |  | Introduces the config.kubernetes.io/depends-on annotation to control the apply and delete ordering of managed resources. |
-| 2022-03-24 | Multiple RootSync and RepoSync objects support |  | Config Sync now supports multiple RootSync objects on a single cluster and multiple RepoSync objects in the same namespace. |
-| 2022-03-24 | Nomos CLI ARM64 binaries |  | Nomos CLI ARM64 binaries for Linux and macOS are now available via gcloud and included in Anthos Config Management downloads. |
-| 2022-03-24 | ResourceGroup inventory actuation and reconciliation status fields |  | ResourceGroup inventory objects now include fields for actuation status, reconciliation status, and intended actuation strategy. |
-| 2022-03-24 | RootSync/RepoSync resource request override |  | Updates RootSync and RepoSync spec.override.resources to let operators override default CPU and memory requests used by reconciler deployment containers. |
-| 2022-02-24 | Constraint template K8sDisallowAnonymous |  | Adds the K8sDisallowAnonymous constraint template to the template library. |
-| 2022-02-24 | Constraint template K8sPSPAutomountServiceAccountTokenPod |  | Adds the K8sPSPAutomountServiceAccountTokenPod constraint template to the template library. |
-| 2022-02-24 | Constraint template RestrictNetworkExclusions |  | Adds the RestrictNetworkExclusions constraint template to the template library. |
-| 2021-12-09 | nomos migrate command for RootSync/RepoSync API enablement |  | Enables enabling the RootSync and RepoSync APIs through nomos migrate, allowing synchronization from single or multiple repositories. |
-| 2021-12-09 | nomos status resource condition reporting |  | Enhances nomos status to surface messages from resource conditions when managed resources are not ready or healthy. |
-| 2021-12-09 | pipeline_error_observed metric |  | Adds the metric pipeline_error_observed to report errors across rendering, sync, source, and readiness stages. |
-| 2021-09-23 | Config Sync multi-repo Kustomize/Helm rendering |  | Adds support for rendering Kustomize configurations and Helm charts in multi-repo mode, requiring a root kustomization.yaml file in the sync directory. |
-| 2021-09-23 | local-config annotation handling in Config Sync |  | Config Sync now ignores resources annotated with config.kubernetes.io/local-config: "true" during validation and apply. |
-| 2021-09-23 | nomos hydrate rendering support for Kustomize and Helm |  | Enables nomos hydrate to render unstructured source and support rendering for Kustomize configurations and Helm charts. |
-| 2021-09-23 | nomos vet rendering and keep-output support |  | Adds rendering support for Kustomize and Helm in nomos vet, including a --keep-output flag to retain rendered output. |
-| 2021-08-26 | Anthos Policy Controller OPA Gatekeeper version update |  | Anthos Policy Controller was updated to include a newer OPA Gatekeeper build (07e2fd0); Anthos Policy Controller was updated to include a newer OPA Gatekeeper build (f6c2fe8). |
-| 2021-08-26 | Config Sync git-creds proxy credential storage |  | Config Sync added support for storing HTTPS/HTTP proxy credentials in the git-creds Secret using https_proxy or http_proxy keys. |
-| 2021-08-26 | RootSync/RepoSync gitSyncDepth override |  | Adds spec.override.gitSyncDepth for RootSync and RepoSync to control how many Git commits are fetched. |
-| 2021-08-26 | RootSync/RepoSync noSSLVerify option |  | Adds a spec.git.noSSLVerify setting for RootSync and RepoSync to disable Git SSL certificate verification. |
-| 2021-08-26 | RootSync/RepoSync resource limit override |  | Allows RootSync and RepoSync to override reconciler and git-sync container resource limits via spec.override.resources. |
-| 2021-07-01 | Anthos Config Management on Google Kubernetes Engine |  | Anthos Config Management became available on Google Kubernetes Engine. |
-| 2021-07-01 | Config Sync Cloud Source Repositories access via Workload Identity |  | Config Sync now supports accessing Cloud Source Repositories through a Google service account when Workload Identity is enabled. |
-| 2021-07-01 | Config Sync cluster configuration replication |  | Config Sync introduced the gcloud fetch-for-apply command to copy settings from one cluster to another. |
-| 2021-07-01 | Config Sync cluster selectors with CustomResourceDefinitions |  | Config Sync cluster selectors now support Kubernetes CustomResourceDefinitions. |
-| 2021-07-01 | Config Sync installation via Cloud Console and gcloud on GKE |  | GKE users can now install Config Sync using the Google Cloud Console or the gcloud command-line tool. |
-| 2021-07-01 | Config Sync MultiRepo resource-level status reporting |  | The nomos status command now shows resource-level status when MultiRepo is enabled. |
-| 2021-06-24 | Anthos Policy Controller resource mutation support |  | Anthos Policy Controller added preview support for users to mutate resources. |
-| 2021-04-05 | Config Sync multi-repository synchronization |  | The ability to sync Config Sync data from multiple Git repositories reached general availability. |
-| 2021-02-25 | Hierarchy Controller hierarchical resource quotas |  | Hierarchy Controller introduced a preview of Hierarchical Resource Quotas (HRQs) for quota enforcement across namespaces and descendants. |
-| 2021-01-28 | Hierarchy Controller Exceptions |  | Hierarchy Controller added Exceptions, allowing Kubernetes label selectors to control object propagation behavior. |
-| 2021-01-28 | Hierarchy Controller HNC upgrade |  | Hierarchy Controller in Anthos Config Management was upgraded to include HNC v0.7.0. |
-| 2021-01-28 | Hierarchy Controller v1alpha1 API | 2021-01-28 | Support for the Hierarchy Controller v1alpha1 API was removed; deprecated on 2021-01-28. |
-| 2020-12-10 | Anthos Policy Controller CIS benchmark policies |  | Anthos Policy Controller added additional policies covering many CIS Kubernetes Benchmark 1.5.1 controls. |
-| 2020-12-10 | Anthos Policy Controller OPA Gatekeeper version |  | Anthos Policy Controller was updated to include a newer OPA Gatekeeper build (hash: 1de87b6); Anthos Policy Controller was updated to include a newer OPA Gatekeeper build (hash: 15d56e3). |
-| 2020-10-29 | Anthos Config Management multi-repository sync |  | Anthos Config Management added preview support for syncing from multiple Git repositories. |
-| 2020-09-24 | Anthos Config Management Operator Binary Authorization integration |  | Anthos Config Management Operator gained the ability to enable Binary Authorization. |
-| 2020-09-24 | Config Connector inclusion in Anthos Config Management |  | Anthos Config Management added Config Connector version 1.19.1; Anthos Config Management included Config Connector version 1.13.1. |
-| 2020-07-23 | Hierarchy Controller launch |  | Anthos Config Management introduced Hierarchy Controller as a beta feature. |
-| 2020-06-25 | Anthos Config Management AKS and EKS support |  | Anthos Config Management became generally available on AKS and EKS clusters running Kubernetes 1.16 or higher. |
-| 2020-05-21 | Config Connector version 1.8.0 support |  | Anthos Config Management added support for Config Connector version 1.8.0. |
-| 2020-04-23 | Policy Controller namespace exclusion |  | Policy Controller now supports configuring namespaces that bypass the admission controller. |
-| 2020-02-10 | Anthos Config Management v1.2.1 general availability |  | Anthos Config Management version 1.2.1 was released as generally available for production use. |
-| 2020-02-10 | Git submodule support |  | Anthos Config Management added native support for Git repositories with submodules. |
-| 2020-02-10 | nomos bugreport command |  | Anthos Config Management introduced the nomos bugreport CLI command to collect logs into a zip file for support tickets. |
-| 2020-02-10 | Unstructured repository mode |  | Anthos Config Management can optionally operate with unstructured repositories, with hierarchical-namespace features disabled in that mode. |
-| 2019-12-20 | Anthos Config Management v1.2.0 general availability |  | Anthos Config Management version 1.2.0 was released as generally available for production use. |
-| 2019-09-19 | Anthos Config Management v1.1.0 general availability |  | Anthos Config Management version 1.1.0 was released as generally available for production use. |
-| 2019-09-19 | Config Connector integration (beta) |  | Anthos Config Management added beta integration with Config Connector to synchronize GCP resources from Kubernetes configuration. |
-| 2019-09-19 | nomos view command | 2019-09-19 | The nomos view command was deprecated and is not included in nomos v1.1 and later; deprecated on 2019-09-19. |
-| 2019-09-19 | Policy Controller (Beta) |  | Anthos Config Management added Policy Controller (Beta), a Kubernetes admission controller for policy-based checks and enforcement. |
-| 2019-06-14 | Anthos Config Management 1.0.0 availability |  | Anthos Config Management 1.0.0 was released as generally available for production use. |
-| 2019-06-14 | CustomResourceDefinition synchronization |  | Anthos Config Management can synchronize Kubernetes CustomResourceDefinitions. |
-| 2019-06-14 | Generic Kubernetes object synchronization |  | Anthos Config Management can now synchronize any Kubernetes object type. |
-| 2019-06-14 | nomos status subcommand |  | The nomos status command now provides a top-level view of Anthos Config Management state, errors, and sync status across enrolled clusters. |
-| 2019-06-14 | Pre-1.0.0 Anthos Config Management versions | 2019-06-14 | Anthos Config Management versions older than 1.0.0 are no longer available; deprecated on 2019-06-14. |
-| 2019-06-14 | Synchronization speed control |  | Anthos Config Management supports pausing or slowing config synchronization to reduce unintended propagation to clusters. |
-| 2019-03-29 | Default and kube-* namespace synchronization |  | Anthos Config Management can now manage the default Namespace and Namespaces with names beginning with kube-. |
-| 2019-03-20 | Aggregate ResourceQuotas |  | Anthos Config Management can share a ResourceQuota across multiple Namespaces using a common abstract namespace directory. |
-| 2019-03-04 | Generic Kubernetes resource syncing |  | Anthos Config Management supports syncing all Kubernetes resources generically. |
-| 2019-03-04 | NamespaceSelectors support |  | Anthos Config Management now supports NamespaceSelectors. |
+| 2025-08-21 | Config Sync Secure Source Manager Git repository support |  | Config Sync can sync configuration from Secure Source Manager Git repositories. |
+| 2025-05-01 | nomos vet threshold flag |  | The nomos vet command supports a --threshold flag to validate repository object counts before sync. |
+| 2025-05-01 | RootSync and RepoSync management metadata cleanup on deletion |  | Deleting a RootSync or RepoSync now removes its management metadata from managed objects so they can be adopted by new managers. |
+| 2024-12-05 | Config Sync OCI custom signature verification |  | Config Sync supports custom signature verification for configurations stored in OCI repositories through an admission webhook integration. |
+| 2024-12-05 | Config Sync stopSyncing field |  | Config Sync adds the spec.configSync.stopSyncing field to stop and resume syncing. |
+| 2024-09-26 | Config Sync GitHub App authentication |  | Config Sync supports GitHub App authentication for GitHub repositories. |
+| 2024-08-29 | Config Sync ApplySet watch filtering |  | Config Sync uses ApplySet-based watch filtering to reduce reconciler memory usage by watching only relevant managed objects. |
+| 2024-08-29 | Config Sync Kustomize external directory loading |  | Config Sync can load files from directories outside the Kustomize root during rendering. |
+| 2024-08-29 | Config Sync private registry image reference auto-detection |  | Config Sync automatically detects and updates reconciler image references to use a configured private registry. |
+| 2024-05-02 | RootSync and RepoSync CA certificate support for Helm and OCI |  | RootSync and RepoSync support specifying CA certificates for Helm and OCI source types with the caCertSecretRef field. |
+| 2024-03-21 | K8sPSSRunAsNonRoot constraint template |  | The constraint template library includes the K8sPSSRunAsNonRoot template. |
+| 2024-02-22 | Config Sync Cloud Monitoring metrics export simplification |  | Config Sync simplifies the steps required to export metrics to Cloud Monitoring. |
+| 2024-02-22 | Config Sync k8sserviceaccount authentication for Artifact Registry OCI and Helm |  | Config Sync supports the k8sserviceaccount authentication type for syncing OCI images and Helm charts from Artifact Registry. |
+| 2024-02-22 | K8sCronJobAllowedRepos constraint template |  | The constraint template library includes the K8sCronJobAllowedRepos template. |
+| 2024-02-22 | K8sRestrictAdmissionController constraint template |  | The constraint template library includes the K8sRestrictAdmissionController template. |
+| 2024-01-25 | K8sDisallowInteractiveTTY constraint template |  | The constraint template library includes the K8sDisallowInteractiveTTY template. |
+| 2023-12-11 | K8sRequireAdmissionController constraint template |  | The constraint template library includes the K8sRequireAdmissionController template. |
+| 2023-12-11 | NamespaceSelector spec.mode field |  | The NamespaceSelector CRD adds the preview spec.mode field to select namespace-scoped resources across declared and dynamically present namespaces. |
+| 2023-12-11 | RootSync and RepoSync known_hosts SSH support |  | RootSync and RepoSync support known_hosts configuration for Git connections over SSH. |
+| 2023-12-11 | RootSync namespaceStrategy override |  | The RootSync API adds the spec.override.namespaceStrategy field to control implicit Namespace creation when Namespace configs are missing. |
+| 2023-12-11 | RootSync roleRefs override |  | The RootSync API adds the spec.override.roleRefs field to customize root reconciler permissions beyond cluster-admin. |
+| 2023-10-19 | K8sAvoidUseOfSystemMastersGroup constraint template |  | The constraint template library includes the K8sAvoidUseOfSystemMastersGroup template. |
+| 2023-10-19 | K8sPSPWindowsHostProcess constraint template |  | The constraint template library includes the K8sPSPWindowsHostProcess template. |
+| 2023-08-21 | Config Sync metricsGcpServiceAccountEmail field |  | The gcloud apply spec adds the spec.configSync.metricsGcpServiceAccountEmail field to simplify exporting Config Sync metrics to Cloud Monitoring with Workload Identity. |
+| 2023-08-21 | Policy Controller bundles for NIST and NSA-CISA frameworks |  | Policy Controller adds the nist-sp-800-190, nist-sp-800-53-r5, and nsa-cisa-k8s-v1.2 policy bundles. |
+| 2023-08-21 | RootSync and RepoSync deletion propagation policy annotation |  | RootSync and RepoSync support the configsync.gke.io/deletion-propagation-policy annotation to enable foreground cascading deletion. |
+| 2023-08-21 | RootSync and RepoSync Helm valuesFileRefs |  | RootSync and RepoSync add the spec.helm.valuesFileRefs field to use Helm values files stored in ConfigMaps. |
+| 2023-08-21 | RootSync and RepoSync Helm version range support |  | RootSync and RepoSync support specifying spec.helm.version as a range so Config Sync pulls the latest matching chart version. |
+| 2023-08-21 | RootSync and RepoSync logLevels override |  | RootSync and RepoSync add the spec.override.logLevels field to configure reconciler pod container log levels. |
+| 2023-07-27 | GkeSpotVMTerminationGrace constraint template |  | The constraint template library includes the GkeSpotVMTerminationGrace template. |
+| 2023-07-27 | K8sPodResourcesBestPractices constraint template |  | The constraint template library includes the K8sPodResourcesBestPractices template. |
+| 2023-06-28 | K8sRequireBinAuthZ constraint template |  | The constraint template library includes the K8sRequireBinAuthZ template. |
+| 2023-06-28 | K8sRestrictAutomountServiceAccountTokens constraint template |  | The constraint template library includes the K8sRestrictAutomountServiceAccountTokens template. |
+| 2023-06-28 | K8sRestrictRoleRules constraint template |  | The constraint template library includes the K8sRestrictRoleRules template. |
+| 2023-05-25 | K8sHorizontalPodAutoscaler constraint template |  | The constraint template library includes the K8sHorizontalPodAutoscaler template. |
+| 2023-05-25 | RootSync Helm deployNamespace field |  | The RootSync API adds the spec.helm.deployNamespace field to specify the namespace where a rendered Helm chart is deployed. |
+| 2023-05-05 | ConfigManagement spec.git fields | 2024-05-15 | The ConfigManagement object's spec.git fields provide Git-based sync configuration that is being replaced by the RootSync API; deprecated on 2024-05-15. |
+| 2023-05-04 | Config Sync metric labels commit and type |  | Config Sync metrics add the commit and type labels to improve error resolution tracking. |
+| 2023-05-04 | K8sContainerEphemeralStorageLimit constraint template |  | The constraint template library includes the K8sContainerEphemeralStorageLimit template. |
+| 2023-05-04 | K8sDisallowedRepos constraint template |  | The constraint template library includes the K8sDisallowedRepos template. |
+| 2023-05-04 | K8sRestrictNfsUrls constraint template |  | The constraint template library includes the K8sRestrictNfsUrls template. |
+| 2023-05-04 | nomos status name filter |  | The nomos status command supports a --name flag to filter status output by RootSync or RepoSync name. |
+| 2023-03-23 | AssignImage mutator |  | Policy Controller introduces the alpha AssignImage mutator for changing Docker image paths. |
+| 2023-03-23 | VerifyDeprecatedAPI constraint template |  | The constraint template library includes the VerifyDeprecatedAPI template. |
+| 2022-12-08 | Config Sync metric resource tags |  | Config Sync metrics can include resource tags that identify the source component. |
+| 2022-12-08 | Config Sync metrics enhancements |  | Config Sync metrics were enhanced with improved histogram bounds, corrected labels, cleaner timestamps, and better operation attribution. |
+| 2022-12-08 | K8sBlockAllIngress constraint template |  | The constraint template library includes the K8sBlockAllIngress template. |
+| 2022-12-08 | K8sBlockCreationWithDefaultServiceAccount constraint template |  | The constraint template library includes the K8sBlockCreationWithDefaultServiceAccount template. |
+| 2022-12-08 | K8sBlockObjectsOfType constraint template |  | This constraint template blocks creation of specified Kubernetes object types. |
+| 2022-12-08 | K8sEnforceCloudArmorBackendConfig constraint template |  | The constraint template library includes the K8sEnforceCloudArmorBackendConfig template. |
+| 2022-12-08 | K8sEnforceConfigManagement constraint template |  | The constraint template library includes the K8sEnforceConfigManagement template. |
+| 2022-12-08 | K8sRequireDaemonsets constraint template |  | This constraint template enforces requirements related to DaemonSets in Kubernetes clusters. |
+| 2022-12-08 | K8sRequireDefaultDenyEgressPolicy constraint template |  | This constraint template requires a default deny egress network policy configuration. |
+| 2022-12-08 | K8sRequireValidRangesForNetworks constraint template |  | The constraint template library includes the K8sRequireValidRangesForNetworks template. |
+| 2022-12-08 | K8sRestrictRbacSubjects constraint template |  | This constraint template restricts which RBAC subjects can be used in Kubernetes access control objects. |
+| 2022-12-08 | RootSync and RepoSync apiServerTimeout override |  | RootSync and RepoSync add the spec.override.apiServerTimeout field to configure API server request timeouts. |
+| 2022-10-27 | K8sBlockLoadBalancer constraint template |  | This constraint template blocks use of LoadBalancer-type services or resources. |
+| 2022-10-27 | RootSync and RepoSync Helm values override |  | RootSync and RepoSync support overriding default Helm chart values through the spec.helm.values field. |
+| 2022-09-15 | Config Sync custom CA certificates for Git HTTPS |  | Config Sync supports user-provided CA certificates to verify HTTPS connections to Git servers. |
+| 2022-09-15 | Config Sync private Helm repository sync |  | Config Sync can sync from private Helm repositories, including OCI-based repositories, as a preview capability. |
+| 2022-09-15 | Google Cloud console Config Sync status view |  | The Google Cloud console can display sync status for fleet-registered clusters and drill down into individual resource reconciliation status. |
+| 2022-09-15 | K8sStorageClass constraint template |  | This constraint template applies policy controls related to Kubernetes StorageClass resources. |
+| 2022-07-21 | K8sRequireCosNodeImage constraint template |  | This constraint template requires Kubernetes nodes to use Container-Optimized OS node images. |
+| 2022-06-30 | Config Sync OCI image source sync |  | Config Sync supports syncing configurations packaged as OCI images from Artifact Registry or Container Registry as a preview capability. |
+| 2022-06-30 | K8sRequiredResources constraint template |  | This constraint template enforces required resource requests or limits on Kubernetes workloads. |
+| 2022-06-30 | RootSync and RepoSync reconcile timeout override |  | RootSync and RepoSync support configuring apply-group reconciliation timeout with spec.override.reconcileTimeout. |
+| 2022-04-21 | Fleet Workload Identity for Cloud Source Repositories authentication |  | Config Sync can use Fleet Workload Identity to authenticate to Git repositories hosted in Cloud Source Repositories. |
+| 2022-04-21 | nomos bugreport timeout flag |  | The nomos bugreport command supports a --timeout flag for configuring cluster connection timeout. |
+| 2022-03-24 | Config Sync dependency enforcement |  | Config Sync can skip applying objects whose dependencies are not successfully applied and fully reconciled. |
+| 2022-03-24 | config.kubernetes.io/depends-on annotation |  | This annotation lets users specify apply and delete ordering between resource objects. |
+| 2022-03-24 | Multiple RootSync and RepoSync objects |  | Config Sync supports multiple RootSync objects per cluster and multiple RepoSync objects per namespace. |
+| 2022-03-24 | Nomos CLI ARM binaries |  | Nomos CLI provides ARM binaries for Linux and macOS. |
+| 2022-03-24 | ResourceGroup inventory actuation and reconciliation status fields |  | The ResourceGroup inventory object includes fields that distinguish actuation status, reconciliation status, and intended actuation strategy. |
+| 2022-03-24 | RootSync and RepoSync resource request override |  | The spec.override.resources field lets users override default CPU and memory requests for reconciler containers. |
+| 2022-02-24 | K8sDisallowAnonymous constraint template |  | This constraint template disallows anonymous access configurations in Kubernetes resources. |
+| 2022-02-24 | K8sPSPAutomountServiceAccountTokenPod constraint template |  | This constraint template governs automounting of service account tokens in pods. |
+| 2022-02-24 | RestrictNetworkExclusions constraint template |  | This constraint template restricts use of network policy exclusions or exception patterns. |
+| 2021-12-09 | nomos migrate RootSync and RepoSync API enablement |  | The nomos migrate command can enable the RootSync and RepoSync APIs on a cluster. |
+| 2021-12-09 | nomos status resource condition messages |  | The nomos status command surfaces messages from resource conditions when managed resources are not ready or healthy. |
+| 2021-12-09 | pipeline_error_observed metric |  | This metric captures whether errors occur in rendering, sync, source, or readiness pipeline stages. |
+| 2021-09-23 | Config Sync Kustomize and Helm rendering in multi-repo mode |  | Config Sync can render Kustomize configurations and Helm charts in multi-repo mode. |
+| 2021-09-23 | Config Sync local-config annotation ignore behavior |  | Config Sync ignores validation and application of resources annotated with config.kubernetes.io/local-config: "true". |
+| 2021-09-23 | nomos hydrate rendering support |  | The nomos hydrate command can render unstructured source format, Kustomize configurations, and Helm charts. |
+| 2021-09-23 | nomos vet rendering support |  | The nomos vet command supports rendering Kustomize configurations and Helm charts and can preserve rendered output with --keep-output. |
+| 2021-08-26 | Anthos Policy Controller OPA Gatekeeper build 07e2fd0 |  | Anthos Policy Controller includes an updated OPA Gatekeeper build identified by hash 07e2fd0. |
+| 2021-08-26 | Config Sync proxy credentials in git-creds Secret |  | Config Sync can store HTTPS or HTTP proxy credentials in the git-creds Secret using dedicated keys. |
+| 2021-08-26 | RootSync and RepoSync Git SSL verification override |  | The spec.git.noSSLVerify field lets users disable Git SSL certificate verification. |
+| 2021-08-26 | RootSync and RepoSync git sync depth override |  | The spec.override.gitSyncDepth field lets users override how many Git commits are fetched. |
+| 2021-08-26 | RootSync and RepoSync resource limits override |  | The spec.override.resources field lets users override resource limits for reconciler and git-sync containers. |
+| 2021-07-01 | Config Management on GKE |  | Config Management is available on GKE, including Policy Controller support and Config Sync installation through Cloud Console or gcloud. |
+| 2021-07-01 | Config Sync Cloud Source Repositories access with Workload Identity |  | Config Sync can access Cloud Source Repositories through a Google service account when Workload Identity is enabled. |
+| 2021-07-01 | Config Sync cluster selectors for CustomResourceDefinitions |  | Config Sync cluster selectors support matching CustomResourceDefinitions. |
+| 2021-07-01 | gcloud fetch-for-apply |  | The gcloud fetch-for-apply command lets users configure a cluster using the same settings as another cluster. |
+| 2021-07-01 | nomos status resource-level status in MultiRepo |  | The nomos status command shows resource-level status when MultiRepo is enabled. |
+| 2021-06-24 | Anthos Policy Controller OPA Gatekeeper build f6c2fe8 |  | Anthos Policy Controller includes an updated OPA Gatekeeper build identified by hash f6c2fe8. |
+| 2021-06-24 | Anthos Policy Controller resource mutation |  | Anthos Policy Controller supports mutating resources as a preview capability. |
+| 2021-05-13 | Anthos Policy Controller OPA Gatekeeper build 9b5e4cf |  | Anthos Policy Controller includes an updated OPA Gatekeeper build identified by hash 9b5e4cf. |
+| 2021-04-05 | Multi-repository Git sync |  | Anthos Config Management can sync from multiple Git repositories as a generally available capability; Anthos Config Management can sync from multiple Git repositories as a preview capability. |
+| 2021-02-25 | Hierarchical Resource Quotas |  | Hierarchy Controller includes preview support for hierarchical resource quotas that apply to a namespace and its descendants. |
+| 2021-01-28 | Hierarchy Controller Exceptions |  | Hierarchy Controller Exceptions let users use Kubernetes label selectors to control where objects are propagated. |
+| 2021-01-28 | Hierarchy Controller v1alpha1 API | 2021-01-28 | Hierarchy Controller v1alpha1 API support was removed in this release; deprecated on 2021-01-28. |
+| 2020-12-10 | Anthos Policy Controller CIS Kubernetes Benchmark 1.5.1 policies |  | Anthos Policy Controller includes additional policies covering many CIS Kubernetes Benchmark 1.5.1 controls. |
+| 2020-12-10 | Anthos Policy Controller OPA Gatekeeper build 1de87b6 |  | Anthos Policy Controller includes an updated OPA Gatekeeper build identified by hash 1de87b6. |
+| 2020-09-24 | Binary Authorization integration |  | Binary Authorization integration lets Anthos Config Management enable Binary Authorization through the Config Management Operator. |
+| 2020-09-24 | Config Connector integration |  | Config Connector integration lets Anthos Config Management manage Google Cloud resources through Kubernetes configuration; Config Connector integration lets Anthos Config Management manage Google Cloud resources through Kubernetes configuration. |
+| 2020-09-24 | Policy Controller Gatekeeper integration |  | Policy Controller uses OPA Gatekeeper to enforce policy admission and compliance controls in clusters; Policy Controller uses OPA Gatekeeper to enforce policy admission and compliance controls in clusters. |
+| 2020-07-23 | Hierarchy Controller |  | Hierarchy Controller manages hierarchical namespace relationships and related policy behavior in Anthos Config Management. |
+| 2020-06-25 | AKS and EKS support |  | AKS and EKS support allows Anthos Config Management to run on supported Kubernetes clusters in Amazon EKS and Azure AKS. |
+| 2020-04-23 | Policy Controller namespace exclusions |  | Policy Controller namespace exclusions let specified namespaces bypass admission control enforcement. |
+| 2020-02-10 | Git submodule support |  | Git submodule support lets Anthos Config Management sync repositories that use Git submodules without extra configuration. |
+| 2020-02-10 | nomos bugreport |  | The nomos bugreport command packages Anthos Config Management logs into a ZIP file for support cases. |
+| 2020-02-10 | Unstructured repository support |  | Unstructured repository support allows Anthos Config Management to operate without hierarchical repository structure, with some hierarchy-dependent features disabled. |
+| 2019-09-19 | nomos view | 2019-09-19 | The nomos view command provided a way to inspect Anthos Config Management state from the CLI; deprecated on 2019-09-19. |
+| 2019-09-19 | Policy Controller |  | Policy Controller is a dynamic admission controller that checks, audits, and enforces cluster compliance policies. |
+| 2019-06-14 | CustomResourceDefinition sync support |  | CustomResourceDefinition sync support allows Anthos Config Management to sync CRDs and other Kubernetes object types. |
+| 2019-06-14 | nomos status |  | The nomos status command shows top-level sync state and errors for enrolled clusters accessible through kubectl. |
+| 2019-06-14 | Sync halt procedure |  | The sync halt procedure allows Anthos Config Management syncing to be stopped quickly to limit propagation of unintended configurations. |
+| 2019-03-29 | System namespace management |  | System namespace management allows Anthos Config Management to manage the default namespace and namespaces whose names begin with kube-. |
+| 2019-03-20 | Aggregate ResourceQuota |  | Aggregate ResourceQuota support allows a ResourceQuota to be shared across multiple namespaces under a common abstract namespace directory. |
+| 2019-03-04 | Generic Kubernetes resource sync |  | Generic Kubernetes resource sync allows Anthos Config Management to sync Kubernetes resources without resource-specific handling. |
+| 2019-03-04 | NamespaceSelector support |  | NamespaceSelector support allows configuration to target namespaces based on selector criteria. |
 
 Source file slug: `anthos-config-management.md`
 

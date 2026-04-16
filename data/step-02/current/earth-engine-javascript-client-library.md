@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 32
-Unique features: 35
+Unique features: 34
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -25,7 +25,6 @@ Unique features: 35
 | 2016-10-27 | Image export shardSize and fileDimensions arguments |  | Adds shardSize and fileDimensions arguments to Export.image.toDrive() and Export.image.toCloudStorage() for multi-file image exports. |
 | 2016-10-27 | Map export skipEmptyTiles option |  | Adds a skipEmptyTiles option to Export.map.toCloudStorage() to skip writing empty map tiles. |
 | 2016-09-29 | ee.FloatTileOverlay | 2016-09-29 | The legacy float tile overlay class was deprecated and replaced by newer layer overlays; deprecated on 2016-09-29. |
-| 2016-09-29 | ee.layers.BinaryOverlay |  | An overlay class for displaying binary tiles on the map. |
 | 2016-09-29 | ee.layers.ImageOverlay |  | An overlay class for displaying image tiles on the map; An overlay class for displaying image tiles on the map. |
 | 2016-09-29 | ee.MapLayerOverlay | 2016-09-29 | The legacy map overlay class was deprecated and replaced by newer layer overlays; The legacy map overlay class was deprecated in favor of ee.layers.ImageOverlay; deprecated on 2016-09-29. |
 | 2016-06-02 | ComputedObject.evaluate() |  | Evaluates a computed object asynchronously and returns the result via a callback. |

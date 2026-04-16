@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:57:36.636Z"
+generated_at: "2026-04-15T11:51:47.718Z"
 product_name: "Google Workspace Admin SDK"
 product_slug: "google-workspace-admin-sdk"
 feature_name: "Customer account usage report"
 feature_slug: "customer-account-usage-report"
 latest_feature_date: "2014-02-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/admin-sdk/directory/reference/rest"
-  - "https://developers.google.com/admin-sdk/overview"
-  - "https://developers.google.com/admin-sdk/reference-overview"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities"
 keywords:
   - "customer"
   - "account"
   - "usage"
   - "report"
-  - "that"
   - "tracks"
   - "metrics"
   - "such"
+  - "authorized"
 ---
 
 # Customer account usage report
 
 Product: Google Workspace Admin SDK
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,54 @@ A report that tracks customer account usage metrics such as authorized apps, quo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
-- [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities)
 
 ## Supporting Pages
 
-### Admin SDK: Directory API \_|\_ Admin console \_|\_ Google for Developers
+### "Reports API: Customers Usage Report \_|\_ Admin console \_|\_ Google for\
 
-- URL: [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
-- Source ID: `site-api-reference`
-- Final score: 68
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 216
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The maxResults query string shows this report returns two events per report page: GET https://admin.googleapis.com/admin/reports/v1/usage/dates/2013-03-03 ?parameters=accounts:num 30day logins%2Caccounts:authorized apps&maxResults=2 JSON response for customer usage report { "kind" : "reports#usageReports" , "warnings" : [ { "code" : warning machine - readable code , "message" : warning human - readable message , "data" : [ { "key" : key for key - value pair that gives detailed warning information , "value" : value for key - value pair giving detailed warning information } ] } ], "nextPageToken" : "N:NNN:NNN:N:C03az79cb" , "usageReports" : [ { "kind" : "usageReport" , "date" : "2013-03-03" , "entity" : { "type" : "CUSTOMER" , "customerId" : "C03az79cb" }, "parameters" : [ { "name" : "accounts:num 1day logins" , "intValue" : "1" }, { "name" : "accounts:num 30day logins" , "intValue" : "1" }, { "name" : "accounts:num 7day logins" , "intValue" : "1" }, { "name" : "accounts:num disabled accounts" , "intValue" : "5" }, { "name" : "accounts:authorized apps" , "msgValue" : [ { "client id" : "1234.apps.googleusercontent.com" , "client name" : "www.example.com" , "num users" : 2 }, { "client id" : "4567.apps.googleusercontent.com" , "client name" : "Example" , "num users" : 1 }, ... ] } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Retrieve a customer usage report To retrieve report of your account activities use the following GET HTTP request and include the authorization token described in the authorization documentation .
+- For readability, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/usage/dates/ yyyy-mm-dd date ?parameters= app name: usage parameter ,... &customerId= the customer's ID &maxResults= number of events listed on each page of the report The dates value is the date the usage occurred and the timestamp is in the ISO 8601 format , yyyy-mm-dd.
+- The following example gets a report with the total of all successful logins to your account in the past 30 days and a list of authorized applications, with the number of user authorizations per application, starting 2013-03-03.
+
+### Reports API: Users Usage Report \_|\_ Admin console \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 172
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON response for user report { "kind" : "reports#usageReports" , "warnings" : [ { "code" : warning machine - readable code , "message" : warning human - readable message , "data" : [ { "key" : key for key - value pair that gives detailed warning information , "value" : value for key - value pair giving detailed warning information } ] } ], "nextPageToken" : "N:NNN:NNN:N:C03az79cb" , "usageReports" : [ { "kind" : "usageReport" , "date" : "2013-03-03" , "entity" : { "type" : "USER" , "customerId" : "C03az79cb" , "userEmail" : "liz@example.com" , "profileId" : " user's unique Google Workspace ID " }, "parameters" : [ { "name" : "accounts:is disabled" , "boolValue" : false }, { "name" : "accounts:disabled reason" , "stringValue" : " reason description " }, { "name" : "accounts:first name" , "stringValue" : "Liz" }, { "name" : "accounts:is 2sv enforced" , "boolValue" : false }, { "name" : "accounts:is 2sv enrolled" , "boolValue" : false }, { "name" : "accounts:last name" , "stringValue" : "Smith" }, { "name" : "accounts:creation time" , "datetimeValue" : "2010-10-28T10:26:35.000Z" }, { "name" : "accounts:last login time" , "datetimeValue" : "1970-01-01T00:00:00.000Z" }, { "name" : "accounts:last sso time" , "datetimeValue" : "1970-01-01T00:00:00.000Z" } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- GET https://admin.googleapis.com/admin/reports/v1/usage/users/all /dates/2013-03-03?customerId=C03az79cb The following example gets a report on the last login timestamps of the users in the account.
+- GET https://admin.googleapis.com/admin/reports/v1/usage/users/all /dates/2013-03-03?maxResults=2 The following example gets a report on all user activities for a specific customer account.
+- GET https://admin.googleapis.com/admin/reports/v1/usage/users/all/dates/2013-03-03 ?parameters=accounts:last login time,accounts:is disabled" Retrieve a specific user's usage activities To retrieve a report of a specific user's activities in your account use the following GET HTTP request and include the authorization token described in the authorization documentation .
+
+### "Reports API: Entities Usage Report \_|\_ Admin console \_|\_ Google for\
+
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities](https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 148
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- REST Resource: chromeosdevices Methods action (deprecated) POST /admin/directory/v1/customer/{customerId}/devices/chromeos/{resourceId}/action Use BatchChangeChromeOsDeviceStatus instead. get GET /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId} Retrieves a Chrome OS device's properties. list GET /admin/directory/v1/customer/{customerId}/devices/chromeos Retrieves a paginated list of Chrome OS devices within an account. moveDevicesToOu POST /admin/directory/v1/customer/{customerId}/devices/chromeos/moveDevicesToOu Moves or inserts multiple Chrome OS devices to an organizational unit. patch PATCH /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId} Updates a device's updatable properties, such as annotatedUser , annotatedLocation , notes , orgUnitPath , or annotatedAssetId . update PUT /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId} Updates a device's updatable properties, such as annotatedUser , annotatedLocation , notes , orgUnitPath , or annotatedAssetId .
-- REST Resource: mobiledevices Methods action POST /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}/action Takes an action that affects a mobile device. delete DELETE /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId} Removes a mobile device. get GET /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId} Retrieves a mobile device's properties. list GET /admin/directory/v1/customer/{customerId}/devices/mobile Retrieves a paginated list of all user-owned mobile devices for an account.
-- REST Resource: resources.features Methods delete DELETE /admin/directory/v1/customer/{customer}/resources/features/{featureKey} Deletes a feature. get GET /admin/directory/v1/customer/{customer}/resources/features/{featureKey} Retrieves a feature. insert POST /admin/directory/v1/customer/{customer}/resources/features Inserts a feature. list GET /admin/directory/v1/customer/{customer}/resources/features Retrieves a list of features for an account. patch PATCH /admin/directory/v1/customer/{customer}/resources/features/{featureKey} Patches a feature. rename POST /admin/directory/v1/customer/{customer}/resources/features/{oldName}/rename Renames a feature. update PUT /admin/directory/v1/customer/{customer}/resources/features/{featureKey} Updates a feature.
-- REST Resource: resources.calendars Methods delete DELETE /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId} Deletes a calendar resource. get GET /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId} Retrieves a calendar resource. insert POST /admin/directory/v1/customer/{customer}/resources/calendars Inserts a calendar resource. list GET /admin/directory/v1/customer/{customer}/resources/calendars Retrieves a list of calendar resources for an account. patch PATCH /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId} Patches a calendar resource. update PUT /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId} Updates a calendar resource.
-
-### Admin SDK API overview \_|\_ Admin console \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- Source ID: `site-docs-root`
-- Final score: 34
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Reports API — Generate reports about customers and user usage.
-- The Admin SDK API is a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale.
-- Chrome Browser Enrollment Token API — Manage Chrome browser enrollment tokens for your account.
-- Beta APIs Chrome Enterprise Core API — Manage Chrome browser devices for your account.
-
-### Admin SDK API reference \_|\_ Admin console \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
-- Source ID: `site-docs-reference`
-- Final score: 32
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Reports API — Generate reports about customers and user usage.
-- The Admin SDK API is a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale.
-- Admin SDK API v1.1beta1 Chrome Enterprise Core API — Manage Chrome browser devices for your account.
-- Chrome Browser Enrollment Token API — Manage Chrome browser enrollment tokens for your account.
+- Example JSON response for entities report { "kind" : "reports#usageReports" , "nextPageToken" : "NjQ1OTgwODk0MzkxNDAwNjQ0OA" , "usageReports" : [ { "kind" : "admin#reports#usageReport" , "date" : "2017-12-11" , "entity" : { "type" : "OBJECT" , "customerId" : "C03az79cb" , "objectType" : "GPLUS COMMUNITY" , "objectId" : "1234" , }, "parameters" : [ { "name" : "gplus:community name" , "stringValue" : "My Community" }, { "name" : "gplus:num total members" , "intValue" : 37 }, { "name" : "gplus:num 7day active members" , "intValue" : 12 }, { "name" : "gplus:num 30day active members" , "intValue" : 17 }, ] } ] } Example JSON response for entities report with warnings One or more warnings may be returned in the response if the request cannot be fulfilled.
+- The entities usage report returns Google Workspace service activities related to entities used by your account's users.
+- The entities usage report may be used only for lawful purposes in accordance with your Customer Agreement.
+- In this example, the report is not available at the time the request is made. { "kind": "reports#usageReports", "warnings": [ { "code": "PARTIAL DATA AVAILABLE" "message": "Data for date 2017-12-11 for application gplus is not available right now, please try again after a few hours." "data": [ { "key": "date" "value": "2017-12-11" } ] } ], "usageReports": [], } Each entry in the warnings array has the following parameters: code : machine-readable warning code message : human-readable warning message data : list of key-value pairs which give detailed warning information Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

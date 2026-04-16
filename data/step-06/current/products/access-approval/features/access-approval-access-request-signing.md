@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:23.445Z"
+generated_at: "2026-04-12T15:57:29.227Z"
 product_name: "Access Approval"
 product_slug: "access-approval"
 feature_name: "Access Approval access request signing"
 feature_slug: "access-approval-access-request-signing"
 latest_feature_date: "2021-12-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/validate-request-signature"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests"
 keywords:
   - "customer-managed signing keys"
   - "Google-managed signing keys"
@@ -24,7 +27,7 @@ keywords:
 # Access Approval access request signing
 
 Product: Access Approval
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,22 +39,46 @@ Access Approval introduced preview support for cryptographic signing of access r
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/validate-request-signature](https://docs.cloud.google.com/assured-workloads/access-approval/docs/validate-request-signature)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys](https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys](https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests)
 
 ## Supporting Pages
 
-### "Validate an approved request signature \_|\_ Access Approval \_|\_ Google\
+### "Review and approve access requests using the Google-managed signing key\
 
-- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/validate-request-signature](https://docs.cloud.google.com/assured-workloads/access-approval/docs/validate-request-signature)
-- Source ID: `site-docs-root-2`
-- Final score: 32
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys](https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys)
+- Source ID: `site-docs-root`
+- Final score: 138
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- Before you begin To ensure that the Access Approval service account for your resource has the necessary permissions to verify approved request signatures, ask your administrator to grant the Cloud KMS CryptoKey Signer/Verifier ( roles/cloudkms.signerVerifier ) IAM role to the Access Approval service account for your resource on the key, key ring, or key project.
-- Validate an approved request signature Each approved Access Approval request is signed with an asymmetric cryptographic key to validate the approval.
+### "Review and approve access requests using a custom signing key \_|\_ Access\
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys](https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys)
+- Source ID: `site-docs-root`
+- Final score: 128
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "REST Resource: folders.approvalRequests \_|\_ Access Approval \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/folders.approvalRequests)
+- Source ID: `site-api-reference`
+- Final score: 120
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "REST Resource: organizations.approvalRequests \_|\_ Access Approval \_|\_\
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests](https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations.approvalRequests)
+- Source ID: `site-api-reference`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

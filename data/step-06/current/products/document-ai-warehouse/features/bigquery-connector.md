@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.790Z"
+generated_at: "2026-04-15T12:05:15.508Z"
 product_name: "Document AI Warehouse"
 product_slug: "document-ai-warehouse"
 feature_name: "BigQuery Connector"
 feature_slug: "bigquery-connector"
 latest_feature_date: "2023-03-28"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/document-ai/docs/error-messages"
+  - "https://docs.cloud.google.com/document-ai/docs/languages"
+  - "https://docs.cloud.google.com/document-ai/docs/processors-list"
 keywords:
+  - "bigquery"
   - "connector"
   - "exports"
   - "document"
   - "metadata"
-  - "in"
   - "batch"
-  - "to"
-  - "for"
+  - "analysis"
+  - "reporting"
 ---
 
 # BigQuery Connector
 
 Product: Document AI Warehouse
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Exports document metadata in batch to BigQuery for analysis, reporting, and dash
 
 Exports document metadata in batch to BigQuery for analysis, reporting, and dashboarding.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/document-ai/docs/error-messages](https://docs.cloud.google.com/document-ai/docs/error-messages)
+- [https://docs.cloud.google.com/document-ai/docs/languages](https://docs.cloud.google.com/document-ai/docs/languages)
+- [https://docs.cloud.google.com/document-ai/docs/processors-list](https://docs.cloud.google.com/document-ai/docs/processors-list)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Error messages \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/error-messages](https://docs.cloud.google.com/document-ai/docs/error-messages)
+- Source ID: `site-docs-root`
+- Final score: 62
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To diagnose this error, try opening the service account key file from the folder from which you're attempting to call the Document AI API. cat $GOOGLE APPLICATION CREDENTIALS Error writing final output If you receive a message like the following when receiving the results of a batch process request: { "name": "projects/ project-name /operations/ operation-id ", "metadata": { "@type": "type.googleapis.com/google.cloud.document.v1beta1.OperationMetadata", "state": "SUCCEEDED", "createTime": "2019-09-19T02:02:15.885267760Z", "updateTime": "2019-09-19T02:02:31.896425001Z" }, "done": true, "error": { "code": 5, "message": "Error writing final output to: gs:// bucket-name /filename.json" } } Your service account may not have the correct permissions to create objects in your Cloud Storage bucket.
+- KMS key invalid When an invalid key (e.g. it is disabled) was provided. message : "KMS key 'projects/1/keys/abc' is invalid (KEY DISABLED)." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "KMS KEY INVALID" domain : "documentai.googleapis.com" metadata { key : "details" value : "KEY DISABLED" } metadata { key : "kms key name" value : "projects/1/keys/abc" } } } Processor state change When an invalid request to change the state of a processor is issued. message : "Processor state cannot be changed to 'DISABLED' since it is 'DISABLED'." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "PROCESSOR STATE CHANGE INVALID" domain : "documentai.googleapis.com" metadata { key : "current state" value : "DISABLED" } metadata { key : "processor id" value : "xyz" } metadata { key : "target state" value : "DISABLED" } } } Processor version state change When an invalid request to change the state of a processor version is issued. message : "ProcessorVersion state cannot be changed to 'DEPLOYING' since it is 'DEPLOYED'." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "PROCESSOR VERSION STATE CHANGE INVALID" domain : "documentai.googleapis.com" metadata { key : "current state" value : "DEPLOYED" } metadata { key : "processor id" value : "abc" } metadata { key : "target state" value : "DEPLOYING" } metadata { key : "version id" value : "xyz" } } } Processor not enabled When a request that depends on a specific processor is issued, but the processor is not enabled. message : "Processor 'xyz' is not enabled." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "PROCESSOR NOT ENABLED" domain : "documentai.googleapis.com" metadata { key : "processor id" value : "xyz" } metadata { key : "state" value : "DISABLED" } } } Processor version not deployed When a request that depends on a specific processor version being deployed is issued, but the processor is not deployed. message : "ProcessorVersion 'abc' is not deployed." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "PROCESSOR VERSION NOT DEPLOYED" domain : "documentai.googleapis.com" metadata { key : "processor id" value : "xyz" } metadata { key : "state" value : "TRAINING" } metadata { key : "version id" value : "abc" } } } Processor default version When a request which depends on a default version being configured is issued but there is not one configured. message : "Processor 'xyz' does not have a default version configured." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "PROCESSOR DEFAULT VERSION UNSET" domain : "documentai.googleapis.com" metadata { key : "processor id" value : "xyz" } } } Processor remove default version When a request to undeploy or delete a processor version is issued but it is configured as the default version. message : "ProcessorVersion 'xyz' cannot be undeployed or deleted as it is the default version." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "PROCESSOR REMOVE DEFAULT VERSION" domain : "documentai.googleapis.com" metadata { key : "processor id" value : "abc" } metadata { key : "version id" value : "xyz" } } } Dataset not initialized When a request that requires a dataset to be initialized is issued, but the dataset is not initialized. message : "Dataset is not initialized." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "DATASET NOT INITIALIZED" domain : "documentai.googleapis.com" } } Dataset initialized or initializing When a request that requires a dataset to be uninitialized is issued, but the dataset is already initialized or is initializing. message : "Dataset is already initialized or is initializing." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "DATASET INITIALIZED OR INITIALIZING" domain : "documentai.googleapis.com" } } Dataset Location Not Empty Error When a request requires a dataset storage location to be empty, but the folder contains objects. message : "Given dataset location is not empty.
+- Evaluation not found When an evaluation for a processor version cannot be found. message : "Evaluation with ID 'qrs' not found." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "EVALUATION NOT FOUND" domain : "documentai.googleapis.com" metadata { key : "evaluation id" value : "qrs" } metadata { key : "processor id" value : "xyz" } metadata { key : "version id" value : "abc" } } } Document not found When a document needed for an operation cannot be found. message : "Document not found: 'gs://foo'." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "DOCUMENT NOT FOUND" domain : "documentai.googleapis.com" metadata { key : "document" value : "gs://foo" } } } Processor not found When a processor needed for an operation cannot be found. message : "Processor with id 'xyz' not found." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "PROCESSOR NOT FOUND" domain : "documentai.googleapis.com" metadata { key : "processor id" value : "xyz" } } } Processor version not found When a processor version needed for an operation cannot be found. message : "ProcessorVersion with id 'abc' not found." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "PROCESSOR VERSION NOT FOUND" domain : "documentai.googleapis.com" metadata { key : "processor id" value : "xyz" } metadata { key : "version id" value : "abc" } } } Data Labeling Job Not Found When a data labeling job cannot be found. message : "Data labeling job with id 'EXAMPLE DATA LABELING JOB' not found in processor EXAMPLE PROCESSOR." Schema version not found When a schema version cannot be found. message : "Schema version with id 'EXAMPLE SCHEMA VERSION' not found." Schema not found When a schema cannot be found. message : "Schema with id 'EXAMPLE SCHEMA' not found." Already exists The resolution requires a few steps to be carried out as outlined in the error message.
+- Ensure the max is greater than the min." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "DOCUMENT SPAN INVALID" domain : "documentai.googleapis.com" metadata { key : "span" value : "Character" } } } Invalid UTF-8 document When a document that includes invalid UTF-8 is provided. message : "Document contains invalid UTF-8 text." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "DOCUMENT INVALID UTF 8" domain : "documentai.googleapis.com" metadata { key : "bytes" value : "[2, 3)" } } } Dataset schema is invalid When a processor doesn't have a valid union schema or the given dataset schema is not valid. message : "The processor has an empty or invalid schema: " details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "INVALID SCHEMA ERROR" domain : "documentai.googleapis.com" } } OcrConfig Unsupported When a processing request is issued for a processor which does not support OcrConfig. message : "OcrConfig is not supported for processor type: 'foo'." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "OCR CONFIG UNSUPPORTED" domain : "documentai.googleapis.com" } } Invalid Import Config When the import config is invalid. message : "The import config is invalid: foo" details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "INVALID IMPORT CONFIG" domain : "documentai.googleapis.com" } } Source processor version is invalid When attempting to import a processor version , the source processor version is not valid to be imported. message : "The source processor version is invalid in import processor version." details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : "INVALID SOURCE PROCESSOR VERSION ERROR" domain : "documentai.googleapis.com" } } Invalid chunk size When the chunk size config is invalid. message : "Invalid chunk size.
+
+### Processor list \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/languages](https://docs.cloud.google.com/document-ai/docs/languages)
+- Source ID: `site-docs-root`
+- Final score: 62
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Category Digitize Functions OCR, Quality Analysis Release stage General availability Access status Public lock open Type in API OCR PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-ocr-v1.2-2022-11-10 Stable GA Frozen model version of v1.0: Model files, configurations, and binaries of a version snapshot frozen in a container image for up to 18 months. pretrained-ocr-v2.0-2023-06-02 Stable GA Production-ready model specialized for document use cases.
+- Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-layout-parser-v1.0-2024-06-03 Stable GA General availability version for document layout analysis.
+- The processor currently returns information from the following signals: fraud signals is identity document detection: Predicts whether an image contains a recognized identity document. fraud signals suspicious words detection: Predicts whether words are present that aren't typical on IDs. fraud signals image manipulation detection: Predicts whether the image was altered or tampered with an image editing tool. fraud signals online duplicate detection: Predicts whether the image can be found online (US only).
+- Full list of fields fraud signals is identity document fraud signals suspicious words evidence suspicious word evidence inconclusive suspicious word fraud signals image manipulation fraud signals online duplicate (US only) fraud signals photocopy detection evidence hostname (US only) evidence thumbnail url (US only) Normalized fields You can find more information in the Enrichment & normalization page.
+
+### Processor list \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/processors-list](https://docs.cloud.google.com/document-ai/docs/processors-list)
+- Source ID: `site-docs-root`
+- Final score: 62
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Category Digitize Functions OCR, Quality Analysis Release stage General availability Access status Public lock open Type in API OCR PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-ocr-v1.2-2022-11-10 Stable GA Frozen model version of v1.0: Model files, configurations, and binaries of a version snapshot frozen in a container image for up to 18 months. pretrained-ocr-v2.0-2023-06-02 Stable GA Production-ready model specialized for document use cases.
+- Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-layout-parser-v1.0-2024-06-03 Stable GA General availability version for document layout analysis.
+- The processor currently returns information from the following signals: fraud signals is identity document detection: Predicts whether an image contains a recognized identity document. fraud signals suspicious words detection: Predicts whether words are present that aren't typical on IDs. fraud signals image manipulation detection: Predicts whether the image was altered or tampered with an image editing tool. fraud signals online duplicate detection: Predicts whether the image can be found online (US only).
+- Full list of fields fraud signals is identity document fraud signals suspicious words evidence suspicious word evidence inconclusive suspicious word fraud signals image manipulation fraud signals online duplicate (US only) fraud signals photocopy detection evidence hostname (US only) evidence thumbnail url (US only) Normalized fields You can find more information in the Enrichment & normalization page.
 

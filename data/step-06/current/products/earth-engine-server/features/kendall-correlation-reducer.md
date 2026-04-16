@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:22:38.439Z"
+generated_at: "2026-04-14T17:27:28.226Z"
 product_name: "Earth Engine Server"
 product_slug: "earth-engine-server"
 feature_name: "Kendall correlation reducer"
 feature_slug: "kendall-correlation-reducer"
 latest_feature_date: "2016-02-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/docs/release-notes"
   - "https://developers.google.com/earth-engine/apidocs/ee-algorithms-crosscorrelation"
-  - "https://developers.google.com/earth-engine/guides/arrays_transformations"
+  - "https://developers.google.com/earth-engine/guides/arrays_eigen_analysis"
+  - "https://developers.google.com/earth-engine/guides/sentinel1"
 keywords:
   - "kendall"
   - "correlation"
@@ -24,7 +24,7 @@ keywords:
 # Kendall correlation reducer
 
 Product: Earth Engine Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,35 +36,23 @@ Computes Kendall's rank correlation coefficient.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
 - [https://developers.google.com/earth-engine/apidocs/ee-algorithms-crosscorrelation](https://developers.google.com/earth-engine/apidocs/ee-algorithms-crosscorrelation)
-- [https://developers.google.com/earth-engine/guides/arrays_transformations](https://developers.google.com/earth-engine/guides/arrays_transformations)
+- [https://developers.google.com/earth-engine/guides/arrays_eigen_analysis](https://developers.google.com/earth-engine/guides/arrays_eigen_analysis)
+- [https://developers.google.com/earth-engine/guides/sentinel1](https://developers.google.com/earth-engine/guides/sentinel1)
 
 ## Supporting Pages
-
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 72
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Add several correlation reducers: ee.Reducer.kendallsCorrelation() , ee.Reducer.pearsonsCorrelation() , ee.Reducer.spearmansCorrelation() , and ee.Reducer.sensSlope() .
-- Earth Engine Server Feature Added new correlation reducers: Kendall, Spearman, Pearsons and Sen's slope.
-- January 14, 2020 Earth Engine Data Catalog Feature Added COPERNICUS/CORINE/V20/100m : Copernicus CORINE Land Cover January 09, 2020 Earth Engine Server Feature Added ee.Reducer.countRuns() , which computes the number of runs of distinct, non-null inputs.
-- Earth Engine Server Fixed Added ee.Reducer.fixedHistogram() , a reducer which computes a histogram using fixed bins and returns the histogram as an ee.Array with two columns.
 
 ### "ee.Algorithms.CrossCorrelation \_|\_ Google Earth Engine \_|\_ Google for\
 
 - URL: [https://developers.google.com/earth-engine/apidocs/ee-algorithms-crosscorrelation](https://developers.google.com/earth-engine/apidocs/ee-algorithms-crosscorrelation)
 - Source ID: `site-docs-reference`
-- Final score: 60
-- Re-rank relevance: N/A
+- Final score: 71
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The first three are distances: the deltaX, deltaY, and the Euclidean distance for each pixel in imageA to the pixel which has the highest corresponding correlation coefficient in imageB.
@@ -72,16 +60,31 @@ Evidence snippets:
 - The fourth band is the value of the correlation coefficient for that pixel [-1 : +1].
 - Usage Returns ee.Algorithms.CrossCorrelation(imageA, imageB, maxGap, windowSize, maxMaskedFrac ) Image Argument Type Details imageA Image First image, with N bands. imageB Image Second image, must have the same number of bands as imageA. maxGap Integer The greatest distance a pixel may shift in either X or Y. windowSize Integer Size of the window to be compared. maxMaskedFrac Float, default: 0 The maximum fraction of pixels within the correlation window that are allowed to be masked.
 
-### Array Transformations \_|\_ Google Earth Engine \_|\_ Google for Developers
+### Eigen Analysis \_|\_ Google Earth Engine \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/guides/arrays_transformations](https://developers.google.com/earth-engine/guides/arrays_transformations)
+- URL: [https://developers.google.com/earth-engine/guides/arrays_eigen_analysis](https://developers.google.com/earth-engine/guides/arrays_eigen_analysis)
 - Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: N/A
+- Final score: 45
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The solve() function determines how to best solve the system from characteristics of the inputs, using the pseudo-inverse for overdetermined systems, the inverse for square matrices and special techniques for nearly singular matrices: Code Editor (JavaScript) // Compute coefficients the easiest way. var coefficients3 = predictors . matrixSolve ( response ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Compute coefficients the easiest way. coefficients 3 = predictors . matrixSolve ( response ) To get a multi-band image, project the array image into a lower dimensional space, then flatten it: Code Editor (JavaScript) // Turn the results into a multi-band image. var coefficientsImage = coefficients3 // Get rid of the extra dimensions. . arrayProject ([ 0 ]) . arrayFlatten ([ [ 'constant' , 'trend' , 'sin' , 'cos' ] ]); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Turn the results into a multi-band image. coefficients image = ( coefficients 3 Get rid of the extra dimensions. . arrayProject ([ 0 ]) . arrayFlatten ([[ 'constant' , 'trend' , 'sin' , 'cos' ]]) ) Examine the outputs of the three methods and observe that the resultant matrix of coefficients is the same regardless of the solver.
-- At this point, matrix algebra can be used to solve for the OLS coefficients: Code Editor (JavaScript) // Compute coefficients the hard way. var coefficients1 = predictors . arrayTranspose (). matrixMultiply ( predictors ) . matrixInverse (). matrixMultiply ( predictors . arrayTranspose ()) . matrixMultiply ( response ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Compute coefficients the hard way. coefficients 1 = ( predictors . arrayTranspose () . matrixMultiply ( predictors ) . matrixInverse () . matrixMultiply ( predictors . arrayTranspose ()) . matrixMultiply ( response ) ) Although this method works, it is inefficient and makes for difficult to read code.
-- A better way is to use the pseudoInverse() method ( matrixPseudoInverse() for an array image): Code Editor (JavaScript) // Compute coefficients the easy way. var coefficients2 = predictors . matrixPseudoInverse () . matrixMultiply ( response ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Compute coefficients the easy way. coefficients 2 = predictors . matrixPseudoInverse () . matrixMultiply ( response ) From a readability and computational efficiency perspective, the best way to get the OLS coefficients is solve() ( matrixSolve() for an array image).
-- Point ( - 122.08709 , 36.9732 )) // Prepare images by mapping the prepSrL8 function over the collection. . map ( prepSrL8 ) // Select NIR and red bands only. . select ([ 'SR B5' , 'SR B4' ]) // Sort the collection in chronological order. . sort ( 'system:time start' , true ); // This function computes the predictors and the response from the input. var makeVariables = function ( image ) { // Compute time of the image in fractional years relative to the Epoch. var year = ee .
+- Image ( eigenValues . sqrt ()) . arrayProject ([ 0 ]). arrayFlatten ([ getNewBandNames ( 'sd' )]); // Turn the PCs into a P-band image, normalized by SD. return principalComponents // Throw out an an unneeded dimension, [[]] -> []. . arrayProject ([ 0 ]) // Make the one band array image a multi-band image, [] -> image. . arrayFlatten ([ getNewBandNames ( 'pc' )]) // Normalize the PCs by their SDs. . divide ( sdImage ); }; Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) def get principal components ( centered , scale , region ): Collapse bands into 1D array arrays = centered . toArray () Compute the covariance of the bands within the region. covar = arrays . reduceRegion ( reducer = ee .
+- Code Editor (JavaScript) var getPrincipalComponents = function ( centered , scale , region ) { // Collapse the bands of the image into a 1D array per pixel. var arrays = centered . toArray (); // Compute the covariance of the bands within the region. var covar = arrays . reduceRegion ({ reducer : ee .
+- Reducer . centeredCovariance (), geometry : region , scale : scale , maxPixels : 1e9 }); // Get the 'array' covariance result and cast to an array. // This represents the band-to-band covariance within the region. var covarArray = ee .
+- In Earth Engine, this transformation is achieved by using a covariance reducer on an array image and the eigen() command on the resulting covariance array.
+
+### Sentinel-1 Algorithms \_|\_ Google Earth Engine \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/sentinel1](https://developers.google.com/earth-engine/guides/sentinel1)
+- Source ID: `site-docs-reference`
+- Final score: 34
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Map () m . add layer ( vv iw asc desc mean , { 'min' : - 12 , 'max' : - 4 }, 'vv iw asc desc mean' ) m . add layer ( vh iw asc desc mean , { 'min' : - 18 , 'max' : - 10 }, 'vh iw asc desc mean' ) m . add layer ( vh iw asc mean , { 'min' : - 18 , 'max' : - 10 }, 'vh iw asc mean' ) m . add layer ( vh iw desc mean , { 'min' : - 18 , 'max' : - 10 }, 'vh iw desc mean' ) m . set center ( - 73.8719 , 4.512 , 9 ) # Bogota, Colombia m Sentinel-1 Preprocessing Imagery in the Earth Engine 'COPERNICUS/S1 GRD' Sentinel-1 ImageCollection is consists of Level-1 Ground Range Detected (GRD) scenes processed to backscatter coefficient (σ°) in decibels (dB).
+- GRD border noise removal Removes low intensity noise and invalid data on scene edges. (As of January 12, 2018) Thermal noise removal Removes additive noise in sub-swaths to help reduce discontinuities between sub-swaths for scenes in multi-swath acquisition modes. (This operation cannot be applied to images produced before July 2015) Application of radiometric calibration values Computes backscatter intensity using sensor calibration parameters in the GRD metadata.
+- Earth Engine uses the following preprocessing steps (as implemented by the Sentinel-1 Toolbox ) to derive the backscatter coefficient in each pixel: Apply orbit file Updates orbit metadata with a restituted orbit file (or a precise orbit file if the restituted one is not available).
+- Earth Engine applies several preprocessing steps to Sentinel-1 GRD data, including applying orbit files, noise removal, radiometric calibration, and terrain correction, to derive the backscatter coefficient in decibels (dB).
 

@@ -5,7 +5,7 @@ url: https://developers.google.com/earth-engine/apidocs/ee-algorithms-landsat-si
 knowledge_key: corpus
 source_id: site-docs-reference-2
 source_type: site
-entrypoint: https://developers.google.com/earth-engine/apidocs
+entrypoint: https://developers.google.com/earth-engine/apidocs/ee-data-computefeatures
 source_metadata:
   url: https://developers.google.com/earth-engine/apidocs/ee-algorithms-landsat-simplecloudscore
   title: "ee.Algorithms.Landsat.simpleCloudScore \_|\_ Google Earth Engine \_|\_ Google\

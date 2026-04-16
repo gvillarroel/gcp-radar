@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/appengine/docs/language-landing
 knowledge_key: corpus
 source_id: site-docs-reference-4
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/writing-web-service
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/language-landing
   title: "App Engine documentation \_|\_ Google Cloud Documentation"

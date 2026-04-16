@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-09T01:12:31.754Z",
+  "generated_at": "2026-04-12T21:43:49.019Z",
   "product_name": "Google Cloud MCP servers",
   "product_slug": "google-cloud-mcp-servers",
   "step02_source_path": "data/step-02/current/google-cloud-mcp-servers.md",
@@ -8,6 +8,33 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 1,
+    "source_row_count": 2,
+    "top_phrases": [
+      "organization policy control for mcp use via the gcp",
+      "allowedmcpservices custom constraint",
+      "mcp organization policy control"
+    ],
+    "top_tokens": [
+      "2026",
+      "allowedmcpservices",
+      "constraint",
+      "control",
+      "custom",
+      "deprecated",
+      "for",
+      "gcp",
+      "managed",
+      "mcp",
+      "organization",
+      "policy",
+      "the",
+      "use",
+      "via"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "bigquery",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
@@ -29,7 +56,7 @@
         {
           "title": "Google Cloud MCP servers overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/mcp/overview",
-          "description": "MCP discovery: Once a server is enabled in your project, AI applications can discover the server&#x27;s tools by using the MCP tools/list method. Administrative controls: Control MCP use at the organization, folder, and project level with custom organization policies. Authentication and Authorization: Google and Google Cloud remote MCP servers are compliant with the MCP authorization specification.",
+          "description": "Remote MCP servers run on the service&#x27;s infrastructure and offer an HTTP endpoint to AI applications for communication between the AI MCP client and the MCP server. For more information, see MCP architecture. Google and Google Cloud remote MCP servers have the following features and benefits:",
           "rank": 1
         },
         {
@@ -63,15 +90,15 @@
           "rank": 6
         },
         {
-          "title": "Google Cloud MCP servers release notes | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/mcp/release-notes",
-          "description": "After March 17, 2026, Google and Google Cloud remote Model Context Protocol (MCP) servers are <strong>automatically enabled when you enable a supported service</strong>.",
-          "rank": 7
-        },
-        {
           "title": "Authenticate to Google and Google Cloud MCP servers | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/mcp/authenticate-mcp",
           "description": "Google and Google Cloud remote Model Context Protocol (MCP) servers <strong>implement the MCP authorization specification for HTTP-based transports</strong>. Generally, your AI applications must authenticate to access these servers.",
+          "rank": 7
+        },
+        {
+          "title": "Google Cloud MCP servers release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/mcp/release-notes",
+          "description": "After March 17, 2026, Google and Google Cloud remote Model Context Protocol (MCP) servers are <strong>automatically enabled when you enable a supported service</strong>.",
           "rank": 8
         }
       ]
@@ -80,7 +107,7 @@
       "round": 1,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Google Cloud MCP servers\" official documentation OR site:developers.google.com \"google cloud mcp servers\" official documentation",
-      "official_result_count": 2,
+      "official_result_count": 3,
       "results": [
         {
           "title": "MCP Reference: developerknowledge.googleapis.com | Developer Knowledge | Google for Developers",
@@ -89,12 +116,25 @@
           "rank": 1
         },
         {
+          "title": "MCP Reference: design.googleapis.com | Design MCP | Google for Developers",
+          "url": "https://developers.google.com/design-mcp/reference/mcp",
+          "description": "The design.googleapis.com MCP server has the following MCP endpoint: ... <strong>An MCP tool is a function or executable capability that an MCP server exposes to a LLM or AI application to perform an action in the real world</strong>.",
+          "rank": 2
+        },
+        {
           "title": "MCP Reference: Android Device Management MCP Server | Android Management API | Google for Developers",
           "url": "https://developers.google.com/android/management/reference/mcp",
           "description": "An MCP service endpoint is the network address and communication interface (usually a URL) of the MCP server that an AI application (the Host for the MCP client) uses to establish a secure, standardized connection. It is the point of contact for the LLM to request context, call a tool, or access a resource. Google MCP endpoints can be global or regional. The Android Device Management MCP Server MCP server has the following MCP endpoint:",
-          "rank": 2
+          "rank": 3
         }
       ]
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Google Cloud MCP servers\" \"organization policy control for mcp use via the gcp\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 1,
@@ -150,7 +190,7 @@
         {
           "title": "Google Cloud MCP servers overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/mcp/overview",
-          "description": "MCP discovery: Once a server is enabled in your project, AI applications can discover the server&#x27;s tools by using the MCP tools/list method. Administrative controls: Control MCP use at the organization, folder, and project level with custom organization policies. Authentication and Authorization: Google and Google Cloud remote MCP servers are compliant with the MCP authorization specification.",
+          "description": "Toolsets: Select a specific toolset from an MCP server to prevent overloading your agent&#x27;s context with too many tools. Authentication and Authorization: Google and Google Cloud remote MCP servers are compliant with the MCP authorization specification.",
           "rank": 1
         },
         {
@@ -160,15 +200,15 @@
           "rank": 2
         },
         {
-          "title": "Manage MCP servers | Google Cloud MCP servers | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/mcp/manage-mcp-servers",
-          "description": "This guide explains how to list ... and safety settings for MCP usage. <strong>Google and Google Cloud services are available as remote MCP servers that run on our infrastructure, not your machine</strong>....",
-          "rank": 3
-        },
-        {
           "title": "Supported products | Google Cloud MCP servers | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/mcp/supported-products",
           "description": "This page lists the Google and Google Cloud products and services you can access through remote MCP servers.",
+          "rank": 3
+        },
+        {
+          "title": "Manage MCP servers | Google Cloud MCP servers | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+          "description": "This guide explains how to list ... and safety settings for MCP usage. <strong>Google and Google Cloud services are available as remote MCP servers that run on our infrastructure, not your machine</strong>....",
           "rank": 4
         },
         {
@@ -220,7 +260,7 @@
         {
           "title": "Google Cloud MCP servers overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/mcp/overview",
-          "description": "Explore supported products.",
+          "description": "To determine if an MCP server offers toolsets, review the server&#x27;s MCP reference documentation linked from our Supported products page.",
           "rank": 1
         },
         {
@@ -265,7 +305,7 @@
       "round": 2,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Google Cloud MCP servers\" reference OR site:developers.google.com \"google cloud mcp servers\" reference",
-      "official_result_count": 2,
+      "official_result_count": 3,
       "results": [
         {
           "title": "MCP Reference: developerknowledge.googleapis.com | Developer Knowledge | Google for Developers",
@@ -274,12 +314,25 @@
           "rank": 1
         },
         {
+          "title": "MCP Reference: design.googleapis.com | Design MCP | Google for Developers",
+          "url": "https://developers.google.com/design-mcp/reference/mcp",
+          "description": "The <strong>design.googleapis.com MCP server has the following MCP endpoint: ... An MCP tool is a function or executable capability that an MCP server exposes to a LLM or AI application to perform an action in the real world</strong>.",
+          "rank": 2
+        },
+        {
           "title": "MCP Reference: Android Device Management MCP Server | Android Management API | Google for Developers",
           "url": "https://developers.google.com/android/management/reference/mcp",
           "description": "An MCP service endpoint is <strong>the network address and communication interface (usually a URL) of the MCP server that an AI application (the Host for the MCP client) uses to establish a secure, standardized connection</strong>.",
-          "rank": 2
+          "rank": 3
         }
       ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Google Cloud MCP servers\" \"allowedmcpservices custom constraint\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 2,
@@ -329,7 +382,7 @@
         {
           "title": "Google Cloud MCP servers overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/mcp/overview",
-          "description": "MCP discovery: Once a server is enabled in your project, AI applications can discover the server&#x27;s tools by using the MCP tools/list method. Administrative controls: Control MCP use at the organization, folder, and project level with custom organization policies. Authentication and Authorization: Google and Google Cloud remote MCP servers are compliant with the MCP authorization specification.",
+          "description": "To help you limit the tools available ... Google Cloud MCP servers <strong>offer logical groups of MCP tools called toolsets</strong>. Each toolset has its own HTTP endpoint and functions as a virtual MCP server.",
           "rank": 1
         },
         {
@@ -369,9 +422,9 @@
           "rank": 7
         },
         {
-          "title": "Use the Compute Engine remote MCP server | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/compute/docs/use-compute-engine-mcp",
-          "description": "<strong>This document shows you how to use the Compute Engine remote Model Context Protocol (MCP) server to connect with AI applications including Gemini CLI, ChatGPT, Claude, and custom applications you are developing</strong>.",
+          "title": "MCP Reference: monitoring.googleapis.com | Cloud Monitoring | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/monitoring/api/ref_v3/mcp",
+          "description": "A Model Context Protocol (MCP) server <strong>acts as a proxy between an external service that provides context, data, or capabilities to a Large Language Model (LLM) or AI application</strong>.",
           "rank": 8
         }
       ]
@@ -415,7 +468,7 @@
       "round": 3,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Google Cloud MCP servers\" overview OR site:developers.google.com \"google cloud mcp servers\" overview",
-      "official_result_count": 4,
+      "official_result_count": 5,
       "results": [
         {
           "title": "MCP Reference: developerknowledge.googleapis.com | Developer Knowledge | Google for Developers",
@@ -424,24 +477,37 @@
           "rank": 1
         },
         {
+          "title": "MCP Reference: design.googleapis.com | Design MCP | Google for Developers",
+          "url": "https://developers.google.com/design-mcp/reference/mcp",
+          "description": "MCP servers <strong>connect AI applications to external systems such as databases and web services, translating their responses into a format that the AI application can understand</strong>.",
+          "rank": 2
+        },
+        {
           "title": "MCP Reference: Android Device Management MCP Server | Android Management API | Google for Developers",
           "url": "https://developers.google.com/android/management/reference/mcp",
           "description": "MCP servers <strong>connect AI applications to external systems such as databases and web services, translating their responses into a format that the AI application can understand</strong>.",
-          "rank": 2
+          "rank": 3
         },
         {
           "title": "Android Management API | Google for Developers",
           "url": "https://developers.google.com/android/management/use-android-management-mcp",
           "description": "Android Management API MCP servers <strong>use the OAuth 2.0 protocol with Identity and Access Management for authentication and authorization</strong>. All Google Cloud identities are supported for authentication to MCP servers.",
-          "rank": 3
+          "rank": 4
         },
         {
           "title": "Integrate Gemini Enterprise Agents with Google Workspace | Google Codelabs",
           "url": "https://codelabs.developers.google.com/ge-gws-agents",
           "description": "Data &amp; actions: Gemini Enterprise data stores for Google Workspace (Calendar, Gmail, Drive, NotebookLM), Google Search, Google-managed Vertex AI Search Model Context Protocol (MCP) server, custom tool function to send Google Chat messages (via Google Chat API).",
-          "rank": 4
+          "rank": 5
         }
       ]
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Google Cloud MCP servers\" \"mcp organization policy control\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 3,
@@ -476,7 +542,7 @@
         {
           "title": "Configure MCP in an AI application | Google Cloud MCP servers | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/mcp/configure-mcp-ai-application",
-          "description": "To get the permissions that you need to enable and use Google and Google Cloud remote MCP servers, ask your administrator to grant you the following IAM roles :",
+          "description": "The following permissions are required to enable and use Google and Google Cloud remote MCP servers: ... You might also be able to get these permissions with custom roles or other predefined roles.",
           "rank": 5
         },
         {
@@ -486,15 +552,15 @@
           "rank": 6
         },
         {
-          "title": "Use the Datastream remote MCP server | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/datastream/docs/use-datastream-mcp",
-          "description": "Datastream MCP servers use the OAuth 2.0 protocol with Identity and Access Management (IAM) for authentication and authorization. <strong>All Google Cloud identities are supported for authentication to MCP servers</strong>.",
+          "title": "Google Cloud MCP servers overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/mcp/overview",
+          "description": "<strong>Only agents, MCP clients, and end-users with established identities can authenticate and use MCP tools</strong>. Fine-grained authorization policies: Use IAM to control who can do what on which Google Cloud resources with MCP tools.",
           "rank": 7
         },
         {
-          "title": "Use the Compute Engine remote MCP server | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/compute/docs/use-compute-engine-mcp",
-          "description": "Compute Engine MCP servers use the OAuth 2.0 protocol with Identity and Access Management (IAM) for authentication and authorization. <strong>All Google Cloud identities are supported for authentication to MCP servers</strong>.",
+          "title": "Connect to Memorystore for Redis Cluster from AI applications by using the remote MCP server | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/memorystore/docs/cluster/use-memorystore-mcp",
+          "description": "<strong>You might also be able to get these permissions with custom roles or other predefined roles</strong>. Memorystore for Redis Cluster MCP servers use the OAuth 2.0 protocol with Identity and Access Management (IAM) for authentication and authorization.",
           "rank": 8
         }
       ]
@@ -531,33 +597,33 @@
           "rank": 3
         },
         {
-          "title": "Manage MCP servers | Google Cloud MCP servers | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/mcp/manage-mcp-servers",
-          "description": "This guide explains how to list ... and safety settings for MCP usage. <strong>Google and Google Cloud services are available as remote MCP servers that run on our infrastructure, not your machine</strong>....",
-          "rank": 4
-        },
-        {
           "title": "MCP Reference: cloudtrace.googleapis.com | Cloud Trace | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp",
           "description": "<strong>A Model Context Protocol (MCP) server acts as a proxy between an external service that provides context, data, or capabilities to a Large Language Model (LLM) or AI application</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Manage MCP servers | Google Cloud MCP servers | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+          "description": "This guide explains how to list ... and safety settings for MCP usage. <strong>Google and Google Cloud services are available as remote MCP servers that run on our infrastructure, not your machine</strong>....",
           "rank": 5
         },
         {
-          "title": "Supported products | Google Cloud MCP servers | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/mcp/supported-products",
-          "description": "This page lists the Google and Google Cloud products and services you can access through remote MCP servers.",
-          "rank": 6
-        },
-        {
-          "title": "MCP Reference: pubsub.googleapis.com | Pub/Sub | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp",
+          "title": "MCP Reference: run.googleapis.com | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/reference/mcp",
           "description": "<strong>A Model Context Protocol (MCP) server acts as a proxy between an external service that provides context, data, or capabilities to a Large Language Model (LLM) or AI application</strong>.",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "MCP Reference: clouderrorreporting.googleapis.com | Error Reporting | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/error-reporting/reference_mcp/mcp",
           "description": "It is the point of contact for the LLM to request context, call a tool, or access a resource. Google MCP endpoints can be global or regional. The <strong>clouderrorreporting.googleapis.com</strong> ...",
+          "rank": 7
+        },
+        {
+          "title": "MCP Reference: monitoring.googleapis.com | Cloud Monitoring | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/monitoring/api/ref_v3/mcp",
+          "description": "<strong>A Model Context Protocol (MCP) server acts as a proxy between an external service that provides context, data, or capabilities to a Large Language Model (LLM) or AI application</strong>.",
           "rank": 8
         }
       ]
@@ -595,6 +661,15 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 166,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -604,7 +679,12 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp",
+          "use"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -635,6 +715,16 @@
       "best_rank": 5,
       "consistency_score": 100,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -644,7 +734,13 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "use"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -675,6 +771,16 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp",
+          "the",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -684,7 +790,13 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp",
+          "the",
+          "use"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -700,8 +812,8 @@
         "site:docs.cloud.google.com/mcp \"Google Cloud MCP servers\"",
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud documentation",
         "site:docs.cloud.google.com/mcp overview \"supported products\"",
-        "site:docs.cloud.google.com \"Google Cloud MCP servers\" \"access control\"",
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Google Cloud MCP servers\" \"access control\"",
         "site:docs.cloud.google.com/mcp \"manage mcp servers\" OR \"enable disable mcp servers\"",
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud introduction reference",
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" IAM roles permissions"
@@ -719,6 +831,14 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -728,7 +848,11 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -738,15 +862,16 @@
     {
       "title": "Google Cloud MCP servers overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/mcp/overview",
-      "description": "MCP discovery: Once a server is enabled in your project, AI applications can discover the server&#x27;s tools by using the MCP tools/list method. Administrative controls: Control MCP use at the organization, folder, and project level with custom organization policies. Authentication and Authorization: Google and Google Cloud remote MCP servers are compliant with the MCP authorization specification.",
+      "description": "Remote MCP servers run on the service&#x27;s infrastructure and offer an HTTP endpoint to AI applications for communication between the AI MCP client and the MCP server. For more information, see MCP architecture. Google and Google Cloud remote MCP servers have the following features and benefits:",
       "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/mcp \"Google Cloud MCP servers\"",
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud documentation",
         "site:docs.cloud.google.com/mcp overview \"supported products\"",
-        "site:docs.cloud.google.com \"Google Cloud MCP servers\" \"access control\"",
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com \"Google Cloud MCP servers\" \"access control\"",
+        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"Google Cloud MCP servers\" IAM roles permissions"
       ],
       "intent_hits": [
         "canonical_docs",
@@ -761,6 +886,16 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -770,52 +905,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
       "keep": true
-    },
-    {
-      "title": "Supported products | Google Cloud MCP servers | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/mcp/supported-products",
-      "description": "This page lists the Google and Google Cloud products and services you can access through remote MCP servers.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com/mcp \"Google Cloud MCP servers\"",
-        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud documentation",
-        "site:docs.cloud.google.com/mcp overview \"supported products\"",
-        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "canonical_docs",
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 100,
-      "product_fit_score": 148,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "family_score": 42,
-        "family_preferred": true,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
     },
     {
       "title": "MCP Reference: cloudresourcemanager.googleapis.com | Resource Manager | Google Cloud Documentation",
@@ -838,6 +939,14 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": -4,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -848,6 +957,10 @@
         "parent_page_likelihood": 5,
         "product_match": 1,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -858,7 +971,7 @@
       "title": "Authenticate to Google and Google Cloud MCP servers | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/mcp/authenticate-mcp",
       "description": "Google and Google Cloud remote Model Context Protocol (MCP) servers <strong>implement the MCP authorization specification for HTTP-based transports</strong>. Generally, your AI applications must authenticate to access these servers.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com/mcp \"Google Cloud MCP servers\"",
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" \"Python client libraries\""
@@ -874,6 +987,16 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 166,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -883,7 +1006,13 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -894,7 +1023,7 @@
       "title": "Google Cloud MCP servers release notes | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/mcp/release-notes",
       "description": "After March 17, 2026, Google and Google Cloud remote Model Context Protocol (MCP) servers are <strong>automatically enabled when you enable a supported service</strong>.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com/mcp \"Google Cloud MCP servers\"",
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud documentation",
@@ -911,9 +1040,18 @@
       "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 166,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "2026",
+          "mcp"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
         "family_score": 42,
         "family_preferred": true,
@@ -921,6 +1059,11 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "2026",
+          "mcp"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -946,6 +1089,17 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "control",
+          "for",
+          "mcp",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -956,6 +1110,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "control",
+          "for",
+          "mcp",
+          "the"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -981,6 +1142,16 @@
       "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp",
+          "the",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -990,12 +1161,70 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp",
+          "the",
+          "use"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
       "keep": true
+    },
+    {
+      "title": "Supported products | Google Cloud MCP servers | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/mcp/supported-products",
+      "description": "This page lists the Google and Google Cloud products and services you can access through remote MCP servers.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/mcp \"Google Cloud MCP servers\"",
+        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud documentation",
+        "site:docs.cloud.google.com/mcp overview \"supported products\"",
+        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
     },
     {
       "title": "Google Cloud MCP servers roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
@@ -1016,6 +1245,16 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 50,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1025,7 +1264,13 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 4,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1049,6 +1294,20 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "control",
+          "custom",
+          "mcp",
+          "organization",
+          "policy",
+          "the",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1059,6 +1318,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "control",
+          "custom",
+          "mcp",
+          "organization",
+          "policy",
+          "the",
+          "use"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1082,6 +1351,14 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 148,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1091,7 +1368,11 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1115,6 +1396,17 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 12,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1125,6 +1417,13 @@
         "parent_page_likelihood": 5,
         "product_match": 2,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1148,6 +1447,17 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 6,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1158,10 +1468,64 @@
         "parent_page_likelihood": 5,
         "product_match": 2,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "MCP Reference: monitoring.googleapis.com | Cloud Monitoring | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/monitoring/api/ref_v3/mcp",
+      "description": "A Model Context Protocol (MCP) server <strong>acts as a proxy between an external service that provides context, data, or capabilities to a Large Language Model (LLM) or AI application</strong>.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 67,
+      "product_fit_score": -4,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 90,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 90,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 87,
       "keep": false
     },
     {
@@ -1185,20 +1549,138 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": -4,
-      "deterministic_score": 76,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 82,
       "api_score": {
         "classification": "supporting_page",
-        "score": 76,
+        "score": 82,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 4,
         "product_match": 1,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 80,
+      "final_score": 85,
+      "keep": false
+    },
+    {
+      "title": "MCP Reference: Android Device Management MCP Server | Android Management API | Google for Developers",
+      "url": "https://developers.google.com/android/management/reference/mcp",
+      "description": "An MCP service endpoint is the network address and communication interface (usually a URL) of the MCP server that an AI application (the Host for the MCP client) uses to establish a secure, standardized connection. It is the point of contact for the LLM to request context, call a tool, or access a resource. Google MCP endpoints can be global or regional. The Android Device Management MCP Server MCP server has the following MCP endpoint:",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Google Cloud MCP servers\" official documentation OR site:developers.google.com \"google cloud mcp servers\" official documentation",
+        "site:developers.google.com \"Google Cloud MCP servers\" reference OR site:developers.google.com \"google cloud mcp servers\" reference",
+        "site:developers.google.com \"Google Cloud MCP servers\" overview OR site:developers.google.com \"google cloud mcp servers\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": -16,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 70,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 70,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 75,
+      "keep": false
+    },
+    {
+      "title": "MCP Reference: clouderrorreporting.googleapis.com | Error Reporting | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/error-reporting/reference_mcp/mcp",
+      "description": "It is the point of contact for the LLM to request context, call a tool, or access a resource. Google MCP endpoints can be global or regional. The <strong>clouderrorreporting.googleapis.com</strong> ...",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": -16,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 81,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 81,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 74,
       "keep": false
     },
     {
@@ -1217,29 +1699,41 @@
         2,
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": -32,
-      "deterministic_score": 68,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 74,
       "api_score": {
         "classification": "supporting_page",
-        "score": 68,
+        "score": 74,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 3,
+        "parent_page_likelihood": 4,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 68,
+      "final_score": 73,
       "keep": false
     },
     {
-      "title": "MCP Reference: Android Device Management MCP Server | Android Management API | Google for Developers",
-      "url": "https://developers.google.com/android/management/reference/mcp",
-      "description": "An MCP service endpoint is the network address and communication interface (usually a URL) of the MCP server that an AI application (the Host for the MCP client) uses to establish a secure, standardized connection. It is the point of contact for the LLM to request context, call a tool, or access a resource. Google MCP endpoints can be global or regional. The Android Device Management MCP Server MCP server has the following MCP endpoint:",
+      "title": "MCP Reference: design.googleapis.com | Design MCP | Google for Developers",
+      "url": "https://developers.google.com/design-mcp/reference/mcp",
+      "description": "The design.googleapis.com MCP server has the following MCP endpoint: ... <strong>An MCP tool is a function or executable capability that an MCP server exposes to a LLM or AI application to perform an action in the real world</strong>.",
       "rank": 2,
       "query_hits": [
         "site:developers.google.com \"Google Cloud MCP servers\" official documentation OR site:developers.google.com \"google cloud mcp servers\" official documentation",
@@ -1256,61 +1750,44 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": -16,
-      "deterministic_score": 61,
+      "product_fit_score": -22,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 64,
       "api_score": {
         "classification": "supporting_page",
-        "score": 61,
+        "score": 64,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 67,
-      "keep": false
-    },
-    {
-      "title": "MCP Reference: clouderrorreporting.googleapis.com | Error Reporting | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/error-reporting/reference_mcp/mcp",
-      "description": "It is the point of contact for the LLM to request context, call a tool, or access a resource. Google MCP endpoints can be global or regional. The <strong>clouderrorreporting.googleapis.com</strong> ...",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": -16,
-      "deterministic_score": 69,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 69,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 3,
-        "product_match": 0,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 64,
+      "final_score": 69,
       "keep": false
     },
     {
       "title": "Android Management API | Google for Developers",
       "url": "https://developers.google.com/android/management/use-android-management-mcp",
       "description": "Android Management API MCP servers <strong>use the OAuth 2.0 protocol with Identity and Access Management for authentication and authorization</strong>. All Google Cloud identities are supported for authentication to MCP servers.",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:developers.google.com \"Google Cloud MCP servers\" overview OR site:developers.google.com \"google cloud mcp servers\" overview"
       ],
@@ -1320,30 +1797,48 @@
       "round_hits": [
         3
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": -10,
-      "deterministic_score": 56,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 65,
       "api_score": {
         "classification": "supporting_page",
-        "score": 56,
+        "score": 65,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 1,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 53,
+      "final_score": 60,
       "keep": false
     },
     {
-      "title": "MCP Reference: pubsub.googleapis.com | Pub/Sub | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp",
+      "title": "MCP Reference: run.googleapis.com | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/reference/mcp",
       "description": "<strong>A Model Context Protocol (MCP) server acts as a proxy between an external service that provides context, data, or capabilities to a Large Language Model (LLM) or AI application</strong>.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud introduction reference"
       ],
@@ -1353,92 +1848,88 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": -32,
-      "deterministic_score": 56,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "mcp"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 62,
       "api_score": {
         "classification": "supporting_page",
-        "score": 56,
+        "score": 62,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "mcp"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 53,
+      "final_score": 58,
       "keep": false
     },
     {
-      "title": "Use the Datastream remote MCP server | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/datastream/docs/use-datastream-mcp",
-      "description": "Datastream MCP servers use the OAuth 2.0 protocol with Identity and Access Management (IAM) for authentication and authorization. <strong>All Google Cloud identities are supported for authentication to MCP servers</strong>.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Google Cloud MCP servers\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": -38,
-      "deterministic_score": 48,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 48,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 2,
-        "product_match": 0,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 46,
-      "keep": false
-    },
-    {
-      "title": "Use the Compute Engine remote MCP server | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/compute/docs/use-compute-engine-mcp",
-      "description": "<strong>This document shows you how to use the Compute Engine remote Model Context Protocol (MCP) server to connect with AI applications including Gemini CLI, ChatGPT, Claude, and custom applications you are developing</strong>.",
+      "title": "Connect to Memorystore for Redis Cluster from AI applications by using the remote MCP server | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/memorystore/docs/cluster/use-memorystore-mcp",
+      "description": "<strong>You might also be able to get these permissions with custom roles or other predefined roles</strong>. Memorystore for Redis Cluster MCP servers use the OAuth 2.0 protocol with Identity and Access Management (IAM) for authentication and authorization.",
       "rank": 8,
       "query_hits": [
-        "site:docs.cloud.google.com \"Google Cloud MCP servers\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Google Cloud MCP servers\" IAM roles permissions"
       ],
       "intent_hits": [
-        "product_docs",
         "iam_permissions"
       ],
       "round_hits": [
-        2,
         3
       ],
       "best_rank": 8,
-      "consistency_score": 67,
-      "product_fit_score": -32,
-      "deterministic_score": 39,
+      "consistency_score": 33,
+      "product_fit_score": -38,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "custom",
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 60,
       "api_score": {
         "classification": "supporting_page",
-        "score": 39,
+        "score": 60,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 2,
+        "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "custom",
+          "for",
+          "mcp",
+          "the",
+          "use"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 43,
+      "final_score": 56,
       "keep": false
     },
     {
@@ -1458,20 +1949,38 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": -50,
-      "deterministic_score": 30,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "custom",
+          "mcp",
+          "the",
+          "use"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 42,
       "api_score": {
         "classification": "supporting_page",
-        "score": 30,
+        "score": 42,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "custom",
+          "mcp",
+          "the",
+          "use"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 30,
+      "final_score": 41,
       "keep": false
     }
   ]

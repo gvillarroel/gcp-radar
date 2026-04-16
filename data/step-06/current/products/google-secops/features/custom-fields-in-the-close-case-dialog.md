@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.932Z"
+generated_at: "2026-04-14T16:02:18.751Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "Custom fields in the Close Case dialog"
 feature_slug: "custom-fields-in-the-close-case-dialog"
 latest_feature_date: "2025-09-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/soar/release-notes"
   - "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+  - "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
 keywords:
   - "custom"
   - "fields"
-  - "in"
-  - "the"
   - "close"
   - "case"
   - "dialog"
   - "administrators"
+  - "can"
+  - "add"
 ---
 
 # Custom fields in the Close Case dialog
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,47 +38,21 @@ Administrators can add custom fields to the Close Case dialog to streamline case
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
 - [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight)
+- [https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview](https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview)
 
 ## Supporting Pages
-
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 172
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 08, 2025 Announcement New parser documentation now available New parser documentation is available to help you ingest and normalize logs from the following sources: Collect Akamai Cloud Monitor logs Collect Akamai DataStream 2 logs Collect Aware audit logs Collect AWS API Gateway access logs Collect AWS VPC Transit Gateway flow logs Collect Bitwarden Enterprise event logs Collect Box Collaboration JSON logs Collect Censys logs Collect Code42 Incydr core datasets Collect CSV Custom IOC files Collect Deep Instinct EDR logs Collect DigiCert audit logs Collect DomainTools Iris Investigate results Collect Duo administrator logs Collect Duo authentication logs Collect Duo entity context logs Collect Google Cloud Abuse Events logs Collect Harness IO audit logs Collect HPE Aruba Networking Central logs Collect Jamf Pro context logs Collect PingOne Advanced Identity Cloud logs Collect Slack audit logs Collect Snyk group-level audit logs Collect Snyk group-level audit and issues logs Collect Venafi Zero Touch PKI logs Collect Veritas NetBackup logs Collect VMware AirWatch logs Collect VMware Avi Load Balancer WAF logs Collect VMware Horizon logs Collect VMware VeloCloud SD-WAN logs Collect Zoom operation logs September 07, 2025 Feature Use custom fields in the Close Case dialog Administrators can now add custom fields to the Close Case dialog.
-- For more information, see Use custom fields in the Close Case dialog .
-- For more information, refer to Customize the Close Case dialog .
-- For more information, refer to Customize the Close Case dialog .
-
-### Google Security Operations SOAR release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/soar/release-notes](https://docs.cloud.google.com/chronicle/docs/soar/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 164
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 07, 2025 Feature Use custom fields in the Close Case dialog Administrators can now add custom fields to the Close Case dialog.
-- For more information, see Use custom fields in the Close Case dialog .
-- For more information, refer to Customize the Close Case dialog November 17, 2024 Announcement Release 6.3.25 is now in General Availability.
-- For more information, refer to Customize the Close Case dialog .
 
 ### "Search for events and alerts \_|\_ Google Security Operations \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/investigation/udm-search](https://docs.cloud.google.com/chronicle/docs/investigation/udm-search)
 - Source ID: `site-docs-reference-2`
-- Final score: 154
+- Final score: 140
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +60,30 @@ Evidence snippets:
 - Supported fields You can download the following fields to a CSV file from the platform: user hostname process name event type timestamp raw log (valid only when raw logs are enabled for the customer) All fields starting with udm.additional Valid field types You can download the following field types to a CSV file: double float int32 uint32 int64 uint64 bool string enum bytes google.protobuf.Timestamp google.protobuf.Duration Unsupported fields Fields that start with "udm" (not udm.additional) and meet either of the following conditions cannot be downloaded to CSV: The nesting of the field is more than 10 deep in udm proto.
 - When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url .
 - When searching Values , UDM Lookup does not return matches in the following cases: Matches in the following UDM fields: metadata.product log id network.session id security result.rule id network.parent session id Matches in UDM fields with a full path that ends in one of the following values: .pid For example target.process.pid . .asset id For example principal.asset id . .product specific process id For example principal.process.product specific process id . .resource.id For example principal.resource.id .
+
+### "Integrate ArcSight with Google SecOps \_|\_ Google Security Operations \_\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight)
+- Source ID: `site-api-reference`
+- Final score: 107
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Jobs Close Cases The job requires the following parameters: Parameter name Type Default value Is mandatory Description Server Address String 192.0.2.1 Yes N/A Username String N/A Yes N/A Password Password N/A Yes N/A Need more help?
+- Cases Folder Path String I:\SiemShare\CorrelationSource Yes The location of the case files, such as I:\SiemShare\CorrelationSource Note: The Cases Folder Path parameter can be changed from one customer to another.
+- Example: CustomDeviceString2 Alert Custom Fields Names String N/A No Pull custom field values from ArcSight into the alert, such as baseEventCount,agent address,device assetId.
+- Environment Field Name String event.customerURI Yes The name of the field to get the case's environment, for example, event.customerUri.
+
+### Cases overview \_|\_ Google Security Operations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview](https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview)
+- Source ID: `site-docs-reference-2`
+- Final score: 100
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The case queue—automatically refreshed every minute—lists all active cases and lets you manually refresh, sort, filter, add, or close cases as needed.
+- It also shows the assigned analyst (name or role), and includes controls for Chat , Close Case , Refresh , Explore , and the Case Actions menu.
+- Each case entry shows key metadata, such as: Case name and unique ID Case timestamp Number of associated alerts Assigned analyst (with avatar) Case priority and stage (optional, depending on view) Analysts can toggle between these views: Default view : Shows case cards with essential information.
+- Case top bar The Case Top Bar displays case-level context and available actions, as follows: The case queue header displays the case title, ID, priority, stage , timestamp, change environment, and tags .
 

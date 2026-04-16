@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.155Z"
+generated_at: "2026-04-12T20:57:08.284Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "Beta custom domain and SSL certificate management in Admin API and gcloud"
 feature_slug: "beta-custom-domain-and-ssl-certificate-management-in-admin-api-and-gcloud"
 latest_feature_date: "2017-06-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
   - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
-  - "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+  - "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed"
+  - "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml"
 keywords:
-  - "certificate"
-  - "management"
+  - "beta"
+  - "custom"
   - "domain"
   - "ssl"
-  - "custom"
-  - "beta"
-  - "and"
-  - "in"
+  - "certificate"
+  - "management"
+  - "admin"
+  - "gcloud"
 ---
 
 # Beta custom domain and SSL certificate management in Admin API and gcloud
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,35 +38,23 @@ The Admin API and gcloud command-line tool support beta features for creating an
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
 - [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
-- [https://docs.cloud.google.com/appengine/docs/standard/ingress-settings](https://docs.cloud.google.com/appengine/docs/standard/ingress-settings)
+- [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
+- [https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml](https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml)
 
 ## Supporting Pages
-
-### "App Engine audit logging information \_|\_ App Engine standard environment\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Audited operations The following table summarizes which API operations correspond to each audit log type in App Engine: Audit logs category App Engine operations Admin Activity audit logs apps.create apps.patch apps.repair apps.authorizedCertificates.create apps.authorizedCertificates.delete apps.authorizedCertificates.patch apps.domainMappings.create apps.domainMappings.delete apps.domainMappings.patch apps.firewall.ingressRules.batchUpdate apps.firewall.ingressRules.create apps.firewall.ingressRules.delete apps.firewall.ingressRules.patch apps.services.delete apps.services.patch apps.services.versions.create apps.services.versions.delete apps.services.versions.patch apps.services.versions.instances.debug apps.services.versions.instances.delete Data Access audit logs GetMemcacheItem SetMemcacheItem DeleteMemcacheItem FlushAllMemcacheItems Memcache audit logs only apply to operations made through Cloud Console.
-- To read your Google Cloud project-level audit log entries, run the following command: gcloud logging read "logName : projects/ PROJECT ID /logs/cloudaudit.googleapis.com" \ --project= PROJECT ID To read your folder-level audit log entries, run the following command: gcloud logging read "logName : folders/ FOLDER ID /logs/cloudaudit.googleapis.com" \ --folder= FOLDER ID To read your organization-level audit log entries, run the following command: gcloud logging read "logName : organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com" \ --organization= ORGANIZATION ID To read your Cloud Billing account-level audit log entries, run the following command: gcloud logging read "logName : billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com" \ --billing-account= BILLING ACCOUNT ID Add the --freshness flag to your command to read logs that are more than 1 day old.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- To display all audit logs, enter either of the following queries into the query-editor field, and then click Run query : logName:"cloudaudit.googleapis.com" protoPayload."@type"="type.googleapis.com/google.cloud.audit.AuditLog" To display the audit logs for a specific resource and audit log type, in the Query builder pane, do the following: In Resource type , select the Google Cloud resource whose audit logs you want to see.
 
 ### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
+- Source ID: `site-docs-reference-required-2`
+- Final score: 145
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To perform these steps, you must have one of the following roles on the host project: Owner role ( roles/owner ) Compute Security Admin role ( roles/compute.securityAdmin ) Custom Identity and Access Management (IAM) role with the compute.firewalls.create permission enabled For a basic configuration, apply the rules to allow serverless resources in any service project connected to the Shared VPC network to send requests to any resource in the network.
@@ -74,17 +62,31 @@ Evidence snippets:
 - You must have one of the following Identity and Access Management (IAM) roles: Compute Security Admin role Custom IAM role with the compute.firewalls.create permission enabled Deny connector traffic across your VPC network.
 - You must have one of the following Identity and Access Management (IAM) roles: Compute Security Admin role Custom IAM role with the compute.firewalls.create permission enabled Deny egress traffic from your connector.
 
-### "Ingress settings \_|\_ App Engine standard environment \_|\_ Google Cloud\
+### "How requests are routed \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/ingress-settings](https://docs.cloud.google.com/appengine/docs/standard/ingress-settings)
-- Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 134
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- When accessing internal services, call them as you would normally do by using their public URLs, either the default appspot.com URL or a custom domain set up in App Engine.
-- At a network level, by default, any resource on the internet is able to reach your App Engine app on its appspot URL or at a custom domain set up in App Engine.
-- Requests from other sources, including the internet, cannot reach your service at the appspot.com URL or custom domains.
-- For example: To update the default service of an App Engine app to accept traffic only from Cloud Load Balancing and VPC networks that are in the same project: gcloud app services update default --ingress = internal-and-cloud-load-balancing To update a service named "internal-requests" to accept traffic only from VPC networks that are in the same project: gcloud app services update internal-requests --ingress = internal-only Egress settings Note: Egress settings are not available for the PHP runtimes.
+- For example, to describe version 20191023t101741 for the default service, enter gcloud app versions describe 20191023t101741 --service=default Domain name is included in the request data The domain name used for the request is included in the request data that is passed to your app.
+- Example URLs Here are some examples of URLs for App Engine, showing both the appspot.com domain that App Engine assigns to your app and a custom domain, which you can set up for your app .
+- REGION ID .r.appspot.com https:// CUSTOM DOMAIN Requests are received by any version that is configured for traffic in the default service.
+- CUSTOM DOMAIN If you are using manually-scaled services , you can target and send a request to a instance by including the instance ID.
+
+### "Scheduling jobs with cron.yaml \_|\_ App Engine standard environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml](https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml)
+- Source ID: `site-docs-reference`
+- Final score: 113
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To deploy or update schedules, your account requires one of the following Identity and Access Management roles: Owner Editor Cloud Scheduler Admin ( roles/cloudscheduler.admin ) You can set the permission on the IAM page in the Google Cloud console .
+- Start-time interval examples Use the following examples to help you understand how to define job schedules that use a start-time interval: Runs every 5 minutes from 10:00 to 14:00, every day: schedule : every 5 minutes from 10:00 to 14:00 Runs once every hour from 08:00 to 16:00, every day: schedule : every 1 hours from 08:00 to 16:00 Runs once every two hours, every day starting at 00:00: schedule : every 2 hours synchronized Custom interval [TYPE]: Custom intervals can include the every prefix to define a repetitive interval, or you can define a specific list of days in a month: To define a repetitive interval you can use the every prefix.
+- By default, if the of clause is excluded, the custom interval is run every month. [MONTH]: You must specify the months in a comma-separated list and can include a mix of the following long or abbreviated values: january or jan february or feb march or mar april or apr may june or jun july or jul august or aug september or sep october or oct november or nov december or dec Use month to specify all months in the year. [HH:MM]: You must specify the time values in the 24 hour format, HH:MM , where: HH are integers from 00 to 23 .
+- Example: schedule : 1st monday of sep,oct,nov 09:00 schedule : 1 of jan,april,july,oct 00:00 Custom interval examples Use the following examples to help you understand how to define job schedules that use a custom interval: Runs every day at 00:00: schedule : every day 00:00 Runs every Monday at 09:00: schedule : every monday 09:00 Runs one time on the second Wednesday in March at 17:00: schedule : 2nd wednesday of march 17:00 Runs six times in May.
 

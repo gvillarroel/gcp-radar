@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:32.301Z"
+generated_at: "2026-04-15T12:05:49.330Z"
 product_name: "Google Distributed Cloud (software only) for bare metal"
 product_slug: "google-distributed-cloud-software-only-for-bare-metal"
 feature_name: "controlPlane.loadBalancer.mode"
 feature_slug: "controlplane-loadbalancer-mode"
 latest_feature_date: "2025-05-06"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb"
 keywords:
   - "controlplane"
   - "loadbalancer"
   - "mode"
-  - "this"
   - "field"
   - "enables"
   - "layer"
   - "load"
+  - "balancing"
 ---
 
 # controlPlane.loadBalancer.mode
 
 Product: Google Distributed Cloud (software only) for bare metal
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ This field enables Layer 2 load balancing and lets you separate control plane lo
 
 This field enables Layer 2 load balancing and lets you separate control plane load balancing from data plane load balancing.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Configure bundled load balancing with MetalLB \_|\_ Google Distributed Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb)
+- Source ID: `site-iam-reference`
+- Final score: 291
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For information about cluster configuration files and examples of valid configurations, see one of the following pages: Create admin clusters Create user clusters Create hybrid clusters Create standalone clusters loadBalancer.mode This value must be bundled to enable bundled load balancing. loadBalancer.ports.controlPlaneLBPort This value specifies the destination port to be used for traffic sent to the Kubernetes control plane (the Kubernetes API servers). loadBalancer.vips.controlPlaneVIP This value specifies the destination IP address to be used for traffic sent to the Kubernetes control plane (the Kubernetes API servers).
+- The cluster configuration for separated load balancers should look similar to the following example: apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : hybrid-ha-lb namespace : cluster-hybrid-ha-lb spec : type : hybrid profile : default anthosBareMetalVersion : 1.34 gkeConnect : projectID : project-fleet controlPlane : loadBalancer : mode : bundled nodePoolSpec : nodes : - address : 10.200.0.2 - address : 10.200.0.3 - address : 10.200.0.4 clusterNetwork : pods : cidrBlocks : - 192.168.0.0/16 services : cidrBlocks : - 10.96.0.0/20 ... loadBalancer : mode : bundled ... nodePoolSpec : nodes : - address : 10.200.0.5 - address : 10.200.0.6 - address : 10.200.0.7 clusterOperations : ...
+- Migrate data plane load balancers off of the control plane If you have an existing version 1.32 or higher cluster where neither controlPlane.loadBalancer.mode nor loadBalancer.nodePoolSpec is set, both the control plane load balancer and the data plane load balancer run in the control plane node pool.
+- Preserving client source IP address The LoadBalancer Service created with the bundled Layer 2 load balancing solution uses the default Cluster setting for the external traffic policy.
+
+### "Cluster configuration field reference \_|\_ Google Distributed Cloud (software\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref)
+- Source ID: `site-docs-root`
+- Final score: 289
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You aren't required to set controlPlane.loadBalancer.mode to manual to configure manual load balancing.
+- For example: loadBalancer : mode : bundled type : bgp localASN : 65001 bgpPeers : - ip : 10.0.1.254 asn : 65002 controlPlaneNodes : - 10.0.1.10 - 10.0.1.11 - ip : 10.0.2.254 asn : 65002 controlPlaneNodes : - 10.0.2.10 For more information, see Configure bundled load balancers with BGP .
+- For example: loadBalancer : mode : bundled ... addressPools : - name : pool1 addresses : - 10.200.0.92-10.200.0.100 nodePoolSpec : nodes : - address : 10.200.1.25 k8sIP : 10.200.0.25 - address : 10.200.0.26 - address : 10.200.0.27 This field can't be modified after cluster creation.
+- Cluster resource Optional Mutable controlPlane.loadBalancer This section contains settings for control plane load balancing.
+
+### Configure manual load balancing | Google Distributed Cloud (software only) for bare metal | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb)
+- Source ID: `feature-recovery-http`
+- Final score: 187
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Edit this file to enable manual load balancing in the cluster: Set the loadBalancer.mode field to manual .
+- Configure manual load balancing | Google Distributed Cloud (software only) for bare metal | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Google Distributed Cloud GDC for bare metal Start free Overview Guides Technology areas More Overview Guides Cross-product tools More Console Discover Product overview Get started Create demo GDC for bare metal clusters on Compute Engine VMs Plan a basic installation on your hardware Create basic clusters on your hardware Install Choose a tool to manage cluster lifecycle Installation prerequisites Prerequisites overview Admin workstation prerequisites Cluster node machine prerequisites Network requirements Set up networks Connect to Google Select your operating system Configure your operating system RHEL Ubuntu Set up Google Cloud resources Workload identity cluster authentication Migrate clusters to use Node Agent Configure installation variations Use a registry mirror Configure a private package repository About the container runtime Deploy on the edge Deploy on OpenStack Configure your clusters for OpenStack Deploy on OpenStack infrastructure Configure the OpenStack Cloud Provider Create clusters Cluster creation overview Choose a deployment model Create admin clusters Create an admin cluster using GKE On-Prem API clients Create an admin cluster using bmctl Create user clusters Create a user cluster using GKE On-Prem API clients Create a user cluster using bmctl Create hybrid clusters Create standalone clusters Tutorial: Create a hybrid cluster on Compute Engine VMs Tutorial: Create a hybrid cluster on Compute Engine VMs using Terraform Set up load balancers Overview Bundled load balancing with MetalLB Bundled load balancing with BGP Manual load balancing Configure load balancing networking mode Configure networking Plan your IP addresses Install behind a proxy Egress NAT gateway Multiple network interfaces for Pods Set up SR-IOV networking Create a cluster without kube-proxy Flat vs island mode network models IPv4/IPv6 dual-stack networking Implement flat IPv4 mode network model Implement flat-mode network model with BGP support Understand the ClusterCIDRConfig custom resource Configure Network Connectivity Gateway Override pod density for a node pool Set up storage Overview Local storage Container Storage Interface driver Default StorageClass Deploy workloads Deploy an application Create a Service and an Ingress Upgrade and update Upgrade a cluster Upgrade an admin or user cluster using GKE On-Prem API clients Update a cluster Upgrade best practices Upgrade lifecycle and stages Manage clusters Required periodic maintenance Connect to clusters Manage clusters from the Google Cloud console Configure a cluster to be managed by the GKE On-Prem API Add or remove node pools in a cluster Configure nodes to authenticate to a private registry Update cluster credentials and secrets Configure DNS for a cluster Configure scheduling Tune node performance Configure vertical Pod autoscaling Configure horizontal Pod autoscaling Put nodes into maintenance mode Reset/Delete your clusters Set up and use NVIDIA GPUs Manage GPU allocation Serve third-party LLMs on bare metal Log and monitor Configure logging and monitoring Enable application logging and monitoring View Google Distributed Cloud metrics Use predefined dashboards Audit logging Cloud API audit logging Use Kubernetes audit logging Create alerting policies Send GPU metrics to Cloud Monitoring Secure Security overview RBAC permissions for system components Harden your cluster's security Manage identity Secure your containers using SELinux Use custom cluster certificate authorities Add domains to the API server certificate Rotate certificate authorities Set up Binary Authorization policy enforcement Troubleshoot Failure mode analysis Diagnostics Retrieve cluster information Preflight checks Health checks Node problem detector Check cluster connectivity Create snapshots to diagnose clusters Troubleshoot by component Authentication Cluster creation or upgrade Clusters enrolled in the GKE On-prem API Connection to Google Controller manager etcd Kubernetes API server Observability Networking Scheduler Webhooks Recover and restore Back up and restore clusters with bmctl Recover a failed upgrade Recover and remove failed nodes Remove nodes blocked by the Pod Disruption Budget Renew expired certificates Adjust job timeout values About errors Known issues Get support Reference Configuration files Generated cluster configuration file Cluster configuration field reference Cluster configuration samples GKE On-Prem API Versions and releases Release notes Versioning Downloads CIS Kubernetes benchmarks Security bulletins Vulnerability fixes Supported features Tools bmctl command reference Examples using the gcloud CLI to create a user cluster Quotas and limits Scale up Supported regions for the GKE On-Prem API Detect removed Kubernetes APIs VM Runtime for GDC Discover Overview Getting started Enable or disable Quickstart: Create a VM Tutorial: Create and manage a VM Tutorial: Deploy an existing VM Create a Windows VM from ISO Manage Connect to VMs List and view VMs Manage power state Edit a VM Delete a VM Configure Storage Create and use storage classes Create and manage disks Create Cloud Storage credentials Convert a disk image to qcow2 Compute Define compute configurations Use GPUs Network Create and use virtual networks Scheduling Control VM scheduling Configure a high availability policy for VMs Configure eviction policy Configure NUMA-aware VMs Configure VM startup routines Configure booting Upgrade VM Runtime on GDC Monitor View VM console logs Resources RBAC for VM Runtime VM Runtime limits Verified guest operating systems Release notes AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Configure manual load balancing Stay organized with collections Save and categorize content based on your preferences.
+- Support LoadBalancer Services in user clusters You must configure load balancing to support Kubernetes LoadBalancer services In manual load-balancing mode, Google Distributed Cloud does not automatically provision load balancers so LoadBalancer services don't work unless you provision and configure load balancers to point the services.
+- Configure support for LoadBalancer services In manual load-balancing mode, Google Distributed Cloud does not automatically provision load balancers to support LoadBalancer services .
 

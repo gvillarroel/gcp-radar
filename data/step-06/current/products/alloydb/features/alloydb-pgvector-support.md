@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.642Z"
+generated_at: "2026-04-12T12:07:33.884Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB pgvector support"
 feature_slug: "alloydb-pgvector-support"
 latest_feature_date: "2023-08-29"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators"
   - "https://docs.cloud.google.com/alloydb/docs/ai/create-ivf-index"
 keywords:
   - "scalar quantized vector index"
@@ -26,7 +27,7 @@ keywords:
 # AlloyDB pgvector support
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,16 +35,17 @@ AlloyDB includes pgvector support with performance improvements for vector queri
 
 ## Extended Definition
 
-AlloyDB pgvector support enables PostgreSQL vector workloads using the pgvector extension, including approximate nearest-neighbor vector search via pgvector indexes and operators. It includes AlloyDB-specific vector index features such as IVF-based indexes with scalar quantization (for example, IVF with quantizer `SQ8`) and vector query recall evaluation to tune recall/performance tradeoffs, providing faster vector query performance compared with standard PostgreSQL behavior.
+AlloyDB includes pgvector support with performance improvements for vector queries, including scalar-quantized vector indexes.
 
 ## Evidence Summary
 
-These official AlloyDB pages collectively document pgvector extension version requirements, IVF/SQ vector index creation, and release-note confirmation of scalar-quantized vector index performance enhancements.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall](https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
 - [https://docs.cloud.google.com/alloydb/docs/ai/create-ivf-index](https://docs.cloud.google.com/alloydb/docs/ai/create-ivf-index)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ These official AlloyDB pages collectively document pgvector extension version re
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall](https://docs.cloud.google.com/alloydb/docs/ai/measure-vector-query-recall)
 - Source ID: `site-docs-root-2`
-- Final score: 54
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Inverted File with Flat Compression (IVFFLAT) and Inverted File Flat (IVF): types of vector indexes that are used for ANN searches, particularly in databases like the PostgreSQL pgvector extension.
@@ -62,26 +64,28 @@ Evidence snippets:
 - If the pgvector extension is already installed, upgrade the vector extension to version 0.8.0.google-3 or later to get recall evaluator capabilities.
 - Before you begin Install or update the pgvector extension.
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Optimize database performance by comparing performance snapshots \_|\_ AlloyDB\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 44
+- URL: [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- Source ID: `site-docs-reference-2`
+- Final score: 94
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- AlloyDB support for the pgvector extension brings performance enhancements for vector queries that run up to ten times faster than standard PostgreSQL, including an optimization that lets you create indexes of stored vector data using scalar quantization .
-- This version includes the following changes: pgvector is updated to version 0.5.0 PostgreSQL is updated to version 15.4 Feature The AlloyDB Omni Kubernetes Operator version 0.3.0 is now available in Preview , and includes bug fixes and improvements to the operator.
-- On every node that you enable transparent huge pages on, run the following command: echo within size > /sys/kernel/mm/transparent hugepage/shmem enabled April 05, 2024 Change The extension pgvector is updated to version 0.6.0.
-- You can use a query recall evaluator to find the recall for a vector query for a given configuration, and to tune your parameters to achieve the desired vector query recall results for different vector indexes.
+### "Perform intelligent SQL queries using AI functions \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
+- Source ID: `site-docs-reference-2`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 ### Create an IVF index \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/ai/create-ivf-index](https://docs.cloud.google.com/alloydb/docs/ai/create-ivf-index)
 - Source ID: `site-docs-root`
-- Final score: 44
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 89
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To enable scalar quantization on a pgvector -based index, specify IVF as the index method, and SQ8 as the quantizer: CREATE INDEX INDEX NAME ON TABLE USING ivf ( EMBEDDING COLUMN DISTANCE FUNCTION ) WITH ( lists = LIST COUNT , quantizer = ' QUANTIZER ' ); Replace the following: INDEX NAME : the name of the index you want to create—for example, my-ivf-index .

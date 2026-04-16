@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:43:48.139Z"
+generated_at: "2026-04-12T12:12:05.049Z"
 product_name: "Cloud Shell"
 product_slug: "cloud-shell"
 feature_name: "Duet AI for Cloud Shell"
 feature_slug: "duet-ai-for-cloud-shell"
 latest_feature_date: "2023-11-01"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails"
   - "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode"
-  - "https://docs.cloud.google.com/shell/docs/reference/rest/v1/CloudShellErrorDetails"
+  - "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient"
 keywords:
   - "duet"
   - "ai"
@@ -26,7 +27,7 @@ keywords:
 # Duet AI for Cloud Shell
 
 Product: Cloud Shell
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Duet AI for Cloud Shell provides contextualized coding assistance and source-cit
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails](https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails)
 - [https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode](https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode)
-- [https://docs.cloud.google.com/shell/docs/reference/rest/v1/CloudShellErrorDetails](https://docs.cloud.google.com/shell/docs/reference/rest/v1/CloudShellErrorDetails)
+- [https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient](https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails](https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails)
 - Source ID: `site-python-reference`
-- Final score: 138
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,9 +67,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode](https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode)
 - Source ID: `site-python-reference`
-- Final score: 124
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - IMAGE UNAVAILABLE The image used by the Cloud Shell environment either does not exist or the user does not have access to it.
@@ -75,16 +77,31 @@ Evidence snippets:
 - CLOUD SHELL DISABLED Cloud Shell has been disabled by an administrator for the user making the request.
 - For details, see the Google Developers Site Policies .
 
-### CloudShellErrorDetails \_|\_ Google Cloud Documentation
+### "Class CloudShellServiceAsyncClient (1.15.0) \_|\_ Python client libraries\
 
-- URL: [https://docs.cloud.google.com/shell/docs/reference/rest/v1/CloudShellErrorDetails](https://docs.cloud.google.com/shell/docs/reference/rest/v1/CloudShellErrorDetails)
-- Source ID: `site-api-reference`
-- Final score: 124
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 160
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- JSON representation Cloud-shell specific information that will be included as details in failure responses.
-- Home Documentation Application development Cloud Shell Reference Send feedback CloudShellErrorDetails Stay organized with collections Save and categorize content based on your preferences.
-- For details, see the Google Developers Site Policies .
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-10-09 UTC."],[],[]]
+- AuthorizeEnvironmentRequest ( ) Make the request operation = client. authorize environment (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.shell v1.types.AuthorizeEnvironmentRequest , dict]] The request object.
+- StartEnvironmentRequest ( ) Make the request operation = client. start environment (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.shell v1.types.StartEnvironmentRequest , dict]] The request object.
+- RemovePublicKeyRequest ( ) Make the request operation = client. remove public key (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.shell v1.types.RemovePublicKeyRequest , dict]] The request object.
+- AddPublicKeyRequest ( ) Make the request operation = client. add public key (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.shell v1.types.AddPublicKeyRequest , dict]] The request object.
+
+### "Class CloudShellServiceClient (1.15.0) \_|\_ Python client libraries \_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient](https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient)
+- Source ID: `site-python-reference`
+- Final score: 160
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- AuthorizeEnvironmentRequest ( ) Make the request operation = client. authorize environment (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.shell v1.types.AuthorizeEnvironmentRequest , dict] The request object.
+- StartEnvironmentRequest ( ) Make the request operation = client. start environment (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.shell v1.types.StartEnvironmentRequest , dict] The request object.
+- RemovePublicKeyRequest ( ) Make the request operation = client. remove public key (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.shell v1.types.RemovePublicKeyRequest , dict] The request object.
+- AddPublicKeyRequest ( ) Make the request operation = client. add public key (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.shell v1.types.AddPublicKeyRequest , dict] The request object.
 

@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:17:36.826Z"
+generated_at: "2026-04-12T12:12:48.996Z"
 product_name: "Cloud Trace"
 product_slug: "cloud-trace"
 feature_name: "Multimodal prompt and response tracing"
 feature_slug: "multimodal-prompt-and-response-tracing"
 latest_feature_date: "2026-01-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+  - "https://docs.cloud.google.com/trace/docs/overview"
   - "https://docs.cloud.google.com/trace/docs/finding-traces"
   - "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse"
 keywords:
@@ -26,7 +27,7 @@ keywords:
 # Multimodal prompt and response tracing
 
 Product: Cloud Trace
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,11 +39,12 @@ Cloud Trace can collect, view, and analyze multimodal prompts and responses from
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses](https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses)
+- [https://docs.cloud.google.com/trace/docs/overview](https://docs.cloud.google.com/trace/docs/overview)
 - [https://docs.cloud.google.com/trace/docs/finding-traces](https://docs.cloud.google.com/trace/docs/finding-traces)
 - [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse)
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses](https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses)
 - Source ID: `site-docs-root-2`
-- Final score: 294
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 356
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Find spans that contain multimodal prompts and responses To find the spans that contain multimodal prompts and responses, do the following: In the Google Cloud console, go to the Trace explorer page: Go to Trace explorer You can also find this page by using the search bar.
@@ -62,11 +64,25 @@ Evidence snippets:
 - Home Documentation Observability Cloud Trace Guides Send feedback Collect and view multimodal prompts and responses Stay organized with collections Save and categorize content based on your preferences.
 - It also describes how you can view, analyze, and evaluate your stored multimodal media: Use the Trace Explorer page to view individual prompts or responses or to view an entire conversation.
 
+### Cloud Trace overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/trace/docs/overview](https://docs.cloud.google.com/trace/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 224
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For your agentic applications, some frameworks can collect your prompts and responses or pass context that allows tracing of some remote Google Cloud MCP servers calls.
+- Cloud Trace and agentic applications To understand the behavior of your agentic applications, configure them to collect prompts and responses or to generate spans when they call remote Google Cloud MCP servers .
+- Tracing client If an OpenTelemetry library is available for your programming language , you can simplify the process of creating and sending trace data by using OpenTelemetry .
+- For samples that show you how to configure an agentic application to collect prompts and responses, see How to instrument your generative AI applications .
+
 ### Find and explore traces \_|\_ Cloud Trace \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/trace/docs/finding-traces](https://docs.cloud.google.com/trace/docs/finding-traces)
 - Source ID: `site-docs-root`
-- Final score: 176
+- Final score: 220
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,9 +95,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse](https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse)
 - Source ID: `site-java-reference`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - ListTracesFixedSizeCollection > Inheritance java.lang.Object > AbstractPagedListResponse > TraceServiceClient.ListTracesPagedResponse Inherited Members AbstractPagedListResponse.expandToFixedSizeCollection(int) AbstractPagedListResponse.getNextPageToken() AbstractPagedListResponse.getPage() AbstractPagedListResponse.iterateAll() AbstractPagedListResponse.iterateFixedSizeCollections(int) AbstractPagedListResponse.iteratePages() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods createAsync(PageContext<ListTracesRequest,ListTracesResponse,Trace> context, ApiFuture<ListTracesResponse> futureResponse) public static ApiFuture<TraceServiceClient .

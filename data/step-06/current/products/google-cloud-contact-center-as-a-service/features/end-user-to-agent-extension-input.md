@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.624Z"
+generated_at: "2026-04-15T13:50:47.013Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "End-user-to-agent extension input"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-02-02"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
 keywords:
   - "end"
   - "user"
-  - "to"
   - "agent"
   - "extension"
   - "input"
   - "administrators"
   - "can"
+  - "configure"
 ---
 
 # End-user-to-agent extension input
@@ -42,48 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Agent desktop \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview)
 - Source ID: `site-docs-root`
-- Final score: 166
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you want a custom role that lets a user configure the agent desktop, configure announcements, or use the agent desktop, you need to select the correct permission settings for that custom role.
+- Permissions Users with the Admin role can configure agent desktop settings and announcements but can't use the agent desktop.
+- Conversely, users with the Agent role can use the agent desktop but can't configure agent desktop settings and announcements.
+- The following agent desktop permissions for administrators display: Settings > Operation Management > All Settings > Agent Desktop > All Settings > Agent Desktop > Layout and panel Management Settings > Announcement Management To find the permission settings for using the agent desktop, do the following: For Agent , click visibility View .
+
+### "Agent extensions guide \_|\_ Google Cloud Contact Center as a Service \_\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide)
+- Source ID: `site-docs-reference`
+- Final score: 156
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Agent extensions guide Stay organized with collections Save and categorize content based on your preferences.
+- Set deflections for extension calls If your administrator gives you permissions, you can set deflections for agent to agent calls or end-user to agent calls.
+- Agent extensions allow agents to be assigned a phone number extension for agent to agent and end-user to agent calling.
+- Receive an internal call When an internal call comes in from another agent, the agent's name and extension appear under Calling from on the Incoming call screen.
+
+### "Call settings \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 151
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Improvements to end-user to agent calling The following improvements are available for end-user to agent calling: You can control whether end-users can input an agent's extension number at the beginning of a call.
-- End-users can input an agent's extension number in the extension directory.
-- Feature Extensions for support numbers You can assign a phone number extension to an agent that an end-user can use to directly call the agent.
-- You can also set up an extension directory that end-users can use to find the extension for an agent that they want to call.
-
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 126
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Billing depending on which of the following charging models is assigned to your instance: Concurrent agents : the maximum number of concurrent users with the agent role that are signed in during the month period Named agents : the maximum number of users in the instance that have the agent role during the month period Minutes used : the number of minutes that users with the agent role are signed in during the month period Note: Telephony charges are charged according to consumption.
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- Direct queues to a visual message Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Android SDK With the CCAI Platform Android SDK, you can create seamless voice and chat support experiences for users of your Android apps.
-
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 62
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- Delivers AI-based omni-channel routing, intelligent Virtual Agent, Agent Assist, and Insights capabilities that enables organizations to streamline customer experiences.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
-- Provides smart device capabilities like photo and video sharing, channel blending, and convenient, on-device authentication.
+- Do this by configuring the Enable extension input at the beginning of a call checkbox when you turn on and configure end-user to agent calling .
+- The end-user does one of the following: The end-user enters an agent extension number before the specified number of seconds of wait time elapses (wait time is specified in Turn on and configure end-user to agent calling ).
+- To configure a prompt for the end-user, do the following: Select the Extension input announcement message checkbox. (Optional): Edit the text-to-speech message or upload an audio recording that contains your prompt.
+- Depending on how you configure your instance, an end-user can directly call an agent in one of two ways: enter the agent's extension number at the beginning of a call, or call the agent from the agent directory.
 

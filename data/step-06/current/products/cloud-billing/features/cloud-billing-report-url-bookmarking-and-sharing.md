@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.357Z"
+generated_at: "2026-04-14T13:57:37.641Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Cloud Billing Report URL Bookmarking and Sharing"
 feature_slug: "cloud-billing-report-url-bookmarking-and-sharing"
 latest_feature_date: "2019-09-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/reports"
   - "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown"
@@ -17,16 +17,16 @@ keywords:
   - "report"
   - "url"
   - "bookmarking"
-  - "and"
   - "sharing"
   - "allows"
   - "saving"
+  - "configured"
 ---
 
 # Cloud Billing Report URL Bookmarking and Sharing
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Allows saving and sharing configured Cloud Billing report views through bookmark
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
@@ -52,20 +52,20 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
 - Source ID: `site-docs-root`
-- Final score: 194
+- Final score: 141
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Share a report : You can link Share a report by copying and sharing the URL of your customized Cloud Billing report.
 - Related topics Export Cloud Billing data to BigQuery Understand your savings with cost breakdown reports View your cost and payment history Create, modify, or close your Cloud Billing account Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- As of May 2021, the following data is available in the Cloud Billing reports: Negotiated savings : Viewable for Cloud Billing accounts that are associated with a custom pricing contract, Negotiated savings shows the difference in cost between your contract price compared to the current list price.
+- Negotiated savings: When you set the report time range by Invoice month , starting with the May 2021 invoice, Cloud Billing accounts associated with a custom pricing contract display Negotiated savings as a savings column, separate from the List cost column.
 - If your Cloud Billing account is associated with a custom pricing contract and your report settings result in the display of the Negotiated savings column, you will see a List cost column in your CSV download .
-- A 24-hour time period in the Cloud Billing report starts at midnight US and Canadian Pacific Time (UTC-8), and observes daylight saving time shifts in the United States.
 
 ### "Understand your savings with cost breakdown reports \_|\_ Cloud Billing\
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown](https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown)
 - Source ID: `site-docs-root`
-- Final score: 176
+- Final score: 123
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +78,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds](https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds)
 - Source ID: `site-docs-root-2`
-- Final score: 146
+- Final score: 92
 - Re-rank relevance: N/A
 
 Evidence snippets:

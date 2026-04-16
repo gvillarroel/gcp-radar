@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.629Z"
+generated_at: "2026-04-12T12:12:45.875Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "Bucket relocation console support"
 feature_slug: "bucket-relocation-console-support"
 latest_feature_date: "2025-11-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/storage/docs/access-control/iam-console"
   - "https://docs.cloud.google.com/storage/docs/discover-object-storage-console"
-  - "https://docs.cloud.google.com/storage/docs/release-notes"
-  - "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket"
+  - "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+  - "https://docs.cloud.google.com/storage/docs/cloud-console"
 keywords:
   - "bucket"
   - "relocation"
@@ -26,7 +27,7 @@ keywords:
 # Bucket relocation console support
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,23 +39,37 @@ The Google Cloud console supports relocating Cloud Storage buckets between locat
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/storage/docs/access-control/iam-console](https://docs.cloud.google.com/storage/docs/access-control/iam-console)
 - [https://docs.cloud.google.com/storage/docs/discover-object-storage-console](https://docs.cloud.google.com/storage/docs/discover-object-storage-console)
-- [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
-- [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket)
+- [https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions](https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions)
+- [https://docs.cloud.google.com/storage/docs/cloud-console](https://docs.cloud.google.com/storage/docs/cloud-console)
 
 ## Supporting Pages
+
+### "IAM permissions for the Google Cloud console \_|\_ Cloud Storage \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/storage/docs/access-control/iam-console](https://docs.cloud.google.com/storage/docs/access-control/iam-console)
+- Source ID: `site-docs-reference`
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Common permissions required for using the Google Cloud console Certain permissions are broadly necessary in order to use the Google Cloud console: All actions involving buckets should include resourcemanager.projects.get and storage.buckets.list permissions at the project level.
+- Permissions required for specific actions Action Required IAM Permissions (in addition to those listed above) Create a bucket storage.buckets.create storage.buckets.enableObjectRetention 1 Attach a tag to a bucket storage.buckets.createTagBinding List or filter buckets No additional permissions List tags directly attached to a bucket storage.buckets.listTagBindings List both inherited tags and tags directly attached to a bucket storage.buckets.listEffectiveTags View the following bucket information: Location, replication status, and default storage class Protection settings Bucket labels Object lifecycle policies Public access prevention status Uniform bucket-level access status Autoclass status Website configuration storage.buckets.get Change the following bucket settings: Protection settings Default storage class Bucket labels Object lifecycle policies Uniform bucket-level access status Autoclass status Website configuration Object retention configurations storage.buckets.get storage.buckets.update storage.buckets.enableObjectRetention 1 Enable the Requester Pays feature storage.buckets.get storage.buckets.update Disable the Requester Pays feature storage.buckets.get storage.buckets.update resourcemanager.projects.createBillingAssignment 3 Change the public access prevention setting storage.buckets.get storage.buckets.setIamPolicy storage.buckets.update Change bucket permissions storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update Delete an empty bucket storage.buckets.delete storage.objects.list Delete a non-empty bucket storage.buckets.delete storage.objects.delete storage.objects.list Detach a tag from a bucket storage.buckets.deleteTagBinding Create a folder storage.folders.create Get the metadata of a folder storage.folders.get List folders storage.folders.list Rename folders storage.folders.rename (for the source bucket) storage.folders.create (for the destination bucket) Delete folders storage.folders.delete Upload an object or folder of objects storage.objects.create storage.objects.delete 2 storage.objects.setRetention 4 View the details for an object 5 storage.objects.get storage.objects.list View the version history of an object storage.objects.get storage.objects.list Download an object 5 or folder of objects storage.objects.get storage.objects.list List objects in a bucket, including noncurrent objects and soft-deleted objects storage.objects.list Determine if an object is publicly accessible 5 storage.buckets.getIamPolicy storage.objects.list storage.objects.getIamPolicy 7 Rename an object or restore a noncurrent version of an object storage.objects.create storage.objects.delete storage.objects.get storage.objects.list storage.objects.getIamPolicy 7 storage.objects.setIamPolicy 7 Copy an object storage.objects.create (for the destination bucket) storage.objects.delete 2 (for the destination bucket) storage.objects.get (for the source object) storage.objects.list (for the source bucket and destination bucket) storage.objects.getIamPolicy 7,8 (for the source object) storage.objects.setIamPolicy 7,8 (for the destination bucket) Move an object storage.objects.create (for the destination bucket) storage.objects.delete 2 (for the destination bucket) storage.objects.delete (for the source bucket) storage.objects.get (for the source object) storage.objects.list (for the source bucket and destination bucket) storage.objects.getIamPolicy 7,8 (for the source object) storage.objects.setIamPolicy 7,8 (for the destination bucket) View an object's access permissions 5,6 storage.objects.get storage.objects.list storage.objects.getIamPolicy Edit an object's access permissions 5,6 storage.objects.get storage.objects.list storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update Edit an object's metadata 5 storage.objects.get storage.objects.list storage.objects.update Add, change, or remove a retention configuration on an object 5 storage.objects.get storage.objects.list storage.objects.update storage.objects.setRetention storage.objects.overrideUnlockedRetention 9 Add or remove a hold on an object 5 storage.objects.get storage.objects.list storage.objects.update Delete an object 5 , a noncurrent version of an object, or a folder of objects storage.objects.delete storage.objects.list Restore a deleted object storage.objects.create storage.objects.delete 2 storage.objects.list storage.objects.restore Bulk restore deleted objects storage.objects.create storage.objects.delete 10 storage.objects.restore storage.buckets.restore storage.objects.setIamPolicy 7 ,11 View the name of a project's Cloud Storage service agent resourcemanager.projects.get View the service account HMAC keys for a project resourcemanager.projects.get storage.hmacKeys.list Create an HMAC key for a service account resourcemanager.projects.get storage.hmacKeys.list storage.hmacKeys.create Disable or re-enable an HMAC key for a service account resourcemanager.projects.get storage.hmacKeys.list storage.hmacKeys.update Delete an HMAC key for a service account resourcemanager.projects.get storage.hmacKeys.list storage.hmacKeys.delete Create, view, or delete an HMAC key for the user account you are logged in as resourcemanager.projects.get Configure, update or disable the Storage Intelligence configuration on a project, a folder or an organization storage.intelligenceConfigs.update View the Storage Intelligence configuration on a project, a folder or an organization storage.intelligenceConfigs.get Create a cache using Rapid Cache storage.anywhereCaches.create List a cache using Rapid Cache storage.anywhereCaches.list Update a cache using Rapid Cache storage.anywhereCaches.update Pause a cache using Rapid Cache storage.anywhereCaches.pause Resume a cache using Rapid Cache storage.anywhereCaches.resume Get the metadata of a cache using Rapid Cache storage.anywhereCaches.get Disable a cache using Rapid Cache storage.anywhereCaches.disable 1 This permission is only required when enabling a bucket to support object retention configurations .
+- 5 This action does not require storage.objects.list if it's performed on the details page for the relevant object and you don't access the details page from the overall list of objects for the bucket.
+- Home Documentation Storage Cloud Storage Reference Send feedback IAM permissions for the Google Cloud console Stay organized with collections Save and categorize content based on your preferences.
 
 ### "Quickstart: Discover object storage with the Google Cloud console \_|\_\
 
 - URL: [https://docs.cloud.google.com/storage/docs/discover-object-storage-console](https://docs.cloud.google.com/storage/docs/discover-object-storage-console)
 - Source ID: `site-docs-reference`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 206
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - To create a bucket: In the Google Cloud console, go to the Cloud Storage Buckets page.
@@ -62,29 +77,30 @@ Evidence snippets:
 - Create a bucket Buckets are the basic containers that hold your data in Cloud Storage.
 - The Copy URL button provides a shareable URL similar to the following: https://storage.googleapis.com/ YOUR BUCKET NAME /kitten.png To remove public access from the bucket and stop sharing the image publicly: Click the Permissions tab.
 
-### Cloud Storage release notes \_|\_ Google Cloud Documentation
+### "Set and manage IAM policies on buckets \_|\_ Cloud Storage \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- March 03, 2025 Libraries Java 2.49.0 (2025-02-26) Features Add new Options to allow per method header values ( #2941 ) ( 297802d ) transfer-manager: Add ParallelUploadConfig.Builder#setUploadBlobInfoFactory ( #2936 ) ( 86e9ae8 ), closes #2638 Bug Fixes Categorize a WatchdogTimeoutException as retriable for grpc ReadObject ( #2954 ) ( b53bd53 ) deps: Update the Java code generator (gapic-generator-java) to 2.53.0 ( 9946d6b ) Update grpc based Storage to defer project id validation ( #2930 ) ( cc03784 ) Update kms key handling when opening a resumable upload to clear the value in the json to be null rather than empty string ( #2939 ) ( 43553de ) Dependencies Update sdk-platform-java dependencies ( #2957 ) ( 40cfda6 ) Documentation Add note about HNS support to moveBlob ( #2929 ) ( c461546 ) Python 3.1.0 (2025-02-27) Features Add api key argument to Client constructor ( #1441 ) ( c869e15 ) Add Bucket.move blob() for HNS-enabled buckets ( #1431 ) ( 24c000f ) February 26, 2025 Feature Bucket relocation for Cloud Storage is generally available ( GA ).
-- December 15, 2025 Libraries Python 3.7.0 (2025-12-09) Features Auto enable mTLS when supported certificates are detected ( #1637 ) ( 4e91c54 ) Send entire object checksum in the final api call of resumable upload ( #1654 ) ( ddce7e5 ) Support urllib3 >= 2.6.0 ( #1658 ) ( 57405e9 ) Bug Fixes bucket: Move blob fails when the new blob name contains characters that need to be url encoded ( #1605 ) ( ec470a2 ) November 24, 2025 Libraries Python 3.6.0 (2025-11-17) Features Add support for partial list buckets ( #1606 ) ( 92fc2b0 ) Make return partial success and unreachable fields public for list Bucket ( #1601 ) ( 323cddd ) zb-experimental: Add async write object stream ( 5ab8103 ) zb-experimental: Add async write object stream ( #1612 ) ( 5ab8103 ) Bug Fixes Don't pass credentials to StorageClient ( #1608 ) ( 195d644 ) November 14, 2025 Feature You can now use the Google Cloud console to relocate buckets .
-- Node.js Changes for @google-cloud/storage 7.10.2 (2024-04-26) Bug Fixes Use correct indices for file.from and fix tests to verify names ( #2449 ) ( d4240fa ) 7.10.1 (2024-04-22) Bug Fixes Change copyoptions type ( #2439 ) ( 2ebd7ac ) Expand types of custom metadata within FileMetadata ( #2442 ) ( 1d434a9 ) April 23, 2024 Change Default replication monitoring for multi-region and dual-region buckets in the Google Cloud console is now available for the following graphs: Percent of minutes out of RPO Percent of objects out of target Meeting RPO April 22, 2024 Libraries A weekly digest of client library updates from across the Cloud SDK .
-- Change The following regions are now generally available for dual-region storage: Mumbai ( asia-south1 ) Delhi ( asia-south2 ) Columbus ( us-east5 ) Dallas ( us-south1 ) Las Vegas ( us-west4 ) November 10, 2022 Feature You can now use the Google Cloud console to get role recommendations and policy insights for buckets.
-
-### "Mount a Cloud Storage bucket using Cloud Storage FUSE \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket](https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket)
+- URL: [https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions](https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions)
 - Source ID: `site-iam-reference`
-- Final score: 168
+- Final score: 205
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Make sure that you have the following role or roles on the project: Storage Admin ( roles/storage.admin ), Storage Bucket Viewer ( roles/storage.bucketViewer ) Check for the roles In the Google Cloud console, go to the IAM page.
-- Make sure that you have the following role or roles on the project: Storage Admin ( roles/storage.admin ), Storage Bucket Viewer ( roles/storage.bucketViewer ) Check for the roles In the Google Cloud console, go to the IAM page.
-- Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the resources by completing the following steps: Unmount the storage bucket from your Linux machine by using the fusermount tool: fusermount -u "$HOME/mount-folder" To delete the bucket and everything inside of it, use the gcloud storage rm command with the --recursive flag: gcloud storage rm gs:// BUCKET NAME --recursive Replace BUCKET NAME with the name of your bucket.
-- In this quickstart, you'll complete the following tasks: Install Cloud Storage FUSE on Debian or Ubuntu Mount the bucket as a folder on the machine Upload an object to the bucket You'll use the Google Cloud CLI to create and manage the object in your storage bucket, and you'll use the Cloud Storage FUSE CLI to mount your bucket to your machine.
+- For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The role to grant // const roleName = 'roles/storage.objectViewer'; // The members to grant the new role to // const members = [ // 'user:jdoe@example.com', // 'group:admins@example.com', // ]; // Create a condition // const title = 'Title'; // const description = 'Description'; // const expression = 'resource.name.startsWith(\"projects/ /buckets/bucket-name/objects/prefix-a-\")'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function removeBucketConditionalBinding () { // Get a reference to a Google Cloud Storage bucket const bucket = storage . bucket ( bucketName ); // Gets and updates the bucket's IAM policy const [ policy ] = await bucket . iam . getPolicy ({ requestedPolicyVersion : 3 }); // Set the policy's version to 3 to use condition in bindings. policy . version = 3 ; // Finds and removes the appropriate role-member group with specific condition. const index = policy . bindings . findIndex ( binding = > binding . role === roleName && binding . condition && binding . condition . title === title && binding . condition . description === description && binding . condition . expression === expression ); const binding = policy . bindings [ index ]; if ( binding ) { policy . bindings . splice ( index , 1 ); // Updates the bucket's IAM policy await bucket . iam . setPolicy ( policy ); console . log ( 'Conditional Binding was removed.' ); } else { // No matching role-member group with specific condition were found throw new Error ( 'No matching binding group found.' ); } } removeBucketConditionalBinding (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation .
+- For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The role to grant // const roleName = 'roles/storage.objectViewer'; // The members to grant the new role to // const members = [ // 'user:jdoe@example.com', // 'group:admins@example.com', // ]; // Create a condition // const title = 'Title'; // const description = 'Description'; // const expression = 'resource.name.startsWith(\"projects/ /buckets/bucket-name/objects/prefix-a-\")'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function addBucketConditionalBinding () { // Get a reference to a Google Cloud Storage bucket const bucket = storage . bucket ( bucketName ); // Gets and updates the bucket's IAM policy const [ policy ] = await bucket . iam . getPolicy ({ requestedPolicyVersion : 3 }); // Set the policy's version to 3 to use condition in bindings. policy . version = 3 ; // Adds the new roles to the bucket's IAM policy policy . bindings . push ({ role : roleName , members : members , condition : { title : title , description : description , expression : expression , }, }); // Updates the bucket's IAM policy await bucket . iam . setPolicy ( policy ); console . log ( Added the following member(s) with role ${ roleName } to ${ bucketName } : ); members . forEach ( member = > { console . log ( ${ member } ); }); console . log ( 'with condition:' ); console . log ( Title: ${ title } ); console . log ( Description: ${ description } ); console . log ( Expression: ${ expression } ); } addBucketConditionalBinding (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation .
+- This role contains the following permissions, which are required to set and manage IAM policies for buckets: storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update storage.buckets.list This permission is only required if you plan on using the Google Cloud console to perform the tasks on this page.
+- Remove a principal from a bucket-level policy Console In the Google Cloud console, go to the Cloud Storage Buckets page.
+
+### Google Cloud console \_|\_ Cloud Storage \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage/docs/cloud-console](https://docs.cloud.google.com/storage/docs/cloud-console)
+- Source ID: `site-docs-reference`
+- Final score: 203
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Console features The Google Cloud console provides the following features: Access to all your Google Cloud projects Access to the Cloud Shell A customizable project dashboard, with an overview of Google Cloud resources, billing, and a filterable activity listing Access to all Google Cloud APIs, with a dashboard specific to each API, and access to manage your resources Links to Google Cloud starting points, news, and documentation The Google Cloud console is used to perform a variety of tasks in Cloud Storage, such as the following: Creating buckets Uploading objects to buckets and downloading objects from buckets Filtering and sorting lists of buckets and objects Deleting objects Creating and managing folders Controlling access to your data and resources by using Identity and Access Management (IAM) and ACLs Monitoring buckets and bandwidth usage Using Cloud Storage features like Rapid Cache , soft delete , and Object Versioning Try it for yourself If you're new to Google Cloud, create an account to evaluate how Cloud Storage performs in real-world scenarios.
+- Cross-product integrations The following integrations with other Google Cloud products are available in the Objects tab of a bucket: Large scale data transfers to and from the bucket using Storage Transfer Service Storage Transfer Service is a service that lets you transfer large volumes of data between your bucket and other storage options, such as your on-premises file system, other buckets, or other cloud providers.
+- If you are: A user granted access to a project Use: https://console.cloud.google.com/ Go to the Google Cloud console A current project owner can give you access to the entire project , which applies equally to all buckets and objects defined in the project.
+- A user granted access to an object Use: https://console.cloud.google.com/storage/browser/ details/ BUCKET NAME / OBJECT NAME In this use case, a project owner gives you access to single objects within a bucket and sends you the URL to access the objects.
 

@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:04:57.774Z"
+generated_at: "2026-04-15T00:42:45.387Z"
 product_name: "Cloud Data Fusion"
 product_slug: "cloud-data-fusion"
 feature_name: "Cloud Data Fusion version 6.8 support deprecation"
 feature_slug: "cloud-data-fusion-version-6-8-support-deprecation"
 latest_feature_date: "2024-09-01"
 deprecation_date: "2024-09-01"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionAsyncClient"
-  - "https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionClient"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsFixedSizeCollection"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPage"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPagedResponse"
 keywords:
   - "fusion"
   - "version"
   - "deprecation"
-  - "for"
   - "has"
   - "been"
   - "discontinued"
-  - "and"
+  - "users"
+  - "advised"
 ---
 
 # Cloud Data Fusion version 6.8 support deprecation
 
 Product: Cloud Data Fusion
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +38,55 @@ Support for Cloud Data Fusion version 6.8 has been discontinued, and users are a
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionAsyncClient](https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionAsyncClient)
-- [https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionClient](https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionClient)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsFixedSizeCollection)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPage)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPagedResponse](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPagedResponse)
 
 ## Supporting Pages
 
-### "Class DataFusionAsyncClient (1.16.0) \_|\_ Python client libraries \_|\_\
+### "Class DataFusionClient.ListAvailableVersionsFixedSizeCollection (1.88.0)\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionAsyncClient](https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 180
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- ListAvailableVersionsRequest ( parent="parent value", ) Make the request page result = client. list available versions (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.data fusion v1.types.ListAvailableVersionsRequest , dict]] The request object.
-- ListAvailableVersionsAsyncPager ) Lists possible versions for Data Fusion instances in the specified project and location.
-- CreateInstanceRequest ( parent="parent value", instance id="instance id value", ) Make the request operation = client. create instance (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.data fusion v1.types.CreateInstanceRequest , dict]] The request object.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import data fusion v1 async def sample list available versions(): Create a client client = data fusion v1 .
-
-### "Class DataFusionClient (1.16.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionClient](https://docs.cloud.google.com/python/docs/reference/datafusion/latest/google.cloud.data_fusion_v1.services.data_fusion.DataFusionClient)
-- Source ID: `site-python-reference`
-- Final score: 180
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- ListAvailableVersionsRequest ( parent="parent value", ) Make the request page result = client. list available versions (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.data fusion v1.types.ListAvailableVersionsRequest , dict] The request object.
-- ListAvailableVersionsPager Lists possible versions for Data Fusion instances in the specified project and location.
-- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import data fusion v1 def sample list available versions(): Create a client client = data fusion v1 .
-- CreateInstanceRequest ( parent="parent value", instance id="instance id value", ) Make the request operation = client. create instance (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.data fusion v1.types.CreateInstanceRequest , dict] The request object.
-
-### "Class DataFusionClient (1.88.0) \_|\_ Java client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient)
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsFixedSizeCollection)
 - Source ID: `site-java-reference`
-- Final score: 170
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 69
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DataFusionClient dataFusionClient = DataFusionClient . create ()) { ListAvailableVersionsRequest request = ListAvailableVersionsRequest . newBuilder () . setParent ( LocationName . of ( "[PROJECT]" , "[LOCATION]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . setLatestPatchOnly ( true ) . build (); ApiFuture<Version> future = dataFusionClient . listAvailableVersionsPagedCallable (). futureCall ( request ); // Do something. for ( Version element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListAvailableVersionsRequest , ListAvailableVersionsPagedResponse > listInstances(ListInstancesRequest request) public final DataFusionClient .
-- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DataFusionClient dataFusionClient = DataFusionClient . create ()) { ListAvailableVersionsRequest request = ListAvailableVersionsRequest . newBuilder () . setParent ( LocationName . of ( "[PROJECT]" , "[LOCATION]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . setLatestPatchOnly ( true ) . build (); while ( true ) { ListAvailableVersionsResponse response = dataFusionClient . listAvailableVersionsCallable (). call ( request ); for ( Version element : response . getAvailableVersionsList ()) { // doThingsWith(element); } String nextPageToken = response . getNextPageToken (); if ( !
-- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DataFusionClient dataFusionClient = DataFusionClient . create ()) { ListAvailableVersionsRequest request = ListAvailableVersionsRequest . newBuilder () . setParent ( LocationName . of ( "[PROJECT]" , "[LOCATION]" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( "pageToken873572522" ) . setLatestPatchOnly ( true ) . build (); for ( Version element : dataFusionClient . listAvailableVersions ( request ). iterateAll ()) { // doThingsWith(element); } } Parameter Name Description request ListAvailableVersionsRequest The request object containing all of the parameters for the API call.
-- Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DataFusionClient dataFusionClient = DataFusionClient . create ()) { String parent = LocationName . of ( "[PROJECT]" , "[LOCATION]" ). toString (); for ( Version element : dataFusionClient . listAvailableVersions ( parent ). iterateAll ()) { // doThingsWith(element); } } Parameter Name Description parent String Required.
+- ListAvailableVersionsFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > DataFusionClient.ListAvailableVersionsFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<DataFusionClient.ListAvailableVersionsPage> pages, int collectionSize) protected DataFusionClient .
+- ListAvailableVersionsPage > pages , int collectionSize ) Parameters Name Description pages List < ListAvailableVersionsPage > collectionSize int Returns Type Description DataFusionClient.ListAvailableVersionsFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Developer tools Java Client libraries Send feedback Class DataFusionClient.ListAvailableVersionsFixedSizeCollection (1.88.0) Stay organized with collections Save and categorize content based on your preferences.
+- ListAvailableVersionsFixedSizeCollection extends AbstractFixedSizeCollection<ListAvailableVersionsRequest , ListAvailableVersionsResponse , Version , DataFusionClient .
+
+### "Class DataFusionClient.ListAvailableVersionsPage (1.88.0) \_|\_ Java client\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPage)
+- Source ID: `site-java-reference`
+- Final score: 69
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- ListAvailableVersionsPage > Inheritance java.lang.Object > AbstractPage > DataFusionClient.ListAvailableVersionsPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListAvailableVersionsRequest,ListAvailableVersionsResponse,Version> context, ListAvailableVersionsResponse response) protected DataFusionClient .
+- ListAvailableVersionsPage createPage ( PageContext<ListAvailableVersionsRequest , ListAvailableVersionsResponse , Version > context , ListAvailableVersionsResponse response ) Parameters Name Description context PageContext < ListAvailableVersionsRequest , ListAvailableVersionsResponse , Version > response ListAvailableVersionsResponse Returns Type Description DataFusionClient.ListAvailableVersionsPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListAvailableVersionsRequest,ListAvailableVersionsResponse,Version> context, ApiFuture<ListAvailableVersionsResponse> futureResponse) public ApiFuture<DataFusionClient .
+- Home Documentation Developer tools Java Client libraries Send feedback Class DataFusionClient.ListAvailableVersionsPage (1.88.0) Stay organized with collections Save and categorize content based on your preferences.
+- ListAvailableVersionsPage extends AbstractPage<ListAvailableVersionsRequest , ListAvailableVersionsResponse , Version , DataFusionClient .
+
+### "Class DataFusionClient.ListAvailableVersionsPagedResponse (1.88.0) \_|\_\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPagedResponse](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPagedResponse)
+- Source ID: `site-java-reference`
+- Final score: 69
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- ListAvailableVersionsFixedSizeCollection > Inheritance java.lang.Object > AbstractPagedListResponse > DataFusionClient.ListAvailableVersionsPagedResponse Inherited Members AbstractPagedListResponse.expandToFixedSizeCollection(int) AbstractPagedListResponse.getNextPageToken() AbstractPagedListResponse.getPage() AbstractPagedListResponse.iterateAll() AbstractPagedListResponse.iterateFixedSizeCollections(int) AbstractPagedListResponse.iteratePages() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods createAsync(PageContext<ListAvailableVersionsRequest,ListAvailableVersionsResponse,Version> context, ApiFuture<ListAvailableVersionsResponse> futureResponse) public static ApiFuture<DataFusionClient .
+- Home Documentation Developer tools Java Client libraries Send feedback Class DataFusionClient.ListAvailableVersionsPagedResponse (1.88.0) Stay organized with collections Save and categorize content based on your preferences.
+- ListAvailableVersionsPagedResponse extends AbstractPagedListResponse<ListAvailableVersionsRequest , ListAvailableVersionsResponse , Version , DataFusionClient .
+- ListAvailableVersionsPage , DataFusionClient .
 

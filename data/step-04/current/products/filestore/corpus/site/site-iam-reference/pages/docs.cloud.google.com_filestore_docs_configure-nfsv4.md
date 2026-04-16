@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/filestore/docs/configure-nfsv4
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/filestore/docs/create-instance-console
+entrypoint: https://docs.cloud.google.com/filestore/docs/access-control
 source_metadata:
   url: https://docs.cloud.google.com/filestore/docs/configure-nfsv4
   title: "About NFSv4.1 protocol \_|\_ Filestore \_|\_ Google Cloud Documentation"

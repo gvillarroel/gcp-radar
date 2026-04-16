@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.339Z"
+generated_at: "2026-04-12T12:19:43.314Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Vertex AI Agent Engine Code Execution"
 feature_slug: "vertex-ai-agent-engine-code-execution"
 latest_feature_date: "2025-09-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview"
-  - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/quickstart"
+  - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
 keywords:
   - "vertex"
@@ -27,7 +27,7 @@ keywords:
 # Vertex AI Agent Engine Code Execution
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,13 +39,13 @@ Agent Engine supports code execution so agents can run code in an isolated sandb
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview](https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview)
-- [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/quickstart](https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/quickstart)
+- [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
 
 ## Supporting Pages
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview](https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview)
 - Source ID: `site-docs-root`
-- Final score: 336
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 396
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Vertex AI Agent Engine Code Execution Stay organized with collections Save and categorize content based on your preferences.
@@ -64,24 +64,11 @@ Evidence snippets:
 - Code Execution is part of the Vertex AI Agent Engine suite.
 - Agent Engine Code Execution lets your agent to run code in a secure, isolated, and managed sandbox environment.
 
-### "Use agent identity with Vertex AI Agent Engine \_|\_ Vertex AI Agent Builder\
-
-- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
-- Source ID: `site-docs-root`
-- Final score: 282
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .
-- Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag.
-- If you deploy an ADK agent to Vertex AI Agent Engine Runtime, you need to build a custom frontend and migrate ADK-web authentication or redirect code into your frontend to perform the same OAuth integration.
-- To do so, create an Agent Engine instance with just the identity type field: import vertexai from vertexai import agent engines from vertexai import types client = vertexai .
-
 ### "Code Execution quickstart \_|\_ Vertex AI Agent Builder \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/quickstart](https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/quickstart)
 - Source ID: `site-docs-root`
-- Final score: 274
+- Final score: 322
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -90,11 +77,24 @@ Evidence snippets:
 - Install libraries Install the Vertex AI SDK: pip install google-cloud-aiplatform> = 1 .112.0 Authenticate to Vertex AI To authenticate: Local shell gcloud init gcloud auth application - default login Colab from google.colab import auth auth . authenticate user () Create an Vertex AI Agent Engine instance To use Code Execution, first create an Vertex AI Agent Engine instance.
 - In this quickstart, you perform the follow tasks: Create an Vertex AI Agent Engine instance to access Code Execution Create a Code Execution sandbox (Optional) List and get sandboxes Execute code in a sandbox Execute more code using the same sandbox.
 
+### "Use agent identity with Vertex AI Agent Engine \_|\_ Vertex AI Agent Builder\
+
+- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
+- Source ID: `site-docs-root`
+- Final score: 305
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .
+- Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag.
+- If you deploy an ADK agent to Vertex AI Agent Engine Runtime, you need to build a custom frontend and migrate ADK-web authentication or redirect code into your frontend to perform the same OAuth integration.
+- To do so, create an Agent Engine instance with just the identity type field: import vertexai from vertexai import agent engines from vertexai import types client = vertexai .
+
 ### "Quickstart with Vertex AI Agent Engine SDK \_|\_ Vertex AI Agent Builder\
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
 - Source ID: `site-docs-root`
-- Final score: 254
+- Final score: 277
 - Re-rank relevance: N/A
 
 Evidence snippets:

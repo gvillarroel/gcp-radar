@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:52:53.931Z"
+generated_at: "2026-04-14T09:23:11.940Z"
 product_name: "AutoML Translation"
 product_slug: "automl-translation"
 feature_name: "AutoML Translation EAP-to-Beta model continuity"
 feature_slug: "automl-translation-eap-to-beta-model-continuity"
 latest_feature_date: "2018-07-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart"
-  - "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade"
   - "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+  - "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models"
+  - "https://docs.cloud.google.com/translate/docs/advanced/translate-documents"
 keywords:
   - "continuity"
   - "preserves"
   - "beta"
-  - "eap"
-  - "to"
-  - "translation"
+  - "models"
   - "model"
-  - "automl"
 ---
 
 # AutoML Translation EAP-to-Beta model continuity
 
 Product: AutoML Translation
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +35,54 @@ AutoML Translation preserves models created during EAP so they remain valid when
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart](https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart)
-- [https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade](https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade)
 - [https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models](https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models)
+- [https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models](https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models)
+- [https://docs.cloud.google.com/translate/docs/advanced/translate-documents](https://docs.cloud.google.com/translate/docs/advanced/translate-documents)
 
 ## Supporting Pages
-
-### "Create a custom translation model \_|\_ Cloud Translation \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart](https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart)
-- Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Before you begin Before you can start using AutoML Translation, your project must have the Cloud Translation API enabled, and you must have the permissions that are granted by the following roles: Viewer role to view existing resources in your project Cloud Translation API Editor role to create and manage datasets and models Storage Admin role to upload training data to a Cloud Storage bucket Create a translation dataset and import segment pairs Download the archive file that contains the sample data for training the model, and extract the files.
-- The following example uses AutoML Translation to train an English-to-Spanish translation model by using a dataset that contains technology-oriented segment pairs from software localization.
-- Train a model Go to the AutoML Translation console.
-- Note: The following tutorial assumes that, for your project, the Google Cloud console is using the Cloud Translation API instead of the AutoML API to create datasets.
-
-### Upgrade AutoML resources \_|\_ Cloud Translation \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade](https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade)
-- Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Model evaluation Supports running evaluations against a new test set or from an existing dataset Supports running evaluations against a new test set only Cancel operations Supports canceling dataset import and model creation operations You cannot cancel long-running operations Google Cloud console behavior post upgrade If you upgrade at least one resource, the Google Cloud console switches to using the Cloud Translation API instead of the deprecated AutoML API.
-- During the upgrade, Cloud Translation copies your AutoML (legacy) resources, such as datasets and models, and creates new Cloud Translation (native) resources through the Cloud Translation API.
-- Upgrade AutoML resources If you have existing resources that were created by using the deprecated AutoML API, you can upgrade those resources to manage them through the Cloud Translation - Advanced API without any service interruptions or additional costs.
-- For example, if you have commands that call the deprecated AutoML API and reference legacy resource IDs, you need to update those commands to call the Cloud Translation API and reference the native resource IDs.
 
 ### Create and manage models \_|\_ Cloud Translation \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models](https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models)
 - Source ID: `site-docs-root`
-- Final score: 144
-- Re-rank relevance: N/A
+- Final score: 104
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT ID " } Invoke-WebRequest -Method GET -Headers $headers -Uri "https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models" Select-Object -Expand Content You should receive a JSON response similar to the following: { "models": [ { "name": "projects/ PROJECT NUMBER /locations/us-central1/models/ MODEL ID ", "displayName": " MODEL DISPLAY NAME ", "dataset": "projects/ PROJECT NUMBER /locations/us-central1/datasets/ DATASET ID " "sourceLanguageCode": " SOURCE LANG CODE ", "targetLanguageCode": " TARGET LANG CODE ", "trainExampleCount": NUM TRAINING SEGMENTS , "validateExampleCount": NUM VALIDATION SEGMENTS , "createTime": "2022-12-02T21:53:26.788521838Z", "updateTime": "2022-12-03T00:42:27.946594016Z" }, ... ] } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
 - Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT ID " } Invoke-WebRequest -Method GET -Headers $headers -Uri "https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID " Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ PROJECT NUMBER /locations/us-central1/models/ MODEL ID ", "displayName": " MODEL DISPLAY NAME ", "dataset": "projects/ PROJECT NUMBER /locations/us-central1/datasets/ DATASET ID " "sourceLanguageCode": " SOURCE LANG CODE ", "targetLanguageCode": " TARGET LANG CODE ", "trainExampleCount": NUM TRAINING SEGMENTS , "validateExampleCount": NUM VALIDATION SEGMENTS , "createTime": "2022-12-02T21:53:26.788521838Z", "updateTime": "2022-12-03T00:42:27.946594016Z" } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
 - Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID " } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
 - Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT ID " } Invoke-WebRequest -Method DELETE -Headers $headers ` -Uri "https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID " Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID ", "metadata": { "@type": "type.googleapis.com/google.cloud.translation.v3.DeleteModelMetadata" }, "done": true } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
+
+### Create and manage models \_|\_ Cloud Translation \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models](https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models)
+- Source ID: `site-docs-root`
+- Final score: 104
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Response { "name": "projects/ PROJECT ID /locations/ TUNING JOB REGION /tuningJobs/ TUNING JOB ID ", "tunedModelDisplayName": " TUNED MODEL DISPLAYNAME ", "createTime": CREATE TIME , "endTime": END TIME , "tunedModel": { "model": "projects/ PROJECT ID /locations/ TUNING JOB REGION /models/ MODEL ID ", "endpoint": "projects/ PROJECT ID /locations/ TUNING JOB REGION /endpoints/ ENDPOINT ID " }, "experiment": "projects/ PROJECT ID /locations/ TUNING JOB REGION /metadataStores/default/contexts/ EXPERIMENT ID ", "tuning data statistics": { "supervisedTuningDataStats": { "tuninDatasetExampleCount": " TUNING DATASET EXAMPLE COUNT ", "totalBillableTokenCount": " TOTAL BILLABLE TOKEN COUNT ", "tuningStepCount": " TUNING STEP COUNT " } }, "status": " STATUS ", "supervisedTuningSpec" : { "trainingDatasetUri": " TRAINING DATASET URI ", "validationDataset uri": " VALIDATION DATASET URI ", "hyperParameters": { "epochCount": EPOCH COUNT , "learningRateMultiplier": LEARNING RATE MULTIPLIER } } } Python import vertexai from vertexai.tuning import sft TODO(developer): Update and un-comment below lines PROJECT ID = "your-project-id" LOCATION = "us-central1" vertexai . init ( project = PROJECT ID , location = LOCATION ) tuning job id = "4982013113894174720" response = sft .
+- PROJECT ID = os.environ["GOOGLE CLOUD PROJECT"] vertexai . init ( project = PROJECT ID , location = "us-central1" ) sft tuning job = sft . train ( source model = "translation-llm-002" , train dataset = "gs://cloud-samples-data/ai-platform/generative ai/gemini-2 0/text/sft train data.jsonl" , The following parameters are optional validation dataset = "gs://cloud-samples-data/ai-platform/generative ai/gemini-2 0/text/sft validation data.jsonl" , tuned model display name = "tuned translation llm 002" , ) Polling for job completion while not sft tuning job . has ended : time . sleep ( 60 ) sft tuning job . refresh () print ( sft tuning job . tuned model name ) print ( sft tuning job . tuned model endpoint name ) print ( sft tuning job . experiment ) Example response: projects/123456789012/locations/us-central1/models/1234567890@1 projects/123456789012/locations/us-central1/endpoints/123456789012345 <google.cloud.aiplatform.metadata.experiment resources.Experiment object at 0x7b5b4ae07af0> View a list of tuning jobs You can view a list of tuning jobs in your current project by using the Google Cloud console, the Vertex AI SDK for Python, or by sending a GET request by using the tuningJobs method.
+- TranslationServiceClient () location = "us-central1" parent = f "projects/ { project id } /locations/ { location } " model path = f " { parent } /models/translation-llm-custom/ { model id } " Supported language codes: https://cloud.google.com/translate/docs/languages response = client . translate text ( request = { "contents" : [ text ], "target language code" : "ja" , "model" : model path , "source language code" : "en" , "parent" : parent , "mime type" : "text/plain" , # mime types: text/plain, text/html } ) Display the translation for each input text provided for translation in response . translations : print ( f "Translated text: { translation . translated text } " ) return response Tuning and validation metrics You can configure a model tuning job to collect and report model tuning and model evaluation metrics, which can then be visualized in Vertex AI Studio .
+- Response { "name": "projects/ PROJECT ID /locations/ TUNING JOB REGION /tuningJobs/ TUNING JOB ID ", "createTime": CREATE TIME , "updateTime": UPDATE TIME , "status": " STATUS ", "supervisedTuningSpec": { "trainingDatasetUri": " TRAINING DATASET URI ", "validationDatasetUri": " VALIDATION DATASET URI ", }, "tunedModelDisplayName": " TUNED MODEL DISPLAYNAME " } Python from vertexai.generative models import GenerativeModel sft tuning job = sft .
+
+### Translate documents \_|\_ Cloud Translation \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/translate/docs/advanced/translate-documents](https://docs.cloud.google.com/translate/docs/advanced/translate-documents)
+- Source ID: `site-docs-root`
+- Final score: 99
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- TranslationServiceClient () location = "us-central1" parent = f "projects/ { project id } /locations/ { location } " Supported file types: https://cloud.google.com/translate/docs/supported-formats with open ( file path , "rb" ) as document : document content = document . read () document input config = { "content" : document content , "mime type" : "application/pdf" , } response = client . translate document ( request = { "parent" : parent , "target language code" : "fr-FR" , "document input config" : document input config , } ) To output the translated document, uncomment the code below. f = open('/tmp/output', 'wb') f.write(response.document translation.byte stream outputs[0]) f.close() If not provided in the TranslationRequest, the translated file will only be returned through a byte-stream and its output mime type will be the same as the input file's mime type print ( f "Response: Detected Language Code - { response . document translation . detected language code } " ) return response Use an AutoML model or a glossary Instead of the Google-managed model, you can use your own AutoML Translation models to translate documents.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateDocument" Select-Object -Expand Content You should receive a JSON response similar to the following: { "documentTranslation": { "byteStreamOutputs": [" BYTE STREAM "], "mimeType": " MIME TYPE " }, "glossary document translation": { "byteStreamOutputs": [" BYTE STREAM USING GLOSSARY "], "mimeType": " MIME TYPE " }, "model": "projects/ MODEL PROJECT ID /locations/ MODEL LOCATION /models/ MODEL ID ", "glossaryConfig": { "glossary": "projects/ GLOSSARY PROJECT ID /locations/ MODEL LOCATION /glossaries/ GLOSSARY ID " } } Translate documents (batch) Batch translation allows you to translate multiple files into multiple languages in a single request.
+- HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateDocument Request JSON body: { "source language code": " SOURCE LANGUAGE ", "target language codes": "[ TARGET LANGUAGE , ...]", "input configs": [ { "gcsSource": { "inputUri": "gs:// INPUT FILE PATH " } } ], "output config": { "gcsDestination": { "outputUriPrefix": "gs:// OUTPUT FILE PREFIX " } }, "models": { " TARGET LANGUAGE ": "projects/ MODEL PROJECT ID /locations/ MODEL LOCATION /models/ MODEL ID ", ... }, "glossaries": { " TARGET LANGUAGE ": { "glossary": "projects/ GLOSSARY PROJECT ID /locations/ MODEL LOCATION /glossaries/ GLOSSARY ID " }, ... } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateDocument Request JSON body: { "source language code": " SOURCE LANGUAGE ", "target language code": " TARGET LANGUAGE ", "document input config": { "gcsSource": { "inputUri": "gs:// INPUT FILE PATH " } }, "document output config": { "gcsDestination": { "outputUriPrefix": "gs:// OUTPUT FILE PREFIX " } }, "model": "projects/ MODEL PROJECT ID /locations/ MODEL LOCATION /models/ MODEL ID ", "glossary config": { "glossary": "projects/ GLOSSARY PROJECT ID /locations/ MODEL LOCATION /glossaries/ GLOSSARY ID " } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 

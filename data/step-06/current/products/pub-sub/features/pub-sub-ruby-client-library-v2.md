@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:51.437Z"
+generated_at: "2026-04-12T12:18:10.303Z"
 product_name: "Pub/Sub"
 product_slug: "pub-sub"
 feature_name: "Pub/Sub Ruby client library v2"
 feature_slug: "pub-sub-ruby-client-library-v2"
 latest_feature_date: "2025-07-31"
 deprecation_date: "2026-07-31"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+  - "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries"
+  - "https://docs.cloud.google.com/pubsub/docs/publisher"
+  - "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription"
 keywords:
   - "pub"
   - "sub"
@@ -24,7 +27,7 @@ keywords:
 # Pub/Sub Ruby client library v2
 
 Product: Pub/Sub
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ The v2 Pub/Sub Ruby client library is deprecated and will no longer receive secu
 
 The v2 Pub/Sub Ruby client library is deprecated and will no longer receive security or bug fixes after the effective date; deprecated on 2026-07-31.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library](https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library)
+- [https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries](https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries)
+- [https://docs.cloud.google.com/pubsub/docs/publisher](https://docs.cloud.google.com/pubsub/docs/publisher)
+- [https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription](https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Quickstart: Publish and receive messages in Pub/Sub by using a client library\
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library](https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library)
+- Source ID: `site-docs-root`
+- Final score: 358
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- MINUTES ); } } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // const data = JSON.stringify({foo: 'bar'}); // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function publishMessage ( topicNameOrId , data ) { // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject) const dataBuffer = Buffer . from ( data ); // Cache topic objects (publishers) and reuse them. const topic = pubSubClient . topic ( topicNameOrId ); try { const messageId = await topic . publishMessage ({ data : dataBuffer }); console . log ( Message ${ messageId } published. ); } catch ( error ) { console . error ( Received error while publishing: ${ error . message } ); process . exitCode = 1 ; } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // const data = JSON.stringify({foo: 'bar'}); // Imports the Google Cloud client library import { PubSub } from '@google-cloud/pubsub' ; // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function publishMessage ( topicNameOrId : string , data : string ) { // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject) const dataBuffer = Buffer . from ( data ); // Cache topic objects (publishers) and reuse them. const topic = pubSubClient . topic ( topicNameOrId ); try { const messageId = await topic . publishMessage ({ data : dataBuffer }); console . log ( Message ${ messageId } published. ); } catch ( error ) { console . error ( Received error while publishing: ${ ( error as Error ). message } , ); process . exitCode = 1 ; } } PHP use Google\Cloud\PubSub\MessageBuilder; use Google\Cloud\PubSub\PubSubClient; / Publishes a message for a Pub/Sub topic. @param string $projectId The Google project ID. @param string $topicName The Pub/Sub topic name. @param string $message The message to publish. / function publish message($projectId, $topicName, $message) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $topic = $pubsub->topic($topicName); $topic->publish((new MessageBuilder)->setData($message)->build()); print('Message published' .
+- Stop receiving messages. subscriber . stopAsync (); } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const subscriptionNameOrId = 'YOUR SUBSCRIPTION NAME OR ID'; // const timeout = 60; // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); function listenForMessages ( subscriptionNameOrId , timeout ) { // References an existing subscription; if you are unsure if the // subscription will exist, try the optimisticSubscribe sample. const subscription = pubSubClient . subscription ( subscriptionNameOrId ); // Create an event handler to handle messages let messageCount = 0 ; const messageHandler = message = > { console . log ( Received message ${ message . id } : ); console . log ( \tData: ${ message . data } ); console . log ( \tAttributes: ${ message . attributes } ); messageCount += 1 ; // "Ack" (acknowledge receipt of) the message message . ack (); }; // Listen for new messages until timeout is hit subscripti on . on ( 'message' , messageHandler ); // Wait a while for the subscription to run. (Part of the sample only.) setTimeout (() = > { subscription . removeListener ( 'message' , messageHandler ); console . log ( ${ messageCount } message(s) received. ); }, timeout 1000 ); } PHP use Google\Cloud\PubSub\PubSubClient; / Pulls all Pub/Sub messages for a subscription. @param string $projectId The Google project ID. @param string $subscriptionName The Pub/Sub subscription name. / function pull messages($projectId, $subscriptionName) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $subscription = $pubsub->subscription($subscriptionName); foreach ($subscription->pull() as $message) { printf('Message: %s' .
+- For more information about BOMs, see The Google Cloud Platform Libraries BOM . <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.76.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-pubsub</artifactId> </dependency> </dependencies> If you are using Gradle , add the following to your dependencies: implementation platform('com.google.cloud:libraries-bom:26.78.0') implementation 'com.google.cloud:google-cloud-pubsub' If you are using sbt , add the following to your dependencies: libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.150.0" If you're using Visual Studio Code or IntelliJ, you can add client libraries to your project using the following IDE plugins: Cloud Code for VS Code Cloud Code for IntelliJ The plugins provide additional functionality, such as key management for service accounts.
+- Publish and receive messages in Pub/Sub by using a client library The Pub/Sub service allows applications to exchange messages reliably, quickly, and asynchronously.
+
+### "Quickstart: Publish and receive messages in Pub/Sub by using a client library\
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries](https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries)
+- Source ID: `site-docs-reference`
+- Final score: 328
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- MINUTES ); } } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // const data = JSON.stringify({foo: 'bar'}); // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function publishMessage ( topicNameOrId , data ) { // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject) const dataBuffer = Buffer . from ( data ); // Cache topic objects (publishers) and reuse them. const topic = pubSubClient . topic ( topicNameOrId ); try { const messageId = await topic . publishMessage ({ data : dataBuffer }); console . log ( Message ${ messageId } published. ); } catch ( error ) { console . error ( Received error while publishing: ${ error . message } ); process . exitCode = 1 ; } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // const data = JSON.stringify({foo: 'bar'}); // Imports the Google Cloud client library import { PubSub } from '@google-cloud/pubsub' ; // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function publishMessage ( topicNameOrId : string , data : string ) { // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject) const dataBuffer = Buffer . from ( data ); // Cache topic objects (publishers) and reuse them. const topic = pubSubClient . topic ( topicNameOrId ); try { const messageId = await topic . publishMessage ({ data : dataBuffer }); console . log ( Message ${ messageId } published. ); } catch ( error ) { console . error ( Received error while publishing: ${ ( error as Error ). message } , ); process . exitCode = 1 ; } } PHP use Google\Cloud\PubSub\MessageBuilder; use Google\Cloud\PubSub\PubSubClient; / Publishes a message for a Pub/Sub topic. @param string $projectId The Google project ID. @param string $topicName The Pub/Sub topic name. @param string $message The message to publish. / function publish message($projectId, $topicName, $message) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $topic = $pubsub->topic($topicName); $topic->publish((new MessageBuilder)->setData($message)->build()); print('Message published' .
+- Stop receiving messages. subscriber . stopAsync (); } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const subscriptionNameOrId = 'YOUR SUBSCRIPTION NAME OR ID'; // const timeout = 60; // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); function listenForMessages ( subscriptionNameOrId , timeout ) { // References an existing subscription; if you are unsure if the // subscription will exist, try the optimisticSubscribe sample. const subscription = pubSubClient . subscription ( subscriptionNameOrId ); // Create an event handler to handle messages let messageCount = 0 ; const messageHandler = message = > { console . log ( Received message ${ message . id } : ); console . log ( \tData: ${ message . data } ); console . log ( \tAttributes: ${ message . attributes } ); messageCount += 1 ; // "Ack" (acknowledge receipt of) the message message . ack (); }; // Listen for new messages until timeout is hit subscripti on . on ( 'message' , messageHandler ); // Wait a while for the subscription to run. (Part of the sample only.) setTimeout (() = > { subscription . removeListener ( 'message' , messageHandler ); console . log ( ${ messageCount } message(s) received. ); }, timeout 1000 ); } PHP use Google\Cloud\PubSub\PubSubClient; / Pulls all Pub/Sub messages for a subscription. @param string $projectId The Google project ID. @param string $subscriptionName The Pub/Sub subscription name. / function pull messages($projectId, $subscriptionName) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $subscription = $pubsub->subscription($subscriptionName); foreach ($subscription->pull() as $message) { printf('Message: %s' .
+- For more information about BOMs, see The Google Cloud Platform Libraries BOM . <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.76.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-pubsub</artifactId> </dependency> </dependencies> If you are using Gradle , add the following to your dependencies: implementation platform('com.google.cloud:libraries-bom:26.78.0') implementation 'com.google.cloud:google-cloud-pubsub' If you are using sbt , add the following to your dependencies: libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.150.0" If you're using Visual Studio Code or IntelliJ, you can add client libraries to your project using the following IDE plugins: Cloud Code for VS Code Cloud Code for IntelliJ The plugins provide additional functionality, such as key management for service accounts.
+- Publish and receive messages in Pub/Sub by using a client library The Pub/Sub service allows applications to exchange messages reliably, quickly, and asynchronously.
+
+### Publish messages to topics \_|\_ Pub/Sub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/publisher](https://docs.cloud.google.com/pubsub/docs/publisher)
+- Source ID: `site-docs-root`
+- Final score: 326
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- PublisherClient ( publisher options = publisher options , client options = client options ) The topic path method creates a fully qualified identifier in the form projects/{project id}/topics/{topic id} topic path = publisher . topic path ( project id , topic id ) for message in [ ( "message1" , "key1" ), ( "message2" , "key2" ), ( "message3" , "key1" ), ( "message4" , "key2" ), ]: Data must be a bytestring data = message [ 0 ] . encode ( "utf-8" ) ordering key = message [ 1 ] When you publish a message, the client returns a future. future = publish er . publish ( topic path , data = data , ordering key = ordering key ) print ( future . result ()) print ( f "Published messages with ordering keys to { topic path } ." ) Ruby The following sample uses Ruby Pub/Sub client library v3.
+- PublisherClient () topic path = publisher . topic path ( project id , topic id ) for n in range ( 1 , 10 ): data str = f "Message number { n } " Data must be a bytestring data = data str . encode ( "utf-8" ) Add two attributes, origin and username, to the message future = publish er . publish ( topic path , data , origin = "python-sample" , username = "gcp" ) print ( future . result ()) print ( f "Published messages with custom attributes to { topic path } ." ) Ruby The following sample uses Ruby Pub/Sub client library v3.
+- ALL COMPLETED ) print ( f "Published messages with error handler to { topic path } ." ) Ruby The following sample uses Ruby Pub/Sub client library v3.
+- FromSeconds ( 15 )); return publishedMessageCount ; } } Go The following sample uses the major version of the Go Pub/Sub client library (v2).
+
+### Create BigQuery subscriptions \_|\_ Pub/Sub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription](https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription)
+- Source ID: `site-docs-root-2`
+- Final score: 302
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- BigQueryConfig ( table = bigquery table id , write metadata = True ) Wrap the subscriber in a 'with' block to automatically call close() to close the underlying gRPC channel when done. with subscriber : subscription = subscriber . create subscription ( request = { "name" : subscription path , "topic" : topic path , "bigquery config" : bigquery config , } ) print ( f "BigQuery subscription created: { subscription } ." ) print ( f "Table for subscription is: { bigquery table id } " ) Ruby The following sample uses Ruby Pub/Sub client library v3.
+- For more information, see the Pub/Sub Node.js API reference documentation . / TODO ( developer ): Uncomment these variables before running the sample . / // const topicNameOrId = 'YOUR TOPIC NAME OR ID' ; // const subscriptionNameOrId = 'YOUR SUBSCRIPTION NAME OR ID' ; // const bigqueryTableId = 'YOUR TABLE ID' ; // Imports the Google Cloud client library import { PubSub , CreateSubscriptionOptions } from '@google-cloud/pubsub' ; // Creates a client ; cache this for further use const pubSubClient = new PubSub (); async function createBigQuerySubscription ( topicNameOrId : string , subscriptionNameOrId : string , bigqueryTableId : string , ) { const options : CreateSubscriptionOptions = { bigqueryConfig : { table : bigqueryTableId , writeMetadata : true , }, }; await pubSubClient . topic ( topicNameOrId ) . createSubscription ( subscriptionNameOrId , options ); console . log ( Subscription $ { subscriptionNameOrId } created . ); } PHP Before trying this sample, follow the PHP setup instructions in Quickstart: Using Client Libraries .
+- For more information, see the Pub/Sub Node.js API reference documentation . / TODO ( developer ): Uncomment these variables before running the sample . / // const topicNameOrId = 'YOUR TOPIC NAME OR ID' ; // const subscriptionNameOrId = 'YOUR SUBSCRIPTION NAME OR ID' ; // const bigqueryTableId = 'YOUR TABLE ID' ; // Imports the Google Cloud client library const { PubSub } = require ( '@google-cloud/pubsub' ); // Creates a client ; cache this for further use const pubSubClient = new PubSub (); async function createBigQuerySubscription ( topicNameOrId , subscriptionNameOrId , bigqueryTableId , ) { const options = { bigqueryConfig : { table : bigqueryTableId , writeMetadata : true , }, }; await pubSubClient . topic ( topicNameOrId ) . createSubscription ( subscriptionNameOrId , options ); console . log ( Subscription $ { subscriptionNameOrId } created . ); } Node.ts Before trying this sample, follow the Node.js setup instructions in Quickstart: Using Client Libraries .
+- CreateSubscription ( subscriptionRequest ); return subscription ; } } Go The following sample uses the major version of the Go Pub/Sub client library (v2).
 

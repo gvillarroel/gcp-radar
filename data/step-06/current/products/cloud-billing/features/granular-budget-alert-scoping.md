@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.358Z"
+generated_at: "2026-04-14T13:57:37.641Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Granular Budget Alert Scoping"
 feature_slug: "granular-budget-alert-scoping"
 latest_feature_date: "2019-08-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/budgets"
-  - "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets"
-  - "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets"
+  - "https://docs.cloud.google.com/billing/docs/how-to/reports"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.Budget.Builder"
 keywords:
   - "granular"
   - "budget"
@@ -26,7 +26,7 @@ keywords:
 # Granular Budget Alert Scoping
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Adds more granular budget filters so budgets and budget alerts can target groups
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/billing/docs/how-to/budgets](https://docs.cloud.google.com/billing/docs/how-to/budgets)
-- [https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets](https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets)
-- [https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets](https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets)
+- [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.Budget.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.Budget.Builder)
 
 ## Supporting Pages
 
@@ -52,38 +52,39 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/budgets](https://docs.cloud.google.com/billing/docs/how-to/budgets)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 164
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- To view a list of budgets for your Cloud Billing account, do the following: Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access.
-- To modify or delete a budget, do the following: Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access.
-- Create and name the budget Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access.
 - Subaccounts : (Only available to billing-account-level budgets.) If you're a reseller and your Cloud Billing account has subaccounts, in the Subaccounts field, select one or more subaccounts that you want to apply the budget alert to.
+- For more information about the budget settings, see: About cost trend chart About budget scope About budget amount Set alert threshold rules Manage notifications Delete a budget : Caution: Deleted budgets cannot be recovered.
+- Folders & organizations : If your Google Cloud is configured to use organizations and folders , in the Folders & organizations field, select one or more organizations or folders that you want to apply the budget alert to.
+- For example, if you set a 110% forecasted cost alert on a $100 budget, then you receive an alert notification when you are forecasted to spend more than $110 by the end of the budget calendar period.
 
-### "REST Resource: billingAccounts.budgets \_|\_ Cloud Billing \_|\_ Google\
+### "Analyze billing data and cost trends with Reports \_|\_ Cloud Billing \_\
 
-- URL: [https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets](https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets)
-- Source ID: `site-api-reference`
-- Final score: 142
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
+- Source ID: `site-docs-root`
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Resource: Budget JSON representation Filter JSON representation CreditTypesTreatment CalendarPeriod CustomPeriod JSON representation BudgetAmount JSON representation LastPeriodAmount ThresholdRule JSON representation Basis AllUpdatesRule JSON representation OwnershipScope Methods Resource: Budget A budget is a plan that describes what you expect to spend on Cloud projects, plus the rules to execute as spend is tracked against that plan, (for example, send an alert when 90% of the target spend is met).
-- Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. amount object ( BudgetAmount ) Required.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-09-10 UTC."],[],[]]
-- JSON representation { "name" : string , "displayName" : string , "budgetFilter" : { object ( Filter ) } , "amount" : { object ( BudgetAmount ) } , "thresholdRules" : [ { object ( ThresholdRule ) } ] , "allUpdatesRule" : { object ( AllUpdatesRule ) } , "etag" : string , "ownershipScope" : enum ( OwnershipScope ) } Fields name string Output only.
+- Note that the report's default settings are different if you access the report from the Budget and alerts page—the report's timeframe and filters are configured using the budget's scope settings.
+- Credits setting: You can select or clear the Credits filters to change the view of your cost calculations to include or exclude credits, helping you see how credits impact the cost calculations compared to your budget target amount.
+- Review the following examples for more information: Projects: budget scope versus cost report filter For the Cloud Billing account, assume the following regarding projects: 20 currently active projects incurring costs.
+- View a budget in your cost report showing costs for the previous 12 months To view a budget in your cost report for the previous 12 months, take the following steps: Go to the Budgets and alerts list page .
 
-### "REST Resource: billingAccounts.budgets \_|\_ Cloud Billing \_|\_ Google\
+### "Class Budget.Builder (2.88.0) \_|\_ Java client libraries \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets](https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets)
-- Source ID: `site-api-reference`
-- Final score: 134
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.Budget.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.Budget.Builder)
+- Source ID: `site-java-reference`
+- Final score: 132
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Resource: Budget JSON representation Filter JSON representation CreditTypesTreatment CalendarPeriod CustomPeriod JSON representation BudgetAmount JSON representation LastPeriodAmount ThresholdRule JSON representation Basis NotificationsRule JSON representation OwnershipScope Methods Resource: Budget A budget is a plan that describes what you expect to spend on Cloud projects, plus the rules to execute as spend is tracked against that plan, (for example, send an alert when 90% of the target spend is met).
-- Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. amount object ( BudgetAmount ) Required.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-09-10 UTC."],[],[]]
-- JSON representation { "name" : string , "displayName" : string , "budgetFilter" : { object ( Filter ) } , "amount" : { object ( BudgetAmount ) } , "thresholdRules" : [ { object ( ThresholdRule ) } ] , "notificationsRule" : { object ( NotificationsRule ) } , "etag" : string , "ownershipScope" : enum ( OwnershipScope ) } Fields name string Output only.
+- Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. .google.cloud.billing.budgets.v1.Filter budget filter = 3 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description FilterOrBuilder getDefaultInstanceForType() public Budget getDefaultInstanceForType () Returns Type Description Budget getDescriptorForType() public Descriptors .
+- Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. .google.cloud.billing.budgets.v1.Filter budget filter = 3 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description boolean Whether the budgetFilter field is set. hasNotificationsRule() public boolean hasNotificationsRule () Optional.
+- Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. .google.cloud.billing.budgets.v1.Filter budget filter = 3 [(.google.api.field behavior) = OPTIONAL]; Parameter Name Description value Filter Returns Type Description Budget.Builder setBudgetFilter(Filter.Builder builderForValue) public Budget .
+- Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. .google.cloud.billing.budgets.v1.Filter budget filter = 3 [(.google.api.field behavior) = OPTIONAL]; Parameter Name Description builderForValue Filter.Builder Returns Type Description Budget.Builder setDisplayName(String value) public Budget .
 

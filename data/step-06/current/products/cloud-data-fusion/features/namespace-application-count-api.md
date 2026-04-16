@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:04:57.761Z"
+generated_at: "2026-04-15T00:42:45.373Z"
 product_name: "Cloud Data Fusion"
 product_slug: "cloud-data-fusion"
 feature_name: "Namespace application count API"
 feature_slug: "namespace-application-count-api"
 latest_feature_date: "2025-08-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/data-fusion/docs/release-notes"
-  - "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard"
+  - "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref"
   - "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference"
+  - "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
 keywords:
   - "namespace"
   - "application"
   - "count"
-  - "api"
-  - "new"
   - "was"
   - "introduced"
-  - "to"
+  - "retrieve"
+  - "per"
+  - "fusion"
 ---
 
 # Namespace application count API
 
 Product: Cloud Data Fusion
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,55 @@ A new API was introduced to retrieve application count per namespace in Cloud Da
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/data-fusion/docs/release-notes](https://docs.cloud.google.com/data-fusion/docs/release-notes)
-- [https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard](https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard)
+- [https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref](https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref)
 - [https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference](https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference)
+- [https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc](https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc)
 
 ## Supporting Pages
 
-### Cloud Data Fusion release notes \_|\_ Google Cloud Documentation
+### Replication API reference \_|\_ Cloud Data Fusion \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/data-fusion/docs/release-notes](https://docs.cloud.google.com/data-fusion/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- A new API is available to retrieve the application count for each namespace ( CDAP-21161 ).
-- Deprecated The following APIs for downloading system service and pipeline run logs are deprecated in 6.11.0: GET /v3/namespaces/<NAMESPACE ID>/apps/<APP ID>/<PROGRAM TYPE>/<PROGRAM ID>/logs GET /v3/system/services/<SERVICE ID>/logs Deprecated The ability to retrieve all applications without pagination using the GET /v3/namespaces/<NAMESPACE ID>/apps endpoint is deprecated in 6.11.0.
-- This release includes the following feature: InstanceV3 monitored-resource: Introduced datafusion.googleapis.com/InstanceV3 as the default monitored resource for instance-level metrics and system service logs.
-- To address backward compatibility for these changes, two new hidden fields are introduced in Oracle batch source configurations: treatPrecisionlessNumAsDeci and treatAsOldTimestamp .
-
-### "Create a pipeline monitoring dashboard using Cloud Monitoring \_|\_ Cloud\
-
-- URL: [https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard](https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard)
-- Source ID: `site-iam-reference`
-- Final score: 148
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref](https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref)
+- Source ID: `site-api-reference`
+- Final score: 98
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Enable the APIs To create custom dashboards, you must be granted the Monitoring Editor ( roles/monitoring.editor ) IAM role on the service account.
-- If you're new to Google Cloud, create an account to evaluate how our products perform in real-world scenarios.
-- Label name Label type Field name Project STRING resource.labels.project id Message STRING jsonPayload.message LoggerName STRING labels.loggerName ClusterName STRING resource.labels.cluster name SparkPhase STRING labels.".workflowSparkId" Region STRING resource.labels.region Pipeline STRING labels.".applicationId" RunId STRING labels.".runId" Namespace STRING labels.".namespaceId" LogLevel STRING labels.levelName Click Create metric .
-- Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.
+- If your pipeline belongs to an Enterprise edition instance, you can create a namespace . replicator-name Replicator name Example Config The following (partial) config of the app is sent in the API request body: { "name": "my-sample-pipeline", "artifact": { "name": "delta-app", "version": "0.6.2", "scope": "SYSTEM" }, "config": { "connections": [ { "from": "Oracle (by Datastream)", "to": "BigQuery" } ], "stages": [ { "name": "Oracle (by Datastream)", "plugin": { "name": "OracleDatastream", "type": "cdcSource", "artifact": { "name": "datastream-delta-plugins", "version": "0.4.2", "scope": "SYSTEM" }, "properties": { "usingExistingStream": "false", "region": "us-central1", "connectivityMethod": "ip-allowlisting", "port": "1521", "sid": "ORCL", "replicateExistingData": "true", "project": "auto-detect", "dsServiceAccountKey": "auto-detect", "gcsServiceAccountKey": "auto-detect", "host": " ", "user": " ", "password": " " } } }, { "name": "BigQuery", "plugin": { "name": "bigquery", "type": "cdcTarget", "artifact": { "name": "bigquery-delta-plugins", "version": "0.6.3", "scope": "SYSTEM" }, "properties": { "project": "auto-detect", "serviceAccountKey": "auto-detect", "stagingBucketLocation": "us", "loadInterval": "90", "stagingTablePrefix": " staging ", "requireManualDrops": "false", "softDeletes": "false", "datasetName": "mysampledataset" } } } ], "tables": [ { "database": "ORCL", "table": "MYTABLE1", "schema": "HR" }, { "database": "ORCL", "table": "MYTABLE2", "schema": "HR" } ], "parallelism": { "numInstances": 1 }, "tableTransformations": [] } } Contents of the replication job config depend on the Cloud Data Fusion instance and plugin versions.
+- If your pipeline belongs to a Basic edition instance, the namespace ID is always default . replicator-name Replicator name See the CDAP application detail API for more information.
+- POST -H "Authorization: Bearer ${AUTH TOKEN}" "${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ replicator-name /workers/DeltaWorker/start" Parameter Description namespace-id The namespace of the replication job to start.
+- POST -H "Authorization: Bearer ${AUTH TOKEN}" "${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ replicator-name /workers/DeltaWorker/stop" Parameter Description namespace-id The namespace of the replication job to stop.
 
 ### CDAP reference \_|\_ Cloud Data Fusion \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference](https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference)
 - Source ID: `site-api-reference`
-- Final score: 124
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 97
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- GET -H "Authorization: Bearer ${AUTH TOKEN}" "${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /workflows/DataPipelineWorkflow/runs Records of a batch pipeline run GET -H "Authorization: Bearer ${AUTH TOKEN}" "${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /workflows/DataPipelineWorkflow/runs/ run-id Parameter Description namespace-id The namespace ID must either be the name of the namespace when it was created or default , which is the name of the default namespace. pipeline-name run-id To find the run ID, see Batch pipeline run records , which returns a list of run IDs.
-- GET -H "Authorization: Bearer ${AUTH TOKEN}" "${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /workflows/DataPipelineWorkflow/runs/ run-id /logs?start= start-ts &stop= stop-ts " Parameter Description / value namespace-id The namespace ID must either be the name of the namespace when it was created or default , which is the name of the default namespace. pipeline-name Your pipeline name. run-id Relevant only if you want to view logs of a specific pipeline run.
-- POST -H "Authorization: Bearer ${AUTH TOKEN}" "${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /workflows/DataPipelineWorkflow/start" Parameter Description / value namespace-id The namespace ID must either be the name of the namespace when it was created or default , which is the name of the default namespace. pipeline-name Your pipeline name.
-- POST -H "Authorization: Bearer ${AUTH TOKEN}" "${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /workflows/DataPipelineWorkflow/stop" Parameter Description / value namespace-id The namespace ID must either be the name of the namespace when it was created or default , which is the name of the default namespace. pipeline-name Your pipeline name.
+- PATCH -H 'Content-Type: application/json' -H "Authorization: Bearer ${AUTH TOKEN}" 'https://datafusion.googleapis.com/v1beta1/projects/ project-id /locations/ region /instances/ instance-name ?updateMask=options' -d '{ "options": { "enable.unrecoverable.reset": "true" } }' After the enable.unrecoverable.reset property is set to true , restart the instance: gcloud beta data-fusion instances restart --project= project-id --location= region instance-name Delete the namespace with the following DELETE request or in the web interface.
+- PATCH -H 'Content-Type: application/json' -H "Authorization: Bearer ${AUTH TOKEN}" 'https://datafusion.googleapis.com/v1beta1/projects/ project-id /locations/ region /instances/ instance-name ?updateMask=options' -d '{ "options": { "enable.unrecoverable.reset": "false" } }' Parameter Description project-id The project ID that hosts the Cloud Data Fusion instance. region The location of your Cloud Data Fusion instance. instance-name The Cloud Data Fusion instance name. namespace-id The name of the namespace to delete.
+- Retrieve pipelines Retrieve all pipelines To list Cloud Data Fusion pipelines in the specified namespace, submit the following HTTP GET request.
+- Retrieve real-time pipelines To list Cloud Data Fusion real-time pipelines in the specified namespace, submit the following HTTP GET request.
+
+### "Dataproc provisioner properties \_|\_ Cloud Data Fusion \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc](https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc)
+- Source ID: `site-iam-reference`
+- Final score: 75
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This property was introduced in Cloud Data Fusion version 6.9.2.
+- This property was introduced in Cloud Data Fusion version 6.9.2.
+- Dataproc profile web interface properties mapped to JSON properties Dataproc profile UI property name Dataproc profile JSON property name Profile label name Profile name label Description description Project ID projectId Creator service account key accountKey Region region Zone zone Network network Network host project ID networkHostProjectId Subnet subnet Runner service account serviceAccount Number of masters masterNumNodes Master machine type masterMachineType Master cores masterCPUs Master memory (GB) masterMemoryMB Master disk size (GB) masterDiskGB Master disk type masterDiskType Number of primary workers workerNumNodes Number of secondary workers secondaryWorkerNumNodes Worker machine type workerMachineType Worker cores workerCPUs Worker memory (GB) workerMemoryMB Worker disk size (GB) workerDiskGB Worker disk type workerDiskType Metadata clusterMetaData Network tags networkTags Enable Secure Boot secureBootEnabled Enable vTPM vTpmEnabled Enable Integrity Monitoring integrityMonitoringEnabled Image version imageVersion Custom image URI customImageUri Cloud Storage bucket gcsBucket Encryption key name encryptionKeyName Autoscaling policy autoScalingPolicy Initialization actions initActions Cluster properties clusterProperties Labels clusterLabels Max idle time idleTTL Skip cluster delete skipDelete Enable Stackdriver Logging Integration stackdriverLoggingEnabled Enable Stackdriver Monitoring Integration stackdriverMonitoringEnabled Enable Component Gateway componentGatewayEnabled Prefer external IP preferExternalIP Create poll delay pollCreateDelay Create poll jitter pollCreateJitter Delete poll delay pollDeleteDelay Poll interval pollInterval Best Practices When you create a static cluster for your pipelines, refer to the cluster configuration best practices .
+- Home Documentation Data analytics Cloud Data Fusion Guides Send feedback Dataproc provisioner properties Stay organized with collections Save and categorize content based on your preferences.
 

@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:56:14.520Z"
+generated_at: "2026-04-15T00:53:15.657Z"
 product_name: "Google SecOps SIEM"
 product_slug: "google-secops-siem"
 feature_name: "Chronicle forwarder signing key rotation"
 feature_slug: "chronicle-forwarder-signing-key-rotation"
 latest_feature_date: "2023-04-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
   - "https://docs.cloud.google.com/chronicle/docs/deprecations"
-  - "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+  - "https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview"
+  - "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact"
 keywords:
   - "chronicle"
   - "forwarder"
   - "signing"
   - "key"
   - "rotation"
-  - "the"
   - "rotates"
   - "every"
+  - "six"
 ---
 
 # Chronicle forwarder signing key rotation
 
 Product: Google SecOps SIEM
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,66 +38,53 @@ The Chronicle forwarder signing key rotates every six months for security.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
 - [https://docs.cloud.google.com/chronicle/docs/deprecations](https://docs.cloud.google.com/chronicle/docs/deprecations)
-- [https://docs.cloud.google.com/chronicle/docs/administration/feed-management](https://docs.cloud.google.com/chronicle/docs/administration/feed-management)
+- [https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview](https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview)
+- [https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact](https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact)
 
 ## Supporting Pages
-
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 132
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- This release also includes the following updates: The forwarder signing key will be rotated every 6 months for security.
-- The corresponding documentation on the Container Registry key for the Linux version of the Chronicle Forwarder has also been removed.
-- You must update the Chronicle forwarder for Windows on Docker image every 6 months.
-- The following new fields were added to the Smtp object: helo mail from rcpt to server response message path is webmail is tls For a list of all fields in the Unified Data Model, and their descriptions, see the Unified Data Model field list June 29, 2022 Change Chronicle Forwarder configuration on Linux has been updated to include two separate configuration files.
-
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-api-reference`
-- Final score: 120
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- For example: Old rule name: ATI Active Breach Rule Match for File IoCs (SHA256) New rule name: ATI Active Breach Rule Match for File IoCs (about.file.sha256) March 26, 2025 Announcement The managed BigQuery resources and API keys associated with the chronicle-tla Google Cloud project will be fully deprecated by April 30, 2025.
-- The Chronicle SecOps platform enables security analysts to analyze and mitigate a security threat throughout its lifecycle by employing the following capabilities: Collection : Data is ingested into the platform using software forwarders, parsers, connectors, and webhooks.
-- Feature Forwarder troubleshooting guide is now available to help you diagnose and resolve common issues that may arise while using the Chronicle Linux forwarder.
-- The following are key dates to note: Apr 1, 2026 : New Google SecOps customers cannot use the forwarder component.
 
 ### "Feature deprecations \_|\_ Google Security Operations \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/deprecations](https://docs.cloud.google.com/chronicle/docs/deprecations)
 - Source ID: `site-api-reference`
-- Final score: 96
+- Final score: 73
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- BigQuery data lake December 31, 2024 April 30, 2025 The shutdown of managed BigQuery resources and API keys associated with the chronicle-tla Google Cloud project has been extended to April 30, 2025.
-- The managed BigQuery resources and API keys associated with the chronicle-tla Google Cloud project will be fully decommissioned by March 31, 2025.
-- The following are key dates to note: Apr 1, 2026 : New Google SecOps customers cannot use the forwarder component.
 - Chronicle BigQuery udm events table July 01, 2023 August 01, 2023 On or after July 1, 2023, the existing udm events table in Chronicle-managed BigQuery projects will be fully replaced with a new table named events .
+- Google Security Operations forwarder executable for Windows April 04, 2023 March 31, 2024 On or after March 31, 2024, existing Google Security Operations forwarder executable for Windows will be removed.
+- BigQuery data lake December 31, 2024 April 30, 2025 The shutdown of managed BigQuery resources and API keys associated with the chronicle-tla Google Cloud project has been extended to April 30, 2025.
+- SOAR IAM Roles February 23, 2026 August 23, 2026 The chronicle.soarAnalyst , chronicle.soarViewer , and chronicle.soarEngineer roles in Cloud IAM are deprecated and will be removed.
 
-### "Use the Feed Management UI \_|\_ Google Security Operations \_|\_ Google\
+### "Google SecOps APIs and libraries overview \_|\_ Google Security Operations\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/administration/feed-management](https://docs.cloud.google.com/chronicle/docs/administration/feed-management)
-- Source ID: `site-docs-root`
-- Final score: 84
+- URL: [https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview](https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview)
+- Source ID: `site-api-reference`
+- Final score: 67
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Google SecOps recommends using the unified Chronicle API for the modern platform, case management and response workflows that provide a secure, compliant and extensible experience.
+- Google SecOps recommends using the newer generation Chronicle API because it improves and expands on the functionality offered by Ingestion API.
+- It includes the Feed Management, Detection Engine, Search, Forwarder Management, Data Export and Customer Management APIs.
+- Google SecOps recommends using the newer generation Chronicle API for a more robust, secure, and extensible experience.
+
+### "Impact of data RBAC on Google SecOps features \_|\_ Google Security Operations\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact](https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 65
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Restrict the API key access to the Chronicle API.
-- Restrict the API key access to the Chronicle API.
-- Send multiple events in a single webhook request The following code sample shows how to format a single request body with multiple, newline-separated JSON objects after the curl --location item: --header 'Content-Type: application/json' \ --header 'X-goog-api-key: API KEY' \ --header 'X-Webhook-Access-Key: SECRET' \ --data '{"principal": {"asset id": "asset 123"}, "metadata": {"event type": "GENERIC EVENT", "product name": "Product Acme"}} {"principal": {"asset id": "asset 123"}, "metadata": {"event type": "GENERIC EVENT", "product name": "Product Acme"}}' Create an HTTPS webhook feed In the Google SecOps menu, select Settings , and then click Feeds .
-- Specify the endpoint URL In Amazon Data Firehose, specify the HTTPS endpoint and access key, as follows: Append the API key to the feed endpoint URL and specify this URL as the HTTP endpoint URL in the following format: ENDPOINT URL ?key= API KEY Replace the following: ENDPOINT URL : the feed endpoint URL.
+- Data RBAC impacts rules in the following ways: Data RBAC is enabled before assigning scopes to rules: all existing rules are automatically assigned global scope.
+- Data RBAC is enabled after assigning scopes to rules : scoped rules operate on ingested data according to their defined scopes, even before data RBAC is enabled.
+- Assigning scopes to a reference list (scoped list) restricts its access to specific users and resources such as rules and UDM search.
+- Note: Users or service accounts that need access to global scope data, must have chronicle.globalDataAccessScopes.permit permission.
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.025Z"
+generated_at: "2026-04-12T12:11:20.229Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Composer Beta API upgrade-to-latest-three-versions option"
 feature_slug: "composer-beta-api-upgrade-to-latest-three-versions-option"
 latest_feature_date: "2020-08-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/composer/docs/reference/rest"
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3"
+  - "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/checkUpgrade"
 keywords:
   - "composer"
   - "beta"
@@ -26,7 +27,7 @@ keywords:
 # Composer Beta API upgrade-to-latest-three-versions option
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +39,36 @@ The Composer Beta API now allows upgrading an environment to any of the three la
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/composer/docs/reference/rest](https://docs.cloud.google.com/composer/docs/reference/rest)
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
+- [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/checkUpgrade](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/checkUpgrade)
 
 ## Supporting Pages
+
+### Cloud Composer API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest](https://docs.cloud.google.com/composer/docs/reference/rest)
+- Source ID: `site-docs-reference`
+- Final score: 229
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://composer.googleapis.com REST Resource: v1beta1.projects.locations.environments Methods checkUpgrade POST /v1beta1/{environment=projects/ /locations/ /environments/ }:checkUpgrade Check if an upgrade operation on the environment will succeed. create POST /v1beta1/{parent=projects/ /locations/ }/environments Create a new environment. databaseFailover POST /v1beta1/{environment=projects/ /locations/ /environments/ }:databaseFailover Triggers database failover (only for highly resilient environments). delete DELETE /v1beta1/{name=projects/ /locations/ /environments/ } Delete an environment. executeAirflowCommand POST /v1beta1/{environment=projects/ /locations/ /environments/ }:executeAirflowCommand Executes Airflow CLI command. fetchDatabaseProperties GET /v1beta1/{environment=projects/ /locations/ /environments/ }:fetchDatabaseProperties Fetches database properties. get GET /v1beta1/{name=projects/ /locations/ /environments/ } Get an existing environment. list GET /v1beta1/{parent=projects/ /locations/ }/environments List environments. loadSnapshot POST /v1beta1/{environment=projects/ /locations/ /environments/ }:loadSnapshot Loads a snapshot of a Cloud Composer environment. patch PATCH /v1beta1/{name=projects/ /locations/ /environments/ } Update an environment. pollAirflowCommand POST /v1beta1/{environment=projects/ /locations/ /environments/ }:pollAirflowCommand Polls Airflow CLI command execution and fetches logs. restartWebServer POST /v1beta1/{name=projects/ /locations/ /environments/ }:restartWebServer Restart Airflow web server. saveSnapshot POST /v1beta1/{environment=projects/ /locations/ /environments/ }:saveSnapshot Creates a snapshots of a Cloud Composer environment. stopAirflowCommand POST /v1beta1/{environment=projects/ /locations/ /environments/ }:stopAirflowCommand Stops Airflow CLI command execution.
+- REST Resource: v1beta1.projects.locations.environments REST Resource: v1beta1.projects.locations.environments.userWorkloadsConfigMaps REST Resource: v1beta1.projects.locations.environments.userWorkloadsSecrets REST Resource: v1beta1.projects.locations.environments.workloads REST Resource: v1beta1.projects.locations.imageVersions REST Resource: v1beta1.projects.locations.operations REST Resource: v1.projects.locations.environments REST Resource: v1.projects.locations.environments.userWorkloadsConfigMaps REST Resource: v1.projects.locations.environments.userWorkloadsSecrets REST Resource: v1.projects.locations.environments.workloads REST Resource: v1.projects.locations.imageVersions REST Resource: v1.projects.locations.operations Service: composer.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects.locations.environments Methods checkUpgrade POST /v1/{environment=projects/ /locations/ /environments/ }:checkUpgrade Check if an upgrade operation on the environment will succeed. create POST /v1/{parent=projects/ /locations/ }/environments Create a new environment. databaseFailover POST /v1/{environment=projects/ /locations/ /environments/ }:databaseFailover Triggers database failover (only for highly resilient environments). delete DELETE /v1/{name=projects/ /locations/ /environments/ } Delete an environment. executeAirflowCommand POST /v1/{environment=projects/ /locations/ /environments/ }:executeAirflowCommand Executes Airflow CLI command. fetchDatabaseProperties GET /v1/{environment=projects/ /locations/ /environments/ }:fetchDatabaseProperties Fetches database properties. get GET /v1/{name=projects/ /locations/ /environments/ } Get an existing environment. list GET /v1/{parent=projects/ /locations/ }/environments List environments. loadSnapshot POST /v1/{environment=projects/ /locations/ /environments/ }:loadSnapshot Loads a snapshot of a Cloud Composer environment. patch PATCH /v1/{name=projects/ /locations/ /environments/ } Update an environment. pollAirflowCommand POST /v1/{environment=projects/ /locations/ /environments/ }:pollAirflowCommand Polls Airflow CLI command execution and fetches logs. restartWebServer POST /v1/{name=projects/ /locations/ /environments/ }:restartWebServer Restart Airflow web server. saveSnapshot POST /v1/{environment=projects/ /locations/ /environments/ }:saveSnapshot Creates a snapshots of a Cloud Composer environment. stopAirflowCommand POST /v1/{environment=projects/ /locations/ /environments/ }:stopAirflowCommand Stops Airflow CLI command execution.
+- This service provides the following discovery documents: https://composer.googleapis.com/$discovery/rest?version=v1 https://composer.googleapis.com/$discovery/rest?version=v1beta1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.
 
 ### Cloud Composer version list \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 180
+- Final score: 228
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +77,11 @@ Evidence snippets:
 - Example of upgrade choices for Google Cloud CLI, API, and Terraform: Latest versions: composer-2.11.5-airflow- Three previous Cloud Composer 2 versions: composer-2.11.4-airflow- , composer-2.11.3-airflow- , composer-2.11.2-airflow- .
 - Versions with disabled upgrades For some versions of Cloud Composer images, it is not possible to upgrade an environment to a later version: composer-1.7.7-airflow-1.10.2 composer-1.7.7-airflow-1.10.1 composer-1.7.7-airflow-1.9.0 If you use a version with disabled upgrades, we recommend to create a new environment side-by-side, then migrate all your DAGs to the new environment.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 176
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- With the Composer Beta API, you can now upgrade an environment to any of the three latest Composer versions (instead of just the latest).
-- Change (Airflow 2.10.2 and 2.9.3) The following preinstalled provider packages were upgraded to new major versions: apache-airflow-providers-apache-beam upgraded from 5.9.1 to 6.0.0 apache-airflow-providers-dbt-cloud upgraded from 3.11.2 to 4.0.0 apache-airflow-providers-hashicorp upgraded from 3.8.0 to 4.0.0 apache-airflow-providers-http upgraded from 4.13.3 to 5.0.0 apache-airflow-providers-mysql upgraded from 5.7.4 to 6.0.0 apache-airflow-providers-sendgrid upgraded from 3.6.0 to 4.0.0 apache-airflow-providers-sqlite upgraded from 3.9.1 to 4.0.0 apache-airflow-providers-ssh upgraded from 3.14.0 to 4.0.0 Change (Airflow 2.10.2 and 2.9.3) The apache-airflow-providers-cncf-kubernetes package was upgraded to version 10.1.0 in Cloud Composer 2 images and Cloud Composer 3 builds.
-- November 24, 2025 Issue We discovered an issue that might impact the reporting of metrics in the following recently released Cloud Composer versions: composer-2.15.4-airflow- composer-3-airflow-2.10.5-build.20 composer-3-airflow-2.9.3-build.40 composer-3-airflow-3.1.0-build.3 To prevent additional environments from being affected, we have disabled the ability to upgrade existing environments to these versions and to create new environments using these versions.
-- Change Cloud Composer 1.18.11 and 2.0.15 images are available: composer-1.18.11-airflow-1.10.15 (default) composer-1.18.11-airflow-2.1.4 composer-1.18.11-airflow-2.2.5 composer-2.0.15-airflow-2.1.4 composer-2.0.15-airflow-2.2.5 May 26, 2022 Deprecated (Airflow 2) If your DAGs use the google-ads package version 14.0.0 or earlier, please upgrade your environment to Cloud Composer version 2.0.14 so that your environment uses Google Ads API v10 .
-
 ### "Migrate to Cloud Composer\_3 from Cloud Composer\_1 (Airflow 2) \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
 - Source ID: `site-docs-reference`
-- Final score: 172
+- Final score: 208
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +89,18 @@ Evidence snippets:
 - COMPOSER 1 LOCATION with the region where the environment is located. (Airflow versions 2.9.1 and later) If there are quota errors while pausing a large number of DAGs, you can use the following Airflow CLI commands to pause all DAGs at once: gcloud composer environments run COMPOSER 1 ENV dags pause \ --project PROJECT ID \ --location COMPOSER 1 LOCATION \ -- -y --treat-dag-id-as-regex ". " (Airflow versions earlier than 2.9.1) If there are quota errors while pausing a large number of DAGs, it's possible to pause DAGs using the Airflow REST API .
 - It is not possible to upgrade from Cloud Composer 1 to Cloud Composer 3 in-place.
 - Other migration guides From To Method Guide Cloud Composer 2 Cloud Composer 3 Side-by-side, using the migration script Script migration guide Cloud Composer 2 Cloud Composer 3 Side-by-side, using snapshots Snapshots migration guide Cloud Composer 1, Airflow 2 Cloud Composer 3 Side-by-side, using snapshots This guide Cloud Composer 1, Airflow 2 Cloud Composer 2 Side-by-side, using snapshots Snapshots migration guide Cloud Composer 1, Airflow 2 Cloud Composer 2 Side-by-side, manual transfer Manual migration guide Cloud Composer 1, Airflow 1 Cloud Composer 2, Airflow 2 Side-by-side, using snapshots Snapshots migration guide Cloud Composer 1, Airflow 1 Cloud Composer 2, Airflow 2 Side-by-side, manual transfer Manual migration guide Cloud Composer 1, Airflow 1 Cloud Composer 1, Airflow 2 Side-by-side, manual transfer Manual migration guide Before you begin Cloud Composer supports side-by-side migration from Cloud Composer 1 to Cloud Composer 3.
+
+### "Method: projects.locations.environments.checkUpgrade \_|\_ Cloud Composer\
+
+- URL: [https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/checkUpgrade](https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/checkUpgrade)
+- Source ID: `site-docs-reference`
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The resource name of the environment to check upgrade for, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" Authorization requires the following IAM permission on the specified resource environment : composer.environments.update Request body The request body contains data with the following structure: JSON representation { "imageVersion" : string } Fields imageVersion string Optional.
+- HTTP request POST https://composer.googleapis.com/v1/{environment=projects/ /locations/ /environments/ }:checkUpgrade The URL uses gRPC Transcoding syntax.
+- Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/cloudcomposer https://www.googleapis.com/auth/cloud-platform For more information, see the Authentication Overview .
+- Home Documentation Data analytics Cloud Composer Reference Send feedback Method: projects.locations.environments.checkUpgrade Stay organized with collections Save and categorize content based on your preferences.
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T23:03:42.254Z"
+generated_at: "2026-04-12T12:11:52.999Z"
 product_name: "Cloud NGFW"
 product_slug: "cloud-ngfw"
 feature_name: "Custom constraints for VPC firewall rule resources"
 feature_slug: "custom-constraints-for-vpc-firewall-rule-resources"
 latest_feature_date: "2023-06-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/firewall/docs/custom-constraints"
   - "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs"
   - "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+  - "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
 keywords:
   - "custom"
   - "constraints"
@@ -26,7 +27,7 @@ keywords:
 # Custom constraints for VPC firewall rule resources
 
 Product: Cloud NGFW
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Custom constraints provide granular and customizable control over specific field
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/firewall/docs/custom-constraints](https://docs.cloud.google.com/firewall/docs/custom-constraints)
 - [https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs](https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs)
 - [https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups](https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups)
+- [https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc](https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/firewall/docs/custom-constraints](https://docs.cloud.google.com/firewall/docs/custom-constraints)
 - Source ID: `site-docs-root`
-- Final score: 280
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 349
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Cloud NGFW supported resources For VPC firewall rules , you can set custom constraints on the following resources and fields.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs](https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs)
 - Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This section describes how to perform the following tasks: Create an RoCE VPC network Create a regional network firewall policy that works with the RoCE VPC network Create rules in the regional network firewall policy Associate the regional network firewall policy with the RoCE VPC network Before you begin Make sure that you review the supported and unsupported features in VPC networks with an RDMA network profile.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups](https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups)
 - Source ID: `site-docs-root`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 218
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Click Create . gcloud To let IAP access the VM instances in the vpc-producer network, run the following command: To create a firewall policy, run the following command: gcloud compute network-firewall-policies create fw-policy-addressgrp \ --global To create a firewall rule that allows traffic to all destinations and enables logs, run the following command: gcloud compute network-firewall-policies rules create 100 \ --firewall-policy=fw-policy-addressgrp \ --direction=INGRESS \ --action=ALLOW \ --layer4-configs=tcp:22 \ --src-ip-ranges=35.235.240.0/20 \ --global-firewall-policy To associate the firewall policy with the producer VPC network, run the following command: gcloud compute network-firewall-policies associations create \ --firewall-policy=fw-policy-addressgrp \ --network=vpc-producer \ --name=pol-association-vpc-producer \ --global-firewall-policy To associate the firewall policy with the consumer VPC network, run the following command: gcloud compute network-firewall-policies associations create \ --firewall-policy=fw-policy-addressgrp \ --network=vpc-consumer \ --name=pol-association-vpc-consumer \ --global-firewall-policy Create a project-scoped address group Create a project-scoped address group that uses the IP address assigned to the subnet-consumer-allowed subnet of the vpc-consumer VPC network.
 - It walks through an example of creating a Virtual Private Cloud (VPC) network with subnets, creating a project-scoped address group, setting up a firewall policy that uses the address group with firewall rules, and then testing the firewall rules.
 - In the Hit count column, select the number for the rule you created during Add a firewall rule to allow traffic to an address group .
 - For conceptual information about firewall policy rules, see Firewall policy rule components .
+
+### "Configure a hierarchical firewall policy to allow egress traffic from a\
+
+- URL: [https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc](https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc)
+- Source ID: `site-docs-root`
+- Final score: 210
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To verify that the egress traffic from testvpc-vm to testvpc-apache-vm is blocked, run the following command: curl < internal IP testvpc apache vm > -m 2 The preceding command returns a Connection timed out message, which is expected because you created a firewall rule to deny egress traffic from all VPC networks in the organization except from myvpc .
+- Add a firewall rule to enable IAP in all the VMs in the test-folder To enable IAP to connect to all the VMs in the test-folder , you need a firewall rule in the hierarchical firewall policy with the following characteristics: Applies to all VMs in the test-folder that you want to be accessible by using IAP TCP forwarding.
+- Add a firewall rule to delegate the egress traffic from the myvpc network to the next rule in the hierarchy Add a firewall rule that uses the goto next action to delegate the egress traffic from the myvpc network to the next rule in the firewall, which is the implied IPv4 allow egress VPC firewall rule.
+- Add a firewall rule to allow ingress traffic in the test-vpc network Add a firewall rule to allow incoming HTTP web traffic on TCP port 80 to all VMs in the test-vpc network: In the Google Cloud console, go to the Firewall policies page.
 

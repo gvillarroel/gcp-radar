@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:11:59.755Z"
+generated_at: "2026-04-12T12:14:04.327Z"
 product_name: "Datastream"
 product_slug: "datastream"
 feature_name: "Terraform support for connection profile resources"
 feature_slug: "terraform-support-for-connection-profile-resources"
 latest_feature_date: "2023-02-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastream/docs/create-connection-profiles"
+  - "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create"
   - "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics"
   - "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager"
 keywords:
@@ -25,7 +26,7 @@ keywords:
 # Terraform support for connection profile resources
 
 Product: Datastream
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,11 +38,12 @@ Terraform supports Datastream connection profile resources.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastream/docs/create-connection-profiles](https://docs.cloud.google.com/datastream/docs/create-connection-profiles)
+- [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create)
 - [https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics](https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics)
 - [https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager](https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager)
 
@@ -51,9 +53,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastream/docs/create-connection-profiles](https://docs.cloud.google.com/datastream/docs/create-connection-profiles)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 229
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - In this section, you learn how to create the following connection profiles: A connection profile to an Oracle , a MySQL , SQL Server , PostgreSQL , MongoDB and a Salesforce source A connection profile to destination datasets in BigQuery A connection profile to a destination bucket in Cloud Storage By creating these connection profiles, Datastream can transfer data from the source database into the destination.
@@ -61,11 +63,25 @@ Evidence snippets:
 - If you select this network connectivity method, then configure your source database to allow incoming connections from the Datastream public IP addresses for the region that you specified for the connection profile.
 - If you select this network connectivity method, then configure your source database to allow incoming connections from the Datastream public IP addresses for the region that you specified for the connection profile.
 
+### "Method: projects.locations.connectionProfiles.create \_|\_ Datastream \_\
+
+- URL: [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create)
+- Source ID: `site-api-reference`
+- Final score: 209
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- IAM Permissions Requires the following IAM permission on the parent resource: datastream.connectionProfiles.create For more information, see the IAM documentation .
+- Home Documentation Data analytics Datastream Reference Send feedback Method: projects.locations.connectionProfiles.create Stay organized with collections Save and categorize content based on your preferences.
+- Authorization requires the following IAM permission on the specified resource parent : datastream.connectionProfiles.create Query parameters Parameters connectionProfileId string Required.
+- HTTP request POST https://datastream.googleapis.com/v1/{parent}/connectionProfiles Path parameters Parameters parent string Required.
+
 ### Implement Datastream and Dataflow for analytics \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics](https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 203
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,9 +94,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager](https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager)
 - Source ID: `site-python-reference`
-- Final score: 161
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.datastream v1.types.ListConnectionProfilesRequest The initial request object. response google.cloud.datastream v1.types.ListConnectionProfilesResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.

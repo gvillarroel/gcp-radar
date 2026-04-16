@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.339Z"
+generated_at: "2026-04-12T12:19:43.314Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Vertex AI Agent Engine bidirectional streaming"
 feature_slug: "vertex-ai-agent-engine-bidirectional-streaming"
 latest_feature_date: "2025-09-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
@@ -27,7 +27,7 @@ keywords:
 # Vertex AI Agent Engine bidirectional streaming
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,7 +39,7 @@ Agent Engine supports bidirectional streaming for agent interactions.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming](https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming)
 - Source ID: `site-docs-root`
-- Final score: 302
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 338
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Note that the EXPERIMENTAL agent server mode is required for an agent that supports bidirectional streaming: remote live agent = client . agent engines . create ( agent = live agent , config = { "staging bucket" : STAGING BUCKET , "requirements" : [ "google-cloud-aiplatform[agent engines,adk]==1.88.0" , "cloudpickle==3.0" , "websockets" ], "agent server mode" : vertexai types .
@@ -68,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - Source ID: `site-docs-root`
-- Final score: 262
+- Final score: 280
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -81,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
 - Source ID: `site-docs-root`
-- Final score: 238
+- Final score: 256
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -94,7 +94,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview](https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview)
 - Source ID: `site-docs-root`
-- Final score: 234
+- Final score: 252
 - Re-rank relevance: N/A
 
 Evidence snippets:

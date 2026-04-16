@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:06.153Z"
+generated_at: "2026-04-12T12:13:34.773Z"
 product_name: "Data Catalog"
 product_slug: "data-catalog"
 feature_name: "Schema and column tags section"
@@ -11,6 +11,7 @@ coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates"
   - "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support"
+  - "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset"
   - "https://docs.cloud.google.com/iam/docs/deny-permissions-support"
 keywords:
   - "schema"
@@ -38,12 +39,13 @@ The table details page includes a Schema and column tags section for viewing app
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)
 - [https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)
+- [https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset](https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset)
 - [https://docs.cloud.google.com/iam/docs/deny-permissions-support](https://docs.cloud.google.com/iam/docs/deny-permissions-support)
 
 ## Supporting Pages
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)
 - Source ID: `site-docs-root`
-- Final score: 174
+- Final score: 220
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)
 - Source ID: `site-iam-reference`
-- Final score: 172
+- Final score: 216
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -76,11 +78,25 @@ Evidence snippets:
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 - The IAM REST API provides a queryTestablePermissions() method that lists the permissions that principals can have on a resource.
 
+### Tag a BigQuery table using Data Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset](https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset)
+- Source ID: `site-docs-root`
+- Final score: 215
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The tag fields are now listed in the Tags section in the BigQuery table details. gcloud Run the gcloud data-catalog tag-templates create command shown below to create a tag template with the following five tag fields: display name: Source of data asset id: source required: TRUE type: String display name: Number of rows in the data asset id: num rows required: FALSE type: Double display name: Has PII id: has pii required: FALSE type: Boolean display name: PII type id: pii type required: FALSE type: Enumerated values: EMAIL ADDRESS US SOCIAL SECURITY NUMBER NONE ------------------------------- Create a Tag Template. ------------------------------- gcloud data-catalog tag-templates create demo template \ --location=us-central1 \ --display-name="Demo Tag Template" \ --field=id=source,display-name="Source of data asset",type=string,required=TRUE \ --field=id=num rows,display-name="Number of rows in the data asset",type=double \ --field=id=has pii,display-name="Has PII",type=bool \ --field=id=pii type,display-name="PII type",type='enum(EMAIL ADDRESS US SOCIAL SECURITY NUMBER NONE)' ------------------------------- Lookup the Data Catalog entry for the table. ------------------------------- ENTRY NAME=$(gcloud data-catalog entries lookup '//bigquery.googleapis.com/projects/ PROJECT ID /datasets/ DATASET /tables/ TABLE ' --format="value(name)") ------------------------------- Attach a Tag to the table. ------------------------------- Create the Tag file. cat > tag file.json The location parameter specifies the Compute Engine resource region .
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " project-id " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json ` -Uri "https://datacatalog.googleapis.com/v1/projects/ project-id /locations/ region /entryGroups/@bigquery/entries/ entry-id /tags" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name":"projects/ project-id /locations/US/entryGroups/@bigquery/entries/ entry-id /tags/ tag-id ", "template":"projects/ project-id /locations/us-central1/tagTemplates/demo tag template", "fields":{ "pii type":{ "displayName":"PII type", "enumValue":{ "displayName":"NONE" } }, "has pii":{ "displayName":"Has PII", "boolValue":false }, "source":{ "displayName":"Source of data asset", "stringValue":"Copied from tlc yellow trips 2017" }, "num rows":{ "displayName":"Number of rows in data asset", "doubleValue":113496874 } }, "templateDisplayName":"Demo Tag Template" } Caution: Renaming the table in BigQuery deletes all the tags attached to it and its columns.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " project-id " } Invoke-WebRequest -Method GET -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://datacatalog.googleapis.com/v1/entries:lookup?linkedResource=//bigquery.googleapis.com/projects/ project-id /datasets/demo dataset/tables/trips" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ project-id /locations/US/entryGroups/@bigquery/entries/ entry-id ", "type": "TABLE", "schema": { "columns": [ { "type": "STRING", "description": "A code indicating the TPEP provider that provided the record.
+- 1= ", "mode": "REQUIRED", "column": "vendor id" }, ... ] }, "sourceSystemTimestamps": { "createTime": "2019-01-25T01:45:29.959Z", "updateTime": "2019-03-19T23:20:26.540Z" }, "linkedResource": "//bigquery.googleapis.com/projects/ project-id /datasets/demo dataset/tables/trips", "bigqueryTableSpec": { "tableSourceType": "BIGQUERY TABLE" } } Create a tag from the template and attach it to your BigQuery table Before using any of the request data, make the following replacements: project-id : Google Cloud project ID entry-id : Data Catalog entry ID for the Demo Dataset trips table (returned in the lookup results in the previous step).
+
 ### "Permissions supported in deny policies \_|\_ Identity and Access Management\
 
 - URL: [https://docs.cloud.google.com/iam/docs/deny-permissions-support](https://docs.cloud.google.com/iam/docs/deny-permissions-support)
 - Source ID: `site-iam-reference`
-- Final score: 170
+- Final score: 214
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

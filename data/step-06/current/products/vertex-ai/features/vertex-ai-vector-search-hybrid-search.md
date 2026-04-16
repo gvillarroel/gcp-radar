@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:05.264Z"
+generated_at: "2026-04-15T12:02:17.070Z"
 product_name: "Vertex AI"
 product_slug: "vertex-ai"
 feature_name: "Vertex AI Vector Search hybrid search"
 feature_slug: "vertex-ai-vector-search-hybrid-search"
 latest_feature_date: "2024-12-20"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart"
+  - "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search"
+  - "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens"
 keywords:
   - "vertex"
   - "ai"
@@ -18,13 +20,13 @@ keywords:
   - "hybrid"
   - "now"
   - "supports"
-  - "that"
+  - "combines"
 ---
 
 # Vertex AI Vector Search hybrid search
 
 Product: Vertex AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ Vector Search now supports hybrid search that combines semantic and keyword-styl
 
 Vector Search now supports hybrid search that combines semantic and keyword-style retrieval.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart](https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart)
+- [https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search](https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search)
+- [https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens](https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Vector Search quickstart \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart](https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart)
+- Source ID: `site-docs-reference-2`
+- Final score: 126
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To see an example of getting started with Vertex AI Vector Search, run the "Get started with Vertex AI Vector Search" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub In the Vertex AI Vector Search quickstart, learn how to create an index out of a sample dataset from a fictitious ecommerce clothing site.
+- The pricing of the Google Cloud services used in this tutorial are available in the following pages: Vertex AI Vector Search Cloud Storage Vertex AI Workbench You can also use the pricing calculator to generate a cost estimate based on your projected usage.
+- To learn more about how to create the embeddings from the data on a BigQuery table and store them in a JSON file, see Getting Started with Text Embeddings + Vertex AI Vector Search .
+- Home Documentation AI and ML Vertex AI Send feedback Vector Search quickstart Stay organized with collections Save and categorize content based on your preferences.
+
+### Search using embeddings \_|\_ Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search](https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search)
+- Source ID: `site-docs-reference-3`
+- Final score: 102
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Search nearest neighbor matches using a public endpoint If you've configured your online store instance to serve feature values using Optimized online serving from a public endpoint, you must do the following to retrieve approximate nearest neighbor matches: Retrieve the public endpoint domain name for the online store Retrieve nearest neighbor matches of an embedding or entity Retrieve the public endpoint domain name for the online store When you create an online store instance for Optimized online serving, Vertex AI Feature Store generates a public endpoint domain name for the online store.
+- For online store instances created for Optimized online serving, you can perform a vector similarity search to retrieve a list of semantically similar or related entities, also called approximate nearest neighbors.
+- Home Documentation AI and ML Vertex AI Send feedback Search using embeddings Stay organized with collections Save and categorize content based on your preferences.
+- For more information about how to create a feature view that supports embeddings, see Configure vector retrieval for a feature view .
+
+### "MCP Tools Reference: aiplatform.googleapis.com \_|\_ Vertex AI \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens](https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens)
+- Source ID: `site-api-reference`
+- Final score: 89
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information on filtering, see Filtering VertexRagStore JSON representation { "ragCorpora" : [ string ] , "ragResources" : [ { object ( RagResource ) } ] , "ragRetrievalConfig" : { object ( RagRetrievalConfig ) } , "storeContext" : boolean , // Union field similarity top k can be only one of the following: "similarityTopK" : integer // End of list of possible types for union field similarity top k . // Union field vector distance threshold can be only one of the following: "vectorDistanceThreshold" : number // End of list of possible types for union field vector distance threshold . } Fields ragCorpora[] (deprecated) string This item is deprecated!
+- PropertiesEntry JSON representation { "key" : string , "value" : { object ( Schema ) } } Fields key string value object ( Schema ) DefsEntry JSON representation { "key" : string , "value" : { object ( Schema ) } } Fields key string value object ( Schema ) Retrieval JSON representation { "disableAttribution" : boolean , // Union field source can be only one of the following: "vertexAiSearch" : { object ( VertexAISearch ) } , "vertexRagStore" : { object ( VertexRagStore ) } // End of list of possible types for union field source . } Fields disableAttribution (deprecated) boolean This item is deprecated!
+- The source of the retrieval. source can be only one of the following: vertexAiSearch object ( VertexAISearch ) Set to use data source powered by Vertex AI Search. vertexRagStore object ( VertexRagStore ) Set to use data source powered by Vertex RAG store.
+- HybridSearch JSON representation { // Union field alpha can be only one of the following: "alpha" : number // End of list of possible types for union field alpha . } Fields Union field alpha . alpha can be only one of the following: alpha number Optional.
 

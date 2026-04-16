@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors
+entrypoint: https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference
 source_metadata:
   url: https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.operations/get
   title: "Method: projects.locations.operations.get \_|\_ Config Sync \_|\_ Google\

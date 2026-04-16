@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T11:22:38.458Z"
+generated_at: "2026-04-14T17:27:28.315Z"
 product_name: "Earth Engine Server"
 product_slug: "earth-engine-server"
 feature_name: "ImageCollection.qualityMosaic"
 feature_slug: "imagecollection-qualitymosaic"
 latest_feature_date: "2013-01-31"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/docs/release-notes"
-  - "https://developers.google.com/earth-engine/guides/landsat"
+  - "https://developers.google.com/earth-engine/apidocs/ee-imagecollection-qualitymosaic"
   - "https://developers.google.com/earth-engine/guides/charts_image_collection"
+  - "https://developers.google.com/earth-engine/guides/debugging"
 keywords:
   - "imagecollection"
   - "qualitymosaic"
   - "composites"
-  - "an"
   - "image"
   - "collection"
-  - "using"
   - "quality"
+  - "band"
 ---
 
 # ImageCollection.qualityMosaic
 
 Product: Earth Engine Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +37,54 @@ ImageCollection.qualityMosaic composites an image collection using a quality ban
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- [https://developers.google.com/earth-engine/guides/landsat](https://developers.google.com/earth-engine/guides/landsat)
+- [https://developers.google.com/earth-engine/apidocs/ee-imagecollection-qualitymosaic](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-qualitymosaic)
 - [https://developers.google.com/earth-engine/guides/charts_image_collection](https://developers.google.com/earth-engine/guides/charts_image_collection)
+- [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
 
 ## Supporting Pages
 
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
+### ee.ImageCollection.qualityMosaic | Google Earth Engine | Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 160
+- URL: [https://developers.google.com/earth-engine/apidocs/ee-imagecollection-qualitymosaic](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-qualitymosaic)
+- Source ID: `feature-recovery-http`
+- Final score: 352
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Added ImageCollection.qualityMosaic() to composite a collection using a quality band.
-- November 24, 2015 Earth Engine Data Catalog Feature Added NOAA/PERSIANN-CDR : PERSIANN-CDR: Precipitation Estimation From Remotely Sensed Information Using Artificial Neural Networks-Climate Data Record November 19, 2015 Earth Engine Code Editor Feature Added support for creating and sharing ImageCollection assets, and for adding and removing Image assets to and from those collections.
-- Use ImageCollection.qualityMosaic() instead.
-- June 25, 2024 Earth Engine Data Catalog Feature Added CANADA/NFIS/NTEMS/CA FOREST AGE : Landsat-derived forest age for Canada 2019 Added LANDSAT/COMPOSITES/C02/T1 L2 32DAY BAI : Landsat Collection 2 Tier 1 Level 2 32-Day BAI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 32DAY EVI : Landsat Collection 2 Tier 1 Level 2 32-Day EVI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 32DAY NBR : Landsat Collection 2 Tier 1 Level 2 32-Day NBR Composite Added LANDSAT/COMPOSITES/C02/T1 L2 32DAY NDVI : Landsat Collection 2 Tier 1 Level 2 32-Day NDVI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 32DAY NDWI : Landsat Collection 2 Tier 1 Level 2 32-Day NDWI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 ANNUAL BAI : Landsat Collection 2 Tier 1 Level 2 Annual BAI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 ANNUAL EVI : Landsat Collection 2 Tier 1 Level 2 Annual EVI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 ANNUAL NBR : Landsat Collection 2 Tier 1 Level 2 Annual NBR Composite Added LANDSAT/COMPOSITES/C02/T1 L2 ANNUAL NDVI : Landsat Collection 2 Tier 1 Level 2 Annual NDVI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 ANNUAL NDWI : Landsat Collection 2 Tier 1 Level 2 Annual NDWI Composite June 18, 2024 Earth Engine Data Catalog Feature Added HU BERLIN/EPFD/V2/points : European Primary Forest Dataset - Points Added HU BERLIN/EPFD/V2/polygons : European Primary Forest Dataset - Polygons Added NASA/VIIRS/002/VNP09GA : VNP09GA: VIIRS Surface Reflectance Daily 500m and 1km Added NOAA/IBTrACS/v4 : International Best Track Archive for Climate Stewardship Project June 11, 2024 Earth Engine Data Catalog Feature Added LANDSAT/COMPOSITES/C02/T1 L2 8DAY BAI : Landsat Collection 2 Tier 1 Level 2 8-Day BAI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 8DAY EVI : Landsat Collection 2 Tier 1 Level 2 8-Day EVI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 8DAY NBR : Landsat Collection 2 Tier 1 Level 2 8-Day NBR Composite Added LANDSAT/COMPOSITES/C02/T1 L2 8DAY NDVI : Landsat Collection 2 Tier 1 Level 2 8-Day NDVI Composite Added LANDSAT/COMPOSITES/C02/T1 L2 8DAY NDWI : Landsat Collection 2 Tier 1 Level 2 8-Day NDWI Composite June 07, 2024 Earth Engine Server Breaking Changed the way that the ee.Image.loadGeoTIFF() algorithm and COG-backed assets select lower resolution overviews if a GeoTIFF is missing pyramid levels.
-
-### Landsat Algorithms \_|\_ Google Earth Engine \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/guides/landsat](https://developers.google.com/earth-engine/guides/landsat)
-- Source ID: `site-docs-reference`
-- Final score: 154
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Map . setCenter ( - 122.3578 , 37.7726 , 10 ); Map . addLayer ( composite , { bands : [ 'B4' , 'B3' , 'B2' ], max : 128 }, 'TOA composite' ); Map . addLayer ( customComposite , { bands : [ 'B4' , 'B3' , 'B2' ], max : 128 }, 'Custom TOA composite' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a raw Landsat 5 ImageCollection for a single year. collection = ee .
-- This example creates a simple composite using default parameters and compares it to a composite using custom parameters for the cloud score threshold and the percentile: Code Editor (JavaScript) // Load a raw Landsat 5 ImageCollection for a single year. var collection = ee .
-- ImageCollection ( 'LANDSAT/LC09/C02/T1 L2' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) surface reflectance l4 = ee .
-- ImageCollection ( 'LANDSAT/LC09/C02/T1 L2' ) Simple cloud score For scoring Landsat pixels by their relative cloudiness, Earth Engine provides a rudimentary cloud scoring algorithm in the ee.Algorithms.Landsat.simpleCloudScore() method. (For details on the implementation, see this Code Editor sample script ).
+- Nutzung Ausgabe ImageCollection. qualityMosaic (qualityBand) Bild Argument Typ Details So gehts: collection ImageCollection Die Sammlung, die mosaikiert werden soll. qualityBand String Der Name des Qualitätsbereichs in der Sammlung.
+- ee.ImageCollection.qualityMosaic | Google Earth Engine | Google for Developers Zum Hauptinhalt springen Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Anmelden Startseite Leitfäden Referenzen Support Community Data Catalog Earth Engine Startseite Leitfäden Referenzen Support Community Data Catalog API-Referenz Übersicht Clientbibliotheken JavaScript/Python ee.Algorithms CannyEdgeDetector Sammlung CrossCorrelation Datum Beschreiben Wörterbuch FMask.fillMinima FMask.matchClouds Funktion GeometryConstructors.BBox GeometryConstructors.LineString GeometryConstructors.LinearRing GeometryConstructors.MultiGeometry GeometryConstructors.MultiLineString GeometryConstructors.MultiPoint GeometryConstructors.MultiPolygon GeometryConstructors.Point GeometryConstructors.Polygon GeometryConstructors.Rectangle HillShadow HoughTransform Wenn Image.Segmentation.GMeans Image.Segmentation.KMeans Image.Segmentation.SNIC Image.Segmentation.seedGrid Ist gleich Landsat.TOA Landsat.calibratedRadiance Landsat.pathRowLimit Landsat.simpleCloudScore Landsat.simpleComposite Objekttyp ProjectionTransform Sentinel2.CDI String TemporalSegmentation.C2c TemporalSegmentation.Ccdc TemporalSegmentation.Ewmacd TemporalSegmentation.LandTrendr TemporalSegmentation.LandTrendrFit TemporalSegmentation.StructuralChangeBreakpoints TemporalSegmentation.VCT TemporalSegmentation.Verdet Gelände ee.Array ee.Array abs accum acos Hinzufügen und argmax asin atan atan2 bitCount bitsToArray bitwiseAnd bitwiseNot bitwiseOr bitwiseXor Byte Katze CBRT Ceil cos Cosh Cut Digamma divide dotProduct Doppelt eigen eq (Gleich) ERF erfInv ErFC erfcInv exp erste/r/s firstNonZero Gleitkommazahl Boden Gamma gammainc get gt (Größer) gte (Größer-gleich) Hypot identity int int16 int32 int64 int8 lanczos leftShift length log log10 lang lt LTE Maske matrixCholeskyDecomposition matrixDeterminant matrixDiagonal matrixFnorm matrixInverse matrixLUDecomposition matrixMultiply matrixPseudoInverse matrixQRDecomposition matrixSingularValueDecomposition matrixSolve matrixToDiag matrixTrace matrixTranspose max.
+- Here, an inverting function is mapped over the // image collection, the inverted MSK_CLDPRB band is added as a "quality" band. col = col . map ( function ( img ) { var cldProb = img . select ( 'MSK_CLDPRB' ); var cldProbInv = cldProb . multiply ( - 1 ). rename ( 'quality' ); return img . addBands ( cldProbInv ); }); // Image visualization settings. var visParams = { bands : [ 'B4' , 'B3' , 'B2' ], min : 0 , max : 4500 }; Map . setCenter ( - 103.19 , 40.14 , 9 ); Map . addLayer ( col , visParams , 'Collection (for series inspection)' , false ); // Generate a best-pixel mosaic from the image collection. var img = col . qualityMosaic ( 'quality' ); Map . addLayer ( img , visParams , 'Best-pixel mosaic (by cloud score)' ); // To build the worst-pixel mosaic, according to cloud probability, use the // MSK_CLDPRB band as the quality band (the worst pixels have HIGHEST cloud // probability score). var img = col . qualityMosaic ( 'MSK_CLDPRB' ); Map . addLayer ( img , visParams , 'Worst-pixel mosaic (by cloud score)' , false ); Python einrichten Informationen zur Python API und zur Verwendung von geemap für die interaktive Entwicklung finden Sie auf der Seite Python-Umgebung . import ee import geemap.core as geemap Colab (Python) # The goal is to generate a best-pixel mosaic from a collection of # Sentinel-2 images where pixel quality is based on a cloud probability score. # The qualityMosaic() function selects the image (per-pixel) with the HIGHEST # quality-band-score to contribute to the resulting mosaic.
+- Map () m . set_center ( - 103.19 , 40.14 , 9 ) m . add_layer ( col , vis_params , 'Collection (for series inspection)' , False ) # Generate a best-pixel mosaic from the image collection. img = col . qualityMosaic ( 'quality' ) m . add_layer ( img , vis_params , 'Best-pixel mosaic (by cloud score)' ) # To build the worst-pixel mosaic, according to cloud probability, use the # MSK_CLDPRB band as the quality band (the worst pixels have HIGHEST cloud # probability score). img = col . qualityMosaic ( 'MSK_CLDPRB' ) m . add_layer ( img , vis_params , 'Worst-pixel mosaic (by cloud score)' , False ) m Feedback geben Sofern nicht anders angegeben, sind die Inhalte dieser Seite unter der Creative Commons Attribution 4.0 License und Codebeispiele unter der Apache 2.0 License lizenziert.
 
 ### ImageCollection Charts \_|\_ Google Earth Engine \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/guides/charts_image_collection](https://developers.google.com/earth-engine/guides/charts_image_collection)
 - Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 163
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Products Google Earth Engine Guides Send feedback ImageCollection Charts Stay organized with collections Save and categorize content based on your preferences.
-- The ui.Chart.image module contains a set of functions for rendering charts from the results of spatiotemporal reduction of images within an ImageCollection .
 - Chart . image . doySeriesByRegion ({ imageCollection : vegIndices , bandName : 'NDVI' , regions : ecoregions , regionReducer : ee .
 - Chart . image . doySeriesByYear ({ imageCollection : vegIndices , bandName : 'NDVI' , region : grassland , regionReducer : ee .
+- Chart . image . seriesByRegion ({ imageCollection : vegIndices , band : 'NDVI' , regions : ecoregions , reducer : ee .
+- Page Summary outlined flag The ui.Chart.image module provides functions to create charts from spatiotemporal reductions of image collections, with different functions dictating the arrangement of data for x-axis, y-axis, and series. ui.Chart.image.series charts image time series for a region with series defined by image bands, while ui.Chart.image.seriesByRegion charts a single band time series for multiple regions with series defined by regions. ui.Chart.image.doySeries charts a day-of-year time series for a region with series defined by image bands, reducing observations on the same day across years. ui.Chart.image.doySeriesByYear charts a day-of-year time series for a region and band, with series defined by years, useful for comparing annual profiles. ui.Chart.image.doySeriesByRegion charts a single band day-of-year time series for multiple regions, with series defined by regions, allowing comparison of annual single-band time series among regions.
+
+### Debugging guide \_|\_ Google Earth Engine \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/debugging](https://developers.google.com/earth-engine/guides/debugging)
+- Source ID: `site-docs-root`
+- Final score: 134
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Point ([ 106.91 , 47.91 ])) . map ( lambda image : image . addBands ( image . normalizedDifference ([ 'B5' , 'B4' ]))) . aside ( m . add layer , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 0.3 }, 'collection' ) . qualityMosaic ( 'nd' ) ) m . add layer ( composite , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 0.3 }, 'composite' ) m Running a function on first() Printing and visualizing are useful for debugging when available, but when you're debugging a function mapped over a collection, then you can't print in the function, as described in the mapped functions section .
+- Point ([ 106.91 , 47.91 ])) . map ( function ( image ) { return image . addBands ( image . normalizedDifference ([ 'B5' , 'B4' ])); }) . aside ( Map . addLayer , { bands : [ 'B4' , 'B3' , 'B2' ], max : 0.3 }, 'collection' ) . qualityMosaic ( 'nd' ); Map . setCenter ( 106.91 , 47.91 , 11 ); Map . addLayer ( composite , { bands : [ 'B4' , 'B3' , 'B2' ], max : 0.3 }, 'composite' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) m = geemap .
+- ImageCollection ( 'MODIS/006/MOD44B' ) ok map 2 = collection . map ( lambda image : image . set ( 'date' , image . date ())) print ( ok map 2 . getInfo ()) Get a list of the dates. dates list = ok map 2 . aggregate array ( 'date' ) print ( dates list . getInfo ()) Procedural errors Pattern was applied to an Image with no bands The "Pattern 'my band' was applied to an Image with no bands" error means there is an ee.Image.select() call for an Image with an empty band list.
+- Here's what you can do to address this: If the image is produced from an ImageCollection with a reducer or using the first() or toBands() calls, make sure the source collection is not empty.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.648Z"
+generated_at: "2026-04-12T12:07:33.890Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB IAM authentication"
@@ -9,8 +9,10 @@ latest_feature_date: "2023-06-27"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/alloydb/docs/user-grant-access"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions"
+  - "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
   - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
 keywords:
   - "authorize IAM principals"
   - "service accounts as database users"
@@ -33,43 +35,53 @@ AlloyDB introduced IAM authentication preview support, allowing IAM users or ser
 
 ## Extended Definition
 
-AlloyDB IAM authentication is an AlloyDB PostgreSQL instance-level feature that enables IAM-based database authentication when the `dbIamAuthentication` option is set on instance creation, which corresponds to toggling the `alloydb.iam_authentication` database flag to on/off. Google Cloud release notes state that IAM authentication for AlloyDB became available in Preview on June 27, 2023, and later documentation notes connectors can provide IAM-based authorization with automated IAM authentication when connecting.
+AlloyDB introduced IAM authentication preview support, allowing IAM users or service accounts to be authorized as database users.
 
 ## Evidence Summary
 
-The MCP API reference proves the configurable IAM-auth toggle on instances, while the release notes provide the feature’s preview announcement and mention IAM-based/automated IAM authentication via connectors.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/alloydb/docs/user-grant-access](https://docs.cloud.google.com/alloydb/docs/user-grant-access)
+- [https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions](https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions)
+- [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
 - [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
 
 ## Supporting Pages
+
+### "Grant access to other users \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/user-grant-access](https://docs.cloud.google.com/alloydb/docs/user-grant-access)
+- Source ID: `site-docs-root`
+- Final score: 60
+- Re-rank relevance: N/A
+
+### "IAM roles and permissions for AlloyDB \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions](https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions)
+- Source ID: `site-api-reference`
+- Final score: 60
+- Re-rank relevance: N/A
+
+### "Optimize database performance by comparing performance snapshots \_|\_ AlloyDB\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- Source ID: `site-docs-reference-2`
+- Final score: 60
+- Re-rank relevance: N/A
 
 ### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/create_instance)
 - Source ID: `site-api-reference`
-- Final score: 38
+- Final score: 57
 - Re-rank relevance: MODERATE
-- Re-rank rationale: The create_instance API reference includes a `dbIamAuthentication` request field, which directly relates to enabling IAM-based authentication for AlloyDB instances.
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - CreateInstanceRequest JSON representation { "parent" : string , "instanceId" : string , "type" : string , // Union field cpu count can be only one of the following: "cpuCount" : integer // End of list of possible types for union field cpu count . // Union field machine type can be only one of the following: "machineType" : string // End of list of possible types for union field machine type . // Union field readpool node count can be only one of the following: "readpoolNodeCount" : integer // End of list of possible types for union field readpool node count . // Union field db iam authentication can be only one of the following: "dbIamAuthentication" : boolean // End of list of possible types for union field db iam authentication . } Fields parent string Required.
 - Union field db iam authentication . db iam authentication can be only one of the following: dbIamAuthentication boolean Optional.
 - Sets the "alloydb.iam authentication" db flag to "on"/"off".
 - Enables DB IAM authentication for this instance.
-
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- These language connectors are libraries that provide automated mutual TLS connections, IAM-based authorization, and Automated IAM Authentication when connecting to an AlloyDB instance.
-- These language connectors are libraries that provide automated mutual TLS connections, IAM-based authorization, and Automated IAM Authentication when connecting to an AlloyDB instance.
-- June 27, 2023 Feature The columnar engine now supports columns with the following data types: boolean bytea enum uuid Feature IAM authentication for AlloyDB is available in Preview .
-- February 09, 2026 Fixed We are announcing the release of support for the AlloyDB language connectors and Auth Proxy with Auto IAM Authentication and managed connection pooling.
 

@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:00.987Z"
+generated_at: "2026-04-12T12:12:51.967Z"
 product_name: "Cloud Workstations"
 product_slug: "cloud-workstations"
 feature_name: "Hyperdisk Balanced High Availability persistent directories"
 feature_slug: "hyperdisk-balanced-high-availability-persistent-directories"
 latest_feature_date: "2026-02-19"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+  - "https://docs.cloud.google.com/workstations/docs/available-gpus"
+  - "https://docs.cloud.google.com/workstations/docs/create-configuration"
+  - "https://docs.cloud.google.com/workstations/docs/base-editor-overview"
 keywords:
   - "hyperdisk"
   - "balanced"
@@ -24,7 +27,7 @@ keywords:
 # Hyperdisk Balanced High Availability persistent directories
 
 Product: Cloud Workstations
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ Cloud Workstations lets you configure Hyperdisk Balanced High Availability for p
 
 Cloud Workstations lets you configure Hyperdisk Balanced High Availability for persistent directories in the Google Cloud console; Cloud Workstations supports Hyperdisk Balanced High Availability for persistent directories on supported machine series.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/workstations/docs/customize-development-environment](https://docs.cloud.google.com/workstations/docs/customize-development-environment)
+- [https://docs.cloud.google.com/workstations/docs/available-gpus](https://docs.cloud.google.com/workstations/docs/available-gpus)
+- [https://docs.cloud.google.com/workstations/docs/create-configuration](https://docs.cloud.google.com/workstations/docs/create-configuration)
+- [https://docs.cloud.google.com/workstations/docs/base-editor-overview](https://docs.cloud.google.com/workstations/docs/base-editor-overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Customize your development environment \_|\_ Cloud Workstations \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/workstations/docs/customize-development-environment](https://docs.cloud.google.com/workstations/docs/customize-development-environment)
+- Source ID: `site-docs-root-2`
+- Final score: 230
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- REST Resource: projects.locations.workstationClusters.workstationConfigs Resource: WorkstationConfig JSON representation Host JSON representation GceInstance JSON representation GceShieldedInstanceConfig JSON representation GceConfidentialInstanceConfig JSON representation Accelerator JSON representation BoostConfig JSON representation PersistentDirectory JSON representation GceRegionalPersistentDisk JSON representation ReclaimPolicy GceHyperdiskBalancedHighAvailability JSON representation ReclaimPolicy EphemeralDirectory JSON representation GcePersistentDisk JSON representation Container JSON representation CustomerEncryptionKey JSON representation ReadinessCheck JSON representation PortRange JSON representation Methods Resource: WorkstationConfig A workstation configuration resource in the Cloud Workstations API.
+- How a persistent directory should be implemented. directory type can be only one of the following: gcePd object ( GceRegionalPersistentDisk ) A PersistentDirectory backed by a Compute Engine persistent disk. gceHd object ( GceHyperdiskBalancedHighAvailability ) A PersistentDirectory backed by a Compute Engine hyperdisk high availability disk.
+- JSON representation { "mountPath" : string , // Union field directory type can be only one of the following: "gcePd" : { object ( GceRegionalPersistentDisk ) } , "gceHd" : { object ( GceHyperdiskBalancedHighAvailability ) } // End of list of possible types for union field directory type . } Fields mountPath string Optional.
+- GceHyperdiskBalancedHighAvailability A Persistent Directory backed by a Compute Engine Hyperdisk Balanced High Availability Disk .
+
+### Available GPUs \_|\_ Cloud Workstations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/workstations/docs/available-gpus](https://docs.cloud.google.com/workstations/docs/available-gpus)
+- Source ID: `site-docs-root-2`
+- Final score: 194
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To satisfy this use case, Cloud Workstations allows the use of Google Cloud Hyperdisk Balanced High Availability disks as persistent directories for the machine types enumerated earlier.
+- For example: gcloud beta workstations configs create \ ... \ --disk-type = hyperdisk-balanced-ha \ --disk-size = 200 This command will create a Hyperdisk with size 200 GB.
+- Now that you have selected a GPU model and compatible machine type, update the configuration: For NVIDIA A100 40GB GPUs, run this command to update your configuration: gcloud beta workstations configs update \ --project = PROJECT ID \ --region = LOCATION \ --cluster = CLUSTER NAME \ CONFIG NAME \ --machine-type = A2 MACHINE TYPE Replace A2 MACHINE TYPE with the chosen A2 machine type determined in the previous step (for example, a2-highgpu-1g ).
+- To create configurations without persistent storage, use the following Google Cloud CLI command: gcloud workstations configs create CONFIG NAME \ --project = PROJECT ID \ --cluster = CLUSTER NAME \ --region = LOCATION \ --machine-type = A2 MACHINE TYPE \ --no-persistent-storage Replace the following: PROJECT ID : the ID of the project that contains the workstation configuration.
+
+### "Create a workstation configuration \_|\_ Cloud Workstations \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/workstations/docs/create-configuration](https://docs.cloud.google.com/workstations/docs/create-configuration)
+- Source ID: `site-docs-root`
+- Final score: 128
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Set the Disk type of your persistent directory to Balanced , which has higher performance but is more economical than SSD .
+- Customize the environment Customize the Cloud Workstations environment by configuring the workstation container image and persistent storage using these steps: Configure the container image by choosing whether to use one of the preconfigured base images or to provide a reference to a customized container image that you've created.
+- This section explains the four steps of creating a workstation configuration: Configure basics Define machine settings Customize the environment Add users To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin Before you begin using Cloud Workstations, be sure that you have the required permissions and that you complete these required setup steps.
+- Cloud Workstations instances are also subject to the same restrictions as Compute Engine instances : Organization policy : projects, folders, or organizations might be restricted from creating nested VMs if the Disable VM nested virtualization constraint is enforced in the organization policy.
+
+### Base editor overview \_|\_ Cloud Workstations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/workstations/docs/base-editor-overview](https://docs.cloud.google.com/workstations/docs/base-editor-overview)
+- Source ID: `site-docs-root`
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- These Activity bar views are as follows: Explorer : view the folders and files in your current workspace Search : search your files for a string or regular expression Source Control : manage application files with the Cloud Workstations base editor's Git support Debug : debug your application by setting breakpoints and inspecting variables Extensions : search through a catalog of extensions that add additional features to your IDE Cloud Code : create and deploy Google Cloud applications directly from the IDE Settings : customize the Cloud Workstations base editor to suit your workflow View and edit files The built-in code editor that lets you browse file directories and view and edit files inside your workstation.
+- Right-click in Explorer view to upload and download files Language support The Cloud Workstations base editor supports languages such as Go, Python, Java, .NET Core, and Node.js through extensions, providing language features such as: Smart highlighting, code suggestions and context-based completions Linting and providing descriptive errors Code navigation (go to definitions, declarations, references, and implementations) Intuitive debugging support Cloud Code integration Cloud Code provides IDE support for the full development cycle of Kubernetes and Cloud Run applications, from creating and customizing a new application from sample applications to running your finished application.
+- Cloud Workstations base editor Upload and download files and directories To upload or download files and directories in the Code-OSS Explorer view, use any of the following methods: Drag files over the Explorer view to add it to the workspace.
+- Use the Explorer view to browse through the file directories, upload and download files, preview web applications on a Cloud Workstations virtual machine instance, and view usage statistics.
 

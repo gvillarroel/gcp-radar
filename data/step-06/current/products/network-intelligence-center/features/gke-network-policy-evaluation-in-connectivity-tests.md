@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:48.425Z"
+generated_at: "2026-04-12T12:18:03.474Z"
 product_name: "Network Intelligence Center"
 product_slug: "network-intelligence-center"
 feature_name: "GKE network policy evaluation in Connectivity Tests"
@@ -9,9 +9,10 @@ latest_feature_date: "2026-03-05"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest"
 keywords:
   - "gke"
   - "network"
@@ -38,51 +39,70 @@ Connectivity Tests evaluates GKE network policies that apply to a Pod endpoint w
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest)
 
 ## Supporting Pages
 
-### Method: projects.locations.global.connectivityTests.create | Network Intelligence Center | Google Cloud Documentation
+### "Connectivity Tests overview \_|\_ Network Intelligence Center - Connectivity\
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create)
-- Source ID: `site-docs-reference`
-- Final score: 184
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview)
+- Source ID: `site-docs-root`
+- Final score: 303
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Method: projects.locations.global.connectivityTests.create Network Intelligence Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/create Documentation · Networking · Network Intelligence Center · Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it!
-- After you create a test, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes.
-- Creates a new Connectivity Test.
+- Source endpoints Connectivity Tests configuration analysis supports the following source endpoints: Compute Engine instance Cloud Run revision Cloud Run functions (1st gen) App Engine standard environment Cloud SQL instance GKE control plane GKE Pod Internet IP address IP address from an on-premises network IP address of a Compute Engine instance IP address of a Cloud SQL instance IP address of a GKE control plane IP address of a GKE Pod Unassigned IP address in a Virtual Private Cloud network Destination endpoints Connectivity Tests configuration analysis supports the following destination endpoints: Compute Engine instance Cloud SQL instance GKE control plane GKE Pod External and internal Application Load Balancer External and internal Proxy Network Load Balancer External and internal Passthrough Network Load Balancer Private Service Connect endpoint Memorystore for Redis Cluster Memorystore for Redis instance Internet IP address IP address from an on-premises network IP address of a forwarding rule IP address of a Compute Engine instance IP address of a Cloud SQL instance IP address of a GKE control plane IP address of a GKE Pod IP address of a Memorystore for Redis Cluster IP address of a Memorystore for Redis instance Google Cloud networking features You can test connectivity between resources that use the following features (both IPv4 and IPv6 are supported whenever applicable): VPC networks VPC Network Peering Shared VPC Private Google Access Cloud Load Balancing Alias IP ranges Privately used public IPv4 addresses Compute Engine instances with multiple network interfaces VPC routing VPC firewall rules Regional network firewall policies Hierarchical firewall policies and global network firewall policies Resource Manager tags for firewalls , including when attached to Compute Engine instances with multiple network interfaces Policy-based routes Private Service Connect Instances with IPv6 addresses , including instances with multiple network interfaces VPC spokes and hybrid spokes for NCC Public NAT and Private NAT Cloud VPN Cloud Interconnect Cloud Router , including dynamic routes that use BGP and static routes Considerations for Cloud Load Balancing For Cloud Load Balancing, Connectivity Tests configuration analysis supports the following features: Testing connectivity to the load balancer IP addresses Verifying connectivity of Cloud Load Balancing health checks to backends Internal TCP/UDP load balancers can be used as next hops For Cloud Load Balancing features that are unsupported, see the Unsupported configurations section .
+- Google Cloud networking features Live data plane analysis supports the following features: VPC networks VPC Network Peering Shared VPC VPC spokes and hybrid spokes in NCC Alias IP ranges External IP addresses Internal IP addresses , including privately used public IPv4 addresses Compute Engine instances with multiple network interfaces VPC routing Public NAT and Private NAT , except for NAT64 VPC firewall rules Hierarchical firewall policies , global network firewall policies , and regional network firewall policies Secure tags for firewalls , including when attached to Compute Engine instances with multiple network interfaces Policy-based routes Instances with IPv6 addresses , including instances with multiple network interfaces Unsupported configurations Live data plane analysis doesn't support and isn't executed for the following network configurations: Non-Google Cloud resources as source endpoints: Internet IP addresses Inbound traffic to Google Cloud through Cloud Interconnect , Cloud VPN , and NCC hybrid spokes Unassigned IP addresses in a VPC network as source endpoints Source and destination endpoints are the same Compute Engine instance Non-running Compute Engine instances GKE Pods Google API and services External and internal Application Load Balancer External and internal Proxy Network Load Balancer External passthrough Network Load Balancer Cloud VPN NAT64 Considerations and constraints Evaluate the following considerations when deciding whether to use Connectivity Tests.
+- Considerations for Google Kubernetes Engine For GKE, Connectivity Tests configuration analysis supports the following features: Connectivity to and between GKE nodes and the GKE control plane Connectivity to and between GKE Pods, including evaluation of GKE network policies and IP masquerading .
+- Unsupported configurations The Connectivity Tests configuration analysis doesn't support testing the following network configurations: Firewall policy rules with threat intelligence data or FQDN objects aren't supported.
 
-### Method: projects.locations.global.connectivityTests.list | Network Intelligence Center | Google Cloud Documentation
+### "Using the gcloud CLI for Connectivity Tests \_|\_ Network Intelligence Center\
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list)
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/gcloud-sdk)
 - Source ID: `site-docs-reference`
-- Final score: 184
+- Final score: 236
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Method: projects.locations.global.connectivityTests.list Network Intelligence Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.global.connectivityTests/list Documentation · Networking · Network Intelligence Center · Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · JSON representation · Authorization scopes · Try it!
-- Lists all Connectivity Tests owned by a project.
+- Command Task gcloud network-management connectivity-tests list Lists Connectivity Tests for a project gcloud network-management connectivity-tests create Creates and runs a Connectivity Test gcloud network-management connectivity-tests rerun Reruns a Connectivity Test gcloud network-management connectivity-tests describe Lists test results for a running or completed Connectivity Test gcloud network-management connectivity-tests update Updates options for an existing Connectivity Test gcloud network-management connectivity-tests delete Deletes a Connectivity Test For command-line examples, see the following pages: Running Connectivity Tests Updating or deleting Connectivity Tests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Networking Network Intelligence Center Connectivity Tests Reference Send feedback Using the gcloud CLI for Connectivity Tests Stay organized with collections Save and categorize content based on your preferences. gcloud is a unified command-line tool that is part of the Google Cloud CLI .
+- When you run gcloud commands for Connectivity Tests, you perform operations on the ConnectivityTest resource that is part of the Network Management API.
+- You can use gcloud to run the following commands for Connectivity Tests.
 
-### Method: projects.locations.global.connectivityTests.rerun | Network Intelligence Center | Google Cloud Documentation
+### "Add Monitoring Points \_|\_ Network Intelligence Center - Cloud Network\
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun)
-- Source ID: `site-docs-reference`
-- Final score: 184
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points)
+- Source ID: `site-iam-reference`
+- Final score: 228
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Method: projects.locations.global.connectivityTests.rerun Network Intelligence Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1beta1/projects.locations.global.connectivityTests/rerun Documentation · Networking · Network Intelligence Center · Reference · Send feedback · HTTP request · Path parameters · Request body · Response body · Authorization scopes · Try it!
-- Rerun an existing ConnectivityTest.
-- After the user triggers the rerun, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes.
+- Connectivity to the Cloud Network Insights control plane UDP 123 (NTP) Required.
+- The following environments are supported: Google Cloud VPC networks in the same or different projects Remote branch offices or retail locations On-premises data centers Other cloud environments, for example, AWS or Azure If you need help to determine where to install Monitoring Points to target strategic web application deployment, use VPC Flow Logs or vm flow metrics in a performance dashboard to understand where traffic is flowing in your network.
+- Linux-based virtualized environments such as OpenStack, custom Linux hypervisors. v35-KVM Before you begin In addition to the Cloud Network Editor ( roles/networkmanagement.CloudNetworkInsightsEditor ) role, the deployment environment and Monitoring Points have specific networking requirements to ensure that the Monitoring Point can be installed successfully and communicate back to Cloud Network Insights control plane.
+- Move the installation bundle to the target host. gcloud Use this method if your target host has Google Cloud CLI installed. gcloud alpha network-management network-monitoring-providers \ monitoring-points download-install-script \ --network-monitoring-provider= PROVIDER NAME --location=global \ --monitoring-point-type= MP TYPE \ --hostname= HOST NAME \ --output-file=compose.
+
+### "Network Management API \_|\_ Network Intelligence Center \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest)
+- Source ID: `site-docs-reference`
+- Final score: 223
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- REST Resource: v1beta1.projects.locations.global.connectivityTests Methods create POST /v1beta1/{parent=projects/ /locations/global}/connectivityTests Creates a new Connectivity Test. delete DELETE /v1beta1/{name=projects/ /locations/global/connectivityTests/ } Deletes a specific ConnectivityTest . get GET /v1beta1/{name=projects/ /locations/global/connectivityTests/ } Gets the details of a specific Connectivity Test. getIamPolicy GET /v1beta1/{resource=projects/ /locations/global/connectivityTests/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1beta1/{parent=projects/ /locations/global}/connectivityTests Lists all Connectivity Tests owned by a project. patch PATCH /v1beta1/{resource.name=projects/ /locations/global/connectivityTests/ } Updates the configuration of an existing ConnectivityTest . rerun POST /v1beta1/{name=projects/ /locations/global/connectivityTests/ }:rerun Rerun an existing ConnectivityTest . setIamPolicy POST /v1beta1/{resource=projects/ /locations/global/connectivityTests/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1beta1/{resource=projects/ /locations/global/connectivityTests/ }:testIamPermissions Returns permissions that a caller has on the specified resource.
+- REST Resource: v1beta1.organizations.locations REST Resource: v1beta1.organizations.locations.global.operations REST Resource: v1beta1.organizations.locations.vpcFlowLogsConfigs REST Resource: v1beta1.projects.locations REST Resource: v1beta1.projects.locations.global.connectivityTests REST Resource: v1beta1.projects.locations.global.operations REST Resource: v1beta1.projects.locations.vpcFlowLogsConfigs REST Resource: v1alpha1.projects.locations REST Resource: v1alpha1.projects.locations.networkMonitoringProviders REST Resource: v1alpha1.projects.locations.networkMonitoringProviders.monitoringPoints REST Resource: v1alpha1.projects.locations.networkMonitoringProviders.networkPaths REST Resource: v1alpha1.projects.locations.networkMonitoringProviders.webPaths REST Resource: v1.organizations.locations REST Resource: v1.organizations.locations.global.operations REST Resource: v1.organizations.locations.vpcFlowLogsConfigs REST Resource: v1.projects.locations REST Resource: v1.projects.locations.global.connectivityTests REST Resource: v1.projects.locations.global.operations REST Resource: v1.projects.locations.vpcFlowLogsConfigs Service: networkmanagement.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v1.projects.locations.global.connectivityTests Methods create POST /v1/{parent=projects/ /locations/global}/connectivityTests Creates a new Connectivity Test. delete DELETE /v1/{name=projects/ /locations/global/connectivityTests/ } Deletes a specific ConnectivityTest . get GET /v1/{name=projects/ /locations/global/connectivityTests/ } Gets the details of a specific Connectivity Test. getIamPolicy GET /v1/{resource=projects/ /locations/global/connectivityTests/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/global}/connectivityTests Lists all Connectivity Tests owned by a project. patch PATCH /v1/{resource.name=projects/ /locations/global/connectivityTests/ } Updates the configuration of an existing ConnectivityTest . rerun POST /v1/{name=projects/ /locations/global/connectivityTests/ }:rerun Rerun an existing ConnectivityTest . setIamPolicy POST /v1/{resource=projects/ /locations/global/connectivityTests/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/global/connectivityTests/ }:testIamPermissions Returns permissions that a caller has on the specified resource.
+- REST Resource: v1alpha1.projects.locations.networkMonitoringProviders.monitoringPoints Methods downloadInstallScript GET /v1alpha1/{parent=projects/ /locations/ /networkMonitoringProviders/ }/monitoringPoints:downloadInstallScript Downloads an install script for MonitoringPoints for a given network monitoring provider. downloadRecreateInstallScript GET /v1alpha1/{name=projects/ /locations/ /networkMonitoringProviders/ /monitoringPoints/ }:downloadRecreateInstallScript Downloads an install script for a specific Container MonitoringPoint. downloadServerConnectConfig GET /v1alpha1/{parent=projects/ /locations/ /networkMonitoringProviders/ }/monitoringPoints:downloadServerConnectConfig Downloads the server connect configuration for a given network monitoring provider. get GET /v1alpha1/{name=projects/ /locations/ /networkMonitoringProviders/ /monitoringPoints/ } Gets the MonitoringPoint resource. list GET /v1alpha1/{parent=projects/ /locations/ /networkMonitoringProviders/ }/monitoringPoints Lists MonitoringPoints for a given network monitoring provider.
 

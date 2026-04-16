@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.650Z"
+generated_at: "2026-04-12T12:07:33.894Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB Admin API user-management methods"
@@ -9,7 +9,10 @@ latest_feature_date: "2023-05-12"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions"
+  - "https://docs.cloud.google.com/alloydb/docs/user-grant-access"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersAsyncPager"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersPager"
 keywords:
   - "user-management methods"
   - "PostgreSQL role functions"
@@ -32,28 +35,50 @@ AlloyDB Admin API added user-management methods so users can manage cluster role
 
 ## Extended Definition
 
-In AlloyDB, the feature is the addition of user-management methods to the AlloyDB Admin API, announced in the AlloyDB release notes on May 12, 2023. The documentation identifies this as a new API capability, but does not specify the exact operations, parameters, or command-line clients involved. Consequently, only the presence and introduction date of this API enhancement can be stated with confidence.
+AlloyDB Admin API added user-management methods so users can manage cluster roles with gcloud in addition to existing PostgreSQL role functions.
 
 ## Evidence Summary
 
-The official AlloyDB release notes line for May 12, 2023 confirms the feature was added, but provides only a high-level statement without detailed behavioral or tooling-level documentation.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions](https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions)
+- [https://docs.cloud.google.com/alloydb/docs/user-grant-access](https://docs.cloud.google.com/alloydb/docs/user-grant-access)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersAsyncPager](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersAsyncPager)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersPager](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersPager)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "IAM roles and permissions for AlloyDB \_|\_ AlloyDB for PostgreSQL \_|\_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions](https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions)
+- Source ID: `site-api-reference`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Grant access to other users \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/user-grant-access](https://docs.cloud.google.com/alloydb/docs/user-grant-access)
 - Source ID: `site-docs-root`
-- Final score: 28
-- Re-rank relevance: N/A
+- Final score: 104
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- May 12, 2023 Feature The AlloyDB admin API now includes user-management methods .
-- March 29, 2024 Fixed Fixed the issue causing AlloyDB clusters created using the Google Cloud CLI, the AlloyDB Admin API, or Terraform to have PostgreSQL 14 compatibility by default, instead of PostgreSQL 15 compatibility.
-- AlloyDB clusters created using the Google Cloud CLI, the AlloyDB Admin API, or Terraform have PostgreSQL 14 compatibility by default, instead of PostgreSQL 15 compatibility.
-- March 06, 2023 Feature Cloud Client libraries for the AlloyDB Admin API are in Preview.
+### "Class ListUsersAsyncPager (0.7.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersAsyncPager](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersAsyncPager)
+- Source ID: `site-python-reference`
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Class ListUsersPager (0.7.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersPager](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListUsersPager)
+- Source ID: `site-python-reference`
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

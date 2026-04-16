@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.309Z"
+generated_at: "2026-04-14T11:18:27.964Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Bigtable tiered storage management in console"
 feature_slug: "bigtable-tiered-storage-management-in-console"
 latest_feature_date: "2026-03-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
-  - "https://docs.cloud.google.com/bigtable/docs/release-notes"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings"
+  - "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+  - "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+  - "https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd"
 keywords:
   - "tiered"
+  - "managing"
   - "management"
   - "storage"
   - "console"
   - "supports"
-  - "bigtable"
-  - "now"
-  - "in"
 ---
 
 # Bigtable tiered storage management in console
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +36,54 @@ Bigtable now supports managing tiered storage configuration and viewing tiered s
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient)
-- [https://docs.cloud.google.com/bigtable/docs/release-notes](https://docs.cloud.google.com/bigtable/docs/release-notes)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings)
+- [https://docs.cloud.google.com/bigtable/docs/managing-tables](https://docs.cloud.google.com/bigtable/docs/managing-tables)
+- [https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users](https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users)
+- [https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd](https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd)
 
 ## Supporting Pages
 
-### "Class BigtableInstanceAdminClient (2.74.0) \_|\_ Java client libraries \_\
+### Create and manage tables \_|\_ Bigtable \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient)
-- Source ID: `site-java-reference`
-- Final score: 186
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Sample code: ApiFuture<Policy> newPolicyFuture = client . setIamPolicyAsync ( "my-instance" , Policy . newBuilder () . addIdentity ( Role . of ( "bigtable.user" ), Identity . user ( "someone@example.com" )) . addIdentity ( Role . of ( "bigtable.admin" ), Identity . group ( "admins@example.com" )) . build ()); ApiFutures . addCallback ( policyFuture , new ApiFutureCallback<Policy> () { public void onSuccess ( Policy policy ) { for ( Entry<Role , Set<Identity> > entry : policy . getBindings (). entrySet ()) { System . out . printf ( "Role: %s Identities: %s " , entry . getKey (), entry . getValue ()); } } public void onFailure ( Throwable t ) { t . printStackTrace (); } }, MoreExecutors . directExecutor ()); See Also: Instance-level IAM management Parameters Name Description instanceId String policy com.google.cloud.Policy Returns Type Description ApiFuture < com.google.cloud.Policy > testIamPermission(String instanceId, String[] permissions) public List<String> testIamPermission ( String instanceId , String [] permissions ) Tests whether the caller has the given permissions for the specified instance.
-- Sample code: Policy newPolicy = client . setIamPolicy ( "my-instance" , Policy . newBuilder () . addIdentity ( Role . of ( "bigtable.user" ), Identity . user ( "someone@example.com" )) . addIdentity ( Role . of ( "bigtable.admin" ), Identity . group ( "admins@example.com" )) . build ()); See Also: Instance-level IAM management Parameters Name Description instanceId String policy com.google.cloud.Policy Returns Type Description com.google.cloud.Policy setIamPolicyAsync(String instanceId, Policy policy) public ApiFuture<Policy> setIamPolicyAsync ( String instanceId , Policy policy ) Asynchronously replaces the IAM policy associated with the specified instance.
-- BigtableInstanceAdminClient client = BigtableInstanceAdminClient . create ( "my-project" ); CreateInstanceRequest request = CreateInstanceRequest . of ( "my-instance" ) . addCluster ( "my-cluster" , "us-east1-c" , 3 , StorageType .
-- Sample code: ApiFuture<List<String> > grantedPermissionsFuture = client . testIamPermissionAsync ( "my-instance" , "bigtable.tables.readRows" , "bigtable.tables.mutateRows" ); ApiFutures . addCallback ( grantedPermissionsFuture , new ApiFutureCallback<List<String> > () { public void onSuccess ( List<String> grantedPermissions ) { System . out . println ( "Has read access: " + grantedPermissions . contains ( "bigtable.tables.readRows" )); System . out . println ( "Has write access: " + grantedPermissions . contains ( "bigtable.tables.mutateRows" )); } public void onFailure ( Throwable t ) { t . printStackTrace (); } }, MoreExecutors . directExecutor ()); See Also: Cloud Bigtable permissions Parameters Name Description instanceId String permissions String [] Returns Type Description ApiFuture < List < String >> updateAppProfile(UpdateAppProfileRequest request) public AppProfile updateAppProfile ( UpdateAppProfileRequest request ) Updates an existing app profile.
-
-### Bigtable release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bigtable/docs/release-notes](https://docs.cloud.google.com/bigtable/docs/release-notes)
+- URL: [https://docs.cloud.google.com/bigtable/docs/managing-tables](https://docs.cloud.google.com/bigtable/docs/managing-tables)
 - Source ID: `site-docs-root`
-- Final score: 178
+- Final score: 111
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Click Save . gcloud To disable infrequent access storage, use the gcloud beta bigtable instances tables update command with the --clear-tiered-storage-config flag: gcloud beta bigtable instances tables update TABLE ID \ --instance = INSTANCE ID \ --project = PROJECT ID \ --clear-tiered-storage-config Replace the following: TABLE ID : the ID for the table that you want to update INSTANCE ID : the ID of the instance PROJECT ID : the project that contains the table that you want to update What's next Learn how to import and export data into and from your table.
+- The number must be 30 or greater. gcloud To modify the age threshold of infrequent access storage, run the gcloud beta bigtable instances tables update command with the --tiered-storage-infrequent-access-older-than flag: gcloud beta bigtable instances tables update TABLE ID \ --instance = INSTANCE ID \ --project = PROJECT ID \ --tiered-storage-infrequent-access-older-than = AGE THRESHOLD Replace the following: TABLE ID : the ID for the table that you want to update.
+- Example: 32d or 32d12h . gcloud beta bigtable instances tables create TABLE ID \ --instance = INSTANCE ID \ --project = PROJECT ID \ --tiered-storage-infrequent-access-older-than = AGE THRESHOLD cbt Use the following command, replacing TABLE NAME with the name of your table.
+- For each table, the Google Cloud console displays the number of clusters that the table is stored on, the table's status, storage utilization, and the identifiers for any current backups of the table.
+
+### Bigtable for Cassandra users \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users](https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users)
+- Source ID: `site-docs-root`
+- Final score: 101
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature The GCP Console now provides improved monitoring for Cloud Bigtable , including new charts that show each cluster's storage utilization, node count, and replication status.
-- March 24, 2026 Feature You can manage Bigtable tiered storage configuration in the Google Cloud console and view tiered storage metrics in system insights .
-- Java Changes for google-cloud-bigtable 2.48.0 (2024-11-19) Features Enable trailer optimization by default ( #2421 ) ( 7b2c4e4 ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.50.0 ( 6b35b47 ) Make client side metrics tag in sync with server ( #2401 ) ( bba4183 ) Dependencies Revert downgrade grpc to 1.67.1 #2366 ( #2414 ) ( 710fa52 ) Update dependency com.google.cloud:gapic-libraries-bom to v1.48.0 ( #2422 ) ( 2088a39 ) Update sdk-platform-java dependencies ( #2418 ) ( c12bb01 ) November 18, 2024 Feature You can now create a Data Boost app profile and view Data Boost metrics in the Google Cloud console.
-- Node.js Changes for @google-cloud/bigtable 4.6.0 (2023-05-26) Features Add ChangeStreamConfig to CreateTable and UpdateTable ( #1269 ) ( 2b05fa4 ) 4.5.2 (2023-05-24) Bug Fixes Parsing for qualifiers with colon characters ( #1277 ) ( b80f533 ) May 23, 2023 Change You can now view information about which customer-managed encryption keys (CMEK) are used to protect your Cloud Bigtable resources and projects using Cloud Key Management Service (KMS).
+- Bigtable separates the compute nodes, which serve client requests, from the underlying storage management.
+- When comparing the two databases, you should understand how each database physically stores data differently in the following aspects: The data distribution strategy The number of cell versions available The storage disk type The data durability and replication mechanism Data distribution In Cassandra, a consistent hash of the primary key's partition columns is the recommended method of determining data distribution across the various SSTables served by cluster nodes.
+- Replication within a zonal cluster is handled by the Colossus storage layer. table (formerly column family ): a logical organization of values that's indexed by the unique primary key. table : a logical organization of values that's indexed by the unique row key. keyspace : a logical table namespace that defines the replication factor for the tables it contains.
+- SSD The SSD node's capacity of 5 TB, which is preferred for most workloads, provides higher storage density in comparison with the recommended configuration for Cassandra machines, which have a practical maximum storage density of less than 2 TB for each node.
 
-### "Class BigtableInstanceAdminSettings (2.74.0) \_|\_ Java client libraries\
+### Choose between SSD and HDD storage \_|\_ Bigtable \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings)
-- Source ID: `site-java-reference`
-- Final score: 174
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd](https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd)
+- Source ID: `site-docs-root-2`
+- Final score: 99
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Builder settingsBuilder = BigtableInstanceAdminSettings . newBuilder () . setProjectId ( "my-project" ); settingsBuilder . stubSettings (). createInstanceSettings () . setRetrySettings ( RetrySettings . newBuilder () . setTotalTimeout ( Duration . ofMinutes ( 15 )) . build ()); BigtableInstanceAdminSettings settings = settingsBuilder . build (); Inheritance java.lang.Object > BigtableInstanceAdminSettings Inherited Members Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods newBuilder() public static BigtableInstanceAdminSettings .
-- 2.74.0 (latest) 2.73.0 2.72.0 2.71.0 2.70.0 2.68.0 2.67.1 2.66.0 2.65.1 2.63.0 2.62.0 2.61.0 2.60.0 2.59.0 2.58.2 2.56.0 2.54.0 2.52.0 2.51.2 2.49.0 2.46.0 2.45.1 2.44.1 2.43.0 2.42.0 2.40.0 2.39.5 2.37.0 2.35.1 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.1 2.28.0 public final class BigtableInstanceAdminSettings Settings class to configure an instance of BigtableInstanceAdminClient .
-- Returns Type Description BigtableInstanceAdminSettings.Builder toString() public String toString () Returns Type Description String Overrides Object.toString() Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Parameters Name Description hostname String port int Returns Type Description BigtableInstanceAdminSettings.Builder Methods getCredentialsProvider() public CredentialsProvider getCredentialsProvider () Gets the credentials provider to use for getting the credentials to make calls with.
+- SSD storage supports a tiered storage option for infrequently accessed data .
+- The following table compares Bigtable storage types in the context of tiered storage: Instance and tier Node capacity Expected latency Operations Best for SSD instance, SSD storage tier 5 TB Write/read: single-digit ms Write, read, update, delete High write/read throughput and low latency workloads SSD instance, tiered storage enabled 32 TB (up to 5 TB SSD) Write: single-digit ms Read: low double-digit ms Write, read, update, delete Large datasets with infrequently accessed data HDD instance, HDD tier 16 TB Write: single-digit ms Read: low double-digit ms Write, read, update, delete Large datasets with latency-insensitive workloads For more information about the performance of Bigtable storage types, see Understand performance .
+- You cannot use the Google Cloud console to change the type of storage that is used for the instance.
+- Because of disk seek time, HDD storage supports only 5% of the read rows per second of SSD storage.
 

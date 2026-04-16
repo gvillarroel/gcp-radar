@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.773Z"
+generated_at: "2026-04-12T12:16:18.951Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Migrate to Containers"
@@ -10,8 +10,9 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
-  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs"
 keywords:
   - "migrate"
   - "to"
@@ -38,13 +39,14 @@ A migration service for converting application workloads into containers for GKE
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
-- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - Source ID: `site-docs-reference`
-- Final score: 98
+- Final score: 157
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,25 +63,24 @@ Evidence snippets:
 - Enable GKE API Enabling this API gives you access to the GKE, which includes the following features: Config Sync Policy Controller Config Controller Migrate to Containers GKE Identity Service Cloud Logging and Cloud Monitoring for GKE system components Security posture dashboard Node to node encryption FQDN network policies Enable related products and features To use the following products and features with GKE, you must enable each of these features individually.
 - Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Network plugin Container storage interface (CSI) & hybrid storage Bundled L4 load balancer Platform-native load balancers N/A N/A N/A Operations and management Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) GKE dashboard in the Google Cloud console Connect Gateway Cloud Logging and Cloud Monitoring Prometheus/Grafana Security and Identity Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) GKE Identity Service Fleet workload identity Cloud Audit Logs Binary Authorization Service management Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Cloud Service Mesh in-cluster Managed Cloud Service Mesh Service dashboards in the Google Cloud console Cloud Service Mesh certificate authority Cloud Service Mesh integration with Certificate Authority Service For the list of attached clusters that Cloud Service Mesh supports, see Supported platforms .
 
-### "Google Kubernetes Engine documentation \_|\_ Google Kubernetes Engine (GKE)\
+### "Common GKE user roles and tasks \_|\_ Google Kubernetes Engine (GKE) \_\
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs)
-- Source ID: `site-docs-root`
-- Final score: 94
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
+- Source ID: `site-iam-reference`
+- Final score: 118
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Documentation resources Find quickstarts and guides, review key references, and get help with common issues. format list numbered Guides Quickstart: Create a cluster and deploy a workload Configuring cluster access for kubectl Access Google Cloud APIs from GKE workloads GKE best practices documentation GKE security documentation GKE networking documentation GKE AI/ML documentation info AI/ML on GKE tutorials AI/ML orchestration on GKE Core concept: About GPUs in GKE Core skill: Use GPUs in GKE Serve Gemma open models using GPUs with vLLM Serve Gemma open models with Hugging Face TGI Serve an LLM with multiple GPUs in GKE Deploy GPUs for batch workloads with Dynamic Workload Scheduler About Ray on GKE group work References and resources REST API API permissions API organization and structure gcloud container commands Kubernetes documentation kubectl commands Release notes Release schedule Security bulletins Security patching Pricing Related resources Training and tutorials Use cases Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services.
-- Training Training and tutorials Architecting with Kubernetes Engine This course features a combination of lectures, demos, and hands-on labs to help you explore and deploy solution elements—including infrastructure components like pods, containers, deployments, and services—along with networks and application services.
-- Windows .NET Migration Related videos Try GKE for yourself Create an account to evaluate how our products perform in real-world scenarios.
-- Last updated 2026-04-08 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Define strategy and system architecture for migration to cloud, including applications and databases.
+- They are responsible for ensuring the reliability and performance of cloud applications, such as establishing service-level objectives (SLO), assessing service-level indicators (SLI), and identifying and resolving issues that may compromise SLO targets.
+- Platform admins and operators Platform admins and operators are responsible for provisioning and creating resources for application teams, and managing the central infrastructure for their organization.
+- Monitor Monitor the health of deployed applications or services, such as for service level objective (SLO) compliance, and sometimes also maintain their underlying infrastructure.
 
 ### "Grant support read-only access to clusters \_|\_ Google Kubernetes Engine\
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 94
+- Final score: 113
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +88,17 @@ Evidence snippets:
 - This page is for IT administrators and Operators who respond to alerts and pages when service level objectives (SLOs) aren't met or applications fail and debug to find root cause.
 - To enable support access for the cluster, run the following commands: enable Connect Gateway API gcloud services enable connectgateway.googleapis.com --project = PROJECT ID generate RBAC to enable access gcloud container fleet memberships support-access enable MEMBERSHIP NAME \ --project = PROJECT ID verify the access is enabled gcloud container fleet memberships support-access describe MEMBERSHIP NAME \ --project = PROJECT ID Replace the following: MEMBERSHIP NAME : the name used to uniquely represent the cluster in its fleet.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+
+### "Google Kubernetes Engine documentation \_|\_ Google Kubernetes Engine (GKE)\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs)
+- Source ID: `site-docs-root`
+- Final score: 94
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Documentation resources Find quickstarts and guides, review key references, and get help with common issues. format list numbered Guides Quickstart: Create a cluster and deploy a workload Configuring cluster access for kubectl Access Google Cloud APIs from GKE workloads GKE best practices documentation GKE security documentation GKE networking documentation GKE AI/ML documentation info AI/ML on GKE tutorials AI/ML orchestration on GKE Core concept: About GPUs in GKE Core skill: Use GPUs in GKE Serve Gemma open models using GPUs with vLLM Serve Gemma open models with Hugging Face TGI Serve an LLM with multiple GPUs in GKE Deploy GPUs for batch workloads with Dynamic Workload Scheduler About Ray on GKE group work References and resources REST API API permissions API organization and structure gcloud container commands Kubernetes documentation kubectl commands Release notes Release schedule Security bulletins Security patching Pricing Related resources Training and tutorials Use cases Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services.
+- Training Training and tutorials Architecting with Kubernetes Engine This course features a combination of lectures, demos, and hands-on labs to help you explore and deploy solution elements—including infrastructure components like pods, containers, deployments, and services—along with networks and application services.
+- Windows .NET Migration Related videos Try GKE for yourself Create an account to evaluate how our products perform in real-world scenarios.
+- Last updated 2026-04-08 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 

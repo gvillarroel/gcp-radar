@@ -1,16 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.637Z"
+generated_at: "2026-04-12T12:07:33.878Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB basic instances"
 feature_slug: "alloydb-basic-instances"
 latest_feature_date: "2023-09-21"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
-  - "https://docs.cloud.google.com/alloydb/docs/overview"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+  - "https://docs.cloud.google.com/alloydb/docs/cluster-create"
+  - "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
 keywords:
   - "basic instance type"
   - "single-node instance"
@@ -24,7 +26,7 @@ keywords:
 # AlloyDB basic instances
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,40 +34,47 @@ AlloyDB basic instances provide single-node, one-zone primary instances as a low
 
 ## Extended Definition
 
-AlloyDB basic instances are a primary instance type introduced on September 21, 2023 that consists of a single node in one zone with no standby node. They are a lower-cost option intended for non-production or other workloads that do not require high availability, effectively serving as a non-HA instance type.
+AlloyDB basic instances provide single-node, one-zone primary instances as a lower-cost non-HA option.
 
 ## Evidence Summary
 
-The release notes provide the launch date and one-zone single-node definition plus lower-cost non-HA positioning, while the overview confirms basic instances have only one node and no standby, targeted at non-production non-HA use cases.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+- [https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes](https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances)
+- [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
+- [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Execution plan node types \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 20
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- June 14, 2024 Change The maintenance downtime for a basic instance has been improved to match that of an HA primary instance , ensuring both instance types experience minimal downtime of less than a second.
-- Basic instances provide a lower-cost alternative to highly available instances, and are appropriate for use in non-production environments that don't require high availability.
-- September 21, 2023 Feature AlloyDB now offers basic instances , which are primary instances containing only one node, in one zone.
-
-### AlloyDB overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes](https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes)
 - Source ID: `site-api-reference`
-- Final score: 20
+- Final score: 76
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- Basic instance : contains a single node for non-production environments that don't require high availability.
-- For more information, see Reduce costs using basic instances .
-- A basic instance has only one node, with no standby node.
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances)
+- Source ID: `site-api-reference`
+- Final score: 74
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Create a cluster and its primary instance \_|\_ AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/cluster-create](https://docs.cloud.google.com/alloydb/docs/cluster-create)
+- Source ID: `site-docs-reference-2`
+- Final score: 68
+- Re-rank relevance: N/A
+
+### "Monitor the health of your clusters and instances \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- Source ID: `site-docs-reference-2`
+- Final score: 68
+- Re-rank relevance: N/A
 

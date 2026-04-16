@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.658Z"
+generated_at: "2026-04-15T13:50:47.042Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Generative knowledge assist"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-08-20"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-use-agent-desktop"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-create-desktop-layouts"
 keywords:
   - "generative"
   - "knowledge"
   - "assist"
-  - "is"
   - "now"
   - "available"
-  - "in"
-  - "the"
+  - "agent"
+  - "adapter"
+  - "desktop"
 ---
 
 # Generative knowledge assist
@@ -42,48 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-use-agent-desktop](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-use-agent-desktop)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-create-desktop-layouts](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-create-desktop-layouts)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Agent Assist \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 186
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Generative knowledge assist is available in the agent adapter Generative knowledge assist is now available in the agent adapter.
-- Feature Generative knowledge assist is available in Agent Desktop Generative knowledge assist is now available in Agent Desktop as a widget that you can drag into a desktop panel.
-- Your layouts can contain call adapters, chat adapters, and a wide variety of panels for other capabilities such as live transcripts, knowledge assist, disposition codes, and session data feeds.
-- The desktop layout builder comes with a number of pre-defined widgets, such as Session Data Feed , Disposition Codes and Notes , Knowledge Assist , and Live Transcript .
-
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 88
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist)
+- Source ID: `site-docs-reference`
+- Final score: 267
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- In this way you can know which capabilities are available in your instance.
-- Instant web calls: Provide visitors with an estimated wait time and automatically initiate an outbound call to a site visitor when their place in the support queue is reached Scheduled calls: Allow site visitors to schedule a time to talk with your support team Queue deflection: Automatically route end users to a message or page on your site Chat support: Provide live chat support directly from your website Proactive triggers : Display a contact bubble for web calls and chats automatically based on visitor behavior.
-- Recommended headset features Binaural - Audio in both ears cuts down on background noise Noise-canceling microphone Noise-canceling headset USB connection Brands of headsets our customers use Jabra Logitech Plantronics Sennheiser What's next Configure a sample contact center Private Service Connect Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Billing depending on which of the following charging models is assigned to your instance: Concurrent agents : the maximum number of concurrent users with the agent role that are signed in during the month period Named agents : the maximum number of users in the instance that have the agent role during the month period Minutes used : the number of minutes that users with the agent role are signed in during the month period Note: Telephony charges are charged according to consumption.
+- Generative knowledge assist Note: If a call is transferred to another agent, the knowledge articles will remain accessible to the new agent until the session ends or the transferring agent exits.
+- Agents are alerted to knowledge assist document suggestions when the Agent Assist icon in the agent adapter has a green dot next to it.
+- Generative knowledge assist : provides suggestions for generated knowledge articles to human agents during a call.
+- Generative knowledge assist : provides suggestions for generated knowledge articles to human agents during a call.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Use the agent desktop \_|\_ Google Cloud Contact Center as a Service \_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-use-agent-desktop](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-use-agent-desktop)
 - Source ID: `site-docs-root`
-- Final score: 82
-- Re-rank relevance: N/A
+- Final score: 183
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- Contact Center AI Platform (CCAI Platform) is an AI-driven Contact Center as a Service platform that is built natively on Google Cloud and uses the other Gemini Enterprise for Customer Experience products at its core.
-- CCAI Platform is a unified contact center platform that accelerates the organization's ability to leverage and deploy Gemini Enterprise for CX without relying on multiple technology providers.
+- Note: If you're using an external call adapter instead of the CCAI Platform call adapter, the external call adapter appears outside of the agent desktop.
+- Use the capabilities in the panels of the agent desktop to assist you in handling the call.
+- Use the capabilities in the panels of the agent adapter to assist you in handling the call.
+- Use the capabilities in the panels of the agent adapter to assist you in handling the chat.
+
+### "Create desktop layouts \_|\_ Google Cloud Contact Center as a Service \_\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-create-desktop-layouts](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-create-desktop-layouts)
+- Source ID: `site-docs-reference`
+- Final score: 164
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Your layouts can contain call adapters, chat adapters, and wide variety of panels for other capabilities such as live transcripts, knowledge assist, and session data feeds.
+- After you create a desktop layout, you can configure which layouts agents see, depending on session type and other factors.
+- With agent desktop, you can create customized desktop layouts for different use cases for your human agents.
+- For widgets that require Agent Assist, be sure to set up Agent Assist .
 

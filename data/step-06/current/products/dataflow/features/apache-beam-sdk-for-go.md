@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.817Z"
+generated_at: "2026-04-15T12:05:13.786Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Apache Beam SDK for Go"
 feature_slug: "apache-beam-sdk-for-go"
 latest_feature_date: "2022-07-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development"
-  - "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go"
   - "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
 keywords:
   - "apache"
   - "beam"
   - "sdk"
-  - "for"
   - "go"
-  - "the"
   - "lets"
   - "you"
+  - "create"
+  - "batch"
 ---
 
 # Apache Beam SDK for Go
 
 Product: Dataflow
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,70 +38,55 @@ The Apache Beam SDK for Go lets you create batch and streaming Dataflow pipeline
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk](https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk)
-- [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
-- [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go)
 - [https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go](https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go)
+- [https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys](https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys)
 
 ## Supporting Pages
 
 ### Install the Apache Beam SDK \_|\_ Cloud Dataflow \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk](https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk)
-- Source ID: `site-docs-root`
-- Final score: 254
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-required-3`
+- Final score: 178
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To install the latest version of the Apache Beam SDK for Go, run the the following command: go get -u github.com/apache/beam/sdks/v2/go/pkg/beam Note: Version numbers have the form major.minor.patch and are incremented as follows: major version for incompatible API changes, minor version for new functionality added in a backward-compatible manner, and patch version for forward-compatible bug fixes.
 - Set up your development environment For information about setting up your Google Cloud project and development environment to use Dataflow, follow one of the tutorials: Create a Dataflow pipeline using Java Create a Dataflow pipeline using Python Create a Dataflow pipeline using Go Source code and examples The Apache Beam source code is available in the Apache Beam repository on GitHub.
-- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Install the Apache Beam SDK Stay organized with collections Save and categorize content based on your preferences.
-- Go The latest released version for the Apache Beam SDK for Go is 2.72.0 .
+- To install the latest version of the Apache Beam SDK for Go, run the the following command: go get -u github.com/apache/beam/sdks/v2/go/pkg/beam Note: Version numbers have the form major.minor.patch and are incremented as follows: major version for incompatible API changes, minor version for new functionality added in a backward-compatible manner, and patch version for forward-compatible bug fixes.
+- Install Python wheel by running the following command: pip install wheel Install the latest version of the Apache Beam SDK for Python by running the following command from a virtual environment: pip install 'apache-beam[gcp]' Depending on the connection, the installation might take some time.
+- To upgrade an existing installation of apache-beam, use the --upgrade flag: pip install --upgrade 'apache-beam[gcp]' As of October 7, 2020, Dataflow no longer supports Python 2 pipelines.
 
-### "Develop Apache Beam notebooks with the interactive runner \_|\_ Cloud Dataflow\
+### "Use customer-managed encryption keys \_|\_ Cloud Dataflow \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
-- Source ID: `site-docs-root`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- This location is used to store temporary files or intermediate results before outputting to the sink. options . view as ( GoogleCloudOptions ) . temp location = ' %s /temp' % dataflow gcs location If and only if you are using Apache Beam SDK built from source code, set the SDK location.
-- Apache Beam is installed on your notebook instance, so include the interactive runner and interactive beam modules in your notebook. import apache beam as beam from apache beam.runners.interactive.interactive runner import InteractiveRunner import apache beam.runners.interactive.interactive beam as ib If your notebook uses other Google APIs, add the following import statements: from apache beam.options import pipeline options from apache beam.options.pipeline options import GoogleCloudOptions import google.auth Set interactivity options The following line sets the amount of time the InteractiveRunner records data from an unbounded source.
-- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Develop Apache Beam notebooks with the interactive runner Stay organized with collections Save and categorize content based on your preferences.
-- SetupOptions ) . sdk location = ( '/root/apache-beam-custom/packages/beam/sdks/python/dist/apache-beam- %s 0.tar.gz' % beam . version . version ) You can adjust the parameter values.
-
-### Create a Dataflow pipeline using Go \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-go)
-- Source ID: `site-docs-root`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys](https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys)
+- Source ID: `site-docs-reference-2`
+- Final score: 170
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To run the latest version of the Beam wordcount example on your local machine, perform the following steps: Use the git clone command to clone the apache/beam GitHub repository: git clone https://github.com/apache/beam.git Switch to the beam/sdks/go directory: cd beam/sdks/go Use the following command to run the pipeline: go run examples/wordcount/wordcount.go \ --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output outputs The input flag specifies the file to read, and the output flag specifies the filename for the frequency count output.
-- To verify the version of Go that you have installed, run the following command in your local terminal: go version Run the Beam wordcount example The Apache Beam SDK for Go includes a wordcount pipeline example .
-- Create a Dataflow pipeline using Go This page shows you how to use the Apache Beam SDK for Go to build a program that defines a pipeline.
-- We recommend that you use the latest version of Go when working with the Apache Beam SDK for Go.
+- Specifying gcpTempLocation is required. mvn compile exec:java -Dexec.mainClass = org.apache.beam.examples.WordCount \ -Dexec.args = "--inputFile=gs://dataflow-samples/shakespeare/kinglear.txt \ --output=gs:// STORAGE BUCKET /counts \ --runner=DataflowRunner --project= PROJECT ID \ --gcpTempLocation=gs:// STORAGE BUCKET /tmp \ --dataflowKmsKey= KMS KEY " -Pdataflow-runner Python Dataflow does not support creating default Cloud Storage paths for temporary files when using a Cloud KMS key.
+- Specifying gcpTempLocation is required. python -m apache beam.examples.wordcount \ --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output gs:// STORAGE BUCKET /counts \ --runner DataflowRunner \ --region HOST GCP REGION \ --project PROJECT ID \ --temp location gs:// STORAGE BUCKET /tmp/ \ --dataflow kms key = KMS KEY Go Dataflow does not support creating default Cloud Storage paths for temporary files when using a Cloud KMS key.
+- Support and limitations Cloud KMS is supported in the following Apache Beam SDK versions: Java SDK versions 2.13.0 and later Python SDK versions 2.13.0 and later Go SDK versions 2.40.0 and later Cloud KMS with Dataflow supports regional keys .
+- Before you begin Verify that you have the Apache Beam SDK for Java 2.13.0 or later, the Apache Beam SDK for Python 2.13.0 or later, or the Apache Beam SDK for Go 2.40.0 or later.
 
 ### Create a Dataflow pipeline using Go \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go](https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go)
-- Source ID: `site-docs-root`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-required-3`
+- Final score: 170
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects remove-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \ --role = SERVICE ACCOUNT ROLE Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Programming model for Apache Beam Setting pipeline options Pipeline options reference Deploying a pipeline Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Create a Dataflow pipeline using Go This page shows you how to use the Apache Beam SDK for Go to build a program that defines a pipeline.
 - To run the latest version of the Beam wordcount example on your local machine, perform the following steps: Use the git clone command to clone the apache/beam GitHub repository: git clone https://github.com/apache/beam.git Switch to the beam/sdks/go directory: cd beam/sdks/go Use the following command to run the pipeline: go run examples/wordcount/wordcount.go \ --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output outputs The input flag specifies the file to read, and the output flag specifies the filename for the frequency count output.
 - To verify the version of Go that you have installed, run the following command in your local terminal: go version Run the Beam wordcount example The Apache Beam SDK for Go includes a wordcount pipeline example .
-- Create a Dataflow pipeline using Go This page shows you how to use the Apache Beam SDK for Go to build a program that defines a pipeline.
-- We recommend that you use the latest version of Go when working with the Apache Beam SDK for Go.
 

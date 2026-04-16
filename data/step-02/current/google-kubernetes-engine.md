@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 526
-Unique features: 597
+Unique features: 581
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -15,10 +15,8 @@ Unique features: 597
 | 2026-03-10 | Managed OpenTelemetry for GKE |  | GKE provides a managed in-cluster OTLP endpoint and automatic instrumentation to route traces, metrics, and logs to the Cloud Telemetry API. |
 | 2026-03-05 | Automated Hyperdisk disk type selection |  | GKE automatically selects Hyperdisk or Persistent Disk based on the node machine type when provisioning volumes. |
 | 2026-03-05 | GKE Inference Gateway |  | GKE Inference Gateway adds llm-d-based inference scheduling to GKE model serving workflows; GKE Inference Gateway is generally available for production inference workloads. |
-| 2026-03-05 | GKE Inference Quickstart distributed inference recommendations |  | GKE Inference Quickstart recommends optimized distributed AI inference configurations for supported model families and accelerator types. |
 | 2026-03-05 | H4D machine series |  | The H4D machine series provides HPC-optimized GKE nodes with AMD EPYC Turin CPUs and 200 Gbps RDMA networking. |
 | 2026-02-24 | C4A bare metal machine type |  | GKE Standard clusters can create bare metal nodes with the c4a-highmem-96-metal machine type from the C4A series. |
-| 2026-02-17 | Organization policy control for MCP use | 2026-03-17 | Organization policies can no longer control MCP use with the gcp.managed.allowedMCPServices constraint; deprecated on 2026-03-17. |
 | 2026-02-13 | TPU slice and partition system metrics |  | GKE exposes beta system metrics for TPU slice state and partition health. |
 | 2026-02-05 | Image streaming |  | Image streaming is available in the asia-southeast3 region. |
 | 2026-02-03 | Image streaming for Ubuntu with containerd |  | Image streaming is generally available for Ubuntu with containerd nodes on GKE. |
@@ -141,9 +139,7 @@ Unique features: 597
 | 2025-01-16 | Docker Schema 1 image support | 2025-01-16 | This support is removed from GKE nodes running containerd 2.0; deprecated on 2025-01-16. |
 | 2024-12-17 | Dynamic Resource Allocation |  | Dynamic Resource Allocation graduated to beta and enables efficient scheduling of advanced device driver resources. |
 | 2024-12-17 | Efficient API streaming |  | A more efficient API streaming mechanism graduated to beta and is enabled by default in the API server. |
-| 2024-12-17 | FlowSchema v1beta3 API | 2024-12-17 | The beta FlowSchema API version was deprecated in Kubernetes 1.29 and will be removed in 1.32 in favor of flowcontrol.apiserver.k8s.io/v1; The v1beta3 FlowSchema API is deprecated in GKE 1.29 in favor of v1; deprecated on 2024-12-17. |
 | 2024-12-17 | Job API external controller management |  | The Job API support for external controller management graduated to beta and is enabled by default. |
-| 2024-12-17 | PriorityLevelConfiguration v1beta3 API | 2024-12-17 | The beta PriorityLevelConfiguration API version was deprecated in Kubernetes 1.29 and will be removed in 1.32 in favor of flowcontrol.apiserver.k8s.io/v1; The v1beta3 PriorityLevelConfiguration API is deprecated in GKE 1.29 in favor of v1; deprecated on 2024-12-17. |
 | 2024-12-17 | Volume expansion failure recovery |  | Support for recovering from volume expansion failure graduated to beta and is enabled by default. |
 | 2024-12-16 | Cloud DNS additive VPC scope |  | Cloud DNS additive VPC scope is generally available on GKE clusters and adds GKE headless service entries to a Cloud DNS private zone visible from VPC networks; Cloud DNS additive VPC scope lets GKE add headless Service entries to a Cloud DNS private zone visible from VPC networks. |
 | 2024-12-16 | TPU Trillium |  | TPU Trillium is generally available for GKE Standard and Autopilot clusters in supported versions and zones. |
@@ -154,8 +150,6 @@ Unique features: 597
 | 2024-11-27 | Cloud TPU Trillium machine types for Autopilot clusters |  | Cloud TPU Trillium (v6e) machine types are in public preview for GKE Autopilot clusters. |
 | 2024-11-26 | C4 machine family autoscaling support |  | Cluster autoscaler and node auto-provisioning support the C4 machine family in GKE. |
 | 2024-11-20 | Compact placement policy for node auto-provisioning |  | Node auto-provisioning can use a custom resource policy as a compact placement policy. |
-| 2024-11-19 | 000 nodes |  | GKE version 1.31 allows clusters to scale up to 65,000 nodes, with a quota increase required above 5,000 nodes. |
-| 2024-11-19 | GKE cluster scaling to 65 |  | GKE version 1.31 allows clusters to scale up to 65,000 nodes, with a quota increase required above 5,000 nodes. |
 | 2024-11-11 | DNS-based access for GKE control plane |  | Clusters get a unique DNS name or fully qualified domain name for control-plane access governed by IAM policies instead of bastion hosts or proxy nodes. |
 | 2024-11-07 | GKE automatic application monitoring |  | Automatic application monitoring deploys PodMonitoring configurations for supported workloads and surfaces their metrics in Cloud Monitoring. |
 | 2024-11-06 | GKE Volume Populator |  | GKE Volume Populator automates data transfer from a Cloud Storage bucket to a PersistentVolumeClaim backed by Parallelstore during provisioning. |
@@ -184,14 +178,12 @@ Unique features: 597
 | 2024-08-20 | Always Honor PersistentVolume Reclaim Policy |  | This feature makes PersistentVolumes always honor their reclaim policy; This feature makes PersistentVolumes always honor their reclaim policy. |
 | 2024-08-20 | API Priority and Fairness v1beta3 | 2024-08-20 | GKE deprecated the v1beta3 FlowSchema and PriorityLevelConfiguration APIs in favor of v1; GKE deprecated the v1beta3 FlowSchema and PriorityLevelConfiguration APIs in favor of v1; deprecated on 2024-08-20. |
 | 2024-08-20 | C4 machine family |  | This machine family is generally available for GKE Standard and Autopilot in the listed versions. |
-| 2024-08-20 | CephFS in-tree volume plugin | 2024-08-20 | GKE deprecated the kubernetes.io/cephfs in-tree volume plugin and recommends using the Ceph CSI driver instead; This in-tree volume plugin supports CephFS volumes in Kubernetes; deprecated on 2024-08-20. |
 | 2024-08-20 | Field selectors for custom resources |  | This feature adds beta, default-on field selectors for custom resources; This feature adds beta, default-on field selectors for custom resources. |
 | 2024-08-20 | Job success/completion policy |  | This feature adds beta, default-on success and completion policy for Jobs; This feature adds beta, default-on success and completion policy for Jobs. |
 | 2024-08-20 | kubectl SPDY-to-WebSockets transition |  | This feature transitions kubectl from SPDY to WebSockets with beta, default-on support; This feature transitions kubectl from SPDY to WebSockets with beta, default-on support. |
 | 2024-08-20 | matchLabelKeys and mismatchLabelKeys for Pod affinity and anti-affinity |  | This feature adds beta, default-on matchLabelKeys and mismatchLabelKeys support for Pod affinity and anti-affinity; This feature adds beta, default-on matchLabelKeys and mismatchLabelKeys support for Pod affinity and anti-affinity. |
 | 2024-08-20 | Node kubeProxyVersion field | 2024-08-20 | GKE will stop populating the status.nodeInfo.kubeProxyVersion field in Node objects; GKE will stop populating the status.nodeInfo.kubeProxyVersion field in Node objects; deprecated on 2024-08-20. |
 | 2024-08-20 | procMount security context option |  | This feature adds a beta, default-on procMount option in the security context; This feature adds a beta, default-on procMount option in the security context. |
-| 2024-08-20 | RBD in-tree volume plugin | 2024-08-20 | GKE deprecated the kubernetes.io/rbd in-tree volume plugin and recommends using the Ceph CSI driver instead; This in-tree volume plugin supports Ceph RBD volumes in Kubernetes; deprecated on 2024-08-20. |
 | 2024-08-20 | Recursive read-only mounts |  | This feature adds beta, default-on recursive read-only mounts; This feature adds beta, default-on recursive read-only mounts. |
 | 2024-08-20 | Service traffic distribution |  | This feature adds beta, default-on traffic distribution for Services; This feature adds beta, default-on traffic distribution for Services. |
 | 2024-08-13 | Custom compute classes |  | This feature provides an API for fine-grained control over fallback compute priorities, autoscaling, obtainability, and node consolidation. |
@@ -213,15 +205,12 @@ Unique features: 597
 | 2024-05-02 | scheduler_pod_scheduling_sli_duration_seconds metric |  | This replacement control plane metric is exported in the GKE control plane metrics package. |
 | 2024-05-02 | Self-managed certificates with Certificate Manager for Regional internal and external Gateways |  | The GKE Gateway controller supports self-managed certificates with Certificate Manager for Regional internal and external Gateways. |
 | 2024-05-01 | CephFS volume plugin | 2024-05-01 | The CephFS volume plugin lets Kubernetes mount CephFS volumes and is deprecated in GKE 1.30; The CephFS volume plugin lets Kubernetes mount CephFS volumes and is deprecated in GKE 1.30; deprecated on 2024-05-01. |
-| 2024-05-01 | flowcontrol.apiserver.k8s.io/v1beta3 FlowSchema and PriorityLevelConfiguration APIs | 2024-05-01 | The v1beta3 FlowSchema and PriorityLevelConfiguration APIs are deprecated in favor of flowcontrol.apiserver.k8s.io/v1; The v1beta3 FlowSchema and PriorityLevelConfiguration APIs are deprecated in favor of flowcontrol.apiserver.k8s.io/v1; deprecated on 2024-05-01. |
 | 2024-05-01 | RBD volume plugin | 2024-05-01 | The RBD volume plugin lets Kubernetes mount RBD volumes and is deprecated in GKE 1.30; The RBD volume plugin lets Kubernetes mount RBD volumes and is deprecated in GKE 1.30; deprecated on 2024-05-01. |
 | 2024-05-01 | status.nodeInfo.kubeProxyVersion field in the Node API | 2024-05-01 | The Node API's status.nodeInfo.kubeProxyVersion field is deprecated and will no longer be populated; The Node API's status.nodeInfo.kubeProxyVersion field is deprecated and will no longer be populated; deprecated on 2024-05-01. |
-| 2024-05-01 | ValidatingAdmissionPolicy |  | ValidatingAdmissionPolicy is generally available and enabled by default; ValidatingAdmissionPolicy is a new admissionregistration.k8s.io/v1 API in Kubernetes 1.30. |
 | 2024-05-01 | ValidatingAdmissionPolicyBinding |  | ValidatingAdmissionPolicyBinding is a new admissionregistration.k8s.io/v1 API in Kubernetes 1.30. |
 | 2024-05-01 | Validation Ratcheting |  | Validation Ratcheting is in beta and enabled by default to make CustomResourceDefinitions safer and easier to manage. |
 | 2024-04-30 | Multiple GPU Pods per node in GKE Autopilot |  | GKE Autopilot can schedule multiple GPU Pods on a single node when using the Accelerator compute class. |
 | 2024-04-30 | Private registry certificate configuration |  | GKE can use a containerd configuration file to access private image registries that use private certificates. |
-| 2024-04-30 | Retrieval-augmented generation quick start solution on GKE |  | A quick start solution and reference architecture are available for developing and deploying RAG applications on GKE. |
 | 2024-04-29 | Dual-stack LoadBalancer Services |  | Dual-stack LoadBalancer Services let GKE expose Services over IPv4, IPv6, or both in dual-stack clusters; Dual-stack LoadBalancer Services are available in Preview on GKE dual-stack clusters. |
 | 2024-04-26 | GKE Sandbox with NVIDIA GPUs |  | GKE Sandbox supports NVIDIA GPUs on Standard and Autopilot clusters in public preview. |
 | 2024-04-26 | Linux huge pages in GKE Pods |  | GKE can use the node system configuration file to enable and use Linux huge pages in Pods. |
@@ -239,10 +228,8 @@ Unique features: 597
 | 2024-03-11 | Private Service Connect for GKE private clusters |  | GKE private clusters can use Private Service Connect for node-to-control-plane communication. |
 | 2024-03-11 | Secret Manager add-on for GKE |  | The Secret Manager add-on mounts secrets from Secret Manager into Kubernetes Pods. |
 | 2024-03-07 | Node data and container image preloading |  | New nodes can preload data or container images to speed workload deployment and autoscaling. |
-| 2024-01-11 | FlowSchema API v1beta3 | 2024-01-11 | The flowcontrol.apiserver.k8s.io/v1beta3 FlowSchema API is deprecated in favor of flowcontrol.apiserver.k8s.io/v1; deprecated on 2024-01-11. |
 | 2024-01-11 | FlowSchema v1beta2 API | 2024-01-11 | The v1beta2 FlowSchema API is removed in GKE 1.29 in favor of newer API versions; deprecated on 2024-01-11. |
 | 2024-01-11 | Node status.nodeInfo.kubeProxyVersion field | 2024-01-11 | The Node status.nodeInfo.kubeProxyVersion field is deprecated and will stop being populated in GKE 1.33; The Node API's status.nodeInfo.kubeProxyVersion field is deprecated and will no longer be populated starting in version 1.33; deprecated on 2024-01-11. |
-| 2024-01-11 | PriorityLevelConfiguration API v1beta3 | 2024-01-11 | The flowcontrol.apiserver.k8s.io/v1beta3 PriorityLevelConfiguration API is deprecated in favor of flowcontrol.apiserver.k8s.io/v1; deprecated on 2024-01-11. |
 | 2024-01-11 | PriorityLevelConfiguration v1beta2 API | 2024-01-11 | The v1beta2 PriorityLevelConfiguration API is removed in GKE 1.29 in favor of newer API versions; deprecated on 2024-01-11. |
 | 2024-01-11 | SHA-1-signed webhook backend certificates | 2024-01-11 | GKE no longer supports webhook backends that use TLS certificates signed with SHA-1; deprecated on 2024-01-11. |
 | 2023-12-19 | vm.max_map_count sysctl configuration |  | GKE Standard node pools can use node system configuration to set the vm.max_map_count Linux kernel attribute. |
@@ -303,7 +290,6 @@ Unique features: 597
 | 2023-06-01 | Agones controller placement recommendations |  | GKE provides recommendations and insights when the Agones controller is not installed on dedicated nodes. |
 | 2023-05-26 | Ephemeral storage metrics in the Observability tab |  | The Observability tab for GKE clusters now includes ephemeral storage metrics. |
 | 2023-05-22 | C3 machine family for GKE Standard |  | The C3 machine family is generally available for GKE Standard clusters running version 1.22 and later. |
-| 2023-05-16 | v1beta2 FlowSchema and PriorityLevelConfiguration APIs | 2023-05-16 | The flowcontrol.apiserver.k8s.io/v1beta2 FlowSchema and PriorityLevelConfiguration APIs are deprecated and will be removed in GKE 1.29 in favor of v1beta3; The flowcontrol.apiserver.k8s.io/v1beta2 FlowSchema and PriorityLevelConfiguration APIs are deprecated and will be removed in GKE 1.29 in favor of v1beta3; deprecated on 2023-05-16. |
 | 2023-05-12 | g2-standard machine family with NVIDIA L4 |  | The g2-standard machine family with NVIDIA L4 is generally available for GKE node pools in clusters running version 1.22 and later. |
 | 2023-05-09 | Additional IPv4 secondary Pod ranges |  | You can add more IPv4 secondary Pod ranges to GKE Standard and Autopilot clusters running version 1.26 and later. |
 | 2023-03-29 | Cluster autoscaler parallel pod draining |  | Starting in GKE 1.26, the cluster autoscaler can drain Pods from multiple nodes in parallel. |
@@ -340,12 +326,10 @@ Unique features: 597
 | 2022-09-22 | a2-ultragpu machine family |  | The a2-ultragpu machine family is available in Preview for node pools. |
 | 2022-09-14 | CSIStorageCapacity | 2022-09-14 | CSIStorageCapacity is a Kubernetes API for advertising storage capacity to the scheduler; deprecated on 2022-09-14. |
 | 2022-09-14 | CSIStorageCapacity API v1beta1 | 2022-09-14 | The CSIStorageCapacity API v1beta1 exposes storage capacity information to Kubernetes and is deprecated in favor of newer versions; CSIStorageCapacity API v1beta1 is a Kubernetes beta API for tracking CSI storage capacity; deprecated on 2022-09-14. |
-| 2022-09-14 | FlowSchema | 2022-09-14 | FlowSchema is a Kubernetes API used by flow control to classify requests; FlowSchema version flowcontrol.apiserver.k8s.io/v1beta1 is deprecated and scheduled for removal in Kubernetes 1.26; deprecated on 2022-09-14. |
 | 2022-09-14 | FlowSchema API v1beta1 | 2022-09-14 | The FlowSchema API v1beta1 defines Kubernetes API flow-control schemas and is deprecated in favor of v1beta2; FlowSchema API v1beta1 is a Kubernetes beta API for API flow control; deprecated on 2022-09-14. |
 | 2022-09-14 | HorizontalPodAutoscaler | 2022-09-14 | HorizontalPodAutoscaler is a Kubernetes API for scaling workloads based on observed metrics; HorizontalPodAutoscaler is a Kubernetes API for scaling workloads based on observed metrics; deprecated on 2022-09-14. |
 | 2022-09-14 | HorizontalPodAutoscaler API v2beta2 | 2022-09-14 | The HorizontalPodAutoscaler API v2beta2 defines Kubernetes pod autoscaling and is deprecated in favor of v2; HorizontalPodAutoscaler API v2beta2 is a Kubernetes beta API for workload autoscaling; deprecated on 2022-09-14. |
 | 2022-09-14 | PodSecurityPolicy | 2022-09-14 | PodSecurityPolicy is a Kubernetes policy API for governing pod security settings; PodSecurityPolicy is a Kubernetes policy API for governing pod security settings; deprecated on 2022-09-14. |
-| 2022-09-14 | PriorityLevelConfiguration | 2022-09-14 | PriorityLevelConfiguration is a Kubernetes API used by flow control to assign request priority levels; PriorityLevelConfiguration version flowcontrol.apiserver.k8s.io/v1beta1 is deprecated and scheduled for removal in Kubernetes 1.26; deprecated on 2022-09-14. |
 | 2022-09-14 | PriorityLevelConfiguration API v1beta1 | 2022-09-14 | The PriorityLevelConfiguration API v1beta1 defines Kubernetes API priority levels and is deprecated in favor of v1beta2; PriorityLevelConfiguration API v1beta1 is a Kubernetes beta API for API flow control priority levels; deprecated on 2022-09-14. |
 | 2022-09-14 | RuntimeClass | 2022-09-14 | RuntimeClass is a Kubernetes API for selecting the container runtime configuration for pods; RuntimeClass is a Kubernetes API for selecting the container runtime configuration for pods; deprecated on 2022-09-14. |
 | 2022-09-13 | GKE high-throughput Logging agent variant |  | GKE Standard clusters can deploy an alternative Logging agent variant that increases per-node log throughput. |

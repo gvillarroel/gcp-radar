@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:13.099Z"
+generated_at: "2026-04-12T12:20:09.438Z"
 product_name: "Virtual Private Cloud"
 product_slug: "virtual-private-cloud"
 feature_name: "Private Service Connect endpoint automatic retry on create/delete failures"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-06-27"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/vpc/docs/private-service-connect"
-  - "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors"
-  - "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors/create"
+  - "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests"
+  - "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+  - "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
 keywords:
   - "private"
   - "connect"
@@ -38,53 +39,70 @@ Private Service Connect endpoint operations now automatically retry create or de
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/vpc/docs/private-service-connect](https://docs.cloud.google.com/vpc/docs/private-service-connect)
-- [https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors](https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors)
-- [https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors/create](https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors/create)
+- [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests)
+- [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer)
+- [https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health](https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health)
 
 ## Supporting Pages
 
-### Private Service Connect \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
+### "Configure Private Service Connect health for automatic cross-region failover\
 
-- URL: [https://docs.cloud.google.com/vpc/docs/private-service-connect](https://docs.cloud.google.com/vpc/docs/private-service-connect)
-- Source ID: `site-docs-root`
-- Final score: 222
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Virtual Private Cloud Start free Overview Guides Reference Resources More Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Virtual Private Cloud overview Get started VPC networks Subnets IPv6 support Create and manage VPC networks Add networking features Add IP addresses Overview Reserve internal IP addresses Reserve external IP addresses Move an external IPv4 address to a different project Add alias IP ranges Overview Configure alias IP ranges Bring your own IP addresses (BYOIP) Overview Planning and architecture Create a public advertised prefix Create public delegated prefixes Create IPv4 sub-prefixes and IP addresses Create and use IPv6 sub-prefixes Manage BGP announcement Deprovision BYOIP Add routes Routes overview Static routes overview Use routes Add policy-based routes Overview Use policy-based-routes Change MTU Overview Change MTU of a VPC network Create and verify a jumbo frame MTU network Access IPv4 destinations from IPv6-only instances Overview Configure IPv6-only subnets and instances with DNS64 and NAT64 Configure VMs Add network tags Add VMs with multiple network interfaces Overview Create VMs with multiple network interfaces Configure Dynamic NICs Add Dynamic NICs Delete Dynamic NICs Configure routing for an additional network interface Troubleshoot Add capabilities Network Connectivity Center VPC Network Peering Overview About peering connections Set up and manage VPC Network Peering Peer two VPC networks Shared VPC Overview Provision Shared VPC Deprovision Shared VPC Hybrid Subnets About migrating to Google Cloud with Hybrid Subnets Prepare for Hybrid Subnets connectivity Migrate to Google Cloud with Hybrid Subnets Disable hybrid subnet routing Internal ranges Overview Create and use internal ranges Network profiles for specific use cases Overview RDMA network profiles Create a VPC network for RDMA NICs View network profiles Access APIs and services Choose a private access option Private Service Connect Overview Compatibility Deployment patterns Architecture Security Create and access your own service Overview Create a load-balanced service Make the service accessible to other VPC networks Access the service from another VPC network Service consumers Endpoints Published services About accessing published services Access published services Manage endpoints that access published services Global Google APIs About accessing global Google APIs Access global Google APIs Regional Google APIs About accessing regional Google APIs Access regional Google APIs About propagated connections Backends About backends Create a backend Access published services Access regional Google APIs Access global Google APIs Network attachments About network attachments Create network attachments Configure security Service connection policies About service connectivity automation About service connection policies Configure connectivity to services Configure service connection policies Deploy service instances Manage consumer security Service producers Published services About published services About controlling access to published services Publish services Manage published services DNS configuration for services Private Service Connect health About Private Service Connect health Configure Private Service Connect health for failover View, update, and delete Private Service Connect health configurations Port mapping About port mapping Create port mapping services Update port mapping services Migrate peering services to Private Service Connect About migrating peering services Migrate peering services Interfaces About interfaces Create interfaces Configure routing Configure security Manage destination overlap Manage producer security Monitor connections Private Google Access Overview Configure Private Google Access Private Google Access for on-premises hosts Overview Configure Private Google Access for on-premises hosts Access APIs from VMs with external IP addresses Private services access Overview Configure private services access Send serverless traffic to a VPC network Overview Configure serverless traffic Monitor VPC Flow Logs Overview About VPC Flow Logs records About traffic flows Configure VPC Flow Logs Configure organization policy constraints Access flow logs Audit logging VPC audit logging Private services access audit logging Serverless VPC Access audit logging Packet Mirroring Overview Use Packet Mirroring Monitor Packet Mirroring Packet Mirroring partner providers Control access Manage resources by using custom constraints Create and manage tags for VPC resources Troubleshoot Troubleshoot internal connectivity between VMs Troubleshoot policy and access problems Advanced topics Advanced VPC concepts Legacy networks Overview Manage legacy networks AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Choosing a Private Service Connect feature Private Service Connect types Endpoints Backends Interfaces Private Service Connect managed services Published services Google APIs Private Service Connect characteristics What's next Home Documentation Networking Virtual Private Cloud Guides Was this helpful?
-- Private Service Connect lets you more directly control routing and create as many endpoints as necessary for your network.
-- Backends let you create configurations such as the following: Customer-owned domains and certificates in front of managed services Consumer-controlled failover between managed services in different regions Centralized security configuration and access control for managed services The following diagram shows an internal Application Load Balancer deployed with Private Service Connect backends that reference a published service.
-- Send feedback On this page Choosing a Private Service Connect feature Private Service Connect types Endpoints Backends Interfaces Private Service Connect managed services Published services Google APIs Private Service Connect characteristics What's next Private Service Connect Stay organized with collections Save and categorize content based on your preferences.
-
-### "REST Resource: projects.locations.connectors \_|\_ Virtual Private Cloud\
-
-- URL: [https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors](https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors)
-- Source ID: `site-docs-reference`
-- Final score: 192
+- URL: [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover)
+- Source ID: `site-docs-root-2`
+- Final score: 332
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Console On this page Resource: Connector State Subnet Methods create delete get list patch Home Documentation Networking Virtual Private Cloud Was this helpful?
-- Methods create Creates a Serverless VPC Access connector, returns an operation. delete Deletes a Serverless VPC Access connector. get Gets a Serverless VPC Access connector. list Lists Serverless VPC Access connectors. patch Updates a Serverless VPC Access connector, returns an operation.
-- On this page Resource: Connector State Subnet Methods create delete get list patch Resource: Connector JSON representation State Subnet JSON representation Methods Resource: Connector Definition of a Serverless VPC Access connector.
-- REST Resource: projects.locations.connectors Virtual Private Cloud Google Cloud Documentation Skip to main content / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to configure Private Service Connect health: compute.regionHealthAggregationPolicies.list compute.regionHealthAggregationPolicies.get compute.regionHealthAggregationPolicies.create compute.regionHealthAggregationPolicies.update compute.regionHealthAggregationPolicies.delete compute.regionHealthSources.list compute.regionHealthSources.get compute.regionHealthSources.create compute.regionHealthSources.update compute.regionHealthSources.delete compute.regionCompositeHealthChecks.list compute.regionCompositeHealthChecks.get compute.regionCompositeHealthChecks.create compute.regionCompositeHealthChecks.update compute.regionCompositeHealthChecks.delete You might also be able to get these permissions with custom roles or other predefined roles .
+- Configure Private Service Connect health for automatic cross-region failover Preview This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- Configure Private Service Connect health to support automatic cross-region failover The following sections describe how to configure Private Service Connect health for automatic cross-region failover.
+- For information about how a service consumer can configure their VPC network to use health Private Service Connect health, see Automatic cross-region failover .
 
-### "Method: projects.locations.connectors.create \_|\_ Virtual Private Cloud\
+### "Create and run Connectivity Tests \_|\_ Network Intelligence Center - Connectivity\
 
-- URL: [https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors/create](https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors/create)
-- Source ID: `site-docs-reference`
-- Final score: 188
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests](https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests)
+- Source ID: `site-iam-reference`
+- Final score: 308
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Method: projects.locations.connectors.create Virtual Private Cloud Google Cloud Documentation Skip to main content / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-- Authorization requires the following IAM permission on the specified resource parent : vpcaccess.connectors.create Query parameters Parameters connector Id string Required.
-- Send feedback Method: projects. locations. connectors. create Stay organized with collections Save and categorize content based on your preferences.
-- Creates a Serverless VPC Access connector, returns an operation.
+- Python The following example code creates a test between a VM instance and a Private Service Connect endpoint.
+- These parameters are automatically selected based on your source and destination IP addresses. resource "google network management connectivity test" "default" { name = "conn-test-addr" source { ip address = google compute address.source addr.address project id = google compute address.source addr.project network = google compute network.default.id network type = "GCP NETWORK" } destination { ip address = google compute address.dest addr.address project id = google compute address.dest addr.project network = google compute network.default.id port = "80" } protocol = "UDP" } resource "google compute network" "default" { name = "connectivity-vpc" auto create subnetworks = false } resource "google compute subnetwork" "default" { name = "connectivity-vpc-subnet" ip cidr range = "10.0.0.0/8" region = "us-central1" network = google compute network.default.id } resource "google compute firewall" "default" { name = "allow-incoming-all" network = google compute network.default.name allow { protocol = "all" } source ranges = ["0.0.0.0/0"] } resource "google compute address" "source addr" { name = "src-addr" subnetwork = google compute subnetwork.default.id address type = "INTERNAL" address = "10.0.0.42" region = "us-central1" } resource "google compute address" "dest addr" { name = "dest-addr" subnetwork = google compute subnetwork.default.id address type = "INTERNAL" address = "10.0.0.43" region = "us-central1" } resource "google compute instance" "source" { name = "source-vm1" machine type = "e2-medium" zone = "us-central1-a" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = "10.0.0.42" access config { } } } resource "google compute instance" "destination" { name = "dest-vm1" machine type = "e2-medium" zone = "us-central1-a" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = "10.0.0.43" access config { } } } data "google compute image" "default" { family = "debian-11" project = "debian-cloud" } API This example tests the ability to ping from the source IP address to the destination IP address.
+- For more information, see create in the Google API Client Library for Python. test input = { "source": { "instance": " SOURCE INSTANCE ", "ipAddress": " SOURCE IP ADDRESS ", "projectId": " SOURCE INSTANCE PROJECT ID " }, "destination": { " DESTINATION RESOURCE FIELD ": " DESTINATION ENDPOINT ", "port": " DESTINATION PORT " }, "protocol": " PROTOCOL ", } request = api.projects().locations().global ().connectivityTests().create( parent="projects/ PROJECT ID /locations/global", testId=" TEST ID ", body=test input) print(json.dumps(request.execute(), indent=4)) Replace the following: SOURCE INSTANCE : the URI for the source VM—for example, projects/myproject/zones/us-east1-b/instances/instance-1 .
+- Continue to View test results . gcloud Replace the variables for the command options according to the following guidance: gcloud network-management connectivity-tests create NAME \ --source-instance= SOURCE INSTANCE \ --source-ip-address= SOURCE IP ADDRESS \ DESTINATION RESOURCE FLAG = DESTINATION ENDPOINT \ --destination-port= DESTINATION PORT \ --protocol= PROTOCOL Replace the following: NAME : the name of the Connectivity Test.
+
+### "Publish services by using Private Service Connect \_|\_ Virtual Private\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer](https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer)
+- Source ID: `site-docs-root-2`
+- Final score: 308
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- When you run terraform apply after upgrading to versions 4.76.0 through 4.81.x, Terraform might unintentionally delete and recreate the service attachments and close existing Private Service Connect connections.
+- Recreated service attachments don't automatically re-establish Private Service Connect connections.
+- To create an IPv4-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { "ipCidrRange": " SUBNET RANGE ", "name": " SUBNET NAME ", "network": "projects/ PROJECT ID /global/networks/ NETWORK NAME ", "purpose": "PRIVATE SERVICE CONNECT" } To create a dual-stack Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { "ipCidrRange": " SUBNET RANGE ", "name": " SUBNET NAME ", "network": "projects/ PROJECT ID /global/networks/ NETWORK NAME ", "purpose": "PRIVATE SERVICE CONNECT", "stackType": "IPV4 IPV6", "ipv6AccessType": "INTERNAL" } To create an IPv6-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { "name": " SUBNET NAME ", "network": "projects/ PROJECT ID /global/networks/ NETWORK NAME ", "purpose": "PRIVATE SERVICE CONNECT", "stackType": "IPV6 ONLY", "ipv6AccessType": "INTERNAL" } Replace the following: PROJECT ID : the project for the subnet.
+- To create an IPv4-only Private Service Connect subnet, do the following: gcloud compute networks subnets create SUBNET NAME \ --network= NETWORK NAME \ --region= REGION \ --range= SUBNET RANGE \ --purpose=PRIVATE SERVICE CONNECT To create a dual-stack Private Service Connect subnet, do the following: gcloud compute networks subnets create SUBNET NAME \ --network= NETWORK NAME \ --region= REGION \ --stack-type=IPV4 IPV6 \ --ipv6-access-type=INTERNAL \ --range= SUBNET RANGE \ --purpose=PRIVATE SERVICE CONNECT To create an IPv6-only Private Service Connect subnet, do the following: gcloud compute networks subnets create SUBNET NAME \ --network= NETWORK NAME \ --region= REGION \ --stack-type=IPV6 ONLY \ --ipv6-access-type=INTERNAL \ --purpose=PRIVATE SERVICE CONNECT Replace the following: SUBNET NAME : the name to assign to the subnet.
+
+### "About Private Service Connect health for automatic cross-region failover\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health](https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health)
+- Source ID: `site-docs-root-2`
+- Final score: 288
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Published service instances must have one of the following backend types: Network endpoint group of type GCE VM IP PORT Network endpoint group of type GCE VM IP Managed or unmanaged instance group The published service instances must be accessed by Private Service Connect backends that are based on load balancers that supports Private Service Connect health .
+- Deployment requirements To use Private Service Connect health for automatic failover, both the service producer and the service consumer must configure their resources for a multi-region deployment, as described in this section.
+- Accessing a multi-region service with a supported global or cross-regional load balancer lets the service consumer take advantage of Private Service Connect health for automatic cross-region failover (click to enlarge).
+- About Private Service Connect health for automatic cross-region failover Preview This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
 

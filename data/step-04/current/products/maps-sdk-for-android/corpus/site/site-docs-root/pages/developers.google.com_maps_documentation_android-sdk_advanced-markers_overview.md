@@ -4,7 +4,7 @@ url: https://developers.google.com/maps/documentation/android-sdk/advanced-marke
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://developers.google.com/maps/documentation/android-sdk/overview
+entrypoint: https://developers.google.com/maps/documentation/android-sdk
 source_metadata:
   url: https://developers.google.com/maps/documentation/android-sdk/advanced-markers/overview
   title: "Overview \_|\_ Maps SDK for Android \_|\_ Google for Developers"
@@ -68,6 +68,6 @@ Next step
 Get started with advanced markers
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-09 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["Advanced markers enable highly customizable and performant markers on maps. Users can personalize the default marker's background, border, and glyph colors, or substitute it with a custom graphic image or an Android `View`. These markers support standard `Marker` properties like title, snippet, click, and drag events. Unique features include colored pins, `View`-based markers, and collision behavior control. Users can customize the default marker's properties and specify how markers interact with other elements.\n"]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],["Advanced markers enable highly customizable and performant markers on maps. Users can personalize the default marker's background, border, and glyph colors, or substitute it with a custom graphic image or an Android `View`. These markers support standard `Marker` properties like title, snippet, click, and drag events. Unique features include colored pins, `View`-based markers, and collision behavior control. Users can customize the default marker's properties and specify how markers interact with other elements.\n"]]

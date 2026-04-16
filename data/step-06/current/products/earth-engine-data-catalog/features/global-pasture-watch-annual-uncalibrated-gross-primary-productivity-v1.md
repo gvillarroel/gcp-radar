@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.344Z"
+generated_at: "2026-04-14T15:13:19.313Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Global Pasture Watch Annual Uncalibrated Gross Primary Productivity v1"
 feature_slug: "global-pasture-watch-annual-uncalibrated-gross-primary-productivity-v1"
 latest_feature_date: "2025-08-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/plant-productivity"
   - "https://developers.google.com/earth-engine/datasets/catalog"
@@ -26,7 +26,7 @@ keywords:
 # Global Pasture Watch Annual Uncalibrated Gross Primary Productivity v1
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ Annual uncalibrated gross primary productivity estimates from Global Pasture Wat
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,9 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/plant-productivity](https://developers.google.com/earth-engine/datasets/tags/plant-productivity)
 - Source ID: `site-docs-root-3`
-- Final score: 174
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 206
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The dataset is based … canopy global global-pasture-watch land landcover plant-productivity GPW Annual uncalibrated Gross Primary Productivity (uGPP) v1 This dataset provides global uncalibrated EO-based Gross Primary Productivity from 2000 at 30-m spatial resolution.
@@ -66,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 152
+- Final score: 170
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +79,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 - Source ID: `site-docs-root`
-- Final score: 144
+- Final score: 162
 - Re-rank relevance: N/A
 
 Evidence snippets:

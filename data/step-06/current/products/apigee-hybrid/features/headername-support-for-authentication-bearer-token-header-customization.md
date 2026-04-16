@@ -1,31 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:33:10.252Z"
+generated_at: "2026-04-14T04:54:52.845Z"
 product_name: "Apigee hybrid"
 product_slug: "apigee-hybrid"
 feature_name: "HeaderName support for Authentication bearer token header customization"
 feature_slug: "headername-support-for-authentication-bearer-token-header-customization"
 latest_feature_date: "2023-11-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes"
-  - "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+  - "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
 keywords:
-  - "bearer token header override"
-  - "auth header customization"
-  - "bearer token header"
-  - "custom header name"
-  - "header name"
-  - "ExternalCallout"
-  - "ServiceCallout"
-  - "TargetEndpoint"
+  - "customization"
+  - "headername"
+  - "bearer"
+  - "header"
+  - "authentication"
+  - "token"
 ---
 
 # HeaderName support for Authentication bearer token header customization
 
 Product: Apigee hybrid
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,39 +36,54 @@ Apigee hybrid adds the HeaderName element under Authentication so ServiceCallout
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
-- [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
+- [https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide](https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies)
 
 ## Supporting Pages
 
-### Apigee hybrid release notes \_|\_ Google Cloud Documentation
+### Get started with the Apigee Extension Processor \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/release-notes](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 48
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- This element appears in the ServiceCallout and ExternalCallout policies, and in the TargetEndpoint proxy configuration .
-- N/A Updates to security, infrastructure, and libraries. (also fixed in Apigee 1-16-0-apigee-4 ) v1.16.0 Fixed Fixed since last minor release Bug ID Description 451841788 Apigee hybrid required the mintTaskScheduler.serviceAccountPath property even when Monetization was not enabled. (Fixed in v1.15.1 & v1.14.3 ) 451375397 The apigee-pull-push.sh script could return a No such image error message. (Fixed in v1.15.1 & v1.14.3 ) 445912919 Unused files and folders have been removed from the Apigee hybrid Helm charts to prevent potential security exposure and streamline the product installation and upgrade process. (Fixed in v1.15.1 ) 442501403 Fixed an issue that caused incorrect target latency metrics in Apigee Analytics when a TargetEndpoint is configured with a <LoadBalancer> . (Fixed in v1.15.1 ) 437999897 Reduced the log level for failed geo IP lookups to address excessive log messages for private IP addresses. (Fixed in v1.15.1 ) 431930277 , 395272878 When the configuration property envs.managementCallsSkipProxy is set to true via helm for environment-level forward proxy, trace and analytics (which use googleapis.com ) will skip forward proxy. (Fixed in v1.15.1 ) 423597917 Post of an AppGroupAppKey scopes should result in insert operation instead of update. (Fixed in v1.15.1 & v1.14.3 ) 420675540 Fixed Cassandra based replication for runtime contracts in synchronizer. (Fixed in v1.15.1 , v1.14.3 & v1.13.4 ) 419578402 Mint-Mart forward proxy compatible. (Fixed in v1.15.1 & v1.14.3 ) 416634326 Presence of istio.io Custom Resource Definitions (CRDs) in an Apigee hybrid cluster could cause failure in apigee-ingressgateway-manager pods. (Fixed in v1.15.1 , v1.14.3 & v1.13.4 ) 414499328 ApigeeTelemetry could become stuck in creating state (Fixed in v1.14.3 & v1.13.4 ) 412740465 Fixed issue where zipkin headers were not generated by Apigee Ingress Gateway. (Fixed in v1.15.1 & v1.14.3 ) 409048431 Fixes a vulnerability which could allow a SAML signature verification to be bypassed. (Fixed in v1.15.1 & v1.14.3 ) 401746333 Fixed a java.lang.ClassCircularityError that could occur in Java Callouts due to an issue with the class loading mechanism. (Fixed in v1.15.1 & v1.14.3 ) 395272878 Separate Forward proxy support for googleapis.com and non-googleapis.com runtime traffic. (Fixed in v1.14.3 ) 393615439 OASValidation behavior for allOf with additionalProperties: true . (Fixed in 1.14.2-hotfix.1 ) 382565315 A memory leak within the Security Policy has been addressed, improving system stability. (Fixed in v1.13.4 ) 378686709 The use of wildcards ( ) in Apigee proxy basepaths would conflict with other explicit basepaths, resulting in a 404 error.
-- For more information, see Restoring in a single region . (Fixed in Apigee hybrid v1.6.6) 199807323 Updating Developer would reset the Developer billing type attribute (Fixed in Apigee hybrid v1.6.2) 199541025 Transaction ID is now required to be unique when used with prepaid developer balance credit API. (Fixed in Apigee hybrid v1.6.2) 198549304, 197730687, 196937143, 188370635, 187890034 Error state for conflicting dates is now correct. (Fixed in Apigee hybrid v1.6.2) 198036824 The securityContext was empty when it should have been populated. (Fixed in Apigee hybrid v1.6.1) 197945951 Stale DNS record in MP memory could cause an outage for a proxy. (Fixed in Apigee hybrid v1.6.4) 197910247 SetDialogflowResponse Policy - JSONPath expressions were not working. (Fixed in Apigee hybrid v1.6.1) 197711066 Cluster upgrade failed due to PDB (PodDisruptionBudget) policy not being met. (Fixed in Apigee hybrid v1.6.1) 196095557 Fixed proxy high response times. (Fixed in Apigee hybrid v1.5.4) 196024622 Hybrid images contained keys. (Fixed in Apigee hybrid v1.6.1) 196024483 Hybrid images did not set USER instruction when building the container. (Fixed in Apigee hybrid v1.6.1) 193799009 Fixed wrong status code shown on trace with ServiceCallout in PostClientflow. (Fixed in Apigee hybrid v1.5.4) 193520269 Fixed Apigee UI not showing the trace UI. (Fixed in Apigee hybrid v1.5.4) 193041253 Cassandra upgraded to v3.11.9 The Cassandra database in Apigee hybrid v1.7.0 has been upgraded to version 3.11.9. (Fixed in Apigee hybrid v1.7.0) 192987085 Fixed the ApiProductNotFound exception, which occurred when you deleted an API product but the deletion of associated rate plans was pending. (Fixed in Apigee X Monetization, November 3, 2021) 191853747 Apigee Workload Identities not working for specific configurations. (Fixed in Apigee hybrid v1.6.5) 190679584 There was an Incorrect error message on deploying AssertCondition policy with invalid condition. (Fixed in Apigee hybrid v1.6.1) 189341334 Fixed an issue to eliminate the potential for connection leaks for the watcher component. (Fixed in Apigee hybrid v1.6.3) 188407113 Invalid value in the ConsumptionPricingType during rate plan creation displayed the 500 status code.
-- 373722434 Fixed support for backups to Google Cloud Storage buckets with retention policies. (Fixed in v1.13.2 ) 368646378 Fixed an issue affecting control Plane connectivity testing in Guardrails. (Fixed in v1.12.3 ) 364282883 Remove check for dc-expansion flag and add timeout to multi-region seed host connection test. (Fixed in v1.13.1 ) 362979563 Fix for Ingress Health Check failure /healthz/ingress - route not found . (Fixed in 1.13.0-hotfix.1 ) 362690729 Fix for aggressive scaling of runtime pods & cpu spike. (Fixed in 1.13.0-hotfix.1 ) 362305438 You can now add additional env variables to the runtime component. (Fixed in v1.13.1 ) 361044374 Fixes assign message not correctly highlighting the set payload action in the debug trace. (Fixed in v1.13.2 ) 355122464 This release contains a few error-handling fixes for CSI backup and restore. (Fixed in v1.13.2 ) 353527851 WebSocket connection drops when using VerifyJwt or OAuthV2 VerifyJWTAccessToken operations. (Fixed in v1.13.1 ) 351440306 An issue was fixed where trace could not be viewed in the UI for orgs with DRZ enabled. (Fixed in v1.13.1 ) 347798999 You can now configure forward proxy for opentelemetry pods in Apigee hybrid. (Fixed in v1.12.2 ) 338638343 An ID is now added at the end of apigee-env and virtualhost guardrails pods to make the pod names unique. (Fixed in v1.13.1 ) 237656263 Fix added to make use of asynchronous ServiceCallout execution when the ServiceCallout policy <Response> element is not present (Fixed in v1.13.2 ) 181569113 Fixed an issue in new debug session creation. (Fixed in v1.12.3 ) v1.14.0 Security Bug ID Description N/A Security fixes for apigee-redis .
-
-### "Best practices for API proxy design and development with Apigee \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development)
-- Source ID: `site-docs-reference`
-- Final score: 46
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 130
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Build a ServiceCallout request message using the AssignMessage policy, and populate the request object in a message variable. (This includes setting the request payload, path, and method.) The URL that is configured within the policy requires the protocol specification, meaning the protocol portion of the URL, https:// for example, cannot be specified by a variable.
-- Users who require large payload processing can configure a higher limit using the <Properties> element in the ProxyEndpoint or TargetEndpoint configurations of their API proxies.
-- ExternalCallout When to use: Ideally suited to externalize custom logic and allow the custom logic to access (and if necessary modify) the message context.
-- ServiceCallouts There are many valid use cases for using proxy chaining, where you use a service callout in one API proxy to call another API proxy.
+- The response appears similar to the following: { ... "headers" : { "Accept" : " / " , " Authorization" : "Bearer ya29.c.c0ASRK0Gbw03y9cfvxL11DxaRYBQUU18SmUP4Vu63OckHI5cX7wJ4DmGMG2vbDDS69HXJHqMj-lak4tcqOsJGmE65crn2gNuJLanXidwM8" , "First" : "1.0" , "Host" : "apigee-ext-proc-test.apigee.net" , "Second" : "1.0" , "Sum" : "2" , "User-Agent" : "curl/8.7.1" , "X-Api-Key" : "McYcHGR3PTSGLXExvKADwQ1JJeCjgPDUvAakCl0rJKCFaX0Y" , "X-Cloud-Trace-Context" : "0fd3dadc2a3c328fa968d5f5f1434c29/18300783092696918345" } , ... } The response shows the successful injection of the Google authentication token into the request header.
+- Under the <Set> element, add the following child elements: <Set> <Authentication> <HeaderName>Authorization</HeaderName> <GoogleAccessToken> <Scopes> <Scope>https://www.googleapis.com/auth/cloud-platform</Scope> </Scopes> </GoogleAccessToken> </Authentication> </Set> Click Save .
+- Create the traffic extension using the following command to call the Extension Processor provisioning API: curl -X POST -H "Authorization: Bearer $TOKEN " \ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions?apimServiceExtensionId = TRAFFIC EXT NAME \ -H "Content-Type:application/json" -d \ '{ "extensionProcessor": " TARGET PROXY NAME " "lbForwardingRule": " LB FORWARDING RULE ", "network" : " NETWORK ", "networkConfigs": [ { "region": "$REGION", "subnet": "project/my-project/regions/$REGION/subnetworks/$SUBNET" } ], "extensions": [ { "name": " TARGET PROXY NAME ", "matchCondition": " CEL EXPRESSION ", "failOpen": FAIL OPEN , "hostname": " ENV GROUP HOSTNAME ", "supportedEvents": [ "REQUEST HEADERS", "RESPONSE HEADERS" ] } ] }' Where: TRAFFIC EXT NAME is is the name of the traffic extension you are creating.
+- Update Multiple Attributes (Global LB) To update the extensions and extensionProcessor attributes simultaneously, use the following command: curl -X PATCH -H "Authorization: Bearer $TOKEN " \ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions/ TRAFFIC EXT NAME ?updateMask = extensions,extensionProcessor \ -H "Content-Type:application/json" -d \ '{ "extensions": [ { "name": " TARGET PROXY NAME ", "matchCondition": " NEW CEL EXPRESSION ", "failOpen": NEW FAIL OPEN , "hostname": " NEW ENV GROUP HOSTNAME ", "supportedEvents": [ "REQUEST HEADERS", "RESPONSE HEADERS" ] } ], "extensionProcessor": " NEW TARGET PROXY NAME " }' Where: TRAFFIC EXT NAME is the name of the Extension Processor traffic extension to update.
+
+### "New Apigee hybrid installation and administration Preview \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide](https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide)
+- Source ID: `site-docs-reference`
+- Final score: 101
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Get a shell inside the vault dev pod kubectl exec -it vault-0 -- /bin/sh Enable kubernetes authentication method vault auth enable kubernetes Write the auth config vault write auth / kubernetes / config \ issuer = "https://kubernetes.default.svc.cluster.local" \ token reviewer jwt = "$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \ kubernetes host = "https://$KUBERNETES PORT 443 TCP ADDR:443" \ kubernetes ca cert = @ / var / run / secrets / kubernetes . io / serviceaccount / ca . crt \ disable iss validation = true Create the auth policy vault policy write apigee-runtime-app - <<EOF path "secret/data/runtime-gcp-sa-key" { capabilities = ["read"] } EOF Bind the policy with the service account vault write auth/kubernetes/role/apigee-runtime-role \ bound service account names=apigee-runtime-sa \ bound service account namespaces= ${ APIGEE NAMESPACE } \ policies=apigee-runtime-app \ ttl=20m Here, we assume that the service account is inside the apigee namespace.
+- The command checks the nodetool status for the two regions. kubectl exec apigee - cassandra - default - 0 - n apigee -- nodetool - u JMX user - pw JMX password status Datacenter: us-central1 ======================= Status=Up/Down / State=Normal/Leaving/Joining/Moving -- Address Load Tokens Owns (effective) Host ID Rack UN 10.12.1.45 112.09 KiB 256 100.0% 3c98c816-3f4d-48f0-9717-03d0c998637f ra-1 UN 10.12.4.36 95.27 KiB 256 100.0% 0a36383d-1d9e-41e2-924c-7b62be12d6cc ra-1 UN 10.12.5.22 88.7 KiB 256 100.0% 3561f4fa-af3d-4ea4-93b2-79ac7e938201 ra-1 Datacenter: us-west1 ==================== Status=Up/Down / State=Normal/Leaving/Joining/Moving -- Address Load Tokens Owns (effective) Host ID Rack UN 10.0.4.33 78.69 KiB 256 100.0% a200217d-260b-45cd-b83c-182b27ff4c99 ra-1 UN 10.0.0.21 78.68 KiB 256 100.0% 9f3364b9-a7a1-409c-9356-b7d1d312e52b ra-1 UN 10.0.1.26 15.46 KiB 256 100.0% 1666df0f-702e-4c5b-8b6e-086d0f2e47fa ra-1 Troubleshooting Supportability, Diagnosis & Troubleshooting Guide https://cloud.google.com/apigee/docs/api-platform/troubleshoot/playbooks/troubleshooting-apigee-hybrid .
+- 4ed2c903-ff56-40fa-a15e-80a3de3cb22d ra-1 DN 10.60.0.17 573.08 KiB 256 ? f9a50d19-c04a-4d0d-a088-612384bed9f5 ra-1 Remove all the nodes in the deleted region (here us-west1 ) region apigee @ apigee - cassandra - default - 0 : $ nodetool - u $ APIGEE JMX USER - pw $ APIGEE JMX PASSWORD removenode 355 d6ace - ab77 - 42 cb - 8138 - 9993 bfd62d0e apigee @ apigee - cassandra - default - 0 : $ nodetool - u $ APIGEE JMX USER - pw $ APIGEE JMX PASSWORD removenode 4 ed2c903 - ff56 - 40 fa - a15e - 80 a3de3cb22d apigee @ apigee - cassandra - default - 0 : $ nodetool - u $ APIGEE JMX USER - pw $ APIGEE JMX PASSWORD removenode f9a50d19 - c04a - 4 d0d - a088 - 612384 bed9f5 Verify no nodes of the deleted region (here us-west1 ) are left apigee @ apigee - cassandra - default - 0 : $ nodetool - u $ APIGEE JMX USER - pw $ APIGEE JMX PASSWORD status Datacenter: us-east1 ==================== Status=Up/Down / State=Normal/Leaving/Joining/Moving -- Address Load Tokens Owns Host ID Rack UN 10.52.0.212 699.71 KiB 256 ? e1aa61e3-4eae-4549-9b58-506d495d87ab ra-1 UN 10.52.0.72 586.77 KiB 256 ?
+- Useful resources to read more about this include: - Introducing Workload Identity: Better authentication for your GKE applications Google Cloud Blog - Use Workload Identity Kubernetes Engine Documentation Google Cloud Available in: overlays/instances/{INSTANCE NAME}/datastore overlays/instances/{INSTANCE NAME}/environments/{ENV NAME} overlays/instances/{INSTANCE NAME}/organization overlays/instances/{INSTANCE NAME}/redis overlays/instances/{INSTANCE NAME}/telemetry Prerequisite: Before you are able to make use of workload identity, you'll need to grant the relevant permissions within you Google Cloud project using: gcloud iam service - accounts add - iam - policy - binding \ -- role roles / iam . workloadIdentityUser \ -- member "serviceAccount:${ORG NAME}.svc.id.goog[${APIGEE NAMESPACE}/${KSA NAME}]" \ $ { GSA NAME } @ $ { ORG NAME } . iam.gserviceaccount.com where: - ${ORG NAME} - The name of your Apigee Organization. - ${APIGEE NAMESPACE} - The kubernetes namespace where Apigee components have been installed.
+
+### "Get started with semantic caching policies \_|\_ Apigee \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies)
+- Source ID: `site-docs-reference`
+- Final score: 89
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Create and deploy a Vector Search index To create and deploy a Vector Search index: Create a Vector Search index that allows streaming updates: ACCESS TOKEN = $( gcloud auth print-access-token ) && curl --location --request POST \ "https:// $REGION -aiplatform.googleapis.com/v1/projects/ $PROJECT ID /locations/ $REGION /indexes" \ --header "Authorization: Bearer $ACCESS TOKEN " \ --header 'Content-Type: application/json' \ --data-raw \ '{ "displayName": "semantic-cache-index", "description": "semantic-cache-index", "metadata": { "config": { "dimensions": "768", "approximateNeighborsCount": 150, "distanceMeasureType": "DOT PRODUCT DISTANCE", "featureNormType": "NONE", "algorithmConfig": { "treeAhConfig": { "leafNodeEmbeddingCount": "10000", "fractionLeafNodesToSearch": 0.05 } }, "shardSize": "SHARD SIZE MEDIUM" }, }, "indexUpdateMethod": "STREAM UPDATE" }' The $REGION defines the region where the Vector Search index deploys.
+- Edit the XML to add the following configuration under <HTTPTargetConnection> : <Authentication> <GoogleAccessToken> <Scopes> <Scope>https://www.googleapis.com/auth/cloud-platform</Scope> </Scopes> </GoogleAccessToken> </Authentication> Click Save .
+- Add Google authentication to the API proxy You must also add Google authentication to the API proxy's target endpoint to enable proxy calls to the target.
+- To add the Google access token: In the Develop tab, click default under the Target endpoints folder.
 

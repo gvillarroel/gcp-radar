@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.438Z"
+generated_at: "2026-04-15T13:50:17.901Z"
 product_name: "Firestore"
 product_slug: "firestore"
 feature_name: "Firestore managed billing report label"
@@ -9,18 +9,18 @@ latest_feature_date: "2020-09-16"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore"
-  - "https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html"
+  - "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+  - "https://docs.cloud.google.com/firestore/docs/manage-data/export-import"
+  - "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import"
 keywords:
   - "firestore"
   - "managed"
   - "billing"
   - "report"
   - "label"
-  - "the"
   - "goog"
   - "firestoremanaged"
+  - "lets"
 ---
 
 # Firestore managed billing report label
@@ -42,44 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore](https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore)
-- [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html)
+- [https://docs.cloud.google.com/datastore/docs/export-import-entities](https://docs.cloud.google.com/datastore/docs/export-import-entities)
+- [https://docs.cloud.google.com/firestore/docs/manage-data/export-import](https://docs.cloud.google.com/firestore/docs/manage-data/export-import)
+- [https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import](https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import)
 
 ## Supporting Pages
 
-### google.cloud.firestore_v1.base_client — google-cloud-firestore documentation
+### Exporting and Importing Entities \_|\_ Datastore \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
-- Source ID: `site-python-reference`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/datastore/docs/export-import-entities](https://docs.cloud.google.com/datastore/docs/export-import-entities)
+- Source ID: `site-docs-root`
+- Final score: 188
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- google.cloud.firestore v1.base client — google-cloud-firestore documentation Source URL: https://googleapis.dev/python/firestore/latest/ modules/google/cloud/firestore v1/base client.html [docs]class BaseClient(ClientWithProject): &quot;&quot;&quot;Client for interacting with Google Cloud Firestore API. .. note:: Since the Cloud Firestore API requires the gRPC transport, no ` http` argument is accepted by this class.
-- Args: project (Optional[str]): The project which the client acts on behalf of.
+- In the Cloud Billing reports page , you can use this label to view costs related to import and export operations: Note: Export and import operations executed before September 8th, 2020 did not apply the goog-firestoremanaged label.
+- Viewing export and import costs Export and import operations apply the goog-firestoremanaged:exportimport label to billed operations.
+- An alert reports the success or failure of your managed import request. gcloud Use the gcloud firestore import command to import all entities that were previously exported with the managed export service. gcloud firestore import gs:// bucket-name/file-path/file-name .overall export metadata \ --async \ --database= DATABASE where bucket-name/file-path/file-name is the path to your overall export metadata file within your Cloud Storage bucket.
+- An alert reports the success or failure of your managed import request. gcloud gcloud firestore import --collection-ids=" KIND1,KIND2 " \ --namespaces=" (default),NAMESPACE2 " \ gs:// bucket-name/file-path/file-name overall export metadata \ --async \ --database= DATABASE where bucket-name/file-path/file-name is the path to your overall export metadata file within your Cloud Storage bucket.
 
-### Interface Firestore (3.36.0) | Java client libraries | Google Cloud Documentation
+### "Exporting and importing data \_|\_ Firestore in Native mode \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore](https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore)
-- Source ID: `site-java-reference`
-- Final score: 152
+- URL: [https://docs.cloud.google.com/firestore/docs/manage-data/export-import](https://docs.cloud.google.com/firestore/docs/manage-data/export-import)
+- Source ID: `site-docs-reference`
+- Final score: 180
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Interface Firestore (3.36.0) Java client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore If it fails to commit after 5 attempts, the transaction will fail.
-- To unblock other clients, the Firestore backend automatically releases all locks after 60 seconds of inactivity and fails all transactions that last longer than 270 ...
+- In the Cloud Billing reports page , you can use this label to view costs related to import and export operations: Note: Export and import operations executed before September 8th, 2020 did not apply the goog-firestoremanaged label.
+- Viewing export and import costs Export and import operations apply the goog-firestoremanaged:exportimport label to billed operations.
+- This command will not delete export files from Cloud Storage. gcloud firestore operations delete [OPERATION NAME] Billing and pricing for export and import operations You are required to enable billing for your Google Cloud project before you use the managed export and import service.
+- Before you begin Before you can use the managed export and import service, you must complete the following tasks: Enable billing for your Google Cloud project.
 
-### google.cloud.firestore_v1.proto.query_pb2 — google-cloud-firestore documentation
+### "Exporting and importing data \_|\_ Firestore in Native mode \_|\_ Google\
 
-- URL: [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html)
-- Source ID: `site-python-reference`
-- Final score: 151
+- URL: [https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import](https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import)
+- Source ID: `site-docs-root-2`
+- Final score: 180
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- google.cloud.firestore v1.proto.query pb2 — google-cloud-firestore documentation Source URL: https://googleapis.dev/python/firestore/latest/ modules/google/cloud/firestore v1/proto/query pb2.html source: google/cloud/firestore v1/proto/query.proto &quot;&quot;&quot;Generated protocol buffer code.&quot;&quot;&quot; from google.protobuf import descriptor as descriptor from google.protobuf import message as message from google.protobuf import reflection as reflection from google.protobuf import symbol database ...
+- In the Cloud Billing reports page , you can use this label to view costs related to import and export operations: Note: Export and import operations executed before September 8th, 2020 did not apply the goog-firestoremanaged label.
+- Viewing export and import costs Export and import operations apply the goog-firestoremanaged:exportimport label to billed operations.
+- This command will not delete export files from Cloud Storage. gcloud firestore operations delete [OPERATION NAME] Billing and pricing for export and import operations You are required to enable billing for your Google Cloud project before you use the managed export and import service.
+- Before you begin Before you can use the managed export and import service, you must complete the following tasks: Enable billing for your Google Cloud project.
 

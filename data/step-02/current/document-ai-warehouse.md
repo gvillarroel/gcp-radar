@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 27
-Unique features: 32
+Unique features: 31
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -30,7 +30,6 @@ Unique features: 32
 | 2023-01-31 | Raw document TIFF file type field |  | Adds a field that marks a raw document file type as TIFF. |
 | 2023-01-09 | Conditional project ACLs |  | Allows project ACL conditions based on document schema ID or property name. |
 | 2022-12-08 | AutoProvision operation IDs |  | Returns an operation ID for AutoProvision operations that complete immediately. |
-| 2022-12-08 | Operation service |  | Enables the operation service for Document AI Warehouse v1. |
 | 2022-12-08 | Search query syntax |  | Adds partial support for Google AIP-160 search syntax, including literals, logical operators, negation, comparisons, and functions. |
 | 2022-12-08 | VPC Service Controls |  | Adds public support for VPC Service Controls in Document AI Warehouse. |
 | 2022-11-10 | Enum property value validation |  | Validates enum property values against the schema by default. |

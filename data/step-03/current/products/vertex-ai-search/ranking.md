@@ -25,8 +25,8 @@ Step 2 feature inventory: 200 features, profile: user facing.
 | 90 | no | supporting_page | https://docs.cloud.google.com/generative-ai-app-builder/docs/add-widget | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/generative-ai-app-builder/docs/answer-generation-models | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | yes | iam_reference | https://docs.cloud.google.com/generative-ai-app-builder/docs/authentication | 2 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | yes | api_reference | https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek | 1 | managed encryption keys | Matched Step 2 features: managed encryption keys |
+| 90 | yes | iam_reference | https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/generative-ai-app-builder/docs/create-engine-es | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | yes | iam_reference | https://docs.cloud.google.com/generative-ai-app-builder/docs/generic-search-checklist | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | iam_reference | https://docs.cloud.google.com/generative-ai-app-builder/docs/generic-search-checklist | 1 |  | Fallback heuristic scoring was used because API scoring was unavailable. |

@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.207Z"
+generated_at: "2026-04-14T13:57:37.541Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Personalized saved reports in Cost Reports"
 feature_slug: "personalized-saved-reports-in-cost-reports"
 latest_feature_date: "2025-08-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/reports"
-  - "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview"
   - "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown"
+  - "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview"
 keywords:
   - "personalized"
   - "saved"
   - "reports"
-  - "in"
   - "cost"
   - "now"
   - "surfaces"
   - "frequently"
+  - "opened"
 ---
 
 # Personalized saved reports in Cost Reports
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Cost Reports now surfaces frequently opened custom saved reports in the reports 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
-- [https://docs.cloud.google.com/billing/docs/how-to/gemini/overview](https://docs.cloud.google.com/billing/docs/how-to/gemini/overview)
 - [https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown](https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown)
+- [https://docs.cloud.google.com/billing/docs/how-to/gemini/overview](https://docs.cloud.google.com/billing/docs/how-to/gemini/overview)
 
 ## Supporting Pages
 
@@ -52,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
 - Source ID: `site-docs-root`
-- Final score: 194
+- Final score: 165
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,25 +61,11 @@ Evidence snippets:
 - However, because this level of billing access doesn't allow you to view all costs for all projects linked to the Cloud Billing account, you can't create or access custom saved reports in the All reports page.
 - Your frequently accessed custom saved reports and the Google Cloud-provided preset reports are accessible in the carousel that displays below the Ask Gemini Cloud Assist prompt field.
 
-### Gemini Cloud Assist in Cloud Billing \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/gemini/overview](https://docs.cloud.google.com/billing/docs/how-to/gemini/overview)
-- Source ID: `site-docs-root-2`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Saved reports To analyze your cost trends, you can select from various Google-configured and user-configured cost reports: Google Cloud offers a range of preconfigured cost reports (formerly known as Presets ) that are ready to use with a single click.
-- Additionally, if you create and save custom cost reports (previously known as Saved views ), your saved reports are also available for you and your team in the See all reports tab.
-- Gemini-assisted reports creation You can create custom cost reports using natural language prompts: If the saved reports don't meet your needs, you can describe the report that you want using natural language.
-- Gemini Cloud Assist in Cloud Billing Cost Reports provides AI assistance to help you in the following ways: Using saved reports .
-
 ### "Understand your savings with cost breakdown reports \_|\_ Cloud Billing\
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown](https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown)
 - Source ID: `site-docs-root`
-- Final score: 154
+- Final score: 117
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +73,18 @@ Evidence snippets:
 - Home Documentation Costs and usage management Cloud Billing Guides Send feedback Understand your savings with cost breakdown reports Stay organized with collections Save and categorize content based on your preferences.
 - To learn more about organizations, folders, and project hierarchy, see Billing reports: Analyzing your costs by project hierarchy .
 - To learn more about organizations, folders, and project hierarchy, see Billing reports: Analyzing your costs by project hierarchy .
+
+### Gemini Cloud Assist in Cloud Billing \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/gemini/overview](https://docs.cloud.google.com/billing/docs/how-to/gemini/overview)
+- Source ID: `site-docs-root-2`
+- Final score: 87
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Saved reports To analyze your cost trends, you can select from various Google-configured and user-configured cost reports: Google Cloud offers a range of preconfigured cost reports (formerly known as Presets ) that are ready to use with a single click.
+- Gemini-assisted reports creation You can create custom cost reports using natural language prompts: If the saved reports don't meet your needs, you can describe the report that you want using natural language.
+- Additionally, if you create and save custom cost reports (previously known as Saved views ), your saved reports are also available for you and your team in the See all reports tab.
+- Gemini Cloud Assist in Cloud Billing Cost Reports provides AI assistance to help you in the following ways: Using saved reports .
 

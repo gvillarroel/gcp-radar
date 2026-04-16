@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T23:03:42.250Z"
+generated_at: "2026-04-12T12:11:52.996Z"
 product_name: "Cloud NGFW"
 product_slug: "cloud-ngfw"
 feature_name: "Regional system firewall policies"
 feature_slug: "regional-system-firewall-policies"
 latest_feature_date: "2026-02-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies"
   - "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+  - "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs"
   - "https://docs.cloud.google.com/firewall/docs/custom-constraints"
 keywords:
   - "regional"
@@ -26,7 +27,7 @@ keywords:
 # Regional system firewall policies
 
 Product: Cloud NGFW
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Regional system firewall policies are read-only policies used by internal Google
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies](https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies)
 - [https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups](https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups)
+- [https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs](https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs)
 - [https://docs.cloud.google.com/firewall/docs/custom-constraints](https://docs.cloud.google.com/firewall/docs/custom-constraints)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies](https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 227
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Project-scoped address groups can only be used in global network firewall policies and regional network firewall policies .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups](https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups)
 - Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 201
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Click Create . gcloud To create a producer VM, run the following command: gcloud compute instances create vm-producer \ --network=vpc-producer \ --zone=us-central1-a \ --stack-type=IPV4 ONLY \ --no-address \ --subnet=subnet-vpc-producer \ --image-project=debian-cloud \ --image-family=debian-10 \ --metadata=startup-script='#! /bin/bash apt-get update apt-get install apache2 -y a2ensite default-ssl a2enmod ssl Read VM network configuration: md vm="http://169.254.169.254/computeMetadata/v1/instance/" vm hostname="$(curl $md vm/name -H "Metadata-Flavor:Google" )" filter="{print \$NF}" vm network="$(curl $md vm/network-interfaces/0/network \ -H "Metadata-Flavor:Google" awk -F/ "${filter}")" vm zone="$(curl $md vm/zone \ -H "Metadata-Flavor:Google" awk -F/ "${filter}")" Apache configuration: echo "Page on $vm hostname in network $vm network zone $vm zone" \ tee /var/www/html/index.html systemctl restart apache2' Create a VPC Network Peering connection To privately connect your vpc-consumer and vpc-producer VPC networks in the same project, use VPC Network Peering.
@@ -76,13 +78,27 @@ Evidence snippets:
 - Click Create . gcloud To let IAP access the VM instances in the vpc-producer network, run the following command: To create a firewall policy, run the following command: gcloud compute network-firewall-policies create fw-policy-addressgrp \ --global To create a firewall rule that allows traffic to all destinations and enables logs, run the following command: gcloud compute network-firewall-policies rules create 100 \ --firewall-policy=fw-policy-addressgrp \ --direction=INGRESS \ --action=ALLOW \ --layer4-configs=tcp:22 \ --src-ip-ranges=35.235.240.0/20 \ --global-firewall-policy To associate the firewall policy with the producer VPC network, run the following command: gcloud compute network-firewall-policies associations create \ --firewall-policy=fw-policy-addressgrp \ --network=vpc-producer \ --name=pol-association-vpc-producer \ --global-firewall-policy To associate the firewall policy with the consumer VPC network, run the following command: gcloud compute network-firewall-policies associations create \ --firewall-policy=fw-policy-addressgrp \ --network=vpc-consumer \ --name=pol-association-vpc-consumer \ --global-firewall-policy Create a project-scoped address group Create a project-scoped address group that uses the IP address assigned to the subnet-consumer-allowed subnet of the vpc-consumer VPC network.
 - In the navigation menu, click Advanced and enter the following script in the Startup script field: #! /bin/bash apt-get update apt-get install apache2 -y a2ensite default-ssl a2enmod ssl Read VM network configuration: md vm="http://169.254.169.254/computeMetadata/v1/instance/" vm hostname="$(curl $md vm/name -H "Metadata-Flavor:Google" )" filter="{print \$NF}" vm network="$(curl $md vm/network-interfaces/0/network \ -H "Metadata-Flavor:Google" awk -F/ "${filter}")" vm zone="$(curl $md vm/zone \ -H "Metadata-Flavor:Google" awk -F/ "${filter}")" Apache configuration: echo "Page on $vm hostname in network $vm network zone $vm zone" \ tee /var/www/html/index.html systemctl restart apache2 The preceding script deploys and starts an Apache web server in this VM.
 
+### "Create and manage firewall rules for RoCE VPC networks \_|\_ Cloud Next\
+
+- URL: [https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs](https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs)
+- Source ID: `site-docs-root`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- NETWORK URL : the URL of the VPC network where you're adding the subnet SUBNET : a name for the subnet Create a regional network firewall policy RoCE VPC networks only support regional network firewall policies that have a policy type of RDMA ROCE POLICY .
+- Create rules in the regional network firewall policy Regional network firewall policies that have a policy type of RDMA ROCE POLICY only support ingress rules, and have constraints on valid source, action, and Layer 4 configuration flags.
+- Click Associate . gcloud To associate a regional network firewall policy with an RoCE VPC network, use the gcloud compute network-firewall-policies associations create command : gcloud compute network-firewall-policies associations create \ --firewall-policy FIREWALL POLICY \ --network NETWORK \ --firewall-policy-region FIREWALL POLICY REGION Replace the following: FIREWALL POLICY : a name of the regional network firewall policy The regional network firewall policy must have a policy type of RDMA ROCE POLICY .
+- Click Create . gcloud To create a regional network firewall policy for a RoCE VPC network, use the gcloud compute network-firewall-policies create command : gcloud compute network-firewall-policies create FIREWALL POLICY \ --region REGION \ --policy-type=RDMA ROCE POLICY Replace the following: FIREWALL POLICY : a name for the network firewall policy REGION : a region you want to apply to the policy.
+
 ### "Manage VPC firewall rule resources by using custom constraints \_|\_ Cloud\
 
 - URL: [https://docs.cloud.google.com/firewall/docs/custom-constraints](https://docs.cloud.google.com/firewall/docs/custom-constraints)
 - Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 186
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - All IP address ranges that include TCP port 22 are also blocked. gcloud Create a restrictSshRanges.yaml constraint file with the following information. name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictSshRanges resource types : compute.googleapis.com/Firewall condition : "resource.direction.matches('INGRESS') && resource.allowed.containsFirewallPort('tcp', '22') && !resource.sourceRanges.all(range, range == '35.235.240.0/20' range.startsWith('10.') range.startsWith('192.168.'))" action type : DENY method types : CREATE display name : Limit firewall rules that allow ingress SSH traffic description : Firewall rules that allow ingress SSH traffic can only be created with allowed source ranges.

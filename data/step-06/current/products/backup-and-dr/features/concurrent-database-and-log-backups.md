@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.212Z"
+generated_at: "2026-04-14T09:35:01.942Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Concurrent database and log backups"
 feature_slug: "concurrent-database-and-log-backups"
 latest_feature_date: "2023-08-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
 keywords:
   - "concurrent"
-  - "log"
+  - "running"
   - "database"
   - "backups"
-  - "backup"
   - "added"
-  - "and"
-  - "dr"
 ---
 
 # Concurrent database and log backups
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +35,53 @@ Backup and DR Service added support for running database backups and log backups
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan)
 
 ## Supporting Pages
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Protect and recover SAP HANA databases in Compute Engine instances \_|\_\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 210
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery)
+- Source ID: `site-docs-reference`
+- Final score: 162
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Note: When using the Persistent Disk snapshot backup capture method, concurrent database and log backups are not supported; they will execute sequentially according to the backup plan.
+- Procedure Connect to the HANA database system using SSH and log into (sid)adm: su - (sid)adm Change directory: cd exe Create entries in hdbuserstore using command hdbuserstore : ./hdbuserstore SET (key name) (host name):(port) (DB user name) (DB user password) In this example: ` ./hdbuserstore SET ACTBACKUP s4hana:30013 ACTBACKUP (DB user password) Check the keystore: ./hdbuserstore list Set up the log mode and log backup in HANA Studio Using the HANA Studio set the HANA log mode and log backup location for Backup and DR to take backups of HANA DB transaction logs: In SAP HANA HDB studio, make sure log backup is set correctly under DATABASE (SYSTEMDB FOR HANA 2.0) > Backup > Configuration page: Destination type is File .
+- About this quickstart exercise This exercise guides you through the steps of discovering and protecting an SAP HANA database running in a Compute Engine instance, and finally mounting a fully-functional new HANA database from the backup image to a new location.
+- Discover and protect SAP HANA databases Note: If you are protecting a HANA database that has already been added and that already has LVM backup images, then you must change the capture method from LVM to Persistent Disk.
+
+### "Prepare other self-managed databases for Backup and DR \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb)
+- Source ID: `site-api-reference`
+- Final score: 95
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Backup and DR Service now supports concurrent database and log backups.
-- Enhanced backups are managed and stored by Backup and DR Service and provide immutable and indelible backups through backup vault, fine grained scheduling, backup protection against source project deletion and source cluster deletion, PiTR using logs and centralized monitoring and reporting.
-- Feature Backup and DR Service has added a new reporting system based on the built-in Google Cloud services: Cloud Monitoring, Cloud Logging, and BigQuery.
-- An issue in which persistent disk database snapshot images were failing to import log backups, and the recovery range was missing on imported backups.
+- SAP MaxDB database prerequisites Before you begin, on the SAP MaxDB server: If there are multiple MaxDB instances running on a server, then the DB username and password must be common for all MaxDB instance running on that server.
+- Add or update the parameters in the file /pgdata/11/data/postgresql.conf wal level = replica archive mode = always archive command = 'test ! -f /pglog/%f && cp %p /pglog/%f' Restart the PostgreSQL: /usr/pgsql-11/bin/pg ctl stop -D /pgdata/11/data /usr/pgsql-11/bin/pg ctl start -D /pgdata/11/data Add or update entry in pg hba.conf on Primary to accept database connection from standby. host postgres <db-user> <standby-ip/32> <connection method> Example: host postgres postgres 10.128.0.29/32 trust Test the archive generation (as postgres user): ls -l /pglog/ Run this log switch command: /usr/pgsql-11/bin/psql -h 10 .128.0.28 -p5432 -c "select pg switch wal();" sleep 5 # log shipping may take some time depending on network ls -l /pglog/ SAP ASE database prerequisites Before you begin, on the SAP ASE server complete the following: A backup user account must be created with backup privilege—either oper role or sa role .
+- The procedures on this page are for most self-managed databases: For Review Then use IBM Db2 Backup and DR for IBM Db2 Db2 database prerequisites PostgreSQL Backup and DR for PostgreSQL PostgreSQL database prerequisites SAP ASE Backup and DR for SAP ASE SAP ASE database prerequisites SAP IQ Backup and DR for SAP IQ SAP IQ database prerequisites SAP MaxDB Backup and DR for SAP MaxDB SAP MaxDB database prerequisites SAP HANA Backup and DR for SAP HANA Prepare SAP HANA databases for backup Microsoft SQL Server Backup and DR for SQL Server Prepare SQL server databases for Backup and DR Service Oracle Backup and DR for Oracle Prerequisites for backing up an Oracle database and its following pages For all other Backup and DR supported databases, follow these procedures.
+- To create the user with a password, run the following: isql -Usa -P<password> -S<SAP ASE Server Name> 1>sp addlogin actuser, '<password>' 2go 1>grant role sa role to actuser 2>go To configure the user login without a password requirement, set the password to null, then run the following command: 1 > sp configure "minimum password length" , 0 2 > go 1 > sp modifylogin actuser , "min passwd length" , "0" 2 > go 3 > exit isql - Uactuser - P '<password>' - S<server name> sp password '<password>' , NULL go sp configure "minimum password length" , 8 go Note: If there are multiple SAP ASE instances running on a server, then the backup username and password must be common for all SAP ASE instance running on that server.
 
-### Backup and DR Service for Oracle \_|\_ Google Cloud Documentation
+### "Set up and plan a backup/recovery appliance deployment \_|\_ Backup and\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-oracle)
-- Source ID: `site-api-reference`
-- Final score: 206
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Bring Backup and DR protected ASM diskgroups back online after reboot of a target DB server After any database server reboot where Backup and DR copy is mounted, or Backup and DR backups are in progress for the database at the time of reboot/crash, follow these steps to get the Backup and DR disk group mount back: Check that the target database server is back up, and that ASM and RAC system are also up.
-- Reason If legacy backup jobs and Backup and DR Service database backup jobs run concurrently, it may result in a serious performance impact on the database server leading to instability and possibly an outage.
-- RMAN metadata conflict with legacy backups that make Backup and DR Service backups obsolete By default, the parameter DO NOT UNCATALOG in Backup and DR Service application details & settings is set to No .
-- Best practice Backup and DR Service database backups are incremental-forever.
-
-### Backup and DR Service for Microsoft SQL Server \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server)
-- Source ID: `site-api-reference`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan)
+- Source ID: `site-docs-reference`
+- Final score: 92
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Resize database log's staging disk The physical space required to accommodate backups of a database's logs is automatically managed by Backup and DR.
-- You can find additional information at: Backup and DR for Microsoft SQL Server Databases Prepare SQL Server databases for Backup and DR Service Add a SQL Server database host and discover databases Configure backup plans for Microsoft SQL Server instances and databases Application details and settings for Microsoft SQL Server instances and databases Mount a SQL Server database Mount databases into SQL Always On Availability Groups Manage an active mount Migrate a SQL Server database Clone SQL Server databases Recover SQL Server backups What's Next Prepare SQL server databases for Backup and DR Service .
-- Reason If legacy backup jobs and Backup and DR jobs run concurrently, it may result a serious performance impact on the database server leading to instability and possibly an outage.
-- If Backup and DR's database and log capture technology is enabled on the backup plan policy, then all databases in that group can be recovered to the same point-in-time.
+- Standard for Compute Engine VMs or SAP HANA databases : This e2-standard-4 machine type is best for backing up Compute Engine instances, Cloud SQL instances, and data resources that use Persistent Disk for backups: IBM Db2 and SAP HANA databases configured to use Persistent Disk.
+- Purpose Source Target Port (TCP) Support traffic (support to appliance) SSH CLIENT IP Backup/recovery appliance 26 iSCSI backup (host to appliance) AGENT HOST IP Backup/recovery appliance 3260 StreamSnap traffic (appliance to appliance) SOURCE APPLIANCE IP Backup/recovery appliance 5107 Backup/recovery appliance connectivity to management console APPLIANCE IP .backupdr.googleusercontent.com 443 Replace the following: SSH CLIENT IP: the IP address of the host running the SSH client.
+- Set up Backup and DR Service in the Google Cloud console Go to the Google Cloud console to activate the Backup and DR Service API and set up permissions for your account: Activate Google Cloud Backup and DR Backup/recovery appliance types Backup and DR Service provides appliance types that are optimized for different workloads—Compute Engine VMs, VMware VMs, databases, and file systems.
+- Components of the backup/recovery appliance architecture The Backup and DR Service architecture is delivered through the following components: Google Cloud console : The Google Cloud console includes the Backup and DR product for central management of your Persistent Disk vaulted backups, backup plans for Compute Engine instances, and enhanced backup for Cloud SQL in those products.
 

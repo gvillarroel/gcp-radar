@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:29:46.796Z"
+generated_at: "2026-04-15T11:53:34.637Z"
 product_name: "Apps Script"
 product_slug: "apps-script"
 feature_name: "Drive Service"
@@ -9,18 +9,17 @@ latest_feature_date: "2013-05-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://developers.google.com/apps-script/advanced/drive"
   - "https://developers.google.com/apps-script/releases"
-  - "https://developers.google.com/apps-script/guides/triggers/installable"
-  - "https://developers.google.com/apps-script/overview"
+  - "https://developers.google.com/apps-script/advanced/drive-labels"
 keywords:
-  - "introduces"
-  - "creating"
   - "drive"
-  - "script"
-  - "apps"
-  - "for"
-  - "and"
-  - "the"
+  - "was"
+  - "added"
+  - "create"
+  - "modify"
+  - "files"
+  - "folders"
 ---
 
 # Drive Service
@@ -30,11 +29,11 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Introduces the Apps Script Drive Service for creating and modifying files and folders in Google Drive.
+Drive Service was added to create and modify files and folders in Google Drive.
 
 ## Extended Definition
 
-Introduces the Apps Script Drive Service for creating and modifying files and folders in Google Drive.
+Drive Service was added to create and modify files and folders in Google Drive.
 
 ## Evidence Summary
 
@@ -42,50 +41,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
+- [https://developers.google.com/apps-script/advanced/drive](https://developers.google.com/apps-script/advanced/drive)
 - [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
-- [https://developers.google.com/apps-script/guides/triggers/installable](https://developers.google.com/apps-script/guides/triggers/installable)
-- [https://developers.google.com/apps-script/overview](https://developers.google.com/apps-script/overview)
+- [https://developers.google.com/apps-script/advanced/drive-labels](https://developers.google.com/apps-script/advanced/drive-labels)
 
 ## Supporting Pages
+
+### Advanced Drive Service \_|\_ Apps Script \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/apps-script/advanced/drive](https://developers.google.com/apps-script/advanced/drive)
+- Source ID: `site-docs-reference`
+- Final score: 186
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Much like Apps Script's built-in Drive service , this API allows scripts to create, find, and modify files and folders in Google Drive.
+- Files . update ( file , fileId , null , { fields : "id,appProperties" , }); console . log ( "ID: %s, appProperties: %s" , file . id , JSON . stringify ( file . appProperties , null , 2 ), ); } catch ( err ) { // TODO (developer) - Handle exception console . log ( "Failed with error %s" , err . message ); } } Add a user to a file The following code sample shows how to add a user as an editor to a file and suppress the email notification. / Adds a user to a file as an editor without sending an email notification. / function addEditor () { var fileId = '1234567890abcdefghijklmnopqrstuvwxyz' ; var userEmail = 'bob@example.com' ; var request = { 'role' : 'writer' , 'type' : 'user' , 'emailAddress' : userEmail }; Drive .
+- Files . create ( file , image , { fields : "id,size" }); console . log ( "ID: %s, File size (bytes): %s" , file . id , file . size ); } catch ( err ) { // TODO (developer) - Handle exception console . log ( "Failed to upload file with error %s" , err . message ); } } Create a folder The following code sample shows how to create a folder in Drive. / Creates a new folder. / function createFolder () { var folderMetadata = { 'name' : 'New Folder' , 'mimeType' : 'application/vnd.google-apps.folder' }; var folder = Drive .
+- Files . list ({ 'q' : query , 'fields' : 'files(id, name, mimeType)' }); if ( files . files && files . files . length > 0 ) { for ( var i = 0 ; i < files . files . length ; i ++ ) { var file = files . files [ i ]; Logger . log ( '%s (ID: %s)' , file . name , file . id ); } } else { Logger . log ( 'No files found.' ); } } List folders The following code sample shows how to list the top-level folders in the user's Drive.
 
 ### Google Apps Script release notes \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
 - Source ID: `site-docs-root`
-- Final score: 212
+- Final score: 162
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- July 22, 2013 Feature Added DriveApp and FormApp to the services tracked on the Apps Script Dashboard .
-- Feature The Spreadsheet service has been extended with the following new classes and methods to support text styles and Rich Text cell formatting: RichTextValue RichTextValueBuilder TextStyle TextStyleBuilder Range.getRichTextValue() Range.getRichTextValues() Range.getTextStyle() Range.getTextStyles() Range.setRichTextValue(value) Range.setRichTextValues(values) Range.setTextStyle(style) Range.setTextStyles(styles) SpreadsheetApp.newRichTextValue() SpreadsheetApp.newTextStyle() The Data Studio service has been extended with the following new classes and methods that define and support authentication types for community connectors: GetAuthTypeResponse AuthType CommunityConnector,newAuthTypeResponse() January 04, 2019 Feature The Slides service has been extended with the following new classes and methods that support slide linking and text box insertion: SlideLinkingMode [ Layout.insertTextBox(text) }(https://developers.google.com/apps-script/reference/slides/layout#inserttextboxtext) Layout.insertTextBox(text, left, top, width, height) Master.insertTextBox(text) Master.insertTextBox(text, left, top, width, height) Page.insertTextBox(text) Page.insertTextBox(text, left, top, width, height) Presentation.appendSlide(slide, linkingMode) Presentation.insertSlide(insertionIndex, slide, linkingMode) Slide.getSlideLinkingMode() Slide.getSourcePresentationId() Slide.getSourceSlideObjectId() Slide.insertTextBox(text) Slide.insertTextBox(text, left, top, width, height) Slide.refreshSlide() Slide.unlink() The Data Studio service has been extended with the following new classes and methods that error displays: DebugError UserError CommunityConnector.newDebugError() CommunityConnector.newUserError() December 13, 2018 Deprecated The Fusion Tables advanced service has been deprecated and will shutdown fully on December 3rd, 2019.
-- The Card service has been extended with the following classes and methods that provide new widgets and event responses: CalendarEventActionResponse CalendarEventActionResponseBuilder DatePicker DateTimePicker DisplayStyle DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder FixedFooter SwitchControlType TimePicker CardBuilder.setDisplayStyle(displayStyle) CardBuilder.setFixedFooter(fixedFooter) CardBuilder.setPeekCardHeader(peekCardHeader) CardService.newCalendarEventActionResponseBuilder() CardService.newDatePicker() CardService.newDateTimePicker() CardService.newDriveItemsSelectedActionResponseBuilder() CardService.newFixedFooter() CardService.newTimePicker() Switch.setControlType(controlType) The Conference Data service has been added to Apps Script.
-- October 08, 2013 Feature Added the following FormApp methods, which allow scripts to work with progress bars, custom closed-form messages, and YouTube videos. + Form.hasProgressBar() + Form.setProgressBar(enabled) + Form.getCustomClosedFormMessage() + Form.setCustomClosedFormMessage(message) + Form.addVideoItem() September 23, 2013 Feature Added the following DriveApp methods, which allow scripts to get the owner of a File or Folder.
+- Added Drive Service , which allows scripts to create and modify files and folders in Google Drive.
+- August 31, 2021 Feature The Drive Service has added three new methods to the file and folder classes to manage the use of resource keys when sharing files and folders. getSecurityUpdateEligible() : Gets whether a file for folder is eligible to apply the security update that requires a resource key for access when it's shared using a link. getSecurityUpdateEnabled() : Gets whether a file or folder requires a resource key for access when it's shared using a link. setSecurityUpdateEnabled(enabled) : Sets whether the file or folder requires a resource key for access when it's shared using a link.
+- September 03, 2013 Feature Added the DriveApp methods DriveApp.getFoldersByName(name) and DriveApp.searchFolders(params) , which return a FolderIterator with the requested results.
+- Fixed Issue 2916 : HTML files inserted into a new Apps Script project using the Google Drive SDK are no longer created with the server js filetype.
 
-### Installable Triggers \_|\_ Apps Script \_|\_ Google for Developers
+### Advanced Drive Labels Service \_|\_ Apps Script \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/apps-script/guides/triggers/installable](https://developers.google.com/apps-script/guides/triggers/installable)
+- URL: [https://developers.google.com/apps-script/advanced/drive-labels](https://developers.google.com/apps-script/advanced/drive-labels)
 - Source ID: `site-docs-reference`
-- Final score: 204
+- Final score: 120
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Time-driven triggers let scripts execute at a particular time or on a recurring interval, as frequently as every minute or as infrequently as once per month. (An add-on can use a time-driven trigger once per hour at most.) The time might be slightly randomized—for example, if you create a recurring 9 AM trigger, Apps Script chooses a time between 9 AM and 10 AM, then keeps that timing consistent from day to day so that 24 hours elapse before the trigger fires again.
-- If you have previously stored the ID of a trigger, delete it by passing the ID as an argument to the following function. triggers/triggers.gs View on GitHub / Deletes a trigger. @param {string} triggerId The Trigger ID. @see https://developers.google.com/apps-script/guides/triggers/installable / function deleteTrigger ( triggerId ) { // Loop over all triggers. const allTriggers = ScriptApp . getProjectTriggers (); for ( let index = 0 ; index < allTriggers . length ; index ++ ) { // If the current trigger is the correct one, delete it. if ( allTriggers [ index ]. getUniqueId () === triggerId ) { ScriptApp . deleteTrigger ( allTriggers [ index ]); break ; } } } Before creating a trigger, verify that the associated function has all the necessary OAuth permissions .
-- The following example shows how to create two time-driven triggers—one that fires every 6 hours, and one that fires every Monday at 9 a.m. (in the time zone that your script is set to). triggers/triggers.gs View on GitHub / Creates two time-driven triggers. @see https://developers.google.com/apps-script/guides/triggers/installable#time-driven triggers / function createTimeDrivenTriggers () { // Trigger every 6 hours.
-- For both simple and installable triggers, Apps Script passes the triggered function an event object that contains information about the context in which the event occurred.
-
-### Google Apps Script overview \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/apps-script/overview](https://developers.google.com/apps-script/overview)
-- Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Page Summary outlined flag Google Apps Script is a rapid application development platform for creating business applications that integrate with Google Workspace, using modern JavaScript and built-in libraries for popular Google applications.
-- Apps Script is versatile and can be used to add custom features to Google Docs, Sheets, and Forms, build web apps, interact with other Google services, and create add-ons.
-- If you're new to JavaScript, Codecademy offers a number of JavaScript courses . (These courses weren't developed by and aren't associated with Google.) What can Apps Script do?
-- You write code in modern JavaScript and have access to built-in libraries for Google Workspace applications like Gmail, Google Calendar, Google Drive, and more.
+- Page Summary outlined flag The Google Drive Labels advanced service in Apps Script allows you to create and manage labels for Drive files and folders.
+- Create and manage labels for your Drive files and folders with the Google Drive Labels advanced service.
+- Files . listLabels ( fileId ); console . log ( "%d label(s) are applied to this file" , appliedLabels . labels . length , ); for ( const appliedLabel of appliedLabels . labels ) { // Resource name of the label at the applied revision. const labelName = labels/ ${ appliedLabel . id } @ ${ appliedLabel . revisionId } ; console . log ( "Fetching Label: %s" , labelName ); const label = DriveLabels .
+- Labels . get ( labelName , { view : "LABEL VIEW FULL" , }); const title = label . properties . title ; const fieldsLength = label . fields . length ; console . log ( Fetched label with title: ' ${ title } ' and ${ fieldsLength } fields. , ); } catch ( err ) { // TODO (developer) - Handle exception console . log ( "Failed to get label with error %s" , err . message ); } } List labels for a Drive item The following code sample shows how to get a Drive item and list all labels applied to that item. advanced/driveLabels.gs View on GitHub / List Labels on a Drive Item Fetches a Drive Item and prints all applied values along with their to their human-readable names. @param {string} fileId The Drive File ID / function listLabelsOnDriveItem ( fileId ) { try { const appliedLabels = Drive .
 

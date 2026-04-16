@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.125Z"
+generated_at: "2026-04-15T00:01:13.937Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "Configurable incident autoclose duration"
 feature_slug: "configurable-incident-autoclose-duration"
 latest_feature_date: "2021-09-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
   - "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
   - "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+  - "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
 keywords:
   - "configurable"
   - "incident"
@@ -26,7 +26,7 @@ keywords:
 # Configurable incident autoclose duration
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +38,21 @@ Cloud Monitoring lets users configure how long to wait before closing an inciden
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
 - [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
 - [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
+- [https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring](https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 152
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 03, 2021 Feature Cloud Monitoring now lets you configure how long Monitoring waits to close an incident when observations stop arriving.
-- For more information about SQL-based alerting policies, see the following documents: Monitor your SQL query results with an alerting policy Incidents for SQL-based alerting policies October 14, 2024 Feature You can now use the Monitoring API to configure a metric-based alerting policy to send notifications when incidents are closed.
-- December 12, 2022 Change You can now use the Monitoring API to configure a snooze, which prevents Cloud Monitoring from sending notifications or creating incidents during specific time periods.
-- March 08, 2023 Feature You can now use the gcloud CLI to configure a snooze, which prevents Cloud Monitoring from sending notifications or creating incidents during specific time periods.
 
 ### View application telemetry \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/application-monitoring](https://docs.cloud.google.com/monitoring/docs/application-monitoring)
-- Source ID: `site-docs-reference`
-- Final score: 122
+- Source ID: `site-docs-reference-2`
+- Final score: 86
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +65,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
 - Source ID: `site-docs-reference`
-- Final score: 112
+- Final score: 76
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +73,17 @@ Evidence snippets:
 - Typically, a record lists the status of the incident, links to logs, a chart of the recorded metric data, labels, and duration.
 - Query languages for Cloud Monitoring When you create an alerting policy or a chart, you must provide a query that describes the data that you want to monitor or chart: Google Cloud console: You can build your query by making selections from menus, or you can write a query.
 - Monitor metrics for multiple Google Cloud projects To view and monitor the time-series data for multiple Google Cloud projects and AWS accounts through a single interface, configure a multi-project metrics scope .
+
+### Troubleshoot Application Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring](https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring)
+- Source ID: `site-docs-reference`
+- Final score: 62
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Unexpected incidents are being opened With the release of Application Monitoring, the metadata.system labels.apphub host project id label was renamed as metadata.system labels.apphub application container .
+- Incidents close automatically when data stops arriving, after the auto-close duration expires.
+- To associate an alerting policy with a workload or service by using the Google Cloud console, do the following: In the Google Cloud console, go to the notifications Alerting page: Go to Alerting If you use the search bar to find this page, then select the result whose subheading is Monitoring .
+- These labels identify your application and your service or workload: apphub application location apphub application id apphub service id or apphub workload id You can also add user labels to an alerting policy by using the Google Cloud CLI, Terraform, or the Cloud Monitoring API.
 

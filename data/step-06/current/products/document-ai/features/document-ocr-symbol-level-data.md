@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.479Z"
+generated_at: "2026-04-12T12:14:31.974Z"
 product_name: "Document AI"
 product_slug: "document-ai"
 feature_name: "Document OCR symbol-level data"
 feature_slug: "document-ocr-symbol-level-data"
 latest_feature_date: "2023-03-27"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr"
+  - "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+  - "https://docs.cloud.google.com/document-ai/docs/handle-response"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1"
 keywords:
   - "document"
   - "ocr"
@@ -24,7 +27,7 @@ keywords:
 # Document OCR symbol-level data
 
 Product: Document AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Document OCR can populate symbol-level data in the document response when enable
 
 Document OCR can populate symbol-level data in the document response when enabled.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/document-ai/docs/process-documents-ocr](https://docs.cloud.google.com/document-ai/docs/process-documents-ocr)
+- [https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr](https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr)
+- [https://docs.cloud.google.com/document-ai/docs/handle-response](https://docs.cloud.google.com/document-ai/docs/handle-response)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Enterprise Document OCR \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/process-documents-ocr](https://docs.cloud.google.com/document-ai/docs/process-documents-ocr)
+- Source ID: `site-docs-root`
+- Final score: 315
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- At the token (word) level, the following attributes are detected: Handwriting detection Font style Font size Font type Font color Font weight Letter spacing Bold Italic Underlined Text color ( RGBa ) Background color ( RGBa ) Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.computeStyleInfo to true in the processing request. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "premiumFeatures" : { "computeStyleInfo" : true } } } } Output The font-style output appears in Document.pages[].tokens[].styleInfo with type StyleInfo . "tokens" : [ { "styleInfo" : { "fontSize" : 3 , "pixelFontSize" : 13 , "fontType" : "SANS SERIF" , "bold" : true , "fontWeight" : 564 , "textColor" : { "red" : 0.16862746 , "green" : 0.16862746 , "blue" : 0.16862746 }, "backgroundColor" : { "red" : 0.98039216 , "green" : 0.9882353 , "blue" : 0.99215686 } } }, ... ] You can check the full Document JSON output in this link .
+- Supported layout detection and extraction attributes: Printed text Handwriting Paragraph Block Line Word Symbol-level Page number Default Default Default Default Default Default Configurable Default Configurable Enterprise Document OCR features include the following: Extract embedded or native text from digital PDFs: This feature extracts text and symbols exactly as they appear in the source documents, even for rotated texts, extreme font sizes or styles, and partially hidden text.
+- Input Enable by setting ProcessOptions.ocrConfig.enableSymbol to true in the processing request. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "enableSymbol" : true } } } Output If this feature is enabled, the field Document.pages[].symbols[] is populated.
+- Symbol detection Populate data at the symbol (or individual letter) level in the document response.
+
+### Enterprise Document OCR \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr](https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr)
+- Source ID: `site-docs-root-2`
+- Final score: 315
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- At the token (word) level, the following attributes are detected: Handwriting detection Font style Font size Font type Font color Font weight Letter spacing Bold Italic Underlined Text color ( RGBa ) Background color ( RGBa ) Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.computeStyleInfo to true in the processing request. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "premiumFeatures" : { "computeStyleInfo" : true } } } } Output The font-style output appears in Document.pages[].tokens[].styleInfo with type StyleInfo . "tokens" : [ { "styleInfo" : { "fontSize" : 3 , "pixelFontSize" : 13 , "fontType" : "SANS SERIF" , "bold" : true , "fontWeight" : 564 , "textColor" : { "red" : 0.16862746 , "green" : 0.16862746 , "blue" : 0.16862746 }, "backgroundColor" : { "red" : 0.98039216 , "green" : 0.9882353 , "blue" : 0.99215686 } } }, ... ] You can check the full Document JSON output in this link .
+- Supported layout detection and extraction attributes: Printed text Handwriting Paragraph Block Line Word Symbol-level Page number Default Default Default Default Default Default Configurable Default Configurable Enterprise Document OCR features include the following: Extract embedded or native text from digital PDFs: This feature extracts text and symbols exactly as they appear in the source documents, even for rotated texts, extreme font sizes or styles, and partially hidden text.
+- Input Enable by setting ProcessOptions.ocrConfig.enableSymbol to true in the processing request. { "rawDocument" : { "mimeType" : " MIME TYPE " , "content" : " IMAGE CONTENT " }, "processOptions" : { "ocrConfig" : { "enableSymbol" : true } } } Output If this feature is enabled, the field Document.pages[].symbols[] is populated.
+- Symbol detection Populate data at the symbol (or individual letter) level in the document response.
+
+### Handle processing response \_|\_ Document AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/document-ai/docs/handle-response](https://docs.cloud.google.com/document-ai/docs/handle-response)
+- Source ID: `site-docs-root-2`
+- Final score: 239
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The first page is page 1. { "pages:" [ { "pageNumber" : 1 , "dimension" : { "width" : 679.0 , "height" : 460.0 , "unit" : "pixels" }, } ] } The pages[].detectedLanguages[] field contains the languages found on a given page, along with the confidence score. { "pages" : [ { "detectedLanguages" : [ { "confidence" : 0.98009938 , "languageCode" : "en" }, { "confidence" : 0.01990064 , "languageCode" : "und" } ] } ] } OCR data Document AI OCR detects text with various granularity or organization in the page, such as the text blocks, paragraphs, tokens and symbols (symbol level is optional, if configured to output symbol level data).
+- Document . from batch process operation ( location = "us" , operation name = batch process operation ) wrapped document = wrapped documents [ 0 ] else : raise ValueError ( "No document source provided." ) For all properties and methods, refer to: https://cloud.google.com/python/docs/reference/documentai-toolbox/latest/google.cloud.documentai toolbox.wrappers.document.Document print ( "Document Successfully Loaded!" ) print ( f " \t Number of Pages: { len ( wrapped document . pages ) } " ) print ( f " \t Number of Entities: { len ( wrapped document . entities ) } " ) for page in wrapped document . pages : print ( f "Page { page . page number } " ) for block in page . blocks : print ( block . text ) for paragraph in page . paragraphs : print ( paragraph . text ) for line in page . lines : print ( line . text ) for token in page . tokens : print ( token . text ) Only supported with Form Parser processor https://cloud.google.com/document-ai/docs/form-parser for form field in page . form fields : print ( f " { form field . field name } : { form field . field value } " ) Only supported with Enterprise Document OCR version pretrained-ocr-v2.0-2023-06-02 https://cloud.google.com/document-ai/docs/process-documents-ocr#enable symbols for symbol in page . symbols : print ( symbol . text ) Only supported with Enterprise Document OCR version pretrained-ocr-v2.0-2023-06-02 https://cloud.google.com/document-ai/docs/process-documents-ocr#math ocr for math formula in page . math formulas : print ( math formula . text ) Only supported with Entity Extraction processors https://cloud.google.com/document-ai/docs/processors-list for entity in wrapped document . entities : print ( f " { entity . type } : { entity . mention text } " ) if entity . normalized text : print ( f " \t Normalized Text: { entity . normalized text } " ) Only supported with Layout Parser for chunk in wrapped document . chunks : print ( f "Chunk { chunk . chunk id } : { chunk . content } " ) for block in wrapped document . document layout blocks : print ( f "Document Layout Block { block . block id } " ) if block . text block : print ( f " { block . text block . type } : { block . text block . text } " ) if block . list block : print ( f " { block . list block . type } : { block . list block . list entries } " ) if block . table block : print ( block . table block . header rows , block . table block . body rows ) Tables from google.cloud.documentai toolbox import document TODO(developer): Uncomment these variables before running the sample.
+- PremiumFeatures ( compute style info = True , enable math ocr = False , # Enable to use Math OCR Model enable selection mark detection = True , ), ) ) Online processing request to Document AI document = process document ( project id , location , processor id , processor version , file path , mime type , process options = process options , ) text = document . text print ( f "Full document text: { text } \n " ) print ( f "There are { len ( document . pages ) } page(s) in this document. \n " ) for page in document . pages : print ( f "Page { page . page number } :" ) print page dimensions ( page . dimension ) print detected languages ( page . detected languages ) print blocks ( page . blocks , text ) print paragraphs ( page . paragraphs , text ) print lines ( page . lines , text ) print tokens ( page . tokens , text ) if page . symbols : print symbols ( page . symbols , text ) if page . image quality scores : print image quality scores ( page . image quality scores ) if page . visual elements : print visual elements ( page . visual elements , text ) def print page dimensions ( dimension : documentai .
+- RawDocument ( content = image content , mime type = mime type ), Only supported for Document OCR processor process options = process options , ) result = client . process document ( request = request ) For a full list of Document object attributes, reference this page: https://cloud.google.com/document-ai/docs/reference/rest/v1/Document return result . document Custom Document Extractor The Custom Document Extractor processor can extract custom entities from documents which don't have a pretrained processor available.
+
+### "Package com.google.cloud.documentai.v1 (2.92.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1)
+- Source ID: `site-java-reference`
+- Final score: 235
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Property Defines properties that can be part of the entity type. com. google. cloud. documentai. v1.
+- Builder Defines properties that can be part of the entity type. com. google. cloud. documentai. v1.
+- Document Document represents the canonical document resource in Document AI.
+- Builder Document represents the canonical document resource in Document AI.
 

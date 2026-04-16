@@ -1,15 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T05:21:46.865Z"
+generated_at: "2026-04-12T12:12:51.029Z"
 product_name: "Cloud VPN"
 product_slug: "cloud-vpn"
 feature_name: "Predefined Monitoring dashboards"
 feature_slug: "predefined-monitoring-dashboards"
 latest_feature_date: "2025-12-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics"
+  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/pricing"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
 keywords:
@@ -26,7 +27,7 @@ keywords:
 # Predefined Monitoring dashboards
 
 Product: Cloud VPN
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,11 +39,12 @@ Cloud VPN provides built-in console dashboards for project-wide health monitorin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics)
+- [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/pricing](https://docs.cloud.google.com/network-connectivity/docs/vpn/pricing)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics)
 - Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 211
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - In addition to the predefined dashboards in Cloud Monitoring, you can create custom dashboards, set up alerts, and query the metrics by using the Monitoring API or the Google Cloud console.
@@ -62,11 +64,25 @@ Evidence snippets:
 - Console Perform the following steps to access the predefined dashboards: In the Google Cloud console, go to the Cloud VPN page.
 - View predefined dashboards Monitoring offers predefined dashboards for Cloud VPN.
 
+### Best practices for Cloud VPN \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices)
+- Source ID: `site-docs-root`
+- Final score: 157
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use predefined dashboards for proactive monitoring of Cloud VPN tunnels We recommend that you use the predefined dashboards in the Cloud VPN console for monitoring Cloud VPN tunnels and overall project health in a single view.
+- For more information, see View Monitoring dashboards Configure your peer VPN gateway with only one cipher for each cipher role Cloud VPN can act as an initiator or a responder to IKE requests depending on the origin of traffic when a new security association is needed.
+- Tunnel-specific visibility: on the Monitoring tab, view integrated Cloud VPN tunnel logs and Cloud VPN gateway logs for quick, tunnel-specific diagnosis.
+- Use separate Google Cloud projects for networking resources To make configuration of Identity and Access Management (IAM) roles and permissions easier, wherever possible, keep your Cloud VPN and Cloud Router resources in a project separate from your other Google Cloud resources.
+
 ### Cloud VPN | Google Cloud
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/pricing](https://docs.cloud.google.com/network-connectivity/docs/vpn/pricing)
 - Source ID: `site-docs-root`
-- Final score: 136
+- Final score: 157
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +95,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 - Source ID: `site-docs-root`
-- Final score: 128
+- Final score: 144
 - Re-rank relevance: N/A
 
 Evidence snippets:

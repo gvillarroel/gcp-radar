@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:58:32.943Z"
+generated_at: "2026-04-15T11:57:14.593Z"
 product_name: "Cloud SQL for SQL Server"
 product_slug: "cloud-sql-for-sql-server"
 feature_name: "Cloud VPN connectivity"
 feature_slug: "cloud-vpn-connectivity"
 latest_feature_date: "2019-12-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/debugging-connectivity"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
   - "https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview"
 keywords:
   - "vpn"
@@ -25,7 +25,7 @@ keywords:
 # Cloud VPN connectivity
 
 Product: Cloud SQL for SQL Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,47 +37,47 @@ Cloud SQL supports connecting instances through Cloud VPN.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
+- [https://docs.cloud.google.com/sql/docs/debugging-connectivity](https://docs.cloud.google.com/sql/docs/debugging-connectivity)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect](https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect)
 - [https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview](https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview)
 
 ## Supporting Pages
 
-### Cloud SQL for SQL Server release notes \_|\_ Google Cloud Documentation
+### Debugging connection issues \_|\_ Cloud SQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
+- URL: [https://docs.cloud.google.com/sql/docs/debugging-connectivity](https://docs.cloud.google.com/sql/docs/debugging-connectivity)
 - Source ID: `site-docs-root`
-- Final score: 182
+- Final score: 106
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- December 05, 2024 Feature Cloud SQL Enterprise Plus edition now supports the following regions: africa-south1 (Johannesburg) asia-east2 (Hong Kong) europe-west10 (Berlin) December 03, 2024 Feature You can now use the Network Connectivity Center hub to propagate Private Service Connect endpoints of Cloud SQL instances in a VPC network.
-- September 28, 2021 Feature Cloud SQL supports the preview version of two recommenders that help you optimize your database costs: Idle database instance recommender : Identifies idle database instances in your project and provides recommendations about the savings that you can make by shutting them down.
-- December 17, 2019 Feature Cloud SQL now supports VPC Service Controls, which let you add a service perimeter around the Cloud SQL Admin API and host project for Cloud SQL instances to reduce the risk of data exfiltration.
-- Feature The Cloud SQL Active Directory (AD) Diagnosis tool helps you troubleshoot issues that you might face while connecting to AD-enabled Cloud SQL for SQL Server instances, using an on-premises AD domain.
+- It's highly encouraged to run tcpdump to capture and inspect the packets between your host and the Cloud SQL instances when you are debugging the connectivity problems.
+- Verify that you are authorized to connect If your connections are failing, check that you are authorized to connect: If you are having trouble connecting using an IP address, for example, you are connecting from your on-premises environment with the mysql client, then make sure that the IP address you are connecting from is authorized to connect to the Cloud SQL instance.
+- Determine how connections are being initiated You can see information about your current connections by connecting to your database and running the following command: SHOW PROCESSLIST ; Connections that show an IP address, such as 1.2.3.4 , are connecting using IP.
+- If you get an error message like: ERROR 1045 (28000): Access denied for user 'root'@'1.2.3.4' (using password: YES) when you connect, verify that you are using the correct password and that you are connecting over SSL if the instance requires it.
 
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
+### "Private Service Connect overview \_|\_ Cloud SQL for SQL Server \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 170
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect](https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 97
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 08, 2024 Cloud SQL for MySQL Feature Cloud SQL now supports near-zero downtime planned maintenance on HA-enabled Cloud SQL Enterprise Plus instances with all combinations of public IP connectivity.
-- Cloud SQL for PostgreSQL Feature Cloud SQL now supports near-zero downtime planned maintenance on HA-enabled Cloud SQL Enterprise Plus instances with all combinations of public IP connectivity.
-- October 11, 2022 Cloud SQL for MySQL Feature Cloud SQL supports the preview version of the following recommenders that help you optimize your instance's performance: High number of open tables recommender : Optimize the performance of your instance by increasing the size of table open cache for the Cloud SQL instances that have the number of open tables equal to the table open cache and keep opening too many tables concurrently High number of tables recommender : Optimize the performance of your instance by reducing the number of tables for the Cloud SQL instances whose table count is too high and close to the SLA limit.
-- September 28, 2021 Cloud SQL for MySQL Feature Cloud SQL supports the preview version of two recommenders that help you optimize your database costs: Idle database instance recommender : Identifies idle database instances in your project and provides recommendations about the savings that you can make by shutting them down.
+- However, by propagating Private Service Connect endpoints through the Network Connectivity Center hub , these endpoints can be reachable by any other spoke VPC network in the same hub.
+- For ease of use, we recommend connecting to your Cloud SQL instances using Private Service Connect endpoints.
+- Switchover isn't supported for instances with Private Service Connect outbound connectivity enabled.
+- You can use Private Service Connect for the following purposes: Connect to a Cloud SQL instance from multiple VPC networks that belong to different groups, teams, projects, or organizations Connect to either a primary instance or any of its read replicas Private Service Connect endpoint You can use Private Service Connect endpoints to access Cloud SQL instances privately from your consumer VPC networks.
 
 ### "Choose how to connect to Cloud SQL \_|\_ Cloud SQL for SQL Server \_|\_\
 
 - URL: [https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview](https://docs.cloud.google.com/sql/docs/sqlserver/connect-overview)
 - Source ID: `site-docs-root`
-- Final score: 152
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:

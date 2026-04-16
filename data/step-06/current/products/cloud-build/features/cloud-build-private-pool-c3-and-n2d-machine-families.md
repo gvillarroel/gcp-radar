@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:21:46.679Z"
+generated_at: "2026-04-15T00:42:40.816Z"
 product_name: "Cloud Build"
 product_slug: "cloud-build"
 feature_name: "Cloud Build private pool C3 and N2D machine families"
 feature_slug: "cloud-build-private-pool-c3-and-n2d-machine-families"
 latest_feature_date: "2025-08-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network"
-  - "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network"
-  - "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network"
+  - "https://docs.cloud.google.com/build/docs/overview"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage"
 keywords:
-  - "build"
-  - "private"
-  - "pool"
-  - "c3"
-  - "and"
-  - "n2d"
-  - "machine"
   - "families"
+  - "machine"
+  - "pool"
+  - "pools"
+  - "private"
 ---
 
 # Cloud Build private pool C3 and N2D machine families
 
 Product: Cloud Build
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +35,53 @@ Cloud Build private pools now support both the C3 and N2D machine families.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network)
-- [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network)
-- [https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network](https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network)
+- [https://docs.cloud.google.com/build/docs/overview](https://docs.cloud.google.com/build/docs/overview)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage)
 
 ## Supporting Pages
 
-### "Build repositories from Bitbucket Data Center in a private network \_|\_\
+### Overview of Cloud Build \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network)
-- Source ID: `site-docs-root-2`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Build repositories from Bitbucket Data Center in a private network If your Bitbucket Data Center instance is hosted in a private network and not reachable over a public internet connection, you must create a private connection between your VPC network and the service producer network .
-- To create a Bitbucket Data Center trigger to build in a private network: Create a private connection between the VPC network and your service producer network by completing the following steps: Create a new VPC network or select an existing VPC network .
-- Home Documentation Application development Cloud Build Guides Send feedback Build repositories from Bitbucket Data Center in a private network Stay organized with collections Save and categorize content based on your preferences.
-- To learn how to run builds using a private pool, see Running builds in a private pool .
-
-### "Build repositories from Bitbucket Server in a private network \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network](https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network)
-- Source ID: `site-docs-root-2`
-- Final score: 152
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/build/docs/overview](https://docs.cloud.google.com/build/docs/overview)
+- Source ID: `site-docs-root`
+- Final score: 110
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Building repositories from Bitbucket Server in a private network If your Bitbucket Server instance is hosted in a private network and not reachable over a public internet connection, you must create a private connection between your VPC network and the service producer network .
-- To create a Bitbucket Server trigger to build in a private network: Create a private connection between the VPC network and your service producer network by completing the following steps: Create a new VPC network or select an existing VPC network .
-- Home Documentation Application development Cloud Build Guides Send feedback Build repositories from Bitbucket Server in a private network Stay organized with collections Save and categorize content based on your preferences.
-- Enable the APIs If you have not created a private pool, follow the instructions in Create and manage private pools to create a private pool.
+- Private pools are private, dedicated pools of workers that offer greater customization over the build environment, including the ability to access resources in a private network.
+- Private pools, similar to default pools, are hosted and fully-managed by Cloud Build and scale up and down to zero, with no infrastructure to set up, upgrade, or scale.
+- Default pools and private pools By default, when you run a build on Cloud Build, the build runs in a secure, hosted environment with access to the public internet.
+- To learn more about private pools and the feature difference between default pool and private pool, see Private pool overview .
 
-### "Build repositories from GitHub Enterprise in a private network \_|\_ Google\
+### "Class CloudBuildClient.ListWorkerPoolsFixedSizeCollection (3.90.0) \_|\_\
 
-- URL: [https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network](https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network)
-- Source ID: `site-docs-root-2`
-- Final score: 152
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection)
+- Source ID: `site-java-reference`
+- Final score: 108
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- This page explains how you can use GitHub Enterprise triggers to invoke builds in response to commits or pull requests from a GitHub Enterprise instance and explains how you can build repositories from GitHub Enterprise if your instance is hosted in a private network.
-- Home Documentation Application development Cloud Build Guides Send feedback Build repositories from GitHub Enterprise in a private network Stay organized with collections Save and categorize content based on your preferences.
-- Enable the APIs If you have not created a private pool, follow the instructions in Create and manage private pools to create a private pool.
-- You will need a private pool to build in a private network.
+- ListWorkerPoolsFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > CloudBuildClient.ListWorkerPoolsFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<CloudBuildClient.ListWorkerPoolsPage> pages, int collectionSize) protected CloudBuildClient .
+- ListWorkerPoolsPage > pages , int collectionSize ) Parameters Name Description pages List < ListWorkerPoolsPage > collectionSize int Returns Type Description CloudBuildClient.ListWorkerPoolsFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Developer tools Java Client libraries Send feedback Class CloudBuildClient.ListWorkerPoolsFixedSizeCollection (3.90.0) Stay organized with collections Save and categorize content based on your preferences.
+- ListWorkerPoolsFixedSizeCollection extends AbstractFixedSizeCollection<ListWorkerPoolsRequest , ListWorkerPoolsResponse , WorkerPool , CloudBuildClient .
+
+### "Class CloudBuildClient.ListWorkerPoolsPage (3.90.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage)
+- Source ID: `site-java-reference`
+- Final score: 108
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- ListWorkerPoolsPage > Inheritance java.lang.Object > AbstractPage > CloudBuildClient.ListWorkerPoolsPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListWorkerPoolsRequest,ListWorkerPoolsResponse,WorkerPool> context, ListWorkerPoolsResponse response) protected CloudBuildClient .
+- ListWorkerPoolsPage > createPageAsync ( PageContext<ListWorkerPoolsRequest , ListWorkerPoolsResponse , WorkerPool > context , ApiFuture<ListWorkerPoolsResponse> futureResponse ) Parameters Name Description context PageContext < ListWorkerPoolsRequest , ListWorkerPoolsResponse , WorkerPool > futureResponse ApiFuture < ListWorkerPoolsResponse > Returns Type Description ApiFuture < ListWorkerPoolsPage > Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPageAsync(PageContext<RequestT,ResponseT,ResourceT> context, ApiFuture<ResponseT> futureResponse) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- ListWorkerPoolsPage createPage ( PageContext<ListWorkerPoolsRequest , ListWorkerPoolsResponse , WorkerPool > context , ListWorkerPoolsResponse response ) Parameters Name Description context PageContext < ListWorkerPoolsRequest , ListWorkerPoolsResponse , WorkerPool > response ListWorkerPoolsResponse Returns Type Description CloudBuildClient.ListWorkerPoolsPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListWorkerPoolsRequest,ListWorkerPoolsResponse,WorkerPool> context, ApiFuture<ListWorkerPoolsResponse> futureResponse) public ApiFuture<CloudBuildClient .
+- Home Documentation Developer tools Java Client libraries Send feedback Class CloudBuildClient.ListWorkerPoolsPage (3.90.0) Stay organized with collections Save and categorize content based on your preferences.
 

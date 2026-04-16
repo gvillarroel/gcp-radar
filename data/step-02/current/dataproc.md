@@ -5,16 +5,14 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 256
-Unique features: 256
+Unique features: 241
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
-| 2026-02-06 | Serverless Spark conscrypt removal |  | Serverless for Apache Spark supports removing conscrypt from 2.3+ runtimes with the dataproc.artifacts.remove property. |
 | 2026-02-06 | Snapshot diagnostic data sharing |  | Dataproc on Compute Engine can share snapshot diagnostic data from cluster diagnose output with Google Cloud support using the tarball access flag. |
 | 2026-02-05 | Apache Pig on ARM images |  | Apache Pig is available in Dataproc ARM images; Apache Pig is available in Dataproc ARM images. |
 | 2026-02-05 | Custom PyPI repository for pip |  | Dataproc supports configuring the PyPI repository used by pip with the dataproc:pypi.repository property, including a Google-hosted cache option; Dataproc supports configuring the PyPI repository used by pip with the dataproc:pypi.repository property, including a Google-hosted cache option. |
 | 2025-12-05 | Default dataproc-ml in 2.3-ml images |  | Dataproc 2.3-ml images include dataproc-ml by default. |
-| 2025-11-13 | Serverless Spark default artifact removal |  | Serverless for Apache Spark supports removing default runtime artifacts with the dataproc.artifacts.remove property. |
 | 2025-09-02 | Multi-tenant clusters |  | Dataproc supports multi-tenant clusters that let multiple users run isolated workloads on a shared cluster. |
 | 2025-08-12 | BigLake Iceberg REST catalog support |  | The Dataproc Iceberg optional component supports the BigLake Iceberg REST catalog in Compute Engine image versions 2.2 and 2.3. |
 | 2025-08-12 | Checkpoint diagnostic data sharing |  | Dataproc on Compute Engine can share checkpoint diagnostic data from the temp bucket with Google Cloud support through a cluster property. |
@@ -38,7 +36,6 @@ Unique features: 256
 | 2024-01-15 | Dataproc Spark Enhancements in Google Cloud console |  | Dataproc Spark Enhancements are available in the Google Cloud console cluster and job creation pages. |
 | 2023-12-04 | Confidential Computing option for cluster creation |  | The Google Cloud console includes a Confidential Computing option when creating a Dataproc cluster on Compute Engine. |
 | 2023-11-08 | Dataproc Serverless autoscaling V2 |  | Dataproc Serverless supports autoscaling V2 to help manage workloads, performance, and costs. |
-| 2023-10-30 | Autoscaling version selection for Serverless Spark |  | Dataproc Serverless for Spark supports selecting the autoscaling version with the spark.dataproc.scaling.version property. |
 | 2023-10-23 | YARN node manager health metric |  | Dataproc on Compute Engine collects a health metric for individual YARN node managers on cluster VMs. |
 | 2023-09-08 | Auto zone placement for clusters |  | Dataproc supports automatic zone placement for clusters in the Google Cloud console with the Any zone option. |
 | 2023-09-04 | Serverless interactive sessions pages in console |  | The Google Cloud console includes detail and list pages for Dataproc Serverless interactive sessions. |
@@ -53,7 +50,6 @@ Unique features: 256
 | 2023-03-30 | Dataproc regional availability in me-central1 |  | Dataproc is available in the me-central1 (Doha) region. |
 | 2023-03-28 | pd-extreme disk support for Dataproc cluster creation |  | Dataproc cluster creation supports the pd-extreme disk type. |
 | 2023-03-23 | Dataproc regional availability in europe-west12 |  | Dataproc is available in the europe-west12 (Turin) region. |
-| 2023-02-28 | Dataproc Agent high availability mode |  | Dataproc Agent high availability mode can be enabled with the dataproc:agent.ha.enabled property on image versions 2.0 and later. |
 | 2023-02-10 | Batch listing filters |  | Dataproc batch listings support filtering by batch ID, batch UUID, state, and create time. |
 | 2023-02-10 | Large statically sized Dataproc Serverless for Spark batches |  | Dataproc Serverless for Spark supports statically sized batch workloads with more than 500 executors. |
 | 2023-02-10 | Unconditional TTL for Dataproc Serverless for Spark batches |  | Dataproc Serverless for Spark batches support an unconditional TTL that terminates workloads when the TTL expires. |
@@ -66,15 +62,12 @@ Unique features: 256
 | 2022-11-07 | Cross-region Dataproc Metastore attachment via gRPC endpoint |  | Clusters in any region can attach to a Dataproc Metastore service that uses the gRPC endpoint protocol. |
 | 2022-10-31 | Approximate usage reporting for Dataproc Serverless for Spark |  | Dataproc Serverless for Spark outputs approximate usage data for DCU and shuffle storage consumption after a workload finishes. |
 | 2022-10-31 | Driver and executor memory customization for Dataproc Serverless for Spark |  | Dataproc Serverless for Spark supports customizing driver and executor memory and memory overhead settings. |
-| 2022-10-24 | Auto diagnostics for Dataproc Serverless for Spark batch failures |  | Dataproc Serverless for Spark supports automatic diagnostics on batch failure through the spark.dataproc.diagnostics.enabled property. |
 | 2022-10-05 | Dataproc regional availability in me-west1 |  | Dataproc is available in the me-west1 (Tel Aviv, Israel) region. |
 | 2022-10-01 | Artifact Registry image streaming support for Dataproc Serverless for Spark |  | Dataproc Serverless for Spark supports Artifact Registry with image streaming. |
 | 2022-09-27 | ANY reservation awareness for Dataproc Auto Zone Placement |  | Dataproc Auto Zone Placement considers ANY reservations by default. |
 | 2022-09-20 | Executor allocation ratio for Dataproc Serverless for Spark dynamic allocation |  | Dataproc Serverless for Spark supports the spark.dynamicAllocation.executorAllocationRatio property to tune scale-up aggressiveness. |
 | 2022-06-21 | Eager function fetch control for Dataproc Metastore Spark Hive client |  | Dataproc Metastore on 1.5 images supports a Spark Hive client property to control eager fetching of functions during initialization. |
 | 2022-06-13 | Dataproc regional availability in us-south1 |  | Dataproc is available in the us-south1 (Dallas, Texas) region. |
-| 2022-06-06 | 1.0.3 | 2022-06-06 | Dataproc Serverless for Spark runtime versions 1.0.2, 1.0.3, and 1.0.4 became unavailable for new batch submissions; deprecated on 2022-06-06. |
-| 2022-06-06 | and 1.0.4 | 2022-06-06 | Dataproc Serverless for Spark runtime versions 1.0.2, 1.0.3, and 1.0.4 became unavailable for new batch submissions; deprecated on 2022-06-06. |
 | 2022-06-06 | Dataproc Serverless for Spark runtime versions 1.0.2 | 2022-06-06 | Dataproc Serverless for Spark runtime versions 1.0.2, 1.0.3, and 1.0.4 became unavailable for new batch submissions; deprecated on 2022-06-06. |
 | 2022-06-01 | Dataproc regional availability in us-east5 |  | Dataproc is available in the us-east5 (Columbus, Ohio) region. |
 | 2022-05-31 | Dataproc regional availability in europe-southwest1 |  | Dataproc is available in the europe-southwest1 (Madrid, Spain) region. |
@@ -85,9 +78,6 @@ Unique features: 256
 | 2022-04-11 | Dataproc performance metrics listener |  | Dataproc clusters include an enabled-by-default performance metrics listener that publishes Spark telemetry to the Dataproc service. |
 | 2022-02-18 | CentOS-based Dataproc images | 2022-02-18 | CentOS-based Dataproc images reached end of life and are no longer supported or updated; deprecated on 2022-02-18. |
 | 2022-02-18 | Enhanced Flexibility Mode with primary worker shuffle mode |  | Dataproc image version 2.0 supports Enhanced Flexibility Mode with primary worker shuffle mode for Spark. |
-| 2022-02-15 | 1.4.77 | 2022-02-28 | Dataproc image versions earlier than 1.3.95, 1.4.77, 1.5.53, and 2.0.27 were deprecated for cluster creation; deprecated on 2022-02-28. |
-| 2022-02-15 | 1.5.53 | 2022-02-28 | Dataproc image versions earlier than 1.3.95, 1.4.77, 1.5.53, and 2.0.27 were deprecated for cluster creation; deprecated on 2022-02-28. |
-| 2022-02-15 | and 2.0.27 | 2022-02-28 | Dataproc image versions earlier than 1.3.95, 1.4.77, 1.5.53, and 2.0.27 were deprecated for cluster creation; deprecated on 2022-02-28. |
 | 2022-02-15 | Legacy Dataproc image versions before 1.3.95 | 2022-02-28 | Dataproc image versions earlier than 1.3.95, 1.4.77, 1.5.53, and 2.0.27 were deprecated for cluster creation; deprecated on 2022-02-28. |
 | 2022-02-07 | cluster_type field in Dataproc monitoring metrics |  | Dataproc job and operation metrics in Cloud Monitoring include a cluster_type field. |
 | 2022-02-01 | Resource Manager UI in HA cluster mode |  | Dataproc HA cluster mode supports the Resource Manager UI and other HA-capable UIs. |
@@ -103,7 +93,6 @@ Unique features: 256
 | 2021-06-01 | Image 1.5 and 2.0 agent /has_run_before sentinel file | 2021-06-01 | Dataproc image 1.5 and 2.0 agents no longer publish the /has_run_before sentinel file; deprecated on 2021-06-01. |
 | 2021-03-24 | Dataproc regional availability in europe-central2 |  | Dataproc is available in the europe-central2 (Warsaw) region. |
 | 2021-03-02 | Cluster label targeting for job submission |  | Dataproc job submission supports targeting a cluster by specified cluster labels. |
-| 2021-01-15 | gcloud_dataproc_personal_cluster.py tool | 2021-01-15 | The gcloud_dataproc_personal_cluster.py tool for personal auth beta is no longer supported for new images; deprecated on 2021-01-15. |
 | 2021-01-12 | Shielded VM user configuration |  | Dataproc clusters support user configuration of Compute Engine Shielded VM settings. |
 | 2021-01-08 | Balanced persistent disk support |  | Dataproc supports the pd-balanced persistent disk type for cluster storage. |
 | 2020-12-08 | Restartable jobs maximum failure limit |  | Restartable Dataproc jobs let users specify the maximum total number of job failures at submission time. |
@@ -130,7 +119,6 @@ Unique features: 256
 | 2020-06-11 | Temporary bucket API configuration |  | Dataproc API calls support explicit tempBucket configuration for storing ephemeral cluster and job data in Cloud Storage. |
 | 2020-05-27 | Dataproc Hub |  | Dataproc provides support for Dataproc Hub. |
 | 2020-05-21 | Cloud Storage default filesystem |  | Dataproc clusters can set Cloud Storage as the default filesystem by configuring core:fs.defaultFS to a gs:// location. |
-| 2020-05-21 | dataproc:alpha.state.shuffle.hcfs.enabled property | 2020-05-21 | The dataproc:alpha.state.shuffle.hcfs.enabled cluster property was used to configure shuffle behavior before being replaced by Enhanced Flexibility Mode properties; deprecated on 2020-05-21. |
 | 2020-05-21 | Persistent History Server done directory support |  | Dataproc image 1.4 and 1.5 persistent history server support reading from the done directory. |
 | 2020-05-05 | Non-preemptible secondary workers |  | Dataproc clusters support creation with non-preemptible secondary workers. |
 | 2020-04-24 | Delta Lake 0.5.0 support |  | Dataproc image 1.5 includes Delta Lake version 0.5.0. |
@@ -186,7 +174,6 @@ Unique features: 256
 | 2018-12-04 | Local SSDs on preemptible workers |  | Dataproc supports adding local SSDs to preemptible secondary worker nodes. |
 | 2018-11-16 | Presto optional component |  | The Presto top-level component lets users install Presto when creating Dataproc clusters. |
 | 2018-10-09 | Customer-managed encryption keys on Compute Engine |  | Customer-managed encryption keys on Compute Engine let users manage the encryption key for Persistent Disks attached to Dataproc cluster VMs. |
-| 2018-09-28 | Application master primary-only placement |  | The am.primary_only cluster property prevents the application master from running on preemptible workers. |
 | 2018-09-25 | Cluster import/export from YAML |  | Cluster import and export from YAML lets users export a cluster configuration to YAML and create a cluster by importing that YAML file. |
 | 2018-09-25 | Granular IAM |  | Granular IAM lets users assign IAM roles and permissions on a per-cluster basis; Granular IAM provides job, operation, and workflow template permissions for Dataproc resources. |
 | 2018-09-25 | InstantiateInline API |  | The InstantiateInline API lets users instantiate Dataproc workflow templates inline through the API. |
@@ -223,7 +210,6 @@ Unique features: 256
 | 2016-12-16 | Stackdriver monitoring agent |  | The Stackdriver monitoring agent is installed by default on Dataproc clusters and can be enabled or disabled through cluster properties. |
 | 2016-11-29 | Custom service account support |  | Custom service account support lets users specify a user-managed service account for the Compute Engine VMs in a Dataproc cluster. |
 | 2016-11-08 | IndirectBigQueryOutputFormat |  | IndirectBigQueryOutputFormat writes output to a temporary Cloud Storage bucket and submits one BigQuery load job at job commit time. |
-| 2016-10-11 | dataproc.localssd.mount.enable |  | The dataproc.localssd.mount.enable property lets users prevent Dataproc from mounting local SSDs for HDFS and temporary Hadoop directories. |
 | 2016-10-07 | Console job stop and delete actions |  | The Dataproc console Jobs page shows Stop and Delete buttons for every job in the list. |
 | 2016-10-07 | Worker local SSD scaling |  | Worker local SSD scaling increases the maximum number of local SSDs that can be attached to worker nodes from 4 to 8. |
 | 2016-09-29 | High availability mode |  | High availability mode creates Dataproc clusters with three master nodes to provide HDFS and YARN high availability. |
@@ -233,7 +219,6 @@ Unique features: 256
 | 2016-09-01 | Stackdriver logging toggle |  | The Stackdriver logging toggle lets users disable Stackdriver logging on Dataproc clusters through a cluster property. |
 | 2016-08-25 | Apache Zeppelin BigQuery support |  | The Dataproc-packaged Apache Zeppelin upgrade adds support for Google BigQuery. |
 | 2016-08-16 | Cloud Dataproc image versions 0.1 and 0.2 | 2016-08-16 | Cloud Dataproc image versions 0.1 and 0.2 were deprecated and no longer receive updates; deprecated on 2016-08-16. |
-| 2016-07-19 | Appendable output streams |  | Appendable output streams let GHFS enable appendable writes by setting fs.gs.outputstream.type to SYNCABLE_COMPOSITE. |
 | 2016-07-19 | Automatic retries for 429 errors |  | Automatic retries for 429 errors cause Dataproc to retry rate-limit errors from Google APIs with backoff. |
 | 2016-07-01 | gcloud --*-boot-disk-size-gb flags | 2016-07-01 | The gcloud --*-boot-disk-size-gb flags were deprecated and replaced by --*-boot-disk-size flags; deprecated on 2016-07-01. |
 | 2016-07-01 | Preemptible worker boot disk size flag |  | The gcloud --preemptible-worker-boot-disk-size flag lets users set the boot disk size of preemptible workers. |

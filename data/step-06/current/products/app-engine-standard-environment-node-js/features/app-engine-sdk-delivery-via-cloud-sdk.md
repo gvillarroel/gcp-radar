@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T22:04:50.077Z"
+generated_at: "2026-04-12T20:56:05.580Z"
 product_name: "App Engine standard environment Node.js"
 product_slug: "app-engine-standard-environment-node-js"
 feature_name: "App Engine SDK delivery via Cloud SDK"
 feature_slug: "app-engine-sdk-delivery-via-cloud-sdk"
 latest_feature_date: "2019-07-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/testing-and-deploying-your-app"
-  - "https://docs.cloud.google.com/appengine/docs/developers-console"
-  - "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
-  - "https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc"
+  - "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed"
 keywords:
-  - "provided through gcloud"
-  - "no standalone SDK"
-  - "Cloud SDK distribution"
-  - "Google Cloud CLI"
-  - "gcloud app commands"
-  - "App Engine SDK"
-  - "Cloud SDK"
-  - "gcloud app"
+  - "app"
+  - "engine"
+  - "sdk"
+  - "delivery"
+  - "via"
+  - "capabilities"
+  - "provided"
+  - "only"
 ---
 
 # App Engine SDK delivery via Cloud SDK
 
 Product: App Engine standard environment Node.js
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,68 +38,52 @@ App Engine SDK capabilities are provided only through the Cloud SDK.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/testing-and-deploying-your-app](https://docs.cloud.google.com/appengine/docs/standard/nodejs/testing-and-deploying-your-app)
-- [https://docs.cloud.google.com/appengine/docs/developers-console](https://docs.cloud.google.com/appengine/docs/developers-console)
-- [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
-- [https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc)
+- [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
+- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed](https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed)
 
 ## Supporting Pages
 
-### "Test and deploy your application \_|\_ App Engine standard environment \_\
+### "App Engine audit logging information \_|\_ App Engine standard environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/testing-and-deploying-your-app](https://docs.cloud.google.com/appengine/docs/standard/nodejs/testing-and-deploying-your-app)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
 - Source ID: `site-docs-reference`
-- Final score: 60
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- To obtain access credentials for your user account, run: gcloud auth login Allow your local application to temporarily use your user credentials for API access: gcloud auth application-default login To start the local development server: In the directory that contains your app.yaml configuration file, run the dev appserver.py command and specify your project ID and path to your app.yaml file: python3 CLOUD SDK ROOT /bin/dev appserver.py --application = PROJECT ID app.yaml To change the port, include the --port option: python3 CLOUD SDK ROOT /bin/dev appserver.py --application = PROJECT ID app.yaml --port = 9999 To test a Python 3 app, run dev appserver.py with a Python 3 interpreter, you must specify the Python 3 binary in the --runtime python path flag, for example: python3 CLOUD SDK ROOT /bin/dev appserver.py --runtime python path = /usr/bin/python3 --application = PROJECT ID app.yaml --port = 9999 To learn more about the dev appserver.py command options, see Local development server options .
-- For example, to deploy the service defined by the app.yaml file to a specific Google Cloud project, assign it a custom version ID, and prevent traffic from being routed to the new version: gcloud app deploy --project PROJECT ID --version VERSION ID --no-promote For more information about this command, see the gcloud app deploy reference .
-- For example, to test a new version of your default service: Deploy your new version, but prevent traffic from being automatically routed to the new version: gcloud app deploy --no-promote Access your new version by navigating to the following URL: https:// VERSION ID -dot-default-dot- PROJECT ID .
-- You can specify multiple files with a single gcloud app deploy command: gcloud app deploy service1/app.yaml service2/app.yaml View build logs Cloud Build streams build and deploy logs that are viewable in the Cloud Build Build history section of the Google Cloud console.
-
-### "Setting up your Google Cloud project for App Engine \_|\_ App Engine standard\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/developers-console](https://docs.cloud.google.com/appengine/docs/developers-console)
-- Source ID: `site-docs-reference`
-- Final score: 40
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Important: Each Google Cloud project can contain only a single App Engine application, and once created you cannot change the location of your App Engine application. gcloud After installing Google Cloud CLI , an account with the Google Cloud project Owner role can run the following gcloud commands to create a Google Cloud project and App Engine application: Run the following command to create a Google Cloud project: gcloud projects create PROJECT ID Replace PROJECT ID with the Google Cloud project ID.
-- Shutting down a project You can disable billing and release all the Google Cloud resources that are being used in your Google Cloud project by shutting down that project. gcloud After installing the Google Cloud CLI , you run the following gcloud command to shut down a Google Cloud project: gcloud projects delete PROJECT ID Replace PROJECT ID with the Google Cloud project ID.
-- Run the following command to select a region and create an App Engine application: gcloud app create More information about App Engine locations help outline Enable billing in the Billing page of the Google Cloud console, see Enabling billing for details.
-- By using the --project flag when you deploy your app, for example: gcloud app deploy --project [YOUR PROJECT ID] If you use the Java runtime, you can specify the project ID during deployment using the Google Cloud plugin for IntelliJ .
-
-### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
-- Source ID: `site-docs-reference`
-- Final score: 36
+- Final score: 44
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Update a connector You can update and monitor the following attributes of your connector by using the Google Cloud console, Google Cloud CLI, or the API: Machine (instance) type Minimum and maximum number of instances Recent throughput, number of instances, and CPU utilization Update machine type Caution: Changing machine type can cause some long-running connections to drop.
-- To delete a connector, use the Google Cloud console or the Google Cloud CLI: Console Go to the Serverless VPC Access overview page in the Google Cloud console: Go to Serverless VPC Access Select the connector you want to delete.
-- Deploy the service: gcloud app deploy Disconnect a service from a VPC network To disconnect a service from a VPC network, remove the vpc access connector field from the app.yaml file and re-deploy the service.
-- Deploy the service: gcloud app deploy After you deploy your service, it is able to send requests to internal IP addresses in order to access resources in your VPC network.
+- Audited operations The following table summarizes which API operations correspond to each audit log type in App Engine: Audit logs category App Engine operations Admin Activity audit logs apps.create apps.patch apps.repair apps.authorizedCertificates.create apps.authorizedCertificates.delete apps.authorizedCertificates.patch apps.domainMappings.create apps.domainMappings.delete apps.domainMappings.patch apps.firewall.ingressRules.batchUpdate apps.firewall.ingressRules.create apps.firewall.ingressRules.delete apps.firewall.ingressRules.patch apps.services.delete apps.services.patch apps.services.versions.create apps.services.versions.delete apps.services.versions.patch apps.services.versions.instances.debug apps.services.versions.instances.delete Data Access audit logs GetMemcacheItem SetMemcacheItem DeleteMemcacheItem FlushAllMemcacheItems Memcache audit logs only apply to operations made through Cloud Console.
+- When deciding which Logging-specific permissions and roles apply to your use case, consider the following: The Logs Viewer role ( roles/logging.viewer ) gives you read-only access to Admin Activity, Policy Denied, and System Event audit logs.
+- Here are some reasons you might want to route your audit logs: To keep audit logs for a longer period of time or to use more powerful search capabilities, you can route copies of your audit logs to Cloud Storage, BigQuery, or Pub/Sub.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback App Engine audit logging information Stay organized with collections Save and categorize content based on your preferences.
 
-### "Connecting to a VPC network \_|\_ App Engine standard environment \_|\_\
+### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/nodejs/connecting-vpc)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
 - Source ID: `site-docs-reference`
-- Final score: 36
+- Final score: 43
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Update a connector You can update and monitor the following attributes of your connector by using the Google Cloud console, Google Cloud CLI, or the API: Machine (instance) type Minimum and maximum number of instances Recent throughput, number of instances, and CPU utilization Update machine type Caution: Changing machine type can cause some long-running connections to drop.
-- To delete a connector, use the Google Cloud console or the Google Cloud CLI: Console Go to the Serverless VPC Access overview page in the Google Cloud console: Go to Serverless VPC Access Select the connector you want to delete.
-- Deploy the service: gcloud app deploy Disconnect a service from a VPC network To disconnect a service from a VPC network, remove the vpc access connector field from the app.yaml file and re-deploy the service.
-- Deploy the service: gcloud app deploy After you deploy your service, it is able to send requests to internal IP addresses in order to access resources in your VPC network.
+- The App Engine Users service is accessible only through the legacy bundled services.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- The recommended method when starting a new project, so you can use the capabilities of Identity Platform as well as the legacy features from Firebase Authentication .
+- Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.
+
+### "How instances are managed \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed](https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed)
+- Source ID: `site-docs-reference`
+- Final score: 43
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- One of the benefits App Engine standard environment's "pay for only what you need" platform as described earlier in Scaling Down is that the system autoscales the number of instances down to zero when there is no traffic.
+- Click the tab for instructions on using the tool of your choice: Console To stop or disable a version for your service: Go to the App Engine Versions page in the Google Cloud console: Go to Versions Select a version from the table, and click Stop . gcloud Run the following: gcloud app versions stop --service= SERVICE VERSION Replace: SERVICE with the name of your service.
+- Click the tab for instructions on using the tool of your choice: Console To delete a service: Go to the App Engine Services page in the Google Cloud console: Go to Services Select a service from the table, and click Delete . gcloud Run the following: gcloud app services delete SERVICE Replace: SERVICE with the name of your service.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback How instances are managed Stay organized with collections Save and categorize content based on your preferences.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.780Z"
+generated_at: "2026-04-12T12:16:18.956Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Anthos 1.3.5"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support"
 keywords:
   - "anthos"
   - "is"
@@ -38,13 +39,14 @@ Anthos 1.3.5 is a GKE Enterprise release that updated Anthos GKE on-prem and Ant
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 222
+- Final score: 247
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
 - Source ID: `site-iam-reference`
-- Final score: 182
+- Final score: 210
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
 - Source ID: `site-docs-reference`
-- Final score: 174
+- Final score: 194
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -89,4 +91,18 @@ Evidence snippets:
 - This page shows the Google Cloud features that are available on each of the following environments: Google Kubernetes Engine (GKE) on Google Cloud Google Distributed Cloud (GKE on-premises): On VMware On bare metal Google Distributed Cloud connected deployments GKE Multi-Cloud: GKE on AWS GKE on Azure GKE attached clusters , which are third-party Kubernetes clusters registered to your fleet .
 - Enable GKE and related features This section describes how to enable the features that are described on this page.
 - Application deployment Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Knative serving Google Cloud Marketplace Application migration Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) Migrate to Containers VM management Feature GDC (VMware) GDC (bare metal) GKE on AWS GKE on Azure Attached clusters GDC (connected) VM Runtime on Google Distributed Cloud What's next Version and upgrade support Managed Cloud Service Mesh supported features In-cluster Cloud Service Mesh supported features Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Version and upgrade support \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support)
+- Source ID: `site-docs-reference`
+- Final score: 188
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- GKE GKE on Google Cloud Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.33 - 1.33 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 - 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 Google Distributed Cloud On bare metal Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.34 1.34.200-gke.68 1.34 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 1.33 1.33.600-gke.39 1.33 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 1.32 1.32.1000-gke.57 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 On VMware Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.34 1.34.200-gke.68 1.34 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 1.33 1.33.600-gke.40 1.33 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 1.32 1.32.1000-gke.57 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.28 1.27 1.26 GKE Multi-Cloud Important: GKE on AWS and GKE on Azure are now in maintenance mode.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- In addition to meeting rigorous qualification requirements, a patch release must satisfy the following criteria for it to be designated as recommended: It's not the initial (1.x.
+- To avoid compatibility issues and ensure support, we encourage you to maintain your cluster environment with the product's latest major or minor release.
 

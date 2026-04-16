@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:56:39.172Z"
+generated_at: "2026-04-14T13:43:35.747Z"
 product_name: "Cloud Asset Inventory"
 product_slug: "cloud-asset-inventory"
 feature_name: "Cloud Asset Policy Analyzer API GA"
 feature_slug: "cloud-asset-policy-analyzer-api-ga"
 latest_feature_date: "2020-10-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeOrgPolicyGovernedAssets"
-  - "https://docs.cloud.google.com/python/docs/reference/cloudasset/latest/google.cloud.asset_v1.types.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedIamPolicy"
-  - "https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeIamPolicy"
+  - "https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-bigquery"
+  - "https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-cloud-storage"
+  - "https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy"
 keywords:
-  - "asset"
-  - "policy"
-  - "analyzer"
-  - "api"
-  - "ga"
   - "reached"
+  - "analyzer"
   - "enabling"
-  - "iam"
+  - "analysis"
+  - "policy"
 ---
 
 # Cloud Asset Policy Analyzer API GA
 
 Product: Cloud Asset Inventory
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +35,54 @@ Policy Analyzer API reached GA, enabling IAM policy analysis for projects, folde
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeOrgPolicyGovernedAssets](https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeOrgPolicyGovernedAssets)
-- [https://docs.cloud.google.com/python/docs/reference/cloudasset/latest/google.cloud.asset_v1.types.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedIamPolicy](https://docs.cloud.google.com/python/docs/reference/cloudasset/latest/google.cloud.asset_v1.types.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedIamPolicy)
-- [https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeIamPolicy](https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeIamPolicy)
+- [https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-bigquery](https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-bigquery)
+- [https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-cloud-storage](https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-cloud-storage)
+- [https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy](https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy)
 
 ## Supporting Pages
 
-### "Method: analyzeOrgPolicyGovernedAssets \_|\_ Cloud Asset Inventory \_|\_\
+### "Write policy analysis to BigQuery \_|\_ Policy Intelligence \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeOrgPolicyGovernedAssets](https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeOrgPolicyGovernedAssets)
-- Source ID: `site-api-reference`
-- Final score: 202
+- URL: [https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-bigquery](https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-bigquery)
+- Source ID: `site-docs-reference-2`
+- Final score: 145
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Policy Analyzer runs your query and exports the results to the specified table. gcloud The AnalyzeIamPolicyLongrunning method allows you to issue an analysis request and get results in the specified BigQuery destination.
+- HTTP method and URL: POST https://cloudasset.googleapis.com/v1/ RESOURCE TYPE / RESOURCE ID :analyzeIamPolicyLongrunning Request JSON body: { "analysisQuery": { "resourceSelector": { "fullResourceName": " FULL RESOURCE NAME " }, "identitySelector": { "identity": " PRINCIPAL " }, "accessSelector": { "permissions": [ " PERMISSION 1 ", " PERMISSION 2 ", " PERMISSION N " ] } }, "outputConfig": { "bigqueryDestination": { "dataset": " DATASET ", "tablePrefix": " TABLE PREFIX ", "partitionKey": " PARTITION KEY ", "writeDisposition": " WRITE DISPOSITION " } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- BQ TABLE PREFIX analysis result WHERE opName = opName AND analysisId = 0 ORDER BY 1 , 2 ; List IAM policy bindings with ACE(Access Control Entry) in one Analysis In this query, we list the IAM policy bindings with their derived ACEs in one analysis DECLARE opName STRING DEFAULT "organizations/ ORG ID /operations/AnalyzeIamPolicyLongrunning/ OP ID " ; SELECT analysisResult . attachedResourceFullName as iam policy attached resource , TO JSON STRING ( analysisResult . iamBinding , true ) as iam policy binding , TO JSON STRING ( analysisResult . identityList . identities , true ) as identities , TO JSON STRING ( acls . accesses , true ) as accesses , TO JSON STRING ( acls . resources , true ) as resources FROM BQ PROJECT ID .
+- BQ TABLE PREFIX analysis result , UNNEST ( analysisResult . identityList . identities ) AS ids , UNNEST ( analysisResult . accessControlLists ) AS acls , UNNEST ( acls . accesses ) AS accesses , UNNEST ( acls . resources ) AS resources WHERE opName = opName AND analysisId = 0 ORDER BY 1 , 2 , 3 , 4 ; List ACEs(Access Control Entries) with IAM policy binding in one Analysis In this query, we list both ACE and the IAM policy binding that generates this ACE for one analysis.
+
+### "Write policy analysis to Cloud Storage \_|\_ Policy Intelligence \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-cloud-storage](https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy-longrunning-cloud-storage)
+- Source ID: `site-docs-reference-2`
+- Final score: 133
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- HTTP method and URL: POST https://cloudasset.googleapis.com/v1/ RESOURCE TYPE / RESOURCE ID :analyzeIamPolicyLongrunning Request JSON body: { "analysisQuery": { "resourceSelector": { "fullResourceName": " FULL RESOURCE NAME " }, "identitySelector": { "identity": " PRINCIPAL " }, "accessSelector": { "permissions": [ " PERMISSION 1 ", " PERMISSION 2 ", " PERMISSION N " ] }, "outputConfig": { "gcsDestination": { "uri": " STORAGE OBJECT URI " } } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- You should receive a JSON response similar to the following: { "name": "projects/my-project/operations/AnalyzeIamPolicyLongrunning/1206385342502762515812063858425027606003", "metadata": { "@type": "type.googleapis.com/google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata", "createTime": "2022-04-12T21:31:10.753173929Z" } } View IAM policy analysis results To view your IAM policy analysis results: In the Google Cloud console, go to the Buckets page.
+- Analyze policies and export results The AnalyzeIamPolicyLongrunning method allows you to issue an analysis request and get results in the specified Cloud Storage bucket . gcloud Before using any of the command data below, make the following replacements: RESOURCE TYPE : The type of the resource that you want to scope your search to.
+- Home Documentation Security Policy Intelligence Guides Send feedback Write policy analysis to Cloud Storage Stay organized with collections Save and categorize content based on your preferences.
+
+### Analyze allow policies \_|\_ Policy Intelligence \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy](https://docs.cloud.google.com/asset-inventory/docs/analyzing-iam-policy)
+- Source ID: `site-docs-reference-2`
+- Final score: 119
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- JSON representation { "consolidatedPolicy" : { object ( AnalyzerOrgPolicy ) } , "policyBundle" : [ { object ( AnalyzerOrgPolicy ) } ] , // Union field governed asset can be only one of the following: "governedResource" : { object ( GovernedResource ) } , "governedIamPolicy" : { object ( GovernedIamPolicy ) } // End of list of possible types for union field governed asset . } Fields consolidatedPolicy object ( AnalyzerOrgPolicy ) The consolidated policy for the analyzed asset.
-- The output assets will also be limited to the ones governed by those in-scope organization policies. organizations/{ORGANIZATION NUMBER} (e.g., "organizations/123456") Authorization requires one or more of the following IAM permissions on the specified resource scope : cloudasset.assets.searchAllResources cloudasset.assets.searchAllIamPolicies cloudasset.assets.analyzeOrgPolicy Query parameters Parameters constraint string Required.
-- This field is available when the resource belongs (directly or cascadingly) to an organization. assetType string The asset type of the AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource.full resource name Example: cloudresourcemanager.googleapis.com/Project See Cloud Asset Inventory Supported Asset Types for all supported asset types. effectiveTags[] object ( EffectiveTagDetails ) The effective tags on this resource.
-- Union field governed asset . governed asset can be only one of the following: governedResource object ( GovernedResource ) A Google Cloud resource governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint . governedIamPolicy object ( GovernedIamPolicy ) An IAM policy governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint .
-
-### "Class GovernedIamPolicy (4.2.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/cloudasset/latest/google.cloud.asset_v1.types.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedIamPolicy](https://docs.cloud.google.com/python/docs/reference/cloudasset/latest/google.cloud.asset_v1.types.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedIamPolicy)
-- Source ID: `site-python-reference`
-- Final score: 186
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Version latest keyboard arrow down 4.2.0 (latest) 4.1.0 4.0.0 3.30.1 3.29.2 3.28.0 3.27.1 3.26.4 3.25.1 3.24.3 3.23.0 3.22.0 3.21.0 3.20.1 3.19.1 3.18.1 3.17.1 3.16.0 3.15.0 3.14.2 3.13.1 3.12.0 3.11.0 3.10.0 3.9.1 3.8.1 3.7.1 3.6.1 3.5.0 3.4.0 3.3.0 3.2.1 3.1.0 2.2.2 2.1.0 2.0.0 1.3.2 1.2.0 1.1.0 1.0.0 0.10.0 0.9.0 0.8.0 0.7.0 0.6.0 0.5.0 0.4.1 0.3.0 GovernedIamPolicy ( mapping = None , , ignore unknown fields = False , kwargs ) The IAM policies governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint .
-- This field is available when the IAM policy belongs (directly or cascadingly) to an organization. asset type str The asset type of the AnalyzeOrgPolicyGovernedAssetsResponse.GovernedIamPolicy.attached resource .
-- See Cloud Asset Inventory Resource Name Format policy google.iam.v1.policy pb2.Policy The IAM policy directly set on the given resource. project str The project that this IAM policy belongs to, in the format of projects/{PROJECT NUMBER}.
-- This field is available when the IAM policy belongs (directly or cascadingly) to one or more folders. organization str The organization that this IAM policy belongs to, in the format of organizations/{ORGANIZATION NUMBER}.
-
-### "Method: analyzeIamPolicy \_|\_ Cloud Asset Inventory \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeIamPolicy](https://docs.cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/analyzeIamPolicy)
-- Source ID: `site-api-reference`
-- Final score: 178
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Home Documentation Security Cloud Asset Inventory Reference Send feedback Method: analyzeIamPolicy Stay organized with collections Save and categorize content based on your preferences.
-- HTTP request GET https://cloudasset.googleapis.com/v1/{analysisQuery.scope= / }:analyzeIamPolicy The URL uses gRPC Transcoding syntax.
-- Authorization requires one or more of the following IAM permissions on the specified resource scope : cloudasset.assets.analyzeIamPolicy cloudasset.assets.searchAllResources cloudasset.assets.searchAllIamPolicies Query parameters Parameters analysisQuery.resourceSelector object ( ResourceSelector ) Optional.
-- Response body A response message for AssetService.AnalyzeIamPolicy .
+- The following table describes the available options: Option Description analyzeServiceAccountImpersonation If this option is enabled, Policy Analyzer runs additional analysis queries to determine who can impersonate the service accounts that have the specified access to the specified resources.
+- Flag Description --analyze-service-account-impersonation If this option is enabled, Policy Analyzer runs additional analysis queries to determine who can impersonate the service accounts that have the specified access to the specified resources.
+- Execute the gcloud asset analyze-iam-policy command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud asset analyze-iam-policy -- RESOURCE TYPE = RESOURCE ID \ --full-resource-name = FULL RESOURCE NAME \ --identity = PRINCIPAL Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud asset analyze-iam-policy -- RESOURCE TYPE = RESOURCE ID --full-resource-name = FULL RESOURCE NAME --identity = PRINCIPAL Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud asset analyze-iam-policy -- RESOURCE TYPE = RESOURCE ID ^ --full-resource-name = FULL RESOURCE NAME ^ --identity = PRINCIPAL You receive a YAML response with analysis results.
+- HTTP method and URL: POST https://cloudasset.googleapis.com/v1/ RESOURCE TYPE / RESOURCE ID :analyzeIamPolicy Request JSON body: { "analysisQuery": { "identitySelector": { "identity": " PRINCIPAL " }, "resourceSelector": { "fullResourceName": " FULL RESOURCE NAME " }, "accessSelector": { "permissions": [ " PERMISSION 1 ", " PERMISSION 2 ", " PERMISSION N " ] }, "conditionContext": { "accessTime": " ACCESS TIME " } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
 

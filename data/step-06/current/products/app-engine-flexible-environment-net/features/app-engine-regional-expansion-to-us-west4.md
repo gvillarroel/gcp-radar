@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:44:02.749Z"
+generated_at: "2026-04-14T06:14:55.675Z"
 product_name: "App Engine flexible environment .NET"
 product_slug: "app-engine-flexible-environment-net"
 feature_name: "App Engine regional expansion to us-west4"
 feature_slug: "app-engine-regional-expansion-to-us-west4"
 latest_feature_date: "2020-04-20"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+  - "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
 keywords:
-  - "Las Vegas region support"
-  - "App Engine regional expansion us-west4"
-  - "Las Vegas region"
-  - "App Engine available in us-west4"
-  - "us-west4 region availability"
-  - "App Engine in us-west4"
-  - "us-west4"
-  - "NV region"
+  - "app"
+  - "engine"
+  - "regional"
+  - "expansion"
+  - "us"
+  - "west4"
+  - "became"
+  - "available"
 ---
 
 # App Engine regional expansion to us-west4
 
 Product: App Engine flexible environment .NET
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ App Engine became available in the us-west4 region (Las Vegas, NV).
 
 App Engine became available in the us-west4 region (Las Vegas, NV).
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/flexible/quotas](https://docs.cloud.google.com/appengine/docs/flexible/quotas)
+- [https://cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://cloud.google.com/appengine/docs/flexible/dotnet/create-app)
+- [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Quotas and limits \_|\_ App Engine flexible environment \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/quotas](https://docs.cloud.google.com/appengine/docs/flexible/quotas)
+- Source ID: `site-docs-reference-2`
+- Final score: 43
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- In the Go API, the appengine.IsOverQuota function reports whether an error represents an API call failure due to insufficient available quota.
+- Resource Daily limit Maximum rate UrlFetch API calls 860,000,000 calls 660,000 calls/minute UrlFetch data sent 4.5 TB 3,600 MB/minute UrlFetch data received 4.5 TB 3,600 MB/minute Networking limits The following networking limits apply to App Engine: Outbound connections per second per instance: 500 (cannot be increased) Outbound DNS resolutions per second per instance: 100 (cannot be increased) Maximum packets per second per instance: 80,000 Maximum bits per second per instance: 100,000,000 Maximum worker connections in Nginx per instance: 4,096 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Resource or API call Description System Limit Shared Centi Memcache Compute Units Per Region Per Minute For each project per region and minute, the available centi-MCUs, which are 1/100ths of an Memcache Compute Unit .
+- Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Quotas and limits Stay organized with collections Save and categorize content based on your preferences.
+
+### "Quickstart: Create a .NET app in the App Engine flexible environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
+- Source ID: `site-docs-reference`
+- Final score: 39
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- App Engine locations App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .
+- You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.
+- By default, App Engine uses the latest available LTS .NET version if you don't specify a runtime version in your app.yaml file.
+- To initialize the gcloud CLI, run the following command: gcloud init Required roles To get the permissions that you need to complete this quickstart, ask your administrator to grant you the following IAM roles: App Engine Admin ( roles/appengine.appAdmin ) on the project Cloud Build Editor ( roles/cloudbuild.builds.editor ) on the project Storage Object Admin ( roles/storage.objectAdmin ) on the project Logs Viewer ( roles/logging.viewer ) on the project Service Account User ( roles/iam.serviceAccountUser ) on the service account Ask your administrator to grant the following roles for the App Engine default service account: Artifact Registry Reader ( roles/artifactregistry.reader ) on the project Cloud Build Service Account ( roles/cloudbuild.builds.builder ) on the project Storage Object Viewer ( roles/storage.objectViewer ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .
+
+### "Quickstart: Create a .NET app in the App Engine flexible environment \_\
+
+- URL: [https://cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://cloud.google.com/appengine/docs/flexible/dotnet/create-app)
+- Source ID: `site-docs-root`
+- Final score: 39
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- App Engine locations App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .
+- You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.
+- By default, App Engine uses the latest available LTS .NET version if you don't specify a runtime version in your app.yaml file.
+- To initialize the gcloud CLI, run the following command: gcloud init Required roles To get the permissions that you need to complete this quickstart, ask your administrator to grant you the following IAM roles: App Engine Admin ( roles/appengine.appAdmin ) on the project Cloud Build Editor ( roles/cloudbuild.builds.editor ) on the project Storage Object Admin ( roles/storage.objectAdmin ) on the project Logs Viewer ( roles/logging.viewer ) on the project Service Account User ( roles/iam.serviceAccountUser ) on the service account Ask your administrator to grant the following roles for the App Engine default service account: Artifact Registry Reader ( roles/artifactregistry.reader ) on the project Cloud Build Service Account ( roles/cloudbuild.builds.builder ) on the project Storage Object Viewer ( roles/storage.objectViewer ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .
 

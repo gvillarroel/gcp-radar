@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.571Z"
+generated_at: "2026-04-15T13:43:38.549Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Looker Studio connector"
@@ -9,18 +9,18 @@ latest_feature_date: "2023-03-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
+  - "https://docs.cloud.google.com/looker/docs/bi-connectors"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
 keywords:
   - "looker"
   - "studio"
   - "connector"
-  - "the"
-  - "is"
   - "available"
-  - "for"
   - "all"
+  - "hosted"
+  - "instances"
+  - "including"
 ---
 
 # Looker Studio connector
@@ -42,42 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio](https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
+- [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp](https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
 
 ## Supporting Pages
 
-### Looker Studio roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### Admin settings - BI Connectors \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio](https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio)
-- Source ID: `site-iam-reference`
-- Final score: 128
+- URL: [https://docs.cloud.google.com/looker/docs/bi-connectors](https://docs.cloud.google.com/looker/docs/bi-connectors)
+- Source ID: `site-docs-reference`
+- Final score: 200
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Looker Studio roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio This page lists the IAM roles and permissions for Looker Studio.
+- The Microsoft Excel connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- The Tableau Desktop connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- The Power BI connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .
+- For Looker (original) instances, the Looker Studio connector is supported only for Looker-hosted instances.
 
-### Getting started with the Looker API | Google Cloud Documentation
+### Admin settings - Looker Studio Pro \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 100
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp](https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp)
+- Source ID: `site-docs-reference`
+- Final score: 123
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Complimentary Looker Studio Pro licenses are available for Looker instances that fulfill the following requirements: The instance is hosted by Looker.
+- Note: Complimentary Looker Studio Pro licenses are also available for Looker (Google Cloud core) instances.
+- Your Looker instance's Looker Studio Pro licenses are still available if you reinstate your subscription (within the 30-day grace period ) or if you initiate a new subscription.
+- Select Auto-assign licenses to new users added to a group to assign available licenses to users who are added to Google Groups under the Looker Studio subscription.
+
+### Admin settings - Roles \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- Source ID: `site-docs-reference`
+- Final score: 112
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
-
-### Looker (Google Cloud core) overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 98
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
+- Users must have download with limit and/or download without limit permissions to download the content. create public looks save looks Model Specific Users can mark a saved Look as public , which will then generate URLs that grant access to that Look without authentication. download with limit see looks Model Specific This permission applies to Looks and dashboards in Looker and to reports in Looker Studio that use the Looker connector.
+- Users can email content deliveries or alert notifications to email addresses with any domain, regardless of whether the Email domain allowlist on the Settings page of the Admin panel contains any email domains. create alerts see looks Instance Wide NN This permission applies to dashboards in Looker and to charts in Looker Studio that use the Looker connector.
+- Looker Studio Pro users with this permission can schedule deliveries of Looker Studio reports that use the Looker connector. schedule external look emails schedule look emails Model Specific Users can deliver any Looks, dashboards, and queries with visualizations to which they have data access to email.
+- Looker Studio Pro users with this permission can download Looker Studio reports that use the Looker connector. download without limit see looks Model Specific This permission applies to Looks and dashboards in Looker and to reports in Looker Studio that use the Looker connector.
 

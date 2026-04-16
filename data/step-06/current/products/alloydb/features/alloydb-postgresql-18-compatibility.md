@@ -1,16 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.559Z"
+generated_at: "2026-04-12T12:07:33.811Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB PostgreSQL 18 compatibility"
 feature_slug: "alloydb-postgresql-18-compatibility"
 latest_feature_date: "2026-03-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
-  - "https://docs.cloud.google.com/alloydb/docs/reference/database-flags"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb"
+  - "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
+  - "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
 keywords:
   - "PG18-compatible clusters"
   - "create PostgreSQL 18 clusters"
@@ -25,7 +27,7 @@ keywords:
 # AlloyDB PostgreSQL 18 compatibility
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,37 +39,42 @@ AlloyDB now supports PostgreSQL 18 compatibility, allowing creation of PG18-comp
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- [https://docs.cloud.google.com/alloydb/docs/reference/database-flags](https://docs.cloud.google.com/alloydb/docs/reference/database-flags)
+- [https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb](https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb)
+- [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Migrate data from a vector database to AlloyDB \_|\_ AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 30
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb](https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb)
+- Source ID: `site-docs-root-2`
+- Final score: 96
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- March 25, 2026 Feature Database server compatibility with PostgreSQL version 18 is now generally available ( GA ): You can create AlloyDB clusters with PostgreSQL 18 compatibility.
-- You can create AlloyDB clusters with PostgreSQL 18 compatibility.
-- This feature is generally available ( GA ) in PostgreSQL 18 and is automatically enabled for all new instances.
+### "Monitor the health of your clusters and instances \_|\_ AlloyDB for PostgreSQL\
 
-### "Supported database flags \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+- URL: [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- Source ID: `site-docs-reference-2`
+- Final score: 96
+- Re-rank relevance: N/A
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/reference/database-flags](https://docs.cloud.google.com/alloydb/docs/reference/database-flags)
+### "Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox](https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox)
+- Source ID: `site-docs-reference-2`
+- Final score: 88
+- Re-rank relevance: N/A
+
+### "AlloyDB query tuning and optimization \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization](https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization)
 - Source ID: `site-api-reference`
-- Final score: 26
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- A C D E F G H I J L M N O P R S T V W AlloyDB flag Default value Instance restarts Read pool restrictions alloydb.ai nl enabled off No No alloydb.enable auto explain off Yes No alloydb.enable pg bigm off Yes No alloydb.enable pg cron off Yes No alloydb.enable pg hint plan off Yes No alloydb.enable pg wait sampling off Yes No alloydb.enable pgaudit off Yes No alloydb.enable pglogical off Yes No alloydb.enable named hints off No No alloydb.iam authentication off Yes No alloydb.logical decoding off Yes No alloydb.log throttling window No No alloydb.promote cancel to terminate on No No alloydb.pg shadow select role An empty string No No alloydb.enable pg squeeze off No No allow alter system (PostgreSQL 17) on No No auto explain.log analyze Standard default No No auto explain.log buffers Standard default No No auto explain.log format Standard default No No auto explain.log level Standard default No No auto explain.log min duration Standard default No No auto explain.log nested statements Standard default No No auto explain.log settings Standard default No No auto explain.log timing Standard default No No auto explain.log triggers Standard default No No auto explain.log verbose Standard default No No auto explain.log wal Standard default No No auto explain.sample rate Standard default No No autovacuum Standard default No No autovacuum analyze scale factor Standard default No No autovacuum analyze threshold Standard default No No autovacuum freeze max age Standard default Yes No autovacuum max workers Standard default Yes No autovacuum multixact freeze max age Standard default Yes No autovacuum naptime Standard default No No autovacuum vacuum cost delay Standard default No No autovacuum vacuum cost limit Standard default No No autovacuum vacuum max threshold (PostgreSQL 18) Standard default No No autovacuum vacuum scale factor Standard default No No autovacuum vacuum threshold Standard default No No autovacuum work mem Standard default No No autovacuum worker slots (PostgreSQL 18) Standard default Yes No checkpoint completion target Standard default No No checkpoint timeout Standard default No No checkpoint warning Standard default No No commit delay Standard default No No commit siblings Standard default No No commit timestamp buffers (PostgreSQL 17) 0 Yes No constraint exclusion Standard default No No cpu index tuple cost Standard default No No cpu operator cost Standard default No No cpu tuple cost Standard default No No createrole self grant (PostgreSQL 16) - No No cron.database name Standard default Yes No cron.log min messages Standard default No No cron.log run Standard default Yes No cron.log statement Standard default Yes No cron.max running jobs Standard default Yes No cursor tuple fraction Standard default No No deadlock timeout Standard default No No debug io direct (PostgreSQL 16) - No No debug logical replication streaming (PostgreSQL 16) buffered No No default statistics target Standard default No No default tablespace Standard default No No default toast compression pglz No No default transaction deferrable Standard default No No default transaction isolation Standard default No No effective cache size 80% of instance RAM No No enable bitmapscan Standard default No No enable distinct reordering (PostgreSQL 18) on No No enable google adaptive autovacuum on No No enable group by reordering (PostgreSQL 17) on No No enable hashagg Standard default No No enable hashjoin Standard default No No enable indexonlyscan Standard default No No enable indexscan Standard default No No enable material Standard default No No enable mergejoin Standard default No No enable nestloop Standard default No No enable partitionwise aggregate off No No enable partitionwise join off No No enable presorted aggregate (PostgreSQL 16) on No No enable self join elimination (PostgreSQL 18) Standard default No No enable seqscan Standard default No No enable sort Standard default No No enable tidscan Standard default No No event triggers (PostgreSQL 17) true No Yes file copy method (PostgreSQL 18) Standard default No No from collapse limit Standard default No No geqo Standard default No No geqo effort Standard default No No geqo generations Standard default No No geqo pool size Standard default No No geqo seed Standard default No No geqo selection bias Standard default No No geqo threshold Standard default No No gin fuzzy search limit Standard default No No gin pending list limit Standard default No No google columnar engine.auto columnarization schedule 'EVERY 1 HOUR' No No google columnar engine.enable auto columnarization on No No google columnar engine.enable columnar scan on No No google columnar engine.enable virtual columns scan off No No google columnar engine.enable vectorized join No No google columnar engine.enabled off Yes No google columnar engine.memory size in mb 30% of instance RAM Yes No google columnar engine.refresh threshold percentage 50 No No google columnar engine.refresh threshold scan count 5 No No google columnar engine.relations An empty string No No google columnar engine.vectorized join threads No No google db advisor.auto advisor max time in seconds 1800 No No google db advisor.auto advisor schedule 'EVERY 24 HOURS' No No google db advisor.enable auto advisor on No No google db advisor.enabled on Yes No google db advisor.max index width 2 No No google db advisor.max num indexable columns 1000 No No google db advisor.max statement length 102400 No No google db advisor.max storage size in mb 0 No No google db advisor.recommendation max time in seconds 600 No No google db advisor.recommend indexes on partitions off No No google db advisor.top k slowest statements 100 No No google job scheduler.maintenance cpu percentage 20 No No google job scheduler.max parallel workers per job 2 No No google ml integration.enable faster embedding generation off No No google ml integration.enable model support on No No google ml integration.enable forecasting off No No google plan management.enabled off Yes No google plan management.enable track plans on No No google plan management.enable steer plans on No No google storage.log replay throttle read transactions on No No gss accept delegation (PostgreSQL 16) off No No hot standby feedback on No No icu validation level (PostgreSQL 16) warning No No idle in transaction session timeout Standard default No No idle replication slot timeout Standard default No No idle in transaction session timeout (PostgreSQL 16) 86,400,000 No No io max combine limit (PostgreSQL 18) Standard default Yes No io max concurrency (PostgreSQL 18) Standard default Yes No io method (PostgreSQL 18) Sync is the only valid value for Preview Yes No join collapse limit Standard default No No lock timeout Standard default No No log autovacuum min duration 0 No No log checkpoints Standard default No No log connections Standard default No No log disconnections Standard default No No log duration Standard default The log duration=on setting might increase log volume under a heavy workload and cause higher query latencies.
-- No No log statement stats Standard default No No log temp files 0 No No log timezone Standard default No No maintenance work mem Standard default No No max active replication origins (PostgreSQL 18) Standard default Yes No max connections 1000 Yes Yes max locks per transaction Standard default Yes Yes max logical replication workers Standard default Yes No max notify queue pages (PostgreSQL 17) 1048576 Yes Yes max parallel apply workers per subscription (PostgreSQL 16) 2 No No max parallel maintenance workers Standard default No No max parallel workers The instance CPU count or 8 , whichever is greater No No max parallel workers per gather Half of the instance CPU count or 2 , whichever is greater No No max pred locks per page Standard default Yes No max pred locks per relation Standard default Yes No max pred locks per transaction Standard default Yes No max prepared transactions Standard default Yes Yes max replication slots 50 Yes No max standby archive delay Standard default No No max standby streaming delay Standard default No No max sync workers per subscription Standard default No No max wal senders 50 Yes Yes max wal size 1504 No No max worker processes 64 Yes Yes md5 password warnings (PostgreSQL 18) Standard default No No min wal size Standard default No No multixact member buffers (PostgreSQL 17) 32 Yes No multixact offset buffers (PostgreSQL 17) 32 Yes No notify buffers (PostgreSQL 17) 16 Yes No parameterized views.enabled off Yes No parameterized views.json results max rows 1,000,000 No No parameterized views.json results max size 1,048,576 No No parameterized views.max parallel workers per gather -1 No No parameterized views.statement timeout 0 No No parameterized views.temp file limit -1 No No parameterized views.work mem 0 No No password encryption Standard default No No password.enforce password does not contain username OFF No No password.enforce expiration OFF No No password.enforce complexity OFF No No password.expiration in days 90 No No password.min uppercase letters 0 No No password.max uppercase letters 1000 No No password.min lowercase letters 0 No No password.max lowercase letters 1000 No No password.min numerical chars 0 No No password.max numerical chars 1000 No No password.min special chars 0 No No password.max special chars 1000 No No password.min pass length 0 No No password.max pass length 1000 No No password.notify expiration in days 30 No No perfsnap.interval 86400 No No perfsnap.retention 7 days No No pg bigm.enable recheck Standard default No No pg bigm.gin key limit Standard default No No pg bigm.similarity limit Standard default No No pg hint plan.debug print Standard default No No pg hint plan.enable hint Standard default No No pg hint plan.enable hint table Standard default No No pg hint plan.message level Standard default No No pg hint plan.parse messages Standard default No No pg stat statements.max Standard default Yes No pg stat statements.save Standard default No No pg stat statements.track Standard default No No pg stat statements.track utility Standard default No No pgaudit.log Standard default No No pgaudit.log catalog Standard default No No pgaudit.log client Standard default No No pgaudit.log level Standard default No No pgaudit.log parameter Standard default No No pgaudit.log relation Standard default No No pgaudit.log statement once Standard default No No pgaudit.role Standard default No No pglogical.batch inserts Standard default Yes No pglogical.conflict log level Standard default No No pglogical.conflict resolution Standard default No No pglogical.extra connection options Standard default No No pglogical.synchronous commit Standard default Yes No pglogical.use spi Standard default Yes No random page cost Standard default No No replacement sort tuples Standard default No No reserved connections (PostgreSQL 16) 0 Yes No scram iterations (PostgreSQL 16) 4096 No No send abort for crash (PostgreSQL 16) off No No send abort for kill (PostgreSQL 16) off No No serializable buffers (PostgreSQL 17) 32 Yes No shared buffers 80% of instance memory Yes No scann.enable preview features off Yes No scann.maintenance background naptime s 1 minute Yes No ssl groups (PostgreSQL 18) Standard default No No ssl max protocol version Standard default No No ssl min protocol version Standard default No No ssl tls13 ciphers (PostgreSQL 18) Standard default No No squeeze.worker autostart Standard default No No squeeze.worker role Standard default No No squeeze.workers per database Default value is 1 No No squeeze.max xlock time Default value is 1 .
-- Set to any value between 1 and 2147483647 No No standard conforming strings Standard default No No statement timeout Standard default No No subtransaction buffers (PostgreSQL 17) 0 Yes No synchronize seqscans Standard default No No tcp keepalives count 5 No No tcp keepalives idle 300 No No tcp keepalives interval 60 No No temp buffers Standard default No No temp file limit Standard default No No timezone Standard default No No trace connection negotiation (PostgreSQL 17) off Yes No trace notify Standard default No No trace recovery messages Standard default No No trace sort Standard default No No track activities Standard default No No track activity query size Standard default Yes No track commit timestamp Standard default Yes No track counts Standard default No No track functions Standard default No No track io timing on No No transaction buffers (PostgreSQL 17) 0 Yes No transaction timeout (PostgreSQL 17) 0 No No vacuum buffer usage limit (PostgreSQL 16) 256 No No vacuum cost delay Standard default No No vacuum cost limit Standard default No No vacuum freeze min age Standard default No No vacuum freeze table age Standard default No No vacuum max eager freeze failure rate (PostgreSQL 18) Standard default No No vacuum multixact freeze min age Standard default No No vacuum multixact freeze table age Standard default No No vacuum truncate (PostgreSQL 18) Standard default No No wal buffers The default depends on the number of vCPUs, as shown in the following list: 8 vCPU: 128MB (16384 8k buffers) 16 vCPU: 256MB (32768 8k buffers) 32 vCPU: 512MB (65536 8k buffers) 64 vCPU: 1GB (131072 8k buffers) 96 vCPU: 1.5GB (196608 8k buffers) 128 vCPU: 2GB (262144 8k buffers) Yes No wal compression off No No wal receiver timeout Standard default No No wal sender timeout Standard default No No work mem N MB , where N is either 4 or the number of instance vCPUs, whichever is greater No No Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Final score: 86
+- Re-rank relevance: N/A
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:20.429Z"
+generated_at: "2026-04-12T12:16:09.629Z"
 product_name: "Gemini"
 product_slug: "gemini"
 feature_name: "Finish changes"
@@ -9,9 +9,10 @@ latest_feature_date: "2026-03-04"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/generativelanguage/latest/_modules/google/ai/generativelanguage_v1/types/content.html"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics"
-  - "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+  - "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings"
+  - "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+  - "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get"
 keywords:
   - "finish"
   - "changes"
@@ -38,50 +39,67 @@ An AI pair-programming feature completes in-progress work from partial input suc
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://googleapis.dev/python/generativelanguage/latest/_modules/google/ai/generativelanguage_v1/types/content.html](https://googleapis.dev/python/generativelanguage/latest/_modules/google/ai/generativelanguage_v1/types/content.html)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics](https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics)
-- [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini)
+- [https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings](https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini)
+- [https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get](https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get)
 
 ## Supporting Pages
 
-### google.ai.generativelanguage_v1.types.content — google-ai-generativelanguage documentation
+### "Code with Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
 
-- URL: [https://googleapis.dev/python/generativelanguage/latest/_modules/google/ai/generativelanguage_v1/types/content.html](https://googleapis.dev/python/generativelanguage/latest/_modules/google/ai/generativelanguage_v1/types/content.html)
-- Source ID: `site-python-reference`
-- Final score: 144
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- google.ai.generativelanguage v1.types.content — google-ai-generativelanguage documentation Source URL: https://googleapis.dev/python/generativelanguage/latest/ modules/google/ai/generativelanguage v1/types/content.html Attributes: mime type (str): The IANA standard MIME type of the source data.
-- For a complete list of supported types, see `Supported file formats &lt;https://ai.google.dev/gemini-api/docs/pro...
-- Examples: - image/png - image/jpeg If an unsupported MIME type is provided, an error will be returned.
-
-### Gemini Data Analytics roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics](https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics)
-- Source ID: `site-iam-reference`
-- Final score: 140
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Gemini Data Analytics roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/geminidataanalytics This page lists the IAM roles and permissions for Gemini Data Analytics.
-
-### Set up Gemini Code Assist Standard and Enterprise | Gemini for Google Cloud | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
-- Source ID: `site-docs-root`
-- Final score: 130
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini)
+- Source ID: `site-docs-root-2`
+- Final score: 244
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Set up Gemini Code Assist Standard and Enterprise Gemini for Google Cloud Google Cloud Documentation Source URL: https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini Before you can use services available to users with Gemini Code Assist Standard or Enterprise licenses, your team needs to perform the setup steps that are described in this document: Note: An administrator typically performs steps 1-4.
-- Purchase a subscription to Gemini Code Assist Standard or Enterprise.
-- Assign licenses to users in your organization.
-- Enable the Gemini for Google Cloud API in a Google Cloud project.
+- To generate suggested code, press the keyboard shortcut provided by the hint, or right-click in the file and select Gemini Code Assist > Finish changes .
+- Finish changes in a file Gemini Code Assist can generate code suggestion to complete your file's pseudocode, #TODOs, and half-written code.
+- Alternatively, you can use the finish changes keyboard shortcut .
+- In the file window, right-click > Gemini > Finish changes .
+
+### "REST Resource: projects.locations.codeToolsSettings.settingBindings \_|\_\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings](https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings)
+- Source ID: `site-api-reference`
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- An object containing a list of "key": value pairs.
+- Methods create Creates a new SettingBinding in a given project and location. delete Deletes a single SettingBinding. get Gets details of a single SettingBinding. list Lists SettingBindings in a given project and location. patch Updates the parameters of a single SettingBinding.
+- Home Documentation AI and ML Gemini for Google Cloud API and references Send feedback REST Resource: projects.locations.codeToolsSettings.settingBindings Stay organized with collections Save and categorize content based on your preferences.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-09-12 UTC."],[],[]]
+
+### "Chat with Gemini Code Assist Standard and Enterprise \_|\_ Gemini for Google\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini)
+- Source ID: `site-docs-root`
+- Final score: 207
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Revert to a checkpoint in chat After applying the changes that Gemini Code Assist generates based on your prompt, you can choose to revert the modified code file(s) to a certain checkpoint, which reverts all of the applied changes to the code file(s).
+- Delete prompt and response pairs To delete your prompt and Gemini Code Assist's response to that particular prompt, follow these steps: VS Code In the chat pane, hold your pointer over your prompt that you wish to remove.
+- Your prompt and response pair is removed from your chat history with Gemini Code Assist.
+- Your prompt and response pair is removed from your chat history with Gemini Code Assist.
+
+### "Method: projects.locations.codeToolsSettings.settingBindings.get \_|\_ Gemini\
+
+- URL: [https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get](https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get)
+- Source ID: `site-api-reference`
+- Final score: 202
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation AI and ML Gemini for Google Cloud API and references Send feedback Method: projects.locations.codeToolsSettings.settingBindings.get Stay organized with collections Save and categorize content based on your preferences.
+- IAM Permissions Requires the following IAM permission on the name resource: cloudaicompanion.settingBindings.codeToolsSettingsGet For more information, see the IAM documentation .
+- HTTP request GET https://cloudaicompanion.googleapis.com/v1/{name=projects/ /locations/ /codeToolsSettings/ /settingBindings/ } The URL uses gRPC Transcoding syntax.
+- Response body If successful, the response body contains an instance of SettingBinding .
 

@@ -1,17 +1,15 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:59.084Z"
+generated_at: "2026-04-14T15:13:20.332Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "AHN/AHN2_05M_INT"
 feature_slug: "ahn-ahn2-05m-int"
 latest_feature_date: "2015-08-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_INT"
-  - "https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_NON"
-  - "https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_RUW"
 keywords:
   - "ahn"
   - "ahn2"
@@ -26,7 +24,7 @@ keywords:
 # AHN/AHN2_05M_INT
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +36,11 @@ Interpolated Netherlands AHN2 0.5-meter digital elevation model.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_INT](https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_INT)
-- [https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_NON](https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_NON)
-- [https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_RUW](https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_RUW)
 
 ## Supporting Pages
 
@@ -52,9 +48,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_INT](https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_INT)
 - Source ID: `site-docs-root-2`
-- Final score: 254
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 300
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This version is interpolated; the areas where objects … AHN/AHN2 05M INT, ahn,dem,elevation,elevation-topography,geophysical,lidar,netherlands 2012-01-01T00:00:00Z/2012-01-01T00:00:00Z 50.74 3.35 53.55 7.24 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],["The AHN dataset provides a 0.5-meter Digital Elevation Model (DEM) of the Netherlands, derived from LIDAR data collected between 2007 and 2012.
@@ -66,9 +62,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_NON](https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_NON)
 - Source ID: `site-docs-root-2`
-- Final score: 224
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This version is non-interpolated; the areas where objects … AHN/AHN2 05M NON, ahn,dem,elevation,elevation-topography,geophysical,lidar,netherlands 2012-01-01T00:00:00Z/2012-01-01T00:00:00Z 50.74 3.35 53.55 7.24 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
@@ -80,9 +76,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_RUW](https://developers.google.com/earth-engine/datasets/catalog/AHN_AHN2_05M_RUW)
 - Source ID: `site-docs-root-2`
-- Final score: 154
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 90
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The point cloud was converted to a 0.5m … AHN/AHN2 05M RUW, ahn,dem,elevation,elevation-topography,geophysical,lidar,netherlands 2012-01-01T00:00:00Z/2012-01-01T00:00:00Z 50.74 3.35 53.55 7.24 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]

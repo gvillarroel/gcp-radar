@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.902Z"
+generated_at: "2026-04-14T16:02:18.683Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "Unified rules interface"
 feature_slug: "unified-rules-interface"
 latest_feature_date: "2026-03-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+  - "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+  - "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended"
+  - "https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc"
 keywords:
   - "unified"
   - "rules"
   - "interface"
-  - "the"
   - "combines"
   - "custom"
-  - "and"
   - "curated"
+  - "rule"
+  - "management"
 ---
 
 # Unified rules interface
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ The unified rules interface combines custom and curated rule management into a s
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/detection/curated-detections](https://docs.cloud.google.com/chronicle/docs/detection/curated-detections)
+- [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security)
+- [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended)
+- [https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc](https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc)
 
 ## Supporting Pages
 
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
+### "Google Unified Security \_|\_ Google Security Operations \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
+- URL: [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security)
 - Source ID: `site-docs-reference-2`
-- Final score: 152
-- Re-rank relevance: N/A
+- Final score: 184
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Google Secops has launched a unified rules interface that brings custom and curated rule management into a single, cohesive workflow.
-- January 14, 2025 Change The following rules have been removed from their associated rule packs in Curated Detections due to high alert volume across the Google SecOps customer base: Cloud Threats - CDIR SCC Enhanced Defense Evasion Alerts: SCC: Modify VPC Service Control with GCE Activity from the Restricted Resource SCC: Modify VPC Service Control with Activity from the Restricted Service Linux Threats - OS Privilege Escalation Tools: Sensitive File Discovery Last Login Users Whoami Commands Windows Threats - Initial Access: NetLogon AD System Event Risk Analytics for UEBA - Login to an Application Never Before Seen for a User Group: First Time User Login Activity to Application for Manager Peer Group Risk Analytics for UEBA - Login from Country Never Before Seen for a User Group: First Time User Login Activity from Country for Manager Peer Group The rule "SCC: Unexpected Child Shell" has been moved from the rule pack "Cloud Threats - CDIR SCC Enhanced Malware Alerts" to "Cloud Threats - CDIR SCC Enhanced Execution Alerts" January 11, 2025 Change Playbook names must now be unique across all SOAR environments, as part of updates to support future features.
-- Key enhancements Developer and IDE enhancements : Centralized management: A unified, single dashboard lets you browse, filter, and manage both custom and curated rules from one location.
-- The severity field in the Rules and detections default Dashboard has been updated so that it would show the severity for both Curated Detections and custom rules.
+- Curated Detections & Prioritization : Pre-built detection rules (available in rule packs like "Applied Threat Intelligence - Curated Prioritization") contextualize IOC matches using event data and Mandiant intelligence features to generate prioritized alerts (Active Breach, High, Medium, Inbound IP Auth).
+- Real-time insights from Gemini AI enhances threat detection and streamlines security operations, empowering organizations to shift from reactive to preemptive security and stay two steps ahead of increasingly sophisticated attackers The key components of Google Unified Security are: Modern Security Operations : Detect, investigate, and respond to threats at Google speed and scale Threat intelligence and exposure management : Know who is targeting you and where you are exposed.
+- Measure effectiveness of Data Loss Prevention (DLP) policies An administrator can measure the effectiveness of DLP rules by reviewing aggregate data to ensure that “block” and “warn” policies applied through Chrome are addressing threats and not preventing legitimate work.
+- For existing Google Security customers: If you are already leveraging the power of any of the individual product components within our security portfolio, we can seamlessly upgrade you to the complete Google Unified Security package.
 
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
+### "Google Unified Security Recommended \_|\_ Google Security Operations \_\
 
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
+- URL: [https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended](https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security-recommended)
 - Source ID: `site-docs-reference-2`
+- Final score: 160
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following table describes the Google Unified Security Recommended requirement for Google-partner products to integrate with Google Threat Intelligence: Requirement Description Curated detections development The partner must provide direct support for Google's Mandiant services in developing high-quality, curated detection rules specifically for Google SecOps.
+- Mandiant services collaboration requirement A key aspect of the program is close collaboration with Google's Mandiant services to develop high-quality, curated detection rules for joint customers in order to unlock Mandiant support for your third-party product on behalf of customers.
+- The following table describes the Google Unified Security Recommended requirement for Google-partner products to integrate with Google Threat Intelligence: Requirement Description Bring Your Own License (BYOL) or OEM The partner products must directly integrate Google Threat Intelligence feeds using OEM integration or support a BYOL pathway for Google Threat Intelligence customers.
+- Identity integrations Integrations that use or enhance identity-based security within Chrome Enterprise Premium (applicable for IDP partners only) Security Command Center requirement When applicable, the partner product is required to ingest findings from Security Command Center (SCC) to provide a unified view of security posture and facilitate risk management.
+
+### "SIEM table of contents \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc](https://docs.cloud.google.com/chronicle/docs/secops/google-secops-siem-toc)
+- Source ID: `site-api-reference`
 - Final score: 152
-- Re-rank relevance: N/A
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Google SecOps has launched a unified rules interface that brings custom and curated rule management into a single, cohesive workflow.
-- January 14, 2025 Change The following rules have been removed from their associated rule packs in Curated Detections due to high alert volume across the Google SecOps customer base: Cloud Threats - CDIR SCC Enhanced Defense Evasion Alerts: SCC: Modify VPC Service Control with GCE Activity from the Restricted Resource SCC: Modify VPC Service Control with Activity from the Restricted Service Linux Threats - OS Privilege Escalation Tools: Sensitive File Discovery Last Login Users Whoami Commands Windows Threats - Initial Access: NetLogon AD System Event Risk Analytics for UEBA - Login to an Application Never Before Seen for a User Group: First Time User Login Activity to Application for Manager Peer Group Risk Analytics for UEBA - Login from Country Never Before Seen for a User Group: First Time User Login Activity from Country for Manager Peer Group The rule "SCC: Unexpected Child Shell" has been moved from the rule pack "Cloud Threats - CDIR SCC Enhanced Malware Alerts" to "Cloud Threats - CDIR SCC Enhanced Execution Alerts" January 07, 2025 Announcement The following parser documentation is now available: Collect Microsoft Defender for Endpoint logs Zscaler parsers overview Collect Zscaler DNS logs Collect Zscaler Firewall logs Collect Zscaler Internet Access logs Collect Zscaler Webproxy logs Collect Linux auditd and AIX systems logs Collect CircleCI audit logs Collect CloudPassage Halo logs Collect JFrog Artifactory logs Collect Apple macOS syslog data Collect Netskope web proxy logs Collect Onfido logs Collect OPNsense firewall logs Collect Rapid7 InsightIDR logs Collect Sysdig logs Collect Thinkst Canary logs Collect VMware Workspace ONE UEM logs Collect Workday HCM logs December 27, 2024 Change Google SecOps has added a new rule set to Applied Threat Intelligence (ATI), called Inbound IP Address Authentication, that identifies IP addresses that are authenticating to local infrastructure in an inbound network direction.
-- Key enhancements Developer and IDE enhancements : Centralized management: A unified, single dashboard lets you browse, filter, and manage both custom and curated rules from one location.
-- The severity field in the Rules and detections default Dashboard has been updated so that it would show the severity for both Curated Detections and custom rules.
-
-### "Use the curated detections page \_|\_ Google Security Operations \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/detection/curated-detections](https://docs.cloud.google.com/chronicle/docs/detection/curated-detections)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- As part of these curated detections, GCTI provides and manages a set of YARA-L rules to help customers identify threats to their enterprise.
-- Curated detections features The following are some of the key curated detections features: Curated Detection: curated detection created and managed by GCTI for Google SecOps customers.
-- Open the curated detections page and rule sets To open the curated detections page, complete the following steps: Select Rules from the main menu.
-- The customer has the option to enable or disable these rules within their Google SecOps account and to enable or disable alerts for these rules.
+- Google SecOps SIEM Product overview Sign in to Google SecOps Quickstart: Conduct a search Quickstart: Investigate an alert Configure user preferences (SIEM only) Onboarding to Google SecOps Overview of the process Understand your Google SecOps billing components Configure Google Cloud project for Google SecOps Configure an identity provider Configure a Google Cloud identity provider Configure a third-party identity provider Configure feature access control using IAM Configure data RBAC using IAM RBAC user guide for applications not using IAM Google SecOps permissions in IAM Link Google SecOps to Google Cloud services Ingest data Ingest entity data Overview of data ingestion Supported data sets and default parsers Ingest data to Google SecOps Ingest logs from specific sources Install and configure forwarders Overview of Google SecOps forwarders Google SecOps forwarder for Linux Google SecOps forwarder for Windows on Docker Google SecOps forwarder executable for Windows Manage forwarder configurations through Google SecOps Troubleshoot common Linux forwarder issues Set up data feeds Feed management overview Create and manage feeds using the feed management UI Create an Azure Event Hub feed Create and manage feeds using the feed management API Use ingestion scripts deployed as Cloud Functions Use the Ingestion API DataTap Configuration API Use the Bindplane agent Customer Management API Data Export API Data Export API (Enhanced) Monitor data ingestion Use Data Ingestion and Health dashboard Use Cloud Monitoring for ingestion notifications View your billed ingestion volume Work with Google SecOps parsers Overview of log parsing Overview of the Unified Data Model Manage prebuilt and custom parsers Request prebuilt and create custom log types Parser extensions Parser extension examples Important UDM fields for parser data mapping Tips and troubleshooting when writing parsers Format log data as UDM Enrichment UDM enrichment and aliasing overview Aliasing Enrichment How Google SecOps enriches event and entity data Block enrichment from specific flows Using the Entity Context Graph (ECG) Auto Extraction overview Detecting threats View alerts and IOCs Review potential security threats Single event rules Multiple event rules Composite detections Overview of composite detections Monitor for events using rules View rules in the Rules Dashboard Manage unified rules Troubleshoot rule runtime errors Understand rule quotas Understand rule quotas Risk-based alerting with entity only rules Understand threat coverage with the MITRE ATT&CK matrix View previous versions of a rule Archive rules Download events Run a rule against live data Run a rule against historical data Optimize detection and reporting performance Understand rule replays and MTTD Understand rule detection delays Manage your rule run schedule Configure customized schedules for rules Understand rule run scheduling Detection limits Rule errors Create context-aware analytics Overview of context-aware analytics Use Cloud Sensitive Data Protection data in context-aware analytics Use context-enriched data in rules Use default detection rules Risk analytics Risk Analytics Quickstart guide Overview of Risk Analytics Use the Risk Analytics dashboard Metric functions for Risk Analytics rules Watchlist Quickstart guide Specify entity risk score in rules Watchlists FAQ Risk Analytics FAQ Work with curated detections Use curated detections to identify threats Use curated detection rules for third-party vendor alerts Use the curated detections UI Cloud Threats category overview Composite Rules category overview Non-prioritized IoC Matching threats category overview Chrome Enterprise Threats category overview Linux Threats category overview macOS Threats category overview Mandiant Hunting Rules category overview Risk Analytics for UEBA category overview Windows Threats category overview Applied Threat Intelligence curated detections overview Verify data ingestion using test rules Configure rule exclusions Rules capacity Manage noisy alerts Configure alert suppression Manage rule exclusion using API Applied Threat Intelligence Applied Threat Intelligence overview Applied Threat Intelligence prioritization View IOCs using Applied Threat Intelligence IC score overview Applied Threat Intelligence fusion feed overview Emerging Threats Center Emerging Threats Center detail view Answer Threat Intelligence questions with Gemini Gemini documentation summaries Use Triage and Investigation Agent to investigate alerts Triage and Investigation Agent dashboard YARA-L 2.0 Get Started Syntax Meta section Events section Match section Outcome section Conditions section Options section Expressions, operators, and other constructs Nested if statements Use OR syntax in the condition section Use N OF syntax with event variables Repeated fields Reference list syntax Detection event sampling YARA-L 2.0 windowing logic Functions Functions for Dashboards Query and investigate Statistics and aggregations Use conditions in Search and Dashboards Create and save visualizations in Search Use metrics in Search Use deduplication in Search and Dashboards Create multi-stage queries Develop detection rules Use context-enriched data in rules Context-aware analysis overview Specify entity risk score in rules Use metric functions for Risk Analytics rules Applied Threat Intelligence fusion feed overview Composite detections overview Construct composite detection rules Rule structure and best practices Manage and troubleshoot Run a rule against historical data Configure rule exclusions View and troubleshoot rule errors Known issues and limitations Reference: Query libraries and transitions YARA-L 2.0 query reference library YARA-L 2.0 dashboard query library Transition from SPL to YARA-L 2.0 Generate search queries with Gemini Generate a YARA-L 2.0 rule using Gemini Investigating threats View Alerts Overview Manage alerts Investigate a GCTI alert Investigate alerts and entity context Searching for data Search for UDM event Use context-enriched fields in UDM search Use UDM Search to investigate an entity Use UDM Search time range and manage queries Use conditions in search and dashboards Use deduplication in search and dashboards Metrics in UDM search using YARA-L 2.0 Use joins in Search YARA-L 2.0 statistics and aggregations Use aggregations in YARA-L 2.0 queries Generate UDM search queries with Gemini UDM search best practices Conduct a raw log search Search raw logs using Raw Log Scan Filter data in raw log search Create a reference list Using investigative views Use investigative views Investigate an asset Work with asset namespaces Investigate a domain Investigate an IP address Investigate a user Investigate a file View information from VirusTotal Filtering data in investigative views Overview of procedural filtering Filter data in User view Filter data in Asset view Filter data in Domain view Filter data in IP Address view Filter data in Hash view Reporting Use context-enriched data in reports Dashboards overview Work with custom dashboards Create a custom dashboard Add a chart to a dashboard Share a personal dashboard Schedule dashboard reports Import and export Google SecOps dashboards Work with Dashboards Dashboards overview Curated Dashboards Manage Native Dashboards Manage charts in Native Dashboards Native Dashboard filters Visualizations in search Configure scheduled reports Data export Export to a Google-managed BigQuery project (legacy) Export to self-managed BigQuery project Stream Data with Advanced BigQuery Export Understand BigQuery data schema Export raw logs to self-managed Google Cloud Storage bucket Administration Close alerts in bulk using the API.
+- Administer users Configure feature access control using IAM Configure VPC Service Controls Configure VPC Service Controls for Google SecOps Configure data access control Overview of data RBAC Data RBAC impact on features Configure data RBAC for users Configure data RBAC for data tables Configure data RBAC for reference lists Set up data feeds Feed management user guide CLI user guide Configure audit logs Data retention Google Analytics in Google SecOps Deprovision Self-service deprovisioning for Google SecOps Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

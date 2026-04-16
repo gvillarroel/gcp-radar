@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:13.738Z"
+generated_at: "2026-04-12T12:20:09.737Z"
 product_name: "VM Runtime on Google Distributed Cloud"
 product_slug: "vm-runtime-on-google-distributed-cloud"
 feature_name: "Local image caching"
 feature_slug: "local-image-caching"
 latest_feature_date: "2023-12-15"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-manage-disks"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm"
 keywords:
   - "local"
   - "image"
@@ -24,7 +27,7 @@ keywords:
 # Local image caching
 
 Product: VM Runtime on Google Distributed Cloud
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ Added support for local image caching within the same namespace.
 
 Added support for local image caching within the same namespace.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-manage-disks](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-manage-disks)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Convert a virtual disk image to qcow2 format for use in VM Runtime on GDC\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image)
+- Source ID: `site-docs-reference`
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Create a VM with your converted image If you want to see your converted virtual disk image in action, create a VM and use the local qcow2 -formatted image created in the previous section.
+- Ubuntu apt-get install qemu-utils RHEL yum install qemu-utils Use qemu-img to convert the existing virtual disk image: qemu-img convert -f EXISTING DISK IMAGE FORMAT -O qcow2 \ EXISTING DISK IMAGE NAME \ CONVERTED DISK IMAGE NAME .qcow2 Replace the following values: EXISTING DISK IMAGE FORMAT : the format of your existing virtual disk image, such as vmdk .
+- To use your local converted virtual disk image, complete the following steps: Create a VM in your cluster: kubectl virt create vm VM NAME \ --os-type OS TYPE \ --image CONVERTED DISK IMAGE NAME .qcow2 This command creates a VM with the defaults of 2 CPU, 4 Gi memory.
+- The following example output shows the VM in a Running state when the process is complete: NAME STATUS AGE IP MY VM Running 64s 192 .168.2.124 What's next You can upload your converted virtual disk image in qcow2 format to an HTTP source or Cloud Storage.
+
+### "Create and use credentials to import images from Cloud Storage for VM Runtime\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials)
+- Source ID: `site-docs-reference`
+- Final score: 151
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The SecretForwarder supports forwarding Secrets within the same cluster, or across clusters, such as from the admin cluster to a user cluster.
+- Apply the SecretForwarder manifest in the admin cluster using kubectl with the KUBECONFIG of the admin cluster: kubectl apply -f my-forwarded-secret.yaml Use a Secret to import an image To use the Secret to import an image from Cloud Storage when you create a virtual disk and VM, complete the following steps: Create a manifest that defines a VirtualMachineDisk and VirtualMachine , such as my-vm.yaml, in the editor of your choice: nano my-vm.yaml Copy and paste the following YAML definition: apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachineDisk metadata : name : VM NAME -boot-dv spec : size : 20Gi source : gcs : url : IMAGE URL secretRef : SECRET NAME --- apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachine metadata : name : VM NAME spec : interfaces : - name : eth0 networkName : pod-network default : true disks : - boot : true virtualMachineDiskName : VM NAME -boot-dv Replace the following values: VM NAME - the name of your VM.
+- To forward a Secret in the same cluster, complete the following steps: Create a SecretForwarder manifest, such as my-forwarded-secret.yaml , in the editor of your choice: nano my-forwarded-secret.yaml Copy and paste the following YAML manifest: apiVersion : baremetal.cluster.gke.io/v1 kind : SecretForwarder metadata : name : SECRET FORWARDER NAME namespace : NAMESPACE NAME spec : RemoteClusterTargetSecrets : name : TARGET SECRET NAME namespaces : - TARGET NAMESPACE NAME sourceSecret : name : SOURCE SECRET NAME namespace : SOURCE NAMESPACE NAME Replace the following values: SECRET FORWARDER NAME : the name for your SecretForwarder in the remote cluster.
+- To forward a Secret in the same cluster, complete the following steps: Create a SecretForwarder manifest, such as my-forwarded-secret.yaml , in the editor of your choice: nano my-forwarded-secret.yaml Copy and paste the following YAML manifest: apiVersion : baremetal.cluster.gke.io/v1 kind : SecretForwarder metadata : name : SECRET FORWARDER NAME namespace : NAMESPACE NAME spec : inClusterTargetSecrets : name : TARGET SECRET NAME namespaces : - TARGET NAMESPACE NAME sourceSecret : name : SOURCE SECRET NAME namespace : SOURCE NAMESPACE NAME Replace the following values: SECRET FORWARDER NAME : the name for your SecretForwarder.
+
+### "Create and manage virtual disks in Google Distributed Cloud \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-manage-disks](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-manage-disks)
+- Source ID: `site-docs-reference`
+- Final score: 116
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following example creates a disk from an image stored in a Docker registry. apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachineDisk metadata : name : my-disk spec : source : registry : url : docker://kubevirt/fedora-cloud-registry-disk-demo size : 20GiB storageClassName : local-shared Valid image formats You can use any of the following image formats when you you create a disk from an image: GNU zip (gzip) archive ( .gz ) RAW ( .raw , .img ) QEMU copy on write version 2 (qcow2) disk image ( .qcow2 ) XZ compressed archive ( .xz ) Virtual Machine disk (VMDK) file ( .vmdk ) VirtualBox Virtual Disk Image (VDI) file ( .vdi ) Virtual Hard Disk (VHD) image file ( .vdh ) Virtual Hard Disk version 2 (VDHX) file ( .vdhx ) ISO disc image file ( .iso ) Example of a disk created from an HTTP image The following steps create a boot disk from an Ubuntu image: Create a manifest that defines a VirtualMachineDisk and VirtualMachine , such as my-vm.yaml, in the editor of your choice: nano my-vm.yaml Copy and paste the following YAML definition: apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachineDisk metadata : name : VM NAME -boot-dv spec : size : 20Gi source : http : url : https://cloud-images.ubuntu.com/releases/focal/release/ubuntu-20.04-server-cloudimg-amd64.img --- apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachine metadata : name : VM NAME spec : interfaces : - name : eth0 networkName : pod-network default : true disks : - boot : true virtualMachineDiskName : VM NAME -boot-dv This example creates a 20Gi (20 gibibyte) disk named VM NAME -boot-dv using a public Ubuntu image.
+- In the following example, my-gcs is a secret containing a base64-encoded service account key. apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachineDisk metadata : name : my-disk spec : source : gcs : url : gs://kubevirt-ci-vm-images/rhel8.2/rhel8 2 cloud.qcow2 secretRef : my-gcs size : 20GiB storageClassName : local-shared If you used downloaded service account keys to create your cluster, you can use the Artifact Registry service account key for Cloud Storage access.
+- The url field expects either an HTTP or HTTPS URL. apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachineDisk metadata : name : my-disk spec : source : http : url : https://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86 64-disk.img size : 20GiB storageClassName : local-shared Cloud Storage The following example shows how to create a disk from an image in a Cloud Storage bucket.
+- Create a VM with an attached disk When you create a VM, you can attach an existing boot or data disk, create a disk from an image (including for the boot disk), or create a blank disk.
+
+### "Tutorial: Create and manage a Linux VM in VM Runtime on GDC \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm)
+- Source ID: `site-docs-reference`
+- Final score: 108
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For most production scenarios, use a local HTTP image repository rather than pull from an external public source each time.
+- Create a VirtualMachineDisk manifest, such as my-disk.yaml , in the editor of your choice: nano my-disk.yaml Copy and paste the following YAML definition: apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachineDisk metadata : name : DISK NAME spec : size : 20Gi storageClassName : STORAGE CLASS NAME source : http : url : https://cloud-images.ubuntu.com/releases/focal/release/ubuntu-20.04-server-cloudimg-amd64.img Replace the following values: DISK NAME : the name that you want for your disk.
+- The process to create the VirtualMachineDisk is much faster when you use a locally stored image.
+- Create the disk using kubectl : kubectl apply -f my-data-disk.yaml Use kubectl to stop your VM before you attach the new virtual disk: kubectl virt stop VM NAME Edit your VM resource: kubectl edit gvm VM NAME Update the VirtualMachine YAML manifest to attach the disk at the end of the VM's spec.disks section: apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachine metadata : name : VM NAME spec : ... disks : - boot : true virtualMachineDiskName : DISK NAME - virtualMachineDiskName : DATA DISK NAME Replace DATA DISK NAME with the name of your disk created in the previous step.
 

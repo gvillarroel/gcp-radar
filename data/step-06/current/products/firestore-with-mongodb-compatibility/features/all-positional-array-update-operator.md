@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.761Z"
+generated_at: "2026-04-12T12:16:03.697Z"
 product_name: "Firestore with MongoDB compatibility"
 product_slug: "firestore-with-mongodb-compatibility"
 feature_name: "all positional array update operator"
 feature_slug: "all-positional-array-update-operator"
 latest_feature_date: "2025-08-26"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80"
+  - "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data"
+  - "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+  - "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences"
 keywords:
   - "all"
   - "positional"
@@ -24,7 +27,7 @@ keywords:
 # all positional array update operator
 
 Product: Firestore with MongoDB compatibility
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ Supports the $[] array update operator for updating all matched array elements.
 
 Supports the $[] array update operator for updating all matched array elements.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80)
+- [https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data](https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data)
+- [https://docs.cloud.google.com/firestore/native/docs/query-data/queries](https://docs.cloud.google.com/firestore/native/docs/query-data/queries)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Supported features: 8.0 \_|\_ Firestore with MongoDB compatibility \_|\_\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80)
+- Source ID: `site-docs-root`
+- Final score: 186
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Query and projection operators Firestore with MongoDB compatibility supports the following query and projection operators: Array operators Operator Supported $all Yes $elemMatch Yes $size Yes Bitwise operators Operator Supported $bitsAllClear No $bitsAllSet No $bitsAnyClear No $bitsAnySet No Comment operator Operator Supported $comment No Comparison operators Operator Supported $eq Yes $gt Yes $gte Yes $in Yes $lt Yes $lte Yes $ne Yes $nin Yes Element operators Operator Supported $exists Yes $type Yes Evaluation query operators Operator Supported $expr Yes $jsonSchema No $mod Yes $regex Yes $text No $where No Logical operators Operator Supported $and Yes $nor Yes $not Yes $or Yes Projection operators Operator Supported $ Yes $elemMatch Yes $meta Partial (supports textScore) $slice Yes Update operators Firestore with MongoDB compatibility supports the following update operators.
+- Array operators Operator Supported $ Yes $[] Yes $[<identifier>] Yes $addToSet Yes $percentile Yes $pop Yes $pull Yes $pullAll Yes $push Yes Bitwise operators Operator Supported $bit Yes Field operators Operator Supported $currentDate Yes $inc Yes $max Yes $min Yes $mul Yes $rename Yes $set Yes $setOnInsert Yes $unset Yes Update modifiers Modifier Supported $each Yes $position Yes $slice Yes $sort Yes Aggregation pipeline operators Firestore with MongoDB compatibility supports the following aggregation pipeline operators.
+- Operator Supported $abs Yes $add Yes $ceil Yes $divide Yes $exp Yes $floor Yes $ln Yes $log Yes $log10 Yes $mod Yes $multiply Yes $pow Yes $round Yes $sqrt Yes $subtract Yes $trunc Yes Array operators Operator Supported $arrayElemAt Yes $arrayToObject Yes $concatArrays Yes $filter Yes $firstN Yes $in Yes $indexOfArray Yes $isArray Yes $lastN Yes $map Yes $maxN Yes $minN Yes $objectToArray Yes $range Yes $reduce Yes $reverseArray Yes $size Yes $slice Yes $sortArray Yes $zip Yes Boolean operators Operator Supported $and Yes $not Yes $or Yes Comparison operators Operator Supported $cmp Yes $eq Yes $gt Yes $gte Yes $lt Yes $lte Yes $ne Yes Conditional expression operators Operator Supported $cond Yes $ifNull Yes $switch Yes Data size operators Operator Supported $binarySize Yes $bsonSize Yes Date operators Operator Supported $dateAdd Yes $dateDiff Yes $dateFromParts Yes $dateFromString Yes $dateSubtract Yes $dateToParts Yes $dateToString Yes $dateTrunc Yes $dayOfMonth Yes $dayOfWeek Yes $dayOfYear Yes $hour Yes $isoDayOfWeek Yes $isoWeek Yes $isoWeekYear Yes $millisecond Yes $minute Yes $month Yes $second Yes $toDate Yes $week Yes $year Yes Timestamp operators Operator Supported $tsIncrement No $tsSecond No Miscellaneous operators Operator Supported $getField Yes $natural Yes (ascending) $rand Yes $sampleRate No $toHashedIndexKey No Literal expression operators Operator Supported $literal Yes Object operators Operator Supported $mergeObjects Yes $objectToArray Yes $setField No Set operators Operator Supported $allElementsTrue Yes $anyElementTrue Yes $setDifference Yes $setEquals Yes $setIntersection Yes $setIsSubset Yes $setUnion Yes Stage operators Operator Supported $addFields Yes $bucket Yes $bucketAuto No $changeStream No $collStats No $count Yes $currentOp No $documents Yes $facet Yes $geoNear No $graphLookup No $group Yes $indexStats No $limit Yes $listLocalSessions No $listSessions No $lookup Yes $match Yes $merge No $out No $planCacheStats No $project Yes $redact No $replaceRoot Yes $replaceWith Yes $sample Yes $set Yes $search No $setWindowFields No $skip Yes $sort Yes $sortByCount Yes $unionWith Yes $unset Yes $unwind Yes String operators Operator Supported $concat Yes $dateFromString Yes $dateToString Yes $indexOfBytes Yes $indexOfCP Yes $ltrim Yes $regexFind Yes $regexFindAll Yes $regexMatch Yes $replaceAll Yes $replaceOne Yes $rtrim Yes $split Yes $strcasecmp Yes $strLenBytes Yes $strLenCP Yes $substr Yes $substrBytes Yes $substrCP Yes $toLower Yes $toString Yes $toUpper Yes $trim Yes System variables Variable Supported $$CLUSTERTIME No $$CURRENT No $$DESCEND No $$KEEP No $$NOW Yes $$PRUNE No $$REMOVE Yes $$ROOT Yes Text operators Operator Supported $meta No Trigonometry operators Operator Supported $acos No $acosh No $asin No $asinh No $atan No $atan2 No $atanh No $cos No $cosh No $degreesToRadians No $radiansToDegrees No $sin No $sinh No $tan No $tanh No Type operators Operator Supported $convert Yes $isNumber Yes $toBool Yes $toDate Yes $toDecimal Yes $toDouble Yes $toInt Yes $toLong Yes $toObjectId Yes $toString Yes $type Yes Variable operators Operator Supported $let Yes Geospatial Firestore with MongoDB compatibility supports the following Geospatial operators.
+- Aggregation Command Supported aggregate Yes count Yes distinct Yes group No The $group stage in aggregations is supported whereas the group command isn't. mapReduce No Authentication Command Supported authenticate No getnonce No logout No Query and write operations Command Supported watch (Change Streams) No delete Yes eval No find Yes findAndModify Yes getLastError Yes getMore Yes getPrevError No GridFS No insert Yes parallelCollectionScan No replaceOne No The replaceOne driver method is supported with the update command. resetError No update Yes Session commands Command Supported abortTransaction Yes commitTransaction Yes endSessions Yes killAllSessions No killAllSessionsByPattern No killSessions No refreshSessions No startSession Sessions can be started using the startSession driver method.
+
+### Add and update data \_|\_ Firestore in Native mode \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data](https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data)
+- Source ID: `site-docs-root-2`
+- Final score: 184
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- FIRDocumentReference washingtonRef = [[ self . db collectionWithPath : @"cities" ] documentWithPath : @"DC" ]; // Atomically add a new region to the "regions" array field. [ washingtonRef updateData : @{ @"regions" : [ FIRFieldValue fieldValueForArrayUnion : @[ @"greater virginia" ] ] } ]; // Atomically remove a new region to the "regions" array field. [ washingtonRef updateData : @{ @"regions" : [ FIRFieldValue fieldValueForArrayRemove : @[ @"east coast" ] ] } ]; ViewController . m Kotlin Android val washingtonRef = db . collection ( "cities" ). document ( "DC" ) // Atomically add a new region to the "regions" array field. washingtonRef . update ( "regions" , FieldValue . arrayUnion ( "greater virginia" )) // Atomically remove a region from the "regions" array field. washingtonRef . update ( "regions" , FieldValue . arrayRemove ( "east coast" )) DocSnippets . kt Java Android DocumentReference washingtonRef = db . collection ( "cities" ). document ( "DC" ); // Atomically add a new region to the "regions" array field. washingtonRef . update ( "regions" , FieldValue . arrayUnion ( "greater virginia" )); // Atomically remove a region from the "regions" array field. washingtonRef . update ( "regions" , FieldValue . arrayRemove ( "east coast" )); DocSnippets . java Dart final washingtonRef = db . collection ( "cities" ). doc ( "DC" ); // Atomically add a new region to the "regions" array field. washingtonRef . update ({ "regions" : FieldValue . arrayUnion ([ "greater virginia" ]), }); // Atomically remove a region from the "regions" array field. washingtonRef . update ({ "regions" : FieldValue . arrayRemove ([ "east coast" ]), }); firestore . dart Java DocumentReference washingtonRef = db . collection ( "cities" ). document ( "DC" ); // Atomically add a new region to the "regions" array field.
+- If you update a nested field without dot notation, you will overwrite the entire map field, as shown in the following example: Web // Create our initial doc db . collection ( "users" ). doc ( "frank" ). set ({ name : "Frank" , favorites : { food : "Pizza" , color : "Blue" , subject : "Recess" }, age : 12 }). then ( function () { console . log ( "Frank created" ); }); // Update the doc without using dot notation. // Notice the map value for favorites. db . collection ( "users" ). doc ( "frank" ). update ({ favorites : { food : "Ice Cream" } }). then ( function () { console . log ( "Frank food updated" ); }); / Ending State , favorite . color and favorite . subject are no longer present : / users / frank { name : "Frank" , favorites : { food : "Ice Cream" , }, age : 12 } / Update elements in an array If your document contains an array field, you can use arrayUnion() and arrayRemove() to add and remove elements. arrayUnion() adds elements to an array but only elements not already present. arrayRemove() removes all instances of each given element.
+- Node.js // ... const washingtonRef = db . collection ( 'cities' ). doc ( 'DC' ); // Atomically add a new region to the "regions" array field. const unionRes = await washingtonRef . update ({ regions : FieldValue . arrayUnion ( 'greater virginia' ) }); // Atomically remove a region from the "regions" array field. const removeRes = await washingtonRef . update ({ regions : FieldValue . arrayRemove ( 'east coast' ) }); // To add or remove multiple items, pass multiple arguments to arrayUnion/arrayRemove const multipleUnionRes = await washingtonRef . update ({ regions : FieldValue . arrayUnion ( 'south carolina' , 'texas' ) // Alternatively, you can use spread operator in ES6 syntax // const newRegions = ['south carolina', 'texas'] // regions: FieldValue.arrayUnion(...newRegions) }); index . js Go // Not supported yet PHP PHP To authenticate to Firestore, set up Application Default Credentials.
+- For more information, see Set up authentication for a local development environment . $cityRef = $db->collection('samples/php/cities')->document('DC'); // Atomically add a new region to the "regions" array field. $cityRef->update([ ['path' => 'regions', 'value' => FieldValue::arrayUnion(['greater virginia'])] ]); // Atomically remove a region from the "regions" array field. $cityRef->update([ ['path' => 'regions', 'value' => FieldValue::arrayRemove(['east coast'])] ]); Unity // This is not yet supported in the Unity SDK C# DocumentReference washingtonRef = db .
+
+### "Query and filter data \_|\_ Firestore in Native mode \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/firestore/native/docs/query-data/queries](https://docs.cloud.google.com/firestore/native/docs/query-data/queries)
+- Source ID: `site-docs-root-2`
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Disjunctive normal form Firestore converts queries to disjunctive normal form by applying two rules: Flatten Given conditions A , B , and C : A and (B and C) => A and B and C Distributive Law Given conditions A , B , C , and D : A and (B or C) => (A and B) or (A and C) (A or B) and (C or D) => (A and C) or (A and D) or (B and C) or (B and D) When applying these rules to in and array-contains-any queries, remember that these operators are shorthands for OR .
+- Core operations support the following comparison operators: < less than <= less than or equal to == equal to greater than = greater than or equal to != not equal to array-contains array-contains-any in not-in Note: For Apple, Android, and Java, the comparison operator is explicitly named in the method.
+- These limitations apply only to Standard edition: Firestore provides support for logical OR queries through the or , in , and array-contains-any operators.
+- These limitations apply only to Standard edition: Firestore provides support for logical OR queries through the or , in , and array-contains-any operators.
+
+### "Behavior differences \_|\_ Firestore with MongoDB compatibility \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences)
+- Source ID: `site-iam-reference`
+- Final score: 138
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- Each Array and Object-typed field adds one level to the overall depth. id The top-level id field must be an ObjectId, String, 64-bit integer, 32-bit integer, Double, Binary, or Object.
+- See the commands section for a complete list of supported stages and operators.
+- Queries and writes Command Unsupported Fields find max min returnKey showRecordId tailable oplogReplay noCursorTimeout awaitData allowPartialResults collation allowDiskUsage let aggregate collation let insert (none) update Within an update statement: collation delete Within a delete statement: collation findAndModify collation let count collation distinct collation getMore comment killCursors (none) explain (none) Transactions and sessions Command Unsupported Fields commitTransaction (none) abortTransaction (none) endSessions (none) Administration Command Unsupported Fields Notes listDatabases authorizedDatabases filter must be empty if provided. listCollections (none) authorizedCollections must be false if provided. listIndexes (none) createIndexes (none) dropIndexes (none) createCollection timeseries expireAfterSeconds clusteredIndex changeStreamPreAndPostImages size max storageEngine validator validationLevel validationAction indexOptionDefaults viewOn pipeline collation encryptedFields This command is a no-op. capped must be false if provided.
 

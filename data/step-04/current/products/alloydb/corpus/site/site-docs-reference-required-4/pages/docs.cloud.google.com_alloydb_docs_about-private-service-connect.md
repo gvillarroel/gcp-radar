@@ -1,0 +1,98 @@
+---
+title: "Private Service Connect overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+  \ Cloud Documentation"
+url: https://docs.cloud.google.com/alloydb/docs/about-private-service-connect
+knowledge_key: corpus
+source_id: site-docs-reference-required-4
+source_type: site
+entrypoint: https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases
+source_metadata:
+  url: https://docs.cloud.google.com/alloydb/docs/about-private-service-connect
+  title: "Private Service Connect overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Databases
+AlloyDB for PostgreSQL
+Guides
+Send feedback
+Private Service Connect overview
+Stay organized with collections
+Save and categorize content based on your preferences.
+This page describes concepts related to Private Service Connect. You can use Private Service Connect for the following purposes:
+Connect to an AlloyDB for PostgreSQL instance from multiple Virtual Private Cloud (VPC)
+networks that belong to different groups, teams, projects, or organizations.
+Connect to either a primary instance or any of its read replicas, or connect to a
+secondary instance.
+Private Service Connect lets you create a private and secure
+connection between your VPC networks and a
+Google Cloud service, such as AlloyDB.
+Private Service Connect uses the concept of consumer and producer. For example, your
+VPC network is the consumer of the AlloyDB service
+published by the Google Cloud, which is the producer . For inbound connectivity, AlloyDB instances
+publish a service attachment URL, a unique identifier that is used to connect to an instance, and the allowed networks within the allowed projects create an endpoint to create a secure connection to
+the AlloyDB service.
+For outbound connectivity, consumer networks create and manage
+Private Service Connect network attachments.
+AlloyDB instances use these network attachments to manage
+connectivity for outbound operations, such as migration or foreign data wrappers
+(FDW).
+For detailed information about using Private Service Connect in AlloyDB, see
+Connect to an instance using Private Service Connect .
+Service connection policy
+A service connection policy lets you authorize AlloyDB to create a Private Service Connect connection between AlloyDB and consumer VPC networks. As a result, you can provision Private Service Connect endpoints automatically.
+For example, you can create a service connection policy in one or more of your (consumer) VPC networks and also specify a subnet. The subnet is used to allocate IP addresses for the endpoints that are automatically created through the policy to connect to AlloyDB. The policy also defines a connection limit that determines how many endpoints can be created.
+For more information about service connection policy, see About service connection policies .
+Service attachment
+When you create any AlloyDB instance within a
+Private Service Connect-enabled cluster, AlloyDB creates
+a service attachment unique to that instance. For each primary instance,
+read pool instance, or secondary instance created, a unique service attachment
+URL is generated. This service attachment URL is used to create a
+Private Service Connect endpoint for your project or network.
+Network attachment
+Note: You can't enable outbound connectivity on AlloyDB instances
+created prior to March 01, 2025. For more information about alternative
+approaches, see Update an instance for outbound
+connectivity .
+To enable outbound connectivity from an AlloyDB instance to your
+consumer project, you need to create a network attachment within that VPC and
+project. This network attachment, which is a regional resource, acts as the
+connection point. You can create a network attachment that can accept
+connections automatically( ACCEPT_AUTOMATIC ) or manually ( ACCEPT_MANUAL ). For
+more information about creating a network attachment, see Create and manage
+network attachments .
+Private Service Connect endpoint
+A Private Service Connect endpoint is a forwarding rule that's associated with an internal IP address. When you create a Private Service Connect-enabled cluster and instance, you can let AlloyDB automatically create endpoints for you or create the endpoint manually. As part of creating the endpoint manually , you must specify the service attachment that's associated with the AlloyDB instance. The VPC network can then access the instance through the endpoint.
+DNS names and records
+Since multiple endpoints can connect to a single service attachment, we
+recommend using a DNS
+name to
+consistently connect to the service attachment regardless of the network to
+which the endpoint belongs. The DNS name is used to create the DNS record in a
+private DNS zone for the corresponding
+VPC network.
+Allowed Private Service Connect projects
+When you create an AlloyDB instance, you can define
+which projects from your VPC network can access the
+AlloyDB instance within the AlloyDB cluster.
+For each allowed project in your VPC network, create a unique
+Private Service Connect endpoint. If a project isn't allowed
+explicitly, then you can still create an endpoint for the instances in the
+project, but the endpoint remains in a PENDING state.
+Limitation
+Private Service Connect endpoints can be created in both RFC 1918 and non-RFC 1918 ranges.
+What's next
+Learn about Private Service Connect in AlloyDB networking .
+Learn more about connecting to an instance using Private Service Connect .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

@@ -1,0 +1,215 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-14T01:56:47.190Z",
+  "product_name": "Certificate Manager",
+  "product_slug": "certificate-manager",
+  "input_file": "data/step-06/current/products/certificate-manager/extended-features.json",
+  "feature_count": 9,
+  "passed_feature_count": 9,
+  "failed_feature_count": 0,
+  "warned_feature_count": 1,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "Certificate inventory and detail views",
+      "feature_slug": "certificate-inventory-and-detail-views",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-certificate-manager/latest/com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-certificate-manager/latest/com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.Builder"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "Certificate issuance configuration metadata updates",
+      "feature_slug": "certificate-issuance-configuration-metadata-updates",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-certificate-manager/latest/com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.Builder",
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.pagers.ListCertificateIssuanceConfigsAsyncPager"
+      ]
+    },
+    {
+      "feature_name": "Regional Application Load Balancer integration",
+      "feature_slug": "regional-application-load-balancer-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/certificates",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-regional",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy",
+        "https://docs.cloud.google.com/certificate-manager/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Project-isolated certificate management",
+      "feature_slug": "project-isolated-certificate-management",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/certificates",
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerClient",
+        "https://docs.cloud.google.com/certificate-manager/docs/certificate-manager-best-practices"
+      ]
+    },
+    {
+      "feature_name": "Regional managed certificate issuance",
+      "feature_slug": "regional-managed-certificate-issuance",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-regional",
+        "https://docs.cloud.google.com/certificate-manager/docs/certificate-manager-best-practices",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-certificate-manager/latest/com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-certificate-manager/latest/com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.Builder"
+      ]
+    },
+    {
+      "feature_name": "Mutual TLS authentication",
+      "feature_slug": "mutual-tls-authentication",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerClient",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy"
+      ]
+    },
+    {
+      "feature_name": "Certificate inventory and detail views",
+      "feature_slug": "certificate-inventory-and-detail-views",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.CertificateManagerClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-certificate-manager/latest/com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-certificate-manager/latest/com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.Builder"
+      ]
+    },
+    {
+      "feature_name": "Classic Certificates tab migration for load-balancer SSL certificates",
+      "feature_slug": "classic-certificates-tab-migration-for-load-balancer-ssl-certificates",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-lb-auth",
+        "https://docs.cloud.google.com/certificate-manager/docs/certificates",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth"
+      ]
+    },
+    {
+      "feature_name": "Global external HTTP(S) Load Balancer support",
+      "feature_slug": "global-external-http-s-load-balancer-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-lb-auth",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-self-managed",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-self-managed-cross-reg"
+      ]
+    },
+    {
+      "feature_name": "Target SSL proxy support",
+      "feature_slug": "target-ssl-proxy-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-self-managed",
+        "https://docs.cloud.google.com/certificate-manager/docs/maps",
+        "https://docs.cloud.google.com/certificate-manager/docs/migrate",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas"
+      ]
+    }
+  ]
+}

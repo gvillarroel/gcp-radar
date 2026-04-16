@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.221Z"
+generated_at: "2026-04-13T14:23:05.067Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "ComputeExternalVPNGateway label fingerprint status"
@@ -9,18 +9,16 @@ latest_feature_date: "2023-08-21"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/getting-started"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+  - "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
 keywords:
+  - "fingerprint"
   - "computeexternalvpngateway"
   - "label"
-  - "fingerprint"
-  - "status"
-  - "config"
-  - "connector"
+  - "resources"
   - "exposes"
-  - "the"
+  - "status"
 ---
 
 # ComputeExternalVPNGateway label fingerprint status
@@ -42,45 +40,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster)
+- [https://docs.cloud.google.com/config-connector/docs/concepts/resources](https://docs.cloud.google.com/config-connector/docs/concepts/resources)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### ContainerCluster \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster)
+- Source ID: `site-docs-reference`
+- Final score: 99
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
+- Field is required when parent field is specified Status Schema conditions : - lastTransitionTime : string message : string reason : string status : string type : string endpoint : string labelFingerprint : string masterVersion : string observedGeneration : integer observedState : controlPlaneEndpointsConfig : dnsEndpointConfig : endpoint : string masterAuth : clientCertificate : string clusterCaCertificate : string privateClusterConfig : privateEndpoint : string publicEndpoint : string operation : string selfLink : string servicesIpv4Cidr : string tpuIpv4CidrBlock : string Fields conditions list (object) Conditions represent the latest available observation of the resource's current state. conditions[] object conditions[].lastTransitionTime string Last time the condition transitioned from one status to another. conditions[].message string Human-readable message indicating details about last transition. conditions[].reason string Unique, one-word, CamelCase reason for the condition's last transition. conditions[].status string Status is the status of the condition.
+- For more details on how to debug and fix an issue which could lead to a permanent diff, please refer to the Config Connector Troubleshooting page Property Value Google Cloud Service Name Kubernetes Engine Google Cloud Service Documentation /kubernetes-engine/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpcontainercluster gcpcontainerclusters containercluster Config Connector Service Name container.googleapis.com Config Connector Resource Fully Qualified Name containerclusters.container.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/remove-default-node-pool Spec Schema addonsConfig : cloudrunConfig : disabled : boolean loadBalancerType : string configConnectorConfig : enabled : boolean dnsCacheConfig : enabled : boolean gcePersistentDiskCsiDriverConfig : enabled : boolean gcpFilestoreCsiDriverConfig : enabled : boolean gcsFuseCsiDriverConfig : enabled : boolean gkeBackupAgentConfig : enabled : boolean horizontalPodAutoscaling : disabled : boolean httpLoadBalancing : disabled : boolean istioConfig : auth : string disabled : boolean kalmConfig : enabled : boolean networkPolicyConfig : disabled : boolean allowNetAdmin : boolean authenticatorGroupsConfig : securityGroup : string binaryAuthorization : enabled : boolean evaluationMode : string clusterAutoscaling : autoProvisioningDefaults : bootDiskKMSKeyRef : external : string name : string namespace : string diskSize : integer imageType : string management : autoRepair : boolean autoUpgrade : boolean upgradeOptions : - autoUpgradeStartTime : string description : string minCpuPlatform : string oauthScopes : - string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean upgradeSettings : blueGreenSettings : nodePoolSoakDuration : string standardRolloutPolicy : batchNodeCount : integer batchPercentage : float batchSoakDuration : string maxSurge : integer maxUnavailable : integer strategy : string autoscalingProfile : string defaultComputeClassConfig : enabled : boolean enabled : boolean resourceLimits : - maximum : integer minimum : integer resourceType : string clusterIpv4Cidr : string clusterTelemetry : type : string confidentialNodes : enabled : boolean controlPlaneEndpointsConfig : dnsEndpointConfig : allowExternalTraffic : boolean enableK8sTokensViaDns : boolean ipEndpointsConfig : enabled : boolean costManagementConfig : enabled : boolean databaseEncryption : keyName : string state : string datapathProvider : string defaultMaxPodsPerNode : integer defaultSnatStatus : disabled : boolean description : string dnsConfig : clusterDns : string clusterDnsDomain : string clusterDnsScope : string enableAutopilot : boolean enableBinaryAuthorization : boolean enableCiliumClusterwideNetworkPolicy : boolean enableFqdnNetworkPolicy : boolean enableIntranodeVisibility : boolean enableK8sBetaApis : enabledApis : - string enableKubernetesAlpha : boolean enableL4IlbSubsetting : boolean enableLegacyAbac : boolean enableMultiNetworking : boolean enableShieldedNodes : boolean enableTpu : boolean gatewayApiConfig : channel : string identityServiceConfig : enabled : boolean initialNodeCount : integer ipAllocationPolicy : additionalPodRangesConfig : podRangeNames : - string clusterIpv4CidrBlock : string clusterSecondaryRangeName : string podCidrOverprovisionConfig : disabled : boolean servicesIpv4CidrBlock : string servicesSecondaryRangeName : string stackType : string location : string loggingConfig : enableComponents : - string loggingService : string maintenancePolicy : dailyMaintenanceWindow : duration : string startTime : string maintenanceExclusion : - endTime : string exclusionName : string exclusionOptions : scope : string startTime : string recurringWindow : endTime : string recurrence : string startTime : string masterAuth : clientCertificate : string clientCertificateConfig : issueClientCertificate : boolean clientKey : string clusterCaCertificate : string password : value : string valueFrom : secretKeyRef : key : string name : string username : string masterAuthorizedNetworksConfig : cidrBlocks : - cidrBlock : string displayName : string gcpPublicCidrsAccessEnabled : boolean meshCertificates : enableCertificates : boolean minMasterVersion : string monitoringConfig : advancedDatapathObservabilityConfig : - enableMetrics : boolean relayMode : string enableComponents : - string managedPrometheus : enabled : boolean monitoringService : string networkPolicy : enabled : boolean provider : string networkRef : external : string name : string namespace : string networkingMode : string nodeConfig : advancedMachineFeatures : enableNestedVirtualization : boolean threadsPerCore : integer bootDiskKMSCryptoKeyRef : external : string name : string namespace : string confidentialNodes : enabled : boolean diskSizeGb : integer diskType : string ephemeralStorageConfig : localSsdCount : integer ephemeralStorageLocalSsdConfig : localSsdCount : integer fastSocket : enabled : boolean gcfsConfig : enabled : boolean guestAccelerator : - count : integer gpuDriverInstallationConfig : gpuDriverVersion : string gpuPartitionSize : string gpuSharingConfig : gpuSharingStrategy : string maxSharedClientsPerGpu : integer type : string gvnic : enabled : boolean hostMaintenancePolicy : maintenanceInterval : string imageType : string kubeletConfig : cpuCfsQuota : boolean cpuCfsQuotaPeriod : string cpuManagerPolicy : string podPidsLimit : integer labels : string : string linuxNodeConfig : cgroupMode : string sysctls : string : string localNvmeSsdBlockConfig : localSsdCount : integer localSsdCount : integer loggingVariant : string machineType : string metadata : string : string minCpuPlatform : string nodeGroupRef : external : string name : string namespace : string oauthScopes : - string preemptible : boolean reservationAffinity : consumeReservationType : string key : string values : - string resourceLabels : string : string sandboxConfig : sandboxType : string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean soleTenantConfig : nodeAffinity : - key : string operator : string values : - string spot : boolean tags : - string taint : - effect : string key : string value : string workloadMetadataConfig : mode : string nodeMetadata : string nodeLocations : - string nodePoolAutoConfig : networkTags : tags : - string nodePoolDefaults : nodeConfigDefaults : gcfsConfig : enabled : boolean loggingVariant : string nodeVersion : string notificationConfig : pubsub : enabled : boolean filter : eventType : - string topicRef : external : string name : string namespace : string podSecurityPolicyConfig : enabled : boolean privateClusterConfig : enablePrivateEndpoint : boolean enablePrivateNodes : boolean masterGlobalAccessConfig : enabled : boolean masterIpv4CidrBlock : string peeringName : string privateEndpoint : string privateEndpointSubnetworkRef : external : string name : string namespace : string publicEndpoint : string privateIpv6GoogleAccess : string protectConfig : workloadConfig : auditMode : string workloadVulnerabilityMode : string releaseChannel : channel : string resourceID : string resourceUsageExportConfig : bigqueryDestination : datasetId : string enableNetworkEgressMetering : boolean enableResourceConsumptionMetering : boolean securityPostureConfig : mode : string vulnerabilityMode : string serviceExternalIpsConfig : enabled : boolean subnetworkRef : external : string name : string namespace : string verticalPodAutoscaling : enabled : boolean workloadIdentityConfig : identityNamespace : string workloadPool : string Fields addonsConfig Optional object The configuration for addons supported by GKE. addonsConfig.cloudrunConfig Optional object The status of the CloudRun addon.
+- Can be True, False, Unknown. conditions[].type string Type is the type of the condition. endpoint string The IP address of this cluster's Kubernetes master. labelFingerprint string The fingerprint of the set of labels for this cluster. masterVersion string The current version of the master in the cluster.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : container.cnrm.cloud.google.com/v1beta1 kind : ContainerCluster metadata : labels : availability : dev target-audience : development name : containercluster-sample-routesbased spec : description : A routes-based cluster confined to one zone configured for development. location : us-central1-a initialNodeCount : 1 networkingMode : ROUTES clusterIpv4Cidr : 10.96.0.0/14 masterAuthorizedNetworksConfig : cidrBlocks : - displayName : Trusted external network cidrBlock : 10.2.0.0/16 addonsConfig : gcePersistentDiskCsiDriverConfig : enabled : true kalmConfig : enabled : true horizontalPodAutoscaling : disabled : true httpLoadBalancing : disabled : false loggingConfig : enableComponents : - "SYSTEM COMPONENTS" - "WORKLOADS" monitoringConfig : enableComponents : - "SYSTEM COMPONENTS" workloadIdentityConfig : Replace ${PROJECT ID?} with your project ID. workloadPool : "${PROJECT ID?}.svc.id.goog" Vpc Native Container Cluster Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 
-### Getting started with Config Connector | Google Cloud Documentation
+### About Config Connector CRDs \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
-- Source ID: `site-docs-root`
-- Final score: 114
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- By default, Config Connector deletes the PubSubTopic resource.
-- Getting started with Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/getting-started PROJECT ID: your Google Cloud project ID.
-- NEW LABEL VALUE: an updated value for the label you added previously.
-- Your topic should have the new label.
-
-### IAMPolicy | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 104
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/concepts/resources](https://docs.cloud.google.com/config-connector/docs/concepts/resources)
+- Source ID: `site-docs-reference`
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
+- In addition, Config Connector adds a system label named managed-by-cnrm with a value of true to your Google Cloud resources.
+- Events Important status changes for Config Connector resources are visible as Kubernetes events.
+- Folders and hierarchical resources In addition to managing resources in Google Cloud products, Config Connector supports creating and managing resources within Google Cloud Folders and Organizations .
+- Kubernetes objects and Config Connector resources For example, when you create a Kubernetes Object of kind: SQLInstance , Config Connector creates a Cloud SQL Instance.
+
+### BillingBudgetsBudget \_|\_ Config Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget)
+- Source ID: `site-docs-root-2`
+- Final score: 92
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : billingbudgets.cnrm.cloud.google.com/v1beta1 kind : BillingBudgetsBudget metadata : name : billingbudgetsbudget-sample-calendarbudget spec : billingAccountRef : Replace "${BILLING ACCOUNT ID FOR BILLING RESOURCES?}" with the numeric ID for your billing account external : "${BILLING ACCOUNT ID FOR BILLING RESOURCES?}" displayName : "sample-budget" budgetFilter : projects : - name : "billingbudgetsbudget-dep-calb" creditTypes : - "DISCOUNT" creditTypesTreatment : "INCLUDE SPECIFIED CREDITS" services : This is the service name for the Geolocation API. - "services/0245-C3C9-3864" labels : label-one : values : - "value-one" calendarPeriod : "MONTH" amount : specifiedAmount : currencyCode : "USD" units : 9000000 nanos : 0 thresholdRules : - thresholdPercent : 0.5 spendBasis : "CURRENT SPEND" allUpdatesRule : pubsubTopicRef : name : "billingbudgetsbudget-dep-calendarbudget" schemaVersion : "1.0" monitoringNotificationChannels : - name : "billingbudgetsbudget-dep-calendarbudget" disableDefaultIamRecipients : false --- apiVersion : monitoring.cnrm.cloud.google.com/v1beta1 kind : MonitoringNotificationChannel metadata : name : billingbudgetsbudget-dep-calendarbudget spec : labels : email address : test@example.com type : "email" --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : billingbudgetsbudget-dep-calendarbudget --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : billingbudgetsbudget-dep-calb spec : organizationRef : Replace "${ORG ID?}" with the numeric ID for your organization external : "${ORG ID?}" name : "billingbudgetsbudget-dep-calb" billingAccountRef : Replace "${BILLING ACCOUNT ID FOR BILLING RESOURCES?}" with the numeric ID for your billing account external : "${BILLING ACCOUNT ID FOR BILLING RESOURCES?}" Custom Budget Copyright 2021 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+- A single label and value pair specifying that usage from only this set of labeled resources should be included in the budget.
+- BillingBudgetsBudget Property Value Google Cloud Service Name Billing Budgets Google Cloud Service Documentation /billing/docs/ Google Cloud REST Resource Name billingAccounts.budgets Google Cloud REST Resource Documentation /billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets Config Connector Resource Short Names gcpbillingbudgetsbudget gcpbillingbudgetsbudgets billingbudgetsbudget Config Connector Service Name billingbudgets.googleapis.com Config Connector Resource Fully Qualified Name billingbudgetsbudgets.billingbudgets.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema allUpdatesRule : disableDefaultIamRecipients : boolean monitoringNotificationChannels : - external : string name : string namespace : string pubsubTopicRef : external : string name : string namespace : string schemaVersion : string amount : lastPeriodAmount : {} specifiedAmount : currencyCode : string nanos : integer units : integer billingAccountRef : external : string name : string namespace : string budgetFilter : calendarPeriod : string creditTypes : - string creditTypesTreatment : string customPeriod : endDate : day : integer month : integer year : integer startDate : day : integer month : integer year : integer labels : string : object projects : - external : string name : string namespace : string services : - string subaccounts : - external : string name : string namespace : string displayName : string resourceID : string thresholdRules : - spendBasis : string thresholdPercent : float Fields allUpdatesRule Optional object Optional.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : billingbudgets.cnrm.cloud.google.com/v1beta1 kind : BillingBudgetsBudget metadata : name : billingbudgetsbudget-sample-custombudget spec : billingAccountRef : Replace "${BILLING ACCOUNT ID FOR BILLING RESOURCES?}" with the numeric ID for your billing account external : "${BILLING ACCOUNT ID FOR BILLING RESOURCES?}" budgetFilter : creditTypes : - "DISCOUNT" creditTypesTreatment : "INCLUDE SPECIFIED CREDITS" customPeriod : startDate : year : 2140 month : 1 day : 1 endDate : year : 2312 month : 3 day : 14 amount : specifiedAmount : currencyCode : "USD" units : 9000000 nanos : 0 Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
 

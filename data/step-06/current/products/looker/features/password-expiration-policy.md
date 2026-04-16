@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.332Z"
+generated_at: "2026-04-15T13:43:38.413Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Password expiration policy"
@@ -9,9 +9,9 @@ latest_feature_date: "2026-02-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/data-modeling"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
-  - "https://docs.cloud.google.com/looker/docs/api-sdk-support-policy"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
 keywords:
   - "password"
   - "expiration"
@@ -20,7 +20,7 @@ keywords:
   - "can"
   - "enforce"
   - "windows"
-  - "for"
+  - "users"
 ---
 
 # Password expiration policy
@@ -42,41 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/data-modeling](https://docs.cloud.google.com/looker/docs/data-modeling)
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- [https://docs.cloud.google.com/looker/docs/api-sdk-support-policy](https://docs.cloud.google.com/looker/docs/api-sdk-support-policy)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap)
 
 ## Supporting Pages
 
-### Get ready for development | Looker | Google Cloud Documentation
+### Admin settings - Password policy \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/data-modeling](https://docs.cloud.google.com/looker/docs/data-modeling)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password)
+- Source ID: `site-docs-reference`
+- Final score: 179
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Get ready for development Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/data-modeling To unlock the magic of Looker, data experts at each organization describe their data in a lightweight modeling language called LookML.
-- LookML tells Looker how to query data so everyone in the organization can create Looks and dashboards without needing to understand the behind-the-scenes details.
+- The Password Policy page in the Authentication section of the Admin menu provides admins with additional control over password requirements for users on the instance.
+- Customizing password requirements Looker admins can enforce additional security requirements by specifying a minimum password length or requiring special characters in passwords.
+- To manage password requirements for users on your instance, select Password Policy in the Authentication section of the Looker Admin menu.
+- On the Password Policy page, Looker displays current password requirement settings for existing users on your Looker instance.
 
-### Looker (Google Cloud core) overview | Google Cloud Documentation
+### Admin settings - Users \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 25
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- Source ID: `site-docs-reference`
+- Final score: 113
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
+- From the Edit User page you can do the following: Enable or disable the service account Edit the service account name Manage the service account API keys Assign different groups and Roles Edit the user attributes that are associated with the service account Migrating user accounts to service accounts Important: Starting with the Looker 26.8 release, the following changes will occur: Looker (original) admins will no longer be able to access or manage the API credentials of their standard users.
+- API Keys Important: Starting with the Looker 26.8 release, the following changes will occur: Looker (original) admins will no longer be able to access or manage the API credentials of their standard users.
+- This is to ensure admins can either create or migrate service accounts from existing standard users if they require access to users' API credentials.
+- This is to ensure admins can either create or migrate service accounts from existing standard users if they require access to users' API credentials.
 
-### Looker API and SDK support policies | Google Cloud Documentation
+### Admin settings - LDAP authentication \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-sdk-support-policy](https://docs.cloud.google.com/looker/docs/api-sdk-support-policy)
-- Source ID: `site-api-reference`
-- Final score: 20
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap](https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap)
+- Source ID: `site-docs-reference`
+- Final score: 85
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker API and SDK support policies Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-sdk-support-policy The TypeScript SDK depends on a separate runtime library (RTL) package, written by Looker, that generically supports REST APIs.
+- Alternate login for admins and specified users Allow an alternate email-based login for admins and for users with the login special email permission (read more about setting this permission in the Roles documentation ).
+- The Advanced Role Management section contains these options: Prevent Individual LDAP Users from Receiving Direct Roles : Turning this option on prevents Looker admins from assigning Looker roles directly to LDAP users.
+- When all of the first three options are enabled, Looker admins cannot modify membership of mirrored groups and can only assign roles to users through LDAP mirrored groups.
+- The options in this section determine how much flexibility Lookeradmins have when configuring Looker groups and users who have been mirrored from Looker.
 

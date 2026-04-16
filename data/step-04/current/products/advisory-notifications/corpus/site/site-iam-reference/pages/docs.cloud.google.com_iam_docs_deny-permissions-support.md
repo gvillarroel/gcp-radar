@@ -258,6 +258,32 @@ aiplatform.googleapis.com/entityTypes.setIamPolicy
 aiplatform.googleapis.com/entityTypes.streamingReadFeatureValues
 aiplatform.googleapis.com/entityTypes.update
 aiplatform.googleapis.com/entityTypes.writeFeatureValues
+aiplatform.googleapis.com/evaluationExperiments.*
+aiplatform.googleapis.com/evaluationExperiments.create
+aiplatform.googleapis.com/evaluationExperiments.delete
+aiplatform.googleapis.com/evaluationExperiments.get
+aiplatform.googleapis.com/evaluationExperiments.list
+aiplatform.googleapis.com/evaluationExperiments.update
+aiplatform.googleapis.com/evaluationItems.*
+aiplatform.googleapis.com/evaluationItems.create
+aiplatform.googleapis.com/evaluationItems.delete
+aiplatform.googleapis.com/evaluationItems.get
+aiplatform.googleapis.com/evaluationItems.list
+aiplatform.googleapis.com/evaluationItems.update
+aiplatform.googleapis.com/evaluationRuns.*
+aiplatform.googleapis.com/evaluationRuns.cancel
+aiplatform.googleapis.com/evaluationRuns.create
+aiplatform.googleapis.com/evaluationRuns.delete
+aiplatform.googleapis.com/evaluationRuns.execute
+aiplatform.googleapis.com/evaluationRuns.get
+aiplatform.googleapis.com/evaluationRuns.list
+aiplatform.googleapis.com/evaluationRuns.update
+aiplatform.googleapis.com/evaluationSets.*
+aiplatform.googleapis.com/evaluationSets.create
+aiplatform.googleapis.com/evaluationSets.delete
+aiplatform.googleapis.com/evaluationSets.get
+aiplatform.googleapis.com/evaluationSets.list
+aiplatform.googleapis.com/evaluationSets.update
 aiplatform.googleapis.com/exampleStores.*
 aiplatform.googleapis.com/exampleStores.create
 aiplatform.googleapis.com/exampleStores.delete
@@ -523,6 +549,15 @@ aiplatform.googleapis.com/schedules.delete
 aiplatform.googleapis.com/schedules.get
 aiplatform.googleapis.com/schedules.list
 aiplatform.googleapis.com/schedules.update
+aiplatform.googleapis.com/semanticGovernancePolicies.*
+aiplatform.googleapis.com/semanticGovernancePolicies.create
+aiplatform.googleapis.com/semanticGovernancePolicies.delete
+aiplatform.googleapis.com/semanticGovernancePolicies.get
+aiplatform.googleapis.com/semanticGovernancePolicies.list
+aiplatform.googleapis.com/semanticGovernancePolicies.update
+aiplatform.googleapis.com/semanticGovernancePolicyEngine.*
+aiplatform.googleapis.com/semanticGovernancePolicyEngine.get
+aiplatform.googleapis.com/semanticGovernancePolicyEngine.update
 aiplatform.googleapis.com/sessionEvents.*
 aiplatform.googleapis.com/sessionEvents.append
 aiplatform.googleapis.com/sessionEvents.list
@@ -595,6 +630,7 @@ aiplatform.googleapis.com/tuningJobs.delete
 aiplatform.googleapis.com/tuningJobs.get
 aiplatform.googleapis.com/tuningJobs.list
 aiplatform.googleapis.com/tuningJobs.optimizePrompt
+aiplatform.googleapis.com/tuningJobs.validateReinforcementTuningReward
 aiplatform.googleapis.com/tuningJobs.vertexTune
 AlloyDB for PostgreSQL
 alloydb.googleapis.com/backups.create
@@ -738,12 +774,22 @@ App Topology
 apptopology.googleapis.com/*.*
 apptopology.googleapis.com/applicationTopologies.*
 apptopology.googleapis.com/applicationTopologies.generate
+apptopology.googleapis.com/discoveredResourcesTopologies.*
+apptopology.googleapis.com/discoveredResourcesTopologies.generate
+apptopology.googleapis.com/domains.*
+apptopology.googleapis.com/domains.get
+apptopology.googleapis.com/domains.list
 apptopology.googleapis.com/locations.*
 apptopology.googleapis.com/locations.get
 apptopology.googleapis.com/locations.list
 apptopology.googleapis.com/operations.*
 apptopology.googleapis.com/operations.get
 apptopology.googleapis.com/operations.list
+apptopology.googleapis.com/schemas.*
+apptopology.googleapis.com/schemas.get
+apptopology.googleapis.com/topologyViews.*
+apptopology.googleapis.com/topologyViews.get
+apptopology.googleapis.com/topologyViews.list
 Artifact Registry
 artifactregistry.googleapis.com/aptartifacts.*
 artifactregistry.googleapis.com/aptartifacts.create
@@ -841,9 +887,11 @@ auditmanager.googleapis.com/resourceEnrollmentStatuses.*
 auditmanager.googleapis.com/resourceEnrollmentStatuses.get
 auditmanager.googleapis.com/resourceEnrollmentStatuses.list
 Backup and Disaster Recovery
+backupdr.googleapis.com/backupPlanAssociations.createForCloudSqlInstance
 backupdr.googleapis.com/backupPlanAssociations.createForComputeInstance
 backupdr.googleapis.com/backupPlanAssociations.deleteForComputeInstance
 backupdr.googleapis.com/backupPlanAssociations.fetchForComputeInstance
+backupdr.googleapis.com/backupPlanAssociations.getForCloudSqlInstance
 backupdr.googleapis.com/backupPlanAssociations.getForComputeInstance
 backupdr.googleapis.com/backupPlanAssociations.list
 backupdr.googleapis.com/backupPlanAssociations.triggerBackupForComputeInstance
@@ -856,6 +904,7 @@ backupdr.googleapis.com/backupPlans.delete
 backupdr.googleapis.com/backupPlans.get
 backupdr.googleapis.com/backupPlans.list
 backupdr.googleapis.com/backupPlans.update
+backupdr.googleapis.com/backupPlans.useForCloudSqlInstance
 backupdr.googleapis.com/backupPlans.useForComputeInstance
 backupdr.googleapis.com/backupVaults.*
 backupdr.googleapis.com/backupVaults.associate
@@ -901,29 +950,46 @@ backupdr.googleapis.com/resourceBackupConfigs.list
 backupdr.googleapis.com/serviceConfig.*
 backupdr.googleapis.com/serviceConfig.initialize
 backupdr.googleapis.com/trial.end
+Batch
+batch.googleapis.com/jobs.get
+batch.googleapis.com/operations.*
+batch.googleapis.com/operations.get
+batch.googleapis.com/operations.list
 Chrome Enterprise Premium
 beyondcorp.googleapis.com/appConnections.*
 beyondcorp.googleapis.com/appConnections.create
+beyondcorp.googleapis.com/appConnections.createTagBinding
 beyondcorp.googleapis.com/appConnections.delete
+beyondcorp.googleapis.com/appConnections.deleteTagBinding
 beyondcorp.googleapis.com/appConnections.get
 beyondcorp.googleapis.com/appConnections.getIamPolicy
 beyondcorp.googleapis.com/appConnections.list
+beyondcorp.googleapis.com/appConnections.listEffectiveTags
+beyondcorp.googleapis.com/appConnections.listTagBindings
 beyondcorp.googleapis.com/appConnections.setIamPolicy
 beyondcorp.googleapis.com/appConnections.update
 beyondcorp.googleapis.com/appConnectors.*
 beyondcorp.googleapis.com/appConnectors.create
+beyondcorp.googleapis.com/appConnectors.createTagBinding
 beyondcorp.googleapis.com/appConnectors.delete
+beyondcorp.googleapis.com/appConnectors.deleteTagBinding
 beyondcorp.googleapis.com/appConnectors.get
 beyondcorp.googleapis.com/appConnectors.getIamPolicy
 beyondcorp.googleapis.com/appConnectors.list
+beyondcorp.googleapis.com/appConnectors.listEffectiveTags
+beyondcorp.googleapis.com/appConnectors.listTagBindings
 beyondcorp.googleapis.com/appConnectors.reportStatus
 beyondcorp.googleapis.com/appConnectors.setIamPolicy
 beyondcorp.googleapis.com/appConnectors.update
 beyondcorp.googleapis.com/appGateways.create
+beyondcorp.googleapis.com/appGateways.createTagBinding
 beyondcorp.googleapis.com/appGateways.delete
+beyondcorp.googleapis.com/appGateways.deleteTagBinding
 beyondcorp.googleapis.com/appGateways.get
 beyondcorp.googleapis.com/appGateways.getIamPolicy
 beyondcorp.googleapis.com/appGateways.list
+beyondcorp.googleapis.com/appGateways.listEffectiveTags
+beyondcorp.googleapis.com/appGateways.listTagBindings
 beyondcorp.googleapis.com/appGateways.setIamPolicy
 beyondcorp.googleapis.com/locations.*
 beyondcorp.googleapis.com/locations.get
@@ -1400,6 +1466,7 @@ ces.googleapis.com/apps.export
 ces.googleapis.com/apps.get
 ces.googleapis.com/apps.import
 ces.googleapis.com/apps.list
+ces.googleapis.com/apps.runEvaluation
 ces.googleapis.com/apps.update
 ces.googleapis.com/changelogs.*
 ces.googleapis.com/changelogs.get
@@ -1450,6 +1517,9 @@ ces.googleapis.com/operations.cancel
 ces.googleapis.com/operations.delete
 ces.googleapis.com/operations.get
 ces.googleapis.com/operations.list
+ces.googleapis.com/securitySettings.*
+ces.googleapis.com/securitySettings.get
+ces.googleapis.com/securitySettings.update
 ces.googleapis.com/sessions.*
 ces.googleapis.com/sessions.bidiRunSession
 ces.googleapis.com/sessions.runSession
@@ -1467,6 +1537,9 @@ ces.googleapis.com/toolsets.get
 ces.googleapis.com/toolsets.list
 ces.googleapis.com/toolsets.update
 Google Security Operations
+chronicle.googleapis.com/agentSettings.*
+chronicle.googleapis.com/agentSettings.get
+chronicle.googleapis.com/agentSettings.update
 chronicle.googleapis.com/ais.*
 chronicle.googleapis.com/ais.createFeedback
 chronicle.googleapis.com/ais.translateUdmQuery
@@ -1803,6 +1876,7 @@ chronicle.googleapis.com/instances.graduatePocInstance
 chronicle.googleapis.com/instances.logTypeClassifier
 chronicle.googleapis.com/instances.permitFederationAccess
 chronicle.googleapis.com/instances.report
+chronicle.googleapis.com/instances.runThreatHunt
 chronicle.googleapis.com/instances.undelete
 chronicle.googleapis.com/instances.update
 chronicle.googleapis.com/instances.verifyNonce
@@ -2113,6 +2187,8 @@ chronicle.googleapis.com/propertySchemaDefinitions.*
 chronicle.googleapis.com/propertySchemaDefinitions.delete
 chronicle.googleapis.com/propertySchemaDefinitions.get
 chronicle.googleapis.com/propertySchemaDefinitions.update
+chronicle.googleapis.com/queries.*
+chronicle.googleapis.com/queries.suggestSql
 chronicle.googleapis.com/referenceLists.*
 chronicle.googleapis.com/referenceLists.create
 chronicle.googleapis.com/referenceLists.get
@@ -2161,6 +2237,10 @@ chronicle.googleapis.com/searchQueries.delete
 chronicle.googleapis.com/searchQueries.get
 chronicle.googleapis.com/searchQueries.list
 chronicle.googleapis.com/searchQueries.update
+chronicle.googleapis.com/searchSessions.*
+chronicle.googleapis.com/searchSessions.search
+chronicle.googleapis.com/searchedResults.*
+chronicle.googleapis.com/searchedResults.list
 chronicle.googleapis.com/shareConfigs.*
 chronicle.googleapis.com/shareConfigs.get
 chronicle.googleapis.com/shareConfigs.update
@@ -3147,6 +3227,7 @@ cloudkms.googleapis.com/cryptoKeyVersions.delete
 cloudkms.googleapis.com/cryptoKeyVersions.destroy
 cloudkms.googleapis.com/cryptoKeyVersions.get
 cloudkms.googleapis.com/cryptoKeyVersions.list
+cloudkms.googleapis.com/cryptoKeyVersions.managePqcSign
 cloudkms.googleapis.com/cryptoKeyVersions.restore
 cloudkms.googleapis.com/cryptoKeyVersions.update
 cloudkms.googleapis.com/cryptoKeyVersions.useToDecapsulate
@@ -4585,6 +4666,7 @@ confidentialcomputing.googleapis.com/*.*
 confidentialcomputing.googleapis.com/challenges.*
 confidentialcomputing.googleapis.com/challenges.create
 confidentialcomputing.googleapis.com/challenges.verify
+confidentialcomputing.googleapis.com/challenges.verifygke
 confidentialcomputing.googleapis.com/locations.*
 confidentialcomputing.googleapis.com/locations.get
 confidentialcomputing.googleapis.com/locations.list
@@ -4592,6 +4674,17 @@ Cloud Config Manager API
 config.googleapis.com/automigrationconfig.*
 config.googleapis.com/automigrationconfig.get
 config.googleapis.com/automigrationconfig.update
+config.googleapis.com/deploymentgrouprevisions.*
+config.googleapis.com/deploymentgrouprevisions.get
+config.googleapis.com/deploymentgrouprevisions.list
+config.googleapis.com/deploymentgroups.*
+config.googleapis.com/deploymentgroups.create
+config.googleapis.com/deploymentgroups.delete
+config.googleapis.com/deploymentgroups.deprovision
+config.googleapis.com/deploymentgroups.get
+config.googleapis.com/deploymentgroups.list
+config.googleapis.com/deploymentgroups.provision
+config.googleapis.com/deploymentgroups.update
 config.googleapis.com/deployments.*
 config.googleapis.com/deployments.create
 config.googleapis.com/deployments.delete
@@ -5083,6 +5176,12 @@ databaseinsights.googleapis.com/aggregatedStats.*
 databaseinsights.googleapis.com/aggregatedStats.query
 databaseinsights.googleapis.com/clusterEvents.*
 databaseinsights.googleapis.com/clusterEvents.query
+databaseinsights.googleapis.com/databaseIssues.*
+databaseinsights.googleapis.com/databaseIssues.troubleshoot
+databaseinsights.googleapis.com/dbCenter.*
+databaseinsights.googleapis.com/dbCenter.query
+databaseinsights.googleapis.com/dbPerformance.*
+databaseinsights.googleapis.com/dbPerformance.query
 databaseinsights.googleapis.com/instanceEvents.*
 databaseinsights.googleapis.com/instanceEvents.query
 databaseinsights.googleapis.com/locations.*
@@ -5091,12 +5190,18 @@ databaseinsights.googleapis.com/locations.list
 databaseinsights.googleapis.com/performanceIssues.*
 databaseinsights.googleapis.com/performanceIssues.detect
 databaseinsights.googleapis.com/performanceIssues.investigate
+databaseinsights.googleapis.com/queryMetrics.*
+databaseinsights.googleapis.com/queryMetrics.fetch
 databaseinsights.googleapis.com/recommendations.*
 databaseinsights.googleapis.com/recommendations.query
 databaseinsights.googleapis.com/resourceRecommendations.*
 databaseinsights.googleapis.com/resourceRecommendations.query
+databaseinsights.googleapis.com/systemMetrics.*
+databaseinsights.googleapis.com/systemMetrics.fetch
 databaseinsights.googleapis.com/timeSeries.*
 databaseinsights.googleapis.com/timeSeries.query
+databaseinsights.googleapis.com/virtualDbxAgent.*
+databaseinsights.googleapis.com/virtualDbxAgent.query
 databaseinsights.googleapis.com/workloadRecommendations.*
 databaseinsights.googleapis.com/workloadRecommendations.fetch
 Dataflow
@@ -5321,7 +5426,7 @@ datamigration.googleapis.com/privateconnections.get
 datamigration.googleapis.com/privateconnections.getIamPolicy
 datamigration.googleapis.com/privateconnections.list
 datamigration.googleapis.com/privateconnections.setIamPolicy
-Dataplex Universal Catalog
+Knowledge Catalog
 dataplex.googleapis.com/aspectTypes.*
 dataplex.googleapis.com/aspectTypes.create
 dataplex.googleapis.com/aspectTypes.delete
@@ -5383,6 +5488,8 @@ dataplex.googleapis.com/entryGroups.useQueriesAspect
 dataplex.googleapis.com/entryGroups.useRefreshCadenceAspect
 dataplex.googleapis.com/entryGroups.useRelatedEntryLink
 dataplex.googleapis.com/entryGroups.useSchemaAspect
+dataplex.googleapis.com/entryGroups.useSchemaJoinAspect
+dataplex.googleapis.com/entryGroups.useSchemaJoinEntryLink
 dataplex.googleapis.com/entryGroups.useStorageAspect
 dataplex.googleapis.com/entryGroups.useSynonymEntryLink
 dataplex.googleapis.com/entryLinks.*
@@ -6549,11 +6656,15 @@ geminidataanalytics.googleapis.com/dataAgents.*
 geminidataanalytics.googleapis.com/dataAgents.create
 geminidataanalytics.googleapis.com/dataAgents.delete
 geminidataanalytics.googleapis.com/dataAgents.get
+geminidataanalytics.googleapis.com/dataAgents.getIamPolicy
 geminidataanalytics.googleapis.com/dataAgents.list
+geminidataanalytics.googleapis.com/dataAgents.setIamPolicy
 geminidataanalytics.googleapis.com/dataAgents.update
 geminidataanalytics.googleapis.com/locations.*
 geminidataanalytics.googleapis.com/locations.get
 geminidataanalytics.googleapis.com/locations.list
+geminidataanalytics.googleapis.com/locations.suggestContext
+geminidataanalytics.googleapis.com/locations.useDataEngineeringAgent
 geminidataanalytics.googleapis.com/operations.*
 geminidataanalytics.googleapis.com/operations.cancel
 geminidataanalytics.googleapis.com/operations.delete
@@ -7034,6 +7145,7 @@ iap.googleapis.com/web.setIamPolicy
 iap.googleapis.com/web.updateSettings
 iap.googleapis.com/webServiceVersions.*
 iap.googleapis.com/webServiceVersions.accessViaIAP
+iap.googleapis.com/webServiceVersions.egressViaIAP
 iap.googleapis.com/webServiceVersions.getIamPolicy
 iap.googleapis.com/webServiceVersions.getSettings
 iap.googleapis.com/webServiceVersions.remediate
@@ -7255,6 +7367,7 @@ lustre.googleapis.com/instances.exportData
 lustre.googleapis.com/instances.get
 lustre.googleapis.com/instances.importData
 lustre.googleapis.com/instances.list
+lustre.googleapis.com/instances.rescheduleMaintenance
 lustre.googleapis.com/instances.update
 lustre.googleapis.com/locations.*
 lustre.googleapis.com/locations.get
@@ -7384,6 +7497,7 @@ metastore.googleapis.com/tables.delete
 metastore.googleapis.com/tables.update
 Model Armor
 modelarmor.googleapis.com/floorSettings.*
+modelarmor.googleapis.com/floorSettings.computeEffectiveFloorSetting
 modelarmor.googleapis.com/floorSettings.get
 modelarmor.googleapis.com/floorSettings.update
 modelarmor.googleapis.com/locations.*
@@ -7395,7 +7509,9 @@ modelarmor.googleapis.com/templates.delete
 modelarmor.googleapis.com/templates.get
 modelarmor.googleapis.com/templates.list
 modelarmor.googleapis.com/templates.update
+modelarmor.googleapis.com/templates.useToSanitizeInput
 modelarmor.googleapis.com/templates.useToSanitizeModelResponse
+modelarmor.googleapis.com/templates.useToSanitizeOutput
 modelarmor.googleapis.com/templates.useToSanitizeUserPrompt
 Cloud Monitoring
 monitoring.googleapis.com/alertPolicies.*
@@ -7632,6 +7748,19 @@ networkmanagement.googleapis.com/connectivitytests.list
 networkmanagement.googleapis.com/connectivitytests.rerun
 networkmanagement.googleapis.com/connectivitytests.setIamPolicy
 networkmanagement.googleapis.com/connectivitytests.update
+networkmanagement.googleapis.com/monitoringpoints.*
+networkmanagement.googleapis.com/monitoringpoints.downloadConfig
+networkmanagement.googleapis.com/monitoringpoints.get
+networkmanagement.googleapis.com/monitoringpoints.list
+networkmanagement.googleapis.com/networkpaths.*
+networkmanagement.googleapis.com/networkpaths.get
+networkmanagement.googleapis.com/networkpaths.list
+networkmanagement.googleapis.com/providers.*
+networkmanagement.googleapis.com/providers.create
+networkmanagement.googleapis.com/providers.delete
+networkmanagement.googleapis.com/providers.generateProviderAccessToken
+networkmanagement.googleapis.com/providers.get
+networkmanagement.googleapis.com/providers.list
 networkmanagement.googleapis.com/topologygraphs.*
 networkmanagement.googleapis.com/topologygraphs.read
 networkmanagement.googleapis.com/vpcflowlogsconfigs.*
@@ -7640,6 +7769,9 @@ networkmanagement.googleapis.com/vpcflowlogsconfigs.delete
 networkmanagement.googleapis.com/vpcflowlogsconfigs.get
 networkmanagement.googleapis.com/vpcflowlogsconfigs.list
 networkmanagement.googleapis.com/vpcflowlogsconfigs.update
+networkmanagement.googleapis.com/webpaths.*
+networkmanagement.googleapis.com/webpaths.get
+networkmanagement.googleapis.com/webpaths.list
 Network Security
 networksecurity.googleapis.com/addressGroups.*
 networksecurity.googleapis.com/addressGroups.create
@@ -8242,6 +8374,12 @@ recaptchaenterprise.googleapis.com/relatedaccountgroupmemberships.list
 recaptchaenterprise.googleapis.com/relatedaccountgroups.*
 recaptchaenterprise.googleapis.com/relatedaccountgroups.list
 Memorystore for Redis
+redis.googleapis.com/aclPolicies.*
+redis.googleapis.com/aclPolicies.create
+redis.googleapis.com/aclPolicies.delete
+redis.googleapis.com/aclPolicies.get
+redis.googleapis.com/aclPolicies.list
+redis.googleapis.com/aclPolicies.update
 redis.googleapis.com/backupCollections.*
 redis.googleapis.com/backupCollections.create
 redis.googleapis.com/backupCollections.delete
@@ -8379,6 +8517,14 @@ retail.googleapis.com/userEvents.create
 retail.googleapis.com/userEvents.import
 retail.googleapis.com/userEvents.purge
 retail.googleapis.com/userEvents.rejoin
+Roads Management Insights
+roads.googleapis.com/*.*
+roads.googleapis.com/selectedRoutes.*
+roads.googleapis.com/selectedRoutes.batchCreate
+roads.googleapis.com/selectedRoutes.create
+roads.googleapis.com/selectedRoutes.delete
+roads.googleapis.com/selectedRoutes.get
+roads.googleapis.com/selectedRoutes.list
 Cloud Run
 run.googleapis.com/configurations.*
 run.googleapis.com/configurations.get
@@ -8409,6 +8555,7 @@ run.googleapis.com/operations.delete
 run.googleapis.com/operations.get
 run.googleapis.com/operations.list
 run.googleapis.com/prompts.*
+run.googleapis.com/prompts.get
 run.googleapis.com/revisions.*
 run.googleapis.com/revisions.delete
 run.googleapis.com/revisions.get
@@ -8881,6 +9028,7 @@ spanner.googleapis.com/databases.list
 spanner.googleapis.com/databases.partitionQuery
 spanner.googleapis.com/databases.partitionRead
 spanner.googleapis.com/databases.read
+spanner.googleapis.com/databases.runGraphAlgorithms
 spanner.googleapis.com/databases.select
 spanner.googleapis.com/databases.setIamPolicy
 spanner.googleapis.com/databases.update
@@ -9451,6 +9599,6 @@ workstations.googleapis.com/workstations.update
 workstations.googleapis.com/workstations.use
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

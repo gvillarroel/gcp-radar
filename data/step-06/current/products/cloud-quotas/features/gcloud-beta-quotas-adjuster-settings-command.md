@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:26:31.354Z"
+generated_at: "2026-04-12T12:11:54.004Z"
 product_name: "Cloud Quotas"
 product_slug: "cloud-quotas"
 feature_name: "gcloud beta quotas adjuster settings command"
 feature_slug: "gcloud-beta-quotas-adjuster-settings-command"
 latest_feature_date: "2025-01-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples"
   - "https://docs.cloud.google.com/docs/quotas/quota-adjuster"
   - "https://docs.cloud.google.com/docs/quotas/custom-constraints"
+  - "https://docs.cloud.google.com/docs/quotas/view-manage"
 keywords:
   - "gcloud"
   - "beta"
@@ -26,7 +27,7 @@ keywords:
 # gcloud beta quotas adjuster settings command
 
 Product: Cloud Quotas
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Quotas provides a beta gcloud command to view or manage quota adjuster set
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples](https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples)
 - [https://docs.cloud.google.com/docs/quotas/quota-adjuster](https://docs.cloud.google.com/docs/quotas/quota-adjuster)
 - [https://docs.cloud.google.com/docs/quotas/custom-constraints](https://docs.cloud.google.com/docs/quotas/custom-constraints)
+- [https://docs.cloud.google.com/docs/quotas/view-manage](https://docs.cloud.google.com/docs/quotas/view-manage)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples](https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples)
 - Source ID: `site-docs-reference`
-- Final score: 230
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 296
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Optional: To view the current quota adjuster settings, run the following command: gcloud beta quotas adjuster settings describe --project= RESOURCE PROJECT ID The output is similar to the following example: enablement: ENABLED etag: 8izmJp6EI mOfLyhkQU9 name: projects/ RESOURCE PROJECT ID /locations/global/quotaAdjusterSettings updateTime: '2025-01-10T17:22:37.883221181Z' To enable quota adjuster for multiple client projects, follow the previous steps 5 to 8.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/docs/quotas/quota-adjuster](https://docs.cloud.google.com/docs/quotas/quota-adjuster)
 - Source ID: `site-docs-reference`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 246
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This updates the enablement status to enabled . gcloud Authenticate using the gcloud CLI: gcloud auth login To enable quota adjuster settings, use the gcloud beta quotas adjuster settings update command .
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/docs/quotas/custom-constraints](https://docs.cloud.google.com/docs/quotas/custom-constraints)
 - Source ID: `site-docs-reference`
-- Final score: 150
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Test the policy To test the policy, create a quota preference request: For example, run the following gcloud CLI command to create a quota preference for Compute Engine: gcloud beta quotas preferences create \ --service = compute.googleapis.com \ --quota-id = CPUS-per-project-region \ --preferred-value = 30 \ --project = PROJECT ID The output is similar to the following: Operation denied by org policy on resource 'projects/ PROJECT ID /locations/global': ["customConstraints/custom.restrictCPUsPerProjectRegion": "Deny quota change for the 'CPUS-per-project-region' quota ID of 'compute.googleapis.com' service."] Delete the example policy and constraint After you have tested the policy, you can delete it: Delete the policy: gcloud org-policies delete custom.restrictCPUsPerProjectRegion --project = PROJECT ID Delete the constraint: gcloud org-policies delete-custom-constraint custom.restrictCPUsPerProjectRegion \ --organization = ORGANIZATION ID Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints.
 - Apply the constraint: gcloud org-policies set-custom-constraint quota-constraint.yaml Verify that the constraint exists: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID The output is similar to the following: CUSTOM CONSTRAINT ACTION TYPE METHOD TYPES RESOURCE TYPES DISPLAY NAME custom.restrictCPUsPerProjectRegion DENY CREATE,UPDATE cloudquotas.googleapis.com/QuotaPreference Restrict quota update for compute CPUS-per-project-region Create the policy Save the following file as quota-policy.yaml : name : projects/ PROJECT ID /policies/custom.restrictCPUsPerProjectRegion spec : rules : - enforce : true Replace PROJECT ID with your project ID.
 - After you verify that the organization policy in dry-run mode works as intended, set the live policy with the org-policies set-policy command and the spec flag: gcloud org-policies set-policy POLICY PATH --update-mask = spec Replace POLICY PATH with the full path to your organization policy YAML file.
 - To enforce the organization policy in dry-run mode , run the following command with the dryRunSpec flag: gcloud org-policies set-policy POLICY PATH --update-mask = dryRunSpec Replace POLICY PATH with the full path to your organization policy YAML file.
+
+### View and manage quotas \_|\_ Cloud Quotas \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/docs/quotas/view-manage](https://docs.cloud.google.com/docs/quotas/view-manage)
+- Source ID: `site-docs-root`
+- Final score: 205
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For a complete list of gcloud beta quotas commands and flags, see the gcloud beta quotas section of the Google Cloud CLI reference. gcloud beta quotas info gcloud beta quotas preferences Request project quota For more information about requesting additional project quotas , refer to the Project quota requests support article.
+- See the following sections for more information: For example gcloud beta quotas info and gcloud beta quotas preferences commands, see Use the gcloud CLI to view and manage quotas .
+- Manage quotas using the gcloud CLI To use the gcloud CLI, make sure you have installed and initialized the latest version of the gcloud CLI, including the beta commands component.
+- Important: Cloud Quotas gcloud CLI commands are in preview and might change without notice.
 

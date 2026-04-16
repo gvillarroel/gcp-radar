@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.801Z"
+generated_at: "2026-04-14T12:39:34.390Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "Cloud Storage de-identification"
@@ -9,18 +9,14 @@ latest_feature_date: "2022-08-01"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts"
   - "https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types"
 keywords:
-  - "storage"
-  - "de"
-  - "identification"
-  - "dlp"
-  - "can"
-  - "identify"
-  - "sensitive"
   - "stored"
+  - "identify"
+  - "identification"
+  - "storage"
 ---
 
 # Cloud Storage de-identification
@@ -42,43 +38,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data](https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts)
 - [https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview](https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types)
 
 ## Supporting Pages
 
-### Sensitive Data Protection (DLP API) | Google Cloud Documentation
+### "De-identifying sensitive data \_|\_ Sensitive Data Protection \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest)
-- Source ID: `site-api-reference`
-- Final score: 76
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data](https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Sensitive Data Protection (DLP API) Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest The Cloud Data Loss Prevention API (DLP API) is part of Sensitive Data Protection. ...
-- A Discovery Document is a machine-readable specification for describing and consuming REST ...
-- To call this service, we recommend that you use the Google-provided client libraries.
+- For more information, see Set up authentication for a local development environment . use Google\Cloud\Dlp\V2\Client\DlpServiceClient; use Google\Cloud\Dlp\V2\ContentItem; use Google\Cloud\Dlp\V2\DeidentifyConfig; use Google\Cloud\Dlp\V2\DeidentifyContentRequest; use Google\Cloud\Dlp\V2\InfoType; use Google\Cloud\Dlp\V2\InfoTypeTransformations; use Google\Cloud\Dlp\V2\InfoTypeTransformations\InfoTypeTransformation; use Google\Cloud\Dlp\V2\InspectConfig; use Google\Cloud\Dlp\V2\PrimitiveTransformation; use Google\Cloud\Dlp\V2\RedactConfig; / De-identify data: Redacting with matched input values Uses the Data Loss Prevention API to de-identify sensitive data in a string by redacting matched input values. @param string $callingProjectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to deidentify (will be treated as text). / function deidentify redact( // TODO(developer): Replace sample parameters before running the code. string $callingProjectId, string $textToInspect = 'My name is Alicia Abernathy, and my email address is aabernathy@example.com.' ): void { // Instantiate a client. $dlp = new DlpServiceClient(); // Specify the content to be de-identify. $contentItem = (new ContentItem()) ->setValue($textToInspect); // Specify the type of info the inspection will look for. $infoType = (new InfoType()) ->setName('EMAIL ADDRESS'); $inspectConfig = (new InspectConfig()) ->setInfoTypes([$infoType]); // Define type of de-identification. $primitiveTransformation = (new PrimitiveTransformation()) ->setRedactConfig(new RedactConfig()); // Associate de-identification type with info type. $transformation = (new InfoTypeTransformation()) ->setInfoTypes([$infoType]) ->setPrimitiveTransformation($primitiveTransformation); // Construct the configuration for the Redact request and list all desired transformations. $deidentifyConfig = (new DeidentifyConfig()) ->setInfoTypeTransformations((new InfoTypeTransformations()) ->setTransformations([$transformation])); $parent = "projects/$callingProjectId/locations/global"; // Run request $deidentifyContentRequest = (new DeidentifyContentRequest()) ->setParent($parent) ->setDeidentifyConfig($deidentifyConfig) ->setInspectConfig($inspectConfig) ->setItem($contentItem); $response = $dlp->deidentifyContent($deidentifyContentRequest); // Print results printf('Text after redaction: %s', $response->getItem()->getValue()); } Python To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+- DlpServiceClient () Convert the project id into a full resource id. parent = f "projects/ { project } /locations/global" Construct inspect configuration dictionary inspect config = { "info types" : [{ "name" : info type } for info type in info types ]} Construct deidentify configuration dictionary deidentify config = { "info type transformations" : { "transformations" : [{ "primitive transformation" : { "redact config" : {}}}] } } Construct item item = { "value" : input str } Call the API response = dlp . deidentify content ( request = { "parent" : parent , "deidentify config" : deidentify config , "inspect config" : inspect config , "item" : item , } ) Print out the results. print ( response . item . value ) REST JSON Input: POST https : // dlp . googleapis . com / v2 / projects /[ PROJECT ID ]/ content : deidentify ? key = { YOUR API KEY } { "item" :{ "value" : "My name is Alicia Abernathy, and my email address is aabernathy@example.com." } , "deidentifyConfig" :{ "infoTypeTransformations" :{ "transformations" : [ { "infoTypes":[ { "name":"EMAIL ADDRESS" } ] , "primitiveTransformation" :{ "redactConfig" :{ } } } ] } } , "inspectConfig" :{ "infoTypes" : [ { "name":"EMAIL ADDRESS" } ] } } JSON Output: { "item" :{ "value" : "My name is Alicia Abernathy, and my email address is ." }, "overview" :{ "transformedBytes" : "22" , "transformationSummaries" :[ { "infoType" :{ "name" : "EMAIL ADDRESS" }, "transformation" :{ "redactConfig" :{ } }, "results" :[ { "count" : "1" , "code" : "SUCCESS" } ], "transformedBytes" : "22" } ] } } characterMaskConfig Setting characterMaskConfig to a CharacterMaskConfig object partially masks a string by replacing a given number of characters with a fixed character.
+- DlpServiceClient (); // TODO(developer): Replace these variables before running the sample. // const projectId = "your-project-id"; // The string to deidentify // const string = // 'My name is Alicia Abernathy, and my email address is aabernathy@example.com.'; // The infoTypes of information to match // See https://cloud.google.com/dlp/docs/concepts-infotypes for more information // about supported infoTypes. // const infoTypes = [{name: 'EMAIL ADDRESS'}]; async function deIdentifyRedaction () { // Construct deidentify configuration const deidentifyConfig = { infoTypeTransformations : { transformations : [ { infoTypes : infoTypes , primitiveTransformation : { redactConfig : {}, }, }, ], }, }; // Construct inspect configuration const inspectConfig = { infoTypes : infoTypes , }; // Construct Item const item = { value : string , }; // Combine configurations into a request for the service. const request = { parent : projects/ ${ projectId } /locations/global , item , deidentifyConfig , inspectConfig , }; // Send the request and receive response from the service const [ response ] = await dlp . deidentifyContent ( request ); // Print the results console . log ( Text after redaction: ${ response . item . value } ); } deIdentifyRedaction (); PHP To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+- JSON Input: POST https : // dlp . googleapis . com / v2 / projects /[ PROJECT ID ]/ content : deidentify ? key = { YOUR API KEY } { "item" :{ "value" : "My name is Alicia Abernathy, and my email address is aabernathy@example.com." } , "deidentifyConfig" :{ "infoTypeTransformations" :{ "transformations" : [ { "infoTypes":[ { "name":"EMAIL ADDRESS" } ] , "primitiveTransformation" :{ "replaceConfig" :{ "newValue" :{ "stringValue" : "[email-address]" } } } } ] } } , "inspectConfig" :{ "infoTypes" : [ { "name":"EMAIL ADDRESS" } ] } } JSON Output: { "item" :{ "value" : "My name is Alicia Abernathy, and my email address is [email-address]." }, "overview" :{ "transformedBytes" : "22" , "transformationSummaries" :[ { "infoType" :{ "name" : "EMAIL ADDRESS" }, "transformation" :{ "replaceConfig" :{ "newValue" :{ "stringValue" : "[email-address]" } } }, "results" :[ { "count" : "1" , "code" : "SUCCESS" } ], "transformedBytes" : "22" } ] } } redactConfig Specifying redactConfig redacts a given value by removing it completely.
 
-### Sensitive Data Protection overview | Google Cloud Documentation
+### Sensitive Data Protection overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview](https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview)
-- Source ID: `site-docs-root`
-- Final score: 76
-- Re-rank relevance: N/A
+- Source ID: `site-api-reference`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Through the DLP API, you can inspect data from inside and outside Google Cloud and build custom workloads on or off cloud.
-- Sensitive Data Protection overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview The Cloud Data Loss Prevention API lets you use the Sensitive Data Protection services programmatically.
+- Send a content.deidentify request to the DLP API.
+- The results of content methods and the image.redact method aren't stored in Google Cloud.
+- To de-identify data in images, you can use the image.redact method.
+- Various transformation methods are available, including masking, redaction, bucketing, date shifting, and tokenization.
 
-### Method types | Sensitive Data Protection | Google Cloud Documentation
+### Sensitive Data Protection overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types)
-- Source ID: `site-docs-root`
-- Final score: 72
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts)
+- Source ID: `site-docs-reference-required-15`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Method types Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types Sensitive Data Protection includes different types of methods that you can use to inspect, transform (de-identify), discover, and classify data.
-- Using these methods, you can scan data both on and off Google Cloud and optimize the behavior of ...
+- Send a content.deidentify request to the DLP API.
+- The results of content methods and the image.redact method aren't stored in Google Cloud.
+- To de-identify data in images, you can use the image.redact method.
+- Various transformation methods are available, including masking, redaction, bucketing, date shifting, and tokenization.
 

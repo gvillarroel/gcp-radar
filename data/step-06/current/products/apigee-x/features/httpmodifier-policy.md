@@ -1,44 +1,91 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:42.851Z"
+generated_at: "2026-04-14T05:27:18.177Z"
 product_name: "Apigee X"
 product_slug: "apigee-x"
 feature_name: "HTTPModifier policy"
 feature_slug: "httpmodifier-policy"
 latest_feature_date: "2023-09-29"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data"
 keywords:
-  - "partial AssignMessage behavior"
-  - "HTTP Modifier policy"
-  - "HTTPModifier standard policy"
-  - "modify response message"
-  - "modify request message"
-  - "request/response message policy"
-  - "HTTPModifier policy"
-  - "HTTPModifier"
+  - "httpmodifier"
+  - "change"
+  - "existing"
+  - "response"
+  - "request"
+  - "message"
+  - "policy"
 ---
 
 # HTTPModifier policy
 
 Product: Apigee X
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Makes the HTTPModifier policy generally available as a standard policy for modifying existing request and response messages.
+The HTTPModifier policy can change an existing request or response message with a subset of AssignMessage functionality; The HTTPModifier policy can change an existing request or response message with a subset of AssignMessage functionality.
 
 ## Extended Definition
 
-Makes the HTTPModifier policy generally available as a standard policy for modifying existing request and response messages.
+The HTTPModifier policy can change an existing request or response message with a subset of AssignMessage functionality; The HTTPModifier policy can change an existing request or response message with a subset of AssignMessage functionality.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy](https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro](https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### AssignMessage policy \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy](https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy)
+- Source ID: `site-api-reference`
+- Final score: 201
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The AssignMessage policy changes an existing request or response message, or creates a custom request or response message, during the API proxy flow.
+- Examples The following examples show some of the ways in which you can use the AssignMessage policy: 1: Add header The following example adds a header to the request with the <Add> element: <AssignMessage name="AM-add-headers-1"> <Add> <Headers> <Header name="partner-id">{verifyapikey.VAK-1.developer.app.partner-id}</Header> </Headers> </Add> <AssignTo>request</AssignTo> </AssignMessage> 2: Remove payload The following example deletes the payload from the response with the <Remove> element: < AssignMessage name = "AM-remove-1" > < DisplayName>remove - 1 < / DisplayName > < Remove > < Payload>true < / Payload > < / Remove > < AssignTo>response < / AssignTo > < / AssignMessage > 3: Modify response The following example modifies an existing response object by adding a header to it: <AssignMessage name="AM-modify-response"> <Set> <Headers> <Header name="Cache-Hit">{lookupcache.LookupCache-1.cachehit}</Header> </Headers> </Set> <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables> <AssignTo>response</AssignTo> </AssignMessage> This example does not create a new message.
+- Example 2 The following example creates a new request object, over-writing the existing object: < AssignMessage name = "assignto-2" > < AssignTo createNew = "true" transport = "http" type = "request" / > ... < / AssignMessage > When you create a new request or response object, the other elements of the AssignMessage policy (such as <Add> , <Set> , and <Copy> ) act on that new request or response object.
+- The options are: Request message: The request received by the API proxy Response message: The response returned from the target server Custom message: A custom request or response object Note that in some cases, you cannot change the object on which the AssignMessage policy acts.
+
+### Request and response variables \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 175
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- For example, the following code in a JavaScript policy assembles the request URL from its parts: var req verb = context . getVariable ( 'request.verb' ); var req scheme = context . getVariable ( 'client.scheme' ); var req host = context . getVariable ( 'request.header.host' ); var req request uri = context . getVariable ( 'request.uri' ); var req url = req scheme + "://" + req host + req request uri ; The result of the concatenation might look like the following: https://www.example.com/sample Access response messages Using the variables that apply to the response message, policies may access message components including the header, the query parameters, and form parameters, the source IP address, the HTTP message body, and so on.
+- These policies include: AssignMessage policy : Creates or modifies HTTP request or response messages during an API proxy flow.
+- JavaCallout policy , JavaScript policy , PythonScript policy , RegularExpressionProtection policy : These policies let you write a script to access flow variables containing request and response data.
+- By default, all data received by Apigee from the backend service in the response is passed unchanged to the app that originated the request.
+
+### Message templates \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro](https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro)
+- Source ID: `site-api-reference`
+- Final score: 158
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The example uses the AssignMessage policy to generate the five levels of cascaded HMAC used to calculate a signature for AWS Signature v4: < AssignMessage name = ' AM - HMAC - AWS - 1 ' > < !-- 1 -- > < AssignVariable > < Name>DateValue < / Name > < Template > { timeFormatUTCMs (' yyyyMMdd ', system . timestamp )} < / Template > < / AssignVariable > < !-- 2 -- > < AssignVariable > < Name>FirstKey < / Name > < Template>AWS4 { private . secret aws access key } < / Template > < / AssignVariable > < !-- 3 -- > < AssignVariable > < Name>DateKey < / Name > < Template > { hmacSha256 ( FirstKey , DateValue ,' utf - 8 ',' base16 ')} < / Template > < / AssignVariable > < !-- 4 -- > < AssignVariable > < Name>DateRegionKey < / Name > < Template > { hmacSha256 ( DateKey , aws region ,' base16 ',' base16 ')} < / Template > < / AssignVariable > < !-- 5 -- > < AssignVariable > < Name>DateRegionServiceKey < / Name > < Template > { hmacSha256 ( DateRegionKey , aws service ,' base16 ',' base16 ')} < / Template > < / AssignVariable > < !-- 6 -- > < AssignVariable > < Name>SigningKey < / Name > < Template > { hmacSha256 ( DateRegionServiceKey ,' aws4 request ',' base16 ',' base16 ')} < / Template > < / AssignVariable > < !-- 7 -- > < AssignVariable > < Name>aws4 hmac value < / Name > < Template > { hmacSha256 ( SigningKey , stringToSign ,' base16 ',' base16 ')} < / Template > < / AssignVariable > < / AssignMessage > Other functions Create UUID function Generates and returns a UUID.
+- HTTPModifier policy <Set> child elements: <ContentType> <Verb> <Version> <Path> <StatusCode> <Headers> <QueryParams> <FormParams> <Add> child elements: <Headers> <QueryParams> <FormParams> MessageLogging policy <CloudLogging><Message> <Syslog><Message> <File><Message> OASValidation policy <OASResource> element RaiseFault policy <Set> elements: <ContentType> <FormParams> <Headers> <QueryParams> <StatusCode> <Path> <Payload> <Verb> <Version> <Add> elements: <FormParams> <Headers> <QueryParams> SAMLAssertion policy <Template> Only when the policy signature is <GenerateSAMLAssertion> ServiceCallout policy <Set> elements: <ContentType> <FormParams> <Headers> <QueryParams> <StatusCode> <Path> <Payload> <Verb> <Version> <Add> elements: <FormParams> <Headers> <QueryParams> <HTTPTargetConnection>/<URL> : See URL templating . <TargetEndpoint> elements that accept message templates <HTTPTargetConnection> elements Child elements that support message templates <SSLInfo> <Enabled> , <KeyAlias> , <KeyStore> , <TrustStore> , <ClientAuthEnabled> , <CLRStore> <LocalTargetConnection> <ApiProxy> , <ProxyEndpoint> , <Path> <Path> N/A <URL> No child elements.
+- Here's the ExtractVariables policy that extracts the user message information into a variable called standard.systemMessage : < ExtractVariables name = "EV-BackendErrorResponse" > < DisplayName > EV - BackendErrorResponse < / DisplayName > < JSONPayload > < Variable name = "standard.systemMessage" > < JSONPath >$. user message < / JSONPath > < / Variable > < / JSONPayload > < / ExtractVariables > Now, here's a perfectly valid AssignMessage policy that adds the extracted variable to the response payload (the proxy response): < AssignMessage name = "AM-SetStandardFaultResponse" > < DisplayName > AM - SetStandardFaultResponse < / DisplayName > < Set > < Payload contentType = "application/json" > { "systemMessage" : "{standard.systemMessage}" } < / Payload > < / Set > < IgnoreUnresolvedVariables > true < / IgnoreUnresolvedVariables > < AssignTo > response < / AssignTo > < / AssignMessage > Unfortunately, there's a problem.
+- Quota - 1. available . count } < / Header > < / Headers > < Payload contentType = 'application/json' > { "error" : { "message" : "you have exceeded your quota" , "clientId" : "{request.queryparam.apikey}" } } < / Payload > < StatusCode > 429 < / StatusCode > < / Set > < / AssignMessage > In the AssignMessage policy , the following elements in the <Set> element support message templating: <Header> <QueryParam> <FormParam> <PayLoad> <Version> <Verb> <Path> <StatusCode> Again, note that flow variables in a message template must be enclosed in curly braces .
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:22:04.475Z"
+generated_at: "2026-04-12T12:18:15.513Z"
 product_name: "Routes API"
 product_slug: "routes-api"
 feature_name: "Waypoint order optimization"
 feature_slug: "waypoint-order-optimization"
 latest_feature_date: "2023-06-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/maps/documentation/routes/opt-way"
   - "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes"
-  - "https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint"
+  - "https://developers.google.com/maps/documentation/routes/compute-route-over"
+  - "https://developers.google.com/maps/documentation/routes/overview"
 keywords:
   - "waypoint"
   - "order"
@@ -26,7 +27,7 @@ keywords:
 # Waypoint order optimization
 
 Product: Routes API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The Routes API can optimize the order of up to 25 intermediate waypoints when ca
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/maps/documentation/routes/opt-way](https://developers.google.com/maps/documentation/routes/opt-way)
 - [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes)
-- [https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint](https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint)
+- [https://developers.google.com/maps/documentation/routes/compute-route-over](https://developers.google.com/maps/documentation/routes/compute-route-over)
+- [https://developers.google.com/maps/documentation/routes/overview](https://developers.google.com/maps/documentation/routes/overview)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/maps/documentation/routes/opt-way](https://developers.google.com/maps/documentation/routes/opt-way)
 - Source ID: `site-docs-root`
-- Final score: 242
+- Final score: 257
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,9 +67,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes)
 - Source ID: `site-api-reference`
-- Final score: 208
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 233
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Request body The request body contains data with the following structure: JSON representation { "origin" : { object ( Waypoint ) } , "destination" : { object ( Waypoint ) } , "intermediates" : [ { object ( Waypoint ) } ] , "travelMode" : enum ( RouteTravelMode ) , "routingPreference" : enum ( RoutingPreference ) , "polylineQuality" : enum ( PolylineQuality ) , "polylineEncoding" : enum ( PolylineEncoding ) , "departureTime" : string , "arrivalTime" : string , "computeAlternativeRoutes" : boolean , "routeModifiers" : { object ( RouteModifiers ) } , "languageCode" : string , "regionCode" : string , "units" : enum ( Units ) , "optimizeWaypointOrder" : boolean , "requestedReferenceRoutes" : [ enum ( ReferenceRoute ) ] , "extraComputations" : [ enum ( ExtraComputation ) ] , "trafficModel" : enum ( TrafficModel ) , "transitPreferences" : { object ( TransitPreferences ) } } Fields origin object ( Waypoint ) Required.
@@ -75,16 +77,31 @@ Evidence snippets:
 - Use ComputeRoutesResponse.Routes.optimized intermediate waypoint index to find the new ordering.
 - This polyline is the combined polyline of all legs . description string A description of the route. warnings[] string An array of warnings to show when displaying the route. viewport object ( Viewport ) The viewport bounding box of the polyline. travelAdvisory object ( RouteTravelAdvisory ) Additional information about the route. optimizedIntermediateWaypointIndex[] integer If you set optimizeWaypointOrder to true, this field contains the optimized ordering of intermediate waypoints.
 
-### Waypoint \_|\_ Routes API \_|\_ Google for Developers
+### Compute Routes Overview \_|\_ Routes API \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint](https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint)
-- Source ID: `site-api-reference`
-- Final score: 168
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/maps/documentation/routes/compute-route-over](https://developers.google.com/maps/documentation/routes/compute-route-over)
+- Source ID: `site-docs-reference`
+- Final score: 204
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- If ComputeRoutesRequest.optimize waypoint order is set to true then this field cannot be set to true; otherwise, the request fails. vehicleStopover boolean Indicates that the waypoint is meant for vehicles to stop at, where the intention is to either pickup or drop-off.
-- A waypoint's location type can be specified via geographic coordinates (location), a place ID (placeId), or a human-readable address (address). via cannot be true for terminal waypoints or if optimize waypoint order is true.\n"]]
-- JSON representation { "via" : boolean , "vehicleStopover" : boolean , "sideOfRoad" : boolean , // Union field location type can be only one of the following: "location" : { object ( Location ) } , "placeId" : string , "address" : string , "navigationPointToken" : string // End of list of possible types for union field location type . } Fields via boolean Marks this waypoint as a milestone rather a stopping point.
-- Different ways to represent a location. location type can be only one of the following: location object ( Location ) A point specified using geographic coordinates, including an optional heading. placeId string The POI Place ID associated with the waypoint. address string Human readable address or a plus code.
+- A series of waypoints that you can optimize for the most efficient order in which to travel to them.
+- With the Routes API Compute Routes method, you can do the following things: Get directions for different ways to travel , and for a single or multiple destinations: Modes of transportation: transit, driving, two-wheel vehicles, walking, or bicycling.
+- Example curl - X POST - d ' { "origin" : { "address" : "1800 Amphitheatre Parkway, Mountain View, CA 94043" }, "destination" : { "address" : "Sloat Blvd &, Upper Great Hwy, San Francisco, CA 94132" }, "travelMode" : "DRIVE" } ' \ - H 'Co ntent - Type : applica t io n /jso n ' - H 'X - Goog - Api - Key : YOUR API KEY ' \ - H 'X - Goog - FieldMask : rou tes .dura t io n , rou tes .dis tan ceMe ters ' \ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The service then calculates the requested route, and returns the fields you've requested.
+- What's next Get a route Available route options Choose what information to return Migrate from Directions API (Legacy) Migrate from the Routes API preview to GA Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Compute Routes Overview \_|\_ Routes API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/routes/overview](https://developers.google.com/maps/documentation/routes/overview)
+- Source ID: `site-docs-root`
+- Final score: 204
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- A series of waypoints that you can optimize for the most efficient order in which to travel to them.
+- With the Routes API Compute Routes method, you can do the following things: Get directions for different ways to travel , and for a single or multiple destinations: Modes of transportation: transit, driving, two-wheel vehicles, walking, or bicycling.
+- Example curl - X POST - d ' { "origin" : { "address" : "1800 Amphitheatre Parkway, Mountain View, CA 94043" }, "destination" : { "address" : "Sloat Blvd &, Upper Great Hwy, San Francisco, CA 94132" }, "travelMode" : "DRIVE" } ' \ - H 'Co ntent - Type : applica t io n /jso n ' - H 'X - Goog - Api - Key : YOUR API KEY ' \ - H 'X - Goog - FieldMask : rou tes .dura t io n , rou tes .dis tan ceMe ters ' \ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The service then calculates the requested route, and returns the fields you've requested.
+- What's next Get a route Available route options Choose what information to return Migrate from Directions API (Legacy) Migrate from the Routes API preview to GA Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

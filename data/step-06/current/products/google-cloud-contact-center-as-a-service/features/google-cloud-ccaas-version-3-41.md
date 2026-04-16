@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.639Z"
+generated_at: "2026-04-15T13:50:47.029Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Google Cloud CCaaS version 3.41"
@@ -9,9 +9,9 @@ latest_feature_date: "2025-11-03"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages"
 keywords:
   - "ccaas"
   - "version"
@@ -39,45 +39,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Salesforce installation guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 100
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide)
+- Source ID: `site-docs-reference`
+- Final score: 41
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- November 03, 2025 Feature Google Cloud CCaaS 3.41 We've released version 3.41 of Google Cloud CCaaS.
-- November 17, 2025 Announcement Advanced reporting dashboards version 3.41 We've released version 3.41 of the advanced reporting dashboards.
-- October 31, 2025 Announcement Google Cloud CCaaS 3.40 We've released version 3.40 of Google Cloud CCaaS, including the web SDK.
-- February 02, 2026 Announcement Google Cloud CCaaS 3.44 We've released version 3.44 of Google Cloud CCaaS.
+- ConnectedApp Connected App API name Match the name in Create a connected app (such as CCaaS Platform Connected App) If you select Profile from the Setup Owner drop-down, you can select a profile that will be applied to this new configuration.
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Salesforce installation guide Stay organized with collections Save and categorize content based on your preferences.
+- Create a connected app Create a connected app in Salesforce, a required step for app version 1.15 and later.
+- Prerequisites App version for Salesforce 1.22 or later is installed for the Salesforce Org.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Chat Settings and Features \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 31
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
+- Source ID: `site-docs-reference`
+- Final score: 38
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Get started with Contact Center AI Platform (CCAI Platform) Stay organized with collections Save and categorize content based on your preferences.
-- Check the version number of your instance You can check the version number of your instance and compare it with the version numbers of the updates and patches that Google announces in the CCAI Platform release notes .
-- Make sure the most recent version of Contact Center AI Platform (CCAI Platform) supported browser has been installed and browser notifications have been enabled for Contact Center AI Platform (CCAI Platform).
-- If you have confirmed that quota has been granted and the Create button is still disabled, ensure that the billing ID of the Google Cloud project matches the billing ID that the quota was assigned to.
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Chat Settings and Features Stay organized with collections Save and categorize content based on your preferences.
+- Prerequisites For Web: Web SDK version 2.2 or later For Mobile: Mobile SDK version 0.41.0 or later Admin Configuration Go to Settings > Chat > Mobile & Web > External Deflection Links .
+- Use Mobile & Web Chat Switch the toggle to On to enable the chat functionality in both the mobile and browser-based versions of the platform.
+- App version and iOS/Android version are automatically inserted into the email body and the subject is "Support for [selected menu path]".
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Customizing languages, recordings, & messages \_|\_ Google Cloud Contact\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 25
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages)
+- Source ID: `site-docs-reference-2`
+- Final score: 37
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation AI and ML Google Cloud CCaaS Send feedback CCaaS (CCAI Platform) Stay organized with collections Save and categorize content based on your preferences.
+- The output in the SDK will depend on the version of the Mobile or Web SDK your company has installed: Text format structure: {​{https://www.yourcompany.co Visit our website}​} Web SDK and Mobile SDK versions >= 0.34.1 Text displayed: Visit our website Mobile SDK versions < 0.34.1 Text displayed: Visit our website https://www.yourcompany.co Click Apply .
+- The output in the SDK will depend on the version of the Mobile or Web SDK your company has installed: Text format structure: {​{https://www.yourcompany.co Visit our website}​} For Web SDK versions >= 1.15 and Mobile SDK versions >= 0.34.
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Customizing languages, recordings, & messages Stay organized with collections Save and categorize content based on your preferences.
+- Text displayed: Visit our website For Web SDK versions < 1.15 and Mobile SDK versions < 0.34 Text displayed: Visit our website https://www.yourcompany.co Click Set Custom After Hours Options to save.
 

@@ -227,15 +227,15 @@ For example:
 gcloud api-gateway gateways describe my-gateway \
 --location= us-central1
 This command returns the following:
-apiConfig : projects /my-project/locations/global/apis/my-api/configs/ my - config
-createTime : '2020-02-05T13:44:12.997862831Z'
-defaultHostname : my - gateway - a12bcd345e67f89g0h . uc . gateway . dev
-displayName : my - gateway
-name : projects /my-project/locations/us-central1/gateways/ my - gateway
-serviceAccount :
-email : 0000000000000 - compute @ developer.gserviceaccount.com
-state : ACTIVE
-updateTime : '2020-02-05T13:45:00.844705087Z'
+apiConfig: projects/my-project/locations/global/apis/my-api/configs/my-config
+createTime: '2020-02-05T13:44:12.997862831Z'
+defaultHostname: my-gateway-a12bcd345e67f89g0h.uc.gateway.dev
+displayName: my-gateway
+name: projects/my-project/locations/us-central1/gateways/my-gateway
+serviceAccount:
+email: 0000000000000-compute@developer.gserviceaccount.com
+state: ACTIVE
+updateTime: '2020-02-05T13:45:00.844705087Z'
 Note the value of the defaultHostname property. This is the hostname portion of the gateway URL you use to test your deployment in the next step.
 Test your API deployment
 Now you can send requests to your API using the URL generated upon deployment of your gateway.
@@ -365,7 +365,7 @@ curl https:// DEFAULT_HOSTNAME /hello
 For example:
 curl https:// my-gateway-a12bcd345e67f89g0h.uc.gateway.dev /hello
 This should result in the following error:
-UNAUTHENTICATED : Method doesn ' t allow unregistered callers ( callers without established identity ). Please use API Key or other form of API consumer identity to call this API .
+UNAUTHENTICATED: Method doesn ' t allow unregistered callers ( callers without established identity ). Please use API Key or other form of API consumer identity to call this API .
 Now, enter the following curl command where:
 DEFAULT_HOSTNAME specifies the hostname portion of your deployed gateway URL, copied in a previous step.
 hello is the path specified in your API config.
@@ -384,6 +384,6 @@ Walk through Configure the development environment
 Learn about Authentication between services
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

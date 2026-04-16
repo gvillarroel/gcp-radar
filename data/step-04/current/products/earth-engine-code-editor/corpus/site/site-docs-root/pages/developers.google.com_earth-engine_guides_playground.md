@@ -4,7 +4,7 @@ url: https://developers.google.com/earth-engine/guides/playground
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://developers.google.com/earth-engine
+entrypoint: https://developers.google.com/earth-engine/guides/playground
 source_metadata:
   url: https://developers.google.com/earth-engine/guides/playground
   title: "Earth Engine Code Editor \_|\_ Google Earth Engine \_|\_ Google for Developers"

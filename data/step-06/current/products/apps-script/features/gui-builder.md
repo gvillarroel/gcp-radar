@@ -1,26 +1,26 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:29:46.804Z"
+generated_at: "2026-04-15T11:53:34.675Z"
 product_name: "Apps Script"
 product_slug: "apps-script"
 feature_name: "GUI Builder"
 feature_slug: "gui-builder"
-latest_feature_date: "2013-03-18"
+latest_feature_date: "2011-05-04"
 deprecation_date: "2013-03-18"
 coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/apps-script/releases"
-  - "https://developers.google.com/apps-script/guides/sheets/functions"
-  - "https://developers.google.com/apps-script/guides/menus"
+  - "https://developers.google.com/apps-script/reference/spreadsheet/cell-image-builder"
+  - "https://developers.google.com/apps-script/reference/spreadsheet/color-builder"
 keywords:
   - "gui"
-  - "deprecated"
   - "builder"
-  - "due"
-  - "script"
+  - "was"
+  - "deprecated"
   - "apps"
-  - "the"
-  - "to"
+  - "script"
+  - "includes"
+  - "creating"
 ---
 
 # GUI Builder
@@ -30,11 +30,11 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Deprecated the Apps Script GUI Builder feature due to limited usability; deprecated on 2013-03-18.
+The GUI Builder was deprecated; Apps Script includes a GUI Builder for creating user interfaces; deprecated on 2013-03-18.
 
 ## Extended Definition
 
-Deprecated the Apps Script GUI Builder feature due to limited usability; deprecated on 2013-03-18.
+The GUI Builder was deprecated; Apps Script includes a GUI Builder for creating user interfaces; deprecated on 2013-03-18.
 
 ## Evidence Summary
 
@@ -43,8 +43,8 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 ## Source Links
 
 - [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
-- [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
-- [https://developers.google.com/apps-script/guides/menus](https://developers.google.com/apps-script/guides/menus)
+- [https://developers.google.com/apps-script/reference/spreadsheet/cell-image-builder](https://developers.google.com/apps-script/reference/spreadsheet/cell-image-builder)
+- [https://developers.google.com/apps-script/reference/spreadsheet/color-builder](https://developers.google.com/apps-script/reference/spreadsheet/color-builder)
 
 ## Supporting Pages
 
@@ -52,38 +52,40 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
 - Source ID: `site-docs-root`
-- Final score: 224
+- Final score: 108
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Feature The Spreadsheet service has been extended with the following new classes and methods to support text styles and Rich Text cell formatting: RichTextValue RichTextValueBuilder TextStyle TextStyleBuilder Range.getRichTextValue() Range.getRichTextValues() Range.getTextStyle() Range.getTextStyles() Range.setRichTextValue(value) Range.setRichTextValues(values) Range.setTextStyle(style) Range.setTextStyles(styles) SpreadsheetApp.newRichTextValue() SpreadsheetApp.newTextStyle() The Data Studio service has been extended with the following new classes and methods that define and support authentication types for community connectors: GetAuthTypeResponse AuthType CommunityConnector,newAuthTypeResponse() January 04, 2019 Feature The Slides service has been extended with the following new classes and methods that support slide linking and text box insertion: SlideLinkingMode [ Layout.insertTextBox(text) }(https://developers.google.com/apps-script/reference/slides/layout#inserttextboxtext) Layout.insertTextBox(text, left, top, width, height) Master.insertTextBox(text) Master.insertTextBox(text, left, top, width, height) Page.insertTextBox(text) Page.insertTextBox(text, left, top, width, height) Presentation.appendSlide(slide, linkingMode) Presentation.insertSlide(insertionIndex, slide, linkingMode) Slide.getSlideLinkingMode() Slide.getSourcePresentationId() Slide.getSourceSlideObjectId() Slide.insertTextBox(text) Slide.insertTextBox(text, left, top, width, height) Slide.refreshSlide() Slide.unlink() The Data Studio service has been extended with the following new classes and methods that error displays: DebugError UserError CommunityConnector.newDebugError() CommunityConnector.newUserError() December 13, 2018 Deprecated The Fusion Tables advanced service has been deprecated and will shutdown fully on December 3rd, 2019.
 - The Card service has been extended with the following classes and methods that provide new widgets and event responses: CalendarEventActionResponse CalendarEventActionResponseBuilder DatePicker DateTimePicker DisplayStyle DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder FixedFooter SwitchControlType TimePicker CardBuilder.setDisplayStyle(displayStyle) CardBuilder.setFixedFooter(fixedFooter) CardBuilder.setPeekCardHeader(peekCardHeader) CardService.newCalendarEventActionResponseBuilder() CardService.newDatePicker() CardService.newDateTimePicker() CardService.newDriveItemsSelectedActionResponseBuilder() CardService.newFixedFooter() CardService.newTimePicker() Switch.setControlType(controlType) The Conference Data service has been added to Apps Script.
 - The following new data source type has been added: LOOKER The following new classes have been added: LookerDataSourceSpec LookerDataSourceSpecBuilder The following new methods have been added to existing classes: DataSourceSpec.asLooker() DataSourceSpecBuilder.asLooker() August 15, 2024 Feature Generally Available : You can now create and organize tabs in Google Docs documents using Apps Script's Document service.
-- We've also updated the Apps Script code samples to use the Advanced Chat Service in the following Chat API developer guides: Authenticate as an app Authenticate as a user Try it - Respond to Incidents September 26, 2023 Change The email address that sends notifications about errors in triggers has been updated from apps-scripts-notifications@google.com to noreply-apps-scripts-notifications@google.com .
+- The gallery also features the following new samples: Build a Google Chat app with an ADK AI agent Build a Chat app with an Agent2Agent agent Analyze and label Gmail messages with Gemini and Vertex AI June 04, 2025 Deprecated Google Analytics 4 has replaced Universal Analytics , which means the Apps Script Advanced Service for Google Analytics Management API and Reporting API is deprecated.
 
-### Custom Functions in Google Sheets \_|\_ Apps Script \_|\_ Google for Developers
+### Class CellImageBuilder \_|\_ Apps Script \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- If each cell required its own function call, the operation would take considerably more time, since the Apps Script server would have to download and parse the XML feed each time. / Show the title and date for the first page of posts on the Developer blog. @return Two columns of data representing posts on the Developer blog. @customfunction / function getBlogPosts () { var array = []; var url = 'https://gsuite-developers.googleblog.com/atom.xml' ; var xml = UrlFetchApp . fetch ( url ). getContentText (); var document = XmlService . parse ( xml ); var root = document . getRootElement (); var atom = XmlService . getNamespace ( 'http://www.w3.org/2005/Atom' ); var entries = document . getRootElement (). getChildren ( 'entry' , atom ); for ( var i = 0 ; i < entries . length ; i ++ ) { var title = entries [ i ]. getChild ( 'title' , atom ). getText (); var date = entries [ i ]. getChild ( 'published' , atom ). getValue (); array . push ([ title , date ]); } return array ; } These techniques can be applied to nearly any custom function that is used repeatedly throughout a spreadsheet, although the implementation details vary depending on the function's behavior.
-- Note: While Apps Script supports standard JSDoc for autocomplete in the editor, the Google Sheets UI has specific limitations regarding which tags and syntax are displayed in the spreadsheet's formula helper. / Multiplies the input value by 2. @param {number} input The value to multiply. @return {number} The input multiplied by 2. @customfunction / function DOUBLE ( input ) { return input 2 ; } Advanced This section covers advanced custom function topics.
-- This means that a custom function written in one spreadsheet can't be used in other spreadsheets unless you use one of the following methods: Click Extensions > Apps Script to open the script editor, then copy the script text from the original spreadsheet and paste it into the script editor of another spreadsheet.
-- Home Google Workspace Apps Script Guides Send feedback Custom Functions in Google Sheets Stay organized with collections Save and categorize content based on your preferences.
-
-### Custom Menus in Google Workspace \_|\_ Apps Script \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/apps-script/guides/menus](https://developers.google.com/apps-script/guides/menus)
-- Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/apps-script/reference/spreadsheet/cell-image-builder](https://developers.google.com/apps-script/reference/spreadsheet/cell-image-builder)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 85
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Custom menus in Docs, Sheets, Slides, or Forms Apps Script can add new menus in Docs, Sheets, Slides, or Forms, with each menu item tied to a function in a script. (In Forms, custom menus are visible only to an editor who opens the form to modify it, not to a user who opens the form to respond.) Only bound scripts can create menus.
-- Home Google Workspace Apps Script Guides Send feedback Custom Menus in Google Workspace Stay organized with collections Save and categorize content based on your preferences.
-- Clickable images and drawings in Sheets You can also assign an Apps Script function to an image or drawing in Sheets, provided the script is bound to the spreadsheet.
-- In the dialog that appears, type the name of the Apps Script function that you want to run, without parentheses — in this case, showMessageBox .
+- IMAGE ) { const newImage = value . toBuilder () . setSourceUrl ( 'https://www.gstatic.com/images/branding/productlogos/apps script/v10/web-64dp/logo apps script color 1x web 64dp.png' , ) . build (); const newRange = ss . getRange ( "Sheet1!A2" ); newRange . setValue ( newImage ); } Return CellImageBuilder — A builder that creates an image value type based on the given image properties.
+- Home Google Workspace Apps Script Reference Send feedback Class CellImageBuilder Stay organized with collections Save and categorize content based on your preferences.
+- Methods Method Return type Brief description build() Cell Image Creates the image value type needed to add an image to a cell. get Alt Text Description() String Returns the alt text description for this image. get Alt Text Title() String Returns the alt text title for this image. get Content Url() String Returns a Google-hosted URL to the image. set Alt Text Description(description) Cell Image Sets the alt-text description for this image. set Alt Text Title(title) Cell Image Sets the alt text title for this image. set Source Url(url) Cell Image Builder Sets the image source URL. to Builder() Cell Image Builder Creates a cell image builder based on the current image properties.
+- Alt text can be managed using setAltTextDescription() and setAltTextTitle(), and information can be retrieved by using getAltTextDescription() ,getAltTextTitle() and getContentUrl(). toBuilder() creates a new builder from an existing image.
+
+### Class ColorBuilder \_|\_ Apps Script \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/apps-script/reference/spreadsheet/color-builder](https://developers.google.com/apps-script/reference/spreadsheet/color-builder)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 73
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Page Summary outlined flag ColorBuilder is a builder for creating color objects in Apps Script spreadsheets.
+- Home Google Workspace Apps Script Reference Send feedback Class ColorBuilder Stay organized with collections Save and categorize content based on your preferences.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],["ColorBuilder facilitates creating color objects using SpreadsheetApp.newColor().
+- Methods Method Return type Brief description as Rgb Color() Rgb Color Converts this color to an Rgb Color . as Theme Color() Theme Color Converts this color to a Theme Color . build() Color Creates a color object from the settings supplied to the builder. get Color Type() Color Type Get the type of this color. set Rgb Color(cssString) Color Builder Sets as RGB color. set Theme Color(themeColorType) Color Builder Sets as theme color.
 

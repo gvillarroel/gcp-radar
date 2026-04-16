@@ -42,6 +42,36 @@ To get the latest product updates delivered to you, add the URL of this page to 
 feed
 reader , or add the
 feed URL directly.
+April 15, 2026
+Announcement
+You can view the physical location of your Compute Engine instances in a zone
+to understand your cluster topology. This information helps you reduce network
+latency between your compute instances. For more information, see
+View Compute Engine instance topology .
+Feature
+Generally available : You can control the physical location of the
+Compute Engine instances in a MIG by using workload policies. Workload
+policies help you to, for example, place your compute instances close together
+to minimize network latency when running AI or ML workloads. For more
+information, see
+About workload policies in MIGs .
+April 14, 2026
+Security
+A vulnerability (CVE-2025-54510) about AMD SEV-SNP guest memory integrity has been addressed.
+For more information, see the GCP-2026-019 security bulletin .
+Security
+A vulnerability affecting AMD SEV-SNP Confidential VM instances was discovered
+and has been addressed. For more information, see the
+GCP-2026-021 security bulletin .
+Feature
+Generally available : Hyperdisk ML disks are supported by the following machine
+series:
+C3 bare metal
+C4 ,
+including bare metal instances.
+C4A bare metal instances
+N4A
+For more information, see Hyperdisk ML overview .
 April 09, 2026
 Feature
 Generally available : Hyperdisk ML disks are supported by the following machine
@@ -1333,6 +1363,6 @@ Changhua County, Taiwan ( asia-east1-b )
 For more information about using GPUs on Compute Engine, see GPU platforms .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-15 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-15 UTC."],[],[]]

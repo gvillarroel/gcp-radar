@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.903Z"
+generated_at: "2026-04-14T12:39:34.624Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "InfoTypeLimit finding limits"
@@ -9,17 +9,16 @@ latest_feature_date: "2017-08-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/analyzing-and-reporting"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
 keywords:
   - "infotypelimit"
-  - "finding"
   - "limits"
   - "lets"
-  - "you"
+  - "finding"
   - "limit"
-  - "the"
+  - "findings"
   - "number"
 ---
 
@@ -42,44 +41,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions](https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/analyzing-and-reporting](https://docs.cloud.google.com/sensitive-data-protection/docs/analyzing-and-reporting)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers](https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers)
 
 ## Supporting Pages
 
-### Learn about your data through discovery and inspection | Sensitive Data Protection | Google Cloud Documentation
+### InspectConfig \_|\_ Sensitive Data Protection \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
-- Source ID: `site-docs-root`
-- Final score: 58
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Learn about your data through discovery and inspection Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data This page describes and compares two Sensitive Data Protection services that help you understand your data and enable data governance workflows: the discovery service and the inspection service.
-
-### Sensitive Data Protection IAM permissions | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions](https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 38
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Note: If you are using Sensitive Data Protection to scan critical resources, such as those protected by additional custom Identity and Access Management roles, you must assign those additional IAM roles to the Cloud Data Loss Prevention Service Agent.
-- Sensitive Data Protection IAM permissions Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions The Cloud Data Loss Prevention Service Agent is automatically granted common permissions on the project that are needed for inspecting resources and is listed in the IAM section of the Google Cloud console.
-- The service agent exists indefinitely with the project and is only deleted when the project is deleted.
-- Sensitive Data Protection relies on this service agent, so you should not remove it.
-
-### Sensitive Data Protection (DLP API) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest)
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig)
 - Source ID: `site-api-reference`
-- Final score: 36
+- Final score: 171
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON representation Likelihood InfoTypeLikelihood JSON representation FindingLimits JSON representation InfoTypeLimit JSON representation CustomInfoType JSON representation SurrogateType StoredType JSON representation MetadataKeyValueExpression JSON representation DetectionRule JSON representation HotwordRule JSON representation Proximity JSON representation LikelihoodAdjustment JSON representation ExclusionType ContentOption InspectionRuleSet JSON representation InspectionRule JSON representation ExclusionRule JSON representation ExcludeInfoTypes JSON representation ExcludeByHotword JSON representation ExcludeByImageFindings JSON representation ImageContainmentType JSON representation Encloses FullyInside Overlap MatchingType AdjustmentRule JSON representation AdjustByMatchingInfoTypes JSON representation AdjustByImageFindings JSON representation Configuration description of the scanning process.
+- JSON representation { "maxFindingsPerItem" : integer , "maxFindingsPerRequest" : integer , "maxFindingsPerInfoType" : [ { object ( InfoTypeLimit ) } ] } Fields maxFindingsPerItem integer Max number of findings that are returned for each item scanned.
+- Therefore, the actual number of findings that Cloud DLP returns can be multiple times higher than this value. maxFindingsPerInfoType[] object ( InfoTypeLimit ) Configuration of findings limit given for specified infoTypes.
+- If this field is not set, the system uses the InspectConfig minLikelihood. limits object ( FindingLimits ) Configuration to control the number of findings returned.
+
+### "Analyzing and reporting on Sensitive Data Protection scan findings \_|\_\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/analyzing-and-reporting](https://docs.cloud.google.com/sensitive-data-protection/docs/analyzing-and-reporting)
+- Source ID: `site-api-reference-required-2`
+- Final score: 152
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON Output: { "name" : "projects/[PROJECT ID]/dlpJobs/[JOB ID]" , "type" : "INSPECT JOB" , "state" : "DONE" , "inspectDetails" :{ "requestedOptions" :{ "snapshotInspectTemplate" :{ } , "jobConfig" :{ "storageConfig" :{ "cloudStorageOptions" :{ "fileSet" :{ "url" : "gs://[BUCKET NAME]/ " } } } , "inspectConfig" :{ "infoTypes" : [ { "name":"PERSON NAME" }, { "name":"PHONE NUMBER" }, { "name":"US SOCIAL SECURITY NUMBER" }, { "name":"EMAIL ADDRESS" } ] , "minLikelihood" : "POSSIBLE" , "limits" :{ } , "includeQuote" : true } , "actions" : [ { "saveFindings":{ "outputConfig":{ "table":{ "projectId":"[PROJECT ID ] ", " datasetId ":" [ DATASET ID ] ", " tableId ":" [ TABLE ID ] " } } } } ] } }, " result ":{ " processedBytes ":" 536734051 ", " totalEstimatedBytes ":" 536734051 ", " infoTypeStats ":[ { " infoType ":{ " name ":" PERSON NAME " }, " count ":" 269679 " }, { " infoType ":{ " name ":" EMAIL ADDRESS " }, " count ":" 256 " }, { " infoType ":{ " name ":" PHONE NUMBER " }, " count ":" 7 " } ] } }, " createTime ":" 2018 - 11 - 19 T21 : 09 : 07.926 Z ", " startTime ":" 2018 - 11 - 19 T21 : 10 : 20.660 Z ", " endTime ":" 2018 - 11 - 19 T22 : 07 : 39.725 Z " } Run analytics in BigQuery Now that you've created a new BigQuery table with the results of your Sensitive Data Protection scan, the next step is to run analytics on the table.
+- After you send this JSON in a request to the projects.dlpJobs.create method via the specified URL, you get the following response: JSON Output: { "name" : "projects/[PROJECT ID]/dlpJobs/[JOB ID]" , "type" : "INSPECT JOB" , "state" : "PENDING" , "inspectDetails" :{ "requestedOptions" :{ "snapshotInspectTemplate" :{ } , "jobConfig" :{ "storageConfig" :{ "cloudStorageOptions" :{ "fileSet" :{ "url" : "gs://[BUCKET NAME]/ " } } } , "inspectConfig" :{ "infoTypes" : [ { "name":"PERSON NAME" }, { "name":"PHONE NUMBER" }, { "name":"US SOCIAL SECURITY NUMBER" }, { "name":"EMAIL ADDRESS" } ] , "minLikelihood" : "POSSIBLE" , "limits" :{ } , "includeQuote" : true } , "actions" : [ { "saveFindings":{ "outputConfig":{ "table":{ "projectId":"[PROJECT ID ] ", " datasetId ":" [ DATASET ID ] ", " tableId ":" [ TABLE ID ] " } } } } ] } } }, " createTime ":" 2018 - 11 - 19 T21 : 09 : 07.926 Z " } Once the job has completed, it saves its findings to the given BigQuery table.
+- JSON Input: POST https : // dlp . googleapis . com / v2 / projects /[ PROJECT ID ]/ dlpJobs { "inspectJob" :{ "inspectConfig" :{ "infoTypes" : [ { "name":"PERSON NAME" }, { "name":"PHONE NUMBER" }, { "name":"US SOCIAL SECURITY NUMBER" }, { "name":"EMAIL ADDRESS" } ] , "includeQuote" : true } , "storageConfig" :{ "cloudStorageOptions" :{ "fileSet" :{ "url" : "gs://[BUCKET NAME]/ " } } } , "actions" : [ { "saveFindings":{ "outputConfig":{ "table":{ "projectId":"[PROJECT ID ] ", " datasetId ":" [ DATASET ID ] ", " tableId ":" [ TABLE ID ] " } } } } ] } } By specifying two asterisks ( ) after the Cloud Storage bucket address ( gs://[BUCKET NAME]/ ), you're instructing the scan job to scan recursively.
+- For example, run the following to count all the scan results by infoType, replacing the placeholders with the appropriate real values: SELECT info type . name , COUNT ( ) AS iCount FROM [ PROJECT ID ] . [ DATASET ID ] . [ TABLE ID ] GROUP BY info type . name This query results in a summary of findings for that bucket that might look something like the following: Create a report in Looker Studio Looker Studio enables you to create custom reports that can be based on BigQuery tables.
+
+### "Creating and scheduling Sensitive Data Protection inspection jobs \_|\_\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers](https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers)
+- Source ID: `site-api-reference-required-2`
+- Final score: 150
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
-- To call this service, we recommend that you use the Google-provided client libraries.
-- Sensitive Data Protection (DLP API) Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest The Cloud Data Loss Prevention API (DLP API) is part of Sensitive Data Protection. ...
+- For more information, see Set up authentication for a local development environment . use Google\Cloud\Dlp\V2\Client\DlpServiceClient; use Google\Cloud\Dlp\V2\CloudStorageOptions; use Google\Cloud\Dlp\V2\CloudStorageOptions\FileSet; use Google\Cloud\Dlp\V2\CreateJobTriggerRequest; use Google\Cloud\Dlp\V2\InfoType; use Google\Cloud\Dlp\V2\InspectConfig; use Google\Cloud\Dlp\V2\InspectConfig\FindingLimits; use Google\Cloud\Dlp\V2\InspectJobConfig; use Google\Cloud\Dlp\V2\JobTrigger; use Google\Cloud\Dlp\V2\JobTrigger\Status; use Google\Cloud\Dlp\V2\JobTrigger\Trigger; use Google\Cloud\Dlp\V2\Likelihood; use Google\Cloud\Dlp\V2\Schedule; use Google\Cloud\Dlp\V2\StorageConfig; use Google\Cloud\Dlp\V2\StorageConfig\TimespanConfig; use Google\Protobuf\Duration; / Create a Data Loss Prevention API job trigger. @param string $callingProjectId The project ID to run the API call under @param string $bucketName The name of the bucket to scan @param string $triggerId (Optional) The name of the trigger to be created @param string $displayName (Optional) The human-readable name to give the trigger @param string $description (Optional) A description for the trigger to be created @param int $scanPeriod (Optional) How often to wait between scans, in days (minimum = 1 day) @param bool $autoPopulateTimespan (Optional) Automatically limit scan to new content only @param int $maxFindings (Optional) The maximum number of findings to report per request (0 = server maximum) / function create trigger( string $callingProjectId, string $bucketName, string $triggerId, string $displayName, string $description, int $scanPeriod, bool $autoPopulateTimespan, int $maxFindings ): void { // Instantiate a client. $dlp = new DlpServiceClient(); // ----- Construct job config ----- // The infoTypes of information to match $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $infoTypes = [$personNameInfoType, $phoneNumberInfoType]; // The minimum likelihood required before returning a match $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // Specify finding limits $limits = (new FindingLimits()) ->setMaxFindingsPerRequest($maxFindings); // Create the inspectConfig object $inspectConfig = (new InspectConfig()) ->setMinLikelihood($minLikelihood) ->setLimits($limits) ->setInfoTypes($infoTypes); // Create triggers $duration = (new Duration()) ->setSeconds($scanPeriod 60 60 24); $schedule = (new Schedule()) ->setRecurrencePeriodDuration($duration); $triggerObject = (new Trigger()) ->setSchedule($schedule); // Create the storageConfig object $fileSet = (new FileSet()) ->setUrl('gs://' . $bucketName . '/ '); $storageOptions = (new CloudStorageOptions()) ->setFileSet($fileSet); // Auto-populate start and end times in order to scan new objects only. $timespanConfig = (new TimespanConfig()) ->setEnableAutoPopulationOfTimespanConfig($autoPopulateTimespan); $storageConfig = (new StorageConfig()) ->setCloudStorageOptions($storageOptions) ->setTimespanConfig($timespanConfig); // Construct the jobConfig object $jobConfig = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig); // ----- Construct trigger object ----- $jobTriggerObject = (new JobTrigger()) ->setTriggers([$triggerObject]) ->setInspectJob($jobConfig) ->setStatus(Status::HEALTHY) ->setDisplayName($displayName) ->setDescription($description); // Run trigger creation request $parent = $dlp->locationName($callingProjectId, 'global'); $createJobTriggerRequest = (new CreateJobTriggerRequest()) ->setParent($parent) ->setJobTrigger($jobTriggerObject) ->setTriggerId($triggerId); $trigger = $dlp->createJobTrigger($createJobTriggerRequest); // Print results printf('Successfully created trigger %s' .
+- Example : gs://GOOGLE STORAGE BUCKET NAME/dlp sample.csv / function create job( string $callingProjectId, string $gcsPath ): void { // Instantiate a client. $dlp = new DlpServiceClient(); // Set autoPopulateTimespan to true to scan only new content. $timespanConfig = (new TimespanConfig()) ->setEnableAutoPopulationOfTimespanConfig(true); // Specify the GCS file to be inspected. $cloudStorageOptions = (new CloudStorageOptions()) ->setFileSet((new FileSet()) ->setUrl($gcsPath)); $storageConfig = (new StorageConfig()) ->setCloudStorageOptions(($cloudStorageOptions)) ->setTimespanConfig($timespanConfig); // ----- Construct inspection config ----- $emailAddressInfoType = (new InfoType()) ->setName('EMAIL ADDRESS'); $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $locationInfoType = (new InfoType()) ->setName('LOCATION'); $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $infoTypes = [$emailAddressInfoType, $personNameInfoType, $locationInfoType, $phoneNumberInfoType]; // Whether to include the matching string in the response. $includeQuote = true; // The minimum likelihood required before returning a match. $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // The maximum number of findings to report (0 = server maximum). $limits = (new FindingLimits()) ->setMaxFindingsPerRequest(100); // Create the Inspect configuration object. $inspectConfig = (new InspectConfig()) ->setMinLikelihood($minLikelihood) ->setLimits($limits) ->setInfoTypes($infoTypes) ->setIncludeQuote($includeQuote); // Specify the action that is triggered when the job completes. $action = (new Action()) ->setPublishSummaryToCscc(new PublishSummaryToCscc()); // Configure the inspection job we want the service to perform. $inspectJobConfig = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig) ->setActions([$action]); // Send the job creation request and process the response. $parent = "projects/$callingProjectId/locations/global"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setInspectJob($inspectJobConfig); $job = $dlp->createDlpJob($createDlpJobRequest); // Print results. printf($job->getName()); } Python To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+- DlpServiceClient (); // The project ID to run the API call under // const projectId = 'my-project'; // (Optional) The name of the trigger to be created. // const triggerId = 'my-trigger'; // (Optional) A display name for the trigger to be created // const displayName = 'My Trigger'; // (Optional) A description for the trigger to be created // const description = "This is a sample trigger."; // The name of the bucket to scan. // const bucketName = 'YOUR-BUCKET'; // Limit scan to new content only. // const autoPopulateTimespan = true; // How often to wait between scans, in days (minimum = 1 day) // const scanPeriod = 1; // The infoTypes of information to match // const infoTypes = [{ name: 'PHONE NUMBER' }, { name: 'EMAIL ADDRESS' }, { name: 'CREDIT CARD NUMBER' }]; // The minimum likelihood required before returning a match // const minLikelihood = 'LIKELIHOOD UNSPECIFIED'; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; async function createTrigger () { // Get reference to the bucket to be inspected const storageItem = { cloudStorageOptions : { fileSet : { url : gs:// ${ bucketName } / }, }, timeSpanConfig : { enableAutoPopulationOfTimespanConfig : autoPopulateTimespan , }, }; // Construct job to be triggered const job = { inspectConfig : { infoTypes : infoTypes , minLikelihood : minLikelihood , limits : { maxFindingsPerRequest : maxFindings , }, }, storageConfig : storageItem , }; // Construct trigger creation request const request = { parent : projects/ ${ projectId } /locations/global , jobTrigger : { inspectJob : job , displayName : displayName , description : description , triggers : [ { schedule : { recurrencePeriodDuration : { seconds : scanPeriod 60 60 24 , // Trigger the scan daily }, }, }, ], status : ' HEALTHY ' , }, triggerId : triggerId , }; // Run trigger creation request const [ trigger ] = await dlp . createJobTrigger ( request ); console . log ( Successfully created trigger ${ trigger . name } . ); } createTrigger (); PHP To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+- JSON input: { "jobTrigger" :{ "displayName" : "JobTrigger1" , "description" : "Starts an inspection of a Datastore kind" , "triggers" : [ { "schedule":{ "recurrencePeriodDuration":"86400s" } } ] , "status" : "HEALTHY" , "inspectJob" :{ "storageConfig" :{ "datastoreOptions" :{ "kind" :{ "name" : "Example-Kind" } , "partitionId" :{ "projectId" : "[PROJECT ID]" , "namespaceId" : "[NAMESPACE ID]" } } } , "inspectConfig" :{ "infoTypes" : [ { "name":"PHONE NUMBER" } ] , "excludeInfoTypes" : false , "includeQuote" : true , "minLikelihood" : "LIKELY" } , "actions" : [ { "saveFindings":{ "outputConfig":{ "table":{ "projectId":"[PROJECT ID ] ", " datasetId ":" [ BIGQUERY DATASET NAME ] ", " tableId ":" [ BIGQUERY TABLE NAME ] " } } } } ] } } } JSON output: The following output indicates that the job trigger was successfully created. { "name" : "projects/[PROJECT ID]/jobTriggers/[JOB TRIGGER NAME]" , "displayName" : "JobTrigger1" , "description" : "Starts an inspection of a Datastore kind" , "inspectJob" :{ "storageConfig" :{ "datastoreOptions" :{ "partitionId" :{ "projectId" : "[PROJECT ID]" , "namespaceId" : "[NAMESPACE ID]" } , "kind" :{ "name" : "Example-Kind" } } } , "inspectConfig" :{ "infoTypes" : [ { "name":"PHONE NUMBER" } ] , "minLikelihood" : "LIKELY" , "limits" :{ } , "includeQuote" : true } , "actions" : [ { "saveFindings":{ "outputConfig":{ "table":{ "projectId":"[PROJECT ID ] ", " datasetId ":" [ BIGQUERY DATASET NAME ] ", " tableId ":" [ BIGQUERY TABLE NAME ] " } } } } ] }, " triggers ":[ { " schedule ":{ " recurrencePeriodDuration ":" 86400 s " } } ], " createTime ":" 2018 - 11 - 30 T01 : 52 : 41.171857 Z ", " updateTime ":" 2018 - 11 - 30 T01 : 52 : 41.171857 Z ", " status ":" HEALTHY " } List all jobs To list all jobs for the current project: Console In the Google Cloud console, go to the Sensitive Data Protection page.
 

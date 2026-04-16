@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.694Z"
+generated_at: "2026-04-12T12:12:45.903Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "Predefined dual-region pairing: Frankfurt and Zurich"
 feature_slug: "predefined-dual-region-pairing-frankfurt-and-zurich"
 latest_feature_date: "2024-07-11"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/storage/docs/locations"
   - "https://docs.cloud.google.com/storage/docs/bandwidth-usage"
-  - "https://docs.cloud.google.com/storage/docs/release-notes"
+  - "https://docs.cloud.google.com/storage/docs/availability-durability"
+  - "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
 keywords:
   - "predefined"
   - "dual"
@@ -26,7 +27,7 @@ keywords:
 # Predefined dual-region pairing: Frankfurt and Zurich
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Storage supports Frankfurt and Zurich as a predefined dual-region bucket p
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - [https://docs.cloud.google.com/storage/docs/bandwidth-usage](https://docs.cloud.google.com/storage/docs/bandwidth-usage)
-- [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
+- [https://docs.cloud.google.com/storage/docs/availability-durability](https://docs.cloud.google.com/storage/docs/availability-durability)
+- [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - Source ID: `site-docs-root`
-- Final score: 172
+- Final score: 216
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/storage/docs/bandwidth-usage](https://docs.cloud.google.com/storage/docs/bandwidth-usage)
 - Source ID: `site-iam-reference`
-- Final score: 166
+- Final score: 187
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,29 @@ Evidence snippets:
 - Use storage.googleapis.com/dualregion internet egress bandwidth to increase Internet egress for your buckets located in dual-regions.
 - Use storage.googleapis.com/dualregion google egress bandwidth to increase Google egress for your buckets located in dual-regions.
 
-### Cloud Storage release notes \_|\_ Google Cloud Documentation
+### "Data availability and durability \_|\_ Cloud Storage \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/storage/docs/release-notes](https://docs.cloud.google.com/storage/docs/release-notes)
-- Source ID: `site-docs-root`
+- URL: [https://docs.cloud.google.com/storage/docs/availability-durability](https://docs.cloud.google.com/storage/docs/availability-durability)
+- Source ID: `site-iam-reference`
 - Final score: 156
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Go Changes for storage/internal/apiv2 1.43.0 (2024-07-03) Features storage/transfermanager: Add DownloadDirectory ( #10430 ) ( 0d0e5dd ) storage/transfermanager: Automatically shard downloads ( #10379 ) ( 05816f9 ) Bug Fixes storage/transfermanager: WaitAndClose waits for Callbacks to finish ( #10504 ) ( 0e81002 ), refs #10502 storage: Allow empty soft delete on Create ( #10394 ) ( d8bd2c1 ), refs #10380 storage: Bump google.golang.org/api@v0.187.0 ( 8fa9e39 ) storage: Retry broken pipe error ( #10374 ) ( 2f4daa1 ), refs #9178 Documentation storage/control: Remove allowlist note from Folders RPCs ( d6c543c ) Feature You can now specify London ( europe-west2 ) and Frankfurt ( europe-west3 ) as a predefined dual-region pairing.
-- Node.js Changes for @google-cloud/storage 7.11.3 (2024-07-09) Bug Fixes Error serialization in resumable-upload.ts ( #2493 ) ( c2e555c ) Handle unhandled error in startResumableUpload ( #2495 ) ( d5257ba ) Make CreateBucketRequest extend from BucketMetadata to allow all… ( #2489 ) ( 013a5a4 ) July 11, 2024 Feature You can now specify Frankfurt (europe-west3) and Zürich (europe-west6) as a predefined dual-region pairing.
-- March 17, 2025 Libraries Go 1.51.0 (2025-03-12) Features storage/append: Support appends in w1r3. ( #11483 ) ( 48bb391 ) storage: Benchmark with experimental MRD. ( #11501 ) ( 7b49152 ) storage: Implement RetryChunkDeadline for grpc writes ( #11476 ) ( 03575d7 ) storage: Specify benchmark integrity check. ( #11465 ) ( da18845 ) storage: Use ReadHandle for faster re-connect ( #11510 ) ( cac52f7 ) storage: Wrap NotFound errors for buckets and objects ( #11519 ) ( 0dd7d3d ) Bug Fixes storage/append: Report progress for appends. ( #11503 ) ( 96dbb6c ) storage: Add a safety check for readhandle ( #11549 ) ( c9edb37 ) storage: Add universe domain to defaultSignBytesFunc ( #11521 ) ( 511608b ) storage: Clone the defaultRetry to avoid modifying it directly ( #11533 ) ( 7f8d69d ) storage: Fix adding multiple range on stream with same read id ( #11584 ) ( 0bb3434 ) storage: Modify the callback of mrd to return length of data read instead of limit. ( #11687 ) ( 9e359f0 ) storage: Propagate ctx from invoke to grpc upload reqs ( #11475 ) ( 9ad9d76 ) storage: Remove duplicate routing header ( #11534 ) ( 8eeb59c ) storage: Return sentinel ErrObjectNotExist for copy and compose ( #11369 ) ( 74d0c10 ), refs #10760 storage: Wait for XML read req to finish to avoid data races ( #11527 ) ( 782e12a ) Java 2.50.0 (2025-03-14) Features Next release from main branch is 2.50.0 ( #2968 ) ( 4a69fcc ) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.54.0 ( 22e7e3d ) deps: Update the Java code generator (gapic-generator-java) to 2.55.1 ( 81c8c61 ) Improve 503 handling for json resumable uploads ( #2987 ) ( 9bc2b14 ) Update usages of String.format to explicitly pass Locale.US ( #2974 ) ( 8bcb2de ), closes #2972 Dependencies Update dependency com.google.apis:google-api-services-storage to v1-rev20250224-2.0.0 ( #2969 ) ( 80a40c4 ) Update googleapis/sdk-platform-java action to v2.55.1 ( #2985 ) ( e22a2de ) Update sdk-platform-java dependencies ( #2983 ) ( 9eeb82a ) Update sdk-platform-java dependencies ( #2986 ) ( 10b922a ) Feature Cloud Storage now offers the DE configurable dual-region code, which can be used when creating a dual-region bucket in europe-west3 (Frankfurt) and europe-west10 (Berlin).
-- March 20, 2023 Feature The following US regions are now available for dual-region storage: Los Angeles ( us-west2 ) Salt Lake City ( us-west3 ) Feature The following EU regions are now available for dual-region storage: Warsaw ( europe-central2 ) Madrid ( europe-southwest1 ) Frankfurt ( europe-west3 ) Milan ( europe-west8 ) Paris ( europe-west9 ) March 17, 2023 Feature Expanded Cloud Storage monitoring dashboards are now generally available (GA).
+- To achieve redundancy between a region pairing not available as a dual-region, consider creating a separate bucket for each region and using Storage Transfer Service event-driven transfers or cross-bucket replication to keep the buckets in sync.
+- Redundancy across regions While traditional storage models often rely on an active-passive approach with "primary" and "secondary" geographic locations, Cloud Storage dual-regions and multi-regions provide an active-active architecture based on a single bucket with redundancy across regions.
+- The following sections cover how Cloud Storage redundantly stores data, the default replication behavior for dual-regions and multi-regions, and advanced features like turbo replication and cross-bucket replication.
+- In the unlikely event of a region-wide outage, such as one caused by a natural disaster, dual-region and multi-region buckets remain available, with no need to change storage paths.
+
+### Class Bucket (3.10.0) \_|\_ Python client libraries \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket](https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket)
+- Source ID: `site-python-reference`
+- Final score: 148
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- See https://cloud.google.com/storage/docs/json api/v1/buckets and https://cloud.google.com/storage/docs/locations Returns None if the property has not been set before creation, if the bucket's resource has not been loaded from the server, or if the bucket is not a dual-regions bucket. default event based hold Scalar property getter. default kms key name Retrieve / set default KMS encryption key for objects in the bucket.
+- Returns Type Description str or NoneType If set, one of NEARLINE STORAGE CLASS , COLDLINE STORAGE CLASS , ARCHIVE STORAGE CLASS , STANDARD STORAGE CLASS , MULTI REGIONAL LEGACY STORAGE CLASS , REGIONAL LEGACY STORAGE CLASS , or DURABLE REDUCED AVAILABILITY LEGACY STORAGE CLASS , else None . time created Retrieve the timestamp at which the bucket was created.
+- To update the bucket's IP filter, create and assign a new IPFilter object to this property and then call xref patch. .. code-block:: python from google.cloud.storage.ip filter import ( IPFilter, PublicNetworkSource, ) ip filter = IPFilter() ip filter.mode = "Enabled" ip filter.public network source = PublicNetworkSource( allowed ip cidr ranges=["203.0.113.5/32"] ) bucket.ip filter = ip filter bucket.patch() :setter: Set the IP Filter configuration for this bucket. :getter: Gets the IP Filter configuration for this bucket.
+- For such buckets, iterate over the blobs returned by list blobs and call make public for each blob. move blob move blob ( blob , new name , client = None , if generation match = None , if generation not match = None , if metageneration match = None , if metageneration not match = None , if source generation match = None , if source generation not match = None , if source metageneration match = None , if source metageneration not match = None , timeout = 60 , retry = google . cloud . storage . retry .
 

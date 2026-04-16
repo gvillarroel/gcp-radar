@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.595Z"
+generated_at: "2026-04-14T00:34:19.575Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "DataprocScaleClusterOperator"
@@ -9,18 +9,18 @@ latest_feature_date: "2022-05-10"
 deprecation_date: "2022-05-10"
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
-  - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/configure-large-scale-networks"
   - "https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service"
 keywords:
   - "dataprocscaleclusteroperator"
-  - "is"
-  - "no"
-  - "longer"
-  - "actively"
-  - "maintained"
-  - "and"
-  - "marked"
+  - "composer"
+  - "supports"
+  - "airflow"
+  - "deprecated"
+  - "2022"
+  - "05"
+  - "10"
 ---
 
 # DataprocScaleClusterOperator
@@ -30,60 +30,60 @@ Coverage: LOW
 
 ## Step 02 Summary
 
-DataprocScaleClusterOperator is no longer actively maintained and is marked for removal in a future Airflow 2 operators release; deprecated on 2022-05-10.
+Cloud Composer supports the DataprocScaleClusterOperator for Airflow 2; deprecated on 2022-05-10.
 
 ## Extended Definition
 
-DataprocScaleClusterOperator is no longer actively maintained and is marked for removal in a future Airflow 2 operators release; deprecated on 2022-05-10.
+Cloud Composer supports the DataprocScaleClusterOperator for Airflow 2; deprecated on 2022-05-10.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface)
+- [https://docs.cloud.google.com/composer/docs/composer-1/configure-large-scale-networks](https://docs.cloud.google.com/composer/docs/composer-1/configure-large-scale-networks)
 - [https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service](https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service)
 
 ## Supporting Pages
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### "Configure large-scale networks for Cloud Composer environments \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change Cloud Composer 1.18.8 and 2.0.12 images are available: composer-1.18.8-airflow-1.10.15 (default) composer-1.18.8-airflow-2.1.4 composer-1.18.8-airflow-2.2.3 composer-2.0.12-airflow-2.1.4 composer-2.0.12-airflow-2.2.3 May 10, 2022 Deprecated The following deprecated operators are no longer actively maintained and will be removed in one of the future versions of operators for Airflow 2.
-- Change Cloud Composer 1.19.15 and 2.0.32 images are available: composer-1.19.15-airflow-1.10.15 (default) composer-1.19.15-airflow-2.1.4 composer-1.19.15-airflow-2.2.5 composer-1.19.15-airflow-2.3.4 composer-2.0.32-airflow-2.1.4 composer-2.0.32-airflow-2.2.5 composer-2.0.32-airflow-2.3.4 Deprecated Airflow 2.3.3 is no longer included in Cloud Composer images.
-- Change Cloud Composer 2.1.10 and 1.20.10 images are available: composer-2.1.10-airflow-2.4.3 (default) composer-2.1.10-airflow-2.3.4 composer-1.20.10-airflow-1.10.15 composer-1.20.10-airflow-2.4.3 composer-1.20.10-airflow-2.3.4 Deprecated Airflow 2.2.5 is no longer included in Cloud Composer images.
-- Breaking (Airflow 1) New versions of Cloud Composer no longer support Python 2: Starting from version 1.19.0, it is not possible to create new environments with Python 2, or upgrade existing environments with Python 2 to 1.19.0 and later versions of Cloud Composer.
-
-### Known issues \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-large-scale-networks](https://docs.cloud.google.com/composer/docs/composer-1/configure-large-scale-networks)
 - Source ID: `site-iam-reference`
-- Final score: 146
+- Final score: 26
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Airflow 1.9.0 stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06/1.log Airflow 1.10.x stores and expects the log names to be in the following format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log As a result, if you upgrade from Airflow 1.9.0 to Airflow 1.10.x and would like to read the log for a task executed with Airflow 1.9.0, the Airflow Web server will show the following error message: Unable to read remote log from BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Workaround: Rename the logs generated by Airflow 1.9.0 in the Cloud Storage bucket using the format: BUCKET/logs/DAG/2020-03-30T10:29:06+00:00/1.log Cannot create Cloud Composer environments with the organization policy constraints/compute.disableSerialPortLogging enforced Cloud Composer environment creation fails if the constraints/compute.disableSerialPortLogging organization policy is enforced on the target project.
-- Warnings about duplicate entries of 'echo' task belonging to the 'echo-airflow monitoring' DAG You might see the following entry in the Airflow logs: in query db.query(q) File "/opt/python3.6/lib/python3.6/site-packages/MySQLdb/ connections.py", line 280, in query mysql.connection.query(self, query) mysql exceptions.IntegrityError: (1062, "Duplicate entry 'echo-airflow monitoring-2020-10-20 15:59:40.000000' for key 'PRIMARY'") You can ignore these log entries, because this error doesn't impact Airflow DAG and task processing.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
+- If your project has a large-scale network configuration, such as one with hundreds of networks and many VPC peerings configured, then when you try to create new Cloud Composer environments, the operations might fail because of VPC, subnet or forwarding rules quota errors.
+- About large-scale networks for Cloud Composer environments To overcome challenges related to these limits, you can organize your Cloud Composer environments into several VPC networks connected to your main/backbone VPC as it is described in the following sections.
+- Quotas for VPC, subnet and forwarding rules Cloud Composer and GKE services use VPC peerings to establish connections between the components of Cloud Composer environments (Customer Project and Tenant Project) and between a GKE cluster and a GKE Control Plane.
+- Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Configure large-scale networks for Cloud Composer environments Stay organized with collections Save and categorize content based on your preferences.
 
 ### Enable and disable the Cloud Composer service \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service](https://docs.cloud.google.com/composer/docs/composer-1/enable-composer-service)
 - Source ID: `site-iam-reference`
-- Final score: 106
+- Final score: 26
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- The following services are required by Cloud Composer: artifactregistry.googleapis.com cloudbuild.googleapis.com composer.googleapis.com compute.googleapis.com container.googleapis.com deploymentmanager.googleapis.com logging.googleapis.com cloudkms.googleapis.com, if you are using Cloud KMS or CMEK keys monitoring.googleapis.com pubsub.googleapis.com storage.googleapis.com secretmanager.googleapis.com, if you are using Secret Manager as a secret backend cloudresourcemanager.googleapis.com servicedirectory.googleapis.com Google services like Cloud DNS or IAM are already allowed by default in most projects.
 - Deactivating these APIs won't cause the deactivation of the Cloud Composer API. artifactregistry.googleapis.com cloudbuild.googleapis.com container.googleapis.com pubsub.googleapis.com sqladmin.googleapis.com Starting May 27, 2026 , these APIs will no longer be enabled automatically when you enable the Cloud Composer API.
-- What's next Create environments Access control Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- After the API is disabled, you still have access to data stored in your environment's buckets, but the environments themselves are no longer usable.
+- Enable Cloud Composer API Console Enable the Cloud Composer API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.
+- Enable the API gcloud Enable the composer.googleapis.com API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.
+
+### "Access the Airflow web interface \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface](https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface)
+- Source ID: `site-iam-reference`
+- Final score: 20
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Example: // PATCH https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment?updateMask= // config.webServerNetworkAccessControl { "config" : { "webServerNetworkAccessControl" : { "allowedIpRanges" : [ { "value" : "192.0.2.0/24" , "description" : "example range" }, { "value" : "192.0.4.0/24" , "description" : "example range 2" } ] } } } Terraform In the allowed ip range block, in the web server network access control specify IP ranges that can access web server. resource "google composer environment" "example" { provider = google-beta name = " ENVIRONMENT NAME " region = " LOCATION " config { web server network access control { allowed ip range { value = " WS IP RANGE " description = " WS RANGE DESCRIPTION " } } } } Replace the following: WS IP RANGE : the IP range, in the CIDR notation, that can access the Airflow UI.
+- Example: resource "google composer environment" "example" { provider = google-beta name = "example-environment" region = "us-central1" config { web server network access control { allowed ip range { value = "192.0.2.0/24" description = "example range" }, allowed ip range { value = "192.0.4.0/24" description = "example range 2" } } } What's next Airflow UI Access Control Troubleshooting Airflow web server issues Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- To ensure that web server remains accessible regardless of DAG load time, you can configure asynchronous DAG loading to parse and load DAGs in the background at a pre-configured interval (available in composer-1.7.1-airflow-1.10.2 and later versions).
+- To get the URL for the Airflow UI, run the following command in Google Cloud CLI: gcloud composer environments describe ENVIRONMENT NAME \ --location LOCATION Replace the following: ENVIRONMENT NAME : the name of your environment.
 

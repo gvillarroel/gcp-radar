@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.238Z"
+generated_at: "2026-04-13T14:23:05.084Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "HealthcareFHIRStore complex data type reference parsing"
 feature_slug: "healthcarefhirstore-complex-data-type-reference-parsing"
 latest_feature_date: "2023-08-21"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+  - "https://docs.cloud.google.com/config-connector/docs/overview"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance"
 keywords:
-  - "healthcarefhirstore"
   - "complex"
-  - "type"
-  - "reference"
   - "parsing"
-  - "config"
-  - "connector"
+  - "healthcarefhirstore"
+  - "reference"
   - "supports"
+  - "type"
 ---
 
 # HealthcareFHIRStore complex data type reference parsing
 
 Product: Config Connector
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,45 +40,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
+- [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance)
 
 ## Supporting Pages
 
-### Creating resource references | Config Connector | Google Cloud Documentation
+### Config Connector overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
+- URL: [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 33
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Access and resource management Config Connector Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- You can manage your Google Cloud infrastructure the same way you manage your Kubernetes applications, reducing the complexity and cognitive load for developers.
+- For the full list of Google Cloud resources supported by Config Connector, see the Config Connector reference documentation .
+- Single source of configuration and desired state management for reduced complexity.
+
+### "AccessContextManagerServicePerimeter \_|\_ Config Connector \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter)
 - Source ID: `site-docs-root`
-- Final score: 126
+- Final score: 30
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Creating resource references Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references You can find out what format the ... documentation.
-- Config Connector allows resources ...
-- You can also go to an individual resource&#x27;s reference page (for example, PubSubTopic) and look at the value listed in the &quot;IAM External Reference Format&quot; row of the resource&#x27;s summary table.
-- The formats are listed in the &quot;External Reference Formats&quot; column of the Supported Resources table.
+- AccessContextManagerServicePerimeter Property Value Google Cloud Service Name AccessContextManager Google Cloud Service Documentation /vpc-service-controls/docs/ Google Cloud REST Resource Name accesscontextmanager.v1.accessPolicies.servicePerimeters Google Cloud REST Resource Documentation /access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters Config Connector Resource Short Names gcpaccesscontextmanagerserviceperimeter gcpaccesscontextmanagerserviceperimeters accesscontextmanagerserviceperimeter Config Connector Service Name accesscontextmanager.googleapis.com Config Connector Resource Fully Qualified Name accesscontextmanagerserviceperimeters.accesscontextmanager.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema accessPolicyRef : external : string name : string namespace : string description : string perimeterType : string resourceID : string spec : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean status : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean title : string useExplicitDryRunSpec : boolean Fields accessPolicyRef Required object The AccessContextManagerAccessPolicy this AccessContextManagerServicePerimeter lives in. accessPolicyRef.external Optional string Allowed value: string of the format accessPolicies/{{value}}, where {{value}} is the name field of an AccessContextManagerAccessPolicy resource. accessPolicyRef.name Optional string Name of the referent.
+- Set the appropriate ACCESS POLICY NUMBER external : accessPolicies/${ACCESS POLICY NUMBER} description : A Service Perimeter Created by Config Connector perimeterType : PERIMETER TYPE REGULAR --- apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerAccessLevel metadata : annotations : Replace "${ORG ID?}" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : "${ORG ID}" name : serviceperimeterdep1 spec : accessPolicyRef : Replace "${ACCESS POLICY NUMBER}" with the numeric ID for your Access Policy external : "accessPolicies/${ACCESS POLICY NUMBER}" title : Service Perimeter Dependency ACL1 basic : conditions : - devicePolicy : requireCorpOwned : true --- apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerAccessLevel metadata : annotations : Replace "${ORG ID?}" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : "${ORG ID}" name : serviceperimeterdep2 spec : accessPolicyRef : Replace "${ACCESS POLICY NUMBER}" with the numeric ID for your Access Policy external : "accessPolicies/${ACCESS POLICY NUMBER}" title : Service Perimeter Dependency ACL2 basic : conditions : - devicePolicy : requireCorpOwned : true --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : Replace "${ORG ID?}" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : "${ORG ID}" name : serviceperimeterengressdep --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : Replace "${ORG ID?}" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : "${ORG ID}" name : serviceperimeteringressdep Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- Status Schema conditions : - lastTransitionTime : string message : string reason : string status : string type : string createTime : string observedGeneration : integer updateTime : string Fields conditions list (object) Conditions represent the latest available observation of the resource's current state. conditions[] object conditions[].lastTransitionTime string Last time the condition transitioned from one status to another. conditions[].message string Human-readable message indicating details about last transition. conditions[].reason string Unique, one-word, CamelCase reason for the condition's last transition. conditions[].status string Status is the status of the condition.
+- Possible values: ["IDENTITY TYPE UNSPECIFIED", "ANY IDENTITY", "ANY USER ACCOUNT", "ANY SERVICE ACCOUNT"]. spec.ingressPolicies[].ingressFrom.sources Optional list (object) Sources that this 'IngressPolicy' authorizes access from. spec.ingressPolicies[].ingressFrom.sources[] Optional object spec.ingressPolicies[].ingressFrom.sources[].accessLevelRef Optional object An AccessLevel resource name that allow resources within the ServicePerimeters to be accessed from the internet.
 
-### IAMPolicy | Config Connector | Google Cloud Documentation
+### AlloyDBInstance \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 112
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance)
+- Source ID: `site-docs-root`
+- Final score: 30
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
-
-### Access control with IAM | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 108
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
+- Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters.instances Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters.instances Config Connector Resource Short Names gcpalloydbinstance gcpalloydbinstances alloydbinstance Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbinstances.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema annotations : string : string availabilityType : string clusterRef : external : string name : string namespace : string connectionPoolConfig : enabled : boolean flags : string : string databaseFlags : string : string displayName : string gceZone : string instanceType : string instanceTypeRef : external : string name : string namespace : string machineConfig : cpuCount : integer machineType : string networkConfig : authorizedExternalNetworks : - cidrRange : string enableOutboundPublicIp : boolean enablePublicIp : boolean observabilityConfig : assistiveExperiencesEnabled : boolean enabled : boolean maxQueryStringLength : integer preserveComments : boolean queryPlansPerMinute : integer recordApplicationTags : boolean trackActiveQueries : boolean trackClientAddress : boolean trackWaitEvents : boolean queryInsightsConfig : queryPlansPerMinute : integer queryStringLength : integer recordApplicationTags : boolean recordClientAddress : boolean readPoolConfig : nodeCount : integer resourceID : string Fields annotations Optional map (key: string, value: string) Annotations to allow client tools to store small amount of arbitrary data.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-primary spec : clusterRef : name : alloydbinstance-dep-primary instanceTypeRef : name : alloydbinstance-dep-primary databaseFlags : enable google adaptive autovacuum : "off" password.enforce complexity : "on" machineConfig : cpuCount : 2 networkConfig : enablePublicIp : true enableOutboundPublicIp : true authorizedExternalNetworks : - cidrRange : 8.8.8.8/30 - cidrRange : 8.8.4.4/30 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-primary spec : location : asia-east1 networkConfig : networkRef : name : alloydbinstance-dep-primary projectRef : external : ${PROJECT ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-primary spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-primary prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-primary --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-primary spec : networkRef : name : alloydbinstance-dep-primary reservedPeeringRanges : - external : alloydbinstance-dep-primary service : servicenetworking.googleapis.com Read Instance Copyright 2023 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-dep-secondary spec : clusterRef : name : alloydbinstance-dep1-secondary instanceTypeRef : name : alloydbinstance-dep1-secondary --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-secondary spec : clusterRef : name : alloydbinstance-dep2-secondary instanceTypeRef : name : alloydbinstance-dep2-secondary --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep1-secondary spec : location : asia-northeast1 networkConfig : networkRef : name : alloydbinstance-dep-secondary projectRef : external : ${PROJECT ID?} initialUser : user : "postgres" password : value : "postgres" --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep2-secondary spec : location : asia-northeast2 networkConfig : networkRef : name : alloydbinstance-dep-secondary projectRef : external : ${PROJECT ID?} clusterType : "SECONDARY" secondaryConfig : primaryClusterNameRef : name : alloydbinstance-dep1-secondary deletionPolicy : "FORCE" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-secondary spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-secondary prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-secondary --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-secondary spec : networkRef : name : alloydbinstance-dep-secondary reservedPeeringRanges : - name : alloydbinstance-dep-secondary service : servicenetworking.googleapis.com Zonal Instance Copyright 2023 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-dep-read spec : clusterRef : name : alloydbinstance-dep-read instanceTypeRef : name : alloydbinstance-dep-read --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-read spec : clusterRef : name : alloydbinstance-dep-read instanceTypeRef : external : READ POOL databaseFlags : google columnar engine.enabled : "on" machineConfig : cpuCount : 2 readPoolConfig : nodeCount : 3 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-read spec : location : asia-east2 networkConfig : networkRef : name : alloydbinstance-dep-read projectRef : external : ${PROJECT ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-read spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-read prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-read --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-read spec : networkRef : name : alloydbinstance-dep-read reservedPeeringRanges : - name : alloydbinstance-dep-read service : servicenetworking.googleapis.com Secondary Instance Copyright 2024 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 

@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:22:59.246Z"
+generated_at: "2026-04-12T12:19:53.516Z"
 product_name: "Vertex AI Vision"
 product_slug: "vertex-ai-vision"
 feature_name: "Vertex AI Vision Warehouse batch support for videos and images"
 feature_slug: "vertex-ai-vision-warehouse-batch-support-for-videos-and-images"
 latest_feature_date: "2023-11-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation"
   - "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search"
@@ -27,7 +27,7 @@ keywords:
 # Vertex AI Vision Warehouse batch support for videos and images
 
 Product: Vertex AI Vision
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,7 +39,7 @@ Vertex AI Vision Warehouse introduced general availability of batch support for 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation](https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation)
 - Source ID: `site-docs-reference`
-- Final score: 282
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 352
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation AI and ML Vertex AI Vision Guides Send feedback Create and update a Batch Video Warehouse Stay organized with collections Save and categorize content based on your preferences.
@@ -68,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search](https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search)
 - Source ID: `site-docs-reference`
-- Final score: 264
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 334
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation AI and ML Vertex AI Vision Guides Send feedback Search Batch Video Warehouse data Stay organized with collections Save and categorize content based on your preferences.
@@ -82,8 +82,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-overview](https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-overview)
 - Source ID: `site-docs-reference`
-- Final score: 238
-- Re-rank relevance: N/A
+- Final score: 304
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation AI and ML Vertex AI Vision Guides Send feedback Batch Video Warehouse Overview Stay organized with collections Save and categorize content based on your preferences.
@@ -95,9 +96,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision-ai/docs/create-manage-streaming-warehouse](https://docs.cloud.google.com/vision-ai/docs/create-manage-streaming-warehouse)
 - Source ID: `site-docs-reference`
-- Final score: 226
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 283
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation AI and ML Vertex AI Vision Guides Send feedback Create and update a Streaming video warehouse Stay organized with collections Save and categorize content based on your preferences.

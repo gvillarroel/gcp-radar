@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:45.657Z"
+generated_at: "2026-04-14T15:21:10.893Z"
 product_name: "Migrate to Containers"
 product_slug: "migrate-to-containers"
 feature_name: "application log export to Stackdriver Logging"
 feature_slug: "application-log-export-to-stackdriver-logging"
 latest_feature_date: "2019-11-13"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging"
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan"
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
 keywords:
   - "application"
   - "log"
   - "export"
-  - "to"
   - "stackdriver"
   - "logging"
   - "configmap"
   - "can"
+  - "route"
 ---
 
 # application log export to Stackdriver Logging
 
 Product: Migrate to Containers
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ A ConfigMap can route selected application log file content to Stackdriver Loggi
 
 A ConfigMap can route selected application log file content to Stackdriver Logging.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging](https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging)
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan)
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Configure logging to Cloud Logging \_|\_ Migrate to Containers \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging](https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging)
+- Source ID: `site-docs-reference`
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Connect is required to pass data back to Cloud Logging. apiVersion: apps/v1 kind: Deployment metadata: creationTimestamp: null labels: app: my-app migrate-for-anthos-type: workload name: test-ibsc-appenhmutimiy spec: replicas: 1 selector: matchLabels: app: test-ibsc-appenhmutimiy migrate-for-anthos-type: workload strategy: {} template: metadata: creationTimestamp: null labels: app: test-ibsc-appenhmutimiy migrate-for-anthos-type: workload spec: containers: - image: gcr.io/myproject/my-container-image:v1.0.0 name: test-ibsc-appenhmutimiy readinessProbe: exec: command: - /code/ready.sh resources: {} securityContext: privileged: true volumeMounts: - mountPath: /sys/fs/cgroup name: cgroups - mountPath: /code/config/logs/ name: logs-config volumes: - hostPath: path: /sys/fs/cgroup type: Directory name: cgroups - configMap: name: <ConfigMap name> name: logs-config Use ConfigMap for common application logs The reference ConfigMap YAML in the following section covers a list of common application log files and their application labels.
+- Forward application logs to Cloud Logging In order to log to Cloud Logging from applications on VMs migrated with Migrate to Containers, you must have the following in place: Create a ConfigMap on your target workload cluster that specifies a list of the file system log files whose entries should be written to Cloud Logging.
+- A log sub-element consists of the following structure: label : - path - with - simple - wildcards For example: tomcat : - /var/log/tomcat /catalina.out - /var/log/tomcat /localhost. .log Reference ConfigMap for common apps apiVersion : v1 kind : ConfigMap metadata : creationTimestamp : null name : < ConfigMap name > data : logs.yaml : logs: mysql: - /var/log/mysql.log - /var/log/mysql/mysql.log mongodb: - /var/log/mongodb/ .log memcached: - /var/log/memcached.log redis: - /var/log/redis .log - /var/log/redis/ .log rabbitmq-startup: - /var/log/rabbitmq/startup log rabbitmq-startup err: - /var/log/rabbitmq/startup err rabbitmq-sasl: - /var/log/rabbitmq/ -sasl.log sugarcrm: - /var/www/ /sugarcrm.log tomcat-localhost access log: - /var/log/tomcat /localhost access log .txt tomcat: - /var/log/tomcat /catalina.out - /var/log/tomcat /localhost. .log apache-access: - /var/log/apache /access.log - /var/log/apache /access log - /var/log/httpd/access.log - /var/log/httpd/access log apache-error: - /var/log/apache /error.log - /var/log/apache /error log - /var/log/httpd/error.log - /var/log/httpd/error log cassandra: - /var/log/cassandra/system.log - /var/log/cassandra/cassandra.log - /var/log/cassandra/output.log chef-bookshelf: - /var/log/chef-server/bookshelf/current chef-expander: - /var/log/chef-server/chef-expander/current chef-pedant-http-traffic: - /var/log/chef-server/chef-pedant/http-traffic.log chef-server-webui: - /var/log/chef-server/chef-server-webui/current chef-solr: - /var/log/chef-server/chef-solr/current chef-erchef-current: - /var/log/chef-server/erchef/current chef-erchef: - /var/log/chef-server/erchef/erchef.log.1 chef-nginx-access: - /var/log/chef-server/nginx/access.log chef-nginx-error: - /var/log/chef-server/nginx/error.log chef-nginx-rewrite-port-80: - /var/log/chef-server/nginx/rewrite-port-80.log chef-postgresql: - /var/log/chef-server/postgresql/current chef-rabbitmq: - /var/log/chef-server/rabbitmq/current postgresql: - /var/log/postgres / .log - /var/log/pgsql/ .log puppet-access: - /var/log/pe-httpd/access.log puppet-puppetmasteraccess: - /var/log/pe-httpd/puppetmasteraccess.log puppet-activemq: - /var/log/pe-activemq/activemq.log puppet-activemq-wrapper: - /var/log/pe-activemq/wrapper.log puppet-mcollective: - /var/log/pe-mcollective/mcollective.log puppet-mcollective-audit: - /var/log/pe-mcollective/mcollective audit.log puppet-puppetdb: - /var/log/pe-puppetdb/pe-puppetdb.log puppet-dashboard-error: - /var/log/pe-httpd/puppetdashboard.error.log puppet-dashboard-mcollective-client: - /var/log/pe-puppet-dashboard/mcollective client.log puppet-dashboard-production: - /var/log/pe-puppet-dashboard/production.log puppet-dashboard-event-inspector: - /var/log/pe-puppet-dashboard/event-inspector.log puppet-dashboard-certificate-manager: - /var/log/pe-puppet-dashboard/certificate manager.log puppet-dashboard-live-management: - /var/log/pe-puppet-dashboard/live-management.log puppet-console-cas-client: - /var/log/pe-console-auth/cas client.log puppet-console-auth-cas: - /var/log/pe-console-auth/cas.log puppet-console-auth: - /var/log/pe-console-auth/auth.log puppet-dashboard-access: - /var/log/pe-httpd/puppetdashboard.access.log puppet-dashboard-failed-reports: - /var/log/pe-puppet-dashboard/failed reports.log puppet-error: - /var/log/pe-httpd/error.log puppet-other-vhosts-access: - /var/log/pe-httpd/other vhosts access.log puppet-masterhttp: - /var/log/pe-puppet/masterhttp.log - /var/log/puppet/masterhttp.log puppet-rails: - /var/log/pe-puppet/rails.log puppet-http: - /var/log/puppet/http.log gitlab-application: - /home/git/gitlab/log/application.log gitlab-production: - /home/git/gitlab/log/production.log gitlab-sidekiq: - /home/git/gitlab/log/sidekiq.log gitlab-unicorn-stdout: - /home/git/gitlab/log/unicorn.stdout.log gitlab-unicorn-stderr: - /home/git/gitlab/log/unicorn.stderr.log gitlab-githost: - /home/git/gitlab/log/githost.log gitlab-satellites: - /home/git/gitlab/log/satellites.log gitlab-shell: - /home/git/gitlab-shell/gitlab-shell.log jenkins: - /var/log/jenkins/jenkins.log jetty-request: - /var/log/jetty/ .request.log jetty-stderrout: - /var/log/jetty/ .stderrout.log jetty-out: - /var/log/jetty/out.log joomla: - /var/www/joomla/logs/ .log magento-system: - /var/www/magento/var/log/system.log magento-exception: - /var/www/magento/var/log/exception.log magento-report: - /var/www/magento/var/report/ mediawiki: - /var/log/mediawiki/ .log nginx-access: - /var/log/nginx/access.log nginx-error: - /var/log/nginx/error.log redmine: - /var/log/redmine/ .log salt-master: - /var/log/salt/master salt-minion: - /var/log/salt/minion salt-key: - /var/log/salt/key salt-syndic: - /var/log/salt/syndic.loc solr: - /var/log/solr/ .log sugarcrm: - /var/www/ /sugarcrm.log tomcat-localhost access log: - /var/log/tomcat /localhost access log. .txt tomcat: - /var/log/tomcat /catalina.out,/var/log/tomcat /localhost. .log What's next Learn how to mount external volumes .
+- Configure logging to Cloud Logging This document describes how to customize logging by using a ConfigMap on your target workload cluster.
+
+### "Customize migration plan for Linux VMs \_|\_ Migrate to Containers \_|\_\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 75
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Note: Previous releases of Migrate to Containers supported customizing logging by using a ConfigMap on your target workload cluster, as described in Configuring logging to Cloud Logging .
+- If the logs.yaml file exists, logging settings defined by a ConfigMap are ignored.
+- Consider excluding the below detected files and any other sparse files by uncommenting and placing them in the global filters section, or export them to a persistent volume by specifying them in the data folder section. - '- /a/b' # (1.8GB, last access 2022-02-02 10:50:30, last modified 2020-02-02 10:50:30) - '- /a/d' # (1.8GB, last access 2022-02-02 10:50:30, last modified 2020-02-02 10:50:30) Set the name of the container image The name field value in the image section defines the name of the image created from a migrated VM that is used for the container.
+- Shown below is an example PersistentVolumeClaim and PersistentVolume definitions in the deployment spec.yaml file: apiVersion : v1 kind : PersistentVolumeClaim spec : accessModes : - ReadWriteOnce resources : requests : storage : 1Mi storageClassName : "" volumeName : nfs-pv apiVersion : v1 kind : PersistentVolume metadata : name : nfs-pv spec : mountOptions : - rw - hard nfs : path : /vol1 server : 10.49.232.26 Customize log data written to Cloud Logging Typically a source VM writes information to one or more log files.
+
+### "Customize migration plan for Tomcat servers \_|\_ Migrate to Containers\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 75
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following is a sample configuration for a DNS provider: < Cluster className = "org.apache.catalina.ha.tcp.SimpleTcpCluster" > < Channel className = "org.apache.catalina.tribes.group.GroupChannel" > < Membership className = "org.apache.catalina.tribes.membership.cloud.CloudMembershipService" membershipProviderClassName = "org.apache.catalina.tribes.membership.cloud.DNSMembershipProvider" / > < / Channel > < / Cluster > jvmRoute: When your load balancer relies on a jvmRoute value, the value should be changed from static to using the POD name.
+- Edit the user and group directly in your migration plan: tomcatServers : - name : latest . . . images : - name : tomcat-latest . . . userName : USERNAME groupName : GROUP NAME Replace the following: USERNAME : the username that you want to use GROUP NAME : the group name that you want to use Configure SSL When you create a new Tomcat migration, a discovery process scans the server against the different applications that are discovered.
+- Change the value in the server.xml file to use the following: <Engine name="Catalina" defaultHost="localhost" jvmRoute=" ${ HOSTNAME } "> Verify Tomcat proxy configuration If Tomcat is configured to run behind a reverse proxy, or using several proxy configuration settings in the Connector section of server.xml , you must verify that the same proxy configurations are still applicable once migrated to run in Kubernetes.
+- To run a functional containerized Tomcat application, choose one of the following configuration changes to the reverse proxy configuration: Disable proxy configuration: If the migrated application no longer runs behind a reverse proxy, you can disable proxy configuration by removing proxyName and proxyPort from the connector configuration.
 

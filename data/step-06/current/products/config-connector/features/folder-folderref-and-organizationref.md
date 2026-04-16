@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.477Z"
+generated_at: "2026-04-13T14:23:05.240Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "Folder folderRef and organizationRef"
 feature_slug: "folder-folderref-and-organizationref"
 latest_feature_date: "2021-03-23"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/overview"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/logging/logginglogbucket"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/resourcemanagerpolicy"
 keywords:
-  - "folder"
-  - "folderref"
-  - "and"
   - "organizationref"
-  - "config"
-  - "connector"
+  - "folderref"
+  - "folder"
   - "supports"
-  - "the"
+  - "fields"
 ---
 
 # Folder folderRef and organizationRef
 
 Product: Config Connector
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,45 +39,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/logging/logginglogbucket](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/logging/logginglogbucket)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/resourcemanagerpolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/resourcemanagerpolicy)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### Folder | Config Connector | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 132
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
-
-### Config Connector overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 112
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder)
+- Source ID: `feature-recovery-http`
+- Final score: 44
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- The Config Connector CRDs allow Kubernetes to create and manage Google Cloud resources when you configure and apply Objects to your cluster.
-- Config Connector overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/overview Config Connector provides a collection of Kubernetes Custom Resource Definitions (CRDs) and controllers.
+- Property Value Google Cloud Service Name Cloud Resource Manager Google Cloud Service Documentation /resource-manager/docs/ Google Cloud REST Resource Name v2.folders Google Cloud REST Resource Documentation /resource-manager/reference/rest/v2/folders Config Connector Resource Short Names gcpfolder gcpfolders folder Config Connector Service Name cloudresourcemanager.googleapis.com Config Connector Resource Fully Qualified Name folders.resourcemanager.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions Yes Supports IAM Audit Configs Yes IAM External Reference Format folders/{{folder_id}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema displayName : string folderRef : external : string name : string namespace : string organizationRef : external : string name : string namespace : string resourceID : string Fields displayName Required string The folder's display name.
+- Sample YAML(s) Folder In Folder # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Folder metadata : labels : label-one : "value-one" name : folder-sample-in-folder spec : displayName : Config Connector Sample folderRef : # Replace "${FOLDER_ID?}" with the numeric ID of the parent folder external : "${FOLDER_ID?}" Folder In Org # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Folder metadata : labels : label-one : "value-one" name : folder-sample-in-org spec : displayName : Config Connector Sample organizationRef : # Replace "${ORG_ID?}" with the numeric ID of the parent organization external : "${ORG_ID?}" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- Only one of folderRef or organizationRef may be specified. organizationRef.external Optional string Allowed value: The `name` field of an `Organization` resource. organizationRef.name Optional string Name of the referent.
+- Only one of folderRef or organizationRef may be specified. folderRef.external Optional string Allowed value: The `folderId` field of a `Folder` resource. folderRef.name Optional string Name of the referent.
 
-### Creating resource references | Config Connector | Google Cloud Documentation
+### LoggingLogBucket | Config Connector | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- Source ID: `site-docs-root`
-- Final score: 110
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/logging/logginglogbucket](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/logging/logginglogbucket)
+- Source ID: `feature-recovery-http`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Creating resource references Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references You can find out what format the ... documentation.
-- You can also go to an individual resource&#x27;s reference page (for example, PubSubTopic) and look at the value listed in the &quot;IAM External Reference Format&quot; row of the resource&#x27;s summary table.
-- The IAMPolicy, IAMPartialPolicy and IAMPolicyMember pages list the accepted format for all supported resources.
-- Config Connector allows resources ...
+- Property Value Google Cloud Service Name Cloud Logging Google Cloud Service Documentation /logging/docs/ Google Cloud REST Resource Name v2.billingAccounts.locations.buckets v2.folders.locations.buckets v2.organizations.locations.buckets v2.projects.locations.buckets Google Cloud REST Resource Documentation /logging/docs/reference/v2/rest/v2/billingAccounts.locations.buckets /logging/docs/reference/v2/rest/v2/folders.locations.buckets /logging/docs/reference/v2/rest/v2/organizations.locations.buckets /logging/docs/reference/v2/rest/v2/projects.locations.buckets Config Connector Resource Short Names gcplogginglogbucket gcplogginglogbuckets logginglogbucket Config Connector Service Name logging.googleapis.com Config Connector Resource Fully Qualified Name logginglogbuckets.logging.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema billingAccountRef : external : string name : string namespace : string description : string enableAnalytics : boolean folderRef : external : string name : string namespace : string location : string locked : boolean organizationRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string resourceID : string retentionDays : integer Fields billingAccountRef Optional object Immutable.
+- Sample YAML(s) Billing Account Log Bucket # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : logging.cnrm.cloud.google.com/v1beta1 kind : LoggingLogBucket metadata : name : logginglogbucket-sample-billingaccountlogbucket spec : # At the organization, folder, or billing account level _Default and _Required are the only valid resource names resourceID : "_Default" billingAccountRef : # Replace "${BILLING_ACCOUNT_ID_FOR_BILLING_RESOURCES?}" with the numeric ID for your billing account external : "${BILLING_ACCOUNT_ID_FOR_BILLING_RESOURCES?}" location : "global" Folder Log Bucket # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : logging.cnrm.cloud.google.com/v1beta1 kind : LoggingLogBucket metadata : name : logginglogbucket-sample-folderlogbucket spec : # At the organization, folder, or billing account level _Default and _Required are the only valid resource names resourceID : "_Required" folderRef : name : "logginglogbucket-dep-folderlogbucket" location : "global" --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Folder metadata : annotations : # Replace "${ORG_ID?}" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : "${ORG_ID?}" name : logginglogbucket-dep-folderlogbucket spec : displayName : Folder Log Bucket Sample Organization Log Bucket # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : logging.cnrm.cloud.google.com/v1beta1 kind : LoggingLogBucket metadata : name : logginglogbucket-sample-organizationlogbucket spec : # At the organization, folder, or billing account level _Default and _Required are the only valid resource names resourceID : "_Default" organizationRef : # Replace "${ORG_ID?}" with the numeric ID for your organization external : "organizations/${ORG_ID?}" location : "global" Project Log Bucket # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : logging.cnrm.cloud.google.com/v1beta1 kind : LoggingLogBucket metadata : name : logginglogbucket-sample-projectlogbucket spec : projectRef : # Replace ${PROJECT_ID?} with your project ID external : "projects/${PROJECT_ID?}" location : "global" description : "A sample log bucket" locked : false retentionDays : 30 Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- Only one of [billingAccountRef, folderRef, organizationRef, projectRef] may be specified. billingAccountRef.external Optional string Allowed value: The Google Cloud resource name of a Google Cloud Billing Account (format: `billingAccounts/{{name}}`). billingAccountRef.name Optional string [WARNING] BillingAccount not yet supported in Config Connector, use 'external' field to reference existing resources.
+- Only one of [billingAccountRef, folderRef, organizationRef, projectRef] may be specified. organizationRef.external Optional string Allowed value: The Google Cloud resource name of a Google Cloud Organization (format: `organizations/{{name}}`). organizationRef.name Optional string [WARNING] Organization not yet supported in Config Connector, use 'external' field to reference existing resources.
+
+### ResourceManagerPolicy | Config Connector | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/resourcemanagerpolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/resourcemanagerpolicy)
+- Source ID: `feature-recovery-http`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Property Value Google Cloud Service Name Cloud Resource Manager Google Cloud Service Documentation /resource-manager/docs/ Google Cloud REST Resource Name v1.policy Google Cloud REST Resource Documentation /resource-manager/reference/rest/v1/Policy Config Connector Resource Short Names gcpresourcemanagerpolicy gcpresourcemanagerpolicies resourcemanagerpolicy Config Connector Service Name cloudresourcemanager.googleapis.com Config Connector Resource Fully Qualified Name resourcemanagerpolicies.resourcemanager.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema booleanPolicy : enforced : boolean constraint : string folderRef : external : string name : string namespace : string listPolicy : allow : all : boolean values : - string deny : all : boolean values : - string inheritFromParent : boolean suggestedValue : string organizationRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string restorePolicy : default : boolean version : integer Fields booleanPolicy Optional object A boolean policy is a constraint that is either enforced or not. booleanPolicy.enforced Required* boolean If true, then the Policy is enforced.
+- Sample YAML(s) Organization Policy For Folder # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : ResourceManagerPolicy metadata : name : resourcemanagerpolicy-sample-folder spec : folderRef : name : resourcemanagerpolicy-dep-folder constraint : "constraints/compute.disableSerialPortAccess" booleanPolicy : enforced : true --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Folder metadata : annotations : # Replace "${ORG_ID?}" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : "${ORG_ID?}" name : resourcemanagerpolicy-dep-folder spec : displayName : Organization Policy Sample Organization Policy For Organization # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : ResourceManagerPolicy metadata : name : resourcemanagerpolicy-sample-org spec : organizationRef : # Replace "${ORG_ID?}" with the numeric ID for your organization external : "${ORG_ID?}" constraint : "constraints/compute.disableSerialPortAccess" booleanPolicy : enforced : true Organization Policy For Project # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : ResourceManagerPolicy metadata : name : resourcemanagerpolicy-sample-proj spec : projectRef : name : resourcemanagerpolicy-dep-proj constraint : "constraints/compute.disableSerialPortAccess" booleanPolicy : enforced : true --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : annotations : # Replace "${ORG_ID?}" with the numeric ID for your folder cnrm.cloud.google.com/organization-id : "${ORG_ID?}" name : resourcemanagerpolicy-dep-proj spec : name : Org Policy Sample Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- Only one of projectRef, folderRef, or organizationRef may be specified. organizationRef.external Optional string Allowed value: The `name` field of an `Organization` resource. organizationRef.name Optional string Name of the referent.
+- Only one of projectRef, folderRef, or organizationRef may be specified. projectRef.external Optional string Allowed value: The `name` field of a `Project` resource. projectRef.name Optional string Name of the referent.
 

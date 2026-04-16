@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.973Z"
+generated_at: "2026-04-14T15:13:20.187Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "LSIB 2017 Simplified"
 feature_slug: "lsib-2017-simplified"
 latest_feature_date: "2017-08-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/datasets/catalog"
   - "https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries"
-  - "https://developers.google.com/earth-engine/docs/release-notes"
+  - "https://developers.google.com/earth-engine/datasets/catalog"
+  - "https://developers.google.com/earth-engine/guides/best_practices"
 keywords:
   - "lsib"
   - "2017"
   - "simplified"
   - "polygon"
   - "dataset"
-  - "of"
   - "large"
   - "scale"
+  - "international"
 ---
 
 # LSIB 2017 Simplified
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +38,35 @@ A simplified polygon dataset of large-scale international boundaries.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - [https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries](https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries)
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
+- [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
+- [https://developers.google.com/earth-engine/guides/best_practices](https://developers.google.com/earth-engine/guides/best_practices)
 
 ## Supporting Pages
+
+### "Datasets tagged infrastructure-boundaries in Earth Engine \_|\_ Earth Engine\
+
+- URL: [https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries](https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries)
+- Source ID: `site-docs-root-3`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The interior boundaries reflect U.S. government … borders countries dos infrastructure-boundaries political table LSIB 2017: Large Scale International Boundary Polygons, Simplified The United States Office of the Geographer provides the Large Scale International Boundary (LSIB) dataset.
+- Each power plant is geolocated and entries contain information on plant capacity, generation, … infrastructure-boundaries table wri LSIB 2017: Large Scale International Boundary Polygons, Detailed The United States Office of the Geographer provides the Large Scale International Boundary (LSIB) dataset.
+- There are about 74,000 polygon features … census infrastructure-boundaries table tiger us United Nations Geospatial Data: BNDA simplified The United Nations Geospatial Data, or Geodata, is a worldwide geospatial dataset of the United Nations.
+- The Global Administrative Unit Layers (GAUL) compiles and disseminates the best available information on administrative units for all the countries in the world, providing a contribution to the standardization of the spatial dataset representing administrative units. … borders departments fao gaul infrastructure-boundaries provinces FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, Second-Level Administrative Units This version of GAUL dataset is simplified at 500m.
 
 ### Earth Engine Data Catalog \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 174
+- Final score: 187
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,29 +75,17 @@ Evidence snippets:
 - It is produced from open-source, low-resolution imagery from the … africa annual asia built-up height open-buildings Open Buildings V3 Polygons This large-scale open dataset consists of outlines of buildings derived from high-resolution 50 cm satellite imagery.
 - The product is developed by the Center for Hydrometeorology and Remote Sensing at the University of California, Irvine … cdr climate geophysical noaa precipitation weather PML V2.2a: Coupled Evapotranspiration and Gross Primary Product (GPP) The dataset is produced by the Large Scale Hydrology Lab, which specializes in advancing global and regional water cycle research by synthesizing multi-source Earth observations with process-based modeling.
 
-### "Datasets tagged infrastructure-boundaries in Earth Engine \_|\_ Earth Engine\
+### Coding Best Practices \_|\_ Google Earth Engine \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries](https://developers.google.com/earth-engine/datasets/tags/infrastructure-boundaries)
-- Source ID: `site-docs-root-3`
-- Final score: 172
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The interior boundaries reflect U.S. government … borders countries dos infrastructure-boundaries political table LSIB 2017: Large Scale International Boundary Polygons, Simplified The United States Office of the Geographer provides the Large Scale International Boundary (LSIB) dataset.
-- Each power plant is geolocated and entries contain information on plant capacity, generation, … infrastructure-boundaries table wri LSIB 2017: Large Scale International Boundary Polygons, Detailed The United States Office of the Geographer provides the Large Scale International Boundary (LSIB) dataset.
-- There are about 74,000 polygon features … census infrastructure-boundaries table tiger us United Nations Geospatial Data: BNDA simplified The United Nations Geospatial Data, or Geodata, is a worldwide geospatial dataset of the United Nations.
-- The Global Administrative Unit Layers (GAUL) compiles and disseminates the best available information on administrative units for all the countries in the world, providing a contribution to the standardization of the spatial dataset representing administrative units. … borders departments fao gaul infrastructure-boundaries provinces FAO GAUL 500m Simplified: Global Administrative Unit Layers 2015, Second-Level Administrative Units This version of GAUL dataset is simplified at 500m.
-
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 164
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/earth-engine/guides/best_practices](https://developers.google.com/earth-engine/guides/best_practices)
+- Source ID: `site-docs-reference-3`
+- Final score: 128
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- August 08, 2017 Earth Engine Data Catalog Feature Added LANDSAT/LT05/C01/T1 (no longer available) Added LANDSAT/LT05/C01/T1 TOA (no longer available) Added LANDSAT/LT05/C01/T2 (no longer available) Added LANDSAT/LT05/C01/T2 TOA (no longer available) Added USDOS/LSIB SIMPLE/2017 : LSIB 2017: Large Scale International Boundary Polygons, Simplified August 01, 2017 Earth Engine Data Catalog Feature Added NASA/OCEANDATA/SeaWiFS/L3SMI : Ocean Color SMI: Standard Mapped Image SeaWiFS Data Added WCMC/WDPA/current/points : WDPA: World Database on Protected Areas (points) Added WCMC/WDPA/current/polygons : WDPA: World Database on Protected Areas (polygons) July 25, 2017 Earth Engine Data Catalog Feature Added NOAA/CDR/PATMOSX/V53 : NOAA CDR PATMOSX: Cloud Properties, Reflectance, and Brightness Temperatures, Version 5.3 July 18, 2017 Earth Engine Data Catalog Feature Added MODIS/006/MOD08 M3 (no longer available) Added MODIS/006/MYD08 M3 (no longer available) July 06, 2017 Earth Engine Server Feature Added ee.Classifier.gmoLinearRegression() , a regularizing linear regression classifier.
-- December 12, 2017 Earth Engine Data Catalog Feature Added JAXA/ALOS/AW3D30 V1 1 (no longer available) Added OREGONSTATE/PRISM/AN81d (no longer available) Added OREGONSTATE/PRISM/AN81m (no longer available) Added OREGONSTATE/PRISM/Norm81m (no longer available) December 05, 2017 Earth Engine Data Catalog Feature Added MODIS/006/MCD43A4 (no longer available) Added USDOS/LSIB/2017 : LSIB 2017: Large Scale International Boundary Polygons, Detailed December 04, 2017 Earth Engine Code Editor Change Improved the robustness of polygon handling in table upload.
-- May 09, 2017 Earth Engine Data Catalog Feature Added LANDSAT/LC08/C01/T1 (no longer available) Added LANDSAT/LC08/C01/T1 RT (no longer available) Added LANDSAT/LC08/C01/T1 RT TOA (no longer available) Added LANDSAT/LC08/C01/T1 TOA (no longer available) Added LANDSAT/LE07/C01/T1 RT (no longer available) Added LANDSAT/LE07/C01/T1 RT TOA (no longer available) Added MODIS/006/MOD09GA (no longer available) Added MODIS/006/MOD09GQ (no longer available) Added MODIS/006/MOD11A1 (no longer available) Added MODIS/006/MYD09GA (no longer available) Added MODIS/006/MYD09GQ (no longer available) Added MODIS/006/MYD11A1 (no longer available) Added MODIS/MOD09GA 006 BAI : MODIS Terra Daily BAI Added MODIS/MOD09GA 006 EVI : MODIS Terra Daily EVI Added MODIS/MOD09GA 006 NDSI : MODIS Terra Daily NDSI Added MODIS/MOD09GA 006 NDVI : MODIS Terra Daily NDVI Added MODIS/MOD09GA 006 NDWI : MODIS Terra Daily NDWI Added MODIS/MYD09GA 006 BAI : MODIS Aqua Daily BAI Added MODIS/MYD09GA 006 EVI : MODIS Aqua Daily EVI Added MODIS/MYD09GA 006 NDSI : MODIS Aqua Daily NDSI Added MODIS/MYD09GA 006 NDVI : MODIS Aqua Daily NDVI Added MODIS/MYD09GA 006 NDWI : MODIS Aqua Daily NDWI May 02, 2017 Earth Engine Data Catalog Feature Added EPA/Ecoregions/2013/L3 : US EPA Ecoregions (Level III) Added EPA/Ecoregions/2013/L4 : US EPA Ecoregions (Level IV) Added GLIMS/2016 (no longer available) Added NOAA/CDR/GRIDSAT-B1/V2 : NOAA CDR GRIDSAT-B1: Geostationary IR Channel Brightness Temperature Added TIGER/2010/Blocks : TIGER: US Census Blocks Added TIGER/2010/Tracts DP1 : TIGER: US Census Tracts Demographic - Profile 1 Added TIGER/2016/Roads : TIGER: US Census Roads Added USDOS/LSIB/2013 (no longer available) Added USGS/WBD/2017/HUC02 : HUC02: USGS Watershed Boundary Dataset of Regions Added USGS/WBD/2017/HUC04 : HUC04: USGS Watershed Boundary Dataset of Subregions Added USGS/WBD/2017/HUC06 : HUC06: USGS Watershed Boundary Dataset of Basins Added USGS/WBD/2017/HUC08 : HUC08: USGS Watershed Boundary Dataset of Subbasins Added USGS/WBD/2017/HUC10 : HUC10: USGS Watershed Boundary Dataset of Watersheds Added USGS/WBD/2017/HUC12 : HUC12: USGS Watershed Boundary Dataset of Subwatersheds April 25, 2017 Earth Engine Data Catalog Feature Added MODIS/055/MOD17A3 (no longer available) Added MODIS/NTSG/MOD16A2/105 : MOD16A2: MODIS Global Terrestrial Evapotranspiration 8-Day Global 1km April 18, 2017 Earth Engine Data Catalog Feature Added MODIS/006/MODOCGA : MODOCGA.006 Terra Ocean Reflectance Daily Global 1km Added MODIS/006/MYDOCGA : MYDOCGA.006 Aqua Ocean Reflectance Daily Global 1km Added NOAA/CDR/SST PATHFINDER/V53 : NOAA AVHRR Pathfinder Version 5.3 Collated Global 4km Sea Surface Temperature Added NOAA/VIIRS/001/VNP09GA (no longer available) April 11, 2017 Earth Engine Data Catalog Feature Added NOAA/CDR/ATMOS NEAR SURFACE/V2 : NOAA CDR: Ocean Near-Surface Atmospheric Properties, Version 2 Added NOAA/CDR/HEAT FLUXES/V2 : NOAA CDR: Ocean Heat Fluxes, Version 2 Added NOAA/CDR/SST WHOI/V2 : NOAA CDR WHOI: Sea Surface Temperature, Version 2 April 04, 2017 Earth Engine Data Catalog Feature Added NASA/GLDAS/V021/NOAH/G025/T3H : GLDAS-2.1: Global Land Data Assimilation System Added NASA/NEX-GDDP : NEX-GDDP: NASA Earth Exchange Global Daily Downscaled Climate Projections March 28, 2017 Earth Engine Data Catalog Feature Added NOAA/CDR/AVHRR/LAI FAPAR/V4 (no longer available) Added NOAA/CDR/AVHRR/NDVI/V4 (no longer available) Added NOAA/CDR/AVHRR/SR/V4 (no longer available) March 21, 2017 Earth Engine Data Catalog Feature Added NOAA/CDR/OISST/V2 (no longer available) Added NOAA/VIIRS/VNP09GA/001 (no longer available) March 16, 2017 Earth Engine Server Change Enable setting properties on image collection and folder assets.
-- August 14, 2018 Earth Engine Data Catalog Feature Added GLIMS/20171027 (no longer available) July 17, 2018 Earth Engine Data Catalog Feature Added CPOM/CryoSat2/ANTARCTICA DEM : CryoSat-2 Antarctica 1km DEM Added OSU/GIMP/2000 ICE OCEAN MASK : Greenland Ice & Ocean Mask - Greenland Mapping Project (GIMP) Added OSU/GIMP/2000 IMAGERY MOSAIC : 2000 Greenland Mosaic - Greenland Ice Mapping Project (GIMP) Added OSU/GIMP/DEM : Greenland DEM - Greenland Mapping Project (GIMP) Added OSU/GIMP/ICE VELOCITY OPT : MEaSUREs Greenland Ice Velocity: Selected Glacier Site Velocity Maps from Optical Images Version 2 Added TIGER/2016/Counties : TIGER: US Census Counties 2016 Added TIGER/2016/States : TIGER: US Census States 2016 Added USGS/LIMA/MOSAIC : Landsat Image Mosaic of Antarctica (LIMA) 16-Bit Pan-Sharpened Mosaic Added USGS/LIMA/SR : Landsat Image Mosaic of Antarctica (LIMA) - Processed Landsat Scenes (16 bit) July 10, 2018 Earth Engine Data Catalog Feature Added TRMM/3B43V7 : TRMM 3B43: Monthly Precipitation Estimates July 03, 2018 Earth Engine Data Catalog Feature Added CSP/ERGo/1 0/Global/ALOS CHILI : Global ALOS CHILI (Continuous Heat-Insolation Load Index) Added CSP/ERGo/1 0/Global/ALOS landforms : Global ALOS Landforms Added CSP/ERGo/1 0/Global/ALOS mTPI : Global ALOS mTPI (Multi-Scale Topographic Position Index) Added CSP/ERGo/1 0/Global/ALOS topoDiversity : Global ALOS Topographic Diversity Added CSP/ERGo/1 0/Global/SRTM CHILI : Global SRTM CHILI (Continuous Heat-Insolation Load Index) Added CSP/ERGo/1 0/Global/SRTM landforms : Global SRTM Landforms Added CSP/ERGo/1 0/Global/SRTM mTPI : Global SRTM mTPI (Multi-Scale Topographic Position Index) Added CSP/ERGo/1 0/Global/SRTM topoDiversity : Global SRTM Topographic Diversity Added CSP/ERGo/1 0/US/CHILI : US NED CHILI (Continuous Heat-Insolation Load Index) Added CSP/ERGo/1 0/US/landforms : US NED Landforms Added CSP/ERGo/1 0/US/lithology : US Lithology Added CSP/ERGo/1 0/US/mTPI : US NED mTPI (Multi-Scale Topographic Position Index) Added CSP/ERGo/1 0/US/physioDiversity : US NED Physiographic Diversity Added CSP/ERGo/1 0/US/physiography : US Physiography Added CSP/ERGo/1 0/US/topoDiversity : US NED Topographic Diversity Added JRC/GHSL/P2016/BUILT LDSMT GLOBE V1 (no longer available) Added JRC/GHSL/P2016/BUILT LDS GLOBE V1 (no longer available) Added JRC/GHSL/P2016/POP GPW GLOBE V1 (no longer available) Added JRC/GHSL/P2016/SMOD POP GLOBE V1 (no longer available) Added UMN/PGC/ArcticDEM/V2/2m (no longer available) Added UMN/PGC/ArcticDEM/V2/5m (no longer available) June 29, 2018 Earth Engine Server Fixed Added optional uniqueLabels parameter to ee.Algorithms.Image.Segmentation algorithms, which forces clusters to have unique IDs.
+- Polygon ( [[[ - 48.86726050085349 , - 3.0475996402515717 ], [ - 48.86726050085349 , - 3.9248707849303295 ], [ - 47.46101050085349 , - 3.9248707849303295 ], [ - 47.46101050085349 , - 3.0475996402515717 ]]], null , false ); // Forest loss in 2016, to stratify a sample. var loss = image . select ( 'lossyear' ); var loss16 = loss . eq ( 16 ). rename ( 'loss16' ); // Scales and masks Landsat 8 surface reflectance images. function prepSrL8 ( image ) { var qaMask = image . select ( 'QA PIXEL' ). bitwiseAnd ( parseInt ( '11111' , 2 )). eq ( 0 ); var opticalBands = image . select ( 'SR B.' ). multiply ( 0.0000275 ). add ( - 0.2 ); var thermalBands = image . select ( 'ST B. ' ). multiply ( 0.00341802 ). add ( 149.0 ); return image . addBands ( opticalBands , null , true ) . addBands ( thermalBands , null , true ) . updateMask ( qaMask ); } var collection = ee .
+- Image ( 'projects/google/Logistic regression stack 0b8023b0af6c1b0ac7b5be649b54db06' ); // Take a very small sample first, to debug. var testSample = exportedStack . addBands ( loss16 ). stratifiedSample ({ numPoints : 1 , classBand : 'loss16' , region : testRegion , scale : 30 , geometries : true }); print ( testSample ); // Check this in the console. // Take a large sample. var sample = exportedStack . addBands ( loss16 ). stratifiedSample ({ numPoints : 10000 , classBand : 'loss16' , region : geometry , scale : 30 , }); // Export the large sample...
+- FeatureCollection ( 'RESOLVE/ECOREGIONS/2017' ); var complexCollection = ecoregions . limit ( 10 ); Map . centerObject ( complexCollection ); Map . addLayer ( complexCollection ); var expensiveOps = complexCollection . map ( function ( f ) { return f . buffer ( 10000 , 200 ). bounds ( 200 ); }); Map . addLayer ( expensiveOps , {}, 'expensiveOps' ); Don't use a ridiculously small scale with reduceToVectors() If you want to convert a raster to a vector, use an appropriate scale.
+- FeatureCollection ( 'USDOS/LSIB SIMPLE/2017' ); print ( table . first ()); // Do something to every element of a collection. var withMoreProperties = table . map ( function ( f ) { // Set a property. return f . set ( 'area sq meters' , f . area ()) }); print ( withMoreProperties . first ()); You can also filter() the collection based on computed or existing properties and print() the result.
 

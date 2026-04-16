@@ -1,30 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:45.622Z"
+generated_at: "2026-04-14T15:21:10.790Z"
 product_name: "Migrate to Containers"
 product_slug: "migrate-to-containers"
 feature_name: "JBoss data migration to PVC"
 feature_slug: "jboss-data-migration-to-pvc"
 latest_feature_date: "2023-03-28"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan"
+  - "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/jboss/jboss-customizing-a-migration-plan"
 keywords:
   - "jboss"
   - "migration"
-  - "to"
   - "pvc"
-  - "the"
+  - "feature"
   - "automatically"
   - "creates"
-  - "and"
+  - "mounts"
+  - "persistent"
 ---
 
 # JBoss data migration to PVC
 
 Product: Migrate to Containers
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +35,55 @@ The data migration feature automatically creates and mounts a Persistent Volume 
 
 The data migration feature automatically creates and mounts a Persistent Volume Claim for the JBOSS_HOME/standalone/data directory.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan)
+- [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/jboss/jboss-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/jboss/jboss-customizing-a-migration-plan)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Create a migration plan | Migrate to Containers | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan)
+- Source ID: `feature-recovery-http`
+- Final score: 143
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To retrieve this value, check the running JBoss server process: ps aux | grep jboss.home.dir To perform the analysis, run the following command: ./m2c analyze \ -s PATH_TO_COPIED_FILESYSTEM \ -p jboss-container \ -o ANALYSIS_OUTPUT_PATH \ -r jboss-home= PATH_TO_JBOSS_HOME Replace the following: PATH_TO_COPIED_FILESYSTEM : the path to copied file system directory ANALYSIS_OUTPUT_PATH : the path to the folder where you want the analysis output to be created PATH_TO_JBOSS_HOME : path to the JBoss installation After the analysis is complete, a new directory is created in the specified output path which contains the migration plan, config.yaml .
+- Create a migration plan for JBoss workloads For JBoss app components, creating a migration plan requires the JBOSS_HOME variable as an input.
+- Create a migration plan | Migrate to Containers | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Migrate to Containers Start free Overview Guides Reference Resources Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Product overview Benefits of migrating to containers Migration journey phases Process architecture Get started Review compatible OS, app components, and Kubernetes versions Quickstarts Discover, collect, and assess VMware VMs for migration Migrate a Linux VM using Migrate to Containers CLI Tutorials Batching guest discovery and data collection Collect guest data from EC2 VMs for offline assessment Assess workloads Planning best practices Offline assessment overview Migrate workloads Set up for migration Copy the source machine's file system Create a migration plan Customize your migration plan Customize migration plan for Linux VMs Customize migration plan for Tomcat servers Customize migration plan for WebSphere workloads Customize migration plan for WebSphere traditional workloads Customize migration plan for JBoss servers Customize migration plan for Apache servers Customize migration plan for WordPress sites Customize migration plan for Windows IIS services Execute the migration Review the migration artifacts Migrate data Clean up your local machine Manage usage statistics Build and deploy migrated workloads Deploy a Linux application container Deploy a Windows IIS application container Prepare a Windows cluster Build and deploy a Windows IIS application container Deploy a Linux system container Configure logging Mount external volumes Deploy to a cluster Complete post-migration image updates Monitor migrated workloads Optimize workload performance Upgrade container workloads for enhanced runtime Migrate to Autopilot clusters and Cloud Run New and enhanced runtime Migrate and deploy applications to GKE Autopilot clusters Deploy containers to Cloud Run Using services-config.yaml Troubleshoot Warnings Issues Issues with Migrate to Containers CLI Migrated workload fails on GKE 1.20 and later with Ubuntu nodes My workload does not start Execute shell commands on your container Troubleshoot Kubernetes resources Use a custom AppArmor profile MQ configurations are not extracted for Open Liberty targets Issues with Windows IIS services migration Can't find the fromImage migration plan field AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Migration Migrate to Containers Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- What's next Learn how to customize the migration plan for the following: Linux VMs Tomcat WebSphere Liberty WebSphere traditional JBoss Apache WordPress Windows IIS services Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Customize migration plan for WordPress sites \_|\_ Migrate to Containers\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/wordpress/wordpress-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/wordpress/wordpress-customizing-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 87
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Data migration plan structure The data migration plan for a WordPress workload has the following structure: volumes : - deploymentPvcName : wordpress - pvc folders : - / var / www / html / wp - content newPvc : spec : accessModes : - ReadWriteOnce resources : requests : storage : 10 G The uploaded content, plugins, and themes that reside in the wp-content folder in your WordPress VM are exported to a persistent volume claim (PVC).
+- If you want to change the Docker community image, or provide your own docker image, you can modify the fromImage tag in your migration plan using the following format: Parent WordPress image for the generated container image. fromImage : wordpress:6.1-php7.4-apache Specify the database connection configuration The databaseValues section contains the database connection configuration extracted from the VM.
+- 4 - apache WordPress root directory. rootDirectory : / var / www / html / Database connection values. databaseValues : - name : DB NAME value : database name here - name : DB USER value : username here - name : DB PASSWORD value : password here - name : DB HOST value : host here To add information as needed, review your migration plan details and guiding comments.
+- Edit the migration plan After you have copied the file system and analyzed it, you can find the migration plan in the new directory that is created in the specified output path: ANALYSIS OUTPUT PATH / config.yaml .
+
+### "Customize migration plan for JBoss servers \_|\_ Migrate to Containers \_\
+
+- URL: [https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/jboss/jboss-customizing-a-migration-plan](https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/jboss/jboss-customizing-a-migration-plan)
+- Source ID: `site-docs-reference`
+- Final score: 83
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If includeSensitiveData is set to true the sensitive data is mounted on the container. sensitiveData: includeSensitiveData: false sensitiveDataPaths: - /opt/jboss/wildfly/standalone/configuration/application-roles.properties - /opt/jboss/wildfly/standalone/configuration/application-users.properties - /opt/jboss/wildfly/standalone/configuration/application.keystore - /opt/jboss/wildfly/standalone/configuration/mgmt-groups.properties - /opt/jboss/wildfly/standalone/configuration/mgmt-users.properties To add information as needed, review your migration plan details and guiding comments.
+- If you want to change the Docker community image, or provide your own docker image, you can modify the fromImage tag in your migration plan using the following format: Parent Wildfly image for the generated container image. fromImage : docker.io/jboss/wildfly:10.1.0.Final The targetImageHome field specifies the path of the JBoss home directory in the target image, and is derived from the fromImage field.
+- Migration plan structure The migration plan for a JBoss workload has the following structure, which you can customize as described in the following sections.
+- Customize migration plan for JBoss servers You should review the migration plan file that resulted from creating a migration.
 

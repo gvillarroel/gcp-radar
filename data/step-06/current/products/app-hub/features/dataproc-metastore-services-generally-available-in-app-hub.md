@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:03:36.816Z"
+generated_at: "2026-04-15T00:05:19.021Z"
 product_name: "App Hub"
 product_slug: "app-hub"
 feature_name: "Dataproc Metastore services generally available in App Hub"
 feature_slug: "dataproc-metastore-services-generally-available-in-app-hub"
 latest_feature_date: "2025-07-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesFixedSizeCollection"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPage"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse"
+  - "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+  - "https://docs.cloud.google.com/app-hub/docs/register-resources"
+  - "https://docs.cloud.google.com/app-hub/docs/resources"
 keywords:
   - "metastore"
   - "dataproc"
   - "generally"
   - "available"
-  - "services"
-  - "app"
-  - "hub"
-  - "in"
+  - "resources"
 ---
 
 # Dataproc Metastore services generally available in App Hub
 
 Product: App Hub
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +35,52 @@ Dataproc Metastore services are now generally available as supported resources i
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesFixedSizeCollection)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPage)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse)
+- [https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources](https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources)
+- [https://docs.cloud.google.com/app-hub/docs/register-resources](https://docs.cloud.google.com/app-hub/docs/register-resources)
+- [https://docs.cloud.google.com/app-hub/docs/resources](https://docs.cloud.google.com/app-hub/docs/resources)
 
 ## Supporting Pages
 
-### "Class AppHubClient.ListDiscoveredServicesFixedSizeCollection (0.52.0) \_\
+### "Register existing resources to an application \_|\_ App Hub \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesFixedSizeCollection)
-- Source ID: `site-java-reference`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- ListDiscoveredServicesFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > AppHubClient.ListDiscoveredServicesFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<AppHubClient.ListDiscoveredServicesPage> pages, int collectionSize) protected AppHubClient .
-- ListDiscoveredServicesPage > pages , int collectionSize ) Parameters Name Description pages List < ListDiscoveredServicesPage > collectionSize int Returns Type Description AppHubClient.ListDiscoveredServicesFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Developer tools Java Client libraries Send feedback Class AppHubClient.ListDiscoveredServicesFixedSizeCollection (0.52.0) Stay organized with collections Save and categorize content based on your preferences.
-- ListDiscoveredServicesFixedSizeCollection extends AbstractFixedSizeCollection<ListDiscoveredServicesRequest , ListDiscoveredServicesResponse , DiscoveredService , AppHubClient .
-
-### "Class AppHubClient.ListDiscoveredServicesPage (0.52.0) \_|\_ Java client\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPage)
-- Source ID: `site-java-reference`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/app-hub/docs/register-resources](https://docs.cloud.google.com/app-hub/docs/register-resources)
+- Source ID: `site-docs-root-2`
+- Final score: 71
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- ListDiscoveredServicesPage > Inheritance java.lang.Object > AbstractPage > AppHubClient.ListDiscoveredServicesPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListDiscoveredServicesRequest,ListDiscoveredServicesResponse,DiscoveredService> context, ListDiscoveredServicesResponse response) protected AppHubClient .
-- ListDiscoveredServicesPage createPage ( PageContext<ListDiscoveredServicesRequest , ListDiscoveredServicesResponse , DiscoveredService > context , ListDiscoveredServicesResponse response ) Parameters Name Description context PageContext < ListDiscoveredServicesRequest , ListDiscoveredServicesResponse , DiscoveredService > response ListDiscoveredServicesResponse Returns Type Description AppHubClient.ListDiscoveredServicesPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListDiscoveredServicesRequest,ListDiscoveredServicesResponse,DiscoveredService> context, ApiFuture<ListDiscoveredServicesResponse> futureResponse) public ApiFuture<AppHubClient .
-- Home Documentation Developer tools Java Client libraries Send feedback Class AppHubClient.ListDiscoveredServicesPage (0.52.0) Stay organized with collections Save and categorize content based on your preferences.
-- ListDiscoveredServicesPage extends AbstractPage<ListDiscoveredServicesRequest , ListDiscoveredServicesResponse , DiscoveredService , AppHubClient .
+- The following example creates a regional application in us-central1 with defined criticality, environment, and owner attributes: resource "google apphub application" "example" { project = "my-project-id" location = "us-central1" application id = "my-application" display name = "My Application" description = "This application represents our platform." scope { type = "REGIONAL" } attributes { criticality { type = "MISSION CRITICAL" } environment { type = "PRODUCTION" } business owners { display name = "Alice" email = "alice@example.com" } developer owners { display name = "Bob" email = "bob@example.com" } operator owners { display name = "Charlie" email = "charlie@example.com" } } } Register services and workloads App Hub lets you select supported resources located within your application management boundary to register them as services and workloads.
+- List the registered services in your application: gcloud apphub applications services list \ --application = APPLICATION NAME --project = PROJECT ID \ --location = REGION You must obtain an output similar to the following for each registered service: ID DISPLAY NAME SERVICE REFERENCE CREATE TIME SERVICE NAME SERVICE DISPLAY NAME { 'uri' : '//compute.googleapis.com/projects/ PROJECT NUMBER /regions/ REGION /forwardingRules/forwarding-rule' } 2023 -11-01T21:38:08 Register workloads List the available workloads that you can register to an application: gcloud apphub discovered-workloads list \ --project = PROJECT ID \ --location = REGION \ --filter = FILTER EXPRESSION For required and optional flags, replace the following: Required: PROJECT ID : the ID of the management project.
+- List the registered workloads in your application: gcloud apphub applications workloads list \ --application = APPLICATION NAME --project = PROJECT ID \ --location = REGION You must obtain an output similar to the following for each registered workload: ID DISPLAY NAME WORKLOAD REFERENCE CREATE TIME WORKLOAD NAME WORKLOAD DISPLAY NAME { 'uri' : '//compute.googleapis.com/projects/ PROJECT NUMBER /regions/ REGION /instanceGroups/mig-name' } 2023 -11-01T21:38:08 Terraform To use Terraform to register Google Cloud resources within your application management boundary as services or workloads in an application, use the google apphub discovered service and google apphub discovered workload data sources to dynamically retrieve information about the resources you want to register.
+- Commands are slightly different for services and workloads: Register services List the available services that you can register to an application: gcloud apphub discovered-services list \ --project = PROJECT ID \ --location = REGION \ --filter = FILTER EXPRESSION For required and optional flags, replace the following: Required: PROJECT ID : the ID of the management project.
 
-### "Class AppHubClient.ListDiscoveredServicesPagedResponse (0.52.0) \_|\_ Java\
+### Manage services and workloads \_|\_ App Hub \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse](https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse)
-- Source ID: `site-java-reference`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources](https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources)
+- Source ID: `site-docs-root-2`
+- Final score: 71
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- ListDiscoveredServicesFixedSizeCollection > Inheritance java.lang.Object > AbstractPagedListResponse > AppHubClient.ListDiscoveredServicesPagedResponse Inherited Members AbstractPagedListResponse.expandToFixedSizeCollection(int) AbstractPagedListResponse.getNextPageToken() AbstractPagedListResponse.getPage() AbstractPagedListResponse.iterateAll() AbstractPagedListResponse.iterateFixedSizeCollections(int) AbstractPagedListResponse.iteratePages() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods createAsync(PageContext<ListDiscoveredServicesRequest,ListDiscoveredServicesResponse,DiscoveredService> context, ApiFuture<ListDiscoveredServicesResponse> futureResponse) public static ApiFuture<AppHubClient .
-- Home Documentation Developer tools Java Client libraries Send feedback Class AppHubClient.ListDiscoveredServicesPagedResponse (0.52.0) Stay organized with collections Save and categorize content based on your preferences.
-- ListDiscoveredServicesPagedResponse extends AbstractPagedListResponse<ListDiscoveredServicesRequest , ListDiscoveredServicesResponse , DiscoveredService , AppHubClient .
-- ListDiscoveredServicesPage , AppHubClient .
+- Alternatively, view a list of all services and workloads with a registration status value of discovered or registered : Discovered Discovered Google Cloud resources within your application management boundary are available to be registered as services or workloads in an application.
+- For a list of the supported metadata types and their schemas, see Extended metadata schemas . gcloud List all available extended metadata schemas in a project and location: gcloud alpha apphub extended-metadata-schemas list \ --project = PROJECT ID \ --location = LOCATION \ Replace the following: PROJECT ID : the ID of your management project.
+- Follow these steps to list discovered resources: List discovered services: gcloud apphub discovered-services list \ --project = PROJECT ID \ --location = LOCATION Replace the following: PROJECT ID : the ID of your management project.
+- If it is still within your application management boundary, it becomes a resource with a registration status value of discovered , available for registration to another application.
+
+### Resources \_|\_ App Hub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/app-hub/docs/resources](https://docs.cloud.google.com/app-hub/docs/resources)
+- Source ID: `site-docs-reference`
+- Final score: 66
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application development App Hub Resources Send feedback Resources Stay organized with collections Save and categorize content based on your preferences.
+- Quotas and limits Usage policies for your App Hub resources.
+- Locations Locations where App Hub is available.
 

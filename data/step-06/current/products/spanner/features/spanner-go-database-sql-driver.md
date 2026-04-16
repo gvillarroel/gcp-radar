@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.009Z"
+generated_at: "2026-04-13T22:42:27.297Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner Go database/sql driver"
@@ -9,18 +9,14 @@ latest_feature_date: "2022-09-15"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
-  - "https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions"
-  - "https://googleapis.dev/python/django-google-spanner/latest/changelog.html"
+  - "https://docs.cloud.google.com/spanner/docs/use-golang-database-sql"
+  - "https://docs.cloud.google.com/spanner/docs/drivers-overview"
+  - "https://docs.cloud.google.com/spanner/docs/jdbc-drivers"
 keywords:
-  - "spanner"
-  - "go"
-  - "database"
-  - "sql"
-  - "driver"
-  - "the"
   - "golang"
-  - "is"
+  - "driver"
+  - "generally"
+  - "database"
 ---
 
 # Spanner Go database/sql driver
@@ -38,47 +34,55 @@ The Spanner Golang database/sql driver is now generally available, enabling use 
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- [https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions](https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions)
-- [https://googleapis.dev/python/django-google-spanner/latest/changelog.html](https://googleapis.dev/python/django-google-spanner/latest/changelog.html)
+- [https://docs.cloud.google.com/spanner/docs/use-golang-database-sql](https://docs.cloud.google.com/spanner/docs/use-golang-database-sql)
+- [https://docs.cloud.google.com/spanner/docs/drivers-overview](https://docs.cloud.google.com/spanner/docs/drivers-overview)
+- [https://docs.cloud.google.com/spanner/docs/jdbc-drivers](https://docs.cloud.google.com/spanner/docs/jdbc-drivers)
 
 ## Supporting Pages
 
-### django_spanner.operations — google-cloud-spanner-django documentation
+### Use the Spanner database/sql driver \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- Source ID: `site-python-reference`
-- Final score: 214
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
-
-### Supported PostgreSQL functions | Spanner | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions](https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions)
+- URL: [https://docs.cloud.google.com/spanner/docs/use-golang-database-sql](https://docs.cloud.google.com/spanner/docs/use-golang-database-sql)
 - Source ID: `site-docs-reference`
-- Final score: 174
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 121
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Supported PostgreSQL functions Spanner Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/reference/postgresql/functions Documentation · Databases · Spanner · Reference · Send feedback · This page defines the functions supported for PostgreSQL-dialect databases in Spanner.
-- The content on this page is based on the PostgreSQL documentation, which is available under the PostgreSQL License.
+- Install the Spanner database/sql driver To use the Spanner database/sql driver in your application, add the following module to your go.mod file: github . com / googleapis / go - sql - spanner Use the Spanner database/sql driver To create a database/sql connection to a Spanner database, use spanner as the driver name and a fully qualified database name as the connection string: GoogleSQL import ( "context" "database/sql" "fmt" "github.com/googleapis/go-sql-spanner" ) func connect ( projectId , instanceId , databaseId string ) error { ctx := context .
+- Printf ( "Connected to %s\n" , dsn ) // The Spanner database/sql driver supports both PostgreSQL-style query // parameters ($1, $2, ...) and positional query parameters (?, ?, ...). // This example uses PostgreSQL-style parameters. row := db .
+- Performance tips To get the best possible performance when using the Spanner database/sql driver, follow these best practices: Query parameters: Use query parameters instead of inline values in SQL statements.
+- Home Documentation Databases Spanner Reference Send feedback Use the Spanner database/sql driver Stay organized with collections Save and categorize content based on your preferences.
 
-### Changelog — google-cloud-spanner-django documentation
+### Overview of drivers \_|\_ Spanner \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/changelog.html](https://googleapis.dev/python/django-google-spanner/latest/changelog.html)
-- Source ID: `site-python-reference`
-- Final score: 162
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- URL: [https://docs.cloud.google.com/spanner/docs/drivers-overview](https://docs.cloud.google.com/spanner/docs/drivers-overview)
+- Source ID: `site-docs-reference`
+- Final score: 95
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Changelog — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/changelog.html This change removes it from this repo and bumps the dependency on python-spanner to 2.0.0, the first released version to include DBAPI.
+- GoogleSQL drivers and ORMs Feature database/sql GORM Spanner JDBC Hibernate Spring Data R2DBC ADO.NET Entity Framework Active Record SQLAlchemy Django Language Go Go Java Java Java Java C# C# Ruby Python Python Statement hints † Mutations Batch DML Batch DDL Stale reads Interleaved tables Partitioned DML Session labeling Request priority JSON type Request tagging Google SQL dialect PostgreSQL dialect Limitations View View View View View View This column describes R2DBC when used specifically with Spring Data. † Available only when sending literal SQL queries, by using the Spring Data @Query annotation.
+- Home Documentation Databases Spanner Reference Send feedback Overview of drivers Stay organized with collections Save and categorize content based on your preferences.
+- This page describes the drivers that are supported for Spanner for GoogleSQL-dialect databases and PostgreSQL-dialect databases.
+- These drivers allow the use of Spanner databases through APIs defined by those frameworks.
+
+### JDBC drivers \_|\_ Spanner \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/spanner/docs/jdbc-drivers](https://docs.cloud.google.com/spanner/docs/jdbc-drivers)
+- Source ID: `site-docs-reference`
+- Final score: 93
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Home Documentation Databases Spanner Reference Send feedback JDBC drivers Stay organized with collections Save and categorize content based on your preferences.
+- This page describes the JDBC drivers that Spanner supports for GoogleSQL-dialect databases and PostgreSQL-dialect databases.
+- For information about the PostgreSQL JDBC driver, see Connect JDBC to a PostgreSQL-dialect database .
+- This driver only supports PostgreSQL-dialect databases.
 

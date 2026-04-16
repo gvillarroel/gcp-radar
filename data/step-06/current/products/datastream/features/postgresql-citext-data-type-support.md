@@ -1,14 +1,15 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:11:59.751Z"
+generated_at: "2026-04-12T12:14:04.324Z"
 product_name: "Datastream"
 product_slug: "datastream"
 feature_name: "PostgreSQL CITEXT data type support"
 feature_slug: "postgresql-citext-data-type-support"
 latest_feature_date: "2023-06-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/datastream/docs/configure-alloydb-psql"
   - "https://docs.cloud.google.com/datastream/docs/create-a-stream"
   - "https://docs.cloud.google.com/datastream/docs/faq"
   - "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics"
@@ -26,7 +27,7 @@ keywords:
 # PostgreSQL CITEXT data type support
 
 Product: Datastream
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +39,36 @@ Datastream supports the CITEXT data type for PostgreSQL sources.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/datastream/docs/configure-alloydb-psql](https://docs.cloud.google.com/datastream/docs/configure-alloydb-psql)
 - [https://docs.cloud.google.com/datastream/docs/create-a-stream](https://docs.cloud.google.com/datastream/docs/create-a-stream)
 - [https://docs.cloud.google.com/datastream/docs/faq](https://docs.cloud.google.com/datastream/docs/faq)
 - [https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics](https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics)
 
 ## Supporting Pages
 
+### "Configure an AlloyDB for PostgreSQL database for CDC \_|\_ Datastream \_\
+
+- URL: [https://docs.cloud.google.com/datastream/docs/configure-alloydb-psql](https://docs.cloud.google.com/datastream/docs/configure-alloydb-psql)
+- Source ID: `site-docs-root-2`
+- Final score: 222
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Note that this approach increases the load on both the source database and Datastream: CREATE PUBLICATION PUBLICATION NAME FOR ALL TABLES; For PostgreSQL 15 and later, you can create a publication for all tables in a schema.
+- Run the following script to create the TCP proxy and disable bridge networking to avoid connectivity issues: gcloud compute instances create-with-container \ --zone = REGION ID VM NAME \ --container-image gcr.io/dms-images/tcp-proxy \ --tags = dms-tcp-proxy \ --container-env = SOURCE CONFIG = ALLOYDB IP : ALLOYDB PORT \ --can-ip-forward \ --network = SOURCE AND DEST VPC \ --machine-type = VM TIER \ --metadata = startup-script = '#! /bin/bash mkdir -p /etc/docker cat <<EOF > /etc/docker/daemon.json {"bridge":"none"} EOF systemctl restart docker' Replace the following: REGION ID : The region in which you want to create the TCP proxy.
+- Create a Datastream user To create a Datastream user, enter the following PostgreSQL command: CREATE USER USER NAME WITH REPLICATION LOGIN PASSWORD ' USER PASSWORD '; Replace the following: USER NAME : The name of the Datastream user that you want to create.
+- Home Documentation Data analytics Datastream Guides Send feedback Configure an AlloyDB for PostgreSQL database for CDC Stay organized with collections Save and categorize content based on your preferences.
+
 ### Create a stream \_|\_ Datastream \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/datastream/docs/create-a-stream](https://docs.cloud.google.com/datastream/docs/create-a-stream)
 - Source ID: `site-docs-root`
-- Final score: 172
+- Final score: 216
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/faq](https://docs.cloud.google.com/datastream/docs/faq)
 - Source ID: `site-docs-root`
-- Final score: 172
+- Final score: 216
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +94,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics](https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics)
 - Source ID: `site-docs-root`
-- Final score: 170
+- Final score: 214
 - Re-rank relevance: N/A
 
 Evidence snippets:

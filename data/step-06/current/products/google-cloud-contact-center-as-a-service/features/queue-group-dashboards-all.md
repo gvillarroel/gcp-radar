@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.652Z"
+generated_at: "2026-04-15T13:50:47.039Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Queue Group Dashboards All"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-10-09"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses"
 keywords:
   - "queue"
   - "group"
   - "dashboards"
   - "all"
-  - "the"
   - "dashboard"
   - "now"
   - "uses"
+  - "separate"
 ---
 
 # Queue Group Dashboards All
@@ -42,48 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Real-time dashboards and monitoring pages \_|\_ Google Cloud Contact Center\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 174
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- Source ID: `site-docs-reference`
+- Final score: 208
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Fixed an issue where the Voice Inbound (Direct) and Voice Outbound (Direct) values were missing from the Interaction Type filter on the following dashboards: Real-time Calls - Calls Queued Real-time Queue Monitoring - Calls Fixed an issue where the Call Type field on the Agent Productivity Detailed - Calls table of the Agent Performance dashboard displayed Unknown instead of Voice Inbound (Direct) or Voice Outbound (Direct) .
-- Feature Advanced reporting dashboard updates We've made the following updates to the advanced reporting dashboards: Queue Group Dashboards All dashboard : The tiles and tables on this dashboard have been replaced with the following tables: Queue Group Performance Calls : displays detailed performance information for calls by queue group.
-- Feature Repeat contacts data added to advanced reporting dashboards Repeat contacts data is now available in the following advanced reporting dashboards: Real-time Queue Monitoring - Calls and Real-time Queue Monitoring - Chats : new Total Repeat Contacts tile.
-- In the Real-time Calls , Real-time Chats , Queue Group Performance , and Email dashboards, the naming of fields such as "assigned at", "created at", and "ended at" was improved in the Explores to make them clearer.
+- Because outbound calls are not associated with a queue, they are not included on this dashboard Queue selection must be completed to show in the dashboard In-menu abandons are not represented in Dashboards currently Views From the top-left of the Queue Groups Dashboard page, you can toggle between two different views.
+- Note: If your company has requested a time zone override for all its users, then the requested time zone will be displayed instead Metric definitions Service Level SL / 30min Service Level within the past 30min SL / day Service Level for the current day SL Target Service Level Target set for the queue Live CIQ Consumers in Queue LCW / Sec Longest Call Waiting AQD / Sec Average Queue Duration (Waiting for an Agent) Live Number of calls currently in progress with an agent Productive Agents Number of agents with a productive status Live Agent Status Available Count of all available agents On-hold (Calls only)Count of agents who have placed a consumer on-hold Wrap-up Count of all agents in the wrap-up status Custom Count of all agents in custom statuses that are configured as productive Productive Agents Count of all agents in a productive status as configured in Settings > Queue Groups Today ABN % Abandon rate Volume Total offered interactions including failed/abandoned sessions.
+- See Virtual Agent Platform statuses in Virtual Agent configuration Inactive: Virtual Agent is turned off Explorable metrics in real-time call and chat dashboards Overview Drill-down on explorable metrics in the Call and Chat Real time Dashboards to obtain additional insight into performance and details about the metric.
+- The queue group is selected from the dropdown in the upper-right view shows each queue as a separate line item and the individual metrics for each queue in the enabled queue groups.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Queue and menu setup \_|\_ Google Cloud Contact Center as a Service \_|\_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 102
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- Source ID: `site-docs-reference`
+- Final score: 172
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Instant web calls: Provide visitors with an estimated wait time and automatically initiate an outbound call to a site visitor when their place in the support queue is reached Scheduled calls: Allow site visitors to schedule a time to talk with your support team Queue deflection: Automatically route end users to a message or page on your site Chat support: Provide live chat support directly from your website Proactive triggers : Display a contact bubble for web calls and chats automatically based on visitor behavior.
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
-- Ideally, agents will be using the same laptops that they used in the office which retain control over allow-listing or deny listing and applications the device uses such as AdBlock, mic permissions, etc.
-- Assigning Agents to queues so they can receive calls/chats.
+- Priority order = Sub-queue Target > Top-level Queue Target > Global Target Examples: Targets Set Resulting Targets Global Target = 70% , Top-level Queue 1 = None , Queue 1a = None, Queue 1b = None, Queue 2a = None, Queue 2b = None, Top-level Queue 2 = None Global Target = 70% , Top-level Queue 1 = 70% (inherited from global) , Queue 1a = 70% (inherited from global), Queue 1b = 70% (inherited from global), Queue 2a = 70% (inherited from global), Queue 2b = 70% (inherited from global), Top-level Queue 2 = 70% (inherited from global) Global Target = 70% , Top-level Queue 1 = 65% , Queue 1a = None, Queue 1b = 75%, Queue 2a = 65%, Queue 2b = None, Top-level Queue 2 = None Global Target = 70% , Top-level Queue 1 = 65% , Queue 1a = 65% (inherited from Top-level), Queue 1b = 75%, Queue 2a = 65%, Queue 2b = 70% (inherited from global), Top-level Queue 2 = None Global Target = None , Top-level Queue 1 = 65% , Queue 1a = None, Queue 1b = None, Queue 2a = 60%, Queue 2b = 40%, Top-level Queue 2 = None Global Target = None , Top-level Queue 1 = 65% , Queue 1a = 65% (inherited from Top-level), Queue 1b = 65% (inherited from Top-level), Top-level Queue 2 = None , Queue 2a = 60%, Queue 2b = 40% Utilize set targets Call and chat dashboards When viewing the default view of the Call or Chat dashboard, the target displayed will be the globally configured target metric When viewing multiple queues (or a queue group), no target will be displayed Queue reports dashboard Available for interaction-based data model enabled environments The SL Target and Concurrency Target column will display each queue's target If a queue group consists of multiple queues with varying targets, then no value will be displayed in the Totals row Performance metrics dashboard Available for interaction-based data model enabled environments The SL Target column will display each queue's service level target.
+- Details and tips Due to the number of digits on a keypad, there's a 9 top-level queue menu limit If you need to more than 9 queues, nest more queues within a top-level queue All numbers assigned to your environment will default to the top of the queue unless otherwise assigned as Direct Access points (DAPs) If you are using multiple languages, numbers will default to the language selection message, then when the language is selected, will route to the top of the menu structure for the selected language If you want to hide a queue from a caller who dials into a number that goes to the top of the queue, toggle the Hide Selection From Menu option to Hide in the menu settings For internal transfers to teams or groups not available to callers, create one queue, hide the option from callers, and create all the necessary sub-queues for agents to pick from for transfers Once your queues are set up, you can see the numbers that the caller needs to select.
+- Queue menus can be set to route to a specific group of agents, deflect to messages, other queues, phone numbers, or voicemail, and many features can be applied at the queue level for specific customization.
+- PSTN fallback to IVR set up in the CCAI Platform portal uses a queue search that offers IVR menus.
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Reason Codes & Statuses \_|\_ Google Cloud Contact Center as a Service \_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 54
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses)
+- Source ID: `site-docs-reference`
+- Final score: 144
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Customer Experience Insights : Uses natural language processing to help contact center managers by identifying call drivers, sentiment, popular questions, and other information about customer interactions.
-- It uses the contact center AI building blocks to allow a seamless transition to human agents.
-- Contact Center AI Platform (CCAI Platform) is an AI-driven Contact Center as a Service platform that is built natively on Google Cloud and uses the other Gemini Enterprise for Customer Experience products at its core.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
+- Functions Call Record Function: //checkCallRecord is designed to validate if a call record is the proper status, did not fail a certain way, and in some cases whether connected is null; Total Volume of Calls Function: getTotalVolumeOfCalls is designed to return a total volume of calls; e.g.: Service Level Function: getServiceLevel is designed to return the Service Level of a call type; e.g.: Calculation Scripts Total Volume // TOTAL VOLUME SECTION for ( var i = 0 ; i \<c all type.length ; i++ ){ var vol = getTotalVolumeOfCalls ( callsArray,call type \[ i \] ) ; if ( vol \> 0 ){ var volPerHour = Math.round ( vol/total hours \ 10 ) /10 var stringToPrint = \" the per hour volume of \" +call type \[ i \] + \" is \" + volPerHour.toString () console.log ( stringToPrint ) ; } ; } SLA // SLA SECTION for ( var i = 0 ; i \<c all type.length ; i++ ){ var SLACalc = ( getServiceLevel ( callsArray,call type \[ i \] ) /getTotalVolumeOfCalls ( callsArray,call type \[ i \] ,false, \[ 'eu in menu abandoned' \] )) ; if ( isNaN ( SLACalc ) == false ){ var stringToPrint = \" the SLA of \" +call type \[ i \] + \" is \" + SLACalc.toString () ; console.log ( stringToPrint ) ; } else { var stringToPrint = \" the SLA of \" +call type \[ i \] + \" cannot be calculated due to lack of volume \" ; console.log ( stringToPrint ) ; } } ; Chat Status Definitions Common Chat Statuses Chat Finished Statuses Chat Failed Reasons Common Chat Statuses Chat Statuses Description Queued Chat is in queue and is waiting for an Agent Assigned Chat is assigned to an agent Ongoing Chat is active with an Agent and End User Finished Chat finished successfully ( finished reasons listed below) Abandoned Chat canceled by the end user before assigned to an agent Deflected Chat was cancelled and deflected to Over Capacity Email Failed Chat failed ( failure reasons listed below ) Chat Finished Statuses Finished Chat Statuses Description Finished Chat finished successfully with no additional information Finished: Disconnected By Agent Chat was finished, agent disconnected Finished: Disconnected By End User Chat was finished, disconnected by end user Finished: No Messages Chat was finished, there was no response Finished: No Messages Disconnected By Agent Chat was finished, there was no response and the Agent disconnected Finished: No Messages Disconnected By End User Chat was finished, there was no response and the End User disconnected Timeout: Timeout By Agent With No Messages Chat was Timed Out: agent picked up and did not respond Timeout: Timeout By End User With No Messages Chat was Timed Out: agent picked up and end user did not respond Timeout: agent stopped responding Chat was Timed Out: agent picked up and stopped responding Timeout: end user stopped responding Chat was Timed Out: agent picked up and end user stopped responding Chat Failed Reasons Failed Reason Definition Failed Chat session Failed for an Unknown reason Expired Chat expired within a queue and was not picked up by an Agent Call status definitions The following call statuses can appear in the call performance history report.
+- Possible reasons include the agent closing their browser or a network error. ag ignored: 30002 Agent Ignored The sum of calls that were not picked up by the agent. ag mic no device: 31001 Agent No Mic The sum of calls that failed due to the agent not having a microphone. ag mic denied: 31002 Agent Mic Denied The sum of calls that failed due to the agent not having microphone access enabled. voip twilio error: 41001 VOIP Error The sum of calls that failed due to a voice provider issue. voip tokbox error: 42001 voip nexmo error: 45001 voip invalid token: 43001 VOIP Invalid Token The sum of calls that failed due to the voice provider providing an invalid token. voip conn general: 44001 VOIP General The sum of calls that failed due to a general voice provider issue. voip conn timeout: 44002 VOIP Timeout The sum of calls that failed due to the voice provider connection timing out. voip conn signal: 44003 VOIP Signal The sum of calls that failed due to a poor connection to the voice provider. stuck due to api error: 50001 Stuck due to API The sum of calls that failed due to an API issue. group deleted no substitute: 50002 Group Deleted - Call The sum of calls that failed due to a cascade group being deleted without any alternative available. menu deleted: 50003 Menu Deleted The sum of calls that failed due to the queue being deleted after the end-user had already entered the queue. direct pstn call to fallback number: 60001 Directed to Fallback The sum of calls that were directed to a fallback number.
+- Chat Fail Reasons Code Metric Name Description nothing: 0 No Error - Chat The sum of chats that did not fail. unknown: 1 Unknown - Chat The sum of chats that failed for unknown reasons. no response: 2 No Response The sum of chats that ended due to the end-user not responding. expired: 3 Expired - Chat The sum of chats that failed due to the connection timing out. after hours: 4 After Hours The sum of chats that reached a queue outside of operating hours. expired menu selection: 31 Expired Menu The sum of chats where end-users selected a queue that no longer existed. end user opt out: 41 Opted Out The sum of chats where end-users opted not to be recorded. over cap email: 50001 Overcapacity Email The sum of chats where end-users sent an email due to the queue being in an overcapacity state. group deleted no substitute: 60001 Group Deleted - Chat The sum of chats that failed due to a cascade group being deleted without any alternative available.
+- On the Dashboards for Calls and Chats completed.
 

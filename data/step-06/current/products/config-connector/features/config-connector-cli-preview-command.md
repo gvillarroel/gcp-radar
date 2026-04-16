@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.131Z"
+generated_at: "2026-04-13T14:23:05.009Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "config-connector CLI preview command"
@@ -9,18 +9,13 @@ latest_feature_date: "2026-02-22"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
   - "https://docs.cloud.google.com/config-connector/docs/how-to/getting-started"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamcustomrole"
+  - "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview"
+  - "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
 keywords:
-  - "config"
-  - "connector"
-  - "cli"
   - "preview"
   - "command"
   - "added"
-  - "to"
-  - "the"
 ---
 
 # config-connector CLI preview command
@@ -42,46 +37,44 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
 - [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamcustomrole](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamcustomrole)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview)
+- [https://docs.cloud.google.com/config-connector/docs/troubleshooting](https://docs.cloud.google.com/config-connector/docs/troubleshooting)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### Getting started with Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 182
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
+- Source ID: `site-docs-reference`
+- Final score: 56
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, to check if your Pub/Sub topic resource is ready, run the following command: kubectl wait --for=condition=READY pubsubtopics TOPIC NAME Replace TOPIC NAME with the name of your Pub/Sub topic.
+- For example, to view all your Pub/Sub topic, run the following command: kubectl describe pubsubtopics In this list, you should see the Pub/Sub topic you created in the previous section.
+- Run the following command: kubectl apply -f pubsub-topic.yaml Check the Pub/Sub instance for the change in name: kubectl describe pubsubtopics Your topic should have the new label.
+- To create the Pub/Sub topic, run the following command: kubectl apply -f pubsub-topic.yaml Describing a resource Use kubectl describe to get details on a resource.
+
+### "Install the config-connector CLI tool \_|\_ Config Connector \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview](https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview)
+- Source ID: `site-docs-reference`
+- Final score: 44
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Troubleshoot Config Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/troubleshooting](https://docs.cloud.google.com/config-connector/docs/troubleshooting)
+- Source ID: `site-docs-reference`
+- Final score: 44
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
-
-### Getting started with Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
-- Source ID: `site-docs-root`
-- Final score: 172
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- By default, Config Connector deletes the PubSubTopic resource.
-- Getting started with Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/getting-started PROJECT ID: your Google Cloud project ID.
-- For example, to delete the PubSubTopic you created earlier, run kubectl delete with your pubsub-topic.yaml file: ...
-- NEW LABEL VALUE: an updated value for the label you added previously.
-
-### IAMCustomRole | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamcustomrole](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamcustomrole)
-- Source ID: `site-iam-reference`
-- Final score: 162
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- IAMCustomRole Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamcustomrole apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicyMember metadata: name: iampolicymember-sample-projectrole spec: member: serviceAccount:iamcustomrole-dep-project@${PROJECT ID?}.iam.gserviceaccount.com role: projects/${PROJECT ID?}/roles/iamcustomrolesampleproject resourceRef: kind: PubSubTopic name: iamcustomrole-dep-project --- # Replace ${PROJECT ID?} below with your desired project ID. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMServiceAccount metadata: annotations: cnrm.cloud.google.com/project-id: ${PROJECT ID?} name: iamcustomrole-dep-project --- apiVersion: pubsub.cnrm.cloud.google.com/v1beta1 kind: PubSubTopic metadata: name: iamcustomrole-dep-project · Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector.
+- Check Config Connector status and conditions Check the version of Config Connector Run the following command to get the installed Config Connector version, and cross-reference the release notes to verify that the running version supports the features and resources that you want to use: kubectl get ns cnrm-system -o jsonpath = '{.metadata.annotations.cnrm\.cloud\.google\.com/version}' Check the resource's status and events Usually, you can determine the issue with your Config Connector resources by inspecting the state of your resources in Kubernetes .
+- To confirm that Workload Identity Federation for GKE is not enabled, complete the following steps: Save the following Pod configuration as wi-test.yaml : apiVersion : v1 kind : Pod metadata : name : workload-identity-test namespace : cnrm-system spec : containers : - image : google/cloud-sdk:slim name : workload-identity-test command : [ "sleep" , "infinity" ] serviceAccountName : cnrm-controller-manager If you installed Config Connector using namespaced mode , serviceAccountName should be cnrm-controller-manager- NAMESPACE .
+- You can check the controller Pod's logs by running: kubectl logs -n cnrm-system \ -l cnrm.cloud.google.com/component = cnrm-controller-manager \ -c manager If you have Config Connector installed in namespaced-mode , then the previous command shows the logs of all controller Pods combined.
+- To verify if a service supports on-demand service identity creation before applying your configuration, run the following command: gcloud beta services identity create --service SERVICE NAME .googleapis.com Replace SERVICE NAME with the name of the service, for example spanner .
 

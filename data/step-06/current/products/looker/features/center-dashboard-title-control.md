@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.573Z"
+generated_at: "2026-04-15T13:43:38.551Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Center Dashboard Title control"
@@ -9,18 +9,18 @@ latest_feature_date: "2023-02-10"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
   - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
 keywords:
   - "center"
   - "dashboard"
   - "title"
   - "control"
-  - "new"
   - "admin"
   - "themes"
   - "lets"
+  - "admins"
 ---
 
 # Center Dashboard Title control
@@ -42,40 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-labs](https://docs.cloud.google.com/looker/docs/admin-panel-general-labs)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features](https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features)
 - [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
 
 ## Supporting Pages
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### Admin settings - Preview Features \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 50
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-labs](https://docs.cloud.google.com/looker/docs/admin-panel-general-labs)
+- Source ID: `site-docs-reference`
+- Final score: 162
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
+- This feature allows admins to set limits on tiles per dashboard and per tab to optimize performance, which is configured on the Content Guardrails page in the Performance Center section of the Admin panel.
+- The Enhanced Content Cleanup preview feature provides the following capabilities: Lets admins and users access a new Unused content folder to quickly identify and manage the unused content on a Looker instance.
+- When enabled,the Increased Row Limit preview feature lets admins set row limits up to 50,000 rows or datapoints for map charts , scatterplot charts , and table charts .
+- When enabled, the Enhanced Content Cleanup preview feature lets admins and content owners access an enhanced content management experience in Looker.
 
-### Looker (Google Cloud core) access control with IAM | Google Cloud Documentation
+### Admin settings - Preview Features \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- Source ID: `site-iam-reference`
-- Final score: 43
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features](https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features)
+- Source ID: `site-docs-reference`
+- Final score: 162
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) access control with IAM Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-access-control Looker (Google Cloud core) uses Identity and Access Management (IAM) to provision user and admin access through a set of IAM roles.
+- This feature allows admins to set limits on tiles per dashboard and per tab to optimize performance, which is configured on the Content Guardrails page in the Performance Center section of the Admin panel.
+- The Enhanced Content Cleanup preview feature provides the following capabilities: Lets admins and users access a new Unused content folder to quickly identify and manage the unused content on a Looker instance.
+- When enabled,the Increased Row Limit preview feature lets admins set row limits up to 50,000 rows or datapoints for map charts , scatterplot charts , and table charts .
+- When enabled, the Enhanced Content Cleanup preview feature lets admins and content owners access an enhanced content management experience in Looker.
 
-### Access control and permission management | Looker | Google Cloud Documentation
+### "Access control and permission management \_|\_ Looker \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 38
+- Source ID: `site-docs-reference-required-4`
+- Final score: 159
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
+- Looker admins can manage what a user or group of users can see and do in Looker by specifying the following access: Content Access , which controls whether a user or group of users can view a folder or manage the folder .
+- Feature Access , which controls the types of actions a user is allowed to do in Looker, including viewing data and saved content, changing the LookML models, administrating Looker and so forth.
+- Content access is managed by Looker admins in the Admin panel or, if allowed, by individual users from within the folder.
+- Looker admins can also adjust folder access levels for all groups and users from the Content Access page of Looker.
 

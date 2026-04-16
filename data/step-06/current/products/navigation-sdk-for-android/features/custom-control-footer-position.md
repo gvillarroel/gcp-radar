@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:47.014Z"
+generated_at: "2026-04-12T12:18:00.682Z"
 product_name: "Navigation SDK for Android"
 product_slug: "navigation-sdk-for-android"
 feature_name: "Custom control footer position"
 feature_slug: "custom-control-footer-position"
 latest_feature_date: "2025-01-21"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/controls"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/camera"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions"
+  - "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap"
 keywords:
   - "custom"
   - "control"
@@ -24,7 +27,7 @@ keywords:
 # Custom control footer position
 
 Product: Navigation SDK for Android
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ The setCustomControl method now supports placing a custom control in the footer 
 
 The setCustomControl method now supports placing a custom control in the footer position; The setCustomControl method now supports placing a custom control in the footer position.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/controls](https://developers.google.com/maps/documentation/navigation/android-sdk/controls)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/camera](https://developers.google.com/maps/documentation/navigation/android-sdk/camera)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions](https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions)
+- [https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap](https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Modify the navigation UI \_|\_ Navigation SDK for Android \_|\_ Google for\
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/controls](https://developers.google.com/maps/documentation/navigation/android-sdk/controls)
+- Source ID: `site-docs-root`
+- Final score: 192
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The setCustomControl method provides positions as defined in the CustomControlPosition enum : SECONDARY HEADER (appears in portrait mode only) BOTTOM START BELOW BOTTOM END BELOW FOOTER Custom control positions for portrait orientation Custom control positions for landscape orientation Add a custom control Create an Android View with the custom UI element or ViewGroup.
+- Footer Preview feature Footer custom control position for portrait orientation Footer custom control position for landscape orientation To use this custom control position, pass the position CustomControlPosition.FOOTER to setCustomControl .
+- SECONDARY HEADER ); ``` Remove a custom control To remove a custom control, call the setCustomControl method with a null view parameter and the chosen custom control position.
+- Bottom start Bottom start custom control position for portrait orientation Bottom start custom control position for landscape orientation To use this custom control position, pass the position CustomControlPosition.BOTTOM START BELOW to setCustomControl .
+
+### Adjust the camera \_|\_ Navigation SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/camera](https://developers.google.com/maps/documentation/navigation/android-sdk/camera)
+- Source ID: `site-docs-root`
+- Final score: 117
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Page Summary outlined flag The Navigation SDK offers three camera modes: followMyLocation , Pinned to location , and showRouteOverview to control the user's viewpoint of the map during navigation. followMyLocation mode centers the map on the user's location and automatically adjusts during navigation, while Pinned to location mode fixes the camera at a specific location with customizable properties. showRouteOverview mode displays the entire route or remaining route, adjusting the view to fit the route on the screen.
+- The following code snippet demonstrates some of the common ways to move the camera. private static final LatLng SYDNEY = new LatLng ( - 33.88 , 151.21 ); private static final LatLng MOUNTAIN VIEW = new LatLng ( 37.4 , - 122.1 ); private GoogleMap map ; ... // Obtain the map from a SupportNavigationFragment or NavigationView. // Move the camera instantly to Sydney with a zoom of 15. map . moveCamera ( CameraUpdateFactory . newLatLngZoom ( SYDNEY , 15 )); // Zoom in, animating the camera. map . animateCamera ( CameraUpdateFactory . zoomIn ()); // Zoom out to zoom level 10, animating with a duration of 2 seconds. map . animateCamera ( CameraUpdateFactory . zoomTo ( 10 ), 2000 , null ); // Construct a CameraPosition focusing on Mountain View and animate the camera to that position.
+- Builder () . target ( MOUNTAIN VIEW ) // Sets the center of the map to Mountain View . zoom ( 17 ) // Sets the zoom . bearing ( 90 ) // Sets the orientation of the camera to east . tilt ( 30 ) // Sets the tilt of the camera to 30 degrees . build (); // Creates a CameraPosition from the builder map . animateCamera ( CameraUpdateFactory . newCameraPosition ( cameraPosition )); Show route overview mode The showRouteOverview camera setting displays the entire journey.
+- For multiple-destination journeys, this mode displays the untraveled portion of the route. // Place the camera to see the remaining route: mNavFragment . showRouteOverview (); Next step See Customize the Navigation UI to learn how to customize the way in which users interact with your map by determining which of the built-in UI components appear on the map.
+
+### Navigation SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions](https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions)
+- Source ID: `site-docs-root`
+- Final score: 114
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If you need to move the reporting button to make space for custom UI elements, add a BOTTOM END BELOW or FOOTER custom control, which will push the position of the button up on the screen.
+- Note: The FOOTER custom control only affects the position of the reporting button in portrait orientation.
+- You can receive callbacks for real-time disruption elements, including info cards, prompts, and the disruption reporting menu—as well as for other notifications generated by the Navigation SDK. // Sample listener val listener : PromptVisibilityChangedListener = { isVisible - > if ( isVisible ) { customFab . visibility = false customFooter . visibility = false moveSomeOtherThingsAround () } else { customFab . visibility = true customFooter . visibility = true moveSomeThingsBackToWhereTheyWereBefore () } } // Inside onCreate() navigationView . addPromptVisibilityChangedListener ( listener ) // Inside onDestroy() navigationView . removePromptVisibilityChangedListener ( listener ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Placing your own custom UIs within the custom controls also ensures that any prompts displayed by the Navigation SDK are properly layered over your custom UI elements while displayed.
+
+### GoogleMap \_|\_ Navigation SDK for Android \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap](https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap)
+- Source ID: `site-docs-reference`
+- Final score: 105
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- UiSettings getUiSettings () Gets the user interface settings for the map. boolean isBuildingsEnabled () Returns whether 3D buildings layer is enabled. boolean isCameraFollowingMyLocation () Returns whether the camera is following current location or not. boolean isIndoorEnabled () Gets whether indoor maps are currently enabled. boolean isMyLocationEnabled () Gets the status of the my-location layer. boolean isTrafficEnabled () Checks whether the map is drawing traffic data. boolean isTransitEnabled () Checks whether the map is drawing transit data. void moveCamera ( CameraUpdate update) Repositions the camera according to the instructions defined in the update. void removeOnMapCapabilitiesChangedListener ( GoogleMap.OnMapCapabilitiesChangedListener listener) Removes a listener that's invoked when the map capabilities are changed. void resetMinMaxZoomPreference () Removes any previously specified upper and lower zoom bounds. void setBuildingsEnabled (boolean enabled) Turns the 3D buildings layer on or off. void setContentDescription (String description) Sets a contentDescription for the map. boolean setIndoorEnabled (boolean enabled) Sets whether indoor maps should be enabled. void setInfoWindowAdapter ( GoogleMap.InfoWindowAdapter adapter) Sets a custom renderer for the contents of info windows. void setLatLngBoundsForCameraTarget ( LatLngBounds bounds) Specifies a LatLngBounds to constrain the camera target, so that when users scroll and pan the map, the camera target does not move outside these bounds. void setLocationSource ( LocationSource source) Replaces the location source of the my-location layer. void setMapColorScheme (int mapColorScheme) Sets the map rendering color scheme to light, dark, or follow system settings after initialization. boolean setMapStyle ( MapStyleOptions style) Sets the styling of the base map. void setMapType (int type) Sets the type of map tiles that should be displayed. void setMaxZoomPreference (float maxZoomPreference) Sets a preferred upper bound for the camera zoom. void setMinZoomPreference (float minZoomPreference) Sets a preferred lower bound for the camera zoom. void setMyLocationEnabled (boolean enabled) Enables or disables the my-location layer. void setOnCameraChangeListener ( GoogleMap.OnCameraChangeListener listener) This method is deprecated.
+- The order in which the deprecated onCameraChange method will be called in relation to the methods in the new camera change listeners is undefined. interface GoogleMap.OnCameraFollowLocationCallback Callback interface to get updates related to camera entering or exiting follow mode. interface GoogleMap.OnCameraIdleListener Callback interface for when camera movement has ended. interface GoogleMap.OnCameraMoveCanceledListener Callback interface for when the camera's motion has been stopped or when the camera starts moving for a new reason. interface GoogleMap.OnCameraMoveListener Callback interface for when the camera changes position. interface GoogleMap.OnCameraMoveStartedListener Callback interface for when the camera motion starts. interface GoogleMap.OnCircleClickListener Callback interface for when a circle is clicked. interface GoogleMap.OnGroundOverlayClickListener Callback interface for when a ground overlay is clicked. interface GoogleMap.OnIndoorStateChangeListener A listener for when the indoor state changes. interface GoogleMap.OnInfoWindowClickListener Callback interface for click/tap events on a marker's info window. interface GoogleMap.OnInfoWindowCloseListener Callback interface for close events on a marker's info window. interface GoogleMap.OnInfoWindowLongClickListener Callback interface for when the user long presses on a marker's info window. interface GoogleMap.OnMapCapabilitiesChangedListener Listener interface for when the map capabilities are changed. interface GoogleMap.OnMapClickListener Callback interface for when the user taps on the map. interface GoogleMap.OnMapLoadedCallback Callback interface for when the map has finished rendering. interface GoogleMap.OnMapLongClickListener Callback interface for when the user long presses on the map. interface GoogleMap.OnMarkerClickListener Defines signatures for methods that are called when a marker is clicked or tapped. interface GoogleMap.OnMarkerDragListener Callback interface for drag events on markers. interface GoogleMap.OnMyLocationButtonClickListener Callback interface for when the My Location button is clicked. interface GoogleMap.OnMyLocationChangeListener This interface is deprecated. use RoadSnappedLocationProvider or com.google.android.gms.location.FusedLocationProviderApi instead, depending on your needs.
+- If the map gets re-created (e.g., due to a configuration change), you must ensure that you call this method again in order to preserve the customization.
+- When the method is called, the camera stops moving immediately and remains in that position.
 

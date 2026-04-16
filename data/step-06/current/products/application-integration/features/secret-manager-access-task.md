@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.490Z"
+generated_at: "2026-04-14T07:40:14.492Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Secret Manager - Access task"
 feature_slug: "secret-manager-access-task"
 latest_feature_date: "2023-04-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
   - "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task"
-  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing"
+  - "https://docs.cloud.google.com/application-integration/docs/api-fulfilment"
+  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
 keywords:
+  - "retrieve"
   - "manager"
   - "secret"
+  - "versions"
   - "access"
   - "enables"
   - "integrations"
   - "task"
-  - "the"
-  - "to"
 ---
 
 # Secret Manager - Access task
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +38,23 @@ The Secret Manager - Access task enables integrations to retrieve secret version
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
 - [https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task](https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task)
-- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing)
+- [https://docs.cloud.google.com/application-integration/docs/api-fulfilment](https://docs.cloud.google.com/application-integration/docs/api-fulfilment)
+- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
 
 ## Supporting Pages
-
-### "Automate Salesforce opportunity to BigQuery order \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
-- Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Grant the following roles to the service account: BigQuery Data Editor ( roles/bigquery.dataEditor ), BigQuery Read Session User ( roles/bigquery.readSessionUser ), Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .
-- Grant the following roles to the service account: BigQuery Data Editor ( roles/bigquery.dataEditor ), BigQuery Read Session User ( roles/bigquery.readSessionUser ), Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .
-- Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors BigQuery Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier .
-- Note: All the other required Google Cloud APIs such as, the Application Integration API , the Secret manager API , and the Connectors API are enabled during the Application Integration setup.
 
 ### "Insert data into BigQuery using a For Each Parallel task \_|\_ Application\
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task](https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task)
 - Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
+- Final score: 160
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Do the following in your Google Cloud project: Grant the following roles to the service account that you want to use to create the connection: roles/bigquery.dataEditor roles/bigquery.readSessionUser roles/secretmanager.viewer roles/secretmanager.secretAccessor Enable the following services: secretmanager.googleapis.com (Secret Manager API) connectors.googleapis.com (Connectors API) If these services have not been enabled for your project previously, you are prompted to enable them when creating the connection in the Create Connection page.
@@ -75,16 +62,31 @@ Evidence snippets:
 - In this tutorial, you'll complete the following tasks: Set up a BigQuery connection Set up a sub-integration Set up the main integration Test your integration Before you begin Ensure that you have access to Application Integration.
 - Add a For Each Parallel task To add a For Each Parallel task in the integration, complete the following steps: Select +Add a task/trigger > Tasks in the integration editor to display the list of available tasks.
 
-### "Automate Salesforce case routing assignments \_|\_ Application Integration\
+### "API request fulfilment \_|\_ Application Integration \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing)
+- URL: [https://docs.cloud.google.com/application-integration/docs/api-fulfilment](https://docs.cloud.google.com/application-integration/docs/api-fulfilment)
 - Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: N/A
+- Final score: 154
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Grant the following roles to the service account: Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .
 - Grant the following roles to the service account: Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .
 - Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier .
-- Note: All the other required Google Cloud APIs such as, the Application Integration API , the Secret manager API , and the Connectors API are enabled during the Application Integration setup.
+- Connect to the Oracle database Perform the following steps to add and configure a Connectors task to retrieve the customers details from the Oracle Customers table: In the integration editor, click Tasks to display a list of available tasks.
+
+### "Automate Salesforce opportunity to BigQuery order \_|\_ Application Integration\
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
+- Source ID: `site-docs-root`
+- Final score: 148
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Grant the following roles to the service account: BigQuery Data Editor ( roles/bigquery.dataEditor ), BigQuery Read Session User ( roles/bigquery.readSessionUser ), Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .
+- Grant the following roles to the service account: BigQuery Data Editor ( roles/bigquery.dataEditor ), BigQuery Read Session User ( roles/bigquery.readSessionUser ), Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .
+- Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors BigQuery Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier .
+- Connect to the Salesforce account Perform the following steps to add and configure a Connectors task to retrieve the opportunity details using the Salesforce connection: In the integration editor, click Tasks to display a list of available tasks.
 

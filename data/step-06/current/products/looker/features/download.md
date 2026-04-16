@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.472Z"
+generated_at: "2026-04-15T13:43:38.485Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "download"
@@ -9,18 +9,17 @@ latest_feature_date: "2025-03-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/new-explore-experience-overview"
-  - "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/looker"
+  - "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+  - "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
 keywords:
   - "download"
-  - "the"
   - "looker"
   - "connector"
   - "supports"
   - "export"
-  - "and"
   - "scheduling"
+  - "permissions"
 ---
 
 # download
@@ -42,42 +41,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
+- [https://docs.cloud.google.com/bigquery/docs/exporting-data](https://docs.cloud.google.com/bigquery/docs/exporting-data)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- [https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer](https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer)
 
 ## Supporting Pages
 
-### The new Looker Explore and Merge Query experience | Google Cloud Documentation
+### Export table data to Cloud Storage \_|\_ BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/new-explore-experience-overview](https://docs.cloud.google.com/looker/docs/new-explore-experience-overview)
-- Source ID: `site-docs-root`
-- Final score: 113
+- URL: [https://docs.cloud.google.com/bigquery/docs/exporting-data](https://docs.cloud.google.com/bigquery/docs/exporting-data)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 119
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The new Looker Explore and Merge Query experience Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/new-explore-experience-overview The following pages provide an overview of the new Explore and Merge Query experience: Viewing and interacting with Explores in the new Explore experience: Learn how to view, discover, and share insights in Explore queries.
-- Creating and editing Explores in the new Explore experience: Learn to build queries, display results, use features for developers, and discover insights in Looker...
+- Each of the following predefined IAM roles includes the bigquery.tables.export permission: roles/bigquery.dataViewer roles/bigquery.dataOwner roles/bigquery.dataEditor roles/bigquery.admin Permissions to run an extract job To run an extract job , you need the bigquery.jobs.create IAM permission.
+- Permissions to export data from a BigQuery table To export data from a BigQuery table, you need the bigquery.tables.export IAM permission.
+- Export formats and compression types BigQuery supports the following data formats and compression types for exported data.
+- When set to true , header rows are printed to the exported data if the data format supports headers.
 
-### Access control and permission management | Looker | Google Cloud Documentation
+### Admin settings - Roles \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/access-control-and-permission-management](https://docs.cloud.google.com/looker/docs/access-control-and-permission-management)
-- Source ID: `site-iam-reference`
-- Final score: 91
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- Source ID: `site-docs-reference`
+- Final score: 103
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Access control and permission management Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/access-control-and-permission-management Data access is primarily managed using Model Sets, which make up one half of a Looker role.
-- These roles are then applied to users and groups.
-- Data access can be further restricted within a model using access filters to limit which rows of data ...
+- Users must have download with limit and/or download without limit permissions to download the content. create public looks save looks Model Specific Users can mark a saved Look as public , which will then generate URLs that grant access to that Look without authentication. download with limit see looks Model Specific This permission applies to Looks and dashboards in Looker and to reports in Looker Studio that use the Looker connector.
+- Default permission sets For new installations, Looker includes several default permission sets that you can start with: Permission Set Included Permissions Admin All permissions Developer access data , can create forecast , clear cache refresh , create custom fields , create table calculations , deploy , develop , download without limit , explore , manage spaces , mobile app access , save content , save dashboards , save looks , schedule look emails , see drill overlay , see lookml , see lookml dashboards , see looks , see pdts , see sql , see user dashboards , send to integration , schedule without limit , use sql runner NOTE : The see pdts permission is included in the Developer default permission only for Looker installations that were created with Looker 21.18 or later.
+- Looker Studio Pro users with this permission can download Looker Studio reports that use the Looker connector. download without limit see looks Model Specific This permission applies to Looks and dashboards in Looker and to reports in Looker Studio that use the Looker connector.
+- Looker Studio Pro users with this permission can download Looker Studio reports that use the Looker connector. schedule look emails see looks Model Specific This permission applies to Looks and dashboards in Looker and to reports in Looker Studio that use the Looker connector.
 
-### Looker roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### "Migrate Apache Hive Metastore tables to Google Cloud \_|\_ BigQuery \_|\_\
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/looker](https://docs.cloud.google.com/iam/docs/roles-permissions/looker)
-- Source ID: `site-iam-reference`
-- Final score: 90
+- URL: [https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer](https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 96
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/looker This page lists the IAM roles and permissions for Looker.
+- The Hive Metastore migration connector supports files stored in the following data sources: Apache Hadoop Distributed File System (HDFS) Amazon Simple Storage Service (Amazon S3) Azure Blob Storage or Azure Data Lake Storage Gen2 With the Hive Metastore migration connector, you can use Cloud Storage as the file storage and register your Hive Metastore tables with one of the following metastores: BigLake metastore Iceberg REST Catalog We recommend using the BigLake metastore Iceberg REST Catalog for all your Iceberg data.
+- This connector supports both Hive and Iceberg tables from on-premises installations and cloud environments, including Cloudera setups.
+- This connector supports both full and metadata-only transfers.
+- The 'Dumper execution: SUCCEEDED' message was not found." return 1 # Failure fi } --- Main Script Logic --- log " Script Start " log "Dumper Executable: ${ DUMPER EXECUTABLE } " log "Cloud Storage Base Path: ${ GCS BASE PATH } " log "Local Base Directory: ${ LOCAL BASE DIR } " Use an array to build the command safely dumper command args =( "--connector" "hiveql" "--output" " ${ LOCAL ZIP PATH } " ) Add optional arguments if they are provided if [[ -n " ${ DUMPER HOST } " ]] ; then dumper command args +=( "--host" " ${ DUMPER HOST } " ) log "Using Host: ${ DUMPER HOST } " fi if [[ -n " ${ DUMPER PORT } " ]] ; then dumper command args +=( "--port" " ${ DUMPER PORT } " ) log "Using Port: ${ DUMPER PORT } " fi if [[ -n " ${ HIVE KERBEROS URL } " ]] ; then dumper command args +=( "--hive-kerberos-url" " ${ HIVE KERBEROS URL } " ) log "Using Hive Kerberos URL: ${ HIVE KERBEROS URL } " fi if [[ -n " ${ HIVEQL RPC PROTECTION } " ]] ; then dumper command args +=( "-Dhiveql.rpc.protection= ${ HIVEQL RPC PROTECTION } " ) log "Using HiveQL RPC Protection: ${ HIVEQL RPC PROTECTION } " fi log "Starting dumper tool execution..." log "COMMAND: JAVA OPTS=\"-Djavax.security.auth.useSubjectCredsOnly=false\" ${ DUMPER EXECUTABLE } ${ dumper command args [ ] } " JAVA OPTS = "-Djavax.security.auth.useSubjectCredsOnly=false" " ${ DUMPER EXECUTABLE } " " ${ dumper command args [@] } " >> " ${ LOG FILE } " 2 > & 1 log "Dumper process finished." Validate the output from the dumper execution for success or failure. validate dumper output " ${ LOG FILE } " Upload the ZIP file to Cloud Storage gcs zip path = " ${ GCS BASE PATH } / ${ ZIP FILE NAME } " log "Uploading ${ LOCAL ZIP PATH } to ${ gcs zip path } ..." if [ ! -f " ${ LOCAL ZIP PATH } " ] ; then log "ERROR: Expected ZIP file ${ LOCAL ZIP PATH } not found after dumper execution." The script will exit here with an error code, and the trap will run. exit 1 fi gsutil cp " ${ LOCAL ZIP PATH } " " ${ gcs zip path } " >> " ${ LOG FILE } " 2 > & 1 log "Upload to Cloud Storage successful." The script will now exit with code 0.
 

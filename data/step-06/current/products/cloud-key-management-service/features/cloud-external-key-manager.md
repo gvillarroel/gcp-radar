@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:39.846Z"
+generated_at: "2026-04-12T12:11:33.043Z"
 product_name: "Cloud Key Management Service"
 product_slug: "cloud-key-management-service"
 feature_name: "Cloud External Key Manager"
@@ -10,8 +10,9 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/kms/docs/ekm"
-  - "https://docs.cloud.google.com/kms/docs/ekm-architectures"
-  - "https://docs.cloud.google.com/kms/docs/release-notes"
+  - "https://docs.cloud.google.com/kms/docs/create-external-key"
+  - "https://docs.cloud.google.com/kms/docs/autokey-overview"
+  - "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
 keywords:
   - "external"
   - "key"
@@ -38,13 +39,14 @@ Cloud External Key Manager is generally available; Cloud External Key Manager le
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kms/docs/ekm](https://docs.cloud.google.com/kms/docs/ekm)
-- [https://docs.cloud.google.com/kms/docs/ekm-architectures](https://docs.cloud.google.com/kms/docs/ekm-architectures)
-- [https://docs.cloud.google.com/kms/docs/release-notes](https://docs.cloud.google.com/kms/docs/release-notes)
+- [https://docs.cloud.google.com/kms/docs/create-external-key](https://docs.cloud.google.com/kms/docs/create-external-key)
+- [https://docs.cloud.google.com/kms/docs/autokey-overview](https://docs.cloud.google.com/kms/docs/autokey-overview)
+- [https://docs.cloud.google.com/kms/docs/cmek-best-practices](https://docs.cloud.google.com/kms/docs/cmek-best-practices)
 
 ## Supporting Pages
 
@@ -52,40 +54,54 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kms/docs/ekm](https://docs.cloud.google.com/kms/docs/ekm)
 - Source ID: `site-docs-root`
-- Final score: 236
+- Final score: 306
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Cloud KMS Start free Overview Guides Reference Samples Resources More Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Protection levels Overview Cloud HSM overview Single-tenant Cloud HSM overview Cloud EKM overview Reference architectures for Cloud EKM CMEK overview Cloud KMS with Autokey Compatible services Cloud HSM for Google Workspace Locations Get started Cloud KMS resources Key purposes and algorithms Separation of duties Create and use encryption keys CMEK best practices Create and manage Single-tenant Cloud HSM instances Create keys Automate key creation Autokey overview Enable Autokey Create a resource with Autokey Create a key ring Create a key Import keys About key import Key wrapping Format a key for import Manually wrap a key for import Configure OpenSSL for manual key wrapping Wrap a key using OpenSSL Set up automatic key wrapping Import a key version Verify an imported key version Create external keys Set up Cloud EKM over the internet Create an EKM connection Create an external Key Control access Manage IAM roles Use Organization Policy Contraints Create custom organization policy constraints for Cloud KMS CMEK organization policies Control key destruction Secure data using keys Key APIs Use gRPC Access the API Sort and filter API list results Generate random bytes Use Cloud KMS keys in Google Cloud Encrypt and decrypt data Envelope encryption Additional authenticated data Asymmetric encryption Encrypt and decrypt data with a symmetric key Encrypt and decrypt data with a raw symmetric key Encrypt and decrypt data with an asymmetric key Verify end-to-end data integrity Encrypt application data Set up client-side encryption with Tink Onboard to Cloud HSM for Google Workspace Sign and validate data Digital signatures Create and validate signatures MAC signatures Create and validate MAC signatures Share secrets using key encapsulation mechanisms Key encapsulation mechanisms Encapsulate and decapsulate using KEMs Manage keys Resource consistency Key version states View keys and key details View keys by project View encryption metrics View key usage Get a Cloud KMS resource ID Retrieve a public key Attest a Cloud HSM key Label a key Create and manage tags Enable and disable a key version Destroy and restore a key version Delete Cloud KMS resources Rotate keys About key rotation Rotate a key Re-encrypt data Update external key reference Monitor Using Cloud Audit Logging Cloud KMS Inventory Service audit logging Monitor state changes Monitor and adjust quotas Use Cloud Monitoring Monitor EKM usage Troubleshoot Troubleshoot failed imports Troubleshoot EKM via VPC errors AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Terminology Overview How Cloud EKM works Manually managed external keys Coordinated external keys Compatibility Supported key managers Services that support CMEK with Cloud EKM Considerations Restrictions Symmetric encryption keys Asymmetric signing keys External key managers and regions Multi-region use Partner-managed EKM Monitor Cloud EKM usage Getting support What's next Home Documentation Security Cloud KMS Guides Was this helpful?
-- Compatibility Supported key managers You can store external keys in the following external key management partner systems: Supported today: Fortanix Futurex Thales Services that support CMEK with Cloud EKM The following services support integration with Cloud KMS for external (Cloud EKM) keys: Agent Assist AlloyDB for PostgreSQL Apigee API hub Application Integration Artifact Registry Backup and DR Service: Backup Vault Container and Backups at rest Backup for GKE BigQuery Bigtable Cloud Composer Cloud Data Fusion Cloud Healthcare API Cloud Logging: Data in the Log Router and Data in Logging storage Cloud Run Cloud Run functions Cloud SQL Cloud Storage Cloud Tasks Cloud Workstations Compute Engine: Persistent disks , Snapshots , Custom images , and Machine images Customer Experience Insights Database Migration Service: MySQL migrations - data written to databases , PostgreSQL migrations - Data written to databases , PostgreSQL to AlloyDB migrations - Data written to databases , SQL Server migrations - Data written to databases , and Oracle to PostgreSQL data at rest Dataflow Dataform Dataplex Universal Catalog Dataproc: Dataproc clusters data on VM disks and Dataproc serverless data on VM disks Dataproc Metastore Datastream Dialogflow CX Document AI Eventarc Advanced ( Preview ) Eventarc Standard Filestore Firestore Google Cloud Managed Lustre Google Cloud Managed Service for Apache Kafka Google Cloud NetApp Volumes Google Distributed Cloud Google Kubernetes Engine: Data on VM disks and Application-layer secrets Integration Connectors Looker (Google Cloud core) Memorystore for Redis Memorystore for Redis Cluster Memorystore for Valkey Migrate to Virtual Machines: Data migrated from VMware, AWS, and Azure VM sources and Data migrated from disk and machine image sources Parameter Manager Pub/Sub Secret Manager Secure Source Manager Security Command Center Spanner Speech-to-Text Vertex AI Vertex AI Workbench instances Workflows Workload Manager Important: All other services are not compatible with Cloud External Key Manager for CMEK.
-- On this page Terminology Overview How Cloud EKM works Manually managed external keys Coordinated external keys Compatibility Supported key managers Services that support CMEK with Cloud EKM Considerations Restrictions Symmetric encryption keys Asymmetric signing keys External key managers and regions Multi-region use Partner-managed EKM Monitor Cloud EKM usage Getting support What's next This page provides an overview of Cloud External Key Manager (Cloud EKM).
-- Cloud External Key Manager Cloud Key Management Service Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools More / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
+- Compatibility Supported key managers You can store external keys in the following external key management partner systems: Supported today: Fortanix Futurex Thales Services that support CMEK with Cloud EKM The following services support integration with Cloud KMS for external (Cloud EKM) keys: Agent Assist AlloyDB for PostgreSQL Apigee API hub Application Integration Artifact Registry Backup and DR Service: Backup Vault Container and Backups at rest Backup for GKE BigQuery Bigtable Cloud Composer Cloud Data Fusion Cloud Healthcare API Cloud Logging: Data in the Log Router and Data in Logging storage Cloud Run Cloud Run functions Cloud SQL Cloud Storage Cloud Tasks Cloud Workstations Compute Engine: Persistent disks , Snapshots , Custom images , and Machine images Customer Experience Insights Database Migration Service: MySQL migrations - data written to databases , PostgreSQL migrations - Data written to databases , PostgreSQL to AlloyDB migrations - Data written to databases , SQL Server migrations - Data written to databases , and Oracle to PostgreSQL data at rest Dataflow Dataform Dataplex Universal Catalog Dataproc Metastore Datastream Dialogflow CX Document AI Eventarc Advanced ( Preview ) Eventarc Standard Filestore Firestore Google Cloud Managed Lustre Google Cloud Managed Service for Apache Kafka Google Cloud NetApp Volumes Google Distributed Cloud Google Kubernetes Engine: Data on VM disks and Application-layer secrets Integration Connectors Looker (Google Cloud core) Managed Service for Apache Spark: Dataproc clusters data on VM disks and Dataproc serverless data on VM disks Memorystore for Redis Memorystore for Redis Cluster Memorystore for Valkey Migrate to Virtual Machines: Data migrated from VMware, AWS, and Azure VM sources and Data migrated from disk and machine image sources Parameter Manager Pub/Sub Secret Manager Secure Source Manager Security Command Center Spanner Speech-to-Text Vertex AI Vertex AI Workbench instances Workflows Workload Manager Important: All other services are not compatible with Cloud External Key Manager for CMEK.
+- See Reference architectures for reliable deployment of Cloud EKM services for recommendations on configuring an External Key Manager (EKM) service deployment integrated with Cloud EKM.
+- Multi-region use When you use an externally managed key with a multi-region, the metadata of the key is available in multiple data centers within the multi-region.
+- If an external key is unavailable, Cloud KMS returns a FAILED PRECONDITION error and provides details in the PreconditionFailure error detail.
 
-### "Reference architectures for Cloud External Key Manager \_|\_ Cloud Key Management\
+### "Create an external key \_|\_ Cloud Key Management Service \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/kms/docs/ekm-architectures](https://docs.cloud.google.com/kms/docs/ekm-architectures)
+- URL: [https://docs.cloud.google.com/kms/docs/create-external-key](https://docs.cloud.google.com/kms/docs/create-external-key)
 - Source ID: `site-iam-reference`
 - Final score: 236
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- This document describes architectures for Google Cloud customers who want to deploy a highly available external key manager (EKM) service with Cloud KMS and Cloud EKM.
-- Cloud KMS Start free Overview Guides Reference Samples Resources More Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Protection levels Overview Cloud HSM overview Single-tenant Cloud HSM overview Cloud EKM overview Reference architectures for Cloud EKM CMEK overview Cloud KMS with Autokey Compatible services Cloud HSM for Google Workspace Locations Get started Cloud KMS resources Key purposes and algorithms Separation of duties Create and use encryption keys CMEK best practices Create and manage Single-tenant Cloud HSM instances Create keys Automate key creation Autokey overview Enable Autokey Create a resource with Autokey Create a key ring Create a key Import keys About key import Key wrapping Format a key for import Manually wrap a key for import Configure OpenSSL for manual key wrapping Wrap a key using OpenSSL Set up automatic key wrapping Import a key version Verify an imported key version Create external keys Set up Cloud EKM over the internet Create an EKM connection Create an external Key Control access Manage IAM roles Use Organization Policy Contraints Create custom organization policy constraints for Cloud KMS CMEK organization policies Control key destruction Secure data using keys Key APIs Use gRPC Access the API Sort and filter API list results Generate random bytes Use Cloud KMS keys in Google Cloud Encrypt and decrypt data Envelope encryption Additional authenticated data Asymmetric encryption Encrypt and decrypt data with a symmetric key Encrypt and decrypt data with a raw symmetric key Encrypt and decrypt data with an asymmetric key Verify end-to-end data integrity Encrypt application data Set up client-side encryption with Tink Onboard to Cloud HSM for Google Workspace Sign and validate data Digital signatures Create and validate signatures MAC signatures Create and validate MAC signatures Share secrets using key encapsulation mechanisms Key encapsulation mechanisms Encapsulate and decapsulate using KEMs Manage keys Resource consistency Key version states View keys and key details View keys by project View encryption metrics View key usage Get a Cloud KMS resource ID Retrieve a public key Attest a Cloud HSM key Label a key Create and manage tags Enable and disable a key version Destroy and restore a key version Delete Cloud KMS resources Rotate keys About key rotation Rotate a key Re-encrypt data Update external key reference Monitor Using Cloud Audit Logging Cloud KMS Inventory Service audit logging Monitor state changes Monitor and adjust quotas Use Cloud Monitoring Monitor EKM usage Troubleshoot Troubleshoot failed imports Troubleshoot EKM via VPC errors AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Overview Best practices for Cloud EKM architectures Configure low-latency, reliable network connectivity Enable high availability Detect and mitigate failures quickly Reference architectures for Cloud EKM Direct connection over Cloud VPN or Cloud Interconnect Load balanced from internet in Google Cloud Load balanced in a VPC network in Google Cloud Reference architecture comparison What's next Home Documentation Security Cloud KMS Guides Was this helpful?
-- Reference architectures for Cloud External Key Manager Cloud Key Management Service Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools More / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-- On this page Overview Best practices for Cloud EKM architectures Configure low-latency, reliable network connectivity Enable high availability Detect and mitigate failures quickly Reference architectures for Cloud EKM Direct connection over Cloud VPN or Cloud Interconnect Load balanced from internet in Google Cloud Load balanced in a VPC network in Google Cloud Reference architecture comparison What's next When you enable Cloud Key Management Service (Cloud KMS) with Cloud External Key Manager (Cloud EKM) , you can use keys that you manage with an external key management partner to help protect data in Google Cloud.
+- The key shows as Pending generation until the key path is returned by your EKM and the Cloud EKM key is available. gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI . gcloud kms keys create KEY NAME \ --keyring KEY RING \ --location LOCATION \ --purpose PURPOSE \ --default-algorithm ALGORITHM \ --protection-level "external-vpc" \ --crypto-key-backend VPC CONNECTION RESOURCE ID Replace the following: KEY NAME : the name of the key.
+- This page shows you how to create Cloud External Key Manager (Cloud EKM) keys on an existing key ring in Cloud Key Management Service (Cloud KMS).
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create keys: cloudkms.cryptoKeys.create cloudkms.cryptoKeys.get cloudkms.cryptoKeys.list cloudkms.cryptoKeyVersions.create cloudkms.cryptoKeyVersions.get cloudkms.cryptoKeyVersions.list cloudkms.keyRings.get cloudkms.keyRings.list cloudkms.locations.get cloudkms.locations.list resourcemanager.projects.get To retrieve a public key: cloudkms.cryptoKeyVersions.viewPublicKey You might also be able to get these permissions with custom roles or other predefined roles .
+- Note: The version is not created if the key URI is invalid or unreachable, or if the Google Cloud service account does not have permission to use the external key management partner key.
 
-### "Cloud KMS release notes \_|\_ Cloud Key Management Service \_|\_ Google\
+### Autokey overview \_|\_ Cloud Key Management Service \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/kms/docs/release-notes](https://docs.cloud.google.com/kms/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 184
+- URL: [https://docs.cloud.google.com/kms/docs/autokey-overview](https://docs.cloud.google.com/kms/docs/autokey-overview)
+- Source ID: `site-iam-reference`
+- Final score: 199
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- One key per resource Dataflow dataflow.googleapis.com/Job One key per resource Managed Service for Apache Spark dataproc.googleapis.com/Cluster dataproc.googleapis.com/SessionTemplate dataproc.googleapis.com/WorkflowTemplate dataproc.googleapis.com/Batch dataproc.googleapis.com/Session For Cluster, SessionTemplate, and WorkflowTemplate resources: One key per resource For Batch and Session resources: One key per location within a project Limitations The gcloud CLI is not available for Autokey resources.
+- Compatible services The following table lists services that are compatible with Cloud KMS Autokey: Service Protected resources Key granularity Artifact Registry artifactregistry.googleapis.com/Repository Autokey creates keys during Repository creation, used for all stored artifacts.
+- One key per location within a project Secure Source Manager securesourcemanager.googleapis.com/Instance One key per resource Spanner spanner.googleapis.com/Database Spanner is only compatible with Cloud KMS Autokey when creating resources using Terraform or the REST API.
+- One key per resource Pub/Sub pubsub.googleapis.com/Topic One key per resource Secret Manager secretmanager.googleapis.com/Secret Secret Manager is only compatible with Cloud KMS Autokey when creating resources using Terraform or the REST API.
+
+### "Best practices for using CMEKs \_|\_ Cloud Key Management Service \_|\_\
+
+- URL: [https://docs.cloud.google.com/kms/docs/cmek-best-practices](https://docs.cloud.google.com/kms/docs/cmek-best-practices)
+- Source ID: `site-iam-reference`
+- Final score: 190
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- April 15, 2020 Feature Cloud External Key Manager (Cloud EKM) is generally available.
-- Thales CipherTrust Cloud Key Manager is the first external key management partner system that is compatible with EKM key management from Cloud KMS.
-- March 18, 2020 Feature Importing keys into Cloud KMS software keys is generally available (GA).
-- March 02, 2026 Feature Cloud KMS deletion of keys and key versions is generally available.
+- For most organizations, this strategy provides a good balance between the overhead of maintaining many highly granular keys and the potential risks of using less granular keys that are shared between many projects, services, or resources.
+- NIST SP 800-152 defines a separation of duties between the cryptographic officer who enables and manages the services of a cryptographic key management system and a user who uses those keys to encrypt or decrypt resources.
+- When you use CMEK to manage encryption at rest with Google Cloud services, the IAM role to use encryption keys is assigned to the service agent of the Google Cloud service, not the individual user.
+- For example, a Compute Engine persistent disk encrypted with a Cloud KMS key from region A can't be recreated in region B in a disaster recovery scenario where region A is unavailable.
 

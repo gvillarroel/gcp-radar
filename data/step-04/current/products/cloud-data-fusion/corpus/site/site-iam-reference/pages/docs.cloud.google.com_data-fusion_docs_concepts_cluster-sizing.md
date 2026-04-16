@@ -26,13 +26,13 @@ Save and categorize content based on your preferences.
 Cloud Data Fusion by default used Autoscale as the compute profile.
 Estimating the best number of cluster workers (nodes) for a workload is
 difficult, and a single cluster size for an entire pipeline is often not ideal.
-The Dataproc Autoscaling provides a mechanism for automating
+The Managed Service for Apache Spark Autoscaling provides a mechanism for automating
 cluster resource management and enables cluster worker VM autoscaling. For more
 information, see Autoscaling
 On the Compute config page, where you can see a list of profiles, there is a
 Total cores column, which has the maximum v CPUs that the profile can
 scale up to, such as Up to 84 .
-If you want to use the Dataproc Compute profile , you can manage
+If you want to use the Managed Service for Apache Spark Compute profile , you can manage
 cluster sizes based on the pipeline size.
 Master node
 Master nodes use resources proportional to the number of pipelines or additional
@@ -60,7 +60,7 @@ run anything. To maximize resource utilization on your cluster, you will want
 the YARN memory and CPUs to be an exact multiple of the amount needed per
 Spark executor. You can check how much memory each worker has reserved for YARN
 by checking the yarn.nodemanager.resource.memory-mb property in YARN.
-If you're using Dataproc, the memory available for YARN
+If you're using Managed Service for Apache Spark, the memory available for YARN
 containers will be roughly 75% of the VM memory. The minimum YARN container size
 is also adjusted depending on the size of the worker VMs. Some common worker
 sizes and their corresponding YARN settings are given in the following table.
@@ -144,7 +144,7 @@ not contain any shuffles, disk will only be used when Spark runs out of memory
 and needs to spill data to disk. For these types of pipelines, disk size and
 type are generally not going to make a big impact on your performance. If your
 pipeline is shuffling a lot of data, disk performance will make a difference. If
-you are using Dataproc, it is recommended that you use disk sizes
+you are using Managed Service for Apache Spark, it is recommended that you use disk sizes
 of at least 1tb, as disk performance scales up with disk size. For information
 about disk performance, see Configure disks to meet performance
 requirements .
@@ -154,7 +154,7 @@ is large enough that it can run as much as it can in parallel. For example, if
 your pipeline source reads data using 100 splits, you will want to make sure the
 cluster is large enough to run 100 executors at once.
 The easiest way to tell if your cluster is undersized is by looking at the YARN
-pending memory over time. If you are using Dataproc, a graph can
+pending memory over time. If you are using Managed Service for Apache Spark, a graph can
 be found on the cluster detail page.
 If pending memory is high for long periods
 of time, you can increase the number of workers to add that much extra capacity
@@ -167,9 +167,9 @@ data, when they are removed from a cluster, Spark jobs don't run into delays or
 errors. Since primary workers are never scaled down, the cluster scales down
 with more stability and efficiency. If you're running pipelines with shuffles on
 a static cluster, it is recommended that you use EFM.
-For more information on EFM, see Dataproc enhanced flexibility mode .
+For more information on EFM, see Managed Service for Apache Spark enhanced flexibility mode .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

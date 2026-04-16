@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:18.019Z"
+generated_at: "2026-04-12T12:15:56.194Z"
 product_name: "Enterprise Knowledge Graph"
 product_slug: "enterprise-knowledge-graph"
 feature_name: "Entity reconciliation job cancellation and deletion"
@@ -9,9 +9,10 @@ latest_feature_date: "2022-10-10"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/enterpriseknowledgegraph"
-  - "https://docs.cloud.google.com/enterprise-knowledge-graph/docs/evaluate"
-  - "https://docs.cloud.google.com/enterprise-knowledge-graph/docs/editions"
+  - "https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel"
+  - "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest"
+  - "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest"
+  - "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest"
 keywords:
   - "entity"
   - "reconciliation"
@@ -38,49 +39,70 @@ Allows users to cancel or delete an entity reconciliation job.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/enterpriseknowledgegraph](https://docs.cloud.google.com/iam/docs/roles-permissions/enterpriseknowledgegraph)
-- [https://docs.cloud.google.com/enterprise-knowledge-graph/docs/evaluate](https://docs.cloud.google.com/enterprise-knowledge-graph/docs/evaluate)
-- [https://docs.cloud.google.com/enterprise-knowledge-graph/docs/editions](https://docs.cloud.google.com/enterprise-knowledge-graph/docs/editions)
+- [https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel](https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel)
+- [https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest](https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest)
+- [https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest](https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest)
+- [https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest](https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest)
 
 ## Supporting Pages
 
-### Enterprise Knowledge Graph roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
+### "Method: projects.locations.entityReconciliationJobs.cancel \_|\_ Enterprise\
 
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/enterpriseknowledgegraph](https://docs.cloud.google.com/iam/docs/roles-permissions/enterpriseknowledgegraph)
-- Source ID: `site-iam-reference`
-- Final score: 73
+- URL: [https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel](https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel)
+- Source ID: `site-api-reference`
+- Final score: 215
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Enterprise Knowledge Graph roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/enterpriseknowledgegraph This page lists the IAM roles and permissions for Enterprise Knowledge Graph.
+- Home Documentation AI and ML Enterprise Knowledge Graph Reference Send feedback Method: projects.locations.entityReconciliationJobs.cancel Stay organized with collections Save and categorize content based on your preferences.
+- Format: projects/{project}/locations/{location}/entityReconciliationJobs/{entityReconciliationJob} It takes the form projects/{project}/locations/{location}/entityReconciliationJobs/{entityreconciliationjob} .
+- IAM Permissions Requires the following IAM permission on the name resource: enterpriseknowledgegraph.entityReconciliationJobs.cancel For more information, see the IAM documentation .
+- The name of the EntityReconciliationJob resource.
 
-### Evaluate result and quality | Enterprise Knowledge Graph | Google Cloud Documentation
+### "Class CancelEntityReconciliationJobRequest (0.6.0) \_|\_ Python client libraries\
 
-- URL: [https://docs.cloud.google.com/enterprise-knowledge-graph/docs/evaluate](https://docs.cloud.google.com/enterprise-knowledge-graph/docs/evaluate)
-- Source ID: `site-docs-root`
-- Final score: 52
+- URL: [https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest](https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest)
+- Source ID: `site-python-reference`
+- Final score: 202
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- By default, every job generates a random cluster id for each entity cluster.
-- Evaluate result and quality Enterprise Knowledge Graph Google Cloud Documentation Source URL: https://docs.cloud.google.com/enterprise-knowledge-graph/docs/evaluate Enterprise Knowledge Graph writes results into a new BigQuery table for every job.
-- This is a snapshot of the data at the time the job is executed.
+- Format: projects/{project}/locations/{location}/entityReconciliationJobs/{entity reconciliation job} Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Developer tools Python Client libraries Send feedback Class CancelEntityReconciliationJobRequest (0.6.0) Stay organized with collections Save and categorize content based on your preferences.
+- 0.6.0 (latest) 0.5.0 0.4.0 0.3.17 0.2.1 0.1.0 CancelEntityReconciliationJobRequest ( mapping = None , , ignore unknown fields = False , kwargs ) Request message for CancelEntityReconciliationJob.
+- The name of the EntityReconciliationJob resource.
 
-### Compare Basic and Advanced editions | Enterprise Knowledge Graph | Google Cloud Documentation
+### "Class CreateEntityReconciliationJobRequest (0.6.0) \_|\_ Python client libraries\
 
-- URL: [https://docs.cloud.google.com/enterprise-knowledge-graph/docs/editions](https://docs.cloud.google.com/enterprise-knowledge-graph/docs/editions)
-- Source ID: `site-docs-root`
-- Final score: 38
+- URL: [https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest](https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest)
+- Source ID: `site-python-reference`
+- Final score: 202
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Compare Basic and Advanced editions Enterprise Knowledge Graph Google Cloud Documentation Source URL: https://docs.cloud.google.com/enterprise-knowledge-graph/docs/editions Google Knowledge Graph Search API - Advanced has all of the capabilities of Google Knowledge Graph Search API - Basic and more.
-- Google Knowledge Graph Search API - Advanced edition is optimized for enterprise and production use cases.
+- Home Documentation Developer tools Python Client libraries Send feedback Class CreateEntityReconciliationJobRequest (0.6.0) Stay organized with collections Save and categorize content based on your preferences.
+- 0.6.0 (latest) 0.5.0 0.4.0 0.3.17 0.2.1 0.1.0 CreateEntityReconciliationJobRequest ( mapping = None , , ignore unknown fields = False , kwargs ) Request message for CreateEntityReconciliationJob.
+- Format: projects/{project}/locations/{location} entity reconciliation job google.cloud.enterpriseknowledgegraph v1.types.EntityReconciliationJob Required.
+- The resource name of the Location to create the EntityReconciliationJob in.
+
+### "Class DeleteEntityReconciliationJobRequest (0.6.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest](https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest)
+- Source ID: `site-python-reference`
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Format: projects/{project}/locations/{location}/entityReconciliationJobs/{entity reconciliation job} Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Developer tools Python Client libraries Send feedback Class DeleteEntityReconciliationJobRequest (0.6.0) Stay organized with collections Save and categorize content based on your preferences.
+- 0.6.0 (latest) 0.5.0 0.4.0 0.3.17 0.2.1 0.1.0 DeleteEntityReconciliationJobRequest ( mapping = None , , ignore unknown fields = False , kwargs ) Request message for DeleteEntityReconciliationJob.
+- The name of the EntityReconciliationJob resource.
 

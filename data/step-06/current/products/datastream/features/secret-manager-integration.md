@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:11:59.738Z"
+generated_at: "2026-04-12T12:14:04.317Z"
 product_name: "Datastream"
 product_slug: "datastream"
 feature_name: "Secret Manager integration"
 feature_slug: "secret-manager-integration"
 latest_feature_date: "2025-03-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles"
   - "https://docs.cloud.google.com/datastream/docs/create-connection-profiles"
   - "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics"
+  - "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
 keywords:
   - "secret"
   - "manager"
@@ -26,7 +27,7 @@ keywords:
 # Secret Manager integration
 
 Product: Datastream
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Datastream can use Secret Manager to securely store authentication resources.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles](https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles)
 - [https://docs.cloud.google.com/datastream/docs/create-connection-profiles](https://docs.cloud.google.com/datastream/docs/create-connection-profiles)
 - [https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics](https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics)
+- [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles)
 
 ## Supporting Pages
 
@@ -52,9 +54,8 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles](https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles)
 - Source ID: `site-api-reference`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 222
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - MongodbProfile JSON representation { "hostAddresses" : [ { object ( HostAddress ) } ] , "replicaSet" : string , "username" : string , "password" : string , "secretManagerStoredPassword" : string , "sslConfig" : { object ( MongodbSslConfig ) } , "additionalOptions" : { string : string , ... } , // Union field mongodb connection format can be only one of the following: "srvConnectionFormat" : { object ( SrvConnectionFormat ) } , "standardConnectionFormat" : { object ( StandardConnectionFormat ) } // End of list of possible types for union field mongodb connection format . } Fields hostAddresses[] object ( HostAddress ) Required.
@@ -66,9 +67,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/create-connection-profiles](https://docs.cloud.google.com/datastream/docs/create-connection-profiles)
 - Source ID: `site-docs-root`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 210
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Hostname or IP Enter a hostname or IP address that Datastream can use to connect to the source PostgreSQL database.
@@ -80,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics](https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics)
 - Source ID: `site-docs-root`
-- Final score: 156
+- Final score: 188
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,4 +89,17 @@ Evidence snippets:
 - In the Name or template for the dataset to contain staging tables. field, enter My integration dataset log because Dataflow uses this dataset to stage the data changes that it receives from Datastream.
 - Use the Objects to include menu to specify the tables and schemas in your source database that Datastream can transfer into a folder in the destination bucket in Cloud Storage.
 - You can use IP allowlists to create lists of trusted IP addresses or IP ranges from which your users and other Google Cloud services such as Datastream can access this data.
+
+### "REST Resource: projects.locations.connectionProfiles \_|\_ Datastream \_\
+
+- URL: [https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles)
+- Source ID: `site-api-reference`
+- Final score: 182
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- JSON representation { "hostAddresses" : [ { object ( HostAddress ) } ] , "replicaSet" : string , "username" : string , "password" : string , "secretManagerStoredPassword" : string , "sslConfig" : { object ( MongodbSslConfig ) } , "additionalOptions" : { string : string , ... } , // Union field mongodb connection format can be only one of the following: "srvConnectionFormat" : { object ( SrvConnectionFormat ) } , "standardConnectionFormat" : { object ( StandardConnectionFormat ) } // End of list of possible types for union field mongodb connection format . } Fields hostAddresses[] object ( HostAddress ) Required.
+- JSON representation { "hostname" : string , "port" : integer , "username" : string , "password" : string , "databaseService" : string , "connectionAttributes" : { string : string , ... } , "oracleSslConfig" : { object ( OracleSslConfig ) } , "oracleAsmConfig" : { object ( OracleAsmConfig ) } , "secretManagerStoredPassword" : string } Fields hostname string Required.
+- JSON representation { "hostname" : string , "port" : integer , "username" : string , "password" : string , "asmService" : string , "connectionAttributes" : { string : string , ... } , "oracleSslConfig" : { object ( OracleSslConfig ) } , "secretManagerStoredPassword" : string } Fields hostname string Required.
+- JSON representation { "hostname" : string , "port" : integer , "username" : string , "password" : string , "database" : string , "secretManagerStoredPassword" : string , "sslConfig" : { object ( PostgresqlSslConfig ) } } Fields hostname string Required.
 

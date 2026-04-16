@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.324Z"
+generated_at: "2026-04-12T12:19:43.308Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Vertex AI Agent Builder Agent Designer"
 feature_slug: "vertex-ai-agent-builder-agent-designer"
 latest_feature_date: "2025-12-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/agent-builder/agent-designer"
-  - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview"
+  - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain"
 keywords:
   - "vertex"
@@ -27,7 +27,7 @@ keywords:
 # Vertex AI Agent Builder Agent Designer
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,13 +39,13 @@ Adds Agent Designer, a low-code visual environment in Google Cloud console for d
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/agent-builder/agent-designer](https://docs.cloud.google.com/agent-builder/agent-designer)
-- [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview](https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview)
+- [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain](https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain)
 
 ## Supporting Pages
@@ -54,8 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-designer](https://docs.cloud.google.com/agent-builder/agent-designer)
 - Source ID: `site-docs-root`
-- Final score: 266
-- Re-rank relevance: N/A
+- Final score: 326
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Agent Designer overview Stay organized with collections Save and categorize content based on your preferences.
@@ -63,11 +64,25 @@ Evidence snippets:
 - Additional Terms for Agent Designer in Vertex AI Agent Builder Relationship to Other Terms.
 - When using Google Search as Tool in Agent Designer, the section entitled "Grounding with Google Search" in the Service Specific Terms also apply, except that the first reference to 'Gemini Enterprise or Agentspace' in subsection (iii) of the "Agentic AI Services" section is replaced with 'Vertex AI'.
 
+### "Vertex AI Agent Engine Code Execution \_|\_ Vertex AI Agent Builder \_|\_\
+
+- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview](https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview)
+- Source ID: `site-docs-root`
+- Final score: 297
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Vertex AI Agent Engine Code Execution Stay organized with collections Save and categorize content based on your preferences.
+- To see an example of using , run the "Get started with on " notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Note: Code Execution is supported in only the us-central1 region.
+- However, you don't need to deploy your agent to Vertex AI Agent Engine to use Code Execution.
+- Code Execution is part of the Vertex AI Agent Engine suite.
+
 ### "Use agent identity with Vertex AI Agent Engine \_|\_ Vertex AI Agent Builder\
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - Source ID: `site-docs-root`
-- Final score: 264
+- Final score: 287
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -76,27 +91,13 @@ Evidence snippets:
 - Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag.
 - Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Use agent identity with Vertex AI Agent Engine Stay organized with collections Save and categorize content based on your preferences.
 
-### "Vertex AI Agent Engine Code Execution \_|\_ Vertex AI Agent Builder \_|\_\
-
-- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview](https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview)
-- Source ID: `site-docs-root`
-- Final score: 262
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Vertex AI Agent Engine Code Execution Stay organized with collections Save and categorize content based on your preferences.
-- To see an example of using , run the "Get started with on " notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Note: Code Execution is supported in only the us-central1 region.
-- However, you don't need to deploy your agent to Vertex AI Agent Engine to use Code Execution.
-- Code Execution is part of the Vertex AI Agent Engine suite.
-
 ### "Develop a LangChain agent \_|\_ Vertex AI Agent Builder \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain](https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain)
 - Source ID: `site-docs-reference`
-- Final score: 248
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 283
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Next, define a model builder that returns ChatAnthropic : def model builder ( , model name : str , model kwargs = None , kwargs ): from langchain anthropic import ChatAnthropic return ChatAnthropic ( model name = model name , model kwargs ) Finally, use it in LangchainAgent with the following code: from vertexai import agent engines agent = agent engines .

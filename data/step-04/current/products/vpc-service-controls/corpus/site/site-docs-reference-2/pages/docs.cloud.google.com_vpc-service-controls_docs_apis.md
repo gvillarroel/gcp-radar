@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/vpc-service-controls/docs/apis
 knowledge_key: corpus
 source_id: site-docs-reference-2
 source_type: site
-entrypoint: https://docs.cloud.google.com/vpc-service-controls/docs/release-notes
+entrypoint: https://docs.cloud.google.com/vpc-service-controls/docs/apis
 source_metadata:
   url: https://docs.cloud.google.com/vpc-service-controls/docs/apis
   title: "APIs & Reference \_|\_ VPC Service Controls \_|\_ Google Cloud Documentation"

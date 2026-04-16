@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:43.702Z"
+generated_at: "2026-04-12T12:17:51.024Z"
 product_name: "Media CDN"
 product_slug: "media-cdn"
 feature_name: "Dual-token authentication"
@@ -9,8 +9,9 @@ latest_feature_date: "2024-05-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product"
+  - "https://docs.cloud.google.com/media-cdn/docs/caching"
   - "https://docs.cloud.google.com/media-cdn/docs/overview"
+  - "https://docs.cloud.google.com/media-cdn/docs/api/batch"
   - "https://docs.cloud.google.com/media-cdn/docs/routing"
 keywords:
   - "dual"
@@ -38,46 +39,67 @@ Media CDN can authenticate requests with a short-duration token and a long-durat
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product](https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product)
+- [https://docs.cloud.google.com/media-cdn/docs/caching](https://docs.cloud.google.com/media-cdn/docs/caching)
 - [https://docs.cloud.google.com/media-cdn/docs/overview](https://docs.cloud.google.com/media-cdn/docs/overview)
+- [https://docs.cloud.google.com/media-cdn/docs/api/batch](https://docs.cloud.google.com/media-cdn/docs/api/batch)
 - [https://docs.cloud.google.com/media-cdn/docs/routing](https://docs.cloud.google.com/media-cdn/docs/routing)
 
 ## Supporting Pages
 
-### Choose a CDN product | Media CDN | Google Cloud Documentation
+### Configure caching behavior \_|\_ Media CDN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product](https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product)
+- URL: [https://docs.cloud.google.com/media-cdn/docs/caching](https://docs.cloud.google.com/media-cdn/docs/caching)
 - Source ID: `site-docs-root`
-- Final score: 115
+- Final score: 204
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Choose a CDN product Media CDN Google Cloud Documentation Source URL: https://docs.cloud.google.com/media-cdn/docs/choose-cdn-product Cloud CDN is optimized for serving a mix of static and dynamic latency-sensitive web assets, such as CSS, JavaScript, HTML, and image files.
-- Media CDN is Google Cloud&#x27;s media delivery CDN platform that complements Cloud CDN.
+- To maximize client performance and origin offload, Media CDN can serve the requested individual byte ranges from its cache, consolidating them into a single response with an HTTP 206 Partial Response status code to the client with the Content-Type set to multipart/byteranges .
+- Cache keys You can reduce the number of times Media CDN needs to contact your origin by considering what uniquely identifies a request, and removing components that might often change between requests.
+- In other cases, such as when interoperability with DASH is not required, the media playlist indicates to the player which bytes represent each chunk: #EXTINF:4.08, fs270.mp4 #EXT-X-PART:DURATION=1.02,URI="fs271.mp4",BYTERANGE=20000@0 #EXT-X-PART:DURATION=1.02,URI="fs271.mp4",BYTERANGE=23000@20000 #EXT-X-PART:DURATION=1.02,URI="fs271.mp4",BYTERANGE=18000@43000 #EXT-X-PRELOAD-HINT:TYPE=PART,URI="fs271.mp4",BYTERANGE-START=61000 You can configure how long Media CDN waits between reads by using the EdgeCacheOrigin.timeouts.readTimeout configuration value.
+- Routes without an explicit cdnPolicy configured behave as if they have the following configuration: cdnPolicy : cacheMode : CACHE ALL STATIC defaultTtl : 3600s cacheKeyPolicy : includeProtocol : false excludeHost : false excludeQueryString : false signedRequestMode : DISABLED negativeCaching : false Cacheable responses A cacheable response is an HTTP response that Media CDN can store and quickly retrieve, thus allowing for faster load times.
 
-### Media CDN overview | Google Cloud Documentation
+### Media CDN overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/media-cdn/docs/overview](https://docs.cloud.google.com/media-cdn/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 89
+- Source ID: `site-docs-reference`
+- Final score: 194
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Media CDN overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/media-cdn/docs/overview Media CDN supports Cloud Armor edge security policies.
-- Media CDN uses Google Cloud Armor to allow or deny access to content.
+- You can grant Media CDN access to your private Cloud Storage buckets and authenticate requests to ensure that only valid Media CDN requests are granted.
+- You can configure what items Media CDN considers as part of a cache key, which can reduce requests from Media CDN to the upstream origin.
+- Signed requests Media CDN supports signed cookies and signed URLs for content authentication.
+- Media CDN supports the following ways of invalidating content: By host and URL path By URL prefix and wildcard By cache tags, including built-in tags for status, origin, and media type You can combine the invalidation parameters to target specific cached responses and to minimize origin load on the subsequent cache fill.
 
-### Configure service routes | Media CDN | Google Cloud Documentation
+### Batching requests \_|\_ Media CDN \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/media-cdn/docs/api/batch](https://docs.cloud.google.com/media-cdn/docs/api/batch)
+- Source ID: `site-docs-reference`
+- Final score: 176
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Networking Media CDN Reference Send feedback Batching requests Stay organized with collections Save and categorize content based on your preferences.
+- Example batch request POST /batch/farm/v1 HTTP/1.1 Authorization: Bearer your auth token Host: www.googleapis.com Content-Type: multipart/mixed; boundary=batch foobarbaz Content-Length: total content length --batch foobarbaz Content-Type: application/http Content-ID: <item1:12930812@barnyard.example.com> GET /farm/v1/animals/pony --batch foobarbaz Content-Type: application/http Content-ID: <item2:12930812@barnyard.example.com> PUT /farm/v1/animals/sheep Content-Type: application/json Content-Length: part content length If-Match: "etag/sheep" { "animalName": "sheep", "animalAge": "5" "peltColor": "green", } --batch foobarbaz Content-Type: application/http Content-ID: <item3:12930812@barnyard.example.com> GET /farm/v1/animals If-None-Match: "etag/animals" --batch foobarbaz-- Example batch response This is the response to the example request in the previous section.
+- Response to a batch request The server's response is a single standard HTTP response with a multipart/mixed content type; each part is the response to one of the requests in the batched request, in the same order as the requests.
+- If you want to ensure that two calls occur in a given order, you can't send them in a single request; instead, send the first one by itself, then wait for the response to the first one before sending the second one.
+
+### Configure service routes \_|\_ Media CDN \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/media-cdn/docs/routing](https://docs.cloud.google.com/media-cdn/docs/routing)
 - Source ID: `site-docs-root`
-- Final score: 86
+- Final score: 169
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Configure service routes Media CDN Google Cloud Documentation Source URL: https://docs.cloud.google.com/media-cdn/docs/routing Configure a route rule for a Media CDN service.
-- In the Google Cloud console, go to the Media CDN page.
+- In the following example, you can see that the /live/us/ route would never be matched because the /live/ route is at a higher priority: routeRules : - priority : 1 description : "Live routes" matchRules : - prefixMatch : /live/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 2 description : "U.S based live streams" matchRules : This would never be matched, as the /live/ prefixMatch at priority 1 would always take precedence. - prefixMatch : /live/us/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 999 description : "Catch-all route" matchRules : - prefixMatch : / To address this, you put the more specific (longer) route at a higher priority: routeRules : - priority : 1 description : "U.S based live streams" matchRules : The more specific (longer) match is at a higher priority, and now matches requests as expected. - prefixMatch : /live/us/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 2 description : "Live routes" matchRules : - prefixMatch : /live/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 999 description : "Catch-all route" matchRules : - prefixMatch : / This allows the more specific route to match requests correctly.
+- To configure support for a set of methods for a route rule, specify a routeMethods section that has an allowed methods value for each method. routeRules : - priority : 5 description : "Video uploads" routeMethods : allowedMethods : [ "PUT" , "POST" , "OPTIONS" ] matchRules : - pathTemplateMatch : "/uploads/ .ts" origin : prod-video-storage - priority : 10 description : "Video serving" routeMethods : allowedMethods : [ "GET" , "HEAD" ] matchRules : - pathTemplateMatch : "/videos/ .ts" origin : prod-video-storage Path normalization Path normalization describes how Media CDN combines multiple representations of a URL into a single, canonical representation under specific scenarios.
+- The following example shows how to route requests that match a specific header, query parameter, and path prefix for the host media.example.com : name : prod-service routing : hostRules : - hosts : - media.example.com pathMatcher : example routes pathMatchers : - name : example routes routeRules : - priority : 10 origin : staging-live-origin matchRules : - prefixMatch : /vod/ headerMatches : - headerName : "x-staging-client" presentMatch : true queryParameterMatches : - name : "live" exactMatch : "yes" routeAction : cdnPolicy : defaultTtl : 5s Path matching Media CDN supports full (exact), prefix, and wildcard path matching.
+- For example, to configure a catch-all route that directs all unmatched requests to a default origin named my-origin , create a new route with priority: 999 and a matchRules[].prefixMatch of / as follows: name : prod-service routing : hostRules : - hosts : - cdn.example.com pathMatcher : example routes pathMatchers : - name : example routes routeRules : - priority : 999 origin : my-origin matchRules : - prefixMatch : / You can optionally rewrite the URL prior to the origin fetch, or redirect to a default page (such as your landing page) instead of sending the request "as is" to the origin.
 

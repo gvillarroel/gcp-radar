@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:24:12.799Z"
+generated_at: "2026-04-15T11:56:51.869Z"
 product_name: "Cloud SQL for MySQL"
 product_slug: "cloud-sql-for-mysql"
 feature_name: "MCP organization policy control"
 feature_slug: "mcp-organization-policy-control"
 latest_feature_date: "2026-02-18"
 deprecation_date: "2026-03-17"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls"
-  - "https://docs.cloud.google.com/sql/docs/release-notes"
-  - "https://docs.cloud.google.com/sql/docs/mysql/release-notes"
+  - "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation"
+  - "https://docs.cloud.google.com/mcp/deprecations"
+  - "https://docs.cloud.google.com/mcp/access-control"
 keywords:
   - "mcp"
   - "organization"
   - "policy"
   - "control"
-  - "this"
   - "capability"
   - "controls"
   - "use"
+  - "policies"
 ---
 
 # MCP organization policy control
 
 Product: Cloud SQL for MySQL
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,53 @@ This capability controls MCP use with organization policies through the gcp.mana
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls](https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls)
-- [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
+- [https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation](https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation)
+- [https://docs.cloud.google.com/mcp/deprecations](https://docs.cloud.google.com/mcp/deprecations)
+- [https://docs.cloud.google.com/mcp/access-control](https://docs.cloud.google.com/mcp/access-control)
 
 ## Supporting Pages
 
-### "Configure VPC Service Controls \_|\_ Cloud SQL for MySQL \_|\_ Google Cloud\
+### "Organization policy control of MCP servers deprecation \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls](https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls)
-- Source ID: `site-docs-reference`
-- Final score: 172
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Enable the API Add the Identity and Access Management (IAM) roles to the user or service account you are using to set up and administer VPC Service Controls.
-- Optionally, add an organization policy that restricts public IP on instances in projects that use that policy.
-- MySQL PostgreSQL SQL Server This page describes how to enable VPC Service Controls on a Cloud SQL project.
-- Home Documentation Databases Cloud SQL MySQL Guides Send feedback Configure VPC Service Controls Stay organized with collections Save and categorize content based on your preferences.
-
-### Cloud SQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/release-notes](https://docs.cloud.google.com/sql/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 154
+- URL: [https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation](https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 188
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- April 12, 2022 Cloud SQL for MySQL Feature Customer-managed encryption key (CMEK) organization policy constraints are now available in Preview . constraints/gcp.restrictNonCmekServices allows you to control which resources require the use of CMEK. constraints/gcp.restrictCmekCryptoKeyProjects allows you to control the projects from which a Cloud KMS key can be used to validate requests.
-- Cloud SQL for PostgreSQL Feature Customer-managed encryption key (CMEK) organization policy constraints are now available in Preview . constraints/gcp.restrictNonCmekServices allows you to control which resources require the use of CMEK. constraints/gcp.restrictCmekCryptoKeyProjects allows you to control the projects from which a Cloud KMS key can be used to validate requests.
-- Cloud SQL for SQL Server Feature Customer-managed encryption key (CMEK) organization policy constraints are now available in Preview . constraints/gcp.restrictNonCmekServices allows you to control which resources require the use of CMEK. constraints/gcp.restrictCmekCryptoKeyProjects allows you to control the projects from which a Cloud KMS key can be used to validate requests.
-- After March 17, 2026, organization policies that use the gcp.managed.allowedMCPServices constraint won't work, and you can control MCP use with IAM deny policies.
+- The custom constraint gcp.managed.allowedMCPServices and organization policy control of MCP use were deprecated on February 17, 2026 and shut down on March 17, 2026.
+- Home Documentation Developer tools Google Cloud MCP servers Resources Send feedback Organization policy control of MCP servers deprecation Stay organized with collections Save and categorize content based on your preferences.
+- Use Identity and Access Management (IAM) deny policies to manage control over who can use Google and Google Cloud MCP servers.
+- For more information, see Control MCP use with IAM .
 
-### Cloud SQL for MySQL release notes \_|\_ Google Cloud Documentation
+### Deprecations \_|\_ Google Cloud MCP servers \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sql/docs/mysql/release-notes](https://docs.cloud.google.com/sql/docs/mysql/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 138
+- URL: [https://docs.cloud.google.com/mcp/deprecations](https://docs.cloud.google.com/mcp/deprecations)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 100
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- April 12, 2022 Feature Customer-managed encryption key (CMEK) organization policy constraints are now available in Preview . constraints/gcp.restrictNonCmekServices allows you to control which resources require the use of CMEK. constraints/gcp.restrictCmekCryptoKeyProjects allows you to control the projects from which a Cloud KMS key can be used to validate requests.
-- After March 17, 2026, organization policies that use the gcp.managed.allowedMCPServices constraint won't work, and you can control MCP use with IAM deny policies.
-- Deprecated Control of MCP use with organization policies is deprecated.
-- This guide covers key security measures like least privilege, native database controls, and secure agent design to help you build safer AI applications.
+- Feature Deprecated date Shutdown date Details The custom constraint gcp.managed.allowedMCPServices and organization policy control of MCP use February 17, 2026 March 17, 2026 See Organization policy control of MCP servers deprecation .
+- The Google Cloud Platform Terms of Service (section "Discontinuation of Services") defines the deprecation policy that applies to Google Cloud MCP servers.
+- Home Documentation Developer tools Google Cloud MCP servers Resources Send feedback Deprecations Stay organized with collections Save and categorize content based on your preferences.
+- The deprecation policy only applies to the services, features, or products listed therein.
+
+### "Access control with Identity and Access Management \_|\_ Google Cloud MCP\
+
+- URL: [https://docs.cloud.google.com/mcp/access-control](https://docs.cloud.google.com/mcp/access-control)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 96
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Developer tools Google Cloud MCP servers Guides Send feedback Access control with Identity and Access Management Stay organized with collections Save and categorize content based on your preferences.
+- Google Cloud MCP servers roles and permissions The following sections describe the IAM roles required for interacting with and controlling the use of Google and Google Cloud MCP servers.
+- Google and Google Cloud remote MCP servers use Identity and Access Management (IAM) to control access to resources at different levels of your resource hierarchy.
+- For Google and Google Cloud remote MCP servers, access control can be configured at the project level and at the individual resource level.
 

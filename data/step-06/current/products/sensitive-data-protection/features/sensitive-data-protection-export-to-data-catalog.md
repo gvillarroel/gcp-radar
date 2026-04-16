@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.770Z"
+generated_at: "2026-04-14T12:39:34.283Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "Sensitive Data Protection export to Data Catalog"
@@ -9,18 +9,15 @@ latest_feature_date: "2025-05-01"
 deprecation_date: "2025-09-30"
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
 keywords:
-  - "sensitive"
-  - "protection"
-  - "export"
-  - "to"
   - "catalog"
-  - "can"
+  - "export"
   - "send"
   - "inspection"
+  - "discovery"
 ---
 
 # Sensitive Data Protection export to Data Catalog
@@ -42,45 +39,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview](https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions](https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job](https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql)
 
 ## Supporting Pages
 
-### Sensitive Data Protection overview | Google Cloud Documentation
+### "Enable inspection or risk analysis actions \_|\_ Sensitive Data Protection\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview](https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview)
-- Source ID: `site-docs-root`
-- Final score: 128
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions)
+- Source ID: `site-api-reference-required-2`
+- Final score: 146
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Sensitive Data Protection overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview The Cloud Data Loss Prevention API lets you use the Sensitive Data Protection services programmatically.
-- Through the DLP API, you can inspect data from inside and outside Google Cloud and build custom workloads on or off cloud.
+- Publish to Knowledge Catalog Send the results of a BigQuery inspection job to Knowledge Catalog.
+- For more information, see Send inspection results to Knowledge Catalog as aspects .
+- Action BigQuery inspection Cloud Storage inspection Datastore inspection Hybrid inspection Risk analysis Save findings to BigQuery ✓ ✓ ✓ ✓ ✓ Save findings to Cloud Storage ✓ ✓ ✓ ✓ Publish to Pub/Sub ✓ ✓ ✓ ✓ ✓ Publish to Security Command Center ✓ ✓ ✓ Publish to Knowledge Catalog ✓ Publish to Data Catalog ( Deprecated ) ✓ Notify by email ✓ ✓ ✓ ✓ ✓ Publish to Cloud Monitoring ✓ ✓ ✓ ✓ De-identify findings ✓ Specify actions You can specify one or more actions when you configure a job: When you create a new inspection or risk analysis job using Sensitive Data Protection in the Google Cloud console, specify actions in the Add actions section of the job creation workflow.
+- Home Documentation Security Sensitive Data Protection Guides Send feedback Enable inspection or risk analysis actions Stay organized with collections Save and categorize content based on your preferences.
 
-### Sensitive Data Protection IAM permissions | Google Cloud Documentation
+### "Send inspection results to Knowledge Catalog as aspects \_|\_ Sensitive\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions](https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 118
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job](https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job)
+- Source ID: `site-api-reference-required-2`
+- Final score: 145
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Note: If you are using Sensitive Data Protection to scan critical resources, such as those protected by additional custom Identity and Access Management roles, you must assign those additional IAM roles to the Cloud Data Loss Prevention Service Agent.
-- Sensitive Data Protection IAM permissions Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/iam-permissions The Cloud Data Loss Prevention Service Agent is automatically granted common permissions on the project that are needed for inspecting resources and is listed in the IAM section of the Google Cloud console.
-- Sensitive Data Protection relies on this service agent, so you should not remove it.
+- Home Documentation Security Sensitive Data Protection Guides Send feedback Send inspection results to Knowledge Catalog as aspects Stay organized with collections Save and categorize content based on your preferences.
+- This document describes how to inspect a BigQuery table for sensitive data and send the inspection results to Knowledge Catalog.
+- The Sensitive Data Protection feature that lets you send inspection results to Data Catalog is also deprecated.
+- Save the request body in a file named inspect-request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile inspect-request.json ` -Uri "https://dlp.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /dlpJobs" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ PROJECT ID /locations/ LOCATION /dlpJobs/ JOB ID ", "type": "INSPECT JOB", "state": "PENDING", "inspectDetails": { "requestedOptions": { "snapshotInspectTemplate": {}, "jobConfig": { "storageConfig": { "bigQueryOptions": { "tableReference": { "projectId": " PROJECT ID ", "datasetId": " BIGQUERY DATASET NAME ", "tableId": " BIGQUERY TABLE NAME " } } }, "inspectConfig": { "infoTypes": [ { "name": "EMAIL ADDRESS" }, { "name": "PERSON NAME" }, { "name": "US SOCIAL SECURITY NUMBER" }, { "name": "PHONE NUMBER" } ], "minLikelihood": "UNLIKELY", "limits": { "maxFindingsPerRequest": 100 }, "includeQuote": true }, "actions": [ { "publishFindingsToDataplexCatalog": {} } ] } }, "result": {} }, "createTime": "2025-09-09T00:29:55.951374Z", "lastModified": "2025-09-09T00:29:58.022967Z" } For information about how to get the inspection job results using the DLP API, see Get a job .
 
-### Overview of sensitive data discovery | Sensitive Data Protection | Google Cloud Documentation
+### "Profile Cloud SQL data in a single project \_|\_ Sensitive Data Protection\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- Source ID: `site-docs-root`
-- Final score: 110
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql)
+- Source ID: `site-docs-reference-3`
+- Final score: 140
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Overview of sensitive data discovery Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles The Sensitive Data Protection discovery service (sometimes called data profiler) continuously monitors the data resources in your organization, folder, or project.
-- It classifies the data into infoTypes, and assesses the data sensitivity and ...
+- Send to Knowledge Catalog as aspects This action lets you add Knowledge Catalog aspects to profiled tables based on insights from data profiles.
+- To send the data profiles to Knowledge Catalog, make sure that the Send to Dataplex Catalog as aspects option is turned on.
+- If you select Send a Pub/Sub notification each time a profile is updated , Sensitive Data Protection sends a notification when there's a change in the sensitivity level, data risk level, detected infoTypes, public access, and other important metrics in the profile.
+- Using the exported data profiles and the exported sample findings, you can run queries to get more information about the specific items that were flagged, the infoTypes they matched, their exact locations, their calculated sensitivity levels, and other details.
 

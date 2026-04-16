@@ -58,7 +58,7 @@ If your private instance uses Cloud Data Fusion version 6.2.0 or
 earlier, create a firewall rule.
 Let different Google Cloud services communicate internally with each
 other by enabling Private Google Access on the
-Dataproc subnet.
+Managed Service for Apache Spark subnet.
 Before you begin
 To learn about Cloud Data Fusion's deployment architecture, see
 Networking .
@@ -122,9 +122,9 @@ Select the Region in which to create the instance.
 Select a Cloud Data Fusion Version and
 Edition .
 Specify the
-Dataproc service account
+Managed Service for Apache Spark service account
 to use for running your Cloud Data Fusion pipeline in
-Dataproc. The default Compute Engine
+Managed Service for Apache Spark. The default Compute Engine
 account is pre-selected.
 Note: You must grant appropriate Identity and Access Management roles for your needs to
 the service account. For more information, see
@@ -263,7 +263,7 @@ To further control access, instead grant the role to a specific subnet, and
 the Network Viewer role on
 the host project.
 Cloud Data Fusion service account: service- PROJECT_NUMBER @gcp-sa-datafusion.iam.gserviceaccount.com
-Dataproc service account: service- PROJECT_NUMBER @dataproc-accounts.iam.gserviceaccount.com
+Managed Service for Apache Spark service account: service- PROJECT_NUMBER @dataproc-accounts.iam.gserviceaccount.com
 PROJECT_NUMBER is the number of the
 Google Cloud project that contains your Cloud Data Fusion
 instance.
@@ -274,7 +274,7 @@ Create a firewall rule on your VPC network that allows for
 incoming SSH connections from the IP range you specified when you created your
 private Cloud Data Fusion instance.
 This step is required for Cloud Data Fusion versions earlier than 6.2.0. It
-allows communication between Cloud Data Fusion and Dataproc
+allows communication between Cloud Data Fusion and Managed Service for Apache Spark
 clusters running pipelines.
 You can create the firewall rule by using the Google Cloud console
 or by using the gcloud CLI .
@@ -298,15 +298,15 @@ The following sections describe connection-related use cases for private
 instances.
 Enable Private Google Access
 To access resources through internal IP addresses ,
-Cloud Data Fusion must create the Dataproc clusters and run
+Cloud Data Fusion must create the Managed Service for Apache Spark clusters and run
 the data pipelines in a subnet that has Private Google Access. You must
 enable Private Google Access for the subnet that contains the
-Dataproc clusters.
-If only one subnet is present in the region where the Dataproc
+Managed Service for Apache Spark clusters.
+If only one subnet is present in the region where the Managed Service for Apache Spark
 clusters are launched, then the cluster is launched in that subnet.
 If there are multiple subnets in a region, you must configure
 Cloud Data Fusion to select the subnet with
-Private Google Access for launching Dataproc clusters.
+Private Google Access for launching Managed Service for Apache Spark clusters.
 Caution: If Private Google Access isn't enabled on that subnet, the
 pipeline run fails. To specify the subnet after you create an instance,
 edit the compute profile.
@@ -333,6 +333,6 @@ Learn about other key Cloud Data Fusion concepts and features .
 See Cloud Data Fusion pricing .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

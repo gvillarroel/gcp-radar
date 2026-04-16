@@ -1,31 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:43:43.870Z"
+generated_at: "2026-04-14T23:21:33.505Z"
 product_name: "App Engine flexible environment Java"
 product_slug: "app-engine-flexible-environment-java"
 feature_name: "python-compat runtime deprecation"
 feature_slug: "python-compat-runtime-deprecation"
 latest_feature_date: "2016-11-15"
 deprecation_date: "2016-11-15"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
-  - "https://docs.cloud.google.com/appengine/docs/flexible/go/create-app"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/deprecations/shut-down"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/support-schedule"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/runtime-lifecycle"
 keywords:
-  - "Python compatibility runtime"
-  - "python compatibility runtime"
-  - "python-compat runtime"
-  - "python compat"
-  - "python-compat"
-  - "App Engine flexible environment"
-  - "2016-11-15"
-  - "runtime deprecation"
+  - "python"
+  - "compat"
+  - "runtime"
+  - "deprecation"
+  - "was"
+  - "deprecated"
+  - "app"
+  - "engine"
 ---
 
 # python-compat runtime deprecation
 
 Product: App Engine flexible environment Java
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,38 +38,55 @@ The python-compat runtime was deprecated in App Engine flexible environment; dep
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
-- [https://docs.cloud.google.com/appengine/docs/flexible/go/create-app](https://docs.cloud.google.com/appengine/docs/flexible/go/create-app)
+- [https://docs.cloud.google.com/appengine/docs/flexible/deprecations/shut-down](https://docs.cloud.google.com/appengine/docs/flexible/deprecations/shut-down)
+- [https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/support-schedule](https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/support-schedule)
+- [https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/runtime-lifecycle](https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/runtime-lifecycle)
 
 ## Supporting Pages
 
-### "Quickstart: Create a .NET app in the App Engine flexible environment \_\
+### "Previously deprecated and shut down features \_|\_ App Engine flexible environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app)
-- Source ID: `site-docs-root`
-- Final score: 44
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Learn about the App Engine flexible environment Here are some topics to help continue your learning about App Engine: An overview of App Engine Request routing Request handling Managing instances Hello World code review Hello World is the simplest possible App Engine app, as it contains only one service, has only one version, and all of the code is located within the app's root directory.
-- Specifies the runtime used by the app. runtime : aspnetcore env : flex runtime config : operating system : ubuntu22 This sample incurs costs to run on the App Engine flexible environment.
-- Create a .NET app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app.
-- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
-
-### "Quickstart: Create a Go app in the App Engine flexible environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/go/create-app](https://docs.cloud.google.com/appengine/docs/flexible/go/create-app)
-- Source ID: `site-docs-root`
-- Final score: 44
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/deprecations/shut-down](https://docs.cloud.google.com/appengine/docs/flexible/deprecations/shut-down)
+- Source ID: `site-docs-reference-2`
+- Final score: 132
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Learn about the App Engine flexible environment Here are some topics to help continue your learning about App Engine: An overview of App Engine Request routing Request handling Managing instances Hello World code review Hello World is the simplest possible App Engine app, as it contains only one service, has only one version, and all of the code is located within the app's root directory.
-- See the License for the specific language governing permissions and limitations under the License. runtime : go env : flex runtime config : operating system : 'ubuntu22' runtime version : 1.25 This sample incurs costs to run on the App Engine flexible environment.
-- Deploy and run Hello World on App Engine To deploy your app to the App Engine flexible environment: Deploy the Hello World app by running the following command from the helloworld directory: gcloud app deploy Learn about the optional flags .
-- Fprint ( w , "Hello world!" ) } app.yaml The app.yaml file describes the following configuration for your app: Sets env: flex , indicating your app uses the App Engine flexible environment .
+- Java Compat runtimes for App Engine flexible environment (Beta) November 15, 2016 April 20, 2020 Service shutdown complete Python Compat runtimes for App Engine flexible environment (Beta) November 15, 2016 April 20, 2020 Service shutdown complete Blobstore UI from the Google Cloud console (GA) June 1, 2018 June 1, 2019 Service shutdown complete Backend API (GA) March 13, 2014 March 13, 2019 Service shutdown complete Datastore Admin backups (GA) February 28, 2018 February 28, 2019 Service shutdown complete Admin API v1beta4/v1beta5 N/A February 1, 2019 Service shutdown complete Java 7 runtime (GA) December 13, 2017 January 16, 2019 Service shutdown complete Go 1.6 & Go 1.8 (GA) July 31, 2018 November 1, 2018 Migrate to newer runtimes .
+- Legacy health checks for the App Engine flexible environment (GA) September 18, 2017 September 30, 2018 Legacy health checks Cloud Endpoints Frameworks v1 August 2, 2017 September 13, 2018 Service shutdown complete Python SSL 2.7 November 15, 2017 April 2, 2018 Service shutdown complete Task Queue REST API (v1) August 28, 2017 February 20, 2018 Move to Cloud Tasks API Managed VMs ( vm:true ) environment (Beta) November 15, 2016 December 15, 2017 Upgrade to the latest App Engine flexible environment release Channel API (GA) October 27, 2016 October 31, 2017 Service shutdown complete XMPP API (GA) October 27, 2016 October 31, 2017 Service shutdown complete Java 6 Support (GA) July 14, 2015 Free apps: March 20, 2017 Billed apps: July 26, 2017 Service shutdown complete Python 2.5 (GA) March 8, 2013 June 20, 2017 Service shutdown complete Virtual IP (GA) May 31, 2016 June, 2017 Service shutdown complete Django packaged libraries 1.2, 1.3 (GA) July 14, 2015 July 18, 2016 Service shutdown complete ClientLogin (GA) April 20, 2012 April 12, 2016 Service shutdown complete OpenID 2.0 Support (Alpha) July 14, 2015 February 23, 2016 Service shutdown complete Datastore Admin Copy Entities (Beta) July 14, 2015 February 2, 2016 Service shutdown complete PageSpeed (Alpha) May 6, 2015 December 1, 2015 Service shutdown complete Prospective Search API (Alpha) July 14, 2015 December 1, 2015 Service shutdown complete OAuth 1.0 Support (Alpha) July 14, 2015 November 10, 2015 Service shutdown complete Datastore backups to Blobstore (Beta) June 9, 2015 October 1, 2015 Service shutdown complete Files API (Beta) June 12, 2013 September 9, 2015 Service shutdown complete Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Previously deprecated and shut down features Stay organized with collections Save and categorize content based on your preferences.
+- See the list of App Engine features that are scheduled for deprecation .
+
+### "Runtime lifecycle \_|\_ App Engine flexible environment \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/runtime-lifecycle](https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/runtime-lifecycle)
+- Source ID: `site-docs-reference-2`
+- Final score: 109
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Runtime lifecycle GA-level support End of Support Deprecated Decommissioned Creation & redeployment Yes No No No Project Configuration Updates Yes Yes No No Running existing workloads Yes Yes Yes No UI & CLI Warnings Yes Yes No No Language patches Automatic No automatic updates No automatic updates No automatic updates Patching APIs & SDKs Automatic No automatic updates No automatic updates No automatic updates Customer Support GA-level support No runtime support No runtime support No runtime support Notification period App Engine will begin issuing in-app notifications 90 days before the application reaches end of support.
+- Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Runtime lifecycle Stay organized with collections Save and categorize content based on your preferences.
+- When a language version is no longer actively maintained by the respective community, App Engine will also stop providing maintenance and support for that language runtime.
+- Deprecated If Google allowed your Organization to re-enable deployments in an unsupported runtime, Google will remove that ability once the runtime is deprecated.
+
+### "Runtime support schedule \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/support-schedule](https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/support-schedule)
+- Source ID: `site-docs-reference-2`
+- Final score: 108
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Java Runtime Environment Runtime Version End of support Deprecated Decommission Java 25 Ubuntu 24.04 25 Oct 2031 Java 21 Ubuntu 22.04 21 Sept 2031 Java 17 Ubuntu 22.04 17 Oct 2027 Java 11 Ubuntu 18.04 11 2024-10-31 2025-10-31 Java 8 Debian 9 8 2024-07-10 2025-07-10 Node.js Runtime Environment Runtime Version End of support Deprecated Decommission Node.js 24 Ubuntu 24.04 24 2028-04-30 2029-04-30 Node.js 22 Ubuntu 22.04 22 2027-04-30 2028-04-30 Node.js 20 Ubuntu 22.04 20 2026-04-30 2027-04-30 Node.js 18 Ubuntu 22.04 18 2025-04-30 2026-04-30 Node.js 16 Ubuntu 16.04 16 2024-07-10 2025-07-10 Node.js 14 Ubuntu 16.04 14 2024-07-10 2025-07-10 Node.js 12 Ubuntu 16.04 12 2024-07-10 2025-07-10 Node.js 10 Ubuntu 16.04 10 2024-07-10 2025-07-10 Node.js 8 Ubuntu 16.04 8 2024-07-10 2025-07-10 Python Runtime Environment Runtime Version End of support Deprecated Decommission Python 3.14 Ubuntu 24.04 3.14 2030-10-10 2031-10-10 Python 3.13 Ubuntu 22.04 3.13 2029-10-10 2030-10-10 Python 3.12 Ubuntu 22.04 3.12 2028-10-02 2029-10-02 Python 3.11 Ubuntu 22.04 3.11 2027-10-24 2028-10-24 Python 3.10 Ubuntu 22.04 3.10 2026-10-04 2027-10-04 Python 3.9 Ubuntu 18.04 3.9 2025-10-05 2026-10-05 Python 3.8 Ubuntu 18.04 3.8 2024-10-14 2025-10-14 Python 3.7 Ubuntu 16.04 3.7 2024-07-10 2025-07-10 Python 3.6 Ubuntu 16.04 3.6 2024-07-10 2025-07-10 Python 3.5 Ubuntu 16.04 3.5 2024-07-10 2025-07-10 Python 3.4 Ubuntu 16.04 3.4 2024-07-10 2025-07-10 Python 2.7 Ubuntu 16.04 2 2024-07-10 2025-07-10 PHP Runtime Environment Runtime Version End of support Deprecated Decommission PHP 8.5 Ubuntu 24.04 8.5 2029-12-31 2030-12-31 PHP 8.4 Ubuntu 22.04 8.4 2028-12-31 2029-12-31 PHP 8.3 Ubuntu 22.04 8.3 2027-12-31 2028-12-31 PHP 8.2 Ubuntu 22.04 8.2 2026-12-31 2027-12-31 PHP 8.1 Ubuntu 18.04 8.1 2025-12-31 2026-12-31 PHP 7.4 Ubuntu 18.04 7.4 2024-07-10 2025-07-10 PHP 7.3 Ubuntu 16.04 7.3 2024-07-10 2025-07-10 PHP 7.2 Ubuntu 16.04 7.2 2024-07-10 2025-07-10 Ruby Runtime Environment Runtime Version End of support Deprecated Decommission Ruby 4.0 Ubuntu 24.04 4.0 2029-03-31 2030-03-31 Ruby 3.4 Ubuntu 22.04 3.4 2028-03-31 2029-03-31 Ruby 3.3 Ubuntu 22.04 3.3 2027-03-31 2028-03-31 Ruby 3.2 Ubuntu 22.04 3.2 2026-03-31 2027-03-31 Ruby 3.1 Ubuntu 16.04 3.1 2024-07-10 2025-07-10 Ruby 3.0 Ubuntu 16.04 3.0 2024-07-10 2025-07-10 Ruby 2.7 Ubuntu 16.04 2.7 2024-07-10 2025-07-10 Ruby 2.6 Ubuntu 16.04 2.6 2024-07-10 2025-07-10 .NET Runtime Environment Runtime Version End of support Deprecated Decommission .NET 10 Ubuntu 24.04 10 2028-11-14 2029-11-14 .NET 8 Ubuntu 22.04 8 2026-11-10 2027-11-10 .NET 6 Ubuntu 22.04 6 2024-11-12 2025-11-12 .NET 3 Ubuntu 16.04 3 2024-07-10 2025-07-10 .NET 2 Ubuntu 16.04 2 2024-07-10 2025-07-10 .NET 1 Ubuntu 16.04 1 2024-07-10 2025-07-10 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Go Runtime Environment Runtime Version End of support Deprecated Decommissioned Go 1.26 Ubuntu 24.04 1.26 Go 1.25 Ubuntu 22.04 1.25 Go 1.24 Ubuntu 22.04 1.24 2027-03-02 2028-03-02 Go 1.23 Ubuntu 22.04 1.23 2026-08-21 2027-08-21 Go 1.22 Ubuntu 22.04 1.22 2026-07-28 2027-07-28 Go 1.21 Ubuntu 22.04 1.21 2026-03-03 2027-03-03 Go 1.20 Ubuntu 22.04 1.20 2024-03-27 2025-03-27 Go 1.19 Ubuntu 22.04 1.19 2024-07-10 2025-07-10 Go 1.18 Ubuntu 22.04 1.18 2024-07-10 2025-07-10 Go 1.15 Distroless 1.15 2024-07-10 2025-07-10 Go 1.14 Distroless 1.14 2024-07-10 2025-07-10 Go 1.13 Distroless 1.13 2024-07-10 2025-07-10 Go 1.12 Distroless 1.12 2024-07-10 2025-07-10 Go 1.11 Distroless 1.11 2024-07-10 2025-07-10 Go 1.10 Distroless 1.10 2024-07-10 2025-07-10 Go 1.9 Distroless 1.9 2024-07-10 2025-07-10 Note: Go's release policy states that each major Go release is supported until there are two newer major releases.
+- Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Runtime support schedule Stay organized with collections Save and categorize content based on your preferences.
+- This page provides key dates for App Engine flexible environment language runtimes as described in the Runtime lifecycle page.
 

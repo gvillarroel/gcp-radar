@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.893Z"
+generated_at: "2026-04-14T15:34:54.420Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Service-level maximum instance configuration"
@@ -9,18 +9,16 @@ latest_feature_date: "2025-10-06"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
+  - "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient"
   - "https://docs.cloud.google.com/run/docs/configuring"
-  - "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+  - "https://docs.cloud.google.com/run/docs/securing/service-identity"
 keywords:
-  - "level"
-  - "maximum"
-  - "instance"
-  - "configuration"
-  - "run"
-  - "supports"
   - "applying"
-  - "at"
+  - "configuration"
+  - "maximum"
+  - "level"
+  - "instance"
+  - "supports"
 ---
 
 # Service-level maximum instance configuration
@@ -38,53 +36,54 @@ Cloud Run supports applying maximum instance configuration at the service level.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
+- [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
 - [https://docs.cloud.google.com/run/docs/configuring](https://docs.cloud.google.com/run/docs/configuring)
-- [https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run](https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run)
+- [https://docs.cloud.google.com/run/docs/securing/service-identity](https://docs.cloud.google.com/run/docs/securing/service-identity)
 
 ## Supporting Pages
 
-### Cloud Run release notes \_|\_ Google Cloud Documentation
+### Introduction to service identity \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/run/docs/securing/service-identity](https://docs.cloud.google.com/run/docs/securing/service-identity)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 41
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- October 06, 2025 Feature Support for applying maximum instance configuration at the service level is in General Availability (GA).
-- June 30, 2025 Feature You can apply maximum instance configuration at the service level (in Preview).
-- May 20, 2020 Feature The Cloud Run container instance metadata server now exposes the unique identifier of the container instance and the region of the Cloud Run service May 13, 2020 Feature Cloud Run (fully managed) now supports connecting to a VPC network with Serverless VPC Access , in beta.
-- September 20, 2022 Feature Cloud Run now supports workforce identity federation September 14, 2022 Feature Startup CPU boost for revisions is now available to provide additional CPU during container instance startup time.
+- Call Google Cloud APIs with the service identity When a Cloud Run instance interacts with other IAM-authenticated Cloud Run services, or calls Cloud Client Libraries either through application code or built-in features like Cloud Run integrations or Cloud Storage volume mounts , the Google Cloud environment uses Application Default Credentials (ADC) to automatically detect whether the Cloud Run service identity is authenticated to perform the API operation.
+- Response: { "name": "projects/ PROJECT ID /topics/ TOPIC ID " } ID tokens Use the Compute Metadata Server to fetch an identity token with a specific audience: curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/identity?audience= AUDIENCE " \ --header "Metadata-Flavor: Google" Where AUDIENCE is the JWT Audience requested.
+- Use the Compute Metadata Server to fetch an access token : curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" \ --header "Metadata-Flavor: Google" This endpoint returns a JSON response with an access token attribute.
+- How service identity works When your code uses Cloud Client Libraries that makes requests to Google Cloud API, the following happens: The client library requests an OAuth 2.0 access token for the service identity from the instance metadata server.
+
+### "Class ServicesAsyncClient (0.16.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient](https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.services.ServicesAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 40
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Returns Type Description google.cloud.run v2.types.Service Service acts as a top-level container that manages a set of configurations and revision templates which implement a network service.
+- The result type for the operation will be Service Service acts as a top-level container that manages a set of configurations and revision templates which implement a network service.
+- The result type for the operation will be Service Service acts as a top-level container that manages a set of configurations and revision templates which implement a network service.
+- The result type for the operation will be Service Service acts as a top-level container that manages a set of configurations and revision templates which implement a network service.
 
 ### Configure Cloud Run services \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/configuring](https://docs.cloud.google.com/run/docs/configuring)
-- Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- If you need to change the default number of container instances that are kept warm, ready to receive requests, you can set revision-level maximum instances and minimum instances .
-- You can control how many instances your Cloud Run service creates to serve requests by setting maximum instances and minimum instances .
-- By default, Cloud Run automatically scales out to a specified or default maximum number of instances.
-- The following table explains the features for this section: Section Feature Description A Service account The Cloud Run service identity is the service account that is used as the authenticated account for accessing Google Cloud APIs from your Cloud Run instance container.
-
-### Migrate Node.js apps from Heroku to Cloud Run \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run](https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run)
-- Source ID: `site-docs-root`
-- Final score: 162
+- Source ID: `site-docs-reference-2`
+- Final score: 37
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create a SQL format backup of your Heroku Postgres database: docker run \ -it --rm \ -e PGPASSWORD=$HEROKU PG PASSWORD \ -v $(pwd):/tmp \ --entrypoint "pg dump" \ postgres \ -Fp \ --no-acl \ --no-owner \ -h $HEROKU PG HOST \ -U $HEROKU PG USER \ $HEROKU PG DBNAME > herokudump.sql Create an environment variable to hold the name of your Cloud Storage bucket: export PG BACKUP BUCKET=gs:// PROJECT ID -pg-backup-bucket Create a Cloud Storage bucket: gcloud storage buckets create $PG BACKUP BUCKET \ --location=us-central1 \ --public-access-prevention \ --uniform-bucket-level-access Upload the SQL file to this bucket: gcloud storage cp herokudump.sql $PG BACKUP BUCKET/herokudump.sql Authorize your Cloud SQL instance with the necessary roles to import the SQL file from the Cloud Storage bucket: gcloud projects add-iam-policy-binding PROJECT ID \ --member=serviceAccount:$(gcloud sql instances describe $CLOUDSQL DB NAME --format='get("serviceAccountEmailAddress")') \ --role=roles/storage.objectAdmin gcloud projects add-iam-policy-binding PROJECT ID \ --member=serviceAccount:$(gcloud sql instances describe $CLOUDSQL DB NAME --format='get("serviceAccountEmailAddress")') \ --role=roles/cloudsql.editor Import the SQL file to the Cloud SQL instance: gcloud sql import sql $CLOUDSQL DB NAME $PG BACKUP BUCKET/herokudump.sql \ --database=postgres \ --user=postgres When prompted do you want to continue (y/n) , enter "y".
-- Deploy the sample app to Cloud Run In Cloud Shell, configure serverless vpc access to allow private traffic from Cloud Run to Cloud SQL: gcloud compute networks subnets create serverless-connector-subnet \ --network=default \ --range=10.0.0.0/28 \ --region=us-central1 gcloud compute networks vpc-access connectors create serverless-connector \ --region=us-central1 \ --subnet=serverless-connector-subnet In Cloud Shell, create an environment variable that holds the connection name of the Cloud SQL instance that you created: export DB CONN NAME=$(gcloud sql instances describe $CLOUDSQL DB NAME --format='value(connectionName)') Create an environment variable called DATABASE URL to hold the connection string to connect to the Cloud SQL Proxy over a UNIX port. export DATABASE URL="socket:/cloudsql/${DB CONN NAME}?db=postgres&user=postgres&password= POSTGRES PASSWORD " Create a service account for Cloud Run with an IAM role to connect to the database: gcloud iam service-accounts create sa-run-db-client gcloud projects add-iam-policy-binding PROJECT ID \ --member=serviceAccount:sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \ --role=roles/cloudsql.client Deploy the web app to Cloud Run: gcloud run deploy tasksapp- PROJECT ID \ --image=$IMAGE NAME \ --service-account=sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \ --set-env-vars=DATABASE URL=$DATABASE URL \ --add-cloudsql-instances $DB CONN NAME \ --vpc-connector serverless-connector \ --allow-unauthenticated The preceding command also links your Cloud Run container to the Cloud SQL database instance that you created.
-- How Cloud Run accesses the Cloud SQL database Just as the web app deployed to Heroku needs to connect to the managed instance of Heroku Postgres, Cloud Run requires access to Cloud SQL in order to be able to read and write data.
-- Cloud Run containers: Google Cloud supports running containerized workloads in stateless containers that can be run in a fully managed environment or in Google Kubernetes Engine (GKE) clusters.
+- If you need to change the default number of container instances that are kept warm, ready to receive requests, you can set revision-level maximum instances and minimum instances .
+- Setting a maximum number of instances can help to curb costs and guard against abnormally high request levels .
+- B Maximum concurrency You can configure the maximum concurrent requests per instance to specify the maximum number of requests that can be processed simultaneously by a given instance.
+- You can also configure timeouts, maximum concurrency, the execution environment, revision scaling, startup CPU boost, or connect to a Cloud SQL instance.
 

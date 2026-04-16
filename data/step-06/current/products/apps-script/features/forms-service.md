@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:29:46.796Z"
+generated_at: "2026-04-15T11:53:34.639Z"
 product_name: "Apps Script"
 product_slug: "apps-script"
 feature_name: "Forms Service"
@@ -10,17 +10,15 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/apps-script/releases"
-  - "https://developers.google.com/apps-script/guides/triggers/installable"
-  - "https://developers.google.com/apps-script/guides/menus"
+  - "https://developers.google.com/apps-script/guides/html"
+  - "https://developers.google.com/apps-script/guides/sheets"
 keywords:
-  - "introduces"
-  - "creating"
   - "forms"
-  - "script"
-  - "apps"
-  - "for"
-  - "and"
-  - "the"
+  - "was"
+  - "added"
+  - "create"
+  - "modify"
+  - "programmatically"
 ---
 
 # Forms Service
@@ -30,11 +28,11 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Introduces the Apps Script Forms Service for creating and modifying Google Forms.
+Forms Service was added to create and modify Google Forms programmatically.
 
 ## Extended Definition
 
-Introduces the Apps Script Forms Service for creating and modifying Google Forms.
+Forms Service was added to create and modify Google Forms programmatically.
 
 ## Evidence Summary
 
@@ -43,8 +41,8 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 ## Source Links
 
 - [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
-- [https://developers.google.com/apps-script/guides/triggers/installable](https://developers.google.com/apps-script/guides/triggers/installable)
-- [https://developers.google.com/apps-script/guides/menus](https://developers.google.com/apps-script/guides/menus)
+- [https://developers.google.com/apps-script/guides/html](https://developers.google.com/apps-script/guides/html)
+- [https://developers.google.com/apps-script/guides/sheets](https://developers.google.com/apps-script/guides/sheets)
 
 ## Supporting Pages
 
@@ -52,40 +50,38 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
 - Source ID: `site-docs-root`
-- Final score: 212
+- Final score: 138
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Page Summary outlined flag Several Apps Script services have been updated, including the Spreadsheet, Forms, Calendar, Docs, Chat, and Google Workspace Add-ons services, adding new features and capabilities.
-- Feature The Spreadsheet service has been extended with the following new classes and methods to support text styles and Rich Text cell formatting: RichTextValue RichTextValueBuilder TextStyle TextStyleBuilder Range.getRichTextValue() Range.getRichTextValues() Range.getTextStyle() Range.getTextStyles() Range.setRichTextValue(value) Range.setRichTextValues(values) Range.setTextStyle(style) Range.setTextStyles(styles) SpreadsheetApp.newRichTextValue() SpreadsheetApp.newTextStyle() The Data Studio service has been extended with the following new classes and methods that define and support authentication types for community connectors: GetAuthTypeResponse AuthType CommunityConnector,newAuthTypeResponse() January 04, 2019 Feature The Slides service has been extended with the following new classes and methods that support slide linking and text box insertion: SlideLinkingMode [ Layout.insertTextBox(text) }(https://developers.google.com/apps-script/reference/slides/layout#inserttextboxtext) Layout.insertTextBox(text, left, top, width, height) Master.insertTextBox(text) Master.insertTextBox(text, left, top, width, height) Page.insertTextBox(text) Page.insertTextBox(text, left, top, width, height) Presentation.appendSlide(slide, linkingMode) Presentation.insertSlide(insertionIndex, slide, linkingMode) Slide.getSlideLinkingMode() Slide.getSourcePresentationId() Slide.getSourceSlideObjectId() Slide.insertTextBox(text) Slide.insertTextBox(text, left, top, width, height) Slide.refreshSlide() Slide.unlink() The Data Studio service has been extended with the following new classes and methods that error displays: DebugError UserError CommunityConnector.newDebugError() CommunityConnector.newUserError() December 13, 2018 Deprecated The Fusion Tables advanced service has been deprecated and will shutdown fully on December 3rd, 2019.
-- The gallery also features the following new samples: Build a Google Chat app with an ADK AI agent Build a Chat app with an Agent2Agent agent Analyze and label Gmail messages with Gemini and Vertex AI June 04, 2025 Deprecated Google Analytics 4 has replaced Universal Analytics , which means the Apps Script Advanced Service for Google Analytics Management API and Reporting API is deprecated.
-- Feature Generally Available : To complement the release of the granular consent flow in Apps Script IDE executions, the following methods have been added to the ScriptApp and AuthorizationInfo classes to let Apps Script developers programmatically interact with the scopes granted for a script.
+- Added Forms Service , which allows scripts to create and modify Google Forms.
+- June 14, 2012 Feature Added the ability to create, modify, and remove Embedded Charts in Google Sheets.
+- Added Drive Service , which allows scripts to create and modify files and folders in Google Drive.
+- The following methods have been added to the Group , Image , Line , PageElement , Shape , SheetsChart , Table , Video , and WordArt classes: bringForward() bringToFront() sendBackward() sendToBack() setDescription(description) setTitle(title) The Spreadsheet service has been extended with the following new classes and methods that let you add and search for metadata strings attached to rows, columns, sheets, or spreadsheets: DeveloperMetadata DeveloperMetadataFinder DeveloperMetadataLocation DeveloperMetadataLocationType DeveloperMetadataVisibility Range.addDeveloperMetadata(key) Range.addDeveloperMetadata(key, visibility) Range.addDeveloperMetadata(key, value) Range.addDeveloperMetadata(key, value, visibility) Range.createDeveloperMetadataFinder() Range.getDeveloperMetadata() Sheet.addDeveloperMetadata(key) Sheet.addDeveloperMetadata(key, visibility) Sheet.addDeveloperMetadata(key, value) Sheet.addDeveloperMetadata(key, value, visibility) Sheet.createDeveloperMetadataFinder() Sheet.getDeveloperMetadata() Spreadsheet.addDeveloperMetadata(key) Spreadsheet.addDeveloperMetadata(key, visibility) Spreadsheet.addDeveloperMetadata(key, value) Spreadsheet.addDeveloperMetadata(key, value, visibility) Spreadsheet.createDeveloperMetadataFinder() Spreadsheet.getDeveloperMetadata() October 30, 2018 Feature The Spreadsheet service has been extended with the following new classes and methods: OverGridImage Sheet.getImages() Sheet.isColumnHiddenByUser(columnPosition) Sheet.isRowHiddenByFilter(rowPosition) Sheet.isRowHiddenByUser(rowPosition) Spreadsheet.getImages() Spreadsheet.isColumnHiddenByUser(columnPosition) Spreadsheet.isRowHiddenByFilter(rowPosition) Spreadsheet.isRowHiddenByUser(rowPosition) The following methods have been added to existing services: console service console.error() console.info() console.warn() DataStudio service Field.isHidden() Field.setIsHidden() Gmail service GmailAttachment.getHash() GmailMessage.getAttachments(options) Change The following methods in the Spreadsheet service now return an OverGridImage object instead of void: Sheet.insertImage(blobSource, column, row) Sheet.insertImage(blobSource, column, row, offsetX, offsetY) Sheet.insertImage(url, column, row) Sheet.insertImage(url, column, row, offsetX, offsetY) October 18, 2018 Feature The Card service has been extended with the following classes and methods to support Gmail add-on compose actions : CardService.UpdateDraftActionResponse CardService.UpdateDraftActionResponseBuilder CardService.UpdateDraftBodyAction CardService.ContentType CardService.UpdateDraftBodyType CardService.newUpdateDraftActionResponseBuilder() CardService.newUpdateDraftBodyAction() September 27, 2018 Announcement The Data Studio service is now available.
 
-### Installable Triggers \_|\_ Apps Script \_|\_ Google for Developers
+### HTML Service: Create and Serve HTML \_|\_ Apps Script \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/apps-script/guides/triggers/installable](https://developers.google.com/apps-script/guides/triggers/installable)
-- Source ID: `site-docs-reference`
-- Final score: 204
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- If you have previously stored the ID of a trigger, delete it by passing the ID as an argument to the following function. triggers/triggers.gs View on GitHub / Deletes a trigger. @param {string} triggerId The Trigger ID. @see https://developers.google.com/apps-script/guides/triggers/installable / function deleteTrigger ( triggerId ) { // Loop over all triggers. const allTriggers = ScriptApp . getProjectTriggers (); for ( let index = 0 ; index < allTriggers . length ; index ++ ) { // If the current trigger is the correct one, delete it. if ( allTriggers [ index ]. getUniqueId () === triggerId ) { ScriptApp . deleteTrigger ( allTriggers [ index ]); break ; } } } Before creating a trigger, verify that the associated function has all the necessary OAuth permissions .
-- Time-driven triggers let scripts execute at a particular time or on a recurring interval, as frequently as every minute or as infrequently as once per month. (An add-on can use a time-driven trigger once per hour at most.) The time might be slightly randomized—for example, if you create a recurring 9 AM trigger, Apps Script chooses a time between 9 AM and 10 AM, then keeps that timing consistent from day to day so that 24 hours elapse before the trigger fires again.
-- For both simple and installable triggers, Apps Script passes the triggered function an event object that contains information about the context in which the event occurred.
-- To create this trigger from a standalone script, replace SpreadsheetApp.getActive() with a call to SpreadsheetApp.openById(id) . triggers/triggers.gs View on GitHub / Creates a trigger for when a spreadsheet opens. @see https://developers.google.com/apps-script/guides/triggers/installable / function createSpreadsheetOpenTrigger () { const ss = SpreadsheetApp . getActive (); ScriptApp . newTrigger ( "myFunction" ). forSpreadsheet ( ss ). onOpen (). create (); } To programmatically modify an existing installable trigger, you must delete it and create a new one.
-
-### Custom Menus in Google Workspace \_|\_ Apps Script \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/apps-script/guides/menus](https://developers.google.com/apps-script/guides/menus)
+- URL: [https://developers.google.com/apps-script/guides/html](https://developers.google.com/apps-script/guides/html)
 - Source ID: `site-docs-root`
-- Final score: 200
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+- Final score: 72
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Custom menus in Docs, Sheets, Slides, or Forms Apps Script can add new menus in Docs, Sheets, Slides, or Forms, with each menu item tied to a function in a script. (In Forms, custom menus are visible only to an editor who opens the form to modify it, not to a user who opens the form to respond.) Only bound scripts can create menus.
-- The most common example is running a script from a custom menu item in Google Docs, Google Sheets, Google Slides, or Google Forms, but script functions can also be triggered by clicking on images and drawings in Sheets.
-- Clickable images and drawings in Sheets You can also assign an Apps Script function to an image or drawing in Sheets, provided the script is bound to the spreadsheet.
-- Images and drawings in Google Sheets can also have Apps Script functions assigned to them to run when clicked.
+- Code.gs // Use this code for Google Docs, Slides, Forms, or Sheets. function onOpen() { SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp. .createMenu('Dialog') .addItem('Open', 'openDialog') .addToUi(); } function openDialog() { var html = HtmlService.createHtmlOutputFromFile('Index'); SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp. .showModalDialog(html, 'Dialog title'); } Index.html <!DOCTYPE html> <html> <head> <base target=" top"> </head> <body> Hello, World! <input type="button" value="Close" onclick="google.script.host.close()" /> </body> </html> The first time you want to display this user interface, you must either run the onOpen function manually in the script editor or reload the window for the Docs, Sheets, or Forms editor (which closes the script editor).
+- In Google Forms, custom user interfaces are only visible to an editor who opens the form to modify it, not to a user who opens the form to respond.
+- Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } Index.html <!DOCTYPE html> <html> <head> <base target=" top"> </head> <body> Hello, World! </body> </html> Once that basic framework is in place, all you have to do is save a version of your script , then deploy your script as a web app .
+- The HTML service can also display dialogs or sidebars as user interfaces in Google Docs, Sheets, Slides, or Forms if the script is container-bound, requiring a function that passes the HTML file as an HtmlOutput object to the showModalDialog() or showSidebar() methods of the Ui object.
+
+### Extend Google Sheets \_|\_ Apps Script \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/apps-script/guides/sheets](https://developers.google.com/apps-script/guides/sheets)
+- Source ID: `site-docs-root-2`
+- Final score: 70
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Apps Script interacts with Sheets in two ways: any script can create or modify a spreadsheet if the script's user has appropriate permissions for it, and a script can also be bound to a spreadsheet.
+- Get started Apps Script includes special APIs to programmatically create, read, and edit Sheets.
+- You can programmatically create, read, and edit Google Sheets using Apps Script APIs.
+- The following example sets the font style of a range: function formatMySpreadsheet () { // Set the font style of the cells in the range of B2:C2 to be italic. const ss = SpreadsheetApp . getActiveSpreadsheet (); const sheet = ss . getSheets ()[ 0 ]; const cell = sheet . getRange ( 'B2:C2' ); cell . setFontStyle ( 'italic' ); } Data validation Access existing data-validation rules in Sheets or create new rules.
 

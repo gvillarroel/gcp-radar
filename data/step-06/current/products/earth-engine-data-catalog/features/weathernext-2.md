@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.328Z"
+generated_at: "2026-04-14T15:13:19.276Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "WeatherNext 2"
 feature_slug: "weathernext-2"
 latest_feature_date: "2025-11-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/weather"
   - "https://developers.google.com/earth-engine/datasets/tags/climate"
@@ -18,7 +18,6 @@ keywords:
   - "generation"
   - "weather"
   - "dataset"
-  - "for"
   - "earth"
   - "engine"
 ---
@@ -26,7 +25,7 @@ keywords:
 # WeatherNext 2
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +37,7 @@ A next-generation weather dataset for Earth Engine.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,9 +51,8 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/weather](https://developers.google.com/earth-engine/datasets/tags/weather)
 - Source ID: `site-docs-root`
-- Final score: 274
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 179
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - This climate projection dataset contains global, daily gridded data for the observational (1983-2016) and projection (2030 and 2050) periods to be used in the identification and … climate geophysical precipitation ucsb weather WeatherNext 2 WeatherNext 2 is an experimental dataset of global medium-range ensemble weather forecasts produced by an operational version of Google DeepMind's Functional Network Generative weather model.
@@ -66,9 +64,8 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
 - Source ID: `site-docs-root`
-- Final score: 270
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 159
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Real-time data is any data that relates to a time that is … climate forecast gcp-public-data-weathernext precipitation publisher-dataset temperature WeatherNext Gen Forecasts WeatherNext Gen is an experimental dataset of global medium-range ensemble weather forecasts produced by an operational version of Google DeepMind's diffusion-based ensemble weather model.
@@ -80,9 +77,8 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/precipitation](https://developers.google.com/earth-engine/datasets/tags/precipitation)
 - Source ID: `site-docs-root-3`
-- Final score: 262
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 159
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - The map uses five classifications: abnormally dry (D0), showing areas that may be going into or are coming out of drought, and four levels of drought: … community-dataset drought noaa precipitation sat-io usda WeatherNext 2 WeatherNext 2 is an experimental dataset of global medium-range ensemble weather forecasts produced by an operational version of Google DeepMind's Functional Network Generative weather model.

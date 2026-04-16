@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.128Z"
+generated_at: "2026-04-14T00:07:05.645Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Appendable output streams"
 feature_slug: "appendable-output-streams"
 latest_feature_date: "2016-07-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
-  - "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
-  - "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud"
+  - "https://docs.cloud.google.com/dataproc/docs/concepts/jobs/history-server"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-fileoutput-committer"
 keywords:
   - "appendable"
   - "output"
@@ -20,13 +20,13 @@ keywords:
   - "ghfs"
   - "enable"
   - "writes"
-  - "by"
+  - "setting"
 ---
 
 # Appendable output streams
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,54 @@ Appendable output streams let GHFS enable appendable writes by setting fs.gs.out
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- [https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial](https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial)
-- [https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud](https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud)
+- [https://docs.cloud.google.com/dataproc/docs/concepts/jobs/history-server](https://docs.cloud.google.com/dataproc/docs/concepts/jobs/history-server)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy)
+- [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-fileoutput-committer](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-fileoutput-committer)
 
 ## Supporting Pages
 
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
+### Servidor de histórico persistente | Managed Service for Apache Spark | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 120
+- URL: [https://docs.cloud.google.com/dataproc/docs/concepts/jobs/history-server](https://docs.cloud.google.com/dataproc/docs/concepts/jobs/history-server)
+- Source ID: `feature-recovery-http`
+- Final score: 121
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Appendable output streams - GHFS (Google Hadoop File System) now contains an option to enable support for appendable output streams.
-- Features and improvements: Regional and multi-zonal workloads are used by default to increase obtainability of compute resources Faster startup than previous runtimes Fast resource cleanup that allows faster release of VPC IPs after workload completion End-user credentials are used for all workloads by default New bigquery Spark catalog, pre-configured for out-of-the-box BigQuery native table interactions New Spark Serverless-specific IAM roles New dataproc-rm.googleapis.com API enablement is required November 22, 2025 Announcement New Dataproc on Compute Engine subminor image versions : 2.0.154-debian10, 2.0.154-ubuntu18, 2.0.154-rocky8 2.1.103-debian11, 2.1.103-ubuntu20, 2.1.103-ubuntu20-arm, 2.1.103-rocky8 2.2.71-debian12, 2.2.71-ubuntu22, 2.2.71-ubuntu22-arm, 2.2.71-rocky9 2.3.18-debian12, 2.3.18-ubuntu22, 2.3.18-ubuntu22-arm, 2.3.18-ml-ubuntu22, 2.3.18-rocky9 Change Dataproc on Compute Engine : Updated Cloud Storage connector: Updated to 3.1.10 in image version 2.3.18 .
-- Announcing a Beta release of Cluster Scheduled Deletion , which updates support of this feature in the Cloud SDK by including scheduled deletion output in the gcloud beta dataproc clusters list and gcloud beta dataproc clusters describe commands.
-- Automatic retry of commitJob (introduced in MAPREDUCE-5485 ) is now enabled by default; set mapreduce.fileoutputcommitter.failures.attempt to 1 to revert to the old behavior.
+- Se as duas propriedades forem usadas, elas precisarão apontar para diretórios no mesmo bucket. --properties=mapred:mapreduce.jobhistory.done-dir=gs:// bucket-name / directory-name /mapreduce-job-history/done --properties=mapred:mapreduce.jobhistory.intermediate-done-dir=gs:// bucket-name / directory-name /mapreduce-job-history/intermediate-done spark:spark.history.fs.gs.outputstream.type : essa propriedade se aplica a 2.0 e 2.1 clusters de versão de imagem que usam a versão 2.0.x do conector do Cloud Storage (a versão padrão do conector para clusters de versão de imagem 2.0 e 2.1 ).
+- Quando definido como FLUSHABLE_COMPOSITE , os dados são copiados para o Cloud Storage em intervalos regulares enquanto o job está em execução, conforme definido por spark:spark.history.fs.gs.outputstream.sync.min.interval.ms . --properties=spark:spark.history.fs.gs.outputstream.type=FLUSHABLE_COMPOSITE spark:spark.history.fs.gs.outputstream.sync.min.interval.ms : Essa propriedade se aplica a clusters de versão de imagem 2.0 e 2.1 que usam a versão 2.0.x do conector do Cloud Storage (a versão padrão do conector para clusters de versão de imagem 2.0 e 2.1 ).
+- Ele controla a frequência em que os dados são transferidos para o Cloud Storage quando spark:spark.history.fs.gs.outputstream.type está definido como FLUSHABLE_COMPOSITE . --properties=spark:spark.history.fs.gs.outputstream.sync.min.interval= INTERVAL dataproc:yarn.atsv2.bigtable.instance : depois de configurar o Yarn Timeline Service v2 , adicione essa propriedade para gravar dados da linha do tempo do YARN na instância do Bigtable especificada para visualização nas interfaces da Web do YARN Application Timeline Service V2 e do Tez do cluster do PHS.
+- Ele controla a frequência em milissegundos em que os dados são transferidos para o Cloud Storage quando spark:spark.history.fs.gs.outputstream.type está definido como FLUSHABLE_COMPOSITE .
 
-### "Use the Cloud Storage connector with Apache Spark \_|\_ Managed Service\
+### "Run Spark jobs with DataprocFileOutputCommitter \_|\_ Managed Service for\
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial](https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial)
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/dataproc-fileoutput-committer](https://docs.cloud.google.com/dataproc/docs/guides/dataproc-fileoutput-committer)
 - Source ID: `site-docs-root`
-- Final score: 98
-- Re-rank relevance: N/A
+- Final score: 77
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Create a set of directories with the path src/main/java/dataproc/codelab : mkdir -p src/main/java/dataproc/codelab Copy WordCount.java to your local machine into src/main/java/dataproc/codelab : cp WordCount.java src/main/java/dataproc/codelab WordCount.java is a Spark job in Java that reads text files from Cloud Storage, performs a word count, then writes the text file results to Cloud Storage. package dataproc.codelab ; import java.util.Arrays ; import org.apache.spark.SparkConf ; import org.apache.spark.api.java.JavaPairRDD ; import org.apache.spark.api.java.JavaRDD ; import org.apache.spark.api.java.JavaSparkContext ; import scala.Tuple2 ; public class WordCount { public static void main ( String [] args ) { if ( args . length != 2 ) { throw new IllegalArgumentException ( "Exactly 2 arguments are required: <inputUri> <outputUri>" ); } String inputPath = args [ 0 ] ; String outputPath = args [ 1 ] ; JavaSparkContext sparkContext = new JavaSparkContext ( new SparkConf (). setAppName ( "Word Count" )); JavaRDD<String> lines = sparkContext . textFile ( inputPath ); JavaRDD<String> words = lines . flatMap ( ( String line ) - > Arrays . asList ( line . split ( " " )). iterator () ); JavaPairRDD<String , Integer > wordCounts = words . mapToPair ( ( String word ) - > new Tuple2 <> ( word , 1 ) ). reduceByKey ( ( Integer count1 , Integer count2 ) - > count1 + count2 ); wordCounts . saveAsTextFile ( outputPath ); } } Build the package. mvn clean package If the build is successful, a target/word-count-1.0.jar is created.
-- This is a Spark job in Java that reads text files from Cloud Storage, performs a word count, then writes the text file results to Cloud Storage. package dataproc.codelab import org.apache.spark.SparkContext import org.apache.spark.SparkConf object WordCount { def main ( args : Array [ String ] ) { if ( args . length != 2 ) { throw new IllegalArgumentException ( "Exactly 2 arguments are required: <inputPath> <outputPath>" ) } val inputPath = args ( 0 ) val outputPath = args ( 1 ) val sc = new SparkContext ( new SparkConf (). setAppName ( "Word Count" )) val lines = sc . textFile ( inputPath ) val words = lines . flatMap ( line = > line . split ( " " )) val wordCounts = words . map ( word = > ( word , 1 )). reduceByKey ( + ) wordCounts . saveAsTextFile ( outputPath ) } } Build the package. sbt clean package If the build is successful, a target/scala-2.11/word-count 2.11-1.0.jar is created.
-- Java gcloud dataproc jobs submit spark \ --cluster=${CLUSTER} \ --class=dataproc.codelab.WordCount \ --jars=gs://${BUCKET NAME}/java/word-count-1.0.jar \ --region=${REGION} \ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ Scala gcloud dataproc jobs submit spark \ --cluster=${CLUSTER} \ --class=dataproc.codelab.WordCount \ --jars=gs://${BUCKET NAME}/scala/word-count 2.11-1.0.jar \ --region=${REGION} \ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ Python gcloud dataproc jobs submit pyspark word-count.py \ --cluster=${CLUSTER} \ --region=${REGION} \ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ View the output After the job finishes, run the following gcloud CLI command to view the wordcount output. gcloud storage cat gs://${BUCKET NAME}/output/ The wordcount output should be similar to the following: (a,2) (call,1) (What's,1) (sweet.,1) (we,1) (as,1) (name?,1) (any,1) (other,1) (rose,1) (smell,1) (name,1) (would,1) (in,1) (which,1) (That,1) (By,1) Clean up After you finish the tutorial, you can clean up the resources that you created so that they stop using quota and incurring charges.
-- This is a Spark job in Python using PySpark that reads text files from Cloud Storage, performs a word count, then writes the text file results to Cloud Storage. !/ usr / bin / env python import pyspark import sys if len ( sys . argv ) != 3 : raise Exception ( "Exactly 2 arguments are required: <inputUri> <outputUri>" ) inputUri = sys . argv [ 1 ] outputUri = sys . argv [ 2 ] sc = pyspark .
+- It enables concurrent writes by Apache Spark jobs to an output location.
+- Code example: sc.hadoopConfiguration.set("spark.hadoop.mapreduce.outputcommitter.factory.class","org.apache.hadoop.mapreduce.lib.output.DataprocFileOutputCommitterFactory") sc.hadoopConfiguration.set("spark.hadoop.mapreduce.fileoutputcommitter.marksuccessfuljobs","false") The Managed Service for Apache Spark file output committer must set spark.hadoop.mapreduce.fileoutputcommitter.marksuccessfuljobs=false to avoid conflicts between success marker files created during concurrent writes.
+- Limitations The DataprocFileOutputCommitter feature supports Spark jobs run on Managed Service for Apache Spark Compute Engine clusters created with the following image versions: 2.1 image versions 2.1.10 and higher 2.0 image versions 2.0.62 and higher Use DataprocFileOutputCommitter To use this feature: Create a Managed Service for Apache Spark on Compute Engine cluster using image versions 2.1.10 or 2.0.62 or higher.
+- Google Cloud CLI example: gcloud dataproc jobs submit spark \ --properties=spark.hadoop.mapreduce.outputcommitter.factory.class=org.apache.hadoop.mapreduce.lib.output.DataprocFileOutputCommitterFactory,spark.hadoop.mapreduce.fileoutputcommitter.marksuccessfuljobs=false \ --region= REGION \ other args ...
 
-### "Create a cluster by using the gcloud CLI \_|\_ Managed Service for Apache\
+### "Class AutoscalingPolicy (4.85.0) \_|\_ Java client libraries \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud](https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud)
-- Source ID: `site-docs-root`
-- Final score: 92
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AutoscalingPolicy)
+- Source ID: `site-java-reference`
+- Final score: 75
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Update a cluster To change the number of workers in the cluster to five, run the following command: gcloud dataproc clusters update example-cluster \ --region= REGION \ --num-workers 5 The command output displays cluster details: workerConfig: ... instanceNames: - example-cluster-w-0 - example-cluster-w-1 - example-cluster-w-2 - example-cluster-w-3 - example-cluster-w-4 numInstances: 5 statusHistory: ... - detail: Add 3 workers.
-- You can find out how to do the same or similar tasks with Quickstarts Using the API Explorer , the Google Cloud console in Create a cluster by using the Google Cloud console , and using the client libraries in Create a cluster by using client libraries .
-- Home Documentation Data analytics Managed Service for Apache Spark Guides Send feedback Create a cluster by using the gcloud CLI Stay organized with collections Save and categorize content based on your preferences.
-- Enable the Dataproc API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.
+- Protobuf type google.cloud.dataproc.v1.AutoscalingPolicy Inheritance Object > AbstractMessageLite<MessageType,BuilderType> > AbstractMessage > GeneratedMessage > AutoscalingPolicy Implements AutoscalingPolicyOrBuilder Inherited Members AbstractMessage.equals(Object) AbstractMessage.findInitializationErrors() AbstractMessage.getInitializationErrorString() AbstractMessage.hashCode() AbstractMessage.hashFields(int,Map<Descriptors.FieldDescriptor,Object>) AbstractMessage.newBuilderForType(AbstractMessage.BuilderParent) AbstractMessage.toString() AbstractMessageLite.<T>addAll(Iterable<T>,List<? super T>) AbstractMessageLite.checkByteStringIsUtf8(ByteString) AbstractMessageLite.toByteArray() AbstractMessageLite.toByteString() AbstractMessageLite.writeDelimitedTo(OutputStream) AbstractMessageLite.writeTo(OutputStream) com.google.protobuf.GeneratedMessage.<ContainingT,T>newFileScopedGeneratedExtension(java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ContainingT,T>newMessageScopedGeneratedExtension(com.google.protobuf.Message,int,java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT,int) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.<T>emptyList(java.lang.Class<T>) com.google.protobuf.GeneratedMessage.<V>serializeBooleanMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Boolean,V>,com.google.protobuf.MapEntry<java.lang.Boolean,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeIntegerMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Integer,V>,com.google.protobuf.MapEntry<java.lang.Integer,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeLongMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Long,V>,com.google.protobuf.MapEntry<java.lang.Long,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeStringMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.String,V>,com.google.protobuf.MapEntry<java.lang.String,V>,int) com.google.protobuf.GeneratedMessage.canUseUnsafe() GeneratedMessage.computeStringSize(int,Object) GeneratedMessage.computeStringSizeNoTag(Object) com.google.protobuf.GeneratedMessage.emptyBooleanList() com.google.protobuf.GeneratedMessage.emptyDoubleList() com.google.protobuf.GeneratedMessage.emptyFloatList() com.google.protobuf.GeneratedMessage.emptyIntList() com.google.protobuf.GeneratedMessage.emptyLongList() GeneratedMessage.getAllFields() GeneratedMessage.getDescriptorForType() GeneratedMessage.getField(Descriptors.FieldDescriptor) GeneratedMessage.getOneofFieldDescriptor(Descriptors.OneofDescriptor) GeneratedMessage.getParserForType() GeneratedMessage.getRepeatedField(Descriptors.FieldDescriptor,int) GeneratedMessage.getRepeatedFieldCount(Descriptors.FieldDescriptor) GeneratedMessage.getSerializedSize() GeneratedMessage.getUnknownFields() GeneratedMessage.hasField(Descriptors.FieldDescriptor) GeneratedMessage.hasOneof(Descriptors.OneofDescriptor) GeneratedMessage.internalGetFieldAccessorTable() GeneratedMessage.internalGetMapField(int) com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection(int) GeneratedMessage.isInitialized() com.google.protobuf.GeneratedMessage.isStringEmpty(java.lang.Object) GeneratedMessage.makeExtensionsImmutable() com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal(com.google.protobuf.CodedInputStream,com.google.protobuf.ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.newInstance(com.google.protobuf.GeneratedMessage.UnusedPrivateParameter) GeneratedMessage.parseUnknownField(CodedInputStream,UnknownFieldSet.Builder,ExtensionRegistryLite,int) com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3(com.google.protobuf.CodedInputStream,com.google.protobuf.UnknownFieldSet.Builder,com.google.protobuf.ExtensionRegistryLite,int) GeneratedMessage.writeReplace() GeneratedMessage.writeString(CodedOutputStream,int,Object) GeneratedMessage.writeStringNoTag(CodedOutputStream,Object) GeneratedMessage.writeTo(CodedOutputStream) Object.clone() Object.finalize() Object.getClass() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Static Fields BASIC ALGORITHM FIELD NUMBER public static final int BASIC ALGORITHM FIELD NUMBER Field Value Type Description int CLUSTER TYPE FIELD NUMBER public static final int CLUSTER TYPE FIELD NUMBER Field Value Type Description int ID FIELD NUMBER public static final int ID FIELD NUMBER Field Value Type Description int LABELS FIELD NUMBER public static final int LABELS FIELD NUMBER Field Value Type Description int NAME FIELD NUMBER public static final int NAME FIELD NUMBER Field Value Type Description int SECONDARY WORKER CONFIG FIELD NUMBER public static final int SECONDARY WORKER CONFIG FIELD NUMBER Field Value Type Description int WORKER CONFIG FIELD NUMBER public static final int WORKER CONFIG FIELD NUMBER Field Value Type Description int Static Methods getDefaultInstance() public static AutoscalingPolicy getDefaultInstance () Returns Type Description AutoscalingPolicy getDescriptor() public static final Descriptors .
+- AlgorithmCase getAlgorithmCase () Returns Type Description AutoscalingPolicy.AlgorithmCase getBasicAlgorithm() public BasicAutoscalingAlgorithm getBasicAlgorithm () .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic algorithm = 3 [(.google.api.field behavior) = REQUIRED]; Returns Type Description BasicAutoscalingAlgorithm The basicAlgorithm. getBasicAlgorithmOrBuilder() public BasicAutoscalingAlgorithmOrBuilder getBasicAlgorithmOrBuilder () .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic algorithm = 3 [(.google.api.field behavior) = REQUIRED]; Returns Type Description BasicAutoscalingAlgorithmOrBuilder getClusterType() public AutoscalingPolicy .
+- Describes how the autoscaler will operate for primary workers. .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig worker config = 4 [(.google.api.field behavior) = REQUIRED]; Returns Type Description InstanceGroupAutoscalingPolicyConfigOrBuilder hasBasicAlgorithm() public boolean hasBasicAlgorithm () .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic algorithm = 3 [(.google.api.field behavior) = REQUIRED]; Returns Type Description boolean Whether the basicAlgorithm field is set. hasSecondaryWorkerConfig() public boolean hasSecondaryWorkerConfig () Optional.
+- For projects.regions.autoscalingPolicies , the resource name of the policy has the following format: projects/{project id}/regions/{region}/autoscalingPolicies/{policy id} For projects.locations.autoscalingPolicies , the resource name of the policy has the following format: projects/{project id}/locations/{location}/autoscalingPolicies/{policy id} string name = 2 [(.google.api.field behavior) = OUTPUT ONLY]; Returns Type Description ByteString The bytes for name. getParserForType() public Parser<AutoscalingPolicy> getParserForType () Returns Type Description Parser < AutoscalingPolicy > Overrides GeneratedMessage.getParserForType() getSecondaryWorkerConfig() public InstanceGroupAutoscalingPolicyConfig getSecondaryWorkerConfig () Optional.
 

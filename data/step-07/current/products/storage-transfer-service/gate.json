@@ -1,0 +1,1727 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-15T12:12:26.330Z",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "input_file": "data/step-06/current/products/storage-transfer-service/extended-features.json",
+  "feature_count": 87,
+  "passed_feature_count": 87,
+  "failed_feature_count": 0,
+  "warned_feature_count": 8,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "Storage Transfer Service HDFS source support",
+      "feature_slug": "storage-transfer-service-hdfs-source-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiedgeportal",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AgentPool.BandwidthLimit",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentgateway"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service managed folders transfer",
+      "feature_slug": "storage-transfer-service-managed-folders-transfer",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiedgeportal",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Azure ADLS Gen2 to Cloud Storage transfer support",
+      "feature_slug": "storage-transfer-service-azure-adls-gen2-to-cloud-storage-transfer-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/delegate-service-agent-permissions",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/projects.agentPools/list",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3Data"
+      ]
+    },
+    {
+      "feature_name": "Event-driven transfer workflows",
+      "feature_slug": "event-driven-transfer-workflows",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/create",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsPager"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service hourly schedules",
+      "feature_slug": "storage-transfer-service-hourly-schedules",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsPager",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/create"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service source and destination path specification",
+      "feature_slug": "storage-transfer-service-source-and-destination-path-specification",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-agent-best-practices"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Azure Blob Storage transfer source support",
+      "feature_slug": "storage-transfer-service-azure-blob-storage-transfer-source-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service recurring transfer scheduling",
+      "feature_slug": "storage-transfer-service-recurring-transfer-scheduling",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/move-your-cloud-storage-data-to-another-location",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "Storage Transfer Service organization policy custom constraints",
+      "feature_slug": "storage-transfer-service-organization-policy-custom-constraints",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Azure event-driven transfers",
+      "feature_slug": "storage-transfer-service-azure-event-driven-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-azure",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "feature_name": "Private-network transfer from AWS S3/Azure Blob to Cloud Storage",
+      "feature_slug": "private-network-transfer-from-aws-s3-azure-blob-to-cloud-storage",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "feature_name": "Regional endpoints for Storage Transfer Service agents",
+      "feature_slug": "regional-endpoints-for-storage-transfer-service-agents",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support"
+      ]
+    },
+    {
+      "feature_name": "Agentless transfer user-managed service account delegation",
+      "feature_slug": "agentless-transfer-user-managed-service-account-delegation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/delegate-service-agent-permissions",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    },
+    {
+      "feature_name": "Skipped file logging for agent-based transfers",
+      "feature_slug": "skipped-file-logging-for-agent-based-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    },
+    {
+      "feature_name": "Cloud Storage-hosted transfer URL lists",
+      "feature_slug": "cloud-storage-hosted-transfer-url-lists",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+      ]
+    },
+    {
+      "feature_name": "Amazon S3 transfers over Google-managed private network",
+      "feature_slug": "amazon-s3-transfers-over-google-managed-private-network",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec"
+      ]
+    },
+    {
+      "feature_name": "Cloud Logging for Storage Transfer Service POSIX file system transfer support",
+      "feature_slug": "cloud-logging-for-storage-transfer-service-posix-file-system-transfer-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-to-file",
+        "https://docs.cloud.google.com/storage-transfer/docs/manifest"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Azure Shared Key authentication",
+      "feature_slug": "storage-transfer-service-azure-shared-key-authentication",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-azure"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service HDFS source support",
+      "feature_slug": "storage-transfer-service-hdfs-source-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiedgeportal",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AgentPool.BandwidthLimit",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentgateway"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service managed folders transfer",
+      "feature_slug": "storage-transfer-service-managed-folders-transfer",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiedgeportal",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Amazon S3 CloudFront domain transfer support",
+      "feature_slug": "storage-transfer-service-amazon-s3-cloudfront-domain-transfer-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3Data"
+      ]
+    },
+    {
+      "feature_name": "Event-driven transfers",
+      "feature_slug": "event-driven-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "feature_name": "Cloud Monitoring integration for Storage Transfer Service",
+      "feature_slug": "cloud-monitoring-integration-for-storage-transfer-service",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.ErrorSummary"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager integration for transfer job source credentials",
+      "feature_slug": "secret-manager-integration-for-transfer-job-source-credentials",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service source IP range publishing for AWS and Azure",
+      "feature_slug": "storage-transfer-service-source-ip-range-publishing-for-aws-and-azure",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-azure"
+      ]
+    },
+    {
+      "feature_name": "Metadata preservation for file system directory transfers",
+      "feature_slug": "metadata-preservation-for-file-system-directory-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-to-file"
+      ]
+    },
+    {
+      "feature_name": "Transfer from S3-compatible sources to Cloud Storage",
+      "feature_slug": "transfer-from-s3-compatible-sources-to-cloud-storage",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Manifest support",
+      "feature_slug": "storage-transfer-service-manifest-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/manifest",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Transfer Job progress monitoring",
+      "feature_slug": "storage-transfer-service-transfer-job-progress-monitoring",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/storage-transfer/docs/manage-transfers"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service file system transfer support",
+      "feature_slug": "storage-transfer-service-file-system-transfer-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-to-file",
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-agent-best-practices"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service event-driven transfers",
+      "feature_slug": "storage-transfer-service-event-driven-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "feature_name": "File system transfer multipart upload",
+      "feature_slug": "file-system-transfer-multipart-upload",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-agent-best-practices",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-system-permissions",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-to-file"
+      ]
+    },
+    {
+      "feature_name": "Cloud Storage to file system export",
+      "feature_slug": "cloud-storage-to-file-system-export",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/file-to-file",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-system-permissions"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service transferJobs.delete API method",
+      "feature_slug": "storage-transfer-service-transferjobs-delete-api-method",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/delete",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service S3-compatible source transfer to Cloud Storage (Preview)",
+      "feature_slug": "storage-transfer-service-s3-compatible-source-transfer-to-cloud-storage-preview",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3CompatibleData",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types"
+      ]
+    },
+    {
+      "feature_name": "Multipart upload support for file system transfers",
+      "feature_slug": "multipart-upload-support-for-file-system-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-agent-best-practices",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-system-permissions",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage"
+      ]
+    },
+    {
+      "feature_name": "Object-level detailed logging for Storage Transfer Service transfers",
+      "feature_slug": "object-level-detailed-logging-for-storage-transfer-service-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-system-permissions",
+        "https://docs.cloud.google.com/storage-transfer/docs/managed-folders"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service metadata preservation",
+      "feature_slug": "storage-transfer-service-metadata-preservation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service overwrite options",
+      "feature_slug": "storage-transfer-service-overwrite-options",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service overwriteWhen option",
+      "feature_slug": "storage-transfer-service-overwritewhen-option",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service transferAgent IAM role",
+      "feature_slug": "storage-transfer-service-transferagent-iam-role",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/storagetransfer",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service gcloud CLI management",
+      "feature_slug": "storage-transfer-service-gcloud-cli-management",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-agent-command-options",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/projects.agentPools"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service transfer authorize command",
+      "feature_slug": "storage-transfer-service-transfer-authorize-command",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-system-permissions"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service transfer manifests",
+      "feature_slug": "storage-transfer-service-transfer-manifests",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/manifest",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Resource Location Restriction enforcement",
+      "feature_slug": "storage-transfer-service-resource-location-restriction-enforcement",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "feature_name": "Metadata preservation controls for Cloud Storage transfers",
+      "feature_slug": "metadata-preservation-controls-for-cloud-storage-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    },
+    {
+      "feature_name": "Transfer-time storage class selection",
+      "feature_slug": "transfer-time-storage-class-selection",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions"
+      ]
+    },
+    {
+      "feature_name": "Cloud Client Library support",
+      "feature_slug": "cloud-client-library-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/migration-guide"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service agent pools",
+      "feature_slug": "storage-transfer-service-agent-pools",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/projects.agentPools/list",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListAgentPoolsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListAgentPoolsPager"
+      ]
+    },
+    {
+      "feature_name": "POSIX metadata preservation for Storage Transfer Service",
+      "feature_slug": "posix-metadata-preservation-for-storage-transfer-service",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-to-file"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service filesystem transfer jobs with periodic sync",
+      "feature_slug": "storage-transfer-service-filesystem-transfer-jobs-with-periodic-sync",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.StorageTransferServiceAsyncClient",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs"
+      ]
+    },
+    {
+      "feature_name": "AWS Security Token Service integration for Amazon S3 transfers",
+      "feature_slug": "aws-security-token-service-integration-for-amazon-s3-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service gcloud command-line interface support",
+      "feature_slug": "storage-transfer-service-gcloud-command-line-interface-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service detailed object transfer logging",
+      "feature_slug": "storage-transfer-service-detailed-object-transfer-logging",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Azure ADLS Gen2 to Cloud Storage transfer support",
+      "feature_slug": "storage-transfer-service-azure-adls-gen2-to-cloud-storage-transfer-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/delegate-service-agent-permissions",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/projects.agentPools/list",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3Data"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service on-premises transfers API",
+      "feature_slug": "storage-transfer-service-on-premises-transfers-api",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.StorageTransferServiceAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Cloud Storage to POSIX file system transfer",
+      "feature_slug": "cloud-storage-to-posix-file-system-transfer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/file-to-file",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-agent-best-practices"
+      ]
+    },
+    {
+      "feature_name": "On-premises transfer management API",
+      "feature_slug": "on-premises-transfer-management-api",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs"
+      ]
+    },
+    {
+      "feature_name": "AWS Security Token Service integration for AWS S3 transfers",
+      "feature_slug": "aws-security-token-service-integration-for-aws-s3-transfers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    },
+    {
+      "feature_name": "On-premises transfer delete-from-source support",
+      "feature_slug": "on-premises-transfer-delete-from-source-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Azure ADLS Gen 2 source support",
+      "feature_slug": "storage-transfer-service-azure-adls-gen-2-source-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-azure",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network"
+      ]
+    },
+    {
+      "feature_name": "Latest transfer operation status retrieval",
+      "feature_slug": "latest-transfer-operation-status-retrieval",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/Operation",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.StorageTransferServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.StorageTransferServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Event-driven transfer workflows",
+      "feature_slug": "event-driven-transfer-workflows",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/create",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsPager"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service hourly schedules",
+      "feature_slug": "storage-transfer-service-hourly-schedules",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 2,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        },
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsPager",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/create"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service job schedule modification",
+      "feature_slug": "storage-transfer-service-job-schedule-modification",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service source and destination path specification",
+      "feature_slug": "storage-transfer-service-source-and-destination-path-specification",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-agent-best-practices"
+      ]
+    },
+    {
+      "feature_name": "Transfer source and destination path specification",
+      "feature_slug": "transfer-source-and-destination-path-specification",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/manifest"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service hourly job scheduling",
+      "feature_slug": "storage-transfer-service-hourly-job-scheduling",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsPager"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service latest transfer operation status",
+      "feature_slug": "storage-transfer-service-latest-transfer-operation-status",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/Operation",
+        "https://docs.cloud.google.com/storage-transfer/docs/migration-guide",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/migration-guide"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service VPC Service Controls integration",
+      "feature_slug": "storage-transfer-service-vpc-service-controls-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Azure Blob Storage transfer source support",
+      "feature_slug": "storage-transfer-service-azure-blob-storage-transfer-source-support",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service on-premises transfer VPC Service Controls integration",
+      "feature_slug": "storage-transfer-service-on-premises-transfer-vpc-service-controls-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service Azure Blob Storage support",
+      "feature_slug": "storage-transfer-service-azure-blob-storage-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-azure",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service on-premises data transfer",
+      "feature_slug": "storage-transfer-service-on-premises-data-transfer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    },
+    {
+      "feature_name": "Pub/Sub notifications for external-to-Cloud Storage transfer jobs",
+      "feature_slug": "pub-sub-notifications-for-external-to-cloud-storage-transfer-jobs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/move-your-cloud-storage-data-to-another-location"
+      ]
+    },
+    {
+      "feature_name": "File selection by last modification time in transfer jobs",
+      "feature_slug": "file-selection-by-last-modification-time-in-transfer-jobs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "feature_name": "Custom job IDs in Storage Transfer Service",
+      "feature_slug": "custom-job-ids-in-storage-transfer-service",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "feature_name": "On-premises transfer support in Storage Transfer Service",
+      "feature_slug": "on-premises-transfer-support-in-storage-transfer-service",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service transferJobs scheduling fields",
+      "feature_slug": "storage-transfer-service-transferjobs-scheduling-fields",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.StorageTransferServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.services.storage_transfer_service.StorageTransferServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service IAM roles",
+      "feature_slug": "storage-transfer-service-iam-roles",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions"
+      ]
+    },
+    {
+      "feature_name": "Data sink access configuration",
+      "feature_slug": "data-sink-access-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service IAM permissions",
+      "feature_slug": "storage-transfer-service-iam-permissions",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service access control",
+      "feature_slug": "storage-transfer-service-access-control",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service API documentation",
+      "feature_slug": "storage-transfer-service-api-documentation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/libraries",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "feature_name": "Cloud Storage data source configuration",
+      "feature_slug": "cloud-storage-data-source-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service data sink access configuration",
+      "feature_slug": "storage-transfer-service-data-sink-access-configuration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service supported AWS regions",
+      "feature_slug": "storage-transfer-service-supported-aws-regions",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service job scheduling",
+      "feature_slug": "storage-transfer-service-job-scheduling",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service recurring transfer scheduling",
+      "feature_slug": "storage-transfer-service-recurring-transfer-scheduling",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/move-your-cloud-storage-data-to-another-location",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service transfer creation workflow",
+      "feature_slug": "storage-transfer-service-transfer-creation-workflow",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service API documentation updates",
+      "feature_slug": "storage-transfer-service-api-documentation-updates",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service API enablement for non-UI users",
+      "feature_slug": "storage-transfer-service-api-enablement-for-non-ui-users",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    },
+    {
+      "feature_name": "API Try It sections",
+      "feature_slug": "api-try-it-sections",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service UI prefix support",
+      "feature_slug": "storage-transfer-service-ui-prefix-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+      ]
+    },
+    {
+      "feature_name": "Storage Transfer Service",
+      "feature_slug": "storage-transfer-service",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/delegate-service-agent-permissions",
+        "https://docs.cloud.google.com/storage-transfer/docs/managed-folders"
+      ]
+    }
+  ]
+}

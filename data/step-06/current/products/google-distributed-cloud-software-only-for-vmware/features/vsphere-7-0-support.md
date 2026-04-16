@@ -1,30 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:32.726Z"
+generated_at: "2026-04-14T16:48:38.222Z"
 product_name: "Google Distributed Cloud (software only) for VMware"
 product_slug: "google-distributed-cloud-software-only-for-vmware"
 feature_name: "vSphere 7.0 support"
 feature_slug: "vsphere-7-0-support"
 latest_feature_date: "2021-03-25"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/vsphere-requirements"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/create-user-cluster"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/overview"
 keywords:
   - "vsphere"
   - "anthos"
   - "clusters"
-  - "on"
   - "vmware"
   - "can"
-  - "be"
   - "deployed"
+  - "environments"
 ---
 
 # vSphere 7.0 support
 
 Product: Google Distributed Cloud (software only) for VMware
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,13 +33,57 @@ Anthos clusters on VMware can be deployed on vSphere 7.0 environments.
 
 ## Extended Definition
 
-Anthos clusters on VMware can be deployed on vSphere 7.0 environments.
+This feature is the ability to deploy Anthos clusters on the Google Distributed Cloud (software only) platform in a VMware vSphere environment, including scenarios across vSphere clusters or resource pools. The vSphere requirements and cluster creation guidance document vCenter/vSphere configuration, roles, permissions, and required deployment steps for Anthos VMware clusters, which define how the feature is enabled. The provided excerpts do not explicitly state a supported vSphere version number (such as vSphere 7.0), so version-specific support is only weakly evidenced.
+
+## Evidence Summary
+
+The cited pages establish that Google Distributed Cloud for VMware is designed for on-prem vSphere deployments and provide vSphere-specific requirements and cluster creation workflows, but they do not explicitly confirm the vSphere 7.0 version in the provided snippets.
 
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/vsphere-requirements](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/vsphere-requirements)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/create-user-cluster](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/create-user-cluster)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/overview](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "vSphere requirements \_|\_ Google Distributed Cloud (software only) for\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/vsphere-requirements](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/vsphere-requirements)
+- Source ID: `site-docs-root`
+- Final score: 131
+- Re-rank relevance: STRONG
+- Re-rank rationale: The page explicitly states that Google Distributed Cloud for VMware supports ESXi and vCenter 7.0 Update 2 and later versions.
+
+Evidence snippets:
+- Enable Network File Copy (NFC) traffic among ESXi hosts to allow OS template sharing, if you plan to deploy Anthos clusters on VMware on different vSphere clusters or resource pools within the same vSphere datacenter.
+- For example: export GOVC URL=vc-01.example export GOVC USERNAME=alice@vsphere.local export GOVC PASSWORD=8ODQYHo2Yl@ Create custom roles Create the ClusterEditor, SessionValidator, and ReadOnly custom roles: govc role.create ClusterEditor System.Read System.View System.Anonymous Host.Inventory.EditCluster govc role.create SessionValidator System.Read System.View System.Anonymous Sessions.ValidateSession Cns.Searchable StorageProfile.View govc role.create ReadOnly System.Read System.View System.Anonymous View the command to create the Anthos custom role. govc role.create anthos Cns.Searchable Cryptographer.Access Datastore.AllocateSpace Datastore.Browse Datastore.Config Datastore.FileManagement Datastore.DeleteFile Datastore.UpdateVirtualMachineFiles Datastore.UpdateVirtualMachineMetadata Folder.Create Folder.Delete Folder.Move Folder.Rename Host.Inventory.EditCluster InventoryService.Tagging.CreateTag InventoryService.Tagging.DeleteTag InventoryService.Tagging.AttachTag InventoryService.Tagging.ObjectAttachable Sessions.ValidateSession Network.Assign Resource.ApplyRecommendation Resource.AssignVMToPool Resource.ColdMigrate Resource.HotMigrate Resource.QueryVMotion StorageViews.View System.Anonymous System.Read System.View Task.Create Task.Update VApp.Import VApp.ApplicationConfig VApp.InstanceConfig VirtualMachine.Config.AddExistingDisk VirtualMachine.Config.AddNewDisk VirtualMachine.Config.AddRemoveDevice VirtualMachine.Config.AdvancedConfig VirtualMachine.Config.Annotation VirtualMachine.Config.CPUCount VirtualMachine.Config.Resource VirtualMachine.Config.ManagedBy VirtualMachine.Config.ChangeTracking VirtualMachine.Config.DiskLease VirtualMachine.Config.MksControl VirtualMachine.Config.DiskExtend VirtualMachine.Config.HostUSBDevice VirtualMachine.Config.Memory VirtualMachine.Config.EditDevice VirtualMachine.Config.QueryFTCompatibility VirtualMachine.Config.QueryUnownedFiles VirtualMachine.Config.RawDevice VirtualMachine.Config.ReloadFromPath VirtualMachine.Config.RemoveDisk VirtualMachine.Config.Rename VirtualMachine.Config.ResetGuestInfo VirtualMachine.Config.Settings VirtualMachine.Config.SwapPlacement VirtualMachine.Config.ToggleForkParent VirtualMachine.Config.UpgradeVirtualHardware VirtualMachine.GuestOperations.ModifyAliases VirtualMachine.GuestOperations.QueryAliases VirtualMachine.GuestOperations.Modify VirtualMachine.GuestOperations.Execute VirtualMachine.GuestOperations.Query VirtualMachine.Interact.AnswerQuestion VirtualMachine.Interact.Backup VirtualMachine.Interact.SetCDMedia VirtualMachine.Interact.SetFloppyMedia VirtualMachine.Interact.ConsoleInteract VirtualMachine.Interact.CreateScreenshot VirtualMachine.Interact.DefragmentAllDisks VirtualMachine.Interact.DeviceConnection VirtualMachine.Interact.DnD VirtualMachine.Interact.GuestControl VirtualMachine.Interact.PutUsbScanCodes VirtualMachine.Interact.Pause VirtualMachine.Interact.SESparseMaintenance VirtualMachine.Interact.PowerOff VirtualMachine.Interact.PowerOn VirtualMachine.Interact.Record VirtualMachine.Interact.Replay VirtualMachine.Interact.Reset VirtualMachine.Interact.EnableSecondary VirtualMachine.Interact.Suspend VirtualMachine.Interact.DisableSecondary VirtualMachine.Interact.MakePrimary VirtualMachine.Interact.TerminateFaultTolerantVM VirtualMachine.Interact.TurnOffFaultTolerance VirtualMachine.Interact.CreateSecondary VirtualMachine.Interact.ToolsInstall VirtualMachine.Inventory.CreateFromExisting VirtualMachine.Inventory.Create VirtualMachine.Inventory.Move VirtualMachine.Inventory.Register VirtualMachine.Inventory.Delete VirtualMachine.Inventory.Unregister VirtualMachine.Provisioning.DiskRandomAccess VirtualMachine.Provisioning.FileRandomAccess VirtualMachine.Provisioning.DiskRandomRead VirtualMachine.Provisioning.GetVmFiles VirtualMachine.Provisioning.PutVmFiles VirtualMachine.Provisioning.CloneTemplate VirtualMachine.Provisioning.Clone VirtualMachine.Provisioning.CreateTemplateFromVM VirtualMachine.Provisioning.Customize VirtualMachine.Provisioning.DeployTemplate VirtualMachine.Provisioning.MarkAsTemplate VirtualMachine.Provisioning.MarkAsVM VirtualMachine.Provisioning.ModifyCustSpecs VirtualMachine.Provisioning.PromoteDisks VirtualMachine.Provisioning.ReadCustSpecs VirtualMachine.Namespace.Event VirtualMachine.Namespace.EventNotify VirtualMachine.Namespace.Management VirtualMachine.Namespace.ModifyContent VirtualMachine.Namespace.Query VirtualMachine.Namespace.ReadContent VirtualMachine.State.CreateSnapshot VirtualMachine.State.RemoveSnapshot VirtualMachine.State.RenameSnapshot VirtualMachine.State.RevertToSnapshot VirtualMachine.Hbr.ConfigureReplication VirtualMachine.Hbr.ReplicaManagement VirtualMachine.Hbr.MonitorReplication Create a permission that grants the ClusterEditor role A permissions takes a (user, role) pair and associates it with an object.
+- Create one global permission: govc permissions.set -principal ACCOUNT \ -role Anthos -propagate=true Replace the following: Replace ACCOUNT with the vCenter Server user account that is being granted the role For example, the following command creates a global permission that grants the Anthos role to bob@vsphere.local.
+- The permission propagates to all objects in your vSphere hierarchies: govc permissions.set -principal bob@vsphere.local -role Anthos -propagate=true Known issues See Installer fails when creating vSphere datadisk .
+
+### "Create a user cluster \_|\_ Google Distributed Cloud (software only) for\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/create-user-cluster](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/create-user-cluster)
+- Source ID: `site-docs-reference`
+- Final score: 113
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If the admin cluster is already on the correct version, then this module does not change anything module "gcloud update admin cluster platform controller" { source = "terraform-google-modules/gcloud/google" version = " > 3.0" platform = "linux" create cmd entrypoint = "gcloud" create cmd body = << EOT beta container vmware admin-clusters \ update $ { var.admin cluster name } \ --required-platform-version = $ { var.on prem version } \ --project $ { var.project id } \ --location $ { var.region } EOT } Create an anthos vmware user cluster and enroll it with the gkeonprem API resource "google gkeonprem vmware cluster" "default" { name = var.cluster name description = "Anthos VMware user cluster with MetalLB" provider = google-beta depends on = [ google project service.default , module.gcloud update admin cluster platform controller ] location = var.region on prem version = var.on prem version admin cluster membership = "projects/${var.project id}/locations/global/memberships/${var.admin cluster name}" network config { service address cidr blocks = [ "10.96.0.0/12" ] pod address cidr blocks = [ "192.168.0.0/16" ] dhcp ip config { enabled = true } } control plane node { cpus = var.control plane node cpus memory = var.control plane node memory replicas = var.control plane node replicas } load balancer { vip config { control plane vip = var.control plane vip ingress vip = var.ingress vip } metal lb config { dynamic "address pools" { for each = var.lb address pools content { pool = address pools.value.name addresses = address pools.value.addresses } } } } authorization { dynamic "admin users" { for each = var.admin user emails content { username = admin users.value } } } } Create a node pool for the anthos vmware user cluster resource "google gkeonprem vmware node pool" "default" { name = "${var.cluster name}-nodepool" display name = "Nodepool for ${var.cluster name}" provider = google-beta vmware cluster = google gkeonprem vmware cluster.default.name location = var.region config { replicas = 3 image type = "ubuntu containerd" enable load balancer = true } depends on = [ google gkeonprem vmware cluster.default ] } For more information and other examples, see the google gkeonprem vmware cluster reference documentation .
+- Example gcloud commands MetalLB & DHCP gcloud container vmware clusters create user-cluster-1 \ --project=example-project-12345 \ --location=us-west1 \ --admin-cluster-membership=projects/example-project-12345/locations/us-west1/memberships/admin-cluster-1 \ --version=1.34.200-gke.68 \ --admin-users=sara@example.com \ --admin-users=amal@example.com \ --enable-dhcp \ --service-address-cidr-blocks=10.96.0.0/20 \ --pod-address-cidr-blocks=192.168.0.0/16 \ --metal-lb-config-address-pools='pool=lb-pool-1,manual-assign=False,avoid-buggy-ips=True,addresses=192.0.2.0/26;pool=lb-ingress-vip-pool,manual-assign=True,addresses=198.51.100.1/32' \ --enable-control-plane-v2 \ --control-plane-vip=203.0.113.1 \ --ingress-vip=198.51.100.1 MetalLB & static IPs gcloud container vmware clusters create user-cluster-3 \ --project=example-project-12345 \ --location=europe-west1 \ --admin-cluster-membership=projects/example-project-12345/locations/global/memberships/admin-cluster-1 \ --version=1.34.200-gke.68 \ --admin-users=sara@example.com \ --admin-users=amal@example.com \ --static-ip-config-ip-blocks='gateway=192.0.2.254,netmask=255.255.255.0,ips=192.0.2.10 user-vm-1;192.0.2.11 user-vm-2' \ --static-ip-config-ip-blocks='gateway=192.0.2.254,netmask=255.255.255.0,ips=192.0.2.12 user-vm-3;192.0.2.13 extra-vm' \ --dns-servers=203.0.113.1,203.0.113.2 \ --dns-search-domains=example.com,altostrat.com \ --ntp-servers=203.0.113.3,203.0.113.4 \ --service-address-cidr-blocks=10.96.0.0/20 \ --pod-address-cidr-blocks=192.168.0.0/16 \ --enable-control-plane-v2 \ --control-plane-ip-block 'gateway=192.0.2.254,netmask=255.255.255.0,ips=198.51.100.1 cp-vm-1;198.51.100.2 cp-vm-2;198.51.100.3 cp-vm-3' \ --replicas=3 \ --metal-lb-config-address-pools='pool=lb-pool-1,manual-assign=False,avoid-buggy-ips=True,addresses=192.0.2.0/26;lb-ingress-vip-pool,manual-assign=True,addresses=198.51.100.1/32' \ --control-plane-vip=172.16.20.61 \ --ingress-vip=172.16.20.62 Manual LB & static IPs gcloud container vmware clusters create user-cluster-4 \ --project=example-project-12345 \ --location=asia-east1 \ --admin-cluster-membership=projects/example-project-12345/locations/asia-east1/memberships/admin-cluster-1 \ --version=1.34.200-gke.68 \ --admin-users=sara@example.com \ --admin-users=amal@example.com \ --static-ip-config-ip-blocks='gateway=192.0.2.254,netmask=255.255.255.0,ips=192.0.2.10 user-vm-1;192.0.2.11 user-vm-2';ips=192.0.2.12 user-vm-3;192.0.2.13 extra-vm'\ --dns-servers=203.0.113.1,203.0.113.2 \ --ntp-servers=203.0.113.3,203.0.113.4 \ --service-address-cidr-blocks=10.96.0.0/20 \ --pod-address-cidr-blocks=192.168.0.0/16 \ --enable-control-plane-v2 \ --control-plane-ip-block 'gateway=192.0.2.254,netmask=255.255.255.0,ips=198.51.100.1 cp-vm-1;198.51.100.2 cp-vm-2;198.51.100.3 cp-vm-3' \ --replicas=3 \ --control-plane-vip=192.0.2.60 \ --ingress-vip=192.0.2.50 \ --ingress-http-node-port=30243 \ --ingress-https-node-port=30879 Terraform Before you begin Get the name and the fleet membership location of your admin cluster: gcloud container fleet memberships list \ --project= FLEET HOST PROJECT ID Replace FLEET HOST PROJECT ID with ID of the project that the admin cluster is registered to.
+- The hostname is optional. gcloud container vmware clusters create USER CLUSTER NAME \ --project= FLEET HOST PROJECT ID \ --admin-cluster-membership= ADMIN CLUSTER NAME \ --admin-cluster-membership-project= FLEET HOST PROJECT ID \ --admin-cluster-membership-location= ADMIN CLUSTER REGION \ --location= REGION \ --version= VERSION \ --admin-users= YOUR EMAIL ADDRESS \ --admin-users= ANOTHER EMAIL ADDRESS \ --service-address-cidr-blocks= 10.96.0.0/20 \ --pod-address-cidr-blocks= 192.168.0.0/16 \ --metal-lb-config-address-pools='pool= NAME ,avoid-buggy-ips= AVOID BUGGY IPS ,manual-assign= MANUAL ASSIGN ,addresses= IP ADDRESS RANGE 1 ' \ --metal-lb-config-address-pools='pool= ingress-vip-pool ,avoid-buggy-ips=False,manual-assign=True,addresses= INGRESS VIP /32' \ --enable-control-plane-v2 \ --control-plane-ip-block 'gateway= CP GATEWAY ,netmask= CP NETMASK ,ips= CP IP ADDRESS 1 CP HOST 1 ' \ --control-plane-vip= CONTROL PLANE VIP \ --ingress-vip= INGRESS VIP \ --static-ip-config-ip-blocks='gateway= GATEWAY ,netmask= NETMASK ,ips= IP ADDRESS 1 HOST 1 ; IP ADDRESS 2 HOST 2 ; IP ADDRESS 3 HOST 3 ; IP ADDRESS 4 HOST 4 ' \ --dns-servers= DNS SERVER 1 \ --ntp-servers= NTP SERVER 1 Replace the following: USER CLUSTER NAME : A name of your choice for your user cluster.
+- You specify the CIDR for a single IP address by appending /32 to the IP address. gcloud container vmware clusters create USER CLUSTER NAME \ --project= FLEET HOST PROJECT ID \ --admin-cluster-membership= ADMIN CLUSTER NAME \ --admin-cluster-membership-project= FLEET HOST PROJECT ID \ --admin-cluster-membership-location= ADMIN CLUSTER REGION \ --location= REGION \ --version= VERSION \ --admin-users= YOUR EMAIL ADDRESS \ --admin-users= ANOTHER EMAIL ADDRESS \ --service-address-cidr-blocks= 10.96.0.0/20 \ --pod-address-cidr-blocks= 192.168.0.0/16 \ --metal-lb-config-address-pools='pool= NAME ,avoid-buggy-ips= AVOID BUGGY IPS ,manual-assign= MANUAL ASSIGN ,addresses= IP ADDRESS RANGE 1 ' \ --metal-lb-config-address-pools='pool= ingress-vip-pool ,avoid-buggy-ips=False,manual-assign=True,addresses= INGRESS VIP /32' \ --enable-control-plane-v2 \ --dns-servers= DNS SERVER 1 \ --ntp-servers= NTP SERVER 1 \ --control-plane-ip-block 'gateway= CP GATEWAY ,netmask= CP NETMASK ,ips= CP IP ADDRESS 1 CP HOST 1 ' \ --control-plane-vip= CONTROL PLANE VIP \ --ingress-vip= INGRESS VIP \ --enable-dhcp Replace the following: USER CLUSTER NAME : A name of your choice for your user cluster.
+
+### "Google Distributed Cloud (software only) for VMware overview \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/overview](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/overview)
+- Source ID: `site-docs-root`
+- Final score: 97
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- How it works Google Distributed Cloud extends GKE to let you create GKE clusters in a vSphere environment on your own premises, and manage them in Google Cloud along with regular GKE clusters and clusters in other environments as part of a fleet .
+- Installing Google Distributed Cloud on VMware Because the Google Distributed Cloud software runs in your own infrastructure, it is highly configurable to meet your particular organizational and use case needs: you can choose from a range of supported load balancing modes, vSphere configurations, IP addressing options, security features, connectivity options, and more.
+- You can find the complete documentation for an earlier version by adding the minor version number in the following URL: https://cloud.google.com/anthos/clusters/docs/on-prem/ VERSION / Replace VERSION with a minor version from 1.0 to 1.16 and copy the URL to the address bar in your browser.
+- This guide is for Google Distributed Cloud software that runs on your own hardware in a VMware vSphere environment.
 

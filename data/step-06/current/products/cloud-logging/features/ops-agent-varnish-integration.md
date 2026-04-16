@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.544Z"
+generated_at: "2026-04-14T23:59:44.379Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Ops Agent Varnish integration"
 feature_slug: "ops-agent-varnish-integration"
 latest_feature_date: "2022-05-26"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
-  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/cassandra"
+  - "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart"
+  - "https://docs.cloud.google.com/logging/docs/agent/ops-agent"
   - "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
 keywords:
   - "ops"
@@ -20,13 +20,13 @@ keywords:
   - "can"
   - "collect"
   - "logs"
-  - "and"
+  - "metrics"
 ---
 
 # Ops Agent Varnish integration
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,54 @@ Ops Agent can collect Varnish logs and metrics.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies)
-- [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/cassandra](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/cassandra)
+- [https://docs.cloud.google.com/logging/docs/logging-gce-quickstart](https://docs.cloud.google.com/logging/docs/logging-gce-quickstart)
+- [https://docs.cloud.google.com/logging/docs/agent/ops-agent](https://docs.cloud.google.com/logging/docs/agent/ops-agent)
 - [https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration](https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration)
 
 ## Supporting Pages
 
-### "Install and manage the Ops Agent by using VM Extension Manager policies\
+### "Quickstart: Collect logs from Apache with the Ops Agent \_|\_ Cloud Logging\
 
-- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies)
-- Source ID: `site-docs-root-2`
-- Final score: 212
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Verify that the Ops Agent is collecting telemetry If the Ops Agent has been successfully installed and is running correctly, then it sends metrics to Cloud Monitoring and logs to Cloud Logging.
-- When the Ops Agent has been installed on the VM and is collecting logs and metrics, the agent's status is marked with a green checkmark next to the Ops Agent label.
-- Running the Ops Agent and the legacy agents on the same VM can cause ingestion of duplicate logs or conflicts in metrics ingestion.
-- Enter the following query and click Run query : severity>=DEBUG log id("GCEGuestAgentManager") "The agent config file is not valid" Linux Run the following command on the Linux Compute Engine VM: journalctl -u google-guest-agent-manager grep "The agent config file is not valid" Windows Run the following command on the Windows Compute Engine VM: Get-Eventlog -Source google guest agent manager -LogName Application Where-Object {$ .Message -like " The agent config file is not valid "} If you see logs containing the string The agent config file is not valid , then the custom configuration for the Ops Agent you provided when creating or updating the extension policy is invalid.
-
-### Apache Cassandra \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/cassandra](https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/cassandra)
-- Source ID: `site-docs-root-2`
-- Final score: 200
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/logging/docs/logging-gce-quickstart](https://docs.cloud.google.com/logging/docs/logging-gce-quickstart)
+- Source ID: `site-docs-root`
+- Final score: 177
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components "Metrics Agent" and "Logging Agent" started: Get-Service google-cloud-ops-agent Configure logs collection To ingest logs from Cassandra, you must create a receiver for the logs that Cassandra produces and then create a pipeline for the new receiver.
-- Any dashboards are automatically installed after you configure the integration and the Ops Agent has begun collecting metric data.
-- For example, to set com.sun.management.jmxremote.port to port 7199 , specify the following when starting the JVM: -Dcom.sun.management.jmxremote.port=7199 Configure the Ops Agent for Cassandra Following the guide to Configure the Ops Agent , add the required elements to collect telemetry from Cassandra instances, and restart the agent .
-- Example configuration The following commands create the configuration to collect and ingest telemetry for Cassandra: Configures Ops Agent to collect telemetry from the app .
+- You must restart the agent for the configuration to take effect . set - e Check if the file exists if [ ! - f / etc / google - cloud - ops - agent / config . yaml ]; then Create the file if it doesn ' t exist . sudo mkdir - p / etc / google - cloud - ops - agent sudo touch / etc / google - cloud - ops - agent / config . yaml fi Create a back up of the existing file so existing configurations are not lost . sudo cp / etc / google - cloud - ops - agent / config . yaml / etc / google - cloud - ops - agent / config . yaml . bak Configure the Ops Agent . sudo tee / etc / google - cloud - ops - agent / config . yaml > / dev / null << EOF metrics : receivers : apache : type : apache service : pipelines : apache : receivers : - apache logging : receivers : apache access : type : apache access apache error : type : apache error service : pipelines : apache : receivers : - apache access - apache error EOF The previous command creates the configuration to collect and ingest logs and metrics from the Apache web server.
+- Collect Apache web server logs and metrics In these steps, you configure the Ops Agent to collect logs and metrics from your Apache web server: Go to the SSH terminal for your VM instance.
+- You've configured the Ops Agent to collect logs and metrics from your Apache web server, and you've viewed those logs.
+- You've configured the Ops Agent to collect logs and metrics from your Apache web server, but you've only viewed logs.
+
+### Ops Agent overview \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent](https://docs.cloud.google.com/logging/docs/agent/ops-agent)
+- Source ID: `site-docs-root`
+- Final score: 173
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Metrics collected include: cpu metrics disk metrics iis metrics (Windows only) interface metrics gpu metrics (Linux only) memory metrics mssql metrics (Windows only) pagefile metrics (Windows only) swap metrics network metrics processes metrics agent self metrics : Third-party application support Curated integrations for third-party application metrics , which collect common app metrics and offer sample dashboards and alert policies.
+- Combining the collection of logs, metrics, and traces into a single process, the Ops Agent uses Fluent Bit for logs, which supports high-throughput logging, and the OpenTelemetry Collector for metrics and traces.
+- You can install the Ops Agent on Managed Service for Apache Spark clusters that use image version 2.2 and later to collect syslog logs and host metrics.
+- Google Kubernetes Engine node instances: GKE on Google Cloud clusters are configured to collect logs and metrics with Logging and Monitoring by default.
 
 ### Configure the Ops Agent \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration](https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration)
 - Source ID: `site-docs-root-2`
-- Final score: 198
+- Final score: 167
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- This can be used to remove placeholder values, such as: httpRequest.referer : move from : jsonPayload.referer omit if : httpRequest.referer = "-" Sample Configurations The parse json processor would transform a JSON file containing { "http status" : "400" , "path" : "/index.html" , "referer" : "-" } into a LogEntry structure that looks like this: { "jsonPayload" : { "http status" : "400" , "path" : "/index.html" , "referer" : "-" } } This could then be transformed with modify fields into this LogEntry : { "httpRequest" : { "status" : 400 , "requestUrl" : "/index.html" , } } by using this Ops Agent configuration: logging : receivers : in : type : files include paths : - /var/log/http.json processors : parse json : type : parse json set http request : type : modify fields fields : httpRequest.status : move from : jsonPayload.http status type : integer httpRequest.requestUrl : move from : jsonPayload.path httpRequest.referer : move from : jsonPayload.referer omit if : jsonPayload.referer = "-" service : pipelines : pipeline : receivers : [ in ] processors : [ parse json , set http request ] This configuration reads JSON-formatted logs from /var/log/http.json and populates part of the httpRequest structure from fields in the logs.
 - For more information about the metrics collected, see Metrics ingested by the receivers . logging : receivers : syslog : type : files include paths : - /var/log/messages - /var/log/syslog service : pipelines : default pipeline : receivers : [ syslog ] metrics : receivers : hostmetrics : type : hostmetrics collection interval : 60s processors : metrics filter : type : exclude metrics metrics pattern : [] service : pipelines : default pipeline : receivers : [ hostmetrics ] processors : [ metrics filter ] Windows By default, the Ops Agent collects Windows event logs from System , Application , and Security channels, as well as host metrics, IIS metrics, and SQL Server metrics.
-- To disable self-log collection, add a global section to your user-specified configuration file and set the default self log file collection option to the value false : logging: ... metrics: ... global: default self log file collection: false Log-rotation configuration Starting with Ops Agent version 2.31.0, you can also set up the agent's log-rotation feature by using the configuration files.
-- The valid types are: files : Collect logs by tailing files on disk. fluent forward (Ops Agent versions 2.12.0 and later): Collect logs sent via the Fluent Forward protocol over TCP. tcp (Ops Agent versions 2.3.0 and later): Collect logs in JSON format by listening to a TCP port.
+- The entire metrics configuration looks like the following: metrics : service : pipelines : default pipeline : receivers : [] The following example shows the built-in service configuration for Windows: metrics : service : pipelines : default pipeline : receivers : - hostmetrics - iis - mssql processors : - metrics filter The following service configuration customizes log verbosity for the metrics submodule to be debug instead: metrics : service : log level : debug Collection of self logs By default, the Ops Agent's Fluent Bit self logs are sent to Cloud Logging.
+- The following shows the built-in configuration for Linux and for Windows: Linux By default, the Ops Agent collects file-based syslog logs and host metrics.
+- Built-in configuration The built-in configuration for the Ops Agent defines the default collection for logs and metrics.
 

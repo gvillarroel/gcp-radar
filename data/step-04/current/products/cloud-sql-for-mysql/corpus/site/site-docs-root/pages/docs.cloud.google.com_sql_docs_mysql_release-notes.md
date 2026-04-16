@@ -36,6 +36,17 @@ To get the latest product updates delivered to you, add the URL of this page to 
 feed
 reader , or add the
 feed URL directly.
+April 14, 2026
+Breaking
+As of April 10, 2026, you can create, run, and edit
+Gemini Cloud Assist investigations only
+if you have a Premium Support contract .
+You can use Gemini Cloud
+Assist investigations to monitor and troubleshoot your
+Cloud SQL instance with AI assistance .
+If you ran an investigation prior to April 10, 2026,
+then the results of the investigation continue to be
+available to you in the Google Cloud console.
 April 06, 2026
 Feature
 The QueryData tool lets you to query the data in your database using conversational language and build data agents. For more information, see QueryData tool overview . This feature is available in ( Preview ).
@@ -1401,6 +1412,6 @@ InnoDB storage engine
 GTID support
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

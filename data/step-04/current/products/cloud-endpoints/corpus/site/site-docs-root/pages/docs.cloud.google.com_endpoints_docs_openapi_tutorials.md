@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/endpoints/docs/openapi/tutorials
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://docs.cloud.google.com/endpoints/docs/openapi
+entrypoint: https://docs.cloud.google.com/endpoints/docs
 source_metadata:
   url: https://docs.cloud.google.com/endpoints/docs/openapi/tutorials
   title: "Tutorials \_|\_ Cloud Endpoints with OpenAPI \_|\_ Google Cloud Documentation"

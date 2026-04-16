@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:43.080Z"
+generated_at: "2026-04-12T12:17:50.441Z"
 product_name: "Manufacturing Data Engine"
 product_slug: "manufacturing-data-engine"
 feature_name: "MDE UI message class matching"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-09-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/how-to-monitor-mde-services"
-  - "https://docs.cloud.google.com/manufacturing-data-engine/docs/resources/bigquery-schema-changes"
-  - "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview"
+  - "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-create-a-source-message-class"
+  - "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle"
+  - "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data"
+  - "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content"
 keywords:
   - "mde"
   - "ui"
@@ -38,48 +39,70 @@ Lets MDE UI test a matching message class against the whole list of message clas
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/how-to-monitor-mde-services](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/how-to-monitor-mde-services)
-- [https://docs.cloud.google.com/manufacturing-data-engine/docs/resources/bigquery-schema-changes](https://docs.cloud.google.com/manufacturing-data-engine/docs/resources/bigquery-schema-changes)
-- [https://docs.cloud.google.com/manufacturing-data-engine/docs/overview](https://docs.cloud.google.com/manufacturing-data-engine/docs/overview)
+- [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-create-a-source-message-class](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-create-a-source-message-class)
+- [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle)
+- [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data)
+- [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content)
 
 ## Supporting Pages
 
-### Monitor services | Manufacturing Data Engine | Google Cloud Documentation
+### "Create a source message class \_|\_ Manufacturing Data Engine \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/how-to-monitor-mde-services](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/how-to-monitor-mde-services)
-- Source ID: `site-docs-root`
-- Final score: 40
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Monitor services Manufacturing Data Engine Google Cloud Documentation Source URL: https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/how-to-monitor-mde-services This guide describes how to use the underlying Google Cloud services and Manufacturing Data Engine (MDE) metrics to proactively identify processing pipeline issues, diagnose configuration or system problems, and monitor system scaling in response to current load.
-
-### BigQuery schema changes | Manufacturing Data Engine | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/manufacturing-data-engine/docs/resources/bigquery-schema-changes](https://docs.cloud.google.com/manufacturing-data-engine/docs/resources/bigquery-schema-changes)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-create-a-source-message-class](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-create-a-source-message-class)
+- Source ID: `site-docs-reference`
+- Final score: 227
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- BigQuery schema changes Manufacturing Data Engine Google Cloud Documentation Source URL: https://docs.cloud.google.com/manufacturing-data-engine/docs/resources/bigquery-schema-changes This guide shows any updates on data schema changes when releasing new Manufacturing Data Engine (MDE) versions.
-- In MDE v1.3, records are stored in tables per Type (record tables) where each Type is tied to a specific Archetype.
-- All records in MDE v1.2 were stored in one of three archetype tables.
+- Evaluating a test message against all active message classes You can evaluate a message to determine in which source message class a test message would fall for a set of active source message classes.
+- Create a source message class This guide describes how to create a source message class for the Manufacturing Data Engine (MDE).
+- Console The UI provides the option to test the SpEL expression of the new Message Class with a test message.
+- REST POST /configuration/v1/message-classes:test { "expression" : " SPEL EXPRESSION " , "testMessage" : " TEST MESSAGE " } Replace the following: SPEL EXPRESSION : the SpEL expression defining the message class.
 
-### Overview | Manufacturing Data Engine | Google Cloud Documentation
+### Package lifecycle \_|\_ Manufacturing Data Engine \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/manufacturing-data-engine/docs/overview](https://docs.cloud.google.com/manufacturing-data-engine/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle)
+- Source ID: `site-docs-reference`
+- Final score: 156
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Overview Manufacturing Data Engine Google Cloud Documentation Source URL: https://docs.cloud.google.com/manufacturing-data-engine/docs/overview Manufacturing Data Engine: It serves as the acquisition, transformation and storage layer of the suite.
-- MDE provides a secure, efficient and reliable data lake containing all manufacturing information, and acts as a data hub for all use cases ...
+- Response body (JSON) : { "configurationPackages" : [ { "id" : "0505ed17-ad20-458d-9128-d44783704acb" , "name" : "default-configuration-package" , "provider" : "google" , "latestStatus" : "ACTIVATED" , "status" : [ { "code" : "NOT LOADED" , "updatedTime" : "1742501535249" , "messages" : [] }, { "code" : "VALIDATED" , "updatedTime" : "1742501535249" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully validated all buckets in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all message classes in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all metadata-instances in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all parsers in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all types in the package" } ] }, { "code" : "LOADED" , "updatedTime" : "1742501536740" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully applied all message classes in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all buckets in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all metadata-instances in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all types in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all parsers in the package" } ] }, { "code" : "ACTIVATED" , "updatedTime" : "1742501537289" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully activated all ingestion-specification, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all message classes, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all buckets, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all metadata instance, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all types, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all parsers, if there is any, in the package" } ] } ] }, { "id" : "4adaecc2-54b9-482b-90d6-380f5d4b2be6" , "name" : "basic-configuration" , "provider" : "google" , "latestStatus" : "ACTIVATED" , "status" : [ { "code" : "NOT LOADED" , "updatedTime" : "1742566718210" , "messages" : [] }, { "code" : "VALIDATED" , "updatedTime" : "1742566718210" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully validated all message classes in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all parsers in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all types in the package" } ] }, { "code" : "LOADED" , "updatedTime" : "1742566718696" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully applied all message classes in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all types in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all parsers in the package" } ] }, { "code" : "ACTIVATED" , "updatedTime" : "1742566718792" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully activated all ingestion-specification, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all message classes, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all buckets, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all metadata instance, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all types, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all parsers, if there is any, in the package" } ] } ] } ], "nextPageToken" : "" } Console You can see the list of existing configuration packages on the Cloud Configuration section, in the Configurations page.
+- REST Execute the REST API request with the following information: Method : DELETE Endpoint : /configuration/v1/configuration-packages/$PACKAGE-ID Response code : 200 OK Response body (JSON) : { "id" : "87e160db-8ff9-403a-a873-e6674f6ac3cb" , "name" : "postman-test-configuration-package" , "provider" : "google" , "latestStatus" : "DELETED" , "status" : [ { "code" : "NOT LOADED" , "updatedTime" : "1742550114832" , "messages" : [] }, { "code" : "VALIDATED" , "updatedTime" : "1742550114832" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully validated all buckets in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all ingestion-specifications in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all message classes in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all metadata-instances in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all parsers in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all types in the package" } ] }, { "code" : "LOADED" , "updatedTime" : "1742550115241" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully applied all ingestion-specification in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all message classes in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all buckets in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all metadata-instances in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all types in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all parsers in the package" } ] }, { "code" : "ACTIVATED" , "updatedTime" : "1742550115327" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully activated all ingestion-specification, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all message classes, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all buckets, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all metadata instance, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all types, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all parsers, if there is any, in the package" } ] }, { "code" : "DELETED" , "updatedTime" : "1742567553260" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully deleted all parsers, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully deleted all message classes, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully deleted all types, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all metadata instance, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully deleted all buckets, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully deleted all ingestion-specification, if there is any, in the package" } ] } ] } Console Click Cloud Configuration .
+- Response body (JSON) : { "id" : "4adaecc2-54b9-482b-90d6-380f5d4b2be6" , "name" : "basic-configuration" , "provider" : "google" , "latestStatus" : "ACTIVATED" , "status" : [ { "code" : "NOT LOADED" , "updatedTime" : "1742566718210" , "messages" : [] }, { "code" : "VALIDATED" , "updatedTime" : "1742566718210" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully validated all message classes in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all parsers in the package" }, { "severity" : "INFO" , "message" : "Successfully validated all types in the package" } ] }, { "code" : "LOADED" , "updatedTime" : "1742566718696" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully applied all message classes in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all types in the package" }, { "severity" : "INFO" , "message" : "Successfully applied all parsers in the package" } ] }, { "code" : "ACTIVATED" , "updatedTime" : "1742566718792" , "messages" : [ { "severity" : "INFO" , "message" : "Successfully activated all ingestion-specification, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all message classes, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all buckets, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all metadata instance, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all types, if there is any, in the package" }, { "severity" : "INFO" , "message" : "Successfully activated all parsers, if there is any, in the package" } ] } ] } Console Click Cloud Configuration .
+- Delete an existing configuration package Starting in v1.5.0, MDE supports an environment flag that can change the environment to development mode , which lets you delete configuration entities and delete configuration packages.
+
+### "Model records and metadata \_|\_ Manufacturing Data Engine \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data)
+- Source ID: `site-docs-reference`
+- Final score: 144
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This lets you benefit from the greatest query flexibility since you can build any aggregate from atomic data.
+- In such cases, you can let MDE reject the message and have it moved a dead letter queue, or you can create a generic Not Available metadata instance in your bucket to link records to it if a link to a full contextualized instance not be created.
+- If you use the full MDE suite (MDE in combination with Manufacturing Connect (MC)), you can skip this section on data modeling since MDE provides a package to get you started quickly.
+- This includes understanding what data integration interfaces MDE needs to support and what technical requirements must be observed, including naming conventions.
+
+### File content \_|\_ Manufacturing Data Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content](https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content)
+- Source ID: `site-docs-reference`
+- Final score: 144
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Bucket This section shares a sample configuration for a MDE bucket. { "type" : "TAG" , "name" : "second-tag-bucket" , "attributes" : { "instanceOverwriteMode" : "true" }, "versions" : [ { "version" : 1 , "schema" : "'{{schemas/generic-schema.json}}'" , "provider" : "local" } ] } Ingestion specification This section shares a sample configuration for a MDE ingestion specification. { "name" : "csv-full-ingestion-specification" , "source" : "CSV" , "folderName" : "test-csv-folder" , "separator" : "," , "skipRows" : 10 , "headers" : { "headerNames" : { "names" : [ "one" , "two" , "three" ] } }, "insertMetadata" : true , "disabled" : false } Message classes This section shares a sample configuration for MDE message classes. { "name" : "default-numeric-message-class" , "priority" : 970 , "expression" : "#root.event['value'] instanceof T(Number) && #root.event['timestamp'] != null && #root.event['tagName'] != null && #root.event['cluster'] == null" } Metadata instances This section shares a sample configuration for MDE metadata instances. { "bucketReference" : { "bucketName" : "default-tag-bucket" , "bucketType" : "TAG" , "version" : 1 }, "naturalKey" : "cloud-natural-key" , "instance" : { "site" : "simulated-site" , "factory" : "test-factory" } } Parsers This section shares a sample configuration for MDE parsers. { "name" : "default-numeric-parser" , "messageClassName" : "default-numeric-message-class" , "typeReference" : { "name" : "default-numeric-type" , "version" : 1 }, "disabled" : false , "script" : "'{{scripts/parser-script.wstl}}'" } Type This section shares a sample configuration for a MDE type. { "archetype" : "NUMERIC DATA SERIES" , "name" : "default-numeric-type" , "disabled" : false , "versions" : [ { "version" : 1 , "dataSchema" : "" , "storageSpecs" : [ { "sink" : "PUBSUB PROTO" , "disabled" : true , "materializeCloudMetadata" : false }, { "sink" : "BIG QUERY" , "disabled" : false , "materializeCloudMetadata" : true }, { "sink" : "GCS" , "disabled" : false , "materializeCloudMetadata" : false }, { "sink" : "PUBSUB JSON" , "disabled" : true , "materializeCloudMetadata" : false }, { "sink" : "BIG TABLE" , "disabled" : false , "materializeCloudMetadata" : false } ], "metadataBuckets" : [ { "bucketName" : "default-record-bucket" , "version" : 1 , "required" : false }, { "bucketName" : "second-tag-bucket" , "version" : 1 , "required" : false }, { "bucketName" : "default-tag-bucket" , "version" : 1 , "required" : false } ], "transformations" : [ { "window" : { "id" : "10-minutes-window" , "durationMinutes" : 10 , "valueExpression" : "#message['data']['numeric'].toString()" } }, { "eventChange" : { "keyExpression" : "#message['tagName']" , "valueExpression" : "#message['data']['numeric'].toString()" } } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- As an example, the schema field in the bucket object requires the bucket schema to be embedded as a string, and in that case, the reference directive should be surrounded by single quotes ' which tells MDE to embed the contents unprocessed as a string; the reference directive will be: '{{relative-path/file.json}}' .
+- Home Documentation Data analytics Manufacturing Data Engine Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- File content This page describes the content of each configuration package folder on Manufacturing Data Engine (MDE)'s package.
 

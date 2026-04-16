@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:11:59.743Z"
+generated_at: "2026-04-12T12:14:04.320Z"
 product_name: "Datastream"
 product_slug: "datastream"
 feature_name: "BigQuery append-only write mode"
 feature_slug: "bigquery-append-only-write-mode"
 latest_feature_date: "2024-06-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastream/docs/create-a-stream"
   - "https://docs.cloud.google.com/datastream/docs/faq"
+  - "https://docs.cloud.google.com/datastream/docs/configure-bigquery-destination"
   - "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream"
 keywords:
   - "append"
@@ -26,7 +27,7 @@ keywords:
 # BigQuery append-only write mode
 
 Product: Datastream
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Datastream supports append-only write mode when ingesting data to BigQuery.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastream/docs/create-a-stream](https://docs.cloud.google.com/datastream/docs/create-a-stream)
 - [https://docs.cloud.google.com/datastream/docs/faq](https://docs.cloud.google.com/datastream/docs/faq)
+- [https://docs.cloud.google.com/datastream/docs/configure-bigquery-destination](https://docs.cloud.google.com/datastream/docs/configure-bigquery-destination)
 - [https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream](https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream)
 
 ## Supporting Pages
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastream/docs/create-a-stream](https://docs.cloud.google.com/datastream/docs/create-a-stream)
 - Source ID: `site-docs-root`
-- Final score: 172
+- Final score: 215
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/datastream/docs/faq](https://docs.cloud.google.com/datastream/docs/faq)
 - Source ID: `site-docs-root`
-- Final score: 164
+- Final score: 207
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,11 +76,25 @@ Evidence snippets:
 - Yes, Datastream supports Oracle multi-tenant architecture (CDB/PDB), however, you can only replicate a single pluggable database in a stream.
 - If the source table doesn't have a primary key, it's treated as if the Append-only mode was used.
 
+### Configure a BigQuery destination \_|\_ Datastream \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastream/docs/configure-bigquery-destination](https://docs.cloud.google.com/datastream/docs/configure-bigquery-destination)
+- Source ID: `site-docs-root-2`
+- Final score: 205
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To get a better understanding of the append-only write mode, consider the following scenarios: Initial backfill : after the initial backfill, all events are written to BigQuery as INSERT type events, with the same timestamp, universally unique identifier (UUID), and change sequence number.
+- Append-only : The append-only write mode lets you add data to BigQuery as a stream of changes ( INSERT , UPDATE-INSERT , UPDATE-DELETE and DELETE events).
+- When you configure datasets for the BigQuery destination using Datastream, you can select one of the following options: Dataset for each schema : The dataset is selected or automatically created by Datastream in the BigQuery location specified, based on the schema name of the source.
+- This means that Datastream writes all changes to your data to BigQuery, and BigQuery then consolidates the changes with existing data, thus creating final tables that are replicas of the source tables.
+
 ### MCP Tools Reference: datastream \_|\_ Datastream \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream](https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream)
 - Source ID: `site-api-reference`
-- Final score: 160
+- Final score: 199
 - Re-rank relevance: N/A
 
 Evidence snippets:

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:29:46.794Z"
+generated_at: "2026-04-15T11:53:34.634Z"
 product_name: "Apps Script"
 product_slug: "apps-script"
 feature_name: "XmlService"
@@ -10,17 +10,15 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/apps-script/releases"
-  - "https://developers.google.com/apps-script/guides/services/quotas"
-  - "https://developers.google.com/apps-script/guides/sheets/functions"
+  - "https://developers.google.com/apps-script/guides/services/external"
+  - "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors"
 keywords:
   - "xmlservice"
+  - "was"
+  - "added"
   - "replacement"
   - "old"
   - "xml"
-  - "adds"
-  - "as"
-  - "for"
-  - "the"
 ---
 
 # XmlService
@@ -30,11 +28,11 @@ Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Adds XmlService as the replacement for the old Xml service.
+XmlService was added as the replacement for the old Xml service.
 
 ## Extended Definition
 
-Adds XmlService as the replacement for the old Xml service.
+XmlService was added as the replacement for the old Xml service.
 
 ## Evidence Summary
 
@@ -43,8 +41,8 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 ## Source Links
 
 - [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
-- [https://developers.google.com/apps-script/guides/services/quotas](https://developers.google.com/apps-script/guides/services/quotas)
-- [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
+- [https://developers.google.com/apps-script/guides/services/external](https://developers.google.com/apps-script/guides/services/external)
+- [https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors](https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors)
 
 ## Supporting Pages
 
@@ -52,38 +50,37 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
 - Source ID: `site-docs-root`
-- Final score: 182
+- Final score: 61
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- July 09, 2013 Deprecated Deprecated the old Xml service, SoapService , and support for the JavaScript feature E4X.
-- August 31, 2021 Feature The Drive Service has added three new methods to the file and folder classes to manage the use of resource keys when sharing files and folders. getSecurityUpdateEligible() : Gets whether a file for folder is eligible to apply the security update that requires a resource key for access when it's shared using a link. getSecurityUpdateEnabled() : Gets whether a file or folder requires a resource key for access when it's shared using a link. setSecurityUpdateEnabled(enabled) : Sets whether the file or folder requires a resource key for access when it's shared using a link.
-- October 08, 2013 Feature Added the following FormApp methods, which allow scripts to work with progress bars, custom closed-form messages, and YouTube videos. + Form.hasProgressBar() + Form.setProgressBar(enabled) + Form.getCustomClosedFormMessage() + Form.setCustomClosedFormMessage(message) + Form.addVideoItem() September 23, 2013 Feature Added the following DriveApp methods, which allow scripts to get the owner of a File or Folder.
-- EmbeddedChartBuilder now contains the methods asAreaChart() , asBarChart() , asColumnChart() , asLineChart() , asPieChart() , asScatterChart() and asTableChart() as replacements for calls to setChartType() .
+- Feature Added XmlService to replace the old Xml service.
+- The following methods have been added to the Group , Image , Line , PageElement , Shape , SheetsChart , Table , Video , and WordArt classes: bringForward() bringToFront() sendBackward() sendToBack() setDescription(description) setTitle(title) The Spreadsheet service has been extended with the following new classes and methods that let you add and search for metadata strings attached to rows, columns, sheets, or spreadsheets: DeveloperMetadata DeveloperMetadataFinder DeveloperMetadataLocation DeveloperMetadataLocationType DeveloperMetadataVisibility Range.addDeveloperMetadata(key) Range.addDeveloperMetadata(key, visibility) Range.addDeveloperMetadata(key, value) Range.addDeveloperMetadata(key, value, visibility) Range.createDeveloperMetadataFinder() Range.getDeveloperMetadata() Sheet.addDeveloperMetadata(key) Sheet.addDeveloperMetadata(key, visibility) Sheet.addDeveloperMetadata(key, value) Sheet.addDeveloperMetadata(key, value, visibility) Sheet.createDeveloperMetadataFinder() Sheet.getDeveloperMetadata() Spreadsheet.addDeveloperMetadata(key) Spreadsheet.addDeveloperMetadata(key, visibility) Spreadsheet.addDeveloperMetadata(key, value) Spreadsheet.addDeveloperMetadata(key, value, visibility) Spreadsheet.createDeveloperMetadataFinder() Spreadsheet.getDeveloperMetadata() October 30, 2018 Feature The Spreadsheet service has been extended with the following new classes and methods: OverGridImage Sheet.getImages() Sheet.isColumnHiddenByUser(columnPosition) Sheet.isRowHiddenByFilter(rowPosition) Sheet.isRowHiddenByUser(rowPosition) Spreadsheet.getImages() Spreadsheet.isColumnHiddenByUser(columnPosition) Spreadsheet.isRowHiddenByFilter(rowPosition) Spreadsheet.isRowHiddenByUser(rowPosition) The following methods have been added to existing services: console service console.error() console.info() console.warn() DataStudio service Field.isHidden() Field.setIsHidden() Gmail service GmailAttachment.getHash() GmailMessage.getAttachments(options) Change The following methods in the Spreadsheet service now return an OverGridImage object instead of void: Sheet.insertImage(blobSource, column, row) Sheet.insertImage(blobSource, column, row, offsetX, offsetY) Sheet.insertImage(url, column, row) Sheet.insertImage(url, column, row, offsetX, offsetY) October 18, 2018 Feature The Card service has been extended with the following classes and methods to support Gmail add-on compose actions : CardService.UpdateDraftActionResponse CardService.UpdateDraftActionResponseBuilder CardService.UpdateDraftBodyAction CardService.ContentType CardService.UpdateDraftBodyType CardService.newUpdateDraftActionResponseBuilder() CardService.newUpdateDraftBodyAction() September 27, 2018 Announcement The Data Studio service is now available.
+- April 05, 2019 Feature The Spreadsheet service has been extended with the following new classes and methods to support text finding, checkboxes, and other features: TextFinder RecalculationInterval SheetType DataValidationBuilder.requireCheckbox() DataValidationBuilder.requireCheckbox(checkedValue) DataValidationBuilder.requireCheckbox(checkedValue, uncheckedValue) A clearRanges() method has been added to the all the embedded chart type builder classes, such as EmbeddedAreaChartBuilder.clearRanges() EmbeddedChart.getChartId() RangeList.check() RangeList.insertCheckboxes() RangeList.insertCheckboxes(checkedValue) RangeList.insertCheckboxes(checkedValue, uncheckedValue) RangeList.removeCheckboxes() RangeList.uncheck() Range.check() Range.createTextFinder(findText) Range.getDataRegion() Range.getDataRegion(dimension) Range.insertCheckboxes() Range.insertCheckboxes(checkedValue) Range.insertCheckboxes(checkedValue, uncheckedValue) Range.removeCheckboxes() Range.uncheck() Sheet.createTextFinder(findText) Sheet.getType() Spreadsheet.createTextFinder(findText) Spreadsheet.getIterativeCalculationConvergenceThreshold() Spreadsheet.getMaxIterativeCalculationCycles() Spreadsheet.getRecalculationInterval() Spreadsheet.isIterativeCalculationEnabled() Spreadsheet.moveChartToObjectSheet(chart) Spreadsheet.setIterativeCalculationConvergenceThreshold(minThreshold) Spreadsheet.setIterativeCalculationEnabled(isEnabled) Spreadsheet.setMaxIterativeCalculationCycles(maxIterations) Spreadsheet.setRecalculationInterval(recalculationInterval) The Data Studio service has been extended with the following new classes and methods that support configuring BigQuery connectors: BigQueryConfig BigQueryParameterType CommunityConnector.newBigQueryConfig() The Notification objects in the Card service no longer have a type that you must set.
+- The Card service has been extended with the following classes and methods that provide new widgets and event responses: CalendarEventActionResponse CalendarEventActionResponseBuilder DatePicker DateTimePicker DisplayStyle DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder FixedFooter SwitchControlType TimePicker CardBuilder.setDisplayStyle(displayStyle) CardBuilder.setFixedFooter(fixedFooter) CardBuilder.setPeekCardHeader(peekCardHeader) CardService.newCalendarEventActionResponseBuilder() CardService.newDatePicker() CardService.newDateTimePicker() CardService.newDriveItemsSelectedActionResponseBuilder() CardService.newFixedFooter() CardService.newTimePicker() Switch.setControlType(controlType) The Conference Data service has been added to Apps Script.
 
-### Quotas for Google Services \_|\_ Apps Script \_|\_ Google for Developers
+### External APIs \_|\_ Apps Script \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/apps-script/guides/services/quotas](https://developers.google.com/apps-script/guides/services/quotas)
-- Source ID: `site-docs-reference`
-- Final score: 126
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/apps-script/guides/services/external](https://developers.google.com/apps-script/guides/services/external)
+- Source ID: `site-docs-root-2`
+- Final score: 51
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
-- Quotas are set at different levels for consumer/G Suite free edition and Google Workspace accounts, are per user, and reset 24 hours after the first request.
-- Monitor quota usage To monitor your script's quota consumption and execution health, use the following methods: Email quota : Use MailApp.getRemainingDailyQuota() to check the number of remaining email recipients you can send to for the rest of the day.
-- After you convert from a free trial account to a paid subscription, your account limits automatically increase when both of the following are true: Your domain has cumulatively paid at least USD $100 (or equivalent).
+- Parse XML If an external API returns a raw XML response for a request, access the XML response using the method HTTPResponse.getContentText() . // Make request to API and get response before this point. var xml = response . getContentText (); var doc = XmlService . parse ( xml ); When making XML requests to an API, use the XmlService methods to construct the XML to send. var root = XmlService . createElement ( 'entry' ) . setAttribute ( 'keywords' , 'dog, skateboard' ); var group = XmlService . createElement ( 'group' ) . setAttribute ( 'title' , 'Dog Skateboarding' ) . setAttribute ( 'description' , 'My dog gets some serious air' ); root . addContent ( group ); var document = XmlService . createDocument ( root ); var payload = XmlService . getPrettyFormat (). format ( document ); // Make request to API with payload after this point.
+- Handling XML responses and requests uses getContentText() and the XmlService methods.
 
-### Custom Functions in Google Sheets \_|\_ Apps Script \_|\_ Google for Developers
+### Fix errors in your converted code \_|\_ Apps Script \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
+- URL: [https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors](https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors)
 - Source ID: `site-docs-root`
-- Final score: 108
+- Final score: 46
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If each cell required its own function call, the operation would take considerably more time, since the Apps Script server would have to download and parse the XML feed each time. / Show the title and date for the first page of posts on the Developer blog. @return Two columns of data representing posts on the Developer blog. @customfunction / function getBlogPosts () { var array = []; var url = 'https://gsuite-developers.googleblog.com/atom.xml' ; var xml = UrlFetchApp . fetch ( url ). getContentText (); var document = XmlService . parse ( xml ); var root = document . getRootElement (); var atom = XmlService . getNamespace ( 'http://www.w3.org/2005/Atom' ); var entries = document . getRootElement (). getChildren ( 'entry' , atom ); for ( var i = 0 ; i < entries . length ; i ++ ) { var title = entries [ i ]. getChild ( 'title' , atom ). getText (); var date = entries [ i ]. getChild ( 'published' , atom ). getValue (); array . push ([ title , date ]); } return array ; } These techniques can be applied to nearly any custom function that is used repeatedly throughout a spreadsheet, although the implementation details vary depending on the function's behavior.
-- For example, the DOUBLE() function shown earlier can be rewritten to accept a single cell or range of cells as follows: / Multiplies the input value by 2. @param {number Array<Array<number>>} input The value or range of cells to multiply. @return The input multiplied by 2. @customfunction / function DOUBLE ( input ) { return Array . isArray ( input ) ? input . map ( row = > row . map ( cell = > cell 2 )) : input 2 ; } This approach uses the map method of JavaScript's Array object on the two-dimensional array of cells to get each row, then for each row, it uses map again to return double each cell's value.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
-- Note: While Apps Script supports standard JSDoc for autocomplete in the editor, the Google Sheets UI has specific limitations regarding which tags and syntax are displayed in the spreadsheet's formula helper. / Multiplies the input value by 2. @param {number} input The value to multiply. @return {number} The input multiplied by 2. @customfunction / function DOUBLE ( input ) { return input 2 ; } Advanced This section covers advanced custom function topics.
+- Suppose there are two files being opened by workbook.open in the VBA code: File 1: C:\Data\abc.xlsx File 2: C:\Data\xyz.xlsx The following code shows how the Macro Converter replaces Workbook.open with Apps Script everywhere Workbook.open is used to open File 1: var spreadSheetId = handle mso excel get google spreadsheet id ( "C:\Data \a bc.xlsx" ); var spreadSheet = SpreadsheetApp . openById ( spreadSheetId ); The below error is added to the unimplemented constructs.gs file in the Apps Script project: / Method to return the spreadsheet id manually . @ param { string } FileName ID of the spreadsheet to be opened . @ return { string } return the spreadsheet id . / function handle mso excel get google spreadsheet id ( FileName ) { // Upload the Excel files being opened by the API to Google Drive and convert // them to Google Sheets . // Determine the spreadsheet ID of the Google Sheets file created . // Implement this method to return the corresponding spreadsheet ID when given // the original file path as parameter . throw new Error ( 'Please return the spreadsheet ID corresponding to filename: ' + FileName ); return ' ' ; } As instructed by the comments in the previous sample, you need to convert the target files to Sheets files on Drive.
+- The corresponding Google Spreadsheet IDs are highlighted in the following list: File #1: C:\Data\abc.xlsx becomes https://docs.google.com/spreadsheets/d/ abc123Abc123Abc123abc File #2: C:\Data\xyz.xlsx becomes https://docs.google.com/spreadsheets/d/ xyz456Xyz456xYz456xyZ Then, modify the code in the Apps Script function to open the files by ID: / Method to return the spreadsheet id manually . @ param { string } FileName ID of the spreadsheet to be opened . @ return { string } return the spreadsheet id . / function handle mso excel get google spreadsheet id ( FileName ) { // Upload the Excel files being opened by the API to Google Drive and convert // them to Google Sheets . // Determine the spreadsheet ID of the Google Sheets file created . // Implement this method to return the corresponding spreadsheet ID when given // the original file path as parameter if ( Filename . indexOf ( "abc.xlsx" ) >= 0 ) { return "abc123Abc123Abc123abc" ; } else if ( Filename . indexOf ( "xyz.xlsx" ) >= 0 ) { return "xyz456Xyz456xYz456xyZ" ; } Intentional error Intentional errors are added to your converted code to mimic the error behavior of your original VBA code.
+- Because this object type isn’t supported in Apps Script, the converted code creates the following functions in the unimplemented constructs.gs file that you need to define. api application commandbars() api commandbars item() The functions are called in the converted code as shown below: PrintName ( api commandbars item ( api application commandbars (), "Standard" ))) Here ’ s how the new functions are added to the unimplemented construct . gs file : function api application commandbars ( CallingObject ) { ThrowException ( 'API application.commandbars not supported yet.' ); } function api commandbars item ( CallingObject , index ) { ThrowException ( 'API commandbars.item not supported yet.' ); } To get the new functions to work, take the following steps: 3.1 Define a new object type that creates the functionalities of CommandBars and a new collection of CommandBars similar to what exists in VBA.
+- If the API is critical for the workflow the user can implement the unimplemented handler method in the generated code, else comment out the throw statement. @param {Object} CallingObject represents the parent object using which the API has been called. @param {string} Password @param {boolean} DrawingObjects @param {boolean} Contents @param {boolean} Scenarios @param {boolean} UserInterfaceOnly / function api chart protect ( CallingObject , Password , DrawingObjects , Contents , Scenarios , UserInterfaceOnly ) { var ranges = CallingObject . getChart (). getRanges (); for ( var i = 0 ; i ranges . length ; i ++ ) { // Note that this does not lock the range for the document owner . ranges [ i ] . protect (); } } Example 2: Unsupported object type When the object type is unknown, the unimplemented API error is added to the variant resolution.gs file.
 

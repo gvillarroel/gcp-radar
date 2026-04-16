@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:00.885Z"
+generated_at: "2026-04-13T22:42:27.215Z"
 product_name: "Spanner"
 product_slug: "spanner"
 feature_name: "Spanner editions"
@@ -9,18 +9,16 @@ latest_feature_date: "2024-09-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/spanner/docs/editions-overview"
-  - "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html"
-  - "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient"
+  - "https://docs.cloud.google.com/spanner/docs/graph/iso-standards"
+  - "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+  - "https://docs.cloud.google.com/spanner/docs/information-schema"
 keywords:
-  - "spanner"
   - "editions"
-  - "now"
-  - "supports"
   - "tier"
-  - "based"
   - "model"
-  - "with"
+  - "standard"
+  - "based"
+  - "supports"
 ---
 
 # Spanner editions
@@ -38,45 +36,53 @@ Cloud Spanner now supports a tier-based editions model with Standard, Enterprise
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/spanner/docs/editions-overview](https://docs.cloud.google.com/spanner/docs/editions-overview)
-- [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
+- [https://docs.cloud.google.com/spanner/docs/graph/iso-standards](https://docs.cloud.google.com/spanner/docs/graph/iso-standards)
+- [https://docs.cloud.google.com/spanner/docs/vector-search-tutorial](https://docs.cloud.google.com/spanner/docs/vector-search-tutorial)
+- [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
 
 ## Supporting Pages
 
-### Spanner editions overview | Google Cloud Documentation
+### Spanner Graph and ISO standards \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/spanner/docs/editions-overview](https://docs.cloud.google.com/spanner/docs/editions-overview)
+- URL: [https://docs.cloud.google.com/spanner/docs/graph/iso-standards](https://docs.cloud.google.com/spanner/docs/graph/iso-standards)
+- Source ID: `site-docs-reference`
+- Final score: 135
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Spanner Graph is based on two ISO standards: ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) , Edition 1, 2023 ISO/IEC 39075:2024 - Information technology — Database languages — GQL , Edition 1, 2024 The following tables describe the high-level relationship between SQL/PGQ, GQL, and how Spanner Graph supports these standards.
+- Home Documentation Databases Spanner Reference Send feedback Spanner Graph and ISO standards Stay organized with collections Save and categorize content based on your preferences.
+- The page describes how Spanner Graph supports the ISO international standard query language for graph databases.
+- Spanner Graph supports additional features in the ISO standards.
+
+### "Get started using Spanner for generative AI applications \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/spanner/docs/vector-search-tutorial](https://docs.cloud.google.com/spanner/docs/vector-search-tutorial)
 - Source ID: `site-docs-root`
-- Final score: 128
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- Spanner editions is a tier-based pricing model that provides different capabilities at different price points....
-- Spanner editions overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/spanner/docs/editions-overview Spanner · Start free · Home · ... and its key features.
-
-### django_spanner.operations — google-cloud-spanner-django documentation
-
-- URL: [https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html](https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html)
-- Source ID: `site-python-reference`
-- Final score: 81
+- Final score: 95
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- django spanner.operations — google-cloud-spanner-django documentation Source URL: https://googleapis.dev/python/django-google-spanner/latest/ modules/django spanner/operations.html [docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A Spanner-specific version of Django database operations.&quot;&quot;&quot; cast data types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast char field without max length = &quot;STRING&quot; compiler module = &quot;django spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in Spanner&#x27;s # EXTRACT() function.
+- PREDICT ( MODEL EmbeddingsModel , ( SELECT "I'd like to buy a starter bike for my 3 year old child" as content ) ) ) -- Use embedding to find the most similar entries in the database SELECT productName , productDescription , inventoryCount , ( APPROX COSINE DISTANCE ( productDescriptionEmbedding , embedding . values , options = > JSON '{"num leaves to search": 10}' )) as distance FROM products @{ force index = ProductDescriptionEmbeddingIndex } , embedding WHERE productDescriptionEmbedding IS NOT NULL AND inventoryCount > 0 ORDER BY distance LIMIT 5 ; Click Run .
+- In a new tab in Spanner Studio , copy and paste the following DDL statement to re-create the productDescriptionEmbedding column: ALTER TABLE products DROP COLUMN productDescriptionEmbedding ; ALTER TABLE products ADD COLUMN productDescriptionEmbedding ARRAY<FLOAT32> ( vector length = > VECTOR LENGTH VALUE ); Replace VECTOR LENGTH VALUE with the maximum output dimensions of the embedding model you've chosen.
+- Enter: CREATE MODEL EmbeddingsModel INPUT ( content STRING ( MAX ), ) OUTPUT ( embeddings STRUCT<values ARRAY<FLOAT32> > , ) REMOTE OPTIONS ( endpoint = '//aiplatform.googleapis.com/projects/ PROJECT ID /locations/us-central1/publishers/google/models/ TEXT EMBEDDING MODEL ' ); Replace the following: PROJECT ID : a permanent identifier that is unique for your Google Cloud project.
+- The following topics help you learn how to: Create an Google Cloud project Create a Spanner instance Create a database Create an embedding model Load data into Spanner Generate embeddings for data Perform KNN vector similarity search Scale vector search with a vector index Clean up resources To learn about Spanner pricing details, see Spanner pricing .
 
-### Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation
+### "Information schema for GoogleSQL-dialect databases \_|\_ Spanner \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient](https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerAsyncClient)
-- Source ID: `site-python-reference`
-- Final score: 80
+- URL: [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
+- Source ID: `site-docs-reference`
+- Final score: 74
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Class SpannerAsyncClient (3.63.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner v1.services.spanner.SpannerAsyncClient The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases.
+- All other principals can see privileges only for models on which EXECUTE fine-grained access control privilege is granted to the current database role, to roles of which the current database role is a member, or to public .
+- Home Documentation Databases Spanner Reference Send feedback Information schema for GoogleSQL-dialect databases Stay organized with collections Save and categorize content based on your preferences.
+- ROLE MODEL GRANTS This row-filtered table lists all fine-grained access control privileges granted on all models to any database role, including public .
+- SEQUENCE OPTIONS is row-filtered based on fine-grained access privileges, if a user with fine-grained access privileges is querying it.
 

@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.460Z"
+generated_at: "2026-04-13T14:23:05.229Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "DataprocWorkflowTemplate projectRef"
 feature_slug: "dataprocworkflowtemplate-projectref"
 latest_feature_date: "2021-06-21"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references"
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/overview"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
 keywords:
   - "dataprocworkflowtemplate"
-  - "projectref"
-  - "config"
-  - "connector"
-  - "supports"
-  - "strong"
   - "hierarchical"
+  - "projectref"
+  - "strong"
   - "references"
+  - "supports"
 ---
 
 # DataprocWorkflowTemplate projectRef
 
 Product: Config Connector
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,43 +40,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter)
 
 ## Supporting Pages
 
-### Creating resource references | Config Connector | Google Cloud Documentation
+### AlloyDBUser \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references](https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references)
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbuser)
 - Source ID: `site-docs-root`
-- Final score: 114
-- Re-rank relevance: N/A
+- Final score: 29
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Creating resource references Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/creating-resource-references You can find out what format the ... documentation.
-- Config Connector allows resources ...
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBUser metadata : name : alloydbuser-sample-database spec : clusterRef : name : alloydbuser-dep-database databaseRoles : - pg monitor - pg signal backend userType : ALLOYDB BUILT IN password : value : pg-built-in --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbuser-dep-database spec : location : me-central1 networkConfig : networkRef : name : alloydbuser-dep-database projectRef : external : ${PROJECT ID?} --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbuser-dep-database spec : clusterRef : name : alloydbuser-dep-database instanceTypeRef : name : alloydbuser-dep-database databaseFlags : enable google adaptive autovacuum : "off" machineConfig : cpuCount : 2 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbuser-dep-database spec : location : global addressType : INTERNAL networkRef : name : alloydbuser-dep-database prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbuser-dep-database --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbuser-dep-database spec : networkRef : name : alloydbuser-dep-database reservedPeeringRanges : - external : alloydbuser-dep-database service : servicenetworking.googleapis.com IAM User Copyright 2023 Google LLC Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBUser metadata : name : alloydbuser-sample-iam spec : clusterRef : name : alloydbuser-dep-iam databaseRoles : - pg monitor - pg signal backend - alloydbiamuser userType : ALLOYDB IAM USER --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbuser-dep-iam spec : location : me-west1 networkConfig : networkRef : name : alloydbuser-dep-iam projectRef : external : ${PROJECT ID?} --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbuser-dep-iam spec : clusterRef : name : alloydbuser-dep-iam instanceTypeRef : name : alloydbuser-dep-iam databaseFlags : enable google adaptive autovacuum : "off" machineConfig : cpuCount : 2 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbuser-dep-iam spec : location : global addressType : INTERNAL networkRef : name : alloydbuser-dep-iam prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbuser-dep-iam --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbuser-dep-iam spec : networkRef : name : alloydbuser-dep-iam reservedPeeringRanges : - external : alloydbuser-dep-iam service : servicenetworking.googleapis.com Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### APIGatewayAPI \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 108
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
-- IAM lets Config Connector take action on specific resources.
-
-### Config Connector overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/apigateway/apigatewayapi)
 - Source ID: `site-docs-root`
-- Final score: 95
+- Final score: 29
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Property Value Google Cloud Service Name API Gateway Google Cloud Service Documentation /api-gateway/docs/ Google Cloud REST Resource Name apigateway/v1/projects.locations.apis Google Cloud REST Resource Documentation /api-gateway/docs/reference/rest/v1/projects.locations.apis Config Connector Resource Short Names gcpapigatewayapi gcpapigatewayapis apigatewayapi Config Connector Service Name apigateway.googleapis.com Config Connector Resource Fully Qualified Name apigatewayapis.apigateway.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema displayName : string labels : string : string managedService : string projectRef : external : string kind : string name : string namespace : string resourceID : string Fields displayName Optional string Optional.
+- The project that this resource belongs to. projectRef.external Optional string The projectID field of a project, when not managed by Config Connector. projectRef.kind Optional string The kind of the Project resource; optional but must be Project if provided. projectRef.name Optional string The name field of a Project resource. projectRef.namespace Optional string The namespace field of a Project resource. resourceID Optional string The APIGatewayAPI name.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : apigateway.cnrm.cloud.google.com/v1beta1 kind : APIGatewayAPI metadata : name : apigatewayapi-sample spec : projectRef : external : projects/${PROJECT ID?} labels : name : "wrench" displayName : "Initial displayName" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
+
+### "AccessContextManagerServicePerimeter \_|\_ Config Connector \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter)
+- Source ID: `site-docs-root`
+- Final score: 21
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Config Connector overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/overview Config Connector provides a collection of Kubernetes Custom Resource Definitions (CRDs) and controllers.
-- The Config Connector CRDs allow Kubernetes to create and manage Google Cloud resources when you configure and apply Objects to your cluster.
+- AccessContextManagerServicePerimeter Property Value Google Cloud Service Name AccessContextManager Google Cloud Service Documentation /vpc-service-controls/docs/ Google Cloud REST Resource Name accesscontextmanager.v1.accessPolicies.servicePerimeters Google Cloud REST Resource Documentation /access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters Config Connector Resource Short Names gcpaccesscontextmanagerserviceperimeter gcpaccesscontextmanagerserviceperimeters accesscontextmanagerserviceperimeter Config Connector Service Name accesscontextmanager.googleapis.com Config Connector Resource Fully Qualified Name accesscontextmanagerserviceperimeters.accesscontextmanager.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema accessPolicyRef : external : string name : string namespace : string description : string perimeterType : string resourceID : string spec : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean status : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean title : string useExplicitDryRunSpec : boolean Fields accessPolicyRef Required object The AccessContextManagerAccessPolicy this AccessContextManagerServicePerimeter lives in. accessPolicyRef.external Optional string Allowed value: string of the format accessPolicies/{{value}}, where {{value}} is the name field of an AccessContextManagerAccessPolicy resource. accessPolicyRef.name Optional string Name of the referent.
+- See the License for the specific language governing permissions and limitations under the License. apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerServicePerimeter metadata : name : serviceperimetersample spec : Config for DRY-RUN To use this 'useExplicitDryRunSpec' must be set to 'true' Replace "${ACCESS POLICY NUMBER}" with the numeric ID for your Access Policy Replace "${PROJECT NUMBER}" with the appropriate project number for the project to be protected by the perimeter spec : List of Access Levels to be applied for this perimeter accessLevels : - name : serviceperimeterdep2 List of projects to be included in this perimeter resources : - projectRef : external : "projects/${PROJECT NUMBER1}" - projectRef : external : "projects/${PROJECT NUMBER2}" List of restricted services restrictedServices : - "storage.googleapis.com" List of services that could be accessed from within the perimeter vpcAccessibleServices : allowedServices : - "storage.googleapis.com" - "pubsub.googleapis.com" enableRestriction : true egressPolicies : - egressFrom : identities : - name : serviceperimeterengressdep - egressTo : resources : - projectRef : external : "projects/${PROJECT NUMBER1}" ingressPolicies : - ingressFrom : identities : - name : serviceperimeteringressdep sources : - accessLevelRef : name : serviceperimeterdep2 ingressTo : resources : - projectRef : external : "projects/${PROJECT NUMBER2}" Config to ENFORCE Config items are repeated as above for DRY-RUN Replace "${ACCESS POLICY NUMBER}" with the numeric ID for your Access Policy Replace "${PROJECT NUMBERx}" with the appropriate project number for the project to be protected by the perimeter status : accessLevels : - name : serviceperimeterdep2 resources : - projectRef : external : "projects/${PROJECT NUMBER3}" - projectRef : external : "projects/${PROJECT NUMBER4}" restrictedServices : - "bigquery.googleapis.com" vpcAccessibleServices : allowedServices : - "bigquery.googleapis.com" - "logging.googleapis.com" enableRestriction : true title : Service Perimeter created by Config Connector useExplicitDryRunSpec : true accessPolicyRef : Using an already existing Access Policy.
+- Format "projects/{project number}" The project may be in any Google Cloud organization, not just the organization that the perimeter is defined in. spec.ingressPolicies[].ingressFrom.sources[].projectRef.external Optional string Allowed value: string of the format projects/{{value}}, where {{value}} is the number field of a Project resource. spec.ingressPolicies[].ingressFrom.sources[].projectRef.name Optional string Name of the referent.
+- Format "projects/{project number}" The project may be in any Google Cloud organization, not just the organization that the perimeter is defined in. ingressPolicies[].ingressFrom.sources[].projectRef.external Optional string Allowed value: string of the format projects/{{value}}, where {{value}} is the number field of a Project resource. ingressPolicies[].ingressFrom.sources[].projectRef.name Optional string Name of the referent.
 

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.578Z"
+generated_at: "2026-04-14T23:59:44.494Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Logs Viewer automatic stream resume"
 feature_slug: "logs-viewer-automatic-stream-resume"
 latest_feature_date: "2017-02-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
-  - "https://docs.cloud.google.com/logging/docs/release-notes"
   - "https://docs.cloud.google.com/logging/docs/audit"
+  - "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
 keywords:
   - "logs"
   - "viewer"
@@ -26,7 +26,7 @@ keywords:
 # Logs Viewer automatic stream resume
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Logs Viewer automatically resumes log streaming when the browser tab or window b
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
-- [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
 - [https://docs.cloud.google.com/logging/docs/audit](https://docs.cloud.google.com/logging/docs/audit)
+- [https://docs.cloud.google.com/logging/docs/agent/logging/configuration](https://docs.cloud.google.com/logging/docs/agent/logging/configuration)
 
 ## Supporting Pages
 
@@ -52,7 +52,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
 - Source ID: `site-docs-root`
-- Final score: 198
+- Final score: 166
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,24 +61,11 @@ Evidence snippets:
 - To view all log entries in the Required and Default buckets: Private Logs Viewer ( roles/logging.privateLogViewer ) on your project, folder, or organization.
 - When you run a query, the query results are analyzed for patterns and log entries are then automatically grouped based on similar log field content.
 
-### Logging release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Resuming log streaming : The Logs Viewer now automatically resumes streaming logs when its browser window or tab is selected.
-- January 08, 2024 Feature You can now go to the Log Analytics page from the Logs Explorer page by clicking the Analyze results button, which automatically translates the Logging query language query into a SQL query.
-- May 26, 2025 Libraries Java 3.22.4 (2025-05-20) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.58.0 ( 45b4878 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.48.0 ( #1808 ) ( 6327c51 ) Update googleapis/sdk-platform-java action to v2.58.0 ( #1806 ) ( b94da77 ) May 12, 2025 Libraries Java 3.22.3 (2025-05-06) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.56.3 ( 844f4fa ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ( #1801 ) ( d7aa7bc ) Update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ( #1803 ) ( 5967ffe ) Update googleapis/sdk-platform-java action to v2.57.0 ( #1804 ) ( e9a27ec ) Java 3.22.3 (2025-05-06) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.56.3 ( 844f4fa ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ( #1801 ) ( d7aa7bc ) Update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ( #1803 ) ( 5967ffe ) Update googleapis/sdk-platform-java action to v2.57.0 ( #1804 ) ( e9a27ec ) May 08, 2025 Feature Log Analytics can now automatically infer fields of a column when the data type is JSON.
-- February 06, 2017 Feature App Engine Flexible Environment : For App Engine Flexible Environment, the Logs Viewer can now display application log entries ("log lines") inside the log entry for the associated service request.
-
 ### Cloud Audit Logs overview \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/logging/docs/audit](https://docs.cloud.google.com/logging/docs/audit)
 - Source ID: `site-docs-root`
-- Final score: 146
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +73,17 @@ Evidence snippets:
 - Required roles To view audit logs, you must have the appropriate Identity and Access Management (IAM) permissions and roles: To get the permissions that you need to get read-only access to Admin Activity, Policy Denied, and System Event audit logs, ask your administrator to grant you the Logs Viewer ( roles/logging.viewer ) IAM role on your project.
 - To get the permissions that you need to get access to all logs in the Required and Default buckets, including Data Access logs, ask your administrator to grant you the Private Logs Viewer ( roles/logging.privateLogViewer ) IAM role on your project.
 - The Private Logs Viewer role (roles/logging.privateLogViewer) includes the permissions contained in the Logs Viewer role ( roles/logging.viewer ), and those necessary to read Data Access audit logs in the Default bucket.
+
+### Configure the Logging agent \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/logging/docs/agent/logging/configuration](https://docs.cloud.google.com/logging/docs/agent/logging/configuration)
+- Source ID: `site-docs-root`
+- Final score: 102
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To send logs via the fluentd in forward plugin, read the following instructions: Execute the following command on the VM with the Logging agent installed: echo '{"code": "send-log-via-fluent-cat", "message": "This is a log from in forward plugin."}' /opt/google-fluentd/embedded/bin/fluent-cat log-via-in-forward-plugin Check the Logs Explorer to see the ingested log entry: { insertId: "1kvvmhsg1ib4689" jsonPayload: { code: "send-log-via-fluent-cat" message: "This is a log from in forward plugin." } labels: { compute.googleapis.com/resource name: "add-structured-log-resource" } logName: "projects/my-sample-project-12345/logs/log-via-in-forward-plugin" receiveTimestamp: "2018-03-21T02:11:27.981020900Z" resource: { labels: { instance id: "5351724540900470204" project id: "my-sample-project-12345" zone: "us-central1-c" } type: "gce instance" } timestamp: "2018-03-21T02:11:22.717692494Z" } Streaming structured (JSON) log records from application code You can enable connectors in various languages to send structured logs from application code; for more information, review the fluentd documentation .
+- Restart the agent to apply the configuration changes: sudo service google-fluentd restart Generate a log record into the log file: echo 'This is a log from the log file at test-unstructured-log.log' >> /tmp/test-unstructured-log.log Check the Logs Explorer to see the ingested log entry: { insertId: "eps2n7g1hq99qp" labels: { compute.googleapis.com/resource name: "add-unstructured-log-resource" } logName: "projects/my-sample-project-12345/logs/unstructured-log" receiveTimestamp: "2018-03-21T01:47:11.475065313Z" resource: { labels: { instance id: "3914079432219560274" project id: "my-sample-project-12345" zone: "us-central1-c" } type: "gce instance" } textPayload: "This is a log from the log file at test-unstructured-log.log" timestamp: "2018-03-21T01:47:05.051902169Z" } Streaming structured (JSON) logs via log files Note: This section contains a Linux command example.
+- For more information, see trace on the LogEntry page. "logging.googleapis.com/trace":"projects/my-projectid/traces/0679686673a" Note : If not writing to stdout or stderr , the value of this field should be formatted as projects/[PROJECT-ID]/traces/[TRACE-ID] , so it can be used by the Logs Explorer and the Trace Viewer to group log entries and display them in line with traces.
+- Customizing agent configuration Besides the list of default logs that the Logging agent streams by default, you can customize the Logging agent to send additional logs to Logging or to adjust agent settings by adding input configurations.
 

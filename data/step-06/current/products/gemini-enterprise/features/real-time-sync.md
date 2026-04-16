@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:21.385Z"
+generated_at: "2026-04-12T12:16:13.695Z"
 product_name: "Gemini Enterprise"
 product_slug: "gemini-enterprise"
 feature_name: "Real-time sync"
 feature_slug: "real-time-sync"
 latest_feature_date: "2025-09-15"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+  - "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
 keywords:
   - "real"
   - "time"
@@ -24,7 +27,7 @@ keywords:
 # Real-time sync
 
 Product: Gemini Enterprise
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,68 @@ Real-time sync uses webhooks to notify connectors when source data is created, u
 
 Real-time sync uses webhooks to notify connectors when source data is created, updated, or deleted, and is in Public Preview for Jira Cloud, Confluence Cloud, Microsoft OneDrive, Microsoft SharePoint Online, and ServiceNow.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete](https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Set up a Confluence Cloud data store \_|\_ Gemini Enterprise \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store)
+- Source ID: `site-docs-root`
+- Final score: 233
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Confluence entities Create Update Delete Permission changes Spaces check check close close Pages check check close close Blogs check check close close Attachments check check close close Comments check check close close Whiteboards close close close close Enable real-time sync 20 minutes after creating the Confluence Cloud data store.
+- Enable real-time sync for data ingestion Preview — Real-time sync This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- To enable real-time sync for a Confluence data store, follow these steps: Generate a webhook URL Navigate to the Gemini Enterprise page, and in the navigation menu, click Data Stores .
+- In the View and edit realtime sync parameters dialog, do the following: To turn on real-time sync, click the Enable realtime sync toggle.
+
+### "View data store sync activity and set up alerts \_|\_ Gemini Enterprise\
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts)
+- Source ID: `site-docs-root`
+- Final score: 148
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Overrun The data sync is ongoing, but has taken longer than expected and continues to run at the time that the next run is scheduled.
+- For each sync run in the table, you can expand the row by clicking the date and time under Connector run .
+- Each sync run is listed, with the following fields: Connector run : the date and time of the sync run.
+- Before you begin To enable alerts for a data store, you need to have the following permissions or role assigned to you: Permissions discoveryengine.googleapis.com/alertPolicies.get discoveryengine.googleapis.com/dataConnectors.update Predefined role Discovery Engine User Enable alerts for a data source To enable alerts for a specific data source: In the Google Cloud console, go to the Gemini Enterprise page.
+
+### "Set up a Confluence Data Center data store \_|\_ Gemini Enterprise \_|\_\
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store)
+- Source ID: `site-docs-root`
+- Final score: 127
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- In the Entities to search (if you selected Federated search ) or Entities to sync (if you selected Data ingestion ) section: Select all the required entities.
+- If you selected Data ingestion , continue with the following steps: Optional: To sync specific projects, do the following: Click Filter .
+- To schedule separate full syncs of entity and identity data, expand the menu in the Full sync section and then select Custom options .
+- To configure the sync schedule, do the following: In the Sync frequency list, select a sync frequency.
+
+### Configure autocomplete \_|\_ Gemini Enterprise \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete](https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete)
+- Source ID: `site-docs-root`
+- Final score: 118
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- DataStoreName ; public class SyncCompleteQuery { public static void main ( String [] args ) throws Exception { syncCompleteQuery (); } public static void syncCompleteQuery () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CompletionServiceClient completionServiceClient = CompletionServiceClient . create ()) { CompleteQueryRequest request = CompleteQueryRequest . newBuilder () . setDataStore ( DataStoreName . ofProjectLocationDataStoreName ( "[PROJECT]" , "[LOCATION]" , "[DATA STORE]" ) . toString ()) . setQuery ( "query107944136" ) . setQueryModel ( "queryModel-184930495" ) . setUserPseudoId ( "userPseudoId-1155274652" ) . setIncludeTailSuggestions ( true ) . build (); CompleteQueryResponse response = completionServiceClient . completeQuery ( request ); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Gemini Enterprise quickstart using client libraries .
+- Example command and result curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -H "X-Goog-User-Project: my-project-123" \ "https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/dataStores/my-data-store/completionSuggestions:purge" { "name": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/operations/purge-customer-imported suggestions-3197526711414652502", "metadata": { "@type": "type.googleapis.com/google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsMetadata", "createTime": "2024-06-27T17:07:09.551726728Z", "updateTime": "2024-06-27T17:07:09.551726728Z" }, "done": true, "response": { "@type": "type.googleapis.com/google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsResponse", "purgeSucceeded": true } } Advanced document data model Experimental This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- Even if set to true, if there are suggestions that match the full query, those are returned and no tail suggestions are returned. / // const includeTailSuggestions = true // Imports the Discoveryengine library const { CompletionServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1 ; // Instantiates a client const discoveryengineClient = new CompletionServiceClient (); async function callCompleteQuery () { // Construct request const request = { dataStore , query , }; // Run request const response = await discoveryengineClient . completeQuery ( request ); console . log ( response ); } callCompleteQuery (); Python Before trying this sample, follow the Python setup instructions in the Gemini Enterprise quickstart using client libraries .
+- Example command and result curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: my-project-123" \ "https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store:completeQuery?query=t&query model=imported-suggestion" Response: { "querySuggestions": [ { "suggestion": "The Time Machine" }, { "suggestion": "The Scarlet Letter" } ] } Purge the list of imported autocomplete suggestions Before importing a new list of autocomplete suggestions, remove the existing one.
 

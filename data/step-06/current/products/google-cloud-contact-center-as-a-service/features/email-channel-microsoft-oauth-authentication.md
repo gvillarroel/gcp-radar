@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.744Z"
+generated_at: "2026-04-15T13:50:47.091Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Email channel Microsoft OAuth authentication"
@@ -9,9 +9,9 @@ latest_feature_date: "2024-01-29"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
 keywords:
   - "email"
   - "channel"
@@ -41,48 +41,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api](https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Android SDK guide \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 144
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide)
+- Source ID: `site-docs-reference`
+- Final score: 101
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature OAuth for Email Channel : Email channel authentication now supports Microsoft OAuth .
-- Feature Email Channel : CCAI Platform now supports the new Email Channel feature, which allows you to set up and provide email support.
-- Feature Configure SSO for your email channel using OAuth credentials from Google Cloud You can configure single sign-on (SSO) for your Contact Center AI Platform email channel using OAuth 2.0 credentials from Google Cloud.
-- Support for new CRM features: Surveys Agent Status inheritance Custom Callback number Improved support for OAuth authentication, for example now including admin tokens.
+- Log.i ( "CCAI Platform Event Type" , eventType.getValue ()) ; StringBuilder builder = new StringBuilder () ; for ( Map.Entry<String, Object> entry : eventData.entrySet ()) { builder.append ( entry.getKey ()) .append ( " : " ) .append ( entry.getValue ()) .append ( "\n" ) ; } Log.i ( "CCAI Platform Event Data" , builder.toString ()) ; } }) ; Event type Description Data included in event EmailClicked Triggers when the end-user clicks the email channel.
+- Boolean true UjetOption ujetOption = new UjetOption.Builder () .setLogLevel ( Log.INFO ) .setDefaultLanguage ( "en" ) .setFallbackPhoneNumber ( "+18001112222" ) .setUncaughtExceptionHandlerEnabled ( false ) .setNetworkSensitivity ( 0 ) .setDarkModeEnabled ( true ) .setShowSingleChannelEnabled ( true ) .setAutoMinimizeCallView ( true ) .setShowAgentIconBorderEnabled ( true ) .setStaticFontSizeInPickerView ( true ) .setHideMediaAttachmentInChat ( true ) .setIgnoreReadPhoneStatePermission ( true ) .setCobrowseLicenseKey ( "COBROWSE IO LICENSE KEY HERE" ) .setCobrowseURL ( "COBROWSE IO API URL HERE" ) .setCustomChatHeaderTitle ( "CHAT HEADER TITLE TEXT" ) .setUjetStylesOptions ( new UjetStylesOptions.Builder () .setChatQuickReplyButtonsStyle ( QuickReplyButtonsStyle.INDIVIDUAL ) .setChatStyles ( new ChatStyles ( ... )) // See Content Cards Theme item .build () ) .setBlockChatTerminationByEndUser ( true ) .setHideStatusBar ( true ) .setLoadingSpinnerDrawableRes ( R.drawable.RESOURCE NAME ) .setLandscapeOrientationDisabled ( true ) .setShowCsatSkipButton ( false ) .setHideDownloadChatTranscript ( 0 ) // 0 to 3 .
+- Installation Add the Android SDK repository to your Gradle setting for the root project. build.gradle (Project) allprojects { repositories { google () jcenter () maven { url "https://sdk.ujet.co/android/" } } } build.gradle (module: app) dependencies { // Replace x.y.z with latest version of CCAI Platform SDK def ujetSdkVersion = "x.y.z" implementation "co.ujet.android:ujet-android: $ujetSdkVersion " // CCAI Platform supports co-browse for Web SDK version 0 .46.0 or // higher. // To use co-browse, declare the following dependency. implementation "co.ujet.android:cobrowse: $ujetVersion " } Note: If you're using a Java version older than 11.0.2 and are unable to build our SDK, upgrade to 11.0.2+ to resolve the issue.
+- You will need to add an intent filter that contains the deep link in your manifest. <activity android:name = "co.ujet.android.activity.UjetActivity" > <intent-filter> <action android:name = "android.intent.action.VIEW" /> <category android:name = "android.intent.category.DEFAULT" /> <category android:name = "android.intent.category.BROWSABLE" /> <data android:host = "<package name>" android:scheme = "ujet" android:path = "/smartchannel" /> </intent-filter> </activity> Preferred channel The Preferred Channel parameter lets you to route consumers directly to a specific channel.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Mid-Session authentication by API \_|\_ Google Cloud Contact Center as a\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 56
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api](https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 100
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This page explains how to use call and chat API endpoints for mid-session authentication in your SDK channels.
+- 123-456-7890 API samples Sample API response Success response sample: 202 Accepted { "message" : "accepted" } Failure response samples Missing Parameters 400 { "message" : "param is missing or the value is empty: comm type" } 400 { "message" : "param is missing or the value is empty: identifier" } Referencing a comm type other than call or chat 404 { "message" : "Not Found" } Session not active 400 { "message" : "Call is already ended" } 400 { "message" : "Chat is already ended" } Unsupported CRM request 400 { "message" : "Unsupported CRM request" } Duplicate request 400 { "message" : "Duplicate request: Please wait for the interval to expire" } API request sample Call Comm Type POST https://<subdomain>.<domain>/apps/api/v1/calls/:call id/end user Content-Type: application/json Authorization: Bearer <your access token> { "identifier" : "unique external id" , "name" : "John Doe" , "email" : "johndoe@example.com" , "phone" : "123-456-7890" } Chat Comm Type POST https://<subdomain>.<domain>/apps/api/v1/chats/:chat id/end user Content-Type: application/json Authorization: Bearer <your access token> { "identifier" : "unique external id" , "name" : "Jane Smith" , "email" : "janesmith@example.com" , "phone" : "098-765-4321" } Apps API Documentation For additional apps API endpoints, see Apps API Publication .
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Mid-Session authentication by API Stay organized with collections Save and categorize content based on your preferences.
+- Upon successful authentication, you can update the end user identifier to link the session to the verified end-user.
+
+### "Call settings \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 77
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- Direct queues to a visual message Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Android SDK With the CCAI Platform Android SDK, you can create seamless voice and chat support experiences for users of your Android apps.
-- Configure settings for handling chats Enable chat, create proactive web triggers, establish chat channel settings like chat threshold for agents and timeout settings at Settings > Chat Create chat shortcuts for agents to use.
-
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 22
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Provides smart device capabilities like photo and video sharing, channel blending, and convenient, on-device authentication.
-- Delivers AI-based omni-channel routing, intelligent Virtual Agent, Agent Assist, and Insights capabilities that enables organizations to streamline customer experiences.
-- It provides a turnkey implementation of an omni-channel contact center that is built to integrate with Google's other contact center AI products.
-- CCAI Platform is a full-stack contact center platform for queuing and routing customer interactions across voice and digital channels.
+- CCAI Platform supports the following emergency and special services phone numbers: US emergency numbers Canada emergency numbers Canada special service numbers 911 - Emergency 911 - Emergency 211 - Public information and referral services 933 - Emergency test 311 - Non-emergency municipal government services 411 - Local directory assistance 511 - Weather and traveler information services 611 - Repair service 711 - Message relay service (MRS) 811 - Non-urgent health care telephone triage service 988 - Suicide and crisis lifeline Turn emergency calling on or off Turn on emergency calling to let authorized agents make and manage emergency and special services calls in the call adapter.
+- When enabled, configure the TSS or upload a custom greeting in Settings Languages & Messages Deflection to Voicemail option - Request Already Placed Message. - Limit consumer to 1 voicemail per queue: a consumer could leave a separate voicemail request on a separate queue. - Limit consumer to 1 voicemail request across all queues: voicemail option not available if an unattended voicemail is already left form the phone number.
+- This will place a new Outbound Call and set the status of the original Voicemail call to 'Voicemail Read.' Scheduled call recovery If a consumer scheduled a call using the Web or Mobile SDK, then doesn't pick up the call at the scheduled time, a Callback option presented to Agent which will create a new Outbound call.
+- In the Custom Callback section, check to enable "Allow consumer to leave a custom call back phone number" if you would like every caller to get the option to leave a different number than the number from which they are calling when: -Leaving a voicemail. -Selecting the callback option for overcapacity.
 

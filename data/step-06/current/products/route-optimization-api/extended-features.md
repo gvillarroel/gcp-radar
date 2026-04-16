@@ -9,5 +9,5 @@ Features without supporting corpus pages: 0
 
 | Latest feature date | Feature | Coverage | Sources | Extended definition |
 | --- | --- | --- | --- | --- |
-| 2024-09-23 | Route tokens | LOW | [source](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentRoute)<br>[source](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentModel)<br>[source](https://developers.google.com/maps/documentation/route-optimization/reference/rest) | The Route Optimization API can generate route tokens that can be passed to the Navigation SDK to guide vehicle routing. |
+| 2024-09-23 | Route tokens | MEDIUM | [source](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentRoute)<br>[source](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentModel)<br>[source](https://developers.google.com/maps/documentation/route-optimization/reference/rest)<br>[source](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/OptimizeToursResponse) | The Route Optimization API can generate route tokens that can be passed to the Navigation SDK to guide vehicle routing. |
 

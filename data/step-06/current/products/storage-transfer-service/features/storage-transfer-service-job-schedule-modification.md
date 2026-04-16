@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:01.867Z"
+generated_at: "2026-04-15T11:56:47.661Z"
 product_name: "Storage Transfer Service"
 product_slug: "storage-transfer-service"
 feature_name: "Storage Transfer Service job schedule modification"
 feature_slug: "storage-transfer-service-job-schedule-modification"
 latest_feature_date: "2021-03-31"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage"
+  - "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+  - "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs"
 keywords:
   - "storage"
   - "transfer"
@@ -18,13 +20,13 @@ keywords:
   - "modification"
   - "allows"
   - "users"
-  - "to"
+  - "modify"
 ---
 
 # Storage Transfer Service job schedule modification
 
 Product: Storage Transfer Service
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ Storage Transfer Service allows users to modify an existing transfer job's sched
 
 Storage Transfer Service allows users to modify an existing transfer job's schedule; Storage Transfer Service adds preview support for modifying the schedule of an existing transfer job.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage](https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage)
+- [https://docs.cloud.google.com/storage-transfer/docs/create-transfers](https://docs.cloud.google.com/storage-transfer/docs/create-transfers)
+- [https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs](https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Transfer between Cloud Storage buckets \_|\_ Storage Transfer Service \_\
+
+- URL: [https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage](https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage)
+- Source ID: `site-docs-root`
+- Final score: 91
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Request using transferJobs create : POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { "description" : "YOUR DESCRIPTION" , "status" : "ENABLED" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 1 , "month" : 1 , "year" : 2025 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 }, "scheduleEndDate" : { "day" : 1 , "month" : 1 , "year" : 2025 } }, "transferSpec" : { "gcsDataSource" : { "bucketName" : "GCS SOURCE NAME" }, "gcsDataSink" : { "bucketName" : "GCS SINK NAME" }, "transferOptions" : { "deleteObjectsFromSourceAfterTransfer" : true } } } Response: 200 OK { "transferJob" : [ { "creationTime" : "2015-01-01T01:01:00.000000000Z" , "description" : "YOUR DESCRIPTION" , "name" : "transferJobs/JOB ID" , "status" : "ENABLED" , "lastModificationTime" : "2015-01-01T01:01:00.000000000Z" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 1 , "month" : 1 , "year" : 2015 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "gcsDataSource" : { "bucketName" : "GCS SOURCE NAME" , }, "gcsDataSink" : { "bucketName" : "GCS NEARLINE SINK NAME" }, "objectConditions" : { "minTimeElapsedSinceLastModification" : "2592000.000s" }, "transferOptions" : { "deleteObjectsFromSourceAfterTransfer" : true } } } ] } Client libraries In this example, you'll learn how to move files from one Cloud Storage bucket to another.
+- SECOND )) . build (); TransferJob transferJob = TransferJob . newBuilder () . setDescription ( jobDescription ) . setProjectId ( projectId ) . setTransferSpec ( TransferSpec . newBuilder () . setGcsDataSource ( GcsData . newBuilder (). setBucketName ( gcsSourceBucket )) . setGcsDataSink ( GcsData . newBuilder (). setBucketName ( gcsNearlineSinkBucket )) . setObjectConditions ( ObjectConditions . newBuilder () . setMinTimeElapsedSinceLastModification ( Duration . newBuilder (). setSeconds ( 2592000 / 30 days / ))) . setTransferOptions ( TransferOptions . newBuilder (). setDeleteObjectsFromSourceAfterTransfer ( true ))) . setSchedule ( Schedule . newBuilder (). setScheduleStartDate ( date ). setStartTimeOfDay ( time )) . setStatus ( Status .
+- ENABLED , "schedule" : { "schedule start date" : { "day" : start date . day , "month" : start date . month , "year" : start date . year , } }, "transfer spec" : { "gcs data source" : { "bucket name" : source bucket , }, "gcs data sink" : { "bucket name" : sink bucket , }, "object conditions" : { "min time elapsed since last modification" : Duration ( seconds = 2592000 # 30 days ) }, "transfer options" : { "delete objects from source after transfer" : True }, }, } } ) result = client . create transfer job ( transfer job request ) print ( f "Created transferJob: { result . name } " ) Verify copied objects After your transfer is complete, we recommend performing additional data integrity checks.
+- Schedule ; import com.google.storagetransfer.v1.proto.
+
+### Create transfers \_|\_ Storage Transfer Service \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage-transfer/docs/create-transfers](https://docs.cloud.google.com/storage-transfer/docs/create-transfers)
+- Source ID: `site-docs-root`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Storage Transfer Service is able to transfer data from the following Microsoft Azure Storage regions: Americas: East US, East US 2, West US, West US 2, West US 3, Central US, North Central US, South Central US, West Central US, Canada Central, Canada East, Brazil South Asia-Pacific: Australia Central, Australia East, Australia Southeast, Central India, South India, West India, Southeast Asia, East Asia, Japan East, Japan West, Korea South, Korea Central Europe, Middle East, Africa (EMEA): France Central, Germany West Central, Norway East, Sweden Central, Switzerland North, North Europe, West Europe, UK South, UK West, Qatar Central, UAE North, South Africa North Request using transferJobs create : POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { "description" : "YOUR DESCRIPTION" , "status" : "ENABLED" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 14 , "month" : 2 , "year" : 2020 }, "scheduleEndDate" : { "day" : 14 "month" : 2 , "year" : 2020 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "azureBlobStorageDataSource" : { "storageAccount" : "AZURE SOURCE NAME" , "azureCredentials" : { "sasToken" : "AZURE SAS TOKEN" , }, "container" : "AZURE CONTAINER" , }, "gcsDataSink" : { "bucketName" : "GCS SINK NAME" } } } Response: 200 OK { "transferJob" : [ { "creationTime" : "2020-02-14T01:01:00.000000000Z" , "description" : "YOUR DESCRIPTION" , "name" : "transferJobs/JOB ID" , "status" : "ENABLED" , "lastModificationTime" : "2020-02-14T01:01:00.000000000Z" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 14 "month" : 2 , "year" : 2020 }, "scheduleEndDate" : { "day" : 14 , "month" : 2 , "year" : 2020 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "azureBlobStorageDataSource" : { "storageAccount" : "AZURE SOURCE NAME" , "azureCredentials" : { "sasToken" : "AZURE SAS TOKEN" , }, "container" : "AZURE CONTAINER" , }, "objectConditions" : {}, "transferOptions" : {} } } ] } Transfer from a file system See Transfer from a file system to Cloud Storage .
+- ENABLED ) . build (); // Create a Transfer Service client StorageTransferServiceClient storageTransfer = StorageTransferServiceClient . create (); // Create the transfer job TransferJob response = storageTransfer . createTransferJob ( CreateTransferJobRequest . newBuilder (). setTransferJob ( transferJob ). build ()); System . out . println ( "Created transfer job from standard bucket to Nearline bucket:" ); System . out . println ( response . toString ()); } } Node.js // Imports the Google Cloud client library const { StorageTransferServiceClient , } = require ( ' @google-cloud/storage-transfer ' ); / TODO(developer): Uncomment the following lines before running the sample. / // The ID of the Google Cloud Platform Project that owns the job // projectId = 'my-project-id' // A useful description for your transfer job // description = 'My transfer job' // Google Cloud Storage source bucket name // gcsSourceBucket = 'my-gcs-source-bucket' // Google Cloud Storage destination bucket name // gcsSinkBucket = 'my-gcs-destination-bucket' // Date to start daily migration // startDate = new Date() // Creates a client const client = new StorageTransferServiceClient (); / Create a daily migration from a GCS bucket to another GCS bucket for objects untouched for 30+ days. / async function createDailyNearline30DayMigration () { // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , description , status : ' ENABLED ' , schedule : { scheduleStartDate : { day : startDate . getDate (), month : startDate . getMonth () + 1 , year : startDate . getFullYear (), }, }, transferSpec : { gcsDataSource : { bucketName : gcsSourceBucket , }, gcsDataSink : { bucketName : gcsSinkBucket , }, objectConditions : { minTimeElapsedSinceLastModification : { seconds : 2592000 , // 30 days }, }, transferOptions : { deleteObjectsFromSourceAfterTransfer : true , }, }, }, }); console . log ( Created transferJob: ${ transferJob . name } ); } createDailyNearline30DayMigration (); Python Looking for older samples?
+- Request using transferJobs create : POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { "description" : "YOUR DESCRIPTION" , "status" : "ENABLED" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 1 , "month" : 1 , "year" : 2015 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "gcsDataSource" : { "bucketName" : "GCS SOURCE NAME" }, "gcsDataSink" : { "bucketName" : "GCS SINK NAME" }, "transferOptions" : { "deleteObjectsFromSourceAfterTransfer" : true } } } Response: 200 OK { "transferJob" : [ { "creationTime" : "2015-01-01T01:01:00.000000000Z" , "description" : "YOUR DESCRIPTION" , "name" : "transferJobs/JOB ID" , "status" : "ENABLED" , "lastModificationTime" : "2015-01-01T01:01:00.000000000Z" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 1 , "month" : 1 , "year" : 2015 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "gcsDataSource" : { "bucketName" : "GCS SOURCE NAME" , }, "gcsDataSink" : { "bucketName" : "GCS NEARLINE SINK NAME" }, "objectConditions" : { "minTimeElapsedSinceLastModification" : "2592000.000s" }, "transferOptions" : { "deleteObjectsFromSourceAfterTransfer" : true } } } ] } Transfer from Amazon S3 to Cloud Storage See Transfer from Amazon S3 to Cloud Storage .
+- Complete example request The following is an example of a full request: POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { "description" : "YOUR DESCRIPTION" , "status" : "ENABLED" , "projectId" : "PROJECT ID" , "schedule" : { "scheduleStartDate" : { "day" : 1 , "month" : 1 , "year" : 2015 }, "startTimeOfDay" : { "hours" : 1 , "minutes" : 1 } }, "transferSpec" : { "gcsDataSource" : { "bucketName" : "GCS SOURCE NAME" , "path" : "GCS SOURCE PATH" , }, "gcsDataSink" : { "bucketName" : "GCS SINK NAME" , "path" : "GCS SINK PATH" , }, "objectConditions" : { "minTimeElapsedSinceLastModification" : "2592000s" }, "transferOptions" : { "deleteObjectsFromSourceAfterTransfer" : true } } } Client libraries The following samples show you how to use Storage Transfer Service programmatically with Go, Java, Node.js, and Python.
+
+### "REST Resource: transferJobs \_|\_ Storage Transfer Service \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs](https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs)
+- Source ID: `site-api-reference`
+- Final score: 77
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON representation { "name" : string , "description" : string , "projectId" : string , "serviceAccount" : string , "transferSpec" : { object ( TransferSpec ) } , "replicationSpec" : { object ( ReplicationSpec ) } , "notificationConfig" : { object ( NotificationConfig ) } , "loggingConfig" : { object ( LoggingConfig ) } , "schedule" : { object ( Schedule ) } , "eventStream" : { object ( EventStream ) } , "status" : enum ( Status ) , "creationTime" : string , "lastModificationTime" : string , "deletionTime" : string , "latestOperationName" : string } Fields name string A unique name (within the transfer project) assigned when the job is created.
+- See https://docs.cloud.google.com/storage-transfer/docs/delegate-service-agent-permissions for required permissions. transferSpec object ( TransferSpec ) Transfer specification. replicationSpec object ( ReplicationSpec ) Replication specification. notificationConfig object ( NotificationConfig ) Notification configuration. loggingConfig object ( LoggingConfig ) Logging configuration. schedule object ( Schedule ) Specifies schedule for the transfer job.
+- For example, if you send an outbound request on June 1 one millisecond prior to midnight UTC and the Storage Transfer Service server receives the request on June 2, then it creates a TransferJob with scheduleStartDate set to June 2 and a startTimeOfDay set to midnight UTC.
+- Specifies a unique name of the resource such as AWS SQS ARN in the form 'arn:aws:sqs:region:account id:queue name', or Pub/Sub subscription resource name in the form 'projects/{project}/subscriptions/{sub}'. eventStreamStartTime string ( Timestamp format) Specifies the date and time that Storage Transfer Service starts listening for events from this stream.
 

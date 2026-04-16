@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.542Z"
+generated_at: "2026-04-14T15:13:19.591Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Spain PNOA10 RGB orthophotos"
 feature_slug: "spain-pnoa10-rgb-orthophotos"
 latest_feature_date: "2023-02-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/orthophotos"
   - "https://developers.google.com/earth-engine/datasets/catalog"
-  - "https://developers.google.com/earth-engine/docs/release-notes"
+  - "https://developers.google.com/earth-engine/datasets/tags/highres"
 keywords:
   - "spain"
   - "pnoa10"
@@ -26,7 +26,7 @@ keywords:
 # Spain PNOA10 RGB orthophotos
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ High-resolution 10 cm RGB orthophotos for Spain.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/datasets/tags/orthophotos](https://developers.google.com/earth-engine/datasets/tags/orthophotos)
 - [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
+- [https://developers.google.com/earth-engine/datasets/tags/highres](https://developers.google.com/earth-engine/datasets/tags/highres)
 
 ## Supporting Pages
 
@@ -52,38 +52,38 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/orthophotos](https://developers.google.com/earth-engine/datasets/tags/orthophotos)
 - Source ID: `site-docs-root-3`
-- Final score: 158
+- Final score: 109
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For more information, please see the Slovakia orthophotos documentation orthophotos rgb Spain RGB orthophotos 10 cm Mosaics of orthophotos from flights carried out between 2007 and 2018 by various public administration bodies at 10cm pixel resolution.
-- For more information, please see … netherlands orthophotos rgb SWISSIMAGE 10 cm RGB imagery The SWISSIMAGE 10 cm orthophoto mosaic is an assembly of new color digital aerial images over the whole of Switzerland with a ground resolution of 10 cm in the plains and the main alpine valleys and 25 cm in the Alps.
 - 2008 was … agriculture highres imagery orthophotos usda NEON RGB Camera Imagery High resolution Red-Green-Blue (RGB) orthorectified camera images mosaicked and output onto a fixed, uniform spatial grid using nearest-neighbor resampling; spatial resolution is 0.1 m.
+- For more information, please see the Slovakia orthophotos documentation orthophotos rgb Spain RGB orthophotos 10 cm Mosaics of orthophotos from flights carried out between 2007 and 2018 by various public administration bodies at 10cm pixel resolution.
 - For more information, please see the Spain orthophotos documentation orthophotos rgb Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+- For more information, please see … netherlands orthophotos rgb SWISSIMAGE 10 cm RGB imagery The SWISSIMAGE 10 cm orthophoto mosaic is an assembly of new color digital aerial images over the whole of Switzerland with a ground resolution of 10 cm in the plains and the main alpine valleys and 25 cm in the Alps.
 
 ### Earth Engine Data Catalog \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 138
+- Final score: 87
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Predictions were derived using a digital soil mapping approach based on Quantile Random Forest, drawing on a global … soil soil-moisture water Spain RGB orthophotos 10 cm Mosaics of orthophotos from flights carried out between 2007 and 2018 by various public administration bodies at 10cm pixel resolution.
 - For more information, please see the Spain orthophotos documentation orthophotos rgb Species Distribution, Australia Mammals These species distribution model outputs, developed by Google in collaboration with QCIF and EcoCommons, represent estimates of species’ relative occurrence likelihoods (i.e., higher values indicate a higher likelihood that the species would be detected at a location, for a given survey methodology and given survey … biodiversity conservation ecosystems nature-trace pre-review publisher-dataset TCB: Malaria Atlas Project Gap-Filled Tasseled Cap Brightness (8-Daily 1km) This gap-filled Tasseled Cap Brightness (TCB) dataset was created by applying the tasseled-cap equations defined in Lobser and Cohen (2007) to MODIS BRDF-corrected imagery (MCD43B4).
-- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance LandScan High Definition Data for Ukraine, January 2022 LandScan High Definition (HD) provides gridded population estimates at 3 arc-second ( 100m) resolution.
-- Where a corresponding high-resolution panchromatic image was available, it was fused with multispectral data to achieve enhanced spatial detail (up to 5m for SPOT 5 or 10m … brazil forest-code google rgb satellite-imagery spot SRTM Digital Elevation Data Version 4 The Shuttle Radar Topography Mission (SRTM) digital elevation dataset was originally produced to provide consistent, high-quality elevation data at near global scope.
+- Predictions were derived using a digital soil mapping approach based on Quantile Random Forest, drawing on a global … soil soil-moisture water Spain RGB orthophotos 10 cm Mosaics of orthophotos from flights carried out between 2007 and 2018 by various public administration bodies at 10cm pixel resolution.
+- 2012) and across two of the four greenhouse … cag climate cmip5 gddp geophysical ipcc NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Africa This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Americas This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Asia This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NLCD 2019: USGS National Land Cover Database, 2019 release NLCD (the National Land Cover Database) is a 30-m Landsat-based land cover database spanning 8 epochs (2001, 2004, 2006, 2008, 2011, 2013, 2016, and 2019).
+- The OpenET SSEBop implementation uses … evapotranspiration gridmet-derived landsat-derived monthly openet publisher-dataset OpenET eeMETRIC Monthly Evapotranspiration v2.0 Google Earth Engine implementation of the Mapping Evapotranspiration at high Resolution with Internalized Calibration model (eeMETRIC). eeMETRIC applies the advanced METRIC algorithms and process of Allen et al. (2007; 2015) and Allen et al. (2013b), where a singular relationship between the near surface air temperature … evapotranspiration gridmet-derived landsat-derived monthly openet publisher-dataset OpenET eeMETRIC Monthly Evapotranspiration v2.1 Google Earth Engine implementation of the Mapping Evapotranspiration at high Resolution with Internalized Calibration model (eeMETRIC). eeMETRIC applies the advanced METRIC algorithms and process of Allen et al. (2007; 2015) and Allen et al. (2013b), where a singular relationship between the near surface air temperature … evapotranspiration gridmet-derived landsat-derived monthly openet publisher-dataset OpenET geeSEBAL Monthly Evapotranspiration v2.0 Implementation of geeSEBAL was completed within the OpenET framework.
 
-### Earth Engine release notes \_|\_ Google Earth Engine \_|\_ Google for Developers
+### "Datasets tagged highres in Earth Engine \_|\_ Earth Engine Data Catalog\
 
-- URL: [https://developers.google.com/earth-engine/docs/release-notes](https://developers.google.com/earth-engine/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 138
+- URL: [https://developers.google.com/earth-engine/datasets/tags/highres](https://developers.google.com/earth-engine/datasets/tags/highres)
+- Source ID: `site-docs-root`
+- Final score: 76
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- February 21, 2023 Earth Engine Data Catalog Feature Added NOAA/VIIRS/001/VNP09H1 (no longer available) Added Spain/PNOA/PNOA10 : Spain RGB orthophotos 10 cm February 15, 2023 Earth Engine Python Client Library 1.341 Feature Added ee.data.getPixels() , ee.data.computePixels() , ee.data.listFeatures() , and ee.data.computeFeatures() to the Python client.
-- February 07, 2023 Earth Engine Data Catalog Feature Added ACA/reef habitat/v2 0 : Allen Coral Atlas (ACA) - Geomorphic Zonation and Benthic Habitat - v2.0 Added COPERNICUS/DEM/GLO30 : Copernicus DEM GLO-30: Global 30m Digital Elevation Model Added ECMWF/ERA5 LAND/DAILY RAW (no longer available) Added Germany/Brandenburg/orthos/20cm : Brandenburg (Germany) RGBN orthophotos 20 cm Added NASA/GEOS-CF/v1/fcst/htf : GEOS-CF fcst htf v1: Goddard Earth Observing System Composition Forecast Added USGS/NLCD RELEASES/2019 REL/RCMAP/V5/COVER (no longer available) January 31, 2023 Earth Engine Data Catalog Feature Added NOAA/VIIRS/001/VNP64A1 : VNP64A1: Burned Area Monthly L4 Global 500m SIN Grid January 24, 2023 Earth Engine Data Catalog Feature Added ECMWF/ERA5 LAND/MONTHLY AGGR : ERA5-Land Monthly Aggregated - ECMWF Climate Reanalysis Added Germany/Brandenburg/20cm (no longer available) Added NOAA/VIIRS/001/VNP21A1D (no longer available) Added NOAA/VIIRS/001/VNP21A1N (no longer available) January 17, 2023 Earth Engine Data Catalog Feature Added NASA/SMAP/SPL3SMP E/005 : SPL3SMP E.005 SMAP L3 Radiometer Global Daily 9 km Soil Moisture Added NASA/SMAP/SPL4SMGP/007 (no longer available) January 10, 2023 Earth Engine Data Catalog Feature Added Finland/MAVI/VV/50cm : Finland NRG NLS orthophotos 50 cm by Mavi Added Finland/SMK/V/50cm : Finland RGB NLS orthophotos 50 cm by SMK Added Finland/SMK/VV/50cm : Finland NRG NLS orthophotos 50 cm by SMK Added MODIS/061/MOD21C1 : MOD21C1.061 Terra Land Surface Temperature and 3-Band Emissivity Daily L3 Global 0.05 Deg CMG Added MODIS/061/MOD21C2 : MOD21C2.061 Terra Land Surface Temperature and 3-Band Emissivity 8-Day L3 Global 0.05 Deg CMG Added MODIS/061/MOD21C3 : MOD21C3.061 Terra Land Surface Temperature and 3-Band Emissivity Monthly L3 Global 0.05 Deg CMG Added MODIS/061/MYD17A3HGF : MYD17A3HGF.061: Aqua Net Primary Production Gap-Filled Yearly Global 500m Added MODIS/061/MYD21C1 : MYD21C1.061 Aqua Land Surface Temperature and 3-Band Emissivity Daily L3 Global 0.05 Deg CMG Added MODIS/061/MYD21C2 : MYD21C2.061 Aqua Land Surface Temperature and 3-Band Emissivity 8-Day L3 Global 0.05 Deg CMG Added MODIS/061/MYD21C3 : MYD21C3.061 Aqua Land Surface Temperature and 3-Band Emissivity Monthly L3 Global 0.05 Deg CMG Added OpenET/ENSEMBLE/CONUS/GRIDMET/MONTHLY/v2 0 : OpenET Ensemble Monthly Evapotranspiration v2.0 January 03, 2023 Earth Engine Data Catalog Feature Added MODIS/061/MOD09CMG : MOD09CMG.061 Terra Surface Reflectance Daily L3 Global 0.05 Deg CMG Added MODIS/061/MOD17A3HGF : MOD17A3HGF.061: Terra Net Primary Production Gap-Filled Yearly Global 500m Added MODIS/061/MOD21A1D : MOD21A1D.061 Terra Land Surface Temperature and 3-Band Emissivity Daily Global 1km Added MODIS/061/MOD21A1N : MOD21A1N.061 Terra Land Surface Temperature and 3-Band Emissivity Daily Global 1km Added MODIS/061/MYD21A1D : MYD21A1D.061 Aqua Land Surface Temperature and 3-Band Emissivity Daily Global 1km Added MODIS/061/MYD21A1N : MYD21A1N.061 Aqua Land Surface Temperature and 3-Band Emissivity Daily Global 1km December 27, 2022 Earth Engine Data Catalog Feature Added MODIS/061/MCD18C2 (no longer available) Added MODIS/061/MCD43C3 : MCD43C3.061 BRDF/Albedo Daily L3 0.05 Deg CMG December 20, 2022 Earth Engine Data Catalog Feature Added MODIS/061/MCD12Q1 : MCD12Q1.061 MODIS Land Cover Type Yearly Global 500m Added MODIS/061/MCD12Q2 : MCD12Q2.006 Land Cover Dynamics Yearly Global 500m Added MODIS/061/MCD43A2 : MCD43A2.061 MODIS BRDF-Albedo Quality Daily 500m Added MODIS/061/MCD43A3 : MCD43A3.061 MODIS Albedo Daily 500m Added MODIS/061/MCD43A4 : MCD43A4.061 MODIS Nadir BRDF-Adjusted Reflectance Daily 500m Added NOAA/VIIRS/001/VNP14A1 (no longer available) December 13, 2022 Earth Engine Data Catalog Feature Added LARSE/GEDI/GEDI04 A 002 : GEDI L4A Aboveground Biomass Density, Version 2.1 Added LARSE/GEDI/GEDI04 A 002 INDEX : GEDI L4A table index Added LARSE/GEDI/GEDI04 A 002 MONTHLY : GEDI L4A Raster Aboveground Biomass Density, Version 2.1 November 17, 2022 Earth Engine Server Change Updated ee.Image.cumulativeCost to be able to handle multi-band cost images.
-- June 13, 2023 Earth Engine Data Catalog Feature Added MODIS/061/MOD10A1 : MOD10A1.061 Terra Snow Cover Daily Global 500m Added MODIS/061/MOD16A2 : MOD16A2.061: Terra Net Evapotranspiration 8-Day Global 500m Added MODIS/061/MYD10A1 : MYD10A1.061 Aqua Snow Cover Daily Global 500m Added USGS/NLCD RELEASES/2020 REL/NALCMS : Land Cover of North America at 30 meters, 2020 June 06, 2023 Earth Engine Data Catalog Feature Added CSIC/SPEI/2 8 (no longer available) May 30, 2023 Earth Engine Data Catalog Feature Added Switzerland/SWISSIMAGE/orthos/10cm : SWISSIMAGE 10 cm RGB imagery Added projects/ngis-cat/assets/DEA/NIDEM : Preview National Intertidal Digital Elevation Model 25m 1.0.0 May 23, 2023 Earth Engine Data Catalog Feature Added NOAA/VIIRS/001/VNP43IA1 : VNP43IA1: BRDF/Albedo Model Parameters Daily L3 Global 500m SIN Grid Added UMD/hansen/global forest change 2022 v1 10 (no longer available) May 16, 2023 Earth Engine Data Catalog Feature Added Latvia/Maamet/orthos/cir : Latvia Color InfraRed (CIR) orthophotos Added Latvia/Maamet/orthos/rgb : Latvia RGB orthophotos Added USFS/GTAC/LCMS/v2022-8 (no longer available) May 15, 2023 Earth Engine Server Feature Added support for the geostationary satellite projection (geos) for Cloud Optimized GeoTIFFs ( ee.Image.loadGeoTIFF() and the CreateAsset pathway).
-- August 27, 2024 Earth Engine Data Catalog Feature Added EDF/MethaneSAT/MethaneAIR/L4area : MethaneAIR L4 Area Sources v1 Added EDF/MethaneSAT/MethaneAIR/L4point : MethaneAIR L4 Point Sources v1 Added LARSE/GEDI/GRIDDEDVEG 002/V1/12KM : Gridded GEDI Vegetation Structure Metrics and Biomass Density, 12KM pixel size Added LARSE/GEDI/GRIDDEDVEG 002/V1/1KM : Gridded GEDI Vegetation Structure Metrics and Biomass Density, 1KM pixel size Added LARSE/GEDI/GRIDDEDVEG 002/V1/6KM : Gridded GEDI Vegetation Structure Metrics and Biomass Density, 6KM pixel size August 20, 2024 Earth Engine Data Catalog Feature Added Estonia/Maamet/orthos/mono low flying : Estonia mono low flying orthophotos Added Estonia/Maamet/orthos/rgb low flying : Estonia RGB low flying orthophotos Added NASA/VIIRS/002/VNP13A1 : VNP13A1.002: VIIRS Vegetation Indices 16-Day 500m Added NASA/VIIRS/002/VNP14A1 : VNP14A1.002: Thermal Anomalies/Fire Daily L3 Global 1km SIN Grid Added NASA/VIIRS/002/VNP21A1D : VNP21A1D.002: Day Land Surface Temperature and Emissivity Daily 1km Added NASA/VIIRS/002/VNP21A1N : VNP21A1N.002: Night Land Surface Temperature and Emissivity Daily 1km Added projects/neon-prod-earthengine/assets/DEM/001 : NEON Digital Elevation Model (DEM) Added projects/neon-prod-earthengine/assets/HSI REFL/001 : NEON Surface Directional Reflectance Added projects/neon-prod-earthengine/assets/HSI REFL/002 : NEON Surface Bidirectional Reflectance Added projects/neon-prod-earthengine/assets/RGB/001 : NEON RGB Camera Imagery August 13, 2024 Earth Engine Data Catalog Feature Added CAS/IGSNRR/PML/V2 v018 (no longer available) Added WCMC/WDOECM/current/points : WDOECM: Other Effective Area-based Conservation Measures (points) Added WCMC/WDOECM/current/polygons : WDOECM: Other Effective Area-based Conservation Measures (polygons) August 06, 2024 Earth Engine Data Catalog Feature Added NASA/GPM L3/IMERG V07 : GPM: Global Precipitation Measurement (GPM) Release 07 Added NASA/VIIRS/002/VNP09H1 : VNP09H1: VIIRS Surface Reflectance 8-Day L3 Global 500m Added NASA/VIIRS/002/VNP15A2H : VNP15A2H: LAI/FPAR 8-Day L4 Global 500m SIN Grid July 24, 2024 Earth Engine Server Fixed Fixed a bug that caused GeoTIFF exports with cloudOptimized set to true to fail if the output GeoTIFF was larger than 4gb.
+- Images are given in meters above mean sea … airborne dem elevation-topography forest highres lidar NEON RGB Camera Imagery High resolution Red-Green-Blue (RGB) orthorectified camera images mosaicked and output onto a fixed, uniform spatial grid using nearest-neighbor resampling; spatial resolution is 0.1 m.
+- 2008 was … agriculture highres imagery orthophotos usda NEON Canopy Height Model (CHM) Height of the top of canopy above bare earth (Canopy Height Model; CHM).
+- High-resolution RGB camera images from the NEON Airborne Observation Platform (AOP) are also available, featuring 0.1m spatial resolution.\n"]]
+- NEON RGB Camera Imagery provides high-resolution RGB orthorectified camera images with a spatial resolution of 0.1 m.
 

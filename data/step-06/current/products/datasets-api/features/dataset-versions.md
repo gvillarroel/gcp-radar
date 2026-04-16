@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:19:08.128Z"
+generated_at: "2026-04-12T12:14:00.784Z"
 product_name: "Datasets API"
 product_slug: "datasets-api"
 feature_name: "Dataset versions"
 feature_slug: "dataset-versions"
 latest_feature_date: "2024-05-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1"
-  - "https://developers.google.com/maps/documentation/datasets/create"
   - "https://developers.google.com/maps/documentation/datasets/get"
+  - "https://developers.google.com/maps/documentation/datasets/create"
+  - "https://developers.google.com/maps/documentation/datasets/reference/rest"
 keywords:
   - "dataset"
   - "versions"
@@ -26,7 +27,7 @@ keywords:
 # Dataset versions
 
 Product: Datasets API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Dataset versions let you upload new data to an existing dataset to create a new 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1](https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1)
-- [https://developers.google.com/maps/documentation/datasets/create](https://developers.google.com/maps/documentation/datasets/create)
 - [https://developers.google.com/maps/documentation/datasets/get](https://developers.google.com/maps/documentation/datasets/get)
+- [https://developers.google.com/maps/documentation/datasets/create](https://developers.google.com/maps/documentation/datasets/create)
+- [https://developers.google.com/maps/documentation/datasets/reference/rest](https://developers.google.com/maps/documentation/datasets/reference/rest)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1](https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1)
 - Source ID: `site-api-reference`
-- Final score: 198
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 214
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Details about the source of the data for the dataset. data source can be only one of the following: local file source LocalFileSource A local file source for the dataset for a single upload. gcs source GcsSource A Google Cloud Storage file source for the dataset for a single upload.
@@ -62,25 +64,11 @@ Evidence snippets:
 - Datasets go through various states, such as importing, processing, and publishing, and you can monitor their status and errors.
 - Details about the source of the data for the dataset. data source can be only one of the following: local file source LocalFileSource A local file source for the dataset for a one time import. gcs source GcsSource A Google Cloud Storage file source for the dataset for a one time import.
 
-### Create a dataset \_|\_ Maps Datasets API \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/maps/documentation/datasets/create](https://developers.google.com/maps/documentation/datasets/create)
-- Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- If there is an error in the upload: The state of the new dataset version is set to one of the following states: STATE IMPORT FAILED STATE PROCESSING FAILED STATE PUBLISHING FAILED STATE DELETION FAILED The previous dataset successful version stays as the "active" version and is the version used by your app.
-- Upload new data to the dataset After you create the dataset and upload the initial data successfully, the state of the dataset is set to STATE COMPLETED .
-- After the initial data upload, you can upload new data to the dataset to create a new version of the dataset.
-- You can also upload new data to the dataset to create a new version of the dataset.
-
 ### Get a dataset \_|\_ Maps Datasets API \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/maps/documentation/datasets/get](https://developers.google.com/maps/documentation/datasets/get)
 - Source ID: `site-docs-root`
-- Final score: 192
+- Final score: 212
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,4 +76,32 @@ Evidence snippets:
 - About dataset versions After a successful data upload, the state of the dataset is set to STATE COMPLETED and that dataset becomes the active version.
 - If you only want to list the active version of each dataset, append the tag=active query parameter to the request: https://mapsplatformdatasets.googleapis.com/v1/projects/ PROJECT NUMBER OR ID /datasets ?tag=active For example, this call returns information about the latest version of all datasets: curl -X GET \ -H 'X-Goog-User-Project: PROJECT NUMBER OR ID ' \ -H 'Authorization: Bearer $TOKEN' \ "https://mapsplatformdatasets.googleapis.com/v1/projects/ PROJECT NUMBER OR ID /datasets" This call returns a response in the form: { "datasets": [ { "name": "projects/ PROJECT NUMBER OR ID /datasets/f57074a0-a8b6-403e-9df1-e8a9e4f9fc46", "displayName": "My Test Dataset", "versionId": "5fb34e-1405-4ecd-8f81-31f1c07", "usage": [ "USAGE DATA DRIVEN STYLING" ], "gcsSource": { "inputUri": "gs://mybucket/my.csv", "fileFormat": "FILE FORMAT CSV" }, "createTime": "2023-03-24T14:47:37.308977Z", "updateTime": "2023-03-24T14:48:05.053114Z", "versionCreateTime": "2023-03-24T14:48:05.053114Z", "status": { "state": "STATE COMPLETED" } }, { "name": "projects/ PROJECT NUMBER OR ID /datasets/2c8ae479-96704-89c6435ca959", "displayName": "My Other Test Dataset", "versionId": "0d2e3-b9da-47cc-819f-7ac67562", "usage": [ "USAGE DATA DRIVEN STYLING" ], "localFileSource": { "fileFormat": "FILE FORMAT CSV" }, "createTime": "2023-03-24T14:41:52.579755Z", "updateTime": "2023-03-24T14:42:56.784122Z", "versionCreateTime": "2023-03-24T14:42:56.784122Z", "status": { "state": "STATE COMPLETED" } } ] } Get information about a dataset To get information about a specific dataset, send an HTTP GET request to the get dataset endpoint that also includes the ID of the dataset: https://mapsplatformdatasets.googleapis.com/v1/projects/ PROJECT NUMBER OR ID /datasets/ DATASET ID This request returns information about the latest version of the dataset, regardless of whether the version is the active version.
 - If you want information about the active version of the dataset, append the @active tag to the request: https://mapsplatformdatasets.googleapis.com/v1/projects/ PROJECT NUMBER OR ID /datasets/ DATASET ID @active For example: curl -X GET \ -H 'X-Goog-User-Project: PROJECT NUMBER OR ID ' \ -H 'Authorization: Bearer $TOKEN' \ "https://mapsplatformdatasets.googleapis.com/v1/projects/ PROJECT NUMBER OR ID /datasets/f57074a0-a8b6-403e-9df1-e8a9e4f9fc46@active" This request returns a response in the form: { "name": "projects/ PROJECT NUMBER OR ID /datasets/f57074a0-a8b6-403e-9df1-e8a9e4f9fc46", "displayName": "My Test Dataset", "versionId": "5fb34e-1405-4ecd-8f81-31f1c07", "usage": [ "USAGE DATA DRIVEN STYLING" ], "gcsSource": { "inputUri": "gs://mybucket/my.csv", "fileFormat": "FILE FORMAT CSV" }, "createTime": "2023-03-24T14:47:37.308977Z", "updateTime": "2023-03-24T14:48:05.053114Z", "versionCreateTime": "2023-03-24T14:48:05.053114Z", "status": { "state": "STATE COMPLETED" } } Download a dataset To download the data from the latest version of a dataset, send an HTTP GET request to the download dataset endpoint that also includes the ID of the dataset: Note: The latest version might not be the active version of the dataset. https://mapsplatformdatasets.googleapis.com/v1/projects/ PROJECT NUMBER OR ID /datasets/ DATASET ID :download?alt=media For example: curl -X GET -L \ -H 'X-Goog-User-Project: PROJECT NUMBER OR ID ' \ -H 'Authorization: Bearer $TOKEN' \ --output LOCAL LOCATION TO OUTPUT \ "https://mapsplatformdatasets.googleapis.com/download/v1/projects/ PROJECT NUMBER OR ID /datasets/f57074a0-a8b6-403e-9df1-e8a9e4f9fc46:download?alt=media" In this example, you use the cURL --output option to specify the name of the file that holds the downloaded data.
+
+### Create a dataset \_|\_ Maps Datasets API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/datasets/create](https://developers.google.com/maps/documentation/datasets/create)
+- Source ID: `site-docs-root`
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If there is an error in the upload: The state of the new dataset version is set to one of the following states: STATE IMPORT FAILED STATE PROCESSING FAILED STATE PUBLISHING FAILED STATE DELETION FAILED The previous dataset successful version stays as the "active" version and is the version used by your app.
+- Upload new data to the dataset After you create the dataset and upload the initial data successfully, the state of the dataset is set to STATE COMPLETED .
+- After the initial data upload, you can upload new data to the dataset to create a new version of the dataset.
+- You can also upload new data to the dataset to create a new version of the dataset.
+
+### Maps Platform Datasets API \_|\_ Maps Datasets API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/datasets/reference/rest](https://developers.google.com/maps/documentation/datasets/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 192
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-08-27 UTC."],[],["The mapsplatformdatasets.googleapis.com API provides two main resources: v1.media and v1.projects.datasets. v1.media allows users to download datasets using a GET request and upload new data versions via POST requests. v1.projects.datasets manages dataset lifecycle, enabling users to create, delete, get, list, and patch datasets.
+- This service has the following service endpoint and all URIs below are relative to this service endpoint: https://mapsplatformdatasets.googleapis.com REST Resource: v1.media Methods download GET /v1/{name=projects/ /datasets/ }:download Downloads a dataset. upload POST /v1/{name=projects/ /datasets/ }:import POST /upload/v1/{name=projects/ /datasets/ }:import Imports a new version of the data for the dataset.
+- REST Resource: v1.projects.datasets Methods create POST /v1/{parent=projects/ }/datasets Creates a new dataset for the specified project. delete DELETE /v1/{name=projects/ /datasets/ } Deletes the specified dataset. fetchDatasetErrors GET /v1/{dataset=projects/ /datasets/ }:fetchDatasetErrors Gets all the errors of a dataset. get GET /v1/{name=projects/ /datasets/ } Gets the dataset. list GET /v1/{parent=projects/ }/datasets Lists all the datasets for the specified project. patch PATCH /v1/{dataset.name=projects/ /datasets/ } Updates the metadata for the dataset.
+- Page Summary outlined flag The mapsplatformdatasets.googleapis.com API provides programmatic access to manage and interact with datasets, using a RESTful interface with a base endpoint of https://mapsplatformdatasets.googleapis.com .
 

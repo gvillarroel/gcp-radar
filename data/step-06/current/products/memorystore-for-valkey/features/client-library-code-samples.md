@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:45.018Z"
+generated_at: "2026-04-12T12:17:53.264Z"
 product_name: "Memorystore for Valkey"
 product_slug: "memorystore-for-valkey"
 feature_name: "Client library code samples"
 feature_slug: "client-library-code-samples"
 latest_feature_date: "2025-08-27"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/memorystore/docs/valkey/client-library-code-samples"
+  - "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices"
+  - "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification"
+  - "https://docs.cloud.google.com/memorystore/docs/valkey/manage-iam-auth"
 keywords:
   - "client"
   - "library"
@@ -24,7 +27,7 @@ keywords:
 # Client library code samples
 
 Product: Memorystore for Valkey
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Google provides code samples for using Memorystore for Valkey with Spring Boot a
 
 Google provides code samples for using Memorystore for Valkey with Spring Boot and PostgreSQL for session management, leaderboards, and caching.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/memorystore/docs/valkey/client-library-code-samples](https://docs.cloud.google.com/memorystore/docs/valkey/client-library-code-samples)
+- [https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices](https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices)
+- [https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification](https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification)
+- [https://docs.cloud.google.com/memorystore/docs/valkey/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/valkey/manage-iam-auth)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Client library code samples \_|\_ Memorystore for Valkey \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/valkey/client-library-code-samples](https://docs.cloud.google.com/memorystore/docs/valkey/client-library-code-samples)
+- Source ID: `site-docs-root`
+- Final score: 400
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Create a reader client by using the reader endpoint IP address. redis-py We recommend using redis-py , versions 5.1 and later. import redis primaryEndpoint = PRIMARY ENDPOINT IP readerEndpoint = READER ENDPOINT IP primary client = redis.Redis(host=primaryEndpoint, port=6379, db=0, decode responses=True) reader client = redis.Redis(host=readerEndpoint, port=6379, db=0, decode responses=True) primary client.set("key","value") print(reader client.get("key")) go-redis We recommend using go-redis , versions 9.11.0 and later. package main import ( "context" "fmt" "github.com/redis/go-redis/v9" ) func main() { primary endpoint := PRIMARY ENDPOINT IP reader endpoint := READER ENDPOINT IP primary client := redis.NewClient(&redis.Options{ Addr: primary endpoint, Password: "", // no password set DB: 0, // use default DB }) reader client := redis.NewClient(&redis.Options{ Addr: reader endpoint, Password: "", // no password set DB: 0, // use default DB }) ctx := context.Background() err := primary client.Set(ctx, "foo", "bar", 0).Err() if err != nil { panic(err) } val, err := reader client.Get(ctx, "foo").Result() if err != nil { panic(err) } fmt.Println("foo", val) } Jedis We recommend using Jedis , versions 4.4.0 and later. package org.example; import java.io. ; import java.time.LocalDateTime; import java.lang.Thread; import java.util.HashMap; import java.util.Map; import redis.clients.jedis.HostAndPort; import redis.clients.jedis.JedisPoolConfig; import redis.clients.jedis.Jedis; import redis.clients.jedis.JedisPool; public class Main { public static void main( String[] args ) { primaryEndpoint = PRIMARY ENDPOINT IP JedisPool pool = new JedisPool(primaryEndpoint, 6379); try (Jedis jedis = pool.getResource()) { jedis.set("foo", "bar"); System.out.println(jedis.get("foo")); // prints bar Map hash = new HashMap<>();; hash.put("name", "John"); hash.put("surname", "Smith"); hash.put("company", "Redis"); hash.put("age", "29"); jedis.hset("user-session:123", hash); System.out.println(jedis.hgetAll("user-session:123")); // Prints: {name=John, surname=Smith, company=Redis, age=29} } catch (Exception e) { System.out.println("Error setting or getting key: " + e.getMessage()); } } } Node.js We recommend using Node.js , versions 24.4.1 and later. import { createClient } from 'redis'; import as fs from 'fs'; const primaryEndpoint = PRIMARY ENDPOINT IP const primary endpoint url ='redis://primaryEndpoint:6379' const client = createClient({ url: primary endpoint url }); await client.connect(); await client.set(key, value); const retval = await client.get(key); console.log(retval) Code sample for both IAM authentication and in-transit encryption This section gives an example of how to authenticate and connect to a Memorystore for Valkey instance by using both IAM authentication and in-transit encryption with various client libraries. redis-py We recommend using redis-py , versions 5.1 and later. from google.cloud import iam credentials v1 from redis.backoff import ConstantBackoff from redis.retry import Retry from redis.exceptions import ( ConnectionError, AuthenticationWrongNumberOfArgsError, AuthenticationError ) from redis.utils import (str if bytes) import redis service account="projects/-/serviceAccounts/<TO-DO-1: your service account that used to authenticate to Valkey>"" host=<TO-DO-2: your Redis Cluster discovery endpoint ip> ssl ca certs=<TO-DO-3, your trusted server ca file name> def generate access token(): Create a client client = iam credentials v1.IAMCredentialsClient() Initialize request argument(s) request = iam credentials v1.GenerateAccessTokenRequest( name=service account, scope=['https://www.googleapis.com/auth/cloud-platform'], ) Make the request response = client.generate access token(request=request) print(str(response.access token)) Handle the response return str(response.access token) class ValkeyTokenProvider(redis.CredentialProvider): Generated IAM tokens are valid for 15 minutes def get credentials(self): token= generate access token() return "default",token creds provider = ValkeyTokenProvider() client = redis.Redis(host=host, port=6379, credential provider=creds provider, ssl=True, ssl ca certs=caFilePath) client.set('foo',"bar") print(client.get('foo')) Go We recommend using Go , versions 1.24.5 and later. package main import ( "context" "crypto/tls" "crypto/x509" "flag" "fmt" "io/ioutil" "log" "sync" "time" credentials "google.golang.org/genproto/googleapis/iam/credentials/v1" "github.com/golang/protobuf/ptypes" "github.com/redis/go-redis/v9" "google.golang.org/api/option" gtransport "google.golang.org/api/transport/grpc" ) var ( svcAccount = flag.String("a", "projects/-/serviceAccounts/example-service-account@example-project.iam.gserviceaccount.com", "service account email") lifetime = flag.Duration("d", time.Hour, "lifetime of token") refreshDuration = flag.Duration("r", 5 time.Minute, "token refresh duration") checkTokenExpiryInterval = flag.Duration("e", 10 time.Second, "check token expiry interval") lastRefreshInstant = time.Time{} errLastSeen = error(nil) token = "" mu = sync.RWMutex{} err = error(nil) ) func retrieveToken() (string, error) { ctx := context.Background() conn, err := gtransport.Dial(ctx, option.WithEndpoint("iamcredentials.googleapis.com:443"), option.WithScopes("https://www.googleapis.com/auth/cloud-platform")) if err != nil { log.Printf("Failed to dial API, error: %v", err) return token, err } client := credentials.NewIAMCredentialsClient(conn) req := credentials.GenerateAccessTokenRequest{ Name: svcAccount, Scope: []string{"https://www.googleapis.com/auth/cloud-platform"}, Lifetime: ptypes.DurationProto( lifetime), } rsp, err := client.GenerateAccessToken(ctx, &req) if err != nil { log.Printf("Failed to call GenerateAccessToken with request: %v, error: %v", req, err) return token, err } return rsp.AccessToken, nil } func refreshTokenLoop() { if refreshDuration > lifetime { log.Fatal("Refresh should not happen after token is already expired.") } for { mu.RLock() lastRefreshTime := lastRefreshInstant mu.RUnlock() if time.Now().After(lastRefreshTime.Add( refreshDuration)) { var err error retrievedToken, err := retrieveToken() mu.Lock() token = retrievedToken if err != nil { errLastSeen = err } else { lastRefreshInstant = time.Now() } mu.Unlock() } time.Sleep( checkTokenExpiryInterval) } } func retrieveTokenFunc() (string, string) { mu.RLock() defer mu.RUnlock() if time.Now().After(lastRefreshInstant.Add( refreshDuration)) { log.Printf("Token is expired. last refresh instant: %v, refresh duration: %v, error that was last seen: %v", lastRefreshInstant, refreshDuration, errLastSeen) return "", "" } username := "default" password := token return username, password } func main() { caFilePath := CA FILE PATH clusterDicEpAddr := PRIMARY ENDPOINT IP ADDRESS AND PORT caCert, err := ioutil.ReadFile(caFilePath) if err != nil { log.Fatal(err) } caCertPool := x509.NewCertPool() caCertPool.AppendCertsFromPEM(caCert) token, err = retrieveToken() if err != nil { log.Fatal("Cannot retrieve IAM token to authenticate to the cluster, error: %v", err) } token, err = retrieveToken() fmt.Printf("token : %v", token) if err != nil { log.Fatal("Cannot retrieve IAM token to authenticate to the cluster, error: %v", err) } lastRefreshInstant = time.Now() go refreshTokenLoop() client := redis.NewClient(&redis.Options{ Addr: clusterDicEpAddr, CredentialsProvider: retrieveTokenFunc, TLSConfig: &tls.Config{ RootCAs: caCertPool, }, }) ctx := context.Background() err = client.Set(ctx, "foo", "bar", 0).Err() if err != nil { log.Fatal(err) } val, err := client.Get(ctx, "foo").Result() if err != nil { log.Fatal(err) } fmt.Printf("\nGot the value for key: key, which is %s \n", val) } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Code samples for Cluster Mode Enabled Memorystore for Valkey is compatible with all of the Memorystore for Redis Cluster client code samples: Memorystore for Redis Cluster Client library code samples Memorystore for Redis Cluster Client library connection code samples About Valkey GLIDE Valkey General Language Independent Driver for the Enterprise (GLIDE) is an open-source client library, and it supports all Valkey commands.
+- Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback Client library code samples Stay organized with collections Save and categorize content based on your preferences.
+- When you use a Cluster Mode Disabled instance in Memorystore for Valkey, complete the following actions: Instead of the RedisCluster or ValkeyCluster client object that the library provides, use the Redis or Valkey client object.
+
+### Best practices for Memorystore for Valkey \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices](https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices)
+- Source ID: `site-docs-root`
+- Final score: 280
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For examples of cluster-aware clients and sample configurations, see Client library code samples .
+- Using these commands might result in the following performance issues: High latency and client timeouts Memory pressure caused by commands that increase memory usage Data loss during node replication and synchronization because the Valkey main thread is blocked Starved health checks, observability, and replication The following table lists examples of Valkey commands that are resource-intensive and provides you with alternatives that are resource-efficient.
+- This page provides guidance on using Memorystore for Valkey optimally.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+
+### "Instance and node specification \_|\_ Memorystore for Valkey \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification](https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification)
+- Source ID: `site-docs-root`
+- Final score: 262
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Examples of third-party clients can be found at Client library code samples .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- If you run Memorystore for Valkey in a production environment, then we recommend using the standard-small , highmem-medium , or highmem-xlarge node types.
+- This endpoint is reserved for Memorystore for Valkey to use to connect your client to nodes in the instance.
+
+### "Manage IAM authentication \_|\_ Memorystore for Valkey \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/valkey/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/valkey/manage-iam-auth)
+- Source ID: `site-docs-root`
+- Final score: 254
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For code samples that show how you can authenticate your application using popular client libraries, see Client library code samples .
+- Code sample to connect to an instance that uses IAM authentication To view a Valkey-compatible code sample on how to set up a client library to connect to an instance that uses IAM authentication, see Code sample for both IAM authentication and in-transit encryption .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Grant permissions for IAM authentication To grant an IAM access, grant the principal the roles/memorystore.dbConnectionUser role using the Grant IAM role instructions .
 

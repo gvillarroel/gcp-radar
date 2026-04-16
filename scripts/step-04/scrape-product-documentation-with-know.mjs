@@ -69,6 +69,7 @@ const familyPriority = [
   "java_reference",
 ];
 const featureOverlapTokenFloor = Number(process.env.GCP_RADAR_STEP04_FEATURE_TOKEN_OVERLAP_FLOOR || 6);
+const ignoredProductSlugs = new Set(["index"]);
 
 function hashValue(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
@@ -194,6 +195,82 @@ function tokenize(text) {
   return normalizeText(text).split(" ").filter((token) => token.length >= 3);
 }
 
+function appEngineConfigForSlug(productSlug) {
+  const match = String(productSlug || "").match(/^app-engine-(standard|flexible)-environment-(.+)$/);
+  if (!match) {
+    return null;
+  }
+  const environment = match[1];
+  const runtimeMap = {
+    "node-js": "nodejs",
+    "net": "dotnet",
+    "custom-runtimes": "custom-runtimes",
+  };
+  return {
+    environment,
+    runtime: runtimeMap[match[2]] || match[2],
+  };
+}
+
+function appEngineExpectedRuntimeMatches(productSlug, pathname) {
+  const config = appEngineConfigForSlug(productSlug);
+  if (!config) {
+    return true;
+  }
+  if (!pathname.startsWith("/appengine/docs/")) {
+    return true;
+  }
+  if (config.runtime === "custom-runtimes") {
+    return !/^\/appengine\/docs\/flexible\/(dotnet|go|java|nodejs|php|python|ruby)\//.test(pathname);
+  }
+  const runtimeMatch = pathname.match(/^\/appengine\/docs\/(?:standard|flexible)\/([^/]+)\//);
+  if (!runtimeMatch) {
+    return true;
+  }
+  return runtimeMatch[1] === config.runtime;
+}
+
+function requiredAppEngineUrls(productSlug) {
+  const config = appEngineConfigForSlug(productSlug);
+  if (!config) {
+    return [];
+  }
+
+  const host = "https://docs.cloud.google.com";
+  if (config.runtime === "custom-runtimes") {
+    return [
+      `${host}/appengine/docs/flexible/overview`,
+      `${host}/appengine/docs/flexible/custom-runtimes/about-custom-runtimes`,
+      `${host}/appengine/docs/flexible/custom-runtimes/build`,
+      `${host}/appengine/docs/flexible/custom-runtimes/configuring-your-app-with-app-yaml`,
+      `${host}/appengine/docs/flexible/custom-runtimes/create-app`,
+    ];
+  }
+
+  const base = `${host}/appengine/docs/${config.environment}/${config.runtime}`;
+  const urls = [
+    `${host}/appengine/docs/${config.environment}/overview`,
+    `${base}/runtime`,
+    `${base}/configuring-your-app-with-app-yaml`,
+  ];
+
+  if (config.environment === "standard") {
+    urls.push(`${base}/building-app`);
+    urls.push(`${base}/services/access`);
+    if (config.runtime === "python") {
+      urls.push(`${base}/customizing-the-python-runtime`);
+      urls.push(`${host}/appengine/docs/legacy/standard/python/apis`);
+      urls.push(`${host}/appengine/docs/legacy/standard/python/tools/built-in-libraries-27`);
+      urls.push(`${host}/appengine/docs/standard/services/search/facet-search`);
+    }
+  } else {
+    urls.push(`${base}/specifying-dependencies`);
+    urls.push(`${base}/create-app`);
+  }
+
+  return urls;
+}
+
 async function loadFeatureInventoryForRanking(ranking) {
   if (ranking?.step02_feature_inventory?.feature_count) {
     return ranking.step02_feature_inventory;
@@ -226,9 +303,12 @@ function adaptiveBudgetForFamily(family, featureCount, broaden = false, productS
   const bigqueryBoost = productSlug === "bigquery" && (family === "docs_reference" || family === "docs_root") ? 12 : 0;
   const appEngineBoost = /^app-engine-(standard|flexible)-environment-/.test(productSlug) && family === "docs_reference" ? 10 : 0;
   const agentBuilderBoost = productSlug === "vertex-ai-agent-builder" && (family === "docs_reference" || family === "iam_reference") ? 8 : 0;
+  const gmailBoost = productSlug === "gmail-api" && family === "docs_reference" ? 12 : 0;
+  const workflowsBoost = productSlug === "workflows" && (family === "docs_reference" || family === "api_reference") ? 10 : 0;
+  const workflowsDepthBoost = productSlug === "workflows" && (family === "docs_reference" || family === "api_reference") ? 1 : 0;
   return {
-    maxDepth: base.maxDepth + depthBoost + (broaden ? 1 : 0),
-    maxPages: base.maxPages + pagesBoost + bigqueryBoost + appEngineBoost + agentBuilderBoost + (broaden ? Math.max(6, Math.round(base.maxPages * 0.35)) : 0),
+    maxDepth: base.maxDepth + depthBoost + workflowsDepthBoost + (broaden ? 1 : 0),
+    maxPages: base.maxPages + pagesBoost + bigqueryBoost + appEngineBoost + agentBuilderBoost + gmailBoost + workflowsBoost + (broaden ? Math.max(6, Math.round(base.maxPages * 0.35)) : 0),
   };
 }
 
@@ -236,9 +316,1761 @@ function familySelectionLimit(family, featureCount, broaden = false, productSlug
   const extra = featureCount >= 250 ? 2 : featureCount >= 100 ? 1 : featureCount >= 40 ? 1 : 0;
   const base = family === "docs_root" || family === "docs_reference" ? 1 + extra : family === "api_reference" && featureCount >= 120 ? 2 : 1;
   const appEngineExtra = /^app-engine-(standard|flexible)-environment-/.test(productSlug) && family === "docs_reference" ? 2 : 0;
+  const appEngineAdminExtra = productSlug === "app-engine-admin-api" && family === "docs_reference" ? 2 : 0;
   const bigqueryExtra = productSlug === "bigquery" && family === "docs_reference" ? 2 : 0;
   const agentBuilderExtra = productSlug === "vertex-ai-agent-builder" && (family === "docs_reference" || family === "iam_reference") ? 1 : 0;
-  return base + appEngineExtra + bigqueryExtra + agentBuilderExtra + (broaden && (family === "docs_root" || family === "docs_reference") ? 1 : 0);
+  const adminSdkExtra = productSlug === "google-workspace-admin-sdk" && family === "docs_reference" ? 1 : 0;
+  return base + appEngineExtra + appEngineAdminExtra + bigqueryExtra + agentBuilderExtra + adminSdkExtra + (broaden && (family === "docs_root" || family === "docs_reference") ? 1 : 0);
+}
+
+function requiredSelectedUrls(productSlug) {
+  const appEngineUrls = requiredAppEngineUrls(productSlug).map((url) => ({
+    url,
+    family: /\/runtime$/.test(url) || /\/overview$/.test(url) ? "docs_root" : "docs_reference",
+    classification: /\/runtime$/.test(url) || /\/overview$/.test(url) ? "product_root" : "product_reference",
+  }));
+  if (appEngineUrls.length > 0) {
+    return appEngineUrls;
+  }
+  switch (productSlug) {
+    case "google-workspace-admin-sdk":
+      return [
+        {
+          url: "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "google-kubernetes-engine":
+      return [
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/docs",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/docs/reference/api-organization",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/docs/reference/api-permissions",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/provisioningrequest",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "dataproc":
+      return [
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+      ];
+    case "alloydb":
+      return [
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/ai",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/ai/data-agent-overview",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/ai/adaptive-filtering",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/ai/ai-query-engine-landing",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/ai/run-hybrid-vector-similarity-search",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/reference/ai/hybrid-search-function-parameters",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/reference/iam-roles-permissions",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "dialogflow":
+      return [
+        {
+          url: "https://docs.cloud.google.com/dialogflow/cx/docs",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/cx/docs/concept/region",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/cx/docs/concept/flow",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/cx/docs/concept/conversation-history",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/cx/docs/concept/audit-logging",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/es/docs/entities-options",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/es/docs/entities-regexp",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "apigee-ui":
+      return [
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-api-key-validation",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-create-workspace",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-create-proxy",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-change-target-endpoint",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy-apigee",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-test",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/apigee-mcp/apigee-mcp-quickstart",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "earth-engine-code-editor":
+      return [
+        {
+          url: "https://developers.google.com/earth-engine",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/playground",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/debugging",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/client_server",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/auth",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/best_practices",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/command_line",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/python_install",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/apps",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/charts_style",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/charts_datatable",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/ee-vertex-migrate",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/apidocs",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+      ];
+    case "earth-engine-python-client-library":
+      return [
+        {
+          url: "https://developers.google.com/earth-engine",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/apidocs",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/auth",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/client_server",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/python_install",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/debugging",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/data_extraction",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/access_control",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://developers.google.com/earth-engine/guides/playground",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "cloud-deployment-manager":
+      return [
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/fundamentals",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/resources",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/support",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/troubleshooting",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-resource-types",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/configuration/syntax-reference",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/create-a-configuration",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/create-a-template",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/deploy-your-resources",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/installation-and-setup",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/reference/latest",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/libraries",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/authorization",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+      ];
+    case "apigee-advanced-api-security":
+      return [
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/security/api-security",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security/security-actions-api",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-security/security-reports-api",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/security/iam/iam-overview",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+      ];
+    case "apigee-monetization":
+      return [
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "apigee-integrated-portal":
+      return [
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "cloud-run":
+      return [
+        {
+          url: "https://docs.cloud.google.com/run/docs",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/apis",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/deploying",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/configuring",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/deploy-functions",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/reference/about-api-versions",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/reference/cloud-run-admin-api-overview",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-gradio-service",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-adk-service",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-streamlit-service",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-java-service",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+      ];
+    case "sensitive-data-protection":
+      return [
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-images",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/create-inspection-template",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/common-discovery-configurations",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/control-access-based-on-data-sensitivity",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/classification-redaction",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/data-security",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/analyzing-and-reporting",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/inspect-sensitive-text",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/api-endpoints",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/audit-logging",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/allow-discovery-vpcsc",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/secrets-discovery",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+      ];
+    case "cloud-composer":
+      return [
+        {
+          url: "https://docs.cloud.google.com/composer/docs",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/airflow-configurations",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/composer-versions",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/latest/use-monitoring-dashboard",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/composer-2/override-airflow-configurations",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/composer-1/known-issues",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/composer-1/access-control",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/composer-1/security-practices",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/reference/rest",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+      ];
+    case "gmail-api":
+      return [
+        {
+          url: "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/insert",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/list",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/overview",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/highlights",
+          family: "docs_root",
+          classification: "product_root",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/reference",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/actions/actions-overview",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/actions/declaring-actions",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/getting-started",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/registering-with-google",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/reference/order",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/reference/parcel-delivery",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/reference/event-reservation",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/reference/one-click-action",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/gmail/markup/reference/go-to-action",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "workflows":
+      return [
+        {
+          url: "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/workflows/docs/reference/stdlib/text/url_decode",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/workflows/docs/reference/stdlib/text/url_encode_plus",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/workflows/docs/reference/stdlib/time/parse",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/workflows/docs/reference/stdlib/map/merge_nested",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/workflows/docs/reference/syntax/expressions",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/workflows/docs/authentication",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/iam/docs/roles-permissions/workflows",
+          family: "iam_reference",
+          classification: "iam_reference",
+        },
+      ];
+    case "google-secops":
+    case "google-secops-siem":
+      return [
+        {
+          url: "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/threatconnect-ioc-v3",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/chronicle/docs/detection/risk-based-alerting",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "google-distributed-cloud-software-only-for-vmware":
+      return [
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/admin-workstation-configuration-file",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/create-admin-workstation",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "apigee-x":
+      return [
+        { url: "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview", family: "docs_root", classification: "product_root" },
+        { url: "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.apps", family: "api_reference", classification: "api_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/locations", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/deprecations/apigee-classic-ui", family: "docs_reference", classification: "product_reference" },
+      ];
+    case "apigee-hybrid":
+      return [
+        { url: "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/hybrid/v1.16/configure-large-payload-support", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/guardrails", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/apigee-pull-push", family: "docs_reference", classification: "product_reference" },
+      ];
+    case "apigee-api-hub":
+      return [
+        { url: "https://docs.cloud.google.com/apigee/docs/apihub/provision", family: "docs_root", classification: "product_root" },
+        { url: "https://docs.cloud.google.com/apigee/docs/apihub/manage-api-deployments", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/apihub/vpc-service-control", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools", family: "docs_reference", classification: "product_reference" },
+      ];
+    case "apigee-integration":
+      return [
+        { url: "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks", family: "docs_root", classification: "product_root" },
+        { url: "https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/application-integration/docs/vpc-service-controls", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest", family: "api_reference", classification: "api_reference" },
+      ];
+    case "address-validation-api":
+      return [
+        { url: "https://developers.google.com/maps/documentation/address-validation/build-validation-logic", family: "docs_root", classification: "product_root" },
+        { url: "https://developers.google.com/maps/documentation/address-validation/understand-response", family: "docs_reference", classification: "product_reference" },
+        { url: "https://developers.google.com/maps/documentation/address-validation/add-subpremises-address-example", family: "docs_reference", classification: "product_reference" },
+        { url: "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress", family: "api_reference", classification: "api_reference" },
+      ];
+    case "api-gateway":
+      return [
+        { url: "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway", family: "docs_root", classification: "product_root" },
+        { url: "https://docs.cloud.google.com/api-gateway/docs/creating-api-config", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/api-gateway/docs/reference", family: "api_reference", classification: "api_reference" },
+      ];
+    case "access-context-manager":
+      return [
+        { url: "https://docs.cloud.google.com/access-context-manager/docs/reference/rest", family: "api_reference", classification: "api_reference" },
+        { url: "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage", family: "api_reference", classification: "api_reference" },
+      ];
+    case "agent-assist":
+      return [
+        { url: "https://docs.cloud.google.com/agent-assist/docs/features", family: "docs_root", classification: "product_root" },
+        { url: "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/agent-assist/docs/custom-events", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/agent-assist/docs/adaptation-model-guide", family: "docs_reference", classification: "product_reference" },
+      ];
+    case "ai-hypercomputer":
+      return [
+        { url: "https://docs.cloud.google.com/ai-hypercomputer/docs/choose-strategy", family: "docs_root", classification: "product_root" },
+        { url: "https://docs.cloud.google.com/ai-hypercomputer/docs/cluster-capabilities", family: "docs_reference", classification: "product_reference" },
+        { url: "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-vm", family: "docs_reference", classification: "product_reference" },
+      ];
+    case "app-engine-admin-api":
+      return [
+        {
+          url: "https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/appengine/docs/legacy/standard/python/tools/built-in-libraries-27",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "app-engine-standard-environment-node-js":
+      return [
+        {
+          url: "https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/appengine/docs/legacy/standard/python/tools/built-in-libraries-27",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "apps-script":
+      return [
+        {
+          url: "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-criteria",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "bigquery":
+      return [
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/information-schema-project-options-changes",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/information-schema-organization-options-changes",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/managing-datasets",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/dts-introduction",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/samples/bigquerydatatransfer-copy-dataset",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+      ];
+    case "cloud-build":
+      return [
+        {
+          url: "https://docs.cloud.google.com/build/docs/api/reference/rest",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+      ];
+    case "cloud-data-fusion":
+      return [
+        {
+          url: "https://docs.cloud.google.com/monitoring/api/resources",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "cloud-logging":
+      return [
+        {
+          url: "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "cloud-load-balancing":
+      return [
+        {
+          url: "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/load-balancing/docs/internal",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/load-balancing/docs/features",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "cloud-sql-for-mysql":
+    case "cloud-sql-for-sql-server":
+      return [
+        {
+          url: "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: productSlug === "cloud-sql-for-sql-server"
+            ? "https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp"
+            : "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "compute-engine":
+      return [
+        {
+          url: "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/compute/docs/use-compute-engine-mcp",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/compute/docs/access/organization-policies",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/compute/docs/reference/mcp",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/compute/docs/instance-groups/distributing-instances-with-regional-instance-groups",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "confidential-space":
+      return [
+        {
+          url: "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-images",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "dataflow":
+      return [
+        {
+          url: "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "buildpacks":
+      return [
+        {
+          url: "https://docs.cloud.google.com/docs/buildpacks/go",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/docs/buildpacks/osonly",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "sap-on-google-cloud":
+      return [
+        {
+          url: "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "anthos-attached-clusters":
+      return [
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "anthos-clusters-on-aws-previous-generation":
+      return [
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/use-efs",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/storage",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "app-hub":
+      return [
+        {
+          url: "https://docs.cloud.google.com/app-hub/docs/supported-resources",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/app-hub/docs/register-resources",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "carbon-footprint":
+      return [
+        {
+          url: "https://docs.cloud.google.com/carbon-footprint/docs/data-schema",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "google-workspace-admin-sdk":
+      return [
+        {
+          url: "https://developers.google.com/workspace/admin/directory/reference/rest/v1/users/list",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://developers.google.com/workspace/admin/directory/v1/guides/search-users",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "looker":
+      return [
+        {
+          url: "https://docs.cloud.google.com/looker/docs/chart-config-editor",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/bigquery/docs/information-schema-jobs",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "looker-studio":
+      return [
+        {
+          url: "https://developers.google.com/looker-studio/connector/reference",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/looker/docs/studio/nativedimension",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "managed-service-for-microsoft-active-directory":
+      return [
+        {
+          url: "https://docs.cloud.google.com/managed-microsoft-ad/docs/hardening",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "maps-sdk-for-android":
+      return [
+        {
+          url: "https://developers.google.com/maps/documentation/android-sdk/config",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "resource-manager":
+      return [
+        {
+          url: "https://docs.cloud.google.com/mcp/overview",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/mcp/prevent-read-write-tool-use",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "storage-transfer-service":
+      return [
+        {
+          url: "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "text-to-speech":
+      return [
+        {
+          url: "https://docs.cloud.google.com/text-to-speech/docs/reference/rest",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/text-to-speech/docs/libraries",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "vertex-ai":
+      return [
+        {
+          url: "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/vertex-ai/docs/start/install-sdk-ref",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "certificate-authority-service":
+      return [
+        {
+          url: "https://docs.cloud.google.com/certificate-authority-service/docs/certificate-authority-compliance",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "cloud-healthcare-api":
+      return [
+        {
+          url: "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-search",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/healthcare-api/docs/reference/rest",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+      ];
+    case "error-reporting":
+      return [
+        {
+          url: "https://docs.cloud.google.com/error-reporting/docs/troubleshooting",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/error-reporting/docs/setup/kubernetes-engine",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/error-reporting/docs/setup/ec2",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "firestore":
+      return [
+        {
+          url: "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/firestore/native/docs/use-firestore-mcp",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/firestore/docs/reference/mcp",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+      ];
+    case "google-cloud-contact-center-as-a-service":
+      return [
+        {
+          url: "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "google-cloud-mcp-servers":
+      return [
+        {
+          url: "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/mcp/prevent-read-write-tool-use",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "cloud-deploy":
+      return [
+        {
+          url: "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines.releases.rollouts/create",
+          family: "api_reference",
+          classification: "api_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deploy/docs/deployment-strategies/manage-rollout",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/deploy/docs/promote-release",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    case "google-cloud-vmware-engine":
+      return [
+        {
+          url: "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+        {
+          url: "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+          family: "docs_reference",
+          classification: "product_reference",
+        },
+      ];
+    default:
+      return [];
+  }
 }
 
 function familySelectionScore(source) {
@@ -254,6 +2086,10 @@ function familySelectionScore(source) {
   let score = Number(source?.final_score || 0) * 10;
   const family = String(source?.family || "");
 
+  if (/\/(?:core-)?release-notes(?:\/|$)/.test(pathname)) {
+    score -= 500;
+  }
+
   if (family === "docs_root") {
     if (/\/docs$/.test(pathname)) score += 80;
     if (/\/docs\/(overview|introduction)$/.test(pathname)) score += 40;
@@ -262,6 +2098,7 @@ function familySelectionScore(source) {
     if (/^\/workspace\/gmail\/api\/guides(?:\/|$)/.test(pathname)) score += 120;
     if (/^\/workspace\/meet\/api\/guides\/overview(?:\/|$)/.test(pathname)) score += 120;
     if (/^\/admin-sdk\/overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/workspace\/admin\/sdk(?:\/|$)/.test(pathname)) score += 160;
     if (/^\/bigquery\/docs$/.test(pathname)) score += 120;
     if (/^\/unified-maintenance\/docs(?:\/|$)/.test(pathname)) score += 120;
     if (/^\/video-intelligence\/docs(?:\/|$)/.test(pathname)) score += 120;
@@ -277,16 +2114,21 @@ function familySelectionScore(source) {
     if (/^\/apigee\/docs\/hybrid\/v[\d.]+\/what-is-hybrid(?:\/|$)/.test(pathname)) score += 120;
     if (/^\/chronicle\/docs\/secops$/.test(pathname)) score -= 140;
     if (/^\/chronicle\/docs\/administration(?:\/|$)/.test(pathname)) score -= 180;
+    if (!appEngineExpectedRuntimeMatches(source?.product_slug, pathname)) score -= 500;
   }
   if (family === "docs_reference") {
     if (/\/docs\/reference$/.test(pathname)) score += 80;
     if (/\/docs\/apis$/.test(pathname)) score += 70;
+    if (/^\/bigquery\/docs\/reference\/standard-sql(?:\/|$)/.test(pathname)) score += 240;
+    if (/^\/bigquery\/docs\/reference\/standard-sql\/functions-all(?:\/|$)/.test(pathname)) score += 220;
     if (/^\/translate\/docs\/reference\/api-overview$/.test(pathname)) score += 100;
     if (/^\/translate\/docs\/advanced\/(automl-models|automl-prepare|custom-translation-quickstart|automl-datasets|translate-documents)$/.test(pathname)) score += 40;
     if (/^\/dotnet\/docs\/reference\/google\.cloud\.translate\.v3\//.test(pathname) || /^\/php\/docs\/reference\/cloud-translate\//.test(pathname)) score -= 160;
     if (/^\/workspace\/gmail\/api\/reference\/rest(?:\/|$)/.test(pathname)) score += 140;
     if (/^\/workspace\/meet\/api\/reference\/rest\/v2(?:\/|$)/.test(pathname)) score += 140;
     if (/^\/admin-sdk\/reference-overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/workspace\/admin\/reports\/v1\/guides\/manage-audit-login(?:\/|$)/.test(pathname)) score += 260;
+    if (/^\/workspace\/admin\/reports\/v1\/appendix\/activity\/login(?:\/|$)/.test(pathname)) score += 220;
     if (/^\/workspace\/sheets\/api\/reference\/rest(?:\/|$)/.test(pathname)) score += 140;
     if (/^\/workspace\/tasks\/reference\/rest(?:\/|$)/.test(pathname)) score += 140;
     if (/^\/workspace\/vault\/reference\/rest(?:\/|$)/.test(pathname)) score += 140;
@@ -301,7 +2143,11 @@ function familySelectionScore(source) {
     if (/^\/appengine\/docs\/flexible\/nodejs\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes)(?:\/|$)/.test(pathname)) score += 120;
     if (/^\/appengine\/docs\/(standard|flexible)\/[^/]+\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes|create-app|building-app|services\/access|upgrade-[^/]+runtime|customizing-the-python-runtime)(?:\/|$)/.test(pathname)) score += 120;
     if (/^\/appengine\/docs\/flexible\/custom-runtimes\/(build|configuring-your-app-with-app-yaml|create-app|release-notes)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/appengine\/docs\/standard\/services\/search\/facet-search(?:\/|$)/.test(pathname)) score += 320;
+    if (/^\/appengine\/docs\/legacy\/standard\/python\/tools\/built-in-libraries-27(?:\/|$)/.test(pathname)) score += 320;
     if (/^\/apigee\/docs\/hybrid\/(release-notes|v[\d.]+\/config-prop-ref|v[\d.]+\/install-before-begin|v[\d.]+\/data-collection-with-data-residency)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/admin-sdk\/reports\/v1\/guides\/manage-audit-login(?:\/|$)/.test(pathname)) score += 180;
+    if (/^\/admin-sdk\/reports\/v1\/appendix\/activity\/login(?:\/|$)/.test(pathname)) score += 180;
     if (/^\/vision-ai\/docs\/(build-app|create-manage-streams|how-to|warehouse-overview)(?:\/|$)/.test(pathname)) score += 120;
     if (/^\/agent-builder\/agent-engine\/overview(?:\/|$)/.test(pathname)) score += 120;
     if (/^\/agent-builder\/(agent-development-kit\/overview|agent-engine\/develop\/overview|release-notes)(?:\/|$)/.test(pathname)) score += 120;
@@ -316,9 +2162,11 @@ function familySelectionScore(source) {
     if (/^\/service-catalog\/docs\/create-catalog(?:\/|$)/.test(pathname)) score -= 160;
     if (/^\/bigquery\/docs\/reference\/auditlogs\/rest(?:\/|$)/.test(pathname)) score -= 220;
     if (/^\/bigquery\/docs\/reference\/libraries(?:\/|$)/.test(pathname)) score -= 240;
+    if (/^\/bigquery\/docs\/reference\/standard-sql\/graph-intro(?:\/|$)/.test(pathname)) score -= 200;
     if (/^\/appengine\/docs\/(standard|flexible)\/apis(?:\/|$)/.test(pathname)) score -= 180;
     if (/^\/chronicle\/docs\/onboard(?:\/|$)/.test(pathname)) score -= 180;
     if (/^\/vertex-ai\/docs\/workbench\/reference\/libraries(?:\/|$)/.test(pathname)) score -= 180;
+    if (!appEngineExpectedRuntimeMatches(source?.product_slug, pathname)) score -= 500;
   }
   if (family === "api_reference") {
     if (/\/reference\/(rest|rpc)$/.test(pathname)) score += 70;
@@ -418,12 +2266,43 @@ function selectSources(ranking, featureInventory, options = {}) {
     });
   }
 
-  return familyPriority
+  const selected = familyPriority
     .filter((family) => candidatesByFamily.has(family))
     .flatMap((family) => candidatesByFamily.get(family)
       .sort((a, b) => familySelectionScore(b) - familySelectionScore(a) || b.matched_feature_phrases.length - a.matched_feature_phrases.length || a.url.localeCompare(b.url))
       .slice(0, familySelectionLimit(family, featureCount, broaden, ranking.product_slug))
       .map((source, index) => ({ ...source, source_id: `${sourceIdForFamily(family)}${index === 0 ? "" : `-${index + 1}`}` })));
+
+  const selectedUrlSet = new Set(selected.map((source) => normalizeUrl(source.url)));
+  for (const requiredSource of requiredSelectedUrls(ranking.product_slug)) {
+    const requiredUrl = normalizeUrl(requiredSource.url);
+    if (selectedUrlSet.has(requiredUrl)) {
+      continue;
+    }
+    const candidate = ranked.find((entry) => entry?.keep && normalizeUrl(entry.url) === requiredUrl);
+    const classification = String(candidate?.api_score?.classification || requiredSource.classification || "").trim();
+    const family = requiredSource.family || familyForClassification(classification);
+    if (!family) {
+      continue;
+    }
+    const budget = adaptiveBudgetForFamily(family, featureCount, broaden, ranking.product_slug);
+    const familyCount = selected.filter((source) => source.family === family).length;
+    selected.push({
+      source_id: `${sourceIdForFamily(family)}-required-${familyCount + 1}`,
+      product_slug: ranking.product_slug,
+      family,
+      classification,
+      url: requiredUrl,
+      final_score: Number(candidate?.final_score || 999),
+      best_rank: Number(candidate?.best_rank || 0),
+      matched_feature_phrases: Array.isArray(candidate?.api_score?.matched_feature_phrases) ? candidate.api_score.matched_feature_phrases : [],
+      max_depth: budget.maxDepth,
+      max_pages: budget.maxPages,
+    });
+    selectedUrlSet.add(requiredUrl);
+  }
+
+  return selected;
 }
 
 function selectedSourceSignature(selectedSources) {
@@ -1192,6 +3071,7 @@ async function main() {
   const productSlugs = (await readdir(inputProductsDir, { withFileTypes: true }))
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
+    .filter((slug) => !ignoredProductSlugs.has(slug))
     .filter((slug) => productFilter.length === 0 || productFilter.includes(slug))
     .sort()
     .slice(0, maxProducts > 0 ? maxProducts : undefined);

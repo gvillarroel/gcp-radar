@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.638Z"
+generated_at: "2026-04-12T12:07:33.880Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "Configurable private services access IP range"
@@ -10,7 +10,9 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/alloydb/docs/about-private-services-access"
-  - "https://docs.cloud.google.com/alloydb/docs/connect-psql"
+  - "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters"
 keywords:
   - "custom private services network range"
   - "private services access IP range"
@@ -32,16 +34,18 @@ AlloyDB cluster creation now allows optionally specifying a private services acc
 
 ## Extended Definition
 
-AlloyDB requires a VPC network with Private Services Access configured in the same Google Cloud project to enable private connectivity between cluster instances and required internal resources. The Private Services Access setup includes choosing and managing an IP address range, and the docs emphasize that the range must be large enough for AlloyDB and any other Google Cloud services using the same address pool, with expansion possible if needed. Based on the provided excerpts, the feature can be described as configurable PSA network range capacity used for AlloyDB private networking.
+AlloyDB cluster creation now allows optionally specifying a private services access IP range.
 
 ## Evidence Summary
 
-The cited pages document AlloyDB private-services-access connectivity requirements and describe that a VPC’s private-services-access IP range must be planned (and can be increased) to support AlloyDB and related services.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/alloydb/docs/about-private-services-access](https://docs.cloud.google.com/alloydb/docs/about-private-services-access)
-- [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
+- [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters)
 
 ## Supporting Pages
 
@@ -49,8 +53,9 @@ The cited pages document AlloyDB private-services-access connectivity requiremen
 
 - URL: [https://docs.cloud.google.com/alloydb/docs/about-private-services-access](https://docs.cloud.google.com/alloydb/docs/about-private-services-access)
 - Source ID: `site-docs-root`
-- Final score: 46
-- Re-rank relevance: N/A
+- Final score: 81
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - A VPC network in the same project as your cluster How you configure AlloyDB connectivity using a VPC network that resides in the same Google Cloud project as your AlloyDB cluster depends on whether a private services access configuration already exists in the VPC network.
@@ -58,16 +63,25 @@ Evidence snippets:
 - If the VPC network already has an existing private services access configuration, then make sure the configuration has sufficient IP address space for AlloyDB and increase the address space if necessary.
 - This page describes how AlloyDB for PostgreSQL uses private services access to establish network connectivity between your AlloyDB instances and the various internal resources that they require to work.
 
-### "Connect from Compute Engine \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+### "Private Service Connect overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/connect-psql](https://docs.cloud.google.com/alloydb/docs/connect-psql)
+- URL: [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
 - Source ID: `site-docs-root`
-- Final score: 22
+- Final score: 72
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- Source ID: `site-api-reference`
+- Final score: 66
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- The procedure to connect psql to an AlloyDB instance involves these tasks: Create a Compute Engine VM that can connect to AlloyDB instances using private services access.
-- If Network interfaces is not set to the VPC network configured for private services access, expand it and then set Network to the VPC network.
-- A VPC network in the Google Cloud project that you are using must already be configured for private services access to AlloyDB.
-- Click the Networking section, and set Network interfaces to the VPC network configured for private services access to AlloyDB.
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters)
+- Source ID: `site-api-reference`
+- Final score: 66
+- Re-rank relevance: N/A
 

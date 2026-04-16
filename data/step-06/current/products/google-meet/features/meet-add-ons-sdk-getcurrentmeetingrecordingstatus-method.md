@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:41:32.742Z"
+generated_at: "2026-04-12T12:17:10.832Z"
 product_name: "Google Meet"
 product_slug: "google-meet"
 feature_name: "Meet Add-ons SDK getCurrentMeetingRecordingStatus() method"
 feature_slug: "meet-add-ons-sdk-getcurrentmeetingrecordingstatus-method"
 latest_feature_date: "2024-02-12"
 deprecation_date: "2024-02-12"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
   - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
+  - "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
   - "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
   - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
 keywords:
@@ -27,7 +27,7 @@ keywords:
 # Meet Add-ons SDK getCurrentMeetingRecordingStatus() method
 
 Product: Google Meet
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,38 +39,24 @@ The getCurrentMeetingRecordingStatus() method returned the current meeting recor
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
 - [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview)
+- [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
 - [https://developers.google.com/workspace/meet/api/guides/authenticate-authorize](https://developers.google.com/workspace/meet/api/guides/authenticate-authorize)
 - [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
 
 ## Supporting Pages
 
-### "Observe meeting events with Python and the Google Meet REST API \_|\_ Google\
-
-- URL: [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
-- Source ID: `site-docs-root`
-- Final score: 158
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- AuthorizedSession ( USER CREDENTIALS ) body = { "targetResource" : f "//cloudidentity.googleapis.com/users/ { user name } " , "eventTypes" : [ "google.workspace.meet.conference.v2.started" , "google.workspace.meet.conference.v2.ended" , "google.workspace.meet.participant.v2.joined" , "google.workspace.meet.participant.v2.left" , "google.workspace.meet.recording.v2.fileGenerated" , "google.workspace.meet.transcript.v2.fileGenerated" , ], "payloadOptions" : { "includeResource" : False , }, "notificationEndpoint" : { "pubsubTopic" : topic name }, "ttl" : "86400s" , } response = session . post ( "https://workspaceevents.googleapis.com/v1/subscriptions" , json = body ) return response service = build ( "people" , "v1" , credentials = USER CREDENTIALS ) response = ( service . people () . get ( resourceName = "people/me" , personFields = "names,emailAddresses" ) . execute () ) resource name = response . get ( "resourceName" ) if resource name . startswith ( "people/" ): resource name = resource name [ len ( "people/" ) :] subscription = subscribe to user ( topic name = TOPIC NAME , user name = resource name ) Make sure to add "https://www.googleapis.com/auth/userinfo.profile" in the authorize method in the credential samples above.
-- AuthorizedSession ( USER CREDENTIALS ) body = { 'targetResource' : f "//meet.googleapis.com/ { space name } " , "eventTypes" : [ "google.workspace.meet.conference.v2.started" , "google.workspace.meet.conference.v2.ended" , "google.workspace.meet.participant.v2.joined" , "google.workspace.meet.participant.v2.left" , "google.workspace.meet.recording.v2.fileGenerated" , "google.workspace.meet.transcript.v2.fileGenerated" , ], "payloadOptions" : { "includeResource" : False , }, "notificationEndpoint" : { "pubsubTopic" : topic name }, "ttl" : "86400s" , } response = session . post ( "https://workspaceevents.googleapis.com/v1/subscriptions" , json = body ) return response Next, add the corresponding code to pull and process the events.
-- Add the code to main.py : space = create space () print ( f "Join the meeting at { space . meeting uri } " ) TOPIC NAME = "projects/ PROJECT ID /topics/ TOPIC ID " SUBSCRIPTION NAME = "projects/ PROJECT ID /subscriptions/ SUBSCRIPTION ID " subscription = subscribe to space ( topic name = TOPIC NAME , space name = space . name ) if ( subscription . status code ) == 200 : listen for events ( subscription name = SUBSCRIPTION NAME ) else : print ( f "Subscription to Meet events failed, response data: { subscription . content } " ) Replace the following: PROJECT ID : The unique Cloud project ID for your app, such as my-sample-project-191923 .
-- When prompted for authorization, sign in using the same account used in the previous steps. gcloud auth application-default login --impersonate-service-account= SERVICE ACCOUNT EMAIL Install the Pub/Sub client library Use pip to install the client library for Pub/Sub: pip install google-cloud-pubsub Then edit main.py to import the client: from google.cloud import pubsub v1 Create the Google Workspace subscription Add the following code to main.py to define a method for subscribing to Meet events.
-
 ### Google Meet meeting spaces overview \_|\_ Google for Developers
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview)
 - Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 196
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - How to call the meeting space methods The following table details the meeting roles required to use the meeting space methods: Method Owners Participants Others endActiveConference x get x x x with settings x with active conference x x patch x How Meet identifies a meeting space The Google Meet REST API generates a spaces resource for each meeting space.
@@ -78,13 +64,27 @@ Evidence snippets:
 - During the conference, the meeting owner can call the spaces.endActiveConference method to programmatically end an active conference for all participants.
 - You can see additional phone numbers for a meeting space by appending the {meetingCode} to the following URL: https://meet.google.com/tel/ .
 
+### "Observe meeting events with Python and the Google Meet REST API \_|\_ Google\
+
+- URL: [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
+- Source ID: `site-docs-root`
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- AuthorizedSession ( USER CREDENTIALS ) body = { "targetResource" : f "//cloudidentity.googleapis.com/users/ { user name } " , "eventTypes" : [ "google.workspace.meet.conference.v2.started" , "google.workspace.meet.conference.v2.ended" , "google.workspace.meet.participant.v2.joined" , "google.workspace.meet.participant.v2.left" , "google.workspace.meet.recording.v2.fileGenerated" , "google.workspace.meet.transcript.v2.fileGenerated" , ], "payloadOptions" : { "includeResource" : False , }, "notificationEndpoint" : { "pubsubTopic" : topic name }, "ttl" : "86400s" , } response = session . post ( "https://workspaceevents.googleapis.com/v1/subscriptions" , json = body ) return response service = build ( "people" , "v1" , credentials = USER CREDENTIALS ) response = ( service . people () . get ( resourceName = "people/me" , personFields = "names,emailAddresses" ) . execute () ) resource name = response . get ( "resourceName" ) if resource name . startswith ( "people/" ): resource name = resource name [ len ( "people/" ) :] subscription = subscribe to user ( topic name = TOPIC NAME , user name = resource name ) Make sure to add "https://www.googleapis.com/auth/userinfo.profile" in the authorize method in the credential samples above.
+- AuthorizedSession ( USER CREDENTIALS ) body = { 'targetResource' : f "//meet.googleapis.com/ { space name } " , "eventTypes" : [ "google.workspace.meet.conference.v2.started" , "google.workspace.meet.conference.v2.ended" , "google.workspace.meet.participant.v2.joined" , "google.workspace.meet.participant.v2.left" , "google.workspace.meet.recording.v2.fileGenerated" , "google.workspace.meet.transcript.v2.fileGenerated" , ], "payloadOptions" : { "includeResource" : False , }, "notificationEndpoint" : { "pubsubTopic" : topic name }, "ttl" : "86400s" , } response = session . post ( "https://workspaceevents.googleapis.com/v1/subscriptions" , json = body ) return response Next, add the corresponding code to pull and process the events.
+- Add the code to main.py : space = create space () print ( f "Join the meeting at { space . meeting uri } " ) TOPIC NAME = "projects/ PROJECT ID /topics/ TOPIC ID " SUBSCRIPTION NAME = "projects/ PROJECT ID /subscriptions/ SUBSCRIPTION ID " subscription = subscribe to space ( topic name = TOPIC NAME , space name = space . name ) if ( subscription . status code ) == 200 : listen for events ( subscription name = SUBSCRIPTION NAME ) else : print ( f "Subscription to Meet events failed, response data: { subscription . content } " ) Replace the following: PROJECT ID : The unique Cloud project ID for your app, such as my-sample-project-191923 .
+- When prompted for authorization, sign in using the same account used in the previous steps. gcloud auth application-default login --impersonate-service-account= SERVICE ACCOUNT EMAIL Install the Pub/Sub client library Use pip to install the client library for Pub/Sub: pip install google-cloud-pubsub Then edit main.py to import the client: from google.cloud import pubsub v1 Create the Google Workspace subscription Add the following code to main.py to define a method for subscribing to Meet events.
+
 ### "Authenticate and authorize Meet REST API requests \_|\_ Google Meet \_|\_\
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/authenticate-authorize](https://developers.google.com/workspace/meet/api/guides/authenticate-authorize)
 - Source ID: `site-docs-root`
-- Final score: 144
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Google Workspace Google Meet Guides Send feedback Authenticate and authorize Meet REST API requests Stay organized with collections Save and categorize content based on your preferences.
@@ -96,9 +96,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
 - Source ID: `site-docs-root`
-- Final score: 142
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 166
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following sections detail how to configure a meeting space using these objects and methods.

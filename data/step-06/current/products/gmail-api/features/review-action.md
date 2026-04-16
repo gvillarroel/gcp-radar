@@ -1,33 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T18:48:08.259Z"
+generated_at: "2026-04-13T08:20:50.977Z"
 product_name: "Gmail API"
 product_slug: "gmail-api"
 feature_name: "Review Action"
 feature_slug: "review-action"
 latest_feature_date: "2013-10-28"
 deprecation_date: "2017-07-15"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list"
-  - "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history"
-  - "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings"
-  - "https://developers.google.com/workspace/gmail/api/guides/uploads"
+  - "https://developers.google.com/workspace/gmail/markup/reference/one-click-action"
+  - "https://developers.google.com/workspace/gmail/markup/actions/actions-overview"
+  - "https://developers.google.com/workspace/gmail/markup/actions/declaring-actions"
 keywords:
-  - "review"
-  - "action"
-  - "is"
-  - "deprecated"
-  - "now"
   - "generally"
+  - "review"
+  - "deprecated"
+  - "users"
+  - "action"
   - "available"
-  - "to"
 ---
 
 # Review Action
 
 Product: Gmail API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,66 +36,55 @@ Review Action is deprecated; Review Action is now generally available to all use
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list](https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list)
-- [https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history](https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history)
-- [https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings](https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings)
-- [https://developers.google.com/workspace/gmail/api/guides/uploads](https://developers.google.com/workspace/gmail/api/guides/uploads)
+- [https://developers.google.com/workspace/gmail/markup/reference/one-click-action](https://developers.google.com/workspace/gmail/markup/reference/one-click-action)
+- [https://developers.google.com/workspace/gmail/markup/actions/actions-overview](https://developers.google.com/workspace/gmail/markup/actions/actions-overview)
+- [https://developers.google.com/workspace/gmail/markup/actions/declaring-actions](https://developers.google.com/workspace/gmail/markup/actions/declaring-actions)
 
 ## Supporting Pages
 
-### Method: users.history.list \_|\_ Gmail \_|\_ Google for Developers
+### Declare Actions \_|\_ Gmail \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list](https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list)
-- Source ID: `site-docs-reference`
-- Final score: 122
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-05 UTC."],[],[]]
-- We recommend using the specific change-type fields instead of this. messagesAdded[] object ( MessageAdded ) Messages added to the mailbox in this history record. messagesDeleted[] object ( MessageDeleted ) Messages deleted (not Trashed) from the mailbox in this history record. labelsAdded[] object ( LabelAdded ) Labels added to messages in this history record. labelsRemoved[] object ( LabelRemoved ) Labels removed from messages in this history record.
-- JSON representation { "id" : string , "messages" : [ { object ( Message ) } ] , "messagesAdded" : [ { object ( MessageAdded ) } ] , "messagesDeleted" : [ { object ( MessageDeleted ) } ] , "labelsAdded" : [ { object ( LabelAdded ) } ] , "labelsRemoved" : [ { object ( LabelRemoved ) } ] } Fields id string The mailbox sequence ID. messages[] object ( Message ) List of messages changed in this history record.
-- If you receive no nextPageToken in the response, there are no updates to retrieve and you can store the returned historyId for a future request. labelId string Only return messages with a label matching the ID. historyTypes[] enum ( HistoryType ) History types to be returned by the function Request body The request body must be empty.
-
-### REST Resource: users.history \_|\_ Gmail \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history](https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history)
-- Source ID: `site-docs-reference`
-- Final score: 98
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/workspace/gmail/markup/actions/declaring-actions](https://developers.google.com/workspace/gmail/markup/actions/declaring-actions)
+- Source ID: `site-docs-reference-required-10`
+- Final score: 157
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-03-24 UTC."],[],[]]
-- Home Google Workspace Gmail Reference Send feedback REST Resource: users.history Stay organized with collections Save and categorize content based on your preferences.
-- Methods list Lists the history of all changes to the given mailbox.
-- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- To deep link to an app, include additional target URLs encoded with the android-app:// and ios-app:// schemes as shown below: JSON-LD "target" : [ “<web url>” , “a n droid - app : //<android package name>/<scheme>/<host>/<path+query>”, “ios - app : //<App store ID>/<scheme>/<host><path+query>" ] Microdata < link itemprop = "target" href = "<web url>" / > < link itemprop = "target" href = "android-app://<android package name>/<scheme>/<host>/<path+query>”/> < link itemprop=" target " href=" ios - app : //<App store ID>/<scheme>/<host>/<path+query>"/> Extending the previous EmailMessage example: JSON-LD < scrip t t ype= "application/ld+json" > { "@context" : "http://schema.org" , "@type" : "EmailMessage" , "name" : "Watch movie" , ... i nf orma t io n abou t t he movie ... "potentialAction" : { "@type" : "ViewAction" , "target" : [ "https://watch-movies.com/watch?movieId=abc123" , "android-app://com.watchmovies.app/http/watch-movies.com/watch?movieId=abc123" , "ios-app://12345/movieapp/watch-movies.com/watch?movieId=abc123" ] } } < /scrip t > Microdata < div itemscope itemtype = "http://schema.org/EmailMessage" > < meta itemprop = "name" content = "Watch movie" / > ... information about the movie ... < div itemprop = "potentialAction" itemscope itemtype = "http://schema.org/ViewAction" > < meta itemprop = "target" content = "https://watch-movies.com/watch?movieId=abc123" / > < meta itemprop = "target" content = "android-app://com.watchmovies.android/http/watch-movies.com/watch?movieId=abc123" / > < meta itemprop = "target" content = "ios://12345/movieapp/watch-movies.com/watch?movieId=abc123" / > < / div > < / div > If the user doesn't have your app, the action takes the user to the web URL you provide.
+- To set the time window for when an action is displayed, set the startTime and endTime properties of the action: JSON-LD < scrip t t ype= "application/ld+json" > { "@context" : "http://schema.org" , "@type" : "EmailMessage" , "potentialAction" : { "@type" : "ConfirmAction" , "name" : "Save coupon" , "handler" : { "@type" : "HttpActionHandler" , "url" : "https://my-coupons.com/approve?couponId=abc123" }, "startTime" : "2015-06-01T12:00:00Z" , "endTime" : "2015-06-05T12:00:00Z" } } < /scrip t > Microdata < div itemscope itemtype = "http://schema.org/EmailMessage" > < div itemprop = "potentialAction" itemscope itemtype = "http://schema.org/ConfirmAction" > < meta itemprop = "name" content = "Save coupon" / > < div itemprop = "handler" itemscope itemtype = "http://schema.org/HttpActionHandler" > < link itemprop = "url" href = "https://my-coupons.com/approve?couponId=abc123" / > < / div > < meta itemprop = "startTime" content = "2015-06-01T12:00:00Z" / > < meta itemprop = "endTime" content = "2015-06-05T12:00:00Z" / > < / div > < / div > Further Reading For more details about Actions, see: Handling Action Requests Securing Actions Android Deep Linking iOS Deep Linking Note: Some of the schemas used by Google are still going through the standardization process of schema.org , and therefore, may change in the future.
+- The following example adds a ConfirmAction button to an email about an expense report: JSON-LD < scrip t t ype= "application/ld+json" > { "@context" : "http://schema.org" , "@type" : "EmailMessage" , "potentialAction" : { "@type" : "ConfirmAction" , "name" : "Approve Expense" , "handler" : { "@type" : "HttpActionHandler" , "url" : "https://myexpenses.com/approve?expenseId=abc123" } }, "description" : "Approval request for John's $10.13 expense for office supplies" } < /scrip t > Microdata < div itemscope itemtype = "http://schema.org/EmailMessage" > < div itemprop = "potentialAction" itemscope itemtype = "http://schema.org/ConfirmAction" > < meta itemprop = "name" content = "Approve Expense" / > < div itemprop = "handler" itemscope itemtype = "http://schema.org/HttpActionHandler" > < link itemprop = "url" href = "https://myexpenses.com/approve?expenseId=abc123" / > < / div > < / div > < meta itemprop = "description" content = "Approval request for John's $10.13 expense for office supplies" / > < / div > Expiring Actions In many cases, actions are only relevant for a limited period of time.
+- For example, to make an EmailMessage entity have a ViewAction Go-To link, populate the email's potentialAction property, as in the following example: JSON-LD < scrip t t ype= "application/ld+json" > { "@context" : "http://schema.org" , "@type" : "EmailMessage" , "potentialAction" : { "@type" : "ViewAction" , "target" : "https://watch-movies.com/watch?movieId=abc123" , "name" : "Watch movie" }, "description" : "Watch the 'Avengers' movie online" } < /scrip t > Microdata < div itemscope itemtype = "http://schema.org/EmailMessage" > < div itemprop = "potentialAction" itemscope itemtype = "http://schema.org/ViewAction" > < link itemprop = "target" href = "https://watch-movies.com/watch?movieId=abc123" / > < meta itemprop = "name" content = "Watch movie" / > < / div > < meta itemprop = "description" content = "Watch the 'Avengers' movie online" / > < / div > Note that the markup above is automatically ignored by other email clients that do not support schemas in emails.
 
-### Migrate from the Email Settings API \_|\_ Gmail \_|\_ Google for Developers
+### What Are Actions? \_|\_ Gmail \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings](https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings)
-- Source ID: `site-docs-root`
-- Final score: 96
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Old setting New setting Notes enable accessWindow Disabled when set to disabled enableFor accessWindow ALL MAIL is now allMail MAIL FROM NOW ON is now fromNowOn action disposition KEEP is now leaveInInbox ARCHIVE is now archive DELETE is now trash MARK READ is now markRead Manage IMAP settings To manage IMAP access in the Gmail API, use the settings resource.
-- Old setting New setting Notes enable enabled forwardTo emailAddress action disposition KEEP is now leaveInInbox ARCHIVE is now archive DELETE is now trash MARK READ is now markRead Other changes: Forwarding addresses must be created and verified prior to use.
-- Old setting New setting Notes from criteria.from to criteria.to subject criteria.subject hasTheWord criteria.query doesNotHaveTheWord criteria.negatedQuery hasAttachment criteria.hasAttachment shouldArchive action.removeLabelIds Use INBOX as the label ID shouldMarkAsRead action.removeLabelIds Use UNREAD as the label ID shouldStar action.addLabelIds Use STARRED as the label ID label action.addLabelIds Use the ID of the label to add forwardTo action.forward shouldTrash action.addLabelIds Use TRASH as the label ID neverSpam action.removeLabelIds Use SPAM as the label ID Other changes: If adding a user label doesn't already exist, it must be explicitly created using the labels.create method.
-- If either of the delegator or delegate users are disabled (for example, suspended in Google Workspace) this method fails with an HTTP 4XX error instead of an HTTP 500 error. settings.delegates.delete This method can now be used to delete delegates with any VerificationStatus , rather than just delegates which are accepted or expired . settings.delegates.get This is a new method, which might be preferable over the settings.delegates.list method depending on need.
-
-### Upload attachments \_|\_ Gmail \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/workspace/gmail/api/guides/uploads](https://developers.google.com/workspace/gmail/api/guides/uploads)
-- Source ID: `site-docs-root`
-- Final score: 92
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/workspace/gmail/markup/actions/actions-overview](https://developers.google.com/workspace/gmail/markup/actions/actions-overview)
+- Source ID: `site-docs-reference-required-10`
+- Final score: 157
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Resume or retry uploads that fail due to connection interruptions or any 5xx errors, including: 500 Internal Server Error 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout Use an exponential backoff strategy if any 5xx server error is returned when resuming or retrying upload requests.
-- Resume an interrupted upload If an upload request is terminated before receiving a response or if you receive an HTTP 503 Service Unavailable response from the server, then you need to resume the interrupted upload.
-- This might be true if you plan to send metadata for this resource in a separate request, or if no metadata is supported or available.
-- The following request uses the Content-Range header to indicate that the current position in the 2,000,000 byte file is unknown.
+- Actions enable users to interact with your product or service right inside Gmail.
+- Further Reading Declaring Actions Note: Some of the schemas used by Google are still going through the standardization process of schema.org , and therefore, may change in the future.
+- For instance, an airline sending a check-in reminder can add a Go-To Action to quickly take the user to the airline website to select a seat or request an upgrade.
+- Go-To Actions For more complex interactions, Go-To Actions can be used to provide a direct link to the page where the action can be performed.
+
+### One Click Actions \_|\_ Gmail \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/gmail/markup/reference/one-click-action](https://developers.google.com/workspace/gmail/markup/reference/one-click-action)
+- Source ID: `site-docs-reference-required-11`
+- Final score: 155
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Specification For properties available to these actions, refer to the documentation for the specific types ConfirmAction and SaveAction .
+- Confirm Action You may add a one-click confirm button to emails requiring users to approve, confirm and acknowledge something.
+- One-click actions allow users to perform operations directly from the inbox without having to leave Gmail.
+- The following declaration adds a ConfirmAction button to an email about an expense report: JSON-LD < scrip t t ype= "application/ld+json" > { "@context" : "http://schema.org" , "@type" : "EmailMessage" , "potentialAction" : { "@type" : "ConfirmAction" , "name" : "Approve Expense" , "handler" : { "@type" : "HttpActionHandler" , "url" : "https://myexpenses.com/approve?expenseId=abc123" } }, "description" : "Approval request for John's $10.13 expense for office supplies" } < /scrip t > Microdata < div itemscope itemtype = "http://schema.org/EmailMessage" > < div itemprop = "potentialAction" itemscope itemtype = "http://schema.org/ConfirmAction" > < meta itemprop = "name" content = "Approve Expense" / > < div itemprop = "handler" itemscope itemtype = "http://schema.org/HttpActionHandler" > < link itemprop = "url" href = "https://myexpenses.com/approve?expenseId=abc123" / > < / div > < / div > < meta itemprop = "description" content = "Approval request for John's $10.13 expense for office supplies" / > < / div > Save Action SaveAction can be used to describe interactions like saving a coupon or adding songs to the listen queue.
 

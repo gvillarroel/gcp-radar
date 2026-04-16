@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 29
-Unique features: 32
+Unique features: 30
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -31,14 +31,12 @@ Unique features: 32
 | 2023-02-06 | SAP HANA deployment automation gVNIC support |  | Terraform and Deployment Manager automation for SAP HANA can use Google Virtual NIC through the nic_type argument. |
 | 2021-03-31 | SAP HANA high-availability Deployment Manager template for RHEL |  | Google Cloud's Deployment Manager template for Linux high-availability SAP HANA clusters now supports Red Hat Enterprise Linux images. |
 | 2021-03-01 | Monitoring Agent for SAP HANA v1.0 | 2021-12-31 | Version 1.0 of the Google Cloud monitoring agent for SAP HANA is deprecated in favor of v2.0; deprecated on 2021-12-31. |
-| 2021-02-16 | gceStorageClient for SAP HANA host auto-failover v1.n | 2021-12-31 | Version 1.n releases of gceStorageClient for SAP HANA host auto-failover are deprecated in favor of version 2.0, the Google Cloud Storage Manager for SAP HANA Standby Nodes; deprecated on 2021-12-31. |
 | 2021-02-16 | Google Cloud Storage Manager for SAP HANA Standby Nodes |  | Version 2.0 of gceStorageClient for SAP HANA host auto-failover is available as Google Cloud Storage Manager for SAP HANA Standby Nodes and uses RPM Package Manager for installation and updates. |
 | 2020-11-25 | SAP HANA alias-IP VIP deployment template for SLES | 2020-11-25 | The sap_hana_ha/template.yaml deployment template for SLES high-availability clusters using an alias-IP virtual IP implementation is deprecated in favor of the TCP internal load balancer version; deprecated on 2020-11-25. |
 | 2020-11-25 | SAP HANA TCP internal load balancer VIP deployment template for SLES |  | Google Cloud now supports automating SAP HANA deployment in SLES high-availability clusters with the recommended TCP internal load balancer virtual IP implementation. |
 | 2020-10-01 | SAP HANA persistent disk storage |  | Guidance for using Compute Engine persistent disks, including balanced persistent disks, with SAP applications and SAP HANA on Google Cloud. |
 | 2020-08-31 | Cloud Storage Backint agent for SAP HANA | 2025-02-28 | The Cloud Storage Backint agent for SAP HANA is deprecated and replaced by the Backint feature in version 3.0 of Google Cloud's Agent for SAP; The Cloud Storage Backint agent for SAP HANA provides backup integration with Cloud Storage and includes encryption options and other enhancements; deprecated on 2025-02-28. |
 | 2020-08-04 | OS-native HA clusters for SAP HANA on Google Cloud |  | Guidance for SAP HANA high-availability deployments using OS-native cluster configurations on Google Cloud. |
-| 2020-07-16 | SAP HANA high availability deployment guidance |  | Guidance for deploying SAP HANA in a high-availability configuration, including migration from alias IP to an internal load balancer for the virtual IP. |
 | 2020-06-23 | SAP HANA Linux HA cluster configuration on RHEL |  | Guidance for configuring a Linux high-availability cluster for SAP HANA on Red Hat Enterprise Linux. |
 | 2020-06-23 | SAP HANA Linux HA cluster configuration on SLES |  | Guidance for configuring a Linux high-availability cluster for SAP HANA on SUSE Linux Enterprise Server. |
 

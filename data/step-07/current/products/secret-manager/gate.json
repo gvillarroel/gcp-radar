@@ -1,0 +1,747 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-14T01:57:19.885Z",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager",
+  "input_file": "data/step-06/current/products/secret-manager/extended-features.json",
+  "feature_count": 38,
+  "passed_feature_count": 38,
+  "failed_feature_count": 0,
+  "warned_feature_count": 2,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "Access Transparency for Secret Manager",
+      "feature_slug": "access-transparency-for-secret-manager",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager",
+      "feature_slug": "secret-manager",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "Parameter version comparison",
+      "feature_slug": "parameter-version-comparison",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsPager",
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionRequest"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager regional availability",
+      "feature_slug": "secret-manager-regional-availability",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretsAsyncPager"
+      ]
+    },
+    {
+      "feature_name": "Secret synchronization to Kubernetes Secrets",
+      "feature_slug": "secret-synchronization-to-kubernetes-secrets",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Automatic secret rotation with the Secret Manager add-on for GKE",
+      "feature_slug": "automatic-secret-rotation-with-the-secret-manager-add-on-for-gke",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets"
+      ]
+    },
+    {
+      "feature_name": "Enhanced tagging capabilities for Secret Manager",
+      "feature_slug": "enhanced-tagging-capabilities-for-secret-manager",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "feature_name": "Soft-enforced rate limits for secret modification operations",
+      "feature_slug": "soft-enforced-rate-limits-for-secret-modification-operations",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionRequest"
+      ]
+    },
+    {
+      "feature_name": "Tagging for regional secrets",
+      "feature_slug": "tagging-for-regional-secrets",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Parameter Manager",
+      "feature_slug": "parameter-manager",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Parameter Manager console",
+      "feature_slug": "parameter-manager-console",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations"
+      ]
+    },
+    {
+      "feature_name": "Custom organization policies for Secret Manager resources",
+      "feature_slug": "custom-organization-policies-for-secret-manager-resources",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/cmek",
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources"
+      ]
+    },
+    {
+      "feature_name": "Regional secrets",
+      "feature_slug": "regional-secrets",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/locations"
+      ]
+    },
+    {
+      "feature_name": "Cloud KMS Autokey support for Secret Manager",
+      "feature_slug": "cloud-kms-autokey-support-for-secret-manager",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/cmek",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources"
+      ]
+    },
+    {
+      "feature_name": "Secret tags for conditional access",
+      "feature_slug": "secret-tags-for-conditional-access",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager add-on for Google Kubernetes Engine",
+      "feature_slug": "secret-manager-add-on-for-google-kubernetes-engine",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Delayed destruction of secret versions",
+      "feature_slug": "delayed-destruction-of-secret-versions",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsPager",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Key Access Justifications",
+      "feature_slug": "key-access-justifications",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.CustomerManagedEncryption",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager regional availability in europe-west10",
+      "feature_slug": "secret-manager-regional-availability-in-europe-west10",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager regional availability in me-central1",
+      "feature_slug": "secret-manager-regional-availability-in-me-central1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/locations"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager regional availability in europe-west12",
+      "feature_slug": "secret-manager-regional-availability-in-europe-west12",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager secret version aliases",
+      "feature_slug": "secret-manager-secret-version-aliases",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager annotations",
+      "feature_slug": "secret-manager-annotations",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretsAsyncPager"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager regional availability in me-west1",
+      "feature_slug": "secret-manager-regional-availability-in-me-west1",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager secret version data checksums",
+      "feature_slug": "secret-manager-secret-version-data-checksums",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version"
+      ]
+    },
+    {
+      "feature_name": "Access Transparency for Secret Manager",
+      "feature_slug": "access-transparency-for-secret-manager",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager UI audit and platform logs",
+      "feature_slug": "secret-manager-ui-audit-and-platform-logs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/audit-logging",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets"
+      ]
+    },
+    {
+      "feature_name": "Analyze Policy API support for Secret Manager resources",
+      "feature_slug": "analyze-policy-api-support-for-secret-manager-resources",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/cmek"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager ETags",
+      "feature_slug": "secret-manager-etags",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager free tier",
+      "feature_slug": "secret-manager-free-tier",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.CreateSecretRequest",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AddSecretVersionRequest",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager integration with Cloud Run",
+      "feature_slug": "secret-manager-integration-with-cloud-run",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager event notifications",
+      "feature_slug": "secret-manager-event-notifications",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager expiration",
+      "feature_slug": "secret-manager-expiration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretsAsyncPager"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager Rotation",
+      "feature_slug": "secret-manager-rotation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1",
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager locations",
+      "feature_slug": "secret-manager-locations",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager customer-managed encryption keys",
+      "feature_slug": "secret-manager-customer-managed-encryption-keys",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/cmek",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.CustomerManagedEncryption",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager Cloud Asset Inventory integration",
+      "feature_slug": "secret-manager-cloud-asset-inventory-integration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager Secret Version Adder IAM role",
+      "feature_slug": "secret-manager-secret-version-adder-iam-role",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager Secret Version Manager IAM role",
+      "feature_slug": "secret-manager-secret-version-manager-iam-role",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version"
+      ]
+    },
+    {
+      "feature_name": "Secret Manager",
+      "feature_slug": "secret-manager",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 4,
+      "supporting_page_count": 4,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service"
+      ]
+    }
+  ]
+}

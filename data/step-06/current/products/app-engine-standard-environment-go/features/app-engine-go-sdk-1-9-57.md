@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:52:30.814Z"
+generated_at: "2026-04-12T20:52:24.745Z"
 product_name: "App Engine standard environment Go"
 product_slug: "app-engine-standard-environment-go"
 feature_name: "App Engine Go SDK 1.9.57"
 feature_slug: "app-engine-go-sdk-1-9-57"
 latest_feature_date: "2017-08-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic"
+  - "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started"
 keywords:
-  - "57"
-  - "released"
-  - "version"
-  - "engine"
-  - "sdk"
-  - "was"
   - "app"
+  - "engine"
   - "go"
+  - "sdk"
+  - "57"
+  - "version"
+  - "was"
+  - "released"
 ---
 
 # App Engine Go SDK 1.9.57
 
 Product: App Engine standard environment Go
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,53 @@ App Engine Go SDK version 1.9.57 was released.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic](https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic)
+- [https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
 
 ## Supporting Pages
 
-### "Package google.golang.org/appengine/v2/memcache (v2.0.6) \_|\_ App Engine\
+### "Method: apps.services.versions.patch \_|\_ App Engine Admin API \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache)
-- Source ID: `site-docs-reference`
-- Final score: 230
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Reference Send feedback Package google.golang.org/appengine/v2/memcache (v2.0.6) Stay organized with collections Save and categorize content based on your preferences.
-- Context , items [] Item ) error AddMulti is a batch version of Add. appengine.MultiError may be returned. func (Codec) CompareAndSwap func ( cd Codec ) CompareAndSwap ( c context .
-- Context , items [] Item ) error CompareAndSwapMulti is a batch version of CompareAndSwap. appengine.MultiError may be returned. func (Codec) Get func ( cd Codec ) Get ( c context .
-- Context , item [] Item ) error CompareAndSwapMulti is a batch version of CompareAndSwap. appengine.MultiError may be returned. func Delete func Delete ( c context .
-
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- Source ID: `site-docs-root`
-- Final score: 220
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Create a new folder called go-app for your Go service: mkdir go-app In your go-app/ folder, create a file called app.yaml , and add the following contents: runtime : go126 # or another supported version This is the simplest configuration for an App Engine app.
-- To confirm service creation and version deployment: View your App Engine services in the Google Cloud console: View services You should see one service listed, named default .
-- Deploy your web service on App Engine In your go-app directory where your app.yaml file is located, deploy your web service to App Engine using the following command: gcloud app deploy To launch your browser and view your web service at https:// PROJECT ID .
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Build a Go app on App Engine Stay organized with collections Save and categorize content based on your preferences.
-
-### "Package google.golang.org/appengine/v2/search (v2.0.6) \_|\_ App Engine\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search)
-- Source ID: `site-docs-reference`
-- Final score: 218
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic](https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic)
+- Source ID: `site-docs-reference-2`
+- Final score: 48
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Reference Send feedback Package google.golang.org/appengine/v2/search (v2.0.6) Stay organized with collections Save and categorize content based on your preferences.
-- The query language is described at https://cloud.google.com/appengine/docs/standard/go/search/query strings Search also takes an optional SearchOptions struct which gives much more control over how results are calculated and returned.
-- SortExpression type SortExpression struct { // Expr is evaluated to provide a sorting value for each document. // See https://cloud.google.com/appengine/docs/standard/go/search/options for // the supported expression syntax.
-- Name string // Expr is evaluated to provide a custom content snippet for each document. // See https://cloud.google.com/appengine/docs/standard/go/search/options for // the supported expression syntax.
+- You can specify the following fields depending on the App Engine environment and type of scaling that the version resource uses: Standard environment instanceClass automatic scaling in the standard environment: automaticScaling.min idle instances automaticScaling.max idle instances automaticScaling.standard scheduler settings.max instances automaticScaling.standard scheduler settings.min instances automaticScaling.standard scheduler settings.target cpu utilization automaticScaling.standard scheduler settings.target throughput utilization basic scaling or manual scaling in the standard environment: servingStatus manualScaling.instances Flexible environment servingStatus automatic scaling in the flexible environment: automaticScaling.min total instances automaticScaling.max total instances automaticScaling.cool down period sec automaticScaling.cpu utilization.target utilization manual scaling in the flexible environment: manualScaling.instances HTTP request PATCH https://appengine.googleapis.com/v1/{name=apps/ /services/ /versions/ } The URL uses gRPC Transcoding syntax.
+- Authorization requires the following IAM permission on the specified resource name : appengine.versions.update Query parameters Parameters updateMask string ( FieldMask format) Standard field mask for the set of fields to be updated.
+- Home Technology areas App Engine Admin API Reference Send feedback Method: apps.services.versions.patch Stay organized with collections Save and categorize content based on your preferences.
+- Request body The request body contains an instance of Version .
+
+### An overview of App Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine](https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine)
+- Source ID: `site-docs-reference`
+- Final score: 44
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In this diagram, the app has two services that contain multiple versions, and two of those versions are actively running on multiple instances: Other Google Cloud services, for example Datastore, are shared across your App Engine app.
+- Each App Engine application includes at least one service, the default service, which can hold many versions, depending on your app's billing status.
+- The App Engine application is a top-level container that includes the service, version, and instance resources that make up your app.
+- For example, an app that handles your customer requests might include separate services that each handle different tasks, such as: API requests from mobile devices Internal, administration-type requests Backend processing such as billing pipelines and data analysis Each service in App Engine consists of the source code from your app and the corresponding App Engine configuration files.
+
+### "An Overview of the Admin API \_|\_ App Engine Admin API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
+- Source ID: `site-docs-reference`
+- Final score: 36
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.
+- Tighter control around deploying new versions, including the ability to automate traffic migration between two versions or traffic splitting across one or more versions.
+- After configuring authentication, you can begin managing your apps, including deploying versions of applications and managing the amount of traffic to those versions.
+- The Admin API provides programmatic access to several of the App Engine administrative operations that are found in the Google Cloud console .
 

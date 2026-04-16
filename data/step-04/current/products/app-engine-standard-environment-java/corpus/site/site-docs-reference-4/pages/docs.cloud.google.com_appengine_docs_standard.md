@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/appengine/docs/standard
 knowledge_key: corpus
 source_id: site-docs-reference-4
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/writing-web-service
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/release-notes
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/standard
   title: "App Engine standard environment \_|\_ Google Cloud Documentation"

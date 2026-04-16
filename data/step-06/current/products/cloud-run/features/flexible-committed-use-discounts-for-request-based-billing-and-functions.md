@@ -1,32 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.897Z"
+generated_at: "2026-04-14T15:34:54.435Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "Flexible committed use discounts for request-based billing and functions"
 feature_slug: "flexible-committed-use-discounts-for-request-based-billing-and-functions"
 latest_feature_date: "2025-07-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
-  - "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
   - "https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud"
+  - "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service"
 keywords:
+  - "billing"
   - "flexible"
   - "committed"
-  - "use"
   - "discounts"
-  - "for"
-  - "request"
   - "based"
-  - "billing"
+  - "functions"
+  - "request"
 ---
 
 # Flexible committed use discounts for request-based billing and functions
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +37,54 @@ Flexible committed use discounts cover Cloud Billing spend for Cloud Run service
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- [https://docs.cloud.google.com/run/docs/tutorials/identity-platform](https://docs.cloud.google.com/run/docs/tutorials/identity-platform)
 - [https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run](https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run)
+- [https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud](https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud)
+- [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service)
 
 ## Supporting Pages
-
-### Cloud Run release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Compute flexible committed use discounts (CUDs) have expanded to also cover your Cloud Billing account's spend across Cloud Run services with request-based billing and Cloud Run functions.
-- February 06, 2026 Feature Expanded coverage for compute flexible committed use discounts (CUDs) is available to all Cloud Billing accounts.
-- May 12, 2021 Feature Cloud Run now provides UI, command line, and YAML support for referencing Secret Manager Secrets . (Available in public preview.) Feature Customer managed encryption keys are now available for use with Cloud Run. (Available in public preview.) Feature Recommender now provides recommendations for securing Cloud Run services by creating dedicated service accounts. (Available in public preview.) Feature Committed use discounts are now available for Cloud Run . (Available in public preview.) Feature You can now use Binary authorization with Cloud Run to enforce policy-based deployment of Cloud Run services. (Available in public preview.) May 03, 2021 Feature You can now use Identity-aware Proxy with Cloud Run to use identity and context to guard access to your applications. (Available in public preview.) Change By default, the memory allocated to each container instance of a new service is 512MiB.
-- July 15, 2024 Feature Compute flexible committed use discounts are now available for Cloud Run services with CPU always allocated , and Cloud Run jobs.
-
-### End user authentication for Cloud Run tutorial \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/tutorials/identity-platform](https://docs.cloud.google.com/run/docs/tutorials/identity-platform)
-- Source ID: `site-docs-root`
-- Final score: 132
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The server extracts the Identity Platform uid for that user. """ @wraps ( func ) def decorated function ( args : a , kwargs : a ) - > a : header = request . headers . get ( "Authorization" , None ) if header : token = header . split ( " " )[ 1 ] try : decoded token = firebase admin . auth . verify id token ( token ) except Exception as e : logger . exception ( e ) return Response ( status = 403 , response = f "Error with authentication: { e } " ) else : return Response ( status = 401 ) request . uid = decoded token [ "uid" ] return func ( args , kwargs ) return decorated function Java / Extract and verify Id Token from header / private String authenticateJwt ( Map<String , String > headers ) { String authHeader = ( headers . get ( "authorization" ) != null ) ? headers . get ( "authorization" ) : headers . get ( "Authorization" ); if ( authHeader != null ) { String idToken = authHeader . split ( " " ) [ 1 ] ; // If the provided ID token has the correct format, is not expired, and is // properly signed, the method returns the decoded ID token try { FirebaseToken decodedToken = FirebaseAuth . getInstance (). verifyIdToken ( idToken ); String uid = decodedToken . getUid (); return uid ; } catch ( FirebaseAuthException e ) { logger . error ( "Error with authentication: " + e . toString ()); throw new ResponseStatusException ( HttpStatus .
-- The client adds the ID token to the Authorization header of its request to the server. async function vote ( team ) { if ( firebase . auth (). currentUser ) { // Retrieve JWT to identify the user to the Identity Platform service. // Returns the current token if it has not expired.
-- Costs In this document, you use the following billable components of Google Cloud: Cloud Build Artifact Registry Secret Manager Cloud SQL Identity Platform Cloud Run To generate a cost estimate based on your projected usage, use the pricing calculator .
-- Home Documentation Application hosting Cloud Run Guides Send feedback End user authentication for Cloud Run tutorial Stay organized with collections Save and categorize content based on your preferences.
 
 ### What is Cloud Run \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run](https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run)
 - Source ID: `site-api-reference`
-- Final score: 112
+- Final score: 130
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Scale to zero and minimum instances By default, if billing is set to instance-based billing , Cloud Run adds and removes instances automatically to handle all incoming requests or to handle increased CPU utilization outside requests.
+- Resource Description Service Responds to HTTP requests sent to a unique and stable endpoint, using stateless instances that autoscale based on a variety of key metrics, also responds to events and functions.
+- Fast request-based auto scaling Cloud Run rapidly scales out to handle all incoming requests or to handle increased CPU utilization outside requests if the billing setting is set to instance-based billing .
+- Refer to pricing for more information, and refer to Billing settings to learn how to enable request-based or instance-based billing for your service.
+
+### "Quickstart: Deploy a Cloud Run function using the gcloud CLI \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud](https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud)
+- Source ID: `site-docs-reference-2`
+- Final score: 121
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Write the sample function To write an application, follow these steps: Node.js Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a package.json file in the helloworld directory to specify Node.js dependencies: { "name" : "nodejs-docs-samples-functions-hello-world-get" , "version" : "0.0.1" , "private" : true , "license" : "Apache-2.0" , "author" : "Google Inc." , "repository" : { "type" : "git" , "url" : "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git" }, "engines" : { "node" : ">=16.0.0" }, "scripts" : { "test" : "c8 mocha -p -j 2 test/ .test.js --timeout=6000 --exit" }, "dependencies" : { "@google-cloud/functions-framework" : "^3.1.0" }, "devDependencies" : { "c8" : "^10.0.0" , "gaxios" : "^6.0.0" , "mocha" : "^10.0.0" , "wait-port" : "^1.0.4" } } Create an index.js file in the helloworld directory with the following Node.js sample: const functions = require ( '@google-cloud/functions-framework' ); // Register an HTTP function with the Functions Framework that will be executed // when you make an HTTP request to the deployed function's endpoint. functions . http ( 'helloGET' , ( req , res ) = > { res . send ( 'Hello World!' ); }); Python Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a requirements.txt file in the helloworld directory, to specify Python dependencies: functions - framework == 3.9.2 flask == 3.0.3 google - cloud - error - reporting == 1.11.1 MarkupSafe == 2.1.3 This adds packages needed by the sample.
+- From the console, create a new empty web project using the dotnet command. dotnet new web -o helloworld-csharp Change directory to helloworld-csharp : Replace the sample code in the project file helloworld-csharp.csproj with the following: <Project Sdk="Microsoft.NET.Sdk"> <PropertyGroup> <OutputType>Exe</OutputType> <TargetFramework>net8.0</TargetFramework> </PropertyGroup> <ItemGroup> <PackageReference Include="Google.Cloud.Functions.Hosting" Version="3.0.1" /> </ItemGroup> </Project> Replace the sample code in Program.cs file with the following: using Google.Cloud.Functions.Framework; using Microsoft.AspNetCore.Http; using System.Threading.Tasks; namespace HelloWorld; public class Function : IHttpFunction { public async Task HandleAsync(HttpContext context) { await context.Response.WriteAsync("Hello World!", context.RequestAborted); } } Deploy the function To deploy your Cloud Run function, follow these steps: Deploy the function by running the following command in the directory that contains the sample code: Node.js gcloud run deploy nodejs-http-function \ --source . \ --function helloGET \ --base-image nodejs24 \ --region REGION \ --allow-unauthenticated Replace REGION with the Google Cloud region of the service where you want to deploy your function.
+- Fprint ( w , "Hello, World!" ) } Java Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create the following project structure to contain the source directory and source file: mkdir -p /helloworld/src/main/java/functions touch /helloworld/src/main/java/functions/HelloWorld.java Update the HelloWorld.java file with the following Java code sample: package functions ; import com.google.cloud.functions.HttpFunction ; import com.google.cloud.functions.HttpRequest ; import com.google.cloud.functions.HttpResponse ; import java.io.BufferedWriter ; import java.io.IOException ; public class HelloWorld implements HttpFunction { // Simple function to return "Hello World" @Override public void service ( HttpRequest request , HttpResponse response ) throws IOException { BufferedWriter writer = response . getWriter (); writer . write ( "Hello World!" ); } } Create a pom.xml file in the helloworld directory, and add the following Java dependencies: < ? xml version = "1.0" encoding = "UTF-8" ? > < !-- Copyright 2020 Google LLC Licensed under the Apache License , Version 2.0 ( the "License" ); you may not use this file except in compliance with the License .
+- HelloWorld < / functionTarget > < / configuration > < / plugin > < plugin > < groupId>org . apache . maven . plugins < / groupId > < artifactId>maven - surefire - plugin < / artifactId > < !-- version 3.0.0 - M4 does not load JUnit5 correctly -- > < !-- see https : //issues.apache.org/jira/browse/SUREFIRE-1750 -- > < version>3 .2.5 < / version > < configuration > < includes > < include > / Test . java < / include > < / includes > < skipTests>$ { skipTests } < / skipTests > < reportNameSuffix>sponge log < / reportNameSuffix > < trimStackTrace>false < / trimStackTrace > < / configuration > < / plugin > < / plugins > < / build > < / project > Ruby Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named app.rb and paste the following code into it: require "functions framework" FunctionsFramework . http "hello get" do request The request parameter is a Rack::Request object.
+
+### Quickstart: Deploy a Python (FastAPI) web app to Google Cloud with Cloud Run | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service](https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-fastapi-service)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 107
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Refer to pricing for more information, and refer to Billing settings to learn how to enable request-based or instance-based billing for your service.
-- Scale to zero and minimum instances By default, if billing is set to instance-based billing , Cloud Run adds and removes instances automatically to handle all incoming requests or to handle increased CPU utilization outside requests.
-- If you're using Go, Node.js, Python, Java, .NET, Ruby, or a supported framework you can use the source-based deployment option that builds the container for you, using the best practices for the language you're using.
-- Fast request-based auto scaling Cloud Run rapidly scales out to handle all incoming requests or to handle increased CPU utilization outside requests if the billing setting is set to instance-based billing .
+- AI use cases in Cloud Run Get started Overview Deploy a sample web service Deploy a sample container Deploy from a git repository Deploy a Hello World service from source code Go Node.js Python Flask FastAPI Gradio LangChain Smolagents Streamlit Agent Development Kit (ADK) for Python Java Kotlin C# C++ PHP Ruby Other Frameworks Overview Angular SSR Next.js Nuxt.js SvelteKit Deploy a sample function Deploy a function using the console Deploy a function using gcloud Execute a sample job Execute a job Execute a job from source code Go Node.js Python Java Shell Deploy a sample worker pool Develop Set up your environment Plan and prepare your service Develop your service Containerize your code Connect to Google Cloud services Install a system package in your container Run gcloud commands within your container Plan and prepare your function Overview Compare Cloud Run functions Write Cloud Run functions Runtimes Overview Node.js Overview Node.js dependencies Python Overview Python dependencies Go Overview Go dependencies Java Overview Java dependencies .NET Ruby PHP Local functions development Function triggers Tutorials Create a function that returns BigQuery results Create a function that returns Spanner results Integrate with Cloud databases Codelabs Build and test Build sources to containers Build functions to containers Local testing Serve HTTP requests Deploy services Deploy container images Continuous deployment from git Deploy from source code Deploy from Compose Deploy functions Serve web traffic Mapping custom domains Serving static assets with CDN Serving traffic from multiple regions Deploy a multi-region app with service health Enable session affinity Frontend proxying using Nginx Manage services View, copy, or delete services View or delete revisions Traffic migration, gradual rollouts, rollbacks Configure services Overview Capacity Memory limits CPU limits GPU GPU configuration GPU performance best practices Request timeout Maximum concurrent requests About maximum concurrent requests per instance Configure maximum concurrent requests Billing Optimize service configurations with Recommender Environment Container port and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes CIFS/SMB Execution environment Container health checks HTTP/2 requests Secrets Service identity Scaling About instance autoscaling for services Maximum instances About maximum instances for services Configure maximum instances Minimum instances Manual scaling Metadata Description Labels Tags Source deploy configurations Supported language runtimes and base images Configure automatic base image updates Build environment variables Build service account Build worker pools Invoke and trigger services Invoke with HTTPS requests Host a webhook target Stream with WebSockets Overview Build a WebSocket Chat service tutorial Invoke asynchronously Invoke services on a schedule Create a workflow Invoke services as part of a Workflow Connect a series of services from Cloud Functions and Cloud Run tutorial Execute asynchronous tasks Call a service from a Pub/Sub push subscription Trigger service from Pub/Sub Integrate image processing into Pub/Sub sample tutorial Trigger from events Create triggers with Eventarc Pub/Sub triggers Create Pub/Sub Eventarc triggers Trigger functions from Pub/Sub using Eventarc Trigger functions from routed log entries Cloud Storage triggers Create triggers with Cloud Storage Trigger services from Cloud Storage using Eventarc Trigger functions from Cloud Storage using Eventarc Firestore triggers Create triggers with Firestore Trigger functions from events in a Firestore database Connect with other services using gRPC Best practices General development tips for services Cost optimization Optimize Java services Optimize Python services Optimize Node.js services Load testing best practices Understand zonal redundancy Functions best practices Overview Configure event-driven function retries Execute job tasks to completion Create jobs Execute jobs Execute jobs Execute scheduled jobs Execute jobs from Workflows Configure jobs Container entrypoint CPU limits Memory limits GPU GPU configuration GPU best practices Environment variables Container health checks Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Labels Maximum retries Parallelism Secrets Service identity Task timeout Tags Manage jobs View or delete jobs View or stop job executions Best practices Jobs retries and checkpoints Cost optimization Perform continuous background work Deploy worker pools Deploy worker pools Deploy worker pools from source code Manage worker pools View or delete worker pools View or delete worker pool revisions Instance splits and rollbacks Configure worker pools Capacity Memory limits CPU limits GPU GPU configuration GPU best practices Environment Container and entrypoint Environment variables Volume mounts Cloud Storage volumes NFS volumes In-memory volumes Using CIFS/SMB network file systems Container health checks Secrets Service identity Instance count Metadata Description Labels Scale based on external metrics Autoscale worker pools with external metrics Kafka autoscaler Host GitHub runners with worker pools Autoscale worker pools based on Prometheus metrics Autoscale worker pools with Pub/Sub pull subscriptions Automate scaling with Workflows Cost optimization Configure networking Best practices for Cloud Run networking Configure private networking Send traffic to VPC network Overview Direct VPC Register private IPs for worker pools using Cloud DNS Dual-stack (IPv4 and IPv6) Migrate standard VPC connector to Direct VPC VPC connectors Send traffic to Shared VPC network Overview Direct VPC Migrate Shared VPC connector to Direct VPC Connectors in service projects Connectors in host project Static outbound IP address Network security Restrict endpoint ingress (services) Use VPC Service Controls (VPC SC) Cloud Service Mesh Secure Security design overview Authenticate requests Overview Allow public access Custom audiences Authenticate developers Service-to-service Authenticate users End user authentication tutorial Secure your resources Access control with IAM Configure IAP for Cloud Run Introduction to service identity Protect services with Cloud Armor Use Binary Authorization Use Cloud Run Threat Detection Use customer managed encryption keys Manage custom constraints for projects View software supply chain security insights Secure Cloud Run services tutorial Multi-tenant platforms running untrusted code Monitor and log Monitoring and logging overview View built-in metrics Write Prometheus metrics Write OpenTelemetry metrics Log and view logs Audit logging Error reporting Use distributed tracing for services Run AI solutions Overview Explore resources AI agents Overview Build and deploy A2A agents Overview Deploy A2A agents Build and deploy ADK agents Build and deploy n8n agents MCP servers Overview Build and deploy a remote MCP server Tools Code execution Browser automation Inference with GPUs Overview Services Run LLM inference on Cloud Run GPUs with Ollama Run agents with Gemma 4 models on Cloud Run Run LLM inference on Cloud Run GPUs with vLLM Run OpenCV on Cloud Run with GPU acceleration Run LLM inference on Cloud Run GPUs with Hugging Face Transformers.js Run LLM inference on Cloud Run GPUs with Hugging Face TGI Jobs Fine tune LLMs using GPUs with Cloud Run jobs Run batch inference using GPUs with Cloud Run jobs GPU-accelerated video transcoding with FFmpeg AI-assisted development and vibe coding Introduction to Cloud Run for AI-assisted developers Cookbook Migrate An existing web service From App Engine From Cloud Run functions (1st gen) From AWS Lambda From Heroku From Cloud Foundry Migration overview Choose an OCI-compliant-strategy Migrate to OCI containers Migrate configuration Sample migration: Spring Music From VMWare Tanzu From a VM using Migrate to Containers From Kubernetes To GKE Troubleshoot Introduction Troubleshoot errors Local troubleshooting tutorial Known issues Samples All Cloud Run code samples All Cloud Run functions code samples Code samples for all products AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application hosting Cloud Run Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Write the sample application To write an application in Python: Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named main.py and paste the following code into it: from fastapi import FastAPI app = FastAPI () @app . get ( "/" ) def hello ( name : str = "World" ): """Return a friendly HTTP greeting.""" return { "message" : f "Hello { name } !" } This code creates a web service that responds to HTTP GET requests.
+- Delete your test project Deleting your Google Cloud project stops billing for all resources in that project.
+- Delete your service Cloud Run services don't incur costs until they receive requests.
 

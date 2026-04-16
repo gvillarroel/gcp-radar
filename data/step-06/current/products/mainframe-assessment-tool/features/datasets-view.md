@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.439Z"
+generated_at: "2026-04-15T12:06:50.480Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Datasets view"
@@ -10,7 +10,7 @@ deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction"
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
 keywords:
   - "datasets"
@@ -18,9 +18,8 @@ keywords:
   - "shows"
   - "dataset"
   - "details"
-  - "in"
-  - "the"
   - "discovery"
+  - "tab"
 ---
 
 # Datasets view
@@ -43,42 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 ## Source Links
 
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
 
 ## Supporting Pages
 
-### View and understand assessment results | Mainframe Assessment Tool | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- Source ID: `site-docs-root`
-- Final score: 92
+- Source ID: `site-docs-reference`
+- Final score: 170
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Connected jobs based on a shared data source (tabular view): shows the connection details between the jobs.
+- Datasets Provides a detailed view of all datasets involved in the assessment.
+- Discover and analyze source code The Discovery page provides an overview of analysis of the application source code that you uploaded for assessment.
+- JCL Job Connections Displays dependencies between JCL jobs based on shared datasets, DB2 tables, and IMS segments.
+
+### "Extract business rules \_|\_ Mainframe Assessment Tool \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction](https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction)
+- Source ID: `site-docs-reference`
+- Final score: 79
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- View and understand assessment results Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results The Assets page provides a summary, detailed logic, and code suggestions for a program or job in your mainframe application.
-- You can also view the status, type, language, and execution mode (batch or online) for each asset.
+- The Rule details pane shows you the following information: Summary: provides a description of the rule to let you understand the purpose and function of the rule.
+- The job overview displays the configuration details, such as the description, the focus prompt, and the list of assets included in the analysis.
+- Rule content: shows you the details of the business rule such as input data, output data, business logic, and edge cases.
+- This review process ensures that only correct and necessary rules are used for modernization, and helps you identify obsolete or incorrect logic before the rules are modernized.
 
-### Mainframe Assessment Tool overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 81
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Mainframe Assessment Tool overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview Mainframe Assessment Tool helps assess your existing mainframe codebase and plan your migration to Google Cloud.
-- Mainframe Assessment Tool automates assessment, saving you time and resources.
-
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
+### "Create and update assessments \_|\_ Mainframe Assessment Tool \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 65
+- Source ID: `site-docs-reference`
+- Final score: 67
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
+- To view more details about the assessment progress for an item, click the reference ID next to it in the table.
+- Update assessment details and settings After you create an assessment, you can update its name and description, and modify AI-generated insights settings.
+- If you see errors after importing your file, you can review the error message directly in Mainframe Assessment Tool.
+- To update assessment details or settings, follow these steps: Open Mainframe Assessment Tool in a web browser.
 

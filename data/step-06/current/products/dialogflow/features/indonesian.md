@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.162Z"
+generated_at: "2026-04-14T00:17:30.521Z"
 product_name: "Dialogflow"
 product_slug: "dialogflow"
 feature_name: "Indonesian"
 feature_slug: "indonesian"
 latest_feature_date: "2018-03-29"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-system"
+  - "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
 keywords:
   - "indonesian"
   - "additional"
@@ -17,14 +19,14 @@ keywords:
   - "entities"
   - "were"
   - "added"
-  - "for"
   - "hindi"
+  - "thai"
 ---
 
 # Indonesian
 
 Product: Dialogflow
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ Additional system entities were added for Hindi, Thai, Indonesian, Swedish, Dani
 
 Additional system entities were added for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian; Dialogflow added broader language support for Hindi, Thai, Indonesian, Swedish, Danish, and Norwegian.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-system](https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-system)
+- [https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store](https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### System entities \_|\_ Dialogflow CX \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-system](https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-system)
+- Source ID: `site-docs-root`
+- Final score: 112
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- However, your application may need to add additional values for system entities.
+- Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback System entities Stay organized with collections Save and categorize content based on your preferences.
+- Dialogflow CX provides many system entities to extract common types from end-user expressions.
+- API Creating system entity extensions is similar to how you create custom entities .
+
+### "Package com.google.cloud.dialogflow.v2 (4.94.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2)
+- Source ID: `site-java-reference`
+- Final score: 90
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Tools can be used to interact with remote APIs (e.g. fetching orders) to retrieve additional information as input to LLM. com. google. cloud. dialogflow. v2.
+- Tools can be used to interact with remote APIs (e.g. fetching orders) to retrieve additional information as input to LLM. com. google. cloud. dialogflow. v2.
+- The part can be an entity or purely a part of the message between two entities or message start/end. com. google. cloud. dialogflow. v2.
+- The part can be an entity or purely a part of the message between two entities or message start/end. com. google. cloud. dialogflow. v2.
+
+### Data stores \_|\_ Dialogflow CX \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store](https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store)
+- Source ID: `site-docs-root`
+- Final score: 90
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Each connector can contain multiple data stores, which are stored as entities in the Dialogflow CX system.
+- Supported regions For supported regions, see the region reference . (Restricted access) Additional data store sources Additional data store types are listed in the following table.
+- Restricted access data store sources Google offers many additional first- and third-party data store sources as a restricted access feature.
+- This step is skipped if users talk to the agent using Google Cloud directly, because Google identity is automatically built into the system.
 

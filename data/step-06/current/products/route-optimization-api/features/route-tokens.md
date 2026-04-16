@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:50:25.577Z"
+generated_at: "2026-04-12T12:18:15.362Z"
 product_name: "Route Optimization API"
 product_slug: "route-optimization-api"
 feature_name: "Route tokens"
 feature_slug: "route-tokens"
 latest_feature_date: "2024-09-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentRoute"
   - "https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentModel"
   - "https://developers.google.com/maps/documentation/route-optimization/reference/rest"
+  - "https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/OptimizeToursResponse"
 keywords:
   - "route"
   - "tokens"
@@ -26,7 +27,7 @@ keywords:
 # Route tokens
 
 Product: Route Optimization API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The Route Optimization API can generate route tokens that can be passed to the N
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentRoute](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentRoute)
 - [https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentModel](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentModel)
 - [https://developers.google.com/maps/documentation/route-optimization/reference/rest](https://developers.google.com/maps/documentation/route-optimization/reference/rest)
+- [https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/OptimizeToursResponse](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/OptimizeToursResponse)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentRoute](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentRoute)
 - Source ID: `site-api-reference`
-- Final score: 208
+- Final score: 211
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentModel](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/ShipmentModel)
 - Source ID: `site-api-reference`
-- Final score: 204
+- Final score: 207
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/maps/documentation/route-optimization/reference/rest](https://developers.google.com/maps/documentation/route-optimization/reference/rest)
 - Source ID: `site-api-reference`
-- Final score: 184
+- Final score: 187
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - REST Resource: v1.operations REST Resource: v1.projects REST Resource: v1.projects.locations REST Resource: v1.projects.locations.operations Service: routeoptimization.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-12-19 UTC."],[],["The Route Optimization API provides four REST resources: v1.operations, v1.projects, v1.projects.locations, and v1.projects.locations.operations.
 - Page Summary outlined flag The Route Optimization API provides methods for optimizing vehicle routes, minimizing overall cost, and managing operations.
+
+### OptimizeToursResponse \_|\_ Route Optimization API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/OptimizeToursResponse](https://developers.google.com/maps/documentation/route-optimization/reference/rest/v1/OptimizeToursResponse)
+- Source ID: `site-api-reference`
+- Final score: 183
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- JSON representation { "routes" : [ { object ( ShipmentRoute ) } ] , "requestLabel" : string , "skippedShipments" : [ { object ( SkippedShipment ) } ] , "validationErrors" : [ { object ( OptimizeToursValidationError ) } ] , "processedRequest" : { object ( OptimizeToursRequest ) } , "metrics" : { object ( Metrics ) } } Fields routes[] object ( ShipmentRoute ) Routes computed for each vehicle; the i-th route corresponds to the i-th vehicle in the model. requestLabel string Copy of the OptimizeToursRequest.label , if a label was specified in the request. skippedShipments[] object ( SkippedShipment ) The list of all shipments skipped. validationErrors[] object ( OptimizeToursValidationError ) List of all the validation errors that we were able to detect independently.
+- For example, referring to vehicle #4 and shipment #2's first pickup can be done as follows: fields { name: "vehicles" index: 4} fields { name: "shipments" index: 2 subField {name: "pickups" index: 0} } Note, however, that the cardinality of fields should not change for a given error code. errorMessage string Human-readable string describing the error.
+- JSON representation OptimizeToursValidationError JSON representation FieldReference JSON representation Metrics JSON representation Response after solving a tour optimization problem containing the routes followed by each vehicle, the shipments which have been skipped and the overall cost of the solution.
+- Home Products Google Maps Platform Documentation Route Optimization API Reference Send feedback OptimizeToursResponse Stay organized with collections Save and categorize content based on your preferences.
 

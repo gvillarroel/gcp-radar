@@ -135,18 +135,18 @@ A pipeline in preview runs in the tenant project.
 Pipeline execution link
 Cloud Data Fusion creates ephemeral execution environments to
 execute pipelines.
-Cloud Data Fusion supports Dataproc as an
+Cloud Data Fusion supports Managed Service for Apache Spark as an
 execution environment
 Cloud Data Fusion provisions an ephemeral
-Dataproc cluster in your customer project at the
+Managed Service for Apache Spark cluster in your customer project at the
 beginning of a pipeline run, executes the pipeline using Spark in the
 cluster, and then deletes the cluster after the pipeline execution is
 complete.
-Alternatively, if you manage your Dataproc clusters
+Alternatively, if you manage your Managed Service for Apache Spark clusters
 in controlled environments, through technologies like Terraform, you
 can also configure Cloud Data Fusion to not provision clusters. In
 those environments, you can run pipelines against existing
-Dataproc clusters.
+Managed Service for Apache Spark clusters.
 Compute profile link
 A compute profile specifies how and where a pipeline is
 executed. A profile encapsulates any information required to set up and
@@ -200,6 +200,6 @@ Work through a
 tutorial .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

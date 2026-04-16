@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:19:24.010Z"
+generated_at: "2026-04-14T09:47:34.438Z"
 product_name: "Bare Metal Solution"
 product_slug: "bare-metal-solution"
 feature_name: "Real-time IP address validation in Bare Metal Solution intake"
 feature_slug: "real-time-ip-address-validation-in-bare-metal-solution-intake"
 latest_feature_date: "2022-03-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
-  - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+  - "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
   - "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices"
+  - "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide"
 keywords:
   - "validation"
   - "address"
   - "real"
   - "time"
-  - "ip"
-  - "metal"
-  - "bare"
-  - "in"
 ---
 
 # Real-time IP address validation in Bare Metal Solution intake
 
 Product: Bare Metal Solution
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +34,53 @@ Adds real-time validation to prevent conflicting IP addresses in Bare Metal Solu
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
+- [https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide](https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide)
 - [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices)
+- [https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide](https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide)
 
 ## Supporting Pages
-
-### Maintain the Bare Metal Solution environment \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/bms-maintenance](https://docs.cloud.google.com/bare-metal/docs/bms-maintenance)
-- Source ID: `site-docs-root`
-- Final score: 216
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- NAME PROJECT REGION MACHINE TYPE IP ADDRESSES STATE SERVER NAME PROJECT ID REGION o2-standard-32-metal 192.168.1.1,192.168.2.1 RUNNING Additional command options include: --region : View devices in a specific Google Cloud region. --limit : Limit the output to show a specific number of devices To get network and storage information for a specific server in your Bare Metal Solution environment, enter your server name, project ID, and region, and issue the gcloud bms instances describe command: gcloud bms instances describe SERVER NAME --project= PROJECT ID --region= REGION The following output example shows an operational server with 12 LUNs, a client network of 192.168.1.1, and a private network of 192.168.2.1. luns: - bootLun: true name: SERVER NAME -lun000-b1 sizeGb: '200' state: READY storageVolume: SERVER NAME -vol000-b1 - name: STORAGE DEVICE NAME -lun001 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun002 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun003 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun004 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun005 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun006 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun007 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun008 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun009 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun010 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun011 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun012 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 machineType: o2-standard-32-metal name: projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME networks: - ipAddress: 192.168.1.1 macAddress: - 34:80:0D:52:AF:28 - 34:80:0D:15:3E:0D network: STORAGE DEVICE NAME -vlan001 - ipAddress: 192.168.2.1 macAddress: - 34:80:0D:52:AF:38 - 34:80:0D:15:3E:1D network: STORAGE DEVICE NAME -vlan002 state: RUNNING API Open a Cloud Shell terminal window in your Google Cloud console.
-- Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares" -d \ '{ "name": "projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ", "labels": { "nfsKey1": "some value", "key2": "another value", }, "requestedSizeGib": " SIZE GIB ", "storageType": " STORAGE TYPE ", "allowedClients": [ { "network": "projects/ PROJECT ID /locations/ REGION /networks/ NETWORK NAME ", "allowedClientsCidr": " IP ADDRESS RANGE ", "mountPermissions": " MOUNT PERMISSIONS ", "allowDev": ALLOW DEV , "allowSuid": ALLOW SUID , "noRootSquash": ENABLE ROOT SQUASH , } ], }' Because creating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .
-- Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ?updateMask=allowed clients%2Clabels" -d \ '{ "name": "projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ", "labels": { "newKey": "newVal", }, "allowedClients": [ { "network": "projects/ PROJECT ID /locations/ REGION /networks/ NFS VOLUME NAME ", "allowedClientsCidr": " IP ADDRESS RANGE ", "mountPermissions": " MOUNT PERMISSIONS ", "allowDev": ALLOW DEV , "allowSuid": ALLOW SUID , "noRootSquash": ENABLE ROOT SQUASH , } ], }' Because updating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .
-- The reservations section in the output shows reserved IP address ranges. curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "X-Goog-User-Project: PROJECT ID " \ -H "Content-Type: application/json" \ "https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /networks/ NETWORK NAME " Create and update an IP address reservation To create a new IP address reservation or update an existing one: gcloud Run the gcloud bms networks update command to manage IP address reservations: gcloud bms networks update NETWORK NAME --project= PROJECT ID --region REGION --add-ip-range-reservation=start-address= START ADDRESS ,end-address= END ADDRESS ,note=" NOTE " To remove all IP address reservations, add the --clear-ip-range-reservations option.
-
-### "Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\
-
-- URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr)
-- Source ID: `site-docs-root-2`
-- Final score: 186
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- During the PoC, we learned how to configure multiple elements together successfully – Oracle, Google Cloud Backup and DR, storage, and regional extension links – in a Bare Metal Solution environment.
-- If the Oracle service name is not listed, create a service name entry on the server(s) in the tnsnames.ora file located at $ORACLE HOME/network/admin or at $GRID HOME/network/admin by adding the following entry: CLU1 S = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = )(PORT = 1521)) (CONNECT DATA = (SERVER = DEDICATED) (SERVICE NAME = CLU1 S) ) ) If the tnsnames.ora file is in a non-standard location, provide the absolute path to the file in the Application Details and Settings page described in Configure application details and settings for Oracle databases .
-- If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.
-- Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host.
 
 ### Best practices for Oracle on Bare Metal Solution \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices](https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices)
 - Source ID: `site-docs-root`
-- Final score: 186
+- Final score: 84
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Follow these steps: Install dnsmasq . yum makecache yum install dnsmasq Open the /etc/dnsmasq.conf file in edit mode. vi /etc/dnsmasq.conf In the /etc/dnsmasq.conf file, add the following lines: port=53 domain-needed bogus-priv strict-order expand-hosts domain=localdomain address=/.localdomain/127.0.0.1 address=//127.0.0.1 listen-address=127.0.0.1 resolv-file=/etc/dnsmasq-resolv.conf Edit the /etc/dnsmasq-resolv.conf file and the /etc/resolv.conf file to contain only the following line: nameserver 127.0.0.1 Start the dnsmasq service: systemctl restart dnsmasq systemctl status dnsmasq On both nodes, run the nslookup command. nslookup at-2811641-svr001 Server: 127.0.0.1 Address: 127.0.0.1#53 Name: at-2811641-svr001 Address: 192.168.1.10 nslookup at-2811641-svr002 Server: 127.0.0.1 Address: 127.0.0.1#53 Name: at-2811641-svr002 Address: 192.168.1.11 Install NTP When you install NTP, ensure that all the RAC nodes sync with the time of your jump host or your internal NTP server.
+- 3600 a0980383143524f2b50476d59554e dm - 7 NETAPP , LUN C - Mode size = xxxG features = ' 4 queue if no path pg init retries 50 retain attached hw handle ' hwhandler = ' 1 alua ' wp = rw -+- policy = ' service - time 0 ' prio = 50 status = active - 14 : 0 : 3 : 2 sdf 8 : 80 active read y run ning - 16 : 0 : 5 : 2 sdv 65 : 80 active read y run ning -+- policy = ' service - time 0 ' prio = 10 status = enabled - 14 : 0 : 2 : 2 sdc 8 : 32 active read y run ning ` - 16 : 0 : 3 : 2 sdq 65 : 0 active read y run ning Use jumbo frames To prevent fragmentation of packets as they travel from one server to another in a RAC environment, Oracle recommends configuring your server interfaces with jumbo frames.
+- 8980 bytes from svr001 ( 172 .16.1.10 ) : icmp seq = 1 ttl = 64 time = 0 .153 ms 8980 bytes from svr001 ( 172 .16.1.10 ) : icmp seq = 2 ttl = 64 time = 0 .151 ms --- svr001 ping statistics --- 2 packets transmitted, 2 received, 0 % packet loss, time 1001ms rtt min/avg/max/mdev = 0 .151/0.152/0.153/0.001 ms Oracle RMAN backups and latency impact If the Oracle RMAN backup process is not limited by the RATE parameter, it can push storage throughput or IOPS to the performance limit for a storage volume.
+- The following examples show the output from these commands for a server that synchronizes successfully: timedatectl show -p NTPSynchronized NTPSynchronized=yes synchronised to NTP server (216.239.35.8) at stratum 3 time correct to within 49 ms polling server every 1024 s View Oracle VM CPU count and memory details To view information about an Oracle VM (OVM) host, including CPU and memory details, use the xm info command.
+
+### SAP HANA planning guide \_|\_ SAP on Google Cloud \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide](https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 80
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In this case, 192.x.x.x is your Bare Metal Solution server. restrict 192.x.x.x mask 255.255.255.0 nomodify notrap server 10.x.x.x prefer To start syncing, update the time server to start syncing. ntpdate -qu SERVER NAME Run root script on one node at a time Run the root script root.sh on one node at a time.
-- Use a name server as a substitute for Cloud DNS If you don't want to use the Cloud DNS, then install your own name server to resolve host IP addresses on the Bare Metal Solution server.
-- To configure jumbo frames on Bare Metal Solution servers for Oracle RAC: View the settings of your Bare Metal Solution private network to confirm that jumbo frames have been configured: gcloud bms networks describe NETWORK NAME -- project = PROJECT ID -- region = REGION grep jumboFramesEnabled Sample output: jumboFramesEnabled : true Identify the network interfaces and their mtu size: ip link show grep mtu Sample output: 1 : lo : < LOOPBACK , UP , LOWER UP > mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000 2 : enp55s0f1 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 3 : enp55s0f2 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 4 : enp55s0f3 : < NO - CARRIER , BROADCAST , MULTICAST , UP > mtu 1500 qdisc mq state DOWN mode DEFAULT group default qlen 1000 5 : enp17s0f0 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000 6 : enp17s0f1 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond1 state UP mode DEFAULT group default qlen 1000 7 : enp173s0f0 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000 8 : enp173s0f1 : < BROADCAST , MULTICAST , SLAVE , UP , LOWER UP > mtu 1500 qdisc mq master bond1 state UP mode DEFAULT group default qlen 1000 9 : bond1 : < BROADCAST , MULTICAST , MASTER , UP , LOWER UP > mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000 10 : bond1 .
-- Use a uniform LUN size Create no more than two ASM disk groups Stripe ASM disk groups across all LUNs in all volumes Use LUNs and volumes with the same performance characteristics in the same disk group Do not share storage volumes across multiple RAC clusters Know the required IOPS and throughput capacity before you create ASM disk groups Leave the multipath configuration as-is Configure important settings for ASM Create your ASM disk group with external redundancy Reboot your Bare Metal Solution servers after ASM disk creation Use a uniform LUN size The LUN size you select should be representative of the unit of growth.
+- For details about how to deploy SAP HANA on Google Cloud, see: For single-host scale-up and multi-host scale-out deployments, see: Terraform: SAP HANA scale-up deployment guide For scale-out system with host auto-failover deployments, see: Terraform: SAP HANA scale-out system with host auto-failover deployment guide For scale-up high-availability cluster configurations, see: Terraform: SAP HANA scale-up high-availability cluster configuration guide Manual HA scale-up cluster configuration on RHEL Manual HA scale-up cluster configuration on SLES For scale-out high-availability cluster configurations, see: Terraform: SAP HANA scale-out high-availability cluster configuration guide Manual HA scale-out cluster configuration on SLES About SAP HANA on Google Cloud SAP HANA is an in-memory, column-oriented, relational database that provides high-performance analytics and real-time data processing.
+- To apply all of the recommended SAP HANA settings, including both of the preceding kernel parameters, specify the following saptune command: saptune solution apply HANA For more information about configuring SLES for SAP HANA, see: SAP note 2205917 - SAP HANA DB: Recommended OS settings for SLES 12 / SLES for SAP Applications 12 SAP note 2684254 - SAP HANA DB: Recommended OS settings for SLES 15 / SLES for SAP Applications 15 Memory-error recovery with Fast Restart on Compute Engine instances Enabling SAP HANA Fast Restart on compute instances in the M2, M3, and M4 families of Compute Engine memory-optimized machine types reduces the time it takes SAP HANA to recover from uncorrectable memory errors.
+- Evaluate your SAP workload using Workload Manager - a rule-based validation service that lets you scan your workloads and detect deviations from standards, rules, and best practices prescribed by SAP, Google Cloud, and OS vendors.
+- To connect resources from multiple projects to a common VPC network, you can use Shared VPC , so that the resources can communicate with each other securely and efficiently by using internal IP addresses from that network.
+
+### "SAP HANA high-availability planning guide \_|\_ SAP on Google Cloud \_|\_\
+
+- URL: [https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide](https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide)
+- Source ID: `site-docs-reference-2`
+- Final score: 79
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Typical non-cloud deployments use a gratuitous Address Resolution Protocol (ARP) request to announce the movement and reallocation of a VIP to a new MAC address.
+- As a starting point, the following list shows some HA cluster resources and the associated permissions that they require: Fencing compute.instances.list compute.instances.get compute.instances.reset compute.instances.stop compute.instances.start logging.logEntries.create compute.zones.list VIP implemented by using an alias IP compute.instances.list compute.instances.get compute.zones.list logging.logEntries.create compute.instances.updateNetworkInterface compute.zoneOperations.get logging.logEntries.create VIP implemented by using static routes compute.instances.list compute.instances.get compute.zones.list logging.logEntries.create compute.routes.get compute.routes.create compute.routes.delete compute.routes.update compute.routes.list compute.networks.updatePolicy compute.networks.get compute.globalOperations.get logging.logEntries.create VIP implemented by using an internal load balancer No specific permissions required - the load balancer operates on health check statuses that does not require the cluster to interact with or change resources in Google Cloud Virtual IP implementation on Google Cloud A high-availability cluster uses a floating or virtual IP address (VIP) to move its workload from one cluster node to another in the event of an unexpected failure or for scheduled maintenance.
+- For example: primitive rsc SAPHanaTopology HA1 HDB00 ocf:suse:SAPHanaTopology \ operations \$id="rsc sap2 HA1 HDB00-operations" \ op monitor interval="10" timeout="600" \ op start interval="0" timeout="600" \ op stop interval="0" timeout="300" \ params SID="HA1" InstanceNumber="00" clone cln SAPHanaTopology HA1 HDB00 rsc SAPHanaTopology HA1 HDB00 \ meta is-managed="true" clone-node-max="1" target-role="Started" interleave="true" The timeout values affect each of the resource operations differently, as explained in the following table.
+- To change the account that is used by the storage manager for SAP HANA, perform the following steps: Make sure that the service account is available on each of the hosts in the scale-out SAP HANA system: gcloud auth list In the global.ini file, update the [storage] section with the service account: [storage] ha provider = gceStorageClient ... partition gcloudAccount = SERVICE ACCOUNT Replace SERVICE ACCOUNT with the name of the service account, in email address format, that is used by the storage manager for SAP HANA.
 

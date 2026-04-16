@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:06.158Z"
+generated_at: "2026-04-12T12:13:34.781Z"
 product_name: "Data Catalog"
 product_slug: "data-catalog"
 feature_name: "Data Catalog regional availability in asia-southeast1"
@@ -9,9 +9,10 @@ latest_feature_date: "2020-11-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/data-catalog/docs/release-notes"
   - "https://docs.cloud.google.com/iam/docs/deny-permissions-support"
   - "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support"
+  - "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient"
 keywords:
   - "catalog"
   - "regional"
@@ -38,35 +39,22 @@ Data Catalog is available in Singapore (asia-southeast1).
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/data-catalog/docs/release-notes](https://docs.cloud.google.com/data-catalog/docs/release-notes)
 - [https://docs.cloud.google.com/iam/docs/deny-permissions-support](https://docs.cloud.google.com/iam/docs/deny-permissions-support)
 - [https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)
+- [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient)
 
 ## Supporting Pages
-
-### Data Catalog release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/data-catalog/docs/release-notes](https://docs.cloud.google.com/data-catalog/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: MODERATE
-- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
-
-Evidence snippets:
-- November 11, 2020 v1 Feature Data Catalog is now available in Singapore ( asia-southeast1 ).
-- March 08, 2021 v1 Announcement Data Catalog is now available in Toronto ( northamerica-northeast2 ), Melbourne ( australia-southeast2 ), and Delhi ( asia-south2 ).
-- October 17, 2020 v1 Feature Data Catalog is now available in Tulsa ( us-central2 ) and the Asia multiregion ( asia ).
-- September 04, 2020 v1 Feature Data Catalog is now available in Jakarta ( asia-southeast2 ).
 
 ### "Permissions supported in deny policies \_|\_ Identity and Access Management\
 
 - URL: [https://docs.cloud.google.com/iam/docs/deny-permissions-support](https://docs.cloud.google.com/iam/docs/deny-permissions-support)
 - Source ID: `site-iam-reference`
-- Final score: 146
+- Final score: 172
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)
 - Source ID: `site-iam-reference`
-- Final score: 146
+- Final score: 172
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +75,30 @@ Evidence snippets:
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 - Home Documentation Security IAM Reference Send feedback Support levels for permissions in custom roles Stay organized with collections Save and categorize content based on your preferences.
 - Each permission has one of the following support levels for use in custom roles: Support level Description SUPPORTED The permission is fully supported in custom roles.
+
+### "Class DataCatalogAsyncClient (3.29.0) \_|\_ Python client libraries \_|\_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 166
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 from google.iam.v1 import iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 from google.iam.v1 import iam policy pb2 # type: ignore async def sample get iam policy(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 from google.iam.v1 import iam policy pb2 # type: ignore async def sample set iam policy(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 async def sample rename tag template field enum value(): Create a client client = datacatalog v1 .
+
+### "Class DataCatalogClient (3.29.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient)
+- Source ID: `site-python-reference`
+- Final score: 166
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 from google.iam.v1 import iam policy pb2 # type: ignore def sample test iam permissions(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 from google.iam.v1 import iam policy pb2 # type: ignore def sample get iam policy(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 from google.iam.v1 import iam policy pb2 # type: ignore def sample set iam policy(): Create a client client = datacatalog v1 .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 def sample rename tag template field enum value(): Create a client client = datacatalog v1 .
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:48.445Z"
+generated_at: "2026-04-12T12:18:03.486Z"
 product_name: "Network Intelligence Center"
 product_slug: "network-intelligence-center"
 feature_name: "Firewall Insights shadowed rule insights"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-03-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/configure-policies"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
 keywords:
   - "firewall"
   - "insights"
@@ -38,45 +39,69 @@ Firewall Insights shows shadowed rule insights for hierarchical firewall policie
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions](https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/configure-policies](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/configure-policies)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging)
 
 ## Supporting Pages
 
-### Roles and permissions | Network Intelligence Center - Firewall Insights | Google Cloud Documentation
+### "Firewall Insights overview \_|\_ Network Intelligence Center - Firewall\
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions](https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions)
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview)
+- Source ID: `site-docs-root`
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Note: For firewall rules in hierarchical firewall policies and global network firewall policies, insights are generated based on firewall logging data gathered only after February 27, 2023.
+- For firewall policies , you can get insights into firewall rules that are associated with a firewall policy.
+- Where you can view metrics and insights You can view Firewall Insights metrics and insights in the following Google Cloud console locations: On the Firewall Insights page On the details page for a VPC firewall rule On the details page for a VPC network interface In the Active Assist The Firewall Insights landing page in the Google Cloud console provides cards for all the insights.
+- With these insights, you can perform the following tasks: Identify firewall misconfigurations for firewall rules containing IPv4 or IPv6 address ranges.
+
+### "Best practices for Cloud Network Insights \_|\_ Network Intelligence Center\
+
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices)
 - Source ID: `site-iam-reference`
-- Final score: 86
+- Final score: 149
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Networking Network Intelligence Center Cloud Network Insights Guides Best practices for Cloud Network Insights Stay organized with collections Save and categorize content based on your preferences.
+- Enable in a dedicated Google Cloud project While you can enable Cloud Network Insights in any Google Cloud project, we recommend creating a new, dedicated project for enabling Cloud Network Insights.
+- For example, create an alarm rule with a Minor severity level in AppNeta and a second alarm rule with a Major severity level.
+- Use multiple severities when creating alarm rules When creating alarm rules, define multiple rules for the same metric.
+
+### "Create and configure monitoring policies \_|\_ Network Intelligence Center\
+
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/configure-policies](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/configure-policies)
+- Source ID: `site-iam-reference`
+- Final score: 149
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Single monitoring policies : An individual set of rules for defining a specific monitoring scenario.
+- Web paths measure app responsiveness, including the following: DNS resolution time TCP/TLS handshake time HTTP status codes (for example, 200 OK or 503 Service Unavailable ) You can set web monitoring policies to emulate user behaviors in the browser using Selenium scripts or to emulate API calls through HTTP or HTTPS requests.
+- Home Documentation Networking Network Intelligence Center Cloud Network Insights Guides Create and configure monitoring policies Stay organized with collections Save and categorize content based on your preferences.
+- Types of monitoring Cloud Network Insights supports two types of monitoring policies: network monitoring (network paths) and web monitoring (web paths).
+
+### "Set up logging \_|\_ Network Intelligence Center - Cloud Network Insights\
+
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging)
+- Source ID: `site-iam-reference`
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Roles and permissions Network Intelligence Center - Firewall Insights Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions This page describes the Identity and Access Management (IAM) roles and permissions needed for running Firewall Insights · You can grant users or service accounts permissions or a predefined role, or you can create a custom role that uses permissions that you specify.
-
-### Performance Dashboard overview | Network Intelligence Center - Performance Dashboard | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview](https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview)
-- Source ID: `site-docs-root`
-- Final score: 72
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Performance Dashboard overview Network Intelligence Center - Performance Dashboard Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview Performance Dashboard shows packet loss and latency metrics (in summary charts and heatmap views) for zones where you have Compute Engine virtual machine (VM) instances.
-- For example, your project has a Virtual Private Cloud (VPC) network with VMs in zones A and B.
-- It provides current data and metrics for the past six weeks.
-
-### Cloud Network Insights overview | Network Intelligence Center - Cloud Network Insights | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview)
-- Source ID: `site-docs-root`
-- Final score: 65
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Cloud Network Insights overview Network Intelligence Center - Cloud Network Insights Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview Cloud Network Insights uses active synthetic probing to monitor these complex paths from the perspective of the user or the application, allowing you to monitor network routes even when no user traffic is present.
+- Cloud Network Insights logs use one of the following for logName : Alarm logs - networkmanagement.googleapis.com/insights alarm Event logs - networkmanagement.googleapis.com/insights event For more information, see Build and save queries by using the Logging query language .
+- This page provides information about how Cloud Network Insights integrates with AppNeta for alarm generation and how these alarms are sent to Google Cloud for analysis, viewing, and alert policy creation.
+- Event Logs Log Name : networkmanagement.googleapis.com/insights event Trigger : Generated when a structural change occurs (for example, Route Change , MTU Change , or Monitoring Point Offline ).
+- View logs in Google Cloud Cloud Network Insights exports detailed logs in Cloud Logging to help you analyze and troubleshoot network performance and significant events.
 

@@ -1,90 +1,86 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.158Z"
+generated_at: "2026-04-14T07:16:06.780Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "Python 3.7 runtime"
 feature_slug: "python-3-7-runtime"
-latest_feature_date: "2016-08-01"
+latest_feature_date: "2018-12-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/python3/runtime"
-  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
-  - "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+  - "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle"
+  - "https://cloud.google.com/appengine/docs/standard/apis"
+  - "https://docs.cloud.google.com/appengine/docs/standard/apis"
 keywords:
-  - "instructed"
-  - "published"
-  - "notes"
-  - "users"
-  - "were"
+  - "execution"
+  - "provides"
   - "runtime"
-  - "python"
-  - "and"
 ---
 
 # Python 3.7 runtime
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Python 3.7 runtime notes were published, and Python 3.7 users were instructed to continue using the 1.9.40 SDK.
+The Python 3.7 runtime provides a Python 3 execution environment for App Engine standard applications; The Python 3.7 runtime provides a Python 3 execution environment for App Engine standard applications.
 
 ## Extended Definition
 
-Python 3.7 runtime notes were published, and Python 3.7 users were instructed to continue using the 1.9.40 SDK.
+The Python 3.7 runtime provides a Python 3 execution environment for App Engine standard applications; The Python 3.7 runtime provides a Python 3 execution environment for App Engine standard applications.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/python3/runtime](https://docs.cloud.google.com/appengine/docs/standard/python3/runtime)
-- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
-- [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled)
+- [https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle](https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle)
+- [https://cloud.google.com/appengine/docs/standard/apis](https://cloud.google.com/appengine/docs/standard/apis)
+- [https://docs.cloud.google.com/appengine/docs/standard/apis](https://docs.cloud.google.com/appengine/docs/standard/apis)
 
 ## Supporting Pages
 
-### "Python 3 Runtime Environment \_|\_ App Engine standard environment \_|\_\
+### "Runtime lifecycle \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/python3/runtime](https://docs.cloud.google.com/appengine/docs/standard/python3/runtime)
-- Source ID: `site-docs-root-2`
-- Final score: 142
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle](https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle)
+- Source ID: `site-docs-reference-4`
+- Final score: 69
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Python 3 Runtime Environment Stay organized with collections Save and categorize content based on your preferences.
-- The Python runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : python VERSION Where VERSION is the Python MAJOR and MINOR version numbers.
-- The Python runtime is the software stack responsible for installing your web service's code and its dependencies and running your App Engine service.
-- For other supported Python versions, and the corresponding Ubuntu version for your Python version, see the Runtime support schedule .
+- Google provides support for a runtime during General availability (GA) .
+- Runtime lifecycle GA-level support End of Support Deprecated Decommissioned Creation & redeployment Yes No 1 No No Project Configuration Updates Yes Yes No No Running existing workloads Yes Yes Yes May be disabled UI & CLI Warnings Yes Yes No No Language patches Automatic No automatic updates No automatic updates No automatic updates Patching APIs & SDKs Automatic No automatic updates No automatic updates No automatic updates Patching OS Automatic No automatic updates No automatic updates No automatic updates Customer Support GA-level support No runtime support No runtime support No runtime support Notification period App Engine will begin issuing in-app notifications 90 days before the application reaches end of support.
+- For details, see the migration guides: Migrate from Python 2.7 to the latest Python runtime Migrate from PHP 5 to the latest PHP runtime Migrate from Go 1.11 to the latest Go runtime Migrate from Java 8 to the latest Java runtime In certain cases, Google may permit your Organization to re-enable deployments in unsupported runtimes, subject to service specific terms and conditions.
+- In certain cases, Google may permit your organization to re-enable deployments for legacy runtimes using an organization policy . ↩ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 
-### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
+### "APIs & Reference \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
-- Source ID: `site-docs-root`
-- Final score: 110
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/apis](https://docs.cloud.google.com/appengine/docs/standard/apis)
+- Source ID: `site-docs-reference`
+- Final score: 55
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Go Java Node.js PHP Python Ruby To authenticate users in Google Cloud applications, Google offers the following user authentication methods: Authentication Service Summary Identity Platform (recommended) Authenticate users using passwords, phone numbers, popular federated identity providers like Google, Facebook, Twitter, and any provider that supports SAML or OpenID Connect protocol.
-- This solution works well if you are upgrading an existing app from a first-generation runtime to a second-generation runtime, and want to continue to use the Users API.
-- Users API Note: The Users API is only supported for Python, Java, Go, and PHP apps that use the legacy bundled services .
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- App Engine legacy bundled services APIs App Engine legacy bundled services APIs for Go Use the legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.
+- Cloud Client Libraries Cloud Client Libraries for Go A client library that embraces idioms of Go and provides high-level API abstractions so that you can easily access Google Cloud services.
+- App Engine legacy bundled services APIs for Python Use the App Engine legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.
+- App Engine legacy bundled services APIs for PHP Use the App Engine legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.
 
-### "How requests are handled \_|\_ App Engine standard environment \_|\_ Google\
+### "APIs & Reference \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled](https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled)
-- Source ID: `site-docs-root`
-- Final score: 110
-- Re-rank relevance: N/A
+- URL: [https://cloud.google.com/appengine/docs/standard/apis](https://cloud.google.com/appengine/docs/standard/apis)
+- Source ID: `site-docs-reference-3`
+- Final score: 55
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- The following limits apply specifically to the use of request handlers: Limit Amount Request size 32 megabytes Response size 32 megabytes Request timeout Depends on the type of scaling your app uses Maximum total number of files (app files and static files) 10,000 total 1,000 per directory Maximum size of an application file 32 megabytes Maximum size of a static file 32 megabytes Maximum total size of all application and static files First 1 gigabyte is free $ 0.026 per gigabyte per month after first 1 gigabyte Pending request timeout 10 seconds Maximum size of a single request header field 8 kilobytes for second-generation runtimes in the standard environment.
-- Response caching The Google Front End, and potentially the user's browser and other intermediate caching proxy servers, will cache your app's responses as instructed by standard caching headers that you specify in the response.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- The following response headers that you can set in app.yaml influence how and when the Google Front End caches content: Cache-Control should be set to public for the Google Front End to cache content; it may also be cached by the Google Front End unless you specify a Cache-Control private or no-store directive.
+- App Engine legacy bundled services APIs App Engine legacy bundled services APIs for Go Use the legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.
+- Cloud Client Libraries Cloud Client Libraries for Go A client library that embraces idioms of Go and provides high-level API abstractions so that you can easily access Google Cloud services.
+- App Engine legacy bundled services APIs for Python Use the App Engine legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.
+- App Engine legacy bundled services APIs for PHP Use the App Engine legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.
 

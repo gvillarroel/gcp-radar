@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:44.360Z"
+generated_at: "2026-04-12T12:17:52.278Z"
 product_name: "Memorystore for Redis"
 product_slug: "memorystore-for-redis"
 feature_name: "Cross-region access"
 feature_slug: "cross-region-access"
 latest_feature_date: "2021-08-02"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/access-control"
+  - "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
 keywords:
   - "cross"
   - "region"
@@ -24,7 +27,7 @@ keywords:
 # Cross-region access
 
 Product: Memorystore for Redis
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,69 @@ Cross-region access allows clients to access Memorystore for Redis across region
 
 Cross-region access allows clients to access Memorystore for Redis across regions.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview](https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview)
+- [https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances](https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances)
+- [https://docs.cloud.google.com/memorystore/docs/redis/access-control](https://docs.cloud.google.com/memorystore/docs/redis/access-control)
+- [https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance](https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Memorystore for Redis overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview](https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview)
+- Source ID: `site-docs-root`
+- Final score: 265
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Combined with Dataflow, Memorystore for Redis provides a scalable, fast in-memory store for storing intermediate data that thousands of clients can access with very low latency.
+- Connect to a Memorystore for Redis instance You can use any standard Redis client on the following environments to connect to your Memorystore for Redis instance : App Engine flexible environment App Engine standard environment Compute Engine VM instances Cloud Run functions Cloud Run Google Kubernetes Engine clusters Some serverless environments require a Serverless VPC Access connector as a prerequisite for connectivity with Memorystore for Redis.
+- Memorystore for Redis provides a fully-managed service that is powered by the Redis in-memory data store to build application caches that provide sub-millisecond data access.
+- Memorystore for Redis provides low latency access and high throughput for heavily accessed data, compared to accessing the data from a disk based backend store.
+
+### "MCP Tools Reference: redis.googleapis.com \_|\_ Memorystore for Redis \_\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances](https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances)
+- Source ID: `site-api-reference`
+- Final score: 249
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Unique name of the resource in this scope including project and location using the form: projects/{project id}/locations/{location id}/instances/{instance id} Note: Redis instances are managed and addressed at regional level so location id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in.
+- Home Documentation Databases Memorystore Memorystore for Redis Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences.
+- The resource name of the instance location using the form: projects/{project id}/locations/{location id} where location id refers to a GCP region. pageSize integer The maximum number of items to return.
+- For PRIVATE SERVICE ACCESS mode value must be the name of an allocated address range associated with the private service access connection, or "auto". host string Output only.
+
+### Access control with IAM \_|\_ Memorystore for Redis \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/access-control](https://docs.cloud.google.com/memorystore/docs/redis/access-control)
+- Source ID: `site-docs-root`
+- Final score: 247
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In particular, the basic roles provide access to resources across Google Cloud, rather than just for Memorystore for Redis.
+- The following table lists the permissions that the user invoking a gcloud command must have for each gcloud redis subcommand: Command Required permissions gcloud redis instances auth redis.instances.updateAuth redis.instances.getAuthString gcloud redis instances create redis.instances.get redis.instances.create gcloud redis instances delete redis.instances.delete gcloud redis instances update redis.instances.get redis.instances.update gcloud redis instances list redis.instances.list gcloud redis instances describe redis.instances.get gcloud redis instances import redis.instances.import gcloud redis instances export redis.instances.export gcloud redis instances upgrade redis.instances.upgrade gcloud redis operations list redis.operations.list gcloud redis operations describe redis.operations.get gcloud redis regions list redis.locations.list gcloud redis regions describe redis.locations.get gcloud redis zones list redis.locations.list Required permissions for API methods The following table lists the permissions that the caller must have to call each method in the Memorystore for Redis API or to perform tasks using Google Cloud tools that use the API (such as the Google Cloud console or the gcloud command line tool): Note : To call a method, in addition to the permissions in the following table, you must also have the required scopes.
+- View your instance's service account To view the service account for your instance, run the following command and make a note of the service account listed under persistenceIamIdentity : gcloud redis instances describe [ INSTANCE ID ] --region=[REGION] Redis AUTH permissions The following table shows the minimum permissions a user needs to complete some basic Memorystore for Redis AUTH tasks.
+- Full access and control for all Google Cloud resources; manage user access roles/editor Editor All redis permissions except for .getIamPolicy & .setIamPolicy Read-write access to all Google Cloud and Redis resources (full control except for the ability to modify permissions) roles/viewer Viewer redis. .get redis. .list Read-only access to all Memorystore for Redis resources.
+
+### "MCP Tools Reference: redis.googleapis.com \_|\_ Memorystore for Redis \_\
+
+- URL: [https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance](https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance)
+- Source ID: `site-api-reference`
+- Final score: 245
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Unique name of the resource in this scope including project and location using the form: projects/{project id}/locations/{location id}/instances/{instance id} Note: Redis instances are managed and addressed at regional level so location id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in.
+- Home Documentation Databases Memorystore Memorystore for Redis Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences.
+- For PRIVATE SERVICE ACCESS mode value must be the name of an allocated address range associated with the private service access connection, or "auto". host string Output only.
+- The resource name of the instance location using the form: projects/{project id}/locations/{location id} where location id refers to a GCP region. instanceId string Required.
 

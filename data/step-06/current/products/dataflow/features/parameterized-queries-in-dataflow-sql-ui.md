@@ -1,33 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.847Z"
+generated_at: "2026-04-15T12:05:13.840Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Parameterized queries in Dataflow SQL UI"
 feature_slug: "parameterized-queries-in-dataflow-sql-ui"
 latest_feature_date: "2020-04-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/job-builder"
-  - "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2"
 keywords:
   - "parameterized"
   - "queries"
-  - "in"
   - "dataflow"
   - "sql"
   - "ui"
-  - "the"
   - "supports"
+  - "running"
 ---
 
 # Parameterized queries in Dataflow SQL UI
 
 Product: Dataflow
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,69 +37,54 @@ The Dataflow SQL UI supports running parameterized SQL queries.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template)
-- [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
-- [https://docs.cloud.google.com/dataflow/docs/guides/job-builder](https://docs.cloud.google.com/dataflow/docs/guides/job-builder)
-- [https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job](https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job)
+- [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery)
+- [https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk](https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk)
+- [https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2](https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2)
 
 ## Supporting Pages
 
-### "Quickstart: Create a streaming pipeline using a Dataflow template \_|\_\
+### "Spanner change streams to BigQuery template \_|\_ Cloud Dataflow \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template)
-- Source ID: `site-docs-root`
-- Final score: 206
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery)
+- Source ID: `site-api-reference`
+- Final score: 67
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- To get the permissions that you need to complete this quickstart, ask your administrator to grant you the following IAM roles on your project: BigQuery User ( roles/bigquery.user ) Dataflow Admin ( roles/dataflow.admin ) Service Account User ( roles/iam.serviceAccountUser ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
-- Delete the individual resources If you want to keep the Google Cloud project that you used in this quickstart, then delete the individual resources: Go to the Dataflow Jobs page.
-- To ensure that the Compute Engine default service account has the necessary permissions to run the Dataflow job, ask your administrator to grant the following IAM roles to the Compute Engine default service account on your project: Important: You must grant these roles to the Compute Engine default service account, not to your user account.
-- What's next Dataflow templates overview Creating classic templates Running classic templates Google-provided templates Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Specifically:\n" + " - For Cloud Spanner JSON type, the order of the members of an object is" + " lexicographically ordered, but there is no such guarantee for BigQuery JSON type.\n" + " - Cloud Spanner supports nanoseconds TIMESTAMP type, BigQuery only supports" + " microseconds TIMESTAMP type.\n" , "Learn more about <a href=\"https://cloud.google.com/spanner/docs/change-streams\">change" + " streams</a>, <a" + " href=\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow\">how to" + " build change streams Dataflow pipelines</a>, and <a" + " href=\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow#best practices\">best" + " practices</a>." }, optionsClass = SpannerChangeStreamsToBigQueryOptions . class , flexContainerName = "googlecloud-to-googlecloud" , documentation = "https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery" , contactInformation = "https://cloud.google.com/support" , requirements = { "The Cloud Spanner instance must exist prior to running the pipeline." , "The Cloud Spanner database must exist prior to running the pipeline." , "The Cloud Spanner metadata instance must exist prior to running the pipeline." , "The Cloud Spanner metadata database must exist prior to running the pipeline." , "The Cloud Spanner change stream must exist prior to running the pipeline." , "The BigQuery dataset must exist prior to running the pipeline." }, streaming = true , supportsExactlyOnce = true , supportsAtLeastOnce = true ) public final class SpannerChangeStreamsToBigQuery { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( SpannerChangeStreamsToBigQuery . class ); // Max number of deadletter queue retries. private static final int DLQ MAX RETRIES = 5 ; private static final String USE RUNNER V2 EXPERIMENT = "use runner v2" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); LOG . info ( "Starting to replicate change records from Spanner change streams to BigQuery" ); SpannerChangeStreamsToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( SpannerChangeStreamsToBigQueryOptions . class ); run ( options ); } private static void validateOptions ( SpannerChangeStreamsToBigQueryOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( "dlqRetryMinutes must be positive." ); } if ( options . getBigQueryChangelogTableNameTemplate () . equals ( BigQueryUtils .
+- Mod changeStreamsMod : input . getMods ()) { Mod mod = new Mod ( changeStreamsMod . getKeysJson (), changeStreamsMod . getNewValuesJson (), input . getCommitTimestamp (), input . getServerTransactionId (), input . isLastRecordInTransactionInPartition (), input . getRecordSequence (), input . getTableName (), input . getRowType (). stream (). map ( ModColumnType :: new ). collect ( Collectors . toList ()), input . getModType (), input . getValueCaptureType (), input . getNumberOfRecordsInTransaction (), input . getNumberOfPartitionsInTransaction ()); String modJsonString ; try { modJsonString = mod . toJson (); } catch ( IOException e ) { // Ignore exception and print bad format. modJsonString = String . format ( "\"%s\"" , input ); } receiver . output ( modJsonString ); } } } } Production considerations When running the Spanner Change Streams to BigQuery template in a production environment, consider the following best practices to help ensure reliability and prevent data loss: Worker provisioning and scaling Set maxNumWorkers adequately: Insufficient Dataflow workers can cause the pipeline to fall behind in processing change stream data.
+- For the NEW ROW value capture type, the template is more" + " efficient, because the data change record captures the full new row including columns" + " that are not updated in UPDATEs, and the template does not need to do a stale read.\n" + "- You can minimize network latency and network transport costs by running the Dataflow" + " job from the same region as your Cloud Spanner instance or BigQuery tables.
+- See" + " more about Dataflow regional endpoints.\n" + "- This template supports all valid Cloud Spanner data types, but if the BigQuery type" + " is more precise than the Cloud Spanner type, precision loss might occur during the" + " transformation.
 
-### "Develop Apache Beam notebooks with the interactive runner \_|\_ Cloud Dataflow\
+### Install the Apache Beam SDK \_|\_ Cloud Dataflow \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development](https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development)
-- Source ID: `site-docs-root`
-- Final score: 194
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The following notebooks are available: Word Count Streaming Word Count Streaming NYC Taxi Ride Data Apache Beam SQL in notebooks with comparisons to pipelines Apache Beam SQL in notebooks with the Dataflow Runner Apache Beam SQL in notebooks Dataflow Word Count Interactive Flink at Scale RunInference Use GPUs with Apache Beam Visualize Data The Tutorials folder contains additional tutorials that explain the fundamentals of Apache Beam.
-- Advanced features include the following workflows: Use Interactive FlinkRunner on notebook-managed clusters Use Beam SQL and beam sql magic Accelerate using JIT compiler and GPU Build a custom container Disable external IP addresses Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- This location is used to store temporary files or intermediate results before outputting to the sink. options . view as ( GoogleCloudOptions ) . temp location = ' %s /temp' % dataflow gcs location If and only if you are using Apache Beam SDK built from source code, set the SDK location.
-- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Develop Apache Beam notebooks with the interactive runner Stay organized with collections Save and categorize content based on your preferences.
-
-### Job builder UI overview \_|\_ Cloud Dataflow \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/job-builder](https://docs.cloud.google.com/dataflow/docs/guides/job-builder)
-- Source ID: `site-docs-root-2`
-- Final score: 182
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2](https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2)
+- Source ID: `site-docs-reference-2`
+- Final score: 56
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- In this image, the user is creating a pipeline to read from Pub/Sub to BigQuery: Overview The job builder supports reading and writing the following types of data: Pub/Sub messages BigQuery table data CSV files, JSON files, and text files in Cloud Storage PostgreSQL, MySQL, Oracle, and SQL Server table data It supports pipeline transforms including filter, map, SQL, group-by, join, and explode (array flatten).
-- With the job builder you can: Stream from Pub/Sub to BigQuery with transforms and windowed aggregation Write data from Cloud Storage to BigQuery Use error handling to filter erroneous data (dead-letter queue) Manipulate or aggregate data using SQL with the SQL transform Add, modify, or drop fields from data with mapping transforms Schedule recurring batch jobs The job builder can also save pipelines as Apache Beam YAML files and load pipeline definitions from Beam YAML files.
-- The job builder is a visual UI for building and running Dataflow pipelines in the Google Cloud console, without writing code.
-- By using this feature, you can design your pipeline in the job builder and then store the YAML file in Cloud Storage or a source control repository for reuse.
+- The console will contain a message like the following, which contains the Dataflow SDK version information: Python To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner .
+- The console will contain a message like the following, which contains the Dataflow SDK version information: Go To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner .
+- Java To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowPipelineRunner or BlockingDataflowPipelineRunner .
+- To upgrade an existing installation of apache-beam, use the --upgrade flag: pip install --upgrade 'apache-beam[gcp]' As of October 7, 2020, Dataflow no longer supports Python 2 pipelines.
 
-### "Create a custom job with the job builder \_|\_ Cloud Dataflow \_|\_ Google\
+### Install the Apache Beam SDK \_|\_ Cloud Dataflow \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job](https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job)
-- Source ID: `site-docs-root-2`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk](https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 56
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Run the following command in your shell or terminal: gcloud dataflow yaml run my-job-builder-job --yaml-pipeline-file = YAML FILE PATH Replace YAML FILE PATH with the path of your YAML file, either locally or in Cloud Storage.
-- Run the pipeline To run a pipeline from the job builder, perform the following steps: Optional: Set Dataflow job options.
-- The job builder lets you create custom batch and streaming Dataflow jobs.
-- Validate the pipeline before launching For pipelines with complex configuration, such as Python filters and SQL expressions, it can be helpful to check the pipeline configuration for syntax errors before launching.
+- The console will contain a message like the following, which contains the Dataflow SDK version information: Python To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner .
+- The console will contain a message like the following, which contains the Dataflow SDK version information: Go To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner .
+- Java To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowPipelineRunner or BlockingDataflowPipelineRunner .
+- To upgrade an existing installation of apache-beam, use the --upgrade flag: pip install --upgrade 'apache-beam[gcp]' As of October 7, 2020, Dataflow no longer supports Python 2 pipelines.
 

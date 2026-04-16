@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:28:55.740Z"
+generated_at: "2026-04-12T12:11:54.315Z"
 product_name: "Cloud Router"
 product_slug: "cloud-router"
 feature_name: "Bidirectional Forwarding Detection (BFD)"
 feature_slug: "bidirectional-forwarding-detection-bfd"
 latest_feature_date: "2022-02-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/network-connectivity/docs/router/release-notes"
   - "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details"
   - "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/best-practices"
+  - "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-log-messages"
+  - "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/overview"
 keywords:
   - "bidirectional"
   - "forwarding"
@@ -26,7 +27,7 @@ keywords:
 # Bidirectional Forwarding Detection (BFD)
 
 Product: Cloud Router
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,37 +39,24 @@ Bidirectional Forwarding Detection improves failure detection for Cloud Router B
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/network-connectivity/docs/router/release-notes](https://docs.cloud.google.com/network-connectivity/docs/router/release-notes)
 - [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details)
 - [https://docs.cloud.google.com/network-connectivity/docs/router/concepts/best-practices](https://docs.cloud.google.com/network-connectivity/docs/router/concepts/best-practices)
+- [https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-log-messages](https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-log-messages)
+- [https://docs.cloud.google.com/network-connectivity/docs/router/concepts/overview](https://docs.cloud.google.com/network-connectivity/docs/router/concepts/overview)
 
 ## Supporting Pages
-
-### Cloud Router release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/network-connectivity/docs/router/release-notes](https://docs.cloud.google.com/network-connectivity/docs/router/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 132
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- February 07, 2022 Feature Bidirectional Forwarding Detection (BFD) for Cloud Router is Generally Available ( GA ).
-- October 25, 2021 Feature Bidirectional Forwarding Detection (BFD) for Cloud Router is available in Preview .
-- Also, the documentation about diagnostic messages and session states related to Bidirectional Forwarding Detection (BFD) has moved from Troubleshooting to a new page .
-- June 23, 2021 Feature Cloud Router now supports the following: Enabling and disabling BGP sessions Updating the BGP keepalive interval June 16, 2020 Change The public documentation for Cloud Router is now located under the Network Connectivity page .
 
 ### View router details \_|\_ Cloud Router \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details](https://docs.cloud.google.com/network-connectivity/docs/router/how-to/viewing-router-details)
 - Source ID: `site-docs-root`
-- Final score: 128
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - View router details This page describes how to view the following Cloud Router details: The status of the Cloud Router's BGP sessions The Cloud Router BGP timers Bidirectional Forwarding Detection (BFD) settings Route advertisement mode The base advertised route priority that Cloud Router uses for calculating route metrics All routes for a BGP session use the same base advertised route priority.
@@ -80,12 +68,40 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/router/concepts/best-practices](https://docs.cloud.google.com/network-connectivity/docs/router/concepts/best-practices)
 - Source ID: `site-docs-root`
-- Final score: 120
-- Re-rank relevance: N/A
+- Final score: 194
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - If your on-premises Border Gateway Protocol (BGP) router supports Bidirectional Forwarding Detection (BFD) , enable it on your on-premises BGP device and on the Cloud Router to provide a high-availability network link that can respond faster to link failures.
 - With graceful restart, traffic between networks isn't disrupted in the event of a Cloud Router or on-premises BGP device failure as long as the BGP session is re-established within the graceful restart period.
 - If you don't configure two separate on-premises devices, Cloud VPN tunnel traffic can be disrupted in the event of a Cloud Router or an on-premises BGP device failure.
 - For example, you can use the metrics for learned routes to create alerting policies for the unique Cloud Router dynamic route prefixes quotas .
+
+### Troubleshoot Cloud Router log messages \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-log-messages](https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-log-messages)
+- Source ID: `site-docs-root`
+- Final score: 174
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For information about diagnostic messages and session states related to Bidirectional Forwarding Detection (BFD), see BFD diagnostic messages and session states .
+- For a BFD-enabled BGP session, the BFD control detection timer on the Cloud Router has expired.
+- For additional troubleshooting information, see the following: Troubleshoot BGP sessions Troubleshoot BGP peering Troubleshoot BGP routes and route selection NOTIFICATION RECEIVED message appears in Cloud Router logs A NOTIFICATION RECEIVED message appears in the Cloud Router logs when the Cloud Router has received a NOTIFICATION message from the BGP peer.
+- LINK DOWN message appears in Cloud Router logs A LINK DOWN message appears in the Cloud Router logs when the link between the Google peering edge router and your VLAN attachment for Cloud Interconnect is down.
+
+### Cloud Router overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/router/concepts/overview](https://docs.cloud.google.com/network-connectivity/docs/router/concepts/overview)
+- Source ID: `site-docs-reference`
+- Final score: 172
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Key features Cloud Router offers the following features: BGP session management, including support for Bidirectional Forwarding Detection (BFD) and MD5 authentication .
+- Andromeda handles all packet routing and forwarding capabilities, and Cloud Routers manage corresponding BGP sessions.
+- Cloud Routers don't provide packet routing or forwarding capability.
+- Google Cloud products that use Cloud Router The following table describes products that use Cloud Router: Product Dynamic routing with Cloud Router Documentation Dedicated Interconnect Required Create VLAN attachments Cross-Cloud Interconnect Required Cross-Cloud Interconnect overview AWS: Create VLAN attachments Azure: Create VLAN attachments OCI: Create VLAN attachments Alibaba Cloud: Create VLAN attachments Partner Interconnect Required Create VLAN attachments Router appliances Required Creating Router appliance instances HA VPN Required Creating an HA VPN gateway to a peer VPN gateway Creating an HA VPN between Google Cloud networks Classic VPN Optional Creating a Classic VPN using static routing Cloud NAT relies on Cloud Routers for control plane capabilities, but not for BGP session management.
 

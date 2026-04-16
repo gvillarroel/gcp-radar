@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.469Z"
+generated_at: "2026-04-14T07:40:14.474Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Terraform support for Application Integration"
 feature_slug: "terraform-support-for-application-integration"
 latest_feature_date: "2024-05-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/application-integration/docs/choose-application-integration-or-workflows"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
+  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing"
+  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
 keywords:
   - "terraform"
+  - "provisioning"
   - "including"
   - "workflows"
-  - "application"
   - "supports"
-  - "integration"
-  - "now"
-  - "for"
 ---
 
 # Terraform support for Application Integration
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +35,41 @@ Application Integration now supports Terraform workflows, including provisioning
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/application-integration/docs/choose-application-integration-or-workflows](https://docs.cloud.google.com/application-integration/docs/choose-application-integration-or-workflows)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
+- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing)
+- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
 
 ## Supporting Pages
 
 ### Choose Application Integration or Workflows \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/choose-application-integration-or-workflows](https://docs.cloud.google.com/application-integration/docs/choose-application-integration-or-workflows)
-- Source ID: `site-iam-reference`
-- Final score: 194
+- Source ID: `site-docs-root-2`
+- Final score: 63
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Use Application Integration If you are an enterprise architect, integration developer, or business analyst, who needs a way to connect, map, transform, and integrate data between business systems like Salesforce, ServiceNow, or a Cloud SQL database: Application Integration is ideal for integrating applications that have differing data structures and for exchanging data.
-- Example: Using Application Integration and Workflows to perform an action in a third-party business system In the following diagram, a refund for digital content is requested through a mobile app.
-- Choose Application Integration or Workflows Although Application Integration and Workflows share some similar capabilities, they are targeted for different uses, and are delivered differently.
-- For example, you can perform an action in a third-party business system from Workflows using Application Integration.
+- Workflows supports a connector to Application Integration so that you can use both products together.
+- Example: Using Workflows for lightweight service orchestration The following diagram shows an example of using Workflows to orchestrate services: When a file is uploaded to a Cloud Storage bucket, a Cloud Run function triggers Workflows to execute a workflow: text is recognized using the Cloud Natural Language API; images and videos are recognized using the Cloud Vision API and Cloud Video Intelligence API; and tags are saved and written to Firestore.
+- If you need a connector that can be used to simplify calling and integrating with other Google Cloud APIs such as Cloud Run functions or Firestore within a workflow: Workflows publishes lightweight, serverless connectors that can be used to connect to other Google Cloud APIs within a workflow, and to integrate your workflows with those Google Cloud products.
+- Use Workflows If you are a developer, data engineer, or cloud platform team, who needs a way to orchestrate services together to build applications, process automations, or implement data and machine learning pipelines: Workflows is ideal if you want to separate the logic that sequences and links your services together from your core business logic.
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### "Automate Salesforce case routing assignments \_|\_ Application Integration\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
+- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing)
 - Source ID: `site-docs-root`
-- Final score: 188
+- Final score: 54
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- May 23, 2023 Feature New tasks for Google Cloud services The following new integration tasks are available in preview : AI Platform - Prediction Cloud KMS - encrypt Cloud KMS - decrypt Dataflow - Create Job Drive - List Doc AI - Batch Process Doc AI - Process Doc AI - Operation Firestore - Batch Get Firestore - Batch Write Firestore - Document Get Language - Annotate Text Language - Classify Text Sheets - Append Sheets - Batch Get Sheets - Get Translate - Document Translate - Text Workflows - Execute May 22, 2023 Feature Support for Google-managed encryption keys Application Integration now uses Google-managed encryption keys as the default method of data encryption for your provisioned regions.
-- February 19, 2025 Change Enhancements to Execution Logs Application Integration Execution Logs now provides the following enhancements: View detailed task execution information: The dedicated Task Execution pane displays comprehensive execution details, including start and end times, status, type, and variable payload information , enabling improved debugging.
-- December 20, 2024 Change Dynamic Backend Authentication support for Connectors Application Integration now supports dynamic backend authentication for connectors.
-- December 13, 2023 Announcement Application Integration is now available in the following regions: asia-east2 (Taiwan) asia-northeast2 (Osaka) asia-northeast3 (Seoul) asia-south2 (Delhi) asia-southeast2 (Jakarta) europe-central2 (Warsaw) europe-west10 (Berlin) europe-west12 (Turin) northamerica-northeast2 (Toronto) southamerica-west1 (Santiago) us-east5 (Columbus) us-west3 (Salt Lake City) us-west4 (Las Vegas) us-south1 (Dallas) For the list of all the supported regions, see Locations .
+### "Automate Salesforce opportunity to BigQuery order \_|\_ Application Integration\
 
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
+- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 54
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- In Default Value , enter the following JSON: [{ "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" }, { "orderId" : "2" , "customerName" : "Tim Harvey" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "Los Angeles" , "country" : "USA" , "zipcode" : "210738" }, "items" : [{ "itemid" : "222-333-444" , "itemName" : "Laptop" , "itemPrice" : 5999.0 , "quantity" : 1.0 }], "paymentDetails" : { "mode" : "Online Payment" , "status" : "Success" }, "expectedDelivery" : "21 Feb 2023" }] In this sample JSON object, replace both occurrences of YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- In Default Value , enter the following JSON. { "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" } In this sample JSON object, replace YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- Invoke a sub-integration using a For Each Loop task To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me --> This quickstart shows you how to create an integration that uses a For Each Loop task to invoke a sub-integration.
-- Add and configure a Data Mapping task The Data Mapping task lets you perform variable assignments in your integration, get and set properties of json objects, and apply nested transform functions to values.
 

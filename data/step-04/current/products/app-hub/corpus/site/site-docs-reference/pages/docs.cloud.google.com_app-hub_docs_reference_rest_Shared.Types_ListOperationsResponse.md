@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/app-hub/docs/reference/rest/Shared.Types/List
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/app-hub/docs/apis
+entrypoint: https://docs.cloud.google.com/app-hub/docs/reference
 source_metadata:
   url: https://docs.cloud.google.com/app-hub/docs/reference/rest/Shared.Types/ListOperationsResponse
   title: "ListOperationsResponse \_|\_ App Hub \_|\_ Google Cloud Documentation"

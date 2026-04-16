@@ -5,112 +5,117 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 113
-Unique features: 102
+Unique features: 107
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
-| 2026-03-19 | Flow Analyzer |  | Flow Analyzer is a feature that is generally available. |
-| 2026-02-25 | Vertex AI Agent Engine |  | Vertex AI Agent Engine is a feature that is generally available. |
-| 2026-02-19 | Unified Maintenance |  | Unified Maintenance is generally available. |
-| 2026-02-05 | Google Cloud Managed Lustre |  | Google Cloud Managed Lustre is generally available. |
-| 2026-01-23 | Automotive AI Agent |  | Automotive AI Agent is generally available. |
-| 2026-01-05 | Workflows |  | Workflows is generally available. |
-| 2025-12-22 | Backup and DR Service |  | Backup and DR Service is generally available; Backup and DR Service is available in Preview. |
-| 2025-12-16 | Access Insights |  | Access Insights is generally available for generating and downloading a filtered organization-wide administrative access report. |
-| 2025-12-05 | Artifact Analysis |  | Artifact Analysis is generally available. |
-| 2025-11-19 | Cloud Billing |  | Cloud Billing is available in Preview. |
-| 2025-10-31 | Cloud Scheduler |  | Cloud Scheduler became generally available. |
-| 2025-10-31 | Vertex AI model tuning |  | Vertex AI model tuning became generally available. |
-| 2025-10-30 | IAM System for Cross-domain Identity Management (SCIM) Service |  | The IAM System for Cross-domain Identity Management (SCIM) Service became generally available; The IAM System for Cross-domain Identity Management (SCIM) Service became available in preview. |
-| 2025-10-29 | Text-to-Speech |  | Text-to-Speech became generally available. |
-| 2025-10-17 | Cloud Domains |  | Cloud Domains became generally available; Cloud Domains became available in preview. |
-| 2025-10-14 | Google Cloud Managed Service for Apache Kafka |  | Google Cloud Managed Service for Apache Kafka became generally available. |
-| 2025-10-08 | NCC Gateway |  | NCC Gateway became generally available; NCC Gateway became available in preview. |
-| 2025-10-01 | Certificate Manager |  | Certificate Manager became generally available. |
-| 2025-09-26 | Memorystore for Redis Cluster |  | Memorystore for Redis Cluster became generally available. |
-| 2025-09-10 | Access Approval support for Chrome Enterprise Premium secure gateway |  | Access Approval can be used with Chrome Enterprise Premium secure gateway for approval workflows. |
-| 2025-09-02 | Access Approval support for Web Risk |  | Access Approval can be used to govern approvals for requests related to Web Risk. |
-| 2025-08-18 | Access Approval support for Firebase Data Connect |  | Access Approval supports Firebase Data Connect in managed approval flows. |
-| 2025-08-07 | Access Approval support for Security Command Center Premium tier |  | Access Approval now supports Security Command Center Premium tier. |
-| 2025-07-18 | Access Approval support for Cloud Asset Inventory |  | Access Approval is available for Cloud Asset Inventory operations. |
-| 2025-07-18 | Access Approval support for Cloud Deploy |  | Access Approval can be used for approval controls in Cloud Deploy. |
-| 2025-07-18 | Access Approval support for Network Connectivity Center |  | Access Approval now supports Network Connectivity Center in GA. |
-| 2025-06-16 | Access Approval support for Cloud Trace |  | Access Approval now supports Cloud Trace in GA. |
-| 2025-05-30 | Access Approval support for App Hub |  | Access Approval now supports App Hub in GA. |
-| 2025-04-04 | Access Approval support for Document AI |  | Access Approval now supports Document AI in GA. |
-| 2025-04-04 | Access Approval support for Storage Intelligence |  | Access Approval now supports Storage Intelligence in GA. |
-| 2025-03-28 | Access Approval support for Integration Connectors |  | Access Approval now supports Integration Connectors in GA. |
-| 2025-03-28 | Access Approval support for Org Lifecycle API |  | Access Approval now supports the Org Lifecycle API in GA. |
-| 2025-03-14 | Access Approval support for Access Transparency |  | Access Approval now supports Access Transparency in GA. |
-| 2025-02-21 | Access Approval support for Cloud Workstations |  | Access Approval now supports Cloud Workstations in GA. |
-| 2025-02-06 | Access Approval support for Looker Studio |  | Access Approval now supports Looker Studio in GA. |
-| 2024-12-20 | Access Approval for external passthrough Network Load Balancer |  | Access Approval supports the external passthrough Network Load Balancer in GA. |
-| 2024-12-20 | Access Approval for Looker (Google Cloud core) |  | Access Approval supports Looker (Google Cloud core) in GA. |
-| 2024-12-20 | Access Approval for regional external Application Load Balancer |  | Access Approval supports the regional external Application Load Balancer in GA. |
-| 2024-12-20 | Access Approval for regional external proxy Network Load Balancer |  | Access Approval supports the regional external proxy Network Load Balancer in GA. |
-| 2024-12-20 | Access Approval for regional internal Application Load Balancer |  | Access Approval supports the regional internal Application Load Balancer in GA. |
-| 2024-12-20 | Access Approval for regional internal proxy Network Load Balancer |  | Access Approval supports the regional internal proxy Network Load Balancer in GA. |
-| 2024-12-20 | Access Approval support for internal passthrough Network Load Balancer |  | Access Approval now supports internal passthrough Network Load Balancer in GA. |
-| 2024-12-20 | Access Approval support for Virtual Private Cloud |  | Access Approval now supports Virtual Private Cloud (VPC) in GA. |
-| 2024-11-29 | Access Approval for Cloud Storage |  | Access Approval supports Cloud Storage in GA. |
-| 2024-11-27 | Access Approval for Cloud Healthcare API |  | Access Approval supports the Cloud Healthcare API in GA; Access Approval supports the Cloud Healthcare API in Preview. |
-| 2024-10-25 | Access Approval for Database Center |  | Access Approval supports Database Center in GA. |
-| 2024-09-27 | Access Approval for Dataplex |  | Access Approval supports Dataplex in GA. |
-| 2024-09-27 | Access Approval for Speech-to-Text |  | Access Approval supports Speech-to-Text in GA. |
-| 2024-09-13 | Cloud Interconnect |  | Access Approval now supports Cloud Interconnect in GA. |
-| 2024-09-12 | Database Center |  | Access Approval now supports Database Center in Preview. |
-| 2024-09-09 | Cloud Data Fusion |  | Access Approval now supports Cloud Data Fusion in GA. |
-| 2024-08-31 | Filestore |  | Access Approval now supports Filestore in GA. |
-| 2024-08-06 | Looker |  | Access Approval now supports Looker in Preview. |
-| 2024-07-12 | Dataform |  | Access Approval now supports Dataform in GA. |
-| 2024-07-05 | Cloud Armor |  | Access Approval now supports Cloud Armor in Preview. |
-| 2024-07-05 | Cloud DNS |  | Access Approval now supports Cloud DNS in GA. |
-| 2024-07-01 | Storage Transfer Service |  | Access Approval now supports Storage Transfer Service in Preview. |
-| 2024-05-31 | Apigee |  | Access Approval now supports Apigee in Preview. |
-| 2024-05-31 | Cloud Service Mesh |  | Access Approval now supports Cloud Service Mesh in Preview. |
-| 2024-04-24 | Cloud Build |  | Access Approval now supports Cloud Build in Preview. |
-| 2024-03-15 | Access Approval support for Google Distributed Cloud Edge |  | Access Approval now supports Google Distributed Cloud Edge in GA. |
-| 2024-03-06 | Access Approval support for Serverless VPC Access |  | Access Approval now supports Serverless VPC Access in Preview. |
-| 2023-09-29 | Access Approval support for Vertex AI Search |  | Access Approval now supports Vertex AI Search in Preview. |
-| 2023-09-18 | Access Approval support for Cloud Monitoring |  | Access Approval now supports Cloud Monitoring in Preview. |
-| 2023-09-15 | Access Approval support for Access Context Manager |  | Access Approval now supports Access Context Manager in Preview. |
-| 2023-09-08 | Access Approval support for Firebase Security Rules |  | Access Approval now supports Firebase Security Rules in Preview. |
-| 2023-08-04 | Access Approval support for Cloud Run |  | Access Approval now supports Cloud Run in GA. |
-| 2023-07-21 | Access Approval support for AlloyDB for PostgreSQL |  | Access Approval now supports AlloyDB for PostgreSQL in Preview. |
-| 2023-07-14 | Access Approval support for Cloud Tasks |  | Access Approval now supports Cloud Tasks in Preview. |
-| 2023-06-30 | Access Approval support for Memorystore for Redis |  | Access Approval now supports Memorystore for Redis in Preview. |
-| 2023-06-29 | Access Approval support for Application Integration |  | Access Approval now supports Application Integration in Preview. |
-| 2023-06-26 | Access Approval support for Eventarc |  | Access Approval now supports Eventarc in GA. |
-| 2023-06-20 | Access Approval integration with Cloud Run |  | Access Approval added support for Cloud Run in the preview stage. |
-| 2023-06-07 | Access Approval integration with Anthos Identity Service |  | Access Approval added support for Anthos Identity Service in the preview stage. |
-| 2023-03-24 | Access Approval integration with Cloud Firestore |  | Access Approval added support for Cloud Firestore in the preview stage. |
-| 2023-03-10 | Access Approval integration with Certificate Authority Service |  | Access Approval added support for Certificate Authority Service in the preview stage. |
-| 2023-02-24 | Access Approval integration with Cloud Composer |  | Access Approval added support for Cloud Composer in the preview stage. |
-| 2022-11-11 | Access Approval active access request revocation in Cloud Console |  | Access Approval now allows users to revoke active access requests directly from the Google Cloud console. |
-| 2022-08-03 | Access Approval integration with Secret Manager |  | Access Approval added support for Secret Manager in the preview stage. |
-| 2022-05-25 | Access Approval notification email delivery validation |  | Access Approval now notifies users when access-request notification emails are undeliverable due to an invalid email configuration. |
-| 2021-12-13 | Access Approval access request signing |  | Access Approval introduced preview support for cryptographic signing of access requests using Google-managed or customer-provided keys. |
-| 2021-11-11 | Access Approval integration with Organization Policy Service |  | Access Approval added support for Organization Policy Service in the preview stage. |
-| 2021-08-30 | Access Approval integration with Speaker ID |  | Access Approval added support for Speaker ID in the preview stage. |
-| 2021-06-21 | Access Approval integration with Cloud Data Loss Prevention |  | Access Approval added support for Cloud Data Loss Prevention in the preview stage. |
-| 2021-06-21 | Access Approval support for Cloud External Key Manager |  | Access Approval support for Cloud External Key Manager was added in Preview stage. |
-| 2021-06-21 | Access Approval support for Cloud HSM |  | Access Approval support for Cloud HSM was added in Preview stage. |
-| 2021-05-17 | Access Approval support for Cloud SQL |  | Access Approval support for Cloud SQL was added in Preview stage. |
-| 2021-04-27 | Access Approval support for Cloud Spanner |  | Access Approval support for Cloud Spanner was added in General Availability (GA) stage; Access Approval support for Cloud Spanner was added in Preview stage. |
-| 2021-04-27 | Access Approval support for Google Kubernetes Engine |  | Access Approval support for Google Kubernetes Engine was added in Preview stage. |
-| 2021-04-15 | Access Approval UI Access Transparency log view |  | Access Approval UI now allows viewing Access Transparency logs associated with an approval request. |
-| 2021-03-24 | Access Transparency logs include accessApprovals field |  | Access Transparency logs were updated to include a new field named accessApprovals for Access Approval-related access grants. |
-| 2021-03-15 | Access Approval support for Cloud Logging |  | Access Approval support for Cloud Logging was added in Preview stage. |
-| 2020-10-19 | Access Approval API support for BigQuery |  | BigQuery entered General Availability (GA) support in the Access Approval API. |
-| 2020-10-19 | Access Approval API support for Cloud IAM |  | Cloud IAM entered General Availability (GA) support in the Access Approval API. |
-| 2020-10-19 | Access Approval UI history view |  | Access Approval UI gained a history view showing prior requests, status, timing, and associated audit details. |
-| 2020-08-06 | DismissDecision implicit dismissal indicator |  | The Access Approval API added an implicit field to DismissDecision to indicate time-based (implicit) dismissals. |
-| 2020-08-06 | ListApprovalRequests history filter |  | The ListApprovalRequests method now supports a history filter value. |
-| 2020-04-15 | Access Approval API |  | The Access Approval API reached general availability; The Access Approval API entered its beta release. |
-| 2020-01-27 | Access Approval v1 API endpoint |  | The Access Approval API v1 endpoint was made available and is functionally equivalent to v1beta1. |
-| 2020-01-27 | Access Approval v1beta1 API endpoint | 2020-08-01 | The Access Approval API v1beta1 endpoint was announced to stop accepting requests on August 1, 2020; deprecated on 2020-08-01. |
-| 2020-01-27 | AccessApprovalSettings enrollment |  | AccessApprovalSettings now supports enrollment configuration at project, folder, and organization levels. |
-| 2020-01-27 | DeleteAccessApprovalSettings |  | The DeleteAccessApprovalSettings API was added to Access Approval. |
+| 2026-03-19 | Access Approval support for Flow Analyzer |  | Flow Analyzer is supported by Access Approval. |
+| 2026-02-25 | Access Approval support for Vertex AI Agent Engine |  | Vertex AI Agent Engine is supported by Access Approval. |
+| 2026-02-23 | Access Approval support for Secure Web Proxy |  | Secure Web Proxy is supported by Access Approval. |
+| 2026-02-19 | Access Approval support for Unified Maintenance |  | Unified Maintenance is supported by Access Approval. |
+| 2026-02-05 | Access Approval support for Google Cloud Managed Lustre |  | Google Cloud Managed Lustre is supported by Access Approval. |
+| 2026-01-23 | Access Approval support for Automotive AI Agent |  | Automotive AI Agent is supported by Access Approval. |
+| 2026-01-05 | Access Approval support for Workflows |  | Workflows is supported by Access Approval. |
+| 2025-12-22 | Access Approval support for Backup and DR Service |  | Backup and DR Service is supported by Access Approval. |
+| 2025-12-16 | Access insights |  | Access insights lets you generate and download a filtered organization-wide report of Google administrative access to your data. |
+| 2025-12-05 | Access Approval support for Artifact Analysis |  | Artifact Analysis is supported by Access Approval. |
+| 2025-11-19 | Access Approval support for Cloud Billing |  | Cloud Billing is supported by Access Approval. |
+| 2025-10-31 | Access Approval support for Cloud Scheduler |  | Cloud Scheduler is supported by Access Approval. |
+| 2025-10-31 | Access Approval support for Vertex AI model tuning |  | Vertex AI model tuning is supported by Access Approval. |
+| 2025-10-30 | Access Approval support for IAM SCIM Service |  | IAM SCIM Service is supported by Access Approval. |
+| 2025-10-29 | Access Approval support for Text-to-Speech |  | Text-to-Speech is supported by Access Approval. |
+| 2025-10-17 | Access Approval support for Cloud Domains |  | Cloud Domains is supported by Access Approval. |
+| 2025-10-14 | Access Approval support for Google Cloud Managed Service for Apache Kafka |  | Google Cloud Managed Service for Apache Kafka is supported by Access Approval. |
+| 2025-10-08 | Access Approval support for NCC Gateway |  | NCC Gateway is supported by Access Approval. |
+| 2025-10-01 | Access Approval support for Certificate Manager |  | Certificate Manager is supported by Access Approval. |
+| 2025-09-26 | Access Approval support for Memorystore for Redis Cluster |  | Memorystore for Redis Cluster is supported by Access Approval. |
+| 2025-09-26 | Access Approval support for Memorystore for Valkey |  | Memorystore for Valkey is supported by Access Approval. |
+| 2025-09-25 | Access Approval support for Cloud TPU |  | Cloud TPU is supported by Access Approval. |
+| 2025-09-24 | Access Approval support for Google Cloud NetApp Volumes |  | Google Cloud NetApp Volumes is supported by Access Approval. |
+| 2025-09-24 | Access Approval support for VM Manager |  | VM Manager is supported by Access Approval. |
+| 2025-09-10 | Access Approval support for Chrome Enterprise Premium secure gateway support |  | Chrome Enterprise Premium secure gateway support is supported by Access Approval. |
+| 2025-09-08 | Access Approval support for Image streaming |  | Image streaming is supported by Access Approval. |
+| 2025-09-02 | Access Approval support for Web Risk support |  | Web Risk support is supported by Access Approval. |
+| 2025-08-18 | Access Approval support for Firebase Data Connect support |  | Firebase Data Connect support is supported by Access Approval. |
+| 2025-08-07 | Access Approval support for Security Command Center Premium tier support |  | Security Command Center Premium tier support is supported by Access Approval. |
+| 2025-07-18 | Access Approval support for Cloud Asset Inventory support |  | Cloud Asset Inventory support is supported by Access Approval. |
+| 2025-07-18 | Access Approval support for Cloud Deploy support |  | Cloud Deploy support is supported by Access Approval. |
+| 2025-07-18 | Access Approval support for Network Connectivity Center support |  | Network Connectivity Center support is supported by Access Approval. |
+| 2025-06-16 | Access Approval support for Cloud Trace support |  | Cloud Trace support is supported by Access Approval. |
+| 2025-05-30 | Access Approval support for App Hub support |  | App Hub support is supported by Access Approval. |
+| 2025-04-04 | Access Approval support for Document AI support |  | Document AI support is supported by Access Approval. |
+| 2025-04-04 | Access Approval support for Storage Intelligence support |  | Storage Intelligence support is supported by Access Approval. |
+| 2025-03-28 | Access Approval support for Integration Connectors support |  | Integration Connectors support is supported by Access Approval. |
+| 2025-03-28 | Access Approval support for Org Lifecycle API support |  | Org Lifecycle API support is supported by Access Approval. |
+| 2025-03-14 | Access Transparency support |  | Access Approval supports Access Transparency. |
+| 2025-02-21 | Access Approval support for Cloud Workstations support |  | Cloud Workstations support is supported by Access Approval. |
+| 2025-02-06 | Access Approval support for Looker Studio support |  | Looker Studio support is supported by Access Approval. |
+| 2024-12-20 | Access Approval support for External passthrough Network Load Balancer support |  | External passthrough Network Load Balancer support is supported by Access Approval. |
+| 2024-12-20 | Access Approval support for Internal passthrough Network Load Balancer support |  | Internal passthrough Network Load Balancer support is supported by Access Approval. |
+| 2024-12-20 | Access Approval support for Looker (Google Cloud core) support |  | Looker (Google Cloud core) support is supported by Access Approval. |
+| 2024-12-20 | Access Approval support for Regional external Application Load Balancer support |  | Regional external Application Load Balancer support is supported by Access Approval. |
+| 2024-12-20 | Access Approval support for Regional external proxy Network Load Balancer support |  | Regional external proxy Network Load Balancer support is supported by Access Approval. |
+| 2024-12-20 | Access Approval support for Regional internal Application Load Balancer support |  | Regional internal Application Load Balancer support is supported by Access Approval. |
+| 2024-12-20 | Access Approval support for Regional internal proxy Network Load Balancer support |  | Regional internal proxy Network Load Balancer support is supported by Access Approval. |
+| 2024-12-20 | Access Approval support for Virtual Private Cloud support |  | Virtual Private Cloud support is supported by Access Approval. |
+| 2024-11-29 | Access Approval support for Cloud Storage support |  | Cloud Storage support is supported by Access Approval. |
+| 2024-11-27 | Access Approval support for Cloud Healthcare API support |  | Cloud Healthcare API support is supported by Access Approval. |
+| 2024-10-25 | Access Approval support for Database Center support |  | Database Center support is supported by Access Approval. |
+| 2024-09-27 | Access Approval support for Dataplex support |  | Dataplex support is supported by Access Approval. |
+| 2024-09-27 | Access Approval support for Speech-to-Text support |  | Speech-to-Text support is supported by Access Approval. |
+| 2024-09-13 | Access Approval support for Cloud Interconnect support |  | Cloud Interconnect support is supported by Access Approval. |
+| 2024-09-09 | Access Approval support for Cloud Data Fusion support |  | Cloud Data Fusion support is supported by Access Approval. |
+| 2024-08-31 | Access Approval support for Filestore support |  | Filestore support is supported by Access Approval. |
+| 2024-07-12 | Access Approval support for Dataform support |  | Dataform support is supported by Access Approval. |
+| 2024-07-05 | Access Approval support for Cloud Armor support |  | Cloud Armor support is supported by Access Approval. |
+| 2024-07-05 | Access Approval support for Cloud DNS support |  | Cloud DNS support is supported by Access Approval. |
+| 2024-07-01 | Access Approval support for Storage Transfer Service support |  | Storage Transfer Service support is supported by Access Approval. |
+| 2024-05-31 | Access Approval support for Apigee support |  | Apigee support is supported by Access Approval. |
+| 2024-05-31 | Access Approval support for Cloud Service Mesh support |  | Cloud Service Mesh support is supported by Access Approval. |
+| 2024-04-24 | Access Approval support for Cloud Build support |  | Cloud Build support is supported by Access Approval. |
+| 2024-03-15 | Access Approval support for Google Distributed Cloud Edge support |  | Google Distributed Cloud Edge support is supported by Access Approval. |
+| 2024-03-06 | Access Approval support for Serverless VPC Access support |  | Serverless VPC Access support is supported by Access Approval. |
+| 2023-09-29 | Access Approval support for Vertex AI Search support |  | Vertex AI Search support is supported by Access Approval. |
+| 2023-09-18 | Access Approval support for Cloud Monitoring support |  | Cloud Monitoring support is supported by Access Approval. |
+| 2023-09-15 | Access Context Manager support |  | Access Approval supports Access Context Manager. |
+| 2023-09-08 | Access Approval support for Firebase Security Rules support |  | Firebase Security Rules support is supported by Access Approval. |
+| 2023-08-04 | Access Approval support for Cloud Run support |  | Cloud Run support is supported by Access Approval. |
+| 2023-07-21 | Access Approval support for AlloyDB for PostgreSQL support |  | AlloyDB for PostgreSQL support is supported by Access Approval. |
+| 2023-07-14 | Access Approval support for Cloud Tasks support |  | Cloud Tasks support is supported by Access Approval. |
+| 2023-06-30 | Access Approval support for Memorystore for Redis support |  | Memorystore for Redis support is supported by Access Approval. |
+| 2023-06-29 | Access Approval support for Application Integration support |  | Application Integration support is supported by Access Approval. |
+| 2023-06-26 | Access Approval support for Eventarc support |  | Eventarc support is supported by Access Approval. |
+| 2023-06-07 | Access Approval support for Anthos Identity Service support |  | Anthos Identity Service support is supported by Access Approval. |
+| 2023-03-24 | Access Approval support for Firestore support |  | Firestore support is supported by Access Approval. |
+| 2023-03-10 | Access Approval support for Certificate Authority Service support |  | Certificate Authority Service support is supported by Access Approval. |
+| 2023-02-24 | Access Approval support for Cloud Composer support |  | Cloud Composer support is supported by Access Approval. |
+| 2022-11-11 | Active access request revocation |  | Access Approval lets users revoke active access requests in the Google Cloud console. |
+| 2022-08-03 | Access Approval support for Secret Manager support |  | Secret Manager support is supported by Access Approval. |
+| 2022-05-25 | Notification email delivery error detection |  | Access Approval alerts users when access request notification emails are undeliverable because of an incorrect configured email address. |
+| 2021-12-13 | Signed access requests |  | Access Approval can cryptographically sign access requests using a Google-managed or customer-provided key to verify approval integrity. |
+| 2021-11-11 | Access Approval support for Organization Policy Service support |  | Organization Policy Service support is supported by Access Approval. |
+| 2021-08-30 | Access Approval support for Speaker ID support |  | Speaker ID support is supported by Access Approval. |
+| 2021-06-21 | Access Approval support for Cloud Data Loss Prevention support |  | Cloud Data Loss Prevention support is supported by Access Approval. |
+| 2021-06-21 | Access Approval support for Cloud External Key Manager support |  | Cloud External Key Manager support is supported by Access Approval. |
+| 2021-06-21 | Access Approval support for Cloud HSM support |  | Cloud HSM support is supported by Access Approval. |
+| 2021-05-17 | Access Approval support for Cloud SQL support |  | Cloud SQL support is supported by Access Approval. |
+| 2021-04-27 | Access Approval support for Cloud Spanner support |  | Cloud Spanner support is supported by Access Approval. |
+| 2021-04-27 | Access Approval support for Google Kubernetes Engine support |  | Google Kubernetes Engine support is supported by Access Approval. |
+| 2021-04-15 | Access Transparency logs in Access Approval UI |  | The Access Approval UI lets users view Access Transparency logs associated with an approval request. |
+| 2021-03-24 | accessApprovals field in Access Transparency logs |  | Access Transparency logs include an accessApprovals field that lists approvals granting access to enrolled resources. |
+| 2021-03-15 | Access Approval support for Cloud Logging support |  | Cloud Logging support is supported by Access Approval. |
+| 2020-10-19 | BigQuery support |  | The Access Approval API supports BigQuery as an integrated supported service. |
+| 2020-10-19 | Cloud IAM support |  | The Access Approval API supports Cloud IAM as an integrated supported service. |
+| 2020-10-19 | History view |  | The Access Approval UI includes a History view for previously acted-on requests with status, timing, details, and audit logs. |
+| 2020-08-06 | DismissDecision.implicit field |  | The DismissDecision structure includes an implicit field indicating whether a request was dismissed by timeout instead of user action. |
+| 2020-08-06 | history filter for ListApprovalRequests |  | The ListApprovalRequests method supports a history filter value. |
+| 2020-04-15 | Access Approval API |  | Access Approval provides an API for managing approval settings and approval requests; Access Approval provides an API for managing approval settings and approval requests. |
+| 2020-01-27 | and organization enrollment configuration |  | AccessApprovalSettings supports enrollment configuration at the project, folder, and organization levels. |
+| 2020-01-27 | DeleteAccessApprovalSettings API |  | Access Approval provides a DeleteAccessApprovalSettings API to remove approval settings. |
+| 2020-01-27 | folder |  | AccessApprovalSettings supports enrollment configuration at the project, folder, and organization levels. |
+| 2020-01-27 | Project |  | AccessApprovalSettings supports enrollment configuration at the project, folder, and organization levels. |
+| 2020-01-27 | v1 endpoint |  | Access Approval provides a v1 endpoint that is functionally equivalent to v1beta1. |
+| 2020-01-27 | v1beta1 endpoint | 2020-08-01 | The v1beta1 endpoint is the beta Access Approval API endpoint being retired in favor of v1; deprecated on 2020-08-01. |
 
 Source file slug: `access-approval.md`
 

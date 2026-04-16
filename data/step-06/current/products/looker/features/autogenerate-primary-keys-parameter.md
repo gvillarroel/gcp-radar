@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.342Z"
+generated_at: "2026-04-15T13:43:38.423Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "autogenerate_primary_keys parameter"
@@ -9,9 +9,9 @@ latest_feature_date: "2026-01-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/gemini-overview-looker"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
+  - "https://docs.cloud.google.com/looker/docs/reference/param-explore-autogenerate-primary-keys"
+  - "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery"
+  - "https://docs.cloud.google.com/bigquery/docs/default-configuration"
 keywords:
   - "autogenerate"
   - "primary"
@@ -42,42 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
+- [https://docs.cloud.google.com/looker/docs/reference/param-explore-autogenerate-primary-keys](https://docs.cloud.google.com/looker/docs/reference/param-explore-autogenerate-primary-keys)
+- [https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery](https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery)
+- [https://docs.cloud.google.com/bigquery/docs/default-configuration](https://docs.cloud.google.com/bigquery/docs/default-configuration)
 
 ## Supporting Pages
 
-### Gemini in Looker overview | Google Cloud Documentation
+### autogenerate_primary_keys | Looker | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- Source ID: `site-docs-root`
-- Final score: 72
+- URL: [https://docs.cloud.google.com/looker/docs/reference/param-explore-autogenerate-primary-keys](https://docs.cloud.google.com/looker/docs/reference/param-explore-autogenerate-primary-keys)
+- Source ID: `feature-recovery-http`
+- Final score: 290
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Gemini in Looker overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/gemini-overview-looker Ask questions about and converse with your data by using Conversational Analytics: Gemini in Looker lets you ask questions about your data source by using natural language.
-- You can learn more about how your response was generated and save your conversation for future reference.
-- Gemini returns Looker charts or data tables that are based on your query.
+- Definition When the autogenerate_primary_keys parameter is enabled, Looker generates a temporary, distinct key for a view when one is not explicitly defined in your LookML.
+- autogenerate_primary_keys | Looker | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Looker Start free Overview Looker Guides How-to guides and feature descriptions Best Practices Best practices and specific use cases LookML Reference Reference for Looker's LookML modeling language API Reference Reference for Looker's APIs Resources Release, support, and contract information Community Community forum for Looker Looker Studio Guides How-to guides and feature descriptions Community Community forum for Looker Studio LookML Reference Technology areas More Overview Looker More Looker Studio More LookML Reference Cross-product tools More Console LookML reference overview Project manifest parameters Project manifest parameter overview local_dependency remote_dependency localization_settings project_name constant application visualization new_lookml_runtime Model parameters Model parameter overview access_grant case_sensitive connection datagroup explore fiscal_month_offset include label map_layer named_value_format persist_for persist_with test week_start_day map_layer_name Explore parameters Explore parameter overview access_filter aggregate_table always_filter always_join autogenerate_primary_keys cancel_grouping_fields conditionally_filter case_sensitive description group_label extends extension from fields hidden join label query persist_for persist_with required_access_grants sql_always_where sql_always_having sql_preamble sql_table_name tags view_label view_name symmetric_aggregates Join parameters Join parameter overview fields foreign_key from outer_only relationship required_access_grants required_joins sql_foreign_key sql_on sql_table_name sql_where type view_label View parameters View parameter overview autogenerate_primary_keys calendar_definition dimension dimension_group drill_fields extends extension fields_hidden_by_default filter label measure parameter required_access_grants set sql_table_name suggestions view Derived table parameters derived_table cluster_keys create_process datagroup_trigger distribution distribution_style explore_source increment_key increment_offset indexes interval_trigger materialized_view partition_keys persist_for publish_as_db_view sortkeys sql sql_create sql_trigger_value table_compression table_format Field parameters Field parameter overview action alias allow_approximate_optimization allow_fill approximate approximate_threshold bypass_suggest_restrictions can_filter case case_sensitive convert_tz datatype default_value description direction drill_fields fanout_on filters full_suggestions group_item_label group_label hidden html label label_from_parameter link order_by_field precision primary_key required_access_grants required_fields skip_drill_filter sql sql_distinct_key string_datatype suggest_dimension suggest_explore suggest_persist_for suggestable suggestions synonyms tags value_format value_format_name view_label Dimension, filter, and parameter types Measure types AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Guides Best Practices LookML Reference API Reference Resources Community Guides Community Home Documentation Data analytics Looker LookML Reference Send feedback autogenerate_primary_keys Stay organized with collections Save and categorize content based on your preferences.
+- The autogenerate_primary_keys parameter is supported for both views and Explores: For views, if you define the view with autogenerate_primary_keys: yes , Looker generates a primary key for queries on the view where a primary key is needed to avoid duplicating rows.
+- In the latest release of Looker, the following dialects support autogenerate_primary_keys : Google BigQuery Standard SQL Amazon Redshift Amazon Redshift 2.1+ Amazon Redshift Serverless 2.1+ Google Cloud PostgreSQL Greenplum Microsoft Azure PostgreSQL MySQL 8.0.12+ PostgreSQL pre-9.5 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 
-### Looker (Google Cloud core) overview | Google Cloud Documentation
+### Connect to Google BigQuery \_|\_ Data Studio \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 64
+- URL: [https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery](https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 88
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
+- Billing project The Billing Project option lets you supply a billing project for your custom query by either searching for or entering the project ID manually.
+- Analyze Data Studio queries with job labels All queries that are sent by Data Studio to BigQuery have the BigQuery job label requestor:looker studio .
+- View SQL issued to BigQuery You can view all the BigQuery SQL that Data Studio has generated from within the BigQuery Query History user interface .
+- Limits of custom queries Data Studio uses your custom SQL as an inner SELECT statement for each generated query to the database.
 
-### Looker (Google Cloud core) access control with IAM | Google Cloud Documentation
+### Manage configuration settings \_|\_ BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-access-control](https://docs.cloud.google.com/looker/docs/looker-core-access-control)
-- Source ID: `site-iam-reference`
-- Final score: 58
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/bigquery/docs/default-configuration](https://docs.cloud.google.com/bigquery/docs/default-configuration)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Looker (Google Cloud core) access control with IAM Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-access-control Looker (Google Cloud core) uses Identity and Access Management (IAM) to provision user and admin access through a set of IAM roles.
+- Alternatively, to clear the regional project settings, enter the following DDL statement into the Query editor : ALTER PROJECT PROJECT ID SET OPTIONS ( region- REGION .default time zone = NULL , region- REGION .default kms key name = NULL , region- REGION .default query job timeout ms = NULL , region- REGION .default interactive query queue timeout ms = NULL , region- REGION .default batch query queue timeout ms = NULL , region- REGION .enable reservation based fairness = false , region- REGION .enable info schema storage = NULL ); Click Run . bq To configure the regional project settings, enter the bq query command and supply the following DDL statement as the query parameter.
+- Alternatively, to clear the regional organization settings, enter the following DDL statement into the Query editor : ALTER ORGANIZATION SET OPTIONS ( region- REGION .default time zone = NULL , region- REGION .default kms key name = NULL , region- REGION .default query job timeout ms = NULL , region- REGION .default interactive query queue timeout ms = NULL , region- REGION .default batch query queue timeout ms = NULL , region- REGION .enable info schema storage = NULL ); Click Run . bq To configure the regional organization settings, enter the bq query command and supply the following DDL statement as the query parameter.
+- Alternatively, to clear the default location organization-level global settings, enter the following DDL statement into the Query editor : ALTER ORGANIZATION SET OPTIONS ( default location = NULL ); Click Run . bq To configure the default location at the organization level, enter the bq query command and supply the following DDL statement as the query parameter.
+- ALTER PROJECT PROJECT ID SET OPTIONS ( default location = NULL ); Click Run . bq To configure the default location at the project level, enter the bq query command and supply the following DDL statement as the query parameter.
 

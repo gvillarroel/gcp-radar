@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.779Z"
+generated_at: "2026-04-14T12:39:34.318Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "Regional endpoints for Sensitive Data Protection"
@@ -9,18 +9,15 @@ latest_feature_date: "2024-08-27"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/data-security"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/api-endpoints"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/locations"
 keywords:
-  - "regional"
   - "endpoints"
-  - "for"
-  - "sensitive"
-  - "protection"
+  - "transit"
   - "keep"
-  - "at"
   - "rest"
+  - "regional"
 ---
 
 # Regional endpoints for Sensitive Data Protection
@@ -42,45 +39,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview](https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/data-security](https://docs.cloud.google.com/sensitive-data-protection/docs/data-security)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/api-endpoints](https://docs.cloud.google.com/sensitive-data-protection/docs/api-endpoints)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data](https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/locations](https://docs.cloud.google.com/sensitive-data-protection/docs/locations)
 
 ## Supporting Pages
 
-### Overview of sensitive data discovery | Sensitive Data Protection | Google Cloud Documentation
+### "Global and regional endpoints for Sensitive Data Protection \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- Source ID: `site-docs-root`
-- Final score: 192
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/api-endpoints](https://docs.cloud.google.com/sensitive-data-protection/docs/api-endpoints)
+- Source ID: `site-api-reference-required-2`
+- Final score: 245
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Overview of sensitive data discovery Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles The Sensitive Data Protection discovery service (sometimes called data profiler) continuously monitors the data resources in your organization, folder, or project.
-- It classifies the data into infoTypes, and assesses the data sensitivity and ...
+- Choose between the global and regional endpoints Consider the following when choosing between global and regional endpoints: If your organization is required to keep data at rest, in use, and in transit within a specific region, then you must use regional endpoints.
+- Regional endpoints guarantee data residency by ensuring that your data at rest, in use, and in transit isn't moved out of the location specified by the endpoint.
+- Regional API endpoints Regional endpoints (REP) let you keep in-transit data within a specific region.
+- Restrict global API endpoint usage To help enforce the use of regional endpoints, use the constraints/gcp.restrictEndpointUsage organization policy constraint to block requests to the global API endpoint.
 
-### Sensitive Data Protection overview | Google Cloud Documentation
+### De-identifying sensitive data | Sensitive Data Protection | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview](https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview)
-- Source ID: `site-docs-root`
-- Final score: 188
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data](https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 127
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Sensitive Data Protection overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview The Cloud Data Loss Prevention API lets you use the Sensitive Data Protection services programmatically.
-- Through the DLP API, you can inspect data from inside and outside Google Cloud and build custom workloads on or off cloud.
+- De-identifying sensitive data | Sensitive Data Protection | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Sensitive Data Protection Start free Overview Guides Reference Samples Resources Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Plan your data risk management strategy Evaluate your data risk management needs Learn about your data through discovery and inspection Recommended strategies for mitigating data risk Release notes Pricing Locations Global and regional endpoints for Sensitive Data Protection Sensitive Data Protection locations Specify a processing location Service method types Supported file types and scanning modes Get started Quickstarts Inspect text using the command-line tool Inspect text using a JSON request Schedule an inspection scan Create an inspection template De-identify and re-identify sensitive text Google Cloud Skills Boost labs Detect sensitive data Discover and profile data resources Overview of sensitive data discovery Common discovery enablement scenarios Allow discovery within service perimeters Profile your data Profile a single data resource Profile BigQuery data Estimate BigQuery data profiling cost Estimate the cost of profiling BigQuery data in a project Estimate the cost of profiling BigQuery data in an organization or folder Profile BigQuery data in a project Profile BigQuery data in an organization or folder Profile Cloud SQL data Profile Cloud SQL data in a project Profile Cloud SQL data in an organization or folder Manage connections Profile Cloud Storage data Profile Cloud Storage data in a project Profile Cloud Storage data in an organization or folder Profile Vertex AI data Sensitive data discovery for Vertex AI data Profile Vertex AI data in a project Profile Vertex AI data in an organization or folder Profile Amazon S3 data Sensitive data discovery for Amazon S3 data Profile Amazon S3 data Profile Azure Blob Storage data Report secrets in environment variables to Security Command Center Grant data profiling access to a service agent Manage data profiles Control IAM access to resources based on data sensitivity Send discovery insights to other services Enable discovery actions Send data profiles to Security Command Center Receive and parse Pub/Sub messages about data profiles Tag tables in Data Catalog based on insights from data profiles Add Knowledge Catalog aspects based on insights from data profiles Analyze and visualize data profiles Visualize data profiles in the discovery dashboard Analyze data profiles Remediate findings from the data profiler Manage scan configurations Troubleshoot issues with the data profiler Metrics reference Data risk and sensitivity levels Inspect for sensitive data Inspect data stored in Google Cloud Inspect data from any source Inspect unstructured text synchronously Inspect structured text synchronously Inspect an image synchronously Asynchronous inspection overview Inspect data from any source asynchronously Quote the sensitive data in the results Work with inspection results Actions Send inspection results to Knowledge Catalog as aspects Send inspection results to Data Catalog Send inspection results to Security Command Center Analyze and report on inspection findings Query inspection findings in BigQuery Parse findings stored as Protobuf text Jobs and job triggers Overview of jobs and job triggers Create and manage jobs and job triggers Web-based inspection demonstration app Configure detection Templates Overview of templates Create inspection templates InfoTypes and infoType detectors Overview of infoTypes and infoType detectors Built-in infoType detectors List built-in infoType detectors InfoType detector reference Custom infoType detectors Overview of custom infoType detectors Create a regular custom dictionary detector Create a large custom dictionary detector Create a custom regex detector Create a custom metadata label detector Custom infoType examples Manage infoTypes through the Google Cloud console Modify infoType detectors to refine scan results Match likelihood Likelihood overview Customize match likelihood Mask and de-identify data Overview Transformation methods Transformation reference Text classification and redaction Date shifting Generalization and bucketing Pseudonymization De-identify sensitive data De-identify data stored in Google Cloud Overview Through the Cloud console Through the DLP API Transformation details reference De-identify data from any source De-identify text or tabular content Examples of text redaction Examples of tabular data de-identification Image inspection and redaction Redact sensitive data from images Create a de-identification template Create a wrapped key De-identify BigQuery data at query time De-identification and re-identification of PII in large-scale datasets Redact sensitive data from PDF files Analyze re-identification risk Overview of re-identification risk analysis Re-identification risk analysis techniques Compute k-anonymity for a dataset Compute l-diversity for a dataset Compute k-map for a dataset Compute δ-presence for a dataset Compute numerical and categorical statistics Visualize re-identification risk using Looker Studio Connect to other services Use Sensitive Data Protection with BigQuery Use Sensitive Data Protection with Cloud Storage Use Sensitive Data Protection with Cloud Storage Automate the classification of data uploaded to Cloud Storage Send inspection results to Data Catalog Send inspection results to Security Command Center Monitor your usage with Cloud Monitoring Use Sensitive Data Protection with AWS S3 Use Sensitive Data Protection with JDBC Databases Use Sensitive Data Protection with Apigee Use Sensitive Data Protection with Data Fusion Build a secure anomaly detection solution using Dataflow, BigQuery ML, and Sensitive Data Protection Troubleshoot Troubleshoot issues with the data profiler Control access Authentication IAM roles IAM permissions Control access with VPC Service Controls Monitor Audit logging Monitor your usage with Cloud Monitoring Develop All Sensitive Data Protection code samples AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Cloud Data Loss Prevention (Cloud DLP) is now a part of Sensitive Data Protection.
+- For more information about installing and creating a Sensitive Data Protection client, see Sensitive Data Protection client libraries . (Sending JSON to Sensitive Data Protection REST endpoints does not require a client library.) Python To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+- For more information about installing and creating a Sensitive Data Protection client, see Sensitive Data Protection client libraries . (Sending JSON to Sensitive Data Protection REST endpoints does not require a client library.) Java To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
+- For more information about installing and creating a Sensitive Data Protection client, see Sensitive Data Protection client libraries . (Sending JSON to Sensitive Data Protection REST endpoints does not require a client library.) Java To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .
 
-### Sensitive Data Protection data security | Google Cloud Documentation
+### Sensitive Data Protection locations \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/data-security](https://docs.cloud.google.com/sensitive-data-protection/docs/data-security)
-- Source ID: `site-docs-root`
-- Final score: 184
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/locations](https://docs.cloud.google.com/sensitive-data-protection/docs/locations)
+- Source ID: `site-docs-reference-3`
+- Final score: 127
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Sensitive Data Protection data security Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/data-security This topic provides information about Sensitive Data Protection and data security, including certifications, compliance (including GDPR), and encryption.
-- For additional information about data security and Google Cloud, see Google Cloud Security.
+- Regional endpoints If you are required to keep in-transit data within a specific location, use a region or multi-region that supports regional endpoints (REP).
+- In the tables on this page, support for regional endpoints is indicated in columns with the REP support heading.
+- For more information, see Global and regional endpoints for Sensitive Data Protection .
 

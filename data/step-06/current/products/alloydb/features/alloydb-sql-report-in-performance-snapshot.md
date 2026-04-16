@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.566Z"
+generated_at: "2026-04-12T12:07:33.817Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB SQL Report in performance snapshot"
 feature_slug: "alloydb-sql-report-in-performance-snapshot"
 latest_feature_date: "2025-12-18"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators"
+  - "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
 keywords:
   - "SQL Report section"
   - "top 50 queries"
@@ -23,7 +26,7 @@ keywords:
 # AlloyDB SQL Report in performance snapshot
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -31,25 +34,49 @@ AlloyDB performance snapshot reports now include an SQL Report section listing t
 
 ## Extended Definition
 
-The AlloyDB SQL Report feature is a section within AlloyDB database performance snapshot reports that summarizes query-level performance. It lists the top 50 queries ranked by total elapsed time and also presents read I/O and the standard deviation of elapsed time for those queries.
+AlloyDB performance snapshot reports now include an SQL Report section listing the top 50 queries by elapsed time and related I/O metrics.
 
 ## Evidence Summary
 
-The AlloyDB release notes state that performance snapshot reports include a new SQL Report section that surfaces the top 50 queries by elapsed time, read I/O, and elapsed-time standard deviation.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
+- [https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language](https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language)
+- [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
+- [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Database performance snapshot report reference \_|\_ AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 20
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
+- Source ID: `site-api-reference`
+- Final score: 130
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Generate SQL queries using natural language questions \_|\_ AlloyDB for\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language](https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language)
+- Source ID: `site-docs-root-2`
+- Final score: 102
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Perform intelligent SQL queries using AI functions \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
+- Source ID: `site-docs-reference-2`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Monitor the health of your clusters and instances \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- Source ID: `site-docs-reference-2`
+- Final score: 88
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature AlloyDB database performance snapshot reports now include a SQL Report section, which lists the top 50 queries by total elapsed time, read I/O, and standard deviation of elapsed time.
 

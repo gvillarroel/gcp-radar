@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.535Z"
+generated_at: "2026-04-14T09:38:03.551Z"
 product_name: "Backup for GKE"
 product_slug: "backup-for-gke"
 feature_name: "Backup index visibility"
 feature_slug: "backup-index-visibility"
 latest_feature_date: "2024-04-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application"
   - "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup"
-  - "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke"
+  - "https://docs.cloud.google.com/iam/docs/overview"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules"
 keywords:
   - "visibility"
   - "index"
+  - "view"
   - "provides"
-  - "to"
-  - "backup"
-  - "now"
-  - "for"
-  - "gke"
+  - "resource"
 ---
 
 # Backup index visibility
 
 Product: Backup for GKE
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +35,55 @@ Backup for GKE now provides a backup index to view resource information within b
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application)
 - [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup)
-- [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke)
+- [https://docs.cloud.google.com/iam/docs/overview](https://docs.cloud.google.com/iam/docs/overview)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules)
 
 ## Supporting Pages
 
-### "Define custom backup and restore logic \_|\_ Backup for GKE \_|\_ Google\
+### "Modify resources during restoration \_|\_ Backup for GKE \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application)
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules)
 - Source ID: `site-docs-root`
-- Final score: 226
+- Final score: 89
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Autopilot Standard When you enable the Backup for GKE agent in your Google Kubernetes Engine cluster, Backup for GKE provides a CustomResourceDefinition that introduces a new kind of Kubernetes resource: the ProtectedApplication .
-- This example, assuming an architecture of one primary StatefulSet and a secondary StatefulSet with dedicated PersistentVolumeClaims for both primary and secondary StatefulSets, shows a DumpAndLoad strategy: kind : ProtectedApplication apiVersion : gkebackup.gke.io/v1 metadata : name : mariadb namespace : mariadb spec : resourceSelection : type : Selector selector : matchLabels : app : mariadb components : - name : mariadb-dump resourceKind : StatefulSet resourceNames : [ "mariadb-primary" , "mariadb-secondary" ] strategy : type : DumpAndLoad dumpAndLoad : loadTarget : mariadb-primary dumpTarget : mariadb-secondary dumpHooks : - name : db dump container : mariadb command : - bash - "-c" - mysqldump -u root --all-databases > /backup/mysql backup.dump loadHooks : - name : db load container : mariadb command : - bash - "-c" - mysql -u root < /backup/mysql backup.sql volumeSelector : matchLabels : gkebackup.gke.io/backup : dedicated-volume Check if a ProtectedApplication is ready for backup You can check whether a ProtectedApplication is ready for a backup by running the following command: kubectl describe protectedapplication APPLICATION NAME Replace APPLICATION NAME with the name of your application.
-- This example creates a ProtectedApplication resource that quiesces the file system before backing up the logs volume and unquiesces after the backup: kind : ProtectedApplication apiVersion : gkebackup.gke.io/v1 metadata : name : nginx namespace : sales spec : resourceSelection : type : Selector selector : matchLabels : app : nginx components : - name : nginx-app resourceKind : Deployment resourceNames : [ "nginx-deployment" ] strategy : type : BackupAllRestoreAll backupAllRestoreAll : backupPreHooks : - name : freeze container : nginx command : - bash - "-c" - Add application logic to flush data to disk before snapshot and freeze the application from further changes. echo "Freezing the application" Return 0 on successful freeze of application, and non-zero for errors exit 0 backupPostHooks : - name : unfreeze container : nginx command : - bash - "-c" - Add application logic to unfreeze the application. echo "Unfreezing the application" Return 0 on successful freeze of application, and non-zero for errors exit 0 Strategy: BackupOneAndRestoreAll This strategy backs up one copy of a selected Pod.
-- This example, assuming an architecture of one primary StatefulSet and a secondary StatefulSet, shows a backup of volumes of one Pod in secondary StatefulSet, and then a restore to all other volumes: kind : ProtectedApplication apiVersion : gkebackup.gke.io/v1 metadata : name : mariadb namespace : mariadb spec : resourceSelection : type : Selector selector : matchLabels : app : mariadb components : - name : mariadb resourceKind : StatefulSet resourceNames : [ "mariadb-primary" , "mariadb-secondary" ] strategy : type : BackupOneRestoreAll backupOneRestoreAll : backupTargetName : mariadb-secondary backupPreHooks : - name : quiesce container : mariadb command : [ ... ] backupPostHooks : - name : unquiesce container : mariadb command : [ ... ] Strategy: DumpAndLoad This strategy uses a dedicated volume for backup and restore processes and requires a dedicated PersistentVolumeClaim attached to a component that stores dump data.
+- This following action adds a new environment variable "PORT" with value "80" to the nginx container. op : add path : "/spec/containers/0/env/0" value : > { "name" : "PORT" , "value" : "80" } Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : "https" resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : "https" - name : PORT # newly added value : "80" # newly added resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch The following action adds value to a new label app.kubernetes.io/name: nginx to the Pod. op : add path : "/metadata/labels/app.kubernetes.io 1name" value : "nginx" Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : "https" resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx app.kubernetes.io/name : nginx # newly added spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : "https" resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch The following action replaces the image of nginx container to change it from "nginx:latest" to "nginx:stable" . op : add path : "/spec/containers/0/image" value : nginx:stable Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : "https" resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:stable # replaced ports : - containerPort : 80 env : - name : PROTOCOL value : "https" resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch Note: An add operation is equivalent to replace operation if the path specifies an object member that already exists.
+- The following action copies environment variables from the nginx container to the install init container. op : copy fromPath : "/spec/containers/0/env" path : "/spec/initContainers/0/env" Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : "https" resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : "https" resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch env : # copy from "nginx" container - name : PROTOCOL value : https To learn more about defining transformation rules in the Google Cloud console, see Plan a set of restores .
+- The following action removes environment variables from the nginx container and adds them to the install init container. op : move fromPath : "/spec/containers/0/env" path : "/spec/initContainers/0/env" Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : "https" resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 "env" is moved to "install" container resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch env : # moved "from" nginx container - name : PROTOCOL value : https Copy fromPath is required for copy operation.
+- You can find examples of each operation, using the following Pod definition: YAML apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : "https" resources : limits : cpu : "250m" memory : "64Mi" initContainers : - name : install image : busybox:stable command : - wget - "-O" - "/tmp/index.html" - http://info.cern.ch JSON { "apiVersion" : "v1" , "kind" : "Pod" , "metadata" : { "name" : "nginx" , "namespace" : "ns" , "labels" : { "app" : "nginx" } }, "spec" : { "containers" : [ { "name" : "nginx" , "image" : "nginx:latest" , "ports" : [ { "containerPort" : 80 } ], "env" : [ { "name" : "PROTOCOL" , "value" : "https" } ], "resources" : { "limits" : { "cpu" : "250m" , "memory" : "64Mi" } } } ], "initContainers" : [ { "name" : "install" , "image" : "busybox:stable" , "command" : [ "wget" , "-O" , "/tmp/index.html" , "http://info.cern.ch" ] } ] } } Add value is always required for add operations, and must be a legal JSON element.
+
+### "IAM overview \_|\_ Identity and Access Management (IAM) \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/iam/docs/overview](https://docs.cloud.google.com/iam/docs/overview)
+- Source ID: `site-iam-reference`
+- Final score: 88
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Advanced access control In addition to allow policies, IAM provides the following access control mechanisms to help you refine who has access to what resources: Additional policy types : IAM offers the following policy types in addition to allow policies: Deny policies : Deny policies prevent principals from using certain permissions, even if they're granted a role with the permission.
+- To get a complete list of the principals that have access to the resource, you need to view the resource's allow policy and the resource's ancestors' allow policies.
+- For example, you could require that principals request access each time they want to view a sensitive resource instead of permanently granting them a IAM role.
+- To understand who can access a resource, you need to also view all of the allow policies that affect the resource .
 
 ### Back up your workloads \_|\_ Backup for GKE \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup)
 - Source ID: `site-docs-root`
-- Final score: 206
+- Final score: 87
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Required roles To get the permissions that you need to create and manage a backup, ask your administrator to grant you the Backup for GKE Backup Admin ( roles/gkebackup.backupAdmin ), which is a subset of Backup for GKE Admin ( roles/gkebackup.admin ) IAM role on your project.
-- Autopilot Standard This page describes how to create a backup of your workloads in Google Kubernetes Engine (GKE) using the Backup for GKE service.
-- For the full list of options, refer to the gcloud beta container backup-restore backups get-backup-index-download-url documentation.
 - View backup index The backup index provides information about the resources that are included in a backup.
-
-### Backup for GKE \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke](https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke)
-- Source ID: `site-api-reference`
-- Final score: 196
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- The following diagram shows the relationship between the different Backup for GKE components: Service overview The Backup for GKE service provides an API endpoint for clients to interact with.
-- Administrators don't interact with the agent, as the agent is driven by custom Kubernetes resources ( BackupJob and RestoreJob ) automatically created in the cluster by the Backup for GKE service in response to the creation of backup and restore cloud resources.
-- Backup for GKE manages a database of these application-specific resources and the service API methods mostly correspond to create, read, update, or delete operations against these resources.
-- Agent overview The Backup for GKE agent is deployed and runs in each GKE cluster that you configure to be backed up by the Backup for GKE service.
+- You can view the backup index by using the gcloud CLI or the Google Cloud console. gcloud View the group, version, kind, and name of each resource in a backup: gcloud beta container backup-restore backups get-backup-index-download-url BACKUP \ --project = PROJECT ID \ --location = LOCATION \ --backup-plan = BACKUP PLAN The command generates a URL which lets you view and download the backup index.
+- Console Use the following instructions to view backup index and its details in the Google Cloud console: Go to the Google Kubernetes Engine page in the Google Cloud console.
+- View a volume backup Volume backup resources are automatically created by the agent when PersistentVolumeClaims are encountered within the scope of a backup.
 

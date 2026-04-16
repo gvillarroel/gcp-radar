@@ -1,29 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:48:27.793Z"
+generated_at: "2026-04-12T20:50:31.503Z"
 product_name: "App Engine flexible environment Ruby"
 product_slug: "app-engine-flexible-environment-ruby"
 feature_name: "App Engine availability in asia-east2"
 feature_slug: "app-engine-availability-in-asia-east2"
 latest_feature_date: "2018-10-22"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started"
 keywords:
-  - "Hong Kong region"
-  - "Hong Kong"
-  - "App Engine region launch"
-  - "regional availability"
-  - "App Engine location"
-  - "asia east 2"
-  - "asia-east2"
+  - "app"
+  - "engine"
+  - "availability"
+  - "asia"
+  - "east2"
+  - "launched"
+  - "hong"
+  - "kong"
 ---
 
 # App Engine availability in asia-east2
 
 Product: App Engine flexible environment Ruby
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +36,54 @@ App Engine launched in the asia-east2 (Hong Kong) region.
 
 App Engine launched in the asia-east2 (Hong Kong) region.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users](https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Authenticating users \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users](https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users)
+- Source ID: `site-docs-reference`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.
+- IAP doesn't protect against activity within a project, such as one App Engine service accessing another service in the same project.
+- To learn about integrating Identity Platform with App Engine, try the how-to guide for signing in users on App Engine .
+
+### "Customizing the .NET Runtime \_|\_ App Engine flexible environment \_|\_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime)
+- Source ID: `site-docs-reference`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Customizing the .NET Runtime Stay organized with collections Save and categorize content based on your preferences.
+
+### "An Overview of the Admin API \_|\_ App Engine Admin API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/getting-started](https://docs.cloud.google.com/appengine/docs/admin-api/getting-started)
+- Source ID: `site-docs-reference`
+- Final score: 30
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.
+- The Admin API provides programmatic access to several of the App Engine administrative operations that are found in the Google Cloud console .
+- The App Engine Admin API is a RESTful API for managing your App Engine applications regardless of programming language.
+- With the Admin API, you can manage your App Engine applications in manners that best suit your environment or process.
 

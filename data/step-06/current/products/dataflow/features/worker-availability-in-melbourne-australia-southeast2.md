@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:59:26.832Z"
+generated_at: "2026-04-15T12:05:13.821Z"
 product_name: "Dataflow"
 product_slug: "dataflow"
 feature_name: "Worker availability in Melbourne (australia-southeast2)"
 feature_slug: "worker-availability-in-melbourne-australia-southeast2"
 latest_feature_date: "2021-06-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataflow/docs/release-notes"
-  - "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.AutoscalingSettings.Builder"
-  - "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python"
+  - "https://docs.cloud.google.com/dataflow/docs/resources/locations"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/configure-worker-vm"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro"
 keywords:
   - "worker"
   - "availability"
-  - "in"
   - "melbourne"
   - "australia"
   - "southeast2"
-  - "this"
+  - "feature"
   - "lets"
+  - "dataflow"
 ---
 
 # Worker availability in Melbourne (australia-southeast2)
 
 Product: Dataflow
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,66 +38,54 @@ This feature lets Dataflow use workers in zones in the Melbourne region australi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataflow/docs/release-notes](https://docs.cloud.google.com/dataflow/docs/release-notes)
-- [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.AutoscalingSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.AutoscalingSettings.Builder)
-- [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python)
+- [https://docs.cloud.google.com/dataflow/docs/resources/locations](https://docs.cloud.google.com/dataflow/docs/resources/locations)
+- [https://docs.cloud.google.com/dataflow/docs/guides/configure-worker-vm](https://docs.cloud.google.com/dataflow/docs/guides/configure-worker-vm)
+- [https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro](https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro)
 
 ## Supporting Pages
 
-### Dataflow release notes \_|\_ Google Cloud Documentation
+### Configure Dataflow worker VMs \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/release-notes](https://docs.cloud.google.com/dataflow/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 126
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/configure-worker-vm](https://docs.cloud.google.com/dataflow/docs/guides/configure-worker-vm)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 97
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use Cloud Storage FUSE to mount your Cloud Storage buckets onto Dataflow VMs Cloud Storage FUSE lets you mount your Cloud Storage buckets directly with Dataflow VMs, allowing software to access files as if they are local.
+- To verify that the Dataflow worker VMs are created with the specified minimum CPU platform, check the Cloud Logging entries for the job as follows: Navigate to the Cloud Logging console in the Google Cloud console.
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Configure Dataflow worker VMs Stay organized with collections Save and categorize content based on your preferences.
+- Minimum CPU platform If you have performance-sensitive workloads that depend on specific CPU features, you can specify a minimum CPU platform for worker VMs.
+
+### Dataflow locations \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/resources/locations](https://docs.cloud.google.com/dataflow/docs/resources/locations)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 92
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- June 22, 2021 Feature Dataflow is now able to use workers, Dataflow Shuffle, Streaming Engine, FlexRS, and regional endpoints in zones in Melbourne (australia-southeast2).
-- July 27, 2020 Feature Dataflow now supports Dataflow Shuffle, Streaming Engine, FlexRS, and the following regional endpoints in GA: northamerica-northeast1 (Montréal) asia-southeast1 (Singapore) australia-southeast1 (Sydney) June 08, 2020 Feature Dataflow is now able to use workers in zones in the asia-southeast2 region (Jakarta).
-- This feature is limited to Persistent Disks attached to Cloud Dataflow workers and used for Persistent Disk-based shuffle and streaming state storage.
-- June 20, 2017 Feature Cloud Dataflow is now able to use workers in zones in the australia-southeast1 region (Sydney).
+- Region description Region name Taiwan asia-east1 Hong Kong asia-east2 Tokyo asia-northeast1 Osaka asia-northeast2 Seoul asia-northeast3 Mumbai asia-south1 Delhi asia-south2 Singapore asia-southeast1 Jakarta asia-southeast2 Bangkok asia-southeast3 Sydney australia-southeast1 Melbourne australia-southeast2 Europe The following table lists the regions in Europe where Dataflow is available.
+- Regional availability You can use Dataflow workers, endpoints, Streaming Engine, Shuffle, and FlexRS in supported regions.
+- Region description Region name Johannesburg africa-south1 GPU availability Dataflow supports a variety of GPU types.
+- Note: The Dataflow Data Pipelines feature is available in the Cloud Scheduler regions .
 
-### "Quickstart: Create a streaming pipeline using a Dataflow template \_|\_\
+### "Use Apache Beam notebook advanced features \_|\_ Cloud Dataflow \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template)
-- Source ID: `site-docs-root`
-- Final score: 120
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following is a sample message from this topic, in the JSON format: { "ride id" : "19c41fc4-e362-4be5-9d06-435a7dc9ba8e" , "point idx" : 217 , "latitude" : 40 .75399, "longitude" : -73.96302, "timestamp" : "2021-03-08T02:29:09.66644-05:00" , "meter reading" : 6 .293821, "meter increment" : 0 .029003782, "ride status" : "enroute" , "passenger count" : 1 } For Temp location , enter the following: gs:// BUCKET NAME /temp/ Replace BUCKET NAME with the name of your Cloud Storage bucket.
-- To get the permissions that you need to complete this quickstart, ask your administrator to grant you the following IAM roles on your project: BigQuery User ( roles/bigquery.user ) Dataflow Admin ( roles/dataflow.admin ) Service Account User ( roles/iam.serviceAccountUser ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
-- What's next Dataflow templates overview Creating classic templates Running classic templates Google-provided templates Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- BigQuery Data Editor ( roles/bigquery.dataEditor ) Dataflow Worker ( roles/dataflow.worker ) Pub/Sub Editor ( roles/pubsub.editor ) Storage Object Admin ( roles/storage.objectAdmin ) Viewer ( roles/viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .
-
-### "Class AutoscalingSettings.Builder (0.92.0) \_|\_ Java client libraries \_\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.AutoscalingSettings.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.AutoscalingSettings.Builder)
-- Source ID: `site-java-reference`
-- Final score: 116
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro](https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro)
+- Source ID: `site-docs-reference-2`
+- Final score: 85
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Builder clearMaxNumWorkers () The maximum number of workers to cap scaling at. int32 max num workers = 2; Returns Type Description AutoscalingSettings.Builder This builder for chaining. getAlgorithm() public AutoscalingAlgorithm getAlgorithm () The algorithm to use for autoscaling. .google.dataflow.v1beta3.AutoscalingAlgorithm algorithm = 1; Returns Type Description AutoscalingAlgorithm The algorithm. getAlgorithmValue() public int getAlgorithmValue () The algorithm to use for autoscaling. .google.dataflow.v1beta3.AutoscalingAlgorithm algorithm = 1; Returns Type Description int The enum numeric value on the wire for algorithm. getDefaultInstanceForType() public AutoscalingSettings getDefaultInstanceForType () Returns Type Description AutoscalingSettings getDescriptorForType() public Descriptors .
-- Builder clearAlgorithm () The algorithm to use for autoscaling. .google.dataflow.v1beta3.AutoscalingAlgorithm algorithm = 1; Returns Type Description AutoscalingSettings.Builder This builder for chaining. clearMaxNumWorkers() public AutoscalingSettings .
-- Returns Type Description AutoscalingSettings.Builder This builder for chaining. setMaxNumWorkers(int value) public AutoscalingSettings .
-- Descriptor getDescriptorForType () Returns Type Description Descriptor Overrides GeneratedMessage.Builder<BuilderType>.getDescriptorForType() getMaxNumWorkers() public int getMaxNumWorkers () The maximum number of workers to cap scaling at. int32 max num workers = 2; Returns Type Description int The maxNumWorkers. internalGetFieldAccessorTable() protected GeneratedMessage .
-
-### Create a Dataflow pipeline using Python \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python](https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python)
-- Source ID: `site-docs-root`
-- Final score: 116
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Run the modified pipeline on the Dataflow service: python wordcount.py \ --region DATAFLOW REGION \ --input gs://dataflow-samples/shakespeare/kinglear.txt \ --output gs:// BUCKET NAME /results/outputs \ --runner DataflowRunner \ --project PROJECT ID \ --temp location gs:// BUCKET NAME /tmp/ Replace the following: DATAFLOW REGION : the region where you want to deploy the Dataflow job BUCKET NAME : your Cloud Storage bucket name PROJECT ID : you Google Cloud project ID Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the Google Cloud project with the resources.
-- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects remove-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \ --role = SERVICE ACCOUNT ROLE Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Read about the Apache Beam programming model .
-- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects add-iam-policy-binding PROJECT ID --member = "serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com" --role = SERVICE ACCOUNT ROLE Replace PROJECT ID with your project ID.
-- BUCKET NAME : the Cloud Storage bucket name that you copied earlier PROJECT ID : the Google Cloud project ID that you copied earlier Note: To specify a user-managed worker service account , include the --service account email pipeline option .
+- Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use Apache Beam notebook advanced features Stay organized with collections Save and categorize content based on your preferences.
+- For example, to set it to 'us-west1': cloud options . region = 'us-west1' Explicitly provision the notebook-managed cluster. worker options = options . view as ( WorkerOptions ) Provision 40 workers to run the pipeline. worker options . num workers = 40 Use the default subnetwork. worker options . subnetwork = 'default' Choose the machine type for the workers. worker options . machine type = 'n1-highmem-8' When working with non-official Apache Beam releases, such as Apache Beam built from source code, configure the environment to use a compatible released SDK container.
+- You can check the beam sql magic usage with the -h or --help option: You can create a PCollection from constant values: You can join multiple PCollections : You can launch a Dataflow job with the -r DataflowRunner or --runner DataflowRunner option: To learn more, see the example notebook Apache Beam SQL in notebooks .
+- For general Apache Beam container usage, see: Container environments Managing Python Pipeline Dependencies For Dataflow container usage, see: Use custom containers in Dataflow Disable external IP addresses When creating an Apache Beam notebook instance, to increase security, disable external IP addresses.
 

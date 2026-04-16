@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:15:44.327Z"
+generated_at: "2026-04-12T12:19:43.309Z"
 product_name: "Vertex AI Agent Builder"
 product_slug: "vertex-ai-agent-builder"
 feature_name: "Vertex AI Agent Engine default CAA-managed agent identity credentials"
 feature_slug: "vertex-ai-agent-engine-default-caa-managed-agent-identity-credentials"
 latest_feature_date: "2025-12-12"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
-  - "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/deploy"
   - "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access"
+  - "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
 keywords:
   - "vertex"
   - "ai"
@@ -27,7 +27,7 @@ keywords:
 # Vertex AI Agent Engine default CAA-managed agent identity credentials
 
 Product: Vertex AI Agent Builder
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +39,14 @@ Vertex AI Agent Engine now secures agent identity credentials by default through
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
-- [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/deploy](https://docs.cloud.google.com/agent-builder/agent-engine/deploy)
 - [https://docs.cloud.google.com/agent-builder/agent-engine/manage/access](https://docs.cloud.google.com/agent-builder/agent-engine/manage/access)
+- [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
 
 ## Supporting Pages
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity](https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity)
 - Source ID: `site-docs-root`
-- Final score: 330
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 368
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Restrict access to these credentials based on Agent ID (a principal identifier ): Create the secret container gcloud secrets create my-app-oauth-secret Add the actual client secret to Secret Manager gcloud secrets versions add my-app-oauth-secret --data-file=oauth-secret Grant agent identity access to the secret gcloud secrets add-iam-policy-binding my-app-oauth-secret \ --role='roles/secretmanager.secretAccessor' \ --member="principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID " \ Once the secret is stored, the agent can access these credentials during runtime using its principal identifier and standard Google Cloud authentication library automatically as part of Application Default Credential.
@@ -64,26 +64,13 @@ Evidence snippets:
 - Define the agent in your preferred framework: from google.adk.agents import Agent agent = Agent ( model = "gemini-2.5-flash" , name = "minimal agent" , instruction = "You are a helpful assistant." , ) Then, deploy it: import vertexai from vertexai import types from vertexai.agent engines import AdkApp Initialize the Vertex AI client with v1beta1 API for agent identity support client = vertexai .
 - Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag.
 
-### "Quickstart with Vertex AI Agent Engine SDK \_|\_ Vertex AI Agent Builder\
-
-- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
-- Source ID: `site-docs-root`
-- Final score: 238
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- You must specify at least one of filter (applied to system fields) or filter groups (applied to metadata fields). operation = client . agent engines . memories . purge ( name = agent engine . api resource . name , Specify at least one of filter or filter groups. filter = " FILTER STRING " , filter groups = FILTER GROUPS , Set to false (default) if you want to stage but not execute the purge operation. force = True , config = { Set to false (default) if you want to purge memories asynchronously. "wait for completion" : True } ) Replace the following: FILTER STRING : A string using EBNF syntax for filtering against system fields.
-- To see an example of using Memory Bank with the Agent Engine SDK, run the "Get started with Memory Bank" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To see an example of using Memory Bank with LangGraph, run the "Get started with Memory Bank - LangGraph" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Before you begin To complete the steps demonstrated in this tutorial, you must first follow the steps in Set up for Memory Bank .
-- Remove by resource name If you know exactly which memory resource you want to remove, you can delete a specific memory using its resource name: client . agent engines . memories . delete ( name = MEMORY NAME , config = { Set to false (default) if you want to delete the memory asynchronously. "wait for completion" : True } ) Replace the following: MEMORY NAME : The name of the Memory to delete.
-- Otherwise, you can delete the individual resources you created in this tutorial, as follows: Use the following code sample to delete the Vertex AI Agent Engine instance, which also deletes any sessions or memories associated with the Vertex AI Agent Engine instance. agent engine . delete ( force = True ) Delete any locally created files.
-
 ### Deploy an agent \_|\_ Vertex AI Agent Builder \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/deploy](https://docs.cloud.google.com/agent-builder/agent-engine/deploy)
 - Source ID: `site-docs-root`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 270
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following is an example: labels = { "author" : "username" , "version" : "latest" } Configure a default agent identity You can provision agents you deploy to Vertex AI Agent Engine with a unique identity upon creating your agent.
@@ -95,13 +82,26 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/agent-builder/agent-engine/manage/access](https://docs.cloud.google.com/agent-builder/agent-engine/manage/access)
 - Source ID: `site-docs-root`
-- Final score: 228
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 266
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Service accounts If you used service accounts to set up the identity and permissions for your agent , agents that you deploy on Vertex AI Agent Engine run using either the AI Platform Reasoning Engine Service Agent or your custom service account.
 - Agent identity If you used agent identity to set up the identity and permissions for your agent , see Use agent identity with Vertex AI Agent Engine for information about how to manage access control to resources.
 - The service account has a Vertex AI Reasoning Engine Service Agent role ( roles/aiplatform.reasoningEngineServiceAgent ) that grants the default permissions required for deployed agents.
 - Then run the following command: gcloud projects get-iam-policy PROJECT ID OR NUMBER \ --flatten = "bindings[].members" \ --filter = "bindings.members:serviceAccount: PRINCIPAL " \ --format = "value(bindings.role)" where PROJECT ID OR NUMBER is the ID or number for your project, and PRINCIPAL is based on the service account that was used when the agent is deployed on Vertex AI Agent Engine.
+
+### "Quickstart with Vertex AI Agent Engine SDK \_|\_ Vertex AI Agent Builder\
+
+- URL: [https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api)
+- Source ID: `site-docs-root`
+- Final score: 258
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You must specify at least one of filter (applied to system fields) or filter groups (applied to metadata fields). operation = client . agent engines . memories . purge ( name = agent engine . api resource . name , Specify at least one of filter or filter groups. filter = " FILTER STRING " , filter groups = FILTER GROUPS , Set to false (default) if you want to stage but not execute the purge operation. force = True , config = { Set to false (default) if you want to purge memories asynchronously. "wait for completion" : True } ) Replace the following: FILTER STRING : A string using EBNF syntax for filtering against system fields.
+- To see an example of using Memory Bank with the Agent Engine SDK, run the "Get started with Memory Bank" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To see an example of using Memory Bank with LangGraph, run the "Get started with Memory Bank - LangGraph" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Before you begin To complete the steps demonstrated in this tutorial, you must first follow the steps in Set up for Memory Bank .
+- Remove by resource name If you know exactly which memory resource you want to remove, you can delete a specific memory using its resource name: client . agent engines . memories . delete ( name = MEMORY NAME , config = { Set to false (default) if you want to delete the memory asynchronously. "wait for completion" : True } ) Replace the following: MEMORY NAME : The name of the Memory to delete.
+- Otherwise, you can delete the individual resources you created in this tutorial, as follows: Use the following code sample to delete the Vertex AI Agent Engine instance, which also deletes any sessions or memories associated with the Vertex AI Agent Engine instance. agent engine . delete ( force = True ) Delete any locally created files.
 

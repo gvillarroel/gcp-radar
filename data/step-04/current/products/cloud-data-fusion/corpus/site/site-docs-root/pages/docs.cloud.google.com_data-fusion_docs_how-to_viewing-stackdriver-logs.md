@@ -26,9 +26,9 @@ View advanced pipeline logs in Cloud Logging
 Stay organized with collections
 Save and categorize content based on your preferences.
 This page describes how to enable Cloud Logging for your
-Cloud Data Fusion Dataproc clusters and access advanced
+Cloud Data Fusion Managed Service for Apache Spark clusters and access advanced
 pipeline logs.
-Enable Dataproc Cloud Logging
+Enable Managed Service for Apache Spark Cloud Logging
 To view pipeline and cluster issues in Cloud Logging, enable advanced logs
 in new or existing Cloud Data Fusion instances. To enable advanced logs in
 an existing instance, do the following:
@@ -78,6 +78,6 @@ Learn how to view audit logs .
 Learn how to view pipeline logs from the Cloud Data Fusion Pipeline Studio .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

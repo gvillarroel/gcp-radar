@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:56:38.814Z",
+  "generated_at": "2026-04-12T21:47:41.712Z",
   "product_name": "Service Usage",
   "product_slug": "service-usage",
   "step02_source_path": "data/step-02/current/service-usage.md",
@@ -8,6 +8,63 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 4,
+    "source_row_count": 4,
+    "top_phrases": [
+      "service usage services list disabled filter",
+      "hierarchical service activation",
+      "service usage v1 api",
+      "service usage adds hierarchical service activation allowing services to be enabled or disabled across an organization s resource hierarchy",
+      "list method to filter results for disabled apis and services",
+      "added support to the service usage services"
+    ],
+    "top_tokens": [
+      "service",
+      "services",
+      "usage",
+      "and",
+      "apis",
+      "cloud",
+      "disabled",
+      "for",
+      "google",
+      "across",
+      "activation",
+      "added",
+      "adds",
+      "allowing",
+      "api",
+      "available",
+      "became",
+      "beta",
+      "discover",
+      "discovering",
+      "enabled",
+      "enabling",
+      "filter",
+      "generally",
+      "hierarchical",
+      "hierarchy",
+      "infrastructure",
+      "introduced",
+      "launch",
+      "list",
+      "manage",
+      "managing",
+      "method",
+      "organization",
+      "project",
+      "projects",
+      "public",
+      "resource",
+      "results",
+      "support",
+      "the",
+      "version"
+    ],
+    "inventory_profile": "api_heavy"
+  },
   "dominant_doc_family": "service-usage",
   "dominant_python_slug": "serviceusage",
   "dominant_java_slug": "google-cloud-service-usage",
@@ -78,6 +135,20 @@
     },
     {
       "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Service Usage\" \"service usage services list disabled filter\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Service Usage\" \"service usage adds hierarchical service activation allowing services to be enabled or disabled across an organization s resource hierarchy\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Service Usage\" \"roles and permissions\"",
       "official_result_count": 8,
@@ -119,15 +190,15 @@
           "rank": 6
         },
         {
-          "title": "Set build service account (source deploy) | Cloud Run | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/run/docs/configuring/services/build-service-account",
-          "description": "To get the permissions that you need to build and deploy from source, ask your administrator to grant you the following IAM roles: Cloud Run Source Developer (roles/run.sourceDeveloper) on your project · Service Usage Consumer (roles/serviceusage.serviceUsageConsumer) on your project",
-          "rank": 7
-        },
-        {
           "title": "Manage Personalized Service Health access | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/service-health/docs/manage-access",
           "description": "gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.events.list gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.events.get gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.locations.list gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.locations.get · Enable the Service Health API for the project. Grant the Service Usage Consumer role (roles/serviceusage.serviceUsageConsumer).",
+          "rank": 7
+        },
+        {
+          "title": "IAM roles and permissions | Gemini Enterprise | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/gemini/enterprise/docs/access-control",
+          "description": "The roles specific to Gemini Enterprise provide only Gemini Enterprise permissions, except for the following Google Cloud permissions, which are needed for general Google Cloud usage: ... The following table lists the Gemini Enterprise IAM roles with a corresponding list of all the permissions for each role. You can get and set IAM allow policies and IAM roles using the Google Cloud Console. For more information, see Manage access to projects, folders, and organizations. As a project owner, you can grant the Discovery Engine Admin, Service Usage Consumer, and Logs Viewer roles to the users who want to be administrators.",
           "rank": 8
         }
       ]
@@ -195,15 +266,15 @@
           "rank": 4
         },
         {
-          "title": "Manage service enablement | Service Usage | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/manage-enablement",
-          "description": "To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission. Learn how to grant roles. gcloud services enable serviceusage.googleapis.com · If you don&#x27;t indicate the Google Cloud resource that you want to manage, the commands in this document default to the current project.",
-          "rank": 5
-        },
-        {
           "title": "Enabled services | Service Usage | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/service-usage/docs/enabled-service",
           "description": "Documentation · Access and resource ... on your preferences. To use most Google Cloud APIs and services, <strong>you must first enable them in a Google Cloud project</strong>....",
+          "rank": 5
+        },
+        {
+          "title": "Manage service enablement | Service Usage | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/manage-enablement",
+          "description": "To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission. Learn how to grant roles. gcloud services enable serviceusage.googleapis.com · If you don&#x27;t indicate the Google Cloud resource that you want to manage, the commands in this document default to the current project.",
           "rank": 6
         },
         {
@@ -213,9 +284,9 @@
           "rank": 7
         },
         {
-          "title": "REST Resource: services | Service Usage | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-usage/docs/reference/rest/v1beta1/services",
-          "description": "<strong>A service that is available for use by the consumer</strong> · The resource name of the consumer and service",
+          "title": "Service Usage API v1 - Package cloud.google.com/go/serviceusage/apiv1 (v1.9.7) | Go client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/serviceusage/latest/apiv1",
+          "description": "<strong>Package serviceusage is an auto-generated package for the Service Usage API</strong>. Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no ...",
           "rank": 8
         }
       ]
@@ -249,7 +320,7 @@
         {
           "title": "APIs and references | Service Usage | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/service-usage/docs/apis",
-          "description": "Get started with the Cloud Client Libraries for the Service Usage API. Reference for the Service Usage gcloud CLI. Reference for the Service Usage gcloud CLI (beta). ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "description": "Get started with the Cloud Client Libraries for the Service Usage API. Reference for the Service Usage gcloud CLI. Reference for the Service Usage gcloud CLI (beta). ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code ...",
           "rank": 1
         }
       ]
@@ -273,15 +344,15 @@
           "rank": 2
         },
         {
-          "title": "google-api-java-client-services/clients/google-api-services-serviceusage/v1 at main · googleapis/google-api-java-client-services",
-          "url": "https://developers.google.com/api-client-library/java/apis/serviceusage/v1",
-          "description": "<strong>Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use</strong>.",
-          "rank": 3
-        },
-        {
           "title": "ServiceUsage.Services.List (Service Usage API v1 (Rev. 231) 1.25.0)",
           "url": "https://developers.google.com/resources/api-libraries/documentation/serviceusage/v1/java/latest/com/google/api/services/serviceusage/v1/ServiceUsage.Services.List.html",
           "description": "<strong>List all services available to the specified project, and the current state of those services with respect to the project</strong>. The list includes all public services, all services for which the calling user has the `servicemanagement.services.bind` permission, and all services that have already ...",
+          "rank": 3
+        },
+        {
+          "title": "google-api-java-client-services/clients/google-api-services-serviceusage/v1 at main · googleapis/google-api-java-client-services",
+          "url": "https://developers.google.com/api-client-library/java/apis/serviceusage/v1",
+          "description": "<strong>Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use</strong>.",
           "rank": 4
         },
         {
@@ -312,6 +383,45 @@
     },
     {
       "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Service Usage\" \"hierarchical service activation\"",
+      "official_result_count": 4,
+      "results": [
+        {
+          "title": "Hierarchical service activation overview | Service Usage | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/overview",
+          "description": "Hierarchical service activation is a Service Usage feature that <strong>gives you more control over enabling and disabling services, including public and private services, across your organization&#x27;s resource hierarchy</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Manage service enablement | Service Usage | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/manage-enablement",
+          "description": "The service and its dependencies are disabled without checking their usage. --validate-only to validate the disablement without actually performing the operation. Enabling BigQuery service without its dependencies: gcloud beta services enable bigquery.googleapis.com --skip-dependency ... Operation [operations/ucpat.p39-581601899707-73a57d57-aa46-4d0b-a5ee-57034a42f2b3] complete. Result: { &quot;@type&quot;:&quot;type.googleapis.com/google.api.serviceusage.with Hierarchical Service Activationbeta.ConsumerPolicy&quot;, &quot;createTime&quot;:&quot;2025-01-31T20:17:37.272343Z&quot;, &quot;enableRules&quot;:[ { &quot;services&quot;:[ &quot;services/apikeys.goog",
+          "rank": 2
+        },
+        {
+          "title": "List service dependencies | Service Usage | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/list-dependencies",
+          "description": "Use Hierarchical Service Activation <strong>to list and group service dependencies across projects, folders, and organizations</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "Service Usage release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-usage/docs/release-notes",
+          "description": "<strong>This feature lets you enable and disable services across your organization&#x27;s resource hierarchy</strong>. ... Public v1 release: Service Usage is now generally available. You can use version 1 of Service Usage to discover and manage other APIs and services ...",
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Service Usage\" \"list method to filter results for disabled apis and services\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Service Usage\" \"access control\"",
       "official_result_count": 8,
@@ -323,15 +433,15 @@
           "rank": 1
         },
         {
-          "title": "Admission Control | Service Infrastructure | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-infrastructure/docs/admission-control",
-          "description": "It uses a simple, generic service usage model: a consumer consumes a service managed by a producer. All Google APIs and Google Cloud APIs use this model, since they are also built on top of Service Infrastructure. When a client accesses a service, all the entities involved in the access typically require a status and policy check, including the consumer, service, producer, user, application, network, and resources.",
-          "rank": 2
-        },
-        {
           "title": "Access control with IAM | Cloud Scheduler | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/scheduler/docs/access-control",
           "description": "To learn how to grant and revoke access, see Manage access to projects, folders, and organizations. For lists of the permissions and roles that Cloud Scheduler supports, see the following sections. To view and assign IAM roles for Cloud Scheduler, you must enable the Cloud Scheduler API for your project. You won&#x27;t be able to see the Cloud Scheduler roles in the Google Cloud console until you enable the API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
+          "rank": 2
+        },
+        {
+          "title": "Admission Control | Service Infrastructure | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-infrastructure/docs/admission-control",
+          "description": "It uses a simple, generic service usage model: a consumer consumes a service managed by a producer. All Google APIs and Google Cloud APIs use this model, since they are also built on top of Service Infrastructure. When a client accesses a service, all the entities involved in the access typically require a status and policy check, including the consumer, service, producer, user, application, network, and resources.",
           "rank": 3
         },
         {
@@ -400,14 +510,14 @@
         },
         {
           "title": "Hierarchical service activation overview | Service Usage | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/overview?hl=en",
+          "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/overview",
           "description": "This document provides an overview of hierarchical service activation. To learn how to use the feature, see Manage service enablement. Hierarchical service activation lets you set service enablement policies at different levels of the Google Cloud resource hierarchy.",
           "rank": 2
         },
         {
-          "title": "Enable and disable services | Service Usage | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-usage/docs/enable-disable",
-          "description": "You can use Service Usage <strong>to enable or disable any available service for your Google Cloud projects</strong>. This includes public Google Cloud services and private services created with Cloud Endpoints.",
+          "title": "Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-service-usage/latest/overview",
+          "description": "Service Usage Description: Is <strong>an infrastructure service of Google Cloud that lets you list and manage other APIs and services in your Cloud projects</strong>.",
           "rank": 3
         },
         {
@@ -423,15 +533,15 @@
           "rank": 5
         },
         {
-          "title": "Service Infrastructure | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-infrastructure/docs/overview",
-          "description": "If you are a service consumer, you can use the Service Usage <strong>to list, enable, and disable APIs and services in your Google Cloud projects, and apply quota restrictions to services used by your Google Cloud projects or within your organization</strong>.",
+          "title": "Enable and disable services | Service Usage | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-usage/docs/enable-disable",
+          "description": "You can use Service Usage <strong>to enable or disable any available service for your Google Cloud projects</strong>. This includes public Google Cloud services and private services created with Cloud Endpoints.",
           "rank": 6
         },
         {
-          "title": "List services | Service Usage | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-usage/docs/list-services",
-          "description": "This document <strong>describes how to list the APIs and services that are enabled or available in a Google Cloud project</strong>.",
+          "title": "Service Infrastructure | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-infrastructure/docs/overview",
+          "description": "If you are a service consumer, you can use the Service Usage <strong>to list, enable, and disable APIs and services in your Google Cloud projects, and apply quota restrictions to services used by your Google Cloud projects or within your organization</strong>.",
           "rank": 7
         },
         {
@@ -507,15 +617,15 @@
           "rank": 3
         },
         {
-          "title": "ServiceUsage.Services (Service Usage API v1 (Rev. 231) 1.25.0)",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/serviceusage/v1/java/latest/com/google/api/services/serviceusage/v1/ServiceUsage.Services.html",
-          "description": "Enable multiple services on a project. The operation is atomic: if enabling any service fails, then the entire batch fails, and no state changes occur. To enable a single service, use the `EnableService` method instead. Create a request for the method &quot;services.batchEnable&quot;.",
-          "rank": 4
-        },
-        {
           "title": "ServiceUsage (Service Usage API v1beta1 (Rev. 276) 1.25 ...",
           "url": "https://developers.google.com/resources/api-libraries/documentation/serviceusage/v1beta1/java/latest/com/google/api/services/serviceusage/v1beta1/ServiceUsage.html",
           "description": "<strong>Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use</strong> · For more information about this service, see the API Documentation",
+          "rank": 4
+        },
+        {
+          "title": "ServiceUsage.Services (Service Usage API v1 (Rev. 231) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/serviceusage/v1/java/latest/com/google/api/services/serviceusage/v1/ServiceUsage.Services.html",
+          "description": "Enable multiple services on a project. The operation is atomic: if enabling any service fails, then the entire batch fails, and no state changes occur. To enable a single service, use the `EnableService` method instead. Create a request for the method &quot;services.batchEnable&quot;.",
           "rank": 5
         },
         {
@@ -540,6 +650,39 @@
     },
     {
       "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Service Usage\" \"service usage v1 api\"",
+      "official_result_count": 3,
+      "results": [
+        {
+          "title": "Service Usage V1 API - Class Google::Cloud::ServiceUsage::V1::ServiceUsage::Client (v1.5.1) | Ruby client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-service_usage-v1/latest/Google-Cloud-ServiceUsage-V1-ServiceUsage-Client",
+          "description": "require &quot;google/cloud/service_usage/v1&quot; # Create a client object. The client can be reused for multiple calls. client = Google::Cloud::ServiceUsage::V1::ServiceUsage::Client.new # Create a request. To set request fields, pass in keyword arguments. request = Google::Cloud::ServiceUsage::V1::BatchEnableServicesRequest.new # Call the batch_enable_services method.",
+          "rank": 1
+        },
+        {
+          "title": "Ruby Client for the Service Usage V1 API | Ruby client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-service_usage-v1/latest",
+          "description": "Enable the API. Set up authentication. require &quot;google/cloud/service_usage/v1&quot; client = ::Google::Cloud::ServiceUsage::V1::ServiceUsage::Client.new request = ::Google::Cloud::ServiceUsage::V1::EnableServiceRequest.new # (request fields as keyword arguments...) response = client.enable_service request",
+          "rank": 2
+        },
+        {
+          "title": "Service Usage V1 API - Class Google::Api::Authentication (v1.5.1) | Ruby client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-service_usage-v1/latest/Google-Api-Authentication",
+          "description": "Reference documentation and code samples for the Service Usage V1 API class Google::Api::Authentication.",
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Service Usage\" \"added support to the service usage services\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Service Usage\" IAM roles permissions",
       "official_result_count": 8,
@@ -557,21 +700,21 @@
           "rank": 2
         },
         {
-          "title": "Access control with IAM | Cloud Tasks | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/tasks/docs/access-control",
-          "description": "<strong>All of the App Engine predefined roles include this permission</strong>. To view and assign IAM roles for Cloud Tasks, you must enable the Cloud Tasks API for your project. You won&#x27;t be able to see the Cloud Tasks roles in the Google Cloud console until ...",
-          "rank": 3
-        },
-        {
           "title": "Roles and permissions | Network Intelligence Center - Firewall Insights | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions",
           "description": "To get the permissions that you need to enable APIs and features, ask your administrator to grant you the following IAM roles on your project: <strong>Service Usage Admin (roles/serviceusage.serviceUsageAdmin)</strong>",
-          "rank": 4
+          "rank": 3
         },
         {
           "title": "Test permissions for custom user interfaces | Identity and Access Management (IAM) | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/iam/docs/testing-permissions",
           "description": "Different users are typically granted different permissions, and the Google Cloud console hides or exposes items accordingly. Enable the Resource Manager API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
+          "rank": 4
+        },
+        {
+          "title": "Access control with IAM | Cloud Tasks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/tasks/docs/access-control",
+          "description": "<strong>All of the App Engine predefined roles include this permission</strong>. To view and assign IAM roles for Cloud Tasks, you must enable the Cloud Tasks API for your project. You won&#x27;t be able to see the Cloud Tasks roles in the Google Cloud console until ...",
           "rank": 5
         },
         {
@@ -615,15 +758,15 @@
       "official_result_count": 8,
       "results": [
         {
-          "title": "Service Usage overview | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-usage/docs/overview",
-          "description": "Service Usage is <strong>an infrastructure service of Google Cloud that lets you list and manage APIs and services in your Google Cloud projects</strong>.",
-          "rank": 1
-        },
-        {
           "title": "Service Usage API | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/service-usage/docs/reference/rest",
           "description": "Service Usage · Reference · Send feedback · <strong>Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Service Usage overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-usage/docs/overview",
+          "description": "Service Usage is <strong>an infrastructure service of Google Cloud that lets you list and manage APIs and services in your Google Cloud projects</strong>.",
           "rank": 2
         },
         {
@@ -633,33 +776,33 @@
           "rank": 3
         },
         {
-          "title": "Enable and disable services | Service Usage | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/service-usage/docs/enable-disable",
-          "description": "<strong>You can use Service Usage to enable or disable any available service for your Google Cloud projects</strong>. This includes public Google Cloud services and private services created with Cloud Endpoints.",
-          "rank": 4
-        },
-        {
           "title": "Service Usage | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/service-usage/docs/reference/rest/Shared.Types/Usage",
           "description": "Configuration controlling usage of a service · Requirements that must be satisfied before a consumer project can use the service. Each requirement is of the form &lt;service.name&gt;/; for example &#x27;serviceusage.googleapis.com/billing-enabled&#x27;",
-          "rank": 5
+          "rank": 4
         },
         {
           "title": "Service Usage API v1 - Package cloud.google.com/go/serviceusage/apiv1 (v1.9.7) | Go client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/serviceusage/latest/apiv1",
           "description": "Enables services that service consumers ... that service consumers no longer use. See Service Usage API (at <strong>https://cloud.google.com/service-usage/docs/overview</strong>)...",
-          "rank": 6
+          "rank": 5
         },
         {
           "title": "Service Infrastructure | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/service-infrastructure/docs/overview",
           "description": "If you are a service consumer, you can use the Service Usage <strong>to list, enable, and disable APIs and services in your Google Cloud projects, and apply quota restrictions to services used by your Google Cloud projects or within your organization</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Service Usage documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-usage/docs",
+          "description": "Service Usage <strong>lets you list, enable, and disable APIs and services in your Google Cloud projects</strong>. ... Develop with our latest Generative AI models and tools. Get free usage of 20+ popular products, including Compute Engine and AI APIs.",
           "rank": 7
         },
         {
-          "title": "Ruby Client for the Service Usage V1 API | Ruby client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-service_usage-v1/latest",
-          "description": "Enables services that service consumers ... no longer use. Service Usage is <strong>an infrastructure service of Google Cloud that lets you list and manage other APIs and services in your Cloud projects</strong>....",
+          "title": "Method: services.enable | Service Usage | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/service-usage/docs/reference/rest/v1/services/enable",
+          "description": "Service Usage · Reference · Send feedback · HTTP request · Path parameters · Request body · Response body · Authorization scopes · Enable a service so that it can be used with a project. POST https://serviceusage.googleapis.com/v1/{name=*/*/services/*}:enable ·",
           "rank": 8
         }
       ]
@@ -703,6 +846,21 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "list"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -713,48 +871,22 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "list"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
       "keep": true
-    },
-    {
-      "title": "Enable and disable services | Service Usage | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-usage/docs/enable-disable",
-      "description": "<strong>You can use Service Usage to enable or disable any available service for your Google Cloud projects</strong>. This includes public Google Cloud services and private services created with Cloud Endpoints.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 100,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
     },
     {
       "title": "Service Usage overview | Google Cloud Documentation",
@@ -777,6 +909,21 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -787,6 +934,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -811,9 +969,24 @@
         2,
         3
       ],
-      "best_rank": 2,
+      "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
@@ -824,6 +997,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -851,6 +1035,20 @@
       "best_rank": 6,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "google",
+          "api",
+          "resource"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -861,8 +1059,18 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "google",
+          "api",
+          "resource"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
       "keep": false
@@ -888,6 +1096,21 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -897,7 +1120,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -925,6 +1159,21 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "for",
+          "google",
+          "api",
+          "enabling"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -934,7 +1183,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "for",
+          "google",
+          "api",
+          "enabling"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -962,6 +1222,21 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -971,7 +1246,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -999,6 +1285,21 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1008,7 +1309,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1016,59 +1328,41 @@
       "keep": false
     },
     {
-      "title": "Manage service enablement | Service Usage | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/manage-enablement",
-      "description": "To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission. Learn how to grant roles. gcloud services enable serviceusage.googleapis.com · If you don&#x27;t indicate the Google Cloud resource that you want to manage, the commands in this document default to the current project.",
-      "rank": 5,
+      "title": "Service Usage API v1 - Package cloud.google.com/go/serviceusage/apiv1 (v1.9.7) | Go client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/serviceusage/latest/apiv1",
+      "description": "<strong>Package serviceusage is an auto-generated package for the Service Usage API</strong>. Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no ...",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Usage\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview"
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
         1,
-        2
+        2,
+        3
       ],
-      "best_rank": 5,
-      "consistency_score": 67,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 95,
-      "keep": true
-    },
-    {
-      "title": "List services | Service Usage | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-usage/docs/list-services",
-      "description": "This document <strong>describes how to list the APIs and services that are enabled or available in a Google Cloud project</strong>.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1079,17 +1373,28 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "available"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 95,
+      "final_score": 100,
       "keep": false
     },
     {
-      "title": "REST Resource: services | Service Usage | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-usage/docs/reference/rest/v1beta1/services",
-      "description": "<strong>A service that is available for use by the consumer</strong> · The resource name of the consumer and service",
-      "rank": 8,
+      "title": "Service Usage documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-usage/docs",
+      "description": "Service Usage <strong>lets you list, enable, and disable APIs and services in your Google Cloud projects</strong>.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Usage\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Service Usage\" Google Cloud introduction reference"
@@ -1101,9 +1406,85 @@
         1,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 7,
       "consistency_score": 67,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Enable and disable services | Service Usage | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-usage/docs/enable-disable",
+      "description": "<strong>You can use Service Usage to enable or disable any available service for your Google Cloud projects</strong>. This includes public Google Cloud services and private services created with Cloud Endpoints.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "available"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1113,12 +1494,90 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "available"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
       "keep": false
+    },
+    {
+      "title": "Manage service enablement | Service Usage | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/manage-enablement",
+      "description": "To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission. Learn how to grant roles. gcloud services enable serviceusage.googleapis.com · If you don&#x27;t indicate the Google Cloud resource that you want to manage, the commands in this document default to the current project.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Service Usage\" \"hierarchical service activation\""
+      ],
+      "intent_hits": [
+        "product_docs",
+        "feature_guides"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "hierarchical service activation"
+        ],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "activation"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "hierarchical service activation"
+        ],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "activation"
+        ],
+        "keep": true,
+        "rationale": "Matched Step 2 features: hierarchical service activation"
+      },
+      "final_score": 95,
+      "keep": true
     },
     {
       "title": "Java client libraries | Google Cloud Documentation",
@@ -1127,10 +1586,12 @@
       "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Service Usage\"",
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Service Usage\" \"Java client libraries\""
       ],
       "intent_hits": [
-        "java_client"
+        "java_client",
+        "product_docs"
       ],
       "round_hits": [
         1,
@@ -1139,6 +1600,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
@@ -1149,6 +1625,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1174,6 +1661,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "cloud",
+          "google",
+          "available",
+          "list"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1184,8 +1686,19 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "cloud",
+          "google",
+          "available",
+          "list"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
@@ -1209,41 +1722,20 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 100,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "google",
+          "api",
+          "resource"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Service Usage API v1 - Package cloud.google.com/go/serviceusage/apiv1 (v1.9.7) | Go client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/serviceusage/latest/apiv1",
-      "description": "<strong>Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use</strong>. For information that is relevant for all client libraries please ...",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 67,
-      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1253,7 +1745,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "google",
+          "api",
+          "resource"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1279,6 +1781,21 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "list",
+          "manage"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1289,6 +1806,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "list",
+          "manage"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1314,6 +1842,21 @@
       "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "project"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1323,7 +1866,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "project"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1334,7 +1888,7 @@
       "title": "Service Infrastructure | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/service-infrastructure/docs/overview",
       "description": "If you are a service consumer, you can use the Service Usage <strong>to list, enable, and disable APIs and services in your Google Cloud projects, and apply quota restrictions to services used by your Google Cloud projects or within your organization</strong>.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Service Usage\" Google Cloud introduction reference"
@@ -1349,6 +1903,21 @@
       "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -1359,11 +1928,22 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
-      "keep": true
+      "keep": false
     },
     {
       "title": "Access control with IAM | Cloud Tasks | Google Cloud Documentation",
@@ -1381,9 +1961,23 @@
         2,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 5,
       "consistency_score": 67,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1394,6 +1988,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1401,42 +2005,9 @@
       "keep": false
     },
     {
-      "title": "Service Usage documentation | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-usage/docs",
-      "description": "Service Usage <strong>lets you list, enable, and disable APIs and services in your Google Cloud projects</strong>.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 5,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
       "title": "APIs and references | Service Usage | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/service-usage/docs/apis",
-      "description": "Get started with the Cloud Client Libraries for the Service Usage API. Reference for the Service Usage gcloud CLI. Reference for the Service Usage gcloud CLI (beta). ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "description": "Get started with the Cloud Client Libraries for the Service Usage API. Reference for the Service Usage gcloud CLI. Reference for the Service Usage gcloud CLI (beta). ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code ...",
       "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Usage\" \"APIs and reference\""
@@ -1450,6 +2021,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -1460,6 +2046,17 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1470,7 +2067,7 @@
       "title": "Enabled services | Service Usage | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/service-usage/docs/enabled-service",
       "description": "Documentation · Access and resource ... on your preferences. To use most Google Cloud APIs and services, <strong>you must first enable them in a Google Cloud project</strong>....",
-      "rank": 6,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Usage\" Google Cloud documentation"
       ],
@@ -1480,9 +2077,24 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1492,7 +2104,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1500,22 +2123,39 @@
       "keep": false
     },
     {
-      "title": "Hierarchical service activation overview | Service Usage | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/overview?hl=en",
-      "description": "This document provides an overview of hierarchical service activation. To learn how to use the feature, see Manage service enablement. Hierarchical service activation lets you set service enablement policies at different levels of the Google Cloud resource hierarchy.",
-      "rank": 2,
+      "title": "List service dependencies | Service Usage | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/list-dependencies",
+      "description": "Use Hierarchical Service Activation <strong>to list and group service dependencies across projects, folders, and organizations</strong>.",
+      "rank": 3,
       "query_hits": [
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview"
+        "site:docs.cloud.google.com \"Service Usage\" \"hierarchical service activation\""
       ],
       "intent_hits": [
-        "product_docs"
+        "feature_guides"
       ],
       "round_hits": [
         2
       ],
-      "best_rank": 2,
+      "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "hierarchical service activation"
+        ],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "google",
+          "across",
+          "activation",
+          "hierarchical"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1525,9 +2165,87 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "hierarchical service activation"
+        ],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "google",
+          "across",
+          "activation",
+          "hierarchical"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: hierarchical service activation"
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Hierarchical service activation overview | Service Usage | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-usage/docs/hierarchical-service-activation/overview",
+      "description": "This document provides an overview of hierarchical service activation. To learn how to use the feature, see Manage service enablement. Hierarchical service activation lets you set service enablement policies at different levels of the Google Cloud resource hierarchy.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Service Usage\" \"hierarchical service activation\""
+      ],
+      "intent_hits": [
+        "product_docs",
+        "feature_guides"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "hierarchical service activation"
+        ],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "google",
+          "activation",
+          "hierarchical",
+          "hierarchy",
+          "manage"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "hierarchical service activation"
+        ],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "google",
+          "activation",
+          "hierarchical",
+          "hierarchy",
+          "manage"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: hierarchical service activation"
       },
       "final_score": 90,
       "keep": false
@@ -1549,6 +2267,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "support"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1558,7 +2291,77 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "support"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "List services | Service Usage | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-usage/docs/list-services",
+      "description": "This document <strong>describes how to list the APIs and services that are enabled or available in a Google Cloud project</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1582,6 +2385,21 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1591,7 +2409,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1602,7 +2431,7 @@
       "title": "Service Usage | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/service-usage/docs/reference/rest/Shared.Types/Usage",
       "description": "Configuration controlling usage of a service · Requirements that must be satisfied before a consumer project can use the service. Each requirement is of the form &lt;service.name&gt;/; for example &#x27;serviceusage.googleapis.com/billing-enabled&#x27;",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Usage\" Google Cloud introduction reference"
       ],
@@ -1612,9 +2441,24 @@
       "round_hits": [
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "enabled"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1625,6 +2469,194 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "enabled"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: services.enable | Service Usage | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-usage/docs/reference/rest/v1/services/enable",
+      "description": "Service Usage · Reference · Send feedback · HTTP request · Path parameters · Request body · Response body · Authorization scopes · Enable a service so that it can be used with a project. POST https://serviceusage.googleapis.com/v1/{name=*/*/services/*}:enable ·",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "method"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "method"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "REST Resource: services | Service Usage | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-usage/docs/reference/rest/v1beta1/services",
+      "description": "Service Usage · Reference · Send feedback · Resource: Service · JSON representation · ServiceConfig · JSON representation · State · Methods · <strong>A service that is available for use by the consumer</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "available",
+          "beta"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "available",
+          "beta"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Service Usage release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-usage/docs/release-notes",
+      "description": "<strong>This feature lets you enable and disable services across your organization&#x27;s resource hierarchy</strong>. ... Public v1 release: Service Usage is now generally available. You can use version 1 of Service Usage to discover and manage other APIs and services ...",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" \"hierarchical service activation\""
+      ],
+      "intent_hits": [
+        "feature_guides"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "across"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "across"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1648,6 +2680,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 118,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -1658,8 +2705,19 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": true
@@ -1681,6 +2739,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "for",
+          "google",
+          "api",
+          "discover",
+          "project"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1690,7 +2763,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "for",
+          "google",
+          "api",
+          "discover",
+          "project"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1714,6 +2798,21 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1723,7 +2822,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1747,6 +2857,20 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "for",
+          "google",
+          "api",
+          "resource"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1756,7 +2880,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "for",
+          "google",
+          "api",
+          "resource"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1780,6 +2914,18 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "google",
+          "api",
+          "resource"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1790,6 +2936,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "google",
+          "api",
+          "resource"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1813,6 +2967,21 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "google",
+          "api",
+          "beta",
+          "resource"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1822,7 +2991,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "google",
+          "api",
+          "beta",
+          "resource"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1846,6 +3026,21 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "google",
+          "api",
+          "beta",
+          "enabled",
+          "method"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1855,7 +3050,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "google",
+          "api",
+          "beta",
+          "enabled",
+          "method"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1879,6 +3085,19 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "google",
+          "api",
+          "beta",
+          "resource"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1888,7 +3107,16 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "google",
+          "api",
+          "beta",
+          "resource"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1912,6 +3140,21 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -1922,6 +3165,76 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "IAM roles and permissions | Gemini Enterprise | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/gemini/enterprise/docs/access-control",
+      "description": "The roles specific to Gemini Enterprise provide only Gemini Enterprise permissions, except for the following Google Cloud permissions, which are needed for general Google Cloud usage: ... The following table lists the Gemini Enterprise IAM roles with a corresponding list of all the permissions for each role. You can get and set IAM allow policies and IAM roles using the Google Cloud Console. For more information, see Manage access to projects, folders, and organizations. As a project owner, you can grant the Discovery Engine Admin, Service Usage Consumer, and Logs Viewer roles to the users who want to be administrators.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "discover",
+          "list"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "discover",
+          "list"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1945,6 +3258,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -1955,11 +3283,22 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Python client library | Google Cloud",
@@ -1978,6 +3317,21 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
@@ -1987,7 +3341,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2011,6 +3376,21 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "manage"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2020,7 +3400,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "manage"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2044,6 +3435,21 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2053,7 +3459,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2077,6 +3494,21 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
@@ -2086,7 +3518,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2097,7 +3540,7 @@
       "title": "Test permissions for custom user interfaces | Identity and Access Management (IAM) | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/iam/docs/testing-permissions",
       "description": "Different users are typically granted different permissions, and the Google Cloud console hides or exposes items accordingly. Enable the Resource Manager API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Usage\" IAM roles permissions"
       ],
@@ -2107,9 +3550,24 @@
       "round_hits": [
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2119,7 +3577,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2143,6 +3612,21 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2152,7 +3636,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2176,6 +3671,21 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "manage"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2185,7 +3695,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "manage"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2209,6 +3730,21 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2218,7 +3754,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2228,20 +3775,95 @@
     {
       "title": "Ruby Client for the Service Usage V1 API | Ruby client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-service_usage-v1/latest",
-      "description": "Enables services that service consumers ... no longer use. Service Usage is <strong>an infrastructure service of Google Cloud that lets you list and manage other APIs and services in your Cloud projects</strong>....",
-      "rank": 8,
+      "description": "Enable the API. Set up authentication. require &quot;google/cloud/service_usage/v1&quot; client = ::Google::Cloud::ServiceUsage::V1::ServiceUsage::Client.new request = ::Google::Cloud::ServiceUsage::V1::EnableServiceRequest.new # (request fields as keyword arguments...) response = client.enable_service request",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Service Usage\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com \"Service Usage\" \"service usage v1 api\""
       ],
       "intent_hits": [
-        "product_docs"
+        "feature_guides"
       ],
       "round_hits": [
         3
       ],
-      "best_rank": 8,
+      "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [
+          "service usage v1 api"
+        ],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "service usage v1 api"
+        ],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Service Usage V1 API - Class Google::Api::Authentication (v1.5.1) | Ruby client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-service_usage-v1/latest/Google-Api-Authentication",
+      "description": "Reference documentation and code samples for the Service Usage V1 API class Google::Api::Authentication.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" \"service usage v1 api\""
+      ],
+      "intent_hits": [
+        "feature_guides"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [
+          "service usage v1 api"
+        ],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2252,6 +3874,18 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [
+          "service usage v1 api"
+        ],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2259,25 +3893,42 @@
       "keep": false
     },
     {
-      "title": "Set build service account (source deploy) | Cloud Run | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/configuring/services/build-service-account",
-      "description": "To get the permissions that you need to build and deploy from source, ask your administrator to grant you the following IAM roles: Cloud Run Source Developer (roles/run.sourceDeveloper) on your project · Service Usage Consumer (roles/serviceusage.serviceUsageConsumer) on your project",
-      "rank": 7,
+      "title": "Service Usage V1 API - Class Google::Cloud::ServiceUsage::V1::ServiceUsage::Client (v1.5.1) | Ruby client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-service_usage-v1/latest/Google-Cloud-ServiceUsage-V1-ServiceUsage-Client",
+      "description": "require &quot;google/cloud/service_usage/v1&quot; # Create a client object. The client can be reused for multiple calls. client = Google::Cloud::ServiceUsage::V1::ServiceUsage::Client.new # Create a request. To set request fields, pass in keyword arguments. request = Google::Cloud::ServiceUsage::V1::BatchEnableServicesRequest.new # Call the batch_enable_services method.",
+      "rank": 1,
       "query_hits": [
-        "site:docs.cloud.google.com \"Service Usage\" \"roles and permissions\""
+        "site:docs.cloud.google.com \"Service Usage\" \"service usage v1 api\""
       ],
       "intent_hits": [
-        "iam_permissions"
+        "feature_guides"
       ],
       "round_hits": [
-        1
+        3
       ],
-      "best_rank": 7,
+      "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "service usage v1 api"
+        ],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "method"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "supporting_page",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
@@ -2285,7 +3936,20 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": true,
+        "matched_feature_phrases": [
+          "service usage v1 api"
+        ],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "method"
+        ],
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -2295,72 +3959,6 @@
       "title": "Access control with IAM | Cloud Scheduler | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/scheduler/docs/access-control",
       "description": "To learn how to grant and revoke access, see Manage access to projects, folders, and organizations. For lists of the permissions and roles that Cloud Scheduler supports, see the following sections. To view and assign IAM roles for Cloud Scheduler, you must enable the Cloud Scheduler API for your project. You won&#x27;t be able to see the Cloud Scheduler roles in the Google Cloud console until you enable the API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Service Usage\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Manage Personalized Service Health access | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-health/docs/manage-access",
-      "description": "gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.events.list gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.events.get gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.locations.list gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.locations.get · Enable the Service Health API for the project. Grant the Service Usage Consumer role (roles/serviceusage.serviceUsageConsumer).",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Service Usage\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Admission Control | Service Infrastructure | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-infrastructure/docs/admission-control",
-      "description": "It uses a simple, generic service usage model: a consumer consumes a service managed by a producer. All Google APIs and Google Cloud APIs use this model, since they are also built on top of Service Infrastructure. When a client accesses a service, all the entities involved in the access typically require a status and policy check, including the consumer, service, producer, user, application, network, and resources.",
       "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Service Usage\" \"access control\""
@@ -2374,6 +3972,139 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Manage Personalized Service Health access | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-health/docs/manage-access",
+      "description": "gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.events.list gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.events.get gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.locations.list gcloud iam roles update ROLE_ID --project=PROJECT_ID \\ --add-permissions=servicehealth.locations.get · Enable the Service Health API for the project. Grant the Service Usage Consumer role (roles/serviceusage.serviceUsageConsumer).",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "list",
+          "manage"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "for",
+          "google",
+          "api",
+          "list",
+          "manage"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Admission Control | Service Infrastructure | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-infrastructure/docs/admission-control",
+      "description": "It uses a simple, generic service usage model: a consumer consumes a service managed by a producer. All Google APIs and Google Cloud APIs use this model, since they are also built on top of Service Infrastructure. When a client accesses a service, all the entities involved in the access typically require a status and policy check, including the consumer, service, producer, user, application, network, and resources.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Service Usage\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "infrastructure"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2383,7 +4114,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "infrastructure"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2407,6 +4149,21 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2416,7 +4173,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2440,6 +4208,21 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
@@ -2449,7 +4232,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2457,22 +4251,37 @@
       "keep": false
     },
     {
-      "title": "Interface ViolationOrBuilder (2.80.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-assured-workloads/latest/com.google.cloud.assuredworkloads.v1.ViolationOrBuilder",
-      "description": "Output only. Category under which this violation is mapped. e.g. Location, <strong>Service Usage</strong>, Access, Encryption, etc.",
+      "title": "google-api-java-client-services/clients/google-api-services-serviceusage/v1 at main · googleapis/google-api-java-client-services",
+      "url": "https://developers.google.com/api-client-library/java/apis/serviceusage/v1",
+      "description": "<strong>Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use</strong>.",
       "rank": 4,
       "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Service Usage\""
+        "site:developers.google.com \"Service Usage\" reference OR site:developers.google.com \"service usage\" reference"
       ],
       "intent_hits": [
-        "java_client"
+        "developers_docs"
       ],
       "round_hits": [
-        1
+        2
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 26,
+      "product_fit_score": 44,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2481,8 +4290,19 @@
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
+        "product_match": 4,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "services",
+          "usage",
+          "apis",
+          "cloud",
+          "for",
+          "google",
+          "api"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2506,6 +4326,17 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 26,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -2515,44 +4346,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "google"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "google-api-java-client-services/clients/google-api-services-serviceusage/v1 at main · googleapis/google-api-java-client-services",
-      "url": "https://developers.google.com/api-client-library/java/apis/serviceusage/v1",
-      "description": "<strong>Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use</strong>.",
-      "rank": 3,
-      "query_hits": [
-        "site:developers.google.com \"Service Usage\" reference OR site:developers.google.com \"service usage\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 96,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 96,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 87,
       "keep": false
     },
     {
@@ -2572,20 +4377,93 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": -68,
-      "deterministic_score": 71,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 97,
       "api_score": {
         "classification": "supporting_page",
-        "score": 71,
+        "score": 97,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 0,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 87,
+      "keep": false
+    },
+    {
+      "title": "Interface ViolationOrBuilder (2.80.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-assured-workloads/latest/com.google.cloud.assuredworkloads.v1.ViolationOrBuilder",
+      "description": "Output only. Category under which this violation is mapped. e.g. Location, <strong>Service Usage</strong>, Access, Encryption, etc.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Service Usage\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 26,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 89,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 89,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 4,
-        "product_match": 0,
-        "coverage_value": 3,
+        "product_match": 3,
+        "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "google"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 65,
+      "final_score": 81,
       "keep": false
     },
     {
@@ -2605,20 +4483,46 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": -28,
-      "deterministic_score": 42,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "manage",
+          "project"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 66,
       "api_score": {
         "classification": "iam_reference",
-        "score": 42,
+        "score": 66,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 2,
+        "parent_page_likelihood": 3,
         "product_match": 0,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "and",
+          "apis",
+          "cloud",
+          "google",
+          "api",
+          "manage",
+          "project"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 41,
+      "final_score": 61,
       "keep": false
     },
     {
@@ -2638,53 +4542,42 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": -28,
-      "deterministic_score": 33,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "infrastructure"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 51,
       "api_score": {
         "classification": "supporting_page",
-        "score": 33,
+        "score": 51,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 2,
+        "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "infrastructure"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 33,
-      "keep": false
-    },
-    {
-      "title": "Class UsageServiceGrpc.UsageServiceImplBase (0.1.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-capacityplanner/latest/com.google.cloud.capacityplanner.v1beta.UsageServiceGrpc.UsageServiceImplBase",
-      "description": "Provides access to historical and forecasted usage data.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Service Usage\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": -68,
-      "deterministic_score": 3,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 3,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 0,
-        "product_match": 0,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 8,
+      "final_score": 48,
       "keep": false
     },
     {
@@ -2704,6 +4597,18 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": -68,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "google",
+          "beta"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 0,
       "api_score": {
         "classification": "supporting_page",
@@ -2714,6 +4619,71 @@
         "parent_page_likelihood": 0,
         "product_match": 0,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "cloud",
+          "google",
+          "beta"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
+      "keep": false
+    },
+    {
+      "title": "Class UsageServiceGrpc.UsageServiceImplBase (0.1.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-capacityplanner/latest/com.google.cloud.capacityplanner.v1beta.UsageServiceGrpc.UsageServiceImplBase",
+      "description": "Provides access to historical and forecasted usage data.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Service Usage\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": -68,
+      "feature_coverage": {
+        "score": 17,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "beta"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 0,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "service",
+          "usage",
+          "and",
+          "cloud",
+          "for",
+          "google",
+          "beta"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },

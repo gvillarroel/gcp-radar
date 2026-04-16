@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.831Z"
+generated_at: "2026-04-12T12:17:49.237Z"
 product_name: "Mainframe Connector"
 product_slug: "mainframe-connector"
 feature_name: "Enhanced logging"
@@ -9,8 +9,10 @@ latest_feature_date: "2024-07-01"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-connector/docs/release-notes"
-  - "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/installation"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+  - "https://docs.cloud.google.com/mainframe-connector/docs/api-reference"
 keywords:
   - "enhanced"
   - "logging"
@@ -37,34 +39,66 @@ Logging output is improved with a new format and a more resilient Cloud Logging 
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-connector/docs/release-notes](https://docs.cloud.google.com/mainframe-connector/docs/release-notes)
-- [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started)
+- [https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference)
+- [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation)
+- [https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode](https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode)
+- [https://docs.cloud.google.com/mainframe-connector/docs/api-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-reference)
 
 ## Supporting Pages
 
-### Mainframe Connector release notes | Google Cloud Documentation
+### Mainframe Connector command-line reference \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-connector/docs/release-notes](https://docs.cloud.google.com/mainframe-connector/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 24
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference)
+- Source ID: `site-docs-reference`
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Connector release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-connector/docs/release-notes Supports configuring the maximum time you want Mainframe Connector to wait for a BigQuery job to complete using a new flag max polling interval ms with the bq load command.
-- For more granular control over data transfer, you can now specify chunk sizes below 64MiB using the maxChunkSize flag with the gsutil cp command. ...
-- The default value is 60000 milliseconds (1 minute).
+- The supported format is [PROJECT]:[DATASET].[TABLE] --project id = ID Specify the project to use to execute this command. --allow jagged rows (Optional) Allow missing trailing optional columns in CSV data. --allow quoted newlines (Optional) Allow quoted newlines within CSV data. --append table (Optional) Append the loaded data to the existing data in the destination table. --autodetect (Optional) Enable automatic schema detection for CSV and JSON data. --clustering fields = FIELDS (Optional) If specified, a comma-separated list of columns is used to cluster the destination table in a query.
+- If time-based partitioning is enabled without this value, then the table is partitioned based on the load time. --time partitioning type = TYPE (Optional) Enable time-based partitioning on a table and set the partition type using the following value: DAY . --use avro logical types = {true false} (Optional) If --source format is set to AVRO , then set this flag to true to convert logical types into their corresponding types (such as TIMESTAMP ) instead of only using their raw types (such as INTEGER ).
+- OUTPUT : DataPath Specify data path of the QSAM file you want to encode to. --copybook = COPYBOOK : DataPath Specify the data path of the file containing the copybook. --help or -h (Optional) Display this help message. --input-format = FORMAT : TranscodeInputFormat Specify the format of the input. --input-parameter = KEY=VALUE (Optional) Specify parameters to configure the input.
+- The bq export command uses the following flags and arguments: --project id = ID Specify the project to use to execute this command. --allow large results (Optional) Use large destination table sizes for legacy SQL queries. --batch (Optional) Run the query in batch mode. --bucket = BUCKET (Optional) Specify a location within Cloud Storage to write the command's output.
 
-### Get started with Mainframe Connector | Google Cloud Documentation
+### Install Mainframe Connector on your mainframe \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started)
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation)
 - Source ID: `site-docs-root`
-- Final score: 22
+- Final score: 133
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Get started with Mainframe Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-connector/docs/get-started Before you install Mainframe Connector, you must perform the initial setup, including granting the required roles to your service account, setting up security for your assets, and setting up network connectivity between your mainframe and Google Cloud.
+- The service account should be granted Storage, BigQuery and Logging permissions. export GKEYFILE="GKEY FILE PATH" Path to directory containing google jar file Edit this to set actual path selected for your site it's recommended to have a path with a version identifier and create a symlink to the directory of the latest version GOOGLE DIR="JAR FILE PATH" GOOGLE CLASSPATH="$GOOGLE DIR/ " Do not modify the 3 lines below Collect system symbols from JES export JOBNAME=&JOBNAME export JOBDATE=&YYMMDD export JOBTIME=&HHMMSS IBM JZOS JDK Location JH="/usr/lpp/java/J8.0 64" export JAVA HOME="$JH" export PATH="/bin:$JH/bin" Log Level export BQSH ROOT LOGGER=DEBUG Cloud logging export LOG PROJECT="PROJECT NAME" export LOG ID="LOG ID NAME" Binary Data Sets Uncomment the line below to set a default output bucket for scp.
+- For example, create new JAR file, use a different IBM Java version, or change the JSON key file using environment statements. #BQSH PROC ENV=DEV // // // // Copyright 2022 Google LLC All Rights Reserved // // Licensed under the Apache License, Version 2.0 (the "License"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // http://www.apache.org/licenses/LICENSE-2.0 // Unless required by applicable law or agreed to in writing , software // distributed under the License is distributed on as "AS IS" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express of impl. // See the license for the specific language governing permissions and // limitations under the License. // // //BQSH EXEC PGM=JVMLDM86,REGION=0M, // PARM='/+I com.google.cloud.bqsh.Bqsh' //SYSPRINT DD SYSOUT = //SYSOUT DD SYSOUT = //STDOUT DD SYSOUT = //STDERR DD SYSOUT = //CEEDUMP DD SYSOUT = //ABNLIGNR DD DUMMY //STDIN DD DUMMY //QUERY DD DUMMY //INFILE DD DUMMY //COPYBOOK DD DUMMY //KEYFILE DD DUMMY //STDENV DD DISP=SHR,DSN=SYSP.PARMLIB(EDW&ENV) // DD ,SYMBOLS=EXECSYS Do not modify the 3 lines below Collect system symbols from JES export JOBNAME=&JOBNAME export JOBDATE=&YYMMDD export JOBTIME=&HHMMSS The following is an example of the DEV PARMLIB member showing how the JSON key file and the Mainframe Connector software JAR file are referenced.
+- PROJECT NAME with project for which the log is being created in Cloud Logging LOG ID NAME with the name of the log //BQSH PROC // // // Copyright 2022 Google LLC All Rights Reserved // // Licensed under the Apache License, Version 2.0 (the "License"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // // http://www.apache.org/licenses/LICENSE-2.0 // // Unless required by applicable law or agreed to in writing, software // distributed under the License is distributed on an "AS IS" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. // See the License for the specific language governing permissions and // limitations under the License. // // //BQSH EXEC PGM=JVMLDM86,REGION=0M, // PARM='/+I com.google.cloud.bqsh.Bqsh' //SYSPRINT DD SYSOUT= //SYSOUT DD SYSOUT= //STDOUT DD SYSOUT= //STDERR DD SYSOUT= //CEEDUMP DD SYSOUT= //ABNLIGNR DD DUMMY //STDIN DD DUMMY //QUERY DD DUMMY //INFILE DD DUMMY //COPYBOOK DD DUMMY //KEYFILE DD DUMMY //STDENV DD ,SYMBOLS=EXECSYS Service Account Keyfile Edit the line below to specify a unix filesystem path where the service account keyfile is stored.
+- The service account should be granted Storage, BigQuery and Logging pe GKPATH= "/opt/google/keyfile" GKFILE= "prj-ent-edw-dev-landing-2451-f89d99af31e5.json" export GKEYFILE= "$GKPATH/$GKFILE" Path to directory containing google jar file Edit this is set actual path selected for your site its recommended to have a path with a version identifier and create a symlink to the directory of the latert version GOOGLE DIR= "/opt/google/mainframe-connector/5.9.0" GOOGLE CLASSPATH= "$GOOGLE DIR/ " #IBM JZOS JDK Location JH= "/usr/lpp/java/J8.0 64" export JAVA HOME= "$JH" export PATH= "/bin:$JH/bin" Log Level export BQSH ROOT LOGGER=DEBUG What's next Move locally transcoded mainframe data to Google Cloud Transcode mainframe data remotely on Google Cloud Transcode mainframe data moved to Google Cloud using a virtual tape library Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Run Mainframe Connector in standalone mode \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode](https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode)
+- Source ID: `site-docs-root-2`
+- Final score: 122
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following is an example YAML file: environmentVariables: - name: "INFILE" value: "gs://my bucket/my/input.dat" - name: "OUTFILE" value: "gs://my bucket/my/output.orc" - name: "COPYBOOK" value: "gs://my bucket/my/copybook.cpy" - name: "TRANSCODE CONFIGURATION" value: "gs://my bucket/my/transcode-configuration-file.json" - name: "LOG PROJECT" value: "the log project" - name: "IBM JAVA OPTIONS" value: "-XX:+UseContainerSupport" command: qsam decode $INFILE $OUTFILE --copybook $COPYBOOK --transcode-configuration ${TRANSCODE CONFIGURATION} --output-format orc --parallelism 8 --chunk-size "512Mib" Note Variables with the suffix FILLER are ignored during the import process.
+- The following is an example YAML file: environmentVariables: - name: "QUERY" value: "gs://my bucket/my/input.sql" - name: "OUTFILE" value: "gs://my bucket/my/output.orc" - name: "COPYBOOK" value: "gs://my bucket/my/copybook.cpy" - name: "TRANSCODE CONFIGURATION" value: "gs://my bucket/my/transcode-configuration-file.json" - name: "PROJECT ID" value: "my-project" - name: "LOCATION" value: "US" - name: "LOG PROJECT" value: "my-log-project" - name: "IBM JAVA OPTIONS" value: "-XX:+UseContainerSupport" command: qsam encode \ $QUERY $OUTFILE --copybook ${COPYBOOK PATH} --transcode-configuration ${TRANSCODE CONFIGURATION PATH} --input-format=BIGQUERY \ --input-parameter project id=${PROJECT ID} \ --input-parameter location=${LOCATION} Use bq export command environmentVariables: - name: "COPYBOOK" value: " COPYBOOK FILEPATH " - name: "LOG PROJECT" value: " LOG PROJECT " - name: "IBM JAVA OPTIONS" value: "-XX:+UseContainerSupport" command: bq export --project id=" PROJECT NAME " --location=" LOCATION " --sql="select from project.dataset.table" --bucket=" BUCKET " Replace the following: COPYBOOK FILEPATH : The path to the copybook DD.
+- In the following sample, we use the Cloud Storage DataPath for INFILE , OUTFILE , COPYBOOK , and TRANSCODE CONFIGURATION . environmentVariables: - name: "INFILE" value: " INFILE " - name: "OUTFILE" value: " OUTFILE " - name: "COPYBOOK" value: " COPYBOOK " - name: "TRANSCODE CONFIGURATION" value: " TRANSCODE CONFIGURATION " - name: "LOG PROJECT" value: " LOG PROJECT " - name: "IBM JAVA OPTIONS" value: "-XX:+UseContainerSupport" command: qsam decode $INFILE $OUTFILE --copybook $COPYBOOK --transcode-configuration ${TRANSCODE CONFIGURATION} --output-format orc --parallelism 8 --chunk-size "512Mib" Replace the following: INFILE : The name of the input file.
+- The following is an example YAML file: environmentVariables: - name: "INFILE" value: "input.dat" - name: "INFILE DSN" value: "input.dat" - name: "GCSDSNURI" value: "gs://inputbucket/inputfolder" - name: "COPYBOOK" value: "gs://inputbucket/copybook.cpy" - name: "LOG PROJECT" value: "the log project" - name: "IBM JAVA OPTIONS" value: "-XX:+UseContainerSupport" command: gsutil cp gs://outputbucket/output --parallelism 8 --maxChunkSize "512Mib" --parser type=copybook Note Variables with the suffix FILLER are ignored during the import process.
+
+### Mainframe Connector API commands \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-connector/docs/api-reference](https://docs.cloud.google.com/mainframe-connector/docs/api-reference)
+- Source ID: `site-docs-reference`
+- Final score: 119
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This allows the Mainframe Connector support team to gather the required information to diagnose an issue without the need for extensive customer interaction.
+- No vsam decode Use this command to transcode Virtual Storage Access Method (VSAM) file records to the format you want using the --output-format argument.
+- No qsam and vsam commands qsam decode Use this command to transcode QSAM file records to the format you want using the --output-format argument.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 

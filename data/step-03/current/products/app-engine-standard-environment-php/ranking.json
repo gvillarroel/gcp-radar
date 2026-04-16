@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-11T20:40:33.207Z",
+  "generated_at": "2026-04-12T21:36:41.246Z",
   "product_name": "App Engine standard environment PHP",
   "product_slug": "app-engine-standard-environment-php",
   "step02_source_path": "data/step-02/current/app-engine-standard-environment-php.md",
@@ -176,15 +176,15 @@
           "rank": 2
         },
         {
-          "title": "The php.ini File | App Engine standard environment | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/config/php_ini",
-          "description": "Documentation · Application hosting · App Engine · Standard environment · Reference · Send feedback · You can include a php.ini file with your App Engine application. This file lets you customize the behavior of the PHP interpreter directives. See an example of the default php.ini configuration.",
-          "rank": 3
-        },
-        {
           "title": "Specifying dependencies | App Engine standard environment | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/specifying-dependencies",
           "description": "You can declare dependencies for PHP in a standard composer.json file.",
+          "rank": 3
+        },
+        {
+          "title": "The php.ini File | App Engine standard environment | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/config/php_ini",
+          "description": "Documentation · Application hosting · App Engine · Standard environment · Reference · Send feedback · You can include a php.ini file with your App Engine application. This file lets you customize the behavior of the PHP interpreter directives. See an example of the default php.ini configuration.",
           "rank": 4
         },
         {
@@ -206,9 +206,9 @@
           "rank": 7
         },
         {
-          "title": "Access legacy bundled services for PHP | App Engine standard environment | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
-          "description": "This page describes how to install and use the bundled services with the PHP runtime for the App Engine standard environment.",
+          "title": "Admin Users | App Engine standard environment for PHP 5 | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/appengine/docs/legacy/standard/php/users/adminusers",
+          "description": "We recommend that you migrate to the latest supported version of PHP. ... An application can test whether the currently signed-in user is a registered administrator for the application. An administrator is a user who can access the Administration Console for the application. You can use the Administration Console to manage which users have administrator status. This page describes how to use the legacy bundled services and APIs. This API can only run in first-generation runtimes in the App Engine standard environment.",
           "rank": 8
         }
       ]
@@ -246,7 +246,7 @@
         {
           "title": "Building an app with PHP | App Engine standard environment | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/building-app",
-          "description": "runtime: php74 env_variables: GOOGLE_STORAGE_BUCKET: picture-storage CLOUDSQL_CONNECTION_NAME: sample-application:us-central1:bookshelf CLOUDSQL_USER: root CLOUDSQL_PASSWORD: passw0rd! CLOUDSQL_DATABASE_NAME: book-data · Note: You should encrypt sensitive data such as passwords and not put them in the app.yaml as plaintext.",
+          "description": "Review your app.yaml file, which should look something like: <strong>runtime: php81</strong> env_variables: GOOGLE_STORAGE_BUCKET: picture-storage CLOUDSQL_CONNECTION_NAME: sample-application:us-central1:bookshelf CLOUDSQL_USER: root CLOUDSQL_PASSWORD: passw0rd!",
           "rank": 5
         },
         {
@@ -262,9 +262,9 @@
           "rank": 7
         },
         {
-          "title": "Upgrade an existing application | App Engine standard environment | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/upgrade-php-runtime",
-          "description": "PHP second-generation runtimes (after end of support): To upgrade to a supported version of PHP, update the app.yaml file by specifying a version of PHP that you want your app to run. For example: ... Where VERSION is the PHP MAJOR and MINOR version numbers. For example, to use the latest PHP version, PHP 8.5 (preview), specify 85. For more information, see the PHP runtime overview. ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "title": "App Engine standard environment for Node.js release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes",
+          "description": "To override the default, specify ... your app.yaml file, and deploy a new version or redeploy over an existing version. ... Custom organization policies for Serverless VPC Access connectors are now generally available, and can be applied to projects, folders, or organizations. ... Node.js 22 is now generally available. ... In the App Engine page in the Google Cloud console, you can now filter your existing App Engine versions by runtime lifecycle ...",
           "rank": 8
         }
       ]
@@ -437,7 +437,7 @@
         {
           "title": "App Engine standard environment for Go 1.12+ release notes | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/appengine/docs/standard/go/release-notes",
-          "description": "Added beta support for version 1.9 of the Go runtime. You can try out Go 1.9 by specifying api_version: go1.9 in your app.yaml configuration file. To use the 1.9 beta version, you must first update your Go SDK to 1.9.63 or later. For details about downloading and installing the SDK, see the Downloads page. During the beta period, api_version: go1 continues to be an alias for go1.8. Note ...",
+          "description": "Added beta support for version 1.9 of the Go runtime. You can try out Go 1.9 by specifying api_version: go1.9 in your app.yaml configuration file. To use the 1.9 beta version, you must first update your Go SDK to 1.9.63 or later. For details about downloading and installing the SDK, see the Downloads page. During the beta period, api_version: go1 continues to be an alias for go1.8. Note that go1.9 is not guaranteed to work correctly while it is in beta.",
           "rank": 3
         },
         {
@@ -714,14 +714,12 @@
     {
       "title": "Access legacy bundled services for PHP | App Engine standard environment | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
-      "description": "This page describes how to install and use the bundled services with the PHP runtime for the App Engine standard environment.",
-      "rank": 8,
+      "description": "Refer to the list of legacy bundled services APIs you can call in the PHP runtime. Update your app.yaml file to include the following line:",
+      "rank": 4,
       "query_hits": [
-        "site:docs.cloud.google.com/appengine docs standard php",
         "site:docs.cloud.google.com/appengine/docs/standard \"php\" \"app.yaml\" OR runtime OR \"release-notes\""
       ],
       "intent_hits": [
-        "app_engine_docs",
         "app_engine_reference_docs"
       ],
       "round_hits": [
@@ -740,8 +738,8 @@
           "runtime",
           "environment",
           "and",
-          "with",
-          "cloud"
+          "cloud",
+          "access"
         ],
         "user_facing_alignment": 0
       },
@@ -763,8 +761,8 @@
           "runtime",
           "environment",
           "and",
-          "with",
-          "cloud"
+          "cloud",
+          "access"
         ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
@@ -953,7 +951,7 @@
       "title": "Specifying dependencies | App Engine standard environment | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/specifying-dependencies",
       "description": "You can declare dependencies for PHP in a standard composer.json file.",
-      "rank": 4,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/appengine docs standard php"
       ],
@@ -963,7 +961,7 @@
       "round_hits": [
         1
       ],
-      "best_rank": 4,
+      "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 170,
       "feature_coverage": {
@@ -1014,12 +1012,10 @@
       "description": "Documentation · Application hosting · App Engine · Standard environment · Guides · Send feedback · You must upgrade your applications to the latest supported runtime version to continue receiving security updates and be eligible for technical support. The process of upgrading an existing app depends on the runtime version that your app currently uses: PHP 5.5 (first-generation runtime): You must migrate your app to the latest supported PHP version.",
       "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com/appengine docs standard php",
-        "site:docs.cloud.google.com/appengine/docs/standard \"php\" \"app.yaml\" OR runtime OR \"release-notes\""
+        "site:docs.cloud.google.com/appengine docs standard php"
       ],
       "intent_hits": [
-        "app_engine_docs",
-        "app_engine_reference_docs"
+        "app_engine_docs"
       ],
       "round_hits": [
         1
@@ -1132,7 +1128,7 @@
       "title": "The php.ini File | App Engine standard environment | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/config/php_ini",
       "description": "Documentation · Application hosting · App Engine · Standard environment · Reference · Send feedback · You can include a php.ini file with your App Engine application. This file lets you customize the behavior of the PHP interpreter directives. See an example of the default php.ini configuration.",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com/appengine docs standard php"
       ],
@@ -1142,7 +1138,7 @@
       "round_hits": [
         1
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 128,
       "feature_coverage": {
@@ -1202,6 +1198,65 @@
         1
       ],
       "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 82,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "php",
+          "standard",
+          "runtime",
+          "environment",
+          "and",
+          "version",
+          "support"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "php",
+          "standard",
+          "runtime",
+          "environment",
+          "and",
+          "version",
+          "support"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Admin Users | App Engine standard environment for PHP 5 | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/appengine/docs/legacy/standard/php/users/adminusers",
+      "description": "We recommend that you migrate to the latest supported version of PHP. ... An application can test whether the currently signed-in user is a registered administrator for the application. An administrator is a user who can access the Administration Console for the application. You can use the Administration Console to manage which users have administrator status. This page describes how to use the legacy bundled services and APIs. This API can only run in first-generation runtimes in the App Engine standard environment.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/appengine docs standard php"
+      ],
+      "intent_hits": [
+        "app_engine_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 82,
       "feature_coverage": {
@@ -1540,9 +1595,70 @@
       "keep": false
     },
     {
+      "title": "App Engine standard environment for Node.js release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes",
+      "description": "To override the default, specify ... your app.yaml file, and deploy a new version or redeploy over an existing version. ... Custom organization policies for Serverless VPC Access connectors are now generally available, and can be applied to projects, folders, or organizations. ... Node.js 22 is now generally available. ... In the App Engine page in the Google Cloud console, you can now filter your existing App Engine versions by runtime lifecycle ...",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/appengine/docs/standard \"php\" \"app.yaml\" OR runtime OR \"release-notes\"",
+        "site:docs.cloud.google.com/appengine/docs/standard runtime \"release-notes\" OR \"app.yaml\""
+      ],
+      "intent_hits": [
+        "app_engine_reference_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": -120,
+      "feature_coverage": {
+        "score": 44,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "for",
+          "now",
+          "available",
+          "standard",
+          "runtime",
+          "environment",
+          "and",
+          "version"
+        ],
+        "user_facing_alignment": 1
+      },
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -120,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "for",
+          "now",
+          "available",
+          "standard",
+          "runtime",
+          "environment",
+          "and",
+          "version"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 10,
+      "keep": false
+    },
+    {
       "title": "App Engine standard environment for Go 1.12+ release notes | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/appengine/docs/standard/go/release-notes",
-      "description": "Added beta support for version 1.9 of the Go runtime. You can try out Go 1.9 by specifying api_version: go1.9 in your app.yaml configuration file. To use the 1.9 beta version, you must first update your Go SDK to 1.9.63 or later. For details about downloading and installing the SDK, see the Downloads page. During the beta period, api_version: go1 continues to be an alias for go1.8. Note ...",
+      "description": "Added beta support for version 1.9 of the Go runtime. You can try out Go 1.9 by specifying api_version: go1.9 in your app.yaml configuration file. To use the 1.9 beta version, you must first update your Go SDK to 1.9.63 or later. For details about downloading and installing the SDK, see the Downloads page. During the beta period, api_version: go1 continues to be an alias for go1.8. Note that go1.9 is not guaranteed to work correctly while it is in beta.",
       "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/appengine/docs/standard runtime \"release-notes\" OR \"app.yaml\""
@@ -1591,65 +1707,6 @@
           "version",
           "support",
           "cloud"
-        ],
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 5,
-      "keep": false
-    },
-    {
-      "title": "App Engine standard environment for Node.js release notes | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/release-notes",
-      "description": "To override the default, specify a new max_instances value in your app.yaml file, and deploy a new version or redeploy over an existing version. ... Custom organization policies for Serverless VPC Access connectors are now generally available, and can be applied to projects, folders, or organizations. ... Node.js 22 is now generally available. ... In the App Engine page in the Google Cloud console, you can now filter your existing App Engine versions by runtime lifecycle stages.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com/appengine/docs/standard runtime \"release-notes\" OR \"app.yaml\""
-      ],
-      "intent_hits": [
-        "app_engine_reference_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": -120,
-      "feature_coverage": {
-        "score": 44,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "for",
-          "now",
-          "available",
-          "standard",
-          "runtime",
-          "environment",
-          "and",
-          "version"
-        ],
-        "user_facing_alignment": 1
-      },
-      "deterministic_score": 0,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 0,
-        "family_score": -120,
-        "family_preferred": false,
-        "family_forbidden": true,
-        "parent_page_likelihood": 0,
-        "product_match": 0,
-        "coverage_value": 5,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "for",
-          "now",
-          "available",
-          "standard",
-          "runtime",
-          "environment",
-          "and",
-          "version"
         ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."

@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:51.847Z"
+generated_at: "2026-04-12T12:18:10.917Z"
 product_name: "Pub/Sub Lite"
 product_slug: "pub-sub-lite"
 feature_name: "Kafka producer migration to Pub/Sub Lite"
 feature_slug: "kafka-producer-migration-to-pub-sub-lite"
 latest_feature_date: "2023-01-23"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub"
+  - "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-managed-service-for-apache-kafka"
+  - "https://docs.cloud.google.com/pubsub/lite/docs/publishing"
+  - "https://docs.cloud.google.com/pubsub/lite/docs/topics"
 keywords:
   - "kafka"
   - "producer"
@@ -24,7 +27,7 @@ keywords:
 # Kafka producer migration to Pub/Sub Lite
 
 Product: Pub/Sub Lite
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ You can migrate Kafka producers to Pub/Sub Lite with only configuration changes.
 
 You can migrate Kafka producers to Pub/Sub Lite with only configuration changes.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub](https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub)
+- [https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-managed-service-for-apache-kafka](https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-managed-service-for-apache-kafka)
+- [https://docs.cloud.google.com/pubsub/lite/docs/publishing](https://docs.cloud.google.com/pubsub/lite/docs/publishing)
+- [https://docs.cloud.google.com/pubsub/lite/docs/topics](https://docs.cloud.google.com/pubsub/lite/docs/topics)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Migrate from Pub/Sub Lite to Pub/Sub \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub](https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub)
+- Source ID: `site-docs-root`
+- Final score: 368
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Key migration point If you want to replicate Pub/Sub Lite behavior in Pub/Sub (for example, low latency and high efficiency), implement your consumer clients using the StreamingPull API.
+- Plan a migration To migrate from Pub/Sub Lite to Pub/Sub, you can use the Pub/Sub Lite export subscription feature.
+- You can migrate your Pub/Sub Lite service to Google Cloud Managed Service for Apache Kafka or Pub/Sub .
+- Dual-subscribe to Pub/Sub Lite and Pub/Sub topics In a development environment, update your subscriber clients to read messages directly from Pub/Sub topics, using the appropriate Pub/Sub client library .
+
+### "Migrate from Pub/Sub Lite to Google Cloud Managed Service for Apache Kafka\
+
+- URL: [https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-managed-service-for-apache-kafka](https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-managed-service-for-apache-kafka)
+- Source ID: `site-docs-root`
+- Final score: 360
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The default link that you get from setting up port forwarding returns an output similar to the following: {"version":"3.4.0","commit":"2e1947d240607d53","kafka cluster id":"6H6qWA0dQnuK31hBPqYUDg"} If you append the /connectors to the link, it lists the running connector, For example: ["PubSubLiteSourceConnector"] For example, checking this link url:8083/connectors/PubSubLiteSourceConnector/status yields a list of tasks, and their status. {"name":"PubSubLiteSourceConnector","connector":{"state":"RUNNING","worker id":"10.53.0.157:8083"},"tasks":[{"id":0,"state":"RUNNING","worker id":"10.53.0.139:8083"},{"id":1,"state":"RUNNING","worker id":"10.53.0.157:8083"},{"id":2,"state":"RUNNING","worker id":"10.53.0.139:8083"},{"id":3,"state":"RUNNING","worker id":"10.53.0.157:8083"},{"id":4,"state":"RUNNING","worker id":"10.53.0.157:8083"},{"id":5,"state":"RUNNING","worker id":"10.53.0.139:8083"},{"id":6,"state":"RUNNING","worker id":"10.53.0.139:8083"},{"id":7,"state":"RUNNING","worker id":"10.53.0.157:8083"},{"id":8,"state":"RUNNING","worker id":"10.53.0.139:8083"},{"id":9,"state":"RUNNING","worker id":"10.53.0.157:8083"}],"type":"source"} Phased Migration After your Pub/Sub Lite topic is migrated to Kafka, you can migrate your subscribers and publishers.
+- For example, Linux base64 -w 0 < my service account.json > password.txt Mac base64 < account key json > password.txt In the secrets files in the GitHub repository, update the following files with the appropriate information to link the repository to your Google Cloud project, Pub/Sub Lite, and Kafka. .gcp/gmk sasl service account → sensitive <service-account-name>@<gcp-project>.iam.gserviceaccount.com .gcp/gmk sasl service account key → sensitive <base64 encoded sasl service account key> .gcp/kafka ssl truststore location → sensitive <full path of the ssl truststore jks file location> .gcp/kafka ssl truststore password → sensitive <password for the ssl truststore jks> .gcp/gmk bootstrap servers → environment specific bootstrap.<google-managed-kafka-cluster-name>.<google-managed-kafka-cluster-region name>.managedkafka.<google-managed-cluster-host-project-name>.cloud.goog:9092 .gcp/kafka connect group id → environment specific <Kafka Connect group id (unique per worker group) for the Kafka connect workers in distributed mode> .gcp/kafka config storage topic → environment specific <Kafka topic name used by Kafka Connect for tracking the config> .gcp/kafka offset storage topic → environment specific <Kafka topic name used by Kafka Connect for tracking the offsets> .gcp/kafka status storage topic → environment specific <Kafka topic name used by Kafka Connect for tracking the status> .gcp/kafka sink topic → environment specific <target sink Kafka topic name used by Kafka Connect for migrating the data from the Pub/Sub Lite topic> .gcp/pubsub lite gcp project → environment specific <Google Cloud project that hosts the Pub/Sub Lite source subscription to be used for migrating the Pub/Sub Lite topic to sink the Kafka topic> .gcp/pubsub lite gcp location → environment specific <Google Cloud location for the Pub/Sub Lite source subscription tor migrate the Pub/Sub Lite topic to sink Kafka topic> .gcp/pubsub lite subscription → environment specific <Pub/Sub Lite source subscription name to be used for migrating the pubsub lite topic to Kafka topic> Build the docker image by running the docker/build-image.sh file. ./push-image.sh Update the docker/push-image.sh image with your Google Cloud project name.
+- Managed Kafka Client Role ( roles/managedkafka.client ) Pub/Sub Lite Subscriber Role ( roles/pubsublite.subscriber ) Pub/Sub Lite Viewer Role ( roles/pubsublite.Viewer ) Artifact Registry Reader Role ( roles/artifactregistry.reader ) Create a GKE cluster This section describes how to create a GKE cluster that uses the service account you created from the previous step.
+- Run the K8s.yaml file. kubectl create -f k8s.yaml This creates a Kafka Connect workload running in your Google Kubernetes Engine cluster and launches the Pub/Sub Lite connector to move data from your Pub/Sub Lite topic to Google Cloud Managed Service for Apache Kafka.
+
+### "Publishing messages to Lite topics \_|\_ Pub/Sub Lite \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/pubsub/lite/docs/publishing](https://docs.cloud.google.com/pubsub/lite/docs/publishing)
+- Source ID: `site-docs-root`
+- Final score: 295
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can migrate your Pub/Sub Lite service to Google Cloud Managed Service for Apache Kafka or Pub/Sub .
+- ApiFuture<String> future = publish er . publish ( pubsubMessage ); futures . add ( future ); } } finally { ArrayList<MessageMetadata> metadata = new ArrayList <> (); List<String> ackIds = ApiFutures . allAsList ( futures ). get (); for ( String id : ackIds ) { // Decoded metadata contains partition and offset. metadata . add ( MessageMetadata . decode ( id )); } System . out . println ( metadata + "\nPublished " + ackIds . size () + " messages." ); if ( publisher != null ) { // Shut down the publisher. publisher . stopAsync (). awaitTerminated (); System . out . println ( "Publisher is shut down." ); } } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.cloud.pubsublite.cloudpubsub import PublisherClient from google.cloud.pubsublite.types import ( CloudRegion , CloudZone , MessageMetadata , TopicPath , ) TODO(developer): project number = 1122334455 cloud region = "us-central1" zone id = "a" topic id = "your-topic-id" regional = True if regional : location = CloudRegion ( cloud region ) else : location = CloudZone ( CloudRegion ( cloud region ), zone id ) topic path = TopicPath ( project number , location , topic id ) PublisherClient() must be used in a with block or have enter () called before use. with PublisherClient () as publisher client : data = "Hello world!" api future = publisher client . publish ( topic path , data . encode ( "utf-8" )) result() blocks.
+- ApiFuture<String> future = publish er . publish ( pubsubMessage ); // Shut down the publisher. publisher . stopAsync (). awaitTerminated (); String ackId = future . get (); MessageMetadata metadata = MessageMetadata . decode ( ackId ); System . out . println ( "Published a message with ordering key:\n" + metadata ); } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.cloud.pubsublite.cloudpubsub import PublisherClient from google.cloud.pubsublite.types import ( CloudRegion , CloudZone , MessageMetadata , TopicPath , ) TODO(developer): project number = 1122334455 cloud region = "us-central1" zone id = "a" topic id = "your-topic-id" num messages = 100 regional = True if regional : location = CloudRegion ( cloud region ) else : location = CloudZone ( CloudRegion ( cloud region ), zone id ) topic path = TopicPath ( project number , location , topic id ) PublisherClient() must be used in a with block or have enter () called before use. with PublisherClient () as publisher client : for message in range ( num messages ): data = f " { message } " Messages of the same ordering key will always get published to the same partition.
+- ApiFuture<String> future = publish er . publish ( pubsubMessage ); // Shut down the publisher. publisher . stopAsync (). awaitTerminated (); String ackId = future . get (); MessageMetadata metadata = MessageMetadata . decode ( ackId ); System . out . println ( "Published a message with custom attributes:\n" + metadata ); } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.cloud.pubsublite.cloudpubsub import PublisherClient from google.cloud.pubsublite.types import ( CloudRegion , CloudZone , MessageMetadata , TopicPath , ) TODO(developer): project number = 1122334455 cloud region = "us-central1" zone id = "a" topic id = "your-topic-id" regional = True if regional : location = CloudRegion ( cloud region ) else : location = CloudZone ( CloudRegion ( cloud region ), zone id ) topic path = TopicPath ( project number , location , topic id ) PublisherClient() must be used in a with block or have enter () called before use. with PublisherClient () as publisher client : data = "Hello world!" api future = publisher client . publish ( topic path , data . encode ( "utf-8" ), year = "2020" , author = "unknown" , ) result() blocks.
+
+### Create and manage Lite topics \_|\_ Pub/Sub Lite \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/pubsub/lite/docs/topics](https://docs.cloud.google.com/pubsub/lite/docs/topics)
+- Source ID: `site-docs-root`
+- Final score: 275
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can migrate your Pub/Sub Lite service to Google Cloud Managed Service for Apache Kafka or Pub/Sub .
+- This must be 30 GiB-10 TiB. // If the number of bytes stored in any of the topic's partitions grows // beyond this value, older messages will be dropped to make room for // newer ones, regardless of the value of period. // Be careful when decreasing storage per partition as it may cause // lost messages. . setPerPartitionBytes ( 32 1024 1024 1024L ) . setPeriod ( Durations . fromDays ( 7 ))) . setReservationConfig ( ReservationConfig . newBuilder () . setThroughputReservation ( reservationPath . toString ()) . build ()) . setName ( topicPath . toString ()) . build (); AdminClientSettings adminClientSettings = AdminClientSettings . newBuilder (). setRegion ( CloudRegion . of ( cloudRegion )). build (); try ( AdminClient adminClient = AdminClient . create ( adminClientSettings )) { Topic topicBeforeUpdate = adminClient . getTopic ( topicPath ). get (); System . out . println ( "Before update: " + topicBeforeUpdate . getAllFields ()); Topic topicAfterUpdate = adminClient . updateTopic ( topic , fieldMask ). get (); System . out . println ( "After update: " + topicAfterUpdate . getAllFields ()); } catch ( ExecutionException e ) { try { throw e . getCause (); } catch ( NotFoundException notFound ) { System . out . println ( "This topic is not found." ); } catch ( Throwable throwable ) { throwable . printStackTrace (); } } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.api core.exceptions import NotFound from google.cloud.pubsublite import AdminClient , Topic from google.cloud.pubsublite.types import ( CloudRegion , CloudZone , ReservationPath , TopicPath , ) from google.protobuf.duration pb2 import Duration from google.protobuf.field mask pb2 import FieldMask TODO(developer): project number = 1122334455 cloud region = "us-central1" zone id = "a" topic id = "your-topic-id" reservation id = "your-reservation-id" regional = True location = None if regional : A region. location = CloudRegion ( cloud region ) else : A zone. location = CloudZone ( CloudRegion ( cloud region ), zone id ) topic path = TopicPath ( project number , location , topic id ) reservation path = ReservationPath ( project number , cloud region , reservation id ) Defines which topic fields to update. field mask = FieldMask ( paths = [ "partition config.capacity" , "retention config.per partition bytes" , "retention config.period" , "reservation confing.throughput reservation" , ] ) Defines how to update the topic fields. topic = Topic ( name = str ( topic path ), partition config = Topic .
+- False if using a zonal location. // https://cloud.google.com/pubsub/lite/docs/topics boolean regional = false ; deleteTopicExample ( cloudRegion , zoneId , projectNumber , topicId , regional ); } public static void deleteTopicExample ( String cloudRegion , char zoneId , long projectNumber , String topicId , boolean regional ) throws Exception { CloudRegionOrZone location ; if ( regional ) { location = CloudRegionOrZone . of ( CloudRegion . of ( cloudRegion )); } else { location = CloudRegionOrZone . of ( CloudZone . of ( CloudRegion . of ( cloudRegion ), zoneId )); } TopicPath topicPath = TopicPath . newBuilder () . setProject ( ProjectNumber . of ( projectNumber )) . setLocation ( location ) . setName ( TopicName . of ( topicId )) . build (); AdminClientSettings adminClientSettings = AdminClientSettings . newBuilder (). setRegion ( CloudRegion . of ( cloudRegion )). build (); try ( AdminClient adminClient = AdminClient . create ( adminClientSettings )) { adminClient . deleteTopic ( topicPath ). get (); if ( regional ) { System . out . println ( topicPath . toString () + " (regional topic) deleted successfully." ); } else { System . out . println ( topicPath . toString () + " (zonal topic) deleted successfully." ); } } catch ( ExecutionException e ) { try { throw e . getCause (); } catch ( NotFoundException notFound ) { System . out . println ( "This topic is not found." ); } catch ( Throwable throwable ) { throwable . printStackTrace (); } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.api core.exceptions import NotFound from google.cloud.pubsublite import AdminClient from google.cloud.pubsublite.types import CloudRegion , CloudZone , TopicPath TODO(developer): project number = 1122334455 cloud region = "us-central1" zone id = "a" topic id = "your-topic-id" regional = True cloud region = CloudRegion ( cloud region ) topic path = None if regional : A regional topic. topic path = TopicPath ( project number , cloud region , topic id ) else : A zonal topic topic path = TopicPath ( project number , CloudZone ( cloud region , zone id ), topic id ) client = AdminClient ( cloud region ) try : client . delete topic ( topic path ) if regional : print ( f " { topic path } (regional topic) deleted successfully." ) else : print ( f " { topic path } (zonal topic) deleted successfully." ) except NotFound : print ( f " { topic path } not found." ) If you delete a Lite topic, you can't publish messages to it.
+- False if using a zonal location. // https://cloud.google.com/pubsub/lite/docs/topics boolean regional = true ; getTopicExample ( cloudRegion , zoneId , projectNumber , topicId , regional ); } public static void getTopicExample ( String cloudRegion , char zoneId , long projectNumber , String topicId , boolean regional ) throws Exception { CloudRegionOrZone location ; if ( regional ) { location = CloudRegionOrZone . of ( CloudRegion . of ( cloudRegion )); } else { location = CloudRegionOrZone . of ( CloudZone . of ( CloudRegion . of ( cloudRegion ), zoneId )); } TopicPath topicPath = TopicPath . newBuilder () . setProject ( ProjectNumber . of ( projectNumber )) . setLocation ( location ) . setName ( TopicName . of ( topicId )) . build (); AdminClientSettings adminClientSettings = AdminClientSettings . newBuilder (). setRegion ( CloudRegion . of ( cloudRegion )). build (); try ( AdminClient adminClient = AdminClient . create ( adminClientSettings )) { Topic topic = adminClient . getTopic ( topicPath ). get (); long numPartitions = adminClient . getTopicPartitionCount ( topicPath ). get (); System . out . println ( topic . getAllFields () + "\nhas " + numPartitions + " partition(s)." ); } catch ( ExecutionException e ) { try { throw e . getCause (); } catch ( NotFoundException notFound ) { System . out . println ( "This topic is not found." ); } catch ( Throwable throwable ) { throwable . printStackTrace (); } } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.api core.exceptions import NotFound from google.cloud.pubsublite import AdminClient from google.cloud.pubsublite.types import CloudRegion , CloudZone , TopicPath TODO(developer): project number = 1122334455 cloud region = "us-central1" zone id = "a" topic id = "your-topic-id" regional = True location = None if regional : A region. location = CloudRegion ( cloud region ) else : A zone. location = CloudZone ( CloudRegion ( cloud region ), zone id ) topic path = TopicPath ( project number , location , topic id ) client = AdminClient ( cloud region ) try : response = client . get topic ( topic path ) num partitions = client . get topic partition count ( topic path ) print ( f " { response . name } has { num partitions } partition(s)." ) except NotFound : print ( f " { topic path } not found." ) List Lite topics You can list Lite topics in a project using the Google Cloud console, the Google Cloud CLI, or the Pub/Sub Lite API.
 

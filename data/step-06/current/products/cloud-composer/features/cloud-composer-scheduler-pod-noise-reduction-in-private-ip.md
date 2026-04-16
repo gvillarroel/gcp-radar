@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.104Z"
+generated_at: "2026-04-12T12:11:20.324Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer scheduler pod noise reduction in Private IP"
 feature_slug: "cloud-composer-scheduler-pod-noise-reduction-in-private-ip"
 latest_feature_date: "2019-08-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip"
   - "https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip"
   - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent"
 keywords:
   - "composer"
   - "scheduler"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer scheduler pod noise reduction in Private IP
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Composer fixed unwanted error output from scheduler pods in Private IP env
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip)
 - [https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip)
 - [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
+- [https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent](https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-private-ip)
 - Source ID: `site-iam-reference`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 254
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - To create a Private IP environment, you need to have the following information: Your VPC network ID Your VPC subnetwork ID Two secondary IP ranges in your VPC subnetwork: Secondary IP range for pods Secondary IP range for services IP ranges for the components of the environment: GKE Control Plane IP range .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip](https://docs.cloud.google.com/composer/docs/composer-1/configure-privately-used-public-ip)
 - Source ID: `site-iam-reference`
-- Final score: 188
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 240
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - About privately used public IP ranges in Cloud Composer Google Kubernetes Engine requires many IP addresses for its resources: each node, pod, and service must have a unique IP address.
@@ -80,7 +82,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 168
+- Final score: 206
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -88,4 +90,17 @@ Evidence snippets:
 - The dashboard then displays a project name and resource: In case a metric exceeds a predefined threshold, an incident is raised and a respective alert is shown in a chart corresponding to this metric: List of monitored metrics A complete list of monitored metrics: Cloud Composer environment health (based on Monitoring DAG) Database health Web Server Health Scheduler Heartbeats CPU and Memory utilization for all Workers CPU and Memory utilization for the Airflow database CPU and Memory utilization for the Web Server (only available in Cloud Composer 2) CPU and Memory utilization for Airflow Schedulers Proportion of Queued, Scheduled, Queued or Scheduled tasks in an environment (useful to spot Airflow concurrency configuration issues) DAG Parsing time Current versus minimal number of Workers - useful to understand Worker stability issues or scaling problems Worker Pod evictions Number of errors thrown in Logs by Workers, Schedulers, Web Server or other components (individual charts) Note: You don't need to modify the dashboard when Cloud Composer environments are added or removed as long as the list of monitored projects stays the same.
 - Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 This page shows how to implement an integrated monitoring dashboard for multiple Cloud Composer environments across selected projects in the same organization.
 - The model uses a Google Cloud project acting as a Monitoring Project, which is used to monitor (read-only) Cloud Composer environments deployed in multiple Monitored Projects.
+
+### "Enable the IP Masquerade agent in Cloud Composer environments \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent](https://docs.cloud.google.com/composer/docs/composer-1/enable-ip-masquerade-agent)
+- Source ID: `site-iam-reference`
+- Final score: 206
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Example: // POST https://composer.googleapis.com/v1/{parent=projects/ /locations/ }/environments { "name" : "projects/example-project/locations/us-central1/environments/example-environment" , "config" : { "softwareConfig" : { "imageVersion" : "composer-1.20.12-airflow-1.10.15" }, "nodeConfig" : { "ipAllocationPolicy" : { "useIpAliases" : true , }, "enableIpMasqAgent" : true } } } Terraform When you create an environment, the enable ip masq agent field in the node config block enables the IP Masqerade agent.
+- You must also enable IP alias with the use ip aliases field in the ip allocation policy block. resource "google composer environment" "example environment" { provider = google-beta name = " ENVIRONMENT NAME " region = " LOCATION " config { software config { image version = "composer-1.20.12-airflow-1.10.15" } node config { ip allocation policy = [{ use ip aliases = true // Other networking configuration }] enable ip masq agent = true } } Replace: ENVIRONMENT NAME with the name of the environment.
+- Example: resource "google composer environment" "example environment" { provider = google-beta name = "example-environment" region = "us-central1" config { software config { image version = "composer-1.20.12-airflow-1.10.15" } node config { ip allocation policy = [{ use ip aliases = true // Other networking configuration }] enable ip masq agent = true } } } Configure the IP Masquerade agent Caution: Cloud Composer enables intranode visibility on GKE clusters.
+- Specify the configuration in the Environment resource. { "name" : "projects/ PROJECT ID /locations/ LOCATION /environments/ ENVIRONMENT NAME " , "config" : { "softwareConfig" : { "imageVersion" : "composer-1.20.12-airflow-1.10.15" }, "nodeConfig" : { "ipAllocationPolicy" : { "useIpAliases" : true , }, "enableIpMasqAgent" : true } } } Replace: PROJECT ID with the Project ID .
 

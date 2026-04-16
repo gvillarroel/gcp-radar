@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.428Z"
+generated_at: "2026-04-15T13:50:17.882Z"
 product_name: "Firestore"
 product_slug: "firestore"
 feature_name: "Firestore Key Visualizer heatmaps"
@@ -9,9 +9,9 @@ latest_feature_date: "2023-08-07"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.v1.FirestoreClient"
-  - "https://docs.cloud.google.com/firestore/native/docs/reference/libraries"
+  - "https://docs.cloud.google.com/firestore/docs/key-visualizer"
+  - "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+  - "https://docs.cloud.google.com/firestore/docs/query-data/indexing"
 keywords:
   - "firestore"
   - "key"
@@ -42,40 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.v1.FirestoreClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.v1.FirestoreClient)
-- [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
+- [https://docs.cloud.google.com/firestore/docs/key-visualizer](https://docs.cloud.google.com/firestore/docs/key-visualizer)
+- [https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index](https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index)
+- [https://docs.cloud.google.com/firestore/docs/query-data/indexing](https://docs.cloud.google.com/firestore/docs/query-data/indexing)
 
 ## Supporting Pages
 
-### Class FirestoreAdminClient (2.22.0) | Python client libraries | Google Cloud Documentation
+### "Overview of Key Visualizer \_|\_ Firestore in Native mode \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient](https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient)
-- Source ID: `site-python-reference`
-- Final score: 82
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Class FirestoreAdminClient (2.22.0) Python client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore admin v1.services.firestore admin.client.FirestoreAdminClient Project, Database, Namespace, Collection, Collection Group, and Document are used as defined in the Google Cloud Firestore API.
-
-### Class FirestoreClient (3.33.3) | Java client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.v1.FirestoreClient](https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.v1.FirestoreClient)
-- Source ID: `site-java-reference`
-- Final score: 74
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Class FirestoreClient (3.33.3) Java client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.v1.FirestoreClient Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL document database that simplifies storing, syncing, and querying data for your mobile, web, and IoT apps at global scale.
-
-### Firestore client libraries | Firestore in Native mode | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/firestore/native/docs/reference/libraries](https://docs.cloud.google.com/firestore/native/docs/reference/libraries)
+- URL: [https://docs.cloud.google.com/firestore/docs/key-visualizer](https://docs.cloud.google.com/firestore/docs/key-visualizer)
 - Source ID: `site-docs-reference`
-- Final score: 74
-- Re-rank relevance: N/A
+- Final score: 183
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Using one of the Admin SDKs, you can initialize access to Firestore and several other services from a single SDK.
-- Firestore client libraries Firestore in Native mode Google Cloud Documentation Source URL: https://docs.cloud.google.com/firestore/native/docs/reference/libraries API Reference Documentation · Source Code · GitHub Issue Tracker · Stack Overflow · The Firebase Admin SDKs bundle the Google Cloud client libraries for Firestore alongside client libraries and SDKs for several other Firebase features.
+- Heatmaps The core of a Key Visualizer scan is the heatmap, which shows the value of a metric over time, broken down into up to 1000 contiguous key buckets .
+- Understand the document key patterns or index key patterns you might see in Key Visualizer heatmaps.
+- See Getting started with Key Visualizer and Exploring heatmaps .
+- Limits Although Key Visualizer shows a variety of metrics, it doesn't display every single metric that can affect the performance of Firestore.
+
+### "Heatmap patterns for index keys \_|\_ Firestore in Native mode \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index](https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index)
+- Source ID: `site-docs-reference`
+- Final score: 106
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Understand the index key structure Before you understand the structure of index keys that you see in Key Visualizer tool, learn about indexes in Firestore.
+- Heatmap patterns for index keys This page shows examples of patterns that you might see in a Key Visualizer heatmap.
+- COLLECTION: projects/ PROJECT ID /databases/(default)/documents/Users PROPERTIES: (Timestamp: ASC, name DESC) VALUES: (16500000000000001) DOCUMENT: projects/ PROJECT ID /databases/(default)/documents/Users/5000000000000001 What's next Learn how to get started with Key Visualizer .
+- Some examples of common hotspots on index are as follows: Note: In the following heatmap example, for Firestore, the x-axis of the heatmap represents time, and the y-axis represents index keys.
+
+### "Manage Standard edition indexes \_|\_ Firestore in Native mode \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/firestore/docs/query-data/indexing](https://docs.cloud.google.com/firestore/docs/query-data/indexing)
+- Source ID: `site-docs-reference`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, consider this google datastore index resource: datastore.tf resource "google datastore index" "legacy" { kind = "foo" properties { name = "property a" direction = "ASCENDING" } properties { name = "property b" direction = "ASCENDING" } } The equivalent google firestore index resource would be: resource "google firestore index" "new" { // note: defaults to the provider project project = project // note: defaults to the (default) database database = "(default)" collection = "foo" api scope = "DATASTORE MODE API" // since there was no "ancestor" property set above, use COLLECTION GROUP here query scope = "COLLECTION GROUP" fields { field path = "property a" order = "ASCENDING" } fields { field path = "property b" order = "ASCENDING" } } Index build time To build an index, Firestore Standard edition must set up the index and then backfill the index with existing data.
+- Datastore mode indexes You can also create Datastore Mode indexes using Terraform. datastore.tf resource "google firestore index" "datastore-mode-index" { project = " project-id " database = " database-id " collection = "chatrooms" fields { field path = "name" order = "ASCENDING" } fields { field path = "description" order = "DESCENDING" } query scope = "COLLECTION GROUP" api scope = "DATASTORE MODE API" } Migrate from google datastore index The google datastore index resource is deprecated and will be unavailable in terraform-provider-google version 6.0.0 and later.
+- Single-field (automatic) index The following example Terraform configuration file creates a single-field index on the name field in the chatrooms collection: firestore.tf resource "random id" "variable"{ byte length = 8 } resource "google firestore field" "single-index" { project = " project-id " database = " database-id " collection = "chatrooms ${random id.variable.hex}" field = "name" index config { indexes { order = "ASCENDING" query scope = "COLLECTION GROUP" } indexes { array config = "CONTAINS" } } ttl config {} } Replace project-id with your project ID.
+- For example, here is the progress status of an index build: { "operations": [ { "name": "projects/ project-id /operations/AyAyMDBiM2U5NTgwZDAtZGIyYi0zYjc0LTIzYWEtZjg1ZGdWFmZWQHEjF0c2Flc3UtcmV4ZWRuaS1uaW1kYRUKSBI", "metadata": { "@type": "type.googleapis.com/google.firestore.admin.v1.IndexOperationMetadata", "common": { "operationType": "CREATE INDEX", "startTime": "2020-06-23T16:52:25.697539Z", "state": "PROCESSING" }, "progressDocuments": { "workCompleted": "219327", "workEstimated": "2198182" } }, }, ...
 

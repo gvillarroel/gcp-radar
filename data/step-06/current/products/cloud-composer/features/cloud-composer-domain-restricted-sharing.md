@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:48.899Z"
+generated_at: "2026-04-12T12:11:20.139Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer domain-restricted sharing"
 feature_slug: "cloud-composer-domain-restricted-sharing"
 latest_feature_date: "2021-02-16"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/composer-security-overview"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/configure-cmek-encryption"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/environment-architecture"
   - "https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc"
 keywords:
   - "composer"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer domain-restricted sharing
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +39,24 @@ Cloud Composer added domain-restricted sharing support for environments and reso
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/composer-security-overview](https://docs.cloud.google.com/composer/docs/composer-1/composer-security-overview)
+- [https://docs.cloud.google.com/composer/docs/composer-1/configure-cmek-encryption](https://docs.cloud.google.com/composer/docs/composer-1/configure-cmek-encryption)
+- [https://docs.cloud.google.com/composer/docs/composer-1/environment-architecture](https://docs.cloud.google.com/composer/docs/composer-1/environment-architecture)
 - [https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc](https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Fixed Improved the file synchronization error handling for environments that run under the Domain Restricted Sharing organizational policy .
-- November 20, 2020 Feature Composer version 1.12.5 or newer: File synchronization between buckets in Domain restricted sharing compliant environments has been improved.
-- Added validation to the v1 API so that environment creation fails quickly if Domain Restricted Sharing is enforced in the project.
-- Change (Airflow 1.10.15) Upgraded apache-beam and google provider packages to version 2022.6.1: Support impersonation chain parameter for Dataflow runner in Apache Beam operators Added missing project id parameter for wait for job method in the Dataflow operators Added key secret project id parameter which specifies a project with KeyFile Change Cloud Composer 1.18.12 and 2.0.16 images are available: composer-1.18.12-airflow-1.10.15 (default) composer-1.18.12-airflow-2.1.4 composer-1.18.12-airflow-2.2.5 composer-2.0.16-airflow-2.1.4 composer-2.0.16-airflow-2.2.5 June 01, 2022 Feature Web server restarting is available in Preview in Cloud Composer 2.
 
 ### Cloud Composer security overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/composer-security-overview](https://docs.cloud.google.com/composer/docs/composer-1/composer-security-overview)
 - Source ID: `site-iam-reference`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 223
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Cloud Composer supports Domain Restricted Sharing organizational policy .
@@ -75,11 +64,37 @@ Evidence snippets:
 - Cloud Composer 3 Cloud Composer 2 Cloud Composer 1 Cloud Composer offers a handful of security features and compliances that are beneficial for enterprise companies with stricter security requirements.
 - Cloud Composer 1 environments that were created based on GKE versions 1.18 and later use Shielded VMs to run the nodes of their environment cluster.
 
+### "Configure encryption with customer-managed encryption keys \_|\_ Cloud Composer\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-cmek-encryption](https://docs.cloud.google.com/composer/docs/composer-1/configure-cmek-encryption)
+- Source ID: `site-iam-reference`
+- Final score: 199
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Details about encryption are listed in the Data encryption key item. gcloud Run the following gcloud command to view the encryption configuration gcloud composer environments describe \ ENVIRONMENT NAME \ --location LOCATION \ --format = "value(config.encryptionConfig)" Replace: ENVIRONMENT NAME with the name of the environment.
+- Example: gcloud projects add-iam-policy-binding \ example-project \ --member = "serviceAccount:example-sa@gcp-sa-logging.iam.gserviceaccount.com" \ --role = "roles/storage.objectCreator" \ --condition = None Exclude the logs for your new environment from Monitoring. gcloud beta logging sinks update Default \ --add-exclusion name = ENVIRONMENT NAME -exclusion,filter = "resource.type=cloud composer environment AND resource.labels.environment name= ENVIRONMENT NAME AND resource.labels.location= LOCATION " Replace: ENVIRONMENT NAME with the name of the environment.
+- Data protected with CMEK encryption Cloud Composer protects the following data with CMEK encryption: Contents and schema of the Airflow database Environment and Airflow task logs in Cloud Logging Contents of the environment's bucket Secrets stored in the environment's cluster Persistent disks used by the task queue Container images of environment components stored in Artifact Registry repositories For specific details about how the data is encrypted, see: About customer-managed encryption keys (CMEK) in the Cloud SQL documentation.
+- Example: gcloud composer environments create example-environment \ --location us-central1 \ --image-version composer-1.20.12-airflow-1.10.15 \ --kms-key projects/example-project/locations/us-central1/keyRings/example-key-ring/cryptoKeys/example-key View the environment's encryption configuration You can view encryption configuration for an existing environment: Console In Google Cloud console, go to the Environments page.
+
+### Environment architecture \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/environment-architecture](https://docs.cloud.google.com/composer/docs/composer-1/environment-architecture)
+- Source ID: `site-iam-reference`
+- Final score: 199
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Environment architecture configurations Cloud Composer 1 environments can have the following architecture configurations: Public IP architecture Private IP architecture with VPC peerings Private IP with Domain restricted sharing (DRS) architecture Customer and tenant projects When you create an environment, Cloud Composer distributes the environment's resources between a tenant and a customer project: Customer project is a Google Cloud project where you create your environments.
+- Private IP environment architecture (click to enlarge) If the Domain Restricted Sharing (DRS) organizational policy is turned on in your project, then Cloud Composer uses the Private IP with DRS environment architecture.
+- Public IP environment architecture (click to enlarge) In a Public IP environment architecture for Cloud Composer 1: The tenant project hosts a Cloud SQL instance, Cloud SQL storage, and a App Engine Flex instance that runs the Airflow web server.
+- Cloud Composer hides the IAP integration details, and provides access to the web server based on user identities and IAM policy bindings defined for users.
+
 ### Configure VPC Service Controls \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc](https://docs.cloud.google.com/composer/docs/composer-1/configure-vpc-sc)
 - Source ID: `site-iam-reference`
-- Final score: 156
+- Final score: 198
 - Re-rank relevance: N/A
 
 Evidence snippets:

@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:15:56.165Z"
+generated_at: "2026-04-12T20:57:08.288Z"
 product_name: "App Engine standard environment Python"
 product_slug: "app-engine-standard-environment-python"
 feature_name: "Trace timestamp alignment in App Engine logs"
 feature_slug: "trace-timestamp-alignment-in-app-engine-logs"
 latest_feature_date: "2016-03-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache"
+  - "https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler"
+  - "https://docs.cloud.google.com/appengine/docs/standard/python/configuring-your-app-with-app-yaml"
 keywords:
-  - "timestamps"
+  - "trace"
   - "timestamp"
   - "alignment"
-  - "trace"
-  - "logs"
-  - "engine"
   - "app"
-  - "in"
+  - "engine"
+  - "logs"
+  - "timestamps"
+  - "were"
 ---
 
 # Trace timestamp alignment in App Engine logs
 
 Product: App Engine standard environment Python
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,21 +38,21 @@ Trace timestamps were corrected to align with log timestamps.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache)
+- [https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler](https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler)
+- [https://docs.cloud.google.com/appengine/docs/standard/python/configuring-your-app-with-app-yaml](https://docs.cloud.google.com/appengine/docs/standard/python/configuring-your-app-with-app-yaml)
 
 ## Supporting Pages
 
 ### "App Engine audit logging information \_|\_ App Engine standard environment\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
-- Source ID: `site-docs-root`
-- Final score: 241
+- Source ID: `site-docs-reference-required-2`
+- Final score: 39
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,30 +61,28 @@ Evidence snippets:
 - This document describes the audit logs created by App Engine as part of Cloud Audit Logs .
 - Resource types App Engine audit logs use the resource type gae app for all audit logs.
 
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
+### "Understand performance with Cloud Profiler \_|\_ App Engine standard environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- Source ID: `site-docs-root`
-- Final score: 227
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Create a new folder called go-app for your Go service: mkdir go-app In your go-app/ folder, create a file called app.yaml , and add the following contents: runtime : go126 # or another supported version This is the simplest configuration for an App Engine app.
-- Deploy your web service on App Engine In your go-app directory where your app.yaml file is located, deploy your web service to App Engine using the following command: gcloud app deploy To launch your browser and view your web service at https:// PROJECT ID .
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Build a Go app on App Engine Stay organized with collections Save and categorize content based on your preferences.
-- Learn how to add other features to your application by exploring the following pages: Learn more about writing application logs and interpreting system logs in Reading and Writing Application Logs .
-
-### "Package google.golang.org/appengine/v2/memcache (v2.0.6) \_|\_ App Engine\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/memcache)
-- Source ID: `site-docs-reference`
-- Final score: 214
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler](https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 30
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Reference Send feedback Package google.golang.org/appengine/v2/memcache (v2.0.6) Stay organized with collections Save and categorize content based on your preferences.
-- Context , items [] Item ) error AddMulti is a batch version of Add. appengine.MultiError may be returned. func (Codec) CompareAndSwap func ( cd Codec ) CompareAndSwap ( c context .
-- Context , items [] Item ) error CompareAndSwapMulti is a batch version of CompareAndSwap. appengine.MultiError may be returned. func (Codec) Get func ( cd Codec ) Get ( c context .
-- Context , item [] Item ) error CompareAndSwapMulti is a batch version of CompareAndSwap. appengine.MultiError may be returned. func Delete func Delete ( c context .
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Understand performance with Cloud Profiler Stay organized with collections Save and categorize content based on your preferences.
+
+### App Engine standard environment \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/python/configuring-your-app-with-app-yaml](https://docs.cloud.google.com/appengine/docs/standard/python/configuring-your-app-with-app-yaml)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 28
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Try App Engine free Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback App Engine standard environment Stay organized with collections Save and categorize content based on your preferences.
+- Try it for yourself If you're new to Google Cloud, create an account to evaluate how App Engine performs in real-world scenarios.
+- The App Engine standard environment is based on container instances running on Google's infrastructure.
 

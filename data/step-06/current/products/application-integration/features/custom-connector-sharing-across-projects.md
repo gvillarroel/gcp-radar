@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.467Z"
+generated_at: "2026-04-14T07:40:14.472Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Custom connector sharing across projects"
 feature_slug: "custom-connector-sharing-across-projects"
 latest_feature_date: "2024-07-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
-  - "https://docs.cloud.google.com/application-integration/docs/api-fulfilment"
-  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task"
+  - "https://docs.cloud.google.com/application-integration/docs/build-cicd"
+  - "https://docs.cloud.google.com/application-integration/docs/setup-application-integration"
 keywords:
   - "projects"
   - "sharing"
@@ -19,14 +19,12 @@ keywords:
   - "connectors"
   - "connector"
   - "custom"
-  - "can"
-  - "now"
 ---
 
 # Custom connector sharing across projects
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +36,55 @@ Custom connectors can now be shared between Google Cloud projects by exporting a
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- [https://docs.cloud.google.com/application-integration/docs/api-fulfilment](https://docs.cloud.google.com/application-integration/docs/api-fulfilment)
-- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
+- [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
+- [https://docs.cloud.google.com/application-integration/docs/build-cicd](https://docs.cloud.google.com/application-integration/docs/build-cicd)
+- [https://docs.cloud.google.com/application-integration/docs/setup-application-integration](https://docs.cloud.google.com/application-integration/docs/setup-application-integration)
 
 ## Supporting Pages
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### Connectors task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 124
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 15, 2024 Feature You can now share custom connectors between different Google Cloud projects by exporting and importing the connector specification .
-- December 19, 2024 Feature You can now build and publish custom connectors for Google Cloud Marketplace .
-- The canvas view offers the following benefits: Improved responsiveness of the canvas interaction Clearer view of your integration Minimap view Easier to build integrations August 18, 2024 Feature In the Application Integration editor, you can now search, browse, and select tasks and connectors in the Tasks list.
-- Inline connection creation You can now use the Connectors task in Application Integration to directly create a new connection in the Integration Connectors platform.
-
-### "API request fulfilment \_|\_ Application Integration \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/api-fulfilment](https://docs.cloud.google.com/application-integration/docs/api-fulfilment)
-- Source ID: `site-docs-root`
-- Final score: 104
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 128
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- If you don't have curl , you can download it from the curl releases and downloads page . curl -v -X POST -H "Content-Type: application/json" 'https://integrations.googleapis.com/v1/projects/connectors-ip-test/locations/us-central1/integrations/api-fulfillment-integration:execute' -H "Authorization: Bearer $(gcloud auth AUTH PROFILE )" -d '{ "triggerId": "api trigger/api-fulfillment-integration API 1", "inputParameters": { "customer id": {"string value": 1}, "location" : {"string value" : "US"}} }' The API returns the integration execution response containing all following JSON: { "CUSTOMER ID": 2, "CUSTOMER NAME": "Dana" "CUSTOMER EMAILID": "test-02@test.com " "CUSTOMER CITY": "Seattle" } Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, unpublish the integration and delete the connections created in Integration Connectors.
-- Test using a REST API call Now that the integration is published and running, you can invoke it using the following POST REST call: URL: https://integrations.googleapis.com/v1/projects/ project-name /locations/-/integrations/api fulfilment:execute Request body: {"trigger id":"api trigger/api fulfilment API 1"} Example: Make an API request with custom inputs Note: The following example uses curl , which typically comes pre-installed for Linux and macOS operating systems.
-- Connect to the Oracle database Perform the following steps to add and configure a Connectors task to retrieve the customers details from the Oracle Customers table: In the integration editor, click Tasks to display a list of available tasks.
-- Connect to the MySQL database Perform the following steps to add and configure a Connectors task to retrieve the customers details from the MySQL Customers table: In the integration editor, click Tasks to display a list of available tasks.
+- Action: Execute custom SQL query To create a custom query, follow these steps: Follow the detailed instructions to add a connectors task .
+- The following table shows a sample mapping between an integration variable and the filterClause(Connectors) variable: Input Output PRIMARY KEY ID = ' .CONCAT( INTEGRATION VARIABLE ) .CONCAT(') filterClause(Connectors) Where PRIMARY KEY ID = ' is entered as a Value in the input row.
+- Configure task input and output variables The Connectors task configuration pane displays Task Input and Task Output variables that are automatically generated based on the Entity and Operation or Action selected in the Configure connector task dialog.
+- Configure authentication override To enable the connection to accept different backend authentication dynamically during runtime, ensure that in Integration Connectors, you have selected the Enable Authentication Override option for your connection.
 
-### "Automate Salesforce opportunity to BigQuery order \_|\_ Application Integration\
+### "Build CICD for your integration \_|\_ Application Integration \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
-- Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/application-integration/docs/build-cicd](https://docs.cloud.google.com/application-integration/docs/build-cicd)
+- Source ID: `site-docs-reference-2`
+- Final score: 110
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- During validation, if the account information doesn't exist in BigQuery, the integration will automatically create a new entry in both the BigQuery table and the attached ServiceNow instance using Integration Connectors.
-- Create a new ServiceNow account Perform the following steps to configure a Connectors task that adds a new account to your ServiceNow instance: In the integration editor, click Tasks to display a list of available tasks.
-- Transform and map account details To transform the account details and map it to the BigQuery and ServiceNow connectors, do the following: In the integration editor, click Tasks to display a list of available tasks.
-- ServiceNow connection Configure a ServiceNow connection in Integration Connectors using your instance URL to create and retrieve account details in ServiceNow.
+- Promote integration across environments To promote your integration across environments, you can use the integrationcli tool, which is an open-source tool that lets you interact with Application Integration APIs and Integration Connectors APIs .
+- Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud Free cloud features and trial offer .
+- Add another edge connection from the Data Mapping element to the Connectors element by hovering over a control point on the Data Mapping element, then clicking and dragging a line to a control point on the Connectors task element.
+- Tip: To learn how to store integration and connector assets to a source code repository, promote changes across environments, and how such deployments can be automated, see the CICD for Application Integration blog.
+
+### Set up Application Integration \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/setup-application-integration](https://docs.cloud.google.com/application-integration/docs/setup-application-integration)
+- Source ID: `site-docs-root`
+- Final score: 106
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Required roles To get the permissions that you need to set up Application Integration, ask your administrator to grant you the following IAM roles on your project: Google Cloud Project Editor ( roles/editor ) Cloud KMS Admin ( roles/cloudkms.admin ) Application Integration Admin ( roles/integrations.integrationAdmin ) Connector Admin ( roles/connectors.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
+- The default configurations include enabling APIs ( Application Integration API , Secret manager API , and Connectors API ), creating a default service account , and using Google-owned and Google-managed encryption keys as the encryption method for the selected region.
+- Connectors API connectors.googleapis.com Enables users to create and manage connections to Google Cloud services and other business applications using the Integration Connectors interface.
+- Create a project : To create a project, you need the Project Creator role ( roles/resourcemanager.projectCreator ), which contains the resourcemanager.projects.create permission.
 

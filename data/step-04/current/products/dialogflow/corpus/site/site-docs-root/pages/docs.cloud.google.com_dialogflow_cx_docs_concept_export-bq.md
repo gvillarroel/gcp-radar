@@ -1,5 +1,5 @@
 ---
-title: "Interaction logging export to BigQuery \_|\_ Dialogflow CX \_|\_ Google Cloud\
+title: "Conversation history export to BigQuery \_|\_ Dialogflow CX \_|\_ Google Cloud\
   \ Documentation"
 url: https://docs.cloud.google.com/dialogflow/cx/docs/concept/export-bq
 knowledge_key: corpus
@@ -8,7 +8,7 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dialogflow/cx/docs
 source_metadata:
   url: https://docs.cloud.google.com/dialogflow/cx/docs/concept/export-bq
-  title: "Interaction logging export to BigQuery \_|\_ Dialogflow CX \_|\_ Google\
+  title: "Conversation history export to BigQuery \_|\_ Dialogflow CX \_|\_ Google\
     \ Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
@@ -23,14 +23,14 @@ AI and ML
 Dialogflow
 Dialogflow CX
 Send feedback
-Interaction logging export to BigQuery
+Conversation history export to BigQuery
 Stay organized with collections
 Save and categorize content based on your preferences.
 You can export
-interaction logging
+conversation history
 to
 BigQuery .
-Once configured, all live interaction logging is written
+Once configured, all live conversation history is written
 to your BigQuery table.
 This provides you with advanced analysis tools
 that can help you debug and improve your agent
@@ -96,9 +96,9 @@ bot_answer_feedback
 JSON
 Answer feedback if provided.
 Configuration
-To configure interaction logging export:
+To configure conversation history export:
 Ensure that
-interaction logging
+conversation history
 is enabled.
 Follow the BigQuery
 dataset creation guide
@@ -137,6 +137,6 @@ Change history
 arrow_forward
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

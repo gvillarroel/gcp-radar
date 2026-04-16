@@ -96,7 +96,7 @@ the required permissions through custom
 roles or other predefined
 roles .
 To ensure that the Compute Engine default service account has the necessary
-permissions to run the Dataproc job,
+permissions to run the Managed Service for Apache Spark job,
 ask your administrator to grant the
 following IAM roles to the Compute Engine default service account on your project:
 Important: You must grant these roles
@@ -117,9 +117,9 @@ Enter the Region in which to create the instance.
 Choose the Cloud Data Fusion Version to use.
 Choose the Cloud Data Fusion Edition .
 For Cloud Data Fusion versions 6.2.3 and later, in the
-Authorization field, choose the Dataproc service account
+Authorization field, choose the Managed Service for Apache Spark service account
 to use for running your Cloud Data Fusion pipeline in
-Dataproc. The default value, Compute Engine account, is
+Managed Service for Apache Spark. The default value, Compute Engine account, is
 pre-selected.
 Click Create .
 It takes up to 30 minutes for the instance creation process to complete.
@@ -172,11 +172,11 @@ times, logs, and metrics.
 Execute your pipeline
 In the pipeline details view, click Run to execute your pipeline.
 When executing a pipeline, Cloud Data Fusion does the following:
-Provisions an ephemeral Dataproc cluster
+Provisions an ephemeral Managed Service for Apache Spark cluster
 Executes the pipeline on the cluster using Apache Spark
 Deletes the cluster
 Note: When the pipeline transitions to the Running state, you can
-monitor the Dataproc cluster creation and deletion . This cluster only exists for the duration of
+monitor the Managed Service for Apache Spark cluster creation and deletion . This cluster only exists for the duration of
 the pipeline.
 View the results
 After a few minutes, the pipeline finishes. The pipeline status changes to
@@ -215,6 +215,6 @@ Work through a Cloud Data Fusion tutorial
 Learn about Cloud Data Fusion concepts
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

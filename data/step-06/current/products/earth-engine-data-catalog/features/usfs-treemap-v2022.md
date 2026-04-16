@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.352Z"
+generated_at: "2026-04-14T15:13:19.329Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "USFS TreeMap v2022"
 feature_slug: "usfs-treemap-v2022"
 latest_feature_date: "2025-07-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/landcover"
-  - "https://developers.google.com/earth-engine/datasets/tags/landuse-landcover"
   - "https://developers.google.com/earth-engine/datasets/tags/forest-biomass"
+  - "https://developers.google.com/earth-engine/datasets/tags/landuse-landcover"
 keywords:
   - "usfs"
   - "treemap"
   - "v2022"
-  - "this"
   - "dataset"
   - "provides"
   - "land"
   - "cover"
+  - "forest"
 ---
 
 # USFS TreeMap v2022
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ This dataset provides USFS TreeMap land cover and forest attribute data for vers
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
-- [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
 - [https://developers.google.com/earth-engine/datasets/tags/forest-biomass](https://developers.google.com/earth-engine/datasets/tags/forest-biomass)
+- [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
 
 ## Supporting Pages
 
@@ -52,38 +52,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 - Source ID: `site-docs-root`
-- Final score: 230
-- Re-rank relevance: N/A
+- Final score: 267
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Produced by the Land & Carbon Lab Global Pasture Watch initiative, the mapped grassland extent includes any land cover type, which contains at least 30% of dry … global global-pasture-watch land landcover landuse landuse-landcover GPW Annual Probabilities of Natural/Semi-natural Grasslands v1 This dataset provides global annual probability maps of natural/semi-natural grassland from 2000 to 2022 at 30-m spatial resolution.
-- The project seeks to create a globally comprehensive inventory of land ice, including measurements of glacier area, geometry, surface velocity, and snow line … cryosphere glacier glims ice landcover nasa GPW Annual Dominant Class of Grasslands v1 This dataset provides global annual dominant class maps of grasslands (cultivated and natural/semi-natural) from 2000 to 2022 at 30-m spatial resolution.
-- Produced by the Land & Carbon Lab Global Pasture Watch initiative, the mapped grassland extent includes any land cover type, which contains at least … global global-pasture-watch land landcover landuse landuse-landcover GPW Annual Probabilities of Cultivated Grasslands v1 This dataset provides global annual probability maps of cultivated grassland from 2000 to 2022 at 30-m spatial resolution.
+- TreeMap v2022 contains 22-band 30 x 30m … aboveground biomass carbon climate-change conus forest USGS GAP Alaska 2001 The GAP/LANDFIRE National Terrestrial Ecosystems data represents a detailed vegetation and land cover classification for the Conterminous U.S., Alaska, Hawaii, and Puerto Rico.GAP/LF 2011 Ecosystems for the Conterminous U.S. is an update of the National Gap Analysis Program Land Cover Data - Version 2.2.
 - It shows LCMS-modeled change, land cover, and/or land use classes for each year and covers the Conterminous United States (CONUS) as well as areas outside the CONUS (OCONUS) including Alaska (AK), Puerto … change-detection forest gtac landcover landuse landuse-landcover USFS TreeMap v2016 (Conterminous United States) This product is part of the TreeMap data suite.
-
-### "Datasets tagged landuse-landcover in Earth Engine \_|\_ Earth Engine Data\
-
-- URL: [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
-- Source ID: `site-docs-root-3`
-- Final score: 226
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Produced by the Land & Carbon Lab Global Pasture Watch initiative, the mapped grassland extent includes any land cover type, which contains at least 30% of dry … global global-pasture-watch land landcover landuse landuse-landcover GPW Annual Probabilities of Natural/Semi-natural Grasslands v1 This dataset provides global annual probability maps of natural/semi-natural grassland from 2000 to 2022 at 30-m spatial resolution.
-- This dataset was developed in collaboration with the Oxford Leverhulme Centre for Nature Recovery to serve as a baseline for applications including … biodiversity climate conservation forest landuse-landcover nature-trace GPW Annual Dominant Class of Grasslands v1 This dataset provides global annual dominant class maps of grasslands (cultivated and natural/semi-natural) from 2000 to 2022 at 30-m spatial resolution.
-- Produced by the Land & Carbon Lab Global Pasture Watch initiative, the mapped grassland extent includes any land cover type, which contains at least … global global-pasture-watch land landcover landuse landuse-landcover GPW Annual Probabilities of Cultivated Grasslands v1 This dataset provides global annual probability maps of cultivated grassland from 2000 to 2022 at 30-m spatial resolution.
+- GPP values … global global-pasture-watch land landcover landuse plant-productivity GlobCover: Global Land Cover Map GlobCover 2009 is a global land cover map based on ENVISAT's Medium Resolution Imaging Spectrometer (MERIS) Level 1B data acquired in full resolution mode with a spatial resolution of approximately 300 meters. esa landcover landuse-landcover Global 3-class PALSAR-2/PALSAR Forest/Non-Forest Map A newer version of this dataset with 4 classes for 2017-2020 can be found in JAXA/ALOS/PALSAR/YEARLY/FNF4 The global forest/non-forest map (FNF) is generated by classifying the SAR image (backscattering coefficient) in the global 25m resolution PALSAR-2/PALSAR SAR mosaic so that strong and low backscatter pixels … alos alos2 classification eroc forest forest-biomass Global 4-class PALSAR-2/PALSAR Forest/Non-Forest Map The global forest/non-forest map (FNF) is generated by classifying the SAR image (backscattering coefficient) in the global 25m resolution PALSAR-2/PALSAR SAR mosaic so that strong and low backscatter pixels are assigned as "forest" and "non-forest", respectively.
 - LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
 
 ### "Datasets tagged forest-biomass in Earth Engine \_|\_ Earth Engine Data Catalog\
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/forest-biomass](https://developers.google.com/earth-engine/datasets/tags/forest-biomass)
 - Source ID: `site-docs-root-3`
-- Final score: 178
-- Re-rank relevance: N/A
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The Spatialized CAnadian National … canada forest forest-biomass publisher-dataset tree-cover USFS TreeMap v2016 (Conterminous United States) This product is part of the TreeMap data suite.
 - Produced by the World Resources Institute (WRI) and Google DeepMind, the data were developed using a global neural network model (ResNet) trained on a set of samples collected … agriculture deforestation forest forest-biomass google landandcarbon WRI/Google DeepMind Global Drivers of Forest Loss 2001-2023 v1.1 This dataset maps the dominant driver of tree cover loss from 2001-2023 globally at 1 km resolution.
 - Produced by the World Resources Institute (WRI) and Google DeepMind, the data were developed using a global neural network model (ResNet) trained on a set of samples collected … agriculture deforestation forest forest-biomass google landandcarbon WRI/Google DeepMind Global Drivers of Forest Loss 2001-2024 v1.2 This dataset maps the dominant driver of tree cover loss from 2001-2024 globally at 1 km resolution.
-- This dataset provides a comprehensive representation of near-global vegetation structure that is inclusive of the … biomass canopy forest forest-biomass gedi larse Hansen Global Forest Change v1.12 (2000-2024) Results from time-series analysis of Landsat images in characterizing global forest extent and change.
+- The base layer for mapping these forest types is the extent of forest cover … eudr forest forest-biomass jrc landcover primary-forest European Primary Forest Dataset - Points European primary forest data harmonizes 48 different, mostly field-based datasets of primary forests, and contains 18,411 individual patches (41.1 Mha) spread across 33 countries.
+
+### "Datasets tagged landuse-landcover in Earth Engine \_|\_ Earth Engine Data\
+
+- URL: [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
+- Source ID: `site-docs-root-3`
+- Final score: 227
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- These data support the National Land Cover Database (NLCD) project, which is managed by the US Geological … forest gtac landuse-landcover redcastle-resources usda usfs VNP22Q2: Land Surface Phenology Yearly L3 Global 500m SIN Grid The Suomi National Polar-Orbiting Partnership (Suomi NPP) NASA Visible Infrared Imaging Radiometer Suite (VIIRS) Land Cover Dynamics data product provides global land surface phenology (GLSP) metrics at yearly intervals.
+- This dataset was developed in collaboration with the Oxford Leverhulme Centre for Nature Recovery to serve as a baseline for applications including … biodiversity climate conservation forest landuse-landcover nature-trace GPW Annual Dominant Class of Grasslands v1 This dataset provides global annual dominant class maps of grasslands (cultivated and natural/semi-natural) from 2000 to 2022 at 30-m spatial resolution.
+- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
+- It shows LCMS-modeled change, land cover, and/or land use classes for each year and covers the Conterminous United States (CONUS) as well as areas outside the CONUS (OCONUS) including Alaska (AK), Puerto … change-detection forest gtac landcover landuse landuse-landcover USFS Tree Canopy Cover v2023-5 (CONUS and OCONUS) Overview The Tree Canopy Cover (TCC) data suite, produced by the United States Department of Agriculture, Forest Service (USFS), are annual remote sensing-based map outputs spanning from 1985-2023.
 

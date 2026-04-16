@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:47.874Z"
+generated_at: "2026-04-12T12:11:19.083Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer 3 private package repository custom certificates"
 feature_slug: "cloud-composer-3-private-package-repository-custom-certificates"
 latest_feature_date: "2025-01-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-1/access-control"
   - "https://docs.cloud.google.com/composer/docs/composer-2/composer-overview"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/create-environments"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/composer-overview"
 keywords:
   - "composer"
   - "private"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer 3 private package repository custom certificates
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ Cloud Composer 3 now supports using custom certificates when installing packages
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-1/access-control](https://docs.cloud.google.com/composer/docs/composer-1/access-control)
 - [https://docs.cloud.google.com/composer/docs/composer-2/composer-overview](https://docs.cloud.google.com/composer/docs/composer-2/composer-overview)
+- [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
+- [https://docs.cloud.google.com/composer/docs/composer-1/composer-overview](https://docs.cloud.google.com/composer/docs/composer-1/composer-overview)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- January 10, 2025 Feature (Cloud Composer 3) You can now use custom certificates when installing packages from your private repository .
-- Feature (Cloud Composer 2) You can now use custom certificates when installing packages from your private repository.
-- Feature Cloud Composer now supports Private Python package repositories .
-- Installing PyPI packages from private repositories in the public Internet (specified in the pip.conf file) now works in private IP Composer environments without having to configure Cloud NAT.
 
 ### Access control with IAM \_|\_ Cloud Composer \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/access-control](https://docs.cloud.google.com/composer/docs/composer-1/access-control)
 - Source ID: `site-iam-reference`
-- Final score: 148
+- Final score: 197
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,12 +67,38 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-2/composer-overview](https://docs.cloud.google.com/composer/docs/composer-2/composer-overview)
 - Source ID: `site-docs-reference`
-- Final score: 148
+- Final score: 192
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - For more information about networking in Cloud Composer, see pages for individual networking features: Public IP and Private IP environments Private Service Connect environments Shared VPC environments Configuring VPC Service Controls Authorized networks IP Masquerade agent Privately used public IP ranges Other features of Cloud Composer Other Cloud Composer features include: Autoscaling environments Development with local Airflow environments Highly resilient environments Environment snapshots Data lineage integration with Dataplex Universal Catalog Encryption with customer-managed encryption keys (CMEK) Frequently Asked Questions What version of Apache Airflow does Cloud Composer use?
 - Python dependencies : You can install Python dependencies from the Python Package Index in your environment or from a private package repository, including Artifact Registry repositories.
+- Custom plugins : You can install custom Airflow plugins , such as custom, in-house Apache Airflow operators, hooks, sensors, or interfaces, into your Cloud Composer environment.
+- Airflow configuration options : You can change Airflow configuration options from default values used by Cloud Composer to custom values.
+
+### Create Cloud Composer environments \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/create-environments](https://docs.cloud.google.com/composer/docs/composer-1/create-environments)
+- Source ID: `site-iam-reference`
+- Final score: 192
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If your environment uses resource location restrictions , or installs PyPI packages from an Artifact Registry repository or from a private repository , then grant the Service Account User ( iam.serviceAccountUser ) role to the user-managed service account that runs your environment on itself (both the principal and the resource are the same service account).
+- Note: Cloud Composer 1 supports only private IP environments with VPC peerings.
+- Example (Private IP environment ) gcloud composer environments create ENVIRONMENT NAME \ --location LOCATION \ --image-version composer-1.20.12-airflow-1.10.15 \ --service-account " SERVICE ACCOUNT " \ --enable-private-environment \ --enable-ip-alias \ --network NETWORK ID \ --subnetwork SUBNETWORK ID \ --cluster-ipv4-cidr PODS RANGE \ --services-ipv4-cidr SERVICES RANGE \ --master-ipv4-cidr CONTROL PLANE RANGE \ --web-server-ipv4-cidr WEB SERVER RANGE \ --cloud-sql-ipv4-cidr SQL RANGE Replace: NETWORK ID with your VPC network ID.
+- For a Private IP environment with VPC peerings, you need to know: Your VPC network ID Your VPC subnetwork ID Two secondary IP ranges in your VPC subnetwork: Secondary IP range for pods Secondary IP range for services IP ranges for the components of the environment: IP range for the GKE control plane.
+
+### Cloud Composer overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/composer-overview](https://docs.cloud.google.com/composer/docs/composer-1/composer-overview)
+- Source ID: `site-docs-reference`
+- Final score: 188
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Python dependencies : You can install Python dependencies from the Python Package Index in your environment or from a private package repository, including Artifact Registry repositories.
+- For more information about networking in Cloud Composer, see pages for individual networking features: Public IP and Private IP environments Shared VPC environments Configuring VPC Service Controls Authorized networks IP Masquerade agent Privately used public IP ranges Frequently Asked Questions What version of Apache Airflow does Cloud Composer use?
 - Custom plugins : You can install custom Airflow plugins , such as custom, in-house Apache Airflow operators, hooks, sensors, or interfaces, into your Cloud Composer environment.
 - Airflow configuration options : You can change Airflow configuration options from default values used by Cloud Composer to custom values.
 

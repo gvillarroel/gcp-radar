@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.387Z"
+generated_at: "2026-04-14T15:13:19.404Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "WeatherNext Graph Forecasts"
 feature_slug: "weathernext-graph-forecasts"
 latest_feature_date: "2024-12-10"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/weather"
   - "https://developers.google.com/earth-engine/datasets/catalog"
@@ -18,7 +18,6 @@ keywords:
   - "forecasts"
   - "forecast"
   - "dataset"
-  - "for"
   - "weather"
   - "predictions"
 ---
@@ -26,7 +25,7 @@ keywords:
 # WeatherNext Graph Forecasts
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +37,7 @@ A graph forecast dataset for WeatherNext weather predictions.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,8 +51,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/weather](https://developers.google.com/earth-engine/datasets/tags/weather)
 - Source ID: `site-docs-root`
-- Final score: 200
-- Re-rank relevance: N/A
+- Final score: 217
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Real-time data is any data that relates to a time that is no … climate forecast gcp-public-data-weathernext precipitation publisher-dataset temperature WeatherNext Graph Forecasts WeatherNext Graph is an experimental dataset of global medium-range weather forecasts produced by an operational version of Google DeepMind's graphical neural network weather model.
@@ -65,7 +65,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 - Source ID: `site-docs-root`
-- Final score: 194
+- Final score: 189
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +78,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/temperature](https://developers.google.com/earth-engine/datasets/tags/temperature)
 - Source ID: `site-docs-root`
-- Final score: 174
+- Final score: 183
 - Re-rank relevance: N/A
 
 Evidence snippets:

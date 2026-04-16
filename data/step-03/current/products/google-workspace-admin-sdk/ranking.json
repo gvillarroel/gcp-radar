@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-11T17:20:50.746Z",
+  "generated_at": "2026-04-12T21:44:27.302Z",
   "product_name": "Google Workspace Admin SDK",
   "product_slug": "google-workspace-admin-sdk",
   "step02_source_path": "data/step-02/current/google-workspace-admin-sdk.md",
@@ -174,32 +174,56 @@
     {
       "round": 1,
       "intent": "canonical_docs",
-      "query": "site:developers.google.com/admin-sdk \"Admin SDK API overview\" OR \"Google Workspace Admin SDK\"",
-      "official_result_count": 4,
+      "query": "site:developers.google.com/workspace/admin \"Admin SDK\" OR \"Admin console\"",
+      "official_result_count": 8,
       "results": [
         {
-          "title": "Admin SDK API overview | Admin console | Google for Developers",
-          "url": "https://developers.google.com/admin-sdk/overview",
-          "description": "The Admin SDK API is <strong>a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale</strong>.",
+          "title": "Admin SDK API reference | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/reference-overview",
+          "description": "Admin console · Reference · Send feedback · The Admin SDK API is <strong>a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale</strong>.",
           "rank": 1
         },
         {
-          "title": "Terms of Service | Admin console | Google for Developers",
-          "url": "https://developers.google.com/admin-sdk/admin-api-list",
-          "description": "Upon expiration or termination of the Google Workspace Agreement, Customer must cease all use of the Google Workspace Admin SDK and, if requested by Google, certify this cessation of use in writing. Use of the License Manager API or Directory API may result in additional charges to Customer&#x27;s billing account if the API is used to license or provision more users than the Customer has paid for prior to the use of the API.",
+          "title": "Admin SDK API overview | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/overview",
+          "description": "Admin console · Guides · Send feedback · The Admin SDK API is <strong>a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale</strong>. You can programmatically integrate with IT infrastructure, create ...",
           "rank": 2
         },
         {
-          "title": "Admin SDK API Client Library for Java | Directory API | Google Developers",
-          "url": "https://developers.google.com/admin-sdk/directory/v1/api-lib/java",
-          "description": "Google Workspace Admin SDK · Directory API · Guides · Send feedback · This page contains information about getting started with the Admin SDK API using the Google API Client Library for Java. In addition, you may be interested in the following documentation: Browse the JavaDoc reference for the Admin SDK API.",
+          "title": "Admin SDK: Directory API | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/directory/reference/rest",
+          "description": "Admin console · Reference · Send feedback · The Admin SDK Directory API <strong>lets administrators of enterprise domains view and manage their organization&#x27;s users, groups, devices, and related resources</strong>.",
           "rank": 3
         },
         {
-          "title": "The Google Workspace Admin SDK Terms of Service",
-          "url": "https://developers.google.com/admin-sdk/admin-api-terms",
-          "description": "By using this API, you consent to be bound by these terms in addition to the Google APIs Terms of Service (&quot;API ToS&quot;). The token provided to Customer by Google for use with the Google Workspace Admin SDK.",
+          "title": "Admin SDK: Data Transfer API | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/data-transfer/reference/rest",
+          "description": "Admin console · Reference · Send feedback · Admin SDK <strong>lets administrators of enterprise domains to view and manage resources like user, groups etc</strong>. It also provides audit and usage reports of domain.",
           "rank": 4
+        },
+        {
+          "title": "Admin SDK: Reports API | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/reports/reference/rest",
+          "description": "Admin console · Reference · Send feedback · The Admin SDK Reports API <strong>lets administrators of enterprise domains to view the audit and usage reports of their domain</strong>. REST Resource: activities · REST Resource: customerUsageReports · REST ...",
+          "rank": 5
+        },
+        {
+          "title": "Google Apps Script quickstart | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/reports/v1/quickstart/apps-script",
+          "description": "* @see https://developers.google.com/admin-sdk/reports/reference/rest/v1/activities/list */ function listLogins() { const userKey = &quot;all&quot;; const applicationName = &quot;login&quot;; const optionalArgs = { maxResults: 10, }; if (!AdminReports || !AdminReports.Activities) { throw new Error(&quot;Enable the AdminReports Advanced Service.&quot;); } const response = AdminReports.Activities.list( userKey, applicationName, optionalArgs, ); const activities = response.items; if (!activities || activities.length === 0) { console.log(&quot;No logins found.&quot;); return; } // Print login events console.log(&quot;Logins:&quot;); for (const ac",
+          "rank": 6
+        },
+        {
+          "title": "Admin SDK: Chrome Printer Management API | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/chrome-printer/reference/rest",
+          "description": "Admin console · Home · Google Workspace · Admin console · Reference · Send feedback · The Chrome Printer Management API lets admins manage CUPS printers and print servers. To call this service, we recommend that you use the Google-provided client libraries.",
+          "rank": 7
+        },
+        {
+          "title": "Node.js quickstart | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/reports/v1/quickstart/nodejs",
+          "description": "*/ async function listLoginEvents() { // Authenticate with Google and get an authorized client. const auth = await authenticate({ scopes: SCOPES, keyfilePath: CREDENTIALS_PATH, }); // Create a new Admin SDK Reports API client. const service = google.admin({version: &#x27;reports_v1&#x27;, auth}); // Get the list of login events. const result = await service.activities.list({ userKey: &#x27;all&#x27;, applicationName: &#x27;login&#x27;, maxResults: 10, }); const activities = result.data.items; if (!activities || activities.length === 0) { console.log(&#x27;No logins found.&#x27;); return; } // Print the time, email, and event name of each login event.",
+          "rank": 8
         }
       ]
     },
@@ -316,7 +340,7 @@
     {
       "round": 2,
       "intent": "canonical_docs",
-      "query": "site:developers.google.com/admin-sdk \"reference-overview\" OR \"directory/reference/rest\" OR \"reports/reference/rest\"",
+      "query": "site:developers.google.com/workspace/admin \"directory/reference/rest\" OR \"reports/reference/rest\"",
       "official_result_count": 0,
       "results": []
     },
@@ -434,15 +458,15 @@
           "rank": 3
         },
         {
-          "title": "Admin SDK API developer platform release notes | Admin console | Google for Developers",
-          "url": "https://developers.google.com/admin-sdk/directory/v1/revision-history",
-          "description": "Some domains might notice an increase in the number of reported documents. The following parameters have been added to the User&#x27;s usage report: ... Directory API: <strong>Supports push notifications for changes to users and aliases</strong>.",
+          "title": "Directory API Overview | Admin console | Google for Developers",
+          "url": "https://developers.google.com/admin-sdk/directory",
+          "description": "The Directory API is <strong>part of the RESTful Admin SDK API that you can use to programmatically create and manage admin-controlled resources owned by a Google Workspace account</strong>.",
           "rank": 4
         },
         {
-          "title": "Directory API Overview | Admin console | Google for Developers",
-          "url": "https://developers.google.com/admin-sdk/directory/v1/guides",
-          "description": "The Directory API is <strong>part of the RESTful Admin SDK API that you can use to programmatically create and manage admin-controlled resources owned by a Google Workspace account</strong>.",
+          "title": "Admin SDK API developer platform release notes | Admin console | Google for Developers",
+          "url": "https://developers.google.com/admin-sdk/directory/v1/revision-history",
+          "description": "Some domains might notice an increase in the number of reported documents. The following parameters have been added to the User&#x27;s usage report: ... Directory API: <strong>Supports push notifications for changes to users and aliases</strong>.",
           "rank": 5
         },
         {
@@ -482,7 +506,7 @@
     {
       "round": 3,
       "intent": "canonical_docs",
-      "query": "site:developers.google.com/admin-sdk \"directory/v1/guides/authorizing\" OR \"reports/auth\" OR \"reports/v1/guides/authorizing\"",
+      "query": "site:developers.google.com/workspace/admin/reports/v1/guides \"manage-audit-login\"",
       "official_result_count": 0,
       "results": []
     },
@@ -548,15 +572,15 @@
           "rank": 1
         },
         {
-          "title": "About SSH connections | Compute Engine | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/compute/docs/instances/ssh",
-          "description": "USERNAME_DOMAIN_SUFFIX For example, if the email associated with your Google Account is cloudysanfrancisco@gmail.com, then your generated username is cloudysanfrancisco_gmail_com. Your administrator can optionally set a username with the Google Workspace Admin SDK Directory API.",
-          "rank": 2
-        },
-        {
           "title": "Extend your initial setup and build your architecture | Get started | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/docs/enterprise/manage-foundation",
           "description": "Reference architectures: using an external IdP. To automatically provision users and enable single sign-on, see Federate Cloud Identity with Active Directory. To sync Active Directory users and groups to Google Cloud, see Directory Sync. To automate identity administration tasks, see Google Workspace Admin SDK...",
+          "rank": 2
+        },
+        {
+          "title": "About SSH connections | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/instances/ssh",
+          "description": "USERNAME_DOMAIN_SUFFIX For example, if the email associated with your Google Account is cloudysanfrancisco@gmail.com, then your generated username is cloudysanfrancisco_gmail_com. Your administrator can optionally set a username with the Google Workspace Admin SDK Directory API.",
           "rank": 3
         }
       ]
@@ -650,18 +674,18 @@
     {
       "title": "Terms of Service | Admin console | Google for Developers",
       "url": "https://developers.google.com/workspace/admin/terms",
-      "description": "By using this API, you consent to be bound by these terms in addition to the Google APIs Terms of Service (&quot;API ToS&quot;). The token provided to Customer by Google for use with the Google Workspace Admin SDK.",
-      "rank": 1,
+      "description": "Content obtained from Google using the Google Workspace Admin SDK, Customer Tokens, and the Google Workspace API documentation are subject to the confidentiality obligations contained in the Google Workspace Agreement.",
+      "rank": 2,
       "query_hits": [
-        "site:developers.google.com/workspace \"Google Workspace Admin SDK\" API OR site:developers.google.com/workspace \"google workspace admin sdk\" API",
         "site:developers.google.com \"Google Workspace Admin SDK\" official documentation OR site:developers.google.com \"google workspace admin sdk\" official documentation",
+        "site:developers.google.com/workspace \"Google Workspace Admin SDK\" API OR site:developers.google.com/workspace \"google workspace admin sdk\" API",
         "site:developers.google.com/workspace \"Google Workspace Admin SDK\" reference OR site:developers.google.com/workspace \"google workspace admin sdk\" reference",
         "site:developers.google.com \"Google Workspace Admin SDK\" reference OR site:developers.google.com \"google workspace admin sdk\" reference",
         "site:developers.google.com/workspace \"Google Workspace Admin SDK\" guides OR site:developers.google.com/workspace \"google workspace admin sdk\" guides"
       ],
       "intent_hits": [
-        "workspace_docs",
-        "developers_docs"
+        "developers_docs",
+        "workspace_docs"
       ],
       "round_hits": [
         1,
@@ -672,11 +696,12 @@
       "consistency_score": 100,
       "product_fit_score": 114,
       "feature_coverage": {
-        "score": 15,
+        "score": 18,
         "matched_phrases": [],
         "matched_tokens": [
           "the",
           "customer",
+          "and",
           "api",
           "for",
           "google"
@@ -697,6 +722,7 @@
         "matched_feature_tokens": [
           "the",
           "customer",
+          "and",
           "api",
           "for",
           "google"
@@ -705,68 +731,6 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Terms of Service | Admin console | Google for Developers",
-      "url": "https://developers.google.com/admin-sdk/admin-api-list",
-      "description": "Upon expiration or termination of the Google Workspace Agreement, Customer must cease all use of the Google Workspace Admin SDK and, if requested by Google, certify this cessation of use in writing. Use of the License Manager API or Directory API may result in additional charges to Customer&#x27;s billing account if the API is used to license or provision more users than the Customer has paid for prior to the use of the API.",
-      "rank": 2,
-      "query_hits": [
-        "site:developers.google.com/admin-sdk \"Admin SDK API overview\" OR \"Google Workspace Admin SDK\"",
-        "site:developers.google.com \"Google Workspace Admin SDK\" overview OR site:developers.google.com \"google workspace admin sdk\" overview"
-      ],
-      "intent_hits": [
-        "canonical_docs",
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 67,
-      "product_fit_score": 144,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "the",
-          "customer",
-          "and",
-          "api",
-          "for",
-          "users",
-          "google",
-          "directory"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "the",
-          "customer",
-          "and",
-          "api",
-          "for",
-          "users",
-          "google",
-          "directory"
-        ],
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
       "keep": false
     },
     {
@@ -785,7 +749,7 @@
         2,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 108,
       "feature_coverage": {
@@ -827,32 +791,35 @@
       "keep": false
     },
     {
-      "title": "Admin SDK API Client Library for Java | Directory API | Google Developers",
-      "url": "https://developers.google.com/admin-sdk/directory/v1/api-lib/java",
-      "description": "Google Workspace Admin SDK · Directory API · Guides · Send feedback · This page contains information about getting started with the Admin SDK API using the Google API Client Library for Java. In addition, you may be interested in the following documentation: Browse the JavaDoc reference for the Admin SDK API.",
-      "rank": 3,
+      "title": "Admin SDK API overview | Admin console | Google for Developers",
+      "url": "https://developers.google.com/workspace/admin/overview",
+      "description": "Admin console · Guides · Send feedback · The Admin SDK API is <strong>a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale</strong>. You can programmatically integrate with IT infrastructure, create ...",
+      "rank": 2,
       "query_hits": [
-        "site:developers.google.com/admin-sdk \"Admin SDK API overview\" OR \"Google Workspace Admin SDK\""
+        "site:developers.google.com/workspace/admin \"Admin SDK\" OR \"Admin console\"",
+        "site:developers.google.com/admin-sdk \"Directory API\" OR \"Reports API\""
       ],
       "intent_hits": [
-        "canonical_docs"
+        "canonical_docs",
+        "admin_sdk_docs"
       ],
       "round_hits": [
-        1
+        1,
+        3
       ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 144,
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 20,
       "feature_coverage": {
         "score": 18,
         "matched_phrases": [],
         "matched_tokens": [
           "the",
           "api",
+          "that",
           "for",
-          "google",
-          "directory",
-          "information"
+          "can",
+          "google"
         ],
         "user_facing_alignment": 0
       },
@@ -864,22 +831,196 @@
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 5,
+        "product_match": 3,
         "coverage_value": 2,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "the",
           "api",
+          "that",
           "for",
-          "google",
-          "directory",
-          "information"
+          "can",
+          "google"
         ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 90,
+      "final_score": 95,
       "keep": false
+    },
+    {
+      "title": "Admin SDK API reference | Admin console | Google for Developers",
+      "url": "https://developers.google.com/workspace/admin/reference-overview",
+      "description": "Admin console · Reference · Send feedback · The Admin SDK API is <strong>a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com/workspace/admin \"Admin SDK\" OR \"Admin console\"",
+        "site:developers.google.com/admin-sdk \"Directory API\" OR \"Reports API\""
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "admin_sdk_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 20,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "api",
+          "that",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "api",
+          "that",
+          "for",
+          "google"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Admin SDK: Directory API | Admin console | Google for Developers",
+      "url": "https://developers.google.com/workspace/admin/directory/reference/rest",
+      "description": "Admin console · Reference · Send feedback · The Admin SDK Directory API <strong>lets administrators of enterprise domains view and manage their organization&#x27;s users, groups, devices, and related resources</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/workspace/admin \"Admin SDK\" OR \"Admin console\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 120,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "and",
+          "api",
+          "for",
+          "users",
+          "google",
+          "device",
+          "directory"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "and",
+          "api",
+          "for",
+          "users",
+          "google",
+          "device",
+          "directory"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
+      "title": "Admin SDK: Reports API | Admin console | Google for Developers",
+      "url": "https://developers.google.com/workspace/admin/reports/reference/rest",
+      "description": "Admin console · Reference · Send feedback · The Admin SDK Reports API <strong>lets administrators of enterprise domains to view the audit and usage reports of their domain</strong>. REST Resource: activities · REST Resource: customerUsageReports · REST ...",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/workspace/admin \"Admin SDK\" OR \"Admin console\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 120,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "report",
+          "customer",
+          "and",
+          "api",
+          "usage",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "report",
+          "customer",
+          "and",
+          "api",
+          "usage",
+          "for",
+          "google"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": true
     },
     {
       "title": "Manage OS Login in an organization | Compute Engine | Google Cloud Documentation",
@@ -941,32 +1082,33 @@
       "keep": false
     },
     {
-      "title": "The Google Workspace Admin SDK Terms of Service",
-      "url": "https://developers.google.com/admin-sdk/admin-api-terms",
-      "description": "By using this API, you consent to be bound by these terms in addition to the Google APIs Terms of Service (&quot;API ToS&quot;). The token provided to Customer by Google for use with the Google Workspace Admin SDK.",
-      "rank": 4,
+      "title": "Terms of Service | Admin console | Google for Developers",
+      "url": "https://developers.google.com/admin-sdk/admin-api-list",
+      "description": "This use includes using the Google Workspace Admin SDK to: (a) access Google servers; (b) develop a Google Workspace Admin SDK Client; (c) create or administer End User Accounts; and (d) receive content from Customer&#x27;s End Users through the Google Workspace Admin SDK. Because the Google Workspace Admin SDK may change over time, Customer&#x27;s development of any intellectual property that uses the Google Workspace Admin SDK, or is based on, relates to, or relies upon, the Google Workspace Admin SDK, is at Customer&#x27;s sole risk.",
+      "rank": 1,
       "query_hits": [
-        "site:developers.google.com/admin-sdk \"Admin SDK API overview\" OR \"Google Workspace Admin SDK\"",
-        "site:developers.google.com \"Google Workspace Admin SDK\" official documentation OR site:developers.google.com \"google workspace admin sdk\" official documentation"
+        "site:developers.google.com \"Google Workspace Admin SDK\" overview OR site:developers.google.com \"google workspace admin sdk\" overview"
       ],
       "intent_hits": [
-        "canonical_docs",
         "developers_docs"
       ],
       "round_hits": [
-        1
+        3
       ],
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 114,
       "feature_coverage": {
-        "score": 15,
+        "score": 24,
         "matched_phrases": [],
         "matched_tokens": [
           "the",
           "customer",
+          "and",
           "api",
+          "that",
           "for",
+          "users",
           "google"
         ],
         "user_facing_alignment": 0
@@ -985,8 +1127,64 @@
         "matched_feature_tokens": [
           "the",
           "customer",
+          "and",
           "api",
+          "that",
           "for",
+          "users",
+          "google"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "The Google Workspace Admin SDK Terms of Service",
+      "url": "https://developers.google.com/admin-sdk/admin-api-terms",
+      "description": "Content obtained from Google using the Google Workspace Admin SDK, Customer Tokens, and the Google Workspace API documentation are subject to the confidentiality obligations contained in the Google Workspace Agreement.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com \"Google Workspace Admin SDK\" official documentation OR site:developers.google.com \"google workspace admin sdk\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 114,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "customer",
+          "and",
+          "api",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "customer",
+          "and",
+          "api",
           "google"
         ],
         "keep": false,
@@ -1052,7 +1250,7 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": true
+      "keep": false
     },
     {
       "title": "Admin SDK: Directory API | Admin console | Google for Developers",
@@ -1170,7 +1368,7 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": true
+      "keep": false
     },
     {
       "title": "Admin SDK API overview | Admin console | Google for Developers",
@@ -1178,11 +1376,9 @@
       "description": "The Admin SDK API is <strong>a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale</strong>.",
       "rank": 1,
       "query_hits": [
-        "site:developers.google.com/admin-sdk \"Admin SDK API overview\" OR \"Google Workspace Admin SDK\"",
         "site:developers.google.com/admin-sdk \"Admin SDK API overview\""
       ],
       "intent_hits": [
-        "canonical_docs",
         "admin_sdk_docs"
       ],
       "round_hits": [
@@ -1228,128 +1424,10 @@
       "keep": true
     },
     {
-      "title": "Admin SDK API overview | Admin console | Google for Developers",
-      "url": "https://developers.google.com/workspace/admin/overview",
-      "description": "Directory API — Manage your organization&#x27;s users, connected devices, and third-party applications. Reports API — <strong>Generate reports about customers and user usage</strong>.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com/admin-sdk \"Directory API\" OR \"Reports API\""
-      ],
-      "intent_hits": [
-        "admin_sdk_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "report",
-          "customer",
-          "and",
-          "api",
-          "usage",
-          "for",
-          "users",
-          "google"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "report",
-          "customer",
-          "and",
-          "api",
-          "usage",
-          "for",
-          "users",
-          "google"
-        ],
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Admin SDK API reference | Admin console | Google for Developers",
-      "url": "https://developers.google.com/workspace/admin/reference-overview",
-      "description": "Directory API — Manage your organization&#x27;s users, connected devices, and third-party applications. Reports API — <strong>Generate reports about customers and user usage</strong>.",
-      "rank": 6,
-      "query_hits": [
-        "site:developers.google.com/admin-sdk \"Directory API\" OR \"Reports API\""
-      ],
-      "intent_hits": [
-        "admin_sdk_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "feature_coverage": {
-        "score": 24,
-        "matched_phrases": [],
-        "matched_tokens": [
-          "report",
-          "customer",
-          "and",
-          "api",
-          "usage",
-          "for",
-          "users",
-          "google"
-        ],
-        "user_facing_alignment": 0
-      },
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "matched_feature_phrases": [],
-        "matched_feature_tokens": [
-          "report",
-          "customer",
-          "and",
-          "api",
-          "usage",
-          "for",
-          "users",
-          "google"
-        ],
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
       "title": "Directory API Overview | Admin console | Google for Developers",
-      "url": "https://developers.google.com/admin-sdk/directory/v1/guides",
+      "url": "https://developers.google.com/admin-sdk/directory",
       "description": "The Directory API is <strong>part of the RESTful Admin SDK API that you can use to programmatically create and manage admin-controlled resources owned by a Google Workspace account</strong>.",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:developers.google.com/admin-sdk \"Directory API\" OR \"Reports API\""
       ],
@@ -1359,7 +1437,7 @@
       "round_hits": [
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 50,
       "feature_coverage": {
@@ -1386,7 +1464,7 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 4,
+        "coverage_value": 3,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "the",
@@ -1467,7 +1545,7 @@
       "title": "Admin SDK API developer platform release notes | Admin console | Google for Developers",
       "url": "https://developers.google.com/admin-sdk/directory/v1/revision-history",
       "description": "Some domains might notice an increase in the number of reported documents. The following parameters have been added to the User&#x27;s usage report: ... Directory API: <strong>Supports push notifications for changes to users and aliases</strong>.",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:developers.google.com/admin-sdk \"Directory API\" OR \"Reports API\""
       ],
@@ -1477,7 +1555,7 @@
       "round_hits": [
         3
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 44,
       "feature_coverage": {
@@ -1523,20 +1601,134 @@
       "keep": false
     },
     {
+      "title": "Admin SDK: Data Transfer API | Admin console | Google for Developers",
+      "url": "https://developers.google.com/workspace/admin/data-transfer/reference/rest",
+      "description": "Admin console · Reference · Send feedback · Admin SDK <strong>lets administrators of enterprise domains to view and manage resources like user, groups etc</strong>. It also provides audit and usage reports of domain.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/workspace/admin \"Admin SDK\" OR \"Admin console\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 26,
+      "feature_coverage": {
+        "score": 20,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "report",
+          "and",
+          "api",
+          "usage",
+          "for",
+          "google",
+          "resource",
+          "provides"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "report",
+          "and",
+          "api",
+          "usage",
+          "for",
+          "google",
+          "resource",
+          "provides"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Admin SDK: Chrome Printer Management API | Admin console | Google for Developers",
+      "url": "https://developers.google.com/workspace/admin/chrome-printer/reference/rest",
+      "description": "Admin console · Home · Google Workspace · Admin console · Reference · Send feedback · The Chrome Printer Management API lets admins manage CUPS printers and print servers. To call this service, we recommend that you use the Google-provided client libraries.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/workspace/admin \"Admin SDK\" OR \"Admin console\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 20,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "and",
+          "api",
+          "that",
+          "for",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "and",
+          "api",
+          "that",
+          "for",
+          "google"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Google Workspace Admin SDK | Integration Connectors | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_admin_sdk/configure",
-      "description": "Pre-GA features are available &quot;as is&quot; and might have limited support. For more information, see the launch stage descriptions. The Google Workspace Admin SDK connector lets you perform the supported operations on Google Workspace Admin SDK. Before using the Google Workspace Admin SDK connector, do the following tasks: ... Ensure that network connectivity is set up. For information about network patterns, see Network connectivity. Grant the roles/connectors.admin IAM role to the user configuring the connector.",
+      "description": "In the Cloud console, go to the ... a Google Cloud project. ... Click + Create new to open the Create Connection page. In the Location section, choose the location for the connection. Region: Select a location from the drop-down list. For the list of all the supported regions, see Locations. Click Next. In the Connection Details section, set the following fields: Connector: Select Google Workspace Admin SDK from the drop ...",
       "rank": 1,
       "query_hits": [
-        "site:docs.cloud.google.com \"Google Workspace Admin SDK\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Google Workspace Admin SDK\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Google Workspace Admin SDK\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Google Workspace Admin SDK\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Google Workspace Admin SDK\" Google Cloud introduction reference",
         "site:docs.cloud.google.com \"Google Workspace Admin SDK\" IAM roles permissions"
       ],
       "intent_hits": [
-        "iam_permissions",
-        "product_docs"
+        "product_docs",
+        "iam_permissions"
       ],
       "round_hits": [
         1,
@@ -1547,41 +1739,37 @@
       "consistency_score": 100,
       "product_fit_score": -40,
       "feature_coverage": {
-        "score": 18,
+        "score": 12,
         "matched_phrases": [],
         "matched_tokens": [
           "the",
-          "and",
-          "that",
           "for",
           "google",
-          "information"
+          "details"
         ],
         "user_facing_alignment": 0
       },
-      "deterministic_score": 84,
+      "deterministic_score": 68,
       "api_score": {
         "classification": "supporting_page",
-        "score": 84,
+        "score": 68,
         "family_score": -148,
         "family_preferred": false,
         "family_forbidden": true,
-        "parent_page_likelihood": 4,
+        "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
         "matched_feature_phrases": [],
         "matched_feature_tokens": [
           "the",
-          "and",
-          "that",
           "for",
           "google",
-          "information"
+          "details"
         ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 86,
+      "final_score": 73,
       "keep": false
     },
     {
@@ -1638,9 +1826,125 @@
           "google"
         ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 64,
+      "keep": false
+    },
+    {
+      "title": "Node.js quickstart | Admin console | Google for Developers",
+      "url": "https://developers.google.com/workspace/admin/reports/v1/quickstart/nodejs",
+      "description": "*/ async function listLoginEvents() { // Authenticate with Google and get an authorized client. const auth = await authenticate({ scopes: SCOPES, keyfilePath: CREDENTIALS_PATH, }); // Create a new Admin SDK Reports API client. const service = google.admin({version: &#x27;reports_v1&#x27;, auth}); // Get the list of login events. const result = await service.activities.list({ userKey: &#x27;all&#x27;, applicationName: &#x27;login&#x27;, maxResults: 10, }); const activities = result.data.items; if (!activities || activities.length === 0) { console.log(&#x27;No logins found.&#x27;); return; } // Print the time, email, and event name of each login event.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/workspace/admin \"Admin SDK\" OR \"Admin console\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 50,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "report",
+          "and",
+          "api",
+          "for",
+          "google",
+          "reports",
+          "events"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 63,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 63,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 4,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "report",
+          "and",
+          "api",
+          "for",
+          "google",
+          "reports",
+          "events"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 59,
+      "keep": false
+    },
+    {
+      "title": "Google Apps Script quickstart | Admin console | Google for Developers",
+      "url": "https://developers.google.com/workspace/admin/reports/v1/quickstart/apps-script",
+      "description": "* @see https://developers.google.com/admin-sdk/reports/reference/rest/v1/activities/list */ function listLogins() { const userKey = &quot;all&quot;; const applicationName = &quot;login&quot;; const optionalArgs = { maxResults: 10, }; if (!AdminReports || !AdminReports.Activities) { throw new Error(&quot;Enable the AdminReports Advanced Service.&quot;); } const response = AdminReports.Activities.list( userKey, applicationName, optionalArgs, ); const activities = response.items; if (!activities || activities.length === 0) { console.log(&quot;No logins found.&quot;); return; } // Print login events console.log(&quot;Logins:&quot;); for (const ac",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/workspace/admin \"Admin SDK\" OR \"Admin console\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 20,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "the",
+          "report",
+          "for",
+          "google",
+          "reports",
+          "apps",
+          "events"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 40,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 40,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 2,
+        "product_match": 3,
+        "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "the",
+          "report",
+          "for",
+          "google",
+          "reports",
+          "apps",
+          "events"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 39,
       "keep": false
     }
   ]

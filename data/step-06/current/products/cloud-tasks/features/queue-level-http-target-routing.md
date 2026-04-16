@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:19:02.596Z"
+generated_at: "2026-04-12T12:12:46.600Z"
 product_name: "Cloud Tasks"
 product_slug: "cloud-tasks"
 feature_name: "Queue-level HTTP target routing"
 feature_slug: "queue-level-http-target-routing"
 latest_feature_date: "2023-04-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks"
   - "https://docs.cloud.google.com/tasks/docs/configuring-queues"
   - "https://docs.cloud.google.com/tasks/docs/add-task-queue"
+  - "https://docs.cloud.google.com/tasks/docs/creating-queues"
 keywords:
   - "queue"
   - "level"
@@ -26,7 +27,7 @@ keywords:
 # Queue-level HTTP target routing
 
 Product: Cloud Tasks
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Tasks lets queues define routing for HTTP target tasks so individual tasks
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks](https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks)
 - [https://docs.cloud.google.com/tasks/docs/configuring-queues](https://docs.cloud.google.com/tasks/docs/configuring-queues)
 - [https://docs.cloud.google.com/tasks/docs/add-task-queue](https://docs.cloud.google.com/tasks/docs/add-task-queue)
+- [https://docs.cloud.google.com/tasks/docs/creating-queues](https://docs.cloud.google.com/tasks/docs/creating-queues)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks](https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks)
 - Source ID: `site-docs-root`
-- Final score: 252
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 311
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This page demonstrates how to programmatically create basic HTTP target tasks and place them in Cloud Tasks queues .
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/tasks/docs/configuring-queues](https://docs.cloud.google.com/tasks/docs/configuring-queues)
 - Source ID: `site-docs-root`
-- Final score: 228
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 285
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - PROJECT ID .appspot.com service : SERVICE name : projects/ PROJECT ID /locations/ LOCATION ID /queues/ QUEUE ID rateLimits : maxBurstSize : 100 maxConcurrentDispatches : 1000 maxDispatchesPerSecond : 500.0 retryConfig : maxAttempts : 100 maxBackoff : 3600s maxDoublings : 16 minBackoff : 0.100s state : RUNNING To remove queue-level routing, run the following command: gcloud tasks queues update QUEUE ID \ --clear-routing-override When queue-level routing is removed, task-level routing is applied to tasks in the queue and tasks added to the queue in the future.
@@ -80,12 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/tasks/docs/add-task-queue](https://docs.cloud.google.com/tasks/docs/add-task-queue)
 - Source ID: `site-docs-root`
-- Final score: 196
-- Re-rank relevance: N/A
+- Final score: 239
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - In your terminal, create a queue that logs all operations. gcloud tasks queues create QUEUE NAME \ --log-sampling-ratio = 1 .0 \ --location = REGION Replace the following: QUEUE NAME : a name for your Cloud Tasks queue REGION : the supported region you deployed your service or app in Wait for the queue to initialize and then verify that it was created successfully. gcloud tasks queues describe QUEUE NAME \ --location = REGION The output should be similar to the following: name: projects/ PROJECT ID /locations/ LOCATION ID /queues/ QUEUE NAME rateLimits: maxBurstSize: 100 maxConcurrentDispatches: 1000 maxDispatchesPerSecond: 500.0 retryConfig: maxAttempts: 100 maxBackoff: 3600s maxDoublings: 16 minBackoff: 0.100s state: RUNNING Add a task to the Cloud Tasks queue Use the gcloud tasks create-http-task command to create a task that targets an HTTP endpoint and add the task to your queue.
 - Verify that the task was executed successfully by reading the logs. gcloud logging read --limit = 3 The logs should look similar to the following: jsonPayload: '@type': type.googleapis.com/google.cloud.tasks.logging.v1.TaskActivityLog task: projects/ PROJECT ID /locations/ REGION /queues/ QUEUE NAME /tasks/ TASK ID taskCreationLog: scheduleTime: '2024-07-04T19:00:27.801837Z' status: OK targetAddress: GET https://www.example.com/ targetType: HTTP Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the Google Cloud project with the resources.
 - Add an HTTP target task to a Cloud Tasks queue This quickstart shows you how to add an HTTP target task to a Cloud Tasks queue using the Cloud Tasks API.
 - Delete a Google Cloud project: gcloud projects delete PROJECT ID Alternatively, you can delete the Cloud Tasks queue: gcloud tasks queues delete QUEUE NAME \ --location = REGION What's next Manage queues and tasks Create Cloud Tasks queues RPC API reference REST API reference Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Create Cloud Tasks queues \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/tasks/docs/creating-queues](https://docs.cloud.google.com/tasks/docs/creating-queues)
+- Source ID: `site-docs-root`
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Run the following command in the terminal to create or overwrite this file in the current directory: @' { "name": "projects/ PROJECT ID /locations/ LOCATION /queues/ QUEUE ID " } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://cloudtasks.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /queues" Select-Object -Expand Content APIs Explorer (browser) Copy the request body and open the method reference page .
+- Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json PROJECT ID /locations/ LOCATION /queues/ QUEUE ID " } EOF Then execute the following command to send your REST request: curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://cloudtasks.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /queues" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .
+- Create a queue You can create a queue in the following ways: In the Google Cloud console By using the Google Cloud CLI in either your terminal or Cloud Shell By sending a direct request to the Cloud Tasks API Note: If you are configuring routing for an App Engine queue and you don't explicitly set the target service that contains the appropriate worker, the default service is used.
+- Execute the following command: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://cloudtasks.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /queues/ QUEUE ID " PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .
 

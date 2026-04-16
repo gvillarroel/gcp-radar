@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/access-context-manager/docs/apis
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://docs.cloud.google.com/access-context-manager/docs/concepts
+entrypoint: https://docs.cloud.google.com/access-context-manager/docs
 source_metadata:
   url: https://docs.cloud.google.com/access-context-manager/docs/apis
   title: "APIs & reference \_|\_ Access Context Manager \_|\_ Google Cloud Documentation"

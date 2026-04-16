@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.384Z"
+generated_at: "2026-04-12T12:13:45.739Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Access Approval support"
 feature_slug: "access-approval-support"
 latest_feature_date: "2024-08-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+  - "https://docs.cloud.google.com/dataform/docs/connect-repository"
   - "https://docs.cloud.google.com/dataform/docs/access-control"
 keywords:
   - "access"
@@ -25,7 +26,7 @@ keywords:
 # Access Approval support
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,12 +38,13 @@ Access Approval support enables Dataform to use Google Cloud Access Approval con
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient)
+- [https://docs.cloud.google.com/dataform/docs/connect-repository](https://docs.cloud.google.com/dataform/docs/connect-repository)
 - [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 
 ## Supporting Pages
@@ -51,7 +53,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 160
+- Final score: 188
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -64,7 +66,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient)
 - Source ID: `site-python-reference`
-- Final score: 160
+- Final score: 188
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -73,11 +75,25 @@ Evidence snippets:
 - This is a resource that is used to organize Files and other Folders and provide hierarchical access controls. get iam policy get iam policy ( request : typing .
 - This is a resource that sits at the project level and is used to organize Repositories and Folders with hierarchical access controls.
 
+### "Connect to a third-party Git repository \_|\_ Dataform \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/dataform/docs/connect-repository](https://docs.cloud.google.com/dataform/docs/connect-repository)
+- Source ID: `site-docs-root-2`
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- We recommend that you create a machine user with your Git provider and limit its access to the remote Git repositories you plan to use with Dataform.
+- We recommend that you create a machine user with your Git provider and limit its access to the remote Git repositories you plan to use with Dataform.
+- Warning: The access token is shared among all Dataform users who use the corresponding service agent or service account.
+- Dataform then uses the access token to sign in to your Git provider to commit changes on behalf of the developers.
+
 ### Control access with IAM \_|\_ Dataform \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 - Source ID: `site-docs-root-2`
-- Final score: 150
+- Final score: 180
 - Re-rank relevance: N/A
 
 Evidence snippets:

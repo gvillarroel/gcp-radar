@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/cdn/docs/best-practices
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage
+entrypoint: https://docs.cloud.google.com/cdn/docs/invalidating-cached-content
 source_metadata:
   url: https://docs.cloud.google.com/cdn/docs/best-practices
   title: "Content delivery best practices \_|\_ Cloud CDN \_|\_ Google Cloud Documentation"
@@ -88,6 +88,17 @@ the Protocol checkbox so that requests through HTTP and HTTPS count as
 matches for the logo's cache entry.
 To learn how to customize cache keys, see Using cache
 keys .
+Use route-specific filters for GKE
+When using GKE Gateway, don't apply a single global
+caching policy. Instead, use GCPHTTPFilter , a custom resource for
+GKE Gateway, to customize cacheKeyPolicy
+and TTL settings for specific URL paths within an HTTPRoute resource.
+This granular approach lets you optimize performance for different types of
+traffic. For example:
+For /static/* paths: You can disable query string inclusion in the cache key
+to maximize hit ratios for assets.
+For /api/* paths: You can include specific query strings to ensure dynamic
+API responses are served correctly.
 Optimize performance
 The following recommended practices help optimize performance.
 Ensure that HTTP/3 and QUIC protocol support is enabled
@@ -96,6 +107,14 @@ a protocol developed from the original Google QUIC
 ) (gQUIC) protocol. HTTP/3 is supported between the external HTTP(S) load
 balancer, Cloud CDN, and clients.
 To increase performance with Cloud CDN, ensure that HTTP/3 is enabled .
+Enable pod protection features when using GKE Gateway
+To help ensure availability in containerized environments where pods are transient, use the following GCPHTTPFilter settings:
+serveWhileStale : Set serveWhileStale to at least 24 hours to allow Cloud CDN
+to serve expired content if your GKE pods are restarting or
+temporarily unreachable.
+requestCoalescing : Enable requestCoalescing to combine multiple concurrent cache fill
+requests into a single request to your origin, preventing
+sudden traffic spikes that can impact Pod CPU and memory limits.
 Use negative caching
 Negative caching provides fine-grained
 control over caching for common errors or redirects. When Cloud CDN
@@ -134,6 +153,11 @@ Keep public and private content in separate Cloud Storage
 buckets.
 Follow security best
 practices .
+Verify IAP and Cloud CDN compatibility with GKE
+If you manage your environment through the GKE Gateway API, Cloud CDN and
+IAP don't work on the same route. Ensure your configuration doesn't enable
+a GCPHTTPFilter for caching on any path already protected by an IAP-enabled
+GCPBackendPolicy .
 Authenticate private origins
 Origin authentication offers a strong guarantee that the request comes only from
 your own configured backend service. It also offers in-transit data protection
@@ -266,12 +290,18 @@ Use the custom monitoring dashboard for Cloud CDN
 To ensure greater reliability and performance, a best practice is to regularly
 review monitoring metrics related to Cloud CDN. A great place to start
 is with the Cloud CDN custom monitoring dashboard .
+Filter logs by GKE route
+In a shared Gateway environment, use the matched_url_path_rule or
+httpRequest.requestUrl filters in Cloud Logging to see performance data for
+individual services. To troubleshoot cache misses, filter for
+jsonPayload.statusDetails="response_sent_by_backend" to identify exactly which
+requests hit your pods.
 Review third-party performance tests
 Review reports from third-party providers, such as the availability, latency,
 and throughput reports provided by
 Citrix Radar .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-13 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-13 UTC."],[],[]]

@@ -106,7 +106,7 @@ table. When you write data to the table, BigQuery automatically
 puts the data into the correct partition, based on the values in the column.
 For TIMESTAMP and DATETIME columns, the partitions can have either hourly,
 daily, monthly, or yearly granularity. For DATE columns, the partitions can
-have daily, monthly, or yearly granularity. Partitions boundaries are based on
+have daily, monthly, or yearly granularity. Partition boundaries are based on
 UTC time.
 For example, suppose that you partition a table on a DATETIME column with
 monthly partitioning. If you insert the following values into the table, the
@@ -129,7 +129,7 @@ Ingestion time partitioning
 When you create a table partitioned by ingestion time, BigQuery
 automatically assigns rows to partitions based on the time when
 BigQuery ingests the data. You can choose hourly, daily, monthly,
-or yearly granularity for the partitions. Partitions boundaries are based on UTC
+or yearly granularity for the partitions. Partition boundaries are based on UTC
 time.
 If your data might reach the maximum number of partitions per table when using a
 finer time granularity, use a coarser granularity instead. For example, you
@@ -189,7 +189,7 @@ Combining clustered and partitioning tables
 in this document.
 Combining clustered and partitioned tables
 You can combine table partitioning with table clustering
-to achieve finely grained sorting for further query optimization.
+to achieve fine-grained sorting for further query optimization.
 A clustered table contains clustered columns that sort data based on
 user-defined sort properties. Data within these clustered columns are sorted
 into storage blocks which are adaptively sized based on the size of the table.
@@ -199,7 +199,7 @@ entire table or table partition. In a combined approach using both table
 partitioning and clustering, you first segment table data into partitions,
 then you cluster the data within each partition by the clustering columns.
 When you create a table that is clustered and partitioned, you can achieve more
-finely grained sorting, as the following diagram shows:
+fine-grained sorting, as the following diagram shows:
 Partitioning versus sharding
 Table sharding is the practice of storing data in multiple tables, using a
 naming prefix such as [PREFIX]_YYYYMMDD .
@@ -359,6 +359,6 @@ For information on querying partitioned tables, see
 Querying partitioned tables .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-15 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-15 UTC."],[],[]]

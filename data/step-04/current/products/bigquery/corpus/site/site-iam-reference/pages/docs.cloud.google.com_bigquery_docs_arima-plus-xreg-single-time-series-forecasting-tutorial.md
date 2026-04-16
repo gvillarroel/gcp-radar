@@ -210,7 +210,7 @@ JOIN temperature_daily USING ( date );
 Visualize the input data
 Before creating the model, you can optionally visualize your input
 time series data to get a sense of the distribution. You can do this by using
-Looker Studio.
+Data Studio.
 Follow these steps to visualize the time series data:
 In the Google Cloud console, go to the BigQuery page.
 Go to BigQuery
@@ -220,9 +220,9 @@ SELECT
 FROM
 `bqml_tutorial.seattle_air_quality_daily` ;
 When the query completes, click Open in >
-Looker Studio . Looker Studio opens in
+Data Studio . Data Studio opens in
 a new tab. Complete the following steps in the new tab.
-In the Looker Studio, click Insert >
+In Data Studio, click Insert >
 Time series chart .
 In the Chart pane, choose the Setup tab.
 In the Metric section, add the pm25 , temperature , and
@@ -230,8 +230,8 @@ wind_speed fields, and remove the default Record Count metric.
 The resulting chart looks similar to the following:
 Looking at the chart, you can see that the input time series has a weekly
 seasonal pattern.
-Note: For more information about Looker Studio support, see
-Looker Support integrations with Google Cloud .
+Note: For more information about Data Studio support, see
+Data Studio help and support options .
 Create the time series model
 Create a time series model to forecast particulate matter values, as represented
 by the pm25 column, using the pm25 , wind_speed , and temperature column
@@ -507,6 +507,6 @@ Learn how to hierarchically forecast multiple time series with a univariate mode
 For an overview of BigQuery ML, see Introduction to AI and ML in BigQuery .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

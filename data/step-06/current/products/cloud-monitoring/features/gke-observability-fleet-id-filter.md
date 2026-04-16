@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.102Z"
+generated_at: "2026-04-15T00:01:13.855Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "GKE Observability fleet ID filter"
 feature_slug: "gke-observability-fleet-id-filter"
 latest_feature_date: "2023-08-07"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
   - "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
   - "https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring"
+  - "https://docs.cloud.google.com/monitoring/docs/metrics-management"
 keywords:
   - "gke"
   - "observability"
   - "fleet"
   - "id"
   - "filter"
-  - "this"
+  - "feature"
   - "adds"
-  - "an"
+  - "optional"
 ---
 
 # GKE Observability fleet ID filter
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,52 @@ This feature adds an optional fleet ID filter to applicable GKE Observability ch
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
 - [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies)
 - [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
+- [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
 
 ## Supporting Pages
-
-### Monitoring release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- Source ID: `site-docs-reference`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Observability for Google Kubernetes Engine: Charts on the Observability tab for each of your GKE clusters and workloads now includes an optional fleet ID filter, where applicable.
-- Compared to the Prometheus Stackdriver sidecar, this new pipeline is easy to set up, allows filtering to control cost, supports larger clusters, is fully managed, supports Autopilot and horizontal Pod autoscaling, and offers better pricing.
-- Feature The fleetwide and per-instance Observability tabs on the Compute Engine VM instances page now include charts for GPU metrics the from NVIDIA Management Library (NVML).
-- Feature Observability for Google Kubernetes Engine: The Observability tab for each of your GKE clusters now includes filters for recommended and configured integrations.
 
 ### "Install and manage the Ops Agent by using VM Extension Manager policies\
 
 - URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies](https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies)
 - Source ID: `site-iam-reference`
-- Final score: 154
+- Final score: 89
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Troubleshoot extension policies This section provides information about troubleshooting the use of extension policies to manage the Ops Agent: gcloud beta compute zone-vm-extension-policies commands fail The extension policy is created, but the Ops Agent status is "not detected" Linux systemctl and Windows Service Manager don't work with the Ops Agent For information about troubleshooting the Ops Agent, see Troubleshoot the Ops Agent . gcloud beta compute zone-vm-extension-policies commands fail When a gcloud beta compute zone-vm-extension-policies command fails, the response includes troubleshooting suggestions.
+- If you haven't done so already, install the beta component of the gcloud CLI by running the following command: gcloud components install beta To check if you have the beta component installed, run the following command: gcloud components list If you previously installed the beta component, verify that have the latest version: gcloud components update Uninstall any observability agents Before creating a VM Extension Manager policy to manage the Ops Agent on a VM, ensure that there are no instances of the Ops Agent or the legacy Monitoring agent and Logging agent already on the VM.
 - Home Documentation Observability Cloud Monitoring Guides Send feedback Install and manage the Ops Agent by using VM Extension Manager policies Stay organized with collections Save and categorize content based on your preferences.
+- If you use an extension policy to install the Ops Agent on a VM where another observability agent is already installed, then the policy installs the agent, but the agent fails to run because a conflict is detected.
 - For example, you can use these policies to perform tasks like the following: Fleetwide installation: Install the Ops Agent on the following: All VMs in one or more zones in your Google Cloud project.
-- To diagnose and fix this condition, do the following: Validate the guest environment to determine the version of the google-guest-agent package.
 
 ### "Instrument an application for Application Monitoring \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring](https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring)
 - Source ID: `site-docs-reference`
-- Final score: 152
+- Final score: 79
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Instead, Google Cloud Observability uses OpenTelemetry resource attributes and the App Hub API to identify the App Hub application associated with a span, and then it adds the application-specific attributes before storing the span.
 - Use Google Cloud Managed Service for Prometheus on GKE To have Google Cloud Observability attach application labels to metric data generated by your application's workloads that runs on Google Kubernetes Engine clusters, do the following: Use Google Cloud Managed Service for Prometheus with managed collection .
+- To have Google Cloud Observability attach application-specific resource attributes to trace data generated by application's services and workloads, do all of the following: Instrument your application with OpenTelemetry and configure your exporter to send trace data to the Telemetry (OTLP) API endpoint.
 - Use Cloud Run To have Google Cloud Observability attach application labels to metric data generated by your Cloud Run workloads, do the following: Instrument your application by using either OpenTelemetry or the Managed Service for Prometheus sidecar for Cloud Run.
-- During metric ingestion, Google Cloud Observability uses the top level controller {name,type} labels and the App Hub API to identify your App Hub application and to add the appropriate labels to your metric data.
+
+### View and manage metric usage \_|\_ Cloud Monitoring \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/monitoring/docs/metrics-management](https://docs.cloud.google.com/monitoring/docs/metrics-management)
+- Source ID: `site-docs-reference`
+- Final score: 76
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For detailed information about chargeable features in Cloud Monitoring, see the Cloud Monitoring sections of the Google Cloud Observability pricing page.
+- What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For example, to list active metrics that appear in no alerting policies and in no custom dashboards, add the following filters to the filter bar: Status: Active Alert Policies: (Empty) Custom Dashboards: (Empty) By default, when you add multiple filters, the table includes a row when the row meets all filters.
+- Unused billable metrics represent possible observability gaps that might be filled by creating custom dashboards or alerting policies, or opportunities to reduce costs by excluding the metric entirely.
 

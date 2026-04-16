@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.485Z"
+generated_at: "2026-04-14T07:40:14.487Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Operation integration task"
 feature_slug: "operation-integration-task"
 latest_feature_date: "2023-05-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task"
+  - "https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database"
 keywords:
   - "operation"
-  - "application"
-  - "integration"
   - "preview"
-  - "an"
   - "added"
   - "task"
-  - "in"
 ---
 
 # Operation integration task
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +34,53 @@ Application Integration added an Operation integration task in preview.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- [https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event](https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event)
+- [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
+- [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
+- [https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database](https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database)
 
 ## Supporting Pages
 
-### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
+### Data Transformer task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 274
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 114
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- In Application Integration, Gemini Code Assist can assist you to do the following: Create integrations Configure connector tasks in an integration Configure Call REST API tasks in an integration Add edge conditions and append additional tasks to an integration Configure JavaScript tasks ( Preview ) Generate integration description For detailed information about Gemini for Google Cloud, see Gemini for Google Cloud overview .
-- Configure Call REST API tasks If you have API Hub enabled in your project, then Gemini in Application Integration can assist you in providing contextually appropriate Call REST Endpoint task and task configuration recommendations based on the logical flow of your existing integration.
-- After you have met all prerequisites , to replace or modify an existing task in your integration using Gemini, perform the following steps: In the Google Cloud console, go to the Application Integration page.
-- To add an edge condition or to append new tasks to your integration using Gemini, perform the following steps: In the Google Cloud, go to the Application Integration page.
+- Data Transformer task Preview — BigQuery Connector This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- In the Data Transformer (preview) Task Editor page, select one of the following options: By default, the Diagram mode opens.
+- To add the transformation for fields that cannot be mapped directly, click settings Transformation and add the transformation operation by clicking + Add operation : After the transformation is complete, you can execute the integration to map the old ticketing system to the new system.
+- If you want to choose the result of the previous operation in the succeeding operation, select the Previous Operation Result variable as shown in the following image: To remove the operation, click delete Delete next to the operation.
 
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
+### Connectors task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 102
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following example shows the JSON snippet of a row data to be added in a table: { "employee first name": "John", "employee emailID": "test-05@test.com" } In this example, employee first name and employee emailID are the column names with the corresponding values John and test-05@test.com . filterClause String Restricts the result of the operations based on a condition.
+- Configure task input and output variables The Connectors task configuration pane displays Task Input and Task Output variables that are automatically generated based on the Entity and Operation or Action selected in the Configure connector task dialog.
+- A filter clause can be applied only for the following entity operations: List Delete Update When you select any of these operations, the Task Input section of the Connectors task displays the Filter clause field automatically.
+- Filter clause for entity operations You can restrict the records that are processed by the Connectors task using the Filter clause variable, which is available as a Task Input .
+
+### "Perform CRUD operations on a MySQL database \_|\_ Application Integration\
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database](https://docs.cloud.google.com/application-integration/docs/perform-crud-operation-mysql-database)
 - Source ID: `site-docs-root`
-- Final score: 272
+- Final score: 98
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Connect the elements in the sub-integration Now that you have added and configured the required tasks and triggers in the sub-integration, add a connection (edge) between the elements.
-- Invoke a sub-integration using a For Each Loop task To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me --> This quickstart shows you how to create an integration that uses a For Each Loop task to invoke a sub-integration.
-- Add and configure a Data Mapping task The Data Mapping task lets you perform variable assignments in your integration, get and set properties of json objects, and apply nested transform functions to values.
-- Home Documentation Application development Application Integration Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
-
-### "Invoke an integration for a Salesforce Change Data Capture (CDC) event \_\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event](https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event)
-- Source ID: `site-docs-root`
-- Final score: 244
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Test the Cloud SQL task by logging in to the Salesforce instance and changing an opportunity status to "closed." Test the Pub/Sub task by logging in to the Salesforce instance and changing another detail about the opportunity, but leave the status of the opportunity "open." For more information about testing, see Test and publish integrations .
-- Each entry includes details for the execution attempt, including: Integration name Execution ID Status Start time Duration Integration version Trigger ID Click the expander arrow ( > ) next to the executed integration to view an expanded list of tasks and variables in the integration, along with task status and variable payloads.
-- Configure a Connectors task with a Cloud SQL for MySQL connection Perform the following steps to configure a Connectors task to insert records into an existing Cloud SQL table using the Cloud SQL for MySQL connection : Select +Add a task/trigger > Tasks in the integration designer to display the list of available tasks.
-- In this quickstart, you will use the Salesforce trigger to invoke an integration in Application Integration for a Salesforce Change Data Capture (CDC) event as shown in the following figure: A Salesforce trigger is subscribed to the Salesforce opportunity channel.
+- In Connector output payload , the following output is displayed: [ { "employee id": 1.0, "employee first name": "Peter", "employee last name": "Dilliard", "employee emailID": "test-01@test.com" }, { "employee id": 2.0, "employee first name": "Meaghan", "employee last name": "Webb", "employee emailID": "test-02@test.com" } ] Perform other operations on your MySQL database table When you configure a Connectors task in your integration, you can select any one of the following operations: List Get Create Update Delete You've already used the List operation to view all the rows in the employee table.
+- To add a row using the Create operation, perform the following steps to configure the Connectors task that you created earlier: In integration editor, click the connectors task element to view the Connectors configuration pane.
+- In the Connector Task Editor dialog that appears, follow these steps: In the Set entities/action section, from the Operations list, select Create .
+- In the Connector Task Editor dialog that appears, follow these steps: In the Set entities/action section, from the Operations list, select Update .
 

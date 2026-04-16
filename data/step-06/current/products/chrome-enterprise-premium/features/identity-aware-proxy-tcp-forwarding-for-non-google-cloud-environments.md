@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:30:05.322Z"
+generated_at: "2026-04-14T12:10:45.850Z"
 product_name: "Chrome Enterprise Premium"
 product_slug: "chrome-enterprise-premium"
 feature_name: "Identity-Aware Proxy TCP forwarding for non-Google Cloud environments"
 feature_slug: "identity-aware-proxy-tcp-forwarding-for-non-google-cloud-environments"
 latest_feature_date: "2022-07-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
   - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
-  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes"
+  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
 keywords:
-  - "identity"
-  - "aware"
-  - "proxy"
-  - "tcp"
-  - "forwarding"
-  - "for"
-  - "non"
   - "environments"
+  - "forwarding"
+  - "identity"
+  - "proxy"
+  - "aware"
 ---
 
 # Identity-Aware Proxy TCP forwarding for non-Google Cloud environments
 
 Product: Chrome Enterprise Premium
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +35,13 @@ IAP TCP forwarding for non-Google Cloud environments is available to extend Iden
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector](https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector)
 - [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps)
-- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes](https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes)
+- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine)
 
 ## Supporting Pages
 
@@ -52,7 +49,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector](https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector)
 - Source ID: `site-iam-reference`
-- Final score: 166
+- Final score: 136
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -66,26 +63,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps)
 - Source ID: `site-docs-root`
-- Final score: 134
+- Final score: 120
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Firewall rules for applications in non-Google Cloud environments If your private web application resides on an on-premises data center or on another cloud provider's network, and is connected to your Google Cloud VPC using Cloud VPN or Cloud Interconnect, configure firewall rules on your on-premises firewall or the equivalent network security controls, such as security groups and network ACLs, in the other cloud environment.
-- Applications in non-Google Cloud environments or using external DNS servers : If your private applications are in non-Google Cloud environments (on-premises or other clouds) or if their DNS records are managed by DNS servers external to your VPC's Cloud DNS private zones, you must configure Cloud DNS to forward queries for these private domains.
-- Configure routing from non-Google Cloud environments to a secure gateway To facilitate two-way communication for private applications that are hosted in non-Google Cloud environments, such as on-premises or other clouds, your external network must create a return path to the following secure gateway IP range: 136.124.16.0/20 .
 - A Chrome Enterprise Premium secure gateway functions as a forward proxy, enforcing a zero trust access framework and delivering granular, context-aware control over who accesses your private web applications.
+- Update your existing pac config.js file and add the domains of your new application to the sites array, as shown in the following example PAC file. function FindProxyForURL ( url , host ) { const PROXY = "HTTPS via.prod.securegateway.goog: 443 " ; const sites = [ " HOST NAME " ]; for ( const site of sites ) { if ( shExpMatch ( url , 'https://' + site + '/ ' ) shExpMatch ( url , ' .' + site + '/ ' )) { return PROXY ; } } return 'DIRECT' ; } Replace HOST NAME with the hostname of your application—for example, myapp.example.com .
+- Call the Create API method. curl \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ -X POST \ -d @application.json \ "https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications?application id= APPLICATION ID " Configure Google Chrome proxy mode You can route application traffic through the secure gateway by applying a PAC file in the Chrome settings in the Google Admin console.
+- Required roles Ask your administrator to grant the following roles: Cloud BeyondCorp Admin ( roles/beyondcorp.admin ) to set up Chrome Enterprise Premium on the project Access Context Manager Admin ( roles/accesscontextmanager.policyAdmin ) to read and add new access levels Service Usage Viewer ( roles/serviceusage.serviceUsageViewer ) to use the Google Cloud console Learn more about Identity and Access Management (IAM) roles .
 
-### Chrome Enterprise Premium release notes \_|\_ Google Cloud Documentation
+### "Securing Compute Engine apps and resources with IAP \_|\_ Chrome Enterprise\
 
-- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes](https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 130
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine)
+- Source ID: `site-iam-reference`
+- Final score: 107
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- July 29, 2022 Feature The following Identity-Aware Proxy (IAP) enhancements are generally available ( GA ): IAP TCP forwarding for non-Google Cloud environments IAP reauthentication IAP allowed domains Feature Identity-Aware Proxy (IAP) SAML attribute propagation is available in Preview .
-- The client connector extends identity and context-aware access to non-web applications by creating a secure connection from endpoint devices to apps running in both Google Cloud and non-Google Cloud environments.
-- If you have external resources (on premises or in other clouds) connected to Google Cloud through Cloud Interconnect or a VPN, you can use IAP TCP forwarding with those resources.
-- For more information, see Using IAP TCP forwarding with an IP address or hostname June 29, 2022 Feature The BeyondCorp Enterprise client connector is now generally available.
+- Turning on IAP On the Identity-Aware Proxy page, under APPLICATIONS , find the load balancer that serves the instance group you want to restrict access to.
+- This page explains how to secure a Compute Engine instance with Identity-Aware Proxy (IAP) .
+- Go to the Identity-Aware Proxy page Select the project you want to secure with IAP.
+- Setting up IAP access Go to the Identity-Aware Proxy page .
 

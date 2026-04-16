@@ -1,23 +1,22 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.572Z"
+generated_at: "2026-04-14T23:59:44.470Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Stackdriver Kubernetes Monitoring"
 feature_slug: "stackdriver-kubernetes-monitoring"
 latest_feature_date: "2018-05-02"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/release-notes"
   - "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
   - "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+  - "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
 keywords:
   - "stackdriver"
   - "kubernetes"
   - "monitoring"
   - "provides"
-  - "for"
   - "engine"
   - "clusters"
 ---
@@ -25,7 +24,7 @@ keywords:
 # Stackdriver Kubernetes Monitoring
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,47 +36,34 @@ Stackdriver Kubernetes Monitoring provides monitoring support for Kubernetes Eng
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
 - [https://docs.cloud.google.com/logging/docs/agent/logging/configuration](https://docs.cloud.google.com/logging/docs/agent/logging/configuration)
 - [https://docs.cloud.google.com/logging/docs/api/v2/resource-list](https://docs.cloud.google.com/logging/docs/api/v2/resource-list)
+- [https://docs.cloud.google.com/logging/docs/agent/logging/installation](https://docs.cloud.google.com/logging/docs/agent/logging/installation)
 
 ## Supporting Pages
-
-### Logging release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/logging/docs/release-notes](https://docs.cloud.google.com/logging/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 144
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- May 02, 2018 Feature Stackdriver Kubernetes Monitoring is released in Beta for Kubernetes 1.10 clusters running in Kubernetes Engine .
-- Users of the legacy Stackdriver support for monitoring and logging for Google Kubernetes Engine are encouraged to migrate to Stackdriver Kubernetes Engine Monitoring as soon as possible.
-- If you're using Legacy Stackdriver, then you must migrate to Stackdriver Kubernetes Engine Monitoring before Legacy Stackdriver is decommissioned.
-- June 15, 2021 Change You can now view Monitoring data and link to the resources in the Cloud Console for certain logs, such as Google Kubernetes Engine logs, in the Logs Explorer.
 
 ### Configure the Logging agent \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/logging/docs/agent/logging/configuration](https://docs.cloud.google.com/logging/docs/agent/logging/configuration)
 - Source ID: `site-docs-root`
-- Final score: 116
+- Final score: 129
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If your log entry contains an exception stack trace, the exception stack trace should be set in this message JSON log field, so that the exception stack trace can be parsed and saved to Error Reporting. log (legacy Google Kubernetes Engine only) textPayload Only applies to legacy Google Kubernetes Engine: if, after moving special purpose fields, only a log field remains, then that field is saved as textPayload . httpRequest httpRequest A structured record in the format of the LogEntry HttpRequest field. "httpRequest":{"requestMethod":"GET"} time-related fields timestamp For more information, see Time-related fields . "time":"2020-10-12T07:20:50.52Z" logging.googleapis.com/insertId insertId For more information, see insertId on the LogEntry page. "logging.googleapis.com/insertId":"42" logging.googleapis.com/labels labels The value of this field must be a structured record.
-- On Compute Engine VMs, in order for those metrics to be written to the Monitoring API, the Monitoring agent has to be installed and running as well.
 - In addition, the following Prometheus metrics are exposed by the output plugin in prometheus mode: uptime with a version label: Uptime of the Logging agent. stackdriver successful requests count with grpc and code labels: The number of successful requests to the Logging API. stackdriver failed requests count with grpc and code labels: The number of failed requests to the Logging API, broken down by the error code. stackdriver ingested entries count with grpc and code labels: The number of log entries ingested by the Logging API. stackdriver dropped entries count with grpc and code labels: The number of log entries rejected by the Logging API. stackdriver retried entries count with grpc and code labels: The number of log entries that failed to be ingested by the Google Cloud fluentd output plugin due to a transient error and were retried. prometheus and prometheus monitor plugin configuration Note: The following default monitoring configuration is exclusive to Linux operating systems.
+- If your log entry contains an exception stack trace, the exception stack trace should be set in this message JSON log field, so that the exception stack trace can be parsed and saved to Error Reporting. log (legacy Google Kubernetes Engine only) textPayload Only applies to legacy Google Kubernetes Engine: if, after moving special purpose fields, only a log field remains, then that field is saved as textPayload . httpRequest httpRequest A structured record in the format of the LogEntry HttpRequest field. "httpRequest":{"requestMethod":"GET"} time-related fields timestamp For more information, see Time-related fields . "time":"2020-10-12T07:20:50.52Z" logging.googleapis.com/insertId insertId For more information, see insertId on the LogEntry page. "logging.googleapis.com/insertId":"42" logging.googleapis.com/labels labels The value of this field must be a structured record.
 - JSON log field LogEntry field Cloud Logging agent function Example value severity severity The Logging agent attempts to match a variety of common severity strings, which includes the list of LogSeverity strings recognized by the Logging API. "severity":"ERROR" message textPayload (or part of jsonPayload ) The message that appears on the log entry line in the Logs Explorer. "message":"There was an error in the application." Note : message is saved as textPayload if it is the only field remaining after the Logging agent moves the other special-purpose fields and detect json wasn't enabled; otherwise message remains in jsonPayload . detect json is not applicable to managed logging environments like Google Kubernetes Engine.
+- This requires the roles/monitoring.metricWriter role to be granted to the Compute Engine default service account , even if the Monitoring agent is not installed.
 
 ### "Monitored resources and services \_|\_ Cloud Logging \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/logging/docs/api/v2/resource-list](https://docs.cloud.google.com/logging/docs/api/v2/resource-list)
 - Source ID: `site-docs-reference`
-- Final score: 108
+- Final score: 125
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -85,4 +71,17 @@ Evidence snippets:
 - Cloud Dataplex Project. resource container : The identifier of the GCP project associated with this resource. location : The location of the resource. dataplex.googleapis.com/Task Cloud Dataplex Task A Task within a Cloud Dataplex Lake. resource container : The identifier of GCP project associated with this resource. location : The GCP region associated with this resource. lake id : The identifier of the Lake resource containing this resource. task id : The identifier of this Task resource. dataplex.googleapis.com/Zone Cloud Dataplex Zone A Zone within a Cloud Dataplex Lake. resource container : The identifier of GCP project associated with this resource. location : The GCP region associated with this resource. lake id : The identifier of the Lake resource containing this resource. zone id : The identifier of this Zone resource. datastore database Cloud Datastore Database A Cloud Datastore database. project id : The identifier of the GCP project associated with this resource, such as "my-project". database id : The unique id of the database. datastore index Cloud Datastore Index A Cloud Datastore index. project id : The identifier of the GCP project associated with this resource, such as "my-project". database id : The database the index belongs to. index id : The unique id of the index. datastream.googleapis.com/Stream Datastream Stream A Datastream stream. resource container : The resource container (project ID). location : The location. stream id : The stream ID. dell emc cloud onefs cluster Dell EMC Cloud OneFS Cluster Multi-protocol access to files and directories on GCP, Isilon Cloud OneFS clusters with SMB for Windows, and NFS for UNIX file systems. project id : The identifier of the GCP project associated with this resource, such as "my-project". location : The Google Cloud location in which the cluster is running. cluster id : Unique identifier of the cluster. deployment Deployment A Deployment Manager deployment. project id : The identifier of the GCP project associated with this resource, such as "my-project". name : Name that uniquely identifies the deployment within a project. deployment manager manifest Deployment Manager Manifest A Deployment Manager manifest which is used to specify the contents of a deployment. project id : The identifier of the GCP project associated with this resource, such as "my-project". manifest name : Name that uniquely identifies the manifest within a project. deployment name : Name of the deployment. deployment manager operation Deployment Manager Operation A Deployment Manager operation. project id : The identifier of the GCP project associated with this resource, such as "my-project". operation name : Name that uniquely identifies the operation within a project. deployment manager resource Deployment Manager Resource Deployment Manager's record of Google Cloud Platform resources in a Deployment, such as a VM or a bucket. project id : The identifier of the GCP project associated with this resource, such as "my-project". resource name : Name of the resource, unique within a deployment. deployment name : Name of the deployment. deployment manager type Deployment Manager Type A Deployment Manager type. project id : The identifier of the GCP project associated with this resource, such as "my-project". name : Name that uniquely identifies the type within a project. dialogflow.googleapis.com/Location Dialogflow Location A Dialogflow Location (sometimes called Region). resource container : The id of the GCP resource container associated with this resource. location : Location of resource. discoveryengine.googleapis.com/Agent Gemini Enterprise Agent A specific Agent resource within Gemini Enterprise, mapping to discoveryengine.googleapis.com/Agent. resource container : The identifier of the GCP project associated with this resource. location : The Google Cloud location where the Agent is located. assistant id : The unique identifier of the Assistant. engine id : The unique identifier of the Engine. agent id : The unique identifier of the Agent. discoveryengine.googleapis.com/AgentToolInvocation Gemini Enterprise Agent Tool Invocation An Invocation of a specific Tool within the context of Gemini Enterprise Agent.
 - Won't be exposed to customer. instance id : Customer given identifier unique among Memcached instances in the region that this node belongs to. node id : Name of this Memcached node which is unique within a single Memcached instance. uid : A string to uniquely distinguish an instance of custom root. memorystore.googleapis.com/Instance Memorystore Instance An instance hosted on Google Cloud Memorystore. resource container : The identifier of the GCP consumer project associated with this resource, such as 'my-project'. location : The Google Cloud region in which the managed instance is running. instance id : The ID of the managed instance. instance uid : Identifier assigned by Google to uniquely distinguish an instance. mesh Mesh A mesh serves as the "key" to deliver configuration to data plane proxy instances. project id : The identifier of the GCP project associated with this resource, such as "my-project". location : The location of the control plane mesh : The name of the mesh metastore.googleapis.com/Federation Dataproc Metastore Federation A Dataproc Metastore Federation. resource container : The ID of the customer project. location : The region that the federation is hosted in. federation id : The federation ID. metastore.googleapis.com/Service Dataproc Metastore Service A Dataproc Metastore Service. resource container : The ID of the customer project. location : The region that the service is hosted in. service id : The service ID. metric Metric Type A Stackdriver Monitoring metric type. project id : The identifier of the GCP project associated with this resource, such as "my-project". name : The name of the metric type, such as "logging.googleapis.com/my-metric-name". microsoft ad domain Microsoft Active Directory Domain A Microsoft Active Directory Domain hosted and managed by Google Cloud Platform project id : The identifier of the GCP project associated with this resource, such as "my-project". fqdn : The fully qualified domain name of the Active Directory Domain location : The location where Active Directory Domain resources (like VMs, etc.) are present. ml job Cloud ML Job A Cloud Machine Learning job. project id : The identifier of the GCP project associated with this resource, such as "my-project". job id : The job identifier. task name : The task name. mobilitybilling.googleapis.com/Project Google Maps Platform - Mobility Billing A top-level resource for Mobility Billing metrics and logs. resource container : The identifier of the GCP container associated with this resource. location : The region in which the Mobility Billing instance is running. modelarmor.googleapis.com/SanitizeOperation Model Armor Sanitize Operation A resource that represents the Model Armor sanitize operations. resource container : The identifier of the GCP resource container associated with this resource, such as "my project" or "organizations/5678". location : The GCP location. template id : The template ID. modelarmor.googleapis.com/Template Model Armor Template A resource that represents the Model Armor template operations. resource container : The identifier of the GCP resource container associated with this resource, such as "my project" or "organizations/5678". location : The GCP location. template id : The template ID. nat gateway Cloud NAT Gateway A Cloud NAT Gateway. project id : The identifier of the GCP project associated with this resource, such as "my-project". region : The region where the NAT gateway is located. router id : Identifier of the router under which the NAT gateway is defined. gateway name : The name of the NAT gateway. netapp cloud volume NetApp Cloud Volume A specific volume in the NetApp Cloud Volumes service. project id : The identifier of the GCP project associated with this resource, such as "my-project". location : The Google Cloud location in which the NetApp Cloud Volume instance is running. volume id : The ID of a NetApp Volume. network security policy Network Security Policy A network security policy. project id : The identifier of the GCP project associated with this resource, such as "my-project". location : The region where the security policy resides.
 - If a service does not have any notion of zones then 'global' can be used. consumer id : This is the ID of a consumer project that's made a request to the API, such as project number '412016889367'. project Google Project A Google project. project id : The identifier of the GCP project associated with this resource (e.g., my-project). pubsub snapshot Cloud Pub/Sub Snapshot A snapshot in Google Cloud Pub/Sub. project id : The identifier of the GCP project associated with this resource, such as "my-project". snapshot id : The identifier of the snapshot, such as "my-snapshot". pubsub subscription Cloud Pub/Sub Subscription A subscription in Google Cloud Pub/Sub. project id : The identifier of the GCP project associated with this resource, such as "my-project". subscription id : The identifier of the subscription, such as "my-subscription". pubsub topic Cloud Pub/Sub Topic A topic in Google Cloud Pub/Sub. project id : The identifier of the GCP project associated with this resource, such as "my-project". topic id : The identifier of the topic, such as "my-topic". recaptchaenterprise.googleapis.com/Key reCAPTCHA Key Monitoring resource for reCAPTCHA Key. resource container : The ID of the GCP project associated with this reCAPTCHA Key. location : Location where the reCAPTCHA Key is provisioned. key id : The ID for this Key. recommender Recommender A Recommender represents a grouping of similar recommendations. project id : The identifier of the GCP project associated with this resource, such as "my-project". recommender id : The name of the recommender. location : The location of the recommendation. recommender insight type InsightType An InsightType represents a grouping of similar insights. project id : The identifier of the GCP project associated with this resource, such as "my-project". insight type id : The resource ID of the insight type. location : The location of the insight. redis instance Cloud Memorystore Redis Instance A Redis instance hosted on Google Cloud Memorystore. project id : The identifier of the GCP project associated with this resource, such as "my-project". region : The Google Cloud region in which the managed instance is running. instance id : The ID of the managed instance. node id : The ID of a Redis node within the managed instance. remotebuild instance Remote Build Execution Instance A specific instance for the Remote Build Execution service. project id : The identifier of the GCP project associated with this resource, such as "my-project". location : The Cloud zone of the instance. instance id : The specific instance within the Remote Build Execution consumer project. reported errors Reported Errors Error data and metadata managed by Stackdriver Error Reporting project id : The identifier of the GCP project associated with this resource, such as "my-project". saasservicemgmt.googleapis.com/Rollout SaaS Runtime Rollout A Rollout of a SaaS Runtime Tenant. resource container : The identifier of the GCP project associated with this resource. location : The region in which this rollout occurred. rollout id : ID associated with this rollout. saasservicemgmt.googleapis.com/Unit SaaS Runtime Unit A Unit within a SaaS Runtime Tenant. resource container : The identifier of the GCP project associated with this resource. location : The location of the GCP project associated with this resource. unit id : The ID of the Unit. secretmanager.googleapis.com/Secret Secret Manager Secret A logical secret whose value and versions can be accessed. resource container : The identifier of the GCP project associated with this resource. location : Location of secret metadata.
+
+### "Installing the Cloud Logging agent on individual VMs \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/logging/docs/agent/logging/installation](https://docs.cloud.google.com/logging/docs/agent/logging/installation)
+- Source ID: `site-docs-root`
+- Final score: 105
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If your VMs are running in Google Kubernetes Engine or App Engine , the agent is already included in the VM image, so you can skip this page.
+- Run the following PowerShell commands: (New-Object Net.WebClient).DownloadFile("https://dl.google.com/cloudagents/windows/StackdriverLogging-v1-22.exe", "${env:UserProfile}\StackdriverLogging-v1-22.exe") & "${env:UserProfile}\StackdriverLogging-v1-22.exe" Alternatively, you can browse to the following URL to download and run the agent's installer: https://dl.google.com/cloudagents/windows/StackdriverLogging-v1-22.exe Caution: You must download the installer to a non-system directory, such as C:\Users\[USERNAME] .
+- Run the following PowerShell command: Restart-Service -Name StackdriverLogging Upgrade the agent To upgrade the Logging agent to the latest release, use the following instructions: Note: If you upgraded your instance's Linux operating system to a new major release, then you should first remove the agent and then re-install it using the procedures on this page, instead of completing these upgrade procedures.
+- Configure an HTTP proxy If you use an HTTP proxy for proxying requests to the Logging and Monitoring APIs, do the following: Linux Edit the following configuration file (create the file if it doesn't already exist): /etc/default/google-fluentd Add the following to the file: export http proxy = "http:// proxy-ip : proxy-port " export https proxy = "http:// proxy-ip : proxy-port " export no proxy = 169.254 .
 

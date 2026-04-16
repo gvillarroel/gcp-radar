@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.332Z"
+generated_at: "2026-04-14T11:18:27.984Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Bigtable Studio query editor"
 feature_slug: "bigtable-studio-query-editor"
 latest_feature_date: "2025-04-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigtable/docs/release-notes"
-  - "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables"
-  - "https://docs.cloud.google.com/bigtable/docs/bigquery-analysis"
+  - "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views"
+  - "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+  - "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
 keywords:
   - "editor"
   - "studio"
   - "query"
+  - "preview"
   - "generally"
-  - "bigtable"
-  - "now"
-  - "the"
-  - "is"
+  - "available"
 ---
 
 # Bigtable Studio query editor
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +36,55 @@ The Bigtable Studio query editor is now generally available; The Bigtable Studio
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigtable/docs/release-notes](https://docs.cloud.google.com/bigtable/docs/release-notes)
-- [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables)
-- [https://docs.cloud.google.com/bigtable/docs/bigquery-analysis](https://docs.cloud.google.com/bigtable/docs/bigquery-analysis)
+- [https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views](https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views)
+- [https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views](https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views)
+- [https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform](https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform)
 
 ## Supporting Pages
 
-### Bigtable release notes \_|\_ Google Cloud Documentation
+### Create and manage logical views \_|\_ Bigtable \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigtable/docs/release-notes](https://docs.cloud.google.com/bigtable/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 190
+- URL: [https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views](https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views)
+- Source ID: `site-docs-reference-2`
+- Final score: 145
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Feature The Bigtable Studio query editor is generally available (GA).
-- Java Changes for google-cloud-bigtable 2.10.3 (2022-08-08) Bug Fixes Declare 2 http libraries as runtime ( #1341 ) ( 8071de6 ) 2.10.2 (2022-08-03) Bug Fixes Add a ReadFirstRow callable to set future in onComplete ( #1326 ) ( cb539b5 ) The metadata could be returned in trailer or header depends on i… ( #1337 ) ( c4b8c03 ) Dependencies Update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ( #1328 ) ( bee0ca0 ) Upgrade shared config to 1.5.3, exclude google-http-client and google-http-client-gson from gax in google-cloud-bigtable-stats ( #1336 ) ( 98b3349 ) Python Changes for google-cloud-bigtable 2.11.1 (2022-08-08) Bug Fixes Retry the RST Stream error in mutate rows and read rows( #624 ) ( d24574a ) August 12, 2022 Feature Cloud Bigtable-BigQuery federation is now generally available (GA) .
-- Python Changes for google-cloud-bigtable 2.23.0 (2024-02-07) Features Add async data client preview ( 7088e39 ) Adding feature flags for routing cookie and retry info ( #905 ) ( 1859e67 ) Bug Fixes Fix ValueError in test validate universe domain ( #929 ) ( aa76a5a ) February 01, 2024 Feature The Bigtable Studio query builder is generally available (GA) .
-- Feature The Bigtable Studio query editor is available in Preview .
+- For more information about using the query editor, see Manage your data using Bigtable Studio . gcloud To create a logical view, use the gcloud bigtable logical-views create command. gcloud bigtable logical-views create VIEW \ --instance = INSTANCE --query = QUERY Replace the following: VIEW : an ID up to 128 characters long for the new logical view.
+- To query a logical view, you can use the Bigtable Studio query editor or any of the Bigtable client libraries that support SQL .
+- You can create a logical view using the Google Cloud CLI or the Bigtable Studio query editor in the Google Cloud console.
+- For example, if your view is named MyLogicalView : SELECT FROM MyLogicalView LIMIT 100 ; For more information about executing SQL queries in Bigtable, see Query your data with SQL in the query editor .
 
-### "MCP Tools Reference: bigtableadmin.googleapis.com \_|\_ Bigtable \_|\_ Google\
+### Continuous materialized views \_|\_ Bigtable \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables](https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/list_tables)
-- Source ID: `site-docs-reference`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Curl Request curl --location 'https://bigtableadmin.googleapis.com/mcp' \ --header 'content-type: application/json' \ --header 'accept: application/json, text/event-stream' \ --data '{ "method": "tools/call", "params": { "name": "list tables", "arguments": { // provide these details according to the tool' s MCP specification } } , "jsonrpc" : "2.0" , "id" : 1 } ' Input Schema Request message for google.bigtable.admin.v2.BigtableTableAdmin.ListTables ListTablesRequest JSON representation { "parent" : string , "view" : enum ( View ) , "pageSize" : integer , "pageToken" : string } Fields parent string Required.
-- Output Schema Response message for google.bigtable.admin.v2.BigtableTableAdmin.ListTables ListTablesResponse JSON representation { "tables" : [ { object ( Table ) } ] , "nextPageToken" : string } Fields tables[] object ( Table ) The tables present in the requested instance. nextPageToken string Set if not all tables could be returned in a single response.
-- If it could not be determined whether or not the table has data in a particular cluster (for example, if its zone is unavailable), then there will be an entry for the cluster with UNKNOWN replication status .
-- Currently, this only affects how the key is read via a GoogleSQL query from the ExecuteQuery API.
-
-### Query and analyze Bigtable data with BigQuery \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bigtable/docs/bigquery-analysis](https://docs.cloud.google.com/bigtable/docs/bigquery-analysis)
-- Source ID: `site-docs-root-2`
-- Final score: 162
+- URL: [https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views](https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views)
+- Source ID: `site-docs-reference-2`
+- Final score: 137
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Build a real-time analytics database with Bigtable and BigQuery Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Before you read this page you should be familiar with the Bigtable overview and BigQuery overview Using BigQuery to query a Bigtable table is ideal for tables that have the same column families and column qualifiers in every row.
-- Similar to when you send read requests directly to your Bigtable table, when you query the external table for the table and you're not using Data Boost, you generally want to avoid full table scans.
-- Examples in GoogleSQL syntax of limiting the query include the following: WHERE rowkey = "abc123" WHERE rowkey BETWEEN "abc123" PRECEDING AND "abc999" FOLLOWING WHERE rowkey > 999999 (if you read the row key as a string) Joins If you plan to use a join to analyze your Bigtable table data in conjunction with data from another source, you should create a subquery that extracts the relevant fields from Bigtable for the planned join.
+- You can read from a continuous materialized view by using the following: Bigtable Studio query editor The Bigtable client libraries that support SQL queries ReadRows API call using the Bigtable client libraries for Java and Go For more information, see Reading from a continuous materialized view .
+- You can create a continuous materialized view using the Google Cloud CLI, the Bigtable Studio query editor in the Google Cloud console, or the Bigtable client libraries for Java and Go.
+- This helps to ensure that enough compute capacity is available during the execution of the continuously running SQL query.
+- During this time, the view is unavailable for querying.
+
+### "Vertex AI roles and permissions \_|\_ Identity and Access Management (IAM)\
+
+- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform](https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform)
+- Source ID: `site-iam-reference`
+- Final score: 91
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent ) aiplatform.operations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Vertex AI Administrator ( roles/ aiplatform.admin ) Vertex AI Viewer ( roles/ aiplatform.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Notebooks Admin ( roles/ notebooks.admin ) Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin ) Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser ) Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin ) Vertex AI Platform Express User ( roles/ aiplatform.expressUser ) Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin ) Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer ) Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser ) Notebook Executor User ( roles/ aiplatform.notebookExecutorUser ) Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin ) Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser ) Vertex AI User ( roles/ aiplatform.user ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery Studio User ( roles/ bigquery.studioUser ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Notebooks Runner ( roles/ notebooks.runner ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
+- Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent ) Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent ) aiplatform. notebookRuntimes. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Vertex AI Administrator ( roles/ aiplatform.admin ) Vertex AI Viewer ( roles/ aiplatform.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin ) Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser ) Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin ) Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser ) Vertex AI User ( roles/ aiplatform.user ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery Studio User ( roles/ bigquery.studioUser ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
+- Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent ) aiplatform.locations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Vertex AI Administrator ( roles/ aiplatform.admin ) Vertex AI Viewer ( roles/ aiplatform.viewer ) Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin ) Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser ) Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin ) Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser ) Vertex AI User ( roles/ aiplatform.user ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery Studio User ( roles/ bigquery.studioUser ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) ML Engineer ( roles/ iam.mlEngineer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
+- Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent ) Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent ) aiplatform. notebookRuntimeTemplates. getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Vertex AI Administrator ( roles/ aiplatform.admin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin ) Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser ) Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin ) Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery Studio User ( roles/ bigquery.studioUser ) Data Scientist ( roles/ iam.dataScientist ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .
 

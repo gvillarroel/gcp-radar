@@ -1,28 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.074Z"
+generated_at: "2026-04-14T00:17:30.400Z"
 product_name: "Dialogflow"
 product_slug: "dialogflow"
 feature_name: "Dialogflow CX split intents"
 feature_slug: "dialogflow-cx-split-intents"
 latest_feature_date: "2023-08-08"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/dialogflow/docs/editions"
+  - "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+  - "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ExportIntentsResponse"
 keywords:
   - "dialogflow"
   - "cx"
   - "split"
   - "intents"
   - "provides"
-  - "to"
+  - "feature"
 ---
 
 # Dialogflow CX split intents
 
 Product: Dialogflow
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,11 +34,56 @@ Dialogflow CX provides a feature to split intents.
 
 Dialogflow CX provides a feature to split intents.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/dialogflow/docs/editions](https://docs.cloud.google.com/dialogflow/docs/editions)
+- [https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings)
+- [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ExportIntentsResponse](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ExportIntentsResponse)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Editions \_|\_ Dialogflow \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/docs/editions](https://docs.cloud.google.com/dialogflow/docs/editions)
+- Source ID: `site-docs-root-2`
+- Final score: 83
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Category Dialogflow ES agent Dialogflow CX agent Editions Dialogflow CX Trial Edition, Dialogflow CX Essentials Edition Dialogflow CX Edition Agent building blocks Flat structure of intents Graph structure of flows and pages Conversation control Linear conversation paths that simulate nonlinear paths using intents as nodes and contexts to control paths State machine model with explicit conversation control using pages as nodes and state handlers to control paths Console user experience Mostly text forms Visual graphs showing conversation paths and text forms for configurations Intent reusability Intents are coupled with fulfillment, events, and responses; specific to a conversation state, so difficult to reuse Intents are simplified to remove this coupling and made highly reusable Webhook error handling Errors quietly ignored by agent, passed to API caller if present Explicit error event handling built-in to your agent Event handling Invoked events trigger intent matches Events handlers are first-class types with powerful controls Conditional response messages Requires webhook calls Can be configured statically in fulfillment , with static conditions for a route , or with webhooks calls Parameter scope Can be scoped to intent , context , or event Can be scoped to intent , form , or session Built in testing Not provided Provided Redaction Not provided Provided Conditional logic Not provided Provided DTMF input Not provided Provided System functions for advanced responses and conditions Not provided Provided Advanced NLU Not provided Provided Agents per project 1 1000 Recommended agent size Up to medium size agents Up to very large Recommended agent complexity Up to moderately complex agents Up to highly complex Learning curve to design a simple agent Basic Moderate Learning curve to design a complex agent High Moderate Pricing and quotas Granular Simplified Edition comparison The following editions are available: Term Definition Dialogflow CX Trial Edition A no-cost edition that provides most of the features of the standard Dialogflow ES agent type.
+- Dialogflow CX Agent Feature Dialogflow CX Edition Text (includes all DetectIntent, StreamingDetectIntent, and FulfillIntent requests that do not contain audio) 1200 requests per minute $0.007 per request Audio input/output (speech recognition, speech-to-text, STT, speech synthesis, text-to-speech, TTS, telephony) 600 requests per minute $0.06 per minute Service Level Agreement SLA Support Eligible for Cloud Support packages with committed response times for supporting production applications Terms of Service Google Cloud Platform ToS Dialogflow ES Agent Feature Trial Edition Essentials Edition Text (includes all DetectIntent and StreamingDetectIntent requests that do not contain audio) Production-ready quota No charge Production-ready quota $0.002 per request Audio input (also known as speech recognition, speech-to-text, STT) Limited quota No charge Production-ready quota $0.0065 per 15 seconds of audio Audio output (also known as speech synthesis, text-to-speech, TTS) Limited quota No charge Production-ready quota $4 to $16 per million characters Knowledge connectors (Beta) Limited quota No charge Production-ready quota No charge Sentiment analysis Not available Unlimited quota $0.25 to $1.00 per 1000 requests Dialogflow ES phone gateway Includes audio input and output.
+- Dialogflow CX Essentials Edition This is a pay-as-you-go edition that provides the standard Dialogflow ES agent type.
+- Dialogflow CX Edition This is a pay-as-you-go edition that provides the advanced Dialogflow CX agent type.
+
+### Agent settings \_|\_ Dialogflow CX \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings)
+- Source ID: `site-docs-root`
+- Final score: 81
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- ML settings Dialogflow CX uses machine learning (ML) algorithms to understand end-user inputs, match them to intents, and extract structured data.
+- If you are using telephony gateway, make sure the Dialogflow Service Agent service account service- PROJECT NUMBER @gcp-sa-dialogflow.iam.gserviceaccount.com is granted with "AutoML Predictor" in your custom voice project.
+- If you are using telephony gateway, make sure the Dialogflow Service Agent service account service- PROJECT NUMBER @gcp-sa-dialogflow.iam.gserviceaccount.com is granted with "AutoML Predictor" in your custom voice project.
+- An example consent requesting flow could be: first ask the user if they would like to keep end-user input, and match the response with two intents, one is "yes intent" and the other is "no intent".
+
+### ExportIntentsResponse \_|\_ Dialogflow CX \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ExportIntentsResponse](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ExportIntentsResponse)
+- Source ID: `site-docs-reference`
+- Final score: 81
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Dialogflow Dialogflow CX Reference Send feedback ExportIntentsResponse Stay organized with collections Save and categorize content based on your preferences.
+- JSON representation { // Union field intents can be only one of the following: "intentsUri" : string , "intentsContent" : { object ( InlineDestination ) } // End of list of possible types for union field intents . } Fields Union field intents .
+- This field is populated only if intentsUri is specified in ExportIntentsRequest . intentsContent object ( InlineDestination ) Uncompressed byte content for intents.
+- The exported intents. intents can be only one of the following: intentsUri string The URI to a file containing the exported intents.
 

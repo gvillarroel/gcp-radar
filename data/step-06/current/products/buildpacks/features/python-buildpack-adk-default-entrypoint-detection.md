@@ -1,44 +1,44 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:04:48.315Z"
+generated_at: "2026-04-15T11:53:44.045Z"
 product_name: "Buildpacks"
 product_slug: "buildpacks"
 feature_name: "Python buildpack ADK default entrypoint detection"
 feature_slug: "python-buildpack-adk-default-entrypoint-detection"
 latest_feature_date: "2026-01-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/docs/buildpacks/python"
   - "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs"
   - "https://docs.cloud.google.com/docs/buildpacks/build-function"
 keywords:
+  - "python"
+  - "buildpack"
   - "adk"
+  - "default"
   - "entrypoint"
   - "detection"
-  - "default"
-  - "supports"
-  - "buildpack"
-  - "python"
-  - "the"
+  - "can"
+  - "automatically"
 ---
 
 # Python buildpack ADK default entrypoint detection
 
 Product: Buildpacks
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The Python buildpack supports default entrypoint detection for applications using the Agent Development Kit (ADK) framework in general availability; The Python buildpack preview supports default entrypoint detection for the Agent Development Kit (ADK) framework.
+The Python buildpack can automatically detect the default entrypoint for applications built with the Agent Development Kit framework; The Python buildpack can automatically detect the default entrypoint for applications built with the Agent Development Kit framework.
 
 ## Extended Definition
 
-The Python buildpack supports default entrypoint detection for applications using the Agent Development Kit (ADK) framework in general availability; The Python buildpack preview supports default entrypoint detection for the Agent Development Kit (ADK) framework.
+The Python buildpack can automatically detect the default entrypoint for applications built with the Agent Development Kit framework; The Python buildpack can automatically detect the default entrypoint for applications built with the Agent Development Kit framework.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,23 +52,23 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/docs/buildpacks/python](https://docs.cloud.google.com/docs/buildpacks/python)
 - Source ID: `site-docs-reference`
-- Final score: 194
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The Python buildpack sets the default entrypoint based on the following order of precedence, as defined in the requirements.txt file: gunicorn uvicorn fastapi[standard] gradio streamlit google-adk Configure the web server or framework For each common Python configurations in the requirements.txt file, the following table shows the default entrypoints when deploying to Cloud Run from source: Primary configuration Default entrypoint Environment variables gunicorn gunicorn -b :8080 main:app numpy gunicorn -b :8080 main:app fastapi uvicorn uvicorn main:app --host 0.0.0.0 --port 8080 fastapi[standard] uvicorn main:app --host 0.0.0.0 --port 8080 uvicorn gunicorn gunicorn -b :8080 main:app gradio python main.py GRADIO SERVER NAME=0.0.0.0 GRADIO SERVER PORT=8080 streamlit streamlit run main.py --server.address 0.0.0.0 --server.port 8080 google-adk adk api server --host 0.0.0.0 --port 8080 To avoid deployment failures, use a supported Python version in your source files, and specify a web server in your requirements.txt file.
 - When you deploy a Cloud Run service from source using the Python runtime, the buildpack determines the Python version and the default entrypoint in the following ways: If you don't specify a Python version in your source files, the Python buildpack sets the default to the latest supported Python version .
-- Example: pack build sample-python \ --builder gcr.io/buildpacks/builder --env "GOOGLE ENTRYPOINT='gunicorn --bind :$PORT main:app'" Environment Variables The Python buildpack supports the following environment variables to customize your container PIP <key> See pip documentation .
 - Apps built with the Python buildpack start the gunicorn process with default settings, similar to running: gunicorn --bind :8080 main:app Customize the application entrypoint You can customize the applications start command by using a Procfile or an environment variable.
+- Python version 3.13 and later For Python version 3.13 and later, the Python buildpack sets the default entrypoint for Cloud Run source deploys based on the web server or framework configuration in your requirements.txt file.
 
 ### "Configure Cloud Run and Cloud Run functions services \_|\_ Buildpacks \_\
 
 - URL: [https://docs.cloud.google.com/docs/buildpacks/service-specific-configs](https://docs.cloud.google.com/docs/buildpacks/service-specific-configs)
 - Source ID: `site-docs-reference`
-- Final score: 128
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 148
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - If you don't specify a web server or framework in the requirements.txt file, or use Python version 3.12 and earlier, the Python buildpack sets the default entrypoint to gunicorn -b :8080 main:app .
@@ -80,9 +80,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/docs/buildpacks/build-function](https://docs.cloud.google.com/docs/buildpacks/build-function)
 - Source ID: `site-docs-reference`
-- Final score: 118
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 140
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Clone the sample repository to your local machine: git clone https://github.com/GoogleCloudPlatform/buildpack-samples.git Change to the directory that contains the application sample code: Go cd buildpack-samples/sample-functions-framework-go Java cd buildpack-samples/sample-functions-framework-java-mvn Node.js cd buildpack-samples/sample-functions-framework-node Python cd buildpack-samples/sample-functions-framework-python Ruby cd buildpack-samples/sample-functions-framework-ruby Use pack to build the sample function: Go pack build --builder=gcr.io/buildpacks/builder sample-functions-framework-go Java pack build --builder gcr.io/buildpacks/builder:v1 sample-functions-java-mvn Node.js pack build --builder=gcr.io/buildpacks/builder sample-functions-framework-node Python pack build --builder=gcr.io/buildpacks/builder sample-functions-framework-python Ruby pack build --builder=gcr.io/buildpacks/builder sample-functions-framework-ruby Run the image using docker : Go docker run -p8080:8080 sample-functions-framework-go Java docker run -it -ePORT=8080 -p8080:8080 sample-functions-java-mvn Node.js docker run -it -ePORT=8080 -p8080:8080 sample-functions-framework-node Python docker run -it -ePORT=8080 -p8080:8080 sample-functions-framework-python Ruby docker run -it -ePORT=8080 -p8080:8080 sample-functions-framework-ruby Visit the running function by browsing to localhost:8080 .

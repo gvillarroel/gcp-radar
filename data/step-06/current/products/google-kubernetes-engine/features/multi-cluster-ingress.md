@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:33.408Z"
+generated_at: "2026-04-14T04:42:56.971Z"
 product_name: "Google Kubernetes Engine"
 product_slug: "google-kubernetes-engine"
 feature_name: "Multi-cluster Ingress"
 feature_slug: "multi-cluster-ingress"
 latest_feature_date: "2020-04-29"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
 keywords:
   - "multi"
   - "cluster"
@@ -18,13 +20,13 @@ keywords:
   - "kubernetes"
   - "native"
   - "way"
-  - "to"
+  - "deploy"
 ---
 
 # Multi-cluster Ingress
 
 Product: Google Kubernetes Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ Provides a Kubernetes-native way to deploy Ingress resources across multiple clu
 
 Provides a Kubernetes-native way to deploy Ingress resources across multiple clusters and regions.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins](https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Set up an external Application Load Balancer with Ingress \_|\_ GKE networking\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer)
+- Source ID: `site-docs-root`
+- Final score: 165
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Follow the installation instructions to install Config Connector on your cluster. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : web-static-ip spec : location : global To deploy this manifest, download it to your machine as compute-address.yaml, and run: kubectl apply -f compute-address.yaml The basic-ingress-static.yaml manifest adds an annotation on Ingress to use the static IP resource named web-static-ip : apiVersion : networking.k8s.io/v1 kind : Ingress metadata : name : basic-ingress annotations : kubernetes.io/ingress.global-static-ip-name : "web-static-ip" spec : defaultBackend : service : name : web port : number : 8080 View the manifest: cat basic-ingress-static.yaml Apply the resource to the cluster: kubectl apply -f basic-ingress-static.yaml Check the external IP address: kubectl get ingress basic-ingress Wait until the IP address of your application changes to use the reserved IP address of the web-static-ip resource.
+- The following manifest describes an Ingress resource that directs traffic to your web Service: apiVersion : networking.k8s.io/v1 kind : Ingress metadata : name : basic-ingress spec : defaultBackend : service : name : web port : number : 8080 Apply the resource to the cluster: kubectl apply -f basic-ingress.yaml After you deploy this manifest, Kubernetes creates an Ingress resource on your cluster.
+- If you have an application running on multiple Kubernetes Engine clusters in different regions, set up a multi-cluster Ingress to route traffic to a cluster in the region closest to the user.
+- You can install kubectl using gcloud : gcloud components install kubectl Clone the sample code from GitHub: git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples cd kubernetes-engine-samples/networking/load-balancing Set defaults for the gcloud command-line tool To save time typing your project ID and Compute Engine zone options in the gcloud command-line tool, you can set the defaults: gcloud config set project project-id gcloud config set compute/zone compute-zone Create a GKE cluster Create a GKE Autopilot cluster: gcloud container clusters create-auto loadbalancedcluster Deploying a web application The following manifest describes a Deployment that runs the sample web application container image on an HTTP server on port 8080: apiVersion : apps/v1 kind : Deployment metadata : name : web namespace : default spec : selector : matchLabels : run : web template : metadata : labels : run : web spec : containers : - image : us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 imagePullPolicy : IfNotPresent name : web ports : - containerPort : 8080 protocol : TCP Apply the resource to the cluster: kubectl apply -f web-deployment.yaml Exposing your Deployment inside your cluster The following manifest describes a Service that makes the web deployment accessible within your container cluster: apiVersion : v1 kind : Service metadata : name : web namespace : default spec : ports : - port : 8080 protocol : TCP targetPort : 8080 selector : run : web type : NodePort Apply the resource to the cluster: kubectl apply -f web-service.yaml When you create a Service of type NodePort with this command, GKE makes your Service available on a randomly selected high port number (e.g.
+
+### "Modern CI/CD with GKE: Apply the developer workflow \_|\_ Google Kubernetes\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow)
+- Source ID: `site-docs-reference-required-5`
+- Final score: 145
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Approve the release to prod2 cluster: Run the following command to fetch the name of the rollout pending approval and save it in an environment variable: export ROLLOUT = $( gcloud deploy targets describe prod2 --region = us-central1 --format = "json" jq -r '."Pending Approvals"[]' awk -F '/' '{print $NF}' ) Approve the release: gcloud deploy rollouts approve $ROLLOUT --delivery-pipeline = sample --region = us-central1 --release = $RELEASE --quiet Note: Cloud Deploy lets you do parallel deployments in multiple GKE clusters so you can deploy to multiple production clusters simultaneously.
+- When one of the GKE clusters is unhealthy and the application instance running on it can't be reached, the multi-cluster ingress keeps sending the traffic to the healthy instance of the application running on the other GKE cluster.
+- When you send request to the IP address of the load balancer, Multi Cluster Ingress forwards the request to one of the two instances of the application running in two different GKE clusters.
+- When the application is accessed through that IP, multi-cluster ingress routes it to one of the two instances of the application running on two different GKE clusters.
+
+### "Security bulletins \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins](https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins)
+- Source ID: `site-docs-reference-2`
+- Final score: 143
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Check if your GKE clusters are using ingress-nginx by using one of the following commands: Check an individual cluster: kubectl get pods --all-namespaces --selector app.kubernetes.io/name = ingress-nginx Check multiple clusters at once using a Cloud Asset Inventory resource search query : gcloud asset search-all-resources \ --scope = 'organizations/ ORGANIZATION ID ' \ --asset-types = 'k8s.io/Pod' \ --query = 'labels."app.kubernetes.io/name"="ingress-nginx"' Replace ORGANIZATION ID with your organization resource ID.
+- None GCP-2025-013 Published: 2025-03-24 Reference: CVE-2025-1974 GKE Description Severity Several security issues have been discovered in the NGINX Ingress Controller, ingress-nginx , an open source software component that runs inside Kubernetes clusters to help manage network traffic coming into the cluster.
+- None GDC (bare metal) Description Severity Several security issues have been discovered in the NGINX Ingress Controller, ingress-nginx , an open source software component that runs inside Kubernetes clusters to help manage network traffic coming into the cluster.
+- None GDC (VMware) Description Severity Several security issues have been discovered in the NGINX Ingress Controller, ingress-nginx , an open source software component that runs inside Kubernetes clusters to help manage network traffic coming into the cluster.
 

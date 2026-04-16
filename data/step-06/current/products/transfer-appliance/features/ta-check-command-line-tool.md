@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:03.779Z"
+generated_at: "2026-04-12T12:19:17.781Z"
 product_name: "Transfer Appliance"
 product_slug: "transfer-appliance"
 feature_name: "ta check command-line tool"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-03-08"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/transfer-appliance/docs/4.0/prepare-online"
-  - "https://docs.cloud.google.com/transfer-appliance/docs/4.0/transfer-data"
+  - "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer"
   - "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide"
+  - "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+  - "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
 keywords:
   - "ta"
   - "check"
@@ -38,47 +39,66 @@ Introduces the `ta check` command-line tool for detecting and fixing configurati
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/transfer-appliance/docs/4.0/prepare-online](https://docs.cloud.google.com/transfer-appliance/docs/4.0/prepare-online)
-- [https://docs.cloud.google.com/transfer-appliance/docs/4.0/transfer-data](https://docs.cloud.google.com/transfer-appliance/docs/4.0/transfer-data)
+- [https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer](https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer)
 - [https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide](https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide)
+- [https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations](https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations)
+- [https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview](https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview)
 
 ## Supporting Pages
 
-### Prepare for online transfer | Transfer Appliance | Google Cloud Documentation
+### "Enable or disable online transfer \_|\_ Transfer Appliance \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/transfer-appliance/docs/4.0/prepare-online](https://docs.cloud.google.com/transfer-appliance/docs/4.0/prepare-online)
+- URL: [https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer](https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer)
 - Source ID: `site-docs-root`
-- Final score: 98
+- Final score: 182
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Prepare for online transfer Transfer Appliance Google Cloud Documentation Source URL: https://docs.cloud.google.com/transfer-appliance/docs/4.0/prepare-online Subsequent transfers after initial setup don&#x27;t require these steps.
-- To complete first-time setup for online transfer, a Google Cloud administrator must do the following: Enable the Google Storage Transfer API.
+- To set the appliance to online mode, run the following command: ta online The following sample response resembles the output that is returned: Starting containers for online transfer...
+- Online transfer compresses and encrypts the data in transit and accelerates data transfer compared to the gcloud CLI and other command-line tools.
+- Set to offline mode To specify offline mode, run the following command: ta offline The following sample response resembles the output that is returned: Putting the appliance in offline mode...
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 
-### Transfer data | Transfer Appliance | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/transfer-appliance/docs/4.0/transfer-data](https://docs.cloud.google.com/transfer-appliance/docs/4.0/transfer-data)
-- Source ID: `site-docs-root`
-- Final score: 92
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Transfer data Transfer Appliance Google Cloud Documentation Source URL: https://docs.cloud.google.com/transfer-appliance/docs/4.0/transfer-data After you copy data to the Transfer Appliance, verify that the data transfer to the Cloud Storage bucket is complete before you delete your source data.
-- Files that are uploaded to the appliance must comply with Cloud Storage file size limits and naming guidelines: File size limits are documented on ...
-
-### High-level overview | Transfer Appliance | Google Cloud Documentation
+### High-level overview \_|\_ Transfer Appliance \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide](https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide)
 - Source ID: `site-docs-root`
-- Final score: 66
+- Final score: 167
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- High-level overview Transfer Appliance Google Cloud Documentation Source URL: https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide When applying for Transfer Appliance, you can choose to use your appliance in either offline mode or online mode.
-- Offline mode allows you to copy data to the appliance.
-- When the appliance is full, you send the appliance back to us.
+- Complete the project setup: Go to appliances page Find and select the appliance Click on the Open Setup Checklist button Complete the following steps: Enable API will enable the required APIs for the appliance Authorize the service accounts will create service accounts used for online transfer and authorize service accounts to the output bucket (only for online transfer) Create and Download the key of the appliance service account that is created during Authorize the service accounts Receive the appliance To receive an appliance, follow these steps: Track the appliance shipped to you.
+- If you selected an offline-only device or disabled online copy on the appliance: After you complete all copying to the appliance, finalize the copied data to prepare for shipping.
+- Enter the passcode returned by the ta finalize command in the form included in the email titled Google Transfer Appliance Return Instructions sent by the Transfer Appliance Team.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+
+### Known limitations \_|\_ Transfer Appliance \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations](https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations)
+- Source ID: `site-docs-reference`
+- Final score: 140
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If your source directory contains file names with newlines, the copy from the appliance to Cloud Storage for that directory fails.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- If you anticipate ordering many appliances for a large transfer and cannot follow the limitations listed below, you must perform an initial proof-of-concept transfer with a single Transfer Appliance and representative data to ensure performance is suitable before you order multiple appliances.
+- The object prefix for the destination object is included in the length limitation because the object prefix is incorporated in the object's name in Cloud Storage.
+
+### Transfer Appliance \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview](https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview)
+- Source ID: `site-docs-reference`
+- Final score: 139
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Online transfers offer the following benefits: Quickly transfer data to Cloud Storage with low latency : Online transfers are an accelerated method of transferring your data to Cloud Storage, omitting the need to wait for your appliance to be shipped back to Google before the data is copied to your destination bucket.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Transfer Appliance is available in the following locations: Location TA40(Rackable) TA300(Rackable) TA40(Freestanding) TA300(Freestanding) United States European Union member states United Kingdom Singapore Japan Canada Australia India For a complete list of countries where Transfer Appliance is available, refer to the Order Appliance page on the Google Cloud console.
+- Data migration Offline data transfer is suited for moving large amounts of existing backup images and archives to Cloud Storage, which can be stored in ultra low-cost, highly-durable, and highly available storage classes such as Archive Storage .
 

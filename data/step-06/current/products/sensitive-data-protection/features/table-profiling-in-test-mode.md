@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.795Z"
+generated_at: "2026-04-14T12:39:34.367Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "Table profiling in test mode"
@@ -9,18 +9,16 @@ latest_feature_date: "2023-04-07"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3"
 keywords:
-  - "table"
-  - "profiling"
-  - "in"
+  - "single"
   - "test"
   - "mode"
-  - "you"
-  - "can"
+  - "profiling"
   - "profile"
+  - "table"
 ---
 
 # Table profiling in test mode
@@ -42,42 +40,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3)
 
 ## Supporting Pages
 
-### Learn about your data through discovery and inspection | Sensitive Data Protection | Google Cloud Documentation
+### "Profile Cloud SQL data in a single project \_|\_ Sensitive Data Protection\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data](https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data)
-- Source ID: `site-docs-root`
-- Final score: 68
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Learn about your data through discovery and inspection Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/learn-about-your-data This page describes and compares two Sensitive Data Protection services that help you understand your data and enable data governance workflows: the discovery service and the inspection service.
-
-### Overview of sensitive data discovery | Sensitive Data Protection | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles](https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles)
-- Source ID: `site-docs-root`
-- Final score: 44
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql)
+- Source ID: `site-docs-reference-3`
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Overview of sensitive data discovery Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles The Sensitive Data Protection discovery service (sometimes called data profiler) continuously monitors the data resources in your organization, folder, or project.
-- It classifies the data into infoTypes, and assesses the data sensitivity and ...
+- PROFILES TABLE ID latest v1 AS profiles table ON findings table . data profile resource name = profiles table . table profile . name To save sample findings to a BigQuery table, follow these steps: Turn on Save sample discovery findings to BigQuery .
+- FINDINGS TABLE ID latest v1 AS findings table INNER JOIN PROFILES TABLE PROJECT ID .
+- SELECT findings table . quote , findings table . infotype . name , findings table . location . container name , findings table . location . data profile finding record location . field . name AS field name , profiles table . table profile . dataset project id AS project id , profiles table . table profile . dataset id AS dataset id , profiles table . table profile . table id AS table id , profiles table . table profile . sensitivity score AS table sensitivity score FROM FINDINGS TABLE PROJECT ID .
+- This option is useful in the following cases: You opted to save data profiles to BigQuery and you want to make sure the service agent has write access to the BigQuery table where the data profile copies will be saved.
 
-### Sensitive Data Protection (DLP API) | Google Cloud Documentation
+### "Profile Cloud Storage data in a single project \_|\_ Sensitive Data Protection\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest)
-- Source ID: `site-api-reference`
-- Final score: 40
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage)
+- Source ID: `site-docs-reference-3`
+- Final score: 202
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
-- A Discovery Document is a machine-readable specification for describing and consuming REST ...
-- To call this service, we recommend that you use the Google-provided client libraries.
+- PROFILES TABLE ID latest v1 AS profiles table ON findings table . data profile resource name = profiles table . file store profile . name To save sample findings to a BigQuery table, follow these steps: Turn on Save sample discovery findings to BigQuery .
+- FINDINGS TABLE ID latest v1 AS findings table INNER JOIN PROFILES TABLE PROJECT ID .
+- SELECT findings table . quote , findings table . infotype . name , findings table . location . container name , profiles table . file store profile . file store path as bucket name , profiles table . file store profile . sensitivity score as bucket sensitivity score FROM FINDINGS TABLE PROJECT ID .
+- This option is useful in the following cases: You opted to save data profiles to BigQuery and you want to make sure the service agent has write access to the BigQuery table where the data profile copies will be saved.
+
+### "Profile Amazon S3 data \_|\_ Sensitive Data Protection \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3)
+- Source ID: `site-docs-reference-3`
+- Final score: 176
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- PROFILES TABLE ID latest v1 AS profiles table ON findings table . data profile resource name = profiles table . file store profile . name To save sample findings to a BigQuery table, follow these steps: Turn on Save sample discovery findings to BigQuery .
+- FINDINGS TABLE ID latest v1 AS findings table INNER JOIN PROFILES TABLE PROJECT ID .
+- SELECT findings table . quote , findings table . infotype . name , findings table . location . container name , profiles table . file store profile . file store path as bucket name , profiles table . file store profile . sensitivity score as bucket sensitivity score FROM FINDINGS TABLE PROJECT ID .
+- Review and create the configuration If you want to make sure that profiling doesn't start automatically after you create the scan configuration, select Create scan in paused mode .
 

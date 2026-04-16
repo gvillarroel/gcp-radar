@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:39:07.575Z"
+generated_at: "2026-04-12T12:11:25.090Z"
 product_name: "Cloud Endpoints"
 product_slug: "cloud-endpoints"
 feature_name: "Cloud Endpoints Portal"
 feature_slug: "cloud-endpoints-portal"
 latest_feature_date: "2023-03-21"
 deprecation_date: "2023-03-21"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/iam/docs/roles-permissions/endpoints"
-  - "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support"
   - "https://docs.cloud.google.com/endpoints/docs/openapi/deploy-endpoints-config"
+  - "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support"
+  - "https://docs.cloud.google.com/endpoints/docs/openapi/control-api-callers"
 keywords:
   - "endpoints"
   - "portal"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Endpoints Portal
 
 Product: Cloud Endpoints
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ The Cloud Endpoints Portal is deprecated and no longer available; deprecated on 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/iam/docs/roles-permissions/endpoints](https://docs.cloud.google.com/iam/docs/roles-permissions/endpoints)
-- [https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)
 - [https://docs.cloud.google.com/endpoints/docs/openapi/deploy-endpoints-config](https://docs.cloud.google.com/endpoints/docs/openapi/deploy-endpoints-config)
+- [https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)
+- [https://docs.cloud.google.com/endpoints/docs/openapi/control-api-callers](https://docs.cloud.google.com/endpoints/docs/openapi/control-api-callers)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/endpoints](https://docs.cloud.google.com/iam/docs/roles-permissions/endpoints)
 - Source ID: `site-iam-reference`
-- Final score: 182
+- Final score: 214
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -61,11 +63,25 @@ Evidence snippets:
 - Role Permissions Cloud Endpoints Service Agent ( roles/ endpoints.serviceAgent ) Gives the Cloud Endpoints service account access to Endpoints services and the ability to act as a service controller.
 - Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 
+### "Deploying the Endpoints configuration \_|\_ Cloud Endpoints with OpenAPI\
+
+- URL: [https://docs.cloud.google.com/endpoints/docs/openapi/deploy-endpoints-config](https://docs.cloud.google.com/endpoints/docs/openapi/deploy-endpoints-config)
+- Source ID: `site-docs-root`
+- Final score: 208
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Validate the project ID returned from the following command to make sure that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace [YOUR PROJECT ID] with the Google Cloud project ID in which you want to create the service:: gcloud config set project [ YOUR PROJECT ID ] Run the following command, and replace [YOUR OPENAPI DOCUMENT] with the name of the OpenAPI document that describes your API: gcloud endpoints services deploy [ YOUR OPENAPI DOCUMENT ] The first time that you run the previous command, Service Management creates a new Endpoints service in the default project with a name that matches the text that you specified in the host field in your OpenAPI document and uploads your service configuration.
+- If you are using a custom domain name (such as, myapi.example.com ), make sure to validate the project ID returned from the following command so that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace [YOUR PROJECT ID] with the Google Cloud project ID in which you want to create the service: gcloud config set project [ YOUR PROJECT ID ] Run the following command, and replace [YOUR OPENAPI DOCUMENT] with the name of the OpenAPI document that describes your API: gcloud endpoints services deploy [ YOUR OPENAPI DOCUMENT ] --validate-only The gcloud command then calls the Service Management API to create a managed service with the name that you specified in the host field in your OpenAPI document.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- On successful completion, you see a line like the following that displays the service configuration ID and the service name: Service Configuration [2017-02-13r0] uploaded for service [echo-api.endpoints.example-project-12345.cloud.goog] In the previous example, 2017-02-13r0 is the service configuration ID and echo-api.endpoints.example-project-12345.cloud.goog is the service name.
+
 ### "Support levels for permissions in custom roles \_|\_ Identity and Access\
 
 - URL: [https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)
 - Source ID: `site-iam-reference`
-- Final score: 168
+- Final score: 205
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,17 +90,16 @@ Evidence snippets:
 - List of all permissions and support levels The following table lists all IAM permissions and indicates which permissions are supported in custom roles.
 - NOT SUPPORTED The permission is not supported in custom roles.
 
-### "Deploying the Endpoints configuration \_|\_ Cloud Endpoints with OpenAPI\
+### "Controlling who can enable your API \_|\_ Cloud Endpoints with OpenAPI \_\
 
-- URL: [https://docs.cloud.google.com/endpoints/docs/openapi/deploy-endpoints-config](https://docs.cloud.google.com/endpoints/docs/openapi/deploy-endpoints-config)
-- Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/endpoints/docs/openapi/control-api-callers](https://docs.cloud.google.com/endpoints/docs/openapi/control-api-callers)
+- Source ID: `site-docs-reference`
+- Final score: 203
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Validate the project ID returned from the following command to make sure that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace [YOUR PROJECT ID] with the Google Cloud project ID in which you want to create the service:: gcloud config set project [ YOUR PROJECT ID ] Run the following command, and replace [YOUR OPENAPI DOCUMENT] with the name of the OpenAPI document that describes your API: gcloud endpoints services deploy [ YOUR OPENAPI DOCUMENT ] The first time that you run the previous command, Service Management creates a new Endpoints service in the default project with a name that matches the text that you specified in the host field in your OpenAPI document and uploads your service configuration.
-- If you are using a custom domain name (such as, myapi.example.com ), make sure to validate the project ID returned from the following command so that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace [YOUR PROJECT ID] with the Google Cloud project ID in which you want to create the service: gcloud config set project [ YOUR PROJECT ID ] Run the following command, and replace [YOUR OPENAPI DOCUMENT] with the name of the OpenAPI document that describes your API: gcloud endpoints services deploy [ YOUR OPENAPI DOCUMENT ] --validate-only The gcloud command then calls the Service Management API to create a managed service with the name that you specified in the host field in your OpenAPI document.
+- If you are granting access to an individual user: gcloud endpoints services add - iam - policy - binding [ SERVICE-NAME ] \ --member='user: EMAIL-NAME @gmail.com' \ --role='roles/servicemanagement.serviceConsumer' If you are granting access to a Google Group: gcloud endpoints services add - iam - policy - binding [ SERVICE-NAME ] \ --member='group: GROUP-NAME @googlegroups.com' \ --role='roles/servicemanagement.serviceConsumer' Contact the users or groups that you added and let them know they can enable the API in their Google Cloud projects.
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- On successful completion, you see a line like the following that displays the service configuration ID and the service name: Service Configuration [2017-02-13r0] uploaded for service [echo-api.endpoints.example-project-12345.cloud.goog] In the previous example, 2017-02-13r0 is the service configuration ID and echo-api.endpoints.example-project-12345.cloud.goog is the service name.
+- Granting access Endpoints uses the Identity and Access Management (IAM) Service Consumer role to allow someone who isn't a member of your Google Cloud project to enable your API in their own Google Cloud project.
+- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
 

@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:31.455Z"
+generated_at: "2026-04-15T00:44:19.052Z"
 product_name: "Cloud Healthcare API"
 product_slug: "cloud-healthcare-api"
 feature_name: "HL7v2 store metrics in Google Cloud Console"
 feature_slug: "hl7v2-store-metrics-in-google-cloud-console"
 latest_feature_date: "2024-02-01"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics"
+  - "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+  - "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
 keywords:
   - "hl7v2"
   - "store"
   - "metrics"
-  - "in"
   - "console"
   - "users"
   - "can"
   - "view"
+  - "directly"
 ---
 
 # HL7v2 store metrics in Google Cloud Console
 
 Product: Cloud Healthcare API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Users can view HL7v2 store metrics directly from the Google Cloud console.
 
 Users can view HL7v2 store metrics directly from the Google Cloud console.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics](https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics)
+- [https://docs.cloud.google.com/healthcare-api/docs/controlling-access](https://docs.cloud.google.com/healthcare-api/docs/controlling-access)
+- [https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter](https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "View DICOM store, DICOM study, and DICOM series metrics \_|\_ Cloud Healthcare\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics](https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics)
+- Source ID: `site-docs-root-2`
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Console To view DICOM series metrics in the Google Cloud console, see View DICOM store metrics .
+- Console To view DICOM study metrics in the Google Cloud console, see View DICOM store metrics .
+- You should receive a JSON response similar to the following: Response { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID ", "studyCount": " STUDY COUNT ", "seriesCount": " SERIES COUNT ", "instanceCount": " INSTANCE COUNT ", "structuredStorageSizeBytes": " STRUCTURED STORAGE BYTES ", "blobStorageSizeBytes": " BLOB STORAGE BYTES ", } View DICOM studies metrics The following samples show how to view DICOM studies metrics.
+- You should receive a JSON response similar to the following: Response { "study": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies/ STUDY UID ", "seriesCount": " SERIES COUNT ", "instanceCount": " INSTANCE COUNT ", "structuredStorageSizeBytes": " STRUCTURED STORAGE BYTES ", "blobStorageSizeBytes": " BLOB STORAGE BYTES " } View DICOM series metrics The following samples show how to view DICOM series metrics.
+
+### "Controlling access to Cloud Healthcare API resources \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/controlling-access](https://docs.cloud.google.com/healthcare-api/docs/controlling-access)
+- Source ID: `site-docs-root-2`
+- Final score: 165
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const setHl7v2StoreIamPolicy = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const member = 'user:example@gmail.com'; // const role = 'roles/healthcare.hl7V2StoreViewer'; const resource = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /hl7V2Stores/ ${ hl7v2StoreId } ; const request = { resource , resource : { policy : { bindings : [ { members : member , role : role , }, ], }, }, }; const hl7v2Store = await healthcare . projects . locations . datasets . hl7V2Stores . setIamPolicy ( request ); console . log ( 'Set HL7v2 store IAM policy:' , JSON . stringify ( hl7v2Store . data , null , 2 ) ); }; setHl7v2StoreIamPolicy (); Python def set hl7v2 store iam policy ( project id , location , dataset id , hl7v2 store id , member , role , etag = None ): """Sets the IAM policy for the specified HL7v2 store.
+- Console To view the IAM policy for an HL7v2 store: In the Google Cloud console, go to the Datasets page.
+- A member can be any of: - allUsers, that is, anyone - allAuthenticatedUsers, anyone authenticated with a Google account - user:email, as in 'user:somebody@example.com' - group:email, as in 'group:admins@example.com' - domain:domainname, as in 'domain:example.com' - serviceAccount:email, as in 'serviceAccount:my-other-app@appspot.gserviceaccount.com' A role can be any IAM role, such as 'roles/viewer', 'roles/owner', or 'roles/editor' See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/consent before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery api version = "v1" service name = "healthcare" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the consent store's parent dataset ID consent store id = 'my-consent-store' # replace with the consent store's ID member = 'myemail@example.com' # replace with an authorized member role = 'roles/viewer' # replace with a Healthcare API IAM role consent store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) consent store name = " {} /consentStores/ {} " . format ( consent store parent , consent store id ) policy = { "bindings" : [{ "role" : role , "members" : [ member ]}]} if etag is not None : policy [ "etag" ] = etag request = ( client . projects () . locations () . datasets () . consentStores () . setIamPolicy ( resource = consent store name , body = { "policy" : policy }) ) response = request . execute () print ( "etag: {} " . format ( response . get ( "name" ))) print ( "bindings: {} " . format ( response . get ( "bindings" ))) return response curl Grant or revoke roles to users by modifying the policy that you retrieved, programmatically or using a text editor.
+- A member can be any of: - allUsers, that is, anyone - allAuthenticatedUsers, anyone authenticated with a Google account - user:email, as in 'user:somebody@example.com' - group:email, as in 'group:admins@example.com' - domain:domainname, as in 'domain:example.com' - serviceAccount:email, as in 'serviceAccount:my-other-app@appspot.gserviceaccount.com' A role can be any IAM role, such as 'roles/viewer', 'roles/owner', or 'roles/editor' See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery api version = "v1" service name = "healthcare" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID member = 'myemail@example.com' # replace with an authorized member role = 'roles/viewer' # replace with a Healthcare API IAM role dicom store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) dicom store name = f " { dicom store parent } /dicomStores/ { dicom store id } " policy = { "bindings" : [{ "role" : role , "members" : [ member ]}]} if etag is not None : policy [ "etag" ] = etag request = ( client . projects () . locations () . datasets () . dicomStores () . setIamPolicy ( resource = dicom store name , body = { "policy" : policy }) ) response = request . execute () print ( "etag: {} " . format ( response . get ( "name" ))) print ( "bindings: {} " . format ( response . get ( "bindings" ))) return response curl Grant or revoke roles to users by modifying the policy that you retrieved, programmatically or using a text editor.
+
+### "Transmitting HL7v2 messages over TCP/IP connections \_|\_ Cloud Healthcare\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter](https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter)
+- Source ID: `site-docs-root`
+- Final score: 164
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To view the message published to the Pub/Sub topic, run the gcloud pubsub subscriptions pull command: gcloud pubsub subscriptions pull --auto-ack PUBSUB SUBSCRIPTION The command returns the following output about the ingested HL7v2 message: ┌----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┐ DATA MESSAGE ID ATTRIBUTES ├----------------------------------------------------------------------------------------------------------------- ----------------- --------------- projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ HL7V2 MESSAGE ID 123456789012345 msgType = ADT └----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┘ You can also list the messages in your HL7v2 store to see if the message was added: curl curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } PowerShell $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = "Bearer $cred " } Invoke-WebRequest -Method Get -Headers $headers -ContentType: "application/json; charset=utf-8" ` -Uri "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" Select-Object -Expand Content If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } After completing this section, you have successfully deployed the MLLP adapter to GKE and, over a VPN, securely sent an HL7v2 message from an "on-premises" instance through the adapter and to the Cloud Healthcare API.
+- To view the message published to the Pub/Sub topic, run the gcloud pubsub subscriptions pull command: gcloud pubsub subscriptions pull --auto-ack PUBSUB SUBSCRIPTION The command returns the following output about the ingested HL7v2 message: ┌----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┐ DATA MESSAGE ID ATTRIBUTES ├----------------------------------------------------------------------------------------------------------------- ----------------- --------------- projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ HL7V2 MESSAGE ID 123456789012345 msgType = ADT └----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┘ You can also list the messages in your HL7v2 store to see if the message was added: curl curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } PowerShell $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = "Bearer $cred " } Invoke-WebRequest -Method Get -Headers $headers -ContentType: "application/json; charset=utf-8" -Uri "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" Select-Object -Expand Content If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } After completing this section, you have successfully deployed the MLLP adapter to GKE and sent an HL7v2 message from a remote instance through the adapter and to the Cloud Healthcare API.
+- The message is stored in your HL7v2 store, so you can call messages.list to view the message: curl curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } PowerShell $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = "Bearer $cred " } Invoke-WebRequest -Method Get -Headers $headers -ContentType: "application/json; charset=utf-8" -Uri "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" Select-Object -Expand Content If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } Testing the MLLP adapter locally as a publisher When testing the adapter as a publisher, you create messages by calling messages.create or messages.ingest and supplying a message file as binary data.
+- In the directory where you downloaded the file, call the messages.create method to create the message in an HL7v2 store: curl To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using curl and a sample JSON file called hl7v2-sample.json . curl -X POST \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ --data-binary @hl7v2-sample.json \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" If the request is successful, the server returns the response in JSON format: { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID ", "data": "TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZfEF8QXwyMDE4MDEwMTAwMDAwMHx8VFlQRV5BfDIwMTgwMTAxMDAwMDAwfFR8MC4wfHx8QUF8fDAwfEFTQ0lJDUVWTnxBMDB8MjAxODAxMDEwNDAwMDANUElEfHwxNAExMTFeXl5eTVJOfDExMTExMTExXl5eXk1STn4xMTExMTExMTExXl5eXk9SR05NQlI=", "sendFacility": "SEND FACILITY", "sendTime": "2018-01-01T00:00:00Z", "messageType": "TYPE", "createTime": "1970-01-01T00:00:00Z", "patientIds": [ { "value": "14\u0001111", "type": "MRN" }, { "value": "11111111", "type": "MRN" }, { "value": "1111111111", "type": "ORGNMBR" } ] } PowerShell To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using Windows PowerShell and a sample JSON file called hl7v2-sample.json . $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = "Bearer $cred " } Invoke-WebRequest -Method Post -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile hl7v2-sample.json -Uri "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID ", "data": "TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZfEF8QXwyMDE4MDEwMTAwMDAwMHx8VFlQRV5BfDIwMTgwMTAxMDAwMDAwfFR8MC4wfHx8QUF8fDAwfEFTQ0lJDUVWTnxBMDB8MjAxODAxMDEwNDAwMDANUElEfHwxNAExMTFeXl5eTVJOfDExMTExMTExXl5eXk1STn4xMTExMTExMTExXl5eXk9SR05NQlI=", "sendFacility": "SEND FACILITY", "sendTime": "2018-01-01T00:00:00Z", "messageType": "TYPE", "createTime": "1970-01-01T00:00:00Z", "patientIds": [ { "value": "14\u0001111", "type": "MRN" }, { "value": "11111111", "type": "MRN" }, { "value": "1111111111", "type": "ORGNMBR" } ] } After creating the message, the MLLP adapter returns a response similar to the following: I0214 00:00:00.000000 1 healthapiclient.go:244] Started to fetch message from the Cloud Healthcare API HL7V2 Store I0214 00:00:00.000000 1 healthapiclient.go:283] Message was successfully fetched from the Cloud Healthcare API HL7V2 Store.
 

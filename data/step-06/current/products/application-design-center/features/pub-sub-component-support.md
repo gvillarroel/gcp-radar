@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:09:51.619Z"
+generated_at: "2026-04-14T07:28:23.688Z"
 product_name: "Application Design Center"
 product_slug: "application-design-center"
 feature_name: "Pub/Sub component support"
@@ -10,17 +10,12 @@ deprecation_date: ""
 coverage_status: "LOW"
 source_links:
   - "https://docs.cloud.google.com/application-design-center/docs/design-application-templates"
-  - "https://docs.cloud.google.com/application-design-center/docs/release-notes"
-  - "https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud"
+  - "https://docs.cloud.google.com/application-design-center/docs/overview"
+  - "https://docs.cloud.google.com/application-design-center/docs/import-components"
 keywords:
-  - "pub"
-  - "sub"
-  - "application"
   - "component"
   - "supports"
-  - "design"
-  - "center"
-  - "as"
+  - "canvas"
 ---
 
 # Pub/Sub component support
@@ -38,13 +33,13 @@ Application Design Center supports Pub/Sub as a design-canvas component.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/application-design-center/docs/design-application-templates](https://docs.cloud.google.com/application-design-center/docs/design-application-templates)
-- [https://docs.cloud.google.com/application-design-center/docs/release-notes](https://docs.cloud.google.com/application-design-center/docs/release-notes)
-- [https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud](https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud)
+- [https://docs.cloud.google.com/application-design-center/docs/overview](https://docs.cloud.google.com/application-design-center/docs/overview)
+- [https://docs.cloud.google.com/application-design-center/docs/import-components](https://docs.cloud.google.com/application-design-center/docs/import-components)
 
 ## Supporting Pages
 
@@ -52,39 +47,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/application-design-center/docs/design-application-templates](https://docs.cloud.google.com/application-design-center/docs/design-application-templates)
 - Source ID: `site-docs-root`
-- Final score: 242
+- Final score: 28
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For example, you might create the following file for a Cloud Run component: [ { "key" : "service name" , "value" : "frontend-service" }, { "key" : "project id" , "value" : " DEPLOYMENT PROJECT " } ] Update each component in the application template to configure the required parameters. gcloud design-center spaces application-templates components update COMPONENT \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --parameters = PARAMETERS FILE PATH 1 \ --application-template = APPLICATION TEMPLATE Replace the following: COMPONENT : The component ID for the component that you want to update.
-- Create a connection between the two components. gcloud design-center spaces application-templates components connections create CONNECTION \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --application-template = APPLICATION TEMPLATE \ --component = COMPONENT \ --destination-component-uri = COMPONENT 2 Replace the following: CONNECTION : The connection ID for the connection that you want to add to the template.
-- Add a second component to your template. gcloud design-center spaces application-templates components create COMPONENT 2 \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --application-template = APPLICATION TEMPLATE \ --shared-template-revision-uri = SHARED TEMPLATE URI 2 Replace the following: COMPONENT 2 : The component ID for the second component that you want to add to the template.
-- Edit component connection parameters. gcloud design-center spaces application-templates components connections update CONNECTION \ --component = COMPONENT \ --application-template = APPLICATION TEMPLATE \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --source-component-parameters = '[{"key": SOURCE KEY , "value": SOURCE VALUE }]' Replace the following: CONNECTION : The connection ID.
+- Configure default values for components For each component that you add to the canvas, you can specify configuration details such as the project where the resource is created, and the location where it's deployed.
+- To create a communication channel between components, do one of the following: To connect two components on the canvas, drag from a blue dot on a component to a blue dot on another component.
+- Do one of the following to get started: To start from scratch, from the Components area, click a component to add it to the canvas area.
+- To configure components and connections, do the following: Design canvas From the design canvas, click a component.
 
-### Application Design Center release notes \_|\_ Google Cloud Documentation
+### Application Design Center overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-design-center/docs/release-notes](https://docs.cloud.google.com/application-design-center/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 234
+- URL: [https://docs.cloud.google.com/application-design-center/docs/overview](https://docs.cloud.google.com/application-design-center/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 26
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Feature Application Design Center supports the following components on the design canvas: Compute Engine instance template Compute Engine managed instance group Secret Manager Service account BigQuery Bigtable Cloud Run Cloud SQL (MySQL and PostgreSQL) Cloud Storage Cloud Load Balancing (global and regional) Memorystore for Redis Pub/Sub Spanner Vertex AI Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- September 22, 2025 Feature Application Design Center supports Cloud Run Jobs as a component.
-- July 29, 2025 Feature Application Design Center supports AlloyDB as a component.
-- Feature Application Design Center supports the following components: Google Kubernetes Engine (GKE) Node Pool GKE Standard Cluster GKE Autopilot Cluster Firestore Feature You can set up Application Design Center using a single project boundary.
+- Design and deployment approaches To determine the best design and deployment approach for your purpose, use the following table: Your goal Primary benefit Approach Visualize your architecture Real-time suggestions and visual layout Design canvas Rapid prototyping AI-driven starting points from requirements Natural language chat Automation and integration Repeatable, programmable workflows REST API Command-line management Efficient terminal-based operations Google Cloud CLI Team collaboration workflow Platform teams and developers work together to move from business requirements to a working application using the following example workflow: Set up collaboration : platform administrators create spaces and assign team access.
+- You can select from the following types of components: Google components : components designed by Google that incorporate Google Cloud best practices and default security configurations.
+- Components can include: Assets : supporting resources that help you control other resources, such as service accounts or secrets.
+- By using these components, you ensure that every part of your application follows security and performance standards.
 
-### "Application-centric Google Cloud \_|\_ Application Design Center \_|\_ Google\
+### Import components \_|\_ Application Design Center \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud](https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud)
-- Source ID: `site-iam-reference`
-- Final score: 218
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/application-design-center/docs/import-components](https://docs.cloud.google.com/application-design-center/docs/import-components)
+- Source ID: `site-docs-root`
+- Final score: 26
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Whether you use Application Design Center to build a new application or App Hub to organize your existing resources, the result is a defined application that is cataloged in App Hub and serves as the basis for unified operations.
-- Home Documentation Application development Application Design Center Guides Send feedback Application-centric Google Cloud Stay organized with collections Save and categorize content based on your preferences.
-- Application assistance : Get AI-powered support from Gemini Cloud Assist with tasks such as designing applications in Application Design Center, investigating issues, and optimizing your resources.
-- Application Design Center data : Elements such as application templates, catalogs, and spaces that are used to design and deploy new applications.
+- Application Design Center supports several Google Cloud products that you can add as components to your application.
+- For example, the following is a metadata.yaml file that you might create for a service account: spec : info : actuationTool : flavor : Terraform version : ">= 1.3" interfaces : # Optional variables : - name : service account connections : - source : source : github.com/terraform-google/terraform-google-service-accounts version : ">= 4.4" spec : outputExpr : email requirements : roles : # Optional after IAM integrations - level : Project roles : - roles/iam.serviceAccountUser - roles/iap.admin - roles/run.admin - roles/iam.serviceAccountAdmin providerVersions : - source : hashicorp/google version : ">= 6, < 7" - source : hashicorp/google-beta version : ">= 6, < 7" ui : # Optional input : variables : ca root module : name : ca root module title : Ca Root Module service account : name : service account title : Service Account Import from your repository You can create an App Design Center component by importing a Terraform module that is based on a single Google Cloud product.
+- Create a catalog template revision based on the Terraform module in your repository. gcloud design-center spaces catalogs templates revisions create REVISION \ --project = PROJECT \ --catalog = CATALOG \ --location = LOCATION \ --space = SPACE \ --template = COMPONENT TEMPLATE \ --developer-connect-repo = DEVELOPER CONNECT REPO \ --developer-connect-repo-ref = DEVELOPER CONNECT REPO REF \ --developer-connect-repo-dir = DEVELOPER CONNECT REPO DIR \ --metadata = METADATA Replace the following: REVISION : The revision ID for the revision that you want to create.
+- Create a connection between the two components. gcloud design-center spaces application-templates components connections create CONNECTION \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --application-template = APPLICATION TEMPLATE \ --component = COMPONENT \ --destination-component-uri = SHARED TEMPLATE URI 2 Replace the following: CONNECTION : The connection ID for the connection that you want to add to the template.
 

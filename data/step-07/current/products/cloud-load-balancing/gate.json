@@ -1,0 +1,2165 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-15T12:12:33.767Z",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "input_file": "data/step-06/current/products/cloud-load-balancing/extended-features.json",
+  "feature_count": 128,
+  "passed_feature_count": 128,
+  "failed_feature_count": 0,
+  "warned_feature_count": 3,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "GRPC_WITH_TLS health checks",
+      "feature_slug": "grpc-with-tls-health-checks",
+      "coverage_status": "LOW",
+      "source_link_count": 1,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    },
+    {
+      "feature_name": "Multi-NIC Dynamic NIC backends",
+      "feature_slug": "multi-nic-dynamic-nic-backends",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Failover for external Application Load Balancers",
+      "feature_slug": "failover-for-external-application-load-balancers",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "SNI-based routing for proxy Network Load Balancers",
+      "feature_slug": "sni-based-routing-for-proxy-network-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing"
+      ]
+    },
+    {
+      "feature_name": "Backend mutual TLS and backend authenticated TLS for cross-region internal Application Load Balancers",
+      "feature_slug": "backend-mutual-tls-and-backend-authenticated-tls-for-cross-region-internal-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-backend-mtls",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-setup",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "FIPS-compliant SSL policies",
+      "feature_slug": "fips-compliant-ssl-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Minimum TLS 1.3 enforcement in SSL policies",
+      "feature_slug": "minimum-tls-1-3-enforcement-in-ssl-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/custom-constraints",
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "In-flight balancing mode for Application Load Balancers",
+      "feature_slug": "in-flight-balancing-mode-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "feature_name": "Traffic duration setting for Application Load Balancers",
+      "feature_slug": "traffic-duration-setting-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Backend buckets for regional Application Load Balancers",
+      "feature_slug": "backend-buckets-for-regional-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-bucket",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Managed workload identity for backend mTLS",
+      "feature_slug": "managed-workload-identity-for-backend-mtls",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-backend-mtls",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-mtls-setup",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Regular expression matching in URL maps",
+      "feature_slug": "regular-expression-matching-in-url-maps",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Backend mutual TLS and backend authenticated TLS for regional Application Load Balancers",
+      "feature_slug": "backend-mutual-tls-and-backend-authenticated-tls-for-regional-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-backend-mtls",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-setup",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-mtls-setup"
+      ]
+    },
+    {
+      "feature_name": "GRPC_WITH_TLS health checks",
+      "feature_slug": "grpc-with-tls-health-checks",
+      "coverage_status": "LOW",
+      "source_link_count": 1,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    },
+    {
+      "feature_name": "Custom /96 IPv6 range for regional IPv6 forwarding rules",
+      "feature_slug": "custom-96-ipv6-range-for-regional-ipv6-forwarding-rules",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Authorization policies for Application Load Balancers",
+      "feature_slug": "authorization-policies-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "IPv6-only managed instance group backends for passthrough Network Load Balancers",
+      "feature_slug": "ipv6-only-managed-instance-group-backends-for-passthrough-network-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "feature_name": "Percentage-based request mirroring for external Application Load Balancers",
+      "feature_slug": "percentage-based-request-mirroring-for-external-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+      ]
+    },
+    {
+      "feature_name": "IPv6-only target instances for protocol forwarding",
+      "feature_slug": "ipv6-only-target-instances-for-protocol-forwarding",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "IPv6-only unmanaged instance group backends for passthrough Network Load Balancers",
+      "feature_slug": "ipv6-only-unmanaged-instance-group-backends-for-passthrough-network-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "feature_name": "Cloud Storage backend buckets for cross-region internal Application Load Balancers",
+      "feature_slug": "cloud-storage-backend-buckets-for-cross-region-internal-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-bucket",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "JA4 fingerprint request header variable",
+      "feature_slug": "ja4-fingerprint-request-header-variable",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "Large-key TLS certificates for Application and Proxy Network Load Balancers",
+      "feature_slug": "large-key-tls-certificates-for-application-and-proxy-network-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Zonal affinity for internal passthrough Network Load Balancers",
+      "feature_slug": "zonal-affinity-for-internal-passthrough-network-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "feature_name": "Backend mutual TLS and backend authenticated TLS for global external Application Load Balancers",
+      "feature_slug": "backend-mutual-tls-and-backend-authenticated-tls-for-global-external-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-backend-mtls",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-setup",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Multi-NIC Dynamic NIC backends",
+      "feature_slug": "multi-nic-dynamic-nic-backends",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Custom metrics for Application Load Balancers",
+      "feature_slug": "custom-metrics-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "H2C support for Application Load Balancers",
+      "feature_slug": "h2c-support-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+      ]
+    },
+    {
+      "feature_name": "Classic to global external Application Load Balancer migration",
+      "feature_slug": "classic-to-global-external-application-load-balancer-migration",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp"
+      ]
+    },
+    {
+      "feature_name": "Traffic isolation on service load balancing policy",
+      "feature_slug": "traffic-isolation-on-service-load-balancing-policy",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "TLS 1.3 to backends for global external Application Load Balancers",
+      "feature_slug": "tls-1-3-to-backends-for-global-external-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Cross-VPC frontend and backend deployment for Application and Proxy Network Load Balancers",
+      "feature_slug": "cross-vpc-frontend-and-backend-deployment-for-application-and-proxy-network-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Custom request headers referencing hop-by-hop headers",
+      "feature_slug": "custom-request-headers-referencing-hop-by-hop-headers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "feature_name": "Connection draining for UDP and non-TCP traffic",
+      "feature_slug": "connection-draining-for-udp-and-non-tcp-traffic",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "feature_name": "TLS 1.3 early data support",
+      "feature_slug": "tls-1-3-early-data-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "feature_name": "Failover for external Application Load Balancers",
+      "feature_slug": "failover-for-external-application-load-balancers",
+      "coverage_status": "LOW",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "coverage_low",
+          "message": "The feature ended with coverage LOW.",
+          "suggested_steps": [
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    },
+    {
+      "feature_name": "Dual-stack backends for Application and proxy Network Load Balancers",
+      "feature_slug": "dual-stack-backends-for-application-and-proxy-network-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "feature_name": "Percentage-based request mirroring for internal Application Load Balancers",
+      "feature_slug": "percentage-based-request-mirroring-for-internal-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "feature_name": "Custom constraints for Cloud Load Balancing resources",
+      "feature_slug": "custom-constraints-for-cloud-load-balancing-resources",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/custom-constraints",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "feature_name": "IPv6 static routes with next-hop internal passthrough Network Load Balancer",
+      "feature_slug": "ipv6-static-routes-with-next-hop-internal-passthrough-network-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "feature_name": "Service Extensions plugins for Application Load Balancers",
+      "feature_slug": "service-extensions-plugins-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "feature_name": "Stateful cookie-based session affinity",
+      "feature_slug": "stateful-cookie-based-session-affinity",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "feature_name": "IPv6 traffic support for global external Application and proxy Network Load Balancers",
+      "feature_slug": "ipv6-traffic-support-for-global-external-application-and-proxy-network-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "feature_name": "Console support for Premium Tier regional load balancers",
+      "feature_slug": "console-support-for-premium-tier-regional-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "feature_name": "Client HTTP keepalive timeout",
+      "feature_slug": "client-http-keepalive-timeout",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "TLS session ID resumption",
+      "feature_slug": "tls-session-id-resumption",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp"
+      ]
+    },
+    {
+      "feature_name": "Frontend mutual TLS for Application Load Balancers",
+      "feature_slug": "frontend-mutual-tls-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "feature_name": "Dual-stack backends for regional and cross-region proxy load balancers",
+      "feature_slug": "dual-stack-backends-for-regional-and-cross-region-proxy-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "feature_name": "Preferred backends",
+      "feature_slug": "preferred-backends",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "feature_name": "Service load balancing policy",
+      "feature_slug": "service-load-balancing-policy",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "feature_name": "Cross-project service referencing",
+      "feature_slug": "cross-project-service-referencing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "feature_name": "Bring Your Own IP for IPv6 with external passthrough Network Load Balancer",
+      "feature_slug": "bring-your-own-ip-for-ipv6-with-external-passthrough-network-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing"
+      ]
+    },
+    {
+      "feature_name": "Dual-stack frontends and backends for global external proxy load balancers",
+      "feature_slug": "dual-stack-frontends-and-backends-for-global-external-proxy-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "feature_name": "Multi-protocol internal passthrough Network Load Balancer",
+      "feature_slug": "multi-protocol-internal-passthrough-network-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "https://docs.cloud.google.com/load-balancing/docs/network"
+      ]
+    },
+    {
+      "feature_name": "Certificate Manager allowlisted certificates for Application Load Balancers",
+      "feature_slug": "certificate-manager-allowlisted-certificates-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Cross-region internal Application Load Balancer",
+      "feature_slug": "cross-region-internal-application-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "feature_name": "Cross-region internal proxy Network Load Balancer",
+      "feature_slug": "cross-region-internal-proxy-network-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/negs",
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts"
+      ]
+    },
+    {
+      "feature_name": "Google-managed certificates for cross-region internal Application Load Balancer",
+      "feature_slug": "google-managed-certificates-for-cross-region-internal-application-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "feature_name": "Flexible pattern matching for URL maps",
+      "feature_slug": "flexible-pattern-matching-for-url-maps",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "Path template rewrite from pattern matches",
+      "feature_slug": "path-template-rewrite-from-pattern-matches",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https"
+      ]
+    },
+    {
+      "feature_name": "Frontend mutual TLS for regional and internal Application Load Balancers",
+      "feature_slug": "frontend-mutual-tls-for-regional-and-internal-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "feature_name": "Load balancer selection wizard",
+      "feature_slug": "load-balancer-selection-wizard",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Certificate Manager certificates for regional Application Load Balancers",
+      "feature_slug": "certificate-manager-certificates-for-regional-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "feature_name": "Global external proxy Network Load Balancer",
+      "feature_slug": "global-external-proxy-network-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/choosing-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "Custom error responses",
+      "feature_slug": "custom-error-responses",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "feature_name": "Zonal NEG backends for external passthrough Network Load Balancer",
+      "feature_slug": "zonal-neg-backends-for-external-passthrough-network-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-internal-zonal-neg",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring"
+      ]
+    },
+    {
+      "feature_name": "Network Service Tier selection for regional load balancers",
+      "feature_slug": "network-service-tier-selection-for-regional-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/network"
+      ]
+    },
+    {
+      "feature_name": "Single-port forwarding rules for Application Load Balancers",
+      "feature_slug": "single-port-forwarding-rules-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "Regional internet NEG backends for regional load balancers",
+      "feature_slug": "regional-internet-neg-backends-for-regional-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Service Extensions callouts for Application Load Balancers",
+      "feature_slug": "service-extensions-callouts-for-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "Frontend mutual TLS for global external Application Load Balancers",
+      "feature_slug": "frontend-mutual-tls-for-global-external-application-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "feature_name": "Distributed Envoy health checks",
+      "feature_slug": "distributed-envoy-health-checks",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    },
+    {
+      "feature_name": "Private IPv6 for internal passthrough Network Load Balancer",
+      "feature_slug": "private-ipv6-for-internal-passthrough-network-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "feature_name": "Equivalent API code in Cloud Load Balancing Console",
+      "feature_slug": "equivalent-api-code-in-cloud-load-balancing-console",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/custom-constraints",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "feature_name": "Weighted load balancing",
+      "feature_slug": "weighted-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    },
+    {
+      "feature_name": "Logging for Network Load Balancing and Internal TCP/UDP Load Balancing",
+      "feature_slug": "logging-for-network-load-balancing-and-internal-tcp-udp-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging"
+      ]
+    },
+    {
+      "feature_name": "Private IPv6 for Internal TCP/UDP Load Balancing",
+      "feature_slug": "private-ipv6-for-internal-tcp-udp-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "Global external Application Load Balancer",
+      "feature_slug": "global-external-application-load-balancer",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https"
+      ]
+    },
+    {
+      "feature_name": "GRE traffic support for external TCP/UDP Network Load Balancing",
+      "feature_slug": "gre-traffic-support-for-external-tcp-udp-network-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "feature_name": "Traffic steering for external TCP/UDP network load balancers",
+      "feature_slug": "traffic-steering-for-external-tcp-udp-network-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "feature_name": "Regional SSL policies for regional HTTP(S) load balancers",
+      "feature_slug": "regional-ssl-policies-for-regional-http-s-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/network"
+      ]
+    },
+    {
+      "feature_name": "Cloud Run backends for regional HTTP(S) load balancers",
+      "feature_slug": "cloud-run-backends-for-regional-http-s-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "feature_name": "Backend subsetting for internal HTTP(S) load balancers",
+      "feature_slug": "backend-subsetting-for-internal-http-s-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "feature_name": "Cloud Armor for TCP Proxy and SSL Proxy load balancers",
+      "feature_slug": "cloud-armor-for-tcp-proxy-and-ssl-proxy-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts"
+      ]
+    },
+    {
+      "feature_name": "Backend subsetting for internal TCP/UDP load balancers",
+      "feature_slug": "backend-subsetting-for-internal-tcp-udp-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "feature_name": "Mixed zonal and hybrid NEG backends for global external HTTP(S) load balancers",
+      "feature_slug": "mixed-zonal-and-hybrid-neg-backends-for-global-external-http-s-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 2,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+      ]
+    },
+    {
+      "feature_name": "ExternalNetworkLoadBalancerRule monitoring resource",
+      "feature_slug": "externalnetworkloadbalancerrule-monitoring-resource",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 2,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring"
+      ]
+    },
+    {
+      "feature_name": "Source-IP session affinity for Internal TCP/UDP Load Balancing",
+      "feature_slug": "source-ip-session-affinity-for-internal-tcp-udp-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 1,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "feature_name": "Connection tracking policy for external TCP/UDP Network Load Balancing",
+      "feature_slug": "connection-tracking-policy-for-external-tcp-udp-network-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "feature_name": "ESP and ICMP support for Network Load Balancing",
+      "feature_slug": "esp-and-icmp-support-for-network-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts"
+      ]
+    },
+    {
+      "feature_name": "External Network Load Balancer rule monitoring resource",
+      "feature_slug": "external-network-load-balancer-rule-monitoring-resource",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "https://docs.cloud.google.com/load-balancing/docs/network"
+      ]
+    },
+    {
+      "feature_name": "Internal HTTP(S) Load Balancing cross-project service referencing",
+      "feature_slug": "internal-http-s-load-balancing-cross-project-service-referencing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "HTTP/3 support",
+      "feature_slug": "http-3-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/optimize-app-latency",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/faster-performance-improved-protection"
+      ]
+    },
+    {
+      "feature_name": "Symmetric hashing for internal TCP/UDP load balancers as next hops",
+      "feature_slug": "symmetric-hashing-for-internal-tcp-udp-load-balancers-as-next-hops",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "feature_name": "ESP and ICMP traffic support for Network Load Balancing",
+      "feature_slug": "esp-and-icmp-traffic-support-for-network-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "feature_name": "Zonal NEG backends for internal TCP/UDP load balancers",
+      "feature_slug": "zonal-neg-backends-for-internal-tcp-udp-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-internal-zonal-neg",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring"
+      ]
+    },
+    {
+      "feature_name": "UDP session affinity for internal TCP/UDP load balancers",
+      "feature_slug": "udp-session-affinity-for-internal-tcp-udp-load-balancers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "feature_name": "Health check logging",
+      "feature_slug": "health-check-logging",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks"
+      ]
+    },
+    {
+      "feature_name": "Backend services for external TCP/UDP Network Load Balancing",
+      "feature_slug": "backend-services-for-external-tcp-udp-network-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "Port information in HTTP request IP log fields",
+      "feature_slug": "port-information-in-http-request-ip-log-fields",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https"
+      ]
+    },
+    {
+      "feature_name": "Serverless NEG support for external HTTP(S) Load Balancing",
+      "feature_slug": "serverless-neg-support-for-external-http-s-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "Global internet NEGs",
+      "feature_slug": "global-internet-negs",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/negs",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Configurable idle timeouts for internal HTTP(S) Load Balancing",
+      "feature_slug": "configurable-idle-timeouts-for-internal-http-s-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "feature_name": "IAM Conditions forwarding rule attributes",
+      "feature_slug": "iam-conditions-forwarding-rule-attributes",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "Connected network access for internal HTTP(S) Load Balancing",
+      "feature_slug": "connected-network-access-for-internal-http-s-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "Multiple NIC load balancing for internal TCP/UDP backends",
+      "feature_slug": "multiple-nic-load-balancing-for-internal-tcp-udp-backends",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "Global access for internal TCP/UDP Load Balancing",
+      "feature_slug": "global-access-for-internal-tcp-udp-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "feature_name": "Network Load Balancing monitoring",
+      "feature_slug": "network-load-balancing-monitoring",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "Internal TCP/UDP load balancer next-hop support",
+      "feature_slug": "internal-tcp-udp-load-balancer-next-hop-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "feature_name": "Internal HTTP(S) Load Balancing",
+      "feature_slug": "internal-http-s-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    },
+    {
+      "feature_name": "Multiple domains for Google-managed SSL certificates",
+      "feature_slug": "multiple-domains-for-google-managed-ssl-certificates",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/go/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "HTTP(S) Load Balancing logging",
+      "feature_slug": "http-s-load-balancing-logging",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https"
+      ]
+    },
+    {
+      "feature_name": "HTTP/2 health checks",
+      "feature_slug": "http-2-health-checks",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "feature_name": "HTTP/2 to backends",
+      "feature_slug": "http-2-to-backends",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/choosing-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "User-defined request headers",
+      "feature_slug": "user-defined-request-headers",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "Network endpoint groups",
+      "feature_slug": "network-endpoint-groups",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/negs",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "Traffic Director",
+      "feature_slug": "traffic-director",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "Failover groups for internal TCP/UDP Load Balancing",
+      "feature_slug": "failover-groups-for-internal-tcp-udp-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "feature_name": "Content-based HTTP(S) health checks",
+      "feature_slug": "content-based-http-s-health-checks",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-backend-mtls"
+      ]
+    },
+    {
+      "feature_name": "HTTP/2 and gRPC to backend VMs",
+      "feature_slug": "http-2-and-grpc-to-backend-vms",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "QUIC support for HTTPS Load Balancing",
+      "feature_slug": "quic-support-for-https-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/faster-performance-improved-protection",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "SSL policies",
+      "feature_slug": "ssl-policies",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "feature_name": "Access to internal load balancing across VPN or Interconnect",
+      "feature_slug": "access-to-internal-load-balancing-across-vpn-or-interconnect",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/choosing-load-balancer"
+      ]
+    },
+    {
+      "feature_name": "IPv6 termination",
+      "feature_slug": "ipv6-termination",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain"
+      ]
+    },
+    {
+      "feature_name": "Multiple SSL certificate support",
+      "feature_slug": "multiple-ssl-certificate-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "feature_name": "Regional instance groups for Internal Load Balancing",
+      "feature_slug": "regional-instance-groups-for-internal-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    },
+    {
+      "feature_name": "TCP Proxy Load Balancing",
+      "feature_slug": "tcp-proxy-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/choosing-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp"
+      ]
+    },
+    {
+      "feature_name": "WebSocket support for HTTP(S) Load Balancing",
+      "feature_slug": "websocket-support-for-http-s-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity"
+      ]
+    },
+    {
+      "feature_name": "Google Cloud Storage backend support for HTTP(S) Load Balancing",
+      "feature_slug": "google-cloud-storage-backend-support-for-http-s-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-backend-mtls",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "feature_name": "HTTP(S) Load Balancing",
+      "feature_slug": "http-s-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https"
+      ]
+    },
+    {
+      "feature_name": "HTTPS Load Balancing",
+      "feature_slug": "https-load-balancing",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain"
+      ]
+    }
+  ]
+}

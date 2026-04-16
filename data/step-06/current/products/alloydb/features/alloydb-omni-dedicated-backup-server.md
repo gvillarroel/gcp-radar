@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.603Z"
+generated_at: "2026-04-12T12:07:33.847Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB Omni dedicated backup server"
@@ -9,7 +9,10 @@ latest_feature_date: "2024-08-05"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/overview"
+  - "https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.AlloyDBAdminClient"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_dbcsql_admin.AlloyDBCSQLAdminAsyncClient"
 keywords:
   - "backup server role"
   - "backup workflow"
@@ -31,26 +34,48 @@ AlloyDB Omni introduces a dedicated backup server to streamline backup operation
 
 ## Extended Definition
 
-In AlloyDB release notes, a feature is described as introducing a dedicated backup server intended to streamline backup operations. The same notes also mention enhanced backup support that can integrate a cluster’s backup workflow with Google Cloud Backup and DR Service (Preview), indicating this server is part of that backup enhancement path.
+AlloyDB Omni introduces a dedicated backup server to streamline backup operations.
 
 ## Evidence Summary
 
-The AlloyDB for PostgreSQL release notes provide brief evidence of a dedicated backup server and note its relationship to enhanced backup workflow integration with Google Cloud Backup and DR Service.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+- [https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups](https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.AlloyDBAdminClient](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.AlloyDBAdminClient)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_dbcsql_admin.AlloyDBCSQLAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_dbcsql_admin.AlloyDBCSQLAdminAsyncClient)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### AlloyDB overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 54
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- A dedicated backup server for streamlined backup operations.
-- October 30, 2025 Feature AlloyDB offers enhanced backups ( Preview ) that integrate a cluster's backup operations with the Google Cloud Backup and DR Service .
+### "Manage enhanced backups \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups](https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups)
+- Source ID: `site-docs-reference-2`
+- Final score: 52
+- Re-rank relevance: N/A
+
+### "Class AlloyDBAdminClient (0.7.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.AlloyDBAdminClient](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.AlloyDBAdminClient)
+- Source ID: `site-python-reference`
+- Final score: 50
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Class AlloyDBCSQLAdminAsyncClient (0.7.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_dbcsql_admin.AlloyDBCSQLAdminAsyncClient](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_dbcsql_admin.AlloyDBCSQLAdminAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 50
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

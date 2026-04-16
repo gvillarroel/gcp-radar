@@ -1,0 +1,83 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T05:27:18.134Z"
+product_name: "Apigee X"
+product_slug: "apigee-x"
+feature_name: "MCP in Apigee OAS server URL path handling"
+feature_slug: "mcp-in-apigee-oas-server-url-path-handling"
+latest_feature_date: "2026-03-31"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/api-gateway/docs/creating-api-config"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+keywords:
+  - "handling"
+  - "path"
+  - "server"
+---
+
+# MCP in Apigee OAS server URL path handling
+
+Product: Apigee X
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+MCP in Apigee now combines the OpenAPI server.url base path with operation paths according to the OAS standard.
+
+## Extended Definition
+
+MCP in Apigee now combines the OpenAPI server.url base path with operation paths according to the OAS standard.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/api-gateway/docs/creating-api-config](https://docs.cloud.google.com/api-gateway/docs/creating-api-config)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart)
+
+## Supporting Pages
+
+### Create an API config | API Gateway | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/api-gateway/docs/creating-api-config](https://docs.cloud.google.com/api-gateway/docs/creating-api-config)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 103
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If the managedService in your API definition is set to an ESPv2 Beta service, make sure that the host field (OpenAPI 2.0) or server.url field (OpenAPI 3.x) is set to an x-google-endpoint extension in your API config.
+- Create an API config | API Gateway | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in API Gateway Start free Overview Guides Reference Support Resources Technology areas More Overview Guides Reference Support Resources Cross-product tools More Console API Gateway Quickstarts All quickstarts Quickstart: Use the gcloud command-line tool Quickstart: Use the Cloud console Tutorials All tutorials Get started with API Gateway and App Engine Get started with API Gateway and Cloud Run Get started with API Gateway and Cloud Run for gRPC Get started with API Gateway and Cloud Functions Get started with load balancing for API Gateway Get started centralizing APIs with API hub How-to guides All how-to guides Create and deploy an API About the development environment Configure the development environment Create an API Create an API config Configure a gRPC service Deploy an API to a gateway Pass data to and from the backend service Troubleshooting & monitoring Troubleshooting Monitor your API Trace your API Access audit logs Access platform logs Authentication & API Keys Choose an authentication method Authenticate users Use JWT to authenticate users Use Firebase to authenticate users Use Auth0 to authenticate users Use Okta to authenticate users Use Google ID tokens to authenticate users Authentication between services Secure backend services Use API Keys Manage API access Limit API requests About quotas Use custom domains Create multi-region deployments Deploy Cloud Endpoints APIs Centralize APIs using API hub Overview Connect API Gateway with API hub View API Gateway APIs in API hub Remove an API Gateway connection from API hub Concepts All concepts About API Gateway API Gateway architecture API Gateway deployment model OpenAPI OpenAPI overview Modify a gateway to use OpenAPI 3.x OpenAPI 2.0 extensions OpenAPI 3.x extensions OpenAPI 2.0 feature limitations OpenAPI 3.x feature limitations gRPC overview Load balancing for API Gateway Path templating CMEK compliance in API Gateway Glossary AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development API Gateway Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- Validate the project ID returned from the following command to make sure that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace PROJECT_ID with the Google Cloud project ID in which you want to create the service: gcloud config set project PROJECT_ID View help for the api-configs create command: gcloud api-gateway api-configs create --help Run the following command to create the API config: gcloud api-gateway api-configs create CONFIG_ID \ --api= API_ID --openapi-spec= API_DEFINITION \ --project= PROJECT_ID --backend-auth-service-account= SERVICE_ACCOUNT_EMAIL where: CONFIG_ID specifies the ID of the new API config.
+- For example: gcloud api-gateway api-configs create CONFIG_ID \ --api= API_ID --openapi-spec= API_DEFINITION \ --backend-auth-service-account= SERVICE_ACCOUNT_EMAIL \ --async --display-name=MyConfig --labels=a=1,b=2 You can see the labels in the output of the describe command shown, or in the list command by including the --format option: gcloud api-gateway api-configs list \ --api= API_ID --format="table(name, labels)" List API configs List all of the API Gateways deployed in your Google Cloud project.
+
+### Get started with Apigee and MCP \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart)
+- Source ID: `site-docs-reference`
+- Final score: 83
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Add the following content to the file: mcp-quickstart-openapi.yaml --- openapi : 3.0.3 info : title : Cymbal Group Products API description : This is the official API for managing the artists for Cymbal Group Products. version : 1.0.0 servers : - url : https://cymbal.products.com description : Cymbal Group Production Server - url : https://internal.products.com description : Cymbal Group internal Server paths : /artists : get : description : Returns a list of artists operationId : listArtists parameters : - name : limit in : query description : Limits the number of items on a page schema : type : integer - name : offset in : query description : Specifies the page number of the artists to be displayed schema : type : integer responses : "200" : description : An array of artists content : application/json : schema : type : array items : $ref : "#/components/schemas/Artist" post : summary : Create a new artist operationId : createArtist tags : - artists requestBody : description : The artist to create. required : true content : application/json : schema : $ref : "#/components/schemas/Artist" responses : "201" : description : The newly created artist profile content : application/json : schema : $ref : "#/components/schemas/Artist" "400" : description : Invalid username supplied /artists/{username} : get : summary : Info for a specific artist operationId : showArtistByUsername tags : - artists parameters : - name : username in : path required : true description : The username of the artist to retrieve schema : type : string responses : "200" : description : Expected response to a valid request content : application/json : schema : $ref : "#/components/schemas/Artist" "404" : description : Artist not found components : securitySchemes : bearerAuth : type : http scheme : bearer oauth2 : type : oauth2 flows : authorizationCode : authorizationUrl : /oauth/authorize tokenUrl : /oauth/token scopes : artists.read : Grants read access artists.write : Grants write access schemas : Artist : type : object required : - id properties : id : type : string format : uuid description : Unique identifier for the artist Hostname matching requirement It is critical that the value of the hostname in the servers.url field of the OpenAPI specification is an exact match for the environment group hostname of the Apigee environment where the MCP Discovery Proxy is deployed.
+- OpenAPI Specification The value of the servers.url field of the OpenAPI specification must be an exact match for the environment group hostname of the Apigee environment where the MCP Discovery Proxy is deployed. https://cymbal.products.com If the servers.url host name does not match the hostname of the environment group corresponding to the Apigee environment where the MCP Discovery Proxy is deployed, you will get an error when deploying the proxy.
+- After the proxy is deployed, confirm that the value of the hostname in the servers.url field of the OpenAPI specification is an exact match for the environment group hostname of the Apigee environment where the MCP Discovery Proxy is deployed.
+- The API Hub ingestion pipeline automatically maps the paths defined in your OpenAPI specification to individual MCP tools listed in the hub.
+
+### Streaming server-sent events \_|\_ Apigee \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events](https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 82
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This step ensures that the EventFlow processes the policy during response handling: <TargetEndpoint> < ? xml version = "1.0" encoding = "UTF-8" standalone = "yes" ? > < TargetEndpoint name = "default" > < EventFlow content - type = "text/event-stream" > < Response > < Step > < Name>js - error < / Name > < / Step > < / Response > < / EventFlow > < HTTPTargetConnection > < URL>https : //generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent</URL> < / HTTPTargetConnection > < / TargetEndpoint > <ProxyEndpoint> < ? xml version = "1.0" encoding = "UTF-8" standalone = "yes" ? > < ProxyEndpoint name = "default" > < EventFlow content - type = "text/event-stream" > < Response > < Step > < Name>js - error < / Name > < / Step > < / Response > < / EventFlow > < HTTPProxyConnection > < URL>https : //generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent</URL> < / HTTPProxyConnection > < / ProxyEndpoint > Deploy the API proxy.
+- EventFlow use cases and examples The following examples show how to implement common use cases for SSE proxies: Modify an SSE response Filter an SSE response Send an SSE event to an external system Use an Apigee Model Armor policy in an EventFlows Error handling in the EventFlow Propagate fault messages in an EventFlow Modify an SSE response This example shows how to remove data from an SSE EventFlow response before returning it to the client.
+- Call the deployed proxy: curl -X POST -H 'Content-Type: application/json' \ "https:// YOUR APIGEE ENVIRONMENT GROUP HOSTNAME / YOUR API PATH " \ -d '{ "contents":[{"parts":[{"text": "Write a story about a magic pen."}]}]}' Show a sample response Here's a sample of how the response might look without applying any filtering.
+- Call the deployed proxy: curl -X POST -H 'Content-Type: application/json' \ "https:// YOUR APIGEE ENVIRONMENT GROUP HOSTNAME / YOUR API PATH " \ -d '{ "contents":[{"parts":[{"text": "Write a story about a magic pen."}]}]}' Show a sample response This is a sample response without any filtering applied.
+

@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.381Z"
+generated_at: "2026-04-12T12:13:45.737Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Dataplex repository metadata search and view"
 feature_slug: "dataplex-repository-metadata-search-and-view"
 latest_feature_date: "2024-12-19"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataform/docs/overview"
-  - "https://docs.cloud.google.com/dataform/docs/release-notes"
+  - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
   - "https://docs.cloud.google.com/dataform/docs/access-control"
 keywords:
   - "dataplex"
@@ -26,7 +27,7 @@ keywords:
 # Dataplex repository metadata search and view
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ This feature lets users search for and view Dataform repository metadata in the 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataform/docs/overview](https://docs.cloud.google.com/dataform/docs/overview)
-- [https://docs.cloud.google.com/dataform/docs/release-notes](https://docs.cloud.google.com/dataform/docs/release-notes)
+- [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient)
 - [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 
 ## Supporting Pages
@@ -52,9 +54,8 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataform/docs/overview](https://docs.cloud.google.com/dataform/docs/overview)
 - Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 197
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - In a Dataform workspace, you can develop the following workflow actions: Source data declarations Tables and views Incremental tables Table partitions and clusters Dependencies between actions Documentation of tables Custom SQL operations BigQuery labels BigQuery policy tags Dataform tags Data quality tests, called assertions You can use JavaScript to reuse your Dataform workflow code in the following ways: Across a file with code encapsulation Across a repository with includes Across repositories with packages Dataform compiles the workflow code in your workspace in real-time.
@@ -62,24 +63,37 @@ Evidence snippets:
 - The following code sample shows you how to define the output table type, document the table, and define a quality test in a config block of a SQLX file. config { type : "table" , description : "This table joins orders information from OnlineStore & payment information from PaymentApp" , columns : { order date : "The date when a customer placed their order" , id : "Order ID as defined by OnlineStore" , order status : "The status of an order e.g. sent, delivered" , customer id : "Unique customer ID" , payment status : "The status of a payment e.g. pending, paid" , payment method : "How the customer chose to pay" , item count : "The number of items the customer ordered" , amount : "The amount the customer paid" } , assertions : { uniqueKey : [ "id" ] } } SQLX file body In the body of a SQLX file, you can perform the following actions: Define a table and its dependencies.
 - To debug errors, you can monitor runs in the following ways: View detailed Dataform execution logs View audit logs for Dataform View Cloud Logging logs for Dataform Dataform core Dataform core is an open source meta-language to create SQL tables and workflows.
 
-### Dataform release notes \_|\_ Google Cloud Documentation
+### "Class DataformAsyncClient (0.10.0) \_|\_ Python client libraries \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/dataform/docs/release-notes](https://docs.cloud.google.com/dataform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 144
+- URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 163
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- July 14, 2025 Feature Updates to the automatic cataloging of Dataform metadata in Dataplex improve the near real-time management and search capabilities for repository metadata.
-- December 19, 2024 Feature You can now search for and view the metadata of Dataform repositories in the Dataplex console.
-- This feature lets you organize code assets like notebooks and saved queries into a hierarchical structure with IAM policy inheritance.
-- This feature enhances security by requiring users to have the iam.serviceAccounts.actAs permission on the service account used to run workflows, ensuring a more secure and predictable permissions model for your Dataform projects.
+- This corresponds to the repository id field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- CommitRepositoryChangesRequest ( name="name value", commit metadata=commit metadata, ) Make the request response = await client. commit repository changes (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataform v1.types.CommitRepositoryChangesRequest , dict]] The request object.
+- Configuration containing file search request parameters. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- ComputeRepositoryAccessTokenStatus request message. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+
+### "Class DataformClient (0.10.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient)
+- Source ID: `site-python-reference`
+- Final score: 163
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This corresponds to the repository id field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- CommitRepositoryChangesRequest ( name="name value", commit metadata=commit metadata, ) Make the request response = client. commit repository changes (request=request) Handle the response print(response) Parameters Name Description request Union[ google.cloud.dataform v1.types.CommitRepositoryChangesRequest , dict] The request object.
+- Configuration containing file search request parameters. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+- ComputeRepositoryAccessTokenStatus request message. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
 
 ### Control access with IAM \_|\_ Dataform \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/dataform/docs/access-control](https://docs.cloud.google.com/dataform/docs/access-control)
 - Source ID: `site-docs-root-2`
-- Final score: 128
+- Final score: 162
 - Re-rank relevance: N/A
 
 Evidence snippets:

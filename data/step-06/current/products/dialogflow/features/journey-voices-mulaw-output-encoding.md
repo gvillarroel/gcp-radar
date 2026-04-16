@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.031Z"
+generated_at: "2026-04-14T00:17:30.338Z"
 product_name: "Dialogflow"
 product_slug: "dialogflow"
 feature_name: "Journey Voices MULAW output encoding"
 feature_slug: "journey-voices-mulaw-output-encoding"
 latest_feature_date: "2024-09-19"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn"
+  - "https://docs.cloud.google.com/dialogflow/docs/contexts-input-output"
+  - "https://docs.cloud.google.com/dialogflow/es/docs/contexts-input-output"
 keywords:
   - "journey"
   - "voices"
@@ -17,14 +19,14 @@ keywords:
   - "output"
   - "encoding"
   - "text"
-  - "to"
   - "speech"
+  - "dialogflow"
 ---
 
 # Journey Voices MULAW output encoding
 
 Product: Dialogflow
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,57 @@ Text-to-Speech Journey Voices in Dialogflow CX and ES support MULAW output audio
 
 Text-to-Speech Journey Voices in Dialogflow CX and ES support MULAW output audio encoding in addition to LINEAR16.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn)
+- [https://docs.cloud.google.com/dialogflow/docs/contexts-input-output](https://docs.cloud.google.com/dialogflow/docs/contexts-input-output)
+- [https://docs.cloud.google.com/dialogflow/es/docs/contexts-input-output](https://docs.cloud.google.com/dialogflow/es/docs/contexts-input-output)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### ConversationTurn \_|\_ Dialogflow CX \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn)
+- Source ID: `site-docs-reference`
+- Final score: 129
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON representation UserInput JSON representation QueryInput JSON representation TextInput JSON representation IntentInput JSON representation AudioInput JSON representation InputAudioConfig JSON representation AudioEncoding SpeechModelVariant BargeInConfig JSON representation EventInput JSON representation DtmfInput JSON representation ToolCallResult JSON representation Error JSON representation VirtualAgentOutput JSON representation TestRunDifference JSON representation DiffType One interaction between a human and virtual agent.
+- The input specification. input can be only one of the following: text object ( TextInput ) The natural language text to be processed. intent object ( IntentInput ) The intent to be triggered. audio object ( AudioInput ) The natural language speech audio to be processed. event object ( EventInput ) The event to be triggered. dtmf object ( DtmfInput ) The DTMF event to be handled. toolCallResult object ( ToolCallResult ) The results of a tool executed by the client.
+- JSON representation { "sessionParameters" : { object } , "differences" : [ { object ( TestRunDifference ) } ] , "diagnosticInfo" : { object } , "triggeredIntent" : { object ( Intent ) } , "currentPage" : { object ( Page ) } , "textResponses" : [ { object ( Text ) } ] , "status" : { object ( Status ) } } Fields sessionParameters object ( Struct format) The session parameters available to the bot at this point. differences[] object ( TestRunDifference ) Output only.
+- JSON representation { "audioEncoding" : enum ( AudioEncoding ) , "sampleRateHertz" : integer , "enableWordInfo" : boolean , "phraseHints" : [ string ] , "model" : string , "modelVariant" : enum ( SpeechModelVariant ) , "singleUtterance" : boolean , "bargeInConfig" : { object ( BargeInConfig ) } , "optOutConformerModelMigration" : boolean } Fields audioEncoding enum ( AudioEncoding ) Required.
+
+### Input and output contexts \_|\_ Dialogflow ES \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/docs/contexts-input-output](https://docs.cloud.google.com/dialogflow/docs/contexts-input-output)
+- Source ID: `site-docs-root-2`
+- Final score: 117
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Dialogflow Dialogflow ES Send feedback Input and output contexts Stay organized with collections Save and categorize content based on your preferences.
+- For example, consider the following intents: Intent name Training phrases Parameters Input contexts Output contexts Response pet-init "What do they look like?" - - - "What kind of pet do you like?" pet-select-dogs "I like dogs" - - dogs "What do you want to know about dogs?" pet-select-cats "I like cats" - - cats "What do you want to know about cats?" dog-show "What do they look like?" - dogs - "Here is a picture of a dog." cat-show "What do they look like?" - cats - "Here is a picture of a cat." When the end-user says I like dogs : The pet-select-dogs intent is matched.
+- For example, consider the following variation of the pet example above: Intent name Training phrases Parameters Input contexts Output contexts Response pet-init "What do they look like?" - - - "What kind of pet do you like?" pet-select "I like dogs ", "I like cats " pet - pet-chosen "What do you want to know about $pet?" pet-show "What do they look like?" - pet-chosen - "Here is a picture of a #pet-chosen.pet." When the end-user says I like dogs or I like cats : The pet-select intent is matched.
+- For example, consider the following intent descriptions for a pet information agent: Intent name Training phrases Parameters Input contexts Output contexts Response pet-init "What do they look like?", "What do they sound like?", "How big are they?" - - - "What kind of pet do you like?" pet-select "I like dogs ", "I like cats " pet - pet-chosen (lifespan = 2) "What do you want to know about $pet?" pet-show "What do they look like?" - pet-chosen - "Here is a picture of a #pet-chosen.pet.
+
+### Input and output contexts \_|\_ Dialogflow ES \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/es/docs/contexts-input-output](https://docs.cloud.google.com/dialogflow/es/docs/contexts-input-output)
+- Source ID: `site-iam-reference`
+- Final score: 117
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Dialogflow Dialogflow ES Send feedback Input and output contexts Stay organized with collections Save and categorize content based on your preferences.
+- For example, consider the following intents: Intent name Training phrases Parameters Input contexts Output contexts Response pet-init "What do they look like?" - - - "What kind of pet do you like?" pet-select-dogs "I like dogs" - - dogs "What do you want to know about dogs?" pet-select-cats "I like cats" - - cats "What do you want to know about cats?" dog-show "What do they look like?" - dogs - "Here is a picture of a dog." cat-show "What do they look like?" - cats - "Here is a picture of a cat." When the end-user says I like dogs : The pet-select-dogs intent is matched.
+- For example, consider the following variation of the pet example above: Intent name Training phrases Parameters Input contexts Output contexts Response pet-init "What do they look like?" - - - "What kind of pet do you like?" pet-select "I like dogs ", "I like cats " pet - pet-chosen "What do you want to know about $pet?" pet-show "What do they look like?" - pet-chosen - "Here is a picture of a #pet-chosen.pet." When the end-user says I like dogs or I like cats : The pet-select intent is matched.
+- For example, consider the following intent descriptions for a pet information agent: Intent name Training phrases Parameters Input contexts Output contexts Response pet-init "What do they look like?", "What do they sound like?", "How big are they?" - - - "What kind of pet do you like?" pet-select "I like dogs ", "I like cats " pet - pet-chosen (lifespan = 2) "What do you want to know about $pet?" pet-show "What do they look like?" - pet-chosen - "Here is a picture of a #pet-chosen.pet.
 

@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/app-hub/docs/reference
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/app-hub/docs/apis
+entrypoint: https://docs.cloud.google.com/app-hub/docs/reference
 source_metadata:
   url: https://docs.cloud.google.com/app-hub/docs/reference
   title: "Overview \_|\_ App Hub \_|\_ Google Cloud Documentation"

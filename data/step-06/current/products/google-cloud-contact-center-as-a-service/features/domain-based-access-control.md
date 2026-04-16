@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.805Z"
+generated_at: "2026-04-15T13:50:47.135Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Domain-based access control"
@@ -9,9 +9,9 @@ latest_feature_date: "2023-03-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide"
 keywords:
   - "domain"
   - "based"
@@ -42,48 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities](https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Kustomer CRM integration guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 148
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature Domain Based Access Control : You can configure CCAIP to restrict the set of domains able to frame the agent adapter and admin portal.
-- An Admin can configure the domain allowlist by going to: Developer Settings > Domain Based Access Control .
-- August 09, 2024 Feature Private Service Connect and Organization Policy Service You can create Contact Center AI Platform (CCAIP) instances that are configured for private access, which restricts access to them over the public internet.
-- See Domain based access control for details.
-
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 108
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 190
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Direct queues to a visual message Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Android SDK With the CCAI Platform Android SDK, you can create seamless voice and chat support experiences for users of your Android apps.
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- The domain prefix is added to the URL for your instance, which can help you identify your instance by looking at the URL.
+- Add domain based access control for the agent adapter Domain-based access control ensures security while also allowing you to define and control which domains can display the agent adapter.
+- Warning: Domain-based access control lets you define and control which domains can display in the agent adapter.
+- Go to Agent Adapter - Domain Based Access Control and enter each domain as a new line.
+- Warning: If you don't specify a domain, access is granted to all domains.
 
-### "Locations \_|\_ Google Cloud Contact Center as a Service \_|\_ Google Cloud\
+### "Salesforce installation guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities](https://docs.cloud.google.com/contact-center/ccai-platform/docs/localities)
-- Source ID: `site-docs-root`
-- Final score: 20
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide)
+- Source ID: `site-docs-reference`
+- Final score: 162
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- CCAI Platform telephony is available in the following locations: Country Google Cloud managed Bring your own carrier (BYOC) Australia ✔ Austria ✔ ✔ Belgium ✔ ✔ Brazil ✔ Canada ✔ ✔ Colombia ✔ ✔ France ✔ ✔ Germany ✔ ✔ Indonesia ✔ Ireland ✔ ✔ Italy ✔ ✔ Japan ✔ ✔ Mexico ✔ ✔ Netherlands ✔ ✔ New Zealand ✔ Portugal ✔ ✔ South Korea ✔ Spain ✔ ✔ Sweden ✔ ✔ Switzerland ✔ ✔ Turkey ✔ United Kingdom ✔ ✔ United States ✔ ✔ Note: Additional regional services terms apply.
-- Home Documentation AI and ML Google Cloud CCaaS Resources Send feedback Locations Stay organized with collections Save and categorize content based on your preferences.
-- Bring your own carrier (BYOC) : You can use CCAI Platform with the phone numbers and telephony carrier of your choice.
-- Google Cloud regions CCAI Platform can be deployed in the following Google Cloud regions.
+- Note: Domain-based access control provides the ability to define and control which domains can display the CCAI Platform agent adapter.
+- For more information, see Domain-based access control .
+- Under API (Enable OAuth Settings) , select the Enable OAuth Settings checkbox and update the settings using the table: Field Name Field Value Enable OAuth Settings Selected (TRUE) Callback URL https://<tenant>.<domain>/v1/salesforce/oauth callback Selected OAuth Scopes Access the identity URL service (id, profile, email, address, phone) Manage user data using APIs (API) Perform requests at any time (refresh token, offline access) Require Proof Key for Code Exchange (PKCE) Extension for Supported Authorization Flows Unselected (False) Required Secret for web flow Selected (TRUE) Require Secret for Refresh Token flow.
+- Selected (TRUE) Under the Canvas App Settings , update the settings with the following: Field Name Field Value Canvas Selected (TRUE) Canvas App URL https://<tenant>.<domain>/v1/salesforce/start Access Method Signed Request (POST) Locations Console Lightning Component Open CTI Visualforce Page Navigate to the bottom of the page and click Save .
+
+### "Zendesk app installation guide \_|\_ Google Cloud Contact Center as a Service\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide)
+- Source ID: `site-docs-reference`
+- Final score: 158
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Check if custom ticket fields were created from Zendesk by referring to: Admin > Manage > User Fields Admin > Manage > Ticket Fields Fields User Fields Identifier Ticket Fields Verification (Checkbox) Customer Text Feedback (Multi-line text) Customer Satisfaction Rating (Numeric): 1 to 5 Shared Customer Rating (Text): Twitter or Facebook Domain-based Access Control Refer to Domain-based Access Control for steps to limit platform access based on the domain and details related to CRM-specific domains.
+- Redirect URLs Set the Redirect URLs of the OAuth client as follows, https://INSTANCE.ccaiplatform.com/v1/zendesk/oauth callback You should replace INSTANCE with the actual subdomain of your CCAI Platform.
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Zendesk app installation guide Stay organized with collections Save and categorize content based on your preferences.
+- Set Zendesk Subdomain to the subdomain of your Zendesk account. https://your zendesk subdomain.zendesk.com Set OAuth Client ID to the Unique Identifier of your Zendesk OAuth client.
 

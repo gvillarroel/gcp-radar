@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:13.447Z"
+generated_at: "2026-04-15T00:52:27.259Z"
 product_name: "Deep Learning VM Images"
 product_slug: "deep-learning-vm-images"
 feature_name: "europe-west3 region support"
 feature_slug: "europe-west3-region-support"
 latest_feature_date: "2020-08-10"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/deep-learning-vm/docs/troubleshooting"
+  - "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console"
+  - "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
 keywords:
   - "europe"
   - "west3"
@@ -24,7 +26,7 @@ keywords:
 # europe-west3 region support
 
 Product: Deep Learning VM Images
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ Deep Learning VM Images support deployment in the europe-west3 region.
 
 Deep Learning VM Images support deployment in the europe-west3 region.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/deep-learning-vm/docs/troubleshooting](https://docs.cloud.google.com/deep-learning-vm/docs/troubleshooting)
+- [https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console](https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console)
+- [https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance](https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Troubleshooting \_|\_ Deep Learning VM Images \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/deep-learning-vm/docs/troubleshooting](https://docs.cloud.google.com/deep-learning-vm/docs/troubleshooting)
+- Source ID: `site-docs-reference`
+- Final score: 62
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Resource not found Symptom : - The resource 'projects/deeplearning-platform/zones/europe-west4-c/acceleratorTypes/nvidia-tesla-p4' was not found Problem : You are trying to create an instance with one or more GPUs in a region where GPUs are not available (for example, an instance with a P4 GPU in europe-west4-c ).
+- Home Documentation Compute Compute Engine Deep Learning VM Images Support Send feedback Troubleshooting Stay organized with collections Save and categorize content based on your preferences.
+- This page describes problems that can come up when creating Deep Learning VM Images instances, and tells you how to address the problems.
+- Community support Ask a question about Deep Learning VM on Stack Overflow or join the google-dl-platform Google group to discuss Deep Learning VM.
+
+### "Quickstart: Create a Deep Learning VM instance by using the Google Cloud\
+
+- URL: [https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console](https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console)
+- Source ID: `site-docs-reference`
+- Final score: 51
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Create a Deep Learning VM instance by using the Google Cloud console This page shows you how to create a Deep Learning VM Images instance by using Google Cloud Marketplace in the Google Cloud console.
+- Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- After the instance is deployed, the Google Cloud console opens the Deployment Manager page where you can manage your Deep Learning VM instances and other deployments.
+- Go to the Deployments page Select the checkbox next to the Deep Learning VM deployment.
+
+### "Create a PyTorch Deep Learning VM instance \_|\_ Deep Learning VM Images\
+
+- URL: [https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance](https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance)
+- Source ID: `site-docs-reference`
+- Final score: 50
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Create a PyTorch Deep Learning VM instance Stay organized with collections Save and categorize content based on your preferences.
+- This page shows you how to create a PyTorch Deep Learning VM Images instance with PyTorch and other tools pre-installed.
+- To create a Deep Learning VM instance with the latest PyTorch image family and one or more attached GPUs, enter the following at the command line: export IMAGE FAMILY = "pytorch-latest-gpu" export ZONE = "us-west1-b" export INSTANCE NAME = "my-instance" gcloud compute instances create $ INSTANCE NAME \ -- zone =$ ZONE \ -- image - family =$ IMAGE FAMILY \ -- image - project = deeplearning - platform - release \ -- maintenance - policy = TERMINATE \ -- accelerator = "type=nvidia-tesla-v100,count=1" \ -- metadata = "install-nvidia-driver=True" Options: --image-family must be either pytorch-latest-gpu or pytorch- VERSION - CUDA-VERSION (for example, pytorch-1-10-cu110 ). --image-project must be deeplearning-platform-release . --maintenance-policy must be TERMINATE .
+- Without GPUs To create a Deep Learning VM instance with the latest PyTorch image family and a CPU, enter the following at the command line: export IMAGE FAMILY = "pytorch-latest-cpu" export ZONE = "us-west1-b" export INSTANCE NAME = "my-instance" gcloud compute instances create $ INSTANCE NAME \ -- zone =$ ZONE \ -- image - family =$ IMAGE FAMILY \ -- image - project = deeplearning - platform - release Options: --image-family must be either pytorch-latest-cpu or pytorch- VERSION -cpu (for example, pytorch-1-13-cpu ). --image-project must be deeplearning-platform-release .
 

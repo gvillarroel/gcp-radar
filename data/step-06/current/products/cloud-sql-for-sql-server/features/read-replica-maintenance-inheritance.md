@@ -1,16 +1,16 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:58:32.859Z"
+generated_at: "2026-04-15T11:57:14.564Z"
 product_name: "Cloud SQL for SQL Server"
 product_slug: "cloud-sql-for-sql-server"
 feature_name: "Read replica maintenance inheritance"
 feature_slug: "read-replica-maintenance-inheritance"
 latest_feature_date: "2023-03-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools"
-  - "https://docs.cloud.google.com/sql/docs/sqlserver/release-notes"
+  - "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
   - "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
 keywords:
   - "read"
@@ -20,13 +20,13 @@ keywords:
   - "sql"
   - "replicas"
   - "follow"
-  - "the"
+  - "primary"
 ---
 
 # Read replica maintenance inheritance
 
 Product: Cloud SQL for SQL Server
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +38,12 @@ Cloud SQL read replicas follow the primary instance maintenance settings and are
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools](https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools)
-- [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
+- [https://docs.cloud.google.com/sql/docs/sqlserver/create-instance](https://docs.cloud.google.com/sql/docs/sqlserver/create-instance)
 - [https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics](https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics)
 
 ## Supporting Pages
@@ -51,40 +51,41 @@ Fallback definition because synthesis failed.
 ### About read pools \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools](https://docs.cloud.google.com/sql/docs/sqlserver/about-read-pools)
-- Source ID: `site-iam-reference`
-- Final score: 214
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference-required-4`
+- Final score: 193
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Like read replicas, read pools receive maintenance during the primary instance's maintenance window.
+- A read pool receives maintenance before its primary instance, similar to read replicas.
 - In addition to operations that aren't supported on read replicas, the following operations aren't supported on read pools: Enable and disable replication Customer-managed Active Directory Managed Microsoft AD Promote replica Restart Import Export Failover Re-encrypt Clone SSL/TLS certificates with shared CA or customer-managed CA can't be used with a read pool.
 - The following types of updates aren't supported: While read pools still receive Cloud SQL maintenance updates, you can't update your read pool or its associated primary instance to a new major database version.
-- Like read replicas, read pools receive maintenance during the primary instance's maintenance window.
-- Limitations The following limitations apply: Read pools are only available for Cloud SQL Enterprise Plus edition instances on the new network architecture .
-
-### Cloud SQL for SQL Server release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/release-notes](https://docs.cloud.google.com/sql/docs/sqlserver/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 194
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- September 15, 2022 Feature Cloud SQL read replicas now follow the maintenance settings for the primary instance, including the maintenance window, rescheduling, and the deny maintenance period.
-- Cloud SQL read replicas follow the maintenance settings for the primary instance, including the maintenance window, rescheduling, and the deny maintenance period.
-- February 09, 2024 Feature Cloud SQL now automatically updates your read replicas when you perform self-service maintenance on the primary instance.
-- During the maintenance event, Cloud SQL maintains the replicas before maintaining the primary instance.
 
 ### Cloud SQL metrics \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics](https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics)
 - Source ID: `site-api-reference`
-- Final score: 192
+- Final score: 151
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- After sampling, data is not visible for up to 165 seconds. database/mysql/replication/slave io running state GA (project) Slave I/O thread running state GAUGE , BOOL , cloudsql database Indicates whether the I/O thread for reading the primary's binary log is running.
+- After sampling, data is not visible for up to 165 seconds. database/mysql/replication/slave io running GA (project) Slave I/O thread running GAUGE , STRING , cloudsql database Indicates whether the I/O thread for reading the primary's binary log is running.
+- After sampling, data is not visible for up to 165 seconds. database/mysql/replication/seconds behind master GA (project) Replication lag GAUGE , INT64 , s cloudsql database Number of seconds the read replica is behind its primary (approximation).
+- After sampling, data is not visible for up to 165 seconds. database/replication/replica lag GA (project) Replication lag GAUGE , DOUBLE , s cloudsql database Number of seconds the read replica is behind its primary (approximation).
+
+### Create instances \_|\_ Cloud SQL for SQL Server \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/sqlserver/create-instance](https://docs.cloud.google.com/sql/docs/sqlserver/create-instance)
+- Source ID: `site-docs-root`
+- Final score: 143
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- After sampling, data is not visible for up to 165 seconds. backend type : Type of the backend, one of [autovacuum launcher, autovacuum worker, logical replication launcher, logical replication worker, parallel worker, background writer, client backend, checkpointer, archiver, startup, walreceiver, walsender, walwriter]. wait event : Name of the wait event, such as AutoVacuumMain, ClientRead. wait event type : Type of wait event, one of [Activity, BufferPin, Extension, IO, IPC, Lock, LWLock, Timeout]. database/postgresql/blocks read count GA (project) Number of disk blocks read.
-- After sampling, data is not visible for up to 165 seconds. state : The slave io running state of the slave. database/mysql/replication/slave sql running GA (project) Slave SQL thread running GAUGE , STRING , cloudsql database Indicates whether the SQL thread for executing events in the relay log is running.
-- After sampling, data is not visible for up to 165 seconds. operation : Page operation, one of [Read, Write]. database/sqlserver/replication/bytes sent to replica count GA (project) Bytes sent to replica DELTA , INT64 , By cloudsql database Total number of bytes sent to the remote availability replica.
-- After sampling, data is not visible for up to 165 seconds. database/mysql/replication/slave sql running state GA (project) Slave SQL thread running state GAUGE , BOOL , cloudsql database Indicates whether the SQL thread for executing events in the relay log is running.
+- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method GET -Headers $headers -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID " Select-Object -Expand Content You should receive a JSON response similar to the following: { "kind": "sql#instance", "state": "RUNNABLE", "databaseVersion": " DATABASE VERSION ", "settings": { "authorizedGaeApplications": [], "tier": " MACHINE TYPE ", "kind": "sql#settings", "pricingPlan": "PER USE", "replicationType": "SYNCHRONOUS", "activationPolicy": "ALWAYS", "ipConfiguration": { "authorizedNetworks": [], "ipv4Enabled": true }, "locationPreference": { "zone": " ZONE ", "kind": "sql#locationPreference" }, "dataDiskType": "PD SSD", "backupConfiguration": { "startTime": "19:00", "kind": "sql#backupConfiguration", "enabled": true }, "settingsVersion": "1", "dataDiskSizeGb": "10" }, "etag": "--redacted--", "ipAddresses": [ { "type": "PRIMARY", " ipAddress ": " 10.0.0.1 " } ], "serverCaCert": { ... }, "instanceType": "CLOUD SQL INSTANCE", "project": " PROJECT ID ", "serviceAccountEmailAddress": "redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com", "backendType": " BACKEND TYPE ", "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID ", "connectionName": " PROJECT ID:REGION:INSTANCE ID ", "name": " INSTANCE ID ", "region": " REGION ", "gceZone": " ZONE " } To see how the underlying REST API request is constructed for this task, see the APIs Explorer on the instances:insert page .
+- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method GET -Headers $headers -Uri "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID " Select-Object -Expand Content You should receive a JSON response similar to the following: { "kind": "sql#instance", "state": "RUNNABLE", "databaseVersion": " DATABASE VERSION ", "settings": { "authorizedGaeApplications": [], "tier": " MACHINE TYPE ", "kind": "sql#settings", "pricingPlan": "PER USE", "replicationType": "SYNCHRONOUS", "activationPolicy": "ALWAYS", "ipConfiguration": { "authorizedNetworks": [], "ipv4Enabled": true }, "locationPreference": { "zone": " ZONE ", "kind": "sql#locationPreference" }, "dataDiskType": "PD SSD", "backupConfiguration": { "startTime": "19:00", "kind": "sql#backupConfiguration", "enabled": true }, "settingsVersion": "1", "dataDiskSizeGb": "10" }, "etag": "--redacted--", "ipAddresses": [ { "type": "PRIMARY", " ipAddress ": " 10.0.0.1 " } ], "serverCaCert": { ... }, "instanceType": "CLOUD SQL INSTANCE", "project": " PROJECT ID ", "serviceAccountEmailAddress": "redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com", "backendType": " BACKEND TYPE ", "selfLink": "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID ", "connectionName": " PROJECT ID:REGION:INSTANCE ID ", "name": " INSTANCE ID ", "region": " REGION ", "gceZone": " ZONE " } REST v1beta4 1.
+- Read replicas are counted as instances.
+- Note: Cloud SQL generates a write endpoint automatically for your Cloud SQL Enterprise Plus edition instance if you do the following: If you haven't already enabled the Cloud DNS API, enable the Cloud DNS API for your Google Cloud project.
 

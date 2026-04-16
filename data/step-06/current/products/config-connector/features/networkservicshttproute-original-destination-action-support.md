@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:03.341Z"
+generated_at: "2026-04-13T14:23:05.153Z"
 product_name: "Config Connector"
 product_slug: "config-connector"
 feature_name: "NetworkServicsHTTPRoute original destination action support"
@@ -9,18 +9,16 @@ latest_feature_date: "2022-09-14"
 deprecation_date: "2022-09-14"
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
-  - "https://docs.cloud.google.com/config-connector/docs/overview"
-  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkserviceshttproute"
+  - "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+  - "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
 keywords:
-  - "networkservicshttproute"
   - "original"
+  - "networkservicshttproute"
   - "destination"
   - "action"
-  - "config"
-  - "connector"
   - "previously"
-  - "supported"
+  - "spec"
 ---
 
 # NetworkServicsHTTPRoute original destination action support
@@ -42,43 +40,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
-- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkserviceshttproute](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkserviceshttproute)
+- [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields)
+- [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster)
 
 ## Supporting Pages
 
-### Access control with IAM | Config Connector | Google Cloud Documentation
+### NetworkServicesHTTPRoute | Config Connector | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions](https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 112
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkserviceshttproute](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/networkservices/networkserviceshttproute)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 87
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Sample YAML(s) Typical Use Case # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the "License"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an "AS IS" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : networkservices.cnrm.cloud.google.com/v1beta1 kind : NetworkServicesHTTPRoute metadata : name : networkserviceshttproute-sample labels : foo : bar spec : description : "A test HttpRoute" meshes : - name : "networkserviceshttproute-dep" gateways : - name : "networkserviceshttproute-dep" location : "global" hostnames : - "test1" - "test2" rules : - matches : - fullPathMatch : "/foo/bar" headers : - header : "foo-header" prefixMatch : "bar-value" - prefixMatch : "/foo/" ignoreCase : true - regexMatch : "/foo/.*/bar/.*" - prefixMatch : "/" headers : - header : "foo" exactMatch : "bar" - header : "foo" regexMatch : "b.*ar" - header : "foo" prefixMatch : "ba" - header : "foo" presentMatch : true - header : "foo" suffixMatch : "ar" - header : "foo" rangeMatch : start : 0 end : 5 invertMatch : true - prefixMatch : "/" queryParameters : - queryParameter : "foo" exactMatch : "bar" - queryParameter : "foo" regexMatch : ".*bar.*" - queryParameter : "foo" presentMatch : true action : destinations : - serviceRef : name : "networkserviceshttproute-dep" weight : 1 - serviceRef : name : "networkserviceshttproute-dep" weight : 1 urlRewrite : pathPrefixRewrite : "foo" hostRewrite : "foo" corsPolicy : allowOrigins : - "foo.com" - "bar.com" allowOriginRegexes : - ".*.foo.com" - ".*.bar.com" allowMethods : - "GET" - "POST" allowHeaders : - "foo" - "bar" exposeHeaders : - "foo" - "bar" maxAge : "35" allowCredentials : true disabled : false faultInjectionPolicy : abort : httpStatus : 501 percentage : 1 delay : fixedDelay : "10s" percentage : 2 requestHeaderModifier : add : foo1 : "bar1" baz1 : "qux1" set : foo2 : "bar2" baz2 : "qux2" remove : - "foo3" - "bar3" requestMirrorPolicy : destination : serviceRef : name : "networkserviceshttproute-dep" responseHeaderModifier : add : foo1 : "bar1" baz1 : "qux1" set : foo2 : "bar2" baz2 : "qux2" remove : - "foo3" - "bar3" retryPolicy : numRetries : 3 perTryTimeout : "5s" retryConditions : - "refused-stream" - "cancelled" timeout : "30s" - action : redirect : hostRedirect : "foo" responseCode : "MOVED_PERMANENTLY_DEFAULT" httpsRedirect : true stripQuery : true portRedirect : 7777 - action : redirect : hostRedirect : "test" prefixRewrite : "foo" responseCode : "FOUND" - action : redirect : hostRedirect : "test" pathRedirect : "/foo" responseCode : "FOUND" projectRef : # Replace "${PROJECT_ID?}" with your project ID external : "projects/${PROJECT_ID?}" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : networkserviceshttproute-dep spec : loadBalancingScheme : "INTERNAL_SELF_MANAGED" location : global --- apiVersion : networkservices.cnrm.cloud.google.com/v1beta1 kind : NetworkServicesGateway metadata : name : networkserviceshttproute-dep spec : location : "global" type : "OPEN_MESH" scope : "networkserviceshttproute-sample-scope" ports : - 80 - 443 projectRef : # Replace "${PROJECT_ID?}" with your project ID external : "projects/${PROJECT_ID?}" --- apiVersion : networkservices.cnrm.cloud.google.com/v1beta1 kind : NetworkServicesMesh metadata : name : networkserviceshttproute-dep spec : location : "global" projectRef : # Replace "${PROJECT_ID?}" with your project ID external : "projects/${PROJECT_ID?}" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .
+- NetworkServicesHTTPRoute Property Value Google Cloud Service Name Network Services Google Cloud Service Documentation /traffic-director/docs/ Google Cloud REST Resource Name v1/projects.locations.httpRoutes Google Cloud REST Resource Documentation /traffic-director/docs/reference/network-services/rest/v1/projects.locations.httpRoutes Config Connector Resource Short Names gcpnetworkserviceshttproute gcpnetworkserviceshttproutes networkserviceshttproute Config Connector Service Name networkservices.googleapis.com Config Connector Resource Fully Qualified Name networkserviceshttproutes.networkservices.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema description : string gateways : - external : string name : string namespace : string hostnames : - string location : string meshes : - external : string name : string namespace : string projectRef : external : string name : string namespace : string resourceID : string rules : - action : corsPolicy : allowCredentials : boolean allowHeaders : - string allowMethods : - string allowOriginRegexes : - string allowOrigins : - string disabled : boolean exposeHeaders : - string maxAge : string destinations : - serviceRef : external : string name : string namespace : string weight : integer faultInjectionPolicy : abort : httpStatus : integer percentage : integer delay : fixedDelay : string percentage : integer redirect : hostRedirect : string httpsRedirect : boolean pathRedirect : string portRedirect : integer prefixRewrite : string responseCode : string stripQuery : boolean requestHeaderModifier : add : string : string remove : - string set : string : string requestMirrorPolicy : destination : serviceRef : external : string name : string namespace : string weight : integer responseHeaderModifier : add : string : string remove : - string set : string : string retryPolicy : numRetries : integer perTryTimeout : string retryConditions : - string timeout : string urlRewrite : hostRewrite : string pathPrefixRewrite : string matches : - fullPathMatch : string headers : - exactMatch : string header : string invertMatch : boolean prefixMatch : string presentMatch : boolean rangeMatch : end : integer start : integer regexMatch : string suffixMatch : string ignoreCase : boolean prefixMatch : string queryParameters : - exactMatch : string presentMatch : boolean queryParameter : string regexMatch : string regexMatch : string Fields description Optional string Optional.
+- The default is set to false. rules[].action.requestHeaderModifier Optional object The specification for modifying the headers of a matching request prior to delivery of the request to the destination. rules[].action.requestHeaderModifier.add Optional map (key: string, value: string) Add the headers with given map where key is the name of the header, value is the value of the header. rules[].action.requestHeaderModifier.remove Optional list (string) Remove headers (matching by header names) specified in the list. rules[].action.requestHeaderModifier.remove[] Optional string rules[].action.requestHeaderModifier.set Optional map (key: string, value: string) Completely overwrite/replace the headers with given map where key is the name of the header, value is the value of the header. rules[].action.requestMirrorPolicy Optional object Specifies the policy on how requests intended for the routes destination are shadowed to a separate mirrored destination.
+- Timeout includes all retries. rules[].action.urlRewrite Optional object The specification for rewrite URL before forwarding requests to the destination. rules[].action.urlRewrite.hostRewrite Optional string Prior to forwarding the request to the selected destination, the requests host header is replaced by this value. rules[].action.urlRewrite.pathPrefixRewrite Optional string Prior to forwarding the request to the selected destination, the matching portion of the requests path is replaced by this value. rules[].matches Optional list (object) A list of matches define conditions used for matching the rule against incoming HTTP requests.
+
+### ContainerCluster \_|\_ Config Connector \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster)
+- Source ID: `site-docs-reference`
+- Final score: 72
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- IAM lets Config Connector take action on specific resources.
-- Access control with IAM Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions To install Config Connector, you authenticate by creating an IAM service account and then using Workload Identity Federation for GKE for GKE to bind the IAM service accounts with the Kubernetes service accounts.
-- By limiting the permissions assigned to your service accounts, you have greater control over what kinds of resources Config Connector can create.
+- If enabled, the nodes in this node pool will be monitored and, if they fail health checks too many times, an automatic repair action will be triggered. clusterAutoscaling.autoProvisioningDefaults.management.autoUpgrade Optional boolean Specifies whether node auto-upgrade is enabled for the node pool.
+- By default, no private IPv6 access to or from Google Services (all access will be via IPv4). protectConfig Optional object Enable/Disable Protect API features for the cluster. protectConfig.workloadConfig Optional object WorkloadConfig defines which actions are enabled for a cluster's workload configurations. protectConfig.workloadConfig.auditMode Required string Sets which mode of auditing should be used for the cluster's workloads.
+- A duration in seconds with up to nine fractional digits, ending with 's'.
+- A duration in seconds with up to nine fractional digits, ending with 's'.
 
-### Config Connector overview | Google Cloud Documentation
+### Ignore unspecified fields \_|\_ Config Connector \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/config-connector/docs/overview](https://docs.cloud.google.com/config-connector/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 96
+- URL: [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields)
+- Source ID: `site-docs-reference`
+- Final score: 72
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Config Connector overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/overview Config Connector provides a collection of Kubernetes Custom Resource Definitions (CRDs) and controllers.
-- The Config Connector CRDs allow Kubernetes to create and manage Google Cloud resources when you configure and apply Objects to your cluster.
-
-### IAMPolicy | Config Connector | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy](https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy)
-- Source ID: `site-iam-reference`
-- Final score: 94
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- IAMPolicy Config Connector Google Cloud Documentation Source URL: https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy If you want finer-grained control over audit configs, use # IAMAuditConfig. apiVersion: iam.cnrm.cloud.google.com/v1beta1 kind: IAMPolicy metadata: name: iampolicy-sample-project spec: resourceRef: kind: Project name: iampolicy-dep-project bindings: - members: # Replace ${GSA EMAIL?} with the Config Connector service account&#x27;s # email address.
-- This ensures that the Config Connector service account # can continue to manage the referenced project. - &quot;serviceAccount:${GSA EMAIL?}&quot; role: roles/owner - members: - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com rol
+- As an example, assume the CRD schema let you specify two fields named foo and bar in spec, while your applied YAML file has only foo specified: spec : foo : "foo" You'll notice another field named bar appears in the CR if the YAML is applied successfully and the resource is UpToDate : spec : foo : "foo" bar : "bar" Due to the complexity of interaction between Config Connector and Google Cloud APIs, you might want to change this default behavior and skip populating the Kubernetes resource spec with unspecified fields.
+- Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- By default, in these resource CRs, fields which haven't been specified in your original YAML always appear in the CR spec.
+- To further explain the difference introduced by this annotation, assume there is a spec with the following schema: foo1 : string foo2 : string bars : - bar : br1 : string br2 : string barz : bz1 : string bz2 : string Also assume you have specified the spec in your YAML as: spec : foo1 : "foo1" bars : - br1 : "1 br1" - br1 : "2 br1" barz : bz1 : "bz1" Then by default, the populated spec in the created Kubernetes resource might be: spec : foo1 : "foo1" foo2 : "foo2" bars : - br1 : "1 br1" br2 : "1 br2" - br1 : "2 br1" br2 : "2 br2" barz : bz1 : "bz1" bz2 : "bz2" While if you set cnrm.cloud.google.com/state-into-spec: absent , the final spec in the created Kubernetes resource will be: spec : foo1 : "foo1" bars : - br1 : "1 br1" - br1 : "2 br1" barz : bz1 : "bz1" When to use cnrm.cloud.google.com/state-into-spec: absent In most cases, you'll want to set cnrm.cloud.google.com/state-into-spec: absent to get the Absent populating behavior for spec fields.
 

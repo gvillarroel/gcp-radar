@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:46.550Z"
+generated_at: "2026-04-12T12:18:00.101Z"
 product_name: "Migration Center"
 product_slug: "migration-center"
 feature_name: "Periodic data collection scheduling"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-06-24"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center"
-  - "https://docs.cloud.google.com/migration-center/docs/migration-center-overview"
-  - "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+  - "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery"
+  - "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools"
 keywords:
   - "periodic"
   - "collection"
@@ -38,45 +39,66 @@ Migration Center lets users schedule periodic data collection and define per-ser
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center](https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center)
-- [https://docs.cloud.google.com/migration-center/docs/migration-center-overview](https://docs.cloud.google.com/migration-center/docs/migration-center-overview)
-- [https://docs.cloud.google.com/migration-center/docs/migration-planning-overview](https://docs.cloud.google.com/migration-center/docs/migration-planning-overview)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient)
+- [https://docs.cloud.google.com/migration-center/docs/start-asset-discovery](https://docs.cloud.google.com/migration-center/docs/start-asset-discovery)
+- [https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools](https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools)
 
 ## Supporting Pages
 
-### Get started with Migration Center | Google Cloud Documentation
+### "Class MigrationCenterAsyncClient (0.4.0) \_|\_ Python client libraries \_\
 
-- URL: [https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center](https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center)
-- Source ID: `site-docs-root`
-- Final score: 116
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 222
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Get started with Migration Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center To start using Google Cloud Migration ... need to activate Migration Center.
-- This document explains the different options you have to create a project, and how to activate Migration Center....
+- Home Documentation Developer tools Python Client libraries Send feedback Class MigrationCenterAsyncClient (0.4.0) Stay organized with collections Save and categorize content based on your preferences.
+- CreateImportDataFileRequest ( parent="parent value", import data file id="import data file id value", import data file=import data file, ) Make the request operation = client. create import data file (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateImportDataFileRequest , dict]] The request object.
+- Returns Type Description google.cloud.migrationcenter v1.types.ReportAssetFramesResponse A response to a call to ReportAssetFrame. report config path report config path ( project : str , location : str , report config : str ) - > str Returns a fully-qualified report config string. report path report path ( project : str , location : str , report config : str , report : str ) - > str Returns a fully-qualified report string. run import job run import job ( request : typing .
+- CreateReportConfigRequest ( parent="parent value", report config id="report config id value", report config=report config, ) Make the request operation = client. create report config (request=request) print("Waiting for operation to complete...") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict]] The request object.
 
-### Migration Center overview | Google Cloud Documentation
+### "Class MigrationCenterClient (0.4.0) \_|\_ Python client libraries \_|\_\
 
-- URL: [https://docs.cloud.google.com/migration-center/docs/migration-center-overview](https://docs.cloud.google.com/migration-center/docs/migration-center-overview)
-- Source ID: `site-docs-root`
-- Final score: 114
+- URL: [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient)
+- Source ID: `site-python-reference`
+- Final score: 222
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Migration Center overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/migration-center-overview With Migration Center, you can dive deep in the analysis and get a holistic view into your environment.
-- Generate total cost of ownership reports based on the migration preferences that you specify according to your business objectives and constraints.
+- Home Documentation Developer tools Python Client libraries Send feedback Class MigrationCenterClient (0.4.0) Stay organized with collections Save and categorize content based on your preferences.
+- Returns Type Description google.cloud.migrationcenter v1.types.Source Source represents an object from which asset information is streamed to Migration Center. group path group path ( project : str , location : str , group : str ) - > str Returns a fully-qualified group string. import data file path import data file path ( project : str , location : str , import job : str , import data file : str ) - > str Returns a fully-qualified import data file string. import job path import job path ( project : str , location : str , import job : str ) - > str Returns a fully-qualified import job string. list assets list assets ( request : typing .
+- Returns Type Description google.cloud.migrationcenter v1.types.ReportAssetFramesResponse A response to a call to ReportAssetFrame. report config path report config path ( project : str , location : str , report config : str ) - > str Returns a fully-qualified report config string. report path report path ( project : str , location : str , report config : str , report : str ) - > str Returns a fully-qualified report string. run import job run import job ( request : typing .
+- CreateImportDataFileRequest ( parent="parent value", import data file id="import data file id value", import data file=import data file, ) Make the request operation = client. create import data file (request=request) print("Waiting for operation to complete...") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreateImportDataFileRequest , dict] The request object.
 
-### About migration planning | Migration Center | Google Cloud Documentation
+### Start an asset discovery \_|\_ Migration Center \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/migration-center/docs/migration-planning-overview](https://docs.cloud.google.com/migration-center/docs/migration-planning-overview)
+- URL: [https://docs.cloud.google.com/migration-center/docs/start-asset-discovery](https://docs.cloud.google.com/migration-center/docs/start-asset-discovery)
 - Source ID: `site-docs-root`
-- Final score: 110
+- Final score: 173
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- About migration planning Migration Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/migration-center/docs/migration-planning-overview Identify high level migration and modernization paths (rehost, replatform, refactor, re-architect, replace, retire).
+- Collection methods Migration Center lets you collect data from your infrastructure in different ways to give you the flexibility to balance speed and depth of discovery.
+- Security and privacy For every server in your existing environment, Migration Center collects the following information: Machine information Configuration data Utilization data Network dependencies Installed software The breadth of data collected depends on the collection method you select, as well as any security settings that are applied during setup.
+- Migration Center supports three approaches: Automated one-time collection Automated continuous collection Manual data import The following sections help you decide which method and tools to use depending on your use case.
+- Automated continuous collection Automated continuous collection lets you get the full information about your infrastructure over a period of time with scheduled collection capabilities.
+
+### Migration tools \_|\_ Migration Center \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools](https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools)
+- Source ID: `site-docs-root`
+- Final score: 170
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- RackWare Management Module (RMM) is a fully-automated enterprise-grade migration solution that lets you migrate physical and virtual servers from any data center or public cloud into Google Cloud.
+- Home Documentation Migration Migration Center Guides Send feedback Migration tools Stay organized with collections Save and categorize content based on your preferences.
+- The following list includes additional migration tools: Storage Transfer Service lets you bring data to Cloud Storage from other cloud providers, online resources, or local data (for example: S3, Blob, Data Lake, on-premises file systems).
+- Migration tools are at the center of migration execution.
 

@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:57:36.624Z"
+generated_at: "2026-04-15T11:51:47.707Z"
 product_name: "Google Workspace Admin SDK"
 product_slug: "google-workspace-admin-sdk"
 feature_name: "OAuth Token Audit reporting application"
 feature_slug: "oauth-token-audit-reporting-application"
 latest_feature_date: "2014-11-12"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/admin-sdk/directory/reference/rest"
-  - "https://developers.google.com/admin-sdk/overview"
-  - "https://developers.google.com/admin-sdk/reference-overview"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-tokens"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile"
+  - "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin"
 keywords:
   - "oauth"
   - "token"
   - "audit"
   - "reporting"
   - "application"
-  - "the"
   - "shows"
   - "third"
+  - "party"
 ---
 
 # OAuth Token Audit reporting application
 
 Product: Google Workspace Admin SDK
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ The OAuth Token Audit reporting application shows third-party websites and appli
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
-- [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-tokens](https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-tokens)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile](https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile)
+- [https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin](https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin)
 
 ## Supporting Pages
 
-### Admin SDK: Directory API \_|\_ Admin console \_|\_ Google for Developers
+### "Reports API: Authorization Tokens Activity Report \_|\_ Admin console \_\
 
-- URL: [https://developers.google.com/admin-sdk/directory/reference/rest](https://developers.google.com/admin-sdk/directory/reference/rest)
-- Source ID: `site-api-reference`
-- Final score: 58
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-tokens](https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-tokens)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 137
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To do this, use a GET HTTP request of the following form: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ token ?maxResults= maximum number of events returned on a response page &eventName= name of the OAuth token event The following example shows how to retrieve all revoke events for a domain: GET https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token?eventName=revoke&maxResults=25 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Retrieve all authorization token events for a domain To retrieve all authorization events for third party applications, use the following GET HTTP request and include the authorization token described in the authorization documentation .
+- The authorization token activity report returns information about third party websites and applications your users have granted access for.
+- For readability purposes, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ token ?endTime= end date &startTime= start date &maxResults= maximum number of events returned on a response page The following example gets a report on all of your account's authorization events for the past 180 days.
+
+### "Reports API: Device Audit Activity Report \_|\_ Admin console \_|\_ Google\
+
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile](https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 89
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- REST Resource: tokens Methods delete DELETE /admin/directory/v1/users/{userKey}/tokens/{clientId} Deletes all access tokens issued by a user for an application. get GET /admin/directory/v1/users/{userKey}/tokens/{clientId} Gets information about an access token issued by a user. list GET /admin/directory/v1/users/{userKey}/tokens Returns the set of tokens specified user has issued to 3rd party applications.
-- If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
-- REST Resource: users Methods delete DELETE /admin/directory/v1/users/{userKey} Deletes a user. get GET /admin/directory/v1/users/{userKey} Retrieves a user. insert POST /admin/directory/v1/users Creates a user. list GET /admin/directory/v1/users Retrieves a paginated list of either deleted users or all users in a domain. makeAdmin POST /admin/directory/v1/users/{userKey}/makeAdmin Makes a user a super administrator. patch PATCH /admin/directory/v1/users/{userKey} Updates a user using patch semantics. signOut POST /admin/directory/v1/users/{userKey}/signOut Signs a user out of all web and device sessions and reset their sign-in cookies. undelete POST /admin/directory/v1/users/{userKey}/undelete Undeletes a deleted user. update PUT /admin/directory/v1/users/{userKey} Updates a user. watch POST /admin/directory/v1/users/watch Watches for changes in users list.
-- REST Resource: members Methods delete DELETE /admin/directory/v1/groups/{groupKey}/members/{memberKey} Removes a member from a group. get GET /admin/directory/v1/groups/{groupKey}/members/{memberKey} Retrieves a group member's properties. hasMember GET /admin/directory/v1/groups/{groupKey}/hasMember/{memberKey} Checks whether the given user is a member of the group. insert POST /admin/directory/v1/groups/{groupKey}/members Adds a user to the specified group. list GET /admin/directory/v1/groups/{groupKey}/members Retrieves a paginated list of all members in a group. patch PATCH /admin/directory/v1/groups/{groupKey}/members/{memberKey} Updates the membership properties of a user in the specified group. update PUT /admin/directory/v1/groups/{groupKey}/members/{memberKey} Updates the membership of a user in the specified group.
+- To do this, use a GET HTTP request in the following form: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ mobile ?maxResults= maximum number of events returned on a response page &eventName= name of the event &filters= event parameter relational operator parameter value The following example shows how to retrieve all suspicious activity events for Android users within the domain: GET https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/mobile?eventName=SUSPICIOUS ACTIVITY EVENT&filters=DEVICE TYPE==ANDROID&maxResults=25 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For readability purposes, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ mobile ?endTime= end date &startTime= start date &maxResults= maximum number of events returned on a response page The following example gets a report on all of your account's device audit events for the past 180 days.
+- GET https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/mobile?customerId=C03az79cb Retrieve device audit events by event name In some instances, you may want to retrieve specific events , such as suspicious activity events.
+- Retrieve device audit events for a domain To retrieve all device audit events for all users within your domain, use the following GET HTTP request and include the authorization token described in the authorization documentation .
 
-### Admin SDK API overview \_|\_ Admin console \_|\_ Google for Developers
+### Admin Activity Report \_|\_ Admin console \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/admin-sdk/overview](https://developers.google.com/admin-sdk/overview)
-- Source ID: `site-docs-root`
-- Final score: 46
+- URL: [https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin](https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin)
+- Source ID: `site-docs-reference-required-2`
+- Final score: 88
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Directory API — Manage your organization's users, connected devices, and third-party applications.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
-- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- The Admin SDK API is a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale.
-
-### Admin SDK API reference \_|\_ Admin console \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/admin-sdk/reference-overview](https://developers.google.com/admin-sdk/reference-overview)
-- Source ID: `site-docs-reference`
-- Final score: 44
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Directory API — Manage your organization's users, connected devices, and third-party applications.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]
-- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- The Admin SDK API is a collection of RESTful interfaces that empower administrators to manage Google Workspace organizations at scale.
+- For more information about the request's URL query strings and the response properties, see the API Reference . { "kind" : "reports#auditActivities" , "nextPageToken" : " the next page's token " , "items" : [ { "kind" : "audit#activity" , "id" : { "time" : "2011-06-17T15:39:18.460Z" , "uniqueQualifier" : " report's unique ID " , "applicationName" : "admin" , "customerId" : "C03az79cb" }, "actor" : { "callerType" : "USER" , "email" : "liz@example.com" , "profileId" : " user's unique Google Workspace profile ID " , "key" : " consumer key of requester in OAuth 2LO requests " }, "ownerDomain" : "example.com" , "ipAddress" : " user's IP address " , "events" : [ { "type" : "GROUP SETTINGS" , "name" : "CHANGE GROUP SETTING" , "parameters" : [ { "name" : "SETTING NAME" , "value" : "WHO CAN JOIN" , "intValue" : " integer value of parameter " , "boolValue" : " boolean value of parameter " } ] } ] }, { "kind" : "audit#activity" , "id" : { "time" : "2011-06-17T15:39:18.460Z" , "uniqueQualifier" : " reports unique ID " , "applicationName" : "admin" , "customerId" : "C03az79cb" }, "actor" : { "callerType" : "USER" , "email" : "liz@example.com" , "profileId" : " user's unique Google Workspace profile ID " , "key" : " consumer key of requester in an OAuth 2LO request " }, "ownerDomain" : "example.com" , "ipAddress" : " user's IP address " , "events" : [ { "type" : "GROUP SETTINGS" , "name" : "CREATE GROUP" , "parameters" : [ { "name" : "GROUP EMAIL" , "value" : "helpdesk@example.com" , "intValue" : "" , "boolValue" : "" } ] } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- And for information about the activities, see the administrator event names : GET https://admin.googleapis.com/admin/reports/v1/activity/users/john@example.com /applications/admin?maxResults=2&filters=OLD VALUE==ALLOW CAMERA Retrieve all activities by event name To retrieve a report of all activities for a specific event name, use the following GET HTTP request and include the authorization token described in the authorization documentation .
+- GET https://admin.googleapis.com/admin/reports/v1/activity/users/all /applications/admin?customerId=C03az79cb Retrieve all activities by administrator To retrieve a report of all Admin console activities done by a specific administrator, use the following GET HTTP request and include the authorization token described in the authorization documentation .
+- For readability, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ userKey /applications/ admin ?endTime= a date &startTime= a date &maxResults= number of events listed on each page of the report &filters= event name parameter relational operator parameter value The following example gets a report on all changes to the Admin console application done by john@example.com , and the response is filtered to return any activities which have an OLD VALUE equal to ALLOW CAMERA .
 

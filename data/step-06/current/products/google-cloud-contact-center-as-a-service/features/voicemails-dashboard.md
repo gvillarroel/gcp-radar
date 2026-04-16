@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.614Z"
+generated_at: "2026-04-15T13:50:47.007Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Voicemails dashboard"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-03-14"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses"
 keywords:
   - "voicemails"
   - "dashboard"
-  - "the"
   - "shows"
   - "voicemail"
   - "volume"
-  - "and"
   - "agent"
+  - "response"
+  - "performance"
 ---
 
 # Voicemails dashboard
@@ -42,48 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Real-time dashboards and monitoring pages \_|\_ Google Cloud Contact Center\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- Source ID: `site-docs-reference`
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Call Volume Count of inbound or outbound interactions offered, regardless of whether they were handled by an agent or not (includes abandons, failed contacts, etc) Handled Count of inbound or outbound interactions touched by an agent (excludes agent <> agent transfers) Transfer % SUM of finished or failed segments that are a transfer / SUM of all finished or failed segments Inbound Count of interactions created by a consumer and offered - regardless of whether it was handled by an agent (includes abandons, failed contacts, etc) Outbound Count of interactions created by an agent or auto-dialing system, regardless of whether the consumer answers the call Calls in Queue Count of inbound interactionscurrentlywaiting in queue AHT (average call duration + average wrap-up status associated with a Call ID) Chat Volume Count of interactions offered, regardless of whether they were handled by an agent or not (includes abandons, failed contacts, etc) Handled Count of interactions touched by an agent (excludes agent <> agent transfers) Transfer % Sum of finished or failed interactions that are a transfer / Sum of all finished or failed interactions Chat Concurrency The average concurrency of all ongoing chats (live metric) Avg Response Time Average time (seconds) that it takes for an agent to respond to a consumer Chats in Queue Count of inbound interactionscurrentlywaiting in queue AHT Average chat duration (no wrap-up status applied) SLA metrics The top of the SLA Metrics shows two charts for Call SLA and Chat SLA respectively.
+- See Virtual Agent Platform statuses in Virtual Agent configuration Inactive: Virtual Agent is turned off Explorable metrics in real-time call and chat dashboards Overview Drill-down on explorable metrics in the Call and Chat Real time Dashboards to obtain additional insight into performance and details about the metric.
+- Chat queues breakdown The Chat columns are the same as the Call columns however there are no "Avg/Longest Hold Times" as these two columns have been replaced with "Average/Longest Response Time." Average Response Time: shows the average amount of time that it takes for an agent to respond.
+- Handled Total number of completed interactions ASA / Sec Average speed to answer AHT / Sec Average Handle Time Virtual agent chat dashboard This dashboard provides a range of status, session, and performance insights for Chat sessions attended by the Virtual Agents.
+
+### "Queue and menu setup \_|\_ Google Cloud Contact Center as a Service \_|\_\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup)
+- Source ID: `site-docs-reference`
+- Final score: 135
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Voicemails dashboard With the Voicemails dashboard, get insights into the volume of voicemails received by your contact center and the performance of your agents in responding to them.
-- This includes the number of voicemails received, the number of voicemails accessed by agents, and the average agent response time.
-- Fixed incorrect labeling and routing of French voicemails to the English-language queue in the agent adapter.
-- Feature Performance overview dashboard The performance overview dashboard now includes the following tiles: Avg Queue Time : the average time a session (call or chat) spent in a queue until an agent accepted it or the end-user abandoned it Avg Queue Abandon Time : the average time that sessions (calls or chats) waited in a queue before being disconnected without an agent accepting them Sentiment Score : the average sentiment score for sessions (calls or chats) For more information, see Performance overview dashboard .
+- Priority order = Sub-queue Target > Top-level Queue Target > Global Target Examples: Targets Set Resulting Targets Global Target = 70% , Top-level Queue 1 = None , Queue 1a = None, Queue 1b = None, Queue 2a = None, Queue 2b = None, Top-level Queue 2 = None Global Target = 70% , Top-level Queue 1 = 70% (inherited from global) , Queue 1a = 70% (inherited from global), Queue 1b = 70% (inherited from global), Queue 2a = 70% (inherited from global), Queue 2b = 70% (inherited from global), Top-level Queue 2 = 70% (inherited from global) Global Target = 70% , Top-level Queue 1 = 65% , Queue 1a = None, Queue 1b = 75%, Queue 2a = 65%, Queue 2b = None, Top-level Queue 2 = None Global Target = 70% , Top-level Queue 1 = 65% , Queue 1a = 65% (inherited from Top-level), Queue 1b = 75%, Queue 2a = 65%, Queue 2b = 70% (inherited from global), Top-level Queue 2 = None Global Target = None , Top-level Queue 1 = 65% , Queue 1a = None, Queue 1b = None, Queue 2a = 60%, Queue 2b = 40%, Top-level Queue 2 = None Global Target = None , Top-level Queue 1 = 65% , Queue 1a = 65% (inherited from Top-level), Queue 1b = 65% (inherited from Top-level), Top-level Queue 2 = None , Queue 2a = 60%, Queue 2b = 40% Utilize set targets Call and chat dashboards When viewing the default view of the Call or Chat dashboard, the target displayed will be the globally configured target metric When viewing multiple queues (or a queue group), no target will be displayed Queue reports dashboard Available for interaction-based data model enabled environments The SL Target and Concurrency Target column will display each queue's target If a queue group consists of multiple queues with varying targets, then no value will be displayed in the Totals row Performance metrics dashboard Available for interaction-based data model enabled environments The SL Target column will display each queue's service level target.
+- Queue menus can be set to route to a specific group of agents, deflect to messages, other queues, phone numbers, or voicemail, and many features can be applied at the queue level for specific customization.
+- Details and tips Due to the number of digits on a keypad, there's a 9 top-level queue menu limit If you need to more than 9 queues, nest more queues within a top-level queue All numbers assigned to your environment will default to the top of the queue unless otherwise assigned as Direct Access points (DAPs) If you are using multiple languages, numbers will default to the language selection message, then when the language is selected, will route to the top of the menu structure for the selected language If you want to hide a queue from a caller who dials into a number that goes to the top of the queue, toggle the Hide Selection From Menu option to Hide in the menu settings For internal transfers to teams or groups not available to callers, create one queue, hide the option from callers, and create all the necessary sub-queues for agents to pick from for transfers Once your queues are set up, you can see the numbers that the caller needs to select.
+- Emails will have the end-user's entered email address in the Reply-to Header field All emails will use this subject format: {Queue Name} [from: {email} ] Your CRM team should set up a rule that identifies the email address in the subject or body of the email and use the email address to identify the contact for the best experience Once enabled, the email form with the custom email per-queue shows at all times for the email channel, including: during operation hours, after operation hours, and for email deflection options CCAI Platform portal sends to the email address specified and then inbound emails are handled by your email provider.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Reason Codes & Statuses \_|\_ Google Cloud Contact Center as a Service \_\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 108
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
-- Set up your Google Cloud project for CCAI Platform To set up your Google Cloud project for CCAI Platform, follow these steps: In the Google Cloud console, go to the project selector dashboard and select the project where you will create your CCAI Platform instance.
-- If agents have customized security or firewalls setup with IP allow-listing (as opposed to deny-listing), configuration of the router and possibly your firewall is needed to allow Contact Center AI Platform (CCAI Platform) IP addresses.
-- Create a CCAI Platform instance To create a CCAI Platform instance, follow these steps: In the Google Cloud console, go to the project selector dashboard and select the project that contains your instance.
-
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 64
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Reason_Codes___Statuses)
+- Source ID: `site-docs-reference`
+- Final score: 133
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- In addition to CCAI Platform, Gemini Enterprise for CX contains the following products: Dialogflow CX : Lets you create advanced virtual agents to handle routine interactions.
-- Agent Assist : Identifies your customers' intent and provides real-time, step-by-step assistance to employees during their calls and chats with customers.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- What's next Get started with CCAI Platform Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Functions Call Record Function: //checkCallRecord is designed to validate if a call record is the proper status, did not fail a certain way, and in some cases whether connected is null; Total Volume of Calls Function: getTotalVolumeOfCalls is designed to return a total volume of calls; e.g.: Service Level Function: getServiceLevel is designed to return the Service Level of a call type; e.g.: Calculation Scripts Total Volume // TOTAL VOLUME SECTION for ( var i = 0 ; i \<c all type.length ; i++ ){ var vol = getTotalVolumeOfCalls ( callsArray,call type \[ i \] ) ; if ( vol \> 0 ){ var volPerHour = Math.round ( vol/total hours \ 10 ) /10 var stringToPrint = \" the per hour volume of \" +call type \[ i \] + \" is \" + volPerHour.toString () console.log ( stringToPrint ) ; } ; } SLA // SLA SECTION for ( var i = 0 ; i \<c all type.length ; i++ ){ var SLACalc = ( getServiceLevel ( callsArray,call type \[ i \] ) /getTotalVolumeOfCalls ( callsArray,call type \[ i \] ,false, \[ 'eu in menu abandoned' \] )) ; if ( isNaN ( SLACalc ) == false ){ var stringToPrint = \" the SLA of \" +call type \[ i \] + \" is \" + SLACalc.toString () ; console.log ( stringToPrint ) ; } else { var stringToPrint = \" the SLA of \" +call type \[ i \] + \" cannot be calculated due to lack of volume \" ; console.log ( stringToPrint ) ; } } ; Chat Status Definitions Common Chat Statuses Chat Finished Statuses Chat Failed Reasons Common Chat Statuses Chat Statuses Description Queued Chat is in queue and is waiting for an Agent Assigned Chat is assigned to an agent Ongoing Chat is active with an Agent and End User Finished Chat finished successfully ( finished reasons listed below) Abandoned Chat canceled by the end user before assigned to an agent Deflected Chat was cancelled and deflected to Over Capacity Email Failed Chat failed ( failure reasons listed below ) Chat Finished Statuses Finished Chat Statuses Description Finished Chat finished successfully with no additional information Finished: Disconnected By Agent Chat was finished, agent disconnected Finished: Disconnected By End User Chat was finished, disconnected by end user Finished: No Messages Chat was finished, there was no response Finished: No Messages Disconnected By Agent Chat was finished, there was no response and the Agent disconnected Finished: No Messages Disconnected By End User Chat was finished, there was no response and the End User disconnected Timeout: Timeout By Agent With No Messages Chat was Timed Out: agent picked up and did not respond Timeout: Timeout By End User With No Messages Chat was Timed Out: agent picked up and end user did not respond Timeout: agent stopped responding Chat was Timed Out: agent picked up and stopped responding Timeout: end user stopped responding Chat was Timed Out: agent picked up and end user stopped responding Chat Failed Reasons Failed Reason Definition Failed Chat session Failed for an Unknown reason Expired Chat expired within a queue and was not picked up by an Agent Call status definitions The following call statuses can appear in the call performance history report.
+- Call Fail Reasons Code Metric Name Description nothing: 0 No Error - Call The sum of calls that did not fail. unknown: 10001 Unknown - Call The sum of calls that failed for unknown reasons. expired: 11001 Expired - Call The sum of calls that failed due to the connection timing out. transfer expired: 11002 Transfer Expired The sum of calls that failed due to the transfer connection timing out. eu canceled: 20001 Cancelled The sum of calls where the end-user hung up while being connected to an agent. eu rejected: 20002 Rejected The sum of outbound calls that were declined by the end-user. eu abandoned: 20003 Abandoned The sum of calls that were abandoned by the end-user while waiting in queue. eu in menu abandoned: 20004 In-Menu Abandoned The sum of calls that were abandoned by the end-user while in the IVR menu. eu repeated voicemail: 20005 Repeated Voicemail The sum of calls that failed because the end-user already had left a voicemail waiting to be answered.
+- Possible reasons include the agent closing their browser or a network error. ag ignored: 30002 Agent Ignored The sum of calls that were not picked up by the agent. ag mic no device: 31001 Agent No Mic The sum of calls that failed due to the agent not having a microphone. ag mic denied: 31002 Agent Mic Denied The sum of calls that failed due to the agent not having microphone access enabled. voip twilio error: 41001 VOIP Error The sum of calls that failed due to a voice provider issue. voip tokbox error: 42001 voip nexmo error: 45001 voip invalid token: 43001 VOIP Invalid Token The sum of calls that failed due to the voice provider providing an invalid token. voip conn general: 44001 VOIP General The sum of calls that failed due to a general voice provider issue. voip conn timeout: 44002 VOIP Timeout The sum of calls that failed due to the voice provider connection timing out. voip conn signal: 44003 VOIP Signal The sum of calls that failed due to a poor connection to the voice provider. stuck due to api error: 50001 Stuck due to API The sum of calls that failed due to an API issue. group deleted no substitute: 50002 Group Deleted - Call The sum of calls that failed due to a cascade group being deleted without any alternative available. menu deleted: 50003 Menu Deleted The sum of calls that failed due to the queue being deleted after the end-user had already entered the queue. direct pstn call to fallback number: 60001 Directed to Fallback The sum of calls that were directed to a fallback number.
+- Chat Fail Reasons Code Metric Name Description nothing: 0 No Error - Chat The sum of chats that did not fail. unknown: 1 Unknown - Chat The sum of chats that failed for unknown reasons. no response: 2 No Response The sum of chats that ended due to the end-user not responding. expired: 3 Expired - Chat The sum of chats that failed due to the connection timing out. after hours: 4 After Hours The sum of chats that reached a queue outside of operating hours. expired menu selection: 31 Expired Menu The sum of chats where end-users selected a queue that no longer existed. end user opt out: 41 Opted Out The sum of chats where end-users opted not to be recorded. over cap email: 50001 Overcapacity Email The sum of chats where end-users sent an email due to the queue being in an overcapacity state. group deleted no substitute: 60001 Group Deleted - Chat The sum of chats that failed due to a cascade group being deleted without any alternative available.
 

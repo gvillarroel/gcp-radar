@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.182Z"
+generated_at: "2026-04-14T09:35:01.918Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Backup Vault retention lock by backup rule"
 feature_slug: "backup-vault-retention-lock-by-backup-rule"
 latest_feature_date: "2025-10-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings"
 keywords:
   - "setting"
   - "lock"
   - "rule"
   - "retention"
-  - "by"
   - "vault"
-  - "backup"
-  - "was"
+  - "added"
 ---
 
 # Backup Vault retention lock by backup rule
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +36,54 @@ A backup vault setting was added to prevent deletion during the retention durati
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings](https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings)
 
 ## Supporting Pages
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Backup vault for immutable and indelible backups \_|\_ Backup and DR \_\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 188
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault)
+- Source ID: `site-docs-reference`
+- Final score: 166
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Prevent deletion for duration specified in backup rule This setting allows a backup vault to adopt the retention period defined in an associated backup plan.
+- When this setting is active, the Enforced retention column for the backup vault will indicate Inherited from rule .
+- Example: Retention precedence If you have the following configuration: Backup vault Minimum enforced retention : 3 days Backup vault Prevent deletion for duration specified in backup rule : Enabled Backup plan Delete backups after : 7 days Result: The backup cannot be deleted for the 7-day period specified in the backup plan's rule and will be automatically deleted only after 7 days have passed.
+- When you create a backup vault with a Minimum enforced retention of three days, then any backup rule that stores backups in this vault must have a Delete backups after value equal to or greater than three days.
+
+### "Protect and recover SAP HANA databases in Compute Engine instances \_|\_\
+
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery](https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery)
+- Source ID: `site-docs-reference`
+- Final score: 124
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- When enabled, this feature locks backups for the exact retention period defined in the associated backup plan, overriding the vault's local minimum retention and preventing manual deletion.
-- Feature A new backup vault setting, Prevent deletion for duration specified in backup rule , is now available.
-- Enhanced backups are managed and stored by Backup and DR Service and provide immutable and indelible backups through backup vault, fine grained scheduling, backup protection against source project deletion and source cluster deletion, PiTR using logs and centralized monitoring and reporting.
-- If your backup appliance was originally installed as version 11.0.5 or older (before July 2023), then the 11.0.9 upgrade includes an additional automated procedure to prepare for the coming upgrade by making some adjustments to the backup appliance's boot disk partitions.
+- Note: If production log retention is set then purge will run based on the Retention of production db logs in hour setting under Application Details & Settings .
+- If production log retention is set, then purge runs based on the Retention of production db logs in hours setting under Application Details & Settings .
+- Size the HANA archive log backup disk to store archives based on the production log retention setting.
+- Set application details & settings After setting the staging disk format and backup method , you must enter the details and settings you want to apply to your backup plans: In the appliance management console, go to App manager and click Applications .
 
-### Backup and DR Service for Microsoft SQL Server \_|\_ Google Cloud Documentation
+### "Configure advanced policy settings \_|\_ Backup and DR \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server)
-- Source ID: `site-api-reference`
-- Final score: 154
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- To more efficiently and effectively manage the storage requirements for a database's logs, snapshot policies provide the following advanced settings: Log Backup Retention Period : Log retention is defined separately from its associated database.
-- Backup and DR has a proprietary method of change block tracking so backup solutions using SQL or other methods of obtaining the backups are not impacted by a scheduled Backup and DR data capture jobs.
-- You can find additional information at: Backup and DR for Microsoft SQL Server Databases Prepare SQL Server databases for Backup and DR Service Add a SQL Server database host and discover databases Configure backup plans for Microsoft SQL Server instances and databases Application details and settings for Microsoft SQL Server instances and databases Mount a SQL Server database Mount databases into SQL Always On Availability Groups Manage an active mount Migrate a SQL Server database Clone SQL Server databases Recover SQL Server backups What's Next Prepare SQL server databases for Backup and DR Service .
-- When enabled (not default), logs are sent to each OnVault pool specified by a valid OnVault policy or resource profile combination (e.g., OnVault pool one selected in the policy, and OnVault pool one specified in the resource profile).
-
-### "Backup plans in the appliance management console overview \_|\_ Backup and\
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan)
-- Source ID: `site-docs-root`
-- Final score: 140
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings](https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings)
+- Source ID: `site-docs-reference`
+- Final score: 119
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Where the backup data is retained (local backup/recovery appliance, remote backup/recovery appliance or OnVault storage location) By mixing and matching policies within a template you can create a single template that defines the shortterm and longterm retention of data, as well as where the data will be retained and how long the replicated data will be retained.
-- What's next Create a backup template Create a backup policy Create a resource profile Configure advanced policy settings of an application backed up by the policy Apply a backup plan to an application Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Specifically, the policies define the following: The types of data backup operation (e.g., snapshot, replication) The frequency of the application data backup operation How long to retain the application data backups The advanced settings related to the application data backup operation Whether to truncate logs.
-- Backup plans are the rules that the appliance management console uses to define how often to back up application data, how long to retain the application data backups, and where and how to replicate the application's data backups.
+- Note: The Enforced Retention advanced policy setting is not compatible with application protection that points to a backup vault.
+- You can modify a policy that is already used to protect an application by setting a longer enforced retention period.
+- When a backup vault is the storage target, the backup vault determines the enforced retention period.
+- The retention of logs replicated to OnVault is similar to snapshot log retention.
 

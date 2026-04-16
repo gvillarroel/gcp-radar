@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-10T00:22:54+00:00'
-updated_at: '2026-04-11T18:37:54+00:00'
+updated_at: '2026-04-14T03:42:48+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/sensitive-data-protection/docs
   created_at: '2026-04-11T18:29:16+00:00'
-  updated_at: '2026-04-11T18:32:31+00:00'
+  updated_at: '2026-04-14T02:36:14+00:00'
   update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 2
     max_pages: 52
     compact_output: true
-  last_synced_at: '2026-04-11T18:32:31+00:00'
+  last_synced_at: '2026-04-14T02:36:14+00:00'
 - type: site
   id: site-api-reference
   title: https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest
   created_at: '2026-04-11T18:29:16+00:00'
-  updated_at: '2026-04-11T18:35:09+00:00'
+  updated_at: '2026-04-14T02:52:16+00:00'
   update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
@@ -34,18 +34,354 @@ sources:
     max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T18:35:09+00:00'
+  last_synced_at: '2026-04-14T02:52:16+00:00'
 - type: site
-  id: site-iam-reference
+  id: site-docs-root-2
   title: https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types
-  created_at: '2026-04-11T18:29:17+00:00'
-  updated_at: '2026-04-11T18:37:54+00:00'
+  created_at: '2026-04-14T01:26:56+00:00'
+  updated_at: '2026-04-14T02:39:17+00:00'
   update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types
     --key corpus --compact
-  delete_command: know del --key corpus site-iam-reference
+  delete_command: know del --key corpus site-docs-root-2
   config:
     url: https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-method-types
     max_depth: 2
+    max_pages: 52
+    compact_output: true
+  last_synced_at: '2026-04-14T02:39:17+00:00'
+- type: site
+  id: site-docs-root-3
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/data-security
+  created_at: '2026-04-14T01:26:57+00:00'
+  updated_at: '2026-04-14T02:42:14+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/data-security
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-3
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/data-security
+    max_depth: 2
+    max_pages: 52
+    compact_output: true
+  last_synced_at: '2026-04-14T02:42:14+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/control-access-based-on-data-sensitivity
+  created_at: '2026-04-14T01:26:57+00:00'
+  updated_at: '2026-04-14T02:44:52+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/control-access-based-on-data-sensitivity
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/control-access-based-on-data-sensitivity
+    max_depth: 2
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-11T18:37:54+00:00'
+  last_synced_at: '2026-04-14T02:44:52+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/security-command-center/docs/release-notes
+  created_at: '2026-04-14T01:26:57+00:00'
+  updated_at: '2026-04-14T02:47:21+00:00'
+  update_command: know sync site https://docs.cloud.google.com/security-command-center/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/security-command-center/docs/release-notes
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:47:21+00:00'
+- type: site
+  id: site-docs-reference-3
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/release-notes
+  created_at: '2026-04-14T01:26:58+00:00'
+  updated_at: '2026-04-14T02:49:50+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-3
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/release-notes
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:49:50+00:00'
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/iam/docs/roles-permissions/dlp
+  created_at: '2026-04-14T01:26:58+00:00'
+  updated_at: '2026-04-14T02:54:57+00:00'
+  update_command: know sync site https://docs.cloud.google.com/iam/docs/roles-permissions/dlp
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/iam/docs/roles-permissions/dlp
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T02:54:57+00:00'
+- type: site
+  id: site-docs-root-required-4
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview
+  created_at: '2026-04-14T01:26:59+00:00'
+  updated_at: '2026-04-14T02:57:58+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-required-4
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview
+    max_depth: 2
+    max_pages: 52
+    compact_output: true
+  last_synced_at: '2026-04-14T02:57:58+00:00'
+- type: site
+  id: site-docs-reference-required-4
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data
+  created_at: '2026-04-14T01:26:59+00:00'
+  updated_at: '2026-04-14T03:00:24+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:00:24+00:00'
+- type: site
+  id: site-docs-reference-required-5
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage
+  created_at: '2026-04-14T01:27:00+00:00'
+  updated_at: '2026-04-14T03:02:59+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:02:59+00:00'
+- type: site
+  id: site-docs-reference-required-6
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-images
+  created_at: '2026-04-14T01:27:00+00:00'
+  updated_at: '2026-04-14T03:05:30+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-images
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-6
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-images
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:05:30+00:00'
+- type: site
+  id: site-docs-reference-required-7
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images
+  created_at: '2026-04-14T01:27:00+00:00'
+  updated_at: '2026-04-14T03:07:56+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-7
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:07:56+00:00'
+- type: site
+  id: site-docs-reference-required-8
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers
+  created_at: '2026-04-14T01:27:01+00:00'
+  updated_at: '2026-04-14T03:10:27+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-8
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:10:27+00:00'
+- type: site
+  id: site-docs-reference-required-9
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/create-inspection-template
+  created_at: '2026-04-14T01:27:01+00:00'
+  updated_at: '2026-04-14T03:12:57+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/create-inspection-template
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-9
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/create-inspection-template
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:12:57+00:00'
+- type: site
+  id: site-docs-reference-required-10
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/common-discovery-configurations
+  created_at: '2026-04-14T01:27:01+00:00'
+  updated_at: '2026-04-14T03:15:24+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/common-discovery-configurations
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-10
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/common-discovery-configurations
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:15:24+00:00'
+- type: site
+  id: site-docs-reference-required-11
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/classification-redaction
+  created_at: '2026-04-14T01:27:02+00:00'
+  updated_at: '2026-04-14T03:17:55+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/classification-redaction
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-11
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/classification-redaction
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:17:55+00:00'
+- type: site
+  id: site-docs-reference-required-12
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/analyzing-and-reporting
+  created_at: '2026-04-14T01:27:02+00:00'
+  updated_at: '2026-04-14T03:20:23+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/analyzing-and-reporting
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-12
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/analyzing-and-reporting
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:20:23+00:00'
+- type: site
+  id: site-docs-reference-required-13
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles
+  created_at: '2026-04-14T01:27:03+00:00'
+  updated_at: '2026-04-14T03:22:52+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-13
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:22:52+00:00'
+- type: site
+  id: site-docs-reference-required-14
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis
+  created_at: '2026-04-14T01:27:03+00:00'
+  updated_at: '2026-04-14T03:25:20+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-14
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:25:20+00:00'
+- type: site
+  id: site-docs-reference-required-15
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/inspect-sensitive-text
+  created_at: '2026-04-14T01:27:04+00:00'
+  updated_at: '2026-04-14T03:27:48+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/inspect-sensitive-text
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-15
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/inspect-sensitive-text
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:27:48+00:00'
+- type: site
+  id: site-api-reference-required-2
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/api-endpoints
+  created_at: '2026-04-14T01:27:04+00:00'
+  updated_at: '2026-04-14T03:30:12+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/api-endpoints
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/api-endpoints
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:30:12+00:00'
+- type: site
+  id: site-iam-reference-required-2
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/auth
+  created_at: '2026-04-14T01:27:04+00:00'
+  updated_at: '2026-04-14T03:32:46+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/auth
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/auth
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:32:46+00:00'
+- type: site
+  id: site-iam-reference-required-3
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/audit-logging
+  created_at: '2026-04-14T01:27:05+00:00'
+  updated_at: '2026-04-14T03:35:18+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/audit-logging
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/audit-logging
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:35:18+00:00'
+- type: site
+  id: site-iam-reference-required-4
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/allow-discovery-vpcsc
+  created_at: '2026-04-14T01:27:05+00:00'
+  updated_at: '2026-04-14T03:37:51+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/allow-discovery-vpcsc
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/allow-discovery-vpcsc
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:37:51+00:00'
+- type: site
+  id: site-docs-reference-required-16
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/secrets-discovery
+  created_at: '2026-04-14T01:27:06+00:00'
+  updated_at: '2026-04-14T03:40:20+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/secrets-discovery
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-16
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/secrets-discovery
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:40:20+00:00'
+- type: site
+  id: site-api-reference-required-3
+  title: https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2
+  created_at: '2026-04-14T01:27:06+00:00'
+  updated_at: '2026-04-14T03:42:48+00:00'
+  update_command: know sync site https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-14T03:42:48+00:00'

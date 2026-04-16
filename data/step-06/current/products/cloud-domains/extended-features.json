@@ -1,6 +1,6 @@
 {
   "schema_version": "step-06-extended-feature-definitions-v1",
-  "generated_at": "2026-04-10T05:26:31.000Z",
+  "generated_at": "2026-04-12T12:11:24.935Z",
   "product_name": "Cloud Domains",
   "product_slug": "cloud-domains",
   "inputs": {
@@ -10,14 +10,14 @@
   "thresholds": {
     "min_base_score": 18,
     "min_final_score": 20,
-    "max_candidate_pages": 6,
-    "max_definition_pages": 3
+    "max_candidate_pages": 10,
+    "max_definition_pages": 4
   },
-  "corpus_page_count": 0,
+  "corpus_page_count": 80,
   "source_row_count": 6,
   "feature_count": 5,
-  "covered_feature_count": 0,
-  "features_without_supporting_pages": 5,
+  "covered_feature_count": 5,
+  "features_without_supporting_pages": 0,
   "features": [
     {
       "latest_feature_date": "2024-06-20",
@@ -34,12 +34,675 @@
         "and",
         "export"
       ],
-      "coverage_status": "NONE",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Cloud Domains can migrate Google Domains DNS settings and export related domain and email-forwarding configurations.",
-      "evidence_summary": "",
-      "source_links": [],
-      "candidate_pages": [],
-      "supporting_pages": []
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
+      "source_links": [
+        "https://docs.cloud.google.com/domains/docs/export-dns-settings",
+        "https://docs.cloud.google.com/domains/docs/faq",
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "ee502a4ef3f81617cfd0b96f87d83679c24da69474f0e57c060b56ff242c6c77",
+          "url": "https://docs.cloud.google.com/domains/docs/export-dns-settings",
+          "title": "\"Migrate your Google Domains DNS settings to Cloud DNS or another provider\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_domains_docs_export-dns-settings.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-iam-reference/pages/docs.cloud.google.com_domains_docs_export-dns-settings.md",
+          "base_score": 316,
+          "matched_phrases": [
+            {
+              "phrase": "dns",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 95
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 58
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 36
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 15
+            },
+            {
+              "phrase": "export",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 10
+            },
+            {
+              "phrase": "migrate",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "52f4c0bf6d9055b1525c69d2a7599b2e0a20f61e37cc9ef5e410d0885c6ef806",
+          "url": "https://docs.cloud.google.com/domains/docs/faq",
+          "title": "Squarespace purchase of Google Domains FAQ \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_faq.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_faq.md",
+          "base_score": 244,
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 109
+            },
+            {
+              "phrase": "dns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 46
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 46
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "migrate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ]
+        },
+        {
+          "page_id": "0285303ce3c69d19390f3ae82cc283039134730e229928e0e333719aa1042f88",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 221,
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 92
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 67
+            },
+            {
+              "phrase": "dns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "export",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ]
+        },
+        {
+          "page_id": "ebfbb7b21a16523286a60d969c12df8e47bc56ee3017c7a2f0a56ee127a39d10",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 221,
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 93
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 67
+            },
+            {
+              "phrase": "dns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "export",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ]
+        },
+        {
+          "page_id": "45f792ebf9a1541197aea167f1de2e471c21d66aa00f5387ee1b786010895531",
+          "url": "https://docs.cloud.google.com/domains/docs/deprecations/feature-deprecations",
+          "title": "\"Deprecations and shut down features \\_|\\_ Cloud Domains \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_deprecations_feature-deprecations.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_deprecations_feature-deprecations.md",
+          "base_score": 221,
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 48
+            },
+            {
+              "phrase": "and",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "dns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 18
+            },
+            {
+              "phrase": "migrate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "de51e18996687202a7d383f2a95d90dd3811e4053f70f53864665fc34be69c79",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-domains/latest/com.google.cloud.domains.v1",
+          "title": "\"Package com.google.cloud.domains.v1 (1.85.0) \\_|\\_ Java client libraries\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.md",
+          "base_score": 201,
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 2,
+              "body_hits": 160
+            },
+            {
+              "phrase": "dns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 57
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 55
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "export",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "900b3c1ed9c32bcf6202252e1b880c8790f303798a6add1c616056f7c098d842",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.types.DnsSettings",
+          "title": "\"Class DnsSettings (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.types.DnsSettings.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.types.DnsSettings.md",
+          "base_score": 197,
+          "matched_phrases": [
+            {
+              "phrase": "dns",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 29
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 12
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "29a65a5359636471053b70e7e2bc50bca21be022e7cf4e660f064f85833c592a",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-domains/latest/com.google.cloud.domains.v1.ConfigureDnsSettingsRequest",
+          "title": "\"Class ConfigureDnsSettingsRequest (1.85.0) \\_|\\_ Java client libraries \\_\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureDnsSettingsRequest.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureDnsSettingsRequest.md",
+          "base_score": 191,
+          "matched_phrases": [
+            {
+              "phrase": "dns",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 96
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 78
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 7
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "fd450c8b577fe71bcb71039894f3205708ecf9dda5f976098d6281595f2e75ac",
+          "url": "https://docs.cloud.google.com/domains/docs/edit-registration-settings",
+          "title": "\"Edit registration settings for a domain \\_|\\_ Cloud Domains \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_edit-registration-settings.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_edit-registration-settings.md",
+          "base_score": 191,
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 50
+            },
+            {
+              "phrase": "dns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 32
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 29
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 25
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ]
+        },
+        {
+          "page_id": "6eb80dc744495ddc89b3b3be8d2d588cb40d86aebdeb3d8534a41398a5462648",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-domains/latest/com.google.cloud.domains.v1.ConfigureDnsSettingsRequest.Builder",
+          "title": "\"Class ConfigureDnsSettingsRequest.Builder (1.85.0) \\_|\\_ Java client libraries\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureDnsSettingsRequest.Builder.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureDnsSettingsRequest.Builder.md",
+          "base_score": 183,
+          "matched_phrases": [
+            {
+              "phrase": "dns",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 164
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 116
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 17
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/export-dns-settings",
+          "title": "\"Migrate your Google Domains DNS settings to Cloud DNS or another provider\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-iam-reference/pages/docs.cloud.google.com_domains_docs_export-dns-settings.md",
+          "base_score": 316,
+          "final_score": 324,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "dns",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 95
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 58
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 36
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 15
+            },
+            {
+              "phrase": "export",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 10
+            },
+            {
+              "phrase": "migrate",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "This page describes how to migrate your Google Domains DNS settings and export your domain and email forwarding configurations if you use Google Domains as your DNS provider.",
+            "Home Documentation Networking Cloud Domains Guides Send feedback Migrate your Google Domains DNS settings to Cloud DNS or another provider Stay organized with collections Save and categorize content based on your preferences.",
+            "If you don't use domain forwarding or email forwarding but use Google Domains as your DNS provider, you can Migrate your Google Domains DNS settings to Cloud DNS .",
+            "If your domain uses Google Domains as your DNS provider, the dnsSettings section of the output looks similar to the following example: dnsSettings: googleDomainsDns: If your domain uses domain or email forwarding configurations, the dnsSettings section of the output looks similar to the following example: dnsSettings: ... googleDomainsRedirectsDataAvailable: true Migrate your Google Domains DNS settings to Cloud DNS To migrate your Google Domains DNS settings, follow these steps. gcloud Create a managed public zone for your domain."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/faq",
+          "title": "Squarespace purchase of Google Domains FAQ \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_faq.md",
+          "base_score": 244,
+          "final_score": 252,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 109
+            },
+            {
+              "phrase": "dns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 46
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 46
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "migrate",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ],
+          "evidence_snippets": [
+            "To migrate your Google Domains DNS settings and export domain and email forwarding configurations, see Migrate Google Domains DNS settings .",
+            "After your domain registrations and related data are migrated to Squarespace, Cloud Domains continues to support searching and registering new domains, renewing existing domains, updating your contact, DNS settings, and transferring a registered domain to another registrar.",
+            "However, if you have already registered domains that use Google Domains, you can export your Google Domains DNS settings to Cloud DNS or another DNS provider.",
+            "All domains managed by Google Domains are migrated to Squarespace, and you can't export a registered domain from Cloud Domains to Google Domains."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 221,
+          "final_score": 229,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 92
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 67
+            },
+            {
+              "phrase": "dns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "export",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ],
+          "evidence_snippets": [
+            "ConfigureDnsSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure dns settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureDnsSettingsRequest , dict]] The request object.",
+            "ConfigureManagementSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure management settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureManagementSettingsRequest , dict]] The request object.",
+            "ConfigureContactSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure contact settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureContactSettingsRequest , dict]] The request object.",
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 async def sample configure dns settings(): Create a client client = domains v1 ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 221,
+          "final_score": 229,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 93
+            },
+            {
+              "phrase": "settings",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 67
+            },
+            {
+              "phrase": "dns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "can",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "export",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ],
+          "evidence_snippets": [
+            "ConfigureDnsSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure dns settings (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.ConfigureDnsSettingsRequest , dict] The request object.",
+            "ConfigureManagementSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure management settings (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.ConfigureManagementSettingsRequest , dict] The request object.",
+            "ConfigureContactSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure contact settings (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.ConfigureContactSettingsRequest , dict] The request object.",
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 def sample configure dns settings(): Create a client client = domains v1 ."
+          ]
+        }
+      ]
     },
     {
       "latest_feature_date": "2024-06-12",
@@ -56,12 +719,681 @@
         "domains",
         "without"
       ],
-      "coverage_status": "NONE",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Cloud Domains now supports initiating push transfers to another registrar for .uk/.co.uk domains via Cloud CLI or the Cloud Domains API when authorization codes are unavailable.",
-      "evidence_summary": "",
-      "source_links": [],
-      "candidate_pages": [],
-      "supporting_pages": []
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
+      "source_links": [
+        "https://docs.cloud.google.com/domains/docs/transfer-domain-to-another-registrar",
+        "https://docs.cloud.google.com/domains/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "fc7dc408d497848a328ebb1450ead8393dbb64bd0fb7948a7ffeb0169542765c",
+          "url": "https://docs.cloud.google.com/domains/docs/transfer-domain-to-another-registrar",
+          "title": "\"Transfer a registered domain to another registrar \\_|\\_ Cloud Domains \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_transfer-domain-to-another-registrar.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_transfer-domain-to-another-registrar.md",
+          "base_score": 258,
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 54
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 28
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 25
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 15
+            },
+            {
+              "phrase": "uk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ]
+        },
+        {
+          "page_id": "42386c6b22263359aacb70f39692417e82ee2f8f518b581d1f2f23065066a125",
+          "url": "https://docs.cloud.google.com/domains/docs/access-control",
+          "title": "Roles and permissions \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_access-control.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_access-control.md",
+          "base_score": 226,
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 95
+            },
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 54
+            },
+            {
+              "phrase": "and",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 25
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 22
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "uk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "0285303ce3c69d19390f3ae82cc283039134730e229928e0e333719aa1042f88",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 217,
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 401
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 146
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 92
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 84
+            },
+            {
+              "phrase": "without",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "ebfbb7b21a16523286a60d969c12df8e47bc56ee3017c7a2f0a56ee127a39d10",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 217,
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 386
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 146
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 93
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 84
+            },
+            {
+              "phrase": "without",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "7461594e8f0d286d2a4ed62163083f10a43dbfa5078b41470d4e4a5927c83b8c",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-domains/latest/com.google.cloud.domains.v1.ConfigureContactSettingsRequest.Builder",
+          "title": "\"Class ConfigureContactSettingsRequest.Builder (1.85.0) \\_|\\_ Java client\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureContactSettingsRequest.Builder.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureContactSettingsRequest.Builder.md",
+          "base_score": 215,
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 2,
+              "url_hits": 4,
+              "body_hits": 353
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 51
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 22
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "without",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "9450540381af66cb79ca24a48e421aaa7ccfa0527aad4fa4ff57098f62a61e2f",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-domains/latest/com.google.cloud.domains.v1.ConfigureContactSettingsRequestOrBuilder",
+          "title": "\"Interface ConfigureContactSettingsRequestOrBuilder (1.85.0) \\_|\\_ Java client\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureContactSettingsRequestOrBuilder.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureContactSettingsRequestOrBuilder.md",
+          "base_score": 209,
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 2,
+              "url_hits": 4,
+              "body_hits": 90
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 8
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "without",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "de51e18996687202a7d383f2a95d90dd3811e4053f70f53864665fc34be69c79",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-domains/latest/com.google.cloud.domains.v1",
+          "title": "\"Package com.google.cloud.domains.v1 (1.85.0) \\_|\\_ Java client libraries\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.md",
+          "base_score": 208,
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 1,
+              "url_hits": 2,
+              "body_hits": 224
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 2,
+              "body_hits": 160
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 69
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 24
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 20
+            }
+          ]
+        },
+        {
+          "page_id": "024a1c048608c8a0164c807d00fca962933328a3299a8ae2abd9d7e3b6193681",
+          "url": "https://docs.cloud.google.com/domains/docs/troubleshooting",
+          "title": "Troubleshoot Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_troubleshooting.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_troubleshooting.md",
+          "base_score": 208,
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 104
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 48
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 39
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 37
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "uk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "0bf79be44b625f44e7433d30923e01da924a397f66863b7ffc8d004f89aa5423",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-domains/latest/com.google.cloud.domains.v1.ConfigureContactSettingsRequest",
+          "title": "\"Class ConfigureContactSettingsRequest (1.85.0) \\_|\\_ Java client libraries\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureContactSettingsRequest.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-domains_latest_com.google.cloud.domains.v1.ConfigureContactSettingsRequest.md",
+          "base_score": 207,
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 2,
+              "url_hits": 4,
+              "body_hits": 276
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 26
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 9
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "without",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "0fa9bce73af99242e6591124ea725a0293039ebabd9c177a0fccbe8ffd0ef8f3",
+          "url": "https://docs.cloud.google.com/domains/docs/reference/rest",
+          "title": "Cloud Domains API \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_domains_docs_reference_rest.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-api-reference/pages/docs.cloud.google.com_domains_docs_reference_rest.md",
+          "base_score": 203,
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 58
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 41
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 38
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 22
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "push",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/transfer-domain-to-another-registrar",
+          "title": "\"Transfer a registered domain to another registrar \\_|\\_ Cloud Domains \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_transfer-domain-to-another-registrar.md",
+          "base_score": 258,
+          "final_score": 266,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 54
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 28
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 25
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 15
+            },
+            {
+              "phrase": "uk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ],
+          "evidence_snippets": [
+            "Permissions domains.registrations.configureManagement Roles roles/domains.admin gcloud Use the gcloud domains registrations initiate-push-transfer command : gcloud domains registrations initiate-push-transfer DOMAIN NAME \\ --tag= NEW REGISTRY TAG Replace the following: DOMAIN NAME : the name of the registered domain that you want to renew—for example, example.app .",
+            "Some domains don't support authorization codes—for example, .uk and .co.uk .",
+            "API Use the registrations.configureManagementSettings method : POST https://domains.googleapis.com/v1/projects/ PROJECT ID /locations/global/registrations/ DOMAIN NAME :configureManagementSettings { \"managementSettings\": { \"transferLockState\": \"UNLOCKED\" }, \"updateMask\": \"transferLockState\" } Replace the following: PROJECT ID : the name of your project DOMAIN NAME : the domain that you want to transfer Get the authorization code To get the authorization code for a transfer, see Get or reset an authorization code .",
+            "API Use the registrations.initiatePushTransfer method : POST https://domains.googleapis.com/v1/projects/ PROJECT ID /locations/global/registrations/ DOMAIN NAME :initiatePushTransfer { \"tag\" : \" NEW REGISTRY TAG \" } Replace the following: PROJECT ID : the name of your project DOMAIN NAME : the name of the domain that you want to renew NEW REGISTRY TAG : the tag of the new registrar."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/access-control",
+          "title": "Roles and permissions \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_access-control.md",
+          "base_score": 226,
+          "final_score": 234,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 95
+            },
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 54
+            },
+            {
+              "phrase": "and",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 25
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 22
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "uk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Method (locations.registrations.) Description Required permissions searchDomains Search for an available domain. domains.registrations.list retrieveRegisterParameters Get parameters to register a new domain. domains.registrations.list register Register a domain. domains.registrations.create list List the registration resources in a project. domains.registrations.list get Get the details of a registration resource. domains.registrations.get patch Edit the details of a registration resource. domains.registrations.update configureManagementSettings Configure the management settings of a registration resource. domains.registrations.configureManagement configureDnsSettings Configure the DNS settings of a registration resource. domains.registrations.configureDns configureContactSettings Configure the contact settings of a registration resource. domains.registrations.configureContact delete Delete a domain. domains.registrations.delete retrieveAuthorizationCode Retrieve the authorization code for a domain transfer. domains.registrations.configureManagement resetAuthorizationCode Reset the authorization code for a domain transfer. domains.registrations.configureManagement renewDomain Renew a domain that has expired within the previous 30 days. domains.registrations.configureManagement initiatePushTransfer Transfer a .uk or .co.uk domain to another registrar. domains.registrations.configureManagement Access control using the Google Cloud console You can use the Google Cloud console to manage access control for your projects.",
+            "Role Permissions Cloud Domains Admin ( roles/ domains.admin ) Full access to Cloud Domains Registrations and related resources. domains. domains.locations.get domains.locations.list domains.operations.cancel domains.operations.get domains.operations.list domains. registrations. configureContact domains. registrations. configureDns domains. registrations. configureManagement domains.registrations.create domains. registrations. createTagBinding domains.registrations.delete domains. registrations. deleteTagBinding domains.registrations.get domains. registrations. getIamPolicy domains.registrations.list domains. registrations. listEffectiveTags domains. registrations. listTagBindings domains. registrations. setIamPolicy domains.registrations.update resourcemanager.projects.get resourcemanager.projects.list Domains Editor ( roles/ domains.editor ) Editor role for domains domains.locations. domains.locations.get domains.locations.list domains.operations. domains.operations.cancel domains.operations.get domains.operations.list domains. registrations. configureContact domains. registrations. configureDns domains. registrations. configureManagement domains.registrations.create domains.registrations.delete domains.registrations.get domains. registrations. getIamPolicy domains.registrations.list domains. registrations. listEffectiveTags domains. registrations. listTagBindings domains.registrations.update resourcemanager.projects.get resourcemanager.projects.list Cloud Domains Viewer ( roles/ domains.viewer ) Read-only access to Cloud Domains Registrations and related resources. domains.locations. domains.locations.get domains.locations.list domains.operations.get domains.operations.list domains.registrations.get domains. registrations. getIamPolicy domains.registrations.list domains. registrations. listEffectiveTags domains. registrations. listTagBindings resourcemanager.projects.get resourcemanager.projects.list Permissions The following table lists the permissions that the caller must have to call each method.",
+            "For example, a particular user might need to create and modify the contact settings for a domain, so you would give that user the Cloud Domains Admin role ( roles/domains.admin ).",
+            "For Cloud Domains, you can configure both project-level and resource-level access."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 217,
+          "final_score": 225,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 401
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 146
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 92
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 84
+            },
+            {
+              "phrase": "without",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "TransferDomainRequest ( parent=\"parent value\", registration=registration, ) Make the request operation = client. transfer domain (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.TransferDomainRequest , dict]] The request object.",
+            "ConfigureManagementSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure management settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureManagementSettingsRequest , dict]] The request object.",
+            "ConfigureContactSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure contact settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureContactSettingsRequest , dict]] The request object.",
+            "ConfigureDnsSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure dns settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureDnsSettingsRequest , dict]] The request object."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 217,
+          "final_score": 225,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "co",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 386
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "for",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 146
+            },
+            {
+              "phrase": "and",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 93
+            },
+            {
+              "phrase": "transfer",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 84
+            },
+            {
+              "phrase": "without",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "TransferDomainRequest ( parent=\"parent value\", registration=registration, ) Make the request operation = client. transfer domain (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.TransferDomainRequest , dict] The request object.",
+            "ConfigureManagementSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure management settings (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.ConfigureManagementSettingsRequest , dict] The request object.",
+            "ConfigureContactSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure contact settings (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.ConfigureContactSettingsRequest , dict] The request object.",
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 def sample retrieve transfer parameters(): Create a client client = domains v1 ."
+          ]
+        }
+      ]
     },
     {
       "latest_feature_date": "2024-06-12",
@@ -78,12 +1410,699 @@
         "past",
         "30"
       ],
-      "coverage_status": "NONE",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Domains expired within the past 30 days can be renewed using the Google Cloud CLI or Cloud Domains API.",
-      "evidence_summary": "",
-      "source_links": [],
-      "candidate_pages": [],
-      "supporting_pages": []
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
+      "source_links": [
+        "https://docs.cloud.google.com/domains/docs/renew-expired-domain",
+        "https://docs.cloud.google.com/domains/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "f8afb3f494a1c26c4ba3e359e3c02830a37a337a7a976895b4e33b8ffc164ed3",
+          "url": "https://docs.cloud.google.com/domains/docs/renew-expired-domain",
+          "title": "Renew a recently expired domain \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_domains_docs_renew-expired-domain.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-iam-reference/pages/docs.cloud.google.com_domains_docs_renew-expired-domain.md",
+          "base_score": 230,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 33
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 19
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 14
+            },
+            {
+              "phrase": "expired",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 3
+            },
+            {
+              "phrase": "recently",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "e7adcc3166182d7888f97277fd16eca336abd9a8c0d1caf4ded9aab43b3d6c45",
+          "url": "https://docs.cloud.google.com/domains/docs/overview",
+          "title": "Cloud Domains overview \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_overview.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_overview.md",
+          "base_score": 170,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 92
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 52
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "expired",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "recently",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "0285303ce3c69d19390f3ae82cc283039134730e229928e0e333719aa1042f88",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 168,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 524
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "past",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "30",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "ebfbb7b21a16523286a60d969c12df8e47bc56ee3017c7a2f0a56ee127a39d10",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 168,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 525
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "past",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "30",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "d47f3bc2bccd917319cdbedddf283109d7c2dfb2bad272db4aa2386eb9e42e28",
+          "url": "https://docs.cloud.google.com/domains/docs/billing-questions",
+          "title": "Billing questions \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_billing-questions.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_billing-questions.md",
+          "base_score": 160,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 34
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 12
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "30",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "recently",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "0fa9bce73af99242e6591124ea725a0293039ebabd9c177a0fccbe8ffd0ef8f3",
+          "url": "https://docs.cloud.google.com/domains/docs/reference/rest",
+          "title": "Cloud Domains API \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_domains_docs_reference_rest.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-api-reference/pages/docs.cloud.google.com_domains_docs_reference_rest.md",
+          "base_score": 158,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 66
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 38
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "recently",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "expired",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "30",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "024a1c048608c8a0164c807d00fca962933328a3299a8ae2abd9d7e3b6193681",
+          "url": "https://docs.cloud.google.com/domains/docs/troubleshooting",
+          "title": "Troubleshoot Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_troubleshooting.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_troubleshooting.md",
+          "base_score": 152,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 126
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 39
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "expired",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "recently",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "fc7dc408d497848a328ebb1450ead8393dbb64bd0fb7948a7ffeb0169542765c",
+          "url": "https://docs.cloud.google.com/domains/docs/transfer-domain-to-another-registrar",
+          "title": "\"Transfer a registered domain to another registrar \\_|\\_ Cloud Domains \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_transfer-domain-to-another-registrar.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_transfer-domain-to-another-registrar.md",
+          "base_score": 149,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 60
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 25
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "expired",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "1bfbcb935b3aa182e934482cf6436f43ff2f8b86a1eb96a4c22db07aeda172f2",
+          "url": "https://docs.cloud.google.com/domains/docs/register-domain",
+          "title": "Register a domain \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_register-domain.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_register-domain.md",
+          "base_score": 139,
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 237
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 55
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "expired",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "30",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "42386c6b22263359aacb70f39692417e82ee2f8f518b581d1f2f23065066a125",
+          "url": "https://docs.cloud.google.com/domains/docs/access-control",
+          "title": "Roles and permissions \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_access-control.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_access-control.md",
+          "base_score": 135,
+          "matched_phrases": [
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 95
+            },
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 54
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "expired",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "30",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/renew-expired-domain",
+          "title": "Renew a recently expired domain \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-iam-reference/pages/docs.cloud.google.com_domains_docs_renew-expired-domain.md",
+          "base_score": 230,
+          "final_score": 238,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 33
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 19
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 14
+            },
+            {
+              "phrase": "expired",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 3
+            },
+            {
+              "phrase": "recently",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Home Documentation Networking Cloud Domains Guides Send feedback Renew a recently expired domain Stay organized with collections Save and categorize content based on your preferences.",
+            "API Use the registrations.renewDomain method : POST https://domains.googleapis.com/v1/projects/ PROJECT ID /locations/global/registrations/ DOMAIN NAME :renewDomain { \"yearlyPrice\": { \"currencyCode\": \" CURRENCY CODE \", \"units\": NUMBER OF UNITS } } Replace the following: PROJECT ID : the name of your project DOMAIN NAME : the name of the domain that you want to renew CURRENCY CODE : the three-letter currency code defined in ISO 4217—for example, USD .",
+            "Permissions domains.registrations.configureManagement Roles roles/domains.admin gcloud Use the gcloud domains registrations renew-domain command : gcloud domains registrations renew-domain DOMAIN NAME \\ [--yearly-price= YEARLY PRICE ] Replace the following: DOMAIN NAME : the name of the registered domain that you want to renew—for example, example.app .",
+            "For more information about how this change affects Cloud Domains, see Cloud Domains feature deprecations , Renew an expired domain registration , and Squarespace purchase of Google Domains FAQ ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/overview",
+          "title": "Cloud Domains overview \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_overview.md",
+          "base_score": 170,
+          "final_score": 178,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 92
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 52
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "expired",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "recently",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "If your domain expired within the past 30 days, you can renew it using the Google Cloud CLI or the Cloud Domains API.",
+            "For more information about how this change affects Cloud Domains, see Cloud Domains feature deprecations , Renew an expired domain registration , and Squarespace purchase of Google Domains FAQ .",
+            "Automatic renewal After you set up Cloud Billing and complete your domain registration, Cloud Domains automatically sets up the registration to renew every year.",
+            "For more information, see Renew a recently expired domain ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 168,
+          "final_score": 176,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 524
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "past",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "30",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "For Registration resources using Monthly billing </domains/pricing#billing-models> , this method works if: state is EXPORTED with expire time in the past state is REGISTRATION FAILED state is TRANSFER FAILED When an active registration is successfully deleted, you can continue to use the domain in Google Domains <https://domains.google/> until it expires.",
+            "This method works on any Registration resource using Subscription or Commitment billing </domains/pricing#billing-models> , provided that the resource was created at least 1 day in the past.",
+            "The domain does not renew automatically unless the new owner sets up billing in Google Domains.",
+            "The domain does not renew automatically unless the new owner sets up billing in Google Domains."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 168,
+          "final_score": 176,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "the",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 525
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "renew",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "past",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "30",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "within",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "For Registration resources using Monthly billing </domains/pricing#billing-models> , this method works if: state is EXPORTED with expire time in the past state is REGISTRATION FAILED state is TRANSFER FAILED When an active registration is successfully deleted, you can continue to use the domain in Google Domains <https://domains.google/> until it expires.",
+            "This method works on any Registration resource using Subscription or Commitment billing </domains/pricing#billing-models> , provided that the resource was created at least 1 day in the past.",
+            "The domain does not renew automatically unless the new owner sets up billing in Google Domains.",
+            "The domain does not renew automatically unless the new owner sets up billing in Google Domains."
+          ]
+        }
+      ]
     },
     {
       "latest_feature_date": "2023-12-06",
@@ -100,12 +2119,639 @@
         "customers",
         "to"
       ],
-      "coverage_status": "NONE",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Cloud Domains allows customers to turn off automatic renewal after domain registration.",
-      "evidence_summary": "",
-      "source_links": [],
-      "candidate_pages": [],
-      "supporting_pages": []
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
+      "source_links": [
+        "https://docs.cloud.google.com/domains/docs/edit-registration-settings",
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+        "https://docs.cloud.google.com/domains/docs/overview"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "fd450c8b577fe71bcb71039894f3205708ecf9dda5f976098d6281595f2e75ac",
+          "url": "https://docs.cloud.google.com/domains/docs/edit-registration-settings",
+          "title": "\"Edit registration settings for a domain \\_|\\_ Cloud Domains \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_edit-registration-settings.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_edit-registration-settings.md",
+          "base_score": 260,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 93
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 92
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 50
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "disable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "0285303ce3c69d19390f3ae82cc283039134730e229928e0e333719aa1042f88",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 216,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 358
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 292
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            }
+          ]
+        },
+        {
+          "page_id": "ebfbb7b21a16523286a60d969c12df8e47bc56ee3017c7a2f0a56ee127a39d10",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 216,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 362
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 291
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            }
+          ]
+        },
+        {
+          "page_id": "e7adcc3166182d7888f97277fd16eca336abd9a8c0d1caf4ded9aab43b3d6c45",
+          "url": "https://docs.cloud.google.com/domains/docs/overview",
+          "title": "Cloud Domains overview \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_overview.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_overview.md",
+          "base_score": 210,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 99
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 57
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 52
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "disable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "6c4d397a98a174211b443cb348f6c82ee882375745e8082a7a3e9c96200c1b92",
+          "url": "https://docs.cloud.google.com/domains/docs/buy-register-domain",
+          "title": "Quickstart: Register a domain with Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_domains_docs_buy-register-domain.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-api-reference/pages/docs.cloud.google.com_domains_docs_buy-register-domain.md",
+          "base_score": 207,
+          "matched_phrases": [
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 91
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 75
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 32
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "d47f3bc2bccd917319cdbedddf283109d7c2dfb2bad272db4aa2386eb9e42e28",
+          "url": "https://docs.cloud.google.com/domains/docs/billing-questions",
+          "title": "Billing questions \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_billing-questions.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_billing-questions.md",
+          "base_score": 204,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 29
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 21
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 12
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "disable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "1bfbcb935b3aa182e934482cf6436f43ff2f8b86a1eb96a4c22db07aeda172f2",
+          "url": "https://docs.cloud.google.com/domains/docs/register-domain",
+          "title": "Register a domain \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_register-domain.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_register-domain.md",
+          "base_score": 203,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 146
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 125
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 55
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "52f4c0bf6d9055b1525c69d2a7599b2e0a20f61e37cc9ef5e410d0885c6ef806",
+          "url": "https://docs.cloud.google.com/domains/docs/faq",
+          "title": "Squarespace purchase of Google Domains FAQ \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_faq.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_faq.md",
+          "base_score": 200,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 153
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 109
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 79
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "disable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "024a1c048608c8a0164c807d00fca962933328a3299a8ae2abd9d7e3b6193681",
+          "url": "https://docs.cloud.google.com/domains/docs/troubleshooting",
+          "title": "Troubleshoot Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_troubleshooting.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_troubleshooting.md",
+          "base_score": 192,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 107
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 93
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 39
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "disable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "f8afb3f494a1c26c4ba3e359e3c02830a37a337a7a976895b4e33b8ffc164ed3",
+          "url": "https://docs.cloud.google.com/domains/docs/renew-expired-domain",
+          "title": "Renew a recently expired domain \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_domains_docs_renew-expired-domain.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-iam-reference/pages/docs.cloud.google.com_domains_docs_renew-expired-domain.md",
+          "base_score": 187,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 35
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 19
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/edit-registration-settings",
+          "title": "\"Edit registration settings for a domain \\_|\\_ Cloud Domains \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_edit-registration-settings.md",
+          "base_score": 260,
+          "final_score": 268,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 93
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 92
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 50
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "disable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "Turn off automatic renewal To disable automatic domain renewal: Console In the Google Cloud console, go to the Cloud Domains page.",
+            "API Use the registrations.configureDnsSettings method : POST https://domains.googleapis.com/v1/projects/ PROJECT ID /locations/global/registrations/ DOMAIN NAME :configureDnsSettings Replace the following: PROJECT ID : the name of your project DOMAIN NAME : the domain that you want to change contact settings for The request body can be one of the following: To update or switch to custom name servers: { \"dnsSettings\": { \"customDns\": { \"nameServers\": [ \"ns-cloud-a1.googledomains.com\", \"ns-cloud-a2.googledomains.com\", \"ns-cloud-a3.googledomains.com\", \"ns-cloud-a4.googledomains.com\" ] } }, \"updateMask\": \"customDns\" } Edit automatic renewal settings All domains renew automatically.",
+            "On the Disable auto-renewal dialog, click Disable . gcloud Use the gcloud domains registrations configure management command : gcloud domains registrations configure management DOMAIN NAME \\ --preferred-renewal-method=renewal-disabled Replace DOMAIN NAME with the name of the registered domain—for example, example.app .",
+            "On the Enable auto-renewal dialog, click Enable . gcloud Use the gcloud domains registrations configure management command : gcloud domains registrations configure management DOMAIN NAME \\ --preferred-renewal-method=automatic-renewal Replace DOMAIN NAME with the name of the registered domain—for example, example.app ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 216,
+          "final_score": 224,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 358
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 292
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            }
+          ],
+          "evidence_snippets": [
+            "The domain does not renew automatically unless the new owner sets up billing in Google Domains.",
+            "The domain does not renew automatically unless the new owner sets up billing in Google Domains.",
+            "For example, when changing from a Google Domains DNS configuration to a Custom DNS configuration, the update mask is \"custom dns\" . // This corresponds to the update mask field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+            "ConfigureManagementSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure management settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureManagementSettingsRequest , dict]] The request object."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 216,
+          "final_score": 224,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 362
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 291
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            }
+          ],
+          "evidence_snippets": [
+            "The domain does not renew automatically unless the new owner sets up billing in Google Domains.",
+            "The domain does not renew automatically unless the new owner sets up billing in Google Domains.",
+            "For example, when changing from a Google Domains DNS configuration to a Custom DNS configuration, the update mask is \"custom dns\" . // This corresponds to the update mask field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+            "ConfigureManagementSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure management settings (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.ConfigureManagementSettingsRequest , dict] The request object."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/overview",
+          "title": "Cloud Domains overview \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_overview.md",
+          "base_score": 210,
+          "final_score": 218,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 99
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 57
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 52
+            },
+            {
+              "phrase": "automatic",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "renewal",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "disable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Automatic renewal After you set up Cloud Billing and complete your domain registration, Cloud Domains automatically sets up the registration to renew every year.",
+            "If you use Cloud DNS to provide name servers for Cloud Domains, you can enable or disable managed DNSSEC when you create a public zone for your domain.",
+            "Cloud Domains also lets you automatically review your registered domain as long as your Cloud Billing account stays active.",
+            "Automatic renewal helps you keep ownership of your domain by not missing a payment."
+          ]
+        }
+      ]
     },
     {
       "latest_feature_date": "2023-04-28",
@@ -122,12 +2768,687 @@
         "is",
         "available"
       ],
-      "coverage_status": "NONE",
+      "coverage_status": "MEDIUM",
       "extended_definition": "Importing a domain from Google Domains to Cloud Domains is available as a generally available capability; Importing a domain from Google Domains to Cloud Domains was introduced in preview.",
-      "evidence_summary": "",
-      "source_links": [],
-      "candidate_pages": [],
-      "supporting_pages": []
+      "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.",
+      "source_links": [
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+        "https://docs.cloud.google.com/domains/docs/register-domain",
+        "https://docs.cloud.google.com/domains/docs/transfer-domain-to-another-registrar"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "0285303ce3c69d19390f3ae82cc283039134730e229928e0e333719aa1042f88",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 307,
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 550
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 358
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 292
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 40
+            },
+            {
+              "phrase": "import",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            }
+          ]
+        },
+        {
+          "page_id": "ebfbb7b21a16523286a60d969c12df8e47bc56ee3017c7a2f0a56ee127a39d10",
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-python-reference\\pages\\docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 307,
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 548
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 362
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 291
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 40
+            },
+            {
+              "phrase": "import",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            }
+          ]
+        },
+        {
+          "page_id": "1bfbcb935b3aa182e934482cf6436f43ff2f8b86a1eb96a4c22db07aeda172f2",
+          "url": "https://docs.cloud.google.com/domains/docs/register-domain",
+          "title": "Register a domain \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_register-domain.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_register-domain.md",
+          "base_score": 279,
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 196
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 146
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 125
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 55
+            },
+            {
+              "phrase": "available",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "fc7dc408d497848a328ebb1450ead8393dbb64bd0fb7948a7ffeb0169542765c",
+          "url": "https://docs.cloud.google.com/domains/docs/transfer-domain-to-another-registrar",
+          "title": "\"Transfer a registered domain to another registrar \\_|\\_ Cloud Domains \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_transfer-domain-to-another-registrar.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_transfer-domain-to-another-registrar.md",
+          "base_score": 270,
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 66
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 55
+            },
+            {
+              "phrase": "to",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 42
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 25
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "6c4d397a98a174211b443cb348f6c82ee882375745e8082a7a3e9c96200c1b92",
+          "url": "https://docs.cloud.google.com/domains/docs/buy-register-domain",
+          "title": "Quickstart: Register a domain with Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_domains_docs_buy-register-domain.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-api-reference/pages/docs.cloud.google.com_domains_docs_buy-register-domain.md",
+          "base_score": 262,
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 94
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 91
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 75
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 32
+            },
+            {
+              "phrase": "available",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "73a95512ac92640e0ec9b07cf0e27c04e52ca68d134a8277f0d7ce60b6c5cdd8",
+          "url": "https://docs.cloud.google.com/domains/docs/list-registrations",
+          "title": "List registered domains \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_domains_docs_list-registrations.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-iam-reference/pages/docs.cloud.google.com_domains_docs_list-registrations.md",
+          "base_score": 258,
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 71
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 52
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 28
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 28
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "ee502a4ef3f81617cfd0b96f87d83679c24da69474f0e57c060b56ff242c6c77",
+          "url": "https://docs.cloud.google.com/domains/docs/export-dns-settings",
+          "title": "\"Migrate your Google Domains DNS settings to Cloud DNS or another provider\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_domains_docs_export-dns-settings.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-iam-reference/pages/docs.cloud.google.com_domains_docs_export-dns-settings.md",
+          "base_score": 245,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 122
+            },
+            {
+              "phrase": "is",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 73
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 58
+            },
+            {
+              "phrase": "to",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 44
+            },
+            {
+              "phrase": "import",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "fd450c8b577fe71bcb71039894f3205708ecf9dda5f976098d6281595f2e75ac",
+          "url": "https://docs.cloud.google.com/domains/docs/edit-registration-settings",
+          "title": "\"Edit registration settings for a domain \\_|\\_ Cloud Domains \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_edit-registration-settings.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_edit-registration-settings.md",
+          "base_score": 240,
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 103
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 93
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 92
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 50
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "available",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "52f4c0bf6d9055b1525c69d2a7599b2e0a20f61e37cc9ef5e410d0885c6ef806",
+          "url": "https://docs.cloud.google.com/domains/docs/faq",
+          "title": "Squarespace purchase of Google Domains FAQ \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_domains_docs_faq.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_faq.md",
+          "base_score": 239,
+          "matched_phrases": [
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 153
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 109
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 79
+            },
+            {
+              "phrase": "is",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 77
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 15
+            },
+            {
+              "phrase": "import",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "0fa9bce73af99242e6591124ea725a0293039ebabd9c177a0fccbe8ffd0ef8f3",
+          "url": "https://docs.cloud.google.com/domains/docs/reference/rest",
+          "title": "Cloud Domains API \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\cloud-domains\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_domains_docs_reference_rest.md",
+          "relative_markdown_path": "products/cloud-domains/corpus/site/site-api-reference/pages/docs.cloud.google.com_domains_docs_reference_rest.md",
+          "base_score": 235,
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 158
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 65
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 38
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 33
+            },
+            {
+              "phrase": "import",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 14
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+          "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsAsyncClient.md",
+          "base_score": 307,
+          "final_score": 315,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 550
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 358
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 292
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 211
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 40
+            },
+            {
+              "phrase": "import",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            }
+          ],
+          "evidence_snippets": [
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 async def sample configure management settings(): Create a client client = domains v1 .",
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 async def sample retrieve register parameters(): Create a client client = domains v1 .",
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 async def sample retrieve transfer parameters(): Create a client client = domains v1 .",
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 async def sample retrieve authorization code(): Create a client client = domains v1 ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+          "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+          "source_id": "site-python-reference",
+          "markdown_path": "products/cloud-domains/corpus/site/site-python-reference/pages/docs.cloud.google.com_python_docs_reference_domains_latest_google.cloud.domains_v1.services.domains.DomainsClient.md",
+          "base_score": 307,
+          "final_score": 315,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 548
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 362
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 291
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 4,
+              "body_hits": 215
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 40
+            },
+            {
+              "phrase": "import",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            }
+          ],
+          "evidence_snippets": [
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 def sample configure management settings(): Create a client client = domains v1 .",
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 def sample retrieve register parameters(): Create a client client = domains v1 .",
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 def sample retrieve transfer parameters(): Create a client client = domains v1 .",
+            "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import domains v1 def sample retrieve authorization code(): Create a client client = domains v1 ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/register-domain",
+          "title": "Register a domain \\_|\\_ Cloud Domains \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_register-domain.md",
+          "base_score": 279,
+          "final_score": 287,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 196
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 146
+            },
+            {
+              "phrase": "to",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 125
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 55
+            },
+            {
+              "phrase": "available",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "To register the domain, use the registrations.register method : POST https://domains.googleapis.com/v1/projects/ PROJECT ID /locations/global/registrations:register { \"registration\": { \"domainName\": \" DOMAIN NAME \", \"dnsSettings\": { \"customDns\": { \"nameServers\": [ \" NAME SERVERS \" ] } }, \"contactSettings\": { \"privacy\": \" CONTACT PRIVACY \", \"registrantContact\": { \"postalAddress\": { \"regionCode\": \" REGION CODE \", \"postalCode\": \" POSTAL CODE \", \"administrativeArea\": \" SUBDIVISION \", \"locality\": \" CITY \", \"addressLines\": [ \" ADDRESS \" ], \"recipients\": [ \" CONTACT NAME \" ], \"organization\": \" ORGANIZATION \" }, \"email\": \" EMAIL ADDRESS \", \"phoneNumber\": \" PHONE NUMBER \", \"faxNumber\": \" FAX NUMBER \" }, \"adminContact\": { \"postalAddress\": { \"regionCode\": \" REGION CODE \", \"postalCode\": \" POSTAL CODE \", \"administrativeArea\": \" SUBDIVISION \", \"locality\": \" CITY \", \"addressLines\": [ \" ADDRESS \" ], \"recipients\": [ \" CONTACT NAME \" ], \"organization\": \" ORGANIZATION \" }, \"email\": \" EMAIL ADDRESS \", \"phoneNumber\": \" PHONE NUMBER \", \"faxNumber\": \" FAX NUMBER \" }, \"technicalContact\": { \"postalAddress\": { \"regionCode\": \" REGION CODE \", \"postalCode\": \" POSTAL CODE \", \"administrativeArea\": \" SUBDIVISION \", \"locality\": \" CITY \", \"addressLines\": [ \" ADDRESS \" ], \"recipients\": [ \" CONTACT NAME \" ], \"organization\": \" ORGANIZATION \" }, \"email\": \" EMAIL ADDRESS \", \"phoneNumber\": \" PHONE NUMBER \", \"faxNumber\": \" FAX NUMBER \" } } }, \"yearlyPrice\": { \"currencyCode\": \" CURRENCY CODE \", \"units\": NUMBER OF UNITS } } Replace the following: PROJECT ID : the ID of the project where you created the registration resource DOMAIN NAME : the domain name that you want to register, such as example.com NAME SERVERS : the name servers that you want to use If you are using Cloud DNS, use the nameServers field output that you got from the managedZones.create.post API call.",
+            "API To search for an available domain name, use the registrations.searchDomains method with an empty request body: GET https://domains.googleapis.com/v1/projects/ PROJECT ID /locations/global/registrations:searchDomains?query= SEARCH TERM Replace the following: PROJECT ID : the ID of the project where the domain registration is created SEARCH TERM : any non-empty string to search for a domain name, such as example This search returns suggestions for possible domain names that you can register.",
+            "Cloud Domains or Squarespace sends a verification email to the email address that you enter. gcloud To search for an available domain name, use the gcloud domains registrations search-domains command : gcloud domains registrations search-domains SEARCH TERM Replace SEARCH TERM with any non-empty string to search for a domain name, such as example .",
+            "Note: On September 7, 2023 Squarespace acquired all domain registrations and related customer accounts from Google Domains."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/domains/docs/transfer-domain-to-another-registrar",
+          "title": "\"Transfer a registered domain to another registrar \\_|\\_ Cloud Domains \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/cloud-domains/corpus/site/site-docs-root/pages/docs.cloud.google.com_domains_docs_transfer-domain-to-another-registrar.md",
+          "base_score": 270,
+          "final_score": 278,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "Fast mode kept the lexical match without page-level LLM reranking.",
+          "matched_phrases": [
+            {
+              "phrase": "is",
+              "title_hits": 2,
+              "url_hits": 1,
+              "body_hits": 66
+            },
+            {
+              "phrase": "domain",
+              "title_hits": 2,
+              "url_hits": 2,
+              "body_hits": 55
+            },
+            {
+              "phrase": "to",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 42
+            },
+            {
+              "phrase": "domains",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 25
+            },
+            {
+              "phrase": "from",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Note: On September 7, 2023 Squarespace acquired all domain registrations and related customer accounts from Google Domains.",
+            "This page describes how to transfer a registered domain from Cloud Domains to a third-party domain registrar.",
+            "API Use the registrations.configureManagementSettings method : POST https://domains.googleapis.com/v1/projects/ PROJECT ID /locations/global/registrations/ DOMAIN NAME :configureManagementSettings { \"managementSettings\": { \"transferLockState\": \"UNLOCKED\" }, \"updateMask\": \"transferLockState\" } Replace the following: PROJECT ID : the name of your project DOMAIN NAME : the domain that you want to transfer Get the authorization code To get the authorization code for a transfer, see Get or reset an authorization code .",
+            "API Use the registrations.initiatePushTransfer method : POST https://domains.googleapis.com/v1/projects/ PROJECT ID /locations/global/registrations/ DOMAIN NAME :initiatePushTransfer { \"tag\" : \" NEW REGISTRY TAG \" } Replace the following: PROJECT ID : the name of your project DOMAIN NAME : the name of the domain that you want to renew NEW REGISTRY TAG : the tag of the new registrar."
+          ]
+        }
+      ]
     }
   ]
 }

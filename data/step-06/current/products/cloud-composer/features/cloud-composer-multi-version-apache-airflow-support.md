@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.126Z"
+generated_at: "2026-04-12T12:11:20.357Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer multi-version Apache Airflow support"
 feature_slug: "cloud-composer-multi-version-apache-airflow-support"
 latest_feature_date: "2019-02-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
   - "https://docs.cloud.google.com/composer/docs/composer-versions"
   - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/composer-overview"
+  - "https://docs.cloud.google.com/composer/docs/composer-2/composer-overview"
 keywords:
   - "composer"
   - "multi"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Composer multi-version Apache Airflow support
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,34 +39,22 @@ Cloud Composer now generally supports selecting among multiple Apache Airflow im
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
 - [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/composer-overview](https://docs.cloud.google.com/composer/docs/composer-1/composer-overview)
+- [https://docs.cloud.google.com/composer/docs/composer-2/composer-overview](https://docs.cloud.google.com/composer/docs/composer-2/composer-overview)
 
 ## Supporting Pages
-
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 192
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Change Cloud Composer 1.20.2 and 2.1.2 images are available: composer-1.20.2-airflow-1.10.15 (default) composer-1.20.2-airflow-2.2.5 composer-1.20.2-airflow-2.3.4 composer-2.1.2-airflow-2.2.5 composer-2.1.2-airflow-2.3.4 (default) December 06, 2022 Feature (Cloud Composer 2) Environment snapshots and Scheduled snapshots are now generally available (GA) for Cloud Composer 2 versions 2.1.1 and later.
-- Change (Cloud Composer 2) Airflow webserver and worker-scheduler images in multiregional repositories are now tagged with their image version (for example, composer-2.0.10-airflow-2.1.4 ).
-- October 24, 2018 Feature Multi-version Apache Airflow support is now in Beta .
-- Feature Multi-version Apache Airflow support is now General Availability .
 
 ### Cloud Composer version list \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-versions](https://docs.cloud.google.com/composer/docs/composer-versions)
 - Source ID: `site-docs-root`
-- Final score: 190
+- Final score: 241
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - Source ID: `site-iam-reference`
-- Final score: 172
+- Final score: 216
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +75,30 @@ Evidence snippets:
 - Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
 - Possible solutions: While Apache Airflow version 2.10.4 includes a permanent fix, a temporary workaround exists for users on earlier versions.
 - Note: Cloud Composer version 2.4.2 fixes this issue in Airflow versions 2.4.3 and 2.5.3.
+
+### Cloud Composer overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/composer-overview](https://docs.cloud.google.com/composer/docs/composer-1/composer-overview)
+- Source ID: `site-docs-reference`
+- Final score: 211
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Each Cloud Composer release supports several Apache Airflow versions.
+- For more information about networking in Cloud Composer, see pages for individual networking features: Public IP and Private IP environments Shared VPC environments Configuring VPC Service Controls Authorized networks IP Masquerade agent Privately used public IP ranges Frequently Asked Questions What version of Apache Airflow does Cloud Composer use?
+- When you create an environment, you can select an image with a specific Airflow version: Cloud Composer 3 supports Airflow 2.
+- Custom plugins : You can install custom Airflow plugins , such as custom, in-house Apache Airflow operators, hooks, sensors, or interfaces, into your Cloud Composer environment.
+
+### Cloud Composer overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-2/composer-overview](https://docs.cloud.google.com/composer/docs/composer-2/composer-overview)
+- Source ID: `site-docs-reference`
+- Final score: 211
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Each Cloud Composer release supports several Apache Airflow versions.
+- For more information about networking in Cloud Composer, see pages for individual networking features: Public IP and Private IP environments Private Service Connect environments Shared VPC environments Configuring VPC Service Controls Authorized networks IP Masquerade agent Privately used public IP ranges Other features of Cloud Composer Other Cloud Composer features include: Autoscaling environments Development with local Airflow environments Highly resilient environments Environment snapshots Data lineage integration with Dataplex Universal Catalog Encryption with customer-managed encryption keys (CMEK) Frequently Asked Questions What version of Apache Airflow does Cloud Composer use?
+- When you create an environment, you can select an image with a specific Airflow version: Cloud Composer 3 supports Airflow 2.
+- Custom plugins : You can install custom Airflow plugins , such as custom, in-house Apache Airflow operators, hooks, sensors, or interfaces, into your Cloud Composer environment.
 

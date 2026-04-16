@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.435Z"
+generated_at: "2026-04-15T12:06:50.474Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "Discovery charts"
@@ -9,16 +9,13 @@ latest_feature_date: "2025-02-12"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
 keywords:
   - "discovery"
   - "charts"
   - "adds"
-  - "new"
-  - "to"
-  - "the"
   - "user"
   - "interface"
 ---
@@ -42,42 +39,46 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm)
 
 ## Supporting Pages
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 65
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- Source ID: `site-docs-reference`
+- Final score: 48
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
+- You can ask questions about source code and business logic, query assessment data such as line counts or complexity metrics, and generate visualizations like charts.
+- Discover and analyze source code The Discovery page provides an overview of analysis of the application source code that you uploaded for assessment.
+- The Summary page appears; this page provides an AI-generated summary of the asset, along with the business case, and the user interaction analysis.
+- The assessment dashboard appears, and it includes the following pages: Discovery : Discover and analyze source code .
 
-### Mainframe Assessment Tool release notes | Google Cloud Documentation
+### Set up and access Mainframe Assessment Tool \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes](https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 61
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance)
+- Source ID: `site-docs-reference`
+- Final score: 35
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mainframe Assessment Tool release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/release-notes Mainframe Assessment Tool version 2.8.0 is available with the following new features and improvements: Added an option to export the assessment static analysis data to Neo4j.
-- For more information, see Export assessment data to your Neo4j database.
+- After you deploy Mainframe Assessment Tool, you can connect to and interact with the web-based graphical user interface to analyze your mainframe applications.
+- To bind your Google Cloud service account (GSA) to the Kubernetes service account (KSA), run the following command: gcloud iam service - accounts add - iam - policy - binding \ SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com \ -- role = "roles/iam.workloadIdentityUser" \ -- member = "serviceAccount: PROJECT ID .svc.id.goog[ VERSION /mat-service-account]" Replace the following: PROJECT ID : your Google Cloud project ID.
+- Before you begin Complete the steps to prepare for discovery and assessment .
 
-### Configure your Google Cloud project for Mainframe Assessment Tool | Google Cloud Documentation
+### Set up and access Mainframe Assessment Tool \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- Source ID: `site-docs-root`
-- Final score: 52
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm)
+- Source ID: `site-docs-reference`
+- Final score: 35
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Configure your Google Cloud project for Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project This page describes the process to set up and configure your Google Cloud project to work with Mainframe Assessment Tool.
+- After you deploy Mainframe Assessment Tool, you can connect to and interact with the web-based graphical user interface to analyze your mainframe applications.
+- To bind your Google Cloud service account (GSA) to the Kubernetes service account (KSA), run the following command: gcloud iam service - accounts add - iam - policy - binding \ SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com \ -- role = "roles/iam.workloadIdentityUser" \ -- member = "serviceAccount: PROJECT ID .svc.id.goog[ VERSION /mat-service-account]" Replace the following: PROJECT ID : your Google Cloud project ID.
+- Before you begin Complete the steps to prepare for discovery and assessment .
 

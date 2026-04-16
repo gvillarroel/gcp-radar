@@ -1,0 +1,89 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-14T04:07:01.351Z"
+product_name: "Anthos Config Management"
+product_slug: "anthos-config-management"
+feature_name: "nomos view"
+feature_slug: "nomos-view"
+latest_feature_date: "2019-09-19"
+deprecation_date: "2019-09-19"
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages"
+keywords:
+  - "nomos"
+  - "view"
+  - "command"
+  - "provided"
+  - "way"
+  - "inspect"
+  - "anthos"
+  - "config"
+---
+
+# nomos view
+
+Product: Anthos Config Management
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+The nomos view command provided a way to inspect Anthos Config Management state from the CLI; deprecated on 2019-09-19.
+
+## Extended Definition
+
+The nomos view command provided a way to inspect Anthos Config Management state from the CLI; deprecated on 2019-09-19.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
+## Source Links
+
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages)
+
+## Supporting Pages
+
+### Use the nomos command-line tool \_|\_ Config Sync \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command)
+- Source ID: `site-docs-root`
+- Final score: 174
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following table includes the most common causes of large log files and how you can resolve them: Cause Recommended action Increased log verbosity Reduce log verbosity with log level overrides Very large objects Unmanage the large object or reduce their size Many objects Split your repository into multiple repositories Controller fights Resolve the fighting Migrate from a ConfigManagement object to a RootSync object You can run the nomos migrate command to migrate from your ConfigManagement object to a RootSync object to enable the RootSync and RepoSync APIs. nomos migrate supports dry-run for previewing the migration process. nomos migrate modifies your ConfigManagement object on the cluster directly.
+- The nomos tool provides you with the following commands: Command Usage nomos status Check Config Sync status nomos vet Check for errors in the source of truth nomos hydrate View all configs in the source of truth nomos bugreport Create a bug report nomos migrate Migrate from ConfigManagement object to RootSync nomos init Initialize a hierarchical source of truth Prerequisites Before you can use the nomos tool to interact with a cluster, Config Sync must already be installed on the target cluster.
+- View all configs in the source of truth You can use the nomos hydrate command to view the combined contents of your source of truth on each enrolled cluster.
+- If the migration process is terminated, it can be recovered manually by running the following commands: kubectl apply -f /tmp/nomos-migrate/my managed cluster-1/cm-multi.yaml && \ kubectl wait --for condition=established crd rootsyncs.configsync.gke.io && \ kubectl apply -f /tmp/nomos-migrate/my managed cluster-1/root-sync.yaml. - Updating the ConfigManagement object .... - Waiting for the RootSync CRD to be established .... - The RootSync CRD has been established. - Creating the RootSync object .... - Waiting for the reconciler-manager Pod to be ready .... - Haven't detected running Pods with the label selector "app=reconciler-manager". - Haven't detected running Pods with the label selector "app=reconciler-manager". - Haven't detected running Pods with the label selector "app=reconciler-manager". - The reconciler-manager Pod is running. - Waiting for the root-reconciler Pod to be ready .... - Haven't detected running Pods with the label selector "configsync.gke.io/reconciler=root-reconciler". - Haven't detected running Pods with the label selector "configsync.gke.io/reconciler=root-reconciler". - Haven't detected running Pods with the label selector "configsync.gke.io/reconciler=root-reconciler". - The root-reconciler Pod is running. - The migration process is done.
+
+### Install Config Sync manually using kubectl \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl)
+- Source ID: `site-docs-root`
+- Final score: 98
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To propagate the cluster name to both RootSync and RepoSync reconcilers, restart the reconciler-manager deployment: kubectl rollout restart deployment/reconciler-manager -n config-management-system Verify the sync status of the root repository You can use the nomos status command to inspect the sync status of the root repository: nomos status You should see output similar to the following example: my managed cluster-1 -------------------- <root> git@github.com:foo-corp/acme/admin@main SYNCED f52a11e4 Verify the RootSync installation When you create a RootSync object, Config Sync creates a reconciler with the root-reconciler prefix.
+- It must be disabled before migrating." echo "This can be done by unsetting the spec.hierarchyController field on ConfigManagement." exit 1 fi kubectl delete deployment -n config-management-system config-management-operator --ignore-not-found --cascade = foreground if kubectl get configmanagement config-management &> /dev/null ; then kubectl patch configmanagement config-management --type = "merge" -p '{"metadata":{"finalizers":[]}}' kubectl delete configmanagement config-management --cascade = orphan --ignore-not-found fi kubectl delete clusterrolebinding config-management-operator --ignore-not-found kubectl delete clusterrole config-management-operator --ignore-not-found kubectl delete serviceaccount -n config-management-system config-management-operator --ignore-not-found kubectl delete customresourcedefinition configmanagements.configmanagement.gke.io --ignore-not-found Install the new Config Sync version To upgrade Config Sync, complete the following steps for each enrolled cluster: Download the Config Sync manifest and nomos commands for the new version.
+- Run the following command to update the cluster in your current kubectl context: nomos migrate --remove-configmanagement shell script Copy the following shell script to a file and then run it to update the cluster in your current kubectl context. #!/bin/bash set -euox pipefail hnc enabled = " $( kubectl get configmanagements.configmanagement.gke.io config-management -o = jsonpath = "{.spec.hierarchyController.enabled}" --ignore-not-found ) " if [[ " ${ hnc enabled } " == "true" ]] ; then echo "Hierarchy Controller is enabled on the ConfigManagement object.
+- This change ensures that the nomos command can always get the status of all enrolled clusters and can validate configs for them.
+
+### Deploy fleet packages \_|\_ Config Sync \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages)
+- Source ID: `site-docs-root`
+- Final score: 94
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To inspect resource bundles and releases, use one or more of the following commands: View detailed information about a specific resource bundle: gcloud container fleet packages resource-bundles describe flpkg-rb- FLEET PACKAGE NAME List all releases associated with a resource bundle: gcloud container fleet packages resource-bundles releases list \ --resource-bundle flpkg-rb- FLEET PACKAGE NAME View detailed information about a specific release, including which resource bundle it uses.
+- To list rollouts and view their status, run the following command: gcloud container fleet packages rollouts list --fleet-package FLEET PACKAGE NAME The output resembles the following: ROLLOUT RELEASE START TIME END TIME STATE MESSAGE rollout-20250515-132857 v2-0-0 2025-05-15T13:28:58Z STALLED rollout-20250418-165528 v1-0-0 2025-04-18T16:55:29Z 2025-04-18T16:57:47Z COMPLETED Describing a rollout gives you detailed information about a specific rollout, including the status for each targeted cluster and any cluster-specific errors.
+- This command is particularly useful for debugging issues related to variants because it lets you inspect exactly which variants were included in a specific release: gcloud container fleet packages resource-bundles releases describe RELEASE NAME \ --resource-bundle flpkg-rb- FLEET PACKAGE NAME Replace the following: FLEET PACKAGE NAME : the name of your fleet package.
+- Enable the Config Sync ( anthosconfigmanagement ) API and the ConfigDelivery API: gcloud services enable anthosconfigmanagement.googleapis.com configdelivery.googleapis.com Set a default location: gcloud config set config delivery/location us-central1 Note: the only available location for the ConfigDelivery API is us-central1 .
+

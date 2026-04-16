@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:38:24.560Z"
+generated_at: "2026-04-14T23:59:44.432Z"
 product_name: "Cloud Logging"
 product_slug: "cloud-logging"
 feature_name: "Log Severity Breakdown in Histogram"
 feature_slug: "log-severity-breakdown-in-histogram"
 latest_feature_date: "2021-03-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging"
   - "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+  - "https://docs.cloud.google.com/logging/docs/view/building-queries"
+  - "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
 keywords:
   - "log"
   - "severity"
   - "breakdown"
-  - "in"
   - "histogram"
   - "logging"
   - "shows"
-  - "the"
+  - "distribution"
+  - "levels"
 ---
 
 # Log Severity Breakdown in Histogram
 
 Product: Cloud Logging
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +38,52 @@ Cloud Logging shows the distribution of log severity levels in the Logs Explorer
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/logging/docs/agent/logging/installation](https://docs.cloud.google.com/logging/docs/agent/logging/installation)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging](https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging)
 - [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
+- [https://docs.cloud.google.com/logging/docs/view/building-queries](https://docs.cloud.google.com/logging/docs/view/building-queries)
+- [https://docs.cloud.google.com/logging/docs/api/gcloud-logging](https://docs.cloud.google.com/logging/docs/api/gcloud-logging)
 
 ## Supporting Pages
-
-### "Installing the Cloud Logging agent on individual VMs \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/logging/docs/agent/logging/installation](https://docs.cloud.google.com/logging/docs/agent/logging/installation)
-- Source ID: `site-docs-root`
-- Final score: 258
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- This sets the http proxy and https proxy environment variables so that the agent can send data using outbound HTTPS: setx http proxy http:// proxy-ip : proxy-port /m setx https proxy http:// proxy-ip : proxy-port /m setx no proxy 169.254.169.254 /m Determine the agent version To determine the version of the Logging agent on your system, run the following commands on your VM instance: DEBIAN / UBUNTU Run the following command on Debian or Ubuntu: dpkg-query --show --showformat ' ${ Package } ${ Version } ${ Architecture } ${ Status } \n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured SLES / SUSE Run the following command on SUSE: rpm --query --queryformat '%{NAME} %{VERSION} %{RELEASE} %{ARCH}\n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured WINDOWS Connect to your instance using RDP or a similar tool and login to Windows.
-- Run the following PowerShell commands: (New-Object Net.WebClient).DownloadFile("https://dl.google.com/cloudagents/windows/StackdriverLogging-v1-22.exe", "${env:UserProfile}\StackdriverLogging-v1-22.exe") & "${env:UserProfile}\StackdriverLogging-v1-22.exe" Alternatively, you can browse to the following URL to download and run the agent's installer: https://dl.google.com/cloudagents/windows/StackdriverLogging-v1-22.exe Caution: You must download the installer to a non-system directory, such as C:\Users\[USERNAME] .
-- Run one of the following commands, depending on your Linux distribution: YUM: sudo yum remove -y google-fluentd-catch-all-config sudo yum install -y google-fluentd-catch-all-config-structured sudo service google-fluentd restart APT: sudo apt-get remove -y google-fluentd-catch-all-config sudo apt-get install -y google-fluentd-catch-all-config-structured sudo service google-fluentd restart For information about structured logging, refer to the structured logging guide.
-- Run the following PowerShell command: Restart-Service -Name StackdriverLogging Upgrade the agent To upgrade the Logging agent to the latest release, use the following instructions: Note: If you upgraded your instance's Linux operating system to a new major release, then you should first remove the agent and then re-install it using the procedures on this page, instead of completing these upgrade procedures.
-
-### "Interface Logging (3.29.0) \_|\_ Java client libraries \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging](https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.Logging)
-- Source ID: `site-java-reference`
-- Final score: 252
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Example of creating the exclusion: { @code String exclusionName = "my exclusion name"; Exclusion exclusion = Exclusion.of(exclusionName, "resource.type=gcs bucket severity<ERROR sample(insertId, 0.99)"); Exclusion exclusion = logging.create(exclusion); } Parameter Name Description exclusion Exclusion Returns Type Description Exclusion the created exclusion create(MetricInfo metric) public abstract Metric create ( MetricInfo metric ) Creates a new metric.
-- String metricName = "my metric name" ; MetricInfo metricInfo = MetricInfo . newBuilder ( metricName , "severity>=ERROR" ). setDescription ( "new description" ) . build (); Metric metric = logging . update ( metricInfo ); Parameter Name Description metric MetricInfo Returns Type Description Metric the created metric update(SinkInfo sink) public abstract Sink update ( SinkInfo sink ) Updates a sink or creates one if it does not exist.
-- Example of creating a metric for logs with severity higher or equal to ERROR. { @code String metricName = "my metric name"; MetricInfo metricInfo = MetricInfo.of(metricName, "severity>=ERROR"); Metric metric = logging.create(metricInfo); } Parameter Name Description metric MetricInfo Returns Type Description Metric the created metric create(SinkInfo sink) public abstract Sink create ( SinkInfo sink ) Creates a new sink.
-- V2 ). setFilter ( "severity>=ERROR" ). build (); Sink sink = logging . update ( sinkInfo ); Parameter Name Description sink SinkInfo Returns Type Description Sink the created sink updateAsync(Exclusion exclusion) public abstract ApiFuture<Exclusion> updateAsync ( Exclusion exclusion ) Sends a request to change one or more properties of an existing exclusion.
 
 ### View and analyze logs \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface](https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface)
 - Source ID: `site-docs-root`
-- Final score: 252
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 130
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Each bar contains a three-color breakdown for the log-severity levels captured in each bar's time range.
-- Before you begin To get the permissions that you need to use the Logs Explorer to view log entries, ask your administrator to grant you the following IAM roles: To view log entries in the Required bucket and those in the Default view on the Default bucket, or to select a log scope: Logs Viewer ( roles/logging.viewer ) on your project, folder, or organization.
-- Get started To begin using the Logs Explorer, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .
-- Query returns an error If you issue a query over a resource without specifying a bucket, then Cloud Logging uses the history of the sinks in the Google Cloud project to determine where entries might have been written for that resource.
+- Filter menus: Build queries by using various menus to select resources, log names, severity levels, and correlation to other logs.
+- Perhaps a particular bar in the timeline interests you based on its relative size or severity levels.
+- Severity If you want your query to filter by multiple severity levels, then use the Severity menu.
+
+### "Build and save queries by using the Logging query language \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/logging/docs/view/building-queries](https://docs.cloud.google.com/logging/docs/view/building-queries)
+- Source ID: `site-docs-root`
+- Final score: 77
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can select multiple severity levels at the same time to add to apply to your query.
+- When selecting multiple severity levels, the logical operator OR is used.
+- The following example illustrates a sample request body, which contains an instance of SavedQuery : { "parent": "projects/my-project/locations/global" "savedQueryId": "compute-query" { "displayName": "compute-admin-activity-query", "description": "Queries for Compute Engine Admin Activity logs.", "loggingQuery": { "filter": resource.type="gce instance" AND log id("cloudaudit.googleapis.com/activity"), }, "visibility": "PRIVATE" } } To share the query with other members of the Google Cloud project, specify a value of SHARED in the visibility field.
+- View saved queries You can view both private queries and queries that are shared with other members in the Google Cloud project by clicking the menu book Query library button: Console In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .
+
+### Command-line interface \_|\_ Cloud Logging \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/logging/docs/api/gcloud-logging](https://docs.cloud.google.com/logging/docs/api/gcloud-logging)
+- Source ID: `site-docs-reference`
+- Final score: 70
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Examples Create a log-based metric that counts the number of log entries with severity of at least ERROR from Compute Engine instances: gcloud logging metrics create error count \ -- description = "Syslog error counts." \ -- log - filter = "resource.type=gce instance AND severity>=ERROR" Creating advanced metrics To create complex metrics with labels, including distribution metrics, use the gcloud logging metrics create command, corresponding to the API method projects.metrics.create : gcloud logging metrics create METRIC NAME --config-from-file=FILE NAME FILE NAME is the path to a file containing a YAML (or JSON) specification of a LogMetric object .
+- Examples Change the query in my-distribution-metric : gcloud logging metrics update my - distribution - metric --log-filter="[NEW LOG FILTER]" Listing and describing metrics Use gcloud logging metrics list , corresponding to the API method projects.metrics.list , and gcloud logging metrics describe , corresponding to the API method projects.metrics.get : gcloud logging metrics list ... gcloud logging metrics describe METRIC NAME The metrics list command by defaults shows the full description of every listed metric.
+- The destination is an existing Cloud Storage bucket in the current project. gcloud logging sinks create folder-logs \ storage.googleapis.com/my-folder-bucket \ --folder= FOLDER ID --log-filter="logName:logs/cloudaudit.googleapis.com%2Factivity" The following command creates an aggregated sink, routing all Admin Activity audit logs from a folder and from all folders and projects contained in the folder: gcloud logging sinks create folder-logs --include-children \ storage.googleapis.com/my-folder-bucket \ --folder= FOLDER ID --log-filter="logName:logs/cloudaudit.googleapis.com%2Factivity" Listing or describing sinks Use the gcloud logging sinks list or gcloud logging sinks describe commands, corresponding to the API methods projects.sinks.list and projects.sinks.get , respectively: gcloud logging sinks list gcloud logging sinks describe SINK NAME Examples List sinks in the current project: gcloud logging sinks list NAME DESTINATION FILTER google-sink-1481139614360-9906 storage.googleapis.com/my-second-gcs-bucket logName = "projects/my-gcp-project-id/logs/syslog" pubsub-logs-sink pubsub.googleapis.com/projects/my-gcp-project-id/topics/my-pubsub-logs-topic logName = "projects/my-gcp-project-id/logs/pubsubtestlog" test-sink-v4 storage.googleapis.com/my-gcs-bucket severity=CRITICAL List sinks in a folder: gcloud logging sinks list --folder= FOLDER ID NAME DESTINATION FILTER folder-logs storage.googleapis.com/my-folder-bucket logName:activity List sinks in an organization: gcloud logging sinks list --organization= ORGANIZATION ID NAME DESTINATION FILTER organization-logs storage.googleapis.com/my-org-bucket logName:activity Describe sinks in the current project test-sink-v4 : gcloud logging sinks describe test-sink-v4 Output: destination : storage . googleapis . com / my - gcs - bucket filter : severity = CRITICAL name : test - sink - v4 outputVersionFormat : V2 writerIdentity : serviceAccount : test - sink - v4 @logging - PROJECT ID . iam.gserviceaccount.com Describe sinks in a folder: gcloud logging sinks describe test-sink-v4 --folder= FOLDER ID Output: destination: storage.googleapis.com/my-gcs-bucket filter: severity=CRITICAL name: test-sink-v4 Describe sinks in an organization: gcloud logging sinks describe test-sink-v4 --organization= ORGANIZATION ID Output: createTime : [ TIMESTAMP ] description : Test Sink destination : storage . googleapis . com / my - gcs - bucket filter : severity = CRITICAL name : test - sink - v4 updateTime : [ TIMESTAMP ] writerIdentity : serviceAccount : test - sink - v4 @logging - PROJECT ID . iam.gserviceaccount.com Updating sinks Use the gcloud logging sinks update command, corresponding to the API method projects.sink.update : You can update a sink to change the destination or the query: gcloud logging sinks update SINK NAME NEW DESTINATION --log-filter= NEW FILTER You can omit the NEW DESTINATION or --log-filter if those parts don't change.
+- Show the information in the default YAML format: gcloud logging metrics describe "myapp/request latency" Result: bucketOptions : exponentialBuckets : growthFactor : 2.0 numFiniteBuckets : 64 scale : 0.01 description : Request latency for myapp filter : resource . type = "gae app" logName = "projects/[PROJECT ID]/logs/appengine.googleapis.com%2Fnginx.request" labelExtractors : path : EXTRACT ( httpRequest . requestUrl ) metricDescriptor : description : Request latency for myapp labels : - description : HTTP Path key : path metricKind : DELTA name : projects /[ PROJECT ID ]/ metricDescriptors / logging . googleapis . com / user / myapp / request latency type : logging . googleapis . com / user / myapp / request latency valueType : DISTRIBUTION name : myapp / request latency valueExtractor : EXTRACT ( jsonPayload . latencySeconds ) Deleting metrics Use the gcloud logging metrics delete command, corresponding to the API method projects.metrics.delete : gcloud logging metrics delete METRIC NAME Examples Delete the metric my-distribution-metric from the current project: gcloud logging metrics delete "my-distribution-metric" Result: Really delete metric [my-distribution-metric]?
 

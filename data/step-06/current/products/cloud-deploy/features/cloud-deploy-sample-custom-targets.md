@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:17:26.758Z"
+generated_at: "2026-04-12T12:11:23.479Z"
 product_name: "Cloud Deploy"
 product_slug: "cloud-deploy"
 feature_name: "Cloud Deploy sample custom targets"
 feature_slug: "cloud-deploy-sample-custom-targets"
 latest_feature_date: "2023-12-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/deploy/docs/custom-targets"
-  - "https://docs.cloud.google.com/deploy/docs/deploy-app-custom-target"
   - "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes"
+  - "https://docs.cloud.google.com/deploy/docs/deploy-app-custom-target"
+  - "https://docs.cloud.google.com/deploy/docs/create-custom-target"
 keywords:
   - "deploy"
   - "sample"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Deploy sample custom targets
 
 Product: Cloud Deploy
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Deploy adds access to sample custom target integrations, including Terrafo
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/deploy/docs/custom-targets](https://docs.cloud.google.com/deploy/docs/custom-targets)
-- [https://docs.cloud.google.com/deploy/docs/deploy-app-custom-target](https://docs.cloud.google.com/deploy/docs/deploy-app-custom-target)
 - [https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes](https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes)
+- [https://docs.cloud.google.com/deploy/docs/deploy-app-custom-target](https://docs.cloud.google.com/deploy/docs/deploy-app-custom-target)
+- [https://docs.cloud.google.com/deploy/docs/create-custom-target](https://docs.cloud.google.com/deploy/docs/create-custom-target)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/deploy/docs/custom-targets](https://docs.cloud.google.com/deploy/docs/custom-targets)
 - Source ID: `site-docs-root-2`
-- Final score: 246
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 305
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Example deploy results file The following is a sample results.json file output from a custom deploy: { "resultStatus" : "SUCCEEDED" , "artifactFiles" : [ "gs://bucket/my-pipeline/release-001/rollout-a/01234/custom-output/file1.yaml" , "gs://bucket/my-pipeline/release-001/rollout-a/01234/custom-output/file2.yaml" ], "failureMessage" : "" , "skipMessage" : "" , "metadata" : { "key1" : "val" , "key2" : "val" } } Further information about custom targets Here are some things to keep in mind when setting up and using custom target types.
@@ -62,13 +64,27 @@ Evidence snippets:
 - A custom target type definition The CustomTargetType is a Cloud Deploy resource that identifies the tasks that targets of this type use for release render and rollout deploy activities.
 - Home Documentation Application development Cloud Deploy Guides Send feedback About custom targets Stay organized with collections Save and categorize content based on your preferences.
 
+### "REST Resource: projects.locations.customTargetTypes \_|\_ Cloud Deploy \_\
+
+- URL: [https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes](https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes)
+- Source ID: `site-docs-reference`
+- Final score: 291
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Resource: CustomTargetType JSON representation CustomTargetSkaffoldActions JSON representation SkaffoldModules JSON representation SkaffoldGitSource JSON representation SkaffoldGCSSource JSON representation SkaffoldGCBRepoSource JSON representation Methods Resource: CustomTargetType A CustomTargetType resource in the Cloud Deploy API.
+- Defines the CustomTargetType renderer and deployer. definition can be only one of the following: customActions object ( CustomTargetSkaffoldActions ) Optional.
+- JSON representation { "name" : string , "customTargetTypeId" : string , "uid" : string , "description" : string , "annotations" : { string : string , ... } , "labels" : { string : string , ... } , "createTime" : string , "updateTime" : string , "etag" : string , // Union field definition can be only one of the following: "customActions" : { object ( CustomTargetSkaffoldActions ) } // End of list of possible types for union field definition . } Fields name string Identifier.
+- Methods create Creates a new CustomTargetType in a given project and location. delete Deletes a single CustomTargetType. get Gets details of a single CustomTargetType. getIamPolicy Gets the access control policy for a resource. list Lists CustomTargetTypes in a given project and location. patch Updates a single CustomTargetType. setIamPolicy Sets the access control policy on the specified resource.
+
 ### "Quickstart: Define and use custom target type \_|\_ Cloud Deploy \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/deploy/docs/deploy-app-custom-target](https://docs.cloud.google.com/deploy/docs/deploy-app-custom-target)
 - Source ID: `site-docs-root-2`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 289
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Create a new directory and navigate into it. mkdir custom-target-quickstart cd custom-target-quickstart In the custom-target-quickstart directory, create a new file, clouddeploy.yaml , with the following content: apiVersion : deploy.cloud.google.com/v1 kind : DeliveryPipeline metadata : name : custom-targets-pipeline serialPipeline : stages : - targetId : sample-env --- apiVersion : deploy.cloud.google.com/v1 kind : Target metadata : name : sample-env customTarget : customTargetType : basic-custom-target --- apiVersion : deploy.cloud.google.com/v1 kind : CustomTargetType metadata : name : basic-custom-target tasks : render : type : 'container' image : gcr.io/google.com/cloudsdktool/google-cloud-cli@sha256:484e8266c1cfc84b283bc6d4eec1f6b61223115178cce76fb59f77b223f26e8e command : [ '/bin/bash' ] args : - '-c' - - echo "Sample manifest rendered content" > manifest.txt gcloud storage cp manifest.txt $CLOUD DEPLOY OUTPUT GCS PATH/manifest.txt echo {\"resultStatus\": \"SUCCEEDED\", \"manifestFile\": \"$CLOUD DEPLOY OUTPUT GCS PATH/manifest.txt\"} > results.json gcloud storage cp results.json $CLOUD DEPLOY OUTPUT GCS PATH/results.json deploy : type : 'container' image : gcr.io/google.com/cloudsdktool/google-cloud-cli@sha256:484e8266c1cfc84b283bc6d4eec1f6b61223115178cce76fb59f77b223f26e8e command : [ '/bin/bash' ] args : - '-c' - - echo {\"resultStatus\": \"SUCCEEDED\"} > results.json gcloud storage cp results.json $CLOUD DEPLOY OUTPUT GCS PATH/results.json The custom target type definition includes the tasks stanza , defining a render task and a deploy task.
@@ -76,17 +92,17 @@ Evidence snippets:
 - However, you can view the file and the strings in that file: In the Google Cloud console, navigate to the Cloud Deploy Delivery pipelines page to view your delivery pipeline ( custom-targets-pipeline ).
 - Add the iam.serviceAccountUser role, which includes the actAs permission to deploy to the runtime: gcloud iam service-accounts add-iam-policy-binding $(gcloud projects describe PROJECT ID \ --format="value(projectNumber)")-compute@developer.gserviceaccount.com \ --member=serviceAccount:$(gcloud projects describe PROJECT ID \ --format="value(projectNumber)")-compute@developer.gserviceaccount.com \ --role="roles/iam.serviceAccountUser" \ --project= PROJECT ID Create your delivery pipeline, custom target type, and target You can define your delivery pipeline, custom target type, and target in one file or in separate files.
 
-### "REST Resource: projects.locations.customTargetTypes \_|\_ Cloud Deploy \_\
+### Create a custom target \_|\_ Cloud Deploy \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes](https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes)
-- Source ID: `site-docs-reference`
-- Final score: 230
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/deploy/docs/create-custom-target](https://docs.cloud.google.com/deploy/docs/create-custom-target)
+- Source ID: `site-docs-root-2`
+- Final score: 279
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Resource: CustomTargetType JSON representation CustomTargetSkaffoldActions JSON representation SkaffoldModules JSON representation SkaffoldGitSource JSON representation SkaffoldGCSSource JSON representation SkaffoldGCBRepoSource JSON representation Methods Resource: CustomTargetType A CustomTargetType resource in the Cloud Deploy API.
-- Defines the CustomTargetType renderer and deployer. definition can be only one of the following: customActions object ( CustomTargetSkaffoldActions ) Optional.
-- JSON representation { "name" : string , "customTargetTypeId" : string , "uid" : string , "description" : string , "annotations" : { string : string , ... } , "labels" : { string : string , ... } , "createTime" : string , "updateTime" : string , "etag" : string , // Union field definition can be only one of the following: "customActions" : { object ( CustomTargetSkaffoldActions ) } // End of list of possible types for union field definition . } Fields name string Identifier.
-- Methods create Creates a new CustomTargetType in a given project and location. delete Deletes a single CustomTargetType. get Gets details of a single CustomTargetType. getIamPolicy Gets the access control policy for a resource. list Lists CustomTargetTypes in a given project and location. patch Updates a single CustomTargetType. setIamPolicy Sets the access control policy on the specified resource.
+- Create a release With your custom target type fully defined, and a target created to use that type, you can now create a release, in the normal way: gcloud deploy releases create [ RELEASE NAME ] \ --project =[ PROJECT NAME ] \ --region =[ REGION ] \ --delivery-pipeline =[ PIPELINE NAME ] Upon release creation your custom render is executed for each target in your delivery pipeline, including processing deploy parameters configured on the release, targets, or the delivery pipeline.
+- For example, you can't have a delivery pipeline with some targets deploying to Google Kubernetes Engine and some custom targets.
+- The CustomTargetType definition is as follows: apiVersion : deploy.cloud.google.com/v1 kind : CustomTargetType metadata : name : [ CUSTOM TARGET TYPE NAME ] annotations : labels : description : tasks : render : [ RENDER TASK ] deploy : [ DEPLOY TASK ] Where CUSTOM TARGET TYPE NAME Is an arbitrary name you give to this custom target type definition.
+- Register your custom target type After you've configured the CustomTargetType , run the gcloud deploy apply command to register the CustomTargetType resource in a Google Cloud project: gcloud deploy apply --file =[ FILE ] --project =[ PROJECT ] --region =[ REGION ] Where: FILE is the name of the file in which you've defined this custom target type.
 

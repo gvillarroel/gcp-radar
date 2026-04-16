@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.278Z"
+generated_at: "2026-04-14T13:57:37.584Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "List prices in Cloud Billing cost data exports"
 feature_slug: "list-prices-in-cloud-billing-cost-data-exports"
 latest_feature_date: "2023-07-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoAsyncPager"
-  - "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoPager"
-  - "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets/list"
+  - "https://docs.cloud.google.com/billing/docs/how-to/reports"
+  - "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage"
+  - "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
 keywords:
   - "list"
   - "prices"
-  - "in"
   - "billing"
   - "cost"
   - "exports"
   - "adds"
-  - "the"
+  - "column"
+  - "so"
 ---
 
 # List prices in Cloud Billing cost data exports
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +38,52 @@ Adds the `cost_at_list` column so list prices are visible for all line items in 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoAsyncPager](https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoAsyncPager)
-- [https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoPager](https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoPager)
-- [https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets/list](https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets/list)
+- [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
+- [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
+- [https://docs.cloud.google.com/billing/docs/how-to/cost-table](https://docs.cloud.google.com/billing/docs/how-to/cost-table)
 
 ## Supporting Pages
 
-### "Class ListProjectBillingInfoAsyncPager (1.18.0) \_|\_ Python client libraries\
+### "Analyze billing data and cost trends with Reports \_|\_ Cloud Billing \_\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoAsyncPager](https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoAsyncPager)
-- Source ID: `site-python-reference`
-- Final score: 242
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.billing v1.types.ListProjectBillingInfoRequest The initial request object. response google.cloud.billing v1.types.ListProjectBillingInfoResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
-- If there are more pages, the aiter method will make additional ListProjectBillingInfo requests and continue to iterate through the project billing info field on the corresponding responses.
-- All the usual ListProjectBillingInfoResponse attributes are available on the pager.
-- Version latest keyboard arrow down 1.18.0 (latest) 1.17.0 1.16.3 1.15.0 1.14.1 1.13.6 1.12.1 1.11.5 1.10.1 1.9.1 1.8.0 1.7.3 1.6.1 1.5.1 1.4.1 1.3.4 1.2.1 1.1.1 1.0.0 0.1.0 ListProjectBillingInfoAsyncPager ( method : typing .
-
-### "Class ListProjectBillingInfoPager (1.18.0) \_|\_ Python client libraries\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoPager](https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_billing.pagers.ListProjectBillingInfoPager)
-- Source ID: `site-python-reference`
-- Final score: 242
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/reports](https://docs.cloud.google.com/billing/docs/how-to/reports)
+- Source ID: `site-docs-root`
+- Final score: 147
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.billing v1.types.ListProjectBillingInfoRequest The initial request object. response google.cloud.billing v1.types.ListProjectBillingInfoResponse The initial response object. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
-- If there are more pages, the iter method will make additional ListProjectBillingInfo requests and continue to iterate through the project billing info field on the corresponding responses.
-- All the usual ListProjectBillingInfoResponse attributes are available on the pager.
-- Version latest keyboard arrow down 1.18.0 (latest) 1.17.0 1.16.3 1.15.0 1.14.1 1.13.6 1.12.1 1.11.5 1.10.1 1.9.1 1.8.0 1.7.3 1.6.1 1.5.1 1.4.1 1.3.4 1.2.1 1.1.1 1.0.0 0.1.0 ListProjectBillingInfoPager ( method : typing .
+- Promotional credits for custom pricing contracts : If you have a custom pricing contract with Google Cloud, and received promotional credits that apply to costs at list prices , your report includes a service called Invoice , with a SKU called Contract billing adjustment .
+- Negotiated savings: When you set the report time range by Invoice month , starting with the May 2021 invoice, Cloud Billing accounts associated with a custom pricing contract display Negotiated savings as a savings column, separate from the List cost column.
+- If your Cloud Billing account is associated with a custom pricing contract and your report settings result in the display of the Negotiated savings column, you will see a List cost column in your CSV download .
+- For usage costs incurred after May 1, 2021, your on-demand rate is based on the publicly available list prices, and the Usage cost column shows the gross cost of your cloud usage calculated using list prices.
 
-### "Method: billingAccounts.budgets.list \_|\_ Cloud Billing \_|\_ Google Cloud\
+### "View and download the cost details of your invoice or statement \_|\_ Cloud\
 
-- URL: [https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets/list](https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets/list)
-- Source ID: `site-api-reference`
-- Final score: 226
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/cost-table](https://docs.cloud.google.com/billing/docs/how-to/cost-table)
+- Source ID: `site-docs-root`
+- Final score: 146
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Response body Response for budgets.list If successful, the response body contains data with the following structure: JSON representation { "budgets" : [ { object ( Budget ) } ] , "nextPageToken" : string } Fields budgets[] object ( Budget ) List of the budgets owned by the requested billing account. nextPageToken string If not empty, indicates that there may be more budgets that match the request; this value should be passed in a new ListBudgetsRequest .
-- Home Documentation Costs and usage management Cloud Billing APIs & Reference Send feedback Method: billingAccounts.budgets.list Stay organized with collections Save and categorize content based on your preferences.
-- Authorization requires the following IAM permission on the specified resource parent : billing.budgets.list Query parameters Parameters scope string Optional.
-- Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-billing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- List cost N/A The List cost column is available for Cloud Billing accounts associated with a custom pricing contract , and represents the monthly cost of your usage calculated using list prices .
+- The other cost columns, Unrounded cost and Cost , are calculated using the price that's applicable to your billing account (either list prices or contract prices ).
+- Note : The List cost column is available starting with your May 2021 invoice, and only for Cloud Billing accounts associated with a custom pricing contract .
+- View the List cost column to see your usage costs calculated using list prices.
+
+### "Structure of Detailed data export \_|\_ Cloud Billing \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
+- Source ID: `site-docs-root-2`
+- Final score: 143
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Note: You can use the sku.id column to map each of your line items to the list prices published on the Google Cloud pricing pages , in the Pricing Table report , and through the Cloud Billing Catalog API . sku.description String A description of the resource type used by the service.
+- PARTITIONTIME , DAY )) = '2025-09-16' AND t . sku . description LIKE '%Core%' AND sl reservation . value LIKE '%tc-billing-case2-res-1757983801%' GROUP BY consumer project id , t . sku . description , usage category , usage unit ORDER BY consumer project id , usage category ; Sample Results: consumer project id sku description usage category total usage amount usage unit total cost usd disco-sector-292704 E2 Instance Core running in Americas Instance Usage 14551 seconds 0.088158 flash-freehold-292704 E2 Instance Core running in Americas Instance Usage 7347 seconds 0.044512 united-sandbox-303721 E2 Instance Core running in Americas Unused Capacity 7936 seconds 0.04808 List all the instances consuming a reservation Similarly, we can write a query to understand all the instances, including first-party (1P) instances, that have consumed a given reservation during a given time period.
+- For example, for costs recorded before September 1, your usage cost data looks similar to the following example, which shows a total tax liability of $10. billing account id project.id cost type cost 123456-ABCDEF-123456 example-project Regular $60 123456-ABCDEF-123456 test-project Regular $40 123456-ABCDEF-123456 [empty] Tax $10 For costs recorded after September 1, the $10 is broken down to $6 for example-project , and $4 for test-project : billing account id project.id cost type cost 123456-ABCDEF-123456 example-project Regular $60 123456-ABCDEF-123456 test-project Regular $40 123456-ABCDEF-123456 example-project Tax $6 123456-ABCDEF-123456 test-project Tax $4 Note: If the tax isn't related to a project, the project columns are empty.
+- Note: The first full day of data in this field is July 15, 2025. cost at list consumption model Numeric Cost per the applicable consumption model before any negotiated discounts reflected in the custom pricing in the contract linked to your Cloud Billing account (if applicable).
 

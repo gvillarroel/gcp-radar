@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:26:39.341Z"
+generated_at: "2026-04-12T20:57:41.394Z"
 product_name: "App Engine standard environment Ruby"
 product_slug: "app-engine-standard-environment-ruby"
 feature_name: "and Taiwan"
 feature_slug: "and-taiwan"
 latest_feature_date: "2021-06-14"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
-  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app"
+  - "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+  - "https://docs.cloud.google.com/appengine/docs/standard/apis"
+  - "https://docs.cloud.google.com/appengine/docs/standard/community"
 keywords:
   - "taiwan"
-  - "availability"
   - "adds"
-  - "engine"
-  - "and"
-  - "the"
   - "app"
-  - "in"
+  - "engine"
+  - "availability"
+  - "us"
+  - "west1"
+  - "asia"
 ---
 
 # and Taiwan
 
 Product: App Engine standard environment Ruby
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +38,54 @@ Adds App Engine availability in the us-west1, asia-southeast1, and asia-east1 re
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
-- [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app)
+- [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
+- [https://docs.cloud.google.com/appengine/docs/standard/apis](https://docs.cloud.google.com/appengine/docs/standard/apis)
+- [https://docs.cloud.google.com/appengine/docs/standard/community](https://docs.cloud.google.com/appengine/docs/standard/community)
 
 ## Supporting Pages
 
-### "App Engine audit logging information \_|\_ App Engine standard environment\
+### "Authenticating users \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/audit-logging](https://docs.cloud.google.com/appengine/docs/standard/audit-logging)
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/authenticating-users](https://docs.cloud.google.com/appengine/docs/standard/authenticating-users)
 - Source ID: `site-docs-root-2`
-- Final score: 282
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 52
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Audited operations The following table summarizes which API operations correspond to each audit log type in App Engine: Audit logs category App Engine operations Admin Activity audit logs apps.create apps.patch apps.repair apps.authorizedCertificates.create apps.authorizedCertificates.delete apps.authorizedCertificates.patch apps.domainMappings.create apps.domainMappings.delete apps.domainMappings.patch apps.firewall.ingressRules.batchUpdate apps.firewall.ingressRules.create apps.firewall.ingressRules.delete apps.firewall.ingressRules.patch apps.services.delete apps.services.patch apps.services.versions.create apps.services.versions.delete apps.services.versions.patch apps.services.versions.instances.debug apps.services.versions.instances.delete Data Access audit logs GetMemcacheItem SetMemcacheItem DeleteMemcacheItem FlushAllMemcacheItems Memcache audit logs only apply to operations made through Cloud Console.
-- When deciding which Logging-specific permissions and roles apply to your use case, consider the following: The Logs Viewer role ( roles/logging.viewer ) gives you read-only access to Admin Activity, Policy Denied, and System Event audit logs.
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback App Engine audit logging information Stay organized with collections Save and categorize content based on your preferences.
-- Available audit logs The following types of audit logs are available for App Engine: Admin Activity audit logs Includes "admin write" operations that write metadata or configuration information.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.
+- Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.
+- The Users API allows an App Engine app to perform the following tasks: Detect whether the current user is signed in using a Google Account.
+- IAP doesn't protect against activity within a project, such as one App Engine service accessing another service in the same project.
 
-### "Build a Go app on App Engine \_|\_ App Engine standard environment \_|\_\
+### "APIs & Reference \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/building-app](https://docs.cloud.google.com/appengine/docs/standard/go/building-app)
-- Source ID: `site-docs-root-2`
-- Final score: 278
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Create a new folder called go-app for your Go service: mkdir go-app In your go-app/ folder, create a file called app.yaml , and add the following contents: runtime : go126 # or another supported version This is the simplest configuration for an App Engine app.
-- Deploy your web service on App Engine In your go-app directory where your app.yaml file is located, deploy your web service to App Engine using the following command: gcloud app deploy To launch your browser and view your web service at https:// PROJECT ID .
-- To confirm service creation and version deployment: View your App Engine services in the Google Cloud console: View services You should see one service listed, named default .
-- To initialize the gcloud CLI, run the following command: gcloud init Create your App Engine app and its associated resources.
-
-### "Build a Java app on App Engine \_|\_ App Engine standard environment \_\
-
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app)
-- Source ID: `site-docs-root-2`
-- Final score: 278
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/apis](https://docs.cloud.google.com/appengine/docs/standard/apis)
+- Source ID: `site-docs-reference`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Build a Java app on App Engine Stay organized with collections Save and categorize content based on your preferences.
-- Getting started Learn how to build a simple web app and deploy it on App Engine: Create a Google Cloud project Learn how to create a Google Cloud project to hold your App Engine app's resources.
-- After you build your app, you can use the other tutorials to learn how to integrate with other Google Cloud services and add more features to your app.
-- Deploy your service on App Engine Learn how to deploy your Java code on App Engine and view your live web service.
+- Configuration Files app.yaml Details about the configuration file that is used to configure App Engine deployed versions. cron.yaml Details about the configuration file that is used to configure regularly scheduled tasks on App Engine. dispatch.yaml Details about the configuration file that is used to route incoming requests to a specific service based on the path or hostname in the URL. index.yaml Details about the configuration file used to define the Datastore indexes of the data in your app.
+- App Engine legacy bundled services APIs App Engine legacy bundled services APIs for Go Use the legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.
+- Home Documentation Application hosting App Engine Standard environment Reference Send feedback APIs & Reference Stay organized with collections Save and categorize content based on your preferences.
+- App Engine legacy bundled services APIs for Python Use the App Engine legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.
+
+### "App Engine community \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/community](https://docs.cloud.google.com/appengine/docs/standard/community)
+- Source ID: `site-docs-root-2`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use and contribute to third-party libraries There are several third-party projects based on App Engine on the popular code hosting platforms: GitHub https://github.com/search?q=%22Google+app+engine%22&type=repositories Bitbucket https://bitbucket.org/repo/all?name=gae Watch videos The Google Cloud team regularly posts videos about using App Engine on YouTube .
+- There are many ways to get involved in the App Engine developer community, whether you want to learn from other App Engine developers and community resources, contribute to open source projects, or share your own knowledge and experience.
+- This is a great place for App Engine team members and the developer community to discuss and track implementations of features or resolution of bug fixes, as well as share workarounds and patches to the SDK.
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback App Engine community Stay organized with collections Save and categorize content based on your preferences.
 

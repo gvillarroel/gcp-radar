@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:09:51.620Z"
+generated_at: "2026-04-14T07:28:23.689Z"
 product_name: "Application Design Center"
 product_slug: "application-design-center"
 feature_name: "Vertex AI component support"
@@ -9,18 +9,14 @@ latest_feature_date: "2025-03-28"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/application-design-center/docs/design-application-templates"
-  - "https://docs.cloud.google.com/application-design-center/docs/release-notes"
-  - "https://docs.cloud.google.com/application-design-center/docs/reference/rest"
+  - "https://docs.cloud.google.com/application-design-center/docs/overview"
+  - "https://docs.cloud.google.com/application-design-center/docs/import-components"
+  - "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ComponentParameterSchema"
 keywords:
   - "vertex"
-  - "ai"
-  - "application"
   - "component"
   - "supports"
-  - "design"
-  - "center"
-  - "as"
+  - "canvas"
 ---
 
 # Vertex AI component support
@@ -38,54 +34,50 @@ Application Design Center supports Vertex AI as a component on the design canvas
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-design-center/docs/design-application-templates](https://docs.cloud.google.com/application-design-center/docs/design-application-templates)
-- [https://docs.cloud.google.com/application-design-center/docs/release-notes](https://docs.cloud.google.com/application-design-center/docs/release-notes)
-- [https://docs.cloud.google.com/application-design-center/docs/reference/rest](https://docs.cloud.google.com/application-design-center/docs/reference/rest)
+- [https://docs.cloud.google.com/application-design-center/docs/overview](https://docs.cloud.google.com/application-design-center/docs/overview)
+- [https://docs.cloud.google.com/application-design-center/docs/import-components](https://docs.cloud.google.com/application-design-center/docs/import-components)
+- [https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ComponentParameterSchema](https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ComponentParameterSchema)
 
 ## Supporting Pages
 
-### "Design application templates \_|\_ Application Design Center \_|\_ Google\
+### "ComponentParameterSchema \_|\_ Application Design Center \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/application-design-center/docs/design-application-templates](https://docs.cloud.google.com/application-design-center/docs/design-application-templates)
-- Source ID: `site-docs-root`
-- Final score: 254
+- URL: [https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ComponentParameterSchema](https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ComponentParameterSchema)
+- Source ID: `site-api-reference`
+- Final score: 23
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Edit Terraform code As you design your application template, Application Design Center generates Terraform code to reflect the design and configuration details.
-- If you specify configuration details, Application Design Center uses them as default values for applications.
-- For example, you might create the following file for a Cloud Run component: [ { "key" : "service name" , "value" : "frontend-service" }, { "key" : "project id" , "value" : " DEPLOYMENT PROJECT " } ] Update each component in the application template to configure the required parameters. gcloud design-center spaces application-templates components update COMPONENT \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --parameters = PARAMETERS FILE PATH 1 \ --application-template = APPLICATION TEMPLATE Replace the following: COMPONENT : The component ID for the component that you want to update.
-- Create a connection between the two components. gcloud design-center spaces application-templates components connections create CONNECTION \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --application-template = APPLICATION TEMPLATE \ --component = COMPONENT \ --destination-component-uri = COMPONENT 2 Replace the following: CONNECTION : The connection ID for the connection that you want to add to the template.
+- Home Documentation Application development Application Design Center Reference Send feedback ComponentParameterSchema Stay organized with collections Save and categorize content based on your preferences.
+- JSON representation Component parameter schema, which contains a list of all component parameters.
 
-### Application Design Center release notes \_|\_ Google Cloud Documentation
+### Application Design Center overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-design-center/docs/release-notes](https://docs.cloud.google.com/application-design-center/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 242
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Feature Application Design Center supports the following components on the design canvas: Compute Engine instance template Compute Engine managed instance group Secret Manager Service account BigQuery Bigtable Cloud Run Cloud SQL (MySQL and PostgreSQL) Cloud Storage Cloud Load Balancing (global and regional) Memorystore for Redis Pub/Sub Spanner Vertex AI Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- September 22, 2025 Feature Application Design Center supports Cloud Run Jobs as a component.
-- July 29, 2025 Feature Application Design Center supports AlloyDB as a component.
-- Feature Application Design Center supports the following components: Google Kubernetes Engine (GKE) Node Pool GKE Standard Cluster GKE Autopilot Cluster Firestore Feature You can set up Application Design Center using a single project boundary.
-
-### Design Center API \_|\_ Application Design Center \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/application-design-center/docs/reference/rest](https://docs.cloud.google.com/application-design-center/docs/reference/rest)
+- URL: [https://docs.cloud.google.com/application-design-center/docs/overview](https://docs.cloud.google.com/application-design-center/docs/overview)
 - Source ID: `site-api-reference`
-- Final score: 226
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 23
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- REST Resource: v1alpha.projects.locations REST Resource: v1alpha.projects.locations.operations REST Resource: v1alpha.projects.locations.spaces REST Resource: v1alpha.projects.locations.spaces.applicationTemplates REST Resource: v1alpha.projects.locations.spaces.applicationTemplates.components REST Resource: v1alpha.projects.locations.spaces.applicationTemplates.components.connections REST Resource: v1alpha.projects.locations.spaces.applicationTemplates.revisions REST Resource: v1alpha.projects.locations.spaces.applications REST Resource: v1alpha.projects.locations.spaces.catalogs REST Resource: v1alpha.projects.locations.spaces.catalogs.shares REST Resource: v1alpha.projects.locations.spaces.catalogs.templates REST Resource: v1alpha.projects.locations.spaces.catalogs.templates.revisions REST Resource: v1alpha.projects.locations.spaces.sharedTemplates REST Resource: v1alpha.projects.locations.spaces.sharedTemplates.revisions Service: designcenter.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
-- Home Documentation Application development Application Design Center Reference Send feedback Design Center API Stay organized with collections Save and categorize content based on your preferences.
-- REST Resource: v1alpha.projects.locations.spaces Methods create POST /v1alpha/{parent=projects/ /locations/ }/spaces Creates a space. delete DELETE /v1alpha/{name=projects/ /locations/ /spaces/ } Deletes a space. get GET /v1alpha/{name=projects/ /locations/ /spaces/ } Gets details about a space. getIamPolicy GET /v1alpha/{resource=projects/ /locations/ /spaces/ }:getIamPolicy Gets the access control policy for a resource. inferConnections POST /v1alpha/{name=projects/ /locations/ /spaces/ }:inferConnections Infers and suggests connections between components within a space. list GET /v1alpha/{parent=projects/ /locations/ }/spaces Lists spaces in a given project and location. patch PATCH /v1alpha/{space.name=projects/ /locations/ /spaces/ } Updates a space. setIamPolicy POST /v1alpha/{resource=projects/ /locations/ /spaces/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1alpha/{resource=projects/ /locations/ /spaces/ }:testIamPermissions Returns permissions that a caller has on the specified resource.
-- REST Resource: v1alpha.projects.locations.spaces.applicationTemplates.components.connections Methods create POST /v1alpha/{parent=projects/ /locations/ /spaces/ /applicationTemplates/ /components/ }/connections Creates a connection. delete DELETE /v1alpha/{name=projects/ /locations/ /spaces/ /applicationTemplates/ /components/ /connections/ } Deletes a connection. get GET /v1alpha/{name=projects/ /locations/ /spaces/ /applicationTemplates/ /components/ /connections/ } Gets details about a connection. list GET /v1alpha/{parent=projects/ /locations/ /spaces/ /applicationTemplates/ /components/ }/connections Lists connections in an application template. patch PATCH /v1alpha/{connection.name=projects/ /locations/ /spaces/ /applicationTemplates/ /components/ /connections/ } Updates a connection.
+- Design and deployment approaches To determine the best design and deployment approach for your purpose, use the following table: Your goal Primary benefit Approach Visualize your architecture Real-time suggestions and visual layout Design canvas Rapid prototyping AI-driven starting points from requirements Natural language chat Automation and integration Repeatable, programmable workflows REST API Command-line management Efficient terminal-based operations Google Cloud CLI Team collaboration workflow Platform teams and developers work together to move from business requirements to a working application using the following example workflow: Set up collaboration : platform administrators create spaces and assign team access.
+- You can select from the following types of components: Google components : components designed by Google that incorporate Google Cloud best practices and default security configurations.
+- Components can include: Assets : supporting resources that help you control other resources, such as service accounts or secrets.
+- By using these components, you ensure that every part of your application follows security and performance standards.
+
+### Import components \_|\_ Application Design Center \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/application-design-center/docs/import-components](https://docs.cloud.google.com/application-design-center/docs/import-components)
+- Source ID: `site-docs-root`
+- Final score: 23
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Application Design Center supports several Google Cloud products that you can add as components to your application.
+- For example, the following is a metadata.yaml file that you might create for a service account: spec : info : actuationTool : flavor : Terraform version : ">= 1.3" interfaces : # Optional variables : - name : service account connections : - source : source : github.com/terraform-google/terraform-google-service-accounts version : ">= 4.4" spec : outputExpr : email requirements : roles : # Optional after IAM integrations - level : Project roles : - roles/iam.serviceAccountUser - roles/iap.admin - roles/run.admin - roles/iam.serviceAccountAdmin providerVersions : - source : hashicorp/google version : ">= 6, < 7" - source : hashicorp/google-beta version : ">= 6, < 7" ui : # Optional input : variables : ca root module : name : ca root module title : Ca Root Module service account : name : service account title : Service Account Import from your repository You can create an App Design Center component by importing a Terraform module that is based on a single Google Cloud product.
+- Create a catalog template revision based on the Terraform module in your repository. gcloud design-center spaces catalogs templates revisions create REVISION \ --project = PROJECT \ --catalog = CATALOG \ --location = LOCATION \ --space = SPACE \ --template = COMPONENT TEMPLATE \ --developer-connect-repo = DEVELOPER CONNECT REPO \ --developer-connect-repo-ref = DEVELOPER CONNECT REPO REF \ --developer-connect-repo-dir = DEVELOPER CONNECT REPO DIR \ --metadata = METADATA Replace the following: REVISION : The revision ID for the revision that you want to create.
+- Create a connection between the two components. gcloud design-center spaces application-templates components connections create CONNECTION \ --project = PROJECT \ --location = LOCATION \ --space = SPACE \ --application-template = APPLICATION TEMPLATE \ --component = COMPONENT \ --destination-component-uri = SHARED TEMPLATE URI 2 Replace the following: CONNECTION : The connection ID for the connection that you want to add to the template.
 

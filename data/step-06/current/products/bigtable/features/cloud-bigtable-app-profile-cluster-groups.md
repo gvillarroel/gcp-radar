@@ -1,32 +1,29 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:35:45.372Z"
+generated_at: "2026-04-14T11:18:28.024Z"
 product_name: "Bigtable"
 product_slug: "bigtable"
 feature_name: "Cloud Bigtable app profile cluster groups"
 feature_slug: "cloud-bigtable-app-profile-cluster-groups"
 latest_feature_date: "2021-10-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/bigtable/docs/app-profiles"
-  - "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.DataBoostIsolationReadOnlyPolicy"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy"
 keywords:
   - "groups"
   - "traffic"
-  - "so"
   - "introduces"
   - "profile"
   - "cluster"
-  - "app"
-  - "bigtable"
 ---
 
 # Cloud Bigtable app profile cluster groups
 
 Product: Bigtable
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,55 +35,55 @@ Introduces app profile cluster groups so app profile traffic can be routed to a 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/bigtable/docs/app-profiles](https://docs.cloud.google.com/bigtable/docs/app-profiles)
-- [https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles](https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.DataBoostIsolationReadOnlyPolicy](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.DataBoostIsolationReadOnlyPolicy)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy)
 
 ## Supporting Pages
+
+### "Class AppProfile.MultiClusterRoutingPolicy (2.74.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy)
+- Source ID: `site-java-reference`
+- Final score: 117
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Parameter Name Description clusterIds Set < String > Returns Type Description AppProfile.MultiClusterRoutingPolicy Methods equals(Object o) public boolean equals ( Object o ) Parameter Name Description o Object Returns Type Description boolean Overrides Object.equals(Object) getClusterIds() public Set<String> getClusterIds () Returns Type Description Set < String > hashCode() public int hashCode () Returns Type Description int Overrides Object.hashCode() Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Inheritance Object > AppProfile.MultiClusterRoutingPolicy Implements AppProfile.RoutingPolicy Inherited Members Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods of() public static AppProfile .
+- Home Documentation Developer tools Java Client libraries Send feedback Class AppProfile.MultiClusterRoutingPolicy (2.74.0) Stay organized with collections Save and categorize content based on your preferences.
+- Parameter Name Description clusterIds String [] Returns Type Description AppProfile.MultiClusterRoutingPolicy withRowAffinity(Set<String> clusterIds) public static AppProfile .
+
+### "Class AppProfile.SingleClusterRoutingPolicy (2.74.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy)
+- Source ID: `site-java-reference`
+- Final score: 117
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Parameters Name Description clusterId String allowTransactionWrites boolean Returns Type Description AppProfile.SingleClusterRoutingPolicy Methods equals(Object o) public boolean equals ( Object o ) Parameter Name Description o Object Returns Type Description boolean Overrides Object.equals(Object) getAllowTransactionalWrites() public boolean getAllowTransactionalWrites () Checks if transactional writes are enabled.
+- Inheritance Object > AppProfile.SingleClusterRoutingPolicy Implements AppProfile.RoutingPolicy Inherited Members Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods fromProto(AppProfile.SingleClusterRouting proto) public static AppProfile .
+- Home Documentation Developer tools Java Client libraries Send feedback Class AppProfile.SingleClusterRoutingPolicy (2.74.0) Stay organized with collections Save and categorize content based on your preferences.
+- Parameter Name Description proto com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting Returns Type Description AppProfile.SingleClusterRoutingPolicy of(String clusterId) public static AppProfile .
 
 ### App profiles overview \_|\_ Bigtable \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/bigtable/docs/app-profiles](https://docs.cloud.google.com/bigtable/docs/app-profiles)
-- Source ID: `site-docs-root-2`
-- Final score: 200
+- Source ID: `site-docs-reference-2`
+- Final score: 117
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Monitoring the CPU utilization per app profile for a workload using a standard app profile can help you troubleshoot CPU utilization issues or make decisions about the size or location of the cluster, so you can optimize usage and reduce costs.
-- Use a separate app profile for each workload When you create a Bigtable instance, a default app profile is created automatically, and its settings depend on the number of clusters the instance has.
-- Data Boost app profiles A Data Boost app profile lets you use Data Boost's serverless compute to isolate high-throughput jobs and queries from app serving traffic.
 - Similarly, if you change an app profile from Data Boost to standard, traffic that is sent by the app profile starts using cluster nodes for compute.
-
-### Create and configure app profiles \_|\_ Bigtable \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles](https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles)
-- Source ID: `site-docs-root-2`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Select the new cluster that traffic should be routed to, and then click Save . gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list If you don't know the app profile's ID, use the bigtable app-profiles list command to view a list of the instance's app profiles: gcloud bigtable app-profiles list --instance= INSTANCE ID Replace INSTANCE ID with the permanent identifier for the instance. (Optional) Use the bigtable app-profiles describe command to view the app profile's settings: gcloud bigtable app-profiles describe APP PROFILE ID \ --instance= INSTANCE ID Provide the following: APP PROFILE ID : The permanent identifier for the app profile.
-- Update your application's code for connecting to Bigtable so that it uses the new app profile. gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list Use the bigtable app-profiles create command to create an app profile: gcloud bigtable app-profiles create APP PROFILE ID \ --instance= INSTANCE ID \ [--description= DESCRIPTION ] \ [--force] \ [--route-any] \ [--restrict-to= CLUSTER ID 1 , CLUSTER ID 2 ...] \ [--route-to= CLUSTER ID ] \ [--transactional-writes] \ [--priority=PRIORITY] \ [--row-affinity] Provide the following: APP PROFILE ID : The permanent identifier for the app profile.
-- Update your application's code for connecting to Bigtable so that it uses the new app profile. gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list Use the gcloud beta bigtable app-profiles create command to create an app profile: gcloud bigtable app-profiles create APP PROFILE ID \ --instance= INSTANCE ID \ --data-boost \ --data-boost-compute-billing-owner=HOST PAYS \ --route-to= CLUSTER ID Provide the following: APP PROFILE ID : The permanent identifier for the app profile.
-- For example, you might use one app profile for a batch application to isolate its traffic to a single cluster, and you might use a different app profile to provide high availability for another application.
-
-### "Class AppProfile.DataBoostIsolationReadOnlyPolicy (2.74.0) \_|\_ Java client\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.DataBoostIsolationReadOnlyPolicy](https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.DataBoostIsolationReadOnlyPolicy)
-- Source ID: `site-java-reference`
-- Final score: 174
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Returns Type Description com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- IsolationPolicy A Data Boost Read Only IsolationPolicy for running high-throughput read traffic on your Bigtable data without affecting application traffic.
-- Inheritance Object > AppProfile.DataBoostIsolationReadOnlyPolicy Implements AppProfile.IsolationPolicy Inherited Members Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods of(AppProfile.ComputeBillingOwner billingOwner) public static AppProfile .
-- Parameter Name Description billingOwner AppProfile.ComputeBillingOwner Returns Type Description AppProfile.DataBoostIsolationReadOnlyPolicy Methods equals(Object o) public boolean equals ( Object o ) Parameter Name Description o Object Returns Type Description boolean Overrides Object.equals(Object) getComputeBillingOwner() public AppProfile .
+- A standard app profile uses provisioned cluster nodes for compute and is typically used for application-serving traffic.
+- Standard app profiles A standard app profile routes traffic to an instance's clusters using the clusters' nodes.
+- The settings in an instance's default app profile depend on the number of clusters the instance had when you first created it: If you created the instance with 1 cluster, the default app profile uses single-cluster routing , and it enables single-row transactions .
 

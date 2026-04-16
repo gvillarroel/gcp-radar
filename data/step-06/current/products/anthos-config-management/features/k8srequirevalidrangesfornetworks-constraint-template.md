@@ -1,59 +1,83 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:06:37.234Z"
+generated_at: "2026-04-14T04:07:01.305Z"
 product_name: "Anthos Config Management"
 product_slug: "anthos-config-management"
 feature_name: "K8sRequireValidRangesForNetworks constraint template"
 feature_slug: "k8srequirevalidrangesfornetworks-constraint-template"
 latest_feature_date: "2022-12-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync"
+  - "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/fleet-packages"
 keywords:
-  - "valid ranges for networks"
-  - "network range checker"
-  - "valid network ranges"
-  - "network range validation"
-  - "CIDR range constraint"
-  - "K8sRequireValidRangesForNetworks template"
-  - "K8sRequireValidRangesForNetworks"
-  - "Constraint Template Library"
+  - "k8srequirevalidrangesfornetworks"
+  - "constraint"
+  - "template"
+  - "library"
+  - "includes"
 ---
 
 # K8sRequireValidRangesForNetworks constraint template
 
 Product: Anthos Config Management
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The Constraint Template Library added a new template named `K8sRequireValidRangesForNetworks`.
+The constraint template library includes the K8sRequireValidRangesForNetworks template.
 
 ## Extended Definition
 
-The Constraint Template Library added a new template named `K8sRequireValidRangesForNetworks`.
+The constraint template library includes the K8sRequireValidRangesForNetworks template.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync)
+- [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/fleet-packages](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/fleet-packages)
 
 ## Supporting Pages
 
-### Config Sync release notes \_|\_ Google Cloud Documentation
+### "REST Resource: projects.locations.fleetPackages \_|\_ Config Sync \_|\_\
 
-- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes)
-- Source ID: `site-docs-root-2`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/projects.locations.fleetPackages)
+- Source ID: `site-docs-reference`
+- Final score: 44
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- 1.14.0 Feature The constraint template library includes a new template: K8sRequireValidRangesForNetworks .
-- 1.16.3 Change The constraint template library's K8sPSPAllowedUsers , K8sPSPAllowPrivilegeEscalationContainer , K8sPSPAutomountServiceAccountTokenPod , K8sPSPCapabilities , K8sPSPFlexVolumes , K8sPSPForbiddenSysctls , K8sPSPFSGroup , K8sPSPHostFilesystem , K8sPSPHostNamespace , K8sPSPHostNetworkingPorts , K8sPSPPrivilegedContainer , K8sPSPProcMount , K8sPSPReadOnlyRootFilesystem , K8sPSPSELinuxV2 , K8sPSPVolumeTypes , and K8sRequiredProbes no longer raise violations during updates of existing objects for immutable fields.
-- Those templates are: K8sPSPAllowPrivilegeEscalationContainer K8sPSPAppArmor K8sPSPCapabilities K8sContainerLimits K8sContainerRatios K8sPSPHostNetworkingPorts K8sImageDigests K8sPSPPrivilegedContainer K8sPSPProcMount K8sPSPReadOnlyRootFilesystem K8sPSPSeccomp K8sPSPSELinuxV2 K8sPSPAllowedUsers K8sContainerLimits 1.10.2 Feature The constraint template library includes new templates: K8sPSPAutomountServiceAccountTokenPod, RestrictNetworkExclusions, and K8sDisallowAnonymous.
-- This note was updated on January 10, 2024 1.17.0 Change The constraint template library's K8sNoExternalServices template now supports the "networking.gke.io/load-balancer-type": "Internal" annotation.
+- JSON representation { // Union field strategy can be only one of the following: "variantNameTemplate" : string // End of list of possible types for union field strategy . } Fields Union field strategy . strategy for selecting a variant. strategy can be only one of the following: variantNameTemplate string Required. variantNameTemplate is a template that can refer to variables containing cluster membership metadata such as location, name, and labels to generate the name of the variant for a target cluster.
+- If you want to deploy a specific variant, say "default" to all the clusters, you can use "default" (string without any variables) as the variantNameTemplate.
+- Labels must meet the following constraints: Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes.
+
+### About fleet packages \_|\_ Config Sync \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/fleet-packages](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/fleet-packages)
+- Source ID: `site-docs-root`
+- Final score: 37
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Deployment to all clusters in a fleet The following FleetPackage uses a rolling strategy to deploy Kubernetes resources to three clusters at a time and targets all clusters in a fleet: resourceBundleSelector: cloudBuildRepository: name: projects/my-project/locations/us-central1/connections/my-connection/repositories/my-repo tag: v1.0.0 variantsPattern: " .yaml" serviceAccount: projects/my-project/serviceAccounts/my-service-account@my-project.iam.gserviceaccount.com target: fleet: project: projects/my-project rolloutStrategy: rolling: maxConcurrent: 3 variantSelector: variantNameTemplate: deployment # matches a file named deployment.yaml Deployment to a subset of clusters The following FleetPackage uses a label selector to deploy Kubernetes resources only to clusters with the membership label country that matches "us" in the fleet: resourceBundleSelector: cloudBuildRepository: name: projects/my-project/locations/us-central1/connections/my-connection/repositories/my-repo tag: v1.0.0 variantsPattern: " .yaml" serviceAccount: projects/my-project/serviceAccounts/my-service-account@my-project.iam.gserviceaccount.com target: fleet: project: projects/my-project selector: matchLabels: country: "us" rolloutStrategy: rolling: maxConcurrent: 3 What's next Deploy fleet packages Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For example, consider the following scenarios that use labels to match variants: variantNameTemplate: "${membership.labels['env']}" : A cluster with the label env: prod syncs to a variant named prod . variantNameTemplate: "${membership.location}" : Clusters sync to variants matching their location (for example, us-central1-a ). variantNameTemplate: "default" : Clusters sync to a variant named default .
+- You would then use the following fleet package specification: resourceBundleSelector : cloudBuildRepository : ... other fields path : "manifests" variantsPattern : " " # Matches dev, staging, prod directories variantSelector : variantNameTemplate : "${membership.labels['env']}" With this configuration, a cluster labeled env: staging receives the contents of the manifests/staging/ directory.
+- The template can use variables to access the following fleet membership metadata: ${membership.name} : The cluster's fleet membership name. ${membership.location} : The fleet membership location. ${membership.project} : The fleet membership project. ${membership.labels['KEY']} : The value of the label KEY on the fleet membership.
+
+### "Monitor RootSync and RepoSync objects \_|\_ Config Sync \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync](https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync)
+- Source ID: `site-docs-root`
+- Final score: 36
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The output of this command includes events, which can be particularly helpful for debugging issues such as containers facing memory constraints (OOMKilled), scheduling failures, or image pull errors.
+- To confirm log verbosity is configured, run the following command: kubectl get deployment.apps/root-reconciler -n config-management-system -o yaml The log verbosity can be found as one of the args within spec.template.spec.containers[] and looks like -v=0 , where 0 is the current log verbosity.
 

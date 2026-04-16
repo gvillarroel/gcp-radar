@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:31.478Z"
+generated_at: "2026-04-15T00:44:19.103Z"
 product_name: "Cloud Healthcare API"
 product_slug: "cloud-healthcare-api"
 feature_name: "Healthcare API LRO visibility in Cloud Console"
 feature_slug: "healthcare-api-lro-visibility-in-cloud-console"
 latest_feature_date: "2021-02-11"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/healthcare-api/docs/datasets"
+  - "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+  - "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
 keywords:
   - "healthcare"
-  - "api"
   - "lro"
   - "visibility"
-  - "in"
   - "console"
-  - "it"
   - "became"
+  - "possible"
+  - "view"
+  - "process"
 ---
 
 # Healthcare API LRO visibility in Cloud Console
 
 Product: Cloud Healthcare API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ It became possible to view in-process long-running operation (LRO) details from 
 
 It became possible to view in-process long-running operation (LRO) details from the Healthcare Browser in the Cloud Console.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/healthcare-api/docs/datasets](https://docs.cloud.google.com/healthcare-api/docs/datasets)
+- [https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter](https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter)
+- [https://docs.cloud.google.com/healthcare-api/docs/controlling-access](https://docs.cloud.google.com/healthcare-api/docs/controlling-access)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Transmitting HL7v2 messages over TCP/IP connections \_|\_ Cloud Healthcare\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter](https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter)
+- Source ID: `site-docs-root`
+- Final score: 95
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To view the message published to the Pub/Sub topic, run the gcloud pubsub subscriptions pull command: gcloud pubsub subscriptions pull --auto-ack PUBSUB SUBSCRIPTION The command returns the following output about the ingested HL7v2 message: ┌----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┐ DATA MESSAGE ID ATTRIBUTES ├----------------------------------------------------------------------------------------------------------------- ----------------- --------------- projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ HL7V2 MESSAGE ID 123456789012345 msgType = ADT └----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┘ You can also list the messages in your HL7v2 store to see if the message was added: curl curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } PowerShell $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = "Bearer $cred " } Invoke-WebRequest -Method Get -Headers $headers -ContentType: "application/json; charset=utf-8" ` -Uri "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" Select-Object -Expand Content If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } After completing this section, you have successfully deployed the MLLP adapter to GKE and, over a VPN, securely sent an HL7v2 message from an "on-premises" instance through the adapter and to the Cloud Healthcare API.
+- To view the message published to the Pub/Sub topic, run the gcloud pubsub subscriptions pull command: gcloud pubsub subscriptions pull --auto-ack PUBSUB SUBSCRIPTION The command returns the following output about the ingested HL7v2 message: ┌----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┐ DATA MESSAGE ID ATTRIBUTES ├----------------------------------------------------------------------------------------------------------------- ----------------- --------------- projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ HL7V2 MESSAGE ID 123456789012345 msgType = ADT └----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┘ You can also list the messages in your HL7v2 store to see if the message was added: curl curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } PowerShell $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = "Bearer $cred " } Invoke-WebRequest -Method Get -Headers $headers -ContentType: "application/json; charset=utf-8" -Uri "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" Select-Object -Expand Content If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } After completing this section, you have successfully deployed the MLLP adapter to GKE and sent an HL7v2 message from a remote instance through the adapter and to the Cloud Healthcare API.
+- The message is stored in your HL7v2 store, so you can call messages.list to view the message: curl curl -X GET \ -H "Authorization: Bearer $( gcloud auth application-default print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } PowerShell $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = "Bearer $cred " } Invoke-WebRequest -Method Get -Headers $headers -ContentType: "application/json; charset=utf-8" -Uri "https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages" Select-Object -Expand Content If the request is successful, the server returns the message's ID in a resource path: { "hl7V2Messages": [ { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID " } ] } Testing the MLLP adapter locally as a publisher When testing the adapter as a publisher, you create messages by calling messages.create or messages.ingest and supplying a message file as binary data.
+- To grant each role to the service account, run the gcloud projects add-iam-policy-binding command. gcloud projects add-iam-policy-binding PROJECT ID \ --member = serviceAccount: SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \ --role = roles/pubsub.publisher gcloud projects add-iam-policy-binding PROJECT ID \ --member = serviceAccount: SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \ --role = roles/healthcare.hl7V2Consumer The output includes the updated policy: bindings: - members: - user: SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com role: roles/pubsub.publisher - members: - user: SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com roles/healthcare.hl7V2Consumer etag: ETAG version: 1 The following steps show how to create a Linux virtual machine instance in Compute Engine: Console In the Google Cloud console, go to the VM Instances page.
+
+### "Create and manage datasets \_|\_ Cloud Healthcare API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/datasets](https://docs.cloud.google.com/healthcare-api/docs/datasets)
+- Source ID: `site-docs-root-2`
+- Final score: 90
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Response { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID ", "metadata": { "@type": "type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata", "apiMethodName": "google.cloud.healthcare.v1.dataset.DatasetService.CreateDataset", "createTime": " YYYY-MM-DDTHH:MM:SS+ZZ:ZZ ", "endTime": " YYYY-MM-DDTHH:MM:SS+ZZ:ZZ ", "logsUrl": "https://console.cloud.google.com/ CLOUD LOGGING URL " "counter": { "success": " SUCCESS COUNT ", // If there were any failures, they display in the failure field. "failure": " FAILURE COUNT " } }, "done": true, // The response field only displays if there were no errors. "response": { "@type": "type.googleapis.com/google.cloud.healthcare.v1.dataset.Dataset", "name": " PROJECT ID /locations/ LOCATION /datasets/ DATASET ID ", }, // If there were any errors, an error field displays instead of a response field. // See Troubleshooting long-running operations for a list of response codes. "error": { "code": ERROR CODE , "message": " DESCRIPTION ", "details": [ { "@type": "...", FIELD1 : ..., ... } ] } } Go import ( "context" "fmt" "io" "time" healthcare "google.golang.org/api/healthcare/v1" ) // createDataset creates a dataset. func createDataset ( w io .
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const patchDataset = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const timeZone = 'UTC'; const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } ; const request = { name , updateMask : 'timeZone' , resource : { timeZone : timeZone }, }; await healthcare . projects . locations . datasets . patch ( request ); console . log ( Dataset ${ datasetId } patched with time zone ${ timeZone } ); }; patchDataset (); Python Imports the Dict type for runtime type hints. from typing import Dict def patch dataset ( project id : str , location : str , dataset id : str , time zone : str ) - > Dict [ str , str ]: """Updates dataset metadata.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const getDataset = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } ; const request = { name : parent }; const dataset = await healthcare . projects . locations . datasets . get ( request ); console . log ( dataset . data ); }; getDataset (); Python Imports the Dict type for runtime type hints. from typing import Dict def get dataset ( project id : str , location : str , dataset id : str ) - > Dict [ str , str ]: """Gets any metadata associated with a dataset.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const createDataset = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } ; const request = { parent , datasetId }; await healthcare . projects . locations . datasets . create ( request ); console . log ( Created dataset: ${ datasetId } ); }; createDataset (); Python Imports the Dict type for runtime type hints. from typing import Dict def create dataset ( project id : str , location : str , dataset id : str ) - > Dict [ str , str ]: """Creates a Cloud Healthcare API dataset.
+
+### "Controlling access to Cloud Healthcare API resources \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/controlling-access](https://docs.cloud.google.com/healthcare-api/docs/controlling-access)
+- Source ID: `site-docs-root-2`
+- Final score: 83
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Returns: A dictionary representing an IAM policy. """ Imports the Google API Discovery Service. from googleapiclient import discovery Imports HttpError from the Google Python API client errors module. from googleapiclient.errors import HttpError api version = "v1" service name = "healthcare" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' location = 'us-central1' dataset id = 'my-dataset' dataset name = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) request = ( client . projects () . locations () . datasets () . getIamPolicy ( resource = dataset name ) ) try : response = request . execute () print ( "etag: {} " . format ( response . get ( "name" ))) return response except HttpError as err : raise err Modifying a policy The following samples grant a new user the roles/healthcare.datasetViewer role: Setting a policy Console To set a dataset-level IAM policy, complete the following steps: In the Google Cloud console, go to the Datasets page.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const setConsentStoreIamPolicy = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const consentStoreId = 'my-consent-store'; // const member = 'user:example@gmail.com'; // const role = 'roles/healthcare.consentStoreViewer'; const resource = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /consentStores/ ${ consentStoreId } ; const request = { resource , resource : { policy : { bindings : [ { members : member , role : role , }, ], }, }, }; const consentStore = await healthcare . projects . locations . datasets . consentStores . setIamPolicy ( request ); console . log ( 'Set consent store IAM policy:' , JSON . stringify ( consentStore . data , null , 2 ) ); }; setConsentStoreIamPolicy (); Python def set consent store iam policy ( project id : str , location : str , dataset id : str , consent store id : str , member , role , etag = None , ): """Sets the IAM policy for the specified consent store.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const setDatasetIamPolicy = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const member = 'user:example@gmail.com'; // const role = 'roles/healthcare.datasetViewer'; const resource = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } ; const request = { resource , resource : { policy : { bindings : [ { members : member , role : role , }, ], }, }, }; const dataset = await healthcare . projects . locations . datasets . setIamPolicy ( request ); console . log ( 'Set dataset IAM policy:' , JSON . stringify ( dataset . data , null , 2 ) ); }; setDatasetIamPolicy (); Python Imports the Dict and Any types for runtime type hints. from typing import Any , Dict def set dataset iam policy ( project id : str , location : str , dataset id : str , member : str , role : str , etag : str = None , ) - > Dict [ str , Any ]: """Sets the IAM policy for the specified dataset.
+- GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const setDicomStoreIamPolicy = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const member = 'user:example@gmail.com'; // const role = 'roles/healthcare.dicomStoreViewer'; const resource = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const request = { resource , resource : { policy : { bindings : [ { members : member , role : role , }, ], }, }, }; const dicomStore = await healthcare . projects . locations . datasets . dicomStores . setIamPolicy ( request ); console . log ( 'Set DICOM store IAM policy:' , JSON . stringify ( dicomStore . data , null , 2 ) ); }; setDicomStoreIamPolicy (); Python def set dicom store iam policy ( project id , location , dataset id , dicom store id , member , role , etag = None ): """Sets the IAM policy for the specified DICOM store.
 

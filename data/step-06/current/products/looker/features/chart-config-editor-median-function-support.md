@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.484Z"
+generated_at: "2026-04-15T13:43:38.496Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Chart Config Editor median function support"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-02-12"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
-  - "https://docs.cloud.google.com/looker/docs/api-getting-started"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
+  - "https://docs.cloud.google.com/looker/docs/chart-config-editor"
+  - "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor"
+  - "https://docs.cloud.google.com/looker/docs/best-practices/treemap"
 keywords:
   - "chart"
   - "config"
   - "editor"
   - "median"
-  - "function"
   - "adds"
-  - "for"
-  - "the"
+  - "formatters"
+  - "select"
+  - "parameter"
 ---
 
 # Chart Config Editor median function support
@@ -42,42 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
+- [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
+- [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- [https://docs.cloud.google.com/looker/docs/best-practices/treemap](https://docs.cloud.google.com/looker/docs/best-practices/treemap)
 
 ## Supporting Pages
 
-### Using the API Explorer | Looker | Google Cloud Documentation
+### "Customizing visualizations using the Chart Config Editor \_|\_ Looker \_\
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 52
+- URL: [https://docs.cloud.google.com/looker/docs/chart-config-editor](https://docs.cloud.google.com/looker/docs/chart-config-editor)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 401
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Compare series values to the mean or median value The formatters.select parameter supports the mean keyword in Looker 25.0+ and the median keyword in Looker 25.2+.
+- Color series compared to other series values Starting in Looker 25.0, the formatters.select parameter lets you compare the current data value to values from other series.
+- Conditional formatting with series formatters The Chart Config Editor accepts most valid HighCharts JSON.
+- The following articles provide examples of some of the visualizations that you can design with the Chart Config Editor: Creating a bullet chart with the Chart Config Editor Creating a solid gauge chart with the Chart Config Editor Creating a streamgraph chart with the Chart Config Editor Creating a treemap chart with the Chart Config Editor Creating a Sankey chart with the Chart Config Editor Creating a dependency wheel chart with the Chart Config Editor Creating a Venn diagram with the Chart Config Editor Creating a sunburst chart with the Chart Config Editor Creating an item chart with the Chart Config Editor Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Customizing visualizations using the Chart Config Editor \_|\_ Looker \_\
+
+- URL: [https://docs.cloud.google.com/looker/docs/advanced-visualization-editor](https://docs.cloud.google.com/looker/docs/advanced-visualization-editor)
+- Source ID: `site-docs-reference`
+- Final score: 381
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Compare series values to the mean or median value The formatters.select parameter supports the mean keyword in Looker 25.0+ and the median keyword in Looker 25.2+.
+- Color series compared to other series values Starting in Looker 25.0, the formatters.select parameter lets you compare the current data value to values from other series.
+- Conditional formatting with series formatters The Chart Config Editor accepts most valid HighCharts JSON.
+- The following articles provide examples of some of the visualizations that you can design with the Chart Config Editor: Creating a bullet chart with the Chart Config Editor Creating a solid gauge chart with the Chart Config Editor Creating a streamgraph chart with the Chart Config Editor Creating a treemap chart with the Chart Config Editor Creating a Sankey chart with the Chart Config Editor Creating a dependency wheel chart with the Chart Config Editor Creating a Venn diagram with the Chart Config Editor Creating a sunburst chart with the Chart Config Editor Creating an item chart with the Chart Config Editor Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### "Creating a treemap chart with the Chart Config Editor \_|\_ Looker \_|\_\
+
+- URL: [https://docs.cloud.google.com/looker/docs/best-practices/treemap](https://docs.cloud.google.com/looker/docs/best-practices/treemap)
+- Source ID: `site-docs-reference`
+- Final score: 85
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
-- Using the API Explorer Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-explorer There may also be Ruby and Java ... languages.
-
-### Getting started with the Looker API | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/api-getting-started](https://docs.cloud.google.com/looker/docs/api-getting-started)
-- Source ID: `site-api-reference`
-- Final score: 48
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Getting started with the Looker API Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-getting-started The Looker API is a secure, &quot;RESTful&quot; application programming interface for managing your Looker instance and fetching data through the Looker data platform.
-- With the Looker API, you can write applications or automation scripts to provision ...
-
-### Looker (Google Cloud core) overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 46
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
+- Home Documentation Data analytics Looker Guides Send feedback Creating a treemap chart with the Chart Config Editor Stay organized with collections Save and categorize content based on your preferences.
+- Using the Chart Config Editor , you can create treemap charts by starting from a column chart in Looker.
+- Prerequisites To access the Chart Config Editor, you must have the can override vis config permission .
+- Note: Starting in Looker 24.10, the Chart Config Editor supports the creation of treemap charts.
 

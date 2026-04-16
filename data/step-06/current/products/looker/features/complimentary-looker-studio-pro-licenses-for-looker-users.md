@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.529Z"
+generated_at: "2026-04-15T13:43:38.525Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Complimentary Looker Studio Pro licenses for Looker users"
@@ -9,18 +9,18 @@ latest_feature_date: "2024-04-10"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/studio"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
-  - "https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
 keywords:
   - "complimentary"
   - "looker"
   - "studio"
   - "pro"
   - "licenses"
-  - "for"
   - "users"
   - "admins"
+  - "can"
 ---
 
 # Complimentary Looker Studio Pro licenses for Looker users
@@ -42,42 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/studio](https://docs.cloud.google.com/looker/docs/studio)
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- [https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio](https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp](https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
 
 ## Supporting Pages
 
-### Welcome to Looker Studio | Google Cloud Documentation
+### Admin settings - Users \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/studio](https://docs.cloud.google.com/looker/docs/studio)
-- Source ID: `site-docs-root`
-- Final score: 98
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-users](https://docs.cloud.google.com/looker/docs/admin-panel-users-users)
+- Source ID: `site-docs-reference`
+- Final score: 162
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Deleting users from a Looker account that is associated with a Looker Studio Pro subscription reduces the number of complimentary Looker Studio Pro licenses that are allocated to the account.
+- If the number of complimentary Pro licenses that are allocated to your account becomes less than the number of licenses that are in use, the difference will be converted within 24 hours to paid licenses, subject to Looker Studio Pro pricing .
+- From the Edit User page you can do the following: Enable or disable the service account Edit the service account name Manage the service account API keys Assign different groups and Roles Edit the user attributes that are associated with the service account Migrating user accounts to service accounts Important: Starting with the Looker 26.8 release, the following changes will occur: Looker (original) admins will no longer be able to access or manage the API credentials of their standard users.
+- API Keys Important: Starting with the Looker 26.8 release, the following changes will occur: Looker (original) admins will no longer be able to access or manage the API credentials of their standard users.
+
+### Admin settings - Looker Studio Pro \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp](https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp)
+- Source ID: `site-docs-reference`
+- Final score: 148
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Welcome to Looker Studio Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/studio Documentation for Looker Studio, a no-cost tool that turns your data into fully customizable reports.
-- It provides an easy-to-use drag-and-drop editor.
+- This page describes how to perform the following tasks for a Looker instance: Accept the complimentary Looker Studio Pro licenses that have been allocated to your Looker instance Specify the Google Cloud project that hosts your Looker Studio Pro content Add Looker users to your Looker Studio Pro subscription Before you begin Important: A Looker account is associated with a Looker Studio Pro subscription through the Google Cloud project that hosts Looker Studio Pro content.
+- Note: If the number of users that you have added exceeds the number of complimentary Looker Studio Pro licenses that are allocated to your Looker instance, the Total monthly cost line item displays the cost of the additional licenses that you are purchasing.
+- If you had already completed the setup for your Looker Studio Pro subscription before you accepted your complimentary licenses, your licenses have been applied automatically to your existing Looker Studio Pro users.
+- To get started using Looker Studio Pro, you need to set up a Looker Studio Pro subscription, accept your Looker account's complimentary licenses, and assign the licenses to Looker users.
 
-### Looker (Google Cloud core) overview | Google Cloud Documentation
+### Admin settings - Roles \_|\_ Looker \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 86
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-users-roles](https://docs.cloud.google.com/looker/docs/admin-panel-users-roles)
+- Source ID: `site-docs-reference`
+- Final score: 119
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
-
-### Looker Studio roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio](https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio)
-- Source ID: `site-iam-reference`
-- Final score: 72
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Looker Studio roles and permissions Identity and Access Management (IAM) Google Cloud Documentation Source URL: https://docs.cloud.google.com/iam/docs/roles-permissions/datastudio This page lists the IAM roles and permissions for Looker Studio.
+- They can also view and edit that data source's configuration in Looker Studio. create table calculations explore Instance Wide NN Users can view, edit, or add table calculations create custom fields explore Instance Wide NN Users can view, edit, or add custom fields ; users who have only the explore permission can only view custom fields. can create forecast explore Instance Wide NN Users can create and edit forecasts in visualizations; users who don't have this permission can only view existing forecasts in the content to which they have access. can override vis config explore Instance Wide NN Users can access the Chart Config Editor , which lets them modify the Highchart API JSON values of a visualization and customize the visualization appearance and format. save content see looks Instance Wide NN This permission is a parent permission of save dashboards , save looks , and create public looks .
+- Permissions and Looker licenses Looker licenses classify users into three types: Developer (Admin) Standard (Creator) Viewer The permissions granted to a user determine how that user is classified under the Looker license: A user is classified as a Developer (Admin) user if they have the Admin default role , or at least one of the following permissions: develop manage models see datagroups see logs see pdts sudo A user is classified as a Standard (Creator) user if they have none of the Developer (Admin) permissions but do have at least one of the following permissions: create prefetches explore manage homepage manage spaces save content see queries see schedules see system activity see users use sql runner save agents admin agents A user is classified as a Viewer if they have the access data permission, but none of the Developer (Admin) permissions and none of the Standard (Creator) permissions.
+- This permission grants users the ability to perform the following tasks: Write LookML using Gemini assistance when they also have a Looker role that contains the develop permission for at least one model in a LookML project Create custom Looker visualizations using Gemini assistance when they also have a Looker role that contains the can override vis config permission Use Conversational Analytics with Looker Explore data in Looker Studio, even if they don't have a role that contains the explore permission, when they also have a Looker role that contains the access data permission on the model that they are querying chat with agent gemini in looker Model Specific Added 25.18 Conversational Analytics users can chat with data agents that use one or more Looker Explores.
+- Users must have download with limit and/or download without limit permissions to download the content. create public looks save looks Model Specific Users can mark a saved Look as public , which will then generate URLs that grant access to that Look without authentication. download with limit see looks Model Specific This permission applies to Looks and dashboards in Looker and to reports in Looker Studio that use the Looker connector.
 

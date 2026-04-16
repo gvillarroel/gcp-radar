@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.675Z"
+generated_at: "2026-04-15T13:50:47.053Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Availability preferences"
@@ -9,8 +9,9 @@ latest_feature_date: "2025-02-17"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide"
 keywords:
   - "availability"
   - "preferences"
@@ -19,7 +20,7 @@ keywords:
   - "filter"
   - "incoming"
   - "contacts"
-  - "using"
+  - "criteria"
 ---
 
 # Availability preferences
@@ -37,38 +38,52 @@ Availability preferences let administrators filter incoming contacts using crite
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Call settings \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 182
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings](https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 95
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- This lets you filter incoming contacts so only the appropriate types of contacts enter their queues.
-- Administrators have the ability to: (1) Manage list visibility at the team or queue level, (2) Bulk upload CSV files containing contact lists, and (3) Add, edit, or delete contacts and destinations, including SIP URI addresses and phone numbers.
-- Feature Availability preferences You can create availability preferences filters and apply them to users and teams.
-- Feature End co-browse sessions using the Apps API The Apps API has the following new endpoint that lets you end a co-browse session using an external session ID: POST /apps/api/v1/cobrowse sessions/{external session id}/end .
+- Requesting new phone numbers Contact Support and include the following information about your preferences: Number type: Toll-free, National, Mobile, Local Location of number Number preference details about number structure or patterns Set up emergency and special services calling (US and Canada only) With CCAI Platform, agents in the US and Canada can make calls to emergency and special services using phone numbers that you dedicate to these types of calls.
+- Schedule call timeslot logic The scheduling model is static and calculates how many calls can be scheduled for a specified period of time, using the following logic: Agent availability calculation.
+- In the Pre-session SMS Deflection Offer Announcement message box, enter or upload the global audio message that will announce the availability of the SMS Deflection as an option for IVR callers.
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Call settings Stay organized with collections Save and categorize content based on your preferences.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Real-time dashboards and monitoring pages \_|\_ Google Cloud Contact Center\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 60
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages)
+- Source ID: `site-docs-reference`
+- Final score: 89
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Get started with Contact Center AI Platform (CCAI Platform) Stay organized with collections Save and categorize content based on your preferences.
-- Scheduled calls: Allow users to schedule a time to talk with your support team; AI-powered algorithms predict and provide 15-minute time slots based on agent availability, ensuring your users never have to wait on hold.
-- Scheduled calls: Allow users to schedule a time to talk with your support team; AI-powered algorithms predict and provide 15-minute time slots based on agent availability, ensuring your users never have to wait on hold.
-- Ideally, agents will be using the same laptops that they used in the office which retain control over allow-listing or deny listing and applications the device uses such as AdBlock, mic permissions, etc.
+- Call & chat metrics Definitions for the metrics below can be found on their respective dashboard page: Repeat Contacts Click on the number visible within the tile and the page will load to display the details of the repeat contacts filtered by Repeated .
+- Repeat Contacts: Number of callers who had multiple incoming sessions that finished in the same queue within the configured repeat contact timeframe set in Settings > Operation Management Target Metrics .
+- Repeat Contacts: # of callers who had multiple incoming sessions that finished in the same. queue within the configured repeat contact timeframe set in Settings> Operation Management .
+- For example, go to Dashboards > Call and click on Repeat Contacts, and it will bring you to a list of completed calls filtered by Repeated .
+
+### "Agent extensions guide \_|\_ Google Cloud Contact Center as a Service \_\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide)
+- Source ID: `site-docs-reference`
+- Final score: 83
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- A list will appear showing all agents that meet the search criteria along with their availability.
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Agent extensions guide Stay organized with collections Save and categorize content based on your preferences.
+- Receive an internal call When an internal call comes in from another agent, the agent's name and extension appear under Calling from on the Incoming call screen.
+- If no agents meet the search criteria, a message will appear indicating that there are no available agents to contact.
 

@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.205Z"
+generated_at: "2026-04-14T09:35:01.934Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Cloud Monitoring integration with Backup and DR"
 feature_slug: "cloud-monitoring-integration-with-backup-and-dr"
 latest_feature_date: "2024-02-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine"
+  - "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts"
+  - "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs"
 keywords:
+  - "configure"
+  - "metrics"
   - "integrated"
   - "integration"
   - "monitoring"
-  - "with"
-  - "backup"
-  - "and"
-  - "to"
-  - "dr"
+  - "view"
 ---
 
 # Cloud Monitoring integration with Backup and DR
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +36,55 @@ Backup and DR Service integrated with Cloud Monitoring to view metrics and confi
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
+- [https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions](https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts](https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts)
+- [https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs](https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs)
 
 ## Supporting Pages
 
-### "Backup and DR Service for Filestore and file systems on self-managed storage\
+### "Understand autoscaler decisions \_|\_ Compute Engine \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-filesystems)
-- Source ID: `site-api-reference`
-- Final score: 220
+- URL: [https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions](https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions)
+- Source ID: `site-docs-reference-2`
+- Final score: 110
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for Filestore and file systems on self-managed storage Stay organized with collections Save and categorize content based on your preferences.
-- What's next Manage hosts and their connected applications Other documentation for Backup and DR for file systems This page is one in a series of pages specific to protecting and recovering filesystems with Backup and DR Service.
-- The following steps describe the process for how to perform data backup and recovery with volume-based backup images and CBT: The Backup and DR agent has CBT to track changed blocks in the file system.
-- You can find additional information in the following pages: Backup and DR for file systems Manage hosts and their connected applications Configure application details and settings to protect file system data Apply a backup plan to protect a file system Restore a file system to the source Mount a file system or file share Mount and migrate a file system for instant recovery to any target Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- The Monitoring tab shows charts and logs as follows: The charts display the evolution of the following metrics: Group size Autoscaler utilization CPU utilization Disk I/O (bytes) Disk I/O (operations) Network bytes Network packets For additional contextual details about the metric displayed in a chart, hold the pointer over the help icon next to the title of that chart.
+- Average CPU utilization HTTP load balancing serving capacity Cloud Monitoring metrics collected from each instance in the MIG You can also manually resize a MIG to zero instances, even if the autoscaling policy includes metrics collected from each instance in the MIG.
+- The autoscaler does not scale in beyond the maximum allowed reduction measured from the observed peak size: For example, in the preceding diagram, scale-in controls are configured for a 20 VM maximum allowed reduction in a 30-minute trailing time window: When load goes down autoscaler removes 20 VMs, which is the maximum allowed reduction configured in scale-in controls.
+- How autoscalers calculate recommended size and affect target size When you configure an autoscaler for a MIG, the autoscaler constantly monitors the group and sets the group's recommended size to the number of virtual machine (VM) instances that are required in order to serve peak load over the stabilization period .
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Configure log-based alerts for a backup/recovery appliance \_|\_ Backup\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 210
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- February 28, 2024 Feature Backup and DR Service is now integrated with Cloud Monitoring.
-- Database Center is an AI-assisted dashboard that highlights fleet-wide data points.The integration is designed to provide Database Center users with a single, unified, and accurate view of the data protection posture for all databases protected by Backup and DR Service.This capability is available today, at no additional cost, for all Cloud SQL customers who have protected their databases through Backup and DR Service enhanced protection.
-- Security The following CVEs have been addressed in this release: CVE-2024-38286, CVE-2019-9636, CVE-2023-5178, CVE-2020-14343, CVE-2021-29921, CVE-2019-7164, CVE-2020-27619, CVE-2018-20060, CVE-2019-20477, CVE-2019-9948, CVE-2020-1747, CVE-2021-3177, CVE-2022-42919, CVE-2024-0565, CVE-2015-20107, CVE-2023-51042, CVE-2020-10878, CVE-2023-6546, CVE-2022-0391, CVE-2022-45884, CVE-2021-33631, CVE-2020-10543, CVE-2019-20907, CVE-2023-3812, CVE-2019-11324, CVE-2022-45919, CVE-2023-6931, CVE-2024-1086, CVE-2021-43818, CVE-2021-33503, CVE-2020-26116, CVE-2019-20916, CVE-2023-2163, CVE-2021-42771, CVE-2022-45886, CVE-2021-3737, CVE-2023-52425, CVE-2018-18074, CVE-2021-27291, CVE-2021-20270, CVE-2023-24329, CVE-2019-18874, CVE-2019-16056, CVE-2019-7548, CVE-2021-3572, CVE-2019-9740, CVE-2021-23336, CVE-2020-14422, CVE-2021-3426, CVE-2023-1192, CVE-2022-38096, CVE-2023-6135, CVE-2020-8492, CVE-2020-27783, CVE-2020-28493, CVE-2023-46218, CVE-2021-4189, CVE-2020-26137, CVE-2021-3733, CVE-2019-16935, CVE-2021-28957, CVE-2018-20852, CVE-2019-11236, CVE-2019-9947, CVE-2020-28241, CVE-2023-5388, CVE-2023-28322 CVE-2022-48624, CVE-2023-38546, CVE-2021-20095 December 02, 2024 Feature Backup and DR service added integration with the Compute Engine VM creation experience, enabling the application of Backup and DR backup policies when VMs are created.
-- October 21, 2025 Fixed Resolved a problem with timestamp conversions during recovery range calculations in SAP HANA Fixed a bug that prevented the identification of persistent disk names in some SAP HANA environments Fixed DB2 restore issue wrt pre-flight checks and instances with a large number of archive logs Fixed a logging issue during Postgres upgrades where an incorrect version was displayed after a rollback Resolved a restore failure when using a combination of full and incremental backups for SAP ASE Fixed a connection leak and an issue with executor service shutdown in the VMware hypervisor integration, improving reliability.
-
-### "Backup and DR Service for Compute Engine for self-managed storage \_|\_\
-
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
-- Source ID: `site-api-reference`
-- Final score: 196
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts](https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts)
+- Source ID: `site-docs-reference`
+- Final score: 90
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for Compute Engine for self-managed storage Stay organized with collections Save and categorize content based on your preferences.
-- The Backup and DR Compute Engine guide Check for the cloud credentials Discover and protect Compute Engine instances Mount backup images of Compute Engine instances Restore a Compute Engine instance Import Persistent Disk snapshot images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- If you don't specify a storage location for a snapshot, Backup and DR uses the default location , which stores your snapshot in a Cloud Storage multi-regional location closest to the region of the source disk.
-- After Backup and DR creates a snapshot to back up the current state of some or all Persistent Disks attached to an instance, you can use the backup image to either: Mount the image to create a new instance .
+- You can click View incident in the email to see the incident in Cloud Monitoring .
+- If your alert policy includes or excludes specific event IDs then you need to modify the event ID as well: "entries" : [ { "jsonPayload" : { "eventId" : 10046 , "errorMessage" : "this is a manually generated error message created for testing" }, "resource" : { "type" : "backupdr.googleapis.com/BackupRecoveryAppliance" , }, "severity" : "ERROR" , "logName" : "projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events" , } ] Copy the log entry you configured previously.
+- To write the log entry, follow these steps: Go to the logEntries.write reference page, or click the following button: Go to logEntries.write Configure the following log entry by changing the PROJECT ID variable to your project ID.
+- Home Documentation Storage Backup and DR Guides Send feedback Configure log-based alerts for a backup/recovery appliance Stay organized with collections Save and categorize content based on your preferences.
+
+### View autoscaler logs \_|\_ Compute Engine \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs](https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs)
+- Source ID: `site-docs-reference-2`
+- Final score: 88
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- For example: gcloud logging read "resource.type=autoscaler" --limit 10 \ --format json To view the autoscaler logs of a specific MIG, specify the instance group manager name as follows: gcloud logging read "resource.type=autoscaler AND \ resource.labels.instance group manager name=example-igm " \ --limit 10 --format json To view the log entries related to autoscaler resize actions , specify the compute.autoscalers.resize method name: gcloud logging read "resource.type=autoscaler AND \ resource.labels.instance group manager name=example-igm AND \ protoPayload.methodName=compute.autoscalers.resize" \ --limit 10 --format json To view the log entries related to autoscaler status changes , specify the compute.autoscalers.changeStatus method name: gcloud logging read "resource.type=autoscaler AND \ resource.labels.instance group manager name=example-igm AND \ protoPayload.methodName=compute.autoscalers.changeStatus" \ --limit 10 --format json REST Make a request to the Logging V2 API .
+- If scalingLimit applies, then the autoscaler limits calculatedSize to scalingLimit.limitSize . autoscalingReason.scalingSignal.calculationDetails Details used to determine the calculatedSize . servingSize : The number of VMs in the MIG excluding the VMs that are still in their initialization period . signalTarget : The target value that the autoscaler maintains for CPU utilization (real-time), predicted CPU utilization, load balancing utilization, or a metric configured with utilization target. singleInstanceAssignment : If scaling is based on a metric value that represents the total amount of work to be done, then singleInstanceAssignment is the quantity of work that each VM can handle. signalValue : The value of the autoscaling signal.
+- In this example, you might notice the new status message indicating problems with your load balancing configuration. { insertId: "ivho6kg4icqfio" logName: "projects/example-project/logs/cloudaudit.googleapis.com%2Fsystem event" protoPayload: { metadata: { @type: "type.googleapis.com/autoscaler.AutoscalerStatusChange" newStatus : { details: "The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any utilization data from the load balancer or the utilization is constantly 0.
+- Home Documentation Compute Compute Engine Guides Send feedback View autoscaler logs Stay organized with collections Save and categorize content based on your preferences.
 

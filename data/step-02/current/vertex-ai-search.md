@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 181
-Unique features: 200
+Unique features: 197
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -21,7 +21,6 @@ Unique features: 200
 | 2025-11-21 | Natural-language query filter field allowlist |  | Vertex AI Search added support for specifying an allowlist of fields that can be used for natural-language filter extraction. |
 | 2025-11-20 | Unstructured data import file size limit |  | Vertex AI Search updated unstructured data import limits to allow files up to 200 MB regardless of parser type. |
 | 2025-11-14 | Vertex AI Search Gemini layout parser |  | Adds a Public Preview Gemini-powered layout parser for unstructured-document data stores to perform PDF layout analysis and content extraction with improved table recognition, reading order, and text accuracy. |
-| 2025-11-05 | and XLSX support |  | Adds generally available support in Vertex AI Search for parsing DOCX, PPTX, and XLSX formats in the layout parser, while both layout and digital parsers continue to support PDF and HTML. |
 | 2025-11-05 | PPTX |  | Adds generally available support in Vertex AI Search for parsing DOCX, PPTX, and XLSX formats in the layout parser, while both layout and digital parsers continue to support PDF and HTML. |
 | 2025-11-05 | Vertex AI Search layout parser DOCX |  | Adds generally available support in Vertex AI Search for parsing DOCX, PPTX, and XLSX formats in the layout parser, while both layout and digital parsers continue to support PDF and HTML. |
 | 2025-08-13 | Custom ranking |  | Vertex AI Search custom ranking enables ranking search results using mathematical expressions over model signals and document fields. |
@@ -94,7 +93,6 @@ Unique features: 200
 | 2024-04-29 | Order healthcare search results |  | Ordering healthcare search results enables ranking FHIR search results that contain unstructured text by relevance to the user query. |
 | 2024-04-29 | Vertex AI Search Answer Generation model gemini-1.0-pro-002/answer_gen/v1 |  | Availability was added for the answer generation model gemini-1.0-pro-002/answer_gen/v1 in Vertex AI Search. |
 | 2024-04-29 | Vertex AI Search Boost search results |  | Vertex AI Search introduced Public Preview support for boosting search results in media apps and generic search apps that use unstructured and website data. |
-| 2024-04-09 | and Bigtable |  | Vertex AI Search added public preview support for importing data from Cloud Spanner, Cloud SQL, Firestore, and Bigtable. |
 | 2024-04-09 | Answer API with summaries and follow-ups |  | The Answer API adds Public Preview support for generating answers with summaries and follow-up search interactions to handle more complex, multi-step retrieval queries. |
 | 2024-04-09 | Blended search in Vertex AI Search |  | Vertex AI Search GA support enables blended search, allowing a single search app to query multiple data stores. |
 | 2024-04-09 | Cloud SQL |  | Vertex AI Search added public preview support for importing data from Cloud Spanner, Cloud SQL, Firestore, and Bigtable. |
@@ -195,7 +193,6 @@ Unique features: 200
 | 2023-06-30 | Enterprise Search extractive segments |  | Enterprise Search introduced extractive segments in preview, returning verbatim text per result for display, post-processing, or large-language-model input. |
 | 2023-06-30 | Enterprise Search image search |  | Image search allows searching a website with a Base64-encoded image query via API to return similar images. |
 | 2023-06-30 | Enterprise Search OCR processing |  | Enterprise Search OCR processing is available to improve PDF parsing and segmentation during data ingestion, enabling better handling of structures like paragraphs and tables for more accurate search results and summaries. |
-| 2023-06-05 | and TXT formats |  | Enterprise Search adds preview support for searching unstructured content in PPTX, DOCX, and TXT files (in addition to HTML and PDF). |
 | 2023-06-05 | DOCX |  | Enterprise Search adds preview support for searching unstructured content in PPTX, DOCX, and TXT files (in addition to HTML and PDF). |
 | 2023-06-05 | Enterprise Search analytics dashboard time-period comparison |  | Enterprise Search analytics now allows comparing metrics for two time periods in the preview analytics dashboard. |
 | 2023-06-05 | Enterprise Search HIPAA compliance support |  | Enterprise Search now supports configurations and controls required for HIPAA compliance. |

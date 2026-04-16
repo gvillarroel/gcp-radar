@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.126Z"
+generated_at: "2026-04-14T13:09:48.611Z"
 product_name: "Security Command Center"
 product_slug: "security-command-center"
 feature_name: "Compliance Manager"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-11-03"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center"
-  - "https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center"
-  - "https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview"
+  - "https://docs.cloud.google.com/security-command-center/docs/compliance-manager-overview"
+  - "https://docs.cloud.google.com/security-command-center/docs/compliance-manager/overview"
+  - "https://docs.cloud.google.com/security-command-center/docs/activate-premium-tier"
 keywords:
   - "compliance"
   - "manager"
-  - "is"
-  - "supported"
-  - "in"
-  - "the"
   - "security"
   - "command"
+  - "center"
+  - "premium"
+  - "tier"
+  - "organization"
 ---
 
 # Compliance Manager
@@ -42,39 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center](https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center)
-- [https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center](https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center)
-- [https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview](https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview)
+- [https://docs.cloud.google.com/security-command-center/docs/compliance-manager-overview](https://docs.cloud.google.com/security-command-center/docs/compliance-manager-overview)
+- [https://docs.cloud.google.com/security-command-center/docs/compliance-manager/overview](https://docs.cloud.google.com/security-command-center/docs/compliance-manager/overview)
+- [https://docs.cloud.google.com/security-command-center/docs/activate-premium-tier](https://docs.cloud.google.com/security-command-center/docs/activate-premium-tier)
 
 ## Supporting Pages
 
-### Use Security Command Center in the Google Cloud console | Google Cloud Documentation
+### "Compliance Manager overview \_|\_ Security Command Center \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center](https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Use Security Command Center in the Google Cloud console Google Cloud Documentation Source URL: https://docs.cloud.google.com/security-command-center/docs/how-to-use-security-command-center Overview of using Security Command Center in the Google Cloud console, including navigation and top-level pages.
-
-### Configure Security Command Center services | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center](https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/security-command-center/docs/compliance-manager-overview](https://docs.cloud.google.com/security-command-center/docs/compliance-manager-overview)
+- Source ID: `site-docs-reference`
+- Final score: 248
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Configure Security Command Center services Google Cloud Documentation Source URL: https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center To enable or disable a Security Command Center service for a resource, do the following: In the Google Cloud console, go to the Settings page of Security Command Center.
+- Frameworks for Google Cloud The following frameworks are available: Framework Service tier Standard Premium Enterprise Security Essentials AI Protection Center for Information Security (CIS) Controls 8.0 CIS Google Cloud Computing Platform 3.0 CIS Kubernetes Benchmark v1.1.7 Cloud Controls Matrix (CCM) 4 Data Security and Privacy Essentials International Organization for Standardization (ISO) 27001, 2022 National Institute of Standards and Technology (NIST) 800-53 R5 NIST Cybersecurity Framework (CSF) 1.1 Using Compliance Manager with Security Command Center services and features Premium and Enterprise service tiers You can enable other Security Command Center services and features and use them in the same organization where you enable Compliance Manager.
+- Standard, Premium, and Enterprise service tiers (requires organization-level activation ) You can use Compliance Manager in Google Cloud to help ensure that your Google Cloud infrastructure, workloads, and data meet the security and regulatory requirements of your organization.
+- Home Documentation Security Security Command Center Guides Send feedback Compliance Manager overview Stay organized with collections Save and categorize content based on your preferences.
+- Compliance Manager uses the global endpoint, not the endpoint that you might specify when you enable data residency for Security Command Center.
 
-### Overview of activating Security Command Center | Google Cloud Documentation
+### "Compliance Manager overview \_|\_ Security Command Center \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview](https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview)
-- Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/security-command-center/docs/compliance-manager/overview](https://docs.cloud.google.com/security-command-center/docs/compliance-manager/overview)
+- Source ID: `site-docs-reference`
+- Final score: 248
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Overview of activating Security Command Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview Activating Security Command Center at the organization level is considered a best practice because it provides the most complete protection for your business by allowing Security Command Center to access and scan resources and assets across all of the folders and projects in the organization.
+- Frameworks for Google Cloud The following frameworks are available: Framework Service tier Standard Premium Enterprise Security Essentials AI Protection Center for Information Security (CIS) Controls 8.0 CIS Google Cloud Computing Platform 3.0 CIS Kubernetes Benchmark v1.1.7 Cloud Controls Matrix (CCM) 4 Data Security and Privacy Essentials International Organization for Standardization (ISO) 27001, 2022 National Institute of Standards and Technology (NIST) 800-53 R5 NIST Cybersecurity Framework (CSF) 1.1 Using Compliance Manager with Security Command Center services and features Premium and Enterprise service tiers You can enable other Security Command Center services and features and use them in the same organization where you enable Compliance Manager.
+- Standard, Premium, and Enterprise service tiers (requires organization-level activation ) You can use Compliance Manager in Google Cloud to help ensure that your Google Cloud infrastructure, workloads, and data meet the security and regulatory requirements of your organization.
+- Home Documentation Security Security Command Center Guides Send feedback Compliance Manager overview Stay organized with collections Save and categorize content based on your preferences.
+- Compliance Manager uses the global endpoint, not the endpoint that you might specify when you enable data residency for Security Command Center.
+
+### "Activate Security Command Center Premium tier for an organization \_|\_\
+
+- URL: [https://docs.cloud.google.com/security-command-center/docs/activate-premium-tier](https://docs.cloud.google.com/security-command-center/docs/activate-premium-tier)
+- Source ID: `site-docs-reference`
+- Final score: 230
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- See the following service-specific documentation for details: Compliance Manager Container Threat Detection DSPM Security Health Analytics Vulnerability Assessment Modify your Security Command Center service For more information about tier management, see Modify Security Command Center Premium tier for an organization .
+- Security Command Center Premium activation includes the following service agents: Cloud Security Command Center Service Agent for Event Threat Detection, Security Health Analytics, Virtual Machine Threat Detection, and Vulnerability Assessment Cloud Security Compliance Service Agent for AI Protection and Compliance Manager Container Threat Detection Service Agent for Container Threat Detection Data Security Posture Management Service Agent for DSPM Note: If you use service perimeters , you must configure ingress and egress policies for service agents to allow them access to each service.
+- If your organization policies are set to restrict resource usage , verify that the following APIs are allowed by your policy : cloudsecuritycompliance.googleapis.com securitycenter.googleapis.com securitycentermanagement.googleapis.com Activate Security Command Center Premium You can activate Security Command Center Premium for an organization through the Google Cloud console.
+- The following services are enabled when you activate Security Command Center Premium: AI Protection Compliance Manager Container Threat Detection For Container Threat Detection to function, make sure that your clusters are on a supported version of Google Kubernetes Engine (GKE) and that your GKE clusters are configured correctly.
 

@@ -1,31 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:38:45.391Z"
+generated_at: "2026-04-14T05:36:38.565Z"
 product_name: "App Engine Admin API"
 product_slug: "app-engine-admin-api"
 feature_name: "App Engine flexible environment Ruby runtime"
 feature_slug: "app-engine-flexible-environment-ruby-runtime"
 latest_feature_date: "2016-05-02"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/admin-api/release-notes"
-  - "https://docs.cloud.google.com/appengine/docs"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/overview"
+  - "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1"
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/runtime"
 keywords:
-  - "GAE flexible Ruby"
-  - "App Engine flex Ruby runtime"
-  - "App Engine flexible Ruby"
-  - "Ruby language support"
-  - "App Engine flexible environment"
-  - "flexible environment runtime"
-  - "deploy Ruby app"
-  - "Ruby runtime"
+  - "app"
+  - "engine"
+  - "flexible"
+  - "environment"
+  - "ruby"
+  - "runtime"
+  - "became"
+  - "available"
 ---
 
 # App Engine flexible environment Ruby runtime
 
 Product: App Engine Admin API
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,41 +34,58 @@ The Ruby runtime became available for the App Engine flexible environment.
 
 ## Extended Definition
 
-The App Engine flexible environment Ruby runtime is the Ruby language runtime support for Google App Engine's flexible environment, enabling Ruby applications to run on that platform. According to the App Engine Admin API release notes, this runtime support was introduced on May 2, 2016 for the flexible environment.
+The Ruby runtime became available for the App Engine flexible environment.
 
 ## Evidence Summary
 
-The release notes explicitly announce the Ruby runtime availability in the App Engine flexible environment on May 2, 2016, while the main App Engine docs page corroborates Ruby being a documented language/runtime topic for that environment.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/admin-api/release-notes](https://docs.cloud.google.com/appengine/docs/admin-api/release-notes)
-- [https://docs.cloud.google.com/appengine/docs](https://docs.cloud.google.com/appengine/docs)
+- [https://docs.cloud.google.com/appengine/docs/flexible/overview](https://docs.cloud.google.com/appengine/docs/flexible/overview)
+- [https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1](https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1)
+- [https://docs.cloud.google.com/appengine/docs/standard/go/runtime](https://docs.cloud.google.com/appengine/docs/standard/go/runtime)
 
 ## Supporting Pages
 
-### App Engine documentation \_|\_ Google Cloud Documentation
+### App Engine flexible environment \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/appengine/docs](https://docs.cloud.google.com/appengine/docs)
-- Source ID: `site-docs-root`
-- Final score: 28
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/overview](https://docs.cloud.google.com/appengine/docs/flexible/overview)
+- Source ID: `site-docs-reference`
+- Final score: 146
 - Re-rank relevance: WEAK
-- Re-rank rationale: The page is a general App Engine documentation hub that links to flexible environment resources but does not provide details about Ruby runtime availability.
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Documentation resources Find quickstarts and guides, review key references, and get help with common issues. format list numbered Guides App Engine standard environment App Engine flexible environment App Engine migration center Admin API find in page Reference App Engine standard environment App Engine flexible environment App Engine legacy bundled services REST API RPC API info Resources Pricing Release notes: standard environment or flexible environment Runtime support schedule: standard environment or flexible environment Locations: standard environment or flexible environment Related resources Training and tutorials Code samples Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services.
-- Training Training and tutorials Create a Java app in the App Engine flexible environment Learn how to create and deploy an app that displays a short message in the App Engine flexible environment.
-- Code sample Code Samples Python sample apps Includes Python samples for the App Engine standard environment and the App Engine flexible environment.
-- Code sample Code Samples Ruby sample apps Includes Ruby samples for the App Engine standard environment and the App Engine flexible environment.
+- Go Java Node.js PHP Python Ruby .NET Custom runtimes Features Customizable infrastructure - App Engine flexible environment instances are Compute Engine virtual machines, which means that you can take advantage of custom libraries, use SSH for debugging, and deploy your own Docker containers.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback App Engine flexible environment Stay organized with collections Save and categorize content based on your preferences.
+- You can specify how much CPU and memory each instance of your application needs, and the App Engine flexible environment provisions the necessary infrastructure for you.
+- Based on Compute Engine , the App Engine flexible environment automatically scales your app up and down while also balancing the load.
 
-### App Engine Admin API release notes \_|\_ Google Cloud Documentation
+### "Go runtime environment \_|\_ App Engine standard environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/release-notes](https://docs.cloud.google.com/appengine/docs/admin-api/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 24
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/runtime](https://docs.cloud.google.com/appengine/docs/standard/go/runtime)
+- Source ID: `site-docs-reference`
+- Final score: 128
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Go runtime environment Stay organized with collections Save and categorize content based on your preferences.
+- The Go runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : go VERSION Where VERSION is the Go MAJOR and MINOR version numbers.
+- Environment variables The following environment variables are set by the runtime: Environment variable Description GAE APPLICATION The ID of your App Engine application.
+- NODE ENV (Only available in the Node.js runtime) Set to production when your service is deployed.
+
+### "Package google.appengine.v1 \_|\_ App Engine Admin API \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1](https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1)
+- Source ID: `site-docs-reference-4`
+- Final score: 113
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- May 02, 2016 Feature App Engine flexible environment The Ruby runtime is now available for the App Engine flexible environment.
-- Change Version 1.9.35 Change App Engine Managed VMs is renamed to App Engine flexible environment .
+- Defaults to the default channel. threadsafe bool Whether multiple requests can be dispatched to this version at once. vm bool Whether to deploy this version in a container on a virtual machine. flexible runtime settings FlexibleRuntimeSettings Settings for App Engine flexible runtimes. app engine apis bool Allows App Engine second generation runtimes to access the legacy bundled services. beta settings map<string, string> Metadata settings that are supplied to this version to enable beta runtime features. env string App Engine execution environment for this version.
+- Any value specified here in a request is ignored. flexible environment available bool App Engine flexible environment is available in the given location.
+- Only applicable in the App Engine flexible environment. runtime string Desired runtime.
+- FlexibleRuntimeSettings Runtime settings for the App Engine flexible environment.
 

@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:26:31.484Z"
+generated_at: "2026-04-15T00:44:19.118Z"
 product_name: "Cloud Healthcare API"
 product_slug: "cloud-healthcare-api"
 feature_name: "HL7v2 store ParserVersion configuration with V2 parser"
 feature_slug: "hl7v2-store-parserversion-configuration-with-v2-parser"
 latest_feature_date: "2020-09-17"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2"
+  - "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+  - "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
 keywords:
   - "hl7v2"
   - "store"
   - "parserversion"
   - "configuration"
-  - "with"
   - "v2"
   - "parser"
   - "healthcare"
+  - "stores"
 ---
 
 # HL7v2 store ParserVersion configuration with V2 parser
 
 Product: Cloud Healthcare API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,55 @@ Cloud Healthcare API HL7v2 stores now support configuring ParserVersion, includi
 
 Cloud Healthcare API HL7v2 stores now support configuring ParserVersion, including a new V2 unschematized parser that includes every non-empty message field according to HL7v2.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2](https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2)
+- [https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir](https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir)
+- [https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom](https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### HL7v2 \_|\_ Cloud Healthcare API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2](https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2)
+- Source ID: `site-docs-root-2`
+- Final score: 134
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- It includes information such as: The time when the message was created Who created the message What data the message contains The Message resource for the preceding message looks like this: { "name": "projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/W5 pxOBkoLoCxiFxE4cg8zwEWRzMlOzIfaLBrZPf0Zg=", "data": "TVNIfF5+XCZ8RlJPTV9BUFB8RlJPTV9GQUNJTElUWXxUT19BUFB8VE9fRkFDSUxJVFl8MjAxODAxMDEwMDAwMDB8fEFEVF5BMDF8MjAxODAxMDEwMDAwMDB8UHwyLjV8DUVWTnxBMDF8MjAxMTA2MTMwODM2MTd8DVBJRHwxfDg0MzEyNV5eXl5NUk58MjEwMDQwNTNeXl5eTVJOfjIyNjkwMzAzMDNeXl5eT1JHTk1CUnx8U1VMTFleQlJJQU58fDE5NjExMjA5fE18fHwxMjMgTUFJTiBTVF5eQ0lUWV5TVEFURV4xMjM0NXwNUFYxfHxJfEg3MyBSTTFeMV5eSElHSFdBWSAwMSBDTElOSUN8fHx8NTE0OF5NQVJZIFFVSU5OfHx8fHx8fHx8WXx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHwyMDE4MDEwMTAwMDAwMHw=", "sendFacility": "FROM FACILITY", "sendTime": "2018-01-01T00:00:00Z", "messageType": "ADT", "createTime": "2018-01-01T00:00:00Z", "patientIds": [ { "value": "843125", "type": "MRN" }, { "value": "21004053", "type": "MRN" }, { "value": "2269030303", "type": "ORGNMBR" } ], "parsedData": { "segments": [ { "segmentId": "MSH", "fields": { "5": "TO FACILITY", "2": "FROM APP", "3": "FROM FACILITY", "0": "MSH", "1": "^ \\&", "10": "P", "4": "TO APP", "9": "20180101000000", "8.1": "ADT", "11": "2.5", "8.2": "A01", "6": "20180101000000" } }, { "segmentId": "EVN", "fields": { "1": "A01", "2": "20110613083617", "0": "EVN" } }, { "segmentId": "PID", "fields": { "1": "1", "3[0].1": "21004053", "3[1].1": "2269030303", "3[0].5": "MRN", "0": "PID", "11.4": "STATE", "11.5": "12345", "2.1": "843125", "2.5": "MRN", "5.1": "SULLY", "11.3": "CITY", "8": "M", "11.1": "123 MAIN ST", "3[1].5": "ORGNMBR", "7": "19611209", "5.2": "BRIAN" } }, { "segmentId": "PV1", "fields": { "44": "20180101000000", "7.1": "5148", "16": "Y", "2": "I", "3.2": "1", "3.4": "HIGHWAY 01 CLINIC", "7.2": "MARY QUINN", "3.1": "H73 RM1", "0": "PV1" } } ] } } Creating and ingesting messages You can store HL7v2 messages in an HL7v2 store using the following methods: messages.create : creates a Message resource and stores it in the HL7v2 store.
+- For each of your HL7v2 stores, you can choose options such as: Whether to publish changes to the HL7v2 store (if, for example, your application receives a new message) to a Pub/Sub topic.
+- The adapter does not parse or inspect the HL7v2 messages; the Cloud Healthcare API parses and validates the messages as they are ingested into an HL7v2 store .
+- HL7v2, MLLP, and Pub/Sub A fundamental aspect of using HL7v2 with the Cloud Healthcare API involves the configuration of Pub/Sub notifications .
+
+### "Creating and managing DICOM stores \_|\_ Cloud Healthcare API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom](https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom)
+- Source ID: `site-docs-root`
+- Final score: 130
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Before using any of the command data below, make the following replacements: LOCATION : the dataset location DATASET ID : the DICOM store's parent dataset DICOM STORE ID : the DICOM store ID PUBSUB TOPIC : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID \ --dataset = DATASET ID \ --location = LOCATION \ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC You should receive a response similar to the following: Response Updated dicomStore [ DICOM STORE ID ]. ... name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC REST To edit a DICOM store, use the projects.locations.datasets.dicomStores.patch method.
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery api version = "v1" service name = "healthcare" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID pubsub topic = 'my-topic' # replace with an existing Pub/Sub topic dicom store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) dicom store name = f " { dicom store parent } /dicomStores/ { dicom store id } " patch = { "notificationConfig" : { "pubsubTopic" : f "projects/ { project id } /topics/ { pubsub topic } " } } request = ( client . projects () . locations () . datasets () . dicomStores () . patch ( name = dicom store name , updateMask = "notificationConfig" , body = patch ) ) response = request . execute () print ( "Patched DICOM store {} with Cloud Pub/Sub topic: {} " . format ( dicom store id , pubsub topic ) ) return response Getting DICOM store details The following samples show how to get details about a DICOM store.
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery api version = "v1" service name = "healthcare" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID dicom store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) dicom store name = f " { dicom store parent } /dicomStores/ { dicom store id } " request = ( client . projects () . locations () . datasets () . dicomStores () . delete ( name = dicom store name ) ) response = request . execute () print ( f "Deleted DICOM store: { dicom store id } " ) return response What's next Export and import DICOM object instances to and from Cloud Storage Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery Imports Python's built-in "json" module import json api version = "v1" service name = "healthcare" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID dicom store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) dicom store name = f " { dicom store parent } /dicomStores/ { dicom store id } " dicom stores = client . projects () . locations () . datasets () . dicomStores () dicom store = dicom stores . get ( name = dicom store name ) . execute () print ( json . dumps ( dicom store , indent = 2 )) return dicom store Listing the DICOM stores in a dataset The following samples show how to list the DICOM stores in a dataset: Console To view the data stores in a dataset: In the Google Cloud console, go to the Datasets page.
+
+### "Creating and managing FHIR stores \_|\_ Cloud Healthcare API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir](https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir)
+- Source ID: `site-docs-root`
+- Final score: 130
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the FHIR store's parent dataset FHIR STORE ID : the FHIR store ID PUBSUB TOPIC ID : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID \ --dataset = DATASET ID \ --location = LOCATION \ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID You should receive a response similar to the following: Response Updated fhirStore [ FHIR STORE ID ]. name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC ID version: FHIR STORE VERSION REST To edit a FHIR store, use the projects.locations.datasets.fhirStores.patch method.
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery api version = "v1" service name = "healthcare" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the dataset's location dataset id = 'my-dataset' # replace with your dataset ID fhir store id = 'my-fhir-store' # replace with the FHIR store's ID pubsub topic = 'projects/{project id}/topics/{topic id}' # replace with your Pub/Sub topic fhir store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) fhir store name = f " { fhir store parent } /fhirStores/ { fhir store id } " patch = { "notificationConfigs" : [{ "pubsubTopic" : pubsub topic }] if pubsub topic else [] } request = ( client . projects () . locations () . datasets () . fhirStores () . patch ( name = fhir store name , updateMask = "notificationConfigs" , body = patch ) ) response = request . execute () print ( f "Patched FHIR store { fhir store id } with Cloud Pub/Sub topic: { pubsub topic or 'None' } " ) return response Getting FHIR store details The following samples show how to get details about a FHIR store.
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery Imports Python's built-in "json" module import json api version = "v1" service name = "healthcare" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the parent dataset's ID fhir store id = 'my-fhir-store' # replace with the FHIR store ID fhir store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) fhir store name = f " { fhir store parent } /fhirStores/ { fhir store id } " fhir stores = client . projects () . locations () . datasets () . fhirStores () response = fhir stores . fhir () . capabilities ( name = fhir store name ) . execute () print ( json . dumps ( response , indent = 2 )) return response Setting the base resource validation level By default, all resources in your FHIR store have base resource validation applied to them.
+- See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.""" Imports the Google API Discovery Service. from googleapiclient import discovery Imports Python's built-in "json" module import json api version = "v1" service name = "healthcare" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the FHIR store's parent dataset fhir store id = 'my-fhir-store' # replace with the FHIR store's ID fhir store parent = "projects/ {} /locations/ {} /datasets/ {} " . format ( project id , location , dataset id ) fhir store name = f " { fhir store parent } /fhirStores/ { fhir store id } " fhir stores = client . projects () . locations () . datasets () . fhirStores () fhir store = fhir stores . get ( name = fhir store name ) . execute () print ( json . dumps ( fhir store , indent = 2 )) return fhir store Listing the FHIR stores in a dataset The following samples show how to list the FHIR stores in a dataset.
 

@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:23.434Z"
+generated_at: "2026-04-12T15:57:29.218Z"
 product_name: "Access Approval"
 product_slug: "access-approval"
 feature_name: "Access Approval support for Google Distributed Cloud Edge"
 feature_slug: "access-approval-support-for-google-distributed-cloud-edge"
 latest_feature_date: "2024-03-15"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform"
+  - "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.types.GetAccessApprovalSettingsMessage"
+  - "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+  - "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest"
 keywords:
   - "Enable Access Approval on Google Distributed Cloud Edge"
   - "Google Distributed Cloud Edge access approval settings"
@@ -24,7 +27,7 @@ keywords:
 # Access Approval support for Google Distributed Cloud Edge
 
 Product: Access Approval
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,45 @@ Access Approval now supports Google Distributed Cloud Edge in GA.
 
 Access Approval now supports Google Distributed Cloud Edge in GA.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform](https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform)
+- [https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.types.GetAccessApprovalSettingsMessage](https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.types.GetAccessApprovalSettingsMessage)
+- [https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services](https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services)
+- [https://docs.cloud.google.com/python/docs/reference/accessapproval/latest](https://docs.cloud.google.com/python/docs/reference/accessapproval/latest)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Enabling Access Approval using Terraform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform](https://docs.cloud.google.com/assured-workloads/access-approval/docs/using-terraform)
+- Source ID: `site-docs-root`
+- Final score: 74
+- Re-rank relevance: N/A
+
+### "Class GetAccessApprovalSettingsMessage (1.19.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.types.GetAccessApprovalSettingsMessage](https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.types.GetAccessApprovalSettingsMessage)
+- Source ID: `site-python-reference`
+- Final score: 68
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### Supported services \_|\_ Access Approval \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services](https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services)
+- Source ID: `site-docs-reference`
+- Final score: 68
+- Re-rank relevance: N/A
+
+### "Python Client for Access Approval \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/accessapproval/latest](https://docs.cloud.google.com/python/docs/reference/accessapproval/latest)
+- Source ID: `site-python-reference`
+- Final score: 66
+- Re-rank relevance: N/A
 

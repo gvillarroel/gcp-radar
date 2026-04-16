@@ -4,7 +4,7 @@ url: https://developers.google.com/looker-studio/connector
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://developers.google.com/looker-studio/connector/advanced-services
+entrypoint: https://developers.google.com/looker-studio/connector
 source_metadata:
   url: https://developers.google.com/looker-studio/connector
   title: "Looker Studio Community Connectors \_|\_ Google for Developers"

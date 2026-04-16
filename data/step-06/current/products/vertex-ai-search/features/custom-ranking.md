@@ -1,18 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.839Z"
+generated_at: "2026-04-14T17:29:36.912Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Custom ranking"
 feature_slug: "custom-ranking"
 latest_feature_date: "2025-08-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search"
 keywords:
   - "custom"
   - "ranking"
@@ -21,13 +20,13 @@ keywords:
   - "search"
   - "enables"
   - "results"
-  - "using"
+  - "mathematical"
 ---
 
 # Custom ranking
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +38,13 @@ Vertex AI Search custom ranking enables ranking search results using mathematica
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking](https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search)
 
 ## Supporting Pages
 
@@ -54,55 +52,40 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking](https://docs.cloud.google.com/generative-ai-app-builder/docs/custom-ranking)
 - Source ID: `site-docs-root`
-- Final score: 290
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 222
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Text fields for keyword similarity In structured data stores, to obtain the keywordSimilarityScore signal in your search response, you must update your schema to do the following: Map the text fields essential for keyword matching to the key properties title and description Update the annotation for the text fields as Searchable Customize ranking using ranking formula in search To customize the ranking for your documents in your search results, manually draft a formula and add it to your search API call.
 - Home Documentation AI and ML Vertex AI Search Send feedback Customize search results ranking Stay organized with collections Save and categorize content based on your preferences.
-- To see an example of custom ranking using a tuned formula, run the "Custom ranking tuning" notebook in one of the following environments: Open in Colab View on GitHub Convert the formula from the training results into a ranking expression, which you can then use in your API calls.
+- Text fields for keyword similarity In structured data stores, to obtain the keywordSimilarityScore signal in your search response, you must update your schema to do the following: Map the text fields essential for keyword matching to the key properties title and description Update the annotation for the text fields as Searchable Customize ranking using ranking formula in search To customize the ranking for your documents in your search results, manually draft a formula and add it to your search API call.
+- About implementing custom ranking To get custom ranking in your search results, you must call the search method by providing the following fields: Ranking expression backend ( rankingExpressionBackend ): This field indicates which of the following ranking mechanisms is to be used.
 - With custom ranking, you can achieve the following: Gain visibility : Understand which signals contribute to the final ranking of your search results.
 
-### Get search results \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
+### "MCP Tools Reference: discoveryengine.googleapis.com \_|\_ Vertex AI Search\
 
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
-- Source ID: `site-iam-reference`
-- Final score: 246
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Run the following curl command to get search results: Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H "Content-Type: application/json" \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:searchLite?key= API KEY " \ -d '{ "servingConfig": "projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search", "query": " QUERY ", "userPseudoId": " USER PSEUDO ID " }' Replace the following: PROJECT ID : the ID of your Google Cloud project.
-- In this example response, the color green was used to refine search results by issuing a new search request with the filter field specified as gs.color: ANY("green") : { "guidedSearchResult" : { "refinementAttributes" : [ { "attributeKey" : " gs.color" , "attributeValue" : "green" }, { "attributeKey" : " gs.category" , "attributeValue" : "shoe" } ] } } C# For more information, see the Vertex AI Search C# API reference documentation .
-- AUTO ), Optional: Use fine-tuned model for this request custom fine tuning spec=discoveryengine.CustomFineTuningSpec( enable search adaptor=True ), ) page result = client . search ( request ) Handle the response for response in page result : print ( response ) return page result Ruby For more information, see the Vertex AI Search Ruby API reference documentation .
-- AUTO ), Optional: Use fine-tuned model for this request custom fine tuning spec=discoveryengine.CustomFineTuningSpec( enable search adaptor=True ), ) page result = client . search ( request ) Handle the response for response in page result : print ( response ) return page result Ruby For more information, see the Vertex AI Search Ruby API reference documentation .
-
-### "Introduction to custom search \_|\_ Vertex AI Search \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search)
-- Source ID: `site-api-reference`
-- Final score: 238
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
+- Source ID: `site-docs-reference-2`
+- Final score: 132
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Retrieval and ranking: There are several sub-components to retrieval and ranking of results: Query understanding for search: Vertex AI Search analyzes a search query using the following: Natural language processing: To understand the intent.
-- Ranking: Vertex AI Search ranks the results based on the following factors: Relevance: A combination of keyword and semantic matching during search.
-- Different components of custom search The components of Vertex AI Search for custom search can be explained as follows: Data store : Your content from different data sources is stored in a Vertex AI Search data store.
-- Vertex AI Search for custom apps is a powerful, Google-quality search and content discovery engine that you can integrate into your applications that contain website data and other structured or unstructured data.
+- SearchRequest JSON representation { "servingConfig" : string , "branch" : string , "query" : string , "pageCategories" : [ string ] , "imageQuery" : { object ( ImageQuery ) } , "pageSize" : integer , "pageToken" : string , "offset" : integer , "oneBoxPageSize" : integer , "dataStoreSpecs" : [ { object ( DataStoreSpec ) } ] , "filter" : string , "canonicalFilter" : string , "orderBy" : string , "userInfo" : { object ( UserInfo ) } , "languageCode" : string , "regionCode" : string , "facetSpecs" : [ { object ( FacetSpec ) } ] , "boostSpec" : { object ( BoostSpec ) } , "params" : { string : value , ... } , "queryExpansionSpec" : { object ( QueryExpansionSpec ) } , "spellCorrectionSpec" : { object ( SpellCorrectionSpec ) } , "userPseudoId" : string , "useLatestData" : boolean , "contentSearchSpec" : { object ( ContentSearchSpec ) } , "embeddingSpec" : { object ( EmbeddingSpec ) } , "rankingExpression" : string , "rankingExpressionBackend" : enum ( RankingExpressionBackend ) , "safeSearch" : boolean , "userLabels" : { string : string , ... } , "naturalLanguageQueryUnderstandingSpec" : { object ( NaturalLanguageQueryUnderstandingSpec ) } , "searchAsYouTypeSpec" : { object ( SearchAsYouTypeSpec ) } , "customFineTuningSpec" : { object ( CustomFineTuningSpec ) } , "displaySpec" : { object ( DisplaySpec ) } , "crowdingSpecs" : [ { object ( CrowdingSpec ) } ] , "session" : string , "sessionSpec" : { object ( SessionSpec ) } , "relevanceThreshold" : enum ( RelevanceThreshold ) , "relevanceFilterSpec" : { object ( RelevanceFilterSpec ) } , "personalizationSpec" : { object ( PersonalizationSpec ) } , "relevanceScoreSpec" : { object ( RelevanceScoreSpec ) } , "searchAddonSpec" : { object ( SearchAddonSpec ) } } Fields servingConfig string Required.
+- The order represents the ranking. facets[] object ( Facet ) Results of facets requested by user. guidedSearchResult object ( GuidedSearchResult ) Guided search result. totalSize integer The estimated total count of matched items irrespective of pagination.
+- CustomFineTuningSpec JSON representation { "enableSearchAdaptor" : boolean } Fields enableSearchAdaptor boolean Whether or not to enable and include custom fine tuned search adaptor model.
+- Filtering in Vertex AI Search is done by mapping the LHS filter key to a key property defined in the Vertex AI Search backend -- this mapping is defined by the customer in their schema.
 
-### Boost search results \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
+### "Get personalized browse results \_|\_ Vertex AI Search \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
-- Source ID: `site-api-reference`
-- Final score: 238
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search)
+- Source ID: `site-docs-reference`
+- Final score: 130
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- To specify a boost specification using custom numerical attributes, do the following: Specify the boost specification in the boostSpec field when you send a servingConfigs.search request. { "boostSpec": { "conditionBoostSpecs": { "condition": " BOOST CONDITION ", "boostControlSpec": { "attributeType": "NUMERICAL", "interpolationType": "LINEAR", "fieldName": " CUSTOM ATTRIBUTE FIELD NAME ", "controlPoints": [ { "attributeValue": " CUSTOM ATTRIBUTE VALUE 1 ", "boostAmount": BOOST AMOUNT 1 }, { "attributeValue": " CUSTOM ATTRIBUTE VALUE 2 ", "boostAmount": BOOST AMOUNT 2 } ] } } } } The specification contains the following parameters: BOOST CONDITION : a text filter expression to select the documents to which boost is applied.
-- To specify a boost specification using custom datetime attributes, do the following: Specify the boost specification in the boostSpec field when you send a servingConfigs.search request. { "boostSpec": { "conditionBoostSpecs": { "condition": " BOOST CONDITION ", "boostControlSpec": { "fieldName": " DATETIME FIELD NAME ", "attributeType": "FRESHNESS", "interpolationType": "LINEAR", "controlPoints": [ { "attributeValue": " DURATION VALUE 1 ", "boostAmount": BOOST AMOUNT 1 }, { "attributeValue": " DURATION VALUE 2 ", "boostAmount": BOOST AMOUNT 2 } ] } } } } The specification contains the following parameters: BOOST CONDITION : a text filter expression to select the documents to which boost is applied.
-- When a document in the search result meets the specified condition, a boost amount is applied as follows: Duration value Boost amount Less than the first control point Is equal to the boost amount of the first control point Equal to a given control point Is equal to the mapped boost amount Between control points Is calculated by linear interpolation Greater than the last control point Is equal to the boost amount of the last control point Example use case using a custom datetime attribute Suppose your data store contains structured data where each document has a publication date.
-- This page describes the following types of boost specifications: Boost with a fixed condition Boost using custom numerical attributes Boost according to freshness You can apply these boost specifications to query media search apps and custom search apps that contain structured, unstructured, and website data.
+- Get personalized browse results Add more fields to your search request like filters and ranking adjustments, such as boost or custom ranking.
+- Some important features are as follows: Ranking: The model ranks items based on predicted performance against your defined objective that's subject to the configured search parameters, such as filters, custom ranking, and serving controls (like boost, promote, or synonyms).
+- Home Documentation AI and ML Vertex AI Search Send feedback Get personalized browse results Stay organized with collections Save and categorize content based on your preferences.
+- This page describes how to get browse results for custom search data stores and some best practices to set up your search app.
 

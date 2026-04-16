@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-09T00:38:22.867Z",
+  "generated_at": "2026-04-12T21:35:31.611Z",
   "product_name": "Apigee APIM Operator",
   "product_slug": "apigee-apim-operator",
   "step02_source_path": "data/step-02/current/apigee-apim-operator.md",
@@ -8,6 +8,37 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 2,
+    "source_row_count": 2,
+    "top_phrases": [
+      "apigeebackendservice for apigee operator for kubernetes",
+      "apigee operator for kubernetes",
+      "the apigeebackendservice resource for the apigee operator for kubernetes became generally available ga enabling integration with gke inference gateway",
+      "apigee operator for kubernetes version 1",
+      "1 became available"
+    ],
+    "top_tokens": [
+      "apigee",
+      "available",
+      "became",
+      "for",
+      "kubernetes",
+      "operator",
+      "apigeebackendservice",
+      "enabling",
+      "gateway",
+      "generally",
+      "gke",
+      "inference",
+      "integration",
+      "resource",
+      "the",
+      "version",
+      "with"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "apigee",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
@@ -75,6 +106,20 @@
       "round": 1,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Apigee APIM Operator\" official documentation OR site:developers.google.com \"apigee apim operator\" official documentation",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Apigee APIM Operator\" \"apigeebackendservice for apigee operator for kubernetes\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Apigee APIM Operator\" \"apigee operator for kubernetes version 1\"",
       "official_result_count": 0,
       "results": []
     },
@@ -194,15 +239,15 @@
           "rank": 5
         },
         {
-          "title": "Add policies to the GKE Gateway | Apigee | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-add-policies",
-          "description": "If you created a service account named apigee-apim-gsa in the Apigee Operator for Kubernetes installation guide, you can skip this step and proceed to the next step.",
-          "rank": 6
-        },
-        {
           "title": "Enable security and quota enforcement | Apigee | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-security-quota",
           "description": "See Install Apigee Operator for Kubernetes for installation instructions. Create a traffic service extension. To complete this step you can use the ApigeeBackendService or the APIMExtensionPolicy. See Create an APIMExtensionPolicy for more information on creating a traffic extension using the ...",
+          "rank": 6
+        },
+        {
+          "title": "Add policies to the GKE Gateway | Apigee | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-add-policies",
+          "description": "If you created a service account named apigee-apim-gsa in the Apigee Operator for Kubernetes installation guide, you can skip this step and proceed to the next step.",
           "rank": 7
         },
         {
@@ -261,6 +306,51 @@
       "round": 2,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Apigee APIM Operator\" reference OR site:developers.google.com \"apigee apim operator\" reference",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Apigee APIM Operator\" \"apigee operator for kubernetes\"",
+      "official_result_count": 5,
+      "results": [
+        {
+          "title": "Install the Apigee Operator for Kubernetes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install",
+          "description": "When created, the KSA contains the annotation required to associate with a workload identity used by the Apigee Operator for Kubernetes to access required Apigee and Service Networking resources. To create the workload identity, use the following command: gcloud iam service-accounts add-iam-policy-binding apigee-apim-gsa@$PROJECT_ID.iam.gserviceaccount.com --role roles/iam.workloadIdentityUser --member &quot;serviceAccount:$PROJECT_ID.svc.id.goog[apim/apim-ksa]&quot;",
+          "rank": 1
+        },
+        {
+          "title": "Apigee Operator for Kubernetes: Before you begin | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-before-you-begin",
+          "description": "This page describes the prerequisites for installing the Apigee APIM Operator for Kubernetes.",
+          "rank": 2
+        },
+        {
+          "title": "Troubleshoot the Apigee Operator for Kubernetes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-troubleshoot",
+          "description": "The APIM Operator is a Kubernetes operator that <strong>processes APIM custom resource events (such as create, read, update, and delete), and translates those events in the appropriate Apigee configuration</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "Licenses in Apigee Operator for Kubernetes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/licenses",
+          "description": "This page describes the licenses for third party libraries and other dependencies associated with the Apigee Operator for Kubernetes.",
+          "rank": 4
+        },
+        {
+          "title": "Add policies to the GKE Gateway | Apigee | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-add-policies",
+          "description": "If you created an APIMExtensionPolicy to create a traffic extension, use the name of the policy you created. If you used an ApigeeBackendService to create a traffic extension, use the name of the ApigeeBackendService. When you create an ApigeeBackendService, the Apigee Operator for Kubernetes ...",
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Apigee APIM Operator\" \"1 became available\"",
       "official_result_count": 0,
       "results": []
     },
@@ -452,6 +542,20 @@
     },
     {
       "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Apigee APIM Operator\" \"the apigeebackendservice resource for the apigee operator for kubernetes became generally available ga enabling integration with gke inference gateway\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Apigee APIM Operator\" \"apigee operator for kubernetes version 1\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Apigee APIM Operator\" IAM roles permissions",
       "official_result_count": 6,
@@ -463,21 +567,21 @@
           "rank": 1
         },
         {
+          "title": "Install the Apigee Operator for Kubernetes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install",
+          "description": "When created, the KSA contains the annotation required to associate with a workload identity used by the Apigee Operator for Kubernetes to access required Apigee and Service Networking resources. To create the workload identity, use the following command: gcloud iam service-accounts add-iam-policy-binding apigee-apim-gsa@$PROJECT_ID.iam.gserviceaccount.com --role roles/iam.workloadIdentityUser --member &quot;serviceAccount:$PROJECT_ID.svc.id.goog[apim/apim-ksa]&quot;",
+          "rank": 2
+        },
+        {
           "title": "Troubleshoot the Apigee Operator for Kubernetes | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-troubleshoot",
           "description": "The apigee-apim-gsa service account has the correct IAM roles and permissions. You can confirm this with the following command: gcloud iam service-accounts get-iam-policy \\ apigee-apim-gsa@$PROJECT_ID.iam.gserviceaccount.com · The service account must have the roles/iam.workloadIdentityUser role.",
-          "rank": 2
+          "rank": 3
         },
         {
           "title": "Add policies to the GKE Gateway | Apigee | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-add-policies",
           "description": "If you choose not to create Google tokens, you do not need to add the additional roles to your service account and you can skip to the next section. To create a service account with the required permissions: If you created a service account named apigee-apim-gsa in the Apigee Operator for Kubernetes installation guide, you can skip this step and proceed to the next step. Otherwise, create the service account: gcloud iam service-accounts create apigee-apim-gsa --project=$PROJECT_ID",
-          "rank": 3
-        },
-        {
-          "title": "Install the Apigee Operator for Kubernetes | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install",
-          "description": "When created, the KSA contains the annotation required to associate with a workload identity used by the Apigee Operator for Kubernetes to access required Apigee and Service Networking resources. To create the workload identity, use the following command: gcloud iam service-accounts add-iam-policy-binding apigee-apim-gsa@$PROJECT_ID.iam.gserviceaccount.com --role roles/iam.workloadIdentityUser --member &quot;serviceAccount:$PROJECT_ID.svc.id.goog[apim/apim-ksa]&quot;",
           "rank": 4
         },
         {
@@ -557,64 +661,19 @@
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud documentation",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" documentation",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" \"apigee operator for kubernetes\"",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud introduction reference",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" reference",
-        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes apigee-apim-operator-install",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" IAM roles permissions",
+        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes apigee-apim-operator-install",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" access control",
         "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes before-you-begin troubleshoot"
       ],
       "intent_hits": [
         "product_docs",
         "apigee_docs",
-        "apigee_apim_operator_docs",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 206,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "family_score": 42,
-        "family_preferred": true,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": true
-    },
-    {
-      "title": "Install the Apigee Operator for Kubernetes | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install",
-      "description": "This page describes the prerequisites and steps for installing the Apigee APIM Operator for Kubernetes.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Apigee APIM Operator\" \"roles and permissions\"",
-        "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" documentation",
-        "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud introduction reference",
-        "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" reference",
-        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes apigee-apim-operator-install",
-        "site:docs.cloud.google.com \"Apigee APIM Operator\" IAM roles permissions",
-        "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" access control",
-        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes before-you-begin troubleshoot"
-      ],
-      "intent_hits": [
-        "product_docs",
+        "feature_guides",
         "iam_permissions",
-        "apigee_docs",
         "apigee_apim_operator_docs"
       ],
       "round_hits": [
@@ -625,6 +684,94 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 206,
+      "feature_coverage": {
+        "score": 27,
+        "matched_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Matched Step 2 features: apigee operator for kubernetes"
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Install the Apigee Operator for Kubernetes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install",
+      "description": "When created, the KSA contains ... Apigee Operator for Kubernetes to access required Apigee and Service Networking resources. To create the workload identity, use the following command: gcloud iam service-accounts add-iam-policy-binding apigee-apim-gsa@$PROJECT_ID.iam.gserviceaccount.com --role ...",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud documentation",
+        "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" documentation",
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" \"apigee operator for kubernetes\"",
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" reference",
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" IAM roles permissions",
+        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes apigee-apim-operator-install",
+        "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" access control",
+        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes before-you-begin troubleshoot"
+      ],
+      "intent_hits": [
+        "iam_permissions",
+        "product_docs",
+        "apigee_docs",
+        "feature_guides",
+        "apigee_apim_operator_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 206,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "resource",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -634,9 +781,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "resource",
+          "the"
+        ],
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: apigee operator for kubernetes"
       },
       "final_score": 100,
       "keep": true
@@ -650,18 +808,20 @@
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud documentation",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" documentation",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" \"apigee operator for kubernetes\"",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud introduction reference",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" reference",
-        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes apigee-apim-operator-install",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" IAM roles permissions",
+        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes apigee-apim-operator-install",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" access control",
         "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes before-you-begin troubleshoot"
       ],
       "intent_hits": [
         "product_docs",
         "apigee_docs",
-        "apigee_apim_operator_docs",
-        "iam_permissions"
+        "feature_guides",
+        "iam_permissions",
+        "apigee_apim_operator_docs"
       ],
       "round_hits": [
         1,
@@ -671,6 +831,21 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 206,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "resource",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -680,9 +855,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "resource",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: apigee operator for kubernetes"
       },
       "final_score": 100,
       "keep": false
@@ -696,6 +882,7 @@
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud documentation",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" documentation",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" \"apigee operator for kubernetes\"",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud introduction reference",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" reference",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" IAM roles permissions",
@@ -704,6 +891,7 @@
       "intent_hits": [
         "product_docs",
         "apigee_docs",
+        "feature_guides",
         "iam_permissions"
       ],
       "round_hits": [
@@ -711,9 +899,24 @@
         2,
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 206,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -723,9 +926,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the",
+          "with"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: apigee operator for kubernetes"
       },
       "final_score": 100,
       "keep": false
@@ -739,18 +953,20 @@
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud documentation",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" documentation",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Apigee APIM Operator\" \"apigee operator for kubernetes\"",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud introduction reference",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" reference",
-        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes apigee-apim-operator-install",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" IAM roles permissions",
+        "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes apigee-apim-operator-install",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" access control",
         "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes before-you-begin troubleshoot"
       ],
       "intent_hits": [
         "product_docs",
         "apigee_docs",
-        "apigee_apim_operator_docs",
-        "iam_permissions"
+        "feature_guides",
+        "iam_permissions",
+        "apigee_apim_operator_docs"
       ],
       "round_hits": [
         1,
@@ -760,6 +976,21 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 182,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "gateway",
+          "gke",
+          "the",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -769,7 +1000,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "gateway",
+          "gke",
+          "the",
+          "with"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -784,8 +1026,8 @@
       "query_hits": [
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" documentation",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" Google Cloud docs overview",
-        "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" reference",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" \"API reference\"",
+        "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" reference",
         "site:docs.cloud.google.com \"Apigee APIM Operator\" IAM roles permissions",
         "site:docs.cloud.google.com/apigee \"Apigee APIM Operator\" access control"
       ],
@@ -803,16 +1045,38 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 140,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the",
+          "with"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
         "family_score": 0,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the",
+          "with"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -838,6 +1102,23 @@
       "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 206,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "gateway",
+          "gke",
+          "resource",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -847,9 +1128,22 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "gateway",
+          "gke",
+          "resource",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: apigee operator for kubernetes"
       },
       "final_score": 95,
       "keep": false
@@ -873,6 +1167,21 @@
       "best_rank": 2,
       "consistency_score": 67,
       "product_fit_score": 206,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the",
+          "version"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -882,9 +1191,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the",
+          "version"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: apigee operator for kubernetes"
       },
       "final_score": 95,
       "keep": false
@@ -908,6 +1228,22 @@
       "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 206,
+      "feature_coverage": {
+        "score": 33,
+        "matched_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the",
+          "version",
+          "with"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -917,9 +1253,21 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "the",
+          "version",
+          "with"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: apigee operator for kubernetes"
       },
       "final_score": 95,
       "keep": false
@@ -928,7 +1276,7 @@
       "title": "Enable security and quota enforcement | Apigee | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-security-quota",
       "description": "See Install Apigee Operator for Kubernetes for installation instructions. Create a traffic service extension. To complete this step you can use the ApigeeBackendService or the APIMExtensionPolicy. See Create an APIMExtensionPolicy for more information on creating a traffic extension using the ...",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes apigee-apim-operator-install",
         "site:docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes before-you-begin troubleshoot"
@@ -943,6 +1291,21 @@
       "best_rank": 6,
       "consistency_score": 67,
       "product_fit_score": 206,
+      "feature_coverage": {
+        "score": 30,
+        "matched_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "apigeebackendservice",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -952,9 +1315,20 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "apigee operator for kubernetes"
+        ],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "apigeebackendservice",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Matched Step 2 features: apigee operator for kubernetes"
       },
       "final_score": 95,
       "keep": false
@@ -976,6 +1350,21 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 90,
+      "feature_coverage": {
+        "score": 36,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "gateway",
+          "gke",
+          "inference",
+          "the"
+        ],
+        "user_facing_alignment": 1
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -985,7 +1374,18 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "apigee",
+          "for",
+          "kubernetes",
+          "operator",
+          "gateway",
+          "gke",
+          "inference",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },

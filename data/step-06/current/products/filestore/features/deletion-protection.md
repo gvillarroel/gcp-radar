@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.029Z"
+generated_at: "2026-04-12T12:15:59.656Z"
 product_name: "Filestore"
 product_slug: "filestore"
 feature_name: "Deletion protection"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-10-07"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create"
+  - "https://docs.cloud.google.com/filestore/docs/deletion-protection"
+  - "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances"
   - "https://docs.cloud.google.com/filestore/docs/creating-instances"
-  - "https://docs.cloud.google.com/filestore/docs/overview"
+  - "https://docs.cloud.google.com/filestore/docs/editing-instances"
 keywords:
   - "deletion"
   - "protection"
@@ -38,48 +39,68 @@ Deletion protection helps prevent accidental deletion of Filestore instances.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create](https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create)
+- [https://docs.cloud.google.com/filestore/docs/deletion-protection](https://docs.cloud.google.com/filestore/docs/deletion-protection)
+- [https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances](https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances)
 - [https://docs.cloud.google.com/filestore/docs/creating-instances](https://docs.cloud.google.com/filestore/docs/creating-instances)
-- [https://docs.cloud.google.com/filestore/docs/overview](https://docs.cloud.google.com/filestore/docs/overview)
+- [https://docs.cloud.google.com/filestore/docs/editing-instances](https://docs.cloud.google.com/filestore/docs/editing-instances)
 
 ## Supporting Pages
 
-### Method: projects.locations.instances.create | Filestore | Google Cloud Documentation
+### Prevent deletion of an instance \_|\_ Filestore \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create](https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create)
-- Source ID: `site-docs-reference`
-- Final score: 79
+- URL: [https://docs.cloud.google.com/filestore/docs/deletion-protection](https://docs.cloud.google.com/filestore/docs/deletion-protection)
+- Source ID: `site-docs-root-2`
+- Final score: 288
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Method: projects.locations.instances.create Filestore Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create Documentation · Storage · Filestore · Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it!
-- When creating from a backup, the capacity of the new instance needs to be equal ...
+- This page shows you how to help prevent the accidental deletion of existing or new Filestore instances.
+- Click Save . gcloud To enable deletion protection when you update an instance, use the gcloud filestore instances update command similar to the following: gcloud filestore instances update INSTANCE NAME \ --deletion-protection \ --deletion-protection-reason = PROTECTION REASON Where: INSTANCE NAME is the name of the instance you want to edit.
+- To deactivate deletion protection when you update an instance, use a command similar to the following: gcloud filestore instances update INSTANCE NAME \ --no-deletion-protection Where: INSTANCE NAME is the name of the instance you want to edit.
+- Home Documentation Storage Filestore Guides Send feedback Prevent deletion of an instance Stay organized with collections Save and categorize content based on your preferences.
 
-### Create an instance | Filestore | Google Cloud Documentation
+### "REST Resource: projects.locations.instances \_|\_ Filestore \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/filestore/docs/creating-instances](https://docs.cloud.google.com/filestore/docs/creating-instances)
-- Source ID: `site-docs-root`
-- Final score: 67
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Create an instance Filestore Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/creating-instances The name of your Filestore instance, or instance ID, is used to identify the instance and is used in gcloud commands.
-- Instance IDs must comply with the &lt;label&gt; element of RFC 1035.
-- Consist of dashes, lowercase letters, or digits.
-
-### Filestore overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/filestore/docs/overview](https://docs.cloud.google.com/filestore/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 67
+- URL: [https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances](https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances)
+- Source ID: `site-api-reference`
+- Final score: 218
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- As a type of persistent file storage, Filestore supports multiple concurrent application instances accessing the same file system simultaneously.
-- Filestore overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/overview Google Cloud offers three main types of data storage: block, file, and object storage.
+- JSON representation { "name" : string , "description" : string , "state" : enum ( State ) , "statusMessage" : string , "createTime" : string , "tier" : enum ( Tier ) , "labels" : { string : string , ... } , "fileShares" : [ { object ( FileShareConfig ) } ] , "networks" : [ { object ( NetworkConfig ) } ] , "etag" : string , "satisfiesPzs" : boolean , "satisfiesPzi" : boolean , "kmsKeyName" : string , "suspensionReasons" : [ enum ( SuspensionReason ) ] , "replication" : { object ( Replication ) } , "tags" : { string : string , ... } , "protocol" : enum ( FileProtocol ) , "customPerformanceSupported" : boolean , "performanceConfig" : { object ( PerformanceConfig ) } , "performanceLimits" : { object ( PerformanceLimits ) } , "deletionProtectionEnabled" : boolean , "deletionProtectionReason" : string , "minCapacityGb" : string , "maxCapacityGb" : string , "capacityStepSizeGb" : string } Fields name string Output only.
+- Methods create Creates an instance. delete Deletes an instance. get Gets the details of a specific instance. list Lists all instances in a project for either a specified location or for all locations. patch Updates the settings of a specific instance. promoteReplica Promote the standby instance (replica). restore Restores an existing instance's file share from a backup. revert Revert an existing instance's file system to a specified snapshot.
+- IPv4 addresses in the format {octet1}.{octet2}.{octet3}.{octet4} or IPv6 addresses in the format {block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8} . connectMode enum ( ConnectMode ) The network connect mode of the Filestore instance.
+- The resource name of the instance, in the format projects/{project}/locations/{location}/instances/{instance} . description string The description of the instance (2048 characters or less). state enum ( State ) Output only.
+
+### Create an instance \_|\_ Filestore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/filestore/docs/creating-instances](https://docs.cloud.google.com/filestore/docs/creating-instances)
+- Source ID: `site-docs-root`
+- Final score: 210
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Use cURL to call the Filestore API : curl --request POST \ 'https://file.googleapis.com/v1/projects/ PROJECT /locations/ LOCATION /instances?instanceId= NAME ' \ --header "Authorization: Bearer $(gcloud auth print-access-token)" \ --header 'Accept: application/json' \ --header 'Content-Type: application/json' \ --data '{ "tier":" TIER ", "networks":[ { "network":" NETWORK " } ], "performanceConfig": {" PERFORMANCE "} "fileShares":[ {"capacityGb": CAPACITY ,"name":" SHARE NAME "} ], "deletionProtectionEnabled": true, "deletionProtectionReason": " PROTECTION REASON "}' \ --compressed Where: PROJECT is the name of the project where your instance will reside.
+- For more information, see Quotas or Request a quota increase . gcloud filestore instances create INSTANCE ID \ [--project= PROJECT ID ] \ [--location= LOCATION ] \ [--description= DESCRIPTION ] \ [--performance= PERFORMANCE ] \ --tier= TIER \ --file-share=name=" FILE SHARE NAME ",capacity= FILE SHARE SIZE \ --network=name=" VPC-NETWORK ",[connect-mode= CONNECT MODE ],[reserved-ip-range=" RESERVED IP ADDRESS "] \ [--labels= KEY = VALUE ,[ KEY = VALUE ,…]] \ [--kms-key= KMS KEY ] \ [--deletion-protection] \ [--deletion-protection-reason=" PROTECTION REASON "] Where: INSTANCE ID with the instance ID of the Filestore instance that you want to create.
+- A justification for the deletion protection setting is provided. gcloud filestore instances create render1 \ --project=myproject \ --region=us-central1 \ --tier=REGIONAL \ --performance=max-iops-per-tb=17000 \ --network=name="default",reserved-ip-range="10.0.7.0/29" \ --flags-file=nfs-export-options.json \ --deletion-protection \ --deletion-protection-reason="All genomics data must adhere to current organization policies." nfs-export-options.json file contents: { "--file-share": { "capacity": "2048", "name": "my vol", "nfs-export-options": [ { "access-mode": "READ WRITE", "ip-ranges": [ "10.0.0.0/29", "10.2.0.0/29" ], "squash-mode": "ROOT SQUASH", "anon uid": 1003, "anon gid": 1003 }, { "access-mode": "READ ONLY", "ip-ranges": [ "192.168.0.0/26" ], "squash-mode": "NO ROOT SQUASH" } ] } } REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.
+- The following table summarizes capabilities available by service tier: Capabilities of Filestore service tiers Capability Basic HDD and Basic SSD Zonal Regional Enterprise Capacity 1 TiB to 63.9 TiB 1 TiB to 100 TiB 100 GiB or 1 TiB to 100 TiB 1 TiB to 10 TiB Scalability Basic HDD (1 TiB to 63.9 TiB) : Scales up in increments of 1 GiB Basic SSD (2.5 TiB to 63.9 TiB) : Scales up only in increments of 1 GiB Zonal (1 TiB to 9.75 TiB) : Scales up or down in increments of 256 GiB Zonal (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Regional Depending on the access to the small instances feature , you can use one of the following options: Users with access to small instances feature: 100 GiB to 10,239 GiB .
+
+### Edit instances \_|\_ Filestore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/filestore/docs/editing-instances](https://docs.cloud.google.com/filestore/docs/editing-instances)
+- Source ID: `site-docs-root-2`
+- Final score: 210
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Use cURL to call the Filestore API : curl --request PATCH \ 'https://file.googleapis.com/v1/projects/ PROJECT /locations/ LOCATION /instances?instanceId= NAME ?updateMask=performanceConfig%2CdeletionProtectionReason%2CdeletionProtectionEnabled&key= YOUR API KEY ' \ --header "Authorization: Bearer $(gcloud auth print-access-token)" \ --header 'Accept: application/json' \ --header 'Content-Type: application/json' \ --data '{ "tier":" TIER ", "networks":[ { "network":" NETWORK " } ], "performanceConfig": {" PERFORMANCE "} "fileShares":[ {"capacityGb": CAPACITY ,"name":" SHARE NAME "} ], "deletionProtectionEnabled": true, "deletionProtectionReason": " PROTECTION REASON "}' \ --compressed Where: PROJECT is the name of the project where your instance will reside.
+- Example The following example updates the nfs-server instance by decreasing the IOPS per TiB ratio to 12000 . curl --request PATCH \ 'https://file.googleapis.com/v1/projects/my-project/locations/us-central1/instances?instanceId=nfs-server?updateMask=performanceConfig%2CdeletionProtectionReason&key=12334fr232' \ --header "Authorization: Bearer $(gcloud auth print-access-token)" \ --header 'Accept: application/json' \ --header 'Content-Type: application/json' \ --data '{ "performanceConfig": { "iopsPerTb": { "maxIopsPerTb":12000 } }, "deletionProtectionReason":"Deletion+not+allowed"}' \ --compressed What's next Create another instance .
+- If you choose this method, you don't need to use the --file-share flag because it is already included in the JSON configuration file. gcloud filestore instances update INSTANCE ID --[project=" PROJECT ID "] --[location= LOCATION ] --[performance= PERFORMANCE ] \ --[file-share=name=" FILE SHARE NAME ",CAPACITY= FILE SHARE SIZE ] --[description=" DESCRIPTION "] --[flags-file= FILE NAME .json] where: INSTANCE ID is the instance ID of the Filestore instance you want to edit.
+- To add the note, use the optional deletionProtectionReason flag and include a description of the justification for the setting you chose.
 

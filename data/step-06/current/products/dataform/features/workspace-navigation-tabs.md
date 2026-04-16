@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:40.400Z"
+generated_at: "2026-04-12T12:13:45.753Z"
 product_name: "Dataform"
 product_slug: "dataform"
 feature_name: "Workspace navigation tabs"
 feature_slug: "workspace-navigation-tabs"
 latest_feature_date: "2023-01-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/dataform/docs/create-workspace"
   - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
   - "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
-  - "https://docs.cloud.google.com/dataform/docs/create-workspace"
+  - "https://docs.cloud.google.com/dataform/docs/configure-additional-actions"
 keywords:
   - "workspace"
   - "navigation"
@@ -25,7 +26,7 @@ keywords:
 # Workspace navigation tabs
 
 Product: Dataform
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -37,21 +38,36 @@ Workspace navigation tabs add tabbed navigation within a Dataform workspace.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
 - [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
 - [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient)
-- [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
+- [https://docs.cloud.google.com/dataform/docs/configure-additional-actions](https://docs.cloud.google.com/dataform/docs/configure-additional-actions)
 
 ## Supporting Pages
+
+### Create a development workspace \_|\_ Dataform \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
+- Source ID: `site-docs-root-2`
+- Final score: 169
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Components of a development workspace A Dataform development workspace consists of the tabs described in the following sections.
+- An initialized development workspace contains the following directories and files: definitions/ : a directory for asset definitions, in Dataform core or JavaScript. includes/ : an empty directory for scripts and variables that you can reuse across the repository. workflow settings.yaml : the default Dataform configuration file containing the Google Cloud project ID and BigQuery schema to publish assets in.
+- Create a Dataform development workspace When you create a development workspace in a new repository for the first time, Dataform prompts you to initialize the development workspace with a set of configuration files that are required for Dataform to work.
+- Note: If you enhance security by setting the enable private workspace field (Preview) to true in the projects.locations.updateConfig Dataform API method , only the workspace creator can read and write code in that Dataform workspace.
 
 ### "Class DataformAsyncClient (0.10.0) \_|\_ Python client libraries \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 136
+- Final score: 153
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -64,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient](https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient)
 - Source ID: `site-python-reference`
-- Final score: 136
+- Final score: 153
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -73,17 +89,17 @@ Evidence snippets:
 - Returns Type Description google.cloud.dataform v1.types.Workspace Represents a Dataform Git workspace. crypto key path crypto key path ( project : str , location : str , key ring : str , crypto key : str ) - > str Returns a fully-qualified crypto key string. crypto key version path crypto key version path ( project : str , location : str , key ring : str , crypto key : str , crypto key version : str ) - > str Returns a fully-qualified crypto key version string. delete folder delete folder ( request : typing .
 - It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 def sample commit workspace changes(): Create a client client = dataform v1 .
 
-### Create a development workspace \_|\_ Dataform \_|\_ Google Cloud Documentation
+### Configure additional actions \_|\_ Dataform \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/dataform/docs/create-workspace](https://docs.cloud.google.com/dataform/docs/create-workspace)
+- URL: [https://docs.cloud.google.com/dataform/docs/configure-additional-actions](https://docs.cloud.google.com/dataform/docs/configure-additional-actions)
 - Source ID: `site-docs-root-2`
-- Final score: 122
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 137
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Components of a development workspace A Dataform development workspace consists of the tabs described in the following sections.
-- An initialized development workspace contains the following directories and files: definitions/ : a directory for asset definitions, in Dataform core or JavaScript. includes/ : an empty directory for scripts and variables that you can reuse across the repository. workflow settings.yaml : the default Dataform configuration file containing the Google Cloud project ID and BigQuery schema to publish assets in.
-- Create a Dataform development workspace When you create a development workspace in a new repository for the first time, Dataform prompts you to initialize the development workspace with a set of configuration files that are required for Dataform to work.
-- Note: If you enhance security by setting the enable private workspace field (Preview) to true in the projects.locations.updateConfig Dataform API method , only the workspace creator can read and write code in that Dataform workspace.
+- The following code sample shows a pre operations statement that creates a temporary function that can be used in the select statement: pre operations { CREATE TEMP FUNCTION AddFourAndDivide(x INT64, y INT64) RETURNS FLOAT64 AS ((x + 4) / y); } Define a SQL statement to be run after table creation You can configure Dataform to run one or more SQL statements after creating a selected table in BigQuery.
+- Define a SQLX file of any of the following types: type: table type: view type: incremental type: assertion type: operations Required roles To get the permissions that you need to complete the tasks in this document, ask your administrator to grant you the Dataform Editor ( roles/dataform.editor ) IAM role on workspaces.
+- The following code sample shows a disabled table: config { type: "table", disabled: true } select from ${ref("source data")} Add execution tags This section shows you how to add tags to Dataform core SQLX files to categorize your workflow.
+- Home Documentation Data analytics Dataform Guides Send feedback Configure additional actions Stay organized with collections Save and categorize content based on your preferences.
 

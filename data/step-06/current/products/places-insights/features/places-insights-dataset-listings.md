@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:50.119Z"
+generated_at: "2026-04-12T12:18:06.198Z"
 product_name: "Places Insights"
 product_slug: "places-insights"
 feature_name: "Places Insights dataset listings"
 feature_slug: "places-insights-dataset-listings"
 latest_feature_date: "2025-09-04"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/placesinsights/migration-guide"
+  - "https://developers.google.com/maps/documentation/placesinsights/overview"
+  - "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries"
+  - "https://developers.google.com/maps/documentation/placesinsights/queries"
 keywords:
   - "places"
   - "insights"
@@ -24,7 +27,7 @@ keywords:
 # Places Insights dataset listings
 
 Product: Places Insights
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,72 @@ Places Insights datasets have moved from data clean rooms to BigQuery data excha
 
 Places Insights datasets have moved from data clean rooms to BigQuery data exchange listings.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/placesinsights/migration-guide](https://developers.google.com/maps/documentation/placesinsights/migration-guide)
+- [https://developers.google.com/maps/documentation/placesinsights/overview](https://developers.google.com/maps/documentation/placesinsights/overview)
+- [https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries](https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries)
+- [https://developers.google.com/maps/documentation/placesinsights/queries](https://developers.google.com/maps/documentation/placesinsights/queries)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Migration guide \_|\_ Places Insights \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/placesinsights/migration-guide](https://developers.google.com/maps/documentation/placesinsights/migration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 238
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Moves the Places Insights datasets from data clean rooms to BigQuery data exchange listings .
+- Example updated query with project and dataset name This query includes a project name and uses the dataset name my dataset name : SELECT WITH AGGREGATION THRESHOLD COUNT ( ) AS count FROM PROJECT NAME .my dataset name.places Migrate to the new address fields In the initial release of Places Insights, the dataset schema represented an address field as a STRUCT or RECORD containing an id and name subfield.
+- With the September 4, 2025 release, we moved the datasets to BigQuery listings to allow you to subscribe to the dataset in a specific BigQuery region .
+- Example using new fields In the initial release of Places Insights, you used the administrative area level 1.name field in a WHERE clause to filter the results: SELECT WITH AGGREGATION THRESHOLD COUNT ( ) AS count FROM PROJECT NAME .places insights us.places WHERE administrative area level 1 . name = "New York" ; With the new fields, you write the query using the administrative area level 1 name field: SELECT WITH AGGREGATION THRESHOLD COUNT ( ) AS count FROM PROJECT NAME .places insights us.places WHERE administrative area level 1 name = "New York" ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+
+### Places Insights overview \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/placesinsights/overview](https://developers.google.com/maps/documentation/placesinsights/overview)
+- Source ID: `site-docs-reference`
+- Final score: 224
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The following SQL creates this dataset: CREATE OR REPLACE TABLE mydata.hotels ( name STRING , location GEOGRAPHY ); INSERT INTO mydata.hotels VALUES ( 'Hotel 1' , ST GEOGPOINT ( - 73.9933 , 40.75866 ) ); INSERT INTO mydata.hotels VALUES ( 'Hotel 2' , ST GEOGPOINT ( - 73.977713 , 40.752124 ) ); Get the count of restaurants in the area To give your customers an idea of the density of operational restaurants near your hotels, you write a SQL query to return the number of restaurants within 1000 meters of each hotel: SELECT WITH AGGREGATION THRESHOLD h . name , COUNT ( ) AS count FROM PROJECT NAME .places insights us.places AS r , mydata.hotels AS h WHERE ST DWITHIN ( h . location , r . point , 1000 ) AND r . primary type = 'restaurant' AND business status = "OPERATIONAL" GROUP BY 1 This image shows an example output to this query: Use a Places Count function to get the count and Place IDs of restaurants in the area You can also use a Places Count function to find a count of restaurants near a location.
+- This query also extends the radius to 1500 meters around each hotel: SELECT WITH AGGREGATION THRESHOLD h . name , r . primary type , COUNT ( ) AS count FROM PROJECT NAME .places insights us.places AS r , mydata.hotels AS h WHERE ST DWITHIN ( h . location , r . point , 1500 ) AND r . primary type IN UNNEST ( [ 'restaurant' , 'bar' ] ) AND rating >= 4 AND business status = "OPERATIONAL" AND price level = 'PRICE LEVEL MODERATE' GROUP BY 1 , 2 This image shows an example output to this query: What's next Set up Places Insights Query the dataset directly Query the dataset using Places Count functions View the schema reference Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- You can query Places Insights datasets directly or use Places Count functions .
+- Get the count of restaurants and bars in the area Modify your query to include bars along with restaurants within 1000 meters of each hotel: SELECT WITH AGGREGATION THRESHOLD h . name , r . primary type , COUNT ( ) AS count FROM PROJECT NAME .places insights us.places AS r , mydata.hotels AS h WHERE ST DWITHIN ( h . location , r . point , 1000 ) AND r . primary type IN UNNEST ( [ 'restaurant' , 'bar' ] ) AND business status = "OPERATIONAL" GROUP BY 1 , 2 This image shows an example output to this query: Get the count of moderately priced restaurants and bars in the area You next want to know which customer demographic is served by the bars and restaurants.
+
+### "Query the dataset using Places Count functions \_|\_ Places Insights \_\
+
+- URL: [https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries](https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries)
+- Source ID: `site-docs-reference`
+- Final score: 213
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You have access to the Places Count functions corresponding to the cities and countries datasets you have subscribed to.
+- Places Count function example The following example uses the PLACES COUNT V2 function with the custom input geography table my search area to return the number of operational restaurants within 1000 meters of the Empire State Building and Times Square in New York City: SELECT FROM PROJECT NAME .places insights us.PLACES COUNT V2 ( TABLE PROJECT NAME .
+- Home Products Google Maps Platform Documentation Web Services Places Insights Send feedback Query the dataset using Places Count functions Stay organized with collections Save and categorize content based on your preferences.
+- Places Count functions only provide counts, so if you need to perform more complex queries such as data joins, or get additional insights such as the average rating of a group of places, then query the dataset directly .
+
+### Query the dataset directly \_|\_ Places Insights \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/placesinsights/queries](https://developers.google.com/maps/documentation/placesinsights/queries)
+- Source ID: `site-docs-reference`
+- Final score: 203
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- In the following example, you return aggregation data for places of type tourist attraction with a business status of OPERATIONAL , that have a rating greater than or equal to 4.0, and with allows dogs set to true : SELECT WITH AGGREGATION THRESHOLD COUNT ( ) AS count FROM PROJECT NAME .places insights us.places WHERE ST DWITHIN ( ST GEOGPOINT ( - 73.9857 , 40.7484 ), point , 1000 ) AND 'tourist attraction' IN UNNEST ( types ) AND business status = "OPERATIONAL" AND rating >= 4.0 AND allows dogs = true The next query returns results for places that have at least eight EV charging stations: SELECT WITH AGGREGATION THRESHOLD COUNT ( ) AS count FROM PROJECT NAME .places insights us.places WHERE ev charge options . connector count > 8 ; Filter on place primary type and place type Each place in the dataset can have: A single primary type associated with it from the types defined by Place types .
+- WITH excluded cafes AS ( -- List the specific place IDs to exclude from the final count SELECT FROM UNNEST ( [ 'ChIJLTcYGz-uEmsRmazk9oMnP5w' , 'ChIJeWDDDNOvEmsRF8SMPUwPbhw' , 'ChIJKdaKHbmvEmsRSdxq 1O05bU' ] ) AS place id ) SELECT WITH AGGREGATION THRESHOLD COUNT ( ) AS count FROM places insights au.places AS places -- Perform a LEFT JOIN to identify which places are in the exclusion list LEFT JOIN excluded cafes ON places . id = excluded cafes . place id WHERE -- Filter for specific place type and postal code places . primary type = 'cafe' AND '2000' IN UNNEST ( places . postal code names ) -- Keep only the rows where the join failed (meaning the ID was NOT in the list) AND excluded cafes . place id IS NULL ; Filter on predefined data values Many dataset fields have predefined values.
+- This query aggregates the ratings of all places situated within a 1000 meter radius of the Empire State Building in New York City to produce rating statistics: SELECT WITH AGGREGATION THRESHOLD COUNT ( id ) AS place count , APPROX COUNT DISTINCT ( rating ) as distinct ratings , COUNTIF ( rating > 4.0 ) as good rating count , LOGICAL AND ( rating 5 ) as all ratings equal or below five , LOGICAL OR ( rating = 5 ) as any rating exactly five , AVG ( rating ) as avg rating , SUM ( user rating count ) as rating count , COVAR POP ( rating , user rating count ) as rating covar pop , COVAR SAMP ( rating , user rating count ) as rating covar samp , STDDEV POP ( rating ) as rating stddev pop , STDDEV SAMP ( rating ) as rating stddev samp , VAR POP ( rating ) as rating var pop , VAR SAMP ( rating ) as rating var samp , FROM PROJECT NAME .places insights us.places WHERE ST DWITHIN ( ST GEOGPOINT ( - 73.9857 , 40.7484 ), point , 1000 ) AND business status = "OPERATIONAL" Specify a location restriction If you don't specify a location restriction, the data aggregation is applied to the entire dataset.
+- SELECT WITH AGGREGATION THRESHOLD COUNT ( ) AS count FROM PROJECT NAME .places insights us.places WHERE '10002' IN UNNEST ( postal code names ) - -- 'ChIJm5NfgIBZwokR6jLqucW0ipg' IN UNNEST(postal code ids) -- same filter as above using postal code ID Filter by EV charging This example provides a count of the number of places with at least 8 ev chargers: SELECT WITH AGGREGATION THRESHOLD COUNT ( ) AS count FROM PROJECT NAME .places insights us.places WHERE ev charge options . connector count > 8 ; This example counts the number of places that have at least 10 Tesla chargers that support fast charging: SELECT WITH AGGREGATION THRESHOLD COUNT ( ) AS count FROM PROJECT NAME .places insights us.places , UNNEST ( ev charge options . connector aggregation ) as connectors WHERE connectors . type = 'EV CONNECTOR TYPE TESLA' AND connectors . max charge rate kw >= 50 AND connectors . count >= 10 Return result groups The queries shown so far return a single row in the result that contains the aggregation count for the query.
 

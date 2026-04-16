@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/video-intelligence/docs/apis
 knowledge_key: corpus
 source_id: site-docs-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/video-intelligence/docs/apis
+entrypoint: https://docs.cloud.google.com/video-intelligence/docs/reference/api-overview
 source_metadata:
   url: https://docs.cloud.google.com/video-intelligence/docs/apis
   title: "APIs & References \_|\_ Video Intelligence API \_|\_ Google Cloud Documentation"

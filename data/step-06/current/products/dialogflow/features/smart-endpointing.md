@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:14.047Z"
+generated_at: "2026-04-14T00:17:30.359Z"
 product_name: "Dialogflow"
 product_slug: "dialogflow"
 feature_name: "Smart endpointing"
 feature_slug: "smart-endpointing"
 latest_feature_date: "2024-03-29"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+  - "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings"
 keywords:
   - "smart"
   - "endpointing"
@@ -17,14 +19,14 @@ keywords:
   - "cx"
   - "can"
   - "enable"
-  - "for"
   - "speech"
+  - "interactions"
 ---
 
 # Smart endpointing
 
 Product: Dialogflow
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ Dialogflow CX can enable smart endpointing for speech interactions.
 
 Dialogflow CX can enable smart endpointing for speech interactions.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech](https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2)
+- [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Advanced speech settings \_|\_ Dialogflow CX \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech](https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech)
+- Source ID: `site-docs-root`
+- Final score: 156
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Settings availability by level The following table indicates which advanced speech settings are available at each level: Setting name Agent Flow Page Fulfillment Model selection (Speech-to-Text) ✔ ✔ ✔ End of speech sensitivity ✔ ✔ ✔ Advanced timeout-based end of speech sensitivity ✔ ✔ ✔ Enable smart endpointing ✔ No speech timeout ✔ ✔ ✔ Barge-in ✔ ✔ ✔ Allow cancellation of partial response playback ✔ Audio export bucket ✔ ✔ DTMF ✔ ✔ ✔ Model selection (Speech-to-Text) Can be set at the agent, flow, and page levels.
+- While the End of speech sensitivity setting supports only the phone call speech model for the en-US language tag by default, the Enable advanced timeout-based end of speech sensitivity setting allows for configuring end of speech sensitivity for all languages and speech models supported by Dialogflow.
+- If this setting is enabled, Dialogflow CX will analyze partial user input to determine the end of speech.
+- Enable smart endpointing Can be set at the agent level only.
+
+### "Package com.google.cloud.dialogflow.v2 (4.94.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2](https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2)
+- Source ID: `site-java-reference`
+- Final score: 103
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Streaming Recognition Result Contains a speech recognition result corresponding to a portion of the audio that is currently being processed or an indication that this is the end of the single requested utterance. com. google. cloud. dialogflow. v2.
+- Builder Contains a speech recognition result corresponding to a portion of the audio that is currently being processed or an indication that this is the end of the single requested utterance. com. google. cloud. dialogflow. v2.
+- It will get populated in StreamingDetectIntentResponse or StreamingAnalyzeContentResponse when the flag enable debugging info is com. google. cloud. dialogflow. v2.
+- It will get populated in StreamingDetectIntentResponse or StreamingAnalyzeContentResponse when the flag enable debugging info is com. google. cloud. dialogflow. v2.
+
+### AdvancedSettings \_|\_ Dialogflow CX \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings)
+- Source ID: `site-docs-reference`
+- Final score: 89
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, if the caller presses a button on their telephone keypad and DTMF processing is enabled, Dialogflow will detect the event (e.g. a "3" was pressed) in the incoming audio and pass the event to the bot to drive business logic (e.g. when 3 is pressed, return the account balance). maxDigits integer Max length of DTMF digits. finishDigit string The digit that terminates a DTMF digit sequence. interdigitTimeoutDuration string ( Duration format) Interdigit timeout setting for matching dtmf input to regex.
+- JSON representation { "audioExportGcsDestination" : { object ( GcsDestination ) } , "speechSettings" : { object ( SpeechSettings ) } , "dtmfSettings" : { object ( DtmfSettings ) } , "loggingSettings" : { object ( LoggingSettings ) } } Fields audioExportGcsDestination object ( GcsDestination ) If present, incoming audio is exported by Dialogflow to the configured Google Cloud Storage destination.
+- JSON representation { "enabled" : boolean , "maxDigits" : integer , "finishDigit" : string , "interdigitTimeoutDuration" : string , "endpointingTimeoutDuration" : string } Fields enabled boolean If true, incoming audio is processed for DTMF (dual tone multi frequency) events.
+- JSON representation { "endpointerSensitivity" : integer , "noSpeechTimeout" : string , "useTimeoutBasedEndpointing" : boolean , "models" : { string : string , ... } } Fields endpointerSensitivity integer Sensitivity of the speech model that detects the end of speech.
 

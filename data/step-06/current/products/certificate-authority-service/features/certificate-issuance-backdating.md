@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:13:34.940Z"
+generated_at: "2026-04-15T00:42:14.585Z"
 product_name: "Certificate Authority Service"
 product_slug: "certificate-authority-service"
 feature_name: "Certificate issuance backdating"
 feature_slug: "certificate-issuance-backdating"
 latest_feature_date: "2025-06-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints"
-  - "https://docs.cloud.google.com/certificate-authority-service/docs/requesting-certificates"
-  - "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/projects.locations.caPools"
+  - "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy"
+  - "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection"
+  - "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations"
 keywords:
-  - "backdating"
-  - "backdate"
-  - "duration"
-  - "field"
-  - "policies"
-  - "issuance"
-  - "now"
-  - "certificate"
+  - "earlier effective start time"
+  - "not_before_time"
+  - "preserve certificate lifetime"
+  - "backdate_duration"
+  - "backdate duration"
+  - "backdated issuance"
+  - "issuance policy"
+  - "certificate backdating"
 ---
 
 # Certificate issuance backdating
 
 Product: Certificate Authority Service
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,42 @@ Issuance policies now support a backdate_duration field that sets certificate no
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints](https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints)
-- [https://docs.cloud.google.com/certificate-authority-service/docs/requesting-certificates](https://docs.cloud.google.com/certificate-authority-service/docs/requesting-certificates)
-- [https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/projects.locations.caPools](https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/projects.locations.caPools)
+- [https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy](https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy)
+- [https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection](https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection)
+- [https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations](https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations)
 
 ## Supporting Pages
 
-### "Manage CA Service resources using custom constraints \_|\_ Certificate Authority\
+### Add certificate issuance policies | Certificate Authority Service | Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints](https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints)
-- Source ID: `site-docs-root`
-- Final score: 158
+- URL: [https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy](https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy)
+- Source ID: `feature-recovery-http`
+- Final score: 67
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Resource Field privateca.googleapis.com/CaPool resource.encryptionSpec.cloudKmsKey resource.issuancePolicy.allowedIssuanceModes.allowConfigBasedIssuance resource.issuancePolicy.allowedIssuanceModes.allowCsrBasedIssuance resource.issuancePolicy.allowedKeyTypes.ellipticCurve.signatureAlgorithm resource.issuancePolicy.allowedKeyTypes.rsa.maxModulusSize resource.issuancePolicy.allowedKeyTypes.rsa.minModulusSize resource.issuancePolicy.backdateDuration resource.issuancePolicy.baselineValues.additionalExtensions.critical resource.issuancePolicy.baselineValues.additionalExtensions.objectId.objectIdPath resource.issuancePolicy.baselineValues.additionalExtensions.value resource.issuancePolicy.baselineValues.aiaOcspServers resource.issuancePolicy.baselineValues.caOptions.isCa resource.issuancePolicy.baselineValues.caOptions.maxIssuerPathLength resource.issuancePolicy.baselineValues.keyUsage.baseKeyUsage.certSign resource.issuancePolicy.baselineValues.keyUsage.baseKeyUsage.contentCommitment resource.issuancePolicy.baselineValues.keyUsage.baseKeyUsage.crlSign resource.issuancePolicy.baselineValues.keyUsage.baseKeyUsage.dataEncipherment resource.issuancePolicy.baselineValues.keyUsage.baseKeyUsage.decipherOnly resource.issuancePolicy.baselineValues.keyUsage.baseKeyUsage.digitalSignature resource.issuancePolicy.baselineValues.keyUsage.baseKeyUsage.encipherOnly resource.issuancePolicy.baselineValues.keyUsage.baseKeyUsage.keyAgreement resource.issuancePolicy.baselineValues.keyUsage.baseKeyUsage.keyEncipherment resource.issuancePolicy.baselineValues.keyUsage.extendedKeyUsage.clientAuth resource.issuancePolicy.baselineValues.keyUsage.extendedKeyUsage.codeSigning resource.issuancePolicy.baselineValues.keyUsage.extendedKeyUsage.emailProtection resource.issuancePolicy.baselineValues.keyUsage.extendedKeyUsage.ocspSigning resource.issuancePolicy.baselineValues.keyUsage.extendedKeyUsage.serverAuth resource.issuancePolicy.baselineValues.keyUsage.extendedKeyUsage.timeStamping resource.issuancePolicy.baselineValues.keyUsage.unknownExtendedKeyUsages.objectIdPath resource.issuancePolicy.baselineValues.nameConstraints.critical resource.issuancePolicy.baselineValues.nameConstraints.excludedDnsNames resource.issuancePolicy.baselineValues.nameConstraints.excludedEmailAddresses resource.issuancePolicy.baselineValues.nameConstraints.excludedIpRanges resource.issuancePolicy.baselineValues.nameConstraints.excludedUris resource.issuancePolicy.baselineValues.nameConstraints.permittedDnsNames resource.issuancePolicy.baselineValues.nameConstraints.permittedEmailAddresses resource.issuancePolicy.baselineValues.nameConstraints.permittedIpRanges resource.issuancePolicy.baselineValues.nameConstraints.permittedUris resource.issuancePolicy.baselineValues.policyIds.objectIdPath resource.issuancePolicy.identityConstraints.allowSubjectAltNamesPassthrough resource.issuancePolicy.identityConstraints.allowSubjectPassthrough resource.issuancePolicy.identityConstraints.celExpression resource.issuancePolicy.maximumLifetime resource.issuancePolicy.passthroughExtensions.additionalExtensions.objectIdPath resource.issuancePolicy.passthroughExtensions.knownExtensions resource.name resource.publishingOptions.encodingFormat resource.publishingOptions.publishCaCert resource.publishingOptions.publishCrl resource.tier privateca.googleapis.com/CertificateAuthority resource.config.publicKey.format resource.config.publicKey.key resource.config.subjectConfig.subject.commonName resource.config.subjectConfig.subject.countryCode resource.config.subjectConfig.subject.locality resource.config.subjectConfig.subject.organization resource.config.subjectConfig.subject.organizationalUnit resource.config.subjectConfig.subject.postalCode resource.config.subjectConfig.subject.province resource.config.subjectConfig.subject.rdnSequence.attributes.objectId.objectIdPath resource.config.subjectConfig.subject.rdnSequence.attributes.type resource.config.subjectConfig.subject.rdnSequence.attributes.value resource.config.subjectConfig.subject.streetAddress resource.config.subjectConfig.subjectAltName.customSans.critical resource.config.subjectConfig.subjectAltName.customSans.objectId.objectIdPath resource.config.subjectConfig.subjectAltName.customSans.value resource.config.subjectConfig.subjectAltName.dnsNames resource.config.subjectConfig.subjectAltName.emailAddresses resource.config.subjectConfig.subjectAltName.ipAddresses resource.config.subjectConfig.subjectAltName.uris resource.config.subjectKeyId.keyId resource.config.x509Config.additionalExtensions.critical resource.config.x509Config.additionalExtensions.objectId.objectIdPath resource.config.x509Config.additionalExtensions.value resource.config.x509Config.aiaOcspServers resource.config.x509Config.caOptions.isCa resource.config.x509Config.caOptions.maxIssuerPathLength resource.config.x509Config.keyUsage.baseKeyUsage.certSign resource.config.x509Config.keyUsage.baseKeyUsage.contentCommitment resource.config.x509Config.keyUsage.baseKeyUsage.crlSign resource.config.x509Config.keyUsage.baseKeyUsage.dataEncipherment resource.config.x509Config.keyUsage.baseKeyUsage.decipherOnly resource.config.x509Config.keyUsage.baseKeyUsage.digitalSignature resource.config.x509Config.keyUsage.baseKeyUsage.encipherOnly resource.config.x509Config.keyUsage.baseKeyUsage.keyAgreement resource.config.x509Config.keyUsage.baseKeyUsage.keyEncipherment resource.config.x509Config.keyUsage.extendedKeyUsage.clientAuth resource.config.x509Config.keyUsage.extendedKeyUsage.codeSigning resource.config.x509Config.keyUsage.extendedKeyUsage.emailProtection resource.config.x509Config.keyUsage.extendedKeyUsage.ocspSigning resource.config.x509Config.keyUsage.extendedKeyUsage.serverAuth resource.config.x509Config.keyUsage.extendedKeyUsage.timeStamping resource.config.x509Config.keyUsage.unknownExtendedKeyUsages.objectIdPath resource.config.x509Config.nameConstraints.critical resource.config.x509Config.nameConstraints.excludedDnsNames resource.config.x509Config.nameConstraints.excludedEmailAddresses resource.config.x509Config.nameConstraints.excludedIpRanges resource.config.x509Config.nameConstraints.excludedUris resource.config.x509Config.nameConstraints.permittedDnsNames resource.config.x509Config.nameConstraints.permittedEmailAddresses resource.config.x509Config.nameConstraints.permittedIpRanges resource.config.x509Config.nameConstraints.permittedUris resource.config.x509Config.policyIds.objectIdPath resource.gcsBucket resource.keySpec.algorithm resource.keySpec.cloudKmsKeyVersion resource.lifetime resource.name resource.subordinateConfig.certificateAuthority resource.subordinateConfig.pemIssuerChain.pemCertificates resource.type resource.userDefinedAccessUrls.aiaIssuingCertificateUrls resource.userDefinedAccessUrls.crlAccessUrls privateca.googleapis.com/CertificateTemplate resource.description resource.identityConstraints.allowSubjectAltNamesPassthrough resource.identityConstraints.allowSubjectPassthrough resource.identityConstraints.celExpression resource.maximumLifetime resource.name resource.passthroughExtensions.additionalExtensions.objectIdPath resource.passthroughExtensions.knownExtensions resource.predefinedValues.additionalExtensions.critical resource.predefinedValues.additionalExtensions.objectId.objectIdPath resource.predefinedValues.additionalExtensions.value resource.predefinedValues.aiaOcspServers resource.predefinedValues.caOptions.isCa resource.predefinedValues.caOptions.maxIssuerPathLength resource.predefinedValues.keyUsage.baseKeyUsage.certSign resource.predefinedValues.keyUsage.baseKeyUsage.contentCommitment resource.predefinedValues.keyUsage.baseKeyUsage.crlSign resource.predefinedValues.keyUsage.baseKeyUsage.dataEncipherment resource.predefinedValues.keyUsage.baseKeyUsage.decipherOnly resource.predefinedValues.keyUsage.baseKeyUsage.digitalSignature resource.predefinedValues.keyUsage.baseKeyUsage.encipherOnly resource.predefinedValues.keyUsage.baseKeyUsage.keyAgreement resource.predefinedValues.keyUsage.baseKeyUsage.keyEncipherment resource.predefinedValues.keyUsage.extendedKeyUsage.clientAuth resource.predefinedValues.keyUsage.extendedKeyUsage.codeSigning resource.predefinedValues.keyUsage.extendedKeyUsage.emailProtection resource.predefinedValues.keyUsage.extendedKeyUsage.ocspSigning resource.predefinedValues.keyUsage.extendedKeyUsage.serverAuth resource.predefinedValues.keyUsage.extendedKeyUsage.timeStamping resource.predefinedValues.keyUsage.unknownExtendedKeyUsages.objectIdPath resource.predefinedValues.nameConstraints.critical resource.predefinedValues.nameConstraints.excludedDnsNames resource.predefinedValues.nameConstraints.excludedEmailAddresses resource.predefinedValues.nameConstraints.excludedIpRanges resource.predefinedValues.nameConstraints.excludedUris resource.predefinedValues.nameConstraints.permittedDnsNames resource.predefinedValues.nameConstraints.permittedEmailAddresses resource.predefinedValues.nameConstraints.permittedIpRanges resource.predefinedValues.nameConstraints.permittedUris resource.predefinedValues.policyIds.objectIdPath What's next Learn more about Organization Policy Service .
-- Enforce Maximum Certificate Lifetime for CaPools Ensures that CaPools are configured to issue certificates with a maximum lifetime of no more than 30 days. name : organizations/ ORGANIZATION ID /customConstraints/custom.enforceCasMaxLifetime30d resourceTypes : - privateca.googleapis.com/CaPool methodTypes : - CREATE - UPDATE condition : "!has(resource.issuancePolicy.maximumLifetime) duration(resource.issuancePolicy.maximumLifetime) > duration('2592000s')" actionType : DENY displayName : Enforce Max Certificate Lifetime (30 Days) description : Only allows CaPools where the issuancePolicy.maximumLifetime field is set to 30 days (2592000 seconds) or less.
-- Create the constraint Save the following file as constraint-cas-capool-lifetime.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.enforceCasMaxLifetime30d resourceTypes : - privateca.googleapis.com/CaPool methodTypes : - CREATE - UPDATE condition : "!has(resource.issuancePolicy.maximumLifetime) duration(resource.issuancePolicy.maximumLifetime) > duration('2592000s')" actionType : DENY displayName : Enforce Max Certificate Lifetime (30 Days) description : Only allows CaPools where the issuancePolicy.maximumLifetime field is set to 30 days (2592000 seconds) or less.
-- Require a specific organization name in the CA subject Ensures all new CAs have a standardized organization field in their subject. name : organizations/ ORGANIZATION ID /customConstraints/custom.casRequireSubjectOrg resourceTypes : - privateca.googleapis.com/CertificateAuthority methodTypes : - CREATE - UPDATE condition : "resource.config.subjectConfig.subject.organization == 'Example Company Inc.'" actionType : ALLOW displayName : Enforce CA Subject Organization description : Requires new CAs to have the specified organization name.
+- Example : Allow only SANs having DNS Names as us.google.org or ending in .google.com . policy.yaml identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : 'subject_alt_names.all(san, san.type == DNS && (san.value == "us.google.org" || san.value.endsWith(".google.com")) )' Example : Allow only SANs having URIs https://google.com/webhp or starting with spiffe://example-trust-domain-1/ns/namespace1/sa/ . policy.yaml identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : 'subject_alt_names.all(san, san.type == URI && (san.value == "https://google.com/webhp" || san.value.startsWith("spiffe://example-trust-domain-1/ns/namespace1/sa/")) )' Example : Allow only SANs having email addresses example@google.com or ending with @google.org . policy.yaml identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : 'subject_alt_names.all(san, san.type == EMAIL && (san.value == "example@google.com" || san.value.endsWith("@google.org")) )' Example : Allow only custom SANs having a specific OID and a custom value. policy.yaml identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : 'subject_alt_names.all(san, san.type == CUSTOM && san.oid == [1, 2, 3, 4] && san.value == "custom-data" )' Restrict backdate duration of the issued certificates To set a past not_before_time for issued certificates, use the backdate_duration field.
+- The backdate_duration must be less than or equal to 48 hours.
+- Example : Allow only CSR issuance. policy.yaml allowedIssuanceModes : allowCsrBasedIssuance : True allowConfigBasedIssuance : False Restrict the public key algorithms of the certificate request To restrict the minimum key length and the public key algorithms that certificates can use, you can use the allowedKeyTypes field in the certificate issuance policy YAML file.
+- To update a CA pool's certificate issuance policy using the file created in the previous step, run the following command: gcloud privateca pools update POOL_NAME --location LOCATION --issuance-policy FILE_PATH Replace the following: POOL_NAME : the name of the CA pool.
 
-### "Request a certificate \_|\_ Certificate Authority Service \_|\_ Google Cloud\
+### "Issue certificates that attest to third-party identity \_|\_ Certificate\
 
-- URL: [https://docs.cloud.google.com/certificate-authority-service/docs/requesting-certificates](https://docs.cloud.google.com/certificate-authority-service/docs/requesting-certificates)
+- URL: [https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection](https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection)
+- Source ID: `site-iam-reference`
+- Final score: 58
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Known limitations \_|\_ Certificate Authority Service \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations](https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations)
 - Source ID: `site-docs-root`
-- Final score: 138
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- For more information, see Set up authentication for a local development environment . import ( "context" "fmt" "io" privateca "cloud.google.com/go/security/privateca/apiv1" "cloud.google.com/go/security/privateca/apiv1/privatecapb" "google.golang.org/protobuf/types/known/durationpb" ) // Create a Certificate which is issued by the Certificate Authority present in the CA Pool. // The key used to sign the certificate is created by the Cloud KMS. func createCertificate ( w io .
-- Select other parameters as you did in the Request certificate using an auto-generated Key section or the Request certificate using a CSR section. gcloud To target a specific CA in the CA pool for certificate issuance, add the --ca flag with the CA ID of the CA that must issue the certificate. gcloud privateca certificates create \ --issuer-pool POOL ID \ --issuer-location ISSUER LOCATION \ --ca CA ID \ --generate-key \ --key-output-file KEY FILENAME \ --cert-output-file CERT OUTPUT FILE \ --dns-san " DNS NAME " \ --use-preset-profile "leaf server tls" Terraform resource "google privateca certificate authority" "authority" { // This example assumes this pool already exists. // Pools cannot be deleted in normal test circumstances, so we depend on static pools pool = "my-pool" certificate authority id = "my-sample-certificate-authority" location = "us-central1" deletion protection = false # set to true to prevent destruction of the resource config { subject config { subject { organization = "HashiCorp" common name = "my-certificate-authority" } subject alt name { dns names = [ "hashicorp.com" ] } } x509 config { ca options { is ca = true } key usage { base key usage { digital signature = true cert sign = true crl sign = true } extended key usage { server auth = true } } } } lifetime = "86400s" key spec { algorithm = "RSA PKCS1 4096 SHA256" } } resource "google privateca certificate" "default" { pool = "my-pool" location = "us-central1" lifetime = "860s" name = "my-sample-certificate" config { subject config { subject { common name = "san1.example.com" country code = "us" organization = "google" organizational unit = "enterprise" locality = "mountain view" province = "california" street address = "1600 amphitheatre parkway" postal code = "94109" } } x509 config { ca options { is ca = false } key usage { base key usage { crl sign = true } extended key usage { server auth = true } } } public key { format = "PEM" key = base64encode ( data.tls public key.example.public key pem ) } } // Certificates require an authority to exist in the pool, though they don't // need to be explicitly connected to it depends on = [ google privateca certificate authority.authority ] } resource "tls private key" "example" { algorithm = "RSA" } data "tls public key" "example" { private key pem = tls private key.example.private key pem } Request a certificate in validation mode Requesting a certificate in validation mode creates an unsigned test certificate.
-- Writer , projectId string , location string , caPoolId string , caId string , certId string , commonName string , domainName string , certDuration int64 , publicKeyBytes [] byte ) error { // projectId := "your project id" // location := "us-central1" // For a list of locations, see: https://cloud.google.com/certificate-authority-service/docs/locations. // caPoolId := "ca-pool-id" // The CA Pool id in which the certificate authority exists. // caId := "ca-id" // The name of the certificate authority which issues the certificate. // certId := "certificate" // A unique name for the certificate. // commonName := "cert-name" // A common name for the certificate. // domainName := "cert.example.com" // Fully qualified domain name for the certificate. // certDuration := int64(31536000) // The validity of the certificate in seconds. // publicKeyBytes // The public key used in signing the certificates. ctx := context .
-- Duration ; import java.io.IOException ; import java.util.concurrent.ExecutionException ; public class CreateCertificate { public static void main ( String [] args ) throws InterruptedException , ExecutionException , IOException { // TODO(developer): Replace these variables before running the sample. // publicKeyBytes: Public key used in signing the certificates. // location: For a list of locations, see: // https://cloud.google.com/certificate-authority-service/docs/locations // poolId: Set a unique id for the CA pool. // certificateAuthorityName: The name of the certificate authority which issues the certificate. // certificateName: Set a unique name for the certificate.
-
-### "REST Resource: projects.locations.caPools \_|\_ Certificate Authority Service\
-
-- URL: [https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/projects.locations.caPools](https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/projects.locations.caPools)
-- Source ID: `site-api-reference`
-- Final score: 138
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- JSON representation { "allowedKeyTypes" : [ { object ( AllowedKeyType ) } ] , "backdateDuration" : string , "maximumLifetime" : string , "allowedIssuanceModes" : { object ( IssuanceModes ) } , "baselineValues" : { object ( X509Parameters ) } , "identityConstraints" : { object ( CertificateIdentityConstraints ) } , "passthroughExtensions" : { object ( CertificateExtensionConstraints ) } } Fields allowedKeyTypes[] object ( AllowedKeyType ) Optional.
-- If set, the certificates will be issued with a notBeforeTime of the issuance time minus the backdateDuration.
-- A CaPool can be used to manage issuance policies for one or more CertificateAuthority resources and to rotate CA certificates in and out of the trust anchor.
-- The duration to backdate all certificates issued from this CaPool .
+- Final score: 54
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

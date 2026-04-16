@@ -5,7 +5,7 @@ Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot
 The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
 
 Source rows considered: 146
-Unique features: 185
+Unique features: 183
 
 | Latest feature date | Feature | Deprecation date | Summary |
 | --- | --- | --- | --- |
@@ -36,10 +36,9 @@ Unique features: 185
 | 2026-02-20 | Feeds page last refreshed time |  | The Feeds page now displays the last refreshed time for each feed. |
 | 2026-02-20 | Feeds page pagination |  | The Feeds page now supports pagination for browsing feeds. |
 | 2026-02-20 | Feeds page search filtering |  | The Feeds page now supports searching feeds by feed attributes. |
-| 2026-02-17 | MCP use control via organization policies | 2026-03-17 | Organization policies could be used to control MCP use through the gcp.managed.allowedMCPServices constraint; deprecated on 2026-03-17. |
 | 2026-02-12 | Joins without a match section |  | Search can correlate and combine data from multiple sources without requiring a match section. |
 | 2026-02-12 | Outer joins in Search |  | Search now supports left and right outer joins that preserve unmatched records. |
-| 2026-02-04 | re.capture_all function |  | The YARA-L 2.0 re.capture_all function extracts every non-overlapping regular expression match from a string. |
+| 2026-02-04 | re.capture_all() |  | The YARA-L 2.0 re.capture_all function extracts every non-overlapping regular expression match from a string. |
 | 2026-02-03 | Mute an IoC | 2026-02-03 | The Mute an IoC feature removed the mute indicator from the IoC details page; deprecated on 2026-02-03. |
 | 2026-02-03 | Share custom column sets |  | Users can share custom column sets in the Events table for consistent team analysis. |
 | 2026-01-29 | Rule observability for detections and alerts |  | Detection and alert objects now include metadata showing whether they came from a primary rule run or a rule replay. |
@@ -150,7 +149,6 @@ Unique features: 185
 | 2024-09-30 | Case merge when requester is not the assignee |  | Cases can now be merged even when the requester is different from the assignee, both in the platform and through the API. |
 | 2024-09-30 | Case report includes case wall content |  | Case reports now include all information written on the case wall. |
 | 2024-07-28 | Gemini prompt-based playbook creation |  | Gemini now supports creating new playbooks from prompts. |
-| 2024-07-25 | Alert metadata fields idm.is_significant and idm.is_alert | 2024-07-25 | The UDM alert metadata fields idm.is_significant and idm.is_alert are deprecated; deprecated on 2024-07-25. |
 | 2024-07-17 | Managed BigQuery data lake for export | 2024-12-31 | The managed BigQuery data lake for export will no longer be accessible to most Google SecOps customers; deprecated on 2024-12-31. |
 | 2024-07-15 | Symantec Event Export feed | 2024-07-15 | The Symantec Event Export third-party API feed has been discontinued; deprecated on 2024-07-15. |
 | 2024-07-13 | IDE staging mode |  | The IDE now includes a staging mode for testing certified, custom, and upgraded integrations before production release. |
@@ -183,7 +181,7 @@ Unique features: 185
 | 2024-03-13 | Integration job auto-updates |  | Jobs are now updated automatically when an integration is updated, and legacy jobs are flagged in the Jobs Scheduler for follow-up. |
 | 2024-02-22 | External connectors API endpoints | 2024-02-22 | Several external connectors API endpoints are deprecated and replacement endpoints are provided for connector management; deprecated on 2024-02-22. |
 | 2024-02-20 | Chronicle Tokyo region |  | Chronicle now supports customer data storage in the Tokyo, Japan region and provides a regional API endpoint there. |
-| 2024-02-20 | timestamp.get_date() function |  | Chronicle now supports the timestamp.get_date() function in YARA-L 2.0. |
+| 2024-02-20 | timestamp.get_date() |  | Chronicle now supports the timestamp.get_date() function in YARA-L 2.0. |
 | 2024-02-12 | Risk Analytics |  | Risk Analytics adds entity and activity risk scoring, dashboards, watchlists, and curated and custom detection support. |
 | 2024-02-08 | Playbook folder delete audit logs |  | The platform now records audit logs when a playbook folder is deleted. |
 | 2024-01-31 | AWS feed management log types |  | Chronicle feed management API now supports additional AWS log types for creating AWS data feeds. |

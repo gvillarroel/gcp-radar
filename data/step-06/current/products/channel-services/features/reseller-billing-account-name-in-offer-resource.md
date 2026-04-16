@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:19:31.160Z"
+generated_at: "2026-04-14T11:56:59.880Z"
 product_name: "Channel Services"
 product_slug: "channel-services"
 feature_name: "Reseller Billing Account name in Offer resource"
 feature_slug: "reseller-billing-account-name-in-offer-resource"
 latest_feature_date: "2021-02-23"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter"
   - "https://docs.cloud.google.com/channel/docs/codelabs/google-cloud/provisioning"
   - "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery"
+  - "https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter"
 keywords:
   - "reseller"
   - "resource"
+  - "field"
   - "name"
   - "offer"
   - "makes"
   - "account"
   - "billing"
-  - "in"
 ---
 
 # Reseller Billing Account name in Offer resource
 
 Product: Channel Services
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,35 +38,21 @@ Makes the Reseller Billing Account name field available in the Offer resource to
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter](https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter)
 - [https://docs.cloud.google.com/channel/docs/codelabs/google-cloud/provisioning](https://docs.cloud.google.com/channel/docs/codelabs/google-cloud/provisioning)
 - [https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery](https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery)
+- [https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter](https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter)
 
 ## Supporting Pages
-
-### "Reseller account with multiple Google Workspace billing account Account\
-
-- URL: [https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter](https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter)
-- Source ID: `site-docs-reference`
-- Final score: 200
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Caution: When working with a reseller account with multiple Google Workspace billing accounts, since there are two or more Google Workspace billing account choices when purchasing a Google Workspace subscription, API users must add a step in their transaction flow to select the desired Google Workspace billing account, otherwise the transaction will fail.
-- Transition from a reseller account with a single Google Workspace billing account to a reseller account with multiple Google Workspace billing account For partners that already have a reseller account with a single Google Workspace billing account, you might notice that there is no Google Workspace billing account selection step in your transaction flows.
-- Detail step-by-step API integration guide Default Google Workspace billing account logic under a reseller account with multiple Google Workspace billing account Ideally, you have added the "Select Google Workspace billing account" step in your transaction workflow where you always select a Google Workspace billing account.
-- A reseller account with a single vs multiple Google Workspace billing accounts A reseller account with a single Google Workspace billing account is defined as an account that only has a single Google Workspace billing account option for each Google Workspace SKU type.
 
 ### "Codelab: Provisioning Google Cloud entitlements \_|\_ Channel Services \_\
 
 - URL: [https://docs.cloud.google.com/channel/docs/codelabs/google-cloud/provisioning](https://docs.cloud.google.com/channel/docs/codelabs/google-cloud/provisioning)
 - Source ID: `site-api-reference`
-- Final score: 166
+- Final score: 186
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -80,13 +66,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery](https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery)
 - Source ID: `site-docs-reference`
-- Final score: 152
+- Final score: 186
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
+- The following columns or fields don't apply to offline order billing exports: project labels system labels location resource credits entitlement name channel partner name channel partner cost customer name customer cost cost at list customer repricing config name channel partner repricing config name tags price.effective price price.tier start amount price.list price price.effective price default price.list price consumption model transaction type seller name consumption model Other notes about Google Workspace export There are several special behaviors with Google Workspace exports: Google Workspace data doesn't contain the reseller's own usage.
+- For example, the base unit for standard storage is byte-seconds . usage.amount in pricing unit Numeric The quantity of usage.pricing unit usage. usage.pricing unit String The units for measuring resource usage. credits Struct, Repeated Contains fields that describe the structure and value of credits. credits.id String If populated, indicates that a credit is associated with the product SKU. credits.full name String The name of the credit associated with the product SKU. credits.type String This field describes the purpose or origin of the credits.id . credits.name String A description of the credit applied to the usage. credits.amount Numeric The amount of the credit applied to the usage. credits.channel partner amount Numeric The amount of the credit applied to the usage, after rebilling markups and discounts.
 - Uses the format: accounts/{account}/channelPartnerLinks/{channelPartner} . channel partner cost Numeric (Distributors only) The cost to the channel partner, identified by channel partner name , after applying an existing ChannelPartnerRepricingConfig . customer name String The resource name of the reseller's customer who consumed this usage in the format accounts/{account}/customers/{customer} customer cost Numeric The cost to the reseller's customer identified by the customer name column, after applying the CustomerRepricingConfig , if one exists. cost at list Numeric Cost at list price per the default consumption model . customer repricing config name String The resource name of the Cloud Channel API CustomerRepricingConfig .
 - DATASET NAME . reseller billing detailed export v1 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) AND payer billing account id IN ( PAYER BILLING ACCOUNT IDS ) GROUP BY billing account id , currency , invoice . month ORDER BY billing account id , currency , invoice . month ; For more information on partitioning, clustering, and best practices, see the following links: Query Partitioned tables Query Clustered tables Optimize query computation Best Practices to control costs in BigQuery Finding payer's billing account ID To find the payer's billing account ID, open the billing accounts page of the Partner Sales Console and click the Partner billing tab.
-- The following columns or fields don't apply to offline order billing exports: project labels system labels location resource credits entitlement name channel partner name channel partner cost customer name customer cost cost at list customer repricing config name channel partner repricing config name tags price.effective price price.tier start amount price.list price price.effective price default price.list price consumption model transaction type seller name consumption model Other notes about Google Workspace export There are several special behaviors with Google Workspace exports: Google Workspace data doesn't contain the reseller's own usage.
-- Can be user-generated. resource.global name String A globally unique service identifier for the resource that generated relevant usage. cost Numeric Cost per the applicable consumption model inclusive of any negotiated discounts reflected in the custom pricing in the contract linked to your Cloud Billing account (if applicable). currency String The cost's billing currency.
+
+### "Reseller account with multiple Google Workspace billing account Account\
+
+- URL: [https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter](https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter)
+- Source ID: `site-docs-reference`
+- Final score: 177
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Caution: When working with a reseller account with multiple Google Workspace billing accounts, since there are two or more Google Workspace billing account choices when purchasing a Google Workspace subscription, API users must add a step in their transaction flow to select the desired Google Workspace billing account, otherwise the transaction will fail.
+- Transition from a reseller account with a single Google Workspace billing account to a reseller account with multiple Google Workspace billing account For partners that already have a reseller account with a single Google Workspace billing account, you might notice that there is no Google Workspace billing account selection step in your transaction flows.
+- Detail step-by-step API integration guide Default Google Workspace billing account logic under a reseller account with multiple Google Workspace billing account Ideally, you have added the "Select Google Workspace billing account" step in your transaction workflow where you always select a Google Workspace billing account.
+- A reseller account with a single vs multiple Google Workspace billing accounts A reseller account with a single Google Workspace billing account is defined as an account that only has a single Google Workspace billing account option for each Google Workspace SKU type.
 

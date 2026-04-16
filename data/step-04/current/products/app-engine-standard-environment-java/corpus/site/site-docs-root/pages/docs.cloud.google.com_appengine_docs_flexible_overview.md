@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/appengine/docs/flexible/overview
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/overview
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/flexible/overview
   title: "App Engine flexible environment \_|\_ Google Cloud Documentation"

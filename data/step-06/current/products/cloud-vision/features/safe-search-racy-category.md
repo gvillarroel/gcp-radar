@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:26:36.720Z"
+generated_at: "2026-04-12T12:12:50.278Z"
 product_name: "Cloud Vision"
 product_slug: "cloud-vision"
 feature_name: "Safe Search racy category"
 feature_slug: "safe-search-racy-category"
 latest_feature_date: "2018-04-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/vision/docs/release-notes"
   - "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse"
   - "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchClient"
+  - "https://docs.cloud.google.com/vision/docs/python-client-migration"
 keywords:
   - "safe"
   - "search"
@@ -26,7 +27,7 @@ keywords:
 # Safe Search racy category
 
 Product: Cloud Vision
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +39,24 @@ Safe Search detection includes a racy category for improved adult content modera
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/vision/docs/release-notes](https://docs.cloud.google.com/vision/docs/release-notes)
 - [https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse](https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse)
 - [https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient](https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchClient](https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchClient)
+- [https://docs.cloud.google.com/vision/docs/python-client-migration](https://docs.cloud.google.com/vision/docs/python-client-migration)
 
 ## Supporting Pages
-
-### Vision release notes \_|\_ Cloud Vision API \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/vision/docs/release-notes](https://docs.cloud.google.com/vision/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 128
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Safe Search detection: includes additional racy category to enhance adult content moderation.
-- Safe Search detection: includes additional racy category to enhance adult content moderation.
-- Feature New multi-regional support for features The Vision API now offers multi-regional support ( us and eu ) for the LABEL DETECTION and SAFE SEARCH features.
-- For more infomation, see the OCR how-to pages: Detect text in images Detect handwriting in images Detect text in files (PDF/TIFF) August 29, 2019 Change Improved detection models are now default for the following features: Logo Detection Landmark Detection Crop hints Object Localization The legacy model can still be accessed for 90 days by specifying "builtin/legacy" in the model field of a Feature object.
 
 ### AnnotateImageResponse \_|\_ Cloud Vision API \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse](https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse)
 - Source ID: `site-api-reference`
-- Final score: 100
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This annotation provides the structural hierarchy for the OCR detected text. safeSearchAnnotation object ( SafeSearchAnnotation ) If present, safe-search annotation has completed successfully. imagePropertiesAnnotation object ( ImageProperties ) If present, image properties were extracted successfully. cropHintsAnnotation object ( CropHintsAnnotation ) If present, crop hints have completed successfully. webDetection object ( WebDetection ) If present, web detection has completed successfully. productSearchResults object ( ProductSearchResults ) If present, product search has completed successfully. error object ( Status ) If set, represents the error message for the operation.
@@ -79,13 +68,40 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient](https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 98
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 130
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductsInProductSetAsyncPager Response message for the ListProductsInProductSet method.
 - Returns Type Description google.cloud.vision v1.services.product search.pagers.ListReferenceImagesAsyncPager Response message for the ListReferenceImages method.
 - Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductSetsAsyncPager Response message for the ListProductSets method.
 - Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductsAsyncPager Response message for the ListProducts method.
+
+### "Class ProductSearchClient (3.13.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchClient](https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchClient)
+- Source ID: `site-python-reference`
+- Final score: 130
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductsInProductSetPager Response message for the ListProductsInProductSet method.
+- Returns Type Description google.cloud.vision v1.services.product search.pagers.ListReferenceImagesPager Response message for the ListReferenceImages method.
+- Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductSetsPager Response message for the ListProductSets method.
+- Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductsPager Response message for the ListProducts method.
+
+### "Migrating to Python Client Library v0.25.1 \_|\_ Cloud Vision API \_|\_\
+
+- URL: [https://docs.cloud.google.com/vision/docs/python-client-migration](https://docs.cloud.google.com/vision/docs/python-client-migration)
+- Source ID: `site-api-reference`
+- Final score: 129
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Image ( content = content ) response = client . safe search detection ( image = image ) safe = response . safe search annotation Names of likelihood from google.cloud.vision.enums likelihood name = ( "UNKNOWN" , "VERY UNLIKELY" , "UNLIKELY" , "POSSIBLE" , "LIKELY" , "VERY LIKELY" , ) print ( "Safe search:" ) print ( f "adult: { likelihood name [ safe . adult ] } " ) print ( f "medical: { likelihood name [ safe . medical ] } " ) print ( f "spoofed: { likelihood name [ safe . spoof ] } " ) print ( f "violence: { likelihood name [ safe . violence ] } " ) print ( f "racy: { likelihood name [ safe . racy ] } " ) if response . error . message : raise Exception ( " {} \n For more info on error messages, check: " "https://cloud.google.com/apis/design/errors" . format ( response . error . message ) ) Making a text detection request and processing the response Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) texts = image . detect text () for text in texts : print ( ' \n " {} "' . format ( text . description )) vertices = ([ '( {} , {} )' . format ( bound . x coordinate , bound . y coordinate ) for bound in text . bounds . vertices ]) print ( 'bounds: {} ' . format ( ',' . join ( vertices ))) Python Client Library v0.25.1: with open ( path , "rb" ) as image file : content = image file . read () image = vision .
+- LOGO DETECTION }], } response = client . annotate image ( request = request ) logos = response . logo annotations print ( "Logos:" ) for logo in logos : print ( logo . description ) if response . error . message : raise Exception ( " {} \n For more info on error messages, check: " "https://cloud.google.com/apis/design/errors" . format ( response . error . message ) ) Making a SafeSearch detection request and processing the response SafeSearch likelihoods are now returned as enumerations.
+- Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) safe = image . detect safe search () print ( 'Safe search:' ) print ( 'adult: {} ' . format ( safe . adult )) print ( 'medical: {} ' . format ( safe . medical )) print ( 'spoofed: {} ' . format ( safe . spoof )) print ( 'violence: {} ' . format ( safe . violence )) Python Client Library v0.25.1: with open ( path , "rb" ) as image file : content = image file . read () image = vision .
+- Image ( content = content ) response = client . web detection ( image = image ) annotations = response . web detection if annotations . best guess labels : for label in annotations . best guess labels : print ( f " \n Best guess label: { label . label } " ) if annotations . pages with matching images : print ( " \n {} Pages with matching images found:" . format ( len ( annotations . pages with matching images ) ) ) for page in annotations . pages with matching images : print ( f " \n\t Page url : { page . url } " ) if page . full matching images : print ( " \t {} Full Matches found: " . format ( len ( page . full matching images )) ) for image in page . full matching images : print ( f " \t\t Image url : { image . url } " ) if page . partial matching images : print ( " \t {} Partial Matches found: " . format ( len ( page . partial matching images ) ) ) for image in page . partial matching images : print ( f " \t\t Image url : { image . url } " ) if annotations . web entities : print ( " \n {} Web entities found: " . format ( len ( annotations . web entities ))) for entity in annotations . web entities : print ( f " \n\t Score : { entity . score } " ) print ( f " \t Description: { entity . description } " ) if annotations . visually similar images : print ( " \n {} visually similar images found: \n " . format ( len ( annotations . visually similar images ) ) ) for image in annotations . visually similar images : print ( f " \t Image url : { image . url } " ) if response . error . message : raise Exception ( " {} \n For more info on error messages, check: " "https://cloud.google.com/apis/design/errors" . format ( response . error . message ) ) Making a crop hints request and processing the response Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) hints = image . detect crop hints ( aspect ratios = [ 1.77 ]) for n , hint in enumerate ( hints ): print ( ' \n Crop Hint: {} ' . format ( n )) vertices = ([ '( {} , {} )' . format ( bound . x coordinate , bound . y coordinate ) for bound in hint . bounds . vertices ]) print ( 'bounds: {} ' . format ( ',' . join ( vertices ))) Python Client Library v0.25.1: with open ( path , "rb" ) as image file : content = image file . read () image = vision .
 

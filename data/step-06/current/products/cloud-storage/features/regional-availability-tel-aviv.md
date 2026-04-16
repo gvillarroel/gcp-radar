@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T01:16:26.773Z"
+generated_at: "2026-04-12T12:12:45.931Z"
 product_name: "Cloud Storage"
 product_slug: "cloud-storage"
 feature_name: "Regional availability: Tel Aviv"
 feature_slug: "regional-availability-tel-aviv"
 latest_feature_date: "2022-09-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/storage/docs/availability-durability"
-  - "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist"
   - "https://docs.cloud.google.com/storage/docs/locations"
+  - "https://docs.cloud.google.com/storage/docs/storage-classes"
+  - "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist"
 keywords:
   - "regional"
   - "availability"
@@ -26,7 +27,7 @@ keywords:
 # Regional availability: Tel Aviv
 
 Product: Cloud Storage
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Storage is available in the Tel Aviv region (me-west1).
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/storage/docs/availability-durability](https://docs.cloud.google.com/storage/docs/availability-durability)
-- [https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist](https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist)
 - [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
+- [https://docs.cloud.google.com/storage/docs/storage-classes](https://docs.cloud.google.com/storage/docs/storage-classes)
+- [https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist](https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/storage/docs/availability-durability](https://docs.cloud.google.com/storage/docs/availability-durability)
 - Source ID: `site-iam-reference`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 229
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - In the unlikely event of an availability zone outage, such as one caused by a natural disaster, regional buckets remain available, with no need to change storage paths.
@@ -62,24 +64,11 @@ Evidence snippets:
 - If one of the regions in which an object is stored becomes unavailable after the object is successfully uploaded but prior to it being replicated for georedundancy, Cloud Storage's strong consistency ensures that stale versions of the object won't be served and that subsequent overwrites aren't reverted when the region becomes available again.
 - In the unlikely event of a region-wide outage, such as one caused by a natural disaster, dual-region and multi-region buckets remain available, with no need to change storage paths.
 
-### "Analyze your stored data with Gemini Cloud Assist \_|\_ Cloud Storage \_\
-
-- URL: [https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist](https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist)
-- Source ID: `site-iam-reference`
-- Final score: 170
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- When you use Gemini Cloud Assist alone without a Storage Intelligence subscription, you can ask prompts about how Cloud Storage generally works, such as the following: "How do I transition objects from one storage class to another?" "How do I enable soft delete on a bucket?" When you enable a Storage Intelligence subscription , you can also ask prompts related to cost saving opportunities, security and compliance, and data discovery.
-- The following data is not available in Storage Insights datasets, meaning that Gemini Cloud Assist lacks the proper context to respond to prompts relating to that data: Specific cost data, for example: "how much does my bucket cost per month".
-- If you want to enter prompts related to specific buckets and objects, you must also complete the following prerequisite steps: Enable Storage Intelligence, which gives you access to using Storage Insights datasets.
-- When you use Gemini Cloud Assist, you can enter prompts about how Cloud Storage works in general, and when you enable a Storage Intelligence subscription, you can enter prompts about specific buckets and objects.
-
 ### Bucket locations \_|\_ Cloud Storage \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/storage/docs/locations](https://docs.cloud.google.com/storage/docs/locations)
 - Source ID: `site-docs-root`
-- Final score: 164
+- Final score: 210
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +76,30 @@ Evidence snippets:
 - Lowest storage price No replication charges No outbound data transfer charges when reading data inside the same region Highest storage price Replication charges apply on write No outbound data transfer charges when reading data within either region Higher storage price than regions, but lower than dual-regions Replication charges apply on write Outbound data transfer charges always apply when reading data Location recommendations Requirements Recommended bucket location Workload examples Ultra-low latency Ultra-high bandwidth and I/O High performance Zone 1 Artificial Intelligence (AI) and Machine Learning (ML) High-performance computing Data-intensive analytics Optimized latency and bandwidth Lowest data storage cost Cross-zone redundancy Region 2 Analytics Backup and archive Optimized latency and bandwidth Cross-region redundancy, with precise control of the locations where copies of data are stored Dual-region 3 Analytics Backup and archive Disaster recovery Cross-geography data access Cross-region redundancy Multi-region Content serving Zonal locations for buckets are only available through Rapid Bucket .
 - Note that bucket relocation is available only if you've configured Storage Intelligence .
 - Zone Region Dual-region Multi-region Availability Data redundancy within one availability zone Zonal outages might affect availability Data redundancy across availability zones (synchronous) RTO(recovery time objective)=0: automated failover and failback on zonal failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) Turbo replication option for replication within 15 minutes RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Pricing Offers the highest performance in Cloud Storage for demanding workloads at the highest storage price, out of all location types Zonal bucket-specific data transfer charges apply.
+
+### Storage classes \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/storage/docs/storage-classes](https://docs.cloud.google.com/storage/docs/storage-classes)
+- Source ID: `site-docs-root`
+- Final score: 199
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Storage Class Name for APIs and CLIs Minimum storage duration Retrieval fees Typical monthly availability 1 Rapid storage 2 RAPID None None 99.95% in zones Standard storage STANDARD None None 99.99% in multi-regions and dual-regions 99.99% in regions Nearline storage NEARLINE 30 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions Coldline storage COLDLINE 90 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions Archive storage ARCHIVE 365 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions 1 See the class descriptions for the availability SLA for each storage class.
+- Availability The availability of Nearline storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.9% 99.95% dual-region 99.9% 99.95% region 99.0% 99.9% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA .
+- Availability The availability of Coldline storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.9% 99.95% dual-region 99.9% 99.95% region 99.0% 99.9% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA .
+- Coldline storage is a better choice than Standard storage or Nearline storage in scenarios where slightly lower availability, a 90-day minimum storage duration, and higher costs for data access are acceptable trade-offs for lowered at-rest storage costs .
+
+### "Analyze your stored data with Gemini Cloud Assist \_|\_ Cloud Storage \_\
+
+- URL: [https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist](https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist)
+- Source ID: `site-iam-reference`
+- Final score: 191
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- When you use Gemini Cloud Assist alone without a Storage Intelligence subscription, you can ask prompts about how Cloud Storage generally works, such as the following: "How do I transition objects from one storage class to another?" "How do I enable soft delete on a bucket?" When you enable a Storage Intelligence subscription , you can also ask prompts related to cost saving opportunities, security and compliance, and data discovery.
+- The following data is not available in Storage Insights datasets, meaning that Gemini Cloud Assist lacks the proper context to respond to prompts relating to that data: Specific cost data, for example: "how much does my bucket cost per month".
+- If you want to enter prompts related to specific buckets and objects, you must also complete the following prerequisite steps: Enable Storage Intelligence, which gives you access to using Storage Insights datasets.
+- When you use Gemini Cloud Assist, you can enter prompts about how Cloud Storage works in general, and when you enable a Storage Intelligence subscription, you can enter prompts about specific buckets and objects.
 

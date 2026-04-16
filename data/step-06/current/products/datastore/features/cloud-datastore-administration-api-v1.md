@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T08:14:41.877Z"
+generated_at: "2026-04-12T12:14:02.794Z"
 product_name: "Datastore"
 product_slug: "datastore"
 feature_name: "Cloud Datastore Administration API v1"
 feature_slug: "cloud-datastore-administration-api-v1"
 latest_feature_date: "2018-02-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/datastore/docs/release-notes"
-  - "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore"
   - "https://docs.cloud.google.com/datastore/docs/reference/admin/rest"
+  - "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client"
+  - "https://docs.cloud.google.com/datastore/docs/concepts/entities"
+  - "https://docs.cloud.google.com/datastore/docs/reference/data/rest"
 keywords:
   - "datastore"
   - "administration"
@@ -26,7 +27,7 @@ keywords:
 # Cloud Datastore Administration API v1
 
 Product: Datastore
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,54 +39,70 @@ Cloud Datastore Administration API v1 provides Datastore administration operatio
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/datastore/docs/release-notes](https://docs.cloud.google.com/datastore/docs/release-notes)
-- [https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore](https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore)
 - [https://docs.cloud.google.com/datastore/docs/reference/admin/rest](https://docs.cloud.google.com/datastore/docs/reference/admin/rest)
+- [https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client](https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client)
+- [https://docs.cloud.google.com/datastore/docs/concepts/entities](https://docs.cloud.google.com/datastore/docs/concepts/entities)
+- [https://docs.cloud.google.com/datastore/docs/reference/data/rest](https://docs.cloud.google.com/datastore/docs/reference/data/rest)
 
 ## Supporting Pages
-
-### Datastore release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/datastore/docs/release-notes](https://docs.cloud.google.com/datastore/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 210
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- July 21, 2025 Libraries Java 2.31.0 (2025-07-14) Features Next release from main branch is 2.31.0 ( #1912 ) ( a74c46b ) Dependencies Update dependency com.google.cloud:gapic-libraries-bom to v1.61.0 ( #1901 ) ( beeb125 ) Update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ( #1908 ) ( b10e0f0 ) June 30, 2025 Libraries Java 2.30.0 (2025-06-26) Features Enable grpc configurator for client-side tracing ( #1886 ) ( 97004c8 ) Dependencies Update dependency com.google.cloud:gapic-libraries-bom to v1.60.0 ( #1799 ) ( bf2a33c ) Update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ( #1897 ) ( a8d99cd ) Update googleapis/sdk-platform-java action to v2.59.1 ( #1880 ) ( 4fb9929 ) Update googleapis/sdk-platform-java action to v2.60.0 ( #1898 ) ( 0921f86 ) June 16, 2025 Libraries Java 2.29.2 (2025-06-13) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.59.0 ( 910a6c2 ) June 09, 2025 Libraries Java 2.29.0 (2025-06-06) Features Add getNumber to AggregationResult (https://github.com/googleapis/java-datastore/issues/1851) ( #1861 ) ( b9c2c3f ) Bug Fixes Remove 500 char path name limit ( #1865 ) ( 1097175 ) Dependencies Update dependency org.easymock:easymock to v5.6.0 ( #1858 ) ( acc1513 ) Java 2.29.1 (2025-06-07) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ( #1860 ) ( 0eff028 ) May 26, 2025 Libraries Java 2.28.2 (2025-05-16) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.48.0 ( #1847 ) ( 7ed3232 ) Update googleapis/sdk-platform-java action to v2.58.0 ( #1853 ) ( eef820d ) May 12, 2025 Libraries Java 2.28.1 (2025-05-06) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ( #1841 ) ( ac393e6 ) Update googleapis/sdk-platform-java action to v2.57.0 ( #1842 ) ( 0745906 ) May 05, 2025 Libraries Java 2.28.0 (2025-04-29) Features Java datastore gapic upgrade ( #1824 ) ( a296d43 ) April 28, 2025 Libraries Java 2.27.2 (2025-04-25) Bug Fixes deps: Update the Java code generator (gapic-generator-java) to 2.56.2 ( 1210f32 ) Dependencies Update dependency com.google.cloud:sdk-platform-java-config to v3.46.2 ( #1823 ) ( 4d2026c ) April 22, 2025 Feature Committed use discounts are now generally available (GA) for Firestore in Datastore mode in exchange for a commitment to continuously spend a certain amount on read/write/delete operations for one year or three years.
-- February 28, 2018 Feature General Availability release of the Cloud Datastore Administration API v1 , previously in Beta.
-- August 30, 2017 Feature Initial Beta release of the Cloud Datastore Administration API v1.
-- Deprecated The Cloud Datastore Administration API v1beta1 is now deprecated.
-
-### "Balancing Strong and Eventual Consistency with Datastore \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore](https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore)
-- Source ID: `site-iam-reference`
-- Final score: 182
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Datastore API Read of entity value Read of index Global Query Eventual consistency Eventual consistency Keys-only Global Query N/A Eventual consistency Ancestor Query Strong consistency Strong consistency Lookup by key (get()) Strong consistency N/A Table 1: Datastore queries/get calls and possible consistency behaviors Datastore queries without an ancestor are known as global queries and are designed to work with an eventual consistency model.
-- Strong Consistency on Reading Entity Values and Indexes In Datastore, there are only two APIs that provide a strongly consistent view for reading entity values and indexes: (1) the lookup by key method and (2) the ancestor query.
-- Developers building new applications are strongly encouraged to use the NDB Client Library , which has several benefits compared to this client library, such as automatic entity caching via the Memcache API.
-- Datastore also provides a number of features that relational databases are not optimally suited to provide, including high-performance at a very large scale and high-reliability.
 
 ### Cloud Datastore API \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/datastore/docs/reference/admin/rest](https://docs.cloud.google.com/datastore/docs/reference/admin/rest)
 - Source ID: `site-docs-reference`
-- Final score: 180
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 240
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 asia-southeast3 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-north2 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-central2 me-west1 northamerica-northeast1 northamerica-northeast2 northamerica-south1 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 eu us https://datastore.googleapis.com REST Resource: v1beta1.projects Methods export POST /v1beta1/projects/{projectId}:export Exports a copy of all or a subset of entities from Google Cloud Datastore to another storage system, such as Google Cloud Storage. import POST /v1beta1/projects/{projectId}:import Imports entities into Google Cloud Datastore.
 - This service provides the following discovery documents: https://datastore.googleapis.com/$discovery/rest?version=v1 https://datastore.googleapis.com/$discovery/rest?version=v1beta1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.
 - REST Resource: v1beta1.projects REST Resource: v1.projects REST Resource: v1.projects.indexes REST Resource: v1.projects.operations Service: datastore.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
 - REST Resource: v1.projects Methods export POST /v1/projects/{projectId}:export Exports a copy of all or a subset of entities from Google Cloud Datastore to another storage system, such as Google Cloud Storage. import POST /v1/projects/{projectId}:import Imports entities into Google Cloud Datastore.
+
+### "Datastore Admin Client \_|\_ Python client libraries \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client](https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client)
+- Source ID: `site-python-reference`
+- Final score: 232
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- 2.24.0 (latest) 2.23.0 2.22.0 2.21.0 2.20.2 2.19.0 2.18.0 2.17.0 2.16.1 2.15.2 2.14.0 2.13.2 2.12.0 2.11.1 2.10.0 2.9.0 2.8.3 2.7.2 2.6.2 2.5.1 2.4.0 2.3.0 2.2.0 2.1.6 2.0.1 1.15.5 1.14.0 1.13.2 1.12.0 1.11.0 1.10.0 1.9.0 class google.cloud.datastore admin v1.services.datastore admin.client.DatastoreAdminClient( , credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Optional[typing.Union[str, google.cloud.datastore admin v1.services.datastore admin.transports.base.DatastoreAdminTransport, typing.Callable[[...], google.cloud.datastore admin v1.services.datastore admin.transports.base.DatastoreAdminTransport]]] = None, client options: typing.Optional[typing.Union[google.api core.client options.ClientOptions, dict]] = None, client info: google.api core.gapic v1.client info.ClientInfo = <google.api core.gapic v1.client info.ClientInfo object>) Bases: object Google Cloud Datastore Admin API The Datastore Admin API provides several admin services for Cloud Datastore.
+- Return type google.cloud.datastore admin v1.services.datastore admin.pagers.ListIndexesPager list operations(request: Optional [ Union [google.longrunning.operations pb2.ListOperationsRequest, dict ]] = None, , retry: Optional [ Union [ google.api core.retry.retry unary.Retry , google.api core.gapic v1.method.
+- Returns None static common billing account path(billing account: str ) Returns a fully-qualified billing account string. static common folder path(folder: str ) Returns a fully-qualified folder string. static common location path(project: str , location: str ) Returns a fully-qualified location string. static common organization path(organization: str ) Returns a fully-qualified organization string. static common project path(project: str ) Returns a fully-qualified project string. create index(request: Optional [ Union [google.cloud.datastore admin v1.types.datastore admin.CreateIndexRequest, dict ]] = None, , retry: Optional [ Union [ google.api core.retry.retry unary.Retry , google.api core.gapic v1.method.
+- Return type ListOperationsResponse static parse common billing account path(path: str ) Parse a billing account path into its component segments. static parse common folder path(path: str ) Parse a folder path into its component segments. static parse common location path(path: str ) Parse a location path into its component segments. static parse common organization path(path: str ) Parse a organization path into its component segments. static parse common project path(path: str ) Parse a project path into its component segments. property transport( : google.cloud.datastore admin v1.services.datastore admin.transports.base.DatastoreAdminTranspor ) Returns the transport used by the client instance.
+
+### Entities, Properties, and Keys \_|\_ Datastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/concepts/entities](https://docs.cloud.google.com/datastore/docs/concepts/entities)
+- Source ID: `site-iam-reference`
+- Final score: 232
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For example, starting with the following entity: REST entity: { "key" : { "path": [ { "kind": "Kind 1", "name": "entity 1" } ] } "properties" : { "a": 1, "b": 2, "c": 3 } } The following request updates both a and b and then applies a property transform to property b : POST https://datastore.googleapis.com/v1/projects/ { projectId }: commit { "mode" : "NON TRANSACTIONAL" , "mutations" : [ { "propertyMask" : { "a" , "b" }, // update property a , b "update" : { "key" : { "path" : [ { "kind" : "Kind 1" , "name" : "entity 1" } ] } "properties" : { "a" : "new value" , "b" : -2 } }, "propertyTransforms" : [ { "property" : "b" , "increment" : { "integerValue" : 2 } } ] } ] } The result is the following: REST entity: { "key" : { "path": [ { "kind": "Kind 1", "name": "entity 1" } ] } "properties" : { "a": "new value", "b": 0, "c": 3 } } Kinds and identifiers Each entity is of a particular kind , which categorizes the entity for the purpose of queries.
+- This operation increments properties by the specified values: REST POST https://datastore.googleapis.com/v1/projects/{projectId}:commit { "mode": "NON TRANSACTIONAL", "mutations": [ { "propertyMask": {}, // Empty write mask indicates only transforms can change the entity. "propertyTransforms": [ { "property": "quantity", "increment": { "integerValue": 2 } }, { "property": "inStock", "maximum": { "integerValue": 100 } }, ] "upsert": { "key": { "path": [ { "kind": "Items", "name": "entity 1" } ] } } } ] } The following example sets a property value to the time at which the server processed the request with millisecond precision.
+- REST POST https://datastore.googleapis.com/v1/projects/{projectId}:commit { "mode": "NON TRANSACTIONAL", "mutations": [ { "propertyMask": {}, // Empty write mask indicates only transforms can change the entity. "propertyTransforms": [ { "property": "arrayField", "appendMissingElements": { "values": [ { "stringValue": "str" }, { "integerValue": 10 } ] } }, ] "upsert": { "key": { "path": [ { "kind": "Kind 1", "name": "entity 1" } ] } } } ] } Mixed types with maximum and minimum The maximum and minimum property transforms take either an integer or a double (floating-point number) value as input.
+- REST POST https://datastore.googleapis.com/v1/projects/{projectId}:commit { "mode": "NON TRANSACTIONAL", "mutations": [ { "propertyMask": {}, // // Empty write mask indicates only transforms can change the entity. "propertyTransforms": [ { "property": "timeField", "setToServerValue": "REQUEST TIME" }, ] "upsert": { "key": { "path": [ { "kind": "Kind 1", "name": "entity 1" } ] } } } ] } The following example appends array elements if they are missing.
+
+### Cloud Datastore API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastore/docs/reference/data/rest](https://docs.cloud.google.com/datastore/docs/reference/data/rest)
+- Source ID: `site-docs-root`
+- Final score: 228
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This service provides the following discovery documents: https://datastore.googleapis.com/$discovery/rest?version=v1 https://datastore.googleapis.com/$discovery/rest?version=v1beta3 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.
+- REST Resource: v1beta3.projects REST Resource: v1.projects REST Resource: v1.projects.operations Service: datastore.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 asia-southeast3 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-north2 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-central2 me-west1 northamerica-northeast1 northamerica-northeast2 northamerica-south1 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 eu us https://datastore.googleapis.com REST Resource: v1beta3.projects Methods allocateIds POST /v1beta3/projects/{projectId}:allocateIds Allocates IDs for the given keys, which is useful for referencing an entity before it is inserted. beginTransaction POST /v1beta3/projects/{projectId}:beginTransaction Begins a new transaction. commit POST /v1beta3/projects/{projectId}:commit Commits a transaction, optionally creating, deleting or modifying some entities. lookup POST /v1beta3/projects/{projectId}:lookup Looks up entities by key. reserveIds POST /v1beta3/projects/{projectId}:reserveIds Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore. rollback POST /v1beta3/projects/{projectId}:rollback Rolls back a transaction. runAggregationQuery POST /v1beta3/projects/{projectId}:runAggregationQuery Runs an aggregation query. runQuery POST /v1beta3/projects/{projectId}:runQuery Queries for entities.
+- REST Resource: v1.projects Methods allocateIds POST /v1/projects/{projectId}:allocateIds Allocates IDs for the given keys, which is useful for referencing an entity before it is inserted. beginTransaction POST /v1/projects/{projectId}:beginTransaction Begins a new transaction. commit POST /v1/projects/{projectId}:commit Commits a transaction, optionally creating, deleting or modifying some entities. lookup POST /v1/projects/{projectId}:lookup Looks up entities by key. reserveIds POST /v1/projects/{projectId}:reserveIds Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore. rollback POST /v1/projects/{projectId}:rollback Rolls back a transaction. runAggregationQuery POST /v1/projects/{projectId}:runAggregationQuery Runs an aggregation query. runQuery POST /v1/projects/{projectId}:runQuery Queries for entities.
 

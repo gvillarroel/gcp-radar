@@ -1,91 +1,92 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T13:25:38.951Z"
+generated_at: "2026-04-15T12:48:36.930Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "Table wildcard functions"
 feature_slug: "table-wildcard-functions"
 latest_feature_date: "2014-03-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
   - "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference"
-  - "https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+  - "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
 keywords:
-  - "_TABLE_SUFFIX"
-  - "wildcard table name"
-  - "table wildcard functions"
-  - "wildcard tables"
-  - "table wildcard"
-  - "TABLE_DATE_RANGE"
-  - "FROM `dataset.table_*`"
-  - "TABLE_QUERY"
+  - "table"
+  - "wildcard"
+  - "functions"
+  - "let"
+  - "bigquery"
+  - "query"
+  - "selected"
+  - "set"
 ---
 
 # Table wildcard functions
 
 Product: BigQuery
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-BigQuery added table wildcard functions to query a specified set of tables efficiently.
+Table wildcard functions let BigQuery query a selected set of tables efficiently.
 
 ## Extended Definition
 
-BigQuery added table wildcard functions to query a specified set of tables efficiently.
+Table wildcard functions let BigQuery query a selected set of tables efficiently.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql](https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql)
 - [https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference](https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference)
-- [https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model](https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model)
+- [https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql](https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions)
 
 ## Supporting Pages
-
-### "Legacy SQL Syntax, Functions and Operators \_|\_ BigQuery \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql](https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql)
-- Source ID: `site-docs-reference`
-- Final score: 86
-- Re-rank relevance: WEAK
-- Re-rank rationale: The reference is for Legacy SQL syntax overall, with only indirect relevance to table referencing patterns and not specific table wildcard functions.
-
-Evidence snippets:
-- Syntax Table wildcard functions TABLE DATE RANGE() Queries multiple daily tables that span a date range.
-- Table wildcard functions TABLE DATE RANGE() Queries multiple daily tables that span a date range.
-- Some examples of escaping: 'this is a space: \x20' 'this string has \'single quote\' inside it' 'first line \n second line' "double quotes are also ok" '\070' -> ERROR : octal escaping is not supported Table wildcard functions Table wildcard functions are a convenient way to query data from a specific set of tables.
-- Table wildcard functions The term table wildcard function refers to a special type of function unique to BigQuery.
 
 ### "Query multiple tables using a wildcard table \_|\_ BigQuery \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference](https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference)
 - Source ID: `site-docs-reference`
-- Final score: 86
-- Re-rank relevance: WEAK
-- Re-rank rationale: The page mainly documents wildcard tables in GoogleSQL and only references table wildcard functions as the legacy SQL equivalent.
+- Final score: 265
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For example, the following query is valid because it uses backticks: #standardSQL / Valid SQL query / SELECT max FROM bigquery-public-data.noaa gsod.gsod WHERE max != 9999.9 # code for missing data AND TABLE SUFFIX = '1929' ORDER BY max DESC The following query is NOT valid because it isn't properly quoted with backticks: #standardSQL / Syntax error: Expected end of statement but got "-" at [4:11] / SELECT max FROM missing backticks bigquery - public - data . noaa gsod . gsod WHERE max != 9999.9 # code for missing data AND TABLE SUFFIX = '1929' ORDER BY max DESC Quotation marks don't work: #standardSQL / Syntax error: Unexpected string literal: 'bigquery-public-data.noaa gsod.gsod ' at [4:3] / SELECT max FROM quotes are not backticks 'bigquery-public-data.noaa gsod.gsod ' WHERE max != 9999.9 # code for missing data AND TABLE SUFFIX = '1929' ORDER BY max DESC Query tables using wildcard tables Wildcard tables enable you to query several tables concisely.
+- For example, the following query does not limit the tables scanned for the wildcard table bigquery-public-data.noaa gsod.gsod19 because the filter uses the dynamic value of the table id column: #standardSQL Scans all tables that match the prefix gsod19 SELECT ROUND (( max - 32 ) 5 / 9 , 1 ) celsius FROM bigquery-public-data.noaa gsod.gsod19 WHERE TABLE SUFFIX = ( SELECT SUBSTR ( MAX ( table name ), LENGTH ( 'gsod19' ) + 1 ) FROM bigquery-public-data.noaa gsod.INFORMATION SCHEMA.TABLES WHERE table name LIKE 'gsod194%' ) As another example, the following query limits the scan based on the first filter condition, TABLE SUFFIX BETWEEN '40' and '60' , because it is a constant expression.
 - For example, to find the maximum temperature reported in the years between 1929 and 1935 inclusive, use the table wildcard to represent the last two digits of the year: standardSQL SELECT max, ROUND((max-32) 5/9,1) celsius, mo, da, year FROM bigquery-public-data.noaa gsod.gsod19 WHERE max != 9999.9 # code for missing data AND TABLE SUFFIX BETWEEN '29' and '35' ORDER BY max DESC Scanning a range of ingestion-time partitioned tables using PARTITIONTIME To scan a range of ingestion-time partitioned tables, use the PARTITIONTIME pseudocolumn with the TABLE SUFFIX pseudocolumn.
 - Tables omitted for brevity SELECT FROM bigquery-public-data.noaa gsod.gsod1940 ) WHERE max != 9999.9 # code for missing data ORDER BY max DESC The same query using a wildcard table is much more concise: #standardSQL SELECT max , ROUND (( max - 32 ) 5 / 9 , 1 ) celsius , mo , da , year FROM bigquery-public-data.noaa gsod.gsod19 WHERE max != 9999.9 # code for missing data AND TABLE SUFFIX BETWEEN '29' AND '40' ORDER BY max DESC Wildcard tables support built-in BigQuery storage only.
-- For example, the following query scans the January 1, 2017 partition in the table my dataset.mytable id1 . standardSQL SELECT field1, field2, field3 FROM my dataset.mytable WHERE TABLE SUFFIX = 'id1' AND PARTITIONTIME = TIMESTAMP('2017-01-01') Querying all tables in a dataset To scan all tables in a dataset, you can use an empty prefix and the table wildcard, which means that the TABLE SUFFIX pseudocolumn contains full table names.
 
-### Create an ML model in BigQuery ML by using SQL \_|\_ Google Cloud Documentation
+### "Legacy SQL Syntax, Functions and Operators \_|\_ BigQuery \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model](https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model)
-- Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql](https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql)
+- Source ID: `site-docs-reference`
+- Final score: 227
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Watch issue https://github.com/googleapis/python-bigquery-dataframes/issues/169 for updates to read gbq to support wildcard tables. df = bpd . read gbq table ( "bigquery-public-data.google analytics sample.ga sessions " , filters = [ ( " table suffix" , ">=" , "20160801" ), ( " table suffix" , "<=" , "20170630" ), ], ) Extract the total number of transactions within the Google Analytics session.
-- EVALUATE ( MODEL bqml tutorial.sample model , ( SELECT IF ( totals . transactions IS NULL , 0 , 1 ) AS label , IFNULL ( device . operatingSystem , "" ) AS os , device . isMobile AS is mobile , IFNULL ( geoNetwork . country , "" ) AS country , IFNULL ( totals . pageviews , 0 ) AS pageviews FROM bigquery-public-data.google analytics sample.ga sessions WHERE TABLE SUFFIX BETWEEN '20170701' AND '20170801' )) The results should look like the following: +--------------------+---------------------+---------------------+---------------------+---------------------+--------------------+ precision recall accuracy f1 score log loss roc auc +--------------------+---------------------+---------------------+---------------------+---------------------+--------------------+ 0.468503937007874 0.11080074487895716 0.98534315834767638 0.17921686746987953 0.04624221101176898 0.98174125874125873 +--------------------+---------------------+---------------------+---------------------+---------------------+--------------------+ Because you performed a logistic regression, the results include the following columns: precision : a metric for classification models.
-- PREDICT ( MODEL bqml tutorial.sample model , ( SELECT IFNULL ( device . operatingSystem , "" ) AS os , device . isMobile AS is mobile , IFNULL ( totals . pageviews , 0 ) AS pageviews , IFNULL ( geoNetwork . country , "" ) AS country , fullVisitorId FROM bigquery-public-data.google analytics sample.ga sessions WHERE TABLE SUFFIX BETWEEN '20170701' AND '20170801' )) GROUP BY fullVisitorId ORDER BY total predicted purchases DESC LIMIT 10 The results should look like the following: +---------------------+---------------------------+ fullVisitorId total predicted purchases +---------------------+---------------------------+ 9417857471295131045 4 112288330928895942 2 2158257269735455737 2 489038402765684003 2 057693500927581077 2 2969418676126258798 2 5073919761051630191 2 7420300501523012460 2 0456807427403774085 2 2105122376016897629 2 +---------------------+---------------------------+ BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .
-- PREDICT ( MODEL bqml tutorial.sample model , ( SELECT IFNULL ( device . operatingSystem , "" ) AS os , device . isMobile AS is mobile , IFNULL ( totals . pageviews , 0 ) AS pageviews , IFNULL ( geoNetwork . country , "" ) AS country FROM bigquery-public-data.google analytics sample.ga sessions WHERE TABLE SUFFIX BETWEEN '20170701' AND '20170801' )) GROUP BY country ORDER BY total predicted purchases DESC LIMIT 10 The results should look like the following: +----------------+---------------------------+ country total predicted purchases +----------------+---------------------------+ United States 220 Taiwan 8 Canada 7 India 2 Turkey 2 Japan 2 Italy 1 Brazil 1 Singapore 1 Australia 1 +----------------+---------------------------+ Query details The initial SELECT statement retrieves the country column and sums the predicted label column.
+- Table wildcard functions The term table wildcard function refers to a special type of function unique to BigQuery.
+- Example This example performs a scoped COUNT aggregation and then filters and sorts the records by the aggregated value. legacySQL SELECT repository . url , COUNT ( payload . pages . page name ) WITHIN RECORD AS page count FROM [ bigquery - public - data : samples . github nested ] HAVING page count > 80 ORDER BY page count DESC ; FROM clause FROM [project name:]datasetId.tableId [ [ AS ] alias ] ( subquery ) [ [ AS ] alias ] JOIN clause FLATTEN clause table wildcard function The FROM clause specifies the source data to be queried.
+- 1515 ) AS distance , AVG ( mean temp ) AS temp , AVG ( lat / 1000 ) lat , AVG ( long / 1000 ) long FROM [ weather geo . table ] WHERE month = 1 GROUP BY distance ) WHERE distance < 100 ORDER BY distance ASC LIMIT 100 ; Regular expression functions BigQuery provides regular expression support using the re2 library; see that documentation for its regular expression syntax .
+- Some examples of escaping: 'this is a space: \x20' 'this string has \'single quote\' inside it' 'first line \n second line' "double quotes are also ok" '\070' -> ERROR : octal escaping is not supported Table wildcard functions Table wildcard functions are a convenient way to query data from a specific set of tables.
+
+### JSON functions \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions)
+- Source ID: `site-docs-reference-required-8`
+- Final score: 170
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation Data analytics BigQuery Reference Send feedback JSON functions Stay organized with collections Save and categorize content based on your preferences.
+- GoogleSQL for BigQuery supports the following functions, which can retrieve and transform JSON data.
+- Return type json string expr : ARRAY<JSON-formatted STRING> json expr : ARRAY<JSON> Examples This extracts items in JSON to an array of JSON values: SELECT JSON QUERY ARRAY ( JSON '{"fruits": ["apples", "oranges", "grapes"]}' , '$.fruits' ) AS json array ; / ---------------------------------+ json array +---------------------------------+ ["apples", "oranges", "grapes"] +--------------------------------- / This extracts the items in a JSON-formatted string to a string array: SELECT JSON QUERY ARRAY ( '[1, 2, 3]' ) AS string array ; / --------------+ string array +--------------+ [1, 2, 3] +-------------- / This extracts a string array and converts it to an integer array: SELECT ARRAY ( SELECT CAST ( integer element AS INT64 ) FROM UNNEST ( JSON QUERY ARRAY ( '[1, 2, 3]' , '$' ) ) AS integer element ) AS integer array ; / ---------------+ integer array +---------------+ [1, 2, 3] +--------------- / This extracts string values in a JSON-formatted string to an array: -- Doesn't strip the double quotes SELECT JSON QUERY ARRAY ( '["apples", "oranges", "grapes"]' , '$' ) AS string array ; / ---------------------------------+ string array +---------------------------------+ ["apples", "oranges", "grapes"] +--------------------------------- / -- Strips the double quotes SELECT ARRAY ( SELECT JSON VALUE ( string element , '$' ) FROM UNNEST ( JSON QUERY ARRAY ( '["apples", "oranges", "grapes"]' , '$' )) AS string element ) AS string array ; / ---------------------------+ string array +---------------------------+ [apples, oranges, grapes] +--------------------------- / This extracts only the items in the fruit property to an array: SELECT JSON QUERY ARRAY ( '{"fruit": [{"apples": 5, "oranges": 10}, {"apples": 2, "oranges": 4}], "vegetables": [{"lettuce": 7, "kale": 8}]}' , '$.fruit' ) AS string array ; / -------------------------------------------------------+ string array +-------------------------------------------------------+ [{"apples":5,"oranges":10}, {"apples":2,"oranges":4}] +------------------------------------------------------- / These are equivalent: SELECT JSON QUERY ARRAY ( '{"fruits": ["apples", "oranges", "grapes"]}' , '$.fruits' ) AS string array ; SELECT JSON QUERY ARRAY ( '{"fruits": ["apples", "oranges", "grapes"]}' , '$."fruits"' ) AS string array ; -- The queries above produce the following result: / ---------------------------------+ string array +---------------------------------+ ["apples", "oranges", "grapes"] +--------------------------------- / In cases where a JSON key uses invalid JSONPath characters, you can escape those characters using double quotes: " " .
+- WITH t AS ( SELECT '{"name": null}' AS json string , JSON '{"name": null}' AS json ) SELECT JSON QUERY ( json string , "$.name" ) AS name string , JSON QUERY ( json string , "$.name" ) IS NULL AS name string is null , JSON QUERY ( json , "$.name" ) AS name json , JSON QUERY ( json , "$.name" ) IS NULL AS name json is null FROM t ; / -------------+---------------------+-----------+-------------------+ name string name string is null name json name json is null +-------------+---------------------+-----------+-------------------+ NULL true null false +-------------+---------------------+-----------+------------------- / JSON encodings You can encode a SQL value as a JSON value with the following functions: TO JSON STRING TO JSON JSON SET (uses TO JSON encoding) JSON ARRAY (uses TO JSON encoding) JSON ARRAY APPEND (uses TO JSON encoding) JSON ARRAY INSERT (uses TO JSON encoding) JSON OBJECT (uses TO JSON encoding) The following SQL to JSON encodings are supported: From SQL To JSON Examples NULL null SQL input: NULL JSON output: null BOOL boolean SQL input: TRUE JSON output: true SQL input: FALSE JSON output: false INT64 (TO JSON STRING only) number or string Encoded as a number when the value is in the range of [-2 53 , 2 53 ], which is the range of integers that can be represented losslessly as IEEE 754 double-precision floating point numbers.
 

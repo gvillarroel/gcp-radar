@@ -1,91 +1,89 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.641Z"
+generated_at: "2026-04-14T03:53:29.527Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB Omni Technology Preview edition"
 feature_slug: "alloydb-omni-technology-preview-edition"
 latest_feature_date: "2023-08-29"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language"
-  - "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators"
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/overview"
+  - "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
 keywords:
-  - "AlloyDB Omni Technology Preview"
-  - "Technology Preview"
-  - "AlloyDB Omni TP"
-  - "Tech Preview"
-  - "included models"
-  - "TP"
-  - "preview edition"
-  - "AlloyDB AI"
+  - "alloydb"
+  - "omni"
+  - "technology"
+  - "preview"
+  - "edition"
+  - "separate"
+  - "available"
+  - "experimenting"
 ---
 
 # AlloyDB Omni Technology Preview edition
 
 Product: AlloyDB
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-A separate Technology Preview edition of AlloyDB Omni is available for experimenting with AlloyDB AI using included models.
+A separate Technology Preview edition of AlloyDB Omni is available for experimenting with AlloyDB AI functionality.
 
 ## Extended Definition
 
-A separate Technology Preview edition of AlloyDB Omni is available for experimenting with AlloyDB AI using included models.
+A separate Technology Preview edition of AlloyDB Omni is available for experimenting with AlloyDB AI functionality.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language](https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language)
-- [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+- [https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners](https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners)
+- [https://docs.cloud.google.com/alloydb/docs/reference/extensions](https://docs.cloud.google.com/alloydb/docs/reference/extensions)
 
 ## Supporting Pages
 
-### "Generate SQL queries using natural language questions \_|\_ AlloyDB for\
+### AlloyDB overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language](https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language)
-- Source ID: `site-docs-root-2`
-- Final score: 56
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- To use natural language to get results from your database using the alloydb ai nl.get sql function, use the following example: SELECT alloydb ai nl . get sql ( 'my app config' , -- nl config 'What is the sum that client number 4''s account has following transaction 851?' -- nl question ); The following JSON output is returned: { "sql": "SELECT T3.balance FROM public.client AS T1 INNER JOIN public.account AS T2 ON T1.district id = T2.district id INNER JOIN public.trans AS T3 ON T2.account id = T3.account id WHERE T1.client id = 4 AND T3.trans id = 851", "prompt": "", "retries": 0, "error msg": "", "nl question": "What is the sum that client number 4's account has following transaction 851?" } Optional: To extract the generated SQL query as a text string, add ->>'sql' : SELECT alloydb ai nl . get sql ( 'my app config' , -- nl config 'What is the sum that client number 4''s account has following transaction 851?' -- nl question ) - >> 'sql' ; The ->> operator is used to extract a JSON value as text.
-- SELECT FROM alloydb ai nl . generated templates view ; The following is an example of the returned output: -[ RECORD 1 ]---------------------------------------------------------------- id 1 config my app config type Template manifest How many clients have a birth year of a given number? nl How many clients have a birth year of 1997? sql select count( ) from public.client as T where to char(T.birth date::timestamp, 'YYYY') = '1997'; intent How many clients have a birth year of 1997? psql select count( ) from public.client as T where to char(T.birth date::timestamp, 'YYYY') = $1; pintent How many clients have a birth year of $1? comment explanation weight 1 The manifest in the returned output is a general template or a broad description of the question type or the operation that can be performed.
-- SELECT psql FROM alloydb ai nl . template store view WHERE intent = 'How many accounts associated with loans are located in the Prague region?' ; This statement returns the following: SELECT COUNT(T1.account id) FROM account AS T1 INNER JOIN loan AS T2 ON T1.account id = T2.account id INNER JOIN district AS T3 ON T1.district id = T3.district id WHERE T3."A3" = $1 Provide a customized parameterization To provide a customized parameterization for a SQL statement using the manual interface of the add template function, run the statement in the following example: SELECT alloydb ai nl . add template ( nl config id = > 'my app config' , intent = > 'Among the accounts opened, how many customers born before 1950 resided in Slokolov at the time of account opening?' , sql = > $$ SELECT COUNT ( DISTINCT T2 . client id ) FROM district AS T1 INNER JOIN client AS T2 ON T1 . district id = T2 . district id INNER JOIN account AS T3 ON T2 . client id IN ( SELECT client id FROM disp WHERE account id = T3 . account id ) WHERE to char ( T2 . birth date :: timestamp , 'YYYY' ) < '1950' AND T1 . "A2" = 'Slokolov' $$ , parameterized sql = > $$ SELECT COUNT ( DISTINCT T2 . client id ) FROM district AS T1 INNER JOIN client AS T2 ON T1 . district id = T2 . district id INNER JOIN account AS T3 ON T2 . client id IN ( SELECT client id FROM disp WHERE account id = T3 . account id ) WHERE to char ( T2 . birth date :: timestamp , 'YYYY' ) < $ 2 AND T1 . "A2" = $ 1 $$ , parameterized intent = > $$ Among the accounts opened , how many customers born before $ 2 resided in $ 1 at the time of account opening ? $$ , manifest = > $$ Among the accounts opened , how many customers born before a given date resided in a given city at the time of account opening ? $$ , check intent = > TRUE ); In the preceding definition, the parameterization of the SQL statement is provided.
-- To provide a customized parameterization of a fragment, use the manual version of alloydb ai nl.add fragment , as shown in the following example: SELECT alloydb ai nl . add fragment ( nl config id = > 'my app config' , table aliases = > ARRAY [ 'bird dev financial.district AS T' ], intent = > $$ districts in 'Prague' $$ , parameterized intent = > $$ districts in $ 1 $$ , fragment = > $$ T . "A3" = 'Prague' $$ , parameterized fragment = > $$ T . "A3" = $ 1 $$ , manifest = > $$ districts in a given city$$ , check intent = > TRUE ); Manage fragments To manage fragments, use the following APIs: -- To disable a fragment: SELECT alloydb ai nl . disable fragment ( INPUT fragment id ); -- To enable a fragment which has been disabled: SELECT alloydb ai nl . enable fragment ( INPUT fragment id ); -- To permanently remove a fragment: SELECT alloydb ai nl . drop fragment ( INPUT fragment id ); You can use the view alloydb ai nl.fragment store view to extract the fragment id of a fragment, given its content.
-
-### "Perform intelligent SQL queries using AI functions \_|\_ AlloyDB for PostgreSQL\
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators](https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators)
-- Source ID: `site-docs-root-2`
-- Final score: 56
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Fetch results from the output cursor and store them LOOP FETCH result cursor INTO rec ; EXIT WHEN NOT FOUND ; INSERT INTO filtered results VALUES ( rec . input , rec . output ); END LOOP ; CLOSE result cursor ; END $$ ; Text generation and summarization AlloyDB AI offers text generation operators like scalar ai.generate and array-based and cursor-based ai.generate .
-- CALL google ml . create model ( model id = > 'gemini-2.5-flash-lite-global' , model type = > 'llm' , model provider = > 'google' , model qualified name = > 'gemini-2.5-flash-lite' , model request url = > 'https://aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/global/publishers/google/models/gemini-2.5-flash-lite:generateContent' , model auth type = > 'alloydb service agent iam' ); Use Gemini 3.0 models Some Gemini models, such as gemini-3.0-pro-preview , are available only through the global endpoint.
-- You must register such models as follows: CALL google ml . create model ( model id = > 'gemini-3-preview-model' , model request url = > 'https://aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/global/publishers/google/models/gemini-3-pro-preview:generateContent' , model qualified name = > 'gemini-3-pro-preview' , model provider = > 'google' , model type = > 'llm' , model auth type = > 'alloydb service agent iam' ); Replace PROJECT ID with the ID of the project where the Vertex AI model is available.
-- The function returns boolean true or false value, and returns false if the output isn't clearly detected. - Function signature FUNCTION ai.if(prompt TEXT, model id VARCHAR(100) DEFAULT NULL) RETURNS bool The following example shows the use of the ai.if operator as a filter to find restaurants with more than 500 positive reviews located in cities with a population greater than 100,000.
-
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 52
+- URL: [https://docs.cloud.google.com/alloydb/docs/overview](https://docs.cloud.google.com/alloydb/docs/overview)
+- Source ID: `site-api-reference`
+- Final score: 72
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- This version includes the following: Compatibility with PostgreSQL server version 15 A command-line interface for easier installation and maintenance of AlloyDB Omni Integration with Vertex AI Guides for data protection using Barman and pglogical Various bug fixes and query performance improvements Feature A separate Technology Preview edition of AlloyDB Omni is available.
-- Change Updated the following extensions related to the PostGIS extension to version 3.2.3: postgis postgis raster postgis sfcgal postgis tiger geocoder postgis topology address standardizer address standardizer data us August 29, 2023 Feature AlloyDB AI, a suite of features for building generative AI applications , is now available with both AlloyDB and AlloyDB Omni.
-- March 03, 2026 Feature The following AlloyDB AI features are now generally available ( GA ): Auto vector embeddings provide a scalable, automated solution for managing the lifecycle of vector embeddings for large-scale datasets, eliminating the need for manual reindexing or custom scripts.
-- Feature The following AlloyDB AI features are available in Preview : You can now use the ai.hybrid search() function, which fuses results from each search type into a single list using the Reciprocal Rank Fusion (RRF) algorithm.
+- This streamlined, downloadable edition of AlloyDB lets you run its powerful database engine on your own Linux-based computing environment, wherever that might be.
+- A self-hosted alternative: AlloyDB Omni As an alternative to running AlloyDB within Google Cloud, Google offers AlloyDB Omni.
+- AlloyDB uses a disaggregated architecture, where compute and storage layers are separate and scale independently.
+- For more information, see About AlloyDB Omni .
+
+### "Google Cloud Ready - AlloyDB Partners \_|\_ AlloyDB for PostgreSQL \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners](https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners)
+- Source ID: `site-docs-reference-2`
+- Final score: 71
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Partner references Scaling Postgres AI Workloads with AlloyDB Omni on Silk Platform AlloyDB Omni and Silk Partner Advantage page Direct link Business intelligence and advanced analytics BoostKpi Solution BoostKPI Category Business intelligence and advanced analytics Description Use BoostKPI to identify and receive alerts about granular anomalies in your business data stored in BigQuery, as well as the root causes of these anomalies.
+- Partner references Configuring AlloyDB Omni Cloud SQL for PostgreSQL and AlloyDB for PostgreSQL Integration Partner Advantage page Direct link Hitachi Solution Hitachi Virtual Storage Platform One Block 20 Category Application ISV Description Hitachi Virtual Storage Platform One Block 20 offers three models with the same capacity, featuring 72 NVMe flash drives and support for Fibre Channel, iSCSI, and NVMe TCP connectivity.
+- Partner references Connect Anomalo to AlloyDB for complete data quality monitoring Integrating Anomalo with AlloyDB Partner Advantage page Direct link DataDog Solution DataDog Category Data observability Description Datadog is a monitoring and analytics tool for information technology (IT) and DevOps teams that can be used to determine performance metrics and event monitoring for infrastructure and cloud services.
+- Partner references AlloyDB Omni using HammerDB on DS220 G2 and VSP One Block Partner Advantage page Direct link PLiOPS Solution PLiOPS Data Acceleration Category Storage Accelerator Description The Pliops Extreme Data Processor (XDP) is a hardware-based storage accelerator that offloads and accelerates data-intensive workloads.
+
+### "Supported database extensions \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/extensions](https://docs.cloud.google.com/alloydb/docs/reference/extensions)
+- Source ID: `site-api-reference`
+- Final score: 70
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The table also marks which extensions are included with AlloyDB Omni , the containerized edition of AlloyDB that you can run in your own Linux-based environment.
+- However, you can manually install PostGIS to an existing AlloyDB Omni installation. postgres fdw Provides a foreign-data wrapper that you can use to access data stored in external PostgreSQL servers. postgresql-hll Introduces a new data type, hll , which is a HyperLogLog data structure. prefix Provides prefix-matching, plus index support. rdkit Provides functions for comparing, manipulating, and identifying molecular structures. refint Includes functions to check foreign key restraints, the referencing table, and the referenced table. rum Implements support to create RUM indexes for high-performance full-text search.
+- However, you can manually install Orafce to an existing AlloyDB Omni installation. pageinspect Inspects the contents of database pages at a low level. pg background Lets you run arbitrary commands in a background worker. pg bigm Provides full text search capability in PostgreSQL using 2-gram (bigram) indexes for faster full text searches.
+- Extension Included with AlloyDB Included with AlloyDB Omni Description amcheck Provides functions for verifying the logical consistency of the structure of relations, enabling the pg amcheck application to check for corruption. anon Helps you hide or replace personally identifiable information (PII) or commercially sensitive data.
 

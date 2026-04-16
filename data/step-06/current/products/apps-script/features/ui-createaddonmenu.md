@@ -1,40 +1,40 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:29:46.774Z"
+generated_at: "2026-04-15T11:53:34.609Z"
 product_name: "Apps Script"
 product_slug: "apps-script"
-feature_name: "Ui.createAddonMenu"
+feature_name: "Ui.createAddonMenu()"
 feature_slug: "ui-createaddonmenu"
 latest_feature_date: "2014-03-11"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/apps-script/add-ons/overview"
-  - "https://developers.google.com/apps-script/guides/sheets/functions"
-  - "https://developers.google.com/apps-script/releases"
+  - "https://developers.google.com/workspace/add-ons/concepts/menus"
+  - "https://developers.google.com/apps-script/guides/menus"
+  - "https://developers.google.com/apps-script/guides/v8-runtime"
 keywords:
-  - "createaddonmenu"
-  - "method"
-  - "added"
-  - "ons"
   - "ui"
-  - "so"
+  - "createaddonmenu"
+  - "lets"
+  - "scripts"
   - "add"
-  - "the"
+  - "submenu"
+  - "ons"
+  - "menu"
 ---
 
-# Ui.createAddonMenu
+# Ui.createAddonMenu()
 
 Product: Apps Script
 Coverage: MEDIUM
 
 ## Step 02 Summary
 
-Added the Ui.createAddonMenu() method so add-ons can insert a submenu into the Add-ons menu in Sheets or Docs.
+Ui.createAddonMenu() lets scripts add a submenu to the Add-ons menu in Google Sheets or Docs.
 
 ## Extended Definition
 
-Added the Ui.createAddonMenu() method so add-ons can insert a submenu into the Add-ons menu in Sheets or Docs.
+Ui.createAddonMenu() lets scripts add a submenu to the Add-ons menu in Google Sheets or Docs.
 
 ## Evidence Summary
 
@@ -42,48 +42,48 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://developers.google.com/apps-script/add-ons/overview](https://developers.google.com/apps-script/add-ons/overview)
-- [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
-- [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
+- [https://developers.google.com/workspace/add-ons/concepts/menus](https://developers.google.com/workspace/add-ons/concepts/menus)
+- [https://developers.google.com/apps-script/guides/menus](https://developers.google.com/apps-script/guides/menus)
+- [https://developers.google.com/apps-script/guides/v8-runtime](https://developers.google.com/apps-script/guides/v8-runtime)
 
 ## Supporting Pages
 
-### Add-ons overview \_|\_ Google Workspace add-ons \_|\_ Google for Developers
+### Menús personalizados para complementos del editor | Google Workspace Add-ons | Google for Developers
 
-- URL: [https://developers.google.com/apps-script/add-ons/overview](https://developers.google.com/apps-script/add-ons/overview)
-- Source ID: `site-docs-root`
-- Final score: 180
+- URL: [https://developers.google.com/workspace/add-ons/concepts/menus](https://developers.google.com/workspace/add-ons/concepts/menus)
+- Source ID: `feature-recovery-http`
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-04 UTC."],[],["Add-ons enhance Google Workspace by automating tasks, integrating third-party services, and creating custom user interfaces.
-- Google Workspace add-ons API Some features, like extending the Google Calendar conferencing drop-down and iOS capabilities, are not yet supported by the Google Workspace add-ons API.
-- Types of add-ons There are two types of add-ons you can build: Google Workspace add-ons and Editor add-ons .
-- Quickstarts are available for Node.js and Apps Script to build these add-ons.\n"]]
+- Java es una marca registrada de Oracle o sus afiliados. Última actualización: 2026-04-01 (UTC) ¿Quieres brindar más información? [[["Fácil de comprender","easyToUnderstand","thumb-up"],["Resolvió mi problema","solvedMyProblem","thumb-up"],["Otro","otherUp","thumb-up"]],[["Falta la información que necesito","missingTheInformationINeed","thumb-down"],["Muy complicado o demasiados pasos","tooComplicatedTooManySteps","thumb-down"],["Desactualizado","outOfDate","thumb-down"],["Problema de traducción","translationIssue","thumb-down"],["Problema con las muestras o los códigos","samplesCodeIssue","thumb-down"],["Otro","otherDown","thumb-down"]],["Última actualización: 2026-04-01 (UTC)"],[],["Editor add-ons create custom menu items under the **Extensions** menu using `Ui.createAddonMenu()` and `Menu.addItem()`, typically within the `onOpen(e)` method.
+- En el siguiente ejemplo, se muestra cómo compilar un menú de complementos dinámico para diferentes modos de autorización: function onOpen ( e ) { // Or DocumentApp, SlidesApp, or FormApp. var menu = SpreadsheetApp . getUi (). createAddonMenu (); if ( e && e . authMode == ScriptApp .
+- Si deseas publicar el complemento, usa siempre Ui.createAddonMenu para definir el menú del complemento.
+- Inserta un menú de complementos con Ui.createAddonMenu y agrégale elementos con Menu.addItem .
 
-### Custom Functions in Google Sheets \_|\_ Apps Script \_|\_ Google for Developers
+### Custom Menus in Google Workspace | Apps Script | Google for Developers
 
-- URL: [https://developers.google.com/apps-script/guides/sheets/functions](https://developers.google.com/apps-script/guides/sheets/functions)
-- Source ID: `site-docs-root`
-- Final score: 160
+- URL: [https://developers.google.com/apps-script/guides/menus](https://developers.google.com/apps-script/guides/menus)
+- Source ID: `feature-recovery-http`
+- Final score: 74
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Here's a custom function, named DOUBLE , which multiplies an input value by 2: / Multiplies an input value by 2. @param {number} input The number to double. @return The input multiplied by 2. @customfunction / function DOUBLE ( input ) { return input 2 ; } If you don't know how to write JavaScript and don't have time to learn, check the Google Workspace add-on store to see whether someone else has already built the custom function you need.
-- Function naming In addition to the standard conventions for naming JavaScript functions, be aware of the following: The name of a custom function must be distinct from the names of built-in functions like SUM() .
-- If each cell required its own function call, the operation would take considerably more time, since the Apps Script server would have to download and parse the XML feed each time. / Show the title and date for the first page of posts on the Developer blog. @return Two columns of data representing posts on the Developer blog. @customfunction / function getBlogPosts () { var array = []; var url = 'https://gsuite-developers.googleblog.com/atom.xml' ; var xml = UrlFetchApp . fetch ( url ). getContentText (); var document = XmlService . parse ( xml ); var root = document . getRootElement (); var atom = XmlService . getNamespace ( 'http://www.w3.org/2005/Atom' ); var entries = document . getRootElement (). getChildren ( 'entry' , atom ); for ( var i = 0 ; i < entries . length ; i ++ ) { var title = entries [ i ]. getChild ( 'title' , atom ). getText (); var date = entries [ i ]. getChild ( 'published' , atom ). getValue (); array . push ([ title , date ]); } return array ; } These techniques can be applied to nearly any custom function that is used repeatedly throughout a spreadsheet, although the implementation details vary depending on the function's behavior.
-- Consequently, they can only call services that don't have access to personal data, specifically the following: Supported services Notes Cache Works, but not particularly useful in custom functions HTML Can generate HTML, but can't display it (rarely useful) JDBC Language Lock Works, but not particularly useful in custom functions Maps Can calculate directions, but not display maps Properties getUserProperties() only gets the properties of the spreadsheet owner.
+- Custom Menus in Google Workspace | Apps Script | Google for Developers Skip to main content Workspace Home Apps Script All products Google Workspace apps Admin console Cloud Search Gmail Google Calendar Google Chat Google Classroom Google Docs Google Drive Google Forms Google Keep Google Meet Google Sheets Google Sites Google Slides Google Tasks Google Vault Extend, automate & share Add-ons Apps Script Chat apps Drive apps Marketplace Resources Tools Admin console Apps Script dashboard Google Cloud console APIs Explorer Card Builder Training & support How to get started Codelabs Developer support Updates Release notes Developer Previews YouTube Newsletter X (Twitter) Blog / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Apps Script Overview Guides Reference Samples Support Workspace Home Apps Script Overview Guides Reference Samples Support All products More Resources More Overview Apps Script dashboard Explore the development environment Script projects Manifests Scopes Deployments JSDoc Google Cloud projects Logging OAuth client verification Libraries Versions Collaboration Command line interface Apps Script runtimes V8 Runtime overview Migrate to the V8 runtime Bulk migrate identical scripts Google services and external APIs Built-in Google services Advanced Google services Authorization Authenticate using service accounts Connect to Google Cloud services External APIs Types of scripts Standalone Bound to Google Workspace documents Extend Google Workspace Google Docs Overview Work with tabs Google Sheets Overview Custom functions Macros Connected Sheets Google Slides Overview Structure of a presentation Size and position page elements Select items in a presentation Edit and style text Lifecycle of an update Menus, dialogs, and sidebars Custom Menus in Google Workspace Dialogs and sidebars in Google Workspace User interfaces Create and serve HTML Client-to-server communication Templated HTML Restrictions Migrate to IFRAME Web apps Best practices Store and serve data Script, user, and document properties External databases via JDBC Content service Admin management Assign permissions for Google Cloud projects Monitor and restrict data access Monitor and control Apps Script use View or edit Google Cloud projects Convert VBA Macros to Apps Script Overview Determine VBA compatibility Convert VBA macros to Apps Script Fix conversion errors Address common issues Watch video tutorials View list of compatible VBA APIs Use the REST API Introduction Quickstarts JavaScript Go Java Node.js Python Concepts Processes How To...
+- For more information on the types of dialogs you can open, see the guide to dialogs and sidebars . function onOpen () { const ui = SpreadsheetApp . getUi (); // Or DocumentApp, SlidesApp or FormApp. ui . createMenu ( 'Custom Menu' ) . addItem ( 'First item' , 'menuItem1' ) . addSeparator () . addSubMenu ( ui . createMenu ( 'Sub-menu' ) . addItem ( 'Second item' , 'menuItem2' )) . addToUi (); } function menuItem1 () { SpreadsheetApp . getUi () // Or DocumentApp, SlidesApp or FormApp. . alert ( 'You clicked the first menu item!' ); } function menuItem2 () { SpreadsheetApp . getUi () // Or DocumentApp, SlidesApp or FormApp. . alert ( 'You clicked the second menu item!' ); } A document, spreadsheet, presentation, or form can only contain one menu with a given name.
+- Custom menus in Docs, Sheets, Slides, or Forms Apps Script can add new menus in Docs, Sheets, Slides, or Forms, with each menu item tied to a function in a script. (In Forms, custom menus are visible only to an editor who opens the form to modify it, not to a user who opens the form to respond.) Only bound scripts can create menus.
+- Enable script authorization and access Manage script projects Manage script deployments Manage script versions View process information Execute a function Troubleshoot Troubleshoot authentication & authorization Google Workspace apps Admin console Cloud Search Gmail Google Calendar Google Chat Google Classroom Google Docs Google Drive Google Forms Google Keep Google Meet Google Sheets Google Sites Google Slides Google Tasks Google Vault Extend, automate & share Add-ons Apps Script Chat apps Drive apps Marketplace Tools Admin console Apps Script dashboard Google Cloud console APIs Explorer Card Builder Training & support How to get started Codelabs Developer support Updates Release notes Developer Previews YouTube Newsletter X (Twitter) Blog Home Google Workspace Apps Script Guides Send feedback Custom Menus in Google Workspace Stay organized with collections Save and categorize content based on your preferences.
 
-### Google Apps Script release notes \_|\_ Google for Developers
+### V8 runtime overview \_|\_ Apps Script \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/apps-script/releases](https://developers.google.com/apps-script/releases)
-- Source ID: `site-docs-root`
-- Final score: 150
+- URL: [https://developers.google.com/apps-script/guides/v8-runtime](https://developers.google.com/apps-script/guides/v8-runtime)
+- Source ID: `site-docs-root-3`
+- Final score: 72
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- The following methods have been added to the Group , Image , Line , PageElement , Shape , SheetsChart , Table , Video , and WordArt classes: bringForward() bringToFront() sendBackward() sendToBack() setDescription(description) setTitle(title) The Spreadsheet service has been extended with the following new classes and methods that let you add and search for metadata strings attached to rows, columns, sheets, or spreadsheets: DeveloperMetadata DeveloperMetadataFinder DeveloperMetadataLocation DeveloperMetadataLocationType DeveloperMetadataVisibility Range.addDeveloperMetadata(key) Range.addDeveloperMetadata(key, visibility) Range.addDeveloperMetadata(key, value) Range.addDeveloperMetadata(key, value, visibility) Range.createDeveloperMetadataFinder() Range.getDeveloperMetadata() Sheet.addDeveloperMetadata(key) Sheet.addDeveloperMetadata(key, visibility) Sheet.addDeveloperMetadata(key, value) Sheet.addDeveloperMetadata(key, value, visibility) Sheet.createDeveloperMetadataFinder() Sheet.getDeveloperMetadata() Spreadsheet.addDeveloperMetadata(key) Spreadsheet.addDeveloperMetadata(key, visibility) Spreadsheet.addDeveloperMetadata(key, value) Spreadsheet.addDeveloperMetadata(key, value, visibility) Spreadsheet.createDeveloperMetadataFinder() Spreadsheet.getDeveloperMetadata() October 30, 2018 Feature The Spreadsheet service has been extended with the following new classes and methods: OverGridImage Sheet.getImages() Sheet.isColumnHiddenByUser(columnPosition) Sheet.isRowHiddenByFilter(rowPosition) Sheet.isRowHiddenByUser(rowPosition) Spreadsheet.getImages() Spreadsheet.isColumnHiddenByUser(columnPosition) Spreadsheet.isRowHiddenByFilter(rowPosition) Spreadsheet.isRowHiddenByUser(rowPosition) The following methods have been added to existing services: console service console.error() console.info() console.warn() DataStudio service Field.isHidden() Field.setIsHidden() Gmail service GmailAttachment.getHash() GmailMessage.getAttachments(options) Change The following methods in the Spreadsheet service now return an OverGridImage object instead of void: Sheet.insertImage(blobSource, column, row) Sheet.insertImage(blobSource, column, row, offsetX, offsetY) Sheet.insertImage(url, column, row) Sheet.insertImage(url, column, row, offsetX, offsetY) October 18, 2018 Feature The Card service has been extended with the following classes and methods to support Gmail add-on compose actions : CardService.UpdateDraftActionResponse CardService.UpdateDraftActionResponseBuilder CardService.UpdateDraftBodyAction CardService.ContentType CardService.UpdateDraftBodyType CardService.newUpdateDraftActionResponseBuilder() CardService.newUpdateDraftBodyAction() September 27, 2018 Announcement The Data Studio service is now available.
-- The following new classes have been added to the Spreadsheet service : DataSourceChart DataSourceColumn DataSourceFormula DataSourcePivotTable DataSourceRefreshSchedule DataSourceRefreshScheduleFrequency DataSourceSheet DataSourceSheetFilter DataSourceTableColumn DataSourceTableFilter DateTimeGroupingRule PivotGroupLimit SortSpec New methods to support Connected Sheets have been added to the following classes in the Spreadsheet service : BigQueryDataSourceSpecBuilder BigQueryDataSourceSpec DataExecutionStatus DataSourceTable DataSource EmbeddedChart FilterCriteriaBuilder PivotFilter PivotGroup PivotTable PivotValue Range Sheet SpreadsheetApp Spreadsheet August 27, 2020 Feature A new class called DecoratedText has been added to the Card Service .
-- Added the UI method createAddonMenu() , which allows scripts to insert a sub-menu into the Add-ons menu in Google Sheets or Docs.
-- April 05, 2019 Feature The Spreadsheet service has been extended with the following new classes and methods to support text finding, checkboxes, and other features: TextFinder RecalculationInterval SheetType DataValidationBuilder.requireCheckbox() DataValidationBuilder.requireCheckbox(checkedValue) DataValidationBuilder.requireCheckbox(checkedValue, uncheckedValue) A clearRanges() method has been added to the all the embedded chart type builder classes, such as EmbeddedAreaChartBuilder.clearRanges() EmbeddedChart.getChartId() RangeList.check() RangeList.insertCheckboxes() RangeList.insertCheckboxes(checkedValue) RangeList.insertCheckboxes(checkedValue, uncheckedValue) RangeList.removeCheckboxes() RangeList.uncheck() Range.check() Range.createTextFinder(findText) Range.getDataRegion() Range.getDataRegion(dimension) Range.insertCheckboxes() Range.insertCheckboxes(checkedValue) Range.insertCheckboxes(checkedValue, uncheckedValue) Range.removeCheckboxes() Range.uncheck() Sheet.createTextFinder(findText) Sheet.getType() Spreadsheet.createTextFinder(findText) Spreadsheet.getIterativeCalculationConvergenceThreshold() Spreadsheet.getMaxIterativeCalculationCycles() Spreadsheet.getRecalculationInterval() Spreadsheet.isIterativeCalculationEnabled() Spreadsheet.moveChartToObjectSheet(chart) Spreadsheet.setIterativeCalculationConvergenceThreshold(minThreshold) Spreadsheet.setIterativeCalculationEnabled(isEnabled) Spreadsheet.setMaxIterativeCalculationCycles(maxIterations) Spreadsheet.setRecalculationInterval(recalculationInterval) The Data Studio service has been extended with the following new classes and methods that support configuring BigQuery connectors: BigQueryConfig BigQueryParameterType CommunityConnector.newBigQueryConfig() The Notification objects in the Card service no longer have a type that you must set.
+- The following V8 example shows the use of object methods when constructing menu items in Google Sheets: function onOpen () { const ui = SpreadsheetApp . getUi (); // Or DocumentApp , SlidesApp , or FormApp . ui . createMenu ( 'Custom Menu' ) . addItem ( 'First item' , 'menu.item1' ) . addSeparator () . addSubMenu ( ui . createMenu ( 'Sub-menu' ) . addItem ( 'Second item' , 'menu.item2' )) . addToUi (); } const menu = { item1 : function () { SpreadsheetApp . getUi () . alert ( 'You clicked: First item' ); }, item2 : function () { SpreadsheetApp . getUi () . alert ( 'You clicked: Second item' ); } } View logs Apps Script provides two logging services: the Logger service and the console class.
+- The new runtime recognizes these function definition formats: function normalFunction () {} async function asyncFunction () {} function generatorFunction () {} var varFunction = function () {} let letFunction = function () {} const constFunction = function () {} var namedVarFunction = function alternateNameVarFunction () {} let namedLetFunction = function alternateNameLetFunction () {} const namedConstFunction = function alternateNameConstFunction () {} var varAsyncFunction = async function () {} let letAsyncFunction = async function () {} const constAsyncFunction = async function () {} var namedVarAsyncFunction = async function alternateNameVarAsyncFunction () {} let namedLetAsyncFunction = async function alternateNameLetAsyncFunction () {} const namedConstAsyncFunction = async function alternateNameConstAsyncFunction () {} var varGeneratorFunction = function () {} let letGeneratorFunction = function () {} const constGeneratorFunction = function () {} var namedVarGeneratorFunction = function alternateNameVarGeneratorFunction () {} let namedLetGeneratorFunction = function alternateNameLetGeneratorFunction () {} const namedConstGeneratorFunction = function alternateNameConstGeneratorFunction () {} var varLambda = () => {} let letLambda = () => {} const constLambda = () => {} var varAsyncLambda = async () => {} let letAsyncLambda = async () => {} const constAsyncLambda = async () => {} Call object methods from triggers and callbacks Scripts using V8 can call object methods and class static methods from places where you could already call library methods.
+- V8 syntax examples The following is a short list of popular syntactical features available to scripts using the V8 runtime. let and const The let and const keywords allow you to define block scope local variables and block scope constants, respectively. // V8 runtime let s = "hello" ; if ( s === "hello" ) { s = "world" ; console . log ( s ); // Prints "world" } console . log ( s ); // Prints "hello" const N = 100 ; N = 5 ; // Results in TypeError Arrow functions Arrow functions provide a compact way of defining functions within expressions. // Rhino runtime function square ( x ) { return x x ; } console . log ( square ( 5 )); // Outputs 25 // V8 runtime const square = x => x x ; console . log ( square ( 5 )); // Outputs 25 // Outputs [ 1 , 4 , 9 ] console . log ([ 1 , 2 , 3 ] . map ( x => x x )); Classes Classes provide a means to conceptually organize code with inheritance.
+- As with template literals, this syntax lets you avoid string concatenations and simplify string definitions. // Rhino runtime var multiline = "This string is sort of \n " + "like a multi-line string, \n " + "but it's not really one." ; // V8 runtime const multiline = This on the other hand , actually is a multi - line string , thanks to JavaScript ES6 ; V8 runtime limitations The Apps Script V8 runtime isn't a standard Node.js or browser environment.
 

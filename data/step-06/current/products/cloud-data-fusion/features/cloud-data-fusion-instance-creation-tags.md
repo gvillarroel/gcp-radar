@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:04:57.762Z"
+generated_at: "2026-04-15T00:42:45.374Z"
 product_name: "Cloud Data Fusion"
 product_slug: "cloud-data-fusion"
 feature_name: "Cloud Data Fusion instance creation tags"
 feature_slug: "cloud-data-fusion-instance-creation-tags"
 latest_feature_date: "2025-07-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/data-fusion/docs/release-notes"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPagedResponse"
   - "https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage"
 keywords:
   - "fusion"
   - "instance"
@@ -20,13 +20,13 @@ keywords:
   - "now"
   - "allows"
   - "attaching"
-  - "to"
+  - "instances"
 ---
 
 # Cloud Data Fusion instance creation tags
 
 Product: Cloud Data Fusion
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ Cloud Data Fusion now allows attaching tags to instances during instance creatio
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/data-fusion/docs/release-notes](https://docs.cloud.google.com/data-fusion/docs/release-notes)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPagedResponse](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPagedResponse)
 - [https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance](https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage)
 
 ## Supporting Pages
-
-### Cloud Data Fusion release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/data-fusion/docs/release-notes](https://docs.cloud.google.com/data-fusion/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 152
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 25, 2025 Feature You can now attach tags to Cloud Data Fusion instances during instance creation.
-- Change You can now specify the service account to use for running your Cloud Data Fusion pipeline on Dataproc: You specify the service account when you create an instance .
-- October 27, 2020 Change You can now specify which Cloud Data Fusion version to use when you create an instance .
-- This version includes several stability and performance improvements, as well as these new features: Azure Data Lake storage support in Wrangler Enabled Field Level Lineage (Beta) Data Loss Prevention plugin to identify, tokenize, or encrypt sensitive data at scale (Beta) December 10, 2019 Feature Cloud Data Fusion version 6.1.0.5 is now available.
-
-### "Class DataFusionClient.ListInstancesPagedResponse (1.88.0) \_|\_ Java client\
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPagedResponse](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPagedResponse)
-- Source ID: `site-java-reference`
-- Final score: 138
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- ListInstancesFixedSizeCollection > Inheritance java.lang.Object > AbstractPagedListResponse > DataFusionClient.ListInstancesPagedResponse Inherited Members AbstractPagedListResponse.expandToFixedSizeCollection(int) AbstractPagedListResponse.getNextPageToken() AbstractPagedListResponse.getPage() AbstractPagedListResponse.iterateAll() AbstractPagedListResponse.iterateFixedSizeCollections(int) AbstractPagedListResponse.iteratePages() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods createAsync(PageContext<ListInstancesRequest,ListInstancesResponse,Instance> context, ApiFuture<ListInstancesResponse> futureResponse) public static ApiFuture<DataFusionClient .
-- Home Documentation Developer tools Java Client libraries Send feedback Class DataFusionClient.ListInstancesPagedResponse (1.88.0) Stay organized with collections Save and categorize content based on your preferences.
-- ListInstancesPagedResponse extends AbstractPagedListResponse<ListInstancesRequest , ListInstancesResponse , Instance , DataFusionClient .
-- ListInstancesPage , DataFusionClient .
 
 ### Create a public instance \_|\_ Cloud Data Fusion \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance](https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance)
 - Source ID: `site-docs-root`
-- Final score: 136
-- Re-rank relevance: N/A
+- Final score: 116
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - API Create an instance: To create a Cloud Data Fusion instance with the Cloud Data Fusion REST API , construct an instances.create API request, filling in the Instance resource with your configuration information.
-- In versions earlier than 6.2.0, if this rule to allow ingress on TCP port 22 doesn't exist in the network used by your Cloud Data Fusion instance, you must create this rule .
-- The default network is pre-populated with a firewall rule default-allow-ssh , that allows incoming connections on TCP port 22 from any source to any instance in the network.
+- Console If the API is enabled , the Cloud Data Fusion section in the Google Cloud console shows an Instances page, where you can create and manage your Cloud Data Fusion instances.
 - While Cloud Data Fusion creates your instance, a progress wheel displays next to the instance name on the Instances page.
+- The following permission is required to create Cloud Data Fusion instances: instances.create .
+
+### "Class DataFusionClient.ListInstancesFixedSizeCollection (1.88.0) \_|\_ Java\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection)
+- Source ID: `site-java-reference`
+- Final score: 109
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- ListInstancesFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > DataFusionClient.ListInstancesFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<DataFusionClient.ListInstancesPage> pages, int collectionSize) protected DataFusionClient .
+- ListInstancesPage > pages , int collectionSize ) Parameters Name Description pages List < ListInstancesPage > collectionSize int Returns Type Description DataFusionClient.ListInstancesFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation Developer tools Java Client libraries Send feedback Class DataFusionClient.ListInstancesFixedSizeCollection (1.88.0) Stay organized with collections Save and categorize content based on your preferences.
+- ListInstancesFixedSizeCollection extends AbstractFixedSizeCollection<ListInstancesRequest , ListInstancesResponse , Instance , DataFusionClient .
+
+### "Class DataFusionClient.ListInstancesPage (1.88.0) \_|\_ Java client libraries\
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage](https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage)
+- Source ID: `site-java-reference`
+- Final score: 109
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- ListInstancesPage > Inheritance java.lang.Object > AbstractPage > DataFusionClient.ListInstancesPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListInstancesRequest,ListInstancesResponse,Instance> context, ListInstancesResponse response) protected DataFusionClient .
+- ListInstancesPage createPage ( PageContext<ListInstancesRequest , ListInstancesResponse , Instance > context , ListInstancesResponse response ) Parameters Name Description context PageContext < ListInstancesRequest , ListInstancesResponse , Instance > response ListInstancesResponse Returns Type Description DataFusionClient.ListInstancesPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListInstancesRequest,ListInstancesResponse,Instance> context, ApiFuture<ListInstancesResponse> futureResponse) public ApiFuture<DataFusionClient .
+- Home Documentation Developer tools Java Client libraries Send feedback Class DataFusionClient.ListInstancesPage (1.88.0) Stay organized with collections Save and categorize content based on your preferences.
+- ListInstancesPage extends AbstractPage<ListInstancesRequest , ListInstancesResponse , Instance , DataFusionClient .
 

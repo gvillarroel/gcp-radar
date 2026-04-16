@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:47.894Z"
+generated_at: "2026-04-12T12:11:19.101Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Cloud Composer 3 scheduled snapshots"
 feature_slug: "cloud-composer-3-scheduled-snapshots"
 latest_feature_date: "2024-12-04"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/composer-1/configure-scheduled-snapshots"
+  - "https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots"
   - "https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform"
-  - "https://docs.cloud.google.com/composer/docs/release-notes"
+  - "https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3"
 keywords:
   - "composer"
   - "scheduled"
@@ -23,7 +24,7 @@ keywords:
 # Cloud Composer 3 scheduled snapshots
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,13 +36,14 @@ Cloud Composer 3 added support for scheduled snapshots.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/composer-1/configure-scheduled-snapshots](https://docs.cloud.google.com/composer/docs/composer-1/configure-scheduled-snapshots)
+- [https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots](https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots)
 - [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
-- [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
+- [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
 
 ## Supporting Pages
 
@@ -49,9 +51,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/configure-scheduled-snapshots](https://docs.cloud.google.com/composer/docs/composer-1/configure-scheduled-snapshots)
 - Source ID: `site-iam-reference`
-- Final score: 140
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 190
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Configure scheduled snapshots Stay organized with collections Save and categorize content based on your preferences.
@@ -59,11 +61,24 @@ Evidence snippets:
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 - On September 15, 2026 , all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life .
 
+### "Save and load environment snapshots \_|\_ Cloud Composer \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots](https://docs.cloud.google.com/composer/docs/latest/save-load-snapshots)
+- Source ID: `site-docs-root`
+- Final score: 160
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Example: // POST https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment:loadSnapshot { "snapshotPath" : "gs://us-central1-example-916807e1-bucket/snapshots/example-project us-central1 example-environment 2022-01-05T18-59-00" , "skipPypiPackagesInstallation" : "False" } Terraform It is not possible to save and load environment snapshots using Terraform.
+- Example: // POST https://composer.googleapis.com/v1/projects/example-project/ // locations/us-central1/environments/example-environment:saveSnapshot { "snapshotLocation" : "gs://us-central1-example-916807e1-bucket/snapshots" } Terraform It is not possible to save and load environment snapshots from Terraform.
+- For example, gs://us-central1-example-916807e1-bucket/snapshots/example-project us-central1 example-environment 2022-01-05T18-59-00 . (Optional) In the request body, in the skipPypiPackagesInstallation field specify if Cloud Composer must skip the installation of custom PyPI packages from the snapshot.
+- Although Cloud Composer stores some information about the environment's configuration in snapshots, it is not used when loading snapshots.
+
 ### "Cross-project environment monitoring with Terraform \_|\_ Cloud Composer\
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform](https://docs.cloud.google.com/composer/docs/composer-1/cross-project-environment-monitoring-terraform)
 - Source ID: `site-iam-reference`
-- Final score: 130
+- Final score: 159
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -72,16 +87,16 @@ Evidence snippets:
 - Make corrections if necessary. terraform plan Apply the Terraform configuration by running the following command and entering yes at the prompt: terraform apply In Google Cloud console of your Monitoring Project , go to the Monitoring Dashboard page: Go to Monitoring Dashboard Find your custom dashboard named Cloud Composer - Monitoring Platform in the Custom tab.
 - Home Documentation Data analytics Cloud Composer Composer 1 Guides Send feedback Cross-project environment monitoring with Terraform Stay organized with collections Save and categorize content based on your preferences.
 
-### Cloud Composer release notes \_|\_ Google Cloud Documentation
+### "Migrate to Cloud Composer\_3 from Cloud Composer\_1 (Airflow 2) \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/composer/docs/release-notes](https://docs.cloud.google.com/composer/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 130
+- URL: [https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3](https://docs.cloud.google.com/composer/docs/latest/migrate-composer-1-to-3)
+- Source ID: `site-docs-reference`
+- Final score: 156
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Change Cloud Composer 1.20.2 and 2.1.2 images are available: composer-1.20.2-airflow-1.10.15 (default) composer-1.20.2-airflow-2.2.5 composer-1.20.2-airflow-2.3.4 composer-2.1.2-airflow-2.2.5 composer-2.1.2-airflow-2.3.4 (default) December 06, 2022 Feature (Cloud Composer 2) Environment snapshots and Scheduled snapshots are now generally available (GA) for Cloud Composer 2 versions 2.1.1 and later.
-- Change (Airflow 1.10.15) Upgraded apache-beam and google provider packages to version 2022.6.1: Support impersonation chain parameter for Dataflow runner in Apache Beam operators Added missing project id parameter for wait for job method in the Dataflow operators Added key secret project id parameter which specifies a project with KeyFile Change Cloud Composer 1.18.12 and 2.0.16 images are available: composer-1.18.12-airflow-1.10.15 (default) composer-1.18.12-airflow-2.1.4 composer-1.18.12-airflow-2.2.5 composer-2.0.16-airflow-2.1.4 composer-2.0.16-airflow-2.2.5 June 01, 2022 Feature Web server restarting is available in Preview in Cloud Composer 2.
-- Changes compared to version 2022.8.23+composer : Added deferrable option to Dataproc operators to run the task asynchronously. ( #25302 ) Cloud Composer team plans to add support for Deferrable operators in October, 2022.
-- Change New Airflow builds are available in Cloud Composer 3: composer-3-airflow-2.10.2-build.3 (default) composer-3-airflow-2.9.3-build.10 December 04, 2024 Feature Scheduled snapshots are available in Cloud Composer 3.
+- Other migration guides From To Method Guide Cloud Composer 2 Cloud Composer 3 Side-by-side, using the migration script Script migration guide Cloud Composer 2 Cloud Composer 3 Side-by-side, using snapshots Snapshots migration guide Cloud Composer 1, Airflow 2 Cloud Composer 3 Side-by-side, using snapshots This guide Cloud Composer 1, Airflow 2 Cloud Composer 2 Side-by-side, using snapshots Snapshots migration guide Cloud Composer 1, Airflow 2 Cloud Composer 2 Side-by-side, manual transfer Manual migration guide Cloud Composer 1, Airflow 1 Cloud Composer 2, Airflow 2 Side-by-side, using snapshots Snapshots migration guide Cloud Composer 1, Airflow 1 Cloud Composer 2, Airflow 2 Side-by-side, manual transfer Manual migration guide Cloud Composer 1, Airflow 1 Cloud Composer 1, Airflow 2 Side-by-side, manual transfer Manual migration guide Before you begin Cloud Composer supports side-by-side migration from Cloud Composer 1 to Cloud Composer 3.
+- If you use the default location for this guide, this folder is located in your Cloud Composer 1 environment bucket in the /snapshots folder, and its name is the timestamp of the snapshot save operation.
+- Click Load and wait until Cloud Composer loads the snapshot. gcloud Load the snapshot of your Cloud Composer 1 environment to your Cloud Composer 3 environment: gcloud composer environments snapshots load \ COMPOSER 3 ENV \ --location COMPOSER 3 LOCATION \ --snapshot-path " SNAPSHOT PATH " Replace: COMPOSER 3 ENV with the name of your Cloud Composer 3 environment.
+- Wait until Cloud Composer creates the snapshot. gcloud Get your Cloud Composer 1 environment's bucket URI: Run the following command: gcloud composer environments describe COMPOSER 1 ENV \ --location COMPOSER 1 LOCATION \ --format = "value(config.dagGcsPrefix)" Replace: COMPOSER 1 ENV with the name of your Cloud Composer 1 environment.
 

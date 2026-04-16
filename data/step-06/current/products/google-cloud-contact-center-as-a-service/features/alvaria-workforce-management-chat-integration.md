@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.690Z"
+generated_at: "2026-04-15T13:50:47.060Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Alvaria Workforce Management chat integration"
@@ -9,8 +9,9 @@ latest_feature_date: "2024-11-07"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide"
 keywords:
   - "alvaria"
   - "workforce"
@@ -37,38 +38,53 @@ Alvaria-integrated customers can receive chat session data.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Chat Settings and Features \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 160
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features)
+- Source ID: `site-docs-reference`
+- Final score: 125
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Alvaria WFM for chat Customers with Alvaria integrations can now receive chat session data.
-- Feature Alvaria Advanced List Management integration with outbound dialer You can now integrate Alvaria Advanced List Management (ALM) with the outbound dialer.
-- Feature QM integration now includes chat session events You can now export chat session events to an external quality management (QM) system.
-- Capabilities: Multi-tenancy support: helps ensure that each tenant's data remains separate and secure Flexible delimiter support: supports files using comma, pipe, tab, or semicolon delimiters For more information, see Alvaria Advanced List Management integration .
+- CCAI Platform portal configuration Enable Deltacast From the CCAI Platform portal, go to Settings > Operation Management Deltacast > Chat .
+- Chat Settings - Live Translation Live translation provides real-time language translation between customers (end users) and agents.
+- Consumer Management Consumer Privacy You can remove call, chat, or email data to ensure consumer privacy.
+- For integrated CRMs, chat transcripts are sent to external storage using SFTP.
 
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
+### "Salesforce integration guide \_|\_ Google Cloud Contact Center as a Service\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 80
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- Recommended headset features Binaural - Audio in both ears cuts down on background noise Noise-canceling microphone Noise-canceling headset USB connection Brands of headsets our customers use Jabra Logitech Plantronics Sennheiser What's next Configure a sample contact center Private Service Connect Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Direct queues to a visual message Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Android SDK With the CCAI Platform Android SDK, you can create seamless voice and chat support experiences for users of your Android apps.
-- About the CCAI Platform SDKs CCAI Platform SDKs let you provide voice and chat support to your customers on your website or inside your app on iOS and Android.
+- When making or receiving calls or chats, the CCAI Platform integration will automatically pop the Salesforce case.
+- When making or receiving calls or chats, the CCAI Platform integration will automatically pop the Salesforce case.
+- Case owner and assignment After the default administrator is enabled, the default administrator is used as the owner for the following: Ticket/case and contact creation when a new chat is initiated before an agent is assigned to the chat Voicemail tickets/cases before receiving a callback call Call ticket/cases for abandoned calls (if enabled) Note: If the default user is not configured, CCAI Platform uses a random Agent When a call/chat is transferred: CCAI Platform assigns the case to the agent who the call is transferred to.
+- Feature details 1 to 1 Salesforce agent account to CCAI Platform agent account mapping is required This feature allows for 1-way sync from the CRM -> CCAI Platform If the status is changed in CCAI Platform, the CRM status will not be changed Status change behavior CCAI Platform statuses protected from real-time CRM changes If an agent is In-call, In-chat, or Wrap-up, the status inherited from the CRM will be applied once the call, chat, or wrap-up has ended.
+
+### "Kustomer CRM integration guide \_|\_ Google Cloud Contact Center as a Service\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide](https://docs.cloud.google.com/contact-center/ccai-platform/docs/kustomer-integration-guide)
+- Source ID: `site-docs-reference`
+- Final score: 103
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- After the Contact Center AI Platform app is configured, your team can go to Widgets on the navigation bar and select the appropriate voice or chat widget to login and access their Contact Center AI Platform adapters in Kustomer.
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Kustomer CRM integration guide Stay organized with collections Save and categorize content based on your preferences.
+- Testing the Integration Before integration testing, you have to force reload the page in your browser to apply and display app settings changes in Kustomer.
+- When agents receive calls through the Contact Center AI Platform adapter, Kustomer automatically creates and logs new customers and conversations.
 

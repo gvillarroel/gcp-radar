@@ -1,0 +1,557 @@
+{
+  "schema_version": "step-07-quality-gate-v2",
+  "generated_at": "2026-04-15T12:12:46.756Z",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse",
+  "input_file": "data/step-06/current/products/document-ai-warehouse/extended-features.json",
+  "feature_count": 31,
+  "passed_feature_count": 31,
+  "failed_feature_count": 0,
+  "warned_feature_count": 1,
+  "fail_ratio": 0,
+  "within_fail_ratio_tolerance": true,
+  "product_status": "PASS",
+  "thresholds": {
+    "max_fail_ratio": 0.1,
+    "strict_product_pass": true
+  },
+  "failed_features": [],
+  "warned_features": [
+    {
+      "feature_name": "VPC Service Controls",
+      "feature_slug": "vpc-service-controls",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+        "https://docs.cloud.google.com/document-ai/docs/languages",
+        "https://docs.cloud.google.com/document-ai/docs/libraries"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "feature_name": "Document AI Warehouse",
+      "feature_slug": "document-ai-warehouse",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "feature_name": "Root folder filtering",
+      "feature_slug": "root-folder-filtering",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document"
+      ]
+    },
+    {
+      "feature_name": "Pipeline API Cloud Function document request fields",
+      "feature_slug": "pipeline-api-cloud-function-document-request-fields",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "feature_name": "Pipeline API Cloud Function metadata-only response flag",
+      "feature_slug": "pipeline-api-cloud-function-metadata-only-response-flag",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries"
+      ]
+    },
+    {
+      "feature_name": "Resource location validation",
+      "feature_slug": "resource-location-validation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest"
+      ]
+    },
+    {
+      "feature_name": "Folder linking during ingestion",
+      "feature_slug": "folder-linking-during-ingestion",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "GenAI search",
+      "feature_slug": "genai-search",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-warehouse/docs/libraries"
+      ]
+    },
+    {
+      "feature_name": "Empty integer and float property filtering",
+      "feature_slug": "empty-integer-and-float-property-filtering",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/UpdateOptions"
+      ]
+    },
+    {
+      "feature_name": "Skip ingested documents flag",
+      "feature_slug": "skip-ingested-documents-flag",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries"
+      ]
+    },
+    {
+      "feature_name": "Datetime property filtering",
+      "feature_slug": "datetime-property-filtering",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart"
+      ]
+    },
+    {
+      "feature_name": "TIFF file support",
+      "feature_slug": "tiff-file-support",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-ai/docs/file-types"
+      ]
+    },
+    {
+      "feature_name": "BigQuery Connector",
+      "feature_slug": "bigquery-connector",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/languages",
+        "https://docs.cloud.google.com/document-ai/docs/processors-list"
+      ]
+    },
+    {
+      "feature_name": "Cloud Storage ingest pipeline",
+      "feature_slug": "cloud-storage-ingest-pipeline",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "feature_name": "Export to Workbench pipeline",
+      "feature_slug": "export-to-workbench-pipeline",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents"
+      ]
+    },
+    {
+      "feature_name": "Process with DocAI pipeline",
+      "feature_slug": "process-with-docai-pipeline",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr"
+      ]
+    },
+    {
+      "feature_name": "Policy Engine",
+      "feature_slug": "policy-engine",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr"
+      ]
+    },
+    {
+      "feature_name": "TIFF document rendering",
+      "feature_slug": "tiff-document-rendering",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Document table filter URL sync",
+      "feature_slug": "document-table-filter-url-sync",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "feature_name": "Raw document TIFF file type field",
+      "feature_slug": "raw-document-tiff-file-type-field",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "feature_name": "Conditional project ACLs",
+      "feature_slug": "conditional-project-acls",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "feature_name": "AutoProvision operation IDs",
+      "feature_slug": "autoprovision-operation-ids",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "feature_name": "Search query syntax",
+      "feature_slug": "search-query-syntax",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "VPC Service Controls",
+      "feature_slug": "vpc-service-controls",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "rule": "thin_token_overlap",
+          "message": "Supporting pages only weakly overlap with informative feature tokens.",
+          "suggested_steps": [
+            "step-03",
+            "step-04",
+            "step-06"
+          ]
+        }
+      ],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+        "https://docs.cloud.google.com/document-ai/docs/languages",
+        "https://docs.cloud.google.com/document-ai/docs/libraries"
+      ]
+    },
+    {
+      "feature_name": "Enum property value validation",
+      "feature_slug": "enum-property-value-validation",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-update-document-schema",
+        "https://docs.cloud.google.com/document-warehouse/docs/libraries"
+      ]
+    },
+    {
+      "feature_name": "Text extraction",
+      "feature_slug": "text-extraction",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages",
+        "https://docs.cloud.google.com/document-ai/docs/processors-list"
+      ]
+    },
+    {
+      "feature_name": "EnumTypeOptions validationCheckDisabled flag",
+      "feature_slug": "enumtypeoptions-validationcheckdisabled-flag",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    },
+    {
+      "feature_name": "Search query string shuffling",
+      "feature_slug": "search-query-string-shuffling",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart",
+        "https://docs.cloud.google.com/document-warehouse/docs/libraries"
+      ]
+    },
+    {
+      "feature_name": "Search word stemming",
+      "feature_slug": "search-word-stemming",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-ai/docs/fields"
+      ]
+    },
+    {
+      "feature_name": "Semantic search",
+      "feature_slug": "semantic-search",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents"
+      ]
+    },
+    {
+      "feature_name": "Text property LIKE search",
+      "feature_slug": "text-property-like-search",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "feature_name": "Document AI Warehouse V1 APIs",
+      "feature_slug": "document-ai-warehouse-v1-apis",
+      "coverage_status": "MEDIUM",
+      "source_link_count": 3,
+      "supporting_page_count": 3,
+      "pass": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": [],
+      "source_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/libraries",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages"
+      ]
+    }
+  ]
+}

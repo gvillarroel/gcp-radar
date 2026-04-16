@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-rout
 knowledge_key: corpus
 source_id: site-docs-root-2
 source_type: site
-entrypoint: https://docs.cloud.google.com/appengine/docs/standard/overview
+entrypoint: https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime
 source_metadata:
   url: https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed
   title: "How requests are routed \_|\_ App Engine standard environment \_|\_ Google\

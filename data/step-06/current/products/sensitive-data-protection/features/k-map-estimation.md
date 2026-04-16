@@ -1,30 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.901Z"
+generated_at: "2026-04-14T12:39:34.618Z"
 product_name: "Sensitive Data Protection"
 product_slug: "sensitive-data-protection"
 feature_name: "k-map estimation"
 feature_slug: "k-map-estimation"
 latest_feature_date: "2017-11-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/sensitive-data-protection/docs/labs"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs"
+  - "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-map"
 keywords:
-  - "map"
-  - "estimation"
-  - "adds"
-  - "as"
-  - "risk"
-  - "analysis"
   - "metric"
-  - "for"
+  - "estimation"
+  - "analysis"
+  - "risk"
+  - "source"
+  - "adds"
 ---
 
 # k-map estimation
 
 Product: Sensitive Data Protection
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,21 +36,55 @@ Adds k-map estimation as a risk analysis metric for data source analysis.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/sensitive-data-protection/docs/labs](https://docs.cloud.google.com/sensitive-data-protection/docs/labs)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-map](https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-map)
 
 ## Supporting Pages
 
-### Google Cloud Skills Boost for Sensitive Data Protection | Google Cloud Documentation
+### "Re-identification risk analysis \_|\_ Sensitive Data Protection \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/labs](https://docs.cloud.google.com/sensitive-data-protection/docs/labs)
-- Source ID: `site-docs-root`
-- Final score: 30
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis)
+- Source ID: `site-api-reference-required-2`
+- Final score: 172
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Google Cloud Skills Boost for Sensitive Data Protection Google Cloud Documentation Source URL: https://docs.cloud.google.com/sensitive-data-protection/docs/labs Lab: Redact sensitive data with Sensitive Data Protection · Learn the basic capabilities of the Cloud Data Loss Prevention API and try various ways to use the API to help protect data.
+- And like for k -map estimation, Sensitive Data Protection's risk analysis APIs simulate a population dataset to approximate the dataset that an attacker might use to find out who is in the dataset.
+- But since only two individuals share these quasi-identifiers in the larger population, an attacker can deduce that both of them suffer from the genetic disease. δ -presence quantifies this particular risk by computing the ratio of people with certain quasi-identifiers that are in the dataset. δ -presence, like the other risk metrics, requires you to determine which columns of your database are quasi-identifiers.
+- Therefore, we can estimate that this new, generalized dataset has a δ -presence value of around 20%. δ -presence resources For more information about δ -presence estimation based on statistical data, see δ-Presence Without Complete World Knowledge , by Mehmet Ercan Nergiz and Chris Clifton from the Purdue University Department of Computer Science Technical Reports .
+- Risk analysis terms and techniques If you don't correctly or adequately de-identify sensitive data, you risk an attacker re-identifying the data or learning sensitive information about individuals, which can have serious privacy implications.
+
+### "REST Resource: projects.dlpJobs \_|\_ Sensitive Data Protection \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs)
+- Source ID: `site-docs-root-3`
+- Final score: 152
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Resource: DlpJob JSON representation DlpJobType JobState AnalyzeDataSourceRiskDetails JSON representation PrivacyMetric JSON representation NumericalStatsConfig JSON representation CategoricalStatsConfig JSON representation KAnonymityConfig JSON representation EntityId JSON representation LDiversityConfig JSON representation KMapEstimationConfig JSON representation TaggedField JSON representation AuxiliaryTable JSON representation QuasiIdField JSON representation DeltaPresenceEstimationConfig JSON representation QuasiId JSON representation StatisticalTable JSON representation QuasiIdentifierField JSON representation NumericalStatsResult JSON representation CategoricalStatsResult JSON representation CategoricalStatsHistogramBucket JSON representation ValueFrequency JSON representation KAnonymityResult JSON representation KAnonymityHistogramBucket JSON representation KAnonymityEquivalenceClass JSON representation LDiversityResult JSON representation LDiversityHistogramBucket JSON representation LDiversityEquivalenceClass JSON representation KMapEstimationResult JSON representation KMapEstimationHistogramBucket JSON representation KMapEstimationQuasiIdValues JSON representation DeltaPresenceEstimationResult JSON representation DeltaPresenceEstimationHistogramBucket JSON representation DeltaPresenceEstimationQuasiIdValues JSON representation RequestedRiskAnalysisOptions JSON representation RiskAnalysisJobConfig JSON representation InspectDataSourceDetails JSON representation RequestedOptions JSON representation Result JSON representation InfoTypeStats JSON representation HybridInspectStatistics JSON representation ActionDetails JSON representation DeidentifyDataSourceDetails JSON representation RequestedDeidentifyOptions JSON representation DeidentifyDataSourceStats JSON representation Methods Resource: DlpJob Combines all of the information about a DLP job.
+- JSON representation { "requestedPrivacyMetric" : { object ( PrivacyMetric ) } , "requestedSourceTable" : { object ( BigQueryTable ) } , "requestedOptions" : { object ( RequestedRiskAnalysisOptions ) } , // Union field result can be only one of the following: "numericalStatsResult" : { object ( NumericalStatsResult ) } , "categoricalStatsResult" : { object ( CategoricalStatsResult ) } , "kAnonymityResult" : { object ( KAnonymityResult ) } , "lDiversityResult" : { object ( LDiversityResult ) } , "kMapEstimationResult" : { object ( KMapEstimationResult ) } , "deltaPresenceEstimationResult" : { object ( DeltaPresenceEstimationResult ) } // End of list of possible types for union field result . } Fields requestedPrivacyMetric object ( PrivacyMetric ) Privacy metric to compute. requestedSourceTable object ( BigQueryTable ) Input dataset to compute metrics over. requestedOptions object ( RequestedRiskAnalysisOptions ) The configuration used for this job.
+- Values associated with this metric. result can be only one of the following: numericalStatsResult object ( NumericalStatsResult ) Numerical stats result categoricalStatsResult object ( CategoricalStatsResult ) Categorical stats result kAnonymityResult object ( KAnonymityResult ) K-anonymity result lDiversityResult object ( LDiversityResult ) L-divesity result kMapEstimationResult object ( KMapEstimationResult ) K-map result deltaPresenceEstimationResult object ( DeltaPresenceEstimationResult ) Delta-presence result PrivacyMetric Privacy metric to compute for reidentification risk analysis.
+- KAnonymityConfig k-anonymity metric, used for analysis of reidentification risk.
+
+### "Computing k-map for a dataset \_|\_ Sensitive Data Protection \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-map](https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-map)
+- Source ID: `site-api-reference-required-2`
+- Final score: 142
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- For more information, see Set up authentication for a local development environment . use Exception; use Google\Cloud\Dlp\V2\Action; use Google\Cloud\Dlp\V2\Action\PublishToPubSub; use Google\Cloud\Dlp\V2\BigQueryTable; use Google\Cloud\Dlp\V2\Client\DlpServiceClient; use Google\Cloud\Dlp\V2\CreateDlpJobRequest; use Google\Cloud\Dlp\V2\DlpJob\JobState; use Google\Cloud\Dlp\V2\FieldId; use Google\Cloud\Dlp\V2\GetDlpJobRequest; use Google\Cloud\Dlp\V2\InfoType; use Google\Cloud\Dlp\V2\PrivacyMetric; use Google\Cloud\Dlp\V2\PrivacyMetric\KMapEstimationConfig; use Google\Cloud\Dlp\V2\PrivacyMetric\KMapEstimationConfig\TaggedField; use Google\Cloud\Dlp\V2\RiskAnalysisJobConfig; use Google\Cloud\PubSub\PubSubClient; / Computes the k-map risk estimation of a column set in a Google BigQuery table. @param string $callingProjectId The project ID to run the API call under @param string $dataProjectId The project ID containing the target Datastore @param string $topicId The name of the Pub/Sub topic to notify once the job completes @param string $subscriptionId The name of the Pub/Sub subscription to use when listening for job @param string $datasetId The ID of the dataset to inspect @param string $tableId The ID of the table to inspect @param string $regionCode The ISO 3166-1 region code that the data is representative of @param string[] $quasiIdNames Array columns that form a composite key (quasi-identifiers) @param string[] $infoTypes Array of infoTypes corresponding to the chosen quasi-identifiers / function k map( string $callingProjectId, string $dataProjectId, string $topicId, string $subscriptionId, string $datasetId, string $tableId, string $regionCode, array $quasiIdNames, array $infoTypes ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $pubsub = new PubSubClient(); $topic = $pubsub->topic($topicId); // Verify input if (count($infoTypes) != count($quasiIdNames)) { throw new Exception('Number of infoTypes and number of quasi-identifiers must be equal!'); } // Map infoTypes to quasi-ids $quasiIdObjects = array map(function ($quasiId, $infoType) { $quasiIdField = (new FieldId()) ->setName($quasiId); $quasiIdType = (new InfoType()) ->setName($infoType); $quasiIdObject = (new TaggedField()) ->setInfoType($quasiIdType) ->setField($quasiIdField); return $quasiIdObject; }, $quasiIdNames, $infoTypes); // Construct analysis config $statsConfig = (new KMapEstimationConfig()) ->setQuasiIds($quasiIdObjects) ->setRegionCode($regionCode); $privacyMetric = (new PrivacyMetric()) ->setKMapEstimationConfig($statsConfig); // Construct items to be analyzed $bigqueryTable = (new BigQueryTable()) ->setProjectId($dataProjectId) ->setDatasetId($datasetId) ->setTableId($tableId); // Construct the action to run when job completes $pubSubAction = (new PublishToPubSub()) ->setTopic($topic->name()); $action = (new Action()) ->setPubSub($pubSubAction); // Construct risk analysis job config to run $riskJob = (new RiskAnalysisJobConfig()) ->setPrivacyMetric($privacyMetric) ->setSourceTable($bigqueryTable) ->setActions([$action]); // Listen for job notifications via an existing topic/subscription. $subscription = $topic->subscription($subscriptionId); // Submit request $parent = "projects/$callingProjectId/locations/global"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setRiskJob($riskJob); $job = $dlp->createDlpJob($createDlpJobRequest); // Poll Pub/Sub using exponential backoff until job finishes // Consider using an asynchronous execution model such as Cloud Functions $attempt = 1; $startTime = time(); do { foreach ($subscription->pull() as $message) { if ( isset($message->attributes()['DlpJobName']) && $message->attributes()['DlpJobName'] === $job->getName() ) { $subscription->acknowledge($message); // Get the updated job.
+- DlpServiceClient (); const pubsub = new PubSub (); // The project ID to run the API call under // const projectId = 'my-project'; // The project ID the table is stored under // This may or (for public datasets) may not equal the calling project ID // const tableProjectId = 'my-project'; // The ID of the dataset to inspect, e.g. 'my dataset' // const datasetId = 'my dataset'; // The ID of the table to inspect, e.g. 'my table' // const tableId = 'my table'; // The name of the Pub/Sub topic to notify once the job completes // TODO(developer): create a Pub/Sub topic to use for this // const topicId = 'MY-PUBSUB-TOPIC' // The name of the Pub/Sub subscription to use when listening for job // completion notifications // TODO(developer): create a Pub/Sub subscription to use for this // const subscriptionId = 'MY-PUBSUB-SUBSCRIPTION' // The ISO 3166-1 region code that the data is representative of // Can be omitted if using a region-specific infoType (such as US ZIP 5) // const regionCode = 'USA'; // A set of columns that form a composite key ('quasi-identifiers'), and // optionally their reidentification distributions // const quasiIds = [{ field: { name: 'age' }, infoType: { name: 'AGE' }}]; async function kMapEstimationAnalysis () { const sourceTable = { projectId : tableProjectId , datasetId : datasetId , tableId : tableId , }; // Construct request for creating a risk analysis job const request = { parent : projects/ ${ projectId } /locations/global , riskJob : { privacyMetric : { kMapEstimationConfig : { quasiIds : quasiIds , regionCode : regionCode , }, }, sourceTable : sourceTable , actions : [ { pubSub : { topic : projects/ ${ projectId } /topics/ ${ topicId } , }, }, ], }, }; // Create helper function for unpacking values const getValue = obj = > obj [ Object . keys ( obj )[ 0 ]]; // Run risk analysis job const [ topicResponse ] = await pubsub . topic ( topicId ). get (); const subscription = await topicResponse . subscription ( subscriptionId ); const [ jobsResponse ] = await dlp . createDlpJob ( request ); const jobName = jobsResponse . name ; console . log ( Job created.
+- String regionCode = "US" ; // Configure the privacy metric for the job KMapEstimationConfig kmapConfig = KMapEstimationConfig . newBuilder () . addAllQuasiIds ( taggedFields ) . setRegionCode ( regionCode ) . build (); PrivacyMetric privacyMetric = PrivacyMetric . newBuilder (). setKMapEstimationConfig ( kmapConfig ). build (); // Create action to publish job status notifications over Google Cloud Pub/Sub ProjectTopicName topicName = ProjectTopicName . of ( projectId , topicId ); PublishToPubSub publishToPubSub = PublishToPubSub . newBuilder (). setTopic ( topicName . toString ()). build (); Action action = Action . newBuilder (). setPubSub ( publishToPubSub ). build (); // Configure the risk analysis job to perform RiskAnalysisJobConfig riskAnalysisJobConfig = RiskAnalysisJobConfig . newBuilder () . setSourceTable ( bigQueryTable ) . setPrivacyMetric ( privacyMetric ) . addActions ( action ) . build (); // Build the request to be sent by the client CreateDlpJobRequest createDlpJobRequest = CreateDlpJobRequest . newBuilder () . setParent ( LocationName . of ( projectId , "global" ). toString ()) . setRiskJob ( riskAnalysisJobConfig ) . build (); // Send the request to the API using the client DlpJob dlpJob = dlpServiceClient . createDlpJob ( createDlpJobRequest ); // Set up a Pub/Sub subscriber to listen on the job completion status final SettableApiFuture<Boolean> done = SettableApiFuture . create (); ProjectSubscriptionName subscriptionName = ProjectSubscriptionName . of ( projectId , subscriptionId ); MessageReceiver messageHandler = ( PubsubMessage pubsubMessage , AckReplyConsumer ackReplyConsumer ) - > { handleMessage ( dlpJob , done , pubsubMessage , ackReplyConsumer ); }; Subscriber subscriber = Subscriber . newBuilder ( subscriptionName , messageHandler ). build (); subscriber . startAsync (); // Wait for job completion semi-synchronously // For long jobs, consider using a truly asynchronous execution model such as Cloud Functions try { done . get ( 15 , TimeUnit .
+- PublisherClient . topic path ( project , topic id ) parent = f "projects/ { project } /locations/global" Location info of the BigQuery table. source table = { "project id" : table project id , "dataset id" : dataset id , "table id" : table id , } Check that numbers of quasi-ids and info types are equal if len ( quasi ids ) != len ( info types ): raise ValueError ( """Number of infoTypes and number of quasi-identifiers must be equal!""" ) Convert quasi id list to Protobuf type def map fields ( quasi id : str , info type : str ) - > dict : return { "field" : { "name" : quasi id }, "info type" : { "name" : info type }} quasi ids = map ( map fields , quasi ids , info types ) Tell the API where to send a notification when the job is complete. actions = [{ "pub sub" : { "topic" : topic }}] Configure risk analysis job Give the name of the numeric column to compute risk metrics for risk job = { "privacy metric" : { "k map estimation config" : { "quasi ids" : quasi ids , "region code" : region code , } }, "source table" : source table , "actions" : actions , } Call API to start risk analysis job operation = dlp . create dlp job ( request = { "parent" : parent , "risk job" : risk job }) def callback ( message : google . cloud . pubsub v1 . subscriber . message .
 

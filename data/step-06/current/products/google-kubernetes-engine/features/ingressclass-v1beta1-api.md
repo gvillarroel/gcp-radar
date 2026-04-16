@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:33.367Z"
+generated_at: "2026-04-14T04:42:56.925Z"
 product_name: "Google Kubernetes Engine"
 product_slug: "google-kubernetes-engine"
 feature_name: "IngressClass v1beta1 API"
 feature_slug: "ingressclass-v1beta1-api"
 latest_feature_date: "2021-05-28"
 deprecation_date: "2021-05-28"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest"
+  - "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16"
 keywords:
   - "ingressclass"
   - "v1beta1"
-  - "api"
-  - "the"
-  - "is"
   - "deprecated"
-  - "and"
   - "targeted"
+  - "removal"
+  - "kubernetes"
+  - "22"
+  - "2021"
 ---
 
 # IngressClass v1beta1 API
 
 Product: Google Kubernetes Engine
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ The IngressClass v1beta1 API is deprecated and targeted for removal in Kubernete
 
 The IngressClass v1beta1 API is deprecated and targeted for removal in Kubernetes 1.22; The IngressClass v1beta1 API is deprecated and targeted for removal in Kubernetes 1.22; deprecated on 2021-05-28.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins](https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest](https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16](https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Security bulletins \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins](https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins)
+- Source ID: `site-docs-reference-2`
+- Final score: 78
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- We recommend you to upgrade your node pools to one of the following versions or above to take advantage of the latest patches: 1.21.4-gke.301 1.20.10-gke.301 1.19.14-gke.301 1.18.20-gke.4501 The following versions also contain the fix: 1.21.3-gke.2001 1.20.8-gke.2101 1.20.9-gke.701 1.20.9-gke.1001 1.19.12-gke.2101 1.19.13-gke.701 1.18.20-gke.3001 High GKE clusters on Description Severity A security issue was discovered in Kubernetes , CVE-2021-25741, where a user may be able to create a container with subpath volume mounts to access files & directories outside of the volume, including on the host filesystem.
+- It is recommended that you: Upgrade your AWSManagementService , AWSCluster and AWSNodePool objects to the following version: 1.8.2 Update the gke-version of your AWSCluster and AWSNodePool objects to one of the supported Kubernetes versions : 1.17.17-gke.15800 1.18.20-gke.4800 1.19.14-gke.600 1.20.10-gke.600 High GKE clusters on Description Severity A security issue was discovered in Kubernetes , CVE-2021-25741, where a user may be able to create a container with subpath volume mounts to access files & directories outside of the volume, including on the host filesystem.
+- To fix these vulnerabilities, upgrade your Google Distributed Cloud Virtual for Bare Metal cluster to one of the following patched versions when released: 1.6.3 1.7.1 Medium GCP-2021-003 Published: 2021-04-19 Reference: CVE-2021-25735 GKE Description Severity The Kubernetes project recently announced a new security vulnerability, CVE-2021-25735 , that could allow node updates to bypass a Validating Admission Webhook.
+- Upgrade your admin clusters and user clusters to one of the following versions: 1.8.3 1.8.2 1.7.4 1.6.5 High GKE clusters on Description Severity A security issue was discovered in Kubernetes , CVE-2021-25741, where a user may be able to create a container with subpath volume mounts to access files & directories outside of the volume, including on the host filesystem.
+
+### "Kubernetes Engine API \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest](https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 64
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- REST Resource: v1beta1.projects.locations.clusters Methods checkAutopilotCompatibility GET /v1beta1/{name=projects/ /locations/ /clusters/ }:checkAutopilotCompatibility Checks the cluster compatibility with Autopilot mode, and returns a list of compatibility issues. completeControlPlaneUpgrade POST /v1beta1/{name=projects/ /locations/ /clusters/ }:completeControlPlaneUpgrade CompleteControlPlaneUpgrade completes the rollback-safe upgrade by performing the step two upgrade for a specific cluster. completeIpRotation POST /v1beta1/{name=projects/ /locations/ /clusters/ }:completeIpRotation Completes master IP rotation. create POST /v1beta1/{parent=projects/ /locations/ }/clusters Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. delete DELETE /v1beta1/{name=projects/ /locations/ /clusters/ } Deletes the cluster, including the Kubernetes endpoint and all worker nodes. fetchClusterUpgradeInfo GET /v1beta1/{name=projects/ /locations/ /clusters/ }:fetchClusterUpgradeInfo Fetch upgrade information of a specific cluster. get GET /v1beta1/{name=projects/ /locations/ /clusters/ } Gets the details for a specific cluster. getJwks GET /v1beta1/{parent=projects/ /locations/ /clusters/ }/jwks Gets the public component of the cluster signing keys in JSON Web Key format. list GET /v1beta1/{parent=projects/ /locations/ }/clusters Lists all clusters owned by a project in either the specified zone or all zones. setAddons POST /v1beta1/{name=projects/ /locations/ /clusters/ }:setAddons Sets the addons for a specific cluster. setLegacyAbac POST /v1beta1/{name=projects/ /locations/ /clusters/ }:setLegacyAbac Enables or disables the ABAC authorization mechanism on a cluster. setLocations (deprecated) POST /v1beta1/{name=projects/ /locations/ /clusters/ }:setLocations Sets the locations for a specific cluster. setLogging POST /v1beta1/{name=projects/ /locations/ /clusters/ }:setLogging Sets the logging service for a specific cluster. setMaintenancePolicy POST /v1beta1/{name=projects/ /locations/ /clusters/ }:setMaintenancePolicy Sets the maintenance policy for a cluster. setMasterAuth POST /v1beta1/{name=projects/ /locations/ /clusters/ }:setMasterAuth Sets master auth materials. setMonitoring POST /v1beta1/{name=projects/ /locations/ /clusters/ }:setMonitoring Sets the monitoring service for a specific cluster. setNetworkPolicy POST /v1beta1/{name=projects/ /locations/ /clusters/ }:setNetworkPolicy Enables or disables Network Policy for a cluster. setResourceLabels POST /v1beta1/{name=projects/ /locations/ /clusters/ }:setResourceLabels Sets labels on a cluster. startIpRotation POST /v1beta1/{name=projects/ /locations/ /clusters/ }:startIpRotation Starts master IP rotation. update PUT /v1beta1/{name=projects/ /locations/ /clusters/ } Updates the settings for a specific cluster. updateMaster POST /v1beta1/{name=projects/ /locations/ /clusters/ }:updateMaster Updates the master for a specific cluster.
+- REST Resource: v1beta1.projects.zones.clusters Methods addons POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/addons Sets the addons for a specific cluster. completeControlPlaneUpgrade POST /v1beta1/{name=projects/ /zones/ /clusters/ }:completeControlPlaneUpgrade CompleteControlPlaneUpgrade completes the rollback-safe upgrade by performing the step two upgrade for a specific cluster. completeIpRotation POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:completeIpRotation Completes master IP rotation. create POST /v1beta1/projects/{projectId}/zones/{zone}/clusters Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. delete DELETE /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId} Deletes the cluster, including the Kubernetes endpoint and all worker nodes. fetchClusterUpgradeInfo GET /v1beta1/{name=projects/ /zones/ /clusters/ }:fetchClusterUpgradeInfo Fetch upgrade information of a specific cluster. get GET /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId} Gets the details for a specific cluster. legacyAbac POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/legacyAbac Enables or disables the ABAC authorization mechanism on a cluster. list GET /v1beta1/projects/{projectId}/zones/{zone}/clusters Lists all clusters owned by a project in either the specified zone or all zones. locations (deprecated) POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/locations Sets the locations for a specific cluster. logging POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/logging Sets the logging service for a specific cluster. master POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/master Updates the master for a specific cluster. monitoring POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/monitoring Sets the monitoring service for a specific cluster. resourceLabels POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/resourceLabels Sets labels on a cluster. setMaintenancePolicy POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setMaintenancePolicy Sets the maintenance policy for a cluster. setMasterAuth POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setMasterAuth Sets master auth materials. setNetworkPolicy POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setNetworkPolicy Enables or disables Network Policy for a cluster. startIpRotation POST /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:startIpRotation Starts master IP rotation. update PUT /v1beta1/projects/{projectId}/zones/{zone}/clusters/{clusterId} Updates the settings for a specific cluster.
+- REST Resource: v1.projects.locations.clusters Methods checkAutopilotCompatibility GET /v1/{name=projects/ /locations/ /clusters/ }:checkAutopilotCompatibility Checks the cluster compatibility with Autopilot mode, and returns a list of compatibility issues. completeIpRotation POST /v1/{name=projects/ /locations/ /clusters/ }:completeIpRotation Completes master IP rotation. create POST /v1/{parent=projects/ /locations/ }/clusters Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. delete DELETE /v1/{name=projects/ /locations/ /clusters/ } Deletes the cluster, including the Kubernetes endpoint and all worker nodes. fetchClusterUpgradeInfo GET /v1/{name=projects/ /locations/ /clusters/ }:fetchClusterUpgradeInfo Fetch upgrade information of a specific cluster. get GET /v1/{name=projects/ /locations/ /clusters/ } Gets the details of a specific cluster. getJwks GET /v1/{parent=projects/ /locations/ /clusters/ }/jwks Gets the public component of the cluster signing keys in JSON Web Key format. list GET /v1/{parent=projects/ /locations/ }/clusters Lists all clusters owned by a project in either the specified zone or all zones. setAddons POST /v1/{name=projects/ /locations/ /clusters/ }:setAddons Sets the addons for a specific cluster. setLegacyAbac POST /v1/{name=projects/ /locations/ /clusters/ }:setLegacyAbac Enables or disables the ABAC authorization mechanism on a cluster. setLocations (deprecated) POST /v1/{name=projects/ /locations/ /clusters/ }:setLocations Sets the locations for a specific cluster. setLogging POST /v1/{name=projects/ /locations/ /clusters/ }:setLogging Sets the logging service for a specific cluster. setMaintenancePolicy POST /v1/{name=projects/ /locations/ /clusters/ }:setMaintenancePolicy Sets the maintenance policy for a cluster. setMasterAuth POST /v1/{name=projects/ /locations/ /clusters/ }:setMasterAuth Sets master auth materials. setMonitoring POST /v1/{name=projects/ /locations/ /clusters/ }:setMonitoring Sets the monitoring service for a specific cluster. setNetworkPolicy POST /v1/{name=projects/ /locations/ /clusters/ }:setNetworkPolicy Enables or disables Network Policy for a cluster. setResourceLabels POST /v1/{name=projects/ /locations/ /clusters/ }:setResourceLabels Sets labels on a cluster. startIpRotation POST /v1/{name=projects/ /locations/ /clusters/ }:startIpRotation Starts master IP rotation. update PUT /v1/{name=projects/ /locations/ /clusters/ } Updates the settings of a specific cluster. updateMaster POST /v1/{name=projects/ /locations/ /clusters/ }:updateMaster Updates the master for a specific cluster.
+- REST Resource: v1.projects.zones.clusters Methods addons POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/addons Sets the addons for a specific cluster. completeIpRotation POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:completeIpRotation Completes master IP rotation. create POST /v1/projects/{projectId}/zones/{zone}/clusters Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. delete DELETE /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId} Deletes the cluster, including the Kubernetes endpoint and all worker nodes. fetchClusterUpgradeInfo GET /v1/{name=projects/ /zones/ /clusters/ }:fetchClusterUpgradeInfo Fetch upgrade information of a specific cluster. get GET /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId} Gets the details of a specific cluster. legacyAbac POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/legacyAbac Enables or disables the ABAC authorization mechanism on a cluster. list GET /v1/projects/{projectId}/zones/{zone}/clusters Lists all clusters owned by a project in either the specified zone or all zones. locations (deprecated) POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/locations Sets the locations for a specific cluster. logging POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/logging Sets the logging service for a specific cluster. master POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/master Updates the master for a specific cluster. monitoring POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/monitoring Sets the monitoring service for a specific cluster. resourceLabels POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/resourceLabels Sets labels on a cluster. setMaintenancePolicy POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setMaintenancePolicy Sets the maintenance policy for a cluster. setMasterAuth POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setMasterAuth Sets master auth materials. setNetworkPolicy POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setNetworkPolicy Enables or disables Network Policy for a cluster. startIpRotation POST /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:startIpRotation Starts master IP rotation. update PUT /v1/projects/{projectId}/zones/{zone}/clusters/{clusterId} Updates the settings of a specific cluster.
+
+### "Feature and API deprecations \_|\_ Google Kubernetes Engine (GKE) \_|\_\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16](https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16)
+- Source ID: `site-iam-reference-required-2`
+- Final score: 61
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Container Registry May 15, 2023 March 18, 2025 Transition from Container Registry to Artifact Registry in GKE No GKE Compliance dashboard (Preview) January 28, 2025 June 30, 2025 Posture management feature deprecations No Workload vulnerability scanning GKE security posture dashboard Standard tier: July 23, 2024 Advanced Vulnerability Insights: June 16, 2025 Standard tier: July 31, 2025 Advanced Vulnerability Insights: June 16, 2026 Vulnerability scanning removal from GKE Standard edition Yes Supply chain concerns - Binary Authorization (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations No Kubernetes security posture - advanced tier (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations Yes containerd 1.7 features GKE version 1.32 GKE version 1.33 Migrate nodes to containerd 2 Yes Linux cgroupv1 mode GKE version 1.31 TBD Migrate nodes to Linux cgroupv2 No Vulnerability scanning removal from GKE standard edition July 23, 2024 July 31, 2025 Vulnerability scanning removal from GKE Standard edition No TLS certificates signed with SHA-1 algorithm GKE version 1.24 GKE version 1.29 SHA-1 TLS certificates support removal Yes Built-in authentication plugin for Kubernetes clients GKE version 1.22 GKE version 1.25 Deprecated authentication plugin for Kubernetes clients No PodSecurityPolicy GKE version 1.21 GKE version 1.25 PodSecurityPolicy deprecation Yes Docker-based node images GKE version 1.20 GKE version 1.24 Docker node image deprecation Yes X.509 Common Name field in webhook certificates GKE version 1.19 GKE version 1.23 Webhook certificates CN field deprecation Yes Kubernetes API deprecations The following table provides an overview of Kubernetes APIs that are deprecated and no longer served, sorted by Kubernetes version: Kubernetes version More information Does GKE detect and report usage?
+- 1.32 Kubernetes 1.32 deprecated APIs Yes 1.29 Kubernetes 1.29 deprecated APIs Yes 1.27 Kubernetes 1.27 deprecated APIs Yes 1.26 Kubernetes 1.26 deprecated APIs Yes 1.25 Kubernetes 1.25 deprecated APIs Yes 1.22 Kubernetes 1.22 deprecated APIs , Kubernetes Ingress Beta APIs removed in GKE 1.23 Yes Other feature deprecations The following table provides information on deprecations and removals that are caused by other upstream providers that are not part of the Kubernetes open source project.
+- In the next sections, learn about how GKE makes this process easier by detecting usage of deprecated Kubernetes features and APIs, sharing insights about this usage, and providing recommendations about how to migrate to features and APIs compatible with upcoming minor versions.
+- Kubernetes feature deprecations The following table outlines ongoing GKE feature deprecations, as well as the version in which those features are no longer supported: Name Deprecated Removed More information Does GKE detect and report usage?
 

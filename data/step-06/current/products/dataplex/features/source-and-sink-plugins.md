@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.613Z"
+generated_at: "2026-04-12T12:13:48.472Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Source and Sink plugins"
 feature_slug: "source-and-sink-plugins"
 latest_feature_date: "2022-12-01"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataplex/docs/release-notes"
   - "https://docs.cloud.google.com/dataplex/docs/terraform"
   - "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+  - "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector"
+  - "https://docs.cloud.google.com/dataplex/docs/integrate-data-sources"
 keywords:
   - "source"
   - "and"
@@ -26,7 +27,7 @@ keywords:
 # Source and Sink plugins
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,36 +39,24 @@ Source and Sink plugins for Cloud Data Fusion support ingesting and processing d
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
 - [https://docs.cloud.google.com/dataplex/docs/terraform](https://docs.cloud.google.com/dataplex/docs/terraform)
 - [https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources](https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources)
+- [https://docs.cloud.google.com/dataplex/docs/develop-custom-connector](https://docs.cloud.google.com/dataplex/docs/develop-custom-connector)
+- [https://docs.cloud.google.com/dataplex/docs/integrate-data-sources](https://docs.cloud.google.com/dataplex/docs/integrate-data-sources)
 
 ## Supporting Pages
-
-### Knowledge Catalog release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 132
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- May 23, 2022 Feature The Dataplex Source and Sink plugins are available in Public Preview for ingesting and processing data in Cloud Data Fusion versions 6.6.0 and later.
-- December 01, 2022 Feature Dataplex Source and Sink plugins are generally available ( GA ) in Cloud Data Fusion for ingesting and processing data.
-- Dataplex fully automates the process of ingesting and indexing metadata, while performing source IAM permission checks, providing a governed single-pane-of-glass experience for data and AI artifacts across Cloud services.
-- Dataplex fully automates the process of ingesting and indexing metadata, while performing source IAM permission checks, providing a governed single-pane-of-glass experience for data and AI artifacts across Cloud services.
 
 ### "Provision Dataplex Universal Catalog resources with Terraform \_|\_ Knowledge\
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/terraform](https://docs.cloud.google.com/dataplex/docs/terraform)
 - Source ID: `site-api-reference`
-- Final score: 108
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 147
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - The following table lists the Terraform resources available for Dataplex Universal Catalog: Service Terraform resources Data sources Dataplex Universal Catalog google dataplex aspect type google dataplex aspect type iam google dataplex asset google dataplex asset iam google dataplex datascan google dataplex datascan iam google dataplex entry google dataplex entry group google dataplex entry group iam google dataplex entry type google dataplex entry type iam google dataplex lake google dataplex lake iam google dataplex task google dataplex task iam google dataplex zone google dataplex zone iam google dataplex aspect type iam policy google dataplex asset iam policy google dataplex datascan iam policy google dataplex entry group iam policy google dataplex entry type iam policy google dataplex lake iam policy google dataplex task iam policy google dataplex zone iam policy Terraform-based guides for Dataplex Universal Catalog The following table lists Terraform-based how-to guides and tutorials for Dataplex Universal Catalog: Guide Details Manage data quality rules as code with Terraform This tutorial explains how to manage Dataplex Universal Catalog data quality rules as code with Terraform, Cloud Build, and GitHub.
@@ -79,13 +68,39 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources](https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources)
 - Source ID: `site-docs-root`
-- Final score: 104
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 126
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Required roles To get the permissions that you need to create and manage entries, ask your administrator to grant you the following IAM roles on the resource: Full set of permissions on entries, entry groups, and entry types: Dataplex Catalog Admin ( roles/dataplex.catalogAdmin ) Create and manage metadata resources in Knowledge Catalog, including entries, entry groups, and entry types: Dataplex Catalog Editor ( roles/dataplex.catalogEditor ) Full access to entry-related operations: Dataplex Entry and EntryLink Owner ( roles/dataplex.entryOwner ) View entries, entry groups, and entry types, and IAM policies associated with them: Dataplex Catalog Viewer ( roles/dataplex.catalogViewer ) Use aspect types to create aspects of those types, when creating custom entries: Dataplex Aspect Type User ( roles/dataplex.aspectTypeUser ) Create and manage entry groups: Dataplex Entry Group Owner ( roles/dataplex.entryGroupOwner ) Create and manage entry types: Dataplex Entry Type Owner ( roles/dataplex.entryTypeOwner ) Use entry types to create and modify entries of those types: Dataplex Entry Type User ( roles/dataplex.entryTypeUser ) For more information about granting roles, see Manage access to projects, folders, and organizations .
 - For more information, see Set up authentication for a local development environment . using Google.Api.Gax ; using Google.Api.Gax.ResourceNames ; using Google.Cloud.Dataplex.V1 ; using System ; public sealed partial class GeneratedCatalogServiceClientSnippets { /// <summary>Snippet for ListEntryGroups</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void ListEntryGroupsRequestObject () { // Create client CatalogServiceClient catalogServiceClient = CatalogServiceClient .
 - For more information, see Set up authentication for a local development environment . using Google.Api.Gax ; using Google.Api.Gax.ResourceNames ; using Google.Cloud.Dataplex.V1 ; using System ; public sealed partial class GeneratedCatalogServiceClientSnippets { /// <summary>Snippet for ListEntryTypes</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void ListEntryTypesRequestObject () { // Create client CatalogServiceClient catalogServiceClient = CatalogServiceClient .
 - For more information, see Set up authentication for a local development environment . using Google.Api.Gax.ResourceNames ; using Google.Cloud.Dataplex.V1 ; using Google.LongRunning ; public sealed partial class GeneratedCatalogServiceClientSnippets { /// <summary>Snippet for CreateEntryGroup</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void CreateEntryGroupRequestObject () { // Create client CatalogServiceClient catalogServiceClient = CatalogServiceClient .
+
+### "Develop a custom connector for metadata import \_|\_ Knowledge Catalog \_\
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/develop-custom-connector](https://docs.cloud.google.com/dataplex/docs/develop-custom-connector)
+- Source ID: `site-docs-root-2`
+- Final score: 118
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Update the src/entry builder.py file with shared methods for applying Spark transformations. """Creates entries with PySpark.""" import pyspark.sql.functions as F from pyspark.sql.types import StringType from src.constants import EntryType , SOURCE TYPE from src import name builder as nb @F . udf ( returnType = StringType ()) def choose metadata type udf ( data type : str ): """Choose the metadata type based on Oracle native type.""" if data type . startswith ( "NUMBER" ) or data type in [ "FLOAT" , "LONG" ]: return "NUMBER" if data type . startswith ( "VARCHAR" ) or data type . startswith ( "NVARCHAR2" ): return "STRING" if data type == "DATE" : return "DATETIME" return "OTHER" def create entry source ( column ): """Create Entry Source segment.""" return F . named struct ( F . lit ( "display name" ), column , F . lit ( "system" ), F . lit ( SOURCE TYPE )) def create entry aspect ( entry aspect name ): """Create aspect with general information (usually it is empty).""" return F . create map ( F . lit ( entry aspect name ), F . named struct ( F . lit ( "aspect type" ), F . lit ( entry aspect name ), F . lit ( "data" ), F . create map () ) ) def convert to import items ( df , aspect keys ): """Convert entries to import items.""" entry columns = [ "name" , "fully qualified name" , "parent entry" , "entry source" , "aspects" , "entry type" ] Puts entry to "entry" key, a list of keys from aspects in "aspects keys" and "aspects" string in "update mask" return df . withColumn ( "entry" , F . struct ( entry columns )) \ . withColumn ( "aspect keys" , F . array ([ F . lit ( key ) for key in aspect keys ])) \ . withColumn ( "update mask" , F . array ( F . lit ( "aspects" ))) \ . drop ( entry columns ) def build schemas ( config , df raw schemas ): """Create a dataframe with database schemas from the list of usernames.
+- Fields are becoming a part of a schema struct There is also an entry aspect that is repeats entry type as aspect type entry aspect name = nb . create entry aspect name ( config , entry type ) df = df . withColumn ( "schema" , F . create map ( F . lit ( schema key ), F . named struct ( F . lit ( "aspect type" ), F . lit ( schema key ), F . lit ( "data" ), F . create map ( F . lit ( "fields" ), F . col ( "fields" ))) ) ) \ . withColumn ( "entry aspect" , create entry aspect ( entry aspect name )) \ . drop ( "fields" ) Merge separate aspect columns into the one map called 'aspects' df = df . select ( F . col ( "TABLE NAME" ), F . map concat ( "schema" , "entry aspect" ) . alias ( "aspects" )) Define user-defined functions to fill the general information and hierarchy names create name udf = F . udf ( lambda x : nb . create name ( config , entry type , db schema , x ), StringType ()) create fqn udf = F . udf ( lambda x : nb . create fqn ( config , entry type , db schema , x ), StringType ()) parent name = nb . create parent name ( config , entry type , db schema ) full entry type = entry type . value . format ( project = config [ "target project id" ], location = config [ "target location id" ]) Fill the top-level fields column = F . col ( "TABLE NAME" ) df = df . withColumn ( "name" , create name udf ( column )) \ . withColumn ( "fully qualified name" , create fqn udf ( column )) \ . withColumn ( "entry type" , F . lit ( full entry type )) \ . withColumn ( "parent entry" , F . lit ( parent name )) \ . withColumn ( "entry source" , create entry source ( column )) \ . drop ( column ) df = convert to import items ( df , [ schema key , entry aspect name ]) return df Note the following: The methods build the metadata resources that the connector creates for your Oracle resources.
+- ArgumentParser () Dataplex arguments parser . add argument ( "--target project id" , type = str , required = True , help = "The name of the target Google Cloud project to import the metadata into." ) parser . add argument ( "--target location id" , type = str , required = True , help = "The target Google Cloud location where the metadata will be imported into." ) parser . add argument ( "--target entry group id" , type = str , required = True , help = "The ID of the entry group to import metadata into. " "The metadata will be imported into entry group with the following" "full resource name: projects/$ {target project id} /" "locations/$ {target location id} /entryGroups/$ {target entry group id} ." ) Oracle arguments parser . add argument ( "--host port" , type = str , required = True , help = "Oracle host and port number separated by the colon (:)." ) parser . add argument ( "--user" , type = str , required = True , help = "Oracle User." ) parser . add argument ( "--password-secret" , type = str , required = True , help = "Secret resource name in the Secret Manager for the Oracle password." ) parser . add argument ( "--database" , type = str , required = True , help = "Source Oracle database." ) Google Cloud Storage arguments It is assumed that the bucket is in the same region as the entry group parser . add argument ( "--output bucket" , type = str , required = True , help = "The Cloud Storage bucket to write the generated metadata import file." ) parser . add argument ( "--output folder" , type = str , required = True , help = "A folder in the Cloud Storage bucket, to write the generated metadata import files." ) return vars ( parser . parse known args ()[ 0 ]) In production environments, we recommend that you store the password in Secret Manager .
+- Install PySpark: pip install pyspark Install requirements: pip install -r requirements.txt The following requirements are installed: google-cloud-dataplex==2.2.2 google-cloud-storage google-cloud-secret-manager Update the oracle connector.py file with code to read data from an Oracle data source and return DataFrames. """Reads Oracle using PySpark.""" from typing import Dict from pyspark.sql import SparkSession , DataFrame from src.constants import EntryType SPARK JAR PATH = "/opt/spark/jars/ojdbc11.jar" class OracleConnector : """Reads data from Oracle and returns Spark Dataframes.""" def init ( self , config : Dict [ str , str ]): PySpark entrypoint self . spark = SparkSession . builder . appName ( "OracleIngestor" ) \ . config ( "spark.jars" , SPARK JAR PATH ) \ . getOrCreate () self . config = config self . url = f "jdbc:oracle:thin:@ { config [ 'host port' ] } : { config [ 'database' ] } " def execute ( self , query : str ) - > DataFrame : """A generic method to execute any query.""" return self . spark . read . format ( "jdbc" ) \ . option ( "driver" , "oracle.jdbc.OracleDriver" ) \ . option ( "url" , self . url ) \ . option ( "query" , query ) \ . option ( "user" , self . config [ "user" ]) \ . option ( "password" , self . config [ "password" ]) \ . load () def get db schemas ( self ) - > DataFrame : """In Oracle, schemas are usernames.""" query = "SELECT username FROM dba users" return self . execute ( query ) def get columns ( self , schema name : str , object type : str ) - > str : """Gets a list of columns in tables or views in a batch.""" Every line here is a column that belongs to the table or to the view.
+
+### Integrate data sources with Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/integrate-data-sources](https://docs.cloud.google.com/dataplex/docs/integrate-data-sources)
+- Source ID: `site-docs-root-2`
+- Final score: 118
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Enable the API Integrate AlloyDB for PostgreSQL After you enable the Knowledge Catalog integration on your AlloyDB for PostgreSQL cluster Preview , Knowledge Catalog automatically retrieves metadata from AlloyDB for PostgreSQL resources, including clusters, instances, databases, tables, columns, and views.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- Integrate Cloud SQL After you enable the Knowledge Catalog integration on your Cloud SQL instance , Knowledge Catalog automatically retrieves metadata from Cloud SQL resources, including instances, databases, tables, columns, and views.
+- Home Documentation Data analytics Knowledge Catalog Guides Send feedback Integrate data sources with Knowledge Catalog Stay organized with collections Save and categorize content based on your preferences.
 

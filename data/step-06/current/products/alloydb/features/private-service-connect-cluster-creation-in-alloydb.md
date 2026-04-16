@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.580Z"
+generated_at: "2026-04-12T12:07:33.829Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "Private Service Connect cluster creation in AlloyDB"
 feature_slug: "private-service-connect-cluster-creation-in-alloydb"
 latest_feature_date: "2025-06-02"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect"
+  - "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
+  - "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+  - "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
 keywords:
   - "Cloud Console create PSC cluster"
   - "enable PSC on AlloyDB cluster"
@@ -23,7 +26,7 @@ keywords:
 # Private Service Connect cluster creation in AlloyDB
 
 Product: AlloyDB
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,11 +36,46 @@ AlloyDB enables creating clusters with Private Service Connect through the Googl
 
 AlloyDB enables creating clusters with Private Service Connect through the Google Cloud console.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
+- [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- [https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell](https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell)
+- [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Private Service Connect overview \_|\_ AlloyDB for PostgreSQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/about-private-service-connect](https://docs.cloud.google.com/alloydb/docs/about-private-service-connect)
+- Source ID: `site-docs-root`
+- Final score: 102
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Monitor the health of your clusters and instances \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances](https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances)
+- Source ID: `site-docs-reference-2`
+- Final score: 96
+- Re-rank relevance: N/A
+
+### "Quickstart: Connect to AlloyDB from Cloud Shell using the Auth Proxy \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell](https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell)
+- Source ID: `site-docs-root`
+- Final score: 94
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Create and query an AlloyDB database using the Google Cloud console \_|\_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect](https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect)
+- Source ID: `site-docs-root`
+- Final score: 86
+- Re-rank relevance: N/A
 

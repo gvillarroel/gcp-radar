@@ -1,17 +1,15 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:59.252Z"
+generated_at: "2026-04-14T15:13:20.423Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "LANDSAT/GLS1975_MOSAIC"
 feature_slug: "landsat-gls1975-mosaic"
 latest_feature_date: "2012-03-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://developers.google.com/earth-engine/datasets/tags/landuse-landcover"
-  - "https://developers.google.com/earth-engine/datasets/tags/landcover"
-  - "https://developers.google.com/earth-engine/datasets/catalog"
+  - "https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_GLS1975_MOSAIC"
 keywords:
   - "landsat"
   - "gls1975"
@@ -26,7 +24,7 @@ keywords:
 # LANDSAT/GLS1975_MOSAIC
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +36,49 @@ Landsat Global Land Survey 1975 Mosaic provides a mosaic of 1975 Landsat imagery
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
-- [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
-- [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
+- [https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_GLS1975_MOSAIC](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_GLS1975_MOSAIC)
 
 ## Supporting Pages
 
-### "Datasets tagged landuse-landcover in Earth Engine \_|\_ Earth Engine Data\
+### Landsat Global Land Survey 1975 Mosaic | Earth Engine Data Catalog | Google for Developers
 
-- URL: [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
-- Source ID: `site-docs-root-3`
-- Final score: 158
+- URL: [https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_GLS1975_MOSAIC](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_GLS1975_MOSAIC)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 519
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
-- Designed to continuously represent Earth's terrestrial surface as a proportion of basic vegetation traits, it provides a gradation of three surface cover components: percent tree cover, percent … annual geophysical global landuse-landcover modis nasa MapBiomas Land Use and Land Cover - Bolivia V1.0 MapBiomas Land Use and Land Cover (LULC) dataset for Bolivia is produced annually by the MapBiomas Project using Landsat satellite imagery and machine learning classification techniques.
-- These data support the National Land Cover Database (NLCD) project, which is managed by the US Geological … forest gtac landuse-landcover redcastle-resources usda usfs VNP22Q2: Land Surface Phenology Yearly L3 Global 500m SIN Grid The Suomi National Polar-Orbiting Partnership (Suomi NPP) NASA Visible Infrared Imaging Radiometer Suite (VIIRS) Land Cover Dynamics data product provides global land surface phenology (GLSP) metrics at yearly intervals.
-- The project is coordinated by the European Environment Agency (EEA) in the frame of the EU … copernicus eea esa eu landcover landuse-landcover Copernicus Global Land Cover Layers: CGLS-LC100 Collection 3 The Copernicus Global Land Service (CGLS) is earmarked as a component of the Land service to operate a multi-purpose service component that provides a series of bio-geophysical products on the status and evolution of land surface at global scale.
+- A few gaps in the Landsat 1&ndash;3 data have been filled with scenes acquired by Landsat 4&ndash;5 during the years … LANDSAT/GLS1975_MOSAIC, gls,landsat,radiance,satellite-imagery,usgs 1975-01-01T00:00:00Z/1976-01-01T00:00:00Z -90 -180 90 180 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],["The Global Land Survey (GLS) 1975 dataset, provided by USGS, offers Landsat imagery primarily from 1972-1983, with some data from 1982-1987 filling gaps.
+- ImageCollection ( 'LANDSAT/GLS1975_MOSAIC' ); var falseColor = dataset . select ([ '30' , '20' , '10' ]); var falseColorVis = { gamma : 1.6 , }; Map . setCenter ( 44.517 , 25.998 , 5 ); Map . addLayer ( falseColor , falseColorVis , 'False Color' ); Open in Code Editor Landsat Global Land Survey 1975 Mosaic The Global Land Survey (GLS) 1975 is a global collection of imagery from the Landsat Multispectral Scanner (MSS).
+- Dataset Availability 1975-01-01T00:00:00Z–1976-01-01T00:00:00Z Dataset Producer USGS Earth Engine Snippet ee.ImageCollection("LANDSAT/GLS1975_MOSAIC") open_in_new Cadence 1 Year Tags gls landsat radiance satellite-imagery usgs Description The Global Land Survey (GLS) 1975 is a global collection of imagery from the Landsat Multispectral Scanner (MSS).
+- The data, available from 1975-01-01T00:00:00Z to 1976-01-01T00:00:00Z, is accessible via Earth Engine, utilizing the code `ee.ImageCollection(\"LANDSAT/GLS1975_MOSAIC\")`.\n"]] GitHub Earth Engine on GitHub Medium Follow our blog on Medium GIS Stack Exchange Ask questions using the google-earth-engine tag Twitter Follow @googleearth on Twitter Videos Earth Engine on YouTube Connect Blog Bluesky Instagram LinkedIn X (Twitter) YouTube Programs Google Developer Program Google Developer Groups Google Developer Experts Accelerators Google Cloud & NVIDIA Developer consoles Google API Console Google Cloud Platform Console Google Play Console Firebase Console Actions on Google Console Cast SDK Developer Console Chrome Web Store Dashboard Google Home Developer Console Android Chrome Firebase Google Cloud Platform Google AI All products Terms Privacy Manage cookies English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어
 
-### "Datasets tagged landcover in Earth Engine \_|\_ Earth Engine Data Catalog\
+### "ee.Algorithms.Landsat.calibratedRadiance \_|\_ Google Earth Engine \_|\_\
 
-- URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
-- Source ID: `site-docs-root`
-- Final score: 154
+- URL: [https://developers.google.com/earth-engine/apidocs/ee-algorithms-landsat-calibratedradiance](https://developers.google.com/earth-engine/apidocs/ee-algorithms-landsat-calibratedradiance)
+- Source ID: `site-docs-reference`
+- Final score: 81
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Products Google Earth Engine Reference Send feedback ee.Algorithms.Landsat.calibratedRadiance Stay organized with collections Save and categorize content based on your preferences.
+- Usage Returns ee.Algorithms.Landsat.calibratedRadiance(image) Image Argument Type Details image Image The input Landsat image.
+
+### Landsat Algorithms \_|\_ Google Earth Engine \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/guides/landsat](https://developers.google.com/earth-engine/guides/landsat)
+- Source ID: `site-docs-reference`
+- Final score: 80
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
-- GPP values … global global-pasture-watch land landcover landuse plant-productivity GlobCover: Global Land Cover Map GlobCover 2009 is a global land cover map based on ENVISAT's Medium Resolution Imaging Spectrometer (MERIS) Level 1B data acquired in full resolution mode with a spatial resolution of approximately 300 meters. esa landcover landuse-landcover Global 3-class PALSAR-2/PALSAR Forest/Non-Forest Map A newer version of this dataset with 4 classes for 2017-2020 can be found in JAXA/ALOS/PALSAR/YEARLY/FNF4 The global forest/non-forest map (FNF) is generated by classifying the SAR image (backscattering coefficient) in the global 25m resolution PALSAR-2/PALSAR SAR mosaic so that strong and low backscatter pixels … alos alos2 classification eroc forest forest-biomass Global 4-class PALSAR-2/PALSAR Forest/Non-Forest Map The global forest/non-forest map (FNF) is generated by classifying the SAR image (backscattering coefficient) in the global 25m resolution PALSAR-2/PALSAR SAR mosaic so that strong and low backscatter pixels are assigned as "forest" and "non-forest", respectively.
-- The temporal dynamics of human settlements … landcover landsat-derived population sentinel1-derived settlement urban Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],["Datasets primarily provide global, regional, or national land cover and related data.
-- The project is coordinated by the European Environment Agency (EEA) in the frame of the EU … copernicus eea esa eu landcover landuse-landcover Copernicus Global Land Cover Layers: CGLS-LC100 Collection 3 The Copernicus Global Land Service (CGLS) is earmarked as a component of the Land service to operate a multi-purpose service component that provides a series of bio-geophysical products on the status and evolution of land surface at global scale.
-
-### Earth Engine Data Catalog \_|\_ Google for Developers
-
-- URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- Source ID: `site-docs-root`
-- Final score: 144
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Mosaicked burn severity images are compiled annually for each year by US State and the … eros fire forest gtac landcover landsat-derived Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density : Daily, Multi-Year Reprocessed Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density is an oceanographic product that provides daily, global, and gap-free Level-4 (L4) analyses of Sea Surface Salinity (SSS) and Sea Surface Density (SSD) at a high resolution of 1/8 degree.
-- It … landsat landsat-composite ndwi surface-ground-water usgs Landsat Global Land Survey 1975 The Global Land Survey (GLS) 1975 is a global collection of imagery from the Landsat Multispectral Scanner (MSS).
-- LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance LandScan High Definition Data for Ukraine, January 2022 LandScan High Definition (HD) provides gridded population estimates at 3 arc-second ( 100m) resolution.
-- The Operational Land Imager (OLI) is housed aboard the joint NASA/USGS Landsat 8 and Landsat 9 satellites, while the Multi-Spectral … landsat nasa satellite-imagery sentinel usgs HLSS30: HLS Sentinel-2 Multi-spectral Instrument Surface Reflectance Daily Global 30m The Harmonized Landsat Sentinel-2 (HLS) project provides consistent surface reflectance data from the Operational Land Imager (OLI) aboard the joint NASA/USGS Landsat 8 satellite and the Multi-Spectral Instrument (MSI) aboard Europe's Copernicus Sentinel-2A satellites.
+- Landsat . simpleCloudScore ( mosaic ); Map . addLayer ( scored mosaic , { bands : [ 'B4' , 'B3' , 'B2' ], max : 0.4 }, 'TOA mosaic' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a Landsat 8 TOA collection, make 15-day mosaic, set SENSOR ID property. mosaic = ( ee .
+- ImageCollection ( 'LANDSAT/LC09/C02/T1 L2' ) Simple cloud score For scoring Landsat pixels by their relative cloudiness, Earth Engine provides a rudimentary cloud scoring algorithm in the ee.Algorithms.Landsat.simpleCloudScore() method. (For details on the implementation, see this Code Editor sample script ).
+- To apply this algorithm to an Earth Engine mosaic of Landsat scenes, set the SENSOR ID property: Code Editor (JavaScript) // Load a Landsat 8 TOA collection, make 15-day mosaic, set SENSOR ID property. var mosaic = ee .
+- ImageCollection ( 'LANDSAT/LC08/C02/T1 TOA' ) . filterDate ( '2019-06-01' , '2019-06-16' ). mosaic () . set ( 'SENSOR ID' , 'OLI TIRS' ); // Cloud score the mosaic and display the result. var scored mosaic = ee .
 

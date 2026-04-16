@@ -1,33 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:30:14.938Z"
+generated_at: "2026-04-14T17:29:37.076Z"
 product_name: "Vertex AI Search"
 product_slug: "vertex-ai-search"
 feature_name: "Citations with metadata for Vertex AI Search summaries"
 feature_slug: "citations-with-metadata-for-vertex-ai-search-summaries"
 latest_feature_date: "2023-12-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search"
   - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
-  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
 keywords:
   - "citations"
-  - "with"
   - "metadata"
-  - "for"
   - "vertex"
   - "ai"
   - "search"
   - "summaries"
+  - "now"
+  - "provides"
 ---
 
 # Citations with metadata for Vertex AI Search summaries
 
 Product: Vertex AI Search
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,67 +38,52 @@ Vertex AI Search now provides citation metadata for summaries, including referen
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search)
 - [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
-- [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search)
 
 ## Supporting Pages
-
-### "Vertex AI APIs for building search and RAG experiences \_|\_ Vertex AI Search\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
-- Source ID: `site-api-reference`
-- Final score: 226
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Vertex AI Search works as an out-of-the-box semantic & keyword search engine for RAG with the ability to process a variety of document types and with connectors to a variety of source systems including BigQuery and many third party systems.
-- Home Documentation AI and ML Vertex AI Search Send feedback Vertex AI APIs for building search and RAG experiences Stay organized with collections Save and categorize content based on your preferences.
-- For more information, see Grounding with Google Search in the Generative AI on Vertex AI documentation.
-- For more information, see Grounding with Google Search in the Generative AI on Vertex AI documentation.
-
-### "Introduction to custom search \_|\_ Vertex AI Search \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search](https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search)
-- Source ID: `site-api-reference`
-- Final score: 220
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The page also provides links to the available features, tutorials, and checklists, to get you started with Vertex AI Search for custom apps.
-- Data ingestion : Vertex AI Search offers different types of ingestion for data from different sources, such as: Crawling for website data Ingesting structured and unstructured data from Cloud Storage and BigQuery or through the REST API Search and browse configuration : Field settings : Control how fields are configured for search and answer generation, such as searchable, retrievable, or indexable.
-- Retrieval and ranking: There are several sub-components to retrieval and ranking of results: Query understanding for search: Vertex AI Search analyzes a search query using the following: Natural language processing: To understand the intent.
-- Different components of custom search The components of Vertex AI Search for custom search can be explained as follows: Data store : Your content from different data sources is stored in a Vertex AI Search data store.
 
 ### "MCP Tools Reference: discoveryengine.googleapis.com \_|\_ Vertex AI Search\
 
 - URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
 - Source ID: `site-docs-reference-2`
-- Final score: 220
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- NumberConstraint JSON representation { "fieldName" : string , "comparison" : enum ( Comparison ) , "value" : number , "querySegment" : string } Fields fieldName string Name of the numerical field as defined in the schema. comparison enum ( Comparison ) The comparison operation performed between the field value and the value specified in the constraint. value number The value specified in the numerical constraint. querySegment string Identifies the keywords within the search query that match a filter.
-- Home Documentation AI and ML Vertex AI Search Reference Send feedback MCP Tools Reference: discoveryengine.googleapis.com Stay organized with collections Save and categorize content based on your preferences.
-- CitationSource JSON representation { "referenceIndex" : string } Fields referenceIndex string ( int64 format) Document reference index from SummaryWithMetadata.references.
-- SummaryWithMetadata JSON representation { "summary" : string , "citationMetadata" : { object ( CitationMetadata ) } , "references" : [ { object ( Reference ) } ] , "blobAttachments" : [ { object ( BlobAttachment ) } ] } Fields summary string Summary text with no citation information. citationMetadata object ( CitationMetadata ) Citation metadata for given summary. references[] object ( Reference ) Document References. blobAttachments[] object ( BlobAttachment ) Output only.
-
-### Get search results \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results](https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results)
-- Source ID: `site-iam-reference`
-- Final score: 218
+- Final score: 109
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- In this example response, the color green was used to refine search results by issuing a new search request with the filter field specified as gs.color: ANY("green") : { "guidedSearchResult" : { "refinementAttributes" : [ { "attributeKey" : " gs.color" , "attributeValue" : "green" }, { "attributeKey" : " gs.category" , "attributeValue" : "shoe" } ] } } C# For more information, see the Vertex AI Search C# API reference documentation .
-- Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:search" \ -d '{ "servingConfig": "projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search", "query": " QUERY ", "pageSize": " PAGE SIZE ", "offset": " OFFSET ", "orderBy": " ORDER BY ", "params": {"user country code": " USER COUNTRY CODE ", "searchType": " SEARCH TYPE "}, "filter": " FILTER ", "boostSpec": " BOOST SPEC ", "contentSearchSpec": { "searchResultMode": " RESULT MODE " }, "userPseudoId": " USER PSEUDO ID ", "dataStoreSpecs": [{" DATA STORE SPEC "}] }' Replace the following: PROJECT ID : the ID of your Google Cloud project.
-- Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:search" \ -d '{ "query": " QUERY ", "userPseudoId": " USER PSEUDO ID ", "pageSize": " PAGE SIZE ", "offset": " OFFSET ", "orderBy": " ORDER BY ", "filter": " FILTER ", "boostSpec": " BOOST SPEC ", "facetSpec": " FACET SPEC ", "queryExpansionSpec": " QUERY EXPANSION SPEC ", "spellCorrectionSpec": " SPELL CORRECTION SPEC ", "contentSearchSpec": " CONTENT SEARCH SPEC ", "dataStoreSpecs": [{" DATA STORE SPEC "}], }' Replace the following: PROJECT ID : the ID of your Google Cloud project.
-- Run the following curl command to get search results: Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H "Content-Type: application/json" \ "https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:searchLite?key= API KEY " \ -d '{ "servingConfig": "projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search", "query": " QUERY ", "userPseudoId": " USER PSEUDO ID " }' Replace the following: PROJECT ID : the ID of your Google Cloud project.
+- ContentSearchSpec JSON representation { "snippetSpec" : { object ( SnippetSpec ) } , "summarySpec" : { object ( SummarySpec ) } , "extractiveContentSpec" : { object ( ExtractiveContentSpec ) } , "searchResultMode" : enum ( SearchResultMode ) , "chunkSpec" : { object ( ChunkSpec ) } } Fields snippetSpec object ( SnippetSpec ) If snippetSpec is not specified, snippets are not included in the search response. summarySpec object ( SummarySpec ) If summarySpec is not specified, summaries are not included in the search response. extractiveContentSpec object ( ExtractiveContentSpec ) If there is no extractive content spec provided, there will be no extractive answer in the search response. searchResultMode enum ( SearchResultMode ) Specifies the search result mode.
+- Home Documentation AI and ML Vertex AI Search Reference Send feedback MCP Tools Reference: discoveryengine.googleapis.com Stay organized with collections Save and categorize content based on your preferences.
+- Filtering in Vertex AI Search is done by mapping the LHS filter key to a key property defined in the Vertex AI Search backend -- this mapping is defined by the customer in their schema.
+- The chunks mode is used when SearchRequest.ContentSearchSpec.search result mode is set to CHUNKS . includeCitations boolean Specifies whether to include citations in the summary.
+
+### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
+- Source ID: `site-docs-reference`
+- Final score: 96
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- SQL is a standard language that is used by many different database systems.", "groundingScore" 0.9 "groundingSupports": [ { "endIndex": "41", "sources": [ { "referenceId": "1" } ] "groundingScore": 0.9 "groundingCheckRequired": true }, { "startIndex": "42", "endIndex": "144", "sources": [ { "referenceId": "1" } ] "groundingScore": 0.8 "groundingCheckRequired": true }, { "startIndex": "267", "endIndex": "342", "sources": [ { "referenceId": "2" } ] "groundingScore": 0.6 "groundingCheckRequired": true } ], "references": [ { "chunkInfo": { "content": "There are a lot of Databases available in the market such as MS Access, Oracle and many others.For you to write programs that interact with these databases easily, there has to be a way where you could get information from all these databases using the same method.For this purpose SQL was developed.It is a kind of language (simple when compared to the likes of C or C++) which enables you to ask all your queries to a database without bothering about the exact type of database.When you use this Query the database engine would first find the table called people.Then it would find a column called firstname.Next it would compare all the values in that column with 'Reena'.Finally it would return all the details wherever it finds a match for the firstname.When you write a database program in VC++ or Java or any other language for that matter, you would make a database connection to your database and then you would query the database using SQL queries.When you query the database with any SQL query the database returns a recordset.A recordset is basically a set of records (all the entries that your query returns).This recordset is received in your program and all languages have a data structure which represents a recordset.", "documentMetadata": { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d993d922043374f5ef7ba297c158b106", "uri": "gs://my-bucket-123/documents/058dee0ec23a3e92f9bfd7cd29840e8f.txt" "structData": { "fields": [ { "key": "cdoc url" "value": { "stringValue": "058dee0ec23a3e92f9bfd7cd29840e8f" } }, { "key": "doc id" "value": { "stringValue": "d993d922043374f5ef7ba297c158b106" } } ] } } } }, { "chunkInfo": { "content": "The Structured Query Language (SQL) is a database management programming language.SQL is a tool for accessing databases, and more specifically, relational databases, and can be used with different database products.This chapter will prepare you to learn basic database management using this language.SQLite – To implement SQL as a library, you need SQLite.SQLite is intended to provide users and programs a way to store data using a SQL interface within the program.SQLite3 can be used to manipulate SQLite databases for major Linux distros.SQL is used to access relational databases.Each database contains more or less tables which in turn contain more or less rows and columns.Hereby a single row is seen as a separate object with features represented by the tables' columns.To access a table's data you first have to connect to its database.With the same table, the query SELECT FROM T WHERE C1 = 1 will result in all the elements of all the rows where the value of column C1 is '1' being shown.A WHERE clause specifies that a SQL statement should only affect rows that meet specified criteria.The criteria are expressed in the form of predicates.WHERE clauses are not mandatory clauses of SQL statements, but should be used to limit the number of rows affected by a SQL DML statement or returned by a query.", "documentMetadata": { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/3825eac51ef9e934bbc558faa42f4c71", "uri": "gs://my-bucket-123/documents/26f5872b0719790cb966a697bfa1ea27.txt" "structData": { "fields": [ { "key": "cdoc url" "value": { "stringValue": "26f5872b0719790cb966a697bfa1ea27" } }, { "key": "doc id" "value": { "stringValue": "3825eac51ef9e934bbc558faa42f4c71" } } ] } } } }, { "chunkInfo": { "content": "This chapter focuses on using Paradox as a client/server development tool.It does not talk about connecting; it is assumed you have already connected.If you are having trouble connecting to a particular SQL server, then refer to the Connection Guide for that particular server.This chapter does review what a user can do interactively with Paradox and how to use ObjectPAL with SQL servers.Structured Query Language (SQL) was developed to create a standard for accessing database information.The ANSI standard for SQL allows a user to become familiar with the commands needed to query many different types of data.After you learn ANSI SQL, you then can query many different databases.Is SQL a solid standard?Yes and no.Yes, the core ANSI SQL commands are solid and consistent from vendor to vendor.Every vendor, however, adds capability to its version of SQL.These improvements are expected because ANSI SQL does not go far enough to cover every feature of every high-end DBMS.The SQL standard is used by many companies for their high-end products.They include Oracle, Sybase, Microsoft SQL, Informix, and Interbase.Paradox also provides the capability to use standard ANSI SQL commands on local Paradox and dBASE tables.Although SQL by definition is a standard, various flavors are on the market.", "documentMetadata": { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/b3e88db8676b87b99af1e6ecc7d8757f", "uri": "gs://my-bucket-123/documents/073c21335d37d8d14982cb3437a721c0.txt" "structData": { "fields": [ { "key": "cdoc url" "value": { "stringValue": "073c21335d37d8d14982cb3437a721c0" } }, { "key": "doc id" "value": { "stringValue": "b3e88db8676b87b99af1e6ecc7d8757f" } } ] } } } } ], ... "steps": [ { "state": "SUCCEEDED", "description": "Rephrase the query and search.", "actions": [ { "searchAction": { "query": "What is SQL?" }, "observation": { "searchResults": [ { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d993d922043374f5ef7ba297c158b106", "uri": "gs://my-bucket-123/documents/058dee0ec23a3e92f9bfd7cd29840e8f.txt", "chunkInfo": [ { "content": "There are a lot of Databases available in the market such as MS Access, Oracle and many others.For you to write programs that interact with these databases easily, there has to be a way where you could get information from all these databases using the same method.For this purpose SQL was developed.It is a kind of language (simple when compared to the likes of C or C++) which enables you to ask all your queries to a database without bothering about the exact type of database.When you use this Query the database engine would first find the table called people.Then it would find a column called firstname.Next it would compare all the values in that column with 'Reena'.Finally it would return all the details wherever it finds a match for the firstname.When you write a database program in VC++ or Java or any other language for that matter, you would make a database connection to your database and then you would query the database using SQL queries.When you query the database with any SQL query the database returns a recordset.A recordset is basically a set of records (all the entries that your query returns).This recordset is received in your program and all languages have a data structure which represents a recordset." } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/3825eac51ef9e934bbc558faa42f4c71", "uri": "gs://my-bucket-123/documents/26f5872b0719790cb966a697bfa1ea27.txt", "chunkInfo": [ { "content": "The Structured Query Language (SQL) is a database management programming language.SQL is a tool for accessing databases, and more specifically, relational databases, and can be used with different database products.This chapter will prepare you to learn basic database management using this language.SQLite – To implement SQL as a library, you need SQLite.SQLite is intended to provide users and programs a way to store data using a SQL interface within the program.SQLite3 can be used to manipulate SQLite databases for major Linux distros.SQL is used to access relational databases.Each database contains more or less tables which in turn contain more or less rows and columns.Hereby a single row is seen as a separate object with features represented by the tables' columns.To access a table's data you first have to connect to its database.With the same table, the query SELECT FROM T WHERE C1 = 1 will result in all the elements of all the rows where the value of column C1 is '1' being shown.A WHERE clause specifies that a SQL statement should only affect rows that meet specified criteria.The criteria are expressed in the form of predicates.WHERE clauses are not mandatory clauses of SQL statements, but should be used to limit the number of rows affected by a SQL DML statement or returned by a query." } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/b3e88db8676b87b99af1e6ecc7d8757f", "uri": "gs://my-bucket-123/documents/073c21335d37d8d14982cb3437a721c0.txt", "chunkInfo": [ { "content": "This chapter focuses on using Paradox as a client/server development tool.It does not talk about connecting; it is assumed you have already connected.If you are having trouble connecting to a particular SQL server, then refer to the Connection Guide for that particular server.This chapter does review what a user can do interactively with Paradox and how to use ObjectPAL with SQL servers.Structured Query Language (SQL) was developed to create a standard for accessing database information.The ANSI standard for SQL allows a user to become familiar with the commands needed to query many different types of data.After you learn ANSI SQL, you then can query many different databases.Is SQL a solid standard?Yes and no.Yes, the core ANSI SQL commands are solid and consistent from vendor to vendor.Every vendor, however, adds capability to its version of SQL.These improvements are expected because ANSI SQL does not go far enough to cover every feature of every high-end DBMS.The SQL standard is used by many companies for their high-end products.They include Oracle, Sybase, Microsoft SQL, Informix, and Interbase.Paradox also provides the capability to use standard ANSI SQL commands on local Paradox and dBASE tables.Although SQL by definition is a standard, various flavors are on the market." } ] }, ... { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/3dd4014e41044c5dd6a0fe380847f369", "uri": "gs://my-bucket-123/documents/76245cb33a66f4fbd9030a2a11eea00d.txt", "chunkInfo": [ { "content": "SQL injection is a code injection technique that might destroy your database.You can read more here OWASP sql injection testing sheet.Description: SQL injection ( second order) SQL injection vulnerabilities arise when user- controllable data is incorporated sheet into database SQL queries in an unsafe manner.This sheet cheat wiki assumes you have a basic understanding of SQL injection, please go here for an introduction if you are unfamiliar.Bypass login page with sql SQL injection [ closed].Gone are the days when knowledge sheet of just sql SQL Injection or XSS could help you land a lucrative high- paying InfoSec job.There is many sheet differnet variations you would login have probably have to try to make this exploit work ( sql especially if it is sql a blind SQL exploit).SQL injection usually occurs when you ask a user for input, like their.ゲストブック/ コメントの例.Submit Text Post.Get an ad- free experience with special benefits, and directly support Reddit.get reddit premium.SQL Injection Cheat.Many web applications have an authentication system: a user provides a user name and password, the web application checks them and stores the corresponding user id in the session hash.Login # 1 Login # 2 Login # 3 Login # 4." } ] } ] } } ] } ] } } In this example, a support score (groundingScore) is returned for each citation.
+- Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Personalize answers If there is specific information about the user available—for example, data in a profile, you can specify that information in the endUserMetadata object so that the query results can be personalized for the user.
+- Example command and result curl -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json" \ "https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer" \ -d '{ "query": { "text": "Can I upgrade my phone now?"}, "answerGenerationSpec": { "includeCitations": true } "endUserSpec": { "endUserMetadata": [ { "chunkInfo": { "content": "This customer has a Pixel 6 Pro purchased over a period of 24-months starting 2023-01-15.
+- This page provides an overview of supported statements in \u003cb\u003eGoogleSQL\u003c/b\u003e.", "snippetStatus": "SUCCESS" } ] } ] } } ] } ] }, "answerQueryToken": "NMwKDAiFm y2BhC nfrYAxIkNjZkYjg3NjItMDAwMC0yZTBkLTg0ZDAtMDg5ZTA4MmRjYjg0" } Python For more information, see the Vertex AI Search Python API reference documentation .
+
+### "MCP Tools Reference: discoveryengine.googleapis.com \_|\_ Vertex AI Search\
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search)
+- Source ID: `site-docs-reference-2`
+- Final score: 89
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- AnswerGenerationSpec JSON representation { "modelSpec" : { object ( ModelSpec ) } , "promptSpec" : { object ( PromptSpec ) } , "includeCitations" : boolean , "answerLanguageCode" : string , "ignoreAdversarialQuery" : boolean , "ignoreNonAnswerSeekingQuery" : boolean , "ignoreJailBreakingQuery" : boolean , "multimodalSpec" : { object ( MultimodalSpec ) } , // Union field ignore low relevant content can be only one of the following: "ignoreLowRelevantContent" : boolean // End of list of possible types for union field ignore low relevant content . } Fields modelSpec object ( ModelSpec ) Answer generation model specification. promptSpec object ( PromptSpec ) Answer generation prompt specification. includeCitations boolean Specifies whether to include citation metadata in the answer.
+- Home Documentation AI and ML Vertex AI Search Reference Send feedback MCP Tools Reference: discoveryengine.googleapis.com Stay organized with collections Save and categorize content based on your preferences.
+- Filtering in Vertex AI Search is done by mapping the LHS filter key to a key property defined in the Vertex AI Search backend -- this mapping is defined by the customer in their schema.
+- CitationMetadata JSON representation { "citations" : [ { object ( Citation ) } ] } Fields citations[] object ( Citation ) Output only.
 

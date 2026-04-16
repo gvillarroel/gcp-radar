@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:55:18.135Z"
+generated_at: "2026-04-15T00:01:13.970Z"
 product_name: "Cloud Monitoring"
 product_slug: "cloud-monitoring"
 feature_name: "MQL alerting"
 feature_slug: "mql-alerting"
 latest_feature_date: "2020-10-05"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/monitoring/docs/release-notes"
-  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+  - "https://docs.cloud.google.com/monitoring/docs/custom-constraints"
   - "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+  - "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
 keywords:
   - "mql"
   - "alerting"
   - "policies"
   - "can"
-  - "be"
   - "created"
-  - "using"
   - "monitoring"
+  - "query"
+  - "language"
 ---
 
 # MQL alerting
 
 Product: Cloud Monitoring
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,53 @@ Alerting policies can be created using Monitoring Query Language.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
-- [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
+- [https://docs.cloud.google.com/monitoring/docs/custom-constraints](https://docs.cloud.google.com/monitoring/docs/custom-constraints)
 - [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
+- [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
 
 ## Supporting Pages
 
-### Monitoring release notes \_|\_ Google Cloud Documentation
+### "Use custom organization policies \_|\_ Cloud Monitoring \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/monitoring/docs/release-notes](https://docs.cloud.google.com/monitoring/docs/release-notes)
+- URL: [https://docs.cloud.google.com/monitoring/docs/custom-constraints](https://docs.cloud.google.com/monitoring/docs/custom-constraints)
 - Source ID: `site-docs-reference`
-- Final score: 194
-- Re-rank relevance: N/A
+- Final score: 139
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For more information about SQL-based alerting policies, see the following documents: Monitor your SQL query results with an alerting policy Incidents for SQL-based alerting policies October 14, 2024 Feature You can now use the Monitoring API to configure a metric-based alerting policy to send notifications when incidents are closed.
-- February 17, 2023 Feature You can now install pre-defined alerting policies for services integrated with Cloud Monitoring from the Monitoring Integrations page and from the Observability tab on the pages for Kubernetes Engine clusters and workloads.
-- July 29, 2021 Change Monitoring Query Language (MQL) no longer requires you to use strict form when you create MQL-based alerting policies by using the Monitoring API.
-- For more information, see the following documents: Create and manage variables and pinned filters Apply a variable to a widget October 24, 2024 Feature You can now create alerting policies that monitor the results of your SQL queries.
-
-### "Collect OpenTelemetry Protocol (OTLP) metrics and traces \_|\_ Cloud Monitoring\
-
-- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
-- Source ID: `site-iam-reference`
-- Final score: 190
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- The following tabs show the metric descriptor that each ingestion API creates: Prometheus API { "name": "projects/ PROJECT ID /metricDescriptors/prometheus.googleapis.com/otlp test cumulative/counter", "labels": [ { "key": "instance name" }, { "key": "machine type" } ], "metricKind": "CUMULATIVE", "valueType": "DOUBLE", "type": "prometheus.googleapis.com/otlp test cumulative/counter", "monitoredResourceTypes": [ "prometheus target" ] } Monitoring API { "name": "projects/ PROJECT ID /metricDescriptors/workload.googleapis.com/otlp.test.cumulative", "labels": [ { "key": "instrumentation source" } ], "metricKind": "CUMULATIVE", "valueType": "DOUBLE", "type": "workload.googleapis.com/otlp.test.cumulative", "monitoredResourceTypes": [ "gce instance", ...many other types deleted... ] } The following table summarizes some of the format differences imposed by the APIs used to ingest OTLP metrics: Prometheus API Monitoring API Metric domain prometheus.googleapis.com workload.googleapis.com OTLP metric name Modified during ingestion Used as provided Monitored resource prometheus target gce instance Ingestion formats and queries The metrics mode used in the OTLP receiver affects the way you query the resulting metrics in Cloud Monitoring when you build charts, dashboards, and alerting policies.
-- The Monitoring metric types for the example metrics are mapped to PromQL as follows: workload googleapis com:otlp test gauge workload googleapis com:otlp test cumulative When the metric can be written against only one monitored-resource type, you don't need to specify the resource.
-- After the Ops Agent has collected your metrics, you can use the features of Cloud Monitoring, including charts, dashboards, and alerting policies, to monitor your metrics.
-- You can create charts, dashboards, and alerting policies in Monitoring for metrics of either metric format, but you refer to the metrics differently in queries.
+- Resource Field monitoring.googleapis.com/AlertPolicy resource.alertStrategy.autoClose resource.alertStrategy.notificationChannelStrategy.notificationChannelNames resource.alertStrategy.notificationChannelStrategy.renotifyInterval resource.alertStrategy.notificationRateLimit.period resource.combiner resource.conditions.conditionAbsent.aggregations.alignmentPeriod resource.conditions.conditionAbsent.aggregations.crossSeriesReducer resource.conditions.conditionAbsent.aggregations.groupByFields resource.conditions.conditionAbsent.aggregations.perSeriesAligner resource.conditions.conditionAbsent.duration resource.conditions.conditionAbsent.filter resource.conditions.conditionAbsent.trigger.count resource.conditions.conditionAbsent.trigger.percent resource.conditions.conditionMatchedLog.filter resource.conditions.conditionMatchedLog.labelExtractors resource.conditions.conditionMonitoringQueryLanguage.duration resource.conditions.conditionMonitoringQueryLanguage.evaluationMissingData resource.conditions.conditionMonitoringQueryLanguage.query resource.conditions.conditionMonitoringQueryLanguage.trigger.count resource.conditions.conditionMonitoringQueryLanguage.trigger.percent resource.conditions.conditionPrometheusQueryLanguage.alertRule resource.conditions.conditionPrometheusQueryLanguage.duration resource.conditions.conditionPrometheusQueryLanguage.evaluationInterval resource.conditions.conditionPrometheusQueryLanguage.labels resource.conditions.conditionPrometheusQueryLanguage.query resource.conditions.conditionPrometheusQueryLanguage.ruleGroup resource.conditions.conditionSql.booleanTest.column resource.conditions.conditionSql.daily.periodicity resource.conditions.conditionSql.hourly.minuteOffset resource.conditions.conditionSql.hourly.periodicity resource.conditions.conditionSql.minutes.periodicity resource.conditions.conditionSql.query resource.conditions.conditionSql.rowCountTest.comparison resource.conditions.conditionSql.rowCountTest.threshold resource.conditions.conditionThreshold.aggregations.alignmentPeriod resource.conditions.conditionThreshold.aggregations.crossSeriesReducer resource.conditions.conditionThreshold.aggregations.groupByFields resource.conditions.conditionThreshold.aggregations.perSeriesAligner resource.conditions.conditionThreshold.comparison resource.conditions.conditionThreshold.denominatorAggregations.alignmentPeriod resource.conditions.conditionThreshold.denominatorAggregations.crossSeriesReducer resource.conditions.conditionThreshold.denominatorAggregations.groupByFields resource.conditions.conditionThreshold.denominatorAggregations.perSeriesAligner resource.conditions.conditionThreshold.denominatorFilter resource.conditions.conditionThreshold.duration resource.conditions.conditionThreshold.evaluationMissingData resource.conditions.conditionThreshold.filter resource.conditions.conditionThreshold.forecastOptions.forecastHorizon resource.conditions.conditionThreshold.thresholdValue resource.conditions.conditionThreshold.trigger.count resource.conditions.conditionThreshold.trigger.percent resource.conditions.displayName resource.conditions.name resource.displayName resource.documentation.content resource.documentation.links.displayName resource.documentation.links.url resource.documentation.mimeType resource.documentation.subject resource.enabled resource.name resource.notificationChannels resource.severity monitoring.googleapis.com/NotificationChannel resource.description resource.displayName resource.enabled resource.type monitoring.googleapis.com/Snooze resource.criteria.policies resource.displayName resource.interval.endTime resource.interval.startTime What's next Learn more about Organization Policy Service .
+- Description Constraint syntax Alerting policies must have only one condition actionType : DENY condition : "resource.conditions.size() > 1" description : Requires alerting policies to have only one condition. displayName : Alerting policies must have only one condition methodTypes : - CREATE - UPDATE name : organizations/ ORGANIZATION ID /customConstraints/custom.oneCondition resourceTypes : - monitoring.googleapis.com/AlertPolicy Alerting policies must use at least two notification channels actionType : DENY condition : "resource.notificationChannels.size() < 2" description : Alerting policies must use at least two notification channels. displayName : Policies must have a backup notification channel methodTypes : - CREATE - UPDATE name : organizations/ ORGANIZATION ID /customConstraints/custom.alertOnTwoChannels resourceTypes : - monitoring.googleapis.com/AlertPolicy Only allow email notification channels actionType : DENY condition : "resource.type != 'email'" description : Requires notification channels to use only the email channel type. displayName : Always use email for notification channels methodTypes : - CREATE - UPDATE name : organizations/ ORGANIZATION ID /customConstraints/custom.emailChannelsOnly resourceTypes : - monitoring.googleapis.com/NotificationChannel Snoozes must be less than one hour actionType : DENY condition : "int(resource.interval.endTime) > int(resource.interval.startTime) + 3600" description : Requires snoozes to be under 1 hour. displayName : Snooze must be less than 1 hour methodTypes : - CREATE - UPDATE name : organizations/ ORGANIZATION ID /customConstraints/custom.setMaxSnooze resourceTypes : - monitoring.googleapis.com/Snooze Cloud Monitoring supported resources The following table lists the Cloud Monitoring resources that you can reference in custom constraints.
+- Test the policy Try to create an alerting policy with documentation that excludes the resource project name. gcloud monitoring policies create \ --display-name="CPU Utilization - 5% Threshold" \ --project= PROJECT ID \ --condition-display-name="Condition 1" \ --condition-filter='resource.type="gce instance" AND metric.type="compute.googleapis.com/instance/cpu/utilization"' \ --duration='60s' \ --if='>5' \ --combiner='AND' \ --documentation='The ${ metric . display name } of the ${ resource . type } ${ resource . label . instance id } has exceeded 5% for over 60 seconds.' \ Replace PROJECT ID with your project ID.
+- Apply the constraint: gcloud org-policies set-custom-constraint /constraint-alert-doc-has-project.yaml Verify that the constraint exists: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID The output is similar to the following: CUSTOM CONSTRAINT: custom.alertDocHasProject ACTION TYPE: DENY METHOD TYPES: CREATE,UPDATE RESOURCE TYPES: monitoring.googleapis.com/AlertPolicy DISPLAY NAME: Alerting policy documentation must include the project name.
 
 ### Cloud Monitoring overview \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/monitoring/docs/monitoring-overview](https://docs.cloud.google.com/monitoring/docs/monitoring-overview)
 - Source ID: `site-docs-reference`
-- Final score: 182
+- Final score: 114
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- You can create and manage alerting policies by using the Google Cloud console, the Cloud Monitoring API, the Google Cloud CLI, or Terraform.
 - Query languages for Cloud Monitoring When you create an alerting policy or a chart, you must provide a query that describes the data that you want to monitor or chart: Google Cloud console: You can build your query by making selections from menus, or you can write a query.
-- Incidents and notifications in Cloud Monitoring To be notified when the value of a performance metric meets criteria that you define, create an alerting policy .
-- You can create and manage synthetic monitors by using the Google Cloud console, the Cloud Monitoring API, the Google Cloud CLI, or Terraform.
+- You can create and manage alerting policies by using the Google Cloud console, the Cloud Monitoring API, the Google Cloud CLI, or Terraform.
+- Cloud Monitoring API: The API supports Prometheus Query Language (PromQL) and Monitoring filter expressions.
+- Charts and tables that show metric data Log data and error groups Charts for alerting policies Information about alerts Text Events , such as a reboot or a crash, that affects the operation of a system.
+
+### "Collect OpenTelemetry Protocol (OTLP) metrics and traces \_|\_ Cloud Monitoring\
+
+- URL: [https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp](https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp)
+- Source ID: `site-iam-reference`
+- Final score: 108
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following tabs show the metric descriptor that each ingestion API creates: Prometheus API { "name": "projects/ PROJECT ID /metricDescriptors/prometheus.googleapis.com/otlp test cumulative/counter", "labels": [ { "key": "instance name" }, { "key": "machine type" } ], "metricKind": "CUMULATIVE", "valueType": "DOUBLE", "type": "prometheus.googleapis.com/otlp test cumulative/counter", "monitoredResourceTypes": [ "prometheus target" ] } Monitoring API { "name": "projects/ PROJECT ID /metricDescriptors/workload.googleapis.com/otlp.test.cumulative", "labels": [ { "key": "instrumentation source" } ], "metricKind": "CUMULATIVE", "valueType": "DOUBLE", "type": "workload.googleapis.com/otlp.test.cumulative", "monitoredResourceTypes": [ "gce instance", ...many other types deleted... ] } The following table summarizes some of the format differences imposed by the APIs used to ingest OTLP metrics: Prometheus API Monitoring API Metric domain prometheus.googleapis.com workload.googleapis.com OTLP metric name Modified during ingestion Used as provided Monitored resource prometheus target gce instance Ingestion formats and queries The metrics mode used in the OTLP receiver affects the way you query the resulting metrics in Cloud Monitoring when you build charts, dashboards, and alerting policies.
+- When you configure a chart, dashboard, or alerting policy in Cloud Monitoring, the configuration includes a query for the data on which the chart, dashboard, or alerting policy operates.
+- After the Ops Agent has collected your metrics, you can use the features of Cloud Monitoring, including charts, dashboards, and alerting policies, to monitor your metrics.
+- You can create charts, dashboards, and alerting policies in Monitoring for metrics of either metric format, but you refer to the metrics differently in queries.
 

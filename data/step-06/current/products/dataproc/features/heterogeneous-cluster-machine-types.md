@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.135Z"
+generated_at: "2026-04-14T00:23:22.705Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "Heterogeneous cluster machine types"
@@ -9,9 +9,9 @@ latest_feature_date: "2016-01-27"
 deprecation_date: ""
 coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager"
-  - "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager"
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
+  - "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service"
+  - "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags"
 keywords:
   - "heterogeneous"
   - "cluster"
@@ -38,54 +38,55 @@ Dataproc supports clusters whose master and worker nodes use different machine t
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager)
-- [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager)
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
+- [https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies](https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/enable-service](https://docs.cloud.google.com/dataproc-metastore/docs/enable-service)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags](https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags)
 
 ## Supporting Pages
 
-### "Class ListClustersAsyncPager (5.26.0) \_|\_ Python client libraries \_|\_\
+### "Manage Java and Scala dependencies for Apache Spark \_|\_ Managed Service\
 
-- URL: [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersAsyncPager)
-- Source ID: `site-python-reference`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.dataproc v1.types.ListClustersRequest The initial request object. response google.cloud.dataproc v1.types.ListClustersResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
-- ListClustersResponse ], ], request : google . cloud . dataproc v1 . types . clusters .
-- ListClustersResponse ], ], request : google . cloud . dataproc v1 . types . clusters .
-- ListClustersRequest , response : google . cloud . dataproc v1 . types . clusters .
-
-### "Class ListClustersPager (5.26.0) \_|\_ Python client libraries \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager](https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.pagers.ListClustersPager)
-- Source ID: `site-python-reference`
-- Final score: 160
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.dataproc v1.types.ListClustersRequest The initial request object. response google.cloud.dataproc v1.types.ListClustersResponse The initial response object. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
-- ListClustersResponse ], request : google . cloud . dataproc v1 . types . clusters .
-- ListClustersResponse ], request : google . cloud . dataproc v1 . types . clusters .
-- ListClustersRequest , response : google . cloud . dataproc v1 . types . clusters .
-
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
+- URL: [https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies](https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies)
 - Source ID: `site-docs-root`
-- Final score: 142
-- Re-rank relevance: N/A
+- Final score: 35
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Cloud Dataproc now better supports clusters with master and worker nodes which use different machine types.
-- Fixed Fixed the ability to delete jobs that fast-failed before some cluster and staging directories were created Fixed some remaining errors with vmem settings when using the distcp command Fixed a rare bug in which underlying Compute Engine issues could lead to VM instances failing to be deleted after the Cloud Dataproc cluster had been successfully deleted Hive command has been fixed Fixed error reporting when updating the number of workers (standard and preemptible) in a cluster Fixed some cases when Rate Limit Exceeded errors occurred The maximum cluster name length is now correctly 55 instead of 56 characters GCP Console Cluster list now includes a Created column, and the cluster configuration tab now includes a Created field, telling the creation time of the cluster In the cluster-create screen, cluster memory sizes greater than 999 GB are now displayed in TB Fields that were missing from the PySpark and Hive job configuration tab ( Additional Python Files and Jar Files ) have been added The option to add preemptible nodes when creating a cluster is now in the "expander" at the bottom of the form Machine types with insufficient memory (less than 3.5 GB) are no longer displayed in the list of machine types (previously, selecting one of these small machine types would lead to an error from the backend The placeholder text in the Arguments field of the submit-job form has been corrected October 23, 2015 Feature GCP Console: Added support for adding, editing, and removing preemptible instances in clusters.
-- The following default configurations are now applied to clusters created with N4 or C4 machine types: bootdisktype = "hyperdisk-balanced" nictype = "gvnic" Change Hyperdisks for Dataproc clusters are now created with default throughput and IOPS.
-- Custom compute engine machine types - Cloud Dataproc clusters now support custom Compute Engine machine types for both master and worker nodes.
+- Here are recommended approaches to including these dependencies when you submit a Spark job to a Managed Service for Apache Spark cluster: When submitting a job from your local machine with the gcloud dataproc jobs submit command, use the --properties spark.jars.packages=[DEPENDENCIES] flag.
+- Example: gcloud dataproc jobs submit spark \ --cluster=my-cluster \ --region= region \ --properties=spark.jars.packages='com.google.cloud:google-cloud-translate:1.35.0,org.apache.bahir:spark-streaming-pubsub 2.11:2.2.0' When submitting a job directly on your cluster use the spark-submit command with the --packages=[DEPENDENCIES] parameter.
+- "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
+- If your application requires a Spark version that is different from the version installed on your Managed Service for Apache Spark cluster, you can write an initialization action or construct a custom image that installs the Spark version used by your application.
+
+### "Attach and manage tags on Dataproc Metastore resources \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags](https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags)
+- Source ID: `site-docs-root-2`
+- Final score: 34
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Attach tags to Dataproc Metastore resources gcloud resource-manager tags bindings create \ --parent= PARENT PATH \ --tag-value= TAG VALUE \ --location= LOCATION Detach tags from Dataproc Metastore resources gcloud resource-manager tags bindings delete \ --parent= PARENT PATH \ --tag-value= TAG VALUE \ --location= LOCATION List tags on Dataproc Metastore resources gcloud resource-manager tags bindings list \ --parent= PARENT PATH \ --location= LOCATION What's next Learn more about attaching tags to resources .
+- Before you begin To get the permissions that you need to view and set tags on Dataproc Metastore resources, ask your administrator to grant you the following IAM roles on your project: Dataproc Metastore Editor ( roles/metastore.editor ): assign to set and view tags Dataproc Metastore Viewer ( roles/metastore.viewer ): assign to view tags For more information about granting roles, see Manage access to projects, folders, and organizations .
+- Home Documentation Data analytics Dataproc Metastore Guides Send feedback Attach and manage tags on Dataproc Metastore resources Stay organized with collections Save and categorize content based on your preferences.
+- Work with tags After you've created and defined a tag using Resource Manager, you can start using tags with Dataproc Metastore service and federation resources.
+
+### Enable and disable Dataproc Metastore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataproc-metastore/docs/enable-service](https://docs.cloud.google.com/dataproc-metastore/docs/enable-service)
+- Source ID: `site-docs-root-2`
+- Final score: 34
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to enable and disable the Dataproc Metastore API: serviceusage.services.disable serviceusage.services.enable You might also be able to get these permissions with custom roles or other predefined roles .
+- What's next Quickstart for deploying Dataproc Metastore Create a service Service access Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Required Roles To get the permissions that you need to enable and disable the Dataproc Metastore API, ask your administrator to grant you the Service Usage Administrator ( roles/serviceusage.serviceUsageAdmin ) IAM role on your project.
+- Home Documentation Data analytics Dataproc Metastore Guides Send feedback Enable and disable Dataproc Metastore Stay organized with collections Save and categorize content based on your preferences.
 

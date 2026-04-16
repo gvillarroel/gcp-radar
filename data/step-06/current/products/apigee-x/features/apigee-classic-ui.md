@@ -1,44 +1,86 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T01:24:42.836Z"
+generated_at: "2026-04-14T05:27:18.145Z"
 product_name: "Apigee X"
 product_slug: "apigee-x"
 feature_name: "Apigee Classic UI"
 feature_slug: "apigee-classic-ui"
 latest_feature_date: "2025-05-29"
 deprecation_date: "2025-08-29"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/apigee/docs/deprecations/apigee-classic-ui"
+  - "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview"
+  - "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
 keywords:
-  - "deprecated 2025-08-29"
-  - "Classic UI deprecation"
-  - "classic UI shutdown"
-  - "legacy Apigee management UI"
-  - "Cloud console migration"
-  - "Apigee Classic UI"
-  - "classic ui"
-  - "legacy UI"
+  - "interface"
+  - "classic"
+  - "legacy"
+  - "outside"
+  - "managing"
 ---
 
 # Apigee Classic UI
 
 Product: Apigee X
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-The legacy Apigee Classic UI is being shut down, with management moving to the Google Cloud console; deprecated on 2025-08-29.
+The Apigee Classic UI was the legacy interface for managing Apigee outside the Google Cloud console; deprecated on 2025-08-29.
 
 ## Extended Definition
 
-The legacy Apigee Classic UI is being shut down, with management moving to the Google Cloud console; deprecated on 2025-08-29.
+The Apigee Classic UI was the legacy interface for managing Apigee outside the Google Cloud console; deprecated on 2025-08-29.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/apigee/docs/deprecations/apigee-classic-ui](https://docs.cloud.google.com/apigee/docs/deprecations/apigee-classic-ui)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview)
+- [https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data](https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Apigee Classic UI shutdown \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/deprecations/apigee-classic-ui](https://docs.cloud.google.com/apigee/docs/deprecations/apigee-classic-ui)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 253
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To prepare for the deprecation of the Apigee Classic UI, familiarize yourself with the new Apigee UI in Google Cloud console by reviewing UI overview .
+- Shutdown schedule The following table lists the shutdown schedule for the Apigee Classic UI: Date Event May 29, 2025 Deprecation announcement sent to customers via Mandatory Service Announcement (MSA).
+- Home Documentation Application development Apigee Send feedback Apigee Classic UI shutdown Stay organized with collections Save and categorize content based on your preferences.
+- We will gradually expand the automatic redirects to transition all Apigee Classic UI pages to the Google Cloud console.
+
+### UI overview | Apigee | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview](https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 160
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Logging Logging overview View logs Access logs Cassandra logs MART logs Runtime logs Synchronizer logs UDCA logs Metrics collection Metrics collection overview Configure metrics collection View metrics Other data collection Runtime Services Runtime service configuration overview Manage runtime plane components Cassandra Configure Cassandra for production StorageClass configuration Backup and recovery TLS configuration Scale down Environments About environments Managing environments Create environments Delete environments Base path routing Generate self-signed TLS certificates MART MART configuration Add the MART IP to an org Synchronizer Service accounts About service accounts Service account validation Obtain TLS credentials: An example Cluster Management Cluster requirements Overview GKE non-production GKE production Anthos GKE non-production Anthos GKE production Configure ports and set up firewalls Secure the runtime installation Data encryption Multi-region deployments on GKE and GKE on-prem Multi-region deployments on AKS Configure static IP addresses Scale and autoscale services Configure dedicated node pools Download signed runtime images Apigee deployment services Rolling updates Upgrading Apigee hybrid Configuration property reference Release notes LOGGING Audit logging Audit logging for Apigee Connect Logging Apigee access logs TEST Customer security testing requests Performance testing TROUBLESHOOT Troubleshooting the Apigee installation Logging Apigee access logs AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Apigee Guides Send feedback UI overview Stay organized with collections Save and categorize content based on your preferences.
+- UI overview | Apigee | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Apigee Start free Overview Guides Reference Support Resources Technology areas More Overview Guides Reference Support Resources Cross-product tools More Console DISCOVER What is Apigee?
+- Managing API products Managing client applications Organizing client app ownership Controlling developer access to your apps App access overview Registering app developers Importing existing consumer keys and secrets Developer portal solutions API design overview Building your integrated portal Introduction How portal users interact with your portal Getting started Tutorial: Building your first portal Overview Step 1: Create a portal Step 2: Customize the color palette Step 3: Customize the logo Step 4: Edit page content Step 5: Set up navigation Step 6: Publish an API Quick tips for customizing the sample portal Best practices for building your portal Building and publishing your portal Steps to build your portal Managing your portals Managing the pages in your portal Developing portal content Customizing your theme Setting up navigation Publishing your APIs Managing access to your APIs using API keys Managing the default visibility Managing your assets Customizing your domain Configuring email Configure a content security policy Configuring analytics tracking Adding custom scripts Publishing your portal content Viewing your live portal Creating a custom search page Managing user account creation and sign-in experience Configuring the user account creation and sign-in experience Configuring identity providers Managing user accounts Managing developer teams Managing audiences Reference Cookies Markdown syntax Building your portal using Drupal Introduction Drupal-based developer portal in Cloud Marketplace Overview Get started Customize your portal Support resources Choosing a hosting provider Support process for Apigee Drupal modules MONETIZE Overview of Apigee monetization Steps to use Apigee monetization Enabling Apigee monetization Enforcing monetization limits in API proxies Enforcing monetization quotas in API products Managing prepaid account balances Managing rate plans for API products Integrating monetization in Drupal portal Purchasing API product subscriptions using API Debugging monetization using the Debug tool Capturing monetization data Generating monetization reports ADMINISTER Users, roles, and access Users and roles Apigee roles Managing users, roles, and permissions using APIs Managing users in the UI Managing access in Google Cloud Access Apigee using Workforce Identity Federation Adding IAM Conditions to policies Apigee Spaces Apigee Spaces overview Apigee Spaces roles and permissions Create and manage Apigee Spaces Manage API resources with Apigee Spaces Move API resources in Apigee Spaces IAM permission hierarchy in Apigee Spaces Network Configuration Peering ranges Using multiple regions Managing instances Changing instance IPs Recreating an Apigee instance with zero downtime Using shared VPC networks Southbound networking patterns Northbound networking with Private Service Connect Migrate northbound routing to Private Service Connect Configure active health check for regional failover with Private Service Connect Client IP resolution Security administration TLS Options for configuring TLS Accessing TLS connection information in an API proxy Working with references SAML Using VPC Service Controls About the encryption keys Provisioning NAT IPs Performance considerations for Apigee Cloud NAT Calculating static NAT IP requirements Preventing DoS attacks Integrate Apigee with your SIEM solution Integrate Apigee with Google SecOps Managing data collectors Backups Switching between organizations Manage maintenance updates Overview Manage instance maintenance windows View maintenance logs ANALYZE Analytics overview Using the analytics dashboards API metrics API proxy performance Error code analysis Latency analysis Cache performance Target performance Developer analysis Developer engagement Traffic composition End user analysis Devices Geomap Custom reports Creating and managing custom reports Analytics metrics, dimensions, and filters reference Operations anomalies Operations anomalies overview View and investigate anomalies Create anomaly alerts Collecting custom data with the DataCapture policy Exporting data from analytics Obfuscate user data for analytics Data Studio integration Using the API Using the asynchronous custom reports API Using the metrics API Metrics API examples Troubleshooting Troubleshooting with analytics What does an analytics entity named 'not set' mean?
+- Attaching and configuring policies in the UI Attaching and configuring policies in XML files Attaching a policy to a ProxyEndpoint or TargetEndpoint flow Managing resources About policy errors Securing an API proxy Security overview IAM IAM-based API authentication OAuth2 Tutorial: Securing an API proxy with OAuth Getting started with OAuth2 Introduction to OAuth 2.0 Videos Client credentials grant type Auth code grant type Password grant type Using JWT access tokens Configuring a new API proxy Registering client apps Obtaining client credentials Understanding OAuth endpoints Requesting tokens and codes Customizing tokens and codes Revoking and approving tokens Revoking tokens by end user ID and app ID Revoking and approving consumer keys Sending an access token Verifying access token Working with OAuth2 scopes Using third-party OAuth tokens Hashing tokens for extra security Advanced OAuth2 topics API keys Tutorial: Securing an API proxy with API keys API keys Setting up API key validation Using Google authentication Using SAML policies in an API proxy Content-based security Masking and hiding data Last-mile security Using AI policies Get started with LLM token policies Get started with Model Armor Get started with semantic caching Limit request traffic Rate-limiting Comparing rate-limiting policies Caching and persistence Overview General purpose caching Response caching Using key value maps Using property sets Support for HTTP response headers Cache internals Videos Shaping, accessing, and converting messages Accessing configuration data Incorporating procedural code Adding CORS support Enabling distributed tracing Using GraphQL Streaming requests and responses Streaming server-sent events Using WebSockets Creating Java callouts How to create Java Callout How to handle JavaCallout policy errors How to use properties in the JavaCallout Adding a custom Java callout security policy Integrating with Contact Center AI Deploying API proxies Deployment overview Deploying an API proxy Undeploying an API proxy Load balancing across backend servers Deploying archives Debugging programmable proxies Tutorial: View message data with the Debug view Debug overview Using Debug Using Offline Debug Using performance metrics Use Terraform with Apigee Performing health checks MCP in Apigee MCP in Apigee overview Get started with Apigee and MCP Monitor and analyze MCP traffic Troubleshoot MCP deployments DEVELOP (LOCAL) Overview of local development with Apigee Get started Set up Apigee in Cloud Code Use Apigee in Cloud Code Tutorial: Build and deploy your first API proxy Overview Step 1: Create an Apigee workspace Step 2: Create an API proxy Step 3: Configure and deploy an environment Step 4: Test your API Step 5: Change your target endpoint Step 6: Attach a policy Step 7: Deploy to an Apigee environment Step 8: Promote an archive to production Develop using Apigee in Cloud Code Manage the Apigee workspace Design and edit APIs Develop API proxies Develop shared flows Add features using policies Manage resources Build and export test resources Configure and deploy environments Test APIs Deploy an archive to an Apigee environment Manage the Apigee Emulator Apigee Command Palette Reference DEVELOP (Kubernetes) Apigee APIM Operator for Kubernetes Overview Before you begin Install the Apigee APIM Operator Install the Apigee APIM Operator for Apigee hybrid Use APIM policies with the Apigee APIM Operator Create an ApigeeBackendService Create an APIMExtensionPolicy Enable security and quota enforcement Add policies to the GKE gateway Update Apigee policies with the Apigee APIM Operator Uninstall the Apigee APIM Operator Troubleshoot the Apigee APIM Operator Apigee APIM Operator resource reference Licenses in Apigee APIM Operator DEVELOP (Service Extensions) Apigee Extension Processor overview Get started with the Apigee Extension Processor PUBLISH Publishing overview Managing API products What is an API product?
+
+### "Enrich API data with custom curation in API hub \_|\_ Apigee \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data](https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data)
+- Source ID: `site-docs-reference`
+- Final score: 42
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This API allows for the creation, retrieval, update, and deletion of product records.", "deploymentType": { "enumValues": { "values": [ { "id": "apigee" } ] }, "attribute": "projects/api-hub-demo-5/locations/us-central1/attributes/system-deployment-type" }, "resourceUri": "organizations/api-hub-demo-5/apis/Products-API/revisions/1/environments/test-env", "endpoints": [ "https://googleapis.com/products-api" ], "attributes": { "projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-environment": { "stringValues": { "values": [ "test-env" ] }, "attribute": "projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-environment" }, "projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-organization": { "stringValues": { "values": [ "api-hub-demo-5" ] }, "attribute": "projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-organization" } } }, "originalId": "apis/Products-API/revisions/1/environments/test-env", "originalCreateTime": "2025-07-07T05:23:51.617Z", "originalUpdateTime": "2025-07-07T05:23:51.617Z" } ], "originalId": "apis/Products-API/revisions/1", "originalCreateTime": "2025-07-07T05:23:47.982Z", "originalUpdateTime": "2025-07-07T05:23:47.982Z" } ], "originalId": "apis/Products-API", "originalUpdateTime": "2025-07-07T05:23:47.982Z" } ] } } Sample Output You should see the following test output: { "apiMetadataList": { "apiMetadata": [ { "api": { "name": "projects/api-hub-demo-5/locations/us-central1/apis/api-hub-demo-5-Products-API", "displayName": "Products-API", "fingerprint": "products-api" }, "versions": [ { "version": { "name": "projects/api-hub-demo-5/locations/us-central1/apis/api-hub-demo-5-Products-API/versions/version-1", "displayName": "version-1" }, "deployments": [ { "deployment": { "displayName": "Products-API", "description": "API for managing product inventory.
+- Sample test input Use the following sample input: { "apiMetadataList": { "apiMetadata": [ { "api": { "name": "projects/api-hub-demo-5/locations/us-central1/apis/api-hub-demo-5-Products-API", "displayName": "Products-API", "fingerprint": "products-api" }, "versions": [ { "version": { "name": "projects/api-hub-demo-5/locations/us-central1/apis/api-hub-demo-5-Products-API/versions/version-1", "displayName": "version-1" }, "deployments": [ { "deployment": { "displayName": "Products-API", "description": "API for managing product inventory.
+- Download the following specification files and use them for the purpose of this tutorial: Spec file Description Download link orders-api.yaml This specification defines an API for managing customer orders.
+- This tutorial shows you how to enrich API data in Apigee API hub with API specifications, like OpenAPI specs, that are stored outside of API hub.
 

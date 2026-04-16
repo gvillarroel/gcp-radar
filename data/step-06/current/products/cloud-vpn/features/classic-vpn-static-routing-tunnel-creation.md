@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T05:21:46.881Z"
+generated_at: "2026-04-12T12:12:51.048Z"
 product_name: "Cloud VPN"
 product_slug: "cloud-vpn"
 feature_name: "Classic VPN static-routing tunnel creation"
 feature_slug: "classic-vpn-static-routing-tunnel-creation"
 latest_feature_date: "2020-10-14"
 deprecation_date: "2021-10-31"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/deprecations/classic-vpn-deprecation"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
 keywords:
   - "classic"
@@ -26,7 +27,7 @@ keywords:
 # Classic VPN static-routing tunnel creation
 
 Product: Cloud VPN
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Classic VPN supports creating new tunnels that use static routing for supported 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/deprecations/classic-vpn-deprecation](https://docs.cloud.google.com/network-connectivity/docs/vpn/deprecations/classic-vpn-deprecation)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview)
+- [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/deprecations/classic-vpn-deprecation](https://docs.cloud.google.com/network-connectivity/docs/vpn/deprecations/classic-vpn-deprecation)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Supported configurations You can continue to create and receive support only for the following Classic VPN configurations: Classic VPN tunnels using static routing from Classic VPN gateways to on-premises VPN gateways and from on-premises VPN gateways to Classic VPN gateways.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview)
 - Source ID: `site-docs-reference`
-- Final score: 174
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 236
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Use the following procedures to configure cipher options for the various Cloud VPN gateways: To configure cipher options for Classic VPN using static routing, see Create a gateway and tunnel .
@@ -76,11 +78,25 @@ Evidence snippets:
 - To support IPv6 traffic in HA VPN tunnels, do the following: Use the IPV6 ONLY or IPV4 IPV6 stack type when creating a HA VPN gateway and tunnels that connect IPv6-enabled VPC networks with other IPv6-enabled networks.
 - The unhealthy VPN tunnel in turn causes removal of the routes using this tunnel as a next-hop (BGP routes or static routes) triggering a failover of VM traffic to other VPN tunnels that are healthy.
 
+### Use third-party VPNs \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides)
+- Source ID: `site-docs-root`
+- Final score: 211
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Fortinet FortiGate 300C with Classic VPN Supports static routes or dynamic routing with Cloud Router.
+- Amazon Web Services with Classic VPN Supports static routes or dynamic routing with Cloud Router.
+- Cisco ASA 5505 with Classic VPN Supports static routes only.
+- Palo Alto Networks PA-3020 Supports static routes or dynamic routing with Cloud Router. strongSwan Supports dynamic routing with Cloud Router and BIRD .
+
 ### Create an HA VPN gateway to a peer VPN gateway \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 - Source ID: `site-docs-root`
-- Final score: 162
+- Final score: 198
 - Re-rank relevance: N/A
 
 Evidence snippets:

@@ -1,13 +1,13 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.832Z"
+generated_at: "2026-04-14T15:13:20.091Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "Global ALOS CHILI"
 feature_slug: "global-alos-chili"
 latest_feature_date: "2018-07-03"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/elevation"
   - "https://developers.google.com/earth-engine/datasets/tags/elevation-topography"
@@ -26,7 +26,7 @@ keywords:
 # Global ALOS CHILI
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,7 +38,7 @@ A global continuous heat-insolation load index derived from ALOS data.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
@@ -52,8 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/elevation](https://developers.google.com/earth-engine/datasets/tags/elevation)
 - Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: N/A
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Completed in late 1996, GTOPO30 was developed over a three-year period through … dem elevation elevation-topography geophysical nasa topography Global ALOS CHILI (Continuous Heat-Insolation Load Index) CHILI is a surrogate for effects of insolation and topographic shading on evapotranspiration represented by calculating insolation at early afternoon, sun altitude equivalent to equinox.
@@ -65,8 +66,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/elevation-topography](https://developers.google.com/earth-engine/datasets/tags/elevation-topography)
 - Source ID: `site-docs-root-3`
-- Final score: 170
-- Re-rank relevance: N/A
+- Final score: 207
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Completed in late 1996, GTOPO30 was developed over a three-year period through … dem elevation elevation-topography geophysical nasa topography Global ALOS CHILI (Continuous Heat-Insolation Load Index) CHILI is a surrogate for effects of insolation and topographic shading on evapotranspiration represented by calculating insolation at early afternoon, sun altitude equivalent to equinox.
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/geophysical](https://developers.google.com/earth-engine/datasets/tags/geophysical)
 - Source ID: `site-docs-root`
-- Final score: 170
+- Final score: 199
 - Re-rank relevance: N/A
 
 Evidence snippets:

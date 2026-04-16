@@ -5,7 +5,7 @@ url: https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals
+entrypoint: https://docs.cloud.google.com/dataproc/docs/concepts/iam/iam
 source_metadata:
   url: https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage
   title: "Using Spark data lineage \_|\_ Managed Service for Apache Spark \_|\_ Google\

@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:16:08+00:00'
-updated_at: '2026-04-09T16:29:03+00:00'
+updated_at: '2026-04-13T17:48:44+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/api-gateway/docs
   created_at: '2026-04-09T16:21:38+00:00'
-  updated_at: '2026-04-09T16:22:41+00:00'
+  updated_at: '2026-04-13T17:38:48+00:00'
   update_command: know sync site https://docs.cloud.google.com/api-gateway/docs --key
     corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,12 +20,12 @@ sources:
     max_depth: 1
     max_pages: 30
     compact_output: true
-  last_synced_at: '2026-04-09T16:22:41+00:00'
+  last_synced_at: '2026-04-13T17:38:48+00:00'
 - type: site
   id: site-docs-reference
   title: https://docs.cloud.google.com/api-gateway/docs/reference
   created_at: '2026-04-09T16:21:38+00:00'
-  updated_at: '2026-04-09T16:23:57+00:00'
+  updated_at: '2026-04-13T17:40:05+00:00'
   update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/reference
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
@@ -34,26 +34,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-09T16:23:57+00:00'
-- type: site
-  id: site-api-reference
-  title: https://docs.cloud.google.com/api-gateway/docs/reference/rest
-  created_at: '2026-04-09T16:21:39+00:00'
-  updated_at: '2026-04-09T16:25:12+00:00'
-  update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/reference/rest
-    --key corpus --compact
-  delete_command: know del --key corpus site-api-reference
-  config:
-    url: https://docs.cloud.google.com/api-gateway/docs/reference/rest
-    max_depth: 1
-    max_pages: 20
-    compact_output: true
-  last_synced_at: '2026-04-09T16:25:12+00:00'
+  last_synced_at: '2026-04-13T17:40:05+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/api-gateway/docs/api-access-overview
   created_at: '2026-04-09T16:21:39+00:00'
-  updated_at: '2026-04-09T16:26:27+00:00'
+  updated_at: '2026-04-13T17:41:25+00:00'
   update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/api-access-overview
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -62,12 +48,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-09T16:26:27+00:00'
+  last_synced_at: '2026-04-13T17:41:25+00:00'
 - type: site
   id: site-python-reference
   title: https://docs.cloud.google.com/python/docs/reference/apigateway/latest
   created_at: '2026-04-09T16:21:40+00:00'
-  updated_at: '2026-04-09T16:27:42+00:00'
+  updated_at: '2026-04-13T17:42:48+00:00'
   update_command: know sync site https://docs.cloud.google.com/python/docs/reference/apigateway/latest
     --key corpus --compact
   delete_command: know del --key corpus site-python-reference
@@ -76,12 +62,12 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-09T16:27:42+00:00'
+  last_synced_at: '2026-04-13T17:42:48+00:00'
 - type: site
   id: site-java-reference
   title: https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/overview
   created_at: '2026-04-09T16:21:41+00:00'
-  updated_at: '2026-04-09T16:29:03+00:00'
+  updated_at: '2026-04-13T17:44:17+00:00'
   update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/overview
     --key corpus --compact
   delete_command: know del --key corpus site-java-reference
@@ -90,4 +76,46 @@ sources:
     max_depth: 1
     max_pages: 20
     compact_output: true
-  last_synced_at: '2026-04-09T16:29:03+00:00'
+  last_synced_at: '2026-04-13T17:44:17+00:00'
+- type: site
+  id: site-docs-root-required-2
+  title: https://docs.cloud.google.com/api-gateway/docs/about-api-gateway
+  created_at: '2026-04-13T17:37:44+00:00'
+  updated_at: '2026-04-13T17:46:09+00:00'
+  update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/about-api-gateway
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-required-2
+  config:
+    url: https://docs.cloud.google.com/api-gateway/docs/about-api-gateway
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-13T17:46:09+00:00'
+- type: site
+  id: site-docs-reference-required-2
+  title: https://docs.cloud.google.com/api-gateway/docs/creating-api-config
+  created_at: '2026-04-13T17:37:44+00:00'
+  updated_at: '2026-04-13T17:47:25+00:00'
+  update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/creating-api-config
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-2
+  config:
+    url: https://docs.cloud.google.com/api-gateway/docs/creating-api-config
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-13T17:47:25+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud
+  created_at: '2026-04-13T17:37:44+00:00'
+  updated_at: '2026-04-13T17:48:44+00:00'
+  update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-13T17:48:44+00:00'

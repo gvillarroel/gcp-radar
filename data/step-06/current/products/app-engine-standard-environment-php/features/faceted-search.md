@@ -1,27 +1,27 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:27.576Z"
+generated_at: "2026-04-14T07:09:07.334Z"
 product_name: "App Engine standard environment PHP"
 product_slug: "app-engine-standard-environment-php"
 feature_name: "Faceted Search"
 feature_slug: "faceted-search"
 latest_feature_date: "2015-09-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search"
+  - "https://docs.cloud.google.com/appengine/docs/quotas"
+  - "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains"
 keywords:
   - "faceted"
   - "search"
   - "reached"
   - "availability"
-  - "general"
 ---
 
 # Faceted Search
 
 Product: App Engine standard environment PHP
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -33,25 +33,38 @@ Faceted Search reached General Availability.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search)
+- [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- [https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains)
 
 ## Supporting Pages
 
-### "Package google.golang.org/appengine/v2/search (v2.0.6) \_|\_ App Engine\
+### "Quotas and limits \_|\_ App Engine standard environment \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/search)
-- Source ID: `site-docs-reference`
-- Final score: 43
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/appengine/docs/quotas](https://docs.cloud.google.com/appengine/docs/quotas)
+- Source ID: `site-docs-reference-4`
+- Final score: 36
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Example code: // A and B are renamed to a and b. // A, C and I are facets. // D's tag is equivalent to having no tag at all (E). // F and G are ignored entirely by the search package. // I has tag information for both the search and json packages. type TaggedStruct struct { A float64 search:"a,facet" B float64 search:"b" C float64 search:",facet" D float64 search:"" E float64 F float64 search:"-" G float64 search:"-,facet" I float64 search:",facet" json:"i" } The FieldLoadSaver Interface A document's contents can also be represented by any type that implements the FieldLoadSaver interface.
-- Passing this cursor in a future call to Search will cause those results to commence with the first document after the current document. func ( Iterator) Facets func ( t Iterator ) Facets () ([][] FacetResult , error ) Facets returns the facets found within the search results, if any facets were requested in the SearchOptions. func ( Iterator) Next func ( t Iterator ) Next ( dst interface {}) ( string , error ) Next returns the ID of the next result.
-- FacetSearchOption type FacetSearchOption interface { // contains filtered or unexported methods } FacetSearchOption controls what facet information is returned in search results. func AutoFacetDiscovery func AutoFacetDiscovery ( facetLimit , valueLimit int ) FacetSearchOption AutoFacetDiscovery returns a FacetSearchOption which enables automatic facet discovery for the search.
-- Name string // Value is the facet value. // // When being used in documents (for example, in // DocumentMetadata.Facets), the valid types are: // - search.Atom, // - float64. // // When being used in SearchOptions.Refinements or being returned // in FacetResult, the valid types are: // - search.Atom, // - search.Range.
+- The Search API imposes these limits to ensure the reliability of the service: 100 aggregated minutes of query execution time per minute, within an app and an index .
+- This limit may be increased to up to 200GB by submitting a request from the Google Cloud console App Engine Search page.
+- Refer to the Java , Python , and Go documentation for a detailed description of each type of Search call.
+- Google Cloud uses quotas to help ensure fairness and reduce spikes in resource use and availability.
+
+### "Mapping custom domains \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains](https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains)
+- Source ID: `site-docs-reference-4`
+- Final score: 27
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Delegating ownership to other Google Cloud users or service accounts If you need to delegate the ownership of your domain to other users or service accounts, you can add permission through the Search Console page.
+- To view a list of service accounts, open the Service Accounts page in the Google Cloud console To add permissions through the Search Console : Open the Search Console verification .
+- For help using Search Console, see Search Console help After you complete the steps in Search Console, return to the Add a new custom domain page in the Google Cloud console.
+- Enter information in the Search Console window that appears.
 

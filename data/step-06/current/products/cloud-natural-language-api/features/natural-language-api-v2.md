@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T23:00:15.646Z"
+generated_at: "2026-04-12T12:11:52.617Z"
 product_name: "Cloud Natural Language API"
 product_slug: "cloud-natural-language-api"
 feature_name: "Natural Language API v2"
 feature_slug: "natural-language-api-v2"
 latest_feature_date: "2023-08-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment"
-  - "https://docs.cloud.google.com/natural-language/docs/release-notes"
   - "https://docs.cloud.google.com/natural-language/docs/sentiment-tutorial"
+  - "https://docs.cloud.google.com/natural-language/docs/reference/libraries"
+  - "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment"
 keywords:
   - "natural"
   - "language"
@@ -26,7 +27,7 @@ keywords:
 # Natural Language API v2
 
 Product: Cloud Natural Language API
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Natural Language API v2 adds support for sentiment analysis, entity analysis, te
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment](https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment)
-- [https://docs.cloud.google.com/natural-language/docs/release-notes](https://docs.cloud.google.com/natural-language/docs/release-notes)
 - [https://docs.cloud.google.com/natural-language/docs/sentiment-tutorial](https://docs.cloud.google.com/natural-language/docs/sentiment-tutorial)
+- [https://docs.cloud.google.com/natural-language/docs/reference/libraries](https://docs.cloud.google.com/natural-language/docs/reference/libraries)
+- [https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment](https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment](https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment)
 - Source ID: `site-docs-root`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 292
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For more information, see Set up authentication for a local development environment . import ( "context" "fmt" "io" language "cloud.google.com/go/language/apiv2" "cloud.google.com/go/language/apiv2/languagepb" ) // analyzeSentiment sends a string of text to the Cloud Natural Language API to // assess the sentiment of the text. func analyzeSentiment ( w io .
@@ -62,31 +64,45 @@ Evidence snippets:
 - Analyzing Sentiment from Cloud Storage For your convenience, the Natural Language API can perform sentiment analysis directly on a file located in Cloud Storage, without the need to send the contents of the file in the body of your request.
 - For instructions on installing the gcloud CLI, setting up a project with a service account see the Quickstart . curl -X POST \ -H "Authorization: Bearer " $( gcloud auth application-default print-access-token ) \ -H "Content-Type: application/json; charset=utf-8" \ --data "{ 'encodingType': 'UTF8', 'document': { 'type': 'PLAIN TEXT', 'content': 'Enjoy your vacation!' } }" "https://language.googleapis.com/v2/documents:analyzeSentiment" If you don't specify document.language code , then the language will be automatically detected.
 
-### "Natural Language release notes \_|\_ Cloud Natural Language API \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/natural-language/docs/release-notes](https://docs.cloud.google.com/natural-language/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 232
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- April 04, 2019 Feature The Natural Language API now supports Russian for entity analysis and syntactic analysis, and Japanese for entity sentiment analysis.
-- March 20, 2020 Change The Natural Language API now supports additional languages for sentiment analysis.
-- May 03, 2019 Feature The Natural Language API now supports Spanish for entity sentiment analysis.
-- September 19, 2017 Feature The Natural Language API v1 now supports entity sentiment analysis with the analyzeEntitySentiment method.
-
 ### "Sentiment Analysis Tutorial \_|\_ Cloud Natural Language API \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/natural-language/docs/sentiment-tutorial](https://docs.cloud.google.com/natural-language/docs/sentiment-tutorial)
 - Source ID: `site-iam-reference`
-- Final score: 226
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 277
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - For more information on installing and using the Google Cloud Natural Language Client Library for Python, see Natural Language API Client Libraries . """Demonstrates how to make a simple call to the Natural Language API.""" import argparse from google.cloud import language v1 def print result ( annotations ): score = annotations . document sentiment . score magnitude = annotations . document sentiment . magnitude for index , sentence in enumerate ( annotations . sentences ): sentence sentiment = sentence . sentiment . score print ( f "Sentence { index } has a sentiment score of { sentence sentiment } " ) print ( f "Overall Sentiment: score of { score } with magnitude of { magnitude } " ) return 0 def analyze ( movie review filename ): """Run a sentiment analysis request on text within a passed filename.""" client = language v1 .
 - For more information on installing and using the Google Cloud Natural Language Client Library for Python, see Natural Language API Client Libraries . def analyze ( movie review filename ): """Run a sentiment analysis request on text within a passed filename.""" client = language v1 .
 - You've installed the Google Cloud Client Library for Python Analyzing document sentiment This tutorial walks you through a basic Natural Language API application, using an analyzeSentiment request, which performs sentiment analysis on text.
 - Sentiment analysis attempts to determine the overall attitude (positive or negative) and is represented by numerical score and magnitude values. (For more information on these concepts, consult Natural Language Basics .) We'll show the entire code first. (Note that we have removed most comments from this code in order to show you how brief it is.
+
+### "Natural Language client libraries \_|\_ Cloud Natural Language API \_|\_\
+
+- URL: [https://docs.cloud.google.com/natural-language/docs/reference/libraries](https://docs.cloud.google.com/natural-language/docs/reference/libraries)
+- Source ID: `site-api-reference`
+- Final score: 268
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- DebugString () << " \n " ; } return 0 ; } catch ( google :: cloud :: Status const & status ) { std :: cerr << "google::cloud::Status thrown: " << status << " \n " ; return 1 ; } Go // Sample language-quickstart uses the Google Cloud Natural API to analyze the // sentiment of "Hello, world!". package main import ( "context" "fmt" "log" language "cloud.google.com/go/language/apiv1" "cloud.google.com/go/language/apiv1/languagepb" ) func main () { ctx := context .
+- This page shows how to get started with the Cloud Client Libraries for the Cloud Natural Language API.
+- PLAIN TEXT ) Detects the sentiment of the text. sentiment = client . analyze sentiment ( request = { "document" : document } ) . document sentiment print ( f "Text: { text } " ) print ( f "Sentiment: { sentiment . score } , { sentiment . magnitude } " ) Additional resources C++ The following list contains links to more resources related to the client library for C++: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- C++ #include "google/cloud/language/v2/language client.h" #include <iostream> auto constexpr kText = R " ""( Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal. )"" " ; int main ( int argc , char argv []) try { if ( argc != 1 ) { std :: cerr << "Usage: " << argv [ 0 ] << " \n " ; return 1 ; } namespace language = :: google :: cloud :: language v2 ; auto client = language :: LanguageServiceClient ( language :: MakeLanguageServiceConnection ()); google :: cloud :: language :: v2 :: Document document ; document . set type ( google :: cloud :: language :: v2 :: Document :: PLAIN TEXT ); document . set content ( kText ); document . set language code ( "en-US" ); auto response = client .
+
+### "Analyzing Entity Sentiment \_|\_ Cloud Natural Language API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment](https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment)
+- Source ID: `site-docs-root`
+- Final score: 263
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To perform entity sentiment analysis, use the gcloud CLI and use the --content flag to identify the content to analyze: gcloud ml language analyze-entity-sentiment \ --content-file=gs:// <bucket-name> / <object-name> Java To learn how to install and use the client library for Natural Language, see Natural Language client libraries .
+- LanguageServiceClient (); / TODO(developer): Uncomment the following lines to run this code / // const bucketName = 'Your bucket name, e.g. my-bucket'; // const fileName = 'Your file name, e.g. my-file.txt'; // Prepares a document, representing a text file in Cloud Storage const document = { gcsContentUri : gs:// ${ bucketName } / ${ fileName } , type : 'PLAIN TEXT' , }; // Detects sentiment of entities in the document const [ result ] = await client . analyzeEntitySentiment ({ document }); const entities = result . entities ; console . log ( 'Entities and sentiments:' ); entities . forEach ( entity = > { console . log ( Name: ${ entity . name } ); console . log ( Type: ${ entity . type } ); console . log ( Score: ${ entity . sentiment . score } ); console . log ( Magnitude: ${ entity . sentiment . magnitude } ); }); Python To learn how to install and use the client library for Natural Language, see Natural Language client libraries .
+- Analyzing Entity Sentiment from Cloud Storage Here is an example of analyzing entity sentiment stored in a text file on Cloud Storage: Protocol To analyze entity sentiment from a document stored in Cloud Storage, make a POST request to the documents:analyzeEntitySentiment REST method and provide the appropriate request body with the path to the document as shown in the following example. curl -X POST \ -H "Authorization: Bearer " $( gcloud auth application-default print-access-token ) \ -H "Content-Type: application/json; charset=utf-8" \ --data "{ 'document':{ 'type':'PLAIN TEXT', 'gcsContentUri':'gs:// <bucket-name> / <object-name> ' } }" "https://language.googleapis.com/v1/documents:analyzeEntitySentiment" gcloud Refer to the analyze-entity-sentiment command for complete details.
+- Hello, world!'; // Prepares a document, representing the provided text const document = { content : text , type : 'PLAIN TEXT' , }; // Detects sentiment of entities in the document const [ result ] = await client . analyzeEntitySentiment ({ document }); const entities = result . entities ; console . log ( 'Entities and sentiments:' ); entities . forEach ( entity = > { console . log ( Name: ${ entity . name } ); console . log ( Type: ${ entity . type } ); console . log ( Score: ${ entity . sentiment . score } ); console . log ( Magnitude: ${ entity . sentiment . magnitude } ); }); Python To learn how to install and use the client library for Natural Language, see Natural Language client libraries .
 

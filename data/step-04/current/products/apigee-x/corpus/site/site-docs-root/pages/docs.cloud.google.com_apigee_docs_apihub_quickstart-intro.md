@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/apigee/docs/apihub/quickstart-intro
 knowledge_key: corpus
 source_id: site-docs-root
 source_type: site
-entrypoint: https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee
+entrypoint: https://docs.cloud.google.com/apigee/docs/locations
 source_metadata:
   url: https://docs.cloud.google.com/apigee/docs/apihub/quickstart-intro
   title: "Quickstarts \_|\_ Apigee \_|\_ Google Cloud Documentation"

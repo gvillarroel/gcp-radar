@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:52.531Z"
+generated_at: "2026-04-12T12:18:12.232Z"
 product_name: "Recommender"
 product_slug: "recommender"
 feature_name: "Change risk recommendations"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-12-06"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/recommender/docs/reference/rest/v1/projects.locations.recommenders.recommendations/list"
-  - "https://docs.cloud.google.com/recommender/docs/key-concepts"
-  - "https://docs.cloud.google.com/recommender/docs/reference/rest/v1/organizations.locations.recommenders.recommendations/get"
+  - "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+  - "https://docs.cloud.google.com/recommender/docs/recent-change-recommendations"
+  - "https://docs.cloud.google.com/recommender/docs/deprecation-change-recommender"
+  - "https://docs.cloud.google.com/recommender/docs/recommenders"
 keywords:
   - "change"
   - "risk"
@@ -38,46 +39,70 @@ Recommends changes that reduce the risk of cloud infrastructure misconfiguration
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/recommender/docs/reference/rest/v1/projects.locations.recommenders.recommendations/list](https://docs.cloud.google.com/recommender/docs/reference/rest/v1/projects.locations.recommenders.recommendations/list)
-- [https://docs.cloud.google.com/recommender/docs/key-concepts](https://docs.cloud.google.com/recommender/docs/key-concepts)
-- [https://docs.cloud.google.com/recommender/docs/reference/rest/v1/organizations.locations.recommenders.recommendations/get](https://docs.cloud.google.com/recommender/docs/reference/rest/v1/organizations.locations.recommenders.recommendations/get)
+- [https://docs.cloud.google.com/recommender/docs/change-risk-recommendations](https://docs.cloud.google.com/recommender/docs/change-risk-recommendations)
+- [https://docs.cloud.google.com/recommender/docs/recent-change-recommendations](https://docs.cloud.google.com/recommender/docs/recent-change-recommendations)
+- [https://docs.cloud.google.com/recommender/docs/deprecation-change-recommender](https://docs.cloud.google.com/recommender/docs/deprecation-change-recommender)
+- [https://docs.cloud.google.com/recommender/docs/recommenders](https://docs.cloud.google.com/recommender/docs/recommenders)
 
 ## Supporting Pages
 
-### Method: projects.locations.recommenders.recommendations.list | Recommender | Google Cloud Documentation
+### Change risk recommendations \_|\_ Recommender \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/recommender/docs/reference/rest/v1/projects.locations.recommenders.recommendations/list](https://docs.cloud.google.com/recommender/docs/reference/rest/v1/projects.locations.recommenders.recommendations/list)
-- Source ID: `site-docs-reference`
-- Final score: 41
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Method: projects.locations.recommenders.recommendations.list Recommender Google Cloud Documentation Source URL: https://docs.cloud.google.com/recommender/docs/reference/rest/v1/projects.locations.recommenders.recommendations/list Lists recommendations for the specified Cloud Resource.
-
-### Recommendations | Recommender | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/recommender/docs/key-concepts](https://docs.cloud.google.com/recommender/docs/key-concepts)
-- Source ID: `site-docs-root`
-- Final score: 40
+- URL: [https://docs.cloud.google.com/recommender/docs/change-risk-recommendations](https://docs.cloud.google.com/recommender/docs/change-risk-recommendations)
+- Source ID: `site-api-reference`
+- Final score: 313
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Recommendations Recommender Google Cloud Documentation Source URL: https://docs.cloud.google.com/recommender/docs/key-concepts A recommendation is a machine-generated suggestion for optimizing your usage of Cloud resources.
-- Recommenders provide recommendations based on your resource usage, using machine ...
-- It includes the steps required to take action on the recommendation.
+- Method not visible to labels: {PUBLIC}' Make sure that the project config is set to a project that is allowlisted for using Alpha Recommender API with the following command: gcloud config set project PROJECT ID Project IAM policy binding deletion The following command deletes a Project IAM Policy Binding: gcloud alpha projects remove-iam-policy-binding PROJECT ID --member = YOUR EMAIL@DOMAIN.COM --role = roles/owner --recommend = yes You will see the following supported risky changes with recommendations: You are about to delete the role [roles/owner].
+- Change risk recommendations help you reduce the risk of cloud infrastructure misconfigurations by intelligently flagging common risky changes to your most important resources and providing recommendations to prevent and mitigate issues.
+- View the full risk assessment at: https://console.cloud.google.com/home/recommendations/view-link/projects/123456/locations/global/recommenders/google.resourcemanager.project.ChangeRiskRecommender/recommendations/reco-id-0000-0000-000000000 Do you want to continue (Y/n)? n Service account deletion The following command deletes a Service Account: gcloud alpha iam service-accounts delete example@ PROJECT ID .iam.gserviceaccount.com --recommend = yes You will see the following supported risky changes with recommendations: You are about to delete service account [example@ PROJECT ID .iam.gserviceaccount.com] Deleting this service account (SA) will delete all associated key IDs, and will prevent the account from authenticating to any Google Cloud service API.
+- Resource Action Surfaces Criteria used to determine resource importance Project Deletion Google Cloud console gcloud CLI Recommender API Project usage (API calls, networking traffic, and Google Cloud services usage) Billing Usage within the last 30 days Service account Deletion Google Cloud console gcloud CLI Recommender API Number of authentications Usage within the last 90 days IAM policy Change Google Cloud console gcloud CLI Recommender API Number of exercised permissions Usage within the last 90 days Belong to an important project Caution: Change risk recommendations won't recognize resources as important if they had sudden changes in their activity within less than 24 hours.
 
-### Method: organizations.locations.recommenders.recommendations.get | Recommender | Google Cloud Documentation
+### Recent change recommendations \_|\_ Recommender \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/recommender/docs/reference/rest/v1/organizations.locations.recommenders.recommendations/get](https://docs.cloud.google.com/recommender/docs/reference/rest/v1/organizations.locations.recommenders.recommendations/get)
-- Source ID: `site-docs-reference`
-- Final score: 36
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/recommender/docs/recent-change-recommendations](https://docs.cloud.google.com/recommender/docs/recent-change-recommendations)
+- Source ID: `site-api-reference`
+- Final score: 243
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Method: organizations.locations.recommenders.recommendations.get Recommender Google Cloud Documentation Source URL: https://docs.cloud.google.com/recommender/docs/reference/rest/v1/organizations.locations.recommenders.recommendations/get GET https://recommender.googleapis.com/v1/{name=organizations/ /locations/ /recommenders/ /recommendations/ }
+- Insights Field name Type description associatedRecommendations string Recommendation that is associated with this recommendation. projects/[project number]/locations/global/recommenders/google.cloud.RecentChangeRecommender/recommendations/[recommendation id] importance object Contains the reasons why we determined this resource to be important. risk object Contains some miscellaneous data that was relevant in discovering the importance of the resource. lastRefreshTime string Timestamp of the last time when the recommendation was updated.
+- Recent change recommendations automatically flag risky changes made recently to cloud resources identified as important based on their usage and other signals to help detect and mitigate issues, like service outages, caused by misconfigurations of those important cloud resources.
+- Google Cloud CLI ListRecommendation: gcloud recommender recommendations list --recommender = google.cloud.RecentChangeRecommender \ --organization = ORGANIZATION ID --location = global --format = yaml Replace the following: ORGANIZATION ID : The organization ID of organization you want to see the recent change risk recommendations.
+- ListInsight gcloud recommender insights list --insight-type = google.cloud.RecentChangeInsight \ --organization = ORGANIZATION ID --location = global --format = yaml Replace the following: ORGANIZATION ID : The organization ID of organization you want to see the recent change risk recommendations.
+
+### "Cloud deprecation and breaking changes general recommender \_|\_ Recommender\
+
+- URL: [https://docs.cloud.google.com/recommender/docs/deprecation-change-recommender](https://docs.cloud.google.com/recommender/docs/deprecation-change-recommender)
+- Source ID: `site-api-reference`
+- Final score: 182
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Ensure that you have the following roles: Description Roles View recommendations recommender.cloudDeprecationRecommendationViewer View and update recommendations recommender.cloudDeprecationRecommendationAdmin Required roles This section describes the roles and necessary permissions to use the Cloud deprecation and breaking changes general recommender .
+- If you have the correct permissions and the page does not show any recommendations, then the project does not have any deprecations or breaking changes that meet the criteria for a recommendation.
+- Role Included permissions roles/recommender.cloudDeprecationRecommendationViewer recommender.cloudDeprecationGeneralInsights.get recommender.cloudDeprecationGeneralInsights.list recommender.cloudDeprecationGeneralRecommendations.get recommender.cloudDeprecationGeneralRecommendations.list roles/recommender.cloudDeprecationRecommendationAdmin recommender.cloudDeprecationGeneralInsights.update recommender.cloudDeprecationGeneralRecommendations.update For more information about roles and about granting access, see the following: Understanding roles Managing access to projects, folders, and organizations Pricing Cloud deprecation and breaking changes general recommender is offered at no charge.
+- It identifies Cloud resources that will be affected by upcoming deprecations and breaking changes while providing guidelines on how to manage them.
+
+### Recommenders \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/recommender/docs/recommenders](https://docs.cloud.google.com/recommender/docs/recommenders)
+- Source ID: `site-api-reference`
+- Final score: 179
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- It has the following subtypes: Update insecure policy No Performance Rapid Cache recommender google.storage.bucket.AnywhereCacheRecommender Cache your data in Cloud Storage with Rapid Cache Yes Managed instance group machine type recommender google.compute.instanceGroupManager.MachineTypeRecommender Resize MIG machine types Yes VM machine type recommender google.compute.instance.MachineTypeRecommender Resize VM machine types Yes Cloud Functions minimum instances recommender google.cloudfunctions.PerformanceRecommender Prevent cold starts for deployed functions Yes Cloud SQL performance recommender MySQL high number of open tables MySQL high number of tables PostgreSQL high transaction id utilization google.cloudsql.instance.PerformanceRecommender Improve Cloud SQL instance performance MySQL: increase the table open cache size MySQL: manage high number of tables PostgreSQL: prevent transaction ID wraparound Yes Cloud SQL underprovisioned recommender google.cloudsql.instance.UnderprovisionedRecommender Optimize underprovisioned Cloud SQL instances Yes Reliability GKE diagnosis recommender google.container.DiagnosisRecommender Mitigate risks, troubleshoot and optimize your usage of GKE Yes Service limit (quota) recommender google.resourcemanager.serviceLimit.Recommender Manage service and quota usage to avoid hitting limits Yes Cloud SQL Reliability recommender google.cloudsql.instance.ReliabilityRecommender Enable High Availability on Cloud SQL Instances Yes Cloud SQL out-of-disk recommender google.cloudsql.instance.OutOfDiskRecommender Prevent Cloud SQL out-of-disk outage Yes Change Risk Recommendations google.resourcemanager.project.ChangeRiskRecommender google.iam.serviceAccount.ChangeRiskRecommender google.iam.policy.ChangeRiskRecommender Reduce risk of misconfigurations No Recent Change Recommendations google.cloud.RecentChangeRecommender Reduce risk of misconfigurations Yes Cloud Firestore Reliability recommender google.firestore.database.ReliabilityRecommender Improve Cloud Firestore database disaster recovery plan.
+- Recommender has the following recommenders: Value Category Name Recommender ID Short Description Included in BigQuery Export Cost BigQuery edition slot recommender google.bigquery.capacityCommitments.Recommender Optimize BigQuery spend with slot commitments No BigQuery partitioning and clustering recommender google.bigquery.table.PartitionClusterRecommender Partition or cluster your tables Yes Soft delete recommender google.storage.bucket.SoftDeleteRecommender Enable or disable soft delete based on costs and security No Cloud Run CPU allocation recommender google.run.service.CostRecommender Switch to CPU always allocated Yes Cloud SQL idle instance recommender google.cloudsql.instance.IdleRecommender Remove unused SQL instances Yes Cloud SQL overprovisioned instance recommender google.cloudsql.instance.OverprovisionedRecommender Resize overprovisioned SQL instances Yes Committed use discount recommender google.compute.commitment.UsageCommitmentRecommender Reduce costs through Compute Engine resource-based commitments Yes Idle custom image recommender google.compute.image.IdleResourceRecommender Remove unused images Yes Idle GKE cluster recommender google.container.DiagnosisRecommender Remove unused GKE clusters Yes Idle IP address recommender google.compute.address.IdleResourceRecommender Remove unused IPs Yes Idle persistent disk recommender google.compute.disk.IdleResourceRecommender Backup and remove unused disks Yes Idle VM recommender google.compute.instance.IdleResourceRecommender Remove unused VMs Yes Idle reservations recommender google.compute.IdleResourceRecommender Delete unused resource reservations Yes Underutilized reservations recommender google.compute.RightSizeResourceRecommender Right-size underutilized reservations Yes Security Identity and Access Management recommender google.iam.policy.Recommender Remove excess permissions Yes Cloud Run Service Security recommenders google.run.service.IdentityRecommender google.run.service.SecurityRecommender Increase Cloud Run Service security Yes Unattended project recommender google.resourcemanager.projectUtilization.Recommender Reclaim or remove unused projects Yes Advisory Notifications recommender google.cloud.security.GeneralRecommender Ensure that the right parties within your organization have access to view critical security and privacy notifications Yes Cloud SQL security recommender Remove broad public IP ranges Disable public IP connection Enable database auditing Remove authorized networks Require SSL for direct connections Rotate server certificate Enable instance password policies Enable user password policies google.cloudsql.instance.SecurityRecommender Secure Cloud SQL instances Remove broad public IP ranges from authorized networks Disable public IP connection to comply with your organization policy Enable database auditing Remove authorized networks to comply with your organization policy Require SSL for direct connections Rotate server certificate before it expires Enable instance password policies Enable user password policies Yes Cloud Firestore Security rules recommender google.firestore.database.FirebaseRulesRecommender Improve Cloud Firestore database firebase rules security.
+- It has the following subtypes: Enable scheduled backups Enable PITR No Manageability Deprecation and Breaking Changes recommender google.cloud.deprecation.GeneralRecommender Prevent service interruptions due to deprecations and breaking changes Yes Error Reporting notification recommender google.clouderrorreporting.Recommender Receive notifications for errors in your project No Google Maps Platform project management recommender google.gmp.project.ManagementRecommender Restrict your API keys No Product suggestion recommender google.logging.productSuggestion.ContainerRecommender Explore more helpful products No Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Recommenders A recommender is a service on Google Cloud that provides usage recommendations for Google Cloud resources.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:28:13.123Z"
+generated_at: "2026-04-12T12:20:09.456Z"
 product_name: "Virtual Private Cloud"
 product_slug: "virtual-private-cloud"
 feature_name: "Bring Your Own IP v2 for regional addresses"
@@ -9,9 +9,10 @@ latest_feature_date: "2024-04-26"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/vpc/docs/release-notes"
+  - "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip"
+  - "https://docs.cloud.google.com/vpc/docs/byoip-planning"
   - "https://docs.cloud.google.com/vpc/docs/quota"
-  - "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+  - "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints"
 keywords:
   - "bring"
   - "your"
@@ -38,52 +39,68 @@ Bring Your Own IP v2 for regional addresses reached general availability.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
+- [https://docs.cloud.google.com/vpc/docs/bring-your-own-ip](https://docs.cloud.google.com/vpc/docs/bring-your-own-ip)
+- [https://docs.cloud.google.com/vpc/docs/byoip-planning](https://docs.cloud.google.com/vpc/docs/byoip-planning)
 - [https://docs.cloud.google.com/vpc/docs/quota](https://docs.cloud.google.com/vpc/docs/quota)
-- [https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks](https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks)
+- [https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints](https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints)
 
 ## Supporting Pages
 
-### VPC release notes \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
+### "Bring your own IP addresses \_|\_ Virtual Private Cloud \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/vpc/docs/release-notes](https://docs.cloud.google.com/vpc/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 168
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/vpc/docs/bring-your-own-ip](https://docs.cloud.google.com/vpc/docs/bring-your-own-ip)
+- Source ID: `site-docs-root-2`
+- Final score: 342
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- April 26, 2024 Feature Bring your own IP v2 for regional addresses is available in General Availability . v2 public advertised prefixes are provisioned in approximately two weeks. v2 public delegated prefixes are provisioned in minutes. v2 prefixes are not automatically announced when provisioned; you control when to announce or withdraw advertisements .
-- For new configurations, we recommend that you use bring your own IP v2 , which lets you control when prefixes are advertised.
-- Bring your own IP for IPv6 addresses is available in General Availability .
-- For more information, see Bring your own IP addresses .
+- Anyone who has the appropriate IAM permissions in the project can use the IP addresses: compute.addresses. for regional IP addresses compute.globalAddresses. for global IP addresses Bring your own IP configurations The following tables summarize the available bring your own IP configurations.
+- Configuration Regional (v2) Regional internal (v2) Regional (v1) Global (v1) Availability Recommended regional configuration Used for internal IPv6 addresses Not recommended for new regional configurations Must request adding your project to an allowlist Public advertised prefix provisioning time Approximately 2 weeks Immediate Approximately 4 weeks Approximately 4 weeks Public delegated prefix provisioning time A few minutes Immediate 4 weeks Can overlap with public advertised prefix provisioning time 4 weeks Can overlap with public advertised prefix provisioning time Sub-prefix provisioning time A few minutes Immediate A few minutes A few minutes BGP announcement The public advertised prefix is not automatically announced when it is provisioned.
+- Bring your own IP addresses Bring your own IP addresses (BYOIP) lets you provision and use your own public IP addresses for Google Cloud resources.
+- Overview To bring your own IP addresses to Google, you complete the following steps: Create a public advertised prefix (PAP), a resource that represents the IP prefix that you are bringing to Google Cloud.
+
+### "Planning for bring your own IP addresses \_|\_ Virtual Private Cloud \_\
+
+- URL: [https://docs.cloud.google.com/vpc/docs/byoip-planning](https://docs.cloud.google.com/vpc/docs/byoip-planning)
+- Source ID: `site-docs-root-2`
+- Final score: 264
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Planning for bring your own IP addresses Bring your own IP addresses (BYOIP) lets you provision and use your own public IPv4 addresses for Google Cloud resources.
+- Here are some decisions that should be considered when you plan your deployment: Who is responsible for administering BYOIP addresses?
+- Prefix type Prefix Scope Public advertised prefix 203.0.113.0/24 Public delegated prefix 203.0.113.0/28 us-central1 Public delegated prefix 203.0.113.16/28 us-east-4 Public advertised prefix for global load balancers 192.0.2.0/24 Public delegated prefix 192.0.2.0/28 global The remaining IP addresses are reserved for future use.
+- For example, if you need some IP addresses in us-central1 and some IP addresses for global load balancers, and you want to reserve some IP addresses for the future, you should create the following plan.
 
 ### Quotas and limits \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/vpc/docs/quota](https://docs.cloud.google.com/vpc/docs/quota)
 - Source ID: `site-docs-root`
-- Final score: 156
+- Final score: 206
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Limit name: STATIC-BYOIP-ADDRESSES-per-project-region Metric: compute.googleapis.com/regional static byoip addresses Static BYOIP IP addresses global The number of bring your own IP global external IP addresses that you can create in your project.
 - Bring your own IP (BYOIP) Static BYOIP IP addresses The number of bring your own IP regional external IP addresses that you can reserve in each region in your project.
-- Virtual Private Cloud Start free Overview Guides Reference Resources More Technology areas More Overview Guides Reference Resources Cross-product tools More Console Virtual Private Cloud (VPC) All resources VPC pricing Announcement of pricing changes for egress traffic Announcement of pricing changes for external IPv4 addresses All networking pricing Quotas and limits Release notes All Google Cloud networking release notes Getting support Billing questions Service Level Agreement Google network locations Network edge locations Cloud CDN cache locations Cloud Interconnect colocation facility locations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Quotas Per project Per network Deprecated quotas Limits Shared VPC limits Per network IP address limits Per instance Connection logging limits Hybrid connectivity Effective limits for per-peering group quotas Effective limits example Manage quotas Permissions Check your quota Errors when exceeding your quota Request additional quota Resource availability Home Documentation Networking Virtual Private Cloud Resources Was this helpful?
 - Static global internal IPv4 addresses The number of static global internal IPv4 address ranges that you can reserve in your project, such as allocated IPv4 address ranges for private services access and IPv4 addresses reserved for Private Service Connect endpoints that are used to access global Google APIs.
+- Internal IP addresses Internal IP addresses The number of static regional internal IPv4 addresses that you can reserve in each region in your project.
 
-### "Quickstart: Create and manage VPC networks \_|\_ Virtual Private Cloud \_\
+### "Access regional Google APIs through endpoints \_|\_ Virtual Private Cloud\
 
-- URL: [https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks](https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks)
-- Source ID: `site-docs-root`
-- Final score: 144
+- URL: [https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints](https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints)
+- Source ID: `site-docs-root-2`
+- Final score: 193
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Virtual Private Cloud Start free Overview Guides Reference Resources More Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Virtual Private Cloud overview Get started VPC networks Subnets IPv6 support Create and manage VPC networks Add networking features Add IP addresses Overview Reserve internal IP addresses Reserve external IP addresses Move an external IPv4 address to a different project Add alias IP ranges Overview Configure alias IP ranges Bring your own IP addresses (BYOIP) Overview Planning and architecture Create a public advertised prefix Create public delegated prefixes Create IPv4 sub-prefixes and IP addresses Create and use IPv6 sub-prefixes Manage BGP announcement Deprovision BYOIP Add routes Routes overview Static routes overview Use routes Add policy-based routes Overview Use policy-based-routes Change MTU Overview Change MTU of a VPC network Create and verify a jumbo frame MTU network Access IPv4 destinations from IPv6-only instances Overview Configure IPv6-only subnets and instances with DNS64 and NAT64 Configure VMs Add network tags Add VMs with multiple network interfaces Overview Create VMs with multiple network interfaces Configure Dynamic NICs Add Dynamic NICs Delete Dynamic NICs Configure routing for an additional network interface Troubleshoot Add capabilities Network Connectivity Center VPC Network Peering Overview About peering connections Set up and manage VPC Network Peering Peer two VPC networks Shared VPC Overview Provision Shared VPC Deprovision Shared VPC Hybrid Subnets About migrating to Google Cloud with Hybrid Subnets Prepare for Hybrid Subnets connectivity Migrate to Google Cloud with Hybrid Subnets Disable hybrid subnet routing Internal ranges Overview Create and use internal ranges Network profiles for specific use cases Overview RDMA network profiles Create a VPC network for RDMA NICs View network profiles Access APIs and services Choose a private access option Private Service Connect Overview Compatibility Deployment patterns Architecture Security Create and access your own service Overview Create a load-balanced service Make the service accessible to other VPC networks Access the service from another VPC network Service consumers Endpoints Published services About accessing published services Access published services Manage endpoints that access published services Global Google APIs About accessing global Google APIs Access global Google APIs Regional Google APIs About accessing regional Google APIs Access regional Google APIs About propagated connections Backends About backends Create a backend Access published services Access regional Google APIs Access global Google APIs Network attachments About network attachments Create network attachments Configure security Service connection policies About service connectivity automation About service connection policies Configure connectivity to services Configure service connection policies Deploy service instances Manage consumer security Service producers Published services About published services About controlling access to published services Publish services Manage published services DNS configuration for services Private Service Connect health About Private Service Connect health Configure Private Service Connect health for failover View, update, and delete Private Service Connect health configurations Port mapping About port mapping Create port mapping services Update port mapping services Migrate peering services to Private Service Connect About migrating peering services Migrate peering services Interfaces About interfaces Create interfaces Configure routing Configure security Manage destination overlap Manage producer security Monitor connections Private Google Access Overview Configure Private Google Access Private Google Access for on-premises hosts Overview Configure Private Google Access for on-premises hosts Access APIs from VMs with external IP addresses Private services access Overview Configure private services access Send serverless traffic to a VPC network Overview Configure serverless traffic Monitor VPC Flow Logs Overview About VPC Flow Logs records About traffic flows Configure VPC Flow Logs Configure organization policy constraints Access flow logs Audit logging VPC audit logging Private services access audit logging Serverless VPC Access audit logging Packet Mirroring Overview Use Packet Mirroring Monitor Packet Mirroring Packet Mirroring partner providers Control access Manage resources by using custom constraints Create and manage tags for VPC resources Troubleshoot Troubleshoot internal connectivity between VMs Troubleshoot policy and access problems Advanced topics Advanced VPC concepts Legacy networks Overview Manage legacy networks AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools On this page Create networks Create an auto mode VPC network Create a custom mode VPC network with IPv4-only subnets Create a custom mode VPC network with a dual-stack subnet Create a custom mode VPC network with IPv6-only subnets About firewall rules View networks Work with subnets List subnets Describe a subnet Add an IPv4-only subnet Add a dual-stack subnet Add an IPv6-only subnet Change an IPv4-only subnet to dual-stack Change a dual-stack subnet to IPv4 only Add a subnet that uses an IPv6 BYOIP address range Add a subnet that uses a reserved IPv4 internal range Delete a subnet Expand a primary IPv4 range Edit secondary IPv4 ranges Modify networks Convert an auto mode VPC network to custom mode Assign an internal IPv6 ULA range to a network Change the dynamic routing mode Change the MTU of a network Delete a network Monitor your VPC network Migrate VMs Troubleshooting Can't delete a VPC network that was used with Serverless VPC Access Error: Constraint constraints/compute.requireVpcFlowLogs violated Resource not found error Resource already exists What's next Home Documentation Networking Virtual Private Cloud Guides Was this helpful?
-- Add a subnet that uses an IPv6 BYOIP address range Bring your own IP addresses (BYOIP) lets you import global unicast address (GUA) ranges that you can assign to a subnet's internal or external IPv6 address range.
-- If you want to use BYOIP to bring your own IPv6 addresses, see Assign subnet ranges instead.
-- If you want to use BYOIP to bring your own IPv6 addresses, see Assign subnet ranges instead.
+- DESCRIPTION : a description for your zone REP DNS NAME : the DNS suffix for your zone; use the target regional endpoint hostname—for example, spanner.me-central2.rep.googleapis.com VPC NETWORK LIST : a comma-delimited list of VPC networks that are authorized to query the zone API Send a POST request using the managedZones.create method: HTTP method and URL: POST https://dns.googleapis.com/dns/v1/projects/ PROJECT ID /managedZones Request JSON body: { "name": " ZONE NAME ", "dnsName": " REP DNS NAME .", "description": " DESCRIPTION ", "visibility": "private", "privateVisibilityConfig": { "kind": "dns#managedZonePrivateVisibilityConfig", "networks": [ { "kind": "dns#managedZonePrivateVisibilityConfigNetwork", "networkUrl": " NETWORK 1 URL " }, { "kind": "dns#managedZonePrivateVisibilityConfigNetwork", "networkUrl": " NETWORK 2 URL " } ] } } Replace the following: PROJECT ID : the project ID of the DNS zone.
+- The following example request tests that an endpoint with IP address 192.168.1.100 can request the Cloud Spanner API discovery document from the regional endpoint in me-central2 . curl --connect-to spanner.me-central2.rep.googleapis.com:443:192.168.1.100:443 \ 'https://spanner.me-central2.rep.googleapis.com/$discovery/rest?version=v1' Create a private DNS entry for the endpoint You must create private DNS entries so that clients can direct requests to your Private Service Connect endpoint.
+- To verify an IPv4 endpoint, do the following: curl --connect-to REP DNS NAME :443: ADDRESS :443 \ 'https:// REP DNS NAME / PATH ' To verify an IPv6 endpoint, do the following: curl -6 --connect-to REP DNS NAME :443:[ ADDRESS ]:443 \ 'https:// REP DNS NAME / PATH ' Replace the following: REP DNS NAME : the public DNS name of the target regional endpoint—for example, spanner.me-central2.rep.googleapis.com .
+- Roles To get the permissions that you need to create a regional Private Service Connect endpoint, ask your administrator to grant you the following IAM roles on your VPC network: Compute Network Admin role ( roles/compute.networkAdmin ) DNS Administrator role ( roles/dns.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .
 

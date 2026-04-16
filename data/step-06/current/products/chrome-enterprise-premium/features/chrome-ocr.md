@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T19:30:05.302Z"
+generated_at: "2026-04-14T12:10:45.833Z"
 product_name: "Chrome Enterprise Premium"
 product_slug: "chrome-enterprise-premium"
 feature_name: "Chrome OCR"
 feature_slug: "chrome-ocr"
 latest_feature_date: "2024-07-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
   - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
-  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes"
+  - "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
 keywords:
-  - "chrome"
-  - "ocr"
-  - "adds"
-  - "optical"
-  - "character"
   - "recognition"
+  - "character"
+  - "sensitive"
+  - "optical"
   - "scanning"
-  - "for"
+  - "adds"
 ---
 
 # Chrome OCR
 
 Product: Chrome Enterprise Premium
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +36,13 @@ Chrome OCR adds optical character recognition scanning for sensitive content in 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps)
 - [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps)
-- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes](https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes)
+- [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine)
 
 ## Supporting Pages
 
@@ -52,38 +50,32 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps)
 - Source ID: `site-docs-root`
-- Final score: 98
+- Final score: 42
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create a secure gateway A Chrome Enterprise Premium secure gateway is a fundamental building block for establishing secure connections to your applications. console To create a secure gateway, do the following: In the Google Cloud console, go to the secure gateway page.
-- A Chrome Enterprise Premium secure gateway functions as a forward proxy, enforcing a zero trust access framework and delivering granular, context-aware control over who accesses your private web applications.
-- This document describes how to set up a Chrome Enterprise Premium secure gateway for securing access to your private web applications.
-- Before you begin Before setting up the secure gateway, verify that you have the following: A Chrome Enterprise Premium license.
+- The following example adds new-group@example.com : { "version" : 3 , "bindings" : [ { "role" : "roles/beyondcorp.securityGatewayUser" , "members" : [ "group:existing-group@example.com" , "group:new-group@example.com" ] } ], "etag" : "BwXN8 d-bOM=" } You can also add other types of members, such as serviceAccount , user , group , principal , and principalSet , in policy bindings.
+- The following example adds new-group@example.com : { "version" : 3 , "bindings" : [ { "role" : "roles/beyondcorp.securityGatewayUser" , "members" : [ "group:existing-group@example.com" , "group:new-group@example.com" ] } ], "etag" : "BwXN8 d-bOM=" } You can also add other types of members, such as serviceAccount , user , group , principal , and principalSet , in policy bindings.
+- The ID can be up to 63 characters and can contain lowercase letters, numbers, and hyphens.
+- The first character must be a letter, and the last character can be a letter or number.
 
 ### "Secure access to SaaS applications \_|\_ Chrome Enterprise Premium \_|\_\
 
 - URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps](https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps)
 - Source ID: `site-docs-root`
-- Final score: 98
+- Final score: 42
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - The hostname can be up to 253 characters long, and must adhere to one of the following formats: A valid IPv4 address A valid IPv6 address A valid DNS name An asterisk ( ) An asterisk ( ) followed by a valid DNS name Secure gateway parameters SECURITY GATEWAY ID = SECURITY GATEWAY ID SECURITY GATEWAY DISPLAY NAME = " SECURITY GATEWAY DISPLAY NAME " Replace the following: SECURITY GATEWAY ID : The ID of the secure gateway.
-- A Chrome Enterprise Premium secure gateway functions as a forward proxy, enforcing a zero trust access framework and delivering granular, context-aware control over who accesses your SaaS applications.
-- Create a secure gateway A Chrome Enterprise Premium secure gateway is a fundamental building block for establishing secure connections to your applications.
-- Before you begin Before setting up the secure gateway, verify that you have the following: A Chrome Enterprise Premium license.
+- The following example adds new-group@example.com : { "version" : 3 , "bindings" : [ { "role" : "roles/beyondcorp.securityGatewayUser" , "members" : [ "group:existing-group@example.com" , "group:new-group@example.com" ] } ], "etag" : "BwXN8 d-bOM=" } You can also add other types of members, such as serviceAccount , user , group , principal , and principalSet , in policy bindings.
+- The following example adds new-group@example.com : { "version" : 3 , "bindings" : [ { "role" : "roles/beyondcorp.securityGatewayUser" , "members" : [ "group:existing-group@example.com" , "group:new-group@example.com" ] } ], "etag" : "BwXN8 d-bOM=" } You can also add other types of members, such as serviceAccount , user , group , principal , and principalSet , in policy bindings.
+- The name can be up to 63 characters, and can contain lowercase letters, numbers, and hyphens.
 
-### Chrome Enterprise Premium release notes \_|\_ Google Cloud Documentation
+### "Securing Compute Engine apps and resources with IAP \_|\_ Chrome Enterprise\
 
-- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes](https://docs.cloud.google.com/chrome-enterprise-premium/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 94
+- URL: [https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine](https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine)
+- Source ID: `site-iam-reference`
+- Final score: 30
 - Re-rank relevance: N/A
-
-Evidence snippets:
-- July 18, 2024 Feature Generally Available : Chrome OCR for Chrome Enterprise Premium You can now scan text in image (BMP, GIF, JPEG, PNG, and TIFF) files and images in PDFs for sensitive content with optical character recognition (OCR).
-- April 08, 2024 Feature You can now enable Chrome Security Insights to monitor insider risk and data loss with enhanced monitoring for Chrome activity if you have Chrome Enterprise Core and Workspace Enterprise Standard or Workspace Enterprise Plus with assigned licenses.
-- Feature Generally Available : Generative AI URL Category for Chrome Enterprise Premium You can now use the Generative AI URL category when creating Chrome DLP rules.
-- Feature Generally Available : Rule-based custom messages for Chrome Enterprise Premium You can now specify a custom warning message when creating Chrome DLP rules.
 

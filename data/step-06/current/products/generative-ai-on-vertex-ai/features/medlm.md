@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:21.817Z"
+generated_at: "2026-04-12T12:16:18.678Z"
 product_name: "Generative AI on Vertex AI"
 product_slug: "generative-ai-on-vertex-ai"
 feature_name: "MedLM"
 feature_slug: "medlm"
 latest_feature_date: "2025-05-14"
 deprecation_date: "2025-09-29"
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo"
+  - "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/access-control"
+  - "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini"
+  - "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines"
 keywords:
   - "medlm"
   - "was"
@@ -24,7 +27,7 @@ keywords:
 # MedLM
 
 Product: Generative AI on Vertex AI
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,70 @@ MedLM was deprecated and access ended on or after September 29, 2025; deprecated
 
 MedLM was deprecated and access ended on or after September 29, 2025; deprecated on 2025-09-29.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo)
+- [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/access-control](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/access-control)
+- [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini)
+- [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Get information about a context cache \_|\_ Generative AI on Vertex AI \_\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo)
+- Source ID: `site-docs-root`
+- Final score: 210
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method GET -Headers $headers -Uri "https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "cachedContents": [ { "name": "projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID 1 ", "model": "projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001", "createTime": "2024-05-31T19:04:35.380412Z", "updateTime": "2024-05-31T19:04:35.380412Z", "expireTime": "2024-05-31T20:04:35.349680Z" }, { "name": "projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID 2 ", "model": "projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001", "createTime": "2024-05-30T21:14:39.880235Z", "updateTime": "2024-05-31T00:21:15.350969Z", "expireTime": "2024-05-31T01:21:15.348014Z" }, { "name": "projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID N ", "model": "projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001", "createTime": "2024-05-30T21:14:39.880235Z", "updateTime": "2024-05-31T00:21:15.350969Z", "expireTime": "2024-05-31T01:21:15.348014Z" } ] } Example curl command LOCATION = "us-central1" PROJECT ID = " PROJECT ID " curl \ -X GET \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents Get information about a context cache To get information about one context cache, you need its cache ID, the Google Cloud project ID with which the context cache is associated, and the region where the request to create the context cache was processed.
+- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri "https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents/ CACHE ID " Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "name": "projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID ", "model": "projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001", "createTime": "2024-05-31T19:04:35.380412Z", "updateTime": "2024-05-31T19:04:35.380412Z", "expireTime": "2024-05-31T20:04:35.349680Z" } Example curl command LOCATION = "us-central1" PROJECT ID = " PROJECT ID " CACHE ID = " CACHE ID " curl \ -X GET \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } / ${ CACHE ID } Learn how to use a context cache .
+- Execute the following command: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents/ CACHE ID " PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .
+- Execute the following command: curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .
+
+### Access control \_|\_ Generative AI on Vertex AI \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/access-control](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/access-control)
+- Source ID: `site-docs-root`
+- Final score: 190
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Access control Stay organized with collections Save and categorize content based on your preferences.
+- Overview Responsible AI Learn about some of the limitations to generative AI and recommended practices for using generative AI.
+- Operation Permissions needed Make prompt requests aiplatform.endpoints.predict Save, view, update, and delete prompts in Vertex AI Studio aiplatform.datasets.create aiplatform.datasets.update aiplatform.datasets.delete aiplatform.datasets.list aiplatform.datasets.get Model tuning aiplatform.pipelineJobs. aiplatform.customJobs. aiplatform.datasets.export aiplatform.datasets.get aiplatform.models.upload aiplatform.models.get aiplatform.endpoints.create aiplatform.endpoints.get aiplatform.endpoints.deploy aiplatform.metadataStores.get storage.objects.create storage.objects.update storage.objects.get storage.objects.list To learn more about Vertex AI IAM permissions, see IAM permissions .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+
+### "Context Caching for Fine-tuned Gemini Models \_|\_ Generative AI on Vertex\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini)
+- Source ID: `site-docs-root`
+- Final score: 186
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Response { "candidates": [ { "content": { "role": "model", "parts": [ { "text": " MODEL RESPONSE " } ] }, "finishReason": "STOP", "safetyRatings": [ { "category": "HARM CATEGORY HATE SPEECH", "probability": "NEGLIGIBLE", "probabilityScore": 0.21866937, "severity": "HARM SEVERITY NEGLIGIBLE", "severityScore": 0.19946389 }, { "category": "HARM CATEGORY DANGEROUS CONTENT", "probability": "MEDIUM", "probabilityScore": 0.6880493, "severity": "HARM SEVERITY MEDIUM", "severityScore": 0.43374163 }, { "category": "HARM CATEGORY HARASSMENT", "probability": "NEGLIGIBLE", "probabilityScore": 0.4442634, "severity": "HARM SEVERITY LOW", "severityScore": 0.37903354 }, { "category": "HARM CATEGORY SEXUALLY EXPLICIT", "probability": "NEGLIGIBLE", "probabilityScore": 0.10502681, "severity": "HARM SEVERITY LOW", "severityScore": 0.28170192 } ] } ], "usageMetadata": { "promptTokenCount": 55927, "candidatesTokenCount": 105, "totalTokenCount": 56032 } } Example curl command LOCATION = "us-central1" PROJECT ID = "test-project" ENDPOINT ID = 987654321 curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ "https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /endpoints/ ${ ENDPOINT ID } :generateContent" -d \ '{ "cachedContent": "projects/${PROJECT NUMBER}/locations/${LOCATION}/cachedContents/${CACHE ID}", "contents": [ {"role":"user","parts":[{"text":"What are the benefits of exercise?"}]} ], "generationConfig": { "maxOutputTokens": 8192, "temperature": 1, "topP": 0.95, }, "safetySettings": [ { "category": "HARM CATEGORY HATE SPEECH", "threshold": "BLOCK MEDIUM AND ABOVE" }, { "category": "HARM CATEGORY DANGEROUS CONTENT", "threshold": "BLOCK MEDIUM AND ABOVE" }, { "category": "HARM CATEGORY SEXUALLY EXPLICIT", "threshold": "BLOCK MEDIUM AND ABOVE" }, { "category": "HARM CATEGORY HARASSMENT", "threshold": "BLOCK MEDIUM AND ABOVE" } ], }' Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "name": "projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID ", "model": "projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID @ MODEL VERSION ", "createTime": "2024-06-04T01:11:50.808236Z", "updateTime": "2024-06-04T01:11:50.808236Z", "expireTime": "2024-06-04T02:11:50.794542Z" } Example curl command LOCATION = "us-central1" MODEL ID = "model-id" PROJECT ID = "test-project" MODEL VERSION = 1 MIME TYPE = "video/mp4" CACHED CONTENT URI = "gs://path-to-bucket/video-file-name.mp4" curl -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json" \ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents -d \ '{ "model":"projects/${PROJECT ID}/locations/${LOCATION}/models/${MODEL ID}@${MODEL VERSION}", "contents": [ { "role": "user", "parts": [ { "fileData": { "mimeType": "${MIME TYPE}", "fileUri": "${CACHED CONTENT URI}" } } ] } ] }' Use a context cache for a fine-tuned model The procedure for using a context cache for a fine-tuned model largely follows the steps outlined in Use a context cache .
+- Save the request body in a file named request.json , and execute the following command: curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /endpoints/ ENDPOINT ID :generateContent" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /endpoints/ ENDPOINT ID :generateContent" Select-Object -Expand Content You should receive a JSON response similar to the following.
+
+### "Responsible AI for Veo on Vertex AI video generation \_|\_ Generative AI\
+
+- URL: [https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines)
+- Source ID: `site-docs-root`
+- Final score: 174
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- What's next Learn about Responsible AI for Large Language Models (LLMs) Learn more about Google's recommendations for Responsible AI practices Read our blog, A shared agenda for responsible AI progress Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Responsible AI for Veo on Vertex AI video generation Stay organized with collections Save and categorize content based on your preferences.
+- However, it is important for developers to understand how to test and deploy Google's models safely and responsibly.
 

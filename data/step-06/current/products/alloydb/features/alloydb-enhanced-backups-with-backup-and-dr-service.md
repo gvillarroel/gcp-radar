@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.574Z"
+generated_at: "2026-04-12T12:07:33.823Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "AlloyDB enhanced backups with Backup and DR Service"
 feature_slug: "alloydb-enhanced-backups-with-backup-and-dr-service"
 latest_feature_date: "2025-10-30"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention"
+  - "https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListBackupsAsyncPager"
 keywords:
   - "Backup and DR Service integration"
   - "preview vault integration"
@@ -24,7 +27,7 @@ keywords:
 # AlloyDB enhanced backups with Backup and DR Service
 
 Product: AlloyDB
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,26 +35,50 @@ AlloyDB enhanced backups (preview) integrate with Google Cloud Backup and DR Ser
 
 ## Extended Definition
 
-AlloyDB enhanced backups is a Preview feature (announced on October 30, 2025) that integrates AlloyDB cluster backup operations with the Google Cloud Backup and DR Service. This integration provides vaulted backups with retention lock enforcement and uses the Backup and DR Service control plane for centralized policy management and advanced scheduling.
+AlloyDB enhanced backups (preview) integrate with Google Cloud Backup and DR Service to support vaulted backups, retention lock, and centralized policy management.
 
 ## Evidence Summary
 
-The AlloyDB release notes explicitly state that the preview feature integrates cluster backups with Google Cloud Backup and DR Service and list vaulted backups, retention lock, centralized policy control, and advanced scheduling as core capabilities.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention)
+- [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListBackupsAsyncPager](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListBackupsAsyncPager)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Class AutomatedBackupPolicy (0.7.0) \_|\_ Python client libraries \_|\_\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 22
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy)
+- Source ID: `site-python-reference`
+- Final score: 88
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- This integration provides vaulted backups data with retention lock enforcement, and it uses the Backup and DR Service control plane for centralized policy management and advanced scheduling for AlloyDB clusters.
-- October 30, 2025 Feature AlloyDB offers enhanced backups ( Preview ) that integrate a cluster's backup operations with the Google Cloud Backup and DR Service .
+### "Class QuantityBasedRetention (0.7.0) \_|\_ Python client libraries \_|\_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.QuantityBasedRetention)
+- Source ID: `site-python-reference`
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Class TimeBasedRetention (0.7.0) \_|\_ Python client libraries \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.types.AutomatedBackupPolicy.TimeBasedRetention)
+- Source ID: `site-python-reference`
+- Final score: 82
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+### "Class ListBackupsAsyncPager (0.7.0) \_|\_ Python client libraries \_|\_\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListBackupsAsyncPager](https://docs.cloud.google.com/python/docs/reference/alloydb/latest/google.cloud.alloydb_v1.services.alloy_db_admin.pagers.ListBackupsAsyncPager)
+- Source ID: `site-python-reference`
+- Final score: 80
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T20:10:07.299Z"
+generated_at: "2026-04-14T13:57:37.597Z"
 product_name: "Cloud Billing"
 product_slug: "cloud-billing"
 feature_name: "Cloud Billing project-account link lock"
 feature_slug: "cloud-billing-project-account-link-lock"
 latest_feature_date: "2022-07-22"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/billing/docs/how-to/view-linked"
   - "https://docs.cloud.google.com/billing/docs/how-to/create-billing-account"
-  - "https://docs.cloud.google.com/billing/docs/how-to/find-billing-account-administrator"
+  - "https://docs.cloud.google.com/billing/docs/onboarding-checklist"
 keywords:
   - "billing"
   - "project"
@@ -20,13 +20,13 @@ keywords:
   - "lock"
   - "added"
   - "mechanism"
-  - "to"
+  - "secure"
 ---
 
 # Cloud Billing project-account link lock
 
 Product: Cloud Billing
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +38,13 @@ Cloud Billing added a lock mechanism to secure the link between a Google Cloud p
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/billing/docs/how-to/view-linked](https://docs.cloud.google.com/billing/docs/how-to/view-linked)
 - [https://docs.cloud.google.com/billing/docs/how-to/create-billing-account](https://docs.cloud.google.com/billing/docs/how-to/create-billing-account)
-- [https://docs.cloud.google.com/billing/docs/how-to/find-billing-account-administrator](https://docs.cloud.google.com/billing/docs/how-to/find-billing-account-administrator)
+- [https://docs.cloud.google.com/billing/docs/onboarding-checklist](https://docs.cloud.google.com/billing/docs/onboarding-checklist)
 
 ## Supporting Pages
 
@@ -52,20 +52,20 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/view-linked](https://docs.cloud.google.com/billing/docs/how-to/view-linked)
 - Source ID: `site-docs-root`
-- Final score: 230
+- Final score: 190
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- For information about unlocking or locking this link, see Secure the link between a project and its billing account .
+- For information about unlocking or locking this link, see Secure the link between a project and its billing account .
 - A padlock icon lock displays next to each project that's locked to its linked Cloud Billing account.
 - A padlock icon lock displays next to each project that's locked to its linked Cloud Billing account.
-- To gain this permission using a predefined role, ask your administrator to grant you one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Viewer Billing Account Costs Manager Billing Account Administrator How to view the projects linked to a billing account Follow these steps to open a billing account and then view a list of projects linked to that billing account.
-- To gain this permission using a predefined role, ask your administrator to grant you one of the following roles on your projects: Project Browser Project Viewer Project Editor Project Owner How to view a list of projects and their linked billing account Follow these steps to view a list of all your projects and the billing account linked to each project.
 
 ### Create a new self-serve Cloud Billing account \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/billing/docs/how-to/create-billing-account](https://docs.cloud.google.com/billing/docs/how-to/create-billing-account)
 - Source ID: `site-docs-root`
-- Final score: 186
+- Final score: 138
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -75,16 +75,17 @@ Evidence snippets:
 - If you want to change the Cloud Billing account that you're using to pay for a project (that is, link a project to a different Cloud Billing account), see Enable, disable, or change billing for a project .
 - Create a FinOps administration project To use many of the powerful tools available in Cloud Billing, you need a project that is linked to the billing account .
 
-### Find a Billing Account Administrator \_|\_ Google Cloud Documentation
+### "Guide to Cloud Billing Resource Organization and Access Management \_|\_\
 
-- URL: [https://docs.cloud.google.com/billing/docs/how-to/find-billing-account-administrator](https://docs.cloud.google.com/billing/docs/how-to/find-billing-account-administrator)
-- Source ID: `site-docs-root-2`
-- Final score: 186
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/billing/docs/onboarding-checklist](https://docs.cloud.google.com/billing/docs/onboarding-checklist)
+- Source ID: `site-docs-root`
+- Final score: 120
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Billing Account Administrators can manage payment instruments, pay bills, configure billing data exports, view cost information, link and unlink projects, and manage user permissions on the billing account.
-- Note: Neither the Billing Account Creator role (which is granted at the Organization level) nor the Project Billing Manager role (which is granted on a project) include the permissions needed to access basic information about the billing account.
-- Administrator-level permissions on other Google Cloud resources, such as Project Owner, don't grant you the permissions you need to see basic billing account information.
-- On the Cloud Billing account, you need a role that includes the following permissions : billing.accounts.get billing.accounts.getIamPolicy These permissions are granted in many predefined roles for Cloud Billing , including: Billing Account User Billing Account Viewer Billing Account Costs Manager Billing Account Administrator If you have some level of Cloud Billing account access, you can view basic information about the billing account, including viewing the Info panel to identify the administrators and other principals within your organization who have billing account permissions.
+- Important Roles monetization on Role: Billing Account Admin The Billing Account Admin can: Manage payment instruments Enable Billing Export View costs and spend and set budget alerts Link and unlink projects Manage other user roles tied to the Billing Account Recommended Assignee This role is typically filled by someone with financial control at your company, for example, a business lead that owns the P&L or a technical team member with budget management responsibility.
+- Importantly, because this role is required to contact Billing Support, you shouldn't use a service account or mailing list as a billing administrator. monetization on Role: Billing User Billing Users can: Link projects to billing accounts, but can't unlink them View costs Recommended Assignee This role is usually issued broadly in concert with the Project Creator role.
+- Note: If you have many projects to move, try our gcloud tool to link projects to a billing account . ❑ star Settle and close any other billing accounts that you no longer intend to use to avoid potential issues in the future.
+- You can label the service-level resources (for example, virtual machines), as well as your account-level resources (for example, projects). monetization on Cloud Billing accounts are linked to and pay for projects .
 

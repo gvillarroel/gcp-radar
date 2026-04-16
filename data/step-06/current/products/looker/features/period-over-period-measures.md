@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.414Z"
+generated_at: "2026-04-15T13:43:38.456Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Period-over-period measures"
@@ -9,18 +9,18 @@ latest_feature_date: "2025-08-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/api-4-ga"
-  - "https://docs.cloud.google.com/looker/docs/gemini-overview-looker"
-  - "https://docs.cloud.google.com/looker/docs/conversational-analytics-overview"
+  - "https://docs.cloud.google.com/bigquery/docs/google-ads-transformation"
+  - "https://docs.cloud.google.com/looker/docs/bar-options"
+  - "https://docs.cloud.google.com/looker/docs/visualization-guide"
 keywords:
   - "period"
   - "over"
   - "measures"
   - "pop"
-  - "are"
   - "now"
   - "generally"
   - "available"
+  - "added"
 ---
 
 # Period-over-period measures
@@ -42,40 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/api-4-ga](https://docs.cloud.google.com/looker/docs/api-4-ga)
-- [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- [https://docs.cloud.google.com/looker/docs/conversational-analytics-overview](https://docs.cloud.google.com/looker/docs/conversational-analytics-overview)
+- [https://docs.cloud.google.com/bigquery/docs/google-ads-transformation](https://docs.cloud.google.com/bigquery/docs/google-ads-transformation)
+- [https://docs.cloud.google.com/looker/docs/bar-options](https://docs.cloud.google.com/looker/docs/bar-options)
+- [https://docs.cloud.google.com/looker/docs/visualization-guide](https://docs.cloud.google.com/looker/docs/visualization-guide)
 
 ## Supporting Pages
 
-### Looker API 4.0 Generally Available | Google Cloud Documentation
+### Google Ads report transformation \_|\_ BigQuery \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-4-ga](https://docs.cloud.google.com/looker/docs/api-4-ga)
-- Source ID: `site-api-reference`
-- Final score: 50
+- URL: [https://docs.cloud.google.com/bigquery/docs/google-ads-transformation](https://docs.cloud.google.com/bigquery/docs/google-ads-transformation)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 137
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- HasRecommendedBudget campaign budget period Period over which to spend the budget.
+- BudgetName campaign budget period Period over which to spend the budget.
+- AdWords reports (deprecated) BigQuery AdWords tables Google Ads tables Google Ads API resources (v22.0.0) BigQuery views Account Performance Report p Customer customer id p HourlyAccountConversionStats customer id p AccountConversionStats customer id p HourlyAccountStats customer id p AccountNonClickStats customer id p AccountBasicStats customer id p AccountStats customer id p ads Customer customer id p ads HourlyAccountConversionStats customer id p ads AccountConversionStats customer id p ads HourlyAccountStats customer id p ads AccountNonClickStats customer id p ads AccountBasicStats customer id p ads AccountStats customer id Customer Customer customer id HourlyAccountConversionStats customer id AccountConversionStats customer id HourlyAccountStats customer id AccountNonClickStats customer id AccountBasicStats customer id AccountStats customer id Ad Performance Report p AdBasicStats customer id p AdCrossDeviceStats customer id p AdConversionStats customer id p AdStats customer id p AdCrossDeviceConversionStats customer id p Ad customer id p ads AdBasicStats customer id p ads AdCrossDeviceStats customer id p ads AdConversionStats customer id p ads AdStats customer id p ads AdCrossDeviceConversionStats customer id p ads Ad customer id Ad Group Ad AdBasicStats customer id AdCrossDeviceStats customer id AdConversionStats customer id AdStats customer id AdCrossDeviceConversionStats customer id Ad customer id Adgroup Performance Report p AdGroupStats customer id p AdGroupBasicStats customer id p AdGroupCrossDeviceStats customer id p HourlyAdGroupConversionStats customer id p HourlyAdGroupStats customer id p AdGroupConversionStats customer id p AdGroupCrossDeviceConversionStats customer id p AdGroup customer id p ads AdGroupStats customer id p ads AdGroupBasicStats customer id p ads AdGroupCrossDeviceStats customer id p ads HourlyAdGroupConversionStats customer id p ads HourlyAdGroupStats customer id p ads AdGroupConversionStats customer id p ads AdGroupCrossDeviceConversionStats customer id p ads AdGroup customer id Ad Group AdGroupStats customer id AdGroupBasicStats customer id AdGroupCrossDeviceStats customer id HourlyAdGroupConversionStats customer id HourlyAdGroupStats customer id AdGroupConversionStats customer id AdGroupCrossDeviceConversionStats customer id AdGroup customer id Age Range Performance Report p AgeRange customer id p AgeRangeBasicStats customer id p AgeRangeStats customer id p AgeRangeConversionStats customer id p AgeRangeNonClickStats customer id p ads AgeRange customer id p ads AgeRangeBasicStats customer id p ads AgeRangeStats customer id p ads AgeRangeConversionStats customer id p ads AgeRangeNonClickStats customer id Age Range View AgeRange customer id AgeRangeBasicStats customer id AgeRangeStats customer id AgeRangeConversionStats customer id AgeRangeNonClickStats customer id Audience Performance Report p Audience customer id p AudienceConversionStats customer id p AudienceNonClickStats customer id p AudienceBasicStats customer id p AudienceStats customer id NULL NULL NULL NULL NULL Ad Group Audience View Campaign Audience View Audience customer id AudienceConversionStats customer id AudienceNonClickStats customer id AudienceBasicStats customer id AudienceStats customer id Bid Goal Performance Report p BidGoal customer id p BidGoalStats customer id p HourlyBidGoalStats customer id p BidGoalConversionStats customer id p ads BidGoal customer id p ads BidGoalStats customer id p ads HourlyBidGoalStats customer id p ads BidGoalConversionStats customer id Bidding Strategy BidGoal customer id BidGoalStats customer id HourlyBidGoalStats customer id BidGoalConversionStats customer id Budget Performance Report p Budget customer id p BudgetStats customer id p ads Budget customer id p ads BudgetStats customer id Campaign Budget Budget customer id BudgetStats customer id Campaign Location Target Report p CampaignLocationTargetStats customer id p LocationBasedCampaignCriterion customer id p ads CampaignLocationTargetStats customer id p ads LocationBasedCampaignCriterion customer id Location View CampaignLocationTargetStats customer id LocationBasedCampaignCriterion customer id Campaign Performance Report p Campaign customer id p CampaignBasicStats customer id p CampaignConversionStats customer id p CampaignCrossDeviceStats customer id p HourlyCampaignConversionStats customer id p CampaignStats customer id p HourlyCampaignStats customer id p CampaignCrossDeviceConversionStats customer id p CampaignCookieStats customer id p ads Campaign customer id p ads CampaignBasicStats customer id p ads CampaignConversionStats customer id p ads CampaignCrossDeviceStats customer id p ads HourlyCampaignConversionStats customer id p ads CampaignStats customer id p ads HourlyCampaignStats customer id p ads CampaignCrossDeviceConversionStats customer id p ads CampaignCookieStats customer id Campaign Campaign customer id CampaignBasicStats customer id CampaignConversionStats customer id CampaignCrossDeviceStats customer id HourlyCampaignConversionStats customer id CampaignStats customer id HourlyCampaignStats customer id CampaignCrossDeviceConversionStats customer id CampaignCookieStats customer id Click Performance Report p ClickStats customer id p ads ClickStats customer id Click View ClickStats customer id Criteria Performance Report p Criteria customer id p CriteriaBasicStats customer id p CriteriaStats customer id p CriteriaConversionStats customer id p CriteriaNonClickStats customer id NULL NULL NULL NULL NULL Criteria customer id CriteriaBasicStats customer id CriteriaStats customer id CriteriaConversionStats customer id CriteriaNonClickStats customer id Gender Performance Report p Gender customer id p GenderBasicStats customer id p GenderStats customer id p GenderConversionStats customer id p GenderNonClickStats customer id p ads Gender customer id p ads GenderBasicStats customer id p ads GenderStats customer id p ads GenderConversionStats customer id p ads GenderNonClickStats customer id Gender View Gender customer id GenderBasicStats customer id GenderStats customer id GenderConversionStats customer id GenderNonClickStats customer id Geo Performance Report p GeoConversionStats customer id p GeoStats customer id p ads GeoConversionStats customer id p ads GeoStats customer id Geographic View GeoConversionStats customer id GeoStats customer id Keywords Performance Report p Keyword customer id p KeywordBasicStats customer id p KeywordCrossDeviceStats customer id p KeywordStats customer id p KeywordCrossDeviceConversionStats customer id p KeywordConversionStats customer id p ads Keyword customer id p ads KeywordBasicStats customer id p ads KeywordCrossDeviceStats customer id p ads KeywordStats customer id p ads KeywordCrossDeviceConversionStats customer id p ads KeywordConversionStats customer id Keyword View Keyword customer id KeywordBasicStats customer id KeywordCrossDeviceStats customer id KeywordStats customer id KeywordCrossDeviceConversionStats customer id KeywordConversionStats customer id Paid Organic Query Report p PaidOrganicStats customer id p ads PaidOrganicStats customer id Paid Organic Search Term View PaidOrganicStats customer id Parental Status Performance Report p ParentalStatus customer id p ParentalStatusBasicStats customer id p ParentalStatusStats customer id p ParentalStatusConversionStats customer id p ParentalStatusNonClickStats customer id p ads ParentalStatus customer id p ads ParentalStatusBasicStats customer id p ads ParentalStatusStats customer id p ads ParentalStatusConversionStats customer id p ads ParentalStatusNonClickStats customer id Parental Status View ParentalStatus customer id ParentalStatusBasicStats customer id ParentalStatusStats customer id ParentalStatusConversionStats customer id ParentalStatusNonClickStats customer id Placement Performance Report p PlacementBasicStats customer id p PlacementNonClickStats customer id p PlacementStats customer id p Placement customer id p PlacementConversionStats customer id p ads PlacementBasicStats customer id p ads PlacementNonClickStats customer id p ads PlacementStats customer id p ads Placement customer id p ads PlacementConversionStats customer id Managed Placement View PlacementBasicStats customer id PlacementNonClickStats customer id PlacementStats customer id Placement customer id PlacementConversionStats customer id Search Query Performance Report p SearchQueryStats customer id p SearchQueryConversionStats customer id p ads SearchQueryStats customer id p ads SearchQueryConversionStats customer id Search Term View SearchQueryStats customer id SearchQueryConversionStats customer id Shopping Performance Report p ShoppingProductConversionStats customer id p ShoppingProductStats customer id p ads ShoppingProductConversionStats customer id p ads ShoppingProductStats customer id Shopping Performance View ShoppingProductConversionStats customer id ShoppingProductStats customer id Video Performance Report p VideoBasicStats customer id p VideoConversionStats customer id p VideoStats customer id p Video customer id p VideoNonClickStats customer id p ads VideoBasicStats customer id p ads VideoConversionStats customer id p ads VideoStats customer id p ads Video customer id p ads VideoNonClickStats customer id Video VideoBasicStats customer id VideoConversionStats customer id VideoStats customer id Video customer id VideoNonClickStats customer id AdGroupBidModifier Ad Group Bid Modifier AdGroupAdLabel Ad Group Ad Label CampaignLabel Campaign Label CampaignCriterion Campaign Criterion AdGroupLabel Ad Group Label AdGroupAudience AdGroupAudienceStats AdGroupAudienceConversionStats AdGroupAudienceNonClickStats AdGroupAudienceBasicStats Ad Group Audience View Assets (available if Pmax data is enabled) Assets AssetGroup (available if Pmax data is enabled) Asset Groups AssetGroupAsset (available if Pmax data is enabled) Asset Group Assets AssetGroupSignal (available if Pmax data is enabled) Asset Group Signal AssetGroupProductGroupStats (available if Pmax data is enabled) AssetGroupProductGroupStats CampaignAssetStats (available if Pmax data is enabled) CampaignAssetStats Column mapping for Google Ads reports The BigQuery tables created by a Google Ads transfer consist of the following columns (fields): Google Ads Table Name: AccountBasicStats Google Ads API Resource: customer Google Ads Field Name Description Adwords Mapped Field Name customer id The ID of the customer.
+- This ID is equivalent to the google product category ID as described in this document: https://support.google.com/merchants/answer/6324436 ad group criterion listing group case value product bidding category level (obsolete - use ad group criterion listing group case value product category level instead) Level of the product bidding category. ad group criterion listing group case value product brand value String value of the product brand. ad group criterion listing group case value product channel channel Value of the locality. ad group criterion listing group case value product channel exclusivity channel exclusivity Value of the availability. ad group criterion listing group case value product condition condition Value of the condition. ad group criterion listing group case value product custom attribute index Indicates the index of the custom attribute. ad group criterion listing group case value product custom attribute value String value of the product custom attribute. ad group criterion listing group case value product item id value Value of the id. ad group criterion listing group case value product type level Level of the type. ad group criterion listing group case value product type value Value of the type. ad group criterion status The status of the criterion. ad group id The ID of the ad group. campaign id The ID of the campaign. metrics average cpc The total cost of all clicks divided by the total number of clicks received. metrics average cpm Average cost-per-thousand impressions (CPM). metrics clicks The number of clicks. metrics cost micros The sum of your cost-per-click (CPC) and cost-per-thousand impressions (CPM) costs during this period. metrics ctr The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions). metrics impressions Count of how often your ad has appeared on a search results page or website on the Google Network. product group view resource name The resource name of the product group view.
+
+### Bar chart options \_|\_ Looker \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker/docs/bar-options](https://docs.cloud.google.com/looker/docs/bar-options)
+- Source ID: `site-docs-reference`
+- Final score: 131
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Looker API 4.0 Generally Available Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/api-4-ga We are excited to announce that ... changes and promotes multiple endpoints from Beta to Stable.
+- If the number of previous data points is less than the period setting, the Moving Average is calculated over the partial periods, but is rebased to the number of available data points.
+- The logarithmic scale type can only be used for data with positive values and is only available when you have set Series Positioning to Grouped or Overlay on the Plot tab.
+- Bar charts are useful for showing comparisons between categories of data, or for comparing changes for multiple groups over the same time period.
+- When Show Full Field Name is turned off, generally only the field name shows; however, measures of type count display only the view name instead.
 
-### Gemini in Looker overview | Google Cloud Documentation
+### "Selecting an effective data visualization \_|\_ Looker \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/looker/docs/gemini-overview-looker](https://docs.cloud.google.com/looker/docs/gemini-overview-looker)
-- Source ID: `site-docs-root`
-- Final score: 44
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Gemini in Looker overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/gemini-overview-looker Ask questions about and converse with your data by using Conversational Analytics: Gemini in Looker lets you ask questions about your data source by using natural language.
-- Gemini returns Looker charts or data tables that are based on your query.
-
-### Conversational Analytics in Looker overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/conversational-analytics-overview](https://docs.cloud.google.com/looker/docs/conversational-analytics-overview)
-- Source ID: `site-docs-root`
-- Final score: 41
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/looker/docs/visualization-guide](https://docs.cloud.google.com/looker/docs/visualization-guide)
+- Source ID: `site-docs-reference-required-4`
+- Final score: 107
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Conversational Analytics in Looker overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/conversational-analytics-overview An overview of Conversational Analytics in Looker.
+- Select the best visualization for your data The following sections provide an overview of available visualization types in Looker and discuss how to select the best type for your data: Cartesian charts Pie and donut charts Progression charts Texts and tables Maps Other charts Cartesian charts A Cartesian chart refers to any chart that is rooted in the Cartesian plane.
+- Continuous: If you want to visualize data that occurs over a long period of time, use visualizations that support continuous data, such as progression charts .
+- You can implement custom visualizations in these ways: Adding the custom visualization to create custom visualizations with the visualization parameter in the project manifest file Installing the visualization from the Looker Marketplace directly Installing the visualization from the Visualization page in the Admin section of Looker Examples of custom visualizations that are available as plug-ins include the Calendar Heatmap Visualization and the Aster Plot Visualization .
+- Through these slice divisions, a focus becomes not specifically on the exact percentage amount, but on how the outlined proportions relate to each other and impact the overall goal of the chart.
 

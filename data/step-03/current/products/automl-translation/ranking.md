@@ -28,5 +28,5 @@ Step 2 feature inventory: 10 features, profile: user facing.
 | 90 | no | supporting_page | https://googleapis.dev/python/translation/2.0.1/gapic/v3/api.html | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | supporting_page | https://googleapis.dev/python/translation/latest | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | supporting_page | https://googleapis.dev/python/translation/latest/_modules/google/cloud/translate_v3beta1/services/translation_service/async_client.html | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | supporting_page | https://googleapis.dev/python/translation/latest/translate_v3/translation_service.html | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | supporting_page | https://googleapis.dev/python/translation/latest/translate_v3/types.html | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | supporting_page | https://googleapis.dev/python/translation/latest/translate_v3beta1/translation_service.html | 1 |  | Heuristic tail scoring was applied outside the API-ranked set. |

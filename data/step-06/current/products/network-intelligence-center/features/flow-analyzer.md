@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:48.438Z"
+generated_at: "2026-04-12T12:18:03.483Z"
 product_name: "Network Intelligence Center"
 product_slug: "network-intelligence-center"
 feature_name: "Flow Analyzer"
@@ -9,9 +9,10 @@ latest_feature_date: "2025-02-27"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview"
-  - "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points"
+  - "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/ListVpcFlowLogsConfigsResponse"
 keywords:
   - "flow"
   - "analyzer"
@@ -38,47 +39,68 @@ Flow Analyzer is available in general availability; Flow Analyzer helps users un
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions](https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview](https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview)
-- [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview](https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/overview](https://docs.cloud.google.com/network-intelligence-center/docs/overview)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points)
+- [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/ListVpcFlowLogsConfigsResponse](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/ListVpcFlowLogsConfigsResponse)
 
 ## Supporting Pages
 
-### Roles and permissions | Network Intelligence Center - Firewall Insights | Google Cloud Documentation
+### "Flow Analyzer overview \_|\_ Network Intelligence Center - Flow Analyzer\
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions](https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions)
-- Source ID: `site-iam-reference`
-- Final score: 130
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview](https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview)
+- Source ID: `site-docs-root`
+- Final score: 326
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Roles and permissions Network Intelligence Center - Firewall Insights Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions This page describes the Identity and Access Management (IAM) roles and permissions needed for running Firewall Insights · You can grant users or service accounts permissions or a predefined role, or you can create a custom role that uses permissions that you specify.
+- What's next Metrics and alignment period Analyze traffic flows Enable Observability Analytics Configure a central bucket Run Connectivity Tests from Flow Analyzer Monitor your traffic flows Troubleshoot data issues in Flow Analyzer Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Metric aggregation The following options are available for aggregating latency data: Chart aggregation : defines the calculation method for the Highest latency flows chart and is applied to the data that is selected based on the ranking metric you choose.
+- Flow Analyzer organizes the flow logs for aggregation in the following ways: Source and destination : this option uses the SRC and DEST information included in VPC Flow Logs.
+- Flow Analyzer lets you perform opinionated network traffic analysis with 5-tuple granularity (source IP, destination IP, source port, destination port, and protocol).
 
-### Network Analyzer overview | Network Intelligence Center - Network Analyzer | Google Cloud Documentation
+### Network Intelligence Center overview \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview](https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview)
-- Source ID: `site-docs-root`
-- Final score: 106
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/overview](https://docs.cloud.google.com/network-intelligence-center/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 184
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Network Analyzer overview Network Intelligence Center - Network Analyzer Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview Network Analyzer automatically monitors your Virtual Private Cloud (VPC) network configurations and detects misconfigurations and suboptimal configurations.
-- It provides insights about network topology, firewall rules, routes, configuration ...
+- Flow Analyzer lets you perform opinionated network traffic analysis with 5-tuple granularity (source IP, destination IP, source port, destination port, and protocol).
+- Developed using Observability Analytics and powered by BigQuery , Flow Analyzer enables in-depth analysis of inbound and outbound traffic of your VM instances.
+- Flow Analyzer Flow Analyzer lets you quickly and efficiently understand your Virtual Private Cloud (VPC) traffic flows without the need to write complex SQL queries for analyzing VPC Flow Logs.
+- VPC Flow Logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
 
-### Roles and permissions | Network Intelligence Center - Cloud Network Insights | Google Cloud Documentation
+### "Add Monitoring Points \_|\_ Network Intelligence Center - Cloud Network\
 
-- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control)
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points](https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points)
 - Source ID: `site-iam-reference`
-- Final score: 104
+- Final score: 179
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Roles and permissions Network Intelligence Center - Cloud Network Insights Google Cloud Documentation Source URL: https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control For a detailed description of IAM, see the Identity and Access Management documentation.
-- You can grant users or service accounts permissions or predefined roles, or you can create a custom role that uses permissions that you specify.
-- You might need to run the add-iam-policy command in the Google Cloud CLI to grant Cloud Network Insights roles to users.
+- The following environments are supported: Google Cloud VPC networks in the same or different projects Remote branch offices or retail locations On-premises data centers Other cloud environments, for example, AWS or Azure If you need help to determine where to install Monitoring Points to target strategic web application deployment, use VPC Flow Logs or vm flow metrics in a performance dashboard to understand where traffic is flowing in your network.
+- Preview This product is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the Service Specific Terms .
+- Last updated 2026-04-10 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+- Linux-based virtualized environments such as OpenStack, custom Linux hypervisors. v35-KVM Before you begin In addition to the Cloud Network Editor ( roles/networkmanagement.CloudNetworkInsightsEditor ) role, the deployment environment and Monitoring Points have specific networking requirements to ensure that the Monitoring Point can be installed successfully and communicate back to Cloud Network Insights control plane.
+
+### "ListVpcFlowLogsConfigsResponse \_|\_ Network Intelligence Center \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/ListVpcFlowLogsConfigsResponse](https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/ListVpcFlowLogsConfigsResponse)
+- Source ID: `site-docs-reference`
+- Final score: 165
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- JSON representation { "vpcFlowLogsConfigs" : [ { object ( VpcFlowLogsConfig ) } ] , "nextPageToken" : string , "unreachable" : [ string ] } Fields vpcFlowLogsConfigs[] object ( VpcFlowLogsConfig ) List of VPC Flow Log configurations. nextPageToken string Page token to fetch the next set of configurations. unreachable[] string Locations that could not be reached (when querying all locations with - ).
+- Home Documentation Networking Network Intelligence Center Reference Send feedback ListVpcFlowLogsConfigsResponse Stay organized with collections Save and categorize content based on your preferences.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-10-01 UTC."],[],[]]
+- JSON representation Response for the ListVpcFlowLogsConfigs method.
 

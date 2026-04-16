@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:13.442Z"
+generated_at: "2026-04-14T17:40:11.942Z"
 product_name: "Deep Learning VM Images"
 product_slug: "deep-learning-vm-images"
 feature_name: "DooD support"
@@ -18,7 +18,6 @@ keywords:
   - "images"
   - "docker"
   - "outside"
-  - "of"
 ---
 
 # DooD support

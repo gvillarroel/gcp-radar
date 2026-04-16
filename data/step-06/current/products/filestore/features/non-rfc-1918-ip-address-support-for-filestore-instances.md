@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:19.034Z"
+generated_at: "2026-04-12T12:15:59.661Z"
 product_name: "Filestore"
 product_slug: "filestore"
 feature_name: "Non-RFC 1918 IP address support for Filestore instances"
@@ -9,9 +9,10 @@ latest_feature_date: "2023-03-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/filestore/docs/filestore-for-gke"
-  - "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create"
-  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/overview"
+  - "https://docs.cloud.google.com/filestore/docs/creating-instances"
+  - "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances"
+  - "https://docs.cloud.google.com/filestore/docs/editing-instances"
+  - "https://docs.cloud.google.com/filestore/docs/csi-driver"
 keywords:
   - "non"
   - "rfc"
@@ -38,44 +39,69 @@ Filestore instances can use non-RFC 1918 IP addresses.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/filestore/docs/filestore-for-gke](https://docs.cloud.google.com/filestore/docs/filestore-for-gke)
-- [https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create](https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create)
-- [https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/overview)
+- [https://docs.cloud.google.com/filestore/docs/creating-instances](https://docs.cloud.google.com/filestore/docs/creating-instances)
+- [https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances](https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances)
+- [https://docs.cloud.google.com/filestore/docs/editing-instances](https://docs.cloud.google.com/filestore/docs/editing-instances)
+- [https://docs.cloud.google.com/filestore/docs/csi-driver](https://docs.cloud.google.com/filestore/docs/csi-driver)
 
 ## Supporting Pages
 
-### About Filestore support for Google Kubernetes Engine | Google Cloud Documentation
+### Create an instance \_|\_ Filestore \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/filestore/docs/filestore-for-gke](https://docs.cloud.google.com/filestore/docs/filestore-for-gke)
+- URL: [https://docs.cloud.google.com/filestore/docs/creating-instances](https://docs.cloud.google.com/filestore/docs/creating-instances)
 - Source ID: `site-docs-root`
-- Final score: 96
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- About Filestore support for Google Kubernetes Engine Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/filestore-for-gke Filestore · Start free · Home ... instances are fully managed file servers on Google Cloud that you can use as durable storage with ReadWriteMany access for your Google Kubernetes Engine (GKE) clusters....
-
-### Method: projects.locations.instances.create | Filestore | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create](https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create)
-- Source ID: `site-docs-reference`
-- Final score: 74
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Method: projects.locations.instances.create Filestore Google Cloud Documentation Source URL: https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create Documentation · Storage · Filestore · Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it!
-
-### google-cloud-filestore overview (1.89.0) | Java client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/overview](https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/overview)
-- Source ID: `site-java-reference`
-- Final score: 68
+- Final score: 256
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- google-cloud-filestore overview (1.89.0) Java client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/overview Cloud Filestore API Description: Instances are fully managed NFS file servers on Google Cloud for use with applications running on Compute Engine virtual machines (VMs) instances or Google Kubernetes Engine clusters.
+- A justification for the deletion protection setting is provided. gcloud filestore instances create render1 \ --project=myproject \ --region=us-central1 \ --tier=REGIONAL \ --performance=max-iops-per-tb=17000 \ --network=name="default",reserved-ip-range="10.0.7.0/29" \ --flags-file=nfs-export-options.json \ --deletion-protection \ --deletion-protection-reason="All genomics data must adhere to current organization policies." nfs-export-options.json file contents: { "--file-share": { "capacity": "2048", "name": "my vol", "nfs-export-options": [ { "access-mode": "READ WRITE", "ip-ranges": [ "10.0.0.0/29", "10.2.0.0/29" ], "squash-mode": "ROOT SQUASH", "anon uid": 1003, "anon gid": 1003 }, { "access-mode": "READ ONLY", "ip-ranges": [ "192.168.0.0/26" ], "squash-mode": "NO ROOT SQUASH" } ] } } REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.
+- For more information, see Quotas or Request a quota increase . gcloud filestore instances create INSTANCE ID \ [--project= PROJECT ID ] \ [--location= LOCATION ] \ [--description= DESCRIPTION ] \ [--performance= PERFORMANCE ] \ --tier= TIER \ --file-share=name=" FILE SHARE NAME ",capacity= FILE SHARE SIZE \ --network=name=" VPC-NETWORK ",[connect-mode= CONNECT MODE ],[reserved-ip-range=" RESERVED IP ADDRESS "] \ [--labels= KEY = VALUE ,[ KEY = VALUE ,…]] \ [--kms-key= KMS KEY ] \ [--deletion-protection] \ [--deletion-protection-reason=" PROTECTION REASON "] Where: INSTANCE ID with the instance ID of the Filestore instance that you want to create.
+- You can see the IP address ranges for the subnets of your network by going to the VPC networks page in the Google Cloud console: Go to the VPC networks page You can get the reserved IP address range for any Filestore instance on the Filestore instances page in the Google Cloud console: Go to the Filestore instances page If you want to use private services access and specify a reserved IP address range, you must specify the name of an allocated address range for the connection.
+- Clients on non-RFC 1918 ranges If you plan to connect non- RFC 1918 clients to your Filestore instance, you must explicitly grant them access to the Filestore instance using IP-based access control .
+
+### "REST Resource: projects.locations.instances \_|\_ Filestore \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances](https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances)
+- Source ID: `site-api-reference`
+- Final score: 246
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The range you specify can't overlap with either existing subnets or assigned IP address ranges for other Filestore instances in the selected VPC network. ipAddresses[] string Output only.
+- JSON representation { "ipRanges" : [ string ] , "network" : string , "accessMode" : enum ( AccessMode ) , "squashMode" : enum ( SquashMode ) , "anonUid" : string , "anonGid" : string } Fields ipRanges[] string List of either an IPv4 addresses in the format {octet1}.{octet2}.{octet3}.{octet4} or CIDR ranges in the format {octet1}.{octet2}.{octet3}.{octet4}/{mask size} which may mount the file share.
+- IPv4 addresses in the format {octet1}.{octet2}.{octet3}.{octet4} or IPv6 addresses in the format {block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8} . connectMode enum ( ConnectMode ) The network connect mode of the Filestore instance.
+- Private services access provides an IP address range for multiple Google Cloud services, including Filestore.
+
+### Edit instances \_|\_ Filestore \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/filestore/docs/editing-instances](https://docs.cloud.google.com/filestore/docs/editing-instances)
+- Source ID: `site-docs-root-2`
+- Final score: 225
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you choose this method, you don't need to use the --file-share flag because it is already included in the JSON configuration file. gcloud filestore instances update INSTANCE ID --[project=" PROJECT ID "] --[location= LOCATION ] --[performance= PERFORMANCE ] \ --[file-share=name=" FILE SHARE NAME ",CAPACITY= FILE SHARE SIZE ] --[description=" DESCRIPTION "] --[flags-file= FILE NAME .json] where: INSTANCE ID is the instance ID of the Filestore instance you want to edit.
+- Instructions for editing an instance Google Cloud console To edit Filestore instances using the Google Cloud console, navigate to the Edit instance page, where you can edit the instance description, manage IP-based access control rules, and scale the file share performance: In the Google Cloud console, go to the Filestore Instances page.
+- Use cURL to call the Filestore API : curl --request PATCH \ 'https://file.googleapis.com/v1/projects/ PROJECT /locations/ LOCATION /instances?instanceId= NAME ?updateMask=performanceConfig%2CdeletionProtectionReason%2CdeletionProtectionEnabled&key= YOUR API KEY ' \ --header "Authorization: Bearer $(gcloud auth print-access-token)" \ --header 'Accept: application/json' \ --header 'Content-Type: application/json' \ --data '{ "tier":" TIER ", "networks":[ { "network":" NETWORK " } ], "performanceConfig": {" PERFORMANCE "} "fileShares":[ {"capacityGb": CAPACITY ,"name":" SHARE NAME "} ], "deletionProtectionEnabled": true, "deletionProtectionReason": " PROTECTION REASON "}' \ --compressed Where: PROJECT is the name of the project where your instance will reside.
+- Example json configuration file: { "--file-share": { "capacity": "4096", "name": "my vol", "nfs-export-options": [ { "access-mode": "READ WRITE", "ip-ranges": [ "10.0.0.0", "10.2.0.0" ], "squash-mode": "ROOT SQUASH", "anon uid": 1003, "anon gid": 1003 }, { "access-mode": "READ ONLY", "ip-ranges": [ "10.0.1.0/28" ], "squash-mode": "NO ROOT SQUASH" } ], } } where: ip-ranges is the IP address or range to grant access to.
+
+### "Access Filestore instances with the Filestore CSI driver \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/filestore/docs/csi-driver](https://docs.cloud.google.com/filestore/docs/csi-driver)
+- Source ID: `site-docs-root`
+- Final score: 221
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Access pre-existing Filestore instances using the Filestore CSI driver This section describes the typical process for using a Kubernetes volume to access pre-existing Filestore instances using Filestore CSI driver in GKE: Create a PersistentVolume and a PersistentVolumeClaim to access the instance Create a manifest file like the one shown in the following example, and name it preprov-filestore.yaml : apiVersion : v1 kind : PersistentVolume metadata : name : PV NAME spec : storageClassName : "" capacity : storage : 1Ti accessModes : - ReadWriteMany persistentVolumeReclaimPolicy : Retain volumeMode : Filesystem csi : driver : filestore.csi.storage.gke.io volumeHandle : "modeInstance/ FILESTORE INSTANCE LOCATION / FILESTORE INSTANCE NAME / FILESTORE SHARE NAME " volumeAttributes : ip : FILESTORE INSTANCE IP volume : FILESTORE SHARE NAME protocol : FILESYSTEM PROTOCOL claimRef : name : PVC NAME namespace : NAMESPACE --- kind : PersistentVolumeClaim apiVersion : v1 metadata : name : PVC NAME namespace : NAMESPACE spec : accessModes : - ReadWriteMany storageClassName : "" resources : requests : storage : 1Ti To create the PersistentVolumeClaim and PersistentVolume resources based on the preprov-filestore.yaml manifest file, run the following command: kubectl apply -f preprov-filestore.yaml To specify the NFSv4.1 file system protocol, set the protocol field to NFS V4 1 in the volumeAttributes field of a PersistentVolume object.
+- Save the following manifest as filestore-example-deployment.yaml : apiVersion : apps/v1 kind : Deployment metadata : name : web-server-deployment labels : app : nginx spec : replicas : 3 selector : matchLabels : app : nginx template : metadata : labels : app : nginx spec : containers : - name : nginx image : nginx volumeMounts : - mountPath : /usr/share/nginx/html name : mypvc volumes : - name : mypvc persistentVolumeClaim : claimName : podpvc --- kind : PersistentVolumeClaim apiVersion : v1 metadata : name : podpvc spec : accessModes : - ReadWriteMany storageClassName : filestore-example resources : requests : storage : 1Ti To create a Deployment based on the filestore-example-deployment.yaml manifest file, run the following command: kubectl apply -f filestore-example-deployment.yaml Confirm the Deployment was successfully created: kubectl get deployment It might take a while for Filestore instances to complete provisioning.
+- When creating a cluster, you must specify a subnet and the secondary IP address ranges to be used for the cluster's Pods and Service. gcloud container subnets list-usable \ --project = SERVICE PROJECT ID \ --network-project = HOST PROJECT ID The output is similar to the following: PROJECT REGION NETWORK SUBNET RANGE HOST PROJECT ID us-central1 shared-net tier-1 10 .0.4.0/22 ┌──────────────────────┬───────────────┬─────────────────────────────┐ │ SECONDARY RANGE NAME │ IP CIDR RANGE │ STATUS │ ├──────────────────────┼───────────────┼─────────────────────────────┤ │ tier-1-pods │ 10 .4.0.0/14 │ usable for pods or services │ │ tier-1-services │ 10 .0.32.0/20 │ usable for pods or services │ └──────────────────────┴───────────────┴─────────────────────────────┘ Create a GKE cluster.
+- Create a volume using the Filestore CSI driver The following sections describe the typical process for using a Kubernetes volume backed by a Filestore CSI driver in GKE: Create a StorageClass Use a PersistentVolumeClaim to access the volume Create a Deployment that consumes the volume Create a StorageClass After you enable the Filestore CSI driver, GKE automatically installs the following StorageClasses for provisioning Filestore instances: zonal-rwx , using the Filestore zonal tier . enterprise-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a Filestore instance. enterprise-multishare-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a share of a given Filestore instance.
 

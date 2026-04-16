@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:11:59.749Z"
+generated_at: "2026-04-12T12:14:04.323Z"
 product_name: "Datastream"
 product_slug: "datastream"
 feature_name: "PostgreSQL ARRAY data type support"
 feature_slug: "postgresql-array-data-type-support"
 latest_feature_date: "2023-10-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/datastream/docs/bq-map-data-types"
-  - "https://docs.cloud.google.com/datastream/docs/release-notes"
   - "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+  - "https://docs.cloud.google.com/datastream/docs/faq"
+  - "https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database"
 keywords:
   - "postgresql"
   - "array"
@@ -24,7 +25,7 @@ keywords:
 # PostgreSQL ARRAY data type support
 
 Product: Datastream
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -36,13 +37,14 @@ Datastream supports the PostgreSQL ARRAY data type.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/datastream/docs/bq-map-data-types](https://docs.cloud.google.com/datastream/docs/bq-map-data-types)
-- [https://docs.cloud.google.com/datastream/docs/release-notes](https://docs.cloud.google.com/datastream/docs/release-notes)
 - [https://docs.cloud.google.com/datastream/docs/create-a-stream](https://docs.cloud.google.com/datastream/docs/create-a-stream)
+- [https://docs.cloud.google.com/datastream/docs/faq](https://docs.cloud.google.com/datastream/docs/faq)
+- [https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database](https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database)
 
 ## Supporting Pages
 
@@ -50,8 +52,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/datastream/docs/bq-map-data-types](https://docs.cloud.google.com/datastream/docs/bq-map-data-types)
 - Source ID: `site-docs-root-2`
-- Final score: 142
-- Re-rank relevance: N/A
+- Final score: 189
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Source data type Example value BigQuery JSON type value DOUBLE 3.1415926535 3.1415926535 STRING "Hello, MongoDB!" "Hello, MongoDB!" ARRAY [ "item1", 123, true, { subItem: "object in array" } ] ["item1",123,true,{"subItem":"object in array"}] BINARY DATA new BinData(0, "SGVsbG8gQmluYXJ5IERhdGE=") {"$binary":"SGVsbG8gQmluYXJ5IERhdGE=","$type":"00"} BOOLEAN true true DATE 2024-12-25T10:30:00.000+00:00 {"$date": 1735122600000} NULL null null REGEX /^mongo(db)?$/i {"$options":"i","$regex":"^mongo(db)?$"} JAVASCRIPT function() {return this.stringField.length;} {"$code":"function() {\n return this.stringField.length;\n }"} DECIMAL128 NumberDecimal("1234567890.1234567890") {"$numberDecimal":"1234567890.1234567890"} OBJECTID ObjectId('673c5d8dbfe2e51808cc2c3d') {"$oid": "673c5d8dbfe2e51808cc2c3d"} LONG 3567587327 {"$numberLong": "3567587327"} INT32 42 42 INT64 1864712049423024127 {"$numberLong": "1864712049423024127"} TIMESTAMP new Timestamp(1747888877, 1) {"$timestamp":{"i":1,"t":1747888877}} Query a PostgreSQL array as a BigQuery array data type If you prefer to query a PostgreSQL array as a BigQuery ARRAY data type , you can convert the JSON values to a BigQuery array using the BigQuery JSON VALUE ARRAY function: SELECT ARRAY ( SELECT CAST ( element AS TYPE ) FROM UNNEST ( JSON VALUE ARRAY ( BQ COLUMN NAME , '$' )) AS element ) AS array col Replace the following: TYPE : the BigQuery type that matches the element type in the PostgreSQL source array.
@@ -59,24 +62,11 @@ Evidence snippets:
 - PostgreSQL BIGINT INT64 PostgreSQL BIT BYTES PostgreSQL BIT VARYING BYTES PostgreSQL BOOLEAN BOOLEAN PostgreSQL BOX UNSUPPORTED PostgreSQL BYTEA BYTES PostgreSQL CHARACTER STRING PostgreSQL CHARACTER VARYING STRING PostgreSQL CIDR STRING PostgreSQL CIRCLE UNSUPPORTED PostgreSQL DATE DATE PostgreSQL DOUBLE PRECISION FLOAT64 PostgreSQL ENUM STRING PostgreSQL INET STRING PostgreSQL INTEGER INT64 PostgreSQL INTERVAL INTERVAL PostgreSQL JSON JSON PostgreSQL JSONB JSON PostgreSQL LINE UNSUPPORTED PostgreSQL LSEG UNSUPPORTED PostgreSQL MACADDR STRING PostgreSQL MONEY FLOAT64 PostgreSQL NUMERIC If precision = -1 , then STRING (BigQuery NUMERIC types require fixed precision).
 - All sources MySQL Oracle PostgreSQL Spanner (GoogleSQL) Spanner (PostgreSQL) SQL Server Salesforce Source database Source data type BigQuery data type MySQL BIGINT(size) INT64 MySQL BIGINT (unsigned) DECIMAL MySQL BINARY(size) STRING (hex encoded) MySQL BIT(size) INT64 MySQL BLOB(size) STRING (hex encoded) MySQL BOOL INT64 MySQL CHAR(size) STRING MySQL DATE DATE MySQL DATETIME(fsp) DATETIME MySQL DECIMAL(precision, scale) If the precision value is NUMERIC .
 
-### Datastream release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/datastream/docs/release-notes](https://docs.cloud.google.com/datastream/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 136
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- October 20, 2023 Feature Support for the PostgreSQL ARRAY data type is now added in Datastream.
-- November 10, 2023 Feature You can now stream the following large object data types for Oracle sources: BLOB CLOB NCLOB Note: For Datastream to stream large object data types to the destination, you need to pass the streamLargeObjects flag in your request to create or update a stream.
-- June 16, 2022 Feature Datastream now supports the use of tags on its resources, which include private connectivity configurations, connection profiles, and streams.
-- November 22, 2023 Feature Datastream now supports SSL/TLS encryption for connections to PostgreSQL sources that don't require client certificates.
-
 ### Create a stream \_|\_ Datastream \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/datastream/docs/create-a-stream](https://docs.cloud.google.com/datastream/docs/create-a-stream)
 - Source ID: `site-docs-root`
-- Final score: 132
+- Final score: 168
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -84,4 +74,30 @@ Evidence snippets:
 - If your source database is PostgreSQL, then Datastream performs the following checks: Check Description Connectivity to PostgreSQL database Datastream verifies that it can connect to the source PostgreSQL database.
 - Replication slot configuration Datastream verifies whether the PostgreSQL replication slot exists and is active, whether Datastream has the permissions required to access it, and whether it is configured correctly.
 - SQL Server database validations Datastream checks whether the source database is configured properly, whether all replication requirements are met and whether there are no unsupported data types in the columns.
+
+### FAQ \_|\_ Datastream \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/datastream/docs/faq](https://docs.cloud.google.com/datastream/docs/faq)
+- Source ID: `site-docs-root`
+- Final score: 168
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Datastream takes the original source data type (for example, a MySQL or PostgreSQL NUMERIC type or an Oracle NUMBER type), and normalizes it into a Datastream unified type .
+- If you can't grant the GRANT SELECT ANY TABLE permission, then you can grant SELECT permissions to the following list of tables: ALL COL COMMENTS ALL CONS COLUMNS ALL CONSTRAINTS ALL DB LINKS ALL EXTERNAL TABLES ALL IND COLUMNS ALL INDEXES ALL LOG GROUPS ALL MVIEWS ALL OBJECTS ALL PART TABLES ALL SEQUENCES ALL SOURCE ALL SYNONYMS ALL TAB COLS ALL TAB COLUMNS ALL TAB COMMENTS ALL TABLES ALL TRIGGERS ALL TRIGGER COLS ALL TYPES ALL USERS ALL VIEWS DATABASE PROPERTIES DBA ROLE PRIVS DUAL PRODUCT COMPONENT VERSION ROLE SYS PRIVS USER ROLE PRIVS USER TAB PRIVS To stream changes using Datastream, you also need read access to all tables included in the stream.
+- You must grant the following roles and permissions to your Datastream user to replicate data from a SQL Server database: For the change tables CDC method: db owner db denydatawriter Additionally, for the transaction logs CDC method: SELECT permissions on the database and for the sys.fn dblog function SELECT permissions on the dbo.sysjobs table VIEW SERVER STATE For detailed information about configuring your source, see the respective configuration pages for your database type.
+- For source-specific limitations, see the following pages: MySQL limitations Oracle limitations PostgreSQL limitations (including AlloyDB for PostgreSQL and AlloyDB Omni) SQL Server limitations Salesforce limitations MongoDB limitations Which data is included in every event that's generated by Datastream?
+
+### "Configure a source PostgreSQL database \_|\_ Datastream \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database](https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database)
+- Source ID: `site-docs-root-2`
+- Final score: 164
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Supported databases Datastream works with the following types of PostgreSQL databases: AlloyDB for PostgreSQL AlloyDB Omni Amazon Aurora PostgreSQL Amazon RDS for PostgreSQL Cloud SQL for PostgreSQL Self-managed PostgreSQL (on-premise or cloud-hosted) Datastream also supports replication from PostgreSQL read replica instances for PostgreSQL version 16 and later.
+- Home Documentation Data analytics Datastream Guides Send feedback Configure a source PostgreSQL database Stay organized with collections Save and categorize content based on your preferences.
+- A replication slot is a PostgreSQL feature which ensures that a stream of changes stored in a WAL log file is replicated to the destination in the correct order.
+- The WAL files contain information about the history of activity on a database, and Datastream leverages these files to query data changes.
 

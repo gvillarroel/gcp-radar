@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-09T00:57:55.103Z",
+  "generated_at": "2026-04-12T21:37:43.406Z",
   "product_name": "Blockchain Analytics",
   "product_slug": "blockchain-analytics",
   "step02_source_path": "data/step-02/current/blockchain-analytics.md",
@@ -8,6 +8,34 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 1,
+    "source_row_count": 1,
+    "top_phrases": [
+      "legacy analytics hub listing for arbitrum one",
+      "the legacy analytics hub listing for arbitrum one is a discontinued listing capability that has been replaced by a newer analytics hub listing"
+    ],
+    "top_tokens": [
+      "2023",
+      "analytics",
+      "arbitrum",
+      "been",
+      "capability",
+      "deprecated",
+      "discontinued",
+      "for",
+      "has",
+      "hub",
+      "legacy",
+      "listing",
+      "newer",
+      "one",
+      "replaced",
+      "that",
+      "the"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "dominant_doc_family": "blockchain-analytics",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
@@ -39,39 +67,39 @@
           "rank": 2
         },
         {
-          "title": "Blockchain Analytics documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/blockchain-analytics/docs",
-          "description": "Starting with Ethereum, <strong>Blockchain Analytics</strong> offers you access to reliable data without the overhead of operating nodes or developing and maintaining an indexer.",
-          "rank": 3
-        },
-        {
           "title": "Ethereum Goerli example queries | Blockchain Analytics | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/blockchain-analytics/docs/example-ethereum-goerli",
           "description": "# Average daily transactions count drop since announcement of Goerli # deprecation (two weeks around Apr 1st, 2023) In favor of new Sepolia chain SELECT DATE(block_timestamp) AS date, COUNT(*) AS num_transactions FROM `bigquery-public-data.goog_blockchain_ethereum_goerli_us.transactions` WHERE block_timestamp &gt;= TIMESTAMP(&#x27;2023-03-24&#x27;) AND block_timestamp &lt;= TIMESTAMP(&#x27;2023-04-08&#x27;) GROUP BY 1 ORDER BY 1 DESC;",
-          "rank": 4
+          "rank": 3
         },
         {
           "title": "Polygon Mainnet example queries | Blockchain Analytics | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/blockchain-analytics/docs/example-polygon",
           "description": "SELECT COUNT(*) AS TXN_COUNT_PER_MONTH, COUNT(*) / 2592000.0 AS TXN_PER_SECOND, # seconds in a month EXTRACT(YEAR FROM txn.block_timestamp) AS YEAR, EXTRACT(MONTH FROM txn.block_timestamp) AS MONTH, FROM `bigquery-public-data.goog_blockchain_polygon_mainnet_us.transactions` AS txn GROUP BY EXTRACT(YEAR FROM txn.block_timestamp), EXTRACT(MONTH FROM txn.block_timestamp) ORDER BY TXN_COUNT_PER_MONTH DESC;",
+          "rank": 4
+        },
+        {
+          "title": "Blockchain Analytics documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/blockchain-analytics/docs",
+          "description": "Starting with Ethereum, <strong>Blockchain Analytics</strong> offers you access to reliable data without the overhead of operating nodes or developing and maintaining an indexer.",
           "rank": 5
-        },
-        {
-          "title": "Arbitrum example queries | Blockchain Analytics | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/blockchain-analytics/docs/example-arbitrum",
-          "description": "CREATE TEMP FUNCTION ParseSubStr(hexStr STRING, startIndex INT64, endIndex INT64) RETURNS STRING LANGUAGE js AS r&quot;&quot;&quot; if (hexStr.length &lt; 1) { return hexStr; } return hexStr.substring(startIndex, endIndex); &quot;&quot;&quot;; SELECT b.block_timestamp as block_timestamp, CONCAT(&quot;https://arbiscan.io/tx/&quot;, transaction_hash) AS arbiscan_txn, (t.value.bignumeric_value / 1000000000000000000) AS eth_withdrawn, CONCAT(&quot;0x&quot;, ParseSubStr(t.input, 34, LENGTH(t.input))) AS l1_destination_address, CASE WHEN DATETIME_DIFF(CURRENT_TIMESTAMP(), b.block_timestamp, DAY) &gt;= 7 THEN &#x27;True&#x27; ELSE &#x27;False&#x27; END AS wait_period_over, C",
-          "rank": 6
-        },
-        {
-          "title": "Dataset schemas | Blockchain Analytics | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/blockchain-analytics/docs/schema",
-          "description": "This page describes <strong>Blockchain Analytics</strong> table schemas.",
-          "rank": 7
         },
         {
           "title": "Supported datasets | Blockchain Analytics | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/blockchain-analytics/docs/supported-datasets",
           "description": "This page provides information on datasets supported by <strong>Blockchain Analytics</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Arbitrum example queries | Blockchain Analytics | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/blockchain-analytics/docs/example-arbitrum",
+          "description": "CREATE TEMP FUNCTION ParseSubStr(hexStr STRING, startIndex INT64, endIndex INT64) RETURNS STRING LANGUAGE js AS r&quot;&quot;&quot; if (hexStr.length &lt; 1) { return hexStr; } return hexStr.substring(startIndex, endIndex); &quot;&quot;&quot;; SELECT b.block_timestamp as block_timestamp, CONCAT(&quot;https://arbiscan.io/tx/&quot;, transaction_hash) AS arbiscan_txn, (t.value.bignumeric_value / 1000000000000000000) AS eth_withdrawn, CONCAT(&quot;0x&quot;, ParseSubStr(t.input, 34, LENGTH(t.input))) AS l1_destination_address, CASE WHEN DATETIME_DIFF(CURRENT_TIMESTAMP(), b.block_timestamp, DAY) &gt;= 7 THEN &#x27;True&#x27; ELSE &#x27;False&#x27; END AS wait_period_over, C",
+          "rank": 7
+        },
+        {
+          "title": "Dataset schemas | Blockchain Analytics | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/blockchain-analytics/docs/schema",
+          "description": "This page describes <strong>Blockchain Analytics</strong> table schemas.",
           "rank": 8
         }
       ]
@@ -80,6 +108,13 @@
       "round": 1,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Blockchain Analytics\" official documentation OR site:developers.google.com \"blockchain analytics\" official documentation",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Blockchain Analytics\" \"legacy analytics hub listing for arbitrum one\"",
       "official_result_count": 0,
       "results": []
     },
@@ -116,15 +151,15 @@
           "rank": 2
         },
         {
-          "title": "Blockchain Analytics documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/blockchain-analytics/docs",
-          "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Provides Blockchain Analytics query examples.",
-          "rank": 3
-        },
-        {
           "title": "Resources | Blockchain Analytics | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/blockchain-analytics/docs/resources",
           "description": "Details about updates to Blockchain Analytics.",
+          "rank": 3
+        },
+        {
+          "title": "Blockchain Analytics documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/blockchain-analytics/docs",
+          "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Provides Blockchain Analytics query examples.",
           "rank": 4
         },
         {
@@ -196,6 +231,13 @@
     },
     {
       "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Blockchain Analytics\" \"the legacy analytics hub listing for arbitrum one is a discontinued listing capability that has been replaced by a newer analytics hub listing\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Blockchain Analytics\" \"access control\"",
       "official_result_count": 0,
@@ -227,15 +269,15 @@
           "rank": 2
         },
         {
-          "title": "Example applications | Blockchain Analytics | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/blockchain-analytics/docs/example-applications",
-          "description": "This page provides examples of utilizing Blockchain Analytics with other Google Cloud offerings. See the Looker Studio documentation for instructions on using Looker Studio. Use Blockchain Analytics to power beautiful and interactive dashboards. The following dashboard gives an overview of activity on the Ethereum network, powered by the blocks and transactions tables.",
-          "rank": 3
-        },
-        {
           "title": "Blockchain Analytics documentation | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/blockchain-analytics/docs",
           "description": "<strong>Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services</strong>. ... Provides Blockchain Analytics query examples.",
+          "rank": 3
+        },
+        {
+          "title": "Example applications | Blockchain Analytics | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/blockchain-analytics/docs/example-applications",
+          "description": "This page provides examples of utilizing Blockchain Analytics with other Google Cloud offerings. See the Looker Studio documentation for instructions on using Looker Studio. Use Blockchain Analytics to power beautiful and interactive dashboards. The following dashboard gives an overview of activity on the Ethereum network, powered by the blocks and transactions tables.",
           "rank": 4
         },
         {
@@ -294,6 +336,13 @@
     },
     {
       "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Blockchain Analytics\" \"legacy analytics hub listing for arbitrum one\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Blockchain Analytics\" IAM roles permissions",
       "official_result_count": 0,
@@ -337,27 +386,27 @@
           "rank": 4
         },
         {
-          "title": "Dataset schemas | Blockchain Analytics | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/blockchain-analytics/docs/schema",
-          "description": "This page describes Blockchain Analytics table schemas.",
-          "rank": 5
-        },
-        {
           "title": "Resources | Blockchain Analytics | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/blockchain-analytics/docs/resources",
           "description": "Pricing details for Blockchain Analytics.",
+          "rank": 5
+        },
+        {
+          "title": "Google Cloud products at a glance | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/product-list",
+          "description": "Blockchain Analytics Indexed blockchain data for analysis · Cloud Composer Managed workflow orchestration service · Cloud Data Fusion Graphically manage data pipelines · Dataflow Stream/batch data processing · Dataform ELT &amp; SQL workflow tool · Datastream Change data capture/replication service ·",
           "rank": 6
+        },
+        {
+          "title": "Dataset schemas | Blockchain Analytics | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/blockchain-analytics/docs/schema",
+          "description": "This page describes Blockchain Analytics table schemas.",
+          "rank": 7
         },
         {
           "title": "Ethereum Goerli example queries | Blockchain Analytics | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/blockchain-analytics/docs/example-ethereum-goerli",
           "description": "This page provides Blockchain Analytics query examples for Ethereum Goerli. See the BigQuery documentation for instructions on using BigQuery. Warning: Goerli has reached end-of-life status and is no longer maintained by the Ethereum Foundation. This query looks at the drop in average daily transactions on Goerli once it was announced on April 1, 2023 that the Goerli testnet would be deprecated in favor of the Sepolia and Holesky testnets. In the Google Cloud ...",
-          "rank": 7
-        },
-        {
-          "title": "Google Cloud products at a glance | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/docs/product-list",
-          "description": "Blockchain Analytics Indexed blockchain data for analysis · Cloud Composer Managed workflow orchestration service · Cloud Data Fusion Graphically manage data pipelines · Dataflow Stream/batch data processing · Dataform ELT &amp; SQL workflow tool · Dataplex Centrally manage &amp; govern data ·",
           "rank": 8
         }
       ]
@@ -375,7 +424,7 @@
       "title": "Blockchain Analytics documentation | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/blockchain-analytics/docs",
       "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Provides Blockchain Analytics query examples.",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Blockchain Analytics\" Google Cloud documentation",
         "site:docs.cloud.google.com/blockchain-analytics/docs \"Blockchain Analytics\"",
@@ -395,6 +444,14 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -404,7 +461,11 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -432,6 +493,16 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics",
+          "for",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -442,6 +513,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics",
+          "for",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -468,9 +545,23 @@
         2,
         3
       ],
-      "best_rank": 4,
+      "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "2023",
+          "analytics",
+          "deprecated",
+          "for",
+          "has",
+          "that",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -480,7 +571,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "2023",
+          "analytics",
+          "deprecated",
+          "for",
+          "has",
+          "that",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -510,6 +611,15 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -519,7 +629,12 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics",
+          "the"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -530,7 +645,7 @@
       "title": "Resources | Blockchain Analytics | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/blockchain-analytics/docs/resources",
       "description": "Details about updates to Blockchain Analytics.",
-      "rank": 4,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Blockchain Analytics\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Blockchain Analytics\" Google Cloud docs overview",
@@ -544,9 +659,17 @@
         2,
         3
       ],
-      "best_rank": 4,
+      "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -557,6 +680,10 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -587,6 +714,14 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
@@ -597,6 +732,10 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -626,6 +765,16 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics",
+          "for",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -636,6 +785,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics",
+          "for",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -658,9 +813,19 @@
         1,
         2
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics",
+          "for",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -671,6 +836,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics",
+          "for",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -681,7 +852,7 @@
       "title": "Arbitrum example queries | Blockchain Analytics | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/blockchain-analytics/docs/example-arbitrum",
       "description": "CREATE TEMP FUNCTION ParseSubStr(hexStr STRING, startIndex INT64, endIndex INT64) RETURNS STRING LANGUAGE js AS r&quot;&quot;&quot; if (hexStr.length &lt; 1) { return hexStr; } return hexStr.substring(startIndex, endIndex); &quot;&quot;&quot;; SELECT b.block_timestamp as block_timestamp, CONCAT(&quot;https://arbiscan.io/tx/&quot;, transaction_hash) AS arbiscan_txn, (t.value.bignumeric_value / 1000000000000000000) AS eth_withdrawn, CONCAT(&quot;0x&quot;, ParseSubStr(t.input, 34, LENGTH(t.input))) AS l1_destination_address, CASE WHEN DATETIME_DIFF(CURRENT_TIMESTAMP(), b.block_timestamp, DAY) &gt;= 7 THEN &#x27;True&#x27; ELSE &#x27;False&#x27; END AS wait_period_over, C",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com/blockchain-analytics/docs \"Blockchain Analytics\""
       ],
@@ -691,9 +862,20 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics",
+          "arbitrum",
+          "has",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -704,6 +886,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics",
+          "arbitrum",
+          "has",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -727,6 +916,17 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "2023",
+          "analytics",
+          "for",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -737,6 +937,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "2023",
+          "analytics",
+          "for",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -747,7 +954,7 @@
       "title": "Polygon Mainnet example queries | Blockchain Analytics | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/blockchain-analytics/docs/example-polygon",
       "description": "SELECT COUNT(*) AS TXN_COUNT_PER_MONTH, COUNT(*) / 2592000.0 AS TXN_PER_SECOND, # seconds in a month EXTRACT(YEAR FROM txn.block_timestamp) AS YEAR, EXTRACT(MONTH FROM txn.block_timestamp) AS MONTH, FROM `bigquery-public-data.goog_blockchain_polygon_mainnet_us.transactions` AS txn GROUP BY EXTRACT(YEAR FROM txn.block_timestamp), EXTRACT(MONTH FROM txn.block_timestamp) ORDER BY TXN_COUNT_PER_MONTH DESC;",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com/blockchain-analytics/docs \"Blockchain Analytics\""
       ],
@@ -757,9 +964,17 @@
       "round_hits": [
         1
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 128,
+      "feature_coverage": {
+        "score": 3,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -770,6 +985,10 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -779,8 +998,8 @@
     {
       "title": "Google Cloud products at a glance | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/docs/product-list",
-      "description": "Blockchain Analytics Indexed blockchain data for analysis · Cloud Composer Managed workflow orchestration service · Cloud Data Fusion Graphically manage data pipelines · Dataflow Stream/batch data processing · Dataform ELT &amp; SQL workflow tool · Dataplex Centrally manage &amp; govern data ·",
-      "rank": 8,
+      "description": "Blockchain Analytics Indexed blockchain data for analysis · Cloud Composer Managed workflow orchestration service · Cloud Data Fusion Graphically manage data pipelines · Dataflow Stream/batch data processing · Dataform ELT &amp; SQL workflow tool · Datastream Change data capture/replication service ·",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Blockchain Analytics\" Google Cloud introduction reference"
       ],
@@ -790,9 +1009,18 @@
       "round_hits": [
         3
       ],
-      "best_rank": 8,
+      "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 106,
+      "feature_coverage": {
+        "score": 6,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "analytics",
+          "for"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -802,7 +1030,12 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "analytics",
+          "for"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },

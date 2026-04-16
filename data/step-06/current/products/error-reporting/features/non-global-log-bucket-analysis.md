@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:18.318Z"
+generated_at: "2026-04-15T12:09:42.682Z"
 product_name: "Error Reporting"
 product_slug: "error-reporting"
 feature_name: "Non-global log bucket analysis"
@@ -9,9 +9,9 @@ latest_feature_date: "2024-08-16"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://googleapis.dev/python/clouderroreporting/latest/usage.html"
-  - "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1"
-  - "https://googleapis.dev/python/clouderrorreporting/latest"
+  - "https://docs.cloud.google.com/error-reporting"
+  - "https://docs.cloud.google.com/error-reporting/docs/grouping-errors"
+  - "https://docs.cloud.google.com/error-reporting/docs/troubleshooting"
 keywords:
   - "non"
   - "global"
@@ -42,43 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
-- [https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1](https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1)
-- [https://googleapis.dev/python/clouderrorreporting/latest](https://googleapis.dev/python/clouderrorreporting/latest)
+- [https://docs.cloud.google.com/error-reporting](https://docs.cloud.google.com/error-reporting)
+- [https://docs.cloud.google.com/error-reporting/docs/grouping-errors](https://docs.cloud.google.com/error-reporting/docs/grouping-errors)
+- [https://docs.cloud.google.com/error-reporting/docs/troubleshooting](https://docs.cloud.google.com/error-reporting/docs/troubleshooting)
 
 ## Supporting Pages
 
-### Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation
+### Error Reporting overview \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
-- Source ID: `site-python-reference`
-- Final score: 130
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation Source URL: https://googleapis.dev/python/clouderroreporting/latest/usage.html Errors can also be reported to Stackdriver Error Reporting outside the context of an exception.
-- The library will include the file path, function name, and line number of the location where the error was reported. from google.cloud import error reporting client = error reporting.Client() client.report(&quot;Found an error!&quot;)
-
-### Error Reporting API v1beta1 - Package cloud.google.com/go/errorreporting/apiv1beta1 (v0.4.0) | Go client libraries | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1](https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1)
-- Source ID: `site-api-reference`
-- Final score: 126
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/error-reporting/docs/grouping-errors](https://docs.cloud.google.com/error-reporting/docs/grouping-errors)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 77
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Error Reporting API v1beta1 - Package cloud.google.com/go/errorreporting/apiv1beta1 (v0.4.0) Go client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1 Package errorreporting is an auto-generated package for the Error Reporting API.
-- Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors.
+- When Error Reporting analyzes log entries Error Reporting is a global service built on Cloud Logging and can analyze log entries when all of the following are true: Assured workloads are disabled.
+- On the Error Groups page, Error Reporting organizes and shows error groups based on the region of the log bucket that contains the log entries.
+- Note: Because Error Reporting is a global service, error groups can be accessed from any region.
+- Global error groups contain only error logs that are part of a log bucket in the global region.
 
-### Python Client for Error Reporting API — google-cloud-error-reporting documentation
+### Error Reporting overview \_|\_ Google Cloud Documentation
 
-- URL: [https://googleapis.dev/python/clouderrorreporting/latest](https://googleapis.dev/python/clouderrorreporting/latest)
-- Source ID: `site-python-reference`
-- Final score: 122
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/error-reporting](https://docs.cloud.google.com/error-reporting)
+- Source ID: `site-iam-reference`
+- Final score: 77
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Python Client for Error Reporting API — google-cloud-error-reporting documentation Source URL: https://googleapis.dev/python/clouderrorreporting/latest Error Reporting API: counts, analyzes and aggregates the crashes in your running cloud services.
-- A centralized error management interface displays the results with sorting and filtering capabilities.
-- A dedicated view shows the error details: time chart, occurrences, affected user count, first ...
+- When Error Reporting analyzes log entries Error Reporting is a global service built on Cloud Logging and can analyze log entries when all of the following are true: Assured workloads are disabled.
+- On the Error Groups page, Error Reporting organizes and shows error groups based on the region of the log bucket that contains the log entries.
+- Note: Because Error Reporting is a global service, error groups can be accessed from any region.
+- Global error groups contain only error logs that are part of a log bucket in the global region.
+
+### Troubleshoot \_|\_ Error Reporting \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/error-reporting/docs/troubleshooting](https://docs.cloud.google.com/error-reporting/docs/troubleshooting)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 75
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- As a result: Error Reporting can analyze the log entries routed by the Default , Required , and logs-from-samples sinks because the log bucket is stored by the same project that routes the log entries.
+- Error Reporting can't analyze the log entries stored in the log bucket named test-logs because the sink in my-team-project routes the log entries to a log bucket in a different project.
+- Error Reporting is a global service built on Cloud Logging and can analyze log entries when all of the following are true: Assured workloads are disabled.
+- Error Reporting can't store log entries in log buckets that have CMEK enabled.
 

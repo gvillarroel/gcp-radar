@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:10:29.981Z"
+generated_at: "2026-04-12T12:11:22.257Z"
 product_name: "Cloud Database Migration Service"
 product_slug: "cloud-database-migration-service"
 feature_name: "High-performance dump option for large MySQL-to-Cloud SQL for MySQL migrations"
 feature_slug: "high-performance-dump-option-for-large-mysql-to-cloud-sql-for-mysql-migrations"
 latest_feature_date: "2023-07-27"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job"
   - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs"
-  - "https://docs.cloud.google.com/database-migration/docs/release-notes"
+  - "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview"
+  - "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview"
 keywords:
   - "high"
   - "performance"
@@ -26,7 +27,7 @@ keywords:
 # High-performance dump option for large MySQL-to-Cloud SQL for MySQL migrations
 
 Product: Cloud Database Migration Service
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Database Migration Service added faster migration support for large MySQL 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
 - [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
-- [https://docs.cloud.google.com/database-migration/docs/release-notes](https://docs.cloud.google.com/database-migration/docs/release-notes)
+- [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview)
+- [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
 - Source ID: `site-api-reference`
-- Final score: 150
+- Final score: 194
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
 - Source ID: `site-api-reference`
-- Final score: 150
+- Final score: 194
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,29 @@ Evidence snippets:
 - Supported for MySQL to CloudSQL for MySQL migrations only. objectsConfig object ( MigrationJobObjectsConfig ) Optional.
 - OracleSourceConfig JSON representation { // Union field max concurrent full dump connections can be only one of the // following: "maxConcurrentFullDumpConnections" : integer // End of list of possible types for union field // max concurrent full dump connections . // Union field max concurrent cdc connections can be only one of the // following: "maxConcurrentCdcConnections" : integer // End of list of possible types for union field // max concurrent cdc connections . // Union field skip full dump can be only one of the following: "skipFullDump" : boolean // End of list of possible types for union field skip full dump . // Union field cdc start position can be only one of the following: "cdcStartPosition" : string // End of list of possible types for union field cdc start position . // Union field cdc method can be only one of the following: "logMiner" : { object ( LogMiner ) } , "binaryLogParser" : { object ( BinaryLogParser ) } // End of list of possible types for union field cdc method . } Fields Union field max concurrent full dump connections . max concurrent full dump connections can be only one of the following: maxConcurrentFullDumpConnections integer Optional.
 
-### Database Migration Service release notes \_|\_ Google Cloud Documentation
+### "Database Migration Service for heterogeneous SQL Server to AlloyDB for PostgreSQL\
 
-- URL: [https://docs.cloud.google.com/database-migration/docs/release-notes](https://docs.cloud.google.com/database-migration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 146
+- URL: [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview)
+- Source ID: `site-api-reference`
+- Final score: 176
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For information about creating migration jobs using the high-performance dump option, see Create a migration job .
-- For information about creating migration jobs using the new full dump configuration and maximum concurrent connection settings, see: Create a migration job in the Oracle to Cloud SQL for PostgreSQL documentation Create a migration job in the Oracle to AlloyDB for PostgreSQL documentation October 10, 2024 Feature Database Migration Service for homogeneous MySQL to Cloud SQL for MySQL migrations now supports MySQL version 8.4.
-- For information about creating migration jobs using the high-performance parallelism settings, see Create a migration job to a new destination instance and Create a migration job to an existing destination instance .
-- For information about creating migration jobs using the high-performance parallelism settings, see Create a migration job to a new destination instance and Create a migration job to an existing destination instance .
+- Continuous data movement during Database Migration Service for SQL Server heterogeneous migrations. (click to enlarge) At a high level, your data moves through the migration phases as follows: One-time migrations You use Database Migration Service conversion workspace to convert your schemas, tables, and other objects from SQL Server syntax to PostgreSQL syntax.
+- For continuous migrations, when the full dump phase is over, Database Migration Service switches to the change data capture (CDC) phase .
+- Supported source and destination databases The following table lists all supported SQL Server source and destination databases: Source databases Destination databases Amazon RDS for SQL Server AlloyDB for PostgreSQL 14, 15, 16 Microsoft Azure SQL Managed Instance Microsoft Azure SQL Database tier S3 and above Cloud SQL for SQL Server Self-managed SQL Server versions: Enterprise 2008 and later, Standard 2016 SP1 and later, Developer 2008 and later (on premises or on any cloud VM that you fully control) Unsupported source databases Database Migration Service doesn't support migrating from the following SQL Server versions: SQL Server Standard edition versions from 2008 to 2014 SQL Server Express SQL Server Web Code and schema conversion Database Migration Service conversion workspaces provide an interactive editor experience where you can convert your schemas, tables, and other objects from SQL Server syntax to PostgreSQL syntax.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+
+### "Database Migration Service for heterogeneous SQL Server to Cloud SQL for\
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview)
+- Source ID: `site-api-reference`
+- Final score: 176
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Continuous data movement during Database Migration Service for SQL Server heterogeneous migrations. (click to enlarge) At a high level, your data moves through the migration phases as follows: One-time migrations You use Database Migration Service conversion workspace to convert your schemas, tables, and other objects from SQL Server syntax to PostgreSQL syntax.
+- For continuous migrations, when the full dump phase is over, Database Migration Service switches to the change data capture (CDC) phase .
+- Microsoft Azure SQL Managed Instance Microsoft Azure SQL Database tier S3 and above Cloud SQL for SQL Server Self-managed SQL Server versions: Enterprise 2008 and later, Standard 2016 SP1 and later, Developer 2008 and later (on premises or on any cloud VM that you fully control) Unsupported source databases Database Migration Service doesn't support migrating from the following SQL Server versions: SQL Server Standard edition versions from 2008 to 2014 SQL Server Express SQL Server Web Code and schema conversion Database Migration Service conversion workspaces provide an interactive editor experience where you can convert your schemas, tables, and other objects from SQL Server syntax to PostgreSQL syntax.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 

@@ -1,18 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T17:41:32.739Z"
+generated_at: "2026-04-12T12:17:10.830Z"
 product_name: "Google Meet"
 product_slug: "google-meet"
 feature_name: "Google Meet smart notes file retrieval"
 feature_slug: "google-meet-smart-notes-file-retrieval"
 latest_feature_date: "2025-12-15"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
   - "https://developers.google.com/workspace/meet/api/guides/artifacts"
   - "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.smartNotes"
-  - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces"
+  - "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
 keywords:
   - "meet"
   - "smart"
@@ -27,7 +27,7 @@ keywords:
 # Google Meet smart notes file retrieval
 
 Product: Google Meet
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -39,14 +39,14 @@ Developers can use the smartNotes resource to get and list smart notes files in 
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
 - [https://developers.google.com/workspace/meet/api/guides/artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts)
 - [https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.smartNotes](https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.smartNotes)
-- [https://developers.google.com/workspace/meet/api/guides/meeting-spaces](https://developers.google.com/workspace/meet/api/guides/meeting-spaces)
+- [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview)
 
 ## Supporting Pages
 
@@ -54,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration)
 - Source ID: `site-docs-root`
-- Final score: 178
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 209
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - When both features are enabled While each feature can be used separately, both transcripts and smart notes can also be used at the same time to create better post-meeting artifacts.
@@ -68,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/meet/api/guides/artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts)
 - Source ID: `site-docs-root`
-- Final score: 174
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 205
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - It's possible a user might delete the smart notes file from Drive, yet the unique name is still returned in Meet.
@@ -82,9 +82,9 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.smartNotes](https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.smartNotes)
 - Source ID: `site-docs-reference`
-- Final score: 156
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 191
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Home Google Workspace Google Meet Reference Send feedback REST Resource: conferenceRecords.smartNotes Stay organized with collections Save and categorize content based on your preferences.
@@ -92,17 +92,17 @@ Evidence snippets:
 - ENDED This smart notes session has ended, but the smart notes file hasn't been generated yet.
 - FILE GENERATED Smart notes file is generated and ready to download.
 
-### Create and manage meeting spaces \_|\_ Google Meet \_|\_ Google for Developers
+### Google Meet meeting spaces overview \_|\_ Google for Developers
 
-- URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces](https://developers.google.com/workspace/meet/api/guides/meeting-spaces)
+- URL: [https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview](https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview)
 - Source ID: `site-docs-root`
-- Final score: 146
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 185
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- A meetingCode shouldn't be stored long term as it can become dissociated from a meeting space and can be reused for different meeting spaces in the future.
-- For more information, see How Meet identifies a meeting space (https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space). / // const name = 'abc123' // Imports the Meet library const { SpacesServiceClient } = require ( '@google-apps/meet' ). v2 ; // Instantiates a client const meetClient = new SpacesServiceClient (); async function callEndActiveConference () { // Construct request const request = { name , }; // Run request const response = await meetClient . endActiveConference ( request ); console . log ( response ); } callEndActiveConference (); Python packages/google-apps-meet/samples/generated samples/meet v2 generated spaces service end active conference async.py View on GitHub This snippet has been automatically generated and should be regarded as a code template only.
-- For more information, see How Meet identifies a meeting space (https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space). / // const name = 'abc123' // Imports the Meet library const { SpacesServiceClient } = require ( '@google-apps/meet' ). v2 ; // Instantiates a client const meetClient = new SpacesServiceClient (); async function callGetSpace () { // Construct request const request = { name , }; // Run request const response = await meetClient . getSpace ( request ); console . log ( response ); } callGetSpace (); Python packages/google-apps-meet/samples/generated samples/meet v2 generated spaces service get space async.py View on GitHub This snippet has been automatically generated and should be regarded as a code template only.
-- Later on the input space can be non-empty when space configuration is introduced. / // const space = {} // Imports the Meet library const { SpacesServiceClient } = require ( '@google-apps/meet' ). v2 ; // Instantiates a client const meetClient = new SpacesServiceClient (); async function callCreateSpace () { // Construct request const request = { }; // Run request const response = await meetClient . createSpace ( request ); console . log ( response ); } callCreateSpace (); Python packages/google-apps-meet/samples/generated samples/meet v2 generated spaces service create space async.py View on GitHub This snippet has been automatically generated and should be regarded as a code template only.
+- Related topics Create and manage meeting spaces Configure meeting spaces and members Join a meeting Countries where you can use a phone with Meet Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- To manage a meeting space, use the following values for the name field: To get details about a meeting space, you can use either spaces/{space} or the alias spaces/{meetingCode} .
+- Warning: A meetingCode shouldn't be stored long term as it can become dissociated from a meeting space and it can be reused for different meeting spaces in the future.
+- To end an active conference within a meeting space, you can only use spaces/{space} .
 

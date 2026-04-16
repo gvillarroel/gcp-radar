@@ -4,7 +4,7 @@ url: https://developers.google.com/earth-engine/guides/arrays_eigen_analysis
 knowledge_key: corpus
 source_id: site-docs-reference-3
 source_type: site
-entrypoint: https://developers.google.com/earth-engine/guides
+entrypoint: https://developers.google.com/earth-engine/guides/getstarted
 source_metadata:
   url: https://developers.google.com/earth-engine/guides/arrays_eigen_analysis
   title: "Eigen Analysis \_|\_ Google Earth Engine \_|\_ Google for Developers"

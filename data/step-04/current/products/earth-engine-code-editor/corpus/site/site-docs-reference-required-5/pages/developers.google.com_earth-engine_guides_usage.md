@@ -1,0 +1,210 @@
+---
+title: "Earth Engine quotas \_|\_ Google Earth Engine \_|\_ Google for Developers"
+url: https://developers.google.com/earth-engine/guides/usage
+knowledge_key: corpus
+source_id: site-docs-reference-required-5
+source_type: site
+entrypoint: https://developers.google.com/earth-engine/guides/command_line
+source_metadata:
+  url: https://developers.google.com/earth-engine/guides/usage
+  title: "Earth Engine quotas \_|\_ Google Earth Engine \_|\_ Google for Developers"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone. All noncommercial projects will need to select a quota tier by April 27, 2026 or will use the Community Tier by default. Tier quotas will take effect for all projects (regardless of tier selection date) on April 27, 2026 . Learn more.
+Home
+Products
+Google Earth Engine
+Guides
+Send feedback
+Earth Engine quotas
+Stay organized with collections
+Save and categorize content based on your preferences.
+Page Summary
+outlined_flag
+Earth Engine uses quota limits to ensure fair resource distribution for different resource types like computation and storage.
+Quotas are categorized as either adjustable (per-user/project) or fixed (system-wide).
+Attempting to bypass quota using multiple accounts violates Earth Engine's Terms of Service.
+Adjustable quotas include limits on concurrent requests, request rate, batch tasks, asset storage, and daily EECU-time.
+Fixed quotas, which cannot be adjusted, include limits on computation time, memory footprint per request, aggregations, table import size, request payload size, and task queue length.
+BigQuery raster functions have a specific adjustable quota limit on daily slot-time.
+Types of quota
+The Earth Engine platform has a number of quota limits in place to ensure that
+resources are distributed fairly across users. Since there are many different
+types of resources available in Earth Engine (computation, storage, etc.), there
+are many different types of quota limits.
+The primary distinction between different quota types is whether they're
+adjustable. For some types of quota, we're able to change the limits on a
+per-user or per-project basis, while other types are system-wide limits which
+can't be changed.
+Warning: Quota restrictions exist to ensure the availability of computing
+resources for the entire Earth Engine community. Attempting to circumvent quota
+restrictions through the use of multiple Google Accounts is a violation of the
+Earth Engine Terms of Service .
+Adjustable quota limits
+The following limits apply on a per-project basis.
+Quota type
+Default value (per project)
+Max concurrent requests
+(standard endpoint)
+40 concurrent requests
+Max concurrent requests
+(high-volume endpoint)
+40 concurrent requests
+Max rate of requests (per project)
+100 requests/s (6000 requests/min)
+Max rate of requests (per account)
+100 requests/s (6000 requests/min)
+Average concurrent batch tasks
+2 tasks (on average)
+Max asset storage space
+250 GB
+Max number of assets
+10,000
+Earth Engine compute time (EECU-time) per day in seconds
+Unlimited
+Concurrent interactive requests
+Each project can make interactive
+requests
+in parallel, up to a quota limit. If the limit is exceeded, Earth Engine will
+return "HTTP 429: Too Many Requests"
+errors . Generally, these
+errors are handled by the Earth Engine client library, which wraps requests in
+exponential backoff, retrying the query until it succeeds. The Earth Engine
+client library will retry the request up to five times.
+To help avoid receiving these 429 errors, you may want to enable caching for
+your application, for example using memcache, to avoid redundant queries when
+possible. If using an older version of the Earth Engine client library that does
+not retry queries automatically, or if a query is still not completed after five
+retries, you may need to implement exponential backoff around requests.
+Rate of requests (QPS)
+In addition to the concurrency limits , Earth
+Engine limits the rate of interactive
+requests
+at the project and user level. These settings can be adjusted in the Cloud
+Console
+Concurrent batch tasks
+Batch tasks
+are limited to a small amount of parallelism, since they use more resources than
+interactive
+requests .
+When using Earth Engine noncommercially, the maximum number of batch tasks that
+you're able to run concurrently is determined by your
+noncommercial tier .
+When using Earth Engine commercially, the maximum number of batch tasks that
+you're able to run concurrently is determined by the pricing
+plan , though it may be further
+lowered by setting the per-project batch task concurrency limit. By default, the
+batch task concurrency limit on a project is set to the maximum allowed by the
+payment plan configured on the project's billing account. To view or update this
+limit on a project, see the documentation for the command line
+tool .
+Asset storage quota
+Each Earth Engine asset has a corresponding data
+storage size measured in bytes. Assets can be owned by Cloud Projects or by
+individuals (legacy assets), and each asset counts against its owner's Earth
+Engine limit on overall storage and asset count.
+EECU-time per day
+If you're looking to control costs, you can limit the amount of EECU-time that a
+project is allowed to consume on Earth Engine per day. By default, this quota is
+unlimited. Quota Administrators can set this limit in the Cloud
+Console
+by filtering for the earthengine.googleapis.com/daily_eecu_usage_time quota
+metric. Once set, this quota accumulates the EECU-time consumed by successful
+Earth Engine requests of all users in a project. When the quota is exceeded,
+requests will fail until the quota is reset the next day or the limit is
+increased. See the cost controls
+guide for more details on
+setting this quota.
+Note: This quota is approximate. It provides a safeguard against excessive
+spending, but is not designed to strictly limit EECU-time. Earth Engine might
+occasionally run a query that exceeds the quota limit.
+Fixed quota limits
+These types of quota limits are set at the platform level, so they can't be
+adjusted on a per-user or per-project basis. They're unlikely to change
+significantly over time.
+Computation time
+Different types of requests have different maximum durations, which are detailed
+in detail in the Processing Environments
+documentation .
+For help fixing timeout errors, see the debugging
+guide .
+Per-request memory footprint
+When a request fails with "User memory limit exceeded", this means that Earth
+Engine was unable to compute the answer within the allowed memory footprint. The
+EE computation platform has a finite amount of RAM available, and, to ensure
+that the system remains stable, each request can only use a certain amount. The
+maximum amount of memory available depends on the type of request (e.g., more
+for a batch task than a map tile), but these are system-wide limits.
+For help fixing memory errors, see the debugging
+guide .
+Aggregations
+When processing Earth Engine requests, we separate off certain types of
+sub-computations which we know are computationally intensive. These
+sub-computations are called "aggregations," and they're handled specially in the
+EE system. The results of aggregations are cached to avoid recomputation.
+Concurrent aggregations
+To avoid uncontrolled computational fanout, we limit the number of aggregations
+that an individual user can run simultaneously, and this is unchangeable. When a
+request fails with "Too many concurrent aggregations", it means that the
+requester had too many aggregations running at the same time.
+For help fixing concurrent aggregation errors, see the debugging
+guide .
+Large aggregation results
+When a request fails with "Computed value too large", it means that the
+aggregation returned a result which is too large to fit in our cache. The size
+limit on computed results is 100 MiB, and this is a system-wide limit.
+Table import limits
+Table upload limits are explained in the the guide to importing table
+data .
+Request payload size
+A single query to Earth Engine is limited to 10MB in size. This limit is usually
+only exceeded when some large piece of additional data gets included directly in
+the query, like a shapefile or GeoJSON structure that's been inlined into the
+query. These objects should instead be uploaded and turned into a
+FeatureCollection asset, and referenced by the asset ID.
+Task queue length
+Tasks that are waiting to be scheduled (in the READY state) form the "task
+queue." Each project's queue supports a maximum of 3,000 tasks. This means that
+it's not possible to have more than 3,000 tasks in the READY state.
+BigQuery raster functions quota limits
+The following quotas apply to calls to Earth Engine from BigQuery, such as when
+using the
+ST_REGIONSTATS
+SQL function.
+Quota type
+Default value (per project)
+BigQuery slot-time per day
+1,260,000 slot-seconds (350 slot-hours)
+BigQuery slot-time per day
+The BigQuery slot-time per day quota is a custom quota that lets you limit the
+amount of slot-time that BigQuery raster functions are allowed to consume on
+Earth Engine on a given day for a given project. The daily quota accumulates the
+total time on all queries, even those that fail. You can view the quota in the
+Cloud Console
+under the earthengine.googleapis.com/bigquery_slot_usage_time metric, and the
+value can be adjusted up or down by a Quota Administrator. To increase the value
+above the default value, create a quota increase
+request ,
+which will be automatically approved. The change should take effect within 10
+minutes.
+If you exceed this quota, BigQuery will return the following error message:
+From Earth Engine: Custom quota exceeded: Your usage exceeded the custom quota
+for 'earthengine.googleapis.com/bigquery_slot_usage_time' , which is adjustable
+by your administrator in the Google Cloud console:
+https://console.cloud.google.com/quotas/?project=_.
+Once the quota is exceeded, ST_REGIONSTATS calls will fail until the quota is
+reset the next day or the limit is increased by an administrator.
+Note: Like BigQuery custom query
+quotas , this quota is
+approximate. It provides a safeguard against excessive spending, but is not
+designed to strictly limit slot time. BigQuery might occasionally run a query
+that exceeds the quota limit.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-02-20 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-20 UTC."],[],["Earth Engine employs various quota limits to manage resource distribution. These limits are either adjustable per project, including concurrent requests, request rates, batch tasks, asset storage, and number of assets or fixed system-wide limits. Fixed limits encompass computation time, memory usage, aggregation constraints, table import size, request payload size, and task queue length. Exceeding limits may result in errors, which often can be mitigated through the Earth Engine client library’s automatic retry process.\n"]]

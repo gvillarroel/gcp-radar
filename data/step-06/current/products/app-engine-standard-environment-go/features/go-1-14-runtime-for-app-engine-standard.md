@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:52:30.776Z"
+generated_at: "2026-04-12T20:52:24.720Z"
 product_name: "App Engine standard environment Go"
 product_slug: "app-engine-standard-environment-go"
 feature_name: "Go 1.14 runtime for App Engine standard"
 feature_slug: "go-1-14-runtime-for-app-engine-standard"
 latest_feature_date: "2020-08-25"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/appengine/docs/standard/go/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/upgrade-go-runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
 keywords:
-  - "golang 1.14"
-  - "go1.14 App Engine standard"
-  - "App Engine Go 1.14"
-  - "Go 1.14 runtime"
-  - "go1.14"
-  - "App Engine language runtime"
-  - "Go runtime GA"
-  - "Go runtime"
+  - "go"
+  - "14"
+  - "runtime"
+  - "app"
+  - "engine"
+  - "standard"
+  - "environment"
+  - "reached"
 ---
 
 # Go 1.14 runtime for App Engine standard
 
 Product: App Engine standard environment Go
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -32,29 +34,56 @@ The Go 1.14 runtime for the App Engine standard environment reached general avai
 
 ## Extended Definition
 
-In App Engine standard environment, the Go runtime is the language runtime that installs your Go service code and dependencies and runs the service. It is configured in `app.yaml` with `runtime: go VERSION`, where VERSION is a Go major/minor value (for example, a specific Go 1.x stream). For a chosen version, App Engine uses the latest stable release of that specified Go version.
+The Go 1.14 runtime for the App Engine standard environment reached general availability; The Go 1.14 runtime for the App Engine standard environment became available in beta.
 
 ## Evidence Summary
 
-The cited page defines the Go runtime configuration in App Engine standard and explains that it is version-based and resolves to the latest stable release for the declared version, but does not provide lifecycle details (e.g., GA/beta timing) for Go 1.14 specifically.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/appengine/docs/standard/go/runtime](https://docs.cloud.google.com/appengine/docs/standard/go/runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/go/upgrade-go-runtime](https://docs.cloud.google.com/appengine/docs/standard/go/upgrade-go-runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/go/config/appref](https://docs.cloud.google.com/appengine/docs/standard/go/config/appref)
 
 ## Supporting Pages
 
 ### "Go runtime environment \_|\_ App Engine standard environment \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/standard/go/runtime](https://docs.cloud.google.com/appengine/docs/standard/go/runtime)
-- Source ID: `site-docs-root`
-- Final score: 36
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Source ID: `site-docs-reference`
+- Final score: 62
+- Re-rank relevance: N/A
 
 Evidence snippets:
 - Home Documentation Application hosting App Engine Standard environment Guides Send feedback Go runtime environment Stay organized with collections Save and categorize content based on your preferences.
 - The Go runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : go VERSION Where VERSION is the Go MAJOR and MINOR version numbers.
-- The Go runtime is the software stack responsible for installing your web service's code and its dependencies and running your service.
-- The Go runtime uses the latest stable release of the version that is specified in your app.yaml file.
+- Environment variables The following environment variables are set by the runtime: Environment variable Description GAE APPLICATION The ID of your App Engine application.
+- Note: Custom metadata is not supported in the standard environment.
+
+### "Upgrade an existing application \_|\_ App Engine standard environment \_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/upgrade-go-runtime](https://docs.cloud.google.com/appengine/docs/standard/go/upgrade-go-runtime)
+- Source ID: `site-docs-reference`
+- Final score: 54
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Guides Send feedback Upgrade an existing application Stay organized with collections Save and categorize content based on your preferences.
+- However, App Engine might block re-deployment of applications that use runtimes after their end of support date .
+- The process of upgrading an existing app depends on the runtime version that your app currently uses: Go 1.11 (first-generation runtime) : You must migrate your app to the latest supported Go version .
+- Go second-generation runtimes (after end of support) : To upgrade to a supported version of Go , update the app.yaml file by specifying a version of Go that you want your app to run.
+
+### "App Engine app.yaml reference \_|\_ App Engine standard environment \_|\_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/config/appref](https://docs.cloud.google.com/appengine/docs/standard/go/config/appref)
+- Source ID: `site-docs-reference-2`
+- Final score: 52
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Standard environment Reference Send feedback App Engine app.yaml reference Stay organized with collections Save and categorize content based on your preferences.
+- Note: For new projects you create after March 2025, App Engine sets the maximum instances default for standard environment deployments to 20.
+- Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : "example-gcs-bucket" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.
+- Note that the scheduler might spawn a new instance before the actual maximum number of requests is reached. max pending latency The maximum amount of time that App Engine should allow a request to wait in the pending queue before starting additional instances to handle requests so that pending latency is reduced.
 

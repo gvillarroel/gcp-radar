@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T23:03:42.249Z"
+generated_at: "2026-04-12T12:11:52.995Z"
 product_name: "Cloud NGFW"
 product_slug: "cloud-ngfw"
 feature_name: "URL filtering service"
 feature_slug: "url-filtering-service"
 latest_feature_date: "2026-03-24"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
   - "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial"
   - "https://docs.cloud.google.com/firewall/docs/configure-url-filtering"
+  - "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
 keywords:
   - "url"
   - "filtering"
@@ -26,7 +27,7 @@ keywords:
 # URL filtering service
 
 Product: Cloud NGFW
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ URL filtering service filters egress HTTP(S) workload traffic using domain and S
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/firewall/docs/about-url-filtering](https://docs.cloud.google.com/firewall/docs/about-url-filtering)
 - [https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial](https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial)
 - [https://docs.cloud.google.com/firewall/docs/configure-url-filtering](https://docs.cloud.google.com/firewall/docs/configure-url-filtering)
+- [https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles](https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/firewall/docs/about-url-filtering](https://docs.cloud.google.com/firewall/docs/about-url-filtering)
 - Source ID: `site-docs-root`
-- Final score: 228
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 313
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - It lets you filter your workload traffic by using domain and Server Name Indication (SNI) information that is available in the egress HTTP(S) messages.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial](https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial)
 - Source ID: `site-docs-root`
-- Final score: 212
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 297
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - URL filtering service lets you filter your Google Cloud workload traffic by using the domain and Server Name Indication (SNI) information that is available in the egress HTTP or HTTPS messages.
@@ -80,13 +82,27 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/firewall/docs/configure-url-filtering](https://docs.cloud.google.com/firewall/docs/configure-url-filtering)
 - Source ID: `site-docs-root`
-- Final score: 186
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 259
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Firewall endpoint Firewall endpoint 2 performs URL filtering with TLS inspection enabled for workloads running on VPC 1 and VPC 2 in zone us-west1-b .
 - A firewall endpoint is a zonal resource that you must create in the same zone as the workload you want to protect with the URL filtering service.
 - A firewall endpoint is a zonal resource that you must create in the same zone as the workload you want to protect with the URL filtering service.
 - Firewall endpoint Firewall endpoint 1 performs URL filtering for workloads running on VPC 1 and VPC 2 in zone us-west1-a .
+
+### "Create and manage URL filtering security profiles \_|\_ Cloud Next Generation\
+
+- URL: [https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles](https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles)
+- Source ID: `site-docs-root`
+- Final score: 206
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- This can happen with unencrypted HTTP traffic, or when TLS inspection is disabled for encrypted message headers. urlFilteringProfile: urlFilters: user-specified filters - filteringAction: DENY priority: 1000 urls: ['www.example.com','www.examplepetstore.com'] explicit allow URL filter that you can add - filteringAction: ALLOW priority: 2000 urls: [' '] implicit deny URL filter that will be processed last - filteringAction: DENY priority: 2147483647 urls: [' '] Limitations Matcher strings represent either domains or subdomains.
+- The following code snippet demonstrates how to allow all domains (and their subdomains) that end in .com but deny the remaining traffic. urlFilteringProfile: urlFilters: Allow all domains (and their subdomains) that end in '.com' - filteringAction: ALLOW priority: 2000 urls: [' .com'] implicit deny URL filter that will be processed last - filteringAction: DENY priority: 2147483647 urls: [' '] The following code snippet demonstrates how to deny all subdomains of example.com and examplepetstore.com but allow these domains and all other domains (and their subdomains) that end in .com . urlFilteringProfile: urlFilters: Deny all subdomains of example.com - filteringAction: DENY priority: 1000 urls: [' .example.com'] Deny all subdomains of examplepetstore.com - filteringAction: DENY priority: 1500 urls: [' .examplepetstore.com'] Allow all domains (and their subdomains) that end in '.com' - filteringAction: ALLOW priority: 2000 urls: [' .com'] implicit deny URL filter that will be processed last - filteringAction: DENY priority: 2147483647 urls: [' '] Cloud NGFW doesn't interpret the asterisk ( ) as a regular expression wildcard.
+- For example, the matcher string example.com matches with a.example.com , a.b.c.example.com , as well as example.com . urlFilteringProfile: urlFilters: user-specified filters - filteringAction: ALLOW priority: 1000 urls: [' example.com'] implicit deny URL filter that will be processed last - filteringAction: DENY priority: 2147483647 urls: [' '] In the preceding example, Cloud NGFW allows traffic towards example.com as well as the subdomains of example.com but denies the rest of the outbound traffic.
+- For example, the matcher string .example.com matches with a.example.com and a.b.c.example.com but doesn't match with example.com . urlFilteringProfile: urlFilters: user-specified filters - filteringAction: ALLOW priority: 1000 urls: [' .example.com'] implicit deny URL filter that will be processed last - filteringAction: DENY priority: 2147483647 urls: [' '] In the preceding example, Cloud NGFW allows traffic towards the subdomains of example.com but denies the rest of the outbound traffic.
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:00:49.074Z"
+generated_at: "2026-04-12T12:11:20.291Z"
 product_name: "Cloud Composer"
 product_slug: "cloud-composer"
 feature_name: "Airflow core.store_serialized_dags reconfiguration"
 feature_slug: "airflow-core-store-serialized-dags-reconfiguration"
 latest_feature_date: "2020-03-20"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/composer/docs/airflow-configurations"
   - "https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations"
   - "https://docs.cloud.google.com/composer/docs/composer-1/known-issues"
+  - "https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization"
 keywords:
   - "airflow"
   - "core"
@@ -26,7 +27,7 @@ keywords:
 # Airflow core.store_serialized_dags reconfiguration
 
 Product: Cloud Composer
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Composer now allows changing the Airflow setting core.store_serialized_dags back
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/composer/docs/airflow-configurations](https://docs.cloud.google.com/composer/docs/airflow-configurations)
 - [https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations](https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations)
 - [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
+- [https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization](https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/composer/docs/airflow-configurations](https://docs.cloud.google.com/composer/docs/airflow-configurations)
 - Source ID: `site-docs-reference`
-- Final score: 178
+- Final score: 219
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations](https://docs.cloud.google.com/composer/docs/concepts/airflow-configurations)
 - Source ID: `site-docs-reference`
-- Final score: 178
+- Final score: 219
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/composer/docs/composer-1/known-issues](https://docs.cloud.google.com/composer/docs/composer-1/known-issues)
 - Source ID: `site-iam-reference`
-- Final score: 178
+- Final score: 212
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - Logs for Airflow tasks aren't collected if [core]execute tasks new python interpreter is set to True Cloud Composer doesn't collect logs for Airflow tasks if the [core]execute tasks new python interpreter Airflow configuration option is set to True .
 - Add the cloud-airflow-prod@system.gserviceaccount.com service account as the member of your security perimeter by using the following configuration in the YAML conditions file: - members : - serviceAccount:cloud-airflow-prod@ system.gserviceaccount.com Cloud Composer 1 environment creation fails when the compute.requireOsLogin policy is enabled If compute.requireOsLogin policy is set to true in your project, then Cloud Composer 1 v1 environment creation operations fails.
 - Only the following list of Non-RFC 1918 ranges is supported in Cloud Composer: 100.64.0.0/10 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 240.0.0.0/4 Airflow UI does not show tasks logs when DAG Serialization is on in Composer 1.10.2 and Composer 1.10.3 Enabling DAG serialization in environments using Composer versions 1.10.2 and 1.10.3 prevents logs from showing in the Airflow web server.
+
+### "Enabling and disabling DAG serialization \_|\_ Cloud Composer \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization](https://docs.cloud.google.com/composer/docs/composer-1/dag-serialization)
+- Source ID: `site-iam-reference`
+- Final score: 195
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- To enable DAG serialization, override the following Airflow configuration options: Section Key Value core store serialized dags True core store dag code True core min serialized dag update interval 30 scheduler dag dir list interval 30 The min serialized dag update interval Airflow configuration option controls how frequently serialized DAGs are updated in the database.
+- To disable DAG serialization, override the following Airflow configuration options: Section Key Value core store serialized dags False core store dag code False Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- In a Cloud Composer environment, both the Airflow scheduler and the Airflow web server continuously process DAGs.
+- Instead, it reads the serialized DAGs from the Airflow database.
 

@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:24:01.976Z"
+generated_at: "2026-04-14T16:02:18.854Z"
 product_name: "Google SecOps"
 product_slug: "google-secops"
 feature_name: "Gemini YARA-L rule generation"
 feature_slug: "gemini-yara-l-rule-generation"
 latest_feature_date: "2024-05-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/chronicle/docs/secops/release-notes"
-  - "https://docs.cloud.google.com/chronicle/docs/release-notes"
   - "https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini"
+  - "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+  - "https://docs.cloud.google.com/chronicle/docs/administration/cli-user-guide"
 keywords:
   - "gemini"
   - "yara"
@@ -19,14 +19,14 @@ keywords:
   - "generation"
   - "can"
   - "create"
-  - "new"
   - "rules"
+  - "udm"
 ---
 
 # Gemini YARA-L rule generation
 
 Product: Google SecOps
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,53 @@ Gemini can create new YARA-L rules from the UDM search queries it generates.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
 - [https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini](https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini)
+- [https://docs.cloud.google.com/chronicle/docs/detection/default-rules](https://docs.cloud.google.com/chronicle/docs/detection/default-rules)
+- [https://docs.cloud.google.com/chronicle/docs/administration/cli-user-guide](https://docs.cloud.google.com/chronicle/docs/administration/cli-user-guide)
 
 ## Supporting Pages
-
-### Google Security Operations release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/secops/release-notes](https://docs.cloud.google.com/chronicle/docs/secops/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Rule generation : Gemini can create new YARA-L rules from the UDM search queries it generates.
-- January 23, 2025 Feature The following new YARA-L 2.0 functions are available in Rules and Search: arrays.concat arrays.join string arrays.max arrays.min arrays.size arrays.index to int cast.as bool cast.as float math.ceil math.floor math.geo distance math.is increasing math.pow math.random strings.contains strings.count substrings strings.extract domain strings.extract hostname strings.from hex strings.ltrim strings.reverse strings.rtrim strings.trim strings.url decode timestamp.as unix seconds timestamp.now The following new YARA-L 2.0 functions are available in Rules: hash.sha256 window.avg window.first window.last window.median window.mode window.stddev window.variance Details on function signatures and behavior can be found in YARA-L2.0 Function Syntax Reference Documentation Change The Google SecOps team identified that a cloud threat detection rule pack (azure-defender-for-cloud-vm-extensions) was inadvertently made available to all customers.
-- An improved integration for Chrome Enterprise Premium is now available that includes: Streamlined connection to Google SecOps, using recommended security defaults Enhanced log events with Google Safe Browsing context Updated parser and integration documentation: Collect Google Chrome logs Curated dashboards for Chrome Enterprise Premium Google Workspace SOAR actions to manage Chrome extension blocklist policies ( Block Extension and Delete Extension ) October 28, 2025 Feature Risk-based alerting with entity-only rules With the new ENTITY RISK CHANGE UDM event type, you can now write YARA-L detection rules that trigger independently of ingested events.
-- You can create or import a data table to your Google SecOps account using the Google SecOps UI, the data tables API, or by using a YARA-L query in rules.
-
-### Google Security Operations SIEM release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/chronicle/docs/release-notes](https://docs.cloud.google.com/chronicle/docs/release-notes)
-- Source ID: `site-docs-reference-2`
-- Final score: 166
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Rule generation : Gemini can create new YARA-L rules from the UDM search queries it generates.
-- September 09, 2024 Feature The following new YARA-L 2.0 functions are available in Rules and Search: arrays.concat arrays.join string arrays.max arrays.min arrays.size arrays.index to int cast.as bool cast.as float math.ceil math.floor math.geo distance math.is increasing math.pow math.random strings.contains strings.count substrings strings.extract domain strings.extract hostname strings.from hex strings.ltrim strings.reverse strings.rtrim strings.trim strings.url decode timestamp.as unix seconds timestamp.now The following new YARA-L 2.0 functions are available in Rules: hash.sha256 window.avg window.first window.last window.median window.mode window.stddev window.variance Details on function signatures and behavior can be found in YARA-L2.0 Function Syntax Reference Documentation September 06, 2024 Change Burst limits will be rolling out over the next 90 days.
-- An improved integration for Chrome Enterprise Premium is now available that includes: Streamlined connection to Google SecOps, using recommended security defaults Enhanced log events with Google Safe Browsing context Updated parser and integration documentation: Collect Google Chrome logs Curated dashboards for Chrome Enterprise Premium Google Workspace SOAR actions to manage Chrome extension blocklist policies ( Block Extension and Delete Extension ) October 28, 2025 Feature Risk-based alerting with entity-only rules With the new ENTITY RISK CHANGE UDM event type, you can now write YARA-L detection rules that trigger independently of ingested events.
-- You can create or import a data table to your Google SecOps account using the Google SecOps UI, the data tables API, or by using a YARA-L query in rules.
 
 ### "Generate a YARA-L 2.0 rule using Gemini \_|\_ Google Security Operations\
 
 - URL: [https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini](https://docs.cloud.google.com/chronicle/docs/detection/generate-yara-l-with-gemini)
 - Source ID: `site-docs-root`
-- Final score: 164
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 191
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- For example, using the previous rule prompt, Gemini could generate the following rule: rule gemini rule { meta: author = "Gemini in Google SecOps" description = "Prompt: Create a rule to count how many DNS responses were truncated per principal asset host." events: $e.metadata.event type = "NETWORK DNS" $e.network.dns.response = true $e.network.dns.truncated = true $ph principal asset hostname = $e.principal.asset.hostname match: $ph principal asset hostname over 1h outcome: $event count = count($e.metadata.id) condition: $e } To activate the rule, click Save New Rule .
 - Generate a YARA-L 2.0 rule using Gemini Supported in: Google secops SIEM On the Gemini pane, use a natural language prompt to generate a rule (for example, Create a rule to count how many DNS responses were truncated per principal asset host. ), and then click Enter .
+- For example, using the previous rule prompt, Gemini could generate the following rule: rule gemini rule { meta: author = "Gemini in Google SecOps" description = "Prompt: Create a rule to count how many DNS responses were truncated per principal asset host." events: $e.metadata.event type = "NETWORK DNS" $e.network.dns.response = true $e.network.dns.truncated = true $ph principal asset hostname = $e.principal.asset.hostname match: $ph principal asset hostname over 1h outcome: $event count = count($e.metadata.id) condition: $e } To activate the rule, click Save New Rule .
 - You can only create single-event rules using this feature.
-- Click Open in rule editor to view and modify the new rule in the Rules Editor.
+- Gemini generates a rule to detect the behavior you've searched for in the Gemini pane.
+
+### "Default detection rules \_|\_ Google Security Operations \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/detection/default-rules](https://docs.cloud.google.com/chronicle/docs/detection/default-rules)
+- Source ID: `site-docs-root`
+- Final score: 152
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Default detection rules Supported in: Google secops SIEM YARA-L rules language YARA-L is a detection rules language developed by Google.
+- Example rules and tuning The following rule creates an event variable $e1 which is used to track the event type.
+- When using time periods, the Google SecOps Detection Engine only examines the discrete blocks of time you specify. rule OutcomeRuleMultiEvent { meta: author = "noone@google.com" events: $u.udm.principal.hostname = $hostname $asset context.graph.entity.hostname = $hostname $severity = $asset context.graph.entity.asset.vulnerabilities.severity match: $hostname over 5m outcome: $risk score = max( 100 + if($hostname = "my-hostname", 100, 50) + if($severity = "HIGH", 10) + if($severity = "MEDIUM", 5) + if($severity = "LOW", 1) ) $asset id list = array( if($u.principal.asset id = "", "Empty asset id", $u.principal.asset id ) ) $asset id distinct list = array distinct($u.principal.asset id) $asset id count = count($u.principal.asset id) $asset id distinct count = count distinct($u.principal.asset id) condition: $u and $asset context and $risk score > 50 and not arrays.contains($asset id list, "id 1234") } Conclusion YARA-L is a flexible detection language which enables you to examine security events and not simply just return a data query.
+- The condition states the logical condition that triggers the detection. rule ExcludeZeroValues { meta: author = "noone@google.com" events: $e1.metadata.event type = "NETWORK DNS" $e1.principal.hostname = $hostname // $e1.principal.user.userid may be empty string. $e1.principal.user.userid != "Guest" $e2.metadata.event type = "NETWORK HTTP" $e2.principal.hostname = $hostname // $e2.target.asset id cannot be empty string as explicitly specified. $e2.target.asset id != "" match: // $hostname cannot be empty string. $hostname over 1h condition: $e1 and $e2 } Rules outcome section Use the outcome section to set holding variables within the rule detection to provide enrichment for downstream consumption.
+
+### "Google SecOps CLI User Guide \_|\_ Google Security Operations \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/chronicle/docs/administration/cli-user-guide](https://docs.cloud.google.com/chronicle/docs/administration/cli-user-guide)
+- Source ID: `site-api-reference`
+- Final score: 143
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- You can set the region using: The --region flag with any command The configuration file using secops config set --region REGION Supported regions include: US (default) EUROPE ASIA-SOUTHEAST1 ASIA-SOUTH1 AUSTRALIA-SOUTHEAST1 EUROPE-WEST2 , EUROPE-WEST3 , EUROPE-WEST6 , EUROPE-WEST9 , EUROPE-WEST12 And more Core Commands Search Events Search for UDM events using query syntax: Search with UDM query $ secops search --query "metadata.event type = \"NETWORK CONNECTION\"" --time-window 24 --max-events 100 Search using natural language $ secops search --nl-query "show me failed login attempts" --time-window 24 Export results as CSV $ secops search --query "metadata.event type = \"USER LOGIN\" AND security result.action = \"BLOCK\"" \ --fields "metadata.event timestamp,principal.user.userid,principal.ip" \ --time-window 24 --csv Entity Information Get detailed information about IPs, domains, or file hashes: $ secops entity --value "8.8.8.8" --time-window 24 $ secops entity --value "example.com" --time-window 24 $ secops entity --value "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" --time-window 24 Statistics Run statistical analyses on your data: $ secops stats --query "metadata.event type = \"NETWORK CONNECTION\" match: target.hostname outcome: \$count = count(metadata.id) order: \$count desc" --time-window 24 Feed Management Manage data ingestion feeds in Google SecOps: List Feeds $ secops feed list Create Feed Create an HTTP feed $ secops feed create \ --display-name "My HTTP Feed" \ --details '{"logType":"projects/your-project-id/locations/us/instances/your-instance-id/logTypes/WINEVTLOG","feedSourceType":"HTTP","httpSettings":{"uri":"https://example.com/feed","sourceType":"FILES"}}' Update Feed $ secops feed update --id "feed-123" --display-name "Updated Feed Name" Enable/Disable Feed $ secops feed enable --id "feed-123" $ secops feed disable --id "feed-123" Delete Feed $ secops feed delete --id "feed-123" Parser Management Parsers process and normalize raw log data into UDM format: List Parsers $ secops parser list $ secops parser list --log-type "WINDOWS" Get Parser Details $ secops parser get --log-type "WINDOWS" --id "pa 12345" Create Parser Create from file $ secops parser create --log-type "CUSTOM LOG" --parser-code-file "/path/to/parser.conf" Create from string $ secops parser create --log-type "CUSTOM LOG" --parser-code "filter { mutate { add field => { \"test\" => \"value\" } } }" Test Parser Test a parser against sample logs before deployment: Test with inline logs $ secops parser run \ --log-type OKTA \ --parser-code-file "./parser.conf" \ --log '{"message": "Test log 1"}' \ --log '{"message": "Test log 2"}' Test with logs from file $ secops parser run \ --log-type WINDOWS \ --parser-code-file "./parser.conf" \ --logs-file "./sample logs.txt" Activate/Deactivate Parser $ secops parser activate --log-type "WINDOWS" --id "pa 12345" $ secops parser deactivate --log-type "WINDOWS" --id "pa 12345" Delete Parser $ secops parser delete --log-type "WINDOWS" --id "pa 12345" Parser Extension Management Parser extensions extend existing parsers without replacing them: List Extensions $ secops parser-extension list --log-type OKTA Create Extension $ secops parser-extension create --log-type OKTA \ --log /path/to/sample.log \ --parser-config-file /path/to/parser-config.conf Activate Extension $ secops parser-extension activate --log-type OKTA --id "1234567890" Forwarder Management Forwarders are used to ingest logs with specific configurations: Create Forwarder Basic forwarder $ secops forwarder create --display-name "my-custom-forwarder" With metadata and settings $ secops forwarder create --display-name "prod-forwarder" \ --metadata '{"environment":"prod","team":"security"}' \ --upload-compression true \ --http-settings '{"port":80,"host":"example.com"}' List Forwarders $ secops forwarder list --page-size 100 Get Forwarder $ secops forwarder get --id "1234567890" Update Forwarder $ secops forwarder update --id "1234567890" --display-name "updated-name" Delete Forwarder $ secops forwarder delete --id "1234567890" Log Ingestion Ingest logs into Google SecOps: Ingest Raw Logs From file $ secops log ingest --type "OKTA" --file "/path/to/okta logs.json" With labels $ secops log ingest --type "WINDOWS" --file "/path/to/logs.xml" \ --labels "environment=production,team=security" Inline message $ secops log ingest --type "WINDOWS" --message "{\"event\": \"data\"}" Ingest UDM Events $ secops log ingest-udm --file "/path/to/udm event.json" List Log Types $ secops log types $ secops log types --search "windows" Generate UDM Mapping $ secops log generate-udm-mapping \ --log-format "JSON" \ --log '{"id":"123","user":"test user","source ip":"192.168.1.10"}' Rule Management Manage detection rules: List Rules $ secops rule list --page-size 50 Create Rule $ secops rule create --file "/path/to/rule.yaral" Update Rule $ secops rule update --id "ru 12345" --file "/path/to/updated rule.yaral" Enable/Disable Rule $ secops rule enable --id "ru 12345" --enabled true $ secops rule enable --id "ru 12345" --enabled false Test Rule Test a rule against historical data: Test for last 24 hours $ secops rule test --file "/path/to/rule.yaral" --time-window 24 Test with specific time range $ secops rule test --file "/path/to/rule.yaral" \ --start-time "2023-07-01T00:00:00Z" \ --end-time "2023-07-02T00:00:00Z" \ --max-results 1000 Validate Rule $ secops rule validate --file "/path/to/rule.yaral" Delete Rule $ secops rule delete --id "ru 12345" Alert Management Get and manage alerts: $ secops alert --time-window 24 --max-alerts 50 $ secops alert --snapshot-query "feedback summary.status != \"CLOSED\"" --time-window 24 Case Management Retrieve case details: $ secops case --ids "case-123,case-456" Data Tables Data tables are structured data collections for use in detection rules: Create Data Table $ secops data-table create \ --name "suspicious ips" \ --description "Known suspicious IP addresses" \ --header '{"ip address":"CIDR","description":"STRING","severity":"STRING"}' Add Rows $ secops data-table add-rows \ --name "suspicious ips" \ --rows '[["192.168.1.100","Scanning activity","Medium"]]' List Rows $ secops data-table list-rows --name "suspicious ips" Delete Data Table $ secops data-table delete --name "suspicious ips" Reference Lists Reference lists are simple value lists for detection rules: Create Reference List $ secops reference-list create \ --name "admin accounts" \ --description "Administrative accounts" \ --entries "admin,administrator,root,superuser" Update Reference List $ secops reference-list update \ --name "admin accounts" \ --entries "admin,administrator,root,superuser,sysadmin" List Reference Lists $ secops reference-list list Data Export Export data for analysis: Create Export Export specific log type $ secops export create \ --gcs-bucket "projects/my-project/buckets/my-bucket" \ --log-type "WINDOWS" \ --time-window 24 Export all logs $ secops export create \ --gcs-bucket "projects/my-project/buckets/my-bucket" \ --all-logs \ --time-window 168 Check Export Status $ secops export status --id "export-123" Cancel Export $ secops export cancel --id "export-123" List Available Log Types for Export $ secops export log-types --time-window 24 Gemini AI Integration Query Gemini AI for security insights: Ask about security concepts $ secops gemini --query "What is Windows event ID 4625?" Generate detection rules $ secops gemini --query "Write a rule to detect PowerShell downloading files" Get vulnerability information $ secops gemini --query "Tell me about CVE-2021-44228" Opt-in to Gemini: $ secops gemini --opt-in Dashboard Management Manage native dashboards: Create Dashboard $ secops dashboard create \ --display-name "Security Overview" \ --description "Security monitoring dashboard" \ --access-type PRIVATE List Dashboards $ secops dashboard list --page-size 10 Update Dashboard $ secops dashboard update --id dashboard-id \ --display-name "Updated Security Dashboard" \ --description "Updated security monitoring dashboard" Export/Import Dashboard Export $ secops dashboard export --dashboard-names 'projects/your-project-id/locations/us/instances/your-instance-id/nativeDashboard/xxxxxxx' Import $ secops dashboard import --dashboard-data-file dashboard data.json Add Chart to Dashboard $ secops dashboard add-chart --dashboard-id dashboard-id \ --display-name "DNS Query Chart" \ --description "Shows DNS query patterns" \ --query-file dns query.txt \ --chart layout '{"startX": 0, "spanX": 12, "startY": 0, "spanY": 8}' Delete Dashboard $ secops dashboard delete --id dashboard-id Advanced Examples Complete Parser Workflow Retrieve, test, and deploy a parser: List parsers $ secops parser list --log-type "OKTA" > okta parsers.json Get parser details PARSER ID=$(cat okta parsers.json jq -r '.[0].name' awk -F'/' '{print $NF}') $ secops parser get --log-type "OKTA" --id "$PARSER ID" > parser details.json Extract parser code cat parser details.json jq -r '.cbn' base64 -d > okta parser.conf Test parser $ secops parser run \ --log-type "OKTA" \ --parser-code-file "okta parser.conf" \ --logs-file "sample logs.txt" > parser result.json Activate if successful $ secops parser activate --log-type "OKTA" --id "$PARSER ID" Search and Export Workflow Search for events and export results: Search for failed logins $ secops search \ --query "metadata.event type = \"USER LOGIN\" AND security result.action = \"BLOCK\"" \ --fields "metadata.event timestamp,principal.user.userid,principal.ip" \ --time-window 24 \ --csv > failed logins.csv Get entity details for suspicious IPs cat failed logins.csv awk -F',' '{print $3}' sort -u while read ip; do secops entity --value "$ip" --time-window 72 done Rule Testing and Deployment Create, test, and deploy a detection rule: Create rule file cat > suspicious activity.yaral Troubleshooting Common Issues Authentication Errors If you encounter authentication errors: Verify your credentials are valid Check that your service account has the necessary permissions Ensure ADC is configured correctly: gcloud auth application-default login Region Errors If you get region-related errors: Verify the region is supported Check that your instance is in the specified region Use --region flag or set it in configuration Rate Limiting For rate limiting issues: Reduce the frequency of API calls Use pagination for large result sets Implement exponential backoff for retries Getting Help View help for any command: $ secops --help $ secops search --help $ secops rule create --help Migration from chronicle cli If you're migrating from the legacy chronicle cli , here's a mapping of common commands: chronicle cli secops chronicle cli feeds create secops feed create chronicle cli feeds list secops feed list chronicle cli feeds update secops feed update chronicle cli feeds delete secops feed delete chronicle cli parsers list secops parser list chronicle cli parsers create secops parser create chronicle cli parsers activate secops parser activate chronicle cli forwarders create secops forwarder create chronicle cli forwarders list secops forwarder list The new secops CLI offers many additional features not available in chronicle cli , including: Natural language search Gemini AI integration Dashboard management Rule testing and validation Data tables and reference lists Case management And much more Additional Resources SecOps SDK GitHub Repository UDM Field Reference YARA-L 2.0 Language Reference Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Overview The secops CLI provides access to: Search and analyze UDM events Manage feeds, forwarders, and parsers Create and manage detection rules Handle alerts and cases Manage reference lists and data tables Export data to BigQuery and Google Cloud Storage Query Gemini AI for security insights And much more Google SecOps CLI commands use the following syntax: $ secops COMMAND [ SUBCOMMAND ] [ OPTIONS ] For example, to search for events: $ secops search --query "metadata.event type = \"NETWORK CONNECTION\"" --time-window 24 Before you begin Before installing the Google SecOps CLI, ensure you have: Python 3.8 or higher installed in your environment.
 

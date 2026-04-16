@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:07:37.604Z"
+generated_at: "2026-04-12T12:07:33.848Z"
 product_name: "AlloyDB"
 product_slug: "alloydb"
 feature_name: "Cross-data center replication for automated disaster recovery"
@@ -9,7 +9,10 @@ latest_feature_date: "2024-08-05"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/alloydb/docs/release-notes"
+  - "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+  - "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent"
+  - "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
 keywords:
   - "cross-dc replication"
   - "cross-region DR"
@@ -32,28 +35,47 @@ Cross-data center replication now supports automated disaster recovery setup in 
 
 ## Extended Definition
 
-AlloyDB cross-region replication replicates a primary cluster’s data and resources to secondary regions, enabling a switchover path that can be used to test disaster recovery or perform workload migration with zero data loss. The release notes describe this DR-oriented switchover behavior as generally available. The same notes state cross-region replication can use up to five secondary regions, but they do not explicitly confirm the "automated" setup wording or AlloyDB Omni context in the provided excerpts.
+Cross-data center replication now supports automated disaster recovery setup in AlloyDB Omni.
 
 ## Evidence Summary
 
-The cited release notes page provides evidence that cross-region replication (including DR switchover and migration scenarios) is GA with zero data loss, and that it scales to five secondary regions.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
+- [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
+- [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
+- [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
 
 ## Supporting Pages
 
-### AlloyDB for PostgreSQL release notes \_|\_ Google Cloud Documentation
+### "Optimize database performance by comparing performance snapshots \_|\_ AlloyDB\
 
-- URL: [https://docs.cloud.google.com/alloydb/docs/release-notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 26
+- URL: [https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots](https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots)
+- Source ID: `site-docs-reference-2`
+- Final score: 94
 - Re-rank relevance: N/A
 
-Evidence snippets:
-- Feature Performing a switchover with zero data loss in cross-region replication setups, to test disaster recovery (DR) or to perform workload migration, is now generally available ( GA ).
-- December 08, 2022 Feature AlloyDB cross-region replication replicates your primary cluster's data and resources.
-- For more information, see Cross-region replication overview and Work with cross-region replication .
-- February 27, 2025 Feature AlloyDB's cross-region replication supports up to five secondary regions.
+### "Database performance snapshot report reference \_|\_ AlloyDB for PostgreSQL\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference](https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference)
+- Source ID: `site-api-reference`
+- Final score: 78
+- Re-rank relevance: N/A
+
+### "Integrate QueryData with an application \_|\_ AlloyDB for PostgreSQL \_\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent](https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent)
+- Source ID: `site-docs-root-2`
+- Final score: 78
+- Re-rank relevance: N/A
+
+### "MCP Tools Reference: alloydb \_|\_ AlloyDB for PostgreSQL \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster)
+- Source ID: `site-api-reference`
+- Final score: 76
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

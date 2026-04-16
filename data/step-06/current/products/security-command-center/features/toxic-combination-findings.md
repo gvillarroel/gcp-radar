@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.175Z"
+generated_at: "2026-04-14T13:09:48.791Z"
 product_name: "Security Command Center"
 product_slug: "security-command-center"
 feature_name: "Toxic combination findings"
@@ -9,9 +9,9 @@ latest_feature_date: "2024-10-16"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center"
-  - "https://docs.cloud.google.com/security-command-center/docs/optimize-security-command-center"
-  - "https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview"
+  - "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+  - "https://docs.cloud.google.com/security-command-center/docs/attack-exposure-learn"
+  - "https://docs.cloud.google.com/security-command-center/docs/cases-overview"
 keywords:
   - "toxic"
   - "combination"
@@ -19,8 +19,8 @@ keywords:
   - "security"
   - "command"
   - "center"
-  - "are"
   - "now"
+  - "generally"
 ---
 
 # Toxic combination findings
@@ -42,39 +42,49 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center](https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center)
-- [https://docs.cloud.google.com/security-command-center/docs/optimize-security-command-center](https://docs.cloud.google.com/security-command-center/docs/optimize-security-command-center)
-- [https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview](https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview)
+- [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview)
+- [https://docs.cloud.google.com/security-command-center/docs/attack-exposure-learn](https://docs.cloud.google.com/security-command-center/docs/attack-exposure-learn)
+- [https://docs.cloud.google.com/security-command-center/docs/cases-overview](https://docs.cloud.google.com/security-command-center/docs/cases-overview)
 
 ## Supporting Pages
 
-### Configure Security Command Center services | Google Cloud Documentation
+### Security Command Center release notes \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center](https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center)
-- Source ID: `site-docs-root`
-- Final score: 172
+- URL: [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview)
+- Source ID: `site-docs-reference`
+- Final score: 161
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Configure Security Command Center services Google Cloud Documentation Source URL: https://docs.cloud.google.com/security-command-center/docs/how-to-configure-security-command-center To enable or disable a Security Command Center service for a resource, do the following: In the Google Cloud console, go to the Settings page of Security Command Center.
+- For more information, see the following: Work with findings in the console Inspect resources related to findings June 25, 2024 Announcement Introducing the Security Command Center Risk Engine Security Command Center introduces Risk Engine as the name of the functionality that provides attack path simulations, attack exposure scores, attack path visualizations, and toxic combination findings.
+- October 21, 2025 Change The release note for Security Command Center and attack path simulations , published on October 16, 2025, was updated to clarify that attack path simulations use Compute Engine and Google Kubernetes Engine OS and software vulnerability findings to detect toxic combinations and chokepoints.
+- Feature Toxic combination findings release to Preview In the Enterprise tier of Security Command Center, the Risk Engine generates a finding when it detects a toxic combination during attack path simulations.
+- September 04, 2024 Change Install new version of the Security Command Center Enterprise use case The installation and configuration of a new version of the SCC Enterprise - Cloud Orchestration & Remediation use case in the Security Operations console is required for the toxic combination functionality of Security Command Center Enterprise.
 
-### Security Command Center best practices | Google Cloud Documentation
+### "Attack exposure scores and attack paths \_|\_ Security Command Center \_\
 
-- URL: [https://docs.cloud.google.com/security-command-center/docs/optimize-security-command-center](https://docs.cloud.google.com/security-command-center/docs/optimize-security-command-center)
-- Source ID: `site-docs-root`
-- Final score: 168
+- URL: [https://docs.cloud.google.com/security-command-center/docs/attack-exposure-learn](https://docs.cloud.google.com/security-command-center/docs/attack-exposure-learn)
+- Source ID: `site-docs-reference`
+- Final score: 149
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Security Command Center best practices Google Cloud Documentation Source URL: https://docs.cloud.google.com/security-command-center/docs/optimize-security-command-center The Premium and Enterprise tiers of Security Command Center provide the most protection through through a broad set of cloud security and security operations capabilities, including threat detection, software vulnerability detection, compliance assessments, security operations capabilities, and much more.
+- On the Cases page in Security Command Center Enterprise, you can also sort the toxic combinations and chokepoint cases by the attack exposure score.
+- Issues in Security Command Center Premium or Enterprise, which contain toxic combinations and chokepoints .
+- Similarly, a high attack-exposure score on any of the following does not mean that an attack is in progress: A Security Command Center finding or resource A Security Command Center Premium or Enterprise issue To watch for actual attacks, monitor the THREAT class findings produced by the threat detection services, like Event Threat Detection and Container Threat Detection .
+- Insight reporting: Based on the simulations, Security Command Center assigns attack exposure scores to your high-value resources and to the findings that expose them and visualizes the potential paths an attacker could take to those resources.
 
-### Security Command Center overview | Google Cloud Documentation
+### Cases overview \_|\_ Security Command Center \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview](https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview)
-- Source ID: `site-docs-root`
-- Final score: 166
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/security-command-center/docs/cases-overview](https://docs.cloud.google.com/security-command-center/docs/cases-overview)
+- Source ID: `site-docs-reference`
+- Final score: 99
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Security Command Center overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview Security Command Center is a cloud-based risk management solution that helps security professionals to prevent, detect, and respond to security issues.
+- Overview In Security Command Center, you use cases to obtain details about findings, attach playbooks to finding alerts, apply automatic threat responses, and track the remediation of security issues.
+- Findings flow In Security Command Center Enterprise, there are two flows for findings: Security Command Center threat findings go through the security information and event management (SIEM) module.
+- By default, cases containing threat findings have no related tickets even when you integrate the ticketing system with your Security Command Center Enterprise instance.
+- When the finding severity changes, Security Command Center automatically updates the case priority to match the highest severity property among all findings in a case.
 

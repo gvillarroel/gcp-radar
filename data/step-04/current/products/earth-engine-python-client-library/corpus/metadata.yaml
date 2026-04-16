@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-09T13:30:44+00:00'
-updated_at: '2026-04-11T10:17:15+00:00'
+updated_at: '2026-04-14T00:56:09+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -9,43 +9,196 @@ commands:
 sources:
 - type: site
   id: site-docs-root
+  title: https://developers.google.com/earth-engine/docs/python-client-lib
+  created_at: '2026-04-14T00:56:02+00:00'
+  updated_at: '2026-04-14T00:56:02+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/docs/python-client-lib
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://developers.google.com/earth-engine/docs/python-client-lib
+    max_depth: 1
+    max_pages: 36
+    compact_output: true
+- type: site
+  id: site-docs-root-2
+  title: https://developers.google.com/earth-engine/guides/app_engine_intro
+  created_at: '2026-04-14T00:56:03+00:00'
+  updated_at: '2026-04-14T00:56:03+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/guides/app_engine_intro
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://developers.google.com/earth-engine/guides/app_engine_intro
+    max_depth: 1
+    max_pages: 36
+    compact_output: true
+- type: site
+  id: site-docs-reference
+  title: https://developers.google.com/earth-engine/docs/python-client-lib/release-notes
+  created_at: '2026-04-14T00:56:04+00:00'
+  updated_at: '2026-04-14T00:56:04+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/docs/python-client-lib/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://developers.google.com/earth-engine/docs/python-client-lib/release-notes
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+- type: site
+  id: site-docs-reference-2
+  title: https://developers.google.com/earth-engine/docs/data-catalog/release-notes
+  created_at: '2026-04-14T00:56:04+00:00'
+  updated_at: '2026-04-14T00:56:04+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/docs/data-catalog/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://developers.google.com/earth-engine/docs/data-catalog/release-notes
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+- type: site
+  id: site-api-reference
+  title: https://developers.google.com/earth-engine/apidocs/ee-dictionary-evaluate
+  created_at: '2026-04-14T00:56:05+00:00'
+  updated_at: '2026-04-14T00:56:05+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/apidocs/ee-dictionary-evaluate
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://developers.google.com/earth-engine/apidocs/ee-dictionary-evaluate
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+- type: site
+  id: site-docs-root-required-3
   title: https://developers.google.com/earth-engine
-  created_at: '2026-04-11T10:13:01+00:00'
-  updated_at: '2026-04-11T10:13:44+00:00'
+  created_at: '2026-04-14T00:56:05+00:00'
+  updated_at: '2026-04-14T00:56:05+00:00'
   update_command: know sync site https://developers.google.com/earth-engine --key
     corpus --compact
-  delete_command: know del --key corpus site-docs-root
+  delete_command: know del --key corpus site-docs-root-required-3
   config:
     url: https://developers.google.com/earth-engine
     max_depth: 1
     max_pages: 36
     compact_output: true
-  last_synced_at: '2026-04-11T10:13:44+00:00'
 - type: site
-  id: site-docs-root-2
+  id: site-docs-root-required-4
   title: https://developers.google.com/earth-engine/guides
-  created_at: '2026-04-11T10:13:02+00:00'
-  updated_at: '2026-04-11T10:15:44+00:00'
+  created_at: '2026-04-14T00:56:06+00:00'
+  updated_at: '2026-04-14T00:56:06+00:00'
   update_command: know sync site https://developers.google.com/earth-engine/guides
     --key corpus --compact
-  delete_command: know del --key corpus site-docs-root-2
+  delete_command: know del --key corpus site-docs-root-required-4
   config:
     url: https://developers.google.com/earth-engine/guides
     max_depth: 1
     max_pages: 36
     compact_output: true
-  last_synced_at: '2026-04-11T10:15:44+00:00'
 - type: site
-  id: site-docs-reference
+  id: site-api-reference-required-2
   title: https://developers.google.com/earth-engine/apidocs
-  created_at: '2026-04-11T10:13:02+00:00'
-  updated_at: '2026-04-11T10:17:15+00:00'
+  created_at: '2026-04-14T00:56:06+00:00'
+  updated_at: '2026-04-14T00:56:06+00:00'
   update_command: know sync site https://developers.google.com/earth-engine/apidocs
     --key corpus --compact
-  delete_command: know del --key corpus site-docs-reference
+  delete_command: know del --key corpus site-api-reference-required-2
   config:
     url: https://developers.google.com/earth-engine/apidocs
     max_depth: 1
     max_pages: 26
     compact_output: true
-  last_synced_at: '2026-04-11T10:17:15+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://developers.google.com/earth-engine/guides/auth
+  created_at: '2026-04-14T00:56:06+00:00'
+  updated_at: '2026-04-14T00:56:06+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/guides/auth
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://developers.google.com/earth-engine/guides/auth
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+- type: site
+  id: site-docs-reference-required-4
+  title: https://developers.google.com/earth-engine/guides/client_server
+  created_at: '2026-04-14T00:56:07+00:00'
+  updated_at: '2026-04-14T00:56:07+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/guides/client_server
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://developers.google.com/earth-engine/guides/client_server
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+- type: site
+  id: site-docs-reference-required-5
+  title: https://developers.google.com/earth-engine/guides/python_install
+  created_at: '2026-04-14T00:56:07+00:00'
+  updated_at: '2026-04-14T00:56:07+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/guides/python_install
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-5
+  config:
+    url: https://developers.google.com/earth-engine/guides/python_install
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+- type: site
+  id: site-docs-reference-required-6
+  title: https://developers.google.com/earth-engine/guides/debugging
+  created_at: '2026-04-14T00:56:08+00:00'
+  updated_at: '2026-04-14T00:56:08+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/guides/debugging
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-6
+  config:
+    url: https://developers.google.com/earth-engine/guides/debugging
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+- type: site
+  id: site-docs-reference-required-7
+  title: https://developers.google.com/earth-engine/guides/data_extraction
+  created_at: '2026-04-14T00:56:08+00:00'
+  updated_at: '2026-04-14T00:56:08+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/guides/data_extraction
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-7
+  config:
+    url: https://developers.google.com/earth-engine/guides/data_extraction
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+- type: site
+  id: site-iam-reference-required-1
+  title: https://developers.google.com/earth-engine/guides/access_control
+  created_at: '2026-04-14T00:56:08+00:00'
+  updated_at: '2026-04-14T00:56:08+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/guides/access_control
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference-required-1
+  config:
+    url: https://developers.google.com/earth-engine/guides/access_control
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+- type: site
+  id: site-docs-reference-required-8
+  title: https://developers.google.com/earth-engine/guides/playground
+  created_at: '2026-04-14T00:56:09+00:00'
+  updated_at: '2026-04-14T00:56:09+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/guides/playground
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-8
+  config:
+    url: https://developers.google.com/earth-engine/guides/playground
+    max_depth: 1
+    max_pages: 26
+    compact_output: true

@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T22:42:43.917Z"
+generated_at: "2026-04-14T15:34:54.516Z"
 product_name: "Cloud Run"
 product_slug: "cloud-run"
 feature_name: "CPU always allocated"
 feature_slug: "cpu-always-allocated"
 latest_feature_date: "2021-09-13"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/run/docs/release-notes"
   - "https://docs.cloud.google.com/run/docs/container-contract"
   - "https://docs.cloud.google.com/run/docs/reference/container-contract"
+  - "https://docs.cloud.google.com/run/docs/deploying"
 keywords:
-  - "cpu"
-  - "always"
   - "allocated"
-  - "lets"
-  - "run"
-  - "services"
-  - "keep"
   - "assigned"
+  - "always"
+  - "entire"
+  - "keep"
+  - "lets"
 ---
 
 # CPU always allocated
 
 Product: Cloud Run
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +36,52 @@ CPU always allocated lets Cloud Run services keep CPU assigned for the entire li
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
 - [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
+- [https://docs.cloud.google.com/run/docs/deploying](https://docs.cloud.google.com/run/docs/deploying)
 
 ## Supporting Pages
-
-### Cloud Run release notes \_|\_ Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/run/docs/release-notes](https://docs.cloud.google.com/run/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 150
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- July 15, 2024 Feature Compute flexible committed use discounts are now available for Cloud Run services with CPU always allocated , and Cloud Run jobs.
-- Instance-based billing, previously called CPU always allocated , charges your Cloud Run instances for the entire lifecycle of instances, even when there are no incoming requests.
-- December 14, 2021 Feature The ability to configure Cloud Run services to have CPU allocated for the entire lifetime of container instances is now at general availability (GA).
-- September 13, 2021 Feature You can now configure Cloud Run services to have CPU allocated for the entire lifetime of container instances.
 
 ### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 150
+- Final score: 85
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Processing a request For Cloud Run services, CPU is always allocated to all containers including sidecars within an instance as long as the Cloud Run revision is processing at least one request.
+- During this period, container instances are allocated CPU for their entire lifecycle and are billed.
 - The following sections describe resources for your container instance: CPU Memory GPU Concurrency CPU Each Cloud Run container in an instance by default gets allocated the vCPU that has been configured (1 by default).
-- Regardless of its state, Cloud Run always allocates CPU to to all containers, including sidecars within a worker pool instance.
-- For Cloud Run services, CPU allocation depends on the selected billing.
+- You cannot specify a size limit for this files system, so you can potentially use up all the memory allocated to your instance by writing to the in-memory file system, which will crash the instance.
 
 ### Container runtime contract \_|\_ Cloud Run \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/run/docs/reference/container-contract](https://docs.cloud.google.com/run/docs/reference/container-contract)
 - Source ID: `site-docs-root`
-- Final score: 150
+- Final score: 85
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Processing a request For Cloud Run services, CPU is always allocated to all containers including sidecars within an instance as long as the Cloud Run revision is processing at least one request.
+- During this period, container instances are allocated CPU for their entire lifecycle and are billed.
 - The following sections describe resources for your container instance: CPU Memory GPU Concurrency CPU Each Cloud Run container in an instance by default gets allocated the vCPU that has been configured (1 by default).
-- Regardless of its state, Cloud Run always allocates CPU to to all containers, including sidecars within a worker pool instance.
-- For Cloud Run services, CPU allocation depends on the selected billing.
+- You cannot specify a size limit for this files system, so you can potentially use up all the memory allocated to your instance by writing to the in-memory file system, which will crash the instance.
+
+### Deploying container images to Cloud Run \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/run/docs/deploying](https://docs.cloud.google.com/run/docs/deploying)
+- Source ID: `site-docs-reference-required-3`
+- Final score: 73
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If you use request-based billing (the Cloud Run default), sidecars are allocated CPU in only these scenarios: The instance is processing at least one request.
+- If you deploy from a container image tag, it will be resolved to a digest and the revision will always serve this particular digest.
+- You can omit this parameter entirely, but you will be prompted for the service name if you omit it.
+- You can omit this parameter entirely, but you will be prompted for the service name if you omit it.
 

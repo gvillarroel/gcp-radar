@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.463Z"
+generated_at: "2026-04-14T07:40:14.469Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Diagram mode in Data Transformer task"
 feature_slug: "diagram-mode-in-data-transformer-task"
 latest_feature_date: "2024-10-06"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
-  - "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task"
-  - "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+  - "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task"
 keywords:
   - "diagram"
   - "console"
+  - "transformation"
   - "mode"
   - "adds"
   - "transformer"
   - "based"
   - "task"
-  - "in"
 ---
 
 # Diagram mode in Data Transformer task
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,52 +38,55 @@ Diagram mode adds a console-based data transformation editor experience for sele
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
-- [https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task](https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task)
-- [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
+- [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
+- [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
+- [https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task](https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task)
 
 ## Supporting Pages
 
-### "Invoke a sub-integration using a For Each Loop task \_|\_ Application Integration\
+### Data Transformer task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop](https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop)
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task](https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task)
+- Source ID: `site-docs-reference-2`
+- Final score: 229
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Use the Diagram mode The Diagram mode provides a console-based experience to select the input and output variables and perform transformations in the data transformation editor.
+- The Diagram mode provides a console-based experience to select the input and output variables and perform transformations in the data transformation editor.
+- To add mapping using the Diagram mode, follow these steps: In the Data Transformer task configuration pane, click Open Data Transformer Editor .
+- In the Data Transformer (preview) Task Editor page, select one of the following options: By default, the Diagram mode opens.
+
+### "Automate Salesforce opportunity to BigQuery order \_|\_ Application Integration\
+
+- URL: [https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order](https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order)
 - Source ID: `site-docs-root`
-- Final score: 170
-- Re-rank relevance: N/A
+- Final score: 119
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Invoke a sub-integration using a For Each Loop task To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me --> This quickstart shows you how to create an integration that uses a For Each Loop task to invoke a sub-integration.
-- In Default Value , enter the following JSON: [{ "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" }, { "orderId" : "2" , "customerName" : "Tim Harvey" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "Los Angeles" , "country" : "USA" , "zipcode" : "210738" }, "items" : [{ "itemid" : "222-333-444" , "itemName" : "Laptop" , "itemPrice" : 5999.0 , "quantity" : 1.0 }], "paymentDetails" : { "mode" : "Online Payment" , "status" : "Success" }, "expectedDelivery" : "21 Feb 2023" }] In this sample JSON object, replace both occurrences of YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- In Default Value , enter the following JSON. { "orderId" : "1" , "customerName" : "Harry Ford" , "emailId" : " YOUR EMAIL ID " , "shippingAddress" : { "city" : "New York" , "country" : "USA" , "zipcode" : "103487" }, "items" : [{ "itemid" : "111-222-333" , "itemName" : "Smartphone" , "itemPrice" : 999.0 , "quantity" : 1.0 }, { "itemid" : "444-555-666" , "itemName" : "Mobile Cover" , "itemPrice" : 49.0 , "quantity" : "" }], "paymentDetails" : { "mode" : "COD" , "status" : "" }, "expectedDelivery" : "15 March 2023" } In this sample JSON object, replace YOUR EMAIL ID with the email ID that you want to use to test the integration. e.
-- Add and configure a Data Mapping task The Data Mapping task lets you perform variable assignments in your integration, get and set properties of json objects, and apply nested transform functions to values.
+- The following edge condition controls the flow of the integration based on the validation of the account information: Add an edge connection from the Check account task to the Mapping for Account Creation task with the following edge condition: $account exists$ = False Add another edge connection from the Check account task to the Mapping for Order Creation task with the following edge condition: $account exists$ = True Sample integration flow The following figure shows a sample layout of the integration created using this tutorial.
+- Create a new ServiceNow account Perform the following steps to configure a Connectors task that adds a new account to your ServiceNow instance: In the integration editor, click Tasks to display a list of available tasks.
+- The Google Cloud console fills in the Service account ID field based on this name.
+- The Google Cloud console fills in the Service account ID field based on this name.
 
-### "Insert data into BigQuery using a For Each Parallel task \_|\_ Application\
+### Data Mapping task \_|\_ Application Integration \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task](https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task)
-- Source ID: `site-docs-root`
-- Final score: 162
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Test your integration To test your integration, complete the following steps: Download sample data to your Cloud Shell: To launch a Cloud Shell session from the Google Cloud console, click the Activate Cloud Shell icon in the Cloud console .
-- In this tutorial, you'll complete the following tasks: Set up a BigQuery connection Set up a sub-integration Set up the main integration Test your integration Before you begin Ensure that you have access to Application Integration.
-- Add a For Each Parallel task To add a For Each Parallel task in the integration, complete the following steps: Select +Add a task/trigger > Tasks in the integration editor to display the list of available tasks.
-- Configure the For Each Parallel task To configure the For Each Parallel task, complete the following steps: In the integration editor, click the For Each Parallel task to view the task configuration pane.
-
-### "Build integrations with Gemini Code Assist \_|\_ Application Integration\
-
-- URL: [https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini](https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini)
-- Source ID: `site-iam-reference`
-- Final score: 160
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task](https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task)
+- Source ID: `site-docs-root-2`
+- Final score: 100
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- Configure Call REST API tasks If you have API Hub enabled in your project, then Gemini in Application Integration can assist you in providing contextually appropriate Call REST Endpoint task and task configuration recommendations based on the logical flow of your existing integration.
-- After you have met all prerequisites , to replace or modify an existing task in your integration using Gemini, perform the following steps: In the Google Cloud console, go to the Application Integration page.
-- Configure connector tasks Gemini can assist you to provide contextually appropriate connector configuration recommendations based on the logical flow of your existing integration.
-- To configure a connector task in your integration using Gemini, perform the following steps: In the Google Cloud console, go to the Application Integration page.
+- Configure the Data Mapping task To configure a Data Mapping task, perform the following steps: In the Google Cloud console, go to the Application Integration page.
+- The completed data mapping is available to view from the Data Mapping task configuration pane, as shown in the following image: Supported data types and mapping functions Application Integration supports the following data types for variables in the Data Mapping task: String and String array Integer and Integer array Double and Double array Boolean and Boolean array JSON The following table lists the data mapping functions available for each of the data types.
+- Considerations For JSON variables, based on a JSON schema, Application Integration interprets the child property of the variable as a JSON type in the following cases: If the child property's type specifies null.
+- Data Mapping task The Data Mapping task lets you perform variable assignments in your integration, get and set properties of json objects, and apply nested transform functions to values.
 

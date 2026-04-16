@@ -1,30 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:32.295Z"
+generated_at: "2026-04-15T12:05:49.325Z"
 product_name: "Google Distributed Cloud (software only) for bare metal"
 product_slug: "google-distributed-cloud-software-only-for-bare-metal"
 feature_name: "Bundled NVIDIA GPU Operator"
 feature_slug: "bundled-nvidia-gpu-operator"
 latest_feature_date: "2025-09-02"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/update-clusters"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+  - "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring"
 keywords:
   - "bundled"
   - "nvidia"
   - "gpu"
   - "operator"
   - "version"
-  - "of"
-  - "is"
   - "available"
+  - "manage"
+  - "software"
 ---
 
 # Bundled NVIDIA GPU Operator
 
 Product: Google Distributed Cloud (software only) for bare metal
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,56 @@ A bundled version of NVIDIA GPU Operator is available to manage the software com
 
 A bundled version of NVIDIA GPU Operator is available to manage the software components needed for GPU devices.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/update-clusters](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/update-clusters)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Update clusters \_|\_ Google Distributed Cloud (software only) for bare\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/update-clusters](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/update-clusters)
+- Source ID: `site-docs-root`
+- Final score: 216
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To check the status of your cluster bare metal machines, use the following command: kubectl get baremetalmachines --kubeconfig ADMIN KUBECONFIG -A When the bare metal machines are ready, the response should look similar to the following sample response: NAMESPACE NAME CLUSTER READY INSTANCEID MACHINE ABM VERSION DESIRED ABM VERSION cluster-admin 10.200.0.2 dra true baremetal://10.200.0.2 10.200.0.2 1.33.0-gke.793 1.33.0-gke.793 cluster-user-dra 10.200.0.6 user-dra true baremetal://10.200.0.6 10.200.0.6 1.33.0-gke.793 1.33.0-gke.793 cluster-user-dra 10.200.0.7 user-dra true baremetal://10.200.0.7 10.200.0.7 1.33.0-gke.793 1.33.0-gke.793 cluster-user-dra 10.200.0.8 user-dra true baremetal://10.200.0.8 10.200.0.8 1.33.0-gke.793 1.33.0-gke.793 Limitations The bundled NVIDIA GPU Operator has the following limitations: The bundled NVIDIA GPU Operator supports the following NVIDIA software components only: NVIDIA Container Toolkit NVIDIA DCGM Exporter NVIDIA Kubernetes Device Plugin NVIDIA MIG Manager for Kubernetes.
+- Starting with Google Distributed Cloud version 1.33.0, clusters are bundled with a complete NVIDIA GPU Operator stack to provide a managed solution for handling the NVIDIA software components needed to provision GPUs on your cluster worker nodes.
+- Version information This section contains software version information for the bundled NVIDIA GPU Operator.
+- In Google Distributed Cloud, the bundle contains the following images (with CDI enabled by default): NVIDIA Container Toolkit version v1.17.9 NVIDIA DCGM Exporter v3.3.9-3.6.1 NVIDIA Kubernetes Device Plugin v0.17.1 Node Feature Discovery v0.17.2 The image versions bundled with Google Distributed Cloud release 1.33 might not match exactly with the software component versions listed in the 25.3.1 release notes .
+
+### "Cluster configuration field reference \_|\_ Google Distributed Cloud (software\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref)
+- Source ID: `site-docs-root`
+- Final score: 116
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information, see Node upgrade strategy . apiVersion : baremetal.cluster.gke.io/v1 kind : NodePool metadata : name : np1 namespace : cluster-cluster1 spec : clusterName : cluster1 nodes : - address : 10.200.0.1 ... upgradeStrategy : parallelUpgrade : concurrentNodes : 2 minimumAvailableNodes : 5 NodePool resource Optional Mutable upgradeStrategy.parallelUpgrade.concurrentNodes Optional.
+- For Google Distributed Cloud software versions 1.13.0 and higher, if your cluster configuration file contains this field, the value must be containerd .
+- 1.28 The upgrade pause and resume feature is available in Preview for clusters with all control plane nodes at minor version 1.28 or higher.
+- In bundled mode, Google Distributed Cloud software installs a load balancer on load balancer nodes during cluster creation.
+
+### "Configure logging and monitoring \_|\_ Google Distributed Cloud (software\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring)
+- Source ID: `site-docs-root`
+- Final score: 115
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Excluded kube metrics The following kube metrics are excluded from the optimized metrics: kube certificatesigningrequest cert length kube certificatesigningrequest condition kube certificatesigningrequest created kube certificatesigningrequest labels kube configmap annotations kube configmap info kube configmap labels kube configmap metadata resource version kube daemonset annotations kube daemonset created kube daemonset labels kube daemonset metadata generation kube daemonset status observed generation kube deployment annotations kube deployment created kube deployment labels kube deployment spec paused kube deployment spec strategy rollingupdate max surge kube deployment spec strategy rollingupdate max unavailable kube deployment status condition kube deployment status replicas ready kube endpoint annotations kube endpoint created kube endpoint info kube endpoint labels kube endpoint ports kube horizontalpodautoscaler annotations kube horizontalpodautoscaler info kube horizontalpodautoscaler labels kube horizontalpodautoscaler metadata generation kube horizontalpodautoscaler status condition kube job annotations kube job complete kube job created kube job info kube job labels kube job owner kube job spec completions kube job spec parallelism kube job status completion time kube job status start time kube job status succeeded kube lease owner kube lease renew time kube limitrange kube limitrange created kube mutatingwebhookconfiguration info kube namespace labels kube networkpolicy annotations kube networkpolicy labels kube networkpolicy spec egress rules kube networkpolicy spec ingress rules kube node annotations kube node role kube persistentvolume annotations kube persistentvolume labels kube persistentvolumeclaim access mode kube persistentvolumeclaim annotations kube persistentvolumeclaim labels kube pod annotations kube pod completion time kube pod container resource limits kube pod container resource requests kube pod container state started kube pod created kube pod init container info kube pod init container resource limits kube pod init container resource requests kube pod init container status last terminated reason kube pod init container status ready kube pod init container status restarts total kube pod init container status running kube pod init container status terminated kube pod init container status terminated reason kube pod init container status waiting kube pod init container status waiting reason kube pod labels kube pod owner kube pod restart policy kube pod spec volumes persistentvolumeclaims readonly kube pod start time kube poddisruptionbudget annotations kube poddisruptionbudget created kube poddisruptionbudget labels kube poddisruptionbudget status expected pods kube poddisruptionbudget status observed generation kube poddisruptionbudget status pod disruptions allowed kube replicaset annotations kube replicaset created kube replicaset labels kube replicaset metadata generation kube replicaset owner kube replicaset status observed generation kube resourcequota created kube secret annotations kube secret info kube secret labels kube secret metadata resource version kube secret type kube service annotations kube service created kube service info kube service labels kube service spec type kube statefulset annotations kube statefulset created kube statefulset labels kube statefulset status current revision kube statefulset status update revision kube storageclass annotations kube storageclass created kube storageclass info kube storageclass labels kube validatingwebhookconfiguration info kube validatingwebhookconfiguration metadata resource version kube volumeattachment created kube volumeattachment info kube volumeattachment labels kube volumeattachment spec source persistentvolume kube volumeattachment status attached kube volumeattachment status attachment metadata The complete set of Google Distributed Cloud metrics is documented in View Anthos metrics .
+- In this case, you can allocate more resources to metrics server by editing the metrics-server-config configmap in gke-managed-metrics-server namespace, and changing the value for cpuPerNode and memoryPerNode . kubectl edit cm metrics-server-config -n gke-managed-metrics-server The example content of the ConfigMap is: apiVersion : v1 data : NannyConfiguration : - apiVersion: nannyconfig/v1alpha1 kind: NannyConfiguration cpuPerNode: 3m memoryPerNode: 20Mi kind : ConfigMap Note: Only cpuPerNode and memoryPerNode need to be modified.
+- Google Distributed Cloud (software only) for bare metal supports multiple options for cluster logging and monitoring, including cloud-based managed services, open source tools, and validated compatibility with third-party commercial solutions.
+- To disable Google Cloud Managed Service for Prometheus for cluster versions prior to 1.30.0-gke.1930, set spec.featureGates.enableGMPForSystemMetrics in the stackdriver resource to false .
 

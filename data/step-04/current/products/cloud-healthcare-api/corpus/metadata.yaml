@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-10T20:29:40+00:00'
-updated_at: '2026-04-10T20:38:41+00:00'
+updated_at: '2026-04-15T02:39:05+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -11,7 +11,7 @@ sources:
   id: site-docs-root
   title: https://docs.cloud.google.com/healthcare-api/docs
   created_at: '2026-04-10T20:29:41+00:00'
-  updated_at: '2026-04-10T20:31:29+00:00'
+  updated_at: '2026-04-15T02:25:45+00:00'
   update_command: know sync site https://docs.cloud.google.com/healthcare-api/docs
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
@@ -20,26 +20,12 @@ sources:
     max_depth: 1
     max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-10T20:31:29+00:00'
-- type: site
-  id: site-docs-root-2
-  title: https://docs.cloud.google.com/healthcare-api/docs/concepts
-  created_at: '2026-04-10T20:29:41+00:00'
-  updated_at: '2026-04-10T20:32:42+00:00'
-  update_command: know sync site https://docs.cloud.google.com/healthcare-api/docs/concepts
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-root-2
-  config:
-    url: https://docs.cloud.google.com/healthcare-api/docs/concepts
-    max_depth: 1
-    max_pages: 42
-    compact_output: true
-  last_synced_at: '2026-04-10T20:32:42+00:00'
+  last_synced_at: '2026-04-15T02:25:45+00:00'
 - type: site
   id: site-docs-reference
   title: https://docs.cloud.google.com/healthcare-api/docs/apis
   created_at: '2026-04-10T20:29:41+00:00'
-  updated_at: '2026-04-10T20:34:45+00:00'
+  updated_at: '2026-04-15T02:30:28+00:00'
   update_command: know sync site https://docs.cloud.google.com/healthcare-api/docs/apis
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
@@ -48,12 +34,12 @@ sources:
     max_depth: 1
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-10T20:34:45+00:00'
+  last_synced_at: '2026-04-15T02:30:28+00:00'
 - type: site
   id: site-api-reference
   title: https://docs.cloud.google.com/healthcare-api/docs/reference/rest
   created_at: '2026-04-10T20:29:42+00:00'
-  updated_at: '2026-04-10T20:36:43+00:00'
+  updated_at: '2026-04-15T02:33:14+00:00'
   update_command: know sync site https://docs.cloud.google.com/healthcare-api/docs/reference/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
@@ -62,12 +48,12 @@ sources:
     max_depth: 1
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-10T20:36:43+00:00'
+  last_synced_at: '2026-04-15T02:33:14+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/healthcare-api/docs/access-control
   created_at: '2026-04-10T20:29:42+00:00'
-  updated_at: '2026-04-10T20:38:41+00:00'
+  updated_at: '2026-04-15T02:35:13+00:00'
   update_command: know sync site https://docs.cloud.google.com/healthcare-api/docs/access-control
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
@@ -76,4 +62,60 @@ sources:
     max_depth: 1
     max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-10T20:38:41+00:00'
+  last_synced_at: '2026-04-15T02:35:13+00:00'
+- type: site
+  id: site-docs-root-2
+  title: https://docs.cloud.google.com/healthcare-api/docs/introduction
+  created_at: '2026-04-14T02:55:56+00:00'
+  updated_at: '2026-04-15T02:28:23+00:00'
+  update_command: know sync site https://docs.cloud.google.com/healthcare-api/docs/introduction
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://docs.cloud.google.com/healthcare-api/docs/introduction
+    max_depth: 1
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-15T02:28:23+00:00'
+- type: site
+  id: site-docs-reference-2
+  title: https://docs.cloud.google.com/healthcare-api/docs/release-notes
+  created_at: '2026-04-14T02:55:56+00:00'
+  updated_at: '2026-04-15T02:31:21+00:00'
+  update_command: know sync site https://docs.cloud.google.com/healthcare-api/docs/release-notes
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-2
+  config:
+    url: https://docs.cloud.google.com/healthcare-api/docs/release-notes
+    max_depth: 1
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T02:31:21+00:00'
+- type: site
+  id: site-docs-reference-required-3
+  title: https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources
+  created_at: '2026-04-15T02:24:22+00:00'
+  updated_at: '2026-04-15T02:37:12+00:00'
+  update_command: know sync site https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-3
+  config:
+    url: https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources
+    max_depth: 1
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T02:37:12+00:00'
+- type: site
+  id: site-docs-reference-required-4
+  title: https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-search
+  created_at: '2026-04-15T02:24:23+00:00'
+  updated_at: '2026-04-15T02:39:05+00:00'
+  update_command: know sync site https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-search
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference-required-4
+  config:
+    url: https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-search
+    max_depth: 1
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-15T02:39:05+00:00'

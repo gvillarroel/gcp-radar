@@ -38,6 +38,40 @@ To get the latest product updates delivered to you, add the URL of this page to 
 feed
 reader , or add the
 feed URL directly.
+April 13, 2026
+Feature
+Support for the AI.AGG function preview
+has been temporarily disabled. We are working to restore this feature as soon as
+possible.
+Feature
+To reduce LLM token consumption and query latency when processing large
+datasets, enable optimized mode
+using the following managed AI functions :
+AI.IF
+AI.CLASSIFY
+This feature is in
+Preview .
+Feature
+The following managed AI functions
+use Gemini to help you filter, join, rank, and classify your data:
+AI.IF :
+Filter and join text and unstructured data (such as images, PDFs, audio, or
+video) based on a condition described in natural language.
+AI.SCORE :
+Rate text and unstructured data (such as images, PDFs, audio, or video) to
+rank your data by quality, similarity, or other criteria.
+AI.CLASSIFY :
+Classify text and unstructured data (such as images, PDFs, audio, or video)
+into user-defined categories.
+These functions are generally available
+(GA).
+Feature
+You can use visualization cells to
+automatically generate a visualization
+of any DataFrame in your notebook. You can customize the columns, chart type,
+aggregations, colors, labels, and title.
+This feature is generally available
+(GA).
 April 10, 2026
 Feature
 SQL cells in BigQuery notebooks are now
@@ -2617,6 +2651,6 @@ Change
 An updated version of JDBC driver for BigQuery is now available.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-10 UTC.
+Last updated 2026-04-14 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-14 UTC."],[],[]]

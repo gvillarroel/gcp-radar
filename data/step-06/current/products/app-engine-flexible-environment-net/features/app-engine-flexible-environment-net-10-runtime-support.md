@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:44:02.738Z"
+generated_at: "2026-04-14T06:14:55.667Z"
 product_name: "App Engine flexible environment .NET"
 product_slug: "app-engine-flexible-environment-net"
 feature_name: "App Engine flexible environment .NET 10 runtime support"
@@ -9,16 +9,18 @@ latest_feature_date: "2026-02-18"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime"
+  - "https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
 keywords:
-  - "GA .NET 10"
-  - ".NET 10 runtime support"
-  - "preview .NET 10"
-  - "dotnet10"
-  - ".NET 10 runtime"
-  - "runtime in app.yaml"
-  - ".NET 10"
-  - "App Engine .NET runtime"
+  - "app"
+  - "engine"
+  - "flexible"
+  - "environment"
+  - "net"
+  - "10"
+  - "runtime"
+  - "added"
 ---
 
 # App Engine flexible environment .NET 10 runtime support
@@ -32,27 +34,57 @@ App Engine flexible environment added General Availability support for the .NET 
 
 ## Extended Definition
 
-In App Engine flexible environment, the .NET runtime can be configured to use runtime version "10" via `app.yaml` settings (`runtime: aspnetcore`, `runtime config` / `runtime version: "10"`, and related fields such as `operating system: "ubuntu24"` in the documented example). The runtime stack is responsible for installing the app code and dependencies and running the app, and Google’s documentation states that .NET 10 in this environment is built using buildpacks. Based on the provided excerpt, this indicates explicit support for .NET 10 configuration in App Engine flexible, though lifecycle stage (for example GA vs. preview) is not shown in the snippet.
+App Engine flexible environment added General Availability support for the .NET 10 runtime; App Engine flexible environment added preview support for the .NET 10 runtime.
 
 ## Evidence Summary
 
-The referenced Google Cloud documentation page gives the canonical `app.yaml` form for selecting .NET runtime version 10 and describes that App Engine flexible’s .NET runtime installs dependencies and runs the app using buildpacks.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime)
+- [https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
+- [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
+- [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app)
 
 ## Supporting Pages
 
-### "The .NET runtime \_|\_ App Engine flexible environment \_|\_ Google Cloud\
+### "About Custom runtimes \_|\_ App Engine flexible environment \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime](https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime)
-- Source ID: `site-docs-root`
-- Final score: 26
-- Re-rank relevance: MODERATE
-- Re-rank rationale: The page documents using .NET 10 (example config and target framework guidance) and links to runtime support details, but does not explicitly state GA/preview rollout status.
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
+- Source ID: `site-docs-reference`
+- Final score: 71
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- For example, the app.yaml file looks as follows when specifying .NET 10 on Ubuntu 24: runtime : aspnetcore env : flex runtime config : runtime version : "10" operating system : "ubuntu24" Previous runtime versions Warning: .NET version 3 and earlier have reached end of support.
-- The .NET runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment. .NET versions .NET 10 is built using buildpacks .
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback About Custom runtimes Stay organized with collections Save and categorize content based on your preferences.
+- Use the following table to understand how a custom runtime compares to the existing set of App Engine runtimes: Feature Flexible runtime Custom runtime Dockerfile Default file supplied automatically by the SDK Hand-written by the developer Dockerfile modifications permitted Yes Yes Languages Python, Java, Node.js, Go, Ruby, PHP, .NET Any software that can service HTTP requests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- When you use a custom runtime, you must write your application code to handle certain flexible environment life-cycle and health checking requests.
+- Applications that use custom runtimes take advantage of all the various Google Cloud services by using the public REST APIs or client libraries, such as the App Engine Admin API and the Google Client Libraries .
+
+### "About Custom runtimes \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/about-custom-runtimes)
+- Source ID: `site-docs-root`
+- Final score: 71
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback About Custom runtimes Stay organized with collections Save and categorize content based on your preferences.
+- Use the following table to understand how a custom runtime compares to the existing set of App Engine runtimes: Feature Flexible runtime Custom runtime Dockerfile Default file supplied automatically by the SDK Hand-written by the developer Dockerfile modifications permitted Yes Yes Languages Python, Java, Node.js, Go, Ruby, PHP, .NET Any software that can service HTTP requests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- When you use a custom runtime, you must write your application code to handle certain flexible environment life-cycle and health checking requests.
+- Applications that use custom runtimes take advantage of all the various Google Cloud services by using the public REST APIs or client libraries, such as the App Engine Admin API and the Google Client Libraries .
+
+### "Quickstart: Create a custom runtime app in the App Engine flexible environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app](https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app)
+- Source ID: `site-docs-reference`
+- Final score: 65
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The app.yaml file must reside in the same directory as the Dockerfile file. runtime : custom env : flex The runtime: custom entry tells App Engine to look for a Dockerfile that will define your runtime's image and env: flex specifies that you are deploying to the flexible environment.
+- Create a custom runtime app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app.
+- By using a Dockerfile, you can use languages and packages that are not part of the Google Cloud and use the same resources and tooling that are used in the App Engine flexible environment.
+- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.
 

@@ -1,0 +1,90 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-15T12:48:36.899Z"
+product_name: "BigQuery"
+product_slug: "bigquery"
+feature_name: "US Bureau of Labor Statistics public dataset"
+feature_slug: "us-bureau-of-labor-statistics-public-dataset"
+latest_feature_date: "2017-02-01"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/bigquery/docs/managing-datasets"
+  - "https://docs.cloud.google.com/bigquery/docs/tables"
+  - "https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial"
+keywords:
+  - "us"
+  - "bureau"
+  - "labor"
+  - "statistics"
+  - "public"
+  - "dataset"
+  - "bigquery"
+  - "datasets"
+---
+
+# US Bureau of Labor Statistics public dataset
+
+Product: BigQuery
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+The BigQuery public datasets program includes the US Bureau of Labor Statistics dataset.
+
+## Extended Definition
+
+The BigQuery public datasets program includes the US Bureau of Labor Statistics dataset.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/bigquery/docs/managing-datasets](https://docs.cloud.google.com/bigquery/docs/managing-datasets)
+- [https://docs.cloud.google.com/bigquery/docs/tables](https://docs.cloud.google.com/bigquery/docs/tables)
+- [https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial](https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial)
+
+## Supporting Pages
+
+### Manage datasets \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/managing-datasets](https://docs.cloud.google.com/bigquery/docs/managing-datasets)
+- Source ID: `site-docs-reference-required-11`
+- Final score: 132
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Value ; import java.io.IOException ; import java.util.HashMap ; import java.util.Map ; // Sample to copy dataset from another gcp project public class CopyDataset { public static void main ( String [] args ) throws IOException { // TODO(developer): Replace these variables before running the sample. final String destinationProjectId = "MY DESTINATION PROJECT ID" ; final String destinationDatasetId = "MY DESTINATION DATASET ID" ; final String sourceProjectId = "MY SOURCE PROJECT ID" ; final String sourceDatasetId = "MY SOURCE DATASET ID" ; Map<String , Value > params = new HashMap <> (); params . put ( "source project id" , Value . newBuilder (). setStringValue ( sourceProjectId ). build ()); params . put ( "source dataset id" , Value . newBuilder (). setStringValue ( sourceDatasetId ). build ()); TransferConfig transferConfig = TransferConfig . newBuilder () . setDestinationDatasetId ( destinationDatasetId ) . setDisplayName ( "Your Dataset Copy Name" ) . setDataSourceId ( "cross region copy" ) . setParams ( Struct . newBuilder (). putAllFields ( params ). build ()) . setSchedule ( "every 24 hours" ) . build (); copyDataset ( destinationProjectId , transferConfig ); } public static void copyDataset ( String projectId , TransferConfig transferConfig ) throws IOException { try ( DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient . create ()) { ProjectName parent = ProjectName . of ( projectId ); CreateTransferConfigRequest request = CreateTransferConfigRequest . newBuilder () . setParent ( parent . toString ()) . setTransferConfig ( transferConfig ) . build (); TransferConfig config = dataTransferServiceClient . createTransferConfig ( request ); System . out . println ( "Copy dataset created successfully :" + config . getName ()); } catch ( ApiException ex ) { System . out . print ( "Copy dataset was not created." + ex . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .
+- To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to copy datasets: bigquery.transfers.update on the destination project bigquery.jobs.create on the destination project bigquery.datasets.get on the source and destination dataset bigquery.tables.list on the source and destination dataset bigquery.datasets.update on the destination dataset bigquery.tables.create on the destination dataset You might also be able to get these permissions with custom roles or other predefined roles .
+- See the License for the specific language governing permissions and limitations under the License. require "google/cloud/bigquery" def delete dataset and contents dataset id = "my dataset with tables" bigquery = Google :: Cloud :: Bigquery . new Use the force parameter to delete a dataset and its contents dataset = bigquery . dataset dataset id dataset . delete force : true puts "Dataset #{ dataset id } and contents deleted." end Restore tables from deleted datasets You can restore tables from a deleted dataset that are within the dataset's time travel window .
+- To copy a dataset to a project in another VPC Service Controls service perimeter , you need to set the following egress rules: In the destination project's VPC Service Controls service perimeter configuration, the IAM principal must have the following methods: bigquery.datasets.get bigquery.tables.list bigquery.tables.get , bigquery.tables.getData In the source project's VPC Service Controls service perimeter configuration, the IAM principal being used must have the method set to All Methods .
+
+### Create and use tables \_|\_ BigQuery \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/tables](https://docs.cloud.google.com/bigquery/docs/tables)
+- Source ID: `site-docs-root`
+- Final score: 111
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Because the table you're querying is in another project, the bigquery-public-data project, you add the project ID to the dataset in the following format: project id . dataset .INFORMATION SCHEMA. view ; for example, bigquery-public-data.census bureau usa.INFORMATION SCHEMA.TABLES .
+- For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function queryDestinationTable () { // Queries the U.S. given names dataset for the state of Texas // and saves results to permanent table. / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = 'my dataset'; // const tableId = 'my table'; // Create destination table reference const dataset = bigquery . dataset ( datasetId ); const destinationTable = dataset . table ( tableId ); const query = SELECT name FROM \bigquery-public-data.usa names.usa 1910 2013\ WHERE state = 'TX' LIMIT 100 ; // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/tables#resource const options = { query : query , // Location must match that of the dataset(s) referenced in the query. location : 'US' , destination : destinationTable , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); console . log ( Job ${ job . id } started. ); console . log ( Query results loaded to table ${ destinationTable . id } ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .
+- TABLES WHERE table name = 'population by zip 2010' ; The result is similar to the following: +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ table name ddl +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ population by zip 2010 CREATE TABLE bigquery-public-data.census bureau usa.population by zip 2010 ( geo id STRING OPTIONS(description="Geo code"), zipcode STRING NOT NULL OPTIONS(description="Five digit ZIP Code Tabulation Area Census Code"), population INT64 OPTIONS(description="The total count of the population for this segment."), minimum age INT64 OPTIONS(description="The minimum age in the age range.
+- These logs record API calls and actions that modify the configuration or metadata of your resources. resource.type = "bigquery dataset" : This narrows the search to events related to BigQuery datasets, where table operations are logged. timestamp >= " STARTING TIMESTAMP " : Filters log entries to only show those created on or after the specified timestamp. protoPayload.@type = "type.googleapis.com/google.cloud.audit.AuditLog" : Ensures the log message conforms to the standard Cloud Audit Log structure. ( ... ) : This block groups conditions to find different types of table events, as outlined in the previous section.
+
+### Use BigQuery ML to predict penguin weight \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial](https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial)
+- Source ID: `site-docs-reference-2`
+- Final score: 111
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Select the model you'll use for predictions. read gbq model loads model data from BigQuery, but you could also use the model object object from previous steps. model = bpd . read gbq model ( your model id , For example: "bqml tutorial.penguins model", ) Load data from BigQuery bq df = bpd . read gbq ( "bigquery-public-data.ml datasets.penguins" ) Use 'contains' function to filter by island containing the string "Biscoe". biscoe data = bq df . loc [ bq df [ "island" ] . str . contains ( "Biscoe" )] result = model . predict ( biscoe data ) Expected output results: predicted body mass g species island culmen length mm culmen depth mm body mass g flipper length mm sex 23 4681.782896 Gentoo penguin (Pygoscelis papua) Biscoe <NA> <NA> <NA> <NA> <NA> 332 4740.7907 Gentoo penguin (Pygoscelis papua) Biscoe 46.2 14.4 214.0 4650.0 <NA> 160 4731.310452 Gentoo penguin (Pygoscelis papua) Biscoe 44.5 14.3 216.0 4100.0 <NA> The results should look similar to the following: Explain the prediction results SQL To understand why the model is generating these prediction results, you can use the ML.EXPLAIN PREDICT function .
+- For more information, see Set up ADC for a local development environment . from bigframes.ml.linear model import LinearRegression import bigframes.pandas as bpd Load data from BigQuery bq df = bpd . read gbq ( "bigquery-public-data.ml datasets.penguins" ) Drop rows with nulls to get training data training data = bq df . dropna ( subset = [ "body mass g" ]) Specify your feature (or input) columns and the label (or output) column: feature columns = training data . drop ( columns = [ "body mass g" ]) label columns = training data [[ "body mass g" ]] Create the linear model model = LinearRegression () model . fit ( feature columns , label columns ) model . to gbq ( your model id , # For example: "bqml tutorial.penguins model" replace = True , ) It takes about 30 seconds to create the model.
+- This query's SELECT statement uses the following columns in the bigquery-public-data.ml datasets.penguins table to predict a penguin's weight: species : the species of penguin. island : the island that the penguin resides on. culmen length mm : the length of the penguin's culmen in millimeters. culmen depth mm : the depth of the penguin's culmen in millimeters. flipper length mm : the length of the penguin's flippers in millimeters. sex : the sex of the penguin.
+- Go to BigQuery In the query editor, run the following query to retrain the model: #standardSQL CREATE OR REPLACE MODEL bqml tutorial.penguins model OPTIONS ( model type = 'linear reg' , input label cols = [ 'body mass g' ] , enable global explain = TRUE ) AS SELECT FROM bigquery-public-data.ml datasets.penguins WHERE body mass g IS NOT NULL ; In the query editor, run the following query to get global explanations: SELECT FROM ML .
+

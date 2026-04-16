@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T21:10:29.939Z"
+generated_at: "2026-04-12T12:11:22.239Z"
 product_name: "Cloud Database Migration Service"
 product_slug: "cloud-database-migration-service"
 feature_name: "Public IP allowlist connectivity for AlloyDB for PostgreSQL migrations"
 feature_slug: "public-ip-allowlist-connectivity-for-alloydb-for-postgresql-migrations"
 latest_feature_date: "2025-01-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview"
   - "https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview"
   - "https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview"
+  - "https://docs.cloud.google.com/database-migration/docs/security-and-encryption"
 keywords:
   - "public"
   - "ip"
@@ -26,7 +27,7 @@ keywords:
 # Public IP allowlist connectivity for AlloyDB for PostgreSQL migrations
 
 Product: Cloud Database Migration Service
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Public IP allowlist network connectivity is now supported for both homogeneous a
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview)
 - [https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview)
 - [https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview)
+- [https://docs.cloud.google.com/database-migration/docs/security-and-encryption](https://docs.cloud.google.com/database-migration/docs/security-and-encryption)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview)
 - Source ID: `site-api-reference`
-- Final score: 172
+- Final score: 212
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-alloydb/scenario-overview)
 - Source ID: `site-api-reference`
-- Final score: 164
+- Final score: 204
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -78,7 +80,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview](https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview)
 - Source ID: `site-api-reference`
-- Final score: 150
+- Final score: 188
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -86,4 +88,17 @@ Evidence snippets:
 - There are two ways in which you can complete full dump: Automatic: Database Migration Service connects to your source instance, reads the contents of the tables you selected for migration, and then loads the data to the AlloyDB for PostgreSQL destination instance.
 - This page provides an overview of the key Database Migration Service features for heterogeneous Oracle to Cloud SQL for PostgreSQL migrations: Supported source and destination lists all Oracle versions supported by Database Migration Service.
 - During this phase, Database Migration Service connects to your source instance, reads the contents of the tables you selected for migration, and then loads the data to the AlloyDB for PostgreSQL destination instance.
+
+### "Security and encryption \_|\_ Database Migration Service \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/security-and-encryption](https://docs.cloud.google.com/database-migration/docs/security-and-encryption)
+- Source ID: `site-docs-root-2`
+- Final score: 184
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Connectivity encryption Database Migration Service supports SSL/TLS connectivity for your migration as well as other methods that accommodate differences in network access, such as IP allowlisting or using a forward SSH tunnel.
+- Connectivity encryption Database Migration Service supports SSL/TLS connectivity for your migration as well as other methods that accommodate differences in network access, such as IP allowlisting or using a forward SSH tunnel.
+- Connectivity encryption Database Migration Service supports SSL/TLS connectivity for your migration as well as other methods that accommodate differences in network access, such as IP allowlisting or using a forward SSH tunnel.
+- Connectivity encryption Database Migration Service supports SSL/TLS connectivity for your migration as well as other methods that accommodate differences in network access, such as IP allowlisting or using a forward SSH tunnel.
 

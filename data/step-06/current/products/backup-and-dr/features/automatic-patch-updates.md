@@ -1,29 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T18:13:26.201Z"
+generated_at: "2026-04-14T09:35:01.931Z"
 product_name: "Backup and DR"
 product_slug: "backup-and-dr"
 feature_name: "Automatic patch updates"
 feature_slug: "automatic-patch-updates"
 latest_feature_date: "2024-05-21"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes"
-  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine"
+  - "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance"
+  - "https://docs.cloud.google.com/compute/docs/committed-use-discounts/extend-commitment-term"
   - "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server"
 keywords:
   - "automatic"
   - "patch"
   - "updates"
   - "added"
-  - "for"
 ---
 
 # Automatic patch updates
 
 Product: Backup and DR
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -35,52 +34,52 @@ Added support for automatic patch updates.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
+- [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance)
+- [https://docs.cloud.google.com/compute/docs/committed-use-discounts/extend-commitment-term](https://docs.cloud.google.com/compute/docs/committed-use-discounts/extend-commitment-term)
 - [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server)
 
 ## Supporting Pages
 
-### Backup and DR Service release notes \_|\_ Google Cloud Documentation
+### "Update backup/recovery appliances \_|\_ Backup and DR \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes](https://docs.cloud.google.com/backup-disaster-recovery/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 96
+- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance](https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance)
+- Source ID: `site-docs-reference`
+- Final score: 115
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature For updates to the backup appliance, a default window now exists to schedule non disruptive patch updates. (Disruptive updates do not get the default window.) You will now receive notifications 2 weeks , 1 week and 24 hours before the scheduled update after which the appliance will be automatically updated.
-- Automatic Updates: Once a plan is edited, the changes are automatically applied to all resources protected by that plan for all future backups.
-- Introducing notifications and alerts for the following critical events: Processes not running on a backup/recovery appliance Expired certificates No jobs running on a backup/recovery appliance CPU and memory usage exceeding threshold values Backup/recovery appliance appliance version out of support Backup/recovery appliance updates available You can subscribe to these events and configure email alerts.
-- Security The following CVEs have been addressed in this release: CVE-2022-1471, CVE-2025-31651, CVE-2025-31650, CVE-2022-42003, CVE-2025-25193, CVE-2024-6763, CVE-2025-52999, CVE-2025-24970, CVE-2025-49125, CVE-2025-48734, CVE-2024-52317, CVE-2025-48988, CVE-2025-46701 Feature Change Block Tracking (CBT) support has been added for latest kernel versions in RHEL 8.10, 9.2, 9.4 and 9.6.
+- For more instructions on setting a default window, see Set a Default Window for Auto-patch Updates If the auto patch update fails to install automatically, it becomes visible on the Available updates page, where you can update the appliance manually.
+- Update type : This field displays the type of update, such as Manual for manual patch updates and Auto for hotfixes and automatic patch updates.
+- The Available Updates page displays the following fields: Update name : This field displays update name as PATCH NUMBER , AUTO PATCH NUMBER for a patch, or HF NUMBER for a hotfix.
+- The auto-patch updates will happen 2 weeks after discovery of the update in one of the day of the week selected and within the given time slot .
 
-### "Backup and DR Service for Compute Engine for self-managed storage \_|\_\
+### Extend commitment terms \_|\_ Compute Engine \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine)
-- Source ID: `site-api-reference`
-- Final score: 79
+- URL: [https://docs.cloud.google.com/compute/docs/committed-use-discounts/extend-commitment-term](https://docs.cloud.google.com/compute/docs/committed-use-discounts/extend-commitment-term)
+- Source ID: `site-docs-reference-2`
+- Final score: 81
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- If an additional disk is added to the instance, this disk is automatically included in the next snapshot of the instance.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- The Backup and DR Compute Engine guide Check for the cloud credentials Discover and protect Compute Engine instances Mount backup images of Compute Engine instances Restore a Compute Engine instance Import Persistent Disk snapshot images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for Compute Engine for self-managed storage Stay organized with collections Save and categorize content based on your preferences.
+- This commitment was purchased on January 1, 2024, and expires on June 30, To extend its term further until the end of June 30, 2026, make the following request: PATCH https://compute.googleapis.com/compute/v1/projects/my-project/regions/us-central1/commitments/example-commitment { "name": "example-commitment", "customEndTimestamp": "2026-07-01T07:00:00Z", } What's next Learn how to renew resource-based commitments automatically .
+- This commitment was purchased on January 1, 2024, and expires on June 30, To extend its term further until the end of June 30, 2026, run the following command: gcloud compute commitments update example-commitment \ --region=us-central1 \ --project=my-project \ --custom-end-time=2026-07-01 REST To extend the term of an existing active commitment, make a PATCH request to the regionCommitments.update method .
+- PATCH https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /commitments/ COMMITMENT NAME { "name": " COMMITMENT NAME ", "customEndTimestamp": " CUSTOM END DATE T END TIME Z", } Replace the following: COMMITMENT NAME : the name of the commitment REGION : the region of the commitment and where you want to commit to purchasing Compute Engine resources.
+- If the commitments have any other pending update requests—such as merge, split, upgrade, or auto-renewal setting update—then, to request term extensions, you must wait until after 12 AM US and Canadian Pacific Time (UTC-8 or UTC-7) on the following day for the pending operations to complete and the updates to take effect.
 
 ### Backup and DR Service for Microsoft SQL Server \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server](https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server)
 - Source ID: `site-api-reference`
-- Final score: 78
+- Final score: 54
 - Re-rank relevance: N/A
 
 Evidence snippets:
 - Updates the LiveClone or mountable Microsoft SQL Server data on a scheduled or on-demand basis Optionally automatically applies scripts to the LiveClone's Microsoft SQL Server data after each update.
 - When you protect the entire instance, as databases are added to the instance, they are automatically included in the next Backup and DR capture job.
-- You can find additional information at: Backup and DR for Microsoft SQL Server Databases Prepare SQL Server databases for Backup and DR Service Add a SQL Server database host and discover databases Configure backup plans for Microsoft SQL Server instances and databases Application details and settings for Microsoft SQL Server instances and databases Mount a SQL Server database Mount databases into SQL Always On Availability Groups Manage an active mount Migrate a SQL Server database Clone SQL Server databases Recover SQL Server backups What's Next Prepare SQL server databases for Backup and DR Service .
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Resize database log's staging disk The physical space required to accommodate backups of a database's logs is automatically managed by Backup and DR.
+- To automatically protect new members of a group of databases, create and protect those databases in a SQL Server instance instead.
 

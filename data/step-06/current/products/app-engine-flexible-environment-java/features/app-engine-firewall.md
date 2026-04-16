@@ -1,74 +1,92 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:43:43.857Z"
+generated_at: "2026-04-15T00:05:03.284Z"
 product_name: "App Engine flexible environment Java"
 product_slug: "app-engine-flexible-environment-java"
-feature_name: "App Engine Firewall"
+feature_name: "App Engine firewall"
 feature_slug: "app-engine-firewall"
 latest_feature_date: "2017-10-11"
 deprecation_date: ""
-coverage_status: "HIGH"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls"
   - "https://docs.cloud.google.com/appengine/docs/flexible/application-security"
+  - "https://docs.cloud.google.com/appengine/docs/flexible/java/application-security"
 keywords:
-  - "IP range rules"
-  - "configure firewall"
-  - "firewall rules"
-  - "AE Firewall"
-  - "App Engine ingress control"
-  - "App Engine Firewall"
-  - "App Engine firewall"
+  - "app"
+  - "engine"
+  - "firewall"
+  - "provides"
+  - "controls"
+  - "managing"
+  - "inbound"
+  - "traffic"
 ---
 
-# App Engine Firewall
+# App Engine firewall
 
 Product: App Engine flexible environment Java
-Coverage: HIGH
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
-App Engine Firewall was announced as generally available; App Engine Firewall entered beta release.
+App Engine provides firewall controls for managing inbound traffic to applications; App Engine provides firewall controls for managing inbound traffic to applications.
 
 ## Extended Definition
 
-App Engine Firewall in the App Engine flexible environment is an ingress control feature that uses an ordered list of rules to allow or deny access to an app from specified IP addresses or ranges. It lets operators create and modify firewall rules to shape who can reach the app (for example, limiting access to a subset of addresses or allowing only traffic forwarded from a WAF), and requires App Engine Admin, Editor, or Owner IAM roles to create or modify those rules.
+App Engine provides firewall controls for managing inbound traffic to applications; App Engine provides firewall controls for managing inbound traffic to applications.
 
 ## Evidence Summary
 
-The cited pages jointly define App Engine Firewall as ordered allow/deny IP-range rules, describe its role in controlling app access, and specify required IAM roles and operational caveats.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls)
+- [https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls)
 - [https://docs.cloud.google.com/appengine/docs/flexible/application-security](https://docs.cloud.google.com/appengine/docs/flexible/application-security)
+- [https://docs.cloud.google.com/appengine/docs/flexible/java/application-security](https://docs.cloud.google.com/appengine/docs/flexible/java/application-security)
 
 ## Supporting Pages
 
-### "Creating App Engine firewall rules \_|\_ App Engine flexible environment\
+### "Understanding the App Engine firewall \_|\_ App Engine flexible environment\
 
-- URL: [https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls)
-- Source ID: `site-docs-root`
-- Final score: 78
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls](https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls)
+- Source ID: `site-docs-reference-2`
+- Final score: 161
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Before you begin Before you can create App Engine firewall rules for your app, you must have one of the following App Engine IAM roles , which include the necessary privileges for creating or modifying firewall rules: App Engine Admin Editor Owner Creating firewall rules Use one of the following methods to create a firewall rule.
-- Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating App Engine firewall rules Stay organized with collections Save and categorize content based on your preferences.
-- Understanding App Engine firewall rules An App Engine firewall consists of an ordered list of rules that can allow or deny access from the specified IP address or range to your app.
-- Note: If you set up port forwarding , remember that all requests through that forwarded port bypass the App Engine firewall.
+- If your ingress controls are set to receive internal-and-cloud-load-balancing traffic, leave the default App Engine firewall rule as is ( allow ), and use Google Cloud Armor web application firewall (WAF) rules .
+- Direction of traffic : Ingress Action on match : Allow Source IP ranges : 35.191.0.0/16 and 130.211.0.0/22 Protocols and ports : tcp : 8443 (for legacy health checks) or 10402 (for split health checks) Priority : 1000 Preventing access to cached content The App Engine firewall sits behind mechanisms that cache content, for example web proxies and browsers.
+- App Engine flexible example Your app running in the flexible environment has two services: frontend service and backend service , and has a firewall configured to deny traffic by default. frontend service uses Cloud Tasks with App Engine HTTP to send messages to backend service .
+- If your App Engine flexible app uses Shared VPC , the App Engine flexible environment does not automatically create firewall rules. if you need to control access and allow traffic on the VPC network, you can create firewall rules on the Shared VPC network.
 
 ### "Overview of app security \_|\_ App Engine flexible environment \_|\_ Google\
 
 - URL: [https://docs.cloud.google.com/appengine/docs/flexible/application-security](https://docs.cloud.google.com/appengine/docs/flexible/application-security)
-- Source ID: `site-docs-root`
-- Final score: 50
-- Re-rank relevance: STRONG
-- Re-rank rationale: The page is an App Engine security overview and explicitly includes an "App Engine firewall" feature section, making it directly relevant to understanding and defining this security capability.
+- Source ID: `site-docs-reference`
+- Final score: 127
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Ingress controls You can use Ingress controls to restrict inbound traffic to your App Engine app.
 - Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.
 - App Engine firewall The App Engine firewall enables you to control access to your App Engine app through a set of rules that can either allow or deny requests from the specified ranges of IP addresses.
-- You can then create and modify your firewall rules to control the scope of access throughout your release process, allowing only certain organizations, either within your company or externally, to access your app as it makes its way to public availability.
-- For example, if you use a third-party Web Application Firewall (WAF) to proxy requests directed at your app, you can create firewall rules to deny all requests except those that are forwarded from your WAF.
+- Create a firewall to: Allow only traffic from within a specific network Ensure that only a certain range of IP addresses from specific networks can access your app.
+
+### "Overview of app security \_|\_ App Engine flexible environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/java/application-security](https://docs.cloud.google.com/appengine/docs/flexible/java/application-security)
+- Source ID: `site-docs-reference-2`
+- Final score: 127
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Ingress controls You can use Ingress controls to restrict inbound traffic to your App Engine app.
+- Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.
+- App Engine firewall The App Engine firewall enables you to control access to your App Engine app through a set of rules that can either allow or deny requests from the specified ranges of IP addresses.
+- Create a firewall to: Allow only traffic from within a specific network Ensure that only a certain range of IP addresses from specific networks can access your app.
 

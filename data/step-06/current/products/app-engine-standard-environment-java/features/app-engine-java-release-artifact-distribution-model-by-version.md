@@ -1,30 +1,31 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T21:44:03.345Z"
+generated_at: "2026-04-12T20:53:45.870Z"
 product_name: "App Engine standard environment Java"
 product_slug: "app-engine-standard-environment-java"
 feature_name: "App Engine Java release artifact distribution model by version"
 feature_slug: "app-engine-java-release-artifact-distribution-model-by-version"
 latest_feature_date: "2022-03-15"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java/runtime"
 keywords:
-  - "open source release mechanism"
-  - "artifact distribution model"
-  - "legacy 1.9.9xx releases"
-  - "release artifact distribution"
-  - "internal build system"
-  - "Maven release model"
-  - "1.9.9xx versions"
-  - "2.x.x versions"
+  - "app"
+  - "engine"
+  - "java"
+  - "release"
+  - "artifact"
+  - "distribution"
+  - "model"
+  - "version"
 ---
 
 # App Engine Java release artifact distribution model by version
 
 Product: App Engine standard environment Java
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +35,54 @@ App Engine Java released artifacts now use the open source release mechanism for
 
 App Engine Java released artifacts now use the open source release mechanism for 2.x.x versions, while 1.9.9xx and earlier use the internal build system.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime)
+- [https://docs.cloud.google.com/appengine/docs/standard/java/runtime](https://docs.cloud.google.com/appengine/docs/standard/java/runtime)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Java Runtime Environment | App Engine standard environment | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime)
+- Source ID: `feature-recovery-http`
+- Final score: 93
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Java Runtime Environment | App Engine standard environment | Google Cloud Documentation Ir para o conteúdo principal Áreas de tecnologia close IA e aprendizagem automática Desenvolvimento de aplicações Alojamento de aplicações Computação Estatísticas e pipelines de dados Bases de dados Sistema distribuído, híbrido e de várias nuvens IA generativa Soluções para setores Trabalho em rede Observabilidade e monitorização Segurança Storage Ferramentas de produtos cruzados close Gestão de acesso e recursos Gestão de custos e utilização Infraestrutura como código Migração SDK, linguagens, frameworks e ferramentas / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Fazer login Application hosting App Engine Standard environment Começar gratuitamente Vista geral Guias Referência Recursos Ambientes do App Engine Ambiente padrão do App Engine Saiba mais sobre o ambiente padrão Ambiente flexível do App Engine Saiba mais sobre o ambiente flexível Migration Center do App Engine Saiba como migrar para as versões suportadas mais recentes Áreas de tecnologia Mais Vista geral Guias Referência Recursos Ambientes do App Engine Mais Ferramentas de produtos cruzados Mais Console Ambiente padrão do App Engine Página inicial do App Engine Vista geral do ambiente padrão Escolha um idioma e um ambiente Descubra os tempos de execução do ambiente padrão Tempo de execução do Go Vista geral Crie uma app Atualize uma app existente Migre dos runtimes de primeira geração para os de segunda geração Tempo de execução do Java Vista geral Crie uma app Vista geral Crie o seu projeto Escreva o seu serviço Web Implemente o seu serviço Web Atualize uma app existente Reembale um ficheiro WAR Migre dos runtimes de primeira geração para os de segunda geração Tempo de execução do Node.js Vista geral Crie uma app Vista geral Crie o seu projeto Escreva o seu serviço Web Implemente o seu serviço Web Atualize o seu serviço Web Ver registos Tempo de execução de PHP Vista geral Crie uma app Atualize uma app existente Migre dos runtimes de primeira geração para os de segunda geração Tempo de execução do Python Vista geral Crie uma app Vista geral Crie o seu projeto Escreva o seu serviço Web Implemente o seu serviço Web Trate os dados Adicione o Firebase Autentique utilizadores Personalize os dados Limpar Atualize uma app existente Vista geral Migre dos runtimes de primeira geração para os de segunda geração Migre para o tempo de execução do Python 3 Migre serviços incluídos num pacote antigos Prepare ficheiros de configuração para o ambiente Python 3 Teste e implemente a sua app Tempo de execução do Ruby Vista geral Crie uma app Começar Configure o seu ambiente Configure o ambiente de programação Configure ferramentas opcionais para Java Apache Maven Usar o Maven e o plug-in do App Engine Objetivos e parâmetros do plug-in Maven Gradle Use o plug-in do App Engine Tarefas e propriedades Configure o seu projeto do Google Cloud Conceder acesso Configure o controlo de acesso Veja as funções que concedem acesso ao App Engine Configure contas de serviço Agente de serviço gerido pela Google Crie a sua app Estruture os serviços Web Aloje um Website estático Comunique entre os seus serviços Processe pedidos Pedidos de trajetos Defina ficheiros de configuração Go Defina as definições de tempo de execução Especifique dependências Java Defina as definições de tempo de execução Especifique dependências Node.js Defina as definições de tempo de execução Especifique dependências Execute um passo de compilação personalizado PHP Defina as definições de tempo de execução Especifique dependências Python Defina as definições de tempo de execução Especifique dependências Ruby Defina as definições de tempo de execução Especifique dependências Teste e implemente a sua app Teste no servidor de programação local Usar o servidor de desenvolvimento local Opções de comando Usar o servidor de desenvolvimento local após o fim do suporte Configure a sua app Configure a rede Mapeie domínios personalizados Proteja domínios personalizados com SSL Proteja a sua app com o TLS mínimo Nuvem virtual privada (VPC) Ligue-se a uma rede de VPC Estabeleça ligação a uma rede de VPC partilhada VPC partilhada com conetores em projetos de serviço VPC partilhada com conetores no projeto anfitrião Configure um endereço IP de saída estático Armazene dados e ficheiros Vista geral Use o Cloud Firestore no modo Datastore Use o Cloud SQL Use o Cloud Storage (alojamento de ficheiros na nuvem) Armazene e publique ficheiros estáticos Ler e escrever ficheiros temporários Coloque dados em cache com o Memorystore Crie acionadores Escreva e responda a mensagens Pub/Sub Envie mensagens com serviços de terceiros Proteja a sua app Vista geral Especifique as definições de entrada e saída Compreenda as firewalls Crie regras de firewall Autentique utilizadores Operar e manter Faça a gestão de instâncias Recursos de etiquetas Faça a gestão do tráfego da sua app Migrar tráfego Divida o tráfego Agende tarefas cron Executar tarefas assíncronas Configure pedidos de preparação Automatize tarefas Comece a usar a API Admin Monitorize, registe e depure Aceda aos registos de auditoria Escreva e veja registos Monitorize e receba alertas de latência Compreenda o desempenho com o Cloud Profiler Aceda a serviços incluídos num pacote antigos Vista geral Go 1.12 ou superior Java 11 ou superior PHP 7/8 Python 3 Vista geral Vista geral do Blobstore Vista geral diferida Vista geral do Mail APIs disponíveis Vista geral Identidade da app Blobstore Capacidades Datastore Vista geral Conceitos da biblioteca cliente Vista geral da API Operação assíncrona Chamadas de resposta Criar, obter, atualizar e eliminar entidades Criar e usar chaves de entidades Entidade, propriedades e chaves Referência da propriedade da entidade Índices Metadados Consultas de projeção Consultas Cursores de consulta Consistência dos dados de consulta Restrições das consultas A obter resultados da consulta Estatísticas Estruturar dados para uma consistência forte Transações Gerir o Datastore a partir da consola Vista geral Ver estatísticas do Armazenamento de dados Configurar índices do armazenamento de dados Imagens Correio Vista geral da API Mail Diretrizes de correio em massa A enviar correio Receber correio Receber notificação de rejeição Email com cabeçalhos ou anexos cache de memória Vista geral da cache de memória Usar a cache de memória Exemplos de cache de memória Registos de auditoria da cache de memória Módulos API Namespaces Vista geral da API Namespaces Multitenancy com espaços de nomes Biblioteca cliente NDB para o Cloud Datastore Vista geral Administração Operação assíncrona A colocar em cache Criar, obter, atualizar e eliminar entidades Criar modelos de entidades Criar e usar chaves de entidades Configurar índices do armazenamento de dados Consultas de projeção Consultas Transações Escrever subclasses de propriedades Referência da biblioteca cliente NDB Referência da propriedade da entidade Contexto Exceções Funções Futuro Chave Metadados Modelo PolyModel Consulta Pesquisar Documentos e índices Strings de consulta Opções de consulta e ordenação Processamento de resultados da pesquisa Pesquisa com filtros Práticas recomendadas Usar o servidor de desenvolvimento local Referência para Python Cursor Documento Classes de atributos FacetOptions FacetRange FacetRefinement FacetResult FacetResultValue Classes de campo FieldExpression GeoPoint GetResponse Índice MatchScorer Consulta QueryOptions RescoringMatchScorer ScoredDocument SearchResults SortExpression SortOptions Funções Exceções Filas de tarefas Vista geral da fila de tarefas Usar filas de envio Usar filas de envio Criar filas de envio Criar tarefas push Criar controladores de tarefas Eliminar tarefas e filas Repetir tarefas de envio com falha Testar filas de envio no servidor de desenvolvimento Usar filas de obtenção Usar filas de obtenção Criar filas de obtenção Criar tarefas de obtenção Leasing Pull Tasks Obtenção de URL Pedidos de saída Emitir pedidos HTTP(S) Utilizadores Vista geral Objetos de utilizador URLs de início de sessão Utilizadores administradores Centro de migração Recursos de migração Resolver problemas Introdução Implementação A servir… Latência elevada Conetividade Recursos da comunidade IA e aprendizagem automática Desenvolvimento de aplicações Alojamento de aplicações Computação Estatísticas e pipelines de dados Bases de dados Sistema distribuído, híbrido e de várias nuvens IA generativa Soluções para setores Trabalho em rede Observabilidade e monitorização Segurança Storage Gestão de acesso e recursos Gestão de custos e utilização Infraestrutura como código Migração SDK, linguagens, frameworks e ferramentas Ambiente padrão do App Engine Ambiente flexível do App Engine Migration Center do App Engine Home Documentation Application hosting App Engine Standard environment Guias Envie comentários Java Runtime Environment Mantenha tudo organizado com as coleções Salve e categorize o conteúdo com base nas suas preferências.
+- Por exemplo: /* * Copyright 2019 Google LLC * * Licensed under the Apache License, Version 2.0 (the "License"); * you may not use this file except in compliance with the License. * You may obtain a copy of the License at * * http://www.apache.org/licenses/LICENSE-2.0 * * Unless required by applicable law or agreed to in writing, software * distributed under the License is distributed on an "AS IS" BASIS, * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. * See the License for the specific language governing permissions and * limitations under the License. */ package com.example.appengine ; import com.sun.net.httpserver.HttpServer ; import java.io.IOException ; import java.io.OutputStream ; import java.net.InetSocketAddress ; public class Main { public static void main ( String [] args ) throws IOException { // Create an instance of HttpServer bound to port defined by the // PORT environment variable when present, otherwise on 8080. int port = Integer . parseInt ( System . getenv (). getOrDefault ( "PORT" , "8080" )); HttpServer server = HttpServer . create ( new InetSocketAddress ( port ), 0 ); // Set root URI path. server . createContext ( "/" , ( var t ) - > { byte [] response = "Hello World!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); // Create a second URI path. server . createContext ( "/foo" , ( var t ) - > { byte [] response = "Foo!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); server . start (); } } Compatibilidade com versões anteriores do Java Para ver as diferenças entre o Java 8 e a versão Java mais recente suportada, consulte o artigo Migre do Java 8 para o tempo de execução Java mais recente .
+- Antes de começar Transfira a versão mais recente da CLI do Google Cloud ou atualize a CLI gcloud para a versão atual: gcloud components update Para implementar através do Maven, tem de adicionar o App Engine Maven Plugin ao ficheiro pom.xml : <plugin> <groupId>com.google.cloud.tools</groupId> <artifactId>appengine-maven-plugin</artifactId> <version>2.8.1</version> </plugin> Outras opções de implementação incluem a utilização do comando gcloud app deploy ou o plugin do App Engine para o Gradle .
+- O ambiente Open JDK do tempo de execução O App Engine executa apps Java num contentor protegido pelo gVisor numa distribuição Ubuntu Linux atualizada e no openjdk-17-jdk suportado para o Java 17 ou no openjdk-21-jdk para o tempo de execução do Java 21.
+
+### "Java runtime environment \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime)
+- Source ID: `site-docs-reference`
+- Final score: 84
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- App Engine Java releases All released artifacts that start with version 2.x.x use the open source release mechanism.
+- See the License for the specific language governing permissions and limitations under the License. / package com.example.appengine ; import com.sun.net.httpserver.HttpServer ; import java.io.IOException ; import java.io.OutputStream ; import java.net.InetSocketAddress ; public class Main { public static void main ( String [] args ) throws IOException { // Create an instance of HttpServer bound to port defined by the // PORT environment variable when present, otherwise on 8080. int port = Integer . parseInt ( System . getenv (). getOrDefault ( "PORT" , "8080" )); HttpServer server = HttpServer . create ( new InetSocketAddress ( port ), 0 ); // Set root URI path. server . createContext ( "/" , ( var t ) - > { byte [] response = "Hello World!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); // Create a second URI path. server . createContext ( "/foo" , ( var t ) - > { byte [] response = "Foo!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); server . start (); } } Compatibility with previous Java versions For differences between Java 8 and the latest supported Java version, see Migrate from Java 8 to the latest Java runtime .
+- Before you begin Download the latest version of the Google Cloud CLI or update your gcloud CLI to the current version: gcloud components update To deploy using Maven, you will need to add the App Engine Maven Plugin to your pom.xml file: <plugin> <groupId>com.google.cloud.tools</groupId> <artifactId>appengine-maven-plugin</artifactId> <version>2.8.1</version> </plugin> Other options for deploying include using the gcloud app deploy command or the App Engine Gradle plugin .
+- The runtime's Open JDK environment App Engine runs Java apps in a container secured by gVisor on an up-to-date Ubuntu Linux distribution and its supported openjdk-17-jdk for Java 17 or openjdk-21-jdk for Java 21 runtime.
+
+### "Java runtime environment \_|\_ App Engine standard environment \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java/runtime](https://docs.cloud.google.com/appengine/docs/standard/java/runtime)
+- Source ID: `site-docs-reference`
+- Final score: 84
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- App Engine Java releases All released artifacts that start with version 2.x.x use the open source release mechanism.
+- See the License for the specific language governing permissions and limitations under the License. / package com.example.appengine ; import com.sun.net.httpserver.HttpServer ; import java.io.IOException ; import java.io.OutputStream ; import java.net.InetSocketAddress ; public class Main { public static void main ( String [] args ) throws IOException { // Create an instance of HttpServer bound to port defined by the // PORT environment variable when present, otherwise on 8080. int port = Integer . parseInt ( System . getenv (). getOrDefault ( "PORT" , "8080" )); HttpServer server = HttpServer . create ( new InetSocketAddress ( port ), 0 ); // Set root URI path. server . createContext ( "/" , ( var t ) - > { byte [] response = "Hello World!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); // Create a second URI path. server . createContext ( "/foo" , ( var t ) - > { byte [] response = "Foo!" . getBytes (); t . sendResponseHeaders ( 200 , response . length ); try ( OutputStream os = t . getResponseBody ()) { os . write ( response ); } }); server . start (); } } Compatibility with previous Java versions For differences between Java 8 and the latest supported Java version, see Migrate from Java 8 to the latest Java runtime .
+- Before you begin Download the latest version of the Google Cloud CLI or update your gcloud CLI to the current version: gcloud components update To deploy using Maven, you will need to add the App Engine Maven Plugin to your pom.xml file: <plugin> <groupId>com.google.cloud.tools</groupId> <artifactId>appengine-maven-plugin</artifactId> <version>2.8.1</version> </plugin> Other options for deploying include using the gcloud app deploy command or the App Engine Gradle plugin .
+- The runtime's Open JDK environment App Engine runs Java apps in a container secured by gVisor on an up-to-date Ubuntu Linux distribution and its supported openjdk-17-jdk for Java 17 or openjdk-21-jdk for Java 21 runtime.
 

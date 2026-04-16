@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:22:34.598Z"
+generated_at: "2026-04-12T12:12:49.607Z"
 product_name: "Cloud Translation"
 product_slug: "cloud-translation"
 feature_name: "Glossary entry management"
 feature_slug: "glossary-entry-management"
 latest_feature_date: "2022-08-17"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/translate/docs/advanced/glossary"
   - "https://docs.cloud.google.com/translate/docs/advanced/batch-translation"
   - "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+  - "https://docs.cloud.google.com/translate/docs/reference/rest"
 keywords:
   - "glossary"
   - "entry"
@@ -26,7 +27,7 @@ keywords:
 # Glossary entry management
 
 Product: Cloud Translation
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud Translation - Advanced (v3) glossaries support managing individual glossar
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/translate/docs/advanced/glossary](https://docs.cloud.google.com/translate/docs/advanced/glossary)
 - [https://docs.cloud.google.com/translate/docs/advanced/batch-translation](https://docs.cloud.google.com/translate/docs/advanced/batch-translation)
 - [https://docs.cloud.google.com/translate/docs/intro-to-v3](https://docs.cloud.google.com/translate/docs/intro-to-v3)
+- [https://docs.cloud.google.com/translate/docs/reference/rest](https://docs.cloud.google.com/translate/docs/reference/rest)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/translate/docs/advanced/glossary](https://docs.cloud.google.com/translate/docs/advanced/glossary)
 - Source ID: `site-iam-reference`
-- Final score: 184
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 228
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT NUMBER OR ID " } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION /glossaries/ GLOSSARY ID ?update mask=input config&update mask=display name" Select-Object -Expand Content You should receive a JSON response similar to the following: { "name": "projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID ", "metadata": { "@type": "type.googleapis.com/google.cloud.translation.v3.UpdateGlossaryMetadata", "glossary": { "name": "projects/ PROJECT NUMBER /locations/ LOCATION /glossaries/ GLOSSARY ID ", "languageCodesSet": { "languageCodes": [" LANGUAGE CODE ", ...] }, "inputConfig": { "gcsSource": { "inputUri": "gs:// GLOSSARY FILE PATH " } }, "entryCount": NUMBER OF ENTRIES , "submitTime": "2022-04-22T23:16:30.628806944Z", "endTime": "2022-04-22T23:41:15.115797Z", "displayName": " GLOSSARY ID " }, "state": "RUNNING", "submitTime": "2022-04-22T23:50:24.337964527Z" } } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/translate/docs/advanced/batch-translation](https://docs.cloud.google.com/translate/docs/advanced/batch-translation)
 - Source ID: `site-iam-reference`
-- Final score: 144
+- Final score: 165
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/translate/docs/intro-to-v3](https://docs.cloud.google.com/translate/docs/intro-to-v3)
 - Source ID: `site-iam-reference`
-- Final score: 128
+- Final score: 164
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +89,17 @@ Evidence snippets:
 - Feature Basic Advanced Translate with the NMT model Translate with the Translation LLM Translate with Adaptive Translation models Translate with custom models Translate multiple strings in a single request Batch translations with Cloud Storage Translate documents Glossary support (control terminology) Train custom models Language Detection Integrated REST API Integrated gRPC API Service Account API Key Audit logging Supports HTML Supports 100+ Languages Romanization support Transliteration support Adaptive Translation Multi-regional endpoint support VPC Service Controls support Refer to Cloud Translation - Advanced API features for more details on Cloud Translation - Advanced API.
 - For example, you can use a glossary to specify a specific translation for terms such as "Google Summer of Code," "Gmail confidential mode," or "placement performance report." You can also use glossaries to prevent certain words, such as borrowed words or product names, from being translated.
 - It also offers features such as glossaries, batch translation, document translation, and more: Glossaries : A glossary is a custom dictionary that you create to translate domain-specific terms correctly and consistently.
+
+### Cloud Translation API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/translate/docs/reference/rest](https://docs.cloud.google.com/translate/docs/reference/rest)
+- Source ID: `site-api-reference`
+- Final score: 148
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- REST Resource: v3.projects.locations.glossaries.glossaryEntries Methods create POST /v3/{parent=projects/ /locations/ /glossaries/ }/glossaryEntries Creates a glossary entry. delete DELETE /v3/{name=projects/ /locations/ /glossaries/ /glossaryEntries/ } Deletes a single entry from the glossary get GET /v3/{name=projects/ /locations/ /glossaries/ /glossaryEntries/ } Gets a single glossary entry by the given id. list GET /v3/{parent=projects/ /locations/ /glossaries/ }/glossaryEntries List the entries for the glossary. patch PATCH /v3/{glossaryEntry.name=projects/ /locations/ /glossaries/ /glossaryEntries/ } Updates a glossary entry.
+- REST Resource: v3beta1.projects REST Resource: v3beta1.projects.locations REST Resource: v3beta1.projects.locations.glossaries REST Resource: v3beta1.projects.locations.operations REST Resource: v3.projects REST Resource: v3.projects.locations REST Resource: v3.projects.locations.adaptiveMtDatasets REST Resource: v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles REST Resource: v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles.adaptiveMtSentences REST Resource: v3.projects.locations.adaptiveMtDatasets.adaptiveMtSentences REST Resource: v3.projects.locations.datasets REST Resource: v3.projects.locations.datasets.examples REST Resource: v3.projects.locations.glossaries REST Resource: v3.projects.locations.glossaries.glossaryEntries REST Resource: v3.projects.locations.models REST Resource: v3.projects.locations.operations Service: translate.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .
+- REST Resource: v3.projects.locations.glossaries Methods create POST /v3/{parent=projects/ /locations/ }/glossaries Creates a glossary and returns the long-running operation. delete DELETE /v3/{name=projects/ /locations/ /glossaries/ } Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. get GET /v3/{name=projects/ /locations/ /glossaries/ } Gets a glossary. list GET /v3/{parent=projects/ /locations/ }/glossaries Lists glossaries in a project. patch PATCH /v3/{glossary.name=projects/ /locations/ /glossaries/ } Updates a glossary.
+- REST Resource: v3beta1.projects.locations.glossaries Methods create POST /v3beta1/{parent=projects/ /locations/ }/glossaries Creates a glossary and returns the long-running operation. delete DELETE /v3beta1/{name=projects/ /locations/ /glossaries/ } Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. get GET /v3beta1/{name=projects/ /locations/ /glossaries/ } Gets a glossary. list GET /v3beta1/{parent=projects/ /locations/ }/glossaries Lists glossaries in a project.
 

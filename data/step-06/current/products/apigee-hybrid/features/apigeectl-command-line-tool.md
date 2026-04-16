@@ -1,32 +1,30 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T19:33:10.247Z"
+generated_at: "2026-04-14T04:54:52.841Z"
 product_name: "Apigee hybrid"
 product_slug: "apigee-hybrid"
 feature_name: "apigeectl command-line tool"
 feature_slug: "apigeectl-command-line-tool"
 latest_feature_date: "2024-04-17"
 deprecation_date: "2025-04-17"
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
   - "https://docs.cloud.google.com/apigee/docs/deprecations/apigeectl"
-  - "https://docs.cloud.google.com/apigee/docs/deprecations"
-  - "https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics"
+  - "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
 keywords:
-  - "apigee command-line tool"
-  - "command-line tool"
-  - "deprecated on 2025-04-17"
-  - "apigeectl deprecation"
-  - "support ending v1.10"
-  - "support ending v1.11"
-  - "deprecation"
-  - "hybrid apigeectl"
+  - "command"
+  - "line"
+  - "deprecates"
+  - "ending"
+  - "tool"
+  - "apigeectl"
 ---
 
 # apigeectl command-line tool
 
 Product: Apigee hybrid
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,50 +36,53 @@ Deprecates the apigeectl command-line tool for Apigee Hybrid, with support endin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
+- [https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide](https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide)
 - [https://docs.cloud.google.com/apigee/docs/deprecations/apigeectl](https://docs.cloud.google.com/apigee/docs/deprecations/apigeectl)
-- [https://docs.cloud.google.com/apigee/docs/deprecations](https://docs.cloud.google.com/apigee/docs/deprecations)
-- [https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics](https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics)
+- [https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref](https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref)
 
 ## Supporting Pages
+
+### "New Apigee hybrid installation and administration Preview \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide](https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide)
+- Source ID: `site-docs-reference`
+- Final score: 124
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Resources will be created in the correct order and command will block until all are healthy. -- rename-directories Rename the environment and environment group to the names of the correct environment and environment group. --verbose Shows detailed output for debugging. --help Display usage information. --setup-all This will execute all the tasks that can be performed by this script Apigee Hybrid Setup Folder Structure The apigee-hybrid-setup folder has the following hierarchical structure by default: . ├── bases │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - controller - deployment . yaml │ │ │ └── kustomization . yaml │ │ └── apigee - ingressgateway - manager │ │ ├── apigee - ingressgateway - manager - deployment . yaml │ │ └── kustomization . yaml │ ├── datastore │ │ └── backup - and - restore │ │ ├── backup │ │ │ ├── cronjob . yaml │ │ │ └── kustomization . yaml │ │ ├── common │ │ │ ├── kustomization . yaml │ │ │ ├── rbac . yaml │ │ │ └── tls - certificate . yaml │ │ └── restore │ │ ├── job . yaml │ │ └── kustomization . yaml │ └── initialization │ ├── certificates │ │ ├── certificates - and - issuers . yaml │ │ └── kustomization . yaml │ ├── crds │ │ ├── customresourcedefinition - apigeedatastores . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeedeployments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeenvironments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeorganizations . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeredis . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeerouteconfigs . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeroutes . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeetelemetries . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - cassandradatareplications . apigee . cloud . google . com . yaml │ │ └── kustomization . yaml │ ├── openshift │ │ ├── kustomization . yaml │ │ └── scc . yaml │ ├── rbac │ │ ├── apigee - controller │ │ │ ├── kustomization . yaml │ │ │ └── rbac . yaml │ │ └── apigee - embedded - ingress - controller │ │ ├── cluster - role - bindings . yaml │ │ ├── cluster - roles . yaml │ │ ├── kustomization . yaml │ │ └── service - account . yaml │ └── webhooks │ ├── kustomization . yaml │ ├── mutatingwebhookconfiguration . yaml │ └── validatingwebhookconfiguration . yaml ├── CONTRIBUTING . md ├── docs │ └── api references │ ├── v1alpha1 . md │ └── v1alpha2 . md ├── kokoro │ ├── build . sh │ ├── common . cfg │ ├── continuous . cfg │ ├── presubmit . cfg │ └── release . cfg ├── LICENSE ├── overlays │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - hybrid - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ ├── apigee - ingressgateway - manager │ │ │ ├── apigee - ingressgateway - manager - deployment - patch . yaml │ │ │ ├── apigee - istio - mesh - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ ├── initialization │ │ ├── certificates │ │ │ ├── apigee - ingressgateway - manager - certificate - patch . yaml │ │ │ ├── apigee - serving - cert - patch . yaml │ │ │ ├── components │ │ │ │ └── disable - apigee - root - certificate - generation │ │ │ │ └── kustomization . yaml │ │ │ └── kustomization . yaml │ │ ├── crds │ │ │ └── kustomization . yaml │ │ ├── ingress │ │ │ ├── envoyfilter - 1.11 . yaml │ │ │ └── kustomization . yaml │ │ ├── namespace . yaml │ │ ├── openshift │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── rbac │ │ │ ├── apigee - controller │ │ │ │ └── kustomization . yaml │ │ │ ├── apigee - ingressgateway - manager │ │ │ │ └── kustomization . yaml │ │ │ └── kustomization . yaml │ │ └── webhooks │ │ ├── kustomization . yaml │ │ ├── mutatingwebhookconfiguration . yaml │ │ └── validatingwebhookconfiguration . yaml │ └── instances │ └── instance1 │ ├── datastore │ │ ├── apigee - datastore . yaml │ │ ├── components │ │ │ ├── gcs - backup │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── cron - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── gcs - restore │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── job - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── multi - region │ │ │ │ ├── cassandra - data - replication . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── non - gcs - backup │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── cron - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── non - gcs - restore │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── job - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── openshift - scc │ │ │ │ ├── kustomization . yaml │ │ │ │ └── scc . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── environments │ │ ├── kustomization . yaml │ │ └── test │ │ ├── apigee - environment . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── kustomization . yaml │ ├── organization │ │ ├── apigee - organization . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── redis │ │ ├── apigee - redis . yaml │ │ ├── components │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── route - config │ │ ├── kustomization . yaml │ │ └── test - envgroup │ │ ├── apigee - route - config . yaml │ │ ├── components │ │ │ ├── http - and - non - sni - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ ├── http - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ └── non - sni - client │ │ │ ├── apigee - route . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ └── telemetry │ ├── apigee - telemetry . yaml │ ├── components │ │ ├── http - proxy │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── imagepullsecret │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── logger │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── metrics │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── nodeselector │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── openshift - scc │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── workload - identity - logger │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ └── workload - identity - metrics │ │ ├── kustomization . yaml │ │ ├── patch . yaml │ │ └── service - accounts . yaml │ └── kustomization . yaml ├── README . md ├── templates │ ├── certificate - org - envgroup . yaml │ ├── secret - apigee - cassandra - backup - and - restore - gcp - sa - key . yaml │ ├── secret - apigee - cassandra - backup - and - restore - key - file . yaml │ ├── secret - gcp - sa - key . yaml │ └── secret - ingress - tls - cert - key . yaml └── tools ├── apigee - hybrid - setup . sh ├── apigee - pull - push . sh ├── common . sh ├── create - service - account . sh └── dump kubernetes . sh A version of the above files can be found in the preview-1 tag of the github repository at: https://github.com/apigee/apigee-hybrid-install/releases/tag/preview-1 .
+- The command checks the nodetool status for the two regions. kubectl exec apigee - cassandra - default - 0 - n apigee -- nodetool - u JMX user - pw JMX password status Datacenter: us-central1 ======================= Status=Up/Down / State=Normal/Leaving/Joining/Moving -- Address Load Tokens Owns (effective) Host ID Rack UN 10.12.1.45 112.09 KiB 256 100.0% 3c98c816-3f4d-48f0-9717-03d0c998637f ra-1 UN 10.12.4.36 95.27 KiB 256 100.0% 0a36383d-1d9e-41e2-924c-7b62be12d6cc ra-1 UN 10.12.5.22 88.7 KiB 256 100.0% 3561f4fa-af3d-4ea4-93b2-79ac7e938201 ra-1 Datacenter: us-west1 ==================== Status=Up/Down / State=Normal/Leaving/Joining/Moving -- Address Load Tokens Owns (effective) Host ID Rack UN 10.0.4.33 78.69 KiB 256 100.0% a200217d-260b-45cd-b83c-182b27ff4c99 ra-1 UN 10.0.0.21 78.68 KiB 256 100.0% 9f3364b9-a7a1-409c-9356-b7d1d312e52b ra-1 UN 10.0.1.26 15.46 KiB 256 100.0% 1666df0f-702e-4c5b-8b6e-086d0f2e47fa ra-1 Troubleshooting Supportability, Diagnosis & Troubleshooting Guide https://cloud.google.com/apigee/docs/api-platform/troubleshoot/playbooks/troubleshooting-apigee-hybrid .
+- You could also use the create-service-account.sh script to create a new service account and download its keys: ./ tools / create - service - accounts =. sh -- env prod -- profile apigee ‑ cassandra Once the keys have been downloaded, you need to create a kubernetes secret with the name apigee-cassandra-backup-and-restore-gcp-sa-key which can be done using the command: kubectl create secret generic "apigee-cassandra-backup-and-restore-gcp-sa-key" \ --from-file="dbbackup key.json= ${ PATH TO SA KEY } " \ -n " ${ APIGEE NAMESPACE } " Where: ${PATH TO SA KEY} - Path to the file containing the service account keys. ${APIGEE NAMESPACE} - The kubernetes namespace where Apigee components have been installed.
+- Also, verify the data size using the nodetool status command: kubectl logs apigee-cassandra-default-0 -f -n apigee Refer the datastore/secrets.yaml for the JMX user and JMX password kubectl exec apigee - cassandra - default - 0 - n apigee -- nodetool - u JMX user - pw JMX password status Remove multiRegionSeedHost from the apigee datastore CR and run the below command to apply the change kubectl apply k apply -k ${ INSTALL DIR } /overlays/instances/ ${ INSTANCE DIR } /datastore Check the Cassandra cluster status The following command is useful to see if the cluster setup is successful in two data centers.
 
 ### apigeectl deprecation \_|\_ Apigee \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/apigee/docs/deprecations/apigeectl](https://docs.cloud.google.com/apigee/docs/deprecations/apigeectl)
 - Source ID: `site-docs-reference`
-- Final score: 56
+- Final score: 110
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
+- The command line tool used for installation and management of containerized Apigee runtime services, apigeectl , is deprecated as of April 17, 2024: apigeectl is not supported for use with Apigee hybrid v1.12.
+- Shutdown schedule The following table lists the shutdown schedule for apigeectl : Date Event April 17, 2024 apigeectl command line interface deprecated for Apigee hybrid v1.12.
+- Use the migration tool to migrate Apigee hybrid to Helm from apigeectl .
 - Home Documentation Application development Apigee Send feedback apigeectl deprecation Stay organized with collections Save and categorize content based on your preferences.
-- To prepare for the deprecation of apigeectl for all Apigee hybrid versions, take steps to migrate to Helm at your earliest convenience.
 
-### Feature deprecations \_|\_ Apigee \_|\_ Google Cloud Documentation
+### Configuration property reference \_|\_ Apigee \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/apigee/docs/deprecations](https://docs.cloud.google.com/apigee/docs/deprecations)
+- URL: [https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref](https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref)
 - Source ID: `site-docs-reference`
-- Final score: 52
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 102
+- Re-rank relevance: N/A
 
 Evidence snippets:
-- Feature Deprecated Shutdown date Details Gemini Code Assist @Apigee tool October 9, 2025 October 14, 2025 See Gemini Code Assist @Apigee tool deprecation apigeectl command line interface April 17, 2024 April 17, 2025 See apigeectl deprecation ProxyV2 and TargetV2 metrics April 17, 2024 April 17, 2025 See ProxyV2 and TargetV2 metrics deprecation Configurable API proxies (Preview) August 17, 2023 November 10, 2023 See Configurable API proxies (preview) deprecation Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Home Documentation Application development Apigee Resources Send feedback Feature deprecations Stay organized with collections Save and categorize content based on your preferences.
-- The following table lists current Apigee feature deprecations and the related shutdown schedules.
-- Google Cloud's terms of service define the deprecation policy that applies to Apigee.
-
-### "ProxyV2 and TargetV2 metrics deprecation \_|\_ Apigee \_|\_ Google Cloud\
-
-- URL: [https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics](https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics)
-- Source ID: `site-docs-reference`
-- Final score: 34
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Home Documentation Application development Apigee Send feedback ProxyV2 and TargetV2 metrics deprecation Stay organized with collections Save and categorize content based on your preferences.
+- Default access log format: '{"start time":"%START TIME%","remote address":"%DOWNSTREAM DIRECT REMOTE ADDRESS%","user agent":"%REQ(USER-AGENT)%","host":"%REQ(:AUTHORITY)%","request":"%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%","request time":"%DURATION%","status":"%RESPONSE CODE%","status details":"%RESPONSE CODE DETAILS%","bytes received":"%BYTES RECEIVED%","bytes sent":"%BYTES SENT%","upstream address":"%UPSTREAM HOST%","upstream response flags":"%RESPONSE FLAGS%","upstream response time":"%RESPONSE DURATION%","upstream service time":"%RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)%","upstream cluster":"%UPSTREAM CLUSTER%","x forwarded for":"%REQ(X-FORWARDED-FOR)%","request method":"%REQ(:METHOD)%","request path":"%REQ(X-ENVOY-ORIGINAL-PATH?:PATH)%","request protocol":"%PROTOCOL%","tls protocol":"%DOWNSTREAM TLS VERSION%","request id":"%REQ(X-REQUEST-ID)%","sni host":"%REQUESTED SERVER NAME%","apigee dynamic data":"%DYNAMIC METADATA(envoy.lua)%"}' The following is a copy of the default access log format with line breaks added for readability. '{"start time":"%START TIME%", "remote address":"%DOWNSTREAM DIRECT REMOTE ADDRESS%", "user agent":"%REQ(USER-AGENT)%", "host":"%REQ(:AUTHORITY)%", "request":"%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%", "request time":"%DURATION%", "status":"%RESPONSE CODE%", "status details":"%RESPONSE CODE DETAILS%", "bytes received":"%BYTES RECEIVED%", "bytes sent":"%BYTES SENT%", "upstream address":"%UPSTREAM HOST%", "upstream response flags":"%RESPONSE FLAGS%", "upstream response time":"%RESPONSE DURATION%", "upstream service time":"%RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)%", "upstream cluster":"%UPSTREAM CLUSTER%", "x forwarded for":"%REQ(X-FORWARDED-FOR)%", "request method":"%REQ(:METHOD)%", "request path":"%REQ(X-ENVOY-ORIGINAL-PATH?:PATH)%", "request protocol":"%PROTOCOL%", "tls protocol":"%DOWNSTREAM TLS VERSION%", "request id":"%REQ(X-REQUEST-ID)%", "sni host":"%REQUESTED SERVER NAME%", "apigee dynamic data":"%DYNAMIC METADATA(envoy.lua)%"}' istiod.forwardClientCertDetails Advanced Introduced in version: 1.9.2 Default value: SANITIZE SET Chart: apigee-ingress-manager Determines how the Envoy proxy (for the Apigee ingress gateway) handles the x-forwarded-client-cert (XFCC) HTTP header.
+- GSA email addresses typically have the format of: GSA NAME @ PROJECT ID .iam.gserviceaccount.com For example: apigee-guardrails@my-hybrid-project.iam.gserviceaccount.com Tip: You can find the email address of your service accounts with the following command: gcloud iam service-accounts list --project ${PROJECT ID} --filter "apigee" See Enabling Workload Identity on GKE or Enabling Workload Identity Federation on AKS and EKS . guardrails.serviceAccountPath Basic Introduced in version: 1.16.0 Default value: None Chart: apigee-operator Unless using Workload Identity, one of either serviceAccountPath or serviceAccountRef is required.
+- GSA email addresses typically have the format of: GSA NAME @ PROJECT ID .iam.gserviceaccount.com For example: apigee-metrics@my-hybrid-project.iam.gserviceaccount.com Tip: You can find the email address of your service accounts with the following command: gcloud iam service-accounts list --project ${PROJECT ID} --filter "apigee" See Enabling Workload Identity on GKE or Enabling Workload Identity Federation on AKS and EKS . metrics.nodeSelector.key Basic Introduced in version: 1.0.0 Default value: None Chart: apigee-telemetry Required Node selector label key used to target dedicated Kubernetes nodes for metrics runtime services.
+- GSA email addresses typically have the format of: GSA NAME @ PROJECT ID .iam.gserviceaccount.com For example: apigee-mint-task-scheduler@my-hybrid-project.iam.gserviceaccount.com Tip: You can find the email address of your service accounts with the following command: gcloud iam service-accounts list --project ${PROJECT ID} --filter "apigee" See Enabling Workload Identity on GKE or Enabling Workload Identity Federation on AKS and EKS . mintTaskScheduler.image.pullPolicy Advanced Introduced in version: 1.7.0 Default value: IfNotPresent Chart: apigee-org Determines when kubelet pulls the pod's Docker image.
 

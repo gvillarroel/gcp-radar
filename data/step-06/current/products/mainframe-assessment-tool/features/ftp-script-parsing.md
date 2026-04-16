@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.393Z"
+generated_at: "2026-04-15T12:06:50.443Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "FTP script parsing"
@@ -9,18 +9,18 @@ latest_feature_date: "2026-04-01"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
   - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
 keywords:
   - "ftp"
   - "script"
   - "parsing"
   - "detects"
-  - "and"
   - "parses"
   - "scripts"
-  - "to"
+  - "improve"
+  - "jcl"
 ---
 
 # FTP script parsing
@@ -42,43 +42,50 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm)
 - [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
 
 ## Supporting Pages
 
-### View and understand assessment results | Mainframe Assessment Tool | Google Cloud Documentation
+### Set up and access Mainframe Assessment Tool \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance)
+- Source ID: `site-docs-reference`
+- Final score: 61
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To download the deployment scripts, run the following command: gcloud storage cp "gs://mainframe-ai-release/mat/ VERSION /kustomize deployment.zip" DESTINATION DIRECTORY Replace the following: VERSION : the version of Mainframe Assessment Tool that you want to install, for example, mainframe-assessment-2-8-0 .
+- Grant read, write, and execute permissions on the destination directory: chmod -R u+rwx DESTINATION DIRECTORY Extract the downloaded scripts: cd DESTINATION DIRECTORY && unzip kustomize deployment.zip Replace DESTINATION DIRECTORY with the directory where you downloaded the deployment scripts.
+- In your environment, create a directory for the deployment scripts: mkdir DESTINATION DIRECTORY Replace DESTINATION DIRECTORY with a name for the directory.
+- DESTINATION DIRECTORY : the destination directory on your machine where the script is downloaded.
+
+### Set up and access Mainframe Assessment Tool \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm](https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm)
+- Source ID: `site-docs-reference`
+- Final score: 61
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- To download the deployment scripts, run the following command: gcloud storage cp "gs://mainframe-ai-release/mat/ VERSION /kustomize deployment.zip" DESTINATION DIRECTORY Replace the following: VERSION : the version of Mainframe Assessment Tool that you want to install, for example, mainframe-assessment-2-8-0 .
+- Grant read, write, and execute permissions on the destination directory: chmod -R u+rwx DESTINATION DIRECTORY Extract the downloaded scripts: cd DESTINATION DIRECTORY && unzip kustomize deployment.zip Replace DESTINATION DIRECTORY with the directory where you downloaded the deployment scripts.
+- In your environment, create a directory for the deployment scripts: mkdir DESTINATION DIRECTORY Replace DESTINATION DIRECTORY with a name for the directory.
+- DESTINATION DIRECTORY : the destination directory on your machine where the script is downloaded.
+
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
 - URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
-- Source ID: `site-docs-root`
-- Final score: 83
+- Source ID: `site-docs-reference`
+- Final score: 52
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- View and understand assessment results Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results The Assets page provides a summary, detailed logic, and code suggestions for a program or job in your mainframe application.
-- You can also view the status, type, language, and execution mode (batch or online) for each asset.
-
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 73
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
-
-### Mainframe Assessment Tool overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
-- Source ID: `site-docs-root`
-- Final score: 58
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Mainframe Assessment Tool overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview Mainframe Assessment Tool helps assess your existing mainframe codebase and plan your migration to Google Cloud.
-- Mainframe Assessment Tool automates assessment, saving you time and resources.
+- The following table lists different report types and their description: Report type Description Details Inventory Provides details about the number of files, code lines, and program types, including scheduler configuration files (BMC Control-M).
+- For COBOL programs, the Output fields page provides a summary of specific data fields that a program generates and their descriptions.
+- To get an AI-generated description of your application's business domains, follow these steps: Click Domains .
+- These descriptions include the purpose, logic, processing data, data flow, and data dependencies.
 

@@ -1,16 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T00:26:36.722Z"
+generated_at: "2026-04-12T12:12:50.281Z"
 product_name: "Cloud Vision"
 product_slug: "cloud-vision"
 feature_name: "Web entities and similar pages"
 feature_slug: "web-entities-and-similar-pages"
 latest_feature_date: "2017-05-18"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse"
   - "https://docs.cloud.google.com/vision/docs/handwriting"
+  - "https://docs.cloud.google.com/vision/docs/features-list"
   - "https://docs.cloud.google.com/vision/docs/python-client-migration"
 keywords:
   - "web"
@@ -26,7 +27,7 @@ keywords:
 # Web entities and similar pages
 
 Product: Cloud Vision
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,12 +39,13 @@ Web entities and similar pages returns web entities, matching pages, and matchin
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse](https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse)
 - [https://docs.cloud.google.com/vision/docs/handwriting](https://docs.cloud.google.com/vision/docs/handwriting)
+- [https://docs.cloud.google.com/vision/docs/features-list](https://docs.cloud.google.com/vision/docs/features-list)
 - [https://docs.cloud.google.com/vision/docs/python-client-migration](https://docs.cloud.google.com/vision/docs/python-client-migration)
 
 ## Supporting Pages
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse](https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse)
 - Source ID: `site-api-reference`
-- Final score: 166
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 221
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - JSON representation { "webEntities" : [ { object ( WebEntity ) } ] , "fullMatchingImages" : [ { object ( WebImage ) } ] , "partialMatchingImages" : [ { object ( WebImage ) } ] , "pagesWithMatchingImages" : [ { object ( WebPage ) } ] , "visuallySimilarImages" : [ { object ( WebImage ) } ] , "bestGuessLabels" : [ { object ( WebLabel ) } ] } Fields webEntities[] object ( WebEntity ) Deduced entities from similar images on the Internet. fullMatchingImages[] object ( WebImage ) Fully matching images from the Internet.
@@ -66,8 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/vision/docs/handwriting](https://docs.cloud.google.com/vision/docs/handwriting)
 - Source ID: `site-docs-root`
-- Final score: 152
-- Re-rank relevance: N/A
+- Final score: 200
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json ` -Uri "https:// REGION ID -vision.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION ID /images:annotate" Select-Object -Expand Content If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format.
@@ -75,13 +78,27 @@ Evidence snippets:
 - Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred"; "x-goog-user-project" = " PROJECT ID " } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json -Uri "https://vision.googleapis.com/v1/images:annotate" Select-Object -Expand Content If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format.
 - Image () image . source . image uri = uri response = client . document text detection ( image = image ) for page in response . full text annotation . pages : for block in page . blocks : print ( f " \n Block confidence: { block . confidence } \n " ) for paragraph in block . paragraphs : print ( "Paragraph confidence: {} " . format ( paragraph . confidence )) for word in paragraph . words : word text = "" . join ([ symbol . text for symbol in word . symbols ]) print ( "Word text: {} (confidence: {} )" . format ( word text , word . confidence ) ) for symbol in word . symbols : print ( " \t Symbol: {} (confidence: {} )" . format ( symbol . text , symbol . confidence ) ) if response . error . message : raise Exception ( " {} \n For more info on error messages, check: " "https://cloud.google.com/apis/design/errors" . format ( response . error . message ) ) gcloud To perform handwriting detection, use the gcloud ml vision detect-document command as shown in the following example: gcloud ml vision detect-document gs://cloud-samples-data/vision/handwriting image.png Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Vision reference documentation for .NET.
 
+### Features list \_|\_ Cloud Vision API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/vision/docs/features-list](https://docs.cloud.google.com/vision/docs/features-list)
+- Source ID: `site-api-reference`
+- Final score: 195
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Returns the following information: Web entities : Inferred entities (labels/descriptions) from similar images on the Web.
+- Web entities and pages 7 Provides a series of related Web content to an image.
+- Pages with matching images : A list of Webpages (identified by page URL, page title, matching image URL) with an image that satisfies the conditions described above.
+- Returns likelihood ratings for emotion (joy, sorrow, anger, surprise) and general image properties (underexposed, blurred, headwear present).
+
 ### "Migrating to Python Client Library v0.25.1 \_|\_ Cloud Vision API \_|\_\
 
 - URL: [https://docs.cloud.google.com/vision/docs/python-client-migration](https://docs.cloud.google.com/vision/docs/python-client-migration)
 - Source ID: `site-api-reference`
-- Final score: 138
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 193
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Image ( content = content ) response = client . web detection ( image = image ) annotations = response . web detection if annotations . best guess labels : for label in annotations . best guess labels : print ( f " \n Best guess label: { label . label } " ) if annotations . pages with matching images : print ( " \n {} Pages with matching images found:" . format ( len ( annotations . pages with matching images ) ) ) for page in annotations . pages with matching images : print ( f " \n\t Page url : { page . url } " ) if page . full matching images : print ( " \t {} Full Matches found: " . format ( len ( page . full matching images )) ) for image in page . full matching images : print ( f " \t\t Image url : { image . url } " ) if page . partial matching images : print ( " \t {} Partial Matches found: " . format ( len ( page . partial matching images ) ) ) for image in page . partial matching images : print ( f " \t\t Image url : { image . url } " ) if annotations . web entities : print ( " \n {} Web entities found: " . format ( len ( annotations . web entities ))) for entity in annotations . web entities : print ( f " \n\t Score : { entity . score } " ) print ( f " \t Description: { entity . description } " ) if annotations . visually similar images : print ( " \n {} visually similar images found: \n " . format ( len ( annotations . visually similar images ) ) ) for image in annotations . visually similar images : print ( f " \t Image url : { image . url } " ) if response . error . message : raise Exception ( " {} \n For more info on error messages, check: " "https://cloud.google.com/apis/design/errors" . format ( response . error . message ) ) Making a crop hints request and processing the response Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) hints = image . detect crop hints ( aspect ratios = [ 1.77 ]) for n , hint in enumerate ( hints ): print ( ' \n Crop Hint: {} ' . format ( n )) vertices = ([ '( {} , {} )' . format ( bound . x coordinate , bound . y coordinate ) for bound in hint . bounds . vertices ]) print ( 'bounds: {} ' . format ( ',' . join ( vertices ))) Python Client Library v0.25.1: with open ( path , "rb" ) as image file : content = image file . read () image = vision .

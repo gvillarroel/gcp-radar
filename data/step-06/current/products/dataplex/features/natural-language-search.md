@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T06:18:42.589Z"
+generated_at: "2026-04-12T12:13:48.456Z"
 product_name: "Dataplex"
 product_slug: "dataplex"
 feature_name: "Natural language search"
 feature_slug: "natural-language-search"
 latest_feature_date: "2025-12-08"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/dataplex/docs/search-syntax"
   - "https://docs.cloud.google.com/dataplex/docs/search-assets"
-  - "https://docs.cloud.google.com/dataplex/docs/release-notes"
+  - "https://docs.cloud.google.com/dataplex/docs/authentication"
+  - "https://docs.cloud.google.com/dataplex/docs/data-insights"
 keywords:
   - "natural"
   - "language"
@@ -26,7 +27,7 @@ keywords:
 # Natural language search
 
 Product: Dataplex
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Dataplex Universal Catalog supports natural language queries for finding resourc
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax)
 - [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets)
-- [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
+- [https://docs.cloud.google.com/dataplex/docs/authentication](https://docs.cloud.google.com/dataplex/docs/authentication)
+- [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights)
 
 ## Supporting Pages
 
@@ -52,9 +54,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax)
 - Source ID: `site-docs-root`
-- Final score: 210
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 291
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - This document describes the syntax for both Knowledge Catalog (formerly Dataplex Universal Catalog) keyword search as well as natural language AI searches.
@@ -66,9 +68,9 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets)
 - Source ID: `site-docs-root`
-- Final score: 202
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 279
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - Think of it like a smart library catalog for all your data: you can search for data assets using either keyword search with rich filters or by asking questions in natural language, such as show me tables with revenue data .
@@ -76,17 +78,31 @@ Evidence snippets:
 - Knowledge Catalog uses AI-powered natural language search, allowing you to ask questions in plain language to find the data you need.
 - Natural language search leverages AI to support semantic search queries.
 
-### Knowledge Catalog release notes \_|\_ Google Cloud Documentation
+### "Authenticate to Dataplex Universal Catalog \_|\_ Knowledge Catalog \_|\_\
 
-- URL: [https://docs.cloud.google.com/dataplex/docs/release-notes](https://docs.cloud.google.com/dataplex/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 200
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- URL: [https://docs.cloud.google.com/dataplex/docs/authentication](https://docs.cloud.google.com/dataplex/docs/authentication)
+- Source ID: `site-api-reference`
+- Final score: 181
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- December 08, 2025 Feature Natural language search in Dataplex Universal Catalog is generally available ( GA ).
-- September 03, 2025 Feature Natural language search in Dataplex Universal Catalog is available in preview .
-- Natural language search extends keyword search to support natural language queries.
-- Natural language search extends keyword search to support natural language queries.
+- You can access the API in the following ways: Client libraries Google Cloud CLI REST Client libraries The Dataplex Universal Catalog client libraries provide high-level language support for authenticating to Dataplex Universal Catalog programmatically.
+- API access Dataplex Universal Catalog supports programmatic access.
+- Home Documentation Data analytics Knowledge Catalog Reference Send feedback Authenticate to Dataplex Universal Catalog Stay organized with collections Save and categorize content based on your preferences.
+- Google Cloud CLI When you use the gcloud CLI to access Dataplex Universal Catalog, you log in to the gcloud CLI with a user account, which provides the credentials used by the gcloud CLI commands.
+
+### Access data insights in Knowledge Catalog \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights)
+- Source ID: `site-docs-root`
+- Final score: 177
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Knowledge Catalog (formerly Dataplex Universal Catalog) data insights automatically generates descriptions, relationship graphs, and SQL queries from your table and dataset metadata.
+- About data insights Data insights automatically generates natural language queries and their SQL equivalents based on a table's metadata.
+- As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog.
+- SELECT Contract , InternetService , Gender , PaymentMethod , COUNT ( DISTINCT CustomerID ) AS total customers , SUM ( CASE WHEN Churn = TRUE THEN 1 ELSE 0 END ) AS churned customers , ( SUM ( CASE WHEN Churn = TRUE THEN 1 ELSE 0 END ) / COUNT ( DISTINCT CustomerID )) 100 AS churn rate FROM agentville datasets . telco churn WHERE MonthlyCharges > 100 GROUP BY Contract , InternetService , Gender , PaymentMethod ; View insights To view insights for a BigQuery table, use Knowledge Catalog Search.
 

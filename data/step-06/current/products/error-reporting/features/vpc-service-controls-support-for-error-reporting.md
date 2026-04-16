@@ -1,21 +1,20 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:18.321Z"
+generated_at: "2026-04-15T12:09:42.687Z"
 product_name: "Error Reporting"
 product_slug: "error-reporting"
 feature_name: "VPC Service Controls support for Error Reporting"
 feature_slug: "vpc-service-controls-support-for-error-reporting"
 latest_feature_date: "2022-12-01"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1"
-  - "https://googleapis.dev/python/clouderrorreporting/latest"
-  - "https://googleapis.dev/python/clouderroreporting/latest/usage.html"
+  - "https://docs.cloud.google.com/error-reporting/docs/setup"
+  - "https://docs.cloud.google.com/error-reporting/docs/formatting-error-messages"
+  - "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient"
 keywords:
   - "vpc"
   - "controls"
-  - "for"
   - "error"
   - "reporting"
   - "supports"
@@ -26,7 +25,7 @@ keywords:
 # VPC Service Controls support for Error Reporting
 
 Product: Error Reporting
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,44 +41,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1](https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1)
-- [https://googleapis.dev/python/clouderrorreporting/latest](https://googleapis.dev/python/clouderrorreporting/latest)
-- [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
+- [https://docs.cloud.google.com/error-reporting/docs/setup](https://docs.cloud.google.com/error-reporting/docs/setup)
+- [https://docs.cloud.google.com/error-reporting/docs/formatting-error-messages](https://docs.cloud.google.com/error-reporting/docs/formatting-error-messages)
+- [https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient)
 
 ## Supporting Pages
 
-### Error Reporting API v1beta1 - Package cloud.google.com/go/errorreporting/apiv1beta1 (v0.4.0) | Go client libraries | Google Cloud Documentation
+### Collect error data by using Error Reporting \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1](https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1)
-- Source ID: `site-api-reference`
-- Final score: 139
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/error-reporting/docs/setup](https://docs.cloud.google.com/error-reporting/docs/setup)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 40
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Error Reporting API v1beta1 - Package cloud.google.com/go/errorreporting/apiv1beta1 (v0.4.0) Go client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/errorreporting/latest/apiv1beta1 Package errorreporting is an auto-generated package for the Error Reporting API.
-- Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors.
-- For information that is relevant for all client libraries please reference https://pkg.go.dev/cloud.google.com/go#pkg-overview.
+- Virtual Private Cloud support Error Reporting is a Virtual Private Cloud (VPC) supported service.
+- Configure environments to automatically report error data For information about environment-specific configuration requirements, see the following guides: App Engine flexible environment App Engine standard environment Apps Script Cloud Run functions Cloud Run Compute Engine Google Kubernetes Engine Amazon EC2 Instrument apps by using client libraries For information about how to configure your application to send error reports, see the language-specific configuration guides: Go apps Java apps .NET apps Node.js apps Python apps PHP apps Ruby apps Write error data by using an API You can report error events to your Google Cloud project by executing the Error Reporting API method report or the Cloud Logging API method write .
+- These log entries are written to a log whose logName is formatted as follows: projects/ PROJECT ID /clouderrorreporting.googleapis.com%2Freported errors Because log entries are generated by calls to report , you might incur Cloud Logging ingestion costs.
+- We recommend that you use the language-specific client libraries or rely on automatically-collected log entries; however, you can write error data with the Cloud Logging API or the Error Reporting API .
 
-### Python Client for Error Reporting API — google-cloud-error-reporting documentation
+### "Format a log entry to report error events \_|\_ Error Reporting \_|\_ Google\
 
-- URL: [https://googleapis.dev/python/clouderrorreporting/latest](https://googleapis.dev/python/clouderrorreporting/latest)
+- URL: [https://docs.cloud.google.com/error-reporting/docs/formatting-error-messages](https://docs.cloud.google.com/error-reporting/docs/formatting-error-messages)
+- Source ID: `site-docs-reference-required-1`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Because the message field contains a stack trace, the error event is grouped by Error Reporting: {... "jsonPayload": { "serviceContext": { "service": "frontend", "version": "bf6b5b09b9d3da92c7bf964ab1664fe751104517" }, "message": "com.example.shop.Template$CartDiv retrieveCart: Error\njava.lang.IndexOutOfBoundsException: Index: 4, Size: 4\n\tat java.util.ArrayList.rangeCheck(ArrayList.java:635)\n\tat java.util.ArrayList.get(ArrayList.java:411)\n\tat com.example.shop.Cart.retrieve(Cart.java:76)\n\tat com.example.shop.Cart.generate(Cart.java:55)\n\tat com.example.shop.Template$CartDiv.retrieveCart(Template.java:113)\n\tat com.example.shop.Template.generate(Template.java:22)\n\tat com.example.shop.CartServlet.doGet(CartServlet.java:115)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:717)\n" , "context": "httpRequest": { "method": "GET", "url": "http://example.com/shop/cart", "responseStatusCode": 500 }, "user": "9f32f587135aa6774e78ed30fbaabcce3ec5528f" } }, "logName": "projects/test-project/logs/reported-error", "resource": { "labels": { "project id": "test-project" }, "type": "global" }, "severity": "ERROR", "timestamp": "2019-06-27T13:43:26.375834551Z" } Log an error event by using the textPayload field You can record an error event by using the textPayload field of a LogEntry to store the error message, such as a stack trace.
+- Log an error event that is a text message The following example shows how to format a LogEntry object when you want to log an error event that is a text message, use the following JSON structure for the jsonPayload field of the LogEntry : {... { "jsonPayload": { "@type": "type.googleapis.com/google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent" , "message": "A simple text message" }, "logName": "projects/test-project/logs/reported-error", "resource": { "labels": { "project id": "test-project" }, "type": "global" }, "severity": "ERROR", "timestamp": "2019-06-27T13:43:26.375834551Z" } } As the example shows, you must set the @type field to the value that forces Error Reporting to group the log entry: For more information, see Log a text message .
+- Supported monitored resources Set the resource field of the LogEntry object to one of the following supported monitored resource types : app script function aws ec2 instance cloud function cloud run jobs cloud run revision consumed api container dataflow step gae app gce instance k8s container k8s pod ml job 1 workflows.googleapis.com/Workflow global 1 1 textPayload not supported Examples This section shows how you can ensure that Error Reporting processes a log entry when that log entry contains a text message or a stack trace.
+- Log a text message To log an error event that is a text message, use the following format for the jsonPayload : "jsonPayload": { "@type": "type.googleapis.com/google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent" , "message": "Text message" }, When you set the @type field to the specified value, Error Reporting always evaluates the log entry as though all required fields are present.
+
+### "Class ErrorGroupServiceAsyncClient (1.15.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient)
 - Source ID: `site-python-reference`
-- Final score: 137
-- Re-rank relevance: N/A
+- Final score: 30
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Python Client for Error Reporting API — google-cloud-error-reporting documentation Source URL: https://googleapis.dev/python/clouderrorreporting/latest Error Reporting API: counts, analyzes and aggregates the crashes in your running cloud services.
-- A centralized error management interface displays the results with sorting and filtering capabilities.
-- A dedicated view shows the error details: time chart, occurrences, affected user count, first ...
-
-### Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation
-
-- URL: [https://googleapis.dev/python/clouderroreporting/latest/usage.html](https://googleapis.dev/python/clouderroreporting/latest/usage.html)
-- Source ID: `site-python-reference`
-- Final score: 122
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Using Stackdriver Error Reporting — google-cloud-error-reporting 0.1.0 documentation Source URL: https://googleapis.dev/python/clouderroreporting/latest/usage.html Errors can also be reported to Stackdriver Error Reporting outside the context of an exception.
-- The library will include the file path, function name, and line number of the location where the error was reported. from google.cloud import error reporting client = error reporting.Client() client.report(&quot;Found an error!&quot;)
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import errorreporting v1beta1 async def sample update group(): Create a client client = errorreporting v1beta1.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import errorreporting v1beta1 async def sample get group(): Create a client client = errorreporting v1beta1.
+- GetGroupRequest ( group name="group name value", ) Make the request response = await client. get group (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.errorreporting v1beta1.types.GetGroupRequest , dict]] The request object.
+- UpdateGroupRequest ( ) Make the request response = await client. update group (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.errorreporting v1beta1.types.UpdateGroupRequest , dict]] The request object.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:29.774Z"
+generated_at: "2026-04-15T13:50:47.108Z"
 product_name: "Google Cloud Contact Center as a Service"
 product_slug: "google-cloud-contact-center-as-a-service"
 feature_name: "Historical report access for assigned queues only"
@@ -9,18 +9,18 @@ latest_feature_date: "2023-09-25"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started"
-  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets"
+  - "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
 keywords:
   - "historical"
   - "report"
   - "access"
-  - "for"
   - "assigned"
   - "queues"
   - "only"
   - "reports"
+  - "can"
 ---
 
 # Historical report access for assigned queues only
@@ -42,48 +42,51 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets)
+- [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set)
 
 ## Supporting Pages
 
-### "Contact Center AI Platform release notes \_|\_ Google Cloud Contact Center\
+### "Standard reports \_|\_ Google Cloud Contact Center as a Service \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes](https://docs.cloud.google.com/contact-center/ccai-platform/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 190
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Feature New permissions added to historical reports : You can now limit access to assigned teams only or assigned queues only .
-- Also, the permissions for the downloadable reports under Agents & Teams, Calls & Chats, Queues, and Campaigns now have the option to restrict the corresponding data to assigned teams only or assigned queues only .
-- Fixed The following issues were addressed in this release: Fixed an issue where the Start Time and End Time filters weren't correctly applied to summary metrics on the Agent Performance dashboard and historical reports.
-- Feature Restrict auto-assignment for email queues You can now configure email queues so that incoming emails are auto-assigned only during queue operating hours or to agents who are signed in.
-
-### "Get started with Contact Center AI Platform (CCAI Platform) \_|\_ Google\
-
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started](https://docs.cloud.google.com/contact-center/ccai-platform/docs/get-started)
-- Source ID: `site-docs-root`
-- Final score: 136
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports)
+- Source ID: `site-docs-reference`
+- Final score: 209
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- Direct queues to a visual message Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Android SDK With the CCAI Platform Android SDK, you can create seamless voice and chat support experiences for users of your Android apps.
-- Detects calls to your main support number from the device's dialer and converts the call to a Mobile call Direct Access Points : Decide which queue, language, or channel an end-user should reach when the SDK is invoked in various parts of your app based on predefined contact details Working from home Contact Center AI Platform (CCAI Platform) is the perfect tool to empower agents to work from home.
-- Mobile Web Support : Customers on mobile devices can also access your Web SDK Direct Access Points : Decide which queue, language, or channel an end-user should reach when on a particular page or with predefined account details iOS SDK With the CCAI Platform iOS SDK, you can create seamless voice and chat support experiences for users of your iPhone and iPad apps.
-- Important: If you configure private access ( Preview ), you restrict public access to your CCAI Platform instance from the internet (end-users can still contact your contact center as they normally would).
+- By selecting Assigned Teams Only , only the assigned team has access to the session data report.
+- Here are the available call types: Voice Inbound (IVR) : standard PSTN calls Voice Inbound (IVR via Mobile) : fallback PSTN calls made using the mobile SDKs Voice Inbound (Mobile) : calls placed by end-users using the mobile SDKs Voice Callback (Web) : calls initiated from the web SDK Voice Inbound (API) : calls initiated using an API Voice Scheduled (Mobile) : calls scheduled using the mobile SDKs Voice Scheduled (Web) : calls scheduled using the web SDK Voice Outbound : calls placed by agents dialing a number Voice Outbound (API) : calls initiated using an API Voice Scheduled (API) : calls initiated by an outbound dialer campaign Voice Internal : agent-to-agent calls Voice Inbound (Direct) : calls initiated by end-users using agents' direct numbers Voice Outbound (Direct) calls initiated by agents using their direct numbers Voice Outbound (UCaaS) : outbound, unified communications as a service (UCaaS) calls Voice Inbound (Extension) : inbound end-user to agent calls Here are the available chat types: Messaging Inbound (Mobile Chat) : chats initiated by end-users using the mobile SDKs Messaging Inbound (Web Chat) : chats initiated by end-users using the web SDK Messaging Inbound (SMS) : SMS chats initiated by end-users Messaging Outbound (SMS) : SMS chats initiated by agents Messaging Outbound (SMS via API) : SMS chats initiated by an API Messaging Inbound (SMS Direct) : SMS chats initiated by end-users using agents' direct numbers Messaging Outbound (SMS Direct) : SMS chats initiated by agents using their direct numbers Messaging Outbound (SMS Direct via API) : SMS chats initiated by an API using agents' direct numbers Messaging (WhatsApp) : chats initiated using WhatsApp Queues From the CCAI Platform portal, go to Reports > Queues .
+- 2,300,000 lines will be broken up into 3 files, two that are 1 million in length and one 300k in length Sample Reports There are different report types available, depending on the data set you are accessing.
+- Reports are generated based on three categories: Agents & Team , Call & Chat , and Queues .
 
-### "CCaaS (CCAI Platform) \_|\_ Google Cloud Contact Center as a Service \_\
+### "Standard Reports: Virtual Agent Data Sets \_|\_ Google Cloud Contact Center\
 
-- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs](https://docs.cloud.google.com/contact-center/ccai-platform/docs)
-- Source ID: `site-docs-root`
-- Final score: 54
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets)
+- Source ID: `site-docs-reference`
+- Final score: 186
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- CCAI Platform also allows for reporting on contact center agent performance and customer satisfaction.
-- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
-- What's next Get started with CCAI Platform Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
-- Contact Center AI Platform (CCAI Platform) is an AI-driven Contact Center as a Service platform that is built natively on Google Cloud and uses the other Gemini Enterprise for Customer Experience products at its core.
+- For more information on accessing and building reports see the Accessing Reports section of Historical Reports: Interaction-based Data Model .
+- For more information on accessing and building reports see the Accessing Reports section of Historical Reports: Interaction-based Data Model.
+- The Virtual Agent Escalation/Deflection Report can be found at Reports > Queues .
+- The Virtual Agent Detailed Report can be found at Reports > Queues .
+
+### "Standard Reports Agent and Teams Data Sets \_|\_ Google Cloud Contact Center\
+
+- URL: [https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set](https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set)
+- Source ID: `site-docs-reference`
+- Final score: 185
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Standard Reports Agent and Teams Data Sets Stay organized with collections Save and categorize content based on your preferences.
+- Queue Priority by Language: List of assigned queues including the language and specific queue priority for each queue assigned.
+- Performance Metrics Report Overview From the Reports tab, one of the report options is the Performance Metrics report .
+- To create a report: Go to Reports > Agents and Teams Step 1: Select Agents and Team.
 

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:41.408Z"
+generated_at: "2026-04-15T12:06:50.453Z"
 product_name: "Mainframe Assessment Tool"
 product_slug: "mainframe-assessment-tool"
 feature_name: "PL/I cyclomatic complexity"
@@ -9,14 +9,14 @@ latest_feature_date: "2025-11-13"
 deprecation_date: ""
 coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment"
-  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server"
+  - "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
 keywords:
   - "pl"
   - "cyclomatic"
   - "complexity"
   - "calculates"
-  - "for"
   - "sources"
 ---
 
@@ -35,34 +35,48 @@ Calculates cyclomatic complexity for PL/I sources.
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
+- [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
 
 ## Supporting Pages
 
-### Create and update assessments | Mainframe Assessment Tool | Google Cloud Documentation
+### "View and understand assessment results \_|\_ Mainframe Assessment Tool \_\
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment](https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment)
-- Source ID: `site-docs-root`
-- Final score: 48
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results](https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results)
+- Source ID: `site-docs-reference`
+- Final score: 38
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Create and update assessments Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment This page describes how to upload your applications to Mainframe Assessment Tool and perform an assessment of the assets that Mainframe Assessment Tool discovers in the uploaded codebase.
-- To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool
-- You can perform an asset discovery on your own, or request for assistance from a Google customer engineer.
+- Complexity For COBOL programs, shows the complexity of the source code by using Cyclomatic complexity (McCabe's metric).
+- Simple: complexity < 100 Medium: 100 <= complexity < 500 Complex: 500 <= complexity < 1000 Very complex: 1000 <= complexity Complexity mapping: visual representation of the complexity table that provides an overview of the complexity in your codebase.
+- You can ask questions about source code and business logic, query assessment data such as line counts or complexity metrics, and generate visualizations like charts.
+- Complexity table: a file-by-file breakdown of the calculated complexity metrics such as complexity count.
 
-### Configure your Google Cloud project for Mainframe Assessment Tool | Google Cloud Documentation
+### Mainframe Assessment Tool MCP server \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project](https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project)
-- Source ID: `site-docs-root`
-- Final score: 21
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server](https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server)
+- Source ID: `site-docs-reference`
+- Final score: 34
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Configure your Google Cloud project for Mainframe Assessment Tool Google Cloud Documentation Source URL: https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project This page describes the process to set up and configure your Google Cloud project to work with Mainframe Assessment Tool.
+- FetchAssetsCyclomaticComplexity Fetches the cyclomatic complexity scores for a list of assets for a given Mainframe Assessment Tool assessment ID.
+- Retrieve asset specifications, including dependencies and complexity metrics.
+
+### Mainframe Assessment Tool overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview](https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 23
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Key benefits Reimagine and modernize mainframe applications for the cloud: create fully modernized applications to replace legacy mainframe applications, substantially enhancing agility, scalability, and security, while reducing maintenance costs and complexity.
+- Mainframe Assessment Tool automates assessment, saving you time and resources.
 

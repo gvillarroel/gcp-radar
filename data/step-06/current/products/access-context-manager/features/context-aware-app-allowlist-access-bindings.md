@@ -1,30 +1,27 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T20:03:23.573Z"
+generated_at: "2026-04-14T03:43:03.647Z"
 product_name: "Access Context Manager"
 product_slug: "access-context-manager"
 feature_name: "Context-aware app allowlist access bindings"
 feature_slug: "context-aware-app-allowlist-access-bindings"
 latest_feature_date: "2024-10-03"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage"
+  - "https://docs.cloud.google.com/access-context-manager/docs/configure_cba_for_workloads"
+  - "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
 keywords:
-  - "context-aware access binding rule"
-  - "app allowlist access binding"
-  - "context-aware app allowlist"
-  - "context-aware app binding"
-  - "application-specific access binding"
-  - "app id in access level"
-  - "access levels per app"
-  - "allowlist access bindings"
+  - "allowlist"
+  - "bindings"
+  - "aware"
 ---
 
 # Context-aware app allowlist access bindings
 
 Product: Access Context Manager
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +31,54 @@ Access bindings can now map specific applications to access levels so context-aw
 
 Access bindings can now map specific applications to access levels so context-aware access can be scoped per application.
 
+## Evidence Summary
+
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage](https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage)
+- [https://docs.cloud.google.com/access-context-manager/docs/configure_cba_for_workloads](https://docs.cloud.google.com/access-context-manager/docs/configure_cba_for_workloads)
+- [https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups](https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Configure certificate-based access for Workload Identity Federation \_|\_\
+
+- URL: [https://docs.cloud.google.com/access-context-manager/docs/configure_cba_for_workloads](https://docs.cloud.google.com/access-context-manager/docs/configure_cba_for_workloads)
+- Source ID: `site-iam-reference`
+- Final score: 88
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If you encounter unexpected access denials after enabling Context-Aware Access, you can quickly unblock traffic by removing the Context-Aware Access binding using the following command: gcloud alpha access-context-manager cloud-bindings delete After access is restored, review the audit log to determine why the requests were denied.
+- Run the following command to verify that a non-mTLS connection fails with an unauthorized error. $ curl -X GET 'https://storage.googleapis.com/{replace with your resources}' -H "Authorization: Bearer $ACCESS TOKEN " List the policy binding To list the policy binding for Workload Identity Federation, run the following command. gcloud The following command lists specific bindings within a given organization, filtering for those that apply to federated principals. gcloud alpha access-context-manager cloud-bindings list \ --organization= ORG ID \ --filter='principal:federatedPrincipal' curl curl -H "X-Goog-User-Project: ${CALLER PROJECT ID:?}" -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://accesscontextmanager.googleapis.com/v1alpha/organizations/${ORG ID:?}/gcpUserAccessBindings?filter=principal%3Afederated principal" Update a policy binding To update a policy binding, add the new access level to a JSON file and run the following command. gcloud gcloud alpha access-context-manager cloud-bindings update \ --binding= BINDING ID \ --level= NEW ACCESS LEVEL ID curl curl -H "X-Goog-User-Project: ${CALLER PROJECT ID:?}" -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://accesscontextmanager.googleapis.com/v1alpha/organizations/${ORG ID:?}/gcpUserAccessBindings/${BINDING ID:?}?updateMask=access levels" Delete a policy binding To delete a policy binding, run the following command. gcloud gcloud alpha access-context-manager cloud-bindings delete \ --binding= BINDING ID curl curl -H "X-Goog-User-Project: ${CALLER PROJECT ID:?}" -X DELETE \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://accesscontextmanager.googleapis.com/v1alpha/organizations/${ORG ID:?}/gcpUserAccessBindings/${BINDING ID:?}" Troubleshooting The following are some common issues and suggested actions for resolving them: Error: 403 Forbidden, user does not have permission.
+- You can use the following types of federated principals: Single identity: principal://iam.googleapis.com/projects/PROJECT NUMBER/locations/global/workloadIdentityPools/POOL ID/subject/SUBJECT ATTRIBUTE VALUE All identities in a pool: principalSet://iam.googleapis.com/projects/PROJECT NUMBER/locations/global/workloadIdentityPools/POOL ID/ echo { \ \"principal\": { \ \"federatedPrincipal\": \"${FEDERATED PRINCIPAL:?}\" \ },\ \"accessLevels\": [\"${ACCESS LEVEL ID:?}\"] \ } \ > request.json Use curl to send the following HTTP request. curl -H "X-Goog-User-Project: ${ CALLER PROJECT ID :? } " -X POST \ -H "Authorization: Bearer $( gcloud auth print-access-token ) " \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://accesscontextmanager.googleapis.com/v1alpha/organizations/ ${ ORG ID :? } /gcpUserAccessBindings" Authorize using the Google Cloud client libraries To authorize Workforce Identity Federation workloads using the Google Cloud client libraries, complete the following steps.
+- You can use one of the following options: a single identity with the format - principal://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ POOL ID /subject/ SUBJECT ATTRIBUTE VALUE OR all the identities in a pool with the format - principalSet://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ POOL ID / gcloud gcloud alpha access-context-manager cloud-bindings create \ --organization= ORG ID \ --federated-principal= FEDERATED PRINCIPAL \ --level= ACCESS LEVEL ID --dry-run-level= DRY RUN ACCESS LEVEL ID Replace the following: ACCESS LEVEL ID : the access level name.
+
+### LaunchStage | Access Context Manager | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage](https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage)
+- Source ID: `feature-recovery-direct-http`
+- Final score: 88
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- LaunchStage | Access Context Manager | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Access Context Manager Start free Overview Guides Reference Resources Technology areas More Overview Guides Reference Resources Cross-product tools More Console Access Context Manager All APIs & references Context-Aware Access audit logging gcloud reference REST reference Overview v1 Overview REST Resources accessPolicies Overview create delete get getIamPolicy list patch setIamPolicy testIamPermissions accessPolicies.accessLevels Overview create delete get list patch replaceAll testIamPermissions accessPolicies.authorizedOrgsDescs Overview create delete get list patch accessPolicies.servicePerimeters Overview commit create delete get list patch replaceAll testIamPermissions operations Overview cancel delete get list organizations.gcpUserAccessBindings Overview create delete get list patch services Overview get list Types LevelFormat MethodSelector v1alpha Overview REST Resources accessPolicies Overview create delete get getIamPolicy list patch setIamPolicy testIamPermissions accessPolicies.accessLevels Overview create delete get list patch replaceAll testIamPermissions accessPolicies.authorizedOrgsDescs Overview create delete get list patch accessPolicies.servicePerimeters Overview commit create delete get list patch replaceAll testIamPermissions operations Overview get organizations.gcpUserAccessBindings Overview create delete get list patch services Overview get list Types LevelFormat MethodSelector Shared types Overview Types AuditConfig Binding DeviceEncryptionStatus DeviceManagementLevel GetIamPolicyRequest GetOperationRequest LaunchStage LogType Operation OsType Policy SetIamPolicyRequest TestIamPermissionsRequest TestIamPermissionsResponse RPC reference Overview google.api google.iam.v1 google.identity.accesscontextmanager.type google.identity.accesscontextmanager.v1 google.identity.accesscontextmanager.v1alpha google.longrunning google.rpc google.type Access level attributes Example access level YAML Custom access level specification AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Security Access Context Manager Reference Send feedback LaunchStage Stay organized with collections Save and categorize content based on your preferences.
+- Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted.
+
+### "Apply policies to user groups using access bindings \_|\_ Access Context\
+
+- URL: [https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups](https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups)
+- Source ID: `site-iam-reference`
+- Final score: 65
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Create a dry run binding You can define dry run access levels alongside regular access levels in the same binding, or you can use separate bindings for dry runs. gcloud Configure the access settings. scopedAccessSettings: - scope: clientScope: restrictedClientApplication: name: CLIENT NAME activeSettings: accessLevels: - ACCESS LEVEL A dryRunSettings: accessLevels: - DRY RUN ACCESS LEVEL 1 - scope: clientScope: restrictedClientApplication: clientId: CLIENT ID dryRunSettings: accessLevels: - DRY RUN ACCESS LEVEL 2 Replace the following: CLIENT NAME : The client name.
+- We recommend that you test your policy with a dry run or apply it to a small test group before implementing it in production. gcloud Create the access binding. gcloud access-context-manager cloud-bindings create \ --group-key GROUP ID --organization ORG ID --level DEFAULT ACCESS LEVEL [ --session-length = DEFAULT SESSION LENGTH ] [ --session-reauth-method = DEFAULT SESSION REAUTH METHOD ] Replace the following: GROUP ID : The group ID.
+- Create the access binding. gcloud access-context-manager cloud-bindings create --organization ORG ID --group-key GROUP ID --binding-file BINDING FILE PATH [ --level DEFAULT ACCESS LEVEL ] [ --session-length = DEFAULT SESSION LENGTH ] [ --session-reauth-method = DEFAULT SESSION REAUTH METHOD ] Replace the following: ORG ID : Your organization ID.
+- Create the access binding. gcloud access-context-manager cloud-bindings create --organization ORG ID --group-key GROUP ID --binding-file BINDING FILE PATH --dry-run-level DEFAULT DRY RUN ACCESS LEVEL Replace the following: ORG ID : Your organization ID.
 

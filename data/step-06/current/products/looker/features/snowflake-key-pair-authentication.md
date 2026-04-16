@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:40.468Z"
+generated_at: "2026-04-15T13:43:38.479Z"
 product_name: "Looker"
 product_slug: "looker"
 feature_name: "Snowflake key-pair authentication"
 feature_slug: "snowflake-key-pair-authentication"
 latest_feature_date: "2025-04-09"
 deprecation_date: ""
-coverage_status: "MEDIUM"
+coverage_status: "LOW"
 source_links:
-  - "https://docs.cloud.google.com/looker/docs/api-explorer"
-  - "https://docs.cloud.google.com/looker/docs/data-modeling"
-  - "https://docs.cloud.google.com/looker/docs/looker-core-overview"
+  - "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transformation"
+  - "https://docs.cloud.google.com/looker/docs/admin-panel-platform-pages"
+  - "https://docs.cloud.google.com/bigquery/docs/display-video-transformation"
 keywords:
   - "snowflake"
   - "key"
@@ -19,14 +19,14 @@ keywords:
   - "authentication"
   - "connection"
   - "method"
-  - "for"
-  - "that"
+  - "uses"
+  - "pairs"
 ---
 
 # Snowflake key-pair authentication
 
 Product: Looker
-Coverage: MEDIUM
+Coverage: LOW
 
 ## Step 02 Summary
 
@@ -42,40 +42,33 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 ## Source Links
 
-- [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- [https://docs.cloud.google.com/looker/docs/data-modeling](https://docs.cloud.google.com/looker/docs/data-modeling)
-- [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
+- [https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transformation](https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transformation)
+- [https://docs.cloud.google.com/looker/docs/admin-panel-platform-pages](https://docs.cloud.google.com/looker/docs/admin-panel-platform-pages)
+- [https://docs.cloud.google.com/bigquery/docs/display-video-transformation](https://docs.cloud.google.com/bigquery/docs/display-video-transformation)
 
 ## Supporting Pages
 
-### Using the API Explorer | Looker | Google Cloud Documentation
+### "Campaign Manager report transformation \_|\_ BigQuery \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/looker/docs/api-explorer](https://docs.cloud.google.com/looker/docs/api-explorer)
-- Source ID: `site-api-reference`
-- Final score: 30
-- Re-rank relevance: N/A
+- URL: [https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transformation](https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transformation)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- The References section for each method and type includes links to the API Explorer pages for each method or type that is referenced by the original method or type....
+### Admin settings - Platform pages \_|\_ Looker \_|\_ Google Cloud Documentation
 
-### Get ready for development | Looker | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/data-modeling](https://docs.cloud.google.com/looker/docs/data-modeling)
+- URL: [https://docs.cloud.google.com/looker/docs/admin-panel-platform-pages](https://docs.cloud.google.com/looker/docs/admin-panel-platform-pages)
 - Source ID: `site-docs-root`
-- Final score: 27
-- Re-rank relevance: N/A
+- Final score: 42
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
-Evidence snippets:
-- Get ready for development Looker Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/data-modeling To unlock the magic of Looker, data experts at each organization describe their data in a lightweight modeling language called LookML.
+### "Display & Video 360 data transformation \_|\_ BigQuery \_|\_ Google Cloud\
 
-### Looker (Google Cloud core) overview | Google Cloud Documentation
-
-- URL: [https://docs.cloud.google.com/looker/docs/looker-core-overview](https://docs.cloud.google.com/looker/docs/looker-core-overview)
-- Source ID: `site-docs-root`
-- Final score: 27
-- Re-rank relevance: N/A
-
-Evidence snippets:
-- Looker (Google Cloud core) overview Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker/docs/looker-core-overview View the Looker (Google Cloud core) Admin API reference for information on Looker (Google Cloud core) endpoints for Google Cloud console functionality.
-- View the Looker API documentation for information on using the API for functionality within a Looker (Google Cloud core) instance.
+- URL: [https://docs.cloud.google.com/bigquery/docs/display-video-transformation](https://docs.cloud.google.com/bigquery/docs/display-video-transformation)
+- Source ID: `site-docs-reference-required-6`
+- Final score: 38
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 

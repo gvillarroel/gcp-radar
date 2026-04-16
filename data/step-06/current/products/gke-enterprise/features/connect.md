@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:22.774Z"
+generated_at: "2026-04-12T12:16:18.952Z"
 product_name: "GKE Enterprise"
 product_slug: "gke-enterprise"
 feature_name: "Connect"
@@ -12,6 +12,7 @@ source_links:
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity"
   - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks"
+  - "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support"
 keywords:
   - "connect"
   - "an"
@@ -38,13 +39,14 @@ An agent-based service for registering external clusters and infrastructure with
 
 ## Evidence Summary
 
-Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)
 - Source ID: `site-docs-reference`
-- Final score: 164
+- Final score: 209
 - Re-rank relevance: MODERATE
 - Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
@@ -66,7 +68,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
 - Source ID: `site-docs-reference`
-- Final score: 162
+- Final score: 209
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -79,7 +81,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
 - Source ID: `site-iam-reference`
-- Final score: 98
+- Final score: 131
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -87,4 +89,17 @@ Evidence snippets:
 - Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
 - Common role archetypes The following high-level areas of common user roles are often referenced in our content: Admins and architects Operators Developers Security specialists Networking specialists Data and AI specialists Storage specialists Admins and architects Admins and architects administer and architect cloud platforms and products.
 - They are responsible for ensuring the reliability and performance of cloud applications, such as establishing service-level objectives (SLO), assessing service-level indicators (SLI), and identifying and resolving issues that may compromise SLO targets.
+
+### "Version and upgrade support \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/version-and-upgrade-support)
+- Source ID: `site-docs-reference`
+- Final score: 129
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- On AWS Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 1.31.6-gke.200 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 1.30.10-gke.200 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 On Azure Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 - 1.31 1.31.6-gke.200 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 1.30.10-gke.200 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 GKE attached clusters: Amazon Elastic Kubernetes Service (EKS) Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 - 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 - 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 GKE attached clusters: Azure Kubernetes Service (AKS) Cluster Version Recommended Patch Kubernetes Version Config Sync Policy Controller Cloud Service Mesh 1.32 - 1.32 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.31 - 1.31 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1.30 - 1.30 1.23 1.22 1.21 1.23 1.22 1.21 1.27 1.26 1.25 1 Connect, Cloud Logging, and Cloud Monitoring are supported on all cluster types.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback Version and upgrade support Stay organized with collections Save and categorize content based on your preferences.
+- For details about recommended versions, see Amazon EKS platform versions and Supported Kubernetes versions in Azure Kubernetes Service (AKS) .
 

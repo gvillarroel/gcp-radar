@@ -5,7 +5,7 @@ url: https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryco
 knowledge_key: corpus
 source_id: site-docs-reference-2
 source_type: site
-entrypoint: https://developers.google.com/earth-engine/apidocs
+entrypoint: https://developers.google.com/earth-engine/apidocs/ee-data-computefeatures
 source_metadata:
   url: https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-bbox
   title: "ee.Algorithms.GeometryConstructors.BBox \_|\_ Google Earth Engine \_|\_\

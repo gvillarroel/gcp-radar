@@ -1,32 +1,32 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T10:21:49.033Z"
+generated_at: "2026-04-14T00:23:22.599Z"
 product_name: "Dataproc"
 product_slug: "dataproc"
 feature_name: "pd-extreme disk support for Dataproc cluster creation"
 feature_slug: "pd-extreme-disk-support-for-dataproc-cluster-creation"
 latest_feature_date: "2023-03-28"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
-  - "https://docs.cloud.google.com/dataproc/docs/release-notes"
-  - "https://docs.cloud.google.com/dataproc/docs/guides/recreate-cluster"
+  - "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+  - "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries"
   - "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
 keywords:
   - "pd"
   - "extreme"
   - "disk"
-  - "for"
   - "dataproc"
   - "cluster"
   - "creation"
   - "supports"
+  - "type"
 ---
 
 # pd-extreme disk support for Dataproc cluster creation
 
 Product: Dataproc
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,53 +38,54 @@ Dataproc cluster creation supports the pd-extreme disk type.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
-- [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
-- [https://docs.cloud.google.com/dataproc/docs/guides/recreate-cluster](https://docs.cloud.google.com/dataproc/docs/guides/recreate-cluster)
+- [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig)
+- [https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries](https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries)
 - [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig)
 
 ## Supporting Pages
 
-### Managed Service for Apache Spark release notes \_|\_ Google Cloud Documentation
+### "InstanceGroupConfig \_|\_ Managed Service for Apache Spark \_|\_ Google\
 
-- URL: [https://docs.cloud.google.com/dataproc/docs/release-notes](https://docs.cloud.google.com/dataproc/docs/release-notes)
+- URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig)
+- Source ID: `site-docs-reference`
+- Final score: 141
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Examples: https://www.googleapis.com/compute/v1/projects/[projectId]/zones/[zone]/machineTypes/n1-standard-2 projects/[projectId]/zones/[zone]/machineTypes/n1-standard-2 n1-standard-2 Auto Zone Exception : If you are using the Dataproc Auto Zone Placement feature, you must use the short name of the machine type resource, for example, n1-standard-2 . diskConfig object ( DiskConfig ) Optional.
+- HYPERDISK EXTREME Hyperdisk Extreme disk type.
+- JSON representation { "numInstances" : integer , "instanceNames" : [ string ] , "imageUri" : string , "machineTypeUri" : string , "diskConfig" : { object ( DiskConfig ) } , "isPreemptible" : boolean , "preemptibility" : enum ( Preemptibility ) , "managedGroupConfig" : { object ( ManagedGroupConfig ) } , "accelerators" : [ { object ( AcceleratorConfig ) } ] , "minCpuPlatform" : string , "minNumInstances" : integer , "instanceFlexibilityPolicy" : { object ( InstanceFlexibilityPolicy ) } , "startupConfig" : { object ( StartupConfig ) } } Fields numInstances integer Optional.
+- JSON representation DiskConfig JSON representation AttachedDiskConfig JSON representation DiskType Preemptibility ManagedGroupConfig JSON representation AcceleratorConfig JSON representation InstanceFlexibilityPolicy JSON representation ProvisioningModelMix JSON representation InstanceSelection JSON representation InstanceSelectionResult JSON representation StartupConfig JSON representation The config settings for Compute Engine resources in an instance group, such as a master or worker group.
+
+### "Quickstart: Create a cluster by using client libraries \_|\_ Managed Service\
+
+- URL: [https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries](https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries)
 - Source ID: `site-docs-root`
-- Final score: 172
-- Re-rank relevance: N/A
+- Final score: 130
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
-- March 28, 2023 Announcement New sub-minor versions of Dataproc images: 1.5.87-debian10, 1.5.87-rocky8, 1.5.87-ubuntu18 2.0.61-debian10, 2.0.61-rocky8, 2.0.61-ubuntu18 2.1.9-debian11, 2.1.9-rocky8, 2.1.9-ubuntu20 Feature Dataproc cluster creation now supports the pd-extreme disk type.
-- Fixed Fixed the ability to delete jobs that fast-failed before some cluster and staging directories were created Fixed some remaining errors with vmem settings when using the distcp command Fixed a rare bug in which underlying Compute Engine issues could lead to VM instances failing to be deleted after the Cloud Dataproc cluster had been successfully deleted Hive command has been fixed Fixed error reporting when updating the number of workers (standard and preemptible) in a cluster Fixed some cases when Rate Limit Exceeded errors occurred The maximum cluster name length is now correctly 55 instead of 56 characters GCP Console Cluster list now includes a Created column, and the cluster configuration tab now includes a Created field, telling the creation time of the cluster In the cluster-create screen, cluster memory sizes greater than 999 GB are now displayed in TB Fields that were missing from the PySpark and Hive job configuration tab ( Additional Python Files and Jar Files ) have been added The option to add preemptible nodes when creating a cluster is now in the "expander" at the bottom of the form Machine types with insufficient memory (less than 3.5 GB) are no longer displayed in the list of machine types (previously, selecting one of these small machine types would lead to an error from the backend The placeholder text in the Arguments field of the submit-job form has been corrected October 23, 2015 Feature GCP Console: Added support for adding, editing, and removing preemptible instances in clusters.
-- Announcement Announcing the General Availability (GA) release of Dataproc Serverless for Spark runtime versions 2.3 , which include the following components: Spark 3.5.1 BigQuery Spark Connector 0.42.3 Cloud Storage Connector 3.1.2 Java 17 Python 3.11 R 4.3 Scala 2.13 Announcement New Dataproc Serverless for Spark runtime versions : 1.1.105 1.2.49 2.2.49 2.3.0 May 23, 2025 Feature Dataproc now supports the creation of zero-scale clusters , available in preview .
-- Announcing the general availability (GA) release of Cloud Dataproc Persistent Solid State Drive (PD-SSD) Boot Disks , which allows you to create clusters that use PD-SSDs for the master and worker node boot disks.
-
-### "Recreate and update a cluster \_|\_ Managed Service for Apache Spark \_\
-
-- URL: [https://docs.cloud.google.com/dataproc/docs/guides/recreate-cluster](https://docs.cloud.google.com/dataproc/docs/guides/recreate-cluster)
-- Source ID: `site-iam-reference`
-- Final score: 162
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
-
-Evidence snippets:
-- Set variables. export PROJECT= project-id export REGION= region export OLD CLUSTER= old-cluster-name export NEW CLUSTER= new-cluster-name export NEW IMAGE VERSION= image-version (for example, '2.2-debian12') Export the existing (old) cluster configuration to a JSON file. curl -X GET -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://dataproc.googleapis.com/v1/projects/${PROJECT}/regions/${REGION}/clusters/${OLD CLUSTER}?alt=json" > "${OLD CLUSTER}-config.json" Update the configuration.
-- Set variables. export PROJECT= project-id export REGION= region export OLD CLUSTER= old-cluster-name export NEW CLUSTER= new-cluster-name export NEW IMAGE VERSION= image-version (for example, '2.2-debian12') Export the existing (old) cluster configuration to a YAML file. gcloud dataproc clusters export $OLD CLUSTER \ --project=$PROJECT \ --region=$REGION > "${OLD CLUSTER}-config.yaml" Update the configuration.
-- IMPORTANT: This step deletes all data stored in HDFS and on local disk in your cluster. gcloud dataproc clusters delete $OLD CLUSTER \ --project=$PROJECT \ --region=$REGION REST API The example instructions show updating the cluster name and the image version settings in a cluster configuration.
-- The following example uses jq to update the cluster name and the image version. jq ".clusterName = \"${NEW CLUSTER}\" .config.softwareConfig.imageVersion=\"${NEW IMAGE VERSION}\" del(.config.workerConfig.imageUri) del(.config.masterConfig.imageUri)" "${OLD CLUSTER}-config.json" > "${NEW CLUSTER}-config-updated.json" Import the updated cluster configuration to create a new cluster with the updated configuration. curl -i -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json; charset=utf-8" -d "@${NEW CLUSTER}-config-updated.json" "https://dataproc.googleapis.com/v1/projects/${PROJECT}/regions/${REGION}/clusters?alt=json" After confirming your workloads run in the new cluster without issues, delete the existing (old) cluster.
+- ClusterControllerClient ( client options = { "api endpoint" : " {} -dataproc.googleapis.com:443" . format ( region )} ) Create the cluster config. cluster = { "project id" : project id , "cluster name" : cluster name , "config" : { "master config" : { "num instances" : 1 , "machine type uri" : "n1-standard-2" , "disk config" : { "boot disk size gb" : 100 }, }, "worker config" : { "num instances" : 2 , "machine type uri" : "n1-standard-2" , "disk config" : { "boot disk size gb" : 100 }, }, }, } Create the cluster. operation = cluster client . create cluster ( request = { "project id" : project id , "region" : region , "cluster" : cluster } ) result = operation . result () print ( "Cluster created successfully: {} " . format ( result . cluster name )) Create the job client. job client = dataproc .
+- JobControllerClient ({ apiEndpoint : ${ region } -dataproc.googleapis.com , projectId : projectId , }); async function quickstart () { // Create the cluster config const cluster = { projectId : projectId , region : region , cluster : { clusterName : clusterName , config : { masterConfig : { numInstances : 1 , machineTypeUri : 'n1-standard-2' , }, workerConfig : { numInstances : 2 , machineTypeUri : 'n1-standard-2' , }, }, }, }; // Create the cluster const [ operation ] = await clusterClient . createCluster ( cluster ); const [ response ] = await operation . promise (); // Output a success message console . log ( Cluster created successfully: ${ response . clusterName } ); const job = { projectId : projectId , region : region , job : { placement : { clusterName : clusterName , }, pysparkJob : { mainPythonFileUri : jobFilePath , }, }, }; const [ jobOperation ] = await jobClient . submitJobAsOperation ( job ); const [ jobResponse ] = await jobOperation . promise (); const matches = jobResponse . driverOutputResourceUri . match ( 'gs://(. ?)/(. )' ); const storage = new Storage (); const output = await storage . bucket ( matches [ 1 ]) . file ( ${ matches [ 2 ] } .000000000 ) . download (); // Output a success message. console . log ( Job finished successfully: ${ output } ); // Delete the cluster once the job has terminated. const deleteClusterReq = { projectId : projectId , region : region , clusterName : clusterName , }; const [ deleteOperation ] = await clusterClient . deleteCluster ( deleteClusterReq ); await deleteOperation . promise (); // Output a success message console . log ( Cluster ${ clusterName } successfully deleted. ); } quickstart (); } const args = process . argv . slice ( 2 ); if ( args . length !== 4 ) { console . log ( 'Insufficient number of parameters provided.
+- JobPlacement { ClusterName : clusterName , }, TypeJob : & dataprocpb .
+- RawDescriptionHelpFormatter , ) parser . add argument ( "--project id" , type = str , required = True , help = "Project to use for creating resources." , ) parser . add argument ( "--region" , type = str , required = True , help = "Region where the resources should live." , ) parser . add argument ( "--cluster name" , type = str , required = True , help = "Name to use for creating a cluster." , ) parser . add argument ( "--job file path" , type = str , required = True , help = "Job in GCS to execute against the cluster." , ) args = parser . parse args () quickstart ( args . project id , args . region , args . cluster name , args . job file path ) View the output The code outputs the job driver log to the default Managed Service for Apache Spark staging bucket in Cloud Storage.
 
 ### "ClusterConfig \_|\_ Managed Service for Apache Spark \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig](https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig)
 - Source ID: `site-docs-reference`
-- Final score: 154
+- Final score: 124
 - Re-rank relevance: N/A
 
 Evidence snippets:
+- JSON representation { "clusterType" : enum ( ClusterType ) , "clusterTier" : enum ( ClusterTier ) , "configBucket" : string , "tempBucket" : string , "gceClusterConfig" : { object ( GceClusterConfig ) } , "masterConfig" : { object ( InstanceGroupConfig ) } , "workerConfig" : { object ( InstanceGroupConfig ) } , "secondaryWorkerConfig" : { object ( InstanceGroupConfig ) } , "softwareConfig" : { object ( SoftwareConfig ) } , "initializationActions" : [ { object ( NodeInitializationAction ) } ] , "encryptionConfig" : { object ( EncryptionConfig ) } , "autoscalingConfig" : { object ( AutoscalingConfig ) } , "securityConfig" : { object ( SecurityConfig ) } , "lifecycleConfig" : { object ( LifecycleConfig ) } , "endpointConfig" : { object ( EndpointConfig ) } , "metastoreConfig" : { object ( MetastoreConfig ) } , "dataprocMetricConfig" : { object ( DataprocMetricConfig ) } , "auxiliaryNodeGroups" : [ { object ( AuxiliaryNodeGroup ) } ] } Fields clusterType enum ( ClusterType ) Optional.
+- JSON representation ClusterType ClusterTier GceClusterConfig JSON representation PrivateIpv6GoogleAccess ReservationAffinity JSON representation Type NodeGroupAffinity JSON representation ShieldedInstanceConfig JSON representation ConfidentialInstanceConfig JSON representation SoftwareConfig JSON representation Component NodeInitializationAction JSON representation EncryptionConfig JSON representation AutoscalingConfig JSON representation SecurityConfig JSON representation KerberosConfig JSON representation IdentityConfig JSON representation LifecycleConfig JSON representation EndpointConfig JSON representation DataprocMetricConfig JSON representation Metric JSON representation MetricSource AuxiliaryNodeGroup JSON representation The cluster config.
+- When this key resource name is provided, the following job arguments of the following job types submitted to the cluster are encrypted using CMEK: FlinkJob args HadoopJob args SparkJob args SparkRJob args PySparkJob args SparkSqlJob scriptVariables and queryList.queries HiveJob scriptVariables and queryList.queries PigJob scriptVariables and queryList.queries PrestoJob scriptVariables and queryList.queries AutoscalingConfig Autoscaling Policy config associated with the cluster.
 - If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Dataproc staging and temp buckets ).
-- If you do not specify a temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's temp bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket.
-- "Managed Service for Apache Spark" is the new name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and "Google Cloud Serverless for Apache Spark" (serverless deployment).
-- The Dataproc service account (also see VM Data Plane identity ) used by Dataproc cluster VM instances to access Google Cloud Platform services.
 

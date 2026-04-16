@@ -1,6 +1,6 @@
 ---
-title: "Send inspection results to Dataplex Universal Catalog as aspects \_|\_ Sensitive\
-  \ Data Protection \_|\_ Google Cloud Documentation"
+title: "Send inspection results to Knowledge Catalog as aspects \_|\_ Sensitive Data\
+  \ Protection \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job
 knowledge_key: corpus
 source_id: site-docs-root
@@ -8,7 +8,7 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/sensitive-data-protection/docs
 source_metadata:
   url: https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job
-  title: "Send inspection results to Dataplex Universal Catalog as aspects \_|\_ Sensitive\
+  title: "Send inspection results to Knowledge Catalog as aspects \_|\_ Sensitive\
     \ Data Protection \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
@@ -23,33 +23,33 @@ Security
 Sensitive Data Protection
 Guides
 Send feedback
-Send inspection results to Dataplex Universal Catalog as aspects
+Send inspection results to Knowledge Catalog as aspects
 Stay organized with collections
 Save and categorize content based on your preferences.
 This document describes how to inspect a BigQuery table for sensitive
-data and send the inspection results to Dataplex Universal Catalog. This action
-automatically adds an aspect to the Dataplex Universal Catalog
+data and send the inspection results to Knowledge Catalog. This action
+automatically adds an aspect to the Knowledge Catalog
 entry that's associated with
 your BigQuery table.
 This document also provides example queries that you can use to find data across
 your organization and projects with specific aspect values.
 This feature is useful if you want to enrich your metadata in
-Dataplex Universal Catalog with sensitive data classifications from
+Knowledge Catalog with sensitive data classifications from
 Sensitive Data Protection
 inspection jobs.
 The generated aspects include the following details:
 The name of the inspection job
 The information types ( infoTypes )
 that were detected in the table
-About Dataplex Universal Catalog
-Dataplex Universal Catalog
+About Knowledge Catalog
+Knowledge Catalog
 provides a unified inventory of Google Cloud resources.
-Dataplex Universal Catalog lets you use aspects to add business and
+Knowledge Catalog lets you use aspects to add business and
 technical metadata to your data to capture context and knowledge about your
 resources. You can then search and discover data across your organization and
 enable data governance over your data assets. For more information, see
 Aspects .
-Important: Dataplex Universal Catalog, which uses aspects , is not the
+Important: Knowledge Catalog, which uses aspects , is not the
 same as Data Catalog, which uses tags . Data Catalog is
 deprecated . The
 Sensitive Data Protection feature that lets you send inspection results to
@@ -58,20 +58,20 @@ deprecated. To migrate any job triggers that are configured to use the
 deprecated action, see Migrate to the Publish to Dataplex Universal Catalog
 action in this document.
 How it works
-To automatically create Dataplex Universal Catalog aspects based on inspection job
+To automatically create Knowledge Catalog aspects based on inspection job
 results, follow this high-level workflow:
 Create or edit an inspection job that inspects a BigQuery table.
 For instructions, see Inspect a BigQuery
 table .
 In the Add actions step, enable Publish to Dataplex Universal Catalog .
 Sensitive Data Protection adds or updates the
-Sensitive Data Protection job result aspect of the Dataplex Universal Catalog
+Sensitive Data Protection job result aspect of the Knowledge Catalog
 entry associated with the
 BigQuery table. You can then search
-Dataplex Universal Catalog for all data in your organization or project
+Knowledge Catalog for all data in your organization or project
 with specific aspect values. For example queries, see Example search
 queries in this document.
-The resulting Dataplex Universal Catalog aspect is stored in the same project and
+The resulting Knowledge Catalog aspect is stored in the same project and
 region as the BigQuery table.
 Note: When you enable the Publish to Dataplex Universal Catalog action in an
 existing job trigger, Sensitive Data Protection applies this action to the
@@ -178,7 +178,7 @@ the permissions required to search for aspects associated with your BigQuery tab
 required, expand the Required permissions section:
 Required permissions
 The following permissions are required to search for aspects associated with your BigQuery table:
-View Dataplex Universal Catalog entries:
+View Knowledge Catalog entries:
 dataplex.entries.list
 dataplex.entries.get
 View BigQuery datasets and tables:
@@ -189,7 +189,7 @@ these permissions
 with custom roles or
 other predefined roles .
 For more information about the permissions required to use
-Dataplex Universal Catalog, see Dataplex Universal Catalog IAM
+Knowledge Catalog, see Knowledge Catalog IAM
 permissions .
 Configure and run a Sensitive Data Protection inspection job
 You can configure and run a Sensitive Data Protection inspection job by using
@@ -211,7 +211,7 @@ REST
 The following example sends a
 projects.locations.dlpJobs.create
 request to inspect a BigQuery table and send the results to
-Dataplex Universal Catalog.
+Knowledge Catalog.
 Before using any of the request data,
 make the following replacements:
 PROJECT_ID : your Google Cloud project ID. Project IDs are
@@ -358,16 +358,16 @@ DLP API, see Get a
 job .
 Example search queries
 This section provides example search queries that you can use in
-Dataplex Universal Catalog to find data in your organization or project with
+Knowledge Catalog to find data in your organization or project with
 specific aspect values.
 You can find only the data that you have access to. Data access is controlled
 through IAM permissions. For more information, see Roles and
 permissions for viewing aspects in this document.
 You can enter these example queries in the Search field on the
-Dataplex Universal Catalog Search page.
+Knowledge Catalog Search page.
 Go to Search
 For information about how to form the queries, see
-Search syntax for Dataplex Universal Catalog .
+Search syntax for Knowledge Catalog .
 Find the entries of all tables that have the Sensitive Data Protection job result aspect
 aspect:sensitive-data-protection-job-result
 Find the entries of inspected tables that have findings
@@ -394,6 +394,6 @@ Enable Publish to Dataplex Universal Catalog .
 Click Save .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

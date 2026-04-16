@@ -4,7 +4,7 @@ url: https://docs.cloud.google.com/cdn/docs/resources
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage
+entrypoint: https://docs.cloud.google.com/cdn/docs/invalidating-cached-content
 source_metadata:
   url: https://docs.cloud.google.com/cdn/docs/resources
   title: "Resources \_|\_ Cloud CDN \_|\_ Google Cloud Documentation"

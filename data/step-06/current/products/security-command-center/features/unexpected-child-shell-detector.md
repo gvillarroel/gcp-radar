@@ -1,15 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:56.196Z"
+generated_at: "2026-04-14T13:09:48.854Z"
 product_name: "Security Command Center"
 product_slug: "security-command-center"
 feature_name: "Unexpected Child Shell detector"
 feature_slug: "unexpected-child-shell-detector"
 latest_feature_date: "2023-10-18"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview"
+  - "https://docs.cloud.google.com/security-command-center/docs/agent-engine-threat-detection-overview"
+  - "https://docs.cloud.google.com/security-command-center/docs/cloud-run-threat-detection-overview"
 keywords:
   - "unexpected"
   - "child"
@@ -24,7 +26,7 @@ keywords:
 # Unexpected Child Shell detector
 
 Product: Security Command Center
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +36,54 @@ Container Threat Detection generates a finding when a process that does not norm
 
 Container Threat Detection generates a finding when a process that does not normally invoke shells spawns a shell process.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview)
+- [https://docs.cloud.google.com/security-command-center/docs/agent-engine-threat-detection-overview](https://docs.cloud.google.com/security-command-center/docs/agent-engine-threat-detection-overview)
+- [https://docs.cloud.google.com/security-command-center/docs/cloud-run-threat-detection-overview](https://docs.cloud.google.com/security-command-center/docs/cloud-run-threat-detection-overview)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### "Container Threat Detection overview \_|\_ Security Command Center \_|\_\
+
+- URL: [https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-container-threat-detection-overview)
+- Source ID: `site-docs-reference`
+- Final score: 270
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Disabled detectors The following detectors are disabled by default: Added Binary Executed Added Library Loaded Collection: Pam.d Modification ( Preview ) Credential Access: Access Sensitive Files on Nodes ( Preview ) Credential Access: Find Google Cloud Credentials Defense Evasion: Disable or modify Linux audit system ( Preview ) Defense Evasion: Launch Code Compiler Tool In Container Defense Evasion: Root Certificate Installed ( Preview ) Execution: Ingress Nightmare Vulnerability Execution ( Preview ) Execution: Program Run with Disallowed HTTP Proxy Env Execution: Suspicious Cron Modification ( Preview ) Exfiltration: Launch Remote File Copy Tools in Container Persistence: Modify ld.so.preload ( Preview ) To enable these detectors, see Enable or disable Container Threat Detection modules .
+- Container Threat Detection detectors Container Threat Detection includes the following detectors: Detector Module Description Inputs to detection Added Binary Executed ADDED BINARY EXECUTED A binary that was not part of the original container image was executed.
+- The following is the execution path when events are detected: Container Threat Detection passes event information and information that identifies the container through a user mode DaemonSet to a detector service for analysis.
+- File monitoring detectors Container Threat Detection includes a number of detectors that monitor file operations looking for access or modification to critical system files.
+
+### "Agent Engine Threat Detection overview \_|\_ Security Command Center \_\
+
+- URL: [https://docs.cloud.google.com/security-command-center/docs/agent-engine-threat-detection-overview](https://docs.cloud.google.com/security-command-center/docs/agent-engine-threat-detection-overview)
+- Source ID: `site-docs-reference`
+- Final score: 236
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The detector monitors process executions and generates a finding when a known parent process spawns a shell unexpectedly.
+- Runtime detectors Agent Engine Threat Detection includes the following runtime detectors: Display name Module name Description Execution: Added Malicious Binary Executed ( Preview ) AGENT ENGINE ADDED MALICIOUS BINARY EXECUTED A process executed a binary that threat intelligence identifies as malicious.
+- In addition, control-plane detectors from Event Threat Detection analyze various audit logs (including Identity and Access Management, BigQuery, and Cloud SQL logs) and Vertex AI Agent Engine logs ( stdout and stderr ) to detect suspicious activity.
+- Control-plane detectors This section describes the control-plane detectors from Event Threat Detection that are specifically designed for AI agents deployed to Vertex AI Agent Engine Runtime.
+
+### "Cloud Run Threat Detection overview \_|\_ Security Command Center \_|\_\
+
+- URL: [https://docs.cloud.google.com/security-command-center/docs/cloud-run-threat-detection-overview](https://docs.cloud.google.com/security-command-center/docs/cloud-run-threat-detection-overview)
+- Source ID: `site-docs-reference`
+- Final score: 228
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Runtime detectors Cloud Run Threat Detection includes the following runtime detectors: Display name API name Description Command and Control: Steganography Tool Detected CLOUD RUN STEGANOGRAPHY TOOL DETECTED A program identified as a steganography tool was executed, signaling a potential attempt to conceal communication or data transfer.
+- Supported resources Cloud Run Threat Detection monitors the following resources: Cloud Run services Cloud Run jobs Supported execution environments The supported execution environments differ for runtime detectors and control plane detectors.
+- The following is the execution path when events are detected: Cloud Run Threat Detection uses a watcher process to collect container and event information for the complete duration of a Cloud Run workload.
+- Cloud Run Threat Detection runtime detectors monitor Cloud Run resources for suspicious binaries and libraries and use natural language processing (NLP) to detect malicious Bash and Python code.
 

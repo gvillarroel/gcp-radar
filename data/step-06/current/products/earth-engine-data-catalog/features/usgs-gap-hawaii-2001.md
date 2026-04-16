@@ -1,17 +1,17 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T12:40:58.800Z"
+generated_at: "2026-04-14T15:13:20.030Z"
 product_name: "Earth Engine Data Catalog"
 product_slug: "earth-engine-data-catalog"
 feature_name: "USGS GAP Hawaii 2001"
 feature_slug: "usgs-gap-hawaii-2001"
 latest_feature_date: "2019-07-09"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://developers.google.com/earth-engine/datasets/tags/landcover"
+  - "https://developers.google.com/earth-engine/datasets/tags/ecosystems"
   - "https://developers.google.com/earth-engine/datasets/tags/landuse-landcover"
-  - "https://developers.google.com/earth-engine/datasets/catalog"
 keywords:
   - "usgs"
   - "gap"
@@ -20,13 +20,12 @@ keywords:
   - "land"
   - "cover"
   - "dataset"
-  - "for"
 ---
 
 # USGS GAP Hawaii 2001
 
 Product: Earth Engine Data Catalog
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +37,13 @@ A USGS GAP land cover dataset for Hawaii from 2001.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
+- [https://developers.google.com/earth-engine/datasets/tags/ecosystems](https://developers.google.com/earth-engine/datasets/tags/ecosystems)
 - [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
-- [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
 
 ## Supporting Pages
 
@@ -52,9 +51,9 @@ Fallback definition because synthesis failed.
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landcover](https://developers.google.com/earth-engine/datasets/tags/landcover)
 - Source ID: `site-docs-root`
-- Final score: 242
-- Re-rank relevance: WEAK
-- Re-rank rationale: Fallback relevance because reranking failed.
+- Final score: 244
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
 - TreeMap v2022 contains 22-band 30 x 30m … aboveground biomass carbon climate-change conus forest USGS GAP Alaska 2001 The GAP/LANDFIRE National Terrestrial Ecosystems data represents a detailed vegetation and land cover classification for the Conterminous U.S., Alaska, Hawaii, and Puerto Rico.GAP/LF 2011 Ecosystems for the Conterminous U.S. is an update of the National Gap Analysis Program Land Cover Data - Version 2.2.
@@ -66,25 +65,26 @@ Evidence snippets:
 
 - URL: [https://developers.google.com/earth-engine/datasets/tags/landuse-landcover](https://developers.google.com/earth-engine/datasets/tags/landuse-landcover)
 - Source ID: `site-docs-root-3`
-- Final score: 214
+- Final score: 196
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- Beginning with the 2016 release, land cover products were created for two-to-three-year intervals … blm landcover landuse-landcover mrlc nlcd usgs Oxford MAP: Malaria Atlas Project Fractional International Geosphere-Biosphere Programme Landcover The underlying dataset for this landcover product is the IGBP layer found within the MODIS annual landcover product (MCD12Q1).
 - Ecuador's … landsat-derived landuse-landcover mapbiomas-public publisher-dataset NLCD 2019: USGS National Land Cover Database, 2019 release NLCD (the National Land Cover Database) is a 30-m Landsat-based land cover database spanning 8 epochs (2001, 2004, 2006, 2008, 2011, 2013, 2016, and 2019).
+- Beginning with the 2016 release, land cover products were created for two-to-three-year intervals … blm landcover landuse-landcover mrlc nlcd usgs Oxford MAP: Malaria Atlas Project Fractional International Geosphere-Biosphere Programme Landcover The underlying dataset for this landcover product is the IGBP layer found within the MODIS annual landcover product (MCD12Q1).
+- Geological Survey (USGS), in partnership with several federal agencies, has now developed and released seven National Land Cover Database (NLCD) products: NLCD 1992, 2001, 2006, 2011, 2016, 2019, and 2021.
 - LUCAS collects information on land cover and … eu jrc landcover landuse landuse-landcover lucas Land Cover of North America at 30 meters, 2020 The 2020 North American Land Cover 30-meter dataset was produced as part of the North American Land Change Monitoring System (NALCMS), a trilateral effort between Natural Resources Canada, the United States Geological Survey, and three Mexican organizations including the National Institute of Statistics and Geography … landcover landsat landuse-landcover nlcd reflectance MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG The Terra and Aqua combined Moderate Resolution Imaging Spectroradiometer (MODIS) Land Cover Climate Modeling Grid (CMG) (MCD12C1) Version 6.1 data product provides a spatially aggregated and reprojected version of the tiled MCD12Q1 Version 6.1 data product.
-- Designed to continuously represent Earth's terrestrial surface as a proportion of basic vegetation traits, it provides a gradation of three surface cover components: percent tree cover, percent … annual geophysical global landuse-landcover modis nasa MapBiomas Land Use and Land Cover - Bolivia V1.0 MapBiomas Land Use and Land Cover (LULC) dataset for Bolivia is produced annually by the MapBiomas Project using Landsat satellite imagery and machine learning classification techniques.
 
-### Earth Engine Data Catalog \_|\_ Google for Developers
+### "Datasets tagged ecosystems in Earth Engine \_|\_ Earth Engine Data Catalog\
 
-- URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
-- Source ID: `site-docs-root`
-- Final score: 194
-- Re-rank relevance: N/A
+- URL: [https://developers.google.com/earth-engine/datasets/tags/ecosystems](https://developers.google.com/earth-engine/datasets/tags/ecosystems)
+- Source ID: `site-docs-root-3`
+- Final score: 184
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
 
 Evidence snippets:
+- Ecoregions denote areas of general similarity in ecosystems and in the type, quality, and quantity of environmental … ecoregions ecosystems epa table USGS GAP Alaska 2001 The GAP/LANDFIRE National Terrestrial Ecosystems data represents a detailed vegetation and land cover classification for the Conterminous U.S., Alaska, Hawaii, and Puerto Rico.GAP/LF 2011 Ecosystems for the Conterminous U.S. is an update of the National Gap Analysis Program Land Cover Data - Version 2.2.
 - Alaska … ecosystems gap landcover landfire usgs vegetation USGS GAP Puerto Rico 2001 The GAP/LANDFIRE National Terrestrial Ecosystems data represents a detailed vegetation and land cover classification for the Conterminous U.S., Alaska, Hawaii, and Puerto Rico.GAP/LF 2011 Ecosystems for the Conterminous U.S. is an update of the National Gap Analysis Program Land Cover Data - Version 2.2.
 - Alaska … ecosystems gap landcover landfire usgs vegetation USGS GAP Hawaii 2001 The GAP/LANDFIRE National Terrestrial Ecosystems data represents a detailed vegetation and land cover classification for the Conterminous U.S., Alaska, Hawaii, and Puerto Rico.GAP/LF 2011 Ecosystems for the Conterminous U.S. is an update of the National Gap Analysis Program Land Cover Data - Version 2.2.
-- See more details … 3dep elevation-topography table usgs USGS GAP Alaska 2001 The GAP/LANDFIRE National Terrestrial Ecosystems data represents a detailed vegetation and land cover classification for the Conterminous U.S., Alaska, Hawaii, and Puerto Rico.GAP/LF 2011 Ecosystems for the Conterminous U.S. is an update of the National Gap Analysis Program Land Cover Data - Version 2.2.
-- 2012) and across two of the four greenhouse … cag climate cmip5 gddp geophysical ipcc NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Africa This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Americas This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NICFI Satellite Data Program Basemaps for Tropical Forest Monitoring - Asia This image collection provides access to high-resolution satellite monitoring of the tropics for the primary purpose of reducing and reversing the loss of tropical forests, contributing to combating climate change, conserving biodiversity, contributing to forest regrowth, restoration and enhancement, and facilitating sustainable development, all of … basemaps forest nicfi planet planet-nicfi publisher-dataset NLCD 2019: USGS National Land Cover Database, 2019 release NLCD (the National Land Cover Database) is a 30-m Landsat-based land cover database spanning 8 epochs (2001, 2004, 2006, 2008, 2011, 2013, 2016, and 2019).
+- Alaska … ecosystems gap landcover landfire usgs vegetation USGS GAP CONUS 2011 The GAP/LANDFIRE National Terrestrial Ecosystems data represents a detailed vegetation and land cover classification for the Conterminous U.S., Alaska, Hawaii, and Puerto Rico.GAP/LF 2011 Ecosystems for the Conterminous U.S. is an update of the National Gap Analysis Program Land Cover Data - Version 2.2.
 

@@ -1,17 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-11T05:21:46.866Z"
+generated_at: "2026-04-12T12:12:51.030Z"
 product_name: "Cloud VPN"
 product_slug: "cloud-vpn"
 feature_name: "Customizable tunnel ciphers"
 feature_slug: "customizable-tunnel-ciphers"
 latest_feature_date: "2025-09-30"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
   - "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
-  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes"
+  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices"
+  - "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
 keywords:
   - "customizable"
   - "tunnel"
@@ -26,7 +27,7 @@ keywords:
 # Customizable tunnel ciphers
 
 Product: Cloud VPN
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,13 +39,14 @@ Cloud VPN lets you configure VPN tunnel cipher options to meet security requirem
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 - [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview)
-- [https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes](https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes)
+- [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices)
+- [https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting](https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting)
 
 ## Supporting Pages
 
@@ -52,7 +54,7 @@ Fallback definition because synthesis failed.
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn](https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 - Source ID: `site-docs-root`
-- Final score: 178
+- Final score: 210
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -65,7 +67,7 @@ Evidence snippets:
 
 - URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview)
 - Source ID: `site-docs-reference`
-- Final score: 168
+- Final score: 204
 - Re-rank relevance: N/A
 
 Evidence snippets:
@@ -74,16 +76,30 @@ Evidence snippets:
 - You can configure cipher options when you create Cloud VPN tunnels.
 - Configure two VPN tunnels from the perspective of the Cloud VPN gateway: If you have two peer VPN gateway devices , each of the tunnels from each interface on the Cloud VPN gateway must be connected to its own peer gateway.
 
-### Cloud VPN release notes \_|\_ Google Cloud Documentation
+### Best practices for Cloud VPN \_|\_ Google Cloud Documentation
 
-- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes](https://docs.cloud.google.com/network-connectivity/docs/vpn/release-notes)
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices](https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices)
 - Source ID: `site-docs-root`
-- Final score: 166
+- Final score: 186
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- If you have not configured the cipher algorithms, then the Cloud VPN tunnel proposes the cipher algorithms in the order shown in the supported cipher tables for each cipher role.
+- To prevent frequent changes in cipher selection, configure your peer VPN gateway and the Cloud VPN tunnel to propose and accept only one cipher for each cipher role.
+- For HA VPN tunnel pairs, configure both HA VPN tunnels on your peer VPN gateway to use the same cipher and IKE Phase 2 lifetime values.
+- For more information, see View Monitoring dashboards Configure your peer VPN gateway with only one cipher for each cipher role Cloud VPN can act as an initiator or a responder to IKE requests depending on the origin of traffic when a new security association is needed.
+
+### Troubleshooting \_|\_ Cloud VPN \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting](https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting)
+- Source ID: `site-docs-root`
+- Final score: 186
 - Re-rank relevance: N/A
 
 Evidence snippets:
-- For more information, see View Monitoring dashboards September 30, 2025 Feature Cloud VPN supports customizable cipher options for your VPN tunnels.
-- June 12, 2025 Feature Cloud VPN supports customizable cipher options for your VPN tunnels.
-- For more information, see Configure ciphers in Cloud VPN tunnel .
-- For more information, see Configure ciphers in Cloud VPN tunnel .
+- Make sure that you use supported ciphers to configure your peer VPN gateway.
+- If the VPN logs show a no-proposal-chosen error, this error indicates that Cloud VPN and your peer VPN gateway were unable to agree on a set of ciphers.
+- To avoid this error, create a VPN tunnel that connects your HA VPN gateway to one of the following: Another HA VPN gateway An external VPN gateway that is not hosted in Google Cloud Compute Engine virtual machine (VM) instances Unable to connect to external destination through HA VPN When you use an HA VPN gateway, Google Cloud resources use the VPN tunnel to connect to only the destinations that are advertised by the peer router.
+- Common problems and solutions Tunnel creation fails due to reserved IP ranges Cloud VPN tunnel creation might fail because the peer IP address that you have used at the time of configuration falls within the RFC 5737 or RFC 5735 reserved IP addresses range.
 

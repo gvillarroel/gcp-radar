@@ -1,15 +1,18 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T05:27:49.752Z"
+generated_at: "2026-04-12T12:18:06.050Z"
 product_name: "Places API"
 product_slug: "places-api"
 feature_name: "Session tokens"
 feature_slug: "session-tokens"
 latest_feature_date: "2024-05-28"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "MEDIUM"
 source_links:
-  - ""
+  - "https://developers.google.com/maps/documentation/places/web-service/legacy/session-tokens"
+  - "https://developers.google.com/maps/documentation/places/web-service/place-autocomplete"
+  - "https://developers.google.com/maps/documentation/places/web-service/op-overview"
+  - "https://developers.google.com/maps/documentation/places/web-service/client-library-examples"
 keywords:
   - "session"
   - "tokens"
@@ -24,7 +27,7 @@ keywords:
 # Session tokens
 
 Product: Places API
-Coverage: NONE
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -34,11 +37,71 @@ User-generated strings group the query and selection phases of an Autocomplete (
 
 User-generated strings group the query and selection phases of an Autocomplete (New) search into a discrete billing session; User-generated strings group the query and selection phases of an Autocomplete (New) search into a discrete billing session.
 
+## Evidence Summary
+
+Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus.
+
 ## Source Links
 
-No supporting official source links were selected.
+- [https://developers.google.com/maps/documentation/places/web-service/legacy/session-tokens](https://developers.google.com/maps/documentation/places/web-service/legacy/session-tokens)
+- [https://developers.google.com/maps/documentation/places/web-service/place-autocomplete](https://developers.google.com/maps/documentation/places/web-service/place-autocomplete)
+- [https://developers.google.com/maps/documentation/places/web-service/op-overview](https://developers.google.com/maps/documentation/places/web-service/op-overview)
+- [https://developers.google.com/maps/documentation/places/web-service/client-library-examples](https://developers.google.com/maps/documentation/places/web-service/client-library-examples)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### Session Tokens \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/legacy/session-tokens](https://developers.google.com/maps/documentation/places/web-service/legacy/session-tokens)
+- Source ID: `site-docs-root-2`
+- Final score: 220
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Select platform: Android iOS JavaScript Web Service Place Autocomplete (Legacy) uses session tokens to group the query and selection phases of a user autocomplete search into a discrete session for billing purposes.
+- As the user types, the API makes an autocomplete request every few characters, displaying a new list of potential results for each: "P" "Par" "Paris," "Paris, Fr" When the user makes a selection: All requests resulting from the query are grouped and added to the session represented by "Token A", as a single request.
+- The session begins when the user starts typing a query, and concludes when they select a place and a call to Place Details (Legacy) is made.
+- If the user does not make a selection within a few minutes of the beginning of the session, only the search query is charged.
+
+### Autocomplete (New) \_|\_ Places API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/place-autocomplete](https://developers.google.com/maps/documentation/places/web-service/place-autocomplete)
+- Source ID: `site-docs-root`
+- Final score: 184
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- The parameter can affect results based on applicable law. sessionToken Session tokens are user-generated strings that track Autocomplete (New) calls as "sessions." Autocomplete (New) uses session tokens to group the query and selection phases of a user autocomplete search into a discrete session for billing purposes.
+- Cannot be used with locationBias. origin Origin point (lat, long) used to calculate straight-line distance (distanceMeters) to predicted destinations. regionCode Region code used to format the response and bias suggestions (e.g., 'uk', 'fr'). sessionToken User-generated string to group Autocomplete calls into a session for billing purposes.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["The Autocomplete (New) service predicts places and query strings based on user input within a defined search area.
+- When requesting Place Details (New) about the selected prediction, include the following parameters: The place ID from the Autocomplete (New) response The session token used in the Autocomplete (New) request The fields parameter specifying fields such as address and geometry Consider delaying Autocomplete (New) requests You can employ strategies such as delaying a Autocomplete (New) request until the user has typed in the first three or four characters so that your application makes fewer requests.
+
+### About the Places API (New) \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/op-overview](https://developers.google.com/maps/documentation/places/web-service/op-overview)
+- Source ID: `site-docs-root`
+- Final score: 174
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Autocomplete (New) uses session tokens to group the query and selection phases of a user autocomplete search into a discrete session for billing purposes.
+- Session tokens are user-generated strings that track Autocomplete (New) calls as sessions.
+- Autocomplete (New) and session tokens Autocomplete (New) is a web service that returns place predictions and query predictions in response to an HTTP request.
+- Autocomplete (New) predicts places and queries as users type, using session tokens to track and manage user interactions for billing purposes.
+
+### Places API (New) client library examples \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/places/web-service/client-library-examples](https://developers.google.com/maps/documentation/places/web-service/client-library-examples)
+- Source ID: `site-docs-root`
+- Final score: 170
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Println ( "---" ) } } NodeJS const { PlacesClient } = require ( '@googlemaps/places' ). v1 ; // Import the crypto module for UUID generation, used for session tokens const crypto = require ( 'crypto' ); // Coordinates and radius for the location bias const biasLat = 51.5119 ; const biasLng = - 0.1248 ; const biasRadiusMeters = 5000.0 ; // Autocomplete input const userInput = 'restaurants near Covent Garden' ; // Language and region codes const languageCode = 'en-GB' ; const regionCode = 'GB' ; async function autocomplete () { // Instantiates the Places client const placesClient = new PlacesClient (); const biasCenterPoint = { latitude : biasLat , longitude : biasLng }; const biasCircleArea = { center : biasCenterPoint , radius : biasRadiusMeters , }; // Create the location bias object using a circle const locationBias = { circle : biasCircleArea , }; // Generate a unique session token const sessionToken = crypto . randomUUID (); // Construct the request object const request = { input : userInput , locationBias : locationBias , languageCode : languageCode , regionCode : regionCode , sessionToken : sessionToken , }; // Call Autocomplete and output the response to the console const [ response ] = await placesClient . autocompletePlaces ( request ); console . log ( JSON . stringify ( response , null , 2 )); // Pretty print the JSON } autocomplete (); Python import uuid # For generating session tokens from google.maps import places v1 from google.type import latlng pb2 async def autocomplete (): bias lat = 51.516177 bias lng = - 0.127245 bias radius meters = 5000.0 Create the LatLng object for the bias center bias center point = latlng pb2 .
+- Java import com.google.maps.places.v1.AutocompletePlacesRequest ; import com.google.maps.places.v1.AutocompletePlacesResponse ; import com.google.maps.places.v1.Circle ; import com.google.maps.places.v1.PlacesClient ; import com.google.type.LatLng ; ... private static void Autocomplete () { // Set search variables String userInput = "Google Central St Giles" ; double biasLatitude = 51.516177 ; double biasLongitude = - 0.127245 ; double biasRadiusMeters = 5000.0 ; String language = "en-GB" ; String region = "GB" ; // Generate a session token for this Autocomplete session String sessionToken = UUID . randomUUID (). toString (); // Use try-with-resources for the client try ( PlacesClient placesClient = PlacesClient . create ()) { LatLng biasCenterPoint = LatLng . newBuilder () . setLatitude ( biasLatitude ) . setLongitude ( biasLongitude ) . build (); Circle biasCircleArea = Circle . newBuilder () . setCenter ( biasCenterPoint ) . setRadius ( biasRadiusMeters ) . build (); // Create the location bias using a circle AutocompletePlacesRequest .
+- LocationBias . newBuilder () . setCircle ( circleArea ) . build (); // Build the Text Search request SearchTextRequest request = SearchTextRequest . newBuilder () . setTextQuery ( searchQuery ) . setLocationBias ( locationBias ) . setMinRating ( minPlaceRating ) . setOpenNow ( requireOpenNow ) . addAllPriceLevels ( desiredPriceLevels ) . build (); // Call Text Search and output the response to the console SearchTextResponse response = placesClient . searchText ( request ); System . out . println ( response ); placesClient . close (); } catch ( Exception e ) { System . err . println ( "An error occurred: " + e . getMessage ()); } } Go package main import ( "context" "fmt" "log" "strings" places "cloud.google.com/go/maps/places/apiv1" placespb "cloud.google.com/go/maps/places/apiv1/placespb" "google.golang.org/genproto/googleapis/type/latlng" "google.golang.org/grpc/metadata" ) func main () { ctx := context .
+- LocationBias . newBuilder () . setCircle ( biasCircleArea ) . build (); // Build the Autocomplete request AutocompletePlacesRequest request = AutocompletePlacesRequest . newBuilder () . setInput ( userInput ) . setLocationBias ( locationBias ) . setLanguageCode ( language ) . setRegionCode ( region ) . setSessionToken ( sessionToken ) . build (); // Call Autocomplete and output the response to the console AutocompletePlacesResponse response = placesClient . autocompletePlaces ( request ); System . out . println ( response ); } catch ( Exception e ) { System . err . println ( "An error occurred: " + e . getMessage ()); } } Go package main import ( "context" "fmt" "log" places "cloud.google.com/go/maps/places/apiv1" placespb "cloud.google.com/go/maps/places/apiv1/placespb" "github.com/google/uuid" "google.golang.org/genproto/googleapis/type/latlng" ) func main () { ctx := context .
 

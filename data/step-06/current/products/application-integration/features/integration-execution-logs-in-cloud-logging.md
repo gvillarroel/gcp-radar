@@ -1,32 +1,28 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-10T03:28:26.472Z"
+generated_at: "2026-04-14T07:40:14.476Z"
 product_name: "Application Integration"
 product_slug: "application-integration"
 feature_name: "Integration execution logs in Cloud Logging"
 feature_slug: "integration-execution-logs-in-cloud-logging"
 latest_feature_date: "2024-02-12"
 deprecation_date: ""
-coverage_status: "LOW"
+coverage_status: "MEDIUM"
 source_links:
   - "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
   - "https://docs.cloud.google.com/application-integration/docs/audit-logging"
-  - "https://docs.cloud.google.com/application-integration/docs/release-notes"
+  - "https://docs.cloud.google.com/application-integration/docs/configure-cloud-scheduler-trigger"
 keywords:
+  - "viewed"
   - "logging"
   - "execution"
   - "logs"
-  - "application"
-  - "integration"
-  - "can"
-  - "now"
-  - "in"
 ---
 
 # Integration execution logs in Cloud Logging
 
 Product: Application Integration
-Coverage: LOW
+Coverage: MEDIUM
 
 ## Step 02 Summary
 
@@ -38,35 +34,35 @@ Application Integration execution logs can now be viewed in Cloud Logging.
 
 ## Evidence Summary
 
-Fallback definition because synthesis failed.
+Fallback definition because synthesis failed; coverage was derived from supporting-page quality.
 
 ## Source Links
 
 - [https://docs.cloud.google.com/application-integration/docs/cloud-logging](https://docs.cloud.google.com/application-integration/docs/cloud-logging)
 - [https://docs.cloud.google.com/application-integration/docs/audit-logging](https://docs.cloud.google.com/application-integration/docs/audit-logging)
-- [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
+- [https://docs.cloud.google.com/application-integration/docs/configure-cloud-scheduler-trigger](https://docs.cloud.google.com/application-integration/docs/configure-cloud-scheduler-trigger)
 
 ## Supporting Pages
 
 ### "View logs in Cloud Logging \_|\_ Application Integration \_|\_ Google Cloud\
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/cloud-logging](https://docs.cloud.google.com/application-integration/docs/cloud-logging)
-- Source ID: `site-iam-reference`
-- Final score: 306
+- Source ID: `site-docs-reference-2`
+- Final score: 181
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
 - Sample queries You can use the following queries to view logs in Cloud Logging: To view all integration execution logs: resource.type="integrations.googleapis.com/IntegrationVersion" You can view integration execution logs for a specific execution ID: Searches only the parents executions with the given execution ID: resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.executionId=" EXECUTION ID " Searches for both parent and child executions launched from the given execution ID: resource.type="integrations.googleapis.com/IntegrationVersion" " EXECUTION ID " To view integration execution logs for a specific integration: resource.type="integrations.googleapis.com/IntegrationVersion" " INTEGRATION NAME " Or resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.integration=" INTEGRATION NAME " To view failed integration executions for a specific integration: resource.type="integrations.googleapis.com/IntegrationVersion" jsonPayload.integrationExecutionDetails.integrationExecutionState="FAILED" jsonPayload.integration=" INTEGRATION NAME " To view logs with specific request param name.
+- In the Log settings , click the Enable Cloud Logging toggle and then from the Severity list, select the severity type of the logs that you want to store in Cloud Logging: Info : Select this option to capture all execution statuses: SUCCEEDED , FAILED , PROCESSING , PENDING , SUSPENDED , RETRY ON HOLD , and CANCELLED .
 - View logs in Cloud Logging In Cloud Logging, you can view the Integration execution logs containing integration details, such as status, performance, integration version, request and response parameters, and the trigger and task configurations.
 - Go to Application Integration To view the integration execution logs in Cloud Logging, use one of the following methods: In the navigation menu, click Logs , and then, click View Cloud Logs .
-- In the Log settings , click the Enable Cloud Logging toggle and then from the Severity list, select the severity type of the logs that you want to store in Cloud Logging: Info : Select this option to capture all execution statuses: SUCCEEDED , FAILED , PROCESSING , PENDING , SUSPENDED , RETRY ON HOLD , and CANCELLED .
 
 ### Application Integration audit logging \_|\_ Google Cloud Documentation
 
 - URL: [https://docs.cloud.google.com/application-integration/docs/audit-logging](https://docs.cloud.google.com/application-integration/docs/audit-logging)
-- Source ID: `site-iam-reference`
-- Final score: 250
+- Source ID: `site-docs-root-2`
+- Final score: 113
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
@@ -76,17 +72,17 @@ Evidence snippets:
 - For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Application Integration audit logs use the service name integrations.googleapis.com .
 - Filter for this method : protoPayload.methodName="google.cloud.integrations.v1alpha.TransformFunction.ListTransformFunctions" google.cloud.integrations.v2.Executions The following audit logs are associated with methods belonging to google.cloud.integrations.v2.Executions .
 
-### Application Integration release notes \_|\_ Google Cloud Documentation
+### "Cloud Scheduler trigger \_|\_ Application Integration \_|\_ Google Cloud\
 
-- URL: [https://docs.cloud.google.com/application-integration/docs/release-notes](https://docs.cloud.google.com/application-integration/docs/release-notes)
-- Source ID: `site-docs-root`
-- Final score: 246
+- URL: [https://docs.cloud.google.com/application-integration/docs/configure-cloud-scheduler-trigger](https://docs.cloud.google.com/application-integration/docs/configure-cloud-scheduler-trigger)
+- Source ID: `site-docs-root-2`
+- Final score: 91
 - Re-rank relevance: WEAK
 - Re-rank rationale: Fallback relevance because reranking failed.
 
 Evidence snippets:
-- May 09, 2023 Feature Cloud logs support for Connectors tasks You can now view the execution logs of a failed Connectors task in Application Integration.
-- February 12, 2024 Feature You can now also view the integration execution logs in Cloud Logging.
-- February 19, 2025 Change Enhancements to Execution Logs Application Integration Execution Logs now provides the following enhancements: View detailed task execution information: The dedicated Task Execution pane displays comprehensive execution details, including start and end times, status, type, and variable payload information , enabling improved debugging.
-- Change Enhancements to Replay Execution Application Integration Replay Execution now provides the following enhancements: Modify input parameters on replay: You can now modify the input parameters of an integration execution when initiating a replay.
+- These logs are stored in your Google Cloud project and can only be viewed from the Cloud Logging Logs Explorer page.
+- A Cloud Scheduler job is created using the following naming convention to avoid any job duplication errors: INTEGRATION NAME V INTEGRATION VERSION CLOUD SCHEDULER TRIGGER NUMBER Example : DemoIntegration V1 1 Trigger logs A Cloud Scheduler trigger generates logs at the start and end of each integration execution.
+- You can view the Cloud Scheduler trigger logs in the Cloud Logging Logs Explorer page: In the Google Cloud console, go to the Cloud Scheduler page.
+- The Cloud Logging Logs Explorer page appears displaying the logs generated by the Cloud Scheduler trigger .
 
